@@ -2613,7 +2613,34 @@ description riding the same round.
     consultations, the seldom intermarry);
     single-pass
     pins per the Chapter 9 provenance shift
-  - [ ] Ningyo (capture p. 279)
+  - [x] Ningyo (capture p. 279)
+    - R727: the dko ningyo pins - the stat
+    block (the rare, the 2 to 20, the AC 7,
+    the swim 18 of the doubled-slash
+    capture, the HD 2 to 5, the 30% lair,
+    the I treasure, the 1 attack by weapon,
+    the spells of both specials, the
+    standard MR, the very wits, the chaotic
+    good, the nil psionics); the xp ladder
+    (the 73 + 2, the 105 + 3, the 150 + 4,
+    the 205 + 5, the capture misreading 111
+    for the III rung); the sea folk (the
+    merman kin, the flaming red hair, the
+    under-the-waves home, the Sea Lord
+    service, the kindly helpful temper, the
+    sailor protectors and the storm
+    offerings); the bearing (the normally
+    unarmed, the trident or spear when
+    armed, the peaceful non-combative
+    nature, the fight if forced, the
+    shukenja and wu jen spellcasting of
+    the hit-dice level); the life (the no
+    undersea communities, the roaming with
+    the currents and the fish schools, the
+    cannot survive out of water with the 1
+    hit point per round, the three
+    languages); single-pass
+    pins per the Chapter 9 provenance shift
   - [ ] Oni, Lesser Spirit (capture pp. 280-281)
   - [ ] P'oh, Lesser Spirit (capture pp. 281-282)
   - [ ] Shan Sao (capture p. 282)

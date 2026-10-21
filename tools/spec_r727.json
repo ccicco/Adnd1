@@ -1,0 +1,518 @@
+{
+ "round": 727,
+ "title": "OA MONSTERS - the Ningyo: the flaming-haired kin of the merman",
+ "prefix": "dko",
+ "header_file": "rules/oa98ningyo.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 649,
+ "inline_count": 42,
+ "audit_label": "R727 OA monsters Ningyo audit",
+ "audit_comment": "OA round one hundred fourteen (capture pp. 279-280): the Chapter 12 monster roster - the ningyo, the stat block and the sea folk description riding together, the xp ladder as consts per the R723 pattern, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE NINGYO, printed capture pp. 279-280 - the sea folk round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 180 closed, 55 open - the ningyo box flips (census 649 -> 650); NEXT - R728: the Oni, the Lesser Spirit (capture pp. 280-281), prefix dkp (verify free at the landing), audit \"R728 OA monsters Oni audit\", include after rules/oa98ningyo.h"
+ },
+ "consts": [
+  {
+   "name": "dkoAppearMin",
+   "value": 2,
+   "comment": "the appearing minimum - the 2 of the 2-20 of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoAppearMax",
+   "value": 20,
+   "comment": "the appearing maximum - the 20 of the 2-20 of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoAC",
+   "value": 7,
+   "comment": "the armor class - the 7 of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoMove",
+   "value": 18,
+   "comment": "the move - the swim 18 of the stat block, the capture doubling the slash of the print (print capture p. 279)"
+  },
+  {
+   "name": "dkoHDMin",
+   "value": 2,
+   "comment": "the hit dice minimum - the 2 of the 2 to 5 of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoHDMax",
+   "value": 5,
+   "comment": "the hit dice maximum - the 5 of the 2 to 5 of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoLairPct",
+   "value": 30,
+   "comment": "the in-lair percent - the 30% of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoAttackCount",
+   "value": 1,
+   "comment": "the attack count - the 1 of the number of attacks (print capture p. 279)"
+  },
+  {
+   "name": "dkoXP2Base",
+   "value": 73,
+   "comment": "the 2 HD xp base - the 73 of the III/73 + 2 per hp (print capture p. 279)"
+  },
+  {
+   "name": "dkoXP2PerHP",
+   "value": 2,
+   "comment": "the 2 HD xp per hit point - the 2 of the III/73 + 2/hp (print capture p. 279)"
+  },
+  {
+   "name": "dkoXP3Base",
+   "value": 105,
+   "comment": "the 3 HD xp base - the 105 of the III/105 + 3 per hp, the capture misreading 111 for III (print capture p. 279)"
+  },
+  {
+   "name": "dkoXP3PerHP",
+   "value": 3,
+   "comment": "the 3 HD xp per hit point - the 3 of the III/105 + 3/hp (print capture p. 279)"
+  },
+  {
+   "name": "dkoXP4Base",
+   "value": 150,
+   "comment": "the 4 HD xp base - the 150 of the III/150 + 4 per hp (print capture p. 279)"
+  },
+  {
+   "name": "dkoXP4PerHP",
+   "value": 4,
+   "comment": "the 4 HD xp per hit point - the 4 of the III/150 + 4/hp (print capture p. 279)"
+  },
+  {
+   "name": "dkoXP5Base",
+   "value": 205,
+   "comment": "the 5 HD xp base - the 205 of the IV/205 + 5 per hp (print capture p. 279)"
+  },
+  {
+   "name": "dkoXP5PerHP",
+   "value": 5,
+   "comment": "the 5 HD xp per hit point - the 5 of the IV/205 + 5/hp (print capture p. 279)"
+  },
+  {
+   "name": "dkoSurfaceLossPerRound",
+   "value": 1,
+   "comment": "the surface loss - they lose 1 hit point per round spent above the surface (print capture p. 280)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkoFrequencyRare",
+   "value": 1,
+   "comment": "the frequency - the rare of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoTreasureI",
+   "value": 1,
+   "comment": "the treasure type - the I of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoDamageByWeapon",
+   "value": 1,
+   "comment": "the damage per attack - the by weapon type of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoSpecialAttacksSpells",
+   "value": 1,
+   "comment": "the special attacks - the spells of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoSpecialDefensesSpells",
+   "value": 1,
+   "comment": "the special defenses - the spells of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoMRStandard",
+   "value": 1,
+   "comment": "the magic resistance - the standard of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoIntVery",
+   "value": 1,
+   "comment": "the intelligence - the very of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoAlignmentChaoticGood",
+   "value": 1,
+   "comment": "the alignment - the chaotic good of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoPsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoModesNil",
+   "value": 1,
+   "comment": "the attack and defense modes - the nil of the stat block (print capture p. 279)"
+  },
+  {
+   "name": "dkoMermanRelative",
+   "value": 1,
+   "comment": "the kin - a close relative of the merman and mermaid, virtually identical in appearance (print capture p. 279)"
+  },
+  {
+   "name": "dkoFlamingRedHair",
+   "value": 1,
+   "comment": "the mark - except that it always has flaming red hair (print capture p. 279)"
+  },
+  {
+   "name": "dkoDwellUnderWaves",
+   "value": 1,
+   "comment": "the home - they dwell under the waves and rarely come to the surface (print capture p. 279)"
+  },
+  {
+   "name": "dkoServeTheSeaLord",
+   "value": 1,
+   "comment": "the allegiance - preferring to serve the Sea Lord rather than become involved in the affairs of men (print capture p. 279)"
+  },
+  {
+   "name": "dkoKindlyHelpful",
+   "value": 1,
+   "comment": "the temper - quite kindly and helpful to humans (print capture p. 280)"
+  },
+  {
+   "name": "dkoSailorsProtectors",
+   "value": 1,
+   "comment": "the sailors - they consider them protectors and sometimes make offerings to them, especially during great storms (print capture p. 280)"
+  },
+  {
+   "name": "dkoNormallyUnarmed",
+   "value": 1,
+   "comment": "the arms - ningyo normally do not carry weapons (print capture p. 280)"
+  },
+  {
+   "name": "dkoArmedTridentOrSpear",
+   "value": 1,
+   "comment": "the armed choice - when armed they have either a trident or spear (print capture p. 280)"
+  },
+  {
+   "name": "dkoPeacefulNonCombative",
+   "value": 1,
+   "comment": "the bearing - generally peaceful and non-combative, preferring to avoid a fight whenever possible (print capture p. 280)"
+  },
+  {
+   "name": "dkoFightIfForced",
+   "value": 1,
+   "comment": "the exception - if forced, they fight with whatever weapons are available (print capture p. 280)"
+  },
+  {
+   "name": "dkoSpellcastingShukenjaWuJen",
+   "value": 1,
+   "comment": "the spellcasting - they have the spellcasting abilities of a shukenja and wu jen of a level equal to their hit dice, so a 3 HD ningyo has the spell ability of a 3rd-level shukenja and wu jen (print capture p. 280)"
+  },
+  {
+   "name": "dkoNoUnderseaCommunities",
+   "value": 1,
+   "comment": "the society - they do not form communities under the sea (print capture p. 280)"
+  },
+  {
+   "name": "dkoRoamWithCurrents",
+   "value": 1,
+   "comment": "the roaming - instead they roam with the currents and follow the schools of fish upon which they feed (print capture p. 280)"
+  },
+  {
+   "name": "dkoCannotSurviveOutOfWater",
+   "value": 1,
+   "comment": "the water need - they cannot survive out of water for any length of time (print capture p. 280)"
+  },
+  {
+   "name": "dkoSpeakThreeLanguages",
+   "value": 1,
+   "comment": "the languages - they speak the languages of the Sea Lord, fishes, and the trade language (print capture p. 280)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the stat block - the stat block pins, healthy values, each condition false",
+   "expr": "m['dkoFrequencyRare']() != 1 or m['dkoAppearMin']() != 2 or m['dkoAppearMax']() != 20 or m['dkoAC']() != 7 or m['dkoMove']() != 18 or m['dkoHDMin']() != 2 or m['dkoHDMax']() != 5 or m['dkoLairPct']() != 30 or m['dkoTreasureI']() != 1 or m['dkoAttackCount']() != 1 or m['dkoDamageByWeapon']() != 1 or m['dkoSpecialAttacksSpells']() != 1 or m['dkoSpecialDefensesSpells']() != 1 or m['dkoMRStandard']() != 1 or m['dkoIntVery']() != 1 or m['dkoAlignmentChaoticGood']() != 1 or m['dkoPsionicNil']() != 1 or m['dkoModesNil']() != 1"
+  },
+  {
+   "note": "the xp ladder - the four-step xp ladder, healthy values, each condition false",
+   "expr": "m['dkoXP2Base']() != 73 or m['dkoXP2PerHP']() != 2 or m['dkoXP3Base']() != 105 or m['dkoXP3PerHP']() != 3 or m['dkoXP4Base']() != 150 or m['dkoXP4PerHP']() != 4 or m['dkoXP5Base']() != 205 or m['dkoXP5PerHP']() != 5"
+  },
+  {
+   "note": "the sea folk - the merman kin and the Sea Lord allegiance, healthy values, each condition false",
+   "expr": "m['dkoMermanRelative']() != 1 or m['dkoFlamingRedHair']() != 1 or m['dkoDwellUnderWaves']() != 1 or m['dkoServeTheSeaLord']() != 1 or m['dkoKindlyHelpful']() != 1 or m['dkoSailorsProtectors']() != 1"
+  },
+  {
+   "note": "the bearing - the arms and the spellcasting, healthy values, each condition false",
+   "expr": "m['dkoNormallyUnarmed']() != 1 or m['dkoArmedTridentOrSpear']() != 1 or m['dkoPeacefulNonCombative']() != 1 or m['dkoFightIfForced']() != 1 or m['dkoSpellcastingShukenjaWuJen']() != 1"
+  },
+  {
+   "note": "the life - the roaming and the water need, healthy values, each condition false",
+   "expr": "m['dkoNoUnderseaCommunities']() != 1 or m['dkoRoamWithCurrents']() != 1 or m['dkoCannotSurviveOutOfWater']() != 1 or m['dkoSurfaceLossPerRound']() != 1 or m['dkoSpeakThreeLanguages']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat block": [
+   {
+    "kind": "bool",
+    "name": "dkoFrequencyRare"
+   },
+   {
+    "kind": "const",
+    "name": "dkoAppearMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkoAppearMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkoAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkoMove"
+   },
+   {
+    "kind": "const",
+    "name": "dkoHDMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkoHDMax"
+   },
+   {
+    "kind": "const",
+    "name": "dkoLairPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoTreasureI"
+   },
+   {
+    "kind": "const",
+    "name": "dkoAttackCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoDamageByWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoSpecialAttacksSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoSpecialDefensesSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoMRStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoIntVery"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoAlignmentChaoticGood"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoModesNil"
+   }
+  ],
+  "the xp ladder": [
+   {
+    "kind": "const",
+    "name": "dkoXP2Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkoXP2PerHP"
+   },
+   {
+    "kind": "const",
+    "name": "dkoXP3Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkoXP3PerHP"
+   },
+   {
+    "kind": "const",
+    "name": "dkoXP4Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkoXP4PerHP"
+   },
+   {
+    "kind": "const",
+    "name": "dkoXP5Base"
+   },
+   {
+    "kind": "const",
+    "name": "dkoXP5PerHP"
+   }
+  ],
+  "the sea folk": [
+   {
+    "kind": "bool",
+    "name": "dkoMermanRelative"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoFlamingRedHair"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoDwellUnderWaves"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoServeTheSeaLord"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoKindlyHelpful"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoSailorsProtectors"
+   }
+  ],
+  "the bearing": [
+   {
+    "kind": "bool",
+    "name": "dkoNormallyUnarmed"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoArmedTridentOrSpear"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoPeacefulNonCombative"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoFightIfForced"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoSpellcastingShukenjaWuJen"
+   }
+  ],
+  "the life": [
+   {
+    "kind": "bool",
+    "name": "dkoNoUnderseaCommunities"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoRoamWithCurrents"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoCannotSurviveOutOfWater"
+   },
+   {
+    "kind": "const",
+    "name": "dkoSurfaceLossPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dkoSpeakThreeLanguages"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the ningyo box",
+   "from": "  - [ ] Ningyo (capture p. 279)",
+   "to": "  - [x] Ningyo (capture p. 279)\n    - R727: the dko ningyo pins - the stat\n    block (the rare, the 2 to 20, the AC 7,\n    the swim 18 of the doubled-slash\n    capture, the HD 2 to 5, the 30% lair,\n    the I treasure, the 1 attack by weapon,\n    the spells of both specials, the\n    standard MR, the very wits, the chaotic\n    good, the nil psionics); the xp ladder\n    (the 73 + 2, the 105 + 3, the 150 + 4,\n    the 205 + 5, the capture misreading 111\n    for the III rung); the sea folk (the\n    merman kin, the flaming red hair, the\n    under-the-waves home, the Sea Lord\n    service, the kindly helpful temper, the\n    sailor protectors and the storm\n    offerings); the bearing (the normally\n    unarmed, the trident or spear when\n    armed, the peaceful non-combative\n    nature, the fight if forced, the\n    shukenja and wu jen spellcasting of\n    the hit-dice level); the life (the no\n    undersea communities, the roaming with\n    the currents and the fish schools, the\n    cannot survive out of water with the 1\n    hit point per round, the three\n    languages); single-pass\n    pins per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 180,
+  "open": 55
+ },
+ "include_comment": "the OA Ningyo pins",
+ "include_after": "#include \"rules/oa97naturespirit.h\"  // R726: the OA Nature Spirits pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R726 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R726 LANDED 2026-10-21: commit",
+  "  15687f2876a2145464a99aae14b259f29a769622",
+  "  (census 648 -> 649, pushed 16cefa3..15687f2), OA",
+  "  MONSTERS, the Nature Spirits, the Lesser and",
+  "  the Greater (capture pp. 278-279 print):",
+  "  rules/oa97naturespirit.h, prefix dkn",
+  "  (verified free at 16cefa3), ONE gap flip, gap",
+  "  census 179/56 - the nature spirits box (its",
+  "  two-line wrap handled, the from spanned both",
+  "  lines). A TABLES round. 6 consts + 52 bools +",
+  "  13 table cols (71 inlines): the paired",
+  "  CNSpirit[2] stat grid (the lesser - the",
+  "  common, the AC 7, the move 12, the HD 2 to 7,",
+  "  the 80% lair, the I treasure, the 1 attack of",
+  "  1-8, the 20% MR, the very-to-genius, the",
+  "  variable alignment and size; the greater - the",
+  "  rare, the AC 2, the HD 8 to 15, the 100% lair,",
+  "  the H treasure, the 2 attacks of 1-10/1-10,",
+  "  the 70% MR, the genius, the nil psionics); the",
+  "  six-rung XP ladder table, CXP[6] (the lesser",
+  "  118 + 2, 160 + 3, 215 + 4, 280 + 5, 475 + 6,",
+  "  700 + 8; the greater 1,275 + 10, 2,000 + 12,",
+  "  3,000 + 14, 4,400 + 16, 6,100 + 18,",
+  "  8,100 + 20); the nature and the aspects (the",
+  "  outward manifestations, the trees and flowers",
+  "  and rocks and bamboo of the lesser, the",
+  "  mountains and boulders and plains and ancient",
+  "  trees and islands of the greater, the",
+  "  lifeforce sympathy, the tree death, the",
+  "  earthquake example, the good and evil aspects,",
+  "  the 75% good chance, the seclusion, the danger",
+  "  manifestation, the testing of the renowned);",
+  "  the common powers (the invisible, the",
+  "  polymorph self, the detect evil and good, the",
+  "  detect magic, the detect harmony, the",
+  "  once-per-round at will); the lesser (the",
+  "  lifeforce vicinity, the handsome man or",
+  "  beautiful maiden of the Charisma 19 and",
+  "  Comeliness 21, the complete area knowledge,",
+  "  the found treasures and lost items, the",
+  "  no-abilities-beyond limit, the mortal",
+  "  marriages); the greater (the five-per-day",
+  "  shape change, the know history and aura, the",
+  "  weekly reward and ancient curse, the element",
+  "  spellcasting of the mountain earth and the",
+  "  island water, the +4 weapon floor, the",
+  "  own-element immunity, the complete event",
+  "  knowledge, the aloof and haughty and",
+  "  irritable temper, the slope village disdain,",
+  "  the offerings and shukenja consultations, the",
+  "  seldom intermarry). Zero false starts, first",
+  "  rverify GREEN, 100 mutants, 0 missed. Spec",
+  "  md5 14ca91c7300f17ab14fd124e0d62fa4f",
+  "  (authored-plus-newline md5",
+  "  e4193fc2d4671154dca81babad4d8829, the ritual",
+  "  gate, matched byte-exact; canvas md5",
+  "  4f73b141eeecd2b34863d0b8b5a46dd7). NEXT -",
+  "  R727: the Ningyo (capture p. 279), prefix dko",
+  "  (verified free at 15687f2), audit \"R727 OA",
+  "  monsters Ningyo audit\", include after",
+  "  rules/oa97naturespirit.h."
+ ]
+}

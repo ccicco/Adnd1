@@ -16834,6 +16834,67 @@ when both halves land.
   (verified free at 16cefa3), audit "R726 OA
   monsters Nature Spirits audit", include after
   rules/oa96nat.h.
+- R726 LANDED 2026-10-21: commit
+  15687f2876a2145464a99aae14b259f29a769622
+  (census 648 -> 649, pushed 16cefa3..15687f2), OA
+  MONSTERS, the Nature Spirits, the Lesser and
+  the Greater (capture pp. 278-279 print):
+  rules/oa97naturespirit.h, prefix dkn
+  (verified free at 16cefa3), ONE gap flip, gap
+  census 179/56 - the nature spirits box (its
+  two-line wrap handled, the from spanned both
+  lines). A TABLES round. 6 consts + 52 bools +
+  13 table cols (71 inlines): the paired
+  CNSpirit[2] stat grid (the lesser - the
+  common, the AC 7, the move 12, the HD 2 to 7,
+  the 80% lair, the I treasure, the 1 attack of
+  1-8, the 20% MR, the very-to-genius, the
+  variable alignment and size; the greater - the
+  rare, the AC 2, the HD 8 to 15, the 100% lair,
+  the H treasure, the 2 attacks of 1-10/1-10,
+  the 70% MR, the genius, the nil psionics); the
+  six-rung XP ladder table, CXP[6] (the lesser
+  118 + 2, 160 + 3, 215 + 4, 280 + 5, 475 + 6,
+  700 + 8; the greater 1,275 + 10, 2,000 + 12,
+  3,000 + 14, 4,400 + 16, 6,100 + 18,
+  8,100 + 20); the nature and the aspects (the
+  outward manifestations, the trees and flowers
+  and rocks and bamboo of the lesser, the
+  mountains and boulders and plains and ancient
+  trees and islands of the greater, the
+  lifeforce sympathy, the tree death, the
+  earthquake example, the good and evil aspects,
+  the 75% good chance, the seclusion, the danger
+  manifestation, the testing of the renowned);
+  the common powers (the invisible, the
+  polymorph self, the detect evil and good, the
+  detect magic, the detect harmony, the
+  once-per-round at will); the lesser (the
+  lifeforce vicinity, the handsome man or
+  beautiful maiden of the Charisma 19 and
+  Comeliness 21, the complete area knowledge,
+  the found treasures and lost items, the
+  no-abilities-beyond limit, the mortal
+  marriages); the greater (the five-per-day
+  shape change, the know history and aura, the
+  weekly reward and ancient curse, the element
+  spellcasting of the mountain earth and the
+  island water, the +4 weapon floor, the
+  own-element immunity, the complete event
+  knowledge, the aloof and haughty and
+  irritable temper, the slope village disdain,
+  the offerings and shukenja consultations, the
+  seldom intermarry). Zero false starts, first
+  rverify GREEN, 100 mutants, 0 missed. Spec
+  md5 14ca91c7300f17ab14fd124e0d62fa4f
+  (authored-plus-newline md5
+  e4193fc2d4671154dca81babad4d8829, the ritual
+  gate, matched byte-exact; canvas md5
+  4f73b141eeecd2b34863d0b8b5a46dd7). NEXT -
+  R727: the Ningyo (capture p. 279), prefix dko
+  (verified free at 15687f2), audit "R727 OA
+  monsters Ningyo audit", include after
+  rules/oa97naturespirit.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
