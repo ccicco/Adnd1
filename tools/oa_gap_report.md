@@ -2700,7 +2700,38 @@ description riding the same round.
     giant strength, the unbending Celestial
     mission); single-pass
     pins per the Chapter 9 provenance shift
-  - [ ] P'oh, Lesser Spirit (capture pp. 281-282)
+  - [x] P'oh, Lesser Spirit (capture pp. 281-282)
+    - R729: the dkq p oh pins - the stat
+    block (the very rare, the 1 appearing,
+    the AC 4, the move 6, the HD 5, the
+    30% lair, the Q treasure, the 1 attack
+    of 1-6 or by weapon, the drought
+    special, the +1 weapon floor, the
+    standard MR, the high wits, the
+    chaotic evil, the S size, the nil
+    psionics, the 280 + 5 xp); the
+    wandering spirit (the two to three
+    feet, the ruddy bronze skin, the red
+    hair, the day and night activity, the
+    common folk fear, the gifts and
+    offerings, the agricultural lands);
+    the drying touch (the withered tree
+    club, the iron rod, the save vs.
+    spell on each hit, the no-effect save,
+    the dessication of one Constitution
+    point, the unable floor at 2, the
+    death at 0, the invisibility at will);
+    the drought (the wu jen drought once
+    per week, the 5-mile diameter, the
+    cancel or slay or ice blight end, the
+    secure lair arrival, the venerate or
+    else announcement, the invisible
+    collection, the satisfied truce, the
+    angered drought, the country road
+    shrines, the Celestial Emperor
+    punishments, the two languages);
+    single-pass
+    pins per the Chapter 9 provenance shift
   - [ ] Shan Sao (capture p. 282)
   - [ ] Shirokinukatsukami, Greater Spirit
     (capture p. 283)

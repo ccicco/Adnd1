@@ -1,0 +1,596 @@
+{
+ "round": 729,
+ "title": "OA MONSTERS - the P oh, the Lesser Spirit: the drying drought of the country roads",
+ "prefix": "dkq",
+ "header_file": "rules/oa100poh.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 651,
+ "inline_count": 49,
+ "audit_label": "R729 OA monsters P oh audit",
+ "audit_comment": "OA round one hundred sixteen (capture pp. 281-282): the Chapter 12 monster roster - the p oh, the stat block and the drought doctrine riding together, the xp line as consts per the R723 pattern, the apostrophe of the print kept to the comments, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE P OH, printed capture pp. 281-282 - the drought spirit round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 182 closed, 53 open - the p oh box flips (census 651 -> 652); NEXT - R730: the Shan Sao (capture pp. 282-283), prefix dkr (verify free at the landing), audit \"R730 OA monsters Shan Sao audit\", include after rules/oa100poh.h"
+ },
+ "consts": [
+  {
+   "name": "dkqAppear",
+   "value": 1,
+   "comment": "the appearing - the 1 of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqAC",
+   "value": 4,
+   "comment": "the armor class - the 4 of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqMove",
+   "value": 6,
+   "comment": "the move - the 6 of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqHD",
+   "value": 5,
+   "comment": "the hit dice - the 5 of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqLairPct",
+   "value": 30,
+   "comment": "the in-lair percent - the 30% of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqAttackCount",
+   "value": 1,
+   "comment": "the attack count - the 1 of the number of attacks (print capture p. 281)"
+  },
+  {
+   "name": "dkqDmgMin",
+   "value": 1,
+   "comment": "the damage minimum - the 1 of the 1-6 or by weapon type (print capture p. 281)"
+  },
+  {
+   "name": "dkqDmgMax",
+   "value": 6,
+   "comment": "the damage maximum - the 6 of the 1-6 or by weapon type (print capture p. 281)"
+  },
+  {
+   "name": "dkqConFloor",
+   "value": 2,
+   "comment": "the Constitution floor - at Constitution 2 the character is unable to fight or stand (print capture p. 282)"
+  },
+  {
+   "name": "dkqDroughtPerWeek",
+   "value": 1,
+   "comment": "the drought uses - the create drought power is usable once per week (print capture p. 282)"
+  },
+  {
+   "name": "dkqDroughtDiameterMiles",
+   "value": 5,
+   "comment": "the drought area - it affects a 5-mile diameter area (print capture p. 282)"
+  },
+  {
+   "name": "dkqConLossPerHit",
+   "value": 1,
+   "comment": "the drying loss - the failed save costs one point of Constitution (print capture p. 282)"
+  },
+  {
+   "name": "dkqXPBase",
+   "value": 280,
+   "comment": "the xp base - the 280 of the V/280 + 5 per hp of the xp line (print capture p. 281)"
+  },
+  {
+   "name": "dkqXPPerHP",
+   "value": 5,
+   "comment": "the xp per hit point - the 5 of the V/280 + 5/hp (print capture p. 281)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkqFrequencyVeryRare",
+   "value": 1,
+   "comment": "the frequency - the very rare of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqTreasureQ",
+   "value": 1,
+   "comment": "the treasure type - the Q of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqDamageOrByWeapon",
+   "value": 1,
+   "comment": "the damage clause - the 1-6 or by weapon type of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqSpecialAttacksDrought",
+   "value": 1,
+   "comment": "the special attacks - the drought of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqPlusOneWeaponsToHit",
+   "value": 1,
+   "comment": "the special defenses - the +1 or better weapons to hit of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqMRStandard",
+   "value": 1,
+   "comment": "the magic resistance - the standard of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqIntHigh",
+   "value": 1,
+   "comment": "the intelligence - the high of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqAlignmentChaoticEvil",
+   "value": 1,
+   "comment": "the alignment - the chaotic evil of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqSizeSmall",
+   "value": 1,
+   "comment": "the size class - the S of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqPsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqModesNil",
+   "value": 1,
+   "comment": "the attack and defense modes - the nil of the stat block (print capture p. 281)"
+  },
+  {
+   "name": "dkqSmallHumanoid",
+   "value": 1,
+   "comment": "the build - a small humanoid, standing two to three feet tall (print capture p. 281)"
+  },
+  {
+   "name": "dkqRuddyBronzeSkin",
+   "value": 1,
+   "comment": "the skin - ruddy bronze (print capture p. 281)"
+  },
+  {
+   "name": "dkqRedHair",
+   "value": 1,
+   "comment": "the hair - red (print capture p. 281)"
+  },
+  {
+   "name": "dkqWanderingSpirit",
+   "value": 1,
+   "comment": "the habit - a wandering spirit, active during both day and night (print capture p. 281)"
+  },
+  {
+   "name": "dkqFearedByCommonFolk",
+   "value": 1,
+   "comment": "the fear - greatly feared by the common folk because of its powers (print capture p. 281)"
+  },
+  {
+   "name": "dkqGivenOfferings",
+   "value": 1,
+   "comment": "the appeasement - often given gifts and offerings to appease it (print capture p. 281)"
+  },
+  {
+   "name": "dkqAgriculturalLands",
+   "value": 1,
+   "comment": "the haunt - most commonly encountered in agricultural lands well away from populous areas (print capture p. 281)"
+  },
+  {
+   "name": "dkqClubFromWitheredTree",
+   "value": 1,
+   "comment": "the club - attacks either with a club cut from a withered and dead tree (print capture p. 282)"
+  },
+  {
+   "name": "dkqIronRod",
+   "value": 1,
+   "comment": "the rod - or with an iron rod (print capture p. 282)"
+  },
+  {
+   "name": "dkqHitForcesSaveVsSpell",
+   "value": 1,
+   "comment": "the drying clause - in addition to the damage, the person struck must make a saving throw vs. spell (print capture p. 282)"
+  },
+  {
+   "name": "dkqSaveSuccessNoEffect",
+   "value": 1,
+   "comment": "the save success - if the saving throw is successful, the victim suffers no further effect (print capture p. 282)"
+  },
+  {
+   "name": "dkqDessicatedOnFailure",
+   "value": 1,
+   "comment": "the save failure - the victim is dessicated by the drying touch, suffering the loss of one point of Constitution (print capture p. 282)"
+  },
+  {
+   "name": "dkqConZeroIsDeath",
+   "value": 1,
+   "comment": "the death floor - if the Constitution is reduced to 0, the character is dead (print capture p. 282)"
+  },
+  {
+   "name": "dkqInvisibleAtWill",
+   "value": 1,
+   "comment": "the invisibility - the p oh can become invisible at will (print capture p. 282)"
+  },
+  {
+   "name": "dkqCreatesDrought",
+   "value": 1,
+   "comment": "the drought power - the power to create drought as per the wu jen spell (print capture p. 282)"
+  },
+  {
+   "name": "dkqDroughtUntilCancelled",
+   "value": 1,
+   "comment": "the drought duration - it remains until the p oh cancels it, is slain, or the spell is countered by ice blight (print capture p. 282)"
+  },
+  {
+   "name": "dkqFindsSecureLair",
+   "value": 1,
+   "comment": "the arrival - the p oh arrives in an area, finding some secure lair (print capture p. 282)"
+  },
+  {
+   "name": "dkqAnnouncesToPeasants",
+   "value": 1,
+   "comment": "the announcement - it appears to the peasants, announcing it has settled in their area and that they must venerate and appease it or else (print capture p. 282)"
+  },
+  {
+   "name": "dkqCollectsWhileInvisible",
+   "value": 1,
+   "comment": "the collection - the p oh collects the offerings while invisible (print capture p. 282)"
+  },
+  {
+   "name": "dkqSatisfiedByOfferings",
+   "value": 1,
+   "comment": "the truce - if the offerings are suitable, the p oh remains in the area, not causing any mischief (print capture p. 282)"
+  },
+  {
+   "name": "dkqDroughtOnInsufficientOfferings",
+   "value": 1,
+   "comment": "the anger - should the offerings be insufficient, refused, or missed, the p oh becomes angered and causes a drought to settle on the area (print capture p. 282)"
+  },
+  {
+   "name": "dkqCountryRoadShrines",
+   "value": 1,
+   "comment": "the shrines - it is not uncommon to see small shrines dedicated to the p oh set up along country roads (print capture p. 282)"
+  },
+  {
+   "name": "dkqSentByCelestialEmperor",
+   "value": 1,
+   "comment": "the punishment clause - on rare occasions a p oh is sent to an area by the Celestial Emperor to punish the inhabitants for some failing or crime (print capture p. 282)"
+  },
+  {
+   "name": "dkqSpeaksTwoLanguages",
+   "value": 1,
+   "comment": "the languages - the language of its kind and the trade language (print capture p. 282)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the stat block - the stat block pins, healthy values, each condition false",
+   "expr": "m['dkqFrequencyVeryRare']() != 1 or m['dkqAppear']() != 1 or m['dkqAC']() != 4 or m['dkqMove']() != 6 or m['dkqHD']() != 5 or m['dkqLairPct']() != 30 or m['dkqTreasureQ']() != 1 or m['dkqAttackCount']() != 1 or m['dkqDmgMin']() != 1 or m['dkqDmgMax']() != 6 or m['dkqDamageOrByWeapon']() != 1 or m['dkqSpecialAttacksDrought']() != 1 or m['dkqPlusOneWeaponsToHit']() != 1 or m['dkqMRStandard']() != 1 or m['dkqIntHigh']() != 1 or m['dkqAlignmentChaoticEvil']() != 1 or m['dkqSizeSmall']() != 1 or m['dkqPsionicNil']() != 1 or m['dkqModesNil']() != 1"
+  },
+  {
+   "note": "the xp line - the V/280 + 5 per hp, healthy values, each condition false",
+   "expr": "m['dkqXPBase']() != 280 or m['dkqXPPerHP']() != 5"
+  },
+  {
+   "note": "the wandering spirit - the look and the fear, healthy values, each condition false",
+   "expr": "m['dkqSmallHumanoid']() != 1 or m['dkqRuddyBronzeSkin']() != 1 or m['dkqRedHair']() != 1 or m['dkqWanderingSpirit']() != 1 or m['dkqFearedByCommonFolk']() != 1 or m['dkqGivenOfferings']() != 1 or m['dkqAgriculturalLands']() != 1"
+  },
+  {
+   "note": "the drying touch - the weapons, the save, and the Constitution ladder, healthy values, each condition false",
+   "expr": "m['dkqClubFromWitheredTree']() != 1 or m['dkqIronRod']() != 1 or m['dkqHitForcesSaveVsSpell']() != 1 or m['dkqSaveSuccessNoEffect']() != 1 or m['dkqDessicatedOnFailure']() != 1 or m['dkqConLossPerHit']() != 1 or m['dkqConFloor']() != 2 or m['dkqConZeroIsDeath']() != 1 or m['dkqInvisibleAtWill']() != 1"
+  },
+  {
+   "note": "the drought - the power and the peasant squeeze, healthy values, each condition false",
+   "expr": "m['dkqCreatesDrought']() != 1 or m['dkqDroughtPerWeek']() != 1 or m['dkqDroughtUntilCancelled']() != 1 or m['dkqDroughtDiameterMiles']() != 5 or m['dkqFindsSecureLair']() != 1 or m['dkqAnnouncesToPeasants']() != 1 or m['dkqCollectsWhileInvisible']() != 1 or m['dkqSatisfiedByOfferings']() != 1 or m['dkqDroughtOnInsufficientOfferings']() != 1 or m['dkqCountryRoadShrines']() != 1 or m['dkqSentByCelestialEmperor']() != 1 or m['dkqSpeaksTwoLanguages']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat block": [
+   {
+    "kind": "bool",
+    "name": "dkqFrequencyVeryRare"
+   },
+   {
+    "kind": "const",
+    "name": "dkqAppear"
+   },
+   {
+    "kind": "const",
+    "name": "dkqAC"
+   },
+   {
+    "kind": "const",
+    "name": "dkqMove"
+   },
+   {
+    "kind": "const",
+    "name": "dkqHD"
+   },
+   {
+    "kind": "const",
+    "name": "dkqLairPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqTreasureQ"
+   },
+   {
+    "kind": "const",
+    "name": "dkqAttackCount"
+   },
+   {
+    "kind": "const",
+    "name": "dkqDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dkqDmgMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqDamageOrByWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqSpecialAttacksDrought"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqPlusOneWeaponsToHit"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqMRStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqIntHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqAlignmentChaoticEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqSizeSmall"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqModesNil"
+   }
+  ],
+  "the xp line": [
+   {
+    "kind": "const",
+    "name": "dkqXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "dkqXPPerHP"
+   }
+  ],
+  "the wandering spirit": [
+   {
+    "kind": "bool",
+    "name": "dkqSmallHumanoid"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqRuddyBronzeSkin"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqRedHair"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqWanderingSpirit"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqFearedByCommonFolk"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqGivenOfferings"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqAgriculturalLands"
+   }
+  ],
+  "the drying touch": [
+   {
+    "kind": "bool",
+    "name": "dkqClubFromWitheredTree"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqIronRod"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqHitForcesSaveVsSpell"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqSaveSuccessNoEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqDessicatedOnFailure"
+   },
+   {
+    "kind": "const",
+    "name": "dkqConLossPerHit"
+   },
+   {
+    "kind": "const",
+    "name": "dkqConFloor"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqConZeroIsDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqInvisibleAtWill"
+   }
+  ],
+  "the drought": [
+   {
+    "kind": "bool",
+    "name": "dkqCreatesDrought"
+   },
+   {
+    "kind": "const",
+    "name": "dkqDroughtPerWeek"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqDroughtUntilCancelled"
+   },
+   {
+    "kind": "const",
+    "name": "dkqDroughtDiameterMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqFindsSecureLair"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqAnnouncesToPeasants"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqCollectsWhileInvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqSatisfiedByOfferings"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqDroughtOnInsufficientOfferings"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqCountryRoadShrines"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqSentByCelestialEmperor"
+   },
+   {
+    "kind": "bool",
+    "name": "dkqSpeaksTwoLanguages"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the p oh box",
+   "from": "  - [ ] P'oh, Lesser Spirit (capture pp. 281-282)",
+   "to": "  - [x] P'oh, Lesser Spirit (capture pp. 281-282)\n    - R729: the dkq p oh pins - the stat\n    block (the very rare, the 1 appearing,\n    the AC 4, the move 6, the HD 5, the\n    30% lair, the Q treasure, the 1 attack\n    of 1-6 or by weapon, the drought\n    special, the +1 weapon floor, the\n    standard MR, the high wits, the\n    chaotic evil, the S size, the nil\n    psionics, the 280 + 5 xp); the\n    wandering spirit (the two to three\n    feet, the ruddy bronze skin, the red\n    hair, the day and night activity, the\n    common folk fear, the gifts and\n    offerings, the agricultural lands);\n    the drying touch (the withered tree\n    club, the iron rod, the save vs.\n    spell on each hit, the no-effect save,\n    the dessication of one Constitution\n    point, the unable floor at 2, the\n    death at 0, the invisibility at will);\n    the drought (the wu jen drought once\n    per week, the 5-mile diameter, the\n    cancel or slay or ice blight end, the\n    secure lair arrival, the venerate or\n    else announcement, the invisible\n    collection, the satisfied truce, the\n    angered drought, the country road\n    shrines, the Celestial Emperor\n    punishments, the two languages);\n    single-pass\n    pins per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 182,
+  "open": 53
+ },
+ "include_comment": "the OA P oh pins",
+ "include_after": "#include \"rules/oa99oni.h\"  // R728: the OA Oni pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R728 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R728 LANDED 2026-10-21: commit",
+  "  a20e85ab9c8a965673ee32a5f1f96c202b17df17",
+  "  (census 650 -> 651, pushed d583601..a20e85a), OA",
+  "  MONSTERS, the Oni, Lesser Spirit (capture",
+  "  pp. 280-281 print): rules/oa99oni.h, prefix",
+  "  dkp (verified free at d583601), ONE gap flip,",
+  "  gap census 181/54 - the oni box. A TABLES",
+  "  round. 11 consts + 56 bools + 10 table cols",
+  "  (77 inlines): the three-column COni[3] stat",
+  "  grid (the common oni - the common, the 1-100",
+  "  appearing of the capture misreading i-100,",
+  "  the AC 4, the move 9, the HD 8, the 10% lair,",
+  "  the A treasure, the 2 attacks of 3-10/3-10",
+  "  of the capture misreading 310/310, the",
+  "  spells, the lawful evil, the standard MR,",
+  "  the 650 + 10 xp; the go-zu - the very rare,",
+  "  the 1-20, the AC 0, the move 9, the HD 12 +",
+  "  8, the nil lair, the S treasure, the 3",
+  "  attacks of 6-16 twice and 1-10, the",
+  "  regeneration, the 20% MR, the lawful neutral,",
+  "  the 5,250 + 16 xp; the me-zu - the very",
+  "  rare, the 1-20, the AC 2, the move 12, the",
+  "  HD 10 + 5, the nil lair, the S treasure,",
+  "  the 2 attacks of 3-18/3-18 of the capture",
+  "  misreading 3-1813-18, the regeneration, the",
+  "  40% MR, the lawful neutral, the 3,150 + 14",
+  "  xp; the L sizes and nil psionics of all",
+  "  three); the fearsome spirit (the desolate",
+  "  haunts, the seven to eight feet, the one to",
+  "  three eyes, the one or two horns, the coarse",
+  "  hair, the dirty talons, the red skins of the",
+  "  five colors, the blue ogre magi, the ragged",
+  "  imitation dress); the common oni (the",
+  "  mountain and ruin and graveyard haunts, the",
+  "  highway shrine terror, the bloodthirsty",
+  "  cruelty, the one-hand two-handed sword, the",
+  "  thrice polymorph and thrice fly, the twice",
+  "  invisible, the once cloud trapeze, the fear",
+  "  at will, the command of the bakemono and",
+  "  goblin rats and gaki, the 10% summon of the",
+  "  2d10, the 4d10 lair court, the five",
+  "  languages); the go-zu (the eight to nine",
+  "  feet with the bull heads, the Celestial",
+  "  soldiers, the Emperor army bulk, the lands",
+  "  of the dead, the soldier dress, the",
+  "  five-weapon roster, the two attacks and the",
+  "  horn gore, the at-will powers with the fire",
+  "  shuriken, the twice cloud trapeze, the",
+  "  automatic invisible detection, the",
+  "  3-per-round regeneration, the hill giant",
+  "  strength, the six language rosters); the",
+  "  me-zu (the horse heads, the higher rank, the",
+  "  whips and lassos, the at-will powers, the",
+  "  twice ethereal or astral, the thrice cloud",
+  "  trapeze, the wu jen spellcasting of the",
+  "  hit-dice level, the true seeing at all",
+  "  times, the any language, the 3-per-round",
+  "  regeneration, the stone giant strength, the",
+  "  unbending Celestial mission). One wiring",
+  "  stumble caught in-authored: the grid carries",
+  "  three legit zeros (the go-zu AC 0, the",
+  "  common HD bonus 0, the common standard MR",
+  "  0%), so the AC, HDBonus, and MRPct column",
+  "  sentinel censuses are 1 each (an R722-class",
+  "  find, the healthy base flagged exactly 4",
+  "  bad); First rverify GREEN after the fix, 97",
+  "  mutants, 0 missed. Spec md5",
+  "  463470999cce45cc33af5576c0705aac",
+  "  (authored-plus-newline md5",
+  "  2712bf4b31d24c3ffe8a7c8ce789a5a9, the ritual",
+  "  gate, matched byte-exact; canvas md5",
+  "  f2166e602707b9370f300bc643fb1707). NEXT -",
+  "  R729: the P oh, the Lesser Spirit (capture",
+  "  pp. 281-282), prefix dkq (verified free at",
+  "  a20e85a), audit \"R729 OA monsters P oh",
+  "  audit\", include after rules/oa99oni.h."
+ ]
+}

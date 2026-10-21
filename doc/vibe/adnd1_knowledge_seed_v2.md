@@ -16934,6 +16934,82 @@ when both halves land.
   pp. 280-281), prefix dkp (verified free at
   d583601), audit "R728 OA monsters Oni audit",
   include after rules/oa98ningyo.h.
+- R728 LANDED 2026-10-21: commit
+  a20e85ab9c8a965673ee32a5f1f96c202b17df17
+  (census 650 -> 651, pushed d583601..a20e85a), OA
+  MONSTERS, the Oni, Lesser Spirit (capture
+  pp. 280-281 print): rules/oa99oni.h, prefix
+  dkp (verified free at d583601), ONE gap flip,
+  gap census 181/54 - the oni box. A TABLES
+  round. 11 consts + 56 bools + 10 table cols
+  (77 inlines): the three-column COni[3] stat
+  grid (the common oni - the common, the 1-100
+  appearing of the capture misreading i-100,
+  the AC 4, the move 9, the HD 8, the 10% lair,
+  the A treasure, the 2 attacks of 3-10/3-10
+  of the capture misreading 310/310, the
+  spells, the lawful evil, the standard MR,
+  the 650 + 10 xp; the go-zu - the very rare,
+  the 1-20, the AC 0, the move 9, the HD 12 +
+  8, the nil lair, the S treasure, the 3
+  attacks of 6-16 twice and 1-10, the
+  regeneration, the 20% MR, the lawful neutral,
+  the 5,250 + 16 xp; the me-zu - the very
+  rare, the 1-20, the AC 2, the move 12, the
+  HD 10 + 5, the nil lair, the S treasure,
+  the 2 attacks of 3-18/3-18 of the capture
+  misreading 3-1813-18, the regeneration, the
+  40% MR, the lawful neutral, the 3,150 + 14
+  xp; the L sizes and nil psionics of all
+  three); the fearsome spirit (the desolate
+  haunts, the seven to eight feet, the one to
+  three eyes, the one or two horns, the coarse
+  hair, the dirty talons, the red skins of the
+  five colors, the blue ogre magi, the ragged
+  imitation dress); the common oni (the
+  mountain and ruin and graveyard haunts, the
+  highway shrine terror, the bloodthirsty
+  cruelty, the one-hand two-handed sword, the
+  thrice polymorph and thrice fly, the twice
+  invisible, the once cloud trapeze, the fear
+  at will, the command of the bakemono and
+  goblin rats and gaki, the 10% summon of the
+  2d10, the 4d10 lair court, the five
+  languages); the go-zu (the eight to nine
+  feet with the bull heads, the Celestial
+  soldiers, the Emperor army bulk, the lands
+  of the dead, the soldier dress, the
+  five-weapon roster, the two attacks and the
+  horn gore, the at-will powers with the fire
+  shuriken, the twice cloud trapeze, the
+  automatic invisible detection, the
+  3-per-round regeneration, the hill giant
+  strength, the six language rosters); the
+  me-zu (the horse heads, the higher rank, the
+  whips and lassos, the at-will powers, the
+  twice ethereal or astral, the thrice cloud
+  trapeze, the wu jen spellcasting of the
+  hit-dice level, the true seeing at all
+  times, the any language, the 3-per-round
+  regeneration, the stone giant strength, the
+  unbending Celestial mission). One wiring
+  stumble caught in-authored: the grid carries
+  three legit zeros (the go-zu AC 0, the
+  common HD bonus 0, the common standard MR
+  0%), so the AC, HDBonus, and MRPct column
+  sentinel censuses are 1 each (an R722-class
+  find, the healthy base flagged exactly 4
+  bad); First rverify GREEN after the fix, 97
+  mutants, 0 missed. Spec md5
+  463470999cce45cc33af5576c0705aac
+  (authored-plus-newline md5
+  2712bf4b31d24c3ffe8a7c8ce789a5a9, the ritual
+  gate, matched byte-exact; canvas md5
+  f2166e602707b9370f300bc643fb1707). NEXT -
+  R729: the P oh, the Lesser Spirit (capture
+  pp. 281-282), prefix dkq (verified free at
+  a20e85a), audit "R729 OA monsters P oh
+  audit", include after rules/oa99oni.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
