@@ -16471,6 +16471,36 @@ when both halves land.
   NEXT - R717: the Goblin Spider (capture p. 267), prefix
   dke (verified free at 91bfd24), audit "R717 OA monsters
   Goblin Spider audit", include after rules/oa87goblinrat.h.
+- R717 LANDED 2026-10-21: commit 658be4c4d62f071a2ecbf496ce8d6dee87fe1d10
+  (census 639 -> 640, pushed 91bfd24..658be4c), OA MONSTERS - the
+  Goblin Spider (capture pp. 267-268 print): rules/
+  oa88goblinspider.h, prefix dke (verified free at 91bfd24),
+  ONE gap flip, gap census 170/65 - the goblin spider box.
+  29 consts + 38 bools (67 inlines): the stat block (the
+  rare 1-4, the AC 4, the move 18, the HD 6 to 9, the 80%
+  lair, the C treasure, the 2 attacks of 1-8, the surprise
+  and grasp, the +1 weapon to hit, the 20% MR, the low
+  intelligence, the neutral evil, the L 8-10, the nil
+  psionics); the xp ladder (the 575 + 6, the 900 + 8, the
+  1,350 + 10, the 2,200 + 12); the earth spider (the huge
+  furry evil cast, the wooded mountains, the former
+  dominion, the invaders grudge); the trapdoor ambush (the
+  no-webs tunnels, the concealed trapdoor, the overhead
+  vibrations, the 1-4 surprise, the drag into the lair);
+  the grasp (the both-hits hold, the -4 held penalty, the
+  bend bars escape, the 20-point two-character rescue,
+  the no-other-attacks grip); the mimicry (the any-voice
+  imitation, the repeat-only parrot clause, the lure to
+  doom, the four tongues); the 30% 2d4 giant spider
+  guards. Zero false starts, first rverify GREEN, 67
+  mutants, 0 missed. Spec md5
+  1638a46b365c15a57139746c38267253 (authored-plus-newline
+  md5 b0b77fdfbdbdd43dbfbe2d3d43ea162b, the ritual gate,
+  matched byte-exact; canvas md5
+  d3ba7e1b576afadf5f1bcc6017f1e849). NEXT - R718: the
+  Hai Nu (capture p. 268), prefix dkf (verified free at
+  658be4c), audit "R718 OA monsters Hai Nu audit",
+  include after rules/oa88goblinspider.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

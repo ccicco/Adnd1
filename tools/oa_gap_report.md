@@ -2288,7 +2288,35 @@ description riding the same round.
     doom, the four tongues), the 30% 2d4
     giant spider guards; single-pass pins
     per the Chapter 9 provenance shift
-  - [ ] Hai Nu (capture p. 268)
+  - [x] Hai Nu (capture p. 268)
+    - R718: the dkf hai nu pins - the
+    stat block (the rare 4-40, the AC 7,
+    the move 6/15, the HD 1 to 4, the 30%
+    lair, the U treasure, the 1 attack by
+    weapon, the nil special attacks, the
+    water immunity, the standard MR, the
+    average-to-high, the lawful neutral,
+    the M size, the nil psionics), the xp
+    ladder (the 14 + 1, the 28 + 2, the 50
+    + 3, the 85 + 4), the aquatic servitor
+    (the webbed hands and feet, the
+    shimmering fur, the warm shallow seas,
+    the Sea Lord court, the two tongues),
+    the matriarchal community (the sunken
+    ships and kelp, the bright treasures,
+    the 75% female, the 6 HD AC 5 matron,
+    the 2d6 tamed sharks, the 40% 3d4
+    escort), the arms table (the 20% short
+    sword, the 50% trident and speargun,
+    the 20% trident and dagger, the 10%
+    sword and net), the fisherman feud
+    (the seldom-attacked vessels, the cut
+    lines and fouled nets, the petition to
+    the Sea Lord), the element edges (the
+    1-per-round out-of-water damage, the
+    double fire damage, the +1-per-die
+    cold damage); single-pass pins per the
+    Chapter 9 provenance shift
   - [ ] Hsing-Sing (capture p. 269)
   - [ ] Hu Hsien, Lesser Spirit (capture pp. 269-272)
   - [ ] Kala (capture p. 272)
