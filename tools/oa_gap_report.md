@@ -2564,8 +2564,55 @@ description riding the same round.
     healing bar until cured);
     single-pass
     pins per the Chapter 9 provenance shift
-  - [ ] Nature Spirits (capture pp. 278-279) - the
+  - [x] Nature Spirits (capture pp. 278-279) - the
     greater and lesser types
+    - R726: the dkn nature spirit pins - the
+    stat grid (the lesser common and the
+    greater rare, the 1 appearing, the AC 7
+    and 2, the moves 12, the HD 2 to 7 and
+    8 to 15, the lairs 80% and 100%, the I
+    and H treasures, the 1 and 2 attacks of
+    the 1-8 and 1-10/1-10, the see-below
+    specials, the 20% and 70% MR, the very-
+    to-genius and genius wits, the variable
+    alignments and sizes, the nil psionics);
+    the xp ladders (the lesser 118 + 2,
+    160 + 3, 215 + 4, 280 + 5, 475 + 6,
+    700 + 8; the greater 1,275 + 10,
+    2,000 + 12, 3,000 + 14, 4,400 + 16,
+    6,100 + 18, 8,100 + 20); the nature and
+    the aspects (the outward manifestations,
+    the trees and flowers and rocks and
+    bamboo of the lesser, the mountains and
+    boulders and plains and ancient trees
+    and islands of the greater, the
+    lifeforce sympathy, the tree death, the
+    earthquake example, the good and evil
+    aspects, the 75% good chance, the
+    seclusion, the danger manifestation, the
+    testing of the renowned); the common
+    powers (the invisible, the polymorph
+    self, the detect evil and good, the
+    detect magic, the detect harmony, the
+    once-per-round at will); the lesser (the
+    lifeforce vicinity, the handsome man or
+    beautiful maiden of the Charisma 19 and
+    Comeliness 21, the complete area
+    knowledge, the found treasures and lost
+    items, the no-abilities-beyond limit, the
+    mortal marriages); the greater (the
+    five-per-day shape change, the know
+    history and aura, the weekly reward and
+    ancient curse, the element spellcasting
+    of the mountain earth and the island
+    water, the +4 weapon floor, the own-
+    element immunity, the complete event
+    knowledge, the aloof and haughty and
+    irritable temper, the slope village
+    disdain, the offerings and shukenja
+    consultations, the seldom intermarry);
+    single-pass
+    pins per the Chapter 9 provenance shift
   - [ ] Ningyo (capture p. 279)
   - [ ] Oni, Lesser Spirit (capture pp. 280-281)
   - [ ] P'oh, Lesser Spirit (capture pp. 281-282)

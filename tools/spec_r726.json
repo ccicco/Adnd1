@@ -1,0 +1,806 @@
+{
+ "round": 726,
+ "title": "OA MONSTERS - the Nature Spirits: the lesser and the greater children of the lifeforce",
+ "prefix": "dkn",
+ "header_file": "rules/oa97naturespirit.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 648,
+ "inline_count": 71,
+ "audit_label": "R726 OA monsters Nature Spirits audit",
+ "audit_comment": "OA round one hundred thirteen (capture pp. 278-279): the Chapter 12 monster roster - the nature spirits, the paired stat grid and the six-rung xp ladders riding together with the lifeforce and aspect doctrine, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE NATURE SPIRITS, printed capture pp. 278-279 - the lifeforce round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 179 closed, 56 open - the nature spirits box flips (census 648 -> 649); NEXT - R727: the Ningyo (capture p. 279), prefix dko (verify free at the landing), audit \"R727 OA monsters Ningyo audit\", include after rules/oa97naturespirit.h"
+ },
+ "consts": [
+  {
+   "name": "dknNSCount",
+   "value": 2,
+   "comment": "the nature spirit table row count - the lesser and the greater of the stat grid (print capture p. 278)"
+  },
+  {
+   "name": "dknXPCount",
+   "value": 6,
+   "comment": "the xp ladder row count - the six rungs of each column, the 2 to 7 HD of the lesser and the 8 to 15 HD of the greater (print capture p. 278)"
+  },
+  {
+   "name": "dknGoodAspectChancePct",
+   "value": 75,
+   "comment": "the good aspect chance - when encountered there is a 75% chance that the good aspect is dominant (print capture p. 278)"
+  },
+  {
+   "name": "dknPolymorphCharisma",
+   "value": 19,
+   "comment": "the polymorphed Charisma - the 19 of the handsome man or beautiful maiden form (print capture p. 279)"
+  },
+  {
+   "name": "dknPolymorphComeliness",
+   "value": 21,
+   "comment": "the polymorphed Comeliness - the 21 of the handsome man or beautiful maiden form, the capture misreading Corneliness (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterShapechangePerDay",
+   "value": 5,
+   "comment": "the greater shape change uses - five times per day (print capture p. 279)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dknLesserCommon",
+   "value": 1,
+   "comment": "the lesser frequency - the common of the stat grid header (print capture p. 278)"
+  },
+  {
+   "name": "dknGreaterRare",
+   "value": 1,
+   "comment": "the greater frequency - the rare of the stat grid header (print capture p. 278)"
+  },
+  {
+   "name": "dknAppear",
+   "value": 1,
+   "comment": "the appearing - the 1 of both columns of the stat grid (print capture p. 278)"
+  },
+  {
+   "name": "dknTreasureLesserI",
+   "value": 1,
+   "comment": "the lesser treasure type - the I of the stat grid (print capture p. 278)"
+  },
+  {
+   "name": "dknTreasureGreaterH",
+   "value": 1,
+   "comment": "the greater treasure type - the H of the stat grid (print capture p. 278)"
+  },
+  {
+   "name": "dknSpecialAttacksSeeBelow",
+   "value": 1,
+   "comment": "the special attacks - the see below of both columns, the powers riding below (print capture p. 278)"
+  },
+  {
+   "name": "dknSpecialDefensesSeeBelow",
+   "value": 1,
+   "comment": "the special defenses - the see below of both columns (print capture p. 278)"
+  },
+  {
+   "name": "dknIntLesserVeryToGenius",
+   "value": 1,
+   "comment": "the lesser intelligence - the very to genius of the stat grid (print capture p. 278)"
+  },
+  {
+   "name": "dknIntGreaterGenius",
+   "value": 1,
+   "comment": "the greater intelligence - the genius of the stat grid (print capture p. 278)"
+  },
+  {
+   "name": "dknAlignmentVariable",
+   "value": 1,
+   "comment": "the alignment - the variable of the stat grid, the aspect doctrine below deciding (print capture p. 278)"
+  },
+  {
+   "name": "dknSizeVariable",
+   "value": 1,
+   "comment": "the size - the variable of the stat grid (print capture p. 278)"
+  },
+  {
+   "name": "dknPsionicNil",
+   "value": 1,
+   "comment": "the psionic ability - the nil of both columns of the stat grid (print capture p. 278)"
+  },
+  {
+   "name": "dknModesNil",
+   "value": 1,
+   "comment": "the attack and defense modes - the nil of both columns (print capture p. 278)"
+  },
+  {
+   "name": "dknOutwardManifestations",
+   "value": 1,
+   "comment": "the nature - the outward manifestations of the powers of various plants and inanimate objects found in nature (print capture p. 278)"
+  },
+  {
+   "name": "dknLesserOfTreesFlowersRocksBamboo",
+   "value": 1,
+   "comment": "the lesser kinds - the spirits of trees, flowers, rocks, and bamboo groves (print capture p. 278)"
+  },
+  {
+   "name": "dknGreaterOfMountainsBouldersPlainsIslands",
+   "value": 1,
+   "comment": "the greater kinds - those of mountains, boulders, plains, extremely ancient trees, and small islands (print capture p. 278)"
+  },
+  {
+   "name": "dknLifeforceObjectOrPlace",
+   "value": 1,
+   "comment": "the binding - all are associated with a particular object or place from which they derive their life force (print capture p. 278)"
+  },
+  {
+   "name": "dknDamageAffectsSpirit",
+   "value": 1,
+   "comment": "the sympathy - damage done to the thing or place affects the spirit accordingly (print capture p. 278)"
+  },
+  {
+   "name": "dknTreeDeathKillsLesser",
+   "value": 1,
+   "comment": "the lesser example - cutting down the tree which is the lifeforce of a lesser nature spirit would cause the death of that spirit (print capture p. 278)"
+  },
+  {
+   "name": "dknEarthquakeMayAngerOrInjure",
+   "value": 1,
+   "comment": "the greater example - an earthquake which strikes the mountain of a greater nature spirit may anger or injure it, depending on the havoc wreaked (print capture p. 278)"
+  },
+  {
+   "name": "dknTwoAspects",
+   "value": 1,
+   "comment": "the two aspects - they are all possessed of a good and an evil aspect (print capture p. 278)"
+  },
+  {
+   "name": "dknGoodAspectGentle",
+   "value": 1,
+   "comment": "the good aspect - it leads the spirit to be gentle, helpful, and kind (print capture p. 278)"
+  },
+  {
+   "name": "dknEvilAspectMalicious",
+   "value": 1,
+   "comment": "the evil aspect - it causes the spirit to be malicious, savage, and cruel (print capture p. 278)"
+  },
+  {
+   "name": "dknShunsMortalWorld",
+   "value": 1,
+   "comment": "the seclusion - normally the spirit shuns contact with the mortal world, preferring to peacefully reside within the thing or place that forms its lifeforce (print capture p. 278)"
+  },
+  {
+   "name": "dknAppearsInDanger",
+   "value": 1,
+   "comment": "the manifestation clause - in times of danger the nature spirit manifests itself (print capture p. 278)"
+  },
+  {
+   "name": "dknMeetsPeopleOfRenown",
+   "value": 1,
+   "comment": "the testing clause - they often appear to meet or test people of renown and fame (print capture p. 278)"
+  },
+  {
+   "name": "dknCommonInvisible",
+   "value": 1,
+   "comment": "the first common power - become invisible (print capture p. 279)"
+  },
+  {
+   "name": "dknCommonPolymorphSelf",
+   "value": 1,
+   "comment": "the second common power - polymorph self (print capture p. 279)"
+  },
+  {
+   "name": "dknCommonDetectEvilGood",
+   "value": 1,
+   "comment": "the third common power - detect evil and good (print capture p. 279)"
+  },
+  {
+   "name": "dknCommonDetectMagic",
+   "value": 1,
+   "comment": "the fourth common power - detect magic (print capture p. 279)"
+  },
+  {
+   "name": "dknCommonDetectHarmony",
+   "value": 1,
+   "comment": "the fifth common power - detect harmony (print capture p. 279)"
+  },
+  {
+   "name": "dknCommonOncePerRoundAtWill",
+   "value": 1,
+   "comment": "the use rate - the common powers are usable once per round at will (print capture p. 279)"
+  },
+  {
+   "name": "dknLesserFoundNearLifeforce",
+   "value": 1,
+   "comment": "the lesser haunt - most often encountered in the vicinity of their lifeforce (print capture p. 279)"
+  },
+  {
+   "name": "dknLesserPolymorphedForm",
+   "value": 1,
+   "comment": "the lesser look - when encountered usually polymorphed into the form of a handsome man or beautiful maiden (print capture p. 279)"
+  },
+  {
+   "name": "dknLesserCompleteAreaKnowledge",
+   "value": 1,
+   "comment": "the lesser knowledge - complete knowledge of the area around their lifeforce (print capture p. 279)"
+  },
+  {
+   "name": "dknLesserFindsTreasuresAndLostItems",
+   "value": 1,
+   "comment": "the lesser gift - able to find hidden treasures and lost items in that area without difficulty (print capture p. 279)"
+  },
+  {
+   "name": "dknLesserNoAbilitiesBeyond",
+   "value": 1,
+   "comment": "the lesser limit - they possess no special abilities beyond those already listed (print capture p. 279)"
+  },
+  {
+   "name": "dknLesserMarriesMortals",
+   "value": 1,
+   "comment": "the lesser romance - not uncommon for one to become attracted to and marry a mortal, such romances forming the basis for many tales and legends (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterConsiderablyMorePowerful",
+   "value": 1,
+   "comment": "the greater standing - considerably more powerful than those of the lesser kind (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterKnowHistoryAura",
+   "value": 1,
+   "comment": "the greater at-will powers - know history and aura at will (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterRewardOncePerWeek",
+   "value": 1,
+   "comment": "the greater weekly reward - reward once per week (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterAncientCurseOncePerWeek",
+   "value": 1,
+   "comment": "the greater weekly curse - ancient curse once per week (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterCastsElementSpells",
+   "value": 1,
+   "comment": "the element spellcasting - able to cast all wu jen spells of the element of their lifeforce, except conjure elemental, once per day (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterMountainEarthSpells",
+   "value": 1,
+   "comment": "the mountain example - a greater mountain spirit can cast all earth-related spells (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterIslandWaterSpells",
+   "value": 1,
+   "comment": "the island example - a greater island spirit could cast all water-related spells, the water more dominant than the land in this case (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterPlusFourWeaponsOnly",
+   "value": 1,
+   "comment": "the greater weapon floor - they can only be struck by +4 weapons or better (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterImmuneToOwnElement",
+   "value": 1,
+   "comment": "the greater immunity - immune to magical attacks made using their element (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterCompleteEventKnowledge",
+   "value": 1,
+   "comment": "the greater knowledge - complete knowledge of all events and happenings within the area of their lifeforce (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterAloofHaughtyIrritable",
+   "value": 1,
+   "comment": "the greater temper - tend to be aloof, haughty, and irritable (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterSlopeVillageDisdain",
+   "value": 1,
+   "comment": "the slope example - should a village be built on a prominent mountain slope the mountain spirit may think ill of it and attempt to drive the settlers off (print capture p. 279)"
+  },
+  {
+   "name": "dknMortalsOfferAndConsultShukenja",
+   "value": 1,
+   "comment": "the mortal caution - mortals go to great pains to avoid upsetting them, presenting offerings and consulting shukenja before undertaking any enterprise which might upset the being (print capture p. 279)"
+  },
+  {
+   "name": "dknGreaterSeldomIntermarry",
+   "value": 1,
+   "comment": "the greater marriage clause - the greater nature spirits seldom intermarry with humans (print capture p. 279)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dknNS",
+   "tag": "NS",
+   "count": "dknNSCount",
+   "comment": "the nature spirit stat grid - the lesser and the greater, row by row, the frequencies riding the capture header (print capture p. 278)",
+   "cols": [
+    "dknNSAC",
+    "dknNSMove",
+    "dknNSHDMin",
+    "dknNSHDMax",
+    "dknNSLairPct",
+    "dknNSAttacks",
+    "dknNSDmgMin",
+    "dknNSDmgMax",
+    "dknNSMRPct"
+   ],
+   "col_comments": [
+    "the armor class - the 7 of the lesser and the 2 of the greater (print capture p. 278)",
+    "the move - the 12 of both columns (print capture p. 278)",
+    "the hit dice minimum - the 2 of the 2 to 7 and the 8 of the 8 to 15 (print capture p. 278)",
+    "the hit dice maximum - the 7 and the 15 of the two ladders (print capture p. 278)",
+    "the in-lair percent - the 80% of the lesser and the 100% of the greater (print capture p. 278)",
+    "the attack count - the 1 of the lesser and the 2 of the greater (print capture p. 278)",
+    "the damage minimum - the 1 of the 1-8 and the 1-10 (print capture p. 278)",
+    "the damage maximum - the 8 of the 1-8 and the 10 of the 1-10/1-10 (print capture p. 278)",
+    "the magic resistance - the 20% of the lesser and the 70% of the greater (print capture p. 278)"
+   ],
+   "data": [
+    [
+     7,
+     12,
+     2,
+     7,
+     80,
+     1,
+     1,
+     8,
+     20
+    ],
+    [
+     2,
+     12,
+     8,
+     15,
+     100,
+     2,
+     1,
+     10,
+     70
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dknXP",
+   "tag": "XP",
+   "count": "dknXPCount",
+   "comment": "the nature spirit xp ladder table - the six rungs of each column, the lesser rungs at 2 to 7 HD and the greater at 8 to 15 HD (print capture p. 278)",
+   "cols": [
+    "dknXPLesserBase",
+    "dknXPLesserPerHP",
+    "dknXPGreaterBase",
+    "dknXPGreaterPerHP"
+   ],
+   "col_comments": [
+    "the lesser xp base - the 118, 160, 215, 280, 475, and 700 of the six rungs (print capture p. 278)",
+    "the lesser xp per hit point - the 2, 3, 4, 5, 6, and 8 of the six rungs (print capture p. 278)",
+    "the greater xp base - the 1,275, 2,000, 3,000, 4,400, 6,100, and 8,100 of the six rungs (print capture p. 278)",
+    "the greater xp per hit point - the 10, 12, 14, 16, 18, and 20 of the six rungs (print capture p. 278)"
+   ],
+   "data": [
+    [
+     118,
+     2,
+     1275,
+     10
+    ],
+    [
+     160,
+     3,
+     2000,
+     12
+    ],
+    [
+     215,
+     4,
+     3000,
+     14
+    ],
+    [
+     280,
+     5,
+     4400,
+     16
+    ],
+    [
+     475,
+     6,
+     6100,
+     18
+    ],
+    [
+     700,
+     8,
+     8100,
+     20
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the stat grid - the per-column lines, healthy values, each condition false",
+   "expr": "m['dknLesserCommon']() != 1 or m['dknGreaterRare']() != 1 or m['dknAppear']() != 1 or m['dknTreasureLesserI']() != 1 or m['dknTreasureGreaterH']() != 1 or m['dknSpecialAttacksSeeBelow']() != 1 or m['dknSpecialDefensesSeeBelow']() != 1 or m['dknIntLesserVeryToGenius']() != 1 or m['dknIntGreaterGenius']() != 1 or m['dknAlignmentVariable']() != 1 or m['dknSizeVariable']() != 1 or m['dknPsionicNil']() != 1 or m['dknModesNil']() != 1"
+  },
+  {
+   "note": "the stat and xp grids - the paired stat table and the six-rung ladder table, audited cell by cell by the table audit",
+   "expr": "m['dknNSCount']() != 2 or m['dknXPCount']() != 6"
+  },
+  {
+   "note": "the nature and the aspects - the lifeforce sympathy and the two aspects, healthy values, each condition false",
+   "expr": "m['dknOutwardManifestations']() != 1 or m['dknLesserOfTreesFlowersRocksBamboo']() != 1 or m['dknGreaterOfMountainsBouldersPlainsIslands']() != 1 or m['dknLifeforceObjectOrPlace']() != 1 or m['dknDamageAffectsSpirit']() != 1 or m['dknTreeDeathKillsLesser']() != 1 or m['dknEarthquakeMayAngerOrInjure']() != 1 or m['dknTwoAspects']() != 1 or m['dknGoodAspectGentle']() != 1 or m['dknEvilAspectMalicious']() != 1 or m['dknGoodAspectChancePct']() != 75 or m['dknShunsMortalWorld']() != 1 or m['dknAppearsInDanger']() != 1 or m['dknMeetsPeopleOfRenown']() != 1"
+  },
+  {
+   "note": "the common powers - the five powers and the use rate, healthy values, each condition false",
+   "expr": "m['dknCommonInvisible']() != 1 or m['dknCommonPolymorphSelf']() != 1 or m['dknCommonDetectEvilGood']() != 1 or m['dknCommonDetectMagic']() != 1 or m['dknCommonDetectHarmony']() != 1 or m['dknCommonOncePerRoundAtWill']() != 1"
+  },
+  {
+   "note": "the lesser - the haunt, the polymorphed form, and the romance, healthy values, each condition false",
+   "expr": "m['dknLesserFoundNearLifeforce']() != 1 or m['dknLesserPolymorphedForm']() != 1 or m['dknPolymorphCharisma']() != 19 or m['dknPolymorphComeliness']() != 21 or m['dknLesserCompleteAreaKnowledge']() != 1 or m['dknLesserFindsTreasuresAndLostItems']() != 1 or m['dknLesserNoAbilitiesBeyond']() != 1 or m['dknLesserMarriesMortals']() != 1"
+  },
+  {
+   "note": "the greater - the powers, the element spellcasting, and the temper, healthy values, each condition false",
+   "expr": "m['dknGreaterConsiderablyMorePowerful']() != 1 or m['dknGreaterShapechangePerDay']() != 5 or m['dknGreaterKnowHistoryAura']() != 1 or m['dknGreaterRewardOncePerWeek']() != 1 or m['dknGreaterAncientCurseOncePerWeek']() != 1 or m['dknGreaterCastsElementSpells']() != 1 or m['dknGreaterMountainEarthSpells']() != 1 or m['dknGreaterIslandWaterSpells']() != 1 or m['dknGreaterPlusFourWeaponsOnly']() != 1 or m['dknGreaterImmuneToOwnElement']() != 1 or m['dknGreaterCompleteEventKnowledge']() != 1 or m['dknGreaterAloofHaughtyIrritable']() != 1 or m['dknGreaterSlopeVillageDisdain']() != 1 or m['dknMortalsOfferAndConsultShukenja']() != 1 or m['dknGreaterSeldomIntermarry']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat grid": [
+   {
+    "kind": "const",
+    "name": "dknNSCount"
+   },
+   {
+    "kind": "table",
+    "name": "dknNS"
+   },
+   {
+    "kind": "bool",
+    "name": "dknLesserCommon"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dknAppear"
+   },
+   {
+    "kind": "bool",
+    "name": "dknTreasureLesserI"
+   },
+   {
+    "kind": "bool",
+    "name": "dknTreasureGreaterH"
+   },
+   {
+    "kind": "bool",
+    "name": "dknSpecialAttacksSeeBelow"
+   },
+   {
+    "kind": "bool",
+    "name": "dknSpecialDefensesSeeBelow"
+   },
+   {
+    "kind": "bool",
+    "name": "dknIntLesserVeryToGenius"
+   },
+   {
+    "kind": "bool",
+    "name": "dknIntGreaterGenius"
+   },
+   {
+    "kind": "bool",
+    "name": "dknAlignmentVariable"
+   },
+   {
+    "kind": "bool",
+    "name": "dknSizeVariable"
+   },
+   {
+    "kind": "bool",
+    "name": "dknPsionicNil"
+   },
+   {
+    "kind": "bool",
+    "name": "dknModesNil"
+   }
+  ],
+  "the xp ladders": [
+   {
+    "kind": "const",
+    "name": "dknXPCount"
+   },
+   {
+    "kind": "table",
+    "name": "dknXP"
+   }
+  ],
+  "the nature and the aspects": [
+   {
+    "kind": "bool",
+    "name": "dknOutwardManifestations"
+   },
+   {
+    "kind": "bool",
+    "name": "dknLesserOfTreesFlowersRocksBamboo"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterOfMountainsBouldersPlainsIslands"
+   },
+   {
+    "kind": "bool",
+    "name": "dknLifeforceObjectOrPlace"
+   },
+   {
+    "kind": "bool",
+    "name": "dknDamageAffectsSpirit"
+   },
+   {
+    "kind": "bool",
+    "name": "dknTreeDeathKillsLesser"
+   },
+   {
+    "kind": "bool",
+    "name": "dknEarthquakeMayAngerOrInjure"
+   },
+   {
+    "kind": "bool",
+    "name": "dknTwoAspects"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGoodAspectGentle"
+   },
+   {
+    "kind": "bool",
+    "name": "dknEvilAspectMalicious"
+   },
+   {
+    "kind": "const",
+    "name": "dknGoodAspectChancePct"
+   },
+   {
+    "kind": "bool",
+    "name": "dknShunsMortalWorld"
+   },
+   {
+    "kind": "bool",
+    "name": "dknAppearsInDanger"
+   },
+   {
+    "kind": "bool",
+    "name": "dknMeetsPeopleOfRenown"
+   }
+  ],
+  "the common powers": [
+   {
+    "kind": "bool",
+    "name": "dknCommonInvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "dknCommonPolymorphSelf"
+   },
+   {
+    "kind": "bool",
+    "name": "dknCommonDetectEvilGood"
+   },
+   {
+    "kind": "bool",
+    "name": "dknCommonDetectMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "dknCommonDetectHarmony"
+   },
+   {
+    "kind": "bool",
+    "name": "dknCommonOncePerRoundAtWill"
+   }
+  ],
+  "the lesser": [
+   {
+    "kind": "bool",
+    "name": "dknLesserFoundNearLifeforce"
+   },
+   {
+    "kind": "bool",
+    "name": "dknLesserPolymorphedForm"
+   },
+   {
+    "kind": "const",
+    "name": "dknPolymorphCharisma"
+   },
+   {
+    "kind": "const",
+    "name": "dknPolymorphComeliness"
+   },
+   {
+    "kind": "bool",
+    "name": "dknLesserCompleteAreaKnowledge"
+   },
+   {
+    "kind": "bool",
+    "name": "dknLesserFindsTreasuresAndLostItems"
+   },
+   {
+    "kind": "bool",
+    "name": "dknLesserNoAbilitiesBeyond"
+   },
+   {
+    "kind": "bool",
+    "name": "dknLesserMarriesMortals"
+   }
+  ],
+  "the greater": [
+   {
+    "kind": "bool",
+    "name": "dknGreaterConsiderablyMorePowerful"
+   },
+   {
+    "kind": "const",
+    "name": "dknGreaterShapechangePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterKnowHistoryAura"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterRewardOncePerWeek"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterAncientCurseOncePerWeek"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterCastsElementSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterMountainEarthSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterIslandWaterSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterPlusFourWeaponsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterImmuneToOwnElement"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterCompleteEventKnowledge"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterAloofHaughtyIrritable"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterSlopeVillageDisdain"
+   },
+   {
+    "kind": "bool",
+    "name": "dknMortalsOfferAndConsultShukenja"
+   },
+   {
+    "kind": "bool",
+    "name": "dknGreaterSeldomIntermarry"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the nature spirits box",
+   "from": "  - [ ] Nature Spirits (capture pp. 278-279) - the\n    greater and lesser types",
+   "to": "  - [x] Nature Spirits (capture pp. 278-279) - the\n    greater and lesser types\n    - R726: the dkn nature spirit pins - the\n    stat grid (the lesser common and the\n    greater rare, the 1 appearing, the AC 7\n    and 2, the moves 12, the HD 2 to 7 and\n    8 to 15, the lairs 80% and 100%, the I\n    and H treasures, the 1 and 2 attacks of\n    the 1-8 and 1-10/1-10, the see-below\n    specials, the 20% and 70% MR, the very-\n    to-genius and genius wits, the variable\n    alignments and sizes, the nil psionics);\n    the xp ladders (the lesser 118 + 2,\n    160 + 3, 215 + 4, 280 + 5, 475 + 6,\n    700 + 8; the greater 1,275 + 10,\n    2,000 + 12, 3,000 + 14, 4,400 + 16,\n    6,100 + 18, 8,100 + 20); the nature and\n    the aspects (the outward manifestations,\n    the trees and flowers and rocks and\n    bamboo of the lesser, the mountains and\n    boulders and plains and ancient trees\n    and islands of the greater, the\n    lifeforce sympathy, the tree death, the\n    earthquake example, the good and evil\n    aspects, the 75% good chance, the\n    seclusion, the danger manifestation, the\n    testing of the renowned); the common\n    powers (the invisible, the polymorph\n    self, the detect evil and good, the\n    detect magic, the detect harmony, the\n    once-per-round at will); the lesser (the\n    lifeforce vicinity, the handsome man or\n    beautiful maiden of the Charisma 19 and\n    Comeliness 21, the complete area\n    knowledge, the found treasures and lost\n    items, the no-abilities-beyond limit, the\n    mortal marriages); the greater (the\n    five-per-day shape change, the know\n    history and aura, the weekly reward and\n    ancient curse, the element spellcasting\n    of the mountain earth and the island\n    water, the +4 weapon floor, the own-\n    element immunity, the complete event\n    knowledge, the aloof and haughty and\n    irritable temper, the slope village\n    disdain, the offerings and shukenja\n    consultations, the seldom intermarry);\n    single-pass\n    pins per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 179,
+  "open": 56
+ },
+ "include_comment": "the OA Nature Spirits pins",
+ "include_after": "#include \"rules/oa96nat.h\"  // R725: the OA Nat pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R725 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R725 LANDED 2026-10-21: commit",
+  "  16cefa355bb4155ea4d1e917d4e031d462781a4e",
+  "  (census 647 -> 648, pushed fc2b428..16cefa3), OA",
+  "  MONSTERS, the Nat, Lesser Spirit (capture",
+  "  pp. 276-278 print): rules/oa96nat.h, prefix dkm",
+  "  (verified free at fc2b428), ONE gap flip, gap",
+  "  census 178/57 - the nat box. A TABLES round.",
+  "  10 consts + 77 bools + 11 table cols (98",
+  "  inlines): the three-column CNat[3] stat grid",
+  "  (the einsaung - the rare, the AC 2, the move",
+  "  12, the HD 2, the 100% lair, the nil treasure,",
+  "  the 1 attack of 1-6, the 10% MR, the very wits,",
+  "  the chaotic good, the S size, the nil psionics,",
+  "  the +1 weapon floor, the 113 + 2 xp; the hkum",
+  "  yang - the very rare, the AC 0, the move 12,",
+  "  the HD 4, the 100% lair, the 2 attacks of",
+  "  1-6/1-6, the fear special, the 30% MR, the",
+  "  standard wits, the neutral, the M size, the +2",
+  "  weapon floor, the 405 + 4 xp; the lu - the",
+  "  rare, the AC -2, the move 9, the HD 8, the 80%",
+  "  lair, the 3 attacks of 1-8/1-8/1-8, the disease",
+  "  special, the 10% MR, the low wits, the chaotic",
+  "  evil, the M size, the +3 weapon floor, the",
+  "  2,250 + 10 xp); the lesser spirit nature (the",
+  "  tropical jungle spirits, the humanoid demonic",
+  "  cast, the wild hair, the clawed hands, the",
+  "  fanged teeth, the eleven at-will powers, the",
+  "  poison and disease immunity, the half",
+  "  electrical and fire damage, the two languages);",
+  "  the einsaung (the household benefactor, the",
+  "  good luck sign, the south cornerpost, the",
+  "  ethereal lair, the at-will and daily and",
+  "  weekly powers, the bless aura over the house,",
+  "  the shyness, the possession in distress, the",
+  "  advice and mysterious information, the play",
+  "  with children); the hkum yang (the feared",
+  "  village protector, the head-stakes residence,",
+  "  the spoils carried to the Ethereal, the",
+  "  disaster of displeasure, the at-will and",
+  "  thrice and daily and weekly powers, the",
+  "  10-foot fear aura and the 2 to 5 round panic",
+  "  of those who see it); the lu (the graveyard",
+  "  evil, the simple-mindedness, the appeasing",
+  "  food, the hungry descent, the at-will and",
+  "  thrice and daily powers, the 10-foot disease",
+  "  cloud, the save vs. death each round, the",
+  "  1d10-per-turn rotting disease, the healing bar",
+  "  until cured). The AC 0 of the hkum yang",
+  "  collides with the table sentinel, so the AC",
+  "  column sentinel census is 1, not 0 (an",
+  "  R722-class find, handled in-authored, zero",
+  "  false starts). First rverify GREEN, 120",
+  "  mutants, 0 missed. Spec md5",
+  "  bc98be9f12032cfe9ae76230f1dff618",
+  "  (authored-plus-newline md5",
+  "  6fe90c98460cc9b937682c5027a5419a, the ritual",
+  "  gate, matched byte-exact; canvas md5",
+  "  405ff6bcb1acb4f10800d320dd3a709f). NEXT -",
+  "  R726: the Nature Spirits, the Lesser and the",
+  "  Greater (capture pp. 278-279), prefix dkn",
+  "  (verified free at 16cefa3), audit \"R726 OA",
+  "  monsters Nature Spirits audit\", include after",
+  "  rules/oa96nat.h."
+ ]
+}

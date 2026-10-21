@@ -16771,6 +16771,69 @@ when both halves land.
   pp. 276-278), prefix dkm (verified free at
   fc2b428), audit "R725 OA monsters Nat audit",
   include after rules/oa95menwako.h.
+- R725 LANDED 2026-10-21: commit
+  16cefa355bb4155ea4d1e917d4e031d462781a4e
+  (census 647 -> 648, pushed fc2b428..16cefa3), OA
+  MONSTERS, the Nat, Lesser Spirit (capture
+  pp. 276-278 print): rules/oa96nat.h, prefix dkm
+  (verified free at fc2b428), ONE gap flip, gap
+  census 178/57 - the nat box. A TABLES round.
+  10 consts + 77 bools + 11 table cols (98
+  inlines): the three-column CNat[3] stat grid
+  (the einsaung - the rare, the AC 2, the move
+  12, the HD 2, the 100% lair, the nil treasure,
+  the 1 attack of 1-6, the 10% MR, the very wits,
+  the chaotic good, the S size, the nil psionics,
+  the +1 weapon floor, the 113 + 2 xp; the hkum
+  yang - the very rare, the AC 0, the move 12,
+  the HD 4, the 100% lair, the 2 attacks of
+  1-6/1-6, the fear special, the 30% MR, the
+  standard wits, the neutral, the M size, the +2
+  weapon floor, the 405 + 4 xp; the lu - the
+  rare, the AC -2, the move 9, the HD 8, the 80%
+  lair, the 3 attacks of 1-8/1-8/1-8, the disease
+  special, the 10% MR, the low wits, the chaotic
+  evil, the M size, the +3 weapon floor, the
+  2,250 + 10 xp); the lesser spirit nature (the
+  tropical jungle spirits, the humanoid demonic
+  cast, the wild hair, the clawed hands, the
+  fanged teeth, the eleven at-will powers, the
+  poison and disease immunity, the half
+  electrical and fire damage, the two languages);
+  the einsaung (the household benefactor, the
+  good luck sign, the south cornerpost, the
+  ethereal lair, the at-will and daily and
+  weekly powers, the bless aura over the house,
+  the shyness, the possession in distress, the
+  advice and mysterious information, the play
+  with children); the hkum yang (the feared
+  village protector, the head-stakes residence,
+  the spoils carried to the Ethereal, the
+  disaster of displeasure, the at-will and
+  thrice and daily and weekly powers, the
+  10-foot fear aura and the 2 to 5 round panic
+  of those who see it); the lu (the graveyard
+  evil, the simple-mindedness, the appeasing
+  food, the hungry descent, the at-will and
+  thrice and daily powers, the 10-foot disease
+  cloud, the save vs. death each round, the
+  1d10-per-turn rotting disease, the healing bar
+  until cured). The AC 0 of the hkum yang
+  collides with the table sentinel, so the AC
+  column sentinel census is 1, not 0 (an
+  R722-class find, handled in-authored, zero
+  false starts). First rverify GREEN, 120
+  mutants, 0 missed. Spec md5
+  bc98be9f12032cfe9ae76230f1dff618
+  (authored-plus-newline md5
+  6fe90c98460cc9b937682c5027a5419a, the ritual
+  gate, matched byte-exact; canvas md5
+  405ff6bcb1acb4f10800d320dd3a709f). NEXT -
+  R726: the Nature Spirits, the Lesser and the
+  Greater (capture pp. 278-279), prefix dkn
+  (verified free at 16cefa3), audit "R726 OA
+  monsters Nature Spirits audit", include after
+  rules/oa96nat.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
