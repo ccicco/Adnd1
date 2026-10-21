@@ -2031,7 +2031,30 @@ description riding the same round.
     known by superstition, the own-language
     speech); single-pass pins per the
     Chapter 9 provenance shift
-  - [ ] Buso (capture p. 256)
+  - [x] Buso (capture p. 256)
+    - R708: the djv Buso pins - the two-type
+    stat block (the uncommon, the 1-6, the
+    tigbanua AC 4 the move 12 the 8 + 2 the
+    3 attacks of 1-6/1-6/1-10 the VII/1,400
+    + 12/hp, the tagamaling AC 5 the 3
+    attacks of 1-4/1-4/1-8, the Nil lair,
+    the Nil treasure, the animal, the
+    chaotic evil, the M, the Nil psionics),
+    the ghoul-like nature (the cemetery
+    habitat, the once-friendly now-enemies
+    history, the night predation, the tall
+    lean build, the single red or yellow
+    eye), the tigbanua (the ferocious, the
+    10-foot fear aura with the under-1-HD
+    auto-paralysis and the save vs.
+    paralyzation, the claws and fangs, the
+    claw disease with the save vs. death,
+    the infected become tagamaling), the
+    tagamaling (the 1% cumulative nightly
+    transformation, the same HD and HP, the
+    powers unusable, the no memory, the
+    100% incurable limit); single-pass pins
+    per the Chapter 9 provenance shift
   - [ ] Carp, Giant (capture p. 257)
   - [ ] Con-Tinh, Lesser Spirit (capture p. 258)
   - [ ] Doc Cu'o'c, Greater Spirit (capture p. 259)

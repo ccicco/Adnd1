@@ -16166,6 +16166,33 @@ when both halves land.
   NEXT - R707: the Bisan, Lesser Spirit (capture pp. 255-256),
   prefix dju (verified free at 393b41b), audit "R707 OA monsters
   Bisan audit", include after rules/oa77bakemono.h.
+- R707 LANDED 2026-10-21: commit 2a2f67aa2c0b9d5bf48e21de5c697cee00870e82
+  (census 629 -> 630, pushed 393b41b..2a2f67a), OA MONSTERS - the
+  Bisan, Lesser Spirit, capture pp. 255-256 print:
+  rules/oa78bisan.h, prefix dju (verified free at 393b41b), ONE
+  gap flip, gap census 159/76 -> 160/75. 17 consts + 25 bools
+  (42 inlines): the stat block (the very rare, the 1, the AC 0,
+  the move 24, the HD 10, the 100% lair, the Q T, the 1 attack
+  of 1-10, the 40% MR, the High, the Neutral, the M, the
+  VII/2,100 + 14/hp); the tree lifeforce (the harvest spirit,
+  the camphor most common, the beautiful-woman form and the
+  insect preference, the same-type protection, the one tree per
+  bisan, the tree damage, the harvest allowance, the end-of-life
+  felling, the two offerings, the anger rule); the powers (the
+  polymorph, the invisible, the ethereal, the once per round
+  nine-entry battery with the reversible bless); the nature (the
+  mischief doctrine, the flees unless defending its tree, the
+  formidable if angered, the woods known by superstition, the
+  own-language-only speech). Two generator-side false starts
+  (an unwired const, a duplicate emission), first published
+  rverify GREEN, 42 mutants, 0 missed. Spec md5
+  443dea8781284713fa3746381e2f0839 (authored-plus-newline md5
+  f5e3620cda683b69bb5fbf0a4d9f428f - the ritual gate, matched
+  byte-exact; canvas md5 5398e4d6931dfb7a72d3b76fb3c88e56).
+  NEXT - R708: the Buso (capture pp. 256-257), prefix djv
+  (verified free at 2a2f67a - only lowercase djvu prose, no
+  pins), audit "R708 OA monsters Buso audit", include after
+  rules/oa78bisan.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

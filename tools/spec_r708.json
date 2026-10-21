@@ -1,0 +1,577 @@
+{
+ "round": 708,
+ "title": "OA MONSTERS - the Buso: the two-column stat block, the tigbanua fear aura, and the tagamaling disease",
+ "prefix": "djv",
+ "header_file": "rules/oa79buso.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 630,
+ "inline_count": 53,
+ "audit_label": "R708 OA monsters Buso audit",
+ "audit_comment": "OA round ninety-five (capture pp. 256-257): the Chapter 12 monster roster - the Buso, the first two-column monster of the roster, the stat block and the description riding together, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA MONSTERS - THE BUSO, printed capture pp. 256-257 - the two-type ghoul round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 161 closed, 74 open - the Buso box flips (census 630 -> 631); NEXT - R709: the Carp, Giant (capture p. 257), prefix djw (verify free at the landing), audit \"R709 OA monsters Giant Carp audit\", include after rules/oa79buso.h"
+ },
+ "consts": [
+  {
+   "name": "djvBusoTypesCount",
+   "value": 2,
+   "comment": "the Buso type count - the tigbanua and the tagamaling of the two-column stat block (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoNoAppearingMin",
+   "value": 1,
+   "comment": "the Buso appearance minimum - the 1 of the 1-6 of the stat block (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoNoAppearingMax",
+   "value": 6,
+   "comment": "the Buso appearance maximum - the 6 of the 1-6 of the stat block (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTigbanuaAC",
+   "value": 4,
+   "comment": "the tigbanua armor class - the AC 4 of the stat block (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoMove",
+   "value": 12,
+   "comment": "the Buso movement rate - the move 12 of both columns (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTigbanuaHDNum",
+   "value": 8,
+   "comment": "the tigbanua hit dice - the 8 of the 8 + 2 of the stat block (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTigbanuaHDMod",
+   "value": 2,
+   "comment": "the tigbanua hit-dice modifier - the + 2 of the 8 + 2 (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoAttacks",
+   "value": 3,
+   "comment": "the Buso attacks per round - the 3 of both columns (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTigbanuaDmgMin",
+   "value": 1,
+   "comment": "the tigbanua damage minimum - the 1 of the 1-6/1-6/1-10 (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTigbanuaDmgMid",
+   "value": 6,
+   "comment": "the tigbanua mid damage - the first 6 of the 1-6/1-6/1-10 (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTigbanuaDmgMax",
+   "value": 10,
+   "comment": "the tigbanua damage maximum - the 10 of the 1-6/1-6/1-10 (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTigbanuaXPBase",
+   "value": 1400,
+   "comment": "the tigbanua base experience - the 1,400 of the VII/1,400 (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTigbanuaXPPerHP",
+   "value": 12,
+   "comment": "the tigbanua experience per hit point - the 12/hp of the stat block (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTagamalingAC",
+   "value": 5,
+   "comment": "the tagamaling armor class - the AC 5 of the stat block (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTagamalingDmgMin",
+   "value": 1,
+   "comment": "the tagamaling damage minimum - the 1 of the 1-4/1-4/1-8 (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTagamalingDmgMid",
+   "value": 4,
+   "comment": "the tagamaling mid damage - the first 4 of the 1-4/1-4/1-8 (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTagamalingDmgMax",
+   "value": 8,
+   "comment": "the tagamaling damage maximum - the 8 of the 1-4/1-4/1-8 (print capture p. 256)"
+  },
+  {
+   "name": "djvTigbanuaFearRadiusFt",
+   "value": 10,
+   "comment": "the tigbanua fear aura - the 10-foot radius (print capture p. 257)"
+  },
+  {
+   "name": "djvTagamalingTransformChancePct",
+   "value": 1,
+   "comment": "the tagamaling transformation - the 1% cumulative nightly chance that the diseased person transforms (print capture p. 257)"
+  },
+  {
+   "name": "djvTagamalingIncurablePct",
+   "value": 100,
+   "comment": "the tagamaling disease limit - once the disease reaches 100% the victim can no longer be cured (print capture p. 257)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "djvBusoUncommon",
+   "value": 1,
+   "comment": "the Buso frequency - the uncommon of both columns of the stat block (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoLairNil",
+   "value": 1,
+   "comment": "the Buso in-lair percentage - the Nil of both columns (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoTreasureNil",
+   "value": 1,
+   "comment": "the Buso treasure - the Nil of both columns (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoMRStandard",
+   "value": 1,
+   "comment": "the Buso magic resistance - the standard of both columns (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoIntAnimal",
+   "value": 1,
+   "comment": "the Buso intelligence - the animal of both columns (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoChaoticEvil",
+   "value": 1,
+   "comment": "the Buso alignment - the chaotic evil of both columns (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoSizeM",
+   "value": 1,
+   "comment": "the Buso size - the M of both columns (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoPsionicNil",
+   "value": 1,
+   "comment": "the Buso psionics - the Nil ability and the Nil attack/defense modes of both columns (print capture p. 256)"
+  },
+  {
+   "name": "djvBusoGhoulLike",
+   "value": 1,
+   "comment": "the Buso nature - fearsome ghoul-like creatures (print capture p. 257)"
+  },
+  {
+   "name": "djvBusoCemeteryHabitat",
+   "value": 1,
+   "comment": "the Buso habitat - normally found near cemeteries or in forests or rocky mountains (print capture p. 257)"
+  },
+  {
+   "name": "djvBusoOnceFriendlyNowEnemies",
+   "value": 1,
+   "comment": "the Buso history - once friendly and helpful to men, now one of mankind deadly enemies (print capture p. 257)"
+  },
+  {
+   "name": "djvBusoNightPredators",
+   "value": 1,
+   "comment": "the Buso predation - under the cloak of night they prey on lone travelers and helpless villages (print capture p. 257)"
+  },
+  {
+   "name": "djvBusoTallLean",
+   "value": 1,
+   "comment": "the Buso build - exceptionally tall and lean, long bodies and necks, bony oversized feet, curly dirty hair, flat noses (print capture p. 257)"
+  },
+  {
+   "name": "djvBusoSingleEye",
+   "value": 1,
+   "comment": "the Buso eye - a single eye in the head, either red or yellow (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaFerocious",
+   "value": 1,
+   "comment": "the tigbanua temperament - extremely ferocious, attacks whenever it has the opportunity (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaFearAura",
+   "value": 1,
+   "comment": "the tigbanua aura - radiates a fear aura out to the 10-foot radius (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaLessThanOneHDAutoParalyzed",
+   "value": 1,
+   "comment": "the tigbanua aura rule - creatures with less than 1 HD are automatically paralyzed (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaSaveVsParalyzation",
+   "value": 1,
+   "comment": "the tigbanua aura rule - creatures with 1 HD or more receive a saving throw vs. paralyzation to avoid the effect (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaParalyzedUntilOutOfRadius",
+   "value": 1,
+   "comment": "the tigbanua aura rule - creatures remain paralyzed until they are no longer in the radius (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaSaveGrantsEncounterImmunity",
+   "value": 1,
+   "comment": "the tigbanua aura rule - a successful save grants immunity to the fear aura for the remainder of the encounter (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaClawsAndFangs",
+   "value": 1,
+   "comment": "the tigbanua attack form - the sharp claws and fangs (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaClawDisease",
+   "value": 1,
+   "comment": "the tigbanua claw - transmits a horrible disease (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaSaveVsDeathOrInfected",
+   "value": 1,
+   "comment": "the tigbanua disease rule - all wounded by the creature must make a successful saving throw vs. death or become infected (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaInfectedBecomeTagamaling",
+   "value": 1,
+   "comment": "the tigbanua disease outcome - those infected eventually become tagamaling (print capture p. 257)"
+  },
+  {
+   "name": "djvTigbanuaLowIntelligence",
+   "value": 1,
+   "comment": "the tigbanua mind - not noted for its intelligence (print capture p. 257)"
+  },
+  {
+   "name": "djvTagamalingInfectedPerson",
+   "value": 1,
+   "comment": "the tagamaling origin - a person infected by a tigbanua (print capture p. 257)"
+  },
+  {
+   "name": "djvTagamalingNightlyTransformation",
+   "value": 1,
+   "comment": "the tagamaling change - the disease periodically transforms the person, the body changing into that of a buso (print capture p. 257)"
+  },
+  {
+   "name": "djvTagamalingSavageMindless",
+   "value": 1,
+   "comment": "the tagamaling temperament - savage and mindless, attacking and devouring any and all (print capture p. 257)"
+  },
+  {
+   "name": "djvTagamalingSameHDHPAsPerson",
+   "value": 1,
+   "comment": "the tagamaling vitality - the same hit dice and hit points as the person possesses in normal life (print capture p. 257)"
+  },
+  {
+   "name": "djvTagamalingHDVariable",
+   "value": 1,
+   "comment": "the tagamaling hit dice - the special entry of the stat block, variable with the host (print capture p. 256)"
+  },
+  {
+   "name": "djvTagamalingPowersUnusable",
+   "value": 1,
+   "comment": "the tagamaling limitation - characters with special abilities cannot use their powers while transformed (print capture p. 257)"
+  },
+  {
+   "name": "djvTagamalingNoMemory",
+   "value": 1,
+   "comment": "the tagamaling amnesia - the diseased person has no memory of any actions done as a tagamaling (print capture p. 257)"
+  },
+  {
+   "name": "djvTagamalingNightlyAtLimit",
+   "value": 1,
+   "comment": "the tagamaling end state - at 100% the victim changes into a tagamaling every night (print capture p. 257)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the stat block - the two types, the uncommon, the 1-6, the tigbanua AC 4 the move 12 the 8 + 2 the 3 attacks of 1-6/1-6/1-10 the VII/1,400 + 12/hp, the tagamaling AC 5 the 3 attacks of 1-4/1-4/1-8, the Nil lair, the Nil treasure, the animal, the chaotic evil, the M, the Nil psionics",
+   "expr": "m['djvBusoTypesCount']() != 2 or m['djvBusoNoAppearingMin']() != 1 or m['djvBusoNoAppearingMax']() != 6 or m['djvBusoTigbanuaAC']() != 4 or m['djvBusoMove']() != 12 or m['djvBusoTigbanuaHDNum']() != 8 or m['djvBusoTigbanuaHDMod']() != 2 or m['djvBusoAttacks']() != 3 or m['djvBusoTigbanuaDmgMin']() != 1 or m['djvBusoTigbanuaDmgMid']() != 6 or m['djvBusoTigbanuaDmgMax']() != 10 or m['djvBusoTigbanuaXPBase']() != 1400 or m['djvBusoTigbanuaXPPerHP']() != 12 or m['djvBusoTagamalingAC']() != 5 or m['djvBusoTagamalingDmgMin']() != 1 or m['djvBusoTagamalingDmgMid']() != 4 or m['djvBusoTagamalingDmgMax']() != 8 or m['djvBusoUncommon']() != 1 or m['djvBusoLairNil']() != 1 or m['djvBusoTreasureNil']() != 1 or m['djvBusoMRStandard']() != 1 or m['djvBusoIntAnimal']() != 1 or m['djvBusoChaoticEvil']() != 1 or m['djvBusoSizeM']() != 1 or m['djvBusoPsionicNil']() != 1"
+  },
+  {
+   "note": "the buso nature - the ghoul-like, the cemetery and forest and rocky-mountain habitat, the once-friendly now-enemies history, the night predation, the tall lean build, the single red or yellow eye",
+   "expr": "m['djvBusoGhoulLike']() != 1 or m['djvBusoCemeteryHabitat']() != 1 or m['djvBusoOnceFriendlyNowEnemies']() != 1 or m['djvBusoNightPredators']() != 1 or m['djvBusoTallLean']() != 1 or m['djvBusoSingleEye']() != 1"
+  },
+  {
+   "note": "the tigbanua - the ferocious, the 10-foot fear aura, the under-1-HD auto-paralysis, the save vs. paralyzation, the paralyzed until out of radius, the save-granted encounter immunity, the claws and fangs, the claw disease, the save vs. death or infected, the infected become tagamaling, the low intelligence",
+   "expr": "m['djvTigbanuaFearRadiusFt']() != 10 or m['djvTigbanuaFerocious']() != 1 or m['djvTigbanuaFearAura']() != 1 or m['djvTigbanuaLessThanOneHDAutoParalyzed']() != 1 or m['djvTigbanuaSaveVsParalyzation']() != 1 or m['djvTigbanuaParalyzedUntilOutOfRadius']() != 1 or m['djvTigbanuaSaveGrantsEncounterImmunity']() != 1 or m['djvTigbanuaClawsAndFangs']() != 1 or m['djvTigbanuaClawDisease']() != 1 or m['djvTigbanuaSaveVsDeathOrInfected']() != 1 or m['djvTigbanuaInfectedBecomeTagamaling']() != 1 or m['djvTigbanuaLowIntelligence']() != 1"
+  },
+  {
+   "note": "the tagamaling - the infected person, the 1% cumulative nightly chance, the savage mindless devouring, the same HD and HP as the person, the variable stat-block hit dice, the powers unusable, the no memory, the 100% incurable limit with the every-night transformation",
+   "expr": "m['djvTagamalingTransformChancePct']() != 1 or m['djvTagamalingIncurablePct']() != 100 or m['djvTagamalingInfectedPerson']() != 1 or m['djvTagamalingNightlyTransformation']() != 1 or m['djvTagamalingSavageMindless']() != 1 or m['djvTagamalingSameHDHPAsPerson']() != 1 or m['djvTagamalingHDVariable']() != 1 or m['djvTagamalingPowersUnusable']() != 1 or m['djvTagamalingNoMemory']() != 1 or m['djvTagamalingNightlyAtLimit']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the stat block": [
+   {
+    "kind": "const",
+    "name": "djvBusoTypesCount"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoNoAppearingMin"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoNoAppearingMax"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTigbanuaAC"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoMove"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTigbanuaHDNum"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTigbanuaHDMod"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTigbanuaDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTigbanuaDmgMid"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTigbanuaDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTigbanuaXPBase"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTigbanuaXPPerHP"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTagamalingAC"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTagamalingDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTagamalingDmgMid"
+   },
+   {
+    "kind": "const",
+    "name": "djvBusoTagamalingDmgMax"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoUncommon"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoLairNil"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoTreasureNil"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoMRStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoIntAnimal"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoChaoticEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoSizeM"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoPsionicNil"
+   }
+  ],
+  "the nature": [
+   {
+    "kind": "bool",
+    "name": "djvBusoGhoulLike"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoCemeteryHabitat"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoOnceFriendlyNowEnemies"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoNightPredators"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoTallLean"
+   },
+   {
+    "kind": "bool",
+    "name": "djvBusoSingleEye"
+   }
+  ],
+  "the tigbanua": [
+   {
+    "kind": "const",
+    "name": "djvTigbanuaFearRadiusFt"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaFerocious"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaFearAura"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaLessThanOneHDAutoParalyzed"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaSaveVsParalyzation"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaParalyzedUntilOutOfRadius"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaSaveGrantsEncounterImmunity"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaClawsAndFangs"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaClawDisease"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaSaveVsDeathOrInfected"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaInfectedBecomeTagamaling"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTigbanuaLowIntelligence"
+   }
+  ],
+  "the tagamaling": [
+   {
+    "kind": "const",
+    "name": "djvTagamalingTransformChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "djvTagamalingIncurablePct"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTagamalingInfectedPerson"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTagamalingNightlyTransformation"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTagamalingSavageMindless"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTagamalingSameHDHPAsPerson"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTagamalingHDVariable"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTagamalingPowersUnusable"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTagamalingNoMemory"
+   },
+   {
+    "kind": "bool",
+    "name": "djvTagamalingNightlyAtLimit"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Buso box",
+   "from": "  - [ ] Buso (capture p. 256)",
+   "to": "  - [x] Buso (capture p. 256)\n    - R708: the djv Buso pins - the two-type\n    stat block (the uncommon, the 1-6, the\n    tigbanua AC 4 the move 12 the 8 + 2 the\n    3 attacks of 1-6/1-6/1-10 the VII/1,400\n    + 12/hp, the tagamaling AC 5 the 3\n    attacks of 1-4/1-4/1-8, the Nil lair,\n    the Nil treasure, the animal, the\n    chaotic evil, the M, the Nil psionics),\n    the ghoul-like nature (the cemetery\n    habitat, the once-friendly now-enemies\n    history, the night predation, the tall\n    lean build, the single red or yellow\n    eye), the tigbanua (the ferocious, the\n    10-foot fear aura with the under-1-HD\n    auto-paralysis and the save vs.\n    paralyzation, the claws and fangs, the\n    claw disease with the save vs. death,\n    the infected become tagamaling), the\n    tagamaling (the 1% cumulative nightly\n    transformation, the same HD and HP, the\n    powers unusable, the no memory, the\n    100% incurable limit); single-pass pins\n    per the Chapter 9 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 161,
+  "open": 74
+ },
+ "include_comment": "the OA Buso pins",
+ "include_after": "#include \"rules/oa78bisan.h\"  // R707: the OA Bisan pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R707 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R707 LANDED 2026-10-21: commit 2a2f67aa2c0b9d5bf48e21de5c697cee00870e82",
+  "  (census 629 -> 630, pushed 393b41b..2a2f67a), OA MONSTERS - the",
+  "  Bisan, Lesser Spirit, capture pp. 255-256 print:",
+  "  rules/oa78bisan.h, prefix dju (verified free at 393b41b), ONE",
+  "  gap flip, gap census 159/76 -> 160/75. 17 consts + 25 bools",
+  "  (42 inlines): the stat block (the very rare, the 1, the AC 0,",
+  "  the move 24, the HD 10, the 100% lair, the Q T, the 1 attack",
+  "  of 1-10, the 40% MR, the High, the Neutral, the M, the",
+  "  VII/2,100 + 14/hp); the tree lifeforce (the harvest spirit,",
+  "  the camphor most common, the beautiful-woman form and the",
+  "  insect preference, the same-type protection, the one tree per",
+  "  bisan, the tree damage, the harvest allowance, the end-of-life",
+  "  felling, the two offerings, the anger rule); the powers (the",
+  "  polymorph, the invisible, the ethereal, the once per round",
+  "  nine-entry battery with the reversible bless); the nature (the",
+  "  mischief doctrine, the flees unless defending its tree, the",
+  "  formidable if angered, the woods known by superstition, the",
+  "  own-language-only speech). Two generator-side false starts",
+  "  (an unwired const, a duplicate emission), first published",
+  "  rverify GREEN, 42 mutants, 0 missed. Spec md5",
+  "  443dea8781284713fa3746381e2f0839 (authored-plus-newline md5",
+  "  f5e3620cda683b69bb5fbf0a4d9f428f - the ritual gate, matched",
+  "  byte-exact; canvas md5 5398e4d6931dfb7a72d3b76fb3c88e56).",
+  "  NEXT - R708: the Buso (capture pp. 256-257), prefix djv",
+  "  (verified free at 2a2f67a - only lowercase djvu prose, no",
+  "  pins), audit \"R708 OA monsters Buso audit\", include after",
+  "  rules/oa78bisan.h."
+ ]
+}
