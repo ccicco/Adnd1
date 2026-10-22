@@ -1,0 +1,204 @@
+{
+ "round": 740,
+ "title": "OA TREASURE - Scrolls: the type determination and the protection scroll notes",
+ "prefix": "dlb",
+ "header_file": "rules/oa111scrolls.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 662,
+ "inline_count": 10,
+ "audit_label": "R740 OA scrolls audit",
+ "audit_comment": "OA round one hundred twenty-seven (capture p. 288): the Scrolls section - the DMG standard type rules with the wu jen and shukenja mappings, the 5% gajin-spell scrolls and their usability, the three protection scroll notes, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - SCROLLS, printed capture p. 288 - the scroll notes round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 193 closed, 42 open - the scrolls box flips (census 662 -> 663); NEXT - R741: Rods, Staves, and Wands (capture p. 288), prefix dlc (verify free at the landing), audit \"R741 OA rods staves wands audit\", include after rules/oa111scrolls.h"
+ },
+ "consts": [
+  {
+   "name": "dlbGajinScrollPct",
+   "value": 5,
+   "comment": "the gajin scroll percent - the 5% of all scrolls found containing gajin spells (print capture p. 288)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlbUseStandardDMGRules",
+   "value": 1,
+   "comment": "the type determination - use the standard rules given in the DMG for the type of scroll found (print capture p. 288)"
+  },
+  {
+   "name": "dlbMagicUsersAsWuJen",
+   "value": 1,
+   "comment": "the first mapping - treating magic-users as wu jen (print capture p. 288)"
+  },
+  {
+   "name": "dlbClericsAsShukenja",
+   "value": 1,
+   "comment": "the second mapping - treating clerics as shukenja (print capture p. 288)"
+  },
+  {
+   "name": "dlbGajinSpellsFivePct",
+   "value": 1,
+   "comment": "the gajin spells - the 5% of all scrolls found containing gajin spells, either magic-user or clerical (print capture p. 288)"
+  },
+  {
+   "name": "dlbGajinUsedByWuJenShukenja",
+   "value": 1,
+   "comment": "the usability - such spells usable by wu jen and shukenja respectively (print capture p. 288)"
+  },
+  {
+   "name": "dlbGajinAddedToSpellBooks",
+   "value": 1,
+   "comment": "the spell books - the gajin spells even addable to the spell books in the case of the wu jen (print capture p. 288)"
+  },
+  {
+   "name": "dlbProtectionFromDevilsRerolled",
+   "value": 1,
+   "comment": "the protection from devils scroll - not commonly found in Oriental lands, the result rerolled (print capture p. 288)"
+  },
+  {
+   "name": "dlbProtectionFromShapechangersScope",
+   "value": 1,
+   "comment": "the protection from shapechangers scroll - including all hengeyokai and the spirit creatures able to change their form (print capture p. 288)"
+  },
+  {
+   "name": "dlbProtectionFromUndeadRerolled",
+   "value": 1,
+   "comment": "the protection from undead scroll - not commonly found in Oriental lands, the result rerolled (print capture p. 288)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the scroll determination and the gajin spells, healthy values, each condition false",
+   "expr": "m['dlbUseStandardDMGRules']() != 1 or m['dlbMagicUsersAsWuJen']() != 1 or m['dlbClericsAsShukenja']() != 1 or m['dlbGajinSpellsFivePct']() != 1 or m['dlbGajinUsedByWuJenShukenja']() != 1 or m['dlbGajinAddedToSpellBooks']() != 1 or m['dlbGajinScrollPct']() != 5"
+  },
+  {
+   "note": "the three protection scroll notes, healthy values, each condition false",
+   "expr": "m['dlbProtectionFromDevilsRerolled']() != 1 or m['dlbProtectionFromShapechangersScope']() != 1 or m['dlbProtectionFromUndeadRerolled']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the type determination": [
+   {
+    "kind": "bool",
+    "name": "dlbUseStandardDMGRules"
+   },
+   {
+    "kind": "bool",
+    "name": "dlbMagicUsersAsWuJen"
+   },
+   {
+    "kind": "bool",
+    "name": "dlbClericsAsShukenja"
+   }
+  ],
+  "the gajin spells": [
+   {
+    "kind": "const",
+    "name": "dlbGajinScrollPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dlbGajinSpellsFivePct"
+   },
+   {
+    "kind": "bool",
+    "name": "dlbGajinUsedByWuJenShukenja"
+   },
+   {
+    "kind": "bool",
+    "name": "dlbGajinAddedToSpellBooks"
+   }
+  ],
+  "the protection scrolls": [
+   {
+    "kind": "bool",
+    "name": "dlbProtectionFromDevilsRerolled"
+   },
+   {
+    "kind": "bool",
+    "name": "dlbProtectionFromShapechangersScope"
+   },
+   {
+    "kind": "bool",
+    "name": "dlbProtectionFromUndeadRerolled"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the scrolls box",
+   "from": "  - [ ] Scrolls (capture p. 288)",
+   "to": "  - [x] Scrolls (capture p. 288)\n    - R740: the dlb scroll pins - the\n    DMG standard type rules treating\n    magic-users as wu jen and clerics as\n    shukenja; the 5% gajin-spell scrolls\n    (magic-user or clerical), usable by\n    the wu jen and shukenja and even\n    addable to the wu jen spell books;\n    the protection from devils rerolled;\n    the protection from shapechangers\n    covering all hengeyokai and the\n    form-changing spirit creatures; the\n    protection from undead rerolled;\n    single-pass pins per the R679\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 193,
+  "open": 42
+ },
+ "include_comment": "the OA scrolls pins",
+ "include_after": "#include \"rules/oa110potions.h\"  // R739: the OA potions pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R739 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R739 LANDED 2026-10-22: commit",
+  "  f599f7abb830d9c4b96e1d18ad9a6df69244c457",
+  "  (census 661 -> 662, pushed cf2f961..f599f7a),",
+  "  OA TREASURE, Potions (capture",
+  "  pp. 287-288, the section runs onto p. 288",
+  "  for the human control table and the",
+  "  undead note, no other box covers them),",
+  "  header rules/oa110potions.h, prefix dla",
+  "  (verified free at cf2f961; the 15 plain",
+  "  substring hits are woodland words), one",
+  "  gap flip (the potions box, single-line),",
+  "  gap census now 192 closed / 43 open.",
+  "  Round type: the Chapter 13 potion grid",
+  "  round, single-pass pins per the R679",
+  "  provenance shift. Inlines: 24 =",
+  "  2 consts + 16 bools + 6 table cols; two",
+  "  tables: dlaDragonControl[12] (the d20",
+  "  bands of the chiang lung through good",
+  "  dragon control) and dlaHumanControl[7]",
+  "  (korobokuru, hengeyokai, spirit folk,",
+  "  human, tengu, the mixed band, the gajin",
+  "  of the DMG table); the hill giant giant",
+  "  control and the undead reroll as bools.",
+  "  STUMBLES, two lessons: (1) the first",
+  "  landing failed the build - \"bad 9\" - the",
+  "  count consts were pinned 13 and 8 above",
+  "  the true 12 and 7 row counts; the python",
+  "  mirror iterates len(data) and never",
+  "  checks the count, the emitted C++ loops",
+  "  to the count const past the array end;",
+  "  THE COUNT CONST MUST DERIVE FROM THE",
+  "  DATA (len(ROWS)), and the generator now",
+  "  asserts count == len(data) per table.",
+  "  (2) after a preflight-RED round the",
+  "  engine had already applied the flip and",
+  "  the patches - ./bn alone does NOT",
+  "  restore the gap report; the full restore",
+  "  is git restore regtest.cpp",
+  "  doc/vibe/adnd1_knowledge_seed_v2.md",
+  "  tools/oa_gap_report.md plus rm of the",
+  "  new header, verified by a 0 count of",
+  "  the audit label, else the mixed-state",
+  "  guard (the R420 lesson) aborts. Battery",
+  "  75 mutants, 0 missed. spec md5",
+  "  f96e72efccc709fa05ec71e6f76738b4, gate",
+  "  md5 ac7b4875eaa4ce26df6a2f3742e2e519,",
+  "  canvas md5 e53c45d2a78469e5f8f2eddaddecd",
+  "  43f. NEXT - R740: Scrolls (capture",
+  "  p. 288), prefix dlb (verify free at the",
+  "  landing), audit \"R740 OA scrolls audit\",",
+  "  include after rules/oa110potions.h."
+ ]
+}

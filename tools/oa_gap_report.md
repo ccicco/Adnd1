@@ -2996,7 +2996,21 @@ description riding the same round.
     undead control not available, the
     result rerolled; single-pass pins
     per the R679 provenance shift
-  - [ ] Scrolls (capture p. 288)
+  - [x] Scrolls (capture p. 288)
+    - R740: the dlb scroll pins - the
+    DMG standard type rules treating
+    magic-users as wu jen and clerics as
+    shukenja; the 5% gajin-spell scrolls
+    (magic-user or clerical), usable by
+    the wu jen and shukenja and even
+    addable to the wu jen spell books;
+    the protection from devils rerolled;
+    the protection from shapechangers
+    covering all hengeyokai and the
+    form-changing spirit creatures; the
+    protection from undead rerolled;
+    single-pass pins per the R679
+    provenance shift
   - [ ] Rods, Staves, and Wands (capture p. 288)
   - [ ] Miscellaneous Magic (capture pp. 288-289)
   - [ ] Armor and Shield prose (capture pp. 289-291)

@@ -17407,6 +17407,57 @@ when both halves land.
   woodland words in comments and strings),
   audit "R739 OA potions audit", include
   after rules/oa109itemmods.h.
+- R739 LANDED 2026-10-22: commit
+  f599f7abb830d9c4b96e1d18ad9a6df69244c457
+  (census 661 -> 662, pushed cf2f961..f599f7a),
+  OA TREASURE, Potions (capture
+  pp. 287-288, the section runs onto p. 288
+  for the human control table and the
+  undead note, no other box covers them),
+  header rules/oa110potions.h, prefix dla
+  (verified free at cf2f961; the 15 plain
+  substring hits are woodland words), one
+  gap flip (the potions box, single-line),
+  gap census now 192 closed / 43 open.
+  Round type: the Chapter 13 potion grid
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 24 =
+  2 consts + 16 bools + 6 table cols; two
+  tables: dlaDragonControl[12] (the d20
+  bands of the chiang lung through good
+  dragon control) and dlaHumanControl[7]
+  (korobokuru, hengeyokai, spirit folk,
+  human, tengu, the mixed band, the gajin
+  of the DMG table); the hill giant giant
+  control and the undead reroll as bools.
+  STUMBLES, two lessons: (1) the first
+  landing failed the build - "bad 9" - the
+  count consts were pinned 13 and 8 above
+  the true 12 and 7 row counts; the python
+  mirror iterates len(data) and never
+  checks the count, the emitted C++ loops
+  to the count const past the array end;
+  THE COUNT CONST MUST DERIVE FROM THE
+  DATA (len(ROWS)), and the generator now
+  asserts count == len(data) per table.
+  (2) after a preflight-RED round the
+  engine had already applied the flip and
+  the patches - ./bn alone does NOT
+  restore the gap report; the full restore
+  is git restore regtest.cpp
+  doc/vibe/adnd1_knowledge_seed_v2.md
+  tools/oa_gap_report.md plus rm of the
+  new header, verified by a 0 count of
+  the audit label, else the mixed-state
+  guard (the R420 lesson) aborts. Battery
+  75 mutants, 0 missed. spec md5
+  f96e72efccc709fa05ec71e6f76738b4, gate
+  md5 ac7b4875eaa4ce26df6a2f3742e2e519,
+  canvas md5 e53c45d2a78469e5f8f2eddaddecd
+  43f. NEXT - R740: Scrolls (capture
+  p. 288), prefix dlb (verify free at the
+  landing), audit "R740 OA scrolls audit",
+  include after rules/oa110potions.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
