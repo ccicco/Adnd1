@@ -17990,6 +17990,47 @@ when both halves land.
   at the landing), audit "R753 OA Table 82
   misc melee audit", include after
   rules/oa123table81.h.
+- R753 LANDED 2026-10-22: commit
+  3c6a44d2e6f29ce9dae0f352ea0e6682e29d72f8
+  (census 675 -> 676, pushed 689bb64..3c6a44d),
+  OA TREASURE, Table 82: Miscellaneous (capture
+  pp. 292-293, the grid spanning the page
+  break), header rules/oa124table82.h,
+  prefix dlo (verified free at 689bb64),
+  one gap flip (the Table 82 box,
+  single-line), gap census now 206 closed /
+  29 open. Round type: the Chapter 13 d100
+  band grid round, single-pass pins per the
+  R679 provenance shift. Inlines: 7 =
+  1 const + 3 bools + 3 table cols; one
+  table dloMiscMelee[13]: the thirteen
+  d100 bands (the battle axe 01-05, the
+  bo stick 06-15, the dagger 16-30, the
+  halberd 31-45, the jo stick 46-48, the
+  kama 49-54, the lajatang 55, the lance
+  56-60, the nagamaki 61-65, the naginata
+  66-75, the spear 76-90, the tetsubo
+  91-95, the trident 96-100). CAPTURE
+  QUIRK PINNED AS PRINTED: the 61-65 band
+  printing the Nagasaki - almost certainly
+  the nagamaki intended - carried by the
+  dloNagasakiMisprint bool and the code-map
+  comment, plus the MELEE CLASS banner
+  quirk and the single-roll bands. Count
+  const derived from the data (the R739
+  lesson) and the genuine-0 census asserted
+  in the generator (the R745 lesson),
+  verified 13/13/13 at the landing. Zero
+  stumbles, first rverify GREEN. Battery 43
+  mutants, 0 missed. spec md5
+  cac33d1e701024e0171e1524ffb833a0, gate
+  md5 45ae5fa1d4a72858fd1acd9176dcbb4c,
+  canvas md5 03ca5240c29a4b11a5ec218518298a
+  e0. NEXT - R754: Table 83: Missile Class
+  (capture p. 293), prefix dlp (verify free
+  at the landing), audit "R754 OA Table 83
+  missile audit", include after
+  rules/oa124table82.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

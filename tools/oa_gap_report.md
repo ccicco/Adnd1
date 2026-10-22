@@ -3192,7 +3192,20 @@ description riding the same round.
     the tetsubo 91-95; the trident 96-100;
     single-pass pins per the R679
     provenance shift
-  - [ ] Table 83: Missile Class (capture p. 293)
+  - [x] Table 83: Missile Class (capture p. 293)
+    - R754: the dlp Table 83 pins - the
+    twelve d100 missile bands: the armor
+    piercer arrow 01-10 (2-12); the frog
+    crotch arrow 11-20 (2-8); the humming
+    bulb arrow 21-25 (2-5); the leaf head
+    arrow 26-40 (2-12); the normal arrow
+    41-60 (3-24); the throwing axe 61-70;
+    the blowpipe dart 71 (2-8); the thrown
+    dart 72 (3-12); the javelin 73-77; the
+    quarrel 78-90 (2-24); the sling and
+    pellet bow bullets 91-98 (2-20); the
+    uchi-ne 99-100; single-pass pins per
+    the R679 provenance shift
   - [ ] Table 84: Martial Arts Class (capture p. 293)
   - [ ] Table 85: Ninja Class (capture p. 293)
   - [ ] Explanation of Weapon Properties (capture

@@ -1,0 +1,227 @@
+{
+ "round": 754,
+ "title": "OA TREASURE - Table 83: Missile Class: the d100 missile type grid",
+ "prefix": "dlp",
+ "header_file": "rules/oa125table83.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 676,
+ "inline_count": 7,
+ "audit_label": "R754 OA Table 83 missile audit",
+ "audit_comment": "OA round one hundred forty-one (capture p. 293): the Table 83 Missile Class - the twelve d100 bands of the missile types, the five arrow types through the uchi-ne, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE 83, MISSILE CLASS, printed capture p. 293 - the missile type grid round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 207 closed, 28 open - the Table 83 box flips (census 676 -> 677); NEXT - R755: Table 84: Martial Arts Class (capture p. 293), prefix dlq (verify free at the landing), audit \"R755 OA Table 84 martial arts audit\", include after rules/oa125table83.h"
+ },
+ "consts": [
+  {
+   "name": "dlpMissileRowCount",
+   "value": 12,
+   "comment": "the missile row count - the twelve d100 bands of the Table 83 missile type grid (print capture p. 293)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlpArrowBands",
+   "value": 1,
+   "comment": "the arrow bands - the five arrow types of the 01-60 stretch, the armor piercer through the normal (print capture p. 293)"
+  },
+  {
+   "name": "dlpSingleRollBands",
+   "value": 1,
+   "comment": "the single-roll bands - the 71 blowpipe dart and the 72 thrown dart, the one-number bands of the grid (print capture p. 293)"
+  },
+  {
+   "name": "dlpUchiNeTail",
+   "value": 1,
+   "comment": "the uchi-ne tail - the 99-100 closing band, the short Japanese throwing dart (print capture p. 293)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dlpMissileClass",
+   "tag": "MissileClass",
+   "count": "dlpMissileRowCount",
+   "comment": "the Table 83 Missile Class grid - the twelve d100 bands of the missile types, the armor piercer arrow through the uchi-ne (print capture p. 293)",
+   "cols": [
+    "dlpMissileRollMin",
+    "dlpMissileRollMax",
+    "dlpMissileCode"
+   ],
+   "col_comments": [
+    "the d100 band minimum - the low roll of the row (print capture p. 293)",
+    "the d100 band maximum - the high roll of the row (print capture p. 293)",
+    "the missile type code - 1 the armor piercer arrow, 2-12 damage; 2 the frog crotch arrow, 2-8 damage; 3 the humming bulb arrow, 2-5 damage; 4 the leaf head arrow, 2-12 damage; 5 the normal arrow, 3-24 damage; 6 the throwing axe; 7 the blowpipe dart, 2-8 damage; 8 the thrown dart, 3-12 damage; 9 the javelin; 10 the quarrel, 2-24 damage; 11 the sling and pellet bow bullets, 2-20 damage; 12 the uchi-ne (print capture p. 293)"
+   ],
+   "data": [
+    [
+     1,
+     10,
+     1
+    ],
+    [
+     11,
+     20,
+     2
+    ],
+    [
+     21,
+     25,
+     3
+    ],
+    [
+     26,
+     40,
+     4
+    ],
+    [
+     41,
+     60,
+     5
+    ],
+    [
+     61,
+     70,
+     6
+    ],
+    [
+     71,
+     71,
+     7
+    ],
+    [
+     72,
+     72,
+     8
+    ],
+    [
+     73,
+     77,
+     9
+    ],
+    [
+     78,
+     90,
+     10
+    ],
+    [
+     91,
+     98,
+     11
+    ],
+    [
+     99,
+     100,
+     12
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the grid - the twelve-band Table 83, audited cell by cell by the table audit",
+   "expr": "m['dlpMissileRowCount']() != 12 or m['dlpMissileRollMin'](0) != 1 or m['dlpMissileRollMax'](11) != 100 or m['dlpMissileCode'](0) != 1 or m['dlpMissileCode'](11) != 12"
+  },
+  {
+   "note": "the quirks - the arrow stretch, the single-roll bands, and the tail, healthy values, each condition false",
+   "expr": "m['dlpMissileRollMax'](4) != 60 or m['dlpMissileCode'](4) != 5 or m['dlpMissileRollMin'](6) != 71 or m['dlpMissileRollMax'](7) != 72 or m['dlpArrowBands']() != 1 or m['dlpSingleRollBands']() != 1 or m['dlpUchiNeTail']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 83 grid": [
+   {
+    "kind": "const",
+    "name": "dlpMissileRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dlpMissileClass"
+   }
+  ],
+  "the quirks": [
+   {
+    "kind": "bool",
+    "name": "dlpArrowBands"
+   },
+   {
+    "kind": "bool",
+    "name": "dlpSingleRollBands"
+   },
+   {
+    "kind": "bool",
+    "name": "dlpUchiNeTail"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 83 box",
+   "from": "  - [ ] Table 83: Missile Class (capture p. 293)",
+   "to": "  - [x] Table 83: Missile Class (capture p. 293)\n    - R754: the dlp Table 83 pins - the\n    twelve d100 missile bands: the armor\n    piercer arrow 01-10 (2-12); the frog\n    crotch arrow 11-20 (2-8); the humming\n    bulb arrow 21-25 (2-5); the leaf head\n    arrow 26-40 (2-12); the normal arrow\n    41-60 (3-24); the throwing axe 61-70;\n    the blowpipe dart 71 (2-8); the thrown\n    dart 72 (3-12); the javelin 73-77; the\n    quarrel 78-90 (2-24); the sling and\n    pellet bow bullets 91-98 (2-20); the\n    uchi-ne 99-100; single-pass pins per\n    the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 207,
+  "open": 28
+ },
+ "include_comment": "the OA Table 83 pins",
+ "include_after": "#include \"rules/oa124table82.h\"  // R753: the OA Table 82 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R753 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R753 LANDED 2026-10-22: commit",
+  "  3c6a44d2e6f29ce9dae0f352ea0e6682e29d72f8",
+  "  (census 675 -> 676, pushed 689bb64..3c6a44d),",
+  "  OA TREASURE, Table 82: Miscellaneous (capture",
+  "  pp. 292-293, the grid spanning the page",
+  "  break), header rules/oa124table82.h,",
+  "  prefix dlo (verified free at 689bb64),",
+  "  one gap flip (the Table 82 box,",
+  "  single-line), gap census now 206 closed /",
+  "  29 open. Round type: the Chapter 13 d100",
+  "  band grid round, single-pass pins per the",
+  "  R679 provenance shift. Inlines: 7 =",
+  "  1 const + 3 bools + 3 table cols; one",
+  "  table dloMiscMelee[13]: the thirteen",
+  "  d100 bands (the battle axe 01-05, the",
+  "  bo stick 06-15, the dagger 16-30, the",
+  "  halberd 31-45, the jo stick 46-48, the",
+  "  kama 49-54, the lajatang 55, the lance",
+  "  56-60, the nagamaki 61-65, the naginata",
+  "  66-75, the spear 76-90, the tetsubo",
+  "  91-95, the trident 96-100). CAPTURE",
+  "  QUIRK PINNED AS PRINTED: the 61-65 band",
+  "  printing the Nagasaki - almost certainly",
+  "  the nagamaki intended - carried by the",
+  "  dloNagasakiMisprint bool and the code-map",
+  "  comment, plus the MELEE CLASS banner",
+  "  quirk and the single-roll bands. Count",
+  "  const derived from the data (the R739",
+  "  lesson) and the genuine-0 census asserted",
+  "  in the generator (the R745 lesson),",
+  "  verified 13/13/13 at the landing. Zero",
+  "  stumbles, first rverify GREEN. Battery 43",
+  "  mutants, 0 missed. spec md5",
+  "  cac33d1e701024e0171e1524ffb833a0, gate",
+  "  md5 45ae5fa1d4a72858fd1acd9176dcbb4c,",
+  "  canvas md5 03ca5240c29a4b11a5ec218518298a",
+  "  e0. NEXT - R754: Table 83: Missile Class",
+  "  (capture p. 293), prefix dlp (verify free",
+  "  at the landing), audit \"R754 OA Table 83",
+  "  missile audit\", include after",
+  "  rules/oa124table82.h."
+ ]
+}
