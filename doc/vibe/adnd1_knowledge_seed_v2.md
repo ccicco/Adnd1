@@ -19161,6 +19161,65 @@ when both halves land.
   canvas md5 698ee0e602f24c7a23f713e93ae37bc5.
   NEXT - R775: the mounted-combat engine
   site through the seam.
+- R775 LANDED 2026-10-22: commit
+  98236d977f22afc228194d295269e1f30a52fa67
+  (census 697 -> 698, pushed 5ddec12..98236d9),
+  THE RT FILE-PATCH FIX - the seam upgrades
+  itself, the SECOND TOOLING ROUND, header
+  rules/rtseam.h, prefix dnb (fully free at
+  5ddec12). THE TRIGGER: designing the R775
+  mount site exposed the CLOBBER CLASS in
+  the R774 seam - the engine's (f) section
+  read every file-patch target from disk,
+  but regtest.cpp is the one target the
+  engine ALSO patches in memory (the
+  include and the audit block, writes
+  deferred to the end), so the site round's
+  R403 charge flips (regtest 43207/43210)
+  would have clobbered the include and the
+  audit with the pristine disk copy. THE
+  FIX: a file patch ON tools/splice_engine.py
+  itself - when the target is RT, the patch
+  reads the in-memory text instead of
+  rd(p). THE PROOF LOOP IS CLOSED: the
+  patch landed through the ritual with ZERO
+  hand-saves (the R774 bootstrap note dies
+  here) - run 1 of the double-run is the
+  old engine patching its own source on
+  disk, run 2 executes the NEW engine and
+  reports already 5, and ./rn git-added the
+  tool via the spec's file_patches (the
+  commit's 5th file). Pre-publish proof
+  beyond rverify GREEN: a simulated RT
+  patch on the new engine kept include +
+  audit + the flipped condition together
+  (census 698, no clobber). Round type:
+  the tooling round, zero book pages. Site
+  slippage: the R774 record hoped R775 for
+  the mount site; the site lands R776
+  because the charge flips needed this
+  fix first (recorded in the dnb pins).
+  Inlines: 5 = 2 consts (the first
+  self-patched tool round 775, the mount
+  site round 776) + 3 bools (the RT patch
+  rides the in-memory text, the clobber
+  class dead, tools land through the
+  ritual). The user's ./bn 775 detour
+  (struck per the R516 rule) caused no
+  drift - the gate md5
+  93e0a4f9988b53b1fb4604daca7fb108
+  printed exactly. First rverify GREEN
+  (double-run 5 patches applied/already
+  clean, 5 mutants 0 missed).
+  spec md5 7b20f88d95d407af58efedcbde4edf54,
+  gate md5 93e0a4f9988b53b1fb4604daca7fb108,
+  canvas md5 541791cc26d225359d7ce36c32561bed.
+  NEXT - R776: the mounted-combat engine
+  site through the seam (game/party.h mount
+  actor, game/state_combat.cpp mounted
+  resolution, the rules/mountlayer.h charge
+  flips, and the R403 condition flips at
+  regtest 43207/43210).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

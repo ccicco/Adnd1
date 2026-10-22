@@ -69,6 +69,23 @@ void AppState::beginCombat(std::vector<ai::Actor> foes, int roomIndex, const std
         }
         combat.start(partyActors(), std::move(foes),
                      rng.below(0x7FFFFFFF));
+        // R776: the mounted-combat site - the
+        // R403 mount layer charges the engine:
+        // the Character carries a mount and
+        // the combat open reads it (the
+        // mounted resolution).
+        int mountedRiders = 0;
+        for (const auto& c : party.members)
+            if (c.hp > 0 && c.mountKind)
+                ++mountedRiders;
+        if (mountedRiders) {
+            char mbuf[64];
+            snprintf(mbuf, sizeof mbuf,
+                     "%d rider(s) meet the foes "
+                     "from the saddle.",
+                     mountedRiders);
+            log.add(mbuf);
+        }
         // R313: the water fight - the company
         // standing in the flood pool fights under
         // the R311 underwater combat pins

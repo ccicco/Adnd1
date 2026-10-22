@@ -51,10 +51,11 @@
 namespace rules {
 
 // ---- the layer contract ----
-// The engine has no mount actor
-// (the pins precede any site).
+// The R776 site landed: the
+// Character carries a mount and
+// beginCombat reads it.
 inline bool mmlMountActorSiteExists()
-    { return false; }
+    { return true; }
 
 inline bool mmlPinsPrecedeSite()
     { return true; }
@@ -64,13 +65,12 @@ inline bool mmlPinsPrecedeSite()
 inline bool mmlGatesMountedCombatCharge()
     { return true; }
 
-// The charge (the mount actor,
-// the mounted resolution) stays
-// open after the seam lands; the
-// site lands R775 through the
-// R774 file-patch seam.
+// The charge landed R776 through
+// the file-patch seam: the site
+// exists, the mounted resolution
+// rides game/state_combat.cpp.
 inline bool mmlMountedCombatChargeOpen()
-    { return true; }
+    { return false; }
 
 // The named precedent: the R321
 // aerial environment - pins

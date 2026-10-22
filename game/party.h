@@ -178,6 +178,14 @@ struct Character {
     // the viewed-race adjustment (the
     // reaction caller passes the viewer).
     int  uaComBase = 0;
+    // R776: the mount (the R403 mount layer
+    // charging the engine - the mount actor
+    // site). 0 = afoot (the v1-save default).
+    // The beginCombat seam reads it (the
+    // mounted resolution); nothing writes it
+    // yet - a later round may carry the
+    // saddle acquisition and the save line.
+    int  mountKind = 0;
     int  classIndex = 0;
     // R230: the registry subclass (rules::Subclass;
     // -1 = a plain class member; v1 saves load -1)

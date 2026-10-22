@@ -601,23 +601,31 @@ writes.append((RT, rt))
 # patch counted in the applied/already
 # census so the double-run gate covers
 # them exactly like a gap flip
+# the working texts: every patch
+# on a file builds on the
+# previous patch's text (the
+# multi-patch chaining class: a
+# file patched twice lost the
+# first flip to the stale
+# re-read - RT since R775, every
+# other file since this fix)
+fp_txt = {}
 for fp in S.get('file_patches', []):
     p = fp['file']
-    if not os.path.exists(p):
-        die('the file patch target is '
-            'missing: %s' % p)
-    if p == RT:
+    if p in fp_txt:
+        txt = fp_txt[p]
+    elif p == RT:
         # RT is engine-patched in
         # memory (the include and
         # the audit); the file
         # patch rides that text,
         # never the pristine disk
-        # copy (the clobber class:
-        # the deferred writes would
-        # lose the include and the
-        # audit to the stale read)
+        # copy
         txt = rt
     else:
+        if not os.path.exists(p):
+            die('the file patch target '
+                'is missing: %s' % p)
         txt = rd(p)
     if fp['to'] in txt:
         already.append('file: %s'
@@ -628,6 +636,9 @@ for fp in S.get('file_patches', []):
                 'missing: %s' % fp['note'])
         txt = txt.replace(fp['from'],
                           fp['to'], 1)
+        fp_txt[p] = txt
+        if p == RT:
+            rt = txt
         writes.append((p, txt))
         applied.append('file: %s'
                        % fp['note'])

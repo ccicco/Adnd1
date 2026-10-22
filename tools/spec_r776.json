@@ -1,0 +1,198 @@
+{
+ "round": 776,
+ "prefix": "dno",
+ "header_file": "rules/mountcombat.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 698,
+ "title": "the mounted-combat engine site - the R403 charge lands",
+ "audit_label": "R776 mount site audit",
+ "audit_comment": "THE SITE ROUND - the R403 mount layer charges the engine: the Character gains the mount field (the mount actor site), beginCombat reads it (the mounted resolution seam), and the mount layer charge closes with the site. The six feeder seams (R123 movement, R170 followers mounts, R189 charge damage, R321 aerial, R328 cavalier, R356 mount spell) stay pinned in their headers - the site reads the layer contract, it does not re-pin the feeders. The R775 fix carries the regtest R403 condition flips: RT file patches ride the in-memory engine text, so the include and this audit block survive alongside the flipped conditions. ONE PATCH PER FILE this round: the multi-patch chaining class (a file patched twice lost the first flip to the stale re-read - the site design exposed it twice, RT and non-RT) means the mountlayer and regtest flips ride single byte-exact span patches, and the generalized chaining fix (a per-file working-text cache) lands as this round's engine self-patch for the future rounds that need it.",
+ "include_comment": "the mount site pins",
+ "include_after": "#include \"rules/rtseam.h\"  // R775: the RT seam fix pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R775 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R775 LANDED 2026-10-22: commit",
+  "  98236d977f22afc228194d295269e1f30a52fa67",
+  "  (census 697 -> 698, pushed 5ddec12..98236d9),",
+  "  THE RT FILE-PATCH FIX - the seam upgrades",
+  "  itself, the SECOND TOOLING ROUND, header",
+  "  rules/rtseam.h, prefix dnb (fully free at",
+  "  5ddec12). THE TRIGGER: designing the R775",
+  "  mount site exposed the CLOBBER CLASS in",
+  "  the R774 seam - the engine's (f) section",
+  "  read every file-patch target from disk,",
+  "  but regtest.cpp is the one target the",
+  "  engine ALSO patches in memory (the",
+  "  include and the audit block, writes",
+  "  deferred to the end), so the site round's",
+  "  R403 charge flips (regtest 43207/43210)",
+  "  would have clobbered the include and the",
+  "  audit with the pristine disk copy. THE",
+  "  FIX: a file patch ON tools/splice_engine.py",
+  "  itself - when the target is RT, the patch",
+  "  reads the in-memory text instead of",
+  "  rd(p). THE PROOF LOOP IS CLOSED: the",
+  "  patch landed through the ritual with ZERO",
+  "  hand-saves (the R774 bootstrap note dies",
+  "  here) - run 1 of the double-run is the",
+  "  old engine patching its own source on",
+  "  disk, run 2 executes the NEW engine and",
+  "  reports already 5, and ./rn git-added the",
+  "  tool via the spec's file_patches (the",
+  "  commit's 5th file). Pre-publish proof",
+  "  beyond rverify GREEN: a simulated RT",
+  "  patch on the new engine kept include +",
+  "  audit + the flipped condition together",
+  "  (census 698, no clobber). Round type:",
+  "  the tooling round, zero book pages. Site",
+  "  slippage: the R774 record hoped R775 for",
+  "  the mount site; the site lands R776",
+  "  because the charge flips needed this",
+  "  fix first (recorded in the dnb pins).",
+  "  Inlines: 5 = 2 consts (the first",
+  "  self-patched tool round 775, the mount",
+  "  site round 776) + 3 bools (the RT patch",
+  "  rides the in-memory text, the clobber",
+  "  class dead, tools land through the",
+  "  ritual). The user's ./bn 775 detour",
+  "  (struck per the R516 rule) caused no",
+  "  drift - the gate md5",
+  "  93e0a4f9988b53b1fb4604daca7fb108",
+  "  printed exactly. First rverify GREEN",
+  "  (double-run 5 patches applied/already",
+  "  clean, 5 mutants 0 missed).",
+  "  spec md5 7b20f88d95d407af58efedcbde4edf54,",
+  "  gate md5 93e0a4f9988b53b1fb4604daca7fb108,",
+  "  canvas md5 541791cc26d225359d7ce36c32561bed.",
+  "  NEXT - R776: the mounted-combat engine",
+  "  site through the seam (game/party.h mount",
+  "  actor, game/state_combat.cpp mounted",
+  "  resolution, the rules/mountlayer.h charge",
+  "  flips, and the R403 condition flips at",
+  "  regtest 43207/43210)."
+ ],
+ "banner": {
+  "title": "THE MOUNTED-COMBAT ENGINE SITE - the R403 charge lands: the mount actor, the mounted resolution, and the charge closed",
+  "provenance": "The last ungated deferred item: the R403 mount layer consolidated six feeder seams and left the charge open because the engine had no mount actor. The site lands through the R774/R775 file-patch seam as five spec-declared patches: the Character mount field in game/party.h (0 = afoot, the v1-save default), the beginCombat mounted read in game/state_combat.cpp (the first living members riding report the company mounted - the combat open prints the riders), the rules/mountlayer.h contract flip (ONE span patch: the site exists, the charge closed), and the regtest.cpp R403 span flip (one byte-exact block carrying both conditions - the audit now fails if the site goes missing or the charge reopens). The state_combat TU is in the preflight build, so the site is compile-gated like every audit block. The mount field is a seam, not a save line: nothing writes mountKind yet (a later round may carry the saddle acquisition and the save line).",
+  "sentinel": "Zero book pages: the provenance is the engine site (the R403 seam closing against its already-landed feeders)."
+ },
+ "consts": [
+  {
+   "name": "dnoMountLayerRound",
+   "value": 403,
+   "comment": "The R403 mount layer - the six feeder seams and the layer contract the site charges."
+  },
+  {
+   "name": "dnoMountSiteRound",
+   "value": 776,
+   "comment": "The site round: the mount actor lands, the mounted resolution opens, the charge closes."
+  },
+  {
+   "name": "dnoMountedFeederSeams",
+   "value": 6,
+   "comment": "The feeders stay pinned in their own headers (R123, R170, R189, R321, R328, R356); the site reads the layer, it does not re-pin them."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnoCharacterCarriesMount",
+   "value": true,
+   "comment": "The mount actor site: the Character carries the mount field (0 = afoot, the v1-save default)."
+  },
+  {
+   "name": "dnoCombatOpenReadsMount",
+   "value": true,
+   "comment": "The mounted resolution seam: beginCombat counts the living riders and prints them at the combat open."
+  },
+  {
+   "name": "dnoChargeClosedWithSite",
+   "value": true,
+   "comment": "The mount layer charge closes with the site: the layer site-exists bool flips true, the charge-open bool flips false."
+  },
+  {
+   "name": "dnoR403AuditFollowsSite",
+   "value": true,
+   "comment": "The R403 audit conditions flip with the site - the audit fails if the site goes missing or the charge reopens."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [],
+ "table_checks": [],
+ "header_sections": {
+  "the mount site (the R403 charge)": [
+   {
+    "kind": "const",
+    "name": "dnoMountLayerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dnoMountSiteRound"
+   },
+   {
+    "kind": "const",
+    "name": "dnoMountedFeederSeams"
+   },
+   {
+    "kind": "bool",
+    "name": "dnoCharacterCarriesMount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnoCombatOpenReadsMount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnoChargeClosedWithSite"
+   },
+   {
+    "kind": "bool",
+    "name": "dnoR403AuditFollowsSite"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 7,
+ "file_patches": [
+  {
+   "file": "game/party.h",
+   "note": "the mount actor field lands on the Character",
+   "from": "    int  uaComBase = 0;\n    int  classIndex = 0;",
+   "to": "    int  uaComBase = 0;\n    // R776: the mount (the R403 mount layer\n    // charging the engine - the mount actor\n    // site). 0 = afoot (the v1-save default).\n    // The beginCombat seam reads it (the\n    // mounted resolution); nothing writes it\n    // yet - a later round may carry the\n    // saddle acquisition and the save line.\n    int  mountKind = 0;\n    int  classIndex = 0;"
+  },
+  {
+   "file": "game/state_combat.cpp",
+   "note": "the mounted resolution seam opens at the combat open",
+   "from": "        combat.start(partyActors(), std::move(foes),\n                     rng.below(0x7FFFFFFF));",
+   "to": "        combat.start(partyActors(), std::move(foes),\n                     rng.below(0x7FFFFFFF));\n        // R776: the mounted-combat site - the\n        // R403 mount layer charges the engine:\n        // the Character carries a mount and\n        // the combat open reads it (the\n        // mounted resolution).\n        int mountedRiders = 0;\n        for (const auto& c : party.members)\n            if (c.hp > 0 && c.mountKind)\n                ++mountedRiders;\n        if (mountedRiders) {\n            char mbuf[64];\n            snprintf(mbuf, sizeof mbuf,\n                     \"%d rider(s) meet the foes \"\n                     \"from the saddle.\",\n                     mountedRiders);\n            log.add(mbuf);\n        }"
+  },
+  {
+   "file": "rules/mountlayer.h",
+   "note": "the layer contract flips with the site (the site-exists bool flips true, the charge-open bool flips false - ONE span patch: one file, one patch this round)",
+   "from": "// The engine has no mount actor\n// (the pins precede any site).\ninline bool mmlMountActorSiteExists()\n    { return false; }\n\ninline bool mmlPinsPrecedeSite()\n    { return true; }\n\n// The seam gates the\n// mounted-combat charge.\ninline bool mmlGatesMountedCombatCharge()\n    { return true; }\n\n// The charge (the mount actor,\n// the mounted resolution) stays\n// open after the seam lands; the\n// site lands R775 through the\n// R774 file-patch seam.\ninline bool mmlMountedCombatChargeOpen()\n    { return true; }",
+   "to": "// The R776 site landed: the\n// Character carries a mount and\n// beginCombat reads it.\ninline bool mmlMountActorSiteExists()\n    { return true; }\n\ninline bool mmlPinsPrecedeSite()\n    { return true; }\n\n// The seam gates the\n// mounted-combat charge.\ninline bool mmlGatesMountedCombatCharge()\n    { return true; }\n\n// The charge landed R776 through\n// the file-patch seam: the site\n// exists, the mounted resolution\n// rides game/state_combat.cpp.\ninline bool mmlMountedCombatChargeOpen()\n    { return false; }"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the R403 audit follows the site: both charge conditions flip in one span (the RT patch is one byte-exact block - the engine chains one RT write, not many)",
+   "from": "        if (mmlMountActorSiteExists()) ++bad;\n        if (!mmlPinsPrecedeSite()) ++bad;\n        if (!mmlGatesMountedCombatCharge()) ++bad;\n        if (!mmlMountedCombatChargeOpen()) ++bad;",
+   "to": "        if (!mmlMountActorSiteExists()) ++bad;\n        if (!mmlPinsPrecedeSite()) ++bad;\n        if (!mmlGatesMountedCombatCharge()) ++bad;\n        if (mmlMountedCombatChargeOpen()) ++bad;"
+  },
+  {
+   "file": "tools/splice_engine.py",
+   "note": "the engine chains: every patch on a file builds on the previous patch text (the multi-patch chaining class the R776 design exposed twice - two patches on one file lost the first flip to the stale re-read, RT and non-RT alike)",
+   "from": "for fp in S.get('file_patches', []):\n    p = fp['file']\n    if not os.path.exists(p):\n        die('the file patch target is '\n            'missing: %s' % p)\n    if p == RT:\n        # RT is engine-patched in\n        # memory (the include and\n        # the audit); the file\n        # patch rides that text,\n        # never the pristine disk\n        # copy (the clobber class:\n        # the deferred writes would\n        # lose the include and the\n        # audit to the stale read)\n        txt = rt\n    else:\n        txt = rd(p)\n    if fp['to'] in txt:\n        already.append('file: %s'\n                       % fp['note'])\n    else:\n        if fp['from'] not in txt:\n            die('the file patch anchor is '\n                'missing: %s' % fp['note'])\n        txt = txt.replace(fp['from'],\n                          fp['to'], 1)\n        writes.append((p, txt))\n        applied.append('file: %s'\n                       % fp['note'])",
+   "to": "# the working texts: every patch\n# on a file builds on the\n# previous patch's text (the\n# multi-patch chaining class: a\n# file patched twice lost the\n# first flip to the stale\n# re-read - RT since R775, every\n# other file since this fix)\nfp_txt = {}\nfor fp in S.get('file_patches', []):\n    p = fp['file']\n    if p in fp_txt:\n        txt = fp_txt[p]\n    elif p == RT:\n        # RT is engine-patched in\n        # memory (the include and\n        # the audit); the file\n        # patch rides that text,\n        # never the pristine disk\n        # copy\n        txt = rt\n    else:\n        if not os.path.exists(p):\n            die('the file patch target '\n                'is missing: %s' % p)\n        txt = rd(p)\n    if fp['to'] in txt:\n        already.append('file: %s'\n                       % fp['note'])\n    else:\n        if fp['from'] not in txt:\n            die('the file patch anchor is '\n                'missing: %s' % fp['note'])\n        txt = txt.replace(fp['from'],\n                          fp['to'], 1)\n        fp_txt[p] = txt\n        if p == RT:\n            rt = txt\n        writes.append((p, txt))\n        applied.append('file: %s'\n                       % fp['note'])"
+  }
+ ]
+}
