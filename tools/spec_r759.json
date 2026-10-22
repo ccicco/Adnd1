@@ -1,0 +1,369 @@
+{
+ "round": 759,
+ "title": "OA TREASURE - Table 86: Oriental Magical Items: the d100 item grid with the overlap quirk",
+ "prefix": "dlu",
+ "header_file": "rules/oa130table86.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 681,
+ "inline_count": 8,
+ "audit_label": "R759 OA Table 86 items audit",
+ "audit_comment": "OA round one hundred forty-six (capture pp. 296-297): the Table 86 Oriental Magical Items - the thirty-four d100 bands of the item grid, the banner of protection through the wondrous writing set, the 91-100 overlap quirk of the tail pinned as printed, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE 86, ORIENTAL MAGICAL ITEMS, printed capture pp. 296-297 - the item grid round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 212 closed, 23 open - the Table 86 box flips (census 681 -> 682); CHAPTER 13 COMPLETE - NEXT - R760: Chapter 14 An Overview of Kara-Tur, the chapter intro and the Population prose (capture pp. 301-302), prefix dlv (verify free at the landing), audit \"R760 OA Kara-Tur overview audit\", include after rules/oa130table86.h - the setting chapter, advisory prose closing on doctrine pins"
+ },
+ "consts": [
+  {
+   "name": "dluItemRowCount",
+   "value": 34,
+   "comment": "the item row count - the thirty-four d100 bands of the Table 86 magical item grid (print capture p. 296)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dluPageBreakGrid",
+   "value": 1,
+   "comment": "the page break - the grid opening on the one page and running onto the next (print capture p. 297)"
+  },
+  {
+   "name": "dluOverlapQuirk",
+   "value": 1,
+   "comment": "the overlap quirk - the capture printing the 95-96 wheels of fire and then the 91-100 wondrous writing set, the overlapping bands pinned as printed, almost certainly the 97-100 intended (print capture p. 297)"
+  },
+  {
+   "name": "dluClassRestrictedItems",
+   "value": 1,
+   "comment": "the class-restricted items - the minyan of the shukenja and sohei, the net of the shukenja, the seal of the ninja and yakuza, the tablet of the shukenja and wu jen (print capture p. 297)"
+  },
+  {
+   "name": "dluWideBands",
+   "value": 1,
+   "comment": "the wide bands - the 73-85 scroll the widest, the 64-70 pearl and the 16-20 charm following (print capture p. 297)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dluMagicalItems",
+   "tag": "MagicalItems",
+   "count": "dluItemRowCount",
+   "comment": "the Table 86 Oriental Magical Items grid - the thirty-four d100 bands, the banner of protection through the wondrous writing set, the grid spanning the page break and carrying the overlap quirk (print capture p. 296)",
+   "cols": [
+    "dluItemRollMin",
+    "dluItemRollMax",
+    "dluItemCode"
+   ],
+   "col_comments": [
+    "the d100 band minimum - the low roll of the row (print capture p. 296)",
+    "the d100 band maximum - the high roll of the row, the wondrous writing set printing the 91-100 of the overlap quirk (print capture p. 297)",
+    "the magical item code - 1 the banner of protection; 2 the bell of protection; 3 the bell of warning; 4 the biwa of calm; 5 the biwa of charm; 6 the biwa of discord; 7 the charm of protection from disease; 8 the charm of protection from fire; 9 the charm of protection from spirits; 10 the charm of protection from theft; 11 the diamond mace; 12 the drums of thunder; 13 the eight diagram coins; 14 the everproducing rice mortar; 15 the gem of wishes; 16 the gong of dispelling; 17 the mallet of luck; 18 the minyan (shukenja, sohei); 19 the mirror of curing; 20 the mirror of enlightenment; 21 the mirror of fear; 22 the mirror of spirit seeing; 23 the net of spirit snaring (shukenja); 24 the noisome spirit chasers; 25 the paper of forms; 26 the pearl of protection from fire; 27 the pearl of the ebbing tide; 28 the pearl of the rising tide; 29 the scroll of protection from spirits; 30 the seal of deception (ninja, yakuza); 31 the seal of vigor; 32 the tablet of spirit summoning (shukenja, wu jen); 33 the wheels of fire; 34 the wondrous writing set - the capture printing the 91-100 against the 95-96 wheels, the overlapping band pinned as printed, almost certainly the 97-100 intended (print capture p. 297)"
+   ],
+   "data": [
+    [
+     1,
+     5,
+     1
+    ],
+    [
+     6,
+     8,
+     2
+    ],
+    [
+     9,
+     11,
+     3
+    ],
+    [
+     12,
+     12,
+     4
+    ],
+    [
+     13,
+     13,
+     5
+    ],
+    [
+     14,
+     15,
+     6
+    ],
+    [
+     16,
+     20,
+     7
+    ],
+    [
+     21,
+     24,
+     8
+    ],
+    [
+     25,
+     27,
+     9
+    ],
+    [
+     28,
+     31,
+     10
+    ],
+    [
+     32,
+     32,
+     11
+    ],
+    [
+     33,
+     33,
+     12
+    ],
+    [
+     34,
+     35,
+     13
+    ],
+    [
+     36,
+     36,
+     14
+    ],
+    [
+     37,
+     37,
+     15
+    ],
+    [
+     38,
+     41,
+     16
+    ],
+    [
+     42,
+     44,
+     17
+    ],
+    [
+     45,
+     45,
+     18
+    ],
+    [
+     46,
+     47,
+     19
+    ],
+    [
+     48,
+     48,
+     20
+    ],
+    [
+     49,
+     51,
+     21
+    ],
+    [
+     52,
+     53,
+     22
+    ],
+    [
+     54,
+     58,
+     23
+    ],
+    [
+     59,
+     60,
+     24
+    ],
+    [
+     61,
+     63,
+     25
+    ],
+    [
+     64,
+     70,
+     26
+    ],
+    [
+     71,
+     71,
+     27
+    ],
+    [
+     72,
+     72,
+     28
+    ],
+    [
+     73,
+     85,
+     29
+    ],
+    [
+     86,
+     87,
+     30
+    ],
+    [
+     88,
+     92,
+     31
+    ],
+    [
+     93,
+     94,
+     32
+    ],
+    [
+     95,
+     96,
+     33
+    ],
+    [
+     91,
+     100,
+     34
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the grid - the thirty-four-band Table 86, audited cell by cell by the table audit",
+   "expr": "m['dluItemRowCount']() != 34 or m['dluItemRollMin'](0) != 1 or m['dluItemRollMax'](33) != 100 or m['dluItemCode'](0) != 1 or m['dluItemCode'](33) != 34"
+  },
+  {
+   "note": "the quirks - the overlap band and the wide bands, healthy values, each condition false",
+   "expr": "m['dluItemRollMin'](32) != 95 or m['dluItemRollMax'](32) != 96 or m['dluItemRollMin'](33) != 91 or m['dluItemRollMax'](33) != 100 or m['dluItemRollMin'](28) != 73 or m['dluItemRollMax'](28) != 85 or m['dluOverlapQuirk']() != 1 or m['dluPageBreakGrid']() != 1 or m['dluClassRestrictedItems']() != 1 or m['dluWideBands']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 86 grid": [
+   {
+    "kind": "const",
+    "name": "dluItemRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dluMagicalItems"
+   }
+  ],
+  "the quirks": [
+   {
+    "kind": "bool",
+    "name": "dluPageBreakGrid"
+   },
+   {
+    "kind": "bool",
+    "name": "dluOverlapQuirk"
+   },
+   {
+    "kind": "bool",
+    "name": "dluClassRestrictedItems"
+   },
+   {
+    "kind": "bool",
+    "name": "dluWideBands"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 86 box",
+   "from": "  - [ ] Table 86: Oriental Magical Items\n    (capture p. 296)",
+   "to": "  - [x] Table 86: Oriental Magical Items\n    (capture p. 296)\n    - R759: the dlu Table 86 pins - the\n    thirty-four d100 item bands spanning\n    the page break, the banner of\n    protection 01-05 through the wondrous\n    writing set; the capture printing the\n    95-96 wheels of fire and then the\n    91-100 wondrous writing set - the\n    overlapping bands pinned as printed,\n    almost certainly the 97-100 intended;\n    the class-restricted items (the\n    minyan of the shukenja and sohei, the\n    net of the shukenja, the seal of the\n    ninja and yakuza, the tablet of the\n    shukenja and wu jen); single-pass\n    pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 212,
+  "open": 23
+ },
+ "include_comment": "the OA Table 86 pins",
+ "include_after": "#include \"rules/oa129magitemsprose.h\"  // R758: the OA magical items prose pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R758 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R758 LANDED 2026-10-22: commit",
+  "  afdfa137a4e940fd2a72a85d8e5172d489787419",
+  "  (census 680 -> 681, pushed b346bda..afdfa13),",
+  "  OA TREASURE, the Oriental Magical Items",
+  "  prose (capture pp. 296-301), header",
+  "  rules/oa129magitemsprose.h, prefix dlt",
+  "  (verified free at b346bda), one gap flip",
+  "  (the magical items prose box, its",
+  "  two-line wrap handled), gap census now",
+  "  211 closed / 24 open. Round type: the",
+  "  Chapter 13 item descriptions round - THE",
+  "  BIGGEST ROUND OF THE PROJECT, single-pass",
+  "  pins per the R679 provenance shift.",
+  "  Inlines: 98 = 63 consts + 35 bools, no",
+  "  tables (the Table 86 grid riding in its",
+  "  own box, R759). The full walk of the",
+  "  thirty-four items: the banner of",
+  "  protection (5th-level block, 100 yards)",
+  "  and the bells (the protection 50 yards",
+  "  with the -4 greater save and the 4d10 /",
+  "  3d10; the warning 30 feet, 3d6 hours,",
+  "  3d10); the biwa of calm, charm, and",
+  "  discord (the 2-5 frenzy); the four",
+  "  charms of protection (the disease, the",
+  "  fire 50%, the spirits, the theft 20% /",
+  "  2d10); the diamond mace (12-dice bolt,",
+  "  1000 ch'ien); the drums of thunder (the",
+  "  fly 1, trapeze 3, panic 2, weather 1,",
+  "  20-dice bolt 5); the eight diagram",
+  "  coins; the everproducing rice mortar",
+  "  (80/20, the 1d100 fed, the 1d4 wishes);",
+  "  the gem of wishes (1-4, 100-1000); the",
+  "  gong of dispelling (15th, 1d100); the",
+  "  mallet of luck (+2, six turns, 2d6); the",
+  "  minyan (20 bearers, the five powers, the",
+  "  care duties); the four mirrors (the",
+  "  curing 2d4 shatter, the enlightenment,",
+  "  the fear 1d6, the spirit seeing); the",
+  "  net of spirit snaring; the noisome",
+  "  spirit chasers (strings of 100, 2-5",
+  "  rounds); the paper of forms (80% ignite,",
+  "  1d4 sheets); the three pearls (the fire",
+  "  ring, the tides 60 feet at 5 per round);",
+  "  the scroll of protection from spirits",
+  "  (12th); the seal of deception (5% / 30%)",
+  "  and the seal of vigor; the tablet of",
+  "  spirit summoning (9th, 2d6, 10 ch'ien);",
+  "  the wheels of fire (30 feet, 2d6); the",
+  "  wondrous writing set (+2 calligraphy,",
+  "  2-5 pages). Zero stumbles, first rverify",
+  "  GREEN. Battery 98 mutants, 0 missed.",
+  "  spec md5 f6636e0fffb2b7c8c78f7d40c067248f,",
+  "  gate md5 ee06bc2fb73a3146e1b7286c8baedede,",
+  "  canvas md5 1c5f5fa90ff8ee4fb2a43233321e8b8",
+  "  b. NEXT - R759: Table 86: Oriental Magical",
+  "  Items (capture p. 296, the grid running",
+  "  onto p. 297), prefix dlu (verify free at",
+  "  the landing), audit \"R759 OA Table 86",
+  "  items audit\", include after",
+  "  rules/oa129magitemsprose.h. The d100 grid",
+  "  of the thirty-four items - NOTE: the",
+  "  capture prints the 95-96 Wheels of Fire",
+  "  and the 91-100 Wondrous Writing Set,",
+  "  overlapping bands pinned as printed."
+ ]
+}

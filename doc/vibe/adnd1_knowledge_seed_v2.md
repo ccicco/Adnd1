@@ -18218,6 +18218,70 @@ when both halves land.
   d100 grid of oriental magical items and
   the long item descriptions running to
   the chapter end.
+- R758 LANDED 2026-10-22: commit
+  afdfa137a4e940fd2a72a85d8e5172d489787419
+  (census 680 -> 681, pushed b346bda..afdfa13),
+  OA TREASURE, the Oriental Magical Items
+  prose (capture pp. 296-301), header
+  rules/oa129magitemsprose.h, prefix dlt
+  (verified free at b346bda), one gap flip
+  (the magical items prose box, its
+  two-line wrap handled), gap census now
+  211 closed / 24 open. Round type: the
+  Chapter 13 item descriptions round - THE
+  BIGGEST ROUND OF THE PROJECT, single-pass
+  pins per the R679 provenance shift.
+  Inlines: 98 = 63 consts + 35 bools, no
+  tables (the Table 86 grid riding in its
+  own box, R759). The full walk of the
+  thirty-four items: the banner of
+  protection (5th-level block, 100 yards)
+  and the bells (the protection 50 yards
+  with the -4 greater save and the 4d10 /
+  3d10; the warning 30 feet, 3d6 hours,
+  3d10); the biwa of calm, charm, and
+  discord (the 2-5 frenzy); the four
+  charms of protection (the disease, the
+  fire 50%, the spirits, the theft 20% /
+  2d10); the diamond mace (12-dice bolt,
+  1000 ch'ien); the drums of thunder (the
+  fly 1, trapeze 3, panic 2, weather 1,
+  20-dice bolt 5); the eight diagram
+  coins; the everproducing rice mortar
+  (80/20, the 1d100 fed, the 1d4 wishes);
+  the gem of wishes (1-4, 100-1000); the
+  gong of dispelling (15th, 1d100); the
+  mallet of luck (+2, six turns, 2d6); the
+  minyan (20 bearers, the five powers, the
+  care duties); the four mirrors (the
+  curing 2d4 shatter, the enlightenment,
+  the fear 1d6, the spirit seeing); the
+  net of spirit snaring; the noisome
+  spirit chasers (strings of 100, 2-5
+  rounds); the paper of forms (80% ignite,
+  1d4 sheets); the three pearls (the fire
+  ring, the tides 60 feet at 5 per round);
+  the scroll of protection from spirits
+  (12th); the seal of deception (5% / 30%)
+  and the seal of vigor; the tablet of
+  spirit summoning (9th, 2d6, 10 ch'ien);
+  the wheels of fire (30 feet, 2d6); the
+  wondrous writing set (+2 calligraphy,
+  2-5 pages). Zero stumbles, first rverify
+  GREEN. Battery 98 mutants, 0 missed.
+  spec md5 f6636e0fffb2b7c8c78f7d40c067248f,
+  gate md5 ee06bc2fb73a3146e1b7286c8baedede,
+  canvas md5 1c5f5fa90ff8ee4fb2a43233321e8b8
+  b. NEXT - R759: Table 86: Oriental Magical
+  Items (capture p. 296, the grid running
+  onto p. 297), prefix dlu (verify free at
+  the landing), audit "R759 OA Table 86
+  items audit", include after
+  rules/oa129magitemsprose.h. The d100 grid
+  of the thirty-four items - NOTE: the
+  capture prints the 95-96 Wheels of Fire
+  and the 91-100 Wondrous Writing Set,
+  overlapping bands pinned as printed.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

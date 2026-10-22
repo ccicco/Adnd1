@@ -3299,8 +3299,23 @@ description riding the same round.
     set (+2 calligraphy, 2-5 pages);
     single-pass pins per the R679
     provenance shift
-  - [ ] Table 86: Oriental Magical Items
+  - [x] Table 86: Oriental Magical Items
     (capture p. 296)
+    - R759: the dlu Table 86 pins - the
+    thirty-four d100 item bands spanning
+    the page break, the banner of
+    protection 01-05 through the wondrous
+    writing set; the capture printing the
+    95-96 wheels of fire and then the
+    91-100 wondrous writing set - the
+    overlapping bands pinned as printed,
+    almost certainly the 97-100 intended;
+    the class-restricted items (the
+    minyan of the shukenja and sohei, the
+    net of the shukenja, the seal of the
+    ninja and yakuza, the tablet of the
+    shukenja and wu jen); single-pass
+    pins per the R679 provenance shift
 
 - [ ] **Chapter 14: An Overview of Kara-Tur**
   (capture pp. 301-305) - the setting chapter
