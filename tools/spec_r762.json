@@ -1,0 +1,370 @@
+{
+ "round": 762,
+ "title": "OA SETTING - the Tu Lung empire: the breakaway state of the Earth Dragon",
+ "prefix": "dlx",
+ "header_file": "rules/oa133tulung.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 684,
+ "inline_count": 24,
+ "audit_label": "R762 OA Tu Lung audit",
+ "audit_comment": "OA round one hundred forty-nine (capture pp. 303-304): the Tu Lung empire - the Earth Dragon, the succession break of 300 years ago, the Lui Dynasty, the noble control of the examinations, the six provinces, the capital Chia Wan Chuan, single-pass pins per the R679 provenance shift",
+ "banner": {
+  "title": "OA SETTING - THE TU LUNG EMPIRE, printed capture pp. 303-304 - the breakaway state of the Earth Dragon",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 215 closed, 20 open - the Tu Lung box flips (census 684 -> 685); NEXT - R763: Wa (capture p. 304), prefix dly (verify free at the landing), audit \"R763 OA Wa audit\", include after rules/oa133tulung.h"
+ },
+ "consts": [
+  {
+   "name": "dlxYearsSinceSplit",
+   "value": 300,
+   "comment": "the years since the split - Tu Lung part of Shou Lung until a dispute over imperial succession 300 years ago (print capture p. 303)"
+  },
+  {
+   "name": "dlxProvinceCount",
+   "value": 6,
+   "comment": "the province count - Tu Lung divided into six provinces (print capture p. 303)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlxEarthDragon",
+   "value": 1,
+   "comment": "the earth dragon - the empire name Tu Lung meaning Earth Dragon (print capture p. 303)"
+  },
+  {
+   "name": "dlxPartOfShouLung",
+   "value": 1,
+   "comment": "the part of Shou Lung - Tu Lung was part of Shou Lung until the succession dispute (print capture p. 303)"
+  },
+  {
+   "name": "dlxOwnEmperorSeparateCourt",
+   "value": 1,
+   "comment": "the own emperor separate court - claiming its own emperor, Tu Lung set up a separate imperial court (print capture p. 303)"
+  },
+  {
+   "name": "dlxWarsStabilized",
+   "value": 1,
+   "comment": "the wars stabilized - after many wars between the two states, the situation has stabilized (print capture p. 303)"
+  },
+  {
+   "name": "dlxNoLoveLost",
+   "value": 1,
+   "comment": "the no love lost - no love is lost between the two empires (print capture p. 303)"
+  },
+  {
+   "name": "dlxRebelNoblesGreatPower",
+   "value": 1,
+   "comment": "the rebel nobles great power - the Emperor of Tu Lung was supported by the powerful officials and nobles of the rebelling provinces, leading to their acquiring great power and strength (print capture p. 303)"
+  },
+  {
+   "name": "dlxModeledAfterShouLung",
+   "value": 1,
+   "comment": "the modeled after Shou Lung - although the government is modeled after that of Shou Lung (print capture p. 303)"
+  },
+  {
+   "name": "dlxLuiDynasty",
+   "value": 1,
+   "comment": "the Lui dynasty - the Emperor of Tu Lung of the Lui Dynasty (print capture p. 303)"
+  },
+  {
+   "name": "dlxEmperorCannotBreakNobles",
+   "value": 1,
+   "comment": "the emperor cannot break the nobles - the Emperor has never been able to break the power of his nobles (print capture p. 303)"
+  },
+  {
+   "name": "dlxNoblesControlExaminations",
+   "value": 1,
+   "comment": "the nobles control the examinations - the nobles control the examination system (print capture p. 303)"
+  },
+  {
+   "name": "dlxOfficesHereditary",
+   "value": 1,
+   "comment": "the offices hereditary - the nobles arranged for various offices to become hereditary (print capture p. 303)"
+  },
+  {
+   "name": "dlxEstatesExemptEdicts",
+   "value": 1,
+   "comment": "the estates exempt from edicts - the noble power allowed them to exempt their estates from most imperial edicts, including taxation (print capture p. 303)"
+  },
+  {
+   "name": "dlxMajorityConsent",
+   "value": 1,
+   "comment": "the majority consent - the Emperor can only enforce his edicts with the consent of the majority of the nobles (print capture p. 303)"
+  },
+  {
+   "name": "dlxCommonersLittleChance",
+   "value": 1,
+   "comment": "the commoners little chance - commoners have little chance to rise in the government (print capture p. 303)"
+  },
+  {
+   "name": "dlxPostCorruption",
+   "value": 1,
+   "comment": "the post corruption - corruption of official posts is common (print capture p. 303)"
+  },
+  {
+   "name": "dlxHereditaryGovernors",
+   "value": 1,
+   "comment": "the hereditary governors - each of the six provinces administered by a hereditary governor (print capture p. 303)"
+  },
+  {
+   "name": "dlxDistrictsFamilyGraft",
+   "value": 1,
+   "comment": "the districts family and graft - the provinces divided into districts, official positions assigned on the basis of family and graft (print capture p. 303)"
+  },
+  {
+   "name": "dlxInheritedPublicWorks",
+   "value": 1,
+   "comment": "the inherited public works - although Tu Lung inherited the public works of Shou Lung (print capture p. 303)"
+  },
+  {
+   "name": "dlxWorksPoorlyMaintained",
+   "value": 1,
+   "comment": "the works poorly maintained - the public works poorly maintained and new projects seldom undertaken (print capture p. 303)"
+  },
+  {
+   "name": "dlxPeopleEasilyOppressed",
+   "value": 1,
+   "comment": "the people easily oppressed - the people easily oppressed, having no recourse to the law (print capture p. 303)"
+  },
+  {
+   "name": "dlxCapitalPlotting",
+   "value": 1,
+   "comment": "the capital plotting - the prime activity in the capital Chia Wan Chuan is political plotting (print capture p. 303 and p. 304)"
+  },
+  {
+   "name": "dlxSecretSocieties",
+   "value": 1,
+   "comment": "the secret societies - many of the nobles of Tu Lung are leaders of secret societies pledged to overthrow the Emperor (print capture p. 304)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the founding example",
+   "expr": "m['dlxEarthDragon']() != 1 or m['dlxPartOfShouLung']() != 1 or m['dlxYearsSinceSplit']() != 300 or m['dlxOwnEmperorSeparateCourt']() != 1"
+  },
+  {
+   "note": "the wars example",
+   "expr": "m['dlxWarsStabilized']() != 1 or m['dlxNoLoveLost']() != 1 or m['dlxRebelNoblesGreatPower']() != 1"
+  },
+  {
+   "note": "the government example",
+   "expr": "m['dlxModeledAfterShouLung']() != 1 or m['dlxLuiDynasty']() != 1 or m['dlxEmperorCannotBreakNobles']() != 1"
+  },
+  {
+   "note": "the noble power example",
+   "expr": "m['dlxNoblesControlExaminations']() != 1 or m['dlxOfficesHereditary']() != 1 or m['dlxEstatesExemptEdicts']() != 1 or m['dlxMajorityConsent']() != 1"
+  },
+  {
+   "note": "the commoner example",
+   "expr": "m['dlxCommonersLittleChance']() != 1 or m['dlxPostCorruption']() != 1"
+  },
+  {
+   "note": "the administration example",
+   "expr": "m['dlxProvinceCount']() != 6 or m['dlxHereditaryGovernors']() != 1 or m['dlxDistrictsFamilyGraft']() != 1"
+  },
+  {
+   "note": "the works example",
+   "expr": "m['dlxInheritedPublicWorks']() != 1 or m['dlxWorksPoorlyMaintained']() != 1 or m['dlxPeopleEasilyOppressed']() != 1"
+  },
+  {
+   "note": "the capital example",
+   "expr": "m['dlxCapitalPlotting']() != 1 or m['dlxSecretSocieties']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the founding schism": [
+   {
+    "kind": "bool",
+    "name": "dlxEarthDragon"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxPartOfShouLung"
+   },
+   {
+    "kind": "const",
+    "name": "dlxYearsSinceSplit"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxOwnEmperorSeparateCourt"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxWarsStabilized"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxNoLoveLost"
+   }
+  ],
+  "the rise of the nobles": [
+   {
+    "kind": "bool",
+    "name": "dlxRebelNoblesGreatPower"
+   }
+  ],
+  "the imperial government": [
+   {
+    "kind": "bool",
+    "name": "dlxModeledAfterShouLung"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxLuiDynasty"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxEmperorCannotBreakNobles"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxNoblesControlExaminations"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxOfficesHereditary"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxEstatesExemptEdicts"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxMajorityConsent"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxCommonersLittleChance"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxPostCorruption"
+   }
+  ],
+  "the provinces": [
+   {
+    "kind": "const",
+    "name": "dlxProvinceCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxHereditaryGovernors"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxDistrictsFamilyGraft"
+   }
+  ],
+  "the public works and the people": [
+   {
+    "kind": "bool",
+    "name": "dlxInheritedPublicWorks"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxWorksPoorlyMaintained"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxPeopleEasilyOppressed"
+   }
+  ],
+  "the capital and the conspiracy": [
+   {
+    "kind": "bool",
+    "name": "dlxCapitalPlotting"
+   },
+   {
+    "kind": "bool",
+    "name": "dlxSecretSocieties"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Tu Lung box",
+   "from": "  - [ ] Tu Lung (capture p. 303)",
+   "to": "  - [x] Tu Lung (capture p. 303)\n    - R762: the dlx tu lung pins - the Earth Dragon; the part of\n    Shou Lung until the succession dispute of 300 years ago; the own\n    emperor with the separate imperial court; the many wars stabilized;\n    the no love lost; the rebel nobles of the succession wars with\n    their great power; the government modeled after Shou Lung with the\n    Lui Dynasty emperor unable to break the nobles; the nobles\n    controlling the examinations with the hereditary offices and the\n    estate exemptions from the edicts and taxation; the majority\n    consent; the commoners little chance with the post corruption; the\n    six provinces with the hereditary governors and the districts of\n    family and graft; the inherited public works poorly maintained;\n    the easily oppressed people with no recourse to the law; the\n    capital Chia Wan Chuan of political plotting; the noble secret\n    societies pledged to overthrow the Emperor; single-pass pins per\n    the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 215,
+  "open": 20
+ },
+ "include_comment": "the OA Tu Lung pins",
+ "include_after": "#include \"rules/oa132shoulung.h\"  // R761: the OA Shou Lung pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R761 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R761 LANDED 2026-10-22: commit",
+  "  acfc953de72a37480529bbde071ab63211f571b2",
+  "  (census 683 -> 684, pushed 97f4373..acfc953),",
+  "  OA SETTING, the Shou Lung empire (capture",
+  "  p. 303), header rules/oa132shoulung.h,",
+  "  prefix dlw (verified free at 97f4373), one",
+  "  gap flip (the Shou Lung box, its",
+  "  two-line wrap handled), gap census now",
+  "  214 closed / 21 open. Round type: the",
+  "  Chapter 14 setting-doctrine round,",
+  "  single-pass pins per the R679",
+  "  provenance shift. Inlines: 18 = 3 consts",
+  "  (dlwYearsOfState 1200, dlwDynastyCount 8,",
+  "  dlwProvinceCount 14) + 15 bools, no",
+  "  tables. The walk: the Receiver of the",
+  "  Dragon name, the largest and most",
+  "  powerful empire, the oldest state of",
+  "  Kara-Tur; the emperor for all its",
+  "  history with the few turmoil periods,",
+  "  the Chin emperor of the Kuo Dynasty the",
+  "  eighth; the examination bureaucracy with",
+  "  the poorest-commoner rise; the fourteen",
+  "  provinces with the governors, the",
+  "  districts with their own officials, the",
+  "  official duties (the management, the",
+  "  court cases, the peace, the taxes, the",
+  "  public works); the roads and bridges,",
+  "  the Imperial Messengers of the capital",
+  "  Tien Shih, the dikes and dams, the",
+  "  coinage and paper money. Zero stumbles,",
+  "  first rverify GREEN (double-run, 18",
+  "  mutants, 0 missed; dlx verified free for",
+  "  R762). spec md5",
+  "  1be7438623fd4e46081b1d35eea79636, gate",
+  "  md5 379314257f04a6dd82aa810d4ed11de1,",
+  "  canvas md5 5fa3b2446f5ace7cdc6415b1549e",
+  "  b4b4. DELIVERY SAGA (a platform lesson,",
+  "  not a repo one): the session filesystem",
+  "  carries an 8,388,608-byte per-session",
+  "  quota on all persisted writes, and the",
+  "  ~10.7KB canvas plus accumulated OCR",
+  "  tool-results tipped it - every large",
+  "  single write rolled back. The canvas",
+  "  was delivered as FIFTEEN small",
+  "  sentinel-preserving edits (each state",
+  "  valid JSON, the sequence simulated",
+  "  byte-exact before executing) into the",
+  "  leftover r761-spec-part1 folder (the",
+  "  frontmatter name must match the folder;",
+  "  ~2 new canvas folders per turn is the",
+  "  observed budget; canvas deletion is",
+  "  unsupported), after freeing ~1.3MB of",
+  "  obsolete OCR pages/images from",
+  "  tool-results (pages 303-304 kept). The",
+  "  R608 clip concern stays retired - the",
+  "  body copy was byte-exact at the",
+  "  landing. NEXT - R762: Tu Lung (capture",
+  "  p. 303, the section running into p. 304),",
+  "  prefix dlx (verify free at the landing),",
+  "  audit \"R762 OA Tu Lung audit\", include",
+  "  after rules/oa132shoulung.h."
+ ]
+}

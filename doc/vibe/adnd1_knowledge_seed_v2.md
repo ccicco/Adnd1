@@ -18376,6 +18376,67 @@ when both halves land.
   p. 303), prefix dlw (verify free at the
   landing), audit "R761 OA Shou Lung audit",
   include after rules/oa131karaturintro.h.
+- R761 LANDED 2026-10-22: commit
+  acfc953de72a37480529bbde071ab63211f571b2
+  (census 683 -> 684, pushed 97f4373..acfc953),
+  OA SETTING, the Shou Lung empire (capture
+  p. 303), header rules/oa132shoulung.h,
+  prefix dlw (verified free at 97f4373), one
+  gap flip (the Shou Lung box, its
+  two-line wrap handled), gap census now
+  214 closed / 21 open. Round type: the
+  Chapter 14 setting-doctrine round,
+  single-pass pins per the R679
+  provenance shift. Inlines: 18 = 3 consts
+  (dlwYearsOfState 1200, dlwDynastyCount 8,
+  dlwProvinceCount 14) + 15 bools, no
+  tables. The walk: the Receiver of the
+  Dragon name, the largest and most
+  powerful empire, the oldest state of
+  Kara-Tur; the emperor for all its
+  history with the few turmoil periods,
+  the Chin emperor of the Kuo Dynasty the
+  eighth; the examination bureaucracy with
+  the poorest-commoner rise; the fourteen
+  provinces with the governors, the
+  districts with their own officials, the
+  official duties (the management, the
+  court cases, the peace, the taxes, the
+  public works); the roads and bridges,
+  the Imperial Messengers of the capital
+  Tien Shih, the dikes and dams, the
+  coinage and paper money. Zero stumbles,
+  first rverify GREEN (double-run, 18
+  mutants, 0 missed; dlx verified free for
+  R762). spec md5
+  1be7438623fd4e46081b1d35eea79636, gate
+  md5 379314257f04a6dd82aa810d4ed11de1,
+  canvas md5 5fa3b2446f5ace7cdc6415b1549e
+  b4b4. DELIVERY SAGA (a platform lesson,
+  not a repo one): the session filesystem
+  carries an 8,388,608-byte per-session
+  quota on all persisted writes, and the
+  ~10.7KB canvas plus accumulated OCR
+  tool-results tipped it - every large
+  single write rolled back. The canvas
+  was delivered as FIFTEEN small
+  sentinel-preserving edits (each state
+  valid JSON, the sequence simulated
+  byte-exact before executing) into the
+  leftover r761-spec-part1 folder (the
+  frontmatter name must match the folder;
+  ~2 new canvas folders per turn is the
+  observed budget; canvas deletion is
+  unsupported), after freeing ~1.3MB of
+  obsolete OCR pages/images from
+  tool-results (pages 303-304 kept). The
+  R608 clip concern stays retired - the
+  body copy was byte-exact at the
+  landing. NEXT - R762: Tu Lung (capture
+  p. 303, the section running into p. 304),
+  prefix dlx (verify free at the landing),
+  audit "R762 OA Tu Lung audit", include
+  after rules/oa132shoulung.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

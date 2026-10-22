@@ -3351,7 +3351,22 @@ description riding the same round.
     taxes, the public works; the roads and bridges; the Imperial Messengers to the
     capital Tien Shih; the dikes and dams against the flooding; the coinage and
     paper money; single-pass pins per the R679 provenance shift
-  - [ ] Tu Lung (capture p. 303)
+  - [x] Tu Lung (capture p. 303)
+    - R762: the dlx tu lung pins - the Earth Dragon; the part of
+    Shou Lung until the succession dispute of 300 years ago; the own
+    emperor with the separate imperial court; the many wars stabilized;
+    the no love lost; the rebel nobles of the succession wars with
+    their great power; the government modeled after Shou Lung with the
+    Lui Dynasty emperor unable to break the nobles; the nobles
+    controlling the examinations with the hereditary offices and the
+    estate exemptions from the edicts and taxation; the majority
+    consent; the commoners little chance with the post corruption; the
+    six provinces with the hereditary governors and the districts of
+    family and graft; the inherited public works poorly maintained;
+    the easily oppressed people with no recourse to the law; the
+    capital Chia Wan Chuan of political plotting; the noble secret
+    societies pledged to overthrow the Emperor; single-pass pins per
+    the R679 provenance shift
   - [ ] Wa (capture p. 304)
   - [ ] Kozakura (capture p. 304)
   - [ ] Gajin (capture p. 304) - the western
