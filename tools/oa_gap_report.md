@@ -3023,7 +3023,21 @@ description riding the same round.
     the spirit folk 4, the hengeyokai 3,
     the human 1); single-pass pins per
     the R679 provenance shift
-  - [ ] Miscellaneous Magic (capture pp. 288-289)
+  - [x] Miscellaneous Magic (capture pp. 288-289)
+    - R742: the dld misc magic pins -
+    the rerolled and absent items (the
+    boots of elvenkind, the broom of
+    animated attack, the broom of flying,
+    the cloak of elvenkind, the
+    instruments of the bards, the manual
+    of golems); the Bucknard's everful
+    purse contents - the three d100
+    bands (the 01-50 ten yuan, five
+    tael, one ch'ien; the 51-90 twenty
+    fen, five tael, two ch'ien; the
+    91-100 twenty fen, five tael, ten
+    gems); single-pass pins per the
+    R679 provenance shift
   - [ ] Armor and Shield prose (capture pp. 289-291)
   - [ ] Table 75: Magical Armor (capture p. 289)
   - [ ] Table 76. Magical Armor Properties

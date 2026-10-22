@@ -1,0 +1,237 @@
+{
+ "round": 742,
+ "title": "OA TREASURE - Miscellaneous Magic: the rerolled items and the everful purse",
+ "prefix": "dld",
+ "header_file": "rules/oa113miscmagic.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 664,
+ "inline_count": 15,
+ "audit_label": "R742 OA misc magic audit",
+ "audit_comment": "OA round one hundred twenty-nine (capture pp. 288-289): the Miscellaneous Magic section - the six rerolled or absent items, the Bucknard's everful purse with its three-band contents table, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - MISCELLANEOUS MAGIC, printed capture pp. 288-289 - the misc item notes round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 195 closed, 40 open - the misc magic box flips (census 664 -> 665); NEXT - R743: Armor and Shield prose (capture pp. 289-291), prefix dle (verify free at the landing), audit \"R743 OA armor shield audit\", include after rules/oa113miscmagic.h"
+ },
+ "consts": [
+  {
+   "name": "dldPurseRowCount",
+   "value": 3,
+   "comment": "the purse row count - the three d100 bands of the everful purse contents (print capture p. 289)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dldBootsOfElvenkindRerolled",
+   "value": 1,
+   "comment": "the boots of elvenkind - not commonly available in Oriental lands, the result rerolled (print capture p. 288)"
+  },
+  {
+   "name": "dldBroomOfAnimatedAttackRerolled",
+   "value": 1,
+   "comment": "the broom of animated attack - not commonly available in Oriental lands, the result rerolled (print capture p. 288)"
+  },
+  {
+   "name": "dldBroomOfFlyingRerolled",
+   "value": 1,
+   "comment": "the broom of flying - not commonly available in Oriental lands, the result rerolled (print capture p. 288)"
+  },
+  {
+   "name": "dldEverfulPurseIntro",
+   "value": 1,
+   "comment": "the everful purse - when opened, the purse will contain the table (print capture p. 288)"
+  },
+  {
+   "name": "dldCloakOfElvenkindRerolled",
+   "value": 1,
+   "comment": "the cloak of elvenkind - not common to Oriental lands, the result rerolled (print capture p. 289)"
+  },
+  {
+   "name": "dldInstrumentsOfTheBardsRerolled",
+   "value": 1,
+   "comment": "the instruments of the bards - not found in Oriental lands, the result rerolled (print capture p. 289)"
+  },
+  {
+   "name": "dldManualOfGolemsRerolled",
+   "value": 1,
+   "comment": "the manual of golems - the magical book not found in Oriental lands, the result rerolled (print capture p. 289)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dldEverfulPurse",
+   "tag": "EverfulPurse",
+   "count": "dldPurseRowCount",
+   "comment": "the Bucknard's everful purse contents table - the three d100 bands of the coins and gems (print capture p. 289)",
+   "cols": [
+    "dldPurseRollMin",
+    "dldPurseRollMax",
+    "dldPurseFen",
+    "dldPurseYuan",
+    "dldPurseTael",
+    "dldPurseChien",
+    "dldPurseGems"
+   ],
+   "col_comments": [
+    "the d100 band minimum - the low roll of the row (print capture p. 289)",
+    "the d100 band maximum - the high roll of the row (print capture p. 289)",
+    "the fen count - the 20 of the 51-100 rows, the 0 the nil (print capture p. 289)",
+    "the yuan count - the 10 of the 01-50 row, the 0 the nil (print capture p. 289)",
+    "the tael count - the 5 of every row (print capture p. 289)",
+    "the ch'ien count - the 1 and 2 of the first two rows, the 0 the nil of the 91-100 (print capture p. 289)",
+    "the gems count - the 10 of the 91-100 row, the 0 the nil (print capture p. 289)"
+   ],
+   "data": [
+    [
+     1,
+     50,
+     0,
+     10,
+     5,
+     1,
+     0
+    ],
+    [
+     51,
+     90,
+     20,
+     0,
+     5,
+     2,
+     0
+    ],
+    [
+     91,
+     100,
+     20,
+     0,
+     5,
+     0,
+     10
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the rerolled and absent items, healthy values, each condition false",
+   "expr": "m['dldBootsOfElvenkindRerolled']() != 1 or m['dldBroomOfAnimatedAttackRerolled']() != 1 or m['dldBroomOfFlyingRerolled']() != 1 or m['dldCloakOfElvenkindRerolled']() != 1 or m['dldInstrumentsOfTheBardsRerolled']() != 1 or m['dldManualOfGolemsRerolled']() != 1"
+  },
+  {
+   "note": "the purse - the three-band contents table, audited cell by cell by the table audit",
+   "expr": "m['dldPurseRowCount']() != 3 or m['dldPurseYuan'](0) != 10 or m['dldPurseChien'](1) != 2 or m['dldPurseGems'](2) != 10 or m['dldPurseTael'](2) != 5"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the rerolled items": [
+   {
+    "kind": "bool",
+    "name": "dldBootsOfElvenkindRerolled"
+   },
+   {
+    "kind": "bool",
+    "name": "dldBroomOfAnimatedAttackRerolled"
+   },
+   {
+    "kind": "bool",
+    "name": "dldBroomOfFlyingRerolled"
+   },
+   {
+    "kind": "bool",
+    "name": "dldCloakOfElvenkindRerolled"
+   },
+   {
+    "kind": "bool",
+    "name": "dldInstrumentsOfTheBardsRerolled"
+   },
+   {
+    "kind": "bool",
+    "name": "dldManualOfGolemsRerolled"
+   }
+  ],
+  "the everful purse": [
+   {
+    "kind": "bool",
+    "name": "dldEverfulPurseIntro"
+   },
+   {
+    "kind": "const",
+    "name": "dldPurseRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dldEverfulPurse"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the misc magic box",
+   "from": "  - [ ] Miscellaneous Magic (capture pp. 288-289)",
+   "to": "  - [x] Miscellaneous Magic (capture pp. 288-289)\n    - R742: the dld misc magic pins -\n    the rerolled and absent items (the\n    boots of elvenkind, the broom of\n    animated attack, the broom of flying,\n    the cloak of elvenkind, the\n    instruments of the bards, the manual\n    of golems); the Bucknard's everful\n    purse contents - the three d100\n    bands (the 01-50 ten yuan, five\n    tael, one ch'ien; the 51-90 twenty\n    fen, five tael, two ch'ien; the\n    91-100 twenty fen, five tael, ten\n    gems); single-pass pins per the\n    R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 195,
+  "open": 40
+ },
+ "include_comment": "the OA misc magic pins",
+ "include_after": "#include \"rules/oa112rods.h\"  // R741: the OA rods pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R741 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R741 LANDED 2026-10-22: commit",
+  "  1f4bad303a81b00cc81f817bf1b130d5a31eccfd",
+  "  (census 663 -> 664, pushed eaf2529..1f4bad3),",
+  "  OA TREASURE, Rods, Staves, and Wands - the",
+  "  Rod of Resurrection charge table (capture",
+  "  p. 288), header rules/oa112rods.h, prefix",
+  "  dlc (verified free at eaf2529), one gap",
+  "  flip (the rods box, single-line), gap",
+  "  census now 194 closed / 41 open. Round",
+  "  type: the Chapter 13 paired grid round,",
+  "  single-pass pins per the R679 provenance",
+  "  shift. Inlines: 8 = 2 consts + 2 bools +",
+  "  4 table cols; two tables: dlcRodClass[10]",
+  "  (the class base charges - the samurai 3,",
+  "  shukenja 1, bushi 2, ninja 4, wu jen 3,",
+  "  kensai 2, sohei 1, yakuza 3, monk 3,",
+  "  barbarian 3) and dlcRodRace[4] (the race",
+  "  pluses - the korobokuru 3, spirit folk 4,",
+  "  hengeyokai 3, human 1); the rod intro and",
+  "  the class-plus-race charge law as bools.",
+  "  Count consts derived from the data (the",
+  "  R739 lesson), verified 10/10/10 and",
+  "  4/4/4 at the landing. Zero stumbles, first",
+  "  rverify GREEN. Battery 32 mutants,",
+  "  0 missed. spec md5",
+  "  d576d0dd2957c88b59b452b7d45d1173, gate",
+  "  md5 a420f0191ff54e202ce67ea8f47f85c7,",
+  "  canvas md5 74e1472a6dfe08c3e5096d8486956a",
+  "  49. NEXT - R742: Miscellaneous Magic",
+  "  (capture pp. 288-289), prefix dld (verify",
+  "  free at the landing), audit \"R742 OA misc",
+  "  magic audit\", include after",
+  "  rules/oa112rods.h. The boots of elvenkind",
+  "  and both brooms rerolled, Bucknard's",
+  "  everful purse contents, and the item",
+  "  notes running onto p. 289."
+ ]
+}

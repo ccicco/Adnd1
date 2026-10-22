@@ -17496,6 +17496,42 @@ when both halves land.
   race pluses (korobokuru 3, spirit folk 4,
   hengeyokai 3, human 1) - a two-column
   grid round.
+- R741 LANDED 2026-10-22: commit
+  1f4bad303a81b00cc81f817bf1b130d5a31eccfd
+  (census 663 -> 664, pushed eaf2529..1f4bad3),
+  OA TREASURE, Rods, Staves, and Wands - the
+  Rod of Resurrection charge table (capture
+  p. 288), header rules/oa112rods.h, prefix
+  dlc (verified free at eaf2529), one gap
+  flip (the rods box, single-line), gap
+  census now 194 closed / 41 open. Round
+  type: the Chapter 13 paired grid round,
+  single-pass pins per the R679 provenance
+  shift. Inlines: 8 = 2 consts + 2 bools +
+  4 table cols; two tables: dlcRodClass[10]
+  (the class base charges - the samurai 3,
+  shukenja 1, bushi 2, ninja 4, wu jen 3,
+  kensai 2, sohei 1, yakuza 3, monk 3,
+  barbarian 3) and dlcRodRace[4] (the race
+  pluses - the korobokuru 3, spirit folk 4,
+  hengeyokai 3, human 1); the rod intro and
+  the class-plus-race charge law as bools.
+  Count consts derived from the data (the
+  R739 lesson), verified 10/10/10 and
+  4/4/4 at the landing. Zero stumbles, first
+  rverify GREEN. Battery 32 mutants,
+  0 missed. spec md5
+  d576d0dd2957c88b59b452b7d45d1173, gate
+  md5 a420f0191ff54e202ce67ea8f47f85c7,
+  canvas md5 74e1472a6dfe08c3e5096d8486956a
+  49. NEXT - R742: Miscellaneous Magic
+  (capture pp. 288-289), prefix dld (verify
+  free at the landing), audit "R742 OA misc
+  magic audit", include after
+  rules/oa112rods.h. The boots of elvenkind
+  and both brooms rerolled, Bucknard's
+  everful purse contents, and the item
+  notes running onto p. 289.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
