@@ -1,0 +1,451 @@
+{
+ "round": 773,
+ "title": "OA DAILY-LIFE MISSES - Dress, Religion, and Law and Justice",
+ "prefix": "dmk",
+ "header_file": "rules/oa144dailylife.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 695,
+ "inline_count": 35,
+ "audit_label": "R773 OA daily-life misses audit",
+ "audit_comment": "OA round one hundred sixty: the daily-life misses - the three Chapter 15 sections the post-OA maintenance audit found unpinned and unboxed (Dress capture pp. 306-307, Religion p. 310, Law and Justice pp. 310-312, the book's own seven-section list against the four pinned) - pinned and boxed in one round",
+ "banner": {
+  "title": "OA DAILY-LIFE MISSES - DRESS, RELIGION, AND LAW AND JUSTICE, printed capture pp. 306-312 - the audit-found gaps close",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift (the text re-captured at pp. 139-142 of the compressed-3 re-upload and pp. 305-312 of the original-scan OCR)",
+  "sentinel": "the gap census after this round: 238 closed, 0 open - the three audit-found boxes seat closed (census 695 -> 696); NEXT - R774: the next target awaits Curtiss's call"
+ },
+ "consts": [
+  {
+   "name": "dmkRegionalMaterialCount",
+   "value": 7,
+   "comment": "the regional material count - seven lower-class materials: pounded tree bark, flax, wool, woven horse-hair, furs, paper, and hemp (print capture p. 306)"
+  },
+  {
+   "name": "dmkCommonColorCount",
+   "value": 5,
+   "comment": "the common color count - five common dye colors: browns, ochres, yellows, grays, and blues (print capture p. 306)"
+  },
+  {
+   "name": "dmkNamedReligionCount",
+   "value": 5,
+   "comment": "the named religion count - five named: The Way, The Path of Enlightenment, The Eight Million Gods, ancestor worship, and the cult of the state (print capture p. 310)"
+  },
+  {
+   "name": "dmkCommonerPunishmentCount",
+   "value": 9,
+   "comment": "the commoner punishment count - nine: execution, branding, loss of the hands, fines, imprisonment, banishment, slavery, the heavy yoke, and public announcements (print capture p. 311)"
+  },
+  {
+   "name": "dmkHigherClassPunishmentCount",
+   "value": 4,
+   "comment": "the higher-class punishment count - four: house arrest, banishment, loss of position, and honorable death (print capture p. 311)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dmkClothingStatusDoctrine",
+   "value": 1,
+   "comment": "the clothing status doctrine - clothing as practicality plus the identification of rank, the decoration quality and materials indicating the wearer's status (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkCommonMaterials",
+   "value": 1,
+   "comment": "the common clothing materials - cotton and silk the most common (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkRegionalMaterials",
+   "value": 1,
+   "comment": "the regional lower-class materials - pounded tree bark, flax, wool, woven horse-hair, furs, paper, and hemp, confined to specific regions and the lower classes (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkLeatherDoctrine",
+   "value": 1,
+   "comment": "the leather doctrine - heavy leathers for durability, soft deerskin for flexibility or lavish decoration (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkWhiteMourning",
+   "value": 1,
+   "comment": "the white mourning rule - white the color of mourning, so nearly all cloth is dyed, the dyes from flowers, nuts, barks, woods, and minerals (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkCommonColors",
+   "value": 1,
+   "comment": "the common colors - browns, ochres, yellows, grays, and blues common, the brighter greens, pinks, and reds rarer and worn by the higher station (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkTrouserDoctrine",
+   "value": 1,
+   "comment": "the trouser doctrine - the short wrap-around cotton trousers tied with strings, loose for wading the paddies, striped or patterned, the peasant wear of both sexes (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkRobeDoctrine",
+   "value": 1,
+   "comment": "the robe doctrine - the commoners' short belted robe; the wealthier omitting trousers for long robes; the nobility's layered robes of different colors peeking at sleeves and collar, an art of the ladies' court; the wide open sleeves as cold-weather muffs since gloves are not worn and as pockets for handkerchief and cash (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkMinoRaincloak",
+   "value": 1,
+   "comment": "the mino raincloak - the peasants' rain cloak of layered straw (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkFootwearDoctrine",
+   "value": 1,
+   "comment": "the footwear doctrine - the woven straw sandal simplest and most common; the straw or wooden-block sandals of Kozakura; the soft-leather or cloth slippers of the refined and the soldiers' short boots of Shou Lung and T'u Lung; the fur-wrapped leather boots of the cold north (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkHatDoctrine",
+   "value": 1,
+   "comment": "the hat doctrine - hats a clear sign of status; the peasants' round broad-rimmed straw or bamboo hats doubling as baskets; the shukenja and monks' basket hats; the nobles' small styled hats; the gentlemen's huge-rimmed horsehair hats; the scarf or cloth for rain (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkMaleBeauty",
+   "value": 1,
+   "comment": "the male beauty doctrine - grace and beauty the pride of men of rank, the pale complexion best, the plucked eyebrows, the perfume-mixing skill, most falling short of the ideal (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkFemaleBeauty",
+   "value": 1,
+   "comment": "the female beauty doctrine - the blackened teeth as standard with the pearly white smile an unfortunate flaw of the west, the plucked and repainted thin-line eyebrows, the powdered palest faces (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkHairDoctrine",
+   "value": 1,
+   "comment": "the hair doctrine - the topknot of rank held with carved pins, the Kozakura topknot-cutting punishment for minor offenses shaming the man before his lord; the children's single lock, crown for boys and ear for girls; the samurai's coming-of-age forehead shave; the peasants' queue; the women's long flowing hair as beauty and station, cut short in mourning or upon the nun's veil; the priests' shaven heads (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkNoChurchConcept",
+   "value": 1,
+   "comment": "the no-church concept - the average man not attending, the church as a separate entity strange to him, religion organized on such a scale nonexistent, yet piety and respect intact (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkManyReligionsPractice",
+   "value": 1,
+   "comment": "the many-religions practice - few commoners follow strictly one religion, taking no chances, making offerings, hearing sermons, celebrating holy days, and praying at the temples of many different religions without it being unusual (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkReligiousTolerance",
+   "value": 1,
+   "comment": "the tolerance doctrine - the religions extremely tolerant of one another, temples side by side, sects adopting other practices and re-explaining them, minor gods adopted as forms of deities already worshiped, the clergy alone faithful to one (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkSectDoctrine",
+   "value": 1,
+   "comment": "the sect doctrine - the sects sharing goals but disputing methods, the chanting phrases, the different phrase, the breathing and physical exercises, the fierce rivalries, feuds, and violent clashes, sects of the same religion often more hostile to each other than to entirely different religions (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkCourtStructure",
+   "value": 1,
+   "comment": "the court structure - the law court of every province and major city headed by the magistrate with broad powers, the scholar by examinations, the noble appointee, the daimyo, the sage, or the village headman, with bailiff, constables, outcast assistants, and secretaries (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkEvidenceGathering",
+   "value": 1,
+   "comment": "the evidence gathering - the bailiff and constables gathering evidence and holding it, arresting or ordering witnesses, no protection from arrest save the displeasure of the magistrate, and the trial date set with little delay (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkNoLawyers",
+   "value": 1,
+   "comment": "the no-lawyers trial - the accused and accuser stating their cases, the magistrate asking all questions, the ordered beatings and torture to aid memory and for the out-of-order, the witnesses questioned with force to extract testimony, the bailiff keeping order and administering the beatings (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkSpeakWithDeadTestimony",
+   "value": 1,
+   "comment": "the speak-with-dead testimony - the murder-case spellcaster summoned, the dead's testimony accepted as fact, spells determining the truth of statements, the secretaries stating the laws and previous cases (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkClassDoubleStandard",
+   "value": 1,
+   "comment": "the class double standard - the higher rank receiving special considerations, the commoner's crimes not crimes for the warrior class, the Kozakuran samurai's right to cut down an insulting or truculent commoner without a murder charge, the vendetta with approvals, yet gambling and drunkenness more severe for the samurai who has broken his trust (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkPunishmentDoctrine",
+   "value": 1,
+   "comment": "the punishment doctrine - punishments fixed by law with the magistrate's power to alter severity, the commoner punishments of execution, branding, loss of the hands, fines, imprisonment, banishment, slavery, the heavy yoke, and the public announcements, the higher classes' house arrest, banishment, loss of position, and honorable death, the treasonous samurai forced to public humiliation in execution (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkCivilMediation",
+   "value": 1,
+   "comment": "the civil mediation - the magistrate hearing civil and criminal cases, the harsh court treatment driving settlements through the priest or village-headman mediator, binding only if both parties agree, else the court (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkCollectiveResponsibility",
+   "value": 1,
+   "comment": "the collective responsibility - the entire family, village, or group punished for the criminal's actions, the banished samurai's family banished with him, the murderer's village punished, the commoners loathe to aid criminals, the policy effective (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkVendettaDoctrine",
+   "value": 1,
+   "comment": "the vendetta doctrine - the vendetta officially sanctioned in some lands such as Kozakura, a required part of the samurai's honor to avenge the murdered or slain relation (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkVendettaRankRule",
+   "value": 1,
+   "comment": "the vendetta rank rule - the avenger cannot be of higher rank than the person slain, the eldest son unable to avenge a younger brother, the direct retainer unable to avenge a lesser retainer (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkVendettaApproval",
+   "value": 1,
+   "comment": "the vendetta approvals - release from the lord's service by application, granted if the cause is just and the services not required, the reentry with no penalties and perhaps renown, the local government's approval normally given with little question but deniable if the hunted is valuable or a friend, the unapproved avenger arrested for murder (print capture pp. 306-312)"
+  },
+  {
+   "name": "dmkVendettaDuel",
+   "value": 1,
+   "comment": "the vendetta duel - with all approvals the challenge to a duel to the death at any time, everything legally done so the winner is not charged with murder, and any number of seconds assisting so it need not be one-on-one (print capture pp. 306-312)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the punishment ladder - the commoner punishments minus the higher-class punishments is five",
+   "expr": "m['dmkCommonerPunishmentCount']() - m['dmkHigherClassPunishmentCount']() != 5"
+  },
+  {
+   "note": "the common colors equal the named religions - both five",
+   "expr": "m['dmkCommonColorCount']() != m['dmkNamedReligionCount']()"
+  },
+  {
+   "note": "the regional materials plus the named religions is twelve",
+   "expr": "m['dmkRegionalMaterialCount']() + m['dmkNamedReligionCount']() != 12"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the dress materials and colors": [
+   {
+    "kind": "bool",
+    "name": "dmkClothingStatusDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkCommonMaterials"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkRegionalMaterials"
+   },
+   {
+    "kind": "const",
+    "name": "dmkRegionalMaterialCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkLeatherDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkWhiteMourning"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkCommonColors"
+   },
+   {
+    "kind": "const",
+    "name": "dmkCommonColorCount"
+   }
+  ],
+  "the clothing and the footwear": [
+   {
+    "kind": "bool",
+    "name": "dmkTrouserDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkRobeDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkMinoRaincloak"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkFootwearDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkHatDoctrine"
+   }
+  ],
+  "the beauty and the hair": [
+   {
+    "kind": "bool",
+    "name": "dmkMaleBeauty"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkFemaleBeauty"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkHairDoctrine"
+   }
+  ],
+  "the religions": [
+   {
+    "kind": "bool",
+    "name": "dmkNoChurchConcept"
+   },
+   {
+    "kind": "const",
+    "name": "dmkNamedReligionCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkManyReligionsPractice"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkReligiousTolerance"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkSectDoctrine"
+   }
+  ],
+  "the court": [
+   {
+    "kind": "bool",
+    "name": "dmkCourtStructure"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkEvidenceGathering"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkNoLawyers"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkSpeakWithDeadTestimony"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkClassDoubleStandard"
+   }
+  ],
+  "the punishments and the settlements": [
+   {
+    "kind": "bool",
+    "name": "dmkPunishmentDoctrine"
+   },
+   {
+    "kind": "const",
+    "name": "dmkCommonerPunishmentCount"
+   },
+   {
+    "kind": "const",
+    "name": "dmkHigherClassPunishmentCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkCivilMediation"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkCollectiveResponsibility"
+   }
+  ],
+  "the vendetta": [
+   {
+    "kind": "bool",
+    "name": "dmkVendettaDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkVendettaRankRule"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkVendettaApproval"
+   },
+   {
+    "kind": "bool",
+    "name": "dmkVendettaDuel"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Dress box seats before Food",
+   "from": "  - [x] Food (capture p. 307)",
+   "to": "  - [x] Dress (capture pp. 306-307)\n    - R773: the dmk dress pins - the\n      clothing-status doctrine; the cotton\n      and silk with the seven regional\n      lower-class materials; the leathers;\n      the white-mourning dye rule with the\n      five common colors; the wrap\n      trousers, the layered robes with the\n      sleeve muffs and pockets, the mino\n      raincloak; the footwear by land;\n      the hats by status; the male and\n      female beauty with the blackened\n      teeth; the hair customs with the\n      topknot privilege - single-pass pins\n      per the R679 provenance shift\n  - [x] Food (capture p. 307)"
+  },
+  {
+   "note": "the Religion and Law and Justice boxes seat before Manners",
+   "from": "  - [x] Manners (capture p. 312)",
+   "to": "  - [x] Religion (capture p. 310)\n    - R773: the dmk religion pins - the\n      no-church concept; the five named\n      religions; the commoner\n      many-religions practice; the\n      tolerance with the adopted gods;\n      the sects and their rivalries -\n      single-pass pins per the R679\n      provenance shift\n  - [x] Law and Justice (capture pp. 310-312)\n    - R773: the dmk law and justice pins -\n      the magistrate court with the\n      bailiff and constables; the\n      no-lawyers trial with the beatings;\n      the speak-with-dead testimony; the\n      class double standard with the\n      Kozakuran sword right; the nine\n      commoner and four higher-class\n      punishments; the civil mediation;\n      the collective responsibility; the\n      vendetta with the rank rule, the\n      approvals, and the sanctioned duel\n      - single-pass pins per the R679\n      provenance shift\n  - [x] Manners (capture p. 312)"
+  }
+ ],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "include_comment": "the OA daily-life misses pins",
+ "include_after": "#include \"rules/oa143weaponsprose.h\"  // R772: the OA Weapons prose pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R772 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R772 LANDED 2026-10-22: commit",
+  "  4ece40f6ccfd652916d9d5e7b3225f851a55edeb",
+  "  (census 694 -> 695, pushed 7616bb5..4ece40f),",
+  "  OA WEAPONS PROSE, the forty-seven weapon",
+  "  descriptions (capture pp. 84-93, the",
+  "  descriptions re-captured at pp. 42-51 of",
+  "  the f9e32d73 OCR), header",
+  "  rules/oa143weaponsprose.h, prefix dnj",
+  "  (fully free at 7616bb5), ONE gap flip",
+  "  (the Weapons prose box, the LAST open",
+  "  box), gap census now 235 closed / 0 open",
+  "  - THE OA GAP REPORT IS EMPTY AND THE OA",
+  "  BOOK CLOSES (the whole-book sweep",
+  "  finished in the R771 open-boxes sweep",
+  "  plus this round). Round type: the prose",
+  "  doctrine round, single-pass pins per the",
+  "  R679 provenance shift; ONE BIG ROUND per",
+  "  the user decision 2026-10-22 (the",
+  "  proposed four-round alphabetical split",
+  "  was declined). Inlines: 67 = 19 consts",
+  "  (the chu-ko-nu magazine/reload set, the",
+  "  needle mouth-carry and burst die, the",
+  "  shuriken star point minimum, the nekode",
+  "  climb bonus, the lasso line/pull set, the",
+  "  man catcher pull and haft, the metsubishi",
+  "  incapacitation, the six tetsu-bishi",
+  "  area/lame rules) + 48 bools (one",
+  "  essence-of-the-weapon doctrine per",
+  "  weapon plus the katana honor/daisho",
+  "  doctrine; a full-page OCR read caught",
+  "  EIGHT multi-word entries the heading scan",
+  "  missed - Jo stick, Kau sin ke, Man",
+  "  catcher, Pellet bow, Sang kauw, Shakujo",
+  "  yari, Sode garami, Three-piece rod - the",
+  "  39 first counted was really 47). The",
+  "  walk: the arrows through the whip, the",
+  "  tool-and-weapon duality (kama, kiseru,",
+  "  kumade, parang, tui-fa), the ninja",
+  "  concealment thread (chain, kawanaga,",
+  "  ninja-to, shikomi-zue), and the mechanics",
+  "  (the chu-ko-nu lever reload, the lasso",
+  "  pull math, the man catcher capture, the",
+  "  tetsu-bishi ground rules). Zero stumbles,",
+  "  first rverify GREEN (double-run, 67",
+  "  mutants, 0 missed; 1 flip = 5 patches,",
+  "  the double-run applied 5/already 5",
+  "  clean). The user's ./bn 772 detour",
+  "  (struck per the R516 rule) caused no",
+  "  drift - it printed the gate md5",
+  "  8027199fbb95d8273e5f92bd59ce181c exactly.",
+  "  spec md5 3958ccaca207cb56630b525fb5f1ce1e,",
+  "  gate md5 8027199fbb95d8273e5f92bd59ce181c,",
+  "  canvas md5 60e925bc00344f1e0b8ff202d66d197a.",
+  "  NEXT - R773: no oa_gap_report.md boxes",
+  "  remain - the post-OA maintenance audit;",
+  "  the next target awaits Curtiss's call."
+ ]
+}

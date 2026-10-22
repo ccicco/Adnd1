@@ -18965,6 +18965,62 @@ when both halves land.
   prefix dnj (verified free at b4fd255),
   audit "R772 OA Weapons prose audit",
   include after rules/oa142celestial.h.
+- R772 LANDED 2026-10-22: commit
+  4ece40f6ccfd652916d9d5e7b3225f851a55edeb
+  (census 694 -> 695, pushed 7616bb5..4ece40f),
+  OA WEAPONS PROSE, the forty-seven weapon
+  descriptions (capture pp. 84-93, the
+  descriptions re-captured at pp. 42-51 of
+  the f9e32d73 OCR), header
+  rules/oa143weaponsprose.h, prefix dnj
+  (fully free at 7616bb5), ONE gap flip
+  (the Weapons prose box, the LAST open
+  box), gap census now 235 closed / 0 open
+  - THE OA GAP REPORT IS EMPTY AND THE OA
+  BOOK CLOSES (the whole-book sweep
+  finished in the R771 open-boxes sweep
+  plus this round). Round type: the prose
+  doctrine round, single-pass pins per the
+  R679 provenance shift; ONE BIG ROUND per
+  the user decision 2026-10-22 (the
+  proposed four-round alphabetical split
+  was declined). Inlines: 67 = 19 consts
+  (the chu-ko-nu magazine/reload set, the
+  needle mouth-carry and burst die, the
+  shuriken star point minimum, the nekode
+  climb bonus, the lasso line/pull set, the
+  man catcher pull and haft, the metsubishi
+  incapacitation, the six tetsu-bishi
+  area/lame rules) + 48 bools (one
+  essence-of-the-weapon doctrine per
+  weapon plus the katana honor/daisho
+  doctrine; a full-page OCR read caught
+  EIGHT multi-word entries the heading scan
+  missed - Jo stick, Kau sin ke, Man
+  catcher, Pellet bow, Sang kauw, Shakujo
+  yari, Sode garami, Three-piece rod - the
+  39 first counted was really 47). The
+  walk: the arrows through the whip, the
+  tool-and-weapon duality (kama, kiseru,
+  kumade, parang, tui-fa), the ninja
+  concealment thread (chain, kawanaga,
+  ninja-to, shikomi-zue), and the mechanics
+  (the chu-ko-nu lever reload, the lasso
+  pull math, the man catcher capture, the
+  tetsu-bishi ground rules). Zero stumbles,
+  first rverify GREEN (double-run, 67
+  mutants, 0 missed; 1 flip = 5 patches,
+  the double-run applied 5/already 5
+  clean). The user's ./bn 772 detour
+  (struck per the R516 rule) caused no
+  drift - it printed the gate md5
+  8027199fbb95d8273e5f92bd59ce181c exactly.
+  spec md5 3958ccaca207cb56630b525fb5f1ce1e,
+  gate md5 8027199fbb95d8273e5f92bd59ce181c,
+  canvas md5 60e925bc00344f1e0b8ff202d66d197a.
+  NEXT - R773: no oa_gap_report.md boxes
+  remain - the post-OA maintenance audit;
+  the next target awaits Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
