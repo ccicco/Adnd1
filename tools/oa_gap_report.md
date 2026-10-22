@@ -3384,8 +3384,9 @@ description riding the same round.
     pins per the R679 provenance shift
   - [x] Kozakura (capture p. 304)
     - R764: the dlz kozakura pins - the Little Cherry Blossom name; the same race as Wa with the shared customs and traditions; the far from unified state; the incessant daimyo warfare of several centuries with the shogun title struggle; the fiefs and estates ruled by the daimyos; the turbulent fortunes of the most common upbringing with the adventurer haven; the emperor regaining power against the bakufu remains; the families allied to each side out of loyalty or for power, some allied to both sides so they cannot lose; the warrior most respected without the rigid laws of Wa, the humble peasant more than once risen to powerful lord through his military skill; single-pass pins per the R679 provenance shift
-  - [ ] Gajin (capture p. 304) - the western
+  - [x] Gajin (capture p. 304) - the western
     foreigners doctrine
+    - R765: the dma gajin pins - the outside classes introduced into the Oriental lands, very different from the four standard classes; the insular and closed lands avoiding contact when possible; the infrequent and carefully controlled trade; the sea lanes and caravan routes disappearing into bandit or crueler dangers; the two peculiar traits of the separation; the lack of curiosity about the rest of the world; the outside world filled with rude and hostile barbarians, the gajin, not dealt with; single-pass pins per the R679 provenance shift
 
 - [ ] **Chapter 15: Daily Life in Kara-Tur**
   (capture pp. 305-313) - the daily-life chapter

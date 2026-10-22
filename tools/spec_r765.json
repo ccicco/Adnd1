@@ -1,0 +1,227 @@
+{
+ "round": 765,
+ "title": "OA SETTING - the gajin doctrine: the insular lands and the outside barbarians",
+ "prefix": "dma",
+ "header_file": "rules/oa136gajin.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 687,
+ "inline_count": 12,
+ "audit_label": "R765 OA Gajin audit",
+ "audit_comment": "OA round one hundred fifty-two (capture p. 304): the gajin doctrine - the outside classes into the insular lands, the carefully controlled trade, the two peculiar traits of the separation, the rude and hostile barbarians known as gajin and not dealt with, single-pass pins per the R679 provenance shift",
+ "banner": {
+  "title": "OA SETTING - THE GAJIN DOCTRINE, printed capture p. 304 - the insular lands and the outside barbarians",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 218 closed, 17 open - the Gajin box flips (census 687 -> 688); NEXT - R766: Food (capture p. 307, the Chapter 15 daily-life opener), prefix dmb (verify free at the landing), audit \"R766 OA Daily Life Food audit\", include after rules/oa136gajin.h"
+ },
+ "consts": [
+  {
+   "name": "dmaStandardClassCount",
+   "value": 4,
+   "comment": "the standard class count - the standard classes of fighter, magic user, cleric, and thief, four classes (print capture p. 304)"
+  },
+  {
+   "name": "dmaPeculiarTraitsCount",
+   "value": 2,
+   "comment": "the peculiar traits count - the result of the separation has left the inhabitants with two peculiar traits (print capture p. 304)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dmaOutsideClassesIntroduced",
+   "value": 1,
+   "comment": "the outside classes introduced - players who already have the AD&D game rules may want to introduce character classes from these worlds into the lands of Oriental Adventures (print capture p. 304)"
+  },
+  {
+   "name": "dmaLandsVeryDifferent",
+   "value": 1,
+   "comment": "the lands very different - these lands are very different from those of the standard classes (print capture p. 304)"
+  },
+  {
+   "name": "dmaInsularClosedLands",
+   "value": 1,
+   "comment": "the insular closed lands - the lands described in this book are insular and closed, avoiding contact with the outside world when possible (print capture p. 304)"
+  },
+  {
+   "name": "dmaTradeInfrequentControlled",
+   "value": 1,
+   "comment": "the trade infrequent and controlled - trade exists with the outside world but is infrequent and carefully controlled (print capture p. 304)"
+  },
+  {
+   "name": "dmaRoutesVanishDanger",
+   "value": 1,
+   "comment": "the routes vanish danger - many ply the sea lanes and caravan routes with gold and treasures only to disappear at the hands of bandits or other, more cruel, dangers (print capture p. 304)"
+  },
+  {
+   "name": "dmaSeparationTraitsResult",
+   "value": 1,
+   "comment": "the separation traits result - the result of this separation has left the inhabitants with peculiar traits (print capture p. 304)"
+  },
+  {
+   "name": "dmaLackOfCuriosity",
+   "value": 1,
+   "comment": "the lack of curiosity - the first trait is a lack of curiosity about the rest of the world (print capture p. 304)"
+  },
+  {
+   "name": "dmaHostileBarbariansView",
+   "value": 1,
+   "comment": "the hostile barbarians view - to most people of the Oriental lands the outside world is filled with rude and hostile barbarians (print capture p. 304)"
+  },
+  {
+   "name": "dmaGajinName",
+   "value": 1,
+   "comment": "the gajin name - the rude and hostile barbarians of the outside world are known as gajin (print capture p. 304)"
+  },
+  {
+   "name": "dmaGajinNotDealtWith",
+   "value": 1,
+   "comment": "the gajin not dealt with - as such they are not dealt with (print capture p. 304)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the classes example",
+   "expr": "m['dmaOutsideClassesIntroduced']() != 1 or m['dmaLandsVeryDifferent']() != 1"
+  },
+  {
+   "note": "the insular example",
+   "expr": "m['dmaInsularClosedLands']() != 1 or m['dmaTradeInfrequentControlled']() != 1"
+  },
+  {
+   "note": "the routes example",
+   "expr": "m['dmaRoutesVanishDanger']() != 1"
+  },
+  {
+   "note": "the separation example",
+   "expr": "m['dmaStandardClassCount']() != 4 or m['dmaPeculiarTraitsCount']() != 2 or m['dmaSeparationTraitsResult']() != 1"
+  },
+  {
+   "note": "the curiosity example",
+   "expr": "m['dmaLackOfCuriosity']() != 1"
+  },
+  {
+   "note": "the gajin example",
+   "expr": "m['dmaHostileBarbariansView']() != 1 or m['dmaGajinName']() != 1 or m['dmaGajinNotDealtWith']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the closed lands": [
+   {
+    "kind": "bool",
+    "name": "dmaOutsideClassesIntroduced"
+   },
+   {
+    "kind": "bool",
+    "name": "dmaLandsVeryDifferent"
+   },
+   {
+    "kind": "bool",
+    "name": "dmaInsularClosedLands"
+   },
+   {
+    "kind": "bool",
+    "name": "dmaTradeInfrequentControlled"
+   },
+   {
+    "kind": "bool",
+    "name": "dmaRoutesVanishDanger"
+   }
+  ],
+  "the separation doctrine": [
+   {
+    "kind": "const",
+    "name": "dmaStandardClassCount"
+   },
+   {
+    "kind": "const",
+    "name": "dmaPeculiarTraitsCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dmaSeparationTraitsResult"
+   },
+   {
+    "kind": "bool",
+    "name": "dmaLackOfCuriosity"
+   },
+   {
+    "kind": "bool",
+    "name": "dmaHostileBarbariansView"
+   },
+   {
+    "kind": "bool",
+    "name": "dmaGajinName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmaGajinNotDealtWith"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Gajin box",
+   "from": "  - [ ] Gajin (capture p. 304) - the western\n    foreigners doctrine",
+   "to": "  - [x] Gajin (capture p. 304) - the western\n    foreigners doctrine\n    - R765: the dma gajin pins - the outside classes introduced into the Oriental lands, very different from the four standard classes; the insular and closed lands avoiding contact when possible; the infrequent and carefully controlled trade; the sea lanes and caravan routes disappearing into bandit or crueler dangers; the two peculiar traits of the separation; the lack of curiosity about the rest of the world; the outside world filled with rude and hostile barbarians, the gajin, not dealt with; single-pass pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 218,
+  "open": 17
+ },
+ "include_comment": "the OA Gajin pins",
+ "include_after": "#include \"rules/oa135kozakura.h\"  // R764: the OA Kozakura pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R764 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R764 LANDED 2026-10-22: commit",
+  "  345ec5c683c24b5041c661cd02a3ee63f16a9fcb",
+  "  (census 686 -> 687, pushed 6a93395..345ec5c),",
+  "  OA SETTING, the island of Kozakura (capture",
+  "  p. 304), header rules/oa135kozakura.h,",
+  "  prefix dlz (fully free at 6a93395 - zero",
+  "  substring hits, zero call-site dlz\\w*(",
+  "  collisions), one gap flip (the Kozakura",
+  "  box, single-line), gap census now 217",
+  "  closed / 18 open. Round type: the Chapter",
+  "  14 setting-doctrine round, single-pass pins",
+  "  per the R679 provenance shift. Inlines:",
+  "  18 = 1 const (dlzStruggleSides 2) + 17",
+  "  bools, no tables. The walk: the Little",
+  "  Cherry Blossom name; the same race as Wa",
+  "  with the shared customs and traditions; the",
+  "  far from unified state; the incessant",
+  "  daimyo warfare of several centuries with",
+  "  the shogun title struggle; the fiefs and",
+  "  estates ruled by the daimyos; the",
+  "  turbulent fortunes of the most common",
+  "  upbringing with the adventurer haven; the",
+  "  emperor regaining his long-lost political",
+  "  power against the bakufu remains; the",
+  "  families allied to each side out of loyalty",
+  "  or for power, some allied to both sides so",
+  "  they cannot lose; the warrior most",
+  "  respected, Kozakura lacking the rigid laws",
+  "  of Wa, the humble peasant more than once",
+  "  risen to powerful lord through his military",
+  "  skill. Zero stumbles, first rverify GREEN",
+  "  (double-run, 18 mutants, 0 missed; the",
+  "  canvas published clean at 10,909 bytes on",
+  "  the first single write). spec md5",
+  "  2743378688ae114fab342583f4b0c241, gate",
+  "  md5 35798dbaccdb3aeab80850d62484f941,",
+  "  canvas md5",
+  "  2c53904b0b43f705b56279e7b8c18f3f.",
+  "  NEXT - R765: Gajin (capture p. 304),",
+  "  prefix dma (verify free at the landing),",
+  "  audit \"R765 OA Gajin audit\", include",
+  "  after rules/oa135kozakura.h."
+ ]
+}

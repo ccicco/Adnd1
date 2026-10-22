@@ -18545,6 +18545,48 @@ when both halves land.
   prefix dlz (verify free at the landing),
   audit "R764 OA Kozakura audit", include
   after rules/oa134wa.h.
+- R764 LANDED 2026-10-22: commit
+  345ec5c683c24b5041c661cd02a3ee63f16a9fcb
+  (census 686 -> 687, pushed 6a93395..345ec5c),
+  OA SETTING, the island of Kozakura (capture
+  p. 304), header rules/oa135kozakura.h,
+  prefix dlz (fully free at 6a93395 - zero
+  substring hits, zero call-site dlz\w*(
+  collisions), one gap flip (the Kozakura
+  box, single-line), gap census now 217
+  closed / 18 open. Round type: the Chapter
+  14 setting-doctrine round, single-pass pins
+  per the R679 provenance shift. Inlines:
+  18 = 1 const (dlzStruggleSides 2) + 17
+  bools, no tables. The walk: the Little
+  Cherry Blossom name; the same race as Wa
+  with the shared customs and traditions; the
+  far from unified state; the incessant
+  daimyo warfare of several centuries with
+  the shogun title struggle; the fiefs and
+  estates ruled by the daimyos; the
+  turbulent fortunes of the most common
+  upbringing with the adventurer haven; the
+  emperor regaining his long-lost political
+  power against the bakufu remains; the
+  families allied to each side out of loyalty
+  or for power, some allied to both sides so
+  they cannot lose; the warrior most
+  respected, Kozakura lacking the rigid laws
+  of Wa, the humble peasant more than once
+  risen to powerful lord through his military
+  skill. Zero stumbles, first rverify GREEN
+  (double-run, 18 mutants, 0 missed; the
+  canvas published clean at 10,909 bytes on
+  the first single write). spec md5
+  2743378688ae114fab342583f4b0c241, gate
+  md5 35798dbaccdb3aeab80850d62484f941,
+  canvas md5
+  2c53904b0b43f705b56279e7b8c18f3f.
+  NEXT - R765: Gajin (capture p. 304),
+  prefix dma (verify free at the landing),
+  audit "R765 OA Gajin audit", include
+  after rules/oa135kozakura.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

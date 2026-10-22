@@ -465,6 +465,7 @@
 #include "rules/oa133tulung.h"  // R762: the OA Tu Lung pins
 #include "rules/oa134wa.h"  // R763: the OA Wa pins
 #include "rules/oa135kozakura.h"  // R764: the OA Kozakura pins
+#include "rules/oa136gajin.h"  // R765: the OA Gajin pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -119603,6 +119604,62 @@ int main() {
         )
             ++bad;
         printf("R764 OA Kozakura audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R765 OA Gajin audit ----
+    // OA round one hundred fifty-two (capture p. 304): the gajin doctrine -
+    // the outside classes into the insular lands, the carefully controlled
+    // trade, the two peculiar traits of the separation, the rude and hostile
+    // barbarians known as gajin and not dealt with, single-pass pins per the
+    // R679 provenance shift
+    {
+        using namespace rules;
+        int bad = 0;
+    if (dmaStandardClassCount() != 4
+            || dmaPeculiarTraitsCount() != 2
+            || !dmaOutsideClassesIntroduced()
+            || !dmaLandsVeryDifferent()
+            || !dmaInsularClosedLands()
+            || !dmaTradeInfrequentControlled()
+            || !dmaRoutesVanishDanger()
+            || !dmaSeparationTraitsResult()
+            || !dmaLackOfCuriosity()
+            || !dmaHostileBarbariansView()
+            || !dmaGajinName()
+            || !dmaGajinNotDealtWith()
+        )
+            ++bad;
+        // the classes example
+    if (dmaOutsideClassesIntroduced() != 1
+            || dmaLandsVeryDifferent() != 1
+        )
+            ++bad;
+        // the insular example
+    if (dmaInsularClosedLands() != 1
+            || dmaTradeInfrequentControlled() != 1
+        )
+            ++bad;
+        // the routes example
+    if (dmaRoutesVanishDanger() != 1
+        )
+            ++bad;
+        // the separation example
+    if (dmaStandardClassCount() != 4
+            || dmaPeculiarTraitsCount() != 2
+            || dmaSeparationTraitsResult() != 1
+        )
+            ++bad;
+        // the curiosity example
+    if (dmaLackOfCuriosity() != 1
+        )
+            ++bad;
+        // the gajin example
+    if (dmaHostileBarbariansView() != 1
+            || dmaGajinName() != 1
+            || dmaGajinNotDealtWith() != 1
+        )
+            ++bad;
+        printf("R765 OA Gajin audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----
