@@ -3140,7 +3140,23 @@ description riding the same round.
     martial arts weapon 81-90; the ninja
     weapon 91-100; single-pass pins per
     the R679 provenance shift
-  - [ ] Table 79: Weapon Properties (capture p. 291)
+  - [x] Table 79: Weapon Properties (capture p. 291)
+    - R750: the dll Table 79 pins - the
+    twenty d100 bands by the five
+    weapon-type columns (bow, missile,
+    melee, martial arts, ninja), the
+    quality and the +1/+2/+3 to-hit and
+    damage grades through the special
+    rows: the +1 +2 vs S and vs L, the
+    -1 cursed, the speed, detection,
+    dancing, balance, distance +1,
+    disruption, unbreakable, flame,
+    accuracy +3, venom, slaying,
+    intelligence, and the roll-twice
+    martial arts and ninja tails; the
+    grid spanning the page break;
+    single-pass pins per the R679
+    provenance shift
   - [ ] Table 80: Sword Class (capture p. 292)
   - [ ] Table 81: Bow, Crossbow, And Sling Class
     (capture p. 292)

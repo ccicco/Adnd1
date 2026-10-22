@@ -17843,6 +17843,46 @@ when both halves land.
   miscellaneous melee 53-68, the missile
   69-80, the martial arts 81-90, the ninja
   91-100.
+- R749 LANDED 2026-10-22: commit
+  b1e5d05349bcf08b04cd7e1db7410d0a9da53f9f
+  (census 671 -> 672, pushed c00afcf..b1e5d05),
+  OA TREASURE, Table 78: Magical Weapons
+  (capture p. 291), header rules/oa120table78.h,
+  prefix dlk (verified free at c00afcf), one
+  gap flip (the Table 78 box, single-line),
+  gap census now 202 closed / 33 open.
+  Round type: the Chapter 13 d100 band grid
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 10 = 1 const +
+  6 bools + 3 table cols; one table
+  dlkWeaponClasses[6]: the six d100 bands
+  (the sword 01-40, the bow crossbow sling
+  41-52, the miscellaneous melee 53-68, the
+  missile 69-80, the martial arts 81-90,
+  the ninja 91-100), each class walked by
+  a bool pointing to its specific type
+  table (80-85). Count const derived from
+  the data (the R739 lesson), verified
+  6/6/6 at the landing. Zero stumbles,
+  first rverify GREEN. Battery 25 mutants,
+  0 missed. spec md5
+  da27a6d104b8a47b648d7a0aea8748aa, gate
+  md5 0da2b0c780b3a536376da1a77c4212e9,
+  canvas md5 59c40ef684c7cb3cc3a64dbb1e697
+  262. NEXT - R750: Table 79: Weapon
+  Properties (capture p. 291, the grid runs
+  onto p. 292), prefix dll (verify free at
+  the landing), audit "R750 OA Table 79
+  properties audit", include after
+  rules/oa120table78.h. A dense round - the
+  20-band d100 grid x 5 weapon-type columns
+  (bow, missile, melee, martial arts,
+  ninja): the quality, the +1/+2/+3 to-hit
+  and damage grades, then the special rows
+  (the speed, detection, dancing, balance,
+  disruption, unbreakable, flame, venom,
+  slaying, intelligence, the roll-twice
+  tails, the -1 cursed).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
