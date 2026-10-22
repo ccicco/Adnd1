@@ -606,7 +606,19 @@ for fp in S.get('file_patches', []):
     if not os.path.exists(p):
         die('the file patch target is '
             'missing: %s' % p)
-    txt = rd(p)
+    if p == RT:
+        # RT is engine-patched in
+        # memory (the include and
+        # the audit); the file
+        # patch rides that text,
+        # never the pristine disk
+        # copy (the clobber class:
+        # the deferred writes would
+        # lose the include and the
+        # audit to the stale read)
+        txt = rt
+    else:
+        txt = rd(p)
     if fp['to'] in txt:
         already.append('file: %s'
                        % fp['note'])

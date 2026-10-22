@@ -19096,6 +19096,71 @@ when both halves land.
   canvas md5 8bc1ba24318f107851ab23f69eb91a0e.
   NEXT - R774: the next target awaits
   Curtiss's call.
+- R774 LANDED 2026-10-22: commit
+  c137b5105b157215c21cf6f8dc71dc2ae2493a51
+  (census 696 -> 697, pushed 7c7acd4..c137b51),
+  THE FILE-PATCH SEAM - the ritual tooling
+  extension, the FIRST TRUE TOOLING ROUND (the
+  R563 check showed every prior round was a
+  normal pin round; no round had ever extended
+  the ritual itself), header
+  rules/filepatchseam.h, prefix dnl (fully
+  free at 7c7acd4). THE CARGO: the new optional
+  spec key file_patches (a list of
+  {file, note, from, to}) - the engine applies
+  them with gap-flip semantics (byte-exact
+  from, one replace, idempotent by
+  to-presence, counted in the applied/already
+  census), rverify restores and counts the
+  patch targets at the base sha, and ./rn
+  derives the extra git-add paths from the
+  spec. This unlocks the R775 mounted-combat
+  engine site (game/party.h +
+  game/state_combat.cpp + the R403 charge
+  conditions at regtest 43205/43208, which no
+  prior round could land). The DEMO PATCH is
+  comment-only in rules/mountlayer.h (the
+  charge comment now notes the site lands
+  R775) - comment-only BY DESIGN because the
+  R403 audit at 43208 requires
+  mmlMountedCombatChargeOpen() true until the
+  site lands. THE BOOTSTRAP (disclosed,
+  one-time): the three tool files cannot
+  patch themselves, so the save step was FOUR
+  canvases this round - the spec plus the
+  patched rn, tools/splice_engine.py, and
+  tools/rverify.py, all saved by hand BEFORE
+  the ./rn line. CAUGHT POST-LANDING: the
+  three tool files ride in the working tree
+  but NOT the R774 commit (./rn git-adds
+  only spec, header, regtest, seed, gap
+  report, and the file_patches targets) -
+  they need the one-line manual tool commit
+  (given in the seating report) or the seam
+  lives only on the local tree. FIXED: the
+  tool commit landed (R774: the file-patch
+  seam tools, 5ddec12, pushed
+  c137b51..5ddec12) - the seam is in the
+  repo and the tools are in sync. Round type:
+  the tooling round, zero book pages (the
+  provenance is the tooling itself, the R428
+  precedent). Inlines: 8 = 3 consts (the
+  three patched tools, the first file-patch
+  round 774, the mount site round 775) + 5
+  bools (the spec-declared key, the
+  byte-exact anchor, the census counting, the
+  git add, the mountlayer seam note). The
+  user's ./bn 774 detour (struck per the R516
+  rule) caused no drift - the gate md5
+  5cb3660f3a4bfdf3099c66fa4c5f3f73 printed
+  exactly. First rverify GREEN with the
+  patched tools (double-run 5 patches
+  applied/already clean, 8 mutants 0 missed).
+  spec md5 69f1bf7435285af8f5160516bd91d226,
+  gate md5 5cb3660f3a4bfdf3099c66fa4c5f3f73,
+  canvas md5 698ee0e602f24c7a23f713e93ae37bc5.
+  NEXT - R775: the mounted-combat engine
+  site through the seam.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

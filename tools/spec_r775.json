@@ -1,0 +1,162 @@
+{
+ "round": 775,
+ "prefix": "dnb",
+ "header_file": "rules/rtseam.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 697,
+ "title": "the RT file-patch fix - the seam upgrades itself",
+ "audit_label": "R775 RT seam audit",
+ "audit_comment": "THE SECOND TOOLING ROUND - designing the mount site (the R403 charge flips ride regtest.cpp file patches) exposed the clobber class in the R774 seam: the (f) section read its target from disk, but regtest is ALSO engine-patched in memory with the writes deferred - a regtest file patch would read the pristine copy and the last RT write would lose the include and the audit. The fix rides this round as a file patch ON tools/splice_engine.py itself: RT file patches now read the in-memory text. This round proves the bootstrap loop closed - a tool file lands through the ritual, no hand-save: the running old engine safely patches a file it does not also splice, and the second run executes the new engine.",
+ "include_comment": "the RT seam fix pins",
+ "include_after": "#include \"rules/filepatchseam.h\"  // R774: the file-patch seam tooling pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R774 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R774 LANDED 2026-10-22: commit",
+  "  c137b5105b157215c21cf6f8dc71dc2ae2493a51",
+  "  (census 696 -> 697, pushed 7c7acd4..c137b51),",
+  "  THE FILE-PATCH SEAM - the ritual tooling",
+  "  extension, the FIRST TRUE TOOLING ROUND (the",
+  "  R563 check showed every prior round was a",
+  "  normal pin round; no round had ever extended",
+  "  the ritual itself), header",
+  "  rules/filepatchseam.h, prefix dnl (fully",
+  "  free at 7c7acd4). THE CARGO: the new optional",
+  "  spec key file_patches (a list of",
+  "  {file, note, from, to}) - the engine applies",
+  "  them with gap-flip semantics (byte-exact",
+  "  from, one replace, idempotent by",
+  "  to-presence, counted in the applied/already",
+  "  census), rverify restores and counts the",
+  "  patch targets at the base sha, and ./rn",
+  "  derives the extra git-add paths from the",
+  "  spec. This unlocks the R775 mounted-combat",
+  "  engine site (game/party.h +",
+  "  game/state_combat.cpp + the R403 charge",
+  "  conditions at regtest 43205/43208, which no",
+  "  prior round could land). The DEMO PATCH is",
+  "  comment-only in rules/mountlayer.h (the",
+  "  charge comment now notes the site lands",
+  "  R775) - comment-only BY DESIGN because the",
+  "  R403 audit at 43208 requires",
+  "  mmlMountedCombatChargeOpen() true until the",
+  "  site lands. THE BOOTSTRAP (disclosed,",
+  "  one-time): the three tool files cannot",
+  "  patch themselves, so the save step was FOUR",
+  "  canvases this round - the spec plus the",
+  "  patched rn, tools/splice_engine.py, and",
+  "  tools/rverify.py, all saved by hand BEFORE",
+  "  the ./rn line. CAUGHT POST-LANDING: the",
+  "  three tool files ride in the working tree",
+  "  but NOT the R774 commit (./rn git-adds",
+  "  only spec, header, regtest, seed, gap",
+  "  report, and the file_patches targets) -",
+  "  they need the one-line manual tool commit",
+  "  (given in the seating report) or the seam",
+  "  lives only on the local tree. FIXED: the",
+  "  tool commit landed (R774: the file-patch",
+  "  seam tools, 5ddec12, pushed",
+  "  c137b51..5ddec12) - the seam is in the",
+  "  repo and the tools are in sync. Round type:",
+  "  the tooling round, zero book pages (the",
+  "  provenance is the tooling itself, the R428",
+  "  precedent). Inlines: 8 = 3 consts (the",
+  "  three patched tools, the first file-patch",
+  "  round 774, the mount site round 775) + 5",
+  "  bools (the spec-declared key, the",
+  "  byte-exact anchor, the census counting, the",
+  "  git add, the mountlayer seam note). The",
+  "  user's ./bn 774 detour (struck per the R516",
+  "  rule) caused no drift - the gate md5",
+  "  5cb3660f3a4bfdf3099c66fa4c5f3f73 printed",
+  "  exactly. First rverify GREEN with the",
+  "  patched tools (double-run 5 patches",
+  "  applied/already clean, 8 mutants 0 missed).",
+  "  spec md5 69f1bf7435285af8f5160516bd91d226,",
+  "  gate md5 5cb3660f3a4bfdf3099c66fa4c5f3f73,",
+  "  canvas md5 698ee0e602f24c7a23f713e93ae37bc5.",
+  "  NEXT - R775: the mounted-combat engine",
+  "  site through the seam."
+ ],
+ "banner": {
+  "title": "THE RT SEAM FIX - regtest.cpp file patches ride the in-memory engine text; the seam upgrades the engine through the ritual itself",
+  "provenance": "The R774 seam read every file patch target from disk. regtest.cpp is the one target the engine also patches in memory (the include and the audit block, writes deferred to the end), so the R776 site round - whose R403 charge flips are regtest file patches - would have clobbered them with the pristine disk copy. The fix is a file patch on tools/splice_engine.py: when the target is RT, the patch reads the in-memory text instead. The patch lands through the ritual, closing the R774 bootstrap note: the running old engine applies it to its own source on disk, the second run of the double-run executes the new engine, and ./rn git-adds the tool via the spec the usual way. The mount site itself is R776.",
+  "sentinel": "No book pages this round either: the provenance is the clobber class the site design exposed."
+ },
+ "consts": [
+  {
+   "name": "dnbSelfPatchedToolRound",
+   "value": 775,
+   "comment": "The first round a tool file lands through the ritual itself - the spec file patch rides tools/splice_engine.py."
+  },
+  {
+   "name": "dnbMountSiteRound",
+   "value": 776,
+   "comment": "The mounted-combat site lands R776 - one round later than the R774 record hoped, because the regtest charge flips needed this fix first."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnbRegtestPatchesRideInMemory",
+   "value": true,
+   "comment": "A regtest.cpp file patch reads the in-memory engine text (include and audit included), never the pristine disk copy."
+  },
+  {
+   "name": "dnbClobberClassDead",
+   "value": true,
+   "comment": "The clobber class - the last RT write losing the include and the audit to a stale read - dies by the fix."
+  },
+  {
+   "name": "dnbToolsLandThroughTheRitual",
+   "value": true,
+   "comment": "A tool file lands as a spec file patch: the engine applies it, the double-run re-executes the new source, ./rn git-adds it - no hand-save, no manual tool commit."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [],
+ "table_checks": [],
+ "header_sections": {
+  "the RT seam fix (the R775 tooling)": [
+   {
+    "kind": "const",
+    "name": "dnbSelfPatchedToolRound"
+   },
+   {
+    "kind": "const",
+    "name": "dnbMountSiteRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dnbRegtestPatchesRideInMemory"
+   },
+   {
+    "kind": "bool",
+    "name": "dnbClobberClassDead"
+   },
+   {
+    "kind": "bool",
+    "name": "dnbToolsLandThroughTheRitual"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 5,
+ "file_patches": [
+  {
+   "file": "tools/splice_engine.py",
+   "note": "the engine (f) section: the RT file patch rides the in-memory text",
+   "from": "    txt = rd(p)\n    if fp['to'] in txt:\n        already.append('file: %s'\n                       % fp['note'])",
+   "to": "    if p == RT:\n        # RT is engine-patched in\n        # memory (the include and\n        # the audit); the file\n        # patch rides that text,\n        # never the pristine disk\n        # copy (the clobber class:\n        # the deferred writes would\n        # lose the include and the\n        # audit to the stale read)\n        txt = rt\n    else:\n        txt = rd(p)\n    if fp['to'] in txt:\n        already.append('file: %s'\n                       % fp['note'])"
+  }
+ ]
+}
