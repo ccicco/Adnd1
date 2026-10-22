@@ -17252,6 +17252,45 @@ when both halves land.
   landing), audit "R735 OA Table 74
   monetary treasure audit", include after
   rules/oa105randtres.h.
+- R735 LANDED 2026-10-21: commit
+  7d24d471ec7a2754367fb14362a3ed129d140cd9
+  (census 657 -> 658, pushed dd3890c..7d24d47),
+  OA TREASURE, Table 74, Monetary Treasure
+  And Magical Items (capture p. 286), header
+  rules/oa106table74.h, prefix dkw
+  (verified free at dd3890c), one gap flip
+  (the Table 74 box, its two-line wrap
+  handled), gap census now 188 closed /
+  47 open. Round type: the Chapter 12
+  treasure grid round, single-pass pins per
+  the R679 provenance shift. Inlines: 30 =
+  1 const + 8 bools + 21 table cols; the
+  A through Z grid as SEVEN 3-column
+  tables (fen, yuan, tael, ch'ien, gems,
+  art, maps and magic), each cell the min,
+  max, percent triple, the Nil cells the 0
+  sentinel, the J-N pieces rows the
+  guaranteed 100; the maps clauses as
+  bools (plus potion D/H/X, plus scroll
+  E/F/G/H, the F except swords/misc, the
+  U/V except potions/scrolls, the B sword-
+  armor-weapon, the W 1 map, the X mist.
+  misread). Stumbles: the 21-column
+  single-table tripped the 78-col census
+  line (split into the seven per-category
+  tables); a double-quoted m["..."] example
+  tripped the cond gate (single quotes only).
+  Battery 555 mutants, 0 missed - the
+  largest battery of the OA run. spec md5
+  a8d85504478078e0644076057743b75c, gate
+  md5 cba732423ae1ba09264fb97998ce4ec5,
+  canvas md5 305ea8a2c7c1fc1ea1e123aeb88d6a
+  7b. NEXT - R736: Table II.A. (Orient):
+  Monetary Treasure (capture p. 286),
+  prefix dkx (verify free at the landing),
+  audit "R736 OA Table II.A. Orient
+  monetary treasure audit", include after
+  rules/oa106table74.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

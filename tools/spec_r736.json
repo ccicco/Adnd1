@@ -1,0 +1,456 @@
+{
+ "round": 736,
+ "title": "OA TREASURE - Table II.A. (Orient): Monetary Treasure: the nine d20 bands of the rolled hoard",
+ "prefix": "dkx",
+ "header_file": "rules/oa107tableiia.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 658,
+ "inline_count": 29,
+ "audit_label": "R736 OA Table II.A. Orient audit",
+ "audit_comment": "OA round one hundred twenty-three (capture pp. 286-287): the Table II.A. (Orient) Monetary Treasure - the nine d20 bands, the treasure ranges as the min and max pairs with the nil the 0 sentinel, the roll-twice and roll-three-times mechanics with the reroll limit, the one-of-each 20 row, the capture misreads pinned against the print, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE II.A. (ORIENT), MONETARY TREASURE, printed capture pp. 286-287 - the rolled hoard round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 189 closed, 46 open - the Table II.A. box flips (census 658 -> 659); NEXT - R737: Table III. (Orient): Magical Items (capture p. 287), prefix dky (verify free at the landing), audit \"R737 OA Table III Orient magical items audit\", include after rules/oa107tableiia.h"
+ },
+ "consts": [
+  {
+   "name": "dkxRowCount",
+   "value": 9,
+   "comment": "the Table II.A. row count - the nine d20 bands of the Oriental monetary treasure table (print capture p. 286)"
+  },
+  {
+   "name": "dkxRerollLimit",
+   "value": 17,
+   "comment": "the reroll limit - the rolls above 17 rerolled by the twice and three-times rows, the capture misreading 97 for the 17 of the 18 row (print capture p. 286)"
+  },
+  {
+   "name": "dkxOneOfEachRow",
+   "value": 20,
+   "comment": "the one-of-each row - the 20 roll yielding one of each treasure above (print capture p. 286)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkxRowOneFenYuan",
+   "value": 1,
+   "comment": "the 1-2 row - the 10,000-40,000 fen riding with the 10,000-60,000 yuan (print capture p. 286)"
+  },
+  {
+   "name": "dkxRowTael",
+   "value": 1,
+   "comment": "the 3-5 row - the 10,000-60,000 tael (print capture p. 286)"
+  },
+  {
+   "name": "dkxRowChienOneDieSix",
+   "value": 1,
+   "comment": "the 6-10 row - the 500-1,000 ch'ien of the 1d6 + 4 (print capture p. 287)"
+  },
+  {
+   "name": "dkxRowChienFiveDieFour",
+   "value": 1,
+   "comment": "the 11-12 row - the 500-2,000 ch'ien of the 5d4, the capture misreading 500-200 for the 500-2,000 (print capture p. 287)"
+  },
+  {
+   "name": "dkxRowGems",
+   "value": 1,
+   "comment": "the 13-15 row - the 10-100 gems (print capture p. 287)"
+  },
+  {
+   "name": "dkxRowJewelryOrArt",
+   "value": 1,
+   "comment": "the 16-17 row - the 5-50 pieces of jewelry or art objects (print capture p. 287)"
+  },
+  {
+   "name": "dkxRollTwice",
+   "value": 1,
+   "comment": "the 18 row - roll twice, rerolling the rolls above the limit (print capture p. 287)"
+  },
+  {
+   "name": "dkxRollThreeTimes",
+   "value": 1,
+   "comment": "the 19 row - roll three times, rerolling the rolls above the limit (print capture p. 287)"
+  },
+  {
+   "name": "dkxOneOfEachTreasure",
+   "value": 1,
+   "comment": "the 20 row - one of each treasure above (print capture p. 287)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dkxIIA",
+   "tag": "IIA",
+   "count": "dkxRowCount",
+   "comment": "the Table II.A. (Orient) grid - the nine d20 bands row by row, the treasure ranges as the min and max pairs with the nil the 0 sentinel, the roll mechanics riding in the last three columns (print capture p. 286; print capture p. 287)",
+   "cols": [
+    "dkxRollMin",
+    "dkxRollMax",
+    "dkxFenMin",
+    "dkxFenMax",
+    "dkxYuanMin",
+    "dkxYuanMax",
+    "dkxTaelMin",
+    "dkxTaelMax",
+    "dkxChienMin",
+    "dkxChienMax",
+    "dkxGemsMin",
+    "dkxGemsMax",
+    "dkxArtMin",
+    "dkxArtMax",
+    "dkxRollsCount",
+    "dkxRerollAbove",
+    "dkxOneOfEach"
+   ],
+   "col_comments": [
+    "the d20 band minimum - the low roll of the row (print capture p. 286)",
+    "the d20 band maximum - the high roll of the row (print capture p. 286)",
+    "the fen minimum - the low of the 10,000-40,000, the 0 the nil (print capture p. 286)",
+    "the fen maximum - the high of the 10,000-40,000, the 0 the nil (print capture p. 286)",
+    "the yuan minimum - the low of the 10,000-60,000, the 0 the nil (print capture p. 286)",
+    "the yuan maximum - the high of the 10,000-60,000, the 0 the nil (print capture p. 286)",
+    "the tael minimum - the low of the 10,000-60,000, the 0 the nil (print capture p. 286)",
+    "the tael maximum - the high of the 10,000-60,000, the 0 the nil (print capture p. 286)",
+    "the ch'ien minimum - the low of the 500-1,000 and 500-2,000, the 0 the nil (print capture p. 287)",
+    "the ch'ien maximum - the high of the 500-1,000 and the 500-2,000 of the capture misreading 500-200, the 0 the nil (print capture p. 287)",
+    "the gems minimum - the low of the 10-100, the 0 the nil (print capture p. 287)",
+    "the gems maximum - the high of the 10-100, the 0 the nil (print capture p. 287)",
+    "the art minimum - the low of the 5-50 jewelry or art pieces, the 0 the nil (print capture p. 287)",
+    "the art maximum - the high of the 5-50, the 0 the nil (print capture p. 287)",
+    "the rolls count - the 2 of the roll twice, the 3 of the roll three times, the 1 elsewhere (print capture p. 287)",
+    "the reroll limit column - the 17 rerolled-above of the twice and three-times rows, the 0 elsewhere (print capture p. 287)",
+    "the one-of-each flag - the 1 of the 20 row, the 0 elsewhere (print capture p. 287)"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     10000,
+     40000,
+     10000,
+     60000,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     5,
+     0,
+     0,
+     0,
+     0,
+     10000,
+     60000,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     10,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     500,
+     1000,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     11,
+     12,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     500,
+     2000,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     13,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     10,
+     100,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     16,
+     17,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     5,
+     50,
+     1,
+     0,
+     0
+    ],
+    [
+     18,
+     18,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     2,
+     17,
+     0
+    ],
+    [
+     19,
+     19,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3,
+     17,
+     0
+    ],
+    [
+     20,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    7,
+    7,
+    8,
+    8,
+    8,
+    8,
+    0,
+    7,
+    8
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the row bools - the nine-band walkthrough, healthy values, each condition false",
+   "expr": "m['dkxRowOneFenYuan']() != 1 or m['dkxRowTael']() != 1 or m['dkxRowChienOneDieSix']() != 1 or m['dkxRowChienFiveDieFour']() != 1 or m['dkxRowGems']() != 1 or m['dkxRowJewelryOrArt']() != 1 or m['dkxRollTwice']() != 1 or m['dkxRollThreeTimes']() != 1 or m['dkxOneOfEachTreasure']() != 1"
+  },
+  {
+   "note": "the mechanics - the reroll limit and the one-of-each row, healthy values, each condition false",
+   "expr": "m['dkxRerollLimit']() != 17 or m['dkxOneOfEachRow']() != 20 or m['dkxRerollAbove'](6) != 17 or m['dkxRerollAbove'](7) != 17 or m['dkxRollsCount'](6) != 2 or m['dkxRollsCount'](7) != 3 or m['dkxOneOfEach'](8) != 1"
+  },
+  {
+   "note": "the bands - the d20 spans abut and cover 1 through 20, healthy values, each condition false",
+   "expr": "m['dkxRollMin'](0) != 1 or m['dkxRollMax'](0) != 2 or m['dkxRollMax'](8) != 20 or m['dkxRowCount']() != 9"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table II.A. grid": [
+   {
+    "kind": "const",
+    "name": "dkxRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dkxIIA"
+   }
+  ],
+  "the roll mechanics": [
+   {
+    "kind": "const",
+    "name": "dkxRerollLimit"
+   },
+   {
+    "kind": "const",
+    "name": "dkxOneOfEachRow"
+   },
+   {
+    "kind": "bool",
+    "name": "dkxRollTwice"
+   },
+   {
+    "kind": "bool",
+    "name": "dkxRollThreeTimes"
+   },
+   {
+    "kind": "bool",
+    "name": "dkxOneOfEachTreasure"
+   }
+  ],
+  "the rows": [
+   {
+    "kind": "bool",
+    "name": "dkxRowOneFenYuan"
+   },
+   {
+    "kind": "bool",
+    "name": "dkxRowTael"
+   },
+   {
+    "kind": "bool",
+    "name": "dkxRowChienOneDieSix"
+   },
+   {
+    "kind": "bool",
+    "name": "dkxRowChienFiveDieFour"
+   },
+   {
+    "kind": "bool",
+    "name": "dkxRowGems"
+   },
+   {
+    "kind": "bool",
+    "name": "dkxRowJewelryOrArt"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table II.A. box",
+   "from": "  - [ ] Table II.A. (Orient): Monetary Treasure\n    (capture p. 286)",
+   "to": "  - [x] Table II.A. (Orient): Monetary Treasure\n    (capture p. 286)\n    - R736: the dkx Table II.A. pins -\n    the nine d20 bands: the 1-2 fen and\n    yuan (10,000-40,000 and\n    10,000-60,000); the 3-5 tael\n    (10,000-60,000); the 6-10 ch'ien\n    500-1,000 of the 1d6 + 4; the 11-12\n    ch'ien 500-2,000 of the 5d4, the\n    capture misreading 500-200; the\n    13-15 gems 10-100; the 16-17 jewelry\n    or art 5-50; the 18 roll twice and\n    the 19 roll three times, rerolling\n    above 17, the capture misreading 97\n    for the 17 of the 18 row; the 20 one\n    of each treasure above; single-pass\n    pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 189,
+  "open": 46
+ },
+ "include_comment": "the OA Table II.A. pins",
+ "include_after": "#include \"rules/oa106table74.h\"  // R735: the OA Table 74 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R735 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R735 LANDED 2026-10-21: commit",
+  "  7d24d471ec7a2754367fb14362a3ed129d140cd9",
+  "  (census 657 -> 658, pushed dd3890c..7d24d47),",
+  "  OA TREASURE, Table 74, Monetary Treasure",
+  "  And Magical Items (capture p. 286), header",
+  "  rules/oa106table74.h, prefix dkw",
+  "  (verified free at dd3890c), one gap flip",
+  "  (the Table 74 box, its two-line wrap",
+  "  handled), gap census now 188 closed /",
+  "  47 open. Round type: the Chapter 12",
+  "  treasure grid round, single-pass pins per",
+  "  the R679 provenance shift. Inlines: 30 =",
+  "  1 const + 8 bools + 21 table cols; the",
+  "  A through Z grid as SEVEN 3-column",
+  "  tables (fen, yuan, tael, ch'ien, gems,",
+  "  art, maps and magic), each cell the min,",
+  "  max, percent triple, the Nil cells the 0",
+  "  sentinel, the J-N pieces rows the",
+  "  guaranteed 100; the maps clauses as",
+  "  bools (plus potion D/H/X, plus scroll",
+  "  E/F/G/H, the F except swords/misc, the",
+  "  U/V except potions/scrolls, the B sword-",
+  "  armor-weapon, the W 1 map, the X mist.",
+  "  misread). Stumbles: the 21-column",
+  "  single-table tripped the 78-col census",
+  "  line (split into the seven per-category",
+  "  tables); a double-quoted m[\"...\"] example",
+  "  tripped the cond gate (single quotes only).",
+  "  Battery 555 mutants, 0 missed - the",
+  "  largest battery of the OA run. spec md5",
+  "  a8d85504478078e0644076057743b75c, gate",
+  "  md5 cba732423ae1ba09264fb97998ce4ec5,",
+  "  canvas md5 305ea8a2c7c1fc1ea1e123aeb88d6a",
+  "  7b. NEXT - R736: Table II.A. (Orient):",
+  "  Monetary Treasure (capture p. 286),",
+  "  prefix dkx (verify free at the landing),",
+  "  audit \"R736 OA Table II.A. Orient",
+  "  monetary treasure audit\", include after",
+  "  rules/oa106table74.h."
+ ]
+}

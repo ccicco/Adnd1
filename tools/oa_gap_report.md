@@ -2919,8 +2919,23 @@ description riding the same round.
     P row the capture missing the space
     of the 2-8:30; single-pass pins per
     the R679 provenance shift
-  - [ ] Table II.A. (Orient): Monetary Treasure
+  - [x] Table II.A. (Orient): Monetary Treasure
     (capture p. 286)
+    - R736: the dkx Table II.A. pins -
+    the nine d20 bands: the 1-2 fen and
+    yuan (10,000-40,000 and
+    10,000-60,000); the 3-5 tael
+    (10,000-60,000); the 6-10 ch'ien
+    500-1,000 of the 1d6 + 4; the 11-12
+    ch'ien 500-2,000 of the 5d4, the
+    capture misreading 500-200; the
+    13-15 gems 10-100; the 16-17 jewelry
+    or art 5-50; the 18 roll twice and
+    the 19 roll three times, rerolling
+    above 17, the capture misreading 97
+    for the 17 of the 18 row; the 20 one
+    of each treasure above; single-pass
+    pins per the R679 provenance shift
   - [ ] Table III. (Orient): Magical Items
     (capture p. 287)
   - [ ] Modifications to Standard Magical Items
