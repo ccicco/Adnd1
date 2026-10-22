@@ -1,0 +1,413 @@
+{
+ "round": 760,
+ "title": "OA SETTING - the Kara-Tur overview: the chapter intro, the geography walk, and the population walk",
+ "prefix": "dlv",
+ "header_file": "rules/oa131karaturintro.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 682,
+ "inline_count": 33,
+ "audit_label": "R760 OA Kara-Tur overview audit",
+ "audit_comment": "OA round one hundred forty-seven (capture pp. 301-303): the Chapter 14 intro and Geography prose of pp. 301-302 riding as advisory doctrine, and the Population prose of pp. 302-303 - the four empires, the terrain walk from the Land of Snow Demons to the southern jungles, the peoples from the Shou Lung to the snake empire remnant, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA SETTING - THE KARA-TUR OVERVIEW INTRO, GEOGRAPHY, AND POPULATION, printed capture pp. 301-303 - the setting chapter opens",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 213 closed, 22 open - the Population box flips (census 682 -> 683); NEXT - R761: Shou Lung (capture p. 303), prefix dlw (verify free at the landing), audit \"R761 OA Shou Lung audit\", include after rules/oa131karaturintro.h"
+ },
+ "consts": [
+  {
+   "name": "dlvMainEmpireCount",
+   "value": 4,
+   "comment": "the main empire count - the four main empires of Kara-Tur, the Shou Lung, the Tu Lung, the Kozakura, and the Wa (print capture p. 301)"
+  },
+  {
+   "name": "dlvBasinRiverCount",
+   "value": 3,
+   "comment": "the basin river count - the three major rivers of the basin, the Ch'ing Tung, the Hungsete, and the Fenghsintzu (print capture p. 302)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlvVastContinentalArea",
+   "value": 1,
+   "comment": "the vast continental area - the tremendous range of climates, terrains, governments, societies, cultures, and beliefs, the general overview given as the beginning basis for an Oriental campaign (print capture p. 301)"
+  },
+  {
+   "name": "dlvShouLungEmpire",
+   "value": 1,
+   "comment": "the Shou Lung empire - the first of the four main empires (print capture p. 301)"
+  },
+  {
+   "name": "dlvTuLungEmpire",
+   "value": 1,
+   "comment": "the Tu Lung empire - the second of the four (print capture p. 301)"
+  },
+  {
+   "name": "dlvKozakuraEmpire",
+   "value": 1,
+   "comment": "the Kozakura empire - the third of the four (print capture p. 301)"
+  },
+  {
+   "name": "dlvWaEmpire",
+   "value": 1,
+   "comment": "the Wa empire - the fourth of the four (print capture p. 301)"
+  },
+  {
+   "name": "dlvSurroundingUnits",
+   "value": 1,
+   "comment": "the surrounding political units - the uncivilized tribes, the tribal confederations, the warlord domains, the petty kingdoms, and the trading outposts, the alliances and the independents (print capture p. 301)"
+  },
+  {
+   "name": "dlvWildernessTracts",
+   "value": 1,
+   "comment": "the wilderness tracts - the unsettled and inhospitable lands of the hardy settlers, the bandits, the head-hunters, the non-human societies, and the monsters (print capture p. 301)"
+  },
+  {
+   "name": "dlvEveryTerrain",
+   "value": 1,
+   "comment": "the terrain range - virtually every type of terrain commonly found in our world within the boundaries (print capture p. 302)"
+  },
+  {
+   "name": "dlvLandOfSnowDemons",
+   "value": 1,
+   "comment": "the Land of Snow Demons - the far northern permafrost tundra, the long harsh winters and the cool short summers (print capture p. 302)"
+  },
+  {
+   "name": "dlvNorthernWoods",
+   "value": 1,
+   "comment": "the northern woods - the thickly-wooded and swampy pine lands rich in wildlife south of the permafrost (print capture p. 302)"
+  },
+  {
+   "name": "dlvKoryazMountains",
+   "value": 1,
+   "comment": "the Koryaz Mountains - the series of low mountain ranges of the rising south, the barrier of the Chukei Plateau (print capture p. 302)"
+  },
+  {
+   "name": "dlvAmaBasin",
+   "value": 1,
+   "comment": "the Ama Basin - the network of streams, lakes, and swamps feeding the Ama River, the raging spring torrent of the melting snow (print capture p. 302)"
+  },
+  {
+   "name": "dlvCelestialSea",
+   "value": 1,
+   "comment": "the Celestial Sea - the sea the Ama drains into at its northern end (print capture p. 302)"
+  },
+  {
+   "name": "dlvDesertOfHorses",
+   "value": 1,
+   "comment": "the Desert of Horses - the drier steppes beyond the foothills, the thousands of flat square miles variously known as the Beastlands (print capture p. 302)"
+  },
+  {
+   "name": "dlvNortheastPeninsula",
+   "value": 1,
+   "comment": "the northeast peninsula - the continent curving around the northern end of the Celestial Sea, the rugged islands of Wa and Kozakura breaking from its tip, the mild temperate climate of the warm currents (print capture p. 302)"
+  },
+  {
+   "name": "dlvChukeiPlateau",
+   "value": 1,
+   "comment": "the Chukei Plateau - the high plain of the northern provinces of Chukei and Pyint'sien, once fertile, now the dusty cold wind-swept plateau of the changed weather and the poor land management (print capture p. 302)"
+  },
+  {
+   "name": "dlvThreeRiverBasin",
+   "value": 1,
+   "comment": "the Three-River Basin - the main river basin of Kara-Tur, the fertile floodplains, the three rivers tumbling to the Celestial Sea, the warm temperate to sub-tropical weather (print capture p. 302)"
+  },
+  {
+   "name": "dlvPeerlessMountains",
+   "value": 1,
+   "comment": "the Peerless Mountains - the Wu Pi Te Shan Mo, the towering heights, the lush lower slopes and the jagged frozen peaks (print capture p. 302)"
+  },
+  {
+   "name": "dlvSouthernJungles",
+   "value": 1,
+   "comment": "the southern jungles - the volcanic chain and the fully tropical thick verdant jungles of the strange creatures, the feathery peninsulas of the Eastern Ocean (print capture p. 302)"
+  },
+  {
+   "name": "dlvPopulationConcentration",
+   "value": 1,
+   "comment": "the population concentration - the majority within the Three-River Basin, its surrounding foothills, and the islands of Wa and Kozakura (print capture p. 302)"
+  },
+  {
+   "name": "dlvShouLungPopulation",
+   "value": 1,
+   "comment": "the Shou Lung population - the empire centered in the basin and extending west and north, nearly all arable land farmed, the herding of the Chukei Plateau, the ores of the Peerless and Koryaz mountains (print capture p. 302)"
+  },
+  {
+   "name": "dlvTuLungPopulation",
+   "value": 1,
+   "comment": "the Tu Lung population - the empire along the southern and southwestern basin, the farming of the Fenghsintzu banks, the lumbering of the southern hills (print capture p. 302)"
+  },
+  {
+   "name": "dlvAmaNomads",
+   "value": 1,
+   "comment": "the Ama Basin nomads - the nomadic hunters of little farming, the elk and reindeer herds (print capture p. 302)"
+  },
+  {
+   "name": "dlvSnowDemonTribes",
+   "value": 1,
+   "comment": "the Snow Demon tribes - the few human tribes surviving on the seal, bear, and reindeer hunting (print capture p. 302)"
+  },
+  {
+   "name": "dlvHorseTribesConfederation",
+   "value": 1,
+   "comment": "the horse tribes - the nomadic horsemen of the Desert of Horses in a loose confederation, a strong leader recently welding them into a fierce warrior-nation (print capture p. 303)"
+  },
+  {
+   "name": "dlvPettyKingdomsTributary",
+   "value": 1,
+   "comment": "the petty kingdoms - the several on the lower peninsula, the tributary states of the Shou Lung Empire (print capture p. 303)"
+  },
+  {
+   "name": "dlvPrimitiveFishermen",
+   "value": 1,
+   "comment": "the primitive fishermen - the tribes on the islands between the peninsula and the islands of Wa and Kozakura (print capture p. 303)"
+  },
+  {
+   "name": "dlvIslandPeoples",
+   "value": 1,
+   "comment": "the island peoples - the Wa and Kozakura populated by a people different from the mainland, most likely an offshoot branch settled in ancient times (print capture p. 303)"
+  },
+  {
+   "name": "dlvJungleTribes",
+   "value": 1,
+   "comment": "the jungle tribes - the human population thinning south into the isolated tribes (print capture p. 303)"
+  },
+  {
+   "name": "dlvCoastalTributaryStates",
+   "value": 1,
+   "comment": "the coastal states - the small states trading extensively with the north, paying tribute to Tu Lung or Shou Lung (print capture p. 303)"
+  },
+  {
+   "name": "dlvSnakeEmpireRemnant",
+   "value": 1,
+   "comment": "the snake empire remnant - the ancient empire deep in the jungle that once held sway over the southern lands, ruled by a race of evil snake creatures possibly yuan-ti, the corrupted and transformed human groups (print capture p. 303)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the chapter intro - the four empires and the setting, healthy values, each condition false",
+   "expr": "m['dlvMainEmpireCount']() != 4 or m['dlvVastContinentalArea']() != 1 or m['dlvShouLungEmpire']() != 1 or m['dlvTuLungEmpire']() != 1 or m['dlvKozakuraEmpire']() != 1 or m['dlvWaEmpire']() != 1 or m['dlvSurroundingUnits']() != 1 or m['dlvWildernessTracts']() != 1"
+  },
+  {
+   "note": "the geography walk - the terrain features, healthy values, each condition false",
+   "expr": "m['dlvBasinRiverCount']() != 3 or m['dlvLandOfSnowDemons']() != 1 or m['dlvKoryazMountains']() != 1 or m['dlvAmaBasin']() != 1 or m['dlvCelestialSea']() != 1 or m['dlvDesertOfHorses']() != 1 or m['dlvChukeiPlateau']() != 1 or m['dlvThreeRiverBasin']() != 1 or m['dlvPeerlessMountains']() != 1 or m['dlvSouthernJungles']() != 1"
+  },
+  {
+   "note": "the population walk - the peoples, healthy values, each condition false",
+   "expr": "m['dlvPopulationConcentration']() != 1 or m['dlvShouLungPopulation']() != 1 or m['dlvTuLungPopulation']() != 1 or m['dlvAmaNomads']() != 1 or m['dlvSnowDemonTribes']() != 1 or m['dlvHorseTribesConfederation']() != 1 or m['dlvPettyKingdomsTributary']() != 1 or m['dlvIslandPeoples']() != 1 or m['dlvCoastalTributaryStates']() != 1 or m['dlvSnakeEmpireRemnant']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the chapter intro": [
+   {
+    "kind": "const",
+    "name": "dlvMainEmpireCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvVastContinentalArea"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvShouLungEmpire"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvTuLungEmpire"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvKozakuraEmpire"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvWaEmpire"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvSurroundingUnits"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvWildernessTracts"
+   }
+  ],
+  "the geography walk": [
+   {
+    "kind": "bool",
+    "name": "dlvEveryTerrain"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvLandOfSnowDemons"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvNorthernWoods"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvKoryazMountains"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvAmaBasin"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvCelestialSea"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvDesertOfHorses"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvNortheastPeninsula"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvChukeiPlateau"
+   },
+   {
+    "kind": "const",
+    "name": "dlvBasinRiverCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvThreeRiverBasin"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvPeerlessMountains"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvSouthernJungles"
+   }
+  ],
+  "the population walk": [
+   {
+    "kind": "bool",
+    "name": "dlvPopulationConcentration"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvShouLungPopulation"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvTuLungPopulation"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvAmaNomads"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvSnowDemonTribes"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvHorseTribesConfederation"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvPettyKingdomsTributary"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvPrimitiveFishermen"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvIslandPeoples"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvJungleTribes"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvCoastalTributaryStates"
+   },
+   {
+    "kind": "bool",
+    "name": "dlvSnakeEmpireRemnant"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Population box",
+   "from": "  - [ ] Population (capture p. 302)",
+   "to": "  - [x] Population (capture p. 302)\n    - R760: the dlv population pins - the\n    concentration in the Three-River Basin,\n    the foothills, and the islands; the\n    Shou Lung centered and extending west\n    and north; the Tu Lung along the\n    Fenghsintzu; the Ama nomads with the\n    elk and reindeer herds; the seal and\n    bear hunters of the Snow Demons; the\n    horse tribes in the loose confederation\n    with the strong leader welding the\n    warrior-nation; the petty kingdoms\n    tributary to Shou Lung; the island\n    peoples the offshoot branch; the jungle\n    tribes and the coastal tributary\n    states; the ancient snake empire\n    remnant possibly yuan-ti; with the\n    chapter intro and the geography walk\n    of pp. 301-302 riding as advisory\n    doctrine; single-pass pins per the\n    R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 213,
+  "open": 22
+ },
+ "include_comment": "the OA Kara-Tur overview pins",
+ "include_after": "#include \"rules/oa130table86.h\"  // R759: the OA Table 86 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R759 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R759 LANDED 2026-10-22: commit",
+  "  afa8e95dcc9ac6a9b383dad1464aa7159449ad77",
+  "  (census 681 -> 682, pushed afdfa13..afa8e95),",
+  "  OA TREASURE, Table 86: Oriental Magical",
+  "  Items (capture pp. 296-297, the grid",
+  "  spanning the page break), header",
+  "  rules/oa130table86.h, prefix dlu",
+  "  (verified free at afdfa13), one gap flip",
+  "  (the Table 86 box, its two-line wrap",
+  "  handled), gap census now 212 closed /",
+  "  23 open. CHAPTER 13 COMPLETE. Round",
+  "  type: the Chapter 13 d100 band grid",
+  "  round, single-pass pins per the R679",
+  "  provenance shift. Inlines: 8 = 1 const +",
+  "  4 bools + 3 table cols; one table",
+  "  dluMagicalItems[34]: the thirty-four",
+  "  d100 bands, the banner of protection",
+  "  01-05 through the wondrous writing set,",
+  "  matching the thirty-four item",
+  "  descriptions of R758. CAPTURE QUIRK",
+  "  PINNED AS PRINTED: the tail printing the",
+  "  95-96 wheels of fire and then the 91-100",
+  "  wondrous writing set - the overlapping",
+  "  bands, almost certainly the 97-100",
+  "  intended, carried by the dluOverlapQuirk",
+  "  bool and the code-map comment. The",
+  "  class-restricted items (the minyan of",
+  "  the shukenja and sohei, the net of the",
+  "  shukenja, the seal of the ninja and",
+  "  yakuza, the tablet of the shukenja and",
+  "  wu jen) and the wide bands (the 73-85",
+  "  scroll the widest) as bools. Count const",
+  "  derived from the data (the R739 lesson)",
+  "  and the genuine-0 census asserted in the",
+  "  generator (the R745 lesson), verified",
+  "  34/34/34 at the landing. Zero stumbles,",
+  "  first rverify GREEN. Battery 107",
+  "  mutants, 0 missed. spec md5",
+  "  9e24ba37224929558e5befe77869448d, gate",
+  "  md5 efaa1f0f5521e4db0f9e74ffa2ad518b,",
+  "  canvas md5 a0f2102f28b40826401d58fedb705",
+  "  6ad. NEXT - R760: Chapter 14 An Overview",
+  "  of Kara-Tur, the chapter intro and the",
+  "  Population prose (capture pp. 301-302),",
+  "  prefix dlv (verify free at the landing),",
+  "  audit \"R760 OA Kara-Tur overview audit\",",
+  "  include after rules/oa130table86.h - the",
+  "  setting chapter, advisory prose closing",
+  "  on doctrine pins."
+ ]
+}

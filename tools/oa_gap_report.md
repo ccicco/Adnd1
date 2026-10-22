@@ -3320,7 +3320,27 @@ description riding the same round.
 - [ ] **Chapter 14: An Overview of Kara-Tur**
   (capture pp. 301-305) - the setting chapter
   (advisory prose - closes on doctrine pins)
-  - [ ] Population (capture p. 302)
+  - [x] Population (capture p. 302)
+    - R760: the dlv population pins - the
+    concentration in the Three-River Basin,
+    the foothills, and the islands; the
+    Shou Lung centered and extending west
+    and north; the Tu Lung along the
+    Fenghsintzu; the Ama nomads with the
+    elk and reindeer herds; the seal and
+    bear hunters of the Snow Demons; the
+    horse tribes in the loose confederation
+    with the strong leader welding the
+    warrior-nation; the petty kingdoms
+    tributary to Shou Lung; the island
+    peoples the offshoot branch; the jungle
+    tribes and the coastal tributary
+    states; the ancient snake empire
+    remnant possibly yuan-ti; with the
+    chapter intro and the geography walk
+    of pp. 301-302 riding as advisory
+    doctrine; single-pass pins per the
+    R679 provenance shift
   - [ ] Shou Lung (capture p. 303)
   - [ ] Tu Lung (capture p. 303)
   - [ ] Wa (capture p. 304)

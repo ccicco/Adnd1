@@ -18282,6 +18282,55 @@ when both halves land.
   capture prints the 95-96 Wheels of Fire
   and the 91-100 Wondrous Writing Set,
   overlapping bands pinned as printed.
+- R759 LANDED 2026-10-22: commit
+  afa8e95dcc9ac6a9b383dad1464aa7159449ad77
+  (census 681 -> 682, pushed afdfa13..afa8e95),
+  OA TREASURE, Table 86: Oriental Magical
+  Items (capture pp. 296-297, the grid
+  spanning the page break), header
+  rules/oa130table86.h, prefix dlu
+  (verified free at afdfa13), one gap flip
+  (the Table 86 box, its two-line wrap
+  handled), gap census now 212 closed /
+  23 open. CHAPTER 13 COMPLETE. Round
+  type: the Chapter 13 d100 band grid
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 8 = 1 const +
+  4 bools + 3 table cols; one table
+  dluMagicalItems[34]: the thirty-four
+  d100 bands, the banner of protection
+  01-05 through the wondrous writing set,
+  matching the thirty-four item
+  descriptions of R758. CAPTURE QUIRK
+  PINNED AS PRINTED: the tail printing the
+  95-96 wheels of fire and then the 91-100
+  wondrous writing set - the overlapping
+  bands, almost certainly the 97-100
+  intended, carried by the dluOverlapQuirk
+  bool and the code-map comment. The
+  class-restricted items (the minyan of
+  the shukenja and sohei, the net of the
+  shukenja, the seal of the ninja and
+  yakuza, the tablet of the shukenja and
+  wu jen) and the wide bands (the 73-85
+  scroll the widest) as bools. Count const
+  derived from the data (the R739 lesson)
+  and the genuine-0 census asserted in the
+  generator (the R745 lesson), verified
+  34/34/34 at the landing. Zero stumbles,
+  first rverify GREEN. Battery 107
+  mutants, 0 missed. spec md5
+  9e24ba37224929558e5befe77869448d, gate
+  md5 efaa1f0f5521e4db0f9e74ffa2ad518b,
+  canvas md5 a0f2102f28b40826401d58fedb705
+  6ad. NEXT - R760: Chapter 14 An Overview
+  of Kara-Tur, the chapter intro and the
+  Population prose (capture pp. 301-302),
+  prefix dlv (verify free at the landing),
+  audit "R760 OA Kara-Tur overview audit",
+  include after rules/oa130table86.h - the
+  setting chapter, advisory prose closing
+  on doctrine pins.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
