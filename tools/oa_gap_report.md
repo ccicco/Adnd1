@@ -3131,7 +3131,15 @@ description riding the same round.
     appropriate table of the Tables 80-85
     for the specific type; single-pass
     pins per the R679 provenance shift
-  - [ ] Table 78: Magical Weapons (capture p. 291)
+  - [x] Table 78: Magical Weapons (capture p. 291)
+    - R749: the dlk Table 78 pins - the
+    six d100 weapon class bands: the sword
+    01-40; the bow, crossbow, or sling
+    41-52; the miscellaneous melee weapon
+    53-68; the missile weapon 69-80; the
+    martial arts weapon 81-90; the ninja
+    weapon 91-100; single-pass pins per
+    the R679 provenance shift
   - [ ] Table 79: Weapon Properties (capture p. 291)
   - [ ] Table 80: Sword Class (capture p. 292)
   - [ ] Table 81: Bow, Crossbow, And Sling Class

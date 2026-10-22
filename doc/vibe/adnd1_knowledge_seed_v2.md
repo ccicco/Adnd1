@@ -17805,6 +17805,44 @@ when both halves land.
   properties, the sword class, the bow
   crossbow sling class), each table with
   its own box after.
+- R748 LANDED 2026-10-22: commit
+  c00afcf68554120dcf226e98fc763bc12326c2d0
+  (census 670 -> 671, pushed a6ba40c..c00afcf),
+  OA TREASURE, the Weapons prose (capture
+  p. 291, the box spanning pp. 291-294 for
+  the section), header
+  rules/oa119weaponsprose.h, prefix dlj
+  (verified free at a6ba40c), one gap flip
+  (the weapons prose box, single-line),
+  gap census now 201 closed / 34 open.
+  Round type: the Chapter 13 prose round,
+  single-pass pins per the R679 provenance
+  shift. Inlines: 8 = 4 consts + 4 bools,
+  no tables - the Table III trigger (the
+  magical weapon rolled on the DMG
+  Table III), the Table 78 general-type
+  step, the Table 79 property step, the
+  Tables 80-85 specific-type step; the
+  78, 79, and 80-85 table numbers as
+  consts. Scoped cleanly - the eight
+  weapon-class tables (78-85) and the
+  Explanation of Weapon Properties each
+  have their own gap boxes. Zero stumbles,
+  first rverify GREEN. Battery 8 mutants,
+  0 missed. spec md5
+  0602b4b841696f23af8dea56c9d496cd, gate
+  md5 49dbc70dffec6c4d3ba8d0265fdc0250,
+  canvas md5 af498e90bb18654178977ce0c0162a
+  3e. NEXT - R749: Table 78: Magical
+  Weapons (capture p. 291), prefix dlk
+  (verify free at the landing), audit "R749
+  OA Table 78 weapons audit", include after
+  rules/oa119weaponsprose.h. The six-band
+  d100 weapon-class grid: the sword 01-40,
+  the bow crossbow sling 41-52, the
+  miscellaneous melee 53-68, the missile
+  69-80, the martial arts 81-90, the ninja
+  91-100.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

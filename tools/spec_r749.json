@@ -1,0 +1,221 @@
+{
+ "round": 749,
+ "title": "OA TREASURE - Table 78: Magical Weapons: the d100 weapon class grid",
+ "prefix": "dlk",
+ "header_file": "rules/oa120table78.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 671,
+ "inline_count": 10,
+ "audit_label": "R749 OA Table 78 weapons audit",
+ "audit_comment": "OA round one hundred thirty-six (capture p. 291): the Table 78 Magical Weapons - the six d100 bands of the weapon classes, the sword through the ninja, each class pointing to its specific type table, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE 78, MAGICAL WEAPONS, printed capture p. 291 - the weapon class grid round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 202 closed, 33 open - the Table 78 box flips (census 671 -> 672); NEXT - R750: Table 79: Weapon Properties (capture p. 291, the grid runs onto p. 292), prefix dll (verify free at the landing), audit \"R750 OA Table 79 properties audit\", include after rules/oa120table78.h"
+ },
+ "consts": [
+  {
+   "name": "dlkClassRowCount",
+   "value": 6,
+   "comment": "the class row count - the six d100 bands of the Table 78 weapon class grid (print capture p. 291)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlkSwordClass",
+   "value": 1,
+   "comment": "the sword class - the 01-40 band rolling on the Table 80 Sword Class (print capture p. 291)"
+  },
+  {
+   "name": "dlkBowCrossbowSlingClass",
+   "value": 1,
+   "comment": "the bow class - the 41-52 band of the bow, crossbow, or sling, rolling on the Table 81 (print capture p. 291)"
+  },
+  {
+   "name": "dlkMiscMeleeClass",
+   "value": 1,
+   "comment": "the miscellaneous melee class - the 53-68 band rolling on the Table 82 (print capture p. 291)"
+  },
+  {
+   "name": "dlkMissileClass",
+   "value": 1,
+   "comment": "the missile class - the 69-80 band rolling on the Table 83 (print capture p. 291)"
+  },
+  {
+   "name": "dlkMartialArtsClass",
+   "value": 1,
+   "comment": "the martial arts class - the 81-90 band rolling on the Table 84 (print capture p. 291)"
+  },
+  {
+   "name": "dlkNinjaClass",
+   "value": 1,
+   "comment": "the ninja class - the 91-100 band rolling on the Table 85 (print capture p. 291)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dlkWeaponClasses",
+   "tag": "WeaponClasses",
+   "count": "dlkClassRowCount",
+   "comment": "the Table 78 Magical Weapons grid - the six d100 bands of the weapon classes, the sword through the ninja (print capture p. 291)",
+   "cols": [
+    "dlkClassRollMin",
+    "dlkClassRollMax",
+    "dlkClassCode"
+   ],
+   "col_comments": [
+    "the d100 band minimum - the low roll of the row (print capture p. 291)",
+    "the d100 band maximum - the high roll of the row (print capture p. 291)",
+    "the weapon class code - 1 the sword; 2 the bow, crossbow, or sling; 3 the miscellaneous melee weapon; 4 the missile weapon; 5 the martial arts weapon; 6 the ninja weapon (print capture p. 291)"
+   ],
+   "data": [
+    [
+     1,
+     40,
+     1
+    ],
+    [
+     41,
+     52,
+     2
+    ],
+    [
+     53,
+     68,
+     3
+    ],
+    [
+     69,
+     80,
+     4
+    ],
+    [
+     81,
+     90,
+     5
+    ],
+    [
+     91,
+     100,
+     6
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the grid - the six-band Table 78, audited cell by cell by the table audit",
+   "expr": "m['dlkClassRowCount']() != 6 or m['dlkClassRollMin'](0) != 1 or m['dlkClassRollMax'](5) != 100 or m['dlkClassCode'](0) != 1 or m['dlkClassCode'](5) != 6"
+  },
+  {
+   "note": "the class walk - the six weapon classes, healthy values, each condition false",
+   "expr": "m['dlkSwordClass']() != 1 or m['dlkBowCrossbowSlingClass']() != 1 or m['dlkMiscMeleeClass']() != 1 or m['dlkMissileClass']() != 1 or m['dlkMartialArtsClass']() != 1 or m['dlkNinjaClass']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 78 grid": [
+   {
+    "kind": "const",
+    "name": "dlkClassRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dlkWeaponClasses"
+   }
+  ],
+  "the class walk": [
+   {
+    "kind": "bool",
+    "name": "dlkSwordClass"
+   },
+   {
+    "kind": "bool",
+    "name": "dlkBowCrossbowSlingClass"
+   },
+   {
+    "kind": "bool",
+    "name": "dlkMiscMeleeClass"
+   },
+   {
+    "kind": "bool",
+    "name": "dlkMissileClass"
+   },
+   {
+    "kind": "bool",
+    "name": "dlkMartialArtsClass"
+   },
+   {
+    "kind": "bool",
+    "name": "dlkNinjaClass"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 78 box",
+   "from": "  - [ ] Table 78: Magical Weapons (capture p. 291)",
+   "to": "  - [x] Table 78: Magical Weapons (capture p. 291)\n    - R749: the dlk Table 78 pins - the\n    six d100 weapon class bands: the sword\n    01-40; the bow, crossbow, or sling\n    41-52; the miscellaneous melee weapon\n    53-68; the missile weapon 69-80; the\n    martial arts weapon 81-90; the ninja\n    weapon 91-100; single-pass pins per\n    the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 202,
+  "open": 33
+ },
+ "include_comment": "the OA Table 78 pins",
+ "include_after": "#include \"rules/oa119weaponsprose.h\"  // R748: the OA weapons prose pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R748 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R748 LANDED 2026-10-22: commit",
+  "  c00afcf68554120dcf226e98fc763bc12326c2d0",
+  "  (census 670 -> 671, pushed a6ba40c..c00afcf),",
+  "  OA TREASURE, the Weapons prose (capture",
+  "  p. 291, the box spanning pp. 291-294 for",
+  "  the section), header",
+  "  rules/oa119weaponsprose.h, prefix dlj",
+  "  (verified free at a6ba40c), one gap flip",
+  "  (the weapons prose box, single-line),",
+  "  gap census now 201 closed / 34 open.",
+  "  Round type: the Chapter 13 prose round,",
+  "  single-pass pins per the R679 provenance",
+  "  shift. Inlines: 8 = 4 consts + 4 bools,",
+  "  no tables - the Table III trigger (the",
+  "  magical weapon rolled on the DMG",
+  "  Table III), the Table 78 general-type",
+  "  step, the Table 79 property step, the",
+  "  Tables 80-85 specific-type step; the",
+  "  78, 79, and 80-85 table numbers as",
+  "  consts. Scoped cleanly - the eight",
+  "  weapon-class tables (78-85) and the",
+  "  Explanation of Weapon Properties each",
+  "  have their own gap boxes. Zero stumbles,",
+  "  first rverify GREEN. Battery 8 mutants,",
+  "  0 missed. spec md5",
+  "  0602b4b841696f23af8dea56c9d496cd, gate",
+  "  md5 49dbc70dffec6c4d3ba8d0265fdc0250,",
+  "  canvas md5 af498e90bb18654178977ce0c0162a",
+  "  3e. NEXT - R749: Table 78: Magical",
+  "  Weapons (capture p. 291), prefix dlk",
+  "  (verify free at the landing), audit \"R749",
+  "  OA Table 78 weapons audit\", include after",
+  "  rules/oa119weaponsprose.h. The six-band",
+  "  d100 weapon-class grid: the sword 01-40,",
+  "  the bow crossbow sling 41-52, the",
+  "  miscellaneous melee 53-68, the missile",
+  "  69-80, the martial arts 81-90, the ninja",
+  "  91-100."
+ ]
+}
