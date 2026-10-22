@@ -17747,6 +17747,64 @@ when both halves land.
   (the 3d4-day gradual insinuation, the
   daily save versus spell, the exorcism
   and dispel magic endings).
+- R747 LANDED 2026-10-22: commit
+  a6ba40ca50fc301d180ddd2f166625afb62dc5b1
+  (census 669 -> 670, pushed d329a5c..a6ba40c),
+  OA TREASURE, the Explanation of Armor
+  Properties (capture pp. 290-291), header
+  rules/oa118armorexpl.h, prefix dli
+  (verified free at d329a5c), one gap flip
+  (the explanation box, its two-line wrap
+  handled), gap census now 200 closed /
+  35 open. Round type: the Chapter 13 big
+  prose round - the largest of the
+  chapter, single-pass pins per the R679
+  provenance shift. Inlines: 49 = 10 consts
+  + 39 bools, no tables. The full walk:
+  the armor of quality (not magical, no AC
+  bonus, one encumbrance class less, the
+  2d4 times value); the etherealness, the
+  vulnerability, and the missile
+  attraction per the DMG, the pluses
+  penalties; the presence (the 18
+  Charisma, the 10% morale within 12 feet,
+  only when visible); the blending (the
+  command word to normal clothing, the
+  true seeing only); the fear (the
+  30-foot radius, the save or flee one
+  turn, the wearer immune, the spent
+  becomes +1, not rechargeable) - WITH THE
+  CAPTURE DISCREPANCY PINNED AS PRINTED:
+  the p. 290 printing the 2d4 fear charges
+  when found against the p. 291
+  continuation printing the 2d10 charges
+  when found, both dice consts and a
+  discrepancy bool carrying it; the
+  possession (the stolen lifeforce, the
+  first-donned and daily secret save
+  versus spell, the 3d4-day gradual
+  insinuation, the refusal to remove, the
+  NPC end, the exorcism destroying the
+  personality, the dispel only a temporary
+  release, the destroyed influence losing
+  the magic); the healing (once per day
+  automatic 2d6 whether desired or not,
+  the 3d10 charges, the spent becomes +1).
+  Zero stumbles, first rverify GREEN.
+  Battery 49 mutants, 0 missed. spec md5
+  0c8ea64715ed6014c5cfd60e53143b82, gate
+  md5 2bf0c282e72242db373cc7cd160e08ae,
+  canvas md5 4b3bbb275c7d72854cae36077e4d7
+  41c. NEXT - R748: Weapons prose (capture
+  pp. 291-294), prefix dlj (verify free at
+  the landing), audit "R748 OA weapons
+  prose audit", include after
+  rules/oa118armorexpl.h. The Weapons
+  section intro and prose - the Table
+  78/79/80/81 flow (the weapons type, the
+  properties, the sword class, the bow
+  crossbow sling class), each table with
+  its own box after.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -448,6 +448,7 @@
 #include "rules/oa116table76.h"  // R745: the OA Table 76 pins
 #include "rules/oa117table77.h"  // R746: the OA Table 77 pins
 #include "rules/oa118armorexpl.h"  // R747: the OA armor explanation pins
+#include "rules/oa119weaponsprose.h"  // R748: the OA weapons prose pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -118098,6 +118099,43 @@ int main() {
         )
             ++bad;
         printf("R747 OA armor explanation audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R748 OA weapons prose audit ----
+    // OA round one hundred thirty-five (capture p. 291): the Weapons section
+    // prose - the Table III trigger, the Table 78 general type step, the
+    // Table 79 property step, the Tables 80-85 specific type step,
+    // single-pass pins per the Chapter 9 provenance shift
+    {
+        using namespace rules;
+        int bad = 0;
+    if (dljGeneralTypeTable() != 78
+            || dljPropertyTable() != 79
+            || dljSpecificTableFirst() != 80
+            || dljSpecificTableLast() != 85
+            || !dljRolledOnTableIII()
+            || !dljStepOneGeneralType()
+            || !dljStepTwoProperty()
+            || !dljStepThreeSpecificType()
+        )
+            ++bad;
+        // the prose - the trigger and the three steps, healthy values, each
+        // condition false
+    if (dljRolledOnTableIII() != 1
+            || dljStepOneGeneralType() != 1
+            || dljStepTwoProperty() != 1
+            || dljStepThreeSpecificType() != 1
+        )
+            ++bad;
+        // the table numbers - the 78, 79, and the 80-85 range of the flow,
+        // healthy values, each condition false
+    if (dljGeneralTypeTable() != 78
+            || dljPropertyTable() != 79
+            || dljSpecificTableFirst() != 80
+            || dljSpecificTableLast() != 85
+        )
+            ++bad;
+        printf("R748 OA weapons prose audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

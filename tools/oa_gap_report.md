@@ -3122,7 +3122,15 @@ description riding the same round.
     3d10 charges, spent becomes +1);
     single-pass pins per the R679 provenance
     shift
-  - [ ] Weapons prose (capture pp. 291-294)
+  - [x] Weapons prose (capture pp. 291-294)
+    - R748: the dlj weapons prose pins -
+    the magical weapon rolled on the Table
+    III; the Table 78 rolled for the
+    general type of weapon; the Table 79
+    for the magical property; the
+    appropriate table of the Tables 80-85
+    for the specific type; single-pass
+    pins per the R679 provenance shift
   - [ ] Table 78: Magical Weapons (capture p. 291)
   - [ ] Table 79: Weapon Properties (capture p. 291)
   - [ ] Table 80: Sword Class (capture p. 292)

@@ -1,0 +1,189 @@
+{
+ "round": 748,
+ "title": "OA TREASURE - the Weapons prose: the Table 78, 79, and 80-85 determination flow",
+ "prefix": "dlj",
+ "header_file": "rules/oa119weaponsprose.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 670,
+ "inline_count": 8,
+ "audit_label": "R748 OA weapons prose audit",
+ "audit_comment": "OA round one hundred thirty-five (capture p. 291): the Weapons section prose - the Table III trigger, the Table 78 general type step, the Table 79 property step, the Tables 80-85 specific type step, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - THE WEAPONS PROSE, printed capture pp. 291-294 - the weapons flow round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 201 closed, 34 open - the weapons prose box flips (census 670 -> 671); NEXT - R749: Table 78: Magical Weapons (capture p. 291), prefix dlk (verify free at the landing), audit \"R749 OA Table 78 weapons audit\", include after rules/oa119weaponsprose.h"
+ },
+ "consts": [
+  {
+   "name": "dljGeneralTypeTable",
+   "value": 78,
+   "comment": "the general type table - the Table 78 rolled to determine the general type of weapon (print capture p. 291)"
+  },
+  {
+   "name": "dljPropertyTable",
+   "value": 79,
+   "comment": "the property table - the Table 79 rolled to find the magical property of the weapon (print capture p. 291)"
+  },
+  {
+   "name": "dljSpecificTableFirst",
+   "value": 80,
+   "comment": "the first specific table - the Table 80 opening the range of the specific type tables (print capture p. 291)"
+  },
+  {
+   "name": "dljSpecificTableLast",
+   "value": 85,
+   "comment": "the last specific table - the Table 85 closing the range of the specific type tables (print capture p. 291)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dljRolledOnTableIII",
+   "value": 1,
+   "comment": "the trigger - the magical weapon rolled on the Table III of the DMG (print capture p. 291)"
+  },
+  {
+   "name": "dljStepOneGeneralType",
+   "value": 1,
+   "comment": "the first step - roll on the Table 78 to determine the general type of weapon (print capture p. 291)"
+  },
+  {
+   "name": "dljStepTwoProperty",
+   "value": 1,
+   "comment": "the second step - roll on the Table 79 to find the magical property of the weapon (print capture p. 291)"
+  },
+  {
+   "name": "dljStepThreeSpecificType",
+   "value": 1,
+   "comment": "the third step - roll on the appropriate table of the Tables 80-85 to determine the specific type of weapon (print capture p. 291)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the prose - the trigger and the three steps, healthy values, each condition false",
+   "expr": "m['dljRolledOnTableIII']() != 1 or m['dljStepOneGeneralType']() != 1 or m['dljStepTwoProperty']() != 1 or m['dljStepThreeSpecificType']() != 1"
+  },
+  {
+   "note": "the table numbers - the 78, 79, and the 80-85 range of the flow, healthy values, each condition false",
+   "expr": "m['dljGeneralTypeTable']() != 78 or m['dljPropertyTable']() != 79 or m['dljSpecificTableFirst']() != 80 or m['dljSpecificTableLast']() != 85"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the flow": [
+   {
+    "kind": "bool",
+    "name": "dljRolledOnTableIII"
+   },
+   {
+    "kind": "const",
+    "name": "dljGeneralTypeTable"
+   },
+   {
+    "kind": "bool",
+    "name": "dljStepOneGeneralType"
+   },
+   {
+    "kind": "const",
+    "name": "dljPropertyTable"
+   },
+   {
+    "kind": "bool",
+    "name": "dljStepTwoProperty"
+   },
+   {
+    "kind": "const",
+    "name": "dljSpecificTableFirst"
+   },
+   {
+    "kind": "const",
+    "name": "dljSpecificTableLast"
+   },
+   {
+    "kind": "bool",
+    "name": "dljStepThreeSpecificType"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the weapons prose box",
+   "from": "  - [ ] Weapons prose (capture pp. 291-294)",
+   "to": "  - [x] Weapons prose (capture pp. 291-294)\n    - R748: the dlj weapons prose pins -\n    the magical weapon rolled on the Table\n    III; the Table 78 rolled for the\n    general type of weapon; the Table 79\n    for the magical property; the\n    appropriate table of the Tables 80-85\n    for the specific type; single-pass\n    pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 201,
+  "open": 34
+ },
+ "include_comment": "the OA weapons prose pins",
+ "include_after": "#include \"rules/oa118armorexpl.h\"  // R747: the OA armor explanation pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R747 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R747 LANDED 2026-10-22: commit",
+  "  a6ba40ca50fc301d180ddd2f166625afb62dc5b1",
+  "  (census 669 -> 670, pushed d329a5c..a6ba40c),",
+  "  OA TREASURE, the Explanation of Armor",
+  "  Properties (capture pp. 290-291), header",
+  "  rules/oa118armorexpl.h, prefix dli",
+  "  (verified free at d329a5c), one gap flip",
+  "  (the explanation box, its two-line wrap",
+  "  handled), gap census now 200 closed /",
+  "  35 open. Round type: the Chapter 13 big",
+  "  prose round - the largest of the",
+  "  chapter, single-pass pins per the R679",
+  "  provenance shift. Inlines: 49 = 10 consts",
+  "  + 39 bools, no tables. The full walk:",
+  "  the armor of quality (not magical, no AC",
+  "  bonus, one encumbrance class less, the",
+  "  2d4 times value); the etherealness, the",
+  "  vulnerability, and the missile",
+  "  attraction per the DMG, the pluses",
+  "  penalties; the presence (the 18",
+  "  Charisma, the 10% morale within 12 feet,",
+  "  only when visible); the blending (the",
+  "  command word to normal clothing, the",
+  "  true seeing only); the fear (the",
+  "  30-foot radius, the save or flee one",
+  "  turn, the wearer immune, the spent",
+  "  becomes +1, not rechargeable) - WITH THE",
+  "  CAPTURE DISCREPANCY PINNED AS PRINTED:",
+  "  the p. 290 printing the 2d4 fear charges",
+  "  when found against the p. 291",
+  "  continuation printing the 2d10 charges",
+  "  when found, both dice consts and a",
+  "  discrepancy bool carrying it; the",
+  "  possession (the stolen lifeforce, the",
+  "  first-donned and daily secret save",
+  "  versus spell, the 3d4-day gradual",
+  "  insinuation, the refusal to remove, the",
+  "  NPC end, the exorcism destroying the",
+  "  personality, the dispel only a temporary",
+  "  release, the destroyed influence losing",
+  "  the magic); the healing (once per day",
+  "  automatic 2d6 whether desired or not,",
+  "  the 3d10 charges, the spent becomes +1).",
+  "  Zero stumbles, first rverify GREEN.",
+  "  Battery 49 mutants, 0 missed. spec md5",
+  "  0c8ea64715ed6014c5cfd60e53143b82, gate",
+  "  md5 2bf0c282e72242db373cc7cd160e08ae,",
+  "  canvas md5 4b3bbb275c7d72854cae36077e4d7",
+  "  41c. NEXT - R748: Weapons prose (capture",
+  "  pp. 291-294), prefix dlj (verify free at",
+  "  the landing), audit \"R748 OA weapons",
+  "  prose audit\", include after",
+  "  rules/oa118armorexpl.h. The Weapons",
+  "  section intro and prose - the Table",
+  "  78/79/80/81 flow (the weapons type, the",
+  "  properties, the sword class, the bow",
+  "  crossbow sling class), each table with",
+  "  its own box after."
+ ]
+}
