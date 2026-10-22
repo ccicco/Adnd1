@@ -17613,6 +17613,45 @@ when both halves land.
   Splinted (an overlap - likely 88-92
   intended) and the 100 gajin armor rolling
   on the DMG table.
+- R744 LANDED 2026-10-22: commit
+  c335e9a07aa70a37cd074d51c3b437637b9396e3
+  (census 666 -> 667, pushed d8ba982..c335e9a),
+  OA TREASURE, Table 75: Magical Armor
+  (capture p. 289), header
+  rules/oa115table75.h, prefix dlf
+  (verified free at d8ba982), one gap flip
+  (the Table 75 box, single-line), gap
+  census now 197 closed / 38 open. Round
+  type: the Chapter 13 d100 band grid
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 7 = 1 const +
+  3 bools + 3 table cols; one table
+  dlfMagicalArmor[23]: the twenty-three
+  d100 bands (the banded 01-04 through the
+  studded 93-99, ending with the gajin
+  armor 100 rolling on the DMG Armor and
+  Shield Table), the capture quirks pinned
+  as printed - the 87 sode, pair asterisk
+  row overlapping the 86-92 splinted band
+  (likely the 88-92 intended, noted in
+  the bool and the comment, the data as
+  printed). Count const derived from the
+  data (the R739 lesson), verified 23/23/23
+  at the landing. Zero stumbles, first
+  rverify GREEN. Battery 73 mutants,
+  0 missed. spec md5
+  a88cbd929bea07d862e0ebe996fc3396, gate
+  md5 b3b85a702fe732be8d785727edcf1efe,
+  canvas md5 3a4a185bb0074261eb5985678ebc5
+  ed6. NEXT - R745: Table 76. Magical
+  Armor Properties (capture p. 289, the
+  caption prints a period), prefix dlg
+  (verify free at the landing), audit "R745
+  OA Table 76 properties audit", include
+  after rules/oa115table75.h. The
+  properties grid runs onto p. 290 - the
+  armor of quality through the
+  special-property reroll on Table 77.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

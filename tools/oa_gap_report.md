@@ -3069,8 +3069,22 @@ description riding the same round.
     armor 100 rolling on the DMG Armor and
     Shield Table; single-pass pins per the
     R679 provenance shift
-  - [ ] Table 76. Magical Armor Properties
+  - [x] Table 76. Magical Armor Properties
     (capture p. 289) - the caption prints a period
+    - R745: the dlg Table 76 pins - the
+    seven d100 property bands spanning
+    the page break: the 01-40 armor of
+    quality (the asterisk of the footnote,
+    never a special property); the 41-65
+    +1; the 66-80 +2, the 81-85 +3, the
+    86-88 +4, the 89-90 +5, each the +1
+    if an armor piece; the 91-100 special
+    property rolled again on the Table
+    77; the footnote - the quality armor
+    and the pieces can never have a
+    special property; the caption printing
+    the Table 76. with a period; single-
+    pass pins per the R679 provenance shift
   - [ ] Table 77: Special Properties (capture p. 290)
   - [ ] Explanation of Armor Properties (capture
     p. 290)
