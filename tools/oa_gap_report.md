@@ -3178,7 +3178,20 @@ description riding the same round.
     sling 92-96; the staff sling 97-100;
     single-pass pins per the R679
     provenance shift
-  - [ ] Table 82: Miscellaneous (capture p. 292)
+  - [x] Table 82: Miscellaneous (capture p. 292)
+    - R753: the dlo Table 82 pins - the
+    thirteen d100 misc melee bands
+    spanning the page break: the battle
+    axe 01-05; the bo stick 06-15; the
+    dagger 16-30; the halberd 31-45; the
+    jo stick 46-48; the kama 49-54; the
+    lajatang 55; the lance 56-60; the
+    nagamaki 61-65 of the capture
+    Nagasaki misprint (pinned as printed);
+    the naginata 66-75; the spear 76-90;
+    the tetsubo 91-95; the trident 96-100;
+    single-pass pins per the R679
+    provenance shift
   - [ ] Table 83: Missile Class (capture p. 293)
   - [ ] Table 84: Martial Arts Class (capture p. 293)
   - [ ] Table 85: Ninja Class (capture p. 293)

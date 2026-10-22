@@ -17955,6 +17955,41 @@ when both halves land.
   dln (verify free at the landing), audit
   "R752 OA Table 81 bow class audit",
   include after rules/oa122table80.h.
+- R752 LANDED 2026-10-22: commit
+  689bb6422ad7e983b6485091b5435bf5210ca279
+  (census 674 -> 675, pushed 5296a8e..689bb64),
+  OA TREASURE, Table 81: Bow, Crossbow, And
+  Sling Class (capture p. 292), header
+  rules/oa123table81.h, prefix dln
+  (verified free at 5296a8e), one gap flip
+  (the Table 81 box, its two-line wrap
+  handled), gap census now 205 closed /
+  30 open. Round type: the Chapter 13 d100
+  band grid round, single-pass pins per
+  the R679 provenance shift. Inlines:
+  14 = 1 const + 10 bools + 3 table cols;
+  one table dlnBowClass[10]: the ten d100
+  bands (the composite shortbow 01-15, the
+  short bow 16-30, the chu-ko-nu 31, the
+  heavy crossbow 32-45, the light crossbow
+  46-60, the daikyu 61-80, the hankyu
+  81-90, the pellet bow 91, the sling
+  92-96, the staff sling 97-100), each
+  band walked by a bool. Count const
+  derived from the data (the R739 lesson)
+  and the genuine-0 census asserted in the
+  generator (the R745 lesson), verified
+  10/10/10 at the landing. Zero stumbles,
+  first rverify GREEN. Battery 41 mutants,
+  0 missed. spec md5
+  8b4523852a87bfce7bef6010166e0776, gate
+  md5 5ec46d7783dd4a775d5b1593bb592bb5,
+  canvas md5 a42dc65f38d924594f2d0b8785bf
+  27c1. NEXT - R753: Table 82: Miscellaneous
+  (capture p. 292), prefix dlo (verify free
+  at the landing), audit "R753 OA Table 82
+  misc melee audit", include after
+  rules/oa123table81.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
