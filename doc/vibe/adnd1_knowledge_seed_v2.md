@@ -18918,6 +18918,53 @@ when both halves land.
   landing), audit "R771 OA open boxes
   audit", include after
   rules/oa141backmatter.h.
+- R771 LANDED 2026-10-22: commit
+  7616bb590986b92f5a18d96ece96b4ad2e9ecda0
+  (census 693 -> 694, pushed b4fd255..7616bb5),
+  OA OPEN BOXES SWEEP, the Celestial Emperor
+  and Celestial Bureaucracy doctrine pins
+  (capture p. 253; the text sits at page-117
+  of the f9e32d73 OCR - the compressed-3
+  re-upload is a 145-page 1:1 scan whose
+  numbering differs from the gap-report
+  cites), header rules/oa142celestial.h,
+  prefix dnh (fully free at b4fd255), NINE
+  gap flips (the Celestial Emperor child
+  box plus the eight missed chapter parents
+  Ch. 2, 3, 8, 9, 10, 11, 12, and 13 - all
+  children verified closed, the parents
+  missed at their openers; the R613b
+  missed-parent lesson CAUGHT PRE-LANDING),
+  gap census now 234 closed / 1 open (the
+  Weapons prose box alone remains). Round
+  type: the doctrine round, single-pass pins
+  per the R679 provenance shift. Inlines:
+  9 = 2 consts (dnhBureaucracyDutiesCount 3,
+  dnhSpiritOfficialCharacterCount 4) + 7
+  bools, no tables. The walk: the Celestial
+  Emperor as head of the spirit world; the
+  Celestial Bureaucracy's duties over the
+  spirit officials; the spirit-official
+  character rule. Zero stumbles, first
+  rverify GREEN (double-run, 9 mutants, 0
+  missed; 9 flips = 13 patches, the
+  double-run applied 13/already 13 clean).
+  The user's ./bn 771 detour (struck per the
+  R516 rule) caused no drift - it printed
+  the gate md5 1a039694bd25c8b7dfab94127f6f47ea
+  exactly. spec md5
+  aa3759ce237e3ee098be59be0d2f4e18, gate md5
+  1a039694bd25c8b7dfab94127f6f47ea, canvas
+  md5 d16f7af0e0b54cbf77b8934ca1df0fdd.
+  NEXT - R772: the Weapons prose arc
+  (capture pp. 84-93, re-captured at pp.
+  42-51 of the f9e32d73 OCR) - the LAST open
+  box, too big for one round; size the ~40+
+  weapon descriptions and propose a split
+  into per-weapon rounds before authoring;
+  prefix dnj (verified free at b4fd255),
+  audit "R772 OA Weapons prose audit",
+  include after rules/oa142celestial.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

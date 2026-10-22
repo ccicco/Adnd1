@@ -845,8 +845,21 @@ description riding the same round.
     arms, clothing, livestock, misc equipment,
     provisions, religious items, services, tack and
     harness, transport)
-  - [ ] Weapons prose and the weapon descriptions
-    (capture pp. 84-93)
+  - [x] Weapons prose and the weapon
+    descriptions (capture pp. 84-93) -
+    R772: the dnj weapons prose pins - the
+    forty-seven weapon descriptions as the
+    essence-of-the-weapon doctrines with the
+    tool-and-weapon duality and the ninja
+    concealment thread; the chu-ko-nu
+    magazine and reload consts, the needle
+    mouth-carry and burst die, the lasso
+    pull chances, the man catcher pull and
+    haft, the metsubishi incapacitation, the
+    nekode climb bonus, the shuriken star
+    points, and the tetsu-bishi area and
+    lame rules; single-pass pins per the
+    R679 provenance shift
   - [x] Table 48: Weapon Equivalents (capture p. 84) - R640: the dha
     equivalents grid - sixteen rows pinned as the equivalent-name counts, the
     many-names doctrine with the appearance and function reads
