@@ -1,0 +1,244 @@
+{
+ "round": 741,
+ "title": "OA TREASURE - Rods, Staves, and Wands: the Rod of Resurrection charge table",
+ "prefix": "dlc",
+ "header_file": "rules/oa112rods.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 663,
+ "inline_count": 8,
+ "audit_label": "R741 OA rods staves wands audit",
+ "audit_comment": "OA round one hundred twenty-eight (capture p. 288): the Rods, Staves, and Wands section - the Rod of Resurrection charge table, the ten class base charges and the four race pluses as the two paired grids, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - RODS, STAVES, AND WANDS, printed capture p. 288 - the resurrection rod round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 194 closed, 41 open - the rods box flips (census 663 -> 664); NEXT - R742: Miscellaneous Magic (capture pp. 288-289), prefix dld (verify free at the landing), audit \"R742 OA misc magic audit\", include after rules/oa112rods.h"
+ },
+ "consts": [
+  {
+   "name": "dlcClassCount",
+   "value": 10,
+   "comment": "the class row count - the ten classes of the charge table (print capture p. 288)"
+  },
+  {
+   "name": "dlcRaceCount",
+   "value": 4,
+   "comment": "the race row count - the four races of the plus column (print capture p. 288)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlcRodOfResurrection",
+   "value": 1,
+   "comment": "the rod of resurrection - the item expending a number of charges according to the table (print capture p. 288)"
+  },
+  {
+   "name": "dlcChargesClassPlusRace",
+   "value": 1,
+   "comment": "the charge law - the class base plus the race plus of the two columns (print capture p. 288)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dlcRodClass",
+   "tag": "RodClass",
+   "count": "dlcClassCount",
+   "comment": "the class base charge table - the ten Oriental classes row by row (print capture p. 288)",
+   "cols": [
+    "dlcClassCode",
+    "dlcClassBase"
+   ],
+   "col_comments": [
+    "the class code - 1 the samurai; 2 the shukenja; 3 the bushi; 4 the ninja; 5 the wu jen; 6 the kensai; 7 the sohei; 8 the yakuza; 9 the monk; 10 the barbarian (print capture p. 288)",
+    "the base charges - the 3 of the samurai, the 1 of the shukenja, the 2 of the bushi, the 4 of the ninja, the 3 of the wu jen, the 2 of the kensai, the 1 of the sohei, the 3 of the yakuza, the 3 of the monk, the 3 of the barbarian (print capture p. 288)"
+   ],
+   "data": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     10,
+     3
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dlcRodRace",
+   "tag": "RodRace",
+   "count": "dlcRaceCount",
+   "comment": "the race plus table - the four character races of the plus column (print capture p. 288)",
+   "cols": [
+    "dlcRaceCode",
+    "dlcRacePlus"
+   ],
+   "col_comments": [
+    "the race code - 1 the korobokuru; 2 the spirit folk; 3 the hengeyokai; 4 the human (print capture p. 288)",
+    "the race plus - the 3 of the korobokuru, the 4 of the spirit folk, the 3 of the hengeyokai, the 1 of the human (print capture p. 288)"
+   ],
+   "data": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the prose - the rod and the charge law, healthy values, each condition false",
+   "expr": "m['dlcRodOfResurrection']() != 1 or m['dlcChargesClassPlusRace']() != 1"
+  },
+  {
+   "note": "the grids - the two charge tables, audited cell by cell by the table audit",
+   "expr": "m['dlcClassCount']() != 10 or m['dlcRaceCount']() != 4 or m['dlcClassBase'](0) != 3 or m['dlcClassBase'](3) != 4 or m['dlcRacePlus'](0) != 3 or m['dlcRacePlus'](1) != 4"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the rod": [
+   {
+    "kind": "bool",
+    "name": "dlcRodOfResurrection"
+   },
+   {
+    "kind": "bool",
+    "name": "dlcChargesClassPlusRace"
+   }
+  ],
+  "the class base table": [
+   {
+    "kind": "const",
+    "name": "dlcClassCount"
+   },
+   {
+    "kind": "table",
+    "name": "dlcRodClass"
+   }
+  ],
+  "the race plus table": [
+   {
+    "kind": "const",
+    "name": "dlcRaceCount"
+   },
+   {
+    "kind": "table",
+    "name": "dlcRodRace"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the rods box",
+   "from": "  - [ ] Rods, Staves, and Wands (capture p. 288)",
+   "to": "  - [x] Rods, Staves, and Wands (capture p. 288)\n    - R741: the dlc rod pins - the Rod\n    of Resurrection expending charges\n    per the table; the class base column\n    (the samurai 3, the shukenja 1, the\n    bushi 2, the ninja 4, the wu jen 3,\n    the kensai 2, the sohei 1, the yakuza\n    3, the monk 3, the barbarian 3); the\n    race plus column (the korobokuru 3,\n    the spirit folk 4, the hengeyokai 3,\n    the human 1); single-pass pins per\n    the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 194,
+  "open": 41
+ },
+ "include_comment": "the OA rods pins",
+ "include_after": "#include \"rules/oa111scrolls.h\"  // R740: the OA scrolls pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R740 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R740 LANDED 2026-10-22: commit",
+  "  eaf2529cc0547e4b4ad12c7f7f9ccddd7bd1d3ce",
+  "  (census 662 -> 663, pushed f599f7a..eaf2529),",
+  "  OA TREASURE, Scrolls (capture p. 288), header",
+  "  rules/oa111scrolls.h, prefix dlb",
+  "  (verified free at f599f7a), one gap flip",
+  "  (the scrolls box, single-line), gap census",
+  "  now 193 closed / 42 open. Round type: the",
+  "  Chapter 13 prose round, single-pass pins",
+  "  per the R679 provenance shift. Inlines: 10",
+  "  = 1 const + 9 bools, no tables; the DMG",
+  "  standard type rules with the magic-users",
+  "  as wu jen and clerics as shukenja",
+  "  mappings; the 5% gajin-spell scrolls",
+  "  (magic-user or clerical), usable by the",
+  "  wu jen and shukenja and even addable to",
+  "  the wu jen spell books; the protection",
+  "  from devils rerolled, the protection from",
+  "  shapechangers covering all hengeyokai and",
+  "  the form-changing spirit creatures, the",
+  "  protection from undead rerolled. Zero",
+  "  stumbles, first rverify GREEN. Battery 10",
+  "  mutants, 0 missed. spec md5",
+  "  02e3de24c44c1f7f04fbce3655474ee9, gate",
+  "  md5 107eaec5f7e8927eb341eadb878914fc,",
+  "  canvas md5 729efe128bfcdf6466b764e664b155",
+  "  39. NEXT - R741: Rods, Staves, and Wands",
+  "  (capture p. 288), prefix dlc (verify free",
+  "  at the landing), audit \"R741 OA rods",
+  "  staves wands audit\", include after",
+  "  rules/oa111scrolls.h. The Rod of",
+  "  Resurrection charge table - class base",
+  "  charges (samurai 3, shukenja 1, bushi 2,",
+  "  ninja 4, wu jen 3, kensai 2, sohei 1,",
+  "  yakuza 3, monk 3, barbarian 3) riding with",
+  "  race pluses (korobokuru 3, spirit folk 4,",
+  "  hengeyokai 3, human 1) - a two-column",
+  "  grid round."
+ ]
+}

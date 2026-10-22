@@ -17458,6 +17458,44 @@ when both halves land.
   p. 288), prefix dlb (verify free at the
   landing), audit "R740 OA scrolls audit",
   include after rules/oa110potions.h.
+- R740 LANDED 2026-10-22: commit
+  eaf2529cc0547e4b4ad12c7f7f9ccddd7bd1d3ce
+  (census 662 -> 663, pushed f599f7a..eaf2529),
+  OA TREASURE, Scrolls (capture p. 288), header
+  rules/oa111scrolls.h, prefix dlb
+  (verified free at f599f7a), one gap flip
+  (the scrolls box, single-line), gap census
+  now 193 closed / 42 open. Round type: the
+  Chapter 13 prose round, single-pass pins
+  per the R679 provenance shift. Inlines: 10
+  = 1 const + 9 bools, no tables; the DMG
+  standard type rules with the magic-users
+  as wu jen and clerics as shukenja
+  mappings; the 5% gajin-spell scrolls
+  (magic-user or clerical), usable by the
+  wu jen and shukenja and even addable to
+  the wu jen spell books; the protection
+  from devils rerolled, the protection from
+  shapechangers covering all hengeyokai and
+  the form-changing spirit creatures, the
+  protection from undead rerolled. Zero
+  stumbles, first rverify GREEN. Battery 10
+  mutants, 0 missed. spec md5
+  02e3de24c44c1f7f04fbce3655474ee9, gate
+  md5 107eaec5f7e8927eb341eadb878914fc,
+  canvas md5 729efe128bfcdf6466b764e664b155
+  39. NEXT - R741: Rods, Staves, and Wands
+  (capture p. 288), prefix dlc (verify free
+  at the landing), audit "R741 OA rods
+  staves wands audit", include after
+  rules/oa111scrolls.h. The Rod of
+  Resurrection charge table - class base
+  charges (samurai 3, shukenja 1, bushi 2,
+  ninja 4, wu jen 3, kensai 2, sohei 1,
+  yakuza 3, monk 3, barbarian 3) riding with
+  race pluses (korobokuru 3, spirit folk 4,
+  hengeyokai 3, human 1) - a two-column
+  grid round.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

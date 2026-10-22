@@ -3011,7 +3011,18 @@ description riding the same round.
     protection from undead rerolled;
     single-pass pins per the R679
     provenance shift
-  - [ ] Rods, Staves, and Wands (capture p. 288)
+  - [x] Rods, Staves, and Wands (capture p. 288)
+    - R741: the dlc rod pins - the Rod
+    of Resurrection expending charges
+    per the table; the class base column
+    (the samurai 3, the shukenja 1, the
+    bushi 2, the ninja 4, the wu jen 3,
+    the kensai 2, the sohei 1, the yakuza
+    3, the monk 3, the barbarian 3); the
+    race plus column (the korobokuru 3,
+    the spirit folk 4, the hengeyokai 3,
+    the human 1); single-pass pins per
+    the R679 provenance shift
   - [ ] Miscellaneous Magic (capture pp. 288-289)
   - [ ] Armor and Shield prose (capture pp. 289-291)
   - [ ] Table 75: Magical Armor (capture p. 289)
