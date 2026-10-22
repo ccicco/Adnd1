@@ -18437,6 +18437,61 @@ when both halves land.
   prefix dlx (verify free at the landing),
   audit "R762 OA Tu Lung audit", include
   after rules/oa132shoulung.h.
+- R762 LANDED 2026-10-22: commit
+  4b3029bcd3a3cb65a0108626227f133b9ed04765
+  (census 684 -> 685, pushed acfc953..4b3029b),
+  OA SETTING, the Tu Lung empire (capture
+  pp. 303-304, the section running into
+  p. 304), header rules/oa133tulung.h,
+  prefix dlx (verified free at acfc953), one
+  gap flip (the Tu Lung box, single-line),
+  gap census now 215 closed / 20 open.
+  Round type: the Chapter 14
+  setting-doctrine round, single-pass pins
+  per the R679 provenance shift. Inlines:
+  24 = 2 consts (dlxYearsSinceSplit 300,
+  dlxProvinceCount 6) + 22 bools, no
+  tables. The walk: the Earth Dragon
+  name; the part of Shou Lung until the
+  succession dispute of 300 years ago; the
+  own emperor with the separate imperial
+  court; the many wars between the two
+  states stabilized; the no love lost; the
+  rebel nobles of the succession wars with
+  their great power; the government modeled
+  after Shou Lung, the Lui Dynasty emperor
+  never able to break the power of his
+  nobles; the nobles controlling the
+  examination system with the hereditary
+  offices and the estate exemptions from
+  the imperial edicts including taxation;
+  the majority consent; the commoners
+  little chance with the post corruption;
+  the six provinces with the hereditary
+  governors and the districts of family
+  and graft; the inherited public works of
+  Shou Lung poorly maintained with the new
+  projects seldom undertaken; the easily
+  oppressed people with no recourse to the
+  law; the capital Chia Wan Chuan of
+  political plotting; the noble secret
+  societies pledged to overthrow the
+  Emperor. Zero stumbles, first rverify
+  GREEN (double-run, 24 mutants, 0
+  missed; the canvas published clean on
+  the first single write - the R761 quota
+  saga did not recur). The user's ./bn 762
+  detour (struck per the R516 rule) caused
+  no drift - the spec printed the gate md5
+  and landed byte-exact. spec md5
+  5e75bae2c2cd31fb94a3e25ba551d46d, gate
+  md5 b1bc6a5b352129db50f56b2e0d55f135,
+  canvas md5
+  df7661b917bdd39fdf725cd53a5d8b83.
+  NEXT - R763: Wa (capture p. 304),
+  prefix dly (verify free at the landing),
+  audit "R763 OA Wa audit", include
+  after rules/oa133tulung.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

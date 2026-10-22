@@ -3367,7 +3367,21 @@ description riding the same round.
     capital Chia Wan Chuan of political plotting; the noble secret
     societies pledged to overthrow the Emperor; single-pass pins per
     the R679 provenance shift
-  - [ ] Wa (capture p. 304)
+  - [x] Wa (capture p. 304)
+    - R763: the dly wa pins - the unified military state; the
+    honorary emperor with the shogun real power, the
+    barbarian-suppressing general always of the Hidetomi family; the
+    fiefs granted by the shogun and ruled by the daimyos with total
+    control; the shogun court of the limited scope; the confiscate
+    and resettle power; the daimyo military service and land
+    administration; the warrior status raised with the samurai
+    households and the stipend of rice and the absolute loyal
+    service; the four social classes of warriors, peasants,
+    craftsmen, merchants kept separate by the rigid laws; the
+    walled wards with the armed gates and the night return; the
+    samurai vendetta and insult-avenging privileges; the strictly
+    controlled travel; the prevent-rebellion intent; single-pass
+    pins per the R679 provenance shift
   - [ ] Kozakura (capture p. 304)
   - [ ] Gajin (capture p. 304) - the western
     foreigners doctrine
