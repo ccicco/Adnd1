@@ -461,6 +461,7 @@
 #include "rules/oa129magitemsprose.h"  // R758: the OA magical items prose pins
 #include "rules/oa130table86.h"  // R759: the OA Table 86 pins
 #include "rules/oa131karaturintro.h"  // R760: the OA Kara-Tur overview pins
+#include "rules/oa132shoulung.h"  // R761: the OA Shou Lung pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -119297,6 +119298,73 @@ int main() {
         )
             ++bad;
         printf("R760 OA Kara-Tur overview audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R761 OA Shou Lung audit ----
+    // OA round one hundred forty-eight (capture p. 303): the Shou Lung empire
+    // - the Receiver of the Dragon, the oldest state of over 1,200 years, the
+    // Chin emperor of the Kuo Dynasty the eighth, the examination bureaucracy
+    // with the commoner rise, the fourteen provinces and the districts, the
+    // roads and bridges, the Imperial Messengers of Tien Shih, the dikes and
+    // dams, the coinage and paper money, single-pass pins per the Chapter 9
+    // provenance shift
+    {
+        using namespace rules;
+        int bad = 0;
+    if (dlwYearsOfState() != 1200
+            || dlwDynastyCount() != 8
+            || dlwProvinceCount() != 14
+            || !dlwReceiverOfTheDragon()
+            || !dlwLargestMostPowerful()
+            || !dlwOldestState()
+            || !dlwEmperorAllHistory()
+            || !dlwTurmoilPeriods()
+            || !dlwKuoDynastyChin()
+            || !dlwExaminedBureaucracy()
+            || !dlwCommonerRise()
+            || !dlwGovernorPerProvince()
+            || !dlwDistrictOwnOfficial()
+            || !dlwOfficialDuties()
+            || !dlwRoadsAndBridges()
+            || !dlwImperialMessengers()
+            || !dlwDikesAndDams()
+            || !dlwCoinageAndPaper()
+        )
+            ++bad;
+        // the standing example
+    if (dlwReceiverOfTheDragon() != 1
+            || dlwLargestMostPowerful() != 1
+            || dlwOldestState() != 1
+            || dlwYearsOfState() != 1200
+        )
+            ++bad;
+        // the throne example
+    if (dlwEmperorAllHistory() != 1
+            || dlwTurmoilPeriods() != 1
+            || dlwKuoDynastyChin() != 1
+            || dlwDynastyCount() != 8
+        )
+            ++bad;
+        // the bureaucracy example
+    if (dlwExaminedBureaucracy() != 1
+            || dlwCommonerRise() != 1
+        )
+            ++bad;
+        // the administration example
+    if (dlwProvinceCount() != 14
+            || dlwGovernorPerProvince() != 1
+            || dlwDistrictOwnOfficial() != 1
+            || dlwOfficialDuties() != 1
+        )
+            ++bad;
+        // the infrastructure example
+    if (dlwRoadsAndBridges() != 1
+            || dlwImperialMessengers() != 1
+            || dlwDikesAndDams() != 1
+            || dlwCoinageAndPaper() != 1
+        )
+            ++bad;
+        printf("R761 OA Shou Lung audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

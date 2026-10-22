@@ -3341,7 +3341,16 @@ description riding the same round.
     of pp. 301-302 riding as advisory
     doctrine; single-pass pins per the
     R679 provenance shift
-  - [ ] Shou Lung (capture p. 303)
+  - [x] Shou Lung (capture p. 303)
+    - R761: the dlw shou lung pins - the largest and most powerful empire, the
+    Receiver of the Dragon; the oldest state over 1,200 years; the emperor for all
+    its history with the few turmoil periods; the Chin emperor of the Kuo Dynasty
+    the eighth; the examination bureaucracy with the poorest commoner rise; the
+    fourteen provinces with the governors and the districts with their own
+    officials; the duties of the management, the court cases, the peace, the
+    taxes, the public works; the roads and bridges; the Imperial Messengers to the
+    capital Tien Shih; the dikes and dams against the flooding; the coinage and
+    paper money; single-pass pins per the R679 provenance shift
   - [ ] Tu Lung (capture p. 303)
   - [ ] Wa (capture p. 304)
   - [ ] Kozakura (capture p. 304)

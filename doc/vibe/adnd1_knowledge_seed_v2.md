@@ -18331,6 +18331,51 @@ when both halves land.
   include after rules/oa130table86.h - the
   setting chapter, advisory prose closing
   on doctrine pins.
+- R760 LANDED 2026-10-22: commit
+  97f4373e1a9353ae3cb8f20ad41b15685830ed75
+  (census 682 -> 683, pushed afa8e95..97f4373),
+  OA SETTING, the Chapter 14 intro, the
+  Geography prose, and the Population prose
+  (capture pp. 301-303), header
+  rules/oa131karaturintro.h, prefix dlv
+  (verified free at afa8e95), one gap flip
+  (the Population box, single-line), gap
+  census now 213 closed / 22 open.
+  CHAPTER 14 OPENS. Round type: the
+  setting-chapter doctrine round, the
+  advisory Geography prose of pp. 301-302
+  riding with no box of its own, the
+  Population prose of pp. 302-303 flipping
+  its box, single-pass pins per the R679
+  provenance shift. Inlines: 33 = 2 consts +
+  31 bools, no tables. The walk: the chapter
+  intro (the four main empires - Shou Lung,
+  Tu Lung, Kozakura, Wa; the surrounding
+  political units; the wilderness tracts);
+  the geography walk (the Land of Snow
+  Demons, the northern woods, the Koryaz
+  Mountains, the Ama Basin and the Celestial
+  Sea, the Desert of Horses, the northeast
+  peninsula, the Chukei Plateau, the
+  Three-River Basin with its three rivers,
+  the Peerless Mountains, the southern
+  jungles); the population walk (the basin
+  and islands concentration, the Shou Lung
+  and Tu Lung, the Ama nomads, the Snow
+  Demon hunters, the horse tribes
+  warrior-nation, the tributary petty
+  kingdoms, the offshoot island peoples, the
+  jungle and coastal tribes, the snake
+  empire remnant possibly yuan-ti). Zero
+  stumbles, first rverify GREEN. Battery 33
+  mutants, 0 missed. spec md5
+  da6af7e6c8190a76dfb89c5104f980cb, gate
+  md5 dac3f4dda665db2be0429c34fb4bc956,
+  canvas md5 35fec9deb6ef4cb318475522e4bcc
+  87b. NEXT - R761: Shou Lung (capture
+  p. 303), prefix dlw (verify free at the
+  landing), audit "R761 OA Shou Lung audit",
+  include after rules/oa131karaturintro.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

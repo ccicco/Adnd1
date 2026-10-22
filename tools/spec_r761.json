@@ -1,0 +1,286 @@
+{
+ "round": 761,
+ "title": "OA SETTING - the Shou Lung empire: the largest and most powerful empire of Kara-Tur",
+ "prefix": "dlw",
+ "header_file": "rules/oa132shoulung.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 683,
+ "inline_count": 18,
+ "audit_label": "R761 OA Shou Lung audit",
+ "audit_comment": "OA round one hundred forty-eight (capture p. 303): the Shou Lung empire - the Receiver of the Dragon, the oldest state of over 1,200 years, the Chin emperor of the Kuo Dynasty the eighth, the examination bureaucracy with the commoner rise, the fourteen provinces and the districts, the roads and bridges, the Imperial Messengers of Tien Shih, the dikes and dams, the coinage and paper money, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA SETTING - THE SHOU LUNG EMPIRE, printed capture p. 303 - the largest and most powerful empire of Kara-Tur",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 214 closed, 21 open - the Shou Lung box flips (census 683 -> 684); NEXT - R762: Tu Lung (capture p. 303), prefix dlx (verify free at the landing), audit \"R762 OA Tu Lung audit\", include after rules/oa132shoulung.h"
+ },
+ "consts": [
+  {
+   "name": "dlwYearsOfState",
+   "value": 1200,
+   "comment": "the years of the state - Shou Lung in existence over 1,200 years in one form or another, the oldest state of Kara-Tur (print capture p. 303)"
+  },
+  {
+   "name": "dlwDynastyCount",
+   "value": 8,
+   "comment": "the dynasty count - the Kuo Dynasty of emperor Chin the eighth dynasty to rule the land (print capture p. 303)"
+  },
+  {
+   "name": "dlwProvinceCount",
+   "value": 14,
+   "comment": "the province count - Shou Lung divided into 14 provinces, each headed by a governor (print capture p. 303)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlwReceiverOfTheDragon",
+   "value": 1,
+   "comment": "the receiver of the dragon - the empire name Shou Lung meaning Receiver of the Dragon (print capture p. 303)"
+  },
+  {
+   "name": "dlwLargestMostPowerful",
+   "value": 1,
+   "comment": "the largest and most powerful empire of Kara-Tur (print capture p. 303)"
+  },
+  {
+   "name": "dlwOldestState",
+   "value": 1,
+   "comment": "the oldest state of Kara-Tur (print capture p. 303)"
+  },
+  {
+   "name": "dlwEmperorAllHistory",
+   "value": 1,
+   "comment": "the emperor all history - ruled by an emperor for all of its history (print capture p. 303)"
+  },
+  {
+   "name": "dlwTurmoilPeriods",
+   "value": 1,
+   "comment": "the turmoil periods - the few periods of turmoil the exception to the imperial rule (print capture p. 303)"
+  },
+  {
+   "name": "dlwKuoDynastyChin",
+   "value": 1,
+   "comment": "the Kuo dynasty Chin - the head and center of the state the current emperor Chin of the Kuo Dynasty (print capture p. 303)"
+  },
+  {
+   "name": "dlwExaminedBureaucracy",
+   "value": 1,
+   "comment": "the examined bureaucracy - manned by thousands of officials major and minor chosen by a system of examinations given throughout the land (print capture p. 303)"
+  },
+  {
+   "name": "dlwCommonerRise",
+   "value": 1,
+   "comment": "the commoner rise - even the poorest commoner can rise to an influential position provided he is talented enough and studies hard (print capture p. 303)"
+  },
+  {
+   "name": "dlwGovernorPerProvince",
+   "value": 1,
+   "comment": "the governor per province - each of the 14 provinces headed by a governor (print capture p. 303)"
+  },
+  {
+   "name": "dlwDistrictOwnOfficial",
+   "value": 1,
+   "comment": "the district own official - the provinces divided into districts each with its own official (print capture p. 303)"
+  },
+  {
+   "name": "dlwOfficialDuties",
+   "value": 1,
+   "comment": "the official duties - at each level the officials responsible for the management of those beneath them, the hearing of court cases, keeping the peace, the collection of taxes, and the construction of public works (print capture p. 303)"
+  },
+  {
+   "name": "dlwRoadsAndBridges",
+   "value": 1,
+   "comment": "the roads and bridges - the well-maintained network connecting the provinces, creating a regular flow of trade between them (print capture p. 303)"
+  },
+  {
+   "name": "dlwImperialMessengers",
+   "value": 1,
+   "comment": "the imperial messengers - the extensive network stationed at depots throughout the land to carry news to and from the capital city Tien Shih (print capture p. 303)"
+  },
+  {
+   "name": "dlwDikesAndDams",
+   "value": 1,
+   "comment": "the dikes and dams - extensive areas built along the major rivers to reduce the risk of flooding (print capture p. 303)"
+  },
+  {
+   "name": "dlwCoinageAndPaper",
+   "value": 1,
+   "comment": "the coinage and paper - regular coinage and paper money minted and honored throughout the land (print capture p. 303)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the standing example",
+   "expr": "m['dlwReceiverOfTheDragon']() != 1 or m['dlwLargestMostPowerful']() != 1 or m['dlwOldestState']() != 1 or m['dlwYearsOfState']() != 1200"
+  },
+  {
+   "note": "the throne example",
+   "expr": "m['dlwEmperorAllHistory']() != 1 or m['dlwTurmoilPeriods']() != 1 or m['dlwKuoDynastyChin']() != 1 or m['dlwDynastyCount']() != 8"
+  },
+  {
+   "note": "the bureaucracy example",
+   "expr": "m['dlwExaminedBureaucracy']() != 1 or m['dlwCommonerRise']() != 1"
+  },
+  {
+   "note": "the administration example",
+   "expr": "m['dlwProvinceCount']() != 14 or m['dlwGovernorPerProvince']() != 1 or m['dlwDistrictOwnOfficial']() != 1 or m['dlwOfficialDuties']() != 1"
+  },
+  {
+   "note": "the infrastructure example",
+   "expr": "m['dlwRoadsAndBridges']() != 1 or m['dlwImperialMessengers']() != 1 or m['dlwDikesAndDams']() != 1 or m['dlwCoinageAndPaper']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the empire standing": [
+   {
+    "kind": "bool",
+    "name": "dlwReceiverOfTheDragon"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwLargestMostPowerful"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwOldestState"
+   },
+   {
+    "kind": "const",
+    "name": "dlwYearsOfState"
+   }
+  ],
+  "the throne and the dynasty": [
+   {
+    "kind": "bool",
+    "name": "dlwEmperorAllHistory"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwTurmoilPeriods"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwKuoDynastyChin"
+   },
+   {
+    "kind": "const",
+    "name": "dlwDynastyCount"
+   }
+  ],
+  "the bureaucracy": [
+   {
+    "kind": "bool",
+    "name": "dlwExaminedBureaucracy"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwCommonerRise"
+   }
+  ],
+  "the provincial administration": [
+   {
+    "kind": "const",
+    "name": "dlwProvinceCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwGovernorPerProvince"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwDistrictOwnOfficial"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwOfficialDuties"
+   }
+  ],
+  "the infrastructure": [
+   {
+    "kind": "bool",
+    "name": "dlwRoadsAndBridges"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwImperialMessengers"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwDikesAndDams"
+   },
+   {
+    "kind": "bool",
+    "name": "dlwCoinageAndPaper"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Shou Lung box",
+   "from": "  - [ ] Shou Lung (capture p. 303)",
+   "to": "  - [x] Shou Lung (capture p. 303)\n    - R761: the dlw shou lung pins - the largest and most powerful empire, the\n    Receiver of the Dragon; the oldest state over 1,200 years; the emperor for all\n    its history with the few turmoil periods; the Chin emperor of the Kuo Dynasty\n    the eighth; the examination bureaucracy with the poorest commoner rise; the\n    fourteen provinces with the governors and the districts with their own\n    officials; the duties of the management, the court cases, the peace, the\n    taxes, the public works; the roads and bridges; the Imperial Messengers to the\n    capital Tien Shih; the dikes and dams against the flooding; the coinage and\n    paper money; single-pass pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 214,
+  "open": 21
+ },
+ "include_comment": "the OA Shou Lung pins",
+ "include_after": "#include \"rules/oa131karaturintro.h\"  // R760: the OA Kara-Tur overview pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R760 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R760 LANDED 2026-10-22: commit",
+  "  97f4373e1a9353ae3cb8f20ad41b15685830ed75",
+  "  (census 682 -> 683, pushed afa8e95..97f4373),",
+  "  OA SETTING, the Chapter 14 intro, the",
+  "  Geography prose, and the Population prose",
+  "  (capture pp. 301-303), header",
+  "  rules/oa131karaturintro.h, prefix dlv",
+  "  (verified free at afa8e95), one gap flip",
+  "  (the Population box, single-line), gap",
+  "  census now 213 closed / 22 open.",
+  "  CHAPTER 14 OPENS. Round type: the",
+  "  setting-chapter doctrine round, the",
+  "  advisory Geography prose of pp. 301-302",
+  "  riding with no box of its own, the",
+  "  Population prose of pp. 302-303 flipping",
+  "  its box, single-pass pins per the R679",
+  "  provenance shift. Inlines: 33 = 2 consts +",
+  "  31 bools, no tables. The walk: the chapter",
+  "  intro (the four main empires - Shou Lung,",
+  "  Tu Lung, Kozakura, Wa; the surrounding",
+  "  political units; the wilderness tracts);",
+  "  the geography walk (the Land of Snow",
+  "  Demons, the northern woods, the Koryaz",
+  "  Mountains, the Ama Basin and the Celestial",
+  "  Sea, the Desert of Horses, the northeast",
+  "  peninsula, the Chukei Plateau, the",
+  "  Three-River Basin with its three rivers,",
+  "  the Peerless Mountains, the southern",
+  "  jungles); the population walk (the basin",
+  "  and islands concentration, the Shou Lung",
+  "  and Tu Lung, the Ama nomads, the Snow",
+  "  Demon hunters, the horse tribes",
+  "  warrior-nation, the tributary petty",
+  "  kingdoms, the offshoot island peoples, the",
+  "  jungle and coastal tribes, the snake",
+  "  empire remnant possibly yuan-ti). Zero",
+  "  stumbles, first rverify GREEN. Battery 33",
+  "  mutants, 0 missed. spec md5",
+  "  da6af7e6c8190a76dfb89c5104f980cb, gate",
+  "  md5 dac3f4dda665db2be0429c34fb4bc956,",
+  "  canvas md5 35fec9deb6ef4cb318475522e4bcc",
+  "  87b. NEXT - R761: Shou Lung (capture",
+  "  p. 303), prefix dlw (verify free at the",
+  "  landing), audit \"R761 OA Shou Lung audit\",",
+  "  include after rules/oa131karaturintro.h."
+ ]
+}
