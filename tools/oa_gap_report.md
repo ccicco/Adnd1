@@ -3217,7 +3217,19 @@ description riding the same round.
     the three-piece-rod 81-90; the tui-fa
     91-100; single-pass pins per the
     R679 provenance shift
-  - [ ] Table 85: Ninja Class (capture p. 293)
+  - [x] Table 85: Ninja Class (capture p. 293)
+    - R756: the dlr Table 85 pins - the
+    twelve d100 ninja bands spanning the
+    page break: the kawanaga 01-05; the
+    kumade 06-10; the kusari-gama 11-15;
+    the kyoketsu-shogi 16-20; the needle
+    21-25 (10-60); the nekode 26-30; the
+    ninja-to 31-40; the shaken 41-45
+    (2-12); the shikomi-zue 46-60; the
+    spike shuriken 61-70 (2-12); the large
+    star shuriken 71-85 (3-18); the small
+    star shuriken 86-100 (3-18); single-
+    pass pins per the R679 provenance shift
   - [ ] Explanation of Weapon Properties (capture
     p. 294)
   - [ ] Oriental Magical Items prose with Table 86

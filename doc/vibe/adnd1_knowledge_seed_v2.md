@@ -18072,6 +18072,41 @@ when both halves land.
   audit "R755 OA Table 84 martial arts
   audit", include after
   rules/oa125table83.h.
+- R755 LANDED 2026-10-22: commit
+  d98830e7eee131d23898fd67b2005d002b33da93
+  (census 677 -> 678, pushed 845fca4..d98830e),
+  OA TREASURE, Table 84: Martial Arts Class
+  (capture p. 293), header
+  rules/oa126table84.h, prefix dlq
+  (verified free at 845fca4), one gap flip
+  (the Table 84 box, single-line), gap
+  census now 208 closed / 27 open. Round
+  type: the Chapter 13 d100 band grid
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 9 = 1 const +
+  5 bools + 3 table cols; one table
+  dlqMartialArtsClass[12]: the twelve d100
+  bands (the chain 01-05, the fang 06-10,
+  the gunsen 11-20, the jitte 21-30, the
+  kau sin ke 31-35, the kiseru 36-40, the
+  nunchaku 41-55, the sai 56-70, the sang
+  kauw 71-75, the siangkam 76-80, the
+  three-piece-rod 81-90, the tui-fa
+  91-100), the key bands walked by bools.
+  Count const derived from the data (the
+  R739 lesson) and the genuine-0 census
+  asserted in the generator (the R745
+  lesson), verified 12/12/12 at the
+  landing. Zero stumbles, first rverify
+  GREEN. Battery 42 mutants, 0 missed.
+  spec md5 910491eb99130e95df1e24a01f46197
+  3, gate md5 0f05b2c4cdd26f66ead132edb482a
+  74f, canvas md5 961ecbb9ca60bb85889a14409
+  e267abc. NEXT - R756: Table 85: Ninja
+  Class (capture p. 293), prefix dlr
+  (verify free at the landing), audit "R756
+  OA Table 85 ninja audit", include after
+  rules/oa126table84.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
