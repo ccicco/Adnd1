@@ -1,0 +1,260 @@
+{
+ "round": 768,
+ "title": "OA DAILY LIFE - Manners: the politeness, the bow, and the insult",
+ "prefix": "dmd",
+ "header_file": "rules/oa139manners.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 690,
+ "inline_count": 13,
+ "audit_label": "R768 OA Daily Life Manners audit",
+ "audit_comment": "OA round one hundred fifty-five (capture p. 312): the Chapter 15 Manners - the extraordinary politeness, the manners-as-crime doctrine, the bow and the kowtow, the insult and the polite conversation, single-pass pins per the R679 provenance shift",
+ "banner": {
+  "title": "OA DAILY LIFE - MANNERS, printed capture p. 312 - the politeness, the bow, and the insult",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 221 closed, 14 open - the Manners box flips (census 690 -> 691); NEXT - R769: Names (capture pp. 312-313), prefix dme (verify free at the landing), audit \"R769 OA Daily Life Names audit\", include after rules/oa139manners.h"
+ },
+ "consts": [
+  {
+   "name": "dmdInsultSubjectsCount",
+   "value": 9,
+   "comment": "the insult subjects count - comments about a person honor, courage, dislikes, fears, family, dress, behavior, friends, and even possessions can be cause for insult, nine subjects (print capture p. 312)"
+  },
+  {
+   "name": "dmdIgnorableJestInsults",
+   "value": 2,
+   "comment": "the ignorable jest insults - truly generous people might ignore one or two insults spoken in jest, but no more (print capture p. 312)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dmdExtraordinarilyPolite",
+   "value": 1,
+   "comment": "the extraordinarily polite - the people of Kara-Tur, as noticed by the gajin, extraordinarily polite as a rule, going to meticulous pains to behave in the correct manner (print capture p. 312)"
+  },
+  {
+   "name": "dmdMannersAsCrime",
+   "value": 1,
+   "comment": "the manners as crime - among the higher classes incorrect or poor manners virtually as great a crime as murder, severe punishments for those who knowingly or unknowingly commit a social faux pas (print capture p. 312)"
+  },
+  {
+   "name": "dmdClassMarkersAndRidicule",
+   "value": 1,
+   "comment": "the class markers and ridicule - correct manners mark the differences between social classes and help prevent embarrassing oneself in public, there being no greater sin than to be laughed at by others (print capture p. 312)"
+  },
+  {
+   "name": "dmdHonorRidiculeMechanic",
+   "value": 1,
+   "comment": "the honor ridicule mechanic - the concern over insults to honor and the risk of public ridicule prompts the politeness; the DM may cause player characters to lose honor when they would bring themselves ridicule, characters cannot be cavalier in their attitude (print capture p. 312)"
+  },
+  {
+   "name": "dmdBowMeasuresRespect",
+   "value": 1,
+   "comment": "the bow measures respect - the bow the most obvious expression of manners, not just a way of saying Hello, it measures the respect one has for the person bowed to (print capture p. 312)"
+  },
+  {
+   "name": "dmdLowerBowsDeeper",
+   "value": 1,
+   "comment": "the lower bows deeper - those of lower status bow lower to their superiors than their superiors do to them, a high ranking official perhaps barely nodding to those under him (print capture p. 312)"
+  },
+  {
+   "name": "dmdKowtowDeference",
+   "value": 1,
+   "comment": "the kowtow deference - the greatest deference is the kowtow, kneeling and touching the head to the floor, normally done only in the presence of emperors and extremely powerful lords, sometimes necessary when apologizing or begging forgiveness (print capture p. 312)"
+  },
+  {
+   "name": "dmdKowtowExtremeAct",
+   "value": 1,
+   "comment": "the kowtow extreme act - except in the presence of a powerful lord, kowtowing is an extreme act, representing the debasement and surrender of the person to another (print capture p. 312)"
+  },
+  {
+   "name": "dmdWordsCanInsult",
+   "value": 1,
+   "comment": "the words can insult - manners extend to what one says; statements, even spoken in jest, can be insulting and offensive (print capture p. 312)"
+  },
+  {
+   "name": "dmdInsultsSeldomLight",
+   "value": 1,
+   "comment": "the insults seldom light - insults are seldom taken lightly, even the generous unable to abide more than a jest or two (print capture p. 312)"
+  },
+  {
+   "name": "dmdPoliteConversation",
+   "value": 1,
+   "comment": "the polite conversation - to prevent insults, conversations are often stilted or phrased in extremely polite terms to avoid offence (print capture p. 312)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the politeness example",
+   "expr": "m['dmdExtraordinarilyPolite']() != 1 or m['dmdMannersAsCrime']() != 1"
+  },
+  {
+   "note": "the ridicule example",
+   "expr": "m['dmdClassMarkersAndRidicule']() != 1 or m['dmdHonorRidiculeMechanic']() != 1"
+  },
+  {
+   "note": "the bow example",
+   "expr": "m['dmdBowMeasuresRespect']() != 1 or m['dmdLowerBowsDeeper']() != 1"
+  },
+  {
+   "note": "the kowtow example",
+   "expr": "m['dmdKowtowDeference']() != 1 or m['dmdKowtowExtremeAct']() != 1"
+  },
+  {
+   "note": "the words example",
+   "expr": "m['dmdInsultSubjectsCount']() != 9 or m['dmdWordsCanInsult']() != 1"
+  },
+  {
+   "note": "the jest example",
+   "expr": "m['dmdIgnorableJestInsults']() != 2 or m['dmdInsultsSeldomLight']() != 1 or m['dmdPoliteConversation']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the politeness doctrine": [
+   {
+    "kind": "bool",
+    "name": "dmdExtraordinarilyPolite"
+   },
+   {
+    "kind": "bool",
+    "name": "dmdMannersAsCrime"
+   },
+   {
+    "kind": "bool",
+    "name": "dmdClassMarkersAndRidicule"
+   },
+   {
+    "kind": "bool",
+    "name": "dmdHonorRidiculeMechanic"
+   }
+  ],
+  "the bow": [
+   {
+    "kind": "bool",
+    "name": "dmdBowMeasuresRespect"
+   },
+   {
+    "kind": "bool",
+    "name": "dmdLowerBowsDeeper"
+   },
+   {
+    "kind": "bool",
+    "name": "dmdKowtowDeference"
+   },
+   {
+    "kind": "bool",
+    "name": "dmdKowtowExtremeAct"
+   }
+  ],
+  "the insult": [
+   {
+    "kind": "const",
+    "name": "dmdInsultSubjectsCount"
+   },
+   {
+    "kind": "const",
+    "name": "dmdIgnorableJestInsults"
+   },
+   {
+    "kind": "bool",
+    "name": "dmdWordsCanInsult"
+   },
+   {
+    "kind": "bool",
+    "name": "dmdInsultsSeldomLight"
+   },
+   {
+    "kind": "bool",
+    "name": "dmdPoliteConversation"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Manners box",
+   "from": "  - [ ] Manners (capture p. 312)",
+   "to": "  - [x] Manners (capture p. 312)\n    - R768: the dmd manners pins - the people of Kara-Tur extraordinarily polite as noticed by the gajin; poor manners virtually as great a crime as murder among the higher classes; correct manners marking the classes and preventing the great sin of being laughed at; the DM honor-loss mechanic of ridicule; the bow measuring respect, the lower bowing deeper; the kowtow deference to emperors and powerful lords, elsewhere an extreme act of debasement; the words that insult across the nine subjects; insults seldom taken lightly; the stilted polite conversation to avoid offence; single-pass pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 221,
+  "open": 14
+ },
+ "include_comment": "the OA Daily Life Manners pins",
+ "include_after": "#include \"rules/oa138buildings.h\"  // R767: the OA Daily Life Buildings pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R767 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R767 LANDED 2026-10-22: commit",
+  "  a73ac2aa4cfbf8574993c20d65c343ff566bba18",
+  "  (census 689 -> 690, pushed 220526c..a73ac2a),",
+  "  OA DAILY LIFE, Buildings (capture pp.",
+  "  308-309, with the food tail of p. 308 -",
+  "  the fish meat source, tea and the steppe",
+  "  drinks, the town and travel meals -",
+  "  FOLDED IN per the user call after the",
+  "  R766 handoff flagged it), header",
+  "  rules/oa138buildings.h, prefix dmc (fully",
+  "  free at 220526c - zero substring hits,",
+  "  zero call-site dmc\\w*( collisions), one",
+  "  gap flip (the Buildings box, single-line),",
+  "  gap census now 220 closed / 15 open.",
+  "  Round type: the daily-life doctrine",
+  "  round, single-pass pins per the R679",
+  "  provenance shift. Inlines: 21 = 2 consts",
+  "  (dmcBuildingTypesCount 3, the commoners/",
+  "  palaces/temples; dmcTownMealsCount 4) +",
+  "  19 bools, no tables. The walk: the fish",
+  "  main meat with chicken, pork, game, the",
+  "  seldom beef and the barbarian feast",
+  "  meats; the tea most common drink with the",
+  "  nomad milk and sugar; the heated rice",
+  "  wines and the steppe mare-milk tonic with",
+  "  the warrior blood; the four town meals and",
+  "  the travel meals; the peasant wood house",
+  "  with the thatch roof, paper windows,",
+  "  veranda, and hearth; the raised platforms",
+  "  and the attic ladder; the tile roof status",
+  "  of the wealthy; the packed city houses",
+  "  with the shops in homes and the courtyard",
+  "  wells; the plaster-and-stone granaries of",
+  "  irreplaceable rice; the primitive ward",
+  "  fire-fighter teams with bucket gangs; the",
+  "  clay brick houses with the red lucky",
+  "  ornaments; the walled noble houses with",
+  "  the man-made ponds; the lavish temple",
+  "  compounds with the stone pagodas; the",
+  "  formidable military castles with keep,",
+  "  loopholes, and moats. NOTE: the Buildings",
+  "  section itself ends on p. 309 - the",
+  "  pp. 310-312 stretch inside the box range",
+  "  is Religion and Law and Justice,",
+  "  unpinned, no boxes of their own; flagged",
+  "  to the user for a later round. Zero",
+  "  stumbles, first rverify GREEN (double-run,",
+  "  21 mutants, 0 missed; the canvas published",
+  "  clean at 15,924 bytes on the first single",
+  "  write; the /tmp scratch rule of the R766",
+  "  quota lesson held - no quota trouble).",
+  "  The user's ./bn 767 detour (struck per the",
+  "  R516 rule) caused no drift - it printed",
+  "  the gate md5",
+  "  48ad971ffb9847e449576864882782b3 exactly.",
+  "  spec md5",
+  "  4623437d2603a4cc3ac64747148341ee, gate",
+  "  md5 48ad971ffb9847e449576864882782b3,",
+  "  canvas md5",
+  "  b65d309b3fc25fc3e555dd93dbe0c3a9.",
+  "  NEXT - R768: Manners (capture p. 312),",
+  "  prefix dmd (verify free at the landing),",
+  "  audit \"R768 OA Daily Life Manners audit\",",
+  "  include after rules/oa138buildings.h."
+ ]
+}

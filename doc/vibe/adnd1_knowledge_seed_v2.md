@@ -18701,6 +18701,70 @@ when both halves land.
   landing), audit "R767 OA Daily Life
   Buildings audit", include
   after rules/oa137food.h.
+- R767 LANDED 2026-10-22: commit
+  a73ac2aa4cfbf8574993c20d65c343ff566bba18
+  (census 689 -> 690, pushed 220526c..a73ac2a),
+  OA DAILY LIFE, Buildings (capture pp.
+  308-309, with the food tail of p. 308 -
+  the fish meat source, tea and the steppe
+  drinks, the town and travel meals -
+  FOLDED IN per the user call after the
+  R766 handoff flagged it), header
+  rules/oa138buildings.h, prefix dmc (fully
+  free at 220526c - zero substring hits,
+  zero call-site dmc\w*( collisions), one
+  gap flip (the Buildings box, single-line),
+  gap census now 220 closed / 15 open.
+  Round type: the daily-life doctrine
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 21 = 2 consts
+  (dmcBuildingTypesCount 3, the commoners/
+  palaces/temples; dmcTownMealsCount 4) +
+  19 bools, no tables. The walk: the fish
+  main meat with chicken, pork, game, the
+  seldom beef and the barbarian feast
+  meats; the tea most common drink with the
+  nomad milk and sugar; the heated rice
+  wines and the steppe mare-milk tonic with
+  the warrior blood; the four town meals and
+  the travel meals; the peasant wood house
+  with the thatch roof, paper windows,
+  veranda, and hearth; the raised platforms
+  and the attic ladder; the tile roof status
+  of the wealthy; the packed city houses
+  with the shops in homes and the courtyard
+  wells; the plaster-and-stone granaries of
+  irreplaceable rice; the primitive ward
+  fire-fighter teams with bucket gangs; the
+  clay brick houses with the red lucky
+  ornaments; the walled noble houses with
+  the man-made ponds; the lavish temple
+  compounds with the stone pagodas; the
+  formidable military castles with keep,
+  loopholes, and moats. NOTE: the Buildings
+  section itself ends on p. 309 - the
+  pp. 310-312 stretch inside the box range
+  is Religion and Law and Justice,
+  unpinned, no boxes of their own; flagged
+  to the user for a later round. Zero
+  stumbles, first rverify GREEN (double-run,
+  21 mutants, 0 missed; the canvas published
+  clean at 15,924 bytes on the first single
+  write; the /tmp scratch rule of the R766
+  quota lesson held - no quota trouble).
+  The user's ./bn 767 detour (struck per the
+  R516 rule) caused no drift - it printed
+  the gate md5
+  48ad971ffb9847e449576864882782b3 exactly.
+  spec md5
+  4623437d2603a4cc3ac64747148341ee, gate
+  md5 48ad971ffb9847e449576864882782b3,
+  canvas md5
+  b65d309b3fc25fc3e555dd93dbe0c3a9.
+  NEXT - R768: Manners (capture p. 312),
+  prefix dmd (verify free at the landing),
+  audit "R768 OA Daily Life Manners audit",
+  include after rules/oa138buildings.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
