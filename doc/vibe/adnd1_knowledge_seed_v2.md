@@ -17700,6 +17700,53 @@ when both halves land.
   vulnerability, and the 91-95 possession,
   whose long Explanation prose rides in the
   following box.
+- R746 LANDED 2026-10-22: commit
+  d329a5c70b77ef8df296b6c6a26c72fe9ddbcea8
+  (census 668 -> 669, pushed 28aaef1..d329a5c),
+  OA TREASURE, Table 77: Special Properties
+  (capture p. 290), header
+  rules/oa117table77.h, prefix dlh
+  (verified free at 28aaef1), one gap flip
+  (the Table 77 box, single-line), gap
+  census now 199 closed / 36 open. Round
+  type: the Chapter 13 d100 band grid
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 13 = 1 const +
+  9 bools + 3 table cols; one table
+  dlhSpecialProps[11]: the eleven d100
+  bands (the 01-05 etherealness, the
+  06-30 +3, the 31-40 +4, and the 41-50 +5
+  versus missiles, the 51-65
+  vulnerability, the 66-75 missile
+  attraction, the 76-80 presence, the
+  81-85 blending, the 86-90 fear, the
+  91-95 possession, the 96-100 healing),
+  each band walked by a bool pointing to
+  its Explanation mechanics. Count const
+  derived from the data (the R739 lesson),
+  verified 11/11/11 at the landing. Zero
+  stumbles, first rverify GREEN. Battery
+  43 mutants, 0 missed. spec md5
+  9ffab5b03cacc97e8628b32247abe643, gate
+  md5 b68a83b26047e3af3bff4e86c8a54184,
+  canvas md5 2124c97d63c383cf9966ff8846e21
+  e66. NEXT - R747: Explanation of Armor
+  Properties (capture p. 290), prefix dli
+  (verify free at the landing), audit "R747
+  OA armor explanation audit", include
+  after rules/oa117table77.h. The big
+  prose round - the armor of quality (one
+  encumbrance class less, the 2d4 times
+  value), the etherealness, the
+  vulnerability, the missile attraction,
+  the presence (the 18 Charisma, the 10%
+  morale within 12 feet), the blending,
+  the fear (the 2d4 charges, the 30-foot
+  radius), the healing, and the
+  Possession mechanics running onto p. 291
+  (the 3d4-day gradual insinuation, the
+  daily save versus spell, the exorcism
+  and dispel magic endings).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

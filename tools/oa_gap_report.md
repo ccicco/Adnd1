@@ -3097,8 +3097,31 @@ description riding the same round.
     91-95 possession; the 96-100
     healing; single-pass pins per the
     R679 provenance shift
-  - [ ] Explanation of Armor Properties (capture
+  - [x] Explanation of Armor Properties (capture
     p. 290)
+    - R747: the dli armor explanation pins -
+    the armor of quality (not magical, no
+    AC bonus, one encumbrance class less,
+    2d4 times value); the etherealness,
+    vulnerability, and missile attraction
+    per the DMG, the pluses penalties; the
+    presence (18 Charisma, 10% morale within
+    12 feet, only when visible); the blending
+    (normal clothing on command, true seeing
+    only); the fear (30-foot radius, save or
+    flee one turn, wearer immune, the 2d4
+    charges of p. 290 against the 2d10 of
+    p. 291 pinned as printed both pages,
+    spent becomes +1, not rechargeable); the
+    possession (the stolen lifeforce, the
+    daily save versus spell, the 3d4-day
+    gradual insinuation, the refusal to
+    remove, the NPC end, the exorcism and
+    the temporary dispel); the healing (once
+    per day automatic 2d6, one charge each,
+    3d10 charges, spent becomes +1);
+    single-pass pins per the R679 provenance
+    shift
   - [ ] Weapons prose (capture pp. 291-294)
   - [ ] Table 78: Magical Weapons (capture p. 291)
   - [ ] Table 79: Weapon Properties (capture p. 291)
