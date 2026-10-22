@@ -2936,8 +2936,24 @@ description riding the same round.
     for the 17 of the 18 row; the 20 one
     of each treasure above; single-pass
     pins per the R679 provenance shift
-  - [ ] Table III. (Orient): Magical Items
+  - [x] Table III. (Orient): Magical Items
     (capture p. 287)
+    - R737: the dky Table III pins -
+    the twelve d100 bands: the 01-10
+    potions of the DMG III.A.; the
+    11-35 scrolls of the III.B.; the
+    36-40 rings of the III.C.; the
+    41-45 rods, staves, and wands of
+    the III.D.; the 46-55 misc magic in
+    the five IIIE.1 through IIIE.5
+    sub-bands; the 56-60 oriental
+    magical items of this book; the
+    61-75 armor and shields, the capture
+    misreading 8 for the &; the 76-100
+    magical weapons; the footnote to the
+    DMG tables of the pages 121-124;
+    single-pass pins per the R679
+    provenance shift
   - [ ] Modifications to Standard Magical Items
     (capture pp. 286-287)
   - [ ] Potions (capture p. 287)

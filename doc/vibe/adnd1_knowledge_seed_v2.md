@@ -17291,6 +17291,46 @@ when both halves land.
   audit "R736 OA Table II.A. Orient
   monetary treasure audit", include after
   rules/oa106table74.h.
+- R736 LANDED 2026-10-21: commit
+  ec8606c43955b2b66f93f50fc4e3262c445a413c
+  (census 658 -> 659, pushed 7d24d47..ec8606c),
+  OA TREASURE, Table II.A. (Orient):
+  Monetary Treasure (capture pp. 286-287,
+  the table spans the page break), header
+  rules/oa107tableiia.h, prefix dkx
+  (verified free at 7d24d47), one gap flip
+  (the Table II.A. box, its two-line wrap
+  handled), gap census now 189 closed /
+  46 open. Round type: the Chapter 13
+  d20 band grid round, single-pass pins
+  per the R679 provenance shift. Inlines:
+  29 = 3 consts + 9 bools + 17 table
+  cols; one table dkxIIA[9]: the nine d20
+  bands (the 1-2 fen and yuan, the 3-5
+  tael, the 6-10 ch'ien 500-1,000 of the
+  1d6 + 4, the 11-12 ch'ien 500-2,000 of
+  the 5d4, the 13-15 gems 10-100, the
+  16-17 jewelry or art 5-50, the 18 roll
+  twice and 19 roll three times with the
+  reroll-above-17, the 20 one-of-each),
+  the nil cells the 0 sentinel, the roll
+  mechanics riding in the last three
+  columns. Capture misreads pinned: the
+  500-200 for the 500-2,000 and the 97
+  for the 17 of the 18 row. Stumble: the
+  audit label tripped the one-line printf
+  width gate (50 cols) - shortened to
+  "R736 OA Table II.A. Orient audit".
+  Battery 165 mutants, 0 missed. spec md5
+  188059c9aacff13ef8ef09e17e7b9028, gate
+  md5 f067b495b09afdec58f41fbd839c4235,
+  canvas md5 658c95cce61e64080fbd27d15fb2
+  b826. NEXT - R737: Table III. (Orient):
+  Magical Items (capture p. 287), prefix
+  dky (verify free at the landing), audit
+  "R737 OA Table III Orient audit" (the
+  label must stay under the width gate),
+  include after rules/oa107tableiia.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

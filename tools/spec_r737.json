@@ -1,0 +1,393 @@
+{
+ "round": 737,
+ "title": "OA TREASURE - Table III. (Orient): Magical Items: the twelve d100 bands of the item draw",
+ "prefix": "dky",
+ "header_file": "rules/oa108tableiii.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 659,
+ "inline_count": 24,
+ "audit_label": "R737 OA Table III Orient audit",
+ "audit_comment": "OA round one hundred twenty-four (capture p. 287): the Table III. (Orient) Magical Items - the twelve d100 bands, the category and subtable codes of the DMG III.A. through III.E.5 riding with the band edges, the oriental items band of this book, the armor and shields of the capture misreading 8 for the &, the footnote to the DMG pages 121-124, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE III. (ORIENT), MAGICAL ITEMS, printed capture p. 287 - the item draw round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 190 closed, 45 open - the Table III box flips (census 659 -> 660); NEXT - R738: the Modifications to Standard Magical Items prose (capture p. 286), prefix dkz (verify free at the landing), audit \"R738 OA standard item mods audit\", include after rules/oa108tableiii.h"
+ },
+ "consts": [
+  {
+   "name": "dkyRowCount",
+   "value": 12,
+   "comment": "the Table III row count - the twelve d100 bands of the Oriental magical items table (print capture p. 287)"
+  },
+  {
+   "name": "dkyDMGPageFirst",
+   "value": 121,
+   "comment": "the DMG first page - the 121 of the footnote, the parentheses referring to the DMG tables of the pages 121-124 (print capture p. 287)"
+  },
+  {
+   "name": "dkyDMGPageLast",
+   "value": 124,
+   "comment": "the DMG last page - the 124 of the footnote (print capture p. 287)"
+  },
+  {
+   "name": "dkyCatPotions",
+   "value": 1,
+   "comment": "the potions category - the 01-10 band of the DMG Table III.A. (print capture p. 287)"
+  },
+  {
+   "name": "dkyCatScrolls",
+   "value": 2,
+   "comment": "the scrolls category - the 11-35 band of the DMG Table III.B. (print capture p. 287)"
+  },
+  {
+   "name": "dkyCatRings",
+   "value": 3,
+   "comment": "the rings category - the 36-40 band of the DMG Table III.C. (print capture p. 287)"
+  },
+  {
+   "name": "dkyCatRods",
+   "value": 4,
+   "comment": "the rods, staves, and wands category - the 41-45 band of the DMG Table III.D. (print capture p. 287)"
+  },
+  {
+   "name": "dkyCatMiscMagic",
+   "value": 5,
+   "comment": "the miscellaneous magic category - the five IIIE bands of the DMG Table III.E.1 through III.E.5 (print capture p. 287)"
+  },
+  {
+   "name": "dkyCatOriental",
+   "value": 6,
+   "comment": "the oriental magical items category - the 56-60 band of this book (print capture p. 287)"
+  },
+  {
+   "name": "dkyCatArmorShields",
+   "value": 7,
+   "comment": "the armor and shields category - the 61-75 band, the capture misreading 8 for the and of the Armor & Shields (print capture p. 287)"
+  },
+  {
+   "name": "dkyCatWeapons",
+   "value": 8,
+   "comment": "the magical weapons category - the 76-100 band (print capture p. 287)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkyFootnoteDMGTables",
+   "value": 1,
+   "comment": "the footnote - the parentheses referring to the tables in the DMG, the pages 121-124 (print capture p. 287)"
+  },
+  {
+   "name": "dkyBandPotions",
+   "value": 1,
+   "comment": "the potions band - the 01-10 roll of the IIIA subtable (print capture p. 287)"
+  },
+  {
+   "name": "dkyBandScrolls",
+   "value": 1,
+   "comment": "the scrolls band - the 11-35 roll of the IIIB subtable (print capture p. 287)"
+  },
+  {
+   "name": "dkyBandRings",
+   "value": 1,
+   "comment": "the rings band - the 36-40 roll of the IIIC subtable (print capture p. 287)"
+  },
+  {
+   "name": "dkyBandRods",
+   "value": 1,
+   "comment": "the rods, staves, and wands band - the 41-45 roll of the IIID subtable (print capture p. 287)"
+  },
+  {
+   "name": "dkyBandMiscMagic",
+   "value": 1,
+   "comment": "the misc magic bands - the five 46-55 sub-bands of the IIIE.1 through IIIE.5 subtables (print capture p. 287)"
+  },
+  {
+   "name": "dkyBandOriental",
+   "value": 1,
+   "comment": "the oriental items band - the 56-60 roll of the Table 86 items of this book (print capture p. 287)"
+  },
+  {
+   "name": "dkyBandArmorShields",
+   "value": 1,
+   "comment": "the armor and shields band - the 61-75 roll, the capture misreading the 8 for the & (print capture p. 287)"
+  },
+  {
+   "name": "dkyBandWeapons",
+   "value": 1,
+   "comment": "the magical weapons band - the 76-100 roll (print capture p. 287)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dkyIII",
+   "tag": "III",
+   "count": "dkyRowCount",
+   "comment": "the Table III. (Orient) grid - the twelve d100 bands row by row, the category and subtable codes riding with the band edges (print capture p. 287)",
+   "cols": [
+    "dkyRollMin",
+    "dkyRollMax",
+    "dkyCat",
+    "dkySub"
+   ],
+   "col_comments": [
+    "the d100 band minimum - the low roll of the row (print capture p. 287)",
+    "the d100 band maximum - the high roll of the row (print capture p. 287)",
+    "the category code - the potions 1, scrolls 2, rings 3, rods 4, misc magic 5, oriental 6, armor and shields 7, weapons 8 (print capture p. 287)",
+    "the subtable code - the IIIA 1, IIIB 2, IIIC 3, IIID 4, and the IIIE.1 through IIIE.5 of the five misc bands, the 0 the none of the untabled rows (print capture p. 287)"
+   ],
+   "data": [
+    [
+     1,
+     10,
+     1,
+     1
+    ],
+    [
+     11,
+     35,
+     2,
+     2
+    ],
+    [
+     36,
+     40,
+     3,
+     3
+    ],
+    [
+     41,
+     45,
+     4,
+     4
+    ],
+    [
+     46,
+     47,
+     5,
+     1
+    ],
+    [
+     48,
+     49,
+     5,
+     2
+    ],
+    [
+     50,
+     51,
+     5,
+     3
+    ],
+    [
+     52,
+     53,
+     5,
+     4
+    ],
+    [
+     54,
+     55,
+     5,
+     5
+    ],
+    [
+     56,
+     60,
+     6,
+     0
+    ],
+    [
+     61,
+     75,
+     7,
+     0
+    ],
+    [
+     76,
+     100,
+     8,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    3
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the band bools - the eight category walkthrough, healthy values, each condition false",
+   "expr": "m['dkyBandPotions']() != 1 or m['dkyBandScrolls']() != 1 or m['dkyBandRings']() != 1 or m['dkyBandRods']() != 1 or m['dkyBandMiscMagic']() != 1 or m['dkyBandOriental']() != 1 or m['dkyBandArmorShields']() != 1 or m['dkyBandWeapons']() != 1 or m['dkyFootnoteDMGTables']() != 1"
+  },
+  {
+   "note": "the codes - the eight category codes and the DMG footnote pages, healthy values, each condition false",
+   "expr": "m['dkyCatPotions']() != 1 or m['dkyCatScrolls']() != 2 or m['dkyCatRings']() != 3 or m['dkyCatRods']() != 4 or m['dkyCatMiscMagic']() != 5 or m['dkyCatOriental']() != 6 or m['dkyCatArmorShields']() != 7 or m['dkyCatWeapons']() != 8 or m['dkyDMGPageFirst']() != 121 or m['dkyDMGPageLast']() != 124"
+  },
+  {
+   "note": "the grid - the twelve-band Table III, audited cell by cell by the table audit",
+   "expr": "m['dkyRowCount']() != 12"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table III grid": [
+   {
+    "kind": "const",
+    "name": "dkyRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dkyIII"
+   }
+  ],
+  "the category codes": [
+   {
+    "kind": "const",
+    "name": "dkyCatPotions"
+   },
+   {
+    "kind": "const",
+    "name": "dkyCatScrolls"
+   },
+   {
+    "kind": "const",
+    "name": "dkyCatRings"
+   },
+   {
+    "kind": "const",
+    "name": "dkyCatRods"
+   },
+   {
+    "kind": "const",
+    "name": "dkyCatMiscMagic"
+   },
+   {
+    "kind": "const",
+    "name": "dkyCatOriental"
+   },
+   {
+    "kind": "const",
+    "name": "dkyCatArmorShields"
+   },
+   {
+    "kind": "const",
+    "name": "dkyCatWeapons"
+   }
+  ],
+  "the bands": [
+   {
+    "kind": "bool",
+    "name": "dkyBandPotions"
+   },
+   {
+    "kind": "bool",
+    "name": "dkyBandScrolls"
+   },
+   {
+    "kind": "bool",
+    "name": "dkyBandRings"
+   },
+   {
+    "kind": "bool",
+    "name": "dkyBandRods"
+   },
+   {
+    "kind": "bool",
+    "name": "dkyBandMiscMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "dkyBandOriental"
+   },
+   {
+    "kind": "bool",
+    "name": "dkyBandArmorShields"
+   },
+   {
+    "kind": "bool",
+    "name": "dkyBandWeapons"
+   }
+  ],
+  "the footnote": [
+   {
+    "kind": "const",
+    "name": "dkyDMGPageFirst"
+   },
+   {
+    "kind": "const",
+    "name": "dkyDMGPageLast"
+   },
+   {
+    "kind": "bool",
+    "name": "dkyFootnoteDMGTables"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table III box",
+   "from": "  - [ ] Table III. (Orient): Magical Items\n    (capture p. 287)",
+   "to": "  - [x] Table III. (Orient): Magical Items\n    (capture p. 287)\n    - R737: the dky Table III pins -\n    the twelve d100 bands: the 01-10\n    potions of the DMG III.A.; the\n    11-35 scrolls of the III.B.; the\n    36-40 rings of the III.C.; the\n    41-45 rods, staves, and wands of\n    the III.D.; the 46-55 misc magic in\n    the five IIIE.1 through IIIE.5\n    sub-bands; the 56-60 oriental\n    magical items of this book; the\n    61-75 armor and shields, the capture\n    misreading 8 for the &; the 76-100\n    magical weapons; the footnote to the\n    DMG tables of the pages 121-124;\n    single-pass pins per the R679\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 190,
+  "open": 45
+ },
+ "include_comment": "the OA Table III pins",
+ "include_after": "#include \"rules/oa107tableiia.h\"  // R736: the OA Table II.A. pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R736 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R736 LANDED 2026-10-21: commit",
+  "  ec8606c43955b2b66f93f50fc4e3262c445a413c",
+  "  (census 658 -> 659, pushed 7d24d47..ec8606c),",
+  "  OA TREASURE, Table II.A. (Orient):",
+  "  Monetary Treasure (capture pp. 286-287,",
+  "  the table spans the page break), header",
+  "  rules/oa107tableiia.h, prefix dkx",
+  "  (verified free at 7d24d47), one gap flip",
+  "  (the Table II.A. box, its two-line wrap",
+  "  handled), gap census now 189 closed /",
+  "  46 open. Round type: the Chapter 13",
+  "  d20 band grid round, single-pass pins",
+  "  per the R679 provenance shift. Inlines:",
+  "  29 = 3 consts + 9 bools + 17 table",
+  "  cols; one table dkxIIA[9]: the nine d20",
+  "  bands (the 1-2 fen and yuan, the 3-5",
+  "  tael, the 6-10 ch'ien 500-1,000 of the",
+  "  1d6 + 4, the 11-12 ch'ien 500-2,000 of",
+  "  the 5d4, the 13-15 gems 10-100, the",
+  "  16-17 jewelry or art 5-50, the 18 roll",
+  "  twice and 19 roll three times with the",
+  "  reroll-above-17, the 20 one-of-each),",
+  "  the nil cells the 0 sentinel, the roll",
+  "  mechanics riding in the last three",
+  "  columns. Capture misreads pinned: the",
+  "  500-200 for the 500-2,000 and the 97",
+  "  for the 17 of the 18 row. Stumble: the",
+  "  audit label tripped the one-line printf",
+  "  width gate (50 cols) - shortened to",
+  "  \"R736 OA Table II.A. Orient audit\".",
+  "  Battery 165 mutants, 0 missed. spec md5",
+  "  188059c9aacff13ef8ef09e17e7b9028, gate",
+  "  md5 f067b495b09afdec58f41fbd839c4235,",
+  "  canvas md5 658c95cce61e64080fbd27d15fb2",
+  "  b826. NEXT - R737: Table III. (Orient):",
+  "  Magical Items (capture p. 287), prefix",
+  "  dky (verify free at the landing), audit",
+  "  \"R737 OA Table III Orient audit\" (the",
+  "  label must stay under the width gate),",
+  "  include after rules/oa107tableiia.h."
+ ]
+}
