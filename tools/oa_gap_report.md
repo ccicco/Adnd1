@@ -3157,7 +3157,15 @@ description riding the same round.
     grid spanning the page break;
     single-pass pins per the R679
     provenance shift
-  - [ ] Table 80: Sword Class (capture p. 292)
+  - [x] Table 80: Sword Class (capture p. 292)
+    - R751: the dlm Table 80 pins - the
+    seven d100 sword type bands: the
+    katana 01-30; the parang 31-35; the
+    broad sword 36-50; the long sword
+    51-65; the short sword 66-80; the
+    two-handed sword 81-85; the wakizashi
+    86-100; single-pass pins per the
+    R679 provenance shift
   - [ ] Table 81: Bow, Crossbow, And Sling Class
     (capture p. 292)
   - [ ] Table 82: Miscellaneous (capture p. 292)

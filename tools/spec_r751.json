@@ -1,0 +1,237 @@
+{
+ "round": 751,
+ "title": "OA TREASURE - Table 80: Sword Class: the d100 sword type grid",
+ "prefix": "dlm",
+ "header_file": "rules/oa122table80.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 673,
+ "inline_count": 11,
+ "audit_label": "R751 OA Table 80 sword audit",
+ "audit_comment": "OA round one hundred thirty-eight (capture p. 292): the Table 80 Sword Class - the seven d100 bands of the sword types, the katana through the wakizashi, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE 80, SWORD CLASS, printed capture p. 292 - the sword type grid round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 204 closed, 31 open - the Table 80 box flips (census 673 -> 674); NEXT - R752: Table 81: Bow, Crossbow, And Sling Class (capture p. 292), prefix dln (verify free at the landing), audit \"R752 OA Table 81 bow class audit\", include after rules/oa122table80.h"
+ },
+ "consts": [
+  {
+   "name": "dlmSwordRowCount",
+   "value": 7,
+   "comment": "the sword row count - the seven d100 bands of the Table 80 sword type grid (print capture p. 292)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlmKatanaBand",
+   "value": 1,
+   "comment": "the katana band - the 01-30, the heaviest weight of the grid (print capture p. 292)"
+  },
+  {
+   "name": "dlmParangBand",
+   "value": 1,
+   "comment": "the parang band - the 31-35 (print capture p. 292)"
+  },
+  {
+   "name": "dlmBroadSwordBand",
+   "value": 1,
+   "comment": "the broad sword band - the 36-50 (print capture p. 292)"
+  },
+  {
+   "name": "dlmLongSwordBand",
+   "value": 1,
+   "comment": "the long sword band - the 51-65 (print capture p. 292)"
+  },
+  {
+   "name": "dlmShortSwordBand",
+   "value": 1,
+   "comment": "the short sword band - the 66-80 (print capture p. 292)"
+  },
+  {
+   "name": "dlmTwoHandedSwordBand",
+   "value": 1,
+   "comment": "the two-handed sword band - the 81-85 (print capture p. 292)"
+  },
+  {
+   "name": "dlmWakizashiBand",
+   "value": 1,
+   "comment": "the wakizashi band - the 86-100, the companion blade of the katana (print capture p. 292)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dlmSwordClass",
+   "tag": "SwordClass",
+   "count": "dlmSwordRowCount",
+   "comment": "the Table 80 Sword Class grid - the seven d100 bands of the sword types, the katana through the wakizashi (print capture p. 292)",
+   "cols": [
+    "dlmSwordRollMin",
+    "dlmSwordRollMax",
+    "dlmSwordCode"
+   ],
+   "col_comments": [
+    "the d100 band minimum - the low roll of the row (print capture p. 292)",
+    "the d100 band maximum - the high roll of the row (print capture p. 292)",
+    "the sword type code - 1 the katana; 2 the parang; 3 the broad sword; 4 the long sword; 5 the short sword; 6 the two-handed sword; 7 the wakizashi (print capture p. 292)"
+   ],
+   "data": [
+    [
+     1,
+     30,
+     1
+    ],
+    [
+     31,
+     35,
+     2
+    ],
+    [
+     36,
+     50,
+     3
+    ],
+    [
+     51,
+     65,
+     4
+    ],
+    [
+     66,
+     80,
+     5
+    ],
+    [
+     81,
+     85,
+     6
+    ],
+    [
+     86,
+     100,
+     7
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the grid - the seven-band Table 80, audited cell by cell by the table audit",
+   "expr": "m['dlmSwordRowCount']() != 7 or m['dlmSwordRollMin'](0) != 1 or m['dlmSwordRollMax'](6) != 100 or m['dlmSwordCode'](0) != 1 or m['dlmSwordCode'](6) != 7"
+  },
+  {
+   "note": "the band walk - the seven sword types, healthy values, each condition false",
+   "expr": "m['dlmKatanaBand']() != 1 or m['dlmParangBand']() != 1 or m['dlmBroadSwordBand']() != 1 or m['dlmLongSwordBand']() != 1 or m['dlmShortSwordBand']() != 1 or m['dlmTwoHandedSwordBand']() != 1 or m['dlmWakizashiBand']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 80 grid": [
+   {
+    "kind": "const",
+    "name": "dlmSwordRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dlmSwordClass"
+   }
+  ],
+  "the band walk": [
+   {
+    "kind": "bool",
+    "name": "dlmKatanaBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlmParangBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlmBroadSwordBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlmLongSwordBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlmShortSwordBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlmTwoHandedSwordBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlmWakizashiBand"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 80 box",
+   "from": "  - [ ] Table 80: Sword Class (capture p. 292)",
+   "to": "  - [x] Table 80: Sword Class (capture p. 292)\n    - R751: the dlm Table 80 pins - the\n    seven d100 sword type bands: the\n    katana 01-30; the parang 31-35; the\n    broad sword 36-50; the long sword\n    51-65; the short sword 66-80; the\n    two-handed sword 81-85; the wakizashi\n    86-100; single-pass pins per the\n    R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 204,
+  "open": 31
+ },
+ "include_comment": "the OA Table 80 pins",
+ "include_after": "#include \"rules/oa121table79.h\"  // R750: the OA Table 79 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R750 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R750 LANDED 2026-10-22: commit",
+  "  797c1913e8799afa4bdf5b74fbf328e1de77138a",
+  "  (census 672 -> 673, pushed b1e5d05..797c191),",
+  "  OA TREASURE, Table 79: Weapon Properties",
+  "  (capture pp. 291-292, the grid spanning",
+  "  the page break), header",
+  "  rules/oa121table79.h, prefix dll",
+  "  (verified free at b1e5d05), one gap flip",
+  "  (the Table 79 box, single-line), gap",
+  "  census now 203 closed / 32 open. Round",
+  "  type: the Chapter 13 dense grid round,",
+  "  single-pass pins per the R679 provenance",
+  "  shift. Inlines: 14 = 1 const + 6 bools +",
+  "  7 table cols; one table dllWeaponProps[20]:",
+  "  the twenty d100 bands x the five",
+  "  weapon-type columns (bow, missile, melee,",
+  "  martial arts, ninja) with a 26-code",
+  "  property map - the quality rows, the",
+  "  +1/+2/+3 to-hit and damage grades, then",
+  "  the special rows (the +1 +2 vs S and vs",
+  "  L, the -1 cursed, the speed, detection,",
+  "  dancing, balance, distance +1,",
+  "  disruption, unbreakable twice, flame,",
+  "  accuracy +3, venom, slaying,",
+  "  intelligence, and the roll-twice martial",
+  "  arts and ninja tails). Count const",
+  "  derived from the data (the R739 lesson),",
+  "  and the genuine-0 sentinel census",
+  "  asserted in the generator (the R745",
+  "  lesson), verified 20/20/20 at the",
+  "  landing. Zero stumbles, first rverify",
+  "  GREEN. Battery 147 mutants, 0 missed.",
+  "  spec md5 a3d3d02e0e41e94308431eedb062c48",
+  "  7, gate md5 6e8aaeddb6a45c6a949f54bd250269e",
+  "  9, canvas md5 842847cfa91c2ca0de2eeeb1671c",
+  "  a22e. NEXT - R751: Table 80: Sword Class",
+  "  (capture p. 292), prefix dlm (verify free",
+  "  at the landing), audit \"R751 OA Table 80",
+  "  sword audit\", include after",
+  "  rules/oa121table79.h."
+ ]
+}

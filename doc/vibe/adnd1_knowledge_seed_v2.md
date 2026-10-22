@@ -17883,6 +17883,46 @@ when both halves land.
   disruption, unbreakable, flame, venom,
   slaying, intelligence, the roll-twice
   tails, the -1 cursed).
+- R750 LANDED 2026-10-22: commit
+  797c1913e8799afa4bdf5b74fbf328e1de77138a
+  (census 672 -> 673, pushed b1e5d05..797c191),
+  OA TREASURE, Table 79: Weapon Properties
+  (capture pp. 291-292, the grid spanning
+  the page break), header
+  rules/oa121table79.h, prefix dll
+  (verified free at b1e5d05), one gap flip
+  (the Table 79 box, single-line), gap
+  census now 203 closed / 32 open. Round
+  type: the Chapter 13 dense grid round,
+  single-pass pins per the R679 provenance
+  shift. Inlines: 14 = 1 const + 6 bools +
+  7 table cols; one table dllWeaponProps[20]:
+  the twenty d100 bands x the five
+  weapon-type columns (bow, missile, melee,
+  martial arts, ninja) with a 26-code
+  property map - the quality rows, the
+  +1/+2/+3 to-hit and damage grades, then
+  the special rows (the +1 +2 vs S and vs
+  L, the -1 cursed, the speed, detection,
+  dancing, balance, distance +1,
+  disruption, unbreakable twice, flame,
+  accuracy +3, venom, slaying,
+  intelligence, and the roll-twice martial
+  arts and ninja tails). Count const
+  derived from the data (the R739 lesson),
+  and the genuine-0 sentinel census
+  asserted in the generator (the R745
+  lesson), verified 20/20/20 at the
+  landing. Zero stumbles, first rverify
+  GREEN. Battery 147 mutants, 0 missed.
+  spec md5 a3d3d02e0e41e94308431eedb062c48
+  7, gate md5 6e8aaeddb6a45c6a949f54bd250269e
+  9, canvas md5 842847cfa91c2ca0de2eeeb1671c
+  a22e. NEXT - R751: Table 80: Sword Class
+  (capture p. 292), prefix dlm (verify free
+  at the landing), audit "R751 OA Table 80
+  sword audit", include after
+  rules/oa121table79.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
