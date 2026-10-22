@@ -1,0 +1,299 @@
+{
+ "round": 769,
+ "title": "OA DAILY LIFE - Names: the thirteen name types of the Oriental world",
+ "prefix": "dme",
+ "header_file": "rules/oa140names.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 691,
+ "inline_count": 18,
+ "audit_label": "R769 OA Daily Life Names audit",
+ "audit_comment": "OA round one hundred fifty-six (capture pp. 312-313): the Chapter 15 closer, Names - the western single name against the Oriental multiple names, the secret, childhood, adult, family, clan, place, nickname, substitute, religious, event, and posthumous names, single-pass pins per the R679 provenance shift",
+ "banner": {
+  "title": "OA DAILY LIFE - NAMES, printed capture pp. 312-313 - the thirteen name types of the Oriental world",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 222 closed, 13 open - the Names box flips (census 691 -> 692); NEXT - R770: Back matter (capture pp. 313-314, the bibliography and the closing page), prefix dmf (verify free at the landing), audit \"R770 OA Back matter audit\", include after rules/oa140names.h"
+ },
+ "consts": [
+  {
+   "name": "dmeMinimumLifelongNames",
+   "value": 2,
+   "comment": "the minimum lifelong names - throughout the life of an Oriental character he can expect to use at least two different names, quite often more (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeNameTypesCount",
+   "value": 13,
+   "comment": "the name types count - the listed types: the secret name, the childhood name, the adult name, the hereditary family name, the clan or tribe name, the place name, the nickname, the undesired-activity substitute name, the artist substitute name, the school or master substitute name, the religious name, the event names, and the posthumous name, thirteen types (print capture pp. 312-313)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dmeWesternSingleName",
+   "value": 1,
+   "comment": "the western single name - in the west a given name stays for life with nicknames and aliases aside, changing a name a complicated legal matter implying a change of family and identity (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeOrientalMultipleNames",
+   "value": 1,
+   "comment": "the Oriental multiple names - in the Oriental world the situation much different, each name valid for the person depending on his age and situation, aliases also used to keep the identity secret (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeNamesDroppedWithNew",
+   "value": 1,
+   "comment": "the names dropped with new - players need not have names for all these instances and many names are dropped (such as a childhood name) when a new name is given (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeSecretName",
+   "value": 1,
+   "comment": "the secret name - given at birth, never revealed, supposedly known only to the gods; superstition holds that learning the secret name of a person gives magical power over that person (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeChildhoodName",
+   "value": 1,
+   "comment": "the childhood name - given at birth, used in daily life, distinctly different from adult names, making it easy to tell if a person has come of age (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeAdultName",
+   "value": 1,
+   "comment": "the adult name - given at coming of age, showing the person a full adult with the inherent rights and responsibilities; once given, the childhood name seldom if ever used (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeHereditaryFamilyName",
+   "value": 1,
+   "comment": "the hereditary family name - used in conjunction with the personal name, by no means universal, generally reserved for the upper classes and nobles; for the lower classes to attach a family name is insulting and above their station (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeClanTribeName",
+   "value": 1,
+   "comment": "the clan tribe name - identifying the person by the group he belongs to, used by barbarian groups where tribal affiliation is extremely important (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmePlaceName",
+   "value": 1,
+   "comment": "the place name - acting in many ways like a hereditary family name, common among the common people, identifying the village, district, or province the person is from (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeNickname",
+   "value": 1,
+   "comment": "the nickname - used much as in the west, to tell two people with the same name apart, as an honor, or to ridicule them (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeSubstituteUndesiredName",
+   "value": 1,
+   "comment": "the substitute undesired name - for people of quality, craftsmen, or those working at unseemly or improper occupations; the closest name to an alias, yet it does not disguise the identity, it only protects the true name from connection with the undesired activity (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeArtistPenName",
+   "value": 1,
+   "comment": "the artist pen name - a substitute name chosen by an artist because using the real name would be improper (associations with some powerful person or family) or to create a poetic allusion, a poet choosing a name derived from a great poet of the past (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeSchoolMasterName",
+   "value": 1,
+   "comment": "the school master name - a substitute name chosen by an artist, craftsman, or warrior that shows his connection to some school or master (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeReligiousName",
+   "value": 1,
+   "comment": "the religious name - taken upon entering the ranks of the priesthood, showing the person has severed his ties with his past life and become a new person, normally with special significance in the religion (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmeEventNames",
+   "value": 1,
+   "comment": "the event names - chosen by the person or given by another to tell of the deeds and exploits, coming and going depending on the whims and deeds of the person (print capture pp. 312-313)"
+  },
+  {
+   "name": "dmePosthumousName",
+   "value": 1,
+   "comment": "the posthumous name - given shortly after burial, to protect and assist the departed person from evil influences (print capture pp. 312-313)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the doctrine example",
+   "expr": "m['dmeMinimumLifelongNames']() != 2 or m['dmeWesternSingleName']() != 1 or m['dmeOrientalMultipleNames']() != 1"
+  },
+  {
+   "note": "the types example",
+   "expr": "m['dmeNameTypesCount']() != 13 or m['dmeNamesDroppedWithNew']() != 1"
+  },
+  {
+   "note": "the life names example",
+   "expr": "m['dmeSecretName']() != 1 or m['dmeChildhoodName']() != 1 or m['dmeAdultName']() != 1"
+  },
+  {
+   "note": "the family example",
+   "expr": "m['dmeHereditaryFamilyName']() != 1 or m['dmeClanTribeName']() != 1"
+  },
+  {
+   "note": "the place example",
+   "expr": "m['dmePlaceName']() != 1 or m['dmeNickname']() != 1"
+  },
+  {
+   "note": "the substitute example",
+   "expr": "m['dmeSubstituteUndesiredName']() != 1 or m['dmeArtistPenName']() != 1 or m['dmeSchoolMasterName']() != 1"
+  },
+  {
+   "note": "the sacred example",
+   "expr": "m['dmeReligiousName']() != 1 or m['dmeEventNames']() != 1 or m['dmePosthumousName']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the naming doctrine": [
+   {
+    "kind": "const",
+    "name": "dmeMinimumLifelongNames"
+   },
+   {
+    "kind": "const",
+    "name": "dmeNameTypesCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeWesternSingleName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeOrientalMultipleNames"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeNamesDroppedWithNew"
+   }
+  ],
+  "the life names": [
+   {
+    "kind": "bool",
+    "name": "dmeSecretName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeChildhoodName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeAdultName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeHereditaryFamilyName"
+   }
+  ],
+  "the group and place names": [
+   {
+    "kind": "bool",
+    "name": "dmeClanTribeName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmePlaceName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeNickname"
+   }
+  ],
+  "the substitute names": [
+   {
+    "kind": "bool",
+    "name": "dmeSubstituteUndesiredName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeArtistPenName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeSchoolMasterName"
+   }
+  ],
+  "the sacred and story names": [
+   {
+    "kind": "bool",
+    "name": "dmeReligiousName"
+   },
+   {
+    "kind": "bool",
+    "name": "dmeEventNames"
+   },
+   {
+    "kind": "bool",
+    "name": "dmePosthumousName"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Names box",
+   "from": "  - [ ] Names (capture pp. 312-313)",
+   "to": "  - [x] Names (capture pp. 312-313)\n    - R769: the dme names pins - the western single name against the Oriental multiple names, at least two in a lifetime, valid by age and situation; the names dropped when a new name is given; the secret name known only to the gods with its magical power; the childhood and adult names of coming of age; the hereditary family name of the upper classes; the clan or tribe name of the barbarians; the place name of the common people; the nickname of honor or ridicule; the substitute names protecting true names from undesired activity, the artist pen name and the school or master name; the religious name of the new person; the event names of deeds; the posthumous name protecting the departed; single-pass pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 222,
+  "open": 13
+ },
+ "include_comment": "the OA Daily Life Names pins",
+ "include_after": "#include \"rules/oa139manners.h\"  // R768: the OA Daily Life Manners pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R768 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R768 LANDED 2026-10-22: commit",
+  "  2725a47efffedf7d139183f9e10ba3fb4670302f",
+  "  (census 690 -> 691, pushed a73ac2a..2725a47),",
+  "  OA DAILY LIFE, Manners (capture p. 312),",
+  "  header rules/oa139manners.h, prefix dmd",
+  "  (fully free at a73ac2a - zero substring",
+  "  hits, zero call-site dmd\\w*( collisions),",
+  "  one gap flip (the Manners box,",
+  "  single-line), gap census now 221 closed",
+  "  / 14 open. Round type: the daily-life",
+  "  doctrine round, single-pass pins per the",
+  "  R679 provenance shift. Inlines: 13 = 2",
+  "  consts (dmdInsultSubjectsCount 9, the",
+  "  honor/courage/dislikes/fears/family/",
+  "  dress/behavior/friends/possessions list;",
+  "  dmdIgnorableJestInsults 2) + 11 bools,",
+  "  no tables. The walk: the people of",
+  "  Kara-Tur extraordinarily polite as",
+  "  noticed by the gajin, the meticulous",
+  "  pains to behave; the poor manners of the",
+  "  higher classes virtually as great a crime",
+  "  as murder; the correct manners marking the",
+  "  classes and preventing the great sin of",
+  "  being laughed at; the DM honor-loss",
+  "  mechanic of ridicule; the bow measuring",
+  "  respect with the lower bowing deeper; the",
+  "  kowtow deference to emperors and powerful",
+  "  lords, elsewhere an extreme act of",
+  "  debasement; the words that insult across",
+  "  the nine subjects; the insults seldom",
+  "  taken lightly; the stilted polite",
+  "  conversation to avoid offence. Zero",
+  "  stumbles, first rverify GREEN (double-run,",
+  "  13 mutants, 0 missed; the canvas published",
+  "  clean at 10,730 bytes on the first single",
+  "  write; the /tmp scratch rule held). The",
+  "  user's ./bn 768 detour (struck per the",
+  "  R516 rule) caused no drift - it printed",
+  "  the gate md5",
+  "  dfa5800cff7780c7230cf339a8be50f0",
+  "  exactly (after a harmless . /bn typo).",
+  "  spec md5",
+  "  e7c48cc727153c7cbaaa79bf3af62116, gate",
+  "  md5 dfa5800cff7780c7230cf339a8be50f0,",
+  "  canvas md5",
+  "  786503e6e44a221ae34ed5f3eba7557f.",
+  "  NEXT - R769: Names (capture pp. 312-313),",
+  "  prefix dme (verify free at the landing),",
+  "  audit \"R769 OA Daily Life Names audit\",",
+  "  include after rules/oa139manners.h."
+ ]
+}

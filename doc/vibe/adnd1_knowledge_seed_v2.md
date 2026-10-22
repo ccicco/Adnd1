@@ -18765,6 +18765,56 @@ when both halves land.
   prefix dmd (verify free at the landing),
   audit "R768 OA Daily Life Manners audit",
   include after rules/oa138buildings.h.
+- R768 LANDED 2026-10-22: commit
+  2725a47efffedf7d139183f9e10ba3fb4670302f
+  (census 690 -> 691, pushed a73ac2a..2725a47),
+  OA DAILY LIFE, Manners (capture p. 312),
+  header rules/oa139manners.h, prefix dmd
+  (fully free at a73ac2a - zero substring
+  hits, zero call-site dmd\w*( collisions),
+  one gap flip (the Manners box,
+  single-line), gap census now 221 closed
+  / 14 open. Round type: the daily-life
+  doctrine round, single-pass pins per the
+  R679 provenance shift. Inlines: 13 = 2
+  consts (dmdInsultSubjectsCount 9, the
+  honor/courage/dislikes/fears/family/
+  dress/behavior/friends/possessions list;
+  dmdIgnorableJestInsults 2) + 11 bools,
+  no tables. The walk: the people of
+  Kara-Tur extraordinarily polite as
+  noticed by the gajin, the meticulous
+  pains to behave; the poor manners of the
+  higher classes virtually as great a crime
+  as murder; the correct manners marking the
+  classes and preventing the great sin of
+  being laughed at; the DM honor-loss
+  mechanic of ridicule; the bow measuring
+  respect with the lower bowing deeper; the
+  kowtow deference to emperors and powerful
+  lords, elsewhere an extreme act of
+  debasement; the words that insult across
+  the nine subjects; the insults seldom
+  taken lightly; the stilted polite
+  conversation to avoid offence. Zero
+  stumbles, first rverify GREEN (double-run,
+  13 mutants, 0 missed; the canvas published
+  clean at 10,730 bytes on the first single
+  write; the /tmp scratch rule held). The
+  user's ./bn 768 detour (struck per the
+  R516 rule) caused no drift - it printed
+  the gate md5
+  dfa5800cff7780c7230cf339a8be50f0
+  exactly (after a harmless . /bn typo).
+  spec md5
+  e7c48cc727153c7cbaaa79bf3af62116, gate
+  md5 dfa5800cff7780c7230cf339a8be50f0,
+  canvas md5
+  786503e6e44a221ae34ed5f3eba7557f.
+  NEXT - R769: Names (capture pp. 312-313),
+  prefix dme (verify free at the landing),
+  audit "R769 OA Daily Life Names audit",
+  include after rules/oa139manners.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
