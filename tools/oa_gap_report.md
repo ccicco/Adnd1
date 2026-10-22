@@ -3085,7 +3085,18 @@ description riding the same round.
     special property; the caption printing
     the Table 76. with a period; single-
     pass pins per the R679 provenance shift
-  - [ ] Table 77: Special Properties (capture p. 290)
+  - [x] Table 77: Special Properties (capture p. 290)
+    - R746: the dlh Table 77 pins - the
+    eleven d100 special property bands:
+    the 01-05 etherealness; the 06-30
+    +3, the 31-40 +4, and the 41-50 +5
+    versus missiles; the 51-65
+    vulnerability; the 66-75 missile
+    attraction; the 76-80 presence; the
+    81-85 blending; the 86-90 fear; the
+    91-95 possession; the 96-100
+    healing; single-pass pins per the
+    R679 provenance shift
   - [ ] Explanation of Armor Properties (capture
     p. 290)
   - [ ] Weapons prose (capture pp. 291-294)

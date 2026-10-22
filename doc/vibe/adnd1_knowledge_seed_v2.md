@@ -17652,6 +17652,54 @@ when both halves land.
   properties grid runs onto p. 290 - the
   armor of quality through the
   special-property reroll on Table 77.
+- R745 LANDED 2026-10-22: commit
+  28aaef126e6cfaad409d2cf4013ae8bff48c1180
+  (census 667 -> 668, pushed c335e9a..28aaef1),
+  OA TREASURE, Table 76. Magical Armor
+  Properties (capture pp. 289-290, the grid
+  spans the page break, the caption prints
+  a period), header rules/oa116table76.h,
+  prefix dlg (verified free at c335e9a),
+  one gap flip (the Table 76 box, its
+  two-line wrap handled), gap census now
+  198 closed / 37 open. Round type: the
+  Chapter 13 d100 band grid round,
+  single-pass pins per the R679 provenance
+  shift. Inlines: 9 = 2 consts + 4 bools +
+  3 table cols; one table dlgArmorProps[7]:
+  the seven d100 bands (the 01-40 armor of
+  quality, the 41-65 +1, the 66-80 +2, the
+  81-85 +3, the 86-88 +4, the 89-90 +5,
+  each the +1 if an armor piece, the
+  91-100 special property rolled again on
+  the Table 77); the caption period, the
+  quality asterisk, the reroll asterisk,
+  and the no-special-property footnote as
+  bools. ONE STUMBLE, self-caught by the
+  audit mirror before the build: the
+  armor-of-quality row plus is a genuine 0
+  (no plus) and the sentinel census was
+  declared [0, 0, 0] - the mirror counts
+  genuine sentinel-valued cells, not just
+  nils; fixed to [0, 0, 1]. LESSON: the
+  sentinel census must declare every
+  genuine sentinel-valued data cell.
+  Count const derived from the data (the
+  R739 lesson), verified 7/7/7 at the
+  landing. Battery 27 mutants, 0 missed.
+  spec md5 647ab518b23a07ea3ff34dd129eb299
+  0, gate md5 82c9b50362990599648496a1e5da4
+  485, canvas md5 2f6a0247af7debed90923325
+  efd5a27c. NEXT - R746: Table 77: Special
+  Properties (capture p. 290), prefix dlh
+  (verify free at the landing), audit "R746
+  OA Table 77 special audit", include after
+  rules/oa116table76.h. The special-property
+  grid - etherealness through blending,
+  presence, fear, missile attraction,
+  vulnerability, and the 91-95 possession,
+  whose long Explanation prose rides in the
+  following box.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
