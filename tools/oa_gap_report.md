@@ -3257,8 +3257,48 @@ description riding the same round.
     the unbreakable (75%), and the venom
     per the DMG; single-pass pins per the
     R679 provenance shift
-  - [ ] Oriental Magical Items prose with Table 86
+  - [x] Oriental Magical Items prose with Table 86
     and the item descriptions (capture pp. 296-301)
+    - R758: the dlt magical items prose
+    pins - the thirty-four item
+    descriptions of pp. 297-301: the
+    banner of protection (5th-level
+    block, 100 yards); the bell of
+    protection (50 yards, the -4 greater
+    save, 4d10 and 3d10) and the bell of
+    warning (30 feet, 3d6 hours, 3d10);
+    the biwa of calm, charm, and discord
+    (the 2-5 frenzy); the four charms of
+    protection (the disease, fire 50%,
+    spirits, and theft 20% / 2d10); the
+    diamond mace (12-dice bolt, 1000
+    ch'ien); the drums of thunder (the
+    fly 1, trapeze 3, panic 2, weather 1,
+    20-dice bolt 5); the eight diagram
+    coins; the everproducing rice mortar
+    (80/20, 1d100 fed, 1d4 wishes); the
+    gem of wishes (1-4, 100-1000); the
+    gong of dispelling (15th, 1d100); the
+    mallet of luck (+2, six turns, 2d6);
+    the minyan (20 bearers, the five
+    powers, the care duties); the four
+    mirrors (the curing 2d4 shatter, the
+    enlightenment, the fear 1d6, the
+    spirit seeing); the net of spirit
+    snaring; the noisome spirit chasers
+    (strings of 100, 2-5 rounds); the
+    paper of forms (80% ignite, 1d4
+    sheets); the three pearls (the fire
+    ring, the tides 60 feet at 5 per
+    round); the scroll of protection from
+    spirits (12th); the seal of deception
+    (5% / 30%) and the seal of vigor; the
+    tablet of spirit summoning (9th, 2d6,
+    10 ch'ien); the wheels of fire (30
+    feet, 2d6); and the wondrous writing
+    set (+2 calligraphy, 2-5 pages);
+    single-pass pins per the R679
+    provenance shift
   - [ ] Table 86: Oriental Magical Items
     (capture p. 296)
 

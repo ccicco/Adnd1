@@ -18151,6 +18151,73 @@ when both halves land.
   distance, accuracy, disruption, unbreakable,
   flame, venom, slaying, intelligence, roll
   twice).
+- R757 LANDED 2026-10-22: commit
+  b346bdad2dac94f1d3b1f3076b0e65b576bdc81e
+  (census 679 -> 680, pushed eff02a8..b346bda),
+  OA TREASURE, the Explanation of Weapon
+  Properties (capture pp. 294-296), header
+  rules/oa128weaponexpl.h, prefix dls
+  (verified free at eff02a8), one gap flip
+  (the explanation box, its two-line wrap
+  handled), gap census now 210 closed /
+  25 open. Round type: the Chapter 13 big
+  prose round, single-pass pins per the
+  R679 provenance shift. Inlines: 53 =
+  23 consts + 27 bools + 3 table cols;
+  two tables - dlsDetects[8] (the d8
+  detection subtable, the poison touch
+  the genuine-0 range cell, census
+  [0, 1] per the R745 lesson) and
+  dlsSlayingCreatures[24] (the slaying
+  example list read left column then
+  right, bajang through nats, ninja
+  through yakuza). The prose walk: the
+  weapons of quality by class (the sword
+  and melee +1 to hit only at 2d6 times;
+  the bows the range step at 2d4 times;
+  the missiles +1 to hit at 2-5 times; the
+  martial arts +1 when style-trained at
+  2-5 times; the ninja +1 to damage with
+  the one-round assembly), the +1/+2/+3
+  both, damage-only, and to-hit-only
+  grades, the vs smaller and vs larger,
+  the -1 cursed (the bow return missile
+  on the roll of 1, the melee preference,
+  the remove curse), then the specials of
+  pp. 295-296: the accuracy +3 all-short,
+  the balance with the save versus death,
+  the dancing 2-5 rounds within 5 feet
+  once per turn, the detection with its
+  subtable, the disruption, distance, and
+  venom per the DMG, the flame (2d4 extra,
+  40% ignite, 15-foot light), the
+  intelligence (12-17, semi-empathy cap),
+  the silence (15% move silently, 20%
+  hide), the slaying +3, the speed (the
+  double rate, self-nocking, first shot),
+  and the unbreakable (+2, 75%). ONE
+  STUMBLE, self-caught before rverify: the
+  roll-twice bool cited the p. 292 but
+  P292 was not defined - the generator
+  NameError caught it in the preflight.
+  Count consts derived from the data (the
+  R739 lesson), verified 8/8/8 and
+  24/24/24 at the landing. Battery 90
+  mutants, 0 missed. spec md5
+  a2192896044c18b6053d8ce98dd8a3b4, gate
+  md5 73e668ca52ff6d2a1386ced87fedf198,
+  canvas md5 43830dcaeeb4126ecc5a91992d3ec
+  acd. NEXT - R758: Oriental Magical
+  Items prose with Table 86 and the item
+  descriptions (capture pp. 296-301),
+  prefix dlt (verify free at the landing),
+  audit "R758 OA magical items prose
+  audit", include after
+  rules/oa128weaponexpl.h. The last big
+  stretch of Chapter 13 - the Table 86
+  d100 grid of oriental magical items and
+  the long item descriptions running to
+  the chapter end.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
