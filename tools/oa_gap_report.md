@@ -3317,9 +3317,14 @@ description riding the same round.
     shukenja and wu jen); single-pass
     pins per the R679 provenance shift
 
-- [ ] **Chapter 14: An Overview of Kara-Tur**
+- [x] **Chapter 14: An Overview of Kara-Tur**
   (capture pp. 301-305) - the setting chapter
-  (advisory prose - closes on doctrine pins)
+  (advisory prose - closes on doctrine pins) -
+  R770: the chapter closes (the R613b missed-parent
+  lesson caught pre-landing: the Population, Shou Lung,
+  Tu Lung, Wa, Kozakura, and Gajin children closed
+  R760-R765; the parent flip was missed at the R760
+  opener and closes here with the back-matter round)
   - [x] Population (capture p. 302)
     - R760: the dlv population pins - the
     concentration in the Three-River Basin,
@@ -3388,9 +3393,14 @@ description riding the same round.
     foreigners doctrine
     - R765: the dma gajin pins - the outside classes introduced into the Oriental lands, very different from the four standard classes; the insular and closed lands avoiding contact when possible; the infrequent and carefully controlled trade; the sea lanes and caravan routes disappearing into bandit or crueler dangers; the two peculiar traits of the separation; the lack of curiosity about the rest of the world; the outside world filled with rude and hostile barbarians, the gajin, not dealt with; single-pass pins per the R679 provenance shift
 
-- [ ] **Chapter 15: Daily Life in Kara-Tur**
+- [x] **Chapter 15: Daily Life in Kara-Tur**
   (capture pp. 305-313) - the daily-life chapter
-  (advisory prose - closes on doctrine pins)
+  (advisory prose - closes on doctrine pins) -
+  R770: the chapter closes (the R613b missed-parent
+  lesson caught pre-landing: the Food, Buildings, Manners,
+  and Names children closed R766-R769; the parent flip
+  was missed at the R766 opener and closes here with
+  the back-matter round)
   - [x] Food (capture p. 307)
     - R766: the dmb food pins - the rice constant of the civilized lands served with virtually every meal, the eaten-rice greeting of Shou Lung and Tu Lung; the seven uses of rice from gruel to sake, the stuff of life; the millet, sorghum, and barley poor man food; the four bean varieties stewed or mashed into paste; the soy sauce and tofu preparations; the vegetables next to rice in importance, rarely raw; the garden variety of fruits and nuts; the pickled preparations; the water products of those near sea, river, or lake - the hundreds of fish varieties, the deadly pufferfish delicacy, the kelp, the sea fully used; single-pass pins per the R679 provenance shift
   - [x] Buildings (capture pp. 308-312)
@@ -3400,8 +3410,9 @@ description riding the same round.
   - [x] Names (capture pp. 312-313)
     - R769: the dme names pins - the western single name against the Oriental multiple names, at least two in a lifetime, valid by age and situation; the names dropped when a new name is given; the secret name known only to the gods with its magical power; the childhood and adult names of coming of age; the hereditary family name of the upper classes; the clan or tribe name of the barbarians; the place name of the common people; the nickname of honor or ridicule; the substitute names protecting true names from undesired activity, the artist pen name and the school or master name; the religious name of the new person; the event names of deeds; the posthumous name protecting the departed; single-pass pins per the R679 provenance shift
 
-- [ ] **Back matter** (capture pp. 313-314) - the
-  bibliography and the closing page
+- [x] **Back matter** (capture pp. 313-314) - the
+  bibliography and the closing page - R770: the book closes
+    (the dmf back-matter pins - the bibliography of the listed sources, the plus-marked titles of good general background; the samurai warfare shelf of Sun Tzu, Musashi, the Turnbull armies, Ratti and Westbrook, and the Daidoji Yuzan primer; the ninja shelf of Hatsumi and Kim; the Hearn Japan titles; the folklore shelves of Chinese mythology and the Japanese and Chinese tale collections; the architecture, arms and armor, daily life, religion, and Chinese classic and symbolism shelves; single-pass pins per the R679 provenance shift)
 
 ## Census
 

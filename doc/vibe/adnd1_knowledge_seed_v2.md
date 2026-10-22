@@ -18815,6 +18815,56 @@ when both halves land.
   prefix dme (verify free at the landing),
   audit "R769 OA Daily Life Names audit",
   include after rules/oa139manners.h.
+- R769 LANDED 2026-10-22: commit
+  643d70e2c4f25399bc4f322656f12d63d4efe7fa
+  (census 691 -> 692, pushed 2725a47..643d70e),
+  OA DAILY LIFE, Names (capture pp. 312-313,
+  the Chapter 15 closer), header
+  rules/oa140names.h, prefix dme (zero
+  call-site dme\w*( collisions at 2725a47),
+  one gap flip (the Names box, single-line),
+  gap census now 222 closed / 13 open.
+  CHAPTER 15 BOXES DONE. Round type: the
+  daily-life doctrine round, single-pass pins
+  per the R679 provenance shift. Inlines:
+  18 = 2 consts (dmeMinimumLifelongNames 2,
+  dmeNameTypesCount 13) + 16 bools, no
+  tables. The walk: the western single name
+  with the legal complexity of changing it,
+  against the Oriental multiple names valid
+  by age and situation with the aliases;
+  the names dropped when a new name is
+  given; the secret name known only to the
+  gods with its magical power; the childhood
+  and adult names of coming of age; the
+  hereditary family name of the upper
+  classes; the clan or tribe name of the
+  barbarians; the place name of the common
+  people; the nickname of honor or ridicule;
+  the substitute name protecting the true
+  name from undesired activity; the artist
+  pen name and the school or master name;
+  the religious name of the new person; the
+  event names of deeds; the posthumous name
+  protecting the departed. Zero stumbles,
+  first rverify GREEN (double-run, 18
+  mutants, 0 missed; the canvas published
+  clean at 12,440 bytes on the first single
+  write; the /tmp scratch rule held). The
+  user's ./bn 769 detour (struck per the
+  R516 rule) caused no drift - it printed
+  the gate md5
+  1e78269f41747a0e3f71c766d9c3d797 exactly.
+  spec md5
+  3168506f9cfe4181399928221c193ce3, gate
+  md5 1e78269f41747a0e3f71c766d9c3d797,
+  canvas md5
+  781abda0bb76faa0deb13d84ae65abba.
+  NEXT - R770: Back matter (capture
+  pp. 313-314, the bibliography and the
+  closing page), prefix dmf (verify free at
+  the landing), audit "R770 OA Back matter
+  audit", include after rules/oa140names.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
