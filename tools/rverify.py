@@ -45,7 +45,9 @@ fails = []
 if SHA:
     files = [S['regtest'], S['gap_report'],
              S['seed_file'], S['header_file']] \
-        + S.get('caller_files', [])
+        + S.get('caller_files', []) \
+        + [fp['file']
+           for fp in S.get('file_patches', [])]
     for p in sorted(set(files)):
         os.makedirs(os.path.dirname(p) or '.',
                      exist_ok=True)
@@ -71,7 +73,12 @@ r2 = subprocess.run(
     [sys.executable,
      os.path.join(HERE, 'splice_engine.py'),
      SPEC_PATH], capture_output=True, text=True)
-n_patches = len(S['gap_flips']) + 4
+# 4 = seed, header, include, audit; the
+# R774 file patches count the same way
+# as gap flips (the applied/already
+# census covers them)
+n_patches = (len(S['gap_flips']) + 4
+             + len(S.get('file_patches', [])))
 ok1 = ('applied %d, already 0' % n_patches) in r1.stdout
 ok2 = ('applied 0, already %d' % n_patches) in r2.stdout
 print('DOUBLE-RUN: first %s, second %s'

@@ -593,6 +593,33 @@ else:
     applied.append('audit')
 writes.append((RT, rt))
 
+# (f) the file patches (the R774 tooling
+# extension): spec-declared extra-file
+# patches with gap-flip semantics - a
+# byte-exact 'from' anchor, one replace,
+# idempotent by 'to'-presence, and each
+# patch counted in the applied/already
+# census so the double-run gate covers
+# them exactly like a gap flip
+for fp in S.get('file_patches', []):
+    p = fp['file']
+    if not os.path.exists(p):
+        die('the file patch target is '
+            'missing: %s' % p)
+    txt = rd(p)
+    if fp['to'] in txt:
+        already.append('file: %s'
+                       % fp['note'])
+    else:
+        if fp['from'] not in txt:
+            die('the file patch anchor is '
+                'missing: %s' % fp['note'])
+        txt = txt.replace(fp['from'],
+                          fp['to'], 1)
+        writes.append((p, txt))
+        applied.append('file: %s'
+                       % fp['note'])
+
 # ---------- the idempotency gate (the R420 lesson) ----------
 
 if applied and already:

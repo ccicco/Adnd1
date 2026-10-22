@@ -24,6 +24,8 @@ HDR=$(python3 -c "import json,sys; print(json.load(open('$SPEC'))['header_file']
 SEED=$(python3 -c "import json,sys; print(json.load(open('$SPEC'))['seed_file'])")
 GR=$(python3 -c "import json,sys; print(json.load(open('$SPEC'))['gap_report'])")
 NFLIP=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('gap_flips',[])))")
+NFPATCH=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('file_patches',[])))")
+EXTRA=$(python3 -c "import json,sys; print(' '.join(fp['file'] for fp in json.load(open('$SPEC')).get('file_patches',[])))")
 
 echo "== rn R${RND}: spec $SPEC"
 echo "== header:  $HDR"
@@ -32,6 +34,9 @@ if [ "$NFLIP" -gt 0 ]; then
     echo "== flip round ($NFLIP flip(s)): $GR goes in the git add"
 else
     echo "== no-flip round: $GR NOT in the git add"
+fi
+if [ "$NFPATCH" -gt 0 ]; then
+    echo "== file-patch round ($NFPATCH file patch(es)): $EXTRA go in the git add"
 fi
 echo "== commit:  $CMSG"
 
@@ -49,6 +54,9 @@ python3 tools/splice_engine.py "$SPEC"
 git add "$SPEC" "$HDR" regtest.cpp "$SEED"
 if [ "$NFLIP" -gt 0 ]; then
     git add "$GR"
+fi
+if [ "$NFPATCH" -gt 0 ]; then
+    git add $EXTRA
 fi
 git commit -m "$CMSG"
 git push
