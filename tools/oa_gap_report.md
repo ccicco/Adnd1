@@ -201,9 +201,11 @@ description riding the same round.
     with their Comeliness adjustments (-8 through
     +5)
 
-- [ ] **Chapter 2: Character Classes and Races**
+- [x] **Chapter 2: Character Classes and Races**
   (capture pp. 15-60) - the ten classes and the
-  oriental races
+  oriental races -
+  R771: the chapter closes (the open-boxes sweep: all children already closed,
+  the parent flip missed at the opener)
   - [x] Class and Race Combinations prose (capture
     p. 16) -
     R617: the dgd combos riders - the U and number and
@@ -620,9 +622,11 @@ description riding the same round.
     1/1, 3/2, 2/1 and kensai 5/2 rates, the
     printed "and up" bands pinned as the -1 code
 
-- [ ] **Chapter 3: Families, Class, and Caste**
+- [x] **Chapter 3: Families, Class, and Caste**
   (capture pp. 60-69) - the birth, family and caste
-  system
+  system -
+  R771: the chapter closes (the open-boxes sweep: all children already closed,
+  the parent flip missed at the opener)
   - [x] Birth Rank prose and the caste doctrine
     (capture pp. 60-62) -
     R629: the dgp birth rank pins - the 2d10
@@ -1091,8 +1095,10 @@ description riding the same round.
     round (the table cross-checked between
     the passes)
 
-- [ ] **Chapter 8: Wu Jen Spells** (capture pp.
-  152-216) - the wu jen spell book
+- [x] **Chapter 8: Wu Jen Spells** (capture pp.
+  152-216) - the wu jen spell book -
+  R771: the chapter closes (the open-boxes sweep: all children already closed,
+  the parent flip missed at the opener)
   - [x] Table 66: Wu Jen Spells (capture p. 153) - the
     full spell list by level
     R669: the die WJT66 element grid - the
@@ -1261,8 +1267,10 @@ description riding the same round.
     the prose descriptions close in their
     own rounds
 
-- [ ] **Chapter 9: Combat** (capture pp. 216-235) -
-  the combat and martial arts system
+- [x] **Chapter 9: Combat** (capture pp. 216-235) -
+  the combat and martial arts system -
+  R771: the chapter closes (the open-boxes sweep: all children already closed,
+  the parent flip missed at the opener)
   - [x] Summary Of The Combat Sequence (capture
     p. 218) - R679: the dip combat sequence
     pins - the five resolution steps: the
@@ -1689,8 +1697,10 @@ description riding the same round.
     master; single-pass pins per the
     Chapter 9 provenance shift
 
-- [ ] **Chapter 10: Events and Encounters**
-  (capture pp. 235-251) - the event system
+- [x] **Chapter 10: Events and Encounters**
+  (capture pp. 235-251) - the event system -
+  R771: the chapter closes (the open-boxes sweep: all children already closed,
+  the parent flip missed at the opener)
   - [x] The Calendar (capture p. 236)
     - R696: the djj calendar pins - the
     Shou Lung emperor's calendar of
@@ -1920,9 +1930,11 @@ description riding the same round.
     the column bands; single-pass pins per
     the Chapter 9 provenance shift
 
-- [ ] **Chapter 11: Encounter Tables by Terrain
+- [x] **Chapter 11: Encounter Tables by Terrain
   Type** (capture pp. 251-252) - the terrain encounter
-  tables
+  tables -
+  R771: the chapter closes (the open-boxes sweep: all children already closed,
+  the parent flip missed at the opener)
   - [x] The terrain encounter tables (capture
     pp. 251-252) - the full terrain grid
     - R703: the djq terrain encounter table
@@ -1972,12 +1984,16 @@ description riding the same round.
     single-pass pins per the Chapter 9
     provenance shift
 
-- [ ] **Chapter 12: Monsters** (capture pp. 252-285)
+- [x] **Chapter 12: Monsters** (capture pp. 252-285) -
+  R771: the chapter closes (the open-boxes sweep: all children including the
+  Celestial Emperor closed here, the parent flip missed
+  at the opener)
   - the monster roster - per monster: the stat block
     and the description ride the same round
-  - [ ] The Celestial Emperor and the Celestial
+  - [x] The Celestial Emperor and the Celestial
     Bureaucracy (capture p. 253) - the spirit-world
     framing doctrine
+    - R771: the dnh celestial emperor pins - the Oriental mind organizing the world into a unified whole against the loose western collection; the Celestial Emperor heading the Celestial Bureaucracy, the government of the spirits; the spirit creatures under his command holding offices; the three duties of orders, punishments, and reports; the chasing lung making rain and reporting to the Ministry of Thunder who reports to the Emperor; the four characters of corrupt, disobedient, just, or incompetent; the annual examination and replacement; single-pass pins per the R679 provenance shift
   - [x] Bajang, Lesser Spirit (capture p. 253)
     - R705: the djs Bajang pins - the stat
     block (the very rare, the 1, the AC 2,
@@ -2864,8 +2880,10 @@ description riding the same round.
     single-pass
     pins per the Chapter 9 provenance shift
 
-- [ ] **Chapter 13: Treasure and Magical Items**
-  (capture pp. 285-301) - the treasure system
+- [x] **Chapter 13: Treasure and Magical Items**
+  (capture pp. 285-301) - the treasure system -
+  R771: the chapter closes (the open-boxes sweep: all children already closed,
+  the parent flip missed at the opener)
   - [x] Magical Items Usable by Character Class
     (capture p. 285)
     - R733: the dku class usage pins - the

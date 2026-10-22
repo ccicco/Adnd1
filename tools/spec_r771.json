@@ -1,0 +1,249 @@
+{
+ "round": 771,
+ "title": "OA OPEN BOXES SWEEP - the Celestial Emperor and the nine closes",
+ "prefix": "dnh",
+ "header_file": "rules/oa142celestial.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 693,
+ "inline_count": 9,
+ "audit_label": "R771 OA open boxes audit",
+ "audit_comment": "OA round one hundred fifty-eight (capture p. 253): the open-boxes sweep - the Celestial Emperor and the Celestial Bureaucracy spirit-world framing doctrine, with the eight missed chapter parents of Chapters 2, 3, 8, 9, 10, 11, 12, and 13 closed; the Weapons prose box stays open for its own arc, single-pass pins per the R679 provenance shift",
+ "banner": {
+  "title": "OA OPEN BOXES SWEEP - THE CELESTIAL EMPEROR AND THE CELESTIAL BUREAUCRACY, printed capture p. 253 - the spirit-world framing doctrine",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift (the p. 253 text re-captured at p. 117 of the compressed-3 re-upload)",
+  "sentinel": "the gap census after this round: 234 closed, 1 open - the Celestial Emperor box and the eight missed parents of Chapters 2, 3, 8, 9, 10, 11, 12, 13 flip (census 693 -> 694); NEXT - R772: the Weapons prose arc (capture pp. 84-93, the weapon descriptions, re-captured at pp. 42-51 of the compressed-3 re-upload) - the last open box, split into per-weapon rounds; prefix dnj (verify free at the landing), audit \"R772 OA Weapons prose audit\", include after rules/oa142celestial.h"
+ },
+ "consts": [
+  {
+   "name": "dnhBureaucracyDutiesCount",
+   "value": 3,
+   "comment": "the bureaucracy duties count - the spirit officials receive and carry out orders, punish the wicked, and file reports of their activities, three duties (print capture p. 253)"
+  },
+  {
+   "name": "dnhSpiritOfficialCharacterCount",
+   "value": 4,
+   "comment": "the spirit official character count - like the bureaucrats of the real world the spirit officials can be corrupt, disobedient, just, or incompetent, four characters (print capture p. 253)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnhUnifiedWholeDoctrine",
+   "value": 1,
+   "comment": "the unified whole doctrine - unlike the west viewing non-human creatures as a loose collection with no unity, the Oriental mind has organized the world into a unified whole (print capture p. 253)"
+  },
+  {
+   "name": "dnhEmperorHeadsBureaucracy",
+   "value": 1,
+   "comment": "the emperor heads bureaucracy - the Celestial Emperor, a powerful being, heads the Celestial Bureaucracy, a type of government of the spirits (print capture p. 253)"
+  },
+  {
+   "name": "dnhSpiritsHoldOffices",
+   "value": 1,
+   "comment": "the spirits hold offices - many spirit creatures come under his command and hold offices or positions within the Celestial Bureaucracy (print capture p. 253)"
+  },
+  {
+   "name": "dnhChasingLungRainDuty",
+   "value": 1,
+   "comment": "the chasing lung rain duty - the chasing lung (river dragons) given the duty of making rain (print capture p. 253)"
+  },
+  {
+   "name": "dnhMinistryOfThunderChain",
+   "value": 1,
+   "comment": "the ministry of thunder chain - the chasing lung report to the Ministry of Thunder, who in turn reports to the Celestial Emperor (print capture p. 253)"
+  },
+  {
+   "name": "dnhOfficialsLikeRealBureaucrats",
+   "value": 1,
+   "comment": "the officials like real bureaucrats - the spirit officials can be corrupt, disobedient, just, or incompetent, like the bureaucrats of the real world (print capture p. 253)"
+  },
+  {
+   "name": "dnhAnnualExamination",
+   "value": 1,
+   "comment": "the annual examination - the spirit officials can be replaced, each year their activities and behavior examined by their superiors (print capture p. 253)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the unified whole example",
+   "expr": "m['dnhUnifiedWholeDoctrine']() != 1 or m['dnhEmperorHeadsBureaucracy']() != 1"
+  },
+  {
+   "note": "the offices example",
+   "expr": "m['dnhBureaucracyDutiesCount']() != 3 or m['dnhSpiritsHoldOffices']() != 1"
+  },
+  {
+   "note": "the chain example",
+   "expr": "m['dnhChasingLungRainDuty']() != 1 or m['dnhMinistryOfThunderChain']() != 1"
+  },
+  {
+   "note": "the character example",
+   "expr": "m['dnhSpiritOfficialCharacterCount']() != 4 or m['dnhOfficialsLikeRealBureaucrats']() != 1"
+  },
+  {
+   "note": "the examination example",
+   "expr": "m['dnhAnnualExamination']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the unified whole": [
+   {
+    "kind": "bool",
+    "name": "dnhUnifiedWholeDoctrine"
+   },
+   {
+    "kind": "const",
+    "name": "dnhBureaucracyDutiesCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnhEmperorHeadsBureaucracy"
+   },
+   {
+    "kind": "bool",
+    "name": "dnhSpiritsHoldOffices"
+   }
+  ],
+  "the ministry chain": [
+   {
+    "kind": "bool",
+    "name": "dnhChasingLungRainDuty"
+   },
+   {
+    "kind": "bool",
+    "name": "dnhMinistryOfThunderChain"
+   }
+  ],
+  "the official character": [
+   {
+    "kind": "const",
+    "name": "dnhSpiritOfficialCharacterCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dnhOfficialsLikeRealBureaucrats"
+   },
+   {
+    "kind": "bool",
+    "name": "dnhAnnualExamination"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Celestial Emperor box",
+   "from": "  - [ ] The Celestial Emperor and the Celestial\n    Bureaucracy (capture p. 253) - the spirit-world\n    framing doctrine",
+   "to": "  - [x] The Celestial Emperor and the Celestial\n    Bureaucracy (capture p. 253) - the spirit-world\n    framing doctrine\n    - R771: the dnh celestial emperor pins - the Oriental mind organizing the world into a unified whole against the loose western collection; the Celestial Emperor heading the Celestial Bureaucracy, the government of the spirits; the spirit creatures under his command holding offices; the three duties of orders, punishments, and reports; the chasing lung making rain and reporting to the Ministry of Thunder who reports to the Emperor; the four characters of corrupt, disobedient, just, or incompetent; the annual examination and replacement; single-pass pins per the R679 provenance shift"
+  },
+  {
+   "note": "the Chapter 2 parent closes",
+   "from": "- [ ] **Chapter 2: Character Classes and Races**\n  (capture pp. 15-60) - the ten classes and the\n  oriental races",
+   "to": "- [x] **Chapter 2: Character Classes and Races**\n  (capture pp. 15-60) - the ten classes and the\n  oriental races -\n  R771: the chapter closes (the open-boxes sweep: all children already closed,\n  the parent flip missed at the opener)"
+  },
+  {
+   "note": "the Chapter 3 parent closes",
+   "from": "- [ ] **Chapter 3: Families, Class, and Caste**\n  (capture pp. 60-69) - the birth, family and caste\n  system",
+   "to": "- [x] **Chapter 3: Families, Class, and Caste**\n  (capture pp. 60-69) - the birth, family and caste\n  system -\n  R771: the chapter closes (the open-boxes sweep: all children already closed,\n  the parent flip missed at the opener)"
+  },
+  {
+   "note": "the Chapter 8 parent closes",
+   "from": "- [ ] **Chapter 8: Wu Jen Spells** (capture pp.\n  152-216) - the wu jen spell book",
+   "to": "- [x] **Chapter 8: Wu Jen Spells** (capture pp.\n  152-216) - the wu jen spell book -\n  R771: the chapter closes (the open-boxes sweep: all children already closed,\n  the parent flip missed at the opener)"
+  },
+  {
+   "note": "the Chapter 9 parent closes",
+   "from": "- [ ] **Chapter 9: Combat** (capture pp. 216-235) -\n  the combat and martial arts system",
+   "to": "- [x] **Chapter 9: Combat** (capture pp. 216-235) -\n  the combat and martial arts system -\n  R771: the chapter closes (the open-boxes sweep: all children already closed,\n  the parent flip missed at the opener)"
+  },
+  {
+   "note": "the Chapter 10 parent closes",
+   "from": "- [ ] **Chapter 10: Events and Encounters**\n  (capture pp. 235-251) - the event system",
+   "to": "- [x] **Chapter 10: Events and Encounters**\n  (capture pp. 235-251) - the event system -\n  R771: the chapter closes (the open-boxes sweep: all children already closed,\n  the parent flip missed at the opener)"
+  },
+  {
+   "note": "the Chapter 11 parent closes",
+   "from": "- [ ] **Chapter 11: Encounter Tables by Terrain\n  Type** (capture pp. 251-252) - the terrain encounter\n  tables",
+   "to": "- [x] **Chapter 11: Encounter Tables by Terrain\n  Type** (capture pp. 251-252) - the terrain encounter\n  tables -\n  R771: the chapter closes (the open-boxes sweep: all children already closed,\n  the parent flip missed at the opener)"
+  },
+  {
+   "note": "the Chapter 12 parent closes",
+   "from": "- [ ] **Chapter 12: Monsters** (capture pp. 252-285)",
+   "to": "- [x] **Chapter 12: Monsters** (capture pp. 252-285) -\n  R771: the chapter closes (the open-boxes sweep: all children including the\n  Celestial Emperor closed here, the parent flip missed\n  at the opener)"
+  },
+  {
+   "note": "the Chapter 13 parent closes",
+   "from": "- [ ] **Chapter 13: Treasure and Magical Items**\n  (capture pp. 285-301) - the treasure system",
+   "to": "- [x] **Chapter 13: Treasure and Magical Items**\n  (capture pp. 285-301) - the treasure system -\n  R771: the chapter closes (the open-boxes sweep: all children already closed,\n  the parent flip missed at the opener)"
+  }
+ ],
+ "gap_census": {
+  "closed": 234,
+  "open": 1
+ },
+ "include_comment": "the OA Celestial Emperor pins",
+ "include_after": "#include \"rules/oa141backmatter.h\"  // R770: the OA Back matter pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R770 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R770 LANDED 2026-10-22: commit",
+  "  b4fd255a7cc7d48d44f7c4b5a71117586fd9eba9",
+  "  (census 692 -> 693, pushed 643d70e..b4fd255),",
+  "  OA BACK MATTER, the bibliography (capture",
+  "  pp. 313-314, the book's closing page),",
+  "  header rules/oa141backmatter.h, prefix dmf",
+  "  (fully free at 643d70e - zero substring",
+  "  hits, zero call-site dmf\\w*( collisions),",
+  "  THREE gap flips (the Back matter box; the",
+  "  missed Chapter 14 and 15 parent boxes",
+  "  closed with chapter-closes notes listing",
+  "  their children R760-R765 and R766-R769 -",
+  "  the R613b missed-parent lesson CAUGHT",
+  "  PRE-LANDING this time, the parents missed",
+  "  at the R760 and R766 openers), gap census",
+  "  now 225 closed / 10 open. THE BOOK'S MAIN",
+  "  ARC CLOSES. Round type: the back-matter",
+  "  doctrine round, single-pass pins per the",
+  "  R679 provenance shift. Inlines: 18 = 2",
+  "  consts (dmfHearnTitlesCount 4,",
+  "  dmfTurnbullSamuraiTitlesCount 2) + 16",
+  "  bools, no tables. The walk: the",
+  "  bibliography of the listed sources with",
+  "  the plus-marked good-general-background",
+  "  rule; the samurai warfare shelf of Sun",
+  "  Tzu, Musashi, the Turnbull armies, Ratti",
+  "  and Westbrook, and the Daidoji Yuzan",
+  "  primer; the ninja shelf of Hatsumi and",
+  "  Kim; the Hearn Japan titles; the folklore",
+  "  shelves of the Chinese mythology and the",
+  "  Japanese and Chinese tale collections; the",
+  "  architecture, arms and armor, daily life,",
+  "  religion, and Chinese classic and",
+  "  symbolism shelves. Zero stumbles, first",
+  "  rverify GREEN (double-run, 18 mutants, 0",
+  "  missed; 3 flips = 7 patches, the double-run",
+  "  applied 7/already 7 clean). The user's",
+  "  ./bn 770 detour (struck per the R516 rule)",
+  "  caused no drift - it printed the gate md5",
+  "  13fd0244af4b3b1e82692a7239ae6bb9 exactly.",
+  "  spec md5 0a3b637c4ba9f24116b9c2208ce7e886,",
+  "  gate md5",
+  "  13fd0244af4b3b1e82692a7239ae6bb9, canvas",
+  "  md5 21f3e3d160e6c2266c4b5b6ded9717bd.",
+  "  NEXT - R771: the open-boxes sweep - the",
+  "  ten remaining: the Chapter 2, 3, 8, 9,",
+  "  10, 11, 12, and 13 parents plus the",
+  "  Weapons prose and the Celestial Emperor",
+  "  items; audit what each holds before",
+  "  authoring, prefix dng (verify free at the",
+  "  landing), audit \"R771 OA open boxes",
+  "  audit\", include after",
+  "  rules/oa141backmatter.h."
+ ]
+}

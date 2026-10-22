@@ -18865,6 +18865,59 @@ when both halves land.
   closing page), prefix dmf (verify free at
   the landing), audit "R770 OA Back matter
   audit", include after rules/oa140names.h.
+- R770 LANDED 2026-10-22: commit
+  b4fd255a7cc7d48d44f7c4b5a71117586fd9eba9
+  (census 692 -> 693, pushed 643d70e..b4fd255),
+  OA BACK MATTER, the bibliography (capture
+  pp. 313-314, the book's closing page),
+  header rules/oa141backmatter.h, prefix dmf
+  (fully free at 643d70e - zero substring
+  hits, zero call-site dmf\w*( collisions),
+  THREE gap flips (the Back matter box; the
+  missed Chapter 14 and 15 parent boxes
+  closed with chapter-closes notes listing
+  their children R760-R765 and R766-R769 -
+  the R613b missed-parent lesson CAUGHT
+  PRE-LANDING this time, the parents missed
+  at the R760 and R766 openers), gap census
+  now 225 closed / 10 open. THE BOOK'S MAIN
+  ARC CLOSES. Round type: the back-matter
+  doctrine round, single-pass pins per the
+  R679 provenance shift. Inlines: 18 = 2
+  consts (dmfHearnTitlesCount 4,
+  dmfTurnbullSamuraiTitlesCount 2) + 16
+  bools, no tables. The walk: the
+  bibliography of the listed sources with
+  the plus-marked good-general-background
+  rule; the samurai warfare shelf of Sun
+  Tzu, Musashi, the Turnbull armies, Ratti
+  and Westbrook, and the Daidoji Yuzan
+  primer; the ninja shelf of Hatsumi and
+  Kim; the Hearn Japan titles; the folklore
+  shelves of the Chinese mythology and the
+  Japanese and Chinese tale collections; the
+  architecture, arms and armor, daily life,
+  religion, and Chinese classic and
+  symbolism shelves. Zero stumbles, first
+  rverify GREEN (double-run, 18 mutants, 0
+  missed; 3 flips = 7 patches, the double-run
+  applied 7/already 7 clean). The user's
+  ./bn 770 detour (struck per the R516 rule)
+  caused no drift - it printed the gate md5
+  13fd0244af4b3b1e82692a7239ae6bb9 exactly.
+  spec md5 0a3b637c4ba9f24116b9c2208ce7e886,
+  gate md5
+  13fd0244af4b3b1e82692a7239ae6bb9, canvas
+  md5 21f3e3d160e6c2266c4b5b6ded9717bd.
+  NEXT - R771: the open-boxes sweep - the
+  ten remaining: the Chapter 2, 3, 8, 9,
+  10, 11, 12, and 13 parents plus the
+  Weapons prose and the Celestial Emperor
+  items; audit what each holds before
+  authoring, prefix dng (verify free at the
+  landing), audit "R771 OA open boxes
+  audit", include after
+  rules/oa141backmatter.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
