@@ -3391,7 +3391,8 @@ description riding the same round.
 - [ ] **Chapter 15: Daily Life in Kara-Tur**
   (capture pp. 305-313) - the daily-life chapter
   (advisory prose - closes on doctrine pins)
-  - [ ] Food (capture p. 307)
+  - [x] Food (capture p. 307)
+    - R766: the dmb food pins - the rice constant of the civilized lands served with virtually every meal, the eaten-rice greeting of Shou Lung and Tu Lung; the seven uses of rice from gruel to sake, the stuff of life; the millet, sorghum, and barley poor man food; the four bean varieties stewed or mashed into paste; the soy sauce and tofu preparations; the vegetables next to rice in importance, rarely raw; the garden variety of fruits and nuts; the pickled preparations; the water products of those near sea, river, or lake - the hundreds of fish varieties, the deadly pufferfish delicacy, the kelp, the sea fully used; single-pass pins per the R679 provenance shift
   - [ ] Buildings (capture pp. 308-312)
   - [ ] Manners (capture p. 312)
   - [ ] Names (capture pp. 312-313)

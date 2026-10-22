@@ -1,0 +1,319 @@
+{
+ "round": 766,
+ "title": "OA DAILY LIFE - Food: the rice constant and the food of Kara-Tur",
+ "prefix": "dmb",
+ "header_file": "rules/oa137food.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 688,
+ "inline_count": 20,
+ "audit_label": "R766 OA Daily Life Food audit",
+ "audit_comment": "OA round one hundred fifty-three (capture p. 307): the Chapter 15 daily-life opener, Food - the rice constant, the eaten-rice greeting, the poor man millet, the soy sauce and tofu, the garden vegetables, the water products, single-pass pins per the R679 provenance shift",
+ "banner": {
+  "title": "OA DAILY LIFE - FOOD, printed capture p. 307 - the rice constant and the food of Kara-Tur",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 219 closed, 16 open - the Food box flips (census 688 -> 689); NEXT - R767: Buildings (capture pp. 308-312), prefix dmc (verify free at the landing), audit \"R767 OA Daily Life Buildings audit\", include after rules/oa137food.h"
+ },
+ "consts": [
+  {
+   "name": "dmbRiceUsesCount",
+   "value": 7,
+   "comment": "the rice uses count - rice used in a multitude of ways: boiled main course, gruel, leftovers mixed with meats and vegetables, vinegared and served cold, pounded into rice-cakes, ground into flour for buns or noodles, mashed and fermented into sake, seven uses (print capture p. 307)"
+  },
+  {
+   "name": "dmbBeanVarietiesCount",
+   "value": 4,
+   "comment": "the bean varieties count - soybeans, red beans, black beans, and brown beans, four varieties (print capture p. 307)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dmbRiceTheConstant",
+   "value": 1,
+   "comment": "the rice constant - rice the one constant throughout the civilized lands of Kara-Tur, everyone eats rice and it is served with virtually every meal (print capture p. 307)"
+  },
+  {
+   "name": "dmbEatenRiceGreeting",
+   "value": 1,
+   "comment": "the eaten rice greeting - in Shou Lung and Tu Lung people greet each other not with the friendly Hello of the west but with Have you eaten rice today (print capture p. 307)"
+  },
+  {
+   "name": "dmbRiceStuffOfLife",
+   "value": 1,
+   "comment": "the rice stuff of life - like wheat in the west, rice is the stuff of life in Kara-Tur (print capture p. 307)"
+  },
+  {
+   "name": "dmbPoorMansSubstitutes",
+   "value": 1,
+   "comment": "the poor man substitutes - when rice is unavailable or too valuable, yellow millet, sorghum, or barley substituted, the poor man food, pounded into cakes or cooked into a thick gruel (print capture p. 307)"
+  },
+  {
+   "name": "dmbBeansWithRice",
+   "value": 1,
+   "comment": "the beans with rice - beans used in addition to or in place of rice, stewed or mashed into a paste (print capture p. 307)"
+  },
+  {
+   "name": "dmbBeanPasteVariety",
+   "value": 1,
+   "comment": "the bean paste variety - the paste fermented, flavored, dried, or sweetened, used as a dip, stuffed into buns, formed into candies, or used as a sauce (print capture p. 307)"
+  },
+  {
+   "name": "dmbSoyPreparedFoods",
+   "value": 1,
+   "comment": "the soy prepared foods - from soybeans come the unusual prepared foods soy sauce and tofu (print capture p. 307)"
+  },
+  {
+   "name": "dmbTofuFromSoyMilk",
+   "value": 1,
+   "comment": "the tofu from soy milk - tofu prepared from the juice or milk of mashed soybeans, curdled and pressed into semi-soft cakes, stewed, dried, or deep-fried (print capture p. 307)"
+  },
+  {
+   "name": "dmbSoySauceProcess",
+   "value": 1,
+   "comment": "the soy sauce process - soy sauce prepared through mashing, fermenting, soaking, and rinsing, a thin salty sauce used as a flavoring for nearly anything (print capture p. 307)"
+  },
+  {
+   "name": "dmbVegetablesNextToRice",
+   "value": 1,
+   "comment": "the vegetables next to rice - next to rice in importance come vegetables of many types and flavors, grown in family garden plots, stewed, fried, pickled, and steamed (print capture p. 307)"
+  },
+  {
+   "name": "dmbVegetablesRarelyRaw",
+   "value": 1,
+   "comment": "the vegetables rarely raw - they are almost never eaten raw except as garnishes (print capture p. 307)"
+  },
+  {
+   "name": "dmbGardenVariety",
+   "value": 1,
+   "comment": "the garden variety - along with the vegetables an assortment of fruits, nuts, grasses, and flowers, from bamboo shoots and water chestnut roots to persimmons, lychees, and many others (print capture p. 307)"
+  },
+  {
+   "name": "dmbPickledPreparations",
+   "value": 1,
+   "comment": "the pickled preparations - pickled greens or radishes often with chilies, pickled plums with virtually anything pickled, dried flower buds, dried chestnuts, and pastes (print capture p. 307)"
+  },
+  {
+   "name": "dmbWaterProductsImportant",
+   "value": 1,
+   "comment": "the water products important - the products of the water important to the Oriental diet, consumed only by those living near the sea, a river, or lake (print capture p. 307)"
+  },
+  {
+   "name": "dmbFishHundredsOfVarieties",
+   "value": 1,
+   "comment": "the fish hundreds of varieties - hundreds of varieties of fish eaten, taken fresh from the water, from the commonplace to the exotic (print capture p. 307)"
+  },
+  {
+   "name": "dmbDelicaciesAndDangers",
+   "value": 1,
+   "comment": "the delicacies and dangers - the desired delicacies include the pufferfish (deadly poisonous if incorrectly prepared), sea cucumber, jellyfish, octopus, eels, shrimp, and fish maw (print capture p. 307)"
+  },
+  {
+   "name": "dmbKelpHarvested",
+   "value": 1,
+   "comment": "the kelp harvested - various types of kelp harvested from the ocean to be dried and used in soups and as flavorings (print capture p. 307)"
+  },
+  {
+   "name": "dmbSeaFullyUsed",
+   "value": 1,
+   "comment": "the sea fully used - virtually anything that comes from the sea is used in some way (print capture p. 307)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the rice example",
+   "expr": "m['dmbRiceUsesCount']() != 7 or m['dmbRiceTheConstant']() != 1 or m['dmbEatenRiceGreeting']() != 1"
+  },
+  {
+   "note": "the life example",
+   "expr": "m['dmbRiceStuffOfLife']() != 1 or m['dmbPoorMansSubstitutes']() != 1"
+  },
+  {
+   "note": "the beans example",
+   "expr": "m['dmbBeanVarietiesCount']() != 4 or m['dmbBeansWithRice']() != 1 or m['dmbBeanPasteVariety']() != 1"
+  },
+  {
+   "note": "the soy example",
+   "expr": "m['dmbSoyPreparedFoods']() != 1 or m['dmbTofuFromSoyMilk']() != 1 or m['dmbSoySauceProcess']() != 1"
+  },
+  {
+   "note": "the garden example",
+   "expr": "m['dmbVegetablesNextToRice']() != 1 or m['dmbVegetablesRarelyRaw']() != 1 or m['dmbGardenVariety']() != 1"
+  },
+  {
+   "note": "the pickles example",
+   "expr": "m['dmbPickledPreparations']() != 1"
+  },
+  {
+   "note": "the water example",
+   "expr": "m['dmbWaterProductsImportant']() != 1 or m['dmbFishHundredsOfVarieties']() != 1 or m['dmbDelicaciesAndDangers']() != 1"
+  },
+  {
+   "note": "the sea example",
+   "expr": "m['dmbKelpHarvested']() != 1 or m['dmbSeaFullyUsed']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the rice constant": [
+   {
+    "kind": "const",
+    "name": "dmbRiceUsesCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbRiceTheConstant"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbEatenRiceGreeting"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbRiceStuffOfLife"
+   }
+  ],
+  "the poor man food": [
+   {
+    "kind": "bool",
+    "name": "dmbPoorMansSubstitutes"
+   },
+   {
+    "kind": "const",
+    "name": "dmbBeanVarietiesCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbBeansWithRice"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbBeanPasteVariety"
+   }
+  ],
+  "the soy preparations": [
+   {
+    "kind": "bool",
+    "name": "dmbSoyPreparedFoods"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbTofuFromSoyMilk"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbSoySauceProcess"
+   }
+  ],
+  "the garden": [
+   {
+    "kind": "bool",
+    "name": "dmbVegetablesNextToRice"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbVegetablesRarelyRaw"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbGardenVariety"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbPickledPreparations"
+   }
+  ],
+  "the water products": [
+   {
+    "kind": "bool",
+    "name": "dmbWaterProductsImportant"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbFishHundredsOfVarieties"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbDelicaciesAndDangers"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbKelpHarvested"
+   },
+   {
+    "kind": "bool",
+    "name": "dmbSeaFullyUsed"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Food box",
+   "from": "  - [ ] Food (capture p. 307)",
+   "to": "  - [x] Food (capture p. 307)\n    - R766: the dmb food pins - the rice constant of the civilized lands served with virtually every meal, the eaten-rice greeting of Shou Lung and Tu Lung; the seven uses of rice from gruel to sake, the stuff of life; the millet, sorghum, and barley poor man food; the four bean varieties stewed or mashed into paste; the soy sauce and tofu preparations; the vegetables next to rice in importance, rarely raw; the garden variety of fruits and nuts; the pickled preparations; the water products of those near sea, river, or lake - the hundreds of fish varieties, the deadly pufferfish delicacy, the kelp, the sea fully used; single-pass pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 219,
+  "open": 16
+ },
+ "include_comment": "the OA Daily Life Food pins",
+ "include_after": "#include \"rules/oa136gajin.h\"  // R765: the OA Gajin pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R765 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R765 LANDED 2026-10-22: commit",
+  "  2343f9ba170b9d254dfc53e89082cdfbd774c99d",
+  "  (census 687 -> 688, pushed 345ec5c..2343f9b),",
+  "  OA SETTING, the gajin doctrine (capture",
+  "  p. 304, the text cutting off mid-sentence",
+  "  into p. 305 - the pins cover only what",
+  "  the p. 304 capture holds), header",
+  "  rules/oa136gajin.h, prefix dma (zero",
+  "  call-site dma\\w*( collisions at 345ec5c),",
+  "  one gap flip (the Gajin box, two-line), gap",
+  "  census now 218 closed / 17 open. Round",
+  "  type: the Chapter 14 setting-doctrine",
+  "  round, single-pass pins per the R679",
+  "  provenance shift. Inlines: 12 = 2 consts",
+  "  (dmaStandardClassCount 4, the fighter/",
+  "  magic user/cleric/thief classes;",
+  "  dmaPeculiarTraitsCount 2) + 10 bools, no",
+  "  tables. The walk: the outside classes",
+  "  introduced into the Oriental lands, very",
+  "  different from the four standard classes;",
+  "  the insular and closed lands avoiding",
+  "  contact when possible; the infrequent and",
+  "  carefully controlled trade; the sea lanes",
+  "  and caravan routes disappearing into",
+  "  bandit or crueler dangers; the two",
+  "  peculiar traits of the separation; the",
+  "  lack of curiosity about the rest of the",
+  "  world; the outside world filled with rude",
+  "  and hostile barbarians; the gajin name;",
+  "  the gajin not dealt with. Zero stumbles,",
+  "  first rverify GREEN (double-run, 12",
+  "  mutants, 0 missed; the canvas published",
+  "  clean at 8,772 bytes on the first single",
+  "  write). The user's ./bn 765 detour",
+  "  (struck per the R516 rule) caused no",
+  "  drift - it printed the gate md5",
+  "  c9afe6fe1cccf7f33bf82ad48098f533",
+  "  exactly and the spec landed byte-exact.",
+  "  spec md5",
+  "  2f5155b6cd0e373f3b06cacc2ca412e8, gate",
+  "  md5 c9afe6fe1cccf7f33bf82ad48098f533,",
+  "  canvas md5",
+  "  64902b5d7dbf2ebccdd2841b7997fc7c.",
+  "  NEXT - R766: Food (capture p. 307, the",
+  "  Chapter 15 daily-life opener), prefix dmb",
+  "  (verify free at the landing), audit \"R766",
+  "  OA Daily Life Food audit\", include",
+  "  after rules/oa136gajin.h."
+ ]
+}

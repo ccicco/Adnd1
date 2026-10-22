@@ -18587,6 +18587,54 @@ when both halves land.
   prefix dma (verify free at the landing),
   audit "R765 OA Gajin audit", include
   after rules/oa135kozakura.h.
+- R765 LANDED 2026-10-22: commit
+  2343f9ba170b9d254dfc53e89082cdfbd774c99d
+  (census 687 -> 688, pushed 345ec5c..2343f9b),
+  OA SETTING, the gajin doctrine (capture
+  p. 304, the text cutting off mid-sentence
+  into p. 305 - the pins cover only what
+  the p. 304 capture holds), header
+  rules/oa136gajin.h, prefix dma (zero
+  call-site dma\w*( collisions at 345ec5c),
+  one gap flip (the Gajin box, two-line), gap
+  census now 218 closed / 17 open. Round
+  type: the Chapter 14 setting-doctrine
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 12 = 2 consts
+  (dmaStandardClassCount 4, the fighter/
+  magic user/cleric/thief classes;
+  dmaPeculiarTraitsCount 2) + 10 bools, no
+  tables. The walk: the outside classes
+  introduced into the Oriental lands, very
+  different from the four standard classes;
+  the insular and closed lands avoiding
+  contact when possible; the infrequent and
+  carefully controlled trade; the sea lanes
+  and caravan routes disappearing into
+  bandit or crueler dangers; the two
+  peculiar traits of the separation; the
+  lack of curiosity about the rest of the
+  world; the outside world filled with rude
+  and hostile barbarians; the gajin name;
+  the gajin not dealt with. Zero stumbles,
+  first rverify GREEN (double-run, 12
+  mutants, 0 missed; the canvas published
+  clean at 8,772 bytes on the first single
+  write). The user's ./bn 765 detour
+  (struck per the R516 rule) caused no
+  drift - it printed the gate md5
+  c9afe6fe1cccf7f33bf82ad48098f533
+  exactly and the spec landed byte-exact.
+  spec md5
+  2f5155b6cd0e373f3b06cacc2ca412e8, gate
+  md5 c9afe6fe1cccf7f33bf82ad48098f533,
+  canvas md5
+  64902b5d7dbf2ebccdd2841b7997fc7c.
+  NEXT - R766: Food (capture p. 307, the
+  Chapter 15 daily-life opener), prefix dmb
+  (verify free at the landing), audit "R766
+  OA Daily Life Food audit", include
+  after rules/oa136gajin.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
