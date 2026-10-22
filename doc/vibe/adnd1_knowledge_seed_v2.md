@@ -18031,6 +18031,47 @@ when both halves land.
   at the landing), audit "R754 OA Table 83
   missile audit", include after
   rules/oa124table82.h.
+- R754 LANDED 2026-10-22: commit
+  845fca45a2b64ed0ad1ae6c3e4573bb529e641fd
+  (census 676 -> 677, pushed 3c6a44d..845fca4),
+  OA TREASURE, Table 83: Missile Class
+  (capture p. 293), header
+  rules/oa125table83.h, prefix dlp
+  (verified free at 3c6a44d), one gap flip
+  (the Table 83 box, single-line), gap
+  census now 207 closed / 28 open. Round
+  type: the Chapter 13 d100 band grid
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 7 = 1 const +
+  3 bools + 3 table cols; one table
+  dlpMissileClass[12]: the twelve d100
+  bands (the armor piercer arrow 01-10
+  2-12, the frog crotch arrow 11-20 2-8,
+  the humming bulb arrow 21-25 2-5, the
+  leaf head arrow 26-40 2-12, the normal
+  arrow 41-60 3-24, the throwing axe
+  61-70, the blowpipe dart 71 2-8, the
+  thrown dart 72 3-12, the javelin 73-77,
+  the quarrel 78-90 2-24, the sling and
+  pellet bow bullets 91-98 2-20, the
+  uchi-ne 99-100), the damage ranges in
+  the code map, the arrow stretch, the
+  single-roll bands, and the uchi-ne tail
+  as bools. Count const derived from the
+  data (the R739 lesson) and the genuine-0
+  census asserted in the generator (the
+  R745 lesson), verified 12/12/12 at the
+  landing. Zero stumbles, first rverify
+  GREEN. Battery 40 mutants, 0 missed.
+  spec md5 b8de9985636b420e84a45b8eb6d96e
+  eb, gate md5 db53d2af3b639afde3a434f208bb
+  9f33, canvas md5 6d4c8387953545a1f9b02f
+  954dab156e. NEXT - R755: Table 84:
+  Martial Arts Class (capture p. 293),
+  prefix dlq (verify free at the landing),
+  audit "R755 OA Table 84 martial arts
+  audit", include after
+  rules/oa125table83.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

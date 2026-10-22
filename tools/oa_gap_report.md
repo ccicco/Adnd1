@@ -3206,7 +3206,17 @@ description riding the same round.
     pellet bow bullets 91-98 (2-20); the
     uchi-ne 99-100; single-pass pins per
     the R679 provenance shift
-  - [ ] Table 84: Martial Arts Class (capture p. 293)
+  - [x] Table 84: Martial Arts Class (capture p. 293)
+    - R755: the dlq Table 84 pins - the
+    twelve d100 martial arts bands: the
+    chain 01-05; the fang 06-10; the
+    gunsen 11-20; the jitte 21-30; the
+    kau sin ke 31-35; the kiseru 36-40;
+    the nunchaku 41-55; the sai 56-70; the
+    sang kauw 71-75; the siangkam 76-80;
+    the three-piece-rod 81-90; the tui-fa
+    91-100; single-pass pins per the
+    R679 provenance shift
   - [ ] Table 85: Ninja Class (capture p. 293)
   - [ ] Explanation of Weapon Properties (capture
     p. 294)

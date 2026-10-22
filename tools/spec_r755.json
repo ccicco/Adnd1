@@ -1,0 +1,245 @@
+{
+ "round": 755,
+ "title": "OA TREASURE - Table 84: Martial Arts Class: the d100 martial arts type grid",
+ "prefix": "dlq",
+ "header_file": "rules/oa126table84.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 677,
+ "inline_count": 9,
+ "audit_label": "R755 OA Table 84 martial arts audit",
+ "audit_comment": "OA round one hundred forty-two (capture p. 293): the Table 84 Martial Arts Class - the twelve d100 bands of the martial arts weapon types, the chain through the tui-fa, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE 84, MARTIAL ARTS CLASS, printed capture p. 293 - the martial arts grid round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 208 closed, 27 open - the Table 84 box flips (census 677 -> 678); NEXT - R756: Table 85: Ninja Class (capture p. 293), prefix dlr (verify free at the landing), audit \"R756 OA Table 85 ninja audit\", include after rules/oa126table84.h"
+ },
+ "consts": [
+  {
+   "name": "dlqMartialArtsRowCount",
+   "value": 12,
+   "comment": "the martial arts row count - the twelve d100 bands of the Table 84 martial arts type grid (print capture p. 293)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlqChainToFangHead",
+   "value": 1,
+   "comment": "the chain and fang head bands - the 01-10 opening stretch, the chain 01-05 and the fang 06-10 (print capture p. 293)"
+  },
+  {
+   "name": "dlqNunchakuBand",
+   "value": 1,
+   "comment": "the nunchaku band - the 41-55, the widest mid-grid band (print capture p. 293)"
+  },
+  {
+   "name": "dlqSaiBand",
+   "value": 1,
+   "comment": "the sai band - the 56-70 (print capture p. 293)"
+  },
+  {
+   "name": "dlqThreePieceRodBand",
+   "value": 1,
+   "comment": "the three-piece-rod band - the 81-90, the hyphenated name of the print (print capture p. 293)"
+  },
+  {
+   "name": "dlqTuiFaTail",
+   "value": 1,
+   "comment": "the tui-fa tail - the 91-100 closing band (print capture p. 293)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dlqMartialArtsClass",
+   "tag": "MartialArtsClass",
+   "count": "dlqMartialArtsRowCount",
+   "comment": "the Table 84 Martial Arts Class grid - the twelve d100 bands of the martial arts weapon types, the chain through the tui-fa (print capture p. 293)",
+   "cols": [
+    "dlqMartialArtsRollMin",
+    "dlqMartialArtsRollMax",
+    "dlqMartialArtsCode"
+   ],
+   "col_comments": [
+    "the d100 band minimum - the low roll of the row (print capture p. 293)",
+    "the d100 band maximum - the high roll of the row (print capture p. 293)",
+    "the martial arts type code - 1 the chain; 2 the fang; 3 the gunsen; 4 the jitte; 5 the kau sin ke; 6 the kiseru; 7 the nunchaku; 8 the sai; 9 the sang kauw; 10 the siangkam; 11 the three-piece-rod; 12 the tui-fa (print capture p. 293)"
+   ],
+   "data": [
+    [
+     1,
+     5,
+     1
+    ],
+    [
+     6,
+     10,
+     2
+    ],
+    [
+     11,
+     20,
+     3
+    ],
+    [
+     21,
+     30,
+     4
+    ],
+    [
+     31,
+     35,
+     5
+    ],
+    [
+     36,
+     40,
+     6
+    ],
+    [
+     41,
+     55,
+     7
+    ],
+    [
+     56,
+     70,
+     8
+    ],
+    [
+     71,
+     75,
+     9
+    ],
+    [
+     76,
+     80,
+     10
+    ],
+    [
+     81,
+     90,
+     11
+    ],
+    [
+     91,
+     100,
+     12
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the grid - the twelve-band Table 84, audited cell by cell by the table audit",
+   "expr": "m['dlqMartialArtsRowCount']() != 12 or m['dlqMartialArtsRollMin'](0) != 1 or m['dlqMartialArtsRollMax'](11) != 100 or m['dlqMartialArtsCode'](0) != 1 or m['dlqMartialArtsCode'](11) != 12"
+  },
+  {
+   "note": "the band walk - the key bands, healthy values, each condition false",
+   "expr": "m['dlqChainToFangHead']() != 1 or m['dlqMartialArtsRollMax'](6) != 55 or m['dlqMartialArtsCode'](6) != 7 or m['dlqNunchakuBand']() != 1 or m['dlqSaiBand']() != 1 or m['dlqThreePieceRodBand']() != 1 or m['dlqTuiFaTail']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 84 grid": [
+   {
+    "kind": "const",
+    "name": "dlqMartialArtsRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dlqMartialArtsClass"
+   }
+  ],
+  "the band walk": [
+   {
+    "kind": "bool",
+    "name": "dlqChainToFangHead"
+   },
+   {
+    "kind": "bool",
+    "name": "dlqNunchakuBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlqSaiBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlqThreePieceRodBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlqTuiFaTail"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 84 box",
+   "from": "  - [ ] Table 84: Martial Arts Class (capture p. 293)",
+   "to": "  - [x] Table 84: Martial Arts Class (capture p. 293)\n    - R755: the dlq Table 84 pins - the\n    twelve d100 martial arts bands: the\n    chain 01-05; the fang 06-10; the\n    gunsen 11-20; the jitte 21-30; the\n    kau sin ke 31-35; the kiseru 36-40;\n    the nunchaku 41-55; the sai 56-70; the\n    sang kauw 71-75; the siangkam 76-80;\n    the three-piece-rod 81-90; the tui-fa\n    91-100; single-pass pins per the\n    R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 208,
+  "open": 27
+ },
+ "include_comment": "the OA Table 84 pins",
+ "include_after": "#include \"rules/oa125table83.h\"  // R754: the OA Table 83 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R754 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R754 LANDED 2026-10-22: commit",
+  "  845fca45a2b64ed0ad1ae6c3e4573bb529e641fd",
+  "  (census 676 -> 677, pushed 3c6a44d..845fca4),",
+  "  OA TREASURE, Table 83: Missile Class",
+  "  (capture p. 293), header",
+  "  rules/oa125table83.h, prefix dlp",
+  "  (verified free at 3c6a44d), one gap flip",
+  "  (the Table 83 box, single-line), gap",
+  "  census now 207 closed / 28 open. Round",
+  "  type: the Chapter 13 d100 band grid",
+  "  round, single-pass pins per the R679",
+  "  provenance shift. Inlines: 7 = 1 const +",
+  "  3 bools + 3 table cols; one table",
+  "  dlpMissileClass[12]: the twelve d100",
+  "  bands (the armor piercer arrow 01-10",
+  "  2-12, the frog crotch arrow 11-20 2-8,",
+  "  the humming bulb arrow 21-25 2-5, the",
+  "  leaf head arrow 26-40 2-12, the normal",
+  "  arrow 41-60 3-24, the throwing axe",
+  "  61-70, the blowpipe dart 71 2-8, the",
+  "  thrown dart 72 3-12, the javelin 73-77,",
+  "  the quarrel 78-90 2-24, the sling and",
+  "  pellet bow bullets 91-98 2-20, the",
+  "  uchi-ne 99-100), the damage ranges in",
+  "  the code map, the arrow stretch, the",
+  "  single-roll bands, and the uchi-ne tail",
+  "  as bools. Count const derived from the",
+  "  data (the R739 lesson) and the genuine-0",
+  "  census asserted in the generator (the",
+  "  R745 lesson), verified 12/12/12 at the",
+  "  landing. Zero stumbles, first rverify",
+  "  GREEN. Battery 40 mutants, 0 missed.",
+  "  spec md5 b8de9985636b420e84a45b8eb6d96e",
+  "  eb, gate md5 db53d2af3b639afde3a434f208bb",
+  "  9f33, canvas md5 6d4c8387953545a1f9b02f",
+  "  954dab156e. NEXT - R755: Table 84:",
+  "  Martial Arts Class (capture p. 293),",
+  "  prefix dlq (verify free at the landing),",
+  "  audit \"R755 OA Table 84 martial arts",
+  "  audit\", include after",
+  "  rules/oa125table83.h."
+ ]
+}
