@@ -3382,7 +3382,8 @@ description riding the same round.
     samurai vendetta and insult-avenging privileges; the strictly
     controlled travel; the prevent-rebellion intent; single-pass
     pins per the R679 provenance shift
-  - [ ] Kozakura (capture p. 304)
+  - [x] Kozakura (capture p. 304)
+    - R764: the dlz kozakura pins - the Little Cherry Blossom name; the same race as Wa with the shared customs and traditions; the far from unified state; the incessant daimyo warfare of several centuries with the shogun title struggle; the fiefs and estates ruled by the daimyos; the turbulent fortunes of the most common upbringing with the adventurer haven; the emperor regaining power against the bakufu remains; the families allied to each side out of loyalty or for power, some allied to both sides so they cannot lose; the warrior most respected without the rigid laws of Wa, the humble peasant more than once risen to powerful lord through his military skill; single-pass pins per the R679 provenance shift
   - [ ] Gajin (capture p. 304) - the western
     foreigners doctrine
 

@@ -1,0 +1,298 @@
+{
+ "round": 764,
+ "title": "OA SETTING - the island of Kozakura: the turbulent land of the daimyo wars",
+ "prefix": "dlz",
+ "header_file": "rules/oa135kozakura.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 686,
+ "inline_count": 18,
+ "audit_label": "R764 OA Kozakura audit",
+ "audit_comment": "OA round one hundred fifty-one (capture p. 304): the island of Kozakura - the Little Cherry Blossom, the same race and customs as Wa, the incessant daimyo warfare for the shogun title, the adventurer haven, the emperor against the bakufu, the families allied to both sides, the peasant risen to lord, single-pass pins per the R679 provenance shift",
+ "banner": {
+  "title": "OA SETTING - THE ISLAND OF KOZAKURA, printed capture p. 304 - the turbulent land of the daimyo wars",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 217 closed, 18 open - the Kozakura box flips (census 686 -> 687); NEXT - R765: Gajin (capture p. 304), prefix dma (verify free at the landing), audit \"R765 OA Gajin audit\", include after rules/oa135kozakura.h"
+ },
+ "consts": [
+  {
+   "name": "dlzStruggleSides",
+   "value": 2,
+   "comment": "the struggle sides - the raging struggle has two sides, the daimyos who support the emperor and the remains of the bakufu (print capture p. 304)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlzLittleCherryBlossomName",
+   "value": 1,
+   "comment": "the Little Cherry Blossom name - Kozakura, meaning Little Cherry Blossom (print capture p. 304)"
+  },
+  {
+   "name": "dlzSameRaceAsWa",
+   "value": 1,
+   "comment": "the same race as Wa - inhabited by the same race of people as found on Wa (print capture p. 304)"
+  },
+  {
+   "name": "dlzSharedCustomsTraditions",
+   "value": 1,
+   "comment": "the shared customs and traditions - Kozakura shares virtually the same customs and traditions as Wa (print capture p. 304)"
+  },
+  {
+   "name": "dlzFarFromUnifiedState",
+   "value": 1,
+   "comment": "the far from unified state - Kozakura is far from a unified state (print capture p. 304)"
+  },
+  {
+   "name": "dlzIncessantDaimyoWarfare",
+   "value": 1,
+   "comment": "the incessant daimyo warfare - for several centuries the scene of incessant warfare between powerful daimyos (print capture p. 304)"
+  },
+  {
+   "name": "dlzShogunTitleStruggle",
+   "value": 1,
+   "comment": "the shogun title struggle - all the daimyos struggling to gain the title of shogun (print capture p. 304)"
+  },
+  {
+   "name": "dlzFiefsAndEstatesRule",
+   "value": 1,
+   "comment": "the fiefs and estates rule - the island divided into fiefs and estates, ruled by the daimyos (print capture p. 304)"
+  },
+  {
+   "name": "dlzTurbulentFortunes",
+   "value": 1,
+   "comment": "the turbulent fortunes - a very turbulent place where fortunes and might can be achieved by those of even the most common upbringing (print capture p. 304)"
+  },
+  {
+   "name": "dlzAdventurerHaven",
+   "value": 1,
+   "comment": "the adventurer haven - the perfect place for the adventurer seeking fame and fortune (print capture p. 304)"
+  },
+  {
+   "name": "dlzEmperorRegainsPower",
+   "value": 1,
+   "comment": "the emperor regains power - the daimyos who support the emperor in his bid to regain his long-lost political power (print capture p. 304)"
+  },
+  {
+   "name": "dlzBakufuRemainsOppose",
+   "value": 1,
+   "comment": "the bakufu remains oppose - the remains of the bakufu, the shogunal government, on the other side of the struggle (print capture p. 304)"
+  },
+  {
+   "name": "dlzFamiliesAlliedEachSide",
+   "value": 1,
+   "comment": "the families allied to each side - each side attempting to ally the remaining families on the island (print capture p. 304)"
+  },
+  {
+   "name": "dlzLoyaltyOrPowerMotive",
+   "value": 1,
+   "comment": "the loyalty or power motive - some families joining out of loyalty, others seeing the chance to amass more power themselves (print capture p. 304)"
+  },
+  {
+   "name": "dlzAlliedToBothSides",
+   "value": 1,
+   "comment": "the allied to both sides - some families arranging to be allied to both sides so they cannot lose (print capture p. 304)"
+  },
+  {
+   "name": "dlzWarriorMostRespected",
+   "value": 1,
+   "comment": "the warrior most respected - the warrior the most respected and powerful class (print capture p. 304)"
+  },
+  {
+   "name": "dlzLacksRigidLaws",
+   "value": 1,
+   "comment": "the lacks rigid laws - Kozakura lacks the rigid laws of Wa (print capture p. 304)"
+  },
+  {
+   "name": "dlzPeasantRisenToLord",
+   "value": 1,
+   "comment": "the peasant risen to lord - more than once a humble peasant risen to powerful lord through his military skill (print capture p. 304)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the island example",
+   "expr": "m['dlzLittleCherryBlossomName']() != 1 or m['dlzSameRaceAsWa']() != 1 or m['dlzSharedCustomsTraditions']() != 1"
+  },
+  {
+   "note": "the wars example",
+   "expr": "m['dlzFarFromUnifiedState']() != 1 or m['dlzIncessantDaimyoWarfare']() != 1 or m['dlzShogunTitleStruggle']() != 1"
+  },
+  {
+   "note": "the fief example",
+   "expr": "m['dlzFiefsAndEstatesRule']() != 1 or m['dlzTurbulentFortunes']() != 1 or m['dlzAdventurerHaven']() != 1"
+  },
+  {
+   "note": "the struggle example",
+   "expr": "m['dlzStruggleSides']() != 2 or m['dlzEmperorRegainsPower']() != 1 or m['dlzBakufuRemainsOppose']() != 1"
+  },
+  {
+   "note": "the families example",
+   "expr": "m['dlzFamiliesAlliedEachSide']() != 1 or m['dlzLoyaltyOrPowerMotive']() != 1 or m['dlzAlliedToBothSides']() != 1"
+  },
+  {
+   "note": "the warrior example",
+   "expr": "m['dlzWarriorMostRespected']() != 1 or m['dlzLacksRigidLaws']() != 1 or m['dlzPeasantRisenToLord']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the island and its people": [
+   {
+    "kind": "bool",
+    "name": "dlzLittleCherryBlossomName"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzSameRaceAsWa"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzSharedCustomsTraditions"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzFarFromUnifiedState"
+   }
+  ],
+  "the daimyo wars": [
+   {
+    "kind": "bool",
+    "name": "dlzIncessantDaimyoWarfare"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzShogunTitleStruggle"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzFiefsAndEstatesRule"
+   }
+  ],
+  "the turbulent haven": [
+   {
+    "kind": "bool",
+    "name": "dlzTurbulentFortunes"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzAdventurerHaven"
+   }
+  ],
+  "the political struggle": [
+   {
+    "kind": "const",
+    "name": "dlzStruggleSides"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzEmperorRegainsPower"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzBakufuRemainsOppose"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzFamiliesAlliedEachSide"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzLoyaltyOrPowerMotive"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzAlliedToBothSides"
+   }
+  ],
+  "the warrior class": [
+   {
+    "kind": "bool",
+    "name": "dlzWarriorMostRespected"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzLacksRigidLaws"
+   },
+   {
+    "kind": "bool",
+    "name": "dlzPeasantRisenToLord"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Kozakura box",
+   "from": "  - [ ] Kozakura (capture p. 304)",
+   "to": "  - [x] Kozakura (capture p. 304)\n    - R764: the dlz kozakura pins - the Little Cherry Blossom name; the same race as Wa with the shared customs and traditions; the far from unified state; the incessant daimyo warfare of several centuries with the shogun title struggle; the fiefs and estates ruled by the daimyos; the turbulent fortunes of the most common upbringing with the adventurer haven; the emperor regaining power against the bakufu remains; the families allied to each side out of loyalty or for power, some allied to both sides so they cannot lose; the warrior most respected without the rigid laws of Wa, the humble peasant more than once risen to powerful lord through his military skill; single-pass pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 217,
+  "open": 18
+ },
+ "include_comment": "the OA Kozakura pins",
+ "include_after": "#include \"rules/oa134wa.h\"  // R763: the OA Wa pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R763 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R763 LANDED 2026-10-22: commit",
+  "  6a93395ac445732e1ffe01c28a5333de7f65fd1f",
+  "  (census 685 -> 686, pushed 4b3029b..6a93395),",
+  "  OA SETTING, the island of Wa (capture",
+  "  p. 304), header rules/oa134wa.h,",
+  "  prefix dly (91 substring hits in regtest",
+  "  but ZERO call-site dly\\w*( collisions -",
+  "  the R669 die precedent; the engine gate",
+  "  passed), one gap flip (the Wa box,",
+  "  single-line), gap census now 216 closed",
+  "  / 19 open. Round type: the Chapter 14",
+  "  setting-doctrine round, single-pass pins",
+  "  per the R679 provenance shift. Inlines:",
+  "  22 = 1 const (dlySocialClassCount 4) +",
+  "  21 bools, no tables. The walk: the",
+  "  unified military state of the island;",
+  "  the honorary emperor; the shogun real",
+  "  power, the barbarian-suppressing",
+  "  general; the shogun always of the",
+  "  Hidetomi family; the island divided",
+  "  into fiefs granted by the shogun, ruled",
+  "  by the daimyos with total control",
+  "  provided they obey and enact the",
+  "  shogun's orders; the shogun court of",
+  "  the limited scope (only threats to its",
+  "  power and cases between fiefs); the",
+  "  confiscate-and-resettle power; the",
+  "  daimyo military service and land",
+  "  administration; the warrior status",
+  "  raised, the samurai households with the",
+  "  stipend of rice and the absolute loyal",
+  "  service; the social class ladder of",
+  "  warriors, peasants, craftsmen,",
+  "  merchants, four classes kept separate by",
+  "  the rigid laws; the walled wards with",
+  "  the armed gates and the night return;",
+  "  the samurai vendetta and",
+  "  insult-avenging privileges; the strictly",
+  "  controlled travel, leaving or entering",
+  "  the island difficult; the",
+  "  prevent-rebellion intent of the laws.",
+  "  Zero stumbles, first rverify GREEN",
+  "  (double-run, 22 mutants, 0 missed; the",
+  "  canvas published clean at 12,686 bytes",
+  "  on the first single write). spec md5",
+  "  57ca16f3cc08f27fa69fa6e69bf8f3a6, gate",
+  "  md5 a426ad559066dd099bc6626b8dd4c834,",
+  "  canvas md5",
+  "  f43d3c3de08e991f692353d64459fc70.",
+  "  NEXT - R764: Kozakura (capture p. 304),",
+  "  prefix dlz (verify free at the landing),",
+  "  audit \"R764 OA Kozakura audit\", include",
+  "  after rules/oa134wa.h."
+ ]
+}

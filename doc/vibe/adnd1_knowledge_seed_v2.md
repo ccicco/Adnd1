@@ -18492,6 +18492,59 @@ when both halves land.
   prefix dly (verify free at the landing),
   audit "R763 OA Wa audit", include
   after rules/oa133tulung.h.
+- R763 LANDED 2026-10-22: commit
+  6a93395ac445732e1ffe01c28a5333de7f65fd1f
+  (census 685 -> 686, pushed 4b3029b..6a93395),
+  OA SETTING, the island of Wa (capture
+  p. 304), header rules/oa134wa.h,
+  prefix dly (91 substring hits in regtest
+  but ZERO call-site dly\w*( collisions -
+  the R669 die precedent; the engine gate
+  passed), one gap flip (the Wa box,
+  single-line), gap census now 216 closed
+  / 19 open. Round type: the Chapter 14
+  setting-doctrine round, single-pass pins
+  per the R679 provenance shift. Inlines:
+  22 = 1 const (dlySocialClassCount 4) +
+  21 bools, no tables. The walk: the
+  unified military state of the island;
+  the honorary emperor; the shogun real
+  power, the barbarian-suppressing
+  general; the shogun always of the
+  Hidetomi family; the island divided
+  into fiefs granted by the shogun, ruled
+  by the daimyos with total control
+  provided they obey and enact the
+  shogun's orders; the shogun court of
+  the limited scope (only threats to its
+  power and cases between fiefs); the
+  confiscate-and-resettle power; the
+  daimyo military service and land
+  administration; the warrior status
+  raised, the samurai households with the
+  stipend of rice and the absolute loyal
+  service; the social class ladder of
+  warriors, peasants, craftsmen,
+  merchants, four classes kept separate by
+  the rigid laws; the walled wards with
+  the armed gates and the night return;
+  the samurai vendetta and
+  insult-avenging privileges; the strictly
+  controlled travel, leaving or entering
+  the island difficult; the
+  prevent-rebellion intent of the laws.
+  Zero stumbles, first rverify GREEN
+  (double-run, 22 mutants, 0 missed; the
+  canvas published clean at 12,686 bytes
+  on the first single write). spec md5
+  57ca16f3cc08f27fa69fa6e69bf8f3a6, gate
+  md5 a426ad559066dd099bc6626b8dd4c834,
+  canvas md5
+  f43d3c3de08e991f692353d64459fc70.
+  NEXT - R764: Kozakura (capture p. 304),
+  prefix dlz (verify free at the landing),
+  audit "R764 OA Kozakura audit", include
+  after rules/oa134wa.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
