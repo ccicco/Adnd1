@@ -1,0 +1,354 @@
+{
+ "round": 767,
+ "title": "OA DAILY LIFE - Buildings: the three building types of Kara-Tur (with the food tail)",
+ "prefix": "dmc",
+ "header_file": "rules/oa138buildings.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 689,
+ "inline_count": 21,
+ "audit_label": "R767 OA Daily Life Buildings audit",
+ "audit_comment": "OA round one hundred fifty-four (capture pp. 308-309, with the food tail of p. 308 folded in): Buildings - the fish and tea tail of Food, the peasant wood house, the city packing and fire teams, the clay brick and noble houses, the temple compounds, the military castles, single-pass pins per the R679 provenance shift",
+ "banner": {
+  "title": "OA DAILY LIFE - BUILDINGS, printed capture pp. 308-309 (with the food tail of p. 308) - the three building types of Kara-Tur",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 220 closed, 15 open - the Buildings box flips (census 689 -> 690); NEXT - R768: Manners (capture p. 312), prefix dmd (verify free at the landing), audit \"R768 OA Daily Life Manners audit\", include after rules/oa138buildings.h"
+ },
+ "consts": [
+  {
+   "name": "dmcBuildingTypesCount",
+   "value": 3,
+   "comment": "the building types count - three main building types in Kara-Tur: the homes of commoners, the palaces of the wealthy and powerful, and temples, each with distinctive methods and materials, several floorplans provided for the DM (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcTownMealsCount",
+   "value": 4,
+   "comment": "the town meals count - a typical town day holds four meals: the morning buns and gruel, the largest mid-day meal, the late-day tea and candies, and the light evening meal (print capture p. 308)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dmcFishMainMeatSource",
+   "value": 1,
+   "comment": "the fish main meat source - fish the main source of meat, chicken and pork most common, game eaten when available, beef seldom as cattle are rare and specially regarded, barbarians eating mutton and horsemeat at feasts (print capture p. 308)"
+  },
+  {
+   "name": "dmcTeaMostCommonDrink",
+   "value": 1,
+   "comment": "the tea most common drink - tea clearly the most common drink in many varieties, most drinking it plain, the nomads mixing it with milk and sugar and even serving it as a soup (print capture p. 308)"
+  },
+  {
+   "name": "dmcRiceWinesHeated",
+   "value": 1,
+   "comment": "the rice wines heated - rice wines (sake and the like) served heated in small cups, beers also made and drunk with meals (print capture p. 308)"
+  },
+  {
+   "name": "dmcSteppeMilkDrinks",
+   "value": 1,
+   "comment": "the steppe milk drinks - the steppes drink of fermented mare milk, a claimed refreshing tonic, mixed with mare blood on special occasions for warriors before or after battle, milk rare elsewhere (print capture p. 308)"
+  },
+  {
+   "name": "dmcTownMeals",
+   "value": 1,
+   "comment": "the town meals - in town the morning meal of steamed buns, dumplings, rice or gruel, and pickles; the mid-day meal the largest with rice, vegetables, fish or chicken, pickles, and tea; the late-day tea and rice candies or sweet buns; the light evening meal of rice and a few simple delicacies (print capture p. 308)"
+  },
+  {
+   "name": "dmcTravelMeals",
+   "value": 1,
+   "comment": "the travel meals - when traveling the morning meal of gruel, rice, millet, or barley before breaking camp; the midway ricecake, cold rice, or leaf-wrapped packet with fruit if available; the evening rice with dried fish and vegetables, fresh game if the hunt went well (print capture p. 308)"
+  },
+  {
+   "name": "dmcPeasantWoodHouse",
+   "value": 1,
+   "comment": "the peasant wood house - peasant homes of wood or clay brick, the simplest a single large room with a bare-earth floor, the thick thatch roof steeply angled to shed snow and water, the broad eaves shading sun and winter snow (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcWindowsCoverings",
+   "value": 1,
+   "comment": "the windows coverings - windows built into the walls for light, covered with a simple wood lattice, removable shutters, bamboo shades, or glazed paper (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcVerandaHearth",
+   "value": 1,
+   "comment": "the veranda hearth - the small veranda, a raised deck as wide as the eaves covered with woven straw mats; the central room dominated by the earthen hearth, a stone-lined pit with a hook for cooking pots, the smoke hole in the roof; with no central heating the family life centers around the hearth (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcRaisedPlatforms",
+   "value": 1,
+   "comment": "the raised platforms - the house sometimes divided by raised wooden platforms for sleeping and other activities, separated by removable paper screens or permanent wooden walls, storage in the walls and under the platforms, the attic reached by a broad-stepped ladder (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcTileRoofStatus",
+   "value": 1,
+   "comment": "the tile roof status - the thatch roof requires regular care; in wealthier homes replaced by glazed tile, durable and a sign of the status of the homeowner, the ridge and eaves decorated with wooden forms and carvings (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcCityPackedHouses",
+   "value": 1,
+   "comment": "the city packed houses - in cities and large towns houses tightly packed on narrow twisting streets, mostly tile-roofed with thatch the sign of a truly poor man (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcShopsInHomes",
+   "value": 1,
+   "comment": "the shops in homes - most shops and businesses in the same building as the family home, the large front shutters opened to form a table for goods; the common courtyard with a well behind the row; larger wealthier homes set off by walled gardens or a central courtyard square; houses seldom more than one story high (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcOutbuildingsGranaries",
+   "value": 1,
+   "comment": "the outbuildings granaries - the family workshops, stables, and granaries built in a similar style to the main house, granaries almost always of plaster and stone due to the great risk of fire - the rice wealth could never be replaced (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcFireTeamsPrimitive",
+   "value": 1,
+   "comment": "the fire teams primitive - wood, thatch, and paper buildings very susceptible to fire, building fires greatly feared in large cities where winds carry sparks through entire sections; every ward with organized fire-fighter teams under a noble, the practices primitive - bucket gangs and pulling down nearby buildings (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcClayBrickHouses",
+   "value": 1,
+   "comment": "the clay brick houses - pressed clay brick homes where wood is scarce, normally two stories around a courtyard or walled garden, the clay stove kitchen, charcoal braziers in cold weather, flat roofs used as decks or glazed tile, red-painted ornaments (red lucky), far less susceptible to fire (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcNobleHouses",
+   "value": 1,
+   "comment": "the noble houses - identical to their peasant counterparts except larger and more lavish, extensive landscaped gardens with a man-made pond or stream, always surrounded by walls for privacy and protection from wars and revolts, solid wooden floors and movable screens (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcTempleCompounds",
+   "value": 1,
+   "comment": "the temple compounds - temple buildings quite lavish, a group of buildings within a single walled compound, wood with magnificent stone pagodas, the raised foundation and stone terraces, the broad veranda under the tiled eaves, the main hall with its imposing statue of the deity, the priests chambers, the landscaped grounds (print capture pp. 308-309)"
+  },
+  {
+   "name": "dmcMilitaryCastles",
+   "value": 1,
+   "comment": "the military castles - the special class of military buildings, castles and watchtowers with many similarities to the west, located on the commanding point, the many-story keep of heavy stone the last defense, reached by ramps and staircases, the lesser towers and walls with few gates and loopholes, the surrounding ditches and moats - sieging a castle a formidable undertaking (print capture pp. 308-309)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the meat example",
+   "expr": "m['dmcFishMainMeatSource']() != 1 or m['dmcTeaMostCommonDrink']() != 1"
+  },
+  {
+   "note": "the drinks example",
+   "expr": "m['dmcRiceWinesHeated']() != 1 or m['dmcSteppeMilkDrinks']() != 1"
+  },
+  {
+   "note": "the meals example",
+   "expr": "m['dmcTownMealsCount']() != 4 or m['dmcTownMeals']() != 1 or m['dmcTravelMeals']() != 1"
+  },
+  {
+   "note": "the wood house example",
+   "expr": "m['dmcBuildingTypesCount']() != 3 or m['dmcPeasantWoodHouse']() != 1 or m['dmcWindowsCoverings']() != 1"
+  },
+  {
+   "note": "the hearth example",
+   "expr": "m['dmcVerandaHearth']() != 1 or m['dmcRaisedPlatforms']() != 1"
+  },
+  {
+   "note": "the tile example",
+   "expr": "m['dmcTileRoofStatus']() != 1 or m['dmcCityPackedHouses']() != 1"
+  },
+  {
+   "note": "the street example",
+   "expr": "m['dmcShopsInHomes']() != 1 or m['dmcOutbuildingsGranaries']() != 1"
+  },
+  {
+   "note": "the fire example",
+   "expr": "m['dmcFireTeamsPrimitive']() != 1"
+  },
+  {
+   "note": "the brick example",
+   "expr": "m['dmcClayBrickHouses']() != 1 or m['dmcNobleHouses']() != 1"
+  },
+  {
+   "note": "the compound example",
+   "expr": "m['dmcTempleCompounds']() != 1 or m['dmcMilitaryCastles']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the food tail": [
+   {
+    "kind": "const",
+    "name": "dmcTownMealsCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcFishMainMeatSource"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcTeaMostCommonDrink"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcRiceWinesHeated"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcSteppeMilkDrinks"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcTownMeals"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcTravelMeals"
+   }
+  ],
+  "the peasant homes": [
+   {
+    "kind": "const",
+    "name": "dmcBuildingTypesCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcPeasantWoodHouse"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcWindowsCoverings"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcVerandaHearth"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcRaisedPlatforms"
+   }
+  ],
+  "the towns and fire": [
+   {
+    "kind": "bool",
+    "name": "dmcTileRoofStatus"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcCityPackedHouses"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcShopsInHomes"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcOutbuildingsGranaries"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcFireTeamsPrimitive"
+   }
+  ],
+  "the brick and noble homes": [
+   {
+    "kind": "bool",
+    "name": "dmcClayBrickHouses"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcNobleHouses"
+   }
+  ],
+  "the temples and castles": [
+   {
+    "kind": "bool",
+    "name": "dmcTempleCompounds"
+   },
+   {
+    "kind": "bool",
+    "name": "dmcMilitaryCastles"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Buildings box",
+   "from": "  - [ ] Buildings (capture pp. 308-312)",
+   "to": "  - [x] Buildings (capture pp. 308-312)\n    - R767: the dmc buildings pins (with the food tail of p. 308 folded in per the user call) - the fish main meat with chicken, pork, and the barbarian feast meats; the tea most common drink with the nomad milk and sugar; the heated rice wines and the steppe mare-milk tonic; the four town meals and the travel meals; the three building types; the peasant wood house with its thatch roof, paper windows, veranda, and hearth; the raised platforms and attic; the tile roof status of the wealthy; the packed city houses with the shops in homes and courtyard wells; the plaster-and-stone granaries of irreplaceable rice; the primitive ward fire-fighter teams; the clay brick houses with the red lucky ornaments; the walled noble houses with the man-made ponds; the lavish temple compounds with the stone pagodas; the formidable military castles with keep, loopholes, and moats; single-pass pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 220,
+  "open": 15
+ },
+ "include_comment": "the OA Daily Life Buildings pins",
+ "include_after": "#include \"rules/oa137food.h\"  // R766: the OA Daily Life Food pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R766 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R766 LANDED 2026-10-22: commit",
+  "  220526cdeee6c3b1aea073f51a26fa0531519420",
+  "  (census 688 -> 689, pushed 2343f9b..220526c),",
+  "  OA DAILY LIFE, Food (capture p. 307, the",
+  "  Chapter 15 daily-life opener; the Food",
+  "  section tail - fish as meat, tea, the",
+  "  day's meals - runs onto p. 308, outside",
+  "  the box scope, pinned p. 307 only per the",
+  "  R765 box-scope precedent), header",
+  "  rules/oa137food.h, prefix dmb (fully free",
+  "  at 2343f9b - zero substring hits, zero",
+  "  call-site dmb\\w*( collisions), one gap",
+  "  flip (the Food box, single-line), gap",
+  "  census now 219 closed / 16 open.",
+  "  CHAPTER 15 OPENS. Round type: the",
+  "  daily-life doctrine round, single-pass",
+  "  pins per the R679 provenance shift.",
+  "  Inlines: 20 = 2 consts (dmbRiceUsesCount",
+  "  7, dmbBeanVarietiesCount 4) + 18 bools,",
+  "  no tables. The walk: the rice constant of",
+  "  the civilized lands served with virtually",
+  "  every meal; the eaten-rice greeting of",
+  "  Shou Lung and Tu Lung; the rice stuff of",
+  "  life; the millet, sorghum, and barley",
+  "  poor man food; the four bean varieties",
+  "  stewed or mashed into paste; the soy",
+  "  sauce and tofu preparations; the",
+  "  vegetables next to rice in importance,",
+  "  rarely raw; the garden variety of fruits",
+  "  and nuts; the pickled preparations; the",
+  "  water products of those near sea, river,",
+  "  or lake - the hundreds of fish varieties,",
+  "  the deadly pufferfish delicacy, the kelp,",
+  "  the sea fully used. Zero stumbles, first",
+  "  rverify GREEN (double-run, 20 mutants, 0",
+  "  missed). QUOTA SAGA RECURRED (the R761",
+  "  lesson, 2026-10-22): the user's re-upload",
+  "  re-ran the full 315-page OCR (~2.4MB of",
+  "  tool-results), and the spec scratch built",
+  "  under /home/user (a 4.8MB regtest.cpp",
+  "  restore) tipped the 8,388,608-byte",
+  "  per-session quota - the canvas write was",
+  "  reverted and the whole /home/user/scratch",
+  "  dir was wiped with it. STANDING RULE:",
+  "  build every round's scratch in /tmp",
+  "  (outside the quota), keep /home/user for",
+  "  canvases and Knowledge, purge obsolete",
+  "  OCR page sets keeping only the pages the",
+  "  upcoming rounds need (303-315 kept for",
+  "  Chapter 15); the rebuilt spec reproduced",
+  "  byte-exact (same md5s) and the canvas",
+  "  published clean at 12,094 bytes on the",
+  "  first single write. The user's ./bn 766",
+  "  detour (struck per the R516 rule) caused",
+  "  no drift - it printed the gate md5",
+  "  741e6fe81f3047ba4397930c61aae72a exactly.",
+  "  spec md5",
+  "  982a7a95fad42178738e0f1856629471, gate",
+  "  md5 741e6fe81f3047ba4397930c61aae72a,",
+  "  canvas md5",
+  "  cd547b96282df2efeaf24957f4df7c1b.",
+  "  NEXT - R767: Buildings (capture pp.",
+  "  308-312), prefix dmc (verify free at the",
+  "  landing), audit \"R767 OA Daily Life",
+  "  Buildings audit\", include",
+  "  after rules/oa137food.h."
+ ]
+}

@@ -18635,6 +18635,72 @@ when both halves land.
   (verify free at the landing), audit "R766
   OA Daily Life Food audit", include
   after rules/oa136gajin.h.
+- R766 LANDED 2026-10-22: commit
+  220526cdeee6c3b1aea073f51a26fa0531519420
+  (census 688 -> 689, pushed 2343f9b..220526c),
+  OA DAILY LIFE, Food (capture p. 307, the
+  Chapter 15 daily-life opener; the Food
+  section tail - fish as meat, tea, the
+  day's meals - runs onto p. 308, outside
+  the box scope, pinned p. 307 only per the
+  R765 box-scope precedent), header
+  rules/oa137food.h, prefix dmb (fully free
+  at 2343f9b - zero substring hits, zero
+  call-site dmb\w*( collisions), one gap
+  flip (the Food box, single-line), gap
+  census now 219 closed / 16 open.
+  CHAPTER 15 OPENS. Round type: the
+  daily-life doctrine round, single-pass
+  pins per the R679 provenance shift.
+  Inlines: 20 = 2 consts (dmbRiceUsesCount
+  7, dmbBeanVarietiesCount 4) + 18 bools,
+  no tables. The walk: the rice constant of
+  the civilized lands served with virtually
+  every meal; the eaten-rice greeting of
+  Shou Lung and Tu Lung; the rice stuff of
+  life; the millet, sorghum, and barley
+  poor man food; the four bean varieties
+  stewed or mashed into paste; the soy
+  sauce and tofu preparations; the
+  vegetables next to rice in importance,
+  rarely raw; the garden variety of fruits
+  and nuts; the pickled preparations; the
+  water products of those near sea, river,
+  or lake - the hundreds of fish varieties,
+  the deadly pufferfish delicacy, the kelp,
+  the sea fully used. Zero stumbles, first
+  rverify GREEN (double-run, 20 mutants, 0
+  missed). QUOTA SAGA RECURRED (the R761
+  lesson, 2026-10-22): the user's re-upload
+  re-ran the full 315-page OCR (~2.4MB of
+  tool-results), and the spec scratch built
+  under /home/user (a 4.8MB regtest.cpp
+  restore) tipped the 8,388,608-byte
+  per-session quota - the canvas write was
+  reverted and the whole /home/user/scratch
+  dir was wiped with it. STANDING RULE:
+  build every round's scratch in /tmp
+  (outside the quota), keep /home/user for
+  canvases and Knowledge, purge obsolete
+  OCR page sets keeping only the pages the
+  upcoming rounds need (303-315 kept for
+  Chapter 15); the rebuilt spec reproduced
+  byte-exact (same md5s) and the canvas
+  published clean at 12,094 bytes on the
+  first single write. The user's ./bn 766
+  detour (struck per the R516 rule) caused
+  no drift - it printed the gate md5
+  741e6fe81f3047ba4397930c61aae72a exactly.
+  spec md5
+  982a7a95fad42178738e0f1856629471, gate
+  md5 741e6fe81f3047ba4397930c61aae72a,
+  canvas md5
+  cd547b96282df2efeaf24957f4df7c1b.
+  NEXT - R767: Buildings (capture pp.
+  308-312), prefix dmc (verify free at the
+  landing), audit "R767 OA Daily Life
+  Buildings audit", include
+  after rules/oa137food.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

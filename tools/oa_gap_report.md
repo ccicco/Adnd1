@@ -3393,7 +3393,8 @@ description riding the same round.
   (advisory prose - closes on doctrine pins)
   - [x] Food (capture p. 307)
     - R766: the dmb food pins - the rice constant of the civilized lands served with virtually every meal, the eaten-rice greeting of Shou Lung and Tu Lung; the seven uses of rice from gruel to sake, the stuff of life; the millet, sorghum, and barley poor man food; the four bean varieties stewed or mashed into paste; the soy sauce and tofu preparations; the vegetables next to rice in importance, rarely raw; the garden variety of fruits and nuts; the pickled preparations; the water products of those near sea, river, or lake - the hundreds of fish varieties, the deadly pufferfish delicacy, the kelp, the sea fully used; single-pass pins per the R679 provenance shift
-  - [ ] Buildings (capture pp. 308-312)
+  - [x] Buildings (capture pp. 308-312)
+    - R767: the dmc buildings pins (with the food tail of p. 308 folded in per the user call) - the fish main meat with chicken, pork, and the barbarian feast meats; the tea most common drink with the nomad milk and sugar; the heated rice wines and the steppe mare-milk tonic; the four town meals and the travel meals; the three building types; the peasant wood house with its thatch roof, paper windows, veranda, and hearth; the raised platforms and attic; the tile roof status of the wealthy; the packed city houses with the shops in homes and courtyard wells; the plaster-and-stone granaries of irreplaceable rice; the primitive ward fire-fighter teams; the clay brick houses with the red lucky ornaments; the walled noble houses with the man-made ponds; the lavish temple compounds with the stone pagodas; the formidable military castles with keep, loopholes, and moats; single-pass pins per the R679 provenance shift
   - [ ] Manners (capture p. 312)
   - [ ] Names (capture pp. 312-313)
 
