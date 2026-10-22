@@ -19220,6 +19220,66 @@ when both halves land.
   resolution, the rules/mountlayer.h charge
   flips, and the R403 condition flips at
   regtest 43207/43210).
+- R776 LANDED 2026-10-22: commit
+  f52039500379ce171f105dd6afb5d7912459aacd
+  (census 698 -> 699, pushed 98236d9..f520395),
+  THE MOUNTED-COMBAT ENGINE SITE - the R403
+  charge lands, THE LAST UNGATED UA DEFERRED
+  ITEM, header rules/mountcombat.h, prefix
+  dno (fully free at 98236d9). THE SITE, five
+  file patches, one per file: the mount actor
+  (game/party.h - Character.mountKind, 0 =
+  afoot, the v1-save default; a seam, not a
+  save line - nothing writes it yet), the
+  mounted resolution (game/state_combat.cpp -
+  beginCombat counts the living riders and
+  prints them at the combat open; the TU is
+  in the preflight battery build, so the
+  site is compile-gated), the layer contract
+  flip (rules/mountlayer.h - ONE span patch:
+  mmlMountActorSiteExists true,
+  mmlMountedCombatChargeOpen false), the R403
+  audit span flip (regtest.cpp 43208/43211 -
+  the audit now fails if the site goes
+  missing or the charge reopens), and the
+  engine chaining fix (tools/
+  splice_engine.py). THE MULTI-PATCH
+  CHAINING CLASS (found RED twice before
+  GREEN, the R776 design exposed it twice):
+  a file patched twice in one round lost the
+  first flip to the stale re-read - the (f)
+  section re-read each target while writes
+  were deferred, RT (R775) and non-RT alike
+  (rules/mountlayer.h). THE FIX: the fp_txt
+  per-file working-text cache - every patch
+  builds on the previous patch's text, and
+  the last write per file carries every
+  flip; proven by a pre-rverify test (two
+  patches on one file: applied 6 / already
+  6, both flips present), landing as the
+  SECOND engine self-patch through the
+  ritual. THE SHAPE: one patch per file
+  this round - mountlayer and regtest ride
+  single byte-exact span patches because
+  the running engine could not yet chain.
+  Inlines: 7 = 3 consts (the R403 layer
+  round, the 776 site round, the six feeder
+  seams) + 4 bools (the Character mount, the
+  combat-open read, the charge closed with
+  the site, the R403 audit following the
+  site). The user's ./bn 776 detour
+  (struck per the R516 rule) caused no
+  drift - the gate md5
+  8d9c37626d86f02552ead6f557439d88 printed
+  exactly. First rverify GREEN after the
+  two RED chaining lessons (double-run 9
+  patches applied/already clean, 7 mutants 0
+  missed). spec md5
+  8ebf5ac6532a1376e50fae635054e97f, gate
+  md5 8d9c37626d86f02552ead6f557439d88,
+  canvas md5 8931a19cdabf449583f71dc22bcfa3af.
+  NEXT - R777: the next target awaits
+  Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

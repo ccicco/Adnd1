@@ -1297,6 +1297,13 @@ struct AppState {
     // whose current armor is worse than chain
     void townBuyChain();
 
+    // R777: the stable - the saddle acquisition: the
+    // best affordable mount of the R300 livestock horse
+    // rows (the price reads the pinned equipcosts cells
+    // plus the tack saddle) for the first living member
+    // afoot
+    void townBuyMount();
+
     // R43: the scribe - a spell scroll (200 gp): one random
     // unknown L1 MU spell is copied into the first MU's book
     // (chance-to-learn deferred to level-ups - buying knowledge

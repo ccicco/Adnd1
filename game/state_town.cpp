@@ -1,4 +1,6 @@
 #include "appstate.h"
+#include "../rules/equipcosts.h"  // R777: the stable reads the pinned cells
+#include "../rules/saddle.h"     // R777: the sdd kind ladder
 
 // ---- enterTown ----
 void AppState::enterTown(){
@@ -667,6 +669,81 @@ void AppState::townBuyChain(){
             return;
         taker->armor.id = items::ARMOR_CHAIN_MAIL;
         log.add(taker->name + " buys chain mail.");
+    }
+
+// ---- townBuyMount (R777: the saddle acquisition) ----
+void AppState::townBuyMount(){
+        if (mode != MODE_TOWN) return;
+        Character* rider = nullptr;
+        for (auto& c : party.members) {
+            if (c.hp <= 0) continue;
+            if (c.mountKind != 0) continue;
+            rider = &c;
+            break;
+        }
+        if (!rider) {
+            log.add("Everyone already rides.");
+            return;
+        }
+        // the stable's stock, best first: the
+        // R300 livestock horse rows plus the
+        // pony; the price reads the pinned
+        // equipcosts cells by NAME (the horse
+        // plus the tack saddle), never a
+        // hardcode
+        const char* const kStock[] = {
+            "horse, heavy war",
+            "horse, medium war",
+            "horse, light war",
+            "horse, riding, light",
+            "pony"
+        };
+        const int kKind[] = {
+            rules::sddKindHeavyWar(),
+            rules::sddKindMediumWar(),
+            rules::sddKindLightWar(),
+            rules::sddKindRiding(),
+            rules::sddKindPony()
+        };
+        int saddleCost = 0;
+        for (int i = 0;
+             i < rules::eqcGeneralCount(); ++i)
+            if (std::string(
+                    rules::eqcGeneralName(i))
+                    == "saddle")
+                saddleCost =
+                    rules::eqcGeneralGold(i);
+        int pick = -1, pickCost = 0;
+        for (int s = 0; s < 5 && pick < 0; ++s)
+            for (int i = 0;
+                 i < rules::eqcGeneralCount();
+                 ++i) {
+                if (std::string(
+                        rules::eqcGeneralName(i))
+                        != kStock[s])
+                    continue;
+                int cost =
+                    rules::eqcGeneralGold(i)
+                    + saddleCost;
+                if (party.gold >= cost) {
+                    pick = kKind[s];
+                    pickCost = cost;
+                }
+                break;
+            }
+        if (pick < 0) {
+            log.add("Nothing in the stable is "
+                    "within the purse.");
+            return;
+        }
+        if (!spendGold(party, log, pickCost,
+                "The stablemaster wants more "
+                "than the purse holds."))
+            return;
+        rider->mountKind = pick;
+        log.add(rider->name +
+                " takes a mount from the town "
+                "stable.");
     }
 
 // ---- townBuyScroll ----

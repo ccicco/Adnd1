@@ -1,0 +1,256 @@
+{
+ "round": 777,
+ "prefix": "sdd",
+ "header_file": "rules/saddle.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 699,
+ "title": "the saddle acquisition - the stable writes the mount",
+ "audit_label": "R777 saddle audit",
+ "audit_comment": "THE SADDLE ACQUISITION - the R776 site gets its writer. The town stable sells the R300 livestock horse rows best-affordable-first (the price reads the pinned equipcosts cells by NAME plus the tack saddle row, never a hardcode), the save carries the optional \"mount\" line (v1 saves load as afoot), and the party.h comment flips from the seam promise to the wiring fact. The steed GRANT ladder stays book-side: the engine has no cavalier or paladin class to key a grant on, so the mml/cavalier grant pins stay contract-side. The kind ladder rides this header (the sdd consts) and the state TUs read it through explicit includes (the R400 lesson)",
+ "include_comment": "the saddle acquisition pins",
+ "include_after": "#include \"rules/mountcombat.h\"  // R776: the mount site pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R776 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R776 LANDED 2026-10-22: commit",
+  "  f52039500379ce171f105dd6afb5d7912459aacd",
+  "  (census 698 -> 699, pushed 98236d9..f520395),",
+  "  THE MOUNTED-COMBAT ENGINE SITE - the R403",
+  "  charge lands, THE LAST UNGATED UA DEFERRED",
+  "  ITEM, header rules/mountcombat.h, prefix",
+  "  dno (fully free at 98236d9). THE SITE, five",
+  "  file patches, one per file: the mount actor",
+  "  (game/party.h - Character.mountKind, 0 =",
+  "  afoot, the v1-save default; a seam, not a",
+  "  save line - nothing writes it yet), the",
+  "  mounted resolution (game/state_combat.cpp -",
+  "  beginCombat counts the living riders and",
+  "  prints them at the combat open; the TU is",
+  "  in the preflight battery build, so the",
+  "  site is compile-gated), the layer contract",
+  "  flip (rules/mountlayer.h - ONE span patch:",
+  "  mmlMountActorSiteExists true,",
+  "  mmlMountedCombatChargeOpen false), the R403",
+  "  audit span flip (regtest.cpp 43208/43211 -",
+  "  the audit now fails if the site goes",
+  "  missing or the charge reopens), and the",
+  "  engine chaining fix (tools/",
+  "  splice_engine.py). THE MULTI-PATCH",
+  "  CHAINING CLASS (found RED twice before",
+  "  GREEN, the R776 design exposed it twice):",
+  "  a file patched twice in one round lost the",
+  "  first flip to the stale re-read - the (f)",
+  "  section re-read each target while writes",
+  "  were deferred, RT (R775) and non-RT alike",
+  "  (rules/mountlayer.h). THE FIX: the fp_txt",
+  "  per-file working-text cache - every patch",
+  "  builds on the previous patch's text, and",
+  "  the last write per file carries every",
+  "  flip; proven by a pre-rverify test (two",
+  "  patches on one file: applied 6 / already",
+  "  6, both flips present), landing as the",
+  "  SECOND engine self-patch through the",
+  "  ritual. THE SHAPE: one patch per file",
+  "  this round - mountlayer and regtest ride",
+  "  single byte-exact span patches because",
+  "  the running engine could not yet chain.",
+  "  Inlines: 7 = 3 consts (the R403 layer",
+  "  round, the 776 site round, the six feeder",
+  "  seams) + 4 bools (the Character mount, the",
+  "  combat-open read, the charge closed with",
+  "  the site, the R403 audit following the",
+  "  site). The user's ./bn 776 detour",
+  "  (struck per the R516 rule) caused no",
+  "  drift - the gate md5",
+  "  8d9c37626d86f02552ead6f557439d88 printed",
+  "  exactly. First rverify GREEN after the",
+  "  two RED chaining lessons (double-run 9",
+  "  patches applied/already clean, 7 mutants 0",
+  "  missed). spec md5",
+  "  8ebf5ac6532a1376e50fae635054e97f, gate",
+  "  md5 8d9c37626d86f02552ead6f557439d88,",
+  "  canvas md5 8931a19cdabf449583f71dc22bcfa3af.",
+  "  NEXT - R777: the next target awaits",
+  "  Curtiss's call."
+ ],
+ "banner": {
+  "title": "THE SADDLE ACQUISITION - the town stable writes the mount, the save carries the line",
+  "provenance": "The R776 site left mountKind a seam nothing writes. This round wires the writer: the town stable sells the pinned R300 livestock horse rows (heavy war, medium war, light war, riding, pony - the cells eqcGeneralGold already pins, read by name plus the tack saddle) best-affordable-first to the first living member afoot; the save format gains the optional \"mount\" line (the v1 compat rule: absent line loads afoot); and the kind ladder is pinned here (0 afoot, 1 draft, 2 light war, 3 medium war, 4 heavy war, 5 riding, 6 pony). The grant path is honestly out: no cavalier or paladin class exists in the engine, so the flying-steed grants (mml 7/9/11) stay contract-side until a class round lands. All four touched TUs ride the preflight battery build, so every line is compile-gated",
+  "sentinel": "Zero new book pages: the prices and rows ride the already-pinned R300/R308 equipment cells"
+ },
+ "consts": [
+  {
+   "name": "sddMountKindCount",
+   "value": 7,
+   "comment": "The kind ladder: 0 afoot plus the six mounts (draft, light war, medium war, heavy war, riding, pony)."
+  },
+  {
+   "name": "sddKindDraft",
+   "value": 1,
+   "comment": "The draft horse (not stocked - a cart animal, stable-unworthy but ladder-real)."
+  },
+  {
+   "name": "sddKindLightWar",
+   "value": 2,
+   "comment": "The light war horse."
+  },
+  {
+   "name": "sddKindMediumWar",
+   "value": 3,
+   "comment": "The medium war horse."
+  },
+  {
+   "name": "sddKindHeavyWar",
+   "value": 4,
+   "comment": "The heavy war horse."
+  },
+  {
+   "name": "sddKindRiding",
+   "value": 5,
+   "comment": "The light riding horse."
+  },
+  {
+   "name": "sddKindPony",
+   "value": 6,
+   "comment": "The pony."
+  },
+  {
+   "name": "sddStableStockCount",
+   "value": 5,
+   "comment": "The stable stocks five kinds (heavy war first, pony last - the best-affordable-first scan)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "sddTownStableSellsMounts",
+   "value": true,
+   "comment": "townBuyMount sells to the first living member afoot (appstate.h declares it)."
+  },
+  {
+   "name": "sddStableReadsPinnedCells",
+   "value": true,
+   "comment": "The price reads the pinned equipcosts cells by NAME (eqcGeneralGold plus the tack saddle), never a hardcode."
+  },
+  {
+   "name": "sddSaveCarriesMountLine",
+   "value": true,
+   "comment": "The save writes the optional \"mount\" line only when riding (the v1 compat rule)."
+  },
+  {
+   "name": "sddV1SaveLoadsAfoot",
+   "value": true,
+   "comment": "A v1 save carries no mount line and loads as afoot; a corrupt value outside the ladder dies at load."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [],
+ "table_checks": [],
+ "header_sections": {
+  "the saddle acquisition (the R777 wiring)": [
+   {
+    "kind": "const",
+    "name": "sddMountKindCount"
+   },
+   {
+    "kind": "const",
+    "name": "sddKindDraft"
+   },
+   {
+    "kind": "const",
+    "name": "sddKindLightWar"
+   },
+   {
+    "kind": "const",
+    "name": "sddKindMediumWar"
+   },
+   {
+    "kind": "const",
+    "name": "sddKindHeavyWar"
+   },
+   {
+    "kind": "const",
+    "name": "sddKindRiding"
+   },
+   {
+    "kind": "const",
+    "name": "sddKindPony"
+   },
+   {
+    "kind": "const",
+    "name": "sddStableStockCount"
+   },
+   {
+    "kind": "bool",
+    "name": "sddTownStableSellsMounts"
+   },
+   {
+    "kind": "bool",
+    "name": "sddStableReadsPinnedCells"
+   },
+   {
+    "kind": "bool",
+    "name": "sddSaveCarriesMountLine"
+   },
+   {
+    "kind": "bool",
+    "name": "sddV1SaveLoadsAfoot"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 12,
+ "file_patches": [
+  {
+   "file": "game/party.h",
+   "note": "the mountKind comment flips from the seam promise to the wiring fact",
+   "from": "    // The beginCombat seam reads it (the\n    // mounted resolution); nothing writes it\n    // yet - a later round may carry the\n    // saddle acquisition and the save line.",
+   "to": "    // The beginCombat seam reads it (the\n    // mounted resolution); the town stable\n    // writes it (R777, the saddle acquisition\n    // - the sdd kind ladder), and the save\n    // carries the optional \"mount\" line."
+  },
+  {
+   "file": "game/state_core.cpp",
+   "note": "the saddle.h include (the R400 lesson - the load gate reads sddMountKindCount)",
+   "from": "#include \"appstate.h\"\n",
+   "to": "#include \"appstate.h\"\n#include \"../rules/saddle.h\"   // R777: the sdd kind ladder (the mount save line)\n"
+  },
+  {
+   "file": "game/state_core.cpp",
+   "note": "the save writes the optional mount line",
+   "from": "            if (c.uaComBase != 0)\n                fprintf(f, \"uacom %d\\n\",\n                        c.uaComBase);",
+   "to": "            if (c.uaComBase != 0)\n                fprintf(f, \"uacom %d\\n\",\n                        c.uaComBase);\n            // R777: the mount (only when\n            // riding - v1 saves carry no line\n            // and load as afoot)\n            if (c.mountKind != 0)\n                fprintf(f, \"mount %d\\n\",\n                        c.mountKind);"
+  },
+  {
+   "file": "game/state_core.cpp",
+   "note": "the load consumes the mount line with the ladder gate",
+   "from": "                    c.uaComBase = cb;\n                } else if (strcmp(tag, \"fem\") == 0) {",
+   "to": "                    c.uaComBase = cb;\n                } else if (strcmp(tag, \"mount\") == 0) {\n                    int mk = 0;\n                    if (fscanf(f, \"%d\", &mk) != 1 ||\n                        mk < 0 ||\n                        mk >= rules::sddMountKindCount()) {\n                        fclose(f);\n                        log.add(\"adnd1.sav is corrupt (mount).\");\n                        return false;\n                    }\n                    c.mountKind = mk;\n                } else if (strcmp(tag, \"fem\") == 0) {"
+  },
+  {
+   "file": "game/state_town.cpp",
+   "note": "the equipcosts and saddle includes (the R400 lesson)",
+   "from": "#include \"appstate.h\"\n",
+   "to": "#include \"appstate.h\"\n#include \"../rules/equipcosts.h\"  // R777: the stable reads the pinned cells\n#include \"../rules/saddle.h\"     // R777: the sdd kind ladder\n"
+  },
+  {
+   "file": "game/state_town.cpp",
+   "note": "townBuyMount lands after townBuyChain (the best-affordable-first stable)",
+   "from": "        log.add(taker->name + \" buys chain mail.\");\n    }\n\n// ---- townBuyScroll ----",
+   "to": "        log.add(taker->name + \" buys chain mail.\");\n    }\n\n// ---- townBuyMount (R777: the saddle acquisition) ----\nvoid AppState::townBuyMount(){\n        if (mode != MODE_TOWN) return;\n        Character* rider = nullptr;\n        for (auto& c : party.members) {\n            if (c.hp <= 0) continue;\n            if (c.mountKind != 0) continue;\n            rider = &c;\n            break;\n        }\n        if (!rider) {\n            log.add(\"Everyone already rides.\");\n            return;\n        }\n        // the stable's stock, best first: the\n        // R300 livestock horse rows plus the\n        // pony; the price reads the pinned\n        // equipcosts cells by NAME (the horse\n        // plus the tack saddle), never a\n        // hardcode\n        const char* const kStock[] = {\n            \"horse, heavy war\",\n            \"horse, medium war\",\n            \"horse, light war\",\n            \"horse, riding, light\",\n            \"pony\"\n        };\n        const int kKind[] = {\n            rules::sddKindHeavyWar(),\n            rules::sddKindMediumWar(),\n            rules::sddKindLightWar(),\n            rules::sddKindRiding(),\n            rules::sddKindPony()\n        };\n        int saddleCost = 0;\n        for (int i = 0;\n             i < rules::eqcGeneralCount(); ++i)\n            if (std::string(\n                    rules::eqcGeneralName(i))\n                    == \"saddle\")\n                saddleCost =\n                    rules::eqcGeneralGold(i);\n        int pick = -1, pickCost = 0;\n        for (int s = 0; s < 5 && pick < 0; ++s)\n            for (int i = 0;\n                 i < rules::eqcGeneralCount();\n                 ++i) {\n                if (std::string(\n                        rules::eqcGeneralName(i))\n                        != kStock[s])\n                    continue;\n                int cost =\n                    rules::eqcGeneralGold(i)\n                    + saddleCost;\n                if (party.gold >= cost) {\n                    pick = kKind[s];\n                    pickCost = cost;\n                }\n                break;\n            }\n        if (pick < 0) {\n            log.add(\"Nothing in the stable is \"\n                    \"within the purse.\");\n            return;\n        }\n        if (!spendGold(party, log, pickCost,\n                \"The stablemaster wants more \"\n                \"than the purse holds.\"))\n            return;\n        rider->mountKind = pick;\n        log.add(rider->name +\n                \" takes a mount from the town \"\n                \"stable.\");\n    }\n\n// ---- townBuyScroll ----"
+  },
+  {
+   "file": "game/appstate.h",
+   "note": "the townBuyMount declaration",
+   "from": "    void townBuyChain();\n\n    // R43: the scribe",
+   "to": "    void townBuyChain();\n\n    // R777: the stable - the saddle acquisition: the\n    // best affordable mount of the R300 livestock horse\n    // rows (the price reads the pinned equipcosts cells\n    // plus the tack saddle) for the first living member\n    // afoot\n    void townBuyMount();\n\n    // R43: the scribe"
+  }
+ ]
+}

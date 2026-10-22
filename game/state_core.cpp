@@ -1,4 +1,5 @@
 #include "appstate.h"
+#include "../rules/saddle.h"   // R777: the sdd kind ladder (the mount save line)
 
 // ---- newDungeon ----
 void AppState::newDungeon(uint64_t s){
@@ -207,6 +208,12 @@ bool AppState::saveGame(){
             if (c.uaComBase != 0)
                 fprintf(f, "uacom %d\n",
                         c.uaComBase);
+            // R777: the mount (only when
+            // riding - v1 saves carry no line
+            // and load as afoot)
+            if (c.mountKind != 0)
+                fprintf(f, "mount %d\n",
+                        c.mountKind);
             // R326: the member sex (only
             // when female - v1 saves carry
             // no line and load as male)
@@ -666,6 +673,16 @@ bool AppState::loadGame(){
                         return false;
                     }
                     c.uaComBase = cb;
+                } else if (strcmp(tag, "mount") == 0) {
+                    int mk = 0;
+                    if (fscanf(f, "%d", &mk) != 1 ||
+                        mk < 0 ||
+                        mk >= rules::sddMountKindCount()) {
+                        fclose(f);
+                        log.add("adnd1.sav is corrupt (mount).");
+                        return false;
+                    }
+                    c.mountKind = mk;
                 } else if (strcmp(tag, "fem") == 0) {
                     int fm = 0;
                     if (fscanf(f, "%d", &fm) != 1 ||

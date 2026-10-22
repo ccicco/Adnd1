@@ -182,9 +182,10 @@ struct Character {
     // charging the engine - the mount actor
     // site). 0 = afoot (the v1-save default).
     // The beginCombat seam reads it (the
-    // mounted resolution); nothing writes it
-    // yet - a later round may carry the
-    // saddle acquisition and the save line.
+    // mounted resolution); the town stable
+    // writes it (R777, the saddle acquisition
+    // - the sdd kind ladder), and the save
+    // carries the optional "mount" line.
     int  mountKind = 0;
     int  classIndex = 0;
     // R230: the registry subclass (rules::Subclass;

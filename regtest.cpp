@@ -477,6 +477,7 @@
 #include "rules/filepatchseam.h"  // R774: the file-patch seam tooling pins
 #include "rules/rtseam.h"  // R775: the RT seam fix pins
 #include "rules/mountcombat.h"  // R776: the mount site pins
+#include "rules/saddle.h"  // R777: the saddle acquisition pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -120348,6 +120349,37 @@ int main() {
         )
             ++bad;
         printf("R776 mount site audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R777 saddle audit ----
+    // THE SADDLE ACQUISITION - the R776 site gets its writer. The town stable
+    // sells the R300 livestock horse rows best-affordable-first (the price
+    // reads the pinned equipcosts cells by NAME plus the tack saddle row,
+    // never a hardcode), the save carries the optional "mount" line (v1 saves
+    // load as afoot), and the party.h comment flips from the seam promise to
+    // the wiring fact. The steed GRANT ladder stays book-side: the engine has
+    // no cavalier or paladin class to key a grant on, so the mml/cavalier
+    // grant pins stay contract-side. The kind ladder rides this header (the
+    // sdd consts) and the state TUs read it through explicit includes (the
+    // R400 lesson)
+    {
+        using namespace rules;
+        int bad = 0;
+    if (sddMountKindCount() != 7
+            || sddKindDraft() != 1
+            || sddKindLightWar() != 2
+            || sddKindMediumWar() != 3
+            || sddKindHeavyWar() != 4
+            || sddKindRiding() != 5
+            || sddKindPony() != 6
+            || sddStableStockCount() != 5
+            || !sddTownStableSellsMounts()
+            || !sddStableReadsPinnedCells()
+            || !sddSaveCarriesMountLine()
+            || !sddV1SaveLoadsAfoot()
+        )
+            ++bad;
+        printf("R777 saddle audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----
