@@ -3166,8 +3166,18 @@ description riding the same round.
     two-handed sword 81-85; the wakizashi
     86-100; single-pass pins per the
     R679 provenance shift
-  - [ ] Table 81: Bow, Crossbow, And Sling Class
+  - [x] Table 81: Bow, Crossbow, And Sling Class
     (capture p. 292)
+    - R752: the dln Table 81 pins - the
+    ten d100 missile weapon bands: the
+    composite shortbow 01-15; the short
+    bow 16-30; the chu-ko-nu 31; the
+    heavy crossbow 32-45; the light
+    crossbow 46-60; the daikyu 61-80; the
+    hankyu 81-90; the pellet bow 91; the
+    sling 92-96; the staff sling 97-100;
+    single-pass pins per the R679
+    provenance shift
   - [ ] Table 82: Miscellaneous (capture p. 292)
   - [ ] Table 83: Missile Class (capture p. 293)
   - [ ] Table 84: Martial Arts Class (capture p. 293)

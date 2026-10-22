@@ -1,0 +1,271 @@
+{
+ "round": 752,
+ "title": "OA TREASURE - Table 81: Bow, Crossbow, And Sling Class: the d100 missile weapon type grid",
+ "prefix": "dln",
+ "header_file": "rules/oa123table81.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 674,
+ "inline_count": 14,
+ "audit_label": "R752 OA Table 81 bow class audit",
+ "audit_comment": "OA round one hundred thirty-nine (capture p. 292): the Table 81 Bow, Crossbow, And Sling Class - the ten d100 bands of the missile weapon types, the composite shortbow through the staff sling, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE 81, BOW, CROSSBOW, AND SLING CLASS, printed capture p. 292 - the bow class grid round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 205 closed, 30 open - the Table 81 box flips (census 674 -> 675); NEXT - R753: Table 82: Miscellaneous (capture p. 292), prefix dlo (verify free at the landing), audit \"R753 OA Table 82 misc melee audit\", include after rules/oa123table81.h"
+ },
+ "consts": [
+  {
+   "name": "dlnBowRowCount",
+   "value": 10,
+   "comment": "the bow row count - the ten d100 bands of the Table 81 bow type grid (print capture p. 292)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlnCompositeShortbowBand",
+   "value": 1,
+   "comment": "the composite shortbow band - the 01-15 (print capture p. 292)"
+  },
+  {
+   "name": "dlnShortBowBand",
+   "value": 1,
+   "comment": "the short bow band - the 16-30 (print capture p. 292)"
+  },
+  {
+   "name": "dlnChuKoNuBand",
+   "value": 1,
+   "comment": "the chu-ko-nu band - the 31, the single-roll repeating crossbow (print capture p. 292)"
+  },
+  {
+   "name": "dlnHeavyCrossbowBand",
+   "value": 1,
+   "comment": "the heavy crossbow band - the 32-45 (print capture p. 292)"
+  },
+  {
+   "name": "dlnLightCrossbowBand",
+   "value": 1,
+   "comment": "the light crossbow band - the 46-60 (print capture p. 292)"
+  },
+  {
+   "name": "dlnDaikyuBand",
+   "value": 1,
+   "comment": "the daikyu band - the 61-80, the Japanese great bow (print capture p. 292)"
+  },
+  {
+   "name": "dlnHankyuBand",
+   "value": 1,
+   "comment": "the hankyu band - the 81-90, the Japanese short bow (print capture p. 292)"
+  },
+  {
+   "name": "dlnPelletBowBand",
+   "value": 1,
+   "comment": "the pellet bow band - the 91 (print capture p. 292)"
+  },
+  {
+   "name": "dlnSlingBand",
+   "value": 1,
+   "comment": "the sling band - the 92-96 (print capture p. 292)"
+  },
+  {
+   "name": "dlnStaffSlingBand",
+   "value": 1,
+   "comment": "the staff sling band - the 97-100 (print capture p. 292)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dlnBowClass",
+   "tag": "BowClass",
+   "count": "dlnBowRowCount",
+   "comment": "the Table 81 Bow, Crossbow, And Sling Class grid - the ten d100 bands of the missile weapon types, the composite shortbow through the staff sling (print capture p. 292)",
+   "cols": [
+    "dlnBowRollMin",
+    "dlnBowRollMax",
+    "dlnBowCode"
+   ],
+   "col_comments": [
+    "the d100 band minimum - the low roll of the row (print capture p. 292)",
+    "the d100 band maximum - the high roll of the row (print capture p. 292)",
+    "the bow type code - 1 the composite shortbow; 2 the short bow; 3 the chu-ko-nu; 4 the heavy crossbow; 5 the light crossbow; 6 the daikyu; 7 the hankyu; 8 the pellet bow; 9 the sling; 10 the staff sling (print capture p. 292)"
+   ],
+   "data": [
+    [
+     1,
+     15,
+     1
+    ],
+    [
+     16,
+     30,
+     2
+    ],
+    [
+     31,
+     31,
+     3
+    ],
+    [
+     32,
+     45,
+     4
+    ],
+    [
+     46,
+     60,
+     5
+    ],
+    [
+     61,
+     80,
+     6
+    ],
+    [
+     81,
+     90,
+     7
+    ],
+    [
+     91,
+     91,
+     8
+    ],
+    [
+     92,
+     96,
+     9
+    ],
+    [
+     97,
+     100,
+     10
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the grid - the ten-band Table 81, audited cell by cell by the table audit",
+   "expr": "m['dlnBowRowCount']() != 10 or m['dlnBowRollMin'](0) != 1 or m['dlnBowRollMax'](9) != 100 or m['dlnBowCode'](0) != 1 or m['dlnBowCode'](9) != 10"
+  },
+  {
+   "note": "the band walk - the ten missile weapon types, healthy values, each condition false",
+   "expr": "m['dlnCompositeShortbowBand']() != 1 or m['dlnShortBowBand']() != 1 or m['dlnChuKoNuBand']() != 1 or m['dlnHeavyCrossbowBand']() != 1 or m['dlnLightCrossbowBand']() != 1 or m['dlnDaikyuBand']() != 1 or m['dlnHankyuBand']() != 1 or m['dlnPelletBowBand']() != 1 or m['dlnSlingBand']() != 1 or m['dlnStaffSlingBand']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 81 grid": [
+   {
+    "kind": "const",
+    "name": "dlnBowRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dlnBowClass"
+   }
+  ],
+  "the band walk": [
+   {
+    "kind": "bool",
+    "name": "dlnCompositeShortbowBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlnShortBowBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlnChuKoNuBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlnHeavyCrossbowBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlnLightCrossbowBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlnDaikyuBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlnHankyuBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlnPelletBowBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlnSlingBand"
+   },
+   {
+    "kind": "bool",
+    "name": "dlnStaffSlingBand"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 81 box",
+   "from": "  - [ ] Table 81: Bow, Crossbow, And Sling Class\n    (capture p. 292)",
+   "to": "  - [x] Table 81: Bow, Crossbow, And Sling Class\n    (capture p. 292)\n    - R752: the dln Table 81 pins - the\n    ten d100 missile weapon bands: the\n    composite shortbow 01-15; the short\n    bow 16-30; the chu-ko-nu 31; the\n    heavy crossbow 32-45; the light\n    crossbow 46-60; the daikyu 61-80; the\n    hankyu 81-90; the pellet bow 91; the\n    sling 92-96; the staff sling 97-100;\n    single-pass pins per the R679\n    provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 205,
+  "open": 30
+ },
+ "include_comment": "the OA Table 81 pins",
+ "include_after": "#include \"rules/oa122table80.h\"  // R751: the OA Table 80 pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R751 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R751 LANDED 2026-10-22: commit",
+  "  5296a8ea6c1cfe6d91f6101b96977df9044d68f6",
+  "  (census 673 -> 674, pushed 797c191..5296a8e),",
+  "  OA TREASURE, Table 80: Sword Class (capture",
+  "  p. 292), header rules/oa122table80.h,",
+  "  prefix dlm (verified free at 797c191), one",
+  "  gap flip (the Table 80 box, single-line),",
+  "  gap census now 204 closed / 31 open.",
+  "  Round type: the Chapter 13 d100 band grid",
+  "  round, single-pass pins per the R679",
+  "  provenance shift. Inlines: 11 = 1 const +",
+  "  7 bools + 3 table cols; one table",
+  "  dlmSwordClass[7]: the seven d100 bands",
+  "  (the katana 01-30, the parang 31-35, the",
+  "  broad sword 36-50, the long sword 51-65,",
+  "  the short sword 66-80, the two-handed",
+  "  sword 81-85, the wakizashi 86-100), each",
+  "  band walked by a bool. Count const",
+  "  derived from the data (the R739 lesson)",
+  "  and the genuine-0 census asserted in the",
+  "  generator (the R745 lesson), verified",
+  "  7/7/7 at the landing. Zero stumbles, first",
+  "  rverify GREEN. Battery 29 mutants,",
+  "  0 missed. spec md5",
+  "  59542ae0e1f8fd313ca6a7419ff7f5b5, gate",
+  "  md5 dd825d6b8ce23288da46394c49779a90,",
+  "  canvas md5 89e8f0ef604eab236c1dfe99de61d",
+  "  174. NEXT - R752: Table 81: Bow, Crossbow,",
+  "  And Sling Class (capture p. 292), prefix",
+  "  dln (verify free at the landing), audit",
+  "  \"R752 OA Table 81 bow class audit\",",
+  "  include after rules/oa122table80.h."
+ ]
+}

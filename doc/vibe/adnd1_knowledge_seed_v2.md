@@ -17923,6 +17923,38 @@ when both halves land.
   at the landing), audit "R751 OA Table 80
   sword audit", include after
   rules/oa121table79.h.
+- R751 LANDED 2026-10-22: commit
+  5296a8ea6c1cfe6d91f6101b96977df9044d68f6
+  (census 673 -> 674, pushed 797c191..5296a8e),
+  OA TREASURE, Table 80: Sword Class (capture
+  p. 292), header rules/oa122table80.h,
+  prefix dlm (verified free at 797c191), one
+  gap flip (the Table 80 box, single-line),
+  gap census now 204 closed / 31 open.
+  Round type: the Chapter 13 d100 band grid
+  round, single-pass pins per the R679
+  provenance shift. Inlines: 11 = 1 const +
+  7 bools + 3 table cols; one table
+  dlmSwordClass[7]: the seven d100 bands
+  (the katana 01-30, the parang 31-35, the
+  broad sword 36-50, the long sword 51-65,
+  the short sword 66-80, the two-handed
+  sword 81-85, the wakizashi 86-100), each
+  band walked by a bool. Count const
+  derived from the data (the R739 lesson)
+  and the genuine-0 census asserted in the
+  generator (the R745 lesson), verified
+  7/7/7 at the landing. Zero stumbles, first
+  rverify GREEN. Battery 29 mutants,
+  0 missed. spec md5
+  59542ae0e1f8fd313ca6a7419ff7f5b5, gate
+  md5 dd825d6b8ce23288da46394c49779a90,
+  canvas md5 89e8f0ef604eab236c1dfe99de61d
+  174. NEXT - R752: Table 81: Bow, Crossbow,
+  And Sling Class (capture p. 292), prefix
+  dln (verify free at the landing), audit
+  "R752 OA Table 81 bow class audit",
+  include after rules/oa122table80.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
