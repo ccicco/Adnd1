@@ -2954,8 +2954,30 @@ description riding the same round.
     DMG tables of the pages 121-124;
     single-pass pins per the R679
     provenance shift
-  - [ ] Modifications to Standard Magical Items
+  - [x] Modifications to Standard Magical Items
     (capture pp. 286-287)
+    - R738: the dkz item mods pins -
+    the occidental items rule (the
+    majority of DMG items available,
+    the particularly occidental some
+    not appearing normally or appearing
+    somewhat different, the little or no
+    use and not-within-the-culture
+    clauses, the cannot-appearance
+    allowance of the far-from-common
+    construction); the general rule of
+    the three sources (the gajin of the
+    capture misreading gaijin, the
+    curiosity import, the inspired or
+    deranged caster); the form changes
+    (the generally occidental form and
+    function; the lyre samisen or flute,
+    the cloak robe or jacket, the boots
+    sandals, the bags boxes; the DM
+    decision, the capture misreading
+    after for the alter, leaving the
+    function unaffected); single-pass
+    pins per the R679 provenance shift
   - [ ] Potions (capture p. 287)
   - [ ] Scrolls (capture p. 288)
   - [ ] Rods, Staves, and Wands (capture p. 288)

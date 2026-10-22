@@ -17331,6 +17331,42 @@ when both halves land.
   "R737 OA Table III Orient audit" (the
   label must stay under the width gate),
   include after rules/oa107tableiia.h.
+- R737 LANDED 2026-10-21: commit
+  5b369f6be34c573c900cb1ff931bfb143d9df3fe
+  (census 659 -> 660, pushed ec8606c..5b369f6),
+  OA TREASURE, Table III. (Orient): Magical
+  Items (capture p. 287), header
+  rules/oa108tableiii.h, prefix dky
+  (verified free at ec8606c), one gap flip
+  (the Table III box, its two-line wrap
+  handled), gap census now 190 closed /
+  45 open. Round type: the Chapter 13 d100
+  band grid round, single-pass pins per the
+  R679 provenance shift. Inlines: 24 =
+  11 consts + 9 bools + 4 table cols; one
+  table dkyIII[12]: the twelve d100 bands
+  (the 01-10 potions III.A., the 11-35
+  scrolls III.B., the 36-40 rings III.C.,
+  the 41-45 rods-staves-wands III.D., the
+  five 46-55 misc magic IIIE.1-.5
+  sub-bands, the 56-60 oriental magical
+  items, the 61-75 armor and shields of the
+  capture misreading 8 for the &, the
+  76-100 magical weapons), the category and
+  subtable codes riding with the band
+  edges; the footnote to the DMG pages
+  121-124 as the consts and bool. Zero
+  stumbles, first rverify GREEN. Battery
+  68 mutants, 0 missed. spec md5
+  cf1aae9f3a5a49e8895e585d3e75732b, gate
+  md5 bf103d5b3a73c4fd5b238764503528ca,
+  canvas md5 5ec98cd5125d1d4dee08d5e9ad685
+  4d6. NEXT - R738: the Modifications to
+  Standard Magical Items prose (capture
+  p. 286), prefix dkz (verify free at the
+  landing), audit "R738 OA standard item
+  mods audit", include after
+  rules/oa108tableiii.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

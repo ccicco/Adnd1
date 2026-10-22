@@ -1,0 +1,292 @@
+{
+ "round": 738,
+ "title": "OA TREASURE - the Modifications to Standard Magical Items: the occidental items rule and the form changes",
+ "prefix": "dkz",
+ "header_file": "rules/oa109itemmods.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 660,
+ "inline_count": 21,
+ "audit_label": "R738 OA standard item mods audit",
+ "audit_comment": "OA round one hundred twenty-five (capture p. 286): the Modifications to Standard Magical Items prose - the occidental items rule with the gajin, curiosity, and caster sources, the form changes of the lyre, cloak, boots, and bags, the DM form decision leaving function untouched, the capture misreads pinned against the print, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - THE MODIFICATIONS TO STANDARD MAGICAL ITEMS, printed capture p. 286 - the occidental items round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 191 closed, 44 open - the item mods box flips (census 660 -> 661); NEXT - R739: Potions (capture p. 287), prefix dla (verify free at the landing), audit \"R739 OA potions audit\", include after rules/oa109itemmods.h"
+ },
+ "consts": [
+  {
+   "name": "dkzGajinThreshold",
+   "value": 3,
+   "comment": "the gajin count - the three sources of an item appearing as printed in the DMG in an Oriental setting: the gajin bringing it in, the import as a curiosity, the inspired or deranged spell caster assembling it (print capture p. 286)"
+  },
+  {
+   "name": "dkzFormChangeCount",
+   "value": 4,
+   "comment": "the form change count - the four examples of the occidental form taking an Oriental shape: the lyre, cloak, boots, and bags (print capture p. 286)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkzMajorityAvailable",
+   "value": 1,
+   "comment": "the majority - most of the DMG magical items available throughout the world of the Orient (print capture p. 286)"
+  },
+  {
+   "name": "dkzSomeParticularlyOccidental",
+   "value": 1,
+   "comment": "the exceptions - some items particularly occidental (print capture p. 286)"
+  },
+  {
+   "name": "dkzDoNotAppearNormally",
+   "value": 1,
+   "comment": "the appearance rule - the occidental items do not appear normally in the Oriental world (print capture p. 286)"
+  },
+  {
+   "name": "dkzOrSomewhatDifferent",
+   "value": 1,
+   "comment": "the difference rule - if they do appear, they are somewhat different from those listed in the DMG (print capture p. 286)"
+  },
+  {
+   "name": "dkzLittleOrNoUse",
+   "value": 1,
+   "comment": "the use clause - there may be little or no use for the items in the Oriental setting (print capture p. 286)"
+  },
+  {
+   "name": "dkzNotWithinCulture",
+   "value": 1,
+   "comment": "the culture clause - they may not be items found within the culture (print capture p. 286)"
+  },
+  {
+   "name": "dkzNotToSayCannotAppear",
+   "value": 1,
+   "comment": "the allowance - this is not to say they cannot appear (print capture p. 286)"
+  },
+  {
+   "name": "dkzConstructionFarFromCommon",
+   "value": 1,
+   "comment": "the commonness - only that their construction and use is far from common (print capture p. 286)"
+  },
+  {
+   "name": "dkzGeneralRuleIfAsPresented",
+   "value": 1,
+   "comment": "the general rule - if any of the items below appear as presented in the DMG in an Oriental setting (print capture p. 286)"
+  },
+  {
+   "name": "dkzBroughtInByGajin",
+   "value": 1,
+   "comment": "the gajin source - brought in by gajin, the capture misreading the gaijin (print capture p. 286)"
+  },
+  {
+   "name": "dkzImportedAsCuriosities",
+   "value": 1,
+   "comment": "the import source - imported as curiosities (print capture p. 286)"
+  },
+  {
+   "name": "dkzAssembledByInspiredCaster",
+   "value": 1,
+   "comment": "the caster source - assembled by some inspired or deranged spell caster (print capture p. 286)"
+  },
+  {
+   "name": "dkzGenerallyOccidentalForm",
+   "value": 1,
+   "comment": "the form - the DMG items generally, although not always, occidental in form and function (print capture p. 286)"
+  },
+  {
+   "name": "dkzLyreSamisenOrFlute",
+   "value": 1,
+   "comment": "the lyre example - a known instrument in occidental lands taking the form of a samisen or flute in the Orient (print capture p. 286)"
+  },
+  {
+   "name": "dkzCloakRobeOrJacket",
+   "value": 1,
+   "comment": "the cloak example - a cloak becoming a robe or jacket (print capture p. 286)"
+  },
+  {
+   "name": "dkzBootsSandals",
+   "value": 1,
+   "comment": "the boots example - boots becoming sandals (print capture p. 286)"
+  },
+  {
+   "name": "dkzBagsBoxes",
+   "value": 1,
+   "comment": "the bags example - bags becoming boxes (print capture p. 286)"
+  },
+  {
+   "name": "dkzDMDecidesForm",
+   "value": 1,
+   "comment": "the decision - it is the DM's decision to alter the form of any item, the capture misreading after for the alter (print capture p. 286)"
+  },
+  {
+   "name": "dkzFunctionUnaffected",
+   "value": 1,
+   "comment": "the function clause - this does not affect the function of the item in any way (print capture p. 286)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the first paragraph - the occidental items rule, healthy values, each condition false",
+   "expr": "m['dkzMajorityAvailable']() != 1 or m['dkzSomeParticularlyOccidental']() != 1 or m['dkzDoNotAppearNormally']() != 1 or m['dkzOrSomewhatDifferent']() != 1 or m['dkzLittleOrNoUse']() != 1 or m['dkzNotWithinCulture']() != 1 or m['dkzNotToSayCannotAppear']() != 1 or m['dkzConstructionFarFromCommon']() != 1"
+  },
+  {
+   "note": "the three sources - the gajin, the curiosity, and the caster, healthy values, each condition false",
+   "expr": "m['dkzGeneralRuleIfAsPresented']() != 1 or m['dkzBroughtInByGajin']() != 1 or m['dkzImportedAsCuriosities']() != 1 or m['dkzAssembledByInspiredCaster']() != 1 or m['dkzGajinThreshold']() != 3"
+  },
+  {
+   "note": "the second paragraph - the form changes and the function clause, healthy values, each condition false",
+   "expr": "m['dkzGenerallyOccidentalForm']() != 1 or m['dkzLyreSamisenOrFlute']() != 1 or m['dkzCloakRobeOrJacket']() != 1 or m['dkzBootsSandals']() != 1 or m['dkzBagsBoxes']() != 1 or m['dkzDMDecidesForm']() != 1 or m['dkzFunctionUnaffected']() != 1 or m['dkzFormChangeCount']() != 4"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the occidental items rule": [
+   {
+    "kind": "bool",
+    "name": "dkzMajorityAvailable"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzSomeParticularlyOccidental"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzDoNotAppearNormally"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzOrSomewhatDifferent"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzLittleOrNoUse"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzNotWithinCulture"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzNotToSayCannotAppear"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzConstructionFarFromCommon"
+   }
+  ],
+  "the three sources": [
+   {
+    "kind": "bool",
+    "name": "dkzGeneralRuleIfAsPresented"
+   },
+   {
+    "kind": "const",
+    "name": "dkzGajinThreshold"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzBroughtInByGajin"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzImportedAsCuriosities"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzAssembledByInspiredCaster"
+   }
+  ],
+  "the form changes": [
+   {
+    "kind": "bool",
+    "name": "dkzGenerallyOccidentalForm"
+   },
+   {
+    "kind": "const",
+    "name": "dkzFormChangeCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzLyreSamisenOrFlute"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzCloakRobeOrJacket"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzBootsSandals"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzBagsBoxes"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzDMDecidesForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dkzFunctionUnaffected"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the item mods box",
+   "from": "  - [ ] Modifications to Standard Magical Items\n    (capture pp. 286-287)",
+   "to": "  - [x] Modifications to Standard Magical Items\n    (capture pp. 286-287)\n    - R738: the dkz item mods pins -\n    the occidental items rule (the\n    majority of DMG items available,\n    the particularly occidental some\n    not appearing normally or appearing\n    somewhat different, the little or no\n    use and not-within-the-culture\n    clauses, the cannot-appearance\n    allowance of the far-from-common\n    construction); the general rule of\n    the three sources (the gajin of the\n    capture misreading gaijin, the\n    curiosity import, the inspired or\n    deranged caster); the form changes\n    (the generally occidental form and\n    function; the lyre samisen or flute,\n    the cloak robe or jacket, the boots\n    sandals, the bags boxes; the DM\n    decision, the capture misreading\n    after for the alter, leaving the\n    function unaffected); single-pass\n    pins per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 191,
+  "open": 44
+ },
+ "include_comment": "the OA item mods pins",
+ "include_after": "#include \"rules/oa108tableiii.h\"  // R737: the OA Table III pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R737 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R737 LANDED 2026-10-21: commit",
+  "  5b369f6be34c573c900cb1ff931bfb143d9df3fe",
+  "  (census 659 -> 660, pushed ec8606c..5b369f6),",
+  "  OA TREASURE, Table III. (Orient): Magical",
+  "  Items (capture p. 287), header",
+  "  rules/oa108tableiii.h, prefix dky",
+  "  (verified free at ec8606c), one gap flip",
+  "  (the Table III box, its two-line wrap",
+  "  handled), gap census now 190 closed /",
+  "  45 open. Round type: the Chapter 13 d100",
+  "  band grid round, single-pass pins per the",
+  "  R679 provenance shift. Inlines: 24 =",
+  "  11 consts + 9 bools + 4 table cols; one",
+  "  table dkyIII[12]: the twelve d100 bands",
+  "  (the 01-10 potions III.A., the 11-35",
+  "  scrolls III.B., the 36-40 rings III.C.,",
+  "  the 41-45 rods-staves-wands III.D., the",
+  "  five 46-55 misc magic IIIE.1-.5",
+  "  sub-bands, the 56-60 oriental magical",
+  "  items, the 61-75 armor and shields of the",
+  "  capture misreading 8 for the &, the",
+  "  76-100 magical weapons), the category and",
+  "  subtable codes riding with the band",
+  "  edges; the footnote to the DMG pages",
+  "  121-124 as the consts and bool. Zero",
+  "  stumbles, first rverify GREEN. Battery",
+  "  68 mutants, 0 missed. spec md5",
+  "  cf1aae9f3a5a49e8895e585d3e75732b, gate",
+  "  md5 bf103d5b3a73c4fd5b238764503528ca,",
+  "  canvas md5 5ec98cd5125d1d4dee08d5e9ad685",
+  "  4d6. NEXT - R738: the Modifications to",
+  "  Standard Magical Items prose (capture",
+  "  p. 286), prefix dkz (verify free at the",
+  "  landing), audit \"R738 OA standard item",
+  "  mods audit\", include after",
+  "  rules/oa108tableiii.h."
+ ]
+}
