@@ -17220,6 +17220,38 @@ when both halves land.
   the landing), audit "R734 OA random
   treasure prose audit", include after
   rules/oa104classuse.h.
+- R734 LANDED 2026-10-21: commit
+  dd3890cd09de8839cb0e9c9e5e688f1abc07a63b
+  (census 656 -> 657, pushed 943ff7e..dd3890c),
+  OA TREASURE, the Random Treasure
+  Determination prose (capture p. 285), header
+  rules/oa105randtres.h, prefix dkv
+  (verified free at 943ff7e), one gap flip
+  (the random treasure prose box, its
+  two-line wrap handled), gap census now
+  187 closed / 48 open. Round type: the
+  Chapter 13 prose round, single-pass pins
+  per the R679 provenance shift. Inlines: 11
+  = 4 consts + 7 bools, no tables; the DMG
+  procedure used to randomly determine
+  treasures and magical items; the Table 74
+  exception with the use-the-versions-here
+  rule; the additional Table 86 Oriental
+  Magical Items; the Table II.A. (ORIENT)
+  and Table III (ORIENT) replacing the DMG
+  tables of pages 120 and 121; the
+  Oriental Adventures world scope. Zero
+  stumbles, first rverify GREEN. Battery 11
+  mutants, 0 missed. spec md5
+  8ad46ad2ed6ea7c3a9ad5622eb4e5f2a, gate
+  md5 f224e6246cf1002c47ed2803afa5f1db,
+  canvas md5 aae7969127a828ff87beaa845f5fec
+  db. NEXT - R735: Table 74, Monetary
+  Treasure And Magical Items (capture
+  p. 286), prefix dkw (verify free at the
+  landing), audit "R735 OA Table 74
+  monetary treasure audit", include after
+  rules/oa105randtres.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

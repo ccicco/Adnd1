@@ -1,0 +1,1289 @@
+{
+ "round": 735,
+ "title": "OA TREASURE - Table 74: Monetary Treasure And Magical Items: the A through Z treasure type grid",
+ "prefix": "dkw",
+ "header_file": "rules/oa106table74.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 657,
+ "inline_count": 30,
+ "audit_label": "R735 OA Table 74 monetary treasure audit",
+ "audit_comment": "OA round one hundred twenty-two (capture p. 286): the Table 74 Monetary Treasure And Magical Items - the twenty-six treasure types by the seven categories, each cell the min, max, and percent triple with the Nil the 0 sentinel, the guaranteed pieces rows the 100, the maps and magic clauses riding as bools, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE 74, MONETARY TREASURE AND MAGICAL ITEMS, printed capture p. 286 - the treasure type grid round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 188 closed, 47 open - the Table 74 box flips (census 657 -> 658); NEXT - R736: Table II.A. (Orient): Monetary Treasure (capture p. 286), prefix dkx (verify free at the landing), audit \"R736 OA Table II.A. Orient monetary treasure audit\", include after rules/oa106table74.h"
+ },
+ "consts": [
+  {
+   "name": "dkwTypeCount",
+   "value": 26,
+   "comment": "the treasure type row count - the A through Z of the Table 74 grid (print capture p. 286)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dkwMapsPlusPotion",
+   "value": 1,
+   "comment": "the plus-potion clause - the D, H, and X rows of the maps and magic column (print capture p. 286)"
+  },
+  {
+   "name": "dkwMapsPlusScroll",
+   "value": 1,
+   "comment": "the plus-scroll clause - the E, F, G, and H rows of the maps and magic column, the capture misreading 1- for the 1 scroll of H (print capture p. 286)"
+  },
+  {
+   "name": "dkwMapsExceptSwordsMisc",
+   "value": 1,
+   "comment": "the except clause - the F row: any 3 except swords or misc. weapons plus potion and 1 scroll, the capture capitalizing Weapons (print capture p. 286)"
+  },
+  {
+   "name": "dkwMapsExceptPotionsScrolls",
+   "value": 1,
+   "comment": "the except clause - the U and V rows: 1 and 2 of each magic except potions and scrolls (print capture p. 286)"
+  },
+  {
+   "name": "dkwMapsSwordArmorWeapon",
+   "value": 1,
+   "comment": "the B row clause - the sword, armor, or misc. weapon of the maps and magic column (print capture p. 286)"
+  },
+  {
+   "name": "dkwMapsOneMap",
+   "value": 1,
+   "comment": "the W row clause - the 1 map of the maps and magic column (print capture p. 286)"
+  },
+  {
+   "name": "dkwMapsMiscMagicAndPotion",
+   "value": 1,
+   "comment": "the X row clause - the 1 misc. magic and 1 potion, the capture misreading mist. for misc. (print capture p. 286)"
+  },
+  {
+   "name": "dkwPiecesGuaranteed",
+   "value": 1,
+   "comment": "the pieces rows - the J, K, L, M, and N rows carry no percent chance, the fixed pieces pinned with the 100 percent (print capture p. 286)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dkwFen",
+   "tag": "Fen",
+   "count": "dkwTypeCount",
+   "comment": "the fen column of Table 74 - the twenty-six treasure types as the min, max, and percent triples, the Nil cells the 0 sentinel, the guaranteed pieces rows the 100 (the thousand fen - the copper penny column of the A through Z rows, the 0 the nil; print capture p. 286)",
+   "cols": [
+    "dkwFenMin",
+    "dkwFenMax",
+    "dkwFenPct"
+   ],
+   "col_comments": [
+    "the fen minimum - the low die of the rolled range (the thousand fen - the copper penny column of the A through Z rows, the 0 the nil; print capture p. 286)",
+    "the fen maximum - the high die of the rolled range (the thousand fen - the copper penny column of the A through Z rows, the 0 the nil; print capture p. 286)",
+    "the fen percent - the chance of the roll, the 100 the guaranteed pieces rows (the thousand fen - the copper penny column of the A through Z rows, the 0 the nil; print capture p. 286)"
+   ],
+   "data": [
+    [
+     1,
+     6,
+     25
+    ],
+    [
+     1,
+     8,
+     50
+    ],
+    [
+     1,
+     12,
+     20
+    ],
+    [
+     1,
+     8,
+     10
+    ],
+    [
+     1,
+     10,
+     5
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     30,
+     25
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     24,
+     100
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     25
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     20
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    17,
+    17,
+    17
+   ]
+  },
+  {
+   "name": "dkwYuan",
+   "tag": "Yuan",
+   "count": "dkwTypeCount",
+   "comment": "the yuan column of Table 74 - the twenty-six treasure types as the min, max, and percent triples, the Nil cells the 0 sentinel, the guaranteed pieces rows the 100 (the thousand yuan - the silver dime column, the 0 the nil; print capture p. 286)",
+   "cols": [
+    "dkwYuanMin",
+    "dkwYuanMax",
+    "dkwYuanPct"
+   ],
+   "col_comments": [
+    "the yuan minimum - the low die of the rolled range (the thousand yuan - the silver dime column, the 0 the nil; print capture p. 286)",
+    "the yuan maximum - the high die of the rolled range (the thousand yuan - the silver dime column, the 0 the nil; print capture p. 286)",
+    "the yuan percent - the chance of the roll, the 100 the guaranteed pieces rows (the thousand yuan - the silver dime column, the 0 the nil; print capture p. 286)"
+   ],
+   "data": [
+    [
+     1,
+     3,
+     30
+    ],
+    [
+     1,
+     6,
+     25
+    ],
+    [
+     1,
+     6,
+     30
+    ],
+    [
+     1,
+     10,
+     15
+    ],
+    [
+     1,
+     10,
+     25
+    ],
+    [
+     3,
+     18,
+     10
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     100,
+     40
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     24,
+     100
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     20
+    ],
+    [
+     2,
+     8,
+     30
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     8,
+     25
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    15,
+    15,
+    15
+   ]
+  },
+  {
+   "name": "dkwTael",
+   "tag": "Tael",
+   "count": "dkwTypeCount",
+   "comment": "the tael column of Table 74 - the twenty-six treasure types as the min, max, and percent triples, the Nil cells the 0 sentinel, the guaranteed pieces rows the 100 (the hundred tael - the silver dollar column, the 0 the nil; print capture p. 286)",
+   "cols": [
+    "dkwTaelMin",
+    "dkwTaelMax",
+    "dkwTaelPct"
+   ],
+   "col_comments": [
+    "the tael minimum - the low die of the rolled range (the hundred tael - the silver dollar column, the 0 the nil; print capture p. 286)",
+    "the tael maximum - the high die of the rolled range (the hundred tael - the silver dollar column, the 0 the nil; print capture p. 286)",
+    "the tael percent - the chance of the roll, the 100 the guaranteed pieces rows (the hundred tael - the silver dollar column, the 0 the nil; print capture p. 286)"
+   ],
+   "data": [
+    [
+     2,
+     20,
+     35
+    ],
+    [
+     10,
+     40,
+     25
+    ],
+    [
+     1,
+     10,
+     10
+    ],
+    [
+     10,
+     60,
+     35
+    ],
+    [
+     10,
+     60,
+     25
+    ],
+    [
+     20,
+     80,
+     30
+    ],
+    [
+     10,
+     40,
+     50
+    ],
+    [
+     20,
+     80,
+     45
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     12,
+     100
+    ],
+    [
+     4,
+     24,
+     100
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     10,
+     25
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     40,
+     40
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     100,
+     60
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     60,
+     70
+    ],
+    [
+     20,
+     60,
+     25
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    11,
+    11,
+    11
+   ]
+  },
+  {
+   "name": "dkwChien",
+   "tag": "Chien",
+   "count": "dkwTypeCount",
+   "comment": "the chien column of Table 74 - the twenty-six treasure types as the min, max, and percent triples, the Nil cells the 0 sentinel, the guaranteed pieces rows the 100 (the hundred ch'ien - the gold coin column, the 0 the nil; print capture p. 286)",
+   "cols": [
+    "dkwChienMin",
+    "dkwChienMax",
+    "dkwChienPct"
+   ],
+   "col_comments": [
+    "the chien minimum - the low die of the rolled range (the hundred ch'ien - the gold coin column, the 0 the nil; print capture p. 286)",
+    "the chien maximum - the high die of the rolled range (the hundred ch'ien - the gold coin column, the 0 the nil; print capture p. 286)",
+    "the chien percent - the chance of the roll, the 100 the guaranteed pieces rows (the hundred ch'ien - the gold coin column, the 0 the nil; print capture p. 286)"
+   ],
+   "data": [
+    [
+     1,
+     3,
+     40
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     35
+    ],
+    [
+     2,
+     16,
+     50
+    ],
+    [
+     4,
+     40,
+     25
+    ],
+    [
+     2,
+     12,
+     30
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     100
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     30,
+     50
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     15
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     30
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    17,
+    17,
+    17
+   ]
+  },
+  {
+   "name": "dkwGems",
+   "tag": "Gems",
+   "count": "dkwTypeCount",
+   "comment": "the gems column of Table 74 - the twenty-six treasure types as the min, max, and percent triples, the Nil cells the 0 sentinel, the guaranteed pieces rows the 100 (the gems - the gem count column, the 0 the nil; print capture p. 286)",
+   "cols": [
+    "dkwGemsMin",
+    "dkwGemsMax",
+    "dkwGemsPct"
+   ],
+   "col_comments": [
+    "the gems minimum - the low die of the rolled range (the gems - the gem count column, the 0 the nil; print capture p. 286)",
+    "the gems maximum - the high die of the rolled range (the gems - the gem count column, the 0 the nil; print capture p. 286)",
+    "the gems percent - the chance of the roll, the 100 the guaranteed pieces rows (the gems - the gem count column, the 0 the nil; print capture p. 286)"
+   ],
+   "data": [
+    [
+     4,
+     40,
+     60
+    ],
+    [
+     1,
+     8,
+     30
+    ],
+    [
+     1,
+     6,
+     25
+    ],
+    [
+     1,
+     6,
+     30
+    ],
+    [
+     1,
+     8,
+     15
+    ],
+    [
+     2,
+     20,
+     20
+    ],
+    [
+     2,
+     12,
+     30
+    ],
+    [
+     1,
+     100,
+     50
+    ],
+    [
+     1,
+     10,
+     55
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     4,
+     50
+    ],
+    [
+     3,
+     24,
+     55
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     40,
+     90
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     40,
+     60
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     30,
+     55
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    12,
+    12,
+    12
+   ]
+  },
+  {
+   "name": "dkwArt",
+   "tag": "Art",
+   "count": "dkwTypeCount",
+   "comment": "the art column of Table 74 - the twenty-six treasure types as the min, max, and percent triples, the Nil cells the 0 sentinel, the guaranteed pieces rows the 100 (the art objects - the art count column, the 0 the nil; print capture p. 286)",
+   "cols": [
+    "dkwArtMin",
+    "dkwArtMax",
+    "dkwArtPct"
+   ],
+   "col_comments": [
+    "the art minimum - the low die of the rolled range (the art objects - the art count column, the 0 the nil; print capture p. 286)",
+    "the art maximum - the high die of the rolled range (the art objects - the art count column, the 0 the nil; print capture p. 286)",
+    "the art percent - the chance of the roll, the 100 the guaranteed pieces rows (the art objects - the art count column, the 0 the nil; print capture p. 286)"
+   ],
+   "data": [
+    [
+     1,
+     6,
+     50
+    ],
+    [
+     1,
+     2,
+     20
+    ],
+    [
+     1,
+     1,
+     20
+    ],
+    [
+     1,
+     3,
+     25
+    ],
+    [
+     1,
+     4,
+     10
+    ],
+    [
+     1,
+     6,
+     10
+    ],
+    [
+     1,
+     6,
+     25
+    ],
+    [
+     10,
+     30,
+     50
+    ],
+    [
+     1,
+     6,
+     50
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     8,
+     45
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     20,
+     80
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     30,
+     50
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     18,
+     50
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    13,
+    13,
+    13
+   ]
+  },
+  {
+   "name": "dkwMaps",
+   "tag": "Maps",
+   "count": "dkwTypeCount",
+   "comment": "the maps column of Table 74 - the twenty-six treasure types as the min, max, and percent triples, the Nil cells the 0 sentinel, the guaranteed pieces rows the 100 (the maps and magic - the item count column of the any-N and range rows, the 0 the nil; print capture p. 286)",
+   "cols": [
+    "dkwMapsMin",
+    "dkwMapsMax",
+    "dkwMapsPct"
+   ],
+   "col_comments": [
+    "the maps minimum - the low die of the rolled range (the maps and magic - the item count column of the any-N and range rows, the 0 the nil; print capture p. 286)",
+    "the maps maximum - the high die of the rolled range (the maps and magic - the item count column of the any-N and range rows, the 0 the nil; print capture p. 286)",
+    "the maps percent - the chance of the roll, the 100 the guaranteed pieces rows (the maps and magic - the item count column of the any-N and range rows, the 0 the nil; print capture p. 286)"
+   ],
+   "data": [
+    [
+     3,
+     3,
+     30
+    ],
+    [
+     1,
+     1,
+     10
+    ],
+    [
+     2,
+     2,
+     10
+    ],
+    [
+     2,
+     2,
+     15
+    ],
+    [
+     3,
+     3,
+     25
+    ],
+    [
+     3,
+     3,
+     30
+    ],
+    [
+     4,
+     4,
+     35
+    ],
+    [
+     4,
+     4,
+     15
+    ],
+    [
+     1,
+     1,
+     15
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     8,
+     40
+    ],
+    [
+     1,
+     4,
+     50
+    ],
+    [
+     1,
+     1,
+     70
+    ],
+    [
+     2,
+     2,
+     85
+    ],
+    [
+     1,
+     1,
+     55
+    ],
+    [
+     1,
+     1,
+     60
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     3,
+     50
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    10,
+    10,
+    10
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the clause bools - the maps and magic specials, healthy values, each condition false",
+   "expr": "m['dkwMapsPlusPotion']() != 1 or m['dkwMapsPlusScroll']() != 1 or m['dkwMapsExceptSwordsMisc']() != 1 or m['dkwMapsExceptPotionsScrolls']() != 1 or m['dkwMapsSwordArmorWeapon']() != 1 or m['dkwMapsOneMap']() != 1 or m['dkwMapsMiscMagicAndPotion']() != 1 or m['dkwPiecesGuaranteed']() != 1"
+  },
+  {
+   "note": "the grid - the twenty-six-row Table 74, audited cell by cell by the table audit",
+   "expr": "m['dkwTypeCount']() != 26"
+  },
+  {
+   "note": "the nil law - the min, max, and percent of a cell nil together, the A row ch'ien and the Q row maps spot checks, healthy values, each condition false",
+   "expr": "m['dkwChienMin'](1) != 0 or m['dkwChienMax'](1) != 0 or m['dkwChienPct'](1) != 0 or m['dkwMapsMin'](16) != 0 or m['dkwMapsMax'](16) != 0 or m['dkwMapsPct'](16) != 0"
+  },
+  {
+   "note": "the extremes - the U row gems percent the 90 high of the rolled cells and the H row yuan the 100 range top, healthy values, each condition false",
+   "expr": "m['dkwGemsPct'](20) != 90 or m['dkwYuanMax'](7) != 100"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the treasure type grid": [
+   {
+    "kind": "const",
+    "name": "dkwTypeCount"
+   },
+   {
+    "kind": "table",
+    "name": "dkwFen"
+   },
+   {
+    "kind": "table",
+    "name": "dkwYuan"
+   },
+   {
+    "kind": "table",
+    "name": "dkwTael"
+   },
+   {
+    "kind": "table",
+    "name": "dkwChien"
+   },
+   {
+    "kind": "table",
+    "name": "dkwGems"
+   },
+   {
+    "kind": "table",
+    "name": "dkwArt"
+   },
+   {
+    "kind": "table",
+    "name": "dkwMaps"
+   }
+  ],
+  "the maps and magic clauses": [
+   {
+    "kind": "bool",
+    "name": "dkwMapsPlusPotion"
+   },
+   {
+    "kind": "bool",
+    "name": "dkwMapsPlusScroll"
+   },
+   {
+    "kind": "bool",
+    "name": "dkwMapsExceptSwordsMisc"
+   },
+   {
+    "kind": "bool",
+    "name": "dkwMapsExceptPotionsScrolls"
+   },
+   {
+    "kind": "bool",
+    "name": "dkwMapsSwordArmorWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "dkwMapsOneMap"
+   },
+   {
+    "kind": "bool",
+    "name": "dkwMapsMiscMagicAndPotion"
+   },
+   {
+    "kind": "bool",
+    "name": "dkwPiecesGuaranteed"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 74 box",
+   "from": "  - [ ] Table 74: Monetary Treasure And Magical Items\n    (capture p. 286)",
+   "to": "  - [x] Table 74: Monetary Treasure And Magical Items\n    (capture p. 286)\n    - R735: the dkw Table 74 pins - the\n    twenty-six treasure types (the A\n    through Z rows) by the seven\n    categories (the fen, yuan, tael,\n    ch'ien, gems, art, maps and magic) as\n    the min, max, and percent triples;\n    the Nil cells the 0 sentinel; the\n    guaranteed pieces rows (the J fen, K\n    yuan, L and M tael, N ch'ien) the 100\n    percent; the maps clauses (the plus\n    potion of D, H, X; the plus scroll of\n    E, F, G, H of the capture misreading\n    1- for the 1 scroll; the F except\n    swords or misc. weapons; the U and V\n    except potions and scrolls; the B\n    sword, armor, or misc. weapon; the W\n    1 map; the X misc. magic and potion of\n    the capture misreading mist.); the\n    P row the capture missing the space\n    of the 2-8:30; single-pass pins per\n    the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 188,
+  "open": 47
+ },
+ "include_comment": "the OA Table 74 pins",
+ "include_after": "#include \"rules/oa105randtres.h\"  // R734: the OA random treasure pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R734 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R734 LANDED 2026-10-21: commit",
+  "  dd3890cd09de8839cb0e9c9e5e688f1abc07a63b",
+  "  (census 656 -> 657, pushed 943ff7e..dd3890c),",
+  "  OA TREASURE, the Random Treasure",
+  "  Determination prose (capture p. 285), header",
+  "  rules/oa105randtres.h, prefix dkv",
+  "  (verified free at 943ff7e), one gap flip",
+  "  (the random treasure prose box, its",
+  "  two-line wrap handled), gap census now",
+  "  187 closed / 48 open. Round type: the",
+  "  Chapter 13 prose round, single-pass pins",
+  "  per the R679 provenance shift. Inlines: 11",
+  "  = 4 consts + 7 bools, no tables; the DMG",
+  "  procedure used to randomly determine",
+  "  treasures and magical items; the Table 74",
+  "  exception with the use-the-versions-here",
+  "  rule; the additional Table 86 Oriental",
+  "  Magical Items; the Table II.A. (ORIENT)",
+  "  and Table III (ORIENT) replacing the DMG",
+  "  tables of pages 120 and 121; the",
+  "  Oriental Adventures world scope. Zero",
+  "  stumbles, first rverify GREEN. Battery 11",
+  "  mutants, 0 missed. spec md5",
+  "  8ad46ad2ed6ea7c3a9ad5622eb4e5f2a, gate",
+  "  md5 f224e6246cf1002c47ed2803afa5f1db,",
+  "  canvas md5 aae7969127a828ff87beaa845f5fec",
+  "  db. NEXT - R735: Table 74, Monetary",
+  "  Treasure And Magical Items (capture",
+  "  p. 286), prefix dkw (verify free at the",
+  "  landing), audit \"R735 OA Table 74",
+  "  monetary treasure audit\", include after",
+  "  rules/oa105randtres.h."
+ ]
+}

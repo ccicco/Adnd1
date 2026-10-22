@@ -2896,8 +2896,29 @@ description riding the same round.
     and 121, in the world of Oriental
     Adventures; single-pass pins per the
     R679 provenance shift
-  - [ ] Table 74: Monetary Treasure And Magical Items
+  - [x] Table 74: Monetary Treasure And Magical Items
     (capture p. 286)
+    - R735: the dkw Table 74 pins - the
+    twenty-six treasure types (the A
+    through Z rows) by the seven
+    categories (the fen, yuan, tael,
+    ch'ien, gems, art, maps and magic) as
+    the min, max, and percent triples;
+    the Nil cells the 0 sentinel; the
+    guaranteed pieces rows (the J fen, K
+    yuan, L and M tael, N ch'ien) the 100
+    percent; the maps clauses (the plus
+    potion of D, H, X; the plus scroll of
+    E, F, G, H of the capture misreading
+    1- for the 1 scroll; the F except
+    swords or misc. weapons; the U and V
+    except potions and scrolls; the B
+    sword, armor, or misc. weapon; the W
+    1 map; the X misc. magic and potion of
+    the capture misreading mist.); the
+    P row the capture missing the space
+    of the 2-8:30; single-pass pins per
+    the R679 provenance shift
   - [ ] Table II.A. (Orient): Monetary Treasure
     (capture p. 286)
   - [ ] Table III. (Orient): Magical Items
