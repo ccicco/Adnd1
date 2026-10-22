@@ -18107,6 +18107,50 @@ when both halves land.
   (verify free at the landing), audit "R756
   OA Table 85 ninja audit", include after
   rules/oa126table84.h.
+- R756 LANDED 2026-10-22: commit
+  eff02a834ef262691988d7ea5f99642c236c842e
+  (census 678 -> 679, pushed d98830e..eff02a8),
+  OA TREASURE, Table 85: Ninja Class (capture
+  pp. 293-294, the grid spanning the page
+  break), header rules/oa127table85.h, prefix
+  dlr (verified free at d98830e), one gap flip
+  (the Table 85 box, single-line), gap census
+  now 209 closed / 26 open. Round type: the
+  Chapter 13 d100 band grid round, single-pass
+  pins per the R679 provenance shift.
+  Inlines: 8 = 1 const + 4 bools + 3 table
+  cols; one table dlrNinjaClass[12]: the
+  twelve d100 bands (the kawanaga 01-05, the
+  kumade 06-10, the kusari-gama 11-15, the
+  kyoketsu-shogi 16-20, the needle 21-25
+  10-60, the nekode 26-30, the ninja-to
+  31-40, the shaken 41-45 2-12, the
+  shikomi-zue 46-60, the spike shuriken
+  61-70 2-12, the large star shuriken 71-85
+  3-18, the small star shuriken 86-100
+  3-18), the page-break split, the shuriken
+  tail, the ninja-to, and the concealed
+  weapons as bools. Count const derived from
+  the data (the R739 lesson) and the genuine-0
+  census asserted in the generator (the R745
+  lesson), verified 12/12/12 at the landing.
+  Zero stumbles, first rverify GREEN. Battery
+  41 mutants, 0 missed. spec md5
+  a6127db4cec3c122b6f26ae4269c761c, gate md5
+  46cc8a5aabc270ace4265d3787857e92, canvas
+  md5 74cb4f225adecbf4b99692a70ca2cd9f.
+  NEXT - R757: Explanation of Weapon
+  Properties (capture p. 294), prefix dls
+  (verify free at the landing), audit "R757
+  OA weapon explanation audit", include after
+  rules/oa127table85.h. The big prose round -
+  the weapons of quality by class, the +1/ +2/
+  +3 and damage/to-hit splits, the vs S and vs
+  L, the -1 cursed, and the special properties
+  (speed, detection, dancing, balance,
+  distance, accuracy, disruption, unbreakable,
+  flame, venom, slaying, intelligence, roll
+  twice).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

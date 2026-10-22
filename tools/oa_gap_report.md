@@ -3230,8 +3230,33 @@ description riding the same round.
     star shuriken 71-85 (3-18); the small
     star shuriken 86-100 (3-18); single-
     pass pins per the R679 provenance shift
-  - [ ] Explanation of Weapon Properties (capture
+  - [x] Explanation of Weapon Properties (capture
     p. 294)
+    - R757: the dls weapon explanation
+    pins - the weapons of quality by class
+    (the sword and melee +1 to hit only at
+    2d6 times; the bows the range step at
+    2d4 times; the missiles +1 to hit at
+    2-5 times; the martial arts +1 when
+    trained at 2-5 times; the ninja +1 to
+    damage with the one-round assembly);
+    the +1/+2/+3 both, damage-only, and
+    to-hit-only grades; the vs smaller and
+    vs larger; the -1 cursed (the bows
+    returning the missile on the roll of
+    1, the melee preference, the remove
+    curse); the specials of pp. 295-296:
+    the accuracy +3 all-short; the balance
+    with the save versus death; the dancing
+    2-5 rounds within 5 feet; the detection
+    with the d8 subtable; the disruption,
+    distance, flame (2d4 extra, 40% ignite,
+    15-foot light), intelligence (12-17),
+    silence (15% and 20%), the slaying +3
+    with the 24-creature list, the speed,
+    the unbreakable (75%), and the venom
+    per the DMG; single-pass pins per the
+    R679 provenance shift
   - [ ] Oriental Magical Items prose with Table 86
     and the item descriptions (capture pp. 296-301)
   - [ ] Table 86: Oriental Magical Items
