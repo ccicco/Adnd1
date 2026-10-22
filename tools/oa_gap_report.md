@@ -3048,7 +3048,27 @@ description riding the same round.
     the second step the Tables 76 and 77
     for the properties; single-pass pins
     per the R679 provenance shift
-  - [ ] Table 75: Magical Armor (capture p. 289)
+  - [x] Table 75: Magical Armor (capture p. 289)
+    - R744: the dlf Table 75 pins - the
+    twenty-three d100 bands of the armor
+    types: the banded 01-04, the buckler
+    05, the chain 06-12, the do-maru
+    13-16, the haidate 17, the hara-ate
+    18-22, the hara-ate-gawa 23-26, the
+    haramaki 27-30, the haramaki-do
+    31-35, the hide 36-44, the kote
+    45-46, the leather 47-55, the o-yoroi
+    56-62, the padded 63-66, the ring
+    67-70, the scale leather 71-74, the
+    scale metal 75-78, the shield large
+    79-82, the shield medium 83-86, the
+    sode pair 87, the splinted 86-92 of
+    the capture overlap misprint (likely
+    the 88-92 intended, pinned as
+    printed), the studded 93-99, the gajin
+    armor 100 rolling on the DMG Armor and
+    Shield Table; single-pass pins per the
+    R679 provenance shift
   - [ ] Table 76. Magical Armor Properties
     (capture p. 289) - the caption prints a period
   - [ ] Table 77: Special Properties (capture p. 290)

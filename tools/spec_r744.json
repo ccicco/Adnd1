@@ -1,0 +1,281 @@
+{
+ "round": 744,
+ "title": "OA TREASURE - Table 75: Magical Armor: the d100 armor type grid",
+ "prefix": "dlf",
+ "header_file": "rules/oa115table75.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 666,
+ "inline_count": 7,
+ "audit_label": "R744 OA Table 75 armor audit",
+ "audit_comment": "OA round one hundred thirty-one (capture p. 289): the Table 75 Magical Armor - the twenty-three d100 bands of the armor types, the splinted overlap misprint pinned as printed, the gajin armor reroll of the 100 row, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - TABLE 75, MAGICAL ARMOR, printed capture p. 289 - the armor type grid round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 197 closed, 38 open - the Table 75 box flips (census 666 -> 667); NEXT - R745: Table 76. Magical Armor Properties (capture p. 289, the caption prints a period), prefix dlg (verify free at the landing), audit \"R745 OA Table 76 properties audit\", include after rules/oa115table75.h"
+ },
+ "consts": [
+  {
+   "name": "dlfArmorRowCount",
+   "value": 23,
+   "comment": "the armor row count - the twenty-three d100 bands of the Table 75 armor type grid (print capture p. 289)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlfSodePairAsterisk",
+   "value": 1,
+   "comment": "the sode asterisk - the sode, pair row carrying the asterisk of the print (print capture p. 289)"
+  },
+  {
+   "name": "dlfSplintedOverlapMisprint",
+   "value": 1,
+   "comment": "the splinted overlap - the capture printing the 86-92 splinted band below the 87 sode row, an overlap with the 87 row (likely the 88-92 intended), pinned as printed (print capture p. 289)"
+  },
+  {
+   "name": "dlfGajinArmorRollOnDMG",
+   "value": 1,
+   "comment": "the gajin armor - the 100 row rolling on the DMG Armor and Shield Table, the capture misreading gaijin (print capture p. 289)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dlfMagicalArmor",
+   "tag": "MagicalArmor",
+   "count": "dlfArmorRowCount",
+   "comment": "the Table 75 Magical Armor grid - the twenty-three d100 bands of the armor types, banded through the gajin armor, the splinted overlap pinned as printed (print capture p. 289)",
+   "cols": [
+    "dlfArmorRollMin",
+    "dlfArmorRollMax",
+    "dlfArmorType"
+   ],
+   "col_comments": [
+    "the d100 band minimum - the low roll of the row (print capture p. 289)",
+    "the d100 band maximum - the high roll of the row (print capture p. 289)",
+    "the armor type code - 1 the banded; 2 the buckler; 3 the chain; 4 the do-maru; 5 the haidate; 6 the hara-ate; 7 the hara-ate-gawa; 8 the haramaki; 9 the haramaki-do; 10 the hide; 11 the kote; 12 the leather; 13 the o-yoroi; 14 the padded; 15 the ring; 16 the scale, leather; 17 the scale, metal; 18 the shield, large; 19 the shield, medium; 20 the sode, pair; 21 the splinted; 22 the studded; 23 the gajin armor of the DMG Armor and Shield Table (print capture p. 289)"
+   ],
+   "data": [
+    [
+     1,
+     4,
+     1
+    ],
+    [
+     5,
+     5,
+     2
+    ],
+    [
+     6,
+     12,
+     3
+    ],
+    [
+     13,
+     16,
+     4
+    ],
+    [
+     17,
+     17,
+     5
+    ],
+    [
+     18,
+     22,
+     6
+    ],
+    [
+     23,
+     26,
+     7
+    ],
+    [
+     27,
+     30,
+     8
+    ],
+    [
+     31,
+     35,
+     9
+    ],
+    [
+     36,
+     44,
+     10
+    ],
+    [
+     45,
+     46,
+     11
+    ],
+    [
+     47,
+     55,
+     12
+    ],
+    [
+     56,
+     62,
+     13
+    ],
+    [
+     63,
+     66,
+     14
+    ],
+    [
+     67,
+     70,
+     15
+    ],
+    [
+     71,
+     74,
+     16
+    ],
+    [
+     75,
+     78,
+     17
+    ],
+    [
+     79,
+     82,
+     18
+    ],
+    [
+     83,
+     86,
+     19
+    ],
+    [
+     87,
+     87,
+     20
+    ],
+    [
+     86,
+     92,
+     21
+    ],
+    [
+     93,
+     99,
+     22
+    ],
+    [
+     100,
+     100,
+     23
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the grid - the twenty-three-band Table 75, audited cell by cell by the table audit",
+   "expr": "m['dlfArmorRowCount']() != 23 or m['dlfArmorRollMin'](0) != 1 or m['dlfArmorRollMax'](22) != 100 or m['dlfArmorType'](0) != 1 or m['dlfArmorType'](22) != 23"
+  },
+  {
+   "note": "the capture quirks - the splinted overlap and the gajin armor row, healthy values, each condition false",
+   "expr": "m['dlfArmorRollMin'](20) != 86 or m['dlfArmorRollMax'](20) != 92 or m['dlfArmorType'](20) != 21 or m['dlfArmorType'](19) != 20 or m['dlfSodePairAsterisk']() != 1 or m['dlfSplintedOverlapMisprint']() != 1 or m['dlfGajinArmorRollOnDMG']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the Table 75 grid": [
+   {
+    "kind": "const",
+    "name": "dlfArmorRowCount"
+   },
+   {
+    "kind": "table",
+    "name": "dlfMagicalArmor"
+   }
+  ],
+  "the capture quirks": [
+   {
+    "kind": "bool",
+    "name": "dlfSodePairAsterisk"
+   },
+   {
+    "kind": "bool",
+    "name": "dlfSplintedOverlapMisprint"
+   },
+   {
+    "kind": "bool",
+    "name": "dlfGajinArmorRollOnDMG"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the Table 75 box",
+   "from": "  - [ ] Table 75: Magical Armor (capture p. 289)",
+   "to": "  - [x] Table 75: Magical Armor (capture p. 289)\n    - R744: the dlf Table 75 pins - the\n    twenty-three d100 bands of the armor\n    types: the banded 01-04, the buckler\n    05, the chain 06-12, the do-maru\n    13-16, the haidate 17, the hara-ate\n    18-22, the hara-ate-gawa 23-26, the\n    haramaki 27-30, the haramaki-do\n    31-35, the hide 36-44, the kote\n    45-46, the leather 47-55, the o-yoroi\n    56-62, the padded 63-66, the ring\n    67-70, the scale leather 71-74, the\n    scale metal 75-78, the shield large\n    79-82, the shield medium 83-86, the\n    sode pair 87, the splinted 86-92 of\n    the capture overlap misprint (likely\n    the 88-92 intended, pinned as\n    printed), the studded 93-99, the gajin\n    armor 100 rolling on the DMG Armor and\n    Shield Table; single-pass pins per the\n    R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 197,
+  "open": 38
+ },
+ "include_comment": "the OA Table 75 pins",
+ "include_after": "#include \"rules/oa114armorprose.h\"  // R743: the OA armor prose pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R743 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R743 LANDED 2026-10-22: commit",
+  "  d8ba9820a7cbaefe9b07e1eed8104b77f9331d56",
+  "  (census 665 -> 666, pushed c367366..d8ba982),",
+  "  OA TREASURE, the Armor and Shield prose",
+  "  (capture p. 289, the box spanning",
+  "  pp. 289-291 for the section), header",
+  "  rules/oa114armorprose.h, prefix dle",
+  "  (verified free at c367366), one gap flip",
+  "  (the armor prose box, single-line), gap",
+  "  census now 196 closed / 39 open. Round",
+  "  type: the Chapter 13 prose round,",
+  "  single-pass pins per the R679 provenance",
+  "  shift. Inlines: 7 = 3 consts + 4 bools,",
+  "  no tables - the lightest round of the",
+  "  chapter; the determination of the magical",
+  "  armor type and properties; the DM",
+  "  roll-or-select freedom; the Table 75",
+  "  first step for the type, the Tables 76",
+  "  and 77 second step for the properties;",
+  "  the 75, 76, 77 table numbers as consts.",
+  "  Scoped cleanly - the Table 75/76/77 grids",
+  "  and the Explanation of Armor Properties",
+  "  (including the Possession prose) each",
+  "  have their own gap boxes for later",
+  "  rounds. Zero stumbles, first rverify",
+  "  GREEN. Battery 7 mutants, 0 missed.",
+  "  spec md5 45bc616f3751cb25325f2220a90d876",
+  "  7, gate md5 5b00ad1cd09d91c1f12b8a49b16ca",
+  "  f16, canvas md5 2291ea0a21cdce5bf68db0a4b",
+  "  8662c91. NEXT - R744: Table 75: Magical",
+  "  Armor (capture p. 289), prefix dlf",
+  "  (verify free at the landing), audit \"R744",
+  "  OA Table 75 armor audit\", include after",
+  "  rules/oa114armorprose.h. A 23-band d100",
+  "  armor-type grid (banded through gajin",
+  "  armor), with two capture quirks to pin:",
+  "  the 87 Sode pair row before the 86-92",
+  "  Splinted (an overlap - likely 88-92",
+  "  intended) and the 100 gajin armor rolling",
+  "  on the DMG table."
+ ]
+}

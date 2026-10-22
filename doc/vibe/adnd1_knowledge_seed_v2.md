@@ -17573,6 +17573,46 @@ when both halves land.
   the type then Tables 76 + 77 for the
   properties); the three big tables
   themselves may need their own rounds.
+- R743 LANDED 2026-10-22: commit
+  d8ba9820a7cbaefe9b07e1eed8104b77f9331d56
+  (census 665 -> 666, pushed c367366..d8ba982),
+  OA TREASURE, the Armor and Shield prose
+  (capture p. 289, the box spanning
+  pp. 289-291 for the section), header
+  rules/oa114armorprose.h, prefix dle
+  (verified free at c367366), one gap flip
+  (the armor prose box, single-line), gap
+  census now 196 closed / 39 open. Round
+  type: the Chapter 13 prose round,
+  single-pass pins per the R679 provenance
+  shift. Inlines: 7 = 3 consts + 4 bools,
+  no tables - the lightest round of the
+  chapter; the determination of the magical
+  armor type and properties; the DM
+  roll-or-select freedom; the Table 75
+  first step for the type, the Tables 76
+  and 77 second step for the properties;
+  the 75, 76, 77 table numbers as consts.
+  Scoped cleanly - the Table 75/76/77 grids
+  and the Explanation of Armor Properties
+  (including the Possession prose) each
+  have their own gap boxes for later
+  rounds. Zero stumbles, first rverify
+  GREEN. Battery 7 mutants, 0 missed.
+  spec md5 45bc616f3751cb25325f2220a90d876
+  7, gate md5 5b00ad1cd09d91c1f12b8a49b16ca
+  f16, canvas md5 2291ea0a21cdce5bf68db0a4b
+  8662c91. NEXT - R744: Table 75: Magical
+  Armor (capture p. 289), prefix dlf
+  (verify free at the landing), audit "R744
+  OA Table 75 armor audit", include after
+  rules/oa114armorprose.h. A 23-band d100
+  armor-type grid (banded through gajin
+  armor), with two capture quirks to pin:
+  the 87 Sode pair row before the 86-92
+  Splinted (an overlap - likely 88-92
+  intended) and the 100 gajin armor rolling
+  on the DMG table.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
