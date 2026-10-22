@@ -443,6 +443,7 @@
 #include "rules/oa111scrolls.h"  // R740: the OA scrolls pins
 #include "rules/oa112rods.h"  // R741: the OA rods pins
 #include "rules/oa113miscmagic.h"  // R742: the OA misc magic pins
+#include "rules/oa114armorprose.h"  // R743: the OA armor prose pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -117738,6 +117739,41 @@ int main() {
         )
             ++bad;
         printf("R742 OA misc magic audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R743 OA armor shield audit ----
+    // OA round one hundred thirty (capture p. 289): the Armor and Shield
+    // section prose - the DM roll-or-select freedom, the Table 75 first step
+    // for the armor type, the Tables 76 and 77 second step for the
+    // properties, single-pass pins per the Chapter 9 provenance shift
+    {
+        using namespace rules;
+        int bad = 0;
+    if (dleTypeTable() != 75
+            || dlePropertyTableFirst() != 76
+            || dlePropertyTableSecond() != 77
+            || !dleDetermineTypeAndProperties()
+            || !dleRollOrSelect()
+            || !dleFirstStepRollTable75()
+            || !dleThenRollTables76And77()
+        )
+            ++bad;
+        // the prose - the determination and the two steps, healthy values,
+        // each condition false
+    if (dleDetermineTypeAndProperties() != 1
+            || dleRollOrSelect() != 1
+            || dleFirstStepRollTable75() != 1
+            || dleThenRollTables76And77() != 1
+        )
+            ++bad;
+        // the table numbers - the 75, 76, and 77 of the type and property
+        // rolls, healthy values, each condition false
+    if (dleTypeTable() != 75
+            || dlePropertyTableFirst() != 76
+            || dlePropertyTableSecond() != 77
+        )
+            ++bad;
+        printf("R743 OA armor shield audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

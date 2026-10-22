@@ -17532,6 +17532,47 @@ when both halves land.
   and both brooms rerolled, Bucknard's
   everful purse contents, and the item
   notes running onto p. 289.
+- R742 LANDED 2026-10-22: commit
+  c367366a87f57a54f0ebf400e97a79d792ab0026
+  (census 664 -> 665, pushed 1f4bad3..c367366),
+  OA TREASURE, Miscellaneous Magic (capture
+  pp. 288-289), header rules/oa113miscmagic.h,
+  prefix dld (verified free at 1f4bad3), one
+  gap flip (the misc magic box, its
+  two-line wrap handled), gap census now
+  195 closed / 40 open. Round type: the
+  Chapter 13 item-notes round, single-pass
+  pins per the R679 provenance shift.
+  Inlines: 15 = 1 const + 7 bools + 7
+  table cols; the six rerolled or absent
+  items as bools (the boots of elvenkind,
+  the broom of animated attack, the broom
+  of flying, the cloak of elvenkind, the
+  instruments of the bards, the manual of
+  golems); the Bucknard's everful purse
+  contents table dldEverfulPurse[3] - the
+  three d100 bands (the 01-50 ten yuan,
+  five tael, one ch'ien; the 51-90 twenty
+  fen, five tael, two ch'ien; the 91-100
+  twenty fen, five tael, ten gems), the
+  nil cells the 0 sentinel. Count const
+  derived from the data (the R739 lesson),
+  verified 3/3/3 at the landing. Zero
+  stumbles, first rverify GREEN. Battery 29
+  mutants, 0 missed. spec md5
+  2da3ae0b4e045bc78bc7e6ef4155c3a9, gate
+  md5 63eaf99ef9f521c4d1d2fc96f27e3577,
+  canvas md5 95dc9aca8f29673f79a03a73ec8a3
+  d41. NEXT - R743: Armor and Shield prose
+  (capture pp. 289-291), prefix dle (verify
+  free at the landing), audit "R743 OA
+  armor shield audit", include after
+  rules/oa113miscmagic.h. Scope carefully:
+  the box covers the section prose (the
+  roll-or-select instruction, Table 75 for
+  the type then Tables 76 + 77 for the
+  properties); the three big tables
+  themselves may need their own rounds.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

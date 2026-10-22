@@ -3038,7 +3038,16 @@ description riding the same round.
     91-100 twenty fen, five tael, ten
     gems); single-pass pins per the
     R679 provenance shift
-  - [ ] Armor and Shield prose (capture pp. 289-291)
+  - [x] Armor and Shield prose (capture pp. 289-291)
+    - R743: the dle armor prose pins -
+    the determination of the magical
+    armor type and properties; the DM
+    randomly rolling on the tables or
+    selecting the features he wants; the
+    first step the Table 75 for the type,
+    the second step the Tables 76 and 77
+    for the properties; single-pass pins
+    per the R679 provenance shift
   - [ ] Table 75: Magical Armor (capture p. 289)
   - [ ] Table 76. Magical Armor Properties
     (capture p. 289) - the caption prints a period
