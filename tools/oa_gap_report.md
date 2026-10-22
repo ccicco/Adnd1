@@ -2978,7 +2978,24 @@ description riding the same round.
     after for the alter, leaving the
     function unaffected); single-pass
     pins per the R679 provenance shift
-  - [ ] Potions (capture p. 287)
+  - [x] Potions (capture p. 287)
+    - R739: the dla potion pins - the
+    dragon control (the potions exist,
+    not the same types as the DMG, use
+    the table below): the twelve d20
+    bands chiang lung, pan lung, yu
+    lung, shen lung, li lung, mist,
+    cloud, lung wang, t'ien lung, gold,
+    evil, good dragon control; the
+    giant control - the hill giant the
+    only common type; the human control
+    table (korobokuru, hengeyokai,
+    spirit folk, human, tengu, the mixed
+    korobokuru-hengeyokai-human band,
+    the gajin of the DMG table); the
+    undead control not available, the
+    result rerolled; single-pass pins
+    per the R679 provenance shift
   - [ ] Scrolls (capture p. 288)
   - [ ] Rods, Staves, and Wands (capture p. 288)
   - [ ] Miscellaneous Magic (capture pp. 288-289)

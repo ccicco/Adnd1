@@ -1,0 +1,421 @@
+{
+ "round": 739,
+ "title": "OA TREASURE - Potions: the dragon, giant, human, and undead control brews",
+ "prefix": "dla",
+ "header_file": "rules/oa110potions.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "caller_files": [],
+ "census_before": 661,
+ "inline_count": 24,
+ "audit_label": "R739 OA potions audit",
+ "audit_comment": "OA round one hundred twenty-six (capture pp. 287-288): the Potions section - the dragon control potion with its twelve-band d20 table, the hill giant giant control, the human control table of seven bands with the gajin DMG-table row, the undead control reroll, single-pass pins per the Chapter 9 provenance shift",
+ "banner": {
+  "title": "OA TREASURE - POTIONS, printed capture pp. 287-288 - the control brews round",
+  "provenance": "pinned from the 2018 print capture - the sole surviving pass per the R679 provenance shift",
+  "sentinel": "the gap census after this round: 192 closed, 43 open - the potions box flips (census 661 -> 662); NEXT - R740: Scrolls (capture p. 288), prefix dlb (verify free at the landing), audit \"R740 OA scrolls audit\", include after rules/oa110potions.h"
+ },
+ "consts": [
+  {
+   "name": "dlaDragonRowCount",
+   "value": 12,
+   "comment": "the dragon control row count - the twelve d20 bands of the potion table (print capture p. 287)"
+  },
+  {
+   "name": "dlaHumanRowCount",
+   "value": 7,
+   "comment": "the human control row count - the seven d20 bands of the potion controls table (print capture p. 288)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dlaDragonControlExists",
+   "value": 1,
+   "comment": "the existence - the potions of dragon control do exist (print capture p. 287)"
+  },
+  {
+   "name": "dlaNotSameDragonsAsDMG",
+   "value": 1,
+   "comment": "the difference - they do not affect the same types of dragons as those listed in the DMG (print capture p. 287)"
+  },
+  {
+   "name": "dlaUseTableBelow",
+   "value": 1,
+   "comment": "the instruction - use the table given below (print capture p. 287)"
+  },
+  {
+   "name": "dlaChiangLung",
+   "value": 1,
+   "comment": "the 1-2 band - the chiang lung control (print capture p. 287)"
+  },
+  {
+   "name": "dlaPanLung",
+   "value": 1,
+   "comment": "the 3-4 band - the pan lung control (print capture p. 287)"
+  },
+  {
+   "name": "dlaYuLung",
+   "value": 1,
+   "comment": "the 5-7 band - the yu lung control (print capture p. 287)"
+  },
+  {
+   "name": "dlaShenLung",
+   "value": 1,
+   "comment": "the 8-9 band - the shen lung control (print capture p. 287)"
+  },
+  {
+   "name": "dlaLiLung",
+   "value": 1,
+   "comment": "the 10 band - the li lung control (print capture p. 287)"
+  },
+  {
+   "name": "dlaMistDragon",
+   "value": 1,
+   "comment": "the 11-12 band - the mist dragon control (print capture p. 287)"
+  },
+  {
+   "name": "dlaCloudDragon",
+   "value": 1,
+   "comment": "the 13-14 band - the cloud dragon control (print capture p. 287)"
+  },
+  {
+   "name": "dlaLungWang",
+   "value": 1,
+   "comment": "the 15 band - the lung wang control (print capture p. 287)"
+  },
+  {
+   "name": "dlaTienLung",
+   "value": 1,
+   "comment": "the 16 band - the t'ien lung control (print capture p. 287)"
+  },
+  {
+   "name": "dlaGiantControlHillGiant",
+   "value": 1,
+   "comment": "the giant control - the only type commonly found is the hill giant control (print capture p. 287)"
+  },
+  {
+   "name": "dlaHumanControlIntro",
+   "value": 1,
+   "comment": "the human control intro - when determining the type of creature that can be controlled, use the following table (print capture p. 287)"
+  },
+  {
+   "name": "dlaGajinRollOnDMG",
+   "value": 1,
+   "comment": "the 20 band - the gajin, rolled on the DMG table (print capture p. 288)"
+  },
+  {
+   "name": "dlaUndeadControlRerolled",
+   "value": 1,
+   "comment": "the undead control - not normally available in Oriental lands, the result rerolled (print capture p. 288)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dlaDragonControl",
+   "tag": "DragonControl",
+   "count": "dlaDragonRowCount",
+   "comment": "the dragon control potion table - the twelve d20 bands of the Oriental dragon types, chiang lung through good dragon (print capture p. 287)",
+   "cols": [
+    "dlaDragonRollMin",
+    "dlaDragonRollMax",
+    "dlaDragonCode"
+   ],
+   "col_comments": [
+    "the d20 band minimum - the low roll of the row (print capture p. 287)",
+    "the d20 band maximum - the high roll of the row (print capture p. 287)",
+    "the dragon code - 1 the chiang lung; 2 the pan lung; 3 the yu lung; 4 the shen lung; 5 the li lung; 6 the mist dragon; 7 the cloud dragon; 8 the lung wang; 9 the t'ien lung; 10 the gold dragon; 11 the evil dragon; 12 the good dragon (print capture p. 287)"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     3,
+     4,
+     2
+    ],
+    [
+     5,
+     7,
+     3
+    ],
+    [
+     8,
+     9,
+     4
+    ],
+    [
+     10,
+     10,
+     5
+    ],
+    [
+     11,
+     12,
+     6
+    ],
+    [
+     13,
+     14,
+     7
+    ],
+    [
+     15,
+     15,
+     8
+    ],
+    [
+     16,
+     16,
+     9
+    ],
+    [
+     17,
+     17,
+     10
+    ],
+    [
+     18,
+     19,
+     11
+    ],
+    [
+     20,
+     20,
+     12
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "dlaHumanControl",
+   "tag": "HumanControl",
+   "count": "dlaHumanRowCount",
+   "comment": "the human control potion table - the seven d20 bands of the potion controls, korobokuru through the gajin of the DMG table (print capture p. 288)",
+   "cols": [
+    "dlaHumanRollMin",
+    "dlaHumanRollMax",
+    "dlaHumanCode"
+   ],
+   "col_comments": [
+    "the d20 band minimum - the low roll of the row (print capture p. 288)",
+    "the d20 band maximum - the high roll of the row (print capture p. 288)",
+    "the controls code - 1 the korobokuru; 2 the hengeyokai; 3 the spirit folk; 4 the human; 5 the tengu; 6 the korobokuru, hengeyokai, and humans; 7 the gajin of the DMG table (print capture p. 288)"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     3,
+     5,
+     2
+    ],
+    [
+     6,
+     6,
+     3
+    ],
+    [
+     7,
+     15,
+     4
+    ],
+    [
+     16,
+     16,
+     5
+    ],
+    [
+     17,
+     19,
+     6
+    ],
+    [
+     20,
+     20,
+     7
+    ]
+   ],
+   "sentinel": 0,
+   "sentinel_census": [
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the dragon control prose and the band bools, healthy values, each condition false",
+   "expr": "m['dlaDragonControlExists']() != 1 or m['dlaNotSameDragonsAsDMG']() != 1 or m['dlaUseTableBelow']() != 1 or m['dlaChiangLung']() != 1 or m['dlaPanLung']() != 1 or m['dlaYuLung']() != 1 or m['dlaShenLung']() != 1 or m['dlaLiLung']() != 1 or m['dlaMistDragon']() != 1 or m['dlaCloudDragon']() != 1 or m['dlaLungWang']() != 1 or m['dlaTienLung']() != 1"
+  },
+  {
+   "note": "the giant, human, and undead notes, healthy values, each condition false",
+   "expr": "m['dlaGiantControlHillGiant']() != 1 or m['dlaHumanControlIntro']() != 1 or m['dlaGajinRollOnDMG']() != 1 or m['dlaUndeadControlRerolled']() != 1"
+  },
+  {
+   "note": "the grids - the two potion tables, audited cell by cell by the table audit",
+   "expr": "m['dlaDragonRowCount']() != 12 or m['dlaHumanRowCount']() != 7 or m['dlaDragonRollMin'](0) != 1 or m['dlaDragonRollMax'](11) != 20 or m['dlaHumanRollMin'](0) != 1 or m['dlaHumanRollMax'](6) != 20"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the dragon control": [
+   {
+    "kind": "const",
+    "name": "dlaDragonRowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaDragonControlExists"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaNotSameDragonsAsDMG"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaUseTableBelow"
+   },
+   {
+    "kind": "table",
+    "name": "dlaDragonControl"
+   }
+  ],
+  "the band walk": [
+   {
+    "kind": "bool",
+    "name": "dlaChiangLung"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaPanLung"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaYuLung"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaShenLung"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaLiLung"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaMistDragon"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaCloudDragon"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaLungWang"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaTienLung"
+   }
+  ],
+  "the giant, human, and undead": [
+   {
+    "kind": "bool",
+    "name": "dlaGiantControlHillGiant"
+   },
+   {
+    "kind": "const",
+    "name": "dlaHumanRowCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaHumanControlIntro"
+   },
+   {
+    "kind": "table",
+    "name": "dlaHumanControl"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaGajinRollOnDMG"
+   },
+   {
+    "kind": "bool",
+    "name": "dlaUndeadControlRerolled"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "note": "the potions box",
+   "from": "  - [ ] Potions (capture p. 287)",
+   "to": "  - [x] Potions (capture p. 287)\n    - R739: the dla potion pins - the\n    dragon control (the potions exist,\n    not the same types as the DMG, use\n    the table below): the twelve d20\n    bands chiang lung, pan lung, yu\n    lung, shen lung, li lung, mist,\n    cloud, lung wang, t'ien lung, gold,\n    evil, good dragon control; the\n    giant control - the hill giant the\n    only common type; the human control\n    table (korobokuru, hengeyokai,\n    spirit folk, human, tengu, the mixed\n    korobokuru-hengeyokai-human band,\n    the gajin of the DMG table); the\n    undead control not available, the\n    result rerolled; single-pass pins\n    per the R679 provenance shift"
+  }
+ ],
+ "gap_census": {
+  "closed": 192,
+  "open": 43
+ },
+ "include_comment": "the OA potions pins",
+ "include_after": "#include \"rules/oa109itemmods.h\"  // R738: the OA item mods pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R738 LANDED 2026-10-21: commit",
+ "prev_record": [
+  "- R738 LANDED 2026-10-21: commit",
+  "  cf2f96110f54aff3f0c10d10e3bfab7051b7a8bf",
+  "  (census 660 -> 661, pushed 5b369f6..cf2f961),",
+  "  OA TREASURE, the Modifications to Standard",
+  "  Magical Items prose (capture p. 286), header",
+  "  rules/oa109itemmods.h, prefix dkz",
+  "  (verified free at 5b369f6), one gap flip",
+  "  (the item mods box, its two-line wrap",
+  "  handled), gap census now 191 closed /",
+  "  44 open. Round type: the Chapter 13",
+  "  prose round, single-pass pins per the",
+  "  R679 provenance shift. Inlines: 21 =",
+  "  2 consts + 19 bools, no tables; the",
+  "  occidental items rule (the majority",
+  "  available, the particularly occidental",
+  "  some, the do-not-appear-normally and",
+  "  somewhat-different pair, the little or",
+  "  no use and not-within-the-culture",
+  "  clauses, the cannot-appear allowance of",
+  "  the far-from-common construction); the",
+  "  general rule of the three sources (the",
+  "  gajin of the capture misreading gaijin,",
+  "  the curiosity import, the inspired or",
+  "  deranged caster); the form changes (the",
+  "  lyre samisen or flute, the cloak robe or",
+  "  jacket, the boots sandals, the bags",
+  "  boxes; the DM decision of the capture",
+  "  misreading after for the alter, leaving",
+  "  the function unaffected). Zero stumbles,",
+  "  first rverify GREEN. Battery 21 mutants,",
+  "  0 missed. spec md5",
+  "  366449af115bc73a82ad225e9ad7a80a, gate",
+  "  md5 6f7ba8c98d4c55135ef0e7bda39627ce,",
+  "  canvas md5 a46c39a0574dc4831d11b5ddec2844",
+  "  e6. NEXT - R739: Potions (capture p. 287),",
+  "  prefix dla (free at the word-boundary",
+  "  call check - the 15 substring hits are",
+  "  woodland words in comments and strings),",
+  "  audit \"R739 OA potions audit\", include",
+  "  after rules/oa109itemmods.h."
+ ]
+}

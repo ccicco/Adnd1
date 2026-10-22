@@ -17367,6 +17367,46 @@ when both halves land.
   landing), audit "R738 OA standard item
   mods audit", include after
   rules/oa108tableiii.h.
+- R738 LANDED 2026-10-21: commit
+  cf2f96110f54aff3f0c10d10e3bfab7051b7a8bf
+  (census 660 -> 661, pushed 5b369f6..cf2f961),
+  OA TREASURE, the Modifications to Standard
+  Magical Items prose (capture p. 286), header
+  rules/oa109itemmods.h, prefix dkz
+  (verified free at 5b369f6), one gap flip
+  (the item mods box, its two-line wrap
+  handled), gap census now 191 closed /
+  44 open. Round type: the Chapter 13
+  prose round, single-pass pins per the
+  R679 provenance shift. Inlines: 21 =
+  2 consts + 19 bools, no tables; the
+  occidental items rule (the majority
+  available, the particularly occidental
+  some, the do-not-appear-normally and
+  somewhat-different pair, the little or
+  no use and not-within-the-culture
+  clauses, the cannot-appear allowance of
+  the far-from-common construction); the
+  general rule of the three sources (the
+  gajin of the capture misreading gaijin,
+  the curiosity import, the inspired or
+  deranged caster); the form changes (the
+  lyre samisen or flute, the cloak robe or
+  jacket, the boots sandals, the bags
+  boxes; the DM decision of the capture
+  misreading after for the alter, leaving
+  the function unaffected). Zero stumbles,
+  first rverify GREEN. Battery 21 mutants,
+  0 missed. spec md5
+  366449af115bc73a82ad225e9ad7a80a, gate
+  md5 6f7ba8c98d4c55135ef0e7bda39627ce,
+  canvas md5 a46c39a0574dc4831d11b5ddec2844
+  e6. NEXT - R739: Potions (capture p. 287),
+  prefix dla (free at the word-boundary
+  call check - the 15 substring hits are
+  woodland words in comments and strings),
+  audit "R739 OA potions audit", include
+  after rules/oa109itemmods.h.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
