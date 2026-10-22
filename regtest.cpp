@@ -474,6 +474,7 @@
 #include "rules/oa142celestial.h"  // R771: the OA Celestial Emperor pins
 #include "rules/oa143weaponsprose.h"  // R772: the OA Weapons prose pins
 #include "rules/oa144dailylife.h"  // R773: the OA daily-life misses pins
+#include "rules/filepatchseam.h"  // R774: the file-patch seam tooling pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -120261,6 +120262,34 @@ int main() {
         )
             ++bad;
         printf("R773 OA daily-life misses audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R774 file-patch seam audit ----
+    // THE TOOLING ROUND - the R775 mount site needs spec-declared extra-file
+    // patches (game/party.h, game/state_combat.cpp, and the R403 charge
+    // conditions in regtest), which the ritual could not land: the engine
+    // patched only seed, header, gap flips, include, and audit, and ./rn
+    // git-added only those five. R774 extends the three tools - the engine
+    // gains the file_patches spec key (byte-exact from, one replace,
+    // idempotent by to-presence, counted in the applied/already census),
+    // rverify restores and counts the patch targets, and ./rn derives the
+    // extra git-add paths from the spec. The pins below codify the seam
+    // contract; the demo patch rides rules/mountlayer.h (comment-only - the
+    // R403 audit at 43208 requires the charge open until R775).
+    {
+        using namespace rules;
+        int bad = 0;
+    if (dnlPatchedToolCount() != 3
+            || dnlFirstFilePatchRound() != 774
+            || dnlMountSiteRound() != 775
+            || !dnlFilePatchesSpecDeclared()
+            || !dnlFilePatchAnchorByteExact()
+            || !dnlFilePatchesCountedAsPatches()
+            || !dnlFilePatchesGoInTheGitAdd()
+            || !dnlMountlayerSeamNotesR775()
+        )
+            ++bad;
+        printf("R774 file-patch seam audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

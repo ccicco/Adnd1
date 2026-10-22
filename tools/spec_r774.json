@@ -1,0 +1,199 @@
+{
+ "round": 774,
+ "prefix": "dnl",
+ "header_file": "rules/filepatchseam.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 696,
+ "title": "the file-patch seam - the ritual tooling extension",
+ "audit_label": "R774 file-patch seam audit",
+ "audit_comment": "THE TOOLING ROUND - the R775 mount site needs spec-declared extra-file patches (game/party.h, game/state_combat.cpp, and the R403 charge conditions in regtest), which the ritual could not land: the engine patched only seed, header, gap flips, include, and audit, and ./rn git-added only those five. R774 extends the three tools - the engine gains the file_patches spec key (byte-exact from, one replace, idempotent by to-presence, counted in the applied/already census), rverify restores and counts the patch targets, and ./rn derives the extra git-add paths from the spec. The pins below codify the seam contract; the demo patch rides rules/mountlayer.h (comment-only - the R403 audit at 43208 requires the charge open until R775).",
+ "include_comment": "the file-patch seam tooling pins",
+ "include_after": "#include \"rules/oa144dailylife.h\"  // R773: the OA daily-life misses pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R773 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R773 LANDED 2026-10-22: commit",
+  "  7c7acd403a1910765fd4eda7978b4cc4fe6f16ce",
+  "  (census 695 -> 696, pushed 4ece40f..7c7acd4),",
+  "  OA DAILY-LIFE MISSES, Dress, Religion, and",
+  "  Law and Justice (capture pp. 306-307,",
+  "  p. 310, and pp. 310-312; re-captured at",
+  "  pp. 139-142 of the f9e32d73 OCR and pp.",
+  "  305-312 of the original-scan OCR),",
+  "  header rules/oa144dailylife.h, prefix dmk",
+  "  (fully free at 4ece40f). THE AUDIT ROUND:",
+  "  the post-OA maintenance audit (the book",
+  "  TOC and prose vs the repo and the gap",
+  "  report) found the three Chapter 15",
+  "  sections unpinned and unboxed - the",
+  "  book's own seven-section list (dress,",
+  "  food, buildings, religion, justice,",
+  "  manners, names) against the four the",
+  "  R766-R769 arc had pinned; the R613b",
+  "  class caught POST-landing (the boxes",
+  "  never existed, so nothing flagged",
+  "  them). Verified covered by the same",
+  "  audit: all 86 tables, all 30 monsters",
+  "  (Ikiryo and Jishin Mushi rode the R720",
+  "  hu hsien flip), Geography (rode the R760",
+  "  population box with the dlvKoryaz and",
+  "  dlvPeerless pins), NPCs and wishes",
+  "  (R614), contests and bonuses (R652),",
+  "  classes and subclasses (R628), stunning",
+  "  (R694), the grenade prose (the Misc",
+  "  Equipment box), and the back matter",
+  "  (R770); the art pages (the armor and",
+  "  weapon illustrations, the building",
+  "  floorplans) stay unboxed by the art-page",
+  "  convention. TWO gap flips seat THREE new",
+  "  boxes closed (the Dress box before Food;",
+  "  the Religion and Law and Justice boxes",
+  "  before Manners, in print order), gap",
+  "  census now 238 closed / 0 open. Round",
+  "  type: the doctrine round, single-pass",
+  "  pins per the R679 provenance shift.",
+  "  Inlines: 35 = 5 consts (the seven",
+  "  regional materials, the five common",
+  "  colors, the five named religions, the",
+  "  nine commoner punishments, the four",
+  "  higher-class punishments) + 30 bools",
+  "  (14 dress, 4 religion, 12 law and",
+  "  justice with the full vendetta rules -",
+  "  the rank rule, the approvals, the",
+  "  sanctioned duel with seconds). The walk:",
+  "  the clothing-status doctrine and the",
+  "  white-mourning dye; the trousers, the",
+  "  layered robes, the sleeve muffs and",
+  "  pockets, the mino raincloak; the hats by",
+  "  status; the blackened teeth and the",
+  "  topknot privilege with the Kozakura",
+  "  topknot-cutting punishment; the",
+  "  no-church concept and the sect",
+  "  rivalries; the magistrate court, the",
+  "  no-lawyers trial, the speak-with-dead",
+  "  testimony, the class double standard",
+  "  with the Kozakuran sword right, the",
+  "  collective responsibility, and the",
+  "  vendetta. Zero stumbles, first rverify",
+  "  GREEN (double-run, 35 mutants, 0",
+  "  missed; 2 flips = 6 patches, the",
+  "  double-run applied 6/already 6 clean).",
+  "  The user's ./bn 773 detour (struck per",
+  "  the R516 rule) caused no drift - it",
+  "  printed the gate md5",
+  "  5c1600a792e4e66d82b7c141445db44a exactly.",
+  "  spec md5 62f3d4e2a0dbbfd2c3686e3cf2b92c1d,",
+  "  gate md5 5c1600a792e4e66d82b7c141445db44a,",
+  "  canvas md5 8bc1ba24318f107851ab23f69eb91a0e.",
+  "  NEXT - R774: the next target awaits",
+  "  Curtiss's call."
+ ],
+ "banner": {
+  "title": "THE FILE-PATCH SEAM - the ritual tooling extension: the spec-declared extra-file patches",
+  "provenance": "The R775 mounted-combat engine site (the last ungated UA deferred item) touches game/party.h and game/state_combat.cpp, and the R403 charge conditions in regtest must flip with the site - none of them land through the ritual as it stood. This round extends the engine (the file_patches spec key, gap-flip semantics: byte-exact anchors, one replace, idempotent, counted in the applied/already census), rverify (restore + count the patch targets at the base sha), and ./rn (the extra git-add paths derived from the spec). The three tools land by hand this once (the bootstrap note): the tool files cannot patch themselves; after R774 every file-patch round lands through the ritual like any other. The demo patch is comment-only in rules/mountlayer.h - the charge stays open until the site lands R775.",
+  "sentinel": "No book pages this round: the provenance is the tooling itself (the R428 one-command-harness precedent)."
+ },
+ "consts": [
+  {
+   "name": "dnlPatchedToolCount",
+   "value": 3,
+   "comment": "The three tools the seam extends: rn, tools/splice_engine.py, and tools/rverify.py - the git add, the patch applier, and the restore/count gate."
+  },
+  {
+   "name": "dnlFirstFilePatchRound",
+   "value": 774,
+   "comment": "R774 is the first round carrying the file_patches spec key - the demo patch rides rules/mountlayer.h."
+  },
+  {
+   "name": "dnlMountSiteRound",
+   "value": 775,
+   "comment": "The first engine site through the seam: the mounted-combat site lands R775 on game/party.h and game/state_combat.cpp."
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnlFilePatchesSpecDeclared",
+   "value": true,
+   "comment": "The spec key file_patches is a list of {file, note, from, to} - the round declares its extra-file patches, exactly like gap_flips."
+  },
+  {
+   "name": "dnlFilePatchAnchorByteExact",
+   "value": true,
+   "comment": "The from anchor is byte-exact and must occur; a missing anchor dies before any write (the all-or-nothing rule)."
+  },
+  {
+   "name": "dnlFilePatchesCountedAsPatches",
+   "value": true,
+   "comment": "Each file patch counts in the applied/already census - the double-run gate covers them exactly like gap flips."
+  },
+  {
+   "name": "dnlFilePatchesGoInTheGitAdd",
+   "value": true,
+   "comment": "./rn derives the extra git-add paths from the spec and commits them with the round."
+  },
+  {
+   "name": "dnlMountlayerSeamNotesR775",
+   "value": true,
+   "comment": "The mountlayer charge comment now notes the R775 site seam (the R774 demo patch, comment-only)."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [],
+ "table_checks": [],
+ "header_sections": {
+  "the file-patch seam (the R774 tooling)": [
+   {
+    "kind": "const",
+    "name": "dnlPatchedToolCount"
+   },
+   {
+    "kind": "const",
+    "name": "dnlFirstFilePatchRound"
+   },
+   {
+    "kind": "const",
+    "name": "dnlMountSiteRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dnlFilePatchesSpecDeclared"
+   },
+   {
+    "kind": "bool",
+    "name": "dnlFilePatchAnchorByteExact"
+   },
+   {
+    "kind": "bool",
+    "name": "dnlFilePatchesCountedAsPatches"
+   },
+   {
+    "kind": "bool",
+    "name": "dnlFilePatchesGoInTheGitAdd"
+   },
+   {
+    "kind": "bool",
+    "name": "dnlMountlayerSeamNotesR775"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 8,
+ "file_patches": [
+  {
+   "file": "rules/mountlayer.h",
+   "note": "the mountlayer charge comment notes the R775 site seam",
+   "from": "// The charge (the mount actor,\n// the mounted resolution) stays\n// open after the seam lands.",
+   "to": "// The charge (the mount actor,\n// the mounted resolution) stays\n// open after the seam lands; the\n// site lands R775 through the\n// R774 file-patch seam."
+  }
+ ]
+}

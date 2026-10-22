@@ -66,7 +66,9 @@ inline bool mmlGatesMountedCombatCharge()
 
 // The charge (the mount actor,
 // the mounted resolution) stays
-// open after the seam lands.
+// open after the seam lands; the
+// site lands R775 through the
+// R774 file-patch seam.
 inline bool mmlMountedCombatChargeOpen()
     { return true; }
 

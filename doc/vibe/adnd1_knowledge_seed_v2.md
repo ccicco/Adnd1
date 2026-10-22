@@ -19021,6 +19021,81 @@ when both halves land.
   NEXT - R773: no oa_gap_report.md boxes
   remain - the post-OA maintenance audit;
   the next target awaits Curtiss's call.
+- R773 LANDED 2026-10-22: commit
+  7c7acd403a1910765fd4eda7978b4cc4fe6f16ce
+  (census 695 -> 696, pushed 4ece40f..7c7acd4),
+  OA DAILY-LIFE MISSES, Dress, Religion, and
+  Law and Justice (capture pp. 306-307,
+  p. 310, and pp. 310-312; re-captured at
+  pp. 139-142 of the f9e32d73 OCR and pp.
+  305-312 of the original-scan OCR),
+  header rules/oa144dailylife.h, prefix dmk
+  (fully free at 4ece40f). THE AUDIT ROUND:
+  the post-OA maintenance audit (the book
+  TOC and prose vs the repo and the gap
+  report) found the three Chapter 15
+  sections unpinned and unboxed - the
+  book's own seven-section list (dress,
+  food, buildings, religion, justice,
+  manners, names) against the four the
+  R766-R769 arc had pinned; the R613b
+  class caught POST-landing (the boxes
+  never existed, so nothing flagged
+  them). Verified covered by the same
+  audit: all 86 tables, all 30 monsters
+  (Ikiryo and Jishin Mushi rode the R720
+  hu hsien flip), Geography (rode the R760
+  population box with the dlvKoryaz and
+  dlvPeerless pins), NPCs and wishes
+  (R614), contests and bonuses (R652),
+  classes and subclasses (R628), stunning
+  (R694), the grenade prose (the Misc
+  Equipment box), and the back matter
+  (R770); the art pages (the armor and
+  weapon illustrations, the building
+  floorplans) stay unboxed by the art-page
+  convention. TWO gap flips seat THREE new
+  boxes closed (the Dress box before Food;
+  the Religion and Law and Justice boxes
+  before Manners, in print order), gap
+  census now 238 closed / 0 open. Round
+  type: the doctrine round, single-pass
+  pins per the R679 provenance shift.
+  Inlines: 35 = 5 consts (the seven
+  regional materials, the five common
+  colors, the five named religions, the
+  nine commoner punishments, the four
+  higher-class punishments) + 30 bools
+  (14 dress, 4 religion, 12 law and
+  justice with the full vendetta rules -
+  the rank rule, the approvals, the
+  sanctioned duel with seconds). The walk:
+  the clothing-status doctrine and the
+  white-mourning dye; the trousers, the
+  layered robes, the sleeve muffs and
+  pockets, the mino raincloak; the hats by
+  status; the blackened teeth and the
+  topknot privilege with the Kozakura
+  topknot-cutting punishment; the
+  no-church concept and the sect
+  rivalries; the magistrate court, the
+  no-lawyers trial, the speak-with-dead
+  testimony, the class double standard
+  with the Kozakuran sword right, the
+  collective responsibility, and the
+  vendetta. Zero stumbles, first rverify
+  GREEN (double-run, 35 mutants, 0
+  missed; 2 flips = 6 patches, the
+  double-run applied 6/already 6 clean).
+  The user's ./bn 773 detour (struck per
+  the R516 rule) caused no drift - it
+  printed the gate md5
+  5c1600a792e4e66d82b7c141445db44a exactly.
+  spec md5 62f3d4e2a0dbbfd2c3686e3cf2b92c1d,
+  gate md5 5c1600a792e4e66d82b7c141445db44a,
+  canvas md5 8bc1ba24318f107851ab23f69eb91a0e.
+  NEXT - R774: the next target awaits
+  Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
