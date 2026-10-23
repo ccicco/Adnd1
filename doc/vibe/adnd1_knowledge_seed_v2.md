@@ -19980,6 +19980,74 @@ when both halves land.
   candidate: the orcish prose, pp.
   118-122 - the close's finale, flipping
   dvpProseStaysOpen to false).
+- R790 LANDED 2026-10-23: commit
+  3ff2f2add2410984affed9b560025133a20decc0
+  (census 712 -> 713, pushed 7ab9174..3ff2f2a),
+  THE ORCISH DEITY PROSE - part 5, the
+  FINALE of the five-part Appendix S
+  description-paragraph close (Curtiss's
+  "Go" call). The shaman-tale intro and
+  the five orcish blocks (pp. 118-121) read
+  scan-clean in the archive.org full-text
+  OCR (item ad-d-1st-edition-unearthed-
+  arcana, the _djvu.txt): the creation tale
+  (the gods drawing lots - humans anywhere,
+  elves the green forests, dwarves the high
+  mountains, gnomes the rocky sunlit hills,
+  halflings the fields and meadows - and
+  Gruumsh's iron spear piercing the
+  mountains, splitting the hills, gouging
+  the meadows), the Bahgtru might (the
+  4-over grapple crushing 10-120 per round,
+  blunt weapons doing 1 point, the
+  barehanded reptile slaying behind the
+  symbol, the 16-strength no-armor clerics),
+  the Shargaas night (the infinite caverns
+  below Gehenna, mile-range dark sight,
+  climbing any surface, the 5-30 percent
+  rumored shadow skills, the new-moon
+  holidays), the Ilneval politics (the
+  chief lieutenant coveting Gruumsh's
+  seat, the captain's god, the red iron
+  chainmail immune to missiles, the
+  death-at-(-6) non-orc-slaying sword), the
+  Yurtrus death (the 120-foot gas envelope
+  in three bands - 4 HD sneezing dust, 8 HD
+  symbol of pain, -2 to hit above, the
+  18th-level death magic, the 3-12 touch
+  plus 1-4 diseases, wish-only recovery),
+  and the Luthic motherhood (the four-foot
+  claws tunnelling rock, 3 hp regeneration
+  on the ground, the 10 percent name-abuse
+  curse fatal in 2-7 days and undone only
+  by three wishes, the dirt fertility
+  rituals, the both-sexes clergy of the
+  Vile Rune). THE FLIP: dvpProseStaysOpen()
+  returns FALSE at last - every Appendix S
+  description paragraph pins (R786-R790:
+  uadeityprose1-5.h), and the R783 audit's
+  !dvpProseStaysOpen() assertion rode the
+  flip via the in-memory regtest text
+  (patched to || dvpProseStaysOpen(), the
+  one and only call site - verified before
+  handoff). THE PINS: header
+  rules/uadeityprose5.h, prefix udp5 (free
+  at 7ab9174), 32 consts + 51 bools (83
+  inline), 7 examples with full coverage,
+  no tables. FOUR FILE PATCHES (the most of
+  any round): the two comment strikes (both
+  prose notes now read "the close is
+  complete"), the pin flip, and the regtest
+  assertion. rverify GREEN (83 mutants, 0
+  missed), ONE preflight, GREEN first pass.
+  THE FIVE-PART CLOSE IS COMPLETE (R786
+  dwarves, R787 elves, R788 halflings, R789
+  gnomes, R790 orcs - 467 prose pins).
+  NEXT - R791: awaits Curtiss's call (the
+  Appendix S arc is closed; per the DMO
+  plan the candidates are the Appendix
+  Spell Dueling Characteristics pp.
+  180-188 and the Index pp. 189-192).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

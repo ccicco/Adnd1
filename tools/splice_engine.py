@@ -643,6 +643,22 @@ for fp in S.get('file_patches', []):
         applied.append('file: %s'
                        % fp['note'])
 
+# ---------- the data files (the R791 tooling
+# extension): spec-declared NEW files written
+# verbatim - a path plus a content, idempotent
+# by existence, each one counted in the
+# applied/already census so the double-run
+# gate covers them exactly like a file patch
+# (the registry promotion class: 65 .lua defs
+# ride R792)
+for df in S.get('data_files', []):
+    p = df['path']
+    if os.path.exists(p):
+        already.append('data: %s' % p)
+    else:
+        writes.append((p, df['content']))
+        applied.append('data: %s' % p)
+
 # ---------- the idempotency gate (the R420 lesson) ----------
 
 if applied and already:

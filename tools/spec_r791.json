@@ -1,0 +1,310 @@
+{
+ "round": 791,
+ "prefix": "lreg",
+ "header_file": "rules/lreg.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 713,
+ "title": "the registry promotion wiring",
+ "audit_label": "R791 registry promotion wiring audit",
+ "audit_comment": "THE REGISTRY PROMOTION WIRING - the tooling round of the creature-registry promotion (the user-set seam, 2026-10-23). The engine gains spec-declared new-file emission (data_files - idempotent by existence, counted in the applied/already census), so R792 can write all 65 .lua defs in one pass - the MM1 precedent (monsters2lua.py generated all 408 defs from the merged @-record file). The counts ride as pins: OA 39, WSG 18, MOP Appendix III 8, total 65, the registry growing 408 -> 473 live in the battery. The two zero-record adjustments ride as schema fields: the DMO legendary ladder as a rank field, the MOP Appendix II analogue system as a transform field. The pin headers stay the print-fidelity record.",
+ "include_comment": "the registry promotion wiring",
+ "include_after": "#include \"rules/uadeityprose5.h\"  // R790: the orcish deity prose",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R790 LANDED 2026-10-23: commit",
+ "prev_record": [
+  "- R790 LANDED 2026-10-23: commit",
+  "  3ff2f2add2410984affed9b560025133a20decc0",
+  "  (census 712 -> 713, pushed 7ab9174..3ff2f2a),",
+  "  THE ORCISH DEITY PROSE - part 5, the",
+  "  FINALE of the five-part Appendix S",
+  "  description-paragraph close (Curtiss's",
+  "  \"Go\" call). The shaman-tale intro and",
+  "  the five orcish blocks (pp. 118-121) read",
+  "  scan-clean in the archive.org full-text",
+  "  OCR (item ad-d-1st-edition-unearthed-",
+  "  arcana, the _djvu.txt): the creation tale",
+  "  (the gods drawing lots - humans anywhere,",
+  "  elves the green forests, dwarves the high",
+  "  mountains, gnomes the rocky sunlit hills,",
+  "  halflings the fields and meadows - and",
+  "  Gruumsh's iron spear piercing the",
+  "  mountains, splitting the hills, gouging",
+  "  the meadows), the Bahgtru might (the",
+  "  4-over grapple crushing 10-120 per round,",
+  "  blunt weapons doing 1 point, the",
+  "  barehanded reptile slaying behind the",
+  "  symbol, the 16-strength no-armor clerics),",
+  "  the Shargaas night (the infinite caverns",
+  "  below Gehenna, mile-range dark sight,",
+  "  climbing any surface, the 5-30 percent",
+  "  rumored shadow skills, the new-moon",
+  "  holidays), the Ilneval politics (the",
+  "  chief lieutenant coveting Gruumsh's",
+  "  seat, the captain's god, the red iron",
+  "  chainmail immune to missiles, the",
+  "  death-at-(-6) non-orc-slaying sword), the",
+  "  Yurtrus death (the 120-foot gas envelope",
+  "  in three bands - 4 HD sneezing dust, 8 HD",
+  "  symbol of pain, -2 to hit above, the",
+  "  18th-level death magic, the 3-12 touch",
+  "  plus 1-4 diseases, wish-only recovery),",
+  "  and the Luthic motherhood (the four-foot",
+  "  claws tunnelling rock, 3 hp regeneration",
+  "  on the ground, the 10 percent name-abuse",
+  "  curse fatal in 2-7 days and undone only",
+  "  by three wishes, the dirt fertility",
+  "  rituals, the both-sexes clergy of the",
+  "  Vile Rune). THE FLIP: dvpProseStaysOpen()",
+  "  returns FALSE at last - every Appendix S",
+  "  description paragraph pins (R786-R790:",
+  "  uadeityprose1-5.h), and the R783 audit's",
+  "  !dvpProseStaysOpen() assertion rode the",
+  "  flip via the in-memory regtest text",
+  "  (patched to || dvpProseStaysOpen(), the",
+  "  one and only call site - verified before",
+  "  handoff). THE PINS: header",
+  "  rules/uadeityprose5.h, prefix udp5 (free",
+  "  at 7ab9174), 32 consts + 51 bools (83",
+  "  inline), 7 examples with full coverage,",
+  "  no tables. FOUR FILE PATCHES (the most of",
+  "  any round): the two comment strikes (both",
+  "  prose notes now read \"the close is",
+  "  complete\"), the pin flip, and the regtest",
+  "  assertion. rverify GREEN (83 mutants, 0",
+  "  missed), ONE preflight, GREEN first pass.",
+  "  THE FIVE-PART CLOSE IS COMPLETE (R786",
+  "  dwarves, R787 elves, R788 halflings, R789",
+  "  gnomes, R790 orcs - 467 prose pins).",
+  "  NEXT - R791: awaits Curtiss's call (the",
+  "  Appendix S arc is closed; per the DMO",
+  "  plan the candidates are the Appendix",
+  "  Spell Dueling Characteristics pp.",
+  "  180-188 and the Index pp. 189-192)."
+ ],
+ "banner": {
+  "title": "THE REGISTRY PROMOTION WIRING - the engine data-files extension and the promotion doctrine pins: the tooling for the all-in-one R792",
+  "provenance": "The tooling round of the promotion seam. Verified repo state at 3ff2f2a: the live registry holds 408 MM1 defs loaded by the Lua 5.4 C API loader; the five pin-only creature sets (OA Chapter 12, WSG animals, DMO ladder, MOP Appendices II and III) have zero runtime wiring. This round lands the engine extension (data_files) and the doctrine pins; R792 writes the 65 defs in one pass, lands the schema adjustments (the WSG load fields, the DMO rank field, the MOP analogue transform field), and the battery census grows live: loaded 408 -> 473. The WSG mount and fish headers get one look before the R792 cut."
+ },
+ "consts": [
+  {
+   "name": "lregPromoteRound",
+   "value": 791,
+   "comment": "The promotion wiring round: the doctrine and the tooling"
+  },
+  {
+   "name": "lregEngineExtensionRound",
+   "value": 791,
+   "comment": "The engine data-files extension lands this same round (the R774/R775 tooling precedent)"
+  },
+  {
+   "name": "lregDefWriteRound",
+   "value": 792,
+   "comment": "The round that writes all 65 defs in one pass - the user-set all-in-one scope"
+  },
+  {
+   "name": "lregOARecordCount",
+   "value": 39,
+   "comment": "The OA Chapter 12 def count: the 28 oa076-oa103 headers expanded (gaki 4, gargantua 3, oni 3, generals 3, buso 2, nature spirits 2, tengu 2, oriental dragons 2, the rest singles)"
+  },
+  {
+   "name": "lregWSGAnimalCount",
+   "value": 18,
+   "comment": "The WSG Table 13 animal count (the ape through the yak)"
+  },
+  {
+   "name": "lregMOPCreatureCount",
+   "value": 8,
+   "comment": "The MOP Appendix III count: einheriar, marut, the Beastlands mortal cloud, the five archons"
+  },
+  {
+   "name": "lregNewDefTotal",
+   "value": 65,
+   "comment": "The new-def total: 39 + 18 + 8"
+  },
+  {
+   "name": "lregRegistryCountBefore",
+   "value": 408,
+   "comment": "The live registry before the promotion: 408 defs, every one MM1"
+  },
+  {
+   "name": "lregRegistryCountAfter",
+   "value": 473,
+   "comment": "The live registry after: 408 + 65"
+  },
+  {
+   "name": "lregScionRankCount",
+   "value": 5,
+   "comment": "The DMO legendary ladder rides as a rank field: the five scion ranks over existing defs, no new records"
+  }
+ ],
+ "bools": [
+  {
+   "name": "lregDefsAreGeneratedTables",
+   "value": true,
+   "comment": "The new defs are generated data tables in the MM1 format - DO NOT hand-edit, regenerate (the monsters2lua.py doctrine)"
+  },
+  {
+   "name": "lregDefsRideRegistryLoader",
+   "value": true,
+   "comment": "The new defs load at runtime through the existing Lua 5.4 C API loader in monsters/MonsterRegistry.cpp - defensive coercers, MonsterDef"
+  },
+  {
+   "name": "lregPinHeadersStayPrintRecord",
+   "value": true,
+   "comment": "The pin headers stay the print-fidelity record; the .lua defs are the engine-feeding data layer"
+  },
+  {
+   "name": "lregBatteryCensusGrowsLive",
+   "value": true,
+   "comment": "The battery census grows live when the defs land: loaded 408 -> 473, the xp audit checks 473 defs"
+  },
+  {
+   "name": "lregDMOLadderRidesRankField",
+   "value": true,
+   "comment": "The DMO legendary ladder (the +/-1/2/3 altering rules) rides as a rank field on existing defs - a schema adjustment, not new files"
+  },
+  {
+   "name": "lregMOPAnalogueRidesTransformField",
+   "value": true,
+   "comment": "The MOP Appendix II elemental-analogue system rides as a transform field - analogues transform existing defs, not new files"
+  },
+  {
+   "name": "lregWSGAnimalsNeedLoadFields",
+   "value": true,
+   "comment": "The WSG animals need schema adjustments MM1 lacks: the load limits and the terrain-class movement rates"
+  },
+  {
+   "name": "lregEngineDataFilesLands",
+   "value": true,
+   "comment": "The engine gains spec-declared new-file emission this round: data_files entries, idempotent by existence, counted in the applied/already census like a file patch"
+  },
+  {
+   "name": "lregOneRoundCarriesAllDefs",
+   "value": true,
+   "comment": "One round carries all the defs - the MM1 precedent: monsters2lua.py generated all 408 from the merged @-record file in a single pass"
+  },
+  {
+   "name": "lregMountFishCheckBeforeCut",
+   "value": true,
+   "comment": "The WSG mount and fish headers get one look before the R792 cut: any stat-bearing creatures beyond the Table 13 eighteen ride in"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the promotion census walk (the counts, the rounds)",
+   "expr": "m['lregPromoteRound']() != 791 or m['lregEngineExtensionRound']() != 791 or m['lregDefWriteRound']() != 792 or m['lregOARecordCount']() != 39 or m['lregWSGAnimalCount']() != 18 or m['lregMOPCreatureCount']() != 8 or m['lregNewDefTotal']() != 65 or m['lregRegistryCountBefore']() != 408 or m['lregRegistryCountAfter']() != 473 or m['lregScionRankCount']() != 5"
+  },
+  {
+   "note": "the promotion doctrine walk (the format, the loader, the adjustments)",
+   "expr": "m['lregDefsAreGeneratedTables']() != 1 or m['lregDefsRideRegistryLoader']() != 1 or m['lregPinHeadersStayPrintRecord']() != 1 or m['lregBatteryCensusGrowsLive']() != 1 or m['lregDMOLadderRidesRankField']() != 1 or m['lregMOPAnalogueRidesTransformField']() != 1 or m['lregWSGAnimalsNeedLoadFields']() != 1 or m['lregEngineDataFilesLands']() != 1 or m['lregOneRoundCarriesAllDefs']() != 1 or m['lregMountFishCheckBeforeCut']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the promotion consts (the R791 wiring)": [
+   {
+    "kind": "const",
+    "name": "lregPromoteRound"
+   },
+   {
+    "kind": "const",
+    "name": "lregEngineExtensionRound"
+   },
+   {
+    "kind": "const",
+    "name": "lregDefWriteRound"
+   },
+   {
+    "kind": "const",
+    "name": "lregOARecordCount"
+   },
+   {
+    "kind": "const",
+    "name": "lregWSGAnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "lregMOPCreatureCount"
+   },
+   {
+    "kind": "const",
+    "name": "lregNewDefTotal"
+   },
+   {
+    "kind": "const",
+    "name": "lregRegistryCountBefore"
+   },
+   {
+    "kind": "const",
+    "name": "lregRegistryCountAfter"
+   },
+   {
+    "kind": "const",
+    "name": "lregScionRankCount"
+   }
+  ],
+  "the promotion bools (the R791 wiring)": [
+   {
+    "kind": "bool",
+    "name": "lregDefsAreGeneratedTables"
+   },
+   {
+    "kind": "bool",
+    "name": "lregDefsRideRegistryLoader"
+   },
+   {
+    "kind": "bool",
+    "name": "lregPinHeadersStayPrintRecord"
+   },
+   {
+    "kind": "bool",
+    "name": "lregBatteryCensusGrowsLive"
+   },
+   {
+    "kind": "bool",
+    "name": "lregDMOLadderRidesRankField"
+   },
+   {
+    "kind": "bool",
+    "name": "lregMOPAnalogueRidesTransformField"
+   },
+   {
+    "kind": "bool",
+    "name": "lregWSGAnimalsNeedLoadFields"
+   },
+   {
+    "kind": "bool",
+    "name": "lregEngineDataFilesLands"
+   },
+   {
+    "kind": "bool",
+    "name": "lregOneRoundCarriesAllDefs"
+   },
+   {
+    "kind": "bool",
+    "name": "lregMountFishCheckBeforeCut"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 20,
+ "file_patches": [
+  {
+   "file": "tools/splice_engine.py",
+   "note": "the engine data-files extension (spec-declared new-file emission, the R774/R775 tooling precedent)",
+   "from": "# ---------- the idempotency gate (the R420 lesson) ----------\n",
+   "to": "# ---------- the data files (the R791 tooling\n# extension): spec-declared NEW files written\n# verbatim - a path plus a content, idempotent\n# by existence, each one counted in the\n# applied/already census so the double-run\n# gate covers them exactly like a file patch\n# (the registry promotion class: 65 .lua defs\n# ride R792)\nfor df in S.get('data_files', []):\n    p = df['path']\n    if os.path.exists(p):\n        already.append('data: %s' % p)\n    else:\n        writes.append((p, df['content']))\n        applied.append('data: %s' % p)\n\n# ---------- the idempotency gate (the R420 lesson) ----------\n"
+  }
+ ]
+}
