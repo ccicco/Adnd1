@@ -19654,6 +19654,64 @@ when both halves land.
   blocked on the chart-extraction
   contamination (Hanali's row parsed wrong,
   Arvoreen's broken form cell).
+- R784 LANDED 2026-10-23: commit
+  9c32b6caec7741275a422f5ecf4a14fc863dd119
+  (census 706 -> 707, pushed 23f196e..9c32b6c),
+  THE WORSHIP SITES - the five-chart-rows
+  candidate, resolved by the print. THREE-WAY
+  READ: all 23 deity pages re-fetched from the
+  1eonline compilation (Segojan's true slug is
+  segojanearthcaller), the chart tables parsed
+  cell for cell, and the print itself read via
+  the archive.org full-text OCR of pp. 121-122.
+  VERDICT: every R407 pin stands - the
+  contamination is compilation-side (the
+  site's Hanali row carries Solonor's cells
+  wholesale, sphere through site; Labelas's
+  sphere cell prints Erevan's; the Arvoreen,
+  Segojan, and Aerdrie rows carry spelling
+  variants), so no chart repair was owed. THE
+  PINS (header rules/worshipsites.h, prefix
+  plc, free at 23f196e): the two per-row
+  reads R407 left unpinned - the
+  place-of-worship kinds (23 x 2 grid, tag
+  PlcSites, 16 distinct codes: the battlefield
+  pair Clangeddin/Bahgtru, the four dwarven
+  underground temples, Aerdrie's open
+  hilltops, Hanali's fountain or spring,
+  Labelas's small grove, Solonor's deep
+  forest, Erevan's never-the-same-place-twice,
+  Sheela's open field, Cyrrollalee's the
+  home, the two anywhere pairs, Baervan's
+  forest clearing, Urdlen's cavern, Segojan's
+  subterranean temple, Flandal's forge,
+  Yurtrus's crypt, Luthic's cave temple) and
+  the cleric-gender grid (12 males-only, the
+  lone Berronar females-only, 10 either with
+  the Luthic exception). THE STRINGS: the
+  printed site phrases ride rules/uascharts.h
+  (the uscWorshipSite accessor) with a live
+  regtest strings block walking all 23 rows
+  (the R782 site-block precedent, printf
+  carries no census marker; preflight printed
+  "R784 worship site strings: bad 0"). ONE
+  EMIT LESSON: a regtest file patch never
+  rides caller_files - the prefix-freedom
+  gate re-reads the patched disk copy on the
+  second run and aborts (R782's caller_files
+  listed only the non-regtest patch files;
+  the convention now stands recorded).
+  Honest boundaries: the M/F/N-H columns on
+  the compilation pages are the compilation's
+  own additions, not print chart columns -
+  they stay contract-side; the print's own
+  typos ("can by worshiped", the one-r
+  Cyrollalee) ride the prose; the pantheon
+  prose stays open (R423 stands). rverify
+  GREEN (67 mutants, 0 missed), ONE preflight,
+  GREEN first pass. NEXT - R785: awaits
+  Curtiss's call (Appendix S is now fully
+  pinned through the prose boundary).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -43,32 +43,46 @@
 //     Tenser's" = three 1st-level names; "Whip Wizard" = the 2nd-level
 //     "Whip" plus Wizard Lock's head; "Disc ~~ Zephyr" = the 1st-level
 //     Disc tail plus the 2nd-level Zephyr.
-//   - the "Whip" cell: pinned as printed (verbatim). It sorts where
-//     the PHB's Whispering Wind would sit; likely its garble - the
-//     identity stays pending the PDF.
+//   - R785: the "Whip" doubt STRIKES - the
+//     uam2WhipName pin ("Whip (Evocation)", p. 52)
+//     proves the cell reads a real UA 2nd-level
+//     spell, not a garble.
 //   - verbatim-with-doubt pins: "Stone Shape" prints in the 5th
 //     column (the PHB reads MU 4th) and "Secret Page" in the 3rd (the
 //     PHB reads 2nd) - pinned as printed, doubts noted; the 3rd- and
 //     7th-column "Monster Summoning" cells print without numerals -
 //     pinned verbatim, the numeral loss noted.
 //
-// OCR holes (the item closes; these stay on the PDF ledger): the 6th-
-// level column is wholly lost (the printed table runs 1st-5th, the
-// continued table 7th-9th; the registry rows Death Spell and
-// Disintegrate prove it existed); the fragment cells read as holes -
-// "pid" (1st), "A >", "Flaming" and "Protection From" (2nd), "Detect",
-// "Item" and "Material" (3rd), "Dispel" (4th), "Dolor" (5th), "i
-// last", "Truename", "ish" and "888" (7th-9th), "To Flesh" and the
-// tail of "Otiluke's" (8th); the continued header prints "th Level"
-// (the 9 lost); the registry rows absent from the print (Shield,
-// Sleep, Web, Whispering Wind, Monster Summoning II, Limited Wish,
-// Alter Reality, Wish, Gate) read as lost rows - noted, not pinned;
-// the illusionist 3rd-6th columns are
-// wholly lost (the cantrip column
-// RESOLVES - the R421 clean p. 31
-// read); the illusionist 2nd-level brace-garbage cell and
-// the "Phantom Wind" fragment read as holes (the "Mirror" tail
-// seam-decodes as Mirror Image).
+// R785 RESOLUTIONS (the PDF ledger closes; the ledger
+// census pins in rules/spelltableledger.h): the
+// archive.org full-text OCR reads the continued table;
+// the 6th-level column REPAIRS (17 names, uas2Mu6thName)
+// and the drifted cells re-seat - Tenser's
+// Transformation and Transmute Water To Dust belong
+// to the 6th column, and the four other drifted 6th
+// cells read in their own column; Clone and Otiluke's
+// Telekinetic Sphere newly read; the fragment holes
+// resolve against the UA-new description rosters and
+// the R80 registry (Flaming = Flaming Sphere,
+// Protection From = the cantrips tail, Detect = Detect
+// Illusion, Item and Material resolve, Dispel = Dispel
+// Illusion, Dolor resolves, Truename resolves, Gravity =
+// the Reverse Gravity tail, Project Im = Project
+// Image); Glassteel and Power Word Kill stay OPEN
+// holes (absent from the print, the descriptions, and
+// the registry); the "th Level" print stands (the 9
+// stays lost); the row numbers stay unreliable (the
+// alphabetical order contradicts them); the registry
+// rows absent from the print stay noted, not pinned;
+// the illusionist 3rd-6th columns resolve on the
+// UA-new side (the R364-R368 description rosters,
+// rules/uailspells3-7.h, carry 4/4/4/4 new names plus
+// the 7th-level pair Shadow Walk and Weird); the
+// PHB-side rows of those columns stay lost; the
+// "Phantom Wind" fragment resolves (the UA-new 3rd
+// roster carries it); the "Mirror" tail seam-decode
+// stands (Mirror Image).
+
 // ===========================================================================
 
 #pragma once
@@ -201,61 +215,109 @@ inline const char* uas2Mu5thName(int i) {
     return k[i];
 }
 
-// ---- the MU continued table (7th-9th; the 6th column is lost) ----
-// The readable 7th-level fragments (7 names; the numerals of
-// Monster Summoning and Drawmij's Instant [Summons] are lost).
+// ---- the MU continued table (6th-9th; the R785
+// ledger repair rides rules/spelltableledger.h) ----
+// The repaired 7th-level roster (16 names: the nine
+// readable print cells - including the numeral
+// restorations Monster Summoning V and Drawmij's
+// Instant Summons and the Reverse Gravity tail - the
+// six UA-new description-roster names, and the
+// registry row Limited Wish).
 inline int uas2Mu7thCount()
-    { return 7; }
+    { return 16; }
 
 inline const char* uas2Mu7thName(int i) {
-    static const char* const k[7] = {
-        "Drawmij's Instant", "Invisible Stalker",
-        "Legend Lore", "Lower Water",
-        "Monster Summoning",
-        "Otiluke's Freezing Sphere", "Part Water",
+    static const char* const k[16] = {
+        "Banishment", "Charm Plants",
+        "Delayed Blast Fireball",
+        "Drawmij's Instant Summons", "Forcecage",
+        "Legend Lore", "Limited Wish",
+        "Monster Summoning V",
+        "Mordenkainen's Magnificent Mansion",
+        "Reverse Gravity", "Sequester",
+        "Teleport Without Error", "Torment",
+        "Truename", "Vanish", "Volley",
     };
     if (i < 0) i = 0;
-    if (i > 6) i = 6;
+    if (i > 15) i = 15;
     return k[i];
 }
 
-// The readable 8th-level names (11).
+// The repaired 8th-level roster (10 names: the nine
+// readable print cells - including the newly-read
+// Clone and Otiluke's Telekinetic Sphere - and the
+// UA-new Binding; Glassteel and Power Word Kill stay
+// OPEN holes; Tenser's Transformation and Transmute
+// Water To Dust re-seat to the 6th column).
 inline int uas2Mu8thCount()
-    { return 11; }
+    { return 10; }
 
 inline const char* uas2Mu8thName(int i) {
-    static const char* const k[11] = {
-        "Demand", "Glassteel", "Mass Invisibility",
-        "Mind Blank", "Monster Summoning VI",
-        "Power Word Blind", "Power Word Kill",
-        "Serten's Spell Immunity", "Sink",
+    static const char* const k[10] = {
+        "Binding", "Clone", "Demand",
+        "Mass Invisibility", "Mind Blank",
+        "Monster Summoning VI",
+        "Otiluke's Telekinetic Sphere",
+        "Power Word Blind", "Serten's Spell Immunity",
+        "Sink",
+    };
+    if (i < 0) i = 0;
+    if (i > 9) i = 9;
+    return k[i];
+}
+
+// The repaired 9th-level roster (8 names: the five
+// readable print cells - Energy Drain, Gate, Prismatic
+// Sphere, Shape Change, Wish - and the UA-new
+// Crystalbrittle, Mordenkainen's Disjunction, and
+// Succor, its level seam-proven by the section
+// heading; the "th Level" print stands).
+inline int uas2Mu9thCount()
+    { return 8; }
+
+inline const char* uas2Mu9thName(int i) {
+    static const char* const k[8] = {
+        "Crystalbrittle", "Energy Drain", "Gate",
+        "Mordenkainen's Disjunction",
+        "Prismatic Sphere", "Shape Change",
+        "Succor", "Wish",
+    };
+    if (i < 0) i = 0;
+    if (i > 7) i = 7;
+    return k[i];
+}
+
+// R785: the 6th-level column - the archive.org
+// full-text OCR reads the continued table, and the
+// cells the R342 read had drifted into the 7th and
+// 8th blocks re-seat here. The repaired roster (17
+// names: the twelve readable cells, the three UA-new
+// description-roster names - Chain Lightning,
+// Ensnarement, Mordenkainen's Lucubration - and the
+// two registry rows Death Spell and Disintegrate).
+inline int uas2Mu6thCount()
+    { return 17; }
+
+inline const char* uas2Mu6thName(int i) {
+    static const char* const k[17] = {
+        "Chain Lightning", "Contingency",
+        "Control Weather", "Death Spell",
+        "Disintegrate", "Ensnarement", "Eyebite",
+        "Geas", "Invisible Stalker", "Lower Water",
+        "Mordenkainen's Lucubration",
+        "Otiluke's Freezing Sphere", "Part Water",
+        "Project Image", "Stone To Flesh",
         "Tenser's Transformation",
         "Transmute Water To Dust",
     };
     if (i < 0) i = 0;
-    if (i > 10) i = 10;
+    if (i > 16) i = 16;
     return k[i];
 }
 
-// The readable 9th-level names (2; the header's "th Level" cell
-// prints the 9 lost).
-inline int uas2Mu9thCount()
-    { return 2; }
-
-inline const char* uas2Mu9thName(int i) {
-    static const char* const k[2] = {
-        "Prismatic Sphere", "Shape Change",
-    };
-    if (i < 0) i = 0;
-    if (i > 1) i = 1;
-    return k[i];
-}
-
-// The 6th-level column is wholly lost (the registry rows Death
-// Spell and Disintegrate prove it existed).
+// R785: the sixth column reads (the loss flag flips).
 inline bool uas2MuSixthLevelColumnLost()
-    { return true; }
-
+    { return false; }
 // The continued header's "th Level" prints the 9 lost.
 inline bool uas2MuHighTableNineLost()
     { return true; }

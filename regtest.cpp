@@ -486,6 +486,7 @@
 #include "rules/owedpins.h"  // R782: the owed pins
 #include "rules/deitylines.h"  // R783: the deity stat lines
 #include "rules/worshipsites.h"  // R784: the worship sites
+#include "rules/spelltableledger.h"  // R785: the UA spell table ledger
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -29033,11 +29034,14 @@ int main() {
     // The UA SPELL TABLES (pp. 30-31), part 2 - the MU
     // 1st-5th columns (35/30/28/28/28 readable names,
     // every garble position-decoded, the alphabetical
-    // continuity documented), the MU 7th-9th continued
-    // table (7/11/2, the 6th column and the header's 9
-    // lost) and the illusionist table (5/4/1, the
-    // cantrip and 3rd-6th columns lost). The item
-    // closes; the holes stay pending the PDF.
+    // continuity documented), the MU continued table
+    // (6th-9th: 17/16/10/8, the R785 ledger repairs
+    // from the archive.org OCR plus the UA-new
+    // description rosters and the registry) and the
+    // illusionist table (5/4/1, the cantrip column
+    // resolved, the 3rd-6th columns resolved on the
+    // UA-new side). The R342 ledger holes close; the
+    // ledger census pins in rules/spelltableledger.h.
     {
         using namespace rules;
         int bad = 0;
@@ -29048,13 +29052,14 @@ int main() {
             if (uas2Mu3rdCount() != 28) ++bad;
             if (uas2Mu4thCount() != 28) ++bad;
             if (uas2Mu5thCount() != 28) ++bad;
-            if (uas2Mu7thCount() != 7) ++bad;
-            if (uas2Mu8thCount() != 11) ++bad;
-            if (uas2Mu9thCount() != 2) ++bad;
+            if (uas2Mu6thCount() != 17) ++bad;
+            if (uas2Mu7thCount() != 16) ++bad;
+            if (uas2Mu8thCount() != 10) ++bad;
+            if (uas2Mu9thCount() != 8) ++bad;
             if (uas2Il1stCount() != 5) ++bad;
             if (uas2Il2ndCount() != 4) ++bad;
             if (uas2Il7thCount() != 1) ++bad;
-            if (!uas2MuSixthLevelColumnLost()) ++bad;
+            if (uas2MuSixthLevelColumnLost()) ++bad;
             if (!uas2MuHighTableNineLost()) ++bad;
             if (uas2IlCantripCount() != 8) ++bad;
         }
@@ -29160,29 +29165,79 @@ int main() {
             if (strcmp(uas2Mu5thName(21),
                 "Stone Shape") != 0) ++bad;
         }
-        // U4: the MU continued table (7th-9th)
+        // U4: the MU continued table (6th-9th; the
+        // R785 repaired rosters)
         {
-            // the merged Drawmij's cell head
-            if (strcmp(uas2Mu7thName(0),
-                "Drawmij's Instant") != 0) ++bad;
-            // the numeral-less print, verbatim
-            if (strcmp(uas2Mu7thName(4),
-                "Monster Summoning") != 0) ++bad;
-            if (strcmp(uas2Mu7thName(5),
+            // the 6th-column walk (the readable cells)
+            if (strcmp(uas2Mu6thName(1),
+                "Contingency") != 0) ++bad;
+            // the "ntingency" fragment read
+            if (strcmp(uas2Mu6thName(2),
+                "Control Weather") != 0) ++bad;
+            if (strcmp(uas2Mu6thName(3),
+                "Death Spell") != 0) ++bad;
+            if (strcmp(uas2Mu6thName(4),
+                "Disintegrate") != 0) ++bad;
+            if (strcmp(uas2Mu6thName(11),
                 "Otiluke's Freezing Sphere") != 0) ++bad;
+            // the "Project Im" fragment read
+            if (strcmp(uas2Mu6thName(13),
+                "Project Image") != 0) ++bad;
+            // the "To Flesh" bleed cell re-seats
+            if (strcmp(uas2Mu6thName(14),
+                "Stone To Flesh") != 0) ++bad;
+            if (strcmp(uas2Mu6thName(15),
+                "Tenser's Transformation") != 0) ++bad;
+            if (strcmp(uas2Mu6thName(16),
+                "Transmute Water To Dust") != 0) ++bad;
+            // the 7th walk (the repaired roster)
+            if (strcmp(uas2Mu7thName(0),
+                "Banishment") != 0) ++bad;
+            // the merged Drawmij's cell head repairs
+            if (strcmp(uas2Mu7thName(3),
+                "Drawmij's Instant Summons") != 0) ++bad;
+            // the numeral-less print repairs
+            if (strcmp(uas2Mu7thName(7),
+                "Monster Summoning V") != 0) ++bad;
+            if (strcmp(uas2Mu7thName(6),
+                "Limited Wish") != 0) ++bad;
+            // the "Gravity" tail = Reverse Gravity
+            if (strcmp(uas2Mu7thName(9),
+                "Reverse Gravity") != 0) ++bad;
+            // the 8th walk (Binding, Clone and the
+            // telekinetic sphere newly read; the
+            // Glassteel and Power Word Kill holes
+            // stay open)
+            if (strcmp(uas2Mu8thName(0),
+                "Binding") != 0) ++bad;
+            if (strcmp(uas2Mu8thName(1),
+                "Clone") != 0) ++bad;
             // the "Il Demand" cell = Demand
-            if (strcmp(uas2Mu8thName(0), "Demand")
+            if (strcmp(uas2Mu8thName(2), "Demand")
                 != 0) ++bad;
-            // the "Power Word, Kill" comma print
+            // the "Otiluke's" tail newly reads
             if (strcmp(uas2Mu8thName(6),
-                "Power Word Kill") != 0) ++bad;
-            if (strcmp(uas2Mu8thName(5),
+                "Otiluke's Telekinetic Sphere") != 0) ++bad;
+            if (strcmp(uas2Mu8thName(7),
                 "Power Word Blind") != 0) ++bad;
-            // the merged Shape Change/Sphere cell
+            // the 9th walk (the repaired roster; the
+            // "th Level" print stands)
             if (strcmp(uas2Mu9thName(0),
+                "Crystalbrittle") != 0) ++bad;
+            if (strcmp(uas2Mu9thName(2), "Gate")
+                != 0) ++bad;
+            if (strcmp(uas2Mu9thName(3),
+                "Mordenkainen's Disjunction") != 0) ++bad;
+            // the merged Shape Change/Sphere cell
+            if (strcmp(uas2Mu9thName(4),
                 "Prismatic Sphere") != 0) ++bad;
-            if (strcmp(uas2Mu9thName(1),
+            if (strcmp(uas2Mu9thName(5),
                 "Shape Change") != 0) ++bad;
+            if (strcmp(uas2Mu9thName(6),
+                "Succor") != 0) ++bad;
+            // the registry row reads back
+            if (strcmp(uas2Mu9thName(7), "Wish")
+                != 0) ++bad;
         }
         // U5: the illusionist table
         {
@@ -33812,48 +33867,55 @@ int main() {
             if (!uam7VolleyMaterialGutStrands()) ++bad;
             if (!uam7VolleyPrintsPastEighthTablePage()) ++bad;
 
-        // the R342 table seam (only the seven
-        // PHB fragments print; none of the new
-        // names seam-checks)
-        if (uas2Mu7thCount() != 7) ++bad;
+        // the R785 seam repair (the table now
+        // carries the R361 names; the absent-name
+        // loop reverses)
+        if (uas2Mu7thCount() != 16) ++bad;
         if (strcmp(uas2Mu7thName(0),
-                "Drawmij's Instant") != 0)
+                "Banishment") != 0)
             ++bad;
+        if (strcmp(uas2Mu7thName(4),
+                "Forcecage") != 0)
+            ++bad;
+        if (strcmp(uas2Mu7thName(8),
+                "Mordenkainen's Magnificent Mansion")
+                != 0)
+            ++bad;
+        if (strcmp(uas2Mu7thName(10),
+                "Sequester") != 0)
+            ++bad;
+        if (strcmp(uas2Mu7thName(11),
+                "Teleport Without Error") != 0)
+            ++bad;
+        if (strcmp(uas2Mu7thName(12),
+                "Torment") != 0) ++bad;
+        if (strcmp(uas2Mu7thName(13),
+                "Truename") != 0) ++bad;
+        if (strcmp(uas2Mu7thName(15),
+                "Volley") != 0) ++bad;
+        // the R342 fragment reads re-seat
         if (strcmp(uas2Mu7thName(1),
+                "Charm Plants") != 0)
+            ++bad;
+        // the Invisible Stalker fragment re-seats
+        // down a column (a 6th-level cell)
+        if (strcmp(uas2Mu6thName(8),
                 "Invisible Stalker") != 0)
             ++bad;
-        if (strcmp(uas2Mu7thName(2),
-                "Legend Lore") != 0) ++bad;
         if (strcmp(uas2Mu7thName(3),
-                "Lower Water") != 0) ++bad;
-        if (strcmp(uas2Mu7thName(4),
-                "Monster Summoning") != 0)
+                "Drawmij's Instant Summons") != 0)
             ++bad;
         if (strcmp(uas2Mu7thName(5),
-                "Otiluke's Freezing Sphere")
-                != 0) ++bad;
+                "Legend Lore") != 0) ++bad;
         if (strcmp(uas2Mu7thName(6),
-                "Part Water") != 0) ++bad;
-        // the absent new names (the seam
-        // carries only PHB fragments)
-        for (int i = 0; i < 7; ++i) {
-            const char* n = uas2Mu7thName(i);
-            if (strcmp(n, "Banishment") == 0)
-                ++bad;
-            if (strcmp(n, "Forcecage") == 0)
-                ++bad;
-            if (strcmp(n, "Mordenkainen's Magnificent")
-                == 0)
-                ++bad;
-            if (strcmp(n, "Sequester") == 0)
-                ++bad;
-            if (strcmp(n,
-                    "Teleport Without Error") == 0)
-                ++bad;
-            if (strcmp(n, "Torment") == 0) ++bad;
-            if (strcmp(n, "Truename") == 0) ++bad;
-            if (strcmp(n, "Volley") == 0) ++bad;
-        }
+                "Limited Wish") != 0)
+            ++bad;
+        if (strcmp(uas2Mu7thName(7),
+                "Monster Summoning V") != 0)
+            ++bad;
+        if (strcmp(uas2Mu7thName(9),
+                "Reverse Gravity") != 0)
+            ++bad;
         printf("R361 UA MU 7th level spells pin audit: bad %d\n", bad);
         if (bad) return 1;
     }
@@ -34099,42 +34161,43 @@ int main() {
             if (uam9DisjunctionArtifactDestroySaveAdj() != -4) ++bad;
             if (!uam9DisjunctionCasterMayLoseCasting()) ++bad;
 
-        // the R342 table seam (demand at
-        // index 0 and sink at index 8;
-        // binding and the sphere absent;
-        // only the two PHB 9th names print)
-        if (uas2Mu8thCount() != 11) ++bad;
+        // the R785 seam repair (the table now
+        // carries binding and the telekinetic
+        // sphere; the 9th roster repairs; the
+        // absent-name loops reverse)
+        if (uas2Mu8thCount() != 10) ++bad;
         if (strcmp(uas2Mu8thName(0),
+                "Binding") != 0) ++bad;
+        if (strcmp(uas2Mu8thName(1),
+                "Clone") != 0) ++bad;
+        if (strcmp(uas2Mu8thName(2),
                 "Demand") != 0) ++bad;
-        if (strcmp(uas2Mu8thName(8),
+        if (strcmp(uas2Mu8thName(6),
+                "Otiluke's Telekinetic Sphere") != 0)
+            ++bad;
+        if (strcmp(uas2Mu8thName(9),
                 "Sink") != 0) ++bad;
-        // the absent 8th-level names
-        for (int i = 0; i < 11; ++i) {
-            const char* n = uas2Mu8thName(i);
-            if (strcmp(n, "Binding") == 0)
-                ++bad;
-            if (strcmp(n, "Otiluke's Telekinetic")
-                == 0)
-                ++bad;
-        }
-        if (uas2Mu9thCount() != 2) ++bad;
+        if (uas2Mu9thCount() != 8) ++bad;
         if (strcmp(uas2Mu9thName(0),
-                "Prismatic Sphere") != 0)
+                "Crystalbrittle") != 0)
             ++bad;
         if (strcmp(uas2Mu9thName(1),
+                "Energy Drain") != 0)
+            ++bad;
+        if (strcmp(uas2Mu9thName(2), "Gate")
+                != 0) ++bad;
+        if (strcmp(uas2Mu9thName(3),
+                "Mordenkainen's Disjunction") != 0)
+            ++bad;
+        if (strcmp(uas2Mu9thName(4),
+                "Prismatic Sphere") != 0)
+            ++bad;
+        if (strcmp(uas2Mu9thName(5),
                 "Shape Change") != 0) ++bad;
-        // the absent 9th-level names
-        for (int i = 0; i < 2; ++i) {
-            const char* n = uas2Mu9thName(i);
-            if (strcmp(n, "Crystalbrittle") == 0)
-                ++bad;
-            if (strcmp(n, "Succor") == 0) ++bad;
-            if (strcmp(n, "Energy Drain") == 0)
-                ++bad;
-            if (strcmp(n, "Mordenkainen's")
-                == 0)
-                ++bad;
-        }
+        if (strcmp(uas2Mu9thName(6),
+                "Succor") != 0) ++bad;
+        if (strcmp(uas2Mu9thName(7), "Wish")
+                != 0) ++bad;
         // the R361 teleport exception names
         // this succor - the cross-level link
         if (!uam7TeleportSuccorException() ||
@@ -121162,6 +121225,148 @@ int main() {
             if (!uscStrEq(uscWorshipSite(i), want[i]))
                 ++bad;
         printf("R784 worship site strings: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R785 UA spell table ledger audit ----
+    // THE UA SPELL TABLE LEDGER - the R342 PDF-ledger holes close (Curtiss's
+    // "stay in covered books" call). The archive.org full-text OCR reads the
+    // continued table: the 6th-level column repairs (17 names), the drifted
+    // cells re-seat, Clone and Otiluke's Telekinetic Sphere newly read, and
+    // the fragment holes resolve against the UA-new description rosters and
+    // the R80 registry. Glassteel and Power Word Kill stay open holes.
+    // THIRTEEN consts + TWENTY bools + the 4 x 3 ledger grid; the string
+    // rosters ride 13 file patches (7 on rules/uaspelltables2.h, 6 on
+    // regtest.cpp including the R361/R362 seam reversals).
+    {
+        using namespace rules;
+        int bad = 0;
+    if (sldLedgerRound() != 785
+            || sldFeederRound() != 342
+            || sldColumnCount() != 4
+            || sldMu6thRosterCount() != 17
+            || sldMu7thRosterCount() != 16
+            || sldMu8thRosterCount() != 10
+            || sldMu9thRosterCount() != 8
+            || sldIl3rdNewCount() != 4
+            || sldIl4thNewCount() != 4
+            || sldIl5thNewCount() != 4
+            || sldIl6thNewCount() != 4
+            || sldIl7thNewCount() != 2
+            || sldIlNewTotalCount() != 18
+            || !sldSixthColumnRead()
+            || !sldContaminationRepaired()
+            || !sldWhipDoubtStruck()
+            || !sldFlamingIsFlamingSphere()
+            || !sldProtectionFromIsCantrips()
+            || !sldDetectIsDetectIllusion()
+            || !sldItemResolves()
+            || !sldMaterialResolves()
+            || !sldDispelIsDispelIllusion()
+            || !sldDolorResolves()
+            || !sldTruenameResolves()
+            || !sldGravityIsReverseGravity()
+            || !sldProjectImIsProjectImage()
+            || !sldMirrorImagIsMirrorImage()
+            || !sldPhantomWindResolves()
+            || !sldToFleshIsSixthColumnBleed()
+            || !sldSixthPhbRowsStayOpen()
+            || !sldEighthHolesStayOpen()
+            || !sldIlColumnsPhbSideLost()
+            || !sldRowNumbersUnreliable()
+        )
+            ++bad;
+        // THE MU COLUMN LEDGER - one row per repaired level (6th-9th): the
+        // readable cells plus the UA-new description names plus the registry
+        // rows must sum to the roster count. Row 0 the 6th (12+3+2=17), row 1
+        // the 7th (9+6+1=16), row 2 the 8th (9+1+0=10), row 3 the 9th
+        // (5+3+0=8)
+        int CMuLedger[4][3] = {
+            {12,3,2},
+            {9,6,1},
+            {9,1,0},
+            {5,3,0},
+            };
+        int nMuLedger[3] = {0,0,0};
+        int eMuLedger[3] = {0,0,0};
+        for (int b = 0;
+             b < sldColumnCount();
+             ++b) {
+            int vals[3];
+            vals[0] = sldReadableCells(b);
+            vals[1] = sldDescNewUnreadable(b);
+            vals[2] = sldRegistryRows(b);
+            for (int c = 0; c < 3;
+                 ++c) {
+                if (vals[c] != CMuLedger[b][c])
+                    ++bad;
+                if (vals[c] == -1)
+                    ++nMuLedger[c];
+            }
+        }
+        for (int c = 0; c < 3; ++c)
+            if (nMuLedger[c] != eMuLedger[c])
+                ++bad;
+        // the 6th ledger row sums to the roster count
+    if (sldMu6thRosterCount() != sldReadableCells(0) + sldDescNewUnreadable(0)
+        + sldRegistryRows(0)
+        )
+            ++bad;
+        // the 7th ledger row sums to the roster count
+    if (sldMu7thRosterCount() != sldReadableCells(1) + sldDescNewUnreadable(1)
+        + sldRegistryRows(1)
+        )
+            ++bad;
+        // the 8th ledger row sums to the roster count
+    if (sldMu8thRosterCount() != sldReadableCells(2) + sldDescNewUnreadable(2)
+        + sldRegistryRows(2)
+        )
+            ++bad;
+        // the 9th ledger row sums to the roster count
+    if (sldMu9thRosterCount() != sldReadableCells(3) + sldDescNewUnreadable(3)
+        + sldRegistryRows(3)
+        )
+            ++bad;
+        // the round consts (the ledger round, the feeder round, the grid
+        // census)
+    if (sldLedgerRound() != 785
+            || sldFeederRound() != 342
+            || sldColumnCount() != 4
+        )
+            ++bad;
+        // the illusionist UA-new censuses sum to the total
+    if (sldIlNewTotalCount() != 18
+            || sldIl3rdNewCount() + sldIl4thNewCount() + sldIl5thNewCount() +
+            sldIl6thNewCount() + sldIl7thNewCount() != sldIlNewTotalCount()
+        )
+            ++bad;
+        // the doctrine bools (the column read, the contamination repair, the
+        // strikes, the standing losses)
+    if (sldSixthColumnRead() != 1
+            || sldContaminationRepaired() != 1
+            || sldWhipDoubtStruck() != 1
+            || sldToFleshIsSixthColumnBleed() != 1
+            || sldSixthPhbRowsStayOpen() != 1
+            || sldEighthHolesStayOpen() != 1
+            || sldIlColumnsPhbSideLost() != 1
+            || sldRowNumbersUnreliable() != 1
+        )
+            ++bad;
+        // the fragment-resolution bools (every R342 fragment hole resolves)
+    if (sldFlamingIsFlamingSphere() != 1
+            || sldProtectionFromIsCantrips() != 1
+            || sldDetectIsDetectIllusion() != 1
+            || sldItemResolves() != 1
+            || sldMaterialResolves() != 1
+            || sldDispelIsDispelIllusion() != 1
+            || sldDolorResolves() != 1
+            || sldTruenameResolves() != 1
+            || sldGravityIsReverseGravity() != 1
+            || sldProjectImIsProjectImage() != 1
+            || sldMirrorImagIsMirrorImage() != 1
+            || sldPhantomWindResolves() != 1
+        )
+            ++bad;
+        printf("R785 UA spell table ledger audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----
