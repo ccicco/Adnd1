@@ -1,0 +1,32 @@
+-- Men Wako: promoted by the R792 registry seam from the OA print
+-- (spec tools/spec_r792.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Men Wako",
+  page = "275",
+  pages = "275-276",
+  source = "OA",
+  race = "Men Wako",
+  hitDice = "2-7 hit points",
+  armorClass = "See below",
+  numAttacks = 1,
+  damage = "By weapon type",
+  xp = 14,
+  xpPerHp = 1,
+  xpValue = 16,
+  xpSource = "oa_print",
+  frequency = "uncommon",
+  noAppearing = "30-180",
+  lairPct = 100,
+  treasure = "A",
+  move = "12",
+  size = "M",
+  intelligence = "average to very",
+  alignment = "lawful evil",
+  specialAttacks = "Leader types",
+  specialDefenses = "Leader types",
+  magicResistance = "Standard",
+  psionic = "Leader types",
+  attackDefenseModes = "Nil",
+  text = "Like their brethren, the buccaneers and pirates, the wako ply the warm seas, boarding ships and raiding coastal towns. They are a vicious scourge, greatly feared by all who travel the seas of Kara-Tur. Composed of men of low class who have fled their homelands or have been hired by powerful lords, the wako are desperate and dangerous men. Even the fierce western pirates, from their few encounters with the wako, regard them with fear. The wako have a disregard for death. Knowing that horrible tortures and death await them should they ever be captured, they fight to the last man no matter how hopeless the situation. Likewise, they take no prisoners, except women who are carried to their towns as slaves. This attitude renders them utterly ferocious in battle. All wako tight with a + 2 on hit rolls and a + 1 on damage. For every 30 wako encountered there is a 5th-level bushi present and for every 60 there is a 7th-level barbarian. These are in addition to the numbers indicated by the dice. They are always led by a 10th-level samurai. With him is a barbarian lieutenant of 8th level and 1-3 bushi mates of 6th level. For every 30 wako present there is a 5% chance that a wu jen is present. He is of 6th to 9th level. The arms and armor of a force of wako are: The lair of the wako is a permanent settlement, possibly on the lands of the sponsoring lord. It is walled and is well defended and patrolled.",
+}

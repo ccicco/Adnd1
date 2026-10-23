@@ -1,0 +1,32 @@
+-- Hai Nu: promoted by the R792 registry seam from the OA print
+-- (spec tools/spec_r792.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Hai Nu",
+  page = "268",
+  pages = "268-269",
+  source = "OA",
+  race = "Hai Nu",
+  hitDice = "1-4 hit points",
+  armorClass = "7",
+  numAttacks = 1,
+  damage = "By weapon type",
+  xp = 14,
+  xpPerHp = 1,
+  xpValue = 16,
+  xpSource = "oa_print",
+  frequency = "rare",
+  noAppearing = "4-40",
+  lairPct = 30,
+  treasure = "U",
+  move = "6/15",
+  size = "M",
+  intelligence = "average to high",
+  alignment = "lawful neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Immune to water attacks",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil",
+  text = "1 HD: 1/14 + 1 /hp 2 HD: 11/28 + 2/hp 3 HD: 11/50 + 3/hp 4 HD: 111/85 + 4/hp The hai nu are an aquatic race of creatures. They are humanoid with webbed hands and feet. Their bodies are covered with a soft fur that shimmers in many different colors. They live in the warm shallow seas of the sub-tropical and tropical regions gathering fish and attending the court of the Lord of the Sea. They can only speak the language of their own race and the court language of the Sea Lord. Hai nu live in simple communities-the hulls of sunken ships and the stands of thick kelp are sufficient for their needs. They love bright treasures and gather precious cargoes from ships for their own enjoyment. Their society is matriarchal, dominated by the females, and 75% of those encountered are female. Each community is led by a matron with 6 HD and an Armor Class of 5. There are 2d6 tamed sharks defending the community. They have quite good relations with sharks, porpoises, and whales and there is a 40% chance that 3d4 of these creatures are present with any band of hai nu. When encountered, the arms of the hai nu are: Hai nu seldom attack surface vessels, much preferring to be left alone. They are by nature quite peaceful and friendly, but vigorously defend their hunting grounds and homes from outsiders. Fishermen who ply their waters often find their lines cut, nets fouled, and small leaks appearing in the bottom of their ships. Should these actions fail to discourage the fishermen, the hai nu petition the Lord of the Sea for more drastic action. Hai nu cannot survive very long out of water, suffering 1 point of damage each round spent totally out of water. They suffer double normal damage from fire-based attacks and + 1 per die of damage from cold-based attacks. They are immune to all forms of water-based attack.",
+}
