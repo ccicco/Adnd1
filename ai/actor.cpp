@@ -70,6 +70,7 @@
 #include "../rules/weaponprof.h"  // R297: the proficiency table
 #include "../rules/thieffunc.h"  // R302: the silence percentile
 #include "../rules/uwfight.h"  // R313: the underwater strike gate
+#include "../rules/lancecharge.h"  // R779: the charge multiplier
 
 #include <algorithm>
 #include <cstdio>
@@ -429,6 +430,25 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
     // level (the R187 pin)
     if (backstab)
         dmg *= rules::backstabMultiplier(attacker.level);
+    // R779: the lance charge - the three lances do twice
+    // the indicated damage when employed from a charging
+    // mount (the R189 chart asterisk). The engine has no
+    // charge command: the rider's round-one strike reads
+    // as the charge - the mount covers the closing ground
+    // (the JUDGMENT, the R232 surprise-as-from-behind
+    // pattern). The spear set-to-receive needs a charging
+    // FOE - no monster charge concept exists; it stays
+    // contract-side.
+    if (attacker.isCharacter && attacker.mountKind
+        && m_round == 1
+        && attacker.weapon.id
+               >= items::WPN_LANCE_LIGHT
+        && attacker.weapon.id
+               <= items::WPN_LANCE_HEAVY) {
+        dmg *= rules::lncLanceChargeMultiplier();
+        logLine(attacker.name + " charges home - the lance "
+                "doubles its bite.");
+    }
     if (dmg < 1) dmg = 1;
 
     defender.hp -= dmg;

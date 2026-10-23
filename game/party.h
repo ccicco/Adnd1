@@ -361,6 +361,7 @@ struct Character {
         a.cha    = abilities.cha;
         a.exStr  = exStr;
         a.weapon = weapon;
+        a.mountKind = mountKind;   // R779: the charge reads the mount
         a.rangedWeapon = rangedWeapon;   // R28
         a.missileAmmo = missileAmmo;     // R35: live quiver count
         // R80: per-shot enchant queue - front band first

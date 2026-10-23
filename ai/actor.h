@@ -132,6 +132,9 @@ struct Actor {
     uint8_t str = 10, dex = 10, con = 10, intel = 10, wis = 10, cha = 10;
     rules::ExceptionalStrength exStr{};
     items::WeaponInstance weapon;
+    // R779: the mount the member rides (the sdd kind
+    // ladder; 0 = afoot) - the lance charge reads it
+    int  mountKind = 0;
     // R28: missile weapon slot (bow/crossbow/sling). Empty when the
     // character carries none - id WPN_DAGGER with a false missile
     // flag in the registry, so check hasRangedWeapon() instead.

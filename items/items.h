@@ -43,6 +43,9 @@ enum WeaponId : int {
     WPN_SLING,
     WPN_CROSSBOW_DEEP,   // R314: the specially-made
                            // underwater crossbow
+    WPN_LANCE_LIGHT,   // R779: the three lances
+    WPN_LANCE_MEDIUM,   // (the R189 chart rows 24-26;
+    WPN_LANCE_HEAVY,   // the charge asterisk)
     WPN_COUNT
 };
 

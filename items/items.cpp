@@ -85,6 +85,21 @@ static const WeaponDef kWeapons[WPN_COUNT] = {
       // price (120 g.p., the R311 multiple), the same
       // 70-lb weight - the JUDGMENT
       {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 } },
+    // R779: the three lances - the R189 chart rows 24-26
+    // (the weights 50/100/150 gold-piece weight, the S/M
+    // dice 1-6/2-7/3-9, the L dice 1-8/2-12/3-18, the one
+    // printed arms price 6 g.p. shared - the R779 pins);
+    // the p.38 chart carries no lance row - the zero
+    // adjustment is the no-adjustment JUDGMENT
+    { "Lance, Light Horse", rules::WCLASS_PIERCING,
+      1,6,0,  1,8,0,   false,   0,  0,   50,     6,
+      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },
+    { "Lance, Medium Horse", rules::WCLASS_PIERCING,
+      2,7,0,  2,12,0,  false,   0,  0,   100,    6,
+      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },
+    { "Lance, Heavy Horse", rules::WCLASS_PIERCING,
+      3,9,0,  3,18,0,  false,   0,  0,   150,    6,
+      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },
 };
 
 const WeaponDef& weapon(WeaponId id) {

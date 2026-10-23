@@ -19333,6 +19333,68 @@ when both halves land.
   canvas md5 bbca2084f98f444ac0c957006e57c051.
   NEXT - R778: the next target awaits
   Curtiss's call.
+- R778 LANDED 2026-10-22: commit
+  f5a953c3b6833b06ce5edc419124457293a2643d
+  (census 700 -> 701, pushed eb399ab..f5a953c),
+  THE MOUNTED MOVEMENT CHARGE - the R123 feeder goes
+  live, the warhorse kinds ride, header
+  rules/mountmove.h, prefix mvm (fully free at
+  eb399ab). FIVE FILE PATCHES over three files (the
+  fp_txt chaining carries two patches on saddle.h
+  and two on party.h): the saddle header gains its
+  CLASSIC #ifndef RULES_SADDLE_H include guard (the
+  repair), warhorseDmKind (the sdd kind ladder ->
+  the R123 dm mount row, never a raw int) and
+  companyRiderMilesPerDay land in game/party.h
+  after companyFootMilesPerDay (a living member on
+  a warhorse kind 2-4 rides at his mount's dm
+  miles/day rate; kinds 0/1/5/6 walk - the draft
+  is a cart animal, the riding horse and pony stay
+  out per Curtiss's call; the company rides at the
+  slowest member's pace - a walker still gates it;
+  the henchman walks; the fallen are carried), the
+  saddle.h include lands in party.h (the R400
+  lesson), and overlandMilesPerDay flips from
+  companyFootMilesPerDay to companyRiderMilesPerDay
+  (game/state_overland.cpp). Inlines: 15 = 5 consts
+  (the 123 feeder round, the 778 round, the 3
+  warhorse kinds, the 3 terrain classes, the 5
+  very-rugged floor) + 3 grid cols (the light/medium
+  /heavy war rows 60/25/5, 40/20/5, 30/15/5 - the
+  p.58-59 mounted rows the R123 audit already
+  pins) + 7 bools (the riders set the pace, the
+  slowest member gates, the non-warhorse kinds
+  walk, the henchman walks, the rates ride the
+  pinned data, the sdd ladder feeds the mapping,
+  the saddle header is guarded). THE FIRST CUT WAS
+  RED AT THE TERMUX PREFLIGHT (nothing committed;
+  the R179b class - a wall of CENSUS FAILs
+  downstream of one compile break): the party.h
+  saddle include opened a SECOND INCLUSION PATH in
+  state_core, state_town and regtest (36
+  redefinitions - the engine emits headers
+  UNGUARDED and the round convention kept every TU
+  at a single inclusion; the Python-only rverify
+  cannot see the C++ double-include class). The
+  repair: the classic #ifndef guard on saddle.h -
+  PRAGMA ONCE STRUCK BY CURTISS (a Windows-ism; the
+  wisdom.h #ifndef house style is the standing
+  rule for any future guard). The rerun hit the
+  R420 mixed-state abort (the reset was skipped
+  first); after the checkout reset the second run
+  landed GREEN on the first preflight. The ./bn
+  778 detours (struck per the R516 rule) caused no
+  drift - the gate md5
+  e4eb94cc184503c5988030f94a848fbf printed exactly,
+  twice. rverify GREEN (double-run 9 patches
+  applied/already clean, 21 mutants 0 missed);
+  include-graph walk proved every TU defines
+  saddle.h exactly once. spec md5
+  c5cb26fd00f424f010093d6e32dba9ea, gate md5
+  e4eb94cc184503c5988030f94a848fbf, canvas md5
+  c63eda640a829b5a25625c93f5e0101f.
+  NEXT - R779: the next target awaits
+  Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

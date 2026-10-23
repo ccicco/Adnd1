@@ -1,0 +1,267 @@
+{
+ "round": 779,
+ "prefix": "lnc",
+ "header_file": "rules/lancecharge.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 701,
+ "title": "the lance charge - the riders strike home",
+ "audit_label": "R779 lance charge audit",
+ "audit_comment": "THE LANCE CHARGE - the R189 feeder goes live. The three lances (light, medium, heavy horse - the chart rows 24-26) join the weapon registry riding the pinned R189 cells (the weights and dice), the one printed arms price (6 g.p., the equipcosts row) shared by all three; the combat Actor carries the mount field and toActor copies it; the rider's round-one lance strike doubles its damage (the chart asterisk). The p.38 weapon-vs-AC chart lists no lance - the zero adjustment row is the no-adjustment JUDGMENT (the R145 audit rows extended). The R158 speed ladder names no lance - the speed rides the unknown default, contract-side. The spear set-to-receive needs a charging FOE - no monster charge concept exists; the R189 double-asterisk pin stays contract-side",
+ "include_comment": "the lance charge pins",
+ "include_after": "#include \"rules/mountmove.h\"  // R778: the mounted movement pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R778 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R778 LANDED 2026-10-22: commit",
+  "  f5a953c3b6833b06ce5edc419124457293a2643d",
+  "  (census 700 -> 701, pushed eb399ab..f5a953c),",
+  "  THE MOUNTED MOVEMENT CHARGE - the R123 feeder goes",
+  "  live, the warhorse kinds ride, header",
+  "  rules/mountmove.h, prefix mvm (fully free at",
+  "  eb399ab). FIVE FILE PATCHES over three files (the",
+  "  fp_txt chaining carries two patches on saddle.h",
+  "  and two on party.h): the saddle header gains its",
+  "  CLASSIC #ifndef RULES_SADDLE_H include guard (the",
+  "  repair), warhorseDmKind (the sdd kind ladder ->",
+  "  the R123 dm mount row, never a raw int) and",
+  "  companyRiderMilesPerDay land in game/party.h",
+  "  after companyFootMilesPerDay (a living member on",
+  "  a warhorse kind 2-4 rides at his mount's dm",
+  "  miles/day rate; kinds 0/1/5/6 walk - the draft",
+  "  is a cart animal, the riding horse and pony stay",
+  "  out per Curtiss's call; the company rides at the",
+  "  slowest member's pace - a walker still gates it;",
+  "  the henchman walks; the fallen are carried), the",
+  "  saddle.h include lands in party.h (the R400",
+  "  lesson), and overlandMilesPerDay flips from",
+  "  companyFootMilesPerDay to companyRiderMilesPerDay",
+  "  (game/state_overland.cpp). Inlines: 15 = 5 consts",
+  "  (the 123 feeder round, the 778 round, the 3",
+  "  warhorse kinds, the 3 terrain classes, the 5",
+  "  very-rugged floor) + 3 grid cols (the light/medium",
+  "  /heavy war rows 60/25/5, 40/20/5, 30/15/5 - the",
+  "  p.58-59 mounted rows the R123 audit already",
+  "  pins) + 7 bools (the riders set the pace, the",
+  "  slowest member gates, the non-warhorse kinds",
+  "  walk, the henchman walks, the rates ride the",
+  "  pinned data, the sdd ladder feeds the mapping,",
+  "  the saddle header is guarded). THE FIRST CUT WAS",
+  "  RED AT THE TERMUX PREFLIGHT (nothing committed;",
+  "  the R179b class - a wall of CENSUS FAILs",
+  "  downstream of one compile break): the party.h",
+  "  saddle include opened a SECOND INCLUSION PATH in",
+  "  state_core, state_town and regtest (36",
+  "  redefinitions - the engine emits headers",
+  "  UNGUARDED and the round convention kept every TU",
+  "  at a single inclusion; the Python-only rverify",
+  "  cannot see the C++ double-include class). The",
+  "  repair: the classic #ifndef guard on saddle.h -",
+  "  PRAGMA ONCE STRUCK BY CURTISS (a Windows-ism; the",
+  "  wisdom.h #ifndef house style is the standing",
+  "  rule for any future guard). The rerun hit the",
+  "  R420 mixed-state abort (the reset was skipped",
+  "  first); after the checkout reset the second run",
+  "  landed GREEN on the first preflight. The ./bn",
+  "  778 detours (struck per the R516 rule) caused no",
+  "  drift - the gate md5",
+  "  e4eb94cc184503c5988030f94a848fbf printed exactly,",
+  "  twice. rverify GREEN (double-run 9 patches",
+  "  applied/already clean, 21 mutants 0 missed);",
+  "  include-graph walk proved every TU defines",
+  "  saddle.h exactly once. spec md5",
+  "  c5cb26fd00f424f010093d6e32dba9ea, gate md5",
+  "  e4eb94cc184503c5988030f94a848fbf, canvas md5",
+  "  c63eda640a829b5a25625c93f5e0101f.",
+  "  NEXT - R779: the next target awaits",
+  "  Curtiss's call."
+ ],
+ "banner": {
+  "title": "THE LANCE CHARGE - the R189 feeder goes live, the three lances ride the registry",
+  "provenance": "The mount arc reaches its first combat fold: R776 seated the rider, R777 sold the horse, R778 put the company in the saddle - and now the lance lands. The three lances (light, medium, heavy horse) join the engine registry as items (the R314 deep-crossbow pattern), every cell riding the already-pinned R189 chart rows 24-26 (the 50/100/150 gold-piece weights, the S/M dice 1-6/2-7/3-9, the L dice 1-8/2-12/3-18) and the one printed PHB arms price (6 g.p., shared by all three kinds). The combat Actor gains mountKind (toActor copies it), and resolveMelee doubles the rider's round-one lance damage - the engine has no charge command, so the round-one strike reads as the charge, the mount covering the closing ground (the JUDGMENT, the R232 surprise-as-from-behind pattern). Honest boundaries: the p.38 chart carries no lance row (zero adjustment, the R145 audit extended), the R158 speed ladder names no lance (unknown default), and the spear set-to-receive needs a charging FOE - contract-side. Every touched TU (items, actor, party, state_combat via the battery build) is compile-gated",
+  "sentinel": "Zero new book pages: the dice, weights and price ride the already-pinned R189 chart and the R300/R308 equipcosts row"
+ },
+ "consts": [
+  {
+   "name": "lncChargeFeederRound",
+   "value": 189,
+   "comment": "The feeder seam this round charges: the R189 chart asterisk - the three lances do twice the indicated damage from a charging mount."
+  },
+  {
+   "name": "lncLanceChargeRound",
+   "value": 779,
+   "comment": "The lance charge round: the three lances ride the registry, the charge fold lands."
+  },
+  {
+   "name": "lncLanceRowCount",
+   "value": 3,
+   "comment": "The three lances: light horse, medium horse, heavy horse (the R189 chart rows 24-26)."
+  },
+  {
+   "name": "lncLanceChargeMultiplier",
+   "value": 2,
+   "comment": "Twice the indicated damage when employed from a charging mount (the chart asterisk)."
+  },
+  {
+   "name": "lncLancePriceGold",
+   "value": 6,
+   "comment": "The one printed PHB arms price the three lances share (the equipcosts lance row, 6 g.p.)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "lncLancesDoubleFromChargingMount",
+   "value": true,
+   "comment": "The R189 asterisk goes live: a rider's round-one lance strike doubles its damage (ai/actor.cpp resolveMelee)."
+  },
+  {
+   "name": "lncRiderRoundOneReadsAsTheCharge",
+   "value": true,
+   "comment": "The engine has no charge command: the rider's round-one strike reads as the charge - the mount covers the closing ground (the JUDGMENT, the R232 surprise-as-from-behind pattern)."
+  },
+  {
+   "name": "lncActorCarriesTheMount",
+   "value": true,
+   "comment": "The combat Actor carries mountKind (ai/actor.h; 0 = afoot)."
+  },
+  {
+   "name": "lncToActorCopiesTheMount",
+   "value": true,
+   "comment": "Character.toActor copies the mount field into the combat actor (game/party.h)."
+  },
+  {
+   "name": "lncLanceRowsRideTheR189Cells",
+   "value": true,
+   "comment": "The three registry rows carry the R189 chart cells: the 50/100/150 gold-piece weights, the S/M dice 1-6/2-7/3-9, the L dice 1-8/2-12/3-18."
+  },
+  {
+   "name": "lncP38CarriesNoLanceRow",
+   "value": true,
+   "comment": "The p.38 weapon-vs-AC chart lists no lance: the zero adjustment row is the no-adjustment JUDGMENT (the R145 audit rows extended in the same round)."
+  },
+  {
+   "name": "lncLanceSpeedStaysUnknown",
+   "value": true,
+   "comment": "The R158 DMG speed ladder names no lance: the speed factor rides the unknown default, contract-side until a pin lands."
+  },
+  {
+   "name": "lncSpearSetReceivesContractSide",
+   "value": true,
+   "comment": "The spear set-to-receive needs a charging FOE - no monster charge concept exists; the R189 double-asterisk pin stays contract-side."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [],
+ "table_checks": [],
+ "header_sections": {
+  "the lance charge (the R779 wiring)": [
+   {
+    "kind": "const",
+    "name": "lncChargeFeederRound"
+   },
+   {
+    "kind": "const",
+    "name": "lncLanceChargeRound"
+   },
+   {
+    "kind": "const",
+    "name": "lncLanceRowCount"
+   },
+   {
+    "kind": "const",
+    "name": "lncLanceChargeMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "lncLancePriceGold"
+   },
+   {
+    "kind": "bool",
+    "name": "lncLancesDoubleFromChargingMount"
+   },
+   {
+    "kind": "bool",
+    "name": "lncRiderRoundOneReadsAsTheCharge"
+   },
+   {
+    "kind": "bool",
+    "name": "lncActorCarriesTheMount"
+   },
+   {
+    "kind": "bool",
+    "name": "lncToActorCopiesTheMount"
+   },
+   {
+    "kind": "bool",
+    "name": "lncLanceRowsRideTheR189Cells"
+   },
+   {
+    "kind": "bool",
+    "name": "lncP38CarriesNoLanceRow"
+   },
+   {
+    "kind": "bool",
+    "name": "lncLanceSpeedStaysUnknown"
+   },
+   {
+    "kind": "bool",
+    "name": "lncSpearSetReceivesContractSide"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 13,
+ "file_patches": [
+  {
+   "file": "items/items.h",
+   "note": "the three lance WeaponId rows join the enum before WPN_COUNT (the R314 pattern)",
+   "from": "    WPN_CROSSBOW_DEEP,   // R314: the specially-made\n                           // underwater crossbow\n    WPN_COUNT",
+   "to": "    WPN_CROSSBOW_DEEP,   // R314: the specially-made\n                           // underwater crossbow\n    WPN_LANCE_LIGHT,   // R779: the three lances\n    WPN_LANCE_MEDIUM,   // (the R189 chart rows 24-26;\n    WPN_LANCE_HEAVY,   // the charge asterisk)\n    WPN_COUNT"
+  },
+  {
+   "file": "items/items.cpp",
+   "note": "the three kWeapons rows land after the deep crossbow, riding the pinned R189 cells",
+   "from": "      {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 } },\n};",
+   "to": "      {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 } },\n    // R779: the three lances - the R189 chart rows 24-26\n    // (the weights 50/100/150 gold-piece weight, the S/M\n    // dice 1-6/2-7/3-9, the L dice 1-8/2-12/3-18, the one\n    // printed arms price 6 g.p. shared - the R779 pins);\n    // the p.38 chart carries no lance row - the zero\n    // adjustment is the no-adjustment JUDGMENT\n    { \"Lance, Light Horse\", rules::WCLASS_PIERCING,\n      1,6,0,  1,8,0,   false,   0,  0,   50,     6,\n      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },\n    { \"Lance, Medium Horse\", rules::WCLASS_PIERCING,\n      2,7,0,  2,12,0,  false,   0,  0,   100,    6,\n      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },\n    { \"Lance, Heavy Horse\", rules::WCLASS_PIERCING,\n      3,9,0,  3,18,0,  false,   0,  0,   150,    6,\n      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },\n};"
+  },
+  {
+   "file": "ai/actor.h",
+   "note": "the Actor gains the mountKind field (the charge reads the mount)",
+   "from": "    items::WeaponInstance weapon;\n",
+   "to": "    items::WeaponInstance weapon;\n    // R779: the mount the member rides (the sdd kind\n    // ladder; 0 = afoot) - the lance charge reads it\n    int  mountKind = 0;\n"
+  },
+  {
+   "file": "ai/actor.cpp",
+   "note": "the lancecharge.h include (the R400 lesson - the fold calls the multiplier)",
+   "from": "#include \"../rules/uwfight.h\"  // R313: the underwater strike gate\n",
+   "to": "#include \"../rules/uwfight.h\"  // R313: the underwater strike gate\n#include \"../rules/lancecharge.h\"  // R779: the charge multiplier\n"
+  },
+  {
+   "file": "ai/actor.cpp",
+   "note": "the charge fold lands in resolveMelee after the backstab multiplier (round one, mounted, a lance: double)",
+   "from": "        dmg *= rules::backstabMultiplier(attacker.level);\n    if (dmg < 1) dmg = 1;",
+   "to": "        dmg *= rules::backstabMultiplier(attacker.level);\n    // R779: the lance charge - the three lances do twice\n    // the indicated damage when employed from a charging\n    // mount (the R189 chart asterisk). The engine has no\n    // charge command: the rider's round-one strike reads\n    // as the charge - the mount covers the closing ground\n    // (the JUDGMENT, the R232 surprise-as-from-behind\n    // pattern). The spear set-to-receive needs a charging\n    // FOE - no monster charge concept exists; it stays\n    // contract-side.\n    if (attacker.isCharacter && attacker.mountKind\n        && m_round == 1\n        && attacker.weapon.id\n               >= items::WPN_LANCE_LIGHT\n        && attacker.weapon.id\n               <= items::WPN_LANCE_HEAVY) {\n        dmg *= rules::lncLanceChargeMultiplier();\n        logLine(attacker.name + \" charges home - the lance \"\n                \"doubles its bite.\");\n    }\n    if (dmg < 1) dmg = 1;"
+  },
+  {
+   "file": "game/party.h",
+   "note": "toActor copies the mount field (the R779 actor seam)",
+   "from": "        a.weapon = weapon;\n",
+   "to": "        a.weapon = weapon;\n        a.mountKind = mountKind;   // R779: the charge reads the mount\n"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the R145 audit kRows gain the three zero lance rows (the p.38 chart lists no lance - the no-adjustment JUDGMENT; the WPN_COUNT enumeration stays complete)",
+   "from": "            // Deep Crossbow (fights as the light\n            // crossbow - the R314 special)\n            {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 },\n        };",
+   "to": "            // Deep Crossbow (fights as the light\n            // crossbow - the R314 special)\n            {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 },\n            // Lance, Light/Medium/Heavy Horse (R779):\n            // the p.38 chart carries no lance row - the\n            // zero row is the no-adjustment JUDGMENT\n            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },\n            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },\n            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },\n        };"
+  }
+ ]
+}

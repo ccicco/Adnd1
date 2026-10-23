@@ -479,6 +479,7 @@
 #include "rules/mountcombat.h"  // R776: the mount site pins
 #include "rules/saddle.h"  // R777: the saddle acquisition pins
 #include "rules/mountmove.h"  // R778: the mounted movement pins
+#include "rules/lancecharge.h"  // R779: the lance charge pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -120452,6 +120453,40 @@ int main() {
         printf("R778 mounted movement audit: bad %d\n", bad);
         if (bad) return 1;
     }
+    // ---- R779 lance charge audit ----
+    // THE LANCE CHARGE - the R189 feeder goes live. The three lances (light,
+    // medium, heavy horse - the chart rows 24-26) join the weapon registry
+    // riding the pinned R189 cells (the weights and dice), the one printed
+    // arms price (6 g.p., the equipcosts row) shared by all three; the combat
+    // Actor carries the mount field and toActor copies it; the rider's
+    // round-one lance strike doubles its damage (the chart asterisk). The
+    // p.38 weapon-vs-AC chart lists no lance - the zero adjustment row is the
+    // no-adjustment JUDGMENT (the R145 audit rows extended). The R158 speed
+    // ladder names no lance - the speed rides the unknown default,
+    // contract-side. The spear set-to-receive needs a charging FOE - no
+    // monster charge concept exists; the R189 double-asterisk pin stays
+    // contract-side
+    {
+        using namespace rules;
+        int bad = 0;
+    if (lncChargeFeederRound() != 189
+            || lncLanceChargeRound() != 779
+            || lncLanceRowCount() != 3
+            || lncLanceChargeMultiplier() != 2
+            || lncLancePriceGold() != 6
+            || !lncLancesDoubleFromChargingMount()
+            || !lncRiderRoundOneReadsAsTheCharge()
+            || !lncActorCarriesTheMount()
+            || !lncToActorCopiesTheMount()
+            || !lncLanceRowsRideTheR189Cells()
+            || !lncP38CarriesNoLanceRow()
+            || !lncLanceSpeedStaysUnknown()
+            || !lncSpearSetReceivesContractSide()
+        )
+            ++bad;
+        printf("R779 lance charge audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
     // ---- R227: the wis mental save wiring audit ----
     // PHB Wisdom Table I: the magical attack
     // saving throw adjustment now reaches the
@@ -123225,6 +123260,12 @@ int main() {
             // Deep Crossbow (fights as the light
             // crossbow - the R314 special)
             {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 },
+            // Lance, Light/Medium/Heavy Horse (R779):
+            // the p.38 chart carries no lance row - the
+            // zero row is the no-adjustment JUDGMENT
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         };
         for (int i = 0; i < items::WPN_COUNT; ++i) {
             const items::WeaponDef& w =
