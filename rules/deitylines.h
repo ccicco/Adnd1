@@ -113,11 +113,11 @@ inline bool dvpDamageBonusQuirksArePrint()
 inline bool dvpParenReadsRideContractSide()
     { return true; }
 
-// R786-R788: the dwarven, elven, and
-// halfling paragraphs pin (rules/
-// uadeityprose1-3.h); the gnomes' and
-// orcs' prose stays open - the lines
-// pin, the paragraphs do not (yet)
+// R786-R789: the dwarven, elven,
+// halfling, and gnomish paragraphs pin
+// (rules/uadeityprose1-4.h); the orcs'
+// prose stays open - the lines pin, the
+// paragraphs do not (yet)
 inline bool dvpProseStaysOpen()
     { return true; }
 

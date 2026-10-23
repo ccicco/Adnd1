@@ -11,9 +11,9 @@
 // reads (the class/level lines, the
 // MOVE values, the S/I/W/D/C/CH/CM
 // stat lines) in rules/deitylines.h; the dwarven,
-// elven, and halfling prose pin in rules/
-// uadeityprose1-3.h (R786-R788); the gnomes'
-// and orcs' prose stays open.
+// elven, halfling, and gnomish prose pin in
+// rules/uadeityprose1-4.h (R786-R789); the
+// orcs' prose stays open.
 //
 // The census (live cross-checked
 // against the R405 seam): 23

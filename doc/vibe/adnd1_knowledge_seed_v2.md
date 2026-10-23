@@ -19857,6 +19857,64 @@ when both halves land.
   NEXT - R788: awaits Curtiss's call (part
   3 candidate: the halfling prose, pp.
   116-118).
+- R788 LANDED 2026-10-23: commit
+  8f3ce80a7231ff52781bddad12cc3cd14c1973a3
+  (census 710 -> 711, pushed c98bd6a..8f3ce80),
+  THE HALFLING DEITY PROSE - part 3 of
+  the five-part Appendix S description-paragraph
+  close (Curtiss's "Go" call). The four
+  halfling blocks (pp. 116-118) read
+  scan-clean in the archive.org full-text
+  OCR (item ad-d-1st-edition-unearthed-
+  arcana, the _djvu.txt): the Sheela
+  entangle craft (the 1 percent quest
+  grant at 6th level, true neutrals 12th,
+  the +4 shillelagh 2-16 in one segment,
+  entangle once per round unlimited, two
+  failed saves slow to one-fourth speed,
+  the successive 1-4 constriction no-save,
+  the two festivals averaging 10 days),
+  the Arvoreen defender mechanics (the
+  first attack half damage, the first
+  magic reflected, invisible at will,
+  unseen 4-16 rounds, the +4
+  shapechange sword, the once-a-day
+  10-40 4th-level heroes AC 4 at 25 hp,
+  no stealing from halflings), the
+  Cyrrollalee home trust (the 6" radius
+  animation as a 20th-level cleric, 20
+  cubic feet 20 rounds three per day,
+  the 2 percent furniture gift 5 cubic
+  feet 5 rounds, the service debt, twice
+  per lifetime, services the first of
+  each month), and the Brandobaris
+  trickery (the dagger +3 escape-pointer
+  with maze immunity, the +4 sling dust
+  ball 48" max (24" short, 36" medium),
+  save -6 or sleep 6-36 turns harmless,
+  the once-per-lifetime 5 percent reward
+  for 10th-level-or-lower, the 1
+  percent-per-level 11th-level thief
+  meeting, identity only after and only
+  to followers). THE PINS: header
+  rules/uadeityprose3.h, prefix udp3
+  (free at c98bd6a), 53 consts + 52
+  bools (105 inline), no tables - pure
+  prose data; the stat-block numerics
+  stay R406/R783. TWO COMMENT STRIKES
+  (deitylines.h and uaappends.h): the
+  prose notes now read "the dwarven,
+  elven, and halfling paragraphs pin
+  (rules/uadeityprose1-3.h); the gnomes'
+  and orcs' prose stays open"; the
+  dvpProseStaysOpen pin KEEPS true (the
+  gnomish and orcish paragraphs remain
+  - parts 4-5; flip it in part 5).
+  rverify GREEN (105 mutants, 0 missed),
+  ONE preflight, GREEN first pass. NEXT -
+  R789: awaits Curtiss's call (part 4
+  candidate: the gnomish prose, Baervan
+  through Flandal, pp. 118-122).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
