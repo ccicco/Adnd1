@@ -19813,6 +19813,50 @@ when both halves land.
   R787: awaits Curtiss's call (part 2
   candidate: the elven prose, Aerdrie
   through Labelas, pp. 113-116).
+- R787 LANDED 2026-10-23: commit
+  c98bd6a182db2a8ca8b177ec80bb1a752be53522
+  (census 709 -> 710, pushed 323dca5..c98bd6a),
+  THE ELVEN DEITY PROSE - part 2 of the
+  five-part Appendix S description-paragraph
+  close (Curtiss's "Go" call on the standing
+  "the prose alone stays open" item). The
+  five elven blocks (pp. 113-116) read
+  scan-clean in the archive.org full-text
+  OCR (item ad-d-1st-edition-unearthed-
+  arcana, the _djvu.txt): the Aerdrie wind
+  blasts 5-20/96" plus 2-12 air elementals
+  of 16 HD once per day, 3-18 eagles or
+  1-2 rocs, 25th-level air spells only, the
+  2 percent feather-fall geas 2-7 days; the
+  Erevan height shift 1 inch-6 feet, the
+  +4 short sword, 20 mixed-elves summons;
+  the Solonor +5 longbow, the 48" surprise
+  arrows, arrow craft one day +3, the 2
+  percent gift; the Hanali Evergold bath
+  +75 percent/awe to 14th level, aura 6"
+  save -4, attackers need +2 weapons and
+  take -1 to -7 CHA, the +2 CHA gift 5
+  percent; the Labelas robes of 4 colors,
+  stasis one per round range 12", age up
+  to 100 years, slow/haste 18", the 1
+  percent age-undo. THE PINS: header
+  rules/uadeityprose2.h, prefix udp2 (free
+  at 323dca5), 47 consts + 54 bools (101
+  inline), no tables - pure prose data; the
+  stat-block numerics stay R406/R783. TWO
+  COMMENT STRIKES (deitylines.h and
+  uaappends.h): the prose notes now read
+  "the dwarven and elven paragraphs pin
+  (rules/uadeityprose1-2.h); the other
+  pantheons' prose stays open"; the
+  dvpProseStaysOpen pin KEEPS true (13
+  paragraphs remain - parts 3-5 cover the
+  halflings, gnomes, and orcs; flip in part
+  5). rverify GREEN (101 mutants, 0
+  missed), ONE preflight, GREEN first pass.
+  NEXT - R788: awaits Curtiss's call (part
+  3 candidate: the halfling prose, pp.
+  116-118).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

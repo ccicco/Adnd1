@@ -1,0 +1,1076 @@
+{
+ "round": 788,
+ "prefix": "udp3",
+ "header_file": "rules/uadeityprose3.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 710,
+ "title": "the halfling deity prose",
+ "audit_label": "R788 halfling deity prose audit",
+ "audit_comment": "THE HALFLING DEITY PROSE - part 3 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 116-118 reads the four halfling blocks scan-clean: the Sheela festivals and the entangle craft, the Arvoreen unseen summons of halfling heroes, the Cyrrollalee furniture animation and home trust, and the Brandobaris dust sling, escape dagger, and reward risks. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose3.h.",
+ "include_comment": "the halfling deity prose",
+ "include_after": "#include \"rules/uadeityprose2.h\"  // R787: the elven deity prose",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R787 LANDED 2026-10-23: commit",
+ "prev_record": [
+  "- R787 LANDED 2026-10-23: commit",
+  "  c98bd6a182db2a8ca8b177ec80bb1a752be53522",
+  "  (census 709 -> 710, pushed 323dca5..c98bd6a),",
+  "  THE ELVEN DEITY PROSE - part 2 of the",
+  "  five-part Appendix S description-paragraph",
+  "  close (Curtiss's \"Go\" call on the standing",
+  "  \"the prose alone stays open\" item). The",
+  "  five elven blocks (pp. 113-116) read",
+  "  scan-clean in the archive.org full-text",
+  "  OCR (item ad-d-1st-edition-unearthed-",
+  "  arcana, the _djvu.txt): the Aerdrie wind",
+  "  blasts 5-20/96\" plus 2-12 air elementals",
+  "  of 16 HD once per day, 3-18 eagles or",
+  "  1-2 rocs, 25th-level air spells only, the",
+  "  2 percent feather-fall geas 2-7 days; the",
+  "  Erevan height shift 1 inch-6 feet, the",
+  "  +4 short sword, 20 mixed-elves summons;",
+  "  the Solonor +5 longbow, the 48\" surprise",
+  "  arrows, arrow craft one day +3, the 2",
+  "  percent gift; the Hanali Evergold bath",
+  "  +75 percent/awe to 14th level, aura 6\"",
+  "  save -4, attackers need +2 weapons and",
+  "  take -1 to -7 CHA, the +2 CHA gift 5",
+  "  percent; the Labelas robes of 4 colors,",
+  "  stasis one per round range 12\", age up",
+  "  to 100 years, slow/haste 18\", the 1",
+  "  percent age-undo. THE PINS: header",
+  "  rules/uadeityprose2.h, prefix udp2 (free",
+  "  at 323dca5), 47 consts + 54 bools (101",
+  "  inline), no tables - pure prose data; the",
+  "  stat-block numerics stay R406/R783. TWO",
+  "  COMMENT STRIKES (deitylines.h and",
+  "  uaappends.h): the prose notes now read",
+  "  \"the dwarven and elven paragraphs pin",
+  "  (rules/uadeityprose1-2.h); the other",
+  "  pantheons' prose stays open\"; the",
+  "  dvpProseStaysOpen pin KEEPS true (13",
+  "  paragraphs remain - parts 3-5 cover the",
+  "  halflings, gnomes, and orcs; flip in part",
+  "  5). rverify GREEN (101 mutants, 0",
+  "  missed), ONE preflight, GREEN first pass.",
+  "  NEXT - R788: awaits Curtiss's call (part",
+  "  3 candidate: the halfling prose, pp.",
+  "  116-118)."
+ ],
+ "banner": {
+  "title": "THE HALFLING DEITY PROSE - part 3 of the Appendix S paragraph close: Sheela, Arvoreen, Cyrrollalee, and Brandobaris pin from the clean archive.org OCR read",
+  "provenance": "Part 3 of the five-part close (R786 the dwarves, R787 the elves). The four halfling blocks (pp. 116-118) read scan-clean in the archive.org full-text OCR: every pin below is the printed text. The stat-block numerics stay R406/R783; the paragraph-level facts pin here - the Sheela entangle craft and the quest grant, the Arvoreen reflection and the hero summons, the Cyrrollalee furniture gift and the service debt, and the Brandobaris dust-ball sleep and the daring reward. Parts 4-5 remain: the gnomes and the orcs."
+ },
+ "consts": [
+  {
+   "name": "udp3ProseRound",
+   "value": 788,
+   "comment": "The prose round: part 3, the halfling paragraphs"
+  },
+  {
+   "name": "udp3StatblockFeederRound",
+   "value": 406,
+   "comment": "The feeder round: the R406 stat blocks these paragraphs hang under"
+  },
+  {
+   "name": "udp3HalflingDeityCount",
+   "value": 4,
+   "comment": "The halfling census: four blocks described (Sheela, Arvoreen, Cyrrollalee, Brandobaris)"
+  },
+  {
+   "name": "udp3PantheonWorshipMin",
+   "value": 4,
+   "comment": "Most communities worship only a few deities, four or five at most: the minimum four"
+  },
+  {
+   "name": "udp3PantheonWorshipMax",
+   "value": 5,
+   "comment": "and the maximum five"
+  },
+  {
+   "name": "udp3GreaterDeityCount",
+   "value": 1,
+   "comment": "The pantheon has one greater deity only (Yondalla)"
+  },
+  {
+   "name": "udp3SheMajorCelebrations",
+   "value": 2,
+   "comment": "Two major celebrations are held yearly aside from the regular monthly services"
+  },
+  {
+   "name": "udp3SheFestivalAvgDays",
+   "value": 10,
+   "comment": "The festival length varies by area, averaging about 10 days"
+  },
+  {
+   "name": "udp3SheEntangleGrantPct",
+   "value": 1,
+   "comment": "A 1 percent chance that a great quest or sacrifice wins the entangle grant"
+  },
+  {
+   "name": "udp3SheEntangleLevel",
+   "value": 6,
+   "comment": "The granted entangle casts at the 6th level of ability"
+  },
+  {
+   "name": "udp3SheNeutralEntangleLevel",
+   "value": 12,
+   "comment": "True neutral halflings cast the granted entangle at 12th level of ability"
+  },
+  {
+   "name": "udp3SheStaffBonus",
+   "value": 4,
+   "comment": "Her shillelagh-like staff from a blade of grass or twig is +4 to hit"
+  },
+  {
+   "name": "udp3SheStaffDamageMin",
+   "value": 2,
+   "comment": "The staff does 2-16 points of damage plus strength: the minimum 2"
+  },
+  {
+   "name": "udp3SheStaffDamageMax",
+   "value": 16,
+   "comment": "and the maximum 16"
+  },
+  {
+   "name": "udp3SheStaffCraftSegments",
+   "value": 1,
+   "comment": "She creates the staff in one segment"
+  },
+  {
+   "name": "udp3SheEntanglePerRound",
+   "value": 1,
+   "comment": "She can cast entangle once per round as often as she likes"
+  },
+  {
+   "name": "udp3SheDoubleCastSpeedDiv",
+   "value": 4,
+   "comment": "Two failed saves against her entangle slow a troll to one-fourth normal speed"
+  },
+  {
+   "name": "udp3SheSuccessiveDamageMin",
+   "value": 1,
+   "comment": "Each successive entangle after the first inflicts 1-4 points of constriction damage: the minimum 1"
+  },
+  {
+   "name": "udp3SheSuccessiveDamageMax",
+   "value": 4,
+   "comment": "and the maximum 4"
+  },
+  {
+   "name": "udp3ArvFirstAttackDamageDiv",
+   "value": 2,
+   "comment": "The first attack upon Arvoreen (if it hits) does only half damage, regardless of power"
+  },
+  {
+   "name": "udp3ArvUnseenRoundsMin",
+   "value": 4,
+   "comment": "He can attack unseen for the first 4-16 rounds of combat: the minimum 4"
+  },
+  {
+   "name": "udp3ArvUnseenRoundsMax",
+   "value": 16,
+   "comment": "and the maximum 16"
+  },
+  {
+   "name": "udp3ArvSwordBonus",
+   "value": 4,
+   "comment": "He uses a +4 sword that shapechanges into any hand-to-hand weapon he desires"
+  },
+  {
+   "name": "udp3ArvSummonPerDay",
+   "value": 1,
+   "comment": "Once a day Arvoreen may summon halfling fighters"
+  },
+  {
+   "name": "udp3ArvSummonMin",
+   "value": 10,
+   "comment": "The summon brings 10-40 halfling fighters: the minimum 10"
+  },
+  {
+   "name": "udp3ArvSummonMax",
+   "value": 40,
+   "comment": "and the maximum 40"
+  },
+  {
+   "name": "udp3ArvSummonHeroLevel",
+   "value": 4,
+   "comment": "Each summoned fighter is a 4th-level Hero"
+  },
+  {
+   "name": "udp3ArvSummonAc",
+   "value": 4,
+   "comment": "The summoned heroes are AC 4"
+  },
+  {
+   "name": "udp3ArvSummonHp",
+   "value": 25,
+   "comment": "and each has 25 hit points"
+  },
+  {
+   "name": "udp3CyrAnimateRadiusInches",
+   "value": 6,
+   "comment": "She animates all non-living objects within a radius of 6 inches of her"
+  },
+  {
+   "name": "udp3CyrAnimateClericLevel",
+   "value": 20,
+   "comment": "The animation works as if by a 20th-level cleric"
+  },
+  {
+   "name": "udp3CyrAnimateVolumeMax",
+   "value": 20,
+   "comment": "Up to 20 cubic feet of material"
+  },
+  {
+   "name": "udp3CyrAnimateRounds",
+   "value": 20,
+   "comment": "for 20 rounds"
+  },
+  {
+   "name": "udp3CyrAnimatePerDay",
+   "value": 3,
+   "comment": "She can perform this power up to three times a day"
+  },
+  {
+   "name": "udp3CyrFurnitureChancePct",
+   "value": 2,
+   "comment": "A 2 percent chance that a faithful follower calling from home gains the furniture gift"
+  },
+  {
+   "name": "udp3CyrFurnitureVolumeMax",
+   "value": 5,
+   "comment": "One piece of furniture not larger than 5 cubic feet in volume"
+  },
+  {
+   "name": "udp3CyrFurnitureRounds",
+   "value": 5,
+   "comment": "animated for 5 rounds"
+  },
+  {
+   "name": "udp3CyrFurnitureAttacksPerRound",
+   "value": 1,
+   "comment": "attacking all enemies of that halfling once per round"
+  },
+  {
+   "name": "udp3CyrGiftLifetimeMax",
+   "value": 2,
+   "comment": "The gift may be given to a halfling character only twice in his or her lifetime"
+  },
+  {
+   "name": "udp3CyrServiceDayOfMonth",
+   "value": 1,
+   "comment": "Worship services are held on the first day of each month"
+  },
+  {
+   "name": "udp3BraDaggerBonus",
+   "value": 3,
+   "comment": "He carries a dagger +3 he wields when combat cannot be avoided"
+  },
+  {
+   "name": "udp3BraSlingBonus",
+   "value": 4,
+   "comment": "He also uses a +4 sling that hurls a ball of dust"
+  },
+  {
+   "name": "udp3BraDustRangeMaxInches",
+   "value": 48,
+   "comment": "The dust ball has a maximum range of 48 inches"
+  },
+  {
+   "name": "udp3BraDustRangeShortInches",
+   "value": 24,
+   "comment": "with 24 inches short range"
+  },
+  {
+   "name": "udp3BraDustRangeMediumInches",
+   "value": 36,
+   "comment": "and 36 inches medium range"
+  },
+  {
+   "name": "udp3BraDustSaveMod",
+   "value": -6,
+   "comment": "The victim must save versus spell at -6"
+  },
+  {
+   "name": "udp3BraSleepTurnsMin",
+   "value": 6,
+   "comment": "or fall deeply asleep for 6-36 turns: the minimum 6"
+  },
+  {
+   "name": "udp3BraSleepTurnsMax",
+   "value": 36,
+   "comment": "and the maximum 36"
+  },
+  {
+   "name": "udp3BraRewardChancePct",
+   "value": 5,
+   "comment": "A 5 percent chance his reward goes to any halfling of 10th level or lower"
+  },
+  {
+   "name": "udp3BraRewardLevelMax",
+   "value": 10,
+   "comment": "The reward-eligible halfling is of 10th level or lower"
+  },
+  {
+   "name": "udp3BraRewardLifetimeMax",
+   "value": 1,
+   "comment": "He rewards such daring only once in that halfling lifetime"
+  },
+  {
+   "name": "udp3BraMeetChancePctPerLevel",
+   "value": 1,
+   "comment": "A 1 percent chance per level that a high-level thief actually meets him"
+  },
+  {
+   "name": "udp3BraMeetLevelMin",
+   "value": 11,
+   "comment": "The meeting chance applies to a halfling thief of 11th level or higher"
+  }
+ ],
+ "bools": [
+  {
+   "name": "udp3PantheonOnlyGoodPowers",
+   "value": true,
+   "comment": "The halflings have no deities of evil nature, or of war, suffering, fire and water, or death"
+  },
+  {
+   "name": "udp3YondallaTopAuthority",
+   "value": true,
+   "comment": "Yondalla is the top authority among the halfling gods, though her control over Brandobaris is minimal at times"
+  },
+  {
+   "name": "udp3YondallaFuneralProtector",
+   "value": true,
+   "comment": "Yondalla is usually invoked at funerals as a protector of the departed souls of halflings"
+  },
+  {
+   "name": "udp3FemaleDeitiesStronger",
+   "value": true,
+   "comment": "The more powerful halfling deities tend to be females, by contrast with the dwarven males"
+  },
+  {
+   "name": "udp3GreenFieldsOnSevenHeavens",
+   "value": true,
+   "comment": "Most of the pantheon resides on the Seven Heavens in an area known as the Green Fields"
+  },
+  {
+   "name": "udp3PantheonSheelaConcordant",
+   "value": true,
+   "comment": "Sheela Peryroyl and one or two other deities make their homes on the plane of Concordant Opposition"
+  },
+  {
+   "name": "udp3PantheonBrandobarisRoams",
+   "value": true,
+   "comment": "Brandobaris roams the Prime Material Plane"
+  },
+  {
+   "name": "udp3UrogalanNeutralEarthGod",
+   "value": true,
+   "comment": "The neutral-aligned masculine lesser deity Urogalan is primarily an earth god"
+  },
+  {
+   "name": "udp3UrogalanJudgesDead",
+   "value": true,
+   "comment": "Urogalan sometimes acts as a judge of and protector of the dead"
+  },
+  {
+   "name": "udp3UrogalanOnConcordant",
+   "value": true,
+   "comment": "Urogalan lives on the plane of Concordant Opposition"
+  },
+  {
+   "name": "udp3PantheonPledgedTogether",
+   "value": true,
+   "comment": "All the halfling deities are pledged to work together against the enemies of the halfling people"
+  },
+  {
+   "name": "udp3SheFlowerDressed",
+   "value": true,
+   "comment": "Her appearance is that of a halfling female dressed in wildflowers"
+  },
+  {
+   "name": "udp3SheFieldsGrowWhenSings",
+   "value": true,
+   "comment": "When she sings she causes fields to grow, trees to bud, and seeds to sprout"
+  },
+  {
+   "name": "udp3SheWeatherToFaithful",
+   "value": true,
+   "comment": "She brings good weather to her favored worshipers"
+  },
+  {
+   "name": "udp3SheDroughtFloodsToPoorly",
+   "value": true,
+   "comment": "But she can easily send drought or floods to those who worship her poorly"
+  },
+  {
+   "name": "udp3SheFollowersWearFlower",
+   "value": true,
+   "comment": "Her followers often wear a small flower in her honor"
+  },
+  {
+   "name": "udp3SheFollowersWorkHarmony",
+   "value": true,
+   "comment": "Her followers strive to work in harmony with nature and the earth"
+  },
+  {
+   "name": "udp3SheSeedingFestival",
+   "value": true,
+   "comment": "The planting celebration is called The Seeding or New Spring depending on the region"
+  },
+  {
+   "name": "udp3SheHighHarvestFestival",
+   "value": true,
+   "comment": "The harvest celebration is called High Harvest or The Reaping"
+  },
+  {
+   "name": "udp3SheRevelryAtFestivals",
+   "value": true,
+   "comment": "Community-wide revelry is common at the celebrations, from evening into late night"
+  },
+  {
+   "name": "udp3SheQuestsGrowHarder",
+   "value": true,
+   "comment": "The quests or sacrifices to regain the entangle grant become harder and more costly as time goes on"
+  },
+  {
+   "name": "udp3SheOneEntangleAtATime",
+   "value": true,
+   "comment": "Only one such entangle spell may be had at any one time"
+  },
+  {
+   "name": "udp3SheEntangleCumulative",
+   "value": true,
+   "comment": "Her entangle effects are cumulative if cast several times over the same area"
+  },
+  {
+   "name": "udp3SheConstrictionNoSave",
+   "value": true,
+   "comment": "The successive-entangle constriction damage allows no saving throw and hits movers and non-movers alike"
+  },
+  {
+   "name": "udp3ArvNeverAttacksFirst",
+   "value": true,
+   "comment": "Arvoreen never attacks an opponent first"
+  },
+  {
+   "name": "udp3ArvFirstMagicReflected",
+   "value": true,
+   "comment": "The first magical attack upon him is automatically reflected back upon the caster"
+  },
+  {
+   "name": "udp3ArvInvisibleAtWill",
+   "value": true,
+   "comment": "He can go invisible at will"
+  },
+  {
+   "name": "udp3ArvOnlyFightsIfAttacked",
+   "value": true,
+   "comment": "He will only engage in combat if he is attacked, though he seeks his enemies and actively confronts them"
+  },
+  {
+   "name": "udp3ArvFightsToFinish",
+   "value": true,
+   "comment": "He will not go far out of his way to avoid combat, and will fight to the finish"
+  },
+  {
+   "name": "udp3ArvThievingAgainstEnemies",
+   "value": true,
+   "comment": "Thieving skills employed against enemies to better later combat are permissible to him"
+  },
+  {
+   "name": "udp3ArvNoStealingFromHalflings",
+   "value": true,
+   "comment": "He absolutely forbids stealing from other halflings or allied beings"
+  },
+  {
+   "name": "udp3ArvHeroesObeyImplicitly",
+   "value": true,
+   "comment": "The summoned heroes will obey him implicitly"
+  },
+  {
+   "name": "udp3ArvHeroesSwordAndBow",
+   "value": true,
+   "comment": "Each summoned hero is armed with short sword and short bow"
+  },
+  {
+   "name": "udp3ArvPatronOfFighters",
+   "value": true,
+   "comment": "He is the patron of halfling fighters, the closest thing the halflings have to a god of war"
+  },
+  {
+   "name": "udp3CyrDeityOfFriendship",
+   "value": true,
+   "comment": "Cyrrollalee is the deity of friendship and trust, and a protector like Yondalla"
+  },
+  {
+   "name": "udp3CyrHomeProtectorOpenDwelling",
+   "value": true,
+   "comment": "She protects the home but keeps the inhabitants from being too defensive and closed in"
+  },
+  {
+   "name": "udp3CyrPeasantAppearance",
+   "value": true,
+   "comment": "She appears a normal female halfling with brown hair in simple peasant clothing"
+  },
+  {
+   "name": "udp3CyrEnemyOfTrustBreakers",
+   "value": true,
+   "comment": "Her worst enemies are those who betray the trust of a host, break into halfling homes to steal, or break oaths"
+  },
+  {
+   "name": "udp3CyrAnimationPersists",
+   "value": true,
+   "comment": "The animation effects continue even if Cyrrollalee leaves the area"
+  },
+  {
+   "name": "udp3CyrGiftRequiresService",
+   "value": true,
+   "comment": "Any halfling receiving the furniture gift is obligated to perform a challenging but not exceptionally difficult service afterward"
+  },
+  {
+   "name": "udp3CyrAnyFighterWeapon",
+   "value": true,
+   "comment": "No particular weapons are associated with her, but she can use any weapon a regular fighter could"
+  },
+  {
+   "name": "udp3CyrFollowersPlainHomes",
+   "value": true,
+   "comment": "Her followers are largely regular halflings (0-level characters) and some fighter types"
+  },
+  {
+   "name": "udp3BraSilenceUnhearable",
+   "value": true,
+   "comment": "He moves so silently that no mortal being or god can hear him if he desires concealment"
+  },
+  {
+   "name": "udp3BraHidesExceptTrueSeeing",
+   "value": true,
+   "comment": "He can hide so well as to be completely invisible, detectable only with a true seeing spell or similar item"
+  },
+  {
+   "name": "udp3BraDaggerPointsEscape",
+   "value": true,
+   "comment": "His dagger magically points out the fastest and safest direction of escape from any maze or trap"
+  },
+  {
+   "name": "udp3BraMazeImmuneWithDagger",
+   "value": true,
+   "comment": "He is immune to maze spells when holding his dagger"
+  },
+  {
+   "name": "udp3BraDustBallHarmless",
+   "value": true,
+   "comment": "The dust ball does not harm the victim it strikes"
+  },
+  {
+   "name": "udp3BraTricksterRascal",
+   "value": true,
+   "comment": "He is primarily a clever thief who fools opponents into thinking him harmless, then steals them blind and escapes their wrath"
+  },
+  {
+   "name": "udp3BraMeetsAsFellowThief",
+   "value": true,
+   "comment": "He meets high-level thieves in the guise of another halfling thief and invites them on a thieving adventure"
+  },
+  {
+   "name": "udp3BraIdentityOnlyAfter",
+   "value": true,
+   "comment": "He reveals his identity only after the adventure is over"
+  },
+  {
+   "name": "udp3BraIdentityOnlyToFollowers",
+   "value": true,
+   "comment": "and only to his followers"
+  },
+  {
+   "name": "udp3BraNonWorshippersLoseItems",
+   "value": true,
+   "comment": "Non-worshipping companions might find some of their valuables missing when the adventure is over"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the round consts (the prose round, the feeder round, the census)",
+   "expr": "m['udp3ProseRound']() != 788 or m['udp3StatblockFeederRound']() != 406 or m['udp3HalflingDeityCount']() != 4 or m['udp3PantheonWorshipMin']() != 4 or m['udp3PantheonWorshipMax']() != 5 or m['udp3GreaterDeityCount']() != 1"
+  },
+  {
+   "note": "the halfling pantheon prose walk",
+   "expr": "m['udp3PantheonOnlyGoodPowers']() != 1 or m['udp3YondallaTopAuthority']() != 1 or m['udp3YondallaFuneralProtector']() != 1 or m['udp3FemaleDeitiesStronger']() != 1 or m['udp3GreenFieldsOnSevenHeavens']() != 1 or m['udp3PantheonSheelaConcordant']() != 1 or m['udp3PantheonBrandobarisRoams']() != 1 or m['udp3UrogalanNeutralEarthGod']() != 1 or m['udp3UrogalanJudgesDead']() != 1 or m['udp3UrogalanOnConcordant']() != 1 or m['udp3PantheonPledgedTogether']() != 1"
+  },
+  {
+   "note": "the Sheela Peryroyl prose walk",
+   "expr": "m['udp3SheMajorCelebrations']() != 2 or m['udp3SheFestivalAvgDays']() != 10 or m['udp3SheEntangleGrantPct']() != 1 or m['udp3SheEntangleLevel']() != 6 or m['udp3SheNeutralEntangleLevel']() != 12 or m['udp3SheStaffBonus']() != 4 or m['udp3SheStaffDamageMin']() != 2 or m['udp3SheStaffDamageMax']() != 16 or m['udp3SheStaffCraftSegments']() != 1 or m['udp3SheEntanglePerRound']() != 1 or m['udp3SheDoubleCastSpeedDiv']() != 4 or m['udp3SheSuccessiveDamageMin']() != 1 or m['udp3SheSuccessiveDamageMax']() != 4 or m['udp3SheFlowerDressed']() != 1 or m['udp3SheFieldsGrowWhenSings']() != 1 or m['udp3SheWeatherToFaithful']() != 1 or m['udp3SheDroughtFloodsToPoorly']() != 1 or m['udp3SheFollowersWearFlower']() != 1 or m['udp3SheFollowersWorkHarmony']() != 1 or m['udp3SheSeedingFestival']() != 1 or m['udp3SheHighHarvestFestival']() != 1 or m['udp3SheRevelryAtFestivals']() != 1 or m['udp3SheQuestsGrowHarder']() != 1 or m['udp3SheOneEntangleAtATime']() != 1 or m['udp3SheEntangleCumulative']() != 1 or m['udp3SheConstrictionNoSave']() != 1"
+  },
+  {
+   "note": "the Arvoreen prose walk",
+   "expr": "m['udp3ArvFirstAttackDamageDiv']() != 2 or m['udp3ArvUnseenRoundsMin']() != 4 or m['udp3ArvUnseenRoundsMax']() != 16 or m['udp3ArvSwordBonus']() != 4 or m['udp3ArvSummonPerDay']() != 1 or m['udp3ArvSummonMin']() != 10 or m['udp3ArvSummonMax']() != 40 or m['udp3ArvSummonHeroLevel']() != 4 or m['udp3ArvSummonAc']() != 4 or m['udp3ArvSummonHp']() != 25 or m['udp3ArvNeverAttacksFirst']() != 1 or m['udp3ArvFirstMagicReflected']() != 1 or m['udp3ArvInvisibleAtWill']() != 1 or m['udp3ArvOnlyFightsIfAttacked']() != 1 or m['udp3ArvFightsToFinish']() != 1 or m['udp3ArvThievingAgainstEnemies']() != 1 or m['udp3ArvNoStealingFromHalflings']() != 1 or m['udp3ArvHeroesObeyImplicitly']() != 1 or m['udp3ArvHeroesSwordAndBow']() != 1 or m['udp3ArvPatronOfFighters']() != 1"
+  },
+  {
+   "note": "the Cyrrollalee prose walk",
+   "expr": "m['udp3CyrAnimateRadiusInches']() != 6 or m['udp3CyrAnimateClericLevel']() != 20 or m['udp3CyrAnimateVolumeMax']() != 20 or m['udp3CyrAnimateRounds']() != 20 or m['udp3CyrAnimatePerDay']() != 3 or m['udp3CyrFurnitureChancePct']() != 2 or m['udp3CyrFurnitureVolumeMax']() != 5 or m['udp3CyrFurnitureRounds']() != 5 or m['udp3CyrFurnitureAttacksPerRound']() != 1 or m['udp3CyrGiftLifetimeMax']() != 2 or m['udp3CyrServiceDayOfMonth']() != 1 or m['udp3CyrDeityOfFriendship']() != 1 or m['udp3CyrHomeProtectorOpenDwelling']() != 1 or m['udp3CyrPeasantAppearance']() != 1 or m['udp3CyrEnemyOfTrustBreakers']() != 1 or m['udp3CyrAnimationPersists']() != 1 or m['udp3CyrGiftRequiresService']() != 1 or m['udp3CyrAnyFighterWeapon']() != 1 or m['udp3CyrFollowersPlainHomes']() != 1"
+  },
+  {
+   "note": "the Brandobaris prose walk",
+   "expr": "m['udp3BraDaggerBonus']() != 3 or m['udp3BraSlingBonus']() != 4 or m['udp3BraDustRangeMaxInches']() != 48 or m['udp3BraDustRangeShortInches']() != 24 or m['udp3BraDustRangeMediumInches']() != 36 or m['udp3BraDustSaveMod']() != -6 or m['udp3BraSleepTurnsMin']() != 6 or m['udp3BraSleepTurnsMax']() != 36 or m['udp3BraRewardChancePct']() != 5 or m['udp3BraRewardLevelMax']() != 10 or m['udp3BraRewardLifetimeMax']() != 1 or m['udp3BraMeetChancePctPerLevel']() != 1 or m['udp3BraMeetLevelMin']() != 11 or m['udp3BraSilenceUnhearable']() != 1 or m['udp3BraHidesExceptTrueSeeing']() != 1 or m['udp3BraDaggerPointsEscape']() != 1 or m['udp3BraMazeImmuneWithDagger']() != 1 or m['udp3BraDustBallHarmless']() != 1 or m['udp3BraTricksterRascal']() != 1 or m['udp3BraMeetsAsFellowThief']() != 1 or m['udp3BraIdentityOnlyAfter']() != 1 or m['udp3BraIdentityOnlyToFollowers']() != 1 or m['udp3BraNonWorshippersLoseItems']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the prose consts (the R788 wiring)": [
+   {
+    "kind": "const",
+    "name": "udp3ProseRound"
+   },
+   {
+    "kind": "const",
+    "name": "udp3StatblockFeederRound"
+   },
+   {
+    "kind": "const",
+    "name": "udp3HalflingDeityCount"
+   },
+   {
+    "kind": "const",
+    "name": "udp3PantheonWorshipMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp3PantheonWorshipMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3GreaterDeityCount"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheMajorCelebrations"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheFestivalAvgDays"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheEntangleGrantPct"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheEntangleLevel"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheNeutralEntangleLevel"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheStaffBonus"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheStaffDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheStaffDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheStaffCraftSegments"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheEntanglePerRound"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheDoubleCastSpeedDiv"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheSuccessiveDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp3SheSuccessiveDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvFirstAttackDamageDiv"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvUnseenRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvUnseenRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvSwordBonus"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvSummonPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvSummonMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvSummonMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvSummonHeroLevel"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvSummonAc"
+   },
+   {
+    "kind": "const",
+    "name": "udp3ArvSummonHp"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrAnimateRadiusInches"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrAnimateClericLevel"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrAnimateVolumeMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrAnimateRounds"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrAnimatePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrFurnitureChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrFurnitureVolumeMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrFurnitureRounds"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrFurnitureAttacksPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrGiftLifetimeMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3CyrServiceDayOfMonth"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraDaggerBonus"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraSlingBonus"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraDustRangeMaxInches"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraDustRangeShortInches"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraDustRangeMediumInches"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraDustSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraSleepTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraSleepTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraRewardChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraRewardLevelMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraRewardLifetimeMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraMeetChancePctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "udp3BraMeetLevelMin"
+   }
+  ],
+  "the prose bools (the R788 wiring)": [
+   {
+    "kind": "bool",
+    "name": "udp3PantheonOnlyGoodPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3YondallaTopAuthority"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3YondallaFuneralProtector"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3FemaleDeitiesStronger"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3GreenFieldsOnSevenHeavens"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3PantheonSheelaConcordant"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3PantheonBrandobarisRoams"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3UrogalanNeutralEarthGod"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3UrogalanJudgesDead"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3UrogalanOnConcordant"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3PantheonPledgedTogether"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheFlowerDressed"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheFieldsGrowWhenSings"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheWeatherToFaithful"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheDroughtFloodsToPoorly"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheFollowersWearFlower"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheFollowersWorkHarmony"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheSeedingFestival"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheHighHarvestFestival"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheRevelryAtFestivals"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheQuestsGrowHarder"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheOneEntangleAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheEntangleCumulative"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3SheConstrictionNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvNeverAttacksFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvFirstMagicReflected"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvInvisibleAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvOnlyFightsIfAttacked"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvFightsToFinish"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvThievingAgainstEnemies"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvNoStealingFromHalflings"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvHeroesObeyImplicitly"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvHeroesSwordAndBow"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3ArvPatronOfFighters"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3CyrDeityOfFriendship"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3CyrHomeProtectorOpenDwelling"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3CyrPeasantAppearance"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3CyrEnemyOfTrustBreakers"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3CyrAnimationPersists"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3CyrGiftRequiresService"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3CyrAnyFighterWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3CyrFollowersPlainHomes"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraSilenceUnhearable"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraHidesExceptTrueSeeing"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraDaggerPointsEscape"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraMazeImmuneWithDagger"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraDustBallHarmless"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraTricksterRascal"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraMeetsAsFellowThief"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraIdentityOnlyAfter"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraIdentityOnlyToFollowers"
+   },
+   {
+    "kind": "bool",
+    "name": "udp3BraNonWorshippersLoseItems"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [
+  "rules/deitylines.h",
+  "rules/uaappends.h"
+ ],
+ "inline_count": 105,
+ "file_patches": [
+  {
+   "file": "rules/deitylines.h",
+   "note": "the prose note strike (the dwarven, elven, and halfling parts pin)",
+   "from": "// R786/R787: the dwarven and elven\n// paragraphs pin (rules/uadeityprose1-2.h);\n// the other pantheons' prose stays open -\n// the lines pin, the paragraphs do not (yet)\n",
+   "to": "// R786-R788: the dwarven, elven, and\n// halfling paragraphs pin (rules/\n// uadeityprose1-3.h); the gnomes' and\n// orcs' prose stays open - the lines\n// pin, the paragraphs do not (yet)\n"
+  },
+  {
+   "file": "rules/uaappends.h",
+   "note": "the uaappends prose note strike (part 3)",
+   "from": "// stat lines) in rules/deitylines.h; the dwarven\n// and elven prose pin in rules/uadeityprose1-2.h\n// (R786/R787); the other pantheons' prose\n// stays open.\n",
+   "to": "// stat lines) in rules/deitylines.h; the dwarven,\n// elven, and halfling prose pin in rules/\n// uadeityprose1-3.h (R786-R788); the gnomes'\n// and orcs' prose stays open.\n"
+  }
+ ]
+}
