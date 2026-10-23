@@ -480,6 +480,7 @@
 #include "rules/saddle.h"  // R777: the saddle acquisition pins
 #include "rules/mountmove.h"  // R778: the mounted movement pins
 #include "rules/lancecharge.h"  // R779: the lance charge pins
+#include "rules/lancespeed.h"  // R780: the lance speed pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4757,6 +4758,19 @@ int main() {
         if (rules::weaponSpeedFactor("spear") != 7) ++bad;
         if (rules::weaponSpeedFactor("no such weapon") != 0)
             ++bad;
+        // R780: the three lances ride the ladder (the
+        // PHB p.38 speed cells, checked against the
+        // header pins)
+        if (rules::weaponSpeedFactor(
+                "lance, light horse")
+            != rules::lspLightLanceSpeedFactor()) ++bad;
+        if (rules::weaponSpeedFactor(
+                "lance, medium horse")
+            != rules::lspMediumLanceSpeedFactor())
+            ++bad;
+        if (rules::weaponSpeedFactor(
+                "lance, heavy horse")
+            != rules::lspHeavyLanceSpeedFactor()) ++bad;
         // the spear 6-8 print range
         int rlo, rhi;
         rules::spearSpeedFactorRange(rlo, rhi);
@@ -120485,6 +120499,37 @@ int main() {
         )
             ++bad;
         printf("R779 lance charge audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R780 lance speed factors audit ----
+    // THE LANCE SPEED FACTORS - the R158 ladder grows its three lance rows.
+    // The PHB p.38 speed column cells (the 1eonline.info compilation, the
+    // repo-trusted source the R189 speed-verify duty already reads): light
+    // horse 7, medium horse 6, heavy horse 8 - the medium horse lance OUTRUNS
+    // the light (a 12-foot shaft faster than a 10-foot one: the print is the
+    // print, the engine follows it, the R779 zero-row pattern in reverse).
+    // The ladder stays PURE DATA - no engine caller exists, the DMG p.66
+    // caller-detected cases stay contract-side, and the printed lengths
+    // (10/12/14 feet) ride no engine concept. The standing weaponspeed.h
+    // pragma once is UNTOUCHED - the R778 classic-guard rule governs new
+    // guards, not standing files; the R158 audit gains the three ladder
+    // checks against the header pins
+    {
+        using namespace rules;
+        int bad = 0;
+    if (lspSpeedFeederRound() != 158
+            || lspLanceSpeedRound() != 780
+            || lspLanceSpeedRowCount() != 3
+            || lspLightLanceSpeedFactor() != 7
+            || lspMediumLanceSpeedFactor() != 6
+            || lspHeavyLanceSpeedFactor() != 8
+            || !lspLancesRideTheR158Ladder()
+            || !lspMediumOutrunsTheLight()
+            || !lspLadderStaysPureData()
+            || !lspLanceLengthsStayContractSide()
+        )
+            ++bad;
+        printf("R780 lance speed factors audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

@@ -19395,6 +19395,54 @@ when both halves land.
   c63eda640a829b5a25625c93f5e0101f.
   NEXT - R779: the next target awaits
   Curtiss's call.
+- R779 LANDED 2026-10-23: commit
+  0e8781470a6475076ceff34bfcfc364eee73432a
+  (census 701 -> 702, pushed f5a953c..0e87814),
+  THE LANCE CHARGE - the R189 feeder goes
+  live, the three lances ride the registry,
+  header rules/lancecharge.h, prefix lnc
+  (fully free at f5a953c). SEVEN FILE PATCHES
+  over five files (the fp_txt chaining carries
+  two patches on ai/actor.cpp): the three
+  lances (light, medium, heavy horse - the
+  R189 chart rows 24-26) join the weapon
+  registry as items (items/items.h + items.cpp,
+  the R314 deep-crossbow pattern) riding the
+  pinned R189 cells (the 50/100/150 gp
+  weights, the S/M dice 1-6/2-7/3-9, the L
+  dice 1-8/2-12/3-18) and the one printed PHB
+  arms price 6 g.p. shared by all three; the
+  combat Actor gains mountKind (ai/actor.h) and
+  toActor copies it (game/party.h); the charge
+  fold lands in resolveMelee (ai/actor.cpp,
+  after the backstab multiplier): a round-one
+  rider's lance strike doubles its damage -
+  the engine has no charge command, the
+  round-one strike reads as the charge (the
+  JUDGMENT, the R232 surprise-as-from-behind
+  pattern); the R145 audit kRows gain the three
+  zero lance rows (the p.38 chart lists no
+  lance - the no-adjustment JUDGMENT;
+  regtest.cpp, the WPN_COUNT enumeration stays
+  complete). Honest boundaries: the R158 speed
+  ladder names no lance (unknown default) and
+  the spear set-to-receive needs a charging
+  FOE - both contract-side. Inlines: 13 = 5
+  consts (the 189 feeder round, the 779 round,
+  the 3 lance rows, the multiplier 2, the price
+  6 g.p.) + 8 bools. GREEN on the FIRST
+  preflight; the ./bn 779 detour (struck per
+  the R516 rule) caused no drift - the gate
+  md5 4ad7bc3ff4dfea9f3effb6393511fdc5
+  printed exactly. rverify GREEN (double-run
+  11 patches applied/already clean, 13
+  mutants 0 missed); the include lands after
+  mountmove (regtest 482). spec md5
+  98434c220e3b560b12b0a71ce693e542, gate md5
+  4ad7bc3ff4dfea9f3effb6393511fdc5, canvas
+  md5 72e78667a9f5b9a5f4582ea30c60123a.
+  NEXT - R780: the next target awaits
+  Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

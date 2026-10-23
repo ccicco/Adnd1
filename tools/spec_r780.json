@@ -1,0 +1,196 @@
+{
+ "round": 780,
+ "prefix": "lsp",
+ "header_file": "rules/lancespeed.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 702,
+ "title": "the lance speed - the lances join the ladder",
+ "audit_label": "R780 lance speed factors audit",
+ "audit_comment": "THE LANCE SPEED FACTORS - the R158 ladder grows its three lance rows. The PHB p.38 speed column cells (the 1eonline.info compilation, the repo-trusted source the R189 speed-verify duty already reads): light horse 7, medium horse 6, heavy horse 8 - the medium horse lance OUTRUNS the light (a 12-foot shaft faster than a 10-foot one: the print is the print, the engine follows it, the R779 zero-row pattern in reverse). The ladder stays PURE DATA - no engine caller exists, the DMG p.66 caller-detected cases stay contract-side, and the printed lengths (10/12/14 feet) ride no engine concept. The standing weaponspeed.h pragma once is UNTOUCHED - the R778 classic-guard rule governs new guards, not standing files; the R158 audit gains the three ladder checks against the header pins",
+ "include_comment": "the lance speed pins",
+ "include_after": "#include \"rules/lancecharge.h\"  // R779: the lance charge pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R779 LANDED 2026-10-23: commit",
+ "prev_record": [
+  "- R779 LANDED 2026-10-23: commit",
+  "  0e8781470a6475076ceff34bfcfc364eee73432a",
+  "  (census 701 -> 702, pushed f5a953c..0e87814),",
+  "  THE LANCE CHARGE - the R189 feeder goes",
+  "  live, the three lances ride the registry,",
+  "  header rules/lancecharge.h, prefix lnc",
+  "  (fully free at f5a953c). SEVEN FILE PATCHES",
+  "  over five files (the fp_txt chaining carries",
+  "  two patches on ai/actor.cpp): the three",
+  "  lances (light, medium, heavy horse - the",
+  "  R189 chart rows 24-26) join the weapon",
+  "  registry as items (items/items.h + items.cpp,",
+  "  the R314 deep-crossbow pattern) riding the",
+  "  pinned R189 cells (the 50/100/150 gp",
+  "  weights, the S/M dice 1-6/2-7/3-9, the L",
+  "  dice 1-8/2-12/3-18) and the one printed PHB",
+  "  arms price 6 g.p. shared by all three; the",
+  "  combat Actor gains mountKind (ai/actor.h) and",
+  "  toActor copies it (game/party.h); the charge",
+  "  fold lands in resolveMelee (ai/actor.cpp,",
+  "  after the backstab multiplier): a round-one",
+  "  rider's lance strike doubles its damage -",
+  "  the engine has no charge command, the",
+  "  round-one strike reads as the charge (the",
+  "  JUDGMENT, the R232 surprise-as-from-behind",
+  "  pattern); the R145 audit kRows gain the three",
+  "  zero lance rows (the p.38 chart lists no",
+  "  lance - the no-adjustment JUDGMENT;",
+  "  regtest.cpp, the WPN_COUNT enumeration stays",
+  "  complete). Honest boundaries: the R158 speed",
+  "  ladder names no lance (unknown default) and",
+  "  the spear set-to-receive needs a charging",
+  "  FOE - both contract-side. Inlines: 13 = 5",
+  "  consts (the 189 feeder round, the 779 round,",
+  "  the 3 lance rows, the multiplier 2, the price",
+  "  6 g.p.) + 8 bools. GREEN on the FIRST",
+  "  preflight; the ./bn 779 detour (struck per",
+  "  the R516 rule) caused no drift - the gate",
+  "  md5 4ad7bc3ff4dfea9f3effb6393511fdc5",
+  "  printed exactly. rverify GREEN (double-run",
+  "  11 patches applied/already clean, 13",
+  "  mutants 0 missed); the include lands after",
+  "  mountmove (regtest 482). spec md5",
+  "  98434c220e3b560b12b0a71ce693e542, gate md5",
+  "  4ad7bc3ff4dfea9f3effb6393511fdc5, canvas",
+  "  md5 72e78667a9f5b9a5f4582ea30c60123a.",
+  "  NEXT - R780: the next target awaits",
+  "  Curtiss's call."
+ ],
+ "banner": {
+  "title": "THE LANCE SPEED FACTORS - the three lances ride the R158 ladder",
+  "provenance": "R779 left the lance speed contract-side (the R158 ladder names no lance); R780 pins the three printed cells. The PHB p.38 WEAPON TYPES speed column, read from the 1eonline.info compilation (the repo-trusted source): light horse 7, medium horse 6, heavy horse 8. The medium-horse 6 outrunning the light-horse 7 is no OCR slip - both compilation pages print it cell-for-cell, and the engine follows the print exactly as it followed the spear 6-8 spread. The rows land in rules/weaponspeed.h - the R158 name-keyed ladder, still pure data: the DMG p.66 three caller-detected cases (tie order, the extra-attack windows, the weapon-vs-spell segment) gained no engine caller here; the R158 audit itself gains the three checks against the R780 header pins, so a mutant in either the ladder row or the pin dies at the preflight. Honest boundaries: the printed lengths and space-required cells ride no engine concept, and the standing pragma once in weaponspeed.h stays untouched - the R778 guard rule governs new guards only",
+  "sentinel": "Zero new book pages: the three speed cells ride the 1eonline.info compilation the R189 speed-verify duty already trusts"
+ },
+ "consts": [
+  {
+   "name": "lspSpeedFeederRound",
+   "value": 158,
+   "comment": "The feeder seam this round extends: the R158 name-keyed weapon speed ladder (DMG p.66, the PHB p.38 factor column)."
+  },
+  {
+   "name": "lspLanceSpeedRound",
+   "value": 780,
+   "comment": "The lance speed round: the three lances join the ladder, the cells pin."
+  },
+  {
+   "name": "lspLanceSpeedRowCount",
+   "value": 3,
+   "comment": "The three ladder rows this round adds: light, medium, heavy horse."
+  },
+  {
+   "name": "lspLightLanceSpeedFactor",
+   "value": 7,
+   "comment": "The light horse lance speed factor (the PHB p.38 speed column, the 1eonline.info compilation)."
+  },
+  {
+   "name": "lspMediumLanceSpeedFactor",
+   "value": 6,
+   "comment": "The medium horse lance speed factor: the print's quirk - a 12-foot shaft faster than the light horse's 10-foot one. The print is the print."
+  },
+  {
+   "name": "lspHeavyLanceSpeedFactor",
+   "value": 8,
+   "comment": "The heavy horse lance speed factor (the PHB p.38 speed column)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "lspLancesRideTheR158Ladder",
+   "value": true,
+   "comment": "The three rows land in rules/weaponspeed.h weaponSpeedFactor: lance, light horse 7; lance, medium horse 6; lance, heavy horse 8."
+  },
+  {
+   "name": "lspMediumOutrunsTheLight",
+   "value": true,
+   "comment": "The medium horse cell 6 beats the light horse 7 - both compilation pages print it, the engine follows the print (no length-based second-guess)."
+  },
+  {
+   "name": "lspLadderStaysPureData",
+   "value": true,
+   "comment": "No engine caller exists: the DMG p.66 caller-detected cases (tie order, extra-attack windows, the vs-spell segment) stay contract-side; the R158 audit checks the cells."
+  },
+  {
+   "name": "lspLanceLengthsStayContractSide",
+   "value": true,
+   "comment": "The printed lengths and space-required cells (10/12/14 feet, 1 foot) ride no engine concept - recorded here, pinned nowhere else."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [],
+ "table_checks": [],
+ "header_sections": {
+  "the lance speed (the R780 wiring)": [
+   {
+    "kind": "const",
+    "name": "lspSpeedFeederRound"
+   },
+   {
+    "kind": "const",
+    "name": "lspLanceSpeedRound"
+   },
+   {
+    "kind": "const",
+    "name": "lspLanceSpeedRowCount"
+   },
+   {
+    "kind": "const",
+    "name": "lspLightLanceSpeedFactor"
+   },
+   {
+    "kind": "const",
+    "name": "lspMediumLanceSpeedFactor"
+   },
+   {
+    "kind": "const",
+    "name": "lspHeavyLanceSpeedFactor"
+   },
+   {
+    "kind": "bool",
+    "name": "lspLancesRideTheR158Ladder"
+   },
+   {
+    "kind": "bool",
+    "name": "lspMediumOutrunsTheLight"
+   },
+   {
+    "kind": "bool",
+    "name": "lspLadderStaysPureData"
+   },
+   {
+    "kind": "bool",
+    "name": "lspLanceLengthsStayContractSide"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 10,
+ "file_patches": [
+  {
+   "file": "rules/weaponspeed.h",
+   "note": "the three lance rows join the R158 ladder after the pike row (the PHB p.38 speed cells)",
+   "from": "        { \"pike\",             13 },  // the DMG p.66 example\n    };",
+   "to": "        { \"pike\",             13 },  // the DMG p.66 example\n        // R780: the three lances ride the ladder -\n        // the PHB p.38 speed column cells (the medium\n        // horse 6 outruns the light horse 7 - the print\n        // is the print)\n        { \"lance, medium horse\", 6 },\n        { \"lance, light horse\",  7 },\n        { \"lance, heavy horse\",  8 },\n    };"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the R158 audit gains the three ladder checks against the R780 header pins (a mutant in a row or a pin dies at the preflight)",
+   "from": "        if (rules::weaponSpeedFactor(\"spear\") != 7) ++bad;\n        if (rules::weaponSpeedFactor(\"no such weapon\") != 0)\n            ++bad;",
+   "to": "        if (rules::weaponSpeedFactor(\"spear\") != 7) ++bad;\n        if (rules::weaponSpeedFactor(\"no such weapon\") != 0)\n            ++bad;\n        // R780: the three lances ride the ladder (the\n        // PHB p.38 speed cells, checked against the\n        // header pins)\n        if (rules::weaponSpeedFactor(\n                \"lance, light horse\")\n            != rules::lspLightLanceSpeedFactor()) ++bad;\n        if (rules::weaponSpeedFactor(\n                \"lance, medium horse\")\n            != rules::lspMediumLanceSpeedFactor())\n            ++bad;\n        if (rules::weaponSpeedFactor(\n                \"lance, heavy horse\")\n            != rules::lspHeavyLanceSpeedFactor()) ++bad;"
+  }
+ ]
+}

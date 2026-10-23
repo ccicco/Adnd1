@@ -56,6 +56,13 @@ inline int weaponSpeedFactor(const char* name) {
         { "battle axe",       7 },
         { "two-handed sword", 10 },  // DMG p.64/p.66
         { "pike",             13 },  // the DMG p.66 example
+        // R780: the three lances ride the ladder -
+        // the PHB p.38 speed column cells (the medium
+        // horse 6 outruns the light horse 7 - the print
+        // is the print)
+        { "lance, medium horse", 6 },
+        { "lance, light horse",  7 },
+        { "lance, heavy horse",  8 },
     };
     for (int i = 0; i < (int)(sizeof(t) / sizeof(t[0])); ++i)
         if (std::strcmp(name, t[i].n) == 0) return t[i].sf;
