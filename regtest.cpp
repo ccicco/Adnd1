@@ -493,6 +493,7 @@
 #include "rules/uadeityprose4.h"  // R789: the gnomish deity prose
 #include "rules/uadeityprose5.h"  // R790: the orcish deity prose
 #include "rules/lreg.h"  // R791: the registry promotion wiring
+#include "rules/prg.h"  // R792: the registry promotion defs
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -653,7 +654,8 @@ int main() {
             if (d.xpSource != "merged_mm1" && d.xpSource != "perm_x10" &&
                 d.xpSource != "role_variant" && d.xpSource != "by_hit_dice" &&
                 d.xpSource != "age_bracket" && d.xpSource != "by_head_count" &&
-                d.xpSource != "by_level") bad = true;
+                d.xpSource != "by_level" && d.xpSource != "oa_print" &&
+                d.xpSource != "wsg_print" && d.xpSource != "mop_print") bad = true;
             if (bad && anom < 10) {
                 printf("ANOM: %-24s xpSource=%s xpValue=%d xpPerHp=%d\n",
                        kv.first.c_str(), d.xpSource.c_str(),
@@ -122594,6 +122596,87 @@ int main() {
         )
             ++bad;
         printf("R791 registry promotion wiring audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R792 registry promotion defs audit ----
+    // THE REGISTRY PROMOTION DEFS - the all-in-one R792 def write (the
+    // user-set seam). 73 new .lua defs land in one pass through the R791
+    // data_files extension - the MM1 precedent (monsters2lua.py generated all
+    // 408 defs from the merged @-record file). OA Chapter 12 gives 47 defs
+    // (the corrected census - the kappa pair, the kala pair, the nat trio and
+    // the oa91 trio ride; the ikiryo carries sentinel nil stats, the user
+    // call), WSG Table 13 gives 18 (loads and movement only, the combat
+    // fields riding the documented loader defaults), MOP Appendix III gives 8
+    // (the stat blocks printed exactly as pinned). The loader gains the five
+    // schema fields (loadNormal, loadMax, rank, plane, transform) and the
+    // regtest xp audit gains the three print sources. The battery census
+    // grows live: loaded 408 -> 481.
+    {
+        using namespace rules;
+        int bad = 0;
+    if (prgPromoteRound() != 792
+            || prgOADefCount() != 47
+            || prgWSGAnimalCount() != 18
+            || prgMOPCreatureCount() != 8
+            || prgNewDefTotal() != 73
+            || prgRegistryCountBefore() != 408
+            || prgRegistryCountAfter() != 481
+            || prgSchemaFieldCount() != 5
+            || prgPrintSourceCount() != 3
+            || prgDataFileCount() != 73
+            || prgLoaderFieldPatchCount() != 2
+            || prgXpAuditPatchCount() != 1
+            || prgSentinelDefCount() != 3
+            || !prgDefsAreGeneratedTables()
+            || !prgDefsRideRegistryLoader()
+            || !prgPinHeadersStayPrintRecord()
+            || !prgBatteryCensusGrowsLive()
+            || !prgOACensusCorrected()
+            || !prgIkiryoIncludedWithSentinels()
+            || !prgWSGCombatFieldsRideDefaults()
+            || !prgMOPStatBlocksFromPrint()
+            || !prgDMOLadderRidesRankField()
+            || !prgMOPAnalogueRidesTransformField()
+            || !prgWSGAnimalsNeedLoadFields()
+            || !prgNewPrintSourcesRideAudit()
+            || !prgOneRoundCarriesAllDefs()
+            || !prgRankDefaultsZero()
+        )
+            ++bad;
+        // the promotion def census walk (the corrected counts)
+    if (prgPromoteRound() != 792
+            || prgOADefCount() != 47
+            || prgWSGAnimalCount() != 18
+            || prgMOPCreatureCount() != 8
+            || prgNewDefTotal() != 73
+            || prgRegistryCountBefore() != 408
+            || prgRegistryCountAfter() != 481
+            || prgSchemaFieldCount() != 5
+            || prgPrintSourceCount() != 3
+            || prgDataFileCount() != 73
+            || prgLoaderFieldPatchCount() != 2
+            || prgXpAuditPatchCount() != 1
+            || prgSentinelDefCount() != 3
+        )
+            ++bad;
+        // the promotion def doctrine bools
+    if (prgDefsAreGeneratedTables() != 1
+            || prgDefsRideRegistryLoader() != 1
+            || prgPinHeadersStayPrintRecord() != 1
+            || prgBatteryCensusGrowsLive() != 1
+            || prgOACensusCorrected() != 1
+            || prgIkiryoIncludedWithSentinels() != 1
+            || prgWSGCombatFieldsRideDefaults() != 1
+            || prgMOPStatBlocksFromPrint() != 1
+            || prgDMOLadderRidesRankField() != 1
+            || prgMOPAnalogueRidesTransformField() != 1
+            || prgWSGAnimalsNeedLoadFields() != 1
+            || prgNewPrintSourcesRideAudit() != 1
+            || prgOneRoundCarriesAllDefs() != 1
+            || prgRankDefaultsZero() != 1
+        )
+            ++bad;
+        printf("R792 registry promotion defs audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

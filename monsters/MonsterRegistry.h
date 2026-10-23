@@ -147,6 +147,13 @@ struct MonsterDef {
     std::string specialDefensesText;
     std::string text;              // complete MM prose (bestiary viewer)
 
+    // ---- R792: the registry promotion schema fields ----
+    int   loadNormal = 0;        // WSG Table 13 normal load (gp)
+    int   loadMax = 0;           // WSG Table 13 maximum load (gp)
+    int   rank = 0;              // DMO legendary ladder rank (0 = none)
+    std::string plane;           // MOP Appendix III native plane
+    std::string transform;       // MOP Appendix II elemental analogue
+
     // R71: treasure type letters + verbatim Lua text (bestiary/debug)
     TreasureSpec treasure;
     std::string treasureText;

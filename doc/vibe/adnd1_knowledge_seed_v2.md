@@ -20048,6 +20048,75 @@ when both halves land.
   plan the candidates are the Appendix
   Spell Dueling Characteristics pp.
   180-188 and the Index pp. 189-192).
+- R791 LANDED 2026-10-23: commit
+  b33e362191db75103fa79cdd5ccbb149270ec5fd
+  (census 713 -> 714, pushed 3ff2f2a..b33e362),
+  THE REGISTRY PROMOTION WIRING - the
+  tooling round of the creature-registry
+  promotion seam (Curtiss's "Go" call).
+  ONE FILE PATCH on tools/splice_engine.py:
+  the data_files block (spec-declared
+  NEW-file emission, idempotent by
+  existence, counted in the applied/already
+  census like a patch) inserted before the
+  R420 idempotency-gate anchor - the
+  engine-extends-itself lesson of the R791/
+  R792 split: the engine can never consume
+  data_files in the same run that patches
+  it in (proven by the scratch-tree
+  simulation), so the tooling landed alone
+  and R792 rides the extension. Header
+  rules/lreg.h, prefix lreg (rgp was taken
+  in regtest), 10 consts + 10 bools (20
+  inline) - the doctrine pins: 65 defs in
+  one R792 pass (39 OA + 18 WSG + 8 MOP),
+  registry 408 -> 473, pin headers stay the
+  print record, the DMO ladder rides a rank
+  field, MOP Appendix II rides a transform
+  field, the WSG load/movement fields are
+  schema adjustments, the mount/fish headers
+  get one look before the R792 cut. Audit
+  "R791 registry promotion wiring audit",
+  include after uadeityprose5.h. Engine
+  double-run applied 5/already 0 -> 0/5;
+  rverify GREEN (20 mutants, 0 missed);
+  battery live 408, errors 0 (unchanged -
+  no defs yet); one preflight, GREEN first
+  pass. md5s: spec authored
+  6b3ce5b6d87411545bb75fad3ad4bfd5, gate
+  aa67f32a5ad79f602a4603eb85fc18c9.
+  NEXT - R792: the all-in-one def write
+  (Curtiss's "Go" call on the standing
+  decision).
+- R792 CENSUS CORRECTION (user decisions
+  2026-10-23, mid-R792-prep): the R791
+  count 39 was MISWALKED - the re-walk of
+  the pin headers at b33e362 found kappa 2
+  (the vampiric kappa), kala 2 (the cave and
+  earth columns via dkiKalaAC(b)), nat 3
+  (einsaung/hkum/lu with per-column AC/HD),
+  and oa91 carries 3 creatures (hu hsien,
+  ikiryo, jishin mushi). OA = 47 DEFS
+  (Curtiss's call: ikiryo INCLUDED with
+  sentinel/nil stats - its printed stat
+  block is all-nil). TOTAL 73 defs (47 OA +
+  18 WSG + 8 MOP Appendix III), the registry
+  growing 408 -> 481, NOT the R791 pins' 65 /
+  473 - the R792 header re-pins the true
+  census and the audit carries the
+  reconciliation (the R791 record stays
+  landed; the lreg count pins are
+  superseded, noted in the R792 banner).
+  STAT POLICY (user call): the MOP Appendix
+  III and WSG animal stat blocks come from
+  the PRINTS (the archive.org OCR), pinned
+  in the defs - the ddz/ddy headers pin
+  doctrine only. The mount/fish/flymounts/
+  mwater look is DONE: zero stat-bearing
+  extras, the WSG 18 stands (Table 27 flying
+  mounts are MM1 registry creatures, the
+  fish and moving-water headers carry no
+  creatures).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

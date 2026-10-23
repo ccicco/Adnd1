@@ -756,6 +756,13 @@ bool MonsterRegistry::loadFile(const std::string& path,
     def.specialDefensesText  = luaGetStr(L, "specialDefenses", "");
     def.text                 = luaGetStr(L, "text", "");
 
+    // ---- R792: the registry promotion schema fields ----
+    def.loadNormal           = luaGetInt(L, "loadNormal", 0);
+    def.loadMax              = luaGetInt(L, "loadMax", 0);
+    def.rank                 = luaGetInt(L, "rank", 0);
+    def.plane                = luaGetStr(L, "plane", "");
+    def.transform            = luaGetStr(L, "transform", "");
+
     // ---- R71: treasure type letters ----
     def.treasureText = luaGetStr(L, "treasure", "");
     def.treasure = parseTreasureText(def.key, def.treasureText);
