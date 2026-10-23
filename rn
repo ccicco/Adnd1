@@ -10,6 +10,19 @@
 # block. Lives at the repo root; run it from ~/Adnd1.
 set -eu
 
+# ---- the self-patch guard (the R794 lesson): bash reads
+# ---- scripts incrementally, so an engine file patch on rn
+# ---- itself desyncs the executing read - run from a private
+# ---- snapshot copy instead; the disk rn is free to change
+# ---- mid-run, and the git add still lands the patched copy
+if [ -z "${RN_SNAPSHOT:-}" ]; then
+    RN_SNAPSHOT="${TMPDIR:-/tmp}/rn.self.$$"
+    export RN_SNAPSHOT
+    cp "$0" "$RN_SNAPSHOT"
+    exec bash "$RN_SNAPSHOT" "$@"
+fi
+trap 'rm -f "$RN_SNAPSHOT"' EXIT
+
 RND="${1:-}"
 CMSG="${2:-}"
 if [ -z "$RND" ] || [ -z "$CMSG" ]; then

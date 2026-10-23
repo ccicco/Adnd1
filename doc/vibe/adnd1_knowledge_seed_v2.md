@@ -20237,6 +20237,75 @@ when both halves land.
   tooling round: the rn git-add and
   rverify.py data_files adaptations (both
   predate the extension).
+- R794 LANDED 2026-10-23: commit
+  8f98fda66cea101b699ea7de6a2209a56c5cc717
+  (census 716 -> 717, pushed 2bc7810..8f98fda),
+  THE TOOLING DATA_FILES ADAPTATION - the
+  two-round untracked-defs lesson closed in
+  the tools (the user Go call on the
+  candidate tooling round; the UA Appendix
+  Spell Dueling pp. 180-188 and Index pp.
+  189-192 stay the standing data
+  candidates). FIVE TOOL PATCHES: rn
+  derives NDATA/DFILES beside the
+  file-patch facts, prints the data-file
+  echo, and git-adds the data paths after
+  the preflight gate (no more hand add/
+  commit/push after a data round);
+  rverify restores the data paths from the
+  base sha (the 404 removal covers the new
+  files) and n_patches gains the data term
+  so the double-run gate covers every
+  emitted file. splice_engine.py UNTOUCHED
+  (the R791 engine-extends-itself lesson
+  holds). Header rules/rtk.h, prefix rtk,
+  10 consts + 10 bools (20 inline), audit
+  "R794 tooling data files git add audit",
+  include after prf.h. FIRST FULLY LOCAL
+  VERIFICATION since the R791 split: the
+  authoring environment fetched the whole
+  repo tree, ran the engine double-run
+  (9/0 -> 0/9), bash -n on the patched
+  rn, py_compile plus rverify GREEN on the
+  round (20 mutants, 0 missed), AND THE
+  DOGFOOD - the adapted rverify
+  retroactively GREEN on R793 (79 patches
+  incl. the 70 data files, 24 mutants -
+  its FIRST-EVER battery, missed at
+  R793 because no local Python) and on
+  R792 (80 patches, 27 mutants, matching
+  its record). CAUGHT IN AUTHORING: the
+  rverify restore-list patch needed a
+  backslash continuation after the closed
+  bracket (an IndentationError), fixed
+  before handoff. CAUGHT AT LANDING: THE
+  SELF-PATCHING RUNNER LESSON - rn can
+  never be a file-patch target of its own
+  run; the engine rewrote the executing
+  script and bash's incremental read
+  desynced (syntax error at line 48,
+  after the engine's all-or-nothing
+  applied 9), and the recovery was the
+  plain re-run (fresh bash reads the
+  valid patched rn whole; the double-run
+  read applied 0/already 9 both passes).
+  A candidate hardening for a later
+  tooling round: rn re-execs itself if
+  its own md5 changed after the engine
+  phase. Device gates: battery loaded
+  478, errors 0; xp audit 478 checked, 0
+  anomalies; AUDIT CENSUS 717 each
+  exactly once, all bad 0; build 0
+  warnings; preflight GREEN, one re-run.
+  md5s: spec authored
+  bdf8ae1745e94faa687fbfa67479ab59, gate
+  d41d6274ddfbd1724bb0f88277e4d0c3.
+  NEXT - R795: the standing data
+  candidates - the UA Appendix Spell
+  Dueling Characteristics pp. 180-188
+  and the Index pp. 189-192 (per the DMO
+  plan; data_files now rides rn's git
+  add, so a data round is one pass).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
