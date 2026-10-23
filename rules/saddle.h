@@ -19,6 +19,9 @@
 // Zero new book pages: the prices and rows ride the already-pinned R300/R308
 // equipment cells
 //
+#ifndef RULES_SADDLE_H
+#define RULES_SADDLE_H
+
 namespace rules {
 
 // ---- the saddle acquisition (the R777 wiring) ----
@@ -79,3 +82,5 @@ inline bool sddV1SaveLoadsAfoot()
     { return true; }
 
 }   // namespace rules
+
+#endif // RULES_SADDLE_H

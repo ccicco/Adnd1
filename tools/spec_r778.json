@@ -1,0 +1,289 @@
+{
+ "round": 778,
+ "prefix": "mvm",
+ "header_file": "rules/mountmove.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 700,
+ "title": "the mounted movement charge - the warhorse kinds ride",
+ "audit_label": "R778 mounted movement audit",
+ "audit_comment": "THE MOUNTED MOVEMENT CHARGE (the R778 repair carries the saddle header's classic include guard) - the R123 feeder goes live, warhorse kinds 2-4 only (Curtiss's call). The grid mirrors the p.58-59 mounted rows the R123 audit already pins (dm/outdoormove.h); the site reads the dm rows through the sdd kind mapping (warhorseDmKind), never a hardcoded rate. The honest boundary: the draft is a cart animal and the riding horse and pony walk this round; the grant steeds stay contract-side (no cavalier class). The henchman walks; the fallen are carried",
+ "include_comment": "the mounted movement pins",
+ "include_after": "#include \"rules/saddle.h\"  // R777: the saddle acquisition pins",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R777 LANDED 2026-10-22: commit",
+ "prev_record": [
+  "- R777 LANDED 2026-10-22: commit",
+  "  eb399abe9697a63d4b8d7df4bd53ac35447d75f4",
+  "  (census 699 -> 700, pushed f520395..eb399ab),",
+  "  THE SADDLE ACQUISITION - the stable writes",
+  "  the mount. Header rules/saddle.h, prefix",
+  "  sdd (fully free at f520395). SEVEN FILE",
+  "  PATCHES over six files (multi-patch per",
+  "  file now rides the R776 fp_txt chaining",
+  "  cache): party.h comment flip (mountKind",
+  "  is written now), state_core.cpp x3 (the",
+  "  saddle.h include after appstate.h, the",
+  "  save-write \"mount %d\" optional line after",
+  "  the uacom block, the load branch gated on",
+  "  sddMountKindCount before the \"fem\" branch",
+  "  - v1 saves load afoot), state_town.cpp x2",
+  "  (the equipcosts.h + saddle.h includes, the",
+  "  new townBuyMount() after townBuyChain -",
+  "  best-affordable-first stable that reads",
+  "  the pinned price cells BY NAME via",
+  "  std::string compare, spendGold copied",
+  "  from townBuyChain), and appstate.h (the",
+  "  townBuyMount declaration). Inlines: 12 =",
+  "  8 consts (sddMountKindCount 7, the kind",
+  "  ladder draft/light/medium/heavy war/",
+  "  riding/pony 1-6, sddStableStockCount 5) +",
+  "  4 bools (the stable sells, the stable",
+  "  reads pinned cells, the save carries the",
+  "  mount line, v1 saves load afoot). ZERO",
+  "  NEW BOOK PAGES - the horse prices ride",
+  "  the pinned R300/R308 equipcosts cells by",
+  "  name (horse, heavy war 300 / medium 225 /",
+  "  light 150, riding 25, pony 15, saddle 10",
+  "  gp). THE GRANT PATH HONESTLY DROPPED:",
+  "  the engine has no cavalier/paladin class",
+  "  (grep-verified), so the flying-steed",
+  "  grants (mml 7/9/11) stay contract-side;",
+  "  noted in the spec's audit_comment and",
+  "  banner. The user's ./bn 777 detour",
+  "  (struck per the R516 rule) caused no",
+  "  drift - the gate md5",
+  "  90b9910b7ef5aba5f865a89c95f1e16b printed",
+  "  exactly. rverify GREEN first try",
+  "  (double-run 11 patches applied/already",
+  "  clean, 12 mutants 0 missed); static",
+  "  checks: include lands at regtest 480",
+  "  right after the R776 mountcombat include,",
+  "  no hyphen tokens in the audit block.",
+  "  spec md5",
+  "  fd85f40a9e8ffb035b86f316e6443b86, gate",
+  "  md5 90b9910b7ef5aba5f865a89c95f1e16b,",
+  "  canvas md5 bbca2084f98f444ac0c957006e57c051.",
+  "  NEXT - R778: the next target awaits",
+  "  Curtiss's call."
+ ],
+ "banner": {
+  "title": "THE MOUNTED MOVEMENT CHARGE - the R123 feeder goes live, the warhorse kinds ride",
+  "provenance": "The R776 site and the R777 stable left the mount bought but afoot in play: mountKind is saved and printed, yet nobody rides. This round charges the R123 feeder: a living member on a warhorse kind (2-4, the sdd ladder - Curtiss's call; the riding horse and pony stay walkers, the draft is a cart animal) moves at his mount's dm miles/day rate, every other member walks at his burden class, the henchman walks, and the company rides at the slowest member's pace. The kind mapping reads the saddle ladder consts through warhorseDmKind (game/party.h, the saddle include per the R400 lesson), the site is overlandMilesPerDay (game/state_overland.cpp, flipped from companyFootMilesPerDay to companyRiderMilesPerDay), and both TUs ride the preflight battery build, so every line is compile-gated. The first cut died at the Termux preflight: the party.h saddle include opened a second inclusion path in state_core, state_town and regtest (36 redefinitions), so the repair carries the classic #ifndef include guard on the saddle header (the wisdom.h house style; pragma once struck by Curtiss - a Windows-ism) - rverify is Python-only and cannot see the C++ double-include class",
+  "sentinel": "Zero new book pages: the rates ride the already-pinned R123 dm/outdoormove.h mounted rows"
+ },
+ "consts": [
+  {
+   "name": "mvmMovementFeederRound",
+   "value": 123,
+   "comment": "The feeder seam this round charges: the R123 mounted miles/day data (dm/outdoormove.h)."
+  },
+  {
+   "name": "mvmMountedMovementRound",
+   "value": 778,
+   "comment": "The mounted movement round: the warhorse kinds ride, the company pace reads them."
+  },
+  {
+   "name": "mvmWarhorseKindCount",
+   "value": 3,
+   "comment": "The warhorse kinds that ride: light, medium, heavy - the sdd ladder kinds 2-4 (Curtiss's call; the draft, riding and pony kinds walk this round)."
+  },
+  {
+   "name": "mvmTerrainClassCount",
+   "value": 3,
+   "comment": "The R123 terrain classes: normal, rugged, very rugged."
+  },
+  {
+   "name": "mvmMountedRateFloor",
+   "value": 5,
+   "comment": "The very-rugged floor every warhorse shares (the p.58-59 mounted table prints 5 across the warhorse rows)."
+  }
+ ],
+ "bools": [
+  {
+   "name": "mvmWarhorseRidersSetThePace",
+   "value": true,
+   "comment": "The overland site reads the riders: overlandMilesPerDay becomes companyRiderMilesPerDay (game/state_overland.cpp)."
+  },
+  {
+   "name": "mvmCompanyRidesTheSlowestMember",
+   "value": true,
+   "comment": "The company pace is the slowest member's: a walker still gates a mounted company."
+  },
+  {
+   "name": "mvmNonWarhorseKindsWalk",
+   "value": true,
+   "comment": "The honest boundary: kinds 0/1/5/6 walk this round (the draft is a cart animal; the riding horse and pony stay out per Curtiss's call)."
+  },
+  {
+   "name": "mvmHenchmanWalksTheMountedRound",
+   "value": true,
+   "comment": "The henchman walks at his burden class (no mount field on the hire)."
+  },
+  {
+   "name": "mvmRatesRideThePinnedData",
+   "value": true,
+   "comment": "The site reads the R123 dm rows through warhorseDmKind, never a hardcoded rate."
+  },
+  {
+   "name": "mvmSaddleLadderFeedsMapping",
+   "value": true,
+   "comment": "The kind mapping reads the sdd ladder consts (rules/saddle.h), never raw ints."
+  },
+  {
+   "name": "mvmSaddleHeaderGuarded",
+   "value": true,
+   "comment": "The saddle header carries its classic #ifndef include guard (the R778 repair: the party.h include opened a second inclusion path in the state TUs and regtest - the double-include class the Python-only rverify cannot see; the Termux preflight is the only C++ gate; pragma once struck by Curtiss - a Windows-ism)."
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "mvmWarhorseMilesGrid",
+   "tag": "R778Warhorse",
+   "count": "mvmTerrainClassCount",
+   "col_default": 5,
+   "cols": [
+    "mvmLightWarMiles",
+    "mvmMediumWarMiles",
+    "mvmHeavyWarMiles"
+   ],
+   "data": [
+    [
+     60,
+     40,
+     30
+    ],
+    [
+     25,
+     20,
+     15
+    ],
+    [
+     5,
+     5,
+     5
+    ]
+   ],
+   "col_comments": [
+    "The light war horse's miles/day by terrain class (p.58-59: 60/25/5).",
+    "The medium war horse's miles/day by terrain class (p.58-59: 40/20/5).",
+    "The heavy war horse's miles/day by terrain class (p.58-59: 30/15/5)."
+   ],
+   "audit_comment": "the warhorse miles/day grid, terrain class by kind - the p.58-59 mounted rows the R123 audit already pins in dm/outdoormove.h"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the ladder runs light to heavy: the light war horse outpaces the heavy on open and rugged ground",
+   "expr": "m['mvmLightWarMiles'](0) < m['mvmHeavyWarMiles'](0) or m['mvmLightWarMiles'](1) < m['mvmHeavyWarMiles'](1)"
+  },
+  {
+   "note": "the very-rugged floor: every warhorse kind rides 5 in the mountains and the marsh",
+   "expr": "m['mvmLightWarMiles'](2) != m['mvmMountedRateFloor']() or m['mvmMediumWarMiles'](2) != m['mvmMountedRateFloor']() or m['mvmHeavyWarMiles'](2) != m['mvmMountedRateFloor']()"
+  },
+  {
+   "note": "the medium war horse outpaces the heavy, and the floor equals them",
+   "expr": "m['mvmMediumWarMiles'](0) < m['mvmHeavyWarMiles'](0) or m['mvmMediumWarMiles'](1) < m['mvmHeavyWarMiles'](1) or m['mvmMediumWarMiles'](2) != m['mvmHeavyWarMiles'](2)"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the mounted movement charge (the R778 wiring)": [
+   {
+    "kind": "const",
+    "name": "mvmMovementFeederRound"
+   },
+   {
+    "kind": "const",
+    "name": "mvmMountedMovementRound"
+   },
+   {
+    "kind": "const",
+    "name": "mvmWarhorseKindCount"
+   },
+   {
+    "kind": "const",
+    "name": "mvmTerrainClassCount"
+   },
+   {
+    "kind": "const",
+    "name": "mvmMountedRateFloor"
+   },
+   {
+    "kind": "table",
+    "name": "mvmWarhorseMilesGrid"
+   },
+   {
+    "kind": "bool",
+    "name": "mvmWarhorseRidersSetThePace"
+   },
+   {
+    "kind": "bool",
+    "name": "mvmCompanyRidesTheSlowestMember"
+   },
+   {
+    "kind": "bool",
+    "name": "mvmNonWarhorseKindsWalk"
+   },
+   {
+    "kind": "bool",
+    "name": "mvmHenchmanWalksTheMountedRound"
+   },
+   {
+    "kind": "bool",
+    "name": "mvmRatesRideThePinnedData"
+   },
+   {
+    "kind": "bool",
+    "name": "mvmSaddleLadderFeedsMapping"
+   },
+   {
+    "kind": "bool",
+    "name": "mvmSaddleHeaderGuarded"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [],
+ "inline_count": 15,
+ "file_patches": [
+  {
+   "file": "rules/saddle.h",
+   "note": "the include guard opens on the saddle header (the R778 repair: the party.h include opened a second inclusion path in state_core, state_town and regtest - 36 redefinitions at the Termux preflight; classic #ifndef guard, the wisdom.h house style, never pragma once)",
+   "from": "namespace rules {",
+   "to": "#ifndef RULES_SADDLE_H\n#define RULES_SADDLE_H\n\nnamespace rules {"
+  },
+  {
+   "file": "rules/saddle.h",
+   "note": "the include guard closes at the saddle header's tail",
+   "from": "}   // namespace rules",
+   "to": "}   // namespace rules\n\n#endif // RULES_SADDLE_H"
+  },
+  {
+   "file": "game/party.h",
+   "note": "the saddle.h include lands in party.h (the R400 lesson - the rider helper reads the sdd kind ladder)",
+   "from": "#include \"../dm/outdoormove.h\"   // R123: pp.58-59 daily rates\n#include \"messagelog.h\"",
+   "to": "#include \"../dm/outdoormove.h\"   // R123: pp.58-59 daily rates\n#include \"../rules/saddle.h\"  // R777: the sdd kind ladder\n#include \"messagelog.h\""
+  },
+  {
+   "file": "game/party.h",
+   "note": "warhorseDmKind and companyRiderMilesPerDay land after companyFootMilesPerDay (the mounted company pace)",
+   "from": "    return worst;\n}\n\n// R89: the pace cost of one step, tenths of a turn - a 120'",
+   "to": "    return worst;\n}\n\n// R778: the sdd warhorse kind -> the R123 dm mount row (the\n// kind ladder is the saddle header's, never a raw int)\ninline dm::MountKind warhorseDmKind(int mountKind) {\n    if (mountKind == rules::sddKindLightWar())\n        return dm::MOUNT_LIGHT;\n    if (mountKind == rules::sddKindMediumWar())\n        return dm::MOUNT_MEDIUM;\n    return dm::MOUNT_HEAVY;\n}\n\n// R778: the company's mounted miles/day (DMG pp.58-59) - the\n// R123 feeder goes live. A living member on a warhorse kind\n// (2-4, the sdd ladder) rides at his mount's rate; every\n// other member walks at his burden class (the draft is a\n// cart animal; the riding horse and pony stay out this\n// round). The company rides at the slowest member's pace -\n// a walker still gates it. The henchman walks.\ninline int companyRiderMilesPerDay(const Party& p,\n                                  dm::TerrainClass tc) {\n    int worst = 0;\n    for (const auto& c : p.members) {\n        if (c.hp <= 0) continue;   // the fallen are carried\n        int m;\n        if (c.mountKind >= rules::sddKindLightWar()\n            && c.mountKind\n               <= rules::sddKindHeavyWar()) {\n            m = dm::mountedMilesPerDay(\n                warhorseDmKind(c.mountKind), tc);\n        } else {\n            m = dm::footMilesPerDay(\n                dm::footBurdenFor(memberLoad(p, c)), tc);\n        }\n        if (worst == 0 || m < worst) worst = m;\n    }\n    if (p.henchmanPresent) {\n        int m = dm::footMilesPerDay(\n            dm::footBurdenFor(henchmanCarryWeight(p)), tc);\n        if (worst == 0 || m < worst) worst = m;\n    }\n    return worst;\n}\n\n// R89: the pace cost of one step, tenths of a turn - a 120'"
+  },
+  {
+   "file": "game/state_overland.cpp",
+   "note": "overlandMilesPerDay flips from the afoot call to the rider call (the R123 feeder charged)",
+   "from": "// R123: the DMG pp.58-59 afoot rate - the company moves at\n// the slowest walker's pace (the true loads decide the book's\n// burden classes; the terrain class is the route's)\nint AppState::overlandMilesPerDay() const{\n        if (mode != MODE_OVERLAND) return 0;\n        return companyFootMilesPerDay(\n            party, dm::terrainClass(\n                       (dm::OutdoorTerrain)overland.terrain));\n    }",
+   "to": "// R778: the DMG pp.58-59 mounted rate - the R123 feeder\n// goes live: a living member on a warhorse kind (2-4, the\n// sdd ladder) rides at his mount's rate, every other\n// member walks at his burden class, and the company\n// rides at the slowest member's pace (a walker still\n// gates it; the henchman walks; the fallen are carried)\nint AppState::overlandMilesPerDay() const{\n        if (mode != MODE_OVERLAND) return 0;\n        return companyRiderMilesPerDay(\n            party, dm::terrainClass(\n                       (dm::OutdoorTerrain)overland.terrain));\n    }"
+  }
+ ]
+}

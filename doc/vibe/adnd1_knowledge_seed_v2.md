@@ -19280,6 +19280,59 @@ when both halves land.
   canvas md5 8931a19cdabf449583f71dc22bcfa3af.
   NEXT - R777: the next target awaits
   Curtiss's call.
+- R777 LANDED 2026-10-22: commit
+  eb399abe9697a63d4b8d7df4bd53ac35447d75f4
+  (census 699 -> 700, pushed f520395..eb399ab),
+  THE SADDLE ACQUISITION - the stable writes
+  the mount. Header rules/saddle.h, prefix
+  sdd (fully free at f520395). SEVEN FILE
+  PATCHES over six files (multi-patch per
+  file now rides the R776 fp_txt chaining
+  cache): party.h comment flip (mountKind
+  is written now), state_core.cpp x3 (the
+  saddle.h include after appstate.h, the
+  save-write "mount %d" optional line after
+  the uacom block, the load branch gated on
+  sddMountKindCount before the "fem" branch
+  - v1 saves load afoot), state_town.cpp x2
+  (the equipcosts.h + saddle.h includes, the
+  new townBuyMount() after townBuyChain -
+  best-affordable-first stable that reads
+  the pinned price cells BY NAME via
+  std::string compare, spendGold copied
+  from townBuyChain), and appstate.h (the
+  townBuyMount declaration). Inlines: 12 =
+  8 consts (sddMountKindCount 7, the kind
+  ladder draft/light/medium/heavy war/
+  riding/pony 1-6, sddStableStockCount 5) +
+  4 bools (the stable sells, the stable
+  reads pinned cells, the save carries the
+  mount line, v1 saves load afoot). ZERO
+  NEW BOOK PAGES - the horse prices ride
+  the pinned R300/R308 equipcosts cells by
+  name (horse, heavy war 300 / medium 225 /
+  light 150, riding 25, pony 15, saddle 10
+  gp). THE GRANT PATH HONESTLY DROPPED:
+  the engine has no cavalier/paladin class
+  (grep-verified), so the flying-steed
+  grants (mml 7/9/11) stay contract-side;
+  noted in the spec's audit_comment and
+  banner. The user's ./bn 777 detour
+  (struck per the R516 rule) caused no
+  drift - the gate md5
+  90b9910b7ef5aba5f865a89c95f1e16b printed
+  exactly. rverify GREEN first try
+  (double-run 11 patches applied/already
+  clean, 12 mutants 0 missed); static
+  checks: include lands at regtest 480
+  right after the R776 mountcombat include,
+  no hyphen tokens in the audit block.
+  spec md5
+  fd85f40a9e8ffb035b86f316e6443b86, gate
+  md5 90b9910b7ef5aba5f865a89c95f1e16b,
+  canvas md5 bbca2084f98f444ac0c957006e57c051.
+  NEXT - R778: the next target awaits
+  Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

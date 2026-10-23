@@ -37,6 +37,7 @@
 #include "../ai/actor.h"
 #include "../dm/dm.h"
 #include "../dm/outdoormove.h"   // R123: pp.58-59 daily rates
+#include "../rules/saddle.h"  // R777: the sdd kind ladder
 #include "messagelog.h"
 #include "../spells/spells.h"
 
@@ -1253,6 +1254,48 @@ inline int companyFootMilesPerDay(const Party& p,
         if (c.hp <= 0) continue;   // the fallen are carried
         int m = dm::footMilesPerDay(
             dm::footBurdenFor(memberLoad(p, c)), tc);
+        if (worst == 0 || m < worst) worst = m;
+    }
+    if (p.henchmanPresent) {
+        int m = dm::footMilesPerDay(
+            dm::footBurdenFor(henchmanCarryWeight(p)), tc);
+        if (worst == 0 || m < worst) worst = m;
+    }
+    return worst;
+}
+
+// R778: the sdd warhorse kind -> the R123 dm mount row (the
+// kind ladder is the saddle header's, never a raw int)
+inline dm::MountKind warhorseDmKind(int mountKind) {
+    if (mountKind == rules::sddKindLightWar())
+        return dm::MOUNT_LIGHT;
+    if (mountKind == rules::sddKindMediumWar())
+        return dm::MOUNT_MEDIUM;
+    return dm::MOUNT_HEAVY;
+}
+
+// R778: the company's mounted miles/day (DMG pp.58-59) - the
+// R123 feeder goes live. A living member on a warhorse kind
+// (2-4, the sdd ladder) rides at his mount's rate; every
+// other member walks at his burden class (the draft is a
+// cart animal; the riding horse and pony stay out this
+// round). The company rides at the slowest member's pace -
+// a walker still gates it. The henchman walks.
+inline int companyRiderMilesPerDay(const Party& p,
+                                  dm::TerrainClass tc) {
+    int worst = 0;
+    for (const auto& c : p.members) {
+        if (c.hp <= 0) continue;   // the fallen are carried
+        int m;
+        if (c.mountKind >= rules::sddKindLightWar()
+            && c.mountKind
+               <= rules::sddKindHeavyWar()) {
+            m = dm::mountedMilesPerDay(
+                warhorseDmKind(c.mountKind), tc);
+        } else {
+            m = dm::footMilesPerDay(
+                dm::footBurdenFor(memberLoad(p, c)), tc);
+        }
         if (worst == 0 || m < worst) worst = m;
     }
     if (p.henchmanPresent) {

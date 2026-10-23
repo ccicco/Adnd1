@@ -42,12 +42,15 @@ dm::OutdoorClime AppState::overlandClime() const{
 }
 
 // ---- overlandMilesPerDay ----
-// R123: the DMG pp.58-59 afoot rate - the company moves at
-// the slowest walker's pace (the true loads decide the book's
-// burden classes; the terrain class is the route's)
+// R778: the DMG pp.58-59 mounted rate - the R123 feeder
+// goes live: a living member on a warhorse kind (2-4, the
+// sdd ladder) rides at his mount's rate, every other
+// member walks at his burden class, and the company
+// rides at the slowest member's pace (a walker still
+// gates it; the henchman walks; the fallen are carried)
 int AppState::overlandMilesPerDay() const{
         if (mode != MODE_OVERLAND) return 0;
-        return companyFootMilesPerDay(
+        return companyRiderMilesPerDay(
             party, dm::terrainClass(
                        (dm::OutdoorTerrain)overland.terrain));
     }
