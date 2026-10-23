@@ -19712,6 +19712,59 @@ when both halves land.
   GREEN first pass. NEXT - R785: awaits
   Curtiss's call (Appendix S is now fully
   pinned through the prose boundary).
+- R785 LANDED 2026-10-23: commit
+  2969a867d32906e5438f48ef1b3c20b7c3a933ff
+  (census 707 -> 708, pushed 9c32b6c..2969a86),
+  THE UA SPELL TABLE LEDGER - the R342 PDF-ledger
+  repair (Curtiss's "stay in covered books" call),
+  sourced from the archive.org full-text OCR of
+  the continued table. REPAIRED ROSTERS (the
+  string arrays ride rules/uaspelltables2.h):
+  6th = 17 (the column reads at last - the twelve
+  readable cells, Chain Lightning, Ensnarement,
+  Mordenkainen's Lucubration, Death Spell and
+  Disintegrate; the loss flag flips), 7th = 16,
+  8th = 10, 9th = 8 (Succor included - the level
+  seam-proven by its section heading, equal
+  evidentiary status with the other UA-new
+  names). Clone and Otiluke's Telekinetic Sphere
+  newly read; the contamination repairs re-seat
+  the drifted cells (Invisible Stalker and the
+  Tenser/Transmute pair are 6th-column cells);
+  Glassteel and Power Word Kill DROP to open
+  holes (absent from the print, the
+  descriptions, and the registry); the row-number
+  column contradicts the alphabetical order and
+  stays unpinned; the "Whip" doubt STRIKES
+  (uam2WhipName); the illusionist UA-new
+  censuses pin at 4/4/4/4/2 = 18. THE PINS:
+  header rules/spelltableledger.h, prefix sld,
+  13 consts + 20 bools + the 4 x 3 ledger grid
+  (tag MuLedger), 13 file patches (7 on
+  uaspelltables2.h, 6 on regtest). TWO SEAM
+  LESSONS: (a) the R361/R362 audits carry
+  absent-name loops over the old rosters - a
+  roster repair MUST reverse them or the build
+  breaks (grep every accessor user in regtest
+  before a roster flip); (b) those loops
+  matched PREFIX strings with strcmp == 0 -
+  safe while the names were absent, but
+  reversing to != 0 demands the FULL exact
+  strings (the first preflight went RED on bad
+  2: the truncated Mansion string plus the
+  Invisible Stalker check pointed at 7th idx 1
+  where Charm Plants sits; two more latent bads
+  sat in the R362 seam - simulate every patched
+  strcmp against the emitted arrays before
+  handoff, the engine cannot catch it: it is
+  INT-only). rverify GREEN (45 mutants,
+  0 missed), TWO prefights (RED first pass,
+  GREEN after the spec fix - restore the tree
+  before re-running: git checkout the three
+  patched files + rm the header). NEXT - R786:
+  awaits Curtiss's call (the UA spell-table
+  ledger is closed; the noted holes stay
+  noted, not pinned).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

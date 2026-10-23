@@ -1,0 +1,1067 @@
+{
+  "round": 786,
+  "prefix": "udp",
+  "header_file": "rules/uadeityprose1.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/oa_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 708,
+  "title": "the dwarven deity prose",
+  "audit_label": "R786 dwarven deity prose audit",
+  "audit_comment": "THE DWARVEN DEITY PROSE - part 1 of the Appendix S description-paragraph pins (the prose alone stays open no more, the dwarves open it). The archive.org full-text OCR of pp. 110-113 reads the five dwarven blocks scan-clean: the Clanggedin fortress and anti-giant methods, the Vergadain con-games and treasure-sensing sword, the Dumathoin veins and earth elementals, the Abbathor greed mechanics and level-draining dagger, the Berronar braid-of-gold and the paladin grant. The stat-block lines stay R406/R783; these paragraphs ride rules/uadeityprose1.h.",
+  "include_comment": "the dwarven deity prose",
+  "include_after": "#include \"rules/spelltableledger.h\"  // R785: the UA spell table ledger",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R785 LANDED 2026-10-23: commit",
+  "prev_record": [
+    "- R785 LANDED 2026-10-23: commit",
+    "  2969a867d32906e5438f48ef1b3c20b7c3a933ff",
+    "  (census 707 -> 708, pushed 9c32b6c..2969a86),",
+    "  THE UA SPELL TABLE LEDGER - the R342 PDF-ledger",
+    "  repair (Curtiss's \"stay in covered books\" call),",
+    "  sourced from the archive.org full-text OCR of",
+    "  the continued table. REPAIRED ROSTERS (the",
+    "  string arrays ride rules/uaspelltables2.h):",
+    "  6th = 17 (the column reads at last - the twelve",
+    "  readable cells, Chain Lightning, Ensnarement,",
+    "  Mordenkainen's Lucubration, Death Spell and",
+    "  Disintegrate; the loss flag flips), 7th = 16,",
+    "  8th = 10, 9th = 8 (Succor included - the level",
+    "  seam-proven by its section heading, equal",
+    "  evidentiary status with the other UA-new",
+    "  names). Clone and Otiluke's Telekinetic Sphere",
+    "  newly read; the contamination repairs re-seat",
+    "  the drifted cells (Invisible Stalker and the",
+    "  Tenser/Transmute pair are 6th-column cells);",
+    "  Glassteel and Power Word Kill DROP to open",
+    "  holes (absent from the print, the",
+    "  descriptions, and the registry); the row-number",
+    "  column contradicts the alphabetical order and",
+    "  stays unpinned; the \"Whip\" doubt STRIKES",
+    "  (uam2WhipName); the illusionist UA-new",
+    "  censuses pin at 4/4/4/4/2 = 18. THE PINS:",
+    "  header rules/spelltableledger.h, prefix sld,",
+    "  13 consts + 20 bools + the 4 x 3 ledger grid",
+    "  (tag MuLedger), 13 file patches (7 on",
+    "  uaspelltables2.h, 6 on regtest). TWO SEAM",
+    "  LESSONS: (a) the R361/R362 audits carry",
+    "  absent-name loops over the old rosters - a",
+    "  roster repair MUST reverse them or the build",
+    "  breaks (grep every accessor user in regtest",
+    "  before a roster flip); (b) those loops",
+    "  matched PREFIX strings with strcmp == 0 -",
+    "  safe while the names were absent, but",
+    "  reversing to != 0 demands the FULL exact",
+    "  strings (the first preflight went RED on bad",
+    "  2: the truncated Mansion string plus the",
+    "  Invisible Stalker check pointed at 7th idx 1",
+    "  where Charm Plants sits; two more latent bads",
+    "  sat in the R362 seam - simulate every patched",
+    "  strcmp against the emitted arrays before",
+    "  handoff, the engine cannot catch it: it is",
+    "  INT-only). rverify GREEN (45 mutants,",
+    "  0 missed), TWO prefights (RED first pass,",
+    "  GREEN after the spec fix - restore the tree",
+    "  before re-running: git checkout the three",
+    "  patched files + rm the header). NEXT - R786:",
+    "  awaits Curtiss's call (the UA spell-table",
+    "  ledger is closed; the noted holes stay",
+    "  noted, not pinned)."
+  ],
+  "banner": {
+    "title": "THE DWARVEN DEITY PROSE - the Appendix S description paragraphs open: Clanggedin, Vergadain, Dumathoin, Abbathor, and Berronar pin from the clean archive.org OCR read",
+    "provenance": "The R784 worship-sites round left the per-deity description prose open (\"the prose alone stays open\"); this is part 1 of the five-part close. The five dwarven blocks (pp. 110-113) read scan-clean in the archive.org full-text OCR: no flagged holes, every pin below is the printed text. The stat-block numerics stay R406/R783; the paragraph-level facts pin here - the combat gear bonuses, the special abilities, the worship customs, and the pantheon relationships. The dvpProseStaysOpen pin keeps true (18 paragraphs remain); parts 2-5 cover the elves, halflings, gnomes, and orcs."
+  },
+  "consts": [
+    {
+      "name": "udpProseRound",
+      "value": 786,
+      "comment": "The prose round: the Appendix S description paragraphs open here (part 1, the dwarves)"
+    },
+    {
+      "name": "udpStatblockFeederRound",
+      "value": 406,
+      "comment": "The feeder round: the R406 stat blocks these paragraphs hang under"
+    },
+    {
+      "name": "udpDwarvenDeityCount",
+      "value": 5,
+      "comment": "The dwarven census: five blocks described (Clanggedin, Vergadain, Dumathoin, Abbathor, Berronar)"
+    },
+    {
+      "name": "udpClnGiantAttackToHitMod",
+      "value": -4,
+      "comment": "Giant-type creatures attack Clanggedin at a -4 penalty to hit, the same as for mortal dwarves"
+    },
+    {
+      "name": "udpClnAxeBonus",
+      "value": 4,
+      "comment": "Clanggedin wields a mithral battle axe +4 in each hand"
+    },
+    {
+      "name": "udpClnAxeThrowYards",
+      "value": 100,
+      "comment": "He can throw the axes with either hand up to 100 yards"
+    },
+    {
+      "name": "udpClnChainMailBonus",
+      "value": 5,
+      "comment": "His armor is steel chain mail +5"
+    },
+    {
+      "name": "udpVgdMailBonus",
+      "value": 5,
+      "comment": "Underneath his suit is a set of golden mail +5"
+    },
+    {
+      "name": "udpVgdHeightMinFeet",
+      "value": 1,
+      "comment": "His necklace changes his height at will, between one foot"
+    },
+    {
+      "name": "udpVgdHeightMaxFeet",
+      "value": 15,
+      "comment": "and 15 feet"
+    },
+    {
+      "name": "udpVgdSwordBonus",
+      "value": 4,
+      "comment": "At his side is a sword +4"
+    },
+    {
+      "name": "udpVgdSwordDetectInches",
+      "value": 2,
+      "comment": "The sword detects all treasures within 2 inches when the hilt is grasped"
+    },
+    {
+      "name": "udpDumVeinMetalCount",
+      "value": 5,
+      "comment": "He lays veins of iron, copper, gold, silver, and mithral - five metals"
+    },
+    {
+      "name": "udpDumMinerGemGpValue",
+      "value": 10,
+      "comment": "Miners carry a small diamond or gemstone (10 gp value) to attract his favor"
+    },
+    {
+      "name": "udpDumMattockBonus",
+      "value": 5,
+      "comment": "He owns a great two-handed mattock +5 of solidified magma"
+    },
+    {
+      "name": "udpDumElementalsPerDay",
+      "value": 1,
+      "comment": "Once per day he may summon earth elementals"
+    },
+    {
+      "name": "udpDumElementalsMin",
+      "value": 3,
+      "comment": "The summoning brings at least 3 elementals"
+    },
+    {
+      "name": "udpDumElementalsMax",
+      "value": 18,
+      "comment": "and at most 18"
+    },
+    {
+      "name": "udpDumElementalHitDice",
+      "value": 16,
+      "comment": "Each elemental has 16 hit dice"
+    },
+    {
+      "name": "udpDumEarthSpellLevel",
+      "value": 30,
+      "comment": "He uses metal-, earth-, or stone-related magic-user spells at the 30th level of ability"
+    },
+    {
+      "name": "udpAbbStealTreasureGpLimit",
+      "value": 1000,
+      "comment": "He steals any magical item, or treasure worth more than 1,000 gp"
+    },
+    {
+      "name": "udpAbbStealOrSlayPct",
+      "value": 50,
+      "comment": "A 50 percent chance of either stealing outright or slaying the owner then taking it"
+    },
+    {
+      "name": "udpAbbDaggerBonus",
+      "value": 5,
+      "comment": "He uses a dagger +5 with a diamond blade and jeweled hilt"
+    },
+    {
+      "name": "udpAbbDaggerDamageMin",
+      "value": 2,
+      "comment": "The dagger does a base of 2-24 points of damage: the minimum 2"
+    },
+    {
+      "name": "udpAbbDaggerDamageMax",
+      "value": 24,
+      "comment": "and the maximum 24"
+    },
+    {
+      "name": "udpAbbDaggerDetectInches",
+      "value": 2,
+      "comment": "It detects precious metals (type and amount) in a 2-inch radius"
+    },
+    {
+      "name": "udpAbbDaggerLevelLossOnGrasp",
+      "value": 1,
+      "comment": "Anyone but Abbathor who grasps it loses one experience level at once"
+    },
+    {
+      "name": "udpAbbDaggerLevelLossPerRound",
+      "value": 1,
+      "comment": "and another level each round it is held"
+    },
+    {
+      "name": "udpAbbShieldBlindSaveMod",
+      "value": -6,
+      "comment": "His shield casts one cause blindness spell per round, save at -6"
+    },
+    {
+      "name": "udpAbbShieldBlindRangeInches",
+      "value": 3,
+      "comment": "at any single target within 3 inches"
+    },
+    {
+      "name": "udpBerChainMailBonus",
+      "value": 5,
+      "comment": "She appears a huge dwarf wearing +5 chainmail of bright silver"
+    },
+    {
+      "name": "udpBerBraidRowCount",
+      "value": 4,
+      "comment": "Her brown beard is braided into four rows"
+    },
+    {
+      "name": "udpBerBraidRegrowDays",
+      "value": 1,
+      "comment": "A cut braid regrows in a single day"
+    },
+    {
+      "name": "udpBerLockGoldMinGp",
+      "value": 10000,
+      "comment": "The cut lock turns to gold worth 10,000 gp at minimum"
+    },
+    {
+      "name": "udpBerLockGoldMaxGp",
+      "value": 40000,
+      "comment": "and at most 40,000 gp"
+    },
+    {
+      "name": "udpBerMaceBonus",
+      "value": 4,
+      "comment": "She wields a +4 mace of gold and steel"
+    },
+    {
+      "name": "udpBerMaceSaveMod",
+      "value": -4,
+      "comment": "It slays evil thieves and all assassins on contact, save versus death magic at -4"
+    },
+    {
+      "name": "udpBerTruthRingRadiusInches",
+      "value": 10,
+      "comment": "One silver ring prevents anyone knowingly telling a falsehood within 10 inches of her"
+    },
+    {
+      "name": "udpBerTheftRingSaveMod",
+      "value": -2,
+      "comment": "The other prevents thieving in the same area unless its user saves versus spell at -2 each round"
+    },
+    {
+      "name": "udpBerPaladinChancePct",
+      "value": 5,
+      "comment": "A lawful good dwarven fighter appeal with a large sacrifice: a 5 percent chance of paladin powers of equal level"
+    },
+    {
+      "name": "udpBerPaladinDaysMin",
+      "value": 3,
+      "comment": "The powers last 3-6 days: the minimum 3"
+    },
+    {
+      "name": "udpBerPaladinDaysMax",
+      "value": 6,
+      "comment": "and the maximum 6"
+    },
+    {
+      "name": "udpBerPaladinOncePerYears",
+      "value": 10,
+      "comment": "The grant may come only once every 10 years to any individual"
+    }
+  ],
+  "bools": [
+    {
+      "name": "udpClnFortressSouls",
+      "value": true,
+      "comment": "Bald and silver-bearded, he lives in a vast mountain fortress manned by the souls of the finest dwarven warriors"
+    },
+    {
+      "name": "udpClnTaughtGiantMethods",
+      "value": true,
+      "comment": "He taught the dwarves many special methods of combating giant-types"
+    },
+    {
+      "name": "udpClnPassedSkillsToGnomes",
+      "value": true,
+      "comment": "and passed his knowledge and skills on to the gnomish gods as well"
+    },
+    {
+      "name": "udpClnHatesGrolantor",
+      "value": true,
+      "comment": "His most hated enemies are Grolantor the hill giant god and that deity's followers"
+    },
+    {
+      "name": "udpClnSingsInBattle",
+      "value": true,
+      "comment": "In the heat of battle he is fond of singing, unnerving opponents and increasing his followers' morale"
+    },
+    {
+      "name": "udpClnThrownAxesStrikeAsHand",
+      "value": true,
+      "comment": "His thrown axes do damage as if he had struck the target by hand, with all appropriate bonuses"
+    },
+    {
+      "name": "udpClnSpellsIndirectOnly",
+      "value": true,
+      "comment": "He usually uses his magical spell ability only to indirectly affect the course of events"
+    },
+    {
+      "name": "udpClnAvoidsSpellsInMelee",
+      "value": true,
+      "comment": "He resorts to spells or spell devices in close combat only when his Prime Material existence is at stake"
+    },
+    {
+      "name": "udpVgdMerchantsPatron",
+      "value": true,
+      "comment": "The patron god of dwarven merchants"
+    },
+    {
+      "name": "udpVgdNonevilThievesPatron",
+      "value": true,
+      "comment": "and of most non-evil dwarven thieves is the scheming Vergadain"
+    },
+    {
+      "name": "udpVgdPoetClueVerses",
+      "value": true,
+      "comment": "A great poet, he dispenses treasure-location clues hidden in a verse or rhyme"
+    },
+    {
+      "name": "udpVgdEvaluatesTreasure",
+      "value": true,
+      "comment": "His bard-like talents give him the ability to carefully evaluate treasures as to their true nature and worth"
+    },
+    {
+      "name": "udpVgdBrownAndYellow",
+      "value": true,
+      "comment": "He appears a huge dwarf wearing brown and yellow clothing"
+    },
+    {
+      "name": "udpVgdConGames",
+      "value": true,
+      "comment": "His adventures concern elaborate con games played on human, demi-human, humanoid, and giant victims"
+    },
+    {
+      "name": "udpVgdSuspiciousFollowers",
+      "value": true,
+      "comment": "His followers are usually seen as suspicious characters; few dwarves will willingly admit worshiping him"
+    },
+    {
+      "name": "udpVgdDenialNotOffensive",
+      "value": true,
+      "comment": "A follower's denial of the deity does not offend him, so long as the proper sacrifices are made"
+    },
+    {
+      "name": "udpDumHidesSecrets",
+      "value": true,
+      "comment": "He hides the secrets of the earth until they are ready to be uncovered by the diligent and the deserving"
+    },
+    {
+      "name": "udpDumProtectorOfMountainDwarves",
+      "value": true,
+      "comment": "He is the protector of the mountain dwarves"
+    },
+    {
+      "name": "udpDumKeeperOfMetals",
+      "value": true,
+      "comment": "the keeper of all metals"
+    },
+    {
+      "name": "udpDumNeverSpeaks",
+      "value": true,
+      "comment": "He has never been known to speak, keeping his wisdom to himself, though he may send subtle clues to keen observers"
+    },
+    {
+      "name": "udpDumMoradinNamed",
+      "value": true,
+      "comment": "Moradin named him protector of the mountain dwarves"
+    },
+    {
+      "name": "udpDumParadiseForDwarves",
+      "value": true,
+      "comment": "He created a paradise for the mountain dwarves to enjoy"
+    },
+    {
+      "name": "udpDumPleasedByCraftsmanship",
+      "value": true,
+      "comment": "Angered when the dwarves destroyed the mountains, his anger turned to pleasure at the finely crafted metal items they produced"
+    },
+    {
+      "name": "udpDumHatesPlunderers",
+      "value": true,
+      "comment": "His enemies are those who plunder the earth's riches for unfair or selfish purposes"
+    },
+    {
+      "name": "udpDumAllowsMining",
+      "value": true,
+      "comment": "He does not object to tunneling, mining, or the keeping of treasures underground"
+    },
+    {
+      "name": "udpDumGrayStoneHair",
+      "value": true,
+      "comment": "He appears a gigantic dwarven figure with hair and beard of gray stone"
+    },
+    {
+      "name": "udpDumEarthBrownSkin",
+      "value": true,
+      "comment": "earth-brown skin"
+    },
+    {
+      "name": "udpDumSilverFireEyes",
+      "value": true,
+      "comment": "and eyes of silver fire"
+    },
+    {
+      "name": "udpDumElementalsFightToDeath",
+      "value": true,
+      "comment": "The summoned elementals fight for him to the death, instantly, at will"
+    },
+    {
+      "name": "udpDumEarthSpellsOnly",
+      "value": true,
+      "comment": "He may use only metal-, earth-, or stone-related magic-user spells, no others"
+    },
+    {
+      "name": "udpDumFriendlyToNonDwarves",
+      "value": true,
+      "comment": "Unlike most dwarven deities he maintains friendly relations with non-dwarven deities, though only a few"
+    },
+    {
+      "name": "udpDumHephaestusAlly",
+      "value": true,
+      "comment": "One of his closest allies is Hephaestus, whom he supplies with adamantite ore"
+    },
+    {
+      "name": "udpAbbTreacherousAlly",
+      "value": true,
+      "comment": "At times an ally of the other dwarven gods, his treachery and lust for treasure make him a dangerous associate"
+    },
+    {
+      "name": "udpAbbNeverHelpsNonDwarves",
+      "value": true,
+      "comment": "He will never help any non-dwarven deity or creature"
+    },
+    {
+      "name": "udpAbbOriginallyAppreciation",
+      "value": true,
+      "comment": "Originally his sphere was the appreciation of valuable gems and metals, not necessarily at others' expense"
+    },
+    {
+      "name": "udpAbbEmbitteredByChoice",
+      "value": true,
+      "comment": "He became embittered when Moradin appointed Dumathoin protector of the mountain dwarves instead of him"
+    },
+    {
+      "name": "udpAbbGoldenCaverns",
+      "value": true,
+      "comment": "His home caverns are said to be made of purest gold - fact or legend"
+    },
+    {
+      "name": "udpAbbSlayOrSteal",
+      "value": true,
+      "comment": "On seeing any magical item or treasure over the limit he attempts to steal it outright or slay the owner and take it"
+    },
+    {
+      "name": "udpAbbWearsFurs",
+      "value": true,
+      "comment": "He wears leather armor and furs made from the skins of beings who opposed him"
+    },
+    {
+      "name": "udpAbbDaggerDiamondBlade",
+      "value": true,
+      "comment": "His dagger has a diamond blade and jewels set into the hilt"
+    },
+    {
+      "name": "udpAbbDaggerDetectsMetals",
+      "value": true,
+      "comment": "The dagger detects the presence of precious metals, type and amount"
+    },
+    {
+      "name": "udpAbbDaggerDrainsGraspers",
+      "value": true,
+      "comment": "Anyone but Abbathor who grasps the weapon suffers experience-level loss"
+    },
+    {
+      "name": "udpAbbShieldBlinds",
+      "value": true,
+      "comment": "His shield casts one cause blindness spell per round at a single target at a time"
+    },
+    {
+      "name": "udpAbbTruceWithVergadain",
+      "value": true,
+      "comment": "He maintains an uneasy truce with Vergadain, with whom he sometimes roams the Prime Material for treasure"
+    },
+    {
+      "name": "udpAbbDestroysIfFrustrated",
+      "value": true,
+      "comment": "If frustrated when attempting to steal an item he will try to destroy it"
+    },
+    {
+      "name": "udpBerGreatestGoddess",
+      "value": true,
+      "comment": "The greatest of all dwarven goddesses is usually held to be Berronar"
+    },
+    {
+      "name": "udpBerLivesAtSoulForge",
+      "value": true,
+      "comment": "She lives with Moradin in the Seven Heavens at the Soul Forge beneath the mountains"
+    },
+    {
+      "name": "udpBerPatronessOfMarriage",
+      "value": true,
+      "comment": "She is the patroness of marriage and love, but not necessarily romance"
+    },
+    {
+      "name": "udpBerInvokedAgainstThieves",
+      "value": true,
+      "comment": "Her name is invoked in small home rituals for protection from thieves and duplicity"
+    },
+    {
+      "name": "udpBerLockTurnsToGold",
+      "value": true,
+      "comment": "At the end of the day a cut lock of her hair turns to gold"
+    },
+    {
+      "name": "udpBerGivesLocksToPoor",
+      "value": true,
+      "comment": "She sometimes gives locks of her hair to dwarven communities that are exceptionally poor or hard-pressed"
+    },
+    {
+      "name": "udpBerLockNeedsTopCleric",
+      "value": true,
+      "comment": "The gift must be invoked by a lawful good dwarven cleric of the highest level in the colony, and is extremely rare"
+    },
+    {
+      "name": "udpBerGoldVanishesIfMisused",
+      "value": true,
+      "comment": "If this gold or any part of it is used for other than good purposes it will all disappear"
+    },
+    {
+      "name": "udpBerMaceSlaysEvilThieves",
+      "value": true,
+      "comment": "Her mace slays evil thieves and all assassins on contact"
+    },
+    {
+      "name": "udpBerRingTruth",
+      "value": true,
+      "comment": "One of her two silver rings of great power prevents anyone from knowingly telling a falsehood within its radius"
+    },
+    {
+      "name": "udpBerRingTheft",
+      "value": true,
+      "comment": "The other prevents the use of thieving abilities by mortals in the same area, unless they save versus spell each round of use"
+    },
+    {
+      "name": "udpBerInspiredRingCustom",
+      "value": true,
+      "comment": "She is said to have inspired the dwarven custom of exchanging rings for exceptional mutual trust and love"
+    },
+    {
+      "name": "udpBerRingCustomLawfulGood",
+      "value": true,
+      "comment": "The ceremony is almost never undertaken with a non-dwarf, and both participants must be lawful good"
+    },
+    {
+      "name": "udpBerGrantsPaladinPowers",
+      "value": true,
+      "comment": "She may bestow the powers of a paladin of equal level upon a lawful good dwarven fighter who appeals with an appropriately large sacrifice"
+    },
+    {
+      "name": "udpBerPureHeartOnly",
+      "value": true,
+      "comment": "Only dwarves of exceptionally pure heart are considered for the paladin grant"
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the round consts (the prose round, the feeder round, the census)",
+      "expr": "m['udpProseRound']() != 786 or m['udpStatblockFeederRound']() != 406 or m['udpDwarvenDeityCount']() != 5"
+    },
+    {
+      "note": "the Clanggedin prose walk",
+      "expr": "m['udpClnGiantAttackToHitMod']() != -4 or m['udpClnAxeBonus']() != 4 or m['udpClnAxeThrowYards']() != 100 or m['udpClnChainMailBonus']() != 5 or m['udpClnFortressSouls']() != 1 or m['udpClnTaughtGiantMethods']() != 1 or m['udpClnPassedSkillsToGnomes']() != 1 or m['udpClnHatesGrolantor']() != 1 or m['udpClnSingsInBattle']() != 1 or m['udpClnThrownAxesStrikeAsHand']() != 1 or m['udpClnSpellsIndirectOnly']() != 1 or m['udpClnAvoidsSpellsInMelee']() != 1"
+    },
+    {
+      "note": "the Vergadain prose walk",
+      "expr": "m['udpVgdMailBonus']() != 5 or m['udpVgdHeightMinFeet']() != 1 or m['udpVgdHeightMaxFeet']() != 15 or m['udpVgdSwordBonus']() != 4 or m['udpVgdSwordDetectInches']() != 2 or m['udpVgdMerchantsPatron']() != 1 or m['udpVgdNonevilThievesPatron']() != 1 or m['udpVgdPoetClueVerses']() != 1 or m['udpVgdEvaluatesTreasure']() != 1 or m['udpVgdBrownAndYellow']() != 1 or m['udpVgdConGames']() != 1 or m['udpVgdSuspiciousFollowers']() != 1 or m['udpVgdDenialNotOffensive']() != 1"
+    },
+    {
+      "note": "the Dumathoin prose walk",
+      "expr": "m['udpDumVeinMetalCount']() != 5 or m['udpDumMinerGemGpValue']() != 10 or m['udpDumMattockBonus']() != 5 or m['udpDumElementalsPerDay']() != 1 or m['udpDumElementalsMin']() != 3 or m['udpDumElementalsMax']() != 18 or m['udpDumElementalHitDice']() != 16 or m['udpDumEarthSpellLevel']() != 30 or m['udpDumHidesSecrets']() != 1 or m['udpDumProtectorOfMountainDwarves']() != 1 or m['udpDumKeeperOfMetals']() != 1 or m['udpDumNeverSpeaks']() != 1 or m['udpDumMoradinNamed']() != 1 or m['udpDumParadiseForDwarves']() != 1 or m['udpDumPleasedByCraftsmanship']() != 1 or m['udpDumHatesPlunderers']() != 1 or m['udpDumAllowsMining']() != 1 or m['udpDumGrayStoneHair']() != 1 or m['udpDumEarthBrownSkin']() != 1 or m['udpDumSilverFireEyes']() != 1 or m['udpDumElementalsFightToDeath']() != 1 or m['udpDumEarthSpellsOnly']() != 1 or m['udpDumFriendlyToNonDwarves']() != 1 or m['udpDumHephaestusAlly']() != 1"
+    },
+    {
+      "note": "the Abbathor prose walk",
+      "expr": "m['udpAbbStealTreasureGpLimit']() != 1000 or m['udpAbbStealOrSlayPct']() != 50 or m['udpAbbDaggerBonus']() != 5 or m['udpAbbDaggerDamageMin']() != 2 or m['udpAbbDaggerDamageMax']() != 24 or m['udpAbbDaggerDetectInches']() != 2 or m['udpAbbDaggerLevelLossOnGrasp']() != 1 or m['udpAbbDaggerLevelLossPerRound']() != 1 or m['udpAbbShieldBlindSaveMod']() != -6 or m['udpAbbShieldBlindRangeInches']() != 3 or m['udpAbbTreacherousAlly']() != 1 or m['udpAbbNeverHelpsNonDwarves']() != 1 or m['udpAbbOriginallyAppreciation']() != 1 or m['udpAbbEmbitteredByChoice']() != 1 or m['udpAbbGoldenCaverns']() != 1 or m['udpAbbSlayOrSteal']() != 1 or m['udpAbbWearsFurs']() != 1 or m['udpAbbDaggerDiamondBlade']() != 1 or m['udpAbbDaggerDetectsMetals']() != 1 or m['udpAbbDaggerDrainsGraspers']() != 1 or m['udpAbbShieldBlinds']() != 1 or m['udpAbbTruceWithVergadain']() != 1 or m['udpAbbDestroysIfFrustrated']() != 1"
+    },
+    {
+      "note": "the Berronar prose walk",
+      "expr": "m['udpBerChainMailBonus']() != 5 or m['udpBerBraidRowCount']() != 4 or m['udpBerBraidRegrowDays']() != 1 or m['udpBerLockGoldMinGp']() != 10000 or m['udpBerLockGoldMaxGp']() != 40000 or m['udpBerMaceBonus']() != 4 or m['udpBerMaceSaveMod']() != -4 or m['udpBerTruthRingRadiusInches']() != 10 or m['udpBerTheftRingSaveMod']() != -2 or m['udpBerPaladinChancePct']() != 5 or m['udpBerPaladinDaysMin']() != 3 or m['udpBerPaladinDaysMax']() != 6 or m['udpBerPaladinOncePerYears']() != 10 or m['udpBerGreatestGoddess']() != 1 or m['udpBerLivesAtSoulForge']() != 1 or m['udpBerPatronessOfMarriage']() != 1 or m['udpBerInvokedAgainstThieves']() != 1 or m['udpBerLockTurnsToGold']() != 1 or m['udpBerGivesLocksToPoor']() != 1 or m['udpBerLockNeedsTopCleric']() != 1 or m['udpBerGoldVanishesIfMisused']() != 1 or m['udpBerMaceSlaysEvilThieves']() != 1 or m['udpBerRingTruth']() != 1 or m['udpBerRingTheft']() != 1 or m['udpBerInspiredRingCustom']() != 1 or m['udpBerRingCustomLawfulGood']() != 1 or m['udpBerGrantsPaladinPowers']() != 1 or m['udpBerPureHeartOnly']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the prose consts (the R786 wiring)": [
+      {
+        "kind": "const",
+        "name": "udpProseRound"
+      },
+      {
+        "kind": "const",
+        "name": "udpStatblockFeederRound"
+      },
+      {
+        "kind": "const",
+        "name": "udpDwarvenDeityCount"
+      },
+      {
+        "kind": "const",
+        "name": "udpClnGiantAttackToHitMod"
+      },
+      {
+        "kind": "const",
+        "name": "udpClnAxeBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udpClnAxeThrowYards"
+      },
+      {
+        "kind": "const",
+        "name": "udpClnChainMailBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udpVgdMailBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udpVgdHeightMinFeet"
+      },
+      {
+        "kind": "const",
+        "name": "udpVgdHeightMaxFeet"
+      },
+      {
+        "kind": "const",
+        "name": "udpVgdSwordBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udpVgdSwordDetectInches"
+      },
+      {
+        "kind": "const",
+        "name": "udpDumVeinMetalCount"
+      },
+      {
+        "kind": "const",
+        "name": "udpDumMinerGemGpValue"
+      },
+      {
+        "kind": "const",
+        "name": "udpDumMattockBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udpDumElementalsPerDay"
+      },
+      {
+        "kind": "const",
+        "name": "udpDumElementalsMin"
+      },
+      {
+        "kind": "const",
+        "name": "udpDumElementalsMax"
+      },
+      {
+        "kind": "const",
+        "name": "udpDumElementalHitDice"
+      },
+      {
+        "kind": "const",
+        "name": "udpDumEarthSpellLevel"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbStealTreasureGpLimit"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbStealOrSlayPct"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbDaggerBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbDaggerDamageMin"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbDaggerDamageMax"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbDaggerDetectInches"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbDaggerLevelLossOnGrasp"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbDaggerLevelLossPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbShieldBlindSaveMod"
+      },
+      {
+        "kind": "const",
+        "name": "udpAbbShieldBlindRangeInches"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerChainMailBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerBraidRowCount"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerBraidRegrowDays"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerLockGoldMinGp"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerLockGoldMaxGp"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerMaceBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerMaceSaveMod"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerTruthRingRadiusInches"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerTheftRingSaveMod"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerPaladinChancePct"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerPaladinDaysMin"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerPaladinDaysMax"
+      },
+      {
+        "kind": "const",
+        "name": "udpBerPaladinOncePerYears"
+      }
+    ],
+    "the prose bools (the R786 wiring)": [
+      {
+        "kind": "bool",
+        "name": "udpClnFortressSouls"
+      },
+      {
+        "kind": "bool",
+        "name": "udpClnTaughtGiantMethods"
+      },
+      {
+        "kind": "bool",
+        "name": "udpClnPassedSkillsToGnomes"
+      },
+      {
+        "kind": "bool",
+        "name": "udpClnHatesGrolantor"
+      },
+      {
+        "kind": "bool",
+        "name": "udpClnSingsInBattle"
+      },
+      {
+        "kind": "bool",
+        "name": "udpClnThrownAxesStrikeAsHand"
+      },
+      {
+        "kind": "bool",
+        "name": "udpClnSpellsIndirectOnly"
+      },
+      {
+        "kind": "bool",
+        "name": "udpClnAvoidsSpellsInMelee"
+      },
+      {
+        "kind": "bool",
+        "name": "udpVgdMerchantsPatron"
+      },
+      {
+        "kind": "bool",
+        "name": "udpVgdNonevilThievesPatron"
+      },
+      {
+        "kind": "bool",
+        "name": "udpVgdPoetClueVerses"
+      },
+      {
+        "kind": "bool",
+        "name": "udpVgdEvaluatesTreasure"
+      },
+      {
+        "kind": "bool",
+        "name": "udpVgdBrownAndYellow"
+      },
+      {
+        "kind": "bool",
+        "name": "udpVgdConGames"
+      },
+      {
+        "kind": "bool",
+        "name": "udpVgdSuspiciousFollowers"
+      },
+      {
+        "kind": "bool",
+        "name": "udpVgdDenialNotOffensive"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumHidesSecrets"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumProtectorOfMountainDwarves"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumKeeperOfMetals"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumNeverSpeaks"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumMoradinNamed"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumParadiseForDwarves"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumPleasedByCraftsmanship"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumHatesPlunderers"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumAllowsMining"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumGrayStoneHair"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumEarthBrownSkin"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumSilverFireEyes"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumElementalsFightToDeath"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumEarthSpellsOnly"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumFriendlyToNonDwarves"
+      },
+      {
+        "kind": "bool",
+        "name": "udpDumHephaestusAlly"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbTreacherousAlly"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbNeverHelpsNonDwarves"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbOriginallyAppreciation"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbEmbitteredByChoice"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbGoldenCaverns"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbSlayOrSteal"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbWearsFurs"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbDaggerDiamondBlade"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbDaggerDetectsMetals"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbDaggerDrainsGraspers"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbShieldBlinds"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbTruceWithVergadain"
+      },
+      {
+        "kind": "bool",
+        "name": "udpAbbDestroysIfFrustrated"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerGreatestGoddess"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerLivesAtSoulForge"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerPatronessOfMarriage"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerInvokedAgainstThieves"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerLockTurnsToGold"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerGivesLocksToPoor"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerLockNeedsTopCleric"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerGoldVanishesIfMisused"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerMaceSlaysEvilThieves"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerRingTruth"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerRingTheft"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerInspiredRingCustom"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerRingCustomLawfulGood"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerGrantsPaladinPowers"
+      },
+      {
+        "kind": "bool",
+        "name": "udpBerPureHeartOnly"
+      }
+    ]
+  },
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 238,
+    "open": 0
+  },
+  "caller_files": [
+    "rules/deitylines.h",
+    "rules/uaappends.h"
+  ],
+  "inline_count": 103,
+  "file_patches": [
+    {
+      "file": "rules/deitylines.h",
+      "note": "the stat-block prose note strike (the dwarven part pins)",
+      "from": "// The stat-block prose stays open - the lines pin, the paragraphs do not\ninline bool dvpProseStaysOpen()\n    { return true; }\n",
+      "to": "// R786: the dwarven paragraphs pin\n// (rules/uadeityprose1.h); the other\n// pantheons' prose stays open - the lines\n// pin, the paragraphs do not (yet)\ninline bool dvpProseStaysOpen()\n    { return true; }\n"
+    },
+    {
+      "file": "rules/uaappends.h",
+      "note": "the uaappends prose note strike",
+      "from": "// stat lines) in rules/deitylines.h;\n// the prose alone stays open.\n",
+      "to": "// stat lines) in rules/deitylines.h; the dwarven\n// prose pins in rules/uadeityprose1.h (R786); the\n// other pantheons' prose stays open.\n"
+    }
+  ]
+}
