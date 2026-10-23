@@ -71,6 +71,8 @@
 #include "../rules/thieffunc.h"  // R302: the silence percentile
 #include "../rules/uwfight.h"  // R313: the underwater strike gate
 #include "../rules/lancecharge.h"  // R779: the charge multiplier
+#include "../rules/weaponspeed.h"  // R158: the p.66 speed helpers
+#include "../rules/spearset.h"  // R781: the receive double
 
 #include <algorithm>
 #include <cstdio>
@@ -241,6 +243,25 @@ void Encounter::setDepthFt(int ft) {
 
 void Encounter::logLine(const std::string& s) {
     m_log.push_back({s});
+}
+
+// R781: the actor's weapon speed factor - the R158
+// ladder is name-keyed, so the registry name lowercases
+// and rides it (the footman mace/flail JUDGMENT per the
+// R158 header; missile weapons carry no factor - the
+// ladder returns 0 and the caller reads unknown)
+static int actorSpeedFactor(
+    const items::WeaponInstance& w) {
+    const char* n = items::weapon(w.id).name;
+    std::string s;
+    for (int i = 0; n[i]; ++i) {
+        char c = n[i];
+        if (c >= 'A' && c <= 'Z') c = c - 'A' + 'a';
+        s += c;
+    }
+    if (w.id == items::WPN_MACE) s = "footman mace";
+    if (w.id == items::WPN_FLAIL) s = "footman flail";
+    return rules::weaponSpeedFactor(s.c_str());
 }
 
 int Encounter::teamAlive(int team) const {
@@ -437,8 +458,8 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
     // as the charge - the mount covers the closing ground
     // (the JUDGMENT, the R232 surprise-as-from-behind
     // pattern). The spear set-to-receive needs a charging
-    // FOE - no monster charge concept exists; it stays
-    // contract-side.
+    // FOE - the R781 set-spear stance answers the closing
+    // blow (the counterstrike fold).
     if (attacker.isCharacter && attacker.mountKind
         && m_round == 1
         && attacker.weapon.id
@@ -448,6 +469,13 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
         dmg *= rules::lncLanceChargeMultiplier();
         logLine(attacker.name + " charges home - the lance "
                 "doubles its bite.");
+    }
+    // R781: the set spear's receive double - the one blow
+    // the counterstrike armed (the flag clears so the
+    // follow-up blows stay normal)
+    if (attacker.receiveBoost) {
+        dmg *= rules::spsSetDamageMultiplier();
+        attacker.receiveBoost = false;
     }
     if (dmg < 1) dmg = 1;
 
@@ -1245,6 +1273,21 @@ int Encounter::stepRound() {
     int throwMember = m_throwMember;
     m_throwMember = -1;
 
+    // R781: capture + clear the set-spear request
+    int setMember = m_setMember;
+    m_setMember = -1;
+
+    // R781: the DMG p.66 speed seam fold - declared here
+    // (the submitTeam lambda below reads them at call
+    // time); the computation lands after the monster
+    // caster is known. pFrontIdx/mFrontIdx ride the
+    // front melee actor per side (no reach layer).
+    int pFrontIdx = -1, mFrontIdx = -1;
+    int sfP = 0, sfM = 0;
+    int pShift = 0, mShift = 0;
+    int pSegOverride = 0, mSegOverride = 0;
+    int pExtra = 0, mExtra = 0;
+
     // R36: clear stale hurl markers - a throw event that never
     // resolved last round (actor incapacitated first) must not
     // misroute this round's arrow shots as hurled weapons
@@ -1318,6 +1361,24 @@ int Encounter::stepRound() {
                 sched.submit(act, baseSeg);
                 continue;
             }
+            // R781: the set-spear stance - the planted spear
+            // CONSUMES the round (one defensive posture, no
+            // attack submitted); only round one with a spear
+            // reads as a legal set (the charge must close
+            // ONTO it - a later round already closed)
+            if (idx == setMember && a.isCharacter) {
+                if (m_round == 1 &&
+                    a.weapon.id == items::WPN_SPEAR) {
+                    a.spearSet = true;
+                    logLine(a.name + " sets the spear to "
+                            "receive the charge.");
+                } else {
+                    logLine(a.name + " cannot set - the "
+                            "stance needs round one and a "
+                            "spear.");
+                }
+                continue;
+            }
             // R37: missile-armed monsters - an opening volley in
             // the FIRST round (one shot per attack routine at the
             // R7 +5-segment spacing), then they close to melee
@@ -1348,10 +1409,34 @@ int Encounter::stepRound() {
             // hasted actors act twice
             int attacks = a.attacksPerRound();
             if (a.hasStatus(spelleffects::STATUS_HASTED)) attacks *= 2;
+            // R781: the DMG p.66 seam rides the FRONT melee
+            // actor alone - the case-2 extras, the case-1
+            // tie shift, the case-3 vs-spell segment
+            bool front = (&team == &m_party &&
+                          idx == pFrontIdx) ||
+                         (&team == &m_monsters &&
+                          idx == mFrontIdx);
+            if (front && &team == &m_party)
+                attacks += pExtra;
+            else if (front)
+                attacks += mExtra;
             for (int i = 0; i < attacks; ++i) {
                 rules::Action a2 = act;
-                a2.segment = baseSeg + i * 5;   // routines 5 segs apart
-                sched.submit(a2, baseSeg + i * 5);
+                a2.segment = baseSeg + i * 5;
+                if (i == 0 && front) {
+                    if (&team == &m_party) {
+                        if (pSegOverride > 0)
+                            a2.segment = pSegOverride;
+                        else
+                            a2.segment += pShift;
+                    } else {
+                        if (mSegOverride > 0)
+                            a2.segment = mSegOverride;
+                        else
+                            a2.segment += mShift;
+                    }
+                }
+                sched.submit(a2, a2.segment);
             }
         }
     };
@@ -1369,6 +1454,82 @@ int Encounter::stepRound() {
         monsterCastIdx = i;
         monsterCastSpell = (spells::SpellId)id;
         break;
+    }
+
+    // R781: the DMG p.66 speed seam computes - each side's
+    // FRONT melee actor carries the factor (requests and
+    // volleys exclude; the monster caster excludes). The
+    // spear keeps its R158 default 7 on this seam; a set
+    // or charging round one exempts case 2 (the print's
+    // closing/charging bar - speedFactorApplies).
+    for (int i = 0; i < (int)m_party.size(); ++i) {
+        const Actor& a = m_party[i];
+        if (!a.canAct()) continue;
+        if (i == drinkMember || i == castMember ||
+            i == shootMember || i == throwMember ||
+            i == setMember)
+            continue;
+        int sf = actorSpeedFactor(a.weapon);
+        if (sf > 0) { pFrontIdx = i; sfP = sf; break; }
+    }
+    for (int i = 0; i < (int)m_monsters.size(); ++i) {
+        const Actor& a = m_monsters[i];
+        if (!a.canAct() || i == monsterCastIdx)
+            continue;
+        if (a.monsterRanged && a.rangedRounds > 0)
+            continue;
+        int sf = actorSpeedFactor(a.weapon);
+        if (sf > 0) { mFrontIdx = i; sfM = sf; break; }
+    }
+    // case 1 (DMG p.66 Simultaneous Initiative): a tie -
+    // the lower factor strikes first (+1 segment on the
+    // slower side's base; equal factors stay simultaneous)
+    if (winner == 0 && pFrontIdx >= 0 && mFrontIdx >= 0) {
+        int first = rules::speedFactorFirst(sfP, sfM);
+        if (first == -1) {
+            mShift = 1;
+            logLine("Initiative tie - the speed factors "
+                    "order the blows.");
+        } else if (first == 1) {
+            pShift = 1;
+            logLine("Initiative tie - the speed factors "
+                    "order the blows.");
+        }
+    }
+    // case 3 (DMG p.66 Other Weapon Factor Determinants):
+    // the weapon strikes at the mid-activity caster - the
+    // factor minus the losing die roll, negatives read as
+    // positive (clamped to a 1..10 segment; the clamp rides
+    // the fired branch alone - 0 stays unset, no override
+    // rides an unfired case)
+    if (pFrontIdx >= 0 && castMember >= 0 &&
+        winner == 1) {
+        pSegOverride =
+            rules::weaponVsActivitySegment(sfP, mIni);
+        if (pSegOverride < 1) pSegOverride = 1;
+        if (pSegOverride > 10) pSegOverride = 10;
+    }
+    if (mFrontIdx >= 0 && monsterCastIdx >= 0 &&
+        winner == -1) {
+        mSegOverride =
+            rules::weaponVsActivitySegment(sfM, pIni);
+        if (mSegOverride < 1) mSegOverride = 1;
+        if (mSegOverride > 10) mSegOverride = 10;
+    }
+    // case 2 (DMG p.66): after round one the faster front
+    // gains its before-attacks (the count minus one rides
+    // the +5 routine spacing - the JUDGMENT)
+    if (m_round > 1 && pFrontIdx >= 0 && mFrontIdx >= 0 &&
+        rules::speedFactorApplies(false)) {
+        int lo = sfP < sfM ? sfP : sfM;
+        int hi = sfP < sfM ? sfM : sfP;
+        int before = rules::speedFactorAttacksBefore(lo, hi);
+        if (before > 1) {
+            if (sfP < sfM) pExtra = before - 1;
+            else if (sfM < sfP) mExtra = before - 1;
+            logLine("The speed factor opens the extra "
+                    "attack window.");
+        }
     }
 
     submitTeam(m_party, baseSegP, drinkMember, castMember, castSpell,
@@ -1466,6 +1627,21 @@ int Encounter::stepRound() {
                 if (f.alive()) { target = &f; break; }
         }
         if (!target) break;
+
+        // R781: the set spear answers the closing foe - a
+        // planted spear against a monster blow strikes
+        // FIRST (the counterstrike; the monster's melee
+        // reads as the charge), the receive multiplier
+        // armed for that one blow, then the stance is done
+        if (!isParty && target->spearSet &&
+            target->weapon.id == items::WPN_SPEAR) {
+            target->spearSet = false;
+            target->receiveBoost = true;
+            logLine(target->name + " receives the charge - "
+                    "the set spear doubles its bite.");
+            resolveMelee(*target, attacker);
+            if (teamAlive(0) == 0) break;
+        }
 
         resolveMelee(attacker, *target);
 

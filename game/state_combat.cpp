@@ -330,6 +330,26 @@ void AppState::combatThrow(){
         log.add("Weapon readied to hurl - [space] to resolve the round.");
     }
 
+// ---- combatSetSpear ----
+void AppState::combatSetSpear(){
+        if (mode != MODE_COMBAT || !combat.encounter || combat.over)
+            return;
+        const auto& partyActors = combat.encounter->party();
+        if (combat.activeMember < 0 ||
+            combat.activeMember >= (int)partyActors.size())
+            return;
+        // R781: the stance needs the spear in hand - the
+        // planted weapon is a real charge answer
+        if (partyActors[combat.activeMember].weapon.id !=
+            items::WPN_SPEAR) {
+            log.add("That member carries no spear.");
+            return;
+        }
+        combat.encounter->requestSetSpear(combat.activeMember);
+        log.add("Spear set to receive - [space] to resolve "
+                "the round.");
+    }
+
 // ---- rollSpawnContext ----
 monsters::xp::SpawnContext AppState::rollSpawnContext(const monsters::MonsterDef* def){
         monsters::xp::SpawnContext ctx;

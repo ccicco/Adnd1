@@ -1831,6 +1831,12 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
                         g_app.combatThrow();
                         break;
 
+                    // R781: active member sets the spear to receive
+                    case 'S':
+                    case 's':
+                        g_app.combatSetSpear();
+                        break;
+
                     // R27: open the active member's spell menu
                     case 'C':
                     case 'c':

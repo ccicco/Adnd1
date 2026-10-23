@@ -89,17 +89,18 @@ static const WeaponDef kWeapons[WPN_COUNT] = {
     // (the weights 50/100/150 gold-piece weight, the S/M
     // dice 1-6/2-7/3-9, the L dice 1-8/2-12/3-18, the one
     // printed arms price 6 g.p. shared - the R779 pins);
-    // the p.38 chart carries no lance row - the zero
-    // adjustment is the no-adjustment JUDGMENT
+    // R781: the vs-AC cells - the R779 zero-row JUDGMENT
+    // is STRUCK; the 1eonline.info compilation (the
+    // repo-trusted source) carries the full lance rows
     { "Lance, Light Horse", rules::WCLASS_PIERCING,
       1,6,0,  1,8,0,   false,   0,  0,   50,     6,
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },
+      {-3,-3,-2,-2,-1, 0, 0, 0, 0, 0, 0 } },
     { "Lance, Medium Horse", rules::WCLASS_PIERCING,
       2,7,0,  2,12,0,  false,   0,  0,   100,    6,
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },
+      {-1, 0, 0,+1,+1,+1,+1, 0, 0, 0, 0 } },
     { "Lance, Heavy Horse", rules::WCLASS_PIERCING,
       3,9,0,  3,18,0,  false,   0,  0,   150,    6,
-      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },
+      {+4,+4,+3,+3,+2,+2,+2,+1,+1, 0, 0 } },
 };
 
 const WeaponDef& weapon(WeaponId id) {

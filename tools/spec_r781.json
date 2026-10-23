@@ -1,0 +1,325 @@
+{
+  "round": 781,
+  "prefix": "sps",
+  "header_file": "rules/spearset.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/oa_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 703,
+  "title": "the set spear and the speed seam",
+  "audit_label": "R781 set spear and speed seam audit",
+  "audit_comment": "THE SET SPEAR AND THE SPEED SEAM - three feeds in one round. (1) The R189 chart's set-spear asterisk meets its charging FOE at last: the S command plants the stance (round one + a spear - the stance CONSUMES the round), and the closing monster blow answers to the counterstrike FIRST - the receive multiplier doubles that one blow, the flag clears after it (the JUDGMENT: the monster's round-one melee reads as the charge, the R232 surprise pattern again). (2) The DMG p.66 speed cases leave contract-side: the R158 name-keyed ladder gains its engine callers in the round scheduler - case 1 the tie orders the blows (the lower factor first, a +1 shift on the slower side), case 2 the extra-attack window opens after round one (the before-count minus one rides the +5 routine spacing - the JUDGMENT; the closing charge exempts it, speedFactorApplies), case 3 the weapon-vs-spell segment (the factor minus the losing die, negatives positive, clamped 1..10). The cases read each side's FRONT melee actor - no reach layer exists (the JUDGMENT); missile weapons carry no factor (the R158 print) and read unknown. (3) The R779 zero-row JUDGMENT is STRUCK: the 1eonline.info compilation (the repo-trusted source the R189 duty already reads) carries the full lance vs-AC rows - light -3..0, medium -1..+1, heavy +4..0 - and the R145 audit kRows pin them cell for cell (19 x 11 = 209 pins). Honest boundaries: the printed lengths and space-required cells still ride no engine concept, and the spear keeps its R158 default 7 on this seam",
+  "include_comment": "the set spear pins",
+  "include_after": "#include \"rules/lancespeed.h\"  // R780: the lance speed pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R780 LANDED 2026-10-23: commit",
+  "prev_record": [
+    "- R780 LANDED 2026-10-23: commit",
+    "  7073581a029d68c085b205de33a1cfc12f29f252",
+    "  (census 702 -> 703, pushed 0e87814..7073581),",
+    "  THE LANCE SPEED FACTORS - the three lances",
+    "  ride the R158 ladder, header",
+    "  rules/lancespeed.h, prefix lsp (fully free at",
+    "  0e87814). TWO FILE PATCHES over two files:",
+    "  the three lance rows join weaponSpeedFactor in",
+    "  rules/weaponspeed.h after the pike row - the",
+    "  PHB p.38 speed column cells (the",
+    "  1eonline.info compilation, the repo-trusted",
+    "  source): light horse 7, medium horse 6, heavy",
+    "  horse 8 - the MEDIUM horse 6 OUTRUNS the",
+    "  light horse 7 (a 12-foot shaft faster than a",
+    "  10-foot one: the print is the print, no OCR",
+    "  slip - both compilation pages print it; the",
+    "  engine follows exactly as it followed the",
+    "  spear 6-8 spread); the R158 audit in",
+    "  regtest.cpp gains the three ladder checks",
+    "  against the R780 header pins (a mutant in a",
+    "  row or a pin dies at the preflight). The",
+    "  ladder stays PURE DATA: no engine caller",
+    "  exists, the DMG p.66 caller-detected cases",
+    "  (tie order, extra-attack windows, the",
+    "  vs-spell segment) stay contract-side; the",
+    "  printed lengths and space-required cells",
+    "  (10/12/14 feet, 1 foot) ride no engine",
+    "  concept; the standing #pragma once in",
+    "  weaponspeed.h is UNTOUCHED - the R778",
+    "  classic-guard rule governs new guards only.",
+    "  Inlines: 10 = 6 consts (the 158 feeder",
+    "  round, the 780 round, the 3 rows, the",
+    "  factors 7/6/8) + 4 bools (the lances ride",
+    "  the ladder, the medium outruns the light,",
+    "  the ladder stays pure data, the lengths stay",
+    "  contract-side). GREEN on the FIRST preflight;",
+    "  the ./bn 780 detour (struck per the R516",
+    "  rule) caused no drift - the gate md5",
+    "  abff2ee1483c02f403146f655ce7029b printed",
+    "  exactly. rverify GREEN (double-run 6 patches",
+    "  applied/already clean, 10 mutants 0 missed);",
+    "  the include lands after lancecharge",
+    "  (regtest 483). spec md5",
+    "  9bf0bd6b603c9b2d25677467177a35f3, gate md5",
+    "  abff2ee1483c02f403146f655ce7029b, canvas md5",
+    "  1a9f57590f87f240ab5d297aa13a48a6.",
+    "  NEXT - R781: the next target awaits",
+    "  Curtiss's call."
+  ],
+  "banner": {
+    "title": "THE SET SPEAR AND THE SPEED SEAM - the receive answers the charge, the DMG p.66 cases go live",
+    "provenance": "R779 left the spear set-to-receive contract-side (no monster charge concept) and R780 left the DMG p.66 speed cases caller-less (the ladder pure data); R781 closes both seams and strikes the R779 zero-row JUDGMENT besides. The set spear rides the R189 chart double asterisk: the S command plants the stance (round one + a spear, the round consumed), and a closing monster blow that round answers to the counterstrike FIRST - the receive multiplier doubles that one blow, then the stance is done (the JUDGMENT: the monster's round-one melee reads as the charge, the R232 pattern again). The DMG p.66 three cases gain their engine callers in the round scheduler, reading each side's front melee actor through the R158 name-keyed ladder (the footman mace/flail JUDGMENT; the lances and the spear now on the ladder): the tie shifts the slower side +1, the extra-attack window opens after round one (the before-count minus one on the +5 spacing - the JUDGMENT; the charge round exempts it per speedFactorApplies), and the weapon-vs-spell segment is the factor minus the losing die (clamped 1..10). And the lance vs-AC cells: the 1eonline.info compilation (the repo-trusted source) carries the full rows - light -3..0, medium -1..+1, heavy +4..0 - so items.cpp and the R145 audit pin them cell for cell and the R779 no-adjustment JUDGMENT is STRUCK. Honest boundaries: no reach layer exists (the front actor reads as the side), the printed lengths and space-required cells ride no engine concept, and the spear keeps its R158 default 7 on this seam",
+    "sentinel": "Zero new book pages: the set-spear asterisk rides the R189 chart already pinned, the speed cases ride DMG p.66 already honored in rules/weaponspeed.h, and the lance vs-AC rows ride the 1eonline.info compilation the R189 speed-verify duty already trusts"
+  },
+  "consts": [
+    {
+      "name": "spsSetFeederRound",
+      "value": 189,
+      "comment": "The feeder seam: the R189 chart's set-spear double asterisk (the receive vs. the charging rider)."
+    },
+    {
+      "name": "spsSpearSetRound",
+      "value": 781,
+      "comment": "The set spear round: the stance goes live, the receive doubles its one blow."
+    },
+    {
+      "name": "spsAcFeederRound",
+      "value": 145,
+      "comment": "The vs-AC feeder seam: the R145 per-weapon adjustment audit the three compilation lance rows now pin."
+    },
+    {
+      "name": "spsSpeedPage",
+      "value": 66,
+      "comment": "DMG p.66 - the speed factor cases page the R158 helpers already honor."
+    },
+    {
+      "name": "spsSetDamageMultiplier",
+      "value": 2,
+      "comment": "The set spear's receive multiplier: double damage on the one counterstrike blow."
+    },
+    {
+      "name": "spsLanceAcRowCount",
+      "value": 3,
+      "comment": "The three compilation vs-AC rows: light, medium, heavy horse."
+    }
+  ],
+  "bools": [
+    {
+      "name": "spsSpearSetReceivesTheClosingFoe",
+      "value": true,
+      "comment": "The stance answers a closing monster blow with a FIRST counterstrike (ai/actor.cpp, the resolution-loop fold)."
+    },
+    {
+      "name": "spsTheStanceConsumesTheRound",
+      "value": true,
+      "comment": "The planted spear submits no attack that round - one defensive posture (the submitTeam stance branch)."
+    },
+    {
+      "name": "spsLanceAcCellsRideTheCompilation",
+      "value": true,
+      "comment": "The three 1eonline.info vs-AC rows (light -3..0, medium -1..+1, heavy +4..0) replace the struck R779 zero rows."
+    },
+    {
+      "name": "spsTieReadsTheSpeedLadder",
+      "value": true,
+      "comment": "DMG p.66 case 1 live: a tie orders the blows by the lower factor (a +1 shift on the slower side's base)."
+    },
+    {
+      "name": "spsWeaponVsSpellReadsTheSegment",
+      "value": true,
+      "comment": "DMG p.66 case 3 live: the weapon strikes at the factor minus the losing die (clamped 1..10) against the caster."
+    },
+    {
+      "name": "spsExtraAttacksOpenAfterRoundOne",
+      "value": true,
+      "comment": "DMG p.66 case 2 live: after round one the faster front gains the before-count minus one (the +5 spacing JUDGMENT)."
+    },
+    {
+      "name": "spsMissileWeaponsCarryNoFactor",
+      "value": true,
+      "comment": "The R158 print: missile weapons carry no factor - the fold reads 0 as unknown and skips."
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [],
+  "table_checks": [],
+  "header_sections": {
+    "the set spear (the R781 wiring)": [
+      {
+        "kind": "const",
+        "name": "spsSetFeederRound"
+      },
+      {
+        "kind": "const",
+        "name": "spsSpearSetRound"
+      },
+      {
+        "kind": "const",
+        "name": "spsSetDamageMultiplier"
+      },
+      {
+        "kind": "bool",
+        "name": "spsSpearSetReceivesTheClosingFoe"
+      },
+      {
+        "kind": "bool",
+        "name": "spsTheStanceConsumesTheRound"
+      }
+    ],
+    "the speed seam and the vs-AC rows (the R781 wiring)": [
+      {
+        "kind": "const",
+        "name": "spsAcFeederRound"
+      },
+      {
+        "kind": "const",
+        "name": "spsSpeedPage"
+      },
+      {
+        "kind": "const",
+        "name": "spsLanceAcRowCount"
+      },
+      {
+        "kind": "bool",
+        "name": "spsLanceAcCellsRideTheCompilation"
+      },
+      {
+        "kind": "bool",
+        "name": "spsTieReadsTheSpeedLadder"
+      },
+      {
+        "kind": "bool",
+        "name": "spsWeaponVsSpellReadsTheSegment"
+      },
+      {
+        "kind": "bool",
+        "name": "spsExtraAttacksOpenAfterRoundOne"
+      },
+      {
+        "kind": "bool",
+        "name": "spsMissileWeaponsCarryNoFactor"
+      }
+    ]
+  },
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 238,
+    "open": 0
+  },
+  "caller_files": [
+    "game/appstate.h",
+    "game/state_combat.cpp",
+    "adnd1.cpp"
+  ],
+  "inline_count": 13,
+  "file_patches": [
+    {
+      "file": "items/items.cpp",
+      "note": "the R779 zero rows give way to the 1eonline.info compilation vs-AC cells (the no-adjustment JUDGMENT is struck)",
+      "from": "    // R779: the three lances - the R189 chart rows 24-26\n    // (the weights 50/100/150 gold-piece weight, the S/M\n    // dice 1-6/2-7/3-9, the L dice 1-8/2-12/3-18, the one\n    // printed arms price 6 g.p. shared - the R779 pins);\n    // the p.38 chart carries no lance row - the zero\n    // adjustment is the no-adjustment JUDGMENT\n    { \"Lance, Light Horse\", rules::WCLASS_PIERCING,\n      1,6,0,  1,8,0,   false,   0,  0,   50,     6,\n      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },\n    { \"Lance, Medium Horse\", rules::WCLASS_PIERCING,\n      2,7,0,  2,12,0,  false,   0,  0,   100,    6,\n      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },\n    { \"Lance, Heavy Horse\", rules::WCLASS_PIERCING,\n      3,9,0,  3,18,0,  false,   0,  0,   150,    6,\n      { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },",
+      "to": "    // R779: the three lances - the R189 chart rows 24-26\n    // (the weights 50/100/150 gold-piece weight, the S/M\n    // dice 1-6/2-7/3-9, the L dice 1-8/2-12/3-18, the one\n    // printed arms price 6 g.p. shared - the R779 pins);\n    // R781: the vs-AC cells - the R779 zero-row JUDGMENT\n    // is STRUCK; the 1eonline.info compilation (the\n    // repo-trusted source) carries the full lance rows\n    { \"Lance, Light Horse\", rules::WCLASS_PIERCING,\n      1,6,0,  1,8,0,   false,   0,  0,   50,     6,\n      {-3,-3,-2,-2,-1, 0, 0, 0, 0, 0, 0 } },\n    { \"Lance, Medium Horse\", rules::WCLASS_PIERCING,\n      2,7,0,  2,12,0,  false,   0,  0,   100,    6,\n      {-1, 0, 0,+1,+1,+1,+1, 0, 0, 0, 0 } },\n    { \"Lance, Heavy Horse\", rules::WCLASS_PIERCING,\n      3,9,0,  3,18,0,  false,   0,  0,   150,    6,\n      {+4,+4,+3,+3,+2,+2,+2,+1,+1, 0, 0 } },"
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the R145 audit pins the three compilation vs-AC rows cell for cell (the zero rows struck)",
+      "from": "            // Lance, Light/Medium/Heavy Horse (R779):\n            // the p.38 chart carries no lance row - the\n            // zero row is the no-adjustment JUDGMENT\n            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },\n            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },\n            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },",
+      "to": "            // Lance, Light/Medium/Heavy Horse - R781:\n            // the 1eonline.info compilation rows (the\n            // R779 zero-row JUDGMENT is struck)\n            {-3,-3,-2,-2,-1, 0, 0, 0, 0, 0, 0 },\n            {-1, 0, 0,+1,+1,+1,+1, 0, 0, 0, 0 },\n            {+4,+4,+3,+3,+2,+2,+2,+1,+1, 0, 0 },"
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the stale 15 x 11 pin count reads 19 x 11 (the three R779 rows were already in the kRows)",
+      "from": "        // every cell of every row (15 x 11 = 165 pins)",
+      "to": "        // every cell of every row (19 x 11 = 209 pins)"
+    },
+    {
+      "file": "ai/actor.h",
+      "note": "the Actor gains the set-spear stance marker and the one-blow receive boost",
+      "from": "    // R779: the mount the member rides (the sdd kind\n    // ladder; 0 = afoot) - the lance charge reads it\n    int  mountKind = 0;",
+      "to": "    // R779: the mount the member rides (the sdd kind\n    // ladder; 0 = afoot) - the lance charge reads it\n    int  mountKind = 0;\n    // R781: the set-spear stance - the member planted\n    // the spear against a closing charge this round\n    bool spearSet = false;\n    // R781: the receive multiplier armed for the one\n    // counterstrike blow (cleared once it lands)\n    bool receiveBoost = false;"
+    },
+    {
+      "file": "ai/actor.h",
+      "note": "requestSetSpear - the app's S command plants the stance (same overwrite semantics as the throw request)",
+      "from": "    void requestThrow(int memberIndex) {\n        m_throwMember = memberIndex;\n    }\n",
+      "to": "    void requestThrow(int memberIndex) {\n        m_throwMember = memberIndex;\n    }\n\n    // R781: set-spear command - requestSetSpear(memberIndex)\n    // plants the member's spear to receive a charge this\n    // round: the stance CONSUMES the round (no attack), and\n    // a closing round-one monster blow answers to the\n    // counterstrike FIRST - the receive double rides that\n    // one blow. Only round one with a spear reads as a\n    // legal set; a new request overwrites a pending one.\n    void requestSetSpear(int memberIndex) {\n        m_setMember = memberIndex;\n    }\n"
+    },
+    {
+      "file": "ai/actor.h",
+      "note": "the pending set-spear member slot (the R36 throw-slot pattern)",
+      "from": "    int  m_throwMember = -1;                // R36 (-1 = none)",
+      "to": "    int  m_throwMember = -1;                // R36 (-1 = none)\n\n    int  m_setMember = -1;                  // R781 (-1 = none)"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the spearset.h include (the receive double pin) plus the weaponspeed.h include the R781 speed fold needs (the R158 helpers)",
+      "from": "#include \"../rules/lancecharge.h\"  // R779: the charge multiplier",
+      "to": "#include \"../rules/lancecharge.h\"  // R779: the charge multiplier\n#include \"../rules/weaponspeed.h\"  // R158: the p.66 speed helpers\n#include \"../rules/spearset.h\"  // R781: the receive double"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the actor-to-ladder bridge: the registry name lowercased rides the R158 ladder (footman mace/flail JUDGMENT; 0 = unknown)",
+      "from": "int Encounter::teamAlive(int team) const {",
+      "to": "// R781: the actor's weapon speed factor - the R158\n// ladder is name-keyed, so the registry name lowercases\n// and rides it (the footman mace/flail JUDGMENT per the\n// R158 header; missile weapons carry no factor - the\n// ladder returns 0 and the caller reads unknown)\nstatic int actorSpeedFactor(\n    const items::WeaponInstance& w) {\n    const char* n = items::weapon(w.id).name;\n    std::string s;\n    for (int i = 0; n[i]; ++i) {\n        char c = n[i];\n        if (c >= 'A' && c <= 'Z') c = c - 'A' + 'a';\n        s += c;\n    }\n    if (w.id == items::WPN_MACE) s = \"footman mace\";\n    if (w.id == items::WPN_FLAIL) s = \"footman flail\";\n    return rules::weaponSpeedFactor(s.c_str());\n}\n\nint Encounter::teamAlive(int team) const {"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the set request capture, and the DMG p.66 fold ints declared ahead of the submitTeam lambda (it reads them at call time)",
+      "from": "    // R36: capture + clear the throw request for this round\n    int throwMember = m_throwMember;\n    m_throwMember = -1;\n",
+      "to": "    // R36: capture + clear the throw request for this round\n    int throwMember = m_throwMember;\n    m_throwMember = -1;\n\n    // R781: capture + clear the set-spear request\n    int setMember = m_setMember;\n    m_setMember = -1;\n\n    // R781: the DMG p.66 speed seam fold - declared here\n    // (the submitTeam lambda below reads them at call\n    // time); the computation lands after the monster\n    // caster is known. pFrontIdx/mFrontIdx ride the\n    // front melee actor per side (no reach layer).\n    int pFrontIdx = -1, mFrontIdx = -1;\n    int sfP = 0, sfM = 0;\n    int pShift = 0, mShift = 0;\n    int pSegOverride = 0, mSegOverride = 0;\n    int pExtra = 0, mExtra = 0;\n"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the set-spear stance branch after the throw branch (the stance consumes the round)",
+      "from": "                act.rateOfFire = 1;\n                act.segment = baseSeg;\n                sched.submit(act, baseSeg);\n                continue;\n            }\n            // R37: missile-armed monsters - an opening volley in",
+      "to": "                act.rateOfFire = 1;\n                act.segment = baseSeg;\n                sched.submit(act, baseSeg);\n                continue;\n            }\n            // R781: the set-spear stance - the planted spear\n            // CONSUMES the round (one defensive posture, no\n            // attack submitted); only round one with a spear\n            // reads as a legal set (the charge must close\n            // ONTO it - a later round already closed)\n            if (idx == setMember && a.isCharacter) {\n                if (m_round == 1 &&\n                    a.weapon.id == items::WPN_SPEAR) {\n                    a.spearSet = true;\n                    logLine(a.name + \" sets the spear to \"\n                            \"receive the charge.\");\n                } else {\n                    logLine(a.name + \" cannot set - the \"\n                            \"stance needs round one and a \"\n                            \"spear.\");\n                }\n                continue;\n            }\n            // R37: missile-armed monsters - an opening volley in"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the DMG p.66 fold: the front picks, the case-1 tie shift, the case-3 vs-spell segment, the case-2 extra-attack window",
+      "from": "    submitTeam(m_party, baseSegP, drinkMember, castMember, castSpell,\n               shootMember, throwMember);",
+      "to": "    // R781: the DMG p.66 speed seam computes - each side's\n    // FRONT melee actor carries the factor (requests and\n    // volleys exclude; the monster caster excludes). The\n    // spear keeps its R158 default 7 on this seam; a set\n    // or charging round one exempts case 2 (the print's\n    // closing/charging bar - speedFactorApplies).\n    for (int i = 0; i < (int)m_party.size(); ++i) {\n        const Actor& a = m_party[i];\n        if (!a.canAct()) continue;\n        if (i == drinkMember || i == castMember ||\n            i == shootMember || i == throwMember ||\n            i == setMember)\n            continue;\n        int sf = actorSpeedFactor(a.weapon);\n        if (sf > 0) { pFrontIdx = i; sfP = sf; break; }\n    }\n    for (int i = 0; i < (int)m_monsters.size(); ++i) {\n        const Actor& a = m_monsters[i];\n        if (!a.canAct() || i == monsterCastIdx)\n            continue;\n        if (a.monsterRanged && a.rangedRounds > 0)\n            continue;\n        int sf = actorSpeedFactor(a.weapon);\n        if (sf > 0) { mFrontIdx = i; sfM = sf; break; }\n    }\n    // case 1 (DMG p.66 Simultaneous Initiative): a tie -\n    // the lower factor strikes first (+1 segment on the\n    // slower side's base; equal factors stay simultaneous)\n    if (winner == 0 && pFrontIdx >= 0 && mFrontIdx >= 0) {\n        int first = rules::speedFactorFirst(sfP, sfM);\n        if (first == -1) {\n            mShift = 1;\n            logLine(\"Initiative tie - the speed factors \"\n                    \"order the blows.\");\n        } else if (first == 1) {\n            pShift = 1;\n            logLine(\"Initiative tie - the speed factors \"\n                    \"order the blows.\");\n        }\n    }\n    // case 3 (DMG p.66 Other Weapon Factor Determinants):\n    // the weapon strikes at the mid-activity caster - the\n    // factor minus the losing die roll, negatives read as\n    // positive (clamped to a 1..10 segment; the clamp rides\n    // the fired branch alone - 0 stays unset, no override\n    // rides an unfired case)\n    if (pFrontIdx >= 0 && castMember >= 0 &&\n        winner == 1) {\n        pSegOverride =\n            rules::weaponVsActivitySegment(sfP, mIni);\n        if (pSegOverride < 1) pSegOverride = 1;\n        if (pSegOverride > 10) pSegOverride = 10;\n    }\n    if (mFrontIdx >= 0 && monsterCastIdx >= 0 &&\n        winner == -1) {\n        mSegOverride =\n            rules::weaponVsActivitySegment(sfM, pIni);\n        if (mSegOverride < 1) mSegOverride = 1;\n        if (mSegOverride > 10) mSegOverride = 10;\n    }\n    // case 2 (DMG p.66): after round one the faster front\n    // gains its before-attacks (the count minus one rides\n    // the +5 routine spacing - the JUDGMENT)\n    if (m_round > 1 && pFrontIdx >= 0 && mFrontIdx >= 0 &&\n        rules::speedFactorApplies(false)) {\n        int lo = sfP < sfM ? sfP : sfM;\n        int hi = sfP < sfM ? sfM : sfP;\n        int before = rules::speedFactorAttacksBefore(lo, hi);\n        if (before > 1) {\n            if (sfP < sfM) pExtra = before - 1;\n            else if (sfM < sfP) mExtra = before - 1;\n            logLine(\"The speed factor opens the extra \"\n                    \"attack window.\");\n        }\n    }\n\n    submitTeam(m_party, baseSegP, drinkMember, castMember, castSpell,\n               shootMember, throwMember);"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the front melee submission reads the seam: the extras, the tie shift, the vs-spell segment override",
+      "from": "            rules::Action act;\n            act.type = rules::ACTION_MELEE;\n            act.actorId = a.team * 1000 + idx;\n            // hasted actors act twice\n            int attacks = a.attacksPerRound();\n            if (a.hasStatus(spelleffects::STATUS_HASTED)) attacks *= 2;\n            for (int i = 0; i < attacks; ++i) {\n                rules::Action a2 = act;\n                a2.segment = baseSeg + i * 5;   // routines 5 segs apart\n                sched.submit(a2, baseSeg + i * 5);\n            }",
+      "to": "            rules::Action act;\n            act.type = rules::ACTION_MELEE;\n            act.actorId = a.team * 1000 + idx;\n            // hasted actors act twice\n            int attacks = a.attacksPerRound();\n            if (a.hasStatus(spelleffects::STATUS_HASTED)) attacks *= 2;\n            // R781: the DMG p.66 seam rides the FRONT melee\n            // actor alone - the case-2 extras, the case-1\n            // tie shift, the case-3 vs-spell segment\n            bool front = (&team == &m_party &&\n                          idx == pFrontIdx) ||\n                         (&team == &m_monsters &&\n                          idx == mFrontIdx);\n            if (front && &team == &m_party)\n                attacks += pExtra;\n            else if (front)\n                attacks += mExtra;\n            for (int i = 0; i < attacks; ++i) {\n                rules::Action a2 = act;\n                a2.segment = baseSeg + i * 5;\n                if (i == 0 && front) {\n                    if (&team == &m_party) {\n                        if (pSegOverride > 0)\n                            a2.segment = pSegOverride;\n                        else\n                            a2.segment += pShift;\n                    } else {\n                        if (mSegOverride > 0)\n                            a2.segment = mSegOverride;\n                        else\n                            a2.segment += mShift;\n                    }\n                }\n                sched.submit(a2, a2.segment);\n            }"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the set spear answers the closing blow first - the counterstrike fold in the resolution loop",
+      "from": "        if (!target) break;\n\n        resolveMelee(attacker, *target);\n\n        if (teamAlive(0) == 0 || teamAlive(1) == 0) break;",
+      "to": "        if (!target) break;\n\n        // R781: the set spear answers the closing foe - a\n        // planted spear against a monster blow strikes\n        // FIRST (the counterstrike; the monster's melee\n        // reads as the charge), the receive multiplier\n        // armed for that one blow, then the stance is done\n        if (!isParty && target->spearSet &&\n            target->weapon.id == items::WPN_SPEAR) {\n            target->spearSet = false;\n            target->receiveBoost = true;\n            logLine(target->name + \" receives the charge - \"\n                    \"the set spear doubles its bite.\");\n            resolveMelee(*target, attacker);\n            if (teamAlive(0) == 0) break;\n        }\n\n        resolveMelee(attacker, *target);\n\n        if (teamAlive(0) == 0 || teamAlive(1) == 0) break;"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the receive double lands in resolveMelee after the lance charge block (the one armed blow)",
+      "from": "        dmg *= rules::lncLanceChargeMultiplier();\n        logLine(attacker.name + \" charges home - the lance \"\n                \"doubles its bite.\");\n    }\n    if (dmg < 1) dmg = 1;",
+      "to": "        dmg *= rules::lncLanceChargeMultiplier();\n        logLine(attacker.name + \" charges home - the lance \"\n                \"doubles its bite.\");\n    }\n    // R781: the set spear's receive double - the one blow\n    // the counterstrike armed (the flag clears so the\n    // follow-up blows stay normal)\n    if (attacker.receiveBoost) {\n        dmg *= rules::spsSetDamageMultiplier();\n        attacker.receiveBoost = false;\n    }\n    if (dmg < 1) dmg = 1;"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the R779 contract-side boundary comment answers to the R781 counterstrike fold",
+      "from": "    // FOE - no monster charge concept exists; it stays\n    // contract-side.",
+      "to": "    // FOE - the R781 set-spear stance answers the closing\n    // blow (the counterstrike fold)."
+    },
+    {
+      "file": "game/appstate.h",
+      "note": "the app-state set-spear declaration (the R36 combatThrow pattern)",
+      "from": "    // R36: the ACTIVE member hurls their melee weapon this round\n    // (dagger/hand axe/spear) - one shot from the weapon's own\n    // dice/plus, then bare fists until the fight ends (the weapon\n    // is recovered afterward)\n    void combatThrow();",
+      "to": "    // R36: the ACTIVE member hurls their melee weapon this round\n    // (dagger/hand axe/spear) - one shot from the weapon's own\n    // dice/plus, then bare fists until the fight ends (the weapon\n    // is recovered afterward)\n    void combatThrow();\n\n    // R781: the ACTIVE member sets their spear to receive a\n    // charge this round (round one + a spear; the stance\n    // consumes the round and answers the closing blow first)\n    void combatSetSpear();"
+    },
+    {
+      "file": "game/state_combat.cpp",
+      "note": "the set-spear command body after combatThrow (gates combat, the active member, and the spear in hand)",
+      "from": "        combat.encounter->requestThrow(combat.activeMember);\n        log.add(\"Weapon readied to hurl - [space] to resolve the round.\");\n    }\n",
+      "to": "        combat.encounter->requestThrow(combat.activeMember);\n        log.add(\"Weapon readied to hurl - [space] to resolve the round.\");\n    }\n\n// ---- combatSetSpear ----\nvoid AppState::combatSetSpear(){\n        if (mode != MODE_COMBAT || !combat.encounter || combat.over)\n            return;\n        const auto& partyActors = combat.encounter->party();\n        if (combat.activeMember < 0 ||\n            combat.activeMember >= (int)partyActors.size())\n            return;\n        // R781: the stance needs the spear in hand - the\n        // planted weapon is a real charge answer\n        if (partyActors[combat.activeMember].weapon.id !=\n            items::WPN_SPEAR) {\n            log.add(\"That member carries no spear.\");\n            return;\n        }\n        combat.encounter->requestSetSpear(combat.activeMember);\n        log.add(\"Spear set to receive - [space] to resolve \"\n                \"the round.\");\n    }\n"
+    },
+    {
+      "file": "adnd1.cpp",
+      "note": "the S command lands after the T throw command in the combat key switch (S verified free there)",
+      "from": "                    // R36: active member hurls their melee weapon\n                    case 'T':\n                    case 't':\n                        g_app.combatThrow();\n                        break;\n",
+      "to": "                    // R36: active member hurls their melee weapon\n                    case 'T':\n                    case 't':\n                        g_app.combatThrow();\n                        break;\n\n                    // R781: active member sets the spear to receive\n                    case 'S':\n                    case 's':\n                        g_app.combatSetSpear();\n                        break;\n"
+    }
+  ]
+}

@@ -1506,6 +1506,11 @@ struct AppState {
     // is recovered afterward)
     void combatThrow();
 
+    // R781: the ACTIVE member sets their spear to receive a
+    // charge this round (round one + a spear; the stance
+    // consumes the round and answers the closing blow first)
+    void combatSetSpear();
+
 
     // ------------------------------------------------------------------
     // R50: roll the per-specimen context the XP dispatch needs, at

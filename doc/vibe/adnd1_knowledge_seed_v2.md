@@ -19443,6 +19443,54 @@ when both halves land.
   md5 72e78667a9f5b9a5f4582ea30c60123a.
   NEXT - R780: the next target awaits
   Curtiss's call.
+- R780 LANDED 2026-10-23: commit
+  7073581a029d68c085b205de33a1cfc12f29f252
+  (census 702 -> 703, pushed 0e87814..7073581),
+  THE LANCE SPEED FACTORS - the three lances
+  ride the R158 ladder, header
+  rules/lancespeed.h, prefix lsp (fully free at
+  0e87814). TWO FILE PATCHES over two files:
+  the three lance rows join weaponSpeedFactor in
+  rules/weaponspeed.h after the pike row - the
+  PHB p.38 speed column cells (the
+  1eonline.info compilation, the repo-trusted
+  source): light horse 7, medium horse 6, heavy
+  horse 8 - the MEDIUM horse 6 OUTRUNS the
+  light horse 7 (a 12-foot shaft faster than a
+  10-foot one: the print is the print, no OCR
+  slip - both compilation pages print it; the
+  engine follows exactly as it followed the
+  spear 6-8 spread); the R158 audit in
+  regtest.cpp gains the three ladder checks
+  against the R780 header pins (a mutant in a
+  row or a pin dies at the preflight). The
+  ladder stays PURE DATA: no engine caller
+  exists, the DMG p.66 caller-detected cases
+  (tie order, extra-attack windows, the
+  vs-spell segment) stay contract-side; the
+  printed lengths and space-required cells
+  (10/12/14 feet, 1 foot) ride no engine
+  concept; the standing #pragma once in
+  weaponspeed.h is UNTOUCHED - the R778
+  classic-guard rule governs new guards only.
+  Inlines: 10 = 6 consts (the 158 feeder
+  round, the 780 round, the 3 rows, the
+  factors 7/6/8) + 4 bools (the lances ride
+  the ladder, the medium outruns the light,
+  the ladder stays pure data, the lengths stay
+  contract-side). GREEN on the FIRST preflight;
+  the ./bn 780 detour (struck per the R516
+  rule) caused no drift - the gate md5
+  abff2ee1483c02f403146f655ce7029b printed
+  exactly. rverify GREEN (double-run 6 patches
+  applied/already clean, 10 mutants 0 missed);
+  the include lands after lancecharge
+  (regtest 483). spec md5
+  9bf0bd6b603c9b2d25677467177a35f3, gate md5
+  abff2ee1483c02f403146f655ce7029b, canvas md5
+  1a9f57590f87f240ab5d297aa13a48a6.
+  NEXT - R781: the next target awaits
+  Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -481,6 +481,7 @@
 #include "rules/mountmove.h"  // R778: the mounted movement pins
 #include "rules/lancecharge.h"  // R779: the lance charge pins
 #include "rules/lancespeed.h"  // R780: the lance speed pins
+#include "rules/spearset.h"  // R781: the set spear pins
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -120532,6 +120533,51 @@ int main() {
         printf("R780 lance speed factors audit: bad %d\n", bad);
         if (bad) return 1;
     }
+    // ---- R781 set spear and speed seam audit ----
+    // THE SET SPEAR AND THE SPEED SEAM - three feeds in one round. (1) The
+    // R189 chart's set-spear asterisk meets its charging FOE at last: the S
+    // command plants the stance (round one + a spear - the stance CONSUMES
+    // the round), and the closing monster blow answers to the counterstrike
+    // FIRST - the receive multiplier doubles that one blow, the flag clears
+    // after it (the JUDGMENT: the monster's round-one melee reads as the
+    // charge, the R232 surprise pattern again). (2) The DMG p.66 speed cases
+    // leave contract-side: the R158 name-keyed ladder gains its engine
+    // callers in the round scheduler - case 1 the tie orders the blows (the
+    // lower factor first, a +1 shift on the slower side), case 2 the
+    // extra-attack window opens after round one (the before-count minus one
+    // rides the +5 routine spacing - the JUDGMENT; the closing charge exempts
+    // it, speedFactorApplies), case 3 the weapon-vs-spell segment (the factor
+    // minus the losing die, negatives positive, clamped 1..10). The cases
+    // read each side's FRONT melee actor - no reach layer exists (the
+    // JUDGMENT); missile weapons carry no factor (the R158 print) and read
+    // unknown. (3) The R779 zero-row JUDGMENT is STRUCK: the 1eonline.info
+    // compilation (the repo-trusted source the R189 duty already reads)
+    // carries the full lance vs-AC rows - light -3..0, medium -1..+1, heavy
+    // +4..0 - and the R145 audit kRows pin them cell for cell (19 x 11 = 209
+    // pins). Honest boundaries: the printed lengths and space-required cells
+    // still ride no engine concept, and the spear keeps its R158 default 7 on
+    // this seam
+    {
+        using namespace rules;
+        int bad = 0;
+    if (spsSetFeederRound() != 189
+            || spsSpearSetRound() != 781
+            || spsAcFeederRound() != 145
+            || spsSpeedPage() != 66
+            || spsSetDamageMultiplier() != 2
+            || spsLanceAcRowCount() != 3
+            || !spsSpearSetReceivesTheClosingFoe()
+            || !spsTheStanceConsumesTheRound()
+            || !spsLanceAcCellsRideTheCompilation()
+            || !spsTieReadsTheSpeedLadder()
+            || !spsWeaponVsSpellReadsTheSegment()
+            || !spsExtraAttacksOpenAfterRoundOne()
+            || !spsMissileWeaponsCarryNoFactor()
+        )
+            ++bad;
+        printf("R781 set spear and speed seam audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
     // ---- R227: the wis mental save wiring audit ----
     // PHB Wisdom Table I: the magical attack
     // saving throw adjustment now reaches the
@@ -123270,7 +123316,7 @@ int main() {
     // table stays pinned by the R144 audit (fallback).
     {
         int bad = 0;
-        // every cell of every row (15 x 11 = 165 pins)
+        // every cell of every row (19 x 11 = 209 pins)
         static const int kRows[items::WPN_COUNT][11] = {
             // Dagger
             {-4,-4,-3,-3,-2,-2, 0, 0,+1,+1,+3 },
@@ -123305,12 +123351,12 @@ int main() {
             // Deep Crossbow (fights as the light
             // crossbow - the R314 special)
             {-3,-2,-2,-1, 0, 0,+1,+2,+3,+3,+3 },
-            // Lance, Light/Medium/Heavy Horse (R779):
-            // the p.38 chart carries no lance row - the
-            // zero row is the no-adjustment JUDGMENT
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            // Lance, Light/Medium/Heavy Horse - R781:
+            // the 1eonline.info compilation rows (the
+            // R779 zero-row JUDGMENT is struck)
+            {-3,-3,-2,-2,-1, 0, 0, 0, 0, 0, 0 },
+            {-1, 0, 0,+1,+1,+1,+1, 0, 0, 0, 0 },
+            {+4,+4,+3,+3,+2,+2,+2,+1,+1, 0, 0 },
         };
         for (int i = 0; i < items::WPN_COUNT; ++i) {
             const items::WeaponDef& w =

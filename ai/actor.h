@@ -135,6 +135,12 @@ struct Actor {
     // R779: the mount the member rides (the sdd kind
     // ladder; 0 = afoot) - the lance charge reads it
     int  mountKind = 0;
+    // R781: the set-spear stance - the member planted
+    // the spear against a closing charge this round
+    bool spearSet = false;
+    // R781: the receive multiplier armed for the one
+    // counterstrike blow (cleared once it lands)
+    bool receiveBoost = false;
     // R28: missile weapon slot (bow/crossbow/sling). Empty when the
     // character carries none - id WPN_DAGGER with a false missile
     // flag in the registry, so check hasRangedWeapon() instead.
@@ -493,6 +499,17 @@ public:
         m_throwMember = memberIndex;
     }
 
+    // R781: set-spear command - requestSetSpear(memberIndex)
+    // plants the member's spear to receive a charge this
+    // round: the stance CONSUMES the round (no attack), and
+    // a closing round-one monster blow answers to the
+    // counterstrike FIRST - the receive double rides that
+    // one blow. Only round one with a spear reads as a
+    // legal set; a new request overwrites a pending one.
+    void requestSetSpear(int memberIndex) {
+        m_setMember = memberIndex;
+    }
+
     // R83: a party Teleport ends the encounter - the game layer
     // reads this after the round to route the company to town
     // (result 4, no spoils).
@@ -599,6 +616,8 @@ private:
     int  m_shootMember = -1;                // R28 (-1 = none)
 
     int  m_throwMember = -1;                // R36 (-1 = none)
+
+    int  m_setMember = -1;                  // R781 (-1 = none)
 
     bool m_teleported = false;              // R83: Teleport escape
 
