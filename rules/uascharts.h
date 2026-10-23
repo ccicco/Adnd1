@@ -263,5 +263,45 @@ inline bool uscGnomeClericsNeverDruids()
 inline bool uscGnomishClericsAllMale()
     { return true; }
 
+// R784: the worship-site strings - the print's
+// place-of-worship reads, the prose under the
+// five clerical charts (pp. 121-122). The kind
+// codes and the cleric-gender grid pin in
+// rules/worshipsites.h; the strings ride here,
+// one row per deity in the registry order. The
+// compilation's Hanali row carries Solonor's
+// cells wholesale; the print's fountain-or-spring
+// stands. Erevan's read rides the print's own
+// "can by worshiped" typo in the prose.
+inline const char* uscWorshipSite(int i) {
+    static const char* const W[23] = {
+        "battlefield",   // Clangeddin
+        "underground temple",   // Vergadain
+        "underground temple",   // Dumathoin
+        "underground temple",   // Abbathor
+        "underground temple",   // Berronar
+        "open hilltops",   // Aerdrie
+        "never the same place twice",   // Erevan
+        "deep forest",   // Solonor
+        "by a fountain or spring",   // Hanali
+        "small grove",   // Labelas
+        "open field",   // Sheela
+        "anywhere",   // Arvoreen
+        "the home",   // Cyrrollalee
+        "anywhere",   // Brandobaris
+        "forest clearing",   // Baervan
+        "underground cavern",   // Urdlen
+        "subterranean temple",   // Segojan
+        "underground forge",   // Flandal
+        "battlefield",   // Bahgtru
+        "anywhere",   // Shargaas
+        "anywhere",   // Ilneval
+        "underground crypt",   // Yurtrus
+        "in a temple within a cave",   // Luthic
+    };
+    if (i < 0) i = 0;
+    if (i > 22) i = 22;
+    return W[i];
+}
 }   // namespace rules
 

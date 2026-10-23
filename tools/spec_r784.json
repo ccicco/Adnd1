@@ -1,0 +1,438 @@
+{
+  "round": 784,
+  "prefix": "plc",
+  "header_file": "rules/worshipsites.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/oa_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 706,
+  "title": "the worship sites",
+  "audit_label": "R784 worship sites audit",
+  "audit_comment": "THE WORSHIP SITES - the last unpinned Appendix S chart read (Curtiss's five-chart-rows call, resolved by the print). The R783 handoff flagged the five clerical chart rows blocked on extraction contamination; this round re-read the chart three ways - the 1eonline.info compilation pages, the R407 pins, and the print itself (the archive.org full-text OCR of pp. 121-122) - and the verdict is clean: EVERY R407 PIN STANDS. The contamination rides the compilation side, not the repo: the site's Hanali row carries Solonor's cells wholesale (sphere, animal, raiment, colors, form, and site - the deep forest), Labelas's sphere cell prints Erevan's sphere, and the Arvoreen, Segojan, and Aerdrie rows carry site-side spelling variants (defence, Nature, sky-blue, semi-annually). THE GRID: 23 x 2 - the place-of-worship kinds (16 distinct codes: the two battlefield rows, the four dwarven underground temples, Aerdrie's open hilltops, Hanali's fountain or spring, Labelas's small grove, Solonor's deep forest, Erevan's never-the-same-place-twice, Sheela's open field, Cyrrollalee's the home, the four anywhere rows, Baervan's forest clearing, Urdlen's cavern, Segojan's subterranean temple, Flandal's underground forge, Yurtrus's crypt, Luthic's cave temple) and the cleric-gender reads (12 males-only rows, the lone Berronar females-only row, 10 either-gender rows with the Luthic exception). THE STRINGS: the printed site phrases ride rules/uascharts.h (the uscWorshipSite accessor) with a live regtest strings block checking all 23 row for row (the R782 site-block precedent). Honest boundaries: the M, F, and N-H columns on the compilation pages are the compilation's own additions, not print chart columns - they stay contract-side; the print's own typos (\"can by worshiped\", the one-r Cyrollalee) ride the prose; the pantheon prose stays open (R423 stands)",
+  "include_comment": "the worship sites",
+  "include_after": "#include \"rules/deitylines.h\"  // R783: the deity stat lines",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R783 LANDED 2026-10-23: commit",
+  "prev_record": [
+    "- R783 LANDED 2026-10-23: commit",
+    "  23f196ee5190f87ee7cda1ce41890389d43b8495",
+    "  (census 705 -> 706, pushed 02ca879..23f196e),",
+    "  THE DEITY STAT LINES - the R406 messy reads",
+    "  pin at last (Curtiss's Appendix S pick),",
+    "  header rules/deitylines.h, prefix dvp (free",
+    "  at 02ca879). TWO GRIDS, not one: the first",
+    "  cut carried a 23 x 25 grid whose audit rows",
+    "  blew the 78-col engine gate, so the emit",
+    "  split it into the class-line grid (23 x 12,",
+    "  tag DvpClassLines - the five class/level",
+    "  lines plus the MOVE rates) and the",
+    "  ability-line grid (23 x 13, tag",
+    "  DvpStatLines - the seven ability lines",
+    "  plus the DAMAGE/ATTACK bonus); a second",
+    "  emit fix pulled the stray double-call off",
+    "  the table-column example refs (m['col'](r)",
+    "  is the C-side syntax; consts alone keep",
+    "  the ()). EXTRACTION: the uploaded",
+    "  Unearthed Arcana.pdf OCR only persisted",
+    "  the front matter (pp. 1-7), so the 23",
+    "  blocks rode the 1eonline.info compilation",
+    "  pages (the repo-trusted R189 source),",
+    "  row-verified against the R406 pins (ac,",
+    "  hp, mr, atk halves, damage spans all",
+    "  cross-match); where the compilation fills",
+    "  a print hole the print pins stand -",
+    "  Hanali's 99 AC, Brandobaris's unrecorded",
+    "  damage, Shargaas's attack hole. CONVENTIONS",
+    "  (8 consts + 8 bools): 0 = Nil/none, -1 =",
+    "  see-text/special/no-percentile, FightKind",
+    "  13 = the as-N-HD monster read (all five",
+    "  orc FIGHTER lines), the halfling titles",
+    "  read as levels, \"in each\" fills both",
+    "  columns, the 18/00 and 18/01 slash prints",
+    "  split to the pct column, signed stats",
+    "  (Yurtrus -4/-25), and the damage-bonus",
+    "  cross-check: bonus equals the S damage",
+    "  paren on all 15 rows that print both, with",
+    "  the three refusing prints pinned as they",
+    "  stand (Arvoreen +8/no paren, Bahgtru +15",
+    "  vs the S +14, Solonor S +9/no bonus). ONE",
+    "  FILE PATCH: the rules/uaappends.h R406",
+    "  comment strike - the messy reads now pin in",
+    "  deitylines.h, the prose alone stays open.",
+    "  rverify GREEN (591 mutants, 0 missed), ONE",
+    "  preflight, GREEN first pass. NEXT - R784",
+    "  candidate: the five clerical chart ROWS",
+    "  (spheres/raiment/holy days/sacrifice),",
+    "  blocked on the chart-extraction",
+    "  contamination (Hanali's row parsed wrong,",
+    "  Arvoreen's broken form cell)."
+  ],
+  "banner": {
+    "title": "THE WORSHIP SITES - the last unpinned Appendix S chart read: the place-of-worship kinds, the cleric-gender grid, and the print verdict on the contaminated chart rows",
+    "provenance": "The R783 handoff deferred the five clerical chart rows (spheres, raiment, holy days, sacrifice) as blocked on chart-extraction contamination. This round unblocked them: all 23 deity pages re-fetched from the 1eonline.info compilation (the repo-trusted R189 source), the chart tables parsed cell for cell, and the print itself read via the archive.org full-text OCR of pp. 121-122. THE VERDICT: every R407 pin stands - the contamination is compilation-side (the Hanali chart row carries Solonor's cells wholesale, Labelas's sphere cell prints Erevan's sphere, the Arvoreen and Segojan and Aerdrie rows carry spelling variants), so no chart repair was owed. THE PINS: the two per-row reads the chart carries that R407 left unpinned - the place-of-worship (16 distinct kinds, the prose under each chart: the battlefield pair Clangeddin and Bahgtru, the four dwarven underground temples, Aerdrie's open hilltops, Hanali's fountain or spring, Labelas's small grove, Solonor's deep forest, Erevan's never-the-same-place-twice, Sheela's open field, Cyrrollalee's the home, the two anywhere pairs, Baervan's forest clearing, Urdlen's underground cavern, Segojan's subterranean temple, Flandal's underground forge, Yurtrus's underground crypt, Luthic's temple within a cave) and the cleric-gender grid (12 males-only rows - the male dwarves, the gnomish all-male, the non-Luthic orcs; the lone Berronar females-only row; 10 either-gender rows - the elves, the halflings, Luthic). The printed site strings ride rules/uascharts.h (the uscWorshipSite accessor) with a live regtest strings block walking all 23 rows row for row (the R782 site-block precedent). Honest boundaries: the M, F, and N-H columns on the compilation pages are the compilation's own additions, not print chart columns - they stay contract-side; the print's own typos (the Erevan \"can by worshiped\", the one-r Cyrollalee prose) ride the prose; the pantheon prose stays open (R423 stands)",
+    "sentinel": "Zero new book pages: the worship-site reads ride the Appendix S pp. 121-122 chart and prose the R405/R406/R407 pins already seat, the compilation rides the R189 duty already trusted, and the print OCR rode the archive.org full-text read (the source-verification class)"
+  },
+  "consts": [
+    {
+      "name": "plcDeityRowCount",
+      "value": 23,
+      "comment": "The worship-site grid row census: 23 rows in the R405/R406/R783 registry order (dwarves, elves, halflings, gnomes, orcs)"
+    },
+    {
+      "name": "plcWorshipSiteRound",
+      "value": 784,
+      "comment": "The worship-site round: the last unpinned Appendix S chart read"
+    },
+    {
+      "name": "plcChartFeederRound",
+      "value": 407,
+      "comment": "The feeder round: the R407 five-chart pins this round re-verifies against the print and extends"
+    },
+    {
+      "name": "plcSiteKindCount",
+      "value": 16,
+      "comment": "The distinct place-of-worship kinds the print prose names (codes 0-15)"
+    },
+    {
+      "name": "plcMaleOnlyClericRows",
+      "value": 12,
+      "comment": "The males-only gender census: the four male dwarves, the four gnomes, the four non-Luthic orcs (Berronar alone reads female-only)"
+    },
+    {
+      "name": "plcFemaleOnlyClericRows",
+      "value": 1,
+      "comment": "The females-only gender census: the Berronar row alone (the lone female deity of the five pantheons)"
+    },
+    {
+      "name": "plcEitherGenderClericRows",
+      "value": 10,
+      "comment": "The either-gender census: the five elves, the four halflings, Luthic"
+    },
+    {
+      "name": "plcAnywhereSiteRows",
+      "value": 4,
+      "comment": "The anywhere census: Arvoreen, Brandobaris, Shargaas, Ilneval (the halfling and orc anywhere pairs)"
+    },
+    {
+      "name": "plcUndergroundSiteRows",
+      "value": 9,
+      "comment": "The underground census: the four dwarven temples, the cavern, the subterranean temple, the forge, the crypt, the cave temple"
+    },
+    {
+      "name": "plcFountainSiteKind",
+      "value": 3,
+      "comment": "The Hanali kind: by a fountain or spring (the compilation row carries Solonor's cells wholesale; the print stands)"
+    },
+    {
+      "name": "plcNeverSamePlaceKind",
+      "value": 6,
+      "comment": "The Erevan kind: never the same place twice (the print's own \"can by worshiped\" typo rides the prose, not the pin)"
+    },
+    {
+      "name": "plcFemaleOnlyDeityRow",
+      "value": 4,
+      "comment": "The Berronar row index: the lone female-deity read (the females-only gender cell)"
+    }
+  ],
+  "bools": [
+    {
+      "name": "plcSitesRideTheChartProse",
+      "value": true,
+      "comment": "The place-of-worship reads print in the prose under the five clerical charts, not a chart column (the strings ride rules/uascharts.h, the kinds and genders pin here)"
+    },
+    {
+      "name": "plcChartRowsVerifiedAgainstPrint",
+      "value": true,
+      "comment": "The five R407 chart rows re-verify against the print (the archive.org full-text OCR of pp. 121-122): every pinned cell stands, and every divergence rides the compilation side"
+    },
+    {
+      "name": "plcHanaliRowContaminationStandsPrint",
+      "value": true,
+      "comment": "The compilation's Hanali chart row carries Solonor's cells wholesale (sphere, animal, raiment, colors, form, site); the print's romance, bare, gold robes, fountain-or-spring row stands"
+    },
+    {
+      "name": "plcErevanNeverSamePlaceTwice",
+      "value": true,
+      "comment": "The only restriction on where Erevan can be worshiped: never in the same place twice"
+    },
+    {
+      "name": "plcDwarvenRestWorshipInTemples",
+      "value": true,
+      "comment": "Clangeddin is worshiped on the battlefield; the other four dwarves are worshiped in underground temples carved from natural rock"
+    },
+    {
+      "name": "plcHalflingAnywherePair",
+      "value": true,
+      "comment": "The halfling anywhere pair: services for Arvoreen and Brandobaris may be conducted anywhere (Sheela requires an open field, Cyrrollalee the home)"
+    },
+    {
+      "name": "plcOrcAnywherePair",
+      "value": true,
+      "comment": "The orc anywhere pair: services for Shargaas and Ilneval anywhere (Bahgtru requires a battlefield, Yurtrus an underground crypt, Luthic a temple within a cave)"
+    },
+    {
+      "name": "plcLuthicAllowsBothGenders",
+      "value": true,
+      "comment": "Luthic's worship is one of the few that allows both male and female orcs to become clerics; nearly all of the other deities permit male clerics only"
+    },
+    {
+      "name": "plcGenderColumnsRideTheCompilation",
+      "value": true,
+      "comment": "The M, F, and N-H columns on the compilation pages are the compilation's own additions, not print chart columns; the print states the gender reads in the prose, pinned here per row (the columns stay contract-side)"
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [
+    {
+      "name": "the worship-site grid",
+      "tag": "PlcSites",
+      "count": "plcDeityRowCount",
+      "cols": [
+        "plcSiteKind",
+        "plcClericGender"
+      ],
+      "col_comments": [
+        "The place-of-worship kind: 0 battlefield, 1 underground temple, 2 open hilltops, 3 by a fountain or spring, 4 small grove, 5 deep forest, 6 never the same place twice, 7 open field, 8 the home, 9 anywhere, 10 forest clearing, 11 underground cavern, 12 subterranean temple, 13 underground forge, 14 underground crypt, 15 a temple within a cave (the prose under the five clerical charts, pp. 121-122)",
+        "The cleric gender read: 0 males only, 1 females only, 2 either gender (the pantheon prose: the dwarven male/female split, the elven and halfling either-gender, the all-male gnomish, the Luthic exception)"
+      ],
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          15,
+          2
+        ]
+      ],
+      "sentinel": -1,
+      "sentinel_census": [
+        0,
+        0
+      ],
+      "audit_comment": "the 23 x 2 worship-site grid - the place-of-worship kinds and the cleric-gender reads, in the R405/R406/R783 registry order (no -1 sentinel rides; every cell prints)"
+    }
+  ],
+  "examples": [
+    {
+      "note": "the worship-site kind walk - all 23 rows against the print prose reads",
+      "expr": "m['plcSiteKind'](0) != 0 or m['plcSiteKind'](1) != 1 or m['plcSiteKind'](2) != 1 or m['plcSiteKind'](3) != 1 or m['plcSiteKind'](4) != 1 or m['plcSiteKind'](5) != 2 or m['plcSiteKind'](6) != 6 or m['plcSiteKind'](7) != 5 or m['plcSiteKind'](8) != 3 or m['plcSiteKind'](9) != 4 or m['plcSiteKind'](10) != 7 or m['plcSiteKind'](11) != 9 or m['plcSiteKind'](12) != 8 or m['plcSiteKind'](13) != 9 or m['plcSiteKind'](14) != 10 or m['plcSiteKind'](15) != 11 or m['plcSiteKind'](16) != 12 or m['plcSiteKind'](17) != 13 or m['plcSiteKind'](18) != 0 or m['plcSiteKind'](19) != 9 or m['plcSiteKind'](20) != 9 or m['plcSiteKind'](21) != 14 or m['plcSiteKind'](22) != 15"
+    },
+    {
+      "note": "the cleric-gender walk - all 23 rows (the dwarven split, the either-gender elves and halflings, the all-male gnomes, the Luthic exception)",
+      "expr": "m['plcClericGender'](0) != 0 or m['plcClericGender'](1) != 0 or m['plcClericGender'](2) != 0 or m['plcClericGender'](3) != 0 or m['plcClericGender'](4) != 1 or m['plcClericGender'](5) != 2 or m['plcClericGender'](6) != 2 or m['plcClericGender'](7) != 2 or m['plcClericGender'](8) != 2 or m['plcClericGender'](9) != 2 or m['plcClericGender'](10) != 2 or m['plcClericGender'](11) != 2 or m['plcClericGender'](12) != 2 or m['plcClericGender'](13) != 2 or m['plcClericGender'](14) != 0 or m['plcClericGender'](15) != 0 or m['plcClericGender'](16) != 0 or m['plcClericGender'](17) != 0 or m['plcClericGender'](18) != 0 or m['plcClericGender'](19) != 0 or m['plcClericGender'](20) != 0 or m['plcClericGender'](21) != 0 or m['plcClericGender'](22) != 2"
+    },
+    {
+      "note": "the contamination repairs and the notable prints (Hanali fountain, Erevan never-twice, the anywhere four, the battlefield pair, Berronar lone female)",
+      "expr": "m['plcSiteKind'](8) != 3 or m['plcSiteKind'](6) != 6 or m['plcSiteKind'](11) != 9 or m['plcSiteKind'](13) != 9 or m['plcSiteKind'](19) != 9 or m['plcSiteKind'](20) != 9 or m['plcSiteKind'](0) != 0 or m['plcSiteKind'](18) != 0 or m['plcClericGender'](4) != 1 or m['plcClericGender'](22) != 2"
+    },
+    {
+      "note": "the feeder keys and the censuses (the R407 feed, the kind count, the gender and anywhere and underground censuses)",
+      "expr": "m['plcChartFeederRound']() != 407 or m['plcWorshipSiteRound']() != 784 or m['plcDeityRowCount']() != 23 or m['plcSiteKindCount']() != 16 or m['plcMaleOnlyClericRows']() != 12 or m['plcFemaleOnlyClericRows']() != 1 or m['plcEitherGenderClericRows']() != 10 or m['plcAnywhereSiteRows']() != 4 or m['plcUndergroundSiteRows']() != 9 or m['plcFemaleOnlyDeityRow']() != 4 or m['plcFountainSiteKind']() != 3 or m['plcNeverSamePlaceKind']() != 6"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the worship sites (the R784 wiring)": [
+      {
+        "kind": "const",
+        "name": "plcDeityRowCount"
+      },
+      {
+        "kind": "const",
+        "name": "plcWorshipSiteRound"
+      },
+      {
+        "kind": "const",
+        "name": "plcChartFeederRound"
+      },
+      {
+        "kind": "const",
+        "name": "plcSiteKindCount"
+      },
+      {
+        "kind": "const",
+        "name": "plcMaleOnlyClericRows"
+      },
+      {
+        "kind": "const",
+        "name": "plcFemaleOnlyClericRows"
+      },
+      {
+        "kind": "const",
+        "name": "plcEitherGenderClericRows"
+      },
+      {
+        "kind": "const",
+        "name": "plcAnywhereSiteRows"
+      },
+      {
+        "kind": "const",
+        "name": "plcUndergroundSiteRows"
+      },
+      {
+        "kind": "const",
+        "name": "plcFountainSiteKind"
+      },
+      {
+        "kind": "const",
+        "name": "plcNeverSamePlaceKind"
+      },
+      {
+        "kind": "const",
+        "name": "plcFemaleOnlyDeityRow"
+      },
+      {
+        "kind": "bool",
+        "name": "plcSitesRideTheChartProse"
+      },
+      {
+        "kind": "bool",
+        "name": "plcChartRowsVerifiedAgainstPrint"
+      },
+      {
+        "kind": "bool",
+        "name": "plcHanaliRowContaminationStandsPrint"
+      },
+      {
+        "kind": "bool",
+        "name": "plcErevanNeverSamePlaceTwice"
+      },
+      {
+        "kind": "bool",
+        "name": "plcDwarvenRestWorshipInTemples"
+      },
+      {
+        "kind": "bool",
+        "name": "plcHalflingAnywherePair"
+      },
+      {
+        "kind": "bool",
+        "name": "plcOrcAnywherePair"
+      },
+      {
+        "kind": "bool",
+        "name": "plcLuthicAllowsBothGenders"
+      },
+      {
+        "kind": "bool",
+        "name": "plcGenderColumnsRideTheCompilation"
+      }
+    ],
+    "the site grid (the R784 wiring)": [
+      {
+        "kind": "table",
+        "name": "the worship-site grid"
+      }
+    ]
+  },
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 238,
+    "open": 0
+  },
+  "caller_files": [
+    "rules/uascharts.h"
+  ],
+  "inline_count": 23,
+  "file_patches": [
+    {
+      "file": "rules/uascharts.h",
+      "note": "the worship-site strings land in uascharts.h (the uscWorshipSite accessor, one printed string per row)",
+      "from": "inline bool uscGnomishClericsAllMale()\n    { return true; }\n\n}   // namespace rules\n\n",
+      "to": "inline bool uscGnomishClericsAllMale()\n    { return true; }\n\n// R784: the worship-site strings - the print's\n// place-of-worship reads, the prose under the\n// five clerical charts (pp. 121-122). The kind\n// codes and the cleric-gender grid pin in\n// rules/worshipsites.h; the strings ride here,\n// one row per deity in the registry order. The\n// compilation's Hanali row carries Solonor's\n// cells wholesale; the print's fountain-or-spring\n// stands. Erevan's read rides the print's own\n// \"can by worshiped\" typo in the prose.\ninline const char* uscWorshipSite(int i) {\n    static const char* const W[23] = {\n        \"battlefield\",   // Clangeddin\n        \"underground temple\",   // Vergadain\n        \"underground temple\",   // Dumathoin\n        \"underground temple\",   // Abbathor\n        \"underground temple\",   // Berronar\n        \"open hilltops\",   // Aerdrie\n        \"never the same place twice\",   // Erevan\n        \"deep forest\",   // Solonor\n        \"by a fountain or spring\",   // Hanali\n        \"small grove\",   // Labelas\n        \"open field\",   // Sheela\n        \"anywhere\",   // Arvoreen\n        \"the home\",   // Cyrrollalee\n        \"anywhere\",   // Brandobaris\n        \"forest clearing\",   // Baervan\n        \"underground cavern\",   // Urdlen\n        \"subterranean temple\",   // Segojan\n        \"underground forge\",   // Flandal\n        \"battlefield\",   // Bahgtru\n        \"anywhere\",   // Shargaas\n        \"anywhere\",   // Ilneval\n        \"underground crypt\",   // Yurtrus\n        \"in a temple within a cave\",   // Luthic\n    };\n    if (i < 0) i = 0;\n    if (i > 22) i = 22;\n    return W[i];\n}\n}   // namespace rules\n\n"
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the worship-site strings block (the live print-read check, no census marker)",
+      "from": "    // ---- R227: the wis mental save wiring audit ----",
+      "to": "    // ---- R784: the worship-site strings block ----\n    // THE STRINGS BLOCK - the authored seam the\n    // pin mirror cannot see (the R782 site-block\n    // precedent): every worship-site string the\n    // uascharts.h accessor returns matches the\n    // print read, row for row, fail-on-wrong via\n    // the tiny in-header string equality. This\n    // printf carries no census marker (the census\n    // counts the pin audit alone; a bad here\n    // still fails the battery by the return)\n    {\n        using namespace rules;\n        static const char* const want[23] = {\n            \"battlefield\",\n            \"underground temple\",\n            \"underground temple\",\n            \"underground temple\",\n            \"underground temple\",\n            \"open hilltops\",\n            \"never the same place twice\",\n            \"deep forest\",\n            \"by a fountain or spring\",\n            \"small grove\",\n            \"open field\",\n            \"anywhere\",\n            \"the home\",\n            \"anywhere\",\n            \"forest clearing\",\n            \"underground cavern\",\n            \"subterranean temple\",\n            \"underground forge\",\n            \"battlefield\",\n            \"anywhere\",\n            \"anywhere\",\n            \"underground crypt\",\n            \"in a temple within a cave\",\n        };\n        int bad = 0;\n        for (int i = 0; i < 23; ++i)\n            if (!uscStrEq(uscWorshipSite(i), want[i]))\n                ++bad;\n        printf(\"R784 worship site strings: bad %d\\n\", bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+    }
+  ]
+}

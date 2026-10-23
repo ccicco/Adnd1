@@ -19602,6 +19602,58 @@ when both halves land.
   and sentinel floors traced before publish).
   NEXT - R783: the next target awaits
   Curtiss's call.
+- R783 LANDED 2026-10-23: commit
+  23f196ee5190f87ee7cda1ce41890389d43b8495
+  (census 705 -> 706, pushed 02ca879..23f196e),
+  THE DEITY STAT LINES - the R406 messy reads
+  pin at last (Curtiss's Appendix S pick),
+  header rules/deitylines.h, prefix dvp (free
+  at 02ca879). TWO GRIDS, not one: the first
+  cut carried a 23 x 25 grid whose audit rows
+  blew the 78-col engine gate, so the emit
+  split it into the class-line grid (23 x 12,
+  tag DvpClassLines - the five class/level
+  lines plus the MOVE rates) and the
+  ability-line grid (23 x 13, tag
+  DvpStatLines - the seven ability lines
+  plus the DAMAGE/ATTACK bonus); a second
+  emit fix pulled the stray double-call off
+  the table-column example refs (m['col'](r)
+  is the C-side syntax; consts alone keep
+  the ()). EXTRACTION: the uploaded
+  Unearthed Arcana.pdf OCR only persisted
+  the front matter (pp. 1-7), so the 23
+  blocks rode the 1eonline.info compilation
+  pages (the repo-trusted R189 source),
+  row-verified against the R406 pins (ac,
+  hp, mr, atk halves, damage spans all
+  cross-match); where the compilation fills
+  a print hole the print pins stand -
+  Hanali's 99 AC, Brandobaris's unrecorded
+  damage, Shargaas's attack hole. CONVENTIONS
+  (8 consts + 8 bools): 0 = Nil/none, -1 =
+  see-text/special/no-percentile, FightKind
+  13 = the as-N-HD monster read (all five
+  orc FIGHTER lines), the halfling titles
+  read as levels, "in each" fills both
+  columns, the 18/00 and 18/01 slash prints
+  split to the pct column, signed stats
+  (Yurtrus -4/-25), and the damage-bonus
+  cross-check: bonus equals the S damage
+  paren on all 15 rows that print both, with
+  the three refusing prints pinned as they
+  stand (Arvoreen +8/no paren, Bahgtru +15
+  vs the S +14, Solonor S +9/no bonus). ONE
+  FILE PATCH: the rules/uaappends.h R406
+  comment strike - the messy reads now pin in
+  deitylines.h, the prose alone stays open.
+  rverify GREEN (591 mutants, 0 missed), ONE
+  preflight, GREEN first pass. NEXT - R784
+  candidate: the five clerical chart ROWS
+  (spheres/raiment/holy days/sacrifice),
+  blocked on the chart-extraction
+  contamination (Hanali's row parsed wrong,
+  Arvoreen's broken form cell).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
