@@ -26,6 +26,8 @@ GR=$(python3 -c "import json,sys; print(json.load(open('$SPEC'))['gap_report'])"
 NFLIP=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('gap_flips',[])))")
 NFPATCH=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('file_patches',[])))")
 EXTRA=$(python3 -c "import json,sys; print(' '.join(fp['file'] for fp in json.load(open('$SPEC')).get('file_patches',[])))")
+NDATA=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('data_files',[])))")
+DFILES=$(python3 -c "import json,sys; print(' '.join(df['path'] for df in json.load(open('$SPEC')).get('data_files',[])))")
 
 echo "== rn R${RND}: spec $SPEC"
 echo "== header:  $HDR"
@@ -37,6 +39,9 @@ else
 fi
 if [ "$NFPATCH" -gt 0 ]; then
     echo "== file-patch round ($NFPATCH file patch(es)): $EXTRA go in the git add"
+fi
+if [ "$NDATA" -gt 0 ]; then
+    echo "== data-file round ($NDATA data file(s)): $DFILES go in the git add"
 fi
 echo "== commit:  $CMSG"
 
@@ -57,6 +62,9 @@ if [ "$NFLIP" -gt 0 ]; then
 fi
 if [ "$NFPATCH" -gt 0 ]; then
     git add $EXTRA
+fi
+if [ "$NDATA" -gt 0 ]; then
+    git add $DFILES
 fi
 git commit -m "$CMSG"
 git push

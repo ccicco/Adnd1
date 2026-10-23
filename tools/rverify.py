@@ -47,7 +47,9 @@ if SHA:
              S['seed_file'], S['header_file']] \
         + S.get('caller_files', []) \
         + [fp['file']
-           for fp in S.get('file_patches', [])]
+           for fp in S.get('file_patches', [])] \
+        + [df['path']
+           for df in S.get('data_files', [])]
     for p in sorted(set(files)):
         os.makedirs(os.path.dirname(p) or '.',
                      exist_ok=True)
@@ -78,7 +80,8 @@ r2 = subprocess.run(
 # as gap flips (the applied/already
 # census covers them)
 n_patches = (len(S['gap_flips']) + 4
-             + len(S.get('file_patches', [])))
+             + len(S.get('file_patches', []))
+             + len(S.get('data_files', [])))
 ok1 = ('applied %d, already 0' % n_patches) in r1.stdout
 ok2 = ('applied 0, already %d' % n_patches) in r2.stdout
 print('DOUBLE-RUN: first %s, second %s'

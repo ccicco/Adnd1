@@ -20171,6 +20171,72 @@ when both halves land.
   candidates are the UA Appendix Spell Dueling
   Characteristics pp. 180-188 and the Index pp.
   189-192).
+- R793 LANDED 2026-10-23: commit
+  243187ef5a4d2775fecb51af8a48ea843bf58bd7
+  (census 715 -> 716, pushed f077c24..243187e),
+  THE REGISTRY PROMOTION DEF NAME FIX - the
+  bare-key round (the user call: monster
+  .lua files cannot carry book prefixes).
+  The 18 R792 wsg_ keys went bare: 15 NEW
+  bare-key defs through data_files (bear,
+  the two camels, dog_sled, donkey, the two
+  elephants, the five horses, ram, sheep,
+  yak), and the three MM1 collisions (ape,
+  mule, pony) kept their single defs with
+  the WSG Table 13 rows riding as field
+  patches (the single-def-per-creature
+  rule). MonsterDef gained the wsgRoles
+  service mask (1 normal, 2 mount, 4 pack -
+  the roles derived from the wsgmount.h
+  catalog pins: 13 mounts, 15 pack, all 18
+  normal; wild horse normal only, warhorses
+  3, draft horse/sled dog/sheep 5). FIVE
+  FILE PATCHES: MonsterRegistry.h (the
+  wsgRoles field), MonsterRegistry.cpp (the
+  coercer read), ape.lua/mule.lua/pony.lua
+  (loadNormal/loadMax/wsgRoles rides). The
+  pre-cut git clean -f monsters/monsters/
+  dropped all 73 untracked R792-key files
+  first (none had ever reached GitHub), so
+  the registry reads 481 -> 478 live -
+  SUPERSEDING the prg 481 pin (the prg
+  record stays landed; the reconciliation
+  in the prf banner). Header rules/prf.h,
+  prefix prf, 12 consts + 12 bools (24
+  inline), audit "R793 registry promotion
+  def name fix audit", include after prg.h.
+  CAUGHT IN AUTHORING: the reused R792
+  archon_tome entry was that spec's final
+  array element (closing brace, no comma)
+  and broke the R793 JSON mid-array at first
+  run - fixed by the comma at the seam and
+  re-validated by a real json.load before
+  the rerun (grep-only seams are not a JSON
+  gate). Engine double-run applied 79/
+  already 0 -> 0/79; rverify NOT RUN (no
+  local Python in the authoring environment
+  - the device gates carried the round).
+  BATTERY LIVE: loaded 478, errors 0; xp
+  audit 478 checked, 0 anomalies; encounter
+  smoke 2000 rolls, 0 bad; specials census
+  50 monsters; AUDIT CENSUS 716 each
+  exactly once, all bad 0; build 0 warnings;
+  one preflight, GREEN first pass. THE
+  R792 DATA-FILES LESSON CLOSED: the
+  follow-up add/commit/push was made this
+  time - commit 2bc7810 (pushed
+  243187e..2bc7810) carrying all 70 defs,
+  so the OA 47 + MOP 8 + the 15 bare-key
+  WSG defs are now ON GITHUB. md5s: spec
+  authored afe8f8a980c71ad0193471749c7cc239,
+  gate b51113200036be5b6572db10623396d6.
+  NEXT - R794: per the DMO plan the
+  candidates are the UA Appendix Spell
+  Dueling Characteristics pp. 180-188 and
+  the Index pp. 189-192; a candidate
+  tooling round: the rn git-add and
+  rverify.py data_files adaptations (both
+  predate the extension).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
