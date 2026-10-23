@@ -19915,6 +19915,71 @@ when both halves land.
   R789: awaits Curtiss's call (part 4
   candidate: the gnomish prose, Baervan
   through Flandal, pp. 118-122).
+- R789 LANDED 2026-10-23: commit
+  7ab91742666169f126a5f687f758a4792c0111bf
+  (census 711 -> 712, pushed 8f3ce80..7ab9174),
+  THE GNOMISH DEITY PROSE - part 4 of
+  the five-part Appendix S description-paragraph
+  close (Curtiss's "Go" call). The four
+  gnomish blocks (pp. 116-118) read
+  scan-clean in the archive.org full-text
+  OCR (item ad-d-1st-edition-unearthed-
+  arcana, the _djvu.txt): the Baervan
+  craft (the spear +3 from Whisperleaf,
+  remade in a single day, the tree
+  regenerating within an hour and
+  attacking all others as a max treant,
+  the spear animating trees 5-20 turns as
+  12-HD treants one per round at will, the
+  raccoon Chiktikka AC 3 at 15" with 70
+  hp and full 12th-level-thief powers at
+  18 dex, claws 2-8 and bite 2-12, the 1
+  percent great-deed meet granting a
+  minor magic item once per lifetime),
+  the Urdlen evil (the permanent
+  undispellable blur, the 5 percent
+  protective call that costs a slain
+  cleric his eaten soul, the blood-burial
+  appeasement and the ruin-and-bury
+  sacrifices, the war against the rest of
+  the pantheon), the Segojan nature (the
+  +4 grass-and-roots leather, the +4
+  quartz rod 3-30, the stone golem once
+  per day at average intelligence needing
+  a rock mass, the 2-8 16-HD earth
+  elementals once per day, the glowing-gem
+  holy symbols, the illusionist and
+  miner-jeweler followings), and the
+  Flandal forge (the half-damage fire
+  apron, the mithril skin and coal eyes,
+  the Arumdina forging for Garl, the +5
+  hammer Rhondang throwing six-dice
+  fireballs once per round up to ten per
+  day, speaking with fire beings, double
+  damage to cold creatures, the 65
+  percent chance of 1-4 friendly 16-HD
+  fire elementals, the Twin-Paradises
+  workshop, the smith and fighter/cleric
+  followings with the flaming-hammer
+  spell). THE PINS: header
+  rules/uadeityprose4.h, prefix udp4 (free
+  at 8f3ce80), 40 consts + 55 bools (95
+  inline), no tables - pure prose data;
+  the stat-block numerics stay R406/R783.
+  TWO COMMENT STRIKES (deitylines.h and
+  uaappends.h): the prose notes now read
+  "the dwarven, elven, halfling, and
+  gnomish paragraphs pin (rules/
+  uadeityprose1-4.h); the orcs' prose
+  stays open"; the dvpProseStaysOpen pin
+  KEEPS true (only the orcish paragraphs
+  remain - part 5 flips it). rverify
+  GREEN (95 mutants, 0 missed), ONE
+  preflight, GREEN first pass. NEXT -
+  R790: awaits Curtiss's call (part 5
+  candidate: the orcish prose, pp.
+  118-122 - the close's finale, flipping
+  dvpProseStaysOpen to false).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1,0 +1,915 @@
+{
+ "round": 790,
+ "prefix": "udp5",
+ "header_file": "rules/uadeityprose5.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/oa_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 712,
+ "title": "the orcish deity prose",
+ "audit_label": "R790 orcish deity prose audit",
+ "audit_comment": "THE ORCISH DEITY PROSE - part 5, the finale of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 118-121 reads the shaman tale and the five orcish blocks scan-clean: the Bahgtru grapple and cesti might, the Shargaas night caves below Gehenna, the Ilneval slaying sword and red chainmail, the Yurtrus gas envelope and death magic, and the Luthic cave-mother curse and claws. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose5.h. THE FLIP: dvpProseStaysOpen returns false at last - the close is complete, and the R783 audit assertion rides with it.",
+ "include_comment": "the orcish deity prose",
+ "include_after": "#include \"rules/uadeityprose4.h\"  // R789: the gnomish deity prose",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R789 LANDED 2026-10-23: commit",
+ "prev_record": [
+  "- R789 LANDED 2026-10-23: commit",
+  "  7ab91742666169f126a5f687f758a4792c0111bf",
+  "  (census 711 -> 712, pushed 8f3ce80..7ab9174),",
+  "  THE GNOMISH DEITY PROSE - part 4 of",
+  "  the five-part Appendix S description-paragraph",
+  "  close (Curtiss's \"Go\" call). The four",
+  "  gnomish blocks (pp. 116-118) read",
+  "  scan-clean in the archive.org full-text",
+  "  OCR (item ad-d-1st-edition-unearthed-",
+  "  arcana, the _djvu.txt): the Baervan",
+  "  craft (the spear +3 from Whisperleaf,",
+  "  remade in a single day, the tree",
+  "  regenerating within an hour and",
+  "  attacking all others as a max treant,",
+  "  the spear animating trees 5-20 turns as",
+  "  12-HD treants one per round at will, the",
+  "  raccoon Chiktikka AC 3 at 15\" with 70",
+  "  hp and full 12th-level-thief powers at",
+  "  18 dex, claws 2-8 and bite 2-12, the 1",
+  "  percent great-deed meet granting a",
+  "  minor magic item once per lifetime),",
+  "  the Urdlen evil (the permanent",
+  "  undispellable blur, the 5 percent",
+  "  protective call that costs a slain",
+  "  cleric his eaten soul, the blood-burial",
+  "  appeasement and the ruin-and-bury",
+  "  sacrifices, the war against the rest of",
+  "  the pantheon), the Segojan nature (the",
+  "  +4 grass-and-roots leather, the +4",
+  "  quartz rod 3-30, the stone golem once",
+  "  per day at average intelligence needing",
+  "  a rock mass, the 2-8 16-HD earth",
+  "  elementals once per day, the glowing-gem",
+  "  holy symbols, the illusionist and",
+  "  miner-jeweler followings), and the",
+  "  Flandal forge (the half-damage fire",
+  "  apron, the mithril skin and coal eyes,",
+  "  the Arumdina forging for Garl, the +5",
+  "  hammer Rhondang throwing six-dice",
+  "  fireballs once per round up to ten per",
+  "  day, speaking with fire beings, double",
+  "  damage to cold creatures, the 65",
+  "  percent chance of 1-4 friendly 16-HD",
+  "  fire elementals, the Twin-Paradises",
+  "  workshop, the smith and fighter/cleric",
+  "  followings with the flaming-hammer",
+  "  spell). THE PINS: header",
+  "  rules/uadeityprose4.h, prefix udp4 (free",
+  "  at 8f3ce80), 40 consts + 55 bools (95",
+  "  inline), no tables - pure prose data;",
+  "  the stat-block numerics stay R406/R783.",
+  "  TWO COMMENT STRIKES (deitylines.h and",
+  "  uaappends.h): the prose notes now read",
+  "  \"the dwarven, elven, halfling, and",
+  "  gnomish paragraphs pin (rules/",
+  "  uadeityprose1-4.h); the orcs' prose",
+  "  stays open\"; the dvpProseStaysOpen pin",
+  "  KEEPS true (only the orcish paragraphs",
+  "  remain - part 5 flips it). rverify",
+  "  GREEN (95 mutants, 0 missed), ONE",
+  "  preflight, GREEN first pass. NEXT -",
+  "  R790: awaits Curtiss's call (part 5",
+  "  candidate: the orcish prose, pp.",
+  "  118-122 - the close's finale, flipping",
+  "  dvpProseStaysOpen to false)."
+ ],
+ "banner": {
+  "title": "THE ORCISH DEITY PROSE - part 5, the finale of the Appendix S paragraph close: the shaman tale plus Bahgtru, Shargaas, Ilneval, Yurtrus, and Luthic pin from the clean archive.org OCR read",
+  "provenance": "Part 5 of 5 (R786 the dwarves, R787 the elves, R788 the halflings, R789 the gnomes). The shaman-tale intro and the five orcish blocks (pp. 118-121) read scan-clean in the archive.org full-text OCR: every pin below is the printed text. The stat-block numerics stay R406/R783; the paragraph-level facts pin here - the lot-drawing creation tale and the Gruumsh iron spear, the Bahgtru crush and the blunt bounce, the Shargaas new-moon ambush creed, the Ilneval captain politics and the death-sword, the Yurtrus three-band gas and the wish-only recovery, and the Luthic fertility dirt and the name-abuse curse. This round FLIPS dvpProseStaysOpen to false: every Appendix S description paragraph now pins, and the R783 audit assertion rides with it."
+ },
+ "consts": [
+  {
+   "name": "udp5ProseRound",
+   "value": 790,
+   "comment": "The prose round: part 5, the orcish paragraphs - the close finale"
+  },
+  {
+   "name": "udp5StatblockFeederRound",
+   "value": 406,
+   "comment": "The feeder round: the R406 stat blocks these paragraphs hang under"
+  },
+  {
+   "name": "udp5OrcishDeityCount",
+   "value": 5,
+   "comment": "The orcish census: five blocks described (Bahgtru, Shargaas, Ilneval, Yurtrus, Luthic)"
+  },
+  {
+   "name": "udp5ProsePartsTotal",
+   "value": 5,
+   "comment": "The five-part close is complete: dwarves, elves, halflings, gnomes, orcs"
+  },
+  {
+   "name": "udp5ProsePartRoundMin",
+   "value": 786,
+   "comment": "The close opened at R786 (the dwarven prose)"
+  },
+  {
+   "name": "udp5ProsePartRoundMax",
+   "value": 790,
+   "comment": "and closes at R790 (the orcish prose)"
+  },
+  {
+   "name": "udp5BahGrappleMargin",
+   "value": 4,
+   "comment": "If he rolls 4 or more over what he needs to hit with both hands, he has grappled his opponent"
+  },
+  {
+   "name": "udp5BahCrushDamageMin",
+   "value": 10,
+   "comment": "A grappled victim is crushed for 10-120 points per round without rolling again to hit: the minimum 10"
+  },
+  {
+   "name": "udp5BahCrushDamageMax",
+   "value": 120,
+   "comment": "and the maximum 120"
+  },
+  {
+   "name": "udp5BahBluntWeaponDamage",
+   "value": 1,
+   "comment": "His skin is so thick that blunt weapons do only one point of damage before they bounce off"
+  },
+  {
+   "name": "udp5BahClericStrengthMin",
+   "value": 16,
+   "comment": "Clerics of Bahgtru must have a minimum strength of 16 and keep physically fit"
+  },
+  {
+   "name": "udp5ShaDarkSightMiles",
+   "value": 1,
+   "comment": "Though blinded by sunlight, he sees perfectly in darkness out to a range of a mile or more"
+  },
+  {
+   "name": "udp5ShaShadowSkillMin",
+   "value": 5,
+   "comment": "Rumored shaman/witch-doctor thieving skill of 5-30 percent success: the minimum 5"
+  },
+  {
+   "name": "udp5ShaShadowSkillMax",
+   "value": 30,
+   "comment": "and the maximum 30"
+  },
+  {
+   "name": "udp5IlnSwordSaveMod",
+   "value": -6,
+   "comment": "His sword slays all non-orcs it strikes (save versus death at -6)"
+  },
+  {
+   "name": "udp5YurGasRadiusFeet",
+   "value": 120,
+   "comment": "He is surrounded by stinking gases out to 120 feet"
+  },
+  {
+   "name": "udp5YurGasLowBandHd",
+   "value": 4,
+   "comment": "Beings up to and including 4 hit dice/levels are affected as by dust of sneezing and choking"
+  },
+  {
+   "name": "udp5YurGasMidBandHd",
+   "value": 8,
+   "comment": "Those up to 8 hit dice/levels as if struck by a symbol of pain"
+  },
+  {
+   "name": "udp5YurGasHighHitMod",
+   "value": -2,
+   "comment": "Those of higher level suffer -2 to hit with no saving throw"
+  },
+  {
+   "name": "udp5YurDeathMagicLevel",
+   "value": 18,
+   "comment": "He uses all death-magic spells of 18th-level magic-users"
+  },
+  {
+   "name": "udp5YurTouchDamageMin",
+   "value": 3,
+   "comment": "A being he strikes loses 3-12 hit points: the minimum 3"
+  },
+  {
+   "name": "udp5YurTouchDamageMax",
+   "value": 12,
+   "comment": "and the maximum 12"
+  },
+  {
+   "name": "udp5YurTouchDiseasesMin",
+   "value": 1,
+   "comment": "and catches 1-4 random diseases: the minimum 1"
+  },
+  {
+   "name": "udp5YurTouchDiseasesMax",
+   "value": 4,
+   "comment": "and the maximum 4"
+  },
+  {
+   "name": "udp5LutClawLengthFeet",
+   "value": 4,
+   "comment": "Her unbreakable black claws are four feet long"
+  },
+  {
+   "name": "udp5LutRegenPerRound",
+   "value": 3,
+   "comment": "In contact with the ground she regenerates 3 hit points per round"
+  },
+  {
+   "name": "udp5LutCurseChancePct",
+   "value": 10,
+   "comment": "A 10 percent chance that abuse of her name renders the abuser susceptible to any disease"
+  },
+  {
+   "name": "udp5LutCurseFatalDaysMin",
+   "value": 2,
+   "comment": "The next ailment proves fatal within 2-7 days: the minimum 2"
+  },
+  {
+   "name": "udp5LutCurseFatalDaysMax",
+   "value": 7,
+   "comment": "and the maximum 7"
+  },
+  {
+   "name": "udp5LutCurseUndoWishes",
+   "value": 3,
+   "comment": "Only the power of three wish spells applied while the victim still lives can undo the curse"
+  },
+  {
+   "name": "udp5LutGuardHitBonus",
+   "value": 2,
+   "comment": "Orcs guarding her clerics gain a +2 to-hit bonus from their ferocity and madness"
+  },
+  {
+   "name": "udp5LutGuardAcPenalty",
+   "value": -2,
+   "comment": "but this also causes a -2 penalty to their armor classes"
+  }
+ ],
+ "bools": [
+  {
+   "name": "udp5TaleOfTheLots",
+   "value": true,
+   "comment": "The shamans tell how the gods drew lots for the parts of the world: humans where they pleased, elves the green forests, dwarves the high mountains, gnomes the rocky sunlit hills, halflings the fields and meadows"
+  },
+  {
+   "name": "udp5TaleMockedOrcs",
+   "value": true,
+   "comment": "The assembled gods turned to the orcish gods and laughed: all the lots are taken, there is no place left"
+  },
+  {
+   "name": "udp5TaleIronSpear",
+   "value": true,
+   "comment": "Gruumsh One-Eye lifted his great iron spear over the world - piercing the mountains, splitting the hills, gouging the meadows - and claimed those places for the orcs"
+  },
+  {
+   "name": "udp5TaleOrcsInherit",
+   "value": true,
+   "comment": "He-Who-Watches roared that orcs will cover the world, slay all the collected peoples, and inherit it"
+  },
+  {
+   "name": "udp5TaleWarForWrath",
+   "value": true,
+   "comment": "This is why orcs make war, ceaseless and endless: war for the wrath of Gruumsh"
+  },
+  {
+   "name": "udp5TaleCorellonBattle",
+   "value": true,
+   "comment": "Corellon Larethian tried to shoot out Gruumsh eye and failed; because of that battle orcs of all sects hate elves more than all other non-orc races"
+  },
+  {
+   "name": "udp5TaleDwarfMountainWars",
+   "value": true,
+   "comment": "The shamans tales of the battle between the dwarven and orcish gods for ownership of the mountains would weary the most ardent listener"
+  },
+  {
+   "name": "udp5TaleGoblinBattles",
+   "value": true,
+   "comment": "The eternal battles on the plains of the Nine Hells between the goblins and orcs, each side led by their respective gods"
+  },
+  {
+   "name": "udp5TaleTribesAlongCults",
+   "value": true,
+   "comment": "The division of orcs into separate tribes (Evil Eye, Death Moon, Broken Bone, etc.) is usually made along cult lines - the tribal symbol is the holy symbol of the patron god"
+  },
+  {
+   "name": "udp5TaleHierarchyUnderGruumsh",
+   "value": true,
+   "comment": "There are a large number of orcish gods in a rigid chain of command with Gruumsh at the top; the relative positions vary with the shaman doing the telling"
+  },
+  {
+   "name": "udp5TaleTribalWarfareEncouraged",
+   "value": true,
+   "comment": "Warfare between tribes is encouraged to some extent - eliminating the unfit and weak, promoting the survival and growth of the strong"
+  },
+  {
+   "name": "udp5BahSonOfGruumshAndLuthic",
+   "value": true,
+   "comment": "He is the son of Gruumsh and Luthic the Cave Mother"
+  },
+  {
+   "name": "udp5BahScornedButMighty",
+   "value": true,
+   "comment": "Scorned and derided for his stupidity and lack of self-will, yet no one says ill of his awesome might"
+  },
+  {
+   "name": "udp5BahStrengthExceeds",
+   "value": true,
+   "comment": "Gods call upon him for assistance; he is obedient, though his strength always exceeds expectations and may harm commanders who fail to give him respect"
+  },
+  {
+   "name": "udp5BahSlewReptileBarehanded",
+   "value": true,
+   "comment": "He once slew a tremendous reptilian monster from another world barehanded by breaking all of its legs - his symbol derives from that battle"
+  },
+  {
+   "name": "udp5BahFightsWithCesti",
+   "value": true,
+   "comment": "Since then he has never used weapons or armor of any usual kind, only great studded cesti to beat his victims flat"
+  },
+  {
+   "name": "udp5BahTanSkinGreenEyes",
+   "value": true,
+   "comment": "He is a huge, incredibly muscular orc with dirty tan skin, dull green eyes, and glistening-white tusks from gnawing on bones"
+  },
+  {
+   "name": "udp5BahClericsNoArmor",
+   "value": true,
+   "comment": "His clerics cannot wear armor, but may use weapons as they choose"
+  },
+  {
+   "name": "udp5BahClericsLosePowers",
+   "value": true,
+   "comment": "Clerics who lose their required strength lose their other powers, and have their spirits crushed in Bahgtru fists in the afterlife"
+  },
+  {
+   "name": "udp5BahStrongHelpWeakOnward",
+   "value": true,
+   "comment": "Stronger clerics may help weaker clerics along to the next plane, usually without the latter permission"
+  },
+  {
+   "name": "udp5ShaCavesBelowGehenna",
+   "value": true,
+   "comment": "The Night Lord lives in a tremendous cavern system below the fiery plain of one of the levels of Gehenna - caves said to extend infinitely, darker than the blackest night"
+  },
+  {
+   "name": "udp5ShaOnlySeerInCaves",
+   "value": true,
+   "comment": "There no creature has sight but Shargaas himself and his orcish spirit servants"
+  },
+  {
+   "name": "udp5ShaClimbsAnySurface",
+   "value": true,
+   "comment": "He can climb any surface, even perfectly smooth ones, without slipping"
+  },
+  {
+   "name": "udp5ShaPerfectAmbusher",
+   "value": true,
+   "comment": "In the days he walked the earth he hid himself and his followers so well that no mortal could detect his ambushes or lairs"
+  },
+  {
+   "name": "udp5ShaBanditPatron",
+   "value": true,
+   "comment": "Orcish bandits and half-orc thieves hold him as their patron, as do other regular orc tribes"
+  },
+  {
+   "name": "udp5ShaMultiClassedClerics",
+   "value": true,
+   "comment": "Half-orc clerics are multi-classed cleric/thieves or cleric/assassins; shamans and witch doctors may carry a small thieving or assassination skill"
+  },
+  {
+   "name": "udp5ShaNewMoonHolidays",
+   "value": true,
+   "comment": "The major religious holidays are the times of the new moon, when the sky is dark and cloudy"
+  },
+  {
+   "name": "udp5IlnChiefLieutenant",
+   "value": true,
+   "comment": "When Gruumsh lacks time to command his armies he turns the job over to his chief lieutenant, the master of command and strategy"
+  },
+  {
+   "name": "udp5IlnCovetsGruumsh",
+   "value": true,
+   "comment": "It is hinted Ilneval covets Gruumsh position as chief god; he has deposed one or two other orcish gods in his climb to power"
+  },
+  {
+   "name": "udp5IlnCaptainsGod",
+   "value": true,
+   "comment": "He is more a captain god than a god of the common soldier - Gruumsh is preferred by chieftains and kings, Bahgtru by common warriors"
+  },
+  {
+   "name": "udp5IlnRedIronChainmail",
+   "value": true,
+   "comment": "He wears a suit of red iron chainmail"
+  },
+  {
+   "name": "udp5IlnImmuneToMissiles",
+   "value": true,
+   "comment": "His armor makes him untouchable by missile weapons, and he is immune to non-magical weapons as well"
+  },
+  {
+   "name": "udp5IlnScarredAppeal",
+   "value": true,
+   "comment": "His heavily scarred face and arms only increase his appeal to his orcish followers"
+  },
+  {
+   "name": "udp5IlnClericsRedArmor",
+   "value": true,
+   "comment": "His clerics wear red metallic armor and are expected to be good military leaders as well as good clerics"
+  },
+  {
+   "name": "udp5IlnHalfOrcBroadswords",
+   "value": true,
+   "comment": "Half-orc clerics of Ilneval use broadswords and are multi-classed cleric/fighters"
+  },
+  {
+   "name": "udp5YurNoMouthNeverSpeaks",
+   "value": true,
+   "comment": "The White Handed god of death and disease has no mouth and does not communicate - orcs say when White-Hands speaks to mean never"
+  },
+  {
+   "name": "udp5YurRottingFlesh",
+   "value": true,
+   "comment": "He appears as a huge, vaguely orcish giant covered with peeling, rotting green flesh; only his hands seem normal, chalk-white in color"
+  },
+  {
+   "name": "udp5YurGasLastsInRange",
+   "value": true,
+   "comment": "All the gas effects last while anyone stays within the cloud"
+  },
+  {
+   "name": "udp5YurWishRecoveryOnly",
+   "value": true,
+   "comment": "The touched hit-point loss is permanent unless recovered by a wish spell on a one-point-per-wish basis"
+  },
+  {
+   "name": "udp5YurClericWhiteGloves",
+   "value": true,
+   "comment": "His clerics wear pale white gloves made from the skins of non-orcish humanoids during ceremonies, and thin cloth-equivalent armor woven of the same materials"
+  },
+  {
+   "name": "udp5YurMaceWhiteFist",
+   "value": true,
+   "comment": "In combat they use maces with the weapon head made in the shape of a white fist"
+  },
+  {
+   "name": "udp5YurPlagueAppeals",
+   "value": true,
+   "comment": "When plague strikes, his clerics appeal to him for an end to the illness with great sacrifices of prisoners and slaves"
+  },
+  {
+   "name": "udp5LutCaveMotherSpheres",
+   "value": true,
+   "comment": "She governs female orcs, fertility (Gruumsh holds the male side), caves and caverns she digs herself, servitude, primitive medicine, and the restoration of orcish morale"
+  },
+  {
+   "name": "udp5LutClosestToBahgtru",
+   "value": true,
+   "comment": "She is the deity closest to her son Bahgtru, and he follows her commands over all others, even Gruumsh"
+  },
+  {
+   "name": "udp5LutClawsTunnelRock",
+   "value": true,
+   "comment": "The other gods fear her great claws, so strong they can tunnel through solid rock"
+  },
+  {
+   "name": "udp5LutServicesUnderground",
+   "value": true,
+   "comment": "Orcish clerics call her the Cave Mother and conduct her services underground"
+  },
+  {
+   "name": "udp5LutWorshipedByMales",
+   "value": true,
+   "comment": "Though she represents female orcs, she is worshiped by males as well for her ferocity and her healing powers"
+  },
+  {
+   "name": "udp5LutUnarmoredBlackClaws",
+   "value": true,
+   "comment": "She wears no armor; her hair and eyes are dull black and her skin dark brown, lighter on the nose and ears"
+  },
+  {
+   "name": "udp5LutDirtRituals",
+   "value": true,
+   "comment": "Her followers rub dirt on themselves to ensure many children, and her clerics use earth in casting curative spells as a purely symbolic gesture"
+  },
+  {
+   "name": "udp5LutBothSexesClerics",
+   "value": true,
+   "comment": "Her worship is one of the few that allows both male and female orcs to become clerics; nearly all other deities permit male clerics only"
+  },
+  {
+   "name": "udp5LutVileRuneTribe",
+   "value": true,
+   "comment": "Her Vile Rune tribe generally dwells underground, commits fewer raids, but is especially fierce if the lair is threatened"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the round consts (the prose round, the feeder round, the census, the close complete)",
+   "expr": "m['udp5ProseRound']() != 790 or m['udp5StatblockFeederRound']() != 406 or m['udp5OrcishDeityCount']() != 5 or m['udp5ProsePartsTotal']() != 5 or m['udp5ProsePartRoundMin']() != 786 or m['udp5ProsePartRoundMax']() != 790"
+  },
+  {
+   "note": "the shaman-tale prose walk",
+   "expr": "m['udp5TaleOfTheLots']() != 1 or m['udp5TaleMockedOrcs']() != 1 or m['udp5TaleIronSpear']() != 1 or m['udp5TaleOrcsInherit']() != 1 or m['udp5TaleWarForWrath']() != 1 or m['udp5TaleCorellonBattle']() != 1 or m['udp5TaleDwarfMountainWars']() != 1 or m['udp5TaleGoblinBattles']() != 1 or m['udp5TaleTribesAlongCults']() != 1 or m['udp5TaleHierarchyUnderGruumsh']() != 1 or m['udp5TaleTribalWarfareEncouraged']() != 1"
+  },
+  {
+   "note": "the Bahgtru prose walk",
+   "expr": "m['udp5BahGrappleMargin']() != 4 or m['udp5BahCrushDamageMin']() != 10 or m['udp5BahCrushDamageMax']() != 120 or m['udp5BahBluntWeaponDamage']() != 1 or m['udp5BahClericStrengthMin']() != 16 or m['udp5BahSonOfGruumshAndLuthic']() != 1 or m['udp5BahScornedButMighty']() != 1 or m['udp5BahStrengthExceeds']() != 1 or m['udp5BahSlewReptileBarehanded']() != 1 or m['udp5BahFightsWithCesti']() != 1 or m['udp5BahTanSkinGreenEyes']() != 1 or m['udp5BahClericsNoArmor']() != 1 or m['udp5BahClericsLosePowers']() != 1 or m['udp5BahStrongHelpWeakOnward']() != 1"
+  },
+  {
+   "note": "the Shargaas prose walk",
+   "expr": "m['udp5ShaDarkSightMiles']() != 1 or m['udp5ShaShadowSkillMin']() != 5 or m['udp5ShaShadowSkillMax']() != 30 or m['udp5ShaCavesBelowGehenna']() != 1 or m['udp5ShaOnlySeerInCaves']() != 1 or m['udp5ShaClimbsAnySurface']() != 1 or m['udp5ShaPerfectAmbusher']() != 1 or m['udp5ShaBanditPatron']() != 1 or m['udp5ShaMultiClassedClerics']() != 1 or m['udp5ShaNewMoonHolidays']() != 1"
+  },
+  {
+   "note": "the Ilneval prose walk",
+   "expr": "m['udp5IlnSwordSaveMod']() != -6 or m['udp5IlnChiefLieutenant']() != 1 or m['udp5IlnCovetsGruumsh']() != 1 or m['udp5IlnCaptainsGod']() != 1 or m['udp5IlnRedIronChainmail']() != 1 or m['udp5IlnImmuneToMissiles']() != 1 or m['udp5IlnScarredAppeal']() != 1 or m['udp5IlnClericsRedArmor']() != 1 or m['udp5IlnHalfOrcBroadswords']() != 1"
+  },
+  {
+   "note": "the Yurtrus prose walk",
+   "expr": "m['udp5YurGasRadiusFeet']() != 120 or m['udp5YurGasLowBandHd']() != 4 or m['udp5YurGasMidBandHd']() != 8 or m['udp5YurGasHighHitMod']() != -2 or m['udp5YurDeathMagicLevel']() != 18 or m['udp5YurTouchDamageMin']() != 3 or m['udp5YurTouchDamageMax']() != 12 or m['udp5YurTouchDiseasesMin']() != 1 or m['udp5YurTouchDiseasesMax']() != 4 or m['udp5YurNoMouthNeverSpeaks']() != 1 or m['udp5YurRottingFlesh']() != 1 or m['udp5YurGasLastsInRange']() != 1 or m['udp5YurWishRecoveryOnly']() != 1 or m['udp5YurClericWhiteGloves']() != 1 or m['udp5YurMaceWhiteFist']() != 1 or m['udp5YurPlagueAppeals']() != 1"
+  },
+  {
+   "note": "the Luthic prose walk",
+   "expr": "m['udp5LutClawLengthFeet']() != 4 or m['udp5LutRegenPerRound']() != 3 or m['udp5LutCurseChancePct']() != 10 or m['udp5LutCurseFatalDaysMin']() != 2 or m['udp5LutCurseFatalDaysMax']() != 7 or m['udp5LutCurseUndoWishes']() != 3 or m['udp5LutGuardHitBonus']() != 2 or m['udp5LutGuardAcPenalty']() != -2 or m['udp5LutCaveMotherSpheres']() != 1 or m['udp5LutClosestToBahgtru']() != 1 or m['udp5LutClawsTunnelRock']() != 1 or m['udp5LutServicesUnderground']() != 1 or m['udp5LutWorshipedByMales']() != 1 or m['udp5LutUnarmoredBlackClaws']() != 1 or m['udp5LutDirtRituals']() != 1 or m['udp5LutBothSexesClerics']() != 1 or m['udp5LutVileRuneTribe']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the prose consts (the R790 wiring)": [
+   {
+    "kind": "const",
+    "name": "udp5ProseRound"
+   },
+   {
+    "kind": "const",
+    "name": "udp5StatblockFeederRound"
+   },
+   {
+    "kind": "const",
+    "name": "udp5OrcishDeityCount"
+   },
+   {
+    "kind": "const",
+    "name": "udp5ProsePartsTotal"
+   },
+   {
+    "kind": "const",
+    "name": "udp5ProsePartRoundMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp5ProsePartRoundMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp5BahGrappleMargin"
+   },
+   {
+    "kind": "const",
+    "name": "udp5BahCrushDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp5BahCrushDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp5BahBluntWeaponDamage"
+   },
+   {
+    "kind": "const",
+    "name": "udp5BahClericStrengthMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp5ShaDarkSightMiles"
+   },
+   {
+    "kind": "const",
+    "name": "udp5ShaShadowSkillMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp5ShaShadowSkillMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp5IlnSwordSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "udp5YurGasRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "udp5YurGasLowBandHd"
+   },
+   {
+    "kind": "const",
+    "name": "udp5YurGasMidBandHd"
+   },
+   {
+    "kind": "const",
+    "name": "udp5YurGasHighHitMod"
+   },
+   {
+    "kind": "const",
+    "name": "udp5YurDeathMagicLevel"
+   },
+   {
+    "kind": "const",
+    "name": "udp5YurTouchDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp5YurTouchDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp5YurTouchDiseasesMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp5YurTouchDiseasesMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp5LutClawLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "udp5LutRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "udp5LutCurseChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "udp5LutCurseFatalDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "udp5LutCurseFatalDaysMax"
+   },
+   {
+    "kind": "const",
+    "name": "udp5LutCurseUndoWishes"
+   },
+   {
+    "kind": "const",
+    "name": "udp5LutGuardHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "udp5LutGuardAcPenalty"
+   }
+  ],
+  "the prose bools (the R790 wiring)": [
+   {
+    "kind": "bool",
+    "name": "udp5TaleOfTheLots"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleMockedOrcs"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleIronSpear"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleOrcsInherit"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleWarForWrath"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleCorellonBattle"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleDwarfMountainWars"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleGoblinBattles"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleTribesAlongCults"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleHierarchyUnderGruumsh"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5TaleTribalWarfareEncouraged"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5BahSonOfGruumshAndLuthic"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5BahScornedButMighty"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5BahStrengthExceeds"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5BahSlewReptileBarehanded"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5BahFightsWithCesti"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5BahTanSkinGreenEyes"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5BahClericsNoArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5BahClericsLosePowers"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5BahStrongHelpWeakOnward"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5ShaCavesBelowGehenna"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5ShaOnlySeerInCaves"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5ShaClimbsAnySurface"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5ShaPerfectAmbusher"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5ShaBanditPatron"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5ShaMultiClassedClerics"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5ShaNewMoonHolidays"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5IlnChiefLieutenant"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5IlnCovetsGruumsh"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5IlnCaptainsGod"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5IlnRedIronChainmail"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5IlnImmuneToMissiles"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5IlnScarredAppeal"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5IlnClericsRedArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5IlnHalfOrcBroadswords"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5YurNoMouthNeverSpeaks"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5YurRottingFlesh"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5YurGasLastsInRange"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5YurWishRecoveryOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5YurClericWhiteGloves"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5YurMaceWhiteFist"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5YurPlagueAppeals"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5LutCaveMotherSpheres"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5LutClosestToBahgtru"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5LutClawsTunnelRock"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5LutServicesUnderground"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5LutWorshipedByMales"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5LutUnarmoredBlackClaws"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5LutDirtRituals"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5LutBothSexesClerics"
+   },
+   {
+    "kind": "bool",
+    "name": "udp5LutVileRuneTribe"
+   }
+  ]
+ },
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 238,
+  "open": 0
+ },
+ "caller_files": [
+  "rules/deitylines.h",
+  "rules/uaappends.h"
+ ],
+ "inline_count": 83,
+ "file_patches": [
+  {
+   "file": "rules/deitylines.h",
+   "note": "the prose note strike (the five-part close is complete)",
+   "from": "// R786-R789: the dwarven, elven,\n// halfling, and gnomish paragraphs pin\n// (rules/uadeityprose1-4.h); the orcs'\n// prose stays open - the lines pin, the\n// paragraphs do not (yet)\n",
+   "to": "// R786-R790: the dwarven, elven,\n// halfling, gnomish, and orcish\n// paragraphs pin (rules/uadeityprose1-5.h);\n// the prose close is complete - every\n// Appendix S description paragraph pins\n"
+  },
+  {
+   "file": "rules/deitylines.h",
+   "note": "THE PIN FLIP: dvpProseStaysOpen goes false (the close is complete)",
+   "from": "inline bool dvpProseStaysOpen()\n    { return true; }\n",
+   "to": "inline bool dvpProseStaysOpen()\n    { return false; }\n"
+  },
+  {
+   "file": "rules/uaappends.h",
+   "note": "the uaappends prose note strike (part 5, the finale)",
+   "from": "// stat lines) in rules/deitylines.h; the dwarven,\n// elven, halfling, and gnomish prose pin in\n// rules/uadeityprose1-4.h (R786-R789); the\n// orcs' prose stays open.\n",
+   "to": "// stat lines) in rules/deitylines.h; the dwarven,\n// elven, halfling, gnomish, and orcish prose\n// pin in rules/uadeityprose1-5.h (R786-R790);\n// the Appendix S description-paragraph close\n// is complete.\n"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the R783 audit assertion rides the flip (stays-open becomes stays-closed)",
+   "from": "            || !dvpProseStaysOpen()\n",
+   "to": "            || dvpProseStaysOpen()\n"
+  }
+ ]
+}

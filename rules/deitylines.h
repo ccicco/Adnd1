@@ -113,13 +113,13 @@ inline bool dvpDamageBonusQuirksArePrint()
 inline bool dvpParenReadsRideContractSide()
     { return true; }
 
-// R786-R789: the dwarven, elven,
-// halfling, and gnomish paragraphs pin
-// (rules/uadeityprose1-4.h); the orcs'
-// prose stays open - the lines pin, the
-// paragraphs do not (yet)
+// R786-R790: the dwarven, elven,
+// halfling, gnomish, and orcish
+// paragraphs pin (rules/uadeityprose1-5.h);
+// the prose close is complete - every
+// Appendix S description paragraph pins
 inline bool dvpProseStaysOpen()
-    { return true; }
+    { return false; }
 
 // ---- the class-line grid (the R783 wiring) ----
 
