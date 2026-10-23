@@ -74,6 +74,18 @@ inline void spearSpeedFactorRange(int& lo, int& hi) {
 }
 
 // ----------------------------------------------------------------------------
+// R782: the spear length spread - the R158 boundary closes.
+// The printed speed cells keyed on the shaft length in feet:
+// 5 feet and under reads 6, 13 feet and over reads 8, the
+// middle lengths keep the R158 default 7 (the name-keyed
+// ladder keeps its default for the bare spear name).
+inline int spearSpeedFactorByLengthFt(int lengthFt) {
+    if (lengthFt <= 5) return 6;
+    if (lengthFt >= 13) return 8;
+    return 7;
+}
+
+// ----------------------------------------------------------------------------
 // Case 1 (DMG p.66 Simultaneous Initiative): tied rolls,
 // blows otherwise simultaneous - the lower factor
 // strikes first. Returns -1 if A first, 1 if B first,

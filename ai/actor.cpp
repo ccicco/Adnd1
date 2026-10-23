@@ -90,6 +90,9 @@ int Actor::armorClass() const {
         return items::effectiveAc(armor, shield, shieldPlus, dex)
                - ringPlus;
     }
+    // R782: the deity bridge lands the printed AC whole
+    // (-100 = the sentinel, no override)
+    if (monsterAcOverride > -100) return monsterAcOverride;
     // monster base: unarmored 9 minus half hit dice (convention;
     // real monster ACs arrive with the Lua registry)
     int ac = 9 - (int)(hitDice / 2);
@@ -262,6 +265,30 @@ static int actorSpeedFactor(
     if (w.id == items::WPN_MACE) s = "footman mace";
     if (w.id == items::WPN_FLAIL) s = "footman flail";
     return rules::weaponSpeedFactor(s.c_str());
+}
+
+// R782: the deity bridge - the Appendix S stat block
+// becomes a monster-side Actor. The printed cells ride
+// whole: hp/maxHp carry the block hp, the AC override
+// carries the printed AC, the attack routines are the
+// halves halved (odd halves floor at 1), the damage
+// dice span the block (count 1, sides dmgMax-dmgMin+1,
+// the floor dmgMin-1 under the dice).
+Actor toDeityActor(const rules::UasStatBlock& b) {
+    Actor a;
+    a.team = 1;
+    a.isCharacter = false;
+    a.name = b.name;
+    a.hp = b.hp;
+    a.maxHp = b.hp;
+    a.hitDice = 1.0f;
+    a.monsterAttacks = b.atkHalves / 2;
+    if (a.monsterAttacks < 1) a.monsterAttacks = 1;
+    a.monsterDamageCount = 1;
+    a.monsterDamageSides = b.dmgMax - b.dmgMin + 1;
+    a.monsterDamagePlus = b.dmgMin - 1;
+    a.monsterAcOverride = b.ac;
+    return a;
 }
 
 int Encounter::teamAlive(int team) const {
@@ -446,6 +473,10 @@ int Encounter::resolveMelee(Actor& attacker, Actor& defender) {
     } else {
         dmg = (int)m_dice.roll((uint32_t)attacker.monsterDamageCount,
                                (uint32_t)attacker.monsterDamageSides, 0);
+        // R782: the span floor - the deity bridge's
+        // dmgMin-1 rides under the dice (the 3-36 block
+        // reads 1d34+2)
+        dmg += attacker.monsterDamagePlus;
     }
     // R232: the backstab multiplier - the x2..x5 ladder by
     // level (the R187 pin)
@@ -1481,10 +1512,27 @@ int Encounter::stepRound() {
         int sf = actorSpeedFactor(a.weapon);
         if (sf > 0) { mFrontIdx = i; sfM = sf; break; }
     }
+    // R782: the closing/charging bar reads the fronts - a
+    // mounted front in round one is a closing charge, and
+    // the print exempts the charging round from the factor
+    // order and the extra window (speedFactorApplies).
+    // The monster side never lance-charges (the R779
+    // boundary stands) - its mounted round one reads as
+    // the closing bar alone
+    bool pCharging = pFrontIdx >= 0 &&
+        m_party[pFrontIdx].isCharacter &&
+        m_party[pFrontIdx].mountKind != 0 && m_round == 1;
+    bool mCharging = mFrontIdx >= 0 &&
+        m_monsters[mFrontIdx].mountKind != 0 &&
+        m_round == 1;
+    bool factorApplies =
+        rules::speedFactorApplies(pCharging || mCharging);
     // case 1 (DMG p.66 Simultaneous Initiative): a tie -
     // the lower factor strikes first (+1 segment on the
     // slower side's base; equal factors stay simultaneous)
-    if (winner == 0 && pFrontIdx >= 0 && mFrontIdx >= 0) {
+    // R782: the charging round is exempt (the closing bar)
+    if (winner == 0 && pFrontIdx >= 0 && mFrontIdx >= 0 &&
+        factorApplies) {
         int first = rules::speedFactorFirst(sfP, sfM);
         if (first == -1) {
             mShift = 1;
@@ -1520,7 +1568,7 @@ int Encounter::stepRound() {
     // gains its before-attacks (the count minus one rides
     // the +5 routine spacing - the JUDGMENT)
     if (m_round > 1 && pFrontIdx >= 0 && mFrontIdx >= 0 &&
-        rules::speedFactorApplies(false)) {
+        factorApplies) {
         int lo = sfP < sfM ? sfP : sfM;
         int hi = sfP < sfM ? sfM : sfP;
         int before = rules::speedFactorAttacksBefore(lo, hi);

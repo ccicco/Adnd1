@@ -120,10 +120,11 @@
 namespace rules {
 
 // ---- the layer contract ----
-// The engine has no deity actor site
-// (the pins precede any charge).
+// R782 STRUCK: the deity actor site exists now -
+// the bridge copies the Appendix S stat block onto
+// the Actor contract (ai::toDeityActor).
 inline bool nhdDeitySiteExists()
-    { return false; }
+    { return true; }
 
 inline bool nhdPinsPrecedeSite()
     { return true; }
@@ -133,11 +134,12 @@ inline bool nhdPinsPrecedeSite()
 inline bool nhdGatesAppendixS()
     { return true; }
 
-// The Appendix S charge (the 23
-// stat blocks, the five charts) stays
-// open after the seam lands.
+// R782: the Appendix S stat-block charge
+// closes - the 23 blocks ride the bridge
+// site block (the five charts stay their
+// own seam).
 inline bool nhdStatBlocksOpen()
-    { return true; }
+    { return false; }
 
 // ---- the source pins ----
 // Appendix S, the NON-HUMAN DEITIES:

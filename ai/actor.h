@@ -75,6 +75,7 @@
 #include "../spelleffects/spelleffects.h"
 #include "../items/items.h"
 #include "../dm/dm.h"
+#include "../rules/uaappends.h"  // R782: the deity bridge type
 
 #include <functional>
 #include <string>
@@ -201,6 +202,12 @@ struct Actor {
     float hitDice = 1.0f;
     int   monsterAttacks = 1;      // attack routines per round
     int   monsterDamageCount = 1, monsterDamageSides = 6;
+    // R782: the deity bridge cells - the span floor rides
+    // under the dice (dmgMin-1; 0 = no floor), and the AC
+    // override carries the printed AC whole (-100 = the
+    // sentinel, no override)
+    int   monsterDamagePlus = 0;
+    int   monsterAcOverride = -100;
     // R37: missile-armed monster - fires an opening volley in
     // round 1, then melees. Set by the app from the monster key
     // (the Lua registry data carries no ranged flag).
@@ -363,6 +370,16 @@ struct Actor {
 struct EncounterLogLine {
     std::string text;
 };
+
+// R782: the deity bridge - the Appendix S stat block
+// becomes a monster-side Actor (team 1, the printed hp
+// and AC whole, the attack halves halved, the damage
+// span on the dice plus the floor). Honest boundaries:
+// the attack matrix stays on the monster HD convention
+// (the bridge pins hitDice at 1.0 - no deity matrix
+// exists), and the spawn path stays contract-side (no
+// encounter table calls this yet).
+Actor toDeityActor(const rules::UasStatBlock& b);
 
 class Encounter {
 public:

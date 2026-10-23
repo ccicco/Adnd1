@@ -19491,6 +19491,63 @@ when both halves land.
   1a9f57590f87f240ab5d297aa13a48a6.
   NEXT - R781: the next target awaits
   Curtiss's call.
+- R781 LANDED 2026-10-23: commit
+  150174963ece91d0ac899cba78af33cd5670dcef
+  (census 703 -> 704, pushed 7073581..1501749),
+  THE SET SPEAR AND THE SPEED SEAM - three
+  feeds in one round (Curtiss's all-three
+  pick), header rules/spearset.h, prefix sps
+  (fully free at 7073581). EIGHTEEN FILE
+  PATCHES over seven files: (1) the R189 set-
+  spear asterisk goes live - the S command
+  plants the stance (round one + a spear,
+  the round CONSUMED; combatSetSpear in
+  game/state_combat.cpp + appstate.h + the
+  adnd1.cpp S key, verified free), and a
+  closing round-one monster blow answers to
+  the counterstrike FIRST (ai/actor.cpp,
+  the resolution-loop fold) - the receive
+  multiplier 2 rides that one blow, the flag
+  clears after (the JUDGMENT: the monster's
+  round-one melee reads as the charge, the
+  R232 pattern again); (2) the DMG p.66
+  speed cases leave contract-side - the R158
+  name-keyed ladder gains engine callers in
+  the round scheduler (the actorSpeedFactor
+  bridge, footman mace/flail JUDGMENT, 0 =
+  unknown): case 1 a tie shifts the slower
+  side +1, case 2 the extra-attack window
+  opens after round one (before-count minus
+  one on the +5 spacing, the charge round
+  exempt per speedFactorApplies), case 3
+  the vs-spell segment (factor minus the
+  losing die, clamped 1..10, the clamp
+  rides the FIRED branch alone); the cases
+  read each side's FRONT melee actor (no
+  reach layer, the JUDGMENT); (3) the R779
+  zero-row JUDGMENT is STRUCK - the
+  1eonline.info compilation lance vs-AC
+  rows (light -3..0, medium -1..+1, heavy
+  +4..0) land in items.cpp and the R145
+  audit pins them cell for cell (19 x 11 =
+  209 pins, the stale 165 comment fixed).
+  TWO RED preflights then GREEN: the actor
+  bridge needed the weaponspeed.h include
+  (the R158 helpers), and the case-3 clamp
+  ran unconditionally (pSegOverride 0
+  forced to 1 flipped the R314 W2 aquatic
+  first strike - the clamp now rides the
+  fired branch; the census wall after was
+  the return-1 cascade). Inlines: 13 = 6
+  consts + 7 bools. rverify GREEN (double-
+  run 22 patches applied/already clean, 13
+  mutants 0 missed); the include lands
+  after lancespeed (regtest 484). spec md5
+  c0ee46dd73a7d1b23b9f5a40f4d3d08e, gate
+  md5 6dc463b1eeb3d5fbf14db3f64957abfd,
+  canvas md5 707862f3598b07a10b3914ee49ea30fe.
+  NEXT - R782: the next target awaits
+  Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

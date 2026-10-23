@@ -1,0 +1,432 @@
+{
+  "round": 782,
+  "prefix": "owd",
+  "header_file": "rules/owedpins.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/oa_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 704,
+  "title": "the owed pins and the deity site",
+  "audit_label": "R782 owed pins audit",
+  "audit_comment": "THE OWED PINS AND THE DEITY SITE - four feeds in one round (Curtiss's all-four pick). (1) The lance printed cells the R780 boundary owed: the lengths 10/12/14 feet and the 1-foot space-required cell pin as data (the compilation print the R189 duty already trusts; the R780 engine sense stands - no caller reads a length yet). (2) The spear 6..8 spread ends its contract-side stay: weaponspeed.h gains the length-keyed companion to the R158 range helper - 5 feet and under reads 6, 13 and over reads 8, the middle keeps the default 7. (3) The deity layer site lands: the R405 no-site contract is STRUCK - the bridge copies every Appendix S stat block onto a monster-side Actor (the printed hp and AC whole, the halves halved, the damage span floored), the stat-block charge closes with it, and a live site block in regtest walks all 23 blocks through the bridge (the five charts stay their own seam). (4) The DMG p.66 closing bar reads the fronts: a mounted front in round one is a closing charge, and the print exempts the charging round from the tie order (case 1) and the extra-attack window (case 2) - the monster side never lance-charges (the R779 boundary); its mounted round one reads as the closing bar alone. Honest boundaries: the deity attack matrix stays on the monster HD convention (the bridge pins hitDice 1.0), the spawn path stays contract-side, the R406 hole cells ride their sentinels verbatim (the attack holes floor to one routine on the bridge and the AC hole 99 round-trips whole), and the site block printf carries no census marker (the census counts this audit alone)",
+  "include_comment": "the owed pins",
+  "include_after": "#include \"rules/spearset.h\"  // R781: the set spear pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R781 LANDED 2026-10-23: commit",
+  "prev_record": [
+    "- R781 LANDED 2026-10-23: commit",
+    "  150174963ece91d0ac899cba78af33cd5670dcef",
+    "  (census 703 -> 704, pushed 7073581..1501749),",
+    "  THE SET SPEAR AND THE SPEED SEAM - three",
+    "  feeds in one round (Curtiss's all-three",
+    "  pick), header rules/spearset.h, prefix sps",
+    "  (fully free at 7073581). EIGHTEEN FILE",
+    "  PATCHES over seven files: (1) the R189 set-",
+    "  spear asterisk goes live - the S command",
+    "  plants the stance (round one + a spear,",
+    "  the round CONSUMED; combatSetSpear in",
+    "  game/state_combat.cpp + appstate.h + the",
+    "  adnd1.cpp S key, verified free), and a",
+    "  closing round-one monster blow answers to",
+    "  the counterstrike FIRST (ai/actor.cpp,",
+    "  the resolution-loop fold) - the receive",
+    "  multiplier 2 rides that one blow, the flag",
+    "  clears after (the JUDGMENT: the monster's",
+    "  round-one melee reads as the charge, the",
+    "  R232 pattern again); (2) the DMG p.66",
+    "  speed cases leave contract-side - the R158",
+    "  name-keyed ladder gains engine callers in",
+    "  the round scheduler (the actorSpeedFactor",
+    "  bridge, footman mace/flail JUDGMENT, 0 =",
+    "  unknown): case 1 a tie shifts the slower",
+    "  side +1, case 2 the extra-attack window",
+    "  opens after round one (before-count minus",
+    "  one on the +5 spacing, the charge round",
+    "  exempt per speedFactorApplies), case 3",
+    "  the vs-spell segment (factor minus the",
+    "  losing die, clamped 1..10, the clamp",
+    "  rides the FIRED branch alone); the cases",
+    "  read each side's FRONT melee actor (no",
+    "  reach layer, the JUDGMENT); (3) the R779",
+    "  zero-row JUDGMENT is STRUCK - the",
+    "  1eonline.info compilation lance vs-AC",
+    "  rows (light -3..0, medium -1..+1, heavy",
+    "  +4..0) land in items.cpp and the R145",
+    "  audit pins them cell for cell (19 x 11 =",
+    "  209 pins, the stale 165 comment fixed).",
+    "  TWO RED preflights then GREEN: the actor",
+    "  bridge needed the weaponspeed.h include",
+    "  (the R158 helpers), and the case-3 clamp",
+    "  ran unconditionally (pSegOverride 0",
+    "  forced to 1 flipped the R314 W2 aquatic",
+    "  first strike - the clamp now rides the",
+    "  fired branch; the census wall after was",
+    "  the return-1 cascade). Inlines: 13 = 6",
+    "  consts + 7 bools. rverify GREEN (double-",
+    "  run 22 patches applied/already clean, 13",
+    "  mutants 0 missed); the include lands",
+    "  after lancespeed (regtest 484). spec md5",
+    "  c0ee46dd73a7d1b23b9f5a40f4d3d08e, gate",
+    "  md5 6dc463b1eeb3d5fbf14db3f64957abfd,",
+    "  canvas md5 707862f3598b07a10b3914ee49ea30fe.",
+    "  NEXT - R782: the next target awaits",
+    "  Curtiss's call."
+  ],
+  "banner": {
+    "title": "THE OWED PINS AND THE DEITY SITE - four feeds in one round: the lance lengths, the spear spread, the Appendix S bridge, the closing bar",
+    "provenance": "R780 left the lance printed lengths contract-side and the R158 spear at its default 7; R405 left the deity pins site-less and the Appendix S charge open; R781 left the DMG p.66 fold without its charging bar. R782 closes all four. The lance cells (10/12/14 feet, 1 foot of space required) pin as data from the compilation print the R189 speed-verify duty already trusts. The spear spread gains its length key (the 6/7/8 cells the R158 range helper always implied). The deity site lands as a bridge: every Appendix S stat block becomes a monster-side Actor - the printed hp and AC whole, the attack halves halved, the damage span on the dice plus the floor - and a live regtest site block walks all 23 blocks through it (the R405 layer contract flips with its audit; the five charts stay their own seam). And the closing bar: a mounted front in round one is a closing charge, exempt from the case-1 tie order and the case-2 extra window (speedFactorApplies reads it at last); the monster side never lance-charges - the R779 boundary stands - its mounted round one reads as the closing bar alone. Honest boundaries: the deity matrix stays on the monster HD convention (hitDice 1.0), the spawn path stays contract-side, no engine caller reads a lance length yet, and the R780 engine sense stands",
+    "sentinel": "Zero new book pages: the lance cells ride the compilation print the R189 duty trusts, the spear spread rides the R158 print already honored, the deity blocks ride the R406 stat-block pins, and the closing bar rides DMG p.66 already honored in weaponspeed.h"
+  },
+  "consts": [
+    {
+      "name": "owdLanceCellsFeederRound",
+      "value": 780,
+      "comment": "The feeder seam this round owes: the R780 round left the printed lengths contract-side; the pinned cells answer it"
+    },
+    {
+      "name": "owdSpearSpreadFeederRound",
+      "value": 158,
+      "comment": "The feeder seam the spear spread extends: the R158 ladder kept the spear at its default 7 - the printed spread now has its own key"
+    },
+    {
+      "name": "owdDeitySeamRound",
+      "value": 405,
+      "comment": "The deity seam round: the R405 pins precede the site, and the R782 bridge builds it"
+    },
+    {
+      "name": "owdDeityBridgeRound",
+      "value": 782,
+      "comment": "The bridge round: the Appendix S stat blocks become monster-side Actors"
+    },
+    {
+      "name": "owdDeityStatBlockCount",
+      "value": 23,
+      "comment": "The Appendix S stat-block census: 23 blocks ride the bridge (the R405 registry order)"
+    },
+    {
+      "name": "owdLightLanceLengthFt",
+      "value": 10,
+      "comment": "The light horse lance printed length: 10 feet (the compilation cell the R780 boundary owed)"
+    },
+    {
+      "name": "owdMediumLanceLengthFt",
+      "value": 12,
+      "comment": "The medium horse lance printed length: 12 feet (the cell behind the print's 6-speed quirk)"
+    },
+    {
+      "name": "owdHeavyLanceLengthFt",
+      "value": 14,
+      "comment": "The heavy horse lance printed length: 14 feet (the compilation cell)"
+    },
+    {
+      "name": "owdLanceSpaceRequiredFt",
+      "value": 1,
+      "comment": "The lance space-required cell: 1 foot of frontage per the print (the proficiency space rule reads it)"
+    },
+    {
+      "name": "owdSpearShortLengthFt",
+      "value": 5,
+      "comment": "The short spear cell: 5 feet and under reads the 6 factor"
+    },
+    {
+      "name": "owdSpearLongLengthFt",
+      "value": 13,
+      "comment": "The long spear cell: 13 feet and over reads the 8 factor"
+    },
+    {
+      "name": "owdSpearShortSpeedFactor",
+      "value": 6,
+      "comment": "The short spear speed factor (the spread's fast end)"
+    },
+    {
+      "name": "owdSpearMiddleSpeedFactor",
+      "value": 7,
+      "comment": "The middle spear speed factor: the R158 default keeps its sense (the spread's middle band)"
+    },
+    {
+      "name": "owdSpearLongSpeedFactor",
+      "value": 8,
+      "comment": "The long spear speed factor (the spread's slow end)"
+    }
+  ],
+  "bools": [
+    {
+      "name": "owdLanceCellsRideThePrint",
+      "value": true,
+      "comment": "The lance length and space-required cells ride the compilation print (the R780 contract-side boundary closes on the data side; no engine caller reads a length yet - the R780 engine sense stands)"
+    },
+    {
+      "name": "owdSpearSpreadEndsPin",
+      "value": true,
+      "comment": "The spear 6..8 spread is pinned at last: the R158 range helper gains its length-keyed companion"
+    },
+    {
+      "name": "owdSpearMiddleKeepsDefault",
+      "value": true,
+      "comment": "The middle lengths keep the R158 default 7 (the name-keyed ladder and the length key agree there)"
+    },
+    {
+      "name": "owdDeitySiteExistsNow",
+      "value": true,
+      "comment": "The deity actor site exists now - the R405 no-site contract is STRUCK (the bridge answers it)"
+    },
+    {
+      "name": "owdDeityBridgeCopiesTheBlock",
+      "value": true,
+      "comment": "The bridge copies every printed cell of the stat block: the hp and AC whole, the halves halved, the damage span floored"
+    },
+    {
+      "name": "owdDeityChargeCloses",
+      "value": true,
+      "comment": "The Appendix S stat-block charge closes with the bridge (the R405 open flag flips false; the five charts stay their own seam)"
+    },
+    {
+      "name": "owdChargingFrontReadsTheBar",
+      "value": true,
+      "comment": "The DMG p.66 closing bar reads the fronts: a mounted front in round one is a closing charge"
+    },
+    {
+      "name": "owdChargingExemptsTheTieOrder",
+      "value": true,
+      "comment": "The charging round is exempt from the case-1 tie order (speedFactorApplies gates the fold)"
+    },
+    {
+      "name": "owdChargingExemptsTheExtraWindow",
+      "value": true,
+      "comment": "The charging round is exempt from the case-2 extra-attack window (the round-one read joins case 1)"
+    },
+    {
+      "name": "owdMonsterSideNeverCharges",
+      "value": true,
+      "comment": "The monster side never lance-charges (the R779 boundary stands); its mounted round one reads as the closing bar alone"
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the lance printed length and space-required cells",
+      "expr": "m['owdLightLanceLengthFt']() != 10 or m['owdMediumLanceLengthFt']() != 12 or m['owdHeavyLanceLengthFt']() != 14 or m['owdLanceSpaceRequiredFt']() != 1"
+    },
+    {
+      "note": "the spear length spread and its 6/7/8 cells",
+      "expr": "m['owdSpearShortLengthFt']() != 5 or m['owdSpearLongLengthFt']() != 13 or m['owdSpearShortSpeedFactor']() != 6 or m['owdSpearMiddleSpeedFactor']() != 7 or m['owdSpearLongSpeedFactor']() != 8"
+    },
+    {
+      "note": "the deity bridge census and feeder seams",
+      "expr": "m['owdDeityStatBlockCount']() != 23 or m['owdDeityBridgeRound']() != 782 or m['owdDeitySeamRound']() != 405"
+    },
+    {
+      "note": "the feeder seam keys (the R780 and R158 feeds)",
+      "expr": "m['owdLanceCellsFeederRound']() != 780 or m['owdSpearSpreadFeederRound']() != 158"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the lance cells and the spear spread (the R782 wiring)": [
+      {
+        "kind": "const",
+        "name": "owdLanceCellsFeederRound"
+      },
+      {
+        "kind": "const",
+        "name": "owdLanceSpaceRequiredFt"
+      },
+      {
+        "kind": "const",
+        "name": "owdLightLanceLengthFt"
+      },
+      {
+        "kind": "const",
+        "name": "owdMediumLanceLengthFt"
+      },
+      {
+        "kind": "const",
+        "name": "owdHeavyLanceLengthFt"
+      },
+      {
+        "kind": "bool",
+        "name": "owdLanceCellsRideThePrint"
+      },
+      {
+        "kind": "const",
+        "name": "owdSpearSpreadFeederRound"
+      },
+      {
+        "kind": "const",
+        "name": "owdSpearShortLengthFt"
+      },
+      {
+        "kind": "const",
+        "name": "owdSpearLongLengthFt"
+      },
+      {
+        "kind": "const",
+        "name": "owdSpearShortSpeedFactor"
+      },
+      {
+        "kind": "const",
+        "name": "owdSpearMiddleSpeedFactor"
+      },
+      {
+        "kind": "const",
+        "name": "owdSpearLongSpeedFactor"
+      },
+      {
+        "kind": "bool",
+        "name": "owdSpearSpreadEndsPin"
+      },
+      {
+        "kind": "bool",
+        "name": "owdSpearMiddleKeepsDefault"
+      }
+    ],
+    "the deity site and the closing bar (the R782 wiring)": [
+      {
+        "kind": "const",
+        "name": "owdDeitySeamRound"
+      },
+      {
+        "kind": "const",
+        "name": "owdDeityBridgeRound"
+      },
+      {
+        "kind": "const",
+        "name": "owdDeityStatBlockCount"
+      },
+      {
+        "kind": "bool",
+        "name": "owdDeitySiteExistsNow"
+      },
+      {
+        "kind": "bool",
+        "name": "owdDeityBridgeCopiesTheBlock"
+      },
+      {
+        "kind": "bool",
+        "name": "owdDeityChargeCloses"
+      },
+      {
+        "kind": "bool",
+        "name": "owdChargingFrontReadsTheBar"
+      },
+      {
+        "kind": "bool",
+        "name": "owdChargingExemptsTheTieOrder"
+      },
+      {
+        "kind": "bool",
+        "name": "owdChargingExemptsTheExtraWindow"
+      },
+      {
+        "kind": "bool",
+        "name": "owdMonsterSideNeverCharges"
+      }
+    ]
+  },
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 238,
+    "open": 0
+  },
+  "caller_files": [
+    "ai/actor.cpp",
+    "rules/weaponspeed.h",
+    "rules/deities.h"
+  ],
+  "inline_count": 24,
+  "file_patches": [
+    {
+      "file": "rules/weaponspeed.h",
+      "note": "the spear length spread - the 6/7/8 speed cells keyed on the shaft length (the R158 boundary closes)",
+      "from": "inline void spearSpeedFactorRange(int& lo, int& hi) {\n    lo = 6; hi = 8;   // the printed 5-13+ foot length spread\n}",
+      "to": "inline void spearSpeedFactorRange(int& lo, int& hi) {\n    lo = 6; hi = 8;   // the printed 5-13+ foot length spread\n}\n\n// ----------------------------------------------------------------------------\n// R782: the spear length spread - the R158 boundary closes.\n// The printed speed cells keyed on the shaft length in feet:\n// 5 feet and under reads 6, 13 feet and over reads 8, the\n// middle lengths keep the R158 default 7 (the name-keyed\n// ladder keeps its default for the bare spear name).\ninline int spearSpeedFactorByLengthFt(int lengthFt) {\n    if (lengthFt <= 5) return 6;\n    if (lengthFt >= 13) return 8;\n    return 7;\n}"
+    },
+    {
+      "file": "rules/deities.h",
+      "note": "the deity site exists - the R405 no-site contract is STRUCK (the R782 bridge)",
+      "from": "// ---- the layer contract ----\n// The engine has no deity actor site\n// (the pins precede any charge).\ninline bool nhdDeitySiteExists()\n    { return false; }",
+      "to": "// ---- the layer contract ----\n// R782 STRUCK: the deity actor site exists now -\n// the bridge copies the Appendix S stat block onto\n// the Actor contract (ai::toDeityActor).\ninline bool nhdDeitySiteExists()\n    { return true; }"
+    },
+    {
+      "file": "rules/deities.h",
+      "note": "the Appendix S stat-block charge closes (the 23 blocks ride the R782 bridge site block)",
+      "from": "// The Appendix S charge (the 23\n// stat blocks, the five charts) stays\n// open after the seam lands.\ninline bool nhdStatBlocksOpen()\n    { return true; }",
+      "to": "// R782: the Appendix S stat-block charge\n// closes - the 23 blocks ride the bridge\n// site block (the five charts stay their\n// own seam).\ninline bool nhdStatBlocksOpen()\n    { return false; }"
+    },
+    {
+      "file": "ai/actor.h",
+      "note": "the uaappends.h include lands in actor.h (the bridge decl needs the stat block type)",
+      "from": "#include \"../dm/dm.h\"",
+      "to": "#include \"../dm/dm.h\"\n#include \"../rules/uaappends.h\"  // R782: the deity bridge type"
+    },
+    {
+      "file": "ai/actor.h",
+      "note": "the Actor gains the damage span floor and the printed AC override (the deity bridge cells)",
+      "from": "    int   monsterAttacks = 1;      // attack routines per round\n    int   monsterDamageCount = 1, monsterDamageSides = 6;",
+      "to": "    int   monsterAttacks = 1;      // attack routines per round\n    int   monsterDamageCount = 1, monsterDamageSides = 6;\n    // R782: the deity bridge cells - the span floor rides\n    // under the dice (dmgMin-1; 0 = no floor), and the AC\n    // override carries the printed AC whole (-100 = the\n    // sentinel, no override)\n    int   monsterDamagePlus = 0;\n    int   monsterAcOverride = -100;"
+    },
+    {
+      "file": "ai/actor.h",
+      "note": "the deity bridge declaration - the Appendix S stat block becomes a monster-side Actor",
+      "from": "struct EncounterLogLine {\n    std::string text;\n};\n\nclass Encounter {",
+      "to": "struct EncounterLogLine {\n    std::string text;\n};\n\n// R782: the deity bridge - the Appendix S stat block\n// becomes a monster-side Actor (team 1, the printed hp\n// and AC whole, the attack halves halved, the damage\n// span on the dice plus the floor). Honest boundaries:\n// the attack matrix stays on the monster HD convention\n// (the bridge pins hitDice at 1.0 - no deity matrix\n// exists), and the spawn path stays contract-side (no\n// encounter table calls this yet).\nActor toDeityActor(const rules::UasStatBlock& b);\n\nclass Encounter {"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the deity bridge definition (the printed cells land whole on the Actor)",
+      "from": "int Encounter::teamAlive(int team) const {",
+      "to": "// R782: the deity bridge - the Appendix S stat block\n// becomes a monster-side Actor. The printed cells ride\n// whole: hp/maxHp carry the block hp, the AC override\n// carries the printed AC, the attack routines are the\n// halves halved (odd halves floor at 1), the damage\n// dice span the block (count 1, sides dmgMax-dmgMin+1,\n// the floor dmgMin-1 under the dice).\nActor toDeityActor(const rules::UasStatBlock& b) {\n    Actor a;\n    a.team = 1;\n    a.isCharacter = false;\n    a.name = b.name;\n    a.hp = b.hp;\n    a.maxHp = b.hp;\n    a.hitDice = 1.0f;\n    a.monsterAttacks = b.atkHalves / 2;\n    if (a.monsterAttacks < 1) a.monsterAttacks = 1;\n    a.monsterDamageCount = 1;\n    a.monsterDamageSides = b.dmgMax - b.dmgMin + 1;\n    a.monsterDamagePlus = b.dmgMin - 1;\n    a.monsterAcOverride = b.ac;\n    return a;\n}\n\nint Encounter::teamAlive(int team) const {"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the printed AC override reads before the monster HD convention (the bridge lands the AC whole)",
+      "from": "    // monster base: unarmored 9 minus half hit dice (convention;\n    // real monster ACs arrive with the Lua registry)\n    int ac = 9 - (int)(hitDice / 2);",
+      "to": "    // R782: the deity bridge lands the printed AC whole\n    // (-100 = the sentinel, no override)\n    if (monsterAcOverride > -100) return monsterAcOverride;\n    // monster base: unarmored 9 minus half hit dice (convention;\n    // real monster ACs arrive with the Lua registry)\n    int ac = 9 - (int)(hitDice / 2);"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the span floor rides under the monster dice in resolveMelee (the 3-36 block reads 1d34+2)",
+      "from": "    } else {\n        dmg = (int)m_dice.roll((uint32_t)attacker.monsterDamageCount,\n                               (uint32_t)attacker.monsterDamageSides, 0);\n    }\n    // R232: the backstab multiplier - the x2..x5 ladder by",
+      "to": "    } else {\n        dmg = (int)m_dice.roll((uint32_t)attacker.monsterDamageCount,\n                               (uint32_t)attacker.monsterDamageSides, 0);\n        // R782: the span floor - the deity bridge's\n        // dmgMin-1 rides under the dice (the 3-36 block\n        // reads 1d34+2)\n        dmg += attacker.monsterDamagePlus;\n    }\n    // R232: the backstab multiplier - the x2..x5 ladder by"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the DMG p.66 closing bar reads the fronts - the charging round is exempt from the tie order",
+      "from": "    // case 1 (DMG p.66 Simultaneous Initiative): a tie -\n    // the lower factor strikes first (+1 segment on the\n    // slower side's base; equal factors stay simultaneous)\n    if (winner == 0 && pFrontIdx >= 0 && mFrontIdx >= 0) {",
+      "to": "    // R782: the closing/charging bar reads the fronts - a\n    // mounted front in round one is a closing charge, and\n    // the print exempts the charging round from the factor\n    // order and the extra window (speedFactorApplies).\n    // The monster side never lance-charges (the R779\n    // boundary stands) - its mounted round one reads as\n    // the closing bar alone\n    bool pCharging = pFrontIdx >= 0 &&\n        m_party[pFrontIdx].isCharacter &&\n        m_party[pFrontIdx].mountKind != 0 && m_round == 1;\n    bool mCharging = mFrontIdx >= 0 &&\n        m_monsters[mFrontIdx].mountKind != 0 &&\n        m_round == 1;\n    bool factorApplies =\n        rules::speedFactorApplies(pCharging || mCharging);\n    // case 1 (DMG p.66 Simultaneous Initiative): a tie -\n    // the lower factor strikes first (+1 segment on the\n    // slower side's base; equal factors stay simultaneous)\n    // R782: the charging round is exempt (the closing bar)\n    if (winner == 0 && pFrontIdx >= 0 && mFrontIdx >= 0 &&\n        factorApplies) {"
+    },
+    {
+      "file": "ai/actor.cpp",
+      "note": "the extra-attack window reads the same charging bar (case 2 joins the fold)",
+      "from": "    if (m_round > 1 && pFrontIdx >= 0 && mFrontIdx >= 0 &&\n        rules::speedFactorApplies(false)) {",
+      "to": "    if (m_round > 1 && pFrontIdx >= 0 && mFrontIdx >= 0 &&\n        factorApplies) {"
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the ai/actor.h include lands in regtest (the deity bridge site block calls it)",
+      "from": "#include \"game/appstate.h\"  // R233: the multi-class audit",
+      "to": "#include \"game/appstate.h\"  // R233: the multi-class audit\n#include \"ai/actor.h\"  // R782: the deity bridge site block"
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the R405 layer-contract assertions follow the R782 flips (fail-on-wrong stands)",
+      "from": "        // ---- the layer contract ----\n        if (nhdDeitySiteExists()) ++bad;\n        if (!nhdPinsPrecedeSite()) ++bad;\n        if (!nhdGatesAppendixS()) ++bad;\n        if (!nhdStatBlocksOpen()) ++bad;",
+      "to": "        // ---- the layer contract ----\n        // R782 STRUCK: the site exists (the bridge) and\n        // the stat-block charge closes with it\n        if (!nhdDeitySiteExists()) ++bad;\n        if (!nhdPinsPrecedeSite()) ++bad;\n        if (!nhdGatesAppendixS()) ++bad;\n        if (nhdStatBlocksOpen()) ++bad;"
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the R405 head comment strikes the no-site phrase (the R782 bridge answers it)",
+      "from": "    // The last in-scope seam lands: the\n    // layer contract (no deity site; the\n    // pins precede the site; the seam\n    // gates the Appendix S charge; the\n    // stat blocks stay open), the source",
+      "to": "    // The last in-scope seam lands: the\n    // layer contract (the deity site is\n    // the R782 bridge; the pins precede\n    // the site; the seam gates the\n    // Appendix S charge; the R782 bridge\n    // closes the stat-block charge), the\n    // source"
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the deity bridge site block - the 23 stat blocks ride the bridge live (the R405 seam closes)",
+      "from": "        printf(\"R782 owed pins audit: bad %d\\n\", bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----",
+      "to": "        printf(\"R782 owed pins audit: bad %d\\n\", bad);\n        if (bad) return 1;\n    }\n    // ---- R782: the deity bridge site block ----\n    // THE SITE BLOCK - the behavioral checks the pin\n    // mirror cannot see (the engine class, the R400\n    // lesson): every Appendix S stat block rides the\n    // bridge and the printed cells land whole on the\n    // Actor. This printf carries no census marker (the\n    // census counts the pin audit alone; a bad here\n    // still fails the battery by the return). The R406\n    // hole cells ride their sentinels verbatim: the\n    // attack holes (0/-1) floor to one routine on the\n    // bridge and the check mirrors the floor; the AC\n    // hole 99 and the unrecorded damage spans (-1)\n    // round-trip the block cells whole\n    {\n        using namespace rules;\n        int bad = 0;\n        for (int i = 0; i < uasDeityCount(); ++i) {\n            const UasStatBlock& b = uasStat(i);\n            ai::Actor a = ai::toDeityActor(b);\n            int wantAtk = b.atkHalves / 2;\n            if (wantAtk < 1) wantAtk = 1;\n            if (a.isCharacter || a.team != 1\n                || a.name != b.name || a.hp != b.hp\n                || a.maxHp != b.hp\n                || a.armorClass() != b.ac\n                || a.attacksPerRound() != wantAtk\n                || a.monsterDamageSides !=\n                   b.dmgMax - b.dmgMin + 1\n                || a.monsterDamagePlus != b.dmgMin - 1)\n                ++bad;\n        }\n        // the flips this round struck\n        if (!nhdDeitySiteExists()\n            || nhdStatBlocksOpen())\n            ++bad;\n        // the spear length spread reads its cells\n        if (spearSpeedFactorByLengthFt(5) != 6\n            || spearSpeedFactorByLengthFt(1) != 6\n            || spearSpeedFactorByLengthFt(7) != 7\n            || spearSpeedFactorByLengthFt(13) != 8\n            || spearSpeedFactorByLengthFt(20) != 8)\n            ++bad;\n        printf(\"R782 deity bridge site: bad %d\\n\", bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+    }
+  ]
+}
