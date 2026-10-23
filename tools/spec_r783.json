@@ -1,0 +1,1054 @@
+{
+  "round": 783,
+  "prefix": "dvp",
+  "header_file": "rules/deitylines.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/oa_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 705,
+  "title": "the deity stat lines",
+  "audit_label": "R783 deity stat lines audit",
+  "audit_comment": "THE DEITY STAT LINES - the R406 messy reads pin at last (Curtiss's Appendix S pick). The 23 blocks ride the 1eonline.info compilation pages (the repo-trusted source the R189 duty reads), row-verified against the R406 pins (armor class, hit points, magic resistance, attack halves, damage spans - every row cross-matched; where the compilation fills a hole the print pins stand: Hanali's 99, Brandobaris's unrecorded damage, Shargaas's attack hole). THE GRID: 23 x 12 plus 23 x 13 - the five class/level lines (every Nil reads zero, the halfling titles read as levels, the \"in each\" fills both columns, all five orc FIGHTER lines read as monsters, the print's own Dumathoin typo rides verbatim), the MOVE rates (base + the parenthetical second rate; Aerdrie's flight-only phrase carries no number), the seven ability lines (signed - Yurtrus -4/-25; the 18/00 and 18/01 slash prints split to the pct column; the CH/Com parentheticals with Hanali's special sentinel), and the DAMAGE/ATTACK bonus (the see-below sentinel for Labelas and Yurtrus). THE CROSS-CHECK: the damage bonus equals the S parenthetical damage bonus on all 15 rows that print both - and the three prints that refuse the pattern pin as they stand (Arvoreen +8 with no S parenthetical, Bahgtru +15 against the S +14, Solonor's S +9 with no damage bonus). Honest boundaries: the parenthetical reads and the special/see-text levels ride contract-side (the prose is the prose), the Yurtrus destructive-spells-only qualifier and Cyrrollalee's by-weapon-type damage ride contract-side, and the stat-block prose alone stays open",
+  "include_comment": "the deity stat lines",
+  "include_after": "#include \"rules/owedpins.h\"  // R782: the owed pins",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R782 LANDED 2026-10-23: commit",
+  "prev_record": [
+    "- R782 LANDED 2026-10-23: commit",
+    "  02ca879295e6a1a65729893e6ed53267ef4314ff",
+    "  (census 704 -> 705, pushed 1501749..02ca879),",
+    "  THE OWED PINS AND THE DEITY SITE - four feeds",
+    "  in one round (Curtiss's all-four pick), header",
+    "  rules/owedpins.h, prefix owd (free at 1501749).",
+    "  FIFTEEN FILE PATCHES over five files: (1) the",
+    "  lance printed cells the R780 boundary owed -",
+    "  the lengths 10/12/14 feet and the 1-foot",
+    "  space-required cell pin as data (the R780",
+    "  engine sense stands: no caller reads a",
+    "  length); (2) the spear 6..8 spread ends its",
+    "  contract-side stay - weaponspeed.h gains",
+    "  spearSpeedFactorByLengthFt (5 feet and under",
+    "  reads 6, 13 and over reads 8, the middle keeps",
+    "  the R158 default 7); (3) the deity layer site",
+    "  lands - the R405 no-site contract is STRUCK:",
+    "  ai::toDeityActor copies every Appendix S stat",
+    "  block onto a monster-side Actor (the printed",
+    "  hp and AC whole via monsterAcOverride/-100",
+    "  sentinel, the halves halved, the damage span",
+    "  on the dice plus the monsterDamagePlus floor),",
+    "  nhdStatBlocksOpen flips false, and a live",
+    "  SITE BLOCK in regtest walks all 23 blocks",
+    "  through the bridge - its printf carries NO",
+    "  census marker (\"R782 deity bridge site\", not",
+    "  \"...audit...\") so the census counts the pin",
+    "  audit alone (a bad still fails the battery",
+    "  by the return); (4) the DMG p.66 closing",
+    "  bar - a mounted front in round one is a",
+    "  closing charge, exempt from the case-1 tie",
+    "  order and the case-2 extra window",
+    "  (factorApplies; the monster side never",
+    "  lance-charges, the R779 boundary stands).",
+    "  CRITICAL WIRING the Python mirror cannot",
+    "  see: the R405 layer-contract assertions in",
+    "  the regtest audit flipped WITH the deities.h",
+    "  flips (fail-on-wrong stands - flipping the",
+    "  header alone would have turned the battery",
+    "  RED), regtest gained the ai/actor.h include",
+    "  (the site block calls the bridge; the battery",
+    "  build links actor.cpp), actor.h gained the",
+    "  uaappends.h include (the bridge decl), and",
+    "  the R406 hole cells ride their sentinels",
+    "  verbatim: the attack holes (Hanali 0,",
+    "  Shargaas -1) floor to one routine on the",
+    "  bridge with the site check mirroring the",
+    "  floor (wantAtk), the AC hole 99 and",
+    "  Cyrrollalee's unrecorded damage span (-1)",
+    "  round-trip whole. ONE preflight, GREEN first",
+    "  pass (the R781 lesson held: include wiring",
+    "  and sentinel floors traced before publish).",
+    "  NEXT - R783: the next target awaits",
+    "  Curtiss's call."
+  ],
+  "banner": {
+    "title": "THE DEITY STAT LINES - the R406 messy reads pin: the class/level lines, the MOVE rates, the seven ability lines, the damage bonuses",
+    "provenance": "R406 pinned the scan-clean stat-line numerics and left the messy reads open: the six class/level lines, the MOVE values, the S/I/W/D/C/CH/CM stat lines, the prose. R783 pins everything but the prose. The 23 blocks ride the 1eonline.info compilation (the repo-trusted source), row-verified against the R406 pins - armor class, hit points, magic resistance, attack halves, damage spans all cross-match, and where the compilation fills a hole the print pins stand. The grid is 23 x 12 plus 23 x 13: the class/level lines pin verbatim (every Nil reads zero; the halfling titles read as levels - Patriarch C8, Ranger Lord R12, Master Thief T10, Master of Dragons M8; the \"in each\" fills both columns; all five orc FIGHTER lines read as monsters; Dumathoin's \"12 level thief\" typo rides the pin, not the fix). The MOVE rates pin base plus parenthetical second (Aerdrie prints the flight-only phrase with no number). The ability lines pin signed (Yurtrus -4/-25), the slash strengths split to a pct column (18/00, 18/01), and the CH/Com parentheticals pin with Hanali's special sentinel. The DAMAGE/ATTACK bonuses pin with the see-below sentinel (Labelas, Yurtrus), and the cross-column check rides: the bonus equals the S parenthetical damage bonus on all 15 rows that print both, with the three refusing prints pinned as they stand (Arvoreen, Bahgtru, Solonor). Honest boundaries: the parenthetical reads, the special/see-text levels, the destructive-spells-only qualifier, and the by-weapon-type damage ride contract-side; the prose alone stays open",
+    "sentinel": "Zero new book pages: the stat lines ride the Appendix S pp. 110-120 blocks the R405/R406 pins already seat, and the compilation source rides the R189 speed-verify duty already trusted"
+  },
+  "consts": [
+    {
+      "name": "dvpDeityRowCount",
+      "value": 23,
+      "comment": "The stat-line grid row census: 23 rows in the R405/R406 registry order (dwarves, elves, halflings, gnomes, orcs)"
+    },
+    {
+      "name": "dvpStatLineRound",
+      "value": 783,
+      "comment": "The stat-line round: the R406 messy reads pin at last"
+    },
+    {
+      "name": "dvpStatBlockFeederRound",
+      "value": 406,
+      "comment": "The feeder round: the R406 stat-block numerics this grid extends row for row"
+    },
+    {
+      "name": "dvpDeitySeamFeederRound",
+      "value": 405,
+      "comment": "The seam round: the R405 layer contract the R782 bridge closed"
+    },
+    {
+      "name": "dvpClassLineCount",
+      "value": 5,
+      "comment": "The five class/level lines per block (cleric/druid, fighter, magic-user/illusionist, thief/assassin, monk/bard)"
+    },
+    {
+      "name": "dvpAbilityLineCount",
+      "value": 7,
+      "comment": "The seven ability lines per block (S/I/W/D/C/CH/Com)"
+    },
+    {
+      "name": "dvpMonsterFighterKind",
+      "value": 13,
+      "comment": "The FIGHTER-line kind code for the as-N-HD monster reads (all five orc blocks carry it)"
+    },
+    {
+      "name": "dvpSeeTextLevel",
+      "value": -1,
+      "comment": "The special/see-text sentinel on the class level columns (Dumathoin, Aerdrie, Yurtrus magic-user reads)"
+    }
+  ],
+  "bools": [
+    {
+      "name": "dvpClassLinesPinVerbatim",
+      "value": true,
+      "comment": "The five class/level lines pin verbatim: every Nil reads zero, every printed level pins, and the print's own typo (Dumathoin's \"12 level thief\") rides the pin, not the fix"
+    },
+    {
+      "name": "dvpHalflingTitlesReadAsLevels",
+      "value": true,
+      "comment": "The halfling pantheon prints titles, and the titles read as levels: Patriarch C8, Ranger Lord R12, Master Thief T10, Master of Dragons M8, Initiate of the 4th Circle D6, Pathfinder R7, Magician MU6, Visionist I6, Master Thief T19, Master M6"
+    },
+    {
+      "name": "dvpInEachFillsBoth",
+      "value": true,
+      "comment": "The \"in each\" convention fills both columns of its line at the one level (Flandal cleric/druid 8, Cyrrollalee and Segojan magic-user/illusionist, Luthic both lines)"
+    },
+    {
+      "name": "dvpOrcFighterLinesReadAsMonsters",
+      "value": true,
+      "comment": "All five orc FIGHTER lines read as N-HD monsters (16+, 10, 15, 13, 12) - the kind code 13 row census"
+    },
+    {
+      "name": "dvpStrPctCellsPinTheSlash",
+      "value": true,
+      "comment": "The percentile strengths pin the slash verbatim: Sheela and Baervan print 18/00, Segojan prints 18/01 (the pct column; -1 = no slash printed)"
+    },
+    {
+      "name": "dvpDamageBonusQuirksArePrint",
+      "value": true,
+      "comment": "Three prints refuse the bonus-equals-S-damage pattern and pin as they stand: Arvoreen damages +8 with no S parenthetical, Bahgtru +15 against the S +14, Solonor prints the S +9 with no damage bonus at all"
+    },
+    {
+      "name": "dvpParenReadsRideContractSide",
+      "value": true,
+      "comment": "The parenthetical numbers pin as data; what they MEAN (the CH/Com reads toward worshippers, the special CH) rides contract-side - the print is the print"
+    },
+    {
+      "name": "dvpProseStaysOpen",
+      "value": true,
+      "comment": "The stat-block prose stays open - the lines pin, the paragraphs do not"
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [
+    {
+      "name": "the deity class-line grid",
+      "tag": "DvpClassLines",
+      "count": "dvpDeityRowCount",
+      "cols": [
+        "dvpMoveBase",
+        "dvpMoveSpecial",
+        "dvpClericLvl",
+        "dvpDruidLvl",
+        "dvpFightLvl",
+        "dvpFightKind",
+        "dvpMuLvl",
+        "dvpIllusLvl",
+        "dvpThiefLvl",
+        "dvpAssassinLvl",
+        "dvpMonkLvl",
+        "dvpBardLvl"
+      ],
+      "col_comments": [
+        "The MOVE base rate in inches (the printed line)",
+        "The MOVE parenthetical second rate (0 = none printed; Aerdrie's parenthetical prints the flight-only phrase, no number)",
+        "The CLERIC/DRUID line: the cleric level (0 = none/Nil)",
+        "The CLERIC/DRUID line: the druid level (0 = none; \"in each\" fills both; the druidess reads as druid)",
+        "The FIGHTER line: the level (0 = none/Nil)",
+        "The FIGHTER line kind: 3 fighter, 4 ranger, 5 paladin, 13 the as-N-HD monster read (0 = nil)",
+        "The MAGIC-USER/ILLUSIONIST line: the magic-user level (0 = Nil, -1 = the special/see-text sentinel)",
+        "The MAGIC-USER/ILLUSIONIST line: the illusionist level (0 = Nil; \"in each\" fills both)",
+        "The THIEF/ASSASSIN line: the thief level (0 = none/Nil)",
+        "The THIEF/ASSASSIN line: the assassin level (0 = none; \"in each\" fills both)",
+        "The MONK/BARD line: the monk level (0 = none; Master of Dragons M8 and Master M6 read as monk titles)",
+        "The MONK/BARD line: the bard level (0 = none/Nil)"
+      ],
+      "data": [
+        [
+          12,
+          0,
+          0,
+          12,
+          17,
+          4,
+          10,
+          0,
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          18,
+          0,
+          0,
+          12,
+          12,
+          4,
+          0,
+          0,
+          18,
+          0,
+          0,
+          15
+        ],
+        [
+          9,
+          48,
+          15,
+          14,
+          16,
+          3,
+          -1,
+          14,
+          12,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          0,
+          0,
+          14,
+          3,
+          0,
+          11,
+          20,
+          15,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          15,
+          12,
+          14,
+          5,
+          16,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          48,
+          0,
+          0,
+          14,
+          10,
+          3,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          10
+        ],
+        [
+          18,
+          0,
+          0,
+          8,
+          7,
+          4,
+          0,
+          18,
+          20,
+          0,
+          0,
+          10
+        ],
+        [
+          15,
+          0,
+          0,
+          12,
+          17,
+          4,
+          10,
+          0,
+          12,
+          0,
+          0,
+          8
+        ],
+        [
+          12,
+          0,
+          14,
+          10,
+          0,
+          0,
+          16,
+          15,
+          0,
+          0,
+          0,
+          12
+        ],
+        [
+          12,
+          0,
+          14,
+          12,
+          0,
+          0,
+          18,
+          16,
+          0,
+          0,
+          0,
+          12
+        ],
+        [
+          9,
+          24,
+          0,
+          14,
+          7,
+          4,
+          14,
+          0,
+          0,
+          0,
+          0,
+          10
+        ],
+        [
+          12,
+          0,
+          8,
+          0,
+          12,
+          4,
+          0,
+          0,
+          10,
+          0,
+          8,
+          0
+        ],
+        [
+          12,
+          0,
+          10,
+          0,
+          10,
+          5,
+          8,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          0,
+          6,
+          7,
+          4,
+          6,
+          6,
+          19,
+          0,
+          6,
+          0
+        ],
+        [
+          15,
+          0,
+          0,
+          12,
+          8,
+          4,
+          0,
+          13,
+          20,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          36,
+          8,
+          0,
+          10,
+          3,
+          0,
+          13,
+          0,
+          12,
+          0,
+          0
+        ],
+        [
+          9,
+          36,
+          0,
+          14,
+          6,
+          3,
+          16,
+          16,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          6,
+          0,
+          8,
+          8,
+          10,
+          3,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          0,
+          0,
+          0,
+          16,
+          13,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          18,
+          0,
+          0,
+          0,
+          10,
+          13,
+          0,
+          7,
+          16,
+          15,
+          10,
+          0
+        ],
+        [
+          12,
+          0,
+          8,
+          0,
+          15,
+          13,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          15,
+          0,
+          13,
+          13,
+          -1,
+          0,
+          0,
+          15,
+          0,
+          0
+        ],
+        [
+          15,
+          12,
+          15,
+          0,
+          12,
+          13,
+          12,
+          12,
+          6,
+          6,
+          0,
+          0
+        ]
+      ],
+      "sentinel": -1,
+      "sentinel_census": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "audit_comment": "the 23 x 12 class-line grid - the five class/level lines and the MOVE rates, in the R405/R406 registry order (the -1 sentinel census rides the three see-text magic-user reads)"
+    },
+    {
+      "name": "the deity ability-line grid",
+      "tag": "DvpStatLines",
+      "count": "dvpDeityRowCount",
+      "cols": [
+        "dvpStrBase",
+        "dvpStrPct",
+        "dvpStrHit",
+        "dvpStrDmg",
+        "dvpIntBase",
+        "dvpWisBase",
+        "dvpDexBase",
+        "dvpConBase",
+        "dvpChaBase",
+        "dvpChaParen",
+        "dvpComBase",
+        "dvpComParen",
+        "dvpDmgBonus"
+      ],
+      "col_comments": [
+        "The S base (the plain number; the 18/00 and 18/01 prints split to the pct column)",
+        "The S percentile after the slash (-1 = no percentile printed; 0 = 18/00, 1 = 18/01)",
+        "The S parenthetical to-hit bonus (0 = no parenthetical printed)",
+        "The S parenthetical damage bonus (0 = no parenthetical printed)",
+        "The I base",
+        "The W base",
+        "The D base",
+        "The C base",
+        "The CH base (signed; Yurtrus prints -4)",
+        "The CH parenthetical (-1 = the special read, Hanali; 0 = none printed)",
+        "The Com base (signed; Yurtrus prints -25, Urdlen -14)",
+        "The Com parenthetical (0 = none printed)",
+        "The DAMAGE/ATTACK parenthetical bonus (0 = no number printed, Nil/by-weapon/plain; -1 = the see-below sentinel)"
+      ],
+      "data": [
+        [
+          25,
+          -1,
+          7,
+          14,
+          20,
+          19,
+          20,
+          25,
+          16,
+          22,
+          13,
+          20,
+          14
+        ],
+        [
+          22,
+          -1,
+          4,
+          10,
+          23,
+          20,
+          23,
+          25,
+          18,
+          24,
+          18,
+          24,
+          10
+        ],
+        [
+          25,
+          -1,
+          7,
+          14,
+          23,
+          25,
+          20,
+          25,
+          18,
+          24,
+          13,
+          16,
+          14
+        ],
+        [
+          24,
+          -1,
+          6,
+          12,
+          22,
+          16,
+          24,
+          24,
+          8,
+          14,
+          7,
+          13,
+          12
+        ],
+        [
+          21,
+          -1,
+          4,
+          9,
+          25,
+          25,
+          20,
+          25,
+          19,
+          25,
+          20,
+          25,
+          9
+        ],
+        [
+          8,
+          -1,
+          0,
+          0,
+          24,
+          22,
+          24,
+          19,
+          23,
+          0,
+          25,
+          0,
+          0
+        ],
+        [
+          19,
+          -1,
+          3,
+          7,
+          23,
+          16,
+          25,
+          20,
+          24,
+          0,
+          25,
+          0,
+          7
+        ],
+        [
+          21,
+          -1,
+          4,
+          9,
+          22,
+          21,
+          25,
+          21,
+          23,
+          0,
+          22,
+          0,
+          0
+        ],
+        [
+          15,
+          -1,
+          0,
+          0,
+          23,
+          23,
+          25,
+          20,
+          25,
+          -1,
+          30,
+          0,
+          0
+        ],
+        [
+          12,
+          -1,
+          0,
+          0,
+          25,
+          25,
+          19,
+          18,
+          24,
+          0,
+          25,
+          0,
+          -1
+        ],
+        [
+          18,
+          0,
+          3,
+          6,
+          22,
+          25,
+          22,
+          24,
+          22,
+          0,
+          24,
+          0,
+          6
+        ],
+        [
+          20,
+          -1,
+          0,
+          0,
+          21,
+          23,
+          24,
+          23,
+          21,
+          0,
+          21,
+          0,
+          8
+        ],
+        [
+          17,
+          -1,
+          1,
+          1,
+          23,
+          24,
+          24,
+          23,
+          22,
+          0,
+          21,
+          0,
+          0
+        ],
+        [
+          19,
+          -1,
+          3,
+          7,
+          24,
+          17,
+          25,
+          23,
+          20,
+          0,
+          19,
+          0,
+          7
+        ],
+        [
+          18,
+          0,
+          3,
+          6,
+          21,
+          19,
+          25,
+          22,
+          22,
+          0,
+          16,
+          0,
+          6
+        ],
+        [
+          19,
+          -1,
+          3,
+          7,
+          20,
+          14,
+          20,
+          24,
+          3,
+          0,
+          -14,
+          0,
+          7
+        ],
+        [
+          18,
+          1,
+          1,
+          3,
+          22,
+          23,
+          18,
+          24,
+          20,
+          0,
+          15,
+          0,
+          3
+        ],
+        [
+          22,
+          -1,
+          4,
+          10,
+          18,
+          20,
+          17,
+          23,
+          18,
+          0,
+          16,
+          0,
+          10
+        ],
+        [
+          25,
+          -1,
+          7,
+          14,
+          6,
+          6,
+          18,
+          25,
+          5,
+          22,
+          -2,
+          16,
+          15
+        ],
+        [
+          20,
+          -1,
+          3,
+          8,
+          19,
+          15,
+          24,
+          19,
+          7,
+          24,
+          8,
+          20,
+          8
+        ],
+        [
+          23,
+          -1,
+          5,
+          11,
+          17,
+          14,
+          20,
+          23,
+          8,
+          25,
+          5,
+          24,
+          11
+        ],
+        [
+          18,
+          -1,
+          1,
+          2,
+          18,
+          11,
+          10,
+          17,
+          -4,
+          0,
+          -25,
+          0,
+          -1
+        ],
+        [
+          19,
+          -1,
+          3,
+          7,
+          18,
+          19,
+          14,
+          20,
+          12,
+          25,
+          3,
+          24,
+          7
+        ]
+      ],
+      "sentinel": -1,
+      "sentinel_census": [
+        0,
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        2
+      ],
+      "audit_comment": "the 23 x 13 ability-line grid - the seven ability lines and the DAMAGE/ATTACK bonus, in the R405/R406 registry order (the -1 sentinel census rides the twenty no-percentile strengths, Hanali's special CH parenthetical, and the two see-below damage reads)"
+    }
+  ],
+  "examples": [
+    {
+      "note": "the damage bonus equals the S parenthetical damage bonus on the 15 rows that print both",
+      "expr": "m['dvpDmgBonus'](0) != m['dvpStrDmg'](0) or m['dvpDmgBonus'](1) != m['dvpStrDmg'](1) or m['dvpDmgBonus'](2) != m['dvpStrDmg'](2) or m['dvpDmgBonus'](3) != m['dvpStrDmg'](3) or m['dvpDmgBonus'](4) != m['dvpStrDmg'](4) or m['dvpDmgBonus'](6) != m['dvpStrDmg'](6) or m['dvpDmgBonus'](10) != m['dvpStrDmg'](10) or m['dvpDmgBonus'](13) != m['dvpStrDmg'](13) or m['dvpDmgBonus'](14) != m['dvpStrDmg'](14) or m['dvpDmgBonus'](15) != m['dvpStrDmg'](15) or m['dvpDmgBonus'](16) != m['dvpStrDmg'](16) or m['dvpDmgBonus'](17) != m['dvpStrDmg'](17) or m['dvpDmgBonus'](19) != m['dvpStrDmg'](19) or m['dvpDmgBonus'](20) != m['dvpStrDmg'](20) or m['dvpDmgBonus'](22) != m['dvpStrDmg'](22)"
+    },
+    {
+      "note": "the three refusing prints pin as they stand (Arvoreen +8/no paren, Bahgtru +15 vs +14, Solonor S +9/no bonus)",
+      "expr": "m['dvpDmgBonus'](11) != 8 or m['dvpStrDmg'](11) != 0 or m['dvpDmgBonus'](18) != 15 or m['dvpStrDmg'](18) != 14 or m['dvpDmgBonus'](7) != 0 or m['dvpStrDmg'](7) != 9"
+    },
+    {
+      "note": "the orc monster-read census (kind 13 on all five FIGHTER lines) and the row/feeder keys",
+      "expr": "m['dvpFightKind'](18) != 13 or m['dvpFightKind'](19) != 13 or m['dvpFightKind'](20) != 13 or m['dvpFightKind'](21) != 13 or m['dvpFightKind'](22) != 13 or m['dvpDeityRowCount']() != 23 or m['dvpStatBlockFeederRound']() != 406 or m['dvpClassLineCount']() != 5 or m['dvpAbilityLineCount']() != 7"
+    },
+    {
+      "note": "the see-text sentinel rows and the special CH (Dumathoin, Aerdrie, Yurtrus magic-user; Hanali)",
+      "expr": "m['dvpMuLvl'](2) != -1 or m['dvpMuLvl'](5) != -1 or m['dvpMuLvl'](21) != -1 or m['dvpChaParen'](8) != -1 or m['dvpDmgBonus'](9) != -1 or m['dvpDmgBonus'](21) != -1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the deity stat lines (the R783 wiring)": [
+      {
+        "kind": "const",
+        "name": "dvpDeityRowCount"
+      },
+      {
+        "kind": "const",
+        "name": "dvpStatLineRound"
+      },
+      {
+        "kind": "const",
+        "name": "dvpStatBlockFeederRound"
+      },
+      {
+        "kind": "const",
+        "name": "dvpDeitySeamFeederRound"
+      },
+      {
+        "kind": "const",
+        "name": "dvpClassLineCount"
+      },
+      {
+        "kind": "const",
+        "name": "dvpAbilityLineCount"
+      },
+      {
+        "kind": "const",
+        "name": "dvpMonsterFighterKind"
+      },
+      {
+        "kind": "const",
+        "name": "dvpSeeTextLevel"
+      },
+      {
+        "kind": "bool",
+        "name": "dvpClassLinesPinVerbatim"
+      },
+      {
+        "kind": "bool",
+        "name": "dvpHalflingTitlesReadAsLevels"
+      },
+      {
+        "kind": "bool",
+        "name": "dvpInEachFillsBoth"
+      },
+      {
+        "kind": "bool",
+        "name": "dvpOrcFighterLinesReadAsMonsters"
+      },
+      {
+        "kind": "bool",
+        "name": "dvpStrPctCellsPinTheSlash"
+      },
+      {
+        "kind": "bool",
+        "name": "dvpDamageBonusQuirksArePrint"
+      },
+      {
+        "kind": "bool",
+        "name": "dvpParenReadsRideContractSide"
+      },
+      {
+        "kind": "bool",
+        "name": "dvpProseStaysOpen"
+      }
+    ],
+    "the class-line grid (the R783 wiring)": [
+      {
+        "kind": "table",
+        "name": "the deity class-line grid"
+      }
+    ],
+    "the ability-line grid (the R783 wiring)": [
+      {
+        "kind": "table",
+        "name": "the deity ability-line grid"
+      }
+    ]
+  },
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 238,
+    "open": 0
+  },
+  "caller_files": [
+    "rules/uaappends.h"
+  ],
+  "inline_count": 41,
+  "file_patches": [
+    {
+      "file": "rules/uaappends.h",
+      "note": "the R406 messy-reads boundary closes - the stat lines pin in deitylines.h, the prose alone stays open",
+      "from": "// the scan-clean stat-line numerics\n// pin; the messy reads stay open\n// (the six class/level lines, the\n// MOVE values, the S/I/W/D/C/CH/CM\n// stat lines, the prose).",
+      "to": "// the scan-clean stat-line numerics\n// pin; the R783 round pins the messy\n// reads (the class/level lines, the\n// MOVE values, the S/I/W/D/C/CH/CM\n// stat lines) in rules/deitylines.h;\n// the prose alone stays open."
+    }
+  ]
+}

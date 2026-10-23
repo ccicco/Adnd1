@@ -7,10 +7,11 @@
 // R405 deity layer seam. The
 // R337/R391 pin-round precedent:
 // the scan-clean stat-line numerics
-// pin; the messy reads stay open
-// (the six class/level lines, the
+// pin; the R783 round pins the messy
+// reads (the class/level lines, the
 // MOVE values, the S/I/W/D/C/CH/CM
-// stat lines, the prose).
+// stat lines) in rules/deitylines.h;
+// the prose alone stays open.
 //
 // The census (live cross-checked
 // against the R405 seam): 23

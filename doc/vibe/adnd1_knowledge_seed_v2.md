@@ -19548,6 +19548,60 @@ when both halves land.
   canvas md5 707862f3598b07a10b3914ee49ea30fe.
   NEXT - R782: the next target awaits
   Curtiss's call.
+- R782 LANDED 2026-10-23: commit
+  02ca879295e6a1a65729893e6ed53267ef4314ff
+  (census 704 -> 705, pushed 1501749..02ca879),
+  THE OWED PINS AND THE DEITY SITE - four feeds
+  in one round (Curtiss's all-four pick), header
+  rules/owedpins.h, prefix owd (free at 1501749).
+  FIFTEEN FILE PATCHES over five files: (1) the
+  lance printed cells the R780 boundary owed -
+  the lengths 10/12/14 feet and the 1-foot
+  space-required cell pin as data (the R780
+  engine sense stands: no caller reads a
+  length); (2) the spear 6..8 spread ends its
+  contract-side stay - weaponspeed.h gains
+  spearSpeedFactorByLengthFt (5 feet and under
+  reads 6, 13 and over reads 8, the middle keeps
+  the R158 default 7); (3) the deity layer site
+  lands - the R405 no-site contract is STRUCK:
+  ai::toDeityActor copies every Appendix S stat
+  block onto a monster-side Actor (the printed
+  hp and AC whole via monsterAcOverride/-100
+  sentinel, the halves halved, the damage span
+  on the dice plus the monsterDamagePlus floor),
+  nhdStatBlocksOpen flips false, and a live
+  SITE BLOCK in regtest walks all 23 blocks
+  through the bridge - its printf carries NO
+  census marker ("R782 deity bridge site", not
+  "...audit...") so the census counts the pin
+  audit alone (a bad still fails the battery
+  by the return); (4) the DMG p.66 closing
+  bar - a mounted front in round one is a
+  closing charge, exempt from the case-1 tie
+  order and the case-2 extra window
+  (factorApplies; the monster side never
+  lance-charges, the R779 boundary stands).
+  CRITICAL WIRING the Python mirror cannot
+  see: the R405 layer-contract assertions in
+  the regtest audit flipped WITH the deities.h
+  flips (fail-on-wrong stands - flipping the
+  header alone would have turned the battery
+  RED), regtest gained the ai/actor.h include
+  (the site block calls the bridge; the battery
+  build links actor.cpp), actor.h gained the
+  uaappends.h include (the bridge decl), and
+  the R406 hole cells ride their sentinels
+  verbatim: the attack holes (Hanali 0,
+  Shargaas -1) floor to one routine on the
+  bridge with the site check mirroring the
+  floor (wantAtk), the AC hole 99 and
+  Cyrrollalee's unrecorded damage span (-1)
+  round-trip whole. ONE preflight, GREEN first
+  pass (the R781 lesson held: include wiring
+  and sentinel floors traced before publish).
+  NEXT - R783: the next target awaits
+  Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
