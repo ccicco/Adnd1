@@ -113,10 +113,10 @@ inline bool dvpDamageBonusQuirksArePrint()
 inline bool dvpParenReadsRideContractSide()
     { return true; }
 
-// R786: the dwarven paragraphs pin
-// (rules/uadeityprose1.h); the other
-// pantheons' prose stays open - the lines
-// pin, the paragraphs do not (yet)
+// R786/R787: the dwarven and elven
+// paragraphs pin (rules/uadeityprose1-2.h);
+// the other pantheons' prose stays open -
+// the lines pin, the paragraphs do not (yet)
 inline bool dvpProseStaysOpen()
     { return true; }
 

@@ -19765,6 +19765,54 @@ when both halves land.
   awaits Curtiss's call (the UA spell-table
   ledger is closed; the noted holes stay
   noted, not pinned).
+- R786 LANDED 2026-10-23: commit
+  323dca54136d63f951c44e8873d32c1b4bd1e55a
+  (census 708 -> 709, pushed 2969a86..323dca5),
+  THE DWARVEN DEITY PROSE - part 1 of the
+  five-part Appendix S description-paragraph
+  close (the standing "the prose alone stays
+  open" item; Curtiss's "Go" call). The five
+  dwarven blocks (pp. 110-113) read
+  scan-clean in the archive.org full-text
+  OCR (item ad-d-1st-edition-unearthed-
+  arcana, the _djvu.txt): the Clanggedin
+  fortress-souls, anti-giant methods (-4,
+  the axes +4 thrown to 100 yards, chain
+  mail +5), the Vergadain con-games (golden
+  mail +5, the height necklace 1-15 feet,
+  the sword +4 sensing treasures within
+  2"), the Dumathoin veins (five metals,
+  the mattock +5, 3-18 earth elementals of
+  16 HD once per day, 30th-level
+  metal/earth/stone spells only, the
+  Hephaestus alliance), the Abbathor greed
+  mechanics (the 1,000 gp steal-or-slay at
+  50 percent, the diamond dagger +5
+  draining a level on grasp and one per
+  round, the blinding shield save -6 range
+  3"), and the Berronar braid-of-gold (the
+  four braids regrowing in a day, the lock
+  worth 10,000-40,000 gp, the +4
+  thief-slaying mace save -4, the two
+  silver rings at 10", the 5 percent
+  paladin grant 3-6 days once per 10
+  years). THE PINS: header
+  rules/uadeityprose1.h, prefix udp (free
+  at 2969a86), 43 consts + 60 bools (103
+  inline), no tables - pure prose data; the
+  stat-block numerics stay R406/R783, the
+  paragraph facts pin here. TWO COMMENT
+  STRIKES (deitylines.h and uaappends.h):
+  the stale prose-open notes now point at
+  uadeityprose1.h; the dvpProseStaysOpen
+  pin KEEPS true (18 paragraphs remain -
+  parts 2-5 cover the elves, halflings,
+  gnomes, and orcs; flip it in part 5).
+  rverify GREEN (103 mutants, 0 missed),
+  ONE preflight, GREEN first pass. NEXT -
+  R787: awaits Curtiss's call (part 2
+  candidate: the elven prose, Aerdrie
+  through Labelas, pp. 113-116).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

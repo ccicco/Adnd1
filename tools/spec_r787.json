@@ -1,0 +1,1044 @@
+{
+  "round": 787,
+  "prefix": "udp2",
+  "header_file": "rules/uadeityprose2.h",
+  "regtest": "regtest.cpp",
+  "gap_report": "tools/oa_gap_report.md",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "census_before": 709,
+  "title": "the elven deity prose",
+  "audit_label": "R787 elven deity prose audit",
+  "audit_comment": "THE ELVEN DEITY PROSE - part 2 of the Appendix S description-paragraph close. The archive.org full-text OCR of pp. 113-116 reads the five elven blocks scan-clean: the Aerdrie wind blasts and air summons, the Erevan tricks and twenty small helpers, the Solonor never-empty quiver and slaying arrows, the Hanali Evergold pool and charm aura, and the Labelas time powers - temporal stasis, the 100-year touch, and the 18-inch slow and haste radius. The stat-block numerics stay R406/R783; the paragraph facts ride rules/uadeityprose2.h.",
+  "include_comment": "the elven deity prose",
+  "include_after": "#include \"rules/uadeityprose1.h\"  // R786: the dwarven deity prose",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R786 LANDED 2026-10-23: commit",
+  "prev_record": [
+    "- R786 LANDED 2026-10-23: commit",
+    "  323dca54136d63f951c44e8873d32c1b4bd1e55a",
+    "  (census 708 -> 709, pushed 2969a86..323dca5),",
+    "  THE DWARVEN DEITY PROSE - part 1 of the",
+    "  five-part Appendix S description-paragraph",
+    "  close (the standing \"the prose alone stays",
+    "  open\" item; Curtiss's \"Go\" call). The five",
+    "  dwarven blocks (pp. 110-113) read",
+    "  scan-clean in the archive.org full-text",
+    "  OCR (item ad-d-1st-edition-unearthed-",
+    "  arcana, the _djvu.txt): the Clanggedin",
+    "  fortress-souls, anti-giant methods (-4,",
+    "  the axes +4 thrown to 100 yards, chain",
+    "  mail +5), the Vergadain con-games (golden",
+    "  mail +5, the height necklace 1-15 feet,",
+    "  the sword +4 sensing treasures within",
+    "  2\"), the Dumathoin veins (five metals,",
+    "  the mattock +5, 3-18 earth elementals of",
+    "  16 HD once per day, 30th-level",
+    "  metal/earth/stone spells only, the",
+    "  Hephaestus alliance), the Abbathor greed",
+    "  mechanics (the 1,000 gp steal-or-slay at",
+    "  50 percent, the diamond dagger +5",
+    "  draining a level on grasp and one per",
+    "  round, the blinding shield save -6 range",
+    "  3\"), and the Berronar braid-of-gold (the",
+    "  four braids regrowing in a day, the lock",
+    "  worth 10,000-40,000 gp, the +4",
+    "  thief-slaying mace save -4, the two",
+    "  silver rings at 10\", the 5 percent",
+    "  paladin grant 3-6 days once per 10",
+    "  years). THE PINS: header",
+    "  rules/uadeityprose1.h, prefix udp (free",
+    "  at 2969a86), 43 consts + 60 bools (103",
+    "  inline), no tables - pure prose data; the",
+    "  stat-block numerics stay R406/R783, the",
+    "  paragraph facts pin here. TWO COMMENT",
+    "  STRIKES (deitylines.h and uaappends.h):",
+    "  the stale prose-open notes now point at",
+    "  uadeityprose1.h; the dvpProseStaysOpen",
+    "  pin KEEPS true (18 paragraphs remain -",
+    "  parts 2-5 cover the elves, halflings,",
+    "  gnomes, and orcs; flip it in part 5).",
+    "  rverify GREEN (103 mutants, 0 missed),",
+    "  ONE preflight, GREEN first pass. NEXT -",
+    "  R787: awaits Curtiss's call (part 2",
+    "  candidate: the elven prose, Aerdrie",
+    "  through Labelas, pp. 113-116)."
+  ],
+  "banner": {
+    "title": "THE ELVEN DEITY PROSE - part 2 of the Appendix S paragraph close: Aerdrie, Erevan, Solonor, Hanali, and Labelas pin from the clean archive.org OCR read",
+    "provenance": "Part 2 of the five-part close (R786 opened it with the dwarves). The five elven blocks (pp. 113-116) read scan-clean in the archive.org full-text OCR: every pin below is the printed text. The stat-block numerics stay R406/R783; the paragraph-level facts pin here - the combat abilities (wind blasts, elementals, the +5 longbow), the special powers (stasis, the Evergold, the charm aura), and the worship customs (the feather-fall quest, the slaying-arrow gift, the charisma gift). Parts 3-5 remain: the halflings, gnomes, and orcs."
+  },
+  "consts": [
+    {
+      "name": "udp2ProseRound",
+      "value": 787,
+      "comment": "The prose round: part 2, the elven paragraphs"
+    },
+    {
+      "name": "udp2StatblockFeederRound",
+      "value": 406,
+      "comment": "The feeder round: the R406 stat blocks these paragraphs hang under"
+    },
+    {
+      "name": "udp2ElvenDeityCount",
+      "value": 5,
+      "comment": "The elven census: five blocks described (Aerdrie, Erevan, Solonor, Hanali, Labelas)"
+    },
+    {
+      "name": "udp2AerWindBlastsPerRound",
+      "value": 2,
+      "comment": "If aroused for battle she casts two great blasts of wind per round"
+    },
+    {
+      "name": "udp2AerWindBlastDamageMin",
+      "value": 5,
+      "comment": "Each blast causes 5-20 points of damage: the minimum 5"
+    },
+    {
+      "name": "udp2AerWindBlastDamageMax",
+      "value": 20,
+      "comment": "and the maximum 20"
+    },
+    {
+      "name": "udp2AerWindBlastRangeInches",
+      "value": 96,
+      "comment": "against any opponent within 96 inches of her"
+    },
+    {
+      "name": "udp2AerElementalsPerDay",
+      "value": 1,
+      "comment": "She may summon air elementals once per day"
+    },
+    {
+      "name": "udp2AerElementalsMin",
+      "value": 2,
+      "comment": "at least 2 elementals"
+    },
+    {
+      "name": "udp2AerElementalsMax",
+      "value": 12,
+      "comment": "and at most 12"
+    },
+    {
+      "name": "udp2AerElementalHitDice",
+      "value": 16,
+      "comment": "each with 16 hit dice"
+    },
+    {
+      "name": "udp2AerEaglesPerDay",
+      "value": 2,
+      "comment": "She may summon giant eagles or rocs twice per day"
+    },
+    {
+      "name": "udp2AerEaglesMin",
+      "value": 3,
+      "comment": "3-18 giant eagles: the minimum 3"
+    },
+    {
+      "name": "udp2AerEaglesMax",
+      "value": 18,
+      "comment": "and the maximum 18"
+    },
+    {
+      "name": "udp2AerRocsMin",
+      "value": 1,
+      "comment": "or 1-2 rocs: the minimum 1"
+    },
+    {
+      "name": "udp2AerRocsMax",
+      "value": 2,
+      "comment": "and the maximum 2"
+    },
+    {
+      "name": "udp2AerAirSpellLevel",
+      "value": 25,
+      "comment": "She uses all air, weather, flight, electricity, and gas magic-user spells at the 25th level of ability"
+    },
+    {
+      "name": "udp2AerNegateFlightRadiusInches",
+      "value": 12,
+      "comment": "She can negate at will the flying or levitating abilities of any creature within 12 inches"
+    },
+    {
+      "name": "udp2AerFeatherFallChancePct",
+      "value": 2,
+      "comment": "A falling elf who calls her name aloud has a 2 percent chance of a feather fall just before striking the ground"
+    },
+    {
+      "name": "udp2AerQuestGeasDaysMin",
+      "value": 2,
+      "comment": "The beneficiary is quested and geased within the next 2-7 days: the minimum 2"
+    },
+    {
+      "name": "udp2AerQuestGeasDaysMax",
+      "value": 7,
+      "comment": "and the maximum 7"
+    },
+    {
+      "name": "udp2EreHeightMinInches",
+      "value": 1,
+      "comment": "His favorite tactic: changing his height to any size between one inch"
+    },
+    {
+      "name": "udp2EreHeightMaxFeet",
+      "value": 6,
+      "comment": "and six feet"
+    },
+    {
+      "name": "udp2EreSwordBonus",
+      "value": 4,
+      "comment": "He carries a +4 longsword"
+    },
+    {
+      "name": "udp2EreSummonMax",
+      "value": 20,
+      "comment": "He may summon up to twenty leprechauns, sprites, pixies, or other small mischievous elf-like beings"
+    },
+    {
+      "name": "udp2EreChaosCastsPerRound",
+      "value": 1,
+      "comment": "He can cast the spells chaos and polymorph any object once per round at will"
+    },
+    {
+      "name": "udp2SolLongbowBonus",
+      "value": 5,
+      "comment": "His only weapon is a +5 longbow with a range as far as the horizon"
+    },
+    {
+      "name": "udp2SolSurpriseRadiusInches",
+      "value": 48,
+      "comment": "He cannot be surprised by any being within 48 inches of him"
+    },
+    {
+      "name": "udp2SolArrowCraftDays",
+      "value": 1,
+      "comment": "It takes one day to make one of his special arrows of slaying"
+    },
+    {
+      "name": "udp2SolArrowBonus",
+      "value": 3,
+      "comment": "The special arrow of slaying is +3"
+    },
+    {
+      "name": "udp2SolSlayingArrowChancePct",
+      "value": 2,
+      "comment": "An extraordinary worshiper has a 2 percent chance of being given an arrow of slaying of the normal sort"
+    },
+    {
+      "name": "udp2HanBathEnhanceDays",
+      "value": 1,
+      "comment": "Bathing in the Evergold enhances her charisma score for one day"
+    },
+    {
+      "name": "udp2HanReactionBonusPct",
+      "value": 75,
+      "comment": "During that day she receives a +75 percent reaction bonus"
+    },
+    {
+      "name": "udp2HanAweMaxLevel",
+      "value": 14,
+      "comment": "and inspires awe in characters of up to 14th level"
+    },
+    {
+      "name": "udp2HanAuraRadiusInches",
+      "value": 6,
+      "comment": "She has a magical aura of 6 inches radius"
+    },
+    {
+      "name": "udp2HanAuraSaveMod",
+      "value": -4,
+      "comment": "Beings within the aura must save versus spell at -4 each round or be permanently charmed by her beauty"
+    },
+    {
+      "name": "udp2HanAttackWeaponMin",
+      "value": 2,
+      "comment": "She may only be attacked by beings with a +2 or better weapon"
+    },
+    {
+      "name": "udp2HanAttackChaMin",
+      "value": -1,
+      "comment": "and a negative charisma, from -1"
+    },
+    {
+      "name": "udp2HanAttackChaMax",
+      "value": -7,
+      "comment": "to -7"
+    },
+    {
+      "name": "udp2HanChaGift",
+      "value": 2,
+      "comment": "An elven worshiper may once in a lifetime be granted a two-charisma-point increase with respect to the opposite sex"
+    },
+    {
+      "name": "udp2HanChaGiftChancePct",
+      "value": 5,
+      "comment": "There is a 5 percent chance of the charisma gift following a great quest"
+    },
+    {
+      "name": "udp2LabRobeColorCount",
+      "value": 4,
+      "comment": "He wears pale-colored robes of green, blue, white, and gray - four colors"
+    },
+    {
+      "name": "udp2LabStasisPerRound",
+      "value": 1,
+      "comment": "Once per round his gaze can place a being within 12 inches in temporal stasis, no saving throw, for as long as desired"
+    },
+    {
+      "name": "udp2LabStasisRadiusInches",
+      "value": 12,
+      "comment": "The temporal stasis gaze reaches 12 inches"
+    },
+    {
+      "name": "udp2LabAgeYearsMax",
+      "value": 100,
+      "comment": "At a touch he can restore youth to or prematurely age any being by up to 100 years in either direction, save versus spell applicable"
+    },
+    {
+      "name": "udp2LabSlowHasteRadiusInches",
+      "value": 18,
+      "comment": "All mortal enemies within 18 inches are slowed automatically, and mortal allies in the same radius are hastened if he chooses; no saving throw, though magic resistance could help"
+    },
+    {
+      "name": "udp2LabAgeUndoChancePct",
+      "value": 1,
+      "comment": "Worshipers may appeal to undo the effects of age, but this is a 1 percent chance, only after an outstanding quest in his name"
+    }
+  ],
+  "bools": [
+    {
+      "name": "udp2AerFeatheredAppearance",
+      "value": true,
+      "comment": "A tall elf-like woman with feathered hair and eyebrows, a pair of large bird-like wings springing from her back"
+    },
+    {
+      "name": "udp2AerFeathersChangeColor",
+      "value": true,
+      "comment": "Her feathers are of constantly changing color"
+    },
+    {
+      "name": "udp2AerNeverTouchesGround",
+      "value": true,
+      "comment": "The lower half of her body vanishes into a misty whirlwind, so she appears to never touch the ground"
+    },
+    {
+      "name": "udp2AerWandersWithWinged",
+      "value": true,
+      "comment": "She wanders the winds of the planes of Olympus and Gladsheim in the company of a large number of winged creatures of many types"
+    },
+    {
+      "name": "udp2AerSummonsObeyUntoDeath",
+      "value": true,
+      "comment": "Her summoned creatures will obey her unto death"
+    },
+    {
+      "name": "udp2AerAirSpellsAtWill",
+      "value": true,
+      "comment": "Her air and weather spells may be used as often as desired, one spell per round"
+    },
+    {
+      "name": "udp2AerWorshipAlignments",
+      "value": true,
+      "comment": "Any elves of non-lawful and non-evil alignment may worship her"
+    },
+    {
+      "name": "udp2AerWeatherCult",
+      "value": true,
+      "comment": "Elves desiring certain weather conditions make the most frequent sacrifices to her, and her cult is popular with flying-mount owners (griffons, hippogriffs, pegasi)"
+    },
+    {
+      "name": "udp2AerGiftNeedsNoWorship",
+      "value": true,
+      "comment": "The feather fall beneficiaries need not be her worshipers, but should be of the same alignment"
+    },
+    {
+      "name": "udp2AerGiftGeasesNoSave",
+      "value": true,
+      "comment": "The quest and geas come with no saving throws allowed, within the stated days, commensurate with the character's level, and comparatively challenging"
+    },
+    {
+      "name": "udp2EreSmallFollowing",
+      "value": true,
+      "comment": "His following is not as large as those of the other elven deities, though thieves give him attention"
+    },
+    {
+      "name": "udp2EreFickleUnpredictable",
+      "value": true,
+      "comment": "A fickle, utterly unpredictable deity who can change his appearance at will"
+    },
+    {
+      "name": "udp2ErePranksRarelyHarmful",
+      "value": true,
+      "comment": "He enjoys causing trouble for its own sake, but his pranks are rarely either helpful or deadly"
+    },
+    {
+      "name": "udp2EreAlwaysWearsGreen",
+      "value": true,
+      "comment": "Regardless of how he appears, he will always wear green somewhere upon his person"
+    },
+    {
+      "name": "udp2EreSwordOpensAll",
+      "value": true,
+      "comment": "His longsword knocks open all barriers, doors, and locks with but a touch"
+    },
+    {
+      "name": "udp2EreSummonsMaxHitPoints",
+      "value": true,
+      "comment": "His summoned small beings each have maximum hit points"
+    },
+    {
+      "name": "udp2ErePrefersEscape",
+      "value": true,
+      "comment": "He will rarely fight another being directly, preferring to escape and catch his opponent off guard later"
+    },
+    {
+      "name": "udp2EreCastsBeforeCombat",
+      "value": true,
+      "comment": "Prior to entering combat it is very likely he makes extensive use of his chaos and polymorph spells"
+    },
+    {
+      "name": "udp2EreFollowersIndependent",
+      "value": true,
+      "comment": "His followers are quite unpredictable themselves and very independent, many of them thieves"
+    },
+    {
+      "name": "udp2EreAllowsOddCombos",
+      "value": true,
+      "comment": "Elven cleric/thieves and fighter/cleric/thieves are known among his worshipers, class combinations not normally possible to elvenkind"
+    },
+    {
+      "name": "udp2EreCombosAlwaysNpcs",
+      "value": true,
+      "comment": "These multi-classed characters are always non-player characters"
+    },
+    {
+      "name": "udp2SolCloakOfLeaves",
+      "value": true,
+      "comment": "Clad in a great cloak of living leaves"
+    },
+    {
+      "name": "udp2SolHuntsEvil",
+      "value": true,
+      "comment": "He strides through the forests in search of game and to seek out and destroy evil"
+    },
+    {
+      "name": "udp2SolNeverCloses",
+      "value": true,
+      "comment": "He will not close to do battle with an enemy, but will track and pursue instead"
+    },
+    {
+      "name": "udp2SolNeverEmptyQuiver",
+      "value": true,
+      "comment": "firing arrows from a never-empty quiver"
+    },
+    {
+      "name": "udp2SolTouchAndRetreat",
+      "value": true,
+      "comment": "His favorite tactic against a dangerous foe: physically touch the being and then retreat, then manufacture a special arrow of slaying designed to kill that one opponent"
+    },
+    {
+      "name": "udp2SolArrowKillsToDemigod",
+      "value": true,
+      "comment": "The special arrow can kill any intended target of up to, but not including, demigod status"
+    },
+    {
+      "name": "udp2SolArrowBeatsMagicRes",
+      "value": true,
+      "comment": "Demons, devils, and other lower-planar monsters have felt these missiles; not even their magic resistance protects them from certain death"
+    },
+    {
+      "name": "udp2SolForestInvisible",
+      "value": true,
+      "comment": "Traveling through forests he becomes automatically invisible, as in improved invisibility (the 4th-level illusionist spell), and completely silent"
+    },
+    {
+      "name": "udp2SolTaughtHiding",
+      "value": true,
+      "comment": "He taught the first elves the art of hiding in and moving through natural foliage undetected"
+    },
+    {
+      "name": "udp2SolGiftOncePerLife",
+      "value": true,
+      "comment": "The slaying-arrow gift can be received only once in an elf's lifetime, designed to slay the creature that is the elf's greatest enemy at the time"
+    },
+    {
+      "name": "udp2HanMostlyFeminine",
+      "value": true,
+      "comment": "Predominantly depicted as feminine, though on rare occasions said to have appeared as a male"
+    },
+    {
+      "name": "udp2HanSpheresLoveBeauty",
+      "value": true,
+      "comment": "She influences the spheres of love and beauty and is widely revered by many of the elves"
+    },
+    {
+      "name": "udp2HanEvergoldPool",
+      "value": true,
+      "comment": "She owns an immense crystal fountain and pool with which she keeps watch over her followers, as if using a crystal ball"
+    },
+    {
+      "name": "udp2HanBonusElvesOnly",
+      "value": true,
+      "comment": "Her bath bonuses are only effective against elves and half-elves"
+    },
+    {
+      "name": "udp2HanAphroditeShares",
+      "value": true,
+      "comment": "Aphrodite is the only other being who shares the waters of Evergold, gaining the same bonuses against humans"
+    },
+    {
+      "name": "udp2HanCultsCoexist",
+      "value": true,
+      "comment": "The two goddesses rarely find themselves at odds; their cults rarely assist one another but do not object to each other's presence"
+    },
+    {
+      "name": "udp2HanNoPhysicalAttack",
+      "value": true,
+      "comment": "She has no physical attack mode as such"
+    },
+    {
+      "name": "udp2HanAuraCharms",
+      "value": true,
+      "comment": "Beings within her aura who fail the save are permanently charmed by her beauty"
+    },
+    {
+      "name": "udp2HanOthersAlwaysMiss",
+      "value": true,
+      "comment": "All other attackers are so distracted by her presence as to miss her with every hit"
+    },
+    {
+      "name": "udp2HanChaGiftPermanent",
+      "value": true,
+      "comment": "The charisma increase with respect to the opposite sex is permanent, granted once during the worshiper's lifetime"
+    },
+    {
+      "name": "udp2HanQuestShape",
+      "value": true,
+      "comment": "The quest might involve the creation or preservation of a beautiful object, or mighty deeds done in the name of a loved one for the loved one's benefit"
+    },
+    {
+      "name": "udp2LabBothGenders",
+      "value": true,
+      "comment": "Like Corellon Larethian, he variously appears as both male or female, and sometimes both or neither"
+    },
+    {
+      "name": "udp2LabSilveryHair",
+      "value": true,
+      "comment": "Regardless of gender, he always has silvery hair and misty gray eyes"
+    },
+    {
+      "name": "udp2LabBlessedLongevity",
+      "value": true,
+      "comment": "At the creation of the elven races he blessed them with longevity and pronounced that the passage of time would do little to alter their appearances as it did the other races"
+    },
+    {
+      "name": "udp2LabKnowsEveryElf",
+      "value": true,
+      "comment": "He knows the future and past of every elf and all elven-related creatures"
+    },
+    {
+      "name": "udp2LabMasterOfTime",
+      "value": true,
+      "comment": "He is acknowledged by the elves to be the master of time and aging"
+    },
+    {
+      "name": "udp2LabStasisNoSave",
+      "value": true,
+      "comment": "The temporal stasis gaze carries no saving throw and lasts as long as desired"
+    },
+    {
+      "name": "udp2LabAgeOncePerCreature",
+      "value": true,
+      "comment": "The youth or aging power is used only once, one form or the other, on a creature during its lifetime"
+    },
+    {
+      "name": "udp2LabSlowHasteNoSave",
+      "value": true,
+      "comment": "The slow and haste effects carry no saving throw, though magic resistance could help"
+    },
+    {
+      "name": "udp2LabTimeImmune",
+      "value": true,
+      "comment": "He is immune to any spell or effect that involves time or would inhibit his movement (time stop, temporal stasis, slow, paralysis, hold)"
+    },
+    {
+      "name": "udp2LabUndoAgeRare",
+      "value": true,
+      "comment": "The age-undoing appeal is granted only to those who have done an outstanding quest in his name"
+    },
+    {
+      "name": "udp2LabQuestArtifacts",
+      "value": true,
+      "comment": "Such quests usually involve the recovery of artifacts and relics lost for hundreds or thousands of years"
+    },
+    {
+      "name": "udp2LabFollowersHistorians",
+      "value": true,
+      "comment": "His followers are usually historians or others who collect information on the past history of elvenkind"
+    }
+  ],
+  "chains": [],
+  "switches": [],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the round consts (the prose round, the feeder round, the census)",
+      "expr": "m['udp2ProseRound']() != 787 or m['udp2StatblockFeederRound']() != 406 or m['udp2ElvenDeityCount']() != 5"
+    },
+    {
+      "note": "the Aerdrie Faenya prose walk",
+      "expr": "m['udp2AerWindBlastsPerRound']() != 2 or m['udp2AerWindBlastDamageMin']() != 5 or m['udp2AerWindBlastDamageMax']() != 20 or m['udp2AerWindBlastRangeInches']() != 96 or m['udp2AerElementalsPerDay']() != 1 or m['udp2AerElementalsMin']() != 2 or m['udp2AerElementalsMax']() != 12 or m['udp2AerElementalHitDice']() != 16 or m['udp2AerEaglesPerDay']() != 2 or m['udp2AerEaglesMin']() != 3 or m['udp2AerEaglesMax']() != 18 or m['udp2AerRocsMin']() != 1 or m['udp2AerRocsMax']() != 2 or m['udp2AerAirSpellLevel']() != 25 or m['udp2AerNegateFlightRadiusInches']() != 12 or m['udp2AerFeatherFallChancePct']() != 2 or m['udp2AerQuestGeasDaysMin']() != 2 or m['udp2AerQuestGeasDaysMax']() != 7 or m['udp2AerFeatheredAppearance']() != 1 or m['udp2AerFeathersChangeColor']() != 1 or m['udp2AerNeverTouchesGround']() != 1 or m['udp2AerWandersWithWinged']() != 1 or m['udp2AerSummonsObeyUntoDeath']() != 1 or m['udp2AerAirSpellsAtWill']() != 1 or m['udp2AerWorshipAlignments']() != 1 or m['udp2AerWeatherCult']() != 1 or m['udp2AerGiftNeedsNoWorship']() != 1 or m['udp2AerGiftGeasesNoSave']() != 1"
+    },
+    {
+      "note": "the Erevan Ilesere prose walk",
+      "expr": "m['udp2EreHeightMinInches']() != 1 or m['udp2EreHeightMaxFeet']() != 6 or m['udp2EreSwordBonus']() != 4 or m['udp2EreSummonMax']() != 20 or m['udp2EreChaosCastsPerRound']() != 1 or m['udp2EreSmallFollowing']() != 1 or m['udp2EreFickleUnpredictable']() != 1 or m['udp2ErePranksRarelyHarmful']() != 1 or m['udp2EreAlwaysWearsGreen']() != 1 or m['udp2EreSwordOpensAll']() != 1 or m['udp2EreSummonsMaxHitPoints']() != 1 or m['udp2ErePrefersEscape']() != 1 or m['udp2EreCastsBeforeCombat']() != 1 or m['udp2EreFollowersIndependent']() != 1 or m['udp2EreAllowsOddCombos']() != 1 or m['udp2EreCombosAlwaysNpcs']() != 1"
+    },
+    {
+      "note": "the Solonor Thelandira prose walk",
+      "expr": "m['udp2SolLongbowBonus']() != 5 or m['udp2SolSurpriseRadiusInches']() != 48 or m['udp2SolArrowCraftDays']() != 1 or m['udp2SolArrowBonus']() != 3 or m['udp2SolSlayingArrowChancePct']() != 2 or m['udp2SolCloakOfLeaves']() != 1 or m['udp2SolHuntsEvil']() != 1 or m['udp2SolNeverCloses']() != 1 or m['udp2SolNeverEmptyQuiver']() != 1 or m['udp2SolTouchAndRetreat']() != 1 or m['udp2SolArrowKillsToDemigod']() != 1 or m['udp2SolArrowBeatsMagicRes']() != 1 or m['udp2SolForestInvisible']() != 1 or m['udp2SolTaughtHiding']() != 1 or m['udp2SolGiftOncePerLife']() != 1"
+    },
+    {
+      "note": "the Hanali Celanil prose walk",
+      "expr": "m['udp2HanBathEnhanceDays']() != 1 or m['udp2HanReactionBonusPct']() != 75 or m['udp2HanAweMaxLevel']() != 14 or m['udp2HanAuraRadiusInches']() != 6 or m['udp2HanAuraSaveMod']() != -4 or m['udp2HanAttackWeaponMin']() != 2 or m['udp2HanAttackChaMin']() != -1 or m['udp2HanAttackChaMax']() != -7 or m['udp2HanChaGift']() != 2 or m['udp2HanChaGiftChancePct']() != 5 or m['udp2HanMostlyFeminine']() != 1 or m['udp2HanSpheresLoveBeauty']() != 1 or m['udp2HanEvergoldPool']() != 1 or m['udp2HanBonusElvesOnly']() != 1 or m['udp2HanAphroditeShares']() != 1 or m['udp2HanCultsCoexist']() != 1 or m['udp2HanNoPhysicalAttack']() != 1 or m['udp2HanAuraCharms']() != 1 or m['udp2HanOthersAlwaysMiss']() != 1 or m['udp2HanChaGiftPermanent']() != 1 or m['udp2HanQuestShape']() != 1"
+    },
+    {
+      "note": "the Labelas Enoreth prose walk",
+      "expr": "m['udp2LabRobeColorCount']() != 4 or m['udp2LabStasisPerRound']() != 1 or m['udp2LabStasisRadiusInches']() != 12 or m['udp2LabAgeYearsMax']() != 100 or m['udp2LabSlowHasteRadiusInches']() != 18 or m['udp2LabAgeUndoChancePct']() != 1 or m['udp2LabBothGenders']() != 1 or m['udp2LabSilveryHair']() != 1 or m['udp2LabBlessedLongevity']() != 1 or m['udp2LabKnowsEveryElf']() != 1 or m['udp2LabMasterOfTime']() != 1 or m['udp2LabStasisNoSave']() != 1 or m['udp2LabAgeOncePerCreature']() != 1 or m['udp2LabSlowHasteNoSave']() != 1 or m['udp2LabTimeImmune']() != 1 or m['udp2LabUndoAgeRare']() != 1 or m['udp2LabQuestArtifacts']() != 1 or m['udp2LabFollowersHistorians']() != 1"
+    }
+  ],
+  "table_checks": [],
+  "header_sections": {
+    "the prose consts (the R787 wiring)": [
+      {
+        "kind": "const",
+        "name": "udp2ProseRound"
+      },
+      {
+        "kind": "const",
+        "name": "udp2StatblockFeederRound"
+      },
+      {
+        "kind": "const",
+        "name": "udp2ElvenDeityCount"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerWindBlastsPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerWindBlastDamageMin"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerWindBlastDamageMax"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerWindBlastRangeInches"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerElementalsPerDay"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerElementalsMin"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerElementalsMax"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerElementalHitDice"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerEaglesPerDay"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerEaglesMin"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerEaglesMax"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerRocsMin"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerRocsMax"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerAirSpellLevel"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerNegateFlightRadiusInches"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerFeatherFallChancePct"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerQuestGeasDaysMin"
+      },
+      {
+        "kind": "const",
+        "name": "udp2AerQuestGeasDaysMax"
+      },
+      {
+        "kind": "const",
+        "name": "udp2EreHeightMinInches"
+      },
+      {
+        "kind": "const",
+        "name": "udp2EreHeightMaxFeet"
+      },
+      {
+        "kind": "const",
+        "name": "udp2EreSwordBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udp2EreSummonMax"
+      },
+      {
+        "kind": "const",
+        "name": "udp2EreChaosCastsPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "udp2SolLongbowBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udp2SolSurpriseRadiusInches"
+      },
+      {
+        "kind": "const",
+        "name": "udp2SolArrowCraftDays"
+      },
+      {
+        "kind": "const",
+        "name": "udp2SolArrowBonus"
+      },
+      {
+        "kind": "const",
+        "name": "udp2SolSlayingArrowChancePct"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanBathEnhanceDays"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanReactionBonusPct"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanAweMaxLevel"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanAuraRadiusInches"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanAuraSaveMod"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanAttackWeaponMin"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanAttackChaMin"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanAttackChaMax"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanChaGift"
+      },
+      {
+        "kind": "const",
+        "name": "udp2HanChaGiftChancePct"
+      },
+      {
+        "kind": "const",
+        "name": "udp2LabRobeColorCount"
+      },
+      {
+        "kind": "const",
+        "name": "udp2LabStasisPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "udp2LabStasisRadiusInches"
+      },
+      {
+        "kind": "const",
+        "name": "udp2LabAgeYearsMax"
+      },
+      {
+        "kind": "const",
+        "name": "udp2LabSlowHasteRadiusInches"
+      },
+      {
+        "kind": "const",
+        "name": "udp2LabAgeUndoChancePct"
+      }
+    ],
+    "the prose bools (the R787 wiring)": [
+      {
+        "kind": "bool",
+        "name": "udp2AerFeatheredAppearance"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2AerFeathersChangeColor"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2AerNeverTouchesGround"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2AerWandersWithWinged"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2AerSummonsObeyUntoDeath"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2AerAirSpellsAtWill"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2AerWorshipAlignments"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2AerWeatherCult"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2AerGiftNeedsNoWorship"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2AerGiftGeasesNoSave"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2EreSmallFollowing"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2EreFickleUnpredictable"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2ErePranksRarelyHarmful"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2EreAlwaysWearsGreen"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2EreSwordOpensAll"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2EreSummonsMaxHitPoints"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2ErePrefersEscape"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2EreCastsBeforeCombat"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2EreFollowersIndependent"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2EreAllowsOddCombos"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2EreCombosAlwaysNpcs"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolCloakOfLeaves"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolHuntsEvil"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolNeverCloses"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolNeverEmptyQuiver"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolTouchAndRetreat"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolArrowKillsToDemigod"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolArrowBeatsMagicRes"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolForestInvisible"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolTaughtHiding"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2SolGiftOncePerLife"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanMostlyFeminine"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanSpheresLoveBeauty"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanEvergoldPool"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanBonusElvesOnly"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanAphroditeShares"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanCultsCoexist"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanNoPhysicalAttack"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanAuraCharms"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanOthersAlwaysMiss"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanChaGiftPermanent"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2HanQuestShape"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabBothGenders"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabSilveryHair"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabBlessedLongevity"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabKnowsEveryElf"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabMasterOfTime"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabStasisNoSave"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabAgeOncePerCreature"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabSlowHasteNoSave"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabTimeImmune"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabUndoAgeRare"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabQuestArtifacts"
+      },
+      {
+        "kind": "bool",
+        "name": "udp2LabFollowersHistorians"
+      }
+    ]
+  },
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 238,
+    "open": 0
+  },
+  "caller_files": [
+    "rules/deitylines.h",
+    "rules/uaappends.h"
+  ],
+  "inline_count": 101,
+  "file_patches": [
+    {
+      "file": "rules/deitylines.h",
+      "note": "the prose note strike (the dwarven and elven parts pin)",
+      "from": "// R786: the dwarven paragraphs pin\n// (rules/uadeityprose1.h); the other\n// pantheons' prose stays open - the lines\n// pin, the paragraphs do not (yet)\n",
+      "to": "// R786/R787: the dwarven and elven\n// paragraphs pin (rules/uadeityprose1-2.h);\n// the other pantheons' prose stays open -\n// the lines pin, the paragraphs do not (yet)\n"
+    },
+    {
+      "file": "rules/uaappends.h",
+      "note": "the uaappends prose note strike (part 2)",
+      "from": "// stat lines) in rules/deitylines.h; the dwarven\n// prose pins in rules/uadeityprose1.h (R786); the\n// other pantheons' prose stays open.\n",
+      "to": "// stat lines) in rules/deitylines.h; the dwarven\n// and elven prose pin in rules/uadeityprose1-2.h\n// (R786/R787); the other pantheons' prose\n// stays open.\n"
+    }
+  ]
+}

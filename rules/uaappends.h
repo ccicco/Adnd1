@@ -11,8 +11,9 @@
 // reads (the class/level lines, the
 // MOVE values, the S/I/W/D/C/CH/CM
 // stat lines) in rules/deitylines.h; the dwarven
-// prose pins in rules/uadeityprose1.h (R786); the
-// other pantheons' prose stays open.
+// and elven prose pin in rules/uadeityprose1-2.h
+// (R786/R787); the other pantheons' prose
+// stays open.
 //
 // The census (live cross-checked
 // against the R405 seam): 23
