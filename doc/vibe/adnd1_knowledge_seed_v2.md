@@ -20117,6 +20117,60 @@ when both halves land.
   mounts are MM1 registry creatures, the
   fish and moving-water headers carry no
   creatures).
+- R792 LANDED 2026-10-23: commit
+  f077c245d02050ef0c858fbe8b0698ee940ce4fd
+  (census 714 -> 715, pushed b33e362..f077c24),
+  THE REGISTRY PROMOTION DEFS - the all-in-one
+  def write (the user-set seam, riding the R791
+  data_files extension). 73 NEW .lua defs, one
+  pass: 47 OA (the corrected census: kappa 2,
+  kala 2, nat 3, the oa91 trio all ride; the
+  ikiryo carries sentinel nil stats -
+  hitDiceNum 0, the documented flat-hp path),
+  18 WSG Table 13 animals (loads and movement
+  only, the combat fields riding the documented
+  loader defaults per the user call;
+  loadNormal/loadMax from the Table 13 grid), 8
+  MOP Appendix III (the printed stat blocks, the
+  new plane field; the einheriar rides the
+  level-based sentinel). THREE FILE PATCHES:
+  MonsterDef gains the five schema fields
+  (loadNormal, loadMax, rank, plane, transform -
+  the DMO rank and MOP transform both
+  zero-record, defaulting 0/empty), the loader
+  reads all five through the defensive coercers,
+  and the regtest xp-audit allowed-source list
+  gains oa_print, wsg_print, mop_print. Header
+  rules/prg.h, prefix prg (free at b33e362), 13
+  consts + 14 bools (27 inline), audit "R792
+  registry promotion defs audit", include after
+  lreg.h; the lreg 65/473 pins stand superseded,
+  the reconciliation carried in the prg banner.
+  Engine double-run applied 80/already 0 ->
+  0/80; rverify GREEN (27 mutants, 0 missed) -
+  NOTE the repo rverify.py predates data_files,
+  so the run used a LOCAL ADAPTED COPY
+  (restores/deletes the data files, counts them
+  in n_patches); a candidate repo patch for a
+  later tooling round. BATTERY LIVE: loaded 481,
+  errors 0; xp audit 481 checked, 0 anomalies;
+  encounter smoke 2000 rolls, 0 bad; specials
+  census 50 monsters; AUDIT CENSUS 715 each
+  exactly once, all bad 0; build 0 warnings; one
+  preflight, GREEN first pass. Registry 408 ->
+  481. CAUGHT IN REVIEW: the rn git add
+  predates data_files too - the 73 .lua defs
+  stayed UNTRACKED and missed the f077c24
+  commit (6 files changed); a follow-up
+  add/commit/push of the 73 defs is PENDING
+  Curtiss's push. md5s: spec authored
+  cd5d3424c2fd76c6b6601b7534f55726, gate
+  0067dff426eda8f7895c7a38310b7fa7. NEXT -
+  R793: awaits Curtiss's call (the promotion
+  seam is closed; per the DMO plan the
+  candidates are the UA Appendix Spell Dueling
+  Characteristics pp. 180-188 and the Index pp.
+  189-192).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

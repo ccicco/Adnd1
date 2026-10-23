@@ -763,6 +763,9 @@ bool MonsterRegistry::loadFile(const std::string& path,
     def.plane                = luaGetStr(L, "plane", "");
     def.transform            = luaGetStr(L, "transform", "");
 
+    // ---- R793: the WSG service role mask ----
+    def.wsgRoles             = luaGetInt(L, "wsgRoles", 0);
+
     // ---- R71: treasure type letters ----
     def.treasureText = luaGetStr(L, "treasure", "");
     def.treasure = parseTreasureText(def.key, def.treasureText);

@@ -30,4 +30,9 @@ return {
   psionic = "none",
   attackDefenseModes = "none",
   text = "Mules are generally sterile hybrids between horses and donkeys. They are strong and agile, thus able to negotiate dungeons well in most cases. Mules can be very stubborn and uncooperative at times, and they are likely to bite or kick their own handler if in a contrary mood. They are not panicked by fire, but strange smells may cause them to bolt away, or begin to bray loudly. A mule can carry 2,000 gold pieces in weight at normal speed, 6,000 at one-half speed.",
+
+  -- ---- R793: the WSG Table 13 row ride ----
+  loadNormal = 5000,
+  loadMax = 7500,
+  wsgRoles = 7,
 }

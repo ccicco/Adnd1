@@ -154,6 +154,9 @@ struct MonsterDef {
     std::string plane;           // MOP Appendix III native plane
     std::string transform;       // MOP Appendix II elemental analogue
 
+    // ---- R793: the WSG service role mask ----
+    int   wsgRoles = 0;         // WSG service mask: 1 normal, 2 mount, 4 pack
+
     // R71: treasure type letters + verbatim Lua text (bestiary/debug)
     TreasureSpec treasure;
     std::string treasureText;

@@ -34,4 +34,9 @@ return {
   psionic = "none",
   attackDefenseModes = "none",
   text = "The typical ape is found only in lonely tropical forest regions. It is non-aggressive and shy, but if threatened or cornered will fight fiercely. If it scores hits with both of its hands it does an additional 1-6 points grabbing and rending its opponent.",
+
+  -- ---- R793: the WSG Table 13 row ride ----
+  loadNormal = 2000,
+  loadMax = 4000,
+  wsgRoles = 5,
 }
