@@ -22487,6 +22487,85 @@ PREFLIGHT GREEN (the repair cut, first pass):
   index class, or the OA/lammasu
   promotion seam) waits for the
   next Go call.
+- R820 LANDED 2026-10-24: commit
+  8bf462f7c2bbb4975fd972f55086165542fad762
+  (census 742 -> 743, pushed
+  52a015a..8bf462f),
+  THE LAMMASU PROMOTION (Curtiss's
+  Go call lammasu on the landed R819;
+  round twenty-five of the MM2 arc,
+  the promotion seam round, the queued
+  R817 discovery closed - NO gap
+  boxes flip, the MM2 arc gap stays 37
+  closed 0 open). THE DEF: key
+  lammasu_greater, the Lammasu, Greater
+  stat block MM2 print p. 79 (between
+  the kraken and the land lamprey),
+  the block the R808 LMN walk never
+  promoted; AC 3, HD 12+7 (avgHp 61),
+  MOVE 15/30 (MC: B), 2 attacks
+  2-12/2-12, MR 40%, level VIII XP
+  3950 + 18/hp (xpValue 5048),
+  xpSource mm2_print, lawful good,
+  supra-genius, size L (5' at the
+  shoulder), nil treasure and lair.
+  THE TWO-VOICE SETTLE: the djvu OCR
+  garbles the move stat (the 5V3Q
+  read) - the 1eonline transcription
+  reads 15/30 MC B, the compendium
+  tables agree (15, Fl 30, B). THE
+  REWIRE: the two R817 keyless outdoor
+  cells (temperate civilized plains
+  die 2, grid 22; tropical civilized
+  hills die 20, grid 31) rekey
+  lammasu_greater - src cells stay 2,
+  the R817 source census unchanged;
+  the walk-key census bumps 570 ->
+  572 (the mm2enco.h const and the
+  R817 audit const chain and
+  expression all ride as file
+  patches, the LammasuGreaterRows
+  const stays 2). THE REGISTRY: 809
+  -> 810 defs, MM2 331 -> 332; the
+  R817-R819 registry-floor consts
+  stand as their own round snapshots
+  (the >= floor checks stay green).
+  THE DOCTRINE (p. 79 prose pinned as
+  consts/bools): Astral and Ethereal
+  travel, invisible / dimension door /
+  teleport without error (1 at a time,
+  1 per round), protection from evil
+  20-foot radius double effect (-4
+  evil attacks, +4 saves), clerical
+  spells at 5th-level ability
+  (5/4/3/2/1 of levels 1-5), cures
+  double strength on 1d6+1 (CLW 4-14,
+  CSW 8-28), 50 percent holy word,
+  spell-like ability level 12 (as
+  HD), dwell with 6 or more ordinary
+  lammasu. Header rules/lmp.h, prefix
+  lmp (free at 52a015a), 25 consts +
+  10 bools (inline 35), audit "R820
+  lammasu promotion audit", 6 file
+  patches + 1 data file (the .lua
+  def), 8 examples, applied 11.
+  GATES: engine double-run 11/0 ->
+  0/11; rverify GREEN vs 52a015a (35
+  mutants, 0 missed); offline kEncO
+  sim 572 keyed cells; identifier
+  sweep clean; tree restored pristine
+  (809 defs, 0 traces). NOTE: the
+  tsr02016 scan A item left archive
+  org (the djvu.xml 404s now) - scan
+  B (monstermanualii1sted) plus a
+  1eonline/compendium web settle did
+  the two-voice work this round.
+  NEXT: awaits Curtiss's call (the
+  remaining queued candidates: the
+  lung/shan OA dragon defs behind the
+  R817/R818 lung cells, the UA
+  appendix spell dueling / index
+  class).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

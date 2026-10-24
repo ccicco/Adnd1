@@ -522,6 +522,7 @@
 #include "rules/mm2enca.h"  // R818: the MM2 aquatic encounter tables walk - the 12 surface and depths grids
 #include "rules/mm2enci.h"  // R819: the MM2 index walk - the merged MM1/FF/MM2 index census
 #include "rules/lmp.h"  // R820: the lammasu promotion
+#include "rules/lungp.h"  // R821: the lung promotion
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -684,7 +685,8 @@ int main() {
                 d.xpSource != "age_bracket" && d.xpSource != "by_head_count" &&
                 d.xpSource != "by_level" && d.xpSource != "oa_print" &&
                 d.xpSource != "wsg_print" && d.xpSource != "mop_print" &&
-                d.xpSource != "mm2_print") bad = true;
+                d.xpSource != "mm2_print" &&
+                d.xpSource != "ff_print") bad = true;
             if (bad && anom < 10) {
                 printf("ANOM: %-24s xpSource=%s xpValue=%d xpPerHp=%d\n",
                        kv.first.c_str(), d.xpSource.c_str(),
@@ -138247,7 +138249,7 @@ int main() {
             || mm2encaMm2SourceRows() != 51
             || mm2encaFfSourceRows() != 19
             || mm2encaNoSourceRows() != 20
-            || mm2encaWalkKeyRows() != 189
+            || mm2encaWalkKeyRows() != 192
             || mm2encaLungDragonRows() != 3
             || mm2encaOrRows() != 14
             || mm2encaRegistryFloor() != 809
@@ -138862,7 +138864,7 @@ int main() {
             ++bad;
         // the walk-key census (the MM1 and MM2 defs the registry owns)
     if (mm2encaWalkKeyRows() != mm2encaMm1SourceRows() +
-        mm2encaMm2SourceRows()
+        mm2encaMm2SourceRows() + lungpCellsRewired()
         )
             ++bad;
         // the whirlpool arithmetic (75 + 25, six rounds to sink)
@@ -138989,7 +138991,8 @@ int main() {
                 "dragon_turtle", "harpy", "greenhag", "water_naga", "ghoul",
                 "snapping_turtle", "swan", "", "", "merchant", "",
                 "crystal_ooze", "buccaneer", "merrow", "scrag_freshwater",
-                "nixie", "falcon_large", "", "swanmay",
+                "nixie", "falcon_large", "lung_wang",
+                "swanmay",
             },
             {  // grid 1, the the cold freshwater depths
                 "storm_giant", "verme", "", "", "sirine", "ghoul",
@@ -139007,7 +139010,7 @@ int main() {
                 "verme", "water_weird", "seawolf_lesser", "", "", "dolphin",
                 "elf", "shark", "giant_crab", "narwhale", "octopus", "whale",
                 "sea_lion", "gargoyle", "giant_squid", "octopus",
-                "green_slime", "titan", "",
+                "green_slime", "titan", "lung_wang",
             },
             {  // grid 4, the the temperate freshwater surface
                 "giant_dragonfly", "carp_giant", "lizard_man",
@@ -139045,7 +139048,7 @@ int main() {
                 "verme", "weed", "", "", "behemoth", "merman",
                 "snapping_turtle", "water_beetle", "dinichthys",
                 "water_spider", "", "", "archelon_ischyros", "gargoyle", "",
-                "lizard_man", "", "sea_hag", "water_weird",
+                "lizard_man", "shen_lung", "sea_hag", "water_weird",
             },
             {  // grid 10, the the tropical saltwater surface
                 "wereshark", "seawolf_greater", "roc", "", "sahuagin",
@@ -139093,7 +139096,8 @@ int main() {
             ++bad;
         if (pointer != mm2encaPointerRows())
             ++bad;
-        if (lung != mm2encaLungDragonRows())
+        if (lung != mm2encaLungDragonRows()
+            - lungpCellsRewired())
             ++bad;
         if (keyed != mm2encaWalkKeyRows())
             ++bad;
@@ -139626,6 +139630,248 @@ int main() {
             < lmpRegistryAfter())
             ++bad;
         printf("R820 lammasu promotion: bad %d\n",
+               bad);
+        if (bad) return 1;
+    }
+    // ---- R821 lung promotion audit ----
+    // THE LUNG PROMOTION - the queued R818 discovery closed (the lung dragon
+    // cross-ref cells the R818 aquatic walk left keyless): the MM2 index
+    // settles the three cells as FF crossrefs (Sea Dragon (Lung Wang), Spirit
+    // Dragon (Shan Lung)) - the promotion comes from the FF print,
+    // superseding the OA-seam expectation the R818 prose recorded. THE DEFS:
+    // the keys lung_wang and shen_lung, the first FF defs in the registry
+    // (the new ff_print xp class, the R73 allowed list patched to carry it).
+    // The Lung Wang (Sea Dragon) block, FF print p. 28: AC 0, HD 11-13 (the
+    // book-average 38), MOVE 3//9 swim, 3 attacks 1-12/1-12/6-36, treasure
+    // H(x2), 60 percent lair, level VIII XP 4,550 + 16/hp (the full kill XP
+    // 5,158), very intelligence, neutral, size L (up to 30 diameter). The
+    // Shen Lung (Spirit Dragon) block, p. 29: AC 1, HD 9-11 (31), MOVE
+    // 12/12//9, 4 attacks 1-4/1-4/2-24/1-8, treasure H, 60 percent lair,
+    // level VII XP 1,400 + 12/hp (1,772), high intelligence, chaotic neutral,
+    // size L (43 long). THE TWO-VOICE SETTLES: the MM2 index OCR reads Shan
+    // Lung - the FF print header reads Shen Lung (the chiang lung prose
+    // agrees) and Shen wins; the lung wang block OCR reads the bite 5-36 -
+    // the prose reads 6-36 and the prose wins. THE REWIRE: the three R818
+    // keyless aquatic cells (CFS die 19 and CSD die 20 sea dragon, RFD die 18
+    // spirit dragon) rekey lung_wang/lung_wang/shen_lung - the src cells stay
+    // 0, the R818 source census unchanged; the walk-key census bumps 189 ->
+    // 192 (the mm2enca.h const, the R818 audit chain, the walk-key census
+    // expression, and the lung row check all ride as file patches, the
+    // LungDragonRows const stays 3). THE REGISTRY: 810 -> 812 defs, FF 0 ->
+    // 2; the R817-R820 registry-floor consts stand as their own round
+    // snapshots. THE DOCTRINE: the lung wang steam cone 100 x 50 up to 3 per
+    // day (damage equal to current hit points), the scaly command 4-40 x age
+    // level, no water fire, the tribute demand; the shen lung no breath
+    // weapon, bless and curse 1 per day each, control weather and ice storm 3
+    // per day each, no lightning damage but double fire damage, water fire
+    // 2-12, immune to poison, no insect within 60 feet, manoeuvrability class
+    // E, the language shared with the pan lung. NO gap boxes flip this round
+    // (the MM2 arc gap stays 37 closed 0 open).
+    {
+        using namespace rules;
+        int bad = 0;
+    if (lungpRound() != 821
+            || lungpWangPrintPage() != 28
+            || lungpShenPrintPage() != 29
+            || lungpWangStatArmorClass() != 0
+            || lungpWangStatHitDice() != 11
+            || lungpWangStatAvgHp() != 38
+            || lungpWangStatNumAttacks() != 3
+            || lungpWangStatXp() != 4550
+            || lungpWangStatXpPerHp() != 16
+            || lungpWangStatXpValue() != 5158
+            || lungpWangLairPct() != 60
+            || lungpWangScalyCommandMin() != 4
+            || lungpWangScalyCommandMax() != 40
+            || lungpWangSteamConeLengthFt() != 100
+            || lungpWangSteamConeWidthFt() != 50
+            || lungpWangSteamPerDay() != 3
+            || lungpShenStatArmorClass() != 1
+            || lungpShenStatHitDice() != 9
+            || lungpShenStatAvgHp() != 31
+            || lungpShenStatNumAttacks() != 4
+            || lungpShenStatXp() != 1400
+            || lungpShenStatXpPerHp() != 12
+            || lungpShenStatXpValue() != 1772
+            || lungpShenLairPct() != 60
+            || lungpShenScalyCommandMin() != 2
+            || lungpShenScalyCommandMax() != 20
+            || lungpShenWaterFireMax() != 12
+            || lungpShenNoInsectRadiusFt() != 60
+            || lungpShenBlessCursePerDay() != 1
+            || lungpShenWeatherIcePerDay() != 3
+            || lungpRegistryBefore() != 810
+            || lungpRegistryAfter() != 812
+            || lungpFfDefsBefore() != 0
+            || lungpFfDefsAfter() != 2
+            || lungpCellsRewired() != 3
+            || lungpCellCfsRow() != 17
+            || lungpCellCsdRow() != 18
+            || lungpCellRfdRow() != 16
+            || lungpWalkKeyRowsBefore() != 189
+            || lungpWalkKeyRowsAfter() != 192
+            || !lungpPromotedFromFfPrint()
+            || !lungpIndexFrefsPointAtFf()
+            || !lungpShanShenSettled()
+            || !lungpWangDamageSettled()
+            || !lungpWangTurtleBodied()
+            || !lungpWangDemandsTribute()
+            || !lungpWangNoWaterFire()
+            || !lungpShenNoBreathWeapon()
+            || !lungpShenLightningFirePoison()
+            || !lungpShenManoeuvrabilityE()
+            || !lungpSourceCellsUnchanged()
+            || !lungpFloorConstsStaySnapshots()
+            || !lungpNoGapBoxesFlip()
+        )
+            ++bad;
+        // the lung wang xpValue formula (the band base plus per-hp)
+    if (lungpWangStatXpValue() != lungpWangStatXp() + lungpWangStatAvgHp() *
+        lungpWangStatXpPerHp()
+        )
+            ++bad;
+        // the shen lung xpValue formula (the band base plus per-hp)
+    if (lungpShenStatXpValue() != lungpShenStatXp() + lungpShenStatAvgHp() *
+        lungpShenStatXpPerHp()
+        )
+            ++bad;
+        // the registry arithmetic (two defs promoted, the FF class opens)
+    if (lungpRegistryAfter() != lungpRegistryBefore() + 2
+            || lungpFfDefsAfter() != lungpFfDefsBefore() + 2
+            || lungpFfDefsAfter() != 2
+        )
+            ++bad;
+        // the hit dice arithmetic (the book averages)
+    if (lungpWangStatAvgHp() != 38
+            || lungpShenStatAvgHp() != 31
+            || lungpWangStatHitDice() != 11
+            || lungpShenStatHitDice() != 9
+        )
+            ++bad;
+        // the walk-key rewire (the 3 cells)
+    if (lungpWalkKeyRowsAfter() != lungpWalkKeyRowsBefore() +
+        lungpCellsRewired()
+            || lungpWalkKeyRowsAfter() != 192
+        )
+            ++bad;
+        // the rewired cell rows (the die arithmetic rides the row + 2)
+    if (lungpCellCfsRow() != 17
+            || lungpCellCsdRow() != 18
+            || lungpCellRfdRow() != 16
+            || lungpCellsRewired() != 3
+        )
+            ++bad;
+        // the stat block cells (the FF folios)
+    if (lungpWangPrintPage() != 28
+            || lungpShenPrintPage() != 29
+            || lungpWangStatArmorClass() != 0
+            || lungpShenStatArmorClass() != 1
+        )
+            ++bad;
+        // the doctrine cells (the steam cone and the scaly command)
+    if (lungpWangSteamConeLengthFt() != 100
+            || lungpWangSteamConeWidthFt() != 50
+            || lungpWangSteamPerDay() != 3
+            || lungpWangScalyCommandMax() != 40
+        )
+            ++bad;
+        // the shen lung doctrine (the spell cadence, the water fire, the
+        // radius)
+    if (lungpShenBlessCursePerDay() != 1
+            || lungpShenWeatherIcePerDay() != 3
+            || lungpShenWaterFireMax() != 12
+            || lungpShenNoInsectRadiusFt() != 60
+        )
+            ++bad;
+        printf("R821 lung promotion audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R821: the lung promotion walk ----
+    // The two promoted FF defs (the lung wang,
+    // the shen lung) cross-checked live against
+    // the registry: the stat cells of the p. 28
+    // and p. 29 blocks, the ff_print xp source,
+    // the xpValue formula, the three rewired
+    // aquatic cells (src 0, the walk-key census
+    // 189 -> 192), and the registry census
+    // 810 -> 812.
+    {
+        using namespace rules;
+        int bad = 0;
+        const auto* w = reg.find("lung_wang");
+        if (!w) { ++bad; }
+        else {
+            if (w->armorClass
+                != lungpWangStatArmorClass())
+                ++bad;
+            if (w->hitDiceNum
+                != lungpWangStatHitDice())
+                ++bad;
+            if (w->hitDiceBonus != 0) ++bad;
+            if (w->avgHp
+                != lungpWangStatAvgHp())
+                ++bad;
+            if (w->attacks
+                != lungpWangStatNumAttacks())
+                ++bad;
+            if (w->xpBase != lungpWangStatXp())
+                ++bad;
+            if (w->xpPerHp
+                != lungpWangStatXpPerHp()) ++bad;
+            if (w->xpValue
+                != lungpWangStatXpValue()) ++bad;
+            if (w->xpSource != "ff_print") ++bad;
+            if (w->xpValue != w->xpBase
+                + w->avgHp * w->xpPerHp) ++bad;
+        }
+        const auto* s = reg.find("shen_lung");
+        if (!s) { ++bad; }
+        else {
+            if (s->armorClass
+                != lungpShenStatArmorClass())
+                ++bad;
+            if (s->hitDiceNum
+                != lungpShenStatHitDice())
+                ++bad;
+            if (s->hitDiceBonus != 0) ++bad;
+            if (s->avgHp
+                != lungpShenStatAvgHp()) ++bad;
+            if (s->attacks
+                != lungpShenStatNumAttacks())
+                ++bad;
+            if (s->xpBase != lungpShenStatXp())
+                ++bad;
+            if (s->xpPerHp
+                != lungpShenStatXpPerHp()) ++bad;
+            if (s->xpValue
+                != lungpShenStatXpValue()) ++bad;
+            if (s->xpSource != "ff_print") ++bad;
+            if (s->xpValue != s->xpBase
+                + s->avgHp * s->xpPerHp) ++bad;
+        }
+        // (the three rewired cells: the CFS die 19
+        //  and CSD die 20 sea dragon cells rekey
+        //  lung_wang, the RFD die 18 spirit dragon
+        //  cell rekeys shen_lung, all src 0)
+        if (mm2encaCFSDie(lungpCellCfsRow()) != 19
+            || mm2encaCFSSrc(lungpCellCfsRow())
+            != 0
+            || mm2encaCSDDie(lungpCellCsdRow()) != 20
+            || mm2encaCSDSrc(lungpCellCsdRow())
+            != 0
+            || mm2encaRFDDie(lungpCellRfdRow()) != 18
+            || mm2encaRFDSrc(lungpCellRfdRow())
+            != 0)
+            ++bad;
+        if (mm2encaWalkKeyRows()
+            != lungpWalkKeyRowsAfter()) ++bad;
+        if (mm2encaLungDragonRows() != 3) ++bad;
+        if (!reg.find("chiang_lung")) ++bad;
+        if (!reg.find("dragon_turtle")) ++bad;
+        if ((int)reg.all().size()
+            < lungpRegistryAfter())
+            ++bad;
+        printf("R821 lung promotion: bad %d\n",
                bad);
         if (bad) return 1;
     }

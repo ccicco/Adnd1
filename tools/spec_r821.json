@@ -1,0 +1,713 @@
+{
+ "round": 821,
+ "title": "the lung promotion",
+ "header_file": "rules/lungp.h",
+ "prefix": "lungp",
+ "include_after": "#include \"rules/lmp.h\"  // R820: the lammasu promotion",
+ "include_comment": "the lung promotion",
+ "census_before": 743,
+ "audit_label": "R821 lung promotion audit",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R820 LANDED 2026-10-24: commit",
+ "gap_report": "tools/mm2_gap_report.md",
+ "regtest": "regtest.cpp",
+ "data_files": [
+  {
+   "path": "monsters/monsters/l/lung_wang.lua",
+   "content": "-- Lung Wang: promoted by the R821 lung promotion round\n-- from the FF print (spec tools/spec_r821.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Lung Wang\",\n  page = \"28\",\n  pages = \"28\",\n  source = \"FF\",\n  race = \"Lung Wang\",\n  hitDice = \"11-13\",\n  hitDiceNum = 11,\n  hitDiceBonus = 0,\n  avgHp = 38,\n  armorClass = \"0\",\n  numAttacks = 3,\n  damage = \"1-12/1-12/6-36\",\n  xp = 4550,\n  xpPerHp = 16,\n  xpValue = 5158,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 60,\n  treasure = \"H(x2)\",\n  move = \"3\\\"//9\\\"\",\n  size = \"L (up to 30' diameter)\",\n  intelligence = \"Very\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Breath weapon and spells - see below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These solitary brutes are oriental relatives to the dragon turtle, with a turtle's body, crested neck, and head like a shen lung. They rule large bodies of water and can breathe either water or air. They can lift any ship they come under or ram as the largest warship.\\n\\nTheir ordinary attacks are with two claws which do 1-12 hit points of damage each and a bite which inflicts 6-36 hit points of damage. They can breathe a cone of steam 100' long by 50' wide at the base up to three times a day; this breath weapon does damage equal to the current hit points of the creature.\\n\\nLung wang have the scaly command power over 4-40 creatures times the age level of the dragon, but no water fire. They have no spells other than those general to oriental dragons.\\n\\nAs rulers of the seas, lung wang demand tribute from every passing ship. Regular travellers may work out an arrangement - for example, so much treasure dumped overboard at a given spot.\\n\\nThey have their own language.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/shen_lung.lua",
+   "content": "-- Shen Lung: promoted by the R821 lung promotion round\n-- from the FF print (spec tools/spec_r821.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Shen Lung\",\n  page = \"29\",\n  pages = \"29\",\n  source = \"FF\",\n  race = \"Shen Lung\",\n  hitDice = \"9-11\",\n  hitDiceNum = 9,\n  hitDiceBonus = 0,\n  avgHp = 31,\n  armorClass = \"1\",\n  numAttacks = 4,\n  damage = \"1-4/1-4/2-24/1-8\",\n  xp = 1400,\n  xpPerHp = 12,\n  xpValue = 1772,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = 60,\n  treasure = \"H\",\n  move = \"12\\\"/12\\\"//9\\\"\",\n  size = \"L (43' long)\",\n  intelligence = \"High\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"Spells - see below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Shen lung typically attack with two claws for 1-4 hit points of damage each, a bite for 2-24 hit points of damage and a tail spike for 1-8 hit points of damage. The tail is as supple as that of a wyvern, but not poisonous.\\n\\nShen lung have no breath weapon but can cast bless and curse once a day each and control weather and ice storm three times a day each.\\n\\nThese oriental dragons live in rivers and lakes and can breathe air or water. They take no damage from lightning, but take double damage from fire attacks. They have the scaly command power over 2-20 creatures times the age-level of the dragon and water fire of 2-12 points value. Shen lung are immune to poison.\\n\\nAnother curious power they possess is that no insect, arachnid or arthropod can approach a shen lung within a radius of 60'. They are manoeuvrability class E as regards aerial combat. Shen lung speak their own language which they share with the pan lung.\",\n}\n"
+  }
+ ],
+ "banner": {
+  "title": "THE LUNG PROMOTION - THE LUNG WANG AND SHEN LUNG DEFS (FF print pp. 28-29: the stat blocks behind the three R818 aquatic lung dragon cross-ref cells, the first FF defs, the ff_print class), the QUEUED-DISCOVERY round - the 3 keyless cells rewire, the registry 810 -> 812, no gap boxes flip - the MM2 arc gap stays 37 closed 0 open",
+  "provenance": "Round twenty-six of the MM2 arc, the promotion seam round (the lung/shan candidate queued on the landed R820; two defs promoted, the 3 aquatic cells rewired, the walk-key census 189 -> 192)",
+  "sentinel": "The pin header stays the print-fidelity record; the defs carry the pp. 28-29 stat blocks, the rewire rides the file patches, and the walk cross-checks the defs and the cells live"
+ },
+ "audit_comment": "THE LUNG PROMOTION - the queued R818 discovery closed (the lung dragon cross-ref cells the R818 aquatic walk left keyless): the MM2 index settles the three cells as FF crossrefs (Sea Dragon (Lung Wang), Spirit Dragon (Shan Lung)) - the promotion comes from the FF print, superseding the OA-seam expectation the R818 prose recorded. THE DEFS: the keys lung_wang and shen_lung, the first FF defs in the registry (the new ff_print xp class, the R73 allowed list patched to carry it). The Lung Wang (Sea Dragon) block, FF print p. 28: AC 0, HD 11-13 (the book-average 38), MOVE 3//9 swim, 3 attacks 1-12/1-12/6-36, treasure H(x2), 60 percent lair, level VIII XP 4,550 + 16/hp (the full kill XP 5,158), very intelligence, neutral, size L (up to 30 diameter). The Shen Lung (Spirit Dragon) block, p. 29: AC 1, HD 9-11 (31), MOVE 12/12//9, 4 attacks 1-4/1-4/2-24/1-8, treasure H, 60 percent lair, level VII XP 1,400 + 12/hp (1,772), high intelligence, chaotic neutral, size L (43 long). THE TWO-VOICE SETTLES: the MM2 index OCR reads Shan Lung - the FF print header reads Shen Lung (the chiang lung prose agrees) and Shen wins; the lung wang block OCR reads the bite 5-36 - the prose reads 6-36 and the prose wins. THE REWIRE: the three R818 keyless aquatic cells (CFS die 19 and CSD die 20 sea dragon, RFD die 18 spirit dragon) rekey lung_wang/lung_wang/shen_lung - the src cells stay 0, the R818 source census unchanged; the walk-key census bumps 189 -> 192 (the mm2enca.h const, the R818 audit chain, the walk-key census expression, and the lung row check all ride as file patches, the LungDragonRows const stays 3). THE REGISTRY: 810 -> 812 defs, FF 0 -> 2; the R817-R820 registry-floor consts stand as their own round snapshots. THE DOCTRINE: the lung wang steam cone 100 x 50 up to 3 per day (damage equal to current hit points), the scaly command 4-40 x age level, no water fire, the tribute demand; the shen lung no breath weapon, bless and curse 1 per day each, control weather and ice storm 3 per day each, no lightning damage but double fire damage, water fire 2-12, immune to poison, no insect within 60 feet, manoeuvrability class E, the language shared with the pan lung. NO gap boxes flip this round (the MM2 arc gap stays 37 closed 0 open).",
+ "consts": [
+  {
+   "name": "lungpRound",
+   "value": 821,
+   "comment": "The lung promotion round: the queued R818 discovery closed (the lung/shan candidate on the landed R820)"
+  },
+  {
+   "name": "lungpWangPrintPage",
+   "value": 28,
+   "comment": "The FF print folio of the Lung Wang (Sea Dragon) stat block"
+  },
+  {
+   "name": "lungpShenPrintPage",
+   "value": 29,
+   "comment": "The FF print folio of the Shen Lung (Spirit Dragon) stat block"
+  },
+  {
+   "name": "lungpWangStatArmorClass",
+   "value": 0,
+   "comment": "The lung wang stat block armor class"
+  },
+  {
+   "name": "lungpWangStatHitDice",
+   "value": 11,
+   "comment": "The lung wang stat block hit dice (the low end of the 11-13 range)"
+  },
+  {
+   "name": "lungpWangStatAvgHp",
+   "value": 38,
+   "comment": "The lung wang book-average hit points (11 x 3.5, floored)"
+  },
+  {
+   "name": "lungpWangStatNumAttacks",
+   "value": 3,
+   "comment": "The lung wang stat block attacks (2 claws and the bite)"
+  },
+  {
+   "name": "lungpWangStatXp",
+   "value": 4550,
+   "comment": "The lung wang 11-12 HD band base XP"
+  },
+  {
+   "name": "lungpWangStatXpPerHp",
+   "value": 16,
+   "comment": "The lung wang per-hit-point XP"
+  },
+  {
+   "name": "lungpWangStatXpValue",
+   "value": 5158,
+   "comment": "The lung wang full kill XP (4550 + 16 x 38)"
+  },
+  {
+   "name": "lungpWangLairPct",
+   "value": 60,
+   "comment": "The lung wang percentage in lair"
+  },
+  {
+   "name": "lungpWangScalyCommandMin",
+   "value": 4,
+   "comment": "The lung wang scaly command minimum creatures"
+  },
+  {
+   "name": "lungpWangScalyCommandMax",
+   "value": 40,
+   "comment": "The lung wang scaly command maximum creatures (x the age level)"
+  },
+  {
+   "name": "lungpWangSteamConeLengthFt",
+   "value": 100,
+   "comment": "The lung wang steam cone length in feet"
+  },
+  {
+   "name": "lungpWangSteamConeWidthFt",
+   "value": 50,
+   "comment": "The lung wang steam cone base width in feet"
+  },
+  {
+   "name": "lungpWangSteamPerDay",
+   "value": 3,
+   "comment": "The lung wang steam cone uses per day"
+  },
+  {
+   "name": "lungpShenStatArmorClass",
+   "value": 1,
+   "comment": "The shen lung stat block armor class"
+  },
+  {
+   "name": "lungpShenStatHitDice",
+   "value": 9,
+   "comment": "The shen lung stat block hit dice (the low end of the 9-11 range)"
+  },
+  {
+   "name": "lungpShenStatAvgHp",
+   "value": 31,
+   "comment": "The shen lung book-average hit points (9 x 3.5, floored)"
+  },
+  {
+   "name": "lungpShenStatNumAttacks",
+   "value": 4,
+   "comment": "The shen lung stat block attacks (2 claws, bite, tail spike)"
+  },
+  {
+   "name": "lungpShenStatXp",
+   "value": 1400,
+   "comment": "The shen lung 9 HD band base XP"
+  },
+  {
+   "name": "lungpShenStatXpPerHp",
+   "value": 12,
+   "comment": "The shen lung per-hit-point XP"
+  },
+  {
+   "name": "lungpShenStatXpValue",
+   "value": 1772,
+   "comment": "The shen lung full kill XP (1400 + 12 x 31)"
+  },
+  {
+   "name": "lungpShenLairPct",
+   "value": 60,
+   "comment": "The shen lung percentage in lair"
+  },
+  {
+   "name": "lungpShenScalyCommandMin",
+   "value": 2,
+   "comment": "The shen lung scaly command minimum creatures"
+  },
+  {
+   "name": "lungpShenScalyCommandMax",
+   "value": 20,
+   "comment": "The shen lung scaly command maximum creatures (x the age level)"
+  },
+  {
+   "name": "lungpShenWaterFireMax",
+   "value": 12,
+   "comment": "The shen lung water fire damage (2-12 points)"
+  },
+  {
+   "name": "lungpShenNoInsectRadiusFt",
+   "value": 60,
+   "comment": "The shen lung no insect/arachnid/arthropod radius in feet"
+  },
+  {
+   "name": "lungpShenBlessCursePerDay",
+   "value": 1,
+   "comment": "The shen lung bless and curse casts per day each"
+  },
+  {
+   "name": "lungpShenWeatherIcePerDay",
+   "value": 3,
+   "comment": "The shen lung control weather and ice storm casts per day each"
+  },
+  {
+   "name": "lungpRegistryBefore",
+   "value": 810,
+   "comment": "The registry def count before the promotion"
+  },
+  {
+   "name": "lungpRegistryAfter",
+   "value": 812,
+   "comment": "The registry def count after the promotion (2 defs)"
+  },
+  {
+   "name": "lungpFfDefsBefore",
+   "value": 0,
+   "comment": "The FF defs before the promotion (the registry carried none)"
+  },
+  {
+   "name": "lungpFfDefsAfter",
+   "value": 2,
+   "comment": "The FF defs after the promotion (the first FF defs)"
+  },
+  {
+   "name": "lungpCellsRewired",
+   "value": 3,
+   "comment": "The 3 keyless R818 aquatic lung dragon cells rewired to the new keys"
+  },
+  {
+   "name": "lungpCellCfsRow",
+   "value": 17,
+   "comment": "The cold freshwater surface grid row of the rekeyed sea dragon cell (die 19)"
+  },
+  {
+   "name": "lungpCellCsdRow",
+   "value": 18,
+   "comment": "The cold saltwater depths grid row of the rekeyed sea dragon cell (die 20)"
+  },
+  {
+   "name": "lungpCellRfdRow",
+   "value": 16,
+   "comment": "The river freshwater depths grid row of the rekeyed spirit dragon cell (die 18)"
+  },
+  {
+   "name": "lungpWalkKeyRowsBefore",
+   "value": 189,
+   "comment": "The R818 walk-key census before the rewire"
+  },
+  {
+   "name": "lungpWalkKeyRowsAfter",
+   "value": 192,
+   "comment": "The R818 walk-key census after the rewire (the header const and the audit expression both ride as file patches)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "lungpPromotedFromFfPrint",
+   "value": true,
+   "comment": "The defs promoted from the FF print (the first FF defs, the new ff_print xp class, the R73 allowed list patched to carry it)"
+  },
+  {
+   "name": "lungpIndexFrefsPointAtFf",
+   "value": true,
+   "comment": "The MM2 index settles the 3 lung cells as FF crossrefs (Sea Dragon Lung Wang, Spirit Dragon Shan Lung) - the promotion seam is the FF print, superseding the OA-seam expectation the R818 prose recorded"
+  },
+  {
+   "name": "lungpShanShenSettled",
+   "value": true,
+   "comment": "The two-voice name settle: the MM2 index OCR reads Shan Lung - the FF print header reads Shen Lung (the chiang lung prose agrees) and Shen wins"
+  },
+  {
+   "name": "lungpWangDamageSettled",
+   "value": true,
+   "comment": "The two-voice damage settle: the block OCR reads the bite 5-36 - the prose reads 6-36 and the prose wins"
+  },
+  {
+   "name": "lungpWangTurtleBodied",
+   "value": true,
+   "comment": "The lung wang doctrine: the turtle body and the shen lung head, breathes water or air, lifts or rams any ship"
+  },
+  {
+   "name": "lungpWangDemandsTribute",
+   "value": true,
+   "comment": "The lung wang demand tribute from every passing ship"
+  },
+  {
+   "name": "lungpWangNoWaterFire",
+   "value": true,
+   "comment": "The lung wang carry the scaly command power but no water fire and no spells beyond those general to oriental dragons"
+  },
+  {
+   "name": "lungpShenNoBreathWeapon",
+   "value": true,
+   "comment": "The shen lung have no breath weapon (the tail spike is not poisonous)"
+  },
+  {
+   "name": "lungpShenLightningFirePoison",
+   "value": true,
+   "comment": "The shen lung take no lightning damage, take double fire damage, and are immune to poison"
+  },
+  {
+   "name": "lungpShenManoeuvrabilityE",
+   "value": true,
+   "comment": "The shen lung are manoeuvrability class E and share their language with the pan lung"
+  },
+  {
+   "name": "lungpSourceCellsUnchanged",
+   "value": true,
+   "comment": "The rewired cells keep their src 0 cells (the R818 source census unchanged, the LungDragonRows const stays 3)"
+  },
+  {
+   "name": "lungpFloorConstsStaySnapshots",
+   "value": true,
+   "comment": "The R817-R820 registry-floor consts stand as their own round snapshots (the >= floor checks stay green)"
+  },
+  {
+   "name": "lungpNoGapBoxesFlip",
+   "value": true,
+   "comment": "No gap boxes flip this round (the MM2 arc gap stays 37 closed 0 open)"
+  }
+ ],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the lung wang xpValue formula (the band base plus per-hp)",
+   "expr": "m['lungpWangStatXpValue']() != m['lungpWangStatXp']() + m['lungpWangStatAvgHp']() * m['lungpWangStatXpPerHp']()"
+  },
+  {
+   "note": "the shen lung xpValue formula (the band base plus per-hp)",
+   "expr": "m['lungpShenStatXpValue']() != m['lungpShenStatXp']() + m['lungpShenStatAvgHp']() * m['lungpShenStatXpPerHp']()"
+  },
+  {
+   "note": "the registry arithmetic (two defs promoted, the FF class opens)",
+   "expr": "m['lungpRegistryAfter']() != m['lungpRegistryBefore']() + 2 or m['lungpFfDefsAfter']() != m['lungpFfDefsBefore']() + 2 or m['lungpFfDefsAfter']() != 2"
+  },
+  {
+   "note": "the hit dice arithmetic (the book averages)",
+   "expr": "m['lungpWangStatAvgHp']() != 38 or m['lungpShenStatAvgHp']() != 31 or m['lungpWangStatHitDice']() != 11 or m['lungpShenStatHitDice']() != 9"
+  },
+  {
+   "note": "the walk-key rewire (the 3 cells)",
+   "expr": "m['lungpWalkKeyRowsAfter']() != m['lungpWalkKeyRowsBefore']() + m['lungpCellsRewired']() or m['lungpWalkKeyRowsAfter']() != 192"
+  },
+  {
+   "note": "the rewired cell rows (the die arithmetic rides the row + 2)",
+   "expr": "m['lungpCellCfsRow']() != 17 or m['lungpCellCsdRow']() != 18 or m['lungpCellRfdRow']() != 16 or m['lungpCellsRewired']() != 3"
+  },
+  {
+   "note": "the stat block cells (the FF folios)",
+   "expr": "m['lungpWangPrintPage']() != 28 or m['lungpShenPrintPage']() != 29 or m['lungpWangStatArmorClass']() != 0 or m['lungpShenStatArmorClass']() != 1"
+  },
+  {
+   "note": "the doctrine cells (the steam cone and the scaly command)",
+   "expr": "m['lungpWangSteamConeLengthFt']() != 100 or m['lungpWangSteamConeWidthFt']() != 50 or m['lungpWangSteamPerDay']() != 3 or m['lungpWangScalyCommandMax']() != 40"
+  },
+  {
+   "note": "the shen lung doctrine (the spell cadence, the water fire, the radius)",
+   "expr": "m['lungpShenBlessCursePerDay']() != 1 or m['lungpShenWeatherIcePerDay']() != 3 or m['lungpShenWaterFireMax']() != 12 or m['lungpShenNoInsectRadiusFt']() != 60"
+  }
+ ],
+ "header_sections": {
+  "the R821 census": [
+   {
+    "kind": "const",
+    "name": "lungpRound"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangPrintPage"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenPrintPage"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangStatArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangStatHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangStatAvgHp"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangStatNumAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangStatXp"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangStatXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangStatXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangScalyCommandMin"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangScalyCommandMax"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangSteamConeLengthFt"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangSteamConeWidthFt"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWangSteamPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenStatArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenStatHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenStatAvgHp"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenStatNumAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenStatXp"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenStatXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenStatXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenScalyCommandMin"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenScalyCommandMax"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenWaterFireMax"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenNoInsectRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenBlessCursePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "lungpShenWeatherIcePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "lungpRegistryBefore"
+   }
+  ],
+  "the opening doctrine (the R821 census)": [
+   {
+    "kind": "bool",
+    "name": "lungpPromotedFromFfPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpIndexFrefsPointAtFf"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpShanShenSettled"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpWangDamageSettled"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpWangTurtleBodied"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpWangDemandsTribute"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpWangNoWaterFire"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpShenNoBreathWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpShenLightningFirePoison"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpShenManoeuvrabilityE"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpSourceCellsUnchanged"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpFloorConstsStaySnapshots"
+   },
+   {
+    "kind": "bool",
+    "name": "lungpNoGapBoxesFlip"
+   }
+  ],
+  "the R821 rewire census": [
+   {
+    "kind": "const",
+    "name": "lungpRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "lungpFfDefsBefore"
+   },
+   {
+    "kind": "const",
+    "name": "lungpFfDefsAfter"
+   },
+   {
+    "kind": "const",
+    "name": "lungpCellsRewired"
+   },
+   {
+    "kind": "const",
+    "name": "lungpCellCfsRow"
+   },
+   {
+    "kind": "const",
+    "name": "lungpCellCsdRow"
+   },
+   {
+    "kind": "const",
+    "name": "lungpCellRfdRow"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWalkKeyRowsBefore"
+   },
+   {
+    "kind": "const",
+    "name": "lungpWalkKeyRowsAfter"
+   }
+  ]
+ },
+ "chains": [],
+ "switches": [],
+ "caller_files": [],
+ "table_checks": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the R821 lung promotion walk at the R227 anchor",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R821: the lung promotion walk ----\n    // The two promoted FF defs (the lung wang,\n    // the shen lung) cross-checked live against\n    // the registry: the stat cells of the p. 28\n    // and p. 29 blocks, the ff_print xp source,\n    // the xpValue formula, the three rewired\n    // aquatic cells (src 0, the walk-key census\n    // 189 -> 192), and the registry census\n    // 810 -> 812.\n    {\n        using namespace rules;\n        int bad = 0;\n        const auto* w = reg.find(\"lung_wang\");\n        if (!w) { ++bad; }\n        else {\n            if (w->armorClass\n                != lungpWangStatArmorClass())\n                ++bad;\n            if (w->hitDiceNum\n                != lungpWangStatHitDice())\n                ++bad;\n            if (w->hitDiceBonus != 0) ++bad;\n            if (w->avgHp\n                != lungpWangStatAvgHp())\n                ++bad;\n            if (w->attacks\n                != lungpWangStatNumAttacks())\n                ++bad;\n            if (w->xpBase != lungpWangStatXp())\n                ++bad;\n            if (w->xpPerHp\n                != lungpWangStatXpPerHp()) ++bad;\n            if (w->xpValue\n                != lungpWangStatXpValue()) ++bad;\n            if (w->xpSource != \"ff_print\") ++bad;\n            if (w->xpValue != w->xpBase\n                + w->avgHp * w->xpPerHp) ++bad;\n        }\n        const auto* s = reg.find(\"shen_lung\");\n        if (!s) { ++bad; }\n        else {\n            if (s->armorClass\n                != lungpShenStatArmorClass())\n                ++bad;\n            if (s->hitDiceNum\n                != lungpShenStatHitDice())\n                ++bad;\n            if (s->hitDiceBonus != 0) ++bad;\n            if (s->avgHp\n                != lungpShenStatAvgHp()) ++bad;\n            if (s->attacks\n                != lungpShenStatNumAttacks())\n                ++bad;\n            if (s->xpBase != lungpShenStatXp())\n                ++bad;\n            if (s->xpPerHp\n                != lungpShenStatXpPerHp()) ++bad;\n            if (s->xpValue\n                != lungpShenStatXpValue()) ++bad;\n            if (s->xpSource != \"ff_print\") ++bad;\n            if (s->xpValue != s->xpBase\n                + s->avgHp * s->xpPerHp) ++bad;\n        }\n        // (the three rewired cells: the CFS die 19\n        //  and CSD die 20 sea dragon cells rekey\n        //  lung_wang, the RFD die 18 spirit dragon\n        //  cell rekeys shen_lung, all src 0)\n        if (mm2encaCFSDie(lungpCellCfsRow()) != 19\n            || mm2encaCFSSrc(lungpCellCfsRow())\n            != 0\n            || mm2encaCSDDie(lungpCellCsdRow()) != 20\n            || mm2encaCSDSrc(lungpCellCsdRow())\n            != 0\n            || mm2encaRFDDie(lungpCellRfdRow()) != 18\n            || mm2encaRFDSrc(lungpCellRfdRow())\n            != 0)\n            ++bad;\n        if (mm2encaWalkKeyRows()\n            != lungpWalkKeyRowsAfter()) ++bad;\n        if (mm2encaLungDragonRows() != 3) ++bad;\n        if (!reg.find(\"chiang_lung\")) ++bad;\n        if (!reg.find(\"dragon_turtle\")) ++bad;\n        if ((int)reg.all().size()\n            < lungpRegistryAfter())\n            ++bad;\n        printf(\"R821 lung promotion: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the CFS die 19 cell rekeys lung_wang",
+   "from": "                \"nixie\", \"falcon_large\", \"\", \"swanmay\",",
+   "to": "                \"nixie\", \"falcon_large\", \"lung_wang\",\n                \"swanmay\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the CSD die 20 cell rekeys lung_wang",
+   "from": "                \"green_slime\", \"titan\", \"\",",
+   "to": "                \"green_slime\", \"titan\", \"lung_wang\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the RFD die 18 cell rekeys shen_lung",
+   "from": "                \"lizard_man\", \"\", \"sea_hag\",",
+   "to": "                \"lizard_man\", \"shen_lung\", \"sea_hag\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the R818 walk-key const chain bumps to 192",
+   "from": "            || mm2encaWalkKeyRows() != 189",
+   "to": "            || mm2encaWalkKeyRows() != 192"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the R818 walk-key census expression carries the rewire",
+   "from": "    if (mm2encaWalkKeyRows() != mm2encaMm1SourceRows() +\n        mm2encaMm2SourceRows()\n        )",
+   "to": "    if (mm2encaWalkKeyRows() != mm2encaMm1SourceRows() +\n        mm2encaMm2SourceRows() + lungpCellsRewired()\n        )"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the R818 lung row check nets the rewired cells",
+   "from": "        if (lung != mm2encaLungDragonRows())",
+   "to": "        if (lung != mm2encaLungDragonRows()\n            - lungpCellsRewired())"
+  },
+  {
+   "file": "rules/mm2enca.h",
+   "note": "the mm2enca walk-key const bumps 189 -> 192",
+   "from": "// The keyed rows (the MM1 and MM2 defs the registry owns)\ninline int mm2encaWalkKeyRows()\n    { return 189; }",
+   "to": "// The keyed rows (the MM1, MM2, and promoted FF defs the\n// registry owns; the R821 lung promotion rewired the 3\n// keyless lung dragon cells, 189 -> 192)\ninline int mm2encaWalkKeyRows()\n    { return 192; }"
+  },
+  {
+   "file": "rules/mm2enca.h",
+   "note": "the lung dragon const comment records the FF settle",
+   "from": "// The oriental lung dragon cross-ref cells (the sea lung wang and the spirit\n// shan lung) - no registry def, the OA promotion seam owns them",
+   "to": "// The oriental lung dragon cross-ref cells (the sea lung wang and the spirit\n// shen lung) - the R821 lung promotion keyed them (the FF print defs own\n// them, the walk-key census carries the rewire)"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the R73 xp audit allowed list opens the ff_print class",
+   "from": "                d.xpSource != \"wsg_print\" && d.xpSource != \"mop_print\" &&\n                d.xpSource != \"mm2_print\") bad = true;",
+   "to": "                d.xpSource != \"wsg_print\" && d.xpSource != \"mop_print\" &&\n                d.xpSource != \"mm2_print\" &&\n                d.xpSource != \"ff_print\") bad = true;"
+  }
+ ],
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 37,
+  "open": 0
+ },
+ "prev_record": [
+  "- R820 LANDED 2026-10-24: commit",
+  "  8bf462f7c2bbb4975fd972f55086165542fad762",
+  "  (census 742 -> 743, pushed",
+  "  52a015a..8bf462f),",
+  "  THE LAMMASU PROMOTION (Curtiss's",
+  "  Go call lammasu on the landed R819;",
+  "  round twenty-five of the MM2 arc,",
+  "  the promotion seam round, the queued",
+  "  R817 discovery closed - NO gap",
+  "  boxes flip, the MM2 arc gap stays 37",
+  "  closed 0 open). THE DEF: key",
+  "  lammasu_greater, the Lammasu, Greater",
+  "  stat block MM2 print p. 79 (between",
+  "  the kraken and the land lamprey),",
+  "  the block the R808 LMN walk never",
+  "  promoted; AC 3, HD 12+7 (avgHp 61),",
+  "  MOVE 15/30 (MC: B), 2 attacks",
+  "  2-12/2-12, MR 40%, level VIII XP",
+  "  3950 + 18/hp (xpValue 5048),",
+  "  xpSource mm2_print, lawful good,",
+  "  supra-genius, size L (5' at the",
+  "  shoulder), nil treasure and lair.",
+  "  THE TWO-VOICE SETTLE: the djvu OCR",
+  "  garbles the move stat (the 5V3Q",
+  "  read) - the 1eonline transcription",
+  "  reads 15/30 MC B, the compendium",
+  "  tables agree (15, Fl 30, B). THE",
+  "  REWIRE: the two R817 keyless outdoor",
+  "  cells (temperate civilized plains",
+  "  die 2, grid 22; tropical civilized",
+  "  hills die 20, grid 31) rekey",
+  "  lammasu_greater - src cells stay 2,",
+  "  the R817 source census unchanged;",
+  "  the walk-key census bumps 570 ->",
+  "  572 (the mm2enco.h const and the",
+  "  R817 audit const chain and",
+  "  expression all ride as file",
+  "  patches, the LammasuGreaterRows",
+  "  const stays 2). THE REGISTRY: 809",
+  "  -> 810 defs, MM2 331 -> 332; the",
+  "  R817-R819 registry-floor consts",
+  "  stand as their own round snapshots",
+  "  (the >= floor checks stay green).",
+  "  THE DOCTRINE (p. 79 prose pinned as",
+  "  consts/bools): Astral and Ethereal",
+  "  travel, invisible / dimension door /",
+  "  teleport without error (1 at a time,",
+  "  1 per round), protection from evil",
+  "  20-foot radius double effect (-4",
+  "  evil attacks, +4 saves), clerical",
+  "  spells at 5th-level ability",
+  "  (5/4/3/2/1 of levels 1-5), cures",
+  "  double strength on 1d6+1 (CLW 4-14,",
+  "  CSW 8-28), 50 percent holy word,",
+  "  spell-like ability level 12 (as",
+  "  HD), dwell with 6 or more ordinary",
+  "  lammasu. Header rules/lmp.h, prefix",
+  "  lmp (free at 52a015a), 25 consts +",
+  "  10 bools (inline 35), audit \"R820",
+  "  lammasu promotion audit\", 6 file",
+  "  patches + 1 data file (the .lua",
+  "  def), 8 examples, applied 11.",
+  "  GATES: engine double-run 11/0 ->",
+  "  0/11; rverify GREEN vs 52a015a (35",
+  "  mutants, 0 missed); offline kEncO",
+  "  sim 572 keyed cells; identifier",
+  "  sweep clean; tree restored pristine",
+  "  (809 defs, 0 traces). NOTE: the",
+  "  tsr02016 scan A item left archive",
+  "  org (the djvu.xml 404s now) - scan",
+  "  B (monstermanualii1sted) plus a",
+  "  1eonline/compendium web settle did",
+  "  the two-voice work this round.",
+  "  NEXT: awaits Curtiss's call (the",
+  "  remaining queued candidates: the",
+  "  lung/shan OA dragon defs behind the",
+  "  R817/R818 lung cells, the UA",
+  "  appendix spell dueling / index",
+  "  class)."
+ ],
+ "inline_count": 53
+}
