@@ -1,0 +1,36 @@
+-- Monodrone: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Monodrone",
+  page = "87",
+  pages = "87",
+  source = "MM2",
+  race = "Monodrone",
+  hitDice = "1+1 or 1-1",
+  hitDiceNum = "1",
+  hitDiceBonus = "1",
+  avgHp = "4",
+  armorClass = "7",
+  numAttacks = "1 or Nil",
+  damage = "1-4 or by weapon type",
+  xp = "28",
+  xpPerHp = "2",
+  xpValue = "36",
+  xpSource = "mm2_print",
+  frequency = "Common",
+  noAppearing = "12-144",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "6\"//6\" or 6\"/18\" (MC:D)",
+  size = "S (3'-6')",
+  intelligence = "Semi-",
+  alignment = "Lawful neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Immune to illusion and mind control",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Monodrones make up the bulk of the population of Nirvana. They are single-function modrons, and are generally assigned some simple labor or serve as a group to form the regiments of the Nirvanan Army. Thousands of spherical monodrones, armed with spears, fouchards, and crossbows, are impressive when marshaled against the foe, as is their unswerving, singleminded performance. They exist for their work and what limited conversations they can carry on usually concern their functions.\n\nMonodrones are usually assembled in units of 12 and supervised by a duodrone or tridrone. One twelfth of all monodrones lack the spider-like arms and have fan-like wings joined to the body at a single point. These faster, smaller creatures are used as messengers. They are able to relay perfectly any message of up to 48 words. Unlike their armed relatives, the messenger monodrones cannot exist in liquid environments.\n\nMonodrone senses are slightly less than a normal human's, though they have a limited form of infravision (30-foot range).",
+}

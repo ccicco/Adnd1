@@ -1,0 +1,36 @@
+-- Muckdweller: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Muckdweller",
+  page = "93",
+  pages = "93",
+  source = "MM2",
+  race = "Muckdweller",
+  hitDice = "1-4 hp",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "4",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "1-2",
+  xp = "7",
+  xpPerHp = "1",
+  xpValue = "11",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "5-20",
+  lairPct = "40",
+  treasure = "In lair: J, K, L, M, N; individual: Q",
+  move = "3\"//12\"",
+  size = "S",
+  intelligence = "Average",
+  alignment = "Lawful evil",
+  specialAttacks = "Water jet",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "A muckdweller is a bipedal amphibian monster which lurks in swamps, marshes, or still mud-bottomed waters. Being omnivorous, a muckdweller will eat plants, insects, aquatic animals, or even carrion, but fresh warm-blooded meat is its preferred diet. Packs of muckdwellers will lurk in wait for unwary victims. When one approaches, several will squirt jets of muddy water for up to 10 feet at the victim's eyes (save vs. wands negates, no saving throw if surprised) while others will clamber forth to bite their prey with their small but sharp teeth. As a blinded victim cannot react that round, and all attacks against such a victim are at +2 (with no dexterity bonus for the victim's armor class), a muckdweller attack is dangerous indeed.\n\nThe lair of a tribe of these creatures is always underwater, but they will always have a muddy, above-water area for rest and eating. There, the muckdwellers heap up their hoards of shiny things. If 16 or more monsters are encountered in their lair, there will be double the given type Q treasure.\n\nMuckdwellers have been known to associate with lizard men on rare occasions. They also have been reported serving kuo-toan masters. These monsters speak their own croaking-hissing tongue and possibly that of lizard men.\n\nA muckdweller has a back of mottled gray and brown and a pale, yellowish underbelly. The short tail is used for swimming and walking on land. Digits of the forefeet are prehensile but weak. Rear feet are partially webbed.",
+}

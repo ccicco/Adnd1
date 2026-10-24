@@ -1,0 +1,36 @@
+-- Seawolf, Greater: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Seawolf, Greater",
+  page = "81",
+  pages = "81",
+  source = "MM2",
+  race = "Seawolf, Greater",
+  hitDice = "9+2",
+  hitDiceNum = "9",
+  hitDiceBonus = "2",
+  avgHp = "33",
+  armorClass = "5",
+  numAttacks = "1 or 2",
+  damage = "3-12 or 1-2 and by weapon type",
+  xp = "900",
+  xpPerHp = "12",
+  xpValue = "1296",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "4-16",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "9\"/27\"",
+  size = "L (12'-15' long) or M",
+  intelligence = "Low to high",
+  alignment = "Chaotic evil",
+  specialAttacks = "Nil",
+  specialDefenses = "Hit only by silver, cold iron, or +1 or better magic weapons",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Seawolves are lycanthropes afflicted with a most evil malady. They roam the waters in packs, hunting and seeking vessels so as to attack and inflict others with their hateful curse. Most seawolves were formerly fishermen or sailors. Upon sighting a vessel they will follow, slip aboard in human form, and attack. Typically, 1 or 2 deckhands will be bitten to death by the seawolves and their weapons taken. Then the lycanthropes will begin a general assault. Note that iron weapons (as well as silver and magic ones) harm seawolves. Bites of non-fatal sort cause seawolf lycanthropy in 2-5 days. The afflicted individual will then hurl himself or herself overboard in the night, change to the seawolf form, and swim away in search of a pack of fellow seawolves.\n\nSeawolves are air breathers. Although able to stay submerged for 17-24 minutes, they must surface to get oxygen. In human form a seawolf has a lupine visage, tiny ears, and is covered with thick fur. The hair of the head streams down the neck and shoulders in a mane. In seawolf form the creature appears much as if it were a huge, wolf-headed seal which has fangs filling its mouth.",
+}

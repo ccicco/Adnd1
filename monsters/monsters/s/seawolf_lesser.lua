@@ -1,0 +1,36 @@
+-- Seawolf, Lesser: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Seawolf, Lesser",
+  page = "81",
+  pages = "81",
+  source = "MM2",
+  race = "Seawolf, Lesser",
+  hitDice = "2+2",
+  hitDiceNum = "2",
+  hitDiceBonus = "2",
+  avgHp = "9",
+  armorClass = "6 (7)",
+  numAttacks = "1 (3)",
+  damage = "2d4 (1-2/1-2/1-4)",
+  xp = "50",
+  xpPerHp = "3",
+  xpValue = "77",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "3-18",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "30\"/12\"",
+  size = "M (6'-7')",
+  intelligence = "Average",
+  alignment = "Neutral evil",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These savage lycanthropes have 2 forms. The first form is a furred mammal, porpoise-like in shape, with a wolf's head. In this form, seawolf packs hunt the creatures of the sea, surrounding their prey and biting with their canine fangs. The second form is that of a wolfman, a man-shape possessing the fur, claws, and teeth of a seawolf. Statistics for the wolfman form are given in parentheses above. Seawolves breathe air and must surface periodically. They can hold their breath as do dolphins.\n\nUnlike other lycanthropes, seawolves can be hit by normal weapons. Humans taking 50% or more damage from seawolves will contract this form of lycanthropy. If humans are infected while on land, they will travel as fast as possible to the sea. At sea, they will disappear overboard during the next full moon.\n\nIf a seawolf pack encounters a ship, the seawolves will change to wolfman form and attempt to board it. Their only purpose is to slay all those aboard and sink the ship.",
+}

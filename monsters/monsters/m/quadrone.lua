@@ -1,0 +1,36 @@
+-- Quadrone: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Quadrone",
+  page = "88",
+  pages = "88",
+  source = "MM2",
+  race = "Quadrone",
+  hitDice = "4+4",
+  hitDiceNum = "4",
+  hitDiceBonus = "4",
+  avgHp = "18",
+  armorClass = "4",
+  numAttacks = "4 or 2",
+  damage = "4-7 (x4) or 6-9 (x2) or by weapon type",
+  xp = "165",
+  xpPerHp = "5",
+  xpValue = "255",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-4",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "15\" or 15\"/15\" (MC:D)",
+  size = "M",
+  intelligence = "Very",
+  alignment = "Lawful neutral",
+  specialAttacks = "Attacks as an 8 HD creature",
+  specialDefenses = "Immune to illusion and mind-affecting magic",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The cubic quadrones make up the upper level of workers on the Plane of Nirvana. These modrons have 4 complete functions, most of which are not connected to the performance of some operation. They also serve as field officers in the regiments of Nirvana, and each battle has a special \"dozen-unit\" comprising the most able quadrone fighters. The cubic quadrones are excellent archers, capable of wielding 2 bows at the same time. As 4-functioned creatures, quadrones can report actions and observations, make plans, react to unexpected occurrences, and act to remedy them.\n\nSome quadrones are winged, the wings replacing 1 set of arms and negating their use of bow and arrow. These winged quadrones are used for special missions or for aerial combat.\n\nAll quadrones have senses equal to 150% human normal as well as infravision (180-foot range) and ultravision (200-yard range). As they have sensory organs on all 6 sides, quadrones are never surprised under normal circumstances.",
+}

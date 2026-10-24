@@ -1,0 +1,36 @@
+-- Hexton: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Hexton",
+  page = "90",
+  pages = "90",
+  source = "MM2",
+  race = "Hexton",
+  hitDice = "14+14",
+  hitDiceNum = "14",
+  hitDiceBonus = "14",
+  avgHp = "63",
+  armorClass = -2,
+  numAttacks = "6",
+  damage = "2-13 (x6)",
+  xp = "8250",
+  xpPerHp = "18",
+  xpValue = "9384",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (of 36)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "12\"/12\"(MC:C)//12\"",
+  size = "L",
+  intelligence = "Genius",
+  alignment = "Lawful neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+3 or better weapon to hit",
+  magicResistance = "50%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "There are 36 hextons, each a general in charge of 1 of the armies of Nirvana. These armies are maintained to assure order and prevent invasion from Acheron, Arcadia, and the Plane of Concordant Opposition. One hexton and his army are assigned to each region, 2 serve directly under each viceroyal quarter, and 3 serve the tertians as special police. The remaining 9 serve Primus.\n\nHextons appear as humanoids with 6 arms: 2 large human arms with 6 fingers, and 4 tentacles below tipped with sharp claws. They have thin, fan-like folded wings joined at the shoulders.\n\nHextons use spells as 18th-level clerics but have no special spell-like abilities other than noted for hierarch modrons. They are immune to all psionic attacks.\n\nThere is a 75% chance that any hexton will be accompanied by his guard, a staff of special pentadrones numbering 12-48 and fanatic in their dedication to the hexton whose life they must preserve.",
+}

@@ -1,0 +1,36 @@
+-- Nonaton: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Nonaton",
+  page = "89",
+  pages = "89",
+  source = "MM2",
+  race = "Nonaton",
+  hitDice = "11+11",
+  hitDiceNum = "11",
+  hitDiceBonus = "11",
+  avgHp = "49",
+  armorClass = "0",
+  numAttacks = "9",
+  damage = "1-6 (x9)",
+  xp = "5250",
+  xpPerHp = "16",
+  xpValue = "6034",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1 (of 81)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "18\" /18\"",
+  size = "L",
+  intelligence = "High",
+  alignment = "Lawful neutral",
+  specialAttacks = "Spell use",
+  specialDefenses = "+2 or better weapon to hit",
+  magicResistance = "20%",
+  psionic = "199",
+  attackDefenseModes = "All/all",
+  text = "The 81 nonatons are the principal overseers of law and order. These cylindrical modrons act as captains and chief inspectors of the pentadrone police force. One nonaton serves each sector, 9 serve the tertians, and the 8 remaining report directly to Primus. Each nonaton has 12 pentadrone lieutenants, each lieutenant commands 12 quadrone sergeants, and each sergeant commands 12 tridrone police.\n\nNonatons have spell-use as clerics of the 12th level. In addition, they have the following spell-like abilities: ESP, mirror image, slow, web, detection of good/evil, detect lie, and detect charm, each usable at will, once per melee round. They may use power word stun once per day.\n\nNonatons usually head up investigations of rogue modron units and small party invasions on the Plane of Nirvana. In the latter case they first attempt to detect the party's intentions, then act accordingly, and disruptive groups are eliminated or exiled.",
+}

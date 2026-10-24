@@ -1,0 +1,36 @@
+-- Nereid: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Nereid",
+  page = "95",
+  pages = "95",
+  source = "MM2",
+  race = "Nereid",
+  hitDice = "4",
+  hitDiceNum = "4",
+  hitDiceBonus = "0",
+  avgHp = "14",
+  armorClass = "10",
+  numAttacks = "Nil",
+  damage = "Nil",
+  xp = "200",
+  xpPerHp = "4",
+  xpValue = "256",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-4",
+  lairPct = "100",
+  treasure = "X",
+  move = "12\"",
+  size = "M",
+  intelligence = "Very",
+  alignment = "Chaotic",
+  specialAttacks = "Spit; controls water in lair",
+  specialDefenses = "Kiss; mesmerize men",
+  magicResistance = "50%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Nereids are creatures from the Elemental Plane of Water. Their name means \"the honeyed ones\" and they can assume human form when not in the water. These forms are always beautiful and mostly female. Nereids are depicted as young and slim with long golden hair and pale white skin and possessing beautiful voices. Perhaps they are garbed in white and gold but they are often devoid of raiment. They have a white shawl which they carry in their hands or wear draped over their head and shoulders. In water a nereid is transparent and 95% undetectable except as golden angel seaweed.\n\nThese creatures may be found in the sea, rivers, wells, mountain and cavern springs, and on the Elemental Plane of Water. Like the water they inhabit, their motives are chaotic and capricious, but whether they are good, neutral or evil depends on the individual. The majority of nereids are chaotic neutral, but there are those who are very good as well as those who are diabolically evil. However, all nereids are shy and flighty and their antics have a playful quality.\n\nThe nereid's only physical attack is her spittle (range of 20 feet) which may blind a target for 2-12 rounds if it hits. This venom may be washed away with water. A blinded victim will attack at -4 and his or her saves and armor class will be lowered by 4.\n\nA nereid has some control of the water in which she lairs for a radius of 3\". She can make the waters heave in great waves which will slow movement to one-fourth of normal or cause the water to boil and froth, increasing the chance of drowning by 10%. She can cause waves to crash with such a roaring sound that characters within 6\" may be deafened for 3-12 rounds if precautions are not taken. Lastly, the nereid may form watery shapes which may be no more than pleasant entertainment or may become a substantial defense. This latter will take the form of a watery serpent or fist which strikes as a 4 hit dice monster and inflicts 1-4 points of damage. Only 1 of these attacks may be done per round.\n\nAll males that look at a nereid will find themselves incapable of causing her harm, and her actions will seem to be casual flirtations. Men have been known to sit and watch a nereid's antics all day. And many a man has been tempted to try and take a nereid for a wife or merely to pursue her for her embrace. This may bring disastrous results, however, for while the kiss of a nereid can bring sweet bliss, it may also result in a watery doom. If a nereid is caught, she may save vs. poison and if successful will flow away like water. Still, if a kiss is forced from a nereid (for she is loath to give them), the player character must save vs. breath weapons at -2 or drown instantly; otherwise ecstasy is his.\n\nThe nereid's greatest weakness lies in her shawl, for it contains her soul. If the shawl is destroyed the nereid will dissolve into formless water. Thus, if a character can obtain her shawl, he or she will be able to command the nereid who will respond out of fear. However, a nereid will lie and attempt almost anything short of hostile actions to gain return of her shawl.\n\nNereids are 85% likely to have a pet. To find out the type of pet roll a 1d8 and use the following: 1 = Eel, giant; 2 = Otter, giant; 3 = Snake, giant (poisonous); 4 = Octopus, giant; 5 = Squid, giant; 6 = Dolphin; 7 = Leech, giant; 8 = Ray, sting.",
+}

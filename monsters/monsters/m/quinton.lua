@@ -1,0 +1,36 @@
+-- Quinton: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Quinton",
+  page = "90",
+  pages = "90",
+  source = "MM2",
+  race = "Quinton",
+  hitDice = "15+15",
+  hitDiceNum = "15",
+  hitDiceBonus = "15",
+  avgHp = "67",
+  armorClass = -3,
+  numAttacks = "5",
+  damage = "3-17 (x5)",
+  xp = "10950",
+  xpPerHp = "20",
+  xpValue = "12290",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (of 25)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "6\"/6\"(MC C)//6\"",
+  size = "L",
+  intelligence = "Genius",
+  alignment = "Lawful neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+3 or better weapon to hit",
+  magicResistance = "60%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Quintons are the major bureau chiefs and record keepers of Nirvana. Each has a septon and a staff of 25 pentadrones, 64 quadrones, 81 tridrones, and countless duodrones and monodrones. There are bureaus in each of the sector and quarter towers, and 5 main bureaus in Primus Tower at the capitol, each headed by a quinton.\n\nQuintons look like tall, stocky humanoids with 4 flexible arms jutting from the shoulders. A prehensile tail serves as the creature's 5th arm. They have fan-like wings similar to those of the hextons. As a symbol of rank, the quintons have a diamond inscribed in their foreheads indicating their post.\n\nQuintons are capable of legend lore, as if the questioned object or person were at hand (1-4 rounds). They may detect evil/good and detect magic at will and may cast spells as 20th-level clerics. They are also immune to all forms of psionic attack.",
+}

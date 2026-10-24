@@ -1,0 +1,36 @@
+-- Narwhale: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Narwhale",
+  page = "95",
+  pages = "95",
+  source = "MM2",
+  race = "Narwhale",
+  hitDice = "4+4, 5+5 or 6+6",
+  hitDiceNum = "6",
+  hitDiceBonus = "6",
+  avgHp = "27",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "2-24, 6-24, or 7-28",
+  xp = "190",
+  xpPerHp = "6",
+  xpValue = "352",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-6",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "//21\"",
+  size = "L",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Narwhales, the \"unicorns of the ocean,\" are common in cool to cold waters. They are marine mammals of considerable size, ranging from about 20-40+ feet, exclusive of the spiral \"horn\" which is 6-12 feet long. Basically non-aggressive, narwhales will defend themselves with their great horn if serious threat or actual attack occurs. Narwhales are used as pets and guards by communities of dolphins. They are also trained and used occasionally by aquatic elves.",
+}

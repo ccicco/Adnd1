@@ -1,0 +1,36 @@
+-- Quarton: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Quarton",
+  page = "90",
+  pages = "90",
+  source = "MM2",
+  race = "Quarton",
+  hitDice = "16+16",
+  hitDiceNum = "16",
+  hitDiceBonus = "16",
+  avgHp = "72",
+  armorClass = -4,
+  numAttacks = "4",
+  damage = "4-26 (x4)",
+  xp = "10950",
+  xpPerHp = "20",
+  xpValue = "12390",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (of 16)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "12\"/24\"(MC B)//12\"",
+  size = "L",
+  intelligence = "Supra-genius",
+  alignment = "Lawful neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+3 or better weapons to hit",
+  magicResistance = "70%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Quartons administer the regions of Nirvana and oversee the operation of the bureau, sector governors, and army units attached to their region. Each quarton has a personal staff of those hierarchs assigned to his staff plus 36 pentadrones that act as a guard unit.\n\nQuartons are 12-foot tall humanoids with 4 jointed arms and fan-like wings. They cast spells as 22nd-level clerics and are immune to all psionics and psionic abilities.",
+}

@@ -1,0 +1,36 @@
+-- Decaton: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Decaton",
+  page = "89",
+  pages = "89",
+  source = "MM2",
+  race = "Decaton",
+  hitDice = "10+10",
+  hitDiceNum = "10",
+  hitDiceBonus = "10",
+  avgHp = "45",
+  armorClass = "2",
+  numAttacks = "10",
+  damage = "1-4 x10",
+  xp = "2550",
+  xpPerHp = "14",
+  xpValue = "3180",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1 (of 100)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "15\"/3\"(MC E)//9\"",
+  size = "M (7' tall, 5' long tentacles)",
+  intelligence = "High",
+  alignment = "Lawful neutral",
+  specialAttacks = "Spell use",
+  specialDefenses = "+2 or better weapons to hit",
+  magicResistance = "10%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "There are exactly 100 decatons, the lowest order of officials found in Nirvana. These creatures appear as 10-tentacled spheres on stumpy legs and are overseers of the physical welfare of the base modrons. One decaton is assigned to each sector of Nirvana, while the remaining 36 serve with the hextons commanding the armed forces of the plane.\n\nDecatons have spell ability equal to that of a 10th-level cleric but lack the power to turn undead. They also have the following spell-like powers which apply only to other modrons: cure 1 hp of damage for all modrons within 144 feet, cure disease in a 12-foot radius, heal on touch up to 10 modrons per round, and remove paralysis by touch for up to 10 modrons per round. These spell-like powers are usable 1 at a time, at will, once per round.\n\nThe spherical decatons fly by generating a light gas within their bodies. They only rise into the air to get an overview of the situation when commanding large numbers of base modrons.",
+}

@@ -1,0 +1,36 @@
+-- Luck Eater: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Luck Eater",
+  page = "80",
+  pages = "80",
+  source = "MM2",
+  race = "Luck Eater",
+  hitDice = "4",
+  hitDiceNum = "4",
+  hitDiceBonus = "0",
+  avgHp = "14",
+  armorClass = "7",
+  numAttacks = "Nil",
+  damage = "Nil",
+  xp = "125",
+  xpPerHp = "4",
+  xpValue = "181",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "15\"",
+  size = "S (1' long)",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The deceptive form of the luck eater is that of a golden-furred cat. It may be found nearly anywhere, often lurking in a hidden niche and surprising on 1-4. It purrs when approached, causing all creatures within 30 feet to save vs. spell or become attracted to the beast. Creatures attracted to it will want to take it with them, unharmed; it will always permit this and stay with the victim(s) for 2-5 hours, purring all the while. The aura emanated by the luck eater is such that all creatures within range of the purr suffer a 10% (-2) penalty on all saving throws, damage, and chances to hit. Failure to save has no effect, but note that all within range must save each round until attracted. The luck eater somehow feeds on the luck thus lost, becoming sated only after the indicated duration has elapsed. If the creature goes without food for any 3-turn period (i.e., if no rolls are made in 30 minutes of character time), the luck eater will alter its purr slightly, causing its benefactors to attack the next creature encountered. If yet another 3 turns elapse with no food forthcoming, the aura is altered again, causing the benefactors to fight among themselves for 10 rounds or until a death occurs. However, this extreme measure effectively negates the enchantment, and the luck eater always sneaks off unnoticed near the end of such battles. Otherwise, the creature will leave quickly when sated, still purring. Creatures previously attracted will allow it to leave, defending it if necessary; they will regain their senses 1-6 turns later.",
+}

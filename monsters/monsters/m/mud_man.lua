@@ -1,0 +1,36 @@
+-- Mud-man: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Mud-man",
+  page = "93",
+  pages = "93",
+  source = "MM2",
+  race = "Mud-man",
+  hitDice = "2",
+  hitDiceNum = "2",
+  hitDiceBonus = "0",
+  avgHp = "7",
+  armorClass = "10",
+  numAttacks = 1,
+  damage = "Nil",
+  xp = "28",
+  xpPerHp = "2",
+  xpValue = "42",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "2-12",
+  lairPct = "100",
+  treasure = "Nil",
+  move = "3\"",
+  size = "S (c.4')",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Mud-throwing",
+  specialDefenses = "Need magical weapons to hit; immune to certain spells (see below)",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Mud-men are formed in pools of mud where enchanted waters (even mildly enchanted ones, such as a stream eroding a magical structure) collect and evaporate and concentrate the dweomer.\n\nPhysically they are animated mud, taking a stocky humanoid form when roused. Slow moving and unable to leave their pool of mud, mud-men have but one aim in life which is to kill any creature entering the pool who is more mobile than themselves. Virtually all creatures, and certainly all humans and demihumans, fall into this category.\n\nIn their dormant state, mud-men lie below the surface of their pool with the substance of their bodies spread throughout, feeding on the dweomer of the mud. In this state they are immune to attacks with weapons (magical or otherwise). They are, however, susceptible to spell attacks (see below).\n\nWhen a character or creature enters the mud pool the mud-men sense its presence immediately and take 1 round to draw together the substance of their bodies and rise to a standing position ready to attack the next round. Once fully formed and standing they may be harmed by weapons, provided the weapons are magical.\n\nMud-men attack by hurling mud at their opponents, who are considered as armor class 10 (modified by dexterity) for the purposes of determining hits. The mud hardens on impact and slows the movement of the victim. At first the mud-men hurl only blobs of mud (maximum range 6\"). These slow the movement rate of the victim by 1\" if they hit. However, while hurling blobs of mud, the mud-men move toward their opponents at their full movement rate. Once within 1\" they will hurl themselves (literally) rather than a mere blob. A successful hit means the death of the mud-man but it also slows the victim's movement by 4\". A miss means that the mud-man must spend the next round re-forming to be ready to attack again.\n\nA victim is unable to move and begins to suffocate once the movement rate reaches zero, taking 1-8 points of damage per round until the mouth and/or nose is clear. The victim will die from suffocation after 5 rounds unless rescued. The hardened mud can be broken away from wholly or partially immobilized creatures. In this manner movement can be restored at a rate of 1\" per 5 rounds.\n\nNote that mud-men cannot sense creatures outside their pool and will not attack them. Once there are no living opponents left within the pool, therefore, the roused mud-men will sink back below the surface, only to rise again if the pool is re-entered.\n\nMud-men are affected by all spells which cause damage directly to living creatures (e.g. cause light wounds, magic missile, fireball, flame strike). Dispel magic and dig act as fireballs cast by a magic-user of the same level as the caster. Transmute mud to rock kills all mud-men it is able to affect, allowing no saving throw.\n\nThey are immune to poisoning, whether produced magically (e.g. cloud-kill, poison) or otherwise, and are similarly unaffected by spells which affect the mind (e.g., charm, sleep) or by psionics.\n\nSo long as mud-men are not fully formed from their pool, the damage caused by spells cast on them does not have an area of effect (e.g., magic missile) and is divided amongst them (fractions rounded down) since the substance of their bodies is evenly spread out in the mud.",
+}

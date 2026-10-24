@@ -1,0 +1,36 @@
+-- Land Lamprey: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Land Lamprey",
+  page = "80",
+  pages = "80",
+  source = "MM2",
+  race = "Land Lamprey",
+  hitDice = "1+2",
+  hitDiceNum = "1",
+  hitDiceBonus = "2",
+  avgHp = "5",
+  armorClass = "7",
+  numAttacks = 1,
+  damage = "1 hp/round (see below)",
+  xp = "36",
+  xpPerHp = "2",
+  xpValue = "46",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "2-12",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "12\"",
+  size = "S",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Drain blood, encumber (see below)",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The land lamprey is a mutated version of the sea lamprey. It breathes air and moves in snake-like fashion. Land lampreys may be found in almost any climate except desert or extreme cold. They prefer dark and damp environments. Like their aquatic cousins, land lampreys feed by biting their victims, fastening themselves to the victims with their sphincter-like mouths, and draining blood. Once attached (a hit for 1 point of damage), a lamprey will drain blood for 3 successive rounds (unless killed or removed first) for 1 hit point of damage per round. In addition, while attached to a character, each land lamprey will encumber the individual; this is equivalent to a loss of 1 point of dexterity per lamprey attached. Land lampreys can be removed only by killing them or exposing them to fire, whereupon they will release their hold in an effort to avoid the flames.\n\nA land lamprey is only about 3-feet long but fairly thick and heavy. Coloration ranges from light green to blackish green.",
+}

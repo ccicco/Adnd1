@@ -1,0 +1,36 @@
+-- Septon: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Septon",
+  page = "89",
+  pages = "89",
+  source = "MM2",
+  race = "Septon",
+  hitDice = "13+13",
+  hitDiceNum = "13",
+  hitDiceBonus = "13",
+  avgHp = "58",
+  armorClass = -1,
+  numAttacks = "7",
+  damage = "1-10 (x7)",
+  xp = "8250",
+  xpPerHp = "18",
+  xpValue = "9294",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (of 49)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "9\"//9\"",
+  size = "M",
+  intelligence = "Exceptional",
+  alignment = "Lawful neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+2 or better weapons to hit",
+  magicResistance = "40%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Septons are the officials who maintain order and see that all regulations have been obeyed. One serves each quinton, 4 serve each secundus, and 8 serve The One directly. They travel from place to place as inspectors and examiners of work and records and are charged with transferral of information from outlying areas to the towers of the regions, quarters, and the capitol tower itself.\n\nSeptons appear as humanoids with large bald heads. They have shoulder collars similar to those of the octons, although smaller and, while insufficient to move them through the air, they make for excellent transport underwater.\n\nIn order to assure the proper performance of their duties, each septon has 7 senses which operate continuously: hearing, sight, smell, taste, touch, ESP (with 30-foot range), and detect magic. They are also mighty spell-casters, having clerical spells at the 16th level and magic-user spells at the 12th level.\n\nSeptons, as with all high hierarchs without psionic ability, are completely immune to psionic attacks and combat.",
+}

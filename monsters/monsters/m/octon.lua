@@ -1,0 +1,36 @@
+-- Octon: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Octon",
+  page = "89",
+  pages = "89",
+  source = "MM2",
+  race = "Octon",
+  hitDice = "12+12",
+  hitDiceNum = "12",
+  hitDiceBonus = "12",
+  avgHp = "54",
+  armorClass = "1",
+  numAttacks = "8",
+  damage = "1-8 (x8)",
+  xp = "5250",
+  xpPerHp = "16",
+  xpValue = "6114",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1 (of 64)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "9\"/9\"(MC B)//9\"",
+  size = "L (7'-10' tall)",
+  intelligence = "Exceptional",
+  alignment = "Lawful neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+2 or better weapon to hit",
+  magicResistance = "30%",
+  psionic = "Nil (Immune to psionics)",
+  attackDefenseModes = "Nil/nil",
+  text = "Each of the 64 octons is in charge of a sector of the Plane of Nirvana. The base modrons of the sector, along with those decatons and nonatons assigned to these governors, are considered wards of the octons and their responsibility. The octons guard their sectors most rigidly and see that regulations are obeyed, routine is observed, and reports are invariably correct.\n\nOctons move through air and water by means of a circular collar at shoulder level. This collar, part of the octon's body, forces air or liquid through it, giving the creature lift, propulsion, and a high amount of maneuverability. The 8-tentacled arms are attached to the outside of this collar.\n\nThe octons use spells as 14th-level clerics. They also have the following spell-like abilities, usable once per round, at will, 1 at a time: water walking as ring of the that name, haste, detection of good/evil, and telekinesis 3500 gp weight. They are totally immune to psionic combat and effects of psionics.\n\nEach octon has a personal staff consisting of 1 decaton, 1 nonaton, 5 pentadrones, 16 quadrones, 81 tridrones, 256 duodrones, and 1728 monodrones. They maintain small towers, which are smaller versions of the towers of the quartons, the secundi, and of Primus.",
+}

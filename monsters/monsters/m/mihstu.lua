@@ -1,0 +1,36 @@
+-- Mihstu: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Mihstu",
+  page = "84",
+  pages = "84",
+  source = "MM2",
+  race = "Mihstu",
+  hitDice = "8+2",
+  hitDiceNum = "8",
+  hitDiceBonus = "2",
+  avgHp = "30",
+  armorClass = -2,
+  numAttacks = "4 tentacles",
+  damage = "1d6+1 each",
+  xp = "1700",
+  xpPerHp = "12",
+  xpValue = "2060",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-4",
+  lairPct = "10",
+  treasure = "I",
+  move = "6\"/6\" (MC:B)",
+  size = "M (6' diameter)",
+  intelligence = "High",
+  alignment = "Neutral evil",
+  specialAttacks = "Constitution drain",
+  specialDefenses = "+2 or better weapons to hit",
+  magicResistance = "10%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These free-willed elementals normally inhabit the Para-elemental Plane of Air but sometimes are found in cool, damp places with little or no sunlight. Mihstu look like clouds of swirling mist and can seep through small cracks and openings. They can shape their bodies at will and, when attacking, they will form 4 solid tentacles tipped with razor-sharp talons. A mihstu can also envelope a victim in its misty body and drain 1 constitution point per round. If a victim's constitution reaches 0, death occurs. One point of constitution may be regained per full day of rest. During this time wounds can be healed only by magic.\n\nMihstu can be harmed only by +2 or better weapons. They are immune to all electrical and missile attacks (even magic missile). Cold-based attacks only stun them for 2d6 rounds.\n\nMihstu are solitary creatures and prefer to be left alone. They will assume a ghostly shape to scare away intruders. However, they may perform tasks for powerful magic-users in exchange for substantial payment of powerful magic items.",
+}

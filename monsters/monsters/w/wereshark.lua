@@ -1,0 +1,36 @@
+-- Wereshark: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Wereshark",
+  page = "82",
+  pages = "82",
+  source = "MM2",
+  race = "Wereshark",
+  hitDice = "10+3",
+  hitDiceNum = "10",
+  hitDiceBonus = "3",
+  avgHp = "38",
+  armorClass = "0",
+  numAttacks = 1,
+  damage = "5-20",
+  xp = "1500",
+  xpPerHp = "14",
+  xpValue = "2032",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "20",
+  treasure = "See below",
+  move = "12\"//21\"",
+  size = "L",
+  intelligence = "Low to exceptional",
+  alignment = "Neutral evil",
+  specialAttacks = "Nil",
+  specialDefenses = "Hit only by silver or +1 or better magic weapon",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Weresharks are humans inflicted with a form of lycanthropy which enables them to take shark form whenever they choose, as long as it is in darkness. Weresharks are found only in tropical areas. The human form of the creature is virtually indistinguishable from that of a normal human, although a wereshark will be large, muscular, cruel, and domineering. In shark form the creatures are huge and resemble great white sharks. They are solitary and will not hesitate to attack and devour true sharks if the mood is upon them. Weresharks have been known to establish an underwater lair in some place where sunken treasure lies so as to guard it for use in their human form. Such treasure can range from a few hundred coins to a considerable trove (such as type F). The wereshark lair will always be guarded by 2-5 normal sharks, whether or not the monster is personally present.",
+}

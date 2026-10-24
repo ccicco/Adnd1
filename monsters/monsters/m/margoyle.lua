@@ -1,0 +1,36 @@
+-- Margoyle: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Margoyle",
+  page = "83",
+  pages = "83",
+  source = "MM2",
+  race = "Margoyle",
+  hitDice = "6",
+  hitDiceNum = "6",
+  hitDiceBonus = "0",
+  avgHp = "21",
+  armorClass = "2",
+  numAttacks = "4",
+  damage = "1-6/1-6/2-8/2-8",
+  xp = "350",
+  xpPerHp = "6",
+  xpValue = "476",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "2-8",
+  lairPct = "30",
+  treasure = "Individuals Q; in lair C",
+  move = "6\"/12\" (MC: C)",
+  size = "M",
+  intelligence = "Low",
+  alignment = "Chaotic evil",
+  specialAttacks = "See below",
+  specialDefenses = "+1 or better weapon to hit",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "A margoyle is a particularly horrid form of gargoyle found principally in natural caves and caverns. The creature's substance is so like stone that there is an 80% probability it will be undetected when lurking against it, and one can thus often surprise opponents. Attack is by 2 claws, a pair of horns, and a bite with stony fangs. Only magic weapons equal to or better than +1 will harm a margoyle. The low intelligence of this creature does not prevent it from gathering valuable items, particularly those magical sorts which could harm it. The language of these creatures is similar to that of gargoyles, and they can speak the tongue of the latter monsters well enough. Margoyles are sometimes (20%) found with their lesser kin, gargoyles, either as masters or leaders.",
+}

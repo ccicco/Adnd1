@@ -1,0 +1,36 @@
+-- Russet Mold: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Russet Mold",
+  page = "91",
+  pages = "91",
+  source = "MM2",
+  race = "Russet Mold",
+  hitDice = "12-16 hp/10 square feet",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "16",
+  armorClass = "9",
+  numAttacks = "0",
+  damage = "0",
+  xp = "0",
+  xpPerHp = "0",
+  xpValue = "0",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 patch",
+  lairPct = "0",
+  treasure = "",
+  move = "0\"",
+  size = "S to L",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Spores",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Found only in damp areas underground, this mold is often mistaken for rust at distances greater than 30 feet (70% chance). It is immune to all attacks involving weapons, fire, and cold but is vulnerable to applications of alcohol, acid, and compounds harmful to plants (such as salt). It can be killed instantly by casting a cure disease or a continual light upon it.\n\nRusset mold makes no physical attacks but emits a barely visible cloud of spores within a 3-foot radius; beyond this radius the spores settle to the floor, inert. Also, if the mold is touched it will inject these spores. All creatures passing within 3 feet or touching it will take 5-20 points of damage from the toxicity and must save vs. poison. Failure to save results in a sickness that will kill in 2-5 turns unless a cure disease is cast.\n\nAny character who dies from touching russet mold will undergo a transformation. The body will first start to sprout new growths of mold from the spores left at contact. Then, when entirely encased in mold, a vegepygmy (q.v.) will rise from the remains. The entire process will take 21-24 hours (1d4+20). A hold plant spell will halt the growth of the mold for the duration of the spell. If the mold grows for more than 1 hour, the victim cannot be recovered except by a wish spell.\n\nRusset mold is golden-brown to rust-red in color. Its lumpy texture is similar to cold porridge, and it is covered by short, hair-like growths. These stand upright and constantly waver as if in a gentle breeze.",
+}

@@ -1,0 +1,36 @@
+-- Duodrone: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Duodrone",
+  page = "87",
+  pages = "87",
+  source = "MM2",
+  race = "Duodrone",
+  hitDice = "2+2",
+  hitDiceNum = "2",
+  hitDiceBonus = "2",
+  avgHp = "9",
+  armorClass = "6",
+  numAttacks = "2",
+  damage = "2-5/2-5 or by weapon type",
+  xp = "50",
+  xpPerHp = "3",
+  xpValue = "77",
+  xpSource = "mm2_print",
+  frequency = "Common",
+  noAppearing = "1-12",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "9\"/9\"(MC E)//9\"",
+  size = "S (4'-6\" long)",
+  intelligence = "Low",
+  alignment = "Lawful neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Immune to illusion and mind-affecting magic",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Duodrones are bifunctional modrons, capable of supervising 12 units of monodrones or performing complex tasks beyond the abilities of the monodrones. Duodrones serve in the forces of Nirvana as noncommissioned officers and as special shock troops armed with thrusting and smashing weapons. The blocky, rectangular duodrones are very strong and absolutely obedient to their superiors. They have limited conversational ability but can report their operations and observations clearly and completely. Duodrones have senses equal to most humans and infravision at the normal range (90 feet).",
+}

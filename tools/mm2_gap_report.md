@@ -114,15 +114,15 @@ the R614 precedent.
   under K; the archive.org heading walk found 4
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter L** (pp. 0-0) - the A-Z entries
+- [x] **Letter L** (pp. 0-0) - the A-Z entries
   under L; the archive.org heading walk found 1
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter M** (pp. 131-131) - the A-Z entries
+- [x] **Letter M** (pp. 131-131) - the A-Z entries
   under M; the archive.org heading walk found 8
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter N** (pp. 16-16) - the A-Z entries
+- [x] **Letter N** (pp. 16-16) - the A-Z entries
   under N; the archive.org heading walk found 2
   candidate entry headings - the pin-time walk from
   the print is authoritative

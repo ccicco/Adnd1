@@ -1,0 +1,36 @@
+-- Secundus: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Secundus",
+  page = "91",
+  pages = "91",
+  source = "MM2",
+  race = "Secundus",
+  hitDice = "18+18",
+  hitDiceNum = "18",
+  hitDiceBonus = "18",
+  avgHp = "81",
+  armorClass = -6,
+  numAttacks = "2",
+  damage = "6-72 (x2) stun",
+  xp = "15200",
+  xpPerHp = "25",
+  xpValue = "17225",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (of 4)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "18\" in all environments, MC:B",
+  size = "L",
+  intelligence = "Godlike",
+  alignment = "Lawful neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+4 or better weapon to hit",
+  magicResistance = "90%",
+  psionic = "300-310 points",
+  attackDefenseModes = "All/all",
+  text = "The 4 secundi, viceroys of the quarters, are the virtual rulers of Nirvana, reporting only to Primus the One. Each has a staff of 2 tertians, 2 hextons, 4 septons, and a multitude of base modrons.\n\nThe secundi appear as incredibly thin, tall humanoids with long, narrow faces and deepset eyes. They use spells as 26th-level clerics and 22nd-level magic-users. If, during combat, a secundus scores 5 or better on the number to hit, it has stunned its opponent unless that being is of demigod status. Secundi have special abilities as 13th-level monks, including the dreaded \"quivering palm,\" the latter applicable to any mortal creature.\n\nThe secundi live in great towered cities near the centers of their realms. They will always live in harmony with each other save during that time when a new Primus must be chosen.",
+}

@@ -1,0 +1,36 @@
+-- Mantis, Giant: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Mantis, Giant",
+  page = "83",
+  pages = "83",
+  source = "MM2",
+  race = "Mantis, Giant",
+  hitDice = "10",
+  hitDiceNum = "10",
+  hitDiceBonus = "0",
+  avgHp = "35",
+  armorClass = "3",
+  numAttacks = "1 or 1",
+  damage = "2-12 or 3-12",
+  xp = "1350",
+  xpPerHp = "14",
+  xpValue = "1840",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "6\"/12\" (MC: D)",
+  size = "L (12' tall)",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Camouflage",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The towering giant mantis is found only in places where vegetation is of such size as to allow the creature to be camouflaged by its green coloration and form as it awaits passing prey. Although these creatures prefer to devour giant insects of various sorts, any creature will be attacked if recognized as living and edible. Attack is with 2 vise-like forelimbs. This attack, if successful, inflicts 2-12 points of damage and holds fast prey with under 19 strength. The next round the monster will bite with its sharp, tearing mandibles. Held prey gains no dexterity or shield bonus. Damage inflicted is 3-12 points.\n\nIt is 75% probable that a mantis will attack by surprise. If it recognizes another creature as dangerous, the mantis will stay still and thus avoid detection 75% of the time.",
+}

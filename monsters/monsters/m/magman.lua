@@ -1,0 +1,36 @@
+-- Magman: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Magman",
+  page = "82",
+  pages = "82",
+  source = "MM2",
+  race = "Magman",
+  hitDice = "2",
+  hitDiceNum = "2",
+  hitDiceBonus = "0",
+  avgHp = "7",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "3-24",
+  xp = "97",
+  xpPerHp = "2",
+  xpValue = "111",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "2-24",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "9\" (6\")",
+  size = "S (3')",
+  intelligence = "Low",
+  alignment = "Chaotic neutral",
+  specialAttacks = "Combustion touch",
+  specialDefenses = "+1 or better weapon to hit; immune to fire-based attacks",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The magmen are creatures of the Para-elemental Plane of Heat (see DEITIES & DEMIGODS Cyclopedia). Occasionally they pass into the Prime Material Plane through gaps created by the great pressure and heat of subterranean lava. The molten rock of the Prime Material Plane has a different \"taste\" from that on the Plane of Heat, and the magmen like to visit it to absorb its essences.\n\nMagmen especially like to swim around in active volcanos, for when they erupt, the magmen are released to engage in their favorite sport of igniting all the combustibles they can reach. They are not very smart, but they are mischievous and love to watch creatures of the Prime Material Plane scurrying away from the flames that they themselves consider harmless.\n\nMagmen are not really interested in fighting, but whenever they encounter a creature they will try to set it afire, just for fun. Their combustion touch ignites all the flammable items of any creature they hit, burning for 1-8 points of damage each round for 3-6 (1d4+2) rounds (plus incidental damage from flammables they may be carrying, like flasks of oil). Combustible magic items, such as scrolls, gain a save vs. normal fire. If attacked and actually hurt, a magman will run away, but if cornered, it will defend itself, striking with a molten fist for 3-24 points of damage. Fire-resistant creatures, including those protected by magical means, take only half damage. However, magmen are not easy to hurt: a +1 or better weapon is required to hit them, but any weapon of less than a +2 bonus that contacts a magman will melt! In addition, they are immune to all fire-based attacks.\n\nMagmen are 3-foot tall, glowing, human-shaped creatures. Small puffs of flame burst constantly from their skin, and each magman radiates heat like a small bonfire, making the area near it quite uncomfortable. Magmen are simple beings who just love to set things on fire; it never occurs to them that other creatures might be actually hurt. Magmen can stay out of lava for only 6 hours before they stiffen and become immobile. They rarely stay out more than 2 or 3 hours, as they consider anything under 1000 degrees to be cold. Magmen speak no Prime Material Plane languages.",
+}

@@ -1,0 +1,36 @@
+-- Tridrone: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Tridrone",
+  page = "88",
+  pages = "88",
+  source = "MM2",
+  race = "Tridrone",
+  hitDice = "3+3",
+  hitDiceNum = "3",
+  hitDiceBonus = "3",
+  avgHp = "13",
+  armorClass = "5",
+  numAttacks = "3",
+  damage = "3-6/3-6/3-6",
+  xp = "85",
+  xpPerHp = "4",
+  xpValue = "137",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-4",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "12\"",
+  size = "M",
+  intelligence = "Average",
+  alignment = "Lawful neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Immune to illusion and mind-affecting magic",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Tridrones appear as 3-sided pyramids with spidery arms and legs. Their main function is to supervise lower orders of modrons. They supervise gross units of 144 monodrones and duodrones, work on multiple task projects, and serve as leaders of companies in the regiments of the Army of Nirvana. There are guard units and special companies of tridrones equipped with 3 javelins per being. The tridrones hurl these javelins before entering melee. Tridrones are capable of reporting actions and observations and actually planning limited objectives on the battlefield.\n\nTridrones have senses equal to human, as well as infravision and ultravision, 90 feet and 100 yards, respectively.",
+}

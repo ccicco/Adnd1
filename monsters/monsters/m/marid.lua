@@ -1,0 +1,36 @@
+-- Marid: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Marid",
+  page = "84",
+  pages = "84",
+  source = "MM2",
+  race = "Marid",
+  hitDice = "13",
+  hitDiceNum = "13",
+  hitDiceBonus = "0",
+  avgHp = "45",
+  armorClass = "0",
+  numAttacks = 1,
+  damage = "8-32",
+  xp = "5000",
+  xpPerHp = "0",
+  xpValue = "5000",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "9\"/15\"//24\" (MC: B)",
+  size = "L (18' tall)",
+  intelligence = "High to genius",
+  alignment = "Chaotic",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "25%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "A marid is the most powerful of all geniekind (see \"Dao,\" \"Djinni,\" \"Efreeti,\" and \"Jann.\") They are formed of material from the Elemental Plane of Water. On their own plane they are rare; marids seldom come to the Prime Material Plane. Their magical properties allow them any of the following spell-like powers, 1 at a time, twice each per day: detect evil/good, detect invisible, detect magic, become invisible, assume liquid form (similar to assume gaseous form), polymorph self, purify water. Marids can do the following up to 7 times per day: assume a gaseous form, lower water, part water, create a wall of fog, bestow water breathing upon others for up to 1 full day. Marids can always create water, which they can direct in a powerful jet up to 6\" long which causes both blinding effect on the individual struck (saving throw applies) and from 1-6 points damage and water walk (as ring by the same name). Once per year a marid can use an alter reality. Marids perform at a level of spell use equal to 26th. It is possible for a marid to freely carry 10,000 gp in weight. Double this weight causes tiring in but 3 turns. For every 2000 gp weight under 20,000, add 1 turn to the length of carrying ability, i.e., 12,000 gp weight can be carried for 8 turns before tiring occurs. A tired marid must rest for 6 turns. Note that marids swim very fast. Of course they can breathe water and are at home at any depth. They have both ultravisual and infravisual capabilities.\n\nMarids are not harmed by water-based spells. Cold-based spells allow them +2 on saving throws and -2 on each die of damage. Fire does +1 per die of damage, with saving throws at -1. Note that steam does not harm them.\n\nMarids tolerate djinn but do not particularly like them. The same is true of jannee. Daos and efreet are disliked. Marids are loosely ruled by a padisha, for all claim to be shahs, atabegs, beglerbegs, or mufti at the very least. The race of marids is very independent and egoistic. Forcing a marid to serve is a most difficult task. Bribery and flattery may be slightly more successful, but marids can never be relied upon. Marids speak all languages through a form of ESP.\n\nThe Astral, Elemental, Ethereal, and Prime Material Planes are all open to marids.",
+}

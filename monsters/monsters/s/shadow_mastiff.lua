@@ -1,0 +1,36 @@
+-- Shadow Mastiff: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Shadow Mastiff",
+  page = "84",
+  pages = "84",
+  source = "MM2",
+  race = "Shadow Mastiff",
+  hitDice = "4 (-1 hp/die in bright light)",
+  hitDiceNum = "4",
+  hitDiceBonus = "0",
+  avgHp = "14",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "2-8",
+  xp = "185",
+  xpPerHp = "4",
+  xpValue = "241",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "4-16",
+  lairPct = "20",
+  treasure = "Nil",
+  move = "18\"",
+  size = "M",
+  intelligence = "Semi-",
+  alignment = "Neutral (evil)",
+  specialAttacks = "Baying causes panic",
+  specialDefenses = "Hide in shadows",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These hound-like creatures are normally encountered on the Plane of Shadow. In their natural habitat, they roam in packs or are used as trained guard beasts. In shadowy conditions (Plane of Shadow, moonlight, etc.) a shadow mastiff is a terrible foe. It can strike and then blend with the shadows so that it is 40% unlikely to be seen. However, in bright light it loses 50% of its normal movement ability and cannot use shadows for concealment.\n\nThe lair of a pack of shadow mastiffs is 50% likely to contain 2-5 whelps. These young can be taken and sold for from 200-500 gp each. The baying of a pack of shadow mastiffs is certain to cause panic, resulting in flight directly away from the baying while dropping any item held in the hand, unless a save vs. spells is made. For each number of shadow mastiffs under 10, add +1 to the roll (a 1 always failing), but for every 2 mastiffs over 12 subtract 1 from the roll.",
+}

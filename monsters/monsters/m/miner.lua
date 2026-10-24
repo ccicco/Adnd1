@@ -1,0 +1,36 @@
+-- Miner: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Miner",
+  page = "85",
+  pages = "85",
+  source = "MM2",
+  race = "Miner",
+  hitDice = "10",
+  hitDiceNum = "10",
+  hitDiceBonus = "0",
+  avgHp = "35",
+  armorClass = "4",
+  numAttacks = "See below",
+  damage = "See below",
+  xp = "1000",
+  xpPerHp = "14",
+  xpValue = "1490",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1",
+  lairPct = "40",
+  treasure = "G",
+  move = "3\" (6\")",
+  size = "Large",
+  intelligence = "Highly",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The miner is a relative of the trapper and adapted to woodland survival. It is carnivorous and preys on small woodland animals; however, it often employs a form of ambush by which it acquires more substantial meals. It tunnels through earth to position itself a few inches below a traveled path or road, then extends its spinal barbs upwards through the surface. Passing creatures do not usually notice the barbs, which look like twigs, and may step upon them (75% chance if surprised, otherwise 25% per creature passing.) Druids and rangers may, if unsurprised, see and correctly indentify the barbs at a 5% chance per character level. The barbs are poisonous; any creature stepping on one must save vs. poison or be paralyzed for 2-40 turns. Nevertheless, the miner will not reveal its presence until all surface vibrations have ceased (i.e., no movement), at which time it will dig out and attack what it has caught, enveloping it in a manner identical to the trapper (q.v.). This is an attack mode it will also employ if engaged in combat. As it usually remains underground while foraging, the miner is difficult to attack unless dug out of its hiding place.\n\nMiners are not as amorphous as their trapper cousins and are usually similar in appearance to a tailless aquatic ray. Skin is mottled brown or greenish brown. Its frontal edge is hard bone, which extends to a central dorsal ridge lined with 6-25 brown barbs.",
+}

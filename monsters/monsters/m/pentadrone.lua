@@ -1,0 +1,36 @@
+-- Pentadrone: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pentadrone",
+  page = "88",
+  pages = "88",
+  source = "MM2",
+  race = "Pentadrone",
+  hitDice = "5+5",
+  hitDiceNum = "5",
+  hitDiceBonus = "5",
+  avgHp = "22",
+  armorClass = "3",
+  numAttacks = "5",
+  damage = "5-8 (x5)",
+  xp = "350",
+  xpPerHp = "7",
+  xpValue = "504",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "18\" /6\"",
+  size = "M",
+  intelligence = "Very",
+  alignment = "Lawful neutral",
+  specialAttacks = "Paralysis gas",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Nirvana's worker populace is policed on a day-to-day basis by pentadrones. These 5-armed creatures resemble starfish on thin stilt-like legs. In addition to powerful arm attacks and an effective 18/00 strength, pentadrones have a paralysis gas which they can emit in a stream 2 feet in diameter and 5 feet in length. Any creature caught within this stream must save vs. paralysis or remain immobile for 5 rounds. Pentadrones can use this gas stream no more than once every 5 turns, 5 times per day. Alternately, the pentadrones are able to use this gas to levitate as 5th-level magic-users.\n\nAs 5-functioned beings, these creatures can communicate, operate, monitor, plan, and manage. They can also react to unplanned situations. Pentadrones are in charge overall of all lesser modrons. In the forces of Nirvana a dozen are always assigned to each regimental headquarters as an elite unit, while others actually command the regiment.\n\nPentadrones are able to exist in virtually any environment. They can stand temperature extremes of 210 degrees to -100 degrees F. without discomfort. Cold, fire, and acid attacks on them are always at -2 per die of damage. They are immune to illusion and mind-affecting magic, and only magical weapons of +1 or better will harm them.\n\nPentadrones have double human senses and double normal infravision and ultravision (180 feet and 200 yards, respectively).",
+}

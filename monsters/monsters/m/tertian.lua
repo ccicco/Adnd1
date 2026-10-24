@@ -1,0 +1,36 @@
+-- Tertian: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Tertian",
+  page = "91",
+  pages = "91",
+  source = "MM2",
+  race = "Tertian",
+  hitDice = "17+17",
+  hitDiceNum = "17",
+  hitDiceBonus = "17",
+  avgHp = "76",
+  armorClass = -5,
+  numAttacks = "3",
+  damage = "5-40 (x3)",
+  xp = "15200",
+  xpPerHp = "25",
+  xpValue = "17100",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (of 9)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "12\"",
+  size = "L",
+  intelligence = "Supra-genius",
+  alignment = "Lawful neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+4 or better weapon to hit",
+  magicResistance = "80%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Trial, judgment, and sentencing of both modrons and invading non-natives is the province of the 9 tertians. It is they that supervise the police, command the law enforcement armies, declare faulty modrons rogues, and see to it that the rules of Primus are obeyed. Eight of these creatures report to the secundi, 1 to Primus himself.\n\nTertians look very human, save for their 12-foot tall size, the horns jutting from the sides of their bald heads, and the long prehensile tails ending in a mace-like ball. All struck by this tail must save vs. paralysis at -4 or fall, unable to rise. In addition, tertians may cast spells as clerics of the 24th level and as magic-users of the 20th level. As with other hierarchs, they cannot use psionics but are immune to effects of any psionic attack.",
+}

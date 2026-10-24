@@ -1,0 +1,36 @@
+-- Primus: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Primus",
+  page = "91",
+  pages = "91",
+  source = "MM2",
+  race = "Primus",
+  hitDice = "220 hp",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "220",
+  armorClass = -10,
+  numAttacks = 1,
+  damage = "20-160 + special",
+  xp = "32500",
+  xpPerHp = "0",
+  xpValue = "32500",
+  xpSource = "mm2_print",
+  frequency = "Unique",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "24\" in all environments, MC:A",
+  size = "L",
+  intelligence = "Godlike",
+  alignment = "Lawful neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+5 or better weapon to hit",
+  magicResistance = "100%",
+  psionic = "365 points",
+  attackDefenseModes = "All/all",
+  text = "Primus is the ruler of all the planes of Nirvana. Primus, and Primus alone, sets the order, writes the laws, and establishes the rules and regulations. All others carry out the plans and obey the rules of Primus. Failure to meet this powerful creature's standards means a return to the energy pool at best as a monodrone.\n\nPrimus is a huge being who rises from the energy pool in the central part of his great tower at the center of the plane, although the Prime One may also appear as a normal human. In giant-form, Primus' hands are unseen, the right swathed in rainbow-bright lights, the left clouded in inky darkness. Those creatures struck by the light-hand must save vs. spells or be teleported to Arcadia; those struck by the left must save or be sent to Acheron.\n\nPrimus casts spells as a 30th-level cleric and a 25th-level magic-user. Primus may communicate immediately with any of the creatures of Nirvana; this allows Primus almost total knowledge of the plane.",
+}

@@ -1,0 +1,36 @@
+-- Foxwoman: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Foxwoman",
+  page = "80",
+  pages = "80",
+  source = "MM2",
+  race = "Foxwoman",
+  hitDice = "8+1",
+  hitDiceNum = "8",
+  hitDiceBonus = "1",
+  avgHp = "29",
+  armorClass = "2 or 4 or 6",
+  numAttacks = 1,
+  damage = "1-2 or 2-12 or by weapon type",
+  xp = "1700",
+  xpPerHp = "12",
+  xpValue = "2048",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (see below)",
+  lairPct = "25",
+  treasure = "E, Q (x5), S",
+  move = "24\" or 18\" or 12\"",
+  size = "M",
+  intelligence = "Average to exceptional",
+  alignment = "Chaotic evil",
+  specialAttacks = "Charm, spells",
+  specialDefenses = "Hit only by silver or +1 or better magic weapons",
+  magicResistance = "Standard (except as elven woman)",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Foxwomen are lycanthropes able to assume 3 forms rather than the standard 2. The statistics above reflect the 3 possible forms in which they may be encountered.\n\nFoxwomen are solitary only with respect to their own kind. They have infravision (6\") in all forms. Dwelling in lonely woodlands, the foxwoman will always have 2-5 charmed males as servants and companions. The lair will be a hidden cottage or comfortable cave complex complete with typical human comforts. The males with the lycanthrope will be armed and do their utmost to protect their mistress. The males may be elven (25%), human (25%), or half-elven (50%).\n\nAt least 1 of the males will be a fighter (70%) or ranger (30%) of 2nd-5th level. There is a 50% chance for any 1 of the other males to also be a fighter of 1st-4th level. There is a 10% chance that 1 of the remaining males will be a cleric (10%), druid (45%), magic user (5%), illusionist (5%), thief (25%), or some other class of 1st-4th level character (10%). Of course, if the male is an elf or half-elf he can have multi-class ability (25% chance for 2 or 3 professions), and this is automatically true if \"doubling up\" is indicated by the results of the rolls given above. All males who do not fit into the above categories are 0-level fighters and 1-hit die elves and half-elves. Determination of males' magic items should be accomplished by use of Appendix P in THE DUNGEON MASTER'S GUIDE.\n\nThere is a 10% chance that the foxwoman has stolen an elven girl child, infected her with her form of lycanthropy, and is raising her as a foxwoman. Such a child will be from 6-13 (1d8+4) years of age. If she is 12 or 13, treat her as a normal foxwoman; otherwise, she will be noncombatant. Foxwomen can inflict lycanthropy only in their vixen form. A foxwoman may be encountered in any of the 3 forms given below.\n\nSilver Fox: In this form, the foxwoman appears to be nothing more than a large fox. The movement rate is very fast (24\"), and the foxwoman can pass without trace (as spell) and be 90% undetectable in natural cover if she passes out of actual view for only 1 segment.\n\nVixen: This form is a mix between fox and elf. When in vixen form, the foxwoman appears to be a silver-furred elf with a fox-like head. The vixen form allows a ferocious biting attack which will infect elven and half-elven females with lycanthropy and cause such victims to themselves become foxwomen within 3 days unless both cure disease and remove curse are used to negate the horrible effect.\n\nElven Woman: In this form the foxwoman has a comeliness rating of 21 with respect to human and demihuman males. Those males with wisdom of 13 or less will effectively be under a charm spell. Those of 14 or greater wisdom will not be charmed, but they will find the foxwoman attractive nonetheless. Preferred males will be kept; those not kept will be slain quietly. Dwarves, gnomes, and halflings will definitely be automatically slain (as opportunity presents). The foxwoman in elven woman form will have magic use as well. Level will be between 1st and 4th, but no progression is possible. Cantrips and spells known (and in spell books) must be determined randomly. In this form, a foxwoman is 90% resistant to sleep and charm spells and gains +1 with bow and sword (as does a normal elf). The hair will be silver or silver streaked, and will show a widow's peak. Thus, a prudent person can be alerted to the fact that the elf is actually a foxwoman.",
+}

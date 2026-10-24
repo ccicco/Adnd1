@@ -1,0 +1,36 @@
+-- Moon Dog: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Moon Dog",
+  page = "92",
+  pages = "92",
+  source = "MM2",
+  race = "Moon Dog",
+  hitDice = "8+16",
+  hitDiceNum = "8",
+  hitDiceBonus = "16",
+  avgHp = "44",
+  armorClass = "2 or 0 or -2",
+  numAttacks = 1,
+  damage = "3-12",
+  xp = "2000",
+  xpPerHp = "12",
+  xpValue = "2528",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1 (2-8)",
+  lairPct = "0",
+  treasure = "N",
+  move = "30\"",
+  size = "M (3' at shoulder)",
+  intelligence = "High to exceptional",
+  alignment = "Neutral good",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "25%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The moon dog, also known as the black hound or night prowler, is often mistaken for a baneful monster, when, in fact, the creature protects mankind and seeks out evil predators to slay in the night. Encounters almost never occur in heavily populated areas. Normally only a single creature will be found, but in areas of great Evil from 2-8 will be encountered. Likewise, on the Upper Outer Plane from which they come (Elysium), they will be found in larger numbers. They serve only deities of Good and great servants of such deities, such as devas, planetars, et al.\n\nThe armor class of a moon dog depends on light conditions. In bright, wholesome light, armor class is 2. In twilight armor class equals 0. In heavy shadow or darkness armor class is -2.\n\nNormal attack is a bite which inflicts considerable damage. A moon dog, however, has voice weapons which are effective against evil opponents. Baying causes all evil beings within 8\" to save vs. spells or flee in panic (as if struck by a fear spell). If several moon dogs bay, the effect is cumulative. Howling causes all creatures of Evil in a 4\" radius to suffer 5-8 points of damage per round of such noise; furthermore, each affected creature not native to the Prime Material Plane will suffer great pain from the noise and therefore has a cumulative 5% chance (per moon dog howling per round of such activity) of being forced to return to its own plane, magic resistance notwithstanding in creatures under 10 hit dice.\n\nOne at a time, 1 per round, at will, a moon dog can employ the following spell-like powers at the 12th level of ability: change self, dancing lights, darkness, improved invisibility, light, mirror image, non-detection, shades once per day, wall of fog.\n\nIn addition, a moon dog can become ethereal. It can travel astrally or etherally. It has superior vision equal to double normal vision for all spectra. This, plus the unusually keen senses of hearing and smell, enable a moon dog to detect the following: evil, illusion (90%), invisibility including the improved form but only at 80% probability, magic (70%), and snares and pits (100%). Having prehensile forepaws, a moon dog will sometimes employ small items.\n\nWhen in shadowy light, a moon dog is able to move in such a way as to effectively create magic equal to a hypnotic pattern of shadows. Only Evil creatures will be affected. At the same time, each creature of Good within the area will effectively gain a protection from evil and remove fear. When weaving the pattern, the moon dog cannot otherwise attack or perform other acts. A moon dog can be hit only by weapons of +2 or better. It can never be surprised but is 50% likely to surprise opponents. A moon dog is not subject to fear. It saves vs. attacks based on cold, electricity, and fire/heat at +2, taking either half- or quarter-damage accordingly. The whine of a moon dog will serve to dispel illusion, while its bark serves as a dispel evil. The lick of the creature serves as follows: cure disease, cure light wounds, or slow poison. Each function can serve a given individual but once per day. Association with a moon dog for 1 or more hours serves to dispel charm or remove curse. A moon dog can effectively dispel magic, but to do so it must expend its energy to such a degree as to be forced back to its own plane instantly.\n\nMoon dogs have their own language and can speak with all forms of canines and lupines as well. Additionally, they can speak Common and communicate by a limited form of telepathy. While they will communicate with and aid humans and demihumans of good will, they do not associate with them for periods beyond immediate needs when evil threatens.\n\nA moon dog is similar in form to a canine, and resembles a great wolf hound. The head, however, is vaguely human, and the forepaws are prehensile; the creature is quite capable of bipedal locomotion (9\" rate). Coloration is mottled dark gray with deepest black predominating. Eye color is amber.",
+}

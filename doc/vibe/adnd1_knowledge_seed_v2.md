@@ -21537,6 +21537,50 @@ when both halves land.
   Curtiss's call (the natural next
   walk is the Letter J box - 23 open
   boxes remain).
+- R807 LANDED 2026-10-24: commit 93653746b5d427c81360f3ca94e5f2bd0f194fae
+  (census 729 -> 730, pushed 4ae87fb..9365374), THE MM2 LETTERS JK WALK -
+  THE JANN, MUSTARD JELLY, KAMPFULT, KECH, KORRED AND KRAKEN TURNS - THE
+  JK-FLIP ROUND (Curtiss's Go call on the landed letters HI walk; round
+  twelve of the MM2 arc, the THIRD two-letter pass - the jann and the
+  mustard jelly on p. 77, the kampfult, the kech and the korred on p. 78,
+  the kraken on p. 79). THE PIN-TIME WALK: SIX entries, all with stat blocks
+  (the jann and the mustard jelly p. 77, the kampfult, the kech and the
+  korred p. 78, the kraken p. 79) - no doctrine-only family heads; the
+  genie-kin census pins 5 (the jann the weakest elemental humanoid, the
+  weakest of the genie kin). SIX .lua defs ride the R791 data_files
+  extension, registry 655 -> 661 (the mustard jelly in m/, the rest in j/
+  and k/). Header rules/mm2jk.h, prefix mm2jk, 125 consts + 20 bools + ONE
+  grid (the 6x10 JkStats stat grid) = 155 inline. THE JK-FLIP: BOTH the
+  Letter J and the Letter K gap boxes flip to closed - 16 closed 21 open.
+  THE SETTLED READS (capture primary, transcription and djvu the cross-check
+  voices, the 2e compendium a fourth voice where cited): the kech treasure
+  type reads the letter B (the capture "8" the OCR misread); the korred hit
+  dice read 6+1 (the capture "8+1" the misread); the kampfult xp level reads
+  II (the djvu "11" the misread); the kraken move cell "//3" (21")" pins
+  capture verbatim (the R804 electric eel "//9"" precedent; the moveRate
+  reads the swimming 3); the kraken armor class "5/0" composite reads the
+  head 5 (the hordling/hangman tree first-read precedent); the kraken "2 and
+  4-6 and 1" attack load reads the and-sum 13 clamped at the 10 sanity
+  ceiling (the R805 purple worm "1 and 1" sum convention meets the clamp);
+  the mustard jelly "1 or 2" attack load reads the max 2 (the R798 duergar
+  convention); the korred "1 or by weapon" loads the 1 floor; every Standard
+  magic resistance reads 0; the kraken "them them sacrifices" print typo
+  kept verbatim. Grid rows (ac, hd, bonus, avgHp, attacks, xp, xp/hp, lair,
+  move, mr): jann [5,6,2,23,1,975,8,0,12,20], mustard jelly
+  [4,7,14,38,2,825,18,35,9,10], kampfult [4,2,0,7,6,36,2,35,3, 0], kech
+  [4,5,0,17,3,205,5,30, 15,0], korred [5,6,1,22,1,900, 8,1,9,25], kraken
+  [5,20,0,70, 10,16900,30,75,3,0]. ONE REGTEST PATCH: the R807 live def walk
+  at the R227 anchor (the R806 HI walk pattern, no census marker), its
+  registry census a FLOOR 655 -> at least 661, every stat cell of the 6-row
+  JkStats grid cross-checked live plus the per-def prose markers (weakest of
+  the elemental humanoids, ochre jelly, sinewy mugger, forest fiends,
+  dance-loving, airy water) and the xpValue formula. Commit 11 files (seed
+  record, regtest, the header, the gap report, the 6 .lua, the spec), ~660
+  insertions. Delivery spec-r807: raw JSON canvas, 71969 bytes, landed md5
+  14b272b7e5368fa5c7b10f2893c0f0 0a (authored 4596068a9653ddb4cd
+  f38976deee1aa0, 71968 bytes). NEXT - R808: awaits Curtiss's call (the
+  natural next walk is the Letter L box or the next arc slice - the pin-time
+  walk decides; 21 open boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

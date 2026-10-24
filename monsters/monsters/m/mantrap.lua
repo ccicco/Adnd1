@@ -1,0 +1,36 @@
+-- Mantrap: promoted by the R808 MM2 letters LMN walk round
+-- from the MM2 print
+-- (spec tools/spec_r808.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Mantrap",
+  page = "83",
+  pages = "83",
+  source = "MM2",
+  race = "Mantrap",
+  hitDice = "4-9",
+  hitDiceNum = "4",
+  hitDiceBonus = "0",
+  avgHp = "14",
+  armorClass = "6",
+  numAttacks = "2-5",
+  damage = "See below",
+  xp = "275",
+  xpPerHp = "6",
+  xpValue = "359",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-2",
+  lairPct = "100",
+  treasure = "J-N (x5), Q",
+  move = "Nil",
+  size = "L (3' per hit die)",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "This insidious plant attracts prey by scent, entrapping and dissolving its victims in acidic secretions. During daylight hours it releases pollen continuously, with the resulting effect that all creatures within 60 feet must save vs. poison or become fascinated by the odor. Those fascinated will proceed to the body of the plant and will even voluntarily climb into 1 of the 2-5 leaf traps on the plant. Once entered, the leaf traps will close, firmly entrapping the victim. The acidic secretion therein will dissolve the victim quickly, inflicting a number of points damage per round equal to the victim's armor class (discounting dexterity bonuses, for a minimum of 1 point of damage per round). Items exposed to the acid must save once per turn against the effects; all metal receives a +2 bonus. The victims cannot be pulled free until the plant is dead. Nor can the fascination be dispelled until the odor sours 24 hours later or unless the plant is burned.",
+}
