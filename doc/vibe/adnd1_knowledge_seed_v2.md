@@ -20586,6 +20586,116 @@ when both halves land.
   letter-by-letter: A was the
   mechanics shakedown and the next
   scope is Curtiss's call).
+- R798 LANDED 2026-10-24: commit
+  7f4e33fbb9b5ee6582cc129e4403ab9aa524cc42
+  (census 720 -> 721, pushed
+  dca9400..7f4e33f), THE MM2 LETTERS
+  B AND C - the FIRST MULTI-LETTER
+  PASS of the MM2 arc (Curtiss's
+  call after the R797 shakedown: B
+  and C walk together in one round).
+  THE PIN-TIME WALK: thirty-seven
+  entries on pp. 12-27 - twenty-two
+  B (baku through buckawn) and
+  fifteen C (the cats through
+  cyclopskin); the bat, bee, beetle,
+  cat and centipede entries split
+  two or three ways, so FORTY-THREE
+  .lua defs ride the R791 data_files
+  extension, registry 491 -> 534.
+  Header rules/mm2bc.h, prefix mm2bc,
+  391 consts + 202 bools + 7 tables
+  (the 26x9 BStats and 17x9 CStats
+  grids, the barghest growth
+  brackets, the barkburr ladder, the
+  bloodthorn bands, the two cat lord
+  summon grids - 42 cols) = 635
+  inline. Gap flips: the Letter B and
+  Letter C boxes (8 closed, 29 open).
+  TWO REGTEST PATCHES: the R798 live
+  def walk at the R227 anchor (the
+  R782 site-block pattern, no census
+  marker) and the R797 walk
+  registry-census fix. SETTLED READS
+  (the method proven: capture
+  primary, book-internal tiebreak,
+  independent transcription
+  cross-check): the behemoth 1800 +
+  15/hp, the cloaker 6/hp (the
+  flat-6-HD boggart and slicer beetle
+  both print 6/hp), the bumblebee
+  queen 8+6 (the capture hyphen is a
+  plus misread), the cave moray roman
+  II, the domestic cat move 5
+  inches; the barghest XP ladder
+  print-confirmed against the web
+  transcription (1275+10 through
+  7300+18). FIRST ISSUE RED-NO-COMMIT,
+  then the repair landed: the battery
+  printed "R797 MM2 letter A live
+  defs: bad 1" plus the census
+  cascade wave (R100-R146,
+  R163-R175, R227-R229, R798 - every
+  label printing after the R797 walk,
+  including this round's own audit,
+  which never printed at all). ROOT
+  CAUSE: the R797 walk pins the LIVE
+  registry census ==
+  mm2aRegistryAfter() (491), and this
+  round's 43 defs grew the registry
+  to 534 - the R797 cascade lesson
+  held exactly (fix the bad, never
+  the census). THE FLOOR LESSON: a
+  live registry census in a landed
+  walk must be a FLOOR (bad only
+  below the landing count), never an
+  exact == - the arc grows the
+  registry every letter round; the
+  exact census stays pinned
+  pin-vs-pin in the header consts and
+  the audit mirror. The repair spec
+  carries the second regtest patch
+  flipping the R797 line != -> < and
+  re-authored the R798 walk's own
+  registry check in the same floor
+  form (the identical landmine, one
+  round early). REPAIR FLOW: reset
+  the tree (git checkout the three
+  tracked files, rm the header and
+  the 43 .lua - data_files
+  idempotency is by existence), re-
+  save the fixed canvas body, gate
+  the new md5, one ./rn. LOCAL
+  VERIFICATION (the authoring
+  environment rebuilt from GitHub at
+  dca9400; the repo rverify now
+  NATIVELY handles data_files):
+  restore + double-run 51/0 -> 0/51,
+  healthy base bad 0, BATTERY 1113
+  mutants, 0 missed; a full loader-
+  semantics sim of all 534 defs ran
+  both walks cell for cell (234 B +
+  153 C cells, planes, floors): bad 0,
+  with ZERO bare-expression fields
+  anywhere (the afanc lesson held -
+  every non-numeric field a quoted
+  string). Repair run GREEN first
+  pass: loaded 534, errors 0; xp
+  audit 534/0; R797 live defs bad 0;
+  R798 live defs bad 0; AUDIT CENSUS
+  721 each exactly once, all bad 0;
+  build 0 warnings. Commit 48 files,
+  13245 insertions, 3 deletions.
+  Delivery: raw JSON canvas, first
+  issue 262500 bytes md5
+  06019b2bf0a4c250789ec57275f79f8d;
+  repair 263490 bytes md5
+  acc2550951abfe764a378f6b91a8e3da.
+  NEXT - R799: awaits Curtiss's call
+  (the MM2 arc runs on - 29 open
+  boxes; the multi-letter mechanics
+  proven, any slicing of the boxes
+  is on the table).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
