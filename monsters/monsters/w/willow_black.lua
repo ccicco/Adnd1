@@ -1,0 +1,36 @@
+-- Willow, Black: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Willow, Black",
+  page = "126",
+  pages = "126",
+  source = "MM2",
+  race = "Willow",
+  hitDice = "12-19",
+  hitDiceNum = "12",
+  hitDiceBonus = "0",
+  avgHp = "42",
+  armorClass = 2,
+  numAttacks = "7-12 (within 30' of trunk)",
+  damage = "1-4 each",
+  xp = "2400",
+  xpPerHp = "20",
+  xpValue = 3240,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "100",
+  treasure = "See below",
+  move = "1/4\"",
+  size = "L (6'-9' diameter trunk)",
+  intelligence = "Low to very",
+  alignment = "Neutral (evil)",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The black willow is a mobile, sentient tree of evil disposition. Although it inhabits areas where normal willows grow, it gets only a portion of its nourishment from sun, air, water, and earth. The monster is carnivorous, relishing elves, gnomes, and humans particularly. It is 90% unlikely that a creature will recognize a black willow as such, for they can alter their trunks and limbs to appear as normal trees of the various willow sorts. Sometimes they will have smooth trunks and broad, inviting limbs; other times they will show safe-looking trunk cavities at base or high on the upper trunk. Of course, treants can spot black willow instantly, but even druids cannot do so without magical aid (such as locate plants, for example).\n\nTreasure of any sort is sometimes found buried beneath this tree monster along with bones and other immediately indigestible matter. Of course, this assumes victims have treasure which weak acid could not digest. It also assumes the black willow has stayed in a locale for a period of weeks.\n\nNormal attack is with lashing, whip-like branches, but there are 2 special attack forms, one of which is generally employed earlier. If a creature has climbed out on a safe-looking limb, the black willow will generate an aura of drowsiness within a 20-foot radius, making tired creatures fall into natural sleep. No saving throw is possible. A hole will open underneath, and 1 or more victims will then be taken into the hollow limb. The limb will then tilt to slide them into the trunk cavity. The trunk's safe-looking openings are also used to close and trap the victim(s) in the digestive cavity of the trunk. The stomach is coated with sticky, nonflammable sap. Digestive sap then oozes up from the roots, filling the cavity at the rate of 1 foot per 10 rounds until the entire 8-foot cavity is filled. The juice is acidic and inflicts 1-4 points of damage per round until death occurs. Digestion is indicated by -12 or more hit points, and any resurrection is thereafter impossible. Creatures trapped inside can employ only short, sharp weapons because of the confined space. Maximum normal damage is 1 point per round; magical and strength bonuses apply to weapon damage. Rescue, if any, must usually come from outside. A black willow regenerates at the rate of 1 point per turn.",
+}

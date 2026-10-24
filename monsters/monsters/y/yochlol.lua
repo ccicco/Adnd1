@@ -1,0 +1,36 @@
+-- Yochlol: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Yochlol",
+  page = "129",
+  pages = "129",
+  source = "MM2",
+  race = "Yochlol",
+  hitDice = "6 (1d10)",
+  hitDiceNum = "6",
+  hitDiceBonus = "0",
+  avgHp = "21",
+  armorClass = -10,
+  numAttacks = "See below",
+  damage = "See below",
+  xp = "1275",
+  xpPerHp = "10",
+  xpValue = 1485,
+  xpSource = "mm2_print",
+  frequency = "Common (very rare)",
+  noAppearing = "1-4 (1)",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "12\"",
+  size = "M",
+  intelligence = "High",
+  alignment = "Chaotic evil",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "50%",
+  psionic = "133",
+  attackDefenseModes = "C,D/F,H",
+  text = "The yochlol normally have no discernible form at all, being misty columns of gas which materialize pseudopods as needed. They are noticeable only by their vile odors and a hazy smudge in the air. While common in the Abyss, they are very rare elsewhere. If they do not take mates, yochlol have an effective armor class of -10. Yochlol are a type of demon and are affected by such things as affect demons.\n\nIt is not possible for these handmaidens to remain immaterial and attack physically, although when gaseous their touch gives an effect equal to a stinking cloud spell. A yochlol must materialize (thus becoming armor class 10) to do physical damage. The form taken can be an amorphous column with 8 pseudopods, the form of a giant spider, or that of a beautiful human or elf. In humanoid form, a yochlol can use its psionic abilities (plus other abilities only available in this form, such as weapon attacks) as if it were a 6th-level fighter. In spider form, it conforms in all but armor class (10) and psionics to the specifications of a giant spider. In its natural amorphous form, it can use psionics or attack with its 8 pseudopods, 1 blow from which does 5-8 points of damage, as the strength of a yochlol is effectively equal to 18/50.\n\nSeveral special effects apply to a yochlol in gaseous form. In this condition, only a +1 or better weapon can hit it. A stinking cloud spell will heal it for 3-12 points. A gust of wind spell will cause 6-36 points of damage, unless the yochlol's magic resistance prevents the spell from affecting it. A wind walk spell will destroy one yochlol (checking its magic resistance is not necessary); if the cleric would normally be able to take 2 other persons into the spell effect, then 2 yochlol may be destroyed. In either case, however, the cleric must touch the victims for the spell to take effect.\n\nA yochlol can change from one form to another within a single round. Thus, a gaseous yochlol can materialize during the same round as its stinking cloud attack, and attack again (in a manner applicable to its new form) at the end of the same round. Similarly, a yochlol in its amorphous form could use multiple attacks, then turn to spider form at the end of the round so as to climb into webs for its next round's escape.\n\nPsionic disciplines possible to yochlol are cell adjustment (only in humanoid form), domination, aura alteration, and probability travel. When in humanoid form, a yochlol is able to use with equal ease, weapons and magic items normally usable by clerics and fighters. Armor may likewise be used, but doing so will force the yochlol to become gaseous before changing to spider or amorphous form, as the armor worn would cause bodily harm to either of these forms.",
+}

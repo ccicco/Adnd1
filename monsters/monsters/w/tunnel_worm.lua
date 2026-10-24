@@ -1,0 +1,36 @@
+-- Worm, Tunnel: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Worm, Tunnel",
+  page = "128",
+  pages = "128",
+  source = "MM2",
+  race = "Worm",
+  hitDice = "9+3",
+  hitDiceNum = "9",
+  hitDiceBonus = "3",
+  avgHp = "34",
+  armorClass = 4,
+  numAttacks = "1 Bite",
+  damage = "2-16",
+  xp = "1350",
+  xpPerHp = "14",
+  xpValue = 1826,
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-6",
+  lairPct = "76",
+  treasure = "M, N, Q",
+  move = "6\"",
+  size = "L (30' long)",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Lunge at +2 to hit",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "This giant cousin of the centipede is an aggressive predator and scavenger. It lives in burrows which honeycomb the walls and ceiling of caves and dungeons. The tunnel worm feeds on and lays its eggs on carrion and will drag corpses back to its lair. It lies in wait near the hidden entrance to its burrow for prey to pass.\n\nA tunnel worm attacks by lunging out of its tunnel and seizing prey with its mandibles at +2 to hit. If it hits, no damage is scored until its teeth have torn through the victim's armor. The tunnel worm takes 1 round to chew through leather, 2 rounds for chain mail, and 3 rounds for plate mail. Once the armor is bitten through, the worm will automatically bite for 2-16 points of damage per round. If the tunnel worm takes 15 or more points of fire damage, or if it loses more than 60% of its hit points, it will release its victim and retreat into its burrow, not attacking again unless cornered.\n\nTunnel worm burrows are 2 feet in diameter. There may be treasure in its nest which was dragged in with a corpse.",
+}

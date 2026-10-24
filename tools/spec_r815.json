@@ -1,0 +1,2728 @@
+{
+ "round": 815,
+ "prefix": "mm2wxyz",
+ "header_file": "rules/mm2wxyz.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 737,
+ "title": "the MM2 letters WXYZ walk - the weasel to zygom turns",
+ "audit_label": "R815 MM2 letters WXYZ walk audit",
+ "audit_comment": "THE MM2 LETTERS WXYZ WALK - the weasel p. 125, the webbird and the wemic p. 125, the black willow p. 126, the wolf-in-sheep's-clothing and the wolfwere p. 127, the tenebrous worm and the tunnel worm pp. 127-128 (the WORM family head, the two sub-entries), the xag-ya and xeg-yi p. 128, the xaren p. 129, the yeth hound and the yochlol (Handmaiden of Lolth) p. 129, the yuan ti p. 130, the juju zombie p. 130 and the monster zombie p. 131 (the two ZOMBIE heads), the zorbo p. 131 and the zygom pp. 131-132; the WXYZ-FLIP round: the Letter W, X, Y and Z gap boxes flip to closed and the Monsters from A-Z parent box flips to closed - 32 closed 5 open, the A-Z section complete. SEVENTEEN .lua defs ride the R791 data_files extension, registry 792 -> 809; SIXTEEN entry heads carrying SEVENTEEN stat blocks (the WORM family head the one two-def head), no prior-owned heads, no doctrine-only heads. THE SETTLED READS (the capture the sole voice this round - the transcription not consulted): the weasel 1/4 and the webbird 1/2 the half-dice hdNum-0 reads (the atomie precedent, avgHp 2 each); the black willow 7-12 attacks the loader 10 clamp (the land urchin precedent); the yochlol AC -10 the UNQUOTED number read over its -10 or 10 cell (the tarrasque precedent); the xaren xp row 55 + 8/hp with NO level numeral (XpLevel 0); the yuan ti Variable the by_level xp source with explicit unquoted zeros (the walk index-12 exception); the monster zombie the capture-lossy nil block (only the AC 6 and the 4-16 damage evidenced, hitDiceNum 0 the shade precedent, xp 0 the derro sentinel); the juju zombie +7 or better specialDefenses cell verbatim; the yeth hound 100% (daytime only) the bare-numeral lair read; the wolfwere, xag-ya, yeth hound, yochlol, yuan ti and zorbo percent MR cells; every WORM, willow and zygom move cell the first-int read.",
+ "include_comment": "the MM2 letters WXYZ walk - the weasel to zygom turns",
+ "include_after": "#include \"rules/mm2tuv.h\"  // R814: the MM2 letters TUV walk - the tarrasque to vulture turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R814 LANDED 2026-10-24: commit",
+ "banner": {
+  "title": "THE MM2 LETTERS WXYZ WALK - THE WEASEL TO ZYGOM TURNS (pp. 125-132: the weasel, webbird and wemic p. 125, the black willow p. 126, the wolf-in-sheep's-clothing and wolfwere p. 127, the tenebrous worm and tunnel worm pp. 127-128 (the WORM family head), the xag-ya and xeg-yi and xaren pp. 128-129, the yeth hound, yochlol and yuan ti pp. 129-130, the juju zombie and monster zombie pp. 130-131, the zorbo and zygom pp. 131-132), promoted to the live registry; the WXYZ-FLIP round, the Letter W, X, Y and Z gap boxes and the Monsters from A-Z parent box flip to closed - the A-Z section complete",
+  "provenance": "Round twenty of the MM2 arc, the NINTH letter walk (Curtiss Go call on the landed letters TUV walk; the letters WXYZ pin-time walk found SIXTEEN entry heads carrying SEVENTEEN stat blocks - the WORM family head the one two-def head, no prior-owned heads, no doctrine-only heads)",
+  "sentinel": "The pin headers stay the print-fidelity record; the seventeen .lua defs ride the R791 data_files extension in the MM1 registry schema (the defensive coercers load the verbatim print cells, the WXYZStats grid carries the loader values)"
+ },
+ "tables": [
+  {
+   "name": "the weasel to zygom stat grid",
+   "tag": "WXYZStats",
+   "count": "mm2wxyzWXYZStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE WXYZ-GRID: the 17-row WXYZStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the seventeen promoted letters WXYZ stat blocks, in print order - the weasel p. 125 through the zygom pp. 131-132)",
+   "cols": [
+    "mm2wxyzWXYZStatAc",
+    "mm2wxyzWXYZStatHd",
+    "mm2wxyzWXYZStatHdBonus",
+    "mm2wxyzWXYZStatAvgHp",
+    "mm2wxyzWXYZStatAttacks",
+    "mm2wxyzWXYZStatXp",
+    "mm2wxyzWXYZStatXpHp",
+    "mm2wxyzWXYZStatLairPct",
+    "mm2wxyzWXYZStatMove",
+    "mm2wxyzWXYZStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the weasel 6, webbird 8, black willow 2, wolfwere 3, tenebrous worm 1, tunnel worm 4, xag-ya 0, xaren 1, yeth hound 0, juju and monster zombie 6 and zygom 8 the bare-numeral reads; the wemic 6 (5), the wolfISC 3/5/7 the root-tentacle read, the zorbo 10 (See below) and the yuan ti 4/0 the first-int reads; the yochlol -10 the UNQUOTED number read over the -10 or 10 cell - the tarrasque precedent)",
+    "The hit dice num cells (the weasel 1/4 and the webbird 1/2 the half-dice hdNum-0 reads - the atomie precedent; the black willow 12-19, the xag-ya 5-8 and the yuan ti 6-9 the low-end reads; the monster zombie the capture-lossy nil block 0 - the shade precedent)",
+    "The hit dice bonus cells (the wemic 5+8, the wolfwere 5+1, the tunnel worm 9+3, the xaren 5+5, the yeth hound 3+3 and the juju zombie 3+12)",
+    "The avgHp cells (the floor(3.5 x hd + bonus) formula; the weasel and webbird 2 - the atomie half-dice precedent; the monster zombie the nil block 0)",
+    "The attack cells (the loader semantics: the black willow 7-12 the 10 clamp - the land urchin precedent; the wolfISC 1-3 the 3 max read; the wolfwere 1 or 2 and the zorbo 2 claws the max reads; the yochlol See below and the zygom By host type the 1 floor; the monster zombie the omitted-field 1 floor)",
+    "The xp base cells (the xaren 55 + 8/hp the no-level-numeral row; the yuan ti Variable and the monster zombie the 0 reads - the yuan ti by the by_level source, the monster zombie the derro sentinel)",
+    "The xp per hp cells (the weasel and webbird 1/hp; the wemic 7, the black willow 20, the wolfISC 14, the wolfwere 6, the tenebrous worm 20, the tunnel worm 14, the xag-ya 10, the xaren 8, the yeth hound 4, the yochlol 10, the juju zombie 4, the zorbo 5 and the zygom 4 per hp)",
+    "The lair cells (the black willow and the yeth hound the 100 reads - the yeth 100% (daytime only) the bare-numeral read; the tunnel worm 76, the xaren and yuan ti 70, the wemic and zygom 50, the wolfwere 35, the zorbo 30; every Nil cell 0)",
+    "The move cells (the first-int reads: the black willow 1/4 the 1 read, the yeth hound 15 over 15/27, the yuan ti 12 or 9 the 12 read, the zorbo 15/9, the webbird 3/18 and the zygom 1 (or host); the monster zombie the omitted-field 0)",
+    "The magic resistance cells (the wolfwere and yeth hound 10%, the xag-ya 15%, the yuan ti and zorbo 20% and the yochlol 50% the percent reads; the juju zombie and zygom See below and every Standard cell 0)"
+   ],
+   "data": [
+    [
+     6,
+     0,
+     0,
+     2,
+     1,
+     2,
+     1,
+     0,
+     15,
+     0
+    ],
+    [
+     8,
+     0,
+     0,
+     2,
+     1,
+     7,
+     1,
+     0,
+     3,
+     0
+    ],
+    [
+     6,
+     5,
+     8,
+     25,
+     2,
+     200,
+     7,
+     50,
+     12,
+     0
+    ],
+    [
+     2,
+     12,
+     0,
+     42,
+     10,
+     2400,
+     20,
+     100,
+     1,
+     0
+    ],
+    [
+     3,
+     9,
+     0,
+     31,
+     3,
+     900,
+     14,
+     0,
+     1,
+     0
+    ],
+    [
+     3,
+     5,
+     1,
+     18,
+     2,
+     550,
+     6,
+     35,
+     15,
+     10
+    ],
+    [
+     1,
+     10,
+     0,
+     35,
+     1,
+     2400,
+     20,
+     0,
+     1,
+     0
+    ],
+    [
+     4,
+     9,
+     3,
+     34,
+     1,
+     1350,
+     14,
+     76,
+     6,
+     0
+    ],
+    [
+     0,
+     5,
+     0,
+     17,
+     1,
+     1100,
+     10,
+     0,
+     6,
+     15
+    ],
+    [
+     1,
+     5,
+     5,
+     22,
+     4,
+     55,
+     8,
+     70,
+     9,
+     0
+    ],
+    [
+     0,
+     3,
+     3,
+     13,
+     1,
+     235,
+     4,
+     100,
+     15,
+     10
+    ],
+    [
+     -10,
+     6,
+     0,
+     21,
+     1,
+     1275,
+     10,
+     0,
+     12,
+     50
+    ],
+    [
+     4,
+     6,
+     0,
+     21,
+     2,
+     0,
+     0,
+     70,
+     12,
+     20
+    ],
+    [
+     6,
+     3,
+     12,
+     22,
+     1,
+     110,
+     4,
+     0,
+     9,
+     0
+    ],
+    [
+     6,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     4,
+     2,
+     16,
+     2,
+     280,
+     5,
+     30,
+     15,
+     20
+    ],
+    [
+     8,
+     3,
+     0,
+     10,
+     1,
+     85,
+     4,
+     50,
+     1,
+     0
+    ]
+   ]
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letters WXYZ walk round pins (the R815 census)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzLetterWXYZHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWXYZStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzPriorOwnedEntries"
+   }
+  ],
+  "the weasel pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzWeaselXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWeaselXpLevel"
+   }
+  ],
+  "the webbird pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzWebbirdXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWebbirdXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWebbirdWebMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWebbirdWebMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWebbirdEggsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWebbirdEggsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWebbirdGrubHatchMinTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWebbirdGrubHatchMaxTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzWebbirdShunsFlame"
+   }
+  ],
+  "the wemic pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicLeapUpFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicLeapForwardFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicMaleShieldAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicFemaleAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicFemaleToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicPrideMalesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicPrideMalesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicPrideFemalesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicPrideFemalesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicPrideYoungMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicPrideYoungMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicChiefAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicChiefHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicChiefHdBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicKingAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicKingHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicWitchDoctorChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicWitchDoctorCleric"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWemicWitchDoctorMu"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzWemicSurprisedOnlyOnOne"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzWemicYoungNoncombative"
+   }
+  ],
+  "the black willow pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowDetectFailPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowDrowsinessRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowCavityDepthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowSapFillRoundsPerFoot"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowSapDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowSapDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowDigestionFloor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowRegenPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWillowConfinedMaxDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzWillowNoSaveVsDrowsiness"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzWillowResurrectionImpossible"
+   }
+  ],
+  "the wolf-in-sheep's-clothing pins (the R815 WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscRootTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscRootHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscRootHpMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscEyestalkHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscEyestalkHpMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscRegenMinWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscRegenMaxWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscLureRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscSurprisePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscBreakStrength"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscBaseBreakPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfIscBreakPctPerPoint"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzWolfIscExceptionalStrengthOnly"
+   }
+  ],
+  "the wolfwere pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfwereXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfwereXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfwerePackChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfwerePackWorgPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfwereLethargyMinRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfwereLethargyMaxRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfwereBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzWolfwereBiteMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzWolfwereIronOrMagicToHit"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzWolfwereShunsWolvesbane"
+   }
+  ],
+  "the tenebrous worm pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousBristleDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousPoisonSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousNeutralizeMinRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousNeutralizeMaxRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousHeadContactReductionPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousMandibleGpMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTenebrousMandibleGpMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzTenebrousAcidBite"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzTenebrousBristleParalysis"
+   }
+  ],
+  "the tunnel worm pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelLungeBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelLeatherRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelChainRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelPlateRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelRetreatFireDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelRetreatHpPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzTunnelBurrowDiameterFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzTunnelDragsCorpsesToLair"
+   }
+  ],
+  "the xag-ya and xeg-yi pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaBoltRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaDeathBlastDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaDeathBlastDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaDeathBlastRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaMeetBlastRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaMeetBlastMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaMeetBlastMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaMetalDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaMetalDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXagYaGuardianRadiusInches"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzXagYaMagicWeaponOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzXagYaShieldRepulses"
+   }
+  ],
+  "the xaren pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenClawDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenClawDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenBiteDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenBiteDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenOreSmellFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenMagicSmellFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenMagicMetalHpCap"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenMealPoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenMealPoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenAttackIfMagicWithheldPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenAttackIfMetalWithheldPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenWeaponBiteChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenRockMoveInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzXarenBurrowInches"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzXarenFireAndColdImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzXarenBluntFullDamage"
+   }
+  ],
+  "the yeth hound pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethBayingRangeMiles"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethPanicRadiusInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethPackMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethPackMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethPlusDamagePerPlus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYethSilverDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzYethSilverOrMagicToHit"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzYethFlies"
+   }
+  ],
+  "the yochlol pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolGaseousAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolMaterializedAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolPseudopods"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolPseudopodDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolPseudopodDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolStinkingHealMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolStinkingHealMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolGustOfWindDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolGustOfWindDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolFighterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolStrength"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYochlolStrengthPercent"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzYochlolDemonType"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzYochlolWindWalkDestroys"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzYochlolGaseousPlusOneToHit"
+   }
+  ],
+  "the yuan ti pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiPurebloodHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiHalfbreedHdMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiHalfbreedHdMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiAbominationHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiPurebloodPassPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiSnakeHeadBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiSnakeHeadBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiSnakeArmBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiSnakeArmBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiTailConstrictMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiTailConstrictMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiHumanMoveInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiSnakeMoveInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiDarknessRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzYuanTiSnakePartAc"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzYuanTiDemonWorshippers"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzYuanTiSpeaksWithSnakes"
+   }
+  ],
+  "the juju zombie pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieJujuXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieJujuXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieJujuDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieJujuDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieJujuClimbAsThiefLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieJujuAttacksAsHd"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZombieJujuPlusOneToHit"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZombieJujuPiercingHalfDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZombieJujuMindImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZombieJujuFireHalfEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZombieJujuUnderwaterCapable"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZombieJujuTurnedAsSpectre"
+   }
+  ],
+  "the monster zombie pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieMonsterXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieMonsterXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieMonsterDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieMonsterDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieMonsterHolyWaterMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZombieMonsterHolyWaterMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZombieMonsterBluntHalfDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZombieMonsterTurnedAsGhast"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZombieMonsterStrikesLast"
+   }
+  ],
+  "the zorbo pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboEarthAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboWoodAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboMetalAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboStoneAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboBaseAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboAbsorbDurationRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboClawDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZorboClawDamageMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZorboAbsorbsItemToDust"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZorboNeverWorseAc"
+   }
+  ],
+  "the zygom pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "const",
+    "name": "mm2wxyzZygomXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZygomXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZygomColonyMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZygomColonyMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZygomGlueChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZygomGlueDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZygomGlueDaysMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZygomInfestationWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2wxyzZygomInfestationWeeksMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZygomMindMagicImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2wxyzZygomCureDiseaseRemoves"
+   }
+  ],
+  "the WXYZStats grid pins (the R815 MM2 letters WXYZ walk)": [
+   {
+    "kind": "table",
+    "name": "the weasel to zygom stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the Letter W, X, Y and Z gap boxes plus the A-Z parent flip (the census walk)",
+   "expr": "m['mm2wxyzRegistryAfter']() - m['mm2wxyzRegistryBefore']() != m['mm2wxyzDefCount']() or m['mm2wxyzDefCount']() != 17 or m['mm2wxyzEntryCount']() != 16 or m['mm2wxyzStatBlockHeadings']() != 17 or m['mm2wxyzDoctrineHeads']() != 0 or m['mm2wxyzLetterWXYZHeadings']() != 16 or m['mm2wxyzWXYZStatRows']() != 17 or m['mm2wxyzGapClosed']() != 32 or m['mm2wxyzGapOpen']() != 5 or m['mm2wxyzPriorOwnedEntries']() != 0"
+  },
+  {
+   "note": "the weasel grid row (p. 125 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](0) != 6 or m['mm2wxyzWXYZStatHd'](0) != 0 or m['mm2wxyzWXYZStatHdBonus'](0) != 0 or m['mm2wxyzWXYZStatAvgHp'](0) != 2 or m['mm2wxyzWXYZStatAttacks'](0) != 1 or m['mm2wxyzWXYZStatXp'](0) != 2 or m['mm2wxyzWXYZStatXpHp'](0) != 1 or m['mm2wxyzWXYZStatLairPct'](0) != 0 or m['mm2wxyzWXYZStatMove'](0) != 15 or m['mm2wxyzWXYZStatMr'](0) != 0 or m['mm2wxyzWeaselXpValue']() != 4 or m['mm2wxyzWeaselXpLevel']() != 1"
+  },
+  {
+   "note": "the webbird grid row (p. 125 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](1) != 8 or m['mm2wxyzWXYZStatHd'](1) != 0 or m['mm2wxyzWXYZStatHdBonus'](1) != 0 or m['mm2wxyzWXYZStatAvgHp'](1) != 2 or m['mm2wxyzWXYZStatAttacks'](1) != 1 or m['mm2wxyzWXYZStatXp'](1) != 7 or m['mm2wxyzWXYZStatXpHp'](1) != 1 or m['mm2wxyzWXYZStatLairPct'](1) != 0 or m['mm2wxyzWXYZStatMove'](1) != 3 or m['mm2wxyzWXYZStatMr'](1) != 0 or m['mm2wxyzWebbirdXpValue']() != 9 or m['mm2wxyzWebbirdXpLevel']() != 1"
+  },
+  {
+   "note": "the wemic grid row (p. 125 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](2) != 6 or m['mm2wxyzWXYZStatHd'](2) != 5 or m['mm2wxyzWXYZStatHdBonus'](2) != 8 or m['mm2wxyzWXYZStatAvgHp'](2) != 25 or m['mm2wxyzWXYZStatAttacks'](2) != 2 or m['mm2wxyzWXYZStatXp'](2) != 200 or m['mm2wxyzWXYZStatXpHp'](2) != 7 or m['mm2wxyzWXYZStatLairPct'](2) != 50 or m['mm2wxyzWXYZStatMove'](2) != 12 or m['mm2wxyzWXYZStatMr'](2) != 0 or m['mm2wxyzWemicXpValue']() != 375 or m['mm2wxyzWemicXpLevel']() != 4"
+  },
+  {
+   "note": "the black willow grid row (p. 126 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](3) != 2 or m['mm2wxyzWXYZStatHd'](3) != 12 or m['mm2wxyzWXYZStatHdBonus'](3) != 0 or m['mm2wxyzWXYZStatAvgHp'](3) != 42 or m['mm2wxyzWXYZStatAttacks'](3) != 10 or m['mm2wxyzWXYZStatXp'](3) != 2400 or m['mm2wxyzWXYZStatXpHp'](3) != 20 or m['mm2wxyzWXYZStatLairPct'](3) != 100 or m['mm2wxyzWXYZStatMove'](3) != 1 or m['mm2wxyzWXYZStatMr'](3) != 0 or m['mm2wxyzWillowXpValue']() != 3240 or m['mm2wxyzWillowXpLevel']() != 8"
+  },
+  {
+   "note": "the wolf-in-sheep's-clothing grid row (p. 127 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](4) != 3 or m['mm2wxyzWXYZStatHd'](4) != 9 or m['mm2wxyzWXYZStatHdBonus'](4) != 0 or m['mm2wxyzWXYZStatAvgHp'](4) != 31 or m['mm2wxyzWXYZStatAttacks'](4) != 3 or m['mm2wxyzWXYZStatXp'](4) != 900 or m['mm2wxyzWXYZStatXpHp'](4) != 14 or m['mm2wxyzWXYZStatLairPct'](4) != 0 or m['mm2wxyzWXYZStatMove'](4) != 1 or m['mm2wxyzWXYZStatMr'](4) != 0 or m['mm2wxyzWolfIscXpValue']() != 1334 or m['mm2wxyzWolfIscXpLevel']() != 6"
+  },
+  {
+   "note": "the wolfwere grid row (p. 127 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](5) != 3 or m['mm2wxyzWXYZStatHd'](5) != 5 or m['mm2wxyzWXYZStatHdBonus'](5) != 1 or m['mm2wxyzWXYZStatAvgHp'](5) != 18 or m['mm2wxyzWXYZStatAttacks'](5) != 2 or m['mm2wxyzWXYZStatXp'](5) != 550 or m['mm2wxyzWXYZStatXpHp'](5) != 6 or m['mm2wxyzWXYZStatLairPct'](5) != 35 or m['mm2wxyzWXYZStatMove'](5) != 15 or m['mm2wxyzWXYZStatMr'](5) != 10 or m['mm2wxyzWolfwereXpValue']() != 658 or m['mm2wxyzWolfwereXpLevel']() != 6"
+  },
+  {
+   "note": "the tenebrous worm grid row (p. 127 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](6) != 1 or m['mm2wxyzWXYZStatHd'](6) != 10 or m['mm2wxyzWXYZStatHdBonus'](6) != 0 or m['mm2wxyzWXYZStatAvgHp'](6) != 35 or m['mm2wxyzWXYZStatAttacks'](6) != 1 or m['mm2wxyzWXYZStatXp'](6) != 2400 or m['mm2wxyzWXYZStatXpHp'](6) != 20 or m['mm2wxyzWXYZStatLairPct'](6) != 0 or m['mm2wxyzWXYZStatMove'](6) != 1 or m['mm2wxyzWXYZStatMr'](6) != 0 or m['mm2wxyzTenebrousXpValue']() != 3100 or m['mm2wxyzTenebrousXpLevel']() != 7"
+  },
+  {
+   "note": "the tunnel worm grid row (p. 128 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](7) != 4 or m['mm2wxyzWXYZStatHd'](7) != 9 or m['mm2wxyzWXYZStatHdBonus'](7) != 3 or m['mm2wxyzWXYZStatAvgHp'](7) != 34 or m['mm2wxyzWXYZStatAttacks'](7) != 1 or m['mm2wxyzWXYZStatXp'](7) != 1350 or m['mm2wxyzWXYZStatXpHp'](7) != 14 or m['mm2wxyzWXYZStatLairPct'](7) != 76 or m['mm2wxyzWXYZStatMove'](7) != 6 or m['mm2wxyzWXYZStatMr'](7) != 0 or m['mm2wxyzTunnelXpValue']() != 1826 or m['mm2wxyzTunnelXpLevel']() != 7"
+  },
+  {
+   "note": "the xag-ya and xeg-yi grid row (p. 128 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](8) != 0 or m['mm2wxyzWXYZStatHd'](8) != 5 or m['mm2wxyzWXYZStatHdBonus'](8) != 0 or m['mm2wxyzWXYZStatAvgHp'](8) != 17 or m['mm2wxyzWXYZStatAttacks'](8) != 1 or m['mm2wxyzWXYZStatXp'](8) != 1100 or m['mm2wxyzWXYZStatXpHp'](8) != 10 or m['mm2wxyzWXYZStatLairPct'](8) != 0 or m['mm2wxyzWXYZStatMove'](8) != 6 or m['mm2wxyzWXYZStatMr'](8) != 15 or m['mm2wxyzXagYaXpValue']() != 1270 or m['mm2wxyzXagYaXpLevel']() != 8"
+  },
+  {
+   "note": "the xaren grid row (p. 129 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](9) != 1 or m['mm2wxyzWXYZStatHd'](9) != 5 or m['mm2wxyzWXYZStatHdBonus'](9) != 5 or m['mm2wxyzWXYZStatAvgHp'](9) != 22 or m['mm2wxyzWXYZStatAttacks'](9) != 4 or m['mm2wxyzWXYZStatXp'](9) != 55 or m['mm2wxyzWXYZStatXpHp'](9) != 8 or m['mm2wxyzWXYZStatLairPct'](9) != 70 or m['mm2wxyzWXYZStatMove'](9) != 9 or m['mm2wxyzWXYZStatMr'](9) != 0 or m['mm2wxyzXarenXpValue']() != 231 or m['mm2wxyzXarenXpLevel']() != 0"
+  },
+  {
+   "note": "the yeth hound grid row (p. 129 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](10) != 0 or m['mm2wxyzWXYZStatHd'](10) != 3 or m['mm2wxyzWXYZStatHdBonus'](10) != 3 or m['mm2wxyzWXYZStatAvgHp'](10) != 13 or m['mm2wxyzWXYZStatAttacks'](10) != 1 or m['mm2wxyzWXYZStatXp'](10) != 235 or m['mm2wxyzWXYZStatXpHp'](10) != 4 or m['mm2wxyzWXYZStatLairPct'](10) != 100 or m['mm2wxyzWXYZStatMove'](10) != 15 or m['mm2wxyzWXYZStatMr'](10) != 10 or m['mm2wxyzYethXpValue']() != 287 or m['mm2wxyzYethXpLevel']() != 4"
+  },
+  {
+   "note": "the yochlol grid row (p. 129 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](11) != -10 or m['mm2wxyzWXYZStatHd'](11) != 6 or m['mm2wxyzWXYZStatHdBonus'](11) != 0 or m['mm2wxyzWXYZStatAvgHp'](11) != 21 or m['mm2wxyzWXYZStatAttacks'](11) != 1 or m['mm2wxyzWXYZStatXp'](11) != 1275 or m['mm2wxyzWXYZStatXpHp'](11) != 10 or m['mm2wxyzWXYZStatLairPct'](11) != 0 or m['mm2wxyzWXYZStatMove'](11) != 12 or m['mm2wxyzWXYZStatMr'](11) != 50 or m['mm2wxyzYochlolXpValue']() != 1485 or m['mm2wxyzYochlolXpLevel']() != 7"
+  },
+  {
+   "note": "the yuan ti grid row (p. 130 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](12) != 4 or m['mm2wxyzWXYZStatHd'](12) != 6 or m['mm2wxyzWXYZStatHdBonus'](12) != 0 or m['mm2wxyzWXYZStatAvgHp'](12) != 21 or m['mm2wxyzWXYZStatAttacks'](12) != 2 or m['mm2wxyzWXYZStatXp'](12) != 0 or m['mm2wxyzWXYZStatXpHp'](12) != 0 or m['mm2wxyzWXYZStatLairPct'](12) != 70 or m['mm2wxyzWXYZStatMove'](12) != 12 or m['mm2wxyzWXYZStatMr'](12) != 20 or m['mm2wxyzYuanTiXpValue']() != 0 or m['mm2wxyzYuanTiXpLevel']() != 0"
+  },
+  {
+   "note": "the juju zombie grid row (p. 130 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](13) != 6 or m['mm2wxyzWXYZStatHd'](13) != 3 or m['mm2wxyzWXYZStatHdBonus'](13) != 12 or m['mm2wxyzWXYZStatAvgHp'](13) != 22 or m['mm2wxyzWXYZStatAttacks'](13) != 1 or m['mm2wxyzWXYZStatXp'](13) != 110 or m['mm2wxyzWXYZStatXpHp'](13) != 4 or m['mm2wxyzWXYZStatLairPct'](13) != 0 or m['mm2wxyzWXYZStatMove'](13) != 9 or m['mm2wxyzWXYZStatMr'](13) != 0 or m['mm2wxyzZombieJujuXpValue']() != 198 or m['mm2wxyzZombieJujuXpLevel']() != 3"
+  },
+  {
+   "note": "the monster zombie grid row (p. 131 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](14) != 6 or m['mm2wxyzWXYZStatHd'](14) != 0 or m['mm2wxyzWXYZStatHdBonus'](14) != 0 or m['mm2wxyzWXYZStatAvgHp'](14) != 0 or m['mm2wxyzWXYZStatAttacks'](14) != 1 or m['mm2wxyzWXYZStatXp'](14) != 0 or m['mm2wxyzWXYZStatXpHp'](14) != 0 or m['mm2wxyzWXYZStatLairPct'](14) != 0 or m['mm2wxyzWXYZStatMove'](14) != 0 or m['mm2wxyzWXYZStatMr'](14) != 0 or m['mm2wxyzZombieMonsterXpValue']() != 0 or m['mm2wxyzZombieMonsterXpLevel']() != 0"
+  },
+  {
+   "note": "the zorbo grid row (p. 131 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](15) != 10 or m['mm2wxyzWXYZStatHd'](15) != 4 or m['mm2wxyzWXYZStatHdBonus'](15) != 2 or m['mm2wxyzWXYZStatAvgHp'](15) != 16 or m['mm2wxyzWXYZStatAttacks'](15) != 2 or m['mm2wxyzWXYZStatXp'](15) != 280 or m['mm2wxyzWXYZStatXpHp'](15) != 5 or m['mm2wxyzWXYZStatLairPct'](15) != 30 or m['mm2wxyzWXYZStatMove'](15) != 15 or m['mm2wxyzWXYZStatMr'](15) != 20 or m['mm2wxyzZorboXpValue']() != 360 or m['mm2wxyzZorboXpLevel']() != 5"
+  },
+  {
+   "note": "the zygom grid row (p. 131 print order)",
+   "expr": "m['mm2wxyzWXYZStatAc'](16) != 8 or m['mm2wxyzWXYZStatHd'](16) != 3 or m['mm2wxyzWXYZStatHdBonus'](16) != 0 or m['mm2wxyzWXYZStatAvgHp'](16) != 10 or m['mm2wxyzWXYZStatAttacks'](16) != 1 or m['mm2wxyzWXYZStatXp'](16) != 85 or m['mm2wxyzWXYZStatXpHp'](16) != 4 or m['mm2wxyzWXYZStatLairPct'](16) != 50 or m['mm2wxyzWXYZStatMove'](16) != 1 or m['mm2wxyzWXYZStatMr'](16) != 0 or m['mm2wxyzZygomXpValue']() != 125 or m['mm2wxyzZygomXpLevel']() != 3"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter W box",
+   "from": "- [ ] **Letter W**",
+   "to": "- [x] **Letter W**"
+  },
+  {
+   "note": "the Letter X box",
+   "from": "- [ ] **Letter X**",
+   "to": "- [x] **Letter X**"
+  },
+  {
+   "note": "the Letter Y box",
+   "from": "- [ ] **Letter Y**",
+   "to": "- [x] **Letter Y**"
+  },
+  {
+   "note": "the Letter Z box",
+   "from": "- [ ] **Letter Z**",
+   "to": "- [x] **Letter Z**"
+  },
+  {
+   "note": "the Monsters from A-Z parent box",
+   "from": "- [ ] **Monsters from A-Z**",
+   "to": "- [x] **Monsters from A-Z**"
+  }
+ ],
+ "gap_census": {
+  "closed": 32,
+  "open": 5
+ },
+ "caller_files": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letters WXYZ def walk (the R814 TUV-walk pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R815: the MM2 letters WXYZ live def walk ----\n    // The 17 promoted letters WXYZ defs\n    // cross-checked live against the mm2wxyz pins:\n    // every stat cell of the 17-row WXYZStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula (the by_level exception at the\n    // yuan ti), the per-def prose markers, and the\n    // registry census floor 792 -> at least 809.\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kWXYZ[17] = {\n            \"weasel\",\n            \"webbird\",\n            \"wemic\",\n            \"willow_black\",\n            \"wolf_in_sheeps_clothing\",\n            \"wolfwere\",\n            \"tenebrous_worm\",\n            \"tunnel_worm\",\n            \"xag_ya_xeg_yi\",\n            \"xaren\",\n            \"yeth_hound\",\n            \"yochlol\",\n            \"yuan_ti\",\n            \"zombie_juju\",\n            \"zombie_monster\",\n            \"zorbo\",\n            \"zygom\",\n        };\n        static const char* kWXYZMark[17] = {\n            \"hunted for their pelts\",\n            \"beakless bird\",\n            \"large lion centaurs\",\n            \"relishing elves, gnomes, and humans\",\n            \"resemblance to a tree stump\",\n            \"bane of humans and demihumans\",\n            \"half-light of the Plane of Shadows\",\n            \"giant cousin of the centipede\",\n            \"reverse images of each other\",\n            \"relatives of the xorn\",\n            \"almost human appearance\",\n            \"misty columns of gas\",\n            \"degenerate and corrupt race\",\n            \"hateful light burns\",\n            \"animated corpses of huge humanoid\",\n            \"absorb the natural armor class\",\n            \"individual fungoid growths\",\n        };\n        for (int i = 0; i < 17; ++i) {\n            const auto* d = reg.find(kWXYZ[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\"\n                && i != 12)\n                ++bad;\n            if (i == 12\n                && d->xpSource != \"by_level\")\n                ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2wxyzWXYZStatAc(i))\n                ++bad;\n            if (d->hitDiceNum != mm2wxyzWXYZStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2wxyzWXYZStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2wxyzWXYZStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2wxyzWXYZStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2wxyzWXYZStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2wxyzWXYZStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2wxyzWXYZStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2wxyzWXYZStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2wxyzWXYZStatMr(i))\n                ++bad;\n            if (d->text.find(kWXYZMark[i])\n                == std::string::npos)\n                ++bad;\n        }\n        if ((int)reg.all().size()\n            < mm2wxyzRegistryAfter())\n            ++bad;\n        printf(\"R815 MM2 letters WXYZ live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/w/weasel.lua",
+   "content": "-- Weasel: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Weasel\",\n  page = \"125\",\n  pages = \"125\",\n  source = \"MM2\",\n  race = \"Weasel\",\n  hitDice = \"1/4\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"2\",\n  armorClass = 6,\n  numAttacks = 1,\n  damage = \"1\",\n  xp = \"2\",\n  xpPerHp = \"1\",\n  xpValue = 4,\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-2\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"S\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Weasels and their kin, such as mink, ferrets, and stoats, are common predators. Armor class is attributed to small size, darting movement, and speed. They will not attack unless cornered. Some of these creatures are hunted for their pelts, as their fur is valued. Ferrets can be captured while young and trained to hunt small burrowing game.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/w/webbird.lua",
+   "content": "-- Webbird: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Webbird\",\n  page = \"125\",\n  pages = \"125\",\n  source = \"MM2\",\n  race = \"Webbird\",\n  hitDice = \"1/2\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"2\",\n  armorClass = 8,\n  numAttacks = 1,\n  damage = \"1 hp\",\n  xp = \"7\",\n  xpPerHp = \"1\",\n  xpValue = 9,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"12-48\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"3\\\"/18\\\"\",\n  size = \"S\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Webs, egg insertion\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The webbird is not actually an avian; it might be some form of feathered insect or arachnid. It is found in semitropical lands, usually inhabiting the fringes of woodlands so it can seek prey in nearby open ground. A webbird appears to be a beakless bird, about raven-sized, with long-feathered wings and a long spiky tail. Careful inspection will reveal a slitted mouth with hard, sharp ridges for biting and a drooping chest appendage about 4 inches long.\\n\\nFood consists of small flying creatures. When large, warm-blooded creatures come within sight, a flock of webbirds will take to the air. They then gather together and make low passes over the heads of the intended victims. Each webbird can emit a 7-12 foot long strand of sticky, inflammable web once per round. The effectiveness of a flock's attack is determined by rolling 1d6 and adding 1 for every 6 webbirds in the flock. The area of attack is 12 feet by 12 feet square. Attacks are as follows: 1-3, ineffective attack; 4-6, 1 creature ensnared for 2-8 rounds; 7-10, 2-5 creatures ensnared for 2-5 rounds; 11 and up, the entire area covered with webs and all therein held fast for 2-5 rounds.\\n\\nA strength score of 17 will shorten immobilization time by 1 round and 18 (with or without exceptional rating) by 2. Alcohol dissolves the strands, 1 flask of wine being sufficient to free 1 man-sized creature. As soon as a victim is held fast, 1-4 webbirds will alight upon it. Next round the webbirds will insert their chest appendages in exposed flesh and inject 2-8 eggs. Grubs hatch from the eggs in 3-6 turns, and each grub eats its way into the host and inflicts 1 point of damage per round (per grub), eventually killing it. Fledgling webbirds will emerge from a corpse within 7 turns after the victim has died. Pain from grubs is excruciating. (A cure disease spell will kill the grubs.)\\n\\nWebbirds shun flame and fire. An individual with a torch will be safe from attack as the webbirds will avoid him or her and attack unprotected creatures. A webbird can be caught in a person's hand (a successful to-hit score) and crushed then and there. The monster will always inflict a dying bite (1 hit point) upon its slayer.\\n\\nWebbird feathers are metallic gray with greenish hues at wingtips and tails. Underbellies are bright gray, shading to light green near the tail.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/w/wemic.lua",
+   "content": "-- Wemic: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Wemic\",\n  page = \"125\",\n  pages = \"125\",\n  source = \"MM2\",\n  race = \"Wemic\",\n  hitDice = \"5+8\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"8\",\n  avgHp = \"25\",\n  armorClass = \"6 (5)\",\n  numAttacks = \"2 claws, 1 weapon\",\n  damage = \"1-4/1-4 weapon\",\n  xp = \"200\",\n  xpPerHp = \"7\",\n  xpValue = 375,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"2-16\",\n  lairPct = \"50\",\n  treasure = \"B\",\n  move = \"12\\\"\",\n  size = \"L (7' long)\",\n  intelligence = \"Average\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Surprised on a 1\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Wemics are large lion centaurs that roam temperate grasslands and savannas and hunt antelope and similar herd animals. They speak their own language and Common. Wemics are intelligent, know how to use fire, and are reported to be excellent trackers and guides.\\n\\nWemics are surprised only on a 1. In combat they attack with claws and a weapon. They are able to leap 10 feet upward and 30 feet forward. Wemic males carry javelins and a stone club or short sword. They often use tough leather shields (armor class 5). Females fight without weapons but gain a +2 on to-hit rolls if their young are attacked. Females use a clawing attack with armor class 7. The young are noncombative.\\n\\nWemics live in groups, called prides, of 4-16 males, 2-24 females, and 1-12 young. From 3-30 prides will band together to form a tribe led by a chief (AC 5, HD 6+4, Dmg 1-6/1-6 + weapon +1). Sometimes 2d4 tribes will form a clan or nation led by a king (AC 3, HD 9, Dmg 1-8/1-8 + weapon +2) and 2-8 chieftain bodyguards. There is a 70% chance a witch doctor will be present with any tribe (7th level cleric/4th level magic-user maximums).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/w/willow_black.lua",
+   "content": "-- Willow, Black: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Willow, Black\",\n  page = \"126\",\n  pages = \"126\",\n  source = \"MM2\",\n  race = \"Willow\",\n  hitDice = \"12-19\",\n  hitDiceNum = \"12\",\n  hitDiceBonus = \"0\",\n  avgHp = \"42\",\n  armorClass = 2,\n  numAttacks = \"7-12 (within 30' of trunk)\",\n  damage = \"1-4 each\",\n  xp = \"2400\",\n  xpPerHp = \"20\",\n  xpValue = 3240,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"100\",\n  treasure = \"See below\",\n  move = \"1/4\\\"\",\n  size = \"L (6'-9' diameter trunk)\",\n  intelligence = \"Low to very\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The black willow is a mobile, sentient tree of evil disposition. Although it inhabits areas where normal willows grow, it gets only a portion of its nourishment from sun, air, water, and earth. The monster is carnivorous, relishing elves, gnomes, and humans particularly. It is 90% unlikely that a creature will recognize a black willow as such, for they can alter their trunks and limbs to appear as normal trees of the various willow sorts. Sometimes they will have smooth trunks and broad, inviting limbs; other times they will show safe-looking trunk cavities at base or high on the upper trunk. Of course, treants can spot black willow instantly, but even druids cannot do so without magical aid (such as locate plants, for example).\\n\\nTreasure of any sort is sometimes found buried beneath this tree monster along with bones and other immediately indigestible matter. Of course, this assumes victims have treasure which weak acid could not digest. It also assumes the black willow has stayed in a locale for a period of weeks.\\n\\nNormal attack is with lashing, whip-like branches, but there are 2 special attack forms, one of which is generally employed earlier. If a creature has climbed out on a safe-looking limb, the black willow will generate an aura of drowsiness within a 20-foot radius, making tired creatures fall into natural sleep. No saving throw is possible. A hole will open underneath, and 1 or more victims will then be taken into the hollow limb. The limb will then tilt to slide them into the trunk cavity. The trunk's safe-looking openings are also used to close and trap the victim(s) in the digestive cavity of the trunk. The stomach is coated with sticky, nonflammable sap. Digestive sap then oozes up from the roots, filling the cavity at the rate of 1 foot per 10 rounds until the entire 8-foot cavity is filled. The juice is acidic and inflicts 1-4 points of damage per round until death occurs. Digestion is indicated by -12 or more hit points, and any resurrection is thereafter impossible. Creatures trapped inside can employ only short, sharp weapons because of the confined space. Maximum normal damage is 1 point per round; magical and strength bonuses apply to weapon damage. Rescue, if any, must usually come from outside. A black willow regenerates at the rate of 1 point per turn.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/w/wolf_in_sheeps_clothing.lua",
+   "content": "-- Wolf-in-Sheep's-Clothing: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Wolf-in-Sheep's-Clothing\",\n  page = \"127\",\n  pages = \"127\",\n  source = \"MM2\",\n  race = \"Wolf-in-Sheep's-Clothing\",\n  hitDice = \"9 (see below)\",\n  hitDiceNum = \"9\",\n  hitDiceBonus = \"0\",\n  avgHp = \"31\",\n  armorClass = \"3 (root tentacles)/5 (body stump)/7 (eyestalks)\",\n  numAttacks = \"1-3\",\n  damage = \"1-4\",\n  xp = \"900\",\n  xpPerHp = \"14\",\n  xpValue = 1334,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"1\\\"\",\n  size = \"S (effective)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"This weird vegetable monster lurks in undergrowth or in grassy meadowlands. It creeps slowly from place to place, using its 7 root tentacles for locomotion, early feeding, and even to capture live prey. Its 2 or 3 eyestalks are long enough to give the monster excellent, wide-angle vision.\\n\\nWhile the actual body (stump) of the wolf-in-sheep's-clothing can stand 9 hit dice of damage, its appendages can be broken or severed without permanent harm to the monster, as it can regenerate them in 1-4 weeks. Root tentacles take 19-22 hit points each and eyestalks 13-16 hit points. The creature's attack is to lure prey within 12 feet and then strike and grasp with 1-3 of its gnarled root tentacles. A successful strike inflicts 1-4 points of damage and entwines the victim. The prey will then be drawn to the stump's maw next round. Damage will be another 1-4 hit points plus a certain bite for another 7-12 hit points unless the victim manages to break free of the grasping root or roots.\\n\\nBreaking a root tentacle by sheer strength requires an unhindered grasp; thus, a creature held by a root cannot break it, but the creature may break free. Breaking free requires 13 or greater strength. Each point allows a 5% chance. At 18 strength, the chance to break free is 30% +1% per 1% of exceptional strength; thus, a character with 18/70 strength has 100% probability of breaking loose. Only creatures with exceptional strength can break a root tentacle.\\n\\nThe wolf-in-sheep's-clothing is 90% likely to attack by surprise. It uses its resemblance to a tree stump or its ability to sprout a growth resembling a small furry creature to attract prey. The lure-growth is moved so as to \\\"look\\\" at approaching prey and then it will \\\"freeze\\\" so as to be \\\"unnoticed.\\\"\\n\\nThe body of the wolf-in-sheep's-clothing appears to be a grayish-brown tree stump from 2-3 feet in diameter. Eyestalks are 10-15 feet long, brown near the base, green at the tips, and with pinkish or violet flower-like eyes. Roots are from 9-12 feet long. The vertical maw located in the trunk has jagged teeth and thick, black lips. When shut, it appears to be an old scar on a normal tree stump.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/w/wolfwere.lua",
+   "content": "-- Wolfwere: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Wolfwere\",\n  page = \"127\",\n  pages = \"127\",\n  source = \"MM2\",\n  race = \"Wolfwere\",\n  hitDice = \"5+1\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"1\",\n  avgHp = \"18\",\n  armorClass = 3,\n  numAttacks = \"1 or 2\",\n  damage = \"2-12 plus possible weapon\",\n  xp = \"550\",\n  xpPerHp = \"6\",\n  xpValue = 658,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-3\",\n  lairPct = \"35\",\n  treasure = \"B, 50% of S.T\",\n  move = \"15\\\"\",\n  size = \"M\",\n  intelligence = \"High to exceptional\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Singing brings on lethargy\",\n  specialDefenses = \"Iron or +1 or better weapon to hit\",\n  magicResistance = \"10%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Inhabiting out of the way places, the hated and feared wolfwere is the bane of humans and demihumans alike, for it is able to take the form of a human male or female of considerable charisma. In either its true shape or that of man, the wolfwere slyly hunts, slays, and devours its favored prey - men, halflings, elves, etc. A wolfwere will usually (75%) run with a pack of normal wolves (30%) or worgs (70%). When strong prey is encountered, the monster will slip away to its lair, don human garb, and approach the victims in the guise of a pilgrim, minstrel, tinker, or similar wanderer. Oftimes the wolfwere will carry a stringed instrument to play upon, so its crooning will not arouse suspicion. The powerful jaws of this creature can deliver terrible bites. Additionally, the wolfwere can half-change, gain human-like arms and legs, and wield a human weapon. It can still bite in this form. Worst of all, however, is the monster's song. Listeners are overcome with lethargy, just as if they had been slowed by a slow spell, unless each makes a saving throw vs. spells. The lethargy lasts for 5-8 rounds and cannot be countered once it takes effect. The monster can be hit only by cold-wrought iron weapons or those equal to +1 or better magic. It must be noted that a great enmity exists between wolfwere and werewolves. The wolfwere are disgusted by wolvesbane and shun it if possible.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/w/tenebrous_worm.lua",
+   "content": "-- Worm, Tenebrous: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Worm, Tenebrous\",\n  page = \"127\",\n  pages = \"127-128\",\n  source = \"MM2\",\n  race = \"Worm\",\n  hitDice = \"10\",\n  hitDiceNum = \"10\",\n  hitDiceBonus = \"0\",\n  avgHp = \"35\",\n  armorClass = 1,\n  numAttacks = 1,\n  damage = \"2-20\",\n  xp = \"2400\",\n  xpPerHp = \"20\",\n  xpValue = 3100,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"1\\\"\",\n  size = \"M (6 feet long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Acid\",\n  specialDefenses = \"Poison bristles\",\n  magicResistance = \"Standard\",\n  psionic = \"None\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These insectoid predators inhabit most of the Plane of Shadows, though they are more common in forested areas. They seek warm-blooded prey but will hesitate to attack humans.\\n\\nTenebrous worms are formidable opponents in combat; their heads are equipped with powerful mandibles that drip a highly caustic acid secreted from glands located behind the creature's multi-faceted eyes. Any opponent struck by the mandibles is also subject to the effects of the secretion (save vs poison at -3, or take double damage from the bite).\\n\\nThe head and forebody of the monster are covered with stiff bristles which are poisonous to mammals. Any opponent who strikes the protected area with an open hand or similar attack (claw, bite, cause wounds spell, etc.) will immediately be filled with filaments from the bristles and will suffer 1-4 (1d4) points of damage. The victim must also save vs poison or be paralyzed from the contact. Such victims must receive a neutralize or slow poison spell within 1-4 rounds or the contact will be fatal. Opponents who strike with a weapon gain the benefit of armor against this defense. To determine if contact occurs, multiply the attacking character's armor class (minus shield and dexterity bonuses) by 10 to determine a percentage. Contact occurs if this number or lower is rolled on percentile dice. Note that there are fewer bristles on the creature's head. To reflect this, reduce the chance of contact by 20%. For example, a character with plate and shield would have a 30% chance of contact with the bristles (AC 2 plus 1 for disregarding the shield, times 10), but this would drop to 10% if the attack were aimed at the head.\\n\\nTenebrous worms look like huge, partially bare caterpillars. The front section of the body is covered with lusterless black bristles, while the hind parts are a wet, nauseating grey. The many facets of the creature's eyes reflect the half-light of the Plane of Shadows with a luminous glimmer. This glimmer is the only warning of their presence. Their small, black legs allow them to move rapidly. Their great maws are flanked by huge, pearly mandibles. These tusk-like weapons are quite beautiful if cut into sheets and inlaid (as is mother of pearl), so they have a value of 1000-3000 gp per set.\\n\\nFor the adult stage of this monster, see \\\"Gloomwing.\\\"\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/w/tunnel_worm.lua",
+   "content": "-- Worm, Tunnel: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Worm, Tunnel\",\n  page = \"128\",\n  pages = \"128\",\n  source = \"MM2\",\n  race = \"Worm\",\n  hitDice = \"9+3\",\n  hitDiceNum = \"9\",\n  hitDiceBonus = \"3\",\n  avgHp = \"34\",\n  armorClass = 4,\n  numAttacks = \"1 Bite\",\n  damage = \"2-16\",\n  xp = \"1350\",\n  xpPerHp = \"14\",\n  xpValue = 1826,\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-6\",\n  lairPct = \"76\",\n  treasure = \"M, N, Q\",\n  move = \"6\\\"\",\n  size = \"L (30' long)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Lunge at +2 to hit\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"This giant cousin of the centipede is an aggressive predator and scavenger. It lives in burrows which honeycomb the walls and ceiling of caves and dungeons. The tunnel worm feeds on and lays its eggs on carrion and will drag corpses back to its lair. It lies in wait near the hidden entrance to its burrow for prey to pass.\\n\\nA tunnel worm attacks by lunging out of its tunnel and seizing prey with its mandibles at +2 to hit. If it hits, no damage is scored until its teeth have torn through the victim's armor. The tunnel worm takes 1 round to chew through leather, 2 rounds for chain mail, and 3 rounds for plate mail. Once the armor is bitten through, the worm will automatically bite for 2-16 points of damage per round. If the tunnel worm takes 15 or more points of fire damage, or if it loses more than 60% of its hit points, it will release its victim and retreat into its burrow, not attacking again unless cornered.\\n\\nTunnel worm burrows are 2 feet in diameter. There may be treasure in its nest which was dragged in with a corpse.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/x/xag_ya_xeg_yi.lua",
+   "content": "-- Xag-ya and Xeg-yi: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Xag-ya and Xeg-yi\",\n  page = \"128\",\n  pages = \"128-129\",\n  source = \"MM2\",\n  race = \"Xag-ya\",\n  hitDice = \"5-8\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"0\",\n  avgHp = \"17\",\n  armorClass = 0,\n  numAttacks = 1,\n  damage = \"7-12\",\n  xp = \"1100\",\n  xpPerHp = \"10\",\n  xpValue = 1270,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"M\",\n  intelligence = \"High (mindless by human standards)\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Energy blast or drain\",\n  specialDefenses = \"+1 or better weapon to hit; see below\",\n  magicResistance = \"15%\",\n  psionic = \"120+10 to 60\",\n  attackDefenseModes = \"All/all\",\n  text = \"Xag-ya are creatures from the Positive Material Plane, and xeg-yi are from the Negative Material Plane. They are much alike, being reverse images of each other. Xag-ya are silver and fiery. Their touch brings a surge, much like a bolt of lightning, that will cause combustion of highly flammable materials such as parchment, cloth, wood, etc.\\n\\nEvery other round, a xag-ya can loose a bolt of energy that equals its touch up to 10 feet at a single target. The bolt heats metallic objects to glowing. Metallic items of magical nature do not heat if their owners succeed in making their saving throw vs. lightning. (Base 11 for hard metal, 16 for soft, with pluses to the die roll for magic components.) Heated metal must be dropped and any worn discarded. Damage per segment of contact with such metal is 1-4 points.\\n\\nThe touch of a black, lifeless xeg-yi causes cell death, life energy drain of a mild sort, and aging and rotting of such materials as are burned by xag-ya. Xeg-yi send identical tendrils of negative current which chill metal and inflict damage. Normal metal, magical properties, and magical metals which have not been saved vs. the energy melt are lost. That which fails against the negative current of xeg-yi shatters or decays due to corrosion. (Saving throw is the same as that vs. the attack of a xag-ya.)\\n\\nSlaying either type of creature releases a burst of energy or negative force with a 10-foot radius. This release inflicts double damage (14-24) on all victims within its area of effect, and saving throws must be made as if a bolt had actually touched the affected creatures. If a xag-ya and a xeg-yi should ever meet, they will rush together and destroy each other in a huge (30-foot radius) explosion which looses 28-48 points of damage (4d6+24) in the blast area.\\n\\nOnly magic weapons will affect these creatures. Xag-ya are affected by magic creating cold, xeg-yi by that creating heat. Both sorts of creatures are subject to attack by disintegrate and magic missile. Negation and absorption are effective against the attack of xag-ya, while a mace of disruption and rod of cancellation are effective vs. xeg-yi attacks without harm to the devices used. A shield spell prevents the attack of either creature. A circle of protection (spell, magic circle, thaumaturgic triangle, or pentagram) will repulse attacks of either kind of creature. All other magic or spells, unless of one of the above sorts, have no effect except the following which can slay or return either creature to its own plane: abjure, alter reality, banishment, dismissal, dispel magic (treat as magic of a level equal to twice the creature's hit dice), holy (unholy) word, limited wish, plane shift, wish.\\n\\nXag-ya and xeg-yi are often used as guardians of magic. They can be ensnared by magic summons and linked to an object. When the object is torn, broken, or opened without properly negating the summoning link, the xag-ya or xeg-yi appears and attacks all within a 3\\\" radius of the object. Both creatures are spherical with many radiating, tentacle-like protrusions. Xag-ya have glowing golden eyes. Xeg-yi have dull metallic orbs.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/x/xaren.lua",
+   "content": "-- Xaren: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Xaren\",\n  page = \"129\",\n  pages = \"129\",\n  source = \"MM2\",\n  race = \"Xaren\",\n  hitDice = \"5+5\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"5\",\n  avgHp = \"22\",\n  armorClass = 1,\n  numAttacks = 4,\n  damage = \"1-3 (x3), 4-16\",\n  xp = \"55\",\n  xpPerHp = \"8\",\n  xpValue = 231,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"70\",\n  treasure = \"See below\",\n  move = \"9\\\"\",\n  size = \"(4' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Surprise on a 1-5\",\n  specialDefenses = \"Immune to fire, cold attacks\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The xaren are relatives of the xorn. They exist on the Elemental Plane of Earth but enjoy travel to the Prime Material Plane to feed. Their favorite metals are iron, copper, silver, gold and electrum (in that order). Magic metal gives them 1 hit point permanently for every plus on an eaten item. Items that are not plus enchanted neither help nor harm a xaren unless they are aligned to harm neutral creatures. This +1 to +5 for eating a shield, for example, is limited so that total hit points can never exceed 45. Yet they will still crave magic metal and will be eager to obtain it. They are intelligent enough to realize the relationship between magic metal and their health.\\n\\nXaren, like xorn, blend with rock-like surroundings and thus are very likely to surprise others in such a setting. They like to snack on metal, even in ore form, and they can smell ore at 20 feet and magic metal at 40 feet. They do not eat very much at a single meal, and metal weighing 5-8 pounds is quite enough to satiate one for 1-4 days. Xaren speak a bizarre tongue but telepathy or knowledge of tongues can aid one in understanding them. They will approach and seek a hand-out. They will become highly aggravated if they smell magic metal which is not offered to them; in such a situation they are 80% likely to attack. Failure to offer ordinary metal will produce an attack 40% of the time.\\n\\nXaren are not harmed by fire and cold (even magical varieties) but lightning will deal out half or no damage. Move earth, flesh to rock and dig will kill them instantly. Rock to mud lowers their armor class to 10 in 1-4 rounds. Sharp weapons do only half-damage to xaren, but blunt weapons do full damage. If attacked with a magic weapon, a xaren is 40% likely to try to bite the weapon (consider the weapon as armor class -2 for this attempt). A xaren bite will destroy any weapon utterly, but the weapon's owner is allowed a saving throw vs. crushing blow (with no bonus).\\n\\nXaren can move to the Elemental Plane of Earth at will and can move through solid rock at 9\\\" per round. It takes a xaren 1 full round to adjust its molecules so it can do this.\\n\\nXaren who reside on the Prime Material Plane are usually near treasure or ore of some kind. They hoard treasure for emergencies and eat it only if no other metal is at hand. Treasure type is as follows: 40% for 2-200 of each type of coin except platinum, 20% for 1-8 gems (10 gp base value), 10% for 1-2 magic items not made of metal and valued at under 10,000 gp. Occasionally nonmetal magic items might be in their hoard. Their lair might be a room inside of solid rock, for they can burrow in rock at 3\\\" per round. If this is the case (70% likely) it will not be very deep in the earth (only 10 feet or so). Xaren losing a melee will flee to their lair, and, if found there, escape to the Elemental Plane of Earth.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/y/yeth_hound.lua",
+   "content": "-- Yeth Hound: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Yeth Hound\",\n  page = \"129\",\n  pages = \"129\",\n  source = \"MM2\",\n  race = \"Yeth Hound\",\n  hitDice = \"3+3\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"3\",\n  avgHp = \"13\",\n  armorClass = 0,\n  numAttacks = 1,\n  damage = \"2-8\",\n  xp = \"235\",\n  xpPerHp = \"4\",\n  xpValue = 287,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"4-16\",\n  lairPct = \"100\",\n  treasure = \"Incidental\",\n  move = \"15\\\"/27\\\" (MC:B)\",\n  size = \"L (4-1/2 to 5' at shoulder)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Fear\",\n  specialDefenses = \"Silver or magic weapon to hit\",\n  magicResistance = \"10%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The hideous monster hounds known as yeth are found only in the wildest, most remote places. They lair in subterranean dens until the clean sunlight fades and they can come forth to hunt. They will devour any warm-blooded prey but vastly prefer demihumans, brownies, and the like.\\n\\nYeth hounds make a ghastly baying which can be heard for a mile or more. Creatures within 9\\\" must save vs. spells or flee in panic - usually to be pulled down and gnawed to death by the ferocious pack. Yeth hounds can be struck only by silver or magic weapons, and only the magical pluses of such weapons actually inflict damage, i.e., a +1 long sword inflicts 1 point of damage, a +2 dagger 2 points, a +3 spear 3 points, etc. Silver weapons inflict 1 point because of their metal. As yeth hounds have the magical ability to fly and enjoy service to such creatures as night hags, evil humans, and the like, they will often be encountered cooperating with some sort of evil huntsmen. Of course, such things as will hunt with yeth are not subject to fear from their dreadful baying.\\n\\nYeth hounds appear to be huge dogs of dull black color. Their heads have an almost human appearance, and their ears are horn-like. Their eyes glow a cherry red color.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/y/yochlol.lua",
+   "content": "-- Yochlol: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Yochlol\",\n  page = \"129\",\n  pages = \"129\",\n  source = \"MM2\",\n  race = \"Yochlol\",\n  hitDice = \"6 (1d10)\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"0\",\n  avgHp = \"21\",\n  armorClass = -10,\n  numAttacks = \"See below\",\n  damage = \"See below\",\n  xp = \"1275\",\n  xpPerHp = \"10\",\n  xpValue = 1485,\n  xpSource = \"mm2_print\",\n  frequency = \"Common (very rare)\",\n  noAppearing = \"1-4 (1)\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"High\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"50%\",\n  psionic = \"133\",\n  attackDefenseModes = \"C,D/F,H\",\n  text = \"The yochlol normally have no discernible form at all, being misty columns of gas which materialize pseudopods as needed. They are noticeable only by their vile odors and a hazy smudge in the air. While common in the Abyss, they are very rare elsewhere. If they do not take mates, yochlol have an effective armor class of -10. Yochlol are a type of demon and are affected by such things as affect demons.\\n\\nIt is not possible for these handmaidens to remain immaterial and attack physically, although when gaseous their touch gives an effect equal to a stinking cloud spell. A yochlol must materialize (thus becoming armor class 10) to do physical damage. The form taken can be an amorphous column with 8 pseudopods, the form of a giant spider, or that of a beautiful human or elf. In humanoid form, a yochlol can use its psionic abilities (plus other abilities only available in this form, such as weapon attacks) as if it were a 6th-level fighter. In spider form, it conforms in all but armor class (10) and psionics to the specifications of a giant spider. In its natural amorphous form, it can use psionics or attack with its 8 pseudopods, 1 blow from which does 5-8 points of damage, as the strength of a yochlol is effectively equal to 18/50.\\n\\nSeveral special effects apply to a yochlol in gaseous form. In this condition, only a +1 or better weapon can hit it. A stinking cloud spell will heal it for 3-12 points. A gust of wind spell will cause 6-36 points of damage, unless the yochlol's magic resistance prevents the spell from affecting it. A wind walk spell will destroy one yochlol (checking its magic resistance is not necessary); if the cleric would normally be able to take 2 other persons into the spell effect, then 2 yochlol may be destroyed. In either case, however, the cleric must touch the victims for the spell to take effect.\\n\\nA yochlol can change from one form to another within a single round. Thus, a gaseous yochlol can materialize during the same round as its stinking cloud attack, and attack again (in a manner applicable to its new form) at the end of the same round. Similarly, a yochlol in its amorphous form could use multiple attacks, then turn to spider form at the end of the round so as to climb into webs for its next round's escape.\\n\\nPsionic disciplines possible to yochlol are cell adjustment (only in humanoid form), domination, aura alteration, and probability travel. When in humanoid form, a yochlol is able to use with equal ease, weapons and magic items normally usable by clerics and fighters. Armor may likewise be used, but doing so will force the yochlol to become gaseous before changing to spider or amorphous form, as the armor worn would cause bodily harm to either of these forms.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/y/yuan_ti.lua",
+   "content": "-- Yuan-ti: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Yuan-ti\",\n  page = \"130\",\n  pages = \"130\",\n  source = \"MM2\",\n  race = \"Yuan-ti\",\n  hitDice = \"6-9\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"0\",\n  avgHp = \"21\",\n  armorClass = \"4/0\",\n  numAttacks = 2,\n  damage = \"See below\",\n  xp = 0,\n  xpPerHp = 0,\n  xpValue = 0,\n  xpSource = \"by_level\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"70\",\n  treasure = \"C\",\n  move = \"12\\\" or 9\\\"\",\n  size = \"M\",\n  intelligence = \"Genius\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Spells\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"20%\",\n  psionic = \"150\",\n  attackDefenseModes = \"B,D/F,I,J\",\n  text = \"Inhabitants of tropical jungles, the yuan ti are a degenerate and corrupt race of creatures who were once human. All are devout demon worshippers who have a high regard for all kinds of reptiles. Through dark and unknown practices, their blood has become fouled and they produce monstrosities. There are 3 types of yuan ti: purebloods, halfbreeds, and abominations.\\n\\nPurebloods are the weakest of the yuan ti, having only 6 hit dice. They are human in appearance, except for some slight differences, such as scaly hands, a forked tongue, or a somewhat reptilian look about them. They are able to pass as humans 80% of the time. Purebloods normally handle affairs with the outside world and may travel far and wide doing so.\\n\\nHalfbreeds are highly distinctive. Some part of one's body is that of a snake, while the rest is human. Appearance may be determined by the table below (rolling once or twice), or the DM may select the changes: 1 = snake head; 2 = torso can bend and move like a snake's; 3 = no legs, torso ends in a snake's tail; 4 = has snakes instead of arms; 5 = body is covered by scales; 6 = snake tail is growing from backside. If any combination seems impossible or unworkable, the result should be ignored. The DM may also create other results involving snakes and humans.\\n\\nIn attacks, a halfbreed with a snake-head will bite for 1-10 points of damage, one with snake-headed arms will bite for 1-6 points, and one with a tail will constrict for 1-4 points. Otherwise the yuan ti will be able to handle weapons as normal humans. All snake parts will have an armor class of 0. Halfbreeds have 7-8 hit dice.\\n\\nAbominations are the strongest of the yuan ti. All have 9 hit dice. In appearance they are often confused with nagas and other snake creatures. Abominations are either totally snake-like or have only 1 human feature, such as a head or arms. Their bite (unless from a human head) will do 1-10 points of damage.\\n\\nAll yuan ti with human legs may move 12\\\" per turn. Those with snake bodies move 9\\\" per turn and are able to coil around pillars and the like. Human-headed yuan ti are able to cast the following spells once per day: cause fear, darkness within a 15-foot radius, snake charm, stick to snakes, neutralize poison, suggestion, and polymorph other.\\n\\nYuan ti speak their own language. They may also speak with any snake or snake-like monster. Those with human heads also speak Chaotic and Common.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/z/zombie_juju.lua",
+   "content": "-- Zombie, Juju: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Zombie, Juju\",\n  page = \"130\",\n  pages = \"130-131\",\n  source = \"MM2\",\n  race = \"Zombie\",\n  hitDice = \"3+12\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"12\",\n  avgHp = \"22\",\n  armorClass = 6,\n  numAttacks = 1,\n  damage = \"3-12\",\n  xp = \"110\",\n  xpPerHp = \"4\",\n  xpValue = 198,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+7 or better magic weapon to hit, see below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Juju zombies are created by magic-users who drain all life levels from humans or man-sized humanoids by means of an energy drain spell (q.v.). Although they are \\\"programmed\\\" as are regular zombies, they are superior in every way. They have a better armor class, move quickly (even under water, for they do not breathe), climb like 6th-level thieves, and attack with great force as if they were 6 hit dice monsters. A juju zombie can hurl weapons or discharge a bow or crossbow. Because they exist in part on the Negative Material Plane, juju zombies can be hit only by +1 or better magic weapons. Because of their undead nature, piercing or blunt weapon attacks do only one-half normal damage. Only cleaving weapons do normal damage, i.e., axes, broad and bastard or two-handed swords, bardiches, halberds, or voulges and similar weapons.\\n\\nJuju zombies are unaffected by all dweomers which affect the mind - illusion, charms, holds, etc., as well as poison, electricity, magic missiles, death, and cold spells. Fire has only one-half normal effect. Acid and holy water have full normal effects. A juju zombie is equal to a spectre with respect to clerical turning of undead.\\n\\nA juju zombie appears to be an ordinary zombie, although its flesh is less rotted and has a gray color and is leathery and hard. A hateful light burns in the monster's eyes, as it realizes its condition and wishes to destroy living things.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/z/zombie_monster.lua",
+   "content": "-- Zombie, Monster: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Zombie, Monster\",\n  page = \"131\",\n  pages = \"131\",\n  source = \"MM2\",\n  race = \"Zombie\",\n  hitDiceNum = \"0\",\n  armorClass = 6,\n  damage = \"4-16\",\n  xp = 0,\n  xpPerHp = \"0\",\n  xpValue = 0,\n  xpSource = \"mm2_print\",\n  text = \"Monster zombies are the animated corpses of huge humanoid monsters such as bugbears, giants, etc. They are typically the creatures of evil natured clerics or magic-users who create and control them. These huge zombies can obey simple commands or follow instructions of a few words in length.\\n\\nMonster zombies strike last in melee, for they are slow-moving. They attack until destroyed. Blunt weapons inflict but one-half damage on monster zombies. Monster zombies are immune to charm, cold, death magic, hold, and sleep. They are turned by clerics as if they were ghasts. Holy water has normal damage effect upon monster zombies, i.e., 2-8 points of damage per vial that strikes.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/z/zorbo.lua",
+   "content": "-- Zorbo: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Zorbo\",\n  page = \"131\",\n  pages = \"131\",\n  source = \"MM2\",\n  race = \"Zorbo\",\n  hitDice = \"4+2\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"2\",\n  avgHp = \"16\",\n  armorClass = \"10 (See below)\",\n  numAttacks = \"2 claws\",\n  damage = \"1-2 each + special\",\n  xp = \"280\",\n  xpPerHp = \"5\",\n  xpValue = 360,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"30\",\n  treasure = \"P, Q, X\",\n  move = \"15\\\"/9\\\"\",\n  size = \"S (3' tall)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Absorption\",\n  specialDefenses = \"Absorption\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"This carnivorous beast likes human and demihuman flesh. A zorbo has poor armor class and attack damage when first encountered, but it can absorb the natural armor class of its surroundings in one round: earth = AC 7; wood = AC 5; metal = AC 3; stone = AC 0.\\n\\nThis new armor class lasts 10 rounds and also gives the zorbo a damage bonus equal to its original armor class 10 minus the new armor class. When a zorbo hits an opponent it can absorb the armor class and defensive bonuses of 1 random protective item (armor, shield, ring of protection, etc.), turning that item to dust (no save). If this would make the zorbo's current armor class worse, the item is destroyed, but the armor class is not absorbed. For example, if a zorbo is attacked in a cave and on the 1st round absorbs the armor class of stone, this gives it armor class 0 and a damage bonus of armor class 10 - 0 = 10. The next round it hits and absorbs its opponent's shield +2. This gives it a new armor class of -2 and a damage bonus of +12. The 3rd round it hits the opponent's plate mail (armor class 3), which turns to dust but does not change the zorbo's armor class or damage.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/z/zygom.lua",
+   "content": "-- Zygom: promoted by the R815 MM2 letters WXYZ walk\n-- round from the MM2 print\n-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Zygom\",\n  page = \"131\",\n  pages = \"131-132\",\n  source = \"MM2\",\n  race = \"Zygom\",\n  hitDice = \"3 (host's - see below)\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"0\",\n  avgHp = \"10\",\n  armorClass = 8,\n  numAttacks = \"By host type\",\n  damage = \"By host\",\n  xp = \"85\",\n  xpPerHp = \"4\",\n  xpValue = 125,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-3\",\n  lairPct = \"50\",\n  treasure = \"By host type and/or incidental\",\n  move = \"1\\\" (or host - see below)\",\n  size = \"By host size (1/6'-1/4' per growth)\",\n  intelligence = \"Unratable\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"Milky glue\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Zygoms are small individual fungoid growths which consist of a short, thin stem with an ovoid cap. One or 2 dozen such growths are joined by a rhizome structure to form a singular communal creature, a zygom. Although able to exist in earth, zygoms perfer to infest living flesh and nourish themselves on the host's blood and tissue. This infestation controls the host creature by brain and nerve connections. It leads to death in 1-8 weeks, depending on the size and constitution of the host creature. The zygom remains until the whole of the dead body is consumed and then moves on. As host creatures are controlled, they move, attack, and defend according to the dictates of the possessing zygoms. Infestation is typically on head, neck, and back (spinal) areas. Typical host creatures are: ants (giant), rats (giant), osquips, and occasionally small humanoids. Whenever a colony of zygoms comes in rough contact with any creature, there is a 1 in 6 chance that the pale blue \\\"milk\\\" of a broken cap will stick fast to the creature. This milk is extremely sticky, and it has the power to glue materials together for 2-5 days before the substance drys and crumbles. If glued to flesh, a colony of zygom spores will infect the creature and begin growth by the time the glue powders, allowing the zygoms to infest and control the host. Only a cure disease will remove infestation. Zygom glue can be otherwise embarassing, for it will stick weapons to targets, creatures to creatures, etc.\\n\\nAs zygoms have fungoid intelligence which is totally alien to humans, no magic affecting the mind - beguiling, charming, dominating, holding, hypnotizing, etc. - will affect them.\",\n}\n"
+  }
+ ],
+ "consts": [
+  {
+   "name": "mm2wxyzRound",
+   "value": 815,
+   "comment": "The MM2 letters WXYZ walk round: the weasel to zygom turns, the NINTH letter walk (Curtiss Go call on the landed letters TUV walk)"
+  },
+  {
+   "name": "mm2wxyzRegistryBefore",
+   "value": 792,
+   "comment": "The registry census before the R815 promotion (the landed R814 count)"
+  },
+  {
+   "name": "mm2wxyzRegistryAfter",
+   "value": 809,
+   "comment": "The registry census after the R815 promotion (17 defs riding the R791 data_files extension)"
+  },
+  {
+   "name": "mm2wxyzDefCount",
+   "value": 17,
+   "comment": "The 17 letters WXYZ defs promoted this round"
+  },
+  {
+   "name": "mm2wxyzEntryCount",
+   "value": 16,
+   "comment": "The 16 letters WXYZ entry heads (the WORM family head the one two-def head)"
+  },
+  {
+   "name": "mm2wxyzStatBlockHeadings",
+   "value": 17,
+   "comment": "The 17 letters WXYZ stat blocks (one per def)"
+  },
+  {
+   "name": "mm2wxyzDoctrineHeads",
+   "value": 0,
+   "comment": "The letters WXYZ walk pins no doctrine-only heads"
+  },
+  {
+   "name": "mm2wxyzLetterWXYZHeadings",
+   "value": 16,
+   "comment": "The 16 letters WXYZ entry heads (the print walk)"
+  },
+  {
+   "name": "mm2wxyzWXYZStatRows",
+   "value": 17,
+   "comment": "The 17-row WXYZStats stat grid (one row per promoted def)"
+  },
+  {
+   "name": "mm2wxyzGapClosed",
+   "value": 32,
+   "comment": "The 32 closed boxes after the WXYZ-FLIP (the A-Z parent and the Letter W, X, Y, Z boxes)"
+  },
+  {
+   "name": "mm2wxyzGapOpen",
+   "value": 5,
+   "comment": "The 5 open boxes after the WXYZ-FLIP"
+  },
+  {
+   "name": "mm2wxyzPriorOwnedEntries",
+   "value": 0,
+   "comment": "The letters WXYZ walk found zero prior-owned heads"
+  },
+  {
+   "name": "mm2wxyzWeaselXpValue",
+   "value": 4,
+   "comment": "The weasel xp value (the I/2 + 1/hp row over 2 avg hp)"
+  },
+  {
+   "name": "mm2wxyzWeaselXpLevel",
+   "value": 1,
+   "comment": "The weasel xp level (the I/2 + 1/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzWebbirdXpValue",
+   "value": 9,
+   "comment": "The webbird xp value (the I/7 + 1/hp row over 2 avg hp)"
+  },
+  {
+   "name": "mm2wxyzWebbirdXpLevel",
+   "value": 1,
+   "comment": "The webbird xp level (the I/7 + 1/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzWebbirdWebMinFeet",
+   "value": 7,
+   "comment": "The webbird strand runs 7-12 feet long"
+  },
+  {
+   "name": "mm2wxyzWebbirdWebMaxFeet",
+   "value": 12,
+   "comment": "The webbird strand runs 7-12 feet long"
+  },
+  {
+   "name": "mm2wxyzWebbirdEggsMin",
+   "value": 2,
+   "comment": "The webbird chest appendage injects 2-8 eggs"
+  },
+  {
+   "name": "mm2wxyzWebbirdEggsMax",
+   "value": 8,
+   "comment": "The webbird chest appendage injects 2-8 eggs"
+  },
+  {
+   "name": "mm2wxyzWebbirdGrubHatchMinTurns",
+   "value": 3,
+   "comment": "The webbird grubs hatch in 3-6 turns"
+  },
+  {
+   "name": "mm2wxyzWebbirdGrubHatchMaxTurns",
+   "value": 6,
+   "comment": "The webbird grubs hatch in 3-6 turns"
+  },
+  {
+   "name": "mm2wxyzWemicXpValue",
+   "value": 375,
+   "comment": "The wemic xp value (the IV/200 + 7/hp row over 25 avg hp)"
+  },
+  {
+   "name": "mm2wxyzWemicXpLevel",
+   "value": 4,
+   "comment": "The wemic xp level (the IV/200 + 7/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzWemicLeapUpFeet",
+   "value": 10,
+   "comment": "The wemic leaps 10 feet upward"
+  },
+  {
+   "name": "mm2wxyzWemicLeapForwardFeet",
+   "value": 30,
+   "comment": "The wemic leaps 30 feet forward"
+  },
+  {
+   "name": "mm2wxyzWemicMaleShieldAc",
+   "value": 5,
+   "comment": "The wemic males often use tough leather shields (AC 5)"
+  },
+  {
+   "name": "mm2wxyzWemicFemaleAc",
+   "value": 7,
+   "comment": "The wemic females claw with armor class 7"
+  },
+  {
+   "name": "mm2wxyzWemicFemaleToHitBonus",
+   "value": 2,
+   "comment": "The wemic females gain +2 to hit if their young are attacked"
+  },
+  {
+   "name": "mm2wxyzWemicPrideMalesMin",
+   "value": 4,
+   "comment": "The wemic pride carries 4-16 males"
+  },
+  {
+   "name": "mm2wxyzWemicPrideMalesMax",
+   "value": 16,
+   "comment": "The wemic pride carries 4-16 males"
+  },
+  {
+   "name": "mm2wxyzWemicPrideFemalesMin",
+   "value": 2,
+   "comment": "The wemic pride carries 2-24 females"
+  },
+  {
+   "name": "mm2wxyzWemicPrideFemalesMax",
+   "value": 24,
+   "comment": "The wemic pride carries 2-24 females"
+  },
+  {
+   "name": "mm2wxyzWemicPrideYoungMin",
+   "value": 1,
+   "comment": "The wemic pride carries 1-12 young"
+  },
+  {
+   "name": "mm2wxyzWemicPrideYoungMax",
+   "value": 12,
+   "comment": "The wemic pride carries 1-12 young"
+  },
+  {
+   "name": "mm2wxyzWemicChiefAc",
+   "value": 5,
+   "comment": "The wemic tribal chief is AC 5, HD 6+4"
+  },
+  {
+   "name": "mm2wxyzWemicChiefHd",
+   "value": 6,
+   "comment": "The wemic tribal chief is AC 5, HD 6+4"
+  },
+  {
+   "name": "mm2wxyzWemicChiefHdBonus",
+   "value": 4,
+   "comment": "The wemic tribal chief is AC 5, HD 6+4"
+  },
+  {
+   "name": "mm2wxyzWemicKingAc",
+   "value": 3,
+   "comment": "The wemic clan king is AC 3, HD 9"
+  },
+  {
+   "name": "mm2wxyzWemicKingHd",
+   "value": 9,
+   "comment": "The wemic clan king is AC 3, HD 9"
+  },
+  {
+   "name": "mm2wxyzWemicWitchDoctorChance",
+   "value": 70,
+   "comment": "The 70% chance a witch doctor is present with any tribe"
+  },
+  {
+   "name": "mm2wxyzWemicWitchDoctorCleric",
+   "value": 7,
+   "comment": "The wemic witch doctor maximum 7th level cleric"
+  },
+  {
+   "name": "mm2wxyzWemicWitchDoctorMu",
+   "value": 4,
+   "comment": "The wemic witch doctor maximum 4th level magic-user"
+  },
+  {
+   "name": "mm2wxyzWillowXpValue",
+   "value": 3240,
+   "comment": "The black willow xp value (the VIII/2400 + 20/hp row over 42 avg hp)"
+  },
+  {
+   "name": "mm2wxyzWillowXpLevel",
+   "value": 8,
+   "comment": "The black willow xp level (the VIII/2400 + 20/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzWillowDetectFailPct",
+   "value": 90,
+   "comment": "The 90% chance a creature will not recognize a black willow"
+  },
+  {
+   "name": "mm2wxyzWillowDrowsinessRadiusFeet",
+   "value": 20,
+   "comment": "The black willow drowsiness aura within a 20-foot radius"
+  },
+  {
+   "name": "mm2wxyzWillowCavityDepthFeet",
+   "value": 8,
+   "comment": "The black willow trunk cavity is 8 feet deep"
+  },
+  {
+   "name": "mm2wxyzWillowSapFillRoundsPerFoot",
+   "value": 10,
+   "comment": "The black willow sap fills 1 foot per 10 rounds"
+  },
+  {
+   "name": "mm2wxyzWillowSapDamageMin",
+   "value": 1,
+   "comment": "The black willow sap inflicts 1-4 points per round"
+  },
+  {
+   "name": "mm2wxyzWillowSapDamageMax",
+   "value": 4,
+   "comment": "The black willow sap inflicts 1-4 points per round"
+  },
+  {
+   "name": "mm2wxyzWillowDigestionFloor",
+   "value": -12,
+   "comment": "The black willow digestion is indicated by -12 or more hit points"
+  },
+  {
+   "name": "mm2wxyzWillowRegenPerTurn",
+   "value": 1,
+   "comment": "The black willow regenerates 1 point per turn"
+  },
+  {
+   "name": "mm2wxyzWillowConfinedMaxDamage",
+   "value": 1,
+   "comment": "Maximum normal damage inside the trunk is 1 point per round"
+  },
+  {
+   "name": "mm2wxyzWolfIscXpValue",
+   "value": 1334,
+   "comment": "The wolfISC xp value (the VI/900 + 14/hp row over 31 avg hp)"
+  },
+  {
+   "name": "mm2wxyzWolfIscXpLevel",
+   "value": 6,
+   "comment": "The wolfISC xp level (the VI/900 + 14/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzWolfIscRootTentacles",
+   "value": 7,
+   "comment": "The wolfISC has 7 root tentacles"
+  },
+  {
+   "name": "mm2wxyzWolfIscRootHpMin",
+   "value": 19,
+   "comment": "The wolfISC root tentacles take 19-22 hit points each"
+  },
+  {
+   "name": "mm2wxyzWolfIscRootHpMax",
+   "value": 22,
+   "comment": "The wolfISC root tentacles take 19-22 hit points each"
+  },
+  {
+   "name": "mm2wxyzWolfIscEyestalkHpMin",
+   "value": 13,
+   "comment": "The wolfISC eyestalks take 13-16 hit points"
+  },
+  {
+   "name": "mm2wxyzWolfIscEyestalkHpMax",
+   "value": 16,
+   "comment": "The wolfISC eyestalks take 13-16 hit points"
+  },
+  {
+   "name": "mm2wxyzWolfIscRegenMinWeeks",
+   "value": 1,
+   "comment": "The wolfISC regenerates appendages in 1-4 weeks"
+  },
+  {
+   "name": "mm2wxyzWolfIscRegenMaxWeeks",
+   "value": 4,
+   "comment": "The wolfISC regenerates appendages in 1-4 weeks"
+  },
+  {
+   "name": "mm2wxyzWolfIscLureRangeFeet",
+   "value": 12,
+   "comment": "The wolfISC lures prey within 12 feet"
+  },
+  {
+   "name": "mm2wxyzWolfIscBiteMin",
+   "value": 7,
+   "comment": "The wolfISC maw bite is 7-12 hit points"
+  },
+  {
+   "name": "mm2wxyzWolfIscBiteMax",
+   "value": 12,
+   "comment": "The wolfISC maw bite is 7-12 hit points"
+  },
+  {
+   "name": "mm2wxyzWolfIscSurprisePct",
+   "value": 90,
+   "comment": "The wolfISC is 90% likely to attack by surprise"
+  },
+  {
+   "name": "mm2wxyzWolfIscBreakStrength",
+   "value": 13,
+   "comment": "Breaking a wolfISC root requires 13 or greater strength"
+  },
+  {
+   "name": "mm2wxyzWolfIscBaseBreakPct",
+   "value": 30,
+   "comment": "The 18-strength base 30% break-free chance"
+  },
+  {
+   "name": "mm2wxyzWolfIscBreakPctPerPoint",
+   "value": 5,
+   "comment": "Each strength point above 13 allows a 5% break chance"
+  },
+  {
+   "name": "mm2wxyzWolfwereXpValue",
+   "value": 658,
+   "comment": "The wolfwere xp value (the VI/550 + 6/hp row over 18 avg hp)"
+  },
+  {
+   "name": "mm2wxyzWolfwereXpLevel",
+   "value": 6,
+   "comment": "The wolfwere xp level (the VI/550 + 6/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzWolfwerePackChance",
+   "value": 75,
+   "comment": "The 75% chance a wolfwere runs with a pack"
+  },
+  {
+   "name": "mm2wxyzWolfwerePackWorgPct",
+   "value": 70,
+   "comment": "The wolfwere pack is wolves (30%) or worgs (70%)"
+  },
+  {
+   "name": "mm2wxyzWolfwereLethargyMinRounds",
+   "value": 5,
+   "comment": "The wolfwere lethargy lasts 5-8 rounds"
+  },
+  {
+   "name": "mm2wxyzWolfwereLethargyMaxRounds",
+   "value": 8,
+   "comment": "The wolfwere lethargy lasts 5-8 rounds"
+  },
+  {
+   "name": "mm2wxyzWolfwereBiteMin",
+   "value": 2,
+   "comment": "The wolfwere bite is 2-12"
+  },
+  {
+   "name": "mm2wxyzWolfwereBiteMax",
+   "value": 12,
+   "comment": "The wolfwere bite is 2-12"
+  },
+  {
+   "name": "mm2wxyzTenebrousXpValue",
+   "value": 3100,
+   "comment": "The tenebrous worm xp value (the VII/2400 + 20/hp row over 35 avg hp)"
+  },
+  {
+   "name": "mm2wxyzTenebrousXpLevel",
+   "value": 7,
+   "comment": "The tenebrous worm xp level (the VII/2400 + 20/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzTenebrousBiteMin",
+   "value": 2,
+   "comment": "The tenebrous worm bite is 2-20"
+  },
+  {
+   "name": "mm2wxyzTenebrousBiteMax",
+   "value": 20,
+   "comment": "The tenebrous worm bite is 2-20"
+  },
+  {
+   "name": "mm2wxyzTenebrousBristleDamageMax",
+   "value": 4,
+   "comment": "The tenebrous bristles inflict 1-4 points of damage"
+  },
+  {
+   "name": "mm2wxyzTenebrousPoisonSavePenalty",
+   "value": 3,
+   "comment": "The tenebrous acid bite saves vs poison at -3"
+  },
+  {
+   "name": "mm2wxyzTenebrousNeutralizeMinRounds",
+   "value": 1,
+   "comment": "A bristle victim needs neutralize or slow poison in 1-4 rounds"
+  },
+  {
+   "name": "mm2wxyzTenebrousNeutralizeMaxRounds",
+   "value": 4,
+   "comment": "A bristle victim needs neutralize or slow poison in 1-4 rounds"
+  },
+  {
+   "name": "mm2wxyzTenebrousHeadContactReductionPct",
+   "value": 20,
+   "comment": "The bristle contact chance drops 20% against the head"
+  },
+  {
+   "name": "mm2wxyzTenebrousMandibleGpMin",
+   "value": 1000,
+   "comment": "The tenebrous mandibles are worth 1000-3000 gp per set"
+  },
+  {
+   "name": "mm2wxyzTenebrousMandibleGpMax",
+   "value": 3000,
+   "comment": "The tenebrous mandibles are worth 1000-3000 gp per set"
+  },
+  {
+   "name": "mm2wxyzTunnelXpValue",
+   "value": 1826,
+   "comment": "The tunnel worm xp value (the VII/1350 + 14/hp row over 34 avg hp)"
+  },
+  {
+   "name": "mm2wxyzTunnelXpLevel",
+   "value": 7,
+   "comment": "The tunnel worm xp level (the VII/1350 + 14/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzTunnelLungeBonus",
+   "value": 2,
+   "comment": "The tunnel worm lunges at +2 to hit"
+  },
+  {
+   "name": "mm2wxyzTunnelBiteMin",
+   "value": 2,
+   "comment": "The tunnel worm bite is 2-16 per round"
+  },
+  {
+   "name": "mm2wxyzTunnelBiteMax",
+   "value": 16,
+   "comment": "The tunnel worm bite is 2-16 per round"
+  },
+  {
+   "name": "mm2wxyzTunnelLeatherRounds",
+   "value": 1,
+   "comment": "The tunnel worm chews leather in 1 round"
+  },
+  {
+   "name": "mm2wxyzTunnelChainRounds",
+   "value": 2,
+   "comment": "The tunnel worm chews chain mail in 2 rounds"
+  },
+  {
+   "name": "mm2wxyzTunnelPlateRounds",
+   "value": 3,
+   "comment": "The tunnel worm chews plate mail in 3 rounds"
+  },
+  {
+   "name": "mm2wxyzTunnelRetreatFireDamage",
+   "value": 15,
+   "comment": "The tunnel worm retreats after 15 or more fire damage"
+  },
+  {
+   "name": "mm2wxyzTunnelRetreatHpPct",
+   "value": 60,
+   "comment": "The tunnel worm retreats after losing more than 60% of hp"
+  },
+  {
+   "name": "mm2wxyzTunnelBurrowDiameterFeet",
+   "value": 2,
+   "comment": "The tunnel worm burrows are 2 feet in diameter"
+  },
+  {
+   "name": "mm2wxyzXagYaXpValue",
+   "value": 1270,
+   "comment": "The xag-ya and xeg-yi xp value (the VIII/1100 + 10/hp row over 17 avg hp)"
+  },
+  {
+   "name": "mm2wxyzXagYaXpLevel",
+   "value": 8,
+   "comment": "The xag-ya and xeg-yi xp level (the VIII/1100 + 10/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzXagYaBoltRangeFeet",
+   "value": 10,
+   "comment": "The xag-ya bolt reaches up to 10 feet"
+  },
+  {
+   "name": "mm2wxyzXagYaDeathBlastDamageMin",
+   "value": 14,
+   "comment": "The death release inflicts double damage (14-24)"
+  },
+  {
+   "name": "mm2wxyzXagYaDeathBlastDamageMax",
+   "value": 24,
+   "comment": "The death release inflicts double damage (14-24)"
+  },
+  {
+   "name": "mm2wxyzXagYaDeathBlastRadiusFeet",
+   "value": 10,
+   "comment": "The death release bursts with a 10-foot radius"
+  },
+  {
+   "name": "mm2wxyzXagYaMeetBlastRadiusFeet",
+   "value": 30,
+   "comment": "A xag-ya meeting a xeg-yi explodes in a 30-foot radius"
+  },
+  {
+   "name": "mm2wxyzXagYaMeetBlastMin",
+   "value": 28,
+   "comment": "The meeting blast looses 28-48 points (4d6+24)"
+  },
+  {
+   "name": "mm2wxyzXagYaMeetBlastMax",
+   "value": 48,
+   "comment": "The meeting blast looses 28-48 points (4d6+24)"
+  },
+  {
+   "name": "mm2wxyzXagYaMetalDamageMin",
+   "value": 1,
+   "comment": "Contact with heated metal inflicts 1-4 points per segment"
+  },
+  {
+   "name": "mm2wxyzXagYaMetalDamageMax",
+   "value": 4,
+   "comment": "Contact with heated metal inflicts 1-4 points per segment"
+  },
+  {
+   "name": "mm2wxyzXagYaGuardianRadiusInches",
+   "value": 3,
+   "comment": "A summoned guardian attacks within 3\" of the object"
+  },
+  {
+   "name": "mm2wxyzXarenXpValue",
+   "value": 231,
+   "comment": "The xaren xp value (the 55 + 8/hp row over 22 avg hp - no level numeral)"
+  },
+  {
+   "name": "mm2wxyzXarenXpLevel",
+   "value": 0,
+   "comment": "The xaren xp level (the print row carries no level numeral)"
+  },
+  {
+   "name": "mm2wxyzXarenClawDamageMin",
+   "value": 1,
+   "comment": "The xaren claw rakes are 1-3 (x3)"
+  },
+  {
+   "name": "mm2wxyzXarenClawDamageMax",
+   "value": 3,
+   "comment": "The xaren claw rakes are 1-3 (x3)"
+  },
+  {
+   "name": "mm2wxyzXarenBiteDamageMin",
+   "value": 4,
+   "comment": "The xaren bite is 4-16"
+  },
+  {
+   "name": "mm2wxyzXarenBiteDamageMax",
+   "value": 16,
+   "comment": "The xaren bite is 4-16"
+  },
+  {
+   "name": "mm2wxyzXarenOreSmellFeet",
+   "value": 20,
+   "comment": "The xaren smells ore at 20 feet"
+  },
+  {
+   "name": "mm2wxyzXarenMagicSmellFeet",
+   "value": 40,
+   "comment": "The xaren smells magic metal at 40 feet"
+  },
+  {
+   "name": "mm2wxyzXarenMagicMetalHpCap",
+   "value": 45,
+   "comment": "Eaten magic metal can never raise xaren hp past 45"
+  },
+  {
+   "name": "mm2wxyzXarenMealPoundsMin",
+   "value": 5,
+   "comment": "Metal weighing 5-8 pounds satiates a xaren for 1-4 days"
+  },
+  {
+   "name": "mm2wxyzXarenMealPoundsMax",
+   "value": 8,
+   "comment": "Metal weighing 5-8 pounds satiates a xaren for 1-4 days"
+  },
+  {
+   "name": "mm2wxyzXarenAttackIfMagicWithheldPct",
+   "value": 80,
+   "comment": "The 80% attack chance if smelled magic metal is not offered"
+  },
+  {
+   "name": "mm2wxyzXarenAttackIfMetalWithheldPct",
+   "value": 40,
+   "comment": "The 40% attack chance if ordinary metal is not offered"
+  },
+  {
+   "name": "mm2wxyzXarenWeaponBiteChance",
+   "value": 40,
+   "comment": "A xaren is 40% likely to bite an attacking magic weapon"
+  },
+  {
+   "name": "mm2wxyzXarenRockMoveInches",
+   "value": 9,
+   "comment": "The xaren moves through solid rock at 9\" per round"
+  },
+  {
+   "name": "mm2wxyzXarenBurrowInches",
+   "value": 3,
+   "comment": "The xaren burrows in rock at 3\" per round"
+  },
+  {
+   "name": "mm2wxyzYethXpValue",
+   "value": 287,
+   "comment": "The yeth hound xp value (the IV/235 + 4/hp row over 13 avg hp)"
+  },
+  {
+   "name": "mm2wxyzYethXpLevel",
+   "value": 4,
+   "comment": "The yeth hound xp level (the IV/235 + 4/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzYethBayingRangeMiles",
+   "value": 1,
+   "comment": "The yeth baying carries a mile or more"
+  },
+  {
+   "name": "mm2wxyzYethPanicRadiusInches",
+   "value": 9,
+   "comment": "Creatures within 9\" must save vs spells or flee in panic"
+  },
+  {
+   "name": "mm2wxyzYethBiteMin",
+   "value": 2,
+   "comment": "The yeth hound bite is 2-8"
+  },
+  {
+   "name": "mm2wxyzYethBiteMax",
+   "value": 8,
+   "comment": "The yeth hound bite is 2-8"
+  },
+  {
+   "name": "mm2wxyzYethPackMin",
+   "value": 4,
+   "comment": "Yeth hounds appear 4-16 at a time"
+  },
+  {
+   "name": "mm2wxyzYethPackMax",
+   "value": 16,
+   "comment": "Yeth hounds appear 4-16 at a time"
+  },
+  {
+   "name": "mm2wxyzYethPlusDamagePerPlus",
+   "value": 1,
+   "comment": "Only the magical pluses of a weapon inflict damage, 1 point each"
+  },
+  {
+   "name": "mm2wxyzYethSilverDamage",
+   "value": 1,
+   "comment": "Silver weapons inflict 1 point because of their metal"
+  },
+  {
+   "name": "mm2wxyzYochlolXpValue",
+   "value": 1485,
+   "comment": "The yochlol xp value (the VII/1275 + 10/hp row over 21 avg hp)"
+  },
+  {
+   "name": "mm2wxyzYochlolXpLevel",
+   "value": 7,
+   "comment": "The yochlol xp level (the VII/1275 + 10/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzYochlolGaseousAc",
+   "value": -10,
+   "comment": "The gaseous yochlol effective armor class -10 (unmated)"
+  },
+  {
+   "name": "mm2wxyzYochlolMaterializedAc",
+   "value": 10,
+   "comment": "The materialized yochlol armor class 10"
+  },
+  {
+   "name": "mm2wxyzYochlolPseudopods",
+   "value": 8,
+   "comment": "The amorphous yochlol attacks with 8 pseudopods"
+  },
+  {
+   "name": "mm2wxyzYochlolPseudopodDamageMin",
+   "value": 5,
+   "comment": "The yochlol pseudopod blow does 5-8 points"
+  },
+  {
+   "name": "mm2wxyzYochlolPseudopodDamageMax",
+   "value": 8,
+   "comment": "The yochlol pseudopod blow does 5-8 points"
+  },
+  {
+   "name": "mm2wxyzYochlolStinkingHealMin",
+   "value": 3,
+   "comment": "A stinking cloud spell heals a gaseous yochlol 3-12 points"
+  },
+  {
+   "name": "mm2wxyzYochlolStinkingHealMax",
+   "value": 12,
+   "comment": "A stinking cloud spell heals a gaseous yochlol 3-12 points"
+  },
+  {
+   "name": "mm2wxyzYochlolGustOfWindDamageMin",
+   "value": 6,
+   "comment": "A gust of wind spell causes 6-36 points of damage"
+  },
+  {
+   "name": "mm2wxyzYochlolGustOfWindDamageMax",
+   "value": 36,
+   "comment": "A gust of wind spell causes 6-36 points of damage"
+  },
+  {
+   "name": "mm2wxyzYochlolFighterLevel",
+   "value": 6,
+   "comment": "A humanoid-form yochlol fights as a 6th-level fighter"
+  },
+  {
+   "name": "mm2wxyzYochlolStrength",
+   "value": 18,
+   "comment": "The yochlol strength is effectively 18/50"
+  },
+  {
+   "name": "mm2wxyzYochlolStrengthPercent",
+   "value": 50,
+   "comment": "The yochlol strength is effectively 18/50"
+  },
+  {
+   "name": "mm2wxyzYuanTiXpValue",
+   "value": 0,
+   "comment": "The yuan ti xp value (the Variable row - the by_level source)"
+  },
+  {
+   "name": "mm2wxyzYuanTiXpLevel",
+   "value": 0,
+   "comment": "The yuan ti xp level (the Variable row carries no numeral)"
+  },
+  {
+   "name": "mm2wxyzYuanTiPurebloodHd",
+   "value": 6,
+   "comment": "The yuan ti purebloods have 6 hit dice"
+  },
+  {
+   "name": "mm2wxyzYuanTiHalfbreedHdMin",
+   "value": 7,
+   "comment": "The yuan ti halfbreeds have 7-8 hit dice"
+  },
+  {
+   "name": "mm2wxyzYuanTiHalfbreedHdMax",
+   "value": 8,
+   "comment": "The yuan ti halfbreeds have 7-8 hit dice"
+  },
+  {
+   "name": "mm2wxyzYuanTiAbominationHd",
+   "value": 9,
+   "comment": "The yuan ti abominations have 9 hit dice"
+  },
+  {
+   "name": "mm2wxyzYuanTiPurebloodPassPct",
+   "value": 80,
+   "comment": "The purebloods pass as humans 80% of the time"
+  },
+  {
+   "name": "mm2wxyzYuanTiSnakeHeadBiteMin",
+   "value": 1,
+   "comment": "A snake-head halfbreed bites for 1-10 points"
+  },
+  {
+   "name": "mm2wxyzYuanTiSnakeHeadBiteMax",
+   "value": 10,
+   "comment": "A snake-head halfbreed bites for 1-10 points"
+  },
+  {
+   "name": "mm2wxyzYuanTiSnakeArmBiteMin",
+   "value": 1,
+   "comment": "A snake-headed-arms halfbreed bites for 1-6 points"
+  },
+  {
+   "name": "mm2wxyzYuanTiSnakeArmBiteMax",
+   "value": 6,
+   "comment": "A snake-headed-arms halfbreed bites for 1-6 points"
+  },
+  {
+   "name": "mm2wxyzYuanTiTailConstrictMin",
+   "value": 1,
+   "comment": "A tailed halfbreed constricts for 1-4 points"
+  },
+  {
+   "name": "mm2wxyzYuanTiTailConstrictMax",
+   "value": 4,
+   "comment": "A tailed halfbreed constricts for 1-4 points"
+  },
+  {
+   "name": "mm2wxyzYuanTiHumanMoveInches",
+   "value": 12,
+   "comment": "Yuan ti with human legs move 12\" per turn"
+  },
+  {
+   "name": "mm2wxyzYuanTiSnakeMoveInches",
+   "value": 9,
+   "comment": "Yuan ti with snake bodies move 9\" per turn"
+  },
+  {
+   "name": "mm2wxyzYuanTiDarknessRadiusFeet",
+   "value": 15,
+   "comment": "The human-headed yuan ti darkness is a 15-foot radius"
+  },
+  {
+   "name": "mm2wxyzYuanTiSnakePartAc",
+   "value": 0,
+   "comment": "All yuan ti snake parts have an armor class of 0"
+  },
+  {
+   "name": "mm2wxyzZombieJujuXpValue",
+   "value": 198,
+   "comment": "The juju zombie xp value (the III/110 + 4/hp row over 22 avg hp)"
+  },
+  {
+   "name": "mm2wxyzZombieJujuXpLevel",
+   "value": 3,
+   "comment": "The juju zombie xp level (the III/110 + 4/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzZombieJujuDamageMin",
+   "value": 3,
+   "comment": "The juju zombie attack is 3-12"
+  },
+  {
+   "name": "mm2wxyzZombieJujuDamageMax",
+   "value": 12,
+   "comment": "The juju zombie attack is 3-12"
+  },
+  {
+   "name": "mm2wxyzZombieJujuClimbAsThiefLevel",
+   "value": 6,
+   "comment": "Juju zombies climb like 6th-level thieves"
+  },
+  {
+   "name": "mm2wxyzZombieJujuAttacksAsHd",
+   "value": 6,
+   "comment": "Juju zombies attack as if they were 6 hit dice monsters"
+  },
+  {
+   "name": "mm2wxyzZombieMonsterXpValue",
+   "value": 0,
+   "comment": "The monster zombie xp value (the capture-lossy nil block - the derro sentinel)"
+  },
+  {
+   "name": "mm2wxyzZombieMonsterXpLevel",
+   "value": 0,
+   "comment": "The monster zombie xp level (the nil block carries no numeral)"
+  },
+  {
+   "name": "mm2wxyzZombieMonsterDamageMin",
+   "value": 4,
+   "comment": "The monster zombie attack is 4-16"
+  },
+  {
+   "name": "mm2wxyzZombieMonsterDamageMax",
+   "value": 16,
+   "comment": "The monster zombie attack is 4-16"
+  },
+  {
+   "name": "mm2wxyzZombieMonsterHolyWaterMin",
+   "value": 2,
+   "comment": "Holy water inflicts 2-8 points per vial on monster zombies"
+  },
+  {
+   "name": "mm2wxyzZombieMonsterHolyWaterMax",
+   "value": 8,
+   "comment": "Holy water inflicts 2-8 points per vial on monster zombies"
+  },
+  {
+   "name": "mm2wxyzZorboXpValue",
+   "value": 360,
+   "comment": "The zorbo xp value (the V/280 + 5/hp row over 16 avg hp)"
+  },
+  {
+   "name": "mm2wxyzZorboXpLevel",
+   "value": 5,
+   "comment": "The zorbo xp level (the V/280 + 5/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzZorboEarthAc",
+   "value": 7,
+   "comment": "The zorbo absorbs earth as AC 7"
+  },
+  {
+   "name": "mm2wxyzZorboWoodAc",
+   "value": 5,
+   "comment": "The zorbo absorbs wood as AC 5"
+  },
+  {
+   "name": "mm2wxyzZorboMetalAc",
+   "value": 3,
+   "comment": "The zorbo absorbs metal as AC 3"
+  },
+  {
+   "name": "mm2wxyzZorboStoneAc",
+   "value": 0,
+   "comment": "The zorbo absorbs stone as AC 0"
+  },
+  {
+   "name": "mm2wxyzZorboBaseAc",
+   "value": 10,
+   "comment": "The zorbo base armor class 10 before absorption"
+  },
+  {
+   "name": "mm2wxyzZorboAbsorbDurationRounds",
+   "value": 10,
+   "comment": "The absorbed armor class lasts 10 rounds"
+  },
+  {
+   "name": "mm2wxyzZorboClawDamageMin",
+   "value": 1,
+   "comment": "The zorbo claws are 1-2 each"
+  },
+  {
+   "name": "mm2wxyzZorboClawDamageMax",
+   "value": 2,
+   "comment": "The zorbo claws are 1-2 each"
+  },
+  {
+   "name": "mm2wxyzZygomXpValue",
+   "value": 125,
+   "comment": "The zygom xp value (the III/85 + 4/hp row over 10 avg hp, plus xp for host)"
+  },
+  {
+   "name": "mm2wxyzZygomXpLevel",
+   "value": 3,
+   "comment": "The zygom xp level (the III/85 + 4/hp row numeral)"
+  },
+  {
+   "name": "mm2wxyzZygomColonyMin",
+   "value": 12,
+   "comment": "One or 2 dozen fungoid growths form one communal zygom"
+  },
+  {
+   "name": "mm2wxyzZygomColonyMax",
+   "value": 24,
+   "comment": "One or 2 dozen fungoid growths form one communal zygom"
+  },
+  {
+   "name": "mm2wxyzZygomGlueChance",
+   "value": 6,
+   "comment": "The 1 in 6 chance a broken cap sticks fast on contact"
+  },
+  {
+   "name": "mm2wxyzZygomGlueDaysMin",
+   "value": 2,
+   "comment": "The zygom glue holds 2-5 days before it drys and crumbles"
+  },
+  {
+   "name": "mm2wxyzZygomGlueDaysMax",
+   "value": 5,
+   "comment": "The zygom glue holds 2-5 days before it drys and crumbles"
+  },
+  {
+   "name": "mm2wxyzZygomInfestationWeeksMin",
+   "value": 1,
+   "comment": "Zygom infestation leads to death in 1-8 weeks"
+  },
+  {
+   "name": "mm2wxyzZygomInfestationWeeksMax",
+   "value": 8,
+   "comment": "Zygom infestation leads to death in 1-8 weeks"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2wxyzWebbirdShunsFlame",
+   "value": true,
+   "comment": "The webbirds shun flame; a torch-bearer is safe"
+  },
+  {
+   "name": "mm2wxyzWemicSurprisedOnlyOnOne",
+   "value": true,
+   "comment": "The wemics are surprised only on a 1"
+  },
+  {
+   "name": "mm2wxyzWemicYoungNoncombative",
+   "value": true,
+   "comment": "The wemic young are noncombative"
+  },
+  {
+   "name": "mm2wxyzWillowNoSaveVsDrowsiness",
+   "value": true,
+   "comment": "No saving throw is possible against the drowsiness aura"
+  },
+  {
+   "name": "mm2wxyzWillowResurrectionImpossible",
+   "value": true,
+   "comment": "A digested victim cannot be resurrected"
+  },
+  {
+   "name": "mm2wxyzWolfIscExceptionalStrengthOnly",
+   "value": true,
+   "comment": "Only creatures with exceptional strength can break a root tentacle"
+  },
+  {
+   "name": "mm2wxyzWolfwereIronOrMagicToHit",
+   "value": true,
+   "comment": "The wolfwere is hit only by cold-wrought iron or +1 or better"
+  },
+  {
+   "name": "mm2wxyzWolfwereShunsWolvesbane",
+   "value": true,
+   "comment": "The wolfwere are disgusted by wolvesbane and shun it"
+  },
+  {
+   "name": "mm2wxyzTenebrousAcidBite",
+   "value": true,
+   "comment": "The tenebrous mandibles drip a highly caustic acid"
+  },
+  {
+   "name": "mm2wxyzTenebrousBristleParalysis",
+   "value": true,
+   "comment": "A bristle victim must save vs poison or be paralyzed"
+  },
+  {
+   "name": "mm2wxyzTunnelDragsCorpsesToLair",
+   "value": true,
+   "comment": "The tunnel worm drags corpses back to its lair"
+  },
+  {
+   "name": "mm2wxyzXagYaMagicWeaponOnly",
+   "value": true,
+   "comment": "Only magic weapons will affect these creatures"
+  },
+  {
+   "name": "mm2wxyzXagYaShieldRepulses",
+   "value": true,
+   "comment": "A shield spell prevents the attack of either creature"
+  },
+  {
+   "name": "mm2wxyzXarenFireAndColdImmune",
+   "value": true,
+   "comment": "Xaren are not harmed by fire and cold, even magical varieties"
+  },
+  {
+   "name": "mm2wxyzXarenBluntFullDamage",
+   "value": true,
+   "comment": "Sharp weapons do half damage to xaren; blunt weapons full"
+  },
+  {
+   "name": "mm2wxyzYethSilverOrMagicToHit",
+   "value": true,
+   "comment": "Yeth hounds can be struck only by silver or magic weapons"
+  },
+  {
+   "name": "mm2wxyzYethFlies",
+   "value": true,
+   "comment": "Yeth hounds have the magical ability to fly"
+  },
+  {
+   "name": "mm2wxyzYochlolDemonType",
+   "value": true,
+   "comment": "Yochlol are a type of demon and are affected by such things"
+  },
+  {
+   "name": "mm2wxyzYochlolWindWalkDestroys",
+   "value": true,
+   "comment": "A wind walk spell destroys one yochlol"
+  },
+  {
+   "name": "mm2wxyzYochlolGaseousPlusOneToHit",
+   "value": true,
+   "comment": "In gaseous form only a +1 or better weapon can hit it"
+  },
+  {
+   "name": "mm2wxyzYuanTiDemonWorshippers",
+   "value": true,
+   "comment": "All yuan ti are devout demon worshippers"
+  },
+  {
+   "name": "mm2wxyzYuanTiSpeaksWithSnakes",
+   "value": true,
+   "comment": "Yuan ti may speak with any snake or snake-like monster"
+  },
+  {
+   "name": "mm2wxyzZombieJujuPlusOneToHit",
+   "value": true,
+   "comment": "Juju zombies can be hit only by +1 or better magic weapons"
+  },
+  {
+   "name": "mm2wxyzZombieJujuPiercingHalfDamage",
+   "value": true,
+   "comment": "Piercing or blunt attacks do one-half normal damage"
+  },
+  {
+   "name": "mm2wxyzZombieJujuMindImmune",
+   "value": true,
+   "comment": "Juju zombies are unaffected by all dweomers which affect the mind"
+  },
+  {
+   "name": "mm2wxyzZombieJujuFireHalfEffect",
+   "value": true,
+   "comment": "Fire has only one-half normal effect on juju zombies"
+  },
+  {
+   "name": "mm2wxyzZombieJujuUnderwaterCapable",
+   "value": true,
+   "comment": "Juju zombies move quickly even under water, for they do not breathe"
+  },
+  {
+   "name": "mm2wxyzZombieJujuTurnedAsSpectre",
+   "value": true,
+   "comment": "A juju zombie is turned as if it were a spectre"
+  },
+  {
+   "name": "mm2wxyzZombieMonsterBluntHalfDamage",
+   "value": true,
+   "comment": "Blunt weapons inflict but one-half damage on monster zombies"
+  },
+  {
+   "name": "mm2wxyzZombieMonsterTurnedAsGhast",
+   "value": true,
+   "comment": "Monster zombies are turned by clerics as if they were ghasts"
+  },
+  {
+   "name": "mm2wxyzZombieMonsterStrikesLast",
+   "value": true,
+   "comment": "Monster zombies strike last in melee, for they are slow-moving"
+  },
+  {
+   "name": "mm2wxyzZorboAbsorbsItemToDust",
+   "value": true,
+   "comment": "A zorbo hit turns 1 random protective item to dust (no save)"
+  },
+  {
+   "name": "mm2wxyzZorboNeverWorseAc",
+   "value": true,
+   "comment": "An absorbed item never makes the zorbo armor class worse"
+  },
+  {
+   "name": "mm2wxyzZygomMindMagicImmune",
+   "value": true,
+   "comment": "No magic affecting the mind will affect zygoms"
+  },
+  {
+   "name": "mm2wxyzZygomCureDiseaseRemoves",
+   "value": true,
+   "comment": "Only a cure disease will remove zygom infestation"
+  }
+ ],
+ "inline_count": 245,
+ "prev_record": [
+  "- R814 LANDED 2026-10-24: commit",
+  "  8137d904c6071946e89d2778b204f4a8d6f8d469",
+  "  (census 736 -> 737, pushed 61fc91a..8137d90),",
+  "  THE MM2 LETTERS TUV WALK - THE",
+  "  TARRASQUE TO VULTURE TURNS - THE",
+  "  TUV-FLIP ROUND (Curtiss's letters-TUV",
+  "  Go call on the landed letter S walk;",
+  "  round nineteen of the MM2 arc, the",
+  "  FOURTH three-letter pass - the",
+  "  tarrasque opens p. 117 and the",
+  "  ordinary vulture closes p. 125).",
+  "  THE PIN-TIME WALK: TWENTY-SIX defs on",
+  "  pp. 117-125 - TWENTY-ONE entry heads",
+  "  carrying TWENTY-TWO stat blocks (the",
+  "  termite royal pair the extra block),",
+  "  ZERO prior-owned, ZERO doctrine-only.",
+  "  TWENTY-SIX .lua defs ride the R791",
+  "  data_files extension, registry 766 ->",
+  "  792. Header rules/mm2tuv.h, prefix",
+  "  mm2tuv, 267 consts + 49 bools + ONE",
+  "  grid (the 26x10 TUVStats stat grid) =",
+  "  326 inline. THE TUV-FLIP: the Letter",
+  "  T, U and V gap boxes ALL flip to",
+  "  closed - 27 closed 10 open.",
+  "  THE SETTLED READS (capture primary,",
+  "  the transcription the cross-check",
+  "  voice): the transposer xp 625",
+  "  capture-wins (the transcription 525);",
+  "  the scrag saltwater 6+12",
+  "  capture-wins; the thessalhydra 5800",
+  "  (the \"5S00\" capture); the ordinary",
+  "  vulture AC 6 capture-wins with its xp",
+  "  rows verbatim (I/20+2, II/35 no",
+  "  per-hp); the vegepygmy HD 1-to-6",
+  "  low-end + the 6-rung ladder consts +",
+  "  treasure O,T,P capture-wins; the",
+  "  ustilagor \"Unstable\" capture-wins; the",
+  "  urchin 2-12 the loader clamp 10; the",
+  "  vilstrak 1-6 hp flat high-end 6; the",
+  "  vagabond nil block (AC 9 default, xp",
+  "  0, hitDiceNum \"0\" per the shade",
+  "  precedent); the tarrasque 300 hp flat",
+  "  + the -3 AC unquoted number; the",
+  "  print typos pinned verbatim (lejendary,",
+  "  tranposer, Tarterus, parallel unverse);",
+  "  every MR cell coerces 0.",
+  "  THE R814 REPAIRS (TWO RED-NO-COMMIT",
+  "  runs, the R639/R400/R812/R813 repair",
+  "  flow, the same round number",
+  "  re-issued): (1) THE LOADER",
+  "  hitDiceNum DEFAULT-1 TRAP: the first",
+  "  cut pinned the vagabond hitDiceNum",
+  "  \"As form\" (a non-numeric string), but",
+  "  the loader's luaGetInt(\"hitDiceNum\",",
+  "  1) defaults to 1 - the def loaded 1",
+  "  against the grid's 0, the R814 walk",
+  "  printed bad 1 and the census cascade",
+  "  went dark. THE FIX: the cell \"0\" (the",
+  "  R813 shade precedent) + a repair",
+  "  sentence in audit_comment; the",
+  "  offline sim rebuilt with the exact",
+  "  per-field luaGetInt DEFAULTS",
+  "  (hitDiceNum -> 1, others -> 0) + an",
+  "  explicit vagabond regression assertion",
+  "  - the new gate class: replicate the",
+  "  loader coercers AND their default",
+  "  values. (2) THE UNWIND WILDCARD",
+  "  SWEEP: the repair's unwind rm carried",
+  "  \"monsters/monsters/u/*.lua\" - a whole",
+  "  -letter wildcard that deleted THREE",
+  "  PRE-EXISTING TRACKED DEFS",
+  "  (ultrodaemon, umber_hulk, unicorn)",
+  "  alongside the round's two new u/",
+  "  files; git checkout covered only the",
+  "  three patched tracked files, so the",
+  "  battery loaded 789 not 792 and the",
+  "  R799 walk's find(\"ultrodaemon\")",
+  "  returned null - R799 bad 1 with the",
+  "  same ~600-line cascade. THE FIX: git",
+  "  checkout -- of the three u/ defs",
+  "  (nothing in the spec was wrong) and",
+  "  the plain rerun - GREEN. STANDING",
+  "  LESSON: an unwind rm NEVER wildcards",
+  "  a whole letter directory - list the",
+  "  round's own files explicitly (the",
+  "  engine's data-file list is the",
+  "  authoritative rm list).",
+  "  ONE REGTEST PATCH: the R814 live def",
+  "  walk at the R227 anchor (the R813",
+  "  S-walk pattern), its registry census a",
+  "  FLOOR 766 -> at least 792. LOCAL",
+  "  VERIFICATION (environment reset -",
+  "  rebuilt from the tarball at 61fc91a,",
+  "  the spec recovered from the canvas):",
+  "  engine double-run 34/0 -> 0/34; rverify",
+  "  GREEN vs 61fc91a - 576 mutants, 0",
+  "  missed (both cuts); the default-aware",
+  "  loader sim 792 defs 0 errors. The",
+  "  repair cut's preflight loaded 789 with",
+  "  the R799 bad (the wildcard sweep), the",
+  "  post-restore run GREEN FIRST PASS:",
+  "  loaded 792, errors 0; xp audit 792/0;",
+  "  R797 through R814 live defs all bad 0;",
+  "  AUDIT CENSUS 737 each exactly once,",
+  "  all bad 0; build 0 warnings. Commit 31",
+  "  files, 7571 insertions. Delivery",
+  "  spec-r814: raw JSON canvas, first cut",
+  "  md5 d73ec6f2879fb9063ac903d931a7a934",
+  "  160902 bytes (RED, nothing landed),",
+  "  repair md5 773046435874fd4ce61ef909f93e1751",
+  "  161318 bytes, landed the same (no",
+  "  editor delta). NEXT - R815: awaits",
+  "  Curtiss's call (10 open boxes remain)."
+ ]
+}

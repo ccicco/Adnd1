@@ -1,0 +1,36 @@
+-- Wolf-in-Sheep's-Clothing: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Wolf-in-Sheep's-Clothing",
+  page = "127",
+  pages = "127",
+  source = "MM2",
+  race = "Wolf-in-Sheep's-Clothing",
+  hitDice = "9 (see below)",
+  hitDiceNum = "9",
+  hitDiceBonus = "0",
+  avgHp = "31",
+  armorClass = "3 (root tentacles)/5 (body stump)/7 (eyestalks)",
+  numAttacks = "1-3",
+  damage = "1-4",
+  xp = "900",
+  xpPerHp = "14",
+  xpValue = 1334,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "1\"",
+  size = "S (effective)",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "This weird vegetable monster lurks in undergrowth or in grassy meadowlands. It creeps slowly from place to place, using its 7 root tentacles for locomotion, early feeding, and even to capture live prey. Its 2 or 3 eyestalks are long enough to give the monster excellent, wide-angle vision.\n\nWhile the actual body (stump) of the wolf-in-sheep's-clothing can stand 9 hit dice of damage, its appendages can be broken or severed without permanent harm to the monster, as it can regenerate them in 1-4 weeks. Root tentacles take 19-22 hit points each and eyestalks 13-16 hit points. The creature's attack is to lure prey within 12 feet and then strike and grasp with 1-3 of its gnarled root tentacles. A successful strike inflicts 1-4 points of damage and entwines the victim. The prey will then be drawn to the stump's maw next round. Damage will be another 1-4 hit points plus a certain bite for another 7-12 hit points unless the victim manages to break free of the grasping root or roots.\n\nBreaking a root tentacle by sheer strength requires an unhindered grasp; thus, a creature held by a root cannot break it, but the creature may break free. Breaking free requires 13 or greater strength. Each point allows a 5% chance. At 18 strength, the chance to break free is 30% +1% per 1% of exceptional strength; thus, a character with 18/70 strength has 100% probability of breaking loose. Only creatures with exceptional strength can break a root tentacle.\n\nThe wolf-in-sheep's-clothing is 90% likely to attack by surprise. It uses its resemblance to a tree stump or its ability to sprout a growth resembling a small furry creature to attract prey. The lure-growth is moved so as to \"look\" at approaching prey and then it will \"freeze\" so as to be \"unnoticed.\"\n\nThe body of the wolf-in-sheep's-clothing appears to be a grayish-brown tree stump from 2-3 feet in diameter. Eyestalks are 10-15 feet long, brown near the base, green at the tips, and with pinkish or violet flower-like eyes. Roots are from 9-12 feet long. The vertical maw located in the trunk has jagged teeth and thick, black lips. When shut, it appears to be an old scar on a normal tree stump.",
+}

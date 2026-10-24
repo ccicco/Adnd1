@@ -1,0 +1,36 @@
+-- Yeth Hound: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Yeth Hound",
+  page = "129",
+  pages = "129",
+  source = "MM2",
+  race = "Yeth Hound",
+  hitDice = "3+3",
+  hitDiceNum = "3",
+  hitDiceBonus = "3",
+  avgHp = "13",
+  armorClass = 0,
+  numAttacks = 1,
+  damage = "2-8",
+  xp = "235",
+  xpPerHp = "4",
+  xpValue = 287,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "4-16",
+  lairPct = "100",
+  treasure = "Incidental",
+  move = "15\"/27\" (MC:B)",
+  size = "L (4-1/2 to 5' at shoulder)",
+  intelligence = "Low",
+  alignment = "Neutral evil",
+  specialAttacks = "Fear",
+  specialDefenses = "Silver or magic weapon to hit",
+  magicResistance = "10%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The hideous monster hounds known as yeth are found only in the wildest, most remote places. They lair in subterranean dens until the clean sunlight fades and they can come forth to hunt. They will devour any warm-blooded prey but vastly prefer demihumans, brownies, and the like.\n\nYeth hounds make a ghastly baying which can be heard for a mile or more. Creatures within 9\" must save vs. spells or flee in panic - usually to be pulled down and gnawed to death by the ferocious pack. Yeth hounds can be struck only by silver or magic weapons, and only the magical pluses of such weapons actually inflict damage, i.e., a +1 long sword inflicts 1 point of damage, a +2 dagger 2 points, a +3 spear 3 points, etc. Silver weapons inflict 1 point because of their metal. As yeth hounds have the magical ability to fly and enjoy service to such creatures as night hags, evil humans, and the like, they will often be encountered cooperating with some sort of evil huntsmen. Of course, such things as will hunt with yeth are not subject to fear from their dreadful baying.\n\nYeth hounds appear to be huge dogs of dull black color. Their heads have an almost human appearance, and their ears are horn-like. Their eyes glow a cherry red color.",
+}

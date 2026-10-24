@@ -1,0 +1,36 @@
+-- Wolfwere: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Wolfwere",
+  page = "127",
+  pages = "127",
+  source = "MM2",
+  race = "Wolfwere",
+  hitDice = "5+1",
+  hitDiceNum = "5",
+  hitDiceBonus = "1",
+  avgHp = "18",
+  armorClass = 3,
+  numAttacks = "1 or 2",
+  damage = "2-12 plus possible weapon",
+  xp = "550",
+  xpPerHp = "6",
+  xpValue = 658,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-3",
+  lairPct = "35",
+  treasure = "B, 50% of S.T",
+  move = "15\"",
+  size = "M",
+  intelligence = "High to exceptional",
+  alignment = "Chaotic evil",
+  specialAttacks = "Singing brings on lethargy",
+  specialDefenses = "Iron or +1 or better weapon to hit",
+  magicResistance = "10%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Inhabiting out of the way places, the hated and feared wolfwere is the bane of humans and demihumans alike, for it is able to take the form of a human male or female of considerable charisma. In either its true shape or that of man, the wolfwere slyly hunts, slays, and devours its favored prey - men, halflings, elves, etc. A wolfwere will usually (75%) run with a pack of normal wolves (30%) or worgs (70%). When strong prey is encountered, the monster will slip away to its lair, don human garb, and approach the victims in the guise of a pilgrim, minstrel, tinker, or similar wanderer. Oftimes the wolfwere will carry a stringed instrument to play upon, so its crooning will not arouse suspicion. The powerful jaws of this creature can deliver terrible bites. Additionally, the wolfwere can half-change, gain human-like arms and legs, and wield a human weapon. It can still bite in this form. Worst of all, however, is the monster's song. Listeners are overcome with lethargy, just as if they had been slowed by a slow spell, unless each makes a saving throw vs. spells. The lethargy lasts for 5-8 rounds and cannot be countered once it takes effect. The monster can be hit only by cold-wrought iron weapons or those equal to +1 or better magic. It must be noted that a great enmity exists between wolfwere and werewolves. The wolfwere are disgusted by wolvesbane and shun it if possible.",
+}

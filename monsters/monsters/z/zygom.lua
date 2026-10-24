@@ -1,0 +1,36 @@
+-- Zygom: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Zygom",
+  page = "131",
+  pages = "131-132",
+  source = "MM2",
+  race = "Zygom",
+  hitDice = "3 (host's - see below)",
+  hitDiceNum = "3",
+  hitDiceBonus = "0",
+  avgHp = "10",
+  armorClass = 8,
+  numAttacks = "By host type",
+  damage = "By host",
+  xp = "85",
+  xpPerHp = "4",
+  xpValue = 125,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-3",
+  lairPct = "50",
+  treasure = "By host type and/or incidental",
+  move = "1\" (or host - see below)",
+  size = "By host size (1/6'-1/4' per growth)",
+  intelligence = "Unratable",
+  alignment = "Neutral (evil)",
+  specialAttacks = "Milky glue",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Zygoms are small individual fungoid growths which consist of a short, thin stem with an ovoid cap. One or 2 dozen such growths are joined by a rhizome structure to form a singular communal creature, a zygom. Although able to exist in earth, zygoms perfer to infest living flesh and nourish themselves on the host's blood and tissue. This infestation controls the host creature by brain and nerve connections. It leads to death in 1-8 weeks, depending on the size and constitution of the host creature. The zygom remains until the whole of the dead body is consumed and then moves on. As host creatures are controlled, they move, attack, and defend according to the dictates of the possessing zygoms. Infestation is typically on head, neck, and back (spinal) areas. Typical host creatures are: ants (giant), rats (giant), osquips, and occasionally small humanoids. Whenever a colony of zygoms comes in rough contact with any creature, there is a 1 in 6 chance that the pale blue \"milk\" of a broken cap will stick fast to the creature. This milk is extremely sticky, and it has the power to glue materials together for 2-5 days before the substance drys and crumbles. If glued to flesh, a colony of zygom spores will infect the creature and begin growth by the time the glue powders, allowing the zygoms to infest and control the host. Only a cure disease will remove infestation. Zygom glue can be otherwise embarassing, for it will stick weapons to targets, creatures to creatures, etc.\n\nAs zygoms have fungoid intelligence which is totally alien to humans, no magic affecting the mind - beguiling, charming, dominating, holding, hypnotizing, etc. - will affect them.",
+}

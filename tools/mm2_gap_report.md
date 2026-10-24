@@ -65,7 +65,7 @@ the R614 precedent.
 - [x] **Special Entries doctrine** (pp. 6-7) - plane,
   cleric/druid, fighter, magic-user/illusionist,
   thief/assassin, monk/bard
-- [ ] **Monsters from A-Z** (pp. 8-132) - the parent
+- [x] **Monsters from A-Z** (pp. 8-132) - the parent
   of the letter boxes below; the per-letter
   sub-censuses and the family sub-rosters walk AT
   PIN TIME from the print (the R792 lesson), the
@@ -158,19 +158,19 @@ the R614 precedent.
   under V; the archive.org heading walk found 6
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter W** (pp. 73-127) - the A-Z entries
+- [x] **Letter W** (pp. 73-127) - the A-Z entries
   under W; the archive.org heading walk found 3
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter X** (pp. 128-128) - the A-Z entries
+- [x] **Letter X** (pp. 128-128) - the A-Z entries
   under X; the archive.org heading walk found 1
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter Y** (pp. 31-130) - the A-Z entries
+- [x] **Letter Y** (pp. 31-130) - the A-Z entries
   under Y; the archive.org heading walk found 2
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter Z** (pp. 131-132) - the A-Z entries
+- [x] **Letter Z** (pp. 131-132) - the A-Z entries
   under Z; the archive.org heading walk found 2
   candidate entry headings - the pin-time walk from
   the print is authoritative

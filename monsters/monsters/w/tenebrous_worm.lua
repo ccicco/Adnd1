@@ -1,0 +1,36 @@
+-- Worm, Tenebrous: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Worm, Tenebrous",
+  page = "127",
+  pages = "127-128",
+  source = "MM2",
+  race = "Worm",
+  hitDice = "10",
+  hitDiceNum = "10",
+  hitDiceBonus = "0",
+  avgHp = "35",
+  armorClass = 1,
+  numAttacks = 1,
+  damage = "2-20",
+  xp = "2400",
+  xpPerHp = "20",
+  xpValue = 3100,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "1\"",
+  size = "M (6 feet long)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Acid",
+  specialDefenses = "Poison bristles",
+  magicResistance = "Standard",
+  psionic = "None",
+  attackDefenseModes = "Nil/nil",
+  text = "These insectoid predators inhabit most of the Plane of Shadows, though they are more common in forested areas. They seek warm-blooded prey but will hesitate to attack humans.\n\nTenebrous worms are formidable opponents in combat; their heads are equipped with powerful mandibles that drip a highly caustic acid secreted from glands located behind the creature's multi-faceted eyes. Any opponent struck by the mandibles is also subject to the effects of the secretion (save vs poison at -3, or take double damage from the bite).\n\nThe head and forebody of the monster are covered with stiff bristles which are poisonous to mammals. Any opponent who strikes the protected area with an open hand or similar attack (claw, bite, cause wounds spell, etc.) will immediately be filled with filaments from the bristles and will suffer 1-4 (1d4) points of damage. The victim must also save vs poison or be paralyzed from the contact. Such victims must receive a neutralize or slow poison spell within 1-4 rounds or the contact will be fatal. Opponents who strike with a weapon gain the benefit of armor against this defense. To determine if contact occurs, multiply the attacking character's armor class (minus shield and dexterity bonuses) by 10 to determine a percentage. Contact occurs if this number or lower is rolled on percentile dice. Note that there are fewer bristles on the creature's head. To reflect this, reduce the chance of contact by 20%. For example, a character with plate and shield would have a 30% chance of contact with the bristles (AC 2 plus 1 for disregarding the shield, times 10), but this would drop to 10% if the attack were aimed at the head.\n\nTenebrous worms look like huge, partially bare caterpillars. The front section of the body is covered with lusterless black bristles, while the hind parts are a wet, nauseating grey. The many facets of the creature's eyes reflect the half-light of the Plane of Shadows with a luminous glimmer. This glimmer is the only warning of their presence. Their small, black legs allow them to move rapidly. Their great maws are flanked by huge, pearly mandibles. These tusk-like weapons are quite beautiful if cut into sheets and inlaid (as is mother of pearl), so they have a value of 1000-3000 gp per set.\n\nFor the adult stage of this monster, see \"Gloomwing.\"",
+}

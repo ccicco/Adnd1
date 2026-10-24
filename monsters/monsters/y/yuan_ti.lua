@@ -1,0 +1,36 @@
+-- Yuan-ti: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Yuan-ti",
+  page = "130",
+  pages = "130",
+  source = "MM2",
+  race = "Yuan-ti",
+  hitDice = "6-9",
+  hitDiceNum = "6",
+  hitDiceBonus = "0",
+  avgHp = "21",
+  armorClass = "4/0",
+  numAttacks = 2,
+  damage = "See below",
+  xp = 0,
+  xpPerHp = 0,
+  xpValue = 0,
+  xpSource = "by_level",
+  frequency = "Very rare",
+  noAppearing = "1-4",
+  lairPct = "70",
+  treasure = "C",
+  move = "12\" or 9\"",
+  size = "M",
+  intelligence = "Genius",
+  alignment = "Chaotic evil",
+  specialAttacks = "Spells",
+  specialDefenses = "Nil",
+  magicResistance = "20%",
+  psionic = "150",
+  attackDefenseModes = "B,D/F,I,J",
+  text = "Inhabitants of tropical jungles, the yuan ti are a degenerate and corrupt race of creatures who were once human. All are devout demon worshippers who have a high regard for all kinds of reptiles. Through dark and unknown practices, their blood has become fouled and they produce monstrosities. There are 3 types of yuan ti: purebloods, halfbreeds, and abominations.\n\nPurebloods are the weakest of the yuan ti, having only 6 hit dice. They are human in appearance, except for some slight differences, such as scaly hands, a forked tongue, or a somewhat reptilian look about them. They are able to pass as humans 80% of the time. Purebloods normally handle affairs with the outside world and may travel far and wide doing so.\n\nHalfbreeds are highly distinctive. Some part of one's body is that of a snake, while the rest is human. Appearance may be determined by the table below (rolling once or twice), or the DM may select the changes: 1 = snake head; 2 = torso can bend and move like a snake's; 3 = no legs, torso ends in a snake's tail; 4 = has snakes instead of arms; 5 = body is covered by scales; 6 = snake tail is growing from backside. If any combination seems impossible or unworkable, the result should be ignored. The DM may also create other results involving snakes and humans.\n\nIn attacks, a halfbreed with a snake-head will bite for 1-10 points of damage, one with snake-headed arms will bite for 1-6 points, and one with a tail will constrict for 1-4 points. Otherwise the yuan ti will be able to handle weapons as normal humans. All snake parts will have an armor class of 0. Halfbreeds have 7-8 hit dice.\n\nAbominations are the strongest of the yuan ti. All have 9 hit dice. In appearance they are often confused with nagas and other snake creatures. Abominations are either totally snake-like or have only 1 human feature, such as a head or arms. Their bite (unless from a human head) will do 1-10 points of damage.\n\nAll yuan ti with human legs may move 12\" per turn. Those with snake bodies move 9\" per turn and are able to coil around pillars and the like. Human-headed yuan ti are able to cast the following spells once per day: cause fear, darkness within a 15-foot radius, snake charm, stick to snakes, neutralize poison, suggestion, and polymorph other.\n\nYuan ti speak their own language. They may also speak with any snake or snake-like monster. Those with human heads also speak Chaotic and Common.",
+}

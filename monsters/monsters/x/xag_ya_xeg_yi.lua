@@ -1,0 +1,36 @@
+-- Xag-ya and Xeg-yi: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Xag-ya and Xeg-yi",
+  page = "128",
+  pages = "128-129",
+  source = "MM2",
+  race = "Xag-ya",
+  hitDice = "5-8",
+  hitDiceNum = "5",
+  hitDiceBonus = "0",
+  avgHp = "17",
+  armorClass = 0,
+  numAttacks = 1,
+  damage = "7-12",
+  xp = "1100",
+  xpPerHp = "10",
+  xpValue = 1270,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "6\"",
+  size = "M",
+  intelligence = "High (mindless by human standards)",
+  alignment = "Neutral",
+  specialAttacks = "Energy blast or drain",
+  specialDefenses = "+1 or better weapon to hit; see below",
+  magicResistance = "15%",
+  psionic = "120+10 to 60",
+  attackDefenseModes = "All/all",
+  text = "Xag-ya are creatures from the Positive Material Plane, and xeg-yi are from the Negative Material Plane. They are much alike, being reverse images of each other. Xag-ya are silver and fiery. Their touch brings a surge, much like a bolt of lightning, that will cause combustion of highly flammable materials such as parchment, cloth, wood, etc.\n\nEvery other round, a xag-ya can loose a bolt of energy that equals its touch up to 10 feet at a single target. The bolt heats metallic objects to glowing. Metallic items of magical nature do not heat if their owners succeed in making their saving throw vs. lightning. (Base 11 for hard metal, 16 for soft, with pluses to the die roll for magic components.) Heated metal must be dropped and any worn discarded. Damage per segment of contact with such metal is 1-4 points.\n\nThe touch of a black, lifeless xeg-yi causes cell death, life energy drain of a mild sort, and aging and rotting of such materials as are burned by xag-ya. Xeg-yi send identical tendrils of negative current which chill metal and inflict damage. Normal metal, magical properties, and magical metals which have not been saved vs. the energy melt are lost. That which fails against the negative current of xeg-yi shatters or decays due to corrosion. (Saving throw is the same as that vs. the attack of a xag-ya.)\n\nSlaying either type of creature releases a burst of energy or negative force with a 10-foot radius. This release inflicts double damage (14-24) on all victims within its area of effect, and saving throws must be made as if a bolt had actually touched the affected creatures. If a xag-ya and a xeg-yi should ever meet, they will rush together and destroy each other in a huge (30-foot radius) explosion which looses 28-48 points of damage (4d6+24) in the blast area.\n\nOnly magic weapons will affect these creatures. Xag-ya are affected by magic creating cold, xeg-yi by that creating heat. Both sorts of creatures are subject to attack by disintegrate and magic missile. Negation and absorption are effective against the attack of xag-ya, while a mace of disruption and rod of cancellation are effective vs. xeg-yi attacks without harm to the devices used. A shield spell prevents the attack of either creature. A circle of protection (spell, magic circle, thaumaturgic triangle, or pentagram) will repulse attacks of either kind of creature. All other magic or spells, unless of one of the above sorts, have no effect except the following which can slay or return either creature to its own plane: abjure, alter reality, banishment, dismissal, dispel magic (treat as magic of a level equal to twice the creature's hit dice), holy (unholy) word, limited wish, plane shift, wish.\n\nXag-ya and xeg-yi are often used as guardians of magic. They can be ensnared by magic summons and linked to an object. When the object is torn, broken, or opened without properly negating the summoning link, the xag-ya or xeg-yi appears and attacks all within a 3\" radius of the object. Both creatures are spherical with many radiating, tentacle-like protrusions. Xag-ya have glowing golden eyes. Xeg-yi have dull metallic orbs.",
+}

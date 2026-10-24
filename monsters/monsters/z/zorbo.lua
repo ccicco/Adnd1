@@ -1,0 +1,36 @@
+-- Zorbo: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Zorbo",
+  page = "131",
+  pages = "131",
+  source = "MM2",
+  race = "Zorbo",
+  hitDice = "4+2",
+  hitDiceNum = "4",
+  hitDiceBonus = "2",
+  avgHp = "16",
+  armorClass = "10 (See below)",
+  numAttacks = "2 claws",
+  damage = "1-2 each + special",
+  xp = "280",
+  xpPerHp = "5",
+  xpValue = 360,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-4",
+  lairPct = "30",
+  treasure = "P, Q, X",
+  move = "15\"/9\"",
+  size = "S (3' tall)",
+  intelligence = "Semi-",
+  alignment = "Neutral",
+  specialAttacks = "Absorption",
+  specialDefenses = "Absorption",
+  magicResistance = "20%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "This carnivorous beast likes human and demihuman flesh. A zorbo has poor armor class and attack damage when first encountered, but it can absorb the natural armor class of its surroundings in one round: earth = AC 7; wood = AC 5; metal = AC 3; stone = AC 0.\n\nThis new armor class lasts 10 rounds and also gives the zorbo a damage bonus equal to its original armor class 10 minus the new armor class. When a zorbo hits an opponent it can absorb the armor class and defensive bonuses of 1 random protective item (armor, shield, ring of protection, etc.), turning that item to dust (no save). If this would make the zorbo's current armor class worse, the item is destroyed, but the armor class is not absorbed. For example, if a zorbo is attacked in a cave and on the 1st round absorbs the armor class of stone, this gives it armor class 0 and a damage bonus of armor class 10 - 0 = 10. The next round it hits and absorbs its opponent's shield +2. This gives it a new armor class of -2 and a damage bonus of +12. The 3rd round it hits the opponent's plate mail (armor class 3), which turns to dust but does not change the zorbo's armor class or damage.",
+}

@@ -1,0 +1,36 @@
+-- Xaren: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Xaren",
+  page = "129",
+  pages = "129",
+  source = "MM2",
+  race = "Xaren",
+  hitDice = "5+5",
+  hitDiceNum = "5",
+  hitDiceBonus = "5",
+  avgHp = "22",
+  armorClass = 1,
+  numAttacks = 4,
+  damage = "1-3 (x3), 4-16",
+  xp = "55",
+  xpPerHp = "8",
+  xpValue = 231,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-4",
+  lairPct = "70",
+  treasure = "See below",
+  move = "9\"",
+  size = "(4' tall)",
+  intelligence = "Average",
+  alignment = "Neutral",
+  specialAttacks = "Surprise on a 1-5",
+  specialDefenses = "Immune to fire, cold attacks",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The xaren are relatives of the xorn. They exist on the Elemental Plane of Earth but enjoy travel to the Prime Material Plane to feed. Their favorite metals are iron, copper, silver, gold and electrum (in that order). Magic metal gives them 1 hit point permanently for every plus on an eaten item. Items that are not plus enchanted neither help nor harm a xaren unless they are aligned to harm neutral creatures. This +1 to +5 for eating a shield, for example, is limited so that total hit points can never exceed 45. Yet they will still crave magic metal and will be eager to obtain it. They are intelligent enough to realize the relationship between magic metal and their health.\n\nXaren, like xorn, blend with rock-like surroundings and thus are very likely to surprise others in such a setting. They like to snack on metal, even in ore form, and they can smell ore at 20 feet and magic metal at 40 feet. They do not eat very much at a single meal, and metal weighing 5-8 pounds is quite enough to satiate one for 1-4 days. Xaren speak a bizarre tongue but telepathy or knowledge of tongues can aid one in understanding them. They will approach and seek a hand-out. They will become highly aggravated if they smell magic metal which is not offered to them; in such a situation they are 80% likely to attack. Failure to offer ordinary metal will produce an attack 40% of the time.\n\nXaren are not harmed by fire and cold (even magical varieties) but lightning will deal out half or no damage. Move earth, flesh to rock and dig will kill them instantly. Rock to mud lowers their armor class to 10 in 1-4 rounds. Sharp weapons do only half-damage to xaren, but blunt weapons do full damage. If attacked with a magic weapon, a xaren is 40% likely to try to bite the weapon (consider the weapon as armor class -2 for this attempt). A xaren bite will destroy any weapon utterly, but the weapon's owner is allowed a saving throw vs. crushing blow (with no bonus).\n\nXaren can move to the Elemental Plane of Earth at will and can move through solid rock at 9\" per round. It takes a xaren 1 full round to adjust its molecules so it can do this.\n\nXaren who reside on the Prime Material Plane are usually near treasure or ore of some kind. They hoard treasure for emergencies and eat it only if no other metal is at hand. Treasure type is as follows: 40% for 2-200 of each type of coin except platinum, 20% for 1-8 gems (10 gp base value), 10% for 1-2 magic items not made of metal and valued at under 10,000 gp. Occasionally nonmetal magic items might be in their hoard. Their lair might be a room inside of solid rock, for they can burrow in rock at 3\" per round. If this is the case (70% likely) it will not be very deep in the earth (only 10 feet or so). Xaren losing a melee will flee to their lair, and, if found there, escape to the Elemental Plane of Earth.",
+}

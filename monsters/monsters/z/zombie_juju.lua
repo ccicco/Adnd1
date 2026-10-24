@@ -1,0 +1,36 @@
+-- Zombie, Juju: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Zombie, Juju",
+  page = "130",
+  pages = "130-131",
+  source = "MM2",
+  race = "Zombie",
+  hitDice = "3+12",
+  hitDiceNum = "3",
+  hitDiceBonus = "12",
+  avgHp = "22",
+  armorClass = 6,
+  numAttacks = 1,
+  damage = "3-12",
+  xp = "110",
+  xpPerHp = "4",
+  xpValue = 198,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-4",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "9\"",
+  size = "M",
+  intelligence = "Low",
+  alignment = "Neutral (evil)",
+  specialAttacks = "See below",
+  specialDefenses = "+7 or better magic weapon to hit, see below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Juju zombies are created by magic-users who drain all life levels from humans or man-sized humanoids by means of an energy drain spell (q.v.). Although they are \"programmed\" as are regular zombies, they are superior in every way. They have a better armor class, move quickly (even under water, for they do not breathe), climb like 6th-level thieves, and attack with great force as if they were 6 hit dice monsters. A juju zombie can hurl weapons or discharge a bow or crossbow. Because they exist in part on the Negative Material Plane, juju zombies can be hit only by +1 or better magic weapons. Because of their undead nature, piercing or blunt weapon attacks do only one-half normal damage. Only cleaving weapons do normal damage, i.e., axes, broad and bastard or two-handed swords, bardiches, halberds, or voulges and similar weapons.\n\nJuju zombies are unaffected by all dweomers which affect the mind - illusion, charms, holds, etc., as well as poison, electricity, magic missiles, death, and cold spells. Fire has only one-half normal effect. Acid and holy water have full normal effects. A juju zombie is equal to a spectre with respect to clerical turning of undead.\n\nA juju zombie appears to be an ordinary zombie, although its flesh is less rotted and has a gray color and is leathery and hard. A hateful light burns in the monster's eyes, as it realizes its condition and wishes to destroy living things.",
+}

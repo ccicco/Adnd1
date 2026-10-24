@@ -1,0 +1,36 @@
+-- Wemic: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Wemic",
+  page = "125",
+  pages = "125",
+  source = "MM2",
+  race = "Wemic",
+  hitDice = "5+8",
+  hitDiceNum = "5",
+  hitDiceBonus = "8",
+  avgHp = "25",
+  armorClass = "6 (5)",
+  numAttacks = "2 claws, 1 weapon",
+  damage = "1-4/1-4 weapon",
+  xp = "200",
+  xpPerHp = "7",
+  xpValue = 375,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "2-16",
+  lairPct = "50",
+  treasure = "B",
+  move = "12\"",
+  size = "L (7' long)",
+  intelligence = "Average",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Surprised on a 1",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Wemics are large lion centaurs that roam temperate grasslands and savannas and hunt antelope and similar herd animals. They speak their own language and Common. Wemics are intelligent, know how to use fire, and are reported to be excellent trackers and guides.\n\nWemics are surprised only on a 1. In combat they attack with claws and a weapon. They are able to leap 10 feet upward and 30 feet forward. Wemic males carry javelins and a stone club or short sword. They often use tough leather shields (armor class 5). Females fight without weapons but gain a +2 on to-hit rolls if their young are attacked. Females use a clawing attack with armor class 7. The young are noncombative.\n\nWemics live in groups, called prides, of 4-16 males, 2-24 females, and 1-12 young. From 3-30 prides will band together to form a tribe led by a chief (AC 5, HD 6+4, Dmg 1-6/1-6 + weapon +1). Sometimes 2d4 tribes will form a clan or nation led by a king (AC 3, HD 9, Dmg 1-8/1-8 + weapon +2) and 2-8 chieftain bodyguards. There is a 70% chance a witch doctor will be present with any tribe (7th level cleric/4th level magic-user maximums).",
+}

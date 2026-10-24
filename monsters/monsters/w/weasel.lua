@@ -1,0 +1,36 @@
+-- Weasel: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Weasel",
+  page = "125",
+  pages = "125",
+  source = "MM2",
+  race = "Weasel",
+  hitDice = "1/4",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "2",
+  armorClass = 6,
+  numAttacks = 1,
+  damage = "1",
+  xp = "2",
+  xpPerHp = "1",
+  xpValue = 4,
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-2",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "15\"",
+  size = "S",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Weasels and their kin, such as mink, ferrets, and stoats, are common predators. Armor class is attributed to small size, darting movement, and speed. They will not attack unless cornered. Some of these creatures are hunted for their pelts, as their fur is valued. Ferrets can be captured while young and trained to hunt small burrowing game.",
+}

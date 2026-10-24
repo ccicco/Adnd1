@@ -1,0 +1,36 @@
+-- Webbird: promoted by the R815 MM2 letters WXYZ walk
+-- round from the MM2 print
+-- (spec tools/spec_r815.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Webbird",
+  page = "125",
+  pages = "125",
+  source = "MM2",
+  race = "Webbird",
+  hitDice = "1/2",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "2",
+  armorClass = 8,
+  numAttacks = 1,
+  damage = "1 hp",
+  xp = "7",
+  xpPerHp = "1",
+  xpValue = 9,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "12-48",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "3\"/18\"",
+  size = "S",
+  intelligence = "Semi-",
+  alignment = "Neutral",
+  specialAttacks = "Webs, egg insertion",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The webbird is not actually an avian; it might be some form of feathered insect or arachnid. It is found in semitropical lands, usually inhabiting the fringes of woodlands so it can seek prey in nearby open ground. A webbird appears to be a beakless bird, about raven-sized, with long-feathered wings and a long spiky tail. Careful inspection will reveal a slitted mouth with hard, sharp ridges for biting and a drooping chest appendage about 4 inches long.\n\nFood consists of small flying creatures. When large, warm-blooded creatures come within sight, a flock of webbirds will take to the air. They then gather together and make low passes over the heads of the intended victims. Each webbird can emit a 7-12 foot long strand of sticky, inflammable web once per round. The effectiveness of a flock's attack is determined by rolling 1d6 and adding 1 for every 6 webbirds in the flock. The area of attack is 12 feet by 12 feet square. Attacks are as follows: 1-3, ineffective attack; 4-6, 1 creature ensnared for 2-8 rounds; 7-10, 2-5 creatures ensnared for 2-5 rounds; 11 and up, the entire area covered with webs and all therein held fast for 2-5 rounds.\n\nA strength score of 17 will shorten immobilization time by 1 round and 18 (with or without exceptional rating) by 2. Alcohol dissolves the strands, 1 flask of wine being sufficient to free 1 man-sized creature. As soon as a victim is held fast, 1-4 webbirds will alight upon it. Next round the webbirds will insert their chest appendages in exposed flesh and inject 2-8 eggs. Grubs hatch from the eggs in 3-6 turns, and each grub eats its way into the host and inflicts 1 point of damage per round (per grub), eventually killing it. Fledgling webbirds will emerge from a corpse within 7 turns after the victim has died. Pain from grubs is excruciating. (A cure disease spell will kill the grubs.)\n\nWebbirds shun flame and fire. An individual with a torch will be safe from attack as the webbirds will avoid him or her and attack unprotected creatures. A webbird can be caught in a person's hand (a successful to-hit score) and crushed then and there. The monster will always inflict a dying bite (1 hit point) upon its slayer.\n\nWebbird feathers are metallic gray with greenish hues at wingtips and tails. Underbellies are bright gray, shading to light green near the tail.",
+}

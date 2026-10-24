@@ -21902,6 +21902,119 @@ PREFLIGHT GREEN (the repair cut, first pass):
   bytes, landed the same (no editor delta).
   NEXT - R814: awaits Curtiss's call (13 open
   boxes remain).
+- R814 LANDED 2026-10-24: commit
+  8137d904c6071946e89d2778b204f4a8d6f8d469
+  (census 736 -> 737, pushed 61fc91a..8137d90),
+  THE MM2 LETTERS TUV WALK - THE
+  TARRASQUE TO VULTURE TURNS - THE
+  TUV-FLIP ROUND (Curtiss's letters-TUV
+  Go call on the landed letter S walk;
+  round nineteen of the MM2 arc, the
+  FOURTH three-letter pass - the
+  tarrasque opens p. 117 and the
+  ordinary vulture closes p. 125).
+  THE PIN-TIME WALK: TWENTY-SIX defs on
+  pp. 117-125 - TWENTY-ONE entry heads
+  carrying TWENTY-TWO stat blocks (the
+  termite royal pair the extra block),
+  ZERO prior-owned, ZERO doctrine-only.
+  TWENTY-SIX .lua defs ride the R791
+  data_files extension, registry 766 ->
+  792. Header rules/mm2tuv.h, prefix
+  mm2tuv, 267 consts + 49 bools + ONE
+  grid (the 26x10 TUVStats stat grid) =
+  326 inline. THE TUV-FLIP: the Letter
+  T, U and V gap boxes ALL flip to
+  closed - 27 closed 10 open.
+  THE SETTLED READS (capture primary,
+  the transcription the cross-check
+  voice): the transposer xp 625
+  capture-wins (the transcription 525);
+  the scrag saltwater 6+12
+  capture-wins; the thessalhydra 5800
+  (the "5S00" capture); the ordinary
+  vulture AC 6 capture-wins with its xp
+  rows verbatim (I/20+2, II/35 no
+  per-hp); the vegepygmy HD 1-to-6
+  low-end + the 6-rung ladder consts +
+  treasure O,T,P capture-wins; the
+  ustilagor "Unstable" capture-wins; the
+  urchin 2-12 the loader clamp 10; the
+  vilstrak 1-6 hp flat high-end 6; the
+  vagabond nil block (AC 9 default, xp
+  0, hitDiceNum "0" per the shade
+  precedent); the tarrasque 300 hp flat
+  + the -3 AC unquoted number; the
+  print typos pinned verbatim (lejendary,
+  tranposer, Tarterus, parallel unverse);
+  every MR cell coerces 0.
+  THE R814 REPAIRS (TWO RED-NO-COMMIT
+  runs, the R639/R400/R812/R813 repair
+  flow, the same round number
+  re-issued): (1) THE LOADER
+  hitDiceNum DEFAULT-1 TRAP: the first
+  cut pinned the vagabond hitDiceNum
+  "As form" (a non-numeric string), but
+  the loader's luaGetInt("hitDiceNum",
+  1) defaults to 1 - the def loaded 1
+  against the grid's 0, the R814 walk
+  printed bad 1 and the census cascade
+  went dark. THE FIX: the cell "0" (the
+  R813 shade precedent) + a repair
+  sentence in audit_comment; the
+  offline sim rebuilt with the exact
+  per-field luaGetInt DEFAULTS
+  (hitDiceNum -> 1, others -> 0) + an
+  explicit vagabond regression assertion
+  - the new gate class: replicate the
+  loader coercers AND their default
+  values. (2) THE UNWIND WILDCARD
+  SWEEP: the repair's unwind rm carried
+  "monsters/monsters/u/*.lua" - a whole
+  -letter wildcard that deleted THREE
+  PRE-EXISTING TRACKED DEFS
+  (ultrodaemon, umber_hulk, unicorn)
+  alongside the round's two new u/
+  files; git checkout covered only the
+  three patched tracked files, so the
+  battery loaded 789 not 792 and the
+  R799 walk's find("ultrodaemon")
+  returned null - R799 bad 1 with the
+  same ~600-line cascade. THE FIX: git
+  checkout -- of the three u/ defs
+  (nothing in the spec was wrong) and
+  the plain rerun - GREEN. STANDING
+  LESSON: an unwind rm NEVER wildcards
+  a whole letter directory - list the
+  round's own files explicitly (the
+  engine's data-file list is the
+  authoritative rm list).
+  ONE REGTEST PATCH: the R814 live def
+  walk at the R227 anchor (the R813
+  S-walk pattern), its registry census a
+  FLOOR 766 -> at least 792. LOCAL
+  VERIFICATION (environment reset -
+  rebuilt from the tarball at 61fc91a,
+  the spec recovered from the canvas):
+  engine double-run 34/0 -> 0/34; rverify
+  GREEN vs 61fc91a - 576 mutants, 0
+  missed (both cuts); the default-aware
+  loader sim 792 defs 0 errors. The
+  repair cut's preflight loaded 789 with
+  the R799 bad (the wildcard sweep), the
+  post-restore run GREEN FIRST PASS:
+  loaded 792, errors 0; xp audit 792/0;
+  R797 through R814 live defs all bad 0;
+  AUDIT CENSUS 737 each exactly once,
+  all bad 0; build 0 warnings. Commit 31
+  files, 7571 insertions. Delivery
+  spec-r814: raw JSON canvas, first cut
+  md5 d73ec6f2879fb9063ac903d931a7a934
+  160902 bytes (RED, nothing landed),
+  repair md5 773046435874fd4ce61ef909f93e1751
+  161318 bytes, landed the same (no
+  editor delta). NEXT - R815: awaits
+  Curtiss's call (10 open boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
