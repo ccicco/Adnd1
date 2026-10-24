@@ -22318,6 +22318,112 @@ PREFLIGHT GREEN (the repair cut, first pass):
   - the Random Encounter Tables parent,
   Aquatic 150+, and the Index p. 156; also
   queued: a Lammasu Greater promotion).
+- R818 LANDED 2026-10-24: commit
+  92790264b6e618bc6ad5f7e9b8f081e02dfb2f51
+  (census 740 -> 741, pushed
+  8da3f32..9279026),
+  THE MM2 AQUATIC ENCOUNTER TABLES WALK -
+  THE 12 SURFACE AND DEPTHS GRIDS (Curtiss's
+  Go call on the landed R817; round
+  twenty-three of the MM2 arc, the SIXTH
+  table-group round, the Aquatic Random
+  Encounter Tables box flips - 35 closed
+  2 open). THE PIN SCOPE: the 12 grids
+  (6 areas - cold, temperate and tropical,
+  each freshwater and saltwater, each
+  surface + depths) x 19 die rows = 228
+  cells, the 3-col [die, src, special]
+  schema; NO party/structure/patrol rows
+  in the aquatic grids. PRINT FOLIO p. 137
+  (the gap box label says pp. 150+ but the
+  printed page numbers in both scans give
+  137 - the true folio noted in the banner
+  and audit prose, the flip anchor
+  untouched; same class as R817's
+  pp. 140-141+ vs true 135-136). THE
+  SETTLED READS (three voices collated:
+  scan A tsr02016 djvu, scan B
+  monstermanualii1sted djvu, the 1eonline
+  aret transcription): the src cells are
+  EDITORIAL 1 MM1 / 2 MM2 / 3 FF / 0 none;
+  13 FF rows ride keyless (Quipper, Kelpie,
+  Dragonfish, Throat Leech, Vodyanoi, Thork
+  the Copper Stork, the four Urchins,
+  Crabman, Algoid, Bunyip - the registry
+  carries no FF defs); 3 lung dragon
+  cross-refs keyless (Dragon, Sea = the
+  lung wang sea dragon, Dragon, Spirit =
+  the shan lung - queued on the OA
+  promotion seam); the editorial aliases
+  all flagged (Mottled Worm -> purple_worm,
+  Kopoacinth -> gargoyle, Lacedon -> ghoul,
+  Elf Aquatic -> elf, Man Pirate ->
+  buccaneer, Seawolf Giant ->
+  seawolf_greater - the print cell reads
+  Giant vs the entry Greater, Snapper Giant
+  -> snapping_turtle, Eel Weed -> weed,
+  Ixitachitl -> ixitxachitl, Sphinx Andro-
+  -> androsphinx); the scrag editorial
+  split - freshwater grids ->
+  scrag_freshwater, saltwater grids ->
+  scrag_saltwater; 14 or-rows the R816
+  first-creature convention ("Dragonfish
+  or Scrag" rides keyless, "Octopus or
+  Sunken Ship" keys octopus, "Crystal Ooze
+  or Island" keys crystal_ooze); hazard 13
+  (Ice x2, Whirlpool x3, Island x2, Ghost
+  Ship x3, Seaweed x3), pointer 4 (Surface
+  Encounter x3, Land Encounter x1); the
+  census MM1 138 / MM2 51 / FF 19 / none
+  20, keyed 189 - all 102 distinct keys
+  validated against the 809 registry. THE
+  p. 137 DOCTRINE codified as consts and
+  bools and examples: the ice hull bands
+  (10-16 ft fresh, 10-60 ft salt, 1-6
+  damage/round, the 10 percent iceberg
+  hole, the 10-20 ice fields), the ghost
+  ship crew bands 40/40/20 and the officer
+  subtables (the 41-60 print gap pinned
+  verbatim), the sunken ship chart (the
+  11-20 no-treasure overlap pinned
+  verbatim, lacedons 2-24, 61-00 the main
+  chart), the floating seaweed and seaweed
+  bed bands, the island reef bands, the
+  whirlpool arithmetic (75 percent small
+  craft only under 50 ft, 25 percent any,
+  6 rounds to sink, see Afanc). LOCAL
+  VERIFICATION: engine double-run 6/0 ->
+  0/6; rverify GREEN - 770 mutants, 0
+  missed; the walk simulated offline bad 0
+  (hazard 13, pointer 4, lung 3, keyed
+  189); a declared-identifier sweep of
+  every mm2enca* call in the walk and
+  audit blocks (0 undeclared). TWO bugs
+  the gates caught and fixed PRE-HANDOFF
+  (the R817 lessons paying off): detour 1 -
+  the walk first cut consumed the R227
+  anchor instead of re-emitting it (R819
+  would die on the missing anchor); detour
+  2 - the keyed counter counted the 19
+  keyless FF rows (208 vs the 189 const);
+  both fixed and regated, tree restored
+  pristine (34 closed, 0 traces) before
+  each re-gate. SPEC SHAPE: 72 consts +
+  14 bools + 36 grid cols (inline 122), 12
+  tables, 13 examples, max walk width 77.
+  Delivery spec-r818: raw JSON canvas,
+  landed md5 ad467e87ef46c185d565bdbc2ff7
+  a67f, 75198 bytes, GREEN first pass.
+  NEXT - R819: awaits Curtiss's call
+  (2 boxes remain - the Random Encounter
+  Tables parent and the Index p. 156;
+  queued discoveries: the Lammasu Greater
+  promotion, the lung/shan OA dragon defs).
+- R817 LANDED 2026-10-24: commit
+  8da3f326e3b71e2aecd382a4a732a55dad00493e
+  (census 739 -> 740, pushed 32992bd..8da3f32),
+  THE MM2 OUTDOOR ENCOUNTER TABLES WALK -
+  THE 36 TERRAIN GRIDS (Curtiss's Go call on
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

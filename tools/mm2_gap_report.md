@@ -174,7 +174,7 @@ the R614 precedent.
   under Z; the archive.org heading walk found 2
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Random Encounter Tables** (pp. 133-155) -
+- [x] **Random Encounter Tables** (pp. 133-155) -
   the parent of the three table-group boxes below;
   the per-terrain and per-level sub-tables get their
   own boxes when those rounds pin
@@ -184,7 +184,7 @@ the R614 precedent.
   the terrain tables
 - [x] **Aquatic Random Encounter Tables** (pp. 150+) -
   the freshwater and saltwater tables
-- [ ] **Index** (p. 156) - the merged MM1/FF/MM2 index
+- [x] **Index** (p. 156) - the merged MM1/FF/MM2 index
 
 ## Census
 

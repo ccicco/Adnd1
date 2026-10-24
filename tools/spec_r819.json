@@ -1,0 +1,1080 @@
+{
+ "round": 819,
+ "title": "the MM2 index walk - the merged MM1/FF/MM2 index census",
+ "header_file": "rules/mm2enci.h",
+ "prefix": "mm2enci",
+ "include_after": "#include \"rules/mm2enca.h\"  // R818: the MM2 aquatic encounter tables walk - the 12 surface and depths grids",
+ "include_comment": "the MM2 index walk - the merged MM1/FF/MM2 index census",
+ "census_before": 741,
+ "audit_label": "R819 MM2 index census audit",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R818 LANDED 2026-10-24: commit",
+ "gap_report": "tools/mm2_gap_report.md",
+ "regtest": "regtest.cpp",
+ "data_files": [],
+ "banner": {
+  "title": "THE MM2 INDEX WALK - THE MERGED MM1/FF/MM2 INDEX CENSUS (print pp. 156-160: the gap box label says p. 156, the true span runs 156-160 in both scans; the 26 letter rows, the 1488 adjudicated lines, the 470 parenthetical cross-references), the ARC-CLOSER round - the Random Encounter Tables parent box and the Index gap box both flip to closed, 37 closed 0 open",
+  "provenance": "Round twenty-four of the MM2 arc, the index census round (Curtiss Go call on the landed R818 aquatic walk; the pin-time walk found 26 letter rows of 6 cells each, no defs promoted - the registry stays 809)",
+  "sentinel": "The pin header stays the print-fidelity record; the grid carries the ordinal, total, MM1, FF, this-book and cross-reference cells, the two-voice method rides the audit comments, and the walk cross-checks the letter arithmetic and the registry keys live"
+ },
+ "audit_comment": "THE MM2 INDEX WALK - the merged MM1/FF/MM2 index (print pp. 156-160, the gap box label says p. 156, the printed page numbers in both scans give the five-page span; the 4-column layout, the 26 letter sections). THE OPENING DOCTRINE (p. 156, pinned as the consts and bools): the index includes all official creatures (as of December, 1982) published in this volume as well as the MONSTER MANUAL and FIEND FOLIO; the left-hand column gives the book and page where each may be found, M for MONSTER MANUAL I, F for FIEND FOLIO, no letter if the creature is detailed in this book; a listing in parentheses to the right of the entry indicates the name under which it is found. THE METHOD: a two-voice adjudication - both archive.org djvu scans parsed independently (the column reconstruction, the ref-token split, the registry cross-resolve), junk-filtered, paired per letter by global-best matching; the 206 single-voice slots adjudicated by hand, the ref-fused M and F OCR lines re-lettered to their true sections, the split fragments dropped. THE PIN: a line census, not a def census - 1488 adjudicated index lines (577 MM1 references, 401 FF references, 510 this-book lines, 470 parenthetical cross-references); the within-letter double-listings retained as separate print lines (the dragons double-listed, the inverted cross-refs). THE SETTLED RECLASS READS: the Leprechaun, Salt Water Troll, Troll and Weasel lines carry M references the OCR lost (4); the Sirme line (between the Singing Ape and Skeleton rows) reclassified the MM2 sirine, the Stalker line (between the Stag Beetle and Dark Stalker rows) the reference lost in both scans - both flagged (2). THE B-ONLY REAL ENTRIES: the Caryatid Column and Olhydra lines - no registry def, the OA/lammasu promotion seam stays queued. NO defs promoted this round; the registry stays 809. THE FLIPS: the Random Encounter Tables parent box closes riding the landed R816/R817/R818 children, and the Index box closes - the MM2 arc gap ends 37 closed, 0 open.",
+ "consts": [
+  {
+   "name": "mm2enciRound",
+   "value": 819,
+   "comment": "The MM2 index walk round: the merged MM1/FF/MM2 index census, the arc closer (Curtiss Go call on the landed R818)"
+  },
+  {
+   "name": "mm2enciPrintFolio",
+   "value": 156,
+   "comment": "The gap box label folio (p. 156); the true print span runs 156-160"
+  },
+  {
+   "name": "mm2enciFirstPage",
+   "value": 156,
+   "comment": "The first index page (the printed page numbers in both scans)"
+  },
+  {
+   "name": "mm2enciLastPage",
+   "value": 160,
+   "comment": "The last index page (the five-page span, both scans)"
+  },
+  {
+   "name": "mm2enciLetterCount",
+   "value": 26,
+   "comment": "The 26 letter sections A through Z, one grid row each"
+  },
+  {
+   "name": "mm2enciColumnsPerPage",
+   "value": 4,
+   "comment": "The index prints a 4-column layout on every page"
+  },
+  {
+   "name": "mm2enciTotalLines",
+   "value": 1488,
+   "comment": "The adjudicated index line census (two voices collated)"
+  },
+  {
+   "name": "mm2enciMm1Lines",
+   "value": 577,
+   "comment": "The lines carrying an M reference (MONSTER MANUAL I)"
+  },
+  {
+   "name": "mm2enciFfLines",
+   "value": 401,
+   "comment": "The lines carrying an F reference (FIEND FOLIO)"
+  },
+  {
+   "name": "mm2enciThisBookLines",
+   "value": 510,
+   "comment": "The lines with no letter reference (detailed in this book)"
+  },
+  {
+   "name": "mm2enciCrossRefLines",
+   "value": 470,
+   "comment": "The lines carrying a parenthetical cross-reference (the name under which it is found)"
+  },
+  {
+   "name": "mm2enciLargestLetterTotal",
+   "value": 180,
+   "comment": "The S section carries the most lines"
+  },
+  {
+   "name": "mm2enciSmallestLetterTotal",
+   "value": 4,
+   "comment": "The Z section carries the fewest lines"
+  },
+  {
+   "name": "mm2enciMaxMm1Letter",
+   "value": 64,
+   "comment": "The S section carries the most M-referenced lines"
+  },
+  {
+   "name": "mm2enciMaxFfLetter",
+   "value": 52,
+   "comment": "The S section carries the most F-referenced lines"
+  },
+  {
+   "name": "mm2enciMaxThisBookLetter",
+   "value": 64,
+   "comment": "The S section carries the most this-book lines"
+  },
+  {
+   "name": "mm2enciLargestCrossRefLetter",
+   "value": 63,
+   "comment": "The S section carries the most parenthetical cross-references"
+  },
+  {
+   "name": "mm2enciVoiceASlots",
+   "value": 1495,
+   "comment": "The voice A scan lines after the junk filter (the tsr02016 djvu)"
+  },
+  {
+   "name": "mm2enciVoiceBSlots",
+   "value": 1501,
+   "comment": "The voice B scan lines after the junk filter (the monstermanualii1sted djvu)"
+  },
+  {
+   "name": "mm2enciFragmentDrops",
+   "value": 9,
+   "comment": "The dropped split fragments and doctrine-prose lines (2 doctrine + 7 fragments)"
+  },
+  {
+   "name": "mm2enciRefLostLines",
+   "value": 4,
+   "comment": "The reclassified lines whose page reference the OCR lost (Leprechaun, Salt Water Troll, Troll, Weasel)"
+  },
+  {
+   "name": "mm2enciFlaggedReads",
+   "value": 2,
+   "comment": "The flagged reference-lost lines (the Sirme and Stalker rows, reclassified this-book)"
+  },
+  {
+   "name": "mm2enciBOnlyRealEntries",
+   "value": 2,
+   "comment": "The B-only lines adjudicated real (Caryatid Column, Olhydra - no registry def, the OA/lammasu seam stays queued)"
+  },
+  {
+   "name": "mm2enciSingleVoiceSlots",
+   "value": 206,
+   "comment": "The single-voice slots at pairing (100 voice-A only + 106 voice-B only)"
+  },
+  {
+   "name": "mm2enciCoverageMonth",
+   "value": 12,
+   "comment": "The opening doctrine month: all official creatures as of December 1982"
+  },
+  {
+   "name": "mm2enciCoverageYear",
+   "value": 1982,
+   "comment": "The opening doctrine year"
+  },
+  {
+   "name": "mm2enciAbbrevCount",
+   "value": 2,
+   "comment": "The two book abbreviations (M for MONSTER MANUAL I, F for FIEND FOLIO)"
+  },
+  {
+   "name": "mm2enciRegistryFloor",
+   "value": 809,
+   "comment": "The registry def floor (no defs promoted this round)"
+  },
+  {
+   "name": "mm2enciRegistryMm1Defs",
+   "value": 408,
+   "comment": "The MM1 defs in the registry"
+  },
+  {
+   "name": "mm2enciRegistryMm2Defs",
+   "value": 331,
+   "comment": "The MM2 defs in the registry"
+  },
+  {
+   "name": "mm2enciTotalA",
+   "value": 70,
+   "comment": "The A section total lines"
+  },
+  {
+   "name": "mm2enciTotalB",
+   "value": 114,
+   "comment": "The B section total lines"
+  },
+  {
+   "name": "mm2enciTotalC",
+   "value": 96,
+   "comment": "The C section total lines"
+  },
+  {
+   "name": "mm2enciTotalD",
+   "value": 84,
+   "comment": "The D section total lines"
+  },
+  {
+   "name": "mm2enciTotalE",
+   "value": 48,
+   "comment": "The E section total lines"
+  },
+  {
+   "name": "mm2enciTotalF",
+   "value": 72,
+   "comment": "The F section total lines"
+  },
+  {
+   "name": "mm2enciTotalG",
+   "value": 91,
+   "comment": "The G section total lines"
+  },
+  {
+   "name": "mm2enciTotalH",
+   "value": 64,
+   "comment": "The H section total lines"
+  },
+  {
+   "name": "mm2enciTotalI",
+   "value": 30,
+   "comment": "The I section total lines"
+  },
+  {
+   "name": "mm2enciTotalJ",
+   "value": 18,
+   "comment": "The J section total lines"
+  },
+  {
+   "name": "mm2enciTotalK",
+   "value": 29,
+   "comment": "The K section total lines"
+  },
+  {
+   "name": "mm2enciTotalL",
+   "value": 62,
+   "comment": "The L section total lines"
+  },
+  {
+   "name": "mm2enciTotalM",
+   "value": 112,
+   "comment": "The M section total lines"
+  },
+  {
+   "name": "mm2enciTotalN",
+   "value": 31,
+   "comment": "The N section total lines"
+  },
+  {
+   "name": "mm2enciTotalO",
+   "value": 46,
+   "comment": "The O section total lines"
+  },
+  {
+   "name": "mm2enciTotalP",
+   "value": 72,
+   "comment": "The P section total lines"
+  },
+  {
+   "name": "mm2enciTotalQ",
+   "value": 11,
+   "comment": "The Q section total lines"
+  },
+  {
+   "name": "mm2enciTotalR",
+   "value": 41,
+   "comment": "The R section total lines"
+  },
+  {
+   "name": "mm2enciTotalS",
+   "value": 180,
+   "comment": "The S section total lines"
+  },
+  {
+   "name": "mm2enciTotalT",
+   "value": 76,
+   "comment": "The T section total lines"
+  },
+  {
+   "name": "mm2enciTotalU",
+   "value": 15,
+   "comment": "The U section total lines"
+  },
+  {
+   "name": "mm2enciTotalV",
+   "value": 26,
+   "comment": "The V section total lines"
+  },
+  {
+   "name": "mm2enciTotalW",
+   "value": 75,
+   "comment": "The W section total lines"
+  },
+  {
+   "name": "mm2enciTotalX",
+   "value": 6,
+   "comment": "The X section total lines"
+  },
+  {
+   "name": "mm2enciTotalY",
+   "value": 15,
+   "comment": "The Y section total lines"
+  },
+  {
+   "name": "mm2enciTotalZ",
+   "value": 4,
+   "comment": "The Z section total lines"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2enciIncludesAllOfficialCreatures",
+   "value": true,
+   "comment": "The index includes all official creatures published in this volume, the MONSTER MANUAL and the FIEND FOLIO"
+  },
+  {
+   "name": "mm2enciCoverageStopsDecember1982",
+   "value": true,
+   "comment": "The official-creature coverage stops as of December 1982"
+  },
+  {
+   "name": "mm2enciMm1AbbreviatedM",
+   "value": true,
+   "comment": "The MONSTER MANUAL I abbreviation is M"
+  },
+  {
+   "name": "mm2enciFfAbbreviatedF",
+   "value": true,
+   "comment": "The FIEND FOLIO abbreviation is F"
+  },
+  {
+   "name": "mm2enciThisBookCarriesNoLetter",
+   "value": true,
+   "comment": "No letter when the creature is detailed in this book"
+  },
+  {
+   "name": "mm2enciLeftColumnGivesBookAndPage",
+   "value": true,
+   "comment": "The left-hand column gives the book and page where each creature may be found"
+  },
+  {
+   "name": "mm2enciParentheticalNamesTheRealEntry",
+   "value": true,
+   "comment": "A listing in parentheses to the right of the entry indicates the name under which it is found"
+  },
+  {
+   "name": "mm2enciLayoutIsFourColumns",
+   "value": true,
+   "comment": "The index prints a 4-column layout"
+  },
+  {
+   "name": "mm2enciCensusIsTwoVoiceAdjudicated",
+   "value": true,
+   "comment": "The line census is a two-voice adjudication (both djvu scans parsed independently, paired per letter, the single-voice slots adjudicated by hand)"
+  },
+  {
+   "name": "mm2enciLineCensusNotDefCensus",
+   "value": true,
+   "comment": "The census counts index lines, not registry defs (the within-letter double-listings retained as separate print lines)"
+  },
+  {
+   "name": "mm2enciNoDefsPromotedThisRound",
+   "value": true,
+   "comment": "No defs promoted this round (the registry stays at the floor)"
+  },
+  {
+   "name": "mm2enciRefFusedLinesRelettered",
+   "value": true,
+   "comment": "The ref-fused M and F OCR lines re-lettered to their true sections"
+  },
+  {
+   "name": "mm2enciParentClosesWithIndex",
+   "value": true,
+   "comment": "The Random Encounter Tables parent box closes riding this round (the R816/R817/R818 children all closed)"
+  },
+  {
+   "name": "mm2enciMm2ArcClosesThisRound",
+   "value": true,
+   "comment": "The Index box is the last MM2 arc box - the gap flips to 37 closed, 0 open"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the merged MM1 FF MM2 index line census grid",
+   "tag": "IDX",
+   "cols": [
+    "mm2enciOrdinal",
+    "mm2enciTotal",
+    "mm2enciMm1",
+    "mm2enciFf",
+    "mm2enciThisBook",
+    "mm2enciCrossRef"
+   ],
+   "count": "mm2enciLetterCount",
+   "data": [
+    [
+     1,
+     70,
+     25,
+     15,
+     30,
+     24
+    ],
+    [
+     2,
+     114,
+     49,
+     23,
+     42,
+     34
+    ],
+    [
+     3,
+     96,
+     33,
+     25,
+     38,
+     25
+    ],
+    [
+     4,
+     84,
+     21,
+     27,
+     36,
+     21
+    ],
+    [
+     5,
+     48,
+     21,
+     14,
+     13,
+     18
+    ],
+    [
+     6,
+     72,
+     20,
+     26,
+     26,
+     27
+    ],
+    [
+     7,
+     91,
+     35,
+     32,
+     24,
+     22
+    ],
+    [
+     8,
+     64,
+     34,
+     12,
+     18,
+     23
+    ],
+    [
+     9,
+     30,
+     15,
+     13,
+     2,
+     13
+    ],
+    [
+     10,
+     18,
+     8,
+     5,
+     5,
+     5
+    ],
+    [
+     11,
+     29,
+     7,
+     13,
+     9,
+     8
+    ],
+    [
+     12,
+     62,
+     31,
+     19,
+     12,
+     24
+    ],
+    [
+     13,
+     112,
+     47,
+     21,
+     44,
+     36
+    ],
+    [
+     14,
+     31,
+     11,
+     12,
+     8,
+     8
+    ],
+    [
+     15,
+     46,
+     17,
+     9,
+     20,
+     11
+    ],
+    [
+     16,
+     72,
+     32,
+     18,
+     22,
+     20
+    ],
+    [
+     17,
+     11,
+     1,
+     4,
+     6,
+     1
+    ],
+    [
+     18,
+     41,
+     19,
+     11,
+     11,
+     16
+    ],
+    [
+     19,
+     180,
+     64,
+     52,
+     64,
+     63
+    ],
+    [
+     20,
+     76,
+     30,
+     16,
+     30,
+     23
+    ],
+    [
+     21,
+     15,
+     3,
+     6,
+     6,
+     7
+    ],
+    [
+     22,
+     26,
+     4,
+     6,
+     16,
+     7
+    ],
+    [
+     23,
+     75,
+     45,
+     13,
+     17,
+     33
+    ],
+    [
+     24,
+     6,
+     1,
+     2,
+     3,
+     0
+    ],
+    [
+     25,
+     15,
+     3,
+     7,
+     5,
+     0
+    ],
+    [
+     26,
+     4,
+     1,
+     0,
+     3,
+     1
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The letter ordinal cells (1-26 contiguous, one row per letter A-Z)",
+    "The total adjudicated line cells per letter",
+    "The M-reference line cells per letter (the MONSTER MANUAL I abbreviation)",
+    "The F-reference line cells per letter (the FIEND FOLIO abbreviation)",
+    "The no-letter line cells per letter (detailed in this book)",
+    "The parenthetical cross-reference line cells per letter"
+   ],
+   "audit_comment": "THE MERGED INDEX LINE CENSUS GRID: the 26 letter rows, the cells (ordinal, total, MM1, FF, this-book, cross-ref). Rows: A 70 (25 MM1, 15 FF, 30 this-book, 24 cross-refs); B 114 (49 MM1, 23 FF, 42 this-book, 34 cross-refs); C 96 (33 MM1, 25 FF, 38 this-book, 25 cross-refs); D 84 (21 MM1, 27 FF, 36 this-book, 21 cross-refs); E 48 (21 MM1, 14 FF, 13 this-book, 18 cross-refs); F 72 (20 MM1, 26 FF, 26 this-book, 27 cross-refs); G 91 (35 MM1, 32 FF, 24 this-book, 22 cross-refs); H 64 (34 MM1, 12 FF, 18 this-book, 23 cross-refs); I 30 (15 MM1, 13 FF, 2 this-book, 13 cross-refs); J 18 (8 MM1, 5 FF, 5 this-book, 5 cross-refs); K 29 (7 MM1, 13 FF, 9 this-book, 8 cross-refs); L 62 (31 MM1, 19 FF, 12 this-book, 24 cross-refs); M 112 (47 MM1, 21 FF, 44 this-book, 36 cross-refs); N 31 (11 MM1, 12 FF, 8 this-book, 8 cross-refs); O 46 (17 MM1, 9 FF, 20 this-book, 11 cross-refs); P 72 (32 MM1, 18 FF, 22 this-book, 20 cross-refs); Q 11 (1 MM1, 4 FF, 6 this-book, 1 cross-refs); R 41 (19 MM1, 11 FF, 11 this-book, 16 cross-refs); S 180 (64 MM1, 52 FF, 64 this-book, 63 cross-refs); T 76 (30 MM1, 16 FF, 30 this-book, 23 cross-refs); U 15 (3 MM1, 6 FF, 6 this-book, 7 cross-refs); V 26 (4 MM1, 6 FF, 16 this-book, 7 cross-refs); W 75 (45 MM1, 13 FF, 17 this-book, 33 cross-refs); X 6 (1 MM1, 2 FF, 3 this-book, 0 cross-refs); Y 15 (3 MM1, 7 FF, 5 this-book, 0 cross-refs); Z 4 (1 MM1, 0 FF, 3 this-book, 1 cross-refs)"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the census arithmetic (the three voice columns sum to the total lines)",
+   "expr": "m['mm2enciMm1Lines']() + m['mm2enciFfLines']() + m['mm2enciThisBookLines']() != m['mm2enciTotalLines']()"
+  },
+  {
+   "note": "the letter and page arithmetic",
+   "expr": "m['mm2enciLetterCount']() != 26 or m['mm2enciFirstPage']() != 156 or m['mm2enciLastPage']() != 160 or m['mm2enciLastPage']() - m['mm2enciFirstPage']() != 4"
+  },
+  {
+   "note": "the voice-slot arithmetic (voice A minus the fragment drops plus the B-only real entries)",
+   "expr": "m['mm2enciVoiceASlots']() - m['mm2enciFragmentDrops']() + m['mm2enciBOnlyRealEntries']() != m['mm2enciTotalLines']()"
+  },
+  {
+   "note": "the single-voice slots",
+   "expr": "m['mm2enciSingleVoiceSlots']() != 206 or m['mm2enciRefLostLines']() != 4 or m['mm2enciFlaggedReads']() != 2"
+  },
+  {
+   "note": "the section extremes",
+   "expr": "m['mm2enciLargestLetterTotal']() != 180 or m['mm2enciSmallestLetterTotal']() != 4"
+  },
+  {
+   "note": "the per-voice section maxima (all S)",
+   "expr": "m['mm2enciMaxMm1Letter']() != 64 or m['mm2enciMaxFfLetter']() != 52 or m['mm2enciMaxThisBookLetter']() != 64 or m['mm2enciLargestCrossRefLetter']() != 63"
+  },
+  {
+   "note": "the cross-reference arithmetic",
+   "expr": "m['mm2enciCrossRefLines']() != 470 or m['mm2enciCrossRefLines']() > m['mm2enciTotalLines']()"
+  },
+  {
+   "note": "the doctrine date",
+   "expr": "m['mm2enciCoverageYear']() != 1982 or m['mm2enciCoverageMonth']() != 12 or m['mm2enciAbbrevCount']() != 2"
+  },
+  {
+   "note": "the registry floor (no defs promoted)",
+   "expr": "m['mm2enciRegistryFloor']() != 809 or m['mm2enciRegistryMm1Defs']() != 408 or m['mm2enciRegistryMm2Defs']() != 331 or m['mm2enciRegistryMm1Defs']() + m['mm2enciRegistryMm2Defs']() != 739"
+  }
+ ],
+ "header_sections": {
+  "the R819 census": [
+   {
+    "kind": "const",
+    "name": "mm2enciRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciPrintFolio"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciFirstPage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciLastPage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciLetterCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciColumnsPerPage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalLines"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciMm1Lines"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciFfLines"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciThisBookLines"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciCrossRefLines"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciLargestLetterTotal"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciSmallestLetterTotal"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciMaxMm1Letter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciMaxFfLetter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciMaxThisBookLetter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciLargestCrossRefLetter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciVoiceASlots"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciVoiceBSlots"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciFragmentDrops"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciRefLostLines"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciFlaggedReads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciBOnlyRealEntries"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciSingleVoiceSlots"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciCoverageMonth"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciCoverageYear"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciAbbrevCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciRegistryMm1Defs"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciRegistryMm2Defs"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalA"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalB"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalC"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalD"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalE"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalF"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalG"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalH"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalI"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalJ"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalK"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalL"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalM"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalN"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalO"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalP"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalQ"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalR"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalS"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalT"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalU"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalV"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalW"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalX"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalY"
+   },
+   {
+    "kind": "const",
+    "name": "mm2enciTotalZ"
+   }
+  ],
+  "the opening doctrine (the R819 census)": [
+   {
+    "kind": "bool",
+    "name": "mm2enciIncludesAllOfficialCreatures"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciCoverageStopsDecember1982"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciMm1AbbreviatedM"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciFfAbbreviatedF"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciThisBookCarriesNoLetter"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciLeftColumnGivesBookAndPage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciParentheticalNamesTheRealEntry"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciLayoutIsFourColumns"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciCensusIsTwoVoiceAdjudicated"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciLineCensusNotDefCensus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciNoDefsPromotedThisRound"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciRefFusedLinesRelettered"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciParentClosesWithIndex"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2enciMm2ArcClosesThisRound"
+   }
+  ],
+  "the merged index line census grid pins": [
+   {
+    "kind": "table",
+    "name": "the merged MM1 FF MM2 index line census grid"
+   }
+  ]
+ },
+ "chains": [],
+ "switches": [],
+ "caller_files": [],
+ "table_checks": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R819: the MM2 index census walk ----\n    // The merged index census cross-checked live:\n    // the 26 letter rows, the ordinal contiguity\n    // 1-26, the per-letter voice arithmetic (the\n    // MM1 + FF + this-book columns sum to the\n    // total column), the section extremes, and the\n    // registry keys for the settled reclass reads\n    // (the sirine, leprechaun, rock reptile and\n    // scrag lines).\n    {\n        using namespace rules;\n        int bad = 0;\n        int mm1 = 0, ff = 0, book = 0, cross = 0;\n        int lines = 0;\n        int mx = 0, mn = 9999, mmmx = 0, ffmx = 0;\n        int bk = 0, crmx = 0;\n        for (int r = 0; r < mm2enciLetterCount();\n             ++r) {\n            if (mm2enciOrdinal(r) != r + 1)\n                ++bad;\n            if (mm2enciMm1(r) + mm2enciFf(r)\n                + mm2enciThisBook(r)\n                != mm2enciTotal(r))\n                ++bad;\n            if (mm2enciCrossRef(r) > mm2enciTotal(r))\n                ++bad;\n            mm1 += mm2enciMm1(r);\n            ff += mm2enciFf(r);\n            book += mm2enciThisBook(r);\n            cross += mm2enciCrossRef(r);\n            lines += mm2enciTotal(r);\n            if (mm2enciTotal(r) > mx)\n                mx = mm2enciTotal(r);\n            if (mm2enciTotal(r) < mn)\n                mn = mm2enciTotal(r);\n            if (mm2enciMm1(r) > mmmx)\n                mmmx = mm2enciMm1(r);\n            if (mm2enciFf(r) > ffmx)\n                ffmx = mm2enciFf(r);\n            if (mm2enciThisBook(r) > bk)\n                bk = mm2enciThisBook(r);\n            if (mm2enciCrossRef(r) > crmx)\n                crmx = mm2enciCrossRef(r);\n        }\n        if (mm1 != mm2enciMm1Lines()) ++bad;\n        if (ff != mm2enciFfLines()) ++bad;\n        if (book != mm2enciThisBookLines()) ++bad;\n        if (cross != mm2enciCrossRefLines()) ++bad;\n        if (lines != mm2enciTotalLines()) ++bad;\n        if (mx != mm2enciLargestLetterTotal())\n            ++bad;\n        if (mn != mm2enciSmallestLetterTotal())\n            ++bad;\n        if (mmmx != mm2enciMaxMm1Letter()) ++bad;\n        if (ffmx != mm2enciMaxFfLetter()) ++bad;\n        if (bk != mm2enciMaxThisBookLetter()) ++bad;\n        if (crmx != mm2enciLargestCrossRefLetter())\n            ++bad;\n        // (the per-letter total consts against the\n        //  pinned cells, A through Z)\n        if (mm2enciTotalA() != mm2enciTotal(0)\n            || mm2enciTotalB() != mm2enciTotal(1)\n            || mm2enciTotalC() != mm2enciTotal(2)\n            || mm2enciTotalD() != mm2enciTotal(3)\n            || mm2enciTotalE() != mm2enciTotal(4)\n            || mm2enciTotalF() != mm2enciTotal(5)\n            || mm2enciTotalG() != mm2enciTotal(6)\n            || mm2enciTotalH() != mm2enciTotal(7)\n            || mm2enciTotalI() != mm2enciTotal(8)\n            || mm2enciTotalJ() != mm2enciTotal(9)\n            || mm2enciTotalK() != mm2enciTotal(10)\n            || mm2enciTotalL() != mm2enciTotal(11)\n            || mm2enciTotalM() != mm2enciTotal(12)\n            || mm2enciTotalN() != mm2enciTotal(13)\n            || mm2enciTotalO() != mm2enciTotal(14)\n            || mm2enciTotalP() != mm2enciTotal(15)\n            || mm2enciTotalQ() != mm2enciTotal(16)\n            || mm2enciTotalR() != mm2enciTotal(17)\n            || mm2enciTotalS() != mm2enciTotal(18)\n            || mm2enciTotalT() != mm2enciTotal(19)\n            || mm2enciTotalU() != mm2enciTotal(20)\n            || mm2enciTotalV() != mm2enciTotal(21)\n            || mm2enciTotalW() != mm2enciTotal(22)\n            || mm2enciTotalX() != mm2enciTotal(23)\n            || mm2enciTotalY() != mm2enciTotal(24)\n            || mm2enciTotalZ() != mm2enciTotal(25))\n            ++bad;\n        // (spot reads: the S row carries the 180\n        //  total and the 64 MM1, 52 FF, 64 this-book\n        //  lines; the X and Y rows carry no\n        //  cross-references)\n        if (mm2enciTotal(18) != 180\n            || mm2enciMm1(18) != 64\n            || mm2enciFf(18) != 52\n            || mm2enciThisBook(18) != 64\n            || mm2enciCrossRef(23) != 0\n            || mm2enciCrossRef(24) != 0)\n            ++bad;\n        if (!reg.find(\"sirine\")) ++bad;\n        if (!reg.find(\"leprechaun\")) ++bad;\n        if (!reg.find(\"rock_reptile\")) ++bad;\n        if (!reg.find(\"scrag_saltwater\")) ++bad;\n        if (!reg.find(\"verme\")) ++bad;\n        if ((int)reg.all().size()\n            < mm2enciRegistryFloor())\n            ++bad;\n        printf(\"R819 MM2 index census: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----",
+   "note": "the R819 regtest walk"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Random Encounter Tables parent box",
+   "from": "- [ ] **Random Encounter Tables**",
+   "to": "- [x] **Random Encounter Tables**"
+  },
+  {
+   "note": "the Index box",
+   "from": "- [ ] **Index**",
+   "to": "- [x] **Index**"
+  }
+ ],
+ "gap_census": {
+  "closed": 37,
+  "open": 0
+ },
+ "prev_record": [
+  "- R818 LANDED 2026-10-24: commit",
+  "  92790264b6e618bc6ad5f7e9b8f081e02dfb2f51",
+  "  (census 740 -> 741, pushed",
+  "  8da3f32..9279026),",
+  "  THE MM2 AQUATIC ENCOUNTER TABLES WALK -",
+  "  THE 12 SURFACE AND DEPTHS GRIDS (Curtiss's",
+  "  Go call on the landed R817; round",
+  "  twenty-three of the MM2 arc, the SIXTH",
+  "  table-group round, the Aquatic Random",
+  "  Encounter Tables box flips - 35 closed",
+  "  2 open). THE PIN SCOPE: the 12 grids",
+  "  (6 areas - cold, temperate and tropical,",
+  "  each freshwater and saltwater, each",
+  "  surface + depths) x 19 die rows = 228",
+  "  cells, the 3-col [die, src, special]",
+  "  schema; NO party/structure/patrol rows",
+  "  in the aquatic grids. PRINT FOLIO p. 137",
+  "  (the gap box label says pp. 150+ but the",
+  "  printed page numbers in both scans give",
+  "  137 - the true folio noted in the banner",
+  "  and audit prose, the flip anchor",
+  "  untouched; same class as R817's",
+  "  pp. 140-141+ vs true 135-136). THE",
+  "  SETTLED READS (three voices collated:",
+  "  scan A tsr02016 djvu, scan B",
+  "  monstermanualii1sted djvu, the 1eonline",
+  "  aret transcription): the src cells are",
+  "  EDITORIAL 1 MM1 / 2 MM2 / 3 FF / 0 none;",
+  "  13 FF rows ride keyless (Quipper, Kelpie,",
+  "  Dragonfish, Throat Leech, Vodyanoi, Thork",
+  "  the Copper Stork, the four Urchins,",
+  "  Crabman, Algoid, Bunyip - the registry",
+  "  carries no FF defs); 3 lung dragon",
+  "  cross-refs keyless (Dragon, Sea = the",
+  "  lung wang sea dragon, Dragon, Spirit =",
+  "  the shan lung - queued on the OA",
+  "  promotion seam); the editorial aliases",
+  "  all flagged (Mottled Worm -> purple_worm,",
+  "  Kopoacinth -> gargoyle, Lacedon -> ghoul,",
+  "  Elf Aquatic -> elf, Man Pirate ->",
+  "  buccaneer, Seawolf Giant ->",
+  "  seawolf_greater - the print cell reads",
+  "  Giant vs the entry Greater, Snapper Giant",
+  "  -> snapping_turtle, Eel Weed -> weed,",
+  "  Ixitachitl -> ixitxachitl, Sphinx Andro-",
+  "  -> androsphinx); the scrag editorial",
+  "  split - freshwater grids ->",
+  "  scrag_freshwater, saltwater grids ->",
+  "  scrag_saltwater; 14 or-rows the R816",
+  "  first-creature convention (\"Dragonfish",
+  "  or Scrag\" rides keyless, \"Octopus or",
+  "  Sunken Ship\" keys octopus, \"Crystal Ooze",
+  "  or Island\" keys crystal_ooze); hazard 13",
+  "  (Ice x2, Whirlpool x3, Island x2, Ghost",
+  "  Ship x3, Seaweed x3), pointer 4 (Surface",
+  "  Encounter x3, Land Encounter x1); the",
+  "  census MM1 138 / MM2 51 / FF 19 / none",
+  "  20, keyed 189 - all 102 distinct keys",
+  "  validated against the 809 registry. THE",
+  "  p. 137 DOCTRINE codified as consts and",
+  "  bools and examples: the ice hull bands",
+  "  (10-16 ft fresh, 10-60 ft salt, 1-6",
+  "  damage/round, the 10 percent iceberg",
+  "  hole, the 10-20 ice fields), the ghost",
+  "  ship crew bands 40/40/20 and the officer",
+  "  subtables (the 41-60 print gap pinned",
+  "  verbatim), the sunken ship chart (the",
+  "  11-20 no-treasure overlap pinned",
+  "  verbatim, lacedons 2-24, 61-00 the main",
+  "  chart), the floating seaweed and seaweed",
+  "  bed bands, the island reef bands, the",
+  "  whirlpool arithmetic (75 percent small",
+  "  craft only under 50 ft, 25 percent any,",
+  "  6 rounds to sink, see Afanc). LOCAL",
+  "  VERIFICATION: engine double-run 6/0 ->",
+  "  0/6; rverify GREEN - 770 mutants, 0",
+  "  missed; the walk simulated offline bad 0",
+  "  (hazard 13, pointer 4, lung 3, keyed",
+  "  189); a declared-identifier sweep of",
+  "  every mm2enca* call in the walk and",
+  "  audit blocks (0 undeclared). TWO bugs",
+  "  the gates caught and fixed PRE-HANDOFF",
+  "  (the R817 lessons paying off): detour 1 -",
+  "  the walk first cut consumed the R227",
+  "  anchor instead of re-emitting it (R819",
+  "  would die on the missing anchor); detour",
+  "  2 - the keyed counter counted the 19",
+  "  keyless FF rows (208 vs the 189 const);",
+  "  both fixed and regated, tree restored",
+  "  pristine (34 closed, 0 traces) before",
+  "  each re-gate. SPEC SHAPE: 72 consts +",
+  "  14 bools + 36 grid cols (inline 122), 12",
+  "  tables, 13 examples, max walk width 77.",
+  "  Delivery spec-r818: raw JSON canvas,",
+  "  landed md5 ad467e87ef46c185d565bdbc2ff7",
+  "  a67f, 75198 bytes, GREEN first pass.",
+  "  NEXT - R819: awaits Curtiss's call",
+  "  (2 boxes remain - the Random Encounter",
+  "  Tables parent and the Index p. 156;",
+  "  queued discoveries: the Lammasu Greater",
+  "  promotion, the lung/shan OA dragon defs).",
+  "- R817 LANDED 2026-10-24: commit",
+  "  8da3f326e3b71e2aecd382a4a732a55dad00493e",
+  "  (census 739 -> 740, pushed 32992bd..8da3f32),",
+  "  THE MM2 OUTDOOR ENCOUNTER TABLES WALK -",
+  "  THE 36 TERRAIN GRIDS (Curtiss's Go call on"
+ ],
+ "inline_count": 76
+}
