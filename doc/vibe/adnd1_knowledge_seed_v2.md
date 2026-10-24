@@ -20696,6 +20696,89 @@ when both halves land.
   boxes; the multi-letter mechanics
   proven, any slicing of the boxes
   is on the table).
+- R799 LANDED 2026-10-24: commit
+  ee10bdf4a16f626636e4616c8546b7900556d0a2
+  (census 721 -> 722, pushed
+  7f4e33f..ee10bdf), THE MM2 LETTER D
+  PART 1 - the planar evil families
+  (Curtiss's Go call on the landed
+  letters BC). THE PIN-TIME WALK:
+  twenty-nine entries on pp. 28-42
+  (arcanadaemon through derro, the
+  D-part-1 entries before the deva
+  turn): 9 daemons, 3 demodands, 13
+  demons, and 4 singletons outside
+  the families (dao, crimson death,
+  demilich, derro) - NO form splits
+  in D part 1, so twenty-nine .lua
+  defs ride the R791 data_files
+  extension, registry 534 -> 563.
+  Header rules/mm2dp.h, prefix
+  mm2dp, 351 consts + 147 bools + 2
+  tables (the 29x9 DpStats grid, the
+  12x4 CambionParentage printed
+  grid - 13 cols) = 511 inline. NO
+  GAP FLIPS: the Letter D box flips
+  only when all D parts land (8
+  closed, 29 open). ONE REGTEST
+  PATCH: the R799 live def walk at
+  the R227 anchor (the R782
+  site-block pattern, no census
+  marker), its registry census a
+  FLOOR 534 -> at least 563 - the
+  R798 floor lesson held, no
+  cascade this time. SETTLED READS
+  (capture primary, book-internal
+  tiebreak, transcription
+  cross-check): the kelubar IX/3959
+  + 18/hp prints verbatim (the
+  ladder would say 3950; the print
+  wins), the cambion block Baron
+  4400 vs the parentage table 4409
+  both pin (a genuine
+  print-internal inconsistency; the
+  grid carries the Minor
+  1275 + 10/hp line), the shator
+  weapon strength +9 (the capture
+  +8 an OCR misread; the giant
+  ladder 21 strength reads +9,
+  consistent with the derghodaemon
+  stone-giant +8 and the yagnodaemon
+  storm-giant +12), the alu-demon
+  VIII/IX 3000 or 4050 + 14/hp
+  range precedent (the grid cell
+  carries the low end). BUILDER
+  FIXUPS all pre-landing (no repo
+  side, no red run): the round
+  section now references only the
+  round pin list (not every
+  const/bool), entry pins()
+  register through add_const/
+  add_bool, the tag gate split from
+  the pin-name gate (table tags
+  ride bare like R798's BStats),
+  and the walk opener trimmed to
+  78. LOCAL VERIFICATION (the
+  authoring environment rebuilt
+  from GitHub at 7f4e33f): rverify
+  GREEN - restore, double-run
+  34/0 -> 0/34, healthy base bad 0,
+  BATTERY 807 mutants, 0 missed;
+  the /tmp tree restored pristine
+  after. Landing run GREEN first
+  pass: loaded 563, errors 0; xp
+  audit 563/0; R797, R798 and R799
+  live defs all bad 0; AUDIT CENSUS
+  722 each exactly once, all bad 0;
+  build 0 warnings. Commit 33
+  files, 10247 insertions. Delivery
+  spec-r799: raw JSON canvas,
+  226804 bytes md5
+  4206db22bb25e10fad2e11eed0227333.
+  NEXT - R800: awaits Curtiss's
+  call (the D part 2 deva turn and
+  the rest of the letter D box; the
+  arc runs on - 29 open boxes).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1,0 +1,1121 @@
+{
+ "round": 800,
+ "prefix": "mm2dv",
+ "header_file": "rules/mm2dv.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 722,
+ "title": "the MM2 letter D part 2 - the deva turn",
+ "audit_label": "R800 MM2 letter D part 2 audit",
+ "audit_comment": "THE MM2 LETTER D PART 2 - the deva turn of the Monster Manual II arc (the user Go call on the landed letter D part 1). The pin-time walk from the print finds THREE entries on pp. 42-44: the astral deva, the monadic deva and the movanic deva. THREE defs ride the R791 data_files extension in the MM1 registry schema - no form splits in the deva family. THE GRID: the 3-row DevaStats stat grid (every armor class, hit-dice, hit, xp, lair, move and magic-resistance cell of the three stat blocks). THE SETTLED READS: the monadic ARMOR: -4 capture line is the armor class line; the monadic and movanic LEVEL prints IX (the capture 1X is the OCR misread); the astral LEVEL prints the roman X; the movanic size keeps the print 6 1/2 inches form. NO GAP FLIPS (the Letter D box flips only when all the D parts land - the R791 no-flip precedent). NO XP-AUDIT PATCH (mm2_print rides the allowed-source list since R797). The live def walk (the one file-patch site block, no census marker) cross-checks all 3 defs against the DevaStats grid and the registry census floor 563 -> 566.",
+ "include_comment": "the MM2 letter D part 2 - the deva turn",
+ "include_after": "#include \"rules/mm2dp.h\"  // R799: the MM2 letter D part 1 - the planar evil families",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R799 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R799 LANDED 2026-10-24: commit",
+  "  ee10bdf4a16f626636e4616c8546b7900556d0a2",
+  "  (census 721 -> 722, pushed",
+  "  7f4e33f..ee10bdf), THE MM2 LETTER D",
+  "  PART 1 - the planar evil families",
+  "  (Curtiss's Go call on the landed",
+  "  letters BC). THE PIN-TIME WALK:",
+  "  twenty-nine entries on pp. 28-42",
+  "  (arcanadaemon through derro, the",
+  "  D-part-1 entries before the deva",
+  "  turn): 9 daemons, 3 demodands, 13",
+  "  demons, and 4 singletons outside",
+  "  the families (dao, crimson death,",
+  "  demilich, derro) - NO form splits",
+  "  in D part 1, so twenty-nine .lua",
+  "  defs ride the R791 data_files",
+  "  extension, registry 534 -> 563.",
+  "  Header rules/mm2dp.h, prefix",
+  "  mm2dp, 351 consts + 147 bools + 2",
+  "  tables (the 29x9 DpStats grid, the",
+  "  12x4 CambionParentage printed",
+  "  grid - 13 cols) = 511 inline. NO",
+  "  GAP FLIPS: the Letter D box flips",
+  "  only when all D parts land (8",
+  "  closed, 29 open). ONE REGTEST",
+  "  PATCH: the R799 live def walk at",
+  "  the R227 anchor (the R782",
+  "  site-block pattern, no census",
+  "  marker), its registry census a",
+  "  FLOOR 534 -> at least 563 - the",
+  "  R798 floor lesson held, no",
+  "  cascade this time. SETTLED READS",
+  "  (capture primary, book-internal",
+  "  tiebreak, transcription",
+  "  cross-check): the kelubar IX/3959",
+  "  + 18/hp prints verbatim (the",
+  "  ladder would say 3950; the print",
+  "  wins), the cambion block Baron",
+  "  4400 vs the parentage table 4409",
+  "  both pin (a genuine",
+  "  print-internal inconsistency; the",
+  "  grid carries the Minor",
+  "  1275 + 10/hp line), the shator",
+  "  weapon strength +9 (the capture",
+  "  +8 an OCR misread; the giant",
+  "  ladder 21 strength reads +9,",
+  "  consistent with the derghodaemon",
+  "  stone-giant +8 and the yagnodaemon",
+  "  storm-giant +12), the alu-demon",
+  "  VIII/IX 3000 or 4050 + 14/hp",
+  "  range precedent (the grid cell",
+  "  carries the low end). BUILDER",
+  "  FIXUPS all pre-landing (no repo",
+  "  side, no red run): the round",
+  "  section now references only the",
+  "  round pin list (not every",
+  "  const/bool), entry pins()",
+  "  register through add_const/",
+  "  add_bool, the tag gate split from",
+  "  the pin-name gate (table tags",
+  "  ride bare like R798's BStats),",
+  "  and the walk opener trimmed to",
+  "  78. LOCAL VERIFICATION (the",
+  "  authoring environment rebuilt",
+  "  from GitHub at 7f4e33f): rverify",
+  "  GREEN - restore, double-run",
+  "  34/0 -> 0/34, healthy base bad 0,",
+  "  BATTERY 807 mutants, 0 missed;",
+  "  the /tmp tree restored pristine",
+  "  after. Landing run GREEN first",
+  "  pass: loaded 563, errors 0; xp",
+  "  audit 563/0; R797, R798 and R799",
+  "  live defs all bad 0; AUDIT CENSUS",
+  "  722 each exactly once, all bad 0;",
+  "  build 0 warnings. Commit 33",
+  "  files, 10247 insertions. Delivery",
+  "  spec-r799: raw JSON canvas,",
+  "  226804 bytes md5",
+  "  4206db22bb25e10fad2e11eed0227333.",
+  "  NEXT - R800: awaits Curtiss's",
+  "  call (the D part 2 deva turn and",
+  "  the rest of the letter D box; the",
+  "  arc runs on - 29 open boxes)."
+ ],
+ "banner": {
+  "title": "THE MM2 LETTER D PART 2 - the deva turn (the DEVA family at the foot of p. 42 with the astral, monadic and movanic deva stat blocks on p. 43), promoted to the live registry",
+  "provenance": "Round four of the MM2 arc, the second PART-LETTER walk (the user Go call on the landed letter D part 1: the letter D continues with the deva family pp. 42-44; the DEVIL section and the rest of D await the user call). The capture is the Curtiss PDF upload cross-checked against an independent transcription; the contested cells settled: the monadic deva ARMOR: -4 capture line is the ARMOR CLASS line (the transcription prints the class word); the monadic and movanic LEVEL prints IX (the capture 1X is the same OCR misread class as the atomie II); the movanic size keeps the print 6 1/2 inches form; the movanic prose runs onto p. 44 where the DEVIL section opens mid-page. The pin-time walk finds three deva entries; three .lua defs ride the R791 data_files extension, registry 563 -> 566. The stat blocks pin in the 3-row DevaStats grid (the armor class, hit dice, hit, xp, lair, move and magic-resistance cells); the deva-common doctrine (the material-body rule, the spell-like list with its per-day maximums, the attack-form immunities with the monadic fire exception) pins as round-level doctrine. NO GAP FLIPS: the Letter D box flips only when all the D parts land (the R791 no-flip precedent). NO XP-AUDIT PATCH: mm2_print already rides the allowed-source list (the R797 patch). The live def walk (the one file-patch site block, no census marker) cross-checks all 3 defs against the DevaStats grid and the registry census 563 -> 566 as a floor."
+ },
+ "consts": [
+  {
+   "name": "mm2dvRound",
+   "value": 800,
+   "comment": "The MM2 letter D part 2 round: the deva turn (the user Go call on the landed letter D part 1)"
+  },
+  {
+   "name": "mm2dvEntryCount",
+   "value": 3,
+   "comment": "The pin-time walk from the print: the DEVA family at the foot of p. 42 with its three stat blocks on p. 43 (the astral, monadic and movanic devas)"
+  },
+  {
+   "name": "mm2dvDefCount",
+   "value": 3,
+   "comment": "The def census: three .lua defs ride the R791 data_files extension (no form splits in the deva family)"
+  },
+  {
+   "name": "mm2dvFirstPage",
+   "value": 42,
+   "comment": "The deva part opens at the foot of p. 42 (the DEVA family head right after the derro entry)"
+  },
+  {
+   "name": "mm2dvLastPage",
+   "value": 44,
+   "comment": "The deva part closes on p. 44 (the movanic prose tail; the DEVIL section opens mid-page)"
+  },
+  {
+   "name": "mm2dvRegistryBefore",
+   "value": 563,
+   "comment": "The live registry census at the landed letter D part 1 (the R799 landing count)"
+  },
+  {
+   "name": "mm2dvRegistryAfter",
+   "value": 566,
+   "comment": "The live registry census after the three deva defs (563 + 3)"
+  },
+  {
+   "name": "mm2dvDevaStatRows",
+   "value": 3,
+   "comment": "The 3-row deva stat grid: one row per promoted def in print order"
+  },
+  {
+   "name": "mm2dvAstralXpLevel",
+   "value": 10,
+   "comment": "The astral deva LEVEL/X.P. prints X/10,100 + 25/hp - the roman ten"
+  },
+  {
+   "name": "mm2dvMonadicXpLevel",
+   "value": 9,
+   "comment": "The monadic deva LEVEL/X.P. prints IX/8100 + 20/hp (the capture 1X is an OCR misread; the independent transcription prints IX - the atomie II class)"
+  },
+  {
+   "name": "mm2dvMovanicXpLevel",
+   "value": 9,
+   "comment": "The movanic deva LEVEL/X.P. prints IX/7850 + 18/hp (the same 1X misread class)"
+  },
+  {
+   "name": "mm2dvAstralXpValue",
+   "value": 11775,
+   "comment": "The astral deva full kill xp: 10,100 + 25 x 67 hit points"
+  },
+  {
+   "name": "mm2dvMonadicXpValue",
+   "value": 9300,
+   "comment": "The monadic deva full kill xp: 8,100 + 20 x 60 hit points"
+  },
+  {
+   "name": "mm2dvMovanicXpValue",
+   "value": 8786,
+   "comment": "The movanic deva full kill xp: 7,850 + 18 x 52 hit points"
+  },
+  {
+   "name": "mm2dvDevaCureDiseasePerDay",
+   "value": 3,
+   "comment": "The deva-common spell-like list: cure disease 3 per day"
+  },
+  {
+   "name": "mm2dvDevaCureLightWoundsPerDay",
+   "value": 7,
+   "comment": "The deva-common list: cure light wounds 7 per day"
+  },
+  {
+   "name": "mm2dvDevaCureSeriousWoundsPerDay",
+   "value": 3,
+   "comment": "The deva-common list: cure serious wounds 3 per day"
+  },
+  {
+   "name": "mm2dvDevaDetectTrapsPerDay",
+   "value": 7,
+   "comment": "The deva-common list: detect traps 7 per day"
+  },
+  {
+   "name": "mm2dvDevaDispelMagicPerDay",
+   "value": 7,
+   "comment": "The deva-common list: dispel magic 7 per day"
+  },
+  {
+   "name": "mm2dvDevaHealPerDay",
+   "value": 1,
+   "comment": "The deva-common list: heal once per day"
+  },
+  {
+   "name": "mm2dvDevaSpiritRegainYears",
+   "value": 10,
+   "comment": "The destroyed material body rule: the spirit returns to its own plane to remain for a decade before regaining a corporeal body"
+  },
+  {
+   "name": "mm2dvDevaInvisibilityRadiusFeet",
+   "value": 10,
+   "comment": "The deva-common invisibility serves the individual or a 10-foot radius"
+  },
+  {
+   "name": "mm2dvAstralMaceBonus",
+   "value": 3,
+   "comment": "The huge macelike weapon is of +3 value when employed by an astral deva"
+  },
+  {
+   "name": "mm2dvAstralKnockDamageThreshold",
+   "value": 20,
+   "comment": "Any creature struck twice in the same melee round and suffering damage in excess of 20 hit points must save vs. spell or be knocked senseless"
+  },
+  {
+   "name": "mm2dvAstralKnockSenselessRounds",
+   "value": 14,
+   "comment": "The knocked-senseless duration in rounds"
+  },
+  {
+   "name": "mm2dvAstralDisruptionClericLevel",
+   "value": 9,
+   "comment": "The weapon also acts as a mace of disruption with chances to hit as if wielded by a 9th-level cleric"
+  },
+  {
+   "name": "mm2dvAstralLightRadiusLo",
+   "value": 4,
+   "comment": "Light shed by an astral deva can have a 4-40 foot radius, as desired - the low end"
+  },
+  {
+   "name": "mm2dvAstralLightRadiusHi",
+   "value": 40,
+   "comment": "The astral light radius high end"
+  },
+  {
+   "name": "mm2dvAstralPfeRadiusFeet",
+   "value": 10,
+   "comment": "The astral protection from evil is a sphere with a 10-foot radius"
+  },
+  {
+   "name": "mm2dvAstralPfePower",
+   "value": 2,
+   "comment": "The astral protection from evil sphere is of normal (+2) power"
+  },
+  {
+   "name": "mm2dvAstralBladeBarrierTurns",
+   "value": 7,
+   "comment": "Once per day an astral deva can create a blade barrier which will last for up to 7 turns"
+  },
+  {
+   "name": "mm2dvAstralPsionicAbility",
+   "value": 210,
+   "comment": "The astral deva psionic ability 210, attack/defense modes A,B,C,E/F,G,H"
+  },
+  {
+   "name": "mm2dvAstralWisdom",
+   "value": 20,
+   "comment": "The astral deva intelligence genius (wisdom = 20)"
+  },
+  {
+   "name": "mm2dvAstralCharismaEffect",
+   "value": 20,
+   "comment": "The astral deva charisma effect is 20"
+  },
+  {
+   "name": "mm2dvMonadicRodBonus",
+   "value": 2,
+   "comment": "A monadic deva normally carries a metal rod equal to a +2 weapon"
+  },
+  {
+   "name": "mm2dvMonadicRodRangeFeet",
+   "value": 10,
+   "comment": "The monadic rod can be used either to pierce or smite at up to a 10-foot distance"
+  },
+  {
+   "name": "mm2dvMonadicLightRadiusLo",
+   "value": 3,
+   "comment": "The radius of light shed by a monadic deva can extend from 3-30 feet, as desired - the low end"
+  },
+  {
+   "name": "mm2dvMonadicLightRadiusHi",
+   "value": 30,
+   "comment": "The monadic light radius high end"
+  },
+  {
+   "name": "mm2dvMonadicPfeRadiusFeet",
+   "value": 15,
+   "comment": "The monadic protection from evil sphere is of a 15-foot radius"
+  },
+  {
+   "name": "mm2dvMonadicPfePower",
+   "value": 1,
+   "comment": "The monadic protection from evil sphere is half-power (+1)"
+  },
+  {
+   "name": "mm2dvMonadicHoldMonsterRounds",
+   "value": 8,
+   "comment": "The monadic hold monster serves elementals only, 1 creature, 8 rounds"
+  },
+  {
+   "name": "mm2dvMonadicHoldMonsterPerDay",
+   "value": 3,
+   "comment": "The monadic hold monster is usable 3 per day"
+  },
+  {
+   "name": "mm2dvMonadicProjectImagePerDay",
+   "value": 1,
+   "comment": "A monadic deva can also project image (1 per day)"
+  },
+  {
+   "name": "mm2dvMonadicWisdom",
+   "value": 19,
+   "comment": "The monadic deva intelligence genius (wisdom = 19)"
+  },
+  {
+   "name": "mm2dvMonadicCharismaEffect",
+   "value": 19,
+   "comment": "The monadic deva charisma effect is 19"
+  },
+  {
+   "name": "mm2dvMovanicSwordBonus",
+   "value": 1,
+   "comment": "A movanic deva is armed typically with a long, slender sword; the weapon generally conforms to a +1 flame tongue sword"
+  },
+  {
+   "name": "mm2dvMovanicLightRadiusLo",
+   "value": 2,
+   "comment": "Light shed by a movanic deva varies in radius from 2-20 feet, as desired - the low end"
+  },
+  {
+   "name": "mm2dvMovanicLightRadiusHi",
+   "value": 20,
+   "comment": "The movanic light radius high end"
+  },
+  {
+   "name": "mm2dvMovanicPfeRadiusFeet",
+   "value": 10,
+   "comment": "The movanic protection from evil sphere is one of a 10-foot radius"
+  },
+  {
+   "name": "mm2dvMovanicPfePower",
+   "value": 1,
+   "comment": "The movanic protection from evil sphere is half (+1) power"
+  },
+  {
+   "name": "mm2dvMovanicNeutralizePoisonPerDay",
+   "value": 3,
+   "comment": "A movanic deva can also cause or cure blindness, detect traps, and neutralize poison (3 per day)"
+  },
+  {
+   "name": "mm2dvMovanicWisdom",
+   "value": 18,
+   "comment": "The movanic deva intelligence exceptional (wisdom = 18)"
+  },
+  {
+   "name": "mm2dvMovanicCharismaEffect",
+   "value": 18,
+   "comment": "The movanic deva charisma effect is 18"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2dvDevaUpperPlanesOfGood",
+   "value": true,
+   "comment": "The race of devas inhabit the upper Outer Planes of Good"
+  },
+  {
+   "name": "mm2dvDevaMessengersOfGoodDeities",
+   "value": true,
+   "comment": "Devas are servants and messengers of the deities of good alignment - some lawful, some chaotic, some neutral, but all are good"
+  },
+  {
+   "name": "mm2dvDevaNotMostPowerful",
+   "value": true,
+   "comment": "Devas are by no means the most powerful creatures on their planes (cf. the planetar and the solar)"
+  },
+  {
+   "name": "mm2dvDevaTravelPlanesOfGood",
+   "value": true,
+   "comment": "All devas travel the planes of good alignment (the lawful only under instruction, the chaotic seldom except in service)"
+  },
+  {
+   "name": "mm2dvDevaCanBecomeEthereal",
+   "value": true,
+   "comment": "All devas can become ethereal"
+  },
+  {
+   "name": "mm2dvOnlyAstralTravelsAstrallyUncommanded",
+   "value": true,
+   "comment": "Only the astral deva can travel astrally except when commanded by a deity"
+  },
+  {
+   "name": "mm2dvDevaAnyEnvironmentIncludingWater",
+   "value": true,
+   "comment": "Devas operate equally well in any environment, including water"
+  },
+  {
+   "name": "mm2dvDevaMaterialBodyOnlyOnPrimeAndElemental",
+   "value": true,
+   "comment": "On the Prime Material or any Elemental Plane only the material body of a deva can be destroyed"
+  },
+  {
+   "name": "mm2dvDevaOnOtherPlanesSubjectToDeath",
+   "value": true,
+   "comment": "On any other plane all devas are subject to actual death"
+  },
+  {
+   "name": "mm2dvDevaNeverNegotiateWithEvil",
+   "value": true,
+   "comment": "No deva will ever negotiate with beings or creatures of Evil"
+  },
+  {
+   "name": "mm2dvNonlawfulDevasBargainWithNonevilNeutrals",
+   "value": true,
+   "comment": "Nonlawful devas might strike a bargain with nonevil neutrals"
+  },
+  {
+   "name": "mm2dvDevaEvaluatesOpponents",
+   "value": true,
+   "comment": "A deva can usually evaluate opponents to determine which pose the greatest threat and attack accordingly"
+  },
+  {
+   "name": "mm2dvDevaDividesAttacksPerRound",
+   "value": true,
+   "comment": "Deva attacks can be divided during a round if the deva so desires"
+  },
+  {
+   "name": "mm2dvDevaCommonSpellLikeList",
+   "value": true,
+   "comment": "The deva-common spell-like list runs 1 at a time, 1 per round: cure disease, cure light wounds, cure serious wounds, detect evil, detect illusion, detect magic, detect traps, dispel magic, etherealness, heal, know alignment, invisibility, light, polymorph self, read magic, remove curse, remove fear, teleport with no error, tongues, ultravision, protection from evil"
+  },
+  {
+   "name": "mm2dvDevaColdImmune",
+   "value": true,
+   "comment": "Devas are not affected by cold"
+  },
+  {
+   "name": "mm2dvDevaElectricityImmune",
+   "value": true,
+   "comment": "Devas are not affected by electrical attack spells"
+  },
+  {
+   "name": "mm2dvDevaMagicMissileImmune",
+   "value": true,
+   "comment": "Devas are not affected by magic missile"
+  },
+  {
+   "name": "mm2dvDevaPetrificationImmune",
+   "value": true,
+   "comment": "Devas are not affected by petrification"
+  },
+  {
+   "name": "mm2dvDevaPoisonImmune",
+   "value": true,
+   "comment": "Devas are not affected by poison"
+  },
+  {
+   "name": "mm2dvDevaNormalFireImmune",
+   "value": true,
+   "comment": "Devas are not affected by normal fire-based attack spells"
+  },
+  {
+   "name": "mm2dvDevaGasImmune",
+   "value": true,
+   "comment": "Devas are not affected by any gas attack spells"
+  },
+  {
+   "name": "mm2dvDevaFireHalfDamage",
+   "value": true,
+   "comment": "Except for the monadic deva, devas take half damage from dragon and magical fire attacks"
+  },
+  {
+   "name": "mm2dvMonadicFireImmuneOfAnySort",
+   "value": true,
+   "comment": "The monadic deva is not affected by fire of any sort (the family exception)"
+  },
+  {
+   "name": "mm2dvDevaAcidFullDamage",
+   "value": true,
+   "comment": "Devas take full damage from acid attacks"
+  },
+  {
+   "name": "mm2dvDevaIronAndSilverNoDamage",
+   "value": true,
+   "comment": "Devas take no damage from normal iron or silver weapons"
+  },
+  {
+   "name": "mm2dvDevaMagicWeaponsFullDamage",
+   "value": true,
+   "comment": "Devas take full damage from magic weapons"
+  },
+  {
+   "name": "mm2dvDevaHitOnlyByPlusOneOrBetter",
+   "value": true,
+   "comment": "It requires a +1 or better magic weapon to harm a deva"
+  },
+  {
+   "name": "mm2dvAstralNeverSurprised",
+   "value": true,
+   "comment": "Astral devas can never be surprised"
+  },
+  {
+   "name": "mm2dvAstralVacuumNoHarm",
+   "value": true,
+   "comment": "Total vacuum does no harm to astral devas"
+  },
+  {
+   "name": "mm2dvAstralImmuneLifeLevelLoss",
+   "value": true,
+   "comment": "Astral devas are immune to life level loss, whether from undead or magic"
+  },
+  {
+   "name": "mm2dvAstralSoulCannotBeTrapped",
+   "value": true,
+   "comment": "Astral deva souls cannot be trapped or imprisoned"
+  },
+  {
+   "name": "mm2dvAstralImmuneDeathSpells",
+   "value": true,
+   "comment": "Astral devas are immune to death spells"
+  },
+  {
+   "name": "mm2dvAstralGoldSkinAndWings",
+   "value": true,
+   "comment": "Astral devas are tall, slender and graceful, with golden skin and hair, amber eyes, and large white wings tinted with gold"
+  },
+  {
+   "name": "mm2dvMonadicDenseDoubleDamageSecondHit",
+   "value": true,
+   "comment": "Any very dense creature so struck (such as one of solid rock) and any metal-armored opponent takes double damage on any 2nd hit during a single round of combat"
+  },
+  {
+   "name": "mm2dvMonadicImmuneLifeLevelLoss",
+   "value": true,
+   "comment": "Monadic devas are immune to life level loss from magic or undead"
+  },
+  {
+   "name": "mm2dvMonadicImmuneDeathMagic",
+   "value": true,
+   "comment": "Monadic devas are immune to death magic from any source"
+  },
+  {
+   "name": "mm2dvMonadicSilverySheenWings",
+   "value": true,
+   "comment": "Monadic devas are milky white with silvery hair and colorless eyes; their wings are white with a silver sheen"
+  },
+  {
+   "name": "mm2dvMovanicFlameTongueSword",
+   "value": true,
+   "comment": "The movanic sword conforms to the characteristics of a +1 flame tongue sword with respect to effects and special bonuses to hit and damage"
+  },
+  {
+   "name": "mm2dvMovanicPlantsCannotHarm",
+   "value": true,
+   "comment": "Plant life of any sort will not (and cannot) harm a movanic deva"
+  },
+  {
+   "name": "mm2dvMovanicAnimalsWillNotAttack",
+   "value": true,
+   "comment": "Normal animals will not willingly attack a movanic deva (reptiles and similar creatures as well as monsters may do so)"
+  },
+  {
+   "name": "mm2dvMovanicImmuneDeathMagic",
+   "value": true,
+   "comment": "Movanic devas are immune to death magic"
+  },
+  {
+   "name": "mm2dvMovanicUnaffectedByEnergyPlanes",
+   "value": true,
+   "comment": "Life level loss, energy drain, and other energy effects of the Negative or Positive Material Planes do not affect movanic devas"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the deva stat grid",
+   "tag": "DevaStats",
+   "count": "mm2dvDevaStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE DEVA GRID: the 3-row DevaStats stat grid (every armor class, hit-dice, hit, xp, lair, move and magic-resistance cell of the three deva stat blocks)",
+   "cols": [
+    "mm2dvDevaStatAC",
+    "mm2dvDevaStatHd",
+    "mm2dvDevaStatHdBonus",
+    "mm2dvDevaStatAvgHp",
+    "mm2dvDevaStatAttacks",
+    "mm2dvDevaStatXp",
+    "mm2dvDevaStatXpHp",
+    "mm2dvDevaStatLairPct",
+    "mm2dvDevaStatMove",
+    "mm2dvDevaStatMr"
+   ],
+   "col_comments": [
+    "The deva armor class cells (the demilich bare-negative class)",
+    "The deva hit dice (num only)",
+    "The deva hit dice bonus points",
+    "The deva book-average hit points",
+    "The deva attacks per round",
+    "The deva xp base cells (the IX/X settled levels)",
+    "The deva xp per hit point",
+    "The deva % in lair cells (Nil -> 0, the charon precedent)",
+    "The deva primary ground move rate (inches x 10)",
+    "The deva magic resistance percentages"
+   ],
+   "data": [
+    [
+     -6,
+     9,
+     36,
+     67,
+     2,
+     10100,
+     25,
+     0,
+     18,
+     65
+    ],
+    [
+     -4,
+     8,
+     32,
+     60,
+     2,
+     8100,
+     20,
+     0,
+     15,
+     60
+    ],
+    [
+     -5,
+     7,
+     28,
+     52,
+     3,
+     7850,
+     18,
+     0,
+     12,
+     55
+    ]
+   ]
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter D part 2 round pins (the R800 census)": [
+   {
+    "kind": "const",
+    "name": "mm2dvRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvFirstPage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvLastPage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvDevaStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicXpValue"
+   }
+  ],
+  "the deva doctrine pins (the R800 MM2 letter D part 2)": [
+   {
+    "kind": "const",
+    "name": "mm2dvDevaCureDiseasePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvDevaCureLightWoundsPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvDevaCureSeriousWoundsPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvDevaDetectTrapsPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvDevaDispelMagicPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvDevaHealPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvDevaSpiritRegainYears"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvDevaInvisibilityRadiusFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaUpperPlanesOfGood"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaMessengersOfGoodDeities"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaNotMostPowerful"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaTravelPlanesOfGood"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaCanBecomeEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvOnlyAstralTravelsAstrallyUncommanded"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaAnyEnvironmentIncludingWater"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaMaterialBodyOnlyOnPrimeAndElemental"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaOnOtherPlanesSubjectToDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaNeverNegotiateWithEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvNonlawfulDevasBargainWithNonevilNeutrals"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaEvaluatesOpponents"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaDividesAttacksPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaCommonSpellLikeList"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaColdImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaElectricityImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaMagicMissileImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaPetrificationImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaPoisonImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaNormalFireImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaGasImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaFireHalfDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMonadicFireImmuneOfAnySort"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaAcidFullDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaIronAndSilverNoDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaMagicWeaponsFullDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvDevaHitOnlyByPlusOneOrBetter"
+   }
+  ],
+  "the MM2 letter D part 2 stat grid (the R800 wiring)": [
+   {
+    "kind": "table",
+    "name": "the deva stat grid"
+   }
+  ],
+  "the astral deva pins (the R800 MM2 letter D part 2)": [
+   {
+    "kind": "const",
+    "name": "mm2dvAstralMaceBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralKnockDamageThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralKnockSenselessRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralDisruptionClericLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralLightRadiusLo"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralLightRadiusHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralPfeRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralPfePower"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralBladeBarrierTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralWisdom"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvAstralCharismaEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvAstralNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvAstralVacuumNoHarm"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvAstralImmuneLifeLevelLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvAstralSoulCannotBeTrapped"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvAstralImmuneDeathSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvAstralGoldSkinAndWings"
+   }
+  ],
+  "the monadic deva pins (the R800 MM2 letter D part 2)": [
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicRodBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicRodRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicLightRadiusLo"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicLightRadiusHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicPfeRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicPfePower"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicHoldMonsterRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicHoldMonsterPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicProjectImagePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicWisdom"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMonadicCharismaEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMonadicDenseDoubleDamageSecondHit"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMonadicImmuneLifeLevelLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMonadicImmuneDeathMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMonadicSilverySheenWings"
+   }
+  ],
+  "the movanic deva pins (the R800 MM2 letter D part 2)": [
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicSwordBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicLightRadiusLo"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicLightRadiusHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicPfeRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicPfePower"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicNeutralizePoisonPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicWisdom"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dvMovanicCharismaEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMovanicFlameTongueSword"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMovanicPlantsCannotHarm"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMovanicAnimalsWillNotAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMovanicImmuneDeathMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dvMovanicUnaffectedByEnergyPlanes"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count (the census walk)",
+   "expr": "m['mm2dvRegistryAfter']() - m['mm2dvRegistryBefore']() != m['mm2dvDefCount']() or m['mm2dvDefCount']() != 3 or m['mm2dvEntryCount']() != 3"
+  },
+  {
+   "note": "each grid xp tile equals its pinned full kill xp (the xpValue formula, pin-vs-pin)",
+   "expr": "m['mm2dvDevaStatXp'](0) + m['mm2dvDevaStatXpHp'](0) * m['mm2dvDevaStatAvgHp'](0) != m['mm2dvAstralXpValue']() or m['mm2dvDevaStatXp'](1) + m['mm2dvDevaStatXpHp'](1) * m['mm2dvDevaStatAvgHp'](1) != m['mm2dvMonadicXpValue']() or m['mm2dvDevaStatXp'](2) + m['mm2dvDevaStatXpHp'](2) * m['mm2dvDevaStatAvgHp'](2) != m['mm2dvMovanicXpValue']()"
+  },
+  {
+   "note": "the settled LEVEL reads: the astral X and the monadic/movanic IX (the capture 1X is the OCR misread)",
+   "expr": "m['mm2dvAstralXpLevel']() != 10 or m['mm2dvMonadicXpLevel']() != 9 or m['mm2dvMovanicXpLevel']() != 9"
+  },
+  {
+   "note": "the protection from evil spheres: the radii and the powers",
+   "expr": "m['mm2dvAstralPfeRadiusFeet']() != 10 or m['mm2dvAstralPfePower']() != 2 or m['mm2dvMonadicPfeRadiusFeet']() != 15 or m['mm2dvMonadicPfePower']() != 1 or m['mm2dvMovanicPfeRadiusFeet']() != 10 or m['mm2dvMovanicPfePower']() != 1"
+  },
+  {
+   "note": "the light radius ranges",
+   "expr": "m['mm2dvAstralLightRadiusLo']() != 4 or m['mm2dvAstralLightRadiusHi']() != 40 or m['mm2dvMonadicLightRadiusLo']() != 3 or m['mm2dvMonadicLightRadiusHi']() != 30 or m['mm2dvMovanicLightRadiusLo']() != 2 or m['mm2dvMovanicLightRadiusHi']() != 20"
+  },
+  {
+   "note": "the per-day power counts",
+   "expr": "m['mm2dvDevaCureDiseasePerDay']() != 3 or m['mm2dvDevaCureLightWoundsPerDay']() != 7 or m['mm2dvDevaCureSeriousWoundsPerDay']() != 3 or m['mm2dvDevaDetectTrapsPerDay']() != 7 or m['mm2dvDevaDispelMagicPerDay']() != 7 or m['mm2dvDevaHealPerDay']() != 1 or m['mm2dvMonadicHoldMonsterPerDay']() != 3 or m['mm2dvMonadicProjectImagePerDay']() != 1 or m['mm2dvMovanicNeutralizePoisonPerDay']() != 3"
+  },
+  {
+   "note": "the wisdom, charisma, psionic and spirit-decade effects",
+   "expr": "m['mm2dvAstralWisdom']() != 20 or m['mm2dvAstralCharismaEffect']() != 20 or m['mm2dvMonadicWisdom']() != 19 or m['mm2dvMonadicCharismaEffect']() != 19 or m['mm2dvMovanicWisdom']() != 18 or m['mm2dvMovanicCharismaEffect']() != 18 or m['mm2dvAstralPsionicAbility']() != 210 or m['mm2dvDevaSpiritRegainYears']() != 10 or m['mm2dvDevaInvisibilityRadiusFeet']() != 10"
+  },
+  {
+   "note": "the weapon and power tiles",
+   "expr": "m['mm2dvAstralMaceBonus']() != 3 or m['mm2dvAstralKnockDamageThreshold']() != 20 or m['mm2dvAstralKnockSenselessRounds']() != 14 or m['mm2dvAstralDisruptionClericLevel']() != 9 or m['mm2dvAstralBladeBarrierTurns']() != 7 or m['mm2dvMonadicRodBonus']() != 2 or m['mm2dvMonadicRodRangeFeet']() != 10 or m['mm2dvMonadicHoldMonsterRounds']() != 8 or m['mm2dvMovanicSwordBonus']() != 1"
+  }
+ ],
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 8,
+  "open": 29
+ },
+ "caller_files": [],
+ "inline_count": 105,
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter-D-part-2 def walk (the R782 site-block pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R800: the MM2 letter D part 2 live def walk ----\n    // The 3 promoted deva defs cross-checked live\n    // against the mm2dv pins: every stat cell of\n    // the 3-row DevaStats grid, the magic-resistance\n    // column, the mm2_print xp source, the xpValue\n    // formula, and the registry census floor\n    // 563 -> 566 (the arc grows the registry in later\n    // letter rounds; the walk demands at least the\n    // landing count).\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kD[3] = {\n            \"astral_deva\", \"monadic_deva\", \"movanic_deva\",\n        };\n        for (int i = 0; i < 3; ++i) {\n            const auto* d = reg.find(kD[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\") ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2dvDevaStatAC(i))\n                ++bad;\n            if (d->hitDiceNum != mm2dvDevaStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus != mm2dvDevaStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2dvDevaStatAvgHp(i)) ++bad;\n            if (d->attacks != mm2dvDevaStatAttacks(i)) ++bad;\n            if (d->xpBase != mm2dvDevaStatXp(i)) ++bad;\n            if (d->xpPerHp != mm2dvDevaStatXpHp(i)) ++bad;\n            if (d->lairPct != mm2dvDevaStatLairPct(i)) ++bad;\n            if (d->moveRate != mm2dvDevaStatMove(i)) ++bad;\n            if (d->magicResist != mm2dvDevaStatMr(i)) ++bad;\n        }\n        if ((int)reg.all().size() < mm2dvRegistryAfter())\n            ++bad;\n        printf(\"R800 MM2 letter D part 2 live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/a/astral_deva.lua",
+   "content": "-- Astral Deva: promoted by the R800 MM2 letter D part 2 round from the MM2 print\n-- (spec tools/spec_r800.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Astral Deva\",\n  page = \"43\",\n  pages = \"43\",\n  source = \"MM2\",\n  race = \"Astral Deva\",\n  hitDice = \"9+36\",\n  hitDiceNum = 9,\n  hitDiceBonus = 36,\n  avgHp = 67,\n  armorClass = -6,\n  numAttacks = 2,\n  damage = \"4-15/4-15 (+6 strength bonus)\",\n  xp = 10100,\n  xpPerHp = 25,\n  xpValue = 11775,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-3\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"18\\\"/42\\\"//15\\\" (MC:A)\",\n  size = \"M (7' tall)\",\n  intelligence = \"genius (wisdom = 20)\",\n  alignment = \"good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"65%\",\n  psionic = \"210\",\n  attackDefenseModes = \"ABCE/FGH\",\n  text = \"Astral devas are principally employed in the Astral Plane or on any of the outer Lower Planes. Alone or in groups, they move about in service to their sovereigns. They are very quick, whether afoot or using their mighty pinions in flight. An astral deva normally carries a huge, macelike weapon which it can wield nimbly. This weapon is of +3 value when employed by an astral deva. Any creature struck twice in the same melee round and suffering damage in excess of 20 hit points must save vs. spell or be knocked senseless for 14 rounds. The weapon also acts as a mace of disruption (q.v.) with chances to hit as if wielded by a 9th-level cleric. An astral deva can use the spell-like powers given above, at will, 1 per round, to the applicable maximums. Light shed by an astral deva can have a 4-40 foot radius, as desired. The protection from evil is a sphere with a 10-foot radius of normal (+2) power. An astral deva can also dispel illusion, dispel invisibility of any sort, polymorph self, or remove curse, all also 1 per round. Once per day an astral deva can create a blade barrier which will last for up to 7 turns. Astral devas can never be surprised. It requires a +1 or better magic weapon to harm them. Total vacuum does no harm to astral devas. They are immune to life level loss, whether from undead or magic. Their souls cannot be trapped or imprisoned. They are immune to death spells. Their charisma effect is 20. Astral devas are tall, slender, and graceful. They have golden skin and hair, amber eyes, and large white wings tinted with gold. They otherwise resemble humans.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/monadic_deva.lua",
+   "content": "-- Monadic Deva: promoted by the R800 MM2 letter D part 2 round from the MM2 print\n-- (spec tools/spec_r800.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Monadic Deva\",\n  page = \"43\",\n  pages = \"43\",\n  source = \"MM2\",\n  race = \"Monadic Deva\",\n  hitDice = \"8+32\",\n  hitDiceNum = 8,\n  hitDiceBonus = 32,\n  avgHp = 60,\n  armorClass = -4,\n  numAttacks = 2,\n  damage = \"3-12/3-12 (+4 strength bonus)\",\n  xp = 8100,\n  xpPerHp = 20,\n  xpValue = 9300,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1-4\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"15\\\"/36\\\"//18\\\" (MC:B)\",\n  size = \"M (6' tall)\",\n  intelligence = \"genius (wisdom = 19)\",\n  alignment = \"good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"60%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Monadic devas are usually employed in the Ethereal and the Elemental Planes. Any environment is home to these creatures. A monadic deva normally carries a metal rod equal to a +2 weapon which can be used either to pierce or smite at up to a 10-foot distance. Any very dense creature so struck (such as one of solid rock) and any metal-armored opponent will take double damage on any 2nd hit during a single round of combat. A monadic deva can use the spell-like powers given under \\\"Devas,\\\" at will, 1 per round, to the applicable maximums. The radius of light shed by a monadic deva can extend from 3-30 feet, as desired. The protection from evil sphere is half-power (+1) but of a 15-foot radius. A monadic deva can also, once per round, at will, hold monster (elementals only, 1 creature, 8 rounds, 3 per day) or project image (1 per day). A monadic deva can be hit only by a +1 or better weapon. They are immune to life level loss from magic or undead and to death magic from any source. Their charisma effect is 19. Monadic devas are milky white with silvery hair and colorless eyes. Their wings are white with a silver sheen. They otherwise resemble very strong humans, with broad shoulders and heroic build.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/movanic_deva.lua",
+   "content": "-- Movanic Deva: promoted by the R800 MM2 letter D part 2 round from the MM2 print\n-- (spec tools/spec_r800.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Movanic Deva\",\n  page = \"43\",\n  pages = \"43-44\",\n  source = \"MM2\",\n  race = \"Movanic Deva\",\n  hitDice = \"7+28\",\n  hitDiceNum = 7,\n  hitDiceBonus = 28,\n  avgHp = 52,\n  armorClass = -5,\n  numAttacks = 3,\n  damage = \"By weapon type (+5 strength bonus)\",\n  xp = 7850,\n  xpPerHp = 18,\n  xpValue = 8786,\n  xpSource = \"mm2_print\",\n  frequency = \"uncommon\",\n  noAppearing = \"1-6\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"/30\\\"//21\\\" (MC:B)\",\n  size = \"M (6 1/2\\\" tall)\",\n  intelligence = \"exceptional (wisdom = 18)\",\n  alignment = \"good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"55%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Movanic devas serve primarily on the Material Planes - Negative, Positive, and Prime. Whether power is negative or positive is all the same to them. A movanic deva is armed typically with a long, slender sword with which it strikes rapidly and skillfully. The weapon generally conforms to the characteristics of a +1 flame tongue sword with respect to effects and special bonuses to hit and damage. A movanic deva can use the spell-like powers given above, at will, 1 per round, to the applicable maximums. Light shed by a movanic deva varies in radius from 2-20 feet, as desired. The protection from evil sphere is one of a 10-foot radius and half (+1) power. A movanic deva can also at will, once per round, cause or cure blindness, detect traps, and neutralize poison (3 per day). Movanic devas can be harmed only by +1 or better weapons. Plant life of any sort will not (and cannot) harm them. Similarly, normal animals will not willingly attack them. (Reptiles and similar creatures as well as \\\"monsters\\\" may do so.) They are immune to death magic. Life level loss, energy drain, and/or other energy effects of the Negative or Positive Material Planes do not affect movanic devas. Their charisma effect is 18.\",\n}\n"
+  }
+ ]
+}
