@@ -22015,6 +22015,99 @@ PREFLIGHT GREEN (the repair cut, first pass):
   161318 bytes, landed the same (no
   editor delta). NEXT - R815: awaits
   Curtiss's call (10 open boxes remain).
+- R815 LANDED 2026-10-24: commit
+  8485fb87e497ff66b093a5793408fa1b81ba74a7
+  (census 737 -> 738, pushed 8137d90..8485fb8),
+  THE MM2 LETTERS WXYZ WALK - THE WEASEL TO
+  ZYGOM TURNS - THE WXYZ-FLIP ROUND (Curtiss's
+  letters-WXYZ Go call on the landed letters TUV
+  walk; round twenty of the MM2 arc, the FIFTH
+  multi-letter pass - the weasel opens p. 125
+  and the zygom closes pp. 131-132, and the
+  round CLOSES THE A-Z MONSTER SECTION: the
+  Letters W, X, Y and Z gap boxes plus the
+  "Monsters from A-Z" PARENT box all flip -
+  32 closed 5 open, only the MM2 tail remains).
+  THE PIN-TIME WALK: SEVENTEEN defs on
+  pp. 125-132 - SIXTEEN entry heads carrying
+  SEVENTEEN stat blocks (the WORM family head
+  the one two-def head - the tenebrous and
+  tunnel worm blocks ride beneath it), ZERO
+  prior-owned, ZERO doctrine-only. The 17 defs
+  (weasel, webbird, wemic, black willow,
+  wolf-in-sheep's-clothing, wolfwere, tenebrous
+  worm, tunnel worm, xag-ya/xeg-yi, xaren,
+  yeth hound, yochlol, yuan ti, juju zombie,
+  monster zombie, zorbo, zygom) ride the R791
+  data_files extension, registry 792 -> 809.
+  Header rules/mm2wxyz.h, prefix mm2wxyz,
+  200 consts + 35 bools + ONE grid (the 17x10
+  WXYZStats stat grid, emitted as the
+  switch-accessor family mm2wxyzWXYZStat*) =
+  245 inline. THE SETTLED READS (capture
+  primary, the transcription the cross-check
+  voice): the yochlol -10 armor class the
+  UNQUOTED number read (the R814 tarrasque
+  precedent); the black willow 7-12 attacks the
+  10 sanity clamp (the R814 land urchin
+  precedent); the wolfISC 1-3 attacks the 3 max
+  read; the weasel and webbird 2 hp the
+  flat-hp path (hdNum 0, the atomie half-dice
+  precedent); the monster zombie the nil block
+  (hitDiceNum 0 per the R813 shade precedent,
+  xpValue 0); the yuan ti and the monster
+  zombie by_level (xpSource by_level, xpValue
+  0); the zorbo 10 the "See below" first-int
+  read; the tunnel worm 76 the bare-numeral
+  lair cell (the R812 percent lesson).
+  THE AUTHORING DETOURS (environment wiped
+  MID-BUILDER-RE-PASTE - the truncated builder
+  re-pasted from the conversation and three
+  defects caught at AUTHOR time, all by local
+  gates, none escaping to delivery): (1) the
+  lost xpValue field injection - the defs
+  carried no xpValue, so the sim's default-10
+  read exposed it (the builder now injects
+  xpValue = xp + avgHp x xpPerHp at the def
+  source, and the emitted field order matches
+  the landed defs, xpValue right after
+  xpPerHp); (2) the double-escaped \\n\\n text
+  separator - luaq applied after the join
+  doubled the backslashes against the landed
+  single-backslash convention (the fix:
+  per-paragraph luaq, raw \n\n join); (3) one
+  79-col section title (the
+  wolf-in-sheep's-clothing pins) rejected by
+  the engine's own 78-col header gate - the
+  builder now shortens the suffix adaptively.
+  LOCAL VERIFICATION (the tree rebuilt from
+  the tarball at 8137d90): engine double-run
+  27/0 -> 0/27; rverify GREEN vs 8137d90 -
+  405 mutants, 0 missed; the full-registry
+  offline sweep 809 lua files 0 parse errors,
+  the 17 new defs walked cell-for-cell through
+  the exact coercer replica (hitDiceNum
+  default 1 replicated - the R814 trap) and
+  matched the 17x10 EXPECT grid; the emitted
+  regtest walk simulated offline fail-on-wrong,
+  all 17 prose markers found, all 10 accessor
+  columns match EXPECT; C++ hazard scan clean
+  (no double commas, hyphen idents, quote or
+  brace imbalance); the /tmp tree restored
+  pristine after. PREFLIGHT GREEN FIRST PASS:
+  loaded 809, errors 0; xp audit 809/0;
+  R797 through R815 live defs all bad 0;
+  AUDIT CENSUS 738 each exactly once, all bad
+  0; build 0 warnings. Commit 22 files, 5585
+  insertions - the 17 .lua defs landed IN the
+  commit this time (the R793 untracked-defs
+  lesson held). Delivery spec-r815: raw JSON
+  canvas, authored md5
+  33c4ae35090936bbf48f258fd0d60fcf 124424
+  bytes, landed the same (no editor delta).
+  NEXT - R816: awaits Curtiss's call (5 open
+  boxes remain - the MM2 tail beyond the
+  A-Z monster section).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

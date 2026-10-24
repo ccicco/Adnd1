@@ -178,7 +178,7 @@ the R614 precedent.
   the parent of the three table-group boxes below;
   the per-terrain and per-level sub-tables get their
   own boxes when those rounds pin
-- [ ] **Dungeon Random Encounter Tables** (pp. 133+) -
+- [x] **Dungeon Random Encounter Tables** (pp. 133+) -
   the dungeon-level tables
 - [ ] **Outdoor Random Encounter Tables** (pp. 140+) -
   the terrain tables

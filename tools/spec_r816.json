@@ -1,0 +1,2232 @@
+{
+ "round": 816,
+ "title": "the MM2 dungeon encounter tables walk - the ten monster level grids",
+ "header_file": "rules/mm2encd.h",
+ "prefix": "mm2encd",
+ "include_after": "#include \"rules/mm2wxyz.h\"  // R815: the MM2 letters WXYZ walk - the weasel to zygom turns",
+ "include_comment": "the MM2 dungeon encounter tables walk - the ten monster level grids",
+ "census_before": 738,
+ "audit_label": "R816 MM2 dungeon encounter grids audit",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "THE MM2 DUNGEON ENCOUNTER TABLES WALK - the ten Monster Level grids (the tables that ride with the DMG Appendix C tables; the print pp. 133-134), every die row 2-20 pinned as the five-cell grid (die, source, number min, number max, special). THE SETTLED READS (the two 1st-edition word layers the voices, the merged index and the registry keys the cross-checks): the Bowler, Norker, Thoqqua (the index Rock worm), Nupperibo (an MM2 demon, the registry def source MM2 over the scan-A FF misread) and Grimlock (the scan-A word layer garbage, the scan-B clean 2-12) all settle against the index and registry; the scan-A Pseudowraith reads Pseudo-wraith (the scan-B hyphen), the MM2 pseudo-undead family def the walk key; the Daemon Mezzo- row (the scan-A Mono- the misread - the mezzodaemon is the FF daemon, monodaemon is not a print creature); the two word layers disagree on the Land Lamprey cell (scan A 2-8, scan B 2-6) - the scan-A read pins, flagged for the physical copy; the Chasme cell (scan A 1-2, scan B 1-3) settles 1-3, the registry def noAppearing 1-3 or 1-6 corroborating the scan-B read; the Green Slime number cell is dropped by BOTH word layers - the MM1 registry def noAppearing 1-6 the settle voice, flagged for the physical copy; the Level VI die 15/16 duplicate (the Troll row) settles 15 Troll by the scan-B column read; the character-party rows carry no source and no number (the DMG subtable reference); the four Level X unique rows (the demon prince, the elemental prince of evil, Charon and the devil duke) carry the court bullet instead of a number - the Orcus, Tiamat and Anthraxus court examples pinned as bools; the dragon age cells read Anc., Anc. O. and Anc. V.O. in both word layers (the Ancient spell-outs on Level VIII and X); the Daemon Charon rows walk the charonadaemon key (the lesser daemon, not the unique boatman); the table heads print MONSTER LEVEL I through X with the Level VII continuation heading (both scans the VII cont. reading, the scan-A word layer VI cont. the single-glyph loss).",
+ "banner": {
+  "title": "THE MM2 DUNGEON ENCOUNTER TABLES WALK - THE TEN MONSTER LEVEL GRIDS (pp. 133-134: the ten tables I through X, the 1d8+1d12 method, the character-party rows, and the unique-court rows of Level X), the DUNGEON-FLIP round - the Dungeon Random Encounter Tables gap box flips to closed",
+  "provenance": "Round twenty-one of the MM2 arc, the first table-group round (Curtiss Go call on the landed R815 WXYZ walk; the pin-time walk found ten printed grids of 19 die rows each, no defs promoted - the registry stays 809)",
+  "sentinel": "The pin header stays the print-fidelity record; the grids carry the die, source, number and special cells, the row rosters ride the audit comments, and the walk cross-checks the registry keys live"
+ },
+ "consts": [
+  {
+   "name": "mm2encdRound",
+   "value": 816,
+   "comment": "The MM2 dungeon encounter tables walk round: the ten monster level grids, the fourth table-group round (Curtiss Go call on the landed R815)"
+  },
+  {
+   "name": "mm2encdTableCount",
+   "value": 10,
+   "comment": "The ten Monster Level tables (I through X)"
+  },
+  {
+   "name": "mm2encdRowsPerTable",
+   "value": 19,
+   "comment": "Every table carries the 19 die rows 2-20 (the 1d8+1d12 sum)"
+  },
+  {
+   "name": "mm2encdTotalRows",
+   "value": 190,
+   "comment": "The 10 x 19 rows pinned across the ten grids"
+  },
+  {
+   "name": "mm2encdDieMin",
+   "value": 2,
+   "comment": "The lowest die roll on every table (1d8+1d12)"
+  },
+  {
+   "name": "mm2encdDieMax",
+   "value": 20,
+   "comment": "The highest die roll on every table"
+  },
+  {
+   "name": "mm2encdCharacterPartyRows",
+   "value": 10,
+   "comment": "One character-party row per table (see the character subtable in the DMG)"
+  },
+  {
+   "name": "mm2encdUniqueCourtRows",
+   "value": 4,
+   "comment": "The four unique-court rows (Level X dies 2, 3, 19 and 20)"
+  },
+  {
+   "name": "mm2encdMm1SourceRows",
+   "value": 89,
+   "comment": "The (MM1) rows across the ten tables"
+  },
+  {
+   "name": "mm2encdMm2SourceRows",
+   "value": 63,
+   "comment": "The (MM2) rows across the ten tables"
+  },
+  {
+   "name": "mm2encdFfSourceRows",
+   "value": 26,
+   "comment": "The (FF) rows across the ten tables"
+  },
+  {
+   "name": "mm2encdAllSourceRows",
+   "value": 2,
+   "comment": "The (ALL) rows (the Level X unique demon prince and devil duke rows)"
+  },
+  {
+   "name": "mm2encdRegistryFloor",
+   "value": 809,
+   "comment": "The registry census floor (the landed R815 count; this round promotes no defs)"
+  },
+  {
+   "name": "mm2encdPartyDieD1",
+   "value": 11,
+   "comment": "The character-party die on Monster Level I"
+  },
+  {
+   "name": "mm2encdPartyDieD2",
+   "value": 11,
+   "comment": "The character-party die on Monster Level II"
+  },
+  {
+   "name": "mm2encdPartyDieD3",
+   "value": 9,
+   "comment": "The character-party die on Monster Level III"
+  },
+  {
+   "name": "mm2encdPartyDieD4",
+   "value": 9,
+   "comment": "The character-party die on Monster Level IV"
+  },
+  {
+   "name": "mm2encdPartyDieD5",
+   "value": 10,
+   "comment": "The character-party die on Monster Level V"
+  },
+  {
+   "name": "mm2encdPartyDieD6",
+   "value": 11,
+   "comment": "The character-party die on Monster Level VI"
+  },
+  {
+   "name": "mm2encdPartyDieD7",
+   "value": 9,
+   "comment": "The character-party die on Monster Level VII"
+  },
+  {
+   "name": "mm2encdPartyDieD8",
+   "value": 9,
+   "comment": "The character-party die on Monster Level VIII"
+  },
+  {
+   "name": "mm2encdPartyDieD9",
+   "value": 9,
+   "comment": "The character-party die on Monster Level IX"
+  },
+  {
+   "name": "mm2encdPartyDieD10",
+   "value": 13,
+   "comment": "The character-party die on Monster Level X"
+  },
+  {
+   "name": "mm2encdD1Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level I grid"
+  },
+  {
+   "name": "mm2encdD2Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level II grid"
+  },
+  {
+   "name": "mm2encdD3Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level III grid"
+  },
+  {
+   "name": "mm2encdD4Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level IV grid"
+  },
+  {
+   "name": "mm2encdD5Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level V grid"
+  },
+  {
+   "name": "mm2encdD6Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level VI grid"
+  },
+  {
+   "name": "mm2encdD7Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level VII grid"
+  },
+  {
+   "name": "mm2encdD8Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level VIII grid"
+  },
+  {
+   "name": "mm2encdD9Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level IX grid"
+  },
+  {
+   "name": "mm2encdD10Count",
+   "value": 19,
+   "comment": "The 19 rows of the Monster Level X grid"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2encdUsesD8PlusD12",
+   "value": true,
+   "comment": "All dice scores on the tables are produced from the sum of 1 8-sided and 1 12-sided die"
+  },
+  {
+   "name": "mm2encdRangeTwoToTwenty",
+   "value": true,
+   "comment": "The 1d8+1d12 sum produces the range 2-20"
+  },
+  {
+   "name": "mm2encdConjoinsDmgAppendixC",
+   "value": true,
+   "comment": "The tables are used in conjunction with those in Appendix C of the DUNGEON MASTER GUIDE"
+  },
+  {
+   "name": "mm2encdCoversMm1Mm2AndFf",
+   "value": true,
+   "comment": "The tables include creatures from MM2, the first MONSTER MANUAL and the FIEND FOLIO"
+  },
+  {
+   "name": "mm2encdNotACompleteListing",
+   "value": true,
+   "comment": "The tables are not a complete listing but typical encounters for easy use by the DM"
+  },
+  {
+   "name": "mm2encdDmMayModifyTables",
+   "value": true,
+   "comment": "Modification of the tables or creation of new ones can be undertaken as desired"
+  },
+  {
+   "name": "mm2encdSeeCreatingTablesSection",
+   "value": true,
+   "comment": "See the Creating Encounter Tables section following the listing"
+  },
+  {
+   "name": "mm2encdPartyRowRollsDmgSubtable",
+   "value": true,
+   "comment": "The character-party row consults the character subtable in the DMG"
+  },
+  {
+   "name": "mm2encdUniqueCourtRule",
+   "value": true,
+   "comment": "Powerful unique creatures (demon princes, daemon masters, dukes of the hells) are always accompanied by a court of servants and vassals"
+  },
+  {
+   "name": "mm2encdCourtOrcusWithUndead",
+   "value": true,
+   "comment": "Orcus will be found with undead"
+  },
+  {
+   "name": "mm2encdCourtTiamatWithAbishai",
+   "value": true,
+   "comment": "Tiamat with her abishai devils and several huge dragons"
+  },
+  {
+   "name": "mm2encdCourtAnthraxusWithDaemons",
+   "value": true,
+   "comment": "Anthraxus the Oinodaemon with lesser powerful daemons"
+  },
+  {
+   "name": "mm2encdUniqueRowsCarryNoNumber",
+   "value": true,
+   "comment": "The unique-court rows carry the bullet instead of a number encountered"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the Monster Level I encounter grid",
+   "tag": "EncD1",
+   "cols": [
+    "mm2encdD1Die",
+    "mm2encdD1Src",
+    "mm2encdD1NumMin",
+    "mm2encdD1NumMax",
+    "mm2encdD1Special"
+   ],
+   "count": "mm2encdD1Count",
+   "data": [
+    [
+     2,
+     3,
+     1,
+     4,
+     0
+    ],
+    [
+     3,
+     2,
+     2,
+     12,
+     0
+    ],
+    [
+     4,
+     3,
+     3,
+     18,
+     0
+    ],
+    [
+     5,
+     2,
+     2,
+     12,
+     0
+    ],
+    [
+     6,
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     7,
+     3,
+     1,
+     4,
+     0
+    ],
+    [
+     8,
+     1,
+     6,
+     15,
+     0
+    ],
+    [
+     9,
+     1,
+     5,
+     15,
+     0
+    ],
+    [
+     10,
+     2,
+     2,
+     20,
+     0
+    ],
+    [
+     11,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     12,
+     1,
+     7,
+     12,
+     0
+    ],
+    [
+     13,
+     1,
+     5,
+     20,
+     0
+    ],
+    [
+     14,
+     1,
+     6,
+     17,
+     0
+    ],
+    [
+     15,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     16,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     17,
+     3,
+     2,
+     8,
+     0
+    ],
+    [
+     18,
+     2,
+     2,
+     12,
+     0
+    ],
+    [
+     19,
+     1,
+     5,
+     15,
+     0
+    ],
+    [
+     20,
+     2,
+     1,
+     3,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL I GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Al-miraj, Webbird, Bullywug, Pedipalp, Large, Bowler, Bat, Giant, Goblin, Men, Bandit, Bat, Character Party, Orc, Rat, Giant, Kobold, Piercer, Skeleton, Norker, Vulchling, Gnome, Demon, Nupperibo"
+  },
+  {
+   "name": "the Monster Level II encounter grid",
+   "tag": "EncD2",
+   "cols": [
+    "mm2encdD2Die",
+    "mm2encdD2Src",
+    "mm2encdD2NumMin",
+    "mm2encdD2NumMax",
+    "mm2encdD2Special"
+   ],
+   "count": "mm2encdD2Count",
+   "data": [
+    [
+     2,
+     2,
+     1,
+     6,
+     0
+    ],
+    [
+     3,
+     2,
+     2,
+     12,
+     0
+    ],
+    [
+     4,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     12,
+     0
+    ],
+    [
+     7,
+     1,
+     4,
+     10,
+     0
+    ],
+    [
+     8,
+     2,
+     2,
+     8,
+     0
+    ],
+    [
+     9,
+     1,
+     2,
+     8,
+     0
+    ],
+    [
+     10,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     11,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     12,
+     1,
+     2,
+     8,
+     0
+    ],
+    [
+     13,
+     2,
+     3,
+     18,
+     0
+    ],
+    [
+     14,
+     3,
+     2,
+     12,
+     0
+    ],
+    [
+     15,
+     1,
+     5,
+     15,
+     0
+    ],
+    [
+     16,
+     2,
+     2,
+     12,
+     0
+    ],
+    [
+     17,
+     3,
+     4,
+     10,
+     0
+    ],
+    [
+     18,
+     2,
+     2,
+     8,
+     0
+    ],
+    [
+     19,
+     1,
+     2,
+     7,
+     0
+    ],
+    [
+     20,
+     2,
+     1,
+     4,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL II GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Azer, Duergar, Coffer Corpse, Gas Spore, Lizard Man, Gnoll, Land Lamprey, Centipede, Giant, Toad, Giant, Character Party, Troglodyte, Centipede, Huge, Grimlock, Stirge, Mongrelman, Quaggoth, Pedipalp, Huge, Frog, Killer, Fire Bat"
+  },
+  {
+   "name": "the Monster Level III encounter grid",
+   "tag": "EncD3",
+   "cols": [
+    "mm2encdD3Die",
+    "mm2encdD3Src",
+    "mm2encdD3NumMin",
+    "mm2encdD3NumMax",
+    "mm2encdD3Special"
+   ],
+   "count": "mm2encdD3Count",
+   "data": [
+    [
+     2,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     3,
+     3,
+     1,
+     3,
+     0
+    ],
+    [
+     4,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     1,
+     3,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     3,
+     2,
+     8,
+     0
+    ],
+    [
+     8,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     9,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     10,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     11,
+     1,
+     1,
+     3,
+     0
+    ],
+    [
+     12,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     13,
+     2,
+     1,
+     4,
+     0
+    ],
+    [
+     14,
+     1,
+     2,
+     7,
+     0
+    ],
+    [
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     17,
+     3,
+     1,
+     3,
+     0
+    ],
+    [
+     18,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     19,
+     3,
+     1,
+     2,
+     0
+    ],
+    [
+     20,
+     3,
+     2,
+     8,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL III GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Leprechaun, Mephit, Fire or Smoke, Phantom, Ankheg, 4-5 HD, Ochre Jelly, Kenku, Luck Eater, Character Party, Ogre, Beetle, Giant Boring, Spider, Large, Scorpion, Large, Bugbear, Gelatinous Cube, Ustilagor, Shocker, Weasel, Giant, Thoqqua, Elf, Drow"
+  },
+  {
+   "name": "the Monster Level IV encounter grid",
+   "tag": "EncD4",
+   "cols": [
+    "mm2encdD4Die",
+    "mm2encdD4Src",
+    "mm2encdD4NumMin",
+    "mm2encdD4NumMax",
+    "mm2encdD4Special"
+   ],
+   "count": "mm2encdD4Count",
+   "data": [
+    [
+     2,
+     3,
+     1,
+     6,
+     0
+    ],
+    [
+     3,
+     3,
+     2,
+     5,
+     0
+    ],
+    [
+     4,
+     3,
+     2,
+     5,
+     0
+    ],
+    [
+     5,
+     2,
+     3,
+     12,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     7,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     8,
+     2,
+     1,
+     4,
+     0
+    ],
+    [
+     9,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     11,
+     2,
+     1,
+     6,
+     0
+    ],
+    [
+     12,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     13,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     14,
+     3,
+     1,
+     2,
+     0
+    ],
+    [
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     17,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     18,
+     2,
+     1,
+     4,
+     0
+    ],
+    [
+     19,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     20,
+     3,
+     1,
+     4,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL IV GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Lava Children, Meenlock, Hook Horror, Pech, Owlbear, Rust Monster, Pseudo-undead, Ghast, Character Party, Yellow Mold, Scorpion, Huge, Toad, Poisonous, Gargoyle, Hornet, Giant, Hydra (5-6 heads), Ghast, Caterwaul, Solifugid, Giant, Spectator, Githyanki"
+  },
+  {
+   "name": "the Monster Level V encounter grid",
+   "tag": "EncD5",
+   "cols": [
+    "mm2encdD5Die",
+    "mm2encdD5Src",
+    "mm2encdD5NumMin",
+    "mm2encdD5NumMax",
+    "mm2encdD5Special"
+   ],
+   "count": "mm2encdD5Count",
+   "data": [
+    [
+     2,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     3,
+     1,
+     2,
+     0
+    ],
+    [
+     5,
+     2,
+     1,
+     4,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     3,
+     0
+    ],
+    [
+     7,
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     8,
+     1,
+     1,
+     3,
+     0
+    ],
+    [
+     9,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     10,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     11,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     12,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     13,
+     2,
+     2,
+     5,
+     0
+    ],
+    [
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     15,
+     2,
+     2,
+     5,
+     0
+    ],
+    [
+     16,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     17,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     18,
+     1,
+     1,
+     3,
+     0
+    ],
+    [
+     19,
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     20,
+     1,
+     1,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL V GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Grue, Chaggrin, Cloaker, Algoid, Phycomid, Minotaur, Snake, Giant Poisonous, Lizard, Subterranean, Bear, Cave, Character Party, Cockatrice, Spider, Giant, Giant, Verbeeg, Hydra, 7 Heads, Snake, Poisonous, Margoyle, Rock Reptile, Doppleganger, Solifugid, Giant, Hydra, Pyro- (5 heads)"
+  },
+  {
+   "name": "the Monster Level VI encounter grid",
+   "tag": "EncD6",
+   "cols": [
+    "mm2encdD6Die",
+    "mm2encdD6Src",
+    "mm2encdD6NumMin",
+    "mm2encdD6NumMax",
+    "mm2encdD6Special"
+   ],
+   "count": "mm2encdD6Count",
+   "data": [
+    [
+     2,
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     1,
+     6,
+     0
+    ],
+    [
+     5,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     10,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     11,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     12,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     13,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     14,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     15,
+     1,
+     1,
+     3,
+     0
+    ],
+    [
+     16,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     19,
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     20,
+     3,
+     1,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL VI GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Drider, Rakshasa, Green Slime, Basilisk, Grell, Otyugh, Wyvern, Wraith, Wight, Character Party, Pseudo-wraith, Carrion Crawler, Scorpion, Giant, Troll, Devil, Abishai, Dragon, Black, Old, Ogre Mage, Yuan-ti, Slaad, Red"
+  },
+  {
+   "name": "the Monster Level VII encounter grid",
+   "tag": "EncD7",
+   "cols": [
+    "mm2encdD7Die",
+    "mm2encdD7Src",
+    "mm2encdD7NumMin",
+    "mm2encdD7NumMax",
+    "mm2encdD7Special"
+   ],
+   "count": "mm2encdD7Count",
+   "data": [
+    [
+     2,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     1,
+     3,
+     0
+    ],
+    [
+     9,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     1,
+     4,
+     0
+    ],
+    [
+     12,
+     1,
+     1,
+     3,
+     0
+    ],
+    [
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     14,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     15,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     19,
+     2,
+     1,
+     4,
+     0
+    ],
+    [
+     20,
+     3,
+     1,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL VII GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Dao, Basilisk, Greater, Umber Hulk, Mimic, Chimera, Lurker Above, Giant, Frost or Fire, Character Party, Pudding, Black, Giant, Hill, Will-o-wisp, Slug, Giant, Pseudo-undead, Spectre, Sundew, Giant, Mummy, Spectre, Invisible Stalker, Diakk, Daemon, Mezzo-"
+  },
+  {
+   "name": "the Monster Level VIII encounter grid",
+   "tag": "EncD8",
+   "cols": [
+    "mm2encdD8Die",
+    "mm2encdD8Src",
+    "mm2encdD8NumMin",
+    "mm2encdD8NumMax",
+    "mm2encdD8Special"
+   ],
+   "count": "mm2encdD8Count",
+   "data": [
+    [
+     2,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     5,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     8,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     9,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     10,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     11,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     12,
+     1,
+     1,
+     2,
+     0
+    ],
+    [
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     19,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     1,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL VIII GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Foo Lion, Xag-ya, Demon, Chasme, Aurumvorax, Vampire, Pudding, Deadly Brown, Demon, Alu-, Character Party, Hydra (13-16 heads), Pseudo-undead, Vampire, Rust Monster, Will-o-wisp, Trapper, Demon, Type V, Purple Worm, Ghost, Dragon, Black, Ancient, Xeg-yi, Daemon, Charon"
+  },
+  {
+   "name": "the Monster Level IX encounter grid",
+   "tag": "EncD9",
+   "cols": [
+    "mm2encdD9Die",
+    "mm2encdD9Src",
+    "mm2encdD9NumMin",
+    "mm2encdD9NumMax",
+    "mm2encdD9Special"
+   ],
+   "count": "mm2encdD9Count",
+   "data": [
+    [
+     2,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     9,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     10,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     11,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     2,
+     2,
+     0
+    ],
+    [
+     15,
+     2,
+     1,
+     2,
+     0
+    ],
+    [
+     16,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     18,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     19,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     1,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL IX GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Demon, Type VI, Deva, Monadic, Devil, Pit Fiend, Dragon, Red, Anc., Hydra, Pyro- (12 heads), Slaad, Grey, Titan, Minor, Character Party, Deva, Movanic, Thessalhydra, Vampire, former cleric, level 7-10, Golem, Stone, Dragon, Black, Anc. O., Demodand, Kelubar, Daemon, Nyca-, Titan, Major, Baku, Daemon, Ultro-, Demilich"
+  },
+  {
+   "name": "the Monster Level X encounter grid",
+   "tag": "EncD10",
+   "cols": [
+    "mm2encdD10Die",
+    "mm2encdD10Src",
+    "mm2encdD10NumMin",
+    "mm2encdD10NumMax",
+    "mm2encdD10Special"
+   ],
+   "count": "mm2encdD10Count",
+   "data": [
+    [
+     2,
+     4,
+     0,
+     0,
+     2
+    ],
+    [
+     3,
+     3,
+     0,
+     0,
+     2
+    ],
+    [
+     4,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     5,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     2,
+     2,
+     0
+    ],
+    [
+     7,
+     1,
+     2,
+     2,
+     0
+    ],
+    [
+     8,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     10,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     11,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     13,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     14,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     17,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     19,
+     2,
+     0,
+     0,
+     2
+    ],
+    [
+     20,
+     4,
+     0,
+     0,
+     2
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, the 1d8+1d12 sum)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 4 ALL, 0 the character-party row)",
+    "The number-encountered low cells (0 the party and unique-court rows)",
+    "The number-encountered high cells (0 the party and unique-court rows)",
+    "The special cells (0 normal, 1 the character-party row, 2 a unique-court row)"
+   ],
+   "audit_comment": "THE MONSTER LEVEL X GRID: the 19 die rows 2-20, one row per die (die, source, number min, number max, special). Rows: Demon Prince, Elemental Prince of Evil, Modron, Quarton, Tarrasque, Dragon, Red, Anc. V.O., Dragon, Blue, Anc. V.O., Solar, Golem, Iron, Planetar, Slaad, Death, Beholder, Character Party, Lich, Vampire, former magic-user, level 9-12, Dragon, Cloud, Ancient, Modron, Quinton, Titan, Elder, Daemon, Charon, Devil, Duke or Arch-"
+  }
+ ],
+ "table_checks": [],
+ "caller_files": [],
+ "examples": [
+  {
+   "note": "the census walk (the ten-grid arithmetic)",
+   "expr": "m['mm2encdTotalRows']() != m['mm2encdTableCount']() * m['mm2encdRowsPerTable']() or m['mm2encdTableCount']() != 10 or m['mm2encdRowsPerTable']() != 19"
+  },
+  {
+   "note": "the source census (the party rows carry no source)",
+   "expr": "m['mm2encdMm1SourceRows']() + m['mm2encdMm2SourceRows']() + m['mm2encdFfSourceRows']() + m['mm2encdAllSourceRows']() + m['mm2encdCharacterPartyRows']() != m['mm2encdTotalRows']()"
+  },
+  {
+   "note": "the die range (the 1d8+1d12 sum)",
+   "expr": "m['mm2encdDieMax']() - m['mm2encdDieMin']() + 1 != m['mm2encdRowsPerTable']()"
+  },
+  {
+   "note": "the unique-court census (all four on Level X)",
+   "expr": "m['mm2encdUniqueCourtRows']() != 4 or m['mm2encdPartyDieD10']() != 13"
+  },
+  {
+   "note": "the character-party census (one row per table)",
+   "expr": "m['mm2encdCharacterPartyRows']() != m['mm2encdTableCount']()"
+  },
+  {
+   "note": "the registry floor (no defs promoted this round)",
+   "expr": "m['mm2encdRegistryFloor']() < 809"
+  },
+  {
+   "note": "the party-die census (the per-table dice)",
+   "expr": "m['mm2encdPartyDieD1']() != 11 or m['mm2encdPartyDieD5']() != 10 or m['mm2encdPartyDieD10']() != 13"
+  },
+  {
+   "note": "the grid round (R816)",
+   "expr": "m['mm2encdRound']() != 816"
+  }
+ ],
+ "header_sections": {
+  "the R816 census": [
+   {
+    "kind": "const",
+    "name": "mm2encdRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdRowsPerTable"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdTotalRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdDieMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdDieMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdCharacterPartyRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdUniqueCourtRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdMm1SourceRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdMm2SourceRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdFfSourceRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdAllSourceRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD2"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD3"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD5"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD7"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD8"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD9"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdPartyDieD10"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD1Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD2Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD3Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD4Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD5Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD6Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD7Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD8Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD9Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encdD10Count"
+   }
+  ],
+  "the opening doctrine (the R816 census)": [
+   {
+    "kind": "bool",
+    "name": "mm2encdUsesD8PlusD12"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdRangeTwoToTwenty"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdConjoinsDmgAppendixC"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdCoversMm1Mm2AndFf"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdNotACompleteListing"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdDmMayModifyTables"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdSeeCreatingTablesSection"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdPartyRowRollsDmgSubtable"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdUniqueCourtRule"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdCourtOrcusWithUndead"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdCourtTiamatWithAbishai"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdCourtAnthraxusWithDaemons"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encdUniqueRowsCarryNoNumber"
+   }
+  ],
+  "the Level I grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level I encounter grid"
+   }
+  ],
+  "the Level II grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level II encounter grid"
+   }
+  ],
+  "the Level III grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level III encounter grid"
+   }
+  ],
+  "the Level IV grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level IV encounter grid"
+   }
+  ],
+  "the Level V grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level V encounter grid"
+   }
+  ],
+  "the Level VI grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level VI encounter grid"
+   }
+  ],
+  "the Level VII grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level VII encounter grid"
+   }
+  ],
+  "the Level VIII grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level VIII encounter grid"
+   }
+  ],
+  "the Level IX grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level IX encounter grid"
+   }
+  ],
+  "the Level X grid pins (the R816 walk)": [
+   {
+    "kind": "table",
+    "name": "the Monster Level X encounter grid"
+   }
+  ]
+ },
+ "inline_count": 96,
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R815 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R815 LANDED 2026-10-24: commit",
+  "  8485fb87e497ff66b093a5793408fa1b81ba74a7",
+  "  (census 737 -> 738, pushed 8137d90..8485fb8),",
+  "  THE MM2 LETTERS WXYZ WALK - THE WEASEL TO",
+  "  ZYGOM TURNS - THE WXYZ-FLIP ROUND (Curtiss's",
+  "  letters-WXYZ Go call on the landed letters TUV",
+  "  walk; round twenty of the MM2 arc, the FIFTH",
+  "  multi-letter pass - the weasel opens p. 125",
+  "  and the zygom closes pp. 131-132, and the",
+  "  round CLOSES THE A-Z MONSTER SECTION: the",
+  "  Letters W, X, Y and Z gap boxes plus the",
+  "  \"Monsters from A-Z\" PARENT box all flip -",
+  "  32 closed 5 open, only the MM2 tail remains).",
+  "  THE PIN-TIME WALK: SEVENTEEN defs on",
+  "  pp. 125-132 - SIXTEEN entry heads carrying",
+  "  SEVENTEEN stat blocks (the WORM family head",
+  "  the one two-def head - the tenebrous and",
+  "  tunnel worm blocks ride beneath it), ZERO",
+  "  prior-owned, ZERO doctrine-only. The 17 defs",
+  "  (weasel, webbird, wemic, black willow,",
+  "  wolf-in-sheep's-clothing, wolfwere, tenebrous",
+  "  worm, tunnel worm, xag-ya/xeg-yi, xaren,",
+  "  yeth hound, yochlol, yuan ti, juju zombie,",
+  "  monster zombie, zorbo, zygom) ride the R791",
+  "  data_files extension, registry 792 -> 809.",
+  "  Header rules/mm2wxyz.h, prefix mm2wxyz,",
+  "  200 consts + 35 bools + ONE grid (the 17x10",
+  "  WXYZStats stat grid, emitted as the",
+  "  switch-accessor family mm2wxyzWXYZStat*) =",
+  "  245 inline. THE SETTLED READS (capture",
+  "  primary, the transcription the cross-check",
+  "  voice): the yochlol -10 armor class the",
+  "  UNQUOTED number read (the R814 tarrasque",
+  "  precedent); the black willow 7-12 attacks the",
+  "  10 sanity clamp (the R814 land urchin",
+  "  precedent); the wolfISC 1-3 attacks the 3 max",
+  "  read; the weasel and webbird 2 hp the",
+  "  flat-hp path (hdNum 0, the atomie half-dice",
+  "  precedent); the monster zombie the nil block",
+  "  (hitDiceNum 0 per the R813 shade precedent,",
+  "  xpValue 0); the yuan ti and the monster",
+  "  zombie by_level (xpSource by_level, xpValue",
+  "  0); the zorbo 10 the \"See below\" first-int",
+  "  read; the tunnel worm 76 the bare-numeral",
+  "  lair cell (the R812 percent lesson).",
+  "  THE AUTHORING DETOURS (environment wiped",
+  "  MID-BUILDER-RE-PASTE - the truncated builder",
+  "  re-pasted from the conversation and three",
+  "  defects caught at AUTHOR time, all by local",
+  "  gates, none escaping to delivery): (1) the",
+  "  lost xpValue field injection - the defs",
+  "  carried no xpValue, so the sim's default-10",
+  "  read exposed it (the builder now injects",
+  "  xpValue = xp + avgHp x xpPerHp at the def",
+  "  source, and the emitted field order matches",
+  "  the landed defs, xpValue right after",
+  "  xpPerHp); (2) the double-escaped \\\\n\\\\n text",
+  "  separator - luaq applied after the join",
+  "  doubled the backslashes against the landed",
+  "  single-backslash convention (the fix:",
+  "  per-paragraph luaq, raw \\n\\n join); (3) one",
+  "  79-col section title (the",
+  "  wolf-in-sheep's-clothing pins) rejected by",
+  "  the engine's own 78-col header gate - the",
+  "  builder now shortens the suffix adaptively.",
+  "  LOCAL VERIFICATION (the tree rebuilt from",
+  "  the tarball at 8137d90): engine double-run",
+  "  27/0 -> 0/27; rverify GREEN vs 8137d90 -",
+  "  405 mutants, 0 missed; the full-registry",
+  "  offline sweep 809 lua files 0 parse errors,",
+  "  the 17 new defs walked cell-for-cell through",
+  "  the exact coercer replica (hitDiceNum",
+  "  default 1 replicated - the R814 trap) and",
+  "  matched the 17x10 EXPECT grid; the emitted",
+  "  regtest walk simulated offline fail-on-wrong,",
+  "  all 17 prose markers found, all 10 accessor",
+  "  columns match EXPECT; C++ hazard scan clean",
+  "  (no double commas, hyphen idents, quote or",
+  "  brace imbalance); the /tmp tree restored",
+  "  pristine after. PREFLIGHT GREEN FIRST PASS:",
+  "  loaded 809, errors 0; xp audit 809/0;",
+  "  R797 through R815 live defs all bad 0;",
+  "  AUDIT CENSUS 738 each exactly once, all bad",
+  "  0; build 0 warnings. Commit 22 files, 5585",
+  "  insertions - the 17 .lua defs landed IN the",
+  "  commit this time (the R793 untracked-defs",
+  "  lesson held). Delivery spec-r815: raw JSON",
+  "  canvas, authored md5",
+  "  33c4ae35090936bbf48f258fd0d60fcf 124424",
+  "  bytes, landed the same (no editor delta).",
+  "  NEXT - R816: awaits Curtiss's call (5 open",
+  "  boxes remain - the MM2 tail beyond the",
+  "  A-Z monster section)."
+ ],
+ "gap_report": "tools/mm2_gap_report.md",
+ "gap_census": {
+  "closed": 33,
+  "open": 4
+ },
+ "gap_flips": [
+  {
+   "note": "the Dungeon Random Encounter Tables box",
+   "from": "- [ ] **Dungeon Random Encounter Tables**",
+   "to": "- [x] **Dungeon Random Encounter Tables**"
+  }
+ ],
+ "data_files": [],
+ "regtest": "regtest.cpp",
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R816: the MM2 dungeon encounter grids walk ----\n    // The ten Monster Level grids cross-checked live:\n    // the die contiguity 2-20, the one character-party\n    // row per table at its die, the four unique-court\n    // rows on Level X, the number ranges, and the\n    // registry key for every walkable row (the MM2 and\n    // MM1 creatures the walks promoted).\n    {\n        using namespace rules;\n        int bad = 0;\n        // (the level/row accessor table for the walk;\n        //  every cell routes to the pinned grid)\n        auto encDie = [](int L, int r) {\n            switch (L) {\n            case 0: return mm2encdD1Die(r);\n            case 1: return mm2encdD2Die(r);\n            case 2: return mm2encdD3Die(r);\n            case 3: return mm2encdD4Die(r);\n            case 4: return mm2encdD5Die(r);\n            case 5: return mm2encdD6Die(r);\n            case 6: return mm2encdD7Die(r);\n            case 7: return mm2encdD8Die(r);\n            case 8: return mm2encdD9Die(r);\n            case 9: return mm2encdD10Die(r);\n            }\n            return 0;\n        };\n        auto encSrc = [](int L, int r) {\n            switch (L) {\n            case 0: return mm2encdD1Src(r);\n            case 1: return mm2encdD2Src(r);\n            case 2: return mm2encdD3Src(r);\n            case 3: return mm2encdD4Src(r);\n            case 4: return mm2encdD5Src(r);\n            case 5: return mm2encdD6Src(r);\n            case 6: return mm2encdD7Src(r);\n            case 7: return mm2encdD8Src(r);\n            case 8: return mm2encdD9Src(r);\n            case 9: return mm2encdD10Src(r);\n            }\n            return 0;\n        };\n        auto encNumMin = [](int L, int r) {\n            switch (L) {\n            case 0: return mm2encdD1NumMin(r);\n            case 1: return mm2encdD2NumMin(r);\n            case 2: return mm2encdD3NumMin(r);\n            case 3: return mm2encdD4NumMin(r);\n            case 4: return mm2encdD5NumMin(r);\n            case 5: return mm2encdD6NumMin(r);\n            case 6: return mm2encdD7NumMin(r);\n            case 7: return mm2encdD8NumMin(r);\n            case 8: return mm2encdD9NumMin(r);\n            case 9: return mm2encdD10NumMin(r);\n            }\n            return 0;\n        };\n        auto encNumMax = [](int L, int r) {\n            switch (L) {\n            case 0: return mm2encdD1NumMax(r);\n            case 1: return mm2encdD2NumMax(r);\n            case 2: return mm2encdD3NumMax(r);\n            case 3: return mm2encdD4NumMax(r);\n            case 4: return mm2encdD5NumMax(r);\n            case 5: return mm2encdD6NumMax(r);\n            case 6: return mm2encdD7NumMax(r);\n            case 7: return mm2encdD8NumMax(r);\n            case 8: return mm2encdD9NumMax(r);\n            case 9: return mm2encdD10NumMax(r);\n            }\n            return 0;\n        };\n        auto encSpecial = [](int L, int r) {\n            switch (L) {\n            case 0: return mm2encdD1Special(r);\n            case 1: return mm2encdD2Special(r);\n            case 2: return mm2encdD3Special(r);\n            case 3: return mm2encdD4Special(r);\n            case 4: return mm2encdD5Special(r);\n            case 5: return mm2encdD6Special(r);\n            case 6: return mm2encdD7Special(r);\n            case 7: return mm2encdD8Special(r);\n            case 8: return mm2encdD9Special(r);\n            case 9: return mm2encdD10Special(r);\n            }\n            return 0;\n        };\n        auto encPartyDie = [](int L) {\n            switch (L) {\n            case 0: return mm2encdPartyDieD1();\n            case 1: return mm2encdPartyDieD2();\n            case 2: return mm2encdPartyDieD3();\n            case 3: return mm2encdPartyDieD4();\n            case 4: return mm2encdPartyDieD5();\n            case 5: return mm2encdPartyDieD6();\n            case 6: return mm2encdPartyDieD7();\n            case 7: return mm2encdPartyDieD8();\n            case 8: return mm2encdPartyDieD9();\n            case 9: return mm2encdPartyDieD10();\n            }\n            return 0;\n        };\n        static const char* kEncD[10][19] = {\n            {\n                \"\",\n                \"webbird\",\n                \"\",\n                \"pedipalp_large\",\n                \"bowler\",\n                \"\",\n                \"goblin\",\n                \"bandit\",\n                \"bat_ordinary\",\n                \"\",\n                \"orc\",\n                \"giant_rat\",\n                \"kobold\",\n                \"\",\n                \"skeleton\",\n                \"\",\n                \"vulchling\",\n                \"gnome\",\n                \"nupperibo\",\n            },\n            {\n                \"azer\",\n                \"duergar\",\n                \"\",\n                \"gas_spore\",\n                \"lizard_man\",\n                \"gnoll\",\n                \"land_lamprey\",\n                \"giant_centipede\",\n                \"giant_toad\",\n                \"\",\n                \"troglodyte\",\n                \"centipede_huge\",\n                \"\",\n                \"stirge\",\n                \"mongrelman\",\n                \"\",\n                \"pedipalp_huge\",\n                \"poisonous_frog\",\n                \"fire_bat\",\n            },\n            {\n                \"leprechaun\",\n                \"\",\n                \"phantom\",\n                \"ankheg\",\n                \"ochre_jelly\",\n                \"\",\n                \"luck_eater\",\n                \"\",\n                \"ogre\",\n                \"boring_beetle\",\n                \"\",\n                \"scorpion_large\",\n                \"bugbear\",\n                \"gelatinous_cube\",\n                \"ustilagor\",\n                \"\",\n                \"giant_weasel\",\n                \"\",\n                \"\",\n            },\n            {\n                \"\",\n                \"\",\n                \"\",\n                \"pech\",\n                \"owlbear\",\n                \"rust_monster\",\n                \"pseudo_undead\",\n                \"\",\n                \"yellow_mold\",\n                \"scorpion_huge\",\n                \"poisonous_toad\",\n                \"gargoyle\",\n                \"\",\n                \"hydra\",\n                \"ghast\",\n                \"\",\n                \"solifugid_giant\",\n                \"spectator\",\n                \"\",\n            },\n            {\n                \"chaggrin\",\n                \"cloaker\",\n                \"\",\n                \"phycomid\",\n                \"minotaur\",\n                \"\",\n                \"giant_lizard\",\n                \"cave_bear\",\n                \"\",\n                \"cockatrice\",\n                \"giant_spider\",\n                \"verbeeg\",\n                \"hydra\",\n                \"snake_poisonous\",\n                \"margoyle\",\n                \"rock_reptile\",\n                \"doppelganger\",\n                \"solifugid_giant\",\n                \"hydra\",\n            },\n            {\n                \"drider\",\n                \"rakshasa\",\n                \"green_slime\",\n                \"basilisk\",\n                \"\",\n                \"otyugh\",\n                \"wyvern\",\n                \"wraith\",\n                \"wight\",\n                \"\",\n                \"pseudo_undead\",\n                \"carrion_crawler\",\n                \"giant_scorpion\",\n                \"troll\",\n                \"\",\n                \"black_dragon\",\n                \"ogre_magi\",\n                \"yuan_ti\",\n                \"\",\n            },\n            {\n                \"dao\",\n                \"basilisk_greater\",\n                \"umber_hulk\",\n                \"mimic\",\n                \"chimera\",\n                \"lurker_above\",\n                \"frost_giant\",\n                \"\",\n                \"black_pudding\",\n                \"hill_giant\",\n                \"will_o_wisp\",\n                \"giant_slug\",\n                \"pseudo_undead\",\n                \"sundew_giant\",\n                \"mummy\",\n                \"spectre\",\n                \"invisible_stalker\",\n                \"diakk\",\n                \"\",\n            },\n            {\n                \"foo_lion\",\n                \"xag_ya_xeg_yi\",\n                \"chasme\",\n                \"aurumvorax\",\n                \"vampire\",\n                \"pudding_brown\",\n                \"alu_demon\",\n                \"\",\n                \"hydra\",\n                \"pseudo_undead\",\n                \"rust_monster\",\n                \"will_o_wisp\",\n                \"trapper\",\n                \"\",\n                \"purple_worm\",\n                \"ghost\",\n                \"black_dragon\",\n                \"xag_ya_xeg_yi\",\n                \"charonadaemon\",\n            },\n            {\n                \"\",\n                \"monadic_deva\",\n                \"pit_fiend\",\n                \"red_dragon\",\n                \"hydra\",\n                \"\",\n                \"titan\",\n                \"\",\n                \"movanic_deva\",\n                \"thessalhydra\",\n                \"vampire\",\n                \"stone_golem\",\n                \"black_dragon\",\n                \"kelubar\",\n                \"\",\n                \"titan\",\n                \"baku\",\n                \"ultrodaemon\",\n                \"demilich\",\n            },\n            {\n                \"\",\n                \"\",\n                \"quarton\",\n                \"tarrasque\",\n                \"red_dragon\",\n                \"blue_dragon\",\n                \"solar\",\n                \"iron_golem\",\n                \"planetar\",\n                \"\",\n                \"beholder\",\n                \"\",\n                \"lich\",\n                \"vampire\",\n                \"cloud_dragon\",\n                \"quinton\",\n                \"titan\",\n                \"charonadaemon\",\n                \"\",\n            },\n        };\n        for (int L = 0; L < 10; ++L) {\n            int party = 0;\n            for (int r = 0; r < 19; ++r) {\n                if (encDie(L, r) != r + 2)\n                    ++bad;\n                if (encSpecial(L, r) == 1) {\n                    ++party;\n                    if (encDie(L, r) != encPartyDie(L))\n                        ++bad;\n                    if (encSrc(L, r) != 0\n                        || encNumMin(L, r) != 0\n                        || encNumMax(L, r) != 0)\n                        ++bad;\n                }\n                if (encSpecial(L, r) == 2) {\n                    if (L != 9) ++bad;\n                    if (encNumMin(L, r) != 0\n                        || encNumMax(L, r) != 0)\n                        ++bad;\n                }\n                if (encSpecial(L, r) == 0) {\n                    if (encNumMin(L, r) < 1)\n                        ++bad;\n                    if (encNumMax(L, r)\n                        < encNumMin(L, r))\n                        ++bad;\n                    if (encSrc(L, r) == 0)\n                        ++bad;\n                }\n                const char* k = kEncD[L][r];\n                if (k[0] != 0) {\n                    const auto* d = reg.find(k);\n                    if (!d) ++bad;\n                }\n            }\n            if (party != 1) ++bad;\n        }\n        if (!reg.find(\"fire_giant\")) ++bad;\n        if ((int)reg.all().size()\n            < mm2encdRegistryFloor())\n            ++bad;\n        printf(\"R816 MM2 dungeon encounter grids: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----",
+   "note": "the ten-grid live walk (the R815 WXYZ-walk pattern: the die contiguity, the party rows, the unique rows, and the registry keys; the six accessor lambdas ride inside the block)"
+  }
+ ]
+}
