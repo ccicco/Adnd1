@@ -21626,6 +21626,40 @@ when both halves land.
   awaits Curtiss call (the natural next walk the
   Letter O box or the next arc slice; 18 open
   boxes remain).
+- R809 LANDED 2026-10-24: commit 3dc3c4f9e871bf758af4197af9d6c9d50aa91587
+  (census 731 -> 732, pushed 118095a..3dc3c4f), THE
+  MM2 LETTER O WALK - the obliviax, ogre aquatic (merrow),
+  oliphant, ophidian, opinicus, otter and owl turns -
+  the O-FLIP round (Curtiss Go call on the landed LMN
+  walk; round fourteen of the MM2 arc, the THIRD
+  single-letter pass). THE PIN-TIME WALK: seven entries
+  on pp. 96-97, the obliviax, the ogre aquatic (merrow)
+  and the oliphant p. 96, the ophidian, the opinicus,
+  the otter and the owl p. 97 (the owl prose onto p.
+  98), all with stat blocks - no doctrine-only family
+  heads; the MM1 registry already owned the octopus,
+  the ogre, the ogre magi, the oni, the ornitholestes,
+  the otyugh and the owlbear prints. Seven .lua defs
+  ride the R791 data_files extension, registry 699 ->
+  706. Header rules/mm2o.h, prefix mm2o, 96 consts +
+  23 bools + the 7x10 OStats grid = 129 inline. THE
+  O-FLIP: the Letter O gap box flips to closed - 20
+  closed 17 open. The settled reads: the merrow 3 or
+  1 max attack read, the ophidian 1 and 1 sum read,
+  the obliviax flat-hp 1-2 read, the otter 1-1 bonus,
+  the oliphant 10+5 trained variant as consts, the
+  opinicus -2 unquoted armor class. One regtest patch:
+  the R809 live def walk at the R227 anchor, its
+  registry census a FLOOR 699 -> at least 706.
+  Preflight GREEN: engine double-run applied 13/
+  already 0 then 0/13; rverify GREEN vs 118095a -
+  189 mutants, 0 missed; offline loader sim GREEN
+  (706 defs, 0 errors). Commit 12 files, 2866
+  insertions. Delivery spec-r809: raw JSON canvas,
+  authored md5 376be7f54b656fd9e3bbdb298039ce68,
+  57239 bytes, landed the same. NEXT - R810: awaits
+  Curtiss call (the natural next walk the Letter P
+  box; 17 open boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -1,0 +1,36 @@
+-- Para-elemental, Ooze: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Para-elemental, Ooze",
+  page = "99",
+  pages = "99",
+  source = "MM2",
+  race = "Para-elemental, Ooze",
+  hitDice = "8, 12, or 16",
+  hitDiceNum = "8",
+  hitDiceBonus = "0",
+  avgHp = "28",
+  armorClass = "3",
+  numAttacks = "1 constrict",
+  damage = "2-16",
+  xp = "2850",
+  xpPerHp = "15",
+  xpValue = "3270",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "36\" (MC: A)",
+  size = "L",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+7 or better weapons to hit",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The ooze para-elemental, also called the mud elemental, appears as a liquid mass of dark writhing tendrils. If an ooze para-elemental hits, it has wrapped a tendril around its opponent and will constrict for 2-16 points of damage per round until the para-elemental is dispelled, defeated, or releases the opponent on command of the summoner. Any number of opponents can be constricted, but only 1 can be attacked and ensnared at a time. A captured character may still attack but can be swept off his feet by the para-elemental and carried off. The ooze para-elemental's form is mutable, such that one can fit into tight crevices and beneath doorways with ease.\n\nThe Elemental Plane of Ooze is a cloudy, grey plane at the borders of the Elemental Planes of Water and Earth. Both water and earth creatures from these planes may be found in this para-plane. Ooze para-elementals have no fixed leader, but there are a number of contending slime-barons vying for control.",
+}

@@ -1,0 +1,36 @@
+-- Pedipalp, Huge (Amblypygus): promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pedipalp, Huge (Amblypygus)",
+  page = "100",
+  pages = "100",
+  source = "MM2",
+  race = "Pedipalp, Huge (Amblypygus)",
+  hitDice = "2+2",
+  hitDiceNum = "2",
+  hitDiceBonus = "2",
+  avgHp = "9",
+  armorClass = "4",
+  numAttacks = 3,
+  damage = "1-6/1-6/1-8",
+  xp = "50",
+  xpPerHp = "3",
+  xpValue = "77",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-4",
+  lairPct = "10",
+  treasure = "Q (x4), T",
+  move = "9\"",
+  size = "S",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Grip",
+  specialDefenses = "",
+  magicResistance = "Standard for all",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Commonly called whip scorpions, these creatures can be found in nearly any climate except that of arctic or tundra. They appear to be a cross between a spider and a scorpion. Pedipalpi may be found in a variety of different colorings, browns and tans being the most common.\n\nHuge Pedipalp: The amblypygi, or huge pedipalpi, have developed 2 whip-like appendages in place of 1 pair of legs. Another set of legs has developed spiny pincers on the ends, which these creatures use to attack their prey. They also bite. After a hit has been scored, the huge pedipalp will grip and automatically do crushing damage (the same as 2 pincer hits; 2-12) on all rounds thereafter. The chance of a character breaking this grip is the same as that for opening doors.",
+}

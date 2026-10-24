@@ -1,0 +1,36 @@
+-- Pech: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pech",
+  page = "99",
+  pages = "99",
+  source = "MM2",
+  race = "Pech",
+  hitDice = "4",
+  hitDiceNum = "4",
+  hitDiceBonus = "0",
+  avgHp = "14",
+  armorClass = "3",
+  numAttacks = 1,
+  damage = "By weapon +3",
+  xp = "240",
+  xpPerHp = "4",
+  xpValue = "296",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "5-20 (double in lair)",
+  lairPct = "05",
+  treasure = "See below",
+  move = "9\"",
+  size = "S (4' tall)",
+  intelligence = "Average to exceptional",
+  alignment = "Neutral (good)",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "25%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "No one knows what the pech actually are, or whether they are from the Prime Material or Earth Planes. In any event, these spindly creatures dwell in dark places and work stone. Their flesh is nearly as hard as granite itself. In their lair there will be several larger pech, females equal to the number of males, and young equalling 20-50% of the females. There also will be 50-100 gems plus various dishes and ornaments worked from ornamental stone and raw metal (5-30 jewelry of lowest base value for worth, average weight 150 gp each). The pech use picks and peat hammers (treat as war hammers) for work and armament, and are usually equipped with equal numbers of each type.\n\nEach pech is able to cast 4 stone shape and stone tell spells per day. Four together can cast a wall of stone spell as if they were 16th-level magic-users. Eight can together cast a stone to flesh spell. These \"group\" spells can be cast but once per day by any group. Pech are immune to petrification. If engaged against some lithic monster such as a stone golem, pech are quite capable of knocking it to rubble, as their knowledge of stone allows them full normal attack capability. Pech are basically good creatures desiring to be left to themselves. They hate bright light and open skies. They have both infra- and ultravision.\n\nPech are thin with long arms and legs. Their broad hands and feet are excellent for bracing and employing tools to work stone. They have pale, yellowish skin and red or red-brown hair. Their eyes are large and pupilless.",
+}

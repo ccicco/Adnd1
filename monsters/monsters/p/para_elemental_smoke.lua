@@ -1,0 +1,36 @@
+-- Para-elemental, Smoke: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Para-elemental, Smoke",
+  page = "98",
+  pages = "98",
+  source = "MM2",
+  race = "Para-elemental, Smoke",
+  hitDice = "8, 12, or 16",
+  hitDiceNum = "8",
+  hitDiceBonus = "0",
+  avgHp = "28",
+  armorClass = "3",
+  numAttacks = "Special",
+  damage = "2-16",
+  xp = "2850",
+  xpPerHp = "15",
+  xpValue = "3270",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "6/18\"",
+  size = "L",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+1 or better weapons to hit",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Smoke para-elementals move either by drifting along the ground as black ash or by flying in the form of a concentrated blast of black fog. The latter form has a maneuverability class E but does double damage when it hits a target. While forming and dissolving, the fog-form takes a full turn. During normal attacks it can engage as many targets as are within 10 feet. All within 10 feet must save vs. poison or be -2 to hit from the blinding smoke. Smoke elementals are -1 on damage dice from all air-based attacks, including those from air elementals.\n\nThe para-elemental Plane of Smoke is a dry, empty area with few long-term inhabitants. The smoke para-elementals have no king, but several exceptional types rule small pockets of the others. These exceptional para-elementals are usually feuding for control of the plane.",
+}

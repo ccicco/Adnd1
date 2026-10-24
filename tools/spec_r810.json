@@ -1,0 +1,2231 @@
+{
+ "round": 810,
+ "prefix": "mm2p",
+ "header_file": "rules/mm2p.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 732,
+ "title": "the MM2 letter P walk - the para-elemental (ice, smoke, magma and ooze), pech, pedipalp (large, huge and giant), phantom, phoenix, phycomid, planetar, pseudo-undead, deadly pudding (brown, dun and white) and pyrolisk turns",
+ "audit_label": "R810 MM2 letter P walk audit",
+ "audit_comment": "THE MM2 LETTER P WALK - the para-elemental family (the ice, smoke, magma and ooze forms) on pp. 98-99, the pech p. 99, the pedipalp variant table (the large schizomida, the huge amblypygus and the giant uropygus), the phantom, the phoenix and the phycomid pp. 100-101, the planetar pp. 101-102, the pseudo-undead and the deadly pudding variant table (the brown, the dun and the white) p. 102, the pyrolisk p. 103; the P-FLIP round: the Letter P gap box flips to closed (21 closed, 16 open). SEVENTEEN .lua defs ride the R791 data_files extension, registry 706 -> 723. The PStats 17x10 grid cross-checks every armor class, hit dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell; the per-def doctrine pins carry the settled reads (the para-elemental 8, 12, or 16 first-number read, the summoning doctrine riding as consts - the R808 lycanthrope family-head precedent, the pyrolisk 4+3 the capture 43 OCR artifact settle, the magma druidic heat metal the capture drastic settle, the planetar flat-hp 144 read, the phantom Nil block, the pudding brown VIII the transcription VII variance kept verbatim per print, the ooze +7 or better weapons to hit kept verbatim per print against the +1 transcription variance, the loader max/floor attack semantics)",
+ "include_comment": "the MM2 letter P walk - the para-elemental (ice, smoke, magma and ooze), pech, pedipalp (large, huge and giant), phantom, phoenix, phycomid, planetar, pseudo-undead, deadly pudding (brown, dun and white) and pyrolisk turns",
+ "include_after": "#include \"rules/mm2o.h\"  // R809: the MM2 letter O walk - the obliviax, ogre aquatic (merrow), oliphant, ophidian, opinicus, otter and owl turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R809 LANDED 2026-10-24: commit",
+ "banner": {
+  "title": "THE MM2 LETTER P WALK - THE PARA-ELEMENTAL (ICE, SMOKE, MAGMA AND OOZE), PECH, PEDIPALP (LARGE, HUGE AND GIANT), PHANTOM, PHOENIX, PHYCOMID, PLANETAR, PSEUDO-UNDEAD, DEADLY PUDDING (BROWN, DUN AND WHITE) AND PYROLISK TURNS (the para-elemental family pp. 98-99, the pech p. 99, the pedipalp, phantom, phoenix and phycomid pp. 100-101, the planetar pp. 101-102, the pseudo-undead and the deadly puddings p. 102, the pyrolisk p. 103), promoted to the live registry; the P-FLIP round, the Letter P gap box flips to closed",
+  "provenance": "Round fifteen of the MM2 arc, the FOURTH single-letter pass (Curtiss Go call on the landed letter O walk; the letter P pin-time walk found TEN entries - the para-elemental family head with its four form blocks and the pedipalp and deadly pudding variant tables each riding three defs; the MM1 registry already owns the pegasi, piercer, pixie, platinum dragon, plesiosaurus, pony, pseudo-dragon, pteranodon and purple worm prints, so no prior-owned index entries ride this round)",
+  "sentinel": "The pin headers stay the print-fidelity record; the seventeen .lua defs ride the R791 data_files extension in the MM1 registry schema (the defensive coercers load the verbatim print cells, the PStats grid carries the loader values)"
+ },
+ "tables": [
+  {
+   "name": "the para-elemental to pyrolisk stat grid",
+   "tag": "PStats",
+   "count": "mm2pPStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE P-GRID: the 17-row PStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the seventeen letter P stat blocks, in print order - the para-elemental ice through the pyrolisk)",
+   "cols": [
+    "mm2pPStatAc",
+    "mm2pPStatHd",
+    "mm2pPStatHdBonus",
+    "mm2pPStatAvgHp",
+    "mm2pPStatAttacks",
+    "mm2pPStatXp",
+    "mm2pPStatXpHp",
+    "mm2pPStatLairPct",
+    "mm2pPStatMove",
+    "mm2pPStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the phoenix -3 and the planetar -7 ride unquoted numbers - the R806 hollyphant -4 precedent; the phantom Nil and the pseudo-undead See below read the firstIntIn 9 default)",
+    "The hit dice num cells (the para-elemental 8, 12, or 16 first-number 8 read - the MM1 earth elemental precedent; the phantom Nil and the pseudo-undead See below read 0; the planetar flat-hp 144 read: hitDiceNum 0, the R809 obliviax bat precedent)",
+    "The hit dice bonus cells (the pyrolisk 4+3 the capture 43 OCR artifact settle; the pudding dun 8+1; the pedipalp large 1+1, huge 2+2, giant 4+4)",
+    "The avgHp cells (the floor(3.5 x hd + bonus) formula: the para-elementals 28, the pech 14, the pedipalps 4, 9 and 18, the phoenix 70, the phycomid 14, the puddings 38, 29 and 31, the pyrolisk 17; the flat-hp planetar 144)",
+    "The attack cells (the loader semantics: the smoke Special floor at 1, the ooze 1 constrict read 1, the phoenix 1 or 2 max read 2, the phantom Nil and the pseudo-undead See below floor at 1)",
+    "The xp base cells (the phantom Nil/nil block reads 0; the pseudo-undead Treat as human fighters block reads 0; the pudding brown VIII/1600 the transcription VII variance kept verbatim per print)",
+    "The xp per hit point cells (the phantom Nil reads 0)",
+    "The in-lair percentage cells (the para-elemental and pudding Nil cells read 0; the pech 05; the pseudo-undead 50)",
+    "The move cells (the first-number ground move reads: the para ooze 36, the phoenix 6, the planetar 15; the pseudo-undead See below reads 0)",
+    "The magic resistance cells (every Standard and Standard for all reads 0; the pech 25, the phoenix 50, the planetar 75)"
+   ],
+   "data": [
+    [
+     3,
+     8,
+     0,
+     28,
+     1,
+     2850,
+     15,
+     0,
+     6,
+     0
+    ],
+    [
+     3,
+     8,
+     0,
+     28,
+     1,
+     2850,
+     15,
+     0,
+     6,
+     0
+    ],
+    [
+     3,
+     8,
+     0,
+     28,
+     1,
+     2850,
+     15,
+     0,
+     6,
+     0
+    ],
+    [
+     3,
+     8,
+     0,
+     28,
+     1,
+     2850,
+     15,
+     0,
+     36,
+     0
+    ],
+    [
+     3,
+     4,
+     0,
+     14,
+     1,
+     240,
+     4,
+     5,
+     9,
+     25
+    ],
+    [
+     7,
+     1,
+     1,
+     4,
+     1,
+     20,
+     2,
+     5,
+     12,
+     0
+    ],
+    [
+     4,
+     2,
+     2,
+     9,
+     3,
+     50,
+     3,
+     10,
+     9,
+     0
+    ],
+    [
+     2,
+     4,
+     4,
+     18,
+     3,
+     170,
+     5,
+     20,
+     6,
+     0
+    ],
+    [
+     9,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     9,
+     0
+    ],
+    [
+     -3,
+     20,
+     0,
+     70,
+     2,
+     8600,
+     30,
+     0,
+     6,
+     50
+    ],
+    [
+     5,
+     4,
+     0,
+     14,
+     2,
+     280,
+     5,
+     80,
+     3,
+     0
+    ],
+    [
+     -7,
+     0,
+     0,
+     144,
+     3,
+     60000,
+     35,
+     0,
+     15,
+     75
+    ],
+    [
+     9,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     50,
+     0,
+     0
+    ],
+    [
+     5,
+     11,
+     0,
+     38,
+     1,
+     1600,
+     16,
+     0,
+     6,
+     0
+    ],
+    [
+     7,
+     8,
+     1,
+     29,
+     1,
+     1000,
+     12,
+     0,
+     12,
+     0
+    ],
+    [
+     8,
+     9,
+     0,
+     31,
+     1,
+     1200,
+     12,
+     0,
+     9,
+     0
+    ],
+    [
+     6,
+     4,
+     3,
+     17,
+     1,
+     240,
+     5,
+     30,
+     6,
+     0
+    ]
+   ]
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter P walk round pins (the R810 census)": [
+   {
+    "kind": "const",
+    "name": "mm2pRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pLetterPHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPriorOwnedEntries"
+   }
+  ],
+  "the para-elemental pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "const",
+    "name": "mm2pParaElementalPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaElementalHdCategories"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaElementalSpellHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaElementalDeviceHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaElementalStaffHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaElementalEscapePctBase"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaElementalEscapePctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaElementalWeaponFloor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaElementalHdlessFloor"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pParaElementalTurnsOnSummoner"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaIceColdAuraFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaIceColdAuraDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaIceColdAuraDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaIceFreezeAreaSqFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaIceFreezeDepthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaIceHealPerRoundMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaIceHealPerRoundMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pParaIceFireDoubleDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pParaIceColdUsersDamageDiceMinus1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaSmokeEngageRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaSmokeBlindHitPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pParaSmokeFogDoubleDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pParaSmokeAirAttacksDamageDiceMinus1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaMagmaHeatRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaMagmaHotMetalRound2DamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaMagmaMetalRound3DamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaMagmaMetalRound3DamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaMagmaNonmetalRound3DamageMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pParaMagmaFlammablesIgnite"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaOozeConstrictDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaOozeConstrictDamageMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pParaOozeConstrictsUntilReleased"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pParaOozeMutableForm"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaIceXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaIceXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaSmokeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaSmokeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaMagmaXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaMagmaXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaOozeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pParaOozeXpLevel"
+   }
+  ],
+  "the pech pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "const",
+    "name": "mm2pPechStoneShapePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechStoneTellPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechWallOfStoneGroupCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechWallOfStoneCasterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechStoneToFleshGroupCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechGroupSpellsPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechLairGemsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechLairGemsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechLairJewelryMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechLairJewelryMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechJewelryAvgWeightGp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechYoungPctMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechYoungPctMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPechImmuneToPetrification"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPechFullAttackVsLithicMonsters"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPechHateBrightLight"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPechFemalesEqualMales"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPechInfraAndUltravision"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPechXpLevel"
+   }
+  ],
+  "the pedipalp pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "bool",
+    "name": "mm2pPedipalpLargeCannotHoldLargerPrey"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpHugeCrushDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpHugeCrushDamageMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPedipalpHugeGripBreaksAsDoors"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantAutoBiteDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantCrushDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantCrushDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantGasRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantGasToHitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantGasDurationRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantGasDurationRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantGasUsesPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantSeverRollAbove"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPedipalpGiantGripBreaksOnlyByKillOrSever"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpLargeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpLargeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpHugeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpHugeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPedipalpGiantXpLevel"
+   }
+  ],
+  "the phantom pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "const",
+    "name": "mm2pPhantomGazeSavePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhantomCannotBeHarmed"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhantomNotTurnedAsUndead"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhantomExorcismDispels"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhantomNeitherAliveNorUndead"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhantomXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhantomXpLevel"
+   }
+  ],
+  "the phoenix pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixWhistleRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixWhistleInitiativeBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixDispelMagicLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixExorciseLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixWingTouchesPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixWeaponFloor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixInfravisionFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixEggHatchDays"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixBloodSeedPerDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixFeatherGp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixBeakValueMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixProtectionRadiusFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhoenixNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhoenixEtherealAndAstralTravel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhoenixDetectsCharmsEvilMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhoenixCannotAttackOrBeAttackedPsionically"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhoenixCombActsAsStaffOfCuring"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhoenixSpeaksWithAllAvians"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhoenixXpLevel"
+   }
+  ],
+  "the phycomid pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidGlobRangeMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidGlobRangeMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidInfectionOnsetRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidInfectionOnsetRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidInfectionDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidInfectionDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidHostDeathTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidHostDeathTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidFireSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhycomidImmuneToMentalAttacks"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhycomidFireHalfOrNone"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPhycomidCureDiseaseStopsSpread"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPhycomidXpLevel"
+   }
+  ],
+  "the planetar pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarSpiritGroupMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarBastardSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarDexterity"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarFighterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarWisdom"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarClericLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarDruidLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarPsionic"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarWeaponFloor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarRegenerationPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarReformDecades"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarGateUsesPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarCharisma"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarInfravisionInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarProtectionRadiusFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPlanetarNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPlanetarImmuneToLevelLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPlanetarImmuneToDeathSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPlanetarSoulsCannotBeTrapped"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPlanetarCuresByTouch"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPlanetarXpLevel"
+   }
+  ],
+  "the pseudo-undead pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "const",
+    "name": "mm2pPseudoundeadInfravisionInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPseudoundeadLairPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPseudoundeadNotTurnedByCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPseudoundeadAvoidSunlightNotHarmed"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPseudoundeadNeverNearTrueUndead"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPseudoundeadGhastStench"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPseudowraithWalksNotFlies"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPseudovampireRedEyes"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPseudoundeadXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPseudoundeadXpLevel"
+   }
+  ],
+  "the pudding pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "const",
+    "name": "mm2pPuddingDunChainmailRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPuddingDunPlateRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPuddingWhiteSnowMistakePct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPuddingWeaponsDivideIt"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPuddingAcidColdPoisonImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPuddingFireAndMagicMissileNormalDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPuddingBrownDoesNotDissolveMetal"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPuddingWhiteDoesNotAffectMetal"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPuddingBrownXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPuddingBrownXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPuddingDunXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPuddingDunXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPuddingWhiteXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPuddingWhiteXpLevel"
+   }
+  ],
+  "the pyrolisk pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "const",
+    "name": "mm2pPyroliskGazeDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPyroliskGazeDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPyroliskFireworksRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPyroliskFireworksAreaMultiplier"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPyroliskImmuneToFire"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPyroliskMortalEnemyPhoenix"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPyroliskSaveGrantsImmunity"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2pPyroliskFireResistantImmuneToGaze"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPyroliskXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2pPyroliskXpLevel"
+   }
+  ],
+  "the PStats grid pins (the R810 MM2 letter P walk)": [
+   {
+    "kind": "table",
+    "name": "the para-elemental to pyrolisk stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the Letter P gap box flips (the census walk)",
+   "expr": "m['mm2pRegistryAfter']() - m['mm2pRegistryBefore']() != m['mm2pDefCount']() or m['mm2pDefCount']() != 17 or m['mm2pEntryCount']() != 10 or m['mm2pStatBlockHeadings']() != 17 or m['mm2pDoctrineHeads']() != 1 or m['mm2pLetterPHeadings']() != 10 or m['mm2pPStatRows']() != 17 or m['mm2pGapClosed']() != 21 or m['mm2pGapOpen']() != 16 or m['mm2pPriorOwnedEntries']() != 0"
+  },
+  {
+   "note": "the para-elemental ice grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](0) != 3 or m['mm2pPStatHd'](0) != 8 or m['mm2pPStatHdBonus'](0) != 0 or m['mm2pPStatAvgHp'](0) != 28 or m['mm2pPStatAttacks'](0) != 1 or m['mm2pPStatXp'](0) != 2850 or m['mm2pPStatXpHp'](0) != 15 or m['mm2pPStatLairPct'](0) != 0 or m['mm2pPStatMove'](0) != 6 or m['mm2pPStatMr'](0) != 0 or m['mm2pParaIceXpValue']() != 3270 or m['mm2pParaIceXpLevel']() != 7"
+  },
+  {
+   "note": "the para-elemental smoke grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](1) != 3 or m['mm2pPStatHd'](1) != 8 or m['mm2pPStatHdBonus'](1) != 0 or m['mm2pPStatAvgHp'](1) != 28 or m['mm2pPStatAttacks'](1) != 1 or m['mm2pPStatXp'](1) != 2850 or m['mm2pPStatXpHp'](1) != 15 or m['mm2pPStatLairPct'](1) != 0 or m['mm2pPStatMove'](1) != 6 or m['mm2pPStatMr'](1) != 0 or m['mm2pParaSmokeXpValue']() != 3270 or m['mm2pParaSmokeXpLevel']() != 7"
+  },
+  {
+   "note": "the para-elemental magma grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](2) != 3 or m['mm2pPStatHd'](2) != 8 or m['mm2pPStatHdBonus'](2) != 0 or m['mm2pPStatAvgHp'](2) != 28 or m['mm2pPStatAttacks'](2) != 1 or m['mm2pPStatXp'](2) != 2850 or m['mm2pPStatXpHp'](2) != 15 or m['mm2pPStatLairPct'](2) != 0 or m['mm2pPStatMove'](2) != 6 or m['mm2pPStatMr'](2) != 0 or m['mm2pParaMagmaXpValue']() != 3270 or m['mm2pParaMagmaXpLevel']() != 7"
+  },
+  {
+   "note": "the para-elemental ooze grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](3) != 3 or m['mm2pPStatHd'](3) != 8 or m['mm2pPStatHdBonus'](3) != 0 or m['mm2pPStatAvgHp'](3) != 28 or m['mm2pPStatAttacks'](3) != 1 or m['mm2pPStatXp'](3) != 2850 or m['mm2pPStatXpHp'](3) != 15 or m['mm2pPStatLairPct'](3) != 0 or m['mm2pPStatMove'](3) != 36 or m['mm2pPStatMr'](3) != 0 or m['mm2pParaOozeXpValue']() != 3270 or m['mm2pParaOozeXpLevel']() != 7"
+  },
+  {
+   "note": "the pech grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](4) != 3 or m['mm2pPStatHd'](4) != 4 or m['mm2pPStatHdBonus'](4) != 0 or m['mm2pPStatAvgHp'](4) != 14 or m['mm2pPStatAttacks'](4) != 1 or m['mm2pPStatXp'](4) != 240 or m['mm2pPStatXpHp'](4) != 4 or m['mm2pPStatLairPct'](4) != 5 or m['mm2pPStatMove'](4) != 9 or m['mm2pPStatMr'](4) != 25 or m['mm2pPechXpValue']() != 296 or m['mm2pPechXpLevel']() != 4"
+  },
+  {
+   "note": "the large pedipalp grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](5) != 7 or m['mm2pPStatHd'](5) != 1 or m['mm2pPStatHdBonus'](5) != 1 or m['mm2pPStatAvgHp'](5) != 4 or m['mm2pPStatAttacks'](5) != 1 or m['mm2pPStatXp'](5) != 20 or m['mm2pPStatXpHp'](5) != 2 or m['mm2pPStatLairPct'](5) != 5 or m['mm2pPStatMove'](5) != 12 or m['mm2pPStatMr'](5) != 0 or m['mm2pPedipalpLargeXpValue']() != 28 or m['mm2pPedipalpLargeXpLevel']() != 1"
+  },
+  {
+   "note": "the huge pedipalp grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](6) != 4 or m['mm2pPStatHd'](6) != 2 or m['mm2pPStatHdBonus'](6) != 2 or m['mm2pPStatAvgHp'](6) != 9 or m['mm2pPStatAttacks'](6) != 3 or m['mm2pPStatXp'](6) != 50 or m['mm2pPStatXpHp'](6) != 3 or m['mm2pPStatLairPct'](6) != 10 or m['mm2pPStatMove'](6) != 9 or m['mm2pPStatMr'](6) != 0 or m['mm2pPedipalpHugeXpValue']() != 77 or m['mm2pPedipalpHugeXpLevel']() != 2"
+  },
+  {
+   "note": "the giant pedipalp grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](7) != 2 or m['mm2pPStatHd'](7) != 4 or m['mm2pPStatHdBonus'](7) != 4 or m['mm2pPStatAvgHp'](7) != 18 or m['mm2pPStatAttacks'](7) != 3 or m['mm2pPStatXp'](7) != 170 or m['mm2pPStatXpHp'](7) != 5 or m['mm2pPStatLairPct'](7) != 20 or m['mm2pPStatMove'](7) != 6 or m['mm2pPStatMr'](7) != 0 or m['mm2pPedipalpGiantXpValue']() != 260 or m['mm2pPedipalpGiantXpLevel']() != 4"
+  },
+  {
+   "note": "the phantom grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](8) != 9 or m['mm2pPStatHd'](8) != 0 or m['mm2pPStatHdBonus'](8) != 0 or m['mm2pPStatAvgHp'](8) != 0 or m['mm2pPStatAttacks'](8) != 1 or m['mm2pPStatXp'](8) != 0 or m['mm2pPStatXpHp'](8) != 0 or m['mm2pPStatLairPct'](8) != 0 or m['mm2pPStatMove'](8) != 9 or m['mm2pPStatMr'](8) != 0 or m['mm2pPhantomXpValue']() != 0 or m['mm2pPhantomXpLevel']() != 0"
+  },
+  {
+   "note": "the phoenix grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](9) != -3 or m['mm2pPStatHd'](9) != 20 or m['mm2pPStatHdBonus'](9) != 0 or m['mm2pPStatAvgHp'](9) != 70 or m['mm2pPStatAttacks'](9) != 2 or m['mm2pPStatXp'](9) != 8600 or m['mm2pPStatXpHp'](9) != 30 or m['mm2pPStatLairPct'](9) != 0 or m['mm2pPStatMove'](9) != 6 or m['mm2pPStatMr'](9) != 50 or m['mm2pPhoenixXpValue']() != 10700 or m['mm2pPhoenixXpLevel']() != 9"
+  },
+  {
+   "note": "the phycomid grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](10) != 5 or m['mm2pPStatHd'](10) != 4 or m['mm2pPStatHdBonus'](10) != 0 or m['mm2pPStatAvgHp'](10) != 14 or m['mm2pPStatAttacks'](10) != 2 or m['mm2pPStatXp'](10) != 280 or m['mm2pPStatXpHp'](10) != 5 or m['mm2pPStatLairPct'](10) != 80 or m['mm2pPStatMove'](10) != 3 or m['mm2pPStatMr'](10) != 0 or m['mm2pPhycomidXpValue']() != 350 or m['mm2pPhycomidXpLevel']() != 5"
+  },
+  {
+   "note": "the planetar grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](11) != -7 or m['mm2pPStatHd'](11) != 0 or m['mm2pPStatHdBonus'](11) != 0 or m['mm2pPStatAvgHp'](11) != 144 or m['mm2pPStatAttacks'](11) != 3 or m['mm2pPStatXp'](11) != 60000 or m['mm2pPStatXpHp'](11) != 35 or m['mm2pPStatLairPct'](11) != 0 or m['mm2pPStatMove'](11) != 15 or m['mm2pPStatMr'](11) != 75 or m['mm2pPlanetarXpValue']() != 65040 or m['mm2pPlanetarXpLevel']() != 10"
+  },
+  {
+   "note": "the pseudo-undead grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](12) != 9 or m['mm2pPStatHd'](12) != 0 or m['mm2pPStatHdBonus'](12) != 0 or m['mm2pPStatAvgHp'](12) != 0 or m['mm2pPStatAttacks'](12) != 1 or m['mm2pPStatXp'](12) != 0 or m['mm2pPStatXpHp'](12) != 0 or m['mm2pPStatLairPct'](12) != 50 or m['mm2pPStatMove'](12) != 0 or m['mm2pPStatMr'](12) != 0 or m['mm2pPseudoundeadXpValue']() != 0 or m['mm2pPseudoundeadXpLevel']() != 0"
+  },
+  {
+   "note": "the brown pudding grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](13) != 5 or m['mm2pPStatHd'](13) != 11 or m['mm2pPStatHdBonus'](13) != 0 or m['mm2pPStatAvgHp'](13) != 38 or m['mm2pPStatAttacks'](13) != 1 or m['mm2pPStatXp'](13) != 1600 or m['mm2pPStatXpHp'](13) != 16 or m['mm2pPStatLairPct'](13) != 0 or m['mm2pPStatMove'](13) != 6 or m['mm2pPStatMr'](13) != 0 or m['mm2pPuddingBrownXpValue']() != 2208 or m['mm2pPuddingBrownXpLevel']() != 8"
+  },
+  {
+   "note": "the dun pudding grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](14) != 7 or m['mm2pPStatHd'](14) != 8 or m['mm2pPStatHdBonus'](14) != 1 or m['mm2pPStatAvgHp'](14) != 29 or m['mm2pPStatAttacks'](14) != 1 or m['mm2pPStatXp'](14) != 1000 or m['mm2pPStatXpHp'](14) != 12 or m['mm2pPStatLairPct'](14) != 0 or m['mm2pPStatMove'](14) != 12 or m['mm2pPStatMr'](14) != 0 or m['mm2pPuddingDunXpValue']() != 1348 or m['mm2pPuddingDunXpLevel']() != 8"
+  },
+  {
+   "note": "the white pudding grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](15) != 8 or m['mm2pPStatHd'](15) != 9 or m['mm2pPStatHdBonus'](15) != 0 or m['mm2pPStatAvgHp'](15) != 31 or m['mm2pPStatAttacks'](15) != 1 or m['mm2pPStatXp'](15) != 1200 or m['mm2pPStatXpHp'](15) != 12 or m['mm2pPStatLairPct'](15) != 0 or m['mm2pPStatMove'](15) != 9 or m['mm2pPStatMr'](15) != 0 or m['mm2pPuddingWhiteXpValue']() != 1572 or m['mm2pPuddingWhiteXpLevel']() != 8"
+  },
+  {
+   "note": "the pyrolisk grid row (pp. 98-103 print order)",
+   "expr": "m['mm2pPStatAc'](16) != 6 or m['mm2pPStatHd'](16) != 4 or m['mm2pPStatHdBonus'](16) != 3 or m['mm2pPStatAvgHp'](16) != 17 or m['mm2pPStatAttacks'](16) != 1 or m['mm2pPStatXp'](16) != 240 or m['mm2pPStatXpHp'](16) != 5 or m['mm2pPStatLairPct'](16) != 30 or m['mm2pPStatMove'](16) != 6 or m['mm2pPStatMr'](16) != 0 or m['mm2pPyroliskXpValue']() != 325 or m['mm2pPyroliskXpLevel']() != 4"
+  },
+  {
+   "note": "the xpValue formula (the base plus the per-hp times avgHp, every def)",
+   "expr": "m['mm2pParaIceXpValue']() != m['mm2pPStatXp'](0) + m['mm2pPStatAvgHp'](0) * m['mm2pPStatXpHp'](0) or m['mm2pParaSmokeXpValue']() != m['mm2pPStatXp'](1) + m['mm2pPStatAvgHp'](1) * m['mm2pPStatXpHp'](1) or m['mm2pParaMagmaXpValue']() != m['mm2pPStatXp'](2) + m['mm2pPStatAvgHp'](2) * m['mm2pPStatXpHp'](2) or m['mm2pParaOozeXpValue']() != m['mm2pPStatXp'](3) + m['mm2pPStatAvgHp'](3) * m['mm2pPStatXpHp'](3) or m['mm2pPechXpValue']() != m['mm2pPStatXp'](4) + m['mm2pPStatAvgHp'](4) * m['mm2pPStatXpHp'](4) or m['mm2pPedipalpLargeXpValue']() != m['mm2pPStatXp'](5) + m['mm2pPStatAvgHp'](5) * m['mm2pPStatXpHp'](5) or m['mm2pPedipalpHugeXpValue']() != m['mm2pPStatXp'](6) + m['mm2pPStatAvgHp'](6) * m['mm2pPStatXpHp'](6) or m['mm2pPedipalpGiantXpValue']() != m['mm2pPStatXp'](7) + m['mm2pPStatAvgHp'](7) * m['mm2pPStatXpHp'](7) or m['mm2pPhantomXpValue']() != m['mm2pPStatXp'](8) + m['mm2pPStatAvgHp'](8) * m['mm2pPStatXpHp'](8) or m['mm2pPhoenixXpValue']() != m['mm2pPStatXp'](9) + m['mm2pPStatAvgHp'](9) * m['mm2pPStatXpHp'](9) or m['mm2pPhycomidXpValue']() != m['mm2pPStatXp'](10) + m['mm2pPStatAvgHp'](10) * m['mm2pPStatXpHp'](10) or m['mm2pPlanetarXpValue']() != m['mm2pPStatXp'](11) + m['mm2pPStatAvgHp'](11) * m['mm2pPStatXpHp'](11) or m['mm2pPseudoundeadXpValue']() != m['mm2pPStatXp'](12) + m['mm2pPStatAvgHp'](12) * m['mm2pPStatXpHp'](12) or m['mm2pPuddingBrownXpValue']() != m['mm2pPStatXp'](13) + m['mm2pPStatAvgHp'](13) * m['mm2pPStatXpHp'](13) or m['mm2pPuddingDunXpValue']() != m['mm2pPStatXp'](14) + m['mm2pPStatAvgHp'](14) * m['mm2pPStatXpHp'](14) or m['mm2pPuddingWhiteXpValue']() != m['mm2pPStatXp'](15) + m['mm2pPStatAvgHp'](15) * m['mm2pPStatXpHp'](15) or m['mm2pPyroliskXpValue']() != m['mm2pPStatXp'](16) + m['mm2pPStatAvgHp'](16) * m['mm2pPStatXpHp'](16)"
+  },
+  {
+   "note": "the avgHp formula (the floor of 3.5 x hit dice plus bonus, the flat-hp phantom, planetar and pseudo-undead excluded - the doubling form so the expr compiles as C++)",
+   "expr": "m['mm2pPStatAvgHp'](0) * 2 + m['mm2pPStatHd'](0) % 2 != m['mm2pPStatHd'](0) * 7 + m['mm2pPStatHdBonus'](0) * 2 or m['mm2pPStatAvgHp'](1) * 2 + m['mm2pPStatHd'](1) % 2 != m['mm2pPStatHd'](1) * 7 + m['mm2pPStatHdBonus'](1) * 2 or m['mm2pPStatAvgHp'](2) * 2 + m['mm2pPStatHd'](2) % 2 != m['mm2pPStatHd'](2) * 7 + m['mm2pPStatHdBonus'](2) * 2 or m['mm2pPStatAvgHp'](3) * 2 + m['mm2pPStatHd'](3) % 2 != m['mm2pPStatHd'](3) * 7 + m['mm2pPStatHdBonus'](3) * 2 or m['mm2pPStatAvgHp'](4) * 2 + m['mm2pPStatHd'](4) % 2 != m['mm2pPStatHd'](4) * 7 + m['mm2pPStatHdBonus'](4) * 2 or m['mm2pPStatAvgHp'](5) * 2 + m['mm2pPStatHd'](5) % 2 != m['mm2pPStatHd'](5) * 7 + m['mm2pPStatHdBonus'](5) * 2 or m['mm2pPStatAvgHp'](6) * 2 + m['mm2pPStatHd'](6) % 2 != m['mm2pPStatHd'](6) * 7 + m['mm2pPStatHdBonus'](6) * 2 or m['mm2pPStatAvgHp'](7) * 2 + m['mm2pPStatHd'](7) % 2 != m['mm2pPStatHd'](7) * 7 + m['mm2pPStatHdBonus'](7) * 2 or m['mm2pPStatAvgHp'](9) * 2 + m['mm2pPStatHd'](9) % 2 != m['mm2pPStatHd'](9) * 7 + m['mm2pPStatHdBonus'](9) * 2 or m['mm2pPStatAvgHp'](10) * 2 + m['mm2pPStatHd'](10) % 2 != m['mm2pPStatHd'](10) * 7 + m['mm2pPStatHdBonus'](10) * 2 or m['mm2pPStatAvgHp'](13) * 2 + m['mm2pPStatHd'](13) % 2 != m['mm2pPStatHd'](13) * 7 + m['mm2pPStatHdBonus'](13) * 2 or m['mm2pPStatAvgHp'](14) * 2 + m['mm2pPStatHd'](14) % 2 != m['mm2pPStatHd'](14) * 7 + m['mm2pPStatHdBonus'](14) * 2 or m['mm2pPStatAvgHp'](15) * 2 + m['mm2pPStatHd'](15) % 2 != m['mm2pPStatHd'](15) * 7 + m['mm2pPStatHdBonus'](15) * 2 or m['mm2pPStatAvgHp'](16) * 2 + m['mm2pPStatHd'](16) % 2 != m['mm2pPStatHd'](16) * 7 + m['mm2pPStatHdBonus'](16) * 2"
+  },
+  {
+   "note": "the loader attack semantics (the Special and Nil floors, the 1 constrict read, the 1 or 2 max)",
+   "expr": "m['mm2pPStatAttacks'](1) != 1 or m['mm2pPStatAttacks'](3) != 1 or m['mm2pPStatAttacks'](8) != 1 or m['mm2pPStatAttacks'](9) != 2 or m['mm2pPStatAttacks'](12) != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter P box",
+   "from": "- [ ] **Letter P**",
+   "to": "- [x] **Letter P**"
+  }
+ ],
+ "gap_census": {
+  "closed": 21,
+  "open": 16
+ },
+ "caller_files": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter P def walk (the R809 O-walk pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R810: the MM2 letter P live def walk ----\n    // The 17 promoted letter P defs\n    // cross-checked live against the mm2p pins:\n    // every stat cell of the 17-row PStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula, the per-def prose markers, and the\n    // registry census floor 706 -> at least 723.\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kP[17] = {\n            \"para_elemental_ice\",\n            \"para_elemental_smoke\",\n            \"para_elemental_magma\",\n            \"para_elemental_ooze\",\n            \"pech\",\n            \"pedipalp_large\",\n            \"pedipalp_huge\",\n            \"pedipalp_giant\",\n            \"phantom\",\n            \"phoenix\",\n            \"phycomid\",\n            \"planetar\",\n            \"pseudo_undead\",\n            \"pudding_brown\",\n            \"pudding_dun\",\n            \"pudding_white\",\n            \"pyrolisk\",\n        };\n        static const char* kPMark[17] = {\n            \"coated with frost\",\n            \"concentrated blast of black fog\",\n            \"legs and torsos are molten rock\",\n            \"dark writhing tendrils\",\n            \"hard as granite\",\n            \"cross between a spider and a scorpion\",\n            \"same as that for opening doors\",\n            \"discharge a noxious vapor\",\n            \"soulless shells\",\n            \"diamond-hard talons\",\n            \"sprout mushroom-like growths\",\n            \"right hand of a minor deity\",\n            \"looks and smells exactly like its parallel\",\n            \"dwells principally in marsh areas\",\n            \"feed on silicates\",\n            \"mistaken for snow and ice\",\n            \"1 red feather in the tail\",\n        };\n        for (int i = 0; i < 17; ++i) {\n            const auto* d = reg.find(kP[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\")\n                ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2pPStatAc(i))\n                ++bad;\n            if (d->hitDiceNum != mm2pPStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2pPStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2pPStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2pPStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2pPStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2pPStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2pPStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2pPStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2pPStatMr(i))\n                ++bad;\n            if (d->text.find(kPMark[i])\n                == std::string::npos)\n                ++bad;\n        }\n        if ((int)reg.all().size()\n            < mm2pRegistryAfter())\n            ++bad;\n        printf(\"R810 MM2 letter P live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/p/para_elemental_ice.lua",
+   "content": "-- Para-elemental, Ice: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Para-elemental, Ice\",\n  page = \"98\",\n  pages = \"98\",\n  source = \"MM2\",\n  race = \"Para-elemental, Ice\",\n  hitDice = \"8, 12, or 16\",\n  hitDiceNum = \"8\",\n  hitDiceBonus = \"0\",\n  avgHp = \"28\",\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"3-36\",\n  xp = \"2850\",\n  xpPerHp = \"15\",\n  xpValue = \"3270\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"L\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Cold\",\n  specialDefenses = \"+1 or better weapons to hit\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The Para-elemental Plane of Cold is located at the juncture of the major elemental Planes of Air and Water, and para-elementals from that wintry land resemble tall, translucent, white humanoids coated with frost. Those coming within 10 feet of a cold para-elemental take 1-4 points damage per round due to the intense cold that surrounds its being. The cold para-elemental has the ability to freeze on touch water or liquids containing mostly water for up to 100 square feet per round to a depth of 6 inches. In addition, it may remove damage to itself if it is in contact with ice, snow, or sleet and takes no further damage while healing itself, at a rate of 1-8 hit points per round. Cold does half-damage to an ice para-elemental, while fire-based attacks do double damage. Attacks against cold-using opponents are at -1 to damage dice.\\n\\nThe ice para-elementals have a loose organization with no set leader, though there are rumors that several powerful ice-lords exist on their plane.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/para_elemental_smoke.lua",
+   "content": "-- Para-elemental, Smoke: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Para-elemental, Smoke\",\n  page = \"98\",\n  pages = \"98\",\n  source = \"MM2\",\n  race = \"Para-elemental, Smoke\",\n  hitDice = \"8, 12, or 16\",\n  hitDiceNum = \"8\",\n  hitDiceBonus = \"0\",\n  avgHp = \"28\",\n  armorClass = \"3\",\n  numAttacks = \"Special\",\n  damage = \"2-16\",\n  xp = \"2850\",\n  xpPerHp = \"15\",\n  xpValue = \"3270\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"6/18\\\"\",\n  size = \"L\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+1 or better weapons to hit\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Smoke para-elementals move either by drifting along the ground as black ash or by flying in the form of a concentrated blast of black fog. The latter form has a maneuverability class E but does double damage when it hits a target. While forming and dissolving, the fog-form takes a full turn. During normal attacks it can engage as many targets as are within 10 feet. All within 10 feet must save vs. poison or be -2 to hit from the blinding smoke. Smoke elementals are -1 on damage dice from all air-based attacks, including those from air elementals.\\n\\nThe para-elemental Plane of Smoke is a dry, empty area with few long-term inhabitants. The smoke para-elementals have no king, but several exceptional types rule small pockets of the others. These exceptional para-elementals are usually feuding for control of the plane.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/para_elemental_magma.lua",
+   "content": "-- Para-elemental, Magma: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Para-elemental, Magma\",\n  page = \"98\",\n  pages = \"98-99\",\n  source = \"MM2\",\n  race = \"Para-elemental, Magma\",\n  hitDice = \"8, 12, or 16\",\n  hitDiceNum = \"8\",\n  hitDiceBonus = \"0\",\n  avgHp = \"28\",\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"4-24\",\n  xp = \"2850\",\n  xpPerHp = \"15\",\n  xpValue = \"3270\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"L\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+1 or better weapons to hit\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Magma para-elementals, often called heat para-elementals, are natives of the Para-elemental Plane of Magma, a rocky, volcanic place located at the edges of the Elemental Planes of Fire and Earth. Para-elementals summoned from this plane are humanoid from the waist up, and their legs and torsos are molten rock. The eyes and mouths of these creatures glow with a reddish light from the fires within.\\n\\nThe heat from a magma elemental is similar to the druidic heat metal spell, affecting all within 20 feet. During the 1st round of exposure, metals will grow hot; during the 2nd, metallic armor and weapons will do 1-4 points of damage to their wielders; and on the 3rd and succeeding rounds, metal-using characters will take 2-8 points damage and nonmetal-using characters will take 1-4 points. Leaving the area of the effect causes the damage to drop 1 level immediately and to disappear completely the following round. Wood and other flammable objects brought in contact with either the para-elemental or metal heated by it will burst into flame.\\n\\nThe Para-elemental Plane of Magma is a lonely volcanic plain spotted by volcanos, and its denizens carry out their tasks in packs with no set leader, although there may be exceptional para-elementals with magical power.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/para_elemental_ooze.lua",
+   "content": "-- Para-elemental, Ooze: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Para-elemental, Ooze\",\n  page = \"99\",\n  pages = \"99\",\n  source = \"MM2\",\n  race = \"Para-elemental, Ooze\",\n  hitDice = \"8, 12, or 16\",\n  hitDiceNum = \"8\",\n  hitDiceBonus = \"0\",\n  avgHp = \"28\",\n  armorClass = \"3\",\n  numAttacks = \"1 constrict\",\n  damage = \"2-16\",\n  xp = \"2850\",\n  xpPerHp = \"15\",\n  xpValue = \"3270\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"36\\\" (MC: A)\",\n  size = \"L\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+7 or better weapons to hit\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The ooze para-elemental, also called the mud elemental, appears as a liquid mass of dark writhing tendrils. If an ooze para-elemental hits, it has wrapped a tendril around its opponent and will constrict for 2-16 points of damage per round until the para-elemental is dispelled, defeated, or releases the opponent on command of the summoner. Any number of opponents can be constricted, but only 1 can be attacked and ensnared at a time. A captured character may still attack but can be swept off his feet by the para-elemental and carried off. The ooze para-elemental's form is mutable, such that one can fit into tight crevices and beneath doorways with ease.\\n\\nThe Elemental Plane of Ooze is a cloudy, grey plane at the borders of the Elemental Planes of Water and Earth. Both water and earth creatures from these planes may be found in this para-plane. Ooze para-elementals have no fixed leader, but there are a number of contending slime-barons vying for control.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pech.lua",
+   "content": "-- Pech: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Pech\",\n  page = \"99\",\n  pages = \"99\",\n  source = \"MM2\",\n  race = \"Pech\",\n  hitDice = \"4\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"0\",\n  avgHp = \"14\",\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"By weapon +3\",\n  xp = \"240\",\n  xpPerHp = \"4\",\n  xpValue = \"296\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"5-20 (double in lair)\",\n  lairPct = \"05\",\n  treasure = \"See below\",\n  move = \"9\\\"\",\n  size = \"S (4' tall)\",\n  intelligence = \"Average to exceptional\",\n  alignment = \"Neutral (good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"25%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"No one knows what the pech actually are, or whether they are from the Prime Material or Earth Planes. In any event, these spindly creatures dwell in dark places and work stone. Their flesh is nearly as hard as granite itself. In their lair there will be several larger pech, females equal to the number of males, and young equalling 20-50% of the females. There also will be 50-100 gems plus various dishes and ornaments worked from ornamental stone and raw metal (5-30 jewelry of lowest base value for worth, average weight 150 gp each). The pech use picks and peat hammers (treat as war hammers) for work and armament, and are usually equipped with equal numbers of each type.\\n\\nEach pech is able to cast 4 stone shape and stone tell spells per day. Four together can cast a wall of stone spell as if they were 16th-level magic-users. Eight can together cast a stone to flesh spell. These \\\"group\\\" spells can be cast but once per day by any group. Pech are immune to petrification. If engaged against some lithic monster such as a stone golem, pech are quite capable of knocking it to rubble, as their knowledge of stone allows them full normal attack capability. Pech are basically good creatures desiring to be left to themselves. They hate bright light and open skies. They have both infra- and ultravision.\\n\\nPech are thin with long arms and legs. Their broad hands and feet are excellent for bracing and employing tools to work stone. They have pale, yellowish skin and red or red-brown hair. Their eyes are large and pupilless.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pedipalp_large.lua",
+   "content": "-- Pedipalp, Large (Schizomida): promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Pedipalp, Large (Schizomida)\",\n  page = \"100\",\n  pages = \"100\",\n  source = \"MM2\",\n  race = \"Pedipalp, Large (Schizomida)\",\n  hitDice = \"1+1\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"1\",\n  avgHp = \"4\",\n  armorClass = \"7\",\n  numAttacks = 1,\n  damage = \"1-8\",\n  xp = \"20\",\n  xpPerHp = \"2\",\n  xpValue = \"28\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"5\",\n  treasure = \"M, Q (x2)\",\n  move = \"12\\\"\",\n  size = \"S\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"\",\n  magicResistance = \"Standard for all\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Commonly called whip scorpions, these creatures can be found in nearly any climate except that of arctic or tundra. They appear to be a cross between a spider and a scorpion. Pedipalpi may be found in a variety of different colorings, browns and tans being the most common.\\n\\nLarge Pedipalp: The smallest of the pedipalpi, the schizomidae, have no obvious whips, although they do have 2 grasping arms and fearsome-looking mandibles. They are incapable of holding any prey larger than themselves.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pedipalp_huge.lua",
+   "content": "-- Pedipalp, Huge (Amblypygus): promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Pedipalp, Huge (Amblypygus)\",\n  page = \"100\",\n  pages = \"100\",\n  source = \"MM2\",\n  race = \"Pedipalp, Huge (Amblypygus)\",\n  hitDice = \"2+2\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"2\",\n  avgHp = \"9\",\n  armorClass = \"4\",\n  numAttacks = 3,\n  damage = \"1-6/1-6/1-8\",\n  xp = \"50\",\n  xpPerHp = \"3\",\n  xpValue = \"77\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"10\",\n  treasure = \"Q (x4), T\",\n  move = \"9\\\"\",\n  size = \"S\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Grip\",\n  specialDefenses = \"\",\n  magicResistance = \"Standard for all\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Commonly called whip scorpions, these creatures can be found in nearly any climate except that of arctic or tundra. They appear to be a cross between a spider and a scorpion. Pedipalpi may be found in a variety of different colorings, browns and tans being the most common.\\n\\nHuge Pedipalp: The amblypygi, or huge pedipalpi, have developed 2 whip-like appendages in place of 1 pair of legs. Another set of legs has developed spiny pincers on the ends, which these creatures use to attack their prey. They also bite. After a hit has been scored, the huge pedipalp will grip and automatically do crushing damage (the same as 2 pincer hits; 2-12) on all rounds thereafter. The chance of a character breaking this grip is the same as that for opening doors.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pedipalp_giant.lua",
+   "content": "-- Pedipalp, Giant (Uropygus): promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Pedipalp, Giant (Uropygus)\",\n  page = \"100\",\n  pages = \"100\",\n  source = \"MM2\",\n  race = \"Pedipalp, Giant (Uropygus)\",\n  hitDice = \"4+4\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"4\",\n  avgHp = \"18\",\n  armorClass = \"2\",\n  numAttacks = 3,\n  damage = \"1-8/1-8/2-8\",\n  xp = \"170\",\n  xpPerHp = \"5\",\n  xpValue = \"260\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = \"20\",\n  treasure = \"I\",\n  move = \"6\\\"\",\n  size = \"L\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Poison gas, grip\",\n  specialDefenses = \"\",\n  magicResistance = \"Standard for all\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Commonly called whip scorpions, these creatures can be found in nearly any climate except that of arctic or tundra. They appear to be a cross between a spider and a scorpion. Pedipalpi may be found in a variety of different colorings, browns and tans being the most common.\\n\\nGiant Pedipalp: The largest of their species, the uropygi or giant pedipalpi, have whip-like tails and forelegs that end in large pincers. Although the tail looks dangerous, it is not used to attack; instead, these creatures attack with 2 pincers and a bite. After a hit has been scored, the giant pedipalp will grip, automatically bite (for 2-8 points), and do crushing damage (the same as 2 pincer hits; 2-16) on all rounds thereafter. This grip may be broken only by killing the monster or severing the pincer (which requires a roll 3 higher than the normal to-hit number). The giant pedipalpi also discharge a noxious vapor when in combat. This irritant will affect all non-pedipalp creatures within a 20-foot radius, and all within it who fail a saving throw vs. poison fight with a -3 on their to-hit rolls for 1-6 rounds. Uropygi may discharge this gas 3 times per day.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/phantom.lua",
+   "content": "-- Phantom: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Phantom\",\n  page = \"100\",\n  pages = \"100\",\n  source = \"MM2\",\n  race = \"Phantom\",\n  hitDice = \"Nil\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"0\",\n  armorClass = \"Nil\",\n  numAttacks = \"Nil\",\n  damage = \"Nil\",\n  xp = \"Nil\",\n  xpPerHp = \"Nil\",\n  xpValue = \"0\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Nil\",\n  alignment = \"Any\",\n  specialAttacks = \"Fear\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Phantoms are soulless shells left behind by a particularly strong death trauma. Phantoms are merely images and have no power to directly cause harm and cannot themselves be harmed. Because of the superstitious awe they inspire, however, anyone who gazes on the translucent form of a phantom must save vs. spells at -2 or immediately panic and run away as if under the effects of a fear spell.\\n\\nPhantoms are like a three dimensional motion picture image filmed at the time of a character's death in the area where he or she died. They have no intelligence and neither are they alive or undead. A phantom often records the death of the character or the images of what was foremost in the character's mind when he or she died.\\n\\nPhantoms are often mistaken for ghosts, haunts, or groaning spirits, but they may not be turned as undead. The clerical spell exorcism will dispel a phantom.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/phoenix.lua",
+   "content": "-- Phoenix: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Phoenix\",\n  page = \"100\",\n  pages = \"100-101\",\n  source = \"MM2\",\n  race = \"Phoenix\",\n  hitDice = \"20\",\n  hitDiceNum = \"20\",\n  hitDiceBonus = \"0\",\n  avgHp = \"70\",\n  armorClass = -3,\n  numAttacks = \"1 or 2\",\n  damage = \"2-12 or 1-8/1-8\",\n  xp = \"8600\",\n  xpPerHp = \"30\",\n  xpValue = \"10700\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1 (1-4)\",\n  lairPct = \"0\",\n  treasure = \"See below\",\n  move = \"6\\\"/39\\\" (MC: D)\",\n  size = \"M\",\n  intelligence = \"Genius\",\n  alignment = \"Neutral good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"50%\",\n  psionic = \"See below\",\n  attackDefenseModes = \"See below\",\n  text = \"The phoenix, so rarely seen on the Prime Material Plane, is native to the Upper Outer Planes of Elysium. Of course, the phoenix is quite capable of dwelling in nearly any climate or even the void, as cold, heat, and like conditions won't harm it. However, a phoenix prefers beauty and sylvan peace and will typically be found only in such places on the Prime Material Plane. Unfortunately, phoenix feathers command an average of 50 gp each, their gem-like beak, talons, and eyes a hundred times that, and their bodies are prized by alchemists seeking to make certain potions. Thus, the rare phoenix is rarer still.\\n\\nA phoenix in flight attacks with its diamond-hard talons. When on the ground it has but a single attack with its long, sharp beak. However, being both intelligent and magical, a phoenix usually opts for more effective measures of attack and defense.\\n\\nThe piercing whistle voiced by a phoenix enables it to act first in melee, as opponents within a 30-foot radius are so affected by the sound as to give the phoenix a +3 advantage on its initiative die. With this advantage, the creature can use any of the following spell-like powers, 1 at a time, 1 per melee round, at 20th level: affect normal fires, audible glamor, blink, blindness, blur, call woodland beings once per day, control temperature within a 10-foot radius, continual light, color spray 3 times per day, dancing lights, duo-dimension once per day, find the path once per day, find traps, fire charm, fire quench once per day, fire seeds once per day, fire shield, fire storm once per day, heat metal 3 times per day, improved invisibility, incendiary cloud once per week, misdirection, neutralize poison once per day, polymorph self 3 times per day, produce fire, pyrotechnics, reincarnate once per day, remove curse, remove fear within a 10-foot radius, snake charm, veil once per day, wall of fire once per day.\\n\\nThe phoenix needs only to spread its wings and voice a call to dispel illusion or dispel magic at the 40th level of ability. Additionally, the dance of a phoenix acts as a double-strength (40th level) exorcise spell and is effective against all but the greatest of evil magics, such as that of an artifact or relic.\\n\\nA phoenix automatically detects charms, evil, and magic. It radiates a 10-foot radius protection from evil. The creature can become ethereal and travel astrally or ethereally. It can be hit only by +3 or better weapons. The phoenix can never be surprised. It has infravision to 120 feet and double normal ultravision. A touch of its wing is equal to a cure light wounds spell, with 2 touches possible per individual per day per phoenix. A touch of the comb gives an effect equal to cure disease, but is restricted in the same manner as a staff of curing. When hard-pressed, the phoenix is able to cause spilled droplets of its own blood to act as fire seeds of the holly berry type, 1 being created for every 5 points of damage taken by the phoenix. In extremis, the phoenix creates a double-strength (40th level) combination of fire storm (2\\\" high x 5\\\" wide x 8\\\" deep) and incendiary cloud, even if it has already used these powers previously. This destroys the adult phoenix but leaves a gem-like egg behind from which a new phoenix will arise in 20 days. As well as its own language, a phoenix can speak with all avians. It otherwise communicates by limited telepathy or by empathy and telepathy of a limited sort.\\n\\nAlthough the phoenix can neither attack nor be attacked by psionic means, the creature has the following disciplinary powers: cell adjustment (cleric class) once per day at 20th level; energy control 3 times per day; molecular agitation 3 times per day at 20th level; probability travel once per week at 10th level.\\n\\nA phoenix appears similar to a peacock, although it is far larger and its beak is longer in proportion. The plumage includes bright violet, scarlet, crimson and flaming orange areas. Beak and claws are of blue-violet. Eyes are a deep, glowing ruby color.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/phycomid.lua",
+   "content": "-- Phycomid: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Phycomid\",\n  page = \"101\",\n  pages = \"101\",\n  source = \"MM2\",\n  race = \"Phycomid\",\n  hitDice = \"4\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"0\",\n  avgHp = \"14\",\n  armorClass = \"5\",\n  numAttacks = 2,\n  damage = \"3-6/3-6\",\n  xp = \"280\",\n  xpPerHp = \"5\",\n  xpValue = \"350\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"80\",\n  treasure = \"Incidental\",\n  move = \"3\\\"\",\n  size = \"S (2' diameter maximum)\",\n  intelligence = \"Unratable\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"Infection\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The algae-like phycomids resemble fibrous blobs of decomposing, milky-colored matter with capped fungi growing out of them. They exude a highly alkaline substance when attacking. When phycomids attack they extrude a tube and discharge the alkaline fluid in small globules that have a range of 7-12 feet. These fungoid monsters have sensory organs for heat, sound, and vibrations located in several clusters. In addition to alkaline damage, the globs which these creatures discharge might also cause victims to serve as hosts for new phycomid growth. If a victim fails to save vs. poison, the individual will begin to sprout mushroom-like growths in the infected area. This will occur in 5-8 rounds and inflict 5-8 points of damage. The growths will then begin to spread throughout the host body, killing it in 5-8 turns, and turning it into a new phycomid. A cure disease spell will stop the spread through the host.\\n\\nPhycomids are immune to all forms of mental attacks, including charms, holds, etc. Fire-based attacks are saved against at +4, and damage inflicted is either half-normal or none.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/planetar.lua",
+   "content": "-- Planetar: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Planetar\",\n  page = \"101\",\n  pages = \"101-102\",\n  source = \"MM2\",\n  race = \"Planetar\",\n  hitDice = \"144 hp\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"144\",\n  armorClass = -7,\n  numAttacks = 3,\n  damage = \"By weapon type +7 (strength bonus)\",\n  xp = \"60000\",\n  xpPerHp = \"35\",\n  xpValue = \"65040\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"15\\\"/48\\\"//24\\\" (MC: B)\",\n  size = \"L (8 1/2' tall)\",\n  intelligence = \"Supra-genius; wisdom: 21\",\n  alignment = \"Good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"75%\",\n  psionic = \"288\",\n  attackDefenseModes = \"All/all\",\n  text = \"A planetar is one of a powerful spirit group, numbering not fewer than 100, who serve the deities of good alignment. One or more will typically serve as the right hand of a minor deity, while numbers of planetars will attend a major deity. These creatures inhabit the Upper Outer Planes of Good but actually travel at will to any plane except the lowest (the Hells, Gehenna, Hades, Tarterus, the Abyss). If commanded by their deity, they can, in fact, enter even the lowest planes of Evil. Only a solar (q.v.) is more powerful in the cause of Good.\\n\\nPlanetars can be of any good alignment - lawful, neutral, or chaotic. Their specific alignment is determined by the master they serve. Each planetar has 3 attacks per round, typically with a bastard sword (usable only by planetars) equal to a +4 weapon with both defender (q.v.) and wounding (q.v.) qualities, the latter effective only against creatures of Evil. For purposes of attack determination, consider each planetar to have a dexterity of 21 and a 17th-level fighting ability. All planetars have spell-like abilities equal to those of a 7th-level cleric and 7th-level druid, plus bonuses to each (wisdom equals 21). In addition, they each have the following spell-like abilities which can be used 1 at a time, 1 per round, at will: animate object once per day, blade barrier 3 times per day, continual light up to 10\\\" radius, control weather once per day, dispel evil 3 times per day, dispel illusion 7 times per day, dispel magic 3 times per day, earthquake once per day, etherealness, feeblemind once per day, limited wish once per day, polymorph object, fire storm once per day, flame strike 3 times per day, heal 3 times per day, holy word once per day, improved invisibility up to 10-foot radius, insect plague once per day, polymorph self, raise dead 3 times per day, read magic, remove curse, remove fear, resist cold (double effect), resist fire (double effect), restoration once per day, shape change once per day, speak with dead, symbol (any) once per day, teleport with no error, true seeing 3 times per day, weather summoning once per day, wind walk 7 times per day.\\n\\nEach planetar radiates a globe of protection from evil from individual size to a full 40-foot radius, as desired. The maintenance of the area is automatic. A planetar can commune at need. Each can always cure blindness, deafness, disease or light wounds by touch. They automatically detect evil, illusion, invisibility, lie, magic and traps. Each always has know alignment functioning automatically. A planetar can communicate by ESP or tongues as well as read any language. Each always has infravision to 12\\\" and ultravision of double normal range. Once per day a planetar can gate in the indicated number (1-3, 1-4, or 1-6) of the appropriate sort of deva (q.v.) whether astral, monadic, or movanic. They can summon the following creatures once per day: lawful good - 1-4 couatl; neutral good - 1-2 baku; chaotic good - 1-2 androsphinx.\\n\\nPlanetars are affected by the attack forms indicated for devas (q.v.). Only +4 or better weapons affect them. They are never surprised. They are immune to any life level loss, whether from undead or magic. They cannot be beguiled, charmed, confused, dominated, or feebleminded. Their souls cannot be imprisoned or trapped. They are immune to death spells. They regenerate at a rate of 4 points per round. Unless encountered on the Upper Outer Planes, only the material body of these creatures can be harmed. The planetar's spirit returns to its own plane to re-form and become corporeal again; the process requires 4 decades. Charisma effect is 21.\\n\\nPsionic abilities are animal telepathy (14th level), aura alteration, body control, body equilibrium, body weaponry (9th level), mass domination (17th level), molecular agitation, precognition, reduction, telekinesis (17th level), and telepathic projection.\\n\\nA planetar resembles a tall and powerful humanoid. In material form the skin is opaline, the head hairless, and the eyes glowing blue. The wings are double and likewise opaline.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pseudo_undead.lua",
+   "content": "-- Pseudo-Undead: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Pseudo-Undead\",\n  page = \"102\",\n  pages = \"102\",\n  source = \"MM2\",\n  race = \"Pseudo-Undead\",\n  hitDice = \"See below\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"0\",\n  armorClass = \"See below\",\n  numAttacks = \"See below\",\n  damage = \"See below\",\n  xp = \"Treat as human fighters (except pseudoghast, as below)\",\n  xpPerHp = \"Nil\",\n  xpValue = \"0\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"See below\",\n  lairPct = \"50\",\n  treasure = \"A\",\n  move = \"See below\",\n  size = \"M\",\n  intelligence = \"Low to average\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The pseudo-undead are humanoid creatures who prosper due to their physical similarity to certain undead monsters, such as ghouls, ghasts, wights, wraiths, spectres, and vampires. Each pseudo-undead looks and smells exactly like its parallel. The same number appear. The armor class, movement rate, hit dice, number of attacks, and damage are the same. Thus they can be moderately dangerous. However, they lack the special attack forms (paralysis, level drain, etc.) of the undead, though they have normal (6\\\") infravision. Note that the stench of pseudoghasts has the same effect as that of ghasts. Pseudowraiths and pseudospectres cannot fly but walk so lightly as to leave no trace, and are often thought (unless closely observed) to be floating above the surface, although this is an illusion. Pseudovampires have red eyes and behave menacingly but have no special abilities.\\n\\nPseudovampires are more nearly human than others of the genre and have been known to interbreed. Several clans of bandits (q.v.) are known to have been thereby engendered, their members ranging in power from that of normal bandits (though of pale and menacing visage) to leaders and spell casters of full pseudovampire status in addition to their bandit abilities. Other man/pseudovampire combinations may be possible.\\n\\nThe pseudo-undead cannot be turned by a cleric and have no connection to the Negative Material Plane. They avoid sunlight but are not harmed by it. They are never found with or near true undead. Normal attacks affect them.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pudding_brown.lua",
+   "content": "-- Pudding, Deadly (Brown): promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Pudding, Deadly (Brown)\",\n  page = \"102\",\n  pages = \"102\",\n  source = \"MM2\",\n  race = \"Pudding, Deadly (Brown)\",\n  hitDice = \"11\",\n  hitDiceNum = \"11\",\n  hitDiceBonus = \"0\",\n  avgHp = \"38\",\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"5-20\",\n  xp = \"1600\",\n  xpPerHp = \"16\",\n  xpValue = \"2208\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1 or 1-4\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"S to L (3' d. to 8' d.)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard for all\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Each form of deadly pudding is a variety of the better-known black (deadly) pudding. Acid, cold and poison have no effect on deadly puddings. Lightning bolts or blows from weapons divide these monsters into viable creatures of smaller size. Fire causes normal damage, as do magic missile spells. Details of each type are given separately below. See \\\"Black Pudding\\\" for information on movement abilities.\\n\\nBrown Pudding: This type dwells principally in marsh areas. It has a tougher skin but its attack is less effective than other varieties. Brown puddings do not dissolve metals but do destroy leather or wood in a single round, regardless of any magical pluses.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pudding_dun.lua",
+   "content": "-- Pudding, Deadly (Dun): promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Pudding, Deadly (Dun)\",\n  page = \"102\",\n  pages = \"102\",\n  source = \"MM2\",\n  race = \"Pudding, Deadly (Dun)\",\n  hitDice = \"8+1\",\n  hitDiceNum = \"8\",\n  hitDiceBonus = \"1\",\n  avgHp = \"29\",\n  armorClass = \"7\",\n  numAttacks = 1,\n  damage = \"4-24\",\n  xp = \"1000\",\n  xpPerHp = \"12\",\n  xpValue = \"1348\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1 or 1-3\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"S to L (3' d. to 8' d.)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard for all\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Each form of deadly pudding is a variety of the better-known black (deadly) pudding. Acid, cold and poison have no effect on deadly puddings. Lightning bolts or blows from weapons divide these monsters into viable creatures of smaller size. Fire causes normal damage, as do magic missile spells. Details of each type are given separately below. See \\\"Black Pudding\\\" for information on movement abilities.\\n\\nDun Pudding: Adapted to dwell in arid regions, these monsters scavenge barrens and deserts and feed on silicates if animal or vegetable matter is unavailable. They dissolve leather as does a brown pudding. Metals are eaten at a rate equal to half that of a black pudding, i.e., chainmail in 2 rounds, plate in 4. In other respects they are like brown puddings.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pudding_white.lua",
+   "content": "-- Pudding, Deadly (White): promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Pudding, Deadly (White)\",\n  page = \"102\",\n  pages = \"102\",\n  source = \"MM2\",\n  race = \"Pudding, Deadly (White)\",\n  hitDice = \"9\",\n  hitDiceNum = \"9\",\n  hitDiceBonus = \"0\",\n  avgHp = \"31\",\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"7-28\",\n  xp = \"1200\",\n  xpPerHp = \"12\",\n  xpValue = \"1572\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1 or 1-3\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"S to L (3' d. to 8' d.)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard for all\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Each form of deadly pudding is a variety of the better-known black (deadly) pudding. Acid, cold and poison have no effect on deadly puddings. Lightning bolts or blows from weapons divide these monsters into viable creatures of smaller size. Fire causes normal damage, as do magic missile spells. Details of each type are given separately below. See \\\"Black Pudding\\\" for information on movement abilities.\\n\\nWhite Pudding: These cold-dwelling creatures are 50% likely to be mistaken for snow and ice under the best of conditions. They haunt polar regions or icy places in order to find prey, although they can live by devouring any animal or vegetable material; even ice provides them with enough nutrition to exist. They do not affect metals but dissolve animal or vegetable materials in a single round, inflicting damage to flesh at an astounding rate. They are subject to attack forms as are all other deadly puddings.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pyrolisk.lua",
+   "content": "-- Pyrolisk: promoted by the R810 MM2 letter P walk round\n-- from the MM2 print\n-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Pyrolisk\",\n  page = \"103\",\n  pages = \"103\",\n  source = \"MM2\",\n  race = \"Pyrolisk\",\n  hitDice = \"4+3\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"3\",\n  avgHp = \"17\",\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = \"240\",\n  xpPerHp = \"5\",\n  xpValue = \"325\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"30\",\n  treasure = \"D\",\n  move = \"6\\\"/18\\\" (MC: C)\",\n  size = \"S\",\n  intelligence = \"Low\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Gaze\",\n  specialDefenses = \"Immune to fire\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"This monster is nearly identical to the cockatrice (q.v.), except that close inspection will reveal 1 red feather in the tail and a reddish cast to the grey wings. The pyrolisk inhabits temperate to tropical regions, as does its cousin. In addition to its minor beak attack, the creature has a gaze which, if met, causes the victim to erupt in flames from within, killing it instantly if a saving throw vs. petrification falls and doing 2-13 points of damage otherwise. Any creature innately or magically fire-resistant (whether by spell, ring, or other effect) is immune to this gaze attack, and any victim making his or her saving throw is thereafter immune to the gaze of that particular pyrolisk. The creature can, in addition, cause any fire source within 30 feet to explode in fireworks, an effect identical to the druidical pyrotechnics spell (q.v.). It does so at will, once per round, for the sheer joy of the flames; the area of effect is 10 times that of the fire source, lasts for a full round, and temporarily blinds all those within it. The pyrolisk is immune to all fire-based attacks, magical and normal. Its mortal enemy is the phoenix, as the latter is also immune to fire and detests Evil.\",\n}\n"
+  }
+ ],
+ "consts": [
+  {
+   "name": "mm2pRound",
+   "value": 810,
+   "comment": "The MM2 letter P walk round: the para-elemental to pyrolisk turns, the FOURTH single-letter pass (Curtiss Go call on the landed letter O walk)"
+  },
+  {
+   "name": "mm2pRegistryBefore",
+   "value": 706,
+   "comment": "The registry census before the R810 promotion (the landed R809 count)"
+  },
+  {
+   "name": "mm2pRegistryAfter",
+   "value": 723,
+   "comment": "The registry census after the R810 promotion (17 defs)"
+  },
+  {
+   "name": "mm2pDefCount",
+   "value": 17,
+   "comment": "The def count of the R810 walk (the ice, smoke, magma and ooze para-elementals, the pech, the large, huge and giant pedipalps, the phantom, the phoenix, the phycomid, the planetar, the pseudo-undead, the brown, dun and white deadly puddings and the pyrolisk)"
+  },
+  {
+   "name": "mm2pEntryCount",
+   "value": 10,
+   "comment": "The pin-time entry census (10 print entries: the para-elemental family with its 4 form blocks, the pech, the pedipalp variant table, the phantom, the phoenix, the phycomid, the planetar, the pseudo-undead, the deadly pudding variant table and the pyrolisk)"
+  },
+  {
+   "name": "mm2pStatBlockHeadings",
+   "value": 17,
+   "comment": "The stat-block heading census of the walk (every def pins a stat block - the 4 para-elemental forms, the 3 pedipalp columns and the 3 pudding columns count each)"
+  },
+  {
+   "name": "mm2pDoctrineHeads",
+   "value": 1,
+   "comment": "The doctrine-only family head census (the PARA-ELEMENTAL family head - its summoning doctrine rides as consts, the R808 lycanthrope precedent)"
+  },
+  {
+   "name": "mm2pLetterPHeadings",
+   "value": 10,
+   "comment": "The letter P heading census (the para-elemental through the pyrolisk)"
+  },
+  {
+   "name": "mm2pPStatRows",
+   "value": 17,
+   "comment": "The PStats grid row count (one row per def)"
+  },
+  {
+   "name": "mm2pGapClosed",
+   "value": 21,
+   "comment": "The MM2 gap report closed box count after the P-flip (the R809 census 20 + the Letter P box)"
+  },
+  {
+   "name": "mm2pGapOpen",
+   "value": 16,
+   "comment": "The MM2 gap report open box count after the P-flip (the R809 census 17 - the Letter P box)"
+  },
+  {
+   "name": "mm2pPriorOwnedEntries",
+   "value": 0,
+   "comment": "The prior-owned letter P index entries (none - the MM1 registry pegasi, piercer, pixie, platinum dragon, plesiosaurus, pony, pseudo-dragon, pteranodon and purple worm prints are MM1 walks, not MM2 letter P pages)"
+  },
+  {
+   "name": "mm2pParaIceXpValue",
+   "value": 3270,
+   "comment": "The para-elemental ice xpValue (the 2850 + 15/hp block: 2850 + 15x28)"
+  },
+  {
+   "name": "mm2pParaIceXpLevel",
+   "value": 7,
+   "comment": "The para-elemental ice experience level (the roman VII)"
+  },
+  {
+   "name": "mm2pParaSmokeXpValue",
+   "value": 3270,
+   "comment": "The para-elemental smoke xpValue (the 2850 + 15/hp block: 2850 + 15x28)"
+  },
+  {
+   "name": "mm2pParaSmokeXpLevel",
+   "value": 7,
+   "comment": "The para-elemental smoke experience level (the roman VII)"
+  },
+  {
+   "name": "mm2pParaMagmaXpValue",
+   "value": 3270,
+   "comment": "The para-elemental magma xpValue (the 2850 + 15/hp block: 2850 + 15x28)"
+  },
+  {
+   "name": "mm2pParaMagmaXpLevel",
+   "value": 7,
+   "comment": "The para-elemental magma experience level (the roman VII)"
+  },
+  {
+   "name": "mm2pParaOozeXpValue",
+   "value": 3270,
+   "comment": "The para-elemental ooze xpValue (the 2850 + 15/hp block: 2850 + 15x28)"
+  },
+  {
+   "name": "mm2pParaOozeXpLevel",
+   "value": 7,
+   "comment": "The para-elemental ooze experience level (the roman VII)"
+  },
+  {
+   "name": "mm2pPechXpValue",
+   "value": 296,
+   "comment": "The pech xpValue (the 240 + 4/hp block: 240 + 4x14)"
+  },
+  {
+   "name": "mm2pPechXpLevel",
+   "value": 4,
+   "comment": "The pech experience level (the roman IV)"
+  },
+  {
+   "name": "mm2pPedipalpLargeXpValue",
+   "value": 28,
+   "comment": "The large pedipalp xpValue (the 20 + 2/hp block: 20 + 2x4)"
+  },
+  {
+   "name": "mm2pPedipalpLargeXpLevel",
+   "value": 1,
+   "comment": "The large pedipalp experience level (the roman I)"
+  },
+  {
+   "name": "mm2pPedipalpHugeXpValue",
+   "value": 77,
+   "comment": "The huge pedipalp xpValue (the 50 + 3/hp block: 50 + 3x9)"
+  },
+  {
+   "name": "mm2pPedipalpHugeXpLevel",
+   "value": 2,
+   "comment": "The huge pedipalp experience level (the roman II)"
+  },
+  {
+   "name": "mm2pPedipalpGiantXpValue",
+   "value": 260,
+   "comment": "The giant pedipalp xpValue (the 170 + 5/hp block: 170 + 5x18)"
+  },
+  {
+   "name": "mm2pPedipalpGiantXpLevel",
+   "value": 4,
+   "comment": "The giant pedipalp experience level (the roman IV)"
+  },
+  {
+   "name": "mm2pPhantomXpValue",
+   "value": 0,
+   "comment": "The phantom xpValue (the 0 + 0/hp block: 0 + 0x0)"
+  },
+  {
+   "name": "mm2pPhantomXpLevel",
+   "value": 0,
+   "comment": "The phantom experience level (the roman The phantom experience level (the print Nil/nil block))"
+  },
+  {
+   "name": "mm2pPhoenixXpValue",
+   "value": 10700,
+   "comment": "The phoenix xpValue (the 8600 + 30/hp block: 8600 + 30x70)"
+  },
+  {
+   "name": "mm2pPhoenixXpLevel",
+   "value": 9,
+   "comment": "The phoenix experience level (the roman IX)"
+  },
+  {
+   "name": "mm2pPhycomidXpValue",
+   "value": 350,
+   "comment": "The phycomid xpValue (the 280 + 5/hp block: 280 + 5x14)"
+  },
+  {
+   "name": "mm2pPhycomidXpLevel",
+   "value": 5,
+   "comment": "The phycomid experience level (the roman V)"
+  },
+  {
+   "name": "mm2pPlanetarXpValue",
+   "value": 65040,
+   "comment": "The planetar xpValue (the 60000 + 35/hp block: 60000 + 35x144)"
+  },
+  {
+   "name": "mm2pPlanetarXpLevel",
+   "value": 10,
+   "comment": "The planetar experience level (the roman X)"
+  },
+  {
+   "name": "mm2pPseudoundeadXpValue",
+   "value": 0,
+   "comment": "The pseudo-undead xpValue (the 0 + 0/hp block: 0 + 0x0)"
+  },
+  {
+   "name": "mm2pPseudoundeadXpLevel",
+   "value": 0,
+   "comment": "The pseudo-undead experience level (the roman The pseudo-undead experience level (the print Nil/nil block))"
+  },
+  {
+   "name": "mm2pPuddingBrownXpValue",
+   "value": 2208,
+   "comment": "The brown pudding xpValue (the 1600 + 16/hp block: 1600 + 16x38)"
+  },
+  {
+   "name": "mm2pPuddingBrownXpLevel",
+   "value": 8,
+   "comment": "The brown pudding experience level (the roman VIII)"
+  },
+  {
+   "name": "mm2pPuddingDunXpValue",
+   "value": 1348,
+   "comment": "The dun pudding xpValue (the 1000 + 12/hp block: 1000 + 12x29)"
+  },
+  {
+   "name": "mm2pPuddingDunXpLevel",
+   "value": 8,
+   "comment": "The dun pudding experience level (the roman VIII)"
+  },
+  {
+   "name": "mm2pPuddingWhiteXpValue",
+   "value": 1572,
+   "comment": "The white pudding xpValue (the 1200 + 12/hp block: 1200 + 12x31)"
+  },
+  {
+   "name": "mm2pPuddingWhiteXpLevel",
+   "value": 8,
+   "comment": "The white pudding experience level (the roman VIII)"
+  },
+  {
+   "name": "mm2pPyroliskXpValue",
+   "value": 325,
+   "comment": "The pyrolisk xpValue (the 240 + 5/hp block: 240 + 5x17)"
+  },
+  {
+   "name": "mm2pPyroliskXpLevel",
+   "value": 4,
+   "comment": "The pyrolisk experience level (the roman IV)"
+  },
+  {
+   "name": "mm2pParaElementalPlaneCount",
+   "value": 4,
+   "comment": "The para-elemental planes (Ice, Ooze, Magma and Smoke, between the major planes of Earth, Air, Fire and Water)"
+  },
+  {
+   "name": "mm2pParaElementalHdCategories",
+   "value": 3,
+   "comment": "The conjured hit-dice-strength categories (16 HD by spell, 12 HD by summoning device, 8 HD by staff)"
+  },
+  {
+   "name": "mm2pParaElementalSpellHd",
+   "value": 16,
+   "comment": "The spell-conjured para-elemental strength (16 HD)"
+  },
+  {
+   "name": "mm2pParaElementalDeviceHd",
+   "value": 12,
+   "comment": "The device-conjured para-elemental strength (12 HD)"
+  },
+  {
+   "name": "mm2pParaElementalStaffHd",
+   "value": 8,
+   "comment": "The staff-conjured para-elemental strength (8 HD)"
+  },
+  {
+   "name": "mm2pParaElementalEscapePctBase",
+   "value": 100,
+   "comment": "The chance of not getting the summoned para-elemental but one from an adjoining major plane (100% minus 5% per summoner level)"
+  },
+  {
+   "name": "mm2pParaElementalEscapePctPerLevel",
+   "value": 5,
+   "comment": "The escape-chance reduction per level of the summoner"
+  },
+  {
+   "name": "mm2pParaElementalWeaponFloor",
+   "value": 1,
+   "comment": "The weapon enchantment floor (+1 or better to hit)"
+  },
+  {
+   "name": "mm2pParaElementalHdlessFloor",
+   "value": 4,
+   "comment": "The hit-dice floor for creatures without magical ability (4 hit dice or less cannot harm a para-elemental)"
+  },
+  {
+   "name": "mm2pParaIceColdAuraFeet",
+   "value": 10,
+   "comment": "The ice para-elemental cold aura radius in feet (1-4 damage per round within 10 feet)"
+  },
+  {
+   "name": "mm2pParaIceColdAuraDamageMin",
+   "value": 1,
+   "comment": "The cold aura damage minimum per round"
+  },
+  {
+   "name": "mm2pParaIceColdAuraDamageMax",
+   "value": 4,
+   "comment": "The cold aura damage maximum per round"
+  },
+  {
+   "name": "mm2pParaIceFreezeAreaSqFt",
+   "value": 100,
+   "comment": "The freeze-on-touch area in square feet per round"
+  },
+  {
+   "name": "mm2pParaIceFreezeDepthInches",
+   "value": 6,
+   "comment": "The freeze-on-touch depth in inches"
+  },
+  {
+   "name": "mm2pParaIceHealPerRoundMin",
+   "value": 1,
+   "comment": "The ice-contact healing rate minimum (1-8 hit points per round)"
+  },
+  {
+   "name": "mm2pParaIceHealPerRoundMax",
+   "value": 8,
+   "comment": "The ice-contact healing rate maximum"
+  },
+  {
+   "name": "mm2pParaSmokeEngageRadiusFeet",
+   "value": 10,
+   "comment": "The smoke para-elemental engagement radius in feet"
+  },
+  {
+   "name": "mm2pParaSmokeBlindHitPenalty",
+   "value": 2,
+   "comment": "The blinding-smoke to-hit penalty (-2 on a failed save vs. poison)"
+  },
+  {
+   "name": "mm2pParaMagmaHeatRadiusFeet",
+   "value": 20,
+   "comment": "The magma heat-metal effect radius in feet"
+  },
+  {
+   "name": "mm2pParaMagmaHotMetalRound2DamageMax",
+   "value": 4,
+   "comment": "The 2nd-round hot metal wielder damage maximum (1-4)"
+  },
+  {
+   "name": "mm2pParaMagmaMetalRound3DamageMin",
+   "value": 2,
+   "comment": "The 3rd-round metal-user damage minimum (2-8)"
+  },
+  {
+   "name": "mm2pParaMagmaMetalRound3DamageMax",
+   "value": 8,
+   "comment": "The 3rd-round metal-user damage maximum"
+  },
+  {
+   "name": "mm2pParaMagmaNonmetalRound3DamageMax",
+   "value": 4,
+   "comment": "The 3rd-round nonmetal-user damage maximum (1-4)"
+  },
+  {
+   "name": "mm2pParaOozeConstrictDamageMin",
+   "value": 2,
+   "comment": "The ooze constrict damage minimum per round (2-16)"
+  },
+  {
+   "name": "mm2pParaOozeConstrictDamageMax",
+   "value": 16,
+   "comment": "The ooze constrict damage maximum per round"
+  },
+  {
+   "name": "mm2pPechStoneShapePerDay",
+   "value": 4,
+   "comment": "The stone shape spells per day (4 per pech)"
+  },
+  {
+   "name": "mm2pPechStoneTellPerDay",
+   "value": 4,
+   "comment": "The stone tell spells per day (4 per pech)"
+  },
+  {
+   "name": "mm2pPechWallOfStoneGroupCount",
+   "value": 4,
+   "comment": "The pech together casting a wall of stone (four together)"
+  },
+  {
+   "name": "mm2pPechWallOfStoneCasterLevel",
+   "value": 16,
+   "comment": "The wall of stone casting level (as if 16th-level magic-users)"
+  },
+  {
+   "name": "mm2pPechStoneToFleshGroupCount",
+   "value": 8,
+   "comment": "The pech together casting a stone to flesh (eight together)"
+  },
+  {
+   "name": "mm2pPechGroupSpellsPerDay",
+   "value": 1,
+   "comment": "The group spells cast but once per day by any group"
+  },
+  {
+   "name": "mm2pPechLairGemsMin",
+   "value": 50,
+   "comment": "The lair gems minimum (50-100)"
+  },
+  {
+   "name": "mm2pPechLairGemsMax",
+   "value": 100,
+   "comment": "The lair gems maximum"
+  },
+  {
+   "name": "mm2pPechLairJewelryMin",
+   "value": 5,
+   "comment": "The lair jewelry minimum (5-30 pieces of lowest base value)"
+  },
+  {
+   "name": "mm2pPechLairJewelryMax",
+   "value": 30,
+   "comment": "The lair jewelry maximum"
+  },
+  {
+   "name": "mm2pPechJewelryAvgWeightGp",
+   "value": 150,
+   "comment": "The average jewelry weight in gp each"
+  },
+  {
+   "name": "mm2pPechYoungPctMin",
+   "value": 20,
+   "comment": "The lair young percentage minimum (20-50% of the females)"
+  },
+  {
+   "name": "mm2pPechYoungPctMax",
+   "value": 50,
+   "comment": "The lair young percentage maximum"
+  },
+  {
+   "name": "mm2pPedipalpHugeCrushDamageMin",
+   "value": 2,
+   "comment": "The huge pedipalp crushing damage minimum (2-12, the same as 2 pincer hits)"
+  },
+  {
+   "name": "mm2pPedipalpHugeCrushDamageMax",
+   "value": 12,
+   "comment": "The huge pedipalp crushing damage maximum"
+  },
+  {
+   "name": "mm2pPedipalpGiantAutoBiteDamageMax",
+   "value": 8,
+   "comment": "The giant pedipalp automatic bite damage maximum (2-8)"
+  },
+  {
+   "name": "mm2pPedipalpGiantCrushDamageMin",
+   "value": 2,
+   "comment": "The giant pedipalp crushing damage minimum (2-16, the same as 2 pincer hits)"
+  },
+  {
+   "name": "mm2pPedipalpGiantCrushDamageMax",
+   "value": 16,
+   "comment": "The giant pedipalp crushing damage maximum"
+  },
+  {
+   "name": "mm2pPedipalpGiantGasRadiusFeet",
+   "value": 20,
+   "comment": "The noxious vapor radius in feet"
+  },
+  {
+   "name": "mm2pPedipalpGiantGasToHitPenalty",
+   "value": 3,
+   "comment": "The gas to-hit penalty on a failed save vs. poison (-3 for 1-6 rounds)"
+  },
+  {
+   "name": "mm2pPedipalpGiantGasDurationRoundsMin",
+   "value": 1,
+   "comment": "The gas penalty duration minimum in rounds"
+  },
+  {
+   "name": "mm2pPedipalpGiantGasDurationRoundsMax",
+   "value": 6,
+   "comment": "The gas penalty duration maximum in rounds"
+  },
+  {
+   "name": "mm2pPedipalpGiantGasUsesPerDay",
+   "value": 3,
+   "comment": "The gas discharges per day (3)"
+  },
+  {
+   "name": "mm2pPedipalpGiantSeverRollAbove",
+   "value": 3,
+   "comment": "The pincer severing requires a roll 3 higher than the normal to-hit number"
+  },
+  {
+   "name": "mm2pPhantomGazeSavePenalty",
+   "value": 2,
+   "comment": "The gaze save penalty (save vs. spells at -2 or panic and run away)"
+  },
+  {
+   "name": "mm2pPhoenixWhistleRadiusFeet",
+   "value": 30,
+   "comment": "The piercing whistle radius in feet"
+  },
+  {
+   "name": "mm2pPhoenixWhistleInitiativeBonus",
+   "value": 3,
+   "comment": "The whistle initiative advantage (+3 on its initiative die)"
+  },
+  {
+   "name": "mm2pPhoenixSpellLevel",
+   "value": 20,
+   "comment": "The phoenix spell-like power level (20th)"
+  },
+  {
+   "name": "mm2pPhoenixDispelMagicLevel",
+   "value": 40,
+   "comment": "The wing-and-call dispel illusion or dispel magic level (40th)"
+  },
+  {
+   "name": "mm2pPhoenixExorciseLevel",
+   "value": 40,
+   "comment": "The dance acts as a double-strength (40th level) exorcise spell"
+  },
+  {
+   "name": "mm2pPhoenixWingTouchesPerDay",
+   "value": 2,
+   "comment": "The cure light wounds wing touches per individual per day per phoenix"
+  },
+  {
+   "name": "mm2pPhoenixWeaponFloor",
+   "value": 3,
+   "comment": "The weapon enchantment floor (+3 or better weapons)"
+  },
+  {
+   "name": "mm2pPhoenixInfravisionFeet",
+   "value": 120,
+   "comment": "The phoenix infravision in feet (120)"
+  },
+  {
+   "name": "mm2pPhoenixEggHatchDays",
+   "value": 20,
+   "comment": "The gem-like egg days to arise a new phoenix (20)"
+  },
+  {
+   "name": "mm2pPhoenixBloodSeedPerDamage",
+   "value": 5,
+   "comment": "One fire seed per 5 points of damage taken (the holly berry type)"
+  },
+  {
+   "name": "mm2pPhoenixFeatherGp",
+   "value": 50,
+   "comment": "The average feather value in gp (50 each)"
+  },
+  {
+   "name": "mm2pPhoenixBeakValueMultiplier",
+   "value": 100,
+   "comment": "The gem-like beak, talons and eyes value (a hundred times the feathers)"
+  },
+  {
+   "name": "mm2pPhoenixProtectionRadiusFeet",
+   "value": 10,
+   "comment": "The protection from evil radius in feet (10-foot radius)"
+  },
+  {
+   "name": "mm2pPhycomidGlobRangeMinFeet",
+   "value": 7,
+   "comment": "The alkaline glob range minimum in feet (7-12)"
+  },
+  {
+   "name": "mm2pPhycomidGlobRangeMaxFeet",
+   "value": 12,
+   "comment": "The alkaline glob range maximum in feet"
+  },
+  {
+   "name": "mm2pPhycomidInfectionOnsetRoundsMin",
+   "value": 5,
+   "comment": "The infected-area growth onset minimum in rounds (5-8)"
+  },
+  {
+   "name": "mm2pPhycomidInfectionOnsetRoundsMax",
+   "value": 8,
+   "comment": "The infected-area growth onset maximum in rounds"
+  },
+  {
+   "name": "mm2pPhycomidInfectionDamageMin",
+   "value": 5,
+   "comment": "The growth damage minimum (5-8)"
+  },
+  {
+   "name": "mm2pPhycomidInfectionDamageMax",
+   "value": 8,
+   "comment": "The growth damage maximum"
+  },
+  {
+   "name": "mm2pPhycomidHostDeathTurnsMin",
+   "value": 5,
+   "comment": "The host death minimum in turns (5-8)"
+  },
+  {
+   "name": "mm2pPhycomidHostDeathTurnsMax",
+   "value": 8,
+   "comment": "The host death maximum in turns"
+  },
+  {
+   "name": "mm2pPhycomidFireSaveBonus",
+   "value": 4,
+   "comment": "The fire-based attack saving throw bonus (+4)"
+  },
+  {
+   "name": "mm2pPlanetarSpiritGroupMin",
+   "value": 100,
+   "comment": "The planetar spirit group numbers not fewer than 100"
+  },
+  {
+   "name": "mm2pPlanetarBastardSwordPlus",
+   "value": 4,
+   "comment": "The planetar bastard sword (usable only by planetars) equals a +4 weapon with defender and wounding qualities"
+  },
+  {
+   "name": "mm2pPlanetarDexterity",
+   "value": 21,
+   "comment": "The planetar dexterity for attack determination (21)"
+  },
+  {
+   "name": "mm2pPlanetarFighterLevel",
+   "value": 17,
+   "comment": "The planetar fighting ability (17th level)"
+  },
+  {
+   "name": "mm2pPlanetarWisdom",
+   "value": 21,
+   "comment": "The planetar wisdom (21)"
+  },
+  {
+   "name": "mm2pPlanetarClericLevel",
+   "value": 7,
+   "comment": "The spell-like abilities equal to a 7th-level cleric"
+  },
+  {
+   "name": "mm2pPlanetarDruidLevel",
+   "value": 7,
+   "comment": "The spell-like abilities equal to a 7th-level druid"
+  },
+  {
+   "name": "mm2pPlanetarPsionic",
+   "value": 288,
+   "comment": "The planetar psionic ability (288)"
+  },
+  {
+   "name": "mm2pPlanetarWeaponFloor",
+   "value": 4,
+   "comment": "The weapon enchantment floor (+4 or better weapons)"
+  },
+  {
+   "name": "mm2pPlanetarRegenerationPerRound",
+   "value": 4,
+   "comment": "The planetar regeneration rate (4 points per round)"
+  },
+  {
+   "name": "mm2pPlanetarReformDecades",
+   "value": 4,
+   "comment": "The spirit re-forms and becomes corporeal again in 4 decades"
+  },
+  {
+   "name": "mm2pPlanetarGateUsesPerDay",
+   "value": 1,
+   "comment": "The deva gate uses per day (1-3, 1-4, or 1-6 of the appropriate sort)"
+  },
+  {
+   "name": "mm2pPlanetarCharisma",
+   "value": 21,
+   "comment": "The charisma effect (21)"
+  },
+  {
+   "name": "mm2pPlanetarInfravisionInches",
+   "value": 12,
+   "comment": "The planetar infravision in inches (12)"
+  },
+  {
+   "name": "mm2pPlanetarProtectionRadiusFeet",
+   "value": 40,
+   "comment": "The globe of protection from evil maximum radius in feet (individual size to a full 40-foot radius)"
+  },
+  {
+   "name": "mm2pPseudoundeadInfravisionInches",
+   "value": 6,
+   "comment": "The pseudo-undead normal infravision (6 inches)"
+  },
+  {
+   "name": "mm2pPseudoundeadLairPct",
+   "value": 50,
+   "comment": "The pseudo-undead percentage in lair (50%)"
+  },
+  {
+   "name": "mm2pPuddingDunChainmailRounds",
+   "value": 2,
+   "comment": "The dun pudding eats chainmail in 2 rounds (half the black pudding rate)"
+  },
+  {
+   "name": "mm2pPuddingDunPlateRounds",
+   "value": 4,
+   "comment": "The dun pudding eats plate in 4 rounds"
+  },
+  {
+   "name": "mm2pPuddingWhiteSnowMistakePct",
+   "value": 50,
+   "comment": "The white pudding mistaken-for-snow chance (50%)"
+  },
+  {
+   "name": "mm2pPyroliskGazeDamageMin",
+   "value": 2,
+   "comment": "The failed-gaze-save damage minimum (2-13)"
+  },
+  {
+   "name": "mm2pPyroliskGazeDamageMax",
+   "value": 13,
+   "comment": "The failed-gaze-save damage maximum"
+  },
+  {
+   "name": "mm2pPyroliskFireworksRangeFeet",
+   "value": 30,
+   "comment": "The fire-source explosion range in feet (any fire source within 30 feet)"
+  },
+  {
+   "name": "mm2pPyroliskFireworksAreaMultiplier",
+   "value": 10,
+   "comment": "The fireworks area of effect is 10 times that of the fire source"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2pParaElementalTurnsOnSummoner",
+   "value": true,
+   "comment": "Control over a para-elemental must be maintained at all times, otherwise it will turn on its summoner"
+  },
+  {
+   "name": "mm2pParaIceFireDoubleDamage",
+   "value": true,
+   "comment": "Fire-based attacks do double damage to an ice para-elemental"
+  },
+  {
+   "name": "mm2pParaIceColdUsersDamageDiceMinus1",
+   "value": true,
+   "comment": "Attacks against cold-using opponents are at -1 to damage dice"
+  },
+  {
+   "name": "mm2pParaSmokeFogDoubleDamage",
+   "value": true,
+   "comment": "The fog-form does double damage when it hits a target"
+  },
+  {
+   "name": "mm2pParaSmokeAirAttacksDamageDiceMinus1",
+   "value": true,
+   "comment": "Smoke elementals are -1 on damage dice from all air-based attacks, including those from air elementals"
+  },
+  {
+   "name": "mm2pParaMagmaFlammablesIgnite",
+   "value": true,
+   "comment": "Wood and other flammable objects brought in contact with the para-elemental or metal heated by it burst into flame"
+  },
+  {
+   "name": "mm2pParaOozeConstrictsUntilReleased",
+   "value": true,
+   "comment": "The ooze constricts until the para-elemental is dispelled, defeated, or releases the opponent on command of the summoner"
+  },
+  {
+   "name": "mm2pParaOozeMutableForm",
+   "value": true,
+   "comment": "The ooze para-elemental's form is mutable, fitting into tight crevices and beneath doorways with ease"
+  },
+  {
+   "name": "mm2pPechImmuneToPetrification",
+   "value": true,
+   "comment": "Pech are immune to petrification"
+  },
+  {
+   "name": "mm2pPechFullAttackVsLithicMonsters",
+   "value": true,
+   "comment": "Against lithic monsters such as a stone golem the pech have full normal attack capability, knocking them to rubble"
+  },
+  {
+   "name": "mm2pPechHateBrightLight",
+   "value": true,
+   "comment": "Pech hate bright light and open skies"
+  },
+  {
+   "name": "mm2pPechFemalesEqualMales",
+   "value": true,
+   "comment": "In their lair the females equal the number of males"
+  },
+  {
+   "name": "mm2pPechInfraAndUltravision",
+   "value": true,
+   "comment": "Pech have both infra- and ultravision"
+  },
+  {
+   "name": "mm2pPedipalpLargeCannotHoldLargerPrey",
+   "value": true,
+   "comment": "The large pedipalpi are incapable of holding any prey larger than themselves"
+  },
+  {
+   "name": "mm2pPedipalpHugeGripBreaksAsDoors",
+   "value": true,
+   "comment": "The chance of breaking the huge pedipalp grip is the same as that for opening doors"
+  },
+  {
+   "name": "mm2pPedipalpGiantGripBreaksOnlyByKillOrSever",
+   "value": true,
+   "comment": "The giant pedipalp grip may be broken only by killing the monster or severing the pincer"
+  },
+  {
+   "name": "mm2pPhantomCannotBeHarmed",
+   "value": true,
+   "comment": "Phantoms are merely images and cannot themselves be harmed"
+  },
+  {
+   "name": "mm2pPhantomNotTurnedAsUndead",
+   "value": true,
+   "comment": "Phantoms may not be turned as undead"
+  },
+  {
+   "name": "mm2pPhantomExorcismDispels",
+   "value": true,
+   "comment": "The clerical spell exorcism will dispel a phantom"
+  },
+  {
+   "name": "mm2pPhantomNeitherAliveNorUndead",
+   "value": true,
+   "comment": "Phantoms have no intelligence and neither are they alive or undead"
+  },
+  {
+   "name": "mm2pPhoenixNeverSurprised",
+   "value": true,
+   "comment": "The phoenix can never be surprised"
+  },
+  {
+   "name": "mm2pPhoenixEtherealAndAstralTravel",
+   "value": true,
+   "comment": "The phoenix can become ethereal and travel astrally or ethereally"
+  },
+  {
+   "name": "mm2pPhoenixDetectsCharmsEvilMagic",
+   "value": true,
+   "comment": "A phoenix automatically detects charms, evil, and magic"
+  },
+  {
+   "name": "mm2pPhoenixCannotAttackOrBeAttackedPsionically",
+   "value": true,
+   "comment": "The phoenix can neither attack nor be attacked by psionic means"
+  },
+  {
+   "name": "mm2pPhoenixCombActsAsStaffOfCuring",
+   "value": true,
+   "comment": "A touch of the comb gives an effect equal to cure disease, restricted as a staff of curing"
+  },
+  {
+   "name": "mm2pPhoenixSpeaksWithAllAvians",
+   "value": true,
+   "comment": "A phoenix can speak with all avians"
+  },
+  {
+   "name": "mm2pPhycomidImmuneToMentalAttacks",
+   "value": true,
+   "comment": "Phycomids are immune to all forms of mental attacks, including charms, holds, etc."
+  },
+  {
+   "name": "mm2pPhycomidFireHalfOrNone",
+   "value": true,
+   "comment": "Fire-based damage is either half-normal or none"
+  },
+  {
+   "name": "mm2pPhycomidCureDiseaseStopsSpread",
+   "value": true,
+   "comment": "A cure disease spell will stop the spread through the host"
+  },
+  {
+   "name": "mm2pPlanetarNeverSurprised",
+   "value": true,
+   "comment": "Planetars are never surprised"
+  },
+  {
+   "name": "mm2pPlanetarImmuneToLevelLoss",
+   "value": true,
+   "comment": "Planetars are immune to any life level loss, whether from undead or magic"
+  },
+  {
+   "name": "mm2pPlanetarImmuneToDeathSpells",
+   "value": true,
+   "comment": "Planetars are immune to death spells"
+  },
+  {
+   "name": "mm2pPlanetarSoulsCannotBeTrapped",
+   "value": true,
+   "comment": "Planetar souls cannot be imprisoned or trapped"
+  },
+  {
+   "name": "mm2pPlanetarCuresByTouch",
+   "value": true,
+   "comment": "Each planetar can always cure blindness, deafness, disease or light wounds by touch"
+  },
+  {
+   "name": "mm2pPseudoundeadNotTurnedByCleric",
+   "value": true,
+   "comment": "The pseudo-undead cannot be turned by a cleric and have no connection to the Negative Material Plane"
+  },
+  {
+   "name": "mm2pPseudoundeadAvoidSunlightNotHarmed",
+   "value": true,
+   "comment": "The pseudo-undead avoid sunlight but are not harmed by it"
+  },
+  {
+   "name": "mm2pPseudoundeadNeverNearTrueUndead",
+   "value": true,
+   "comment": "The pseudo-undead are never found with or near true undead"
+  },
+  {
+   "name": "mm2pPseudoundeadGhastStench",
+   "value": true,
+   "comment": "The stench of pseudoghasts has the same effect as that of ghasts"
+  },
+  {
+   "name": "mm2pPseudowraithWalksNotFlies",
+   "value": true,
+   "comment": "Pseudowraiths and pseudospectres cannot fly but walk so lightly as to leave no trace"
+  },
+  {
+   "name": "mm2pPseudovampireRedEyes",
+   "value": true,
+   "comment": "Pseudovampires have red eyes and behave menacingly but have no special abilities"
+  },
+  {
+   "name": "mm2pPuddingWeaponsDivideIt",
+   "value": true,
+   "comment": "Lightning bolts or blows from weapons divide deadly puddings into viable creatures of smaller size"
+  },
+  {
+   "name": "mm2pPuddingAcidColdPoisonImmune",
+   "value": true,
+   "comment": "Acid, cold and poison have no effect on deadly puddings"
+  },
+  {
+   "name": "mm2pPuddingFireAndMagicMissileNormalDamage",
+   "value": true,
+   "comment": "Fire causes normal damage, as do magic missile spells"
+  },
+  {
+   "name": "mm2pPuddingBrownDoesNotDissolveMetal",
+   "value": true,
+   "comment": "Brown puddings do not dissolve metals but do destroy leather or wood in a single round"
+  },
+  {
+   "name": "mm2pPuddingWhiteDoesNotAffectMetal",
+   "value": true,
+   "comment": "White puddings do not affect metals but dissolve animal or vegetable materials in a single round"
+  },
+  {
+   "name": "mm2pPyroliskImmuneToFire",
+   "value": true,
+   "comment": "The pyrolisk is immune to all fire-based attacks, magical and normal"
+  },
+  {
+   "name": "mm2pPyroliskMortalEnemyPhoenix",
+   "value": true,
+   "comment": "The pyrolisk mortal enemy is the phoenix, as the latter is also immune to fire and detests Evil"
+  },
+  {
+   "name": "mm2pPyroliskSaveGrantsImmunity",
+   "value": true,
+   "comment": "Any victim making his or her saving throw is thereafter immune to the gaze of that particular pyrolisk"
+  },
+  {
+   "name": "mm2pPyroliskFireResistantImmuneToGaze",
+   "value": true,
+   "comment": "Any creature innately or magically fire-resistant is immune to the gaze attack"
+  }
+ ],
+ "inline_count": 201,
+ "prev_record": [
+  "- R809 LANDED 2026-10-24: commit 3dc3c4f9e871bf758af4197af9d6c9d50aa91587",
+  "  (census 731 -> 732, pushed 118095a..3dc3c4f), THE",
+  "  MM2 LETTER O WALK - the obliviax, ogre aquatic (merrow),",
+  "  oliphant, ophidian, opinicus, otter and owl turns -",
+  "  the O-FLIP round (Curtiss Go call on the landed LMN",
+  "  walk; round fourteen of the MM2 arc, the THIRD",
+  "  single-letter pass). THE PIN-TIME WALK: seven entries",
+  "  on pp. 96-97, the obliviax, the ogre aquatic (merrow)",
+  "  and the oliphant p. 96, the ophidian, the opinicus,",
+  "  the otter and the owl p. 97 (the owl prose onto p.",
+  "  98), all with stat blocks - no doctrine-only family",
+  "  heads; the MM1 registry already owned the octopus,",
+  "  the ogre, the ogre magi, the oni, the ornitholestes,",
+  "  the otyugh and the owlbear prints. Seven .lua defs",
+  "  ride the R791 data_files extension, registry 699 ->",
+  "  706. Header rules/mm2o.h, prefix mm2o, 96 consts +",
+  "  23 bools + the 7x10 OStats grid = 129 inline. THE",
+  "  O-FLIP: the Letter O gap box flips to closed - 20",
+  "  closed 17 open. The settled reads: the merrow 3 or",
+  "  1 max attack read, the ophidian 1 and 1 sum read,",
+  "  the obliviax flat-hp 1-2 read, the otter 1-1 bonus,",
+  "  the oliphant 10+5 trained variant as consts, the",
+  "  opinicus -2 unquoted armor class. One regtest patch:",
+  "  the R809 live def walk at the R227 anchor, its",
+  "  registry census a FLOOR 699 -> at least 706.",
+  "  Preflight GREEN: engine double-run applied 13/",
+  "  already 0 then 0/13; rverify GREEN vs 118095a -",
+  "  189 mutants, 0 missed; offline loader sim GREEN",
+  "  (706 defs, 0 errors). Commit 12 files, 2866",
+  "  insertions. Delivery spec-r809: raw JSON canvas,",
+  "  authored md5 376be7f54b656fd9e3bbdb298039ce68,",
+  "  57239 bytes, landed the same. NEXT - R810: awaits",
+  "  Curtiss call (the natural next walk the Letter P",
+  "  box; 17 open boxes remain)."
+ ]
+}

@@ -1,0 +1,36 @@
+-- Planetar: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Planetar",
+  page = "101",
+  pages = "101-102",
+  source = "MM2",
+  race = "Planetar",
+  hitDice = "144 hp",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "144",
+  armorClass = -7,
+  numAttacks = 3,
+  damage = "By weapon type +7 (strength bonus)",
+  xp = "60000",
+  xpPerHp = "35",
+  xpValue = "65040",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "15\"/48\"//24\" (MC: B)",
+  size = "L (8 1/2' tall)",
+  intelligence = "Supra-genius; wisdom: 21",
+  alignment = "Good",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "75%",
+  psionic = "288",
+  attackDefenseModes = "All/all",
+  text = "A planetar is one of a powerful spirit group, numbering not fewer than 100, who serve the deities of good alignment. One or more will typically serve as the right hand of a minor deity, while numbers of planetars will attend a major deity. These creatures inhabit the Upper Outer Planes of Good but actually travel at will to any plane except the lowest (the Hells, Gehenna, Hades, Tarterus, the Abyss). If commanded by their deity, they can, in fact, enter even the lowest planes of Evil. Only a solar (q.v.) is more powerful in the cause of Good.\n\nPlanetars can be of any good alignment - lawful, neutral, or chaotic. Their specific alignment is determined by the master they serve. Each planetar has 3 attacks per round, typically with a bastard sword (usable only by planetars) equal to a +4 weapon with both defender (q.v.) and wounding (q.v.) qualities, the latter effective only against creatures of Evil. For purposes of attack determination, consider each planetar to have a dexterity of 21 and a 17th-level fighting ability. All planetars have spell-like abilities equal to those of a 7th-level cleric and 7th-level druid, plus bonuses to each (wisdom equals 21). In addition, they each have the following spell-like abilities which can be used 1 at a time, 1 per round, at will: animate object once per day, blade barrier 3 times per day, continual light up to 10\" radius, control weather once per day, dispel evil 3 times per day, dispel illusion 7 times per day, dispel magic 3 times per day, earthquake once per day, etherealness, feeblemind once per day, limited wish once per day, polymorph object, fire storm once per day, flame strike 3 times per day, heal 3 times per day, holy word once per day, improved invisibility up to 10-foot radius, insect plague once per day, polymorph self, raise dead 3 times per day, read magic, remove curse, remove fear, resist cold (double effect), resist fire (double effect), restoration once per day, shape change once per day, speak with dead, symbol (any) once per day, teleport with no error, true seeing 3 times per day, weather summoning once per day, wind walk 7 times per day.\n\nEach planetar radiates a globe of protection from evil from individual size to a full 40-foot radius, as desired. The maintenance of the area is automatic. A planetar can commune at need. Each can always cure blindness, deafness, disease or light wounds by touch. They automatically detect evil, illusion, invisibility, lie, magic and traps. Each always has know alignment functioning automatically. A planetar can communicate by ESP or tongues as well as read any language. Each always has infravision to 12\" and ultravision of double normal range. Once per day a planetar can gate in the indicated number (1-3, 1-4, or 1-6) of the appropriate sort of deva (q.v.) whether astral, monadic, or movanic. They can summon the following creatures once per day: lawful good - 1-4 couatl; neutral good - 1-2 baku; chaotic good - 1-2 androsphinx.\n\nPlanetars are affected by the attack forms indicated for devas (q.v.). Only +4 or better weapons affect them. They are never surprised. They are immune to any life level loss, whether from undead or magic. They cannot be beguiled, charmed, confused, dominated, or feebleminded. Their souls cannot be imprisoned or trapped. They are immune to death spells. They regenerate at a rate of 4 points per round. Unless encountered on the Upper Outer Planes, only the material body of these creatures can be harmed. The planetar's spirit returns to its own plane to re-form and become corporeal again; the process requires 4 decades. Charisma effect is 21.\n\nPsionic abilities are animal telepathy (14th level), aura alteration, body control, body equilibrium, body weaponry (9th level), mass domination (17th level), molecular agitation, precognition, reduction, telekinesis (17th level), and telepathic projection.\n\nA planetar resembles a tall and powerful humanoid. In material form the skin is opaline, the head hairless, and the eyes glowing blue. The wings are double and likewise opaline.",
+}

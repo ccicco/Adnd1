@@ -1,0 +1,36 @@
+-- Pudding, Deadly (Dun): promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pudding, Deadly (Dun)",
+  page = "102",
+  pages = "102",
+  source = "MM2",
+  race = "Pudding, Deadly (Dun)",
+  hitDice = "8+1",
+  hitDiceNum = "8",
+  hitDiceBonus = "1",
+  avgHp = "29",
+  armorClass = "7",
+  numAttacks = 1,
+  damage = "4-24",
+  xp = "1000",
+  xpPerHp = "12",
+  xpValue = "1348",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1 or 1-3",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "12\"",
+  size = "S to L (3' d. to 8' d.)",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard for all",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Each form of deadly pudding is a variety of the better-known black (deadly) pudding. Acid, cold and poison have no effect on deadly puddings. Lightning bolts or blows from weapons divide these monsters into viable creatures of smaller size. Fire causes normal damage, as do magic missile spells. Details of each type are given separately below. See \"Black Pudding\" for information on movement abilities.\n\nDun Pudding: Adapted to dwell in arid regions, these monsters scavenge barrens and deserts and feed on silicates if animal or vegetable matter is unavailable. They dissolve leather as does a brown pudding. Metals are eaten at a rate equal to half that of a black pudding, i.e., chainmail in 2 rounds, plate in 4. In other respects they are like brown puddings.",
+}

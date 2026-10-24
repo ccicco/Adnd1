@@ -1,0 +1,36 @@
+-- Pseudo-Undead: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pseudo-Undead",
+  page = "102",
+  pages = "102",
+  source = "MM2",
+  race = "Pseudo-Undead",
+  hitDice = "See below",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "0",
+  armorClass = "See below",
+  numAttacks = "See below",
+  damage = "See below",
+  xp = "Treat as human fighters (except pseudoghast, as below)",
+  xpPerHp = "Nil",
+  xpValue = "0",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "See below",
+  lairPct = "50",
+  treasure = "A",
+  move = "See below",
+  size = "M",
+  intelligence = "Low to average",
+  alignment = "Neutral evil",
+  specialAttacks = "Nil",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The pseudo-undead are humanoid creatures who prosper due to their physical similarity to certain undead monsters, such as ghouls, ghasts, wights, wraiths, spectres, and vampires. Each pseudo-undead looks and smells exactly like its parallel. The same number appear. The armor class, movement rate, hit dice, number of attacks, and damage are the same. Thus they can be moderately dangerous. However, they lack the special attack forms (paralysis, level drain, etc.) of the undead, though they have normal (6\") infravision. Note that the stench of pseudoghasts has the same effect as that of ghasts. Pseudowraiths and pseudospectres cannot fly but walk so lightly as to leave no trace, and are often thought (unless closely observed) to be floating above the surface, although this is an illusion. Pseudovampires have red eyes and behave menacingly but have no special abilities.\n\nPseudovampires are more nearly human than others of the genre and have been known to interbreed. Several clans of bandits (q.v.) are known to have been thereby engendered, their members ranging in power from that of normal bandits (though of pale and menacing visage) to leaders and spell casters of full pseudovampire status in addition to their bandit abilities. Other man/pseudovampire combinations may be possible.\n\nThe pseudo-undead cannot be turned by a cleric and have no connection to the Negative Material Plane. They avoid sunlight but are not harmed by it. They are never found with or near true undead. Normal attacks affect them.",
+}

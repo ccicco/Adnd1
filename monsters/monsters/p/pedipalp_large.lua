@@ -1,0 +1,36 @@
+-- Pedipalp, Large (Schizomida): promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pedipalp, Large (Schizomida)",
+  page = "100",
+  pages = "100",
+  source = "MM2",
+  race = "Pedipalp, Large (Schizomida)",
+  hitDice = "1+1",
+  hitDiceNum = "1",
+  hitDiceBonus = "1",
+  avgHp = "4",
+  armorClass = "7",
+  numAttacks = 1,
+  damage = "1-8",
+  xp = "20",
+  xpPerHp = "2",
+  xpValue = "28",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-4",
+  lairPct = "5",
+  treasure = "M, Q (x2)",
+  move = "12\"",
+  size = "S",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "",
+  magicResistance = "Standard for all",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Commonly called whip scorpions, these creatures can be found in nearly any climate except that of arctic or tundra. They appear to be a cross between a spider and a scorpion. Pedipalpi may be found in a variety of different colorings, browns and tans being the most common.\n\nLarge Pedipalp: The smallest of the pedipalpi, the schizomidae, have no obvious whips, although they do have 2 grasping arms and fearsome-looking mandibles. They are incapable of holding any prey larger than themselves.",
+}

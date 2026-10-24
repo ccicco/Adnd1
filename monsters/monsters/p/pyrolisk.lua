@@ -1,0 +1,36 @@
+-- Pyrolisk: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pyrolisk",
+  page = "103",
+  pages = "103",
+  source = "MM2",
+  race = "Pyrolisk",
+  hitDice = "4+3",
+  hitDiceNum = "4",
+  hitDiceBonus = "3",
+  avgHp = "17",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "1-4",
+  xp = "240",
+  xpPerHp = "5",
+  xpValue = "325",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-4",
+  lairPct = "30",
+  treasure = "D",
+  move = "6\"/18\" (MC: C)",
+  size = "S",
+  intelligence = "Low",
+  alignment = "Neutral evil",
+  specialAttacks = "Gaze",
+  specialDefenses = "Immune to fire",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "This monster is nearly identical to the cockatrice (q.v.), except that close inspection will reveal 1 red feather in the tail and a reddish cast to the grey wings. The pyrolisk inhabits temperate to tropical regions, as does its cousin. In addition to its minor beak attack, the creature has a gaze which, if met, causes the victim to erupt in flames from within, killing it instantly if a saving throw vs. petrification falls and doing 2-13 points of damage otherwise. Any creature innately or magically fire-resistant (whether by spell, ring, or other effect) is immune to this gaze attack, and any victim making his or her saving throw is thereafter immune to the gaze of that particular pyrolisk. The creature can, in addition, cause any fire source within 30 feet to explode in fireworks, an effect identical to the druidical pyrotechnics spell (q.v.). It does so at will, once per round, for the sheer joy of the flames; the area of effect is 10 times that of the fire source, lasts for a full round, and temporarily blinds all those within it. The pyrolisk is immune to all fire-based attacks, magical and normal. Its mortal enemy is the phoenix, as the latter is also immune to fire and detests Evil.",
+}

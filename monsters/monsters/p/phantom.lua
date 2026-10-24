@@ -1,0 +1,36 @@
+-- Phantom: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Phantom",
+  page = "100",
+  pages = "100",
+  source = "MM2",
+  race = "Phantom",
+  hitDice = "Nil",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "0",
+  armorClass = "Nil",
+  numAttacks = "Nil",
+  damage = "Nil",
+  xp = "Nil",
+  xpPerHp = "Nil",
+  xpValue = "0",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "9\"",
+  size = "M",
+  intelligence = "Nil",
+  alignment = "Any",
+  specialAttacks = "Fear",
+  specialDefenses = "Nil",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Phantoms are soulless shells left behind by a particularly strong death trauma. Phantoms are merely images and have no power to directly cause harm and cannot themselves be harmed. Because of the superstitious awe they inspire, however, anyone who gazes on the translucent form of a phantom must save vs. spells at -2 or immediately panic and run away as if under the effects of a fear spell.\n\nPhantoms are like a three dimensional motion picture image filmed at the time of a character's death in the area where he or she died. They have no intelligence and neither are they alive or undead. A phantom often records the death of the character or the images of what was foremost in the character's mind when he or she died.\n\nPhantoms are often mistaken for ghosts, haunts, or groaning spirits, but they may not be turned as undead. The clerical spell exorcism will dispel a phantom.",
+}

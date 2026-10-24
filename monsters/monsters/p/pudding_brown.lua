@@ -1,0 +1,36 @@
+-- Pudding, Deadly (Brown): promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pudding, Deadly (Brown)",
+  page = "102",
+  pages = "102",
+  source = "MM2",
+  race = "Pudding, Deadly (Brown)",
+  hitDice = "11",
+  hitDiceNum = "11",
+  hitDiceBonus = "0",
+  avgHp = "38",
+  armorClass = "5",
+  numAttacks = 1,
+  damage = "5-20",
+  xp = "1600",
+  xpPerHp = "16",
+  xpValue = "2208",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1 or 1-4",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "6\"",
+  size = "S to L (3' d. to 8' d.)",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard for all",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Each form of deadly pudding is a variety of the better-known black (deadly) pudding. Acid, cold and poison have no effect on deadly puddings. Lightning bolts or blows from weapons divide these monsters into viable creatures of smaller size. Fire causes normal damage, as do magic missile spells. Details of each type are given separately below. See \"Black Pudding\" for information on movement abilities.\n\nBrown Pudding: This type dwells principally in marsh areas. It has a tougher skin but its attack is less effective than other varieties. Brown puddings do not dissolve metals but do destroy leather or wood in a single round, regardless of any magical pluses.",
+}

@@ -1,0 +1,36 @@
+-- Phycomid: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Phycomid",
+  page = "101",
+  pages = "101",
+  source = "MM2",
+  race = "Phycomid",
+  hitDice = "4",
+  hitDiceNum = "4",
+  hitDiceBonus = "0",
+  avgHp = "14",
+  armorClass = "5",
+  numAttacks = 2,
+  damage = "3-6/3-6",
+  xp = "280",
+  xpPerHp = "5",
+  xpValue = "350",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-4",
+  lairPct = "80",
+  treasure = "Incidental",
+  move = "3\"",
+  size = "S (2' diameter maximum)",
+  intelligence = "Unratable",
+  alignment = "Neutral (evil)",
+  specialAttacks = "Infection",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The algae-like phycomids resemble fibrous blobs of decomposing, milky-colored matter with capped fungi growing out of them. They exude a highly alkaline substance when attacking. When phycomids attack they extrude a tube and discharge the alkaline fluid in small globules that have a range of 7-12 feet. These fungoid monsters have sensory organs for heat, sound, and vibrations located in several clusters. In addition to alkaline damage, the globs which these creatures discharge might also cause victims to serve as hosts for new phycomid growth. If a victim fails to save vs. poison, the individual will begin to sprout mushroom-like growths in the infected area. This will occur in 5-8 rounds and inflict 5-8 points of damage. The growths will then begin to spread throughout the host body, killing it in 5-8 turns, and turning it into a new phycomid. A cure disease spell will stop the spread through the host.\n\nPhycomids are immune to all forms of mental attacks, including charms, holds, etc. Fire-based attacks are saved against at +4, and damage inflicted is either half-normal or none.",
+}

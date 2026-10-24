@@ -1,0 +1,36 @@
+-- Para-elemental, Ice: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Para-elemental, Ice",
+  page = "98",
+  pages = "98",
+  source = "MM2",
+  race = "Para-elemental, Ice",
+  hitDice = "8, 12, or 16",
+  hitDiceNum = "8",
+  hitDiceBonus = "0",
+  avgHp = "28",
+  armorClass = "3",
+  numAttacks = 1,
+  damage = "3-36",
+  xp = "2850",
+  xpPerHp = "15",
+  xpValue = "3270",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "6\"",
+  size = "L",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "Cold",
+  specialDefenses = "+1 or better weapons to hit",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The Para-elemental Plane of Cold is located at the juncture of the major elemental Planes of Air and Water, and para-elementals from that wintry land resemble tall, translucent, white humanoids coated with frost. Those coming within 10 feet of a cold para-elemental take 1-4 points damage per round due to the intense cold that surrounds its being. The cold para-elemental has the ability to freeze on touch water or liquids containing mostly water for up to 100 square feet per round to a depth of 6 inches. In addition, it may remove damage to itself if it is in contact with ice, snow, or sleet and takes no further damage while healing itself, at a rate of 1-8 hit points per round. Cold does half-damage to an ice para-elemental, while fire-based attacks do double damage. Attacks against cold-using opponents are at -1 to damage dice.\n\nThe ice para-elementals have a loose organization with no set leader, though there are rumors that several powerful ice-lords exist on their plane.",
+}

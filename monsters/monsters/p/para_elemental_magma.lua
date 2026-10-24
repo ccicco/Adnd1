@@ -1,0 +1,36 @@
+-- Para-elemental, Magma: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Para-elemental, Magma",
+  page = "98",
+  pages = "98-99",
+  source = "MM2",
+  race = "Para-elemental, Magma",
+  hitDice = "8, 12, or 16",
+  hitDiceNum = "8",
+  hitDiceBonus = "0",
+  avgHp = "28",
+  armorClass = "3",
+  numAttacks = 1,
+  damage = "4-24",
+  xp = "2850",
+  xpPerHp = "15",
+  xpValue = "3270",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "6\"",
+  size = "L",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+1 or better weapons to hit",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Magma para-elementals, often called heat para-elementals, are natives of the Para-elemental Plane of Magma, a rocky, volcanic place located at the edges of the Elemental Planes of Fire and Earth. Para-elementals summoned from this plane are humanoid from the waist up, and their legs and torsos are molten rock. The eyes and mouths of these creatures glow with a reddish light from the fires within.\n\nThe heat from a magma elemental is similar to the druidic heat metal spell, affecting all within 20 feet. During the 1st round of exposure, metals will grow hot; during the 2nd, metallic armor and weapons will do 1-4 points of damage to their wielders; and on the 3rd and succeeding rounds, metal-using characters will take 2-8 points damage and nonmetal-using characters will take 1-4 points. Leaving the area of the effect causes the damage to drop 1 level immediately and to disappear completely the following round. Wood and other flammable objects brought in contact with either the para-elemental or metal heated by it will burst into flame.\n\nThe Para-elemental Plane of Magma is a lonely volcanic plain spotted by volcanos, and its denizens carry out their tasks in packs with no set leader, although there may be exceptional para-elementals with magical power.",
+}

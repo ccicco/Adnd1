@@ -1,0 +1,36 @@
+-- Phoenix: promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Phoenix",
+  page = "100",
+  pages = "100-101",
+  source = "MM2",
+  race = "Phoenix",
+  hitDice = "20",
+  hitDiceNum = "20",
+  hitDiceBonus = "0",
+  avgHp = "70",
+  armorClass = -3,
+  numAttacks = "1 or 2",
+  damage = "2-12 or 1-8/1-8",
+  xp = "8600",
+  xpPerHp = "30",
+  xpValue = "10700",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (1-4)",
+  lairPct = "0",
+  treasure = "See below",
+  move = "6\"/39\" (MC: D)",
+  size = "M",
+  intelligence = "Genius",
+  alignment = "Neutral good",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "50%",
+  psionic = "See below",
+  attackDefenseModes = "See below",
+  text = "The phoenix, so rarely seen on the Prime Material Plane, is native to the Upper Outer Planes of Elysium. Of course, the phoenix is quite capable of dwelling in nearly any climate or even the void, as cold, heat, and like conditions won't harm it. However, a phoenix prefers beauty and sylvan peace and will typically be found only in such places on the Prime Material Plane. Unfortunately, phoenix feathers command an average of 50 gp each, their gem-like beak, talons, and eyes a hundred times that, and their bodies are prized by alchemists seeking to make certain potions. Thus, the rare phoenix is rarer still.\n\nA phoenix in flight attacks with its diamond-hard talons. When on the ground it has but a single attack with its long, sharp beak. However, being both intelligent and magical, a phoenix usually opts for more effective measures of attack and defense.\n\nThe piercing whistle voiced by a phoenix enables it to act first in melee, as opponents within a 30-foot radius are so affected by the sound as to give the phoenix a +3 advantage on its initiative die. With this advantage, the creature can use any of the following spell-like powers, 1 at a time, 1 per melee round, at 20th level: affect normal fires, audible glamor, blink, blindness, blur, call woodland beings once per day, control temperature within a 10-foot radius, continual light, color spray 3 times per day, dancing lights, duo-dimension once per day, find the path once per day, find traps, fire charm, fire quench once per day, fire seeds once per day, fire shield, fire storm once per day, heat metal 3 times per day, improved invisibility, incendiary cloud once per week, misdirection, neutralize poison once per day, polymorph self 3 times per day, produce fire, pyrotechnics, reincarnate once per day, remove curse, remove fear within a 10-foot radius, snake charm, veil once per day, wall of fire once per day.\n\nThe phoenix needs only to spread its wings and voice a call to dispel illusion or dispel magic at the 40th level of ability. Additionally, the dance of a phoenix acts as a double-strength (40th level) exorcise spell and is effective against all but the greatest of evil magics, such as that of an artifact or relic.\n\nA phoenix automatically detects charms, evil, and magic. It radiates a 10-foot radius protection from evil. The creature can become ethereal and travel astrally or ethereally. It can be hit only by +3 or better weapons. The phoenix can never be surprised. It has infravision to 120 feet and double normal ultravision. A touch of its wing is equal to a cure light wounds spell, with 2 touches possible per individual per day per phoenix. A touch of the comb gives an effect equal to cure disease, but is restricted in the same manner as a staff of curing. When hard-pressed, the phoenix is able to cause spilled droplets of its own blood to act as fire seeds of the holly berry type, 1 being created for every 5 points of damage taken by the phoenix. In extremis, the phoenix creates a double-strength (40th level) combination of fire storm (2\" high x 5\" wide x 8\" deep) and incendiary cloud, even if it has already used these powers previously. This destroys the adult phoenix but leaves a gem-like egg behind from which a new phoenix will arise in 20 days. As well as its own language, a phoenix can speak with all avians. It otherwise communicates by limited telepathy or by empathy and telepathy of a limited sort.\n\nAlthough the phoenix can neither attack nor be attacked by psionic means, the creature has the following disciplinary powers: cell adjustment (cleric class) once per day at 20th level; energy control 3 times per day; molecular agitation 3 times per day at 20th level; probability travel once per week at 10th level.\n\nA phoenix appears similar to a peacock, although it is far larger and its beak is longer in proportion. The plumage includes bright violet, scarlet, crimson and flaming orange areas. Beak and claws are of blue-violet. Eyes are a deep, glowing ruby color.",
+}

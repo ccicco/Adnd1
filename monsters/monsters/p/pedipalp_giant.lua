@@ -1,0 +1,36 @@
+-- Pedipalp, Giant (Uropygus): promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pedipalp, Giant (Uropygus)",
+  page = "100",
+  pages = "100",
+  source = "MM2",
+  race = "Pedipalp, Giant (Uropygus)",
+  hitDice = "4+4",
+  hitDiceNum = "4",
+  hitDiceBonus = "4",
+  avgHp = "18",
+  armorClass = "2",
+  numAttacks = 3,
+  damage = "1-8/1-8/2-8",
+  xp = "170",
+  xpPerHp = "5",
+  xpValue = "260",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-2",
+  lairPct = "20",
+  treasure = "I",
+  move = "6\"",
+  size = "L",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Poison gas, grip",
+  specialDefenses = "",
+  magicResistance = "Standard for all",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Commonly called whip scorpions, these creatures can be found in nearly any climate except that of arctic or tundra. They appear to be a cross between a spider and a scorpion. Pedipalpi may be found in a variety of different colorings, browns and tans being the most common.\n\nGiant Pedipalp: The largest of their species, the uropygi or giant pedipalpi, have whip-like tails and forelegs that end in large pincers. Although the tail looks dangerous, it is not used to attack; instead, these creatures attack with 2 pincers and a bite. After a hit has been scored, the giant pedipalp will grip, automatically bite (for 2-8 points), and do crushing damage (the same as 2 pincer hits; 2-16) on all rounds thereafter. This grip may be broken only by killing the monster or severing the pincer (which requires a roll 3 higher than the normal to-hit number). The giant pedipalpi also discharge a noxious vapor when in combat. This irritant will affect all non-pedipalp creatures within a 20-foot radius, and all within it who fail a saving throw vs. poison fight with a -3 on their to-hit rolls for 1-6 rounds. Uropygi may discharge this gas 3 times per day.",
+}

@@ -1,0 +1,36 @@
+-- Pudding, Deadly (White): promoted by the R810 MM2 letter P walk round
+-- from the MM2 print
+-- (spec tools/spec_r810.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Pudding, Deadly (White)",
+  page = "102",
+  pages = "102",
+  source = "MM2",
+  race = "Pudding, Deadly (White)",
+  hitDice = "9",
+  hitDiceNum = "9",
+  hitDiceBonus = "0",
+  avgHp = "31",
+  armorClass = "8",
+  numAttacks = 1,
+  damage = "7-28",
+  xp = "1200",
+  xpPerHp = "12",
+  xpValue = "1572",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1 or 1-3",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "9\"",
+  size = "S to L (3' d. to 8' d.)",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard for all",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Each form of deadly pudding is a variety of the better-known black (deadly) pudding. Acid, cold and poison have no effect on deadly puddings. Lightning bolts or blows from weapons divide these monsters into viable creatures of smaller size. Fire causes normal damage, as do magic missile spells. Details of each type are given separately below. See \"Black Pudding\" for information on movement abilities.\n\nWhite Pudding: These cold-dwelling creatures are 50% likely to be mistaken for snow and ice under the best of conditions. They haunt polar regions or icy places in order to find prey, although they can live by devouring any animal or vegetable material; even ice provides them with enough nutrition to exist. They do not affect metals but dissolve animal or vegetable materials in a single round, inflicting damage to flesh at an astounding rate. They are subject to attack forms as are all other deadly puddings.",
+}
