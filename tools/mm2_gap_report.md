@@ -90,11 +90,11 @@ the R614 precedent.
   under E; the archive.org heading walk found 3
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter F** (pp. 16-121) - the A-Z entries
+- [x] **Letter F** (pp. 16-121) - the A-Z entries
   under F; the archive.org heading walk found 1
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter G** (pp. 32-116) - the A-Z entries
+- [x] **Letter G** (pp. 32-116) - the A-Z entries
   under G; the archive.org heading walk found 7
   candidate entry headings - the pin-time walk from
   the print is authoritative

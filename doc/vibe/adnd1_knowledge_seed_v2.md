@@ -21171,6 +21171,99 @@ when both halves land.
   natural next walk is the Letter E box
   or the next arc slice; 28 open boxes
   remain).
+- R804 LANDED 2026-10-24: commit
+  49d815f54ef15a6429f15505da76abe04465f6d2
+  (census 726 -> 727, pushed
+  eed8ece..49d815f), THE MM2 LETTER
+  E WALK - THE EAGLE, ELF AND
+  EXECUTIONER HOOD TURNS - THE
+  E-FLIP ROUND (Curtiss's Go call on
+  the landed dracolisk walk; round
+  nine of the MM2 arc, the sixth
+  PART-LETTER walk). THE PIN-TIME
+  WALK: EIGHT entries on pp. 62-64 -
+  the eagle, the eblis and the
+  electric marine eel on p. 62, the
+  ELF family head on p. 63 (doctrine
+  only, no stat block - the grugach
+  and the valley elf blocks ride
+  beneath it), the grugach and the
+  valley elf on p. 63, the elfin cat
+  on pp. 63-64 and the executioner
+  hood on p. 64. SEVEN .lua defs
+  ride the R791 data_files extension,
+  registry 615 -> 622. Header
+  rules/mm2de.h, prefix mm2de, 111
+  consts + 28 bools + ONE grid (the
+  7x10 EgStats stat grid) = 149
+  inline. THE E-FLIP: the Letter E
+  gap box flips to closed - 10
+  closed 27 open. THE PRIOR-OWNED
+  letter-E index entries: the
+  euparkeria (R802 dinosaur walk) and
+  the cooshee (R798 letters BC); the
+  MM2 print takes the electric_eel
+  key (the MM1 def owns the MM1
+  print). THE SETTLED READS
+  (capture primary, transcription
+  and djvu the cross-check voices):
+  the grugach treasure "Individuals
+  N, Q" (the capture "N, O" the OCR
+  misread); the grugach
+  "fighter/druids" (the capture
+  "fluids" the misread); the eel
+  move "//9"" verbatim (moveRate
+  reads 9); the eel 6-8 hit dice read
+  the low end (the kuei precedent);
+  the hood hit-dice ladder 2+2, 4+4,
+  6+6 reads the or-form best 6+6;
+  the grugach and valley elf "90% to
+  charm and sleep only" reads 90 in
+  the grid; the grugach print carries
+  no xp level prefix; the valley elf
+  xp is average individuals only;
+  the valley elf Greyhawk raids keep
+  the print em-dash as the ASCII
+  hyphen. THE LANDING DETOUR (two
+  prefights, RED then GREEN): the
+  first handoff's walk patch read
+  gr->treasure.find("N, Q") - but
+  the def treasure field is a
+  TreasureSpec struct (no .find
+  member), so regtest.cpp failed to
+  compile and the whole battery
+  census went dark; the walk now
+  checks the grugach fighter/druids
+  prose instead (the N, Q pin stays
+  in the def treasure field and the
+  audit comment), and a builder gate
+  bars ->treasure from every future
+  walk - WALK PATCHES MAY ONLY TOUCH
+  REAL MonsterDef FIELDS (text is
+  std::string; treasure is not). The
+  re-landing then hit the R420
+  mixed-state abort (the RED run had
+  already applied the old spec's
+  patches), cleaned by the R515
+  restore-and-rerun: git checkout
+  the three tracked files (regtest,
+  seed, gap report) + rm the new
+  header and the 7 .lua, keep the
+  fixed spec, re-run the one ./rn
+  handoff - GREEN, the fixed spec
+  md5 6c3e5fba6c90042b9340699bf472
+  4f5e, 67105 bytes. The handoff
+  drifted again both times - a ./bn
+  line over the one ./rn line (the
+  R516 rule, reaffirmed in the
+  ritual block). rverify GREEN (209
+  mutants, 0 missed) against
+  eed8ece.
+  NEXT - R805: awaits Curtiss's call
+  (the natural next walk is the
+  Letter F box - the falcon and hawk
+  table opens p. 64 - or the next
+  arc slice; 27 open boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

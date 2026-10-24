@@ -1,0 +1,3487 @@
+{
+ "round": 805,
+ "prefix": "mm2fg",
+ "header_file": "rules/mm2fg.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 727,
+ "title": "the MM2 letters FG walk - the falcon, foo creature, giant and grue turns",
+ "audit_label": "R805 MM2 letters FG walk audit",
+ "audit_comment": "THE MM2 LETTERS FG WALK - the falcon and hawk table, the firefriend, the giant fly table, the foo creatures, the forester bane, the formian table and the froghemoth pp. 64-67, the galeb duhr, the GIANT family head (doctrine only), the fomorian, the firbolg, the verbeeg, the gibbering mouther, the gloomwing, the goat, the gorgimera, the greenhag, the grippli, the grig, the grim, the GRUE family head (doctrine only), the chaggrin, the harginn, the ildriss and the varrdig pp. 68-74, promoted to the live registry; the contested cells settled: the firbolg bat-away roll reads a 6 or better (the capture \"8 or better\" the OCR misread, the 75% arithmetic the settle); the firbolg chaotic good alignment (the capture \"cheotic\"); the froghemoth damage cell \"5d10 or 5-8 (=4)\" stays capture verbatim (the djvu \"+4\" the misread); the harginn parenthetical treasure reads the letter I (the varrdig \"1/2 x F\" pattern); the verbeeg treasure reads the K,L,M letters; the grig hit dice read the 2-5 print hp range midpoint (the atomie precedent); the ildriss ground move reads the 3 inch rolling-fog rate",
+ "include_comment": "the MM2 letters FG walk - the falcon, foo creature, giant and grue turns",
+ "include_after": "#include \"rules/mm2de.h\"  // R804: the MM2 letter E walk - the eagle, elf and executioner hood turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R804 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R804 LANDED 2026-10-24: commit",
+  "  49d815f54ef15a6429f15505da76abe04465f6d2",
+  "  (census 726 -> 727, pushed",
+  "  eed8ece..49d815f), THE MM2 LETTER",
+  "  E WALK - THE EAGLE, ELF AND",
+  "  EXECUTIONER HOOD TURNS - THE",
+  "  E-FLIP ROUND (Curtiss's Go call on",
+  "  the landed dracolisk walk; round",
+  "  nine of the MM2 arc, the sixth",
+  "  PART-LETTER walk). THE PIN-TIME",
+  "  WALK: EIGHT entries on pp. 62-64 -",
+  "  the eagle, the eblis and the",
+  "  electric marine eel on p. 62, the",
+  "  ELF family head on p. 63 (doctrine",
+  "  only, no stat block - the grugach",
+  "  and the valley elf blocks ride",
+  "  beneath it), the grugach and the",
+  "  valley elf on p. 63, the elfin cat",
+  "  on pp. 63-64 and the executioner",
+  "  hood on p. 64. SEVEN .lua defs",
+  "  ride the R791 data_files extension,",
+  "  registry 615 -> 622. Header",
+  "  rules/mm2de.h, prefix mm2de, 111",
+  "  consts + 28 bools + ONE grid (the",
+  "  7x10 EgStats stat grid) = 149",
+  "  inline. THE E-FLIP: the Letter E",
+  "  gap box flips to closed - 10",
+  "  closed 27 open. THE PRIOR-OWNED",
+  "  letter-E index entries: the",
+  "  euparkeria (R802 dinosaur walk) and",
+  "  the cooshee (R798 letters BC); the",
+  "  MM2 print takes the electric_eel",
+  "  key (the MM1 def owns the MM1",
+  "  print). THE SETTLED READS",
+  "  (capture primary, transcription",
+  "  and djvu the cross-check voices):",
+  "  the grugach treasure \"Individuals",
+  "  N, Q\" (the capture \"N, O\" the OCR",
+  "  misread); the grugach",
+  "  \"fighter/druids\" (the capture",
+  "  \"fluids\" the misread); the eel",
+  "  move \"//9\"\" verbatim (moveRate",
+  "  reads 9); the eel 6-8 hit dice read",
+  "  the low end (the kuei precedent);",
+  "  the hood hit-dice ladder 2+2, 4+4,",
+  "  6+6 reads the or-form best 6+6;",
+  "  the grugach and valley elf \"90% to",
+  "  charm and sleep only\" reads 90 in",
+  "  the grid; the grugach print carries",
+  "  no xp level prefix; the valley elf",
+  "  xp is average individuals only;",
+  "  the valley elf Greyhawk raids keep",
+  "  the print em-dash as the ASCII",
+  "  hyphen. THE LANDING DETOUR (two",
+  "  prefights, RED then GREEN): the",
+  "  first handoff's walk patch read",
+  "  gr->treasure.find(\"N, Q\") - but",
+  "  the def treasure field is a",
+  "  TreasureSpec struct (no .find",
+  "  member), so regtest.cpp failed to",
+  "  compile and the whole battery",
+  "  census went dark; the walk now",
+  "  checks the grugach fighter/druids",
+  "  prose instead (the N, Q pin stays",
+  "  in the def treasure field and the",
+  "  audit comment), and a builder gate",
+  "  bars ->treasure from every future",
+  "  walk - WALK PATCHES MAY ONLY TOUCH",
+  "  REAL MonsterDef FIELDS (text is",
+  "  std::string; treasure is not). The",
+  "  re-landing then hit the R420",
+  "  mixed-state abort (the RED run had",
+  "  already applied the old spec's",
+  "  patches), cleaned by the R515",
+  "  restore-and-rerun: git checkout",
+  "  the three tracked files (regtest,",
+  "  seed, gap report) + rm the new",
+  "  header and the 7 .lua, keep the",
+  "  fixed spec, re-run the one ./rn",
+  "  handoff - GREEN, the fixed spec",
+  "  md5 6c3e5fba6c90042b9340699bf472",
+  "  4f5e, 67105 bytes. The handoff",
+  "  drifted again both times - a ./bn",
+  "  line over the one ./rn line (the",
+  "  R516 rule, reaffirmed in the",
+  "  ritual block). rverify GREEN (209",
+  "  mutants, 0 missed) against",
+  "  eed8ece.",
+  "  NEXT - R805: awaits Curtiss's call",
+  "  (the natural next walk is the",
+  "  Letter F box - the falcon and hawk",
+  "  table opens p. 64 - or the next",
+  "  arc slice; 27 open boxes remain)."
+ ],
+ "banner": {
+  "title": "THE MM2 LETTERS FG WALK - THE FALCON, FOO CREATURE, GIANT AND GRUE TURNS (the falcon and hawk table, the firefriend, the giant fly table, the foo creatures, the forester bane, the formian table and the froghemoth pp. 64-67, the galeb duhr, the GIANT family head with the fomorian, firbolg and verbeeg, the gibbering mouther, the gloomwing, the goat, the gorgimera, the greenhag, the grippli, the grig, the grim, the GRUE family head with the chaggrin, harginn, ildriss and varrdig pp. 68-74), promoted to the live registry",
+  "provenance": "Round ten of the MM2 arc, the seventh PART-LETTER walk and the FIRST TWO-LETTER pass (the user Go call on the landed MM2 letter E walk: the letters F and G close together, the falcon and hawk table opens p. 64 and the varrdig tail closes p. 74 - the FG-FLIP round, both the Letter F and the Letter G gap boxes flip to closed). The capture is the Curtiss PDF upload cross-checked against the archive.org djvu OCR, the contested cells settled book-internal first: the firbolg bat-away roll reads 6 or better (the 75% arithmetic settles it over the capture \"8 or better\" misread); the froghemoth damage cell stays capture verbatim; the harginn treasure letter I follows the varrdig \"1/2 x F\" print pattern"
+ },
+ "consts": [
+  {
+   "name": "mm2fgRound",
+   "value": 805,
+   "comment": "The MM2 letters FG walk round: the falcon, foo creature, giant and grue turns, the first TWO-LETTER pass (the user Go call on the landed MM2 letter E walk)"
+  },
+  {
+   "name": "mm2fgRegistryBefore",
+   "value": 622,
+   "comment": "The registry census before the R805 promotion (the landed R804 count)"
+  },
+  {
+   "name": "mm2fgRegistryAfter",
+   "value": 650,
+   "comment": "The registry census after the R805 promotion (28 defs)"
+  },
+  {
+   "name": "mm2fgDefCount",
+   "value": 28,
+   "comment": "The R805 def count (the 28 stat-block columns of the letters F and G)"
+  },
+  {
+   "name": "mm2fgEntryCount",
+   "value": 25,
+   "comment": "The pin-time entry count on pp. 64-74 (23 stat-block headings plus the GIANT and GRUE doctrine-only family heads)"
+  },
+  {
+   "name": "mm2fgStatBlockHeadings",
+   "value": 23,
+   "comment": "The stat-block headings of the FG walk (7 letter-F headings, 16 letter-G headings)"
+  },
+  {
+   "name": "mm2fgDoctrineHeads",
+   "value": 2,
+   "comment": "The doctrine-only family heads (the GIANT head p. 68 and the GRUE, ELEMENTAL head p. 72, no stat blocks of their own)"
+  },
+  {
+   "name": "mm2fgLetterFHeadings",
+   "value": 7,
+   "comment": "The letter-F headings (the falcon and hawk table, the firefriend, the giant fly table, the foo creatures, the forester bane, the formian table and the froghemoth)"
+  },
+  {
+   "name": "mm2fgLetterGHeadings",
+   "value": 18,
+   "comment": "The letter-G headings (the galeb duhr, the GIANT head, the fomorian, the firbolg, the verbeeg, the gibbering mouther, the gloomwing, the goat, the gorgimera, the greenhag, the grippli, the grig, the grim, the GRUE head, the chaggrin, the harginn, the ildriss and the varrdig)"
+  },
+  {
+   "name": "mm2fgFgStatRows",
+   "value": 28,
+   "comment": "The row count of the falcon-to-varrdig stat grid"
+  },
+  {
+   "name": "mm2fgGapClosed",
+   "value": 12,
+   "comment": "The gap report closed boxes after the FG-flip (the Letter F and Letter G boxes join A through E)"
+  },
+  {
+   "name": "mm2fgGapOpen",
+   "value": 25,
+   "comment": "The gap report open boxes after the FG-flip"
+  },
+  {
+   "name": "mm2fgPriorOwnedEntries",
+   "value": 3,
+   "comment": "The letter-F and letter-G index entries owned by earlier rounds (the faerie dragon, the giant dragonfly and the gray ones, the duergar cross-reference)"
+  },
+  {
+   "name": "mm2fgFaerieDragonOwningRound",
+   "value": 803,
+   "comment": "The faerie dragon landed with the R803 dragon walk (pp. 38-39, a letter-F index entry)"
+  },
+  {
+   "name": "mm2fgGiantDragonflyOwningRound",
+   "value": 803,
+   "comment": "The giant dragonfly landed with the R803 dragon walk (a letter-G index entry)"
+  },
+  {
+   "name": "mm2fgGrayOnesOwningRound",
+   "value": 803,
+   "comment": "The gray ones (the duergar cross-reference) landed with the R803 dragon walk (a letter-G index entry)"
+  },
+  {
+   "name": "mm2fgGiantHeadSubEntryCount",
+   "value": 3,
+   "comment": "The GIANT family head p. 68 groups the fomorian, firbolg and verbeeg stat blocks beneath its heading"
+  },
+  {
+   "name": "mm2fgGrueHeadSubEntryCount",
+   "value": 4,
+   "comment": "The GRUE, ELEMENTAL family head p. 72 groups the chaggrin, harginn, ildriss and varrdig stat blocks beneath its heading"
+  },
+  {
+   "name": "mm2fgFalconSmallXpValue",
+   "value": 17,
+   "comment": "The falcon, small full kill xp (15 + 1/hp x 2 avg; level I)"
+  },
+  {
+   "name": "mm2fgFalconSmallXpLevel",
+   "value": 1,
+   "comment": "The falcon, small printed xp level (I)"
+  },
+  {
+   "name": "mm2fgFalconLargeXpValue",
+   "value": 28,
+   "comment": "The falcon, large full kill xp (25 + 1/hp x 3 avg; level I)"
+  },
+  {
+   "name": "mm2fgFalconLargeXpLevel",
+   "value": 1,
+   "comment": "The falcon, large printed xp level (I)"
+  },
+  {
+   "name": "mm2fgFirefriendXpValue",
+   "value": 50,
+   "comment": "The firefriend (giant firefly) full kill xp (36 + 2/hp x 7 avg; level II)"
+  },
+  {
+   "name": "mm2fgFirefriendXpLevel",
+   "value": 2,
+   "comment": "The firefriend (giant firefly) printed xp level (II)"
+  },
+  {
+   "name": "mm2fgFlyBluebottleXpValue",
+   "value": 65,
+   "comment": "The fly, giant (bluebottle) full kill xp (35 + 3/hp x 10 avg; level II)"
+  },
+  {
+   "name": "mm2fgFlyBluebottleXpLevel",
+   "value": 2,
+   "comment": "The fly, giant (bluebottle) printed xp level (II)"
+  },
+  {
+   "name": "mm2fgFlyHorseflyXpValue",
+   "value": 276,
+   "comment": "The fly, giant (horsefly) full kill xp (150 + 6/hp x 21 avg; level IV)"
+  },
+  {
+   "name": "mm2fgFlyHorseflyXpLevel",
+   "value": 4,
+   "comment": "The fly, giant (horsefly) printed xp level (IV)"
+  },
+  {
+   "name": "mm2fgFooDogXpValue",
+   "value": 1572,
+   "comment": "The foo dog full kill xp (1200 + 12/hp x 31 avg; level VII)"
+  },
+  {
+   "name": "mm2fgFooDogXpLevel",
+   "value": 7,
+   "comment": "The foo dog printed xp level (VII)"
+  },
+  {
+   "name": "mm2fgFooLionXpValue",
+   "value": 3634,
+   "comment": "The foo lion full kill xp (2850 + 16/hp x 49 avg; level VII)"
+  },
+  {
+   "name": "mm2fgFooLionXpLevel",
+   "value": 7,
+   "comment": "The foo lion printed xp level (VII)"
+  },
+  {
+   "name": "mm2fgForestersBaneXpValue",
+   "value": 250,
+   "comment": "The forester's bane (snapper-saw) full kill xp (165 + 5/hp x 17 avg; level IV)"
+  },
+  {
+   "name": "mm2fgForestersBaneXpLevel",
+   "value": 4,
+   "comment": "The forester's bane (snapper-saw) printed xp level (IV)"
+  },
+  {
+   "name": "mm2fgFormianMyrmarchXpValue",
+   "value": 616,
+   "comment": "The formian myrmarch full kill xp (400 + 8/hp x 27 avg; level V)"
+  },
+  {
+   "name": "mm2fgFormianMyrmarchXpLevel",
+   "value": 5,
+   "comment": "The formian myrmarch printed xp level (V)"
+  },
+  {
+   "name": "mm2fgFormianWarriorXpValue",
+   "value": 202,
+   "comment": "The formian warrior full kill xp (150 + 4/hp x 13 avg; level III)"
+  },
+  {
+   "name": "mm2fgFormianWarriorXpLevel",
+   "value": 3,
+   "comment": "The formian warrior printed xp level (III)"
+  },
+  {
+   "name": "mm2fgFormianWorkerXpValue",
+   "value": 28,
+   "comment": "The formian worker full kill xp (20 + 2/hp x 4 avg; level II)"
+  },
+  {
+   "name": "mm2fgFormianWorkerXpLevel",
+   "value": 2,
+   "comment": "The formian worker printed xp level (II)"
+  },
+  {
+   "name": "mm2fgFroghemothXpValue",
+   "value": 9220,
+   "comment": "The froghemoth full kill xp (8100 + 20/hp x 56 avg; level IX)"
+  },
+  {
+   "name": "mm2fgFroghemothXpLevel",
+   "value": 9,
+   "comment": "The froghemoth printed xp level (IX)"
+  },
+  {
+   "name": "mm2fgGalebDuhXpValue",
+   "value": 2336,
+   "comment": "The galeb duhr full kill xp (2000 + 12/hp x 28 avg; level VII)"
+  },
+  {
+   "name": "mm2fgGalebDuhXpLevel",
+   "value": 7,
+   "comment": "The galeb duhr printed xp level (VII)"
+  },
+  {
+   "name": "mm2fgFomorianXpValue",
+   "value": 3578,
+   "comment": "The fomorian giant full kill xp (2750 + 18/hp x 46 avg; level VII)"
+  },
+  {
+   "name": "mm2fgFomorianXpLevel",
+   "value": 7,
+   "comment": "The fomorian giant printed xp level (VII)"
+  },
+  {
+   "name": "mm2fgFirbolgXpValue",
+   "value": 4496,
+   "comment": "The firbolg full kill xp (3650 + 18/hp x 47 avg; level VIII)"
+  },
+  {
+   "name": "mm2fgFirbolgXpLevel",
+   "value": 8,
+   "comment": "The firbolg printed xp level (VIII)"
+  },
+  {
+   "name": "mm2fgVerbeegXpValue",
+   "value": 407,
+   "comment": "The verbeeg full kill xp (275 + 6/hp x 22 avg; level V)"
+  },
+  {
+   "name": "mm2fgVerbeegXpLevel",
+   "value": 5,
+   "comment": "The verbeeg printed xp level (V)"
+  },
+  {
+   "name": "mm2fgGibberingMoutherXpValue",
+   "value": 295,
+   "comment": "The gibbering mouther full kill xp (210 + 5/hp x 17 avg; level IV)"
+  },
+  {
+   "name": "mm2fgGibberingMoutherXpLevel",
+   "value": 4,
+   "comment": "The gibbering mouther printed xp level (IV)"
+  },
+  {
+   "name": "mm2fgGloomwingXpValue",
+   "value": 633,
+   "comment": "The gloomwing full kill xp (525 + 6/hp x 18 avg; level VI)"
+  },
+  {
+   "name": "mm2fgGloomwingXpLevel",
+   "value": 6,
+   "comment": "The gloomwing printed xp level (VI)"
+  },
+  {
+   "name": "mm2fgGoatXpValue",
+   "value": 34,
+   "comment": "The goat full kill xp (24 + 2/hp x 5 avg; level II)"
+  },
+  {
+   "name": "mm2fgGoatXpLevel",
+   "value": 2,
+   "comment": "The goat printed xp level (II)"
+  },
+  {
+   "name": "mm2fgGorgimeraXpValue",
+   "value": 3047,
+   "comment": "The gorgimera full kill xp (2557 + 14/hp x 35 avg; level VII)"
+  },
+  {
+   "name": "mm2fgGorgimeraXpLevel",
+   "value": 7,
+   "comment": "The gorgimera printed xp level (VII)"
+  },
+  {
+   "name": "mm2fgGreenhagXpValue",
+   "value": 1972,
+   "comment": "The greenhag full kill xp (1600 + 12/hp x 31 avg; level VII)"
+  },
+  {
+   "name": "mm2fgGreenhagXpLevel",
+   "value": 7,
+   "comment": "The greenhag printed xp level (VII)"
+  },
+  {
+   "name": "mm2fgGrippliXpValue",
+   "value": 53,
+   "comment": "The grippli full kill xp (45 + 2/hp x 4 avg; level II)"
+  },
+  {
+   "name": "mm2fgGrippliXpLevel",
+   "value": 2,
+   "comment": "The grippli printed xp level (II)"
+  },
+  {
+   "name": "mm2fgGrigXpValue",
+   "value": 53,
+   "comment": "The grig full kill xp (50 + 1/hp x 3 avg; level II)"
+  },
+  {
+   "name": "mm2fgGrigXpLevel",
+   "value": 2,
+   "comment": "The grig printed xp level (II)"
+  },
+  {
+   "name": "mm2fgGrimXpValue",
+   "value": 365,
+   "comment": "The grim full kill xp (285 + 5/hp x 16 avg; level V)"
+  },
+  {
+   "name": "mm2fgGrimXpLevel",
+   "value": 5,
+   "comment": "The grim printed xp level (V)"
+  },
+  {
+   "name": "mm2fgChaggrinXpValue",
+   "value": 557,
+   "comment": "The chaggrin full kill xp (425 + 6/hp x 22 avg; level V)"
+  },
+  {
+   "name": "mm2fgChaggrinXpLevel",
+   "value": 5,
+   "comment": "The chaggrin printed xp level (V)"
+  },
+  {
+   "name": "mm2fgHarginnXpValue",
+   "value": 335,
+   "comment": "The harginn full kill xp (245 + 5/hp x 18 avg; level IV)"
+  },
+  {
+   "name": "mm2fgHarginnXpLevel",
+   "value": 4,
+   "comment": "The harginn printed xp level (IV)"
+  },
+  {
+   "name": "mm2fgIldrissXpValue",
+   "value": 315,
+   "comment": "The ildriss full kill xp (245 + 5/hp x 14 avg; level IV)"
+  },
+  {
+   "name": "mm2fgIldrissXpLevel",
+   "value": 4,
+   "comment": "The ildriss printed xp level (IV)"
+  },
+  {
+   "name": "mm2fgVarrdigXpValue",
+   "value": 866,
+   "comment": "The varrdig full kill xp (650 + 8/hp x 27 avg; level VI)"
+  },
+  {
+   "name": "mm2fgVarrdigXpLevel",
+   "value": 6,
+   "comment": "The varrdig printed xp level (VI)"
+  },
+  {
+   "name": "mm2fgFalconNestShinyPct",
+   "value": 5,
+   "comment": "The chance a falcon nest holds a small, shiny item such as a coin or gem"
+  },
+  {
+   "name": "mm2fgFalconDiveHeightFeet",
+   "value": 100,
+   "comment": "The plummeting-dive height (from 100 feet or higher)"
+  },
+  {
+   "name": "mm2fgFalconDiveToHitBonus",
+   "value": 2,
+   "comment": "The dive to-hit bonus (double talon damage, no beak attack)"
+  },
+  {
+   "name": "mm2fgFalconBeakBlindPct",
+   "value": 25,
+   "comment": "The chance a beak hit on unprotected eyes actually blinds 1 eye"
+  },
+  {
+   "name": "mm2fgFirefriendBeamInches",
+   "value": 3,
+   "comment": "The greenish-light beam diameter (about 3 inches)"
+  },
+  {
+   "name": "mm2fgFirefriendBeamFeet",
+   "value": 14,
+   "comment": "The greenish-light beam length (up to 14 feet)"
+  },
+  {
+   "name": "mm2fgFirefriendBeamDmgMin",
+   "value": 5,
+   "comment": "The beam damage low end (5-20 on struck flesh)"
+  },
+  {
+   "name": "mm2fgFirefriendBeamDmgMax",
+   "value": 20,
+   "comment": "The beam damage high end (save vs. wands for one-half)"
+  },
+  {
+   "name": "mm2fgFirefriendLifespanYears",
+   "value": 10,
+   "comment": "The firefriend lifespan (about 10 years)"
+  },
+  {
+   "name": "mm2fgFlyJumpInches",
+   "value": 3,
+   "comment": "The giant fly backward-spring distance (3 inches in 1 segment)"
+  },
+  {
+   "name": "mm2fgFlyJumpHeightInches",
+   "value": 1,
+   "comment": "The giant fly jump height (airborne at 1 inch)"
+  },
+  {
+   "name": "mm2fgFlyJumpSegments",
+   "value": 1,
+   "comment": "The giant fly jump takes place in 1 segment"
+  },
+  {
+   "name": "mm2fgFlyBluebottleDiseasePct",
+   "value": 10,
+   "comment": "The bluebottle bite chance (per hit) of inflicting disease"
+  },
+  {
+   "name": "mm2fgFooDogAsHd",
+   "value": 10,
+   "comment": "The foo dog effective hit dice against Evil opponents"
+  },
+  {
+   "name": "mm2fgFooLionAsHd",
+   "value": 15,
+   "comment": "The foo lion effective hit dice against Evil opponents"
+  },
+  {
+   "name": "mm2fgFooLawfulEvilBonus",
+   "value": 1,
+   "comment": "The foo bonus vs. lawful evil (especially devils), to hit and damage"
+  },
+  {
+   "name": "mm2fgFooRoarSummonPct",
+   "value": 20,
+   "comment": "The barking roar chance to summon kin (1-6 dogs, 1-2 lions) after 7+ rounds"
+  },
+  {
+   "name": "mm2fgFooRoarRounds",
+   "value": 7,
+   "comment": "The rounds the roar must continue before the summons roll"
+  },
+  {
+   "name": "mm2fgFooNewcomerRoundsMin",
+   "value": 1,
+   "comment": "The Astral Plane newcomer arrival low end (1-10 rounds)"
+  },
+  {
+   "name": "mm2fgFooNewcomerRoundsMax",
+   "value": 10,
+   "comment": "The Astral Plane newcomer arrival high end"
+  },
+  {
+   "name": "mm2fgFooEvilAttackPenalty",
+   "value": 1,
+   "comment": "The evil opponents penalty to hit and damage dice vs. foo creatures"
+  },
+  {
+   "name": "mm2fgFooDogHdNum",
+   "value": 7,
+   "comment": "The foo dog hit dice num (7+7)"
+  },
+  {
+   "name": "mm2fgFooLionHdNum",
+   "value": 11,
+   "comment": "The foo lion hit dice num (11+11)"
+  },
+  {
+   "name": "mm2fgForestersBaneLeafFeetMin",
+   "value": 5,
+   "comment": "The leaf radiance low end (5-7 feet from the central plant)"
+  },
+  {
+   "name": "mm2fgForestersBaneLeafFeetMax",
+   "value": 7,
+   "comment": "The leaf radiance high end"
+  },
+  {
+   "name": "mm2fgForestersBaneStalksMin",
+   "value": 3,
+   "comment": "The hidden stalk count low end (3-6)"
+  },
+  {
+   "name": "mm2fgForestersBaneStalksMax",
+   "value": 6,
+   "comment": "The hidden stalk count high end"
+  },
+  {
+   "name": "mm2fgForestersBaneEscapePctPerStr",
+   "value": 5,
+   "comment": "The escape chance per point of strength (5% per 1 point)"
+  },
+  {
+   "name": "mm2fgForestersBaneLeafHpMin",
+   "value": 9,
+   "comment": "The leaf damage tolerance low end (9-16)"
+  },
+  {
+   "name": "mm2fgForestersBaneLeafHpMax",
+   "value": 16,
+   "comment": "The leaf damage tolerance high end"
+  },
+  {
+   "name": "mm2fgForestersBaneStalkHpMin",
+   "value": 17,
+   "comment": "The stalk damage tolerance low end (17-24)"
+  },
+  {
+   "name": "mm2fgForestersBaneStalkHpMax",
+   "value": 24,
+   "comment": "The stalk damage tolerance high end"
+  },
+  {
+   "name": "mm2fgForestersBaneRegrowWeeksMin",
+   "value": 2,
+   "comment": "The regrowth low end (2-8 weeks)"
+  },
+  {
+   "name": "mm2fgForestersBaneRegrowWeeksMax",
+   "value": 8,
+   "comment": "The regrowth high end"
+  },
+  {
+   "name": "mm2fgFormianUndergroundMultiple",
+   "value": 3,
+   "comment": "The underground city is always about 3 times larger than the upper part"
+  },
+  {
+   "name": "mm2fgFormianWorkerEncounterPct",
+   "value": 90,
+   "comment": "The encounter chance with workers"
+  },
+  {
+   "name": "mm2fgFormianWarriorEncounterPct",
+   "value": 10,
+   "comment": "The encounter chance with warriors"
+  },
+  {
+   "name": "mm2fgFormianWorkerGuardedPct",
+   "value": 10,
+   "comment": "The chance a worker group is accompanied by warriors (a raiding party)"
+  },
+  {
+   "name": "mm2fgFormianRaidWorkersMin",
+   "value": 10,
+   "comment": "The worker raiding band low end (10-40)"
+  },
+  {
+   "name": "mm2fgFormianRaidWorkersMax",
+   "value": 40,
+   "comment": "The worker raiding band high end"
+  },
+  {
+   "name": "mm2fgFormianMyrmarchGuards",
+   "value": 2,
+   "comment": "The warrior guards serving each myrmarch"
+  },
+  {
+   "name": "mm2fgFormianMyrmarchWorkers",
+   "value": 8,
+   "comment": "The workers serving each myrmarch"
+  },
+  {
+   "name": "mm2fgFormianGymarchHdNum",
+   "value": 7,
+   "comment": "The gymarch hit dice num (equal to myrmarches but 7+7 hit dice)"
+  },
+  {
+   "name": "mm2fgFormianGymarchHdBonus",
+   "value": 7,
+   "comment": "The gymarch hit dice bonus"
+  },
+  {
+   "name": "mm2fgFormianWorkerStrength",
+   "value": 22,
+   "comment": "The worker strength points (the warriors 23, the myrmarches 24)"
+  },
+  {
+   "name": "mm2fgFormianWarriorStrength",
+   "value": 23,
+   "comment": "The warrior strength points"
+  },
+  {
+   "name": "mm2fgFormianMyrmarchStrength",
+   "value": 24,
+   "comment": "The myrmarch strength points"
+  },
+  {
+   "name": "mm2fgFormianMyrmarchCommonPct",
+   "value": 75,
+   "comment": "The myrmarch and special formian chance to speak Common"
+  },
+  {
+   "name": "mm2fgFroghemothEggsMin",
+   "value": 10,
+   "comment": "The egg count low end (females lay 10-100 eggs)"
+  },
+  {
+   "name": "mm2fgFroghemothEggsMax",
+   "value": 100,
+   "comment": "The egg count high end"
+  },
+  {
+   "name": "mm2fgFroghemothTadpoleEatenPct",
+   "value": 90,
+   "comment": "The share of tadhemoths eaten at hatching (about 90%)"
+  },
+  {
+   "name": "mm2fgFroghemothSurvivalPctMax",
+   "value": 4,
+   "comment": "The survival rate high end (about 1-4%)"
+  },
+  {
+   "name": "mm2fgFroghemothTentacleSeverMin",
+   "value": 19,
+   "comment": "The tentacle sever low end (19-22 hit points)"
+  },
+  {
+   "name": "mm2fgFroghemothTentacleSeverMax",
+   "value": 22,
+   "comment": "The tentacle sever high end"
+  },
+  {
+   "name": "mm2fgFroghemothTongueSeverMin",
+   "value": 12,
+   "comment": "The tongue sever low end (12-16 hit points, the most vulnerable appendage)"
+  },
+  {
+   "name": "mm2fgFroghemothTongueSeverMax",
+   "value": 16,
+   "comment": "The tongue sever high end"
+  },
+  {
+   "name": "mm2fgFroghemothTongueFeet",
+   "value": 10,
+   "comment": "The barbed tongue length (18/50 strength)"
+  },
+  {
+   "name": "mm2fgFroghemothSwallowDmgMin",
+   "value": 4,
+   "comment": "The digestive-juice damage low end (4-16 per round)"
+  },
+  {
+   "name": "mm2fgFroghemothSwallowDmgMax",
+   "value": 16,
+   "comment": "The digestive-juice damage high end"
+  },
+  {
+   "name": "mm2fgFroghemothUnconsciousRounds",
+   "value": 2,
+   "comment": "The swallowed victim falls unconscious after 2 rounds inside"
+  },
+  {
+   "name": "mm2fgFroghemothDigestedHp",
+   "value": -10,
+   "comment": "The digested-and-gone hit point floor (no resurrection then possible)"
+  },
+  {
+   "name": "mm2fgFroghemothSeveredRoundsMin",
+   "value": 2,
+   "comment": "The severed-tongue tentacle fury low end (double damage 10-16 for 2-5 rounds)"
+  },
+  {
+   "name": "mm2fgFroghemothSeveredRoundsMax",
+   "value": 5,
+   "comment": "The severed-tongue tentacle fury high end"
+  },
+  {
+   "name": "mm2fgFroghemothTadpoleSwimInches",
+   "value": 16,
+   "comment": "The tadhemoth swim rate"
+  },
+  {
+   "name": "mm2fgGalebDuhrSpellLevel",
+   "value": 20,
+   "comment": "The galeb duhr casts its spells as a 20th-level magic-user"
+  },
+  {
+   "name": "mm2fgGalebDuhrSpellCount",
+   "value": 5,
+   "comment": "The galeb duhr spell list count (move earth, stone shape, passwall, transmute rock to mud, wall of stone)"
+  },
+  {
+   "name": "mm2fgGalebDuhrBouldersMin",
+   "value": 1,
+   "comment": "The animated boulder count low end (1-2 within 6 inches)"
+  },
+  {
+   "name": "mm2fgGalebDuhrBouldersMax",
+   "value": 2,
+   "comment": "The animated boulder count high end"
+  },
+  {
+   "name": "mm2fgGalebDuhrBoulderRangeInches",
+   "value": 6,
+   "comment": "The animated-boulder range"
+  },
+  {
+   "name": "mm2fgGalebDuhrBoulderAc",
+   "value": 0,
+   "comment": "The animated boulder armor class"
+  },
+  {
+   "name": "mm2fgGalebDuhrBoulderHd",
+   "value": 9,
+   "comment": "The animated boulder hit dice (DM 4d6)"
+  },
+  {
+   "name": "mm2fgGalebDuhrColdSaveMod",
+   "value": -4,
+   "comment": "The galeb duhr save modifier vs. cold-based attacks (double damage taken)"
+  },
+  {
+   "name": "mm2fgGalebDuhrFireSaveMod",
+   "value": 4,
+   "comment": "The galeb duhr save modifier vs. fire attacks (full damage from magical fire)"
+  },
+  {
+   "name": "mm2fgGalebDuhrHdMin",
+   "value": 8,
+   "comment": "The galeb duhr hit dice low end (8-10, the ranged cell reads the low end - the kuei precedent)"
+  },
+  {
+   "name": "mm2fgGalebDuhrHdMax",
+   "value": 10,
+   "comment": "The galeb duhr hit dice high end"
+  },
+  {
+   "name": "mm2fgFomorianSurpriseBonusMin",
+   "value": 1,
+   "comment": "The fomorian surprise bonus low end (+1 to +3 by terrain)"
+  },
+  {
+   "name": "mm2fgFomorianSurpriseBonusMax",
+   "value": 3,
+   "comment": "The fomorian surprise bonus high end"
+  },
+  {
+   "name": "mm2fgFomorianFemalePct",
+   "value": 25,
+   "comment": "The lair chance of 1-2 females for every male"
+  },
+  {
+   "name": "mm2fgFomorianFemalesPerMaleMin",
+   "value": 1,
+   "comment": "The females per male low end"
+  },
+  {
+   "name": "mm2fgFomorianFemalesPerMaleMax",
+   "value": 2,
+   "comment": "The females per male high end"
+  },
+  {
+   "name": "mm2fgFomorianYoungPerFemaleMin",
+   "value": 1,
+   "comment": "The young per female low end (1-3)"
+  },
+  {
+   "name": "mm2fgFomorianYoungPerFemaleMax",
+   "value": 3,
+   "comment": "The young per female high end"
+  },
+  {
+   "name": "mm2fgFirbolgSmallGroupPct",
+   "value": 90,
+   "comment": "The encounter chance with small groups or a lone wanderer"
+  },
+  {
+   "name": "mm2fgFirbolgBatAttemptsPerRound",
+   "value": 2,
+   "comment": "The bat-away attempts per round (missiles batted or caught)"
+  },
+  {
+   "name": "mm2fgFirbolgBatRollMin",
+   "value": 6,
+   "comment": "The bat-away success roll (a 6 or better on 1d20 - the capture \"8 or better\" the OCR misread, the 75% arithmetic the settle)"
+  },
+  {
+   "name": "mm2fgFirbolgBatPct",
+   "value": 75,
+   "comment": "The bat-away success chance (6 or better on 1d20)"
+  },
+  {
+   "name": "mm2fgFirbolgPowerCount",
+   "value": 5,
+   "comment": "The firbolg innate power count (detect magic, diminution, fools gold, forget, alter self)"
+  },
+  {
+   "name": "mm2fgFirbolgShamanPct",
+   "value": 5,
+   "comment": "The chance per firbolg that 1 in the group is a shaman"
+  },
+  {
+   "name": "mm2fgFirbolgShamanLevel",
+   "value": 7,
+   "comment": "The firbolg shaman level ceiling (2nd-level illusionist spells at 6th and 7th)"
+  },
+  {
+   "name": "mm2fgFirbolgSeventhLevelFirstSpells",
+   "value": 10,
+   "comment": "The 7th-level shaman 1st-level illusionist spells"
+  },
+  {
+   "name": "mm2fgFirbolgSeventhLevelSecondSpells",
+   "value": 4,
+   "comment": "The 7th-level shaman 2nd-level illusionist spells"
+  },
+  {
+   "name": "mm2fgVerbeegWithGiantsPct",
+   "value": 30,
+   "comment": "The encounter chance in conjunction with hill giants or ogres"
+  },
+  {
+   "name": "mm2fgVerbeegHillGiantSharePct",
+   "value": 40,
+   "comment": "The hill-giant share of the conjunction"
+  },
+  {
+   "name": "mm2fgVerbeegOgreSharePct",
+   "value": 60,
+   "comment": "The ogre share of the conjunction"
+  },
+  {
+   "name": "mm2fgVerbeegWanderingPct",
+   "value": 50,
+   "comment": "The encounter chance with 1-6 wandering creatures"
+  },
+  {
+   "name": "mm2fgVerbeegLairEncPct",
+   "value": 30,
+   "comment": "The encounter chance in the lair (5-30 verbeeg)"
+  },
+  {
+   "name": "mm2fgVerbeegLairMin",
+   "value": 5,
+   "comment": "The lair band low end"
+  },
+  {
+   "name": "mm2fgVerbeegLairMax",
+   "value": 30,
+   "comment": "The lair band high end"
+  },
+  {
+   "name": "mm2fgVerbeegOthersPct",
+   "value": 20,
+   "comment": "The encounter chance with 1-2+ others"
+  },
+  {
+   "name": "mm2fgVerbeegSpearCount",
+   "value": 3,
+   "comment": "The spears each verbeeg carries at least"
+  },
+  {
+   "name": "mm2fgVerbeegSpearRangeBonusMin",
+   "value": 3,
+   "comment": "The strength throwing-range bonus low end (3 to 6 inches)"
+  },
+  {
+   "name": "mm2fgVerbeegSpearRangeBonusMax",
+   "value": 6,
+   "comment": "The strength throwing-range bonus high end"
+  },
+  {
+   "name": "mm2fgVerbeegOoThrowRangeInches",
+   "value": 9,
+   "comment": "The 18/00 verbeeg spear distance"
+  },
+  {
+   "name": "mm2fgVerbeegOoThrowDmgMin",
+   "value": 7,
+   "comment": "The 18/00 verbeeg spear damage low end (7-12)"
+  },
+  {
+   "name": "mm2fgVerbeegOoThrowDmgMax",
+   "value": 12,
+   "comment": "The 18/00 verbeeg spear damage high end"
+  },
+  {
+   "name": "mm2fgVerbeegLeaderHpMin",
+   "value": 40,
+   "comment": "The lair leader hit point floor (18/00 strength)"
+  },
+  {
+   "name": "mm2fgVerbeegShamanPctPerGiant",
+   "value": 2,
+   "comment": "The shaman chance per verbeeg (of either sex)"
+  },
+  {
+   "name": "mm2fgVerbeegShamanLevel",
+   "value": 7,
+   "comment": "The verbeeg shaman level ceiling"
+  },
+  {
+   "name": "mm2fgVerbeegNoMagicPct",
+   "value": 90,
+   "comment": "The tribal chance to lack any magic item they cannot understand or use"
+  },
+  {
+   "name": "mm2fgVerbeegWolvesMin",
+   "value": 2,
+   "comment": "The lair wolf guards low end (2-8 at 75%)"
+  },
+  {
+   "name": "mm2fgVerbeegWolvesMax",
+   "value": 8,
+   "comment": "The lair wolf guards high end"
+  },
+  {
+   "name": "mm2fgVerbeegWolvesPct",
+   "value": 75,
+   "comment": "The wolf guard chance (worgs 1-4 at 25%)"
+  },
+  {
+   "name": "mm2fgVerbeegYoungPct",
+   "value": 50,
+   "comment": "The young share of the total population over 9"
+  },
+  {
+   "name": "mm2fgMoutherMouthsPerRound",
+   "value": 6,
+   "comment": "The mouths per round the mouther bites with"
+  },
+  {
+   "name": "mm2fgMoutherDrainPerRound",
+   "value": 1,
+   "comment": "The extra damage per round per fastened mouth"
+  },
+  {
+   "name": "mm2fgMoutherSlipMouthsMin",
+   "value": 3,
+   "comment": "The attached-mouth count that forces the slipping check (3 or more)"
+  },
+  {
+   "name": "mm2fgMoutherSlipRollMax",
+   "value": 4,
+   "comment": "The slipped roll (4 or less on 2d6, +1 if dexterity 15+)"
+  },
+  {
+   "name": "mm2fgMoutherFallenMouths",
+   "value": 12,
+   "comment": "The extra mouths the fallen victim is bitten with"
+  },
+  {
+   "name": "mm2fgMoutherGibberRadiusInches",
+   "value": 6,
+   "comment": "The confusion gibbering radius (save vs. spells)"
+  },
+  {
+   "name": "mm2fgMoutherGroundRadiusFeet",
+   "value": 5,
+   "comment": "The warmed ground-and-stone radius the mouther controls"
+  },
+  {
+   "name": "mm2fgMoutherEarthSegments",
+   "value": 5,
+   "comment": "The segments to alter earth (5 segments; stone shifts in 1 full round)"
+  },
+  {
+   "name": "mm2fgMoutherStoneRounds",
+   "value": 1,
+   "comment": "The rounds to shift stone to its next nearest form"
+  },
+  {
+   "name": "mm2fgGloomwingSurpriseMin",
+   "value": 1,
+   "comment": "The gloomwing surprise roll low end (1-3 on 1d6)"
+  },
+  {
+   "name": "mm2fgGloomwingSurpriseMax",
+   "value": 3,
+   "comment": "The gloomwing surprise roll high end"
+  },
+  {
+   "name": "mm2fgGloomwingPheromoneRound",
+   "value": 2,
+   "comment": "The melee round the pheromone emission begins (the 2nd and each successive)"
+  },
+  {
+   "name": "mm2fgGloomwingStrLossPerRound",
+   "value": 1,
+   "comment": "The strength loss per round of pheromone exposure (save vs. poison)"
+  },
+  {
+   "name": "mm2fgGloomwingRestoreTurnsMin",
+   "value": 1,
+   "comment": "The strength restore low end (1-4 turns after exposure ceases)"
+  },
+  {
+   "name": "mm2fgGloomwingRestoreTurnsMax",
+   "value": 4,
+   "comment": "The strength restore high end"
+  },
+  {
+   "name": "mm2fgGloomwingAttractPct",
+   "value": 20,
+   "comment": "The scent chance to attract 1-4 more gloomwings (per round)"
+  },
+  {
+   "name": "mm2fgGloomwingAttractMin",
+   "value": 1,
+   "comment": "The attracted gloomwings low end"
+  },
+  {
+   "name": "mm2fgGloomwingAttractMax",
+   "value": 4,
+   "comment": "The attracted gloomwings high end"
+  },
+  {
+   "name": "mm2fgGloomwingHatchDays",
+   "value": 12,
+   "comment": "The egg hatch in 12 days (sprouting tenebrous worms)"
+  },
+  {
+   "name": "mm2fgGloomwingWormsMin",
+   "value": 4,
+   "comment": "The sprouted worm low end (4-10)"
+  },
+  {
+   "name": "mm2fgGloomwingWormsMax",
+   "value": 10,
+   "comment": "The sprouted worm high end"
+  },
+  {
+   "name": "mm2fgGloomwingMandibleValueGp",
+   "value": 25,
+   "comment": "The ivory mandibles value per gloomwing (gp)"
+  },
+  {
+   "name": "mm2fgGoatChargeToHitBonus",
+   "value": 2,
+   "comment": "The buck charge to-hit bonus"
+  },
+  {
+   "name": "mm2fgGoatChargeDmgMin",
+   "value": 1,
+   "comment": "The charge damage low end (an additional 1-2 points)"
+  },
+  {
+   "name": "mm2fgGoatChargeDmgMax",
+   "value": 2,
+   "comment": "The charge damage high end"
+  },
+  {
+   "name": "mm2fgGoatBucksMin",
+   "value": 1,
+   "comment": "The herd bucks low end (1-2)"
+  },
+  {
+   "name": "mm2fgGoatBucksMax",
+   "value": 2,
+   "comment": "The herd bucks high end"
+  },
+  {
+   "name": "mm2fgGoatDoesMax",
+   "value": 12,
+   "comment": "The herd doe ceiling (up to 12)"
+  },
+  {
+   "name": "mm2fgGorgimeraLionAc",
+   "value": 5,
+   "comment": "The gorgimera lion-parts armor class (the \"5/2\" composite cell reads the lion 5)"
+  },
+  {
+   "name": "mm2fgGorgimeraPetrifyPerDay",
+   "value": 2,
+   "comment": "The petrifying breath uses per day (3 inches long, 1 inch wide base cone)"
+  },
+  {
+   "name": "mm2fgGorgimeraFirePerDay",
+   "value": 2,
+   "comment": "The fiery breath uses per day (5 inches long, 2 inches wide base cone)"
+  },
+  {
+   "name": "mm2fgGorgimeraPetrifyLengthInches",
+   "value": 3,
+   "comment": "The petrifying breath cone length"
+  },
+  {
+   "name": "mm2fgGorgimeraPetrifyWidthInches",
+   "value": 1,
+   "comment": "The petrifying breath cone base width"
+  },
+  {
+   "name": "mm2fgGorgimeraFireLengthInches",
+   "value": 5,
+   "comment": "The fiery breath cone length"
+  },
+  {
+   "name": "mm2fgGorgimeraFireWidthInches",
+   "value": 2,
+   "comment": "The fiery breath cone base width"
+  },
+  {
+   "name": "mm2fgGorgimeraBreathDmgMin",
+   "value": 3,
+   "comment": "The dragon breath damage low end (3-24, 3d8)"
+  },
+  {
+   "name": "mm2fgGorgimeraBreathDmgMax",
+   "value": 24,
+   "comment": "The dragon breath damage high end (save vs. breath weapon)"
+  },
+  {
+   "name": "mm2fgGorgimeraRangeFeet",
+   "value": 10,
+   "comment": "The distance at which the gorgimera always uses a breath weapon"
+  },
+  {
+   "name": "mm2fgGreenhagStrBonus",
+   "value": 6,
+   "comment": "The greenhag strength 18/00 damage bonus per claw"
+  },
+  {
+   "name": "mm2fgGreenhagPowerCount",
+   "value": 8,
+   "comment": "The greenhag spell-like power count (audible glamor through weakness)"
+  },
+  {
+   "name": "mm2fgGreenhagPowerLevel",
+   "value": 9,
+   "comment": "The greenhag power ability level"
+  },
+  {
+   "name": "mm2fgGreenhagSilentHidePct",
+   "value": 90,
+   "comment": "The greenhag silent-hide chance in foliage"
+  },
+  {
+   "name": "mm2fgGreenhagSurpriseMin",
+   "value": 5,
+   "comment": "The greenhag surprise low end (5 in 6)"
+  },
+  {
+   "name": "mm2fgGreenhagSurpriseMax",
+   "value": 6,
+   "comment": "The greenhag surprise high end"
+  },
+  {
+   "name": "mm2fgGreenhagInvisibleSurpriseMin",
+   "value": 19,
+   "comment": "The invisible-attack surprise low end (19 in 20)"
+  },
+  {
+   "name": "mm2fgGreenhagInvisibleSurpriseMax",
+   "value": 20,
+   "comment": "The invisible-attack surprise high end"
+  },
+  {
+   "name": "mm2fgGreenhagSurprisedMax",
+   "value": 1,
+   "comment": "The greenhag surprised roll (1 in 20)"
+  },
+  {
+   "name": "mm2fgGreenhagSurprisedDie",
+   "value": 20,
+   "comment": "The greenhag surprised die"
+  },
+  {
+   "name": "mm2fgGrippliLifespanYears",
+   "value": 700,
+   "comment": "The grippli life span (700-year, few offspring)"
+  },
+  {
+   "name": "mm2fgGrippliUltravisionInches",
+   "value": 10,
+   "comment": "The grippli ultravision range"
+  },
+  {
+   "name": "mm2fgGrippliPsionicMinPct",
+   "value": 1,
+   "comment": "The grippli psionic chance low end (1%-2%)"
+  },
+  {
+   "name": "mm2fgGrippliPsionicMaxPct",
+   "value": 2,
+   "comment": "The grippli psionic chance high end"
+  },
+  {
+   "name": "mm2fgGrippliLairMalesMin",
+   "value": 5,
+   "comment": "The lair males low end (5-30)"
+  },
+  {
+   "name": "mm2fgGrippliLairMalesMax",
+   "value": 30,
+   "comment": "The lair males high end"
+  },
+  {
+   "name": "mm2fgGrippliOffspringMin",
+   "value": 1,
+   "comment": "The lair offspring low end (1-6, noncombative)"
+  },
+  {
+   "name": "mm2fgGrippliOffspringMax",
+   "value": 6,
+   "comment": "The lair offspring high end"
+  },
+  {
+   "name": "mm2fgGrippliMotherAc",
+   "value": 7,
+   "comment": "The tribe mother armor class (HD 3, a stinking musk cloud once per day)"
+  },
+  {
+   "name": "mm2fgGrippliMotherHd",
+   "value": 3,
+   "comment": "The tribe mother hit dice"
+  },
+  {
+   "name": "mm2fgGrippliMatesAc",
+   "value": 8,
+   "comment": "The tribe mother mates armor class (HD 2, 1d4+1 poison)"
+  },
+  {
+   "name": "mm2fgGrippliMatesHd",
+   "value": 2,
+   "comment": "The tribe mother mates hit dice"
+  },
+  {
+   "name": "mm2fgGrigMissileToHitBonus",
+   "value": 2,
+   "comment": "The grig +2 to hit when hurling missiles"
+  },
+  {
+   "name": "mm2fgGrigDartCount",
+   "value": 6,
+   "comment": "The darts each grig carries at least"
+  },
+  {
+   "name": "mm2fgGrigPowerCount",
+   "value": 6,
+   "comment": "The grig spell-like power count (change self through ventriloquism)"
+  },
+  {
+   "name": "mm2fgGrigPowerLevel",
+   "value": 6,
+   "comment": "The grig magical power ability level"
+  },
+  {
+   "name": "mm2fgGrigFiddlerPct",
+   "value": 25,
+   "comment": "The grig fiddler chance to play the Otto's Irresistible Dance tune"
+  },
+  {
+   "name": "mm2fgGrigFiddleRadiusFeet",
+   "value": 30,
+   "comment": "The fiddle saving-throw radius (feet)"
+  },
+  {
+   "name": "mm2fgGrigSurprisePct",
+   "value": 90,
+   "comment": "The grig surprise chance"
+  },
+  {
+   "name": "mm2fgGrigSurprisedPct",
+   "value": 10,
+   "comment": "The grig surprised chance"
+  },
+  {
+   "name": "mm2fgGrigInfravisionFeet",
+   "value": 180,
+   "comment": "The grig infravision (feet)"
+  },
+  {
+   "name": "mm2fgGrigGlenPct",
+   "value": 30,
+   "comment": "The glen probability for other grigs or atomies to be present"
+  },
+  {
+   "name": "mm2fgGrimFormCount",
+   "value": 3,
+   "comment": "The grim forms (black cat, black dog and black owl)"
+  },
+  {
+   "name": "mm2fgGrimTurnUndeadLevel",
+   "value": 8,
+   "comment": "The grim turn undead as 8th-level clerics"
+  },
+  {
+   "name": "mm2fgGrimTurnDieBonus",
+   "value": 2,
+   "comment": "The grim turn die bonus vs. Evil from the Lower Outer Planes"
+  },
+  {
+   "name": "mm2fgGrimWeaponPlusMin",
+   "value": 1,
+   "comment": "The weapon enchantment floor to hit a grim"
+  },
+  {
+   "name": "mm2fgGrimProtectionRadiusFeet",
+   "value": 10,
+   "comment": "The protection from evil radius (feet)"
+  },
+  {
+   "name": "mm2fgGrimDetectEvilInches",
+   "value": 7,
+   "comment": "The detect evil range (inches)"
+  },
+  {
+   "name": "mm2fgGrimSurpriseMin",
+   "value": 1,
+   "comment": "The grim surprise roll low end (1 in 10)"
+  },
+  {
+   "name": "mm2fgGrimSurpriseDie",
+   "value": 10,
+   "comment": "The grim surprise die"
+  },
+  {
+   "name": "mm2fgChaggrinWeightMin",
+   "value": 140,
+   "comment": "The chaggrin weight low end (over 140 pounds)"
+  },
+  {
+   "name": "mm2fgChaggrinWeightMax",
+   "value": 210,
+   "comment": "The chaggrin weight high end"
+  },
+  {
+   "name": "mm2fgChaggrinClingDmgMin",
+   "value": 7,
+   "comment": "The clinging damage low end (7-12 per round)"
+  },
+  {
+   "name": "mm2fgChaggrinClingDmgMax",
+   "value": 12,
+   "comment": "The clinging damage high end"
+  },
+  {
+   "name": "mm2fgChaggrinQuillDmgMin",
+   "value": 1,
+   "comment": "The hedgehog quill damage low end (1-4 per round)"
+  },
+  {
+   "name": "mm2fgChaggrinQuillDmgMax",
+   "value": 4,
+   "comment": "The hedgehog quill damage high end"
+  },
+  {
+   "name": "mm2fgChaggrinDispelFeet",
+   "value": 40,
+   "comment": "The chaggrin earth-magic dispel radius (feet)"
+  },
+  {
+   "name": "mm2fgChaggrinSurpriseMin",
+   "value": 1,
+   "comment": "The merged-soil surprise low end (1-5)"
+  },
+  {
+   "name": "mm2fgChaggrinSurpriseMax",
+   "value": 5,
+   "comment": "The merged-soil surprise high end"
+  },
+  {
+   "name": "mm2fgHarginnColumnFeet",
+   "value": 8,
+   "comment": "The fire column height (about 8 feet)"
+  },
+  {
+   "name": "mm2fgHarginnGoutWidthFeet",
+   "value": 3,
+   "comment": "The flame gout width (feet)"
+  },
+  {
+   "name": "mm2fgHarginnGoutLengthFeet",
+   "value": 6,
+   "comment": "The flame gout length (feet)"
+  },
+  {
+   "name": "mm2fgHarginnDispelFeet",
+   "value": 20,
+   "comment": "The harginn fire-magic dispel radius (feet)"
+  },
+  {
+   "name": "mm2fgIldrissEyeCount",
+   "value": 3,
+   "comment": "The fog-form faintly gleaming red eyes"
+  },
+  {
+   "name": "mm2fgIldrissSurpriseMin",
+   "value": 4,
+   "comment": "The ildriss surprise low end (4 in 6)"
+  },
+  {
+   "name": "mm2fgIldrissSurpriseMax",
+   "value": 6,
+   "comment": "The ildriss surprise high end"
+  },
+  {
+   "name": "mm2fgIldrissWeaponPlusMin",
+   "value": 2,
+   "comment": "The weapon enchantment floor to hit an ildriss (+2 or better)"
+  },
+  {
+   "name": "mm2fgIldrissDispelFeet",
+   "value": 50,
+   "comment": "The ildriss air-magic dispel radius (feet)"
+  },
+  {
+   "name": "mm2fgVarrdigJetRangeFeet",
+   "value": 6,
+   "comment": "The water jet force range (feet, 1 in 6 blinding 1-4 rounds)"
+  },
+  {
+   "name": "mm2fgVarrdigBlindChanceMax",
+   "value": 6,
+   "comment": "The blinding chance high end (1 in 6)"
+  },
+  {
+   "name": "mm2fgVarrdigBlindRoundsMin",
+   "value": 1,
+   "comment": "The blinding low end (1-4 rounds)"
+  },
+  {
+   "name": "mm2fgVarrdigBlindRoundsMax",
+   "value": 4,
+   "comment": "The blinding high end"
+  },
+  {
+   "name": "mm2fgVarrdigDispelFeet",
+   "value": 30,
+   "comment": "The varrdig water-magic dispel radius (feet)"
+  },
+  {
+   "name": "mm2fgVarrdigSnowmanTubesMin",
+   "value": 3,
+   "comment": "The snowman-form tube low end (3-6)"
+  },
+  {
+   "name": "mm2fgVarrdigSnowmanTubesMax",
+   "value": 6,
+   "comment": "The snowman-form tube high end"
+  },
+  {
+   "name": "mm2fgVarrdigTubeRangeFeet",
+   "value": 10,
+   "comment": "The snowman-form tube range (feet)"
+  },
+  {
+   "name": "mm2fgVarrdigTubeDmgMin",
+   "value": 1,
+   "comment": "The snowman-form tube damage low end (1-6 hit points)"
+  },
+  {
+   "name": "mm2fgVarrdigTubeDmgMax",
+   "value": 6,
+   "comment": "The snowman-form tube damage high end"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2fgGiantHeadIsDoctrineOnlyHeading",
+   "value": true,
+   "comment": "The GIANT family head p. 68 is a grouping heading with no stat block of its own (the fomorian, firbolg and verbeeg blocks follow it)"
+  },
+  {
+   "name": "mm2fgGrueHeadIsDoctrineOnlyHeading",
+   "value": true,
+   "comment": "The GRUE, ELEMENTAL family head p. 72 is a grouping heading with no stat block of its own (the chaggrin, harginn, ildriss and varrdig blocks follow it)"
+  },
+  {
+   "name": "mm2fgFalconTableTwoColumns",
+   "value": true,
+   "comment": "The falcon and hawk table p. 64 carries two stat-block columns (the Small and the Large falcon)"
+  },
+  {
+   "name": "mm2fgFlyTableTwoColumns",
+   "value": true,
+   "comment": "The giant fly table p. 65 carries two stat-block columns (the bluebottle and the horsefly)"
+  },
+  {
+   "name": "mm2fgFooTableTwoColumns",
+   "value": true,
+   "comment": "The foo creatures table p. 65 carries two stat-block columns (the foo dog and the foo lion)"
+  },
+  {
+   "name": "mm2fgFormianTableThreeColumns",
+   "value": true,
+   "comment": "The formian table p. 66 carries three stat-block columns (the myrmarch, the warrior and the worker)"
+  },
+  {
+   "name": "mm2fgFirbolgBatAwayReadsSix",
+   "value": true,
+   "comment": "The firbolg bat-away success roll reads a 6 or better on 1d20 (the capture \"8 or better\" the OCR misread, the 75% arithmetic the settle)"
+  },
+  {
+   "name": "mm2fgFirbolgAlignmentChaoticGood",
+   "value": true,
+   "comment": "The firbolg alignment reads neutral (chaotic good) (the capture \"cheotic\" the OCR misread)"
+  },
+  {
+   "name": "mm2fgFroghemothDamageKeepsCaptureForm",
+   "value": true,
+   "comment": "The froghemoth damage cell \"5d10 or 5-8 (=4)\" stays capture verbatim (the djvu \"+4\" the misread; the 1eonline settle voice unreachable)"
+  },
+  {
+   "name": "mm2fgHarginnTreasureReadsLetterI",
+   "value": true,
+   "comment": "The harginn parenthetical treasure reads the letter I (the capture digit \"1\" the misread, the varrdig \"1/2 x F\" print pattern the settle)"
+  },
+  {
+   "name": "mm2fgVerbeegTreasureReadsKLM",
+   "value": true,
+   "comment": "The verbeeg parenthetical treasure reads the K,L,M letters (the capture \"K.L.M.\" periods the OCR misread)"
+  },
+  {
+   "name": "mm2fgGrigHitDicePrintHpRange",
+   "value": true,
+   "comment": "The grig hit dice \"1/2+1 (2-5 hit points)\" reads the print hp range midpoint 3 for avgHp (the atomie precedent)"
+  },
+  {
+   "name": "mm2fgGorgimeraArmorClassComposite",
+   "value": true,
+   "comment": "The gorgimera armor class \"5/2\" is the composite lion/gorgon cell (the grid reads the lion 5)"
+  },
+  {
+   "name": "mm2fgGalebDuhrHdReadsLowEnd",
+   "value": true,
+   "comment": "The galeb duhr hit dice \"8-10\" ranged cell reads the low end 8 (the kuei precedent)"
+  },
+  {
+   "name": "mm2fgIldrissMoveReadsFogForm",
+   "value": true,
+   "comment": "The ildriss move reads the 3-inch rolling-fog rate for the ground move (the 24-inch rate is the otherwise-form flight)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the falcon-to-varrdig stat grid",
+   "tag": "FgStats",
+   "count": "mm2fgFgStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE FG-GRID: the 28-row FgStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the 28 letter-F and letter-G stat blocks, in print order)",
+   "cols": [
+    "mm2fgFgStatAC",
+    "mm2fgFgStatHd",
+    "mm2fgFgStatHdBonus",
+    "mm2fgFgStatAvgHp",
+    "mm2fgFgStatAttacks",
+    "mm2fgFgStatXp",
+    "mm2fgFgStatXpHp",
+    "mm2fgFgStatLairPct",
+    "mm2fgFgStatMove",
+    "mm2fgFgStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the gorgimera \"5/2\" composite cell reads the lion 5; the forester bane and froghemoth composite cells read their first value; the verbeeg \"4 or better\" reads 4)",
+    "The hit dice num cells (the galeb duhr 8-10 ranged cell reads the low end - the kuei precedent; the grig \"1/2+1\" reads the half-die 0)",
+    "The hit dice bonus cells (the fomorian 13 + 1-3 and the grim 4+2-8 ranged cells read the low-end bonus; the falcon small carries the minus 1)",
+    "The book-average hit points (the floor(num x 3.5) + bonus formula; the grig reads the 2-5 print hp range midpoint - the atomie precedent)",
+    "The attack cells (the composite prints read their loaded value, the R798 duergar max-read convention: the froghemoth \"1 or 4\" reads 4, the mouther \"6+\" reads 6, the forester bane \"3-6\" reads 6, the grippli \"1 weapon\" reads 1; the grim \"See below\" reads the 1 loader floor)",
+    "The base xp cells (every letter-F and letter-G print carries the xp level prefix)",
+    "The xp per hit point cells",
+    "The lair percentage cells (Nil reads 0)",
+    "The ground move-rate cells (the ildriss reads the 3\" rolling-fog rate; the gloomwing \"/12\" reads the 12 flight rate; Nil reads 0)",
+    "The magic resistance cells (Standard and See below read 0)"
+   ],
+   "data": [
+    [
+     5,
+     1,
+     -1,
+     2,
+     3,
+     15,
+     1,
+     30,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0,
+     3,
+     3,
+     25,
+     1,
+     30,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     4,
+     7,
+     1,
+     36,
+     2,
+     0,
+     3,
+     0
+    ],
+    [
+     6,
+     3,
+     0,
+     10,
+     1,
+     35,
+     3,
+     0,
+     9,
+     0
+    ],
+    [
+     5,
+     6,
+     0,
+     21,
+     1,
+     150,
+     6,
+     0,
+     6,
+     0
+    ],
+    [
+     0,
+     7,
+     7,
+     31,
+     3,
+     1200,
+     12,
+     0,
+     27,
+     45
+    ],
+    [
+     -1,
+     11,
+     11,
+     49,
+     3,
+     2850,
+     16,
+     0,
+     21,
+     55
+    ],
+    [
+     4,
+     5,
+     0,
+     17,
+     6,
+     165,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     6,
+     6,
+     27,
+     2,
+     400,
+     8,
+     100,
+     15,
+     0
+    ],
+    [
+     2,
+     3,
+     3,
+     13,
+     4,
+     150,
+     4,
+     50,
+     15,
+     0
+    ],
+    [
+     3,
+     1,
+     1,
+     4,
+     1,
+     20,
+     2,
+     20,
+     18,
+     0
+    ],
+    [
+     2,
+     16,
+     0,
+     56,
+     4,
+     8100,
+     20,
+     40,
+     2,
+     0
+    ],
+    [
+     -2,
+     8,
+     0,
+     28,
+     2,
+     2000,
+     12,
+     15,
+     6,
+     20
+    ],
+    [
+     3,
+     13,
+     1,
+     46,
+     1,
+     2750,
+     18,
+     45,
+     9,
+     0
+    ],
+    [
+     2,
+     13,
+     2,
+     47,
+     1,
+     3650,
+     18,
+     45,
+     15,
+     15
+    ],
+    [
+     4,
+     5,
+     5,
+     22,
+     2,
+     275,
+     6,
+     30,
+     18,
+     0
+    ],
+    [
+     1,
+     4,
+     3,
+     17,
+     6,
+     210,
+     5,
+     95,
+     3,
+     0
+    ],
+    [
+     1,
+     5,
+     1,
+     18,
+     3,
+     525,
+     6,
+     0,
+     12,
+     0
+    ],
+    [
+     7,
+     1,
+     2,
+     5,
+     1,
+     24,
+     2,
+     0,
+     15,
+     0
+    ],
+    [
+     5,
+     10,
+     0,
+     35,
+     5,
+     2557,
+     14,
+     25,
+     12,
+     0
+    ],
+    [
+     -2,
+     9,
+     0,
+     31,
+     2,
+     1600,
+     12,
+     40,
+     12,
+     35
+    ],
+    [
+     9,
+     1,
+     1,
+     4,
+     1,
+     45,
+     2,
+     30,
+     9,
+     0
+    ],
+    [
+     2,
+     0,
+     1,
+     3,
+     3,
+     50,
+     1,
+     10,
+     6,
+     30
+    ],
+    [
+     0,
+     4,
+     2,
+     16,
+     1,
+     285,
+     5,
+     0,
+     18,
+     25
+    ],
+    [
+     4,
+     5,
+     5,
+     22,
+     2,
+     425,
+     6,
+     0,
+     12,
+     0
+    ],
+    [
+     3,
+     4,
+     4,
+     18,
+     1,
+     245,
+     5,
+     0,
+     15,
+     0
+    ],
+    [
+     2,
+     4,
+     0,
+     14,
+     1,
+     245,
+     5,
+     0,
+     3,
+     0
+    ],
+    [
+     5,
+     6,
+     6,
+     27,
+     2,
+     650,
+     8,
+     0,
+     6,
+     0
+    ]
+   ]
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letters FG walk round pins (the R805 census)": [
+   {
+    "kind": "const",
+    "name": "mm2fgRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgLetterFHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgLetterGHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFgStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgPriorOwnedEntries"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFaerieDragonOwningRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGiantDragonflyOwningRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrayOnesOwningRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGiantHeadSubEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrueHeadSubEntryCount"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgGiantHeadIsDoctrineOnlyHeading"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgGrueHeadIsDoctrineOnlyHeading"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgFalconTableTwoColumns"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgFlyTableTwoColumns"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgFooTableTwoColumns"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgFormianTableThreeColumns"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgFirbolgBatAwayReadsSix"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgFirbolgAlignmentChaoticGood"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgFroghemothDamageKeepsCaptureForm"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgHarginnTreasureReadsLetterI"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgVerbeegTreasureReadsKLM"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgGrigHitDicePrintHpRange"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgGorgimeraArmorClassComposite"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgGalebDuhrHdReadsLowEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2fgIldrissMoveReadsFogForm"
+   }
+  ],
+  "the falcon pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgFalconSmallXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFalconSmallXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFalconLargeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFalconLargeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFalconNestShinyPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFalconDiveHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFalconDiveToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFalconBeakBlindPct"
+   }
+  ],
+  "the firefriend pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgFirefriendXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirefriendXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirefriendBeamInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirefriendBeamFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirefriendBeamDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirefriendBeamDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirefriendLifespanYears"
+   }
+  ],
+  "the giant fly pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgFlyBluebottleXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFlyBluebottleXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFlyHorseflyXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFlyHorseflyXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFlyJumpInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFlyJumpHeightInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFlyJumpSegments"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFlyBluebottleDiseasePct"
+   }
+  ],
+  "the foo creature pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgFooDogXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooDogXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooLionXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooLionXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooDogAsHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooLionAsHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooLawfulEvilBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooRoarSummonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooRoarRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooNewcomerRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooNewcomerRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooEvilAttackPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooDogHdNum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFooLionHdNum"
+   }
+  ],
+  "the forester's bane pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneLeafFeetMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneLeafFeetMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneStalksMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneStalksMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneEscapePctPerStr"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneLeafHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneLeafHpMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneStalkHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneStalkHpMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneRegrowWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgForestersBaneRegrowWeeksMax"
+   }
+  ],
+  "the formian pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgFormianMyrmarchXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianMyrmarchXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianWarriorXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianWarriorXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianWorkerXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianWorkerXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianUndergroundMultiple"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianWorkerEncounterPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianWarriorEncounterPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianWorkerGuardedPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianRaidWorkersMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianRaidWorkersMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianMyrmarchGuards"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianMyrmarchWorkers"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianGymarchHdNum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianGymarchHdBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianWorkerStrength"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianWarriorStrength"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianMyrmarchStrength"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFormianMyrmarchCommonPct"
+   }
+  ],
+  "the froghemoth pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothEggsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothEggsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothTadpoleEatenPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothSurvivalPctMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothTentacleSeverMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothTentacleSeverMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothTongueSeverMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothTongueSeverMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothTongueFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothSwallowDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothSwallowDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothUnconsciousRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothDigestedHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothSeveredRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothSeveredRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFroghemothTadpoleSwimInches"
+   }
+  ],
+  "the galeb duhr pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrSpellCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrBouldersMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrBouldersMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrBoulderRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrBoulderAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrBoulderHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrColdSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrFireSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrHdMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGalebDuhrHdMax"
+   }
+  ],
+  "the fomorian pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgFomorianXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFomorianXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFomorianSurpriseBonusMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFomorianSurpriseBonusMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFomorianFemalePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFomorianFemalesPerMaleMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFomorianFemalesPerMaleMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFomorianYoungPerFemaleMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFomorianYoungPerFemaleMax"
+   }
+  ],
+  "the firbolg pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgSmallGroupPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgBatAttemptsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgBatRollMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgBatPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgPowerCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgShamanPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgShamanLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgSeventhLevelFirstSpells"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgFirbolgSeventhLevelSecondSpells"
+   }
+  ],
+  "the verbeeg pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegWithGiantsPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegHillGiantSharePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegOgreSharePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegWanderingPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegLairEncPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegLairMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegLairMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegOthersPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegSpearCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegSpearRangeBonusMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegSpearRangeBonusMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegOoThrowRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegOoThrowDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegOoThrowDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegLeaderHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegShamanPctPerGiant"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegShamanLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegNoMagicPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegWolvesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegWolvesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegWolvesPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVerbeegYoungPct"
+   }
+  ],
+  "the gibbering mouther pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgGibberingMoutherXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGibberingMoutherXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgMoutherMouthsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgMoutherDrainPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgMoutherSlipMouthsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgMoutherSlipRollMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgMoutherFallenMouths"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgMoutherGibberRadiusInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgMoutherGroundRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgMoutherEarthSegments"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgMoutherStoneRounds"
+   }
+  ],
+  "the gloomwing pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingSurpriseMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingPheromoneRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingStrLossPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingRestoreTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingRestoreTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingAttractPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingAttractMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingAttractMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingHatchDays"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingWormsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingWormsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGloomwingMandibleValueGp"
+   }
+  ],
+  "the goat pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgGoatXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGoatXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGoatChargeToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGoatChargeDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGoatChargeDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGoatBucksMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGoatBucksMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGoatDoesMax"
+   }
+  ],
+  "the gorgimera pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraLionAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraPetrifyPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraFirePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraPetrifyLengthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraPetrifyWidthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraFireLengthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraFireWidthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraBreathDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraBreathDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGorgimeraRangeFeet"
+   }
+  ],
+  "the greenhag pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagStrBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagPowerCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagPowerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagSilentHidePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagSurpriseMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagInvisibleSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagInvisibleSurpriseMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagSurprisedMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGreenhagSurprisedDie"
+   }
+  ],
+  "the grippli pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliLifespanYears"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliUltravisionInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliPsionicMinPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliPsionicMaxPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliLairMalesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliLairMalesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliOffspringMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliOffspringMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliMotherAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliMotherHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliMatesAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrippliMatesHd"
+   }
+  ],
+  "the grig pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgGrigXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigMissileToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigDartCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigPowerCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigPowerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigFiddlerPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigFiddleRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigSurprisePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigSurprisedPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigInfravisionFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrigGlenPct"
+   }
+  ],
+  "the grim pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgGrimXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrimXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrimFormCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrimTurnUndeadLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrimTurnDieBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrimWeaponPlusMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrimProtectionRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrimDetectEvilInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrimSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgGrimSurpriseDie"
+   }
+  ],
+  "the grue pins (the R805 MM2 letters FG walk)": [
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgHarginnXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgHarginnXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgIldrissXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgIldrissXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinWeightMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinWeightMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinClingDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinClingDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinQuillDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinQuillDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinDispelFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgChaggrinSurpriseMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgHarginnColumnFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgHarginnGoutWidthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgHarginnGoutLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgHarginnDispelFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgIldrissEyeCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgIldrissSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgIldrissSurpriseMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgIldrissWeaponPlusMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgIldrissDispelFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigJetRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigBlindChanceMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigBlindRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigBlindRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigDispelFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigSnowmanTubesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigSnowmanTubesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigTubeRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigTubeDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2fgVarrdigTubeDmgMax"
+   }
+  ],
+  "the MM2 letters FG walk stat grid (the R805 wiring)": [
+   {
+    "kind": "table",
+    "name": "the falcon-to-varrdig stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the two gap boxes flip (the census walk)",
+   "expr": "m['mm2fgRegistryAfter']() - m['mm2fgRegistryBefore']() != m['mm2fgDefCount']() or m['mm2fgDefCount']() != 28 or m['mm2fgEntryCount']() != 25 or m['mm2fgFgStatRows']() != 28 or m['mm2fgGapClosed']() != 12 or m['mm2fgGapOpen']() != 25 or m['mm2fgPriorOwnedEntries']() != 3"
+  },
+  {
+   "note": "the pin-time entry census composition (23 stat-block headings, 2 doctrine-only family heads, 19 single-column defs and 9 multi-column defs)",
+   "expr": "m['mm2fgEntryCount']() != m['mm2fgStatBlockHeadings']() + m['mm2fgDoctrineHeads']() or m['mm2fgDefCount']() != 19 + 9 or m['mm2fgLetterFHeadings']() != 7 or m['mm2fgLetterGHeadings']() != 18 or m['mm2fgGiantHeadSubEntryCount']() + m['mm2fgGrueHeadSubEntryCount']() != 7"
+  },
+  {
+   "note": "the full-kill xp formula on four bookend defs (the xpValue walk)",
+   "expr": "m['mm2fgFalconSmallXpValue']() != 15 + 1 * 2 or m['mm2fgFooLionXpValue']() != 2850 + 16 * 49 or m['mm2fgFroghemothXpValue']() != 8100 + 20 * 56 or m['mm2fgVarrdigXpValue']() != 650 + 8 * 27"
+  },
+  {
+   "note": "the prior-owned letter-F and letter-G index entries (all three landed with the R803 dragon walk)",
+   "expr": "m['mm2fgFaerieDragonOwningRound']() != 803 or m['mm2fgGiantDragonflyOwningRound']() != 803 or m['mm2fgGrayOnesOwningRound']() != 803 or m['mm2fgRound']() - m['mm2fgFaerieDragonOwningRound']() != 2"
+  },
+  {
+   "note": "the foo creature effective hit-dice ladder vs. evil opponents (the lions 15, the dogs 10)",
+   "expr": "m['mm2fgFooLionAsHd']() - m['mm2fgFooDogAsHd']() != 5 or m['mm2fgFooDogAsHd']() != m['mm2fgFooDogHdNum']() + 3 or m['mm2fgFooLionAsHd']() != m['mm2fgFooLionHdNum']() + 4"
+  },
+  {
+   "note": "the ranged hit-dice cells read the low end (the kuei precedent) and the grig reads the print hp range",
+   "expr": "m['mm2fgGalebDuhrHdMin']() != 8 or m['mm2fgFomorianSurpriseBonusMin']() != 1 or m['mm2fgGrigXpValue']() != 50 + 1 * 3 or m['mm2fgFalconSmallXpValue']() != 15 + 1 * 2"
+  },
+  {
+   "note": "the grue dispel radii walk (the earth 40, the fire 20, the air 50, the water 30)",
+   "expr": "m['mm2fgChaggrinDispelFeet']() != 40 or m['mm2fgHarginnDispelFeet']() != 20 or m['mm2fgIldrissDispelFeet']() != 50 or m['mm2fgVarrdigDispelFeet']() != 30"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter F box",
+   "from": "- [ ] **Letter F**",
+   "to": "- [x] **Letter F**"
+  },
+  {
+   "note": "the Letter G box",
+   "from": "- [ ] **Letter G**",
+   "to": "- [x] **Letter G**"
+  }
+ ],
+ "gap_census": {
+  "closed": 12,
+  "open": 25
+ },
+ "caller_files": [],
+ "inline_count": 318,
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letters-FG def walk (the R782 site-block pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R805: the MM2 letters FG live def walk ----\n    // The 28 promoted letter-F and letter-G defs\n    // cross-checked live against the mm2fg pins:\n    // every stat cell of the 28-row FgStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula, the falcon plummeting dive and\n    // blinding beak, the firefriend greenish-light\n    // beam, the giant fly backward spring, the foo\n    // barking roar, the forester bane snapper-saw,\n    // the formian centaur-ants, the froghemoth\n    // tadhemoths, the galeb duhr earth power\n    // print, the fomorian deformed and wicked\n    // giants, the firbolg bat-away-missiles read\n    // (the capture \"8 or better\" the OCR misread,\n    // the print reads 6, the 75% arithmetic the\n    // settle), the verbeeg human behemoths, the\n    // gibbering mouther all-mouths-and-eyes body,\n    // the gloomwing tenebrous-worm larva, the\n    // goat charge, the gorgimera sterile hybrid,\n    // the greenhag rock-hard talons, the grippli\n    // tribe mother, the grig Otto's Irresistible\n    // Dance fiddler, the grim turn-undead\n    // guardians, the chaggrin soil beast, the\n    // harginn flame horror, the ildriss wind\n    // terror, the varrdig fluid brute, and the\n    // registry census floor 622 -> at least\n    // 650 (the arc grows the registry in later\n    // letter rounds; the walk demands at least\n    // the landing count).\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kFG[28] = {\n            \"falcon_small\", \"falcon_large\",\n            \"firefriend\", \"fly_bluebottle\",\n            \"fly_horsefly\", \"foo_dog\",\n            \"foo_lion\", \"foresters_bane\",\n            \"formian_myrmarch\", \"formian_warrior\",\n            \"formian_worker\", \"froghemoth\",\n            \"galeb_duh\", \"fomorian\",\n            \"firbolg\", \"verbeeg\",\n            \"gibbering_mouther\", \"gloomwing\",\n            \"goat\", \"gorgimera\",\n            \"greenhag\", \"grippli\",\n            \"grig\", \"grim\",\n            \"chaggrin\", \"harginn\",\n            \"ildriss\", \"varrdig\",\n        };\n        for (int i = 0; i < 28; ++i) {\n            const auto* d = reg.find(kFG[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\") ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2fgFgStatAC(i))\n                ++bad;\n            if (d->hitDiceNum != mm2fgFgStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2fgFgStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2fgFgStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2fgFgStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2fgFgStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2fgFgStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2fgFgStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2fgFgStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2fgFgStatMr(i))\n                ++bad;\n        }\n        const auto* pp00 = reg.find(\"falcon_small\");\n        if (!pp00 || pp00->text.find(\"plummeting dive\")\n            == std::string::npos) ++bad;\n        const auto* pp01 = reg.find(\"falcon_large\");\n        if (!pp01 || pp01->text.find(\"blinding 1 eye\")\n            == std::string::npos) ++bad;\n        const auto* pp02 = reg.find(\"firefriend\");\n        if (!pp02 || pp02->text.find(\"greenish light\")\n            == std::string::npos) ++bad;\n        const auto* pp03 = reg.find(\"fly_bluebottle\");\n        if (!pp03 || pp03->text.find(\"backward spring\")\n            == std::string::npos) ++bad;\n        const auto* pp04 = reg.find(\"fly_horsefly\");\n        if (!pp04 || pp04->text.find(\"largest of all giant flies\")\n            == std::string::npos) ++bad;\n        const auto* pp05 = reg.find(\"foo_dog\");\n        if (!pp05 || pp05->text.find(\"barking roar\")\n            == std::string::npos) ++bad;\n        const auto* pp06 = reg.find(\"foo_lion\");\n        if (!pp06 || pp06->text.find(\"bush-tipped tails\")\n            == std::string::npos) ++bad;\n        const auto* pp07 = reg.find(\"foresters_bane\");\n        if (!pp07 || pp07->text.find(\"snapper-saw\")\n            == std::string::npos) ++bad;\n        const auto* pp08 = reg.find(\"formian_myrmarch\");\n        if (!pp08 || pp08->text.find(\"centaur-ants\")\n            == std::string::npos) ++bad;\n        const auto* pp09 = reg.find(\"formian_warrior\");\n        if (!pp09 || pp09->text.find(\"raiding party\")\n            == std::string::npos) ++bad;\n        const auto* pp10 = reg.find(\"formian_worker\");\n        if (!pp10 || pp10->text.find(\"22 strength points\")\n            == std::string::npos) ++bad;\n        const auto* pp11 = reg.find(\"froghemoth\");\n        if (!pp11 || pp11->text.find(\"tadhemoths\")\n            == std::string::npos) ++bad;\n        const auto* pp12 = reg.find(\"galeb_duh\");\n        if (!pp12 || pp12->text.find(\"earth power\")\n            == std::string::npos) ++bad;\n        const auto* pp13 = reg.find(\"fomorian\");\n        if (!pp13 || pp13->text.find(\"deformed, and wicked\")\n            == std::string::npos) ++bad;\n        const auto* pp14 = reg.find(\"firbolg\");\n        if (!pp14 || pp14->text.find(\"bat away missiles\")\n            == std::string::npos) ++bad;\n        const auto* pp15 = reg.find(\"verbeeg\");\n        if (!pp15 || pp15->text.find(\"human behemoths\")\n            == std::string::npos) ++bad;\n        const auto* pp16 = reg.find(\"gibbering_mouther\");\n        if (!pp16 || pp16->text.find(\"all mouths and eyes\")\n            == std::string::npos) ++bad;\n        const auto* pp17 = reg.find(\"gloomwing\");\n        if (!pp17 || pp17->text.find(\"tenebrous worm\")\n            == std::string::npos) ++bad;\n        const auto* pp18 = reg.find(\"goat\");\n        if (!pp18 || pp18->text.find(\"Buck goats may charge\")\n            == std::string::npos) ++bad;\n        const auto* pp19 = reg.find(\"gorgimera\");\n        if (!pp19 || pp19->text.find(\"sterile hybrid\")\n            == std::string::npos) ++bad;\n        const auto* pp20 = reg.find(\"greenhag\");\n        if (!pp20 || pp20->text.find(\"rock-hard talons\")\n            == std::string::npos) ++bad;\n        const auto* pp21 = reg.find(\"grippli\");\n        if (!pp21 || pp21->text.find(\"tribe mother\")\n            == std::string::npos) ++bad;\n        const auto* pp22 = reg.find(\"grig\");\n        if (!pp22 || pp22->text.find(\"Otto's Irresistible Dance\")\n            == std::string::npos) ++bad;\n        const auto* pp23 = reg.find(\"grim\");\n        if (!pp23 || pp23->text.find(\"turn undead\")\n            == std::string::npos) ++bad;\n        const auto* pp24 = reg.find(\"chaggrin\");\n        if (!pp24 || pp24->text.find(\"soil beast\")\n            == std::string::npos) ++bad;\n        const auto* pp25 = reg.find(\"harginn\");\n        if (!pp25 || pp25->text.find(\"flame horror\")\n            == std::string::npos) ++bad;\n        const auto* pp26 = reg.find(\"ildriss\");\n        if (!pp26 || pp26->text.find(\"wind terror\")\n            == std::string::npos) ++bad;\n        const auto* pp27 = reg.find(\"varrdig\");\n        if (!pp27 || pp27->text.find(\"fluid brute\")\n            == std::string::npos) ++bad;\n        if ((int)reg.all().size()\n            < mm2fgRegistryAfter())\n            ++bad;\n        printf(\"R805 MM2 letters FG live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/f/falcon_small.lua",
+   "content": "-- Falcon, Small: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Falcon, Small\",\n  page = \"64\",\n  pages = \"64\",\n  source = \"MM2\",\n  race = \"Falcon\",\n  hitDice = \"1 minus 1\",\n  hitDiceNum = 1,\n  hitDiceBonus = -1,\n  avgHp = 2,\n  armorClass = 5,\n  numAttacks = 3,\n  damage = \"1/1/1\",\n  xp = 15,\n  xpPerHp = 1,\n  xpValue = 17,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1 or 2\",\n  lairPct = 30,\n  treasure = \"See below\",\n  move = \"1\\\"/36\\\"\",\n  size = \"S (2-3' wingspread)\",\n  intelligence = \"animal\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Falcons and hawks are common throughout the world, from tropic to subarctic regions. These birds nest in tall trees or inaccessible cliff areas. There is a 5% chance that a nest will contain some small, shiny item, such as a coin or gem. Attack is typically by a plummeting dive from 100 feet or higher. This increases to-hit probability by +2 and inflicts twice the amount of normal talon damage, but no beak attack is then possible. Because of their exceptional eyesight, birds of this sort are never surprised. If taken while young and trained by an expert, falcons and hawks can be taught to hunt. These same birds can be set upon opponents, and this attack will be by claw and beak. However, if the opponent has unprotected eyes, a beak hit has a 25% probability of actually blinding 1 eye.\\n\\nLarge falcons have been known to attack small demihumans while hunting in the wild. Such occurrences are extremely rare.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/falcon_large.lua",
+   "content": "-- Falcon, Large: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Falcon, Large\",\n  page = \"64\",\n  pages = \"64\",\n  source = \"MM2\",\n  race = \"Falcon\",\n  hitDice = \"1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 0,\n  avgHp = 3,\n  armorClass = 6,\n  numAttacks = 3,\n  damage = \"1-2/1-2/1\",\n  xp = 25,\n  xpPerHp = 1,\n  xpValue = 28,\n  xpSource = \"mm2_print\",\n  frequency = \"uncommon\",\n  noAppearing = \"1 or 2\",\n  lairPct = 30,\n  treasure = \"See below\",\n  move = \"1\\\"/33\\\"\",\n  size = \"S (3-4'+ wingspread)\",\n  intelligence = \"animal\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Falcons and hawks are common throughout the world, from tropic to subarctic regions. These birds nest in tall trees or inaccessible cliff areas. There is a 5% chance that a nest will contain some small, shiny item, such as a coin or gem. Attack is typically by a plummeting dive from 100 feet or higher. This increases to-hit probability by +2 and inflicts twice the amount of normal talon damage, but no beak attack is then possible. Because of their exceptional eyesight, birds of this sort are never surprised. If taken while young and trained by an expert, falcons and hawks can be taught to hunt. These same birds can be set upon opponents, and this attack will be by claw and beak. However, if the opponent has unprotected eyes, a beak hit has a 25% probability of actually blinding 1 eye.\\n\\nLarge falcons have been known to attack small demihumans while hunting in the wild. Such occurrences are extremely rare.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/firefriend.lua",
+   "content": "-- Firefriend (Giant Firefly): promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Firefriend (Giant Firefly)\",\n  page = \"65\",\n  pages = \"65\",\n  source = \"MM2\",\n  race = \"Firefriend (Giant Firefly)\",\n  hitDice = \"1+4\",\n  hitDiceNum = 1,\n  hitDiceBonus = 4,\n  avgHp = 7,\n  armorClass = 4,\n  numAttacks = 1,\n  damage = \"1-2\",\n  xp = 36,\n  xpPerHp = 2,\n  xpValue = 50,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"3\\\"/15\\\" (MC:B)\",\n  size = \"S (1' + long)\",\n  intelligence = \"low\",\n  alignment = \"neutral (good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Immune to electrical and fire attacks\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The firefriend, or giant firefly, is a well-regarded but rarely encountered creature found in temperate climes. Although this giant insect has only low intelligence by human standards, it is clever and shuns obvious enemies. Humans and demihumans of friendly disposition are sought as companions, however, for firefriends love to converse with them and to hear stories of a fanciful nature. A firefriend has small but sharp mandibles with which to protect itself. In addition, its glowing abdominal light, normally equal in luminosity to a torch, can be brightened and concentrated once every turn. A beam of greenish light about 3 inches in diameter and up to 14 feet long can be shot forth. Flesh struck will suffer 5-20 points of damage, one-half damage if a saving throw vs. wands is successful. These creatures are not harmed by electricity or fire.\\n\\nFirefriends speak their own language as well as the common tongue in most cases. They hatch in spring, grow to maturity by age 2, and live about 10 years or so. By age 1 or 2 they learn to converse with humans.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/fly_bluebottle.lua",
+   "content": "-- Fly, Giant (bluebottle): promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Fly, Giant (bluebottle)\",\n  page = \"65\",\n  pages = \"65\",\n  source = \"MM2\",\n  race = \"Giant Fly\",\n  hitDice = \"3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 0,\n  avgHp = 10,\n  armorClass = 6,\n  numAttacks = 1,\n  damage = \"1-8\",\n  xp = 35,\n  xpPerHp = 3,\n  xpValue = 65,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1-10\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"9\\\"/30\\\" (MC:D)\",\n  size = \"M\",\n  intelligence = \"non-\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Jump\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"All giant flies shun fire. A hit with a torch will burn their wings off and they seem to know this instinctively. Aggressively defensive prey will cause giant flies to jump away. A jump is a backward spring of 3\\\" which takes place in 1 segment and allows the giant fly to be airborne at 1\\\" height at the end of the movement. Thus, a giant fly can land on or near a victim, bite, and jump away if it has initiative. Of course, opponents able to attack the giant fly at a distance can always do so.\\n\\nBluebottle: This species of giant fly seldom attacks living prey, preferring carrion, offal, and the like. They are attracted to sweet things. They also attack creatures covered with blood or with open wounds. Their bite is 10% likely (per hit) to inflict the victim with some form of disease.\\n\\nHorsefly: This largest of all giant flies is very aggressive. It is prone to alight on any creature and attack for its blood. After biting, the giant horsefly will cause an equal amount of damage next round by drawing off blood or fluids from the wound, unless it is driven off or slain.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/fly_horsefly.lua",
+   "content": "-- Fly, Giant (horsefly): promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Fly, Giant (horsefly)\",\n  page = \"65\",\n  pages = \"65\",\n  source = \"MM2\",\n  race = \"Giant Fly\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 21,\n  armorClass = 5,\n  numAttacks = 1,\n  damage = \"2-16\",\n  xp = 150,\n  xpPerHp = 6,\n  xpValue = 276,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"6\\\"/27\\\" (MC:D)\",\n  size = \"L\",\n  intelligence = \"non-\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Jump\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"All giant flies shun fire. A hit with a torch will burn their wings off and they seem to know this instinctively. Aggressively defensive prey will cause giant flies to jump away. A jump is a backward spring of 3\\\" which takes place in 1 segment and allows the giant fly to be airborne at 1\\\" height at the end of the movement. Thus, a giant fly can land on or near a victim, bite, and jump away if it has initiative. Of course, opponents able to attack the giant fly at a distance can always do so.\\n\\nBluebottle: This species of giant fly seldom attacks living prey, preferring carrion, offal, and the like. They are attracted to sweet things. They also attack creatures covered with blood or with open wounds. Their bite is 10% likely (per hit) to inflict the victim with some form of disease.\\n\\nHorsefly: This largest of all giant flies is very aggressive. It is prone to alight on any creature and attack for its blood. After biting, the giant horsefly will cause an equal amount of damage next round by drawing off blood or fluids from the wound, unless it is driven off or slain.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/foo_dog.lua",
+   "content": "-- Foo Dog: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Foo Dog\",\n  page = \"65\",\n  pages = \"65-66\",\n  source = \"MM2\",\n  race = \"Foo Creature\",\n  hitDice = \"7+7\",\n  hitDiceNum = 7,\n  hitDiceBonus = 7,\n  avgHp = 31,\n  armorClass = 0,\n  numAttacks = 3,\n  damage = \"2-5/2-5/1-12\",\n  xp = 1200,\n  xpPerHp = 12,\n  xpValue = 1572,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"2-8\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"27\\\"\",\n  size = \"M\",\n  intelligence = \"very\",\n  alignment = \"chaotic good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"45%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Foo creatures are found in separate areas of the Prime Material Plane, as well as in some of the Upper Outer Planes. They can become ethereal and travel astrally or ethereally. Attack is by 2 clawing rakes with the forepaws, and then a bite. When engaged in combat with Evil opponents, foo creatures attack as if dogs were 10 and lions were 15 hit dice creatures. If the opponents are lawful evil, especially devils, they gain +1 per attack, both to hit and to damage. All foo creatures can become invisible at will. Their barking roar alerts humans to danger and threatens evil creatures, for the sound is 20% likely to bring 1-6 additional foo dogs or 1-2 foo lions if it continues for 7 or more rounds. The newcomers will appear from the Astral Plane in 1-10 rounds. Foo creatures can travel the Astral Plane and often do so. Evil opponents attack foo creatures at -1 on both to-hit dice and damage dice.\\n\\nFoo creatures can sometimes be convinced to serve and guard humans of the very Good sort. They will not stay for extended periods in any case. They have their own language and can understand human speech if familiar with the tongue.\\n\\nFoo creatures have large, blunt heads with wide-set, bulging eyes and huge mouths with large fangs. Their bodies appear rather leonine, with bush-tipped tails. Dogs have short tails, lions long ones. The hind legs are quite canine, while the forelegs are more lion-like. Coloration runs from golden-toned to black. Odd foo creatures range from white to almost any other color. Foo lions have manes and larger mouths than foo dogs.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/foo_lion.lua",
+   "content": "-- Foo Lion: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Foo Lion\",\n  page = \"65\",\n  pages = \"65-66\",\n  source = \"MM2\",\n  race = \"Foo Creature\",\n  hitDice = \"11+11\",\n  hitDiceNum = 11,\n  hitDiceBonus = 11,\n  avgHp = 49,\n  armorClass = -1,\n  numAttacks = 3,\n  damage = \"2-8/2-8/2-16\",\n  xp = 2850,\n  xpPerHp = 16,\n  xpValue = 3634,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"21\\\"\",\n  size = \"L\",\n  intelligence = \"exceptional\",\n  alignment = \"chaotic good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"55%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Foo creatures are found in separate areas of the Prime Material Plane, as well as in some of the Upper Outer Planes. They can become ethereal and travel astrally or ethereally. Attack is by 2 clawing rakes with the forepaws, and then a bite. When engaged in combat with Evil opponents, foo creatures attack as if dogs were 10 and lions were 15 hit dice creatures. If the opponents are lawful evil, especially devils, they gain +1 per attack, both to hit and to damage. All foo creatures can become invisible at will. Their barking roar alerts humans to danger and threatens evil creatures, for the sound is 20% likely to bring 1-6 additional foo dogs or 1-2 foo lions if it continues for 7 or more rounds. The newcomers will appear from the Astral Plane in 1-10 rounds. Foo creatures can travel the Astral Plane and often do so. Evil opponents attack foo creatures at -1 on both to-hit dice and damage dice.\\n\\nFoo creatures can sometimes be convinced to serve and guard humans of the very Good sort. They will not stay for extended periods in any case. They have their own language and can understand human speech if familiar with the tongue.\\n\\nFoo creatures have large, blunt heads with wide-set, bulging eyes and huge mouths with large fangs. Their bodies appear rather leonine, with bush-tipped tails. Dogs have short tails, lions long ones. The hind legs are quite canine, while the forelegs are more lion-like. Coloration runs from golden-toned to black. Odd foo creatures range from white to almost any other color. Foo lions have manes and larger mouths than foo dogs.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/foresters_bane.lua",
+   "content": "-- Forester's Bane (Snapper-saw): promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Forester's Bane (Snapper-saw)\",\n  page = \"66\",\n  pages = \"66\",\n  source = \"MM2\",\n  race = \"Forester's Bane (Snapper-saw)\",\n  hitDice = \"5 (plus special)\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 17,\n  armorClass = \"4 (stalks)/7 (leaves)/9 (bush proper)\",\n  numAttacks = \"3-6\",\n  damage = \"2-5 each\",\n  xp = 165,\n  xpPerHp = 5,\n  xpValue = 250,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-2 (1d4/2)\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"Nil\",\n  size = \"L\",\n  intelligence = \"non-\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The forester's bane, or snapper-saw plant, is a low-growing shrub. Broad, tough leaves with sinewy ribs radiate 5-7 feet from the central plant. The bushy center hides 3-6 stalks with saw-toothed edges. When a creature steps on or near the leaves, the leaves snap shut around it, holding it fast. The jagged stalks then saw away at the prey.\\n\\nTrapping is automatic and subjects the victim to 3-6 attacks that round. On successive rounds there is a 5% chance per 1 point of strength that a victim can pull away and escape further attacks. In addition to the damage which the main plant can withstand, leaves can withstand 9-16 points of damage and stalks 17-24. Lost leaves and stalk will grow back in 2-8 weeks unless the central plant is slain.\\n\\nThe forester's bane is green to dark green. Stalks are purple. The bushy central plant grows luscious-smelling berries of white, greenish, golden, or bright yellow color. They are large, plump, and delicious, being very nutritious and rich in protein.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/formian_myrmarch.lua",
+   "content": "-- Formian Myrmarch: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Formian Myrmarch\",\n  page = \"66\",\n  pages = \"66\",\n  source = \"MM2\",\n  race = \"Formian\",\n  hitDice = \"6+6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 6,\n  avgHp = 27,\n  armorClass = 1,\n  numAttacks = 2,\n  damage = \"2-8/1-2\",\n  xp = 400,\n  xpPerHp = 8,\n  xpValue = 616,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"5-8\",\n  lairPct = 100,\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"L\",\n  intelligence = \"exceptional\",\n  alignment = \"lawful neutral\",\n  specialAttacks = \"Poison\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of intelligent ant men, the formians, are sometimes called centaur-ants. They dwell in cities of above- and below-ground construction. At first glance, these odd habitations appear to be normal walled cities made by humans. However, the structures inside the smooth-walled enclosure are truncated cones, cylinders, or hemispheres and have entry only at the top or along the upper portion. The chambers in these structures have sloping ramps or vertical shafts leading downward to a complex of tunnels and chambers forming the underground portion of the city\u2014always about 3 times larger than the upper part. Ninety per cent of encounters will be with formian workers, 10% with warriors. In either case, check for the probability of the encounter taking place within 1 mile of the formians' city (\\\"in lair\\\").\\n\\nWorkers (10-40) are only 10% likely to be accompanied by warriors. If warriors are indicated, then the group is a raiding party, probably involved in attacking another city or a giant termite nest.\\n\\nMyrmarches are formian nobles and are encountered only in the cities of the centaur-ants. Each myrmarch will be served by 2 warrior guards and 8 workers. These 10 formians are in addition to those indicated by dice rolls.\\n\\nThere will also be the following special formians in a city: 2-5 gymarches (males) equal to myrmarches, but with 7+7 hit dice, and 1 queen (noncombatant). All of these special formians will be found in a special royal chamber complex on a level near the bottom of the underground city. There will be 1-4 myrmarches, 11-20 warriors, and 31-40 workers attending these special individuals. All the attendants are in addition to those normal individuals indicated by dice rolls. With these formians will be type A treasure.\\n\\nIn city complexes, there will be the following extra formians: 10 warriors per level below ground; 100 workers per level below ground; 200 slave workers per level below ground; 10 eggs (near royal chamber complex); 10 larvae (near royal chamber complex); 10 pupae (near royal chamber complex). Slaves are individuals of different colors. They will not attack, report, communicate with, support, or aid intruders. They are merely there. Formians whose nursery is threatened will fight fanatically to save it or bargain to prevent its destruction.\\n\\nAttacks by myrmarches are made with their large mandibles and a stinger located in the abdomen. The poison causes 4-16 points of damage, or 2-8 if a saving throw is successful. Warriors attack with mandibles, 2 pincer-like foreleg claws, and a small sting causing poison damage of 2-8 or 1-4 points. Workers use only their small mandibles in attack. Formians communicate silently (telepathically) by touching the other individual with 1 or both of their antennae. Myrmarches and special formians are 75% likely to be able to speak Common, although with a limited vocabulary. All formians are strong. Workers have the equivalent of 22 strength points, warriors have 23, and myrmarches have 24.\\n\\nThe formian worker is about the size of a large dog, the warrior is pony-sized, and the myrmarches are horse-sized. Gymarches are as large as draft horses and the queen half again as large. All formians are ant-like, but their waists are flexible and they often go about on 4 legs with thorax and head raised. Thus, they resemble centaur-ants. The forelegs are jointed at the wrist and have 3 opposing claws. In workers these claws are clumsy and in warriors enlarged, but in the others they are nearly as useful as human hands. The color of the formian indicates its city of origin. Each city continually wars with any other nearby. The colors known are: solid dark brown, striped brown and tan, tan, red, striped red and tan, red head with black body, black head with red body, black, striped black and gray, and dark gray.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/formian_warrior.lua",
+   "content": "-- Formian Warrior: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Formian Warrior\",\n  page = \"66\",\n  pages = \"66\",\n  source = \"MM2\",\n  race = \"Formian\",\n  hitDice = \"3+3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 3,\n  avgHp = 13,\n  armorClass = 2,\n  numAttacks = 4,\n  damage = \"1-6/1-4/1\",\n  xp = 150,\n  xpPerHp = 4,\n  xpValue = 202,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"21-40\",\n  lairPct = 50,\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"M\",\n  intelligence = \"low\",\n  alignment = \"lawful neutral\",\n  specialAttacks = \"Poison\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of intelligent ant men, the formians, are sometimes called centaur-ants. They dwell in cities of above- and below-ground construction. At first glance, these odd habitations appear to be normal walled cities made by humans. However, the structures inside the smooth-walled enclosure are truncated cones, cylinders, or hemispheres and have entry only at the top or along the upper portion. The chambers in these structures have sloping ramps or vertical shafts leading downward to a complex of tunnels and chambers forming the underground portion of the city\u2014always about 3 times larger than the upper part. Ninety per cent of encounters will be with formian workers, 10% with warriors. In either case, check for the probability of the encounter taking place within 1 mile of the formians' city (\\\"in lair\\\").\\n\\nWorkers (10-40) are only 10% likely to be accompanied by warriors. If warriors are indicated, then the group is a raiding party, probably involved in attacking another city or a giant termite nest.\\n\\nMyrmarches are formian nobles and are encountered only in the cities of the centaur-ants. Each myrmarch will be served by 2 warrior guards and 8 workers. These 10 formians are in addition to those indicated by dice rolls.\\n\\nThere will also be the following special formians in a city: 2-5 gymarches (males) equal to myrmarches, but with 7+7 hit dice, and 1 queen (noncombatant). All of these special formians will be found in a special royal chamber complex on a level near the bottom of the underground city. There will be 1-4 myrmarches, 11-20 warriors, and 31-40 workers attending these special individuals. All the attendants are in addition to those normal individuals indicated by dice rolls. With these formians will be type A treasure.\\n\\nIn city complexes, there will be the following extra formians: 10 warriors per level below ground; 100 workers per level below ground; 200 slave workers per level below ground; 10 eggs (near royal chamber complex); 10 larvae (near royal chamber complex); 10 pupae (near royal chamber complex). Slaves are individuals of different colors. They will not attack, report, communicate with, support, or aid intruders. They are merely there. Formians whose nursery is threatened will fight fanatically to save it or bargain to prevent its destruction.\\n\\nAttacks by myrmarches are made with their large mandibles and a stinger located in the abdomen. The poison causes 4-16 points of damage, or 2-8 if a saving throw is successful. Warriors attack with mandibles, 2 pincer-like foreleg claws, and a small sting causing poison damage of 2-8 or 1-4 points. Workers use only their small mandibles in attack. Formians communicate silently (telepathically) by touching the other individual with 1 or both of their antennae. Myrmarches and special formians are 75% likely to be able to speak Common, although with a limited vocabulary. All formians are strong. Workers have the equivalent of 22 strength points, warriors have 23, and myrmarches have 24.\\n\\nThe formian worker is about the size of a large dog, the warrior is pony-sized, and the myrmarches are horse-sized. Gymarches are as large as draft horses and the queen half again as large. All formians are ant-like, but their waists are flexible and they often go about on 4 legs with thorax and head raised. Thus, they resemble centaur-ants. The forelegs are jointed at the wrist and have 3 opposing claws. In workers these claws are clumsy and in warriors enlarged, but in the others they are nearly as useful as human hands. The color of the formian indicates its city of origin. Each city continually wars with any other nearby. The colors known are: solid dark brown, striped brown and tan, tan, red, striped red and tan, red head with black body, black head with red body, black, striped black and gray, and dark gray.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/formian_worker.lua",
+   "content": "-- Formian Worker: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Formian Worker\",\n  page = \"66\",\n  pages = \"66\",\n  source = \"MM2\",\n  race = \"Formian\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 4,\n  armorClass = 3,\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = 20,\n  xpPerHp = 2,\n  xpValue = 28,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"100-400\",\n  lairPct = 20,\n  treasure = \"Nil\",\n  move = \"18\\\"\",\n  size = \"S\",\n  intelligence = \"low\",\n  alignment = \"lawful neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of intelligent ant men, the formians, are sometimes called centaur-ants. They dwell in cities of above- and below-ground construction. At first glance, these odd habitations appear to be normal walled cities made by humans. However, the structures inside the smooth-walled enclosure are truncated cones, cylinders, or hemispheres and have entry only at the top or along the upper portion. The chambers in these structures have sloping ramps or vertical shafts leading downward to a complex of tunnels and chambers forming the underground portion of the city\u2014always about 3 times larger than the upper part. Ninety per cent of encounters will be with formian workers, 10% with warriors. In either case, check for the probability of the encounter taking place within 1 mile of the formians' city (\\\"in lair\\\").\\n\\nWorkers (10-40) are only 10% likely to be accompanied by warriors. If warriors are indicated, then the group is a raiding party, probably involved in attacking another city or a giant termite nest.\\n\\nMyrmarches are formian nobles and are encountered only in the cities of the centaur-ants. Each myrmarch will be served by 2 warrior guards and 8 workers. These 10 formians are in addition to those indicated by dice rolls.\\n\\nThere will also be the following special formians in a city: 2-5 gymarches (males) equal to myrmarches, but with 7+7 hit dice, and 1 queen (noncombatant). All of these special formians will be found in a special royal chamber complex on a level near the bottom of the underground city. There will be 1-4 myrmarches, 11-20 warriors, and 31-40 workers attending these special individuals. All the attendants are in addition to those normal individuals indicated by dice rolls. With these formians will be type A treasure.\\n\\nIn city complexes, there will be the following extra formians: 10 warriors per level below ground; 100 workers per level below ground; 200 slave workers per level below ground; 10 eggs (near royal chamber complex); 10 larvae (near royal chamber complex); 10 pupae (near royal chamber complex). Slaves are individuals of different colors. They will not attack, report, communicate with, support, or aid intruders. They are merely there. Formians whose nursery is threatened will fight fanatically to save it or bargain to prevent its destruction.\\n\\nAttacks by myrmarches are made with their large mandibles and a stinger located in the abdomen. The poison causes 4-16 points of damage, or 2-8 if a saving throw is successful. Warriors attack with mandibles, 2 pincer-like foreleg claws, and a small sting causing poison damage of 2-8 or 1-4 points. Workers use only their small mandibles in attack. Formians communicate silently (telepathically) by touching the other individual with 1 or both of their antennae. Myrmarches and special formians are 75% likely to be able to speak Common, although with a limited vocabulary. All formians are strong. Workers have the equivalent of 22 strength points, warriors have 23, and myrmarches have 24.\\n\\nThe formian worker is about the size of a large dog, the warrior is pony-sized, and the myrmarches are horse-sized. Gymarches are as large as draft horses and the queen half again as large. All formians are ant-like, but their waists are flexible and they often go about on 4 legs with thorax and head raised. Thus, they resemble centaur-ants. The forelegs are jointed at the wrist and have 3 opposing claws. In workers these claws are clumsy and in warriors enlarged, but in the others they are nearly as useful as human hands. The color of the formian indicates its city of origin. Each city continually wars with any other nearby. The colors known are: solid dark brown, striped brown and tan, tan, red, striped red and tan, red head with black body, black head with red body, black, striped black and gray, and dark gray.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/froghemoth.lua",
+   "content": "-- Froghemoth: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Froghemoth\",\n  page = \"67\",\n  pages = \"67\",\n  source = \"MM2\",\n  race = \"Froghemoth\",\n  hitDice = \"16 (see below)\",\n  hitDiceNum = 16,\n  hitDiceBonus = 0,\n  avgHp = 56,\n  armorClass = \"2 (tentacles)/4 (body)/6 (tongue)\",\n  numAttacks = \"1 or 4\",\n  damage = \"5d10 or 5-8 (=4)\",\n  xp = 8100,\n  xpPerHp = 20,\n  xpValue = 9220,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 40,\n  treasure = \"See below\",\n  move = \"2\\\"//8\\\" (4\\\" in normal swamp)\",\n  size = \"L (18' long, 10' wide)\",\n  intelligence = \"animal\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Huge and weird, froghemoths are found only where there are large swamps or relatively shallow (100 feet or less) bodies of fresh water containing large life forms that serve as prey. Froghemoths are solitary except during spring mating season. In late spring, females lay only 10-100 eggs of about 1 foot in diameter. These eggs are left in shallow water, and when the tadhemoths hatch, about 90% are eaten by their earlier-hatching fellows or by other predators. The few survivors search for deeper waters to grow in for a period of 3 years to adulthood. Survival rate is about 1-4%. The tentacles of a froghemoth are very strong and covered with a thick, leathery hide. Each of the 4 is about 15 feet or more in length. The body of the monster is only slightly less well-protected than its tentacles, and while 1 of those members requires from 19-22 hit points to sever or disable, the creature's body can withstand a full 16 hit dice of damage (16-128 points) before the creature is actually slain. Injured members heal or regenerate in 2-5 weeks. The tongue is the most vulnerable attack appendage, taking only 12-16 hit points to sever.\\n\\nMovement in water is fairly rapid, the webbed rear feet kicking to thrust the monster forward. In marsh or swamp, a froghemoth moves by lying on its belly and sliding along, propelled by rear legs and tentacles. On dry land, movement is by short, vaulting hops, the tentacles thrust well ahead, the legs lifting the body forward and up.\\n\\nThe only treasure a froghemoth might have is that dropped by hapless victims. Most prey is slain and devoured away from the monster's lair, which is usually a submerged collection of trees and debris. Normal hunting/attack modes are from ambush. The monster will float with its body submerged, retractable eye-stalk thrust up to its full 3-foot height to just break water, nostril stalks likewise, and the 4 tentacles thrust ahead, possibly near shore, to seize unwary victims. Another ambush mode is for the monster to crouch amid shielding vegetation, and, when prey comes within range, it thrusts its head forward and lashes out with its 10-foot long, barbed tongue (18/50 strength) and captures the prey. The tongue retracts instantly, dragging the victim to the toothy maw to be swallowed whole on a score of 19 or 20 (14-20 if size S); otherwise, damage will be 5-50 hit points from biting/chewing.\\n\\nCreatures swallowed whole suffer an immediate 4-16 points of damage from digestive juices. They can attack the stomach of the monster only with dagger or similar short, stabbing weapons, excluding short swords. Each successive round inside the stomach inflicts another 4-16 points of damage. The victim is unconscious after 2 rounds. When hit points equal -10 or less, the victim is digested and totally gone. Resurrection of any sort is not then possible. If a victim seized by tongue attack is not surprised (1 or 2), the 1d6 result (3, 4, 5, or 6) is compared to a 1d8 result (1-8) rolled for the speed and accuracy of the froghemoth. If the victim's score equals or exceeds the froghemoth's, it can attempt to grab some stationary object and resist being drawn to the monster's mouth. If such an object is within reach, a successful grabbing and holding will result. Unless the prey's strength exceeds 18/50, it must compare its 1d8 score to the froghemoth's 1d8 score each round after being seized. Any result which is less than the 1d8 score indicates the victim's hold is broken, and it will be bitten or swallowed instantly. The tongue held creature cannot attack the tongue, but associates can attack it. Meanwhile, the monster will use its tentacles to damage the resisting prey and any creatures assisting it. If a froghemoth's tongue is severed, it will attack for 2-5 rounds with its tentacles, doing double damage (10-16 hp) with each. If it is still opposed by active opponents thereafter, it will retire to submerge and heal itself.\\n\\nNormal fire will not harm a froghemoth, but very large fires or very hot ones will cause half-normal damage and drive the monster back for 1 round. Burning hands will not drive a froghemoth back unless 10 or more points of damage are so inflicted, but a fireball, flame strike, etc., will. Electrical attacks do only 1 point per die of damage and slow the creature to one-half normal movement and attacks for 1 round. Other forms of attack result in normal damage.\\n\\nA froghemoth has a yellow underbelly; undersides of the rear legs and tentacles are a pale yellowish color. Sides are light green and back and upper legs and tentacles are mottled green. The ocular appendage is yellow-green, as are its 2 nostril stalks. Eyeballs are amber with a greenish tinge, and the slit, vertical pupils are bright green edged with orange.\\n\\nTadhemoth Stage: The immature froghemoth grows about 1 foot per month for 6 months, then slows by 60% until maturity. The early form has 4 fins in the pectoral area and 2 in the rear. The creature is fish-like and has a vicious bite (2-8 hit points). After 6 months, the pectoral growths begin lengthening into tentacles, while no discernable change occurs in the rear members until the last month or two of its tadhemoth stage, when these appendages lengthen into thick, bowed legs with webbed toes. After initial growth, the creature's mouth enlarges considerably and its damage score is from 3-24, 4-32, or 5-40, depending on size. A tadhemoth is wholly aquatic and has gills. It swims at a rate of 16\\\".\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/galeb_duh.lua",
+   "content": "-- Galeb Duhr: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Galeb Duhr\",\n  page = \"68\",\n  pages = \"68\",\n  source = \"MM2\",\n  race = \"Galeb Duhr\",\n  hitDice = \"8-10\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 28,\n  armorClass = -2,\n  numAttacks = 2,\n  damage = \"2-16, 3-18 or 4-24\",\n  xp = 2000,\n  xpPerHp = 12,\n  xpValue = 2336,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 15,\n  treasure = \"Q (x3), X\",\n  move = \"6\\\"\",\n  size = \"L (8'-12' tall)\",\n  intelligence = \"very\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The galeb duhr is a curious boulder-like creature with appendages that act as hands and feet. These intelligent beings are very large and slow moving. They live in rocky or mountainous areas where they can feel the \\\"earth power\\\" and control the rocks around them. Galeb duhr can cast the following spells as 20th-level magic-users, once per round: move earth, stone shape, passwall, transmute rock to mud, and wall of stone.\\n\\nThey animate 1-2 boulders within 6\\\" of them (AC 0; MV 3\\\"; HD 9; DM 4d6) as a treant controls trees. Galeb duhrs take double damage from cold-based attacks and save at -4 against them. They are not harmed by lightning or normal fire, but take full damage from magical fire, saving at +4 against fire attacks.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/fomorian.lua",
+   "content": "-- Fomorian Giant: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Fomorian Giant\",\n  page = \"68\",\n  pages = \"68\",\n  source = \"MM2\",\n  race = \"Fomorian Giant\",\n  hitDice = \"13 + 1-3\",\n  hitDiceNum = 13,\n  hitDiceBonus = 1,\n  avgHp = 46,\n  armorClass = 3,\n  numAttacks = 1,\n  damage = \"4-32\",\n  xp = 2750,\n  xpPerHp = 18,\n  xpValue = 3578,\n  xpSource = \"mm2_print\",\n  frequency = \"uncommon\",\n  noAppearing = \"1-4\",\n  lairPct = 45,\n  treasure = \"D, Q (x 10)\",\n  move = \"9\\\"\",\n  size = \"(13 1/2' tall)\",\n  intelligence = \"average\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Fomorians are the most hideous, deformed, and wicked of all giantkind. They tend to be solitary, dwelling in forlorn places such as mountain caves or abandoned mines. Their thick, hairy hides, combined with the pelts and odd metal bits they wear for protection, give an effective armor class of 3. Although these deformed monsters move but slowly for their size, they can do so with considerable stealth, and they have +1 to +3 on surprise depending upon the terrain.\\n\\nIf encountered in the lair, there is a 25% chance that there will be 1-2 females for every male. There will also be 1-3 young per female. Female fomorians are equal to males, but they get no bonus points to their hit dice. Young fomorians get the following: Small (1) 7d4 hit dice, 2-8 damage; Half-grown (2-3) 13d4 hit dice, 4-16 damage; Near-adult (4-6) 13d6 hit dice, 4-24 damage.\\n\\nAlthough their deformities prevent them from hurling rocks, these same handicaps aid them so that fomorian giants can never be surprised under normal circumstances. Oddly placed eyes, huge ears, and/or large noses enable them to detect any normal approach.\\n\\nWeapons used range from huge clubs to chains with heavy metal balls attached. The strongest will sometimes have crude shields and better armor, so armor class 2 or even 1 is possible.\\n\\nA fomorian will have terrible deformities, such as one arm misplaced; huge feet on short legs; eyes on the side like a fish's or one in the back of the head; a hump on the back; a pointed, long head; flapping ears; a gaping or tiny mouth; a huge nose or snout; and so on. They have scattered patches of hair as tough as wire.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/firbolg.lua",
+   "content": "-- Firbolg: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Firbolg\",\n  page = \"68\",\n  pages = \"68-69\",\n  source = \"MM2\",\n  race = \"Firbolg\",\n  hitDice = \"13+2-7\",\n  hitDiceNum = 13,\n  hitDiceBonus = 2,\n  avgHp = 47,\n  armorClass = 2,\n  numAttacks = 1,\n  damage = \"By weapon type 10 (strength bonus)\",\n  xp = 3650,\n  xpPerHp = 18,\n  xpValue = 4496,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-4 or 4-16\",\n  lairPct = 45,\n  treasure = \"Individuals M (x10), Q; in lair E,Y\",\n  move = \"15\\\"\",\n  size = \"L (10-1/2' tall)\",\n  intelligence = \"average to genius\",\n  alignment = \"neutral (chaotic good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"15%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Of the minor races of giantkind, the firbolg is the most powerful. They are cautious, crafty, and have considerable magical power. They have learned to distrust (and fear) humans, and will be found only in remote and wild places. Ninety percent of encounters will be with small groups of firbolgs or a lone wanderer. Ten percent of the time, however, the meeting will be with an enclave of several groups meeting for some purpose. Firbolgs prefer 2-handed swords and great halberds as weapons. All firbolg weapons are very large, so they use their preferred human-made weapons with just one hand and their own with 1 or 2 hands. Their double sized clubs, axes, spears, etc., inflict double normal weapon damage when used with both hands.\\n\\nFirbolgs with 1 hand free are able to bat away missiles such as arrows, bolts, bullets, darts, and stones or catch such projectiles as javelins, spears, and boulders. They can do this twice per round, succeeding on a 6 or better on 1d20 (75% chance).\\n\\nIn addition to magic resistance, each firbolg has (by hit dice regardless of age) innate spell-like powers usable at will, 1 per round, when not otherwise engaged in melee combat. These powers are: detect magic, diminution as potion (double effect and double maximum duration), fools gold, forget, and alter self. Each is usable once per day.\\n\\nThere is a 5% chance per firbolg encountered that 1 in the group will be a shaman type. However, in addition to the standard shaman spells, Firbolg shamen are able to use 2 1st-level illusionist spells per level, determined randomly. At 6th and 7th levels, firbolg shaman gain 2nd-level illusionist spells, likewise determined randomly. Thus, a 7th level shaman will have 10 1st-level and 4 2nd-level illusionist spells in addition to all other spells and spell-like powers.\\n\\nThese human-looking giants will not always greet strangers with open arms, but usually firbolgs will not try to kill them (unless given provocation, of course). They do, however, enjoy appearing as little people and duping humans out of their treasure.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/verbeeg.lua",
+   "content": "-- Verbeeg: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Verbeeg\",\n  page = \"69\",\n  pages = \"69\",\n  source = \"MM2\",\n  race = \"Verbeeg\",\n  hitDice = \"5+5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 5,\n  avgHp = 22,\n  armorClass = \"4 or better\",\n  numAttacks = 2,\n  damage = \"By weapon type + strength bonus\",\n  xp = 275,\n  xpPerHp = 6,\n  xpValue = 407,\n  xpSource = \"mm2_print\",\n  frequency = \"uncommon\",\n  noAppearing = \"1-2, 1-6, or 5-30 (see below)\",\n  lairPct = 30,\n  treasure = \"Individuals K,L,M (x5); in lair B (but 25% for magic)\",\n  move = \"18\\\"\",\n  size = \"L (8 1/2'-10' tall)\",\n  intelligence = \"average to very\",\n  alignment = \"neutral (evil)\",\n  specialAttacks = \"Throw spears for 1-6 (+ strength bonus)\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Verbeeg, or human behemoths, are a race of human giants inhabiting the same areas as hill giants and ogres (q.v.). An encounter with verbeeg is 30% likely to be in conjunction with hill giants (40%) or ogres (60%), 50% with 1-6 wandering creatures, and 30% in the lair where a total of 5-30 verbeeg will be found, and 20% with 1-2+ others. Because verbeeg are intelligent, they will typically command any hill giants or ogres with whom they dwell. Also, if these giants have them, they will wear protective materials to improve their armor class, i.e., hides and furs, odd pieces of metal such as shields, and so forth. While verbeeg use clubs and spears typically, those able to gain superior weaponry will do so. Verbeeg range in strength from 18/51 to 18/00. To find the strength and appropriate bonus, roll 1d10: 1-2, 18/51-75 = +3 and 3\\\" to throwing range; 3-6, 18/76-90 = +4 and 4\\\" to throwing range; 7-9, 18/91-99 = +5 and 5\\\" to throwing range; 0, 18/00 = +6 and 6\\\" to throwing range.\\n\\nThrown spears have normal range plus a bonus range of 3\\\" to 6\\\". Thus, a verbeeg with 18/00 strength hurls the spear up to 9\\\" distance for 7-12 points of damage. Each of these giants will have at least 3 spears when encountered.\\n\\nIn a lair of verbeeg there will always be a leader with 18/00 strength and with no fewer than 40 hit points. There will be 2 females for the leader and 1 for each additional male. Young verbeeg are about 50% of the total population over 9. All verbeeg encountered are likely (2% per verbeeg) to have with them a shaman of either sex. Verbeeg shamen can attain 7th level. The tribal group is 90% unlikely to have any magic item which they cannot understand or use. Females are equal to males in combat. Young are equal to bugbears (50%) or goblins (50%) in fighting ability. The lair will include 2-8 wolves (75%) or 1-4 worgs (25%) as guards. In arctic climes, 1-3 winter wolves (25%) or 1-2 polar bears (75%) will be kept for this purpose.\\n\\nVerbeeg are unusually thin for their great height. Some have deformities which only add to their rather fearsome aspect. Notable verbeeg are usually rogues who stalk humans (Jimmy Squarefoot and Jack-in-Irons are but two). They otherwise appear human.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/gibbering_mouther.lua",
+   "content": "-- Gibbering Mouther: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Gibbering Mouther\",\n  page = \"69\",\n  pages = \"69-70\",\n  source = \"MM2\",\n  race = \"Gibbering Mouther\",\n  hitDice = \"4+3\",\n  hitDiceNum = 4,\n  hitDiceBonus = 3,\n  avgHp = 17,\n  armorClass = 1,\n  numAttacks = \"6+\",\n  damage = \"1 (x6) + 1 per round\",\n  xp = 210,\n  xpPerHp = 5,\n  xpValue = 295,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 95,\n  treasure = \"Q\",\n  move = \"3\\\"/6\\\"\",\n  size = \"M\",\n  intelligence = \"semi-\",\n  alignment = \"neutral\",\n  specialAttacks = \"Spit, babble, save vs. confusion\",\n  specialDefenses = \"Control ground density for 5 foot radius\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The gibbering mouther is an amoeboid-like form of life, composed of all mouths and eyes. Its favorite tactic is to lie in wait with its eyes and mouths shut so it appears to be a lump of earthy material. Thus it surprises a party stumbling across it. Its only motive is to eat whatever is edible and within reach, regardless of whether the food is animal, vegetable, or mineral. Because of the creature's excessive hunger, the mouther's lair and the surrounding area will be stripped bare.\\n\\nGibbering mouthers prefer to inhabit cold and underground regions. The creature propels itself by oozing forward, fastening several mouths to the ground, and pulling itself along. A mouther may move faster over fluid, viscous terrains, such as mud and quicksand, by a series of muscular contractions. Given a chance it will alter the ground (see below) with its special talent to allow this faster form of movement.\\n\\nThe brain of a mouther is located in its mid-portion, and its gelatinous-like body makes it difficult to strike this one vital spot; thus its armor class 1.\\n\\nThe mouther attacks in more than one way. The spittle of a mouther will burst into a bright flare if it strikes any hard, cold, surface. The resulting flash will blind for 1 round those characters looking at the flash if they fail to save vs. petrification. A mouther attacks by extending and biting with 6 mouths per round. Each mouth which hits will fasten on and drain an additional 1 point of damage per round attached. When 3 or more mouths are attached to a single character, that person must check each round thereafter for slipping. A roll of 4 or less on 2d6 indicates the character has fallen (+1 if dexterity is 15+). If the character falls, the gibbering mouther will flow over the victim and bite with 12 more mouths. Given the opportunity once it has pulled down 1 victim, a mouther will trap other prey.\\n\\nWhen any edible object is sighted by a mouther, it may begin an incoherent gibbering that causes confusion in all characters within a 6\\\" radius unless a save vs. spells is made. For each round that the gibbering is heard, characters within range must roll another save. If a character becomes confused, roll a 1d8 to see what action he or she will take: 1 = wander for 1 round; 2-5 = stand stunned for 1 round; 6-7 = attack the nearest living creature for 1 round; 8 = treat as a fear spell (save at +2) and run away for 2 rounds.\\n\\nA mouther always warms the ground and stone within a 5-foot radius of itself and can control the consistency of this material by changing it to dough-ish, tarry quicksand or concrete. It requires 5 segments to alter earth and 1 full round to shift stone to its next nearest form.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/gloomwing.lua",
+   "content": "-- Gloomwing: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Gloomwing\",\n  page = \"70\",\n  pages = \"70\",\n  source = \"MM2\",\n  race = \"Gloomwing\",\n  hitDice = \"5+1\",\n  hitDiceNum = 5,\n  hitDiceBonus = 1,\n  avgHp = 18,\n  armorClass = 1,\n  numAttacks = 3,\n  damage = \"1-3/1-3/1-8\",\n  xp = 525,\n  xpPerHp = 6,\n  xpValue = 633,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"/12\\\" (MC: D)\",\n  size = \"M (8' wingspan)\",\n  intelligence = \"animal\",\n  alignment = \"neutral\",\n  specialAttacks = \"Pheromone\",\n  specialDefenses = \"Confusion\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Gloomwings are aerial carnivores with great speed and agility. Their larva stage is the tenebrous worm (q.v.). Although not as robust as tenebrous worms, gloomwings are nevertheless deadly opponents who aggressively seek prey both in the air and on the ground.\\n\\nThe wings and body of the creature are geometrically patterned with black and silver that will cause confusion in any intelligent being that views the monster squarely from above (save vs. spell or be confused). This coloration provides excellent camouflage, making the gloomwing almost impossible to detect. Thus the gloomwing gains surprise with a roll of 1-3 on a 1d6. Creatures on the ground that are smaller than a halfling will be carried away and devoured in midair; larger prey are attacked by hovering and slashing with the 2 front claws (the creature lacks the strength and coordination to employ all 8) and its mandibles. On the 2nd and each successive round of melee it will emit a pheromone which can cause weakness in any non-insect. Exposed creatures must save vs. poison or lose 1 point of strength per round of exposure. Lost points are restored 1-4 turns after the exposure ceases. Creatures who make their initial save need not save again, and multiple gloomwings do not require multiple saves. The scent may also attract 1-4 additional gloomwings (20% per round, regardless of the number of gloomwings present).\\n\\nEgg-laden females (1-2 on a 1d6) will use the corpse of a slain victim as a repository for their eggs, which will hatch in 12 days, sprouting 4-10 tenebrous worms (q.v.). The corpse will not survive any attempt at resurrection unless the infestation is removed with a cure disease spell. Unless killed, the worms will completely devour the body.\\n\\nGloomwings are huge moths with black and silver streaked over the wings and body. The large fern-like antennae are dusky sable tipped with white. Each of the 8 legs is armed with an iridescent pearl claw. The extended mouth is equipped with a double set of ivory mandibles (value 25 gp per gloomwing).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/goat.lua",
+   "content": "-- Goat: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Goat\",\n  page = \"70\",\n  pages = \"70\",\n  source = \"MM2\",\n  race = \"Goat\",\n  hitDice = \"1+2\",\n  hitDiceNum = 1,\n  hitDiceBonus = 2,\n  avgHp = 5,\n  armorClass = 7,\n  numAttacks = 1,\n  damage = \"1-3\",\n  xp = 24,\n  xpPerHp = 2,\n  xpValue = 34,\n  xpSource = \"mm2_print\",\n  frequency = \"uncommon\",\n  noAppearing = \"5-20\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"M\",\n  intelligence = \"animal\",\n  alignment = \"neutral\",\n  specialAttacks = \"Charge\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Goats inhabit areas of scrub growth on hills, plains, and in mountainous regions. All attack only if cornered. Buck goats may charge, thereby gaining +2 on their to-hit roll and an additional 1-2 points of damage. A herd will consist of 1-2 bucks and up to 12 does, and the remainder will be kids (noncombatants).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/gorgimera.lua",
+   "content": "-- Gorgimera: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Gorgimera\",\n  page = \"70\",\n  pages = \"70\",\n  source = \"MM2\",\n  race = \"Gorgimera\",\n  hitDice = \"10\",\n  hitDiceNum = 10,\n  hitDiceBonus = 0,\n  avgHp = 35,\n  armorClass = \"5/2\",\n  numAttacks = 5,\n  damage = \"1-3/1-3/2-8/2-12/3-12\",\n  xp = 2557,\n  xpPerHp = 14,\n  xpValue = 3047,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 25,\n  treasure = \"F\",\n  move = \"12\\\"/15\\\" (MC:E)\",\n  size = \"L (5' tall at shoulder)\",\n  intelligence = \"semi-\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"Breath weapons (2)\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Although similar in appearance to a chimera, a gorgimera is a more fearsome monster. This sterile hybrid has the hindquarters and head of a gorgon, the forequarters and head of a lion; and the mid-body, wings, and head of a red dragon. Only the lion parts have armor class 5. The gorgimera can attack with its claws, bite with its lion head, butt with its gorgon head, and bite with its dragon head. Additionally, the gorgon head can breathe its petrifying breath twice per day (3\\\" long x 1\\\" wide base cone), while its dragon head can breathe its fiery breath twice per day (5\\\" long x 2\\\" wide base cone). The monster will always use 1 of its breath weapons against opponents 10 feet or more distant, as it is aware of breath weapon ranges and effects. If in melee, there is a 1 in 6 chance it will use fire and a like chance it will use petrification (roll 1d6, 1 = dragon breath; 2 = gorgon breath; 3-6 = standard attack routine). Dragon breath is for 3-24 (3d8) points of damage; save vs. breath weapon applies. Gorgon breath turns victims to stone unless their saving throws vs. petrification succeed. Gorgimerae speak a very limited form of red dragon language. The gorgon head can see into the Astal and Ethereal Planes, and its breath weapon extends therein.\\n\\nA gorgimera looks almost exactly the same as a chimera, except its gorgon parts are a metallic blue color. Gorgon eyes are a red-rimmed pale blue.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/greenhag.lua",
+   "content": "-- Greenhag: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Greenhag\",\n  page = \"71\",\n  pages = \"71\",\n  source = \"MM2\",\n  race = \"Greenhag\",\n  hitDice = \"9\",\n  hitDiceNum = 9,\n  hitDiceBonus = 0,\n  avgHp = 31,\n  armorClass = -2,\n  numAttacks = 2,\n  damage = \"7-8/7-8\",\n  xp = 1600,\n  xpPerHp = 12,\n  xpValue = 1972,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 40,\n  treasure = \"M (x100), N (x10), Q (x5), X\",\n  move = \"12\\\"//12\\\"\",\n  size = \"M\",\n  intelligence = \"low to very\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"35%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Greenhags are a race of evil creatures related to both annis and night-hags (q.v.). As do the annis, greenhags dwell on the Prime Material Plane. While many of these horrid creatures live in forests and lonely moors, there are some inhabiting swamps and rivers. These latter sort are often called shellycoats. The lair is always a small cave, possibly one dug in earth. Greenhags of any sort attack by clawing with rock-hard talons. They have strength of 18/00 and thus add +6 to the damage inflicted by each such attack.\\n\\nIn order to lure victims to them, greenhags typically use their mimic ability. This allows them to imitate the voice of a mature or immature male or female, human or demihuman. Calls for help, crying, and so forth are quite common deceptions employed by greenhags. They are also able to mimic common animal sounds, such as those of barnyard fowl, cats, dogs, goats, sheep and cattle.\\n\\nGreenhags have the following spell-like powers which they can employ 1 at a time, at will, 1 per round: audible glamor, dancing lights, invisibility, pass without trace, change self, speak with monsters, water breathing, weakness. Each power is employed at 9th level of ability.\\n\\nBecause of their coloration and the fact that they are 90% likely to be able to move silently and hide in foliage (even of the underwater sort), greenhags surprise 5 in 6 (19 in 20 if attacking from invisible state). Because of their highly acute senses, including infra- and ultravision, they are surprised only 1 in 20. Greenhags speak their own language (a dialect of Annis), Ogre, common Giant, and Common.\\n\\nA typical greenhag appears to be a nighthag with green skin. Hair color ranges from near black to olive green. Eye color ranges from amber to orange. They often dress as peasants do.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/grippli.lua",
+   "content": "-- Grippli: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Grippli\",\n  page = \"71\",\n  pages = \"71\",\n  source = \"MM2\",\n  race = \"Grippli\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 4,\n  armorClass = 9,\n  numAttacks = \"1 weapon\",\n  damage = \"1-4 or weapon\",\n  xp = 45,\n  xpPerHp = 2,\n  xpValue = 53,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1-10; in lair 5d6\",\n  lairPct = 30,\n  treasure = \"Q (x4), I\",\n  move = \"9\\\"/15\\\"\",\n  size = \"S (2 1/2' tall)\",\n  intelligence = \"very to exceptional\",\n  alignment = \"neutral\",\n  specialAttacks = \"Surprise on 1-4\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"151 to 250\",\n  attackDefenseModes = \"A,C/G,J\",\n  text = \"The grippli resemble small, intelligent, humanoid tree frogs. They eat insects and fruit. Grippli hands and feet are adapted for easy movement through tree branches. They have 700-year life spans and produce few offspring. Grippli live in swamps and rain forests. Their gray-green skin gives them a natural camouflage (surprise on 1-4). They have ultravision for 10\\\" which allows them to operate well both at night and in the daytime. Grippli are not warlike. They love bright colors and have been known to make raids on travelers to steal bright colored clothing for their huts. They defend themselves with snares, nets, poisoned darts and bolts, and occasionally a sword or dagger. A few (1%-2%) have psionic power.\\n\\nA grippli lair is built on the ground and consists of mud and wood huts. In the lair there will be 5-30 males, an equal number of females, and 1-6 offspring (noncombative). Also, the tribe mother (AC 7; HD 3; DM 1d6+1 + a musk cloud once per day, treat as a stinking cloud) will be there with 1-3 mates (AC 8; HD 2; DM + 1d4+1 poison).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/grig.lua",
+   "content": "-- Grig: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Grig\",\n  page = \"71\",\n  pages = \"71-72\",\n  source = \"MM2\",\n  race = \"Grig\",\n  hitDice = \"1/2+1 (2-5 hit points)\",\n  hitDiceNum = 0,\n  hitDiceBonus = 1,\n  avgHp = 3,\n  armorClass = 2,\n  numAttacks = \"3 or 2\",\n  damage = \"By weapon type\",\n  xp = 50,\n  xpPerHp = 1,\n  xpValue = 53,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"2-12 (or 5-50)\",\n  lairPct = 10,\n  treasure = \"X,Y\",\n  move = \"6\\\" (or 12\\\" leap)\",\n  size = \"S (1 1/2' tall)\",\n  intelligence = \"low to average\",\n  alignment = \"neutral (good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Spells\",\n  magicResistance = \"30%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The leaping grigs appear to be some form of sprite. Found only in sylvan woodlands and meadows, these creatures are shy of strangers but otherwise good-natured and friendly. They are nocturnal and in most instances are encountered in a glen. There with 1 or, possibly, several other bands of grigs or a tribe of atomies (q.v.) or both, they will meet to play and dance in the moonlight. There is a 30% probability for other grigs or atomies to be there: 1-15 = 5-50 grigs, 16-25 = 2-12 grigs and 30-120 atomies, and 26-30 = 5-50 grigs and 30-120 atomies. One or more of the grigs will play bowed string instruments while the others enjoy circle dances and other pastimes.\\n\\nThe grigs' high armor class is due to their size, dexterity, and leaping ability. Their legs are more like a cricket's or grasshopper's than a sprite's, and these limbs give the grigs the ability to leap long distances, assisted by their small, gauze-like wings. Attack is made only upon evil enemies or those who molest the grigs. It is typically a combination of missile release and melee. Due to their skill and dexterity, grigs attack at +2 to hit when hurling missiles. Each grig carries at least 6 small darts. These they hurl during their hopping flight. Then they alight and thrust needle-like daggers. Their small darts are equal to large ones when used by the grigs, but when used by others, these weapons cause but 1 point of damage. Similarly, the grig dagger is but a knife save in the hands of grigs where it inflicts damage equal to a short sword.\\n\\nGrigs have the following spell-like powers which they can employ at will, 1 at a time, 1 per round: change self, entangle, invisibility, pyrotechnics, trip, and ventriloquism. These magical powers are used at 6th level of ability.\\n\\nThe grigs enjoy using the dweomers for jolly fun as well as for self-protection, and many are the practical jokes reported from encounters with these creatures.\\n\\nGrig fiddlers are 25% likely to be able to play a tune the effect of which equals that of the magic-user spell Otto's Irresistible Dance. A saving throw vs. spell is applicable to all within a 30-foot radius of the playing grig. Failure means the victim must dance until the grig ceases playing or the victim drops of exhaustion. Grigs can play for hours. Grigs are 90% likely to surprise and only 10% likely to themselves be surprised. They have hearing equal to double human norm, infravision to 180 feet, and ultravision.\\n\\nIn addition to their own tongue, grigs speak Atomix, Brownie, Pixie, and Sprite. Of course, they speak Common as well if they choose to slow their speech and pitch it downwards in scale.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/grim.lua",
+   "content": "-- Grim: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Grim\",\n  page = \"72\",\n  pages = \"72\",\n  source = \"MM2\",\n  race = \"Grim\",\n  hitDice = \"4+2-8\",\n  hitDiceNum = 4,\n  hitDiceBonus = 2,\n  avgHp = 16,\n  armorClass = 0,\n  numAttacks = \"See below\",\n  damage = \"See below\",\n  xp = 285,\n  xpPerHp = 5,\n  xpValue = 365,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"18\\\" or /36\\\" (MC:C in owl form)\",\n  size = \"M\",\n  intelligence = \"average\",\n  alignment = \"neutral good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"25%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The grim are guardians who watch for and oppose Evil. They are night creatures, usually frequenting the fringes of human habitations or burial grounds. Grim will be encountered in any of the following forms: black cat (as a giant lynx for attacks 1-2/1-2/1-4 + raking), black dog (as a war dog for attacks 2-8), and a black owl (as a giant owl for attacks 2-8/2-8/2-5).\\n\\nEach grim must stay in the form chosen for a full night. In daylight they become ethereal and await the setting sun. Damage sustained the previous day is alleviated on the next as the sun sets. In addition to the attack modes of their chosen form, grim are able to turn undead as if they were clerics of the 8th level with +2 on the die if versus creatures of Evil from the Lower Outer Planes. They can be hit only by weapons of +1 or better magical enchantment. Each grim radiates a protection from evil within a 10-foot radius and can detect evil at a 7\\\" distance. Thus, they are never surprised by Evil creatures, and their senses make it possible for them to surprise others 1 in 10.\\n\\nGrim typically ward off evil natured creatures and warn those of good of imminent peril from such monsters. The latter is done by their weird call, be it yowl, howl, or hoot of mournful tone. They do not otherwise communicate or do anything else in conjunction with humans or demihumans unless an immediate confrontation is at hand. In this case, the creatures will always assist in combat against Evil.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/c/chaggrin.lua",
+   "content": "-- Chaggrin: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Chaggrin\",\n  page = \"72\",\n  pages = \"72\",\n  source = \"MM2\",\n  race = \"Grue\",\n  hitDice = \"5 + 5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 5,\n  avgHp = 22,\n  armorClass = 4,\n  numAttacks = 2,\n  damage = \"3-6/3-6\",\n  xp = 425,\n  xpPerHp = 6,\n  xpValue = 557,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1 (2-5)\",\n  lairPct = 0,\n  treasure = \"Nil (C, Q x5)\",\n  move = \"12\\\" (3\\\")\",\n  size = \"S\",\n  intelligence = \"low to average\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+1 or better weapon to hit; immune to earth-based magic\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The chaggrin, or soil beast, is a grue from the Elemental Plane of Earth. When on the Prime Material Plane, it typically takes the form of a yellowish hedgehog, although its skull-like head readily distinguishes it from a normal animal of that sort. Although only 2 or 3 spans long, a chaggrin weighs over 140 pounds, some being as heavy as 210 pounds. A chaggrin loves to torment its victim, and it will usually attack by digging its long, razor-sharp foreclaws into its prey and then hold on while the hapless victim dashes hither and thither trying to escape from or dislodge the grue.\\n\\nEach round of such clinging inflicts an additional 7-12 points of damage. Contact with unprotected flesh will inflict 1-4 points of damage per round from quills if the grue is in hedgehog form. No earth-based/affecting spell, including the following, will work against a chaggrin: earthquake, dig, glassee, statue, stone shape, passwall, move earth, glassteel, transmute rock to mud, wall of stone, stone to flesh. The mere presence of the chaggrin within 40 feet of such magic dispels the magic, even if the dweomer had been previously permanent. Magic items are not affected.\\n\\nWhenever it desires, a chaggrin can assume the shape of a large mole, hedgehog, or bipedal, man-like form. The latter is its natural shape on its own plane. In the latter form it can merge into surfaces of natural soil or stone, emerging suddenly so as to surprise opponents on 1-5. The only clue to the grue's presence is a damp, dark outline which is faintly perceptible if the area is carefully observed.\\n\\nThe natural chaggrin form is disgusting. The body appears much like lumpy, wet clay. The visage is asymmetrical and vicious. The small eyes gleam with feral light.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/h/harginn.lua",
+   "content": "-- Harginn: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Harginn\",\n  page = \"73\",\n  pages = \"73\",\n  source = \"MM2\",\n  race = \"Grue\",\n  hitDice = \"4+4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 4,\n  avgHp = 18,\n  armorClass = 3,\n  numAttacks = 1,\n  damage = \"5-8\",\n  xp = 245,\n  xpPerHp = 5,\n  xpValue = 335,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1 (2-8)\",\n  lairPct = 0,\n  treasure = \"Nil (1/2 x I)\",\n  move = \"15\\\"\",\n  size = \"M\",\n  intelligence = \"average to high\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+1 or better weapon to hit; immune to fire-based spells\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The harginn, or flame horror, is a grue from the Elemental Plane of Fire. When summoned to the Prime Material Plane, a harginn will typically appear in the form of a human with flames where its lower torso and legs would be were it a man. A harginn can assume the shape of a normal bonfire, a column of fire up to about 8 feet high, or become very humanoid in form, assuming the form of a bronze human statue. A harginn moves rapidly in any form and attacks by sending forth a gout of flames from its fingertips. This gout balloons outward to encompass an area of 3 feet in width and 6 feet in length, and all within the fiery blast take damage. It is also possible for a harginn to blink (cf., spell of that name), and one will always do so when in battle. No fire-based/affecting spell, including the following, will work against a harginn: produce flame, pyrotechnics, produce fire, wall of fire, fire seeds, chariot of sustarre, fire storm, burning hands, fireball, flame strike, flame arrow, fire charm, fire shield, fire trap, delayed blast fireball, incendiary cloud, and meteor swarm. The very presence of a harginn within 20 feet of such magic dispels the magic, even if previously permanent. Magic items are not affected.\\n\\nThat harginn are gruesome is undoubtable. Whenever features are discernable, they express leering evil and great cruelty. The monster's eyes are glowing black, and the body color is typical of such fiery hues as scarlet and orange, crimson and purple-blue, yellow and orange.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/i/ildriss.lua",
+   "content": "-- Ildriss: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Ildriss\",\n  page = \"73\",\n  pages = \"73\",\n  source = \"MM2\",\n  race = \"Grue\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 14,\n  armorClass = 2,\n  numAttacks = 1,\n  damage = \"3-12\",\n  xp = 245,\n  xpPerHp = 5,\n  xpValue = 315,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1 (2-8)\",\n  lairPct = 0,\n  treasure = \"Nil (Q, x 2, X)\",\n  move = \"3\\\" as rolling fog; 24\\\" otherwise (MC:A)\",\n  size = \"M\",\n  intelligence = \"low to very\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+2 or better weapon to hit; immune to air-based spells\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The ildriss, or wind terror, is a creature from the Elemental Plane of Air. When on the Prime Material Plane, an ildriss is either as invisible as the wind or it is seen as a fog-like cloud with vaporous tentacles and 3 faintly gleaming red eyes. (The latter is its natural form on its own plane.) It whisks about in the former guise, but to attack it must become more substantial, i.e., form as a misty entity. The ildriss then twirls, its fog arms carrying small particles which strike with such force as to cause horrible abrasive wounds, much as a storm of wind-driven sand wounds a living creature. Because the ildriss can move invisibly high up or along the ground, they always gain a 4 in 6 chance of surprise. They also attack first in any round.\\n\\nNo air-based/affecting spell, including the following, will work against an ildriss: control weather, wind walk, call lightning, control winds, stinking cloud, gust of wind, lightning bolt, cloudkill, cone of cold, invisible stalker, wall of fog, and fog cloud. If an elemental grue from the Plane of Air is within 50 feet, not only do air-based/affecting spells fail to function, but existing effects, even if permanent, are fully and totally dispelled. Magic items are unaffected.\\n\\nBecause of their nebulous form and airy nature, ildriss are hard to hit; thus they have armor class 2. They are less substantial on the Prime Material Plane than other grue (thus a +2 or better magic weapon is required to hit them). Ildriss are generally gray, pale yellow, or (rarely) white. Eyes are pyramidal, ranging from dark orange through scarlet to maroon.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/varrdig.lua",
+   "content": "-- Varrdig: promoted by the R805 MM2 letters FG walk round from the MM2 print\n-- (spec tools/spec_r805.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Varrdig\",\n  page = \"73\",\n  pages = \"73-74\",\n  source = \"MM2\",\n  race = \"Grue\",\n  hitDice = \"6+6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 6,\n  avgHp = 27,\n  armorClass = 5,\n  numAttacks = \"2 (1)\",\n  damage = \"1-4/1-4 (4-16)\",\n  xp = 650,\n  xpPerHp = 8,\n  xpValue = 866,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-3 (2-5)\",\n  lairPct = 0,\n  treasure = \"Nil (1/2 x F)\",\n  move = \"6\\\"//18\\\"\",\n  size = \"M\",\n  intelligence = \"semi- to average\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+1 or better weapon to hit; immune to water-based spells\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The varrdig, or fluid brute, is a creature from the Elemental Plane of Water. A varrdig can appear as a pool of water, a fountain, or as part of a greater body of water, although in the latter case its greenish tinge tends to make it noticeable if the observer is careful. Its actual form is that of a globular, jelly-like blob. It is translucent and a lower fringe of small, clawed legs and pipe-like protrusions radiate from its middle. These flexible hoses provide propulsion by jetting water when the creature is in its element. Otherwise, a varrdig uses these jets of fluid to attack with, because the water force is considerable for up to 6 feet with a 1 in 6 chance of blinding the victim for 1-4 rounds. A helpless opponent will be drowned in a single round as the varrdig thrusts a tube into a nostril. In water, the attack is by rapid propulsion of the body into contact with its opponent.\\n\\nNo water-based/affecting spell will work against a varrdig or within 30 feet of one. The spell will fail, even if previously cast and permanent. The spells included are: create water, part water, ice storm, purify...drink, purify water, wall of ice, create...water, obscurement, airy water, lower water, water breathing. Magic items are not affected.\\n\\nIt is possible for several varrdig to combine to form an entity which resembles a snowman in form. The joint ambulatory appendages move the thing along smoothly. The midbody portion houses the sensory organs (if any do exist) as evidenced by odd outgrowths of cilia and stalks, and the upper portion sprouts 3-6 tubes which can shoot water streams out to 10 feet with a damage factor of 1-6 hit points.\",\n}\n"
+  }
+ ]
+}
