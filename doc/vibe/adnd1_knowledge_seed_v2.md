@@ -20861,6 +20861,94 @@ when both halves land.
   call (the DEVIL section and the
   rest of the letter D box; the
   arc runs on - 29 open boxes).
+- R801 LANDED 2026-10-24: commit
+  227b408bd40d6b15c18cd683ee147cc65a6a7159
+  (census 723 -> 724, pushed
+  aac9dcb..227b408), THE MM2 LETTER D
+  PART 3 - THE DEVIL SECTION
+  (Curtiss's Go call on the landed
+  letter D part 2; round five of the
+  MM2 arc). THE PIN-TIME WALK: the
+  DEVIL section pp. 44-49 - the
+  abishai family head at the foot
+  of p. 44 with the five abishai
+  stat blocks (black, blue, green,
+  red, white) on p. 45, then AMON,
+  BAEL, BEARDED DEVIL, BELIAL,
+  GLASYA, HUTIJIN, MAMMON,
+  MEPHISTOPHELES, Moloch,
+  NUPPERIBO, TITIVILUS and SPINED
+  DEVIL through p. 49 - 13 print
+  entries, the abishai table splits
+  5 ways (the aspis precedent) so
+  SEVENTEEN .lua defs ride the
+  data_files extension, registry
+  566 -> 583. Header rules/mm2df.h,
+  prefix mm2df, 136 consts + 74
+  bools + three grids: the 17x10
+  DevilStats (armor class, hit
+  dice, bonus, avgHp, attacks, xp,
+  xp/hp, lair, move, magic
+  resistance), the 9x12
+  DevilPlaneFreq and 9x12
+  OthersPlaneFreq (the p. 45
+  frequency tables; legend consts
+  0 absent, 1 VVR, 2 VR, 3 R, 4 U,
+  5 C) = 244 inline. NO GAP FLIPS:
+  the letter D box flips only when
+  all the D parts land (8 closed,
+  29 open). ONE REGTEST PATCH: the
+  R801 live def walk at the R227
+  anchor, its registry census a
+  FLOOR 566 -> at least 583, with
+  the nupperibo magicResist==0
+  check (MR word Standard kept in
+  def, grid reads 0). SETTLED READS
+  (capture primary, transcription
+  1eonline.info cross-check,
+  archive.org djvu OCR the third
+  voice): Titivilus symbol 19
+  levels/dice or 99 hp (capture 98
+  the OCR misread); Titivilus MOVE
+  15/30 MC:D (djvu agrees; the
+  transcription 12 its own
+  annotation); Mephistopheles
+  rulership once per day a genuine
+  print typo pinned verbatim;
+  abishai spell command (capture
+  c-command artifact); Amon psionic
+  229/X-30,000 confirmed in the
+  capture. LOADER SEMANTICS pinned
+  for the round: numAttacks 1-and-1
+  sums to 2, or-forms take max,
+  and/or 1-and/or-2 sums to 3;
+  flat-hp uniques hitDiceNum 0,
+  avgHp flat, xpPerHp 0 (charon
+  precedent). LOCAL VERIFICATION
+  (the authoring environment
+  rebuilt from GitHub at
+  aac9dcb): the round section
+  coverage gate fixed to reference
+  only the r_pins; engine
+  double-run 22/0 -> 0/22; rverify
+  GREEN - restore, double-run,
+  healthy base bad 0, BATTERY 596
+  mutants, 0 missed; the /tmp tree
+  restored pristine after. Landing
+  run GREEN first pass: loaded 583,
+  errors 0; xp audit 583/0;
+  encounter smoke 2000 rolls 0
+  bad; R797 through R801 live defs
+  all bad 0; AUDIT CENSUS 724 each
+  exactly once, all bad 0; build 0
+  warnings. Commit 21 files, 6043
+  insertions. Delivery spec-r801:
+  raw JSON canvas, 113251 bytes
+  md5 a3843fcebf557950f8c89bae8c7bf9fb.
+  NEXT - R802: awaits Curtiss's
+  call (the rest of the letter D
+  box - the D-flip round nears; the
+  arc runs on - 29 open boxes).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
