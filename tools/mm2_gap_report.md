@@ -182,7 +182,7 @@ the R614 precedent.
   the dungeon-level tables
 - [x] **Outdoor Random Encounter Tables** (pp. 140+) -
   the terrain tables
-- [ ] **Aquatic Random Encounter Tables** (pp. 150+) -
+- [x] **Aquatic Random Encounter Tables** (pp. 150+) -
   the freshwater and saltwater tables
 - [ ] **Index** (p. 156) - the merged MM1/FF/MM2 index
 

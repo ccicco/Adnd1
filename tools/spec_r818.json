@@ -1,0 +1,2447 @@
+{
+  "round": 818,
+  "title": "the MM2 aquatic encounter tables walk - the 12 surface and depths grids",
+  "header_file": "rules/mm2enca.h",
+  "prefix": "mm2enca",
+  "include_after": "#include \"rules/mm2enco.h\"  // R817: the MM2 outdoor encounter tables walk - the 36 terrain grids",
+  "include_comment": "the MM2 aquatic encounter tables walk - the 12 surface and depths grids",
+  "census_before": 740,
+  "audit_label": "R818 MM2 aquatic encounter grids audit",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R817 LANDED 2026-10-24: commit",
+  "gap_report": "tools/mm2_gap_report.md",
+  "regtest": "regtest.cpp",
+  "data_files": [],
+  "banner": {
+    "title": "THE MM2 AQUATIC ENCOUNTER TABLES WALK - THE 12 SURFACE AND DEPTHS GRIDS (print p. 137: the 6 main areas cold, temperate and tropical, each freshwater and saltwater, each surface and depths; the 13 hazard rows, the 4 pointer rows, the 3 lung dragon cross-refs), the AQUATIC-FLIP round - the Aquatic Random Encounter Tables gap box flips to closed",
+    "provenance": "Round twenty-three of the MM2 arc, the sixth table-group round (Curtiss Go call on the landed R817 outdoor walk; the pin-time walk found 12 printed grids of 19 die rows each, no defs promoted - the registry stays 809)",
+    "sentinel": "The pin header stays the print-fidelity record; the grids carry the die, editorial source and special cells, the row rosters ride the audit comments, and the walk cross-checks the registry keys live"
+  },
+  "audit_comment": "THE MM2 AQUATIC ENCOUNTER TABLES WALK - the 12 surface and depths grids (print p. 137 - the gap box label says pp. 150+ but the true folio is 137, the printed page numbers in both scans; the 6 main areas cold, temperate and tropical, each freshwater and saltwater, each surface and depths), every die row 2-20 pinned as the three-cell grid (die, source, special). THE SCHEMA: like the outdoor grids the aquatic grids print no source and no number-encountered columns, so the source cells are EDITORIAL - 1 MM1 / 2 MM2 / 3 FF / 0 none - derived from the print own index and the registry provenance (the lua headers); the special cells 0 the monster rows, 4 the hazard row, 5 the pointer row. THE SETTLED READS (the print index, the registry provenance and the 1eonline roster, three voices collated): the Quipper, Kelpie, Dragonfish, Throat Leech, Vodyanoi, Thork (the Copper Stork, the Boiler Bird parenthetical), the four Urchins (Green, Red, Black, Silver), Crabman, Algoid and Bunyip cells all Fiend Folio per the index F-refs - the registry carries no FF defs, the rows ride keyless. THE EDITORIAL PICKS (all flagged here, the or-row first-creature convention the R816 rule): the Mottled Worm cell the MM1 purple worm parenthetical; the Kopoacinth cell the MM1 water gargoyle parenthetical; the Lacedon cells the MM1 ghoul entry; the Elf, Aquatic cell the MM1 elf entry marine race; the Man, Pirate cell the buccaneer; the Seawolf, Giant cell the greater seawolf (the print cell reads Giant, the entry Greater - flagged); the Snapper, Giant cell the giant snapping turtle; the Eel, Weed cell the MM2 weed entry; the Ixitachitl cells the ixitxachitl spelling; the Sphinx, Andro- cell the hyphen truncation androsphinx; the Scrag cells split freshwater grids vs saltwater grids (the two registry scrags); the Dragonfish or Scrag row rides keyless (the FF first creature). THE FLAGGED CELLS: the Dragon, Sea and Dragon, Spirit cells (3 total) are the oriental lung wang and shan lung cross-refs - no registry def, the OA promotion seam owns them. THE HAZARD ROWS: 13 cells - Ice x2, Whirlpool x3, Island x2, Ghost Ship x3, Seaweed x3 - each cites the p. 137 doctrine codified in the consts above; THE POINTER ROWS: 4 cells - Surface Encounter x3, Land Encounter x1. THE DOCTRINE: the ice hull bands (10-16 ft fresh, 10-60 ft salt, 1-6 damage per round, the 10 percent iceberg hole, the 10-20 ice fields), the ghost ship crew and officer subtables (the 41-60 officer gap pinned verbatim), the sunken ship chart (the 11-20 no-treasure overlap pinned verbatim), the floating seaweed and seaweed bed bands, the island reef bands, the whirlpool arithmetic (75 percent small craft only under 50 ft, 25 percent any vessel, the cumulative rate, 6 rounds to sink) - all pinned as consts and bools and examples.",
+  "consts": [
+    {
+      "name": "mm2encaRound",
+      "value": 818,
+      "comment": "The MM2 aquatic encounter tables walk round: the 12 surface and depths grids, the sixth table-group round (Curtiss Go call on the landed R817)"
+    },
+    {
+      "name": "mm2encaAreaCount",
+      "value": 6,
+      "comment": "The 6 main areas: cold, temperate and tropical, each freshwater and saltwater"
+    },
+    {
+      "name": "mm2encaSubregionCount",
+      "value": 2,
+      "comment": "Each area splits surface and depths subregions"
+    },
+    {
+      "name": "mm2encaTableCount",
+      "value": 12,
+      "comment": "The 12 printed grids (6 areas x 2 subregions)"
+    },
+    {
+      "name": "mm2encaRowsPerTable",
+      "value": 19,
+      "comment": "Each grid carries 19 die rows"
+    },
+    {
+      "name": "mm2encaTotalRows",
+      "value": 228,
+      "comment": "The 228 total cells (12 x 19)"
+    },
+    {
+      "name": "mm2encaCFSCount",
+      "value": 19,
+      "comment": "The the cold freshwater surface grid die rows"
+    },
+    {
+      "name": "mm2encaCFDCount",
+      "value": 19,
+      "comment": "The the cold freshwater depths grid die rows"
+    },
+    {
+      "name": "mm2encaCSSCount",
+      "value": 19,
+      "comment": "The the cold saltwater surface grid die rows"
+    },
+    {
+      "name": "mm2encaCSDCount",
+      "value": 19,
+      "comment": "The the cold saltwater depths grid die rows"
+    },
+    {
+      "name": "mm2encaTFSCount",
+      "value": 19,
+      "comment": "The the temperate freshwater surface grid die rows"
+    },
+    {
+      "name": "mm2encaTFDCount",
+      "value": 19,
+      "comment": "The the temperate freshwater depths grid die rows"
+    },
+    {
+      "name": "mm2encaTSSCount",
+      "value": 19,
+      "comment": "The the temperate saltwater surface grid die rows"
+    },
+    {
+      "name": "mm2encaTSDCount",
+      "value": 19,
+      "comment": "The the temperate saltwater depths grid die rows"
+    },
+    {
+      "name": "mm2encaRFSCount",
+      "value": 19,
+      "comment": "The the tropical freshwater surface grid die rows"
+    },
+    {
+      "name": "mm2encaRFDCount",
+      "value": 19,
+      "comment": "The the tropical freshwater depths grid die rows"
+    },
+    {
+      "name": "mm2encaRSSCount",
+      "value": 19,
+      "comment": "The the tropical saltwater surface grid die rows"
+    },
+    {
+      "name": "mm2encaRSDCount",
+      "value": 19,
+      "comment": "The the tropical saltwater depths grid die rows"
+    },
+    {
+      "name": "mm2encaDieMin",
+      "value": 2,
+      "comment": "The first die row"
+    },
+    {
+      "name": "mm2encaDieMax",
+      "value": 20,
+      "comment": "The last die row"
+    },
+    {
+      "name": "mm2encaIceHullMinFresh",
+      "value": 10,
+      "comment": "Ice: freshwater hull thickness minimum, feet"
+    },
+    {
+      "name": "mm2encaIceHullMaxFresh",
+      "value": 16,
+      "comment": "Ice: freshwater hull thickness maximum, feet"
+    },
+    {
+      "name": "mm2encaIceHullMinSalt",
+      "value": 10,
+      "comment": "Ice: saltwater hull thickness minimum, feet"
+    },
+    {
+      "name": "mm2encaIceHullMaxSalt",
+      "value": 60,
+      "comment": "Ice: saltwater hull thickness maximum, feet"
+    },
+    {
+      "name": "mm2encaIceDamageMin",
+      "value": 1,
+      "comment": "Ice: hull damage minimum per round"
+    },
+    {
+      "name": "mm2encaIceDamageMax",
+      "value": 6,
+      "comment": "Ice: hull damage maximum per round"
+    },
+    {
+      "name": "mm2encaIcebergHolePct",
+      "value": 10,
+      "comment": "Icebergs: the hole-in-hull chance, percent"
+    },
+    {
+      "name": "mm2encaIceFieldMinPct",
+      "value": 10,
+      "comment": "Ice fields: the minimum chance, percent"
+    },
+    {
+      "name": "mm2encaIceFieldMaxPct",
+      "value": 20,
+      "comment": "Ice fields: the maximum chance, percent"
+    },
+    {
+      "name": "mm2encaGhostSkeletonPct",
+      "value": 40,
+      "comment": "Ghost ships: the skeleton crew chance 01-40"
+    },
+    {
+      "name": "mm2encaGhostZombiePct",
+      "value": 40,
+      "comment": "Ghost ships: the zombie crew chance 41-80"
+    },
+    {
+      "name": "mm2encaGhostJujuZombiePct",
+      "value": 20,
+      "comment": "Ghost ships: the juju zombie crew chance 81-00"
+    },
+    {
+      "name": "mm2encaGhostWightMin",
+      "value": 1,
+      "comment": "Ghost ship officers: wights minimum"
+    },
+    {
+      "name": "mm2encaGhostWightMax",
+      "value": 4,
+      "comment": "Ghost ship officers: wights maximum"
+    },
+    {
+      "name": "mm2encaGhostWraithMin",
+      "value": 1,
+      "comment": "Ghost ship officers: wraiths minimum"
+    },
+    {
+      "name": "mm2encaGhostWraithMax",
+      "value": 3,
+      "comment": "Ghost ship officers: wraiths maximum"
+    },
+    {
+      "name": "mm2encaGhostOfficerGapMin",
+      "value": 41,
+      "comment": "Ghost ship officers: the print gap 41-60 pinned verbatim - the missing row"
+    },
+    {
+      "name": "mm2encaGhostOfficerGapMax",
+      "value": 60,
+      "comment": "Ghost ship officers: the print gap 41-60 pinned verbatim - the missing row"
+    },
+    {
+      "name": "mm2encaGhostSpectreMin",
+      "value": 1,
+      "comment": "Ghost ship officers: spectres minimum"
+    },
+    {
+      "name": "mm2encaGhostSpectreMax",
+      "value": 2,
+      "comment": "Ghost ship officers: spectres maximum"
+    },
+    {
+      "name": "mm2encaGhostGhostMin",
+      "value": 1,
+      "comment": "Ghost ship officers: ghosts minimum"
+    },
+    {
+      "name": "mm2encaGhostGhostMax",
+      "value": 2,
+      "comment": "Ghost ship officers: ghosts maximum"
+    },
+    {
+      "name": "mm2encaGhostLichCount",
+      "value": 1,
+      "comment": "Ghost ship officers: the one lich"
+    },
+    {
+      "name": "mm2encaSunkenMerchantPct",
+      "value": 20,
+      "comment": "Sunken ships: the merchant-with-treasure chance 01-20"
+    },
+    {
+      "name": "mm2encaSunkenNoTreasureMin",
+      "value": 11,
+      "comment": "Sunken ships: the no-treasure overlap 11-20 pinned verbatim (the print overlap)"
+    },
+    {
+      "name": "mm2encaSunkenNoTreasureMax",
+      "value": 20,
+      "comment": "Sunken ships: the no-treasure overlap 11-20 pinned verbatim (the print overlap)"
+    },
+    {
+      "name": "mm2encaSunkenLacedonMin",
+      "value": 2,
+      "comment": "Sunken ships: the lacedon crew minimum 21-60"
+    },
+    {
+      "name": "mm2encaSunkenLacedonMax",
+      "value": 24,
+      "comment": "Sunken ships: the lacedon crew maximum 21-60"
+    },
+    {
+      "name": "mm2encaSeaweedSlowPct",
+      "value": 50,
+      "comment": "Floating seaweed: the vessel slow chance, percent"
+    },
+    {
+      "name": "mm2encaSeaweedEncounterPct",
+      "value": 40,
+      "comment": "Floating seaweed: the encounter chance, percent"
+    },
+    {
+      "name": "mm2encaSeaweedBedMinFt",
+      "value": 30,
+      "comment": "Seaweed beds: minimum depth, feet"
+    },
+    {
+      "name": "mm2encaSeaweedBedMaxFt",
+      "value": 300,
+      "comment": "Seaweed beds: maximum depth, feet"
+    },
+    {
+      "name": "mm2encaSeaweedBedVisionFt",
+      "value": 10,
+      "comment": "Seaweed beds: vision inside, feet"
+    },
+    {
+      "name": "mm2encaSeaweedBedPct",
+      "value": 30,
+      "comment": "Seaweed beds: the encounter chance, percent"
+    },
+    {
+      "name": "mm2encaIslandReefPct",
+      "value": 10,
+      "comment": "Islands: the reef chance, percent"
+    },
+    {
+      "name": "mm2encaIslandHullMin",
+      "value": 2,
+      "comment": "Islands: the reef hull damage minimum"
+    },
+    {
+      "name": "mm2encaIslandHullMax",
+      "value": 12,
+      "comment": "Islands: the reef hull damage maximum"
+    },
+    {
+      "name": "mm2encaIslandHolePct",
+      "value": 20,
+      "comment": "Islands: the hole-in-hull chance, percent"
+    },
+    {
+      "name": "mm2encaWhirlpoolSmallCraftPct",
+      "value": 75,
+      "comment": "Whirlpools: the affect-small-craft-only chance, percent"
+    },
+    {
+      "name": "mm2encaWhirlpoolAnyPct",
+      "value": 25,
+      "comment": "Whirlpools: the affect-any-vessel chance, percent"
+    },
+    {
+      "name": "mm2encaWhirlpoolCraftMaxFt",
+      "value": 50,
+      "comment": "Whirlpools: the small-craft maximum length, feet"
+    },
+    {
+      "name": "mm2encaWhirlpoolRoundsToSink",
+      "value": 6,
+      "comment": "Whirlpools: the rounds to sink at the cumulative 1 inch per round"
+    },
+    {
+      "name": "mm2encaHazardRows",
+      "value": 13,
+      "comment": "The hazard rows (Ice x2, Whirlpool x3, Island x2, Ghost Ship x3, Seaweed x3)"
+    },
+    {
+      "name": "mm2encaPointerRows",
+      "value": 4,
+      "comment": "The pointer rows (Surface Encounter x3, Land Encounter x1)"
+    },
+    {
+      "name": "mm2encaMm1SourceRows",
+      "value": 138,
+      "comment": "The MM1-sourced rows"
+    },
+    {
+      "name": "mm2encaMm2SourceRows",
+      "value": 51,
+      "comment": "The MM2-sourced rows"
+    },
+    {
+      "name": "mm2encaFfSourceRows",
+      "value": 19,
+      "comment": "The FF-sourced rows (keyless - the registry carries no FF defs)"
+    },
+    {
+      "name": "mm2encaNoSourceRows",
+      "value": 20,
+      "comment": "The no-source rows: the hazards, the pointers, the lung dragon cross-refs"
+    },
+    {
+      "name": "mm2encaWalkKeyRows",
+      "value": 189,
+      "comment": "The keyed rows (the MM1 and MM2 defs the registry owns)"
+    },
+    {
+      "name": "mm2encaLungDragonRows",
+      "value": 3,
+      "comment": "The oriental lung dragon cross-ref cells (the sea lung wang and the spirit shan lung) - no registry def, the OA promotion seam owns them"
+    },
+    {
+      "name": "mm2encaOrRows",
+      "value": 14,
+      "comment": "The or-rows (the R816 first-creature convention)"
+    },
+    {
+      "name": "mm2encaRegistryFloor",
+      "value": 809,
+      "comment": "The registry floor (no defs promoted this round)"
+    }
+  ],
+  "bools": [
+    {
+      "name": "mm2encaSixMainAreas",
+      "value": true,
+      "comment": "These tables cover the 6 main areas"
+    },
+    {
+      "name": "mm2encaClimateTimesWaterType",
+      "value": true,
+      "comment": "The 6 areas are the 3 climate bands x fresh and salt water"
+    },
+    {
+      "name": "mm2encaSurfaceAndDepthsSplit",
+      "value": true,
+      "comment": "Each area carries a surface grid and a depths grid"
+    },
+    {
+      "name": "mm2encaNoPrintedSourceColumn",
+      "value": true,
+      "comment": "The aquatic grids print no source column (the source cells are editorial)"
+    },
+    {
+      "name": "mm2encaNoPrintedNumberColumn",
+      "value": true,
+      "comment": "The aquatic grids print no number-encountered column"
+    },
+    {
+      "name": "mm2encaDieRowsContiguous",
+      "value": true,
+      "comment": "The die rows run 2-20 contiguous, one row per die"
+    },
+    {
+      "name": "mm2encaHazardRowHasNoMonsterStat",
+      "value": true,
+      "comment": "The hazard rows cite no monster stat block (ice, whirlpool, island, ghost ship, sunken ship, seaweed)"
+    },
+    {
+      "name": "mm2encaPointerRowRoutesToAnotherTable",
+      "value": true,
+      "comment": "The pointer rows route to the surface table or the land tables"
+    },
+    {
+      "name": "mm2encaIceMayBlockOrDamageVessels",
+      "value": true,
+      "comment": "Ice may block the passage or hole the hull"
+    },
+    {
+      "name": "mm2encaGhostShipCrewIsUndead",
+      "value": true,
+      "comment": "The ghost ship crew rolls on the undead subtables"
+    },
+    {
+      "name": "mm2encaSunkenShipsRollOnMainChart",
+      "value": true,
+      "comment": "Sunken ships roll 61-00 on the main encounter chart"
+    },
+    {
+      "name": "mm2encaFloatingSeaweedSlowsVessels",
+      "value": true,
+      "comment": "Floating seaweed slows vessels and may hide an encounter"
+    },
+    {
+      "name": "mm2encaWhirlpoolSinksInSixRounds",
+      "value": true,
+      "comment": "A whirlpool sinks the vessel in 6 rounds at the cumulative rate"
+    },
+    {
+      "name": "mm2encaDmMayModifyOrReplace",
+      "value": true,
+      "comment": "The DM may modify or replace encounters for the party and terrain"
+    }
+  ],
+  "tables": [
+    {
+      "name": "the the cold freshwater surface encounter grid",
+      "tag": "CFS",
+      "cols": [
+        "mm2encaCFSDie",
+        "mm2encaCFSSrc",
+        "mm2encaCFSSpecial"
+      ],
+      "count": "mm2encaCFSCount",
+      "data": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          9,
+          0,
+          4
+        ],
+        [
+          10,
+          0,
+          5
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          0,
+          5
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          2,
+          0
+        ],
+        [
+          16,
+          2,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          2,
+          0
+        ],
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          20,
+          2,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE COLD FRESHWATER SURFACE GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Dragon Turtle (MM1 dragon_turtle); die 3 Harpy (MM1 harpy); die 4 Greenhag (MM2 greenhag); die 5 Naga, Water (MM1 water_naga); die 6 Lacedon (MM1 ghoul); die 7 Turtle, Giant Snapper (MM1 snapping_turtle); die 8 Swan (MM2 swan); die 9 Ice (the hazard row); die 10 Surface Encounter (the pointer row); die 11 Man, Merchant (MM1 merchant); die 12 Surface Encounter (the pointer row); die 13 Crystal Ooze or Island (MM2 crystal_ooze); die 14 Buccaneer (MM1 buccaneer); die 15 Merrow (MM2 merrow); die 16 Scrag (MM2 scrag_freshwater); die 17 Nixie (MM1 nixie); die 18 Falcon, Large (MM2 falcon_large); die 19 Dragon, Sea (the lung dragon cross-ref, no registry def); die 20 Swanmay (MM2 swanmay)"
+    },
+    {
+      "name": "the the cold freshwater depths encounter grid",
+      "tag": "CFD",
+      "cols": [
+        "mm2encaCFDDie",
+        "mm2encaCFDSrc",
+        "mm2encaCFDSpecial"
+      ],
+      "count": "mm2encaCFDCount",
+      "data": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          5,
+          3,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          14,
+          2,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          16,
+          1,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          1,
+          0
+        ],
+        [
+          19,
+          1,
+          0
+        ],
+        [
+          20,
+          2,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE COLD FRESHWATER DEPTHS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Giant, Storm (MM1 storm_giant); die 3 Verme (MM2 verme); die 4 Quipper (FF, no registry def); die 5 Vodyanoi (FF, no registry def); die 6 Sirine (MM2 sirine); die 7 Lacedon (MM1 ghoul); die 8 Kopoacinth (MM1 gargoyle); die 9 Crab, Giant or Scrag (MM1 giant_crab); die 10 Pike, Giant or Nixie (MM1 giant_pike); die 11 Otter or Dragonfish (MM2 otter); die 12 Octopus or Sunken Ship (MM1 octopus); die 13 Gar, Giant or Nixie (MM1 giant_gar); die 14 Merrow (MM2 merrow); die 15 Turtle, Giant Snapping (MM1 snapping_turtle); die 16 Lamprey, Normal (MM1 lamprey); die 17 Hippocampus (MM1 hippocampus); die 18 Morkoth (MM1 morkoth); die 19 Otter, Giant (MM1 giant_otter); die 20 Nereid (MM2 nereid)"
+    },
+    {
+      "name": "the the cold saltwater surface encounter grid",
+      "tag": "CSS",
+      "cols": [
+        "mm2encaCSSDie",
+        "mm2encaCSSSrc",
+        "mm2encaCSSSpecial"
+      ],
+      "count": "mm2encaCSSCount",
+      "data": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          4
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          0,
+          4
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          0,
+          4
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          0,
+          4
+        ],
+        [
+          16,
+          2,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          2,
+          0
+        ],
+        [
+          19,
+          2,
+          0
+        ],
+        [
+          20,
+          1,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE COLD SALTWATER SURFACE GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Wind Walker (MM1 wind_walker); die 3 Whirlpool (the hazard row); die 4 Dragon, White (MM1 white_dragon); die 5 Ghost Ship (the hazard row); die 6 Narwhale (MM2 narwhale); die 7 Turtle, Giant Sea (MM1 sea_turtle); die 8 Sea Lion (MM1 sea_lion); die 9 Man, Merchant (MM1 merchant); die 10 Shark (MM1 shark); die 11 Whale (MM1 whale); die 12 Pirate or Hollyphant (MM1 buccaneer); die 13 Ice (the hazard row); die 14 Dolphin (MM1 dolphin); die 15 Island (the hazard row); die 16 Scrag (MM2 scrag_saltwater); die 17 Will-o-wisp (MM1 will_o_wisp); die 18 Seawolf, Greater (MM2 seawolf_greater); die 19 Selkie (MM2 selkie); die 20 Dragon Turtle (MM1 dragon_turtle)"
+    },
+    {
+      "name": "the the cold saltwater depths encounter grid",
+      "tag": "CSD",
+      "cols": [
+        "mm2encaCSDDie",
+        "mm2encaCSDSrc",
+        "mm2encaCSDSpecial"
+      ],
+      "count": "mm2encaCSDCount",
+      "data": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          5,
+          3,
+          0
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          2,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          16,
+          1,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          1,
+          0
+        ],
+        [
+          19,
+          1,
+          0
+        ],
+        [
+          20,
+          0,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE COLD SALTWATER DEPTHS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Verme (MM2 verme); die 3 Water Weird (MM1 water_weird); die 4 Seawolf, Lesser (MM2 seawolf_lesser); die 5 Urchin, Green (FF, no registry def); die 6 Urchin, Red (FF, no registry def); die 7 Dolphin (MM1 dolphin); die 8 Elf, Aquatic (MM1 elf); die 9 Shark (MM1 shark); die 10 Crab, Giant or Nixie (MM1 giant_crab); die 11 Narwhale or Naga, Water (MM2 narwhale); die 12 Octopus or Shark, Giant (MM1 octopus); die 13 Whale (MM1 whale); die 14 Sea Lion (MM1 sea_lion); die 15 Kopoacinth (MM1 gargoyle); die 16 Squid, Giant (MM1 giant_squid); die 17 Octopus (MM1 octopus); die 18 Slime, Green (MM1 green_slime); die 19 Titan (MM1 titan); die 20 Dragon, Sea (the lung dragon cross-ref, no registry def)"
+    },
+    {
+      "name": "the the temperate freshwater surface encounter grid",
+      "tag": "TFS",
+      "cols": [
+        "mm2encaTFSDie",
+        "mm2encaTFSSrc",
+        "mm2encaTFSSpecial"
+      ],
+      "count": "mm2encaTFSCount",
+      "data": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          2,
+          0
+        ],
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          3,
+          0
+        ],
+        [
+          12,
+          2,
+          0
+        ],
+        [
+          13,
+          0,
+          5
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          16,
+          2,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          2,
+          0
+        ],
+        [
+          19,
+          1,
+          0
+        ],
+        [
+          20,
+          2,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE TEMPERATE FRESHWATER SURFACE GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Dragonfly, Giant (MM2 giant_dragonfly); die 3 Dragon, Carp (MM2 carp_giant); die 4 Lizardman (MM1 lizard_man); die 5 Crystal Ooze (MM2 crystal_ooze); die 6 Buccaneer (MM1 buccaneer); die 7 Merrow (MM2 merrow); die 8 Swan (MM2 swan); die 9 Crocodile, Normal (MM1 crocodile); die 10 Man, Merchant (MM1 merchant); die 11 Throat Leech (FF, no registry def); die 12 Crane, Giant or Dragon, Mist (MM2 crane_giant); die 13 Surface Encounter (the pointer row); die 14 Crayfish, Giant (MM1 giant_crayfish); die 15 Frog, Giant (MM1 giant_frog); die 16 Sirine (MM2 sirine); die 17 Otter, Giant (MM1 giant_otter); die 18 Scrag (MM2 scrag_freshwater); die 19 Dragon, Red (MM1 red_dragon); die 20 Boobrie (MM2 boobrie)"
+    },
+    {
+      "name": "the the temperate freshwater depths encounter grid",
+      "tag": "TFD",
+      "cols": [
+        "mm2encaTFDDie",
+        "mm2encaTFDSrc",
+        "mm2encaTFDSpecial"
+      ],
+      "count": "mm2encaTFDCount",
+      "data": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          3,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          16,
+          2,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          1,
+          0
+        ],
+        [
+          19,
+          3,
+          0
+        ],
+        [
+          20,
+          1,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE TEMPERATE FRESHWATER DEPTHS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Mud-man (MM2 mud_man); die 3 Muckdweller (MM2 muckdweller); die 4 Beaver, Giant (MM1 giant_beaver); die 5 Lamprey, Giant (MM1 giant_lamprey); die 6 Lizard Man (MM1 lizard_man); die 7 Turtle, Giant Snapper (MM1 snapping_turtle); die 8 Kopoacinth (MM1 gargoyle); die 9 Beetle, Giant Water (MM1 water_beetle); die 10 Spider, Giant Water (MM1 water_spider); die 11 Throat Leech (FF, no registry def); die 12 Crocodile (MM1 crocodile); die 13 Otter, Giant or Nymph (MM1 giant_otter); die 14 Crayfish, Giant (MM1 giant_crayfish); die 15 Lamprey (MM1 lamprey); die 16 Dragon, Carp (MM2 carp_giant); die 17 Gar, Giant (MM1 giant_gar); die 18 Octopus (MM1 octopus); die 19 Algoid (FF, no registry def); die 20 Lizard Man with Lizard King (MM1 lizard_man)"
+    },
+    {
+      "name": "the the temperate saltwater surface encounter grid",
+      "tag": "TSS",
+      "cols": [
+        "mm2encaTSSDie",
+        "mm2encaTSSSrc",
+        "mm2encaTSSSpecial"
+      ],
+      "count": "mm2encaTSSCount",
+      "data": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          4,
+          0,
+          4
+        ],
+        [
+          5,
+          0,
+          4
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          0,
+          4
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          0,
+          4
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          16,
+          1,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          1,
+          0
+        ],
+        [
+          19,
+          2,
+          0
+        ],
+        [
+          20,
+          2,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE TEMPERATE SALTWATER SURFACE GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Ki-rin (MM1 ki_rin); die 3 Dragon, Cloud (MM2 cloud_dragon); die 4 Ghost Ship (the hazard row); die 5 Whirlpool (the hazard row); die 6 Crabman (FF, no registry def); die 7 Eel, Giant (MM1 giant_eel); die 8 Island (the hazard row); die 9 Dinosaur, Plesiosaur (MM1 plesiosaurus); die 10 Man, Merchant (MM1 merchant); die 11 Shark (MM1 shark); die 12 Whale (MM1 whale); die 13 Seaweed, Floating (the hazard row); die 14 Dinosaur, Elasmosaur (MM1 elasmosaurus); die 15 Will-o-wisp (MM1 will_o_wisp); die 16 Crab, Giant (MM1 giant_crab); die 17 Lacedon (MM1 ghoul); die 18 Dragon, Bronze (MM1 bronze_dragon); die 19 Seawolf, Giant (MM2 seawolf_greater); die 20 Verme (MM2 verme)"
+    },
+    {
+      "name": "the the temperate saltwater depths encounter grid",
+      "tag": "TSD",
+      "cols": [
+        "mm2encaTSDDie",
+        "mm2encaTSDSrc",
+        "mm2encaTSDSpecial"
+      ],
+      "count": "mm2encaTSDCount",
+      "data": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          3,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          0,
+          4
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          16,
+          1,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          2,
+          0
+        ],
+        [
+          19,
+          1,
+          0
+        ],
+        [
+          20,
+          1,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE TEMPERATE SALTWATER DEPTHS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Morkoth (MM1 morkoth); die 3 Kraken (MM2 kraken); die 4 Narwhale (MM2 narwhale); die 5 Lamprey, Giant (MM1 giant_lamprey); die 6 Shark, Giant (MM1 giant_shark); die 7 Sea Lion (MM1 sea_lion); die 8 Urchin, Black (FF, no registry def); die 9 Dinosaur, Plesiosaur (MM1 plesiosaurus); die 10 Sea Horse (MM1 sea_horse); die 11 Shark (MM1 shark); die 12 Whale (MM1 whale); die 13 Seaweed (the hazard row); die 14 Masher (MM1 masher); die 15 Eel, Giant (MM1 giant_eel); die 16 Dragon Turtle (MM1 dragon_turtle); die 17 Mottled Worm (MM1 purple_worm); die 18 Seawolf, Lesser (MM2 seawolf_lesser); die 19 Eye of the Deep (MM1 eye_of_the_deep); die 20 Titan (MM1 titan)"
+    },
+    {
+      "name": "the the tropical freshwater surface encounter grid",
+      "tag": "RFS",
+      "cols": [
+        "mm2encaRFSDie",
+        "mm2encaRFSSrc",
+        "mm2encaRFSSpecial"
+      ],
+      "count": "mm2encaRFSCount",
+      "data": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          0,
+          5
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          3,
+          0
+        ],
+        [
+          13,
+          2,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          16,
+          2,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          1,
+          0
+        ],
+        [
+          19,
+          3,
+          0
+        ],
+        [
+          20,
+          3,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE TROPICAL FRESHWATER SURFACE GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Froghemoth (MM2 froghemoth); die 3 Couatl (MM1 couatl); die 4 Catfish, Giant (MM2 catfish_giant); die 5 Crystal Ooze (MM2 crystal_ooze); die 6 Dragon, Mist (MM2 mist_dragon); die 7 Spider, Giant (MM1 giant_spider); die 8 Crayfish, Giant (MM1 giant_crayfish); die 9 Man, Merchant (MM1 merchant); die 10 Land Encounter (the pointer row); die 11 Crocodile, Normal (MM1 crocodile); die 12 Throat Leech (FF, no registry def); die 13 Behemoth or Crane, Giant (MM2 behemoth); die 14 Frog, Giant (MM1 giant_frog); die 15 Hippopotamus (MM1 hippopotamus); die 16 Sirine (MM2 sirine); die 17 Merman (MM1 merman); die 18 Manticore (MM1 manticore); die 19 Kelpie (FF, no registry def); die 20 Thork (FF, no registry def)"
+    },
+    {
+      "name": "the the tropical freshwater depths encounter grid",
+      "tag": "RFD",
+      "cols": [
+        "mm2encaRFDDie",
+        "mm2encaRFDSrc",
+        "mm2encaRFDSpecial"
+      ],
+      "count": "mm2encaRFDCount",
+      "data": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          4,
+          3,
+          0
+        ],
+        [
+          5,
+          3,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          3,
+          0
+        ],
+        [
+          13,
+          3,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          16,
+          3,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          0,
+          0
+        ],
+        [
+          19,
+          1,
+          0
+        ],
+        [
+          20,
+          1,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE TROPICAL FRESHWATER DEPTHS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Verme (MM2 verme); die 3 Eel, Weed (MM1 weed); die 4 Kelpie (FF, no registry def); die 5 Vodyanoi (FF, no registry def); die 6 Behemoth (MM2 behemoth); die 7 Merman (MM1 merman); die 8 Snapper, Giant (MM1 snapping_turtle); die 9 Beetle, Giant Water (MM1 water_beetle); die 10 Dinosaur, Dinichtys (MM1 dinichthys); die 11 Spider, Giant Water (MM1 water_spider); die 12 Throat Leech (FF, no registry def); die 13 Dragonfish or Scrag (FF, no registry def); die 14 Dinosaur, Archelon (MM1 archelon_ischyros); die 15 Kopoacinth (MM1 gargoyle); die 16 Bunyip (FF, no registry def); die 17 Lizardman (MM1 lizard_man); die 18 Dragon, Spirit (the lung dragon cross-ref, no registry def); die 19 Sea Hag (MM1 sea_hag); die 20 Water Weird (MM1 water_weird)"
+    },
+    {
+      "name": "the the tropical saltwater surface encounter grid",
+      "tag": "RSS",
+      "cols": [
+        "mm2encaRSSDie",
+        "mm2encaRSSSrc",
+        "mm2encaRSSSpecial"
+      ],
+      "count": "mm2encaRSSCount",
+      "data": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          0,
+          4
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          1,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          1,
+          0
+        ],
+        [
+          16,
+          0,
+          4
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          1,
+          0
+        ],
+        [
+          19,
+          1,
+          0
+        ],
+        [
+          20,
+          1,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE TROPICAL SALTWATER SURFACE GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Wereshark (MM2 wereshark); die 3 Seawolf, Greater (MM2 seawolf_greater); die 4 Roc (MM1 roc); die 5 Whirlpool (the hazard row); die 6 Sahuagin (MM1 sahuagin); die 7 Portuguese Man-o-war (MM1 portuguese_man_o_war); die 8 Sea Hag (MM1 sea_hag); die 9 Crocodile, Giant (MM1 giant_crocodile); die 10 Dinosaur, Plesiosaur (MM1 plesiosaurus); die 11 Man, Merchant (MM1 merchant); die 12 Shark (MM1 shark); die 13 Whale (MM1 whale); die 14 Man, Pirate (MM1 buccaneer); die 15 Dinosaur, Mosasaur (MM1 mosasaurus); die 16 Ghost Ship (the hazard row); die 17 Shark, Giant (MM1 giant_shark); die 18 Sphinx, Andro- (MM1 androsphinx); die 19 Ixitachitl (MM1 ixitxachitl); die 20 Triton (MM1 triton)"
+    },
+    {
+      "name": "the the tropical saltwater depths encounter grid",
+      "tag": "RSD",
+      "cols": [
+        "mm2encaRSDDie",
+        "mm2encaRSDSrc",
+        "mm2encaRSDSpecial"
+      ],
+      "count": "mm2encaRSDCount",
+      "data": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          3,
+          3,
+          0
+        ],
+        [
+          4,
+          1,
+          0
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          1,
+          0
+        ],
+        [
+          8,
+          3,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          1,
+          0
+        ],
+        [
+          12,
+          0,
+          4
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          15,
+          2,
+          0
+        ],
+        [
+          16,
+          2,
+          0
+        ],
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          18,
+          2,
+          0
+        ],
+        [
+          19,
+          2,
+          0
+        ],
+        [
+          20,
+          1,
+          0
+        ]
+      ],
+      "sentinel": 0,
+      "col_default": 0,
+      "col_comments": [
+        "The die cells (2-20 contiguous, one row per die)",
+        "The source cells (1 MM1, 2 MM2, 3 FF, 0 the hazard, pointer and lung dragon rows)",
+        "The special cells (0 the monster rows, 4 the hazard row, 5 the pointer row)"
+      ],
+      "audit_comment": "THE TROPICAL SALTWATER DEPTHS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Morkoth (MM1 morkoth); die 3 Urchin, Silver (FF, no registry def); die 4 Crocodile, Giant (MM1 giant_crocodile); die 5 Octopus (MM1 octopus); die 6 Pungi-ray (MM1 pungi_ray); die 7 Sahuagin (MM1 sahuagin); die 8 Urchin, Black (FF, no registry def); die 9 Dinosaur, Dinichtys (MM1 dinichthys); die 10 Ray, Sting (MM1 sting_ray); die 11 Shark (MM1 shark); die 12 Seaweed (the hazard row); die 13 Strangleweed (MM1 strangle_weed); die 14 Barracuda (MM1 barracuda); die 15 Dinosaur, Nothosaur (MM2 nothosaurus); die 16 Eel, Electric Marine (MM2 electric_eel); die 17 Triton (MM1 triton); die 18 Wereshark (MM2 wereshark); die 19 Kraken (MM2 kraken); die 20 Ixitachitl (MM1 ixitxachitl)"
+    }
+  ],
+  "examples": [
+    {
+      "note": "the census walk (the 12-grid arithmetic)",
+      "expr": "m['mm2encaTotalRows']() != m['mm2encaTableCount']() * m['mm2encaRowsPerTable']() or m['mm2encaTableCount']() != 12 or m['mm2encaRowsPerTable']() != 19"
+    },
+    {
+      "note": "the area-subregion pairing",
+      "expr": "m['mm2encaAreaCount']() * m['mm2encaSubregionCount']() != m['mm2encaTableCount']() or m['mm2encaAreaCount']() != 6"
+    },
+    {
+      "note": "the die range",
+      "expr": "m['mm2encaDieMin']() != 2 or m['mm2encaDieMax']() != 20"
+    },
+    {
+      "note": "the hazard and pointer censuses",
+      "expr": "m['mm2encaHazardRows']() != 13 or m['mm2encaPointerRows']() != 4"
+    },
+    {
+      "note": "the source census sums to the total",
+      "expr": "m['mm2encaMm1SourceRows']() + m['mm2encaMm2SourceRows']() + m['mm2encaFfSourceRows']() + m['mm2encaNoSourceRows']() != m['mm2encaTotalRows']()"
+    },
+    {
+      "note": "the no-source arithmetic (hazards + pointers + lung dragons)",
+      "expr": "m['mm2encaHazardRows']() + m['mm2encaPointerRows']() + m['mm2encaLungDragonRows']() != m['mm2encaNoSourceRows']()"
+    },
+    {
+      "note": "the walk-key census (the MM1 and MM2 defs the registry owns)",
+      "expr": "m['mm2encaWalkKeyRows']() != m['mm2encaMm1SourceRows']() + m['mm2encaMm2SourceRows']()"
+    },
+    {
+      "note": "the whirlpool arithmetic (75 + 25, six rounds to sink)",
+      "expr": "m['mm2encaWhirlpoolSmallCraftPct']() + m['mm2encaWhirlpoolAnyPct']() != 100 or m['mm2encaWhirlpoolRoundsToSink']() != 6 or m['mm2encaWhirlpoolCraftMaxFt']() != 50"
+    },
+    {
+      "note": "the ghost ship crew arithmetic (the three crew bands sum to 100)",
+      "expr": "m['mm2encaGhostSkeletonPct']() + m['mm2encaGhostZombiePct']() + m['mm2encaGhostJujuZombiePct']() != 100 or m['mm2encaGhostLichCount']() != 1"
+    },
+    {
+      "note": "the ghost ship officer bands (the 41-60 print gap pinned verbatim)",
+      "expr": "m['mm2encaGhostOfficerGapMin']() != 41 or m['mm2encaGhostOfficerGapMax']() != 60 or m['mm2encaGhostWightMax']() != 4 or m['mm2encaGhostWraithMax']() != 3 or m['mm2encaGhostSpectreMax']() != 2 or m['mm2encaGhostGhostMax']() != 2"
+    },
+    {
+      "note": "the sunken ship bands (the 11-20 no-treasure overlap pinned verbatim)",
+      "expr": "m['mm2encaSunkenMerchantPct']() != 20 or m['mm2encaSunkenNoTreasureMin']() != 11 or m['mm2encaSunkenNoTreasureMax']() != 20 or m['mm2encaSunkenLacedonMin']() != 2 or m['mm2encaSunkenLacedonMax']() != 24"
+    },
+    {
+      "note": "the ice doctrine (the hull thickness bands and damage per round)",
+      "expr": "m['mm2encaIceHullMinFresh']() != 10 or m['mm2encaIceHullMaxFresh']() != 16 or m['mm2encaIceHullMinSalt']() != 10 or m['mm2encaIceHullMaxSalt']() != 60 or m['mm2encaIceDamageMax']() != 6 or m['mm2encaIcebergHolePct']() != 10 or m['mm2encaIceFieldMinPct']() != 10 or m['mm2encaIceFieldMaxPct']() != 20"
+    },
+    {
+      "note": "the seaweed and island doctrine",
+      "expr": "m['mm2encaSeaweedSlowPct']() != 50 or m['mm2encaSeaweedEncounterPct']() != 40 or m['mm2encaSeaweedBedMaxFt']() != 300 or m['mm2encaSeaweedBedVisionFt']() != 10 or m['mm2encaSeaweedBedPct']() != 30 or m['mm2encaIslandReefPct']() != 10 or m['mm2encaIslandHullMax']() != 12 or m['mm2encaIslandHolePct']() != 20"
+    }
+  ],
+  "header_sections": {
+    "the R818 census": [
+      {
+        "kind": "const",
+        "name": "mm2encaRound"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaAreaCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSubregionCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaTableCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaRowsPerTable"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaTotalRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaCFSCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaCFDCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaCSSCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaCSDCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaTFSCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaTFDCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaTSSCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaTSDCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaRFSCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaRFDCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaRSSCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaRSDCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaDieMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaDieMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIceHullMinFresh"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIceHullMaxFresh"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIceHullMinSalt"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIceHullMaxSalt"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIceDamageMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIceDamageMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIcebergHolePct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIceFieldMinPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIceFieldMaxPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostSkeletonPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostZombiePct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostJujuZombiePct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostWightMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostWightMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostWraithMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostWraithMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostOfficerGapMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostOfficerGapMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostSpectreMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostSpectreMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostGhostMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostGhostMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaGhostLichCount"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSunkenMerchantPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSunkenNoTreasureMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSunkenNoTreasureMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSunkenLacedonMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSunkenLacedonMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSeaweedSlowPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSeaweedEncounterPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSeaweedBedMinFt"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSeaweedBedMaxFt"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSeaweedBedVisionFt"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaSeaweedBedPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIslandReefPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIslandHullMin"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIslandHullMax"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaIslandHolePct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaWhirlpoolSmallCraftPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaWhirlpoolAnyPct"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaWhirlpoolCraftMaxFt"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaWhirlpoolRoundsToSink"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaHazardRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaPointerRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaMm1SourceRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaMm2SourceRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaFfSourceRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaNoSourceRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaWalkKeyRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaLungDragonRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaOrRows"
+      },
+      {
+        "kind": "const",
+        "name": "mm2encaRegistryFloor"
+      }
+    ],
+    "the opening doctrine (the R818 census)": [
+      {
+        "kind": "bool",
+        "name": "mm2encaSixMainAreas"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaClimateTimesWaterType"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaSurfaceAndDepthsSplit"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaNoPrintedSourceColumn"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaNoPrintedNumberColumn"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaDieRowsContiguous"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaHazardRowHasNoMonsterStat"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaPointerRowRoutesToAnotherTable"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaIceMayBlockOrDamageVessels"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaGhostShipCrewIsUndead"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaSunkenShipsRollOnMainChart"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaFloatingSeaweedSlowsVessels"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaWhirlpoolSinksInSixRounds"
+      },
+      {
+        "kind": "bool",
+        "name": "mm2encaDmMayModifyOrReplace"
+      }
+    ],
+    "the the cold freshwater surface grid pins": [
+      {
+        "kind": "table",
+        "name": "the the cold freshwater surface encounter grid"
+      }
+    ],
+    "the the cold freshwater depths grid pins": [
+      {
+        "kind": "table",
+        "name": "the the cold freshwater depths encounter grid"
+      }
+    ],
+    "the the cold saltwater surface grid pins": [
+      {
+        "kind": "table",
+        "name": "the the cold saltwater surface encounter grid"
+      }
+    ],
+    "the the cold saltwater depths grid pins": [
+      {
+        "kind": "table",
+        "name": "the the cold saltwater depths encounter grid"
+      }
+    ],
+    "the the temperate freshwater surface grid pins": [
+      {
+        "kind": "table",
+        "name": "the the temperate freshwater surface encounter grid"
+      }
+    ],
+    "the the temperate freshwater depths grid pins": [
+      {
+        "kind": "table",
+        "name": "the the temperate freshwater depths encounter grid"
+      }
+    ],
+    "the the temperate saltwater surface grid pins": [
+      {
+        "kind": "table",
+        "name": "the the temperate saltwater surface encounter grid"
+      }
+    ],
+    "the the temperate saltwater depths grid pins": [
+      {
+        "kind": "table",
+        "name": "the the temperate saltwater depths encounter grid"
+      }
+    ],
+    "the the tropical freshwater surface grid pins": [
+      {
+        "kind": "table",
+        "name": "the the tropical freshwater surface encounter grid"
+      }
+    ],
+    "the the tropical freshwater depths grid pins": [
+      {
+        "kind": "table",
+        "name": "the the tropical freshwater depths encounter grid"
+      }
+    ],
+    "the the tropical saltwater surface grid pins": [
+      {
+        "kind": "table",
+        "name": "the the tropical saltwater surface encounter grid"
+      }
+    ],
+    "the the tropical saltwater depths grid pins": [
+      {
+        "kind": "table",
+        "name": "the the tropical saltwater depths encounter grid"
+      }
+    ]
+  },
+  "chains": [],
+  "switches": [],
+  "caller_files": [],
+  "table_checks": [],
+  "file_patches": [
+    {
+      "file": "regtest.cpp",
+      "from": "    // ---- R227: the wis mental save wiring audit ----",
+      "to": "    // ---- R818: the MM2 aquatic encounter grids walk ----\n    // The 12 surface and depths grids cross-checked\n    // live: the die contiguity 2-20, the hazard rows\n    // (ice, whirlpool, island, ghost ship, sunken ship,\n    // seaweed), the pointer rows (the surface and land\n    // reroutes), the lung dragon cross-refs, and the\n    // registry key for every walkable row (the MM1 and\n    // MM2 defs).\n    {\n        using namespace rules;\n        int bad = 0;\n        // (the grid/row accessor set for the walk;\n        //  every cell routes to the pinned grid)\n        auto encDie = [](int G, int r) {\n            switch (G) {\n            case 0: return mm2encaCFSDie(r);\n            case 1: return mm2encaCFDDie(r);\n            case 2: return mm2encaCSSDie(r);\n            case 3: return mm2encaCSDDie(r);\n            case 4: return mm2encaTFSDie(r);\n            case 5: return mm2encaTFDDie(r);\n            case 6: return mm2encaTSSDie(r);\n            case 7: return mm2encaTSDDie(r);\n            case 8: return mm2encaRFSDie(r);\n            case 9: return mm2encaRFDDie(r);\n            case 10: return mm2encaRSSDie(r);\n            case 11: return mm2encaRSDDie(r);\n            }\n            return 0;\n        };\n        auto encSrc = [](int G, int r) {\n            switch (G) {\n            case 0: return mm2encaCFSSrc(r);\n            case 1: return mm2encaCFDSrc(r);\n            case 2: return mm2encaCSSSrc(r);\n            case 3: return mm2encaCSDSrc(r);\n            case 4: return mm2encaTFSSrc(r);\n            case 5: return mm2encaTFDSrc(r);\n            case 6: return mm2encaTSSSrc(r);\n            case 7: return mm2encaTSDSrc(r);\n            case 8: return mm2encaRFSSrc(r);\n            case 9: return mm2encaRFDSrc(r);\n            case 10: return mm2encaRSSSrc(r);\n            case 11: return mm2encaRSDSrc(r);\n            }\n            return 0;\n        };\n        auto encSpecial = [](int G, int r) {\n            switch (G) {\n            case 0: return mm2encaCFSSpecial(r);\n            case 1: return mm2encaCFDSpecial(r);\n            case 2: return mm2encaCSSSpecial(r);\n            case 3: return mm2encaCSDSpecial(r);\n            case 4: return mm2encaTFSSpecial(r);\n            case 5: return mm2encaTFDSpecial(r);\n            case 6: return mm2encaTSSSpecial(r);\n            case 7: return mm2encaTSDSpecial(r);\n            case 8: return mm2encaRFSSpecial(r);\n            case 9: return mm2encaRFDSpecial(r);\n            case 10: return mm2encaRSSSpecial(r);\n            case 11: return mm2encaRSDSpecial(r);\n            }\n            return 0;\n        };\n        static const char* kEncA[12][19] = {\n            {  // grid 0, the the cold freshwater surface\n                \"dragon_turtle\", \"harpy\", \"greenhag\", \"water_naga\", \"ghoul\",\n                \"snapping_turtle\", \"swan\", \"\", \"\", \"merchant\", \"\",\n                \"crystal_ooze\", \"buccaneer\", \"merrow\", \"scrag_freshwater\",\n                \"nixie\", \"falcon_large\", \"\", \"swanmay\",\n            },\n            {  // grid 1, the the cold freshwater depths\n                \"storm_giant\", \"verme\", \"\", \"\", \"sirine\", \"ghoul\",\n                \"gargoyle\", \"giant_crab\", \"giant_pike\", \"otter\", \"octopus\",\n                \"giant_gar\", \"merrow\", \"snapping_turtle\", \"lamprey\",\n                \"hippocampus\", \"morkoth\", \"giant_otter\", \"nereid\",\n            },\n            {  // grid 2, the the cold saltwater surface\n                \"wind_walker\", \"\", \"white_dragon\", \"\", \"narwhale\",\n                \"sea_turtle\", \"sea_lion\", \"merchant\", \"shark\", \"whale\",\n                \"buccaneer\", \"\", \"dolphin\", \"\", \"scrag_saltwater\",\n                \"will_o_wisp\", \"seawolf_greater\", \"selkie\", \"dragon_turtle\",\n            },\n            {  // grid 3, the the cold saltwater depths\n                \"verme\", \"water_weird\", \"seawolf_lesser\", \"\", \"\", \"dolphin\",\n                \"elf\", \"shark\", \"giant_crab\", \"narwhale\", \"octopus\", \"whale\",\n                \"sea_lion\", \"gargoyle\", \"giant_squid\", \"octopus\",\n                \"green_slime\", \"titan\", \"\",\n            },\n            {  // grid 4, the the temperate freshwater surface\n                \"giant_dragonfly\", \"carp_giant\", \"lizard_man\",\n                \"crystal_ooze\", \"buccaneer\", \"merrow\", \"swan\", \"crocodile\",\n                \"merchant\", \"\", \"crane_giant\", \"\", \"giant_crayfish\",\n                \"giant_frog\", \"sirine\", \"giant_otter\", \"scrag_freshwater\",\n                \"red_dragon\", \"boobrie\",\n            },\n            {  // grid 5, the the temperate freshwater depths\n                \"mud_man\", \"muckdweller\", \"giant_beaver\", \"giant_lamprey\",\n                \"lizard_man\", \"snapping_turtle\", \"gargoyle\", \"water_beetle\",\n                \"water_spider\", \"\", \"crocodile\", \"giant_otter\",\n                \"giant_crayfish\", \"lamprey\", \"carp_giant\", \"giant_gar\",\n                \"octopus\", \"\", \"lizard_man\",\n            },\n            {  // grid 6, the the temperate saltwater surface\n                \"ki_rin\", \"cloud_dragon\", \"\", \"\", \"\", \"giant_eel\", \"\",\n                \"plesiosaurus\", \"merchant\", \"shark\", \"whale\", \"\",\n                \"elasmosaurus\", \"will_o_wisp\", \"giant_crab\", \"ghoul\",\n                \"bronze_dragon\", \"seawolf_greater\", \"verme\",\n            },\n            {  // grid 7, the the temperate saltwater depths\n                \"morkoth\", \"kraken\", \"narwhale\", \"giant_lamprey\",\n                \"giant_shark\", \"sea_lion\", \"\", \"plesiosaurus\", \"sea_horse\",\n                \"shark\", \"whale\", \"\", \"masher\", \"giant_eel\", \"dragon_turtle\",\n                \"purple_worm\", \"seawolf_lesser\", \"eye_of_the_deep\", \"titan\",\n            },\n            {  // grid 8, the the tropical freshwater surface\n                \"froghemoth\", \"couatl\", \"catfish_giant\", \"crystal_ooze\",\n                \"mist_dragon\", \"giant_spider\", \"giant_crayfish\", \"merchant\",\n                \"\", \"crocodile\", \"\", \"behemoth\", \"giant_frog\",\n                \"hippopotamus\", \"sirine\", \"merman\", \"manticore\", \"\", \"\",\n            },\n            {  // grid 9, the the tropical freshwater depths\n                \"verme\", \"weed\", \"\", \"\", \"behemoth\", \"merman\",\n                \"snapping_turtle\", \"water_beetle\", \"dinichthys\",\n                \"water_spider\", \"\", \"\", \"archelon_ischyros\", \"gargoyle\", \"\",\n                \"lizard_man\", \"\", \"sea_hag\", \"water_weird\",\n            },\n            {  // grid 10, the the tropical saltwater surface\n                \"wereshark\", \"seawolf_greater\", \"roc\", \"\", \"sahuagin\",\n                \"portuguese_man_o_war\", \"sea_hag\", \"giant_crocodile\",\n                \"plesiosaurus\", \"merchant\", \"shark\", \"whale\", \"buccaneer\",\n                \"mosasaurus\", \"\", \"giant_shark\", \"androsphinx\",\n                \"ixitxachitl\", \"triton\",\n            },\n            {  // grid 11, the the tropical saltwater depths\n                \"morkoth\", \"\", \"giant_crocodile\", \"octopus\", \"pungi_ray\",\n                \"sahuagin\", \"\", \"dinichthys\", \"sting_ray\", \"shark\", \"\",\n                \"strangle_weed\", \"barracuda\", \"nothosaurus\", \"electric_eel\",\n                \"triton\", \"wereshark\", \"kraken\", \"ixitxachitl\",\n            },\n        };\n        int hazard = 0;\n        int pointer = 0;\n        int lung = 0;\n        int keyed = 0;\n        for (int G = 0; G < 12; ++G) {\n            for (int r = 0; r < 19; ++r) {\n                if (encDie(G, r) != r + 2)\n                    ++bad;\n                if (encSpecial(G, r) == 4) {\n                    ++hazard;\n                    if (encSrc(G, r) != 0)\n                        ++bad;\n                } else if (encSpecial(G, r) == 5) {\n                    ++pointer;\n                    if (encSrc(G, r) != 0)\n                        ++bad;\n                } else {\n                    const char* k = kEncA[G][r];\n                    if (k[0] != 0) {\n                        ++keyed;\n                        const auto* d = reg.find(k);\n                        if (!d) ++bad;\n                    } else if (encSrc(G, r) == 0) {\n                        ++lung;\n                    }\n                }\n            }\n        }\n        if (hazard != mm2encaHazardRows())\n            ++bad;\n        if (pointer != mm2encaPointerRows())\n            ++bad;\n        if (lung != mm2encaLungDragonRows())\n            ++bad;\n        if (keyed != mm2encaWalkKeyRows())\n            ++bad;\n        // (the cold freshwater surface grid, index 0,\n        //  carries the die 9 ice hazard row; the\n        //  tropical freshwater surface grid, index 8,\n        //  the die 10 land encounter pointer row)\n        if (encDie(0, 7) != 9\n            || encSpecial(0, 7) != 4\n            || encSrc(0, 7) != 0\n            || encDie(8, 8) != 10\n            || encSpecial(8, 8) != 5\n            || encSrc(8, 8) != 0)\n            ++bad;\n        if (!reg.find(\"verme\")) ++bad;\n        if (!reg.find(\"purple_worm\")) ++bad;\n        if (!reg.find(\"scrag_freshwater\")) ++bad;\n        if (!reg.find(\"scrag_saltwater\")) ++bad;\n        if ((int)reg.all().size()\n            < mm2encaRegistryFloor())\n            ++bad;\n        printf(\"R818 MM2 aquatic encounter grids: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----\n",
+      "note": "the R818 regtest walk"
+    }
+  ],
+  "gap_flips": [
+    {
+      "note": "the Aquatic Random Encounter Tables box",
+      "from": "- [ ] **Aquatic Random Encounter Tables**",
+      "to": "- [x] **Aquatic Random Encounter Tables**"
+    }
+  ],
+  "gap_census": {
+    "closed": 35,
+    "open": 2
+  },
+  "prev_record": [
+    "- R817 LANDED 2026-10-24: commit",
+    "  8da3f326e3b71e2aecd382a4a732a55dad00493e",
+    "  (census 739 -> 740, pushed 32992bd..8da3f32),",
+    "  THE MM2 OUTDOOR ENCOUNTER TABLES WALK -",
+    "  THE 36 TERRAIN GRIDS (Curtiss's Go call on",
+    "  the landed R816; round twenty-two of the",
+    "  MM2 arc, the FIFTH table-group round, the",
+    "  Outdoor Random Encounter Tables box flips",
+    "  - 34 closed 3 open). THE PIN SCOPE: the",
+    "  36 terrain grids (6 areas - cold, temperate",
+    "  and tropical, each wilderness and civilized",
+    "  - x 6 terrains: mountains, hills and rough,",
+    "  forest, swamp and marsh, plains and scrub,",
+    "  desert) x 19 die rows = 684 rows, pp.",
+    "  140-141+. GRID SCHEMA 3-col [die, src,",
+    "  special] - the outdoor grids print NO",
+    "  source/number columns, so src is EDITORIAL",
+    "  (1 MM1 / 2 MM2 / 3 FF / 0 none, from the",
+    "  registry lua headers) and special is a NEW",
+    "  CLASS SET: 0 normal / 1 Character Party /",
+    "  2 Castle-Fortress structure / 3 Patrol",
+    "  men-row (no print def exists for Patrol -",
+    "  keyless). Or-rows key the FIRST creature",
+    "  (the R816 convention). CENSUS: src MM1 413",
+    "  / MM2 159 / FF 74 / none 38; special party",
+    "  17 (16 grids - the cold civilized desert",
+    "  carries TWO at dies 7 and 14, the cold",
+    "  wilderness hills the one wild grid with",
+    "  one), structure 5 (Castle x4, Fortress x1),",
+    "  patrol 15; 570 walk-keyed rows, 74 FF rows",
+    "  ride keyless (no FF defs in the registry),",
+    "  unresolved 1 (the Pterodactyl, Small cell -",
+    "  no def survives anywhere, physical-copy",
+    "  flag). Header rules/mm2enco.h, prefix",
+    "  mm2enco, 57 consts (incl. the 36 per-grid",
+    "  Count accessors) + 12 bools + 36 tables",
+    "  (177 inline). THE SETTLED READS (the",
+    "  print's own index the authority - F-refs =",
+    "  FF): all keyless monsters are FF (Giant",
+    "  Mountain, Tween, Volt, Vortex, Rothe,",
+    "  Dragon Earth = Li Lung, Troll Ice, etc.);",
+    "  Men/Man Nomad -> the dervish key; editorial",
+    "  picks flagged in audit prose (aspis_drone,",
+    "  formian_worker, chaggrin, camel_dromedary,",
+    "  bee_worker, treant_mature_middle_aged,",
+    "  bat_mobat, type_i_vrock, MM1 constrictor/",
+    "  poisonous snake keys for plain Snake",
+    "  cells). DISCOVERY: the Lammasu Greater",
+    "  (MM2 p. 79, between kraken and land",
+    "  lamprey) is a real MM2 stat block the R808",
+    "  LMN walk never promoted - its 2 cells ride",
+    "  src 2 keyless pending a future promotion",
+    "  round. THE LANDING TOOK TWO RED DETOURS:",
+    "  (1) the first cut's 36 Count accessors",
+    "  (mm2encoCW1Count ... RC6Count) were",
+    "  REFERENCED in every table's audit loop but",
+    "  never DECLARED - the R816 precedent",
+    "  declares one Count const per grid - so the",
+    "  battery build died with 20 undeclared-",
+    "  identifier errors (the census cascade a",
+    "  symptom of the dead binary); the fix added",
+    "  the 36 Count consts, inline 141 -> 177.",
+    "  (2) the re-land then aborted \"the emitted",
+    "  header inline count drifted\" - the failed",
+    "  round leaves the tree FULLY APPLIED, the",
+    "  engine sails past the R420 mixed gate on a",
+    "  uniform already and dies at the verify pass",
+    "  against the stale 141-inline header; the",
+    "  unwind (git restore the three tracked files",
+    "  + rm the header) preceded the rerun - SEE",
+    "  THE NEW STANDING RULE above (the R817",
+    "  lesson: a RED fix ALWAYS rides with its",
+    "  unwind). LOCAL VERIFICATION (environment",
+    "  reset mid-round - /tmp wiped twice, the",
+    "  spec recovered byte-exact from the",
+    "  canvas, the tree re-fetched from GitHub",
+    "  raw at 32992bd): engine double-run 6/0 ->",
+    "  0/6; rverify GREEN - 2121 mutants, 0",
+    "  missed; the walk simulated offline bad 0",
+    "  (party 17/16 grids, structure 5, patrol 15,",
+    "  unresolved 1); all 570 keys validated",
+    "  against the 809-def registry; alignment",
+    "  sweep - the 114 keyless cells = 74 FF + 1",
+    "  unresolved + 2 lammasu + 37 special; a",
+    "  declared-identifier sweep of every",
+    "  mm2enco* call in the walk and audit blocks",
+    "  (0 undeclared) ADDED after detour 1, since",
+    "  the sandbox has no C++ compiler and the",
+    "  engine's Python mirror never compiles.",
+    "  PREFLIGHT GREEN FIRST PASS (after the",
+    "  unwind): loaded 809, errors 0; xp audit",
+    "  809/0; encounter smoke 2000 rolls 0 bad;",
+    "  R797 through R817 live defs and grids all",
+    "  bad 0; AUDIT CENSUS 740 each exactly once,",
+    "  all bad 0; build 0 warnings. Commit 5",
+    "  files, 13656 insertions (no .lua - zero",
+    "  data_files this round). Delivery spec-r817:",
+    "  raw JSON canvas, first cut md5",
+    "  57f7f688727b0883b0393bf77804bac7 134112",
+    "  bytes (RED, nothing landed), fixed md5",
+    "  24456345a70299564e1325370f311178 141420",
+    "  bytes, landed the same. NEXT - R818:",
+    "  awaits Curtiss's call (3 open boxes remain",
+    "  - the Random Encounter Tables parent,",
+    "  Aquatic 150+, and the Index p. 156; also",
+    "  queued: a Lammasu Greater promotion)."
+  ],
+  "inline_count": 122
+}

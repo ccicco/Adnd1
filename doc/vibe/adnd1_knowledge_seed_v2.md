@@ -22212,6 +22212,112 @@ PREFLIGHT GREEN (the repair cut, first pass):
   terrain grids next, then Aquatic +
   Astral/Ethereal + Creating-Your-Own +
   the frequency lists + Index).
+- R817 LANDED 2026-10-24: commit
+  8da3f326e3b71e2aecd382a4a732a55dad00493e
+  (census 739 -> 740, pushed 32992bd..8da3f32),
+  THE MM2 OUTDOOR ENCOUNTER TABLES WALK -
+  THE 36 TERRAIN GRIDS (Curtiss's Go call on
+  the landed R816; round twenty-two of the
+  MM2 arc, the FIFTH table-group round, the
+  Outdoor Random Encounter Tables box flips
+  - 34 closed 3 open). THE PIN SCOPE: the
+  36 terrain grids (6 areas - cold, temperate
+  and tropical, each wilderness and civilized
+  - x 6 terrains: mountains, hills and rough,
+  forest, swamp and marsh, plains and scrub,
+  desert) x 19 die rows = 684 rows, pp.
+  140-141+. GRID SCHEMA 3-col [die, src,
+  special] - the outdoor grids print NO
+  source/number columns, so src is EDITORIAL
+  (1 MM1 / 2 MM2 / 3 FF / 0 none, from the
+  registry lua headers) and special is a NEW
+  CLASS SET: 0 normal / 1 Character Party /
+  2 Castle-Fortress structure / 3 Patrol
+  men-row (no print def exists for Patrol -
+  keyless). Or-rows key the FIRST creature
+  (the R816 convention). CENSUS: src MM1 413
+  / MM2 159 / FF 74 / none 38; special party
+  17 (16 grids - the cold civilized desert
+  carries TWO at dies 7 and 14, the cold
+  wilderness hills the one wild grid with
+  one), structure 5 (Castle x4, Fortress x1),
+  patrol 15; 570 walk-keyed rows, 74 FF rows
+  ride keyless (no FF defs in the registry),
+  unresolved 1 (the Pterodactyl, Small cell -
+  no def survives anywhere, physical-copy
+  flag). Header rules/mm2enco.h, prefix
+  mm2enco, 57 consts (incl. the 36 per-grid
+  Count accessors) + 12 bools + 36 tables
+  (177 inline). THE SETTLED READS (the
+  print's own index the authority - F-refs =
+  FF): all keyless monsters are FF (Giant
+  Mountain, Tween, Volt, Vortex, Rothe,
+  Dragon Earth = Li Lung, Troll Ice, etc.);
+  Men/Man Nomad -> the dervish key; editorial
+  picks flagged in audit prose (aspis_drone,
+  formian_worker, chaggrin, camel_dromedary,
+  bee_worker, treant_mature_middle_aged,
+  bat_mobat, type_i_vrock, MM1 constrictor/
+  poisonous snake keys for plain Snake
+  cells). DISCOVERY: the Lammasu Greater
+  (MM2 p. 79, between kraken and land
+  lamprey) is a real MM2 stat block the R808
+  LMN walk never promoted - its 2 cells ride
+  src 2 keyless pending a future promotion
+  round. THE LANDING TOOK TWO RED DETOURS:
+  (1) the first cut's 36 Count accessors
+  (mm2encoCW1Count ... RC6Count) were
+  REFERENCED in every table's audit loop but
+  never DECLARED - the R816 precedent
+  declares one Count const per grid - so the
+  battery build died with 20 undeclared-
+  identifier errors (the census cascade a
+  symptom of the dead binary); the fix added
+  the 36 Count consts, inline 141 -> 177.
+  (2) the re-land then aborted "the emitted
+  header inline count drifted" - the failed
+  round leaves the tree FULLY APPLIED, the
+  engine sails past the R420 mixed gate on a
+  uniform already and dies at the verify pass
+  against the stale 141-inline header; the
+  unwind (git restore the three tracked files
+  + rm the header) preceded the rerun - SEE
+  THE NEW STANDING RULE above (the R817
+  lesson: a RED fix ALWAYS rides with its
+  unwind). LOCAL VERIFICATION (environment
+  reset mid-round - /tmp wiped twice, the
+  spec recovered byte-exact from the
+  canvas, the tree re-fetched from GitHub
+  raw at 32992bd): engine double-run 6/0 ->
+  0/6; rverify GREEN - 2121 mutants, 0
+  missed; the walk simulated offline bad 0
+  (party 17/16 grids, structure 5, patrol 15,
+  unresolved 1); all 570 keys validated
+  against the 809-def registry; alignment
+  sweep - the 114 keyless cells = 74 FF + 1
+  unresolved + 2 lammasu + 37 special; a
+  declared-identifier sweep of every
+  mm2enco* call in the walk and audit blocks
+  (0 undeclared) ADDED after detour 1, since
+  the sandbox has no C++ compiler and the
+  engine's Python mirror never compiles.
+  PREFLIGHT GREEN FIRST PASS (after the
+  unwind): loaded 809, errors 0; xp audit
+  809/0; encounter smoke 2000 rolls 0 bad;
+  R797 through R817 live defs and grids all
+  bad 0; AUDIT CENSUS 740 each exactly once,
+  all bad 0; build 0 warnings. Commit 5
+  files, 13656 insertions (no .lua - zero
+  data_files this round). Delivery spec-r817:
+  raw JSON canvas, first cut md5
+  57f7f688727b0883b0393bf77804bac7 134112
+  bytes (RED, nothing landed), fixed md5
+  24456345a70299564e1325370f311178 141420
+  bytes, landed the same. NEXT - R818:
+  awaits Curtiss's call (3 open boxes remain
+  - the Random Encounter Tables parent,
+  Aquatic 150+, and the Index p. 156; also
+  queued: a Lammasu Greater promotion).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
