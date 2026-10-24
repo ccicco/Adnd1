@@ -1,0 +1,2884 @@
+{
+ "round": 803,
+ "prefix": "mm2dg",
+ "header_file": "rules/mm2dg.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 725,
+ "title": "the MM2 letter D part 5 - the dracolisk, dragon and dustdigger turns",
+ "audit_label": "R803 MM2 dragon section audit",
+ "audit_comment": " THE MM2 LETTER D PART 5 - the dracolisk, the DRAGON family of the Monster Manual II arc and the rest of the letter D close (the user Go call on the landed dinosaur walk). The pin-time walk from the print finds THIRTEEN entries on pp. 55-61: the dracolisk at the foot of p. 55, the DRAGON family head on pp. 55-56 (doctrine only, no stat block - the size roll, the 8 age stages, the infravision and detection, the fear aura, the saving-throw-by-hp/4 rule and the treasure-by-age ladder all pinned), and the 11 remaining stat blocks - the Cloud Dragon, the Faerie Dragon, the Mist Dragon, the Shadow Dragon, the Giant Dragonfly, the Dragon Horse, the Dragonnel, the Drelb, the Drider, the Duergar and the Dustdigger. TWELVE defs ride the R791 data_files extension in the MM1 registry schema, registry 603 -> 615. THE GRIDS: the 12-row DgStats stat grid (armor class, hit dice, bonus, avgHp, attacks, xp, xp/hp, lair, move, magic resistance) plus the 8-row faerie color grid (magic resistance, magic-user level, druid level by color) and the 8-row faerie age grid (level, hit point floor, hit point ceiling). THE D-FLIP: the Letter D gap box flips to closed - the letter D walk is complete, 9 closed 28 open. THE SETTLED READS (capture primary, the 1eonline transcription and the archive.org djvu the cross-check voices): the giant dragonfly hit dice \"7 (8+1-8)\" is the print line pinned verbatim (the capture and djvu agree; the grid reads the 7); the cloud xp rider \"6100 + 10/hp + 100/hp over 48\" and the mist rider \"3450 + 5/hp + 50/hp over 36\" stay pinned as riders (the defs carry the base and per-hp cells); the faerie \"See below\" hit dice read as the 4 hit dice the prose prints (the faerie attacks as 4 hit dice monsters); the faerie \"See below\" magic resistance reads 0 in the grid (the color grid carries the per-color percents); the dragonfly \"Save as 16th-level magic-user\" reads 0 (the R155 save-as read); the cloud and mist or-form armor classes and magic resistances read the gaseous best (AC -3 and -2, MR 50 and 30); the cloud, mist and shadow ranged hit dice read the low end (the kuei precedent); the duergar \"Variable/variable\" xp rides the by_level carry (the dervish and dwarf precedent, no fixed xp fields); the duergar treasure \"Individuals M, Q; Lair B (magic only), F\" (the capture \"M.O\" the OCR misread); the dragonnel size L (24'+ long) (the capture inches the misread); the duergar \"have been know to dwell\" and the dragon ancient \"(40+ years)\" print typos pinned verbatim; the duergar armor-list leading \"+\" marks are the capture column artifact. LOADER SEMANTICS: the duergar \"1 (or more)\" attacks read the max 1; every Nil lair reads 0. ONE REGTEST PATCH: the R803 live def walk at the R227 anchor (the R782 site-block pattern, no census marker), its registry census a FLOOR 603 -> at least 615.",
+ "include_comment": "the MM2 letter D part 5 - the dracolisk, dragon and dustdigger turns",
+ "include_after": "#include \"rules/mm2dn.h\"  // R802: the MM2 letter D part 4 - the diakk and dinosaur walk",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R802 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R802 LANDED 2026-10-24: commit",
+  "  ef7d7cc1622f9f845de34f77b2a725e2a5c74542",
+  "  (census 724 -> 725, pushed",
+  "  227b408..ef7d7cc), THE MM2 LETTER D",
+  "  PART 4 - THE DIAKK AND DINOSAUR",
+  "  WALK (Curtiss's Go call on the landed",
+  "  devil section; round six of the MM2",
+  "  arc, the fourth PART-LETTER walk).",
+  "  THE PIN-TIME WALK: TWENTY entries on",
+  "  pp. 49-55 - the diakk at the foot of",
+  "  p. 49 running onto p. 50, the",
+  "  DINOSAUR family head on p. 50",
+  "  (doctrine only, no stat block), and",
+  "  the 19 dinosaur form stat blocks",
+  "  (Ankisaurus, Camptosaurus,",
+  "  Compsognathus, Dacentrurus,",
+  "  Deinonychus, Dilophosaurus,",
+  "  Dimetrodon, Euparkeria,",
+  "  Kentrosaurus, Mamenchisaurus,",
+  "  Massopondylus, Nothosaurus,",
+  "  Ornitholestes, Phororhacos,",
+  "  Podokesaurus, the giant pterosaur,",
+  "  Struthiomimus, Tanystropheus and",
+  "  Tennodontosaurus). TWENTY .lua defs",
+  "  ride the R791 data_files extension,",
+  "  registry 583 -> 603. Header",
+  "  rules/mm2dn.h, prefix mm2dn, 97",
+  "  consts + 26 bools + the 20x10",
+  "  DinoStats grid (armor class, hit",
+  "  dice, bonus, avgHp, attacks, xp,",
+  "  xp/hp, lair, move, magic",
+  "  resistance) = 133 inline. NO GAP",
+  "  FLIPS: the Letter D box flips only",
+  "  when all the D parts land (8",
+  "  closed, 29 open). ONE REGTEST",
+  "  PATCH: the R802 live def walk at",
+  "  the R227 anchor (the R782",
+  "  site-block pattern, no census",
+  "  marker), its registry census a",
+  "  FLOOR 583 -> at least 603. SETTLED",
+  "  READS (capture primary, the",
+  "  1eonline transcription and the",
+  "  archive.org djvu the cross-check",
+  "  voices): the nothosaurus xp/hp 18",
+  "  (the transcription 12 its own",
+  "  annotation; the capture and djvu",
+  "  agree, the xp ladder consistent);",
+  "  the struthiomimus tail 2-8 (the",
+  "  transcription 1-8 its own error);",
+  "  the Nighthags word (the capture",
+  "  Nightbags the misread); the",
+  "  podokesaurus prints NO prose - its",
+  "  paragraph genuinely prints under",
+  "  the struthiomimus block (the print",
+  "  quirk: the empty text pinned, the",
+  "  struthiomimus carries both",
+  "  paragraphs, and the walk checks",
+  "  both); the ranged hit-dice cells",
+  "  read the LOW end (camptosaurus 1-3",
+  "  and dimetrodon 3-to-5, the kuei",
+  "  precedent); the diakk or-forms",
+  "  read the broad max 8+8 (armor",
+  "  class 0, attacks max 2, avgHp 36);",
+  "  the camptosaurus printed 0",
+  "  attacks clamp to 1 in the loader",
+  "  (the grid carries the loader",
+  "  value, the nupperibo-Standard",
+  "  pattern); the dispater mention in",
+  "  the devil prose is no stat block",
+  "  (MM1 owns that def - the devil",
+  "  section was already complete).",
+  "  LOADER SEMANTICS: the nothosaurus",
+  "  1-(and-2) sums to 3, the",
+  "  tennodontosaurus 1-(and-1) sums to",
+  "  2. LOCAL VERIFICATION (the",
+  "  authoring environment rebuilt from",
+  "  the GitHub tarball at 227b408 -",
+  "  the environment had reset and the",
+  "  R801 builder was gone, so R802 was",
+  "  authored fresh against the landed",
+  "  spec_r801.json as the structural",
+  "  reference): builder static gates",
+  "  GREEN (section coverage, the",
+  "  speclib model audit mirror, line",
+  "  widths, string parity, ascii, the",
+  "  xp/avgHp formulas, prefix and key",
+  "  freedom); engine double-run 25/0",
+  "  -> 0/25; rverify GREEN - restore,",
+  "  double-run, healthy base bad 0,",
+  "  BATTERY 323 mutants, 0 missed; the",
+  "  /tmp tree restored pristine after",
+  "  (rverify leaves it patched - the",
+  "  three tracked files re-fetched from",
+  "  raw.githubusercontent at 227b408).",
+  "  Landing run GREEN first pass:",
+  "  loaded 603, errors 0; xp audit",
+  "  603/0; R797 through R802 live defs",
+  "  all bad 0; AUDIT CENSUS 725 each",
+  "  exactly once, all bad 0; build 0",
+  "  warnings. Commit 24 files, 3981",
+  "  insertions. Delivery spec-r802:",
+  "  raw JSON canvas, 80570 bytes md5",
+  "  8cc8daeddee18cc3116b9209dab130ae.",
+  "  NEXT - R803: awaits Curtiss's call",
+  "  (the rest of the letter D box - the",
+  "  dracolisk, dragon, dragonnel,",
+  "  drelb, drider, duergar and",
+  "  dustdigger turns; the D-flip round",
+  "  nears; the arc runs on - 29 open",
+  "  boxes)."
+ ],
+ "banner": {
+  "title": "THE MM2 LETTER D PART 5 - THE DRACOLISK, DRAGON AND DUSTDIGGER TURNS (the dracolisk and the DRAGON family head pp. 55-56, the four true dragons, the giant dragonfly, the dragon horse, the dragonnel, the drelb, the drider, the duergar and the dustdigger pp. 55-61), promoted to the live registry",
+  "provenance": "Round seven of the MM2 arc, the fifth PART-LETTER walk (the user Go call on the landed dinosaur walk: the letter D closes with the dracolisk, the dragon doctrine and the eleven remaining D stat blocks pp. 55-61 - the D-FLIP round, the Letter D gap box flips to closed). The capture is the Curtiss PDF upload cross-checked against the independent transcription and the archive.org djvu OCR, the contested cells settled: the giant dragonfly hit dice line \"7 (8+1-8)\" verbatim; the dragonnel size in feet not inches; the duergar treasure letters; the duergar \"know\" print typo kept; the dragon ancient \"(40+ years)\" print typo kept"
+ },
+ "consts": [
+  {
+   "name": "mm2dgRound",
+   "value": 803,
+   "comment": "The MM2 letter D part 5 round: the dracolisk, dragon and dustdigger turns, the D-flip round (the user Go call on the landed dinosaur walk)"
+  },
+  {
+   "name": "mm2dgRegistryBefore",
+   "value": 603,
+   "comment": "The registry census before the R803 promotion (the landed R802 count)"
+  },
+  {
+   "name": "mm2dgRegistryAfter",
+   "value": 615,
+   "comment": "The registry census after the R803 promotion (603 + the 12 promoted defs)"
+  },
+  {
+   "name": "mm2dgDefCount",
+   "value": 12,
+   "comment": "The R803 def count (the 12 letter-D-part-5 stat blocks)"
+  },
+  {
+   "name": "mm2dgEntryCount",
+   "value": 13,
+   "comment": "The R803 pin-time entry count (the 12 stat blocks plus the doctrine-only DRAGON family head)"
+  },
+  {
+   "name": "mm2dgDgStatRows",
+   "value": 12,
+   "comment": "The DgStats grid row count (the 12 stat-block defs, print order)"
+  },
+  {
+   "name": "mm2dgFaerieColorRows",
+   "value": 8,
+   "comment": "The faerie color grid row count (the 8 age colors)"
+  },
+  {
+   "name": "mm2dgFaerieAgeRows",
+   "value": 8,
+   "comment": "The faerie age grid row count (the 8 growth stages)"
+  },
+  {
+   "name": "mm2dgGapClosed",
+   "value": 9,
+   "comment": "The gap report closed count after the R803 flip (the Letter D box closes)"
+  },
+  {
+   "name": "mm2dgGapOpen",
+   "value": 28,
+   "comment": "The gap report open count after the R803 flip (29 - 1)"
+  },
+  {
+   "name": "mm2dgDragonSizeDie",
+   "value": 8,
+   "comment": "The dragon size determination die (an 8-sided die: 1-2 small, 3-7 average, 8 huge)"
+  },
+  {
+   "name": "mm2dgDragonSizeSmallMin",
+   "value": 1,
+   "comment": "The size roll small floor (1-2 = small)"
+  },
+  {
+   "name": "mm2dgDragonSizeSmallMax",
+   "value": 2,
+   "comment": "The size roll small ceiling"
+  },
+  {
+   "name": "mm2dgDragonSizeAvgMin",
+   "value": 3,
+   "comment": "The size roll average floor (3-7)"
+  },
+  {
+   "name": "mm2dgDragonSizeAvgMax",
+   "value": 7,
+   "comment": "The size roll average ceiling"
+  },
+  {
+   "name": "mm2dgDragonSizeHuge",
+   "value": 8,
+   "comment": "The size roll huge (an 8)"
+  },
+  {
+   "name": "mm2dgDragonAgeStages",
+   "value": 8,
+   "comment": "The dragon growth stages (very young through ancient, 1-8)"
+  },
+  {
+   "name": "mm2dgDragonHatchlingHpPerDie",
+   "value": 1,
+   "comment": "The stage-1 hit points per die (very young, 1-5 years)"
+  },
+  {
+   "name": "mm2dgDragonAncientHpPerDie",
+   "value": 8,
+   "comment": "The stage-8 hit points per die (ancient; the print reads \"(40+ years)\" - the genuine print typo pinned verbatim)"
+  },
+  {
+   "name": "mm2dgDragonInfravisionFeet",
+   "value": 60,
+   "comment": "The dragon infravision range in feet (all dragons see equally well in daylight or darkness)"
+  },
+  {
+   "name": "mm2dgDragonDetectInchesPerAgeLevel",
+   "value": 1,
+   "comment": "The hidden-or-invisible detection range per age level (1\" per age level)"
+  },
+  {
+   "name": "mm2dgDragonFearAuraFromAge",
+   "value": 5,
+   "comment": "The age category the fear aura begins (adult and older)"
+  },
+  {
+   "name": "mm2dgDragonFearRoutTurnsMin",
+   "value": 4,
+   "comment": "The panic rout duration floor (4-24 turns)"
+  },
+  {
+   "name": "mm2dgDragonFearRoutTurnsMax",
+   "value": 24,
+   "comment": "The panic rout duration ceiling"
+  },
+  {
+   "name": "mm2dgDragonFearSplitPct",
+   "value": 50,
+   "comment": "The under-3-hit-dice fear split (paralyzed with fear 50%, panic 50%)"
+  },
+  {
+   "name": "mm2dgDragonFearToHitPenalty",
+   "value": -1,
+   "comment": "The 3-or-more-hit-dice fear to-hit penalty unless save vs. spell"
+  },
+  {
+   "name": "mm2dgDragonFearImmuneHitDice",
+   "value": 6,
+   "comment": "The hit dice that automatically disregard the aura effect (6 or more)"
+  },
+  {
+   "name": "mm2dgDragonAuraAdultSaveBonus",
+   "value": 5,
+   "comment": "The adult-dragon aura save bonus (+5)"
+  },
+  {
+   "name": "mm2dgDragonAuraOldSaveBonus",
+   "value": 3,
+   "comment": "The old-dragon aura save bonus (+3)"
+  },
+  {
+   "name": "mm2dgDragonAuraVeryOldSaveBonus",
+   "value": 1,
+   "comment": "The very-old-dragon aura save bonus (+1)"
+  },
+  {
+   "name": "mm2dgDragonSaveHpPerDieThreshold",
+   "value": 5,
+   "comment": "The hit points per die that switch the save formula on (5 or more)"
+  },
+  {
+   "name": "mm2dgDragonSaveDivisor",
+   "value": 4,
+   "comment": "The saving-throw hit point divisor (total hit points divided by 4)"
+  },
+  {
+   "name": "mm2dgDragonVeryYoungTreasureChancePct",
+   "value": 10,
+   "comment": "The very young treasure chance (10% for one-quarter)"
+  },
+  {
+   "name": "mm2dgDragonVeryYoungTreasurePct",
+   "value": 25,
+   "comment": "The very young treasure share (one-quarter)"
+  },
+  {
+   "name": "mm2dgDragonYoungTreasureChancePct",
+   "value": 25,
+   "comment": "The young treasure chance (25% for one-quarter)"
+  },
+  {
+   "name": "mm2dgDragonSubadultTreasureChancePct",
+   "value": 50,
+   "comment": "The subadult treasure chance (50% for one-half)"
+  },
+  {
+   "name": "mm2dgDragonSubadultTreasurePct",
+   "value": 50,
+   "comment": "The subadult treasure share (one-half)"
+  },
+  {
+   "name": "mm2dgDragonVeryOldTreasureChancePct",
+   "value": 50,
+   "comment": "The very old treasure chance (50% for 150%)"
+  },
+  {
+   "name": "mm2dgDragonVeryOldTreasurePct",
+   "value": 150,
+   "comment": "The very old treasure share (150%)"
+  },
+  {
+   "name": "mm2dgDragonAncientTreasureChancePct",
+   "value": 75,
+   "comment": "The ancient treasure chance (75% for 200%)"
+  },
+  {
+   "name": "mm2dgDragonAncientTreasurePct",
+   "value": 200,
+   "comment": "The ancient treasure share (200%)"
+  },
+  {
+   "name": "mm2dgDracoliskXpValue",
+   "value": 2524,
+   "comment": "The dracolisk full kill xp (2200 + 12/hp over 27 avg)"
+  },
+  {
+   "name": "mm2dgDracoliskXpLevel",
+   "value": 7,
+   "comment": "The dracolisk xp level (VII)"
+  },
+  {
+   "name": "mm2dgDracoliskAcidRangeInches",
+   "value": 3,
+   "comment": "The acid spit range (a 1/2\" wide stream up to 3\")"
+  },
+  {
+   "name": "mm2dgDracoliskAcidDamageMin",
+   "value": 4,
+   "comment": "The acid spit damage floor (4-24, 4d6)"
+  },
+  {
+   "name": "mm2dgDracoliskAcidDamageMax",
+   "value": 24,
+   "comment": "The acid spit damage ceiling"
+  },
+  {
+   "name": "mm2dgDracoliskAcidPerDay",
+   "value": 3,
+   "comment": "The acid spit uses per day (half damage on a save vs. breath weapon)"
+  },
+  {
+   "name": "mm2dgDracoliskGazePetrifyFeet",
+   "value": 20,
+   "comment": "The gaze petrify range (any opponent within 20 feet)"
+  },
+  {
+   "name": "mm2dgDracoliskGazeImperviousPct",
+   "value": 90,
+   "comment": "The imperviousness to its own reflected gaze (the hooded eyes with nictating membranes)"
+  },
+  {
+   "name": "mm2dgDracoliskGazeAvoidMeleePenalty",
+   "value": -4,
+   "comment": "The to-hit penalty for opponents meleeing while avoiding the gaze"
+  },
+  {
+   "name": "mm2dgDracoliskGazeCompletelySurprised",
+   "value": 9,
+   "comment": "The gaze chance for a completely surprised character (9 in 10)"
+  },
+  {
+   "name": "mm2dgDracoliskGazeSurprised",
+   "value": 7,
+   "comment": "The gaze chance for a surprised character (7 in 10)"
+  },
+  {
+   "name": "mm2dgDracoliskGazeViewing",
+   "value": 5,
+   "comment": "The gaze chance for a character viewing the monster (5 in 10)"
+  },
+  {
+   "name": "mm2dgDracoliskGazeAttacking",
+   "value": 3,
+   "comment": "The gaze chance for a character attacking normally (3 in 10)"
+  },
+  {
+   "name": "mm2dgDracoliskGazeAvoiding",
+   "value": 1,
+   "comment": "The gaze chance for a character avoiding the gaze (1 in 10)"
+  },
+  {
+   "name": "mm2dgDracoliskGazeManSizedBonus",
+   "value": 1,
+   "comment": "The gaze chance add for a man-sized gaze creature (add 1)"
+  },
+  {
+   "name": "mm2dgDracoliskGazeSmallBonus",
+   "value": 2,
+   "comment": "The gaze chance add for a small gaze creature (add 2)"
+  },
+  {
+   "name": "mm2dgCloudXpValue",
+   "value": 6520,
+   "comment": "The cloud dragon full kill xp (6100 + 10/hp over 42 avg)"
+  },
+  {
+   "name": "mm2dgCloudXpLevel",
+   "value": 10,
+   "comment": "The cloud dragon xp level (X)"
+  },
+  {
+   "name": "mm2dgCloudLonerPct",
+   "value": 95,
+   "comment": "The lone-encounter share (95% of all encounters)"
+  },
+  {
+   "name": "mm2dgCloudCloudIslandPct",
+   "value": 75,
+   "comment": "The cloud island dwellers share (most lair there)"
+  },
+  {
+   "name": "mm2dgCloudGaseousArmorClass",
+   "value": -3,
+   "comment": "The gaseous (cloud) form armor class"
+  },
+  {
+   "name": "mm2dgCloudSolidArmorClass",
+   "value": 0,
+   "comment": "The solid form armor class"
+  },
+  {
+   "name": "mm2dgCloudAirblastPerDay",
+   "value": 3,
+   "comment": "The airblast uses per day"
+  },
+  {
+   "name": "mm2dgCloudAirblastWidthInches",
+   "value": 3,
+   "comment": "The airblast width (3\")"
+  },
+  {
+   "name": "mm2dgCloudAirblastDepthInches",
+   "value": 3,
+   "comment": "The airblast depth (3\")"
+  },
+  {
+   "name": "mm2dgCloudAirblastLengthMinInches",
+   "value": 12,
+   "comment": "The airblast length floor (12-14\" by hit dice)"
+  },
+  {
+   "name": "mm2dgCloudAirblastLengthMaxInches",
+   "value": 14,
+   "comment": "The airblast length ceiling"
+  },
+  {
+   "name": "mm2dgCloudAirblastWeightPoundsPerHp",
+   "value": 10,
+   "comment": "The blow-around weight limit (10 pounds times the hit points)"
+  },
+  {
+   "name": "mm2dgCloudAirblastDamagePerHp",
+   "value": 1,
+   "comment": "The tumbling and wind damage (1 point per hit point of the dragon)"
+  },
+  {
+   "name": "mm2dgCloudTumbleFeetPerDieMin",
+   "value": 1,
+   "comment": "The tumble-back floor (1-6 feet per hit die)"
+  },
+  {
+   "name": "mm2dgCloudTumbleFeetPerDieMax",
+   "value": 6,
+   "comment": "The tumble-back ceiling"
+  },
+  {
+   "name": "mm2dgCloudXpBonusHpThreshold",
+   "value": 48,
+   "comment": "The xp bonus threshold (100 xp/hp over 48 hit points - the print rider pinned)"
+  },
+  {
+   "name": "mm2dgCloudXpBonusPerHpOver",
+   "value": 100,
+   "comment": "The xp bonus per hit point over the threshold (the print rider; the base 6100 + 10/hp rides the def)"
+  },
+  {
+   "name": "mm2dgCloudSpellsPerDayEach",
+   "value": 2,
+   "comment": "The spell uses per day (each age-category spell twice per day, at a level equal to the hit dice)"
+  },
+  {
+   "name": "mm2dgCloudTopSpellAge",
+   "value": 8,
+   "comment": "The top spell age category (8-control winds)"
+  },
+  {
+   "name": "mm2dgFaerieXpValue",
+   "value": 336,
+   "comment": "The faerie dragon full kill xp (280 + 4/hp over 14 avg)"
+  },
+  {
+   "name": "mm2dgFaerieXpLevel",
+   "value": 5,
+   "comment": "The faerie dragon xp level (V)"
+  },
+  {
+   "name": "mm2dgFaerieInvisibleArmorClass",
+   "value": 1,
+   "comment": "The armor class when invisible (the stat block prints AC 5, AC 1 when invisible)"
+  },
+  {
+   "name": "mm2dgFaerieHitDiceNum",
+   "value": 4,
+   "comment": "The faerie dragon attacks as 4 hit dice monsters (the \"See below\" hit dice read)"
+  },
+  {
+   "name": "mm2dgFaerieBiteDamageMax",
+   "value": 2,
+   "comment": "The bite damage ceiling (biting for 1-2 points)"
+  },
+  {
+   "name": "mm2dgFaerieEuphoriaRoundsMin",
+   "value": 3,
+   "comment": "The euphoria gas wander floor (3-12 rounds)"
+  },
+  {
+   "name": "mm2dgFaerieEuphoriaRoundsMax",
+   "value": 12,
+   "comment": "The euphoria gas wander ceiling"
+  },
+  {
+   "name": "mm2dgFaerieEuphoriaAcPenaltyPct",
+   "value": 10,
+   "comment": "The euphoria armor class worsening (an effective armor class 10% worse than normal)"
+  },
+  {
+   "name": "mm2dgFaerieSpeakingPct",
+   "value": 90,
+   "comment": "The chance of speaking (90%)"
+  },
+  {
+   "name": "mm2dgFaerieMagicUsePct",
+   "value": 100,
+   "comment": "The chance of magic use (100%)"
+  },
+  {
+   "name": "mm2dgFaerieSleepingPct",
+   "value": 40,
+   "comment": "The chance of sleeping (40%)"
+  },
+  {
+   "name": "mm2dgFaerieMagicUserPct",
+   "value": 65,
+   "comment": "The magic-user spell share (65% magic-user, 35% druid)"
+  },
+  {
+   "name": "mm2dgFaerieDruidPct",
+   "value": 35,
+   "comment": "The druid spell share"
+  },
+  {
+   "name": "mm2dgFaerieTelepathyMiles",
+   "value": 2,
+   "comment": "The telepathic communication range (up to 2 miles)"
+  },
+  {
+   "name": "mm2dgMistXpValue",
+   "value": 3605,
+   "comment": "The mist dragon full kill xp (3450 + 5/hp over 31 avg)"
+  },
+  {
+   "name": "mm2dgMistXpLevel",
+   "value": 8,
+   "comment": "The mist dragon xp level (VIII)"
+  },
+  {
+   "name": "mm2dgMistSleepingPct",
+   "value": 20,
+   "comment": "The chance of sleeping (20%)"
+  },
+  {
+   "name": "mm2dgMistMatedPairPct",
+   "value": 10,
+   "comment": "The mated pair encounter chance (10%)"
+  },
+  {
+   "name": "mm2dgMistMistFormArmorClass",
+   "value": -2,
+   "comment": "The mist (gaseous) form armor class"
+  },
+  {
+   "name": "mm2dgMistMistFormMrPct",
+   "value": 30,
+   "comment": "The mist form magic resistance (30%)"
+  },
+  {
+   "name": "mm2dgMistSolidArmorClass",
+   "value": 1,
+   "comment": "The solid form armor class (with standard magic resistance)"
+  },
+  {
+   "name": "mm2dgMistBreathPerDay",
+   "value": 3,
+   "comment": "The mist breath uses per day"
+  },
+  {
+   "name": "mm2dgMistCloudWidthInches",
+   "value": 3,
+   "comment": "The mist cloud width (3\")"
+  },
+  {
+   "name": "mm2dgMistCloudLengthInches",
+   "value": 9,
+   "comment": "The mist cloud length (9\")"
+  },
+  {
+   "name": "mm2dgMistCloudDepthInches",
+   "value": 3,
+   "comment": "The mist cloud depth (3\")"
+  },
+  {
+   "name": "mm2dgMistBlindRoundsMin",
+   "value": 1,
+   "comment": "The cloud blinding floor (1-4 rounds)"
+  },
+  {
+   "name": "mm2dgMistBlindRoundsMax",
+   "value": 4,
+   "comment": "The cloud blinding ceiling"
+  },
+  {
+   "name": "mm2dgMistDrownDamageMin",
+   "value": 3,
+   "comment": "The drowning damage floor (3-12 per round)"
+  },
+  {
+   "name": "mm2dgMistDrownDamageMax",
+   "value": 12,
+   "comment": "The drowning damage ceiling"
+  },
+  {
+   "name": "mm2dgMistDrownSaveDamageMax",
+   "value": 4,
+   "comment": "The drowning damage ceiling on a successful save (1-4 per round)"
+  },
+  {
+   "name": "mm2dgMistPersistsRoundsMin",
+   "value": 5,
+   "comment": "The mist persistence floor (5-8 rounds by wind)"
+  },
+  {
+   "name": "mm2dgMistPersistsRoundsMax",
+   "value": 8,
+   "comment": "The mist persistence ceiling"
+  },
+  {
+   "name": "mm2dgMistXpBonusHpThreshold",
+   "value": 36,
+   "comment": "The xp bonus threshold (50 xp/hp over 36 hit points - the print rider pinned)"
+  },
+  {
+   "name": "mm2dgMistXpBonusPerHpOver",
+   "value": 50,
+   "comment": "The xp bonus per hit point over the threshold (the print rider; the base 3450 + 5/hp rides the def)"
+  },
+  {
+   "name": "mm2dgMistSpellsPerDayEach",
+   "value": 2,
+   "comment": "The spell uses per day (each age-category spell twice per day, at a level equal to the hit dice)"
+  },
+  {
+   "name": "mm2dgMistTopSpellAge",
+   "value": 8,
+   "comment": "The top spell age category (8=airy water)"
+  },
+  {
+   "name": "mm2dgShadowXpValue",
+   "value": 320,
+   "comment": "The shadow dragon full kill xp (245 + 5/hp over 15 avg)"
+  },
+  {
+   "name": "mm2dgShadowXpLevel",
+   "value": 4,
+   "comment": "The shadow dragon xp level (IV)"
+  },
+  {
+   "name": "mm2dgShadowEggsMin",
+   "value": 5,
+   "comment": "The clutch size floor (5-8 eggs)"
+  },
+  {
+   "name": "mm2dgShadowEggsMax",
+   "value": 8,
+   "comment": "The clutch size ceiling"
+  },
+  {
+   "name": "mm2dgShadowSmallPct",
+   "value": 25,
+   "comment": "The small size share (25%, all female)"
+  },
+  {
+   "name": "mm2dgShadowAveragePct",
+   "value": 50,
+   "comment": "The average size share (50%)"
+  },
+  {
+   "name": "mm2dgShadowLargePct",
+   "value": 25,
+   "comment": "The large size share (25%, all male)"
+  },
+  {
+   "name": "mm2dgShadowHpPerDieBonus",
+   "value": 1,
+   "comment": "The always-on hit point bonus per die (a shadow dragon always has +1 per die)"
+  },
+  {
+   "name": "mm2dgShadowHatchlingPipsPerDie",
+   "value": 2,
+   "comment": "The hatchling pips per die (a very young dragon has 2 pips per die)"
+  },
+  {
+   "name": "mm2dgShadowAncientPipsPerDie",
+   "value": 9,
+   "comment": "The ancient pips per die (9 pips per die)"
+  },
+  {
+   "name": "mm2dgShadowInfravisionFeet",
+   "value": 180,
+   "comment": "The very superior infravision range (180 feet)"
+  },
+  {
+   "name": "mm2dgShadowIllusionistMinIntelligence",
+   "value": 17,
+   "comment": "The illusionist spell intelligence floor (17-18)"
+  },
+  {
+   "name": "mm2dgShadowIllusionistMaxIntelligence",
+   "value": 18,
+   "comment": "The illusionist spell intelligence ceiling"
+  },
+  {
+   "name": "mm2dgShadowIllusionistTopSpellLevel",
+   "value": 4,
+   "comment": "The illusionist spell ceiling (3rd-4th levels)"
+  },
+  {
+   "name": "mm2dgShadowIllusionistSpellsPerLevel",
+   "value": 2,
+   "comment": "The illusionist spells per level (2 spells per level)"
+  },
+  {
+   "name": "mm2dgShadowIllusionistFromAge",
+   "value": 5,
+   "comment": "The illusionist spell age floor (attained from adult age)"
+  },
+  {
+   "name": "mm2dgShadowBreathLengthFeet",
+   "value": 40,
+   "comment": "The darkness cloud length (40-feet long)"
+  },
+  {
+   "name": "mm2dgShadowBreathWidthFeet",
+   "value": 30,
+   "comment": "The darkness cloud width (30-feet wide)"
+  },
+  {
+   "name": "mm2dgShadowBreathHeightFeet",
+   "value": 20,
+   "comment": "The darkness cloud height (20-feet high)"
+  },
+  {
+   "name": "mm2dgShadowVitalityLeftPct",
+   "value": 25,
+   "comment": "The life energy left after the cloud (25% of usual vitality; 50% on a save)"
+  },
+  {
+   "name": "mm2dgShadowVitalitySavePct",
+   "value": 50,
+   "comment": "The life energy left on a successful save"
+  },
+  {
+   "name": "mm2dgShadowHideAsThiefLevel",
+   "value": 10,
+   "comment": "The hide in shadows thief level (a 10th level thief)"
+  },
+  {
+   "name": "mm2dgShadowHoardGemsMin",
+   "value": 10,
+   "comment": "The hoard gem floor (10-80 gems of opaque substance)"
+  },
+  {
+   "name": "mm2dgShadowHoardGemsMax",
+   "value": 80,
+   "comment": "The hoard gem ceiling"
+  },
+  {
+   "name": "mm2dgDragonflyXpValue",
+   "value": 717,
+   "comment": "The giant dragonfly full kill xp (525 + 8/hp over 24 avg)"
+  },
+  {
+   "name": "mm2dgDragonflyXpLevel",
+   "value": 6,
+   "comment": "The giant dragonfly xp level (VI)"
+  },
+  {
+   "name": "mm2dgDragonflyInitiativeBonus",
+   "value": 2,
+   "comment": "The initiative check bonus (+2)"
+  },
+  {
+   "name": "mm2dgDragonflyMissilePenaltyWithInitiative",
+   "value": -4,
+   "comment": "The missile penalty with initiative (-4)"
+  },
+  {
+   "name": "mm2dgDragonflyMissilePenaltyWithoutInitiative",
+   "value": -2,
+   "comment": "The missile penalty without initiative (-2)"
+  },
+  {
+   "name": "mm2dgDragonflySkinGpPerSquareFoot",
+   "value": 600,
+   "comment": "The skin value (up to 600 gp per square foot)"
+  },
+  {
+   "name": "mm2dgDragonflySkinSquareFeet",
+   "value": 6,
+   "comment": "The takeable skin (about 6 square feet from a normal specimen)"
+  },
+  {
+   "name": "mm2dgDragonflySaveAsLevel",
+   "value": 16,
+   "comment": "The save-as level (save as a 16th-level magic-user - the R155 save-as read, no innate percent)"
+  },
+  {
+   "name": "mm2dgDragonHorseXpValue",
+   "value": 1555,
+   "comment": "The dragon horse full kill xp (1275 + 10/hp over 28 avg)"
+  },
+  {
+   "name": "mm2dgDragonHorseXpLevel",
+   "value": 7,
+   "comment": "The dragon horse xp level (VII)"
+  },
+  {
+   "name": "mm2dgDragonHorseElsewherePct",
+   "value": 5,
+   "comment": "The encountered-elsewhere share (seldom, 5%)"
+  },
+  {
+   "name": "mm2dgDragonHorseBreathPerTurn",
+   "value": 1,
+   "comment": "The breath uses per turn (once per turn, at will)"
+  },
+  {
+   "name": "mm2dgDragonHorseConeBaseInches",
+   "value": 1,
+   "comment": "The cone of cold base (1\" diameter base)"
+  },
+  {
+   "name": "mm2dgDragonHorseConeLengthInches",
+   "value": 2,
+   "comment": "The cone length (2\")"
+  },
+  {
+   "name": "mm2dgDragonHorseConeDamageMin",
+   "value": 4,
+   "comment": "The cone damage floor (4d8)"
+  },
+  {
+   "name": "mm2dgDragonHorseConeDamageMax",
+   "value": 32,
+   "comment": "The cone damage ceiling"
+  },
+  {
+   "name": "mm2dgDragonHorseRearingDamageMin",
+   "value": 3,
+   "comment": "The flying-or-rearing damage floor (+2 per hit, 3-10/3-10)"
+  },
+  {
+   "name": "mm2dgDragonHorseRearingDamageMax",
+   "value": 10,
+   "comment": "The flying-or-rearing damage ceiling"
+  },
+  {
+   "name": "mm2dgDragonHorseSensesMultiple",
+   "value": 3,
+   "comment": "The keen senses multiple (triple normal)"
+  },
+  {
+   "name": "mm2dgDragonHorseMaturationYears",
+   "value": 20,
+   "comment": "The maturation process length (20 years)"
+  },
+  {
+   "name": "mm2dgDragonnelXpValue",
+   "value": 984,
+   "comment": "The dragonnel full kill xp (600 + 12/hp over 32 avg)"
+  },
+  {
+   "name": "mm2dgDragonnelXpLevel",
+   "value": 6,
+   "comment": "The dragonnel xp level (VI)"
+  },
+  {
+   "name": "mm2dgDrelbXpValue",
+   "value": 920,
+   "comment": "The drelb full kill xp (800 + 6/hp over 20 avg)"
+  },
+  {
+   "name": "mm2dgDrelbXpLevel",
+   "value": 6,
+   "comment": "The drelb xp level (VI)"
+  },
+  {
+   "name": "mm2dgDrelbChillRounds",
+   "value": 1,
+   "comment": "The nether chill duration (the following round, no saving throw)"
+  },
+  {
+   "name": "mm2dgDrelbIllusionTrickPct",
+   "value": 90,
+   "comment": "The retreating-illusion trick success (90% likely to give the viewers the impression that the drelb is retreating)"
+  },
+  {
+   "name": "mm2dgDrelbPsionicReflectFeet",
+   "value": 30,
+   "comment": "The psionic imitation/reflection range (any power used within 30 feet)"
+  },
+  {
+   "name": "mm2dgDriderXpValue",
+   "value": 1091,
+   "comment": "The drider full kill xp (875 + 8/hp over 27 avg)"
+  },
+  {
+   "name": "mm2dgDriderXpLevel",
+   "value": 6,
+   "comment": "The drider xp level (VI)"
+  },
+  {
+   "name": "mm2dgDriderFightAsHitDice",
+   "value": 7,
+   "comment": "In combat all driders fight as 7 hit dice monsters"
+  },
+  {
+   "name": "mm2dgDriderFemalePct",
+   "value": 60,
+   "comment": "The female share (60% of those encountered)"
+  },
+  {
+   "name": "mm2dgDriderFemaleClericMinLevel",
+   "value": 6,
+   "comment": "The female cleric level floor (6th or 7th level)"
+  },
+  {
+   "name": "mm2dgDriderFemaleClericMaxLevel",
+   "value": 7,
+   "comment": "The female cleric level ceiling"
+  },
+  {
+   "name": "mm2dgDriderMaleMagicUserMinLevel",
+   "value": 6,
+   "comment": "The male magic-user level floor (6th, 7th, or 8th level)"
+  },
+  {
+   "name": "mm2dgDriderMaleMagicUserMaxLevel",
+   "value": 8,
+   "comment": "The male magic-user level ceiling"
+  },
+  {
+   "name": "mm2dgDriderBiteDamageMax",
+   "value": 4,
+   "comment": "The bite damage ceiling (1-4 points of damage)"
+  },
+  {
+   "name": "mm2dgDriderPoisonSavePenalty",
+   "value": -2,
+   "comment": "The bite save penalty (save vs. poison at -2)"
+  },
+  {
+   "name": "mm2dgDriderParalysisTurnsMin",
+   "value": 1,
+   "comment": "The spittle paralysis floor (1-2 turns)"
+  },
+  {
+   "name": "mm2dgDriderParalysisTurnsMax",
+   "value": 2,
+   "comment": "The spittle paralysis ceiling"
+  },
+  {
+   "name": "mm2dgDriderSpiderCompanionsMin",
+   "value": 2,
+   "comment": "The huge spider companion floor (2-12, 10% of the time)"
+  },
+  {
+   "name": "mm2dgDriderSpiderCompanionsMax",
+   "value": 12,
+   "comment": "The huge spider companion ceiling"
+  },
+  {
+   "name": "mm2dgDriderSpiderChancePct",
+   "value": 10,
+   "comment": "The huge spider companion chance"
+  },
+  {
+   "name": "mm2dgDriderTestFromLevel",
+   "value": 6,
+   "comment": "The Lolth test level (when drow of promising ability reach 6th level or slightly higher)"
+  },
+  {
+   "name": "mm2dgDuergarHitDiceNum",
+   "value": 1,
+   "comment": "The duergar hit dice num (1+2)"
+  },
+  {
+   "name": "mm2dgDuergarHitDiceBonus",
+   "value": 2,
+   "comment": "The duergar hit dice bonus"
+  },
+  {
+   "name": "mm2dgDuergarAvgHp",
+   "value": 5,
+   "comment": "The duergar book-average hit points"
+  },
+  {
+   "name": "mm2dgDuergarDoubleLevelChance",
+   "value": 4,
+   "comment": "The 2nd-level chance (for every 4 normal duergar there will be 1 with double hit dice, i.e., 1 in 4 is 2nd level)"
+  },
+  {
+   "name": "mm2dgDuergarLeaderAtCount",
+   "value": 9,
+   "comment": "The leader trigger (if 9 are encountered outside their lair)"
+  },
+  {
+   "name": "mm2dgDuergarLeaderMinLevel",
+   "value": 3,
+   "comment": "The leader level floor (3rd or 4th level)"
+  },
+  {
+   "name": "mm2dgDuergarLeaderMaxLevel",
+   "value": 4,
+   "comment": "The leader level ceiling"
+  },
+  {
+   "name": "mm2dgDuergarSurpriseOnD6",
+   "value": 3,
+   "comment": "The surprise die read (duergar surprise on 3 in 6)"
+  },
+  {
+   "name": "mm2dgDuergarSurprisedOnD10",
+   "value": 1,
+   "comment": "The surprised die read (they are surprised only 1 in 10)"
+  },
+  {
+   "name": "mm2dgDuergarSaveBonus",
+   "value": 4,
+   "comment": "The save vs. magical attacks bonus (+4)"
+  },
+  {
+   "name": "mm2dgDuergarPsionicMinPct",
+   "value": 71,
+   "comment": "The psionic ability floor (71-90, 2/level)"
+  },
+  {
+   "name": "mm2dgDuergarPsionicMaxPct",
+   "value": 90,
+   "comment": "The psionic ability ceiling"
+  },
+  {
+   "name": "mm2dgDuergarPsionicDisciplines",
+   "value": 4,
+   "comment": "The psionic disciplines (expansion, invisibility, molecular attraction, and reduction; performance level equal to hit dice of experience)"
+  },
+  {
+   "name": "mm2dgDuergarInfravisionInches",
+   "value": 12,
+   "comment": "The infravision range (12\")"
+  },
+  {
+   "name": "mm2dgDuergarYoungPct",
+   "value": 10,
+   "comment": "The noncombatant young share (10% of the normal fighters)"
+  },
+  {
+   "name": "mm2dgDuergarGuardianChancePct",
+   "value": 25,
+   "comment": "The lair guardian monster chance (25%)"
+  },
+  {
+   "name": "mm2dgDuergarSlaveChancePct",
+   "value": 75,
+   "comment": "The slave-holding probability (75%)"
+  },
+  {
+   "name": "mm2dgDuergarSlaveMin",
+   "value": 10,
+   "comment": "The slave count floor (10-40)"
+  },
+  {
+   "name": "mm2dgDuergarSlaveMax",
+   "value": 40,
+   "comment": "The slave count ceiling"
+  },
+  {
+   "name": "mm2dgDustdiggerXpValue",
+   "value": 221,
+   "comment": "The dustdigger full kill xp (165 + 4/hp over 14 avg)"
+  },
+  {
+   "name": "mm2dgDustdiggerXpLevel",
+   "value": 4,
+   "comment": "The dustdigger xp level (IV)"
+  },
+  {
+   "name": "mm2dgDustdiggerFrontArmorClass",
+   "value": 7,
+   "comment": "The front side armor class (the back is armor class 4; the front side is only armor class 7)"
+  },
+  {
+   "name": "mm2dgDustdiggerArms",
+   "value": 5,
+   "comment": "The arm count (giant starfish with 5 arms around a central maw)"
+  },
+  {
+   "name": "mm2dgDustdiggerIllusionTalentPct",
+   "value": 20,
+   "comment": "The born illusion talent share (20% project a pool of bubbling water)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2dgDragonSizeByDieRoll",
+   "value": true,
+   "comment": "The size categorization is determined by an 8-sided die roll"
+  },
+  {
+   "name": "mm2dgDragonAgeHpPerDieByDieRoll",
+   "value": true,
+   "comment": "The age (and hit points per die) is determined by an 8-sided die roll"
+  },
+  {
+   "name": "mm2dgDragonAuraPanicsUnderOneHitDie",
+   "value": true,
+   "comment": "All creatures under 1 hit die and noncarnivorous untrained creatures flee in panic under the aura"
+  },
+  {
+   "name": "mm2dgDragonAuraParalysisOrPanic",
+   "value": true,
+   "comment": "Creatures with fewer than 3 hit dice save vs. spell or are paralyzed with fear (50%) or panic (50%)"
+  },
+  {
+   "name": "mm2dgDragonAuraPenalizesThreeHitDice",
+   "value": true,
+   "comment": "Creatures with 3 or more hit dice fight at -1 unless they save vs. spell"
+  },
+  {
+   "name": "mm2dgDragonAuraIgnoredAtSixHitDice",
+   "value": true,
+   "comment": "Creatures with 6 or more hit dice automatically disregard the aura effect"
+  },
+  {
+   "name": "mm2dgDragonToughnessRaisesSave",
+   "value": true,
+   "comment": "At 5 or more hit points per die the saving throw is the total hit points divided by 4"
+  },
+  {
+   "name": "mm2dgDragonYoungKeepsFullHitDiceForSaves",
+   "value": true,
+   "comment": "Even a very young dragon uses its actual hit dice for determining save scores"
+  },
+  {
+   "name": "mm2dgDracoliskCannotUseSpells",
+   "value": true,
+   "comment": "Dracolisks cannot use spells"
+  },
+  {
+   "name": "mm2dgDracoliskSpeaksLimitedBlackDragonTongue",
+   "value": true,
+   "comment": "Dracolisks speak only a very limited type of black dragon language"
+  },
+  {
+   "name": "mm2dgDracoliskSurprisedOnlyWhenSleeping",
+   "value": true,
+   "comment": "If a dracolisk is surprised it is because the creature is sleeping"
+  },
+  {
+   "name": "mm2dgDracoliskNeverSubdued",
+   "value": true,
+   "comment": "A dracolisk can never be subdued"
+  },
+  {
+   "name": "mm2dgDracoliskGazeReachesAstralEthereal",
+   "value": true,
+   "comment": "The dracolisk gaze extends into the Astral and Ethereal Planes just as does that of a basilisk"
+  },
+  {
+   "name": "mm2dgCloudGaseousFormSpellAttacksOnly",
+   "value": true,
+   "comment": "The only attacks while in cloud form are spells"
+  },
+  {
+   "name": "mm2dgCloudSolidFormNegatesInnateMr",
+   "value": true,
+   "comment": "Solid form negates the innate magic resistance"
+  },
+  {
+   "name": "mm2dgCloudSpeaksDraconianDialect",
+   "value": true,
+   "comment": "Cloud dragons have their own dialect of draconian speech and converse with all other sorts of dragons"
+  },
+  {
+   "name": "mm2dgCloudSpeaksCommonHaltingly",
+   "value": true,
+   "comment": "All cloud dragons can converse, if but haltingly, in the human common tongue"
+  },
+  {
+   "name": "mm2dgFaerieAttacksOnlyWhenCorneredOrLair",
+   "value": true,
+   "comment": "The faerie dragon never attacks directly unless cornered or defending its lair"
+  },
+  {
+   "name": "mm2dgFaerieHoverManeuverabilityA",
+   "value": true,
+   "comment": "Faerie dragons can hover and are maneuverability class A"
+  },
+  {
+   "name": "mm2dgFaerieNeverAimsDamage",
+   "value": true,
+   "comment": "A faerie dragon will never have damage to the victim as its aim"
+  },
+  {
+   "name": "mm2dgFaerieInvisibleAtWill",
+   "value": true,
+   "comment": "Faerie dragons can become invisible at will and attack or employ magic or breath weapons when invisible"
+  },
+  {
+   "name": "mm2dgMistSpellsOnlyInMistForm",
+   "value": true,
+   "comment": "Only spells can be cast in gaseous (mist) form"
+  },
+  {
+   "name": "mm2dgMistImmuneToOwnCloud",
+   "value": true,
+   "comment": "A mist dragon is not affected by such a cloud"
+  },
+  {
+   "name": "mm2dgMistResemblesGoldDragons",
+   "value": true,
+   "comment": "Mist dragons resemble gold dragons in body form"
+  },
+  {
+   "name": "mm2dgShadowNocturnal",
+   "value": true,
+   "comment": "The shadow dragon is nocturnal, subterranean, or found on planes of dimness such as Shadowland"
+  },
+  {
+   "name": "mm2dgShadowFirstHatchlingDevoursRest",
+   "value": true,
+   "comment": "The first egg to hatch quickly devours the others"
+  },
+  {
+   "name": "mm2dgShadowHarmedOnlyByMagicWeapons",
+   "value": true,
+   "comment": "Due to their nature and substance they can be harmed only by magic weapons"
+  },
+  {
+   "name": "mm2dgShadowImmuneToLifeLevelLoss",
+   "value": true,
+   "comment": "They are immune to life level loss of all types"
+  },
+  {
+   "name": "mm2dgShadowCannotBeSubduedAndSold",
+   "value": true,
+   "comment": "Shadow dragons cannot be subdued and sold"
+  },
+  {
+   "name": "mm2dgShadowBreathCostsSpellsUntilRelearned",
+   "value": true,
+   "comment": "Spells are lost permanently from the darkness cloud exposure until relearned or regained normally"
+  },
+  {
+   "name": "mm2dgDragonflyInitiativeImmuneToHandWeapons",
+   "value": true,
+   "comment": "With initiative they cannot be effectively combatted with hand-held weapons"
+  },
+  {
+   "name": "mm2dgDragonflyHuntsHumans",
+   "value": true,
+   "comment": "Giant dragonflies are dangerous predators known to hunt humans"
+  },
+  {
+   "name": "mm2dgDragonHorseNeverSurprised",
+   "value": true,
+   "comment": "These creatures are never surprised"
+  },
+  {
+   "name": "mm2dgDragonHorseDetectsAlignmentAura",
+   "value": true,
+   "comment": "Their visual capabilities include aura detection, so they sense the alignment of creatures they encounter"
+  },
+  {
+   "name": "mm2dgDragonHorseTravelsAstralEthereal",
+   "value": true,
+   "comment": "Dragon horses can travel the Astral and Ethereal Planes"
+  },
+  {
+   "name": "mm2dgDragonHorseWillingCompanionOnly",
+   "value": true,
+   "comment": "The creature must be a willing companion and associate"
+  },
+  {
+   "name": "mm2dgDragonnelHasNoBreathWeapon",
+   "value": true,
+   "comment": "Although as large as a small dragon, a dragonnel has no breath weapon"
+  },
+  {
+   "name": "mm2dgDragonnelTamedAsSteedsInPomarj",
+   "value": true,
+   "comment": "In the Pomarj the monsters have been caught, tamed, and are used as steeds by evil humans"
+  },
+  {
+   "name": "mm2dgDrelbNotUndeadCannotBeTurned",
+   "value": true,
+   "comment": "Although drelb resemble undead, they are not and cannot be turned"
+  },
+  {
+   "name": "mm2dgDrelbMagicWeaponsToHarm",
+   "value": true,
+   "comment": "Magic weapons are needed to harm drelb; silver has no effect"
+  },
+  {
+   "name": "mm2dgDrelbMagickedSilverDoubleDamage",
+   "value": true,
+   "comment": "Magicked silver causes double damage"
+  },
+  {
+   "name": "mm2dgDrelbDrawnSunsetToSunrise",
+   "value": true,
+   "comment": "Magic which draws a drelb to the Prime Material Plane is likely to function only from sunset to sunrise"
+  },
+  {
+   "name": "mm2dgDriderDrowFailedLolthTest",
+   "value": true,
+   "comment": "The drow that fail Lolth's specially-devised test become driders"
+  },
+  {
+   "name": "mm2dgDriderOutcastFromDrow",
+   "value": true,
+   "comment": "Driders are outcasts from drow communities and thus bear them no great love"
+  },
+  {
+   "name": "mm2dgDriderDrowSpellsOncePerDay",
+   "value": true,
+   "comment": "A drider has the natural spell ability of a drow, each spell once per day"
+  },
+  {
+   "name": "mm2dgDuergarXpByLevel",
+   "value": true,
+   "comment": "The duergar xp is variable by level (the print \"Variable/variable\" - the dervish and dwarf by_level precedent, no fixed xp fields)"
+  },
+  {
+   "name": "mm2dgDuergarImmuneParalysisPoison",
+   "value": true,
+   "comment": "They are immune to paralysis and poison"
+  },
+  {
+   "name": "mm2dgDuergarIllusionPhantasmDoNotAffect",
+   "value": true,
+   "comment": "Spells of the illusion/phantasm category do not affect duergar"
+  },
+  {
+   "name": "mm2dgDuergarSubterraneanLair",
+   "value": true,
+   "comment": "The duergar lair will always be subterranean, extensive, and full of secret areas"
+  },
+  {
+   "name": "mm2dgDustdiggerSinkholeAmbush",
+   "value": true,
+   "comment": "The deflating sinkhole ambush slows the escape of its prey"
+  },
+  {
+   "name": "mm2dgDustdiggerNightTravelOnly",
+   "value": true,
+   "comment": "They travel above ground only at night and never for longer than a few minutes at a time"
+  },
+  {
+   "name": "mm2dgDustdiggerCaughtPreyCannotAttack",
+   "value": true,
+   "comment": "Once the dustdigger has folded up its prey is caught and cannot attack"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the dracolisk-to-dustdigger stat grid",
+   "tag": "DgStats",
+   "count": "mm2dgDgStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE D-GRID: the 12-row DgStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the 12 letter-D-part-5 stat blocks, in print order)",
+   "cols": [
+    "mm2dgDgStatAC",
+    "mm2dgDgStatHd",
+    "mm2dgDgStatHdBonus",
+    "mm2dgDgStatAvgHp",
+    "mm2dgDgStatAttacks",
+    "mm2dgDgStatXp",
+    "mm2dgDgStatXpHp",
+    "mm2dgDgStatLairPct",
+    "mm2dgDgStatMove",
+    "mm2dgDgStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the cloud and mist or-form cells read their gaseous best value, -3 and -2)",
+    "The hit dice num cells (the cloud, mist and shadow ranged cells read the low end - the kuei precedent)",
+    "The hit dice bonus points (the shadow always-on +1 per die rides here)",
+    "The book-average hit points (the floor(num x 3.5) + bonus formula)",
+    "The attack cells (the duergar \"1 (or more)\" reads its max 1 in the loader)",
+    "The base xp cells (the duergar Variable reads 0 - the by_level carry)",
+    "The xp per hit point cells (the duergar variable reads 0)",
+    "The percent in lair cells (the drelb 100; every Nil reads 0)",
+    "The primary move cells in print inches (the first number of the print move line, the parseIntRange floor)",
+    "The magic resistance cells (the cloud 50 and mist 30 or-forms read their percent; every Standard and the faerie See-below and dragonfly save-as read 0)"
+   ],
+   "data": [
+    [
+     3,
+     7,
+     3,
+     27,
+     3,
+     2200,
+     12,
+     35,
+     9,
+     0
+    ],
+    [
+     -3,
+     12,
+     0,
+     42,
+     4,
+     6100,
+     10,
+     25,
+     6,
+     50
+    ],
+    [
+     5,
+     4,
+     0,
+     14,
+     1,
+     280,
+     4,
+     25,
+     6,
+     0
+    ],
+    [
+     -2,
+     9,
+     0,
+     31,
+     4,
+     3450,
+     5,
+     35,
+     6,
+     30
+    ],
+    [
+     -2,
+     4,
+     1,
+     15,
+     3,
+     245,
+     5,
+     40,
+     18,
+     20
+    ],
+    [
+     3,
+     7,
+     0,
+     24,
+     1,
+     525,
+     8,
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     8,
+     0,
+     28,
+     2,
+     1275,
+     10,
+     0,
+     24,
+     25
+    ],
+    [
+     3,
+     8,
+     4,
+     32,
+     3,
+     600,
+     12,
+     10,
+     12,
+     0
+    ],
+    [
+     2,
+     5,
+     3,
+     20,
+     1,
+     800,
+     6,
+     100,
+     6,
+     0
+    ],
+    [
+     3,
+     6,
+     6,
+     27,
+     1,
+     875,
+     8,
+     0,
+     12,
+     15
+    ],
+    [
+     4,
+     1,
+     2,
+     5,
+     1,
+     0,
+     0,
+     5,
+     6,
+     0
+    ],
+    [
+     4,
+     4,
+     0,
+     14,
+     1,
+     165,
+     4,
+     0,
+     3,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "the faerie dragon color grid",
+   "tag": "FaerieColor",
+   "count": "mm2dgFaerieColorRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE FAERIE COLOR GRID: the 8-row age-color chart (the magic resistance, magic-user level and druid level per color, red through purple)",
+   "cols": [
+    "mm2dgFaerieColorMr",
+    "mm2dgFaerieColorMuLevel",
+    "mm2dgFaerieColorDruidLevel"
+   ],
+   "col_comments": [
+    "The magic resistance cells by color (red 12% through purple 96%)",
+    "The magic-user level cells by color (2 through 16)",
+    "The druid level cells by color (3 through 14)"
+   ],
+   "data": [
+    [
+     12,
+     2,
+     3
+    ],
+    [
+     24,
+     4,
+     4
+    ],
+    [
+     35,
+     6,
+     5
+    ],
+    [
+     48,
+     8,
+     6
+    ],
+    [
+     60,
+     10,
+     8
+    ],
+    [
+     72,
+     12,
+     10
+    ],
+    [
+     84,
+     14,
+     12
+    ],
+    [
+     96,
+     16,
+     14
+    ]
+   ]
+  },
+  {
+   "name": "the faerie dragon age grid",
+   "tag": "FaerieAge",
+   "count": "mm2dgFaerieAgeRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE FAERIE AGE GRID: the 8-row growth-stage table (the level, the hit point range and the age, very young through ancient)",
+   "cols": [
+    "mm2dgFaerieAgeLevel",
+    "mm2dgFaerieAgeHpMin",
+    "mm2dgFaerieAgeHpMax"
+   ],
+   "col_comments": [
+    "The level cells (1 through 8)",
+    "The hit point floor cells (1 through 15)",
+    "The hit point ceiling cells (2 through 16)"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     2
+    ],
+    [
+     2,
+     3,
+     4
+    ],
+    [
+     3,
+     5,
+     6
+    ],
+    [
+     4,
+     7,
+     8
+    ],
+    [
+     5,
+     9,
+     10
+    ],
+    [
+     6,
+     11,
+     12
+    ],
+    [
+     7,
+     13,
+     14
+    ],
+    [
+     8,
+     15,
+     16
+    ]
+   ]
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter D part 5 round pins (the R803 census)": [
+   {
+    "kind": "const",
+    "name": "mm2dgRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDgStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieColorRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieAgeRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgGapOpen"
+   }
+  ],
+  "the dragon family head doctrine pins (the R803 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSizeDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSizeSmallMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSizeSmallMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSizeAvgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSizeAvgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSizeHuge"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonAgeStages"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHatchlingHpPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonAncientHpPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonInfravisionFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonDetectInchesPerAgeLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonFearAuraFromAge"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonFearRoutTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonFearRoutTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonFearSplitPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonFearToHitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonFearImmuneHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonAuraAdultSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonAuraOldSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonAuraVeryOldSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSaveHpPerDieThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSaveDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonVeryYoungTreasureChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonVeryYoungTreasurePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonYoungTreasureChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSubadultTreasureChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonSubadultTreasurePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonVeryOldTreasureChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonVeryOldTreasurePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonAncientTreasureChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonAncientTreasurePct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonSizeByDieRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonAgeHpPerDieByDieRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonAuraPanicsUnderOneHitDie"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonAuraParalysisOrPanic"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonAuraPenalizesThreeHitDice"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonAuraIgnoredAtSixHitDice"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonToughnessRaisesSave"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonYoungKeepsFullHitDiceForSaves"
+   }
+  ],
+  "the MM2 letter D part 5 stat grid (the R803 wiring)": [
+   {
+    "kind": "table",
+    "name": "the dracolisk-to-dustdigger stat grid"
+   },
+   {
+    "kind": "table",
+    "name": "the faerie dragon color grid"
+   },
+   {
+    "kind": "table",
+    "name": "the faerie dragon age grid"
+   }
+  ],
+  "the dracolisk pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskAcidRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskAcidDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskAcidDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskAcidPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazePetrifyFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazeImperviousPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazeAvoidMeleePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazeCompletelySurprised"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazeSurprised"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazeViewing"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazeAttacking"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazeAvoiding"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazeManSizedBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDracoliskGazeSmallBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDracoliskCannotUseSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDracoliskSpeaksLimitedBlackDragonTongue"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDracoliskSurprisedOnlyWhenSleeping"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDracoliskNeverSubdued"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDracoliskGazeReachesAstralEthereal"
+   }
+  ],
+  "the cloud dragon pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgCloudXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudLonerPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudCloudIslandPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudGaseousArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudSolidArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudAirblastPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudAirblastWidthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudAirblastDepthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudAirblastLengthMinInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudAirblastLengthMaxInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudAirblastWeightPoundsPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudAirblastDamagePerHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudTumbleFeetPerDieMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudTumbleFeetPerDieMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudXpBonusHpThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudXpBonusPerHpOver"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudSpellsPerDayEach"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgCloudTopSpellAge"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgCloudGaseousFormSpellAttacksOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgCloudSolidFormNegatesInnateMr"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgCloudSpeaksDraconianDialect"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgCloudSpeaksCommonHaltingly"
+   }
+  ],
+  "the faerie dragon pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieInvisibleArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieHitDiceNum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieBiteDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieEuphoriaRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieEuphoriaRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieEuphoriaAcPenaltyPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieSpeakingPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieMagicUsePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieSleepingPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieMagicUserPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieDruidPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgFaerieTelepathyMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgFaerieAttacksOnlyWhenCorneredOrLair"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgFaerieHoverManeuverabilityA"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgFaerieNeverAimsDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgFaerieInvisibleAtWill"
+   }
+  ],
+  "the mist dragon pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgMistXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistSleepingPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistMatedPairPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistMistFormArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistMistFormMrPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistSolidArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistBreathPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistCloudWidthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistCloudLengthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistCloudDepthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistBlindRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistBlindRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistDrownDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistDrownDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistDrownSaveDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistPersistsRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistPersistsRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistXpBonusHpThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistXpBonusPerHpOver"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistSpellsPerDayEach"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgMistTopSpellAge"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgMistSpellsOnlyInMistForm"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgMistImmuneToOwnCloud"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgMistResemblesGoldDragons"
+   }
+  ],
+  "the shadow dragon pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgShadowXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowEggsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowEggsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowSmallPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowAveragePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowLargePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowHpPerDieBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowHatchlingPipsPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowAncientPipsPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowInfravisionFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowIllusionistMinIntelligence"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowIllusionistMaxIntelligence"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowIllusionistTopSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowIllusionistSpellsPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowIllusionistFromAge"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowBreathLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowBreathWidthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowBreathHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowVitalityLeftPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowVitalitySavePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowHideAsThiefLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowHoardGemsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgShadowHoardGemsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgShadowNocturnal"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgShadowFirstHatchlingDevoursRest"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgShadowHarmedOnlyByMagicWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgShadowImmuneToLifeLevelLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgShadowCannotBeSubduedAndSold"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgShadowBreathCostsSpellsUntilRelearned"
+   }
+  ],
+  "the giant dragonfly pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgDragonflyXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonflyXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonflyInitiativeBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonflyMissilePenaltyWithInitiative"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonflyMissilePenaltyWithoutInitiative"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonflySkinGpPerSquareFoot"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonflySkinSquareFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonflySaveAsLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonflyInitiativeImmuneToHandWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonflyHuntsHumans"
+   }
+  ],
+  "the dragon horse pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseElsewherePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseBreathPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseConeBaseInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseConeLengthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseConeDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseConeDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseRearingDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseRearingDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseSensesMultiple"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonHorseMaturationYears"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonHorseNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonHorseDetectsAlignmentAura"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonHorseTravelsAstralEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonHorseWillingCompanionOnly"
+   }
+  ],
+  "the dragonnel pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgDragonnelXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDragonnelXpLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonnelHasNoBreathWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDragonnelTamedAsSteedsInPomarj"
+   }
+  ],
+  "the drelb pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgDrelbXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDrelbXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDrelbChillRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDrelbIllusionTrickPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDrelbPsionicReflectFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDrelbNotUndeadCannotBeTurned"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDrelbMagicWeaponsToHarm"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDrelbMagickedSilverDoubleDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDrelbDrawnSunsetToSunrise"
+   }
+  ],
+  "the drider pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgDriderXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderFightAsHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderFemalePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderFemaleClericMinLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderFemaleClericMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderMaleMagicUserMinLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderMaleMagicUserMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderBiteDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderPoisonSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderParalysisTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderParalysisTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderSpiderCompanionsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderSpiderCompanionsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderSpiderChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDriderTestFromLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDriderDrowFailedLolthTest"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDriderOutcastFromDrow"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDriderDrowSpellsOncePerDay"
+   }
+  ],
+  "the duergar pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarHitDiceNum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarHitDiceBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarAvgHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarDoubleLevelChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarLeaderAtCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarLeaderMinLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarLeaderMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarSurpriseOnD6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarSurprisedOnD10"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarPsionicMinPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarPsionicMaxPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarPsionicDisciplines"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarInfravisionInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarYoungPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarGuardianChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarSlaveChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarSlaveMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDuergarSlaveMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDuergarXpByLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDuergarImmuneParalysisPoison"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDuergarIllusionPhantasmDoNotAffect"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDuergarSubterraneanLair"
+   }
+  ],
+  "the dustdigger pins (the R803 MM2 letter D part 5)": [
+   {
+    "kind": "const",
+    "name": "mm2dgDustdiggerXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDustdiggerXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDustdiggerFrontArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDustdiggerArms"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dgDustdiggerIllusionTalentPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDustdiggerSinkholeAmbush"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDustdiggerNightTravelOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dgDustdiggerCaughtPreyCannotAttack"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the gap box flips (the census walk)",
+   "expr": "m['mm2dgRegistryAfter']() - m['mm2dgRegistryBefore']() != m['mm2dgDefCount']() or m['mm2dgDefCount']() != 12 or m['mm2dgEntryCount']() != 13 or m['mm2dgDgStatRows']() != 12 or m['mm2dgFaerieColorRows']() != 8 or m['mm2dgFaerieAgeRows']() != 8 or m['mm2dgGapClosed']() != 9 or m['mm2dgGapOpen']() != 28"
+  },
+  {
+   "note": "each grid xp tile equals its pinned full kill xp (the xpValue formula, pin-vs-pin; the duergar by_level def carries no xp fields)",
+   "expr": "m['mm2dgDgStatXp'](0) + m['mm2dgDgStatXpHp'](0) * m['mm2dgDgStatAvgHp'](0) != m['mm2dgDracoliskXpValue']() or m['mm2dgDgStatXp'](1) + m['mm2dgDgStatXpHp'](1) * m['mm2dgDgStatAvgHp'](1) != m['mm2dgCloudXpValue']() or m['mm2dgDgStatXp'](2) + m['mm2dgDgStatXpHp'](2) * m['mm2dgDgStatAvgHp'](2) != m['mm2dgFaerieXpValue']() or m['mm2dgDgStatXp'](3) + m['mm2dgDgStatXpHp'](3) * m['mm2dgDgStatAvgHp'](3) != m['mm2dgMistXpValue']() or m['mm2dgDgStatXp'](4) + m['mm2dgDgStatXpHp'](4) * m['mm2dgDgStatAvgHp'](4) != m['mm2dgShadowXpValue']() or m['mm2dgDgStatXp'](5) + m['mm2dgDgStatXpHp'](5) * m['mm2dgDgStatAvgHp'](5) != m['mm2dgDragonflyXpValue']() or m['mm2dgDgStatXp'](6) + m['mm2dgDgStatXpHp'](6) * m['mm2dgDgStatAvgHp'](6) != m['mm2dgDragonHorseXpValue']() or m['mm2dgDgStatXp'](7) + m['mm2dgDgStatXpHp'](7) * m['mm2dgDgStatAvgHp'](7) != m['mm2dgDragonnelXpValue']() or m['mm2dgDgStatXp'](8) + m['mm2dgDgStatXpHp'](8) * m['mm2dgDgStatAvgHp'](8) != m['mm2dgDrelbXpValue']() or m['mm2dgDgStatXp'](9) + m['mm2dgDgStatXpHp'](9) * m['mm2dgDgStatAvgHp'](9) != m['mm2dgDriderXpValue']() or m['mm2dgDgStatXp'](11) + m['mm2dgDgStatXpHp'](11) * m['mm2dgDgStatAvgHp'](11) != m['mm2dgDustdiggerXpValue']()"
+  },
+  {
+   "note": "the faerie color grid rises red to purple (the printed age-color chart)",
+   "expr": "m['mm2dgFaerieColorMr'](0) != 12 or m['mm2dgFaerieColorMr'](7) != 96 or m['mm2dgFaerieColorMr'](7) - m['mm2dgFaerieColorMr'](0) != 84 or m['mm2dgFaerieColorMuLevel'](0) != 2 or m['mm2dgFaerieColorMuLevel'](7) != 16 or m['mm2dgFaerieColorDruidLevel'](0) != 3 or m['mm2dgFaerieColorDruidLevel'](7) != 14"
+  },
+  {
+   "note": "the faerie age grid runs level 1-8 with the 1-2 through 15-16 hit point bands",
+   "expr": "m['mm2dgFaerieAgeLevel'](0) != 1 or m['mm2dgFaerieAgeLevel'](7) != 8 or m['mm2dgFaerieAgeHpMin'](0) != 1 or m['mm2dgFaerieAgeHpMin'](7) != 15 or m['mm2dgFaerieAgeHpMax'](0) != 2 or m['mm2dgFaerieAgeHpMax'](7) != 16 or m['mm2dgFaerieAgeHpMax'](0) - m['mm2dgFaerieAgeHpMin'](0) != 1"
+  },
+  {
+   "note": "the dragon family head size roll covers 1-2, 3-7 and 8 on the 8-sided die",
+   "expr": "m['mm2dgDragonSizeDie']() != 8 or m['mm2dgDragonSizeHuge']() != 8 or m['mm2dgDragonSizeSmallMin']() + m['mm2dgDragonSizeSmallMax']() != 3 or m['mm2dgDragonSizeAvgMin']() + m['mm2dgDragonSizeAvgMax']() != 10 or m['mm2dgDragonSizeSmallMax']() + 1 != m['mm2dgDragonSizeAvgMin']() or m['mm2dgDragonSizeAvgMax']() + 1 != m['mm2dgDragonSizeHuge']() or m['mm2dgDragonAgeStages']() != 8 or m['mm2dgDragonAncientHpPerDie']() - m['mm2dgDragonHatchlingHpPerDie']() != 7"
+  },
+  {
+   "note": "the dracolisk gaze table sums to the printed 25 in 10 across its five rows",
+   "expr": "m['mm2dgDracoliskGazeCompletelySurprised']() + m['mm2dgDracoliskGazeSurprised']() + m['mm2dgDracoliskGazeViewing']() + m['mm2dgDracoliskGazeAttacking']() + m['mm2dgDracoliskGazeAvoiding']() != 25"
+  },
+  {
+   "note": "the dragon treasure ladder climbs 25/50/150/200 percent by age",
+   "expr": "m['mm2dgDragonVeryYoungTreasurePct']() != 25 or m['mm2dgDragonSubadultTreasurePct']() != 50 or m['mm2dgDragonVeryOldTreasurePct']() != 150 or m['mm2dgDragonAncientTreasurePct']() != 200 or m['mm2dgDragonVeryOldTreasureChancePct']() != m['mm2dgDragonSubadultTreasureChancePct']() or m['mm2dgDragonAncientTreasureChancePct']() != 75"
+  },
+  {
+   "note": "the print xp riders stay pinned (the cloud and mist over-threshold bonuses)",
+   "expr": "m['mm2dgCloudXpBonusHpThreshold']() != 48 or m['mm2dgCloudXpBonusPerHpOver']() != 100 or m['mm2dgMistXpBonusHpThreshold']() != 36 or m['mm2dgMistXpBonusPerHpOver']() != 50"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter D box",
+   "from": "- [ ] **Letter D**",
+   "to": "- [x] **Letter D**"
+  }
+ ],
+ "gap_census": {
+  "closed": 9,
+  "open": 28
+ },
+ "caller_files": [],
+ "inline_count": 271,
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter-D-part-5 def walk (the R782 site-block pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R803: the MM2 letter D part 5 live def walk ----\n    // The 12 promoted letter-D-part-5 defs\n    // cross-checked live against the mm2dg pins: every\n    // stat cell of the 12-row DgStats grid, the\n    // mm2_print xp source and the xpValue formula\n    // (the duergar by_level carry carries no xp\n    // fields - the dervish and dwarf precedent), the\n    // dracolisk petrify gaze prose, the shadow\n    // dragon hide-in-shadows prose, the dustdigger\n    // front-side armor class 7 prose, and the\n    // registry census floor 603 -> at least 615 (the\n    // arc grows the registry in later letter\n    // rounds; the walk demands at least the landing\n    // count).\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kD[12] = {\n            \"dracolisk\", \"cloud_dragon\", \"faerie_dragon\",\n            \"mist_dragon\", \"shadow_dragon\",\n            \"giant_dragonfly\", \"dragon_horse\", \"dragonnel\",\n            \"drelb\", \"drider\", \"duergar\", \"dustdigger\",\n        };\n        for (int i = 0; i < 12; ++i) {\n            const auto* d = reg.find(kD[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\"\n                && d->xpSource != \"by_level\")\n                ++bad;\n            if (d->xpSource == \"mm2_print\"\n                && d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2dgDgStatAC(i))\n                ++bad;\n            if (d->hitDiceNum != mm2dgDgStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2dgDgStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2dgDgStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2dgDgStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2dgDgStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2dgDgStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2dgDgStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2dgDgStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2dgDgStatMr(i))\n                ++bad;\n        }\n        const auto* dk = reg.find(\"dracolisk\");\n        if (!dk || dk->text.find(\"petrify\")\n            == std::string::npos) ++bad;\n        const auto* sd = reg.find(\"shadow_dragon\");\n        if (!sd || sd->text.find(\"hide in shadows\")\n            == std::string::npos) ++bad;\n        const auto* du = reg.find(\"duergar\");\n        if (!du || du->xpSource != \"by_level\") ++bad;\n        const auto* dd = reg.find(\"dustdigger\");\n        if (!dd || dd->text.find(\"armor class 7\")\n            == std::string::npos) ++bad;\n        if ((int)reg.all().size()\n            < mm2dgRegistryAfter())\n            ++bad;\n        printf(\"R803 MM2 letter D part 5 live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/d/dracolisk.lua",
+   "content": "-- Dracolisk: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Dracolisk\",\n  page = \"55\",\n  pages = \"55\",\n  source = \"MM2\",\n  race = \"Dracolisk\",\n  hitDice = \"7+3\",\n  hitDiceNum = 7,\n  hitDiceBonus = 3,\n  avgHp = 27,\n  armorClass = 3,\n  numAttacks = 3,\n  damage = \"1-6/1-6/3-12\",\n  xp = 2200,\n  xpPerHp = 12,\n  xpValue = 2524,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 35,\n  treasure = \"C, I\",\n  move = \"9\\\"/15\\\" (MC:E)\",\n  size = \"L (15'-20' long)\",\n  intelligence = \"low to average\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"Breath weapon, gaze weapon\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The dracolisk is said to be the offspring of a rogue black dragon and a basilisk of largest size. The result is a deep brown, dragon-like monster that moves with relative quickness and can fly, but only for short periods - a turn or two at most. This 6-legged horror can attack with its taloned forelegs and deliver vicious bites. In addition, it can spit a 1/2\\\" wide stream of acid up to 3\\\" distance, hits causing 4-24 (4d6) points of damage, half-damage if save vs. breath weapon is successful. This it can do 3 times per day. Worse still, the eyes of a dracolisk can petrify any opponent within 20 feet if the monster's gaze is met. Because of its hooded eyes with nictating membranes, the monster is 90% impervious to having its own gaze reflected. Opponents meleeing a dracolisk and seeking to avoid its gaze will fight at -4 on their to-hit dice rolls.\\n\\nChances of meeting the gaze of a dracolisk or any large creature using a gaze weapon are as follows (add 1 if the creature is man-sized, such as a medusa, and 2 if the creature is small): a character who is completely surprised meets it 9 in 10; surprised, 7 in 10; viewing the monster, 5 in 10; attacking normally, 3 in 10; avoiding the gaze, 1 in 10.\\n\\nDracolisks cannot use spells, and they speak only a very limited type of black dragon language. If a dracolisk is surprised, it is because the creature is sleeping. Note, however, that a dracolisk can never be subdued. The gaze of a dracolisk extends into the Astral and Ethereal Planes, just as does that of a basilisk (q.v.).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/c/cloud_dragon.lua",
+   "content": "-- Cloud Dragon: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Cloud Dragon\",\n  page = \"56\",\n  pages = \"56-57\",\n  source = \"MM2\",\n  race = \"Cloud Dragon\",\n  hitDice = \"12 - 14\",\n  hitDiceNum = 12,\n  hitDiceBonus = 0,\n  avgHp = 42,\n  armorClass = -3,\n  numAttacks = 4,\n  damage = \"1-10/1-10/3-36/3-12\",\n  xp = 6100,\n  xpPerHp = 10,\n  xpValue = 6520,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1 or 2\",\n  lairPct = 25,\n  treasure = \"R, T, X, Z\",\n  move = \"6\\\"/39\\\"\",\n  size = \"L (66' long)\",\n  intelligence = \"genius\",\n  alignment = \"neutral\",\n  specialAttacks = \"Breath weapon, magic use\",\n  specialDefenses = \"Magic use\",\n  magicResistance = \"Standard or 50%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Cloud dragons are most solitary creatures, and 95% of all encounters will be with a lone individual. In cases where 2 are found, they will be a mated pair of adults (1d4 +4 for age category determination). Cloud dragons are sky-dwelling creatures. While some live in caves which are shrouded by clouds, most (75%) dwell on cloud islands and lair there (cf., \\\"Cloud Giant\\\"). They dislike intrusion and will either avoid contact with or attack unwanted visitors.\\n\\nIt is 75% unlikely that a cloud dragon can be distinguished from a normal cloud, as all of these creatures can assume a cohesive gaseous form at will. Not only is recognition difficult, but gaseous armor class is -3. However, their only attacks while in cloud form are spells. In order to physically attack, the dragons must assume solid form (armor class 0). Similarly, solid form negates innate magic resistance. Attack routine consists of a claw/claw/bite/tail-lash sequence. The latter mode of attack is useful only if 1 or more opponents are at the rear of the cloud dragon's position. Three times per day a cloud dragon can exhale a blast of air. This airblast is 3\\\" wide, 3\\\" deep, and from 12-14\\\" long (according to the number of hit dice of the dragon). All creatures caught within it will be blown around if they weigh less than 10 pounds times the hit points of the cloud dragon. For example, an ancient cloud dragon of huge size could blow an airblast which would affect all creatures weighing 1120 pounds or less. Tumbling and wind damage is 1 point per hit point of the dragon. Creatures not blown around take half normal damage, this from wind and wind-borne particles. All paper and similarly flimsy objects will be blown away or shredded if held and torn free. Garments not securely fastened will be torn off or tattered. Objects with large surface areas (shields, boxes, etc.) will be torn away and battered or broken as if struck a crushing blow. Creatures able to hold on to a secure object can apply their strength to effectively add 10 points per strength point, plus any weight allowance (in pounds, not gold pieces) to their effective weight. Thus, a human weighing 200 pounds with 18/00 strength and holding fast to a tree would equal 680 pounds weight. No saving throw is possible unless a victim is at the edge of the airblast; if so, either full effect or half-effect must be determined. All fully affected creatures and objects will be tumbled back along the path of the airblast for 1-6 feet per hit die of the breathing dragon. Light, flimsy objects will be blown 20-200 feet beyond the range of the airblast.\\n\\nIn addition to their attack modes and breath weapons, cloud dragons have spell ability. Spells are gained at age categories, as follows: 1-fog cloud, 2-precipitation, 3-stinking cloud, 4-cloudburst, 5-call lightning, 6-weather summoning, 7-control weather, 8-control winds. Each spell is usable twice per day and performed at a level equal to the dragon's hit dice.\\n\\nPrecipitation causes a brief shower (12-14 segments) up to HD\\\" away from the dragon in a cylinder 12\\\" high with a diameter of 3\\\". This rain will completely dampen small flames such as candles and causes small fires to smoulder for 1 round but will not affect large fires. All but the most porous surfaces will be wetted. Any very hot creature, such as a salamander, will take 1 point of damage for each segment in the rain. Saving throw applies.\\n\\nCloudburst affects a cylinder 6\\\" high with a diameter of 3\\\" up to HD\\\" away from the dragon and precipitates all the water in the air into huge drops, drenching everything and extinguishing all normal fires. Magical fires will be extinguished as well, with permanent magical fires relighting in 1-2 rounds and re-lightable flames extinguished until rekindled. Spells such as burning hands and produce flame will be negated, and a fireball or similar spell will be extinguished, creating a cloud of steam doing 1-3 points of damage (2-6 for cold-using creatures) to all within it for 2-5 rounds.\\n\\nCloud dragons have their own dialect of draconian speech, although they can converse with all other sorts of dragons. All cloud dragons can converse, if but haltingly, in the human common tongue as well.\\n\\nCloud dragons appear to be fringed and frilled gold dragons. Coloration depends on surroundings and mood, ranging from dark gray (angry) through pearly white (neutral) to golden or rose-colored (satisfied or very pleased). In solid form they have a translucent, opaline coloration with color specks reflecting mood.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/faerie_dragon.lua",
+   "content": "-- Faerie Dragon: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Faerie Dragon\",\n  page = \"57\",\n  pages = \"57\",\n  source = \"MM2\",\n  race = \"Faerie Dragon\",\n  hitDice = \"See below\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 14,\n  armorClass = 5,\n  numAttacks = 1,\n  damage = \"1-2\",\n  xp = 280,\n  xpPerHp = 4,\n  xpValue = 336,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-6\",\n  lairPct = 25,\n  treasure = \"S, T, U\",\n  move = \"6\\\"/24\\\" (MC:A)\",\n  size = \"S (1-1 1/2' long)\",\n  intelligence = \"high to genius\",\n  alignment = \"chaotic good\",\n  specialAttacks = \"Breath weapon, magic use\",\n  specialDefenses = \"Invisibility\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"This chaotic offshoot of the pseudodragon lives in peaceful, tangled forests in all climes, often with a group of sprites or pixies.\\n\\nFaerie dragons can become invisible at will. They are able to attack or employ magic or breath weapons when invisible. They attack as 4 hit dice monsters, biting for 1-2 points of damage. However, the faerie dragon is much more likely to use its breath weapon of \\\"euphoria\\\" gas. The creature expels the gas in a 2-foot diameter spherical cloud - just enough to give the target a good dose! A victim failing to make his or her saving throw vs. breath weapon will wander blissfully about for 3-12 rounds, during which time he or she will be unable to attack and will have an effective armor class 10% worse than normal. The victim will be able to keep his or her mind on the situation and surroundings only as long as he or she makes a saving throw of intelligence or less on 1d20 during each round the effect of the gas lasts. As soon as a victim fails an intelligence saving throw, he or she will completely lose interest in the matters at hand, indicating that the gas has had its maximum euphoric effect.\\n\\nThe faerie dragon will never attack directly by any means unless cornered or defending its lair. However, the faerie dragon will use its magic at any opportunity to wreak mischief on passersby. Most (65%) faerie dragons will employ magic-user spells as per a magic-user of the level indicated on the accompanying chart; 35% will use druid spells. All their spells are chosen solely for their mischief potential. Offensive or defensive spells will never be learned unless the particular faerie dragon has thought up an exquisite prank using some such spell. All faerie dragons will learn water breathing and legend lore at the first opportunity. Though many faerie dragon pranks are spur-of-the-moment affairs, months of preparation often go into a single grand practical joke.\\n\\nFaerie dragons enjoy swimming and diving. They can hover and are maneuverability class A. They eat fruit, roots, tubers, nuts, honey, and grains and may go to great lengths to get a fresh apple pie.\\n\\nAll faerie dragons can communicate telepathically with one another at a distance of up to 2 miles. They speak their own language and their alignment tongue plus the languages of sprites, pixies, elves, and the birds and animals in their area. They frequently use forest creatures to help them in their pranks.\\n\\nFaerie dragons appear as thin, miniature dragons with long, prehensile tails, butterfly wings, and huge smiles. Their colors range through the spectrum from red for the very young to purple for ancient individuals, as shown on the accompanying chart. Females' hides shine with a bright golden tinge in the sunlight, while males have a silver tinge.\\n\\nSuggested spells for faerie dragons are given below. The DM should keep in mind that spell choice is bounded only by imagination and that a faerie dragon will never have damage to the victim as its aim. Magic-user spells - 1st level: dancing lights, message, sleep, unseen servant, ventriloquism; 2nd level: audible glamer, forget, levitate, magic mouth, pyrotechnics; 3rd level: fly, phantasmal force, slow, suggestion, water breathing; 4th level: fire charm, fumble, hallucinatory terrain, polymorph other, polymorph self; 5th level: distance distortion, Mordenkainen's faithful hound, telekinesis, transmute rock to mud, wall of force; 6th level: control weather, legend lore, project image; 7th level: limited wish, simulacrum; 8th level: Otto's irresistible dance. Druid spells - 1st level: animal friendship, entangle, faerie fire, pass without trace, speak with animals; 2nd level: charm person or mammal, create water, obscurement, trip, warp wood; 3rd level: plant growth, pyrotechnics, stone shape, water breathing; 4th level: summon animal (I), call woodland beings, control temperature within 10-foot radius, speak with plants; 5th level: animal growth, control winds, transmute rock to mud; 6th level: transport via plants, weather summoning; 7th level: animate rock.\\n\\nThe accompanying chart shows the dragon ages by color: red 12% magic resistance, magic-user level 2, druid level 3; red-orange 24%, 4, 4; orange 35%, 6, 5; yellow 48%, 8, 6; green 60%, 10, 8; blue-green 72%, 12, 10; blue 84%, 14, 12; purple 96%, 16, 14. The age table runs: level 1, 1-2 hp, very young; level 2, 3-4 hp, young; level 3, 5-6 hp, sub-adult; level 4, 7-8 hp, young adult; level 5, 9-10 hp, adult; level 6, 11-12 hp, old; level 7, 13-14 hp, very old; level 8, 15-16 hp, ancient.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/mist_dragon.lua",
+   "content": "-- Mist Dragon: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Mist Dragon\",\n  page = \"58\",\n  pages = \"58\",\n  source = \"MM2\",\n  race = \"Mist Dragon\",\n  hitDice = \"9 - 11\",\n  hitDiceNum = 9,\n  hitDiceBonus = 0,\n  avgHp = 31,\n  armorClass = -2,\n  numAttacks = 4,\n  damage = \"1-4/1-4/2-24/2-8\",\n  xp = 3450,\n  xpPerHp = 5,\n  xpValue = 3605,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1 or 2\",\n  lairPct = 35,\n  treasure = \"X, Y, Z\",\n  move = \"6\\\"/33\\\"\",\n  size = \"L (51' long)\",\n  intelligence = \"exceptional\",\n  alignment = \"neutral\",\n  specialAttacks = \"Breath weapon, magic use\",\n  specialDefenses = \"Magic use\",\n  magicResistance = \"Standard or 30%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Mist dragons are solitary creatures, and it is only 10% likely that a mated pair will be encountered. These creatures are found only near waterfalls, seacoasts, or in areas where rainfall is heavy, i.e., rain forests. A mated pair will always be adults or older (1d4+4 for age category determination). The lair is always some great natural cave, cavern, or similar place. At least 50% of the time encounters with mist dragons will not be recognized as such unless the creature(s) so desires. Mist dragons can assume a cohesive gaseous form and appear as mist, which is their favored state. If annoyed or threatened, they will, of course, assume solid form and attack. In their mist form they are armor class -2 and have 30% magic resistance. In solid form, they are armor class 1 and have standard magic resistance. Only spells can be cast in gaseous (mist) form. Other attacks require a substantial body.\\n\\nThe normal attack routine of a mist dragon consists of a double clawing, a bite, and a lash with its jagged-scaled tail. The latter attack form is effective only if opponents are at the rear. Three times per day a mist dragon can breathe out a cloud of misty vapors. This is a cloud of 3\\\" width, 9\\\" length, and 3\\\" depth. All air-breathing creatures within the cloud are blinded for 1-4 rounds and must save vs. breath weapon or suffer 3-12 points of drowning damage each round they remain within the cloud. Creatures who succeed in saving vs. the cloud of wet mist are coughing and choking but sustain only 1-4 points of drowning damage per round. The mist persists for 5-8 rounds, depending on wind conditions.\\n\\nA mist dragon is not affected by such a cloud. Mist dragons are able to employ the following spells, each gained at the appropriate age category: 1=precipitation (9-11 segments), 2=create water, 3=water breathing, 4=zephyr, 5=predict weather, 6=cloudburst, 7=gust of wind, 8=airy water. (See \\\"Cloud Dragon\\\" for precipitation and cloudburst; see below for zephyr.) Performance is at a level equal to the dragon's hit dice. Each is usable twice per day. Mist dragons speak their own dialect of draconian but can converse with virtually all other sorts of dragons as well. Most know a smattering of Common.\\n\\nMist dragons resemble gold dragons in body form. They are semitransparent even in material form and have a grayish-white to blue-white color.\\n\\nZephyr: By means of zephyr a gentle draft of air moves from the spell caster and travels in the direction he or she is facing. It continues until the area of effect is equalled. The force of the spell is sufficient to cause small flames to waver and dance. It fans flames and fires of larger size, making them hotter (+1 on damage dice, if applicable). It will hold back moving clouds of vapors, such as a cloud kill, for 1 round. It will weaken such vapors as fog cloud and wall of fog so as to reduce their duration by one-half. It will move stagnant air, vapors, or even poisonous gas backwards by 1\\\", and this force also reduces their duration and potency by one-half, unless the vapors or gas are renewed at some source. Duration: 1 segment; range: 0; area of effect: 1\\\" path, 1/2\\\" per level in length; casting time: 2 segments.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/shadow_dragon.lua",
+   "content": "-- Shadow Dragon: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Shadow Dragon\",\n  page = \"58\",\n  pages = \"58-59\",\n  source = \"MM2\",\n  race = \"Shadow Dragon\",\n  hitDice = \"4-6 (each +1)\",\n  hitDiceNum = 4,\n  hitDiceBonus = 1,\n  avgHp = 15,\n  armorClass = -2,\n  numAttacks = 3,\n  damage = \"2-5/2-5/3-12\",\n  xp = 245,\n  xpPerHp = 5,\n  xpValue = 320,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1 (75%) 2 (25%)\",\n  lairPct = 40,\n  treasure = \"See below\",\n  move = \"18\\\"/24\\\" (MC: E)\",\n  size = \"L (20'-30' long)\",\n  intelligence = \"very to genius\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The shadow dragon is nocturnal, subterranean, or found on planes of dimness such as Shadowland. The species is also independent and solitary. Only occasionally will a mated pair be encountered. The female lays a clutch of 5-8 eggs in a dark place, and the first one to hatch quickly devours the others. Shadow dragons cannot abide either very hot climes or arctic conditions, but they thrive in cooler temperate regions.\\n\\nShadow dragons prefer to walk rather than fly, for they are poor flyers and tire in a few turns. The size of a shadow dragon determines its hit dice. Twenty-five percent are small (all female), 50% are average, and 25% are large (all male). Age determines pips per hit die, as with all dragons, but a shadow dragon always has +1 per die, so a very young dragon (hatchling) has 2 pips per die and an ancient specimen 9 pips per die.\\n\\nThe visual capabilities of a shadow dragon are inferior in bright light. They see normally (at least 100% of human daylight standard) in starlight. They have ultravisual capability and very superior infravision (180 feet). All shadow dragons speak the tongue of all evil dragons and from 1-4 additional languages (intelligence 11-12 = 1 language, 13-14 = 2, etc.). Those of 17-18 intelligence are able to use illusionist spells of 3rd-4th levels, 2 spells per level, attained from adult age. Thus an adult shadow dragon with 17 or 18 intelligence will have 2 illusionist spells of 1st level; an ancient one of 18 intelligence will have 2 each of 1st-4th levels. Normal clawing and biting attack typically follows a breath attack. The breath weapon of a shadow dragon is a cloud of darkness 40-feet long, 30-feet wide, and 20-feet high. This tangible stuff blinds those within its confines, even those with infravision capabilities, and lowers their life energy so as to leave them only 25% of their usual vitality (level or hit dice; 50% if a saving throw is successful) for as many turns as the dragon has age categories. Spells will be lost permanently from such exposure until relearned or regained normally. Exposure does not affect a shadow dragon at all, of course.\\n\\nAll shadow dragons have the ability to hide in shadows as a 10th level thief. Due to their nature and substance, they can be harmed only by magic weapons. They are immune to life level loss of all types. Shadow dragons cannot be subdued and sold.\\n\\nThe hoard of a shadow dragon is typically of 10-80 gems of opaque substance and dark hue, black being preferred. It prizes items connected with shadows and darkness and will try to destroy magic which deals with fire and/or light. Likewise, the spells used will not be those of light or fire.\\n\\nShadow dragons appear as wormlike dragons of lighter and darker shadows. The bat-like wings are semitransparent, as is most of the body. If someone is trying to spot a shadow dragon, the eyes, pools of feral gray opalescence, are the easiest to detect. Then, however, it is usually too late.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/giant_dragonfly.lua",
+   "content": "-- Dragonfly, Giant: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Dragonfly, Giant\",\n  page = \"59\",\n  pages = \"59\",\n  source = \"MM2\",\n  race = \"Giant Dragonfly\",\n  hitDice = \"7 (8+1-8)\",\n  hitDiceNum = 7,\n  hitDiceBonus = 0,\n  avgHp = 24,\n  armorClass = 3,\n  numAttacks = 1,\n  damage = \"3-12 (4-16)\",\n  xp = 525,\n  xpPerHp = 8,\n  xpValue = 717,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1-6\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"1\\\"/36\\\" (hover) (MC:B)\",\n  size = \"M\",\n  intelligence = \"low\",\n  alignment = \"neutral\",\n  specialAttacks = \"+2 on initiative\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Save as 16th-level magic-user\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Unlike their small cousins, giant dragonflies are dangerous predators known to hunt humans. Because of their fearless nature and voracious appetites, these huge insects hunt not only all other sorts of similar creatures but prey on any warm-blooded creature as well. Giant dragonflies are found from subtropical to temperate regions. Even larger specimens exist in tropical areas, and statistics for such monsters are shown in parentheses. Because of their great speed, hovering, and darting ability, giant dragonflies gain +2 on initiative checks. If they have initiative they cannot be effectively combatted with hand-held weapons, and missile attacks are made at a penalty of -4. Without initiative, giant dragonflies can be hit normally with hand-held weapons, but missile discharge is still at a -2 penalty.\\n\\nGiant dragonflies are unremarkable save for their brilliant, glittering coloration and valuable skin. Properly preserved by magic, their skin brings up to 600 gp per square foot. It is used for apparel and decoration. Only about 6 square feet can be taken from a normal specimen.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/dragon_horse.lua",
+   "content": "-- Dragon Horse: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Dragon Horse\",\n  page = \"59\",\n  pages = \"59\",\n  source = \"MM2\",\n  race = \"Dragon Horse\",\n  hitDice = \"8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 28,\n  armorClass = 0,\n  numAttacks = 2,\n  damage = \"1-8/1-8\",\n  xp = 1275,\n  xpPerHp = 10,\n  xpValue = 1555,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1 or 2-3 (15%)\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"24\\\"/48\\\" (MC:B)\",\n  size = \"L (6' tall at shoulder)\",\n  intelligence = \"average to exceptional\",\n  alignment = \"neutral (good)\",\n  specialAttacks = \"Breath (spells)\",\n  specialDefenses = \"See below\",\n  magicResistance = \"25%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The skydwelling dragon horse is a relative of the ki-rin. These creatures roam the expanses of the air (above the Prime Material Plane or the Elemental Plane of Air) and are seldom (5%) encountered elsewhere. It is also unlikely that more than 1 will be encountered, but if 2 or 3 are found they will be a stallion, mare, and foal (50%-75%-grown; use 1d6 with 45% +5% per pip). Free-roaming dragon horses have no interest in material possessions or treasure. Attack is by 2 hoof blows. If the creature attacks while flying or by rearing, damage is +2 per hit (3-10/3-10). In addition to hoof attacks, a dragon-horse is able to use his breath as a weapon or in defense. Once per turn a dragon horse can, at will, breathe a fog cloud, gust of wind, or a cone of cold of limited size and effect (1\\\" diameter base, 2\\\" length, for 4d8 damage). Other breath weapon usage is at 8th level of performance. The exceptionally keen senses of dragon horses, including infra- and ultravision capability, are triple normal. Thus, these creatures are never surprised. Their visual capabilities include aura detection, so they can sense the alignment of creatures they encounter. This power, as well as a rudimentary empathy, make it exceedingly unlikely that one will ever be misled or enslaved by evil natured creatures.\\n\\nDragon horses can travel the Astral and Ethereal Planes, although they are not known to do so except on rare occasions and when crossing the latter plane to sojourn for a time upon the Elemental Plane of Air. They speak a rudimentary form of the languages of ki-rin, much communication being accomplished via mutual empathic reception. The dragon horse is a much-desired steed and destrier, but few succeed in using it as such, for the creature must be a willing companion and associate and no dragon horse enjoys being land bound for any period of time. A foal, raised lovingly and carefully and taken often into the vault of the sky, might become a trusted companion and steed, providing that no land bound requirements were placed upon it. As the maturation process takes 20 years, such cases of foal raising are nearly unknown. The presence of Evil makes these creatures desire to go elsewhere.\\n\\nA dragon horse appears to be ki-rin without any horn. Their coats are pale azure to silvery blue, with flowing manes and tails of pure white to silver. Hooves are deep sky blue to indigo.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/dragonnel.lua",
+   "content": "-- Dragonnel: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Dragonnel\",\n  page = \"60\",\n  pages = \"60\",\n  source = \"MM2\",\n  race = \"Dragonnel\",\n  hitDice = \"8+4\",\n  hitDiceNum = 8,\n  hitDiceBonus = 4,\n  avgHp = 32,\n  armorClass = 3,\n  numAttacks = 3,\n  damage = \"1-6/1-6/4-16\",\n  xp = 600,\n  xpPerHp = 12,\n  xpValue = 984,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 10,\n  treasure = \"Nil\",\n  move = \"12\\\"/18\\\" (MC:C unmounted; D mounted)\",\n  size = \"L (24'+ long)\",\n  intelligence = \"semi-intelligent\",\n  alignment = \"neutral (evil)\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These creatures seem to be related distantly to both the dragons and airdragons (pteranodons), although they are a distinct species. Although as large as a small dragon, a dragonnel has no breath weapon. Dragonnels attack by vicious strikes with their taloned forefeet, followed by a snapping bite from their toothy beaks. These creatures have a dim intelligence and have been known to have performed evil deeds at times.\\n\\nAt one time, dragonnels inhabited the World of Greyhawk from the Kron Hills and Glorioles to the Drachensgrab Mountains, but the species is now virtually extinct everywhere save the Pomarj. In that area, the monsters have been caught, tamed, and are now used as steeds by evil humans dwelling amongst the humanoid hordes infesting the place. Luckily, there are too few of these creatures to pose a serious threat to the surrounding states, although rumor has it that several score of dragonnel-mounted raiders have been sighted along the Wild Coast.\\n\\nThe grayish underbelly of a dragonnel fades into a dusty red-violet along the sides and tail. Back spines are maroon, the beak gray, and the head frills white.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/drelb.lua",
+   "content": "-- Drelb: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Drelb\",\n  page = \"60\",\n  pages = \"60\",\n  source = \"MM2\",\n  race = \"Drelb\",\n  hitDice = \"5+3\",\n  hitDiceNum = 5,\n  hitDiceBonus = 3,\n  avgHp = 20,\n  armorClass = 2,\n  numAttacks = 1,\n  damage = \"3-12\",\n  xp = 800,\n  xpPerHp = 6,\n  xpValue = 920,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 100,\n  treasure = \"See below\",\n  move = \"6\\\"\",\n  size = \"M\",\n  intelligence = \"average to very\",\n  alignment = \"neutral (evil)\",\n  specialAttacks = \"Chill (see below)\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"See below\",\n  attackDefenseModes = \"See below\",\n  text = \"Drelb inhabit the Negative Material Plane, but evil-minded persons will sometimes call them to the Prime Material Plane to serve as guardians of hidden wealth or secret places, so whenever they are encountered on this plane they are guarding something. Unfortunately a drelb looks so much like a wraith that one is indistinguishable from the other until an attack takes place. The effect of the nether chill of a drelb is to make its victim fall shivering to the ground for the following round (no saving throw), immediately dropping anything it holds and unable to perform any actions until after the chill passes. When confronted by a cleric attempting to turn it, or if prey is hesitant, the cunning monster uses a trick of illusion. It causes its form to rapidly diminish in size while gliding smoothly forward. This is 90% likely to give the viewer(s) the impression that the drelb is retreating, while it is actually moving up to attack. Although drelb resemble undead, they are not and cannot be turned. Magic weapons are needed to harm drelb; silver has no effect, unless it is magicked silver, which causes double damage. Drelb also have the facility of imitation and/or reflection of psionic power. Any power used within 30 feet of the creature or any psionic attack directed at it is imitated or reflected back upon the attacker. Drelb can speak only their own strange language, although they can understand simple phrases in the common tongue. Magic which draws a drelb to the Prime Material Plane is likely to function only from sunset to sunrise; so, much like undead, drelb appear only in twilight or darkness.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/drider.lua",
+   "content": "-- Drider: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Drider\",\n  page = \"60\",\n  pages = \"60\",\n  source = \"MM2\",\n  race = \"Drider\",\n  hitDice = \"6+6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 6,\n  avgHp = 27,\n  armorClass = 3,\n  numAttacks = 1,\n  damage = \"By weapon type or 1-4\",\n  xp = 875,\n  xpPerHp = 8,\n  xpValue = 1091,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 0,\n  treasure = \"Individuals N (x2), Q\",\n  move = \"12\\\"\",\n  size = \"L\",\n  intelligence = \"high\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"Spells, paralyzation\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"15%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The drider is a special creation of Lolth's magic. When drow of promising ability reach 6th level or slightly higher, Lolth will summon them and put them through a specially-devised test. The drow that fail become driders.\\n\\nA drider appears to be a cross between a giant spider and a drow. The torso, head, and arms of a pale, bloated drow sprout 8 spider legs. Due to the bloated form, it is impossible to distinguish the sex of a drider, but 60% of those encountered will be female.\\n\\nA drider retains whatever drow abilities it possessed before the transformation; therefore, all driders have magical or clerical ability, the type depending on whether they are male or female. Female driders have clerical abilities equal to a 6th or 7th level cleric; male driders have the magic ability of a 6th, 7th, or 8th level magic-user. In addition, a drider has the natural spell ability of a drow and is thus able to cast the following spells once per day: dancing lights, darkness, detect magic, faerie fire, know alignment, and levitate. Female driders can also cast clairvoyance, detect lie, dispel magic, and suggestion spells once per day.\\n\\nIn combat, all driders fight as 7 hit dice monsters, typically using swords or axes, though many carry bows strapped to their backs. A drider may also attack with its bite (for 1-4 points of damage). Those bitten must save vs. poison at -2 or be paralyzed by the drider's spittle for 1-2 turns.\\n\\nDriders are outcasts from drow communities and thus bear them no great love. They are seldom found in numbers, preferring to work alone. Driders will be accompanied by 2-12 huge spiders 10% of the time. Generally living underground, they will often stalk their victims until the right opportunity for a kill presents itself. Their diet consists mainly of the blood of their victims, as they have acquired a spider's tastes.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/duergar.lua",
+   "content": "-- Duergar: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Duergar\",\n  page = \"61\",\n  pages = \"61\",\n  source = \"MM2\",\n  race = \"Duergar\",\n  hitDice = \"1+2\",\n  hitDiceNum = 1,\n  hitDiceBonus = 2,\n  avgHp = 5,\n  armorClass = 4,\n  numAttacks = \"1 (or more)\",\n  damage = \"By weapon type\",\n  xpSource = \"by_level\",\n  frequency = \"very rare\",\n  noAppearing = \"2-8 or 201-300\",\n  lairPct = 5,\n  treasure = \"Individuals M, Q; Lair B (magic only), F\",\n  move = \"6\\\"\",\n  size = \"S (4' tall)\",\n  intelligence = \"average to genius\",\n  alignment = \"lawful evil (neutral)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Save at +4\",\n  magicResistance = \"Standard\",\n  psionic = \"71-90 (2/level)\",\n  attackDefenseModes = \"B, C, D / F, G, H\",\n  text = \"The duergar are the seldom-encountered race of evil dwarves. They are also known as the gray dwarves or gray ones. Malicious in the extreme, duergar dwell in subterranean depths where their evil need not withstand the light. Normally but a handful of these wicked creatures will be discovered, but occasionally a lair will be discovered with hundreds of duergar there.\\n\\nFor every 4 normal duergar encountered there will be 1 with double hit dice, i.e., 1 in 4 is 2nd level. If 9 are encountered outside their lair, an additional duergar of triple or quadruple hit dice (3rd or 4th level) will be leading the group. First-level duergar carry pick, hammer, spear-chain, and shield and are encountered 75% of the time; 2nd level carry pick, light crossbow-chain and shield and are encountered 25% of the time. Additional weapons and armor are as follows: 1/16 3rd level: hammer, short sword-plate and shield; 1/16 4th level: hammer, short sword-plate and shield; 4-6 5th level: hammer, short sword-plate and shield; 2-3 6th level: hammer, short sword-plate and shield; 1 7th-9th level: hammer*, short sword*-plate* and shield*; 4-6 3rd-6th/3rd-6th level cleric/assassins: any usable*/any usable*; 1 7th-9th/7th-9th level cleric/assassins: any usable*/any usable*. (*5% chance/level for magical item; where split level, add one-half of lower to higher to find approximate actual level, rounding upwards.)\\n\\nThere will also be noncombatant young duergar equal to 10% of the total number of the normal fighters, i.e., 21-30 young. The duergar lair will always be subterranean, extensive, and consist of many passages, rooms, chambers, and secret areas. There may (25%) be some monster kept as a guardian in the lair complex. There is a 75% probability that there will be 10-40 slaves there. Roll 1d20 to find the type of slaves kept: 1-8 = mountain dwarves or orcs; 9-12 = dwarves or goblins; 13-16 = gnomes or xvarts; 17-18 = halflings (stout) or kobolds; 19 = swirfneblins or norkers; 20 = adventurers or others. Adventurer types will be typical, and \\\"others\\\" will be drow, grimlocks, etc.\\n\\nDuergar have been know to dwell with derro (q.v.) and similar evil creatures, but such communities are rare. Duergar surprise on 3 in 6. They are surprised only 1 in 10. As with normal sorts of dwarfkind, duergar save vs. magical attacks (death magic, polymorph, rod et al, and spell) at +4. They are immune to paralysis and poison. Spells of the illusion/phantasm category do not affect duergar.\\n\\nAll duergar have the following psionic disciplines: expansion, invisibility, molecular attraction, and reduction. Performance level is equal to hit dice of experience.\\n\\nDuergar have infravision of 12\\\" range. They speak the silent speech of subterranean creatures, their own tongue, and Dwarf. Some speak other tongues as well.\\n\\nDuergar appear as emaciated, evil-visaged dwarves. Their skin is medium to dark gray. They favor garb of drab color, typically that which blends into their environment. They live longer than do normal dwarves, some reaching 500 or more years of age.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/dustdigger.lua",
+   "content": "-- Dustdigger: promoted by the R803 MM2 letter D part 5 round from the MM2 print\n-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Dustdigger\",\n  page = \"61\",\n  pages = \"61\",\n  source = \"MM2\",\n  race = \"Dustdigger\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 14,\n  armorClass = 4,\n  numAttacks = 1,\n  damage = \"1-8 + AC of victim\",\n  xp = 165,\n  xpPerHp = 4,\n  xpValue = 221,\n  xpSource = \"mm2_print\",\n  frequency = \"uncommon\",\n  noAppearing = \"1-20\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"3\\\"\",\n  size = \"L\",\n  intelligence = \"semi\",\n  alignment = \"neutral\",\n  specialAttacks = \"Illusion/mirage (see below)\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The dustdiggers inhabit arid areas that have loosely packed, sandy soil, such as desert dunes. A dustdigger will typically dig a hole, cover itself with a layer of sand, and then inflate itself to fill up the hole it made, leaving the ground above level with the surrounding terrain. When an animal walks on top of the dustdigger, the dustdigger deflates, creating an area very much like a sinkhole. The dustdigger uses the sands shifting towards its mouth to slow the escape of its prey. After it has fully deflated, it folds its arms up around the victim and attempts to kill it before swallowing. The dustdigger's back is armor class 4 but its front side is only armor class 7. Once the dustdigger has folded up, its prey is caught and cannot attack. Thus, the best defense strategy is to recognize a dustdigger before it folds.\\n\\nDustdiggers look like giant starfish with 5 arms around a central maw. They travel above ground only at night and never for longer than a few minutes at a time. They often travel in groups.\\n\\nTwenty percent of dustdiggers have a born talent for illusion. They will typically project a pool of bubbling water in the desert sands when approaching victims come within striking range.\",\n}\n"
+  }
+ ]
+}

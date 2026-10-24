@@ -20949,6 +20949,116 @@ when both halves land.
   call (the rest of the letter D
   box - the D-flip round nears; the
   arc runs on - 29 open boxes).
+- R802 LANDED 2026-10-24: commit
+  ef7d7cc1622f9f845de34f77b2a725e2a5c74542
+  (census 724 -> 725, pushed
+  227b408..ef7d7cc), THE MM2 LETTER D
+  PART 4 - THE DIAKK AND DINOSAUR
+  WALK (Curtiss's Go call on the landed
+  devil section; round six of the MM2
+  arc, the fourth PART-LETTER walk).
+  THE PIN-TIME WALK: TWENTY entries on
+  pp. 49-55 - the diakk at the foot of
+  p. 49 running onto p. 50, the
+  DINOSAUR family head on p. 50
+  (doctrine only, no stat block), and
+  the 19 dinosaur form stat blocks
+  (Ankisaurus, Camptosaurus,
+  Compsognathus, Dacentrurus,
+  Deinonychus, Dilophosaurus,
+  Dimetrodon, Euparkeria,
+  Kentrosaurus, Mamenchisaurus,
+  Massopondylus, Nothosaurus,
+  Ornitholestes, Phororhacos,
+  Podokesaurus, the giant pterosaur,
+  Struthiomimus, Tanystropheus and
+  Tennodontosaurus). TWENTY .lua defs
+  ride the R791 data_files extension,
+  registry 583 -> 603. Header
+  rules/mm2dn.h, prefix mm2dn, 97
+  consts + 26 bools + the 20x10
+  DinoStats grid (armor class, hit
+  dice, bonus, avgHp, attacks, xp,
+  xp/hp, lair, move, magic
+  resistance) = 133 inline. NO GAP
+  FLIPS: the Letter D box flips only
+  when all the D parts land (8
+  closed, 29 open). ONE REGTEST
+  PATCH: the R802 live def walk at
+  the R227 anchor (the R782
+  site-block pattern, no census
+  marker), its registry census a
+  FLOOR 583 -> at least 603. SETTLED
+  READS (capture primary, the
+  1eonline transcription and the
+  archive.org djvu the cross-check
+  voices): the nothosaurus xp/hp 18
+  (the transcription 12 its own
+  annotation; the capture and djvu
+  agree, the xp ladder consistent);
+  the struthiomimus tail 2-8 (the
+  transcription 1-8 its own error);
+  the Nighthags word (the capture
+  Nightbags the misread); the
+  podokesaurus prints NO prose - its
+  paragraph genuinely prints under
+  the struthiomimus block (the print
+  quirk: the empty text pinned, the
+  struthiomimus carries both
+  paragraphs, and the walk checks
+  both); the ranged hit-dice cells
+  read the LOW end (camptosaurus 1-3
+  and dimetrodon 3-to-5, the kuei
+  precedent); the diakk or-forms
+  read the broad max 8+8 (armor
+  class 0, attacks max 2, avgHp 36);
+  the camptosaurus printed 0
+  attacks clamp to 1 in the loader
+  (the grid carries the loader
+  value, the nupperibo-Standard
+  pattern); the dispater mention in
+  the devil prose is no stat block
+  (MM1 owns that def - the devil
+  section was already complete).
+  LOADER SEMANTICS: the nothosaurus
+  1-(and-2) sums to 3, the
+  tennodontosaurus 1-(and-1) sums to
+  2. LOCAL VERIFICATION (the
+  authoring environment rebuilt from
+  the GitHub tarball at 227b408 -
+  the environment had reset and the
+  R801 builder was gone, so R802 was
+  authored fresh against the landed
+  spec_r801.json as the structural
+  reference): builder static gates
+  GREEN (section coverage, the
+  speclib model audit mirror, line
+  widths, string parity, ascii, the
+  xp/avgHp formulas, prefix and key
+  freedom); engine double-run 25/0
+  -> 0/25; rverify GREEN - restore,
+  double-run, healthy base bad 0,
+  BATTERY 323 mutants, 0 missed; the
+  /tmp tree restored pristine after
+  (rverify leaves it patched - the
+  three tracked files re-fetched from
+  raw.githubusercontent at 227b408).
+  Landing run GREEN first pass:
+  loaded 603, errors 0; xp audit
+  603/0; R797 through R802 live defs
+  all bad 0; AUDIT CENSUS 725 each
+  exactly once, all bad 0; build 0
+  warnings. Commit 24 files, 3981
+  insertions. Delivery spec-r802:
+  raw JSON canvas, 80570 bytes md5
+  8cc8daeddee18cc3116b9209dab130ae.
+  NEXT - R803: awaits Curtiss's call
+  (the rest of the letter D box - the
+  dracolisk, dragon, dragonnel,
+  drelb, drider, duergar and
+  dustdigger turns; the D-flip round
+  nears; the arc runs on - 29 open
+  boxes).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

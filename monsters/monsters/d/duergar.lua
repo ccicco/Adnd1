@@ -1,0 +1,32 @@
+-- Duergar: promoted by the R803 MM2 letter D part 5 round from the MM2 print
+-- (spec tools/spec_r803.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Duergar",
+  page = "61",
+  pages = "61",
+  source = "MM2",
+  race = "Duergar",
+  hitDice = "1+2",
+  hitDiceNum = 1,
+  hitDiceBonus = 2,
+  avgHp = 5,
+  armorClass = 4,
+  numAttacks = "1 (or more)",
+  damage = "By weapon type",
+  xpSource = "by_level",
+  frequency = "very rare",
+  noAppearing = "2-8 or 201-300",
+  lairPct = 5,
+  treasure = "Individuals M, Q; Lair B (magic only), F",
+  move = "6\"",
+  size = "S (4' tall)",
+  intelligence = "average to genius",
+  alignment = "lawful evil (neutral)",
+  specialAttacks = "See below",
+  specialDefenses = "Save at +4",
+  magicResistance = "Standard",
+  psionic = "71-90 (2/level)",
+  attackDefenseModes = "B, C, D / F, G, H",
+  text = "The duergar are the seldom-encountered race of evil dwarves. They are also known as the gray dwarves or gray ones. Malicious in the extreme, duergar dwell in subterranean depths where their evil need not withstand the light. Normally but a handful of these wicked creatures will be discovered, but occasionally a lair will be discovered with hundreds of duergar there.\n\nFor every 4 normal duergar encountered there will be 1 with double hit dice, i.e., 1 in 4 is 2nd level. If 9 are encountered outside their lair, an additional duergar of triple or quadruple hit dice (3rd or 4th level) will be leading the group. First-level duergar carry pick, hammer, spear-chain, and shield and are encountered 75% of the time; 2nd level carry pick, light crossbow-chain and shield and are encountered 25% of the time. Additional weapons and armor are as follows: 1/16 3rd level: hammer, short sword-plate and shield; 1/16 4th level: hammer, short sword-plate and shield; 4-6 5th level: hammer, short sword-plate and shield; 2-3 6th level: hammer, short sword-plate and shield; 1 7th-9th level: hammer*, short sword*-plate* and shield*; 4-6 3rd-6th/3rd-6th level cleric/assassins: any usable*/any usable*; 1 7th-9th/7th-9th level cleric/assassins: any usable*/any usable*. (*5% chance/level for magical item; where split level, add one-half of lower to higher to find approximate actual level, rounding upwards.)\n\nThere will also be noncombatant young duergar equal to 10% of the total number of the normal fighters, i.e., 21-30 young. The duergar lair will always be subterranean, extensive, and consist of many passages, rooms, chambers, and secret areas. There may (25%) be some monster kept as a guardian in the lair complex. There is a 75% probability that there will be 10-40 slaves there. Roll 1d20 to find the type of slaves kept: 1-8 = mountain dwarves or orcs; 9-12 = dwarves or goblins; 13-16 = gnomes or xvarts; 17-18 = halflings (stout) or kobolds; 19 = swirfneblins or norkers; 20 = adventurers or others. Adventurer types will be typical, and \"others\" will be drow, grimlocks, etc.\n\nDuergar have been know to dwell with derro (q.v.) and similar evil creatures, but such communities are rare. Duergar surprise on 3 in 6. They are surprised only 1 in 10. As with normal sorts of dwarfkind, duergar save vs. magical attacks (death magic, polymorph, rod et al, and spell) at +4. They are immune to paralysis and poison. Spells of the illusion/phantasm category do not affect duergar.\n\nAll duergar have the following psionic disciplines: expansion, invisibility, molecular attraction, and reduction. Performance level is equal to hit dice of experience.\n\nDuergar have infravision of 12\" range. They speak the silent speech of subterranean creatures, their own tongue, and Dwarf. Some speak other tongues as well.\n\nDuergar appear as emaciated, evil-visaged dwarves. Their skin is medium to dark gray. They favor garb of drab color, typically that which blends into their environment. They live longer than do normal dwarves, some reaching 500 or more years of age.",
+}
