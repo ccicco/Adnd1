@@ -1,0 +1,36 @@
+-- Owl: promoted by the R809 MM2 letter O walk round
+-- from the MM2 print
+-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Owl",
+  page = "97",
+  pages = "97-98",
+  source = "MM2",
+  race = "Owl",
+  hitDice = "1",
+  hitDiceNum = "1",
+  hitDiceBonus = "0",
+  avgHp = "3",
+  armorClass = "5",
+  numAttacks = 3,
+  damage = "1-2/1-2/1",
+  xp = "30",
+  xpPerHp = "1",
+  xpValue = "33",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1 or 2",
+  lairPct = "10",
+  treasure = "Nil",
+  move = "1\"/27\" (MC: D)",
+  size = "S (4'-5' wingspread)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Various types of owls are found in every clime. While some are smaller than those covered by this data, most encounters will be with the large specimens. Attack is by talon and beak. When plummeting from a 50-foot or greater height, attack is at +2 to hit, and damage inflicted is twice normal, but no beak attack is possible. Owls have double normal ultravision, have quadruple normal hearing, and they fly in total silence. They are likely to surprise prey 5 in 6, and are never surprised during hours of dusk or darkness. In light of twilight to daylight brightness, owls see at just under human standard. Thus, despite their hearing, they are surprised 3 in 6 if discovered in their hidden daylight roosting place. While they cannot be trained to hunt, they can be somewhat domesticated if taken young enough and inured to human presence. Because daylight birds (such as crows, ravens, etc. which are normally prey to night-hunting owls) flock to attack an owl discovered in daylight, the owls are sometimes used as decoys by hunters. The anger and determination of attacking birds causes them to lose caution in their desire to kill the decoy owl.",
+}

@@ -1,0 +1,36 @@
+-- Ogre, Aquatic (Merrow): promoted by the R809 MM2 letter O walk round
+-- from the MM2 print
+-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Ogre, Aquatic (Merrow)",
+  page = "96",
+  pages = "96",
+  source = "MM2",
+  race = "Ogre, Aquatic (Merrow)",
+  hitDice = "4+4",
+  hitDiceNum = "4",
+  hitDiceBonus = "4",
+  avgHp = "18",
+  armorClass = "4",
+  numAttacks = "3 or 1",
+  damage = "1-6/1-6/2-8 or by weapon",
+  xp = "130",
+  xpPerHp = "5",
+  xpValue = "220",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "2-24",
+  lairPct = "20",
+  treasure = "A",
+  move = "6\"//12\"",
+  size = "L (9' tall)",
+  intelligence = "Low to average",
+  alignment = "Chaotic evil",
+  specialAttacks = "See below",
+  specialDefenses = "Camouflage",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "This aquatic ogre is generally faster, tougher, and fiercer than its land-based kin. Aquatic ogres typically attack with a piercing spear (2-12 points) in a swimming charge at 1 to hit, followed by melee with talons and teeth. Aquatic ogres use their green coloration to hide (becoming effectively invisible 10-80% of the time, depending on terrain) and attack from cover, surprising 4 in 6.\\n\\nAquatic ogres dwell in relatively shallow waters of 50-250 foot depth. They lair in caves, often in association with scrags. They can survive out of water for up to 2 hours, so they sometimes raid the land. Of 7-12 ogres, 1 will have 31-36 hit points; of 13-18, 2 will have 31-36 hit points; and of 19-24 ogres, 3 will have 31-36 hit points.\\n\\nIn the lair of a group of merrow there will be: 1 chief, AC 3, 6+6 hit dice, +2 on damage; 2 sub-chiefs, AC 3, 5+5 hit dice, +1 on damage; 2-24 females, AC 5, 3+3 hit dice, 1-2/1-2/1-6 damage; 1-12 young, AC 6, 2+2 hit dice, 1-2/1-2/1-4 damage; 1 shaman, normal male or female.\\n\\nAquatic ogres are able to speak Ogre as well as their own dialect.\\n\\nAquatic ogres are greenish and scaled with sloping shoulders. Their necks are long and very thick. They have huge mouths and undershot jaws. Hands and feet are webbed.",
+}

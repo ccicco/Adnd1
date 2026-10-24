@@ -1,0 +1,36 @@
+-- Otter: promoted by the R809 MM2 letter O walk round
+-- from the MM2 print
+-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Otter",
+  page = "97",
+  pages = "97",
+  source = "MM2",
+  race = "Otter",
+  hitDice = "1-1 (1+1)",
+  hitDiceNum = "1",
+  hitDiceBonus = "-1",
+  avgHp = "2",
+  armorClass = "5",
+  numAttacks = 1,
+  damage = "1-2 (1-3)",
+  xp = "5",
+  xpPerHp = "1",
+  xpValue = "7",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-4",
+  lairPct = "20",
+  treasure = "Nil",
+  move = "12\"//18\"",
+  size = "S",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Otters are aquatic relatives of the weasel, et al. They are found in rivers, ponds, and lakes. The sea otter is the largest sort of ordinary otter and is found along shallow, coastal waters; differences are in parentheses above. These creatures are fast and playful. They will attack only if cornered. Their pelts have value as fur.",
+}

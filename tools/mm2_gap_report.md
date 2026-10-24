@@ -126,7 +126,7 @@ the R614 precedent.
   under N; the archive.org heading walk found 2
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter O** (pp. 30-30) - the A-Z entries
+- [x] **Letter O** (pp. 30-30) - the A-Z entries
   under O; the archive.org heading walk found 4
   candidate entry headings - the pin-time walk from
   the print is authoritative

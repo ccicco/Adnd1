@@ -21581,6 +21581,51 @@ when both halves land.
   f38976deee1aa0, 71968 bytes). NEXT - R808: awaits Curtiss's call (the
   natural next walk is the Letter L box or the next arc slice - the pin-time
   walk decides; 21 open boxes remain).
+- R808 LANDED 2026-10-24: commit 118095af0d0d232f235e8963b95b4450886c9cce
+  (census 730 -> 731, pushed 9365374..118095a), THE
+  MM2 LETTERS LMN WALK - the land lamprey, luck
+  eater, lycanthrope, magman, mandragora, giant
+  mantis, mantrap, margoyle, marid, shadow mastiff,
+  mihstu, miner, minimal, modron, russet mold,
+  mongrelman, moon dog, muckdweller, mud-man,
+  myconid, nereid and narwhale turns - the
+  LMN-FLIP round (Curtiss multiple-letters Go call
+  on the landed JK walk; round thirteen of the MM2
+  arc, the THIRD three-letter pass). THE PIN-TIME
+  WALK: thirty-eight entries on pp. 80-95, the land
+  lamprey and the luck eater p. 80, the
+  lycanthropes pp. 80-82, the magman through the
+  mihstu pp. 82-85, the miner and the minimal pp.
+  85-86, the modrons pp. 86-91, the russet mold
+  pp. 91-92, the mongrelman through the myconid
+  pp. 92-95, the nereid and the narwhale p. 95.
+  Thirty-eight .lua defs ride the R791 data_files
+  extension, registry 661 -> 699. Header
+  rules/mm2lmn.h, prefix mm2lmn, 348 consts + 82
+  bools + three grids (the 38x10 LmStats stat
+  grid, the 29x3 MinimalStats grid, the 9x2
+  TelepathyMiles grid) = 445 inline. THE
+  LMN-FLIP: the Letter L, Letter M and Letter N
+  gap boxes all flip to closed - 19 closed 18
+  open. The settled reads: the moon dog cleric
+  level VII/2000+12, the mud man II/28, the
+  minimal move cell 1/2 factor, the minimal lion
+  hit dice 13 the 1+3 misprint kept verbatim, the
+  russet mold NO treasure line, the octon size L,
+  every negative armor class an unquoted number,
+  the modron xp cells recomputed against print.
+  One regtest patch: the R808 live def walk at
+  the R227 anchor, its registry census a FLOOR 661
+  -> at least 699. Preflight GREEN: engine
+  double-run applied 46/already 0 then 0/46;
+  rverify GREEN vs 9365374 - 915 mutants, 0
+  missed; offline loader sim GREEN. Commit 43
+  files. Delivery spec-r808: raw JSON canvas,
+  authored md5 64628f86635c9390546186eac811d611,
+  231096 bytes, landed the same. NEXT - R809:
+  awaits Curtiss call (the natural next walk the
+  Letter O box or the next arc slice; 18 open
+  boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

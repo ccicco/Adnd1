@@ -1,0 +1,36 @@
+-- Oliphant: promoted by the R809 MM2 letter O walk round
+-- from the MM2 print
+-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Oliphant",
+  page = "96",
+  pages = "96",
+  source = "MM2",
+  race = "Oliphant",
+  hitDice = "8+4 (10+5)",
+  hitDiceNum = "8",
+  hitDiceBonus = "4",
+  avgHp = "32",
+  armorClass = "4",
+  numAttacks = 4,
+  damage = "3-12/3-12/3-12/3-12",
+  xp = "600",
+  xpPerHp = "12",
+  xpValue = "984",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-8",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "15\"",
+  size = "L (8' tall, some much larger)",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The oliphant is probably a modern-day relative of the Pleistocene mastodon. Its hairy hide enables it to survive in cooler temperate or subarctic climates. The solitary oliphant avoids inhabited areas. Oliphants can be captured and trained if young enough.\\n\\nAn oliphant attacks with its down-curving tusks and heavy forelegs. Its trunk is too short to be used as an effective weapon. An oliphant can fight 4 man-sized opponents simultaneously, 2 ogre-sized enemies, or 1 of giant-size. The intelligence of oliphants is such that when properly trained they become engines of destruction, especially the large males. When fed and cared for, these creatures can grow 10 feet or greater in size (10+5 hit dice) and bulk, which is far larger than their wild counterparts. Such creatures are used in war and for other military duties when armored with leather or scale and plate reinforcements, spikes projecting from head and forelegs, and bearing castle-like houdas containing archers and pikemen. Elephants are armed in warm climes, but those less-intelligent creatures lack the ferocity of trained oliphants.\\n\\nOliphants do not fear fire unless it directly threatens them. They are aggressive and tend to try to eliminate threats rather than flee from them. Oliphant tusks range in value from 100-400 gp value each, the ivory being worth about 4 gp per pound.\\n\\nIf 3 or more oliphants are encountered, there is a 25% chance for a calf and 75% for a half-grown animal (check for each oliphant above the original 2). The young are equally divided in sex between male and female. All single oliphants will be male. Only 1 mature male will be in a group of 2 or more.",
+}

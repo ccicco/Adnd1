@@ -1,0 +1,1388 @@
+{
+ "round": 809,
+ "prefix": "mm2o",
+ "header_file": "rules/mm2o.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 731,
+ "title": "the MM2 letter O walk - the obliviax, ogre aquatic (merrow), oliphant, ophidian, opinicus, otter and owl turns",
+ "audit_label": "R809 MM2 letter O walk audit",
+ "audit_comment": "THE MM2 LETTER O WALK - the obliviax, the ogre aquatic (merrow) and the oliphant on p. 96, the ophidian, the opinicus, the otter and the owl on p. 97 (the owl prose runs onto p. 98); the O-FLIP round: the Letter O gap box flips to closed (20 closed, 17 open). SEVEN .lua defs ride the R791 data_files extension, registry 699 -> 706. The OStats 7x10 grid cross-checks every armor class, hit dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell; the per-def doctrine pins carry the settled reads (the merrow scrags settle, the opinicus weal settle, the flat-hp and 1-1 hit-dice reads, the brute and trained variants, the loader max/sum/floor attack semantics).",
+ "include_comment": "the MM2 letter O walk - the obliviax, ogre aquatic (merrow), oliphant, ophidian, opinicus, otter and owl turns",
+ "include_after": "#include \"rules/mm2lmn.h\"  // R808: the MM2 letters LMN walk - the land lamprey, luck eater, lycanthrope, magman, mandragora, giant mantis, mantrap, margoyle, marid, shadow mastiff, mihstu, miner, minimal, modron, russet mold, mongrelman, moon dog, muckdweller, mud-man, myconid, nereid and narwhale turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R808 LANDED 2026-10-24: commit",
+ "banner": {
+  "title": "THE MM2 LETTER O WALK - THE OBLIVIAX, OGRE AQUATIC (MERROW), OLIPHANT, OPHIDIAN, OPINICUS, OTTER AND OWL TURNS (the obliviax, the ogre aquatic and the oliphant p. 96, the ophidian, the opinicus, the otter and the owl p. 97, the owl prose onto p. 98), promoted to the live registry; the O-FLIP round, the Letter O gap box flips to closed",
+  "provenance": "Round fourteen of the MM2 arc, the THIRD single-letter pass (Curtiss Go call on the landed letters LMN walk; the letter O pin-time walk found SEVEN entries, all with stat blocks - no doctrine-only family heads; the MM1 registry already owns the octopus, the ogre, the ogre magi, the oni, the ornitholestes, the otyugh and the owlbear prints, so no prior-owned index entries ride this round)",
+  "sentinel": "The pin headers stay the print-fidelity record; the seven .lua defs ride the R791 data_files extension in the MM1 registry schema (the defensive coercers load the verbatim print cells, the OStats grid carries the loader values)"
+ },
+ "tables": [
+  {
+   "name": "the obliviax to owl stat grid",
+   "tag": "OStats",
+   "count": "mm2oOStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE O-GRID: the 7-row OStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the seven letter O stat blocks, in print order - the obliviax through the owl)",
+   "cols": [
+    "mm2oOStatAc",
+    "mm2oOStatHd",
+    "mm2oOStatHdBonus",
+    "mm2oOStatAvgHp",
+    "mm2oOStatAttacks",
+    "mm2oOStatXp",
+    "mm2oOStatXpHp",
+    "mm2oOStatLairPct",
+    "mm2oOStatMove",
+    "mm2oOStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the opinicus -2 rides an unquoted number - the R806 hollyphant -4 precedent; the ophidian \"5 or better\" reads 5)",
+    "The hit dice num cells (the obliviax flat-hp 1-2 read: hitDiceNum 0, the bat precedent)",
+    "The hit dice bonus cells (the otter 1-1 reads bonus -1, the bakemono precedent; the oliphant base 8+4, the trained 10+5 the parenthetical variant)",
+    "The avgHp cells (the flat-hp obliviax 1; the floor(3.5 x hd + bonus) formula: merrow 18, oliphant 32, ophidian 10, opinicus 31, otter 2, owl 3)",
+    "The attack cells (the loader semantics: the merrow \"3 or 1\" max read 3, the ophidian \"1 and 1\" sum 2, the obliviax \"Nil\" floor at 1)",
+    "The xp base cells (the parenthetical variants - the merrow brute IV/250 + 6/hp and the oliphant trained block - ride as consts, not grid cells)",
+    "The xp per hit point cells (the obliviax + 1/hp flat-hp read)",
+    "The in-lair percentage cells (the ophidian \"See below\" reads 0; the obliviax 100%; the owl 10% daylight-only roost)",
+    "The move cells (the ground move reads: the obliviax Nil 0, the merrow 6, the ophidian 9, the opinicus 21, the otter 12, the owl 1)",
+    "The magic resistance cells (every \"Standard\" reads 0; the opinicus 35%)"
+   ],
+   "data": [
+    [
+     10,
+     0,
+     0,
+     1,
+     1,
+     30,
+     1,
+     100,
+     0,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     18,
+     3,
+     130,
+     5,
+     20,
+     6,
+     0
+    ],
+    [
+     4,
+     8,
+     4,
+     32,
+     4,
+     600,
+     12,
+     0,
+     15,
+     0
+    ],
+    [
+     5,
+     3,
+     0,
+     10,
+     2,
+     125,
+     4,
+     0,
+     9,
+     0
+    ],
+    [
+     -2,
+     7,
+     7,
+     31,
+     4,
+     2300,
+     12,
+     10,
+     21,
+     35
+    ],
+    [
+     5,
+     1,
+     -1,
+     2,
+     1,
+     5,
+     1,
+     20,
+     12,
+     0
+    ],
+    [
+     5,
+     1,
+     0,
+     3,
+     3,
+     30,
+     1,
+     10,
+     1,
+     0
+    ]
+   ]
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter O walk round pins (the R809 census)": [
+   {
+    "kind": "const",
+    "name": "mm2oRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oLetterOHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oPriorOwnedEntries"
+   }
+  ],
+  "the obliviax pins (the R809 MM2 letter O walk)": [
+   {
+    "kind": "const",
+    "name": "mm2oObliviaxXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oObliviaxXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oObliviaxStealRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oObliviaxStealWindowHours"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oObliviaxSickTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oObliviaxSickTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oObliviaxEatRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oObliviaxMosslingCastsStolenSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oObliviaxSaveGainsMemories"
+   }
+  ],
+  "the ogre aquatic pins (the R809 MM2 letter O walk)": [
+   {
+    "kind": "const",
+    "name": "mm2oMerrowXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowBruteXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowBruteXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowBruteXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowSurpriseOn6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowChargeToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowSpearDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowDepthMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowDepthMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowHoursOutOfWater"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowChiefAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowChiefHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowChiefBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowChiefDamageBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowSubChiefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowSubChiefAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowSubChiefHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowSubChiefBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowSubChiefDamageBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowFemaleAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowFemaleHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowFemaleBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowYoungAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowYoungHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowYoungBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oMerrowShamanCount"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oMerrowCamouflageInvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oMerrowSpeaksOgre"
+   }
+  ],
+  "the oliphant pins (the R809 MM2 letter O walk)": [
+   {
+    "kind": "const",
+    "name": "mm2oOliphantXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOliphantXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOliphantTrainedHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOliphantTrainedBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOliphantTuskValueMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOliphantTuskValueMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOliphantIvoryGpPerPound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOliphantCalfChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOliphantHalfGrownChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOliphantMatureMalesInGroup"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOliphantNoFireFear"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOliphantSingleAlwaysMale"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOliphantTrainedEnginesOfDestruction"
+   }
+  ],
+  "the ophidian pins (the R809 MM2 letter O walk)": [
+   {
+    "kind": "const",
+    "name": "mm2oOphidianXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOphidianXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOphidianAfflictionDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOphidianAfflictionDaysMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOphidianAfflictionDurationMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOphidianAfflictionDurationMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOphidianBiteDamageMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOphidianPoisonSaveOrAffliction"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOphidianCureDiseasePrevents"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOphidianKillsNonhumanoids"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOphidianServesSpiritNagas"
+   }
+  ],
+  "the opinicus pins (the R809 MM2 letter O walk)": [
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusClericLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusHolyWordPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusDimensionDoorPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusHealPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusGazeDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusGazeDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusGazeIntervalRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusHabitatSurpriseOn6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusElsewhereSurpriseOn6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusMinorDisciplinesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusMinorDisciplinesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusMajorDisciplinesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusMajorDisciplinesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusMoveGround"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusMoveFly"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusPsionicMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOpinicusPsionicMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOpinicusNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOpinicusTurnsUndead"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOpinicusGazeSaveHalves"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOpinicusGazeAffectsLowerPlanes"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOpinicusAstralEtherealTravel"
+   }
+  ],
+  "the otter pins (the R809 MM2 letter O walk)": [
+   {
+    "kind": "const",
+    "name": "mm2oOtterXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOtterXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOtterSeaHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOtterSeaBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOtterDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOtterSeaDamageMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOtterAttacksOnlyIfCornered"
+   }
+  ],
+  "the owl pins (the R809 MM2 letter O walk)": [
+   {
+    "kind": "const",
+    "name": "mm2oOwlXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOwlXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOwlPlummetBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOwlPlummetMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOwlPreySurpriseOn6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOwlDaylightRoostSurpriseOn6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOwlWingspreadMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2oOwlWingspreadMaxFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOwlPlummetDoubleDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOwlDoubleUltravision"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOwlQuadrupleHearing"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOwlSilentFlight"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOwlNeverSurprisedInDark"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2oOwlLairDaylightOnly"
+   }
+  ],
+  "the OStats grid pins (the R809 MM2 letter O walk)": [
+   {
+    "kind": "table",
+    "name": "the obliviax to owl stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the Letter O gap box flips (the census walk)",
+   "expr": "m['mm2oRegistryAfter']() - m['mm2oRegistryBefore']() != m['mm2oDefCount']() or m['mm2oDefCount']() != 7 or m['mm2oEntryCount']() != 7 or m['mm2oStatBlockHeadings']() != 7 or m['mm2oDoctrineHeads']() != 0 or m['mm2oLetterOHeadings']() != 7 or m['mm2oOStatRows']() != 7 or m['mm2oGapClosed']() != 20 or m['mm2oGapOpen']() != 17 or m['mm2oPriorOwnedEntries']() != 0"
+  },
+  {
+   "note": "the obliviax grid row (pp. 96-97 print order)",
+   "expr": "m['mm2oOStatAc'](0) != 10 or m['mm2oOStatHd'](0) != 0 or m['mm2oOStatHdBonus'](0) != 0 or m['mm2oOStatAvgHp'](0) != 1 or m['mm2oOStatAttacks'](0) != 1 or m['mm2oOStatXp'](0) != 30 or m['mm2oOStatXpHp'](0) != 1 or m['mm2oOStatLairPct'](0) != 100 or m['mm2oOStatMove'](0) != 0 or m['mm2oOStatMr'](0) != 0 or m['mm2oObliviaxXpValue']() != 31 or m['mm2oObliviaxXpLevel']() != 2"
+  },
+  {
+   "note": "the merrow grid row (pp. 96-97 print order)",
+   "expr": "m['mm2oOStatAc'](1) != 4 or m['mm2oOStatHd'](1) != 4 or m['mm2oOStatHdBonus'](1) != 4 or m['mm2oOStatAvgHp'](1) != 18 or m['mm2oOStatAttacks'](1) != 3 or m['mm2oOStatXp'](1) != 130 or m['mm2oOStatXpHp'](1) != 5 or m['mm2oOStatLairPct'](1) != 20 or m['mm2oOStatMove'](1) != 6 or m['mm2oOStatMr'](1) != 0 or m['mm2oMerrowXpValue']() != 220 or m['mm2oMerrowXpLevel']() != 2"
+  },
+  {
+   "note": "the oliphant grid row (pp. 96-97 print order)",
+   "expr": "m['mm2oOStatAc'](2) != 4 or m['mm2oOStatHd'](2) != 8 or m['mm2oOStatHdBonus'](2) != 4 or m['mm2oOStatAvgHp'](2) != 32 or m['mm2oOStatAttacks'](2) != 4 or m['mm2oOStatXp'](2) != 600 or m['mm2oOStatXpHp'](2) != 12 or m['mm2oOStatLairPct'](2) != 0 or m['mm2oOStatMove'](2) != 15 or m['mm2oOStatMr'](2) != 0 or m['mm2oOliphantXpValue']() != 984 or m['mm2oOliphantXpLevel']() != 4"
+  },
+  {
+   "note": "the ophidian grid row (pp. 96-97 print order)",
+   "expr": "m['mm2oOStatAc'](3) != 5 or m['mm2oOStatHd'](3) != 3 or m['mm2oOStatHdBonus'](3) != 0 or m['mm2oOStatAvgHp'](3) != 10 or m['mm2oOStatAttacks'](3) != 2 or m['mm2oOStatXp'](3) != 125 or m['mm2oOStatXpHp'](3) != 4 or m['mm2oOStatLairPct'](3) != 0 or m['mm2oOStatMove'](3) != 9 or m['mm2oOStatMr'](3) != 0 or m['mm2oOphidianXpValue']() != 165 or m['mm2oOphidianXpLevel']() != 3"
+  },
+  {
+   "note": "the opinicus grid row (pp. 96-97 print order)",
+   "expr": "m['mm2oOStatAc'](4) != -2 or m['mm2oOStatHd'](4) != 7 or m['mm2oOStatHdBonus'](4) != 7 or m['mm2oOStatAvgHp'](4) != 31 or m['mm2oOStatAttacks'](4) != 4 or m['mm2oOStatXp'](4) != 2300 or m['mm2oOStatXpHp'](4) != 12 or m['mm2oOStatLairPct'](4) != 10 or m['mm2oOStatMove'](4) != 21 or m['mm2oOStatMr'](4) != 35 or m['mm2oOpinicusXpValue']() != 2672 or m['mm2oOpinicusXpLevel']() != 7"
+  },
+  {
+   "note": "the otter grid row (pp. 96-97 print order)",
+   "expr": "m['mm2oOStatAc'](5) != 5 or m['mm2oOStatHd'](5) != 1 or m['mm2oOStatHdBonus'](5) != -1 or m['mm2oOStatAvgHp'](5) != 2 or m['mm2oOStatAttacks'](5) != 1 or m['mm2oOStatXp'](5) != 5 or m['mm2oOStatXpHp'](5) != 1 or m['mm2oOStatLairPct'](5) != 20 or m['mm2oOStatMove'](5) != 12 or m['mm2oOStatMr'](5) != 0 or m['mm2oOtterXpValue']() != 7 or m['mm2oOtterXpLevel']() != 1"
+  },
+  {
+   "note": "the owl grid row (pp. 96-97 print order)",
+   "expr": "m['mm2oOStatAc'](6) != 5 or m['mm2oOStatHd'](6) != 1 or m['mm2oOStatHdBonus'](6) != 0 or m['mm2oOStatAvgHp'](6) != 3 or m['mm2oOStatAttacks'](6) != 3 or m['mm2oOStatXp'](6) != 30 or m['mm2oOStatXpHp'](6) != 1 or m['mm2oOStatLairPct'](6) != 10 or m['mm2oOStatMove'](6) != 1 or m['mm2oOStatMr'](6) != 0 or m['mm2oOwlXpValue']() != 33 or m['mm2oOwlXpLevel']() != 2"
+  },
+  {
+   "note": "the xpValue formula (the base plus the per-hp times avgHp, every def)",
+   "expr": "m['mm2oObliviaxXpValue']() != m['mm2oOStatXp'](0) + m['mm2oOStatAvgHp'](0) * m['mm2oOStatXpHp'](0) or m['mm2oMerrowXpValue']() != m['mm2oOStatXp'](1) + m['mm2oOStatAvgHp'](1) * m['mm2oOStatXpHp'](1) or m['mm2oOliphantXpValue']() != m['mm2oOStatXp'](2) + m['mm2oOStatAvgHp'](2) * m['mm2oOStatXpHp'](2) or m['mm2oOphidianXpValue']() != m['mm2oOStatXp'](3) + m['mm2oOStatAvgHp'](3) * m['mm2oOStatXpHp'](3) or m['mm2oOpinicusXpValue']() != m['mm2oOStatXp'](4) + m['mm2oOStatAvgHp'](4) * m['mm2oOStatXpHp'](4) or m['mm2oOtterXpValue']() != m['mm2oOStatXp'](5) + m['mm2oOStatAvgHp'](5) * m['mm2oOStatXpHp'](5) or m['mm2oOwlXpValue']() != m['mm2oOStatXp'](6) + m['mm2oOStatAvgHp'](6) * m['mm2oOStatXpHp'](6)"
+  },
+  {
+   "note": "the avgHp formula (the floor of 3.5 x hit dice plus bonus, the flat-hp obliviax excluded - the doubling form so the expr compiles as C++)",
+   "expr": "m['mm2oOStatAvgHp'](1) * 2 + m['mm2oOStatHd'](1) % 2 != m['mm2oOStatHd'](1) * 7 + m['mm2oOStatHdBonus'](1) * 2 or m['mm2oOStatAvgHp'](2) * 2 + m['mm2oOStatHd'](2) % 2 != m['mm2oOStatHd'](2) * 7 + m['mm2oOStatHdBonus'](2) * 2 or m['mm2oOStatAvgHp'](3) * 2 + m['mm2oOStatHd'](3) % 2 != m['mm2oOStatHd'](3) * 7 + m['mm2oOStatHdBonus'](3) * 2 or m['mm2oOStatAvgHp'](4) * 2 + m['mm2oOStatHd'](4) % 2 != m['mm2oOStatHd'](4) * 7 + m['mm2oOStatHdBonus'](4) * 2 or m['mm2oOStatAvgHp'](5) * 2 + m['mm2oOStatHd'](5) % 2 != m['mm2oOStatHd'](5) * 7 + m['mm2oOStatHdBonus'](5) * 2 or m['mm2oOStatAvgHp'](6) * 2 + m['mm2oOStatHd'](6) % 2 != m['mm2oOStatHd'](6) * 7 + m['mm2oOStatHdBonus'](6) * 2"
+  },
+  {
+   "note": "the loader attack semantics (the \"3 or 1\" max read, the \"1 and 1\" sum, the \"Nil\" floor)",
+   "expr": "m['mm2oOStatAttacks'](1) != 3 or m['mm2oOStatAttacks'](3) != 2 or m['mm2oOStatAttacks'](0) != 1 or m['mm2oOStatAttacks'](4) != 4"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter O box",
+   "from": "- [ ] **Letter O**",
+   "to": "- [x] **Letter O**"
+  }
+ ],
+ "gap_census": {
+  "closed": 20,
+  "open": 17
+ },
+ "caller_files": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter O def walk (the R808 LMN walk pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R809: the MM2 letter O live def walk ----\n    // The 7 promoted letter O defs\n    // cross-checked live against the mm2o pins:\n    // every stat cell of the 7-row OStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula, the per-def prose markers, and the\n    // registry census floor 699 -> at least 706.\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kO[7] = {\n            \"obliviax\", \"merrow\", \"oliphant\",\n            \"ophidian\", \"opinicus\", \"otter\", \"owl\",\n        };\n        static const char* kOMark[7] = {\n            \"tiny moss imitation of the creature\",\n            \"in association with scrags\",\n            \"castle-like houdas\",\n            \"lycanthrope-like affliction\",\n            \"sun sparkles\",\n            \"largest sort of ordinary otter\",\n            \"used as decoys by hunters\",\n        };\n        for (int i = 0; i < 7; ++i) {\n            const auto* d = reg.find(kO[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\")\n                ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2oOStatAc(i))\n                ++bad;\n            if (d->hitDiceNum != mm2oOStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2oOStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2oOStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2oOStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2oOStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2oOStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2oOStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2oOStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2oOStatMr(i))\n                ++bad;\n            if (d->text.find(kOMark[i])\n                == std::string::npos)\n                ++bad;\n        }\n        if ((int)reg.all().size()\n            < mm2oRegistryAfter())\n            ++bad;\n        printf(\"R809 MM2 letter O live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/o/obliviax.lua",
+   "content": "-- Obliviax (Memory Moss): promoted by the R809 MM2 letter O walk round\n-- from the MM2 print\n-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Obliviax (Memory Moss)\",\n  page = \"96\",\n  pages = \"96\",\n  source = \"MM2\",\n  race = \"Obliviax (Memory Moss)\",\n  hitDice = \"1-2 hp\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"1\",\n  armorClass = \"10\",\n  numAttacks = \"Nil\",\n  damage = \"Nil\",\n  xp = \"30\",\n  xpPerHp = \"1\",\n  xpValue = \"31\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-12\",\n  lairPct = \"100\",\n  treasure = \"Nil\",\n  move = \"Nil\",\n  size = \"S (1/2' square)\",\n  intelligence = \"Average\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"This evil black moss has the magical power to steal memories from others. When an intelligent creature is within 60 feet it must save vs. spells or the moss will steal all the creature's memories from the last 24 hours (including memorized spells). It can try to steal from 1 creature per round until it succeeds, and then it will not attack again for 24 hours.\\\\n\\\\nIf an obliviax with stolen memories is attacked, it will, in 1 round, form a part of itself into a tiny moss imitation of the creature whose memories it stole. This mossling remains attached to the parent moss and can defend itself only by casting any stolen spells.\\\\n\\\\nThe only way to regain stolen memories is to eat the living obliviax. This takes 1 round. If a save vs. poison is made, the eater will gain all the stolen memories including spells. If the save fails the eater will become very ill for 3-18 turns. It is possible to gain another's memories by eating this moss. Anyone who gains spells by eating the obliviax can cast them. The memory gained this way fades in 24 hours.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/o/merrow.lua",
+   "content": "-- Ogre, Aquatic (Merrow): promoted by the R809 MM2 letter O walk round\n-- from the MM2 print\n-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Ogre, Aquatic (Merrow)\",\n  page = \"96\",\n  pages = \"96\",\n  source = \"MM2\",\n  race = \"Ogre, Aquatic (Merrow)\",\n  hitDice = \"4+4\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"4\",\n  avgHp = \"18\",\n  armorClass = \"4\",\n  numAttacks = \"3 or 1\",\n  damage = \"1-6/1-6/2-8 or by weapon\",\n  xp = \"130\",\n  xpPerHp = \"5\",\n  xpValue = \"220\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"2-24\",\n  lairPct = \"20\",\n  treasure = \"A\",\n  move = \"6\\\"//12\\\"\",\n  size = \"L (9' tall)\",\n  intelligence = \"Low to average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Camouflage\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"This aquatic ogre is generally faster, tougher, and fiercer than its land-based kin. Aquatic ogres typically attack with a piercing spear (2-12 points) in a swimming charge at 1 to hit, followed by melee with talons and teeth. Aquatic ogres use their green coloration to hide (becoming effectively invisible 10-80% of the time, depending on terrain) and attack from cover, surprising 4 in 6.\\\\n\\\\nAquatic ogres dwell in relatively shallow waters of 50-250 foot depth. They lair in caves, often in association with scrags. They can survive out of water for up to 2 hours, so they sometimes raid the land. Of 7-12 ogres, 1 will have 31-36 hit points; of 13-18, 2 will have 31-36 hit points; and of 19-24 ogres, 3 will have 31-36 hit points.\\\\n\\\\nIn the lair of a group of merrow there will be: 1 chief, AC 3, 6+6 hit dice, +2 on damage; 2 sub-chiefs, AC 3, 5+5 hit dice, +1 on damage; 2-24 females, AC 5, 3+3 hit dice, 1-2/1-2/1-6 damage; 1-12 young, AC 6, 2+2 hit dice, 1-2/1-2/1-4 damage; 1 shaman, normal male or female.\\\\n\\\\nAquatic ogres are able to speak Ogre as well as their own dialect.\\\\n\\\\nAquatic ogres are greenish and scaled with sloping shoulders. Their necks are long and very thick. They have huge mouths and undershot jaws. Hands and feet are webbed.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/o/oliphant.lua",
+   "content": "-- Oliphant: promoted by the R809 MM2 letter O walk round\n-- from the MM2 print\n-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Oliphant\",\n  page = \"96\",\n  pages = \"96\",\n  source = \"MM2\",\n  race = \"Oliphant\",\n  hitDice = \"8+4 (10+5)\",\n  hitDiceNum = \"8\",\n  hitDiceBonus = \"4\",\n  avgHp = \"32\",\n  armorClass = \"4\",\n  numAttacks = 4,\n  damage = \"3-12/3-12/3-12/3-12\",\n  xp = \"600\",\n  xpPerHp = \"12\",\n  xpValue = \"984\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-8\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"L (8' tall, some much larger)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The oliphant is probably a modern-day relative of the Pleistocene mastodon. Its hairy hide enables it to survive in cooler temperate or subarctic climates. The solitary oliphant avoids inhabited areas. Oliphants can be captured and trained if young enough.\\\\n\\\\nAn oliphant attacks with its down-curving tusks and heavy forelegs. Its trunk is too short to be used as an effective weapon. An oliphant can fight 4 man-sized opponents simultaneously, 2 ogre-sized enemies, or 1 of giant-size. The intelligence of oliphants is such that when properly trained they become engines of destruction, especially the large males. When fed and cared for, these creatures can grow 10 feet or greater in size (10+5 hit dice) and bulk, which is far larger than their wild counterparts. Such creatures are used in war and for other military duties when armored with leather or scale and plate reinforcements, spikes projecting from head and forelegs, and bearing castle-like houdas containing archers and pikemen. Elephants are armed in warm climes, but those less-intelligent creatures lack the ferocity of trained oliphants.\\\\n\\\\nOliphants do not fear fire unless it directly threatens them. They are aggressive and tend to try to eliminate threats rather than flee from them. Oliphant tusks range in value from 100-400 gp value each, the ivory being worth about 4 gp per pound.\\\\n\\\\nIf 3 or more oliphants are encountered, there is a 25% chance for a calf and 75% for a half-grown animal (check for each oliphant above the original 2). The young are equally divided in sex between male and female. All single oliphants will be male. Only 1 mature male will be in a group of 2 or more.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/o/ophidian.lua",
+   "content": "-- Ophidian: promoted by the R809 MM2 letter O walk round\n-- from the MM2 print\n-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Ophidian\",\n  page = \"97\",\n  pages = \"97\",\n  source = \"MM2\",\n  race = \"Ophidian\",\n  hitDice = \"3-4\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"0\",\n  avgHp = \"10\",\n  armorClass = \"5 or better\",\n  numAttacks = \"1 and 1\",\n  damage = \"By weapon type and 1-3\",\n  xp = \"125\",\n  xpPerHp = \"4\",\n  xpValue = \"165\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"3-12\",\n  lairPct = \"See below\",\n  treasure = \"See below\",\n  move = \"9\\\"//18\\\"\",\n  size = \"M\",\n  intelligence = \"Low to very\",\n  alignment = \"Chaotic (evil)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Ophidians, or snakemen, are typically encountered in tropical jungles. Unlike nagas, ophidians have human-like arms and hands and can employ weapons, shields, and magic items of the sort fighters can use. Attack is first by weapon and then a fanged bite. The latter requires a saving throw vs. poison or the victim will suffer a lycanthrope-like affliction. The affliction begins in 2-5 days, lasts 8-16 days, and ends by turning the creature into an ophidian if it was human or humanoid or killing it otherwise. The process can be prevented by a cure disease spell.\\\\n\\\\nIt is unusual for ophidians to be in a self-determined group. They are usually servants of spirit nagas or similar creatures. Ophidians appear to be short-tailed, thick-bodied snakes. Arms protrude about 2 feet below the neck. These arms are human-like and end in 4-fingered hands. Color ranges from gray-black to black and dark-brownish green to pale blue-green.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/o/opinicus.lua",
+   "content": "-- Opinicus: promoted by the R809 MM2 letter O walk round\n-- from the MM2 print\n-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Opinicus\",\n  page = \"97\",\n  pages = \"97\",\n  source = \"MM2\",\n  race = \"Opinicus\",\n  hitDice = \"7+7\",\n  hitDiceNum = \"7\",\n  hitDiceBonus = \"7\",\n  avgHp = \"31\",\n  armorClass = -2,\n  numAttacks = 4,\n  damage = \"1-3/1-3/1-6/1-6\",\n  xp = \"2300\",\n  xpPerHp = \"12\",\n  xpValue = \"2672\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = \"10\",\n  treasure = \"A\",\n  move = \"21\\\"/30\\\" (MC: B)\",\n  size = \"M\",\n  intelligence = \"Very to exceptional\",\n  alignment = \"Chaotic good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"35%\",\n  psionic = \"205-250\",\n  attackDefenseModes = \"All/all\",\n  text = \"Opinicus are desert dwelling creatures of good will. Their usual habitat will be old ruins, such as a deserted city, palace, or temple. They will occasionally be encountered elsewhere, usually on some mission of weal. Although known for their beneficial acts and friendly dispositions, opinicus also love teasing and jokes. While these actions detract from their popularity, the assistance of opinicus is very rarely shunned by good creatures. Creatures of Evil most certainly dread opinicus.\\\\n\\\\nNormal attack mode is by means of 2 claw attacks (1-3/1-3) and rakes with rear claws. In addition, opinicus have the spell capacity of 7th-level clerics and can turn undead. Each is also able to pronounce a holy word once per day, dimension door twice per day, and heal 3 times per day. Opinicus have a glowing gaze, also called sun sparkles, of a 1/2\\\"x1\\\"x2\\\" cone-shape which affects undead and creatures of the Lower Outer Planes (Acheron, the Nine Hells, Gehenna, Hades, Tartarus, the Abyss, and Pandemonium). This gaze is usable but once every 10 rounds. It inflicts 2-16 points of damage upon the victims, and one-half damage if a saving throw vs. spells is successful.\\\\n\\\\nDue to their keen senses, opinicus are never surprised. They surprise 5 in 6 in their habitat and 3 in 6 elsewhere. Opinicus can travel both astrally and etherally. Opinicus have 3-5 minor psionic disciplines and 1-2 of a major variety. It is with these that they often play pranks.\\\\n\\\\nOpinicus appear to be a mixture of monkey, camel, lion, and eagle. They are not, of course, any such mixture, but creatures in their own right. Their coloration ranges from light buff to golden brown with wings slightly darker than bodies. The forepaws of opinicus are prehensile.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/o/otter.lua",
+   "content": "-- Otter: promoted by the R809 MM2 letter O walk round\n-- from the MM2 print\n-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Otter\",\n  page = \"97\",\n  pages = \"97\",\n  source = \"MM2\",\n  race = \"Otter\",\n  hitDice = \"1-1 (1+1)\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"-1\",\n  avgHp = \"2\",\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"1-2 (1-3)\",\n  xp = \"5\",\n  xpPerHp = \"1\",\n  xpValue = \"7\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-4\",\n  lairPct = \"20\",\n  treasure = \"Nil\",\n  move = \"12\\\"//18\\\"\",\n  size = \"S\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Otters are aquatic relatives of the weasel, et al. They are found in rivers, ponds, and lakes. The sea otter is the largest sort of ordinary otter and is found along shallow, coastal waters; differences are in parentheses above. These creatures are fast and playful. They will attack only if cornered. Their pelts have value as fur.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/o/owl.lua",
+   "content": "-- Owl: promoted by the R809 MM2 letter O walk round\n-- from the MM2 print\n-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Owl\",\n  page = \"97\",\n  pages = \"97-98\",\n  source = \"MM2\",\n  race = \"Owl\",\n  hitDice = \"1\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"0\",\n  avgHp = \"3\",\n  armorClass = \"5\",\n  numAttacks = 3,\n  damage = \"1-2/1-2/1\",\n  xp = \"30\",\n  xpPerHp = \"1\",\n  xpValue = \"33\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1 or 2\",\n  lairPct = \"10\",\n  treasure = \"Nil\",\n  move = \"1\\\"/27\\\" (MC: D)\",\n  size = \"S (4'-5' wingspread)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Various types of owls are found in every clime. While some are smaller than those covered by this data, most encounters will be with the large specimens. Attack is by talon and beak. When plummeting from a 50-foot or greater height, attack is at +2 to hit, and damage inflicted is twice normal, but no beak attack is possible. Owls have double normal ultravision, have quadruple normal hearing, and they fly in total silence. They are likely to surprise prey 5 in 6, and are never surprised during hours of dusk or darkness. In light of twilight to daylight brightness, owls see at just under human standard. Thus, despite their hearing, they are surprised 3 in 6 if discovered in their hidden daylight roosting place. While they cannot be trained to hunt, they can be somewhat domesticated if taken young enough and inured to human presence. Because daylight birds (such as crows, ravens, etc. which are normally prey to night-hunting owls) flock to attack an owl discovered in daylight, the owls are sometimes used as decoys by hunters. The anger and determination of attacking birds causes them to lose caution in their desire to kill the decoy owl.\",\n}\n"
+  }
+ ],
+ "consts": [
+  {
+   "name": "mm2oRound",
+   "value": 809,
+   "comment": "The MM2 letter O walk round: the obliviax to owl turns, the THIRD single-letter pass (Curtiss Go call on the landed letters LMN walk)"
+  },
+  {
+   "name": "mm2oRegistryBefore",
+   "value": 699,
+   "comment": "The registry census before the R809 promotion (the landed R808 count)"
+  },
+  {
+   "name": "mm2oRegistryAfter",
+   "value": 706,
+   "comment": "The registry census after the R809 promotion (7 defs)"
+  },
+  {
+   "name": "mm2oDefCount",
+   "value": 7,
+   "comment": "The def count of the R809 walk (the obliviax, merrow, oliphant, ophidian, opinicus, otter and owl)"
+  },
+  {
+   "name": "mm2oEntryCount",
+   "value": 7,
+   "comment": "The pin-time entry census (7 print entries, all with stat blocks, no family-head doctrine blocks in the letter O walk)"
+  },
+  {
+   "name": "mm2oStatBlockHeadings",
+   "value": 7,
+   "comment": "The stat-block heading census of the walk (every letter O entry pins a stat block)"
+  },
+  {
+   "name": "mm2oDoctrineHeads",
+   "value": 0,
+   "comment": "The doctrine-only family head census (no letter O family head - no GIANT-style doctrine block rides the walk)"
+  },
+  {
+   "name": "mm2oLetterOHeadings",
+   "value": 7,
+   "comment": "The letter O heading census (obliviax through owl)"
+  },
+  {
+   "name": "mm2oOStatRows",
+   "value": 7,
+   "comment": "The OStats grid row count (one row per def)"
+  },
+  {
+   "name": "mm2oGapClosed",
+   "value": 20,
+   "comment": "The MM2 gap report closed box count after the O-flip (the R808 census 19 + the Letter O box)"
+  },
+  {
+   "name": "mm2oGapOpen",
+   "value": 17,
+   "comment": "The MM2 gap report open box count after the O-flip (the R808 census 18 - the Letter O box)"
+  },
+  {
+   "name": "mm2oPriorOwnedEntries",
+   "value": 0,
+   "comment": "The prior-owned letter O index entries (none - the MM1 registry octopus, ogre, ogre magi, oni, ornitholestes, otyugh and owlbear prints are MM1 walks, not MM2 letter O pages)"
+  },
+  {
+   "name": "mm2oObliviaxXpValue",
+   "value": 31,
+   "comment": "The obliviax xpValue (II/30 + 1/hp, the flat-hp avgHp 1: 30 + 1x1)"
+  },
+  {
+   "name": "mm2oObliviaxXpLevel",
+   "value": 2,
+   "comment": "The obliviax experience level (the roman II)"
+  },
+  {
+   "name": "mm2oObliviaxStealRadiusFeet",
+   "value": 60,
+   "comment": "The memory-steal radius in feet (p. 96)"
+  },
+  {
+   "name": "mm2oObliviaxStealWindowHours",
+   "value": 24,
+   "comment": "The stolen-memory window in hours (the moss steals the last 24 hours of memories)"
+  },
+  {
+   "name": "mm2oObliviaxSickTurnsMin",
+   "value": 3,
+   "comment": "The failed-eater sickness minimum in turns (3-18 turns)"
+  },
+  {
+   "name": "mm2oObliviaxSickTurnsMax",
+   "value": 18,
+   "comment": "The failed-eater sickness maximum in turns"
+  },
+  {
+   "name": "mm2oObliviaxEatRounds",
+   "value": 1,
+   "comment": "The rounds to eat the living obliviax and regain the stolen memories"
+  },
+  {
+   "name": "mm2oMerrowXpValue",
+   "value": 220,
+   "comment": "The merrow xpValue (II/130 + 5/hp, the 4+4 block: 130 + 5x18)"
+  },
+  {
+   "name": "mm2oMerrowXpLevel",
+   "value": 2,
+   "comment": "The merrow experience level (the roman II)"
+  },
+  {
+   "name": "mm2oMerrowBruteXpLevel",
+   "value": 4,
+   "comment": "The 31-36 hp brute variant experience level (the parenthetical IV line, the alu-demon range precedent - the grid carries the base)"
+  },
+  {
+   "name": "mm2oMerrowBruteXpBase",
+   "value": 250,
+   "comment": "The 31-36 hp brute variant xp base (the parenthetical IV/250 + 6/hp line)"
+  },
+  {
+   "name": "mm2oMerrowBruteXpPerHp",
+   "value": 6,
+   "comment": "The 31-36 hp brute variant xp per hit point"
+  },
+  {
+   "name": "mm2oMerrowSurpriseOn6",
+   "value": 4,
+   "comment": "The merrow camouflage surprise (4 in 6, attacking from cover)"
+  },
+  {
+   "name": "mm2oMerrowChargeToHitBonus",
+   "value": 1,
+   "comment": "The swimming-charge spear to-hit bonus (a piercing spear 2-12 at +1 to hit)"
+  },
+  {
+   "name": "mm2oMerrowSpearDamageMax",
+   "value": 12,
+   "comment": "The swimming-charge spear damage maximum (2-12 points)"
+  },
+  {
+   "name": "mm2oMerrowDepthMinFeet",
+   "value": 50,
+   "comment": "The merrow water depth minimum (50-250 foot shallows)"
+  },
+  {
+   "name": "mm2oMerrowDepthMaxFeet",
+   "value": 250,
+   "comment": "The merrow water depth maximum"
+  },
+  {
+   "name": "mm2oMerrowHoursOutOfWater",
+   "value": 2,
+   "comment": "The hours a merrow survives out of water"
+  },
+  {
+   "name": "mm2oMerrowChiefAc",
+   "value": 3,
+   "comment": "The lair chief armor class (AC 3, 6+6 hit dice, +2 on damage)"
+  },
+  {
+   "name": "mm2oMerrowChiefHd",
+   "value": 6,
+   "comment": "The lair chief hit dice (6+6)"
+  },
+  {
+   "name": "mm2oMerrowChiefBonus",
+   "value": 6,
+   "comment": "The lair chief hit-dice bonus"
+  },
+  {
+   "name": "mm2oMerrowChiefDamageBonus",
+   "value": 2,
+   "comment": "The lair chief damage bonus"
+  },
+  {
+   "name": "mm2oMerrowSubChiefCount",
+   "value": 2,
+   "comment": "The lair sub-chief count (AC 3, 5+5 hit dice, +1 on damage)"
+  },
+  {
+   "name": "mm2oMerrowSubChiefAc",
+   "value": 3,
+   "comment": "The lair sub-chief armor class"
+  },
+  {
+   "name": "mm2oMerrowSubChiefHd",
+   "value": 5,
+   "comment": "The lair sub-chief hit dice (5+5)"
+  },
+  {
+   "name": "mm2oMerrowSubChiefBonus",
+   "value": 5,
+   "comment": "The lair sub-chief hit-dice bonus"
+  },
+  {
+   "name": "mm2oMerrowSubChiefDamageBonus",
+   "value": 1,
+   "comment": "The lair sub-chief damage bonus"
+  },
+  {
+   "name": "mm2oMerrowFemaleAc",
+   "value": 5,
+   "comment": "The female merrow armor class (AC 5, 3+3 hit dice, 1-2/1-2/1-6 damage)"
+  },
+  {
+   "name": "mm2oMerrowFemaleHd",
+   "value": 3,
+   "comment": "The female merrow hit dice (3+3)"
+  },
+  {
+   "name": "mm2oMerrowFemaleBonus",
+   "value": 3,
+   "comment": "The female merrow hit-dice bonus"
+  },
+  {
+   "name": "mm2oMerrowYoungAc",
+   "value": 6,
+   "comment": "The young merrow armor class (AC 6, 2+2 hit dice, 1-2/1-2/1-4 damage)"
+  },
+  {
+   "name": "mm2oMerrowYoungHd",
+   "value": 2,
+   "comment": "The young merrow hit dice (2+2)"
+  },
+  {
+   "name": "mm2oMerrowYoungBonus",
+   "value": 2,
+   "comment": "The young merrow hit-dice bonus"
+  },
+  {
+   "name": "mm2oMerrowShamanCount",
+   "value": 1,
+   "comment": "The lair shaman count (a normal male or female)"
+  },
+  {
+   "name": "mm2oOliphantXpValue",
+   "value": 984,
+   "comment": "The oliphant xpValue (IV/600 + 12/hp, the 8+4 block: 600 + 12x32)"
+  },
+  {
+   "name": "mm2oOliphantXpLevel",
+   "value": 4,
+   "comment": "The oliphant experience level (the roman IV)"
+  },
+  {
+   "name": "mm2oOliphantTrainedHd",
+   "value": 10,
+   "comment": "The trained large-male hit dice (the parenthetical 10+5 variant, kept verbatim in the def hitDice text)"
+  },
+  {
+   "name": "mm2oOliphantTrainedBonus",
+   "value": 5,
+   "comment": "The trained large-male hit-dice bonus"
+  },
+  {
+   "name": "mm2oOliphantTuskValueMin",
+   "value": 100,
+   "comment": "The oliphant tusk value minimum (100-400 gp each)"
+  },
+  {
+   "name": "mm2oOliphantTuskValueMax",
+   "value": 400,
+   "comment": "The oliphant tusk value maximum"
+  },
+  {
+   "name": "mm2oOliphantIvoryGpPerPound",
+   "value": 4,
+   "comment": "The ivory value per pound (about 4 gp)"
+  },
+  {
+   "name": "mm2oOliphantCalfChance",
+   "value": 25,
+   "comment": "The calf chance per extra oliphant (3 or more encountered: 25% calf)"
+  },
+  {
+   "name": "mm2oOliphantHalfGrownChance",
+   "value": 75,
+   "comment": "The half-grown chance per extra oliphant (75%)"
+  },
+  {
+   "name": "mm2oOliphantMatureMalesInGroup",
+   "value": 1,
+   "comment": "The mature male count in a group of 2 or more (all single oliphants are male)"
+  },
+  {
+   "name": "mm2oOphidianXpValue",
+   "value": 165,
+   "comment": "The ophidian xpValue (III/125 + 4/hp, the low-end 3 hit dice read: 125 + 4x10)"
+  },
+  {
+   "name": "mm2oOphidianXpLevel",
+   "value": 3,
+   "comment": "The ophidian experience level (the roman III)"
+  },
+  {
+   "name": "mm2oOphidianAfflictionDaysMin",
+   "value": 2,
+   "comment": "The ophidian bite affliction onset minimum (2-5 days)"
+  },
+  {
+   "name": "mm2oOphidianAfflictionDaysMax",
+   "value": 5,
+   "comment": "The ophidian bite affliction onset maximum"
+  },
+  {
+   "name": "mm2oOphidianAfflictionDurationMin",
+   "value": 8,
+   "comment": "The ophidian affliction duration minimum (8-16 days)"
+  },
+  {
+   "name": "mm2oOphidianAfflictionDurationMax",
+   "value": 16,
+   "comment": "The ophidian affliction duration maximum"
+  },
+  {
+   "name": "mm2oOphidianBiteDamageMax",
+   "value": 3,
+   "comment": "The ophidian fanged-bite damage maximum (by weapon type and 1-3)"
+  },
+  {
+   "name": "mm2oOpinicusXpValue",
+   "value": 2672,
+   "comment": "The opinicus xpValue (VII/2300 + 12/hp, the 7+7 block: 2300 + 12x31)"
+  },
+  {
+   "name": "mm2oOpinicusXpLevel",
+   "value": 7,
+   "comment": "The opinicus experience level (the roman VII)"
+  },
+  {
+   "name": "mm2oOpinicusClericLevel",
+   "value": 7,
+   "comment": "The opinicus spell capacity (7th-level clerics, turning undead)"
+  },
+  {
+   "name": "mm2oOpinicusHolyWordPerDay",
+   "value": 1,
+   "comment": "The holy word casts per day"
+  },
+  {
+   "name": "mm2oOpinicusDimensionDoorPerDay",
+   "value": 2,
+   "comment": "The dimension door casts per day"
+  },
+  {
+   "name": "mm2oOpinicusHealPerDay",
+   "value": 3,
+   "comment": "The heal casts per day"
+  },
+  {
+   "name": "mm2oOpinicusGazeDamageMin",
+   "value": 2,
+   "comment": "The sun-sparkles gaze damage minimum (2-16 points, the 1/2\"x1\"x2\" cone ASCII settle of the print half-glyph)"
+  },
+  {
+   "name": "mm2oOpinicusGazeDamageMax",
+   "value": 16,
+   "comment": "The sun-sparkles gaze damage maximum"
+  },
+  {
+   "name": "mm2oOpinicusGazeIntervalRounds",
+   "value": 10,
+   "comment": "The gaze usable interval (once every 10 rounds)"
+  },
+  {
+   "name": "mm2oOpinicusHabitatSurpriseOn6",
+   "value": 5,
+   "comment": "The opinicus surprise roll in its habitat (5 in 6; 3 in 6 elsewhere)"
+  },
+  {
+   "name": "mm2oOpinicusElsewhereSurpriseOn6",
+   "value": 3,
+   "comment": "The opinicus surprise roll elsewhere"
+  },
+  {
+   "name": "mm2oOpinicusMinorDisciplinesMin",
+   "value": 3,
+   "comment": "The minor psionic disciplines minimum (3-5)"
+  },
+  {
+   "name": "mm2oOpinicusMinorDisciplinesMax",
+   "value": 5,
+   "comment": "The minor psionic disciplines maximum"
+  },
+  {
+   "name": "mm2oOpinicusMajorDisciplinesMin",
+   "value": 1,
+   "comment": "The major psionic disciplines minimum (1-2)"
+  },
+  {
+   "name": "mm2oOpinicusMajorDisciplinesMax",
+   "value": 2,
+   "comment": "The major psionic disciplines maximum"
+  },
+  {
+   "name": "mm2oOpinicusMoveGround",
+   "value": 21,
+   "comment": "The opinicus ground move (21\"/30\", MC: B - the capture dropped the close quote after 30, the transcription confirms)"
+  },
+  {
+   "name": "mm2oOpinicusMoveFly",
+   "value": 30,
+   "comment": "The opinicus flying move"
+  },
+  {
+   "name": "mm2oOpinicusPsionicMin",
+   "value": 205,
+   "comment": "The opinicus psionic ability minimum (205-250)"
+  },
+  {
+   "name": "mm2oOpinicusPsionicMax",
+   "value": 250,
+   "comment": "The opinicus psionic ability maximum"
+  },
+  {
+   "name": "mm2oOtterXpValue",
+   "value": 7,
+   "comment": "The otter xpValue (I/5 + 1/hp, the 1-1 block: 5 + 1x2)"
+  },
+  {
+   "name": "mm2oOtterXpLevel",
+   "value": 1,
+   "comment": "The otter experience level (the roman I)"
+  },
+  {
+   "name": "mm2oOtterSeaHd",
+   "value": 1,
+   "comment": "The sea otter variant hit dice (the parenthetical 1+1, the print differences in parentheses above)"
+  },
+  {
+   "name": "mm2oOtterSeaBonus",
+   "value": 1,
+   "comment": "The sea otter variant hit-dice bonus"
+  },
+  {
+   "name": "mm2oOtterDamageMax",
+   "value": 2,
+   "comment": "The otter damage maximum (1-2; the sea otter parenthetical 1-3)"
+  },
+  {
+   "name": "mm2oOtterSeaDamageMax",
+   "value": 3,
+   "comment": "The sea otter damage maximum"
+  },
+  {
+   "name": "mm2oOwlXpValue",
+   "value": 33,
+   "comment": "The owl xpValue (II/30 + 1/hp: 30 + 1x3)"
+  },
+  {
+   "name": "mm2oOwlXpLevel",
+   "value": 2,
+   "comment": "The owl experience level (the roman II)"
+  },
+  {
+   "name": "mm2oOwlPlummetBonus",
+   "value": 2,
+   "comment": "The plummeting-attack to-hit bonus (from a 50-foot or greater height)"
+  },
+  {
+   "name": "mm2oOwlPlummetMinFeet",
+   "value": 50,
+   "comment": "The plummet minimum height in feet"
+  },
+  {
+   "name": "mm2oOwlPreySurpriseOn6",
+   "value": 5,
+   "comment": "The owl surprise roll on prey (5 in 6)"
+  },
+  {
+   "name": "mm2oOwlDaylightRoostSurpriseOn6",
+   "value": 3,
+   "comment": "The owl surprised roll in its daylight roost (3 in 6; never surprised in dusk or darkness)"
+  },
+  {
+   "name": "mm2oOwlWingspreadMinFeet",
+   "value": 4,
+   "comment": "The owl wingspread minimum (4-5 feet, the transcription-settled foot marks)"
+  },
+  {
+   "name": "mm2oOwlWingspreadMaxFeet",
+   "value": 5,
+   "comment": "The owl wingspread maximum"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2oObliviaxMosslingCastsStolenSpells",
+   "value": true,
+   "comment": "The mossling defends itself only by casting any stolen spells (p. 96)"
+  },
+  {
+   "name": "mm2oObliviaxSaveGainsMemories",
+   "value": true,
+   "comment": "A save vs. poison when eating the living obliviax gains all the stolen memories including spells"
+  },
+  {
+   "name": "mm2oMerrowCamouflageInvisible",
+   "value": true,
+   "comment": "The merrow green coloration hides it (effectively invisible 10-80% of the time, depending on terrain)"
+  },
+  {
+   "name": "mm2oMerrowSpeaksOgre",
+   "value": true,
+   "comment": "Aquatic ogres speak Ogre as well as their own dialect (p. 96)"
+  },
+  {
+   "name": "mm2oOliphantNoFireFear",
+   "value": true,
+   "comment": "Oliphants do not fear fire unless it directly threatens them"
+  },
+  {
+   "name": "mm2oOliphantSingleAlwaysMale",
+   "value": true,
+   "comment": "All single oliphants are male"
+  },
+  {
+   "name": "mm2oOliphantTrainedEnginesOfDestruction",
+   "value": true,
+   "comment": "Properly trained oliphants become engines of destruction, the large males growing 10 feet or greater in size (10+5 hit dice)"
+  },
+  {
+   "name": "mm2oOphidianPoisonSaveOrAffliction",
+   "value": true,
+   "comment": "The ophidian fanged bite requires a saving throw vs. poison or the victim suffers the lycanthrope-like affliction"
+  },
+  {
+   "name": "mm2oOphidianCureDiseasePrevents",
+   "value": true,
+   "comment": "The affliction process can be prevented by a cure disease spell"
+  },
+  {
+   "name": "mm2oOphidianKillsNonhumanoids",
+   "value": true,
+   "comment": "The affliction turns a human or humanoid into an ophidian and kills any other creature"
+  },
+  {
+   "name": "mm2oOphidianServesSpiritNagas",
+   "value": true,
+   "comment": "Ophidians are usually servants of spirit nagas or similar creatures"
+  },
+  {
+   "name": "mm2oOpinicusNeverSurprised",
+   "value": true,
+   "comment": "Due to their keen senses opinicus are never surprised"
+  },
+  {
+   "name": "mm2oOpinicusTurnsUndead",
+   "value": true,
+   "comment": "Opinicus have the spell capacity of 7th-level clerics and can turn undead"
+  },
+  {
+   "name": "mm2oOpinicusGazeSaveHalves",
+   "value": true,
+   "comment": "The sun-sparkles gaze inflicts one-half damage if a saving throw vs. spells is successful"
+  },
+  {
+   "name": "mm2oOpinicusGazeAffectsLowerPlanes",
+   "value": true,
+   "comment": "The gaze affects undead and creatures of the Lower Outer Planes (Acheron, the Nine Hells, Gehenna, Hades, Tartarus, the Abyss and Pandemonium)"
+  },
+  {
+   "name": "mm2oOpinicusAstralEtherealTravel",
+   "value": true,
+   "comment": "Opinicus can travel both astrally and etherally"
+  },
+  {
+   "name": "mm2oOtterAttacksOnlyIfCornered",
+   "value": true,
+   "comment": "Otters will attack only if cornered"
+  },
+  {
+   "name": "mm2oOwlPlummetDoubleDamage",
+   "value": true,
+   "comment": "A plummeting owl inflicts twice normal damage, but no beak attack is possible"
+  },
+  {
+   "name": "mm2oOwlDoubleUltravision",
+   "value": true,
+   "comment": "Owls have double normal ultravision"
+  },
+  {
+   "name": "mm2oOwlQuadrupleHearing",
+   "value": true,
+   "comment": "Owls have quadruple normal hearing"
+  },
+  {
+   "name": "mm2oOwlSilentFlight",
+   "value": true,
+   "comment": "Owls fly in total silence"
+  },
+  {
+   "name": "mm2oOwlNeverSurprisedInDark",
+   "value": true,
+   "comment": "Owls are never surprised during hours of dusk or darkness"
+  },
+  {
+   "name": "mm2oOwlLairDaylightOnly",
+   "value": true,
+   "comment": "The owl 10% in lair chance applies in daylight only (the roosting place)"
+  }
+ ],
+ "inline_count": 129,
+ "prev_record": [
+  "- R808 LANDED 2026-10-24: commit 118095af0d0d232f235e8963b95b4450886c9cce",
+  "  (census 730 -> 731, pushed 9365374..118095a), THE",
+  "  MM2 LETTERS LMN WALK - the land lamprey, luck",
+  "  eater, lycanthrope, magman, mandragora, giant",
+  "  mantis, mantrap, margoyle, marid, shadow mastiff,",
+  "  mihstu, miner, minimal, modron, russet mold,",
+  "  mongrelman, moon dog, muckdweller, mud-man,",
+  "  myconid, nereid and narwhale turns - the",
+  "  LMN-FLIP round (Curtiss multiple-letters Go call",
+  "  on the landed JK walk; round thirteen of the MM2",
+  "  arc, the THIRD three-letter pass). THE PIN-TIME",
+  "  WALK: thirty-eight entries on pp. 80-95, the land",
+  "  lamprey and the luck eater p. 80, the",
+  "  lycanthropes pp. 80-82, the magman through the",
+  "  mihstu pp. 82-85, the miner and the minimal pp.",
+  "  85-86, the modrons pp. 86-91, the russet mold",
+  "  pp. 91-92, the mongrelman through the myconid",
+  "  pp. 92-95, the nereid and the narwhale p. 95.",
+  "  Thirty-eight .lua defs ride the R791 data_files",
+  "  extension, registry 661 -> 699. Header",
+  "  rules/mm2lmn.h, prefix mm2lmn, 348 consts + 82",
+  "  bools + three grids (the 38x10 LmStats stat",
+  "  grid, the 29x3 MinimalStats grid, the 9x2",
+  "  TelepathyMiles grid) = 445 inline. THE",
+  "  LMN-FLIP: the Letter L, Letter M and Letter N",
+  "  gap boxes all flip to closed - 19 closed 18",
+  "  open. The settled reads: the moon dog cleric",
+  "  level VII/2000+12, the mud man II/28, the",
+  "  minimal move cell 1/2 factor, the minimal lion",
+  "  hit dice 13 the 1+3 misprint kept verbatim, the",
+  "  russet mold NO treasure line, the octon size L,",
+  "  every negative armor class an unquoted number,",
+  "  the modron xp cells recomputed against print.",
+  "  One regtest patch: the R808 live def walk at",
+  "  the R227 anchor, its registry census a FLOOR 661",
+  "  -> at least 699. Preflight GREEN: engine",
+  "  double-run applied 46/already 0 then 0/46;",
+  "  rverify GREEN vs 9365374 - 915 mutants, 0",
+  "  missed; offline loader sim GREEN. Commit 43",
+  "  files. Delivery spec-r808: raw JSON canvas,",
+  "  authored md5 64628f86635c9390546186eac811d611,",
+  "  231096 bytes, landed the same. NEXT - R809:",
+  "  awaits Curtiss call (the natural next walk the",
+  "  Letter O box or the next arc slice; 18 open",
+  "  boxes remain)."
+ ]
+}

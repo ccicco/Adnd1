@@ -1,0 +1,36 @@
+-- Opinicus: promoted by the R809 MM2 letter O walk round
+-- from the MM2 print
+-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Opinicus",
+  page = "97",
+  pages = "97",
+  source = "MM2",
+  race = "Opinicus",
+  hitDice = "7+7",
+  hitDiceNum = "7",
+  hitDiceBonus = "7",
+  avgHp = "31",
+  armorClass = -2,
+  numAttacks = 4,
+  damage = "1-3/1-3/1-6/1-6",
+  xp = "2300",
+  xpPerHp = "12",
+  xpValue = "2672",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-2",
+  lairPct = "10",
+  treasure = "A",
+  move = "21\"/30\" (MC: B)",
+  size = "M",
+  intelligence = "Very to exceptional",
+  alignment = "Chaotic good",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "35%",
+  psionic = "205-250",
+  attackDefenseModes = "All/all",
+  text = "Opinicus are desert dwelling creatures of good will. Their usual habitat will be old ruins, such as a deserted city, palace, or temple. They will occasionally be encountered elsewhere, usually on some mission of weal. Although known for their beneficial acts and friendly dispositions, opinicus also love teasing and jokes. While these actions detract from their popularity, the assistance of opinicus is very rarely shunned by good creatures. Creatures of Evil most certainly dread opinicus.\\n\\nNormal attack mode is by means of 2 claw attacks (1-3/1-3) and rakes with rear claws. In addition, opinicus have the spell capacity of 7th-level clerics and can turn undead. Each is also able to pronounce a holy word once per day, dimension door twice per day, and heal 3 times per day. Opinicus have a glowing gaze, also called sun sparkles, of a 1/2\"x1\"x2\" cone-shape which affects undead and creatures of the Lower Outer Planes (Acheron, the Nine Hells, Gehenna, Hades, Tartarus, the Abyss, and Pandemonium). This gaze is usable but once every 10 rounds. It inflicts 2-16 points of damage upon the victims, and one-half damage if a saving throw vs. spells is successful.\\n\\nDue to their keen senses, opinicus are never surprised. They surprise 5 in 6 in their habitat and 3 in 6 elsewhere. Opinicus can travel both astrally and etherally. Opinicus have 3-5 minor psionic disciplines and 1-2 of a major variety. It is with these that they often play pranks.\\n\\nOpinicus appear to be a mixture of monkey, camel, lion, and eagle. They are not, of course, any such mixture, but creatures in their own right. Their coloration ranges from light buff to golden brown with wings slightly darker than bodies. The forepaws of opinicus are prehensile.",
+}

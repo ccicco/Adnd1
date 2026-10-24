@@ -1,0 +1,36 @@
+-- Ophidian: promoted by the R809 MM2 letter O walk round
+-- from the MM2 print
+-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Ophidian",
+  page = "97",
+  pages = "97",
+  source = "MM2",
+  race = "Ophidian",
+  hitDice = "3-4",
+  hitDiceNum = "3",
+  hitDiceBonus = "0",
+  avgHp = "10",
+  armorClass = "5 or better",
+  numAttacks = "1 and 1",
+  damage = "By weapon type and 1-3",
+  xp = "125",
+  xpPerHp = "4",
+  xpValue = "165",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "3-12",
+  lairPct = "See below",
+  treasure = "See below",
+  move = "9\"//18\"",
+  size = "M",
+  intelligence = "Low to very",
+  alignment = "Chaotic (evil)",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Ophidians, or snakemen, are typically encountered in tropical jungles. Unlike nagas, ophidians have human-like arms and hands and can employ weapons, shields, and magic items of the sort fighters can use. Attack is first by weapon and then a fanged bite. The latter requires a saving throw vs. poison or the victim will suffer a lycanthrope-like affliction. The affliction begins in 2-5 days, lasts 8-16 days, and ends by turning the creature into an ophidian if it was human or humanoid or killing it otherwise. The process can be prevented by a cure disease spell.\\n\\nIt is unusual for ophidians to be in a self-determined group. They are usually servants of spirit nagas or similar creatures. Ophidians appear to be short-tailed, thick-bodied snakes. Arms protrude about 2 feet below the neck. These arms are human-like and end in 4-fingered hands. Color ranges from gray-black to black and dark-brownish green to pale blue-green.",
+}

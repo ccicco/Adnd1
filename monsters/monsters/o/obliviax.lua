@@ -1,0 +1,36 @@
+-- Obliviax (Memory Moss): promoted by the R809 MM2 letter O walk round
+-- from the MM2 print
+-- (spec tools/spec_r809.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Obliviax (Memory Moss)",
+  page = "96",
+  pages = "96",
+  source = "MM2",
+  race = "Obliviax (Memory Moss)",
+  hitDice = "1-2 hp",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "1",
+  armorClass = "10",
+  numAttacks = "Nil",
+  damage = "Nil",
+  xp = "30",
+  xpPerHp = "1",
+  xpValue = "31",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "2-12",
+  lairPct = "100",
+  treasure = "Nil",
+  move = "Nil",
+  size = "S (1/2' square)",
+  intelligence = "Average",
+  alignment = "Neutral evil",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "This evil black moss has the magical power to steal memories from others. When an intelligent creature is within 60 feet it must save vs. spells or the moss will steal all the creature's memories from the last 24 hours (including memorized spells). It can try to steal from 1 creature per round until it succeeds, and then it will not attack again for 24 hours.\\n\\nIf an obliviax with stolen memories is attacked, it will, in 1 round, form a part of itself into a tiny moss imitation of the creature whose memories it stole. This mossling remains attached to the parent moss and can defend itself only by casting any stolen spells.\\n\\nThe only way to regain stolen memories is to eat the living obliviax. This takes 1 round. If a save vs. poison is made, the eater will gain all the stolen memories including spells. If the save fails the eater will become very ill for 3-18 turns. It is possible to gain another's memories by eating this moss. Anyone who gains spells by eating the obliviax can cast them. The memory gained this way fades in 24 hours.",
+}
