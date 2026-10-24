@@ -1,0 +1,1706 @@
+{
+ "round": 807,
+ "prefix": "mm2jk",
+ "header_file": "rules/mm2jk.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 729,
+ "title": "the MM2 letters JK walk - the jann, mustard jelly, kampfult, kech, korred and kraken turns",
+ "audit_label": "R807 MM2 letters JK walk audit",
+ "audit_comment": "THE MM2 LETTERS JK WALK - the jann, the mustard jelly p. 77, the kampfult, the kech and the korred p. 78 and the kraken p. 79 promoted to the live registry; the contested cells settled: the kech treasure type reads the letter B (the capture \"8\" the OCR misread; the djvu, the 1eonline compilation and the 2e compendium the agreeing voices); the korred hit dice read 6+1 (the capture \"8+1\" the misread; the same three voices agree); the kampfult xp level reads II (the djvu \"11\" the misread); the kraken move cell \"//3\" (21\")\" pins capture verbatim (the R804 electric eel \"//9\"\" precedent - the moveRate reads the swimming 3); the kraken armor class \"5/0\" composite reads the head 5 (the hordling and hangman tree first-read precedent); the kraken \"2 and 4-6 and 1\" attack load reads the and-sum 13 clamped at the 10 sanity ceiling (the R805 purple worm \"1 and 1\" sum convention meets the clamp); the mustard jelly \"1 or 2\" attack load reads the max 2 (the R798 duergar convention); the korred \"1 or by weapon\" loads the 1 floor; every Standard magic resistance reads 0; the kraken \"them them sacrifices\" print typo kept verbatim",
+ "include_comment": "the MM2 letters JK walk - the jann, mustard jelly, kampfult, kech, korred and kraken turns",
+ "include_after": "#include \"rules/mm2hi.h\"  // R806: the MM2 letters HI walk - the hangman tree, haunt, hollyphant, hordling and hybsil turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R806 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R806 LANDED 2026-10-24: commit",
+  "  4ae87fbaebdbde481137ef20863b8c378ddcf8cd",
+  "  (census 728 -> 729, pushed",
+  "  9189c04..4ae87fb), THE MM2",
+  "  LETTERS HI WALK - THE HANGMAN",
+  "  TREE, HAUNT, HOLLYPHANT, HORDLING",
+  "  AND HYBSIL TURNS - THE HI-FLIP",
+  "  ROUND (Curtiss's Go call on the",
+  "  landed letters FG walk; round",
+  "  eleven of the MM2 arc, the SECOND",
+  "  two-letter pass - the hangman tree",
+  "  table opens p. 74 and the hybsil",
+  "  closes p. 77, and the Letter I box",
+  "  closes on the already-pinned",
+  "  ildriss of R805). THE PIN-TIME",
+  "  WALK: FIVE entries on pp. 74-77 -",
+  "  the hangman tree and the haunt on",
+  "  p. 74, the hollyphant on pp.",
+  "  74-75, the hordling on p. 76, the",
+  "  hybsil on p. 77. FIVE .lua defs",
+  "  ride the R791 data_files extension,",
+  "  registry 650 -> 655. Header",
+  "  rules/mm2hi.h, prefix mm2hi, 129",
+  "  consts + 14 bools + ONE grid (the",
+  "  5x10 HhStats stat grid) = 153",
+  "  inline. THE HI-FLIP: BOTH the",
+  "  Letter H and the Letter I gap",
+  "  boxes flip to closed - 14 closed",
+  "  23 open. THE SETTLED READS",
+  "  (capture primary, transcription",
+  "  and djvu the cross-check voices):",
+  "  the hangman tree HD \"61 hp/year\"",
+  "  capture verbatim - avgHp 61 the",
+  "  flat-hp read (the demilich",
+  "  precedent; 1eonline notes the",
+  "  intended \"6+1/year\" typo),",
+  "  hitDiceNum 0; the haunt",
+  "  numAttacks \"1/1, as 5 HD monster\"",
+  "  loads max 5 (the R798 duergar",
+  "  max-read convention); the haunt",
+  "  block prints no SIZE/MAGIC",
+  "  RESISTANCE line (size \"\", MR Nil",
+  "  0); the hordling or-form reads",
+  "  the best variant (HD 9, AC 3,",
+  "  move 6, MR 0, xp VII/1400+12);",
+  "  the hybsil xp level II (the",
+  "  capture \"ll\" and djvu \"11\" the",
+  "  OCR misreads); the hybsil \"pixie\"",
+  "  (the capture \"poie\" the misread);",
+  "  the hollyphant \"2\"+ long\" and the",
+  "  hangman \"20\"+ tall\" print typos",
+  "  kept verbatim. Grid rows:",
+  "  hangman [3,0,0,61,3,1600,8,0,0,1],",
+  "  haunt [0,5,0,17,5,165,5,0,6,0],",
+  "  hollyphant [-4,8,8,36,2,3750,14,",
+  "  0,9,60], hordling [3,9,0,31,1,",
+  "  1400,12,0,6,0], hybsil [7,1,-1,2,",
+  "  1,22,1,30,15,0]; avgHp formula",
+  "  floor(3.5*HD + bonus). THE",
+  "  LANDING DETOUR (two prefights,",
+  "  RED then GREEN): (1) the first",
+  "  handoff's five data files each",
+  "  ended the text = \"...\" field with",
+  "  a STRAY SECOND COMMA (\",,\" at",
+  "  every line 34) - the Termux",
+  "  battery's real Lua parser choked",
+  "  (unexpected symbol near ','), the",
+  "  loader fell to 650 with 5 errors,",
+  "  and the census-fail cascade read",
+  "  every R100-R229 audit line 0",
+  "  times; the defect was invisible",
+  "  to every local gate - the Python",
+  "  model never parses Lua (the R805",
+  "  lesson's mirror: rverify proves",
+  "  spec vs model, NOT model vs the",
+  "  C++ loader, and the offline walk",
+  "  sim loads fields, not syntax); the",
+  "  fix was one comma per file, fixed",
+  "  spec md5",
+  "  898e65aefb55e202e8dc453bc9e59fae",
+  "  (73929 bytes), the structural",
+  "  profile against the landed R805",
+  "  lua files the proof (same",
+  "  36-line skeleton, field-for-",
+  "  field). (2) the re-landing still",
+  "  printed applied 0 / already 12 -",
+  "  the first RED run had already",
+  "  applied the old files and the",
+  "  preflight's refusal to commit left",
+  "  them in the tree, so the engine",
+  "  never rewrote them; the R515",
+  "  restore-and-rerun (git checkout",
+  "  the three tracked files + rm the",
+  "  new header and the 5 .lua, keep",
+  "  the fixed spec, re-run the one",
+  "  ./rn handoff), then GREEN -",
+  "  loaded 655, errors 0, the R806 MM2",
+  "  letters HI live defs: bad 0, and",
+  "  AUDIT CENSUS: 729 audit lines,",
+  "  each exactly once, all bad 0.",
+  "  rverify GREEN against 9189c04 both",
+  "  times (193 mutants, 0 missed), the",
+  "  engine double-run GREEN (applied",
+  "  12/already 0 then 0/12, census",
+  "  729, mirror clean), and the",
+  "  environment had reset again - the",
+  "  builder was gone, so the repair",
+  "  re-derived the spec from the",
+  "  delivered canvas (the R802/R803",
+  "  lost-builder precedent) and the",
+  "  /tmp tree was re-fetched from the",
+  "  GitHub tarball at 9189c04. Commit",
+  "  10 files, 3300 insertions.",
+  "  Delivery spec-r806: raw JSON",
+  "  canvas (body byte-identical to the",
+  "  landed spec plus the editor-added",
+  "  trailing newline, landed md5",
+  "  a707e5d43b4cea7b850a8eb05b343fcb;",
+  "  authored md5",
+  "  73dff9869b5e791d78bc5504593dec21",
+  "  then fixed",
+  "  898e65aefb55e202e8dc453bc9e59fae,",
+  "  73929 bytes). NEXT - R807: awaits",
+  "  Curtiss's call (the natural next",
+  "  walk is the Letter J box - 23 open",
+  "  boxes remain)."
+ ],
+ "banner": {
+  "title": "THE MM2 LETTERS JK WALK - THE JANN, MUSTARD JELLY, KAMPFULT, KECH, KORRED AND KRAKEN TURNS (the jann and the mustard jelly p. 77, the kampfult, the kech and the korred p. 78, the kraken p. 79), promoted to the live registry; the JK-FLIP round, both the Letter J and the Letter K gap boxes flip to closed",
+  "provenance": "Round twelve of the MM2 arc, the THIRD TWO-LETTER pass (the user Go call on the landed HI walk: the multiple letters standing call - the jann opens p. 77 and the kraken tail closes p. 79 - the JK-FLIP round, both the Letter J and the Letter K gap boxes flip to closed). The capture is the Curtiss PDF upload cross-checked against the archive.org djvu OCR, the contested cells settled book-internal first: the kech treasure \"B\" and the korred hit dice \"6+1\" read against the capture misreads; the kraken and-sum attack load clamps at the loader ceiling",
+  "sentinel": "LOADER SEMANTICS (the R805 grim lesson): the composite numAttacks strings load as their max or their and-sum clamped at 10; the armor class composites read their first integer; every Nil lair reads 0 and every Standard magic resistance reads 0; the walk demands the loaded def equal the pin - walk patches may only touch real MonsterDef fields"
+ },
+ "consts": [
+  {
+   "name": "mm2jkRound",
+   "value": 807,
+   "comment": "The MM2 letters JK walk round: the jann, mustard jelly, kampfult, kech, korred and kraken turns, the THIRD TWO-LETTER pass (the user Go call on the landed HI walk)"
+  },
+  {
+   "name": "mm2jkRegistryBefore",
+   "value": 655,
+   "comment": "The registry census before the R807 promotion (the landed R806 count)"
+  },
+  {
+   "name": "mm2jkRegistryAfter",
+   "value": 661,
+   "comment": "The registry census after the R807 promotion (6 defs)"
+  },
+  {
+   "name": "mm2jkDefCount",
+   "value": 6,
+   "comment": "The .lua defs riding the R807 walk (the jann, the mustard jelly, the kampfult, the kech, the korred and the kraken)"
+  },
+  {
+   "name": "mm2jkEntryCount",
+   "value": 6,
+   "comment": "The pin-time walk entry census (6 entries, all with stat blocks)"
+  },
+  {
+   "name": "mm2jkStatBlockHeadings",
+   "value": 6,
+   "comment": "The stat-block headings walked at pin time from the print pp. 77-79"
+  },
+  {
+   "name": "mm2jkDoctrineHeads",
+   "value": 0,
+   "comment": "No doctrine-only family heads ride the letters JK walk (every entry carries a stat block)"
+  },
+  {
+   "name": "mm2jkLetterJHeadings",
+   "value": 2,
+   "comment": "The letter-J entries (the jann and the mustard jelly, both p. 77)"
+  },
+  {
+   "name": "mm2jkLetterKHeadings",
+   "value": 4,
+   "comment": "The letter-K entries (the kampfult, the kech, the korred p. 78 and the kraken p. 79)"
+  },
+  {
+   "name": "mm2jkJkStatRows",
+   "value": 6,
+   "comment": "The JkStats grid row count (the six letters-JK stat blocks in print order)"
+  },
+  {
+   "name": "mm2jkGapClosed",
+   "value": 16,
+   "comment": "The gap report closed-box census after the JK-FLIP (14 + the letters J and K)"
+  },
+  {
+   "name": "mm2jkGapOpen",
+   "value": 21,
+   "comment": "The gap report open-box census after the JK-FLIP (23 - 2)"
+  },
+  {
+   "name": "mm2jkPriorOwnedEntries",
+   "value": 0,
+   "comment": "No letters-JK index entries were pinned by earlier rounds (the dao prose mentions the jann but pins no jann def)"
+  },
+  {
+   "name": "mm2jkGenieKinCount",
+   "value": 5,
+   "comment": "The genie-kind census the jann opens (the dao, djinni, efreeti, jann and marid - the jannee the weakest)"
+  },
+  {
+   "name": "mm2jkJannXpValue",
+   "value": 1159,
+   "comment": "The jann full kill xp (975 + 23 avg hp x 8 per hp)"
+  },
+  {
+   "name": "mm2jkJannXpLevel",
+   "value": 6,
+   "comment": "The jann xp level (the print VI)"
+  },
+  {
+   "name": "mm2jkJannChainmailPct",
+   "value": 60,
+   "comment": "The percent of jannee wearing chainmail"
+  },
+  {
+   "name": "mm2jkJannChainmailAc",
+   "value": 2,
+   "comment": "The effective armor class of the jannee chainmail"
+  },
+  {
+   "name": "mm2jkJannFemaleStrengthMin",
+   "value": 17,
+   "comment": "The female jannee strength floor (01-50 on the table)"
+  },
+  {
+   "name": "mm2jkJannMoveRate",
+   "value": 12,
+   "comment": "The jann ground move rate (the composite 12/30 reads the ground 12)"
+  },
+  {
+   "name": "mm2jkJannFlyRate",
+   "value": 30,
+   "comment": "The jann fly rate (the composite 12/30 tail)"
+  },
+  {
+   "name": "mm2jkJannSpellCasterLevel",
+   "value": 12,
+   "comment": "The jannee spell-use level (they perform at 12th level ability)"
+  },
+  {
+   "name": "mm2jkJannElementalDwellHours",
+   "value": 48,
+   "comment": "The hours a jann can dwell in any elemental environment"
+  },
+  {
+   "name": "mm2jkJannPlaneTravelCompanions",
+   "value": 6,
+   "comment": "The individuals a jann can take along to an elemental plane (the hand-holding circle)"
+  },
+  {
+   "name": "mm2jkJannPrimeDamagePerHour",
+   "value": 1,
+   "comment": "The damage per hour inflicted on a jann failing to return to the Prime Material Plane"
+  },
+  {
+   "name": "mm2jkJannTravelPrimeRestDays",
+   "value": 2,
+   "comment": "The Prime Material days of rest before damage-free elemental travel"
+  },
+  {
+   "name": "mm2jkJannGrowthReductionPerDay",
+   "value": 2,
+   "comment": "The growth/reduction uses per day (twice each per day)"
+  },
+  {
+   "name": "mm2jkJannInvisibilityPerDay",
+   "value": 3,
+   "comment": "The invisibility uses per day"
+  },
+  {
+   "name": "mm2jkJannEtherealnessPerDay",
+   "value": 1,
+   "comment": "The etherealness uses per day"
+  },
+  {
+   "name": "mm2jkJannEtherealnessHours",
+   "value": 1,
+   "comment": "The maximum etherealness duration in hours"
+  },
+  {
+   "name": "mm2jkJannCreateFoodWaterLevel",
+   "value": 7,
+   "comment": "The create food and water caster level (as a 7th-level cleric)"
+  },
+  {
+   "name": "mm2jkJannTribeSizeMin",
+   "value": 11,
+   "comment": "The tribe size floor (a group of 11-30 individuals)"
+  },
+  {
+   "name": "mm2jkJannTribeSizeMax",
+   "value": 30,
+   "comment": "The tribe size ceiling"
+  },
+  {
+   "name": "mm2jkJannVizierCount",
+   "value": 2,
+   "comment": "The viziers a tribe may count (a sheik and 1-2 viziers)"
+  },
+  {
+   "name": "mm2jkJannSheikHpMax",
+   "value": 84,
+   "comment": "The sheik hit-point maximum (the higher hit dice note)"
+  },
+  {
+   "name": "mm2jkJannAmirHpMax",
+   "value": 95,
+   "comment": "The amir hit-point maximum"
+  },
+  {
+   "name": "mm2jkJannLeaderStrength",
+   "value": 19,
+   "comment": "The greater leader strength (possible 10% of the time)"
+  },
+  {
+   "name": "mm2jkJannVizierPowersPerDay",
+   "value": 3,
+   "comment": "The vizier spell-like powers per day each (augury, detect magic and divination)"
+  },
+  {
+   "name": "mm2jkMustardJellyXpValue",
+   "value": 1509,
+   "comment": "The mustard jelly full kill xp (825 + 38 avg hp x 18 per hp - half awarded if half the creature slain)"
+  },
+  {
+   "name": "mm2jkMustardJellyXpLevel",
+   "value": 6,
+   "comment": "The mustard jelly xp level (the print VI)"
+  },
+  {
+   "name": "mm2jkMustardJellyVaporRadiusFeet",
+   "value": 10,
+   "comment": "The lethargy vapor radius in feet"
+  },
+  {
+   "name": "mm2jkMustardJellyToxicRounds",
+   "value": 2,
+   "comment": "The toxic effect duration in rounds (cumulative)"
+  },
+  {
+   "name": "mm2jkMustardJellyHalvesCount",
+   "value": 2,
+   "comment": "The halves the whole divides into"
+  },
+  {
+   "name": "mm2jkMustardJellyDivideMoveMin",
+   "value": 12,
+   "comment": "The divided-half move floor (move 12-18)"
+  },
+  {
+   "name": "mm2jkMustardJellyDivideMoveMax",
+   "value": 18,
+   "comment": "The divided-half move ceiling"
+  },
+  {
+   "name": "mm2jkMustardJellyAttacksMax",
+   "value": 2,
+   "comment": "The or-form attack load (\"1 or 2\" reads the max 2 - the R798 duergar convention)"
+  },
+  {
+   "name": "mm2jkMustardJellyWeaponPlusMin",
+   "value": 1,
+   "comment": "The weapon bonus needed to score effective damage"
+  },
+  {
+   "name": "mm2jkMustardJellyDiameterMinFeet",
+   "value": 9,
+   "comment": "The size diameter floor (9-12 feet)"
+  },
+  {
+   "name": "mm2jkMustardJellyDiameterMaxFeet",
+   "value": 12,
+   "comment": "The size diameter ceiling"
+  },
+  {
+   "name": "mm2jkKampfultXpValue",
+   "value": 50,
+   "comment": "The kampfult full kill xp (36 + 7 avg hp x 2 per hp)"
+  },
+  {
+   "name": "mm2jkKampfultXpLevel",
+   "value": 2,
+   "comment": "The kampfult xp level (the print II - the djvu \"11\" the OCR misread)"
+  },
+  {
+   "name": "mm2jkKampfultAttackAppendages",
+   "value": 6,
+   "comment": "The attack appendages"
+  },
+  {
+   "name": "mm2jkKampfultMoveAppendages",
+   "value": 6,
+   "comment": "The movement appendages"
+  },
+  {
+   "name": "mm2jkKampfultAppendageLengthFeet",
+   "value": 6,
+   "comment": "The attack appendage length in feet"
+  },
+  {
+   "name": "mm2jkKampfultMoveAppendageLengthFeet",
+   "value": 1,
+   "comment": "The movement appendage length in feet"
+  },
+  {
+   "name": "mm2jkKampfultTrunkLengthFeet",
+   "value": 4,
+   "comment": "The central trunk length in feet (the only section that can be harmed)"
+  },
+  {
+   "name": "mm2jkKampfultSurpriseMin",
+   "value": 1,
+   "comment": "The surprise roll floor (surprise on 1-3)"
+  },
+  {
+   "name": "mm2jkKampfultSurpriseMax",
+   "value": 3,
+   "comment": "The surprise roll ceiling"
+  },
+  {
+   "name": "mm2jkKampfultDamagePerAppendage",
+   "value": 1,
+   "comment": "The damage per appendage strike"
+  },
+  {
+   "name": "mm2jkKechXpValue",
+   "value": 290,
+   "comment": "The kech full kill xp (205 + 17 avg hp x 5 per hp)"
+  },
+  {
+   "name": "mm2jkKechXpLevel",
+   "value": 4,
+   "comment": "The kech xp level (the print IV)"
+  },
+  {
+   "name": "mm2jkKechSurpriseInSix",
+   "value": 5,
+   "comment": "The surprise likelihood (5 in 6)"
+  },
+  {
+   "name": "mm2jkKechTracksUnfollowablePct",
+   "value": 50,
+   "comment": "The percent the camouflage tracks cannot be followed"
+  },
+  {
+   "name": "mm2jkKechSilencePct",
+   "value": 50,
+   "comment": "The silence move chance"
+  },
+  {
+   "name": "mm2jkKechClimbFeetPerRound",
+   "value": 60,
+   "comment": "The tree-climbing rate in feet per round"
+  },
+  {
+   "name": "mm2jkKechNoAppearingMin",
+   "value": 2,
+   "comment": "The appearing floor (2-8)"
+  },
+  {
+   "name": "mm2jkKechNoAppearingMax",
+   "value": 8,
+   "comment": "The appearing ceiling"
+  },
+  {
+   "name": "mm2jkKorredXpValue",
+   "value": 1076,
+   "comment": "The korred full kill xp (900 + 22 avg hp x 8 per hp)"
+  },
+  {
+   "name": "mm2jkKorredXpLevel",
+   "value": 6,
+   "comment": "The korred xp level (the print VI)"
+  },
+  {
+   "name": "mm2jkKorredHairSnareRoundsMin",
+   "value": 1,
+   "comment": "The hair-snare weaving floor (1-4 rounds)"
+  },
+  {
+   "name": "mm2jkKorredHairSnareRoundsMax",
+   "value": 4,
+   "comment": "The hair-snare weaving ceiling"
+  },
+  {
+   "name": "mm2jkKorredRopeArmorClass",
+   "value": 1,
+   "comment": "The animated rope armor class"
+  },
+  {
+   "name": "mm2jkKorredRopeHp",
+   "value": 5,
+   "comment": "The animated rope hit points"
+  },
+  {
+   "name": "mm2jkKorredBoulderRangeInches",
+   "value": 10,
+   "comment": "The boulder hurling range in inches"
+  },
+  {
+   "name": "mm2jkKorredBoulderDamageDice",
+   "value": 2,
+   "comment": "The boulder damage dice (2d8)"
+  },
+  {
+   "name": "mm2jkKorredBoulderDamageSides",
+   "value": 8,
+   "comment": "The boulder damage sides"
+  },
+  {
+   "name": "mm2jkKorredShearDamageMin",
+   "value": 5,
+   "comment": "The shears damage floor (d4+4)"
+  },
+  {
+   "name": "mm2jkKorredShearDamageMax",
+   "value": 8,
+   "comment": "The shears damage ceiling"
+  },
+  {
+   "name": "mm2jkKorredCudgelDamageMin",
+   "value": 5,
+   "comment": "The cudgel damage floor (d6+4)"
+  },
+  {
+   "name": "mm2jkKorredCudgelDamageMax",
+   "value": 10,
+   "comment": "The cudgel damage ceiling"
+  },
+  {
+   "name": "mm2jkKorredUnarmedDamageMin",
+   "value": 5,
+   "comment": "The unarmed damage floor (1-2+4)"
+  },
+  {
+   "name": "mm2jkKorredUnarmedDamageMax",
+   "value": 6,
+   "comment": "The unarmed damage ceiling"
+  },
+  {
+   "name": "mm2jkKorredLaughsPerDay",
+   "value": 3,
+   "comment": "The laughs per day"
+  },
+  {
+   "name": "mm2jkKorredLaughRadiusInches",
+   "value": 6,
+   "comment": "The laugh radius in inches"
+  },
+  {
+   "name": "mm2jkKorredLaughStunRoundsMin",
+   "value": 1,
+   "comment": "The laugh stun floor (1-4 rounds)"
+  },
+  {
+   "name": "mm2jkKorredLaughStunRoundsMax",
+   "value": 4,
+   "comment": "The laugh stun ceiling"
+  },
+  {
+   "name": "mm2jkKorredPouchGoldMin",
+   "value": 50,
+   "comment": "The pouch gold floor (50-200 gp on holy water)"
+  },
+  {
+   "name": "mm2jkKorredPouchGoldMax",
+   "value": 200,
+   "comment": "The pouch gold ceiling"
+  },
+  {
+   "name": "mm2jkKorredDanceDamageMin",
+   "value": 1,
+   "comment": "The interrupting-dancer damage floor (1-4 per round)"
+  },
+  {
+   "name": "mm2jkKorredDanceDamageMax",
+   "value": 4,
+   "comment": "The interrupting-dancer damage ceiling"
+  },
+  {
+   "name": "mm2jkKorredStonePowersCount",
+   "value": 6,
+   "comment": "The at-will stone powers (stone shape, animate rock, stone door, shatter rock, transmute rock to mud and stone tell)"
+  },
+  {
+   "name": "mm2jkKrakenXpValue",
+   "value": 19000,
+   "comment": "The kraken full kill xp (16,900 + 70 avg hp x 30 per hp)"
+  },
+  {
+   "name": "mm2jkKrakenXpLevel",
+   "value": 10,
+   "comment": "The kraken xp level (the print X)"
+  },
+  {
+   "name": "mm2jkKrakenTentacleAc",
+   "value": 6,
+   "comment": "The tentacle armor class (as the exposed head)"
+  },
+  {
+   "name": "mm2jkKrakenHeadAc",
+   "value": 6,
+   "comment": "The exposed head armor class"
+  },
+  {
+   "name": "mm2jkKrakenBodyAc",
+   "value": 0,
+   "comment": "The shell body armor class"
+  },
+  {
+   "name": "mm2jkKrakenTentaclesTotal",
+   "value": 10,
+   "comment": "The total tentacles"
+  },
+  {
+   "name": "mm2jkKrakenTentaclesAnchoring",
+   "value": 2,
+   "comment": "The tentacles used to anchor or stabilize"
+  },
+  {
+   "name": "mm2jkKrakenJetRate",
+   "value": 21,
+   "comment": "The backward jetting rate (the composite move tail)"
+  },
+  {
+   "name": "mm2jkKrakenSwimRate",
+   "value": 3,
+   "comment": "The swimming rate (the composite move head)"
+  },
+  {
+   "name": "mm2jkKrakenConstrictDamageMin",
+   "value": 3,
+   "comment": "The constriction damage floor (3-12 on the 2nd and each subsequent round)"
+  },
+  {
+   "name": "mm2jkKrakenConstrictDamageMax",
+   "value": 12,
+   "comment": "The constriction damage ceiling"
+  },
+  {
+   "name": "mm2jkKrakenTentacleSeverDamage",
+   "value": 16,
+   "comment": "The sharp-weapon damage to sever a tentacle"
+  },
+  {
+   "name": "mm2jkKrakenInkWidthInches",
+   "value": 8,
+   "comment": "The sepia ink cloud width in inches"
+  },
+  {
+   "name": "mm2jkKrakenInkHeightInches",
+   "value": 8,
+   "comment": "The sepia ink cloud height in inches"
+  },
+  {
+   "name": "mm2jkKrakenInkLengthInches",
+   "value": 12,
+   "comment": "The sepia ink cloud length in inches"
+  },
+  {
+   "name": "mm2jkKrakenInkPoisonRoundsMin",
+   "value": 2,
+   "comment": "The ink poison floor (2-5 rounds until diluted)"
+  },
+  {
+   "name": "mm2jkKrakenInkPoisonRoundsMax",
+   "value": 5,
+   "comment": "The ink poison ceiling"
+  },
+  {
+   "name": "mm2jkKrakenInkDamageMin",
+   "value": 1,
+   "comment": "The ink cloud damage floor (1-4 per round of exposure)"
+  },
+  {
+   "name": "mm2jkKrakenInkDamageMax",
+   "value": 4,
+   "comment": "The ink cloud damage ceiling"
+  },
+  {
+   "name": "mm2jkKrakenDraggableShipFeet",
+   "value": 60,
+   "comment": "The vessel length a kraken can drag beneath the water"
+  },
+  {
+   "name": "mm2jkKrakenLargerThanSquidPct",
+   "value": 10,
+   "comment": "The percent larger than the largest giant squid"
+  },
+  {
+   "name": "mm2jkKrakenDragHaltRounds",
+   "value": 10,
+   "comment": "The rounds a larger ship is dragged to a halt in"
+  },
+  {
+   "name": "mm2jkKrakenGraspTentacles",
+   "value": 6,
+   "comment": "The constricting tentacles that ram a vessel (6 or more)"
+  },
+  {
+   "name": "mm2jkKrakenGraspRounds",
+   "value": 3,
+   "comment": "The consecutive grasp rounds (3)"
+  },
+  {
+   "name": "mm2jkKrakenSinkRoundsMin",
+   "value": 2,
+   "comment": "The lost-bouyancy sinking floor (2-8 rounds)"
+  },
+  {
+   "name": "mm2jkKrakenSinkRoundsMax",
+   "value": 8,
+   "comment": "The lost-bouyancy sinking ceiling"
+  },
+  {
+   "name": "mm2jkKrakenRetreatSeveredTentacles",
+   "value": 3,
+   "comment": "The severed tentacles that trigger the immediate retreat"
+  },
+  {
+   "name": "mm2jkKrakenAiryWaterPerDay",
+   "value": 6,
+   "comment": "The airy water uses per day"
+  },
+  {
+   "name": "mm2jkKrakenAiryWaterSphereFeet",
+   "value": 128,
+   "comment": "The airy water sphere diameter in feet"
+  },
+  {
+   "name": "mm2jkKrakenAiryWaterHemisphereFeet",
+   "value": 240,
+   "comment": "The airy water hemisphere diameter in feet (6 times as large as usual)"
+  },
+  {
+   "name": "mm2jkKrakenFaerieFireHours",
+   "value": 8,
+   "comment": "The faerie fire duration in hours"
+  },
+  {
+   "name": "mm2jkKrakenTemperatureRadiusFeet",
+   "value": 40,
+   "comment": "The control temperature radius in feet"
+  },
+  {
+   "name": "mm2jkKrakenLairExtraTreasurePct",
+   "value": 50,
+   "comment": "The percent a lair holds type A treasure as well as that indicated"
+  },
+  {
+   "name": "mm2jkKrakenAttacksLoadedMax",
+   "value": 10,
+   "comment": "The \"2 and 4-6 and 1\" attack load (the and-sum 13 clamped at the 10 sanity ceiling - the R805 purple worm convention meets the clamp)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2jkJannWeakestOfTheGenies",
+   "value": true,
+   "comment": "The jannee are the weakest of the elemental humanoids (a jann is formed out of all 4 of the elements)"
+  },
+  {
+   "name": "mm2jkJannAcceptDjinnShunDaoEfreetMarid",
+   "value": true,
+   "comment": "Jannee will accept djinn but shun daos, efreet and marids"
+  },
+  {
+   "name": "mm2jkJannSpeakWithAnimals",
+   "value": true,
+   "comment": "In addition to the common tongue and the languages of geniekind, jannee are able to speak with animals"
+  },
+  {
+   "name": "mm2jkMustardJellyRelativeOfOchreJelly",
+   "value": true,
+   "comment": "The mustard jelly is a strain of, or perhaps a relative of, the ochre jelly"
+  },
+  {
+   "name": "mm2jkMustardJellyCannotClimbCeilings",
+   "value": true,
+   "comment": "The mustard jelly cannot move along ceilings as an ochre jelly can"
+  },
+  {
+   "name": "mm2jkMustardJellyGrowsOnElectricityAndMagicMissiles",
+   "value": true,
+   "comment": "Electrical attacks and magic missiles cause the mustard jelly to grow (it gains hit points equal to the damage rolled)"
+  },
+  {
+   "name": "mm2jkMustardJellyHalfXpWhenHalfSlain",
+   "value": true,
+   "comment": "Half the xp is awarded if half the creature is slain"
+  },
+  {
+   "name": "mm2jkKampfultOnlyCentralSectionHarmed",
+   "value": true,
+   "comment": "Only the central section of the kampfult can be harmed"
+  },
+  {
+   "name": "mm2jkKampfultVictimHeldUntilSlain",
+   "value": true,
+   "comment": "Once hit by an appendage the victim cannot escape until the kampfult is slain"
+  },
+  {
+   "name": "mm2jkKechImitateDistressCalls",
+   "value": true,
+   "comment": "Keches imitate calls of distress to lure prey into trapped areas and ambush"
+  },
+  {
+   "name": "mm2jkKechCamouflageColoration",
+   "value": true,
+   "comment": "The kech camouflage coloration and woodcraft skills make tracks 50% unfollowable"
+  },
+  {
+   "name": "mm2jkKechTreasureReadsLetterB",
+   "value": true,
+   "comment": "The kech treasure type reads the letter B (the capture \"8\" the OCR misread; the djvu, the 1eonline compilation and the 2e compendium the agreeing voices)"
+  },
+  {
+   "name": "mm2jkKorredHdReadsSixPlusOne",
+   "value": true,
+   "comment": "The korred hit dice read 6+1 (the capture \"8+1\" the OCR misread; the same three voices agree)"
+  },
+  {
+   "name": "mm2jkKorredBuiltStoneCirclesRumor",
+   "value": true,
+   "comment": "Korreds are rumored to have built the druid stone circles"
+  },
+  {
+   "name": "mm2jkKorredPouchGoldOnHolyWater",
+   "value": true,
+   "comment": "The items in a korred's pouch turn to gold if sprinkled with holy water"
+  },
+  {
+   "name": "mm2jkKorredWeeklyHolidayDance",
+   "value": true,
+   "comment": "Each week the korreds have a holiday when they dance and play music"
+  },
+  {
+   "name": "mm2jkKrakenAirAndWaterBreathing",
+   "value": true,
+   "comment": "The kraken are air-and water-breathing squid-like creatures"
+  },
+  {
+   "name": "mm2jkKrakenBattlesSpermWhales",
+   "value": true,
+   "comment": "Kraken are aggressive hunters that battle even large sperm whales and usually win"
+  },
+  {
+   "name": "mm2jkKrakenBreedHumanSlavesRumor",
+   "value": true,
+   "comment": "It is rumored that some kraken keep and breed human slaves in undersea dungeon complexes"
+  },
+  {
+   "name": "mm2jkKrakenMovePrintsDoubleSlashVerbatim",
+   "value": true,
+   "comment": "The kraken move cell \"//3\" (21\")\" pins capture verbatim (the R804 electric eel \"//9\"\" precedent; the moveRate reads the swimming 3)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the jann to kraken stat grid",
+   "tag": "JkStats",
+   "count": "mm2jkJkStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE JK-GRID: the 6-row JkStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the six letters-JK stat blocks, in print order - the jann, the mustard jelly, the kampfult, the kech, the korred and the kraken)",
+   "cols": [
+    "mm2jkJkStatAC",
+    "mm2jkJkStatHd",
+    "mm2jkJkStatHdBonus",
+    "mm2jkJkStatAvgHp",
+    "mm2jkJkStatAttacks",
+    "mm2jkJkStatXp",
+    "mm2jkJkStatXpHp",
+    "mm2jkJkStatLairPct",
+    "mm2jkJkStatMove",
+    "mm2jkJkStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the jann \"5 (plus possible armor)\" composite reads 5; the kraken \"5/0\" reads the head 5)",
+    "The hit dice num cells (the korred settled 6+1 - the capture \"8+1\" the OCR misread; the kraken flat 20)",
+    "The hit dice bonus cells (the jann 6+2, the mustard jelly 7+14, the korred 6+1)",
+    "The avgHp cells (the floor(3.5 x HD + bonus) formula - the jann 23, the mustard jelly 38, the kampfult 7, the kech 17, the korred 22, the kraken 70)",
+    "The attack load cells (the mustard jelly \"1 or 2\" max 2; the korred \"1 or by weapon\" the 1 floor; the kraken \"2 and 4-6 and 1\" the and-sum 13 clamped at the 10 sanity ceiling)",
+    "The xp base cells (the jann 975, the mustard jelly 825, the kampfult 36, the kech 205, the korred 900, the kraken 16,900)",
+    "The xp-per-hit-point cells (the jann 8, the mustard jelly 18, the kampfult 2, the kech 5, the korred 8, the kraken 30)",
+    "The lair percent cells (the jann Nil 0, the mustard jelly 35, the kampfult 35, the kech 30, the korred 1, the kraken 75)",
+    "The move cells (the jann 12/30 composite head 12; the kraken \"//3\" (21\")\" head 3 - the R804 electric eel precedent)",
+    "The magic resistance cells (the jann 20%, the mustard jelly 10%, the korred 25%; every Standard reads 0)"
+   ],
+   "data": [
+    [
+     5,
+     6,
+     2,
+     23,
+     1,
+     975,
+     8,
+     0,
+     12,
+     20
+    ],
+    [
+     4,
+     7,
+     14,
+     38,
+     2,
+     825,
+     18,
+     35,
+     9,
+     10
+    ],
+    [
+     4,
+     2,
+     0,
+     7,
+     6,
+     36,
+     2,
+     35,
+     3,
+     0
+    ],
+    [
+     4,
+     5,
+     0,
+     17,
+     3,
+     205,
+     5,
+     30,
+     15,
+     0
+    ],
+    [
+     5,
+     6,
+     1,
+     22,
+     1,
+     900,
+     8,
+     1,
+     9,
+     25
+    ],
+    [
+     5,
+     20,
+     0,
+     70,
+     10,
+     16900,
+     30,
+     75,
+     3,
+     0
+    ]
+   ]
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letters JK walk round pins (the R807 census)": [
+   {
+    "kind": "const",
+    "name": "mm2jkRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkLetterJHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkLetterKHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJkStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkPriorOwnedEntries"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkGenieKinCount"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkJannWeakestOfTheGenies"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkJannAcceptDjinnShunDaoEfreetMarid"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkJannSpeakWithAnimals"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkMustardJellyRelativeOfOchreJelly"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkMustardJellyCannotClimbCeilings"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkMustardJellyGrowsOnElectricityAndMagicMissiles"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkMustardJellyHalfXpWhenHalfSlain"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKampfultOnlyCentralSectionHarmed"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKampfultVictimHeldUntilSlain"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKechImitateDistressCalls"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKechCamouflageColoration"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKechTreasureReadsLetterB"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKorredHdReadsSixPlusOne"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKorredBuiltStoneCirclesRumor"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKorredPouchGoldOnHolyWater"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKorredWeeklyHolidayDance"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKrakenAirAndWaterBreathing"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKrakenBattlesSpermWhales"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKrakenBreedHumanSlavesRumor"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2jkKrakenMovePrintsDoubleSlashVerbatim"
+   }
+  ],
+  "the jann pins (the R807 MM2 letters JK walk)": [
+   {
+    "kind": "const",
+    "name": "mm2jkJannXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannChainmailPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannChainmailAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannFemaleStrengthMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannMoveRate"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannFlyRate"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannSpellCasterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannElementalDwellHours"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannPlaneTravelCompanions"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannPrimeDamagePerHour"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannTravelPrimeRestDays"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannGrowthReductionPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannInvisibilityPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannEtherealnessPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannEtherealnessHours"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannCreateFoodWaterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannTribeSizeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannTribeSizeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannVizierCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannSheikHpMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannAmirHpMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannLeaderStrength"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkJannVizierPowersPerDay"
+   }
+  ],
+  "the mustard jelly pins (the R807 MM2 letters JK walk)": [
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyVaporRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyToxicRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyHalvesCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyDivideMoveMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyDivideMoveMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyAttacksMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyWeaponPlusMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyDiameterMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkMustardJellyDiameterMaxFeet"
+   }
+  ],
+  "the kampfult pins (the R807 MM2 letters JK walk)": [
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultAttackAppendages"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultMoveAppendages"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultAppendageLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultMoveAppendageLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultTrunkLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultSurpriseMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKampfultDamagePerAppendage"
+   }
+  ],
+  "the kech pins (the R807 MM2 letters JK walk)": [
+   {
+    "kind": "const",
+    "name": "mm2jkKechXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKechXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKechSurpriseInSix"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKechTracksUnfollowablePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKechSilencePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKechClimbFeetPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKechNoAppearingMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKechNoAppearingMax"
+   }
+  ],
+  "the korred pins (the R807 MM2 letters JK walk)": [
+   {
+    "kind": "const",
+    "name": "mm2jkKorredXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredHairSnareRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredHairSnareRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredRopeArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredRopeHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredBoulderRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredBoulderDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredBoulderDamageSides"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredShearDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredShearDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredCudgelDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredCudgelDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredUnarmedDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredUnarmedDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredLaughsPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredLaughRadiusInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredLaughStunRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredLaughStunRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredPouchGoldMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredPouchGoldMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredDanceDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredDanceDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKorredStonePowersCount"
+   }
+  ],
+  "the kraken pins (the R807 MM2 letters JK walk)": [
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenTentacleAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenHeadAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenBodyAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenTentaclesTotal"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenTentaclesAnchoring"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenJetRate"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenSwimRate"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenConstrictDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenConstrictDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenTentacleSeverDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenInkWidthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenInkHeightInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenInkLengthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenInkPoisonRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenInkPoisonRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenInkDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenInkDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenDraggableShipFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenLargerThanSquidPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenDragHaltRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenGraspTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenGraspRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenSinkRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenSinkRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenRetreatSeveredTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenAiryWaterPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenAiryWaterSphereFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenAiryWaterHemisphereFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenFaerieFireHours"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenTemperatureRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenLairExtraTreasurePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2jkKrakenAttacksLoadedMax"
+   }
+  ],
+  "the MM2 letters JK walk stat grid (the R807 wiring)": [
+   {
+    "kind": "table",
+    "name": "the jann to kraken stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the two gap boxes flip (the census walk)",
+   "expr": "m['mm2jkRegistryAfter']() - m['mm2jkRegistryBefore']() != m['mm2jkDefCount']() or m['mm2jkDefCount']() != 6 or m['mm2jkEntryCount']() != 6 or m['mm2jkJkStatRows']() != 6 or m['mm2jkGapClosed']() != 16 or m['mm2jkGapOpen']() != 21 or m['mm2jkPriorOwnedEntries']() != 0"
+  },
+  {
+   "note": "the pin-time entry census composition (6 stat-block headings, no doctrine-only family heads, 2 letter-J and 4 letter-K)",
+   "expr": "m['mm2jkStatBlockHeadings']() != 6 or m['mm2jkDoctrineHeads']() != 0 or m['mm2jkLetterJHeadings']() != 2 or m['mm2jkLetterKHeadings']() != 4 or m['mm2jkGenieKinCount']() != 5"
+  },
+  {
+   "note": "the jann composite stat reads (the 5 armor class with the possible-armor parenthetical, the 6+2 dice, the 12/30 composite move head, the 20% magic resistance, the Nil lair reading 0)",
+   "expr": "m['mm2jkJkStatAC'](0) != 5 or m['mm2jkJkStatHd'](0) != 6 or m['mm2jkJkStatHdBonus'](0) != 2 or m['mm2jkJkStatAvgHp'](0) != 23 or m['mm2jkJkStatAttacks'](0) != 1 or m['mm2jkJkStatXp'](0) != 975 or m['mm2jkJkStatXpHp'](0) != 8 or m['mm2jkJkStatLairPct'](0) != 0 or m['mm2jkJkStatMove'](0) != 12 or m['mm2jkJkStatMr'](0) != 20"
+  },
+  {
+   "note": "the mustard jelly composite stat reads (the 7+14 dice, the \"1 or 2\" attack max 2, the 35% lair, the 10% magic resistance)",
+   "expr": "m['mm2jkJkStatAC'](1) != 4 or m['mm2jkJkStatHd'](1) != 7 or m['mm2jkJkStatHdBonus'](1) != 14 or m['mm2jkJkStatAvgHp'](1) != 38 or m['mm2jkJkStatAttacks'](1) != 2 or m['mm2jkJkStatXp'](1) != 825 or m['mm2jkJkStatXpHp'](1) != 18 or m['mm2jkJkStatLairPct'](1) != 35 or m['mm2jkJkStatMove'](1) != 9 or m['mm2jkJkStatMr'](1) != 10"
+  },
+  {
+   "note": "the kampfult stat reads (the 2 dice, the six appendage attacks, the surprise on 1-3, the 3 move)",
+   "expr": "m['mm2jkJkStatAC'](2) != 4 or m['mm2jkJkStatHd'](2) != 2 or m['mm2jkJkStatHdBonus'](2) != 0 or m['mm2jkJkStatAvgHp'](2) != 7 or m['mm2jkJkStatAttacks'](2) != 6 or m['mm2jkJkStatXp'](2) != 36 or m['mm2jkJkStatXpHp'](2) != 2 or m['mm2jkJkStatLairPct'](2) != 35 or m['mm2jkJkStatMove'](2) != 3 or m['mm2jkJkStatMr'](2) != 0"
+  },
+  {
+   "note": "the kech stat reads (the 5 dice, the 3 attacks, the 30% lair, the 15 move, the Standard magic resistance reading 0)",
+   "expr": "m['mm2jkJkStatAC'](3) != 4 or m['mm2jkJkStatHd'](3) != 5 or m['mm2jkJkStatHdBonus'](3) != 0 or m['mm2jkJkStatAvgHp'](3) != 17 or m['mm2jkJkStatAttacks'](3) != 3 or m['mm2jkJkStatXp'](3) != 205 or m['mm2jkJkStatXpHp'](3) != 5 or m['mm2jkJkStatLairPct'](3) != 30 or m['mm2jkJkStatMove'](3) != 15 or m['mm2jkJkStatMr'](3) != 0"
+  },
+  {
+   "note": "the korred composite stat reads (the settled 6+1 dice, the \"1 or by weapon\" attack load 1, the 1% lair, the 25% magic resistance)",
+   "expr": "m['mm2jkJkStatAC'](4) != 5 or m['mm2jkJkStatHd'](4) != 6 or m['mm2jkJkStatHdBonus'](4) != 1 or m['mm2jkJkStatAvgHp'](4) != 22 or m['mm2jkJkStatAttacks'](4) != 1 or m['mm2jkJkStatXp'](4) != 900 or m['mm2jkJkStatXpHp'](4) != 8 or m['mm2jkJkStatLairPct'](4) != 1 or m['mm2jkJkStatMove'](4) != 9 or m['mm2jkJkStatMr'](4) != 25"
+  },
+  {
+   "note": "the kraken composite stat reads (the 5/0 armor class head 5, the 20 dice, the and-sum attack load clamped at 10, the 75% lair, the \"//3\" move head, the X/16,900 + 30/hp xp)",
+   "expr": "m['mm2jkJkStatAC'](5) != 5 or m['mm2jkJkStatHd'](5) != 20 or m['mm2jkJkStatHdBonus'](5) != 0 or m['mm2jkJkStatAvgHp'](5) != 70 or m['mm2jkJkStatAttacks'](5) != 10 or m['mm2jkJkStatXp'](5) != 16900 or m['mm2jkJkStatXpHp'](5) != 30 or m['mm2jkJkStatLairPct'](5) != 75 or m['mm2jkJkStatMove'](5) != 3 or m['mm2jkJkStatMr'](5) != 0"
+  },
+  {
+   "note": "the full kill xp values (the base + xp-per-hp x avgHp formula, every letters-JK def)",
+   "expr": "m['mm2jkJannXpValue']() != 1159 or m['mm2jkMustardJellyXpValue']() != 1509 or m['mm2jkKampfultXpValue']() != 50 or m['mm2jkKechXpValue']() != 290 or m['mm2jkKorredXpValue']() != 1076 or m['mm2jkKrakenXpValue']() != 19000"
+  },
+  {
+   "note": "the jann arithmetic (the chainmail percent and armor class, the 12th-level spell ability, the elemental dwell hours, the tribe ladder, the sheik and amir hit points, the vizier powers)",
+   "expr": "m['mm2jkJannChainmailPct']() != 60 or m['mm2jkJannChainmailAc']() != 2 or m['mm2jkJannSpellCasterLevel']() != 12 or m['mm2jkJannElementalDwellHours']() != 48 or m['mm2jkJannPlaneTravelCompanions']() != 6 or m['mm2jkJannPrimeDamagePerHour']() != 1 or m['mm2jkJannTravelPrimeRestDays']() != 2 or m['mm2jkJannTribeSizeMin']() != 11 or m['mm2jkJannTribeSizeMax']() != 30 or m['mm2jkJannSheikHpMax']() != 84 or m['mm2jkJannAmirHpMax']() != 95 or m['mm2jkJannLeaderStrength']() != 19 or m['mm2jkJannVizierPowersPerDay']() != 3 or m['mm2jkJannFlyRate']() != 30 or m['mm2jkJannMoveRate']() != 12 or m['mm2jkJannInvisibilityPerDay']() != 3 or m['mm2jkJannGrowthReductionPerDay']() != 2 or m['mm2jkJannEtherealnessPerDay']() != 1 or m['mm2jkJannEtherealnessHours']() != 1 or m['mm2jkJannCreateFoodWaterLevel']() != 7 or m['mm2jkJannFemaleStrengthMin']() != 17"
+  },
+  {
+   "note": "the mustard jelly arithmetic (the vapor radius, the toxic rounds, the divide move ladder, the weapon floor, the size ladder)",
+   "expr": "m['mm2jkMustardJellyVaporRadiusFeet']() != 10 or m['mm2jkMustardJellyToxicRounds']() != 2 or m['mm2jkMustardJellyHalvesCount']() != 2 or m['mm2jkMustardJellyDivideMoveMin']() != 12 or m['mm2jkMustardJellyDivideMoveMax']() != 18 or m['mm2jkMustardJellyAttacksMax']() != 2 or m['mm2jkMustardJellyWeaponPlusMin']() != 1 or m['mm2jkMustardJellyDiameterMinFeet']() != 9 or m['mm2jkMustardJellyDiameterMaxFeet']() != 12"
+  },
+  {
+   "note": "the kampfult arithmetic (the six-and-six appendages, the length ladder, the surprise band, the II xp level)",
+   "expr": "m['mm2jkKampfultAttackAppendages']() != 6 or m['mm2jkKampfultMoveAppendages']() != 6 or m['mm2jkKampfultAppendageLengthFeet']() != 6 or m['mm2jkKampfultMoveAppendageLengthFeet']() != 1 or m['mm2jkKampfultTrunkLengthFeet']() != 4 or m['mm2jkKampfultSurpriseMin']() != 1 or m['mm2jkKampfultSurpriseMax']() != 3 or m['mm2jkKampfultDamagePerAppendage']() != 1 or m['mm2jkKampfultXpLevel']() != 2"
+  },
+  {
+   "note": "the kech arithmetic (the 5-in-6 surprise, the unfollowable tracks, the silence chance, the climb rate, the appearing band)",
+   "expr": "m['mm2jkKechSurpriseInSix']() != 5 or m['mm2jkKechTracksUnfollowablePct']() != 50 or m['mm2jkKechSilencePct']() != 50 or m['mm2jkKechClimbFeetPerRound']() != 60 or m['mm2jkKechNoAppearingMin']() != 2 or m['mm2jkKechNoAppearingMax']() != 8 or m['mm2jkKechXpLevel']() != 4"
+  },
+  {
+   "note": "the korred arithmetic (the weapon damage ladders, the laugh band, the pouch gold, the dance damage, the boulder 2d8, the stone powers)",
+   "expr": "m['mm2jkKorredShearDamageMin']() != 5 or m['mm2jkKorredShearDamageMax']() != 8 or m['mm2jkKorredCudgelDamageMin']() != 5 or m['mm2jkKorredCudgelDamageMax']() != 10 or m['mm2jkKorredUnarmedDamageMin']() != 5 or m['mm2jkKorredUnarmedDamageMax']() != 6 or m['mm2jkKorredLaughsPerDay']() != 3 or m['mm2jkKorredLaughRadiusInches']() != 6 or m['mm2jkKorredLaughStunRoundsMin']() != 1 or m['mm2jkKorredLaughStunRoundsMax']() != 4 or m['mm2jkKorredPouchGoldMin']() != 50 or m['mm2jkKorredPouchGoldMax']() != 200 or m['mm2jkKorredDanceDamageMin']() != 1 or m['mm2jkKorredDanceDamageMax']() != 4 or m['mm2jkKorredBoulderRangeInches']() != 10 or m['mm2jkKorredBoulderDamageDice']() != 2 or m['mm2jkKorredBoulderDamageSides']() != 8 or m['mm2jkKorredStonePowersCount']() != 6 or m['mm2jkKorredHairSnareRoundsMin']() != 1 or m['mm2jkKorredHairSnareRoundsMax']() != 4 or m['mm2jkKorredRopeArmorClass']() != 1 or m['mm2jkKorredRopeHp']() != 5"
+  },
+  {
+   "note": "the kraken arithmetic (the armor class triple, the constriction ladder, the sever damage, the ink cuboid, the ship ladder, the airy water pair, the retreat tentacles)",
+   "expr": "m['mm2jkKrakenTentacleAc']() != 6 or m['mm2jkKrakenHeadAc']() != 6 or m['mm2jkKrakenBodyAc']() != 0 or m['mm2jkKrakenTentaclesTotal']() != 10 or m['mm2jkKrakenTentaclesAnchoring']() != 2 or m['mm2jkKrakenJetRate']() != 21 or m['mm2jkKrakenSwimRate']() != 3 or m['mm2jkKrakenConstrictDamageMin']() != 3 or m['mm2jkKrakenConstrictDamageMax']() != 12 or m['mm2jkKrakenTentacleSeverDamage']() != 16 or m['mm2jkKrakenInkWidthInches']() != 8 or m['mm2jkKrakenInkHeightInches']() != 8 or m['mm2jkKrakenInkLengthInches']() != 12 or m['mm2jkKrakenInkPoisonRoundsMin']() != 2 or m['mm2jkKrakenInkPoisonRoundsMax']() != 5 or m['mm2jkKrakenInkDamageMin']() != 1 or m['mm2jkKrakenInkDamageMax']() != 4 or m['mm2jkKrakenDraggableShipFeet']() != 60 or m['mm2jkKrakenLargerThanSquidPct']() != 10 or m['mm2jkKrakenDragHaltRounds']() != 10 or m['mm2jkKrakenGraspTentacles']() != 6 or m['mm2jkKrakenGraspRounds']() != 3 or m['mm2jkKrakenSinkRoundsMin']() != 2 or m['mm2jkKrakenSinkRoundsMax']() != 8 or m['mm2jkKrakenRetreatSeveredTentacles']() != 3 or m['mm2jkKrakenAiryWaterPerDay']() != 6 or m['mm2jkKrakenAiryWaterSphereFeet']() != 128 or m['mm2jkKrakenAiryWaterHemisphereFeet']() != 240 or m['mm2jkKrakenFaerieFireHours']() != 8 or m['mm2jkKrakenTemperatureRadiusFeet']() != 40 or m['mm2jkKrakenLairExtraTreasurePct']() != 50 or m['mm2jkKrakenAttacksLoadedMax']() != 10"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter J box",
+   "from": "- [ ] **Letter J**",
+   "to": "- [x] **Letter J**"
+  },
+  {
+   "note": "the Letter K box",
+   "from": "- [ ] **Letter K**",
+   "to": "- [x] **Letter K**"
+  }
+ ],
+ "gap_census": {
+  "closed": 16,
+  "open": 21
+ },
+ "caller_files": [],
+ "inline_count": 155,
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letters-JK def walk (the R806 HI walk pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R807: the MM2 letters JK live def walk ----\n    // The six promoted letters-JK defs\n    // cross-checked live against the mm2jk pins:\n    // every stat cell of the 6-row JkStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula, the jann weakest-genie chainmail\n    // composite, the mustard jelly ochre-relative\n    // and or-form attack read, the kampfult sinewy\n    // mugger six-appendage load, the kech\n    // forest-fiend treasure B (the capture \"8\" the\n    // OCR misread), the korred dance-loving 6+1\n    // dice (the capture \"8+1\" the misread) and\n    // the kraken and-sum tentacle read clamped at\n    // the 10 sanity ceiling (the R805 purple worm\n    // convention meets the clamp), and the\n    // registry census floor 655 -> at least 661.\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kJK[6] = {\n            \"jann\", \"mustard_jelly\",\n            \"kampfult\", \"kech\",\n            \"korred\", \"kraken\",\n        };\n        for (int i = 0; i < 6; ++i) {\n            const auto* d = reg.find(kJK[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\") ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2jkJkStatAC(i))\n                ++bad;\n            if (d->hitDiceNum != mm2jkJkStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2jkJkStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2jkJkStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2jkJkStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2jkJkStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2jkJkStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2jkJkStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2jkJkStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2jkJkStatMr(i))\n                ++bad;\n        }\n        const auto* pp00 = reg.find(\"jann\");\n        if (!pp00\n            || pp00->text.find(\n                   \"weakest of the elemental humanoids\")\n                   == std::string::npos) ++bad;\n        const auto* pp01 = reg.find(\"mustard_jelly\");\n        if (!pp01\n            || pp01->text.find(\"ochre jelly\")\n                   == std::string::npos) ++bad;\n        const auto* pp02 = reg.find(\"kampfult\");\n        if (!pp02 || pp02->text.find(\"sinewy mugger\")\n            == std::string::npos) ++bad;\n        const auto* pp03 = reg.find(\"kech\");\n        if (!pp03 || pp03->text.find(\"forest fiends\")\n            == std::string::npos) ++bad;\n        const auto* pp04 = reg.find(\"korred\");\n        if (!pp04 || pp04->text.find(\"dance-loving\")\n            == std::string::npos) ++bad;\n        const auto* pp05 = reg.find(\"kraken\");\n        if (!pp05 || pp05->text.find(\"airy water\")\n            == std::string::npos) ++bad;\n        if ((int)reg.all().size()\n            < mm2jkRegistryAfter())\n            ++bad;\n        printf(\"R807 MM2 letters JK live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/j/jann.lua",
+   "content": "-- Jann: promoted by the R807 MM2 letters JK walk round from the MM2 print\n-- (spec tools/spec_r807.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Jann\",\n  page = \"77\",\n  pages = \"77\",\n  source = \"MM2\",\n  race = \"Jann\",\n  hitDice = \"6+2\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"2\",\n  avgHp = \"23\",\n  armorClass = \"5 (plus possible armor)\",\n  numAttacks = 1,\n  damage = \"By weapon type + strength bonus\",\n  xp = \"975\",\n  xpPerHp = \"8\",\n  xpValue = \"1159\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2 (10% 1-8)\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"12\\\"/30\\\" (MC:A)\",\n  size = \"M (6'-7' tall)\",\n  intelligence = \"Very to exceptional\",\n  alignment = \"Neutral (good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of the jannee is the weakest of the elemental humanoids (cf., dao, djinni, efreeti, marid) collectively known as genies, because a jann is formed out of all 4 of the elements and must therefore spend most of his or her time on the Prime Material Plane.\\n\\nJannee often (60%) wear chainmail armor which gives an effective armor class of 2. They typically use large scimitars (equal to bastard swords) and composite longbows. Male jannee have strength ranging from 18/01 to 18/00 and females from 17 (roll of 01-50) to 18/50 (roll of 51-00).\\n\\nIn addition to the ability to fly, jannee have the following spell-like powers which they can employ at will, 1 at a time, 1 per melee round: growth/reduction twice each per day, invisibility 3 times per day, create food and water once per day as a 7th-level cleric, and etherealness once per day for a maximum of 1 hour. Jannee perform at 12th level ability, except as noted. Jannee are able to dwell in air, earth, fire, or water environments for up to 48 hours. This includes the elemental planes, to which any jann can travel, even taking up to 6 individuals along if those persons hold hands in a circle with it. Failure to return to the Prime Material Plane inflicts 1 point of damage per hour on the jann, until a return to that plane occurs or until death. Travel to other elemental planes is possible, sans damage, providing at least 2 days were spent on the Prime Material Plane immediately prior to the travel.\\n\\nJannee tend to be suspicious of humans. They do not like demihumans, and detest humanoids. Jannee will accept djinn, but shun daos, efreet, and marids. They favor dwelling in forlorn desert areas at hidden oases, where they have privacy and safety. They will sometimes befriend humans or work with them for some desired reward such as potent magic items.\\n\\nThe society of jannee is very open, and males and females are regarded as equals. A group of 11-30 individuals typically makes up a tribe ruled by a sheik and 1-2 viziers. Exceptionally powerful sheiks are given the title of amir, and in time of need they gather and command large forces of jannee (and allied humans at times). Jannee leaders have genius intelligence, higher hit dice (up to 84 for sheiks, 95 for amirs) and greater strength (19 possible 10% of the time). Viziers have intelligence of genius to supra-genius and the following spell-like powers: augury, detect magic, and divination, 3 times per day each at 12th level ability. In addition to speaking the common tongue and the various languages of geniekind, jannee are able to speak with animals.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/mustard_jelly.lua",
+   "content": "-- Mustard Jelly: promoted by the R807 MM2 letters JK walk round from the MM2 print\n-- (spec tools/spec_r807.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Mustard Jelly\",\n  page = \"77\",\n  pages = \"77\",\n  source = \"MM2\",\n  race = \"Mustard Jelly\",\n  hitDice = \"7+14\",\n  hitDiceNum = \"7\",\n  hitDiceBonus = \"14\",\n  avgHp = \"38\",\n  armorClass = 4,\n  numAttacks = \"1 or 2\",\n  damage = \"5-20 or 2-8/2-8\",\n  xp = \"825\",\n  xpPerHp = \"18\",\n  xpValue = \"1509\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = \"35\",\n  treasure = \"See below\",\n  move = \"9\\\" (See below)\",\n  size = \"L (9'-12' diameter)\",\n  intelligence = \"Average\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+1 or better weapon to score effective damage\",\n  magicResistance = \"10%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The mustard jelly is a strain of, or perhaps a relative of, the ochre jelly. The monstrous amoeboid mustard jelly, however, is far more dangerous. The only clue to its presence is a faint odor not unlike that of blooming mustard plants. That and its translucent yellowish-brown color give it its name.\\n\\nNormally, a mustard jelly attacks by forming a pseudopod of its acidic substance and striking with it. Those nearby must save vs. poison each round, however, for the monster exudes a vapor within a 10-foot radius, and this toxic stuff causes victims to become lethargic and move at half-normal speed unless they save against the effect. Toxic effects last 2 rounds and are cumulative. This large creature is able to divide itself into 2 smaller, faster halves (move 12-18\\\"). Each is capable of attacking as well, but each has only half the hit points of the whole. A mustard jelly can, for example, flow into a room, divide itself into halves which are able to attack independently and simultaneously, and then form itself into torus-shape in order to surround a pillar which its prey has climbed. It cannot move through small spaces, however, and it cannot move along ceilings as an ochre jelly can.\\n\\nAlthough not unintelligent, mustard jelly is not known to value treasure of any sort. Of course, it is possible that some treasure might remain after a victim has been devoured.\\n\\nMustard jelly is impervious to normal weapons, and electrical attacks and magic missiles cause it to grow. The mustard jelly gains hit points equal in number to the damage rolled. Cold causes only half damage; other attack forms are normal.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/k/kampfult.lua",
+   "content": "-- Kampfult: promoted by the R807 MM2 letters JK walk round from the MM2 print\n-- (spec tools/spec_r807.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Kampfult\",\n  page = \"78\",\n  pages = \"78\",\n  source = \"MM2\",\n  race = \"Kampfult\",\n  hitDice = \"2\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"0\",\n  avgHp = \"7\",\n  armorClass = 4,\n  numAttacks = 6,\n  damage = \"1\",\n  xp = \"36\",\n  xpPerHp = \"2\",\n  xpValue = \"50\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"35\",\n  treasure = \"See below\",\n  move = \"3\\\"\",\n  size = \"S (many slender parts)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"Surprise on 1-3\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Also known as the sinewy mugger, the kampfult originally inhabited thick woodlands where it disguised its rope-like body among vines and creepers. Unsuspecting prey would then be entrapped as the kampfult looped its coils of vine-like appendages around the victim, crushing and strangling it to death. Actively hunted down by humans, the few remaining monsters of this kind are now typically found in ruins or dungeons. There, appearing to be ropes or a net, the monster surprises the unwary.\\n\\nSeveral creatures can be attacked at the same time. Once hit by an appendage, the victim cannot escape until the kampfult is slain. Only the central section of the creature can be harmed. A kampfult has 6 attack appendages of about 6 feet in length and 6 movement appendages of 1 foot in length. These are spaced along its slightly thicker body segment, which is a trunk of about 4 feet in length. The monster will hold or pull in its appendages in order to disguise itself.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/k/kech.lua",
+   "content": "-- Kech: promoted by the R807 MM2 letters JK walk round from the MM2 print\n-- (spec tools/spec_r807.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Kech\",\n  page = \"78\",\n  pages = \"78\",\n  source = \"MM2\",\n  race = \"Kech\",\n  hitDice = \"5\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"0\",\n  avgHp = \"17\",\n  armorClass = 4,\n  numAttacks = 3,\n  damage = \"2-5/2-5/1-6\",\n  xp = \"205\",\n  xpPerHp = \"5\",\n  xpValue = \"290\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-8\",\n  lairPct = \"30\",\n  treasure = \"B\",\n  move = \"15\\\" (see below)\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Surprise 5 in 6\",\n  specialDefenses = \"Camouflage\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Keches are evil forest fiends whose chief goals in life seem to be to mislead, snare, and devour humans. They roam throughout the deep woodlands of all climes, from tropical to subarctic. There they dig pits, set snares, and rig deadfalls to catch the unwary traveler. Worse still, several small bands will occasionally amalgamate in order to raid forest communities and carry off hapless victims to some faraway spot where the keches can feast undisturbed. It is also common for these creatures to imitate calls of distress to lure prey into trapped areas and ambush. Attack is by means of clawing rakes and a bite. As keches are likely to surprise prey 5 in 6, they usually rush upon 1 or 2 selected victims, slay them, and then carry off the corpses. Their camouflage coloration and skills in woodcraft make it 50% unlikely that their tracks can be followed. They move with 50% chance of silence.\\n\\nKeches are green humanoids covered with leaf-like, leathery skin. Their long arms and prehensile-toed feet allow them to climb trees very rapidly (60 feet per round) and swing through the upper branches as well. Their human-like faces have large fang-filled mouths and protruding jaws.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/k/korred.lua",
+   "content": "-- Korred: promoted by the R807 MM2 letters JK walk round from the MM2 print\n-- (spec tools/spec_r807.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Korred\",\n  page = \"78\",\n  pages = \"78\",\n  source = \"MM2\",\n  race = \"Korred\",\n  hitDice = \"6+1\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"1\",\n  avgHp = \"22\",\n  armorClass = 5,\n  numAttacks = \"1 or by weapon\",\n  damage = \"1-2 +4 or by weapon\",\n  xp = \"900\",\n  xpPerHp = \"8\",\n  xpValue = \"1076\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"1\",\n  treasure = \"E\",\n  move = \"9\\\"\",\n  size = \"S (3' tall)\",\n  intelligence = \"Very\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"Hurl rocks (2d8)\",\n  specialDefenses = \"Laugh (6\\\")\",\n  magicResistance = \"25%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These dance-loving folk always carry cudgels and large pouches containing hair, shears, and other items. They can trap intruders by weaving the hair into animated entangling ropes and snares in 1-4 rounds (rope: AC 1; hp 5; MV 3\\\"; save vs. paralysis or be trapped). The items in a korred's pouch will turn to gold if sprinkled with holy water (50-200 gp value).\\n\\nKorreds have great strength and can hurl boulders up to 10\\\" (damage 2d8) and are rumored to have built the druid stone circles. They can attack with their shears (damage d4+4), cudgels (damage d6+4), or without a weapon (damage 1-2+4). Korreds may laugh 3 times per day; those within 6\\\" hearing the laugh must roll their charisma or higher on 1d20 or be stunned for 1-4 rounds. Korreds can use the following abilities at will: stone shape, animate rock, stone door (teleport 3\\\"), shatter rock, transmute rock to mud, and stone tell.\\n\\nEach week the korreds have a holiday when they dance and play music. Those who interrupt the dance must save vs. spells or dance themselves, losing 1-4 points per round until they are dead, restrained, or until the korreds flee.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/k/kraken.lua",
+   "content": "-- Kraken: promoted by the R807 MM2 letters JK walk round from the MM2 print\n-- (spec tools/spec_r807.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Kraken\",\n  page = \"79\",\n  pages = \"79\",\n  source = \"MM2\",\n  race = \"Kraken\",\n  hitDice = \"20\",\n  hitDiceNum = \"20\",\n  hitDiceBonus = \"0\",\n  avgHp = \"70\",\n  armorClass = \"5/0\",\n  numAttacks = \"2 and 4-6 and 1\",\n  damage = \"2-12 (x2), 2-8 (x4-6), 5-20\",\n  xp = \"16900\",\n  xpPerHp = \"30\",\n  xpValue = \"19000\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"75\",\n  treasure = \"G, R, S\",\n  move = \"//3\\\" (21\\\")\",\n  size = \"L\",\n  intelligence = \"Genius +\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The kraken are a race of air-and water-breathing squid-like creatures who dwell in the dark depths of the ocean. It is said that at one time these monsters were smaller, lived in shallow coastal waters, and had human worshippers who served them and brought them them sacrifices. Some upheaval in nature-and possibly a battle with Good forces-caused the surviving monsters to retreat to the depths. There, although their number dwindled to a mere handful, the survivors grew huge and powerful. They now seek to kill any good creatures and to devour all small life. Kraken are aggressive hunters. They will battle even large sperm whales and usually win.\\n\\nTentacles are armor class 6, as is the exposed head. The body is protected by a shell of great thickness and durability and has an armor class of 0. Backward jetting movement is at 21\\\" rate and swimming at 3\\\".\\n\\nAttack is with a pair of barb-covered tentacles, 4-6 other striking tentacles, and a possible bite with a huge beak. At least 2 of the 10 tentacles will be used to anchor the kraken or for stabilization. The barbed tentacles rake and draw prey to the beaked mouth. The others, if they hit, then wrap and constrict the prey, causing 3-12 points of damage on the 2nd and each subsequent round. To escape this constriction, the tentacle must be severed (16 points of damage from sharp weapons). (See \\\"Squid, Giant\\\" for details of how tentacle hits impair victims.) If 4 or more tentacles grasp prey while the kraken is taking damage, the monster will slip away to the depths, carrying the hapless victims to its den in a submarine cavern at least 1000 feet beneath the surface. If 3 or more of a kraken's tentacles are severed, the creature will immediately retreat. Its ink cloud is 8\\\"x8\\\"x12\\\" long, and the substance is poisonous for 2-5 rounds until diluted by the water. Creatures within the sepia ink cloud will suffer 1-4 points of damage per round of exposure. In the meantime, the kraken will jet backwards to its lair.\\n\\nA kraken will attack ships in order to drag them down. Being at least 10% larger than the largest giant squid, a kraken can drag vessels of 60-foot length beneath the water. Larger ships will be dragged to halt in 10 rounds. If, during the attack, the kraken is able to maintain a constricting grasp with 6 or more of its tentacles for 3 consecutive rounds, the vessel will suffer damage as if rammed. It will then take water, and within 2-8 rounds the ship will be subject to being dragged under by the kraken because of lost bouyancy.\\n\\nKraken have the innate power to cause airy water in a sphere (128 feet across) or hemisphere 6 times as large as usual (240 feet across). Such a condition lasts for a full day. They can also employ the following spell-like powers, 1 at a time, at will: faerie fire for 8 hours, control temperature within a 40-foot radius for 1 day, control winds once per day, weather summoning once per day, and animal (fish) summoning III 3 times per day. (Fish summoning brings them to the area but does not control them.\\n\\nIt is rumored that some kraken maintain complexes of caverns wherein they keep and breed human slaves to serve and feed them. These undersea dungeons are stocked when the krakens use wind and weather to bring vessels to the area. Such lairs will be 50% likely to contain treasure of type A as well as that indicated.\",\n}\n"
+  }
+ ]
+}

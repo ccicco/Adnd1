@@ -21411,6 +21411,132 @@ when both halves land.
   call (the natural next walk is
   the Letter H box - 25 open boxes
   remain).
+- R806 LANDED 2026-10-24: commit
+  4ae87fbaebdbde481137ef20863b8c378ddcf8cd
+  (census 728 -> 729, pushed
+  9189c04..4ae87fb), THE MM2
+  LETTERS HI WALK - THE HANGMAN
+  TREE, HAUNT, HOLLYPHANT, HORDLING
+  AND HYBSIL TURNS - THE HI-FLIP
+  ROUND (Curtiss's Go call on the
+  landed letters FG walk; round
+  eleven of the MM2 arc, the SECOND
+  two-letter pass - the hangman tree
+  table opens p. 74 and the hybsil
+  closes p. 77, and the Letter I box
+  closes on the already-pinned
+  ildriss of R805). THE PIN-TIME
+  WALK: FIVE entries on pp. 74-77 -
+  the hangman tree and the haunt on
+  p. 74, the hollyphant on pp.
+  74-75, the hordling on p. 76, the
+  hybsil on p. 77. FIVE .lua defs
+  ride the R791 data_files extension,
+  registry 650 -> 655. Header
+  rules/mm2hi.h, prefix mm2hi, 129
+  consts + 14 bools + ONE grid (the
+  5x10 HhStats stat grid) = 153
+  inline. THE HI-FLIP: BOTH the
+  Letter H and the Letter I gap
+  boxes flip to closed - 14 closed
+  23 open. THE SETTLED READS
+  (capture primary, transcription
+  and djvu the cross-check voices):
+  the hangman tree HD "61 hp/year"
+  capture verbatim - avgHp 61 the
+  flat-hp read (the demilich
+  precedent; 1eonline notes the
+  intended "6+1/year" typo),
+  hitDiceNum 0; the haunt
+  numAttacks "1/1, as 5 HD monster"
+  loads max 5 (the R798 duergar
+  max-read convention); the haunt
+  block prints no SIZE/MAGIC
+  RESISTANCE line (size "", MR Nil
+  0); the hordling or-form reads
+  the best variant (HD 9, AC 3,
+  move 6, MR 0, xp VII/1400+12);
+  the hybsil xp level II (the
+  capture "ll" and djvu "11" the
+  OCR misreads); the hybsil "pixie"
+  (the capture "poie" the misread);
+  the hollyphant "2"+ long" and the
+  hangman "20"+ tall" print typos
+  kept verbatim. Grid rows:
+  hangman [3,0,0,61,3,1600,8,0,0,1],
+  haunt [0,5,0,17,5,165,5,0,6,0],
+  hollyphant [-4,8,8,36,2,3750,14,
+  0,9,60], hordling [3,9,0,31,1,
+  1400,12,0,6,0], hybsil [7,1,-1,2,
+  1,22,1,30,15,0]; avgHp formula
+  floor(3.5*HD + bonus). THE
+  LANDING DETOUR (two prefights,
+  RED then GREEN): (1) the first
+  handoff's five data files each
+  ended the text = "..." field with
+  a STRAY SECOND COMMA (",," at
+  every line 34) - the Termux
+  battery's real Lua parser choked
+  (unexpected symbol near ','), the
+  loader fell to 650 with 5 errors,
+  and the census-fail cascade read
+  every R100-R229 audit line 0
+  times; the defect was invisible
+  to every local gate - the Python
+  model never parses Lua (the R805
+  lesson's mirror: rverify proves
+  spec vs model, NOT model vs the
+  C++ loader, and the offline walk
+  sim loads fields, not syntax); the
+  fix was one comma per file, fixed
+  spec md5
+  898e65aefb55e202e8dc453bc9e59fae
+  (73929 bytes), the structural
+  profile against the landed R805
+  lua files the proof (same
+  36-line skeleton, field-for-
+  field). (2) the re-landing still
+  printed applied 0 / already 12 -
+  the first RED run had already
+  applied the old files and the
+  preflight's refusal to commit left
+  them in the tree, so the engine
+  never rewrote them; the R515
+  restore-and-rerun (git checkout
+  the three tracked files + rm the
+  new header and the 5 .lua, keep
+  the fixed spec, re-run the one
+  ./rn handoff), then GREEN -
+  loaded 655, errors 0, the R806 MM2
+  letters HI live defs: bad 0, and
+  AUDIT CENSUS: 729 audit lines,
+  each exactly once, all bad 0.
+  rverify GREEN against 9189c04 both
+  times (193 mutants, 0 missed), the
+  engine double-run GREEN (applied
+  12/already 0 then 0/12, census
+  729, mirror clean), and the
+  environment had reset again - the
+  builder was gone, so the repair
+  re-derived the spec from the
+  delivered canvas (the R802/R803
+  lost-builder precedent) and the
+  /tmp tree was re-fetched from the
+  GitHub tarball at 9189c04. Commit
+  10 files, 3300 insertions.
+  Delivery spec-r806: raw JSON
+  canvas (body byte-identical to the
+  landed spec plus the editor-added
+  trailing newline, landed md5
+  a707e5d43b4cea7b850a8eb05b343fcb;
+  authored md5
+  73dff9869b5e791d78bc5504593dec21
+  then fixed
+  898e65aefb55e202e8dc453bc9e59fae,
+  73929 bytes). NEXT - R807: awaits
+  Curtiss's call (the natural next
+  walk is the Letter J box - 23 open
+  boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

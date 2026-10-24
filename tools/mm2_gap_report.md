@@ -106,11 +106,11 @@ the R614 precedent.
   under I; the archive.org heading walk found 0
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter J** (pp. 53-131) - the A-Z entries
+- [x] **Letter J** (pp. 53-131) - the A-Z entries
   under J; the archive.org heading walk found 1
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter K** (pp. 90-123) - the A-Z entries
+- [x] **Letter K** (pp. 90-123) - the A-Z entries
   under K; the archive.org heading walk found 4
   candidate entry headings - the pin-time walk from
   the print is authoritative
