@@ -86,7 +86,7 @@ the R614 precedent.
   under D; the archive.org heading walk found 10
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter E** (pp. 52-64) - the A-Z entries
+- [x] **Letter E** (pp. 52-64) - the A-Z entries
   under E; the archive.org heading walk found 3
   candidate entry headings - the pin-time walk from
   the print is authoritative

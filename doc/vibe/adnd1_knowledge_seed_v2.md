@@ -21059,6 +21059,118 @@ when both halves land.
   dustdigger turns; the D-flip round
   nears; the arc runs on - 29 open
   boxes).
+- R803 LANDED 2026-10-24: commit
+  eed8ecec0a97ce8a4f0b5471c742dfccd4c0658f
+  (census 725 -> 726, pushed
+  ef7d7cc..eed8ece), THE MM2 LETTER D
+  PART 5 - THE DRACOLISK, DRAGON AND
+  DUSTDIGGER TURNS - THE D-FLIP ROUND
+  (Curtiss's Go call on the landed dinosaur
+  walk; round eight of the MM2 arc, the
+  fifth PART-LETTER walk). THE PIN-TIME
+  WALK: THIRTEEN entries on pp. 55-61 -
+  the dracolisk at the foot of p. 55, the
+  DRAGON family head on pp. 55-56
+  (doctrine only, no stat block - the size
+  roll, the 8 age stages, the infravision
+  and detection, the fear aura, the
+  saving-throw-by-hp/4 rule and the
+  treasure-by-age ladder all pinned), and
+  the 11 remaining stat blocks (the cloud
+  dragon, the faerie dragon, the mist
+  dragon, the shadow dragon, the giant
+  dragonfly, the dragon horse, the
+  dragonnel, the drelb, the drider, the
+  duergar and the dustdigger). TWELVE
+  .lua defs ride the R791 data_files
+  extension, registry 603 -> 615. Header
+  rules/mm2dg.h, prefix mm2dg, 203
+  consts + 52 bools + THREE grids (the
+  12x10 DgStats stat grid, the 8x3 faerie
+  color grid by age color, the 8x3 faerie
+  age grid) = 271 inline. THE D-FLIP: the
+  Letter D gap box flips to closed - the
+  letter D walk is complete (9 closed, 28
+  open). ONE REGTEST PATCH: the R803
+  live def walk at the R227 anchor (the
+  R782 site-block pattern, no census
+  marker), its registry census a FLOOR
+  603 -> at least 615. SETTLED READS
+  (capture primary, the 1eonline
+  transcription and the archive.org djvu
+  the cross-check voices): the giant
+  dragonfly hit dice line "7 (8+1-8)" is
+  the print itself, pinned verbatim in the
+  def (the capture and djvu agree; the
+  grid reads the 7); the cloud xp rider
+  "6100 + 10/hp + 100/hp over 48" and the
+  mist rider "3450 + 5/hp + 50/hp over
+  36" stay pinned as rider consts (the
+  defs carry the base and per-hp cells);
+  the faerie "See below" hit dice reads
+  the 4 the prose prints (attacks as 4
+  hit dice monsters), and the faerie
+  "See below" magic resistance reads 0 in
+  the grid (the color grid carries the
+  per-color percents); the dragonfly
+  "Save as 16th-level magic-user" reads
+  MR 0 (the R155 save-as read); the
+  cloud and mist or-forms read the
+  gaseous best (AC -3 and -2, MR 50 and
+  30); the cloud, mist and shadow ranged
+  hit dice read the LOW end (the kuei
+  precedent); the duergar
+  "Variable/variable" xp rides the
+  by_level carry (the dervish and dwarf
+  precedent, no fixed xp fields, the
+  audit allows by_level); the duergar
+  treasure "Individuals M, Q; Lair B
+  (magic only), F" (the capture "M.O"
+  the OCR misread); the dragonnel size L
+  (24'+ long) in FEET (the capture inches
+  the misread); the duergar "have been
+  know to dwell" and the dragon ancient
+  "(40+ years)" print typos pinned
+  verbatim (the djvu agrees both); the
+  duergar armor-list leading "+" marks
+  are the capture column artifact; the
+  dracolisk gaze table pins as five
+  consts (9/7/5/3/1 in 10, summing 25).
+  LOADER SEMANTICS: the duergar "1 (or
+  more)" attacks read the max 1; every
+  Nil lair reads 0. LOCAL VERIFICATION
+  (the authoring environment rebuilt from
+  the GitHub tarball at ef7d7cc - the
+  environment had reset again and the
+  R802 builder was gone, so R803 was
+  authored fresh against the landed
+  spec_r802.json as the structural
+  reference): builder static gates GREEN
+  (section coverage, the speclib model
+  audit mirror, line widths, string
+  parity, ascii, the xp/avgHp formulas,
+  prefix and key freedom); engine
+  double-run 18/0 -> 0/18; rverify GREEN
+  - restore, double-run, healthy base bad
+  0, BATTERY 423 mutants, 0 missed; the
+  /tmp tree restored pristine after
+  (rverify leaves it patched - the three
+  tracked files re-fetched from
+  raw.githubusercontent at ef7d7cc).
+  Landing run GREEN first pass: loaded
+  615, errors 0; xp audit 615/0; R797
+  through R803 live defs all bad 0;
+  AUDIT CENSUS 726 each exactly once,
+  all bad 0; build 0 warnings. Commit 17
+  files, 5573 insertions. Delivery
+  spec-r803: raw JSON canvas, 117996
+  bytes md5
+  d3ee83d0349154aa8a2f429df8718ac7.
+  NEXT - R804: awaits Curtiss's call
+  (the letter D box is CLOSED - the
+  natural next walk is the Letter E box
+  or the next arc slice; 28 open boxes
+  remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

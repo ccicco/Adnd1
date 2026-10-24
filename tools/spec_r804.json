@@ -1,0 +1,1626 @@
+{
+ "round": 804,
+ "prefix": "mm2de",
+ "header_file": "rules/mm2de.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 726,
+ "title": "the MM2 letter E walk - the eagle, elf and executioner hood turns",
+ "audit_label": "R804 MM2 letter E walk audit",
+ "audit_comment": " THE MM2 LETTER E WALK - the eagle, the eblis, the electric marine eel, the ELF family head, the grugach, the valley elf, the elfin cat and the executioner hood pp. 62-64 (the user Go call on the landed dracolisk walk). The pin-time walk from the print finds EIGHT entries: the eagle, the eblis and the electric marine eel on p. 62, the ELF family head on p. 63 (a doctrine-only grouping heading - the grugach and the valley elf stat blocks ride beneath it), the grugach and the valley elf on p. 63, the elfin cat on pp. 63-64 and the executioner hood on p. 64. SEVEN defs ride the R791 data_files extension in the MM1 registry schema, registry 615 -> 622. THE PRIOR-OWNED letter-E index entries: the euparkeria (p. 52, landed with the R802 dinosaur walk) and the cooshee, the elven dog (landed with the R798 letters BC walk); the MM1 electric def owns the MM1 electric eel print, so the MM2 print takes the electric_eel key. THE GRIDS: the 7-row EgStats stat grid (armor class, hit dice, bonus, avgHp, attacks, xp, xp/hp, lair, move, magic resistance). THE E-FLIP: the Letter E gap box flips to closed - 10 closed 27 open. THE SETTLED READS (capture primary, the 1eonline transcription and the archive.org djvu the cross-check voices): the grugach treasure \"Individuals N, Q\" (the capture \"N, O\" the OCR misread); the grugach \"fighter/druids\" (the capture \"fluids\" the misread); the electric eel move \"//9\"\" the print line pinned verbatim (the moveRate reads 9); the electric eel 6-8 hit dice read the low end (the kuei precedent); the executioner hood hit-dice ladder 2+2, 4+4, 6+6 reads the or-form best 6+6; the grugach and valley elf \"90% to charm and sleep only\" magic resistance reads 90 in the grid; the grugach print carries no xp level prefix; the valley elf xp is average individuals only; the valley elf Greyhawk raids keep the print em-dash as the ASCII hyphen. LOADER SEMANTICS: every Nil lair reads 0. ONE REGTEST PATCH: the R804 live def walk at the R227 anchor (the R782 site-block pattern, no census marker), its registry census a FLOOR 615 -> at least 622.",
+ "include_comment": "the MM2 letter E walk - the eagle, elf and executioner hood turns",
+ "include_after": "#include \"rules/mm2dg.h\"  // R803: the MM2 letter D part 5 - the dracolisk, dragon and dustdigger turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R803 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R803 LANDED 2026-10-24: commit",
+  "  eed8ecec0a97ce8a4f0b5471c742dfccd4c0658f",
+  "  (census 725 -> 726, pushed",
+  "  ef7d7cc..eed8ece), THE MM2 LETTER D",
+  "  PART 5 - THE DRACOLISK, DRAGON AND",
+  "  DUSTDIGGER TURNS - THE D-FLIP ROUND",
+  "  (Curtiss's Go call on the landed dinosaur",
+  "  walk; round eight of the MM2 arc, the",
+  "  fifth PART-LETTER walk). THE PIN-TIME",
+  "  WALK: THIRTEEN entries on pp. 55-61 -",
+  "  the dracolisk at the foot of p. 55, the",
+  "  DRAGON family head on pp. 55-56",
+  "  (doctrine only, no stat block - the size",
+  "  roll, the 8 age stages, the infravision",
+  "  and detection, the fear aura, the",
+  "  saving-throw-by-hp/4 rule and the",
+  "  treasure-by-age ladder all pinned), and",
+  "  the 11 remaining stat blocks (the cloud",
+  "  dragon, the faerie dragon, the mist",
+  "  dragon, the shadow dragon, the giant",
+  "  dragonfly, the dragon horse, the",
+  "  dragonnel, the drelb, the drider, the",
+  "  duergar and the dustdigger). TWELVE",
+  "  .lua defs ride the R791 data_files",
+  "  extension, registry 603 -> 615. Header",
+  "  rules/mm2dg.h, prefix mm2dg, 203",
+  "  consts + 52 bools + THREE grids (the",
+  "  12x10 DgStats stat grid, the 8x3 faerie",
+  "  color grid by age color, the 8x3 faerie",
+  "  age grid) = 271 inline. THE D-FLIP: the",
+  "  Letter D gap box flips to closed - the",
+  "  letter D walk is complete (9 closed, 28",
+  "  open). ONE REGTEST PATCH: the R803",
+  "  live def walk at the R227 anchor (the",
+  "  R782 site-block pattern, no census",
+  "  marker), its registry census a FLOOR",
+  "  603 -> at least 615. SETTLED READS",
+  "  (capture primary, the 1eonline",
+  "  transcription and the archive.org djvu",
+  "  the cross-check voices): the giant",
+  "  dragonfly hit dice line \"7 (8+1-8)\" is",
+  "  the print itself, pinned verbatim in the",
+  "  def (the capture and djvu agree; the",
+  "  grid reads the 7); the cloud xp rider",
+  "  \"6100 + 10/hp + 100/hp over 48\" and the",
+  "  mist rider \"3450 + 5/hp + 50/hp over",
+  "  36\" stay pinned as rider consts (the",
+  "  defs carry the base and per-hp cells);",
+  "  the faerie \"See below\" hit dice reads",
+  "  the 4 the prose prints (attacks as 4",
+  "  hit dice monsters), and the faerie",
+  "  \"See below\" magic resistance reads 0 in",
+  "  the grid (the color grid carries the",
+  "  per-color percents); the dragonfly",
+  "  \"Save as 16th-level magic-user\" reads",
+  "  MR 0 (the R155 save-as read); the",
+  "  cloud and mist or-forms read the",
+  "  gaseous best (AC -3 and -2, MR 50 and",
+  "  30); the cloud, mist and shadow ranged",
+  "  hit dice read the LOW end (the kuei",
+  "  precedent); the duergar",
+  "  \"Variable/variable\" xp rides the",
+  "  by_level carry (the dervish and dwarf",
+  "  precedent, no fixed xp fields, the",
+  "  audit allows by_level); the duergar",
+  "  treasure \"Individuals M, Q; Lair B",
+  "  (magic only), F\" (the capture \"M.O\"",
+  "  the OCR misread); the dragonnel size L",
+  "  (24'+ long) in FEET (the capture inches",
+  "  the misread); the duergar \"have been",
+  "  know to dwell\" and the dragon ancient",
+  "  \"(40+ years)\" print typos pinned",
+  "  verbatim (the djvu agrees both); the",
+  "  duergar armor-list leading \"+\" marks",
+  "  are the capture column artifact; the",
+  "  dracolisk gaze table pins as five",
+  "  consts (9/7/5/3/1 in 10, summing 25).",
+  "  LOADER SEMANTICS: the duergar \"1 (or",
+  "  more)\" attacks read the max 1; every",
+  "  Nil lair reads 0. LOCAL VERIFICATION",
+  "  (the authoring environment rebuilt from",
+  "  the GitHub tarball at ef7d7cc - the",
+  "  environment had reset again and the",
+  "  R802 builder was gone, so R803 was",
+  "  authored fresh against the landed",
+  "  spec_r802.json as the structural",
+  "  reference): builder static gates GREEN",
+  "  (section coverage, the speclib model",
+  "  audit mirror, line widths, string",
+  "  parity, ascii, the xp/avgHp formulas,",
+  "  prefix and key freedom); engine",
+  "  double-run 18/0 -> 0/18; rverify GREEN",
+  "  - restore, double-run, healthy base bad",
+  "  0, BATTERY 423 mutants, 0 missed; the",
+  "  /tmp tree restored pristine after",
+  "  (rverify leaves it patched - the three",
+  "  tracked files re-fetched from",
+  "  raw.githubusercontent at ef7d7cc).",
+  "  Landing run GREEN first pass: loaded",
+  "  615, errors 0; xp audit 615/0; R797",
+  "  through R803 live defs all bad 0;",
+  "  AUDIT CENSUS 726 each exactly once,",
+  "  all bad 0; build 0 warnings. Commit 17",
+  "  files, 5573 insertions. Delivery",
+  "  spec-r803: raw JSON canvas, 117996",
+  "  bytes md5",
+  "  d3ee83d0349154aa8a2f429df8718ac7.",
+  "  NEXT - R804: awaits Curtiss's call",
+  "  (the letter D box is CLOSED - the",
+  "  natural next walk is the Letter E box",
+  "  or the next arc slice; 28 open boxes",
+  "  remain)."
+ ],
+ "banner": {
+  "title": "THE MM2 LETTER E WALK - THE EAGLE, ELF AND EXECUTIONER HOOD TURNS (the eagle, the eblis, the electric marine eel and the ELF family head pp. 62-63, the grugach, the valley elf, the elfin cat and the executioner hood pp. 62-64), promoted to the live registry",
+  "provenance": "Round nine of the MM2 arc, the sixth PART-LETTER walk (the user Go call on the landed dracolisk walk: the letter E closes with the eagle, the eblis, the electric marine eel, the ELF family head, the grugach, the valley elf, the elfin cat and the executioner's hood pp. 62-64 - the E-FLIP round, the Letter E gap box flips to closed). The capture is the Curtiss PDF upload cross-checked against the independent transcription and the archive.org djvu OCR, the contested cells settled: the grugach treasure letters N, Q; the grugach fighter/druids dual class; the electric eel move \"//9\"\" kept verbatim; the executioner hood hit-dice ladder reads the or-form best"
+ },
+ "consts": [
+  {
+   "name": "mm2deRound",
+   "value": 804,
+   "comment": "The MM2 letter E walk round: the eagle, elf and executioner hood turns, the E-flip round (the user Go call on the landed dracolisk walk)"
+  },
+  {
+   "name": "mm2deRegistryBefore",
+   "value": 615,
+   "comment": "The registry census before the R804 promotion (the landed R803 count)"
+  },
+  {
+   "name": "mm2deRegistryAfter",
+   "value": 622,
+   "comment": "The registry census after the R804 promotion (7 defs)"
+  },
+  {
+   "name": "mm2deDefCount",
+   "value": 7,
+   "comment": "The R804 def count (the eagle, the eblis, the electric marine eel, the grugach, the valley elf, the elfin cat and the executioner's hood)"
+  },
+  {
+   "name": "mm2deEntryCount",
+   "value": 8,
+   "comment": "The pin-time entry count on pp. 62-64 (the 7 stat blocks plus the ELF family head, a doctrine-only grouping with no stat block of its own)"
+  },
+  {
+   "name": "mm2deEgStatRows",
+   "value": 7,
+   "comment": "The row count of the eagle-to-hood stat grid"
+  },
+  {
+   "name": "mm2deGapClosed",
+   "value": 10,
+   "comment": "The gap report closed boxes after the E-flip (the Letter E box joins A through D)"
+  },
+  {
+   "name": "mm2deGapOpen",
+   "value": 27,
+   "comment": "The gap report open boxes after the E-flip"
+  },
+  {
+   "name": "mm2dePriorOwnedEntries",
+   "value": 2,
+   "comment": "The letter-E index entries owned by earlier rounds (the euparkeria under DINOSAUR and the cooshee, the elven dog)"
+  },
+  {
+   "name": "mm2deEuparkeriaOwningRound",
+   "value": 802,
+   "comment": "The euparkeria landed with the R802 dinosaur walk (p. 52, a letter-E index entry)"
+  },
+  {
+   "name": "mm2deCoosheeOwningRound",
+   "value": 798,
+   "comment": "The cooshee (elven dog) landed with the R798 letters BC walk (a letter-E index entry)"
+  },
+  {
+   "name": "mm2deElfHeadSubEntryCount",
+   "value": 2,
+   "comment": "The ELF family head on p. 63 groups the grugach and the valley elf stat blocks beneath its heading (the heading itself carries no stat block)"
+  },
+  {
+   "name": "mm2deEagleXpValue",
+   "value": 47,
+   "comment": "The eagle full kill xp (35 + 2/hp x 6 avg; level II)"
+  },
+  {
+   "name": "mm2deEagleXpLevel",
+   "value": 2,
+   "comment": "The eagle printed xp level (II)"
+  },
+  {
+   "name": "mm2deEagleRookeryPct",
+   "value": 5,
+   "comment": "The chance an encounter is in a rookery area"
+  },
+  {
+   "name": "mm2deEagleRookeryMin",
+   "value": 5,
+   "comment": "The rookery band low end"
+  },
+  {
+   "name": "mm2deEagleRookeryMax",
+   "value": 12,
+   "comment": "The rookery band high end"
+  },
+  {
+   "name": "mm2deEagleEggsMin",
+   "value": 1,
+   "comment": "The nest egg count low end"
+  },
+  {
+   "name": "mm2deEagleEggsMax",
+   "value": 4,
+   "comment": "The nest egg count high end"
+  },
+  {
+   "name": "mm2deEagleNestShinyPct",
+   "value": 10,
+   "comment": "The chance a nest holds a small shiny item (a coin, gem, etc.)"
+  },
+  {
+   "name": "mm2deEagleDiveHeightFeet",
+   "value": 100,
+   "comment": "The dive-from-height threshold (from 100 feet or more)"
+  },
+  {
+   "name": "mm2deEagleDiveClawAttacks",
+   "value": 2,
+   "comment": "The dive restricts damage to 2 claw attacks"
+  },
+  {
+   "name": "mm2deEagleDiveToHitBonus",
+   "value": 2,
+   "comment": "The dive attacks are at +2 to hit"
+  },
+  {
+   "name": "mm2deEagleDiveDamageMultiplier",
+   "value": 2,
+   "comment": "The dive attacks cause twice normal damage"
+  },
+  {
+   "name": "mm2deEagleTrainablePct",
+   "value": 25,
+   "comment": "The share of eagles that can be properly managed for hunting"
+  },
+  {
+   "name": "mm2deEagleEggValueMin",
+   "value": 60,
+   "comment": "The viable eggs or eaglets market low end (gold pieces)"
+  },
+  {
+   "name": "mm2deEagleEggValueMax",
+   "value": 100,
+   "comment": "The viable eggs or eaglets market high end (gold pieces)"
+  },
+  {
+   "name": "mm2deEblisXpValue",
+   "value": 255,
+   "comment": "The eblis full kill xp (165 + 5/hp x 18 avg; level IV)"
+  },
+  {
+   "name": "mm2deEblisXpLevel",
+   "value": 4,
+   "comment": "The eblis printed xp level (IV)"
+  },
+  {
+   "name": "mm2deEblisHutsMin",
+   "value": 2,
+   "comment": "The community hut count low end"
+  },
+  {
+   "name": "mm2deEblisHutsMax",
+   "value": 8,
+   "comment": "The community hut count high end"
+  },
+  {
+   "name": "mm2deEblisHutHiddenPct",
+   "value": 90,
+   "comment": "The unlikelihood the dwellings are discovered even by careful search"
+  },
+  {
+   "name": "mm2deEblisEggPct",
+   "value": 30,
+   "comment": "The chance a hut pile holds an egg"
+  },
+  {
+   "name": "mm2deEblisTreasurePct",
+   "value": 25,
+   "comment": "The chance a hut holds 1 of the shiny treasure entries"
+  },
+  {
+   "name": "mm2deEblisIllusionistsPerCommunity",
+   "value": 1,
+   "comment": "In each community 1 individual is capable of illusionist magic"
+  },
+  {
+   "name": "mm2deEblisSpellMin",
+   "value": 2,
+   "comment": "The illusionist spell count low end"
+  },
+  {
+   "name": "mm2deEblisSpellMax",
+   "value": 8,
+   "comment": "The illusionist spell count high end"
+  },
+  {
+   "name": "mm2deEblisSpellCastingLevel",
+   "value": 3,
+   "comment": "The spells are usable at 3rd level ability"
+  },
+  {
+   "name": "mm2deEblisIllusionistSpellCount",
+   "value": 8,
+   "comment": "The printed illusionist spell ladder runs audible glamor through whispering wind"
+  },
+  {
+   "name": "mm2deEblisFireSaveBonus",
+   "value": 1,
+   "comment": "Saving throws vs. fire are made at +1"
+  },
+  {
+   "name": "mm2deEblisFireDamageBonus",
+   "value": 1,
+   "comment": "Fire damage is at -1 per die"
+  },
+  {
+   "name": "mm2deElectricEelXpValue",
+   "value": 568,
+   "comment": "The electric marine eel full kill xp (400 + 8/hp x 21 avg; level V)"
+  },
+  {
+   "name": "mm2deElectricEelXpLevel",
+   "value": 5,
+   "comment": "The electric marine eel printed xp level (V)"
+  },
+  {
+   "name": "mm2deElectricEelDepthMinFeet",
+   "value": 30,
+   "comment": "The common warm shallow depth low end"
+  },
+  {
+   "name": "mm2deElectricEelDepthMaxFeet",
+   "value": 150,
+   "comment": "The common warm shallow depth high end"
+  },
+  {
+   "name": "mm2deElectricEelInitiativeBonus",
+   "value": 1,
+   "comment": "The eel strikes quickly, gaining +1 on initiative"
+  },
+  {
+   "name": "mm2deElectricEelChargePeriodTurns",
+   "value": 1,
+   "comment": "The eel releases a charge once every turn"
+  },
+  {
+   "name": "mm2deElectricEelInnerRadiusFeet",
+   "value": 5,
+   "comment": "The inner electrical blast radius (full damage band)"
+  },
+  {
+   "name": "mm2deElectricEelMiddleRadiusFeet",
+   "value": 10,
+   "comment": "The middle electrical blast radius (5-10 feet)"
+  },
+  {
+   "name": "mm2deElectricEelOuterRadiusFeet",
+   "value": 15,
+   "comment": "The outer electrical blast radius (10-15 feet)"
+  },
+  {
+   "name": "mm2deElectricEelInnerDamageMin",
+   "value": 6,
+   "comment": "The inner band damage low end"
+  },
+  {
+   "name": "mm2deElectricEelInnerDamageMax",
+   "value": 36,
+   "comment": "The inner band damage high end"
+  },
+  {
+   "name": "mm2deElectricEelMiddleDamageMin",
+   "value": 4,
+   "comment": "The middle band damage low end"
+  },
+  {
+   "name": "mm2deElectricEelMiddleDamageMax",
+   "value": 24,
+   "comment": "The middle band damage high end"
+  },
+  {
+   "name": "mm2deElectricEelOuterDamageMin",
+   "value": 2,
+   "comment": "The outer band damage low end"
+  },
+  {
+   "name": "mm2deElectricEelOuterDamageMax",
+   "value": 12,
+   "comment": "The outer band damage high end"
+  },
+  {
+   "name": "mm2deElectricEelMiddleSaveBonus",
+   "value": 1,
+   "comment": "Saving throws at 5-10 feet are made at +1"
+  },
+  {
+   "name": "mm2deElectricEelOuterSaveBonus",
+   "value": 2,
+   "comment": "Saving throws at 10-15 feet are made at +2"
+  },
+  {
+   "name": "mm2deGrugachXpValue",
+   "value": 73,
+   "comment": "The grugach full kill xp (65 + 2/hp x 4 avg; the print carries no xp level prefix)"
+  },
+  {
+   "name": "mm2deGrugachStrengthDiceBonus",
+   "value": 2,
+   "comment": "The grugach strength bonus (add +2 on strength dice roll)"
+  },
+  {
+   "name": "mm2deGrugachStrengthCap",
+   "value": 18,
+   "comment": "Treating a 19 or 20 strength roll as 18"
+  },
+  {
+   "name": "mm2deGrugachStagMountPct",
+   "value": 70,
+   "comment": "The chance a band has stags for mounts"
+  },
+  {
+   "name": "mm2deGrugachMistakenForWoodElfPct",
+   "value": 20,
+   "comment": "The share of random contacts made supposedly with wood elves that are actually with grugach"
+  },
+  {
+   "name": "mm2deGrugachTrapCatchPct",
+   "value": 90,
+   "comment": "The probability creatures passing near a trap will be caught in it"
+  },
+  {
+   "name": "mm2deGrugachTrapCarefulCatchPct",
+   "value": 30,
+   "comment": "The catch likelihood reduced to 30% when the trapped area is examined carefully"
+  },
+  {
+   "name": "mm2deGrugachPitDepthFeet",
+   "value": 10,
+   "comment": "The pits are normally 10 feet deep and spiked"
+  },
+  {
+   "name": "mm2deGrugachPitFallMin",
+   "value": 1,
+   "comment": "The pit fall damage low end (earth-floored pit)"
+  },
+  {
+   "name": "mm2deGrugachPitFallMax",
+   "value": 4,
+   "comment": "The pit fall damage high end"
+  },
+  {
+   "name": "mm2deGrugachPitSpikeMin",
+   "value": 1,
+   "comment": "The per-spike damage low end"
+  },
+  {
+   "name": "mm2deGrugachPitSpikeMax",
+   "value": 6,
+   "comment": "The per-spike damage high end"
+  },
+  {
+   "name": "mm2deGrugachPitPoisonPct",
+   "value": 50,
+   "comment": "The chance the pit adds poison"
+  },
+  {
+   "name": "mm2deGrugachSnareSuspensionFeet",
+   "value": 5,
+   "comment": "The snares suspend creatures 5 feet or more above the ground"
+  },
+  {
+   "name": "mm2deGrugachDeadfallMinDice",
+   "value": 5,
+   "comment": "The deadfall log damage low end (5d6)"
+  },
+  {
+   "name": "mm2deGrugachDeadfallMaxDice",
+   "value": 8,
+   "comment": "The deadfall log damage high end (8d6)"
+  },
+  {
+   "name": "mm2deGrugachDeadfallDieSides",
+   "value": 6,
+   "comment": "The deadfall log damage die sides"
+  },
+  {
+   "name": "mm2deValleyElfXpValue",
+   "value": 75,
+   "comment": "The valley elf full kill xp (65 + 2/hp x 5 avg, average individuals only; level III)"
+  },
+  {
+   "name": "mm2deValleyElfXpLevel",
+   "value": 3,
+   "comment": "The valley elf printed xp level (III)"
+  },
+  {
+   "name": "mm2deValleyElfCoosheePct",
+   "value": 75,
+   "comment": "The chance 1-4 cooshee are with a wandering band"
+  },
+  {
+   "name": "mm2deValleyElfCoosheeMin",
+   "value": 1,
+   "comment": "The wandering band cooshee count low end"
+  },
+  {
+   "name": "mm2deValleyElfCoosheeMax",
+   "value": 4,
+   "comment": "The wandering band cooshee count high end"
+  },
+  {
+   "name": "mm2deValleyElfCoosheeLairPct",
+   "value": 90,
+   "comment": "The lair probability of 2-8 cooshee"
+  },
+  {
+   "name": "mm2deValleyElfCoosheeLairMin",
+   "value": 2,
+   "comment": "The lair cooshee count low end"
+  },
+  {
+   "name": "mm2deValleyElfCoosheeLairMax",
+   "value": 8,
+   "comment": "The lair cooshee count high end"
+  },
+  {
+   "name": "mm2deValleyElfRaidTargetCount",
+   "value": 4,
+   "comment": "In the WORLD OF GREYHAWK setting bands have raided into Bissel, Gran March, Ket and the Grand Duchy of Geoff"
+  },
+  {
+   "name": "mm2deElfinCatXpValue",
+   "value": 199,
+   "comment": "The elfin cat full kill xp (135 + 4/hp x 16 avg; level IV)"
+  },
+  {
+   "name": "mm2deElfinCatXpLevel",
+   "value": 4,
+   "comment": "The elfin cat printed xp level (IV)"
+  },
+  {
+   "name": "mm2deElfinCatLeapFeet",
+   "value": 20,
+   "comment": "The elfin cat leaps 20 feet or more with ease"
+  },
+  {
+   "name": "mm2deElfinCatEnlargePerDay",
+   "value": 1,
+   "comment": "The enlarge uses (enlarge actually increases attack power to double normal)"
+  },
+  {
+   "name": "mm2deElfinCatReducePerDay",
+   "value": 2,
+   "comment": "The reduce uses per day"
+  },
+  {
+   "name": "mm2deElfinCatTreePerDay",
+   "value": 2,
+   "comment": "The tree uses per day (limb, not entire tree)"
+  },
+  {
+   "name": "mm2deElfinCatTripPerDay",
+   "value": 1,
+   "comment": "The trip uses per day"
+  },
+  {
+   "name": "mm2deElfinCatSpellLevel",
+   "value": 9,
+   "comment": "The spell-like powers are performed at 9th level ability"
+  },
+  {
+   "name": "mm2deElfinCatConcealPct",
+   "value": 90,
+   "comment": "The concealment probability in natural surroundings"
+  },
+  {
+   "name": "mm2deElfinCatSurprisedIn",
+   "value": 20,
+   "comment": "The keen senses prevent surprise except 1 in 20"
+  },
+  {
+   "name": "mm2deElfinCatSurprisesIn",
+   "value": 6,
+   "comment": "The elfin cat in turn surprises 5 in 6"
+  },
+  {
+   "name": "mm2deHoodXpValue",
+   "value": 536,
+   "comment": "The executioner's hood full kill xp (320 + 8/hp x 27 avg; level V)"
+  },
+  {
+   "name": "mm2deHoodXpLevel",
+   "value": 5,
+   "comment": "The executioner's hood printed xp level (V)"
+  },
+  {
+   "name": "mm2deHoodFormCount",
+   "value": 3,
+   "comment": "The printed hit-dice ladder runs 2+2, 4+4 and 6+6"
+  },
+  {
+   "name": "mm2deHoodHdNumMin",
+   "value": 2,
+   "comment": "The hit-dice ladder low end (the grid reads the or-form best 6+6)"
+  },
+  {
+   "name": "mm2deHoodHdNumMax",
+   "value": 6,
+   "comment": "The hit-dice ladder high end"
+  },
+  {
+   "name": "mm2deHoodHdBonusMin",
+   "value": 2,
+   "comment": "The hit-dice bonus ladder low end"
+  },
+  {
+   "name": "mm2deHoodHdBonusMax",
+   "value": 6,
+   "comment": "The hit-dice bonus ladder high end"
+  },
+  {
+   "name": "mm2deHoodBiteMin",
+   "value": 1,
+   "comment": "The immediate bite damage low end"
+  },
+  {
+   "name": "mm2deHoodBiteMax",
+   "value": 4,
+   "comment": "The immediate bite damage high end (the strangulation and suffocation repeats it)"
+  },
+  {
+   "name": "mm2deHoodSurpriseMin",
+   "value": 1,
+   "comment": "The surprise roll low end (surprise on a 1-3)"
+  },
+  {
+   "name": "mm2deHoodSurpriseMax",
+   "value": 3,
+   "comment": "The surprise roll high end"
+  },
+  {
+   "name": "mm2deHoodBrandyRounds",
+   "value": 4,
+   "comment": "After 4 rounds of strong brandy the hood falls off, intoxicated"
+  },
+  {
+   "name": "mm2deHoodBrandyLossPerRound",
+   "value": 1,
+   "comment": "The brandy makes the monster lose 1 point of damaging ability per round"
+  },
+  {
+   "name": "mm2deHoodBrandyQuarts",
+   "value": 1,
+   "comment": "The full quart assumed poured"
+  },
+  {
+   "name": "mm2deHoodThicknessInches",
+   "value": 1,
+   "comment": "The monster is about 1 inch thick"
+  },
+  {
+   "name": "mm2deHoodEyeHoles",
+   "value": 2,
+   "comment": "There are 2 eye holes which can be used to see out of or into its cavity"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2deElfHeadIsDoctrineOnlyHeading",
+   "value": true,
+   "comment": "The ELF family head p. 63 is a grouping heading with no stat block of its own (the grugach and the valley elf blocks follow it)"
+  },
+  {
+   "name": "mm2deElfinCatOwnStatBlock",
+   "value": true,
+   "comment": "The elfin cat stands alone with its own stat block (pp. 63-64), not under the ELF family heading"
+  },
+  {
+   "name": "mm2deEagleDiveDoublesSpeed",
+   "value": true,
+   "comment": "Diving movement is double normal speed"
+  },
+  {
+   "name": "mm2deEagleAlmostNeverSurprised",
+   "value": true,
+   "comment": "Due to exceptional eyesight eagles are almost never surprised"
+  },
+  {
+   "name": "mm2deEagleAvoidsDemihumansUnlessHungry",
+   "value": true,
+   "comment": "Unless exceptionally hungry eagles will not attack even the smaller demihumans"
+  },
+  {
+   "name": "mm2deEblisCastsByDancingVocalization",
+   "value": true,
+   "comment": "The eblis illusionist magic works by means of dancing and vocalization"
+  },
+  {
+   "name": "mm2deEblisAttacksByBeakStab",
+   "value": true,
+   "comment": "The eblis attack is by stabbing with the beak"
+  },
+  {
+   "name": "mm2deElectricEelChargeStunsForDamageRounds",
+   "value": true,
+   "comment": "A failed save vs. paralysis leaves the victim stunned and helpless for rounds equal to the damage sustained"
+  },
+  {
+   "name": "mm2deElectricEelSaveNegatesOnlyStunning",
+   "value": true,
+   "comment": "A successful save does not reduce damage by one-half but merely negates stunning"
+  },
+  {
+   "name": "mm2deElectricEelWarmShallowSaltWaterOnly",
+   "value": true,
+   "comment": "The giant marine electric eel is found only in warm, relatively shallow salt waters"
+  },
+  {
+   "name": "mm2deGrugachXenophobic",
+   "value": true,
+   "comment": "The grugach are completely xenophobic, distrusting even other sorts of elves"
+  },
+  {
+   "name": "mm2deGrugachNotMagicUsers",
+   "value": true,
+   "comment": "The grugach are not magic-users"
+  },
+  {
+   "name": "mm2deGrugachDualClassAreFighterDruids",
+   "value": true,
+   "comment": "Dual-classed grugach individuals will be fighter/druids (the capture \"fluids\" the OCR misread)"
+  },
+  {
+   "name": "mm2deGrugachAllAdultsSetTraps",
+   "value": true,
+   "comment": "All adult grugach are able to set traps"
+  },
+  {
+   "name": "mm2deGrugachDeadfallPinsVictim",
+   "value": true,
+   "comment": "The deadfall log crashes down for damage and pins the victim as well"
+  },
+  {
+   "name": "mm2deValleyElfUsesCoosheeGuards",
+   "value": true,
+   "comment": "The valley elves use cooshee (q.v.) as guard animals"
+  },
+  {
+   "name": "mm2deValleyElfShunnedByOtherElves",
+   "value": true,
+   "comment": "All other sorts of elves, including the dark elves (drow), shun valley elves"
+  },
+  {
+   "name": "mm2deValleyElfToleratesGnomes",
+   "value": true,
+   "comment": "The valley elves dislike association with any races save perhaps gnomekind, whom they tolerate"
+  },
+  {
+   "name": "mm2deValleyElfFollowsMm1ElfStats",
+   "value": true,
+   "comment": "The valley elves follow the MONSTER MANUAL I \"Elf\" statistics for habitat, group composition, weaponry and special abilities"
+  },
+  {
+   "name": "mm2deElfinCatEnlargesToDoubleAttack",
+   "value": true,
+   "comment": "Enlarge actually increases attack power to double normal"
+  },
+  {
+   "name": "mm2deElfinCatMovesSilently",
+   "value": true,
+   "comment": "The elfin cats move 99.9% silently"
+  },
+  {
+   "name": "mm2deElfinCatLimitedEsp",
+   "value": true,
+   "comment": "The elfin cats use a limited ESP ability to read the thoughts of creatures nearby"
+  },
+  {
+   "name": "mm2deElfinCatSentinelRole",
+   "value": true,
+   "comment": "In return for feeding and protection the elfin cats serve as sentinels and report intruders"
+  },
+  {
+   "name": "mm2deElfinCatSpeaksAFewWordsOfElf",
+   "value": true,
+   "comment": "The elfin cats can speak a few words of Elf, due to association, and some speak Gnome, Brownie, etc., as well"
+  },
+  {
+   "name": "mm2deHoodImmuneToSleepSpells",
+   "value": true,
+   "comment": "The executioner hood is totally unaffected by sleep spells"
+  },
+  {
+   "name": "mm2deHoodVictimSharesSpellEffects",
+   "value": true,
+   "comment": "The fibrous strands cause the victim to suffer whatever other spell effects the hood sustains"
+  },
+  {
+   "name": "mm2deHoodHuntsLikeLurkerAbove",
+   "value": true,
+   "comment": "The hood can spread out into disc shape and has been known to hunt as does a lurker above (q.v.)"
+  },
+  {
+   "name": "mm2deHoodStranglesPrey",
+   "value": true,
+   "comment": "The hood inflicts further damage from strangulation and suffocation until the prey is killed or the monster is slain"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the eagle-to-hood stat grid",
+   "tag": "EgStats",
+   "count": "mm2deEgStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE E-GRID: the 7-row EgStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the 7 letter-E stat blocks, in print order)",
+   "cols": [
+    "mm2deEgStatAC",
+    "mm2deEgStatHd",
+    "mm2deEgStatHdBonus",
+    "mm2deEgStatAvgHp",
+    "mm2deEgStatAttacks",
+    "mm2deEgStatXp",
+    "mm2deEgStatXpHp",
+    "mm2deEgStatLairPct",
+    "mm2deEgStatMove",
+    "mm2deEgStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells",
+    "The hit dice num cells (the electric eel 6-8 ranged cell reads the low end - the kuei precedent; the hood or-form ladder reads the best 6)",
+    "The hit dice bonus points",
+    "The book-average hit points (the floor(num x 3.5) + bonus formula)",
+    "The attack cells",
+    "The base xp cells (the grugach print carries no xp level prefix)",
+    "The xp per hit point cells",
+    "The percent in lair cells (every Nil reads 0)",
+    "The primary move cells in print inches (the first number of the print move line; the eel \"//9\"\" verbatim quirk reads 9)",
+    "The magic resistance cells (the grugach and valley elf \"90% to charm and sleep only\" reads 90; every Standard reads 0)"
+   ],
+   "data": [
+    [
+     6,
+     1,
+     3,
+     6,
+     3,
+     35,
+     2,
+     20,
+     1,
+     0
+    ],
+    [
+     3,
+     4,
+     4,
+     18,
+     4,
+     165,
+     5,
+     50,
+     12,
+     0
+    ],
+    [
+     6,
+     6,
+     0,
+     21,
+     1,
+     400,
+     8,
+     0,
+     9,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     4,
+     1,
+     65,
+     2,
+     50,
+     15,
+     90
+    ],
+    [
+     4,
+     1,
+     2,
+     5,
+     1,
+     65,
+     2,
+     10,
+     12,
+     90
+    ],
+    [
+     4,
+     3,
+     6,
+     16,
+     3,
+     135,
+     4,
+     5,
+     18,
+     20
+    ],
+    [
+     6,
+     6,
+     6,
+     27,
+     1,
+     320,
+     8,
+     0,
+     6,
+     0
+    ]
+   ]
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter E walk round pins (the R804 census)": [
+   {
+    "kind": "const",
+    "name": "mm2deRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEgStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dePriorOwnedEntries"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEuparkeriaOwningRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deCoosheeOwningRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfHeadSubEntryCount"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElfHeadIsDoctrineOnlyHeading"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElfinCatOwnStatBlock"
+   }
+  ],
+  "the eagle pins (the R804 MM2 letter E walk)": [
+   {
+    "kind": "const",
+    "name": "mm2deEagleXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleRookeryPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleRookeryMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleRookeryMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleEggsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleEggsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleNestShinyPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleDiveHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleDiveClawAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleDiveToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleDiveDamageMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleTrainablePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleEggValueMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEagleEggValueMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deEagleDiveDoublesSpeed"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deEagleAlmostNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deEagleAvoidsDemihumansUnlessHungry"
+   }
+  ],
+  "the eblis pins (the R804 MM2 letter E walk)": [
+   {
+    "kind": "const",
+    "name": "mm2deEblisXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisHutsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisHutsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisHutHiddenPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisEggPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisTreasurePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisIllusionistsPerCommunity"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisSpellMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisSpellMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisSpellCastingLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisIllusionistSpellCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisFireSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deEblisFireDamageBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deEblisCastsByDancingVocalization"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deEblisAttacksByBeakStab"
+   }
+  ],
+  "the electric marine eel pins (the R804 MM2 letter E walk)": [
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelDepthMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelDepthMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelInitiativeBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelChargePeriodTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelInnerRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelMiddleRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelOuterRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelInnerDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelInnerDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelMiddleDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelMiddleDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelOuterDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelOuterDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelMiddleSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElectricEelOuterSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElectricEelChargeStunsForDamageRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElectricEelSaveNegatesOnlyStunning"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElectricEelWarmShallowSaltWaterOnly"
+   }
+  ],
+  "the grugach pins (the R804 MM2 letter E walk)": [
+   {
+    "kind": "const",
+    "name": "mm2deGrugachXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachStrengthDiceBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachStrengthCap"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachStagMountPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachMistakenForWoodElfPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachTrapCatchPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachTrapCarefulCatchPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachPitDepthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachPitFallMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachPitFallMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachPitSpikeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachPitSpikeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachPitPoisonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachSnareSuspensionFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachDeadfallMinDice"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachDeadfallMaxDice"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deGrugachDeadfallDieSides"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deGrugachXenophobic"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deGrugachNotMagicUsers"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deGrugachDualClassAreFighterDruids"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deGrugachAllAdultsSetTraps"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deGrugachDeadfallPinsVictim"
+   }
+  ],
+  "the valley elf pins (the R804 MM2 letter E walk)": [
+   {
+    "kind": "const",
+    "name": "mm2deValleyElfXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deValleyElfXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deValleyElfCoosheePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deValleyElfCoosheeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deValleyElfCoosheeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deValleyElfCoosheeLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deValleyElfCoosheeLairMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deValleyElfCoosheeLairMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deValleyElfRaidTargetCount"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deValleyElfUsesCoosheeGuards"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deValleyElfShunnedByOtherElves"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deValleyElfToleratesGnomes"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deValleyElfFollowsMm1ElfStats"
+   }
+  ],
+  "the elfin cat pins (the R804 MM2 letter E walk)": [
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatLeapFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatEnlargePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatReducePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatTreePerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatTripPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatConcealPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatSurprisedIn"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deElfinCatSurprisesIn"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElfinCatEnlargesToDoubleAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElfinCatMovesSilently"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElfinCatLimitedEsp"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElfinCatSentinelRole"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deElfinCatSpeaksAFewWordsOfElf"
+   }
+  ],
+  "the executioner's hood pins (the R804 MM2 letter E walk)": [
+   {
+    "kind": "const",
+    "name": "mm2deHoodXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodFormCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodHdNumMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodHdNumMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodHdBonusMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodHdBonusMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodSurpriseMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodBrandyRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodBrandyLossPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodBrandyQuarts"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodThicknessInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2deHoodEyeHoles"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deHoodImmuneToSleepSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deHoodVictimSharesSpellEffects"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deHoodHuntsLikeLurkerAbove"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2deHoodStranglesPrey"
+   }
+  ],
+  "the MM2 letter E walk stat grid (the R804 wiring)": [
+   {
+    "kind": "table",
+    "name": "the eagle-to-hood stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the gap box flips (the census walk)",
+   "expr": "m['mm2deRegistryAfter']() - m['mm2deRegistryBefore']() != m['mm2deDefCount']() or m['mm2deDefCount']() != 7 or m['mm2deEntryCount']() != 8 or m['mm2deEgStatRows']() != 7 or m['mm2deGapClosed']() != 10 or m['mm2deGapOpen']() != 27 or m['mm2dePriorOwnedEntries']() != 2 or m['mm2deEuparkeriaOwningRound']() != 802 or m['mm2deCoosheeOwningRound']() != 798 or m['mm2deElfHeadSubEntryCount']() != 2"
+  },
+  {
+   "note": "each grid xp tile equals its pinned full kill xp (the xpValue formula, pin-vs-pin)",
+   "expr": "m['mm2deEgStatXp'](0) + m['mm2deEgStatXpHp'](0) * m['mm2deEgStatAvgHp'](0) != m['mm2deEagleXpValue']() or m['mm2deEgStatXp'](1) + m['mm2deEgStatXpHp'](1) * m['mm2deEgStatAvgHp'](1) != m['mm2deEblisXpValue']() or m['mm2deEgStatXp'](2) + m['mm2deEgStatXpHp'](2) * m['mm2deEgStatAvgHp'](2) != m['mm2deElectricEelXpValue']() or m['mm2deEgStatXp'](3) + m['mm2deEgStatXpHp'](3) * m['mm2deEgStatAvgHp'](3) != m['mm2deGrugachXpValue']() or m['mm2deEgStatXp'](4) + m['mm2deEgStatXpHp'](4) * m['mm2deEgStatAvgHp'](4) != m['mm2deValleyElfXpValue']() or m['mm2deEgStatXp'](5) + m['mm2deEgStatXpHp'](5) * m['mm2deEgStatAvgHp'](5) != m['mm2deElfinCatXpValue']() or m['mm2deEgStatXp'](6) + m['mm2deEgStatXpHp'](6) * m['mm2deEgStatAvgHp'](6) != m['mm2deHoodXpValue']()"
+  },
+  {
+   "note": "the electric discharge ladder runs 5, 10 and 15 feet with the 6-36, 4-24 and 2-12 damage bands",
+   "expr": "m['mm2deElectricEelInnerRadiusFeet']() != 5 or m['mm2deElectricEelMiddleRadiusFeet']() != 10 or m['mm2deElectricEelOuterRadiusFeet']() != 15 or m['mm2deElectricEelMiddleRadiusFeet']() - m['mm2deElectricEelInnerRadiusFeet']() != 5 or m['mm2deElectricEelOuterRadiusFeet']() - m['mm2deElectricEelMiddleRadiusFeet']() != 5 or m['mm2deElectricEelInnerDamageMin']() + m['mm2deElectricEelMiddleDamageMin']() + m['mm2deElectricEelOuterDamageMin']() != 12 or m['mm2deElectricEelInnerDamageMax']() + m['mm2deElectricEelMiddleDamageMax']() + m['mm2deElectricEelOuterDamageMax']() != 72 or m['mm2deElectricEelMiddleSaveBonus']() != 1 or m['mm2deElectricEelOuterSaveBonus']() != 2 or m['mm2deElectricEelDepthMinFeet']() != 30 or m['mm2deElectricEelDepthMaxFeet']() != 150 or m['mm2deElectricEelDepthMaxFeet']() - m['mm2deElectricEelDepthMinFeet']() != 120"
+  },
+  {
+   "note": "the grugach trap ladder runs 90 to 30 with the spiked pit depth 10",
+   "expr": "m['mm2deGrugachTrapCatchPct']() != 90 or m['mm2deGrugachTrapCarefulCatchPct']() != 30 or m['mm2deGrugachTrapCatchPct']() - m['mm2deGrugachTrapCarefulCatchPct']() != 60 or m['mm2deGrugachPitDepthFeet']() != 10 or m['mm2deGrugachPitPoisonPct']() != 50 or m['mm2deGrugachDeadfallMinDice']() + m['mm2deGrugachDeadfallMaxDice']() != 13 or m['mm2deGrugachDeadfallDieSides']() != 6 or m['mm2deGrugachStagMountPct']() != 70 or m['mm2deGrugachMistakenForWoodElfPct']() != 20"
+  },
+  {
+   "note": "the eagle rookery band runs 5-12 and the egg market runs 60-100 gold pieces",
+   "expr": "m['mm2deEagleRookeryPct']() != 5 or m['mm2deEagleRookeryMin']() + m['mm2deEagleRookeryMax']() != 17 or m['mm2deEagleEggValueMin']() + m['mm2deEagleEggValueMax']() != 160 or m['mm2deEagleDiveClawAttacks']() != 2 or m['mm2deEagleDiveToHitBonus']() != 2 or m['mm2deEagleDiveDamageMultiplier']() != 2 or m['mm2deEagleDiveHeightFeet']() != 100 or m['mm2deEagleTrainablePct']() != 25 or m['mm2deEagleNestShinyPct']() != 10 or m['mm2deEagleEggsMin']() + m['mm2deEagleEggsMax']() != 5"
+  },
+  {
+   "note": "the eblis hut and spell ladders both run 2-8 at 3rd level ability",
+   "expr": "m['mm2deEblisHutsMin']() + m['mm2deEblisHutsMax']() != 10 or m['mm2deEblisSpellMin']() + m['mm2deEblisSpellMax']() != 10 or m['mm2deEblisSpellCastingLevel']() != 3 or m['mm2deEblisIllusionistSpellCount']() != 8 or m['mm2deEblisIllusionistsPerCommunity']() != 1 or m['mm2deEblisHutHiddenPct']() != 90 or m['mm2deEblisEggPct']() != 30 or m['mm2deEblisTreasurePct']() != 25 or m['mm2deEblisFireSaveBonus']() != 1 or m['mm2deEblisFireDamageBonus']() != 1"
+  },
+  {
+   "note": "the valley elf cooshee bands run 1-4 wandering and 2-8 in the lair",
+   "expr": "m['mm2deValleyElfCoosheePct']() != 75 or m['mm2deValleyElfCoosheeMin']() + m['mm2deValleyElfCoosheeMax']() != 5 or m['mm2deValleyElfCoosheeLairPct']() != 90 or m['mm2deValleyElfCoosheeLairMin']() + m['mm2deValleyElfCoosheeLairMax']() != 10 or m['mm2deValleyElfRaidTargetCount']() != 4"
+  },
+  {
+   "note": "the elfin cat spell ladder sums 6 uses per day and the leap runs 20 feet",
+   "expr": "m['mm2deElfinCatEnlargePerDay']() + m['mm2deElfinCatReducePerDay']() + m['mm2deElfinCatTreePerDay']() + m['mm2deElfinCatTripPerDay']() != 6 or m['mm2deElfinCatSpellLevel']() != 9 or m['mm2deElfinCatLeapFeet']() != 20 or m['mm2deElfinCatConcealPct']() != 90 or m['mm2deElfinCatSurprisedIn']() != 20 or m['mm2deElfinCatSurprisesIn']() != 6"
+  },
+  {
+   "note": "the executioner's hood surprise runs 1-3, the brandy takes 4 rounds and the hit-dice ladder runs 2+2 through 6+6",
+   "expr": "m['mm2deHoodSurpriseMin']() + m['mm2deHoodSurpriseMax']() != 4 or m['mm2deHoodBrandyRounds']() != 4 or m['mm2deHoodBrandyLossPerRound']() != 1 or m['mm2deHoodBrandyQuarts']() != 1 or m['mm2deHoodFormCount']() != 3 or m['mm2deHoodHdNumMin']() + m['mm2deHoodHdNumMax']() != 8 or m['mm2deHoodHdBonusMin']() + m['mm2deHoodHdBonusMax']() != 8 or m['mm2deHoodHdNumMin']() != 2 or m['mm2deHoodHdNumMax']() != 6 or m['mm2deHoodBiteMin']() + m['mm2deHoodBiteMax']() != 5 or m['mm2deHoodThicknessInches']() != 1 or m['mm2deHoodEyeHoles']() != 2"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter E box",
+   "from": "- [ ] **Letter E**",
+   "to": "- [x] **Letter E**"
+  }
+ ],
+ "gap_census": {
+  "closed": 10,
+  "open": 27
+ },
+ "caller_files": [],
+ "inline_count": 149,
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter-E def walk (the R782 site-block pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R804: the MM2 letter E live def walk ----\n    // The 7 promoted letter-E defs cross-checked\n    // live against the mm2de pins: every stat cell\n    // of the 7-row EgStats grid, the mm2_print xp\n    // source and the xpValue formula, the grugach\n    // \"N, Q\" treasure print (the capture \"N, O\"\n    // the OCR misread), the grugach fighter/druids\n    // prose (the capture \"fluids\" the misread),\n    // the valley elf cooshee guards, the elfin cat\n    // ESP prose, the executioner's hood sleep\n    // immunity prose, and the registry census\n    // floor 615 -> at least 622 (the arc grows the\n    // registry in later letter rounds; the walk\n    // demands at least the landing count).\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kE[7] = {\n            \"eagle\", \"eblis\", \"electric_eel\", \"grugach\",\n            \"valley_elf\", \"elfin_cat\", \"executioners_hood\",\n        };\n        for (int i = 0; i < 7; ++i) {\n            const auto* d = reg.find(kE[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\") ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2deEgStatAC(i))\n                ++bad;\n            if (d->hitDiceNum != mm2deEgStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2deEgStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2deEgStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2deEgStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2deEgStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2deEgStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2deEgStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2deEgStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2deEgStatMr(i))\n                ++bad;\n        }\n        const auto* eg = reg.find(\"eagle\");\n        if (!eg || eg->text.find(\"rookery\")\n            == std::string::npos) ++bad;\n        const auto* eb = reg.find(\"eblis\");\n        if (!eb || eb->text.find(\"whispering wind\")\n            == std::string::npos) ++bad;\n        const auto* ee = reg.find(\"electric_eel\");\n        if (!ee || ee->text.find(\"stunned\")\n            == std::string::npos) ++bad;\n        const auto* gr = reg.find(\"grugach\");\n        if (!gr || gr->text.find(\"fighter/druids\")\n            == std::string::npos) ++bad;\n        const auto* ve = reg.find(\"valley_elf\");\n        if (!ve || ve->text.find(\"cooshee\")\n            == std::string::npos) ++bad;\n        const auto* ec = reg.find(\"elfin_cat\");\n        if (!ec || ec->text.find(\"ESP\")\n            == std::string::npos) ++bad;\n        const auto* hd = reg.find(\"executioners_hood\");\n        if (!hd || hd->text.find(\"sleep spells\")\n            == std::string::npos) ++bad;\n        if ((int)reg.all().size()\n            < mm2deRegistryAfter())\n            ++bad;\n        printf(\"R804 MM2 letter E live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/e/eagle.lua",
+   "content": "-- Eagle: promoted by the R804 MM2 letter E walk round from the MM2 print\n-- (spec tools/spec_r804.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Eagle\",\n  page = \"62\",\n  pages = \"62\",\n  source = \"MM2\",\n  race = \"Eagle\",\n  hitDice = \"1+3\",\n  hitDiceNum = 1,\n  hitDiceBonus = 3,\n  avgHp = 6,\n  armorClass = 6,\n  numAttacks = 3,\n  damage = \"1-2/1-2/1-2\",\n  xp = 35,\n  xpPerHp = 2,\n  xpValue = 47,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1 or 2 (5-12)\",\n  lairPct = 20,\n  treasure = \"See below\",\n  move = \"1\\\"/30\\\" (MC:C)\",\n  size = \"M (6\\\"; 7\\\"+ wing spread)\",\n  intelligence = \"animal\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"There are several species of eagles, all of which conform generally to the statistics given here. While it is usual to encounter a single bird or mated pair, there is a slight (5%) chance that an encounter will be in a rookery area where 5-12 of these creatures will nest. Nests are in the tallest trees, on cliffs or in mountains. There will be 1-4 eggs in a nest. There is a 10% chance that some small, shiny item will also be there (a coin, gem, etc.).\\n\\nDuring attack, eagles typically dive from a great height. Diving movement is double normal speed (if from 100 feet or more) and damage is restricted to 2 claw attacks. However, these attacks are at +2 to hit and cause twice normal damage. Due to their exceptional eyesight, eagles are almost never surprised. Unless exceptionally hungry, eagles will not attack even the smaller demihumans, although a brownie, for instance, would be in considerable danger, for the birds would attack prey of that size without hesitation.\\n\\nEagles are difficult to train for hunting. Only about 25% can be properly managed. Nevertheless, viable eggs or eaglets will bring 60-100 gp on the open market.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/e/eblis.lua",
+   "content": "-- Eblis: promoted by the R804 MM2 letter E walk round from the MM2 print\n-- (spec tools/spec_r804.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Eblis\",\n  page = \"62\",\n  pages = \"62\",\n  source = \"MM2\",\n  race = \"Eblis\",\n  hitDice = \"4+4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 4,\n  avgHp = 18,\n  armorClass = 3,\n  numAttacks = 4,\n  damage = \"1-4\",\n  xp = 165,\n  xpPerHp = 5,\n  xpValue = 255,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"4-16\",\n  lairPct = 50,\n  treasure = \"See below\",\n  move = \"12\\\"/12\\\" (MC:C)\",\n  size = \"M (8' tall)\",\n  intelligence = \"low to exceptional\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Eblis, or storkman, are seldom seen by humans, or possibly few men live to tell of such an encounter. These tall, evil natured birdmen dwell in marshes and swamps of subtropical and tropical climes. Each group comprises several mated pairs and their offspring. When a tribe of this sort becomes too large for its habitat, the younger ones form a new band and seek their own area. Eblis pairs live in carefully constructed huts of reeds and grasses with 2-8 huts in a community. It is 90% unlikely that these dwellings will be discovered, even by careful search. In these huts are piles of rushes, sticks, etc., with an egg 30% of the time. There is also a 25% chance that there will be 1 of the following: 1-2 = scroll in metal tube; 3-5 = potion; 6 = ring; 7 = miscellaneous magic item (small size only) 8-9 = magic dagger or magic knife; 10-20 = 1-4 pieces of metal jewelry.\\n\\nBecause these creatures love shiny objects, there will always be some metal, glass, or similar items in a nest.\\n\\nEblis are very fast in shifting and striking, and thus their excellent armor class. Their necks are snaky, sinewy, and very powerful. Attack is by stabbing with the beak. In each community of eblis will be 1 individual capable of using illusionist magic by means of dancing and vocalization. Each such storkman will have 2-8 of the following spells usable once each per day, at 3rd level ability: 1 = audible glamor; 2 = change self; 3 = hypnotism; 4 = spook; 5 = wall of fog; 6 = blur; 7 = hypnotic pattern; 8 = whispering wind;\\n\\nBecause these creatures love water and wetness and are always damp, they are not as vulnerable to fire as their feathery forms would indicate. Saving throws vs. fire are made at +1 and damage is at -1 per die. Eblis look like giant, gray-brown storks. Males have red-brown heads and black necks and legs.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/e/electric_eel.lua",
+   "content": "-- Eel, Electric (Marine): promoted by the R804 MM2 letter E walk round from the MM2 print\n-- (spec tools/spec_r804.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Eel, Electric (Marine)\",\n  page = \"62\",\n  pages = \"62\",\n  source = \"MM2\",\n  race = \"Eel, Electric (Marine)\",\n  hitDice = \"6-8\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 21,\n  armorClass = 6,\n  numAttacks = 1,\n  damage = \"2-8, 3-12, or 4-16\",\n  xp = 400,\n  xpPerHp = 8,\n  xpValue = 568,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"//9\\\"\",\n  size = \"L (20'-40' long)\",\n  intelligence = \"non-\",\n  alignment = \"neutral\",\n  specialAttacks = \"Electrical discharge\",\n  specialDefenses = \"As above\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Giant marine electric eels are found only in warm, relatively shallow salt waters, 30-150 feet deep being the common range. Although these creatures move with relative lack of speed, they strike quickly, gaining a +1 on initiative. Once every turn, these creatures are able to release a charge of electricity. All creatures within a 5-foot radius of the individual eel so doing take 6-36 points of damage. Those within 5-10 feet take 4-24 points, and those within 10-15 feet take 2-12 points.\\n\\nUnless such victims make a successful saving throw vs. paralysis, they will be stunned and helpless for a number of rounds equal to the points of damage sustained from electrical shock. Saving throws at 5-10 feet are made at +1, and at 10-15 feet at +2. Note that a successful save does not reduce damage by one-half, but merely negates stunning.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/grugach.lua",
+   "content": "-- Grugach: promoted by the R804 MM2 letter E walk round from the MM2 print\n-- (spec tools/spec_r804.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Grugach\",\n  page = \"63\",\n  pages = \"63\",\n  source = \"MM2\",\n  race = \"Grugach\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 4,\n  armorClass = 6,\n  numAttacks = 1,\n  damage = \"By weapon type\",\n  xp = 65,\n  xpPerHp = 2,\n  xpValue = 73,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"20-80\",\n  lairPct = 50,\n  treasure = \"Individuals N, Q\",\n  move = \"15\\\"\",\n  size = \"S (4 1/2' tall)\",\n  intelligence = \"average and up\",\n  alignment = \"neutral (chaotic)\",\n  specialAttacks = \"+1 with bow or spear\",\n  specialDefenses = \"Traps (see below)\",\n  magicResistance = \"90% to charm and sleep only\",\n  psionic = \"Nil*\",\n  attackDefenseModes = \"Nil/nil*\",\n  text = \"The grugach are \\\"wild\\\" elves akin to sylvan ones, but smaller, thinner, and very fair. They are completely xenophobic, distrusting even other sorts of elves. Thus, they are seldom, if ever, encountered outside their tribal bands.\\n\\nExcept as noted, grugach conform to the specifics of wood elves and elfkind in general. Despite their small stature, grugach have broad shoulders and great strength (add +2 on strength dice roll, treating 19 or 20 as 18).\\n\\nGrugach are not magic-users, but dual-classed individuals will be fighter/druids. The grugach are on good terms with all animals of the forest, save those of evil nature. They will often (70%) have stags for mounts.\\n\\nAbout 20% of random contacts made supposedly with wood elves will actually be with grugach. All adult grugach are able to set traps. These consist principally of pits and snares in and around their home territory. All such traps are well concealed, and there is almost a 90% probability that creatures passing near one will be caught in it. If characters passing through a trapped area examine it carefully, likelihood of being caught in a trap is reduced to 30%. Pits are normally 10 feet deep and spiked, so damage is 1-4 (fall into earth-floored pit), plus 1-6 per spike, plus poison (50% chance). Snares are usually set to encircle and jerk creatures off their feet and suspend them 5 feet or more above the ground. Some snares can be deadfalls, where a heavy log crashes down for 5d6-8d6 of damage and pins the victim as well.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/valley_elf.lua",
+   "content": "-- Valley Elf: promoted by the R804 MM2 letter E walk round from the MM2 print\n-- (spec tools/spec_r804.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Valley Elf\",\n  page = \"63\",\n  pages = \"63\",\n  source = \"MM2\",\n  race = \"Valley Elf\",\n  hitDice = \"1+2\",\n  hitDiceNum = 1,\n  hitDiceBonus = 2,\n  avgHp = 5,\n  armorClass = 4,\n  numAttacks = 1,\n  damage = \"By weapon type or 1-10\",\n  xp = 65,\n  xpPerHp = 2,\n  xpValue = 75,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"10-40 (20-240)\",\n  lairPct = 10,\n  treasure = \"Individuals M, N; in lair G, S, T\",\n  move = \"12\\\"\",\n  size = \"M (5 1/2'+ tall)\",\n  intelligence = \"high and up\",\n  alignment = \"chaotic neutral\",\n  specialAttacks = \"+1 with bow or sword\",\n  specialDefenses = \"See below\",\n  magicResistance = \"90% to charm and sleep only\",\n  psionic = \"Nil*\",\n  attackDefenseModes = \"Nil/nil*\",\n  text = \"Whether a separate race of elvenkind or whether simply an offshoot of gray elves, the elves of the Valley of the Mage (valley elves) have distinctive features and characteristics. As tall as most humans, they are thin and have sharp and pointed features. They are reclusive and resent intrusion. If anything, valley elves are neutral in alignment. Otherwise, they tend to follow the same characteristics as gray elves, although they do not use steeds other than horses as far as is known. All other sorts of elves, including the dark elves (drow), shun valley elves. The latter, in turn, dislike association with any races save perhaps gnomekind, whom they tolerate. With respect to type of habitat, composition of a group, weaponry, and special abilities, valley elves follow the statistics found in MONSTER MANUAL I, \\\"Elf\\\" (q.v.).\\n\\nValley elves use cooshee (q.v.) as guard animals, and 75% of the time there will be 1-4 with a wandering band and in their lairs a 90% probability of 2-8. In the WORLD OF GREYHAWK fantasy world setting, valley elves are found only in the immediate vicinity of the Valley of the Mage. Bands of these elves have raided into Bissel, Gran March, Ket, and the Grand Duchy of Geoff - probably at the behest of their liege. Their tolerance of gnomes probably stems from the fact that these demihumans also serve the Mage of the Valley.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/e/elfin_cat.lua",
+   "content": "-- Elfin Cat: promoted by the R804 MM2 letter E walk round from the MM2 print\n-- (spec tools/spec_r804.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Elfin Cat\",\n  page = \"63\",\n  pages = \"63-64\",\n  source = \"MM2\",\n  race = \"Elfin Cat\",\n  hitDice = \"3+6\",\n  hitDiceNum = 3,\n  hitDiceBonus = 6,\n  avgHp = 16,\n  armorClass = 4,\n  numAttacks = 3,\n  damage = \"1-2/1-2/1-3\",\n  xp = 135,\n  xpPerHp = 4,\n  xpValue = 199,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 5,\n  treasure = \"See below\",\n  move = \"18\\\"\",\n  size = \"S\",\n  intelligence = \"semi to low\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The elfin cat dwells only in sylvan woodlands of temperate regions. It is usually mistaken for a wild cat or possibly a lynx, but this is because the creature does not wish to be recognized as out of the ordinary. Elfin cats are fast, climb very rapidly, swim well, and are able to leap 20 feet or more with ease. They are solitary, but if encountered in their lair there will be 1 adult female, 1-4 kits, and 1 male within 1-4 rounds traveling distance. Any treasure in the lair will be that placed there for safe keeping by some friendly creature, such as an elf, or gnome, etc. Although elfin cats are able to attack and defend themselves with claw and fang, they prefer avoiding confrontations of that sort. They rely on their magical powers to survive. These include: enlarge (1 per day), reduce (2 per day), pass without trace, tree (limb, not entire tree; 2 per day), and trip (1 per day). Enlarge actually increases attack power to double normal. Spell-like powers are performed at 9th level ability.\\n\\nIn addition, elfin cats are able to move 99.9% silently. They conceal themselves in natural surroundings at 90% probability. Their keen senses prevent surprise except 1 in 20. They, in turn, surprise 5 in 6. Elfin cats use a limited ESP ability to read the thoughts of creatures nearby to determine friendly or hostile intent. These creatures communicate with each other in their own language. They can speak a few words of Elf, due to association, and some speak Gnome, Brownie, etc., as well. One or more elfin cats will associate with a community of sylvan elves, woodland gnomes, brownies, sprites, etc. In return for feeding and protection, the elfin cats serve as sentinels and report the presence of any monsters or other intruders in the area and tell what purpose the creature or creatures had in mind. The elfin cats roam field and wood in their small size. They use an enlarged form only to frighten possible enemies.\\n\\nAn elfin cat is about the size of an average dog. The fur is gray-brown and striped with dark brown or black.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/e/executioners_hood.lua",
+   "content": "-- Executioner's Hood: promoted by the R804 MM2 letter E walk round from the MM2 print\n-- (spec tools/spec_r804.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Executioner's Hood\",\n  page = \"64\",\n  pages = \"64\",\n  source = \"MM2\",\n  race = \"Executioner's Hood\",\n  hitDice = \"2+2, 4+4, 6+6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 6,\n  avgHp = 27,\n  armorClass = 6,\n  numAttacks = 1,\n  damage = \"1-4 (1d4)\",\n  xp = 320,\n  xpPerHp = 8,\n  xpValue = 536,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"S-M (1'-3' diameter in bag form)\",\n  intelligence = \"semi-\",\n  alignment = \"neutral\",\n  specialAttacks = \"Surprise on a 1-3; see below\",\n  specialDefenses = \"Immune to sleep spells\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"An executioner's hood is a small, bag-like monster which has a unique method of capturing its prey. The monster crawls into some niche and awaits the approach of the victim. When the prey enters, the hood closes fast about the victim's head (to-hit roll needed), inflicting 1-4 points of damage immediately and a further 1-4 points of damage from strangulation and suffocation until the prey is killed or the monster is slain. Because of the monster's propensity to surround the head, it is very difficult to slay an executioner's hood. It is totally unaffected by sleep spells, and its attack method (fibrous strands) causes the victim to suffer whatever other spell effects the executioner's hood sustains. Pouring strong brandy on the hood, however, causes the monster to lose 1 point of damaging ability per round, and after 4 rounds the hood will fall off, intoxicated (assuming that a full quart has been used).\\n\\nThis monster looks almost exactly like an actual executioner's hood. Color is dull black, and there are 2 eye holes which actually can be used to see out of or into its cavity. The monster is about 1 inch thick. It can spread out into disc shape and has been known to hunt as does a lurker above (q.v.).\",\n}\n"
+  }
+ ]
+}
