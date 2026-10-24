@@ -22424,6 +22424,69 @@ PREFLIGHT GREEN (the repair cut, first pass):
   (census 739 -> 740, pushed 32992bd..8da3f32),
   THE MM2 OUTDOOR ENCOUNTER TABLES WALK -
   THE 36 TERRAIN GRIDS (Curtiss's Go call on
+- R819 LANDED 2026-10-24: commit
+  52a015aa5937dd29bb5445524c7011be3851960e
+  (census 741 -> 742, pushed
+  9279026..52a015a),
+  THE MM2 INDEX WALK - THE MERGED
+  MM1/FF/MM2 INDEX CENSUS (Curtiss's
+  Go call on the landed R818; round
+  twenty-four of the MM2 arc, the
+  index census round, the ARC
+  CLOSER - the Random Encounter
+  Tables parent box and the Index
+  box both flip, 37 closed 0 open).
+  PRINT FOLIO pp. 156-160 (the gap
+  box label says p. 156, the true
+  span runs 156-160 in both scans;
+  the 4-column layout, 26 letter
+  sections). THE PIN SHAPE: a
+  two-voice LINE census, not a def
+  census - 26 letter rows x 6
+  cells (ordinal, total, MM1, FF,
+  this-book, cross-ref), 1488
+  adjudicated index lines (577 M
+  refs, 401 F refs, 510 this-book,
+  470 parenthetical cross-refs); S
+  the largest section (180), Z the
+  smallest (4). THE METHOD: both
+  archive.org djvu scans parsed
+  independently (column
+  reconstruction, ref-token split,
+  registry cross-resolve),
+  junk-filtered, paired per letter
+  by global-best matching; the 206
+  single-voice slots adjudicated by
+  hand. THE ADJUDICATION LESSONS:
+  the ref-fused M and F OCR lines
+  re-lettered to their true
+  sections (the M9C Huge Spider
+  class), 9 split fragments and
+  doctrine-prose lines dropped, 4
+  ref-lost lines reclassified (the
+  Leprechaun, Salt Water Troll,
+  Troll, Weasel lines carry M
+  refs), 2 flagged reads (the
+  Sirme -> sirine and Stalker
+  lines, ref lost in both scans),
+  2 B-only lines adjudicated real
+  (Caryatid Column, Olhydra - no
+  registry def, the OA/lammasu
+  seam stays queued). THE OPENING
+  DOCTRINE (p. 156) pinned as
+  consts/bools: all official
+  creatures as of December 1982,
+  M for MM1, F for FF, no letter
+  for this book, the parenthetical
+  names the real entry. NO defs
+  promoted - the registry stays
+  809. THE MM2 ARC: 24 rounds, the
+  gap now 37 closed 0 open - the
+  arc is closed; the next arc (the
+  UA appendix spell dueling /
+  index class, or the OA/lammasu
+  promotion seam) waits for the
+  next Go call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

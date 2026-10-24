@@ -1,0 +1,36 @@
+-- Lammasu, Greater: promoted by the R820 lammasu promotion round
+-- from the MM2 print
+-- (spec tools/spec_r820.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Lammasu, Greater",
+  page = "79",
+  pages = "79",
+  source = "MM2",
+  race = "Lammasu, Greater",
+  hitDice = "12+7",
+  hitDiceNum = 12,
+  hitDiceBonus = 7,
+  avgHp = 61,
+  armorClass = "3",
+  numAttacks = 2,
+  damage = "2-12/2-12",
+  xp = 3950,
+  xpPerHp = 18,
+  xpValue = 5048,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-2",
+  lairPct = 0,
+  treasure = "Nil",
+  move = "15\"/30\" (MC: B)",
+  size = "L (5' high at shoulder)",
+  intelligence = "Supra-genius",
+  alignment = "Lawful good",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "40%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "As with their smaller, less powerful kin, greater lammasu favor warm regions but occasionally venture even into arctic ones. They, too, seek to protect and assist creatures of good alignment, especially those of order and law. They typically dwell with 6 or more ordinary lammasu.\n\nGreater lammasu can travel the Astral and Ethereal Planes at will. They can become invisible, dimension door, and teleport with no error, at will, 1 at a time, 1 per round. They radiate protection from evil for a 20-foot radius with double effect: -4 to evil attacks and +4 on any saving throws. Their clerical spell usage is of 5th-level ability and consists of 5 1st-level, 4 2nd-level, 3 3rd-level, 2 4th-level, and 1 5th-level spells. The cures of the greater lammasu are double strength and based on 1d6+1, so that a cure light wounds will cure 4-14 lost hit points and a cure serious wounds has double effect (8-28). Fifty percent of greater lammasu can speak a holy word in addition to lower level spell use. Their level of spell-like ability is 12 (as hit dice).\n\nGreater lammasu have empathy, telepathic communication, and speak both the limited language of lawful good and the speech of the lammasu.",
+}

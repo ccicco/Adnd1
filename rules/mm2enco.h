@@ -242,9 +242,11 @@ inline int mm2encoMm2SourceRows()
 inline int mm2encoFfSourceRows()
     { return 74; }
 
-// The rows with a registry walk key (the MM1 and MM2 defs the registry owns)
+// The rows with a registry walk key (the MM1 and MM2 defs the
+// registry owns; the R820 lammasu promotion rewired the 2
+// keyless cells, 570 -> 572)
 inline int mm2encoWalkKeyRows()
-    { return 570; }
+    { return 572; }
 
 // The one row with no print def determined (the Pterodactyl, Small cell -
 // flagged for the physical copy)

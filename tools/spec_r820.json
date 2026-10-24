@@ -1,0 +1,501 @@
+{
+ "round": 820,
+ "title": "the lammasu promotion",
+ "header_file": "rules/lmp.h",
+ "prefix": "lmp",
+ "include_after": "#include \"rules/mm2enci.h\"  // R819: the MM2 index walk - the merged MM1/FF/MM2 index census",
+ "include_comment": "the lammasu promotion",
+ "census_before": 742,
+ "audit_label": "R820 lammasu promotion audit",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R819 LANDED 2026-10-24: commit",
+ "gap_report": "tools/mm2_gap_report.md",
+ "regtest": "regtest.cpp",
+ "data_files": [
+  {
+   "path": "monsters/monsters/l/lammasu_greater.lua",
+   "content": "-- Lammasu, Greater: promoted by the R820 lammasu promotion round\n-- from the MM2 print\n-- (spec tools/spec_r820.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Lammasu, Greater\",\n  page = \"79\",\n  pages = \"79\",\n  source = \"MM2\",\n  race = \"Lammasu, Greater\",\n  hitDice = \"12+7\",\n  hitDiceNum = 12,\n  hitDiceBonus = 7,\n  avgHp = 61,\n  armorClass = \"3\",\n  numAttacks = 2,\n  damage = \"2-12/2-12\",\n  xp = 3950,\n  xpPerHp = 18,\n  xpValue = 5048,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"15\\\"/30\\\" (MC: B)\",\n  size = \"L (5' high at shoulder)\",\n  intelligence = \"Supra-genius\",\n  alignment = \"Lawful good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"40%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"As with their smaller, less powerful kin, greater lammasu favor warm regions but occasionally venture even into arctic ones. They, too, seek to protect and assist creatures of good alignment, especially those of order and law. They typically dwell with 6 or more ordinary lammasu.\\n\\nGreater lammasu can travel the Astral and Ethereal Planes at will. They can become invisible, dimension door, and teleport with no error, at will, 1 at a time, 1 per round. They radiate protection from evil for a 20-foot radius with double effect: -4 to evil attacks and +4 on any saving throws. Their clerical spell usage is of 5th-level ability and consists of 5 1st-level, 4 2nd-level, 3 3rd-level, 2 4th-level, and 1 5th-level spells. The cures of the greater lammasu are double strength and based on 1d6+1, so that a cure light wounds will cure 4-14 lost hit points and a cure serious wounds has double effect (8-28). Fifty percent of greater lammasu can speak a holy word in addition to lower level spell use. Their level of spell-like ability is 12 (as hit dice).\\n\\nGreater lammasu have empathy, telepathic communication, and speak both the limited language of lawful good and the speech of the lammasu.\",\n}\n"
+  }
+ ],
+ "banner": {
+  "title": "THE LAMMASU PROMOTION - THE GREATER LAMMASU DEF (MM2 print p. 79: the stat block the R808 LMN walk never promoted, the two-voice move settle 15/30 MC B), the QUEUED-DISCOVERY round - the 2 keyless R817 outdoor cells rewire, the registry 809 -> 810, no gap boxes flip - the MM2 arc gap stays 37 closed 0 open",
+  "provenance": "Round twenty-five of the MM2 arc, the promotion seam round (Curtiss Go call lammasu on the landed R819 index walk; one def promoted, the 2 outdoor cells rewired, the walk-key census 570 -> 572)",
+  "sentinel": "The pin header stays the print-fidelity record; the def carries the p. 79 stat block, the rewire rides the file patches, and the walk cross-checks the def and the cells live"
+ },
+ "audit_comment": "THE LAMMASU PROMOTION - the queued R817 discovery closed (Curtiss Go call lammasu on the landed R819 index walk): the Lammasu, Greater stat block, MM2 print p. 79 (between the kraken and the land lamprey), the block the R808 LMN walk never promoted, rides as a def. THE DEF: the key lammasu_greater, promoted from the MM2 print (the xpSource mm2_print class), AC 3, HD 12+7 (the book-average 61), MOVE 15/30 (MC: B), 2 attacks for 2-12/2-12, MR 40 percent, level VIII XP 3,950 + 18/hp (the full kill XP 5,048), lawful good, supra-genius, size L (5 feet high at the shoulder), nil treasure and nil lair, psionic nil. THE TWO-VOICE SETTLE: the djvu OCR garbles the move stat (the 5V3Q read) - the 1eonline transcription reads 15/30 MC B and the compendium tables agree (15, Fl 30, B). THE REWIRE: the two R817 outdoor cells (the temperate civilized plains die 2, grid 22; the tropical civilized hills die 20, grid 31) rekey lammasu_greater - the src cells stay 2, the R817 source census unchanged; the walk-key census bumps 570 to 572 (the mm2enco header const and the R817 audit const chain and expression all ride this round as file patches, the LammasuGreaterRows const stays 2). THE REGISTRY: 809 to 810 defs, the MM2 defs 331 to 332; the R817-R819 registry-floor consts stand as their own round snapshots (the >= floor checks stay green). THE DOCTRINE (the p. 79 prose): the greater lammasu travel the Astral and Ethereal Planes at will, become invisible, dimension door and teleport without error (1 at a time, 1 per round), radiate protection from evil for a 20-foot radius with double effect (-4 to evil attacks, +4 on saves), use clerical spells at 5th-level ability (5/4/3/2/1 spells of levels 1-5), the cures double strength based on 1d6+1 (cure light wounds 4-14, cure serious wounds 8-28), 50 percent speak a holy word, the spell-like ability level 12 (as hit dice), dwell with 6 or more ordinary lammasu. NO gap boxes flip this round - the MM2 arc gap stays 37 closed 0 open.",
+ "consts": [
+  {
+   "name": "lmpRound",
+   "value": 820,
+   "comment": "The lammasu promotion round: the queued R817 discovery closed (Curtiss Go call lammasu on the landed R819)"
+  },
+  {
+   "name": "lmpPrintPage",
+   "value": 79,
+   "comment": "The MM2 print folio of the Lammasu, Greater stat block (between the kraken and the land lamprey)"
+  },
+  {
+   "name": "lmpStatArmorClass",
+   "value": 3,
+   "comment": "The stat block armor class"
+  },
+  {
+   "name": "lmpStatHitDice",
+   "value": 12,
+   "comment": "The stat block hit dice"
+  },
+  {
+   "name": "lmpStatHitDiceBonus",
+   "value": 7,
+   "comment": "The stat block hit dice bonus (12+7)"
+  },
+  {
+   "name": "lmpStatAvgHp",
+   "value": 61,
+   "comment": "The book-average hit points (12 x 4.5 + 7)"
+  },
+  {
+   "name": "lmpStatNumAttacks",
+   "value": 2,
+   "comment": "The stat block attacks (2 for 2-12/2-12)"
+  },
+  {
+   "name": "lmpStatXp",
+   "value": 3950,
+   "comment": "The level VIII base XP"
+  },
+  {
+   "name": "lmpStatXpPerHp",
+   "value": 18,
+   "comment": "The per-hit-point XP"
+  },
+  {
+   "name": "lmpStatXpValue",
+   "value": 5048,
+   "comment": "The full kill XP (3950 + 18 x 61)"
+  },
+  {
+   "name": "lmpStatMagicResistance",
+   "value": 40,
+   "comment": "The stat block magic resistance (40%)"
+  },
+  {
+   "name": "lmpHolyWordPct",
+   "value": 50,
+   "comment": "The 50 percent that can speak a holy word"
+  },
+  {
+   "name": "lmpProtectionRadius",
+   "value": 20,
+   "comment": "The protection from evil radius (20-foot, double effect)"
+  },
+  {
+   "name": "lmpClericalSpellLevel",
+   "value": 5,
+   "comment": "The clerical spell usage is of 5th-level ability (5/4/3/2/1 spells)"
+  },
+  {
+   "name": "lmpSpellAbilityLevel",
+   "value": 12,
+   "comment": "The spell-like ability level (as hit dice)"
+  },
+  {
+   "name": "lmpPrideSize",
+   "value": 6,
+   "comment": "They typically dwell with 6 or more ordinary lammasu"
+  },
+  {
+   "name": "lmpRegistryBefore",
+   "value": 809,
+   "comment": "The registry def count before the promotion"
+  },
+  {
+   "name": "lmpRegistryAfter",
+   "value": 810,
+   "comment": "The registry def count after the promotion"
+  },
+  {
+   "name": "lmpMm2DefsBefore",
+   "value": 331,
+   "comment": "The MM2 defs before the promotion"
+  },
+  {
+   "name": "lmpMm2DefsAfter",
+   "value": 332,
+   "comment": "The MM2 defs after the promotion"
+  },
+  {
+   "name": "lmpCellsRewired",
+   "value": 2,
+   "comment": "The 2 keyless R817 outdoor cells rewired to the new key (the temperate civilized plains die 2, the tropical civilized hills die 20)"
+  },
+  {
+   "name": "lmpGridTC5Index",
+   "value": 22,
+   "comment": "The temperate civilized plains grid index (grid 22, the die 2 cell)"
+  },
+  {
+   "name": "lmpGridRC2Index",
+   "value": 31,
+   "comment": "The tropical civilized hills grid index (grid 31, the die 20 cell)"
+  },
+  {
+   "name": "lmpWalkKeyRowsBefore",
+   "value": 570,
+   "comment": "The R817 walk-key census before the rewire"
+  },
+  {
+   "name": "lmpWalkKeyRowsAfter",
+   "value": 572,
+   "comment": "The R817 walk-key census after the rewire (the header const and the audit expression both ride this round)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "lmpPromotedFromMM2Print",
+   "value": true,
+   "comment": "The def promoted from the MM2 print (the xpSource mm2_print class, the R797-R819 promotion seam)"
+  },
+  {
+   "name": "lmpMoveSettledByTwoVoices",
+   "value": true,
+   "comment": "The move stat settled by two voices: the djvu OCR garble (the 5V3Q read) against the 1eonline and compendium reads (15/30, MC B)"
+  },
+  {
+   "name": "lmpNilTreasureAndLair",
+   "value": true,
+   "comment": "The stat block carries nil treasure and nil lair percentage"
+  },
+  {
+   "name": "lmpLawfulGoodSupraGenius",
+   "value": true,
+   "comment": "The stat block alignment lawful good, intelligence supra-genius, size L (5 at the shoulder)"
+  },
+  {
+   "name": "lmpAstralEtherealTravel",
+   "value": true,
+   "comment": "The greater lammasu travel the Astral and Ethereal Planes at will"
+  },
+  {
+   "name": "lmpInvisibleDimensionDoorTeleport",
+   "value": true,
+   "comment": "They become invisible, dimension door, and teleport without error at will (1 at a time, 1 per round)"
+  },
+  {
+   "name": "lmpCuresDoubleStrength",
+   "value": true,
+   "comment": "The cures are double strength and based on 1d6+1 (cure light wounds 4-14, cure serious wounds 8-28)"
+  },
+  {
+   "name": "lmpSourceCellsUnchanged",
+   "value": true,
+   "comment": "The rewired cells keep their src 2 cells (the R817 source census unchanged)"
+  },
+  {
+   "name": "lmpFloorConstsStaySnapshots",
+   "value": true,
+   "comment": "The R817-R819 registry-floor consts stand as their own round snapshots (the >= floor checks stay green)"
+  },
+  {
+   "name": "lmpNoGapBoxesFlip",
+   "value": true,
+   "comment": "No gap boxes flip this round (the MM2 arc gap stays 37 closed 0 open)"
+  }
+ ],
+ "tables": [],
+ "examples": [
+  {
+   "note": "the xpValue formula (the level VIII base plus per-hp)",
+   "expr": "m['lmpStatXpValue']() != m['lmpStatXp']() + m['lmpStatAvgHp']() * m['lmpStatXpPerHp']()"
+  },
+  {
+   "note": "the registry arithmetic (one def promoted)",
+   "expr": "m['lmpRegistryAfter']() != m['lmpRegistryBefore']() + 1 or m['lmpMm2DefsAfter']() != m['lmpMm2DefsBefore']() + 1 or m['lmpRegistryAfter']() != 810"
+  },
+  {
+   "note": "the hit dice arithmetic",
+   "expr": "m['lmpStatHitDice']() + m['lmpStatHitDiceBonus']() != 19 or m['lmpStatAvgHp']() != 61 or m['lmpStatNumAttacks']() != 2"
+  },
+  {
+   "note": "the walk-key rewire (the 2 cells)",
+   "expr": "m['lmpWalkKeyRowsAfter']() != m['lmpWalkKeyRowsBefore']() + m['lmpCellsRewired']() or m['lmpWalkKeyRowsAfter']() != 572"
+  },
+  {
+   "note": "the rewired cell grids",
+   "expr": "m['lmpGridTC5Index']() != 22 or m['lmpGridRC2Index']() != 31 or m['lmpCellsRewired']() != 2"
+  },
+  {
+   "note": "the stat block cells",
+   "expr": "m['lmpPrintPage']() != 79 or m['lmpStatArmorClass']() != 3 or m['lmpStatMagicResistance']() != 40"
+  },
+  {
+   "note": "the doctrine cells (the holy word, the protection radius)",
+   "expr": "m['lmpHolyWordPct']() != 50 or m['lmpProtectionRadius']() != 20 or m['lmpPrideSize']() != 6"
+  },
+  {
+   "note": "the spell ability",
+   "expr": "m['lmpClericalSpellLevel']() != 5 or m['lmpSpellAbilityLevel']() != 12"
+  }
+ ],
+ "header_sections": {
+  "the R820 census": [
+   {
+    "kind": "const",
+    "name": "lmpRound"
+   },
+   {
+    "kind": "const",
+    "name": "lmpPrintPage"
+   },
+   {
+    "kind": "const",
+    "name": "lmpStatArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "lmpStatHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "lmpStatHitDiceBonus"
+   },
+   {
+    "kind": "const",
+    "name": "lmpStatAvgHp"
+   },
+   {
+    "kind": "const",
+    "name": "lmpStatNumAttacks"
+   },
+   {
+    "kind": "const",
+    "name": "lmpStatXp"
+   },
+   {
+    "kind": "const",
+    "name": "lmpStatXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "lmpStatXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "lmpStatMagicResistance"
+   },
+   {
+    "kind": "const",
+    "name": "lmpHolyWordPct"
+   },
+   {
+    "kind": "const",
+    "name": "lmpProtectionRadius"
+   },
+   {
+    "kind": "const",
+    "name": "lmpClericalSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "lmpSpellAbilityLevel"
+   },
+   {
+    "kind": "const",
+    "name": "lmpPrideSize"
+   },
+   {
+    "kind": "const",
+    "name": "lmpRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "lmpRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "lmpMm2DefsBefore"
+   },
+   {
+    "kind": "const",
+    "name": "lmpMm2DefsAfter"
+   },
+   {
+    "kind": "const",
+    "name": "lmpCellsRewired"
+   },
+   {
+    "kind": "const",
+    "name": "lmpGridTC5Index"
+   },
+   {
+    "kind": "const",
+    "name": "lmpGridRC2Index"
+   },
+   {
+    "kind": "const",
+    "name": "lmpWalkKeyRowsBefore"
+   },
+   {
+    "kind": "const",
+    "name": "lmpWalkKeyRowsAfter"
+   }
+  ],
+  "the opening doctrine (the R820 census)": [
+   {
+    "kind": "bool",
+    "name": "lmpPromotedFromMM2Print"
+   },
+   {
+    "kind": "bool",
+    "name": "lmpMoveSettledByTwoVoices"
+   },
+   {
+    "kind": "bool",
+    "name": "lmpNilTreasureAndLair"
+   },
+   {
+    "kind": "bool",
+    "name": "lmpLawfulGoodSupraGenius"
+   },
+   {
+    "kind": "bool",
+    "name": "lmpAstralEtherealTravel"
+   },
+   {
+    "kind": "bool",
+    "name": "lmpInvisibleDimensionDoorTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "lmpCuresDoubleStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "lmpSourceCellsUnchanged"
+   },
+   {
+    "kind": "bool",
+    "name": "lmpFloorConstsStaySnapshots"
+   },
+   {
+    "kind": "bool",
+    "name": "lmpNoGapBoxesFlip"
+   }
+  ]
+ },
+ "chains": [],
+ "switches": [],
+ "caller_files": [],
+ "table_checks": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R820: the lammasu promotion walk ----\n    // The promoted Lammasu, Greater def\n    // cross-checked live against the registry:\n    // every stat cell of the p. 79 block, the\n    // mm2_print xp source, the xpValue formula,\n    // the two rewired outdoor cells (src 2, the\n    // walk-key census 570 -> 572), and the\n    // registry census 809 -> 810.\n    {\n        using namespace rules;\n        int bad = 0;\n        const auto* d = reg.find(\"lammasu_greater\");\n        if (!d) { ++bad; }\n        else {\n            if (d->armorClass != lmpStatArmorClass())\n                ++bad;\n            if (d->hitDiceNum != lmpStatHitDice())\n                ++bad;\n            if (d->hitDiceBonus != lmpStatHitDiceBonus())\n                ++bad;\n            if (d->avgHp != lmpStatAvgHp()) ++bad;\n            if (d->attacks != lmpStatNumAttacks())\n                ++bad;\n            if (d->magicResist != lmpStatMagicResistance())\n                ++bad;\n            if (d->xpBase != lmpStatXp()) ++bad;\n            if (d->xpPerHp != lmpStatXpPerHp()) ++bad;\n            if (d->xpValue != lmpStatXpValue()) ++bad;\n            if (d->xpSource != \"mm2_print\") ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp) ++bad;\n        }\n        // (the two rewired cells: the temperate\n        //  civilized plains grid 22 die 2 cell and\n        //  the tropical civilized hills grid 31\n        //  die 20 cell, both src 2)\n        if (mm2encoTC5Die(0) != lmpGridTC5Index() - 20\n            || mm2encoTC5Src(0) != 2\n            || mm2encoRC2Die(18) != 20\n            || mm2encoRC2Src(18) != 2)\n            ++bad;\n        if (mm2encoWalkKeyRows()\n            != lmpWalkKeyRowsAfter()) ++bad;\n        if (mm2encoLammasuGreaterRows()\n            != lmpCellsRewired()) ++bad;\n        if (!reg.find(\"lammasu\")) ++bad;\n        if ((int)reg.all().size()\n            < lmpRegistryAfter())\n            ++bad;\n        printf(\"R820 lammasu promotion: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----",
+   "note": "the R820 regtest walk"
+  },
+  {
+   "file": "regtest.cpp",
+   "from": "            {  // grid 22, the temperate civilized plains and scrub\n                \"\",\n                \"ghost\",",
+   "to": "            {  // grid 22, the temperate civilized plains and scrub\n                \"lammasu_greater\",\n                \"ghost\",",
+   "note": "the grid 22 lammasu cell"
+  },
+  {
+   "file": "regtest.cpp",
+   "from": "                \"shedu\",\n                \"rakshasa\",\n                \"\",\n            },\n            {  // grid 32, the tropical civilized forest",
+   "to": "                \"shedu\",\n                \"rakshasa\",\n                \"lammasu_greater\",\n            },\n            {  // grid 32, the tropical civilized forest",
+   "note": "the grid 31 lammasu cell"
+  },
+  {
+   "file": "regtest.cpp",
+   "from": "            || mm2encoWalkKeyRows() != 570",
+   "to": "            || mm2encoWalkKeyRows() != 572",
+   "note": "the R817 audit walk-key const bump"
+  },
+  {
+   "file": "regtest.cpp",
+   "from": "    // the walk-key census (the MM1 and MM2 defs the registry owns)\n    if (mm2encoWalkKeyRows() != mm2encoMm1SourceRows() +\n        mm2encoMm2SourceRows() - mm2encoLammasuGreaterRows()\n        )",
+   "to": "    // the walk-key census (the MM1 and MM2 defs the registry owns)\n    if (mm2encoWalkKeyRows() != mm2encoMm1SourceRows() +\n        mm2encoMm2SourceRows()\n        )",
+   "note": "the R817 audit walk-key expression"
+  },
+  {
+   "file": "rules/mm2enco.h",
+   "from": "// The rows with a registry walk key (the MM1 and MM2 defs the registry owns)\ninline int mm2encoWalkKeyRows()\n    { return 570; }",
+   "to": "// The rows with a registry walk key (the MM1 and MM2 defs the\n// registry owns; the R820 lammasu promotion rewired the 2\n// keyless cells, 570 -> 572)\ninline int mm2encoWalkKeyRows()\n    { return 572; }",
+   "note": "the mm2enco walk-key const"
+  }
+ ],
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 37,
+  "open": 0
+ },
+ "prev_record": [
+  "- R819 LANDED 2026-10-24: commit",
+  "  52a015aa5937dd29bb5445524c7011be3851960e",
+  "  (census 741 -> 742, pushed",
+  "  9279026..52a015a),",
+  "  THE MM2 INDEX WALK - THE MERGED",
+  "  MM1/FF/MM2 INDEX CENSUS (Curtiss's",
+  "  Go call on the landed R818; round",
+  "  twenty-four of the MM2 arc, the",
+  "  index census round, the ARC",
+  "  CLOSER - the Random Encounter",
+  "  Tables parent box and the Index",
+  "  box both flip, 37 closed 0 open).",
+  "  PRINT FOLIO pp. 156-160 (the gap",
+  "  box label says p. 156, the true",
+  "  span runs 156-160 in both scans;",
+  "  the 4-column layout, 26 letter",
+  "  sections). THE PIN SHAPE: a",
+  "  two-voice LINE census, not a def",
+  "  census - 26 letter rows x 6",
+  "  cells (ordinal, total, MM1, FF,",
+  "  this-book, cross-ref), 1488",
+  "  adjudicated index lines (577 M",
+  "  refs, 401 F refs, 510 this-book,",
+  "  470 parenthetical cross-refs); S",
+  "  the largest section (180), Z the",
+  "  smallest (4). THE METHOD: both",
+  "  archive.org djvu scans parsed",
+  "  independently (column",
+  "  reconstruction, ref-token split,",
+  "  registry cross-resolve),",
+  "  junk-filtered, paired per letter",
+  "  by global-best matching; the 206",
+  "  single-voice slots adjudicated by",
+  "  hand. THE ADJUDICATION LESSONS:",
+  "  the ref-fused M and F OCR lines",
+  "  re-lettered to their true",
+  "  sections (the M9C Huge Spider",
+  "  class), 9 split fragments and",
+  "  doctrine-prose lines dropped, 4",
+  "  ref-lost lines reclassified (the",
+  "  Leprechaun, Salt Water Troll,",
+  "  Troll, Weasel lines carry M",
+  "  refs), 2 flagged reads (the",
+  "  Sirme -> sirine and Stalker",
+  "  lines, ref lost in both scans),",
+  "  2 B-only lines adjudicated real",
+  "  (Caryatid Column, Olhydra - no",
+  "  registry def, the OA/lammasu",
+  "  seam stays queued). THE OPENING",
+  "  DOCTRINE (p. 156) pinned as",
+  "  consts/bools: all official",
+  "  creatures as of December 1982,",
+  "  M for MM1, F for FF, no letter",
+  "  for this book, the parenthetical",
+  "  names the real entry. NO defs",
+  "  promoted - the registry stays",
+  "  809. THE MM2 ARC: 24 rounds, the",
+  "  gap now 37 closed 0 open - the",
+  "  arc is closed; the next arc (the",
+  "  UA appendix spell dueling /",
+  "  index class, or the OA/lammasu",
+  "  promotion seam) waits for the",
+  "  next Go call."
+ ],
+ "inline_count": 35
+}
