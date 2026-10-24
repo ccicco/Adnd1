@@ -21660,6 +21660,51 @@ when both halves land.
   57239 bytes, landed the same. NEXT - R810: awaits
   Curtiss call (the natural next walk the Letter P
   box; 17 open boxes remain).
+- R810 LANDED 2026-10-24: commit bc2d9a511bd173b4b15a692ee03115e23c7a1a0f
+  (census 732 -> 733, pushed 3dc3c4f..bc2d9a5), THE
+  MM2 LETTER P WALK - the para-elemental (ice, smoke, magma and
+  ooze), pech, pedipalp (large, huge and giant), phantom, phoenix,
+  phycomid, planetar, pseudo-undead, deadly pudding (brown, dun and
+  white) and pyrolisk turns - the P-FLIP round (Curtiss single-
+  letter Go call on the landed letter O walk; round fifteen of the
+  MM2 arc, the FOURTH single-letter pass). THE PIN-TIME WALK: TEN
+  entries on pp. 98-103 - the para-elemental family head (its four
+  form blocks: ice, smoke and magma p. 98, ooze p. 99), the pech p.
+  99, the pedipalp variant table p. 100, the phantom, phoenix and
+  phycomid pp. 100-101, the planetar pp. 101-102, the pseudo-undead
+  and the deadly pudding variant table p. 102, the pyrolisk p. 103.
+  SEVENTEEN .lua defs ride the R791 data_files extension, registry
+  706 -> 723; ONE doctrine-only family head (the PARA-ELEMENTAL
+  summoning doctrine rides as consts - the R808 lycanthrope
+  precedent). Header rules/mm2p.h, prefix mm2p, 142 consts + 49
+  bools + ONE grid (the 17x10 PStats stat grid) = 201 inline. THE
+  P-FLIP: the Letter P gap box flips to closed - 21 closed 16 open.
+  The settled reads: the pyrolisk 4+3 (the capture 43 the OCR
+  artifact); the magma druidic heat metal (the capture drastic); the
+  planetar 144 hp flat-hp read (the obliviax bat precedent); the
+  phantom and pseudo-undead Nil/See-below blocks (AC 9 default,
+  attacks floored at 1, xp 0); the para-elemental 8, 12, or 16
+  first-number 8 read (the earth elemental precedent); the pudding
+  brown VIII and the ooze +7 or better weapons kept verbatim per
+  print against the transcription VII and +1 variances; the phoenix
+  -3 and planetar -7 armor classes unquoted; the loader semantics
+  pinned - the phoenix 1 or 2 max 2, the smoke Special and the
+  phantom Nil attacks floored at 1, every Standard MR 0. One
+  regtest patch: the R810 live def walk at the R227 anchor, its
+  registry census a FLOOR 706 -> at least 723. LOCAL VERIFICATION
+  (environment rebuilt from the tarball at 3dc3c4f, spec_r809.json
+  the structural reference): engine double-run 23/0 then 0/23;
+  rverify GREEN vs 3dc3c4f - 361 mutants, 0 missed; offline loader
+  sim GREEN - the strict Lua parser caught the raw-newline-in-string
+  defect at author time (the paragraphs join as escaped \n\n
+  sequences), 723 defs 0 errors, the 17-def grid walk 0 bad; the
+  /tmp tree restored pristine after. PREFLIGHT GREEN: loaded 723,
+  errors 0; xp audit 723/0; R797 through R810 live defs all bad 0;
+  AUDIT CENSUS 733 each exactly once, all bad 0; build 0 warnings.
+  Commit 22 files, 4884 insertions. Delivery spec-r810: raw JSON
+  canvas, authored md5 5d33b17607a1fa574e706e2e8126fab2, 110007
+  bytes, landed the same. NEXT - R811: awaits Curtiss call (the
+  natural next walk the Letter Q box; 16 open boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

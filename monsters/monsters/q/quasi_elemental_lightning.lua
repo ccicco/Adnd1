@@ -1,0 +1,36 @@
+-- Quasi-elemental, Lightning: promoted by the R811 MM2 letter Q walk round
+-- from the MM2 print
+-- (spec tools/spec_r811.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Quasi-elemental, Lightning",
+  page = "103",
+  pages = "103",
+  source = "MM2",
+  race = "Quasi-elemental, Lightning",
+  hitDice = "6, 9, or 12",
+  hitDiceNum = "6",
+  hitDiceBonus = "0",
+  avgHp = "21",
+  armorClass = "2",
+  numAttacks = 1,
+  damage = "1-6 +1 point/HD",
+  xp = "1000",
+  xpPerHp = "15",
+  xpValue = "1315",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "18\" (plus special) (MC: A)",
+  size = "S",
+  intelligence = "Low",
+  alignment = "Neutral (chaotic)",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Creatures of this sort inhabit the Elemental Plane of Air and the Positive Material Plane. They are rare even in those places. During a great lightning storm on the Material Plane, large numbers of lightning quasi-elementals will sometimes gather. During such violent thunderstorms, the creatures feed and reproduce. In addition to normal movement, lightning quasi-elementals can \"arc,\" leaping up to 6\" to any grounded or metallic object of mass greater than 50 gp. Such leaping arc is in addition to normal movement, coming either at the beginning or end of it.\n\nThere are 3 hit die categories of quasi-elementals, and the small 6-hit-die variety are most common in the Prime Material Plane (60%), the 9-hit-die size less common (30%) and the 12 (or more)-hit-die size rarest of all (10%). In the Elemental Plane these figures are reversed, the smallest quasi-elemental being encountered 10% of the time, the medium-sized encountered 30% of the time, and the largest type encountered 60% of the time.\n\nIn addition to normal attack of electrical discharge by touch, a creature of this sort can discharge 1 small globe of ball lightning each round for 6, 9, or 12 rounds (depending on hit dice). This globe will float near the quasi-elemental until some creature of large mass (2000 gp or more) or with a large quantity of conductive metal comes within 5 feet. The ball lightning will then move to that object and discharge, inflicting 1-4, 1-6, or 1-8 points of damage, depending on the size of the quasi-elemental that discharged it.\n\nLightning quasi-elementals can be harmed only by +1 or better magic weapons. If the weapon used against such a creature is of conductive material, its wielder will suffer electrical damage of 1-4 points whenever the weapon strikes the lightning quasi-elemental. Lightning and electrical attacks do no damage. Fire and acid do only half-normal damage. Cold does full damage. Water attacks inflict 1-8 points of damage per gallon, or double full normal damage. For example, an ice storm spell does 6-60. Falling water, as in some form of rain, inflicts 2 points of damage for each 1/10th of an inch of precipitation which falls upon the creature.\n\nLightning quasi-elementals have no known social organization. It is generally not possible to conjure quasi-elementals, although powerful magic-users have been known to do so.",
+}

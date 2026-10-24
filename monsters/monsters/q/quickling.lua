@@ -1,0 +1,36 @@
+-- Quickling: promoted by the R811 MM2 letter Q walk round
+-- from the MM2 print
+-- (spec tools/spec_r811.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Quickling",
+  page = "103",
+  pages = "103-104",
+  source = "MM2",
+  race = "Quickling",
+  hitDice = "1-1/2",
+  hitDiceNum = "1",
+  hitDiceBonus = "2",
+  avgHp = "5",
+  armorClass = -3,
+  numAttacks = 3,
+  damage = "As dagger",
+  xp = "200",
+  xpPerHp = "3",
+  xpValue = "215",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "4-16",
+  lairPct = "10",
+  treasure = "O, P, Q, X",
+  move = "96\"",
+  size = "S (2' tall)",
+  intelligence = "High to genius",
+  alignment = "Chaotic evil (neutral)",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Save as 19th-level clerics",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These small, slender, extremely fast-moving creatures are said to be a race of brownies who dabbled in magic and mysteries better left alone. Thus, legend relates, the little folk were changed into evil creatures of great maliciousness towards humans, demihumans, and other little people. They dwell in dark woodlands and wild, evil areas.\n\nIn any group of quicklings encountered there will be 1 individual of 3 hit dice strength. If more than 10 quicklings are encountered, then 2 of them will have 3 hit dice and 1 will be a 4-1/2 hit dice leader. Because of their amazing speed, quicklings have an excellent armor class. This speed also allows them 3 attacks per round with their needle-like daggers. Leaders will be 75% likely to have a poison which causes victims to fall into a drugged slumber unless a saving throw vs. poison is successfully made after each hit from these creatures' daggers.\n\nAll quicklings are able to use the following spell-like powers once per day, 1 at a time, at will: ventriloquism, forget, levitate, shatter, dig, and fire charm. They are 90% likely to be visible when moving, due to their speed. When motionless in natural cover they are totally invisible. When attacking, quicklings can be seen only as a blur. Thus, their speed and dexterity (18) allow them to save against all attack forms as if they were 19th-level clerics. It is impossible to surprise a quickling.\n\nQuicklings speak their own language and that of brownies, pixies, and halflings. Most can speak many words of Common, although at a high pitch and too quickly to be easily understood.\n\nThe quickling race is short-lived because of their accelerated rate of motion. Mature at about 1 or 2 years of age, quicklings die between 12 and 15 years of age.",
+}

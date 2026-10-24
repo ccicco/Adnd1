@@ -1,0 +1,36 @@
+-- Quickwood (Spy Tree): promoted by the R811 MM2 letter Q walk round
+-- from the MM2 print
+-- (spec tools/spec_r811.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Quickwood (Spy Tree)",
+  page = "104",
+  pages = "104",
+  source = "MM2",
+  race = "Quickwood (Spy Tree)",
+  hitDice = "5-10 (5 hp/die)",
+  hitDiceNum = "5",
+  hitDiceBonus = "0",
+  avgHp = "25",
+  armorClass = "5",
+  numAttacks = "Special",
+  damage = "Special",
+  xp = "350",
+  xpPerHp = "10",
+  xpValue = "600",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (90%), 2-4 (10%)",
+  lairPct = "100",
+  treasure = "See below",
+  move = "1\" (3\" for roots)",
+  size = "L",
+  intelligence = "Very",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Never surprised",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "It is said that the quickwood grows only through the magical offices of some great wizard (or possibly druid) who planted a mandragora root after ensorcelling it with mighty spells. Others claim that these weird trees are a natural progression of vegetable life towards a state equivalent to man's. In any case, the quickwood is certainly sentient, unlike most of the vegetation found in the world. This great hardwood tree appears to be an oak, although close inspection will reveal that it has a visage and sensory organs which resemble a distorted human face. It is 90% unlikely that the \"face\" will be noticed unless the observer is within 30 feet of the quickwood (10 feet if the thing is attempting to conceal its presence by not using its sensory organs). These creatures may be found in any habitat which supports normal oak trees, including the warmer regions where live oaks are found.\n\nAs it is very difficult for a quickwood to move its massive trunk, the creature will typically remain still if at all possible. It can, however, send out thick roots that move at 3\" per round through the loose top soil. These roots can seize and hold immobile any creature under 1000 pounds of weight. The roots are too strong to be broken, and blunt weapons do not damage them, but an edged weapon may be used to sever one. (Treat roots as large, with 10 hit points each. Note that root damage will not accumulate towards destruction of the quickwood proper.)\n\nThe creature will allow only 6 of its roots to be severed before it withdraws the other 7-12 to safety. The quickwood also has numbers of lesser roots which it spreads to sense approaching creatures. Its sensitive leaves can detect air movements and changes in pressure.\n\nThe visual, auditory, and olfactory organs (resembling large human eyes, ears, and nose) are slightly superior to the human norm, and the creature is able to see infravisually up to 120 feet. In addition, a mature spy tree is able to cause from 2-8 other normal oaks to serve as its hosts. These trees resemble the quickwood while so possessed, having visages and sensory organs through which the master tree actually controls the hosts and gains information. Such control extends up to 36\".\n\nThe limbs of the creature are too stiff to serve as offensive members, but a quickwood has a mouthlike opening that can clamp shut for 3-12 points damage. The victim must be touching the trunk or forced into a position by a nearby grasping root where the maw can inflict damage before this is an actual danger, however. The roots themselves do no damage and have a range of 30 yards.\n\nIt is possible to use plant effective spells against a quickwood, but most others do not work. The creature is able to perspire, drenching itself in water so fire does not harm it. Lightning is harmlessly channeled off. Poisons and gases do not harm a quickwood. Disintegrate will certainly destroy one of these things. However, if under spell attack, a quickwood will use the spell energy to radiate fear in a radius equal to 10 feet per level of spell energy. If the spell caster fails to make his or her saving throw, the quickwood has channeled all of the spell energy into fear; otherwise, the fear is only a side effect of the spell use, and the magic has standard effects. Mind-affecting spells do not affect a quickwood.\n\nQuickwoods are sometimes charmed or otherwise convinced to serve as repositories for treasure or as guardians of an area. In the former role, the treasure guarded will be typical of the creature having placed it there. Such items are always stored within the trunk orifice of the quickwood. As a guardian, the creature spies for intruders and upon sighting them will send out a hollow drumming sound which can be heard for a mile or more.",
+}

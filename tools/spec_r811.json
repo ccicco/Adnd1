@@ -1,0 +1,1030 @@
+{
+ "round": 811,
+ "prefix": "mm2q",
+ "header_file": "rules/mm2q.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 733,
+ "title": "the MM2 letter Q walk - the quasi-elemental lightning, quickling and quickwood turns",
+ "audit_label": "R811 MM2 letter Q walk audit",
+ "audit_comment": "THE MM2 LETTER Q WALK - the quasi-elemental lightning and the quickling p. 103 (the quickling prose onto p. 104), the quickwood (spy tree) p. 104; the Q-FLIP round: the Letter Q gap box flips to closed (22 closed, 15 open). THREE .lua defs ride the R791 data_files extension, registry 723 -> 726. The QStats 3x10 grid cross-checks every armor class, hit dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell; the per-def doctrine pins carry the settled reads (the quasi-elemental 6, 9, or 12 first-number read, the quickling 1-1/2 the ASCII settle of the print half-glyph with the half die reading +2 hp on the quarter-die scale, the quickwood 5-10 (5 hp/die) flat 5-per-die avgHp 25 read, the quickling save-as matrix II.C note reading 0 magic resistance - the R155 class, the quickwood Special attacks floored at 1, the quickling -3 armor class unquoted - the R806 hollyphant precedent)",
+ "include_comment": "the MM2 letter Q walk - the quasi-elemental lightning, quickling and quickwood turns",
+ "include_after": "#include \"rules/mm2p.h\"  // R810: the MM2 letter P walk - the para-elemental (ice, smoke, magma and ooze), pech, pedipalp (large, huge and giant), phantom, phoenix, phycomid, planetar, pseudo-undead, deadly pudding (brown, dun and white) and pyrolisk turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R810 LANDED 2026-10-24: commit",
+ "banner": {
+  "title": "THE MM2 LETTER Q WALK - THE QUASI-ELEMENTAL LIGHTNING, QUICKLING AND QUICKWOOD TURNS (the quasi-elemental lightning and the quickling p. 103, the quickling prose onto p. 104, the quickwood (spy tree) p. 104), promoted to the live registry; the Q-FLIP round, the Letter Q gap box flips to closed",
+  "provenance": "Round sixteen of the MM2 arc, the FIFTH single-letter pass (Curtiss Go call on the landed letter P walk; the letter Q pin-time walk found THREE entries, all with stat blocks - no doctrine-only family heads; the MM1 registry already owns the quasit print, so no prior-owned index entries ride this round)",
+  "sentinel": "The pin headers stay the print-fidelity record; the three .lua defs ride the R791 data_files extension in the MM1 registry schema (the defensive coercers load the verbatim print cells, the QStats grid carries the loader values)"
+ },
+ "tables": [
+  {
+   "name": "the quasi-elemental lightning to quickwood stat grid",
+   "tag": "QStats",
+   "count": "mm2qQStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE Q-GRID: the 3-row QStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the three letter Q stat blocks, in print order - the quasi-elemental lightning through the quickwood)",
+   "cols": [
+    "mm2qQStatAc",
+    "mm2qQStatHd",
+    "mm2qQStatHdBonus",
+    "mm2qQStatAvgHp",
+    "mm2qQStatAttacks",
+    "mm2qQStatXp",
+    "mm2qQStatXpHp",
+    "mm2qQStatLairPct",
+    "mm2qQStatMove",
+    "mm2qQStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the quickling -3 rides an unquoted number - the R806 hollyphant -4 precedent)",
+    "The hit dice num cells (the quasi-elemental 6, 9, or 12 first-number 6 read - the MM1 earth elemental precedent; the quickling 1-1/2 reads 1 die; the quickwood 5-10 reads the base 5)",
+    "The hit dice bonus cells (the quickling half die reads +2 hp on the quarter-die scale - the loader 1.5 hit-dice settle, the hitDice = hdNum + bonus/4 form)",
+    "The avgHp cells (the floor(3.5 x hd + bonus) formula: the quasi-elemental 21, the quickling 5; the quickwood 25 is the 5-per-die read - 5 dice x 5 hp - the flat exception pinned verbatim)",
+    "The attack cells (the loader semantics: the quickwood Special floor at 1)",
+    "The xp base cells (the quasi-elemental VII/1000, the quickling IV/200, the quickwood V/350)",
+    "The xp per hit point cells (the quasi-elemental 15, the quickling 3, the quickwood 10)",
+    "The in-lair percentage cells (the quasi-elemental Nil reads 0; the quickwood 100)",
+    "The move cells (the ground move reads: the quasi-elemental 18, the quickling 96, the quickwood 1)",
+    "The magic resistance cells (every See below and every Save-as matrix II.C note reads 0 - the R155 class)"
+   ],
+   "data": [
+    [
+     2,
+     6,
+     0,
+     21,
+     1,
+     1000,
+     15,
+     0,
+     18,
+     0
+    ],
+    [
+     -3,
+     1,
+     2,
+     5,
+     3,
+     200,
+     3,
+     10,
+     96,
+     0
+    ],
+    [
+     5,
+     5,
+     0,
+     25,
+     1,
+     350,
+     10,
+     100,
+     1,
+     0
+    ]
+   ]
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter Q walk round pins (the R811 census)": [
+   {
+    "kind": "const",
+    "name": "mm2qRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qLetterQHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qPriorOwnedEntries"
+   }
+  ],
+  "the quasi-elemental lightning pins (the R811 MM2 letter Q walk)": [
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningSmallHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningMidHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningLargeHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningPmpSmallPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningPmpMidPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningPmpLargePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningPlaneSmallPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningPlaneMidPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningPlaneLargePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningArcLeapInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningArcMassGp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningBallTriggerFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningBallMassGp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningBallDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningBallDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningBallRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningBallRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningConductionDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningConductionDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningWaterDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningWaterDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningRainDamagePerTenthInch"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuasiLightningWeaponFloorPlus1"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuasiLightningImmuneToLightning"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuasiLightningFireAcidHalfDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuasiLightningColdFullDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuasiLightningWaterDoubleDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuasiLightningRarelyConjured"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuasiLightningXpLevel"
+   }
+  ],
+  "the quickling pins (the R811 MM2 letter Q walk)": [
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingThreeHdInGroup"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingThreeHdInLargeGroup"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingLeaderHdNum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingLeaderHdBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingLeaderPoisonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingVisibleMovingPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingSaveAsClericLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingSpellLikePowers"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingDexterity"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingMatureYearsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingMatureYearsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingDeathYearsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingDeathYearsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuicklingNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuicklingInvisibleInNaturalCover"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuicklingSeenOnlyAsBlur"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuicklingExcellentArmorClassFromSpeed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuicklingXpLevel"
+   }
+  ],
+  "the quickwood pins (the R811 MM2 letter Q walk)": [
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodFaceMissPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodFaceNoticeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodFaceConcealFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodRootMoveInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodRootHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodRootSeverLimit"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodRootCountMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodRootCountMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodRootWeightLimitPounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodRootRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodHostsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodHostsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodControlRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodInfravisionFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodMawDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodMawDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodFearRadiusFeetPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodDrumRangeMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuickwoodNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuickwoodFireImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuickwoodLightningChanneled"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuickwoodPoisonGasImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuickwoodDisintegrateDestroys"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuickwoodMindAffectingImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuickwoodPlantSpellsWork"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2qQuickwoodRootsTooStrongToBreak"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2qQuickwoodXpLevel"
+   }
+  ],
+  "the QStats grid pins (the R811 MM2 letter Q walk)": [
+   {
+    "kind": "table",
+    "name": "the quasi-elemental lightning to quickwood stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the Letter Q gap box flips (the census walk)",
+   "expr": "m['mm2qRegistryAfter']() - m['mm2qRegistryBefore']() != m['mm2qDefCount']() or m['mm2qDefCount']() != 3 or m['mm2qEntryCount']() != 3 or m['mm2qStatBlockHeadings']() != 3 or m['mm2qDoctrineHeads']() != 0 or m['mm2qLetterQHeadings']() != 3 or m['mm2qQStatRows']() != 3 or m['mm2qGapClosed']() != 22 or m['mm2qGapOpen']() != 15 or m['mm2qPriorOwnedEntries']() != 0"
+  },
+  {
+   "note": "the quasi-elemental lightning grid row (pp. 103-104 print order)",
+   "expr": "m['mm2qQStatAc'](0) != 2 or m['mm2qQStatHd'](0) != 6 or m['mm2qQStatHdBonus'](0) != 0 or m['mm2qQStatAvgHp'](0) != 21 or m['mm2qQStatAttacks'](0) != 1 or m['mm2qQStatXp'](0) != 1000 or m['mm2qQStatXpHp'](0) != 15 or m['mm2qQStatLairPct'](0) != 0 or m['mm2qQStatMove'](0) != 18 or m['mm2qQStatMr'](0) != 0 or m['mm2qQuasiLightningXpValue']() != 1315 or m['mm2qQuasiLightningXpLevel']() != 7"
+  },
+  {
+   "note": "the quickling grid row (pp. 103-104 print order)",
+   "expr": "m['mm2qQStatAc'](1) != -3 or m['mm2qQStatHd'](1) != 1 or m['mm2qQStatHdBonus'](1) != 2 or m['mm2qQStatAvgHp'](1) != 5 or m['mm2qQStatAttacks'](1) != 3 or m['mm2qQStatXp'](1) != 200 or m['mm2qQStatXpHp'](1) != 3 or m['mm2qQStatLairPct'](1) != 10 or m['mm2qQStatMove'](1) != 96 or m['mm2qQStatMr'](1) != 0 or m['mm2qQuicklingXpValue']() != 215 or m['mm2qQuicklingXpLevel']() != 4"
+  },
+  {
+   "note": "the quickwood grid row (pp. 103-104 print order)",
+   "expr": "m['mm2qQStatAc'](2) != 5 or m['mm2qQStatHd'](2) != 5 or m['mm2qQStatHdBonus'](2) != 0 or m['mm2qQStatAvgHp'](2) != 25 or m['mm2qQStatAttacks'](2) != 1 or m['mm2qQStatXp'](2) != 350 or m['mm2qQStatXpHp'](2) != 10 or m['mm2qQStatLairPct'](2) != 100 or m['mm2qQStatMove'](2) != 1 or m['mm2qQStatMr'](2) != 0 or m['mm2qQuickwoodXpValue']() != 600 or m['mm2qQuickwoodXpLevel']() != 5"
+  },
+  {
+   "note": "the xpValue formula (the base plus the per-hp times avgHp, every def)",
+   "expr": "m['mm2qQuasiLightningXpValue']() != m['mm2qQStatXp'](0) + m['mm2qQStatAvgHp'](0) * m['mm2qQStatXpHp'](0) or m['mm2qQuicklingXpValue']() != m['mm2qQStatXp'](1) + m['mm2qQStatAvgHp'](1) * m['mm2qQStatXpHp'](1) or m['mm2qQuickwoodXpValue']() != m['mm2qQStatXp'](2) + m['mm2qQStatAvgHp'](2) * m['mm2qQStatXpHp'](2)"
+  },
+  {
+   "note": "the avgHp formula (the floor of 3.5 x hit dice plus bonus, the 5-hp/die quickwood excluded - the doubling form so the expr compiles as C++)",
+   "expr": "m['mm2qQStatAvgHp'](0) * 2 + m['mm2qQStatHd'](0) % 2 != m['mm2qQStatHd'](0) * 7 + m['mm2qQStatHdBonus'](0) * 2 or m['mm2qQStatAvgHp'](1) * 2 + m['mm2qQStatHd'](1) % 2 != m['mm2qQStatHd'](1) * 7 + m['mm2qQStatHdBonus'](1) * 2"
+  },
+  {
+   "note": "the loader attack semantics (the Special floor at 1, the bare-numeral reads pass through)",
+   "expr": "m['mm2qQStatAttacks'](2) != 1 or m['mm2qQStatAttacks'](0) != 1 or m['mm2qQStatAttacks'](1) != 3"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter Q box",
+   "from": "- [ ] **Letter Q**",
+   "to": "- [x] **Letter Q**"
+  }
+ ],
+ "gap_census": {
+  "closed": 22,
+  "open": 15
+ },
+ "caller_files": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter Q def walk (the R810 P-walk pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R811: the MM2 letter Q live def walk ----\n    // The 3 promoted letter Q defs\n    // cross-checked live against the mm2q pins:\n    // every stat cell of the 3-row QStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula, the per-def prose markers, and the\n    // registry census floor 723 -> at least 726.\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kQ[3] = {\n            \"quasi_elemental_lightning\",\n            \"quickling\",\n            \"quickwood\",\n        };\n        static const char* kQMark[3] = {\n            \"globe of ball lightning\",\n            \"brownies who dabbled in magic\",\n            \"distorted human face\",\n        };\n        for (int i = 0; i < 3; ++i) {\n            const auto* d = reg.find(kQ[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\")\n                ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2qQStatAc(i))\n                ++bad;\n            if (d->hitDiceNum != mm2qQStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2qQStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2qQStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2qQStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2qQStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2qQStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2qQStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2qQStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2qQStatMr(i))\n                ++bad;\n            if (d->text.find(kQMark[i])\n                == std::string::npos)\n                ++bad;\n        }\n        if ((int)reg.all().size()\n            < mm2qRegistryAfter())\n            ++bad;\n        printf(\"R811 MM2 letter Q live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/q/quasi_elemental_lightning.lua",
+   "content": "-- Quasi-elemental, Lightning: promoted by the R811 MM2 letter Q walk round\n-- from the MM2 print\n-- (spec tools/spec_r811.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Quasi-elemental, Lightning\",\n  page = \"103\",\n  pages = \"103\",\n  source = \"MM2\",\n  race = \"Quasi-elemental, Lightning\",\n  hitDice = \"6, 9, or 12\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"0\",\n  avgHp = \"21\",\n  armorClass = \"2\",\n  numAttacks = 1,\n  damage = \"1-6 +1 point/HD\",\n  xp = \"1000\",\n  xpPerHp = \"15\",\n  xpValue = \"1315\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"18\\\" (plus special) (MC: A)\",\n  size = \"S\",\n  intelligence = \"Low\",\n  alignment = \"Neutral (chaotic)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Creatures of this sort inhabit the Elemental Plane of Air and the Positive Material Plane. They are rare even in those places. During a great lightning storm on the Material Plane, large numbers of lightning quasi-elementals will sometimes gather. During such violent thunderstorms, the creatures feed and reproduce. In addition to normal movement, lightning quasi-elementals can \\\"arc,\\\" leaping up to 6\\\" to any grounded or metallic object of mass greater than 50 gp. Such leaping arc is in addition to normal movement, coming either at the beginning or end of it.\\n\\nThere are 3 hit die categories of quasi-elementals, and the small 6-hit-die variety are most common in the Prime Material Plane (60%), the 9-hit-die size less common (30%) and the 12 (or more)-hit-die size rarest of all (10%). In the Elemental Plane these figures are reversed, the smallest quasi-elemental being encountered 10% of the time, the medium-sized encountered 30% of the time, and the largest type encountered 60% of the time.\\n\\nIn addition to normal attack of electrical discharge by touch, a creature of this sort can discharge 1 small globe of ball lightning each round for 6, 9, or 12 rounds (depending on hit dice). This globe will float near the quasi-elemental until some creature of large mass (2000 gp or more) or with a large quantity of conductive metal comes within 5 feet. The ball lightning will then move to that object and discharge, inflicting 1-4, 1-6, or 1-8 points of damage, depending on the size of the quasi-elemental that discharged it.\\n\\nLightning quasi-elementals can be harmed only by +1 or better magic weapons. If the weapon used against such a creature is of conductive material, its wielder will suffer electrical damage of 1-4 points whenever the weapon strikes the lightning quasi-elemental. Lightning and electrical attacks do no damage. Fire and acid do only half-normal damage. Cold does full damage. Water attacks inflict 1-8 points of damage per gallon, or double full normal damage. For example, an ice storm spell does 6-60. Falling water, as in some form of rain, inflicts 2 points of damage for each 1/10th of an inch of precipitation which falls upon the creature.\\n\\nLightning quasi-elementals have no known social organization. It is generally not possible to conjure quasi-elementals, although powerful magic-users have been known to do so.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/q/quickling.lua",
+   "content": "-- Quickling: promoted by the R811 MM2 letter Q walk round\n-- from the MM2 print\n-- (spec tools/spec_r811.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Quickling\",\n  page = \"103\",\n  pages = \"103-104\",\n  source = \"MM2\",\n  race = \"Quickling\",\n  hitDice = \"1-1/2\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"2\",\n  avgHp = \"5\",\n  armorClass = -3,\n  numAttacks = 3,\n  damage = \"As dagger\",\n  xp = \"200\",\n  xpPerHp = \"3\",\n  xpValue = \"215\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"4-16\",\n  lairPct = \"10\",\n  treasure = \"O, P, Q, X\",\n  move = \"96\\\"\",\n  size = \"S (2' tall)\",\n  intelligence = \"High to genius\",\n  alignment = \"Chaotic evil (neutral)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Save as 19th-level clerics\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These small, slender, extremely fast-moving creatures are said to be a race of brownies who dabbled in magic and mysteries better left alone. Thus, legend relates, the little folk were changed into evil creatures of great maliciousness towards humans, demihumans, and other little people. They dwell in dark woodlands and wild, evil areas.\\n\\nIn any group of quicklings encountered there will be 1 individual of 3 hit dice strength. If more than 10 quicklings are encountered, then 2 of them will have 3 hit dice and 1 will be a 4-1/2 hit dice leader. Because of their amazing speed, quicklings have an excellent armor class. This speed also allows them 3 attacks per round with their needle-like daggers. Leaders will be 75% likely to have a poison which causes victims to fall into a drugged slumber unless a saving throw vs. poison is successfully made after each hit from these creatures' daggers.\\n\\nAll quicklings are able to use the following spell-like powers once per day, 1 at a time, at will: ventriloquism, forget, levitate, shatter, dig, and fire charm. They are 90% likely to be visible when moving, due to their speed. When motionless in natural cover they are totally invisible. When attacking, quicklings can be seen only as a blur. Thus, their speed and dexterity (18) allow them to save against all attack forms as if they were 19th-level clerics. It is impossible to surprise a quickling.\\n\\nQuicklings speak their own language and that of brownies, pixies, and halflings. Most can speak many words of Common, although at a high pitch and too quickly to be easily understood.\\n\\nThe quickling race is short-lived because of their accelerated rate of motion. Mature at about 1 or 2 years of age, quicklings die between 12 and 15 years of age.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/q/quickwood.lua",
+   "content": "-- Quickwood (Spy Tree): promoted by the R811 MM2 letter Q walk round\n-- from the MM2 print\n-- (spec tools/spec_r811.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Quickwood (Spy Tree)\",\n  page = \"104\",\n  pages = \"104\",\n  source = \"MM2\",\n  race = \"Quickwood (Spy Tree)\",\n  hitDice = \"5-10 (5 hp/die)\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"0\",\n  avgHp = \"25\",\n  armorClass = \"5\",\n  numAttacks = \"Special\",\n  damage = \"Special\",\n  xp = \"350\",\n  xpPerHp = \"10\",\n  xpValue = \"600\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1 (90%), 2-4 (10%)\",\n  lairPct = \"100\",\n  treasure = \"See below\",\n  move = \"1\\\" (3\\\" for roots)\",\n  size = \"L\",\n  intelligence = \"Very\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Never surprised\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"It is said that the quickwood grows only through the magical offices of some great wizard (or possibly druid) who planted a mandragora root after ensorcelling it with mighty spells. Others claim that these weird trees are a natural progression of vegetable life towards a state equivalent to man's. In any case, the quickwood is certainly sentient, unlike most of the vegetation found in the world. This great hardwood tree appears to be an oak, although close inspection will reveal that it has a visage and sensory organs which resemble a distorted human face. It is 90% unlikely that the \\\"face\\\" will be noticed unless the observer is within 30 feet of the quickwood (10 feet if the thing is attempting to conceal its presence by not using its sensory organs). These creatures may be found in any habitat which supports normal oak trees, including the warmer regions where live oaks are found.\\n\\nAs it is very difficult for a quickwood to move its massive trunk, the creature will typically remain still if at all possible. It can, however, send out thick roots that move at 3\\\" per round through the loose top soil. These roots can seize and hold immobile any creature under 1000 pounds of weight. The roots are too strong to be broken, and blunt weapons do not damage them, but an edged weapon may be used to sever one. (Treat roots as large, with 10 hit points each. Note that root damage will not accumulate towards destruction of the quickwood proper.)\\n\\nThe creature will allow only 6 of its roots to be severed before it withdraws the other 7-12 to safety. The quickwood also has numbers of lesser roots which it spreads to sense approaching creatures. Its sensitive leaves can detect air movements and changes in pressure.\\n\\nThe visual, auditory, and olfactory organs (resembling large human eyes, ears, and nose) are slightly superior to the human norm, and the creature is able to see infravisually up to 120 feet. In addition, a mature spy tree is able to cause from 2-8 other normal oaks to serve as its hosts. These trees resemble the quickwood while so possessed, having visages and sensory organs through which the master tree actually controls the hosts and gains information. Such control extends up to 36\\\".\\n\\nThe limbs of the creature are too stiff to serve as offensive members, but a quickwood has a mouthlike opening that can clamp shut for 3-12 points damage. The victim must be touching the trunk or forced into a position by a nearby grasping root where the maw can inflict damage before this is an actual danger, however. The roots themselves do no damage and have a range of 30 yards.\\n\\nIt is possible to use plant effective spells against a quickwood, but most others do not work. The creature is able to perspire, drenching itself in water so fire does not harm it. Lightning is harmlessly channeled off. Poisons and gases do not harm a quickwood. Disintegrate will certainly destroy one of these things. However, if under spell attack, a quickwood will use the spell energy to radiate fear in a radius equal to 10 feet per level of spell energy. If the spell caster fails to make his or her saving throw, the quickwood has channeled all of the spell energy into fear; otherwise, the fear is only a side effect of the spell use, and the magic has standard effects. Mind-affecting spells do not affect a quickwood.\\n\\nQuickwoods are sometimes charmed or otherwise convinced to serve as repositories for treasure or as guardians of an area. In the former role, the treasure guarded will be typical of the creature having placed it there. Such items are always stored within the trunk orifice of the quickwood. As a guardian, the creature spies for intruders and upon sighting them will send out a hollow drumming sound which can be heard for a mile or more.\",\n}\n"
+  }
+ ],
+ "consts": [
+  {
+   "name": "mm2qRound",
+   "value": 811,
+   "comment": "The MM2 letter Q walk round: the quasi-elemental lightning to quickwood turns, the FIFTH single-letter pass (Curtiss Go call on the landed letter P walk)"
+  },
+  {
+   "name": "mm2qRegistryBefore",
+   "value": 723,
+   "comment": "The registry census before the R811 promotion (the landed R810 count)"
+  },
+  {
+   "name": "mm2qRegistryAfter",
+   "value": 726,
+   "comment": "The registry census after the R811 promotion (3 defs)"
+  },
+  {
+   "name": "mm2qDefCount",
+   "value": 3,
+   "comment": "The def count of the R811 walk (the quasi-elemental lightning, the quickling and the quickwood)"
+  },
+  {
+   "name": "mm2qEntryCount",
+   "value": 3,
+   "comment": "The pin-time entry census (3 print entries, all with stat blocks, no doctrine-only family heads in the letter Q walk)"
+  },
+  {
+   "name": "mm2qStatBlockHeadings",
+   "value": 3,
+   "comment": "The stat-block heading census of the walk (every letter Q entry pins a stat block)"
+  },
+  {
+   "name": "mm2qDoctrineHeads",
+   "value": 0,
+   "comment": "The doctrine-only family head census (no letter Q family head - no GIANT-style doctrine block rides the walk)"
+  },
+  {
+   "name": "mm2qLetterQHeadings",
+   "value": 3,
+   "comment": "The letter Q heading census (the quasi-elemental lightning through the quickwood)"
+  },
+  {
+   "name": "mm2qQStatRows",
+   "value": 3,
+   "comment": "The QStats grid row count (one row per def)"
+  },
+  {
+   "name": "mm2qGapClosed",
+   "value": 22,
+   "comment": "The MM2 gap report closed box count after the Q-flip (the R810 census 21 + the Letter Q box)"
+  },
+  {
+   "name": "mm2qGapOpen",
+   "value": 15,
+   "comment": "The MM2 gap report open box count after the Q-flip (the R810 census 16 - the Letter Q box)"
+  },
+  {
+   "name": "mm2qPriorOwnedEntries",
+   "value": 0,
+   "comment": "The prior-owned letter Q index entries (none - the MM1 registry quasit print is an MM1 walk, not an MM2 letter Q page)"
+  },
+  {
+   "name": "mm2qQuasiLightningXpValue",
+   "value": 1315,
+   "comment": "The quasi-elemental lightning xpValue (the 1000 + 15/hp block: 1000 + 15x21)"
+  },
+  {
+   "name": "mm2qQuasiLightningXpLevel",
+   "value": 7,
+   "comment": "The quasi-elemental lightning experience level (the roman VII)"
+  },
+  {
+   "name": "mm2qQuicklingXpValue",
+   "value": 215,
+   "comment": "The quickling xpValue (the 200 + 3/hp block: 200 + 3x5)"
+  },
+  {
+   "name": "mm2qQuicklingXpLevel",
+   "value": 4,
+   "comment": "The quickling experience level (the roman IV)"
+  },
+  {
+   "name": "mm2qQuickwoodXpValue",
+   "value": 600,
+   "comment": "The quickwood xpValue (the 350 + 10/hp block: 350 + 10x25)"
+  },
+  {
+   "name": "mm2qQuickwoodXpLevel",
+   "value": 5,
+   "comment": "The quickwood experience level (the roman V)"
+  },
+  {
+   "name": "mm2qQuasiLightningSmallHd",
+   "value": 6,
+   "comment": "The small quasi-elemental strength (6 hit dice, the most common sort on the Prime Material Plane)"
+  },
+  {
+   "name": "mm2qQuasiLightningMidHd",
+   "value": 9,
+   "comment": "The medium quasi-elemental strength (9 hit dice)"
+  },
+  {
+   "name": "mm2qQuasiLightningLargeHd",
+   "value": 12,
+   "comment": "The largest quasi-elemental strength (12 or more hit dice)"
+  },
+  {
+   "name": "mm2qQuasiLightningPmpSmallPct",
+   "value": 60,
+   "comment": "The Prime Material Plane encounter percentage (60% small, 30% medium, 10% large)"
+  },
+  {
+   "name": "mm2qQuasiLightningPmpMidPct",
+   "value": 30,
+   "comment": "The Prime Material Plane medium-size percentage"
+  },
+  {
+   "name": "mm2qQuasiLightningPmpLargePct",
+   "value": 10,
+   "comment": "The Prime Material Plane largest-size percentage"
+  },
+  {
+   "name": "mm2qQuasiLightningPlaneSmallPct",
+   "value": 10,
+   "comment": "The Elemental Plane encounter percentages reversed (10% small)"
+  },
+  {
+   "name": "mm2qQuasiLightningPlaneMidPct",
+   "value": 30,
+   "comment": "The Elemental Plane medium-size percentage"
+  },
+  {
+   "name": "mm2qQuasiLightningPlaneLargePct",
+   "value": 60,
+   "comment": "The Elemental Plane largest-size percentage"
+  },
+  {
+   "name": "mm2qQuasiLightningArcLeapInches",
+   "value": 6,
+   "comment": "The leaping arc range in inches (up to 6\" to any grounded or metallic object of mass greater than 50 gp)"
+  },
+  {
+   "name": "mm2qQuasiLightningArcMassGp",
+   "value": 50,
+   "comment": "The arc target mass threshold in gp"
+  },
+  {
+   "name": "mm2qQuasiLightningBallTriggerFeet",
+   "value": 5,
+   "comment": "The ball lightning trigger range in feet (large mass or conductive metal within 5 feet)"
+  },
+  {
+   "name": "mm2qQuasiLightningBallMassGp",
+   "value": 2000,
+   "comment": "The large-mass trigger threshold in gp (2000 or more)"
+  },
+  {
+   "name": "mm2qQuasiLightningBallDamageMin",
+   "value": 1,
+   "comment": "The ball lightning damage minimum (1-4, 1-6 or 1-8 by size)"
+  },
+  {
+   "name": "mm2qQuasiLightningBallDamageMax",
+   "value": 8,
+   "comment": "The ball lightning damage maximum"
+  },
+  {
+   "name": "mm2qQuasiLightningBallRoundsMin",
+   "value": 6,
+   "comment": "The ball lightning discharge rounds minimum (6, 9 or 12 rounds depending on hit dice)"
+  },
+  {
+   "name": "mm2qQuasiLightningBallRoundsMax",
+   "value": 12,
+   "comment": "The ball lightning discharge rounds maximum"
+  },
+  {
+   "name": "mm2qQuasiLightningConductionDamageMin",
+   "value": 1,
+   "comment": "The conductive-weapon wielder damage minimum (1-4 per strike)"
+  },
+  {
+   "name": "mm2qQuasiLightningConductionDamageMax",
+   "value": 4,
+   "comment": "The conductive-weapon wielder damage maximum"
+  },
+  {
+   "name": "mm2qQuasiLightningWaterDamageMin",
+   "value": 1,
+   "comment": "The water attack damage minimum per gallon (1-8)"
+  },
+  {
+   "name": "mm2qQuasiLightningWaterDamageMax",
+   "value": 8,
+   "comment": "The water attack damage maximum per gallon"
+  },
+  {
+   "name": "mm2qQuasiLightningRainDamagePerTenthInch",
+   "value": 2,
+   "comment": "The falling-rain damage per 1/10th inch of precipitation"
+  },
+  {
+   "name": "mm2qQuicklingThreeHdInGroup",
+   "value": 1,
+   "comment": "The 3-hit-dice individuals in any group (1)"
+  },
+  {
+   "name": "mm2qQuicklingThreeHdInLargeGroup",
+   "value": 2,
+   "comment": "The 3-hit-dice individuals in a group of more than 10 (2)"
+  },
+  {
+   "name": "mm2qQuicklingLeaderHdNum",
+   "value": 4,
+   "comment": "The leader hit dice num (a 4-1/2 hit dice leader)"
+  },
+  {
+   "name": "mm2qQuicklingLeaderHdBonus",
+   "value": 2,
+   "comment": "The leader hit dice bonus (the half die reads +2 hp on the quarter-die scale, the loader 1.5 hit-dice settle)"
+  },
+  {
+   "name": "mm2qQuicklingLeaderPoisonPct",
+   "value": 75,
+   "comment": "The leaders 75% likely to have a poison causing a drugged slumber (save vs. poison after each hit)"
+  },
+  {
+   "name": "mm2qQuicklingVisibleMovingPct",
+   "value": 90,
+   "comment": "The 90% likely to be visible when moving, due to speed"
+  },
+  {
+   "name": "mm2qQuicklingSaveAsClericLevel",
+   "value": 19,
+   "comment": "The quickling save matrix (as 19th-level clerics)"
+  },
+  {
+   "name": "mm2qQuicklingSpellLikePowers",
+   "value": 6,
+   "comment": "The once-per-day spell-like powers (ventriloquism, forget, levitate, shatter, dig, and fire charm)"
+  },
+  {
+   "name": "mm2qQuicklingDexterity",
+   "value": 18,
+   "comment": "The quickling dexterity (18)"
+  },
+  {
+   "name": "mm2qQuicklingMatureYearsMin",
+   "value": 1,
+   "comment": "The maturity age minimum in years (1 or 2)"
+  },
+  {
+   "name": "mm2qQuicklingMatureYearsMax",
+   "value": 2,
+   "comment": "The maturity age maximum in years"
+  },
+  {
+   "name": "mm2qQuicklingDeathYearsMin",
+   "value": 12,
+   "comment": "The quickling death age minimum in years (12 to 15)"
+  },
+  {
+   "name": "mm2qQuicklingDeathYearsMax",
+   "value": 15,
+   "comment": "The quickling death age maximum in years"
+  },
+  {
+   "name": "mm2qQuickwoodFaceMissPct",
+   "value": 90,
+   "comment": "The face 90% unlikely to be noticed unless within 30 feet"
+  },
+  {
+   "name": "mm2qQuickwoodFaceNoticeFeet",
+   "value": 30,
+   "comment": "The face notice range in feet"
+  },
+  {
+   "name": "mm2qQuickwoodFaceConcealFeet",
+   "value": 10,
+   "comment": "The face notice range in feet when concealing its sensory organs"
+  },
+  {
+   "name": "mm2qQuickwoodRootMoveInches",
+   "value": 3,
+   "comment": "The root movement rate (3\" per round through the loose top soil)"
+  },
+  {
+   "name": "mm2qQuickwoodRootHp",
+   "value": 10,
+   "comment": "The root hit points each (treat roots as large, with 10 hit points each)"
+  },
+  {
+   "name": "mm2qQuickwoodRootSeverLimit",
+   "value": 6,
+   "comment": "The severed-root allowance (only 6 before it withdraws the others)"
+  },
+  {
+   "name": "mm2qQuickwoodRootCountMin",
+   "value": 7,
+   "comment": "The other roots minimum (7-12)"
+  },
+  {
+   "name": "mm2qQuickwoodRootCountMax",
+   "value": 12,
+   "comment": "The other roots maximum"
+  },
+  {
+   "name": "mm2qQuickwoodRootWeightLimitPounds",
+   "value": 1000,
+   "comment": "The root hold weight limit in pounds (under 1000)"
+  },
+  {
+   "name": "mm2qQuickwoodRootRangeYards",
+   "value": 30,
+   "comment": "The root range in yards (the roots themselves do no damage)"
+  },
+  {
+   "name": "mm2qQuickwoodHostsMin",
+   "value": 2,
+   "comment": "The host oaks minimum (a mature spy tree causes 2-8 other normal oaks to serve as hosts)"
+  },
+  {
+   "name": "mm2qQuickwoodHostsMax",
+   "value": 8,
+   "comment": "The host oaks maximum"
+  },
+  {
+   "name": "mm2qQuickwoodControlRangeInches",
+   "value": 36,
+   "comment": "The host control range in inches (up to 36\")"
+  },
+  {
+   "name": "mm2qQuickwoodInfravisionFeet",
+   "value": 120,
+   "comment": "The quickwood infravision in feet (120)"
+  },
+  {
+   "name": "mm2qQuickwoodMawDamageMin",
+   "value": 3,
+   "comment": "The mouthlike opening damage minimum (3-12)"
+  },
+  {
+   "name": "mm2qQuickwoodMawDamageMax",
+   "value": 12,
+   "comment": "The mouthlike opening damage maximum"
+  },
+  {
+   "name": "mm2qQuickwoodFearRadiusFeetPerLevel",
+   "value": 10,
+   "comment": "The spell-energy fear radius in feet per spell level"
+  },
+  {
+   "name": "mm2qQuickwoodDrumRangeMiles",
+   "value": 1,
+   "comment": "The hollow drumming sound heard for a mile or more"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2qQuasiLightningWeaponFloorPlus1",
+   "value": true,
+   "comment": "Lightning quasi-elementals can be harmed only by +1 or better magic weapons"
+  },
+  {
+   "name": "mm2qQuasiLightningImmuneToLightning",
+   "value": true,
+   "comment": "Lightning and electrical attacks do no damage"
+  },
+  {
+   "name": "mm2qQuasiLightningFireAcidHalfDamage",
+   "value": true,
+   "comment": "Fire and acid do only half-normal damage"
+  },
+  {
+   "name": "mm2qQuasiLightningColdFullDamage",
+   "value": true,
+   "comment": "Cold does full damage"
+  },
+  {
+   "name": "mm2qQuasiLightningWaterDoubleDamage",
+   "value": true,
+   "comment": "Water attacks do double full normal damage"
+  },
+  {
+   "name": "mm2qQuasiLightningRarelyConjured",
+   "value": true,
+   "comment": "It is generally not possible to conjure quasi-elementals, although powerful magic-users have been known to do so"
+  },
+  {
+   "name": "mm2qQuicklingNeverSurprised",
+   "value": true,
+   "comment": "It is impossible to surprise a quickling"
+  },
+  {
+   "name": "mm2qQuicklingInvisibleInNaturalCover",
+   "value": true,
+   "comment": "When motionless in natural cover they are totally invisible"
+  },
+  {
+   "name": "mm2qQuicklingSeenOnlyAsBlur",
+   "value": true,
+   "comment": "When attacking, quicklings can be seen only as a blur"
+  },
+  {
+   "name": "mm2qQuicklingExcellentArmorClassFromSpeed",
+   "value": true,
+   "comment": "Because of their amazing speed, quicklings have an excellent armor class"
+  },
+  {
+   "name": "mm2qQuickwoodNeverSurprised",
+   "value": true,
+   "comment": "A quickwood is never surprised"
+  },
+  {
+   "name": "mm2qQuickwoodFireImmune",
+   "value": true,
+   "comment": "The creature is able to perspire, drenching itself in water so fire does not harm it"
+  },
+  {
+   "name": "mm2qQuickwoodLightningChanneled",
+   "value": true,
+   "comment": "Lightning is harmlessly channeled off"
+  },
+  {
+   "name": "mm2qQuickwoodPoisonGasImmune",
+   "value": true,
+   "comment": "Poisons and gases do not harm a quickwood"
+  },
+  {
+   "name": "mm2qQuickwoodDisintegrateDestroys",
+   "value": true,
+   "comment": "Disintegrate will certainly destroy one of these things"
+  },
+  {
+   "name": "mm2qQuickwoodMindAffectingImmune",
+   "value": true,
+   "comment": "Mind-affecting spells do not affect a quickwood"
+  },
+  {
+   "name": "mm2qQuickwoodPlantSpellsWork",
+   "value": true,
+   "comment": "It is possible to use plant effective spells against a quickwood, but most others do not work"
+  },
+  {
+   "name": "mm2qQuickwoodRootsTooStrongToBreak",
+   "value": true,
+   "comment": "The roots are too strong to be broken, and blunt weapons do not damage them"
+  }
+ ],
+ "inline_count": 99,
+ "prev_record": [
+  "- R810 LANDED 2026-10-24: commit bc2d9a511bd173b4b15a692ee03115e23c7a1a0f",
+  "  (census 732 -> 733, pushed 3dc3c4f..bc2d9a5), THE",
+  "  MM2 LETTER P WALK - the para-elemental (ice, smoke, magma and",
+  "  ooze), pech, pedipalp (large, huge and giant), phantom, phoenix,",
+  "  phycomid, planetar, pseudo-undead, deadly pudding (brown, dun and",
+  "  white) and pyrolisk turns - the P-FLIP round (Curtiss single-",
+  "  letter Go call on the landed letter O walk; round fifteen of the",
+  "  MM2 arc, the FOURTH single-letter pass). THE PIN-TIME WALK: TEN",
+  "  entries on pp. 98-103 - the para-elemental family head (its four",
+  "  form blocks: ice, smoke and magma p. 98, ooze p. 99), the pech p.",
+  "  99, the pedipalp variant table p. 100, the phantom, phoenix and",
+  "  phycomid pp. 100-101, the planetar pp. 101-102, the pseudo-undead",
+  "  and the deadly pudding variant table p. 102, the pyrolisk p. 103.",
+  "  SEVENTEEN .lua defs ride the R791 data_files extension, registry",
+  "  706 -> 723; ONE doctrine-only family head (the PARA-ELEMENTAL",
+  "  summoning doctrine rides as consts - the R808 lycanthrope",
+  "  precedent). Header rules/mm2p.h, prefix mm2p, 142 consts + 49",
+  "  bools + ONE grid (the 17x10 PStats stat grid) = 201 inline. THE",
+  "  P-FLIP: the Letter P gap box flips to closed - 21 closed 16 open.",
+  "  The settled reads: the pyrolisk 4+3 (the capture 43 the OCR",
+  "  artifact); the magma druidic heat metal (the capture drastic); the",
+  "  planetar 144 hp flat-hp read (the obliviax bat precedent); the",
+  "  phantom and pseudo-undead Nil/See-below blocks (AC 9 default,",
+  "  attacks floored at 1, xp 0); the para-elemental 8, 12, or 16",
+  "  first-number 8 read (the earth elemental precedent); the pudding",
+  "  brown VIII and the ooze +7 or better weapons kept verbatim per",
+  "  print against the transcription VII and +1 variances; the phoenix",
+  "  -3 and planetar -7 armor classes unquoted; the loader semantics",
+  "  pinned - the phoenix 1 or 2 max 2, the smoke Special and the",
+  "  phantom Nil attacks floored at 1, every Standard MR 0. One",
+  "  regtest patch: the R810 live def walk at the R227 anchor, its",
+  "  registry census a FLOOR 706 -> at least 723. LOCAL VERIFICATION",
+  "  (environment rebuilt from the tarball at 3dc3c4f, spec_r809.json",
+  "  the structural reference): engine double-run 23/0 then 0/23;",
+  "  rverify GREEN vs 3dc3c4f - 361 mutants, 0 missed; offline loader",
+  "  sim GREEN - the strict Lua parser caught the raw-newline-in-string",
+  "  defect at author time (the paragraphs join as escaped \\n\\n",
+  "  sequences), 723 defs 0 errors, the 17-def grid walk 0 bad; the",
+  "  /tmp tree restored pristine after. PREFLIGHT GREEN: loaded 723,",
+  "  errors 0; xp audit 723/0; R797 through R810 live defs all bad 0;",
+  "  AUDIT CENSUS 733 each exactly once, all bad 0; build 0 warnings.",
+  "  Commit 22 files, 4884 insertions. Delivery spec-r810: raw JSON",
+  "  canvas, authored md5 5d33b17607a1fa574e706e2e8126fab2, 110007",
+  "  bytes, landed the same. NEXT - R811: awaits Curtiss call (the",
+  "  natural next walk the Letter Q box; 16 open boxes remain)."
+ ]
+}

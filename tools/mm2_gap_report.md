@@ -134,7 +134,7 @@ the R614 precedent.
   under P; the archive.org heading walk found 5
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter Q** (pp. 0-0) - the A-Z entries
+- [x] **Letter Q** (pp. 0-0) - the A-Z entries
   under Q; the archive.org heading walk found 1
   candidate entry headings - the pin-time walk from
   the print is authoritative
