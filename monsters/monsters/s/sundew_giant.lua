@@ -1,0 +1,36 @@
+-- Sundew, Giant: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Sundew, Giant",
+  page = "116",
+  pages = "116",
+  source = "MM2",
+  race = "Sundew, Giant",
+  hitDice = "8",
+  hitDiceNum = "8",
+  hitDiceBonus = "0",
+  avgHp = "28",
+  armorClass = "7",
+  numAttacks = "Special",
+  damage = "1-3 (see below)",
+  xp = "1075",
+  xpPerHp = "10",
+  xpValue = "1355",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-4",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "1\"",
+  size = "M",
+  intelligence = "Semi-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Unlike its smaller cousin, this plant is almost sentient, being slightly aware of its surroundings. Preferring shaded, cool places to grow, the giant sundew grows only hair-like roots to lightly anchor it in place. Furthermore, it may at will withdraw these roots and pull itself along the ground with its sticky tendrils. It derives its sustenance primarily from the prey it catches.\n\nThe giant sundew is able to detect moving creatures by vibrations, and when anything moves within 5 feet of it, it will lash out with its tendrils. Its lump-like body is covered with hundreds of tendrils, and up to 6 may attack each creature in range each round. These tendrils end in sticky globs of sap. For every 3 tendrils that strike a victim, that victim will suffer a -1 on its subsequent to-hit rolls. This effect is cumulative, so that if 6 tendrils hit, the victim will be -2 on its to-hit roll. If a 20 is rolled to hit by the sundew, that tendril will have struck the character across the mouth and nose, clogging these with its sap. The character will suffocate in 2-4 rounds unless the sap is removed. In addition to its clogging effect, the sap is composed of a mild enzyme acid that will cause 1 point of damage per tendril each round until the tendril is broken. The chance these tendrils may be broken is the same as that for opening doors for each character, and each tendril should be checked individually. The sap will dissolve and become harmless if soaked with vinegar or alcohol (such as wine), and this is the only non-magical way to prevent suffocation. Due to the plant's sticky exterior, missile and fire-based attacks will only do half-damage.\n\nGiant sundews appear as 3-4 foot high mounds of grey-green tarry ropes or rags. Areas where they are found are often heavily fly-infested, and the air will often have a thick odor like sweet syrup.",
+}

@@ -1,0 +1,36 @@
+-- Skunk: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Skunk",
+  page = "110",
+  pages = "110",
+  source = "MM2",
+  race = "Skunk",
+  hitDice = "1/4",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "2",
+  armorClass = "8",
+  numAttacks = 1,
+  damage = "1",
+  xp = "4",
+  xpPerHp = "1",
+  xpValue = "6",
+  xpSource = "mm2_print",
+  frequency = "Common",
+  noAppearing = "1 or 1-6",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "12\"",
+  size = "S",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Squirt musk",
+  specialDefenses = "Squirt musk",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Skunks are found in most temperate and subtropical regions, dwelling in lightly populated and uninhabited areas. While they will bite if cornered, their major attack and defense method is to back towards any threatening creatures and release a 1\"x1\"x1\" cloud of stinking musk which will require all those within to make a saving throw vs. poison. Those who succeed must retreat immediately or count as failing to save. Those failing will be nauseated for 1-4 rounds and must retreat and retch. Each must also save again vs. poison or also be blinded for 1-4 rounds. The musk will cause normal clothing to smell so bad as to require burying or burning. Flesh, leather, metal, etc., must be washed repeatedly for several days in order to remove the horrid odor. (Vinegar will cut the stench in only 2 or 3 washings.)",
+}

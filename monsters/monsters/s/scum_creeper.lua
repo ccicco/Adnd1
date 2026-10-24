@@ -1,0 +1,36 @@
+-- Scum Creeper: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Scum Creeper",
+  page = "107",
+  pages = "107",
+  source = "MM2",
+  race = "Scum Creeper",
+  hitDice = "1 (2-8 hp)",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "5",
+  armorClass = "8",
+  numAttacks = 1,
+  damage = "Nil (1)",
+  xp = "14",
+  xpPerHp = "1",
+  xpValue = "19",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "2-24",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "3\"",
+  size = "S (1/2' dia., 1' length)",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Scum creepers are small, slug-like things which inhabit subterranean places or dismal swamps where there is little light. They feed upon plant growth and anything else which their small mouths are able to devour. This includes rotting cloth, wood, or flesh. A scum creeper can move freely upon walls or ceilings due to its myriad tiny hooked legs and its suctioning underbelly segments. The scum creeper's small, sucker-like mouth has very sharp shearing plates of hornlike substance.\n\nAttacks are initially attempts to attach to the intended prey. A hit indicates that the scum creeper is fastened to some portion of the prey (1 in 20 will fasten the monster onto the face, blinding the victim until the monster is removed). Each round thereafter the scum creeper inflicts 1 point of damage automatically, and this continues until the monster is killed or the victim is dead. Rock salt rubbed on a scum creeper's soft flesh causes it to suffer 2 points of damage per round for 1-4 rounds. (Additional applications are ineffective until the previous saline effects are complete.)\n\nScum creepers have fat, slimy bodies of gray color with pale yellow heads and underbellies of sickly white. They have only vestigial eyes and sensory organs in a cluster of cilia at the head. The mouth is on the lower portion of the head.",
+}

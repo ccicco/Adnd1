@@ -1,0 +1,36 @@
+-- Stench Kow: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Stench Kow",
+  page = "115",
+  pages = "115",
+  source = "MM2",
+  race = "Stench Kow",
+  hitDice = "3+3",
+  hitDiceNum = "3",
+  hitDiceBonus = "3",
+  avgHp = "13",
+  armorClass = "2",
+  numAttacks = 1,
+  damage = "2-8",
+  xp = "150",
+  xpPerHp = "4",
+  xpValue = "202",
+  xpSource = "mm2_print",
+  frequency = "Common (hells only)",
+  noAppearing = "15-60",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "15\"",
+  size = "L (bison-sized)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Stench kine are the cattle of the Nine Hells. They roam the reeking plains, fiery fields, and even the wintry wastes of the lower hells. Some are found as far as the planes of Acheron, Gehenna, and even Hades. Much as do common herd animals, these odorous beasts form great herds, grazing on the noxious and poisonous growths of the vile terrain. A herd will contain 5-30 young, but these creatures have no attack form.\n\nFor every 5 beasts encountered, 1 will be a bull. Bulls have at least 6 points per hit die and never do less than 5 points of damage. They are treated as monsters of 6 hit dice. If any stench kow charges to attack and succeeds in hitting, damage is double (at least 10 points for a bull), and another to-hit roll is made for trampling, which causes 2-12 points of damage if successful. Charging requires at least a 1\" move. In general, only bulls will charge unless the herd is cornered.\n\nStench kine are immune to all forms (including magical) of cold, fire, poison, and poison gas. In close quarters, the odor of their breath and bodies is so foul that a saving throw vs. poison must be made, or individuals will be affected as if struck by a stinking cloud spell. This check must be made every 3 rounds of exposure for individuals not affected by the smell.\n\nStench kine resemble huge, misshapen bison. Bulls have large humps over the shoulders, and cows have smaller ones. Horns are long and downward curving. Heads are huge with pugged features, large round eyes, and lolling tongues. Coloration is dull orange with greenish, matted manes.",
+}

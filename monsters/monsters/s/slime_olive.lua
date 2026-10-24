@@ -1,0 +1,36 @@
+-- Slime, Olive: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Slime, Olive",
+  page = "110",
+  pages = "110",
+  source = "MM2",
+  race = "Slime, Olive",
+  hitDice = "2+2",
+  hitDiceNum = "2",
+  hitDiceBonus = "2",
+  avgHp = "9",
+  armorClass = "9",
+  numAttacks = 0,
+  damage = "Nil",
+  xp = "330",
+  xpPerHp = "3",
+  xpValue = "357",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-4",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "0\"",
+  size = "S",
+  intelligence = "Non- and special",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Olive slime is a strain of monstrous plant life akin to green slime (q.v.) but contact with it is worse in most respects. Olive slime favors subterranean growing areas, feeding on animal, vegetable, and metallic substances. The vibrations of a passing creature are sufficient to cause the stuff to release its tendrils and drop.\n\nContact with olive slime causes a numbing poison to be exuded from the creature. The victim must save vs. poison or fail to notice the attachment of the olive slime. The attachment might (50%) be noticed by others in the vicinity; the check is made once for the group, not individually, with no adjustment except for magic. The stuff then spreads itself over the body area of its victim, sending parasitic tendrils to feed on the fluids of the host. With humans this attachment is usually along the spinal area. The host then begins to change, the mind being affected by secretions of the olive slime, so that the mind's main concern is to feed, protect, and aid the growth. Intake of food must be doubled or the host body wastes away (10% of hit points per day). After 7-12 days, the host will begin a metamorphosis into vegetable creature. The olive slime gradually replaces skin and muscle tissue and forms a symbiotic brain attachment as well. The new creature has no interest in its old form or fellows. It exists as a new species more akin to plants than any other life form. Feeding is then either photosynthetic, parasitic, or both. Upon death, the creature generates a new patch of olive slime.\n\nOlive slime can be harmed only by acid, freezing cold, fire, or by a cure disease spell. Magical powers which affect plants also work upon it. Other attacks, including spells, do not harm it. Green slime and olive slime will attack and neutralize each other. See \"Slime Creature\" for details on metamorphosed creatures created by olive slime attack.",
+}

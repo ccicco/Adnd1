@@ -1,0 +1,36 @@
+-- Solifugid, Giant: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Solifugid, Giant",
+  page = "112",
+  pages = "112",
+  source = "MM2",
+  race = "Solifugid",
+  hitDice = "6+6",
+  hitDiceNum = "6",
+  hitDiceBonus = "6",
+  avgHp = "27",
+  armorClass = "4",
+  numAttacks = "2 or 1",
+  damage = "4-16",
+  xp = "350",
+  xpPerHp = "8",
+  xpValue = "566",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-4",
+  lairPct = "25",
+  treasure = "N(x4), Q2 or 1",
+  move = "12\"",
+  size = "L",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Grip",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Variously known as false spiders, camel spiders, or sun spiders, the solifugids are arachnid in nature. They have powerful, hooked beaks and 10 legs, the first pair ending in sucker-like clamps. When in combat, a solifugid will attempt to attack with each of its 2 front legs. Should either score a hit, no damage will be done but the character struck will be caught in the grip of the solifugid. On each melee round thereafter, the beak attack will gain +3 on its to-hit roll; note that only the beak can do actual damage (the amount indicated). This bonus will continue for as long as a character is held, and the only way to break the grip is to sever a limb by rolling a 3 or more above the normal number needed to hit.\n\nWhenever solifugids are encountered outdoors, there is a 60% chance that they will be of the nocturnal variety, normally venturing out only at night. These creatures will flee from lights brighter than a torch or lantern and attack at -2 when in daylight.\n\nSolifugids live in warm desert climates. They are indiscriminate eaters, and if hungry will attack anything that moves.",
+}

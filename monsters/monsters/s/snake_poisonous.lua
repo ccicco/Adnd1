@@ -1,0 +1,36 @@
+-- Snake, Poisonous: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Snake, Poisonous",
+  page = "111",
+  pages = "111",
+  source = "MM2",
+  race = "Snake",
+  hitDice = "2+1",
+  hitDiceNum = "2",
+  hitDiceBonus = "1",
+  avgHp = "8",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "1",
+  xp = "255",
+  xpPerHp = "3",
+  xpValue = "279",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-6",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "15\"",
+  size = "S (5' long)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Poison",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Snakes of all sorts inhabit regions from the cold-temperate to tropical. Larger sorts (constrictors) are usually found only in subtropical climes.\n\nPoisonous: The varieties of poisonous snakes are many. Use the table below to determine strength and effect of poison. Actual length, color, habitat, etc., are variable. Die roll 1-4: modifier to save vs. poison +3, sickness + incapacitation 2-8 days; die roll 5-8: +2, death; die roll 9-11: +1, 2-8 points of damage; die roll 12-14: +/-0, 3-12 points of damage; die roll 15-17: -1, sickness + incapacitation 1-4 days; die roll 18-19: -2, sickness + incapacitation 2-12 days; die roll 20: -3, death.",
+}

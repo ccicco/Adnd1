@@ -1,0 +1,36 @@
+-- Taer: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Taer",
+  page = "117",
+  pages = "117",
+  source = "MM2",
+  race = "Taer",
+  hitDice = "3+6",
+  hitDiceNum = "3",
+  hitDiceBonus = "6",
+  avgHp = "16",
+  armorClass = "4",
+  numAttacks = "3 or 1",
+  damage = "1-6/1-4/1-4 or weapon",
+  xp = "150",
+  xpPerHp = "4",
+  xpValue = "214",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "11-30",
+  lairPct = "40",
+  treasure = "See below",
+  move = "18\"",
+  size = "M (6-1/2' tall)",
+  intelligence = "Low (very cunning)",
+  alignment = "Neutral",
+  specialAttacks = "Stench",
+  specialDefenses = "Immune to cold",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The vile race of taers inhabits the coldest mountain regions, dwelling in caves and continually hunting for food. Normal attack is by kick, punch, and bite, although 50% of these creatures will have crude spears which they will hurl prior to closing for melee. Spear hurling is at +1 to hit and +3 to damage.\n\nThe taers ooze a fatty excretion which has a particularly vile odor. Any creature within 10 feet of a taer must save vs. breath weapon or suffer a disorientation and nausea which will last for 2-5 hours. Attacks will be penalized by -2 to hit probability and -1 damage. This same secretion aids these creatures to withstand cold, even of the magical sort.\n\nTaers' treasure is typically a collection of polished teeth, horns, and crudely sculpted stone idols. There is a 15% chance for real treasure captured from some human victims. If such treasure does exist, there is a 10% chance for 1 magic item to be included, especially a weapon.\n\nTaers resemble white-haired, greasy, shaggy cavemen. They might, in fact, be some kin to mankind. Hair color is gray to snow white. The head is large but has virtually no forehead.",
+}

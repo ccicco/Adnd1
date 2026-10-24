@@ -1,0 +1,36 @@
+-- Swordfish: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Swordfish",
+  page = "117",
+  pages = "117",
+  source = "MM2",
+  race = "Swordfish",
+  hitDice = "1+1, 2+2, or 3+3",
+  hitDiceNum = "1",
+  hitDiceBonus = "1",
+  avgHp = "4",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "2-12, 3-12, or 4-16",
+  xp = "35",
+  xpPerHp = "3",
+  xpValue = "47",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-8",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "//24\"",
+  size = "M to L (2+2 or 3+3)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These hardy fish are common to salt water. They are fast and generally nonaggressive, fleeing rather than fighting. However, if attacked, maddened, or controlled or trained, they will use their long, bony \"sword\" as a fearsome weapon. Swordfish of smaller size are typically kept as pets and used as guards by aquatic elves and dolphin communities.",
+}

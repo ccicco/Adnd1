@@ -1,0 +1,36 @@
+-- Squirrel, Carnivorous Flying: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Squirrel, Carnivorous Flying",
+  page = "114",
+  pages = "114",
+  source = "MM2",
+  race = "Squirrel",
+  hitDice = "1-7 hp",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "4",
+  armorClass = "7",
+  numAttacks = 1,
+  damage = "1-2",
+  xp = "10",
+  xpPerHp = "1",
+  xpValue = "14",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "3-18",
+  lairPct = "40",
+  treasure = "Incidental, see below",
+  move = "9\"/15\" (MC - special; E for short spaces)",
+  size = "S (1/2' long)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "\"Flying\" surprises on 4 in 6",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Flying squirrels \"fly\" by means of loose folds of skin on the inside of their fore and rear legs. In fact, they can only glide and cannot gain altitude once they have jumped. Their range is 5 feet for every foot of altitude from which they jump (usually a tree). If surprise is achieved during a flying attack, they make their initial attack as 2 hit dice monsters. They attack only when they have 2 to 1 odds or better. In their lair, a tree top nest, there can occasionally be found gems, jewelry and other small items that are bright and shiny. Thus, they could never have armor, shields, most weapons, potions, etc. Treasure is incidental only.",
+}

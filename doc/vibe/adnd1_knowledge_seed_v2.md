@@ -21748,6 +21748,63 @@ PREFLIGHT GREEN FIRST PASS: loaded 726, errors 0; xp audit 726/0; R797
   44987 bytes, landed the same (no editor delta). NEXT - R812: awaits
   Curtiss's call (the arc is not letter-by-letter - the next slice is
   Curtiss's call each time; 15 open boxes remain).
+- R812 LANDED 2026-10-24: commit b8ecc5e33a1c7aeff534090ddcce065be18a5488
+  (census 734 -> 735, pushed b08e12b..b8ecc5e), THE MM2 LETTER R WALK - THE
+  RAT (ORDINARY AND VAPOR), RAVEN (ORDINARY, HUGE AND GIANT), RETCH PLANT
+  AND ROCK REPTILE TURNS - THE R-FLIP ROUND (Curtiss single-letter Go call
+  on the landed letter Q walk; round seventeen of the MM2 arc, the SIXTH
+  single-letter pass).
+THE PIN-TIME WALK: FOUR entries carrying SEVEN stat blocks on pp. 105-106 -
+  the rat head with its two blocks p. 105 (the ordinary rat, the vapor rat),
+  the raven (crow) variant table p. 105 (the ordinary, huge and giant
+  columns), the retch plant and the rock reptile p. 106. No doctrine-only
+  heads; no prior-owned entries (the r/ MM1 prints - rakshasa, ram, red
+  dragon, remorhaz, roc, roper, rot grub, rust monster and the rest - are
+  MM1 prints, not MM2 box entries). SEVEN .lua defs ride the R791 data_files
+  extension, registry 726 -> 733. Header rules/mm2r.h, prefix mm2r, 63
+  consts + 15 bools + ONE grid (the 7x10 RStats stat grid) = 88 inline. THE
+  R-FLIP: the Letter R gap box flips to closed - 23 closed 14 open.
+THE SETTLED READS (capture primary, the 1eonline transcription the cross-
+  check voice): the ordinary rat and the ordinary raven 1/4 hit dice the
+  flat-hp path (hdNum 0, avgHp 2, the ikiryo precedent; the rat I/2+1
+  xpValue 4, the ordinary raven I/Nil xp 0 - the phantom precedent); the
+  huge raven 1-1 the hdNum 1 bonus -1 read (avgHp 2, the buckawn precedent,
+  II/30+1 the xpValue 32); the giant raven 3+2 (avgHp 12, III/60+4 the
+  xpValue 108); the vapor rat 6 (or special) armor class and 12/6/1 multi-
+  mode move the verbatim print cells (II/52+2 the xpValue 66); the retch
+  plant 5-8 the first-number 5 read (avgHp 17, III/150+6 the xpValue 252,
+  move Nil 0, Nil attacks floored at 1); the rock reptile the M-row V/400+7
+  xpValue 519 with the L-row VI/600+9 (the xpValue 753) riding as consts.
+THE R812 REPAIR (the R639/R400 repair flow, nothing landed, the same round
+  number re-issued): the first cut carried the five percent-suffix lair
+  cells verbatim (30% 25% 15% 10% 30%) and the preflight walked R812 bad 5 -
+  the loader luaGetInt is a lua_isnumber-ONLY coercer, so a percent string
+  reads 0, and only the R810 pech/pedipalp bare-numeral precedent settles
+  those cells; the offline sim missed it because its luaGetInt replica
+  wrongly applied firstIntIn to percent strings (rebuilt as an exact coercer
+  replica that runs all 13 live checks per def - the sim lesson: replicate
+  the coercer EXACTLY, firstIntIn only where the loader itself uses it); the
+  mid-repair stalling point: the data_files extension is idempotent BY
+  EXISTENCE - a re-issued spec never rewrites a stale .lua def, so the
+  unwind (git checkout of the patched files + rm of the new header and defs)
+  must precede the rerun, or the engine reads applied 0 already 13 against
+  the first-cut tree.
+ONE REGTEST PATCH: the R812 live def walk at the R227 anchor (the R811
+  Q-walk pattern), its registry census a FLOOR 726 -> at least 733. LOCAL
+  VERIFICATION (environment reset again - rebuilt from the tarball at
+  b08e12ba, the r812 helpers rebuilt, the spec extracted from the landed
+  canvas copy): engine double-run 13/0 -> 0/13; rverify GREEN vs b08e12ba -
+  148 mutants, 0 missed (both cuts); offline loader sim GREEN - 733 defs 0
+  errors, the 7-def 13-check walk 0 bad, raw-newline scan 0.
+PREFLIGHT GREEN FIRST PASS (the repair cut): loaded 733, errors 0; xp audit
+  733/0; R797 through R812 live defs all bad 0; AUDIT CENSUS 735 each
+  exactly once, all bad 0; build 0 warnings. Commit 12 files, 2269
+  insertions. Delivery spec-r812: raw JSON canvas, first cut md5
+  16fafb57fdc3acf82f139939de48d72e 50755 bytes (RED, nothing landed), repair
+  md5 682cb7c94d9b652648236bb50a4f58d8 51176 bytes, landed the same (no
+  editor delta). NEXT - R813: awaits Curtiss's call (the natural next walk
+  the Letter S box - the S entries span pp. 106-112, a likely multi-round
+  letter; 14 open boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

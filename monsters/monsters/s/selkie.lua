@@ -1,0 +1,36 @@
+-- Selkie: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Selkie",
+  page = "107",
+  pages = "107",
+  source = "MM2",
+  race = "Selkie",
+  hitDice = "3+3",
+  hitDiceNum = "3",
+  hitDiceBonus = "3",
+  avgHp = "13",
+  armorClass = "5",
+  numAttacks = 1,
+  damage = "By weapon type or 1-6",
+  xp = "75",
+  xpPerHp = "4",
+  xpValue = "127",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 or 12-30",
+  lairPct = "0 or 90%",
+  treasure = "A (magic only), R",
+  move = "12\"//36\"",
+  size = "M",
+  intelligence = "Average to exceptional",
+  alignment = "Neutral (good)",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The selkie is a seal-like creature able to take human form for a few days and becomes a sort of sealwere. The selkie will usually take human form to be able to visit a human community to trade for or purchase certain supplies or items needed by its group. The habitat of the selkie is marine and cold-temperate to subarctic. They lair in large caverns or grotto complexes having both air and water areas, because selkie young must breathe air until they have grown to half-size (about 1 year of age).\n\nSelkies are omnivorous, eating fish, shellfish, crustaceans, and various forms of seaweed. They can also eat human fare, and they relish wine.\n\nIn human form a selkie will have some weapon, but in its seal-like form the creature cannot carry a weapon and swim rapidly. Therefore, selkies encountered underwater are 90% likely to be unarmed and will usually attack by biting. Any weapon possessed by a selkie will be used if necessary, especially in defense of the home.\n\nA selkie community will be divided between males and females, with slightly more females in most cases. The two sexes are equal. The leader will be an old selkie able to perform the following powers: augury, cure light wounds, cure disease, weather summoning, control weather. Each is usable 1 per round, once per day, except weather spells which require 1 week of rest between castings and are used only in dire need for exacting revenge.\n\nThe treasure of a selkie community is gathered from ships lost at sea and from sea creatures. Thus, they are likely to own many pearls. Monetary treasure of this sort is kept principally for trade. Magical treasure is also garnered from sunken ships and used to aid and protect the community.\n\nIn human form selkies are very attractive and fine looking. Their eyes are particularly bright. When in true form, they are nearly indistinguishable from seals. Close examination, however, will reveal arms with slightly webbed hands instead of foreflippers, and legs rather than a tapering body and rear flippers.",
+}

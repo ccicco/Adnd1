@@ -1,0 +1,36 @@
+-- Sirine: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Sirine",
+  page = "109",
+  pages = "109",
+  source = "MM2",
+  race = "Sirine",
+  hitDice = "4-7",
+  hitDiceNum = "4",
+  hitDiceBonus = "0",
+  avgHp = "14",
+  armorClass = "3 or less",
+  numAttacks = 1,
+  damage = "By weapon type",
+  xp = "350",
+  xpPerHp = "10",
+  xpValue = "490",
+  xpSource = "mm2_print",
+  frequency = "Rare/very rare",
+  noAppearing = "1 or 2-8",
+  lairPct = "30",
+  treasure = "Individual: L, M, N, Q; In lair: X",
+  move = "12\"//24\"",
+  size = "M",
+  intelligence = "High to genius",
+  alignment = "Any (equal chances); see below",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "20% or more",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Sirines, beautiful human-like females, are equally at home above or beneath salt or fresh waters. Normally, but a single sirine will be encountered. All encounters will be in lonely, uninhabited places.\n\nThe armor class of a sirine is 3 because of the high dexterity of the race (18) and their magical nature. They usually will carry small (short) swords and daggers, although 30% will have 3 javelins (40%) or a sling (60%) as well. There is a base 10% chance that any weapon will be magic +1 or javelin of lightning; each should be checked for this possibility.\n\nSirines have the following magical powers; song, which will charm person at 3\" range all subject creatures of hostile nature within hearing suggestion; polymorph self; fog cloud; and improved invisibility. Each is usable once per day, 1 at a time, at will. Additionally, any intelligent creature touched in melee by a sirine must save vs. poison or become an idiot (intelligence=2). The idiocy so caused can be removed at will but requires a touch from the sirine. Otherwise, dispel magic may be used to bring back intelligence. Sirines are immune to all forms of gas.\n\nAll of their saving throws are made as if they were 11th-level magic-users with a +2 bonus vs. poison. If more than 1 sirine is encountered (30% chance) it will always be in the sirines' home area. A single sirine will always be of 6 or 7 hit dice. If 2-8 are encountered, at least 1 will be of 6 or 7 hit dice, with equal chances for 4, 5, 6, or 7 hit dice otherwise. Alignment of a group of sirines will always be the same with respect to good, evil, and absolute neutral alignment. In a group of evil sirines, for example, there can be lawful, neutral, and chaotic members.\n\nSirines breathe air or water with equal facility. They have infra- and ultravisual capacity. They speak their own language and Common.",
+}

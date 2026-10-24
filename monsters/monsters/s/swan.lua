@@ -1,0 +1,36 @@
+-- Swan: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Swan",
+  page = "116",
+  pages = "116",
+  source = "MM2",
+  race = "Swan",
+  hitDice = "1+2",
+  hitDiceNum = "1",
+  hitDiceBonus = "2",
+  avgHp = "5",
+  armorClass = "7",
+  numAttacks = 3,
+  damage = "1/1/1-2",
+  xp = "0",
+  xpPerHp = "0",
+  xpValue = "0",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1 or 2-16 (25%/75%)",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "3\"/18\" (MC:D)",
+  size = "M (8' wingspan)",
+  intelligence = "Animal +",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Surprised only 1 in 10",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These aquatic birds tend to inhabit areas which similar waterfowl frequent - rivers, ponds, lakes, and marshes. A single swan will always be male (a cob). It is only 25% probable that a lone swan will be encountered. Otherwise, encounters will be with mated pairs of cobs and pens (females) and their immature (but full-grown) cygnets. The latter will number 1-2 per mated pair. In situations where the swan's territory is invaded or the creatures actually attacked, both cob and pen will aggressively threaten or attack as circumstances warrant. Attack is by flying leap, a strong bill strike, and blows with both wings. This attack mode is 50% likely to blind and disorient an opponent so as to make any return attack in that melee round impossible. Also, swans (much as geese) have exceptional senses, so that the approach of any danger will be noted 90% of the time. If there are eggs, the nest will contain 1-3. If there are no eggs or nestlings, the swans will escape by swimming or flying when severe danger threatens.",
+}

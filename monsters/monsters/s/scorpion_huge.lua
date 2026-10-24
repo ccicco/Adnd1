@@ -1,0 +1,36 @@
+-- Scorpion, Huge: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Scorpion, Huge",
+  page = "107",
+  pages = "107",
+  source = "MM2",
+  race = "Scorpion",
+  hitDice = "4+4",
+  hitDiceNum = "4",
+  hitDiceBonus = "4",
+  avgHp = "18",
+  armorClass = "4",
+  numAttacks = 3,
+  damage = "1-8/1-8/1-3",
+  xp = "165",
+  xpPerHp = "5",
+  xpValue = "255",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-4",
+  lairPct = "25",
+  treasure = "D",
+  move = "12\"",
+  size = "M",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Poison sting",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Often found in dungeons and wildernesses, these creatures are merely smaller versions of the giant scorpion. Each attacks with pincers and tail stinger. If struck by the stinger, the victim must save vs. poison or be instantly killed. However, the poison of the large scorpion is weaker than normal (+2 on saving throw).",
+}

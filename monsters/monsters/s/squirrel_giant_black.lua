@@ -1,0 +1,36 @@
+-- Squirrel, Giant Black: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Squirrel, Giant Black",
+  page = "114",
+  pages = "114",
+  source = "MM2",
+  race = "Squirrel",
+  hitDice = "1+1",
+  hitDiceNum = "1",
+  hitDiceBonus = "1",
+  avgHp = "4",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "1-3",
+  xp = "20",
+  xpPerHp = "2",
+  xpValue = "28",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-12",
+  lairPct = "Nil",
+  treasure = "Incidental, see below",
+  move = "12\"",
+  size = "S (2' long)",
+  intelligence = "Semi-",
+  alignment = "Neutral (evil)",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Giant black squirrels are found only in old, dark forests possessed by Evil. These creatures are malicious and will attack weak or helpless creatures. They will steal from careless individuals if given the opportunity, taking small, shiny objects (coins, rings, jewelry, flasks, etc.) to secrete in their nests. Lairs are always in hollows of trees 20 feet or more above the ground. Treasure is incidental only. Common gray or red squirrels will bite only in self defense.",
+}

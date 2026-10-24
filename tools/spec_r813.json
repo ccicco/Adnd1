@@ -1,0 +1,3440 @@
+{
+ "round": 813,
+ "prefix": "mm2s",
+ "header_file": "rules/mm2s.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 735,
+ "title": "the MM2 letter S walk - the sandling to taer turns",
+ "audit_label": "R813 MM2 letter S walk audit",
+ "audit_comment": "THE MM2 LETTER S WALK - the sandling p. 106, the scorpion variant table p. 107 (the large and huge columns), the scum creeper and the selkie p. 107, the shade p. 108, the greater shedu head p. 109 (prior-owned - the MM1 print owns it, head pins only, no def), the sirine and the skeleton (animal) p. 109, the skunk, the slime creature and the olive slime p. 110, the snake variant table p. 111 (the constrictor and poisonous columns), the solar pp. 111-112, the solifugid variant table p. 112 (the large, huge and giant columns), the spectator pp. 112-113, the spider (giant marine), the spriggan and the squealer pp. 113-114, the squirrel variant table p. 114 (the giant black and ordinary columns), the squirrel (carnivorous flying) p. 114, the stegocentipede pp. 114-115, the stench kow, the stone guardian and the storoper pp. 115-116, the sundew (giant), the swan and the swanmay pp. 116-117, the swordfish and the taer p. 117; the S-FLIP round: the Letter S gap box flips to closed (24 closed, 13 open). THIRTY-THREE .lua defs ride the R791 data_files extension, registry 733 -> 766; TWENTY-NINE entry heads carrying THIRTY-FOUR stat blocks, one prior-owned head (the greater shedu), no doctrine-only heads. THE SETTLED READS (capture primary, the 1eonline transcription the cross-check voice): the scum creeper, skunk, ordinary squirrel, carnivorous flying squirrel and solar the flat-hp path (hdNum 0, the ikiryo/obliviax precedent); the shade the nil block (the phantom precedent - the As-original-creature cells, AC the 9 default, xp 0); the solar 177 hp with the X/95000+35 xpValue 101195 and the AC 9 kept per print-wins against the transcription -9 (the capture preserves minus signs elsewhere - the R810 pudding precedent); the scorpion large sting damage 1-16 (the capture 1 the column clip, the transcription the confirm); the solifugid giant V350 the OCR artifact read V/350+8; the sirine 20%-or-more MR 20 and 3-or-less AC 3; the spectator body-4-eyes-7 AC 4 and the 4' diameter size (the capture 4\" the prime artifact); the stegocentipede 3/6 AC 3 and the 1-and-1 attack sum 2; the taer 11-30 no-appearing confirmed in both voices; the selkie sealware the sealwere settle and the solar Drawnij the Drawmij settle; the olive slime 0 attacks the loader 1 clamp; every Standard/See-below/Variable magic resistance 0; the percent lair cells the bare-numeral read (the R812 repair lesson). Repair of the first cut: the double commas in the kS/kSMark array lines of the walk patch were collapsed to single commas (builder join bug); no other byte changed.",
+ "include_comment": "the MM2 letter S walk - the sandling to taer turns",
+ "include_after": "#include \"rules/mm2r.h\"  // R812: the MM2 letter R walk - the rat (ordinary and vapor), raven (ordinary, huge and giant), retch plant and rock reptile turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R812 LANDED 2026-10-24: commit",
+ "banner": {
+  "title": "THE MM2 LETTER S WALK - THE SANDLING TO TAER TURNS (pp. 106-117: the sandling p. 106, the scorpion variant table p. 107, the scum creeper and the selkie p. 107, the shade p. 108, the greater shedu head p. 109 (prior-owned), the sirine and the skeleton (animal) p. 109, the skunk, the slime creature and the olive slime p. 110, the snake variant table p. 111, the solar pp. 111-112, the solifugid variant table p. 112, the spectator pp. 112-113, the spider (giant marine), the spriggan and the squealer pp. 113-114, the squirrel variant table p. 114, the squirrel (carnivorous flying) p. 114, the stegocentipede pp. 114-115, the stench kow, the stone guardian and the storoper pp. 115-116, the sundew (giant), the swan and the swanmay pp. 116-117, the swordfish and the taer p. 117), promoted to the live registry; the S-FLIP round, the Letter S gap box flips to closed",
+  "provenance": "Round eighteen of the MM2 arc, the SEVENTH single-letter pass (Curtiss Go call on the landed letter R walk; the letter S pin-time walk found TWENTY-NINE entry heads carrying THIRTY-FOUR stat blocks - one prior-owned head (the greater shedu, the MM1 s/shedu.lua print owns it, head pins only, no def), no doctrine-only heads)",
+  "sentinel": "The pin headers stay the print-fidelity record; the thirty-three .lua defs ride the R791 data_files extension in the MM1 registry schema (the defensive coercers load the verbatim print cells, the SStats grid carries the loader values)"
+ },
+ "tables": [
+  {
+   "name": "the sandling to taer stat grid",
+   "tag": "SStats",
+   "count": "mm2sSStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE S-GRID: the 33-row SStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the thirty-three promoted letter S stat blocks, in print order - the sandling p. 106 through the taer p. 117)",
+   "cols": [
+    "mm2sSStatAc",
+    "mm2sSStatHd",
+    "mm2sSStatHdBonus",
+    "mm2sSStatAvgHp",
+    "mm2sSStatAttacks",
+    "mm2sSStatXp",
+    "mm2sSStatXpHp",
+    "mm2sSStatLairPct",
+    "mm2sSStatMove",
+    "mm2sSStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the sirine 3 or less reads 3, the spectator Body 4, eyes 7 reads 4, the spriggan 3 (5) and the stegocentipede 3/6 read the first int, the shade As original creature the 9 default, the solar 9 kept per print-wins against the transcription -9)",
+    "The hit dice num cells (the scum creeper, skunk, ordinary squirrel, carnivorous flying squirrel and solar ride the flat-hp path - hdNum 0, avgHp the print hp; the skeleton animal 1-1 reads 1 die; the sirine 4-7, the spriggan 4 (8+4), the slime creature 3+2-of-3+2-5+2-or-8+2 and the swordfish 1+1-of-1+1-2+2-or-3+3 read the first number)",
+    "The hit dice bonus cells (the skeleton animal 1-1 reads -1 - the buckawn precedent; the taer 3+6 reads +6)",
+    "The avgHp cells (the floor(3.5 x hd + bonus) formula; the flat-hp reads carry the print hp: the scum creeper 5, the skunk 2, the ordinary squirrel 1, the carnivorous flying squirrel 4, the solar 177; the shade the nil block 0)",
+    "The attack cells (the loader semantics: the olive slime 0 clamps to 1, the sundew Special and the swanmay As swan or human floor at 1, the solifugid 2 or 1 and the taer 3 or 1 read the max, the stegocentipede 1 and 1 sums 2)",
+    "The xp base cells (the shade, ordinary squirrel, swan and swanmay read 0 - the phantom precedent)",
+    "The xp per hit point cells (the solar 35 the highest per-hp rate in the registry)",
+    "The in-lair percentage cells (the loader luaGetInt accepts only lua_isnumber strings, so the print percent cells ride as the bare-numeral read - the R812 repair lesson; the selkie 0 or 90% and the shade Variable read 0)",
+    "The move cells (the parseIntRange first-read: the sirine 12\"//24\" and the selkie 12\"//36\" read 12, the swan 3\"/18\" 3, the swordfish //24\" 24, the squealer 12\" @ 9\" 12, the olive slime 0\" 0)",
+    "The magic resistance cells (the sirine 20% or more reads 20, the spectator 5% and the solar 85% their percents, the swanmay 2% per hit die 2, every Standard/See below/Variable cell 0)"
+   ],
+   "data": [
+    [
+     3,
+     4,
+     0,
+     14,
+     1,
+     85,
+     4,
+     65,
+     12,
+     0
+    ],
+    [
+     5,
+     2,
+     2,
+     9,
+     3,
+     90,
+     3,
+     25,
+     9,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     18,
+     3,
+     165,
+     5,
+     25,
+     12,
+     0
+    ],
+    [
+     8,
+     0,
+     0,
+     5,
+     1,
+     14,
+     1,
+     0,
+     3,
+     0
+    ],
+    [
+     5,
+     3,
+     3,
+     13,
+     1,
+     75,
+     4,
+     0,
+     12,
+     0
+    ],
+    [
+     9,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     4,
+     0,
+     14,
+     1,
+     350,
+     10,
+     30,
+     12,
+     20
+    ],
+    [
+     8,
+     1,
+     -1,
+     2,
+     1,
+     10,
+     1,
+     85,
+     6,
+     0
+    ],
+    [
+     8,
+     0,
+     0,
+     2,
+     1,
+     4,
+     1,
+     0,
+     12,
+     0
+    ],
+    [
+     9,
+     3,
+     2,
+     12,
+     1,
+     110,
+     4,
+     0,
+     6,
+     0
+    ],
+    [
+     9,
+     2,
+     2,
+     9,
+     1,
+     330,
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     3,
+     2,
+     12,
+     2,
+     85,
+     4,
+     0,
+     9,
+     0
+    ],
+    [
+     6,
+     2,
+     1,
+     8,
+     1,
+     255,
+     3,
+     0,
+     15,
+     0
+    ],
+    [
+     9,
+     0,
+     0,
+     177,
+     4,
+     95000,
+     35,
+     0,
+     18,
+     85
+    ],
+    [
+     6,
+     3,
+     3,
+     13,
+     2,
+     85,
+     4,
+     10,
+     9,
+     0
+    ],
+    [
+     5,
+     5,
+     5,
+     22,
+     2,
+     225,
+     6,
+     20,
+     9,
+     0
+    ],
+    [
+     4,
+     6,
+     6,
+     27,
+     2,
+     350,
+     8,
+     25,
+     12,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     18,
+     1,
+     350,
+     9,
+     100,
+     10,
+     5
+    ],
+    [
+     4,
+     7,
+     7,
+     31,
+     1,
+     650,
+     12,
+     70,
+     15,
+     0
+    ],
+    [
+     3,
+     4,
+     0,
+     14,
+     2,
+     1000,
+     10,
+     30,
+     9,
+     0
+    ],
+    [
+     6,
+     12,
+     0,
+     42,
+     3,
+     3000,
+     16,
+     15,
+     12,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     4,
+     1,
+     20,
+     2,
+     0,
+     12,
+     0
+    ],
+    [
+     8,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     9,
+     0
+    ],
+    [
+     7,
+     0,
+     0,
+     4,
+     1,
+     10,
+     1,
+     40,
+     9,
+     0
+    ],
+    [
+     3,
+     9,
+     0,
+     31,
+     2,
+     1700,
+     12,
+     0,
+     15,
+     0
+    ],
+    [
+     2,
+     3,
+     3,
+     13,
+     1,
+     150,
+     4,
+     0,
+     15,
+     0
+    ],
+    [
+     2,
+     4,
+     4,
+     18,
+     2,
+     550,
+     8,
+     100,
+     10,
+     0
+    ],
+    [
+     0,
+     6,
+     0,
+     21,
+     1,
+     500,
+     6,
+     90,
+     1,
+     0
+    ],
+    [
+     7,
+     8,
+     0,
+     28,
+     1,
+     1075,
+     10,
+     0,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     2,
+     5,
+     3,
+     0,
+     0,
+     0,
+     3,
+     0
+    ],
+    [
+     7,
+     2,
+     0,
+     7,
+     1,
+     0,
+     0,
+     0,
+     3,
+     2
+    ],
+    [
+     6,
+     1,
+     1,
+     4,
+     1,
+     35,
+     3,
+     0,
+     24,
+     0
+    ],
+    [
+     4,
+     3,
+     6,
+     16,
+     3,
+     150,
+     4,
+     40,
+     18,
+     0
+    ]
+   ]
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter S walk round pins (the R813 census)": [
+   {
+    "kind": "const",
+    "name": "mm2sRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sLetterSHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sPriorOwnedEntries"
+   }
+  ],
+  "the sandling pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSandlingXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSandlingXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSandlingWaterGallons"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSandlingWaterDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSandlingFullSizeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSandlingInfantSplitInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSandlingHugeReportsMultiplier"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSandlingTerritorial"
+   }
+  ],
+  "the scorpion pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sScorpionLargeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScorpionLargeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScorpionHugeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScorpionHugeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScorpionLargeSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sScorpionStingerLethal"
+   }
+  ],
+  "the scum creeper pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sScumCreeperXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScumCreeperXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScumFaceAttachChanceIn20"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScumAttachDamagePerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScumSaltDamagePerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScumSaltRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sScumSaltRoundsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sScumWallClimber"
+   }
+  ],
+  "the selkie pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSelkieXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSelkieXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSelkieUnarmedUnderwaterPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSelkieWeatherRestWeeks"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSelkieLeaderSpellPowers"
+   }
+  ],
+  "the shade pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sShadeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeRegenPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeRegrowLimbsWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeRegrowLimbsWeeksMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeImagesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeImagesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeImageRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeMrCapPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeHideBonusShadowyPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeHideBonusNightPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sShadeBrightSavePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sShadeUndying"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sShadeShadowWalk"
+   }
+  ],
+  "the sirine pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSirineXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSirineXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSirineSongRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSirineTouchIdiotInt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSirineSaveAsLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSirinePoisonSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSirineGasImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSirineSongCharm"
+   }
+  ],
+  "the skeleton (animal) pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSkeletonAnimalXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkeletonAnimalXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkeletonAnimalAnimateNum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkeletonAnimalAnimateDen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkeletonAnimalTurnDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkeletonAnimalTurnDieBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkeletonAnimalTurnPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSkeletonAnimalEdgedHalf"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSkeletonAnimalImmuneToMindSpells"
+   }
+  ],
+  "the skunk pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSkunkXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkunkXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkunkMuskNauseaRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkunkMuskNauseaRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkunkBlindRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSkunkBlindRoundsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSkunkMuskCloud"
+   }
+  ],
+  "the slime pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSlimeCreatureXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSlimeCreatureXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSlimeOliveXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSlimeOliveXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSlimeCreatureInfectPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSlimeCreatureTelepathyInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sOliveSlimeNoticePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sOliveSlimeMetamorphDaysMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sOliveSlimeMetamorphDaysMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sOliveSlimeWasteHpPctPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSlimeCreatureHarmedByAcid"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSlimeCreatureTrapLayer"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sOliveSlimeCureDiseaseKills"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sOliveSlimeNeutralizesGreenSlime"
+   }
+  ],
+  "the snake pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSnakeConstrictorXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakeConstrictorXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonousXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonousXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakeConstrictorEscapePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonSaveMod1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonSaveMod2"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonSaveMod3"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonSaveMod4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonSaveMod5"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonSaveMod6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSnakePoisonSaveMod7"
+   }
+  ],
+  "the solar pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSolarXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarFighterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarDexterity"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarSpellClassLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarBowRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarWeaponPlusMinimum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarSummonMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarSummonMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolarReformDecades"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSolarAcidImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSolarNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSolarDeathMagicImmune"
+   }
+  ],
+  "the solifugid pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidLargeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidLargeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidHugeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidHugeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidGiantXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidGiantXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidLegs"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidBeakBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidNocturnalPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidDaylightPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSolifugidSeverMargin"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSolifugidFleeBrightLight"
+   }
+  ],
+  "the spectator pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorGuardYears"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorGuardMagicItemPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorTreasureValueGp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorBodyHitPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorEyeHitPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorCentralReflectPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorInitiativeDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorSenseRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpectatorEyeRegenDays"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSpectatorCentralEyeReflect"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSpectatorSummons"
+   }
+  ],
+  "the giant marine spider pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSpiderGiantMarineXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSpiderGiantMarineXpLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSpiderMarineParalyticBite"
+   }
+  ],
+  "the spriggan pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSprigganXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganThiefLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganDexterity"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganPickPocketsPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganOpenLocksPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganFindTrapsPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganMoveSilentlyPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganHideShadowsPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganHearNoisePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganClimbWallsPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganReadLanguagesPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganBackstabMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSprigganScareSavePenalty"
+   }
+  ],
+  "the squealer pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSquealerXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquealerXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquealerCamouflagePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquealerSurprisePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquealerSurpriseBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquealerCrushDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquealerCrushDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquealerWeightLb"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquealerYoungHpPerDie"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSquealerSoundImitation"
+   }
+  ],
+  "the squirrel pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelGiantBlackXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelGiantBlackXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelOrdinaryXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelOrdinaryXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelCarnivorousFlyingXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelCarnivorousFlyingXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelGiantLairHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelFlyingGlideRatio"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelFlyingSurpriseChanceIn6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelFlyingSurpriseHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSquirrelFlyingOddsMin"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSquirrelGiantStealsShiny"
+   }
+  ],
+  "the stegocentipede pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sStegocentipedeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStegocentipedeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStegoPlateAcPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStegoTailDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStegoTailDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStegoSpikeDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStegoSpikeDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStegoSpikeAttackersMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStegoTailReachFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sStegoTailPoison"
+   }
+  ],
+  "the stench kow pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowBullsPer"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowBullHpPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowBullMinDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowBullHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowTrampleDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowTrampleDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowChargeDamageMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowStenchCheckRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowChargeMoveInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowHerdYoungMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStenchKowHerdYoungMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sStenchKowColdImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sStenchKowFireImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sStenchKowPoisonGasImmune"
+   }
+  ],
+  "the stone guardian pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sStoneGuardianXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoneGuardianXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoneGuardianDisregardPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoneGuardianRingRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoneGuardianEdgedDamageDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoneGuardianElementDamageDivisor"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sStoneGuardianMissileImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sStoneGuardianMindless"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sStoneGuardianTransmuteKills"
+   }
+  ],
+  "the storoper pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sStoroperXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoroperXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoroperTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoroperVenomUsesPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoroperVenomDurationTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoroperStrengthLossPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoroperDragFeetPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoroperSenseRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sStoroperAttackRangeFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sStoroperVenomNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sStoroperMissileImmune"
+   }
+  ],
+  "the giant sundew pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSundewGiantXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSundewGiantXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSundewTendrilsPerVictim"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSundewToHitPenaltyPerTendrils"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSundewToHitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSundewSuffocateRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSundewSuffocateRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSundewEnzymeDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSundewHalfDamageFromMissiles"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSundewVinegarNeutralizes"
+   }
+  ],
+  "the swan and swanmay pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSwanXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanmayXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanmayXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanBlindPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanDangerSensePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanSurpriseChanceIn10"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanEggsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanEggsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanCygnetsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanCygnetsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanmayLevelDice"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanmayLevelMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanmayLevelMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanmayWeaponPlusMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwanmayMrPerHitDie"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSwanTerritorial"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSwanmayRanger"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSwanmayNoFollowers"
+   }
+  ],
+  "the swordfish pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSwordfishXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSwordfishXpLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sSwordfishTrainedGuards"
+   }
+  ],
+  "the taer pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sTaerXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerStenchRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerStenchHoursMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerStenchHoursMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerToHitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerDamagePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerTreasurePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerMagicItemPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerSpearPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerSpearToHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sTaerSpearDamageBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2sTaerColdImmune"
+   }
+  ],
+  "the shedu (greater) head pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterHdNum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterHdBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterMrPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterMinorDisciplines"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterMajorDisciplines"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterMasteryLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterPsionicMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterPsionicMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2sSheduGreaterXpLevel"
+   }
+  ],
+  "the SStats grid pins (the R813 MM2 letter S walk)": [
+   {
+    "kind": "table",
+    "name": "the sandling to taer stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the Letter S gap box flips (the census walk)",
+   "expr": "m['mm2sRegistryAfter']() - m['mm2sRegistryBefore']() != m['mm2sDefCount']() or m['mm2sDefCount']() != 33 or m['mm2sEntryCount']() != 29 or m['mm2sStatBlockHeadings']() != 34 or m['mm2sDoctrineHeads']() != 0 or m['mm2sLetterSHeadings']() != 29 or m['mm2sSStatRows']() != 33 or m['mm2sGapClosed']() != 24 or m['mm2sGapOpen']() != 13 or m['mm2sPriorOwnedEntries']() != 1"
+  },
+  {
+   "note": "the sandling grid row (p. 106 print order)",
+   "expr": "m['mm2sSStatAc'](0) != 3 or m['mm2sSStatHd'](0) != 4 or m['mm2sSStatHdBonus'](0) != 0 or m['mm2sSStatAvgHp'](0) != 14 or m['mm2sSStatAttacks'](0) != 1 or m['mm2sSStatXp'](0) != 85 or m['mm2sSStatXpHp'](0) != 4 or m['mm2sSStatLairPct'](0) != 65 or m['mm2sSStatMove'](0) != 12 or m['mm2sSStatMr'](0) != 0 or m['mm2sSandlingXpValue']() != 141 or m['mm2sSandlingXpLevel']() != 3"
+  },
+  {
+   "note": "the scorpion, large grid row (p. 107 print order)",
+   "expr": "m['mm2sSStatAc'](1) != 5 or m['mm2sSStatHd'](1) != 2 or m['mm2sSStatHdBonus'](1) != 2 or m['mm2sSStatAvgHp'](1) != 9 or m['mm2sSStatAttacks'](1) != 3 or m['mm2sSStatXp'](1) != 90 or m['mm2sSStatXpHp'](1) != 3 or m['mm2sSStatLairPct'](1) != 25 or m['mm2sSStatMove'](1) != 9 or m['mm2sSStatMr'](1) != 0 or m['mm2sScorpionLargeXpValue']() != 117 or m['mm2sScorpionLargeXpLevel']() != 3"
+  },
+  {
+   "note": "the scorpion, huge grid row (p. 107 print order)",
+   "expr": "m['mm2sSStatAc'](2) != 4 or m['mm2sSStatHd'](2) != 4 or m['mm2sSStatHdBonus'](2) != 4 or m['mm2sSStatAvgHp'](2) != 18 or m['mm2sSStatAttacks'](2) != 3 or m['mm2sSStatXp'](2) != 165 or m['mm2sSStatXpHp'](2) != 5 or m['mm2sSStatLairPct'](2) != 25 or m['mm2sSStatMove'](2) != 12 or m['mm2sSStatMr'](2) != 0 or m['mm2sScorpionHugeXpValue']() != 255 or m['mm2sScorpionHugeXpLevel']() != 4"
+  },
+  {
+   "note": "the scum creeper grid row (p. 107 print order)",
+   "expr": "m['mm2sSStatAc'](3) != 8 or m['mm2sSStatHd'](3) != 0 or m['mm2sSStatHdBonus'](3) != 0 or m['mm2sSStatAvgHp'](3) != 5 or m['mm2sSStatAttacks'](3) != 1 or m['mm2sSStatXp'](3) != 14 or m['mm2sSStatXpHp'](3) != 1 or m['mm2sSStatLairPct'](3) != 0 or m['mm2sSStatMove'](3) != 3 or m['mm2sSStatMr'](3) != 0 or m['mm2sScumCreeperXpValue']() != 19 or m['mm2sScumCreeperXpLevel']() != 1"
+  },
+  {
+   "note": "the selkie grid row (p. 107 print order)",
+   "expr": "m['mm2sSStatAc'](4) != 5 or m['mm2sSStatHd'](4) != 3 or m['mm2sSStatHdBonus'](4) != 3 or m['mm2sSStatAvgHp'](4) != 13 or m['mm2sSStatAttacks'](4) != 1 or m['mm2sSStatXp'](4) != 75 or m['mm2sSStatXpHp'](4) != 4 or m['mm2sSStatLairPct'](4) != 0 or m['mm2sSStatMove'](4) != 12 or m['mm2sSStatMr'](4) != 0 or m['mm2sSelkieXpValue']() != 127 or m['mm2sSelkieXpLevel']() != 3"
+  },
+  {
+   "note": "the shade grid row (p. 108 print order)",
+   "expr": "m['mm2sSStatAc'](5) != 9 or m['mm2sSStatHd'](5) != 0 or m['mm2sSStatHdBonus'](5) != 0 or m['mm2sSStatAvgHp'](5) != 0 or m['mm2sSStatAttacks'](5) != 1 or m['mm2sSStatXp'](5) != 0 or m['mm2sSStatXpHp'](5) != 0 or m['mm2sSStatLairPct'](5) != 0 or m['mm2sSStatMove'](5) != 0 or m['mm2sSStatMr'](5) != 0 or m['mm2sShadeXpValue']() != 0 or m['mm2sShadeXpLevel']() != 0"
+  },
+  {
+   "note": "the sirine grid row (p. 109 print order)",
+   "expr": "m['mm2sSStatAc'](6) != 3 or m['mm2sSStatHd'](6) != 4 or m['mm2sSStatHdBonus'](6) != 0 or m['mm2sSStatAvgHp'](6) != 14 or m['mm2sSStatAttacks'](6) != 1 or m['mm2sSStatXp'](6) != 350 or m['mm2sSStatXpHp'](6) != 10 or m['mm2sSStatLairPct'](6) != 30 or m['mm2sSStatMove'](6) != 12 or m['mm2sSStatMr'](6) != 20 or m['mm2sSirineXpValue']() != 490 or m['mm2sSirineXpLevel']() != 5"
+  },
+  {
+   "note": "the skeleton, animal grid row (p. 109 print order)",
+   "expr": "m['mm2sSStatAc'](7) != 8 or m['mm2sSStatHd'](7) != 1 or m['mm2sSStatHdBonus'](7) != -1 or m['mm2sSStatAvgHp'](7) != 2 or m['mm2sSStatAttacks'](7) != 1 or m['mm2sSStatXp'](7) != 10 or m['mm2sSStatXpHp'](7) != 1 or m['mm2sSStatLairPct'](7) != 85 or m['mm2sSStatMove'](7) != 6 or m['mm2sSStatMr'](7) != 0 or m['mm2sSkeletonAnimalXpValue']() != 12 or m['mm2sSkeletonAnimalXpLevel']() != 1"
+  },
+  {
+   "note": "the skunk grid row (p. 110 print order)",
+   "expr": "m['mm2sSStatAc'](8) != 8 or m['mm2sSStatHd'](8) != 0 or m['mm2sSStatHdBonus'](8) != 0 or m['mm2sSStatAvgHp'](8) != 2 or m['mm2sSStatAttacks'](8) != 1 or m['mm2sSStatXp'](8) != 4 or m['mm2sSStatXpHp'](8) != 1 or m['mm2sSStatLairPct'](8) != 0 or m['mm2sSStatMove'](8) != 12 or m['mm2sSStatMr'](8) != 0 or m['mm2sSkunkXpValue']() != 6 or m['mm2sSkunkXpLevel']() != 1"
+  },
+  {
+   "note": "the slime creature grid row (p. 110 print order)",
+   "expr": "m['mm2sSStatAc'](9) != 9 or m['mm2sSStatHd'](9) != 3 or m['mm2sSStatHdBonus'](9) != 2 or m['mm2sSStatAvgHp'](9) != 12 or m['mm2sSStatAttacks'](9) != 1 or m['mm2sSStatXp'](9) != 110 or m['mm2sSStatXpHp'](9) != 4 or m['mm2sSStatLairPct'](9) != 0 or m['mm2sSStatMove'](9) != 6 or m['mm2sSStatMr'](9) != 0 or m['mm2sSlimeCreatureXpValue']() != 158 or m['mm2sSlimeCreatureXpLevel']() != 3"
+  },
+  {
+   "note": "the slime, olive grid row (p. 110 print order)",
+   "expr": "m['mm2sSStatAc'](10) != 9 or m['mm2sSStatHd'](10) != 2 or m['mm2sSStatHdBonus'](10) != 2 or m['mm2sSStatAvgHp'](10) != 9 or m['mm2sSStatAttacks'](10) != 1 or m['mm2sSStatXp'](10) != 330 or m['mm2sSStatXpHp'](10) != 3 or m['mm2sSStatLairPct'](10) != 0 or m['mm2sSStatMove'](10) != 0 or m['mm2sSStatMr'](10) != 0 or m['mm2sSlimeOliveXpValue']() != 357 or m['mm2sSlimeOliveXpLevel']() != 5"
+  },
+  {
+   "note": "the snake, constrictor grid row (p. 111 print order)",
+   "expr": "m['mm2sSStatAc'](11) != 6 or m['mm2sSStatHd'](11) != 3 or m['mm2sSStatHdBonus'](11) != 2 or m['mm2sSStatAvgHp'](11) != 12 or m['mm2sSStatAttacks'](11) != 2 or m['mm2sSStatXp'](11) != 85 or m['mm2sSStatXpHp'](11) != 4 or m['mm2sSStatLairPct'](11) != 0 or m['mm2sSStatMove'](11) != 9 or m['mm2sSStatMr'](11) != 0 or m['mm2sSnakeConstrictorXpValue']() != 133 or m['mm2sSnakeConstrictorXpLevel']() != 3"
+  },
+  {
+   "note": "the snake, poisonous grid row (p. 111 print order)",
+   "expr": "m['mm2sSStatAc'](12) != 6 or m['mm2sSStatHd'](12) != 2 or m['mm2sSStatHdBonus'](12) != 1 or m['mm2sSStatAvgHp'](12) != 8 or m['mm2sSStatAttacks'](12) != 1 or m['mm2sSStatXp'](12) != 255 or m['mm2sSStatXpHp'](12) != 3 or m['mm2sSStatLairPct'](12) != 0 or m['mm2sSStatMove'](12) != 15 or m['mm2sSStatMr'](12) != 0 or m['mm2sSnakePoisonousXpValue']() != 279 or m['mm2sSnakePoisonousXpLevel']() != 5"
+  },
+  {
+   "note": "the solar grid row (p. 111-112 print order)",
+   "expr": "m['mm2sSStatAc'](13) != 9 or m['mm2sSStatHd'](13) != 0 or m['mm2sSStatHdBonus'](13) != 0 or m['mm2sSStatAvgHp'](13) != 177 or m['mm2sSStatAttacks'](13) != 4 or m['mm2sSStatXp'](13) != 95000 or m['mm2sSStatXpHp'](13) != 35 or m['mm2sSStatLairPct'](13) != 0 or m['mm2sSStatMove'](13) != 18 or m['mm2sSStatMr'](13) != 85 or m['mm2sSolarXpValue']() != 101195 or m['mm2sSolarXpLevel']() != 10"
+  },
+  {
+   "note": "the solifugid, large grid row (p. 112 print order)",
+   "expr": "m['mm2sSStatAc'](14) != 6 or m['mm2sSStatHd'](14) != 3 or m['mm2sSStatHdBonus'](14) != 3 or m['mm2sSStatAvgHp'](14) != 13 or m['mm2sSStatAttacks'](14) != 2 or m['mm2sSStatXp'](14) != 85 or m['mm2sSStatXpHp'](14) != 4 or m['mm2sSStatLairPct'](14) != 10 or m['mm2sSStatMove'](14) != 9 or m['mm2sSStatMr'](14) != 0 or m['mm2sSolifugidLargeXpValue']() != 137 or m['mm2sSolifugidLargeXpLevel']() != 3"
+  },
+  {
+   "note": "the solifugid, huge grid row (p. 112 print order)",
+   "expr": "m['mm2sSStatAc'](15) != 5 or m['mm2sSStatHd'](15) != 5 or m['mm2sSStatHdBonus'](15) != 5 or m['mm2sSStatAvgHp'](15) != 22 or m['mm2sSStatAttacks'](15) != 2 or m['mm2sSStatXp'](15) != 225 or m['mm2sSStatXpHp'](15) != 6 or m['mm2sSStatLairPct'](15) != 20 or m['mm2sSStatMove'](15) != 9 or m['mm2sSStatMr'](15) != 0 or m['mm2sSolifugidHugeXpValue']() != 357 or m['mm2sSolifugidHugeXpLevel']() != 4"
+  },
+  {
+   "note": "the solifugid, giant grid row (p. 112 print order)",
+   "expr": "m['mm2sSStatAc'](16) != 4 or m['mm2sSStatHd'](16) != 6 or m['mm2sSStatHdBonus'](16) != 6 or m['mm2sSStatAvgHp'](16) != 27 or m['mm2sSStatAttacks'](16) != 2 or m['mm2sSStatXp'](16) != 350 or m['mm2sSStatXpHp'](16) != 8 or m['mm2sSStatLairPct'](16) != 25 or m['mm2sSStatMove'](16) != 12 or m['mm2sSStatMr'](16) != 0 or m['mm2sSolifugidGiantXpValue']() != 566 or m['mm2sSolifugidGiantXpLevel']() != 5"
+  },
+  {
+   "note": "the spectator grid row (p. 112-113 print order)",
+   "expr": "m['mm2sSStatAc'](17) != 4 or m['mm2sSStatHd'](17) != 4 or m['mm2sSStatHdBonus'](17) != 4 or m['mm2sSStatAvgHp'](17) != 18 or m['mm2sSStatAttacks'](17) != 1 or m['mm2sSStatXp'](17) != 350 or m['mm2sSStatXpHp'](17) != 9 or m['mm2sSStatLairPct'](17) != 100 or m['mm2sSStatMove'](17) != 10 or m['mm2sSStatMr'](17) != 5 or m['mm2sSpectatorXpValue']() != 512 or m['mm2sSpectatorXpLevel']() != 5"
+  },
+  {
+   "note": "the spider, giant marine grid row (p. 113 print order)",
+   "expr": "m['mm2sSStatAc'](18) != 4 or m['mm2sSStatHd'](18) != 7 or m['mm2sSStatHdBonus'](18) != 7 or m['mm2sSStatAvgHp'](18) != 31 or m['mm2sSStatAttacks'](18) != 1 or m['mm2sSStatXp'](18) != 650 or m['mm2sSStatXpHp'](18) != 12 or m['mm2sSStatLairPct'](18) != 70 or m['mm2sSStatMove'](18) != 15 or m['mm2sSStatMr'](18) != 0 or m['mm2sSpiderGiantMarineXpValue']() != 1022 or m['mm2sSpiderGiantMarineXpLevel']() != 6"
+  },
+  {
+   "note": "the spriggan grid row (p. 113 print order)",
+   "expr": "m['mm2sSStatAc'](19) != 3 or m['mm2sSStatHd'](19) != 4 or m['mm2sSStatHdBonus'](19) != 0 or m['mm2sSStatAvgHp'](19) != 14 or m['mm2sSStatAttacks'](19) != 2 or m['mm2sSStatXp'](19) != 1000 or m['mm2sSStatXpHp'](19) != 10 or m['mm2sSStatLairPct'](19) != 30 or m['mm2sSStatMove'](19) != 9 or m['mm2sSStatMr'](19) != 0 or m['mm2sSprigganXpValue']() != 1140 or m['mm2sSprigganXpLevel']() != 6"
+  },
+  {
+   "note": "the squealer grid row (p. 113-114 print order)",
+   "expr": "m['mm2sSStatAc'](20) != 6 or m['mm2sSStatHd'](20) != 12 or m['mm2sSStatHdBonus'](20) != 0 or m['mm2sSStatAvgHp'](20) != 42 or m['mm2sSStatAttacks'](20) != 3 or m['mm2sSStatXp'](20) != 3000 or m['mm2sSStatXpHp'](20) != 16 or m['mm2sSStatLairPct'](20) != 15 or m['mm2sSStatMove'](20) != 12 or m['mm2sSStatMr'](20) != 0 or m['mm2sSquealerXpValue']() != 3672 or m['mm2sSquealerXpLevel']() != 5"
+  },
+  {
+   "note": "the squirrel, giant black grid row (p. 114 print order)",
+   "expr": "m['mm2sSStatAc'](21) != 6 or m['mm2sSStatHd'](21) != 1 or m['mm2sSStatHdBonus'](21) != 1 or m['mm2sSStatAvgHp'](21) != 4 or m['mm2sSStatAttacks'](21) != 1 or m['mm2sSStatXp'](21) != 20 or m['mm2sSStatXpHp'](21) != 2 or m['mm2sSStatLairPct'](21) != 0 or m['mm2sSStatMove'](21) != 12 or m['mm2sSStatMr'](21) != 0 or m['mm2sSquirrelGiantBlackXpValue']() != 28 or m['mm2sSquirrelGiantBlackXpLevel']() != 1"
+  },
+  {
+   "note": "the squirrel, ordinary grid row (p. 114 print order)",
+   "expr": "m['mm2sSStatAc'](22) != 8 or m['mm2sSStatHd'](22) != 0 or m['mm2sSStatHdBonus'](22) != 0 or m['mm2sSStatAvgHp'](22) != 1 or m['mm2sSStatAttacks'](22) != 1 or m['mm2sSStatXp'](22) != 0 or m['mm2sSStatXpHp'](22) != 0 or m['mm2sSStatLairPct'](22) != 0 or m['mm2sSStatMove'](22) != 9 or m['mm2sSStatMr'](22) != 0 or m['mm2sSquirrelOrdinaryXpValue']() != 0 or m['mm2sSquirrelOrdinaryXpLevel']() != 1"
+  },
+  {
+   "note": "the squirrel, carnivorous flying grid row (p. 114 print order)",
+   "expr": "m['mm2sSStatAc'](23) != 7 or m['mm2sSStatHd'](23) != 0 or m['mm2sSStatHdBonus'](23) != 0 or m['mm2sSStatAvgHp'](23) != 4 or m['mm2sSStatAttacks'](23) != 1 or m['mm2sSStatXp'](23) != 10 or m['mm2sSStatXpHp'](23) != 1 or m['mm2sSStatLairPct'](23) != 40 or m['mm2sSStatMove'](23) != 9 or m['mm2sSStatMr'](23) != 0 or m['mm2sSquirrelCarnivorousFlyingXpValue']() != 14 or m['mm2sSquirrelCarnivorousFlyingXpLevel']() != 1"
+  },
+  {
+   "note": "the stegocentipede grid row (p. 114-115 print order)",
+   "expr": "m['mm2sSStatAc'](24) != 3 or m['mm2sSStatHd'](24) != 9 or m['mm2sSStatHdBonus'](24) != 0 or m['mm2sSStatAvgHp'](24) != 31 or m['mm2sSStatAttacks'](24) != 2 or m['mm2sSStatXp'](24) != 1700 or m['mm2sSStatXpHp'](24) != 12 or m['mm2sSStatLairPct'](24) != 0 or m['mm2sSStatMove'](24) != 15 or m['mm2sSStatMr'](24) != 0 or m['mm2sStegocentipedeXpValue']() != 2072 or m['mm2sStegocentipedeXpLevel']() != 7"
+  },
+  {
+   "note": "the stench kow grid row (p. 115 print order)",
+   "expr": "m['mm2sSStatAc'](25) != 2 or m['mm2sSStatHd'](25) != 3 or m['mm2sSStatHdBonus'](25) != 3 or m['mm2sSStatAvgHp'](25) != 13 or m['mm2sSStatAttacks'](25) != 1 or m['mm2sSStatXp'](25) != 150 or m['mm2sSStatXpHp'](25) != 4 or m['mm2sSStatLairPct'](25) != 0 or m['mm2sSStatMove'](25) != 15 or m['mm2sSStatMr'](25) != 0 or m['mm2sStenchKowXpValue']() != 202 or m['mm2sStenchKowXpLevel']() != 3"
+  },
+  {
+   "note": "the stone guardian grid row (p. 115 print order)",
+   "expr": "m['mm2sSStatAc'](26) != 2 or m['mm2sSStatHd'](26) != 4 or m['mm2sSStatHdBonus'](26) != 4 or m['mm2sSStatAvgHp'](26) != 18 or m['mm2sSStatAttacks'](26) != 2 or m['mm2sSStatXp'](26) != 550 or m['mm2sSStatXpHp'](26) != 8 or m['mm2sSStatLairPct'](26) != 100 or m['mm2sSStatMove'](26) != 10 or m['mm2sSStatMr'](26) != 0 or m['mm2sStoneGuardianXpValue']() != 694 or m['mm2sStoneGuardianXpLevel']() != 6"
+  },
+  {
+   "note": "the storoper grid row (p. 115-116 print order)",
+   "expr": "m['mm2sSStatAc'](27) != 0 or m['mm2sSStatHd'](27) != 6 or m['mm2sSStatHdBonus'](27) != 0 or m['mm2sSStatAvgHp'](27) != 21 or m['mm2sSStatAttacks'](27) != 1 or m['mm2sSStatXp'](27) != 500 or m['mm2sSStatXpHp'](27) != 6 or m['mm2sSStatLairPct'](27) != 90 or m['mm2sSStatMove'](27) != 1 or m['mm2sSStatMr'](27) != 0 or m['mm2sStoroperXpValue']() != 626 or m['mm2sStoroperXpLevel']() != 6"
+  },
+  {
+   "note": "the sundew, giant grid row (p. 116 print order)",
+   "expr": "m['mm2sSStatAc'](28) != 7 or m['mm2sSStatHd'](28) != 8 or m['mm2sSStatHdBonus'](28) != 0 or m['mm2sSStatAvgHp'](28) != 28 or m['mm2sSStatAttacks'](28) != 1 or m['mm2sSStatXp'](28) != 1075 or m['mm2sSStatXpHp'](28) != 10 or m['mm2sSStatLairPct'](28) != 0 or m['mm2sSStatMove'](28) != 1 or m['mm2sSStatMr'](28) != 0 or m['mm2sSundewGiantXpValue']() != 1355 or m['mm2sSundewGiantXpLevel']() != 7"
+  },
+  {
+   "note": "the swan grid row (p. 116 print order)",
+   "expr": "m['mm2sSStatAc'](29) != 7 or m['mm2sSStatHd'](29) != 1 or m['mm2sSStatHdBonus'](29) != 2 or m['mm2sSStatAvgHp'](29) != 5 or m['mm2sSStatAttacks'](29) != 3 or m['mm2sSStatXp'](29) != 0 or m['mm2sSStatXpHp'](29) != 0 or m['mm2sSStatLairPct'](29) != 0 or m['mm2sSStatMove'](29) != 3 or m['mm2sSStatMr'](29) != 0 or m['mm2sSwanXpValue']() != 0 or m['mm2sSwanXpLevel']() != 1"
+  },
+  {
+   "note": "the swanmay grid row (p. 116-117 print order)",
+   "expr": "m['mm2sSStatAc'](30) != 7 or m['mm2sSStatHd'](30) != 2 or m['mm2sSStatHdBonus'](30) != 0 or m['mm2sSStatAvgHp'](30) != 7 or m['mm2sSStatAttacks'](30) != 1 or m['mm2sSStatXp'](30) != 0 or m['mm2sSStatXpHp'](30) != 0 or m['mm2sSStatLairPct'](30) != 0 or m['mm2sSStatMove'](30) != 3 or m['mm2sSStatMr'](30) != 2 or m['mm2sSwanmayXpValue']() != 0 or m['mm2sSwanmayXpLevel']() != 0"
+  },
+  {
+   "note": "the swordfish grid row (p. 117 print order)",
+   "expr": "m['mm2sSStatAc'](31) != 6 or m['mm2sSStatHd'](31) != 1 or m['mm2sSStatHdBonus'](31) != 1 or m['mm2sSStatAvgHp'](31) != 4 or m['mm2sSStatAttacks'](31) != 1 or m['mm2sSStatXp'](31) != 35 or m['mm2sSStatXpHp'](31) != 3 or m['mm2sSStatLairPct'](31) != 0 or m['mm2sSStatMove'](31) != 24 or m['mm2sSStatMr'](31) != 0 or m['mm2sSwordfishXpValue']() != 47 or m['mm2sSwordfishXpLevel']() != 2"
+  },
+  {
+   "note": "the taer grid row (p. 117 print order)",
+   "expr": "m['mm2sSStatAc'](32) != 4 or m['mm2sSStatHd'](32) != 3 or m['mm2sSStatHdBonus'](32) != 6 or m['mm2sSStatAvgHp'](32) != 16 or m['mm2sSStatAttacks'](32) != 3 or m['mm2sSStatXp'](32) != 150 or m['mm2sSStatXpHp'](32) != 4 or m['mm2sSStatLairPct'](32) != 40 or m['mm2sSStatMove'](32) != 18 or m['mm2sSStatMr'](32) != 0 or m['mm2sTaerXpValue']() != 214 or m['mm2sTaerXpLevel']() != 3"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter S box",
+   "from": "- [ ] **Letter S**",
+   "to": "- [x] **Letter S**"
+  }
+ ],
+ "gap_census": {
+  "closed": 24,
+  "open": 13
+ },
+ "caller_files": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter S def walk (the R812 R-walk pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R813: the MM2 letter S live def walk ----\n    // The 33 promoted letter S defs\n    // cross-checked live against the mm2s pins:\n    // every stat cell of the 33-row SStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula, the per-def prose markers, and the\n    // registry census floor 733 -> at least 766.\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kS[33] = {\n            \"sandling\",\n            \"scorpion_large\",\n            \"scorpion_huge\",\n            \"scum_creeper\",\n            \"selkie\",\n            \"shade\",\n            \"sirine\",\n            \"skeleton_animal\",\n            \"skunk\",\n            \"slime_creature\",\n            \"slime_olive\",\n            \"snake_constrictor\",\n            \"snake_poisonous\",\n            \"solar\",\n            \"solifugid_large\",\n            \"solifugid_huge\",\n            \"solifugid_giant\",\n            \"spectator\",\n            \"spider_giant_marine\",\n            \"spriggan\",\n            \"squealer\",\n            \"squirrel_giant_black\",\n            \"squirrel_ordinary\",\n            \"squirrel_carnivorous_flying\",\n            \"stegocentipede\",\n            \"stench_kow\",\n            \"stone_guardian\",\n            \"storoper\",\n            \"sundew_giant\",\n            \"swan\",\n            \"swanmay\",\n            \"swordfish\",\n            \"taer\",\n        };\n        static const char* kSMark[33] = {\n            \"moving, sliding sand\",\n            \"weaker than normal\",\n            \"instantly killed\",\n            \"shearing plates of hornlike substance\",\n            \"becomes a sort of sealwere\",\n            \"essence of shadowstuff\",\n            \"save vs. poison or become an idiot\",\n            \"1-1/2 per experience level\",\n            \"cloud of stinking musk\",\n            \"metamorphosed hosts of olive slime\",\n            \"akin to green slime\",\n            \"bite and coiling to constrict\",\n            \"Use the table below to determine strength\",\n            \"arrows of slaying\",\n            \"sucker-like clamps\",\n            \"nocturnal variety\",\n            \"warm desert climates\",\n            \"guard for up to 101 years\",\n            \"huge air-filled underwater nests\",\n            \"cousins of the gnomes\",\n            \"grasp the limb it is upon\",\n            \"small, shiny objects\",\n            \"bite only in self defense\",\n            \"range is 5 feet for every foot\",\n            \"insane genetic manipulator\",\n            \"cattle of the Nine Hells\",\n            \"golem-like figure\",\n            \"stone roper\",\n            \"hundreds of tendrils\",\n            \"blind and disorient\",\n            \"feather token\",\n            \"fearsome weapon\",\n            \"polished teeth\",\n        };\n        for (int i = 0; i < 33; ++i) {\n            const auto* d = reg.find(kS[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\")\n                ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2sSStatAc(i))\n                ++bad;\n            if (d->hitDiceNum != mm2sSStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2sSStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2sSStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2sSStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2sSStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2sSStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2sSStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2sSStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2sSStatMr(i))\n                ++bad;\n            if (d->text.find(kSMark[i])\n                == std::string::npos)\n                ++bad;\n        }\n        if ((int)reg.all().size()\n            < mm2sRegistryAfter())\n            ++bad;\n        printf(\"R813 MM2 letter S live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----\n"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/s/sandling.lua",
+   "content": "-- Sandling: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Sandling\",\n  page = \"106\",\n  pages = \"106\",\n  source = \"MM2\",\n  race = \"Sandling\",\n  hitDice = \"4\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"0\",\n  avgHp = \"14\",\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"2-16\",\n  xp = \"85\",\n  xpPerHp = \"4\",\n  xpValue = \"141\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = \"65\",\n  treasure = \"Nil\",\n  move = \"12\\\" (6\\\")\",\n  size = \"L\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Immune to sleep, hold, charm and other mind influencing spells\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"A sandling appears to be an amorphous mass of moving, sliding sand. An adult sandling is a solitary creature, and it dwells in lonely sandy areas such as uninhabited deserts, siliceous caverns and deserted beaches. Sandlings are savagely territorial and will attack any creatures that trespass in their areas. They fight by slashing and lacerating with a coarse, abrasive pseudopod. Sandlings' flexible, shifting forms are difficult to damage by physical assault (thus the armor class of 3). If a sufficient quantity of water or other liquid (10 gallons or more) is cast upon the creature, it will have the same effects as a slow spell and the sandling will strike for only one-half damage (1-8).\\n\\nSandlings are apparently silicon-based creatures, and some sages believe that they originated on the Elemental Plane of Earth. A sandling grows until it reaches full size (10 feet in diameter), and then it begins to reproduce by budding. Tiny sandlings grow to about 2 inches in diameter before they split from the parent. An adult sandling's territory often swarms with thousands of infant sandlings, none larger than 1/2 foot in diameter. When one grows above this size, the parent sandling perceives it as a threat and kills it. When the parent sandling dies, the largest infant grows to take its place, killing all rivals (if it can). A group of sandling infants grouped together form an uneven surface and may trip an unwary creature.\\n\\nSandlings sense heat, sound and moisture. They dislike wetness and will burrow underground to avoid rain or water unless already defending their territories. There have been reports of huge sandlings 3 times as large as normal adults, but these reports have not been substantiated. Sandlings are always the same temperature as their surroundings and thus are invisible to infraction.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/scorpion_large.lua",
+   "content": "-- Scorpion, Large: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Scorpion, Large\",\n  page = \"107\",\n  pages = \"107\",\n  source = \"MM2\",\n  race = \"Scorpion\",\n  hitDice = \"2+2\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"2\",\n  avgHp = \"9\",\n  armorClass = \"5\",\n  numAttacks = 3,\n  damage = \"1-4/1-4/1-16\",\n  xp = \"90\",\n  xpPerHp = \"3\",\n  xpValue = \"117\",\n  xpSource = \"mm2_print\",\n  frequency = \"Common\",\n  noAppearing = \"1-6\",\n  lairPct = \"25\",\n  treasure = \"D\",\n  move = \"9\\\"\",\n  size = \"S\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Poison sting\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Often found in dungeons and wildernesses, these creatures are merely smaller versions of the giant scorpion. Each attacks with pincers and tail stinger. If struck by the stinger, the victim must save vs. poison or be instantly killed. However, the poison of the large scorpion is weaker than normal (+2 on saving throw).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/scorpion_huge.lua",
+   "content": "-- Scorpion, Huge: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Scorpion, Huge\",\n  page = \"107\",\n  pages = \"107\",\n  source = \"MM2\",\n  race = \"Scorpion\",\n  hitDice = \"4+4\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"4\",\n  avgHp = \"18\",\n  armorClass = \"4\",\n  numAttacks = 3,\n  damage = \"1-8/1-8/1-3\",\n  xp = \"165\",\n  xpPerHp = \"5\",\n  xpValue = \"255\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-4\",\n  lairPct = \"25\",\n  treasure = \"D\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Poison sting\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Often found in dungeons and wildernesses, these creatures are merely smaller versions of the giant scorpion. Each attacks with pincers and tail stinger. If struck by the stinger, the victim must save vs. poison or be instantly killed. However, the poison of the large scorpion is weaker than normal (+2 on saving throw).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/scum_creeper.lua",
+   "content": "-- Scum Creeper: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Scum Creeper\",\n  page = \"107\",\n  pages = \"107\",\n  source = \"MM2\",\n  race = \"Scum Creeper\",\n  hitDice = \"1 (2-8 hp)\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"5\",\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"Nil (1)\",\n  xp = \"14\",\n  xpPerHp = \"1\",\n  xpValue = \"19\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"2-24\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"3\\\"\",\n  size = \"S (1/2' dia., 1' length)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Scum creepers are small, slug-like things which inhabit subterranean places or dismal swamps where there is little light. They feed upon plant growth and anything else which their small mouths are able to devour. This includes rotting cloth, wood, or flesh. A scum creeper can move freely upon walls or ceilings due to its myriad tiny hooked legs and its suctioning underbelly segments. The scum creeper's small, sucker-like mouth has very sharp shearing plates of hornlike substance.\\n\\nAttacks are initially attempts to attach to the intended prey. A hit indicates that the scum creeper is fastened to some portion of the prey (1 in 20 will fasten the monster onto the face, blinding the victim until the monster is removed). Each round thereafter the scum creeper inflicts 1 point of damage automatically, and this continues until the monster is killed or the victim is dead. Rock salt rubbed on a scum creeper's soft flesh causes it to suffer 2 points of damage per round for 1-4 rounds. (Additional applications are ineffective until the previous saline effects are complete.)\\n\\nScum creepers have fat, slimy bodies of gray color with pale yellow heads and underbellies of sickly white. They have only vestigial eyes and sensory organs in a cluster of cilia at the head. The mouth is on the lower portion of the head.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/selkie.lua",
+   "content": "-- Selkie: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Selkie\",\n  page = \"107\",\n  pages = \"107\",\n  source = \"MM2\",\n  race = \"Selkie\",\n  hitDice = \"3+3\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"3\",\n  avgHp = \"13\",\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"By weapon type or 1-6\",\n  xp = \"75\",\n  xpPerHp = \"4\",\n  xpValue = \"127\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1 or 12-30\",\n  lairPct = \"0 or 90%\",\n  treasure = \"A (magic only), R\",\n  move = \"12\\\"//36\\\"\",\n  size = \"M\",\n  intelligence = \"Average to exceptional\",\n  alignment = \"Neutral (good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The selkie is a seal-like creature able to take human form for a few days and becomes a sort of sealwere. The selkie will usually take human form to be able to visit a human community to trade for or purchase certain supplies or items needed by its group. The habitat of the selkie is marine and cold-temperate to subarctic. They lair in large caverns or grotto complexes having both air and water areas, because selkie young must breathe air until they have grown to half-size (about 1 year of age).\\n\\nSelkies are omnivorous, eating fish, shellfish, crustaceans, and various forms of seaweed. They can also eat human fare, and they relish wine.\\n\\nIn human form a selkie will have some weapon, but in its seal-like form the creature cannot carry a weapon and swim rapidly. Therefore, selkies encountered underwater are 90% likely to be unarmed and will usually attack by biting. Any weapon possessed by a selkie will be used if necessary, especially in defense of the home.\\n\\nA selkie community will be divided between males and females, with slightly more females in most cases. The two sexes are equal. The leader will be an old selkie able to perform the following powers: augury, cure light wounds, cure disease, weather summoning, control weather. Each is usable 1 per round, once per day, except weather spells which require 1 week of rest between castings and are used only in dire need for exacting revenge.\\n\\nThe treasure of a selkie community is gathered from ships lost at sea and from sea creatures. Thus, they are likely to own many pearls. Monetary treasure of this sort is kept principally for trade. Magical treasure is also garnered from sunken ships and used to aid and protect the community.\\n\\nIn human form selkies are very attractive and fine looking. Their eyes are particularly bright. When in true form, they are nearly indistinguishable from seals. Close examination, however, will reveal arms with slightly webbed hands instead of foreflippers, and legs rather than a tapering body and rear flippers.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/shade.lua",
+   "content": "-- Shade: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Shade\",\n  page = \"108\",\n  pages = \"108\",\n  source = \"MM2\",\n  race = \"Shade\",\n  hitDice = \"As original class and level\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"0\",\n  armorClass = \"As original creature\",\n  numAttacks = \"As original class and level\",\n  damage = \"By weapon type\",\n  xp = \"0\",\n  xpPerHp = \"0\",\n  xpValue = \"0\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare (rare)\",\n  noAppearing = \"Typically 1-2\",\n  lairPct = \"Variable\",\n  treasure = \"Variable\",\n  move = \"As original creature\",\n  size = \"As original creature\",\n  intelligence = \"Low to genius\",\n  alignment = \"Any (except good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Variable (see below)\",\n  psionic = \"As original creature\",\n  attackDefenseModes = \"As original creature\",\n  text = \"All knowledgeable authorities agree that shades are, or were, normal humans who through arcane magic or dark sciences have traded their souls or spirits for the essence of shadowstuff. While still retaining the shape and abilities of their original species, they have grown in power by joining with this shadowstuff. The true native shade is unknown, and no one knows if shades are connected with the shadow (q.v.) or some power or substance from the Plane of Shadow. The method of transmutation from living being to unliving shade life has been lost.\\n\\nAny human or demihuman, if the formula is rediscovered, can become a shade. Dwarves, elves, gnomes, half-elves, halflings, humans, and an occasional half-orc, are known to have forsaken goodness for the dark lure of shadowstuff. Becoming a shade does not alter species limitations of ability, class, or level (except as noted hereafter). The stuff of shadow most certainly prolongs the life of shades, for unless they meet with an accident or are killed, they are undying. Disease has no effect on them once they enter shadow, and they may regrow body parts lost in combat (save the head) in 1-4 weeks. This unnatural vitality also manifests itself in the regeneration of hit points, allowing them to regain them at 1 hit point per turn.\\n\\nBecause of changing light on the Prime Material Plane, shades live in the Plane of Shadow whenever possible (where they are rare). They do not leave that plane unless sufficiently motivated, such as by treasure, enforced servitude, revenge, etc.\\n\\nShades wield great power in shadows, but as shadows diminish, whether from increase in light or darkness, so too wanes the power of these shadow-beings. The exact power of a shade in varying light conditions is detailed below.\\n\\nLight conditions: bright light, sunlight - ability scores -2, magic resistance standard with saves at -4, hit points -2/die, special abilities none; average light - ability scores -1, magic resistance 5%/level, hit points -1/die, special abilities none; twilight - ability scores normal, magic resistance 5%/level, hit points normal, special abilities shadow-walk; shadowy light - ability scores +2, magic resistance 5%/level, hit points +1/die, special abilities shadow-walk and shadow images; night/dark - ability scores +1, magic resistance 5%/level, hit points normal, special abilities shadow-walk; complete darkness - ability scores normal, magic resistance standard, hit points normal, special abilities none.\\n\\nLight Conditions: A shade's power varies according to the amount of shadow available. They are most vulnerable in cases of total light and total darkness. Type occurrences: bright light - bright sunlight on a clear day, center of continual light spell, light without shadows (as from several sources around the shade); average light - normal daylight with shade or clouds, center of a light spell, outline of a faerie fire spell; twilight - sunset, average indoor light, edges of light and continual light spells; shadowy light - dimly-lit room or forest, underground torchlight, normal illumination on Plane of Shadow; night/dark - a room with windows at night, a moonless or cloudy night sky; total darkness - pitch black, overcast night sky, unlit, interior room or cavern, a darkness spell.\\n\\nAbility Scores: Light affects the ability statistics of the shade. Bonuses will exceed normal species maximums with the exception of strength. Each +1 adds 10% to 18 strength, and strength scores over 18/00 are treated as a 19 strength. Penalties lower strength by a full point (an 18/00 strength drops to 17 at -1 and 16 at -2).\\n\\nMagic Resistance: Check the basic ability of the shade to resist spells vs. the light conditions. Magic resistance for a shade will never exceed 60% (a 13th-level shade fighter in twilight will have a 60% magic resistance, not 65%). Note that a shade in bright light has standard magic resistance and all saves are made at -4 on the die because of the shade's weakness.\\n\\nHit Points: Penalties and bonuses are per hit die. No hit die may be less than 1 point.\\n\\nSpecial Abilities: All shades have the following special spell-like abilities, depending on local light conditions. Shadow-walk - This is the ability to gather shadows around itself and use them to transport itself to the Plane of Shadow. The transport requires 1 full round. Shadow images - This is the ability to form exact duplicates of itself out of shadow and cause the duplicates to act as if they were living entities. A shade can create 2-5 shadow images and can control their actions as long as they remain within 30 feet of their creator. They may only be dispelled by altering the lighting conditions around the shade. Note that shadow images have no material substance (so they do no damage in their attacks), and that the shade must draw from surrounding shadow to create them.\\n\\nOther Abilities: All shades may hide in shadows in conditions of twilight, shadowy light, and night/dark. They hide as a thief of the same level. Shades with thieving ability gain 2% per level in shadowy conditions, and 5% per level in night/dark conditions.\\n\\nAs mentioned before, becoming a shade does not change the basic characteristics of the individual. Those having psionic abilities may have those powers enhanced, but psionic ability may not be gained by becoming a shade. Shades with psionic ability will lose all mastery in the disciplines of invisibility and etherealness but will gain 2 levels in dimension walking when in shadows. Shades with psionic abilities usually gain the ability of shape alteration (10% chance per year as a shade), if they do not already have this power. The psionic strength of gifted shades will alter upon attaining shadehood because ability scores will be changed. New power and discipline gained by such a shade will operate only on the Plane of Shadow.\\n\\nFinally, it is nearly impossible to detect a shade, for its appearance does not differ greatly from its mortal form. A shade's eyes show no white, however, just a dark grey or purple iris and pupil, and its skin tone becomes dusky and grey. They prefer garb of grey or black and will rarely wear brightly-colored clothes. The transformation to shade has some evil in it, for the shade becomes gloomy and brooding. They are generally solitary due to this fact, as they cannot trust other shades, nor can they deal with normal creatures without dominating or exploiting them.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/sirine.lua",
+   "content": "-- Sirine: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Sirine\",\n  page = \"109\",\n  pages = \"109\",\n  source = \"MM2\",\n  race = \"Sirine\",\n  hitDice = \"4-7\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"0\",\n  avgHp = \"14\",\n  armorClass = \"3 or less\",\n  numAttacks = 1,\n  damage = \"By weapon type\",\n  xp = \"350\",\n  xpPerHp = \"10\",\n  xpValue = \"490\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare/very rare\",\n  noAppearing = \"1 or 2-8\",\n  lairPct = \"30\",\n  treasure = \"Individual: L, M, N, Q; In lair: X\",\n  move = \"12\\\"//24\\\"\",\n  size = \"M\",\n  intelligence = \"High to genius\",\n  alignment = \"Any (equal chances); see below\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"20% or more\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Sirines, beautiful human-like females, are equally at home above or beneath salt or fresh waters. Normally, but a single sirine will be encountered. All encounters will be in lonely, uninhabited places.\\n\\nThe armor class of a sirine is 3 because of the high dexterity of the race (18) and their magical nature. They usually will carry small (short) swords and daggers, although 30% will have 3 javelins (40%) or a sling (60%) as well. There is a base 10% chance that any weapon will be magic +1 or javelin of lightning; each should be checked for this possibility.\\n\\nSirines have the following magical powers; song, which will charm person at 3\\\" range all subject creatures of hostile nature within hearing suggestion; polymorph self; fog cloud; and improved invisibility. Each is usable once per day, 1 at a time, at will. Additionally, any intelligent creature touched in melee by a sirine must save vs. poison or become an idiot (intelligence=2). The idiocy so caused can be removed at will but requires a touch from the sirine. Otherwise, dispel magic may be used to bring back intelligence. Sirines are immune to all forms of gas.\\n\\nAll of their saving throws are made as if they were 11th-level magic-users with a +2 bonus vs. poison. If more than 1 sirine is encountered (30% chance) it will always be in the sirines' home area. A single sirine will always be of 6 or 7 hit dice. If 2-8 are encountered, at least 1 will be of 6 or 7 hit dice, with equal chances for 4, 5, 6, or 7 hit dice otherwise. Alignment of a group of sirines will always be the same with respect to good, evil, and absolute neutral alignment. In a group of evil sirines, for example, there can be lawful, neutral, and chaotic members.\\n\\nSirines breathe air or water with equal facility. They have infra- and ultravisual capacity. They speak their own language and Common.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/skeleton_animal.lua",
+   "content": "-- Skeleton, Animal: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Skeleton, Animal\",\n  page = \"109\",\n  pages = \"109\",\n  source = \"MM2\",\n  race = \"Skeleton, Animal\",\n  hitDice = \"1-1\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"-1\",\n  avgHp = \"2\",\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = \"10\",\n  xpPerHp = \"1\",\n  xpValue = \"12\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"2-20\",\n  lairPct = \"85\",\n  treasure = \"See below\",\n  move = \"6\\\"\",\n  size = \"S to M\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Animal skeletons are animated from small vertebrate creatures by means of an animate dead spell. Animal skeletons are produced at the rate of 1-1/2 per experience level of the caster. They are typically created to serve as guardians of a minor sort. Thus, they will not usually have treasure nearby, save possibly that incidentally remaining from past encounters. Usual animal skeletons are from the size of domestic cats to the size of large dogs. (Nothing larger than a human can be animated by the spell.)\\n\\nAnimal skeletons have no special attack forms. They are, of course, immune to charm, cold, death magic, hold, and sleep. Blunt weapons inflict normal damage, but edged weapons inflict only one-half normal damage. They are turned as normal skeletons, but at +1 in the cleric's favor, and 1d8+6 will be turned or destroyed.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/skunk.lua",
+   "content": "-- Skunk: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Skunk\",\n  page = \"110\",\n  pages = \"110\",\n  source = \"MM2\",\n  race = \"Skunk\",\n  hitDice = \"1/4\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"2\",\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"1\",\n  xp = \"4\",\n  xpPerHp = \"1\",\n  xpValue = \"6\",\n  xpSource = \"mm2_print\",\n  frequency = \"Common\",\n  noAppearing = \"1 or 1-6\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"S\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Squirt musk\",\n  specialDefenses = \"Squirt musk\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Skunks are found in most temperate and subtropical regions, dwelling in lightly populated and uninhabited areas. While they will bite if cornered, their major attack and defense method is to back towards any threatening creatures and release a 1\\\"x1\\\"x1\\\" cloud of stinking musk which will require all those within to make a saving throw vs. poison. Those who succeed must retreat immediately or count as failing to save. Those failing will be nauseated for 1-4 rounds and must retreat and retch. Each must also save again vs. poison or also be blinded for 1-4 rounds. The musk will cause normal clothing to smell so bad as to require burying or burning. Flesh, leather, metal, etc., must be washed repeatedly for several days in order to remove the horrid odor. (Vinegar will cut the stench in only 2 or 3 washings.)\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/slime_creature.lua",
+   "content": "-- Slime Creature: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Slime Creature\",\n  page = \"110\",\n  pages = \"110\",\n  source = \"MM2\",\n  race = \"Slime Creature\",\n  hitDice = \"3+2, 5+2, or 8+2\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"2\",\n  avgHp = \"12\",\n  armorClass = \"9\",\n  numAttacks = 1,\n  damage = \"1-4 or 2-8 or 4-16\",\n  xp = \"110\",\n  xpPerHp = \"4\",\n  xpValue = \"158\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1 to 20\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"S, M, or L\",\n  intelligence = \"Animal (cunning)\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Olive slime\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Slime creatures are the metamorphosed hosts of olive slime (q.v.). The new vegetable creature formed is linked symbiotically with the olive slime. Regardless of its former existence and despite its general form, a slime creature is only small, medium, or large - thus the variable hit dice and damage. Slime creatures gather together for mutual assistance in feeding and for defense. They can be identified only upon close examination.\\n\\nHabitat varies from well populated subterranean places to damp forests, swamps, etc. Slime creatures are equally at home on land or in warmish, shallow water. When attacking, slime creatures have a 10% chance of infecting their opponent with olive slime when a hit is scored. Slime creatures are harmed by acid, freezing cold, fire (of a magical sort only if water dwelling), and magic missile spells. Magical powers which affect plants also affect them. All other attack forms have no effect upon slime creatures.\\n\\nThe vegetable intelligence of slime creatures is of animal nature, but their cunning enables them to learn from experience. They also can use their cunning to lay traps. Slime creatures have limited telepathic communication with their own kind effective in a radius of up to 20\\\".\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/slime_olive.lua",
+   "content": "-- Slime, Olive: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Slime, Olive\",\n  page = \"110\",\n  pages = \"110\",\n  source = \"MM2\",\n  race = \"Slime, Olive\",\n  hitDice = \"2+2\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"2\",\n  avgHp = \"9\",\n  armorClass = \"9\",\n  numAttacks = 0,\n  damage = \"Nil\",\n  xp = \"330\",\n  xpPerHp = \"3\",\n  xpValue = \"357\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"0\\\"\",\n  size = \"S\",\n  intelligence = \"Non- and special\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Olive slime is a strain of monstrous plant life akin to green slime (q.v.) but contact with it is worse in most respects. Olive slime favors subterranean growing areas, feeding on animal, vegetable, and metallic substances. The vibrations of a passing creature are sufficient to cause the stuff to release its tendrils and drop.\\n\\nContact with olive slime causes a numbing poison to be exuded from the creature. The victim must save vs. poison or fail to notice the attachment of the olive slime. The attachment might (50%) be noticed by others in the vicinity; the check is made once for the group, not individually, with no adjustment except for magic. The stuff then spreads itself over the body area of its victim, sending parasitic tendrils to feed on the fluids of the host. With humans this attachment is usually along the spinal area. The host then begins to change, the mind being affected by secretions of the olive slime, so that the mind's main concern is to feed, protect, and aid the growth. Intake of food must be doubled or the host body wastes away (10% of hit points per day). After 7-12 days, the host will begin a metamorphosis into vegetable creature. The olive slime gradually replaces skin and muscle tissue and forms a symbiotic brain attachment as well. The new creature has no interest in its old form or fellows. It exists as a new species more akin to plants than any other life form. Feeding is then either photosynthetic, parasitic, or both. Upon death, the creature generates a new patch of olive slime.\\n\\nOlive slime can be harmed only by acid, freezing cold, fire, or by a cure disease spell. Magical powers which affect plants also work upon it. Other attacks, including spells, do not harm it. Green slime and olive slime will attack and neutralize each other. See \\\"Slime Creature\\\" for details on metamorphosed creatures created by olive slime attack.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/snake_constrictor.lua",
+   "content": "-- Snake, Constrictor: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Snake, Constrictor\",\n  page = \"111\",\n  pages = \"111\",\n  source = \"MM2\",\n  race = \"Snake\",\n  hitDice = \"3+2\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"2\",\n  avgHp = \"12\",\n  armorClass = \"6\",\n  numAttacks = 2,\n  damage = \"1/1-3\",\n  xp = \"85\",\n  xpPerHp = \"4\",\n  xpValue = \"133\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-2\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"M (15' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Constriction\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Snakes of all sorts inhabit regions from the cold-temperate to tropical. Larger sorts (constrictors) are usually found only in subtropical climes.\\n\\nConstrictor: These snakes typically lay in wait for prey, preferring wooded areas or swamps. They attack by bite and coiling to constrict. A successful coiling attack indicates automatic constriction damage each round thereafter. Any creature of humanoid sort can escape from coiling attack by strength. This is indicated by a roll to open doors, penalized by +1 to the roll. (cf., \\\"Snake, Giant Constrictor.\\\")\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/snake_poisonous.lua",
+   "content": "-- Snake, Poisonous: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Snake, Poisonous\",\n  page = \"111\",\n  pages = \"111\",\n  source = \"MM2\",\n  race = \"Snake\",\n  hitDice = \"2+1\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"1\",\n  avgHp = \"8\",\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1\",\n  xp = \"255\",\n  xpPerHp = \"3\",\n  xpValue = \"279\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-6\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"S (5' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Poison\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Snakes of all sorts inhabit regions from the cold-temperate to tropical. Larger sorts (constrictors) are usually found only in subtropical climes.\\n\\nPoisonous: The varieties of poisonous snakes are many. Use the table below to determine strength and effect of poison. Actual length, color, habitat, etc., are variable. Die roll 1-4: modifier to save vs. poison +3, sickness + incapacitation 2-8 days; die roll 5-8: +2, death; die roll 9-11: +1, 2-8 points of damage; die roll 12-14: +/-0, 3-12 points of damage; die roll 15-17: -1, sickness + incapacitation 1-4 days; die roll 18-19: -2, sickness + incapacitation 2-12 days; die roll 20: -3, death.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/solar.lua",
+   "content": "-- Solar: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Solar\",\n  page = \"111-112\",\n  pages = \"111-112\",\n  source = \"MM2\",\n  race = \"Solar\",\n  hitDice = \"177 hp\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"177\",\n  armorClass = \"9\",\n  numAttacks = 4,\n  damage = \"By weapon type (+12 strength bonus)\",\n  xp = \"95000\",\n  xpPerHp = \"35\",\n  xpValue = \"101195\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"18\\\"/40\\\"//18\\\"\",\n  size = \"L (10' tall)\",\n  intelligence = \"Supra-genius; wisdom: 24\",\n  alignment = \"Good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"85%\",\n  psionic = \"354\",\n  attackDefenseModes = \"All/all\",\n  text = \"A solar is the most powerful of spirits, usually directly serving a greater deity of good alignment and typically as his or her marshal, steward, etc. On rare occasions, a solar will be found attending a lesser deity. There are at least 24 solars. They can go to any place but do so only in service to their deities. As with devas (q.v.) and planetars (q.v.), solars can be of any good alignment - lawful, neutral, or chaotic. They are totally faithful and unswerving in their alignment and loyalty.\\n\\nEach solar has 4 attacks per melee round. Each has a huge composite bow (36\\\" range) and various arrows of slaying. Each also has a sword equal to a 2-handed weapon (usable only by solars) equal to +5 with qualities of dancing (q.v.) and sharpness (q.v.). The former function operates sans severing. For purposes of attack determination, consider each solar to have a dexterity of 24 and a 17th+ level as a fighter.\\n\\nAll solars have spell-like abilities equal to those of a 12th level cleric, druid, magic-user, and illusionist. In addition, they each have the following spell-like powers which can be used 1 at a time, 1 per round, at will: antipathy/sympathy (3/day); polymorph (any object, 1/day); animate object (3/day); power word (1/day); astral spell (1/day); polymorph self (1/day); confusion (3/day); prismatic spray (1/day); control weather; read magic; creeping doom (1/day); regenerate (1/day); Drawmij's instant summons (double effect); restoration (1/day); earthquake (3/day); resurrection (3/day); finger of death (1/day); shape change (3/day); fire storm (1/day); symbol (any, 3/day); holy word (3/day); teleport (no error); imprisonment (1/day); vanish (3/day); improved invisibility; vision (1/day); mass charm (3/day); wind walk (7/day); permanency (3/day); wish (1/day).\\n\\nEach solar can cast a globe of protection from evil (150% normal effect for +3/-3) from individual size to a full 70-foot radius, the size being willed but the protection otherwise maintained automatically. This sphere also serves as protection from normal missiles and a minor globe of invulnerability. A solar can commune as needed. Each can always cure (any sort) by touch, detect (any sort, automatically), and dispel (any sort) by gaze. When laying hands upon a creature, a solar can bestow perfect adaptation to any environment for up to as long as a century. Each solar automatically knows alignment. Each has communication ability via ESP or tongues, as well as the ability to read and comprehend any sort of language. Solar infravision extends to 24\\\" and ultraviolet to triple normal range. Hearing and normal vision are double human norm. Charisma effect is 24.\\n\\nA solar of lawful good service can summon 1-2 ki-rin; one of neutral good service 1-2 phoenix; and one of chaotic good service 1-2 greater titans. Such summons can be made once every hour. Once per day a solar can gate in either a planetar or double the indicated number of the appropriate sort of devas, the option resting with the solar.\\n\\nSolars are affected by the attack forms indicated for devas (q.v.) except that acid does not harm them. Only +5 or better weapons affect them. They are never surprised and always strike first against opponents with less than 22 dexterity. They are immune to life level loss from undead or magic. They cannot be beguiled, charmed, held, confused, dominated, feebleminded, paralyzed, or petrified. Their souls cannot be imprisoned or trapped. They are immune to death spells and death magic. They regenerate at a rate of 7 hit points per round. Unless on their own plane of service, only the material form of a solar can be destroyed. The solar's spirit returns instantly to its own plane to re-form a corporeal body, but this requires a full 7 decades. Solar psionic abilities are: animal telepathy (4th level); aura alteration; body equilibrium; body weaponry (12th level); mass domination (24th level); mind bar (24th level); molecular rearrangement (16th level); object reading; precognition; reduction (24th level); telekinesis (24th level); telepathic projection (24th level).\\n\\nThe skin of a solar is the color of molten copper, hair color is bronze, and eyes are glowing topaz. Its form is beautiful and muscular, and the deep, resonant voice is commanding. The wings are double and of a coppery-gold color.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/solifugid_large.lua",
+   "content": "-- Solifugid, Large: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Solifugid, Large\",\n  page = \"112\",\n  pages = \"112\",\n  source = \"MM2\",\n  race = \"Solifugid\",\n  hitDice = \"3+3\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"3\",\n  avgHp = \"13\",\n  armorClass = \"6\",\n  numAttacks = \"2 or 1\",\n  damage = \"2-8\",\n  xp = \"85\",\n  xpPerHp = \"4\",\n  xpValue = \"137\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-6\",\n  lairPct = \"10\",\n  treasure = \"Q\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Grip\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Variously known as false spiders, camel spiders, or sun spiders, the solifugids are arachnid in nature. They have powerful, hooked beaks and 10 legs, the first pair ending in sucker-like clamps. When in combat, a solifugid will attempt to attack with each of its 2 front legs. Should either score a hit, no damage will be done but the character struck will be caught in the grip of the solifugid. On each melee round thereafter, the beak attack will gain +3 on its to-hit roll; note that only the beak can do actual damage (the amount indicated). This bonus will continue for as long as a character is held, and the only way to break the grip is to sever a limb by rolling a 3 or more above the normal number needed to hit.\\n\\nWhenever solifugids are encountered outdoors, there is a 60% chance that they will be of the nocturnal variety, normally venturing out only at night. These creatures will flee from lights brighter than a torch or lantern and attack at -2 when in daylight.\\n\\nSolifugids live in warm desert climates. They are indiscriminate eaters, and if hungry will attack anything that moves.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/solifugid_huge.lua",
+   "content": "-- Solifugid, Huge: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Solifugid, Huge\",\n  page = \"112\",\n  pages = \"112\",\n  source = \"MM2\",\n  race = \"Solifugid\",\n  hitDice = \"5+5\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"5\",\n  avgHp = \"22\",\n  armorClass = \"5\",\n  numAttacks = \"2 or 1\",\n  damage = \"3-12\",\n  xp = \"225\",\n  xpPerHp = \"6\",\n  xpValue = \"357\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-6\",\n  lairPct = \"20\",\n  treasure = \"Q,S\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Grip\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Variously known as false spiders, camel spiders, or sun spiders, the solifugids are arachnid in nature. They have powerful, hooked beaks and 10 legs, the first pair ending in sucker-like clamps. When in combat, a solifugid will attempt to attack with each of its 2 front legs. Should either score a hit, no damage will be done but the character struck will be caught in the grip of the solifugid. On each melee round thereafter, the beak attack will gain +3 on its to-hit roll; note that only the beak can do actual damage (the amount indicated). This bonus will continue for as long as a character is held, and the only way to break the grip is to sever a limb by rolling a 3 or more above the normal number needed to hit.\\n\\nWhenever solifugids are encountered outdoors, there is a 60% chance that they will be of the nocturnal variety, normally venturing out only at night. These creatures will flee from lights brighter than a torch or lantern and attack at -2 when in daylight.\\n\\nSolifugids live in warm desert climates. They are indiscriminate eaters, and if hungry will attack anything that moves.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/solifugid_giant.lua",
+   "content": "-- Solifugid, Giant: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Solifugid, Giant\",\n  page = \"112\",\n  pages = \"112\",\n  source = \"MM2\",\n  race = \"Solifugid\",\n  hitDice = \"6+6\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"6\",\n  avgHp = \"27\",\n  armorClass = \"4\",\n  numAttacks = \"2 or 1\",\n  damage = \"4-16\",\n  xp = \"350\",\n  xpPerHp = \"8\",\n  xpValue = \"566\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"25\",\n  treasure = \"N(x4), Q2 or 1\",\n  move = \"12\\\"\",\n  size = \"L\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Grip\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Variously known as false spiders, camel spiders, or sun spiders, the solifugids are arachnid in nature. They have powerful, hooked beaks and 10 legs, the first pair ending in sucker-like clamps. When in combat, a solifugid will attempt to attack with each of its 2 front legs. Should either score a hit, no damage will be done but the character struck will be caught in the grip of the solifugid. On each melee round thereafter, the beak attack will gain +3 on its to-hit roll; note that only the beak can do actual damage (the amount indicated). This bonus will continue for as long as a character is held, and the only way to break the grip is to sever a limb by rolling a 3 or more above the normal number needed to hit.\\n\\nWhenever solifugids are encountered outdoors, there is a 60% chance that they will be of the nocturnal variety, normally venturing out only at night. These creatures will flee from lights brighter than a torch or lantern and attack at -2 when in daylight.\\n\\nSolifugids live in warm desert climates. They are indiscriminate eaters, and if hungry will attack anything that moves.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/spectator.lua",
+   "content": "-- Spectator: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Spectator\",\n  page = \"112-113\",\n  pages = \"112-113\",\n  source = \"MM2\",\n  race = \"Spectator\",\n  hitDice = \"4+4\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"4\",\n  avgHp = \"18\",\n  armorClass = \"Body 4, eyes 7\",\n  numAttacks = 1,\n  damage = \"1\",\n  xp = \"350\",\n  xpPerHp = \"9\",\n  xpValue = \"512\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = \"100\",\n  treasure = \"See below\",\n  move = \"10\\\" (MC:B)\",\n  size = \"L (4' diameter)\",\n  intelligence = \"Very to high\",\n  alignment = \"Lawful neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"5%\",\n  psionic = \"Special\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The spectator is a guardian of places and treasures. Once it is given a task it will guard for up to 101 years and will let no one use, borrow, or examine an item or treasure. The treasure being guarded is 90% likely to be a magic item or have a value of at least 15,000 gp. If the spectator gains incidental treasure while performing its duty, this will not trouble its conscience and the treasure may be taken freely. Incidental treasure can amount to the following sums: 40% for 3-300 coins of mixed types (1-20 platinum, 2-40 gold, 4-80 electrum, and the balance, if any, will be silver); 30% for 1-6 gems of base value 50 gp; 20% for 1-4 potions; 15% for a +1 piece of armor; 15% for a +1 weapon; and 5% for a miscellaneous magic item valued under 10,000 gp.\\n\\nSpectators are summoned from Nirvana by monster summoning V and the sacrifice of 3 small eyes (or more) from a beholder. The spectator can be commanded only to guard some treasure. It will perform no other duty, and if commanded in some other way it will return to Nirvana immediately. If its guarded item(s) is ever destroyed or successfully stolen the spectator is released from service and may return to Nirvana. The summoner, of course, may take the item himself and thus release the spectator.\\n\\nThe spectator has a large central eye and 4 smaller eye stalks protruding from the top of its spherical body. The body surface is covered in tough hide and thus is armor class 4. Any general blow is 70% likely to hit the body. The body contains all of the beast's hit points. Hits on the eye stalks (AC 7) or the central eye (also AC 7) will occur 30% of the time (divided up as 20% for the eye stalks, 10% for the central eye). Any such hit destroys the eye. A spectator blinded in every eye cannot defend its treasure and will teleport to Nirvana. This is the only condition under which it will leave its post. Its eyes regenerate in 1 day and then it will return. If the treasure is gone the creature will return to Nirvana.\\n\\nThe beast has a general magic resistance of 5%. However, when the central eye is undamaged, it can reflect 1 spell fired at it per round and turn the spell back to the caster. This does not apply to touch spells of any kind. The reflection occurs only if the spectator makes a saving throw vs. spells. For example, if a magic-user casts a lightning bolt at a spectator, the spectator rolls a saving throw to see if the spell is reflected, and if it is not then it rolls for its magic resistance percentage. If this also fails, the lightning bolt does damage. The spell caster is allowed a normal saving throw vs. the reflected spell in all cases and only he or she must suffer any damage. Thus, in the above example, if the lightning bolt were reflected, only the magic-user could be hit by it, even if a familiar were sitting on the magic-user's shoulder. If the magic-user makes the saving throw, he or she takes no damage whatsoever! Reflection is possible only if the spell caster is standing in front of the central eye within the space of a 60 degree arc. Range is not a factor, since getting the spell to the spectator is the only consideration. The central eye can only reflect 1 spell per round, even if 2 spells arrive in the same segment.\\n\\nThese small eyes act by glance and are thus very fast. The other eyes have magical powers as follows: Eye 1: Create food and water. Obviously this is not an attack. Eye 2: Cause serious wounds. Inflicts 2d8+3 damage vs. a single figure at a range of 60 feet. A saving throw vs. spells is allowed and, if successful, only half-damage is sustained. Eye 3: Paralyzation ray. Range of 90 feet, one target only, duration 5-20 rounds. The spectator never attacks a paralyzed character or uses him or her for food. A paralyzed character might be allowed to go its own way if it is willing to leave in peace. Eye 4: Telepathy. Range 120 feet, 1 target only. Communication is possible in this way. The beast can also implant a suggestion if the target fails to make a saving throw. This suggestion is always to leave in peace.\\n\\nInitiative for the spectator is made rolling a 1d8 instead of a 1d6 in all cases. All three \\\"attack eyes\\\" can be brought into play. Causing wounds or paralyzation takes only 1 segment, as does the suggestion to leave in peace. Communication takes 2 segments. Creating the amount of food and water for a large meal (up to 6 persons) takes 1 full round.\\n\\nThe spectator can sense psionic disciplines, powers, and spell-like effects at a range of 240 feet, even through wood, although not through metal or stone. Thus, the spectator is difficult to surprise (only on a 1 on a 1d12). The spectator, being basically passive, will attempt to communicate and implant its suggestion as its first act unless it is immediately attacked. In close combat the spectator can bite for 2-5 points of damage.\\n\\nIf properly confronted, the spectator can be quite friendly. It will tell a party exactly what it is guarding early in any conversation so that there will be no argument! If its charge is not threatened it can be quite amiable and even talkative via telepathy.\\n\\nSpectators move by a very rapid levitation in any direction. They will drift aimlessly when asleep (20% likely when encountered), never touching the ground.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/spider_giant_marine.lua",
+   "content": "-- Spider, Giant Marine: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Spider, Giant Marine\",\n  page = \"113\",\n  pages = \"113\",\n  source = \"MM2\",\n  race = \"Spider, Giant Marine\",\n  hitDice = \"7+7\",\n  hitDiceNum = \"7\",\n  hitDiceBonus = \"7\",\n  avgHp = \"31\",\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"3-12\",\n  xp = \"650\",\n  xpPerHp = \"12\",\n  xpValue = \"1022\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-6\",\n  lairPct = \"70\",\n  treasure = \"Incidental only\",\n  move = \"15\\\"\",\n  size = \"L\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Poison\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Giant marine spiders inhabit shallow seas and ocean waters in semi-tropical and tropical areas. Much as their fresh water cousins do, giant marine spiders build from webs and vegetation huge air-filled underwater nests. They hide in seaweed, rush out and grab their prey, paralyze it by poisonous bite, and carry it back to the nest lairs. In all respects other than those noted above, giant marine spiders resemble giant water spiders (q.v.).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/spriggan.lua",
+   "content": "-- Spriggan: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Spriggan\",\n  page = \"113\",\n  pages = \"113\",\n  source = \"MM2\",\n  race = \"Spriggan\",\n  hitDice = \"4 (8+4)\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"0\",\n  avgHp = \"14\",\n  armorClass = \"3 (5)\",\n  numAttacks = 2,\n  damage = \"By weapon type (2-8/2-8)\",\n  xp = \"1000\",\n  xpPerHp = \"10\",\n  xpValue = \"1140\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"3-12\",\n  lairPct = \"30\",\n  treasure = \"A\",\n  move = \"9\\\" (15\\\")\",\n  size = \"S, 3' tall (L, 12' tall)\",\n  intelligence = \"Average exceptional\",\n  alignment = \"Chaotic (evil)\",\n  specialAttacks = \"Spells, thief abilities\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These ugly, dour cousins of the gnomes are found near isolated communities or in uninhabited areas. They dwell in burrows or ruins. They are able to become giant-sized (gaining the appropriate statistics as given in parentheses above) to terrorize, rob, and otherwise work vile deeds. They hate only gnomes more than humankind, and they associate only with their own ilk. In addition to their usual attack forms, a spriggan can use the following spell-like powers at will, 1 at a time 1 per round: affect normal fires, assume giant size, scare at -2 on saving throws due to ugliness, shatter.\\n\\nIn giant-sized form a spriggan can no longer cast other magic, but small size can be regained at will. All spriggans in small form have the abilities of an 8th-level gnome thief of 18 dexterity. They can pick pockets (75%), open locks (78%), find/remove traps (70%), move silently (77%), hide in shadows (64%), hear noise (35%), climb walls (81%), read languages (40%). Back stabbing is for triple dagger damage and can only be performed in small form.\\n\\nIn small form spriggans are basically thieves, while in large form they are giant bandits. It is quite possible for a group of these creatures to be of mixed sizes if it aids their nefarious ends.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/squealer.lua",
+   "content": "-- Squealer: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Squealer\",\n  page = \"113-114\",\n  pages = \"113-114\",\n  source = \"MM2\",\n  race = \"Squealer\",\n  hitDice = \"12\",\n  hitDiceNum = \"12\",\n  hitDiceBonus = \"0\",\n  avgHp = \"42\",\n  armorClass = \"6\",\n  numAttacks = 3,\n  damage = \"7-12/1-3/1-3\",\n  xp = \"3000\",\n  xpPerHp = \"16\",\n  xpValue = \"3672\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1 (or 2-4)\",\n  lairPct = \"15\",\n  treasure = \"See below\",\n  move = \"12\\\" @ 9\\\"\",\n  size = \"L\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Camouflage\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Squealers inhabit only temperate to tropical forests. They are usually solitary, although there is a 10% chance that an encounter with a mated pair (and up to 2 young) will occur. Young have 1-2 hit points per die and can bite only, doing 1-4 points of damage.\\n\\nAlthough a squealer cares nothing for treasure, most prey will be dragged near the lair to be devoured, so there can be items of value there. A squealer can imitate many sounds perfectly, so it will imitate the distress calls, death shrieks, mating calls, etc., of other creatures to attract prey. Squealers are voracious beasts and will attack any other carnivores or herbivores. Typically, the squealer will crouch upon a low branch, and, when a victim comes near, the monster will grasp the limb it is upon with 3 of its appendages and swing head down to bite and claw its prey. If both claw attacks succeed, the squealer has grasped and held its victim and will fall upon it next round doing 5-8 points of crushing damage and 2 additional clawing attacks. The attack mode is bite, claw, claw, claw (7-12/1-3 x4). The squealer has 18/00 strength and weighs 400 or more pounds.\\n\\nWhen amidst foliage, the squealer's bulk is 75% invisible due to its coloration, stillness, and care in concealment. If attacking by surprise, the squealer adds +2 to each attack both to hit and to damage. It is 50% likely to surprise a victim. A squealer is very fierce. When full grown, it is about the size of a large gorilla and is a match for almost anything. The fur of a squealer is long and colored yellow and green in alternating splotches. Its form is topped by hunched shoulders and a thrust-forward, pig-like head. The head is about 2 feet long and is mostly mouth filled with sharp tushes. The arm-like forelimbs sprout from the hunched back, and the rear limbs come from high up on the hindquarters. The forelimbs are nearly 4 feet long and rear ones are 3 feet long. A 5th limb grows from the middle of the back, and its 4-foot length can be turned either forward or rearward. All limbs are tipped with 3 clawed digits. The forelimb and back appendage digits are prehensile.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/squirrel_giant_black.lua",
+   "content": "-- Squirrel, Giant Black: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Squirrel, Giant Black\",\n  page = \"114\",\n  pages = \"114\",\n  source = \"MM2\",\n  race = \"Squirrel\",\n  hitDice = \"1+1\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"1\",\n  avgHp = \"4\",\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-3\",\n  xp = \"20\",\n  xpPerHp = \"2\",\n  xpValue = \"28\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-12\",\n  lairPct = \"Nil\",\n  treasure = \"Incidental, see below\",\n  move = \"12\\\"\",\n  size = \"S (2' long)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Giant black squirrels are found only in old, dark forests possessed by Evil. These creatures are malicious and will attack weak or helpless creatures. They will steal from careless individuals if given the opportunity, taking small, shiny objects (coins, rings, jewelry, flasks, etc.) to secrete in their nests. Lairs are always in hollows of trees 20 feet or more above the ground. Treasure is incidental only. Common gray or red squirrels will bite only in self defense.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/squirrel_ordinary.lua",
+   "content": "-- Squirrel, Ordinary: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Squirrel, Ordinary\",\n  page = \"114\",\n  pages = \"114\",\n  source = \"MM2\",\n  race = \"Squirrel\",\n  hitDice = \"1 hp\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"1\",\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"1\",\n  xp = \"0\",\n  xpPerHp = \"0\",\n  xpValue = \"0\",\n  xpSource = \"mm2_print\",\n  frequency = \"Common\",\n  noAppearing = \"1-6\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"S\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Common gray or red squirrels will bite only in self defense.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/squirrel_carnivorous_flying.lua",
+   "content": "-- Squirrel, Carnivorous Flying: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Squirrel, Carnivorous Flying\",\n  page = \"114\",\n  pages = \"114\",\n  source = \"MM2\",\n  race = \"Squirrel\",\n  hitDice = \"1-7 hp\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"4\",\n  armorClass = \"7\",\n  numAttacks = 1,\n  damage = \"1-2\",\n  xp = \"10\",\n  xpPerHp = \"1\",\n  xpValue = \"14\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"3-18\",\n  lairPct = \"40\",\n  treasure = \"Incidental, see below\",\n  move = \"9\\\"/15\\\" (MC - special; E for short spaces)\",\n  size = \"S (1/2' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"\\\"Flying\\\" surprises on 4 in 6\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Flying squirrels \\\"fly\\\" by means of loose folds of skin on the inside of their fore and rear legs. In fact, they can only glide and cannot gain altitude once they have jumped. Their range is 5 feet for every foot of altitude from which they jump (usually a tree). If surprise is achieved during a flying attack, they make their initial attack as 2 hit dice monsters. They attack only when they have 2 to 1 odds or better. In their lair, a tree top nest, there can occasionally be found gems, jewelry and other small items that are bright and shiny. Thus, they could never have armor, shields, most weapons, potions, etc. Treasure is incidental only.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/stegocentipede.lua",
+   "content": "-- Stegocentipede: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Stegocentipede\",\n  page = \"114-115\",\n  pages = \"114-115\",\n  source = \"MM2\",\n  race = \"Stegocentipede\",\n  hitDice = \"9\",\n  hitDiceNum = \"9\",\n  hitDiceBonus = \"0\",\n  avgHp = \"31\",\n  armorClass = \"3/6\",\n  numAttacks = \"1 and 1\",\n  damage = \"2-8 and 3-12\",\n  xp = \"1700\",\n  xpPerHp = \"12\",\n  xpValue = \"2072\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"L (18' long)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Poison\",\n  specialDefenses = \"Spine armor\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"It is probable that stegocentipedes developed on some far removed parallel world or were the creation of some insane genetic manipulator. In either case, it is fortunate that these monsters are infrequently encountered. Although stegocentipedes are adaptable to both temperate and tropical conditions, they find nearly any habitat suitable. They tend to be sterile.\\n\\nThe chitinous plates running along the stegocentipede's spine give it armor class 3 in most (75%) combat situations. Its greater weight and legless tail portion make it move somewhat slower than others of its kind.\\n\\nThe monster hunts continually, rushing prey and seizing it in its huge mandibles. Poison is injected with each bite, and saving throws are applicable. The rear portion of the stegocentipede ends in a thinner, scorpion-like tail. This appendage is heavily armored at its terminus, effectively forming a ball-like club which can lash 6 feet in any direction to strike opponents. Worse still, this weapon also contains poison. Victims struck by the tail must save vs. poison or be slain. If they are not slain, they take 3-12 points of damage.\\n\\nThe stegocentipede raises its spine plates defensively and moves rapidly. The spiked plates at the front are such that any opponents attacking the creature's head are themselves subject to what is effectively a non-attack. If the attack is successful, (normal to-hit roll needed), it inflicts 1-6 hit points damage. Note that up to 3 attackers can be subject to this defense attack due to the stegocentipede's rapid defensive motions.\\n\\nStegocentipedes are about 2 feet high with back spines adding another 1 to 2 feet when erect. The chitinous plates are in double rows which flatten along the creature's back when it is not engaged in combat. Color is from light brown to gray-brown; green specimens have been reported. Each segment of a stegocentipede's body has a pair of legs except for the tail segment, which is elongated and specialized.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/stench_kow.lua",
+   "content": "-- Stench Kow: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Stench Kow\",\n  page = \"115\",\n  pages = \"115\",\n  source = \"MM2\",\n  race = \"Stench Kow\",\n  hitDice = \"3+3\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"3\",\n  avgHp = \"13\",\n  armorClass = \"2\",\n  numAttacks = 1,\n  damage = \"2-8\",\n  xp = \"150\",\n  xpPerHp = \"4\",\n  xpValue = \"202\",\n  xpSource = \"mm2_print\",\n  frequency = \"Common (hells only)\",\n  noAppearing = \"15-60\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"L (bison-sized)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Stench kine are the cattle of the Nine Hells. They roam the reeking plains, fiery fields, and even the wintry wastes of the lower hells. Some are found as far as the planes of Acheron, Gehenna, and even Hades. Much as do common herd animals, these odorous beasts form great herds, grazing on the noxious and poisonous growths of the vile terrain. A herd will contain 5-30 young, but these creatures have no attack form.\\n\\nFor every 5 beasts encountered, 1 will be a bull. Bulls have at least 6 points per hit die and never do less than 5 points of damage. They are treated as monsters of 6 hit dice. If any stench kow charges to attack and succeeds in hitting, damage is double (at least 10 points for a bull), and another to-hit roll is made for trampling, which causes 2-12 points of damage if successful. Charging requires at least a 1\\\" move. In general, only bulls will charge unless the herd is cornered.\\n\\nStench kine are immune to all forms (including magical) of cold, fire, poison, and poison gas. In close quarters, the odor of their breath and bodies is so foul that a saving throw vs. poison must be made, or individuals will be affected as if struck by a stinking cloud spell. This check must be made every 3 rounds of exposure for individuals not affected by the smell.\\n\\nStench kine resemble huge, misshapen bison. Bulls have large humps over the shoulders, and cows have smaller ones. Horns are long and downward curving. Heads are huge with pugged features, large round eyes, and lolling tongues. Coloration is dull orange with greenish, matted manes.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/stone_guardian.lua",
+   "content": "-- Stone Guardian: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Stone Guardian\",\n  page = \"115\",\n  pages = \"115\",\n  source = \"MM2\",\n  race = \"Stone Guardian\",\n  hitDice = \"4+4\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"4\",\n  avgHp = \"18\",\n  armorClass = \"2\",\n  numAttacks = 2,\n  damage = \"2-9/2-9\",\n  xp = \"550\",\n  xpPerHp = \"8\",\n  xpValue = \"694\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = \"100\",\n  treasure = \"See below\",\n  move = \"10\\\"\",\n  size = \"75% M, 25% L\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The stone guardian is a special type of golem-like figure. It is manufactured somewhat like a golem or a figurine of wondrous power by using enchant item, transmute mud to rock, magic mouth, detect invisibility, and limited wish or wish. (Note: detect invisibility is optional but no other detection spell may be substituted for it.) A figure of a creature from man- to ogre-size (smaller or larger will not work) is made of mud and given a heart of stone. The heart must have enchant an item cast on it. The mud is transmuted to rock and the wish is cast. Magic mouth is required so that it can be activated under precise circumstances. However, there is a 20% chance per activation that the precise instructions will be disregarded, and then the stone guardian will attack anything! A special ring of protection from stone guardians can be crafted at the same time a stone guardian is manufactured. This ring will keep the wearer and all others within a 10-foot radius immune to a guardian's attack. The ring will work only for the stone guardian(s) made at the time the ring was magicked and will be useless against other stone guardians.\\n\\nThe stone guardian takes only one-quarter damage from edged weapons, and normal missiles cannot harm it at all. It takes half-damage from cold, fire, and electrical-based spells. It cannot be poisoned, held, charmed, paralyzed, or affected by fear since it has no mind whatsoever and no living body. It will attack until destroyed. Stone to flesh, transmute rock to mud, stone shape, or dig spells will kill it instantly with no saving throw. A stone guardian can see and hear due to the power of the wish but can detect invisibility only if that spell is used in its creation.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/storoper.lua",
+   "content": "-- Storoper: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Storoper\",\n  page = \"115-116\",\n  pages = \"115-116\",\n  source = \"MM2\",\n  race = \"Storoper\",\n  hitDice = \"6\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"0\",\n  avgHp = \"21\",\n  armorClass = \"0\",\n  numAttacks = 1,\n  damage = \"1-10\",\n  xp = \"500\",\n  xpPerHp = \"6\",\n  xpValue = \"626\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = \"90\",\n  treasure = \"M, N, Qx2\",\n  move = \"1\\\"\",\n  size = \"M\",\n  intelligence = \"High\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"6; see below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The storoper (from \\\"stone roper,\\\" also called \\\"tar roper\\\") is about 5 feet high and 2 feet in diameter and appears to be a small statue of a roper. It is a cigar-shaped creature with 6 tentacles and a gaping maw, and it weighs about 500 pounds. The storoper has a silicon-based, rock-like body. It can sense movement up to 200 feet away and will become perfectly still, resembling a statue.\\n\\nIf anything approaches within 50 feet of the storoper, it will attack by suddenly shooting out its tentacles; it prefers to attack 2 victims at once, each with 3 tentacles. The first 2 victims successfully attacked will be injected with the storoper's venom (through the tentacles - no saving throw). The victims will be immobilized; in fact, they will appear to have turned to stone! One round after the \\\"petrification,\\\" the victims will recover, but they are now drugged and will fight to aid the storoper to the best of their ability! If the storoper is killed, its drugged \\\"defenders\\\" will stop attacking and wander about aimlessly until the venom wears off. This takes 10 turns. The storoper can inject victims only twice per day; thereafter its attacks are similar to those of a normal roper. Each hit by a tentacle causes weakness (50% loss of strength in 1-3 rounds), and during each round the victim (or victims) is dragged 10 feet closer to its maw. The chance to break these strong tentacles is double the character's chance to bend bars or lift gates (for example, a character with a strength of 15 has a 14% chance).\\n\\nBecause of their stony exteriors, normal missile fire will not injure storopers, but magic missiles and normal or magical hand-held weapons will. All spells, including those using lightning, cold, and fire, will do normal damage to the creature. Once dead, the storoper can be pried open using a chisel or an iron spike. Inside its gizzard may be found a few coins and possibly a small number of gems as well.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/sundew_giant.lua",
+   "content": "-- Sundew, Giant: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Sundew, Giant\",\n  page = \"116\",\n  pages = \"116\",\n  source = \"MM2\",\n  race = \"Sundew, Giant\",\n  hitDice = \"8\",\n  hitDiceNum = \"8\",\n  hitDiceBonus = \"0\",\n  avgHp = \"28\",\n  armorClass = \"7\",\n  numAttacks = \"Special\",\n  damage = \"1-3 (see below)\",\n  xp = \"1075\",\n  xpPerHp = \"10\",\n  xpValue = \"1355\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-4\",\n  lairPct = \"0\",\n  treasure = \"Nil\",\n  move = \"1\\\"\",\n  size = \"M\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Unlike its smaller cousin, this plant is almost sentient, being slightly aware of its surroundings. Preferring shaded, cool places to grow, the giant sundew grows only hair-like roots to lightly anchor it in place. Furthermore, it may at will withdraw these roots and pull itself along the ground with its sticky tendrils. It derives its sustenance primarily from the prey it catches.\\n\\nThe giant sundew is able to detect moving creatures by vibrations, and when anything moves within 5 feet of it, it will lash out with its tendrils. Its lump-like body is covered with hundreds of tendrils, and up to 6 may attack each creature in range each round. These tendrils end in sticky globs of sap. For every 3 tendrils that strike a victim, that victim will suffer a -1 on its subsequent to-hit rolls. This effect is cumulative, so that if 6 tendrils hit, the victim will be -2 on its to-hit roll. If a 20 is rolled to hit by the sundew, that tendril will have struck the character across the mouth and nose, clogging these with its sap. The character will suffocate in 2-4 rounds unless the sap is removed. In addition to its clogging effect, the sap is composed of a mild enzyme acid that will cause 1 point of damage per tendril each round until the tendril is broken. The chance these tendrils may be broken is the same as that for opening doors for each character, and each tendril should be checked individually. The sap will dissolve and become harmless if soaked with vinegar or alcohol (such as wine), and this is the only non-magical way to prevent suffocation. Due to the plant's sticky exterior, missile and fire-based attacks will only do half-damage.\\n\\nGiant sundews appear as 3-4 foot high mounds of grey-green tarry ropes or rags. Areas where they are found are often heavily fly-infested, and the air will often have a thick odor like sweet syrup.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/swan.lua",
+   "content": "-- Swan: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Swan\",\n  page = \"116\",\n  pages = \"116\",\n  source = \"MM2\",\n  race = \"Swan\",\n  hitDice = \"1+2\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"2\",\n  avgHp = \"5\",\n  armorClass = \"7\",\n  numAttacks = 3,\n  damage = \"1/1/1-2\",\n  xp = \"0\",\n  xpPerHp = \"0\",\n  xpValue = \"0\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1 or 2-16 (25%/75%)\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"3\\\"/18\\\" (MC:D)\",\n  size = \"M (8' wingspan)\",\n  intelligence = \"Animal +\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Surprised only 1 in 10\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These aquatic birds tend to inhabit areas which similar waterfowl frequent - rivers, ponds, lakes, and marshes. A single swan will always be male (a cob). It is only 25% probable that a lone swan will be encountered. Otherwise, encounters will be with mated pairs of cobs and pens (females) and their immature (but full-grown) cygnets. The latter will number 1-2 per mated pair. In situations where the swan's territory is invaded or the creatures actually attacked, both cob and pen will aggressively threaten or attack as circumstances warrant. Attack is by flying leap, a strong bill strike, and blows with both wings. This attack mode is 50% likely to blind and disorient an opponent so as to make any return attack in that melee round impossible. Also, swans (much as geese) have exceptional senses, so that the approach of any danger will be noted 90% of the time. If there are eggs, the nest will contain 1-3. If there are no eggs or nestlings, the swans will escape by swimming or flying when severe danger threatens.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/swanmay.lua",
+   "content": "-- Swanmay: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Swanmay\",\n  page = \"116-117\",\n  pages = \"116-117\",\n  source = \"MM2\",\n  race = \"Swanmay\",\n  hitDice = \"2 or more\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"0\",\n  avgHp = \"7\",\n  armorClass = \"7\",\n  numAttacks = \"As swan or human\",\n  damage = \"As swan or by weapon type\",\n  xp = \"0\",\n  xpPerHp = \"0\",\n  xpValue = \"0\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1 or 2-5\",\n  lairPct = \"Nil\",\n  treasure = \"See below\",\n  move = \"3\\\" or 15\\\" and/18\\\" (MC:D)\",\n  size = \"M\",\n  intelligence = \"High to genius\",\n  alignment = \"As ranger\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"2% per hit die\",\n  psionic = \"Unlikely\",\n  attackDefenseModes = \"See below\",\n  text = \"A swanmay is a human female who has the magical power to change herself into a swan. Although this power is conveyed through the sweemer of an item, no male is known to have ever possessed and successfully used a captured item of this sort. The power to become a swan is typically contained in a feather token or feathered garment (both of which become part of the feathering of the swan), or possibly a signet ring (which will become a band on the swan's leg).\\n\\nA swanmay can be harmed only by +1 or better magic weapons when in swan form. Also, in that form, she has a magic resistance of 2% per hit die. In human form, all swanmays are rangers. Thus, they possess all of the characteristics and abilities of that subclass of fighters. To find the level of a swanmay, 2d6 are rolled, and this shows the level between 1st (2) and 11th (12), i.e., 3 indicates a 2nd level swanmay/ranger, 4 a 3rd level, etc. Although rangers, swanmays are principally attuned to solitude, nature, and the company of their adopted kind. Thus, while they might aid good persons in need, they otherwise shun humanity and civilization, and abhor subterranean places even more than enclosed places above ground. They attract no followers. The swanmay may possess psionics as a normal human.\\n\\nWhen encountered, a swanmay will have light armor and attendant gear, bow and arrows, sword, and dagger carefully hidden somewhere nearby. These items will not usually be magical. Swanmays are typically friendly with the little folk of the woods, such as sylvan elves, dryads, and like creatures. They dislike noisy, brash creatures, ferocious beasts, and all Evil. Only druids are known to associate regularly with swanmays, and then only because of the latter's desire for druidical assistance against some evil.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/swordfish.lua",
+   "content": "-- Swordfish: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Swordfish\",\n  page = \"117\",\n  pages = \"117\",\n  source = \"MM2\",\n  race = \"Swordfish\",\n  hitDice = \"1+1, 2+2, or 3+3\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"1\",\n  avgHp = \"4\",\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"2-12, 3-12, or 4-16\",\n  xp = \"35\",\n  xpPerHp = \"3\",\n  xpValue = \"47\",\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-8\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"//24\\\"\",\n  size = \"M to L (2+2 or 3+3)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These hardy fish are common to salt water. They are fast and generally nonaggressive, fleeing rather than fighting. However, if attacked, maddened, or controlled or trained, they will use their long, bony \\\"sword\\\" as a fearsome weapon. Swordfish of smaller size are typically kept as pets and used as guards by aquatic elves and dolphin communities.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/taer.lua",
+   "content": "-- Taer: promoted by the R813 MM2 letter S walk round\n-- from the MM2 print\n-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Taer\",\n  page = \"117\",\n  pages = \"117\",\n  source = \"MM2\",\n  race = \"Taer\",\n  hitDice = \"3+6\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"6\",\n  avgHp = \"16\",\n  armorClass = \"4\",\n  numAttacks = \"3 or 1\",\n  damage = \"1-6/1-4/1-4 or weapon\",\n  xp = \"150\",\n  xpPerHp = \"4\",\n  xpValue = \"214\",\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"11-30\",\n  lairPct = \"40\",\n  treasure = \"See below\",\n  move = \"18\\\"\",\n  size = \"M (6-1/2' tall)\",\n  intelligence = \"Low (very cunning)\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Stench\",\n  specialDefenses = \"Immune to cold\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The vile race of taers inhabits the coldest mountain regions, dwelling in caves and continually hunting for food. Normal attack is by kick, punch, and bite, although 50% of these creatures will have crude spears which they will hurl prior to closing for melee. Spear hurling is at +1 to hit and +3 to damage.\\n\\nThe taers ooze a fatty excretion which has a particularly vile odor. Any creature within 10 feet of a taer must save vs. breath weapon or suffer a disorientation and nausea which will last for 2-5 hours. Attacks will be penalized by -2 to hit probability and -1 damage. This same secretion aids these creatures to withstand cold, even of the magical sort.\\n\\nTaers' treasure is typically a collection of polished teeth, horns, and crudely sculpted stone idols. There is a 15% chance for real treasure captured from some human victims. If such treasure does exist, there is a 10% chance for 1 magic item to be included, especially a weapon.\\n\\nTaers resemble white-haired, greasy, shaggy cavemen. They might, in fact, be some kin to mankind. Hair color is gray to snow white. The head is large but has virtually no forehead.\",\n}\n"
+  }
+ ],
+ "consts": [
+  {
+   "name": "mm2sRound",
+   "value": 813,
+   "comment": "The MM2 letter S walk round: the sandling to taer turns, the SEVENTH single-letter pass (Curtiss Go call on the landed letter R walk)"
+  },
+  {
+   "name": "mm2sRegistryBefore",
+   "value": 733,
+   "comment": "The registry census before the R813 promotion (the landed R812 count)"
+  },
+  {
+   "name": "mm2sRegistryAfter",
+   "value": 766,
+   "comment": "The registry census after the R813 promotion (33 defs riding the R791 data_files extension)"
+  },
+  {
+   "name": "mm2sDefCount",
+   "value": 33,
+   "comment": "The 33 letter S defs promoted this round"
+  },
+  {
+   "name": "mm2sEntryCount",
+   "value": 29,
+   "comment": "The 29 letter S entry heads (the shedu greater head is prior-owned, no def of its own)"
+  },
+  {
+   "name": "mm2sStatBlockHeadings",
+   "value": 34,
+   "comment": "The 34 letter S stat blocks (33 promoted defs plus the prior-owned greater shedu head block)"
+  },
+  {
+   "name": "mm2sDoctrineHeads",
+   "value": 0,
+   "comment": "No doctrine-only family heads in the letter S walk"
+  },
+  {
+   "name": "mm2sLetterSHeadings",
+   "value": 29,
+   "comment": "The 29 letter S index entries"
+  },
+  {
+   "name": "mm2sSStatRows",
+   "value": 33,
+   "comment": "The 33-row SStats stat grid"
+  },
+  {
+   "name": "mm2sGapClosed",
+   "value": 24,
+   "comment": "The gap census after the S-FLIP: 24 boxes closed"
+  },
+  {
+   "name": "mm2sGapOpen",
+   "value": 13,
+   "comment": "The gap census after the S-FLIP: 13 boxes open"
+  },
+  {
+   "name": "mm2sPriorOwnedEntries",
+   "value": 1,
+   "comment": "The one prior-owned letter S head: the greater shedu - the MM1 s/shedu.lua print owns it, head pins only, no def"
+  },
+  {
+   "name": "mm2sSandlingXpValue",
+   "value": 141,
+   "comment": "The Sandling xpValue (the print 4 base 85 + 4/hp x avgHp 14)"
+  },
+  {
+   "name": "mm2sSandlingXpLevel",
+   "value": 3,
+   "comment": "The Sandling xp level"
+  },
+  {
+   "name": "mm2sScorpionLargeXpValue",
+   "value": 117,
+   "comment": "The Scorpion, Large xpValue (the print 2+2 base 90 + 3/hp x avgHp 9)"
+  },
+  {
+   "name": "mm2sScorpionLargeXpLevel",
+   "value": 3,
+   "comment": "The Scorpion, Large xp level"
+  },
+  {
+   "name": "mm2sScorpionHugeXpValue",
+   "value": 255,
+   "comment": "The Scorpion, Huge xpValue (the print 4+4 base 165 + 5/hp x avgHp 18)"
+  },
+  {
+   "name": "mm2sScorpionHugeXpLevel",
+   "value": 4,
+   "comment": "The Scorpion, Huge xp level"
+  },
+  {
+   "name": "mm2sScumCreeperXpValue",
+   "value": 19,
+   "comment": "The Scum Creeper xpValue (the print 1 (2-8 hp) base 14 + 1/hp x avgHp 5)"
+  },
+  {
+   "name": "mm2sScumCreeperXpLevel",
+   "value": 1,
+   "comment": "The Scum Creeper xp level"
+  },
+  {
+   "name": "mm2sSelkieXpValue",
+   "value": 127,
+   "comment": "The Selkie xpValue (the print 3+3 base 75 + 4/hp x avgHp 13)"
+  },
+  {
+   "name": "mm2sSelkieXpLevel",
+   "value": 3,
+   "comment": "The Selkie xp level"
+  },
+  {
+   "name": "mm2sShadeXpValue",
+   "value": 0,
+   "comment": "The Shade xpValue (the print As original class and level base 0 + 0/hp x avgHp 0)"
+  },
+  {
+   "name": "mm2sShadeXpLevel",
+   "value": 0,
+   "comment": "The Shade xp level"
+  },
+  {
+   "name": "mm2sSirineXpValue",
+   "value": 490,
+   "comment": "The Sirine xpValue (the print 4-7 base 350 + 10/hp x avgHp 14)"
+  },
+  {
+   "name": "mm2sSirineXpLevel",
+   "value": 5,
+   "comment": "The Sirine xp level"
+  },
+  {
+   "name": "mm2sSkeletonAnimalXpValue",
+   "value": 12,
+   "comment": "The Skeleton, Animal xpValue (the print 1-1 base 10 + 1/hp x avgHp 2)"
+  },
+  {
+   "name": "mm2sSkeletonAnimalXpLevel",
+   "value": 1,
+   "comment": "The Skeleton, Animal xp level"
+  },
+  {
+   "name": "mm2sSkunkXpValue",
+   "value": 6,
+   "comment": "The Skunk xpValue (the print 1/4 base 4 + 1/hp x avgHp 2)"
+  },
+  {
+   "name": "mm2sSkunkXpLevel",
+   "value": 1,
+   "comment": "The Skunk xp level"
+  },
+  {
+   "name": "mm2sSlimeCreatureXpValue",
+   "value": 158,
+   "comment": "The Slime Creature xpValue (the print 3+2, 5+2, or 8+2 base 110 + 4/hp x avgHp 12)"
+  },
+  {
+   "name": "mm2sSlimeCreatureXpLevel",
+   "value": 3,
+   "comment": "The Slime Creature xp level"
+  },
+  {
+   "name": "mm2sSlimeOliveXpValue",
+   "value": 357,
+   "comment": "The Slime, Olive xpValue (the print 2+2 base 330 + 3/hp x avgHp 9)"
+  },
+  {
+   "name": "mm2sSlimeOliveXpLevel",
+   "value": 5,
+   "comment": "The Slime, Olive xp level"
+  },
+  {
+   "name": "mm2sSnakeConstrictorXpValue",
+   "value": 133,
+   "comment": "The Snake, Constrictor xpValue (the print 3+2 base 85 + 4/hp x avgHp 12)"
+  },
+  {
+   "name": "mm2sSnakeConstrictorXpLevel",
+   "value": 3,
+   "comment": "The Snake, Constrictor xp level"
+  },
+  {
+   "name": "mm2sSnakePoisonousXpValue",
+   "value": 279,
+   "comment": "The Snake, Poisonous xpValue (the print 2+1 base 255 + 3/hp x avgHp 8)"
+  },
+  {
+   "name": "mm2sSnakePoisonousXpLevel",
+   "value": 5,
+   "comment": "The Snake, Poisonous xp level"
+  },
+  {
+   "name": "mm2sSolarXpValue",
+   "value": 101195,
+   "comment": "The Solar xpValue (the print 177 hp base 95000 + 35/hp x avgHp 177)"
+  },
+  {
+   "name": "mm2sSolarXpLevel",
+   "value": 10,
+   "comment": "The Solar xp level"
+  },
+  {
+   "name": "mm2sSolifugidLargeXpValue",
+   "value": 137,
+   "comment": "The Solifugid, Large xpValue (the print 3+3 base 85 + 4/hp x avgHp 13)"
+  },
+  {
+   "name": "mm2sSolifugidLargeXpLevel",
+   "value": 3,
+   "comment": "The Solifugid, Large xp level"
+  },
+  {
+   "name": "mm2sSolifugidHugeXpValue",
+   "value": 357,
+   "comment": "The Solifugid, Huge xpValue (the print 5+5 base 225 + 6/hp x avgHp 22)"
+  },
+  {
+   "name": "mm2sSolifugidHugeXpLevel",
+   "value": 4,
+   "comment": "The Solifugid, Huge xp level"
+  },
+  {
+   "name": "mm2sSolifugidGiantXpValue",
+   "value": 566,
+   "comment": "The Solifugid, Giant xpValue (the print 6+6 base 350 + 8/hp x avgHp 27)"
+  },
+  {
+   "name": "mm2sSolifugidGiantXpLevel",
+   "value": 5,
+   "comment": "The Solifugid, Giant xp level"
+  },
+  {
+   "name": "mm2sSpectatorXpValue",
+   "value": 512,
+   "comment": "The Spectator xpValue (the print 4+4 base 350 + 9/hp x avgHp 18)"
+  },
+  {
+   "name": "mm2sSpectatorXpLevel",
+   "value": 5,
+   "comment": "The Spectator xp level"
+  },
+  {
+   "name": "mm2sSpiderGiantMarineXpValue",
+   "value": 1022,
+   "comment": "The Spider, Giant Marine xpValue (the print 7+7 base 650 + 12/hp x avgHp 31)"
+  },
+  {
+   "name": "mm2sSpiderGiantMarineXpLevel",
+   "value": 6,
+   "comment": "The Spider, Giant Marine xp level"
+  },
+  {
+   "name": "mm2sSprigganXpValue",
+   "value": 1140,
+   "comment": "The Spriggan xpValue (the print 4 (8+4) base 1000 + 10/hp x avgHp 14)"
+  },
+  {
+   "name": "mm2sSprigganXpLevel",
+   "value": 6,
+   "comment": "The Spriggan xp level"
+  },
+  {
+   "name": "mm2sSquealerXpValue",
+   "value": 3672,
+   "comment": "The Squealer xpValue (the print 12 base 3000 + 16/hp x avgHp 42)"
+  },
+  {
+   "name": "mm2sSquealerXpLevel",
+   "value": 5,
+   "comment": "The Squealer xp level"
+  },
+  {
+   "name": "mm2sSquirrelGiantBlackXpValue",
+   "value": 28,
+   "comment": "The Squirrel, Giant Black xpValue (the print 1+1 base 20 + 2/hp x avgHp 4)"
+  },
+  {
+   "name": "mm2sSquirrelGiantBlackXpLevel",
+   "value": 1,
+   "comment": "The Squirrel, Giant Black xp level"
+  },
+  {
+   "name": "mm2sSquirrelOrdinaryXpValue",
+   "value": 0,
+   "comment": "The Squirrel, Ordinary xpValue (the print 1 hp base 0 + 0/hp x avgHp 1)"
+  },
+  {
+   "name": "mm2sSquirrelOrdinaryXpLevel",
+   "value": 1,
+   "comment": "The Squirrel, Ordinary xp level"
+  },
+  {
+   "name": "mm2sSquirrelCarnivorousFlyingXpValue",
+   "value": 14,
+   "comment": "The Squirrel, Carnivorous Flying xpValue (the print 1-7 hp base 10 + 1/hp x avgHp 4)"
+  },
+  {
+   "name": "mm2sSquirrelCarnivorousFlyingXpLevel",
+   "value": 1,
+   "comment": "The Squirrel, Carnivorous Flying xp level"
+  },
+  {
+   "name": "mm2sStegocentipedeXpValue",
+   "value": 2072,
+   "comment": "The Stegocentipede xpValue (the print 9 base 1700 + 12/hp x avgHp 31)"
+  },
+  {
+   "name": "mm2sStegocentipedeXpLevel",
+   "value": 7,
+   "comment": "The Stegocentipede xp level"
+  },
+  {
+   "name": "mm2sStenchKowXpValue",
+   "value": 202,
+   "comment": "The Stench Kow xpValue (the print 3+3 base 150 + 4/hp x avgHp 13)"
+  },
+  {
+   "name": "mm2sStenchKowXpLevel",
+   "value": 3,
+   "comment": "The Stench Kow xp level"
+  },
+  {
+   "name": "mm2sStoneGuardianXpValue",
+   "value": 694,
+   "comment": "The Stone Guardian xpValue (the print 4+4 base 550 + 8/hp x avgHp 18)"
+  },
+  {
+   "name": "mm2sStoneGuardianXpLevel",
+   "value": 6,
+   "comment": "The Stone Guardian xp level"
+  },
+  {
+   "name": "mm2sStoroperXpValue",
+   "value": 626,
+   "comment": "The Storoper xpValue (the print 6 base 500 + 6/hp x avgHp 21)"
+  },
+  {
+   "name": "mm2sStoroperXpLevel",
+   "value": 6,
+   "comment": "The Storoper xp level"
+  },
+  {
+   "name": "mm2sSundewGiantXpValue",
+   "value": 1355,
+   "comment": "The Sundew, Giant xpValue (the print 8 base 1075 + 10/hp x avgHp 28)"
+  },
+  {
+   "name": "mm2sSundewGiantXpLevel",
+   "value": 7,
+   "comment": "The Sundew, Giant xp level"
+  },
+  {
+   "name": "mm2sSwanXpValue",
+   "value": 0,
+   "comment": "The Swan xpValue (the print 1+2 base 0 + 0/hp x avgHp 5)"
+  },
+  {
+   "name": "mm2sSwanXpLevel",
+   "value": 1,
+   "comment": "The Swan xp level"
+  },
+  {
+   "name": "mm2sSwanmayXpValue",
+   "value": 0,
+   "comment": "The Swanmay xpValue (the print 2 or more base 0 + 0/hp x avgHp 7)"
+  },
+  {
+   "name": "mm2sSwanmayXpLevel",
+   "value": 0,
+   "comment": "The Swanmay xp level"
+  },
+  {
+   "name": "mm2sSwordfishXpValue",
+   "value": 47,
+   "comment": "The Swordfish xpValue (the print 1+1, 2+2, or 3+3 base 35 + 3/hp x avgHp 4)"
+  },
+  {
+   "name": "mm2sSwordfishXpLevel",
+   "value": 2,
+   "comment": "The Swordfish xp level"
+  },
+  {
+   "name": "mm2sTaerXpValue",
+   "value": 214,
+   "comment": "The Taer xpValue (the print 3+6 base 150 + 4/hp x avgHp 16)"
+  },
+  {
+   "name": "mm2sTaerXpLevel",
+   "value": 3,
+   "comment": "The Taer xp level"
+  },
+  {
+   "name": "mm2sSandlingWaterGallons",
+   "value": 10,
+   "comment": "10 gallons or more of water cast upon a sandling acts as a slow spell and halves its damage"
+  },
+  {
+   "name": "mm2sSandlingWaterDamageMax",
+   "value": 8,
+   "comment": "The water-slowed sandling strikes for only one-half damage (1-8)"
+  },
+  {
+   "name": "mm2sSandlingFullSizeFeet",
+   "value": 10,
+   "comment": "A sandling grows until it reaches full size (10 feet in diameter)"
+  },
+  {
+   "name": "mm2sSandlingInfantSplitInches",
+   "value": 2,
+   "comment": "Tiny sandlings grow to about 2 inches in diameter before they split from the parent"
+  },
+  {
+   "name": "mm2sSandlingHugeReportsMultiplier",
+   "value": 3,
+   "comment": "Reports of huge sandlings 3 times as large as normal adults (unsubstantiated)"
+  },
+  {
+   "name": "mm2sScorpionLargeSaveBonus",
+   "value": 2,
+   "comment": "The poison of the large scorpion is weaker than normal (+2 on saving throw)"
+  },
+  {
+   "name": "mm2sScumFaceAttachChanceIn20",
+   "value": 20,
+   "comment": "1 in 20 scum creeper hits fasten the monster onto the face, blinding the victim"
+  },
+  {
+   "name": "mm2sScumAttachDamagePerRound",
+   "value": 1,
+   "comment": "Each round thereafter the attached scum creeper inflicts 1 point of damage automatically"
+  },
+  {
+   "name": "mm2sScumSaltDamagePerRound",
+   "value": 2,
+   "comment": "Rock salt causes 2 points of damage per round for 1-4 rounds"
+  },
+  {
+   "name": "mm2sScumSaltRoundsMin",
+   "value": 1,
+   "comment": "The saline effect lasts at least 1 round"
+  },
+  {
+   "name": "mm2sScumSaltRoundsMax",
+   "value": 4,
+   "comment": "The saline effect lasts at most 4 rounds"
+  },
+  {
+   "name": "mm2sSelkieUnarmedUnderwaterPct",
+   "value": 90,
+   "comment": "Selkies encountered underwater are 90% likely to be unarmed"
+  },
+  {
+   "name": "mm2sSelkieWeatherRestWeeks",
+   "value": 1,
+   "comment": "Weather spells require 1 week of rest between castings"
+  },
+  {
+   "name": "mm2sShadeRegenPerTurn",
+   "value": 1,
+   "comment": "Shades regain hit points at 1 hit point per turn"
+  },
+  {
+   "name": "mm2sShadeRegrowLimbsWeeksMin",
+   "value": 1,
+   "comment": "Shades regrow body parts lost in combat (save the head) in 1-4 weeks"
+  },
+  {
+   "name": "mm2sShadeRegrowLimbsWeeksMax",
+   "value": 4,
+   "comment": "Shades regrow body parts lost in combat (save the head) in 1-4 weeks"
+  },
+  {
+   "name": "mm2sShadeImagesMin",
+   "value": 2,
+   "comment": "A shade can create 2-5 shadow images"
+  },
+  {
+   "name": "mm2sShadeImagesMax",
+   "value": 5,
+   "comment": "A shade can create 2-5 shadow images"
+  },
+  {
+   "name": "mm2sShadeImageRangeFeet",
+   "value": 30,
+   "comment": "Shadow images act only within 30 feet of their creator"
+  },
+  {
+   "name": "mm2sShadeMrCapPct",
+   "value": 60,
+   "comment": "Magic resistance for a shade will never exceed 60%"
+  },
+  {
+   "name": "mm2sShadeHideBonusShadowyPct",
+   "value": 2,
+   "comment": "Shades with thieving ability gain 2% per level in shadowy conditions"
+  },
+  {
+   "name": "mm2sShadeHideBonusNightPct",
+   "value": 5,
+   "comment": "Shades with thieving ability gain 5% per level in night/dark conditions"
+  },
+  {
+   "name": "mm2sShadeBrightSavePenalty",
+   "value": 4,
+   "comment": "A shade in bright light makes all saves at -4 on the die"
+  },
+  {
+   "name": "mm2sSirineSongRangeInches",
+   "value": 3,
+   "comment": "The sirine song charms person at 3\" range"
+  },
+  {
+   "name": "mm2sSirineTouchIdiotInt",
+   "value": 2,
+   "comment": "A creature touched in melee by a sirine must save vs. poison or become an idiot (intelligence=2)"
+  },
+  {
+   "name": "mm2sSirineSaveAsLevel",
+   "value": 11,
+   "comment": "All sirine saving throws are made as 11th-level magic-users"
+  },
+  {
+   "name": "mm2sSirinePoisonSaveBonus",
+   "value": 2,
+   "comment": "Sirines save vs. poison with a +2 bonus"
+  },
+  {
+   "name": "mm2sSkeletonAnimalAnimateNum",
+   "value": 3,
+   "comment": "Animal skeletons are produced at the rate of 1-1/2 (3 halves) per experience level of the caster"
+  },
+  {
+   "name": "mm2sSkeletonAnimalAnimateDen",
+   "value": 2,
+   "comment": "Animal skeletons are produced at the rate of 1-1/2 per 2 experience levels of the caster"
+  },
+  {
+   "name": "mm2sSkeletonAnimalTurnDieSides",
+   "value": 8,
+   "comment": "Animal skeletons are turned at +1 in the cleric's favor, and 1d8+6 will be turned or destroyed"
+  },
+  {
+   "name": "mm2sSkeletonAnimalTurnDieBonus",
+   "value": 6,
+   "comment": "Animal skeletons are turned at +1 in the cleric's favor, and 1d8+6 will be turned or destroyed"
+  },
+  {
+   "name": "mm2sSkeletonAnimalTurnPlus",
+   "value": 1,
+   "comment": "Animal skeletons are turned as normal skeletons but at +1 in the cleric's favor"
+  },
+  {
+   "name": "mm2sSkunkMuskNauseaRoundsMin",
+   "value": 1,
+   "comment": "Those failing the musk save are nauseated for 1-4 rounds"
+  },
+  {
+   "name": "mm2sSkunkMuskNauseaRoundsMax",
+   "value": 4,
+   "comment": "Those failing the musk save are nauseated for 1-4 rounds"
+  },
+  {
+   "name": "mm2sSkunkBlindRoundsMin",
+   "value": 1,
+   "comment": "Each must save again vs. poison or be blinded for 1-4 rounds"
+  },
+  {
+   "name": "mm2sSkunkBlindRoundsMax",
+   "value": 4,
+   "comment": "Each must save again vs. poison or be blinded for 1-4 rounds"
+  },
+  {
+   "name": "mm2sSlimeCreatureInfectPct",
+   "value": 10,
+   "comment": "Slime creatures have a 10% chance of infecting their opponent with olive slime when a hit is scored"
+  },
+  {
+   "name": "mm2sSlimeCreatureTelepathyInches",
+   "value": 20,
+   "comment": "Slime creatures have telepathic communication with their own kind in a radius of up to 20\""
+  },
+  {
+   "name": "mm2sOliveSlimeNoticePct",
+   "value": 50,
+   "comment": "The attachment might (50%) be noticed by others in the vicinity"
+  },
+  {
+   "name": "mm2sOliveSlimeMetamorphDaysMin",
+   "value": 7,
+   "comment": "After 7-12 days the host begins a metamorphosis into vegetable creature"
+  },
+  {
+   "name": "mm2sOliveSlimeMetamorphDaysMax",
+   "value": 12,
+   "comment": "After 7-12 days the host begins a metamorphosis into vegetable creature"
+  },
+  {
+   "name": "mm2sOliveSlimeWasteHpPctPerDay",
+   "value": 10,
+   "comment": "Intake of food must be doubled or the host body wastes away (10% of hit points per day)"
+  },
+  {
+   "name": "mm2sSnakeConstrictorEscapePenalty",
+   "value": 1,
+   "comment": "A humanoid can escape coiling attack by a roll to open doors, penalized by +1 to the roll"
+  },
+  {
+   "name": "mm2sSnakePoisonRows",
+   "value": 7,
+   "comment": "The 7-row poisonous snake save-modifier table"
+  },
+  {
+   "name": "mm2sSnakePoisonSaveMod1",
+   "value": 3,
+   "comment": "Die roll 1-4: +3 modifier, sickness + incapacitation 2-8 days"
+  },
+  {
+   "name": "mm2sSnakePoisonSaveMod2",
+   "value": 2,
+   "comment": "Die roll 5-8: +2 modifier, death"
+  },
+  {
+   "name": "mm2sSnakePoisonSaveMod3",
+   "value": 1,
+   "comment": "Die roll 9-11: +1 modifier, 2-8 points of damage"
+  },
+  {
+   "name": "mm2sSnakePoisonSaveMod4",
+   "value": 0,
+   "comment": "Die roll 12-14: +/-0 modifier, 3-12 points of damage"
+  },
+  {
+   "name": "mm2sSnakePoisonSaveMod5",
+   "value": -1,
+   "comment": "Die roll 15-17: -1 modifier, sickness + incapacitation 1-4 days"
+  },
+  {
+   "name": "mm2sSnakePoisonSaveMod6",
+   "value": -2,
+   "comment": "Die roll 18-19: -2 modifier, sickness + incapacitation 2-12 days"
+  },
+  {
+   "name": "mm2sSnakePoisonSaveMod7",
+   "value": -3,
+   "comment": "Die roll 20: -3 modifier, death"
+  },
+  {
+   "name": "mm2sSolarRegenPerRound",
+   "value": 7,
+   "comment": "Solars regenerate at a rate of 7 hit points per round"
+  },
+  {
+   "name": "mm2sSolarFighterLevel",
+   "value": 17,
+   "comment": "Consider each solar a 17th+ level as a fighter"
+  },
+  {
+   "name": "mm2sSolarDexterity",
+   "value": 24,
+   "comment": "Consider each solar to have a dexterity of 24"
+  },
+  {
+   "name": "mm2sSolarSpellClassLevel",
+   "value": 12,
+   "comment": "Solars have spell-like abilities equal to a 12th level cleric, druid, magic-user and illusionist"
+  },
+  {
+   "name": "mm2sSolarBowRangeInches",
+   "value": 36,
+   "comment": "Each solar has a huge composite bow (36\" range)"
+  },
+  {
+   "name": "mm2sSolarSwordPlus",
+   "value": 5,
+   "comment": "The solar sword is equal to +5 with qualities of dancing and sharpness"
+  },
+  {
+   "name": "mm2sSolarWeaponPlusMinimum",
+   "value": 5,
+   "comment": "Only +5 or better weapons affect solars"
+  },
+  {
+   "name": "mm2sSolarSummonMin",
+   "value": 1,
+   "comment": "A solar can summon 1-2 ki-rin, phoenix or greater titans"
+  },
+  {
+   "name": "mm2sSolarSummonMax",
+   "value": 2,
+   "comment": "A solar can summon 1-2 ki-rin, phoenix or greater titans"
+  },
+  {
+   "name": "mm2sSolarReformDecades",
+   "value": 7,
+   "comment": "A destroyed solar's spirit re-forms a corporeal body in a full 7 decades"
+  },
+  {
+   "name": "mm2sSolifugidLegs",
+   "value": 10,
+   "comment": "Solifugids have 10 legs, the first pair ending in sucker-like clamps"
+  },
+  {
+   "name": "mm2sSolifugidBeakBonus",
+   "value": 3,
+   "comment": "The beak attack gains +3 on its to-hit roll against a held character"
+  },
+  {
+   "name": "mm2sSolifugidNocturnalPct",
+   "value": 60,
+   "comment": "Outdoors there is a 60% chance solifugids are of the nocturnal variety"
+  },
+  {
+   "name": "mm2sSolifugidDaylightPenalty",
+   "value": 2,
+   "comment": "Nocturnal solifugids attack at -2 when in daylight"
+  },
+  {
+   "name": "mm2sSolifugidSeverMargin",
+   "value": 3,
+   "comment": "The only way to break the grip is to sever a limb by rolling 3 or more above the number needed to hit"
+  },
+  {
+   "name": "mm2sSpectatorGuardYears",
+   "value": 101,
+   "comment": "Once given a task the spectator will guard for up to 101 years"
+  },
+  {
+   "name": "mm2sSpectatorGuardMagicItemPct",
+   "value": 90,
+   "comment": "The guarded treasure is 90% likely to be a magic item or worth at least 15,000 gp"
+  },
+  {
+   "name": "mm2sSpectatorTreasureValueGp",
+   "value": 15000,
+   "comment": "The guarded treasure is 90% likely to be a magic item or worth at least 15,000 gp"
+  },
+  {
+   "name": "mm2sSpectatorBodyHitPct",
+   "value": 70,
+   "comment": "Any general blow is 70% likely to hit the body"
+  },
+  {
+   "name": "mm2sSpectatorEyeHitPct",
+   "value": 30,
+   "comment": "Hits on the eye stalks or central eye occur 30% of the time (20% stalks, 10% central)"
+  },
+  {
+   "name": "mm2sSpectatorCentralReflectPerRound",
+   "value": 1,
+   "comment": "The central eye can reflect 1 spell per round back to the caster"
+  },
+  {
+   "name": "mm2sSpectatorInitiativeDie",
+   "value": 8,
+   "comment": "Spectator initiative is made rolling a 1d8 instead of a 1d6 in all cases"
+  },
+  {
+   "name": "mm2sSpectatorSenseRangeFeet",
+   "value": 240,
+   "comment": "The spectator senses psionic disciplines, powers and spell-like effects at 240 feet"
+  },
+  {
+   "name": "mm2sSpectatorEyeRegenDays",
+   "value": 1,
+   "comment": "The spectator's destroyed eyes regenerate in 1 day"
+  },
+  {
+   "name": "mm2sSprigganThiefLevel",
+   "value": 8,
+   "comment": "All spriggans in small form have the abilities of an 8th-level gnome thief of 18 dexterity"
+  },
+  {
+   "name": "mm2sSprigganDexterity",
+   "value": 18,
+   "comment": "All spriggans in small form have the abilities of an 8th-level gnome thief of 18 dexterity"
+  },
+  {
+   "name": "mm2sSprigganPickPocketsPct",
+   "value": 75,
+   "comment": "The spriggan thief percentages: pick pockets 75"
+  },
+  {
+   "name": "mm2sSprigganOpenLocksPct",
+   "value": 78,
+   "comment": "The spriggan thief percentages: open locks 78"
+  },
+  {
+   "name": "mm2sSprigganFindTrapsPct",
+   "value": 70,
+   "comment": "The spriggan thief percentages: find/remove traps 70"
+  },
+  {
+   "name": "mm2sSprigganMoveSilentlyPct",
+   "value": 77,
+   "comment": "The spriggan thief percentages: move silently 77"
+  },
+  {
+   "name": "mm2sSprigganHideShadowsPct",
+   "value": 64,
+   "comment": "The spriggan thief percentages: hide in shadows 64"
+  },
+  {
+   "name": "mm2sSprigganHearNoisePct",
+   "value": 35,
+   "comment": "The spriggan thief percentages: hear noise 35"
+  },
+  {
+   "name": "mm2sSprigganClimbWallsPct",
+   "value": 81,
+   "comment": "The spriggan thief percentages: climb walls 81"
+  },
+  {
+   "name": "mm2sSprigganReadLanguagesPct",
+   "value": 40,
+   "comment": "The spriggan thief percentages: read languages 40"
+  },
+  {
+   "name": "mm2sSprigganBackstabMultiplier",
+   "value": 3,
+   "comment": "Back stabbing is for triple dagger damage and can only be performed in small form"
+  },
+  {
+   "name": "mm2sSprigganScareSavePenalty",
+   "value": 2,
+   "comment": "The spriggan scare is at -2 on saving throws due to ugliness"
+  },
+  {
+   "name": "mm2sSquealerCamouflagePct",
+   "value": 75,
+   "comment": "When amidst foliage the squealer's bulk is 75% invisible"
+  },
+  {
+   "name": "mm2sSquealerSurprisePct",
+   "value": 50,
+   "comment": "The squealer is 50% likely to surprise a victim"
+  },
+  {
+   "name": "mm2sSquealerSurpriseBonus",
+   "value": 2,
+   "comment": "Attacking by surprise the squealer adds +2 to each attack both to hit and to damage"
+  },
+  {
+   "name": "mm2sSquealerCrushDamageMin",
+   "value": 5,
+   "comment": "A held victim takes 5-8 points of crushing damage the next round"
+  },
+  {
+   "name": "mm2sSquealerCrushDamageMax",
+   "value": 8,
+   "comment": "A held victim takes 5-8 points of crushing damage the next round"
+  },
+  {
+   "name": "mm2sSquealerWeightLb",
+   "value": 400,
+   "comment": "The squealer has 18/00 strength and weighs 400 or more pounds"
+  },
+  {
+   "name": "mm2sSquealerYoungHpPerDie",
+   "value": 2,
+   "comment": "Young squealers have 1-2 hit points per die and can bite only, doing 1-4 points of damage"
+  },
+  {
+   "name": "mm2sSquirrelGiantLairHeightFeet",
+   "value": 20,
+   "comment": "Giant black squirrel lairs are always in hollows of trees 20 feet or more above the ground"
+  },
+  {
+   "name": "mm2sSquirrelFlyingGlideRatio",
+   "value": 5,
+   "comment": "The flying squirrel range is 5 feet for every foot of altitude from which it jumps"
+  },
+  {
+   "name": "mm2sSquirrelFlyingSurpriseChanceIn6",
+   "value": 4,
+   "comment": "The carnivorous flying squirrel surprises on 4 in 6 during a flying attack"
+  },
+  {
+   "name": "mm2sSquirrelFlyingSurpriseHd",
+   "value": 2,
+   "comment": "If surprise is achieved during a flying attack they make their initial attack as 2 hit dice monsters"
+  },
+  {
+   "name": "mm2sSquirrelFlyingOddsMin",
+   "value": 2,
+   "comment": "Carnivorous flying squirrels attack only when they have 2 to 1 odds or better"
+  },
+  {
+   "name": "mm2sStegoPlateAcPct",
+   "value": 75,
+   "comment": "The chitinous plates give armor class 3 in most (75%) combat situations"
+  },
+  {
+   "name": "mm2sStegoTailDamageMin",
+   "value": 3,
+   "comment": "Victims not slain by the tail take 3-12 points of damage"
+  },
+  {
+   "name": "mm2sStegoTailDamageMax",
+   "value": 12,
+   "comment": "Victims not slain by the tail take 3-12 points of damage"
+  },
+  {
+   "name": "mm2sStegoSpikeDamageMin",
+   "value": 1,
+   "comment": "The spiked front plates inflict 1-6 hit points damage on attackers of the head"
+  },
+  {
+   "name": "mm2sStegoSpikeDamageMax",
+   "value": 6,
+   "comment": "The spiked front plates inflict 1-6 hit points damage on attackers of the head"
+  },
+  {
+   "name": "mm2sStegoSpikeAttackersMax",
+   "value": 3,
+   "comment": "Up to 3 attackers can be subject to the defense attack"
+  },
+  {
+   "name": "mm2sStegoTailReachFeet",
+   "value": 6,
+   "comment": "The tail club can lash 6 feet in any direction to strike opponents"
+  },
+  {
+   "name": "mm2sStenchKowBullsPer",
+   "value": 5,
+   "comment": "For every 5 beasts encountered, 1 will be a bull"
+  },
+  {
+   "name": "mm2sStenchKowBullHpPerDie",
+   "value": 6,
+   "comment": "Bulls have at least 6 points per hit die"
+  },
+  {
+   "name": "mm2sStenchKowBullMinDamage",
+   "value": 5,
+   "comment": "Bulls never do less than 5 points of damage"
+  },
+  {
+   "name": "mm2sStenchKowBullHd",
+   "value": 6,
+   "comment": "Bulls are treated as monsters of 6 hit dice"
+  },
+  {
+   "name": "mm2sStenchKowTrampleDamageMin",
+   "value": 2,
+   "comment": "The trampling to-hit causes 2-12 points of damage if successful"
+  },
+  {
+   "name": "mm2sStenchKowTrampleDamageMax",
+   "value": 12,
+   "comment": "The trampling to-hit causes 2-12 points of damage if successful"
+  },
+  {
+   "name": "mm2sStenchKowChargeDamageMultiplier",
+   "value": 2,
+   "comment": "A charging stench kow that hits does double damage (at least 10 points for a bull)"
+  },
+  {
+   "name": "mm2sStenchKowStenchCheckRounds",
+   "value": 3,
+   "comment": "The stinking cloud check must be made every 3 rounds of close-quarters exposure"
+  },
+  {
+   "name": "mm2sStenchKowChargeMoveInches",
+   "value": 1,
+   "comment": "Charging requires at least a 1\" move"
+  },
+  {
+   "name": "mm2sStenchKowHerdYoungMin",
+   "value": 5,
+   "comment": "A herd will contain 5-30 young, which have no attack form"
+  },
+  {
+   "name": "mm2sStenchKowHerdYoungMax",
+   "value": 30,
+   "comment": "A herd will contain 5-30 young, which have no attack form"
+  },
+  {
+   "name": "mm2sStoneGuardianDisregardPct",
+   "value": 20,
+   "comment": "There is a 20% chance per activation that the precise instructions will be disregarded"
+  },
+  {
+   "name": "mm2sStoneGuardianRingRadiusFeet",
+   "value": 10,
+   "comment": "The special ring keeps all within a 10-foot radius immune to its guardian's attack"
+  },
+  {
+   "name": "mm2sStoneGuardianEdgedDamageDivisor",
+   "value": 4,
+   "comment": "The stone guardian takes only one-quarter damage from edged weapons"
+  },
+  {
+   "name": "mm2sStoneGuardianElementDamageDivisor",
+   "value": 2,
+   "comment": "The stone guardian takes half-damage from cold, fire and electrical-based spells"
+  },
+  {
+   "name": "mm2sStoroperTentacles",
+   "value": 6,
+   "comment": "The storoper is a cigar-shaped creature with 6 tentacles and a gaping maw"
+  },
+  {
+   "name": "mm2sStoroperVenomUsesPerDay",
+   "value": 2,
+   "comment": "The storoper can inject victims only twice per day"
+  },
+  {
+   "name": "mm2sStoroperVenomDurationTurns",
+   "value": 10,
+   "comment": "The drugged defenders wander aimlessly until the venom wears off - 10 turns"
+  },
+  {
+   "name": "mm2sStoroperStrengthLossPct",
+   "value": 50,
+   "comment": "Each tentacle hit causes weakness (50% loss of strength in 1-3 rounds)"
+  },
+  {
+   "name": "mm2sStoroperDragFeetPerRound",
+   "value": 10,
+   "comment": "During each round the victim is dragged 10 feet closer to its maw"
+  },
+  {
+   "name": "mm2sStoroperSenseRangeFeet",
+   "value": 200,
+   "comment": "The storoper can sense movement up to 200 feet away"
+  },
+  {
+   "name": "mm2sStoroperAttackRangeFeet",
+   "value": 50,
+   "comment": "If anything approaches within 50 feet the storoper shoots out its tentacles"
+  },
+  {
+   "name": "mm2sSundewTendrilsPerVictim",
+   "value": 6,
+   "comment": "Up to 6 tendrils may attack each creature in range each round"
+  },
+  {
+   "name": "mm2sSundewToHitPenaltyPerTendrils",
+   "value": 3,
+   "comment": "For every 3 tendrils that strike, the victim suffers -1 on its subsequent to-hit rolls"
+  },
+  {
+   "name": "mm2sSundewToHitPenalty",
+   "value": 1,
+   "comment": "The cumulative to-hit penalty per 3 tendrils struck"
+  },
+  {
+   "name": "mm2sSundewSuffocateRoundsMin",
+   "value": 2,
+   "comment": "A mouth-and-nose-clogged character suffocates in 2-4 rounds unless the sap is removed"
+  },
+  {
+   "name": "mm2sSundewSuffocateRoundsMax",
+   "value": 4,
+   "comment": "A mouth-and-nose-clogged character suffocates in 2-4 rounds unless the sap is removed"
+  },
+  {
+   "name": "mm2sSundewEnzymeDamage",
+   "value": 1,
+   "comment": "The sap enzyme acid causes 1 point of damage per tendril each round until the tendril is broken"
+  },
+  {
+   "name": "mm2sSwanBlindPct",
+   "value": 50,
+   "comment": "The swan attack mode is 50% likely to blind and disorient an opponent"
+  },
+  {
+   "name": "mm2sSwanDangerSensePct",
+   "value": 90,
+   "comment": "The approach of any danger will be noted 90% of the time"
+  },
+  {
+   "name": "mm2sSwanSurpriseChanceIn10",
+   "value": 10,
+   "comment": "Swans are surprised only 1 in 10"
+  },
+  {
+   "name": "mm2sSwanEggsMin",
+   "value": 1,
+   "comment": "If there are eggs, the nest will contain 1-3"
+  },
+  {
+   "name": "mm2sSwanEggsMax",
+   "value": 3,
+   "comment": "If there are eggs, the nest will contain 1-3"
+  },
+  {
+   "name": "mm2sSwanCygnetsMin",
+   "value": 1,
+   "comment": "Immature cygnets number 1-2 per mated pair"
+  },
+  {
+   "name": "mm2sSwanCygnetsMax",
+   "value": 2,
+   "comment": "Immature cygnets number 1-2 per mated pair"
+  },
+  {
+   "name": "mm2sSwanmayLevelDice",
+   "value": 2,
+   "comment": "To find the level of a swanmay, 2d6 are rolled"
+  },
+  {
+   "name": "mm2sSwanmayLevelMin",
+   "value": 1,
+   "comment": "The swanmay level runs between 1st (2) and 11th (12)"
+  },
+  {
+   "name": "mm2sSwanmayLevelMax",
+   "value": 11,
+   "comment": "The swanmay level runs between 1st (2) and 11th (12)"
+  },
+  {
+   "name": "mm2sSwanmayWeaponPlusMin",
+   "value": 1,
+   "comment": "A swanmay can be harmed only by +1 or better magic weapons when in swan form"
+  },
+  {
+   "name": "mm2sSwanmayMrPerHitDie",
+   "value": 2,
+   "comment": "In swan form she has a magic resistance of 2% per hit die"
+  },
+  {
+   "name": "mm2sTaerStenchRadiusFeet",
+   "value": 10,
+   "comment": "Any creature within 10 feet of a taer must save vs. breath weapon"
+  },
+  {
+   "name": "mm2sTaerStenchHoursMin",
+   "value": 2,
+   "comment": "The disorientation and nausea lasts 2-5 hours"
+  },
+  {
+   "name": "mm2sTaerStenchHoursMax",
+   "value": 5,
+   "comment": "The disorientation and nausea lasts 2-5 hours"
+  },
+  {
+   "name": "mm2sTaerToHitPenalty",
+   "value": 2,
+   "comment": "Attacks against a taer are penalized by -2 to hit probability"
+  },
+  {
+   "name": "mm2sTaerDamagePenalty",
+   "value": 1,
+   "comment": "Attacks against a taer are penalized by -1 damage"
+  },
+  {
+   "name": "mm2sTaerTreasurePct",
+   "value": 15,
+   "comment": "There is a 15% chance for real treasure captured from some human victims"
+  },
+  {
+   "name": "mm2sTaerMagicItemPct",
+   "value": 10,
+   "comment": "If such treasure exists, there is a 10% chance for 1 magic item to be included, especially a weapon"
+  },
+  {
+   "name": "mm2sTaerSpearPct",
+   "value": 50,
+   "comment": "50% of taers have crude spears which they hurl prior to closing for melee"
+  },
+  {
+   "name": "mm2sTaerSpearToHitBonus",
+   "value": 1,
+   "comment": "Spear hurling is at +1 to hit"
+  },
+  {
+   "name": "mm2sTaerSpearDamageBonus",
+   "value": 3,
+   "comment": "Spear hurling is at +3 to damage"
+  },
+  {
+   "name": "mm2sSheduGreaterHdNum",
+   "value": 14,
+   "comment": "The greater shedu prior-owned head: hit dice 14+14 (the MM1 s/shedu.lua print owns the def)"
+  },
+  {
+   "name": "mm2sSheduGreaterHdBonus",
+   "value": 14,
+   "comment": "The greater shedu prior-owned head: hit dice 14+14 (the MM1 s/shedu.lua print owns the def)"
+  },
+  {
+   "name": "mm2sSheduGreaterAc",
+   "value": 2,
+   "comment": "The greater shedu prior-owned head: armor class 2"
+  },
+  {
+   "name": "mm2sSheduGreaterMrPct",
+   "value": 50,
+   "comment": "The greater shedu prior-owned head: magic resistance 50%"
+  },
+  {
+   "name": "mm2sSheduGreaterMinorDisciplines",
+   "value": 7,
+   "comment": "The greater shedu has 7 minor and 4 major psionic disciplines"
+  },
+  {
+   "name": "mm2sSheduGreaterMajorDisciplines",
+   "value": 4,
+   "comment": "The greater shedu has 7 minor and 4 major psionic disciplines"
+  },
+  {
+   "name": "mm2sSheduGreaterMasteryLevel",
+   "value": 14,
+   "comment": "The greater shedu performs its disciplines at 14th level of mastery"
+  },
+  {
+   "name": "mm2sSheduGreaterPsionicMin",
+   "value": 120,
+   "comment": "The greater shedu prior-owned head: psionic ability 120-150"
+  },
+  {
+   "name": "mm2sSheduGreaterPsionicMax",
+   "value": 150,
+   "comment": "The greater shedu prior-owned head: psionic ability 120-150"
+  },
+  {
+   "name": "mm2sSheduGreaterXpValue",
+   "value": 6510,
+   "comment": "The greater shedu prior-owned head: IX/5250 + 20/hp x avgHp 63 (the floor formula)"
+  },
+  {
+   "name": "mm2sSheduGreaterXpLevel",
+   "value": 9,
+   "comment": "The greater shedu prior-owned head: IX/5250 + 20/hp"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2sSandlingTerritorial",
+   "value": true,
+   "comment": "Sandlings are savagely territorial and attack trespassers"
+  },
+  {
+   "name": "mm2sScorpionStingerLethal",
+   "value": true,
+   "comment": "If struck by the stinger the victim must save vs. poison or be instantly killed"
+  },
+  {
+   "name": "mm2sScumWallClimber",
+   "value": true,
+   "comment": "A scum creeper can move freely upon walls or ceilings"
+  },
+  {
+   "name": "mm2sSelkieLeaderSpellPowers",
+   "value": true,
+   "comment": "The old selkie leader can perform augury, cure light wounds, cure disease, weather summoning and control weather"
+  },
+  {
+   "name": "mm2sShadeUndying",
+   "value": true,
+   "comment": "Unless they meet with an accident or are killed, shades are undying"
+  },
+  {
+   "name": "mm2sShadeShadowWalk",
+   "value": true,
+   "comment": "All shades have the shadow-walk ability (the transport requires 1 full round)"
+  },
+  {
+   "name": "mm2sSirineGasImmune",
+   "value": true,
+   "comment": "Sirines are immune to all forms of gas"
+  },
+  {
+   "name": "mm2sSirineSongCharm",
+   "value": true,
+   "comment": "The sirine song will charm person all hostile creatures within hearing"
+  },
+  {
+   "name": "mm2sSkeletonAnimalEdgedHalf",
+   "value": true,
+   "comment": "Edged weapons inflict only one-half normal damage on animal skeletons"
+  },
+  {
+   "name": "mm2sSkeletonAnimalImmuneToMindSpells",
+   "value": true,
+   "comment": "Animal skeletons are immune to charm, cold, death magic, hold, and sleep"
+  },
+  {
+   "name": "mm2sSkunkMuskCloud",
+   "value": true,
+   "comment": "The skunk releases a 1\"x1\"x1\" cloud of stinking musk"
+  },
+  {
+   "name": "mm2sSlimeCreatureHarmedByAcid",
+   "value": true,
+   "comment": "Slime creatures are harmed by acid, freezing cold, fire and magic missile spells"
+  },
+  {
+   "name": "mm2sSlimeCreatureTrapLayer",
+   "value": true,
+   "comment": "Slime creatures can use their cunning to lay traps"
+  },
+  {
+   "name": "mm2sOliveSlimeCureDiseaseKills",
+   "value": true,
+   "comment": "Olive slime can be harmed only by acid, freezing cold, fire, or by a cure disease spell"
+  },
+  {
+   "name": "mm2sOliveSlimeNeutralizesGreenSlime",
+   "value": true,
+   "comment": "Green slime and olive slime will attack and neutralize each other"
+  },
+  {
+   "name": "mm2sSolarAcidImmune",
+   "value": true,
+   "comment": "Acid does not harm solars"
+  },
+  {
+   "name": "mm2sSolarNeverSurprised",
+   "value": true,
+   "comment": "Solars are never surprised and always strike first against opponents with less than 22 dexterity"
+  },
+  {
+   "name": "mm2sSolarDeathMagicImmune",
+   "value": true,
+   "comment": "Solars are immune to death spells, death magic and life level loss"
+  },
+  {
+   "name": "mm2sSolifugidFleeBrightLight",
+   "value": true,
+   "comment": "Nocturnal solifugids flee from lights brighter than a torch or lantern"
+  },
+  {
+   "name": "mm2sSpectatorCentralEyeReflect",
+   "value": true,
+   "comment": "When the central eye is undamaged it can reflect a fired spell (only within a 60 degree arc)"
+  },
+  {
+   "name": "mm2sSpectatorSummons",
+   "value": true,
+   "comment": "Spectators are summoned from Nirvana by monster summoning V and the sacrifice of 3 small beholder eyes"
+  },
+  {
+   "name": "mm2sSpiderMarineParalyticBite",
+   "value": true,
+   "comment": "The giant marine spider paralyzes its prey by poisonous bite and carries it back to the nest lair"
+  },
+  {
+   "name": "mm2sSquealerSoundImitation",
+   "value": true,
+   "comment": "A squealer can imitate many sounds perfectly to attract prey"
+  },
+  {
+   "name": "mm2sSquirrelGiantStealsShiny",
+   "value": true,
+   "comment": "Giant black squirrels steal small, shiny objects to secrete in their nests"
+  },
+  {
+   "name": "mm2sStegoTailPoison",
+   "value": true,
+   "comment": "Victims struck by the tail must save vs. poison or be slain"
+  },
+  {
+   "name": "mm2sStenchKowColdImmune",
+   "value": true,
+   "comment": "Stench kine are immune to all forms (including magical) of cold"
+  },
+  {
+   "name": "mm2sStenchKowFireImmune",
+   "value": true,
+   "comment": "Stench kine are immune to all forms (including magical) of fire"
+  },
+  {
+   "name": "mm2sStenchKowPoisonGasImmune",
+   "value": true,
+   "comment": "Stench kine are immune to all forms (including magical) of poison and poison gas"
+  },
+  {
+   "name": "mm2sStoneGuardianMissileImmune",
+   "value": true,
+   "comment": "Normal missiles cannot harm the stone guardian at all"
+  },
+  {
+   "name": "mm2sStoneGuardianMindless",
+   "value": true,
+   "comment": "The stone guardian cannot be poisoned, held, charmed, paralyzed or affected by fear - no mind, no living body"
+  },
+  {
+   "name": "mm2sStoneGuardianTransmuteKills",
+   "value": true,
+   "comment": "Stone to flesh, transmute rock to mud, stone shape or dig spells kill it instantly with no saving throw"
+  },
+  {
+   "name": "mm2sStoroperVenomNoSave",
+   "value": true,
+   "comment": "The first 2 victims successfully attacked are injected with venom through the tentacles - no saving throw"
+  },
+  {
+   "name": "mm2sStoroperMissileImmune",
+   "value": true,
+   "comment": "Normal missile fire will not injure storopers, but magic missiles and hand-held weapons will"
+  },
+  {
+   "name": "mm2sSundewHalfDamageFromMissiles",
+   "value": true,
+   "comment": "Due to the sticky exterior, missile and fire-based attacks only do half-damage"
+  },
+  {
+   "name": "mm2sSundewVinegarNeutralizes",
+   "value": true,
+   "comment": "The sap dissolves and becomes harmless if soaked with vinegar or alcohol"
+  },
+  {
+   "name": "mm2sSwanTerritorial",
+   "value": true,
+   "comment": "Both cob and pen will aggressively threaten or attack when the territory is invaded"
+  },
+  {
+   "name": "mm2sSwanmayRanger",
+   "value": true,
+   "comment": "In human form, all swanmays are rangers"
+  },
+  {
+   "name": "mm2sSwanmayNoFollowers",
+   "value": true,
+   "comment": "Swanmays attract no followers"
+  },
+  {
+   "name": "mm2sSwordfishTrainedGuards",
+   "value": true,
+   "comment": "Smaller swordfish are kept as pets and used as guards by aquatic elves and dolphin communities"
+  },
+  {
+   "name": "mm2sTaerColdImmune",
+   "value": true,
+   "comment": "The fatty excretion aids taers to withstand cold, even of the magical sort"
+  }
+ ],
+ "inline_count": 295,
+ "prev_record": [
+  "- R812 LANDED 2026-10-24: commit b8ecc5e33a1c7aeff534090ddcce065be18a5488",
+  "  (census 734 -> 735, pushed b08e12b..b8ecc5e), THE MM2 LETTER R WALK - THE",
+  "  RAT (ORDINARY AND VAPOR), RAVEN (ORDINARY, HUGE AND GIANT), RETCH PLANT",
+  "  AND ROCK REPTILE TURNS - THE R-FLIP ROUND (Curtiss single-letter Go call",
+  "  on the landed letter Q walk; round seventeen of the MM2 arc, the SIXTH",
+  "  single-letter pass).",
+  "THE PIN-TIME WALK: FOUR entries carrying SEVEN stat blocks on pp. 105-106 -",
+  "  the rat head with its two blocks p. 105 (the ordinary rat, the vapor rat),",
+  "  the raven (crow) variant table p. 105 (the ordinary, huge and giant",
+  "  columns), the retch plant and the rock reptile p. 106. No doctrine-only",
+  "  heads; no prior-owned entries (the r/ MM1 prints - rakshasa, ram, red",
+  "  dragon, remorhaz, roc, roper, rot grub, rust monster and the rest - are",
+  "  MM1 prints, not MM2 box entries). SEVEN .lua defs ride the R791 data_files",
+  "  extension, registry 726 -> 733. Header rules/mm2r.h, prefix mm2r, 63",
+  "  consts + 15 bools + ONE grid (the 7x10 RStats stat grid) = 88 inline. THE",
+  "  R-FLIP: the Letter R gap box flips to closed - 23 closed 14 open.",
+  "THE SETTLED READS (capture primary, the 1eonline transcription the cross-",
+  "  check voice): the ordinary rat and the ordinary raven 1/4 hit dice the",
+  "  flat-hp path (hdNum 0, avgHp 2, the ikiryo precedent; the rat I/2+1",
+  "  xpValue 4, the ordinary raven I/Nil xp 0 - the phantom precedent); the",
+  "  huge raven 1-1 the hdNum 1 bonus -1 read (avgHp 2, the buckawn precedent,",
+  "  II/30+1 the xpValue 32); the giant raven 3+2 (avgHp 12, III/60+4 the",
+  "  xpValue 108); the vapor rat 6 (or special) armor class and 12/6/1 multi-",
+  "  mode move the verbatim print cells (II/52+2 the xpValue 66); the retch",
+  "  plant 5-8 the first-number 5 read (avgHp 17, III/150+6 the xpValue 252,",
+  "  move Nil 0, Nil attacks floored at 1); the rock reptile the M-row V/400+7",
+  "  xpValue 519 with the L-row VI/600+9 (the xpValue 753) riding as consts.",
+  "THE R812 REPAIR (the R639/R400 repair flow, nothing landed, the same round",
+  "  number re-issued): the first cut carried the five percent-suffix lair",
+  "  cells verbatim (30% 25% 15% 10% 30%) and the preflight walked R812 bad 5 -",
+  "  the loader luaGetInt is a lua_isnumber-ONLY coercer, so a percent string",
+  "  reads 0, and only the R810 pech/pedipalp bare-numeral precedent settles",
+  "  those cells; the offline sim missed it because its luaGetInt replica",
+  "  wrongly applied firstIntIn to percent strings (rebuilt as an exact coercer",
+  "  replica that runs all 13 live checks per def - the sim lesson: replicate",
+  "  the coercer EXACTLY, firstIntIn only where the loader itself uses it); the",
+  "  mid-repair stalling point: the data_files extension is idempotent BY",
+  "  EXISTENCE - a re-issued spec never rewrites a stale .lua def, so the",
+  "  unwind (git checkout of the patched files + rm of the new header and defs)",
+  "  must precede the rerun, or the engine reads applied 0 already 13 against",
+  "  the first-cut tree.",
+  "ONE REGTEST PATCH: the R812 live def walk at the R227 anchor (the R811",
+  "  Q-walk pattern), its registry census a FLOOR 726 -> at least 733. LOCAL",
+  "  VERIFICATION (environment reset again - rebuilt from the tarball at",
+  "  b08e12ba, the r812 helpers rebuilt, the spec extracted from the landed",
+  "  canvas copy): engine double-run 13/0 -> 0/13; rverify GREEN vs b08e12ba -",
+  "  148 mutants, 0 missed (both cuts); offline loader sim GREEN - 733 defs 0",
+  "  errors, the 7-def 13-check walk 0 bad, raw-newline scan 0.",
+  "PREFLIGHT GREEN FIRST PASS (the repair cut): loaded 733, errors 0; xp audit",
+  "  733/0; R797 through R812 live defs all bad 0; AUDIT CENSUS 735 each",
+  "  exactly once, all bad 0; build 0 warnings. Commit 12 files, 2269",
+  "  insertions. Delivery spec-r812: raw JSON canvas, first cut md5",
+  "  16fafb57fdc3acf82f139939de48d72e 50755 bytes (RED, nothing landed), repair",
+  "  md5 682cb7c94d9b652648236bb50a4f58d8 51176 bytes, landed the same (no",
+  "  editor delta). NEXT - R813: awaits Curtiss's call (the natural next walk",
+  "  the Letter S box - the S entries span pp. 106-112, a likely multi-round",
+  "  letter; 14 open boxes remain)."
+ ]
+}

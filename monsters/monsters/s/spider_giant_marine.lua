@@ -1,0 +1,36 @@
+-- Spider, Giant Marine: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Spider, Giant Marine",
+  page = "113",
+  pages = "113",
+  source = "MM2",
+  race = "Spider, Giant Marine",
+  hitDice = "7+7",
+  hitDiceNum = "7",
+  hitDiceBonus = "7",
+  avgHp = "31",
+  armorClass = "4",
+  numAttacks = 1,
+  damage = "3-12",
+  xp = "650",
+  xpPerHp = "12",
+  xpValue = "1022",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-6",
+  lairPct = "70",
+  treasure = "Incidental only",
+  move = "15\"",
+  size = "L",
+  intelligence = "Semi-",
+  alignment = "Neutral",
+  specialAttacks = "Poison",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Giant marine spiders inhabit shallow seas and ocean waters in semi-tropical and tropical areas. Much as their fresh water cousins do, giant marine spiders build from webs and vegetation huge air-filled underwater nests. They hide in seaweed, rush out and grab their prey, paralyze it by poisonous bite, and carry it back to the nest lairs. In all respects other than those noted above, giant marine spiders resemble giant water spiders (q.v.).",
+}

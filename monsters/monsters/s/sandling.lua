@@ -1,0 +1,36 @@
+-- Sandling: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Sandling",
+  page = "106",
+  pages = "106",
+  source = "MM2",
+  race = "Sandling",
+  hitDice = "4",
+  hitDiceNum = "4",
+  hitDiceBonus = "0",
+  avgHp = "14",
+  armorClass = "3",
+  numAttacks = 1,
+  damage = "2-16",
+  xp = "85",
+  xpPerHp = "4",
+  xpValue = "141",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1",
+  lairPct = "65",
+  treasure = "Nil",
+  move = "12\" (6\")",
+  size = "L",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Immune to sleep, hold, charm and other mind influencing spells",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "A sandling appears to be an amorphous mass of moving, sliding sand. An adult sandling is a solitary creature, and it dwells in lonely sandy areas such as uninhabited deserts, siliceous caverns and deserted beaches. Sandlings are savagely territorial and will attack any creatures that trespass in their areas. They fight by slashing and lacerating with a coarse, abrasive pseudopod. Sandlings' flexible, shifting forms are difficult to damage by physical assault (thus the armor class of 3). If a sufficient quantity of water or other liquid (10 gallons or more) is cast upon the creature, it will have the same effects as a slow spell and the sandling will strike for only one-half damage (1-8).\n\nSandlings are apparently silicon-based creatures, and some sages believe that they originated on the Elemental Plane of Earth. A sandling grows until it reaches full size (10 feet in diameter), and then it begins to reproduce by budding. Tiny sandlings grow to about 2 inches in diameter before they split from the parent. An adult sandling's territory often swarms with thousands of infant sandlings, none larger than 1/2 foot in diameter. When one grows above this size, the parent sandling perceives it as a threat and kills it. When the parent sandling dies, the largest infant grows to take its place, killing all rivals (if it can). A group of sandling infants grouped together form an uneven surface and may trip an unwary creature.\n\nSandlings sense heat, sound and moisture. They dislike wetness and will burrow underground to avoid rain or water unless already defending their territories. There have been reports of huge sandlings 3 times as large as normal adults, but these reports have not been substantiated. Sandlings are always the same temperature as their surroundings and thus are invisible to infraction.",
+}

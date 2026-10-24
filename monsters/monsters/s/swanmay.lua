@@ -1,0 +1,36 @@
+-- Swanmay: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Swanmay",
+  page = "116-117",
+  pages = "116-117",
+  source = "MM2",
+  race = "Swanmay",
+  hitDice = "2 or more",
+  hitDiceNum = "2",
+  hitDiceBonus = "0",
+  avgHp = "7",
+  armorClass = "7",
+  numAttacks = "As swan or human",
+  damage = "As swan or by weapon type",
+  xp = "0",
+  xpPerHp = "0",
+  xpValue = "0",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 or 2-5",
+  lairPct = "Nil",
+  treasure = "See below",
+  move = "3\" or 15\" and/18\" (MC:D)",
+  size = "M",
+  intelligence = "High to genius",
+  alignment = "As ranger",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "2% per hit die",
+  psionic = "Unlikely",
+  attackDefenseModes = "See below",
+  text = "A swanmay is a human female who has the magical power to change herself into a swan. Although this power is conveyed through the sweemer of an item, no male is known to have ever possessed and successfully used a captured item of this sort. The power to become a swan is typically contained in a feather token or feathered garment (both of which become part of the feathering of the swan), or possibly a signet ring (which will become a band on the swan's leg).\n\nA swanmay can be harmed only by +1 or better magic weapons when in swan form. Also, in that form, she has a magic resistance of 2% per hit die. In human form, all swanmays are rangers. Thus, they possess all of the characteristics and abilities of that subclass of fighters. To find the level of a swanmay, 2d6 are rolled, and this shows the level between 1st (2) and 11th (12), i.e., 3 indicates a 2nd level swanmay/ranger, 4 a 3rd level, etc. Although rangers, swanmays are principally attuned to solitude, nature, and the company of their adopted kind. Thus, while they might aid good persons in need, they otherwise shun humanity and civilization, and abhor subterranean places even more than enclosed places above ground. They attract no followers. The swanmay may possess psionics as a normal human.\n\nWhen encountered, a swanmay will have light armor and attendant gear, bow and arrows, sword, and dagger carefully hidden somewhere nearby. These items will not usually be magical. Swanmays are typically friendly with the little folk of the woods, such as sylvan elves, dryads, and like creatures. They dislike noisy, brash creatures, ferocious beasts, and all Evil. Only druids are known to associate regularly with swanmays, and then only because of the latter's desire for druidical assistance against some evil.",
+}

@@ -1,0 +1,36 @@
+-- Squirrel, Ordinary: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Squirrel, Ordinary",
+  page = "114",
+  pages = "114",
+  source = "MM2",
+  race = "Squirrel",
+  hitDice = "1 hp",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "1",
+  armorClass = "8",
+  numAttacks = 1,
+  damage = "1",
+  xp = "0",
+  xpPerHp = "0",
+  xpValue = "0",
+  xpSource = "mm2_print",
+  frequency = "Common",
+  noAppearing = "1-6",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "9\"",
+  size = "S",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Common gray or red squirrels will bite only in self defense.",
+}

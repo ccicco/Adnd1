@@ -1,0 +1,36 @@
+-- Stegocentipede: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Stegocentipede",
+  page = "114-115",
+  pages = "114-115",
+  source = "MM2",
+  race = "Stegocentipede",
+  hitDice = "9",
+  hitDiceNum = "9",
+  hitDiceBonus = "0",
+  avgHp = "31",
+  armorClass = "3/6",
+  numAttacks = "1 and 1",
+  damage = "2-8 and 3-12",
+  xp = "1700",
+  xpPerHp = "12",
+  xpValue = "2072",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "15\"",
+  size = "L (18' long)",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Poison",
+  specialDefenses = "Spine armor",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "It is probable that stegocentipedes developed on some far removed parallel world or were the creation of some insane genetic manipulator. In either case, it is fortunate that these monsters are infrequently encountered. Although stegocentipedes are adaptable to both temperate and tropical conditions, they find nearly any habitat suitable. They tend to be sterile.\n\nThe chitinous plates running along the stegocentipede's spine give it armor class 3 in most (75%) combat situations. Its greater weight and legless tail portion make it move somewhat slower than others of its kind.\n\nThe monster hunts continually, rushing prey and seizing it in its huge mandibles. Poison is injected with each bite, and saving throws are applicable. The rear portion of the stegocentipede ends in a thinner, scorpion-like tail. This appendage is heavily armored at its terminus, effectively forming a ball-like club which can lash 6 feet in any direction to strike opponents. Worse still, this weapon also contains poison. Victims struck by the tail must save vs. poison or be slain. If they are not slain, they take 3-12 points of damage.\n\nThe stegocentipede raises its spine plates defensively and moves rapidly. The spiked plates at the front are such that any opponents attacking the creature's head are themselves subject to what is effectively a non-attack. If the attack is successful, (normal to-hit roll needed), it inflicts 1-6 hit points damage. Note that up to 3 attackers can be subject to this defense attack due to the stegocentipede's rapid defensive motions.\n\nStegocentipedes are about 2 feet high with back spines adding another 1 to 2 feet when erect. The chitinous plates are in double rows which flatten along the creature's back when it is not engaged in combat. Color is from light brown to gray-brown; green specimens have been reported. Each segment of a stegocentipede's body has a pair of legs except for the tail segment, which is elongated and specialized.",
+}

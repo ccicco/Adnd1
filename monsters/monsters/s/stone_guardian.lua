@@ -1,0 +1,36 @@
+-- Stone Guardian: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Stone Guardian",
+  page = "115",
+  pages = "115",
+  source = "MM2",
+  race = "Stone Guardian",
+  hitDice = "4+4",
+  hitDiceNum = "4",
+  hitDiceBonus = "4",
+  avgHp = "18",
+  armorClass = "2",
+  numAttacks = 2,
+  damage = "2-9/2-9",
+  xp = "550",
+  xpPerHp = "8",
+  xpValue = "694",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-4",
+  lairPct = "100",
+  treasure = "See below",
+  move = "10\"",
+  size = "75% M, 25% L",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The stone guardian is a special type of golem-like figure. It is manufactured somewhat like a golem or a figurine of wondrous power by using enchant item, transmute mud to rock, magic mouth, detect invisibility, and limited wish or wish. (Note: detect invisibility is optional but no other detection spell may be substituted for it.) A figure of a creature from man- to ogre-size (smaller or larger will not work) is made of mud and given a heart of stone. The heart must have enchant an item cast on it. The mud is transmuted to rock and the wish is cast. Magic mouth is required so that it can be activated under precise circumstances. However, there is a 20% chance per activation that the precise instructions will be disregarded, and then the stone guardian will attack anything! A special ring of protection from stone guardians can be crafted at the same time a stone guardian is manufactured. This ring will keep the wearer and all others within a 10-foot radius immune to a guardian's attack. The ring will work only for the stone guardian(s) made at the time the ring was magicked and will be useless against other stone guardians.\n\nThe stone guardian takes only one-quarter damage from edged weapons, and normal missiles cannot harm it at all. It takes half-damage from cold, fire, and electrical-based spells. It cannot be poisoned, held, charmed, paralyzed, or affected by fear since it has no mind whatsoever and no living body. It will attack until destroyed. Stone to flesh, transmute rock to mud, stone shape, or dig spells will kill it instantly with no saving throw. A stone guardian can see and hear due to the power of the wish but can detect invisibility only if that spell is used in its creation.",
+}

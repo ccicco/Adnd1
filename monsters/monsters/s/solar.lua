@@ -1,0 +1,36 @@
+-- Solar: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Solar",
+  page = "111-112",
+  pages = "111-112",
+  source = "MM2",
+  race = "Solar",
+  hitDice = "177 hp",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "177",
+  armorClass = "9",
+  numAttacks = 4,
+  damage = "By weapon type (+12 strength bonus)",
+  xp = "95000",
+  xpPerHp = "35",
+  xpValue = "101195",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "Nil",
+  move = "18\"/40\"//18\"",
+  size = "L (10' tall)",
+  intelligence = "Supra-genius; wisdom: 24",
+  alignment = "Good",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "85%",
+  psionic = "354",
+  attackDefenseModes = "All/all",
+  text = "A solar is the most powerful of spirits, usually directly serving a greater deity of good alignment and typically as his or her marshal, steward, etc. On rare occasions, a solar will be found attending a lesser deity. There are at least 24 solars. They can go to any place but do so only in service to their deities. As with devas (q.v.) and planetars (q.v.), solars can be of any good alignment - lawful, neutral, or chaotic. They are totally faithful and unswerving in their alignment and loyalty.\n\nEach solar has 4 attacks per melee round. Each has a huge composite bow (36\" range) and various arrows of slaying. Each also has a sword equal to a 2-handed weapon (usable only by solars) equal to +5 with qualities of dancing (q.v.) and sharpness (q.v.). The former function operates sans severing. For purposes of attack determination, consider each solar to have a dexterity of 24 and a 17th+ level as a fighter.\n\nAll solars have spell-like abilities equal to those of a 12th level cleric, druid, magic-user, and illusionist. In addition, they each have the following spell-like powers which can be used 1 at a time, 1 per round, at will: antipathy/sympathy (3/day); polymorph (any object, 1/day); animate object (3/day); power word (1/day); astral spell (1/day); polymorph self (1/day); confusion (3/day); prismatic spray (1/day); control weather; read magic; creeping doom (1/day); regenerate (1/day); Drawmij's instant summons (double effect); restoration (1/day); earthquake (3/day); resurrection (3/day); finger of death (1/day); shape change (3/day); fire storm (1/day); symbol (any, 3/day); holy word (3/day); teleport (no error); imprisonment (1/day); vanish (3/day); improved invisibility; vision (1/day); mass charm (3/day); wind walk (7/day); permanency (3/day); wish (1/day).\n\nEach solar can cast a globe of protection from evil (150% normal effect for +3/-3) from individual size to a full 70-foot radius, the size being willed but the protection otherwise maintained automatically. This sphere also serves as protection from normal missiles and a minor globe of invulnerability. A solar can commune as needed. Each can always cure (any sort) by touch, detect (any sort, automatically), and dispel (any sort) by gaze. When laying hands upon a creature, a solar can bestow perfect adaptation to any environment for up to as long as a century. Each solar automatically knows alignment. Each has communication ability via ESP or tongues, as well as the ability to read and comprehend any sort of language. Solar infravision extends to 24\" and ultraviolet to triple normal range. Hearing and normal vision are double human norm. Charisma effect is 24.\n\nA solar of lawful good service can summon 1-2 ki-rin; one of neutral good service 1-2 phoenix; and one of chaotic good service 1-2 greater titans. Such summons can be made once every hour. Once per day a solar can gate in either a planetar or double the indicated number of the appropriate sort of devas, the option resting with the solar.\n\nSolars are affected by the attack forms indicated for devas (q.v.) except that acid does not harm them. Only +5 or better weapons affect them. They are never surprised and always strike first against opponents with less than 22 dexterity. They are immune to life level loss from undead or magic. They cannot be beguiled, charmed, held, confused, dominated, feebleminded, paralyzed, or petrified. Their souls cannot be imprisoned or trapped. They are immune to death spells and death magic. They regenerate at a rate of 7 hit points per round. Unless on their own plane of service, only the material form of a solar can be destroyed. The solar's spirit returns instantly to its own plane to re-form a corporeal body, but this requires a full 7 decades. Solar psionic abilities are: animal telepathy (4th level); aura alteration; body equilibrium; body weaponry (12th level); mass domination (24th level); mind bar (24th level); molecular rearrangement (16th level); object reading; precognition; reduction (24th level); telekinesis (24th level); telepathic projection (24th level).\n\nThe skin of a solar is the color of molten copper, hair color is bronze, and eyes are glowing topaz. Its form is beautiful and muscular, and the deep, resonant voice is commanding. The wings are double and of a coppery-gold color.",
+}

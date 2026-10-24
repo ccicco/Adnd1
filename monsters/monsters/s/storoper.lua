@@ -1,0 +1,36 @@
+-- Storoper: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Storoper",
+  page = "115-116",
+  pages = "115-116",
+  source = "MM2",
+  race = "Storoper",
+  hitDice = "6",
+  hitDiceNum = "6",
+  hitDiceBonus = "0",
+  avgHp = "21",
+  armorClass = "0",
+  numAttacks = 1,
+  damage = "1-10",
+  xp = "500",
+  xpPerHp = "6",
+  xpValue = "626",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1",
+  lairPct = "90",
+  treasure = "M, N, Qx2",
+  move = "1\"",
+  size = "M",
+  intelligence = "High",
+  alignment = "Chaotic evil",
+  specialAttacks = "6; see below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The storoper (from \"stone roper,\" also called \"tar roper\") is about 5 feet high and 2 feet in diameter and appears to be a small statue of a roper. It is a cigar-shaped creature with 6 tentacles and a gaping maw, and it weighs about 500 pounds. The storoper has a silicon-based, rock-like body. It can sense movement up to 200 feet away and will become perfectly still, resembling a statue.\n\nIf anything approaches within 50 feet of the storoper, it will attack by suddenly shooting out its tentacles; it prefers to attack 2 victims at once, each with 3 tentacles. The first 2 victims successfully attacked will be injected with the storoper's venom (through the tentacles - no saving throw). The victims will be immobilized; in fact, they will appear to have turned to stone! One round after the \"petrification,\" the victims will recover, but they are now drugged and will fight to aid the storoper to the best of their ability! If the storoper is killed, its drugged \"defenders\" will stop attacking and wander about aimlessly until the venom wears off. This takes 10 turns. The storoper can inject victims only twice per day; thereafter its attacks are similar to those of a normal roper. Each hit by a tentacle causes weakness (50% loss of strength in 1-3 rounds), and during each round the victim (or victims) is dragged 10 feet closer to its maw. The chance to break these strong tentacles is double the character's chance to bend bars or lift gates (for example, a character with a strength of 15 has a 14% chance).\n\nBecause of their stony exteriors, normal missile fire will not injure storopers, but magic missiles and normal or magical hand-held weapons will. All spells, including those using lightning, cold, and fire, will do normal damage to the creature. Once dead, the storoper can be pried open using a chisel or an iron spike. Inside its gizzard may be found a few coins and possibly a small number of gems as well.",
+}

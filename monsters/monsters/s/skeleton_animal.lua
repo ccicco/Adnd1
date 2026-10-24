@@ -1,0 +1,36 @@
+-- Skeleton, Animal: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Skeleton, Animal",
+  page = "109",
+  pages = "109",
+  source = "MM2",
+  race = "Skeleton, Animal",
+  hitDice = "1-1",
+  hitDiceNum = "1",
+  hitDiceBonus = "-1",
+  avgHp = "2",
+  armorClass = "8",
+  numAttacks = 1,
+  damage = "1-4",
+  xp = "10",
+  xpPerHp = "1",
+  xpValue = "12",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "2-20",
+  lairPct = "85",
+  treasure = "See below",
+  move = "6\"",
+  size = "S to M",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Animal skeletons are animated from small vertebrate creatures by means of an animate dead spell. Animal skeletons are produced at the rate of 1-1/2 per experience level of the caster. They are typically created to serve as guardians of a minor sort. Thus, they will not usually have treasure nearby, save possibly that incidentally remaining from past encounters. Usual animal skeletons are from the size of domestic cats to the size of large dogs. (Nothing larger than a human can be animated by the spell.)\n\nAnimal skeletons have no special attack forms. They are, of course, immune to charm, cold, death magic, hold, and sleep. Blunt weapons inflict normal damage, but edged weapons inflict only one-half normal damage. They are turned as normal skeletons, but at +1 in the cleric's favor, and 1d8+6 will be turned or destroyed.",
+}

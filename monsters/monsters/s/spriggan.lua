@@ -1,0 +1,36 @@
+-- Spriggan: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Spriggan",
+  page = "113",
+  pages = "113",
+  source = "MM2",
+  race = "Spriggan",
+  hitDice = "4 (8+4)",
+  hitDiceNum = "4",
+  hitDiceBonus = "0",
+  avgHp = "14",
+  armorClass = "3 (5)",
+  numAttacks = 2,
+  damage = "By weapon type (2-8/2-8)",
+  xp = "1000",
+  xpPerHp = "10",
+  xpValue = "1140",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "3-12",
+  lairPct = "30",
+  treasure = "A",
+  move = "9\" (15\")",
+  size = "S, 3' tall (L, 12' tall)",
+  intelligence = "Average exceptional",
+  alignment = "Chaotic (evil)",
+  specialAttacks = "Spells, thief abilities",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These ugly, dour cousins of the gnomes are found near isolated communities or in uninhabited areas. They dwell in burrows or ruins. They are able to become giant-sized (gaining the appropriate statistics as given in parentheses above) to terrorize, rob, and otherwise work vile deeds. They hate only gnomes more than humankind, and they associate only with their own ilk. In addition to their usual attack forms, a spriggan can use the following spell-like powers at will, 1 at a time 1 per round: affect normal fires, assume giant size, scare at -2 on saving throws due to ugliness, shatter.\n\nIn giant-sized form a spriggan can no longer cast other magic, but small size can be regained at will. All spriggans in small form have the abilities of an 8th-level gnome thief of 18 dexterity. They can pick pockets (75%), open locks (78%), find/remove traps (70%), move silently (77%), hide in shadows (64%), hear noise (35%), climb walls (81%), read languages (40%). Back stabbing is for triple dagger damage and can only be performed in small form.\n\nIn small form spriggans are basically thieves, while in large form they are giant bandits. It is quite possible for a group of these creatures to be of mixed sizes if it aids their nefarious ends.",
+}

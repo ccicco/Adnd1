@@ -1,0 +1,36 @@
+-- Snake, Constrictor: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Snake, Constrictor",
+  page = "111",
+  pages = "111",
+  source = "MM2",
+  race = "Snake",
+  hitDice = "3+2",
+  hitDiceNum = "3",
+  hitDiceBonus = "2",
+  avgHp = "12",
+  armorClass = "6",
+  numAttacks = 2,
+  damage = "1/1-3",
+  xp = "85",
+  xpPerHp = "4",
+  xpValue = "133",
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-2",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "9\"",
+  size = "M (15' long)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Constriction",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Snakes of all sorts inhabit regions from the cold-temperate to tropical. Larger sorts (constrictors) are usually found only in subtropical climes.\n\nConstrictor: These snakes typically lay in wait for prey, preferring wooded areas or swamps. They attack by bite and coiling to constrict. A successful coiling attack indicates automatic constriction damage each round thereafter. Any creature of humanoid sort can escape from coiling attack by strength. This is indicated by a roll to open doors, penalized by +1 to the roll. (cf., \"Snake, Giant Constrictor.\")",
+}

@@ -142,7 +142,7 @@ the R614 precedent.
   under R; the archive.org heading walk found 2
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter S** (pp. 17-125) - the A-Z entries
+- [x] **Letter S** (pp. 17-125) - the A-Z entries
   under S; the archive.org heading walk found 13
   candidate entry headings - the pin-time walk from
   the print is authoritative

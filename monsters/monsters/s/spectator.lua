@@ -1,0 +1,36 @@
+-- Spectator: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Spectator",
+  page = "112-113",
+  pages = "112-113",
+  source = "MM2",
+  race = "Spectator",
+  hitDice = "4+4",
+  hitDiceNum = "4",
+  hitDiceBonus = "4",
+  avgHp = "18",
+  armorClass = "Body 4, eyes 7",
+  numAttacks = 1,
+  damage = "1",
+  xp = "350",
+  xpPerHp = "9",
+  xpValue = "512",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-2",
+  lairPct = "100",
+  treasure = "See below",
+  move = "10\" (MC:B)",
+  size = "L (4' diameter)",
+  intelligence = "Very to high",
+  alignment = "Lawful neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "5%",
+  psionic = "Special",
+  attackDefenseModes = "Nil/nil",
+  text = "The spectator is a guardian of places and treasures. Once it is given a task it will guard for up to 101 years and will let no one use, borrow, or examine an item or treasure. The treasure being guarded is 90% likely to be a magic item or have a value of at least 15,000 gp. If the spectator gains incidental treasure while performing its duty, this will not trouble its conscience and the treasure may be taken freely. Incidental treasure can amount to the following sums: 40% for 3-300 coins of mixed types (1-20 platinum, 2-40 gold, 4-80 electrum, and the balance, if any, will be silver); 30% for 1-6 gems of base value 50 gp; 20% for 1-4 potions; 15% for a +1 piece of armor; 15% for a +1 weapon; and 5% for a miscellaneous magic item valued under 10,000 gp.\n\nSpectators are summoned from Nirvana by monster summoning V and the sacrifice of 3 small eyes (or more) from a beholder. The spectator can be commanded only to guard some treasure. It will perform no other duty, and if commanded in some other way it will return to Nirvana immediately. If its guarded item(s) is ever destroyed or successfully stolen the spectator is released from service and may return to Nirvana. The summoner, of course, may take the item himself and thus release the spectator.\n\nThe spectator has a large central eye and 4 smaller eye stalks protruding from the top of its spherical body. The body surface is covered in tough hide and thus is armor class 4. Any general blow is 70% likely to hit the body. The body contains all of the beast's hit points. Hits on the eye stalks (AC 7) or the central eye (also AC 7) will occur 30% of the time (divided up as 20% for the eye stalks, 10% for the central eye). Any such hit destroys the eye. A spectator blinded in every eye cannot defend its treasure and will teleport to Nirvana. This is the only condition under which it will leave its post. Its eyes regenerate in 1 day and then it will return. If the treasure is gone the creature will return to Nirvana.\n\nThe beast has a general magic resistance of 5%. However, when the central eye is undamaged, it can reflect 1 spell fired at it per round and turn the spell back to the caster. This does not apply to touch spells of any kind. The reflection occurs only if the spectator makes a saving throw vs. spells. For example, if a magic-user casts a lightning bolt at a spectator, the spectator rolls a saving throw to see if the spell is reflected, and if it is not then it rolls for its magic resistance percentage. If this also fails, the lightning bolt does damage. The spell caster is allowed a normal saving throw vs. the reflected spell in all cases and only he or she must suffer any damage. Thus, in the above example, if the lightning bolt were reflected, only the magic-user could be hit by it, even if a familiar were sitting on the magic-user's shoulder. If the magic-user makes the saving throw, he or she takes no damage whatsoever! Reflection is possible only if the spell caster is standing in front of the central eye within the space of a 60 degree arc. Range is not a factor, since getting the spell to the spectator is the only consideration. The central eye can only reflect 1 spell per round, even if 2 spells arrive in the same segment.\n\nThese small eyes act by glance and are thus very fast. The other eyes have magical powers as follows: Eye 1: Create food and water. Obviously this is not an attack. Eye 2: Cause serious wounds. Inflicts 2d8+3 damage vs. a single figure at a range of 60 feet. A saving throw vs. spells is allowed and, if successful, only half-damage is sustained. Eye 3: Paralyzation ray. Range of 90 feet, one target only, duration 5-20 rounds. The spectator never attacks a paralyzed character or uses him or her for food. A paralyzed character might be allowed to go its own way if it is willing to leave in peace. Eye 4: Telepathy. Range 120 feet, 1 target only. Communication is possible in this way. The beast can also implant a suggestion if the target fails to make a saving throw. This suggestion is always to leave in peace.\n\nInitiative for the spectator is made rolling a 1d8 instead of a 1d6 in all cases. All three \"attack eyes\" can be brought into play. Causing wounds or paralyzation takes only 1 segment, as does the suggestion to leave in peace. Communication takes 2 segments. Creating the amount of food and water for a large meal (up to 6 persons) takes 1 full round.\n\nThe spectator can sense psionic disciplines, powers, and spell-like effects at a range of 240 feet, even through wood, although not through metal or stone. Thus, the spectator is difficult to surprise (only on a 1 on a 1d12). The spectator, being basically passive, will attempt to communicate and implant its suggestion as its first act unless it is immediately attacked. In close combat the spectator can bite for 2-5 points of damage.\n\nIf properly confronted, the spectator can be quite friendly. It will tell a party exactly what it is guarding early in any conversation so that there will be no argument! If its charge is not threatened it can be quite amiable and even talkative via telepathy.\n\nSpectators move by a very rapid levitation in any direction. They will drift aimlessly when asleep (20% likely when encountered), never touching the ground.",
+}

@@ -1,0 +1,36 @@
+-- Slime Creature: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Slime Creature",
+  page = "110",
+  pages = "110",
+  source = "MM2",
+  race = "Slime Creature",
+  hitDice = "3+2, 5+2, or 8+2",
+  hitDiceNum = "3",
+  hitDiceBonus = "2",
+  avgHp = "12",
+  armorClass = "9",
+  numAttacks = 1,
+  damage = "1-4 or 2-8 or 4-16",
+  xp = "110",
+  xpPerHp = "4",
+  xpValue = "158",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1 to 20",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "6\"",
+  size = "S, M, or L",
+  intelligence = "Animal (cunning)",
+  alignment = "Neutral",
+  specialAttacks = "Olive slime",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Slime creatures are the metamorphosed hosts of olive slime (q.v.). The new vegetable creature formed is linked symbiotically with the olive slime. Regardless of its former existence and despite its general form, a slime creature is only small, medium, or large - thus the variable hit dice and damage. Slime creatures gather together for mutual assistance in feeding and for defense. They can be identified only upon close examination.\n\nHabitat varies from well populated subterranean places to damp forests, swamps, etc. Slime creatures are equally at home on land or in warmish, shallow water. When attacking, slime creatures have a 10% chance of infecting their opponent with olive slime when a hit is scored. Slime creatures are harmed by acid, freezing cold, fire (of a magical sort only if water dwelling), and magic missile spells. Magical powers which affect plants also affect them. All other attack forms have no effect upon slime creatures.\n\nThe vegetable intelligence of slime creatures is of animal nature, but their cunning enables them to learn from experience. They also can use their cunning to lay traps. Slime creatures have limited telepathic communication with their own kind effective in a radius of up to 20\".",
+}

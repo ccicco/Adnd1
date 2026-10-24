@@ -1,0 +1,36 @@
+-- Squealer: promoted by the R813 MM2 letter S walk round
+-- from the MM2 print
+-- (spec tools/spec_r813.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Squealer",
+  page = "113-114",
+  pages = "113-114",
+  source = "MM2",
+  race = "Squealer",
+  hitDice = "12",
+  hitDiceNum = "12",
+  hitDiceBonus = "0",
+  avgHp = "42",
+  armorClass = "6",
+  numAttacks = 3,
+  damage = "7-12/1-3/1-3",
+  xp = "3000",
+  xpPerHp = "16",
+  xpValue = "3672",
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (or 2-4)",
+  lairPct = "15",
+  treasure = "See below",
+  move = "12\" @ 9\"",
+  size = "L",
+  intelligence = "Semi-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Camouflage",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Squealers inhabit only temperate to tropical forests. They are usually solitary, although there is a 10% chance that an encounter with a mated pair (and up to 2 young) will occur. Young have 1-2 hit points per die and can bite only, doing 1-4 points of damage.\n\nAlthough a squealer cares nothing for treasure, most prey will be dragged near the lair to be devoured, so there can be items of value there. A squealer can imitate many sounds perfectly, so it will imitate the distress calls, death shrieks, mating calls, etc., of other creatures to attract prey. Squealers are voracious beasts and will attack any other carnivores or herbivores. Typically, the squealer will crouch upon a low branch, and, when a victim comes near, the monster will grasp the limb it is upon with 3 of its appendages and swing head down to bite and claw its prey. If both claw attacks succeed, the squealer has grasped and held its victim and will fall upon it next round doing 5-8 points of crushing damage and 2 additional clawing attacks. The attack mode is bite, claw, claw, claw (7-12/1-3 x4). The squealer has 18/00 strength and weighs 400 or more pounds.\n\nWhen amidst foliage, the squealer's bulk is 75% invisible due to its coloration, stillness, and care in concealment. If attacking by surprise, the squealer adds +2 to each attack both to hit and to damage. It is 50% likely to surprise a victim. A squealer is very fierce. When full grown, it is about the size of a large gorilla and is a match for almost anything. The fur of a squealer is long and colored yellow and green in alternating splotches. Its form is topped by hunched shoulders and a thrust-forward, pig-like head. The head is about 2 feet long and is mostly mouth filled with sharp tushes. The arm-like forelimbs sprout from the hunched back, and the rear limbs come from high up on the hindquarters. The forelimbs are nearly 4 feet long and rear ones are 3 feet long. A 5th limb grows from the middle of the back, and its 4-foot length can be turned either forward or rearward. All limbs are tipped with 3 clawed digits. The forelimb and back appendage digits are prehensile.",
+}
