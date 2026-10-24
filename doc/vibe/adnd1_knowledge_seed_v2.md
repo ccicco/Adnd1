@@ -21705,6 +21705,49 @@ when both halves land.
   canvas, authored md5 5d33b17607a1fa574e706e2e8126fab2, 110007
   bytes, landed the same. NEXT - R811: awaits Curtiss call (the
   natural next walk the Letter Q box; 16 open boxes remain).
+- R811 LANDED 2026-10-24: commit b08e12ba24cfeb09de80515445f3afc1ece42819
+  (census 733 -> 734, pushed bc2d9a5..b08e12b), THE MM2 LETTER Q WALK - THE
+  QUASI-ELEMENTAL LIGHTNING, QUICKLING AND QUICKWOOD (SPY TREE) TURNS - THE
+  Q-FLIP ROUND (Curtiss single-letter Go call on the landed letter P walk;
+  round sixteen of the MM2 arc, the FIFTH single-letter pass).
+THE PIN-TIME WALK: THREE entries on pp. 103-104 - the quasi-elemental
+  lightning p. 103, the quickling pp. 103-104, the quickwood (spy tree) p.
+  104. No doctrine-only heads; no prior-owned entries (the MM1 quasit is an
+  MM1 print, not a box entry). THREE .lua defs ride the R791 data_files
+  extension, registry 723 -> 726. Header rules/mm2q.h, prefix mm2q, 71
+  consts + 18 bools + ONE grid (the 3x10 QStats stat grid) = 99 inline. THE
+  Q-FLIP: the Letter Q gap box flips to closed - 22 closed 15 open.
+THE SETTLED READS (capture primary, the 1eonline transcription the cross-
+  check voice): the quasi-elemental "6, 9, or 12" hit dice the first-number
+  6 read (the MM1 earth elemental precedent), AC 2, VII/1000+15 the xpValue
+  1315 at level 7, move 18; the quickling "1 1/2" hit dice settled ASCII
+  "1-1/2" (hitDiceNum 1, hitDiceBonus 2 - the half die as +2 hp, the loader
+  hitDice 1.5), avgHp 5, the -3 armor class unquoted (the R810 phoenix
+  precedent), IV/200+3 the xpValue 215 at level 4, move 96, lair 10,
+  treasure "O, P, Q, X", the "Save as 19th-level clerics" MR 0; the
+  quickwood "5-10 (5 hp/die)" the flat 5x5 avgHp 25 read (hitDiceNum 5, the
+  R809 obliviax flat-hp precedent, EXCLUDED from the avgHp floor-formula
+  example), V/350+10 the xpValue 600 at level 5, AC 5, move 1, lair 100, the
+  "Special" attacks floored at 1, the "See below" MR 0; the quickwood
+  "infravisually" (the capture "infravasually" the OCR artifact).
+ONE REGTEST PATCH: the R811 live def walk at the R227 anchor (the R810
+  P-walk pattern), its registry census a FLOOR 723 -> at least 726.
+LOCAL VERIFICATION (the authoring environment had reset again - the r810
+  helper scripts were gone, so /tmp/adnd1 was rebuilt fresh from the GitHub
+  tarball at bc2d9a5 and the loader sim rebuilt as sim_r811.py): engine
+  double-run 9/0 -> 0/9; rverify GREEN vs bc2d9a5 - 119 mutants, 0 missed;
+  OFFLINE LOADER SIM GREEN - a strict Lua parser ran the whole registry 726
+  defs 0 errors, the loader coercers replicated field for field, the 3-def
+  walk checks cell for cell 0 bad, the skeleton profiled against nereid.lua,
+  a registry-wide raw-newline scan 0 bad; the /tmp tree restored pristine
+  after.
+PREFLIGHT GREEN FIRST PASS: loaded 726, errors 0; xp audit 726/0; R797
+  through R811 live defs all bad 0; AUDIT CENSUS 734 each exactly once, all
+  bad 0; build 0 warnings. Commit 8 files, 2045 insertions. Delivery
+  spec-r811: raw JSON canvas, authored md5 997a70e893eae65bc12f341c6da0ea6e,
+  44987 bytes, landed the same (no editor delta). NEXT - R812: awaits
+  Curtiss's call (the arc is not letter-by-letter - the next slice is
+  Curtiss's call each time; 15 open boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

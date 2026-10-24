@@ -1,0 +1,1003 @@
+{
+ "round": 812,
+ "prefix": "mm2r",
+ "header_file": "rules/mm2r.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 734,
+ "title": "the MM2 letter R walk - the rat (ordinary and vapor), raven (ordinary, huge and giant), retch plant and rock reptile turns",
+ "audit_label": "R812 MM2 letter R walk audit",
+ "audit_comment": "THE MM2 LETTER R WALK - the ordinary rat and the vapor rat p. 105, the raven (crow) variant table p. 105 (the ordinary, huge and giant columns), the retch plant and the rock reptile p. 106; the R-FLIP round: the Letter R gap box flips to closed (23 closed, 14 open). SEVEN .lua defs ride the R791 data_files extension, registry 726 -> 733. The RStats 7x10 grid cross-checks every armor class, hit dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell; the per-def doctrine pins carry the settled reads (the ordinary rat and the ordinary raven 1/4 hit dice the flat-hp path reads - hdNum 0, avgHp 2, the ikiryo precedent; the huge raven 1-1 the hdNum 1 bonus -1 read - the buckawn precedent; the retch plant 5-8 the first-number 5 read - the quickwood precedent; the rock reptile the M-row V/400+7 xp with the L-row VI/600+9 riding as consts; the ordinary raven I/Nil the Nil-xp read - the phantom precedent; the vapor rat 6 (or special) armor class and 12/6/1 move the verbatim print cells; every Standard magic resistance 0 - the R155 class); the R812b repair note: the first cut carried the lair cells verbatim as 30%/25%/15%/10% and the preflight walked them bad 5 (the loader luaGetInt is a lua_isnumber-only coercer - a percent string reads 0), the bare-numeral read now pinned - the R639 repair flow, nothing landed, the same round number re-issued",
+ "include_comment": "the MM2 letter R walk - the rat (ordinary and vapor), raven (ordinary, huge and giant), retch plant and rock reptile turns",
+ "include_after": "#include \"rules/mm2q.h\"  // R811: the MM2 letter Q walk - the quasi-elemental lightning, quickling and quickwood turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R811 LANDED 2026-10-24: commit",
+ "banner": {
+  "title": "THE MM2 LETTER R WALK - THE RAT (ORDINARY AND VAPOR), RAVEN (ORDINARY, HUGE AND GIANT), RETCH PLANT AND ROCK REPTILE TURNS (the two rat blocks p. 105, the raven (crow) variant table p. 105, the retch plant and the rock reptile p. 106), promoted to the live registry; the R-FLIP round, the Letter R gap box flips to closed",
+  "provenance": "Round seventeen of the MM2 arc, the SIXTH single-letter pass (Curtiss Go call on the landed letter Q walk; the letter R pin-time walk found FOUR entries carrying seven stat blocks - no doctrine-only heads; the MM1 registry prints in r/ are MM1 prints, so no prior-owned index entries ride this round)",
+  "sentinel": "The pin headers stay the print-fidelity record; the seven .lua defs ride the R791 data_files extension in the MM1 registry schema (the defensive coercers load the verbatim print cells, the RStats grid carries the loader values)"
+ },
+ "tables": [
+  {
+   "name": "the ordinary rat to rock reptile stat grid",
+   "tag": "RStats",
+   "count": "mm2rRStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE R-GRID: the 7-row RStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the seven letter R stat blocks, in print order - the ordinary rat and the vapor rat p. 105, the raven (crow) variant table p. 105 (the ordinary, huge and giant columns), the retch plant and the rock reptile p. 106)",
+   "cols": [
+    "mm2rRStatAc",
+    "mm2rRStatHd",
+    "mm2rRStatHdBonus",
+    "mm2rRStatAvgHp",
+    "mm2rRStatAttacks",
+    "mm2rRStatXp",
+    "mm2rRStatXpHp",
+    "mm2rRStatLairPct",
+    "mm2rRStatMove",
+    "mm2rRStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the vapor rat 6 (or special) rides the verbatim print cell, firstIntIn 6)",
+    "The hit dice num cells (the ordinary rat and the ordinary raven 1/4 reads ride the flat-hp path - hdNum 0, the ikiryo precedent; the huge raven 1-1 reads 1 die; the retch plant 5-8 and the rock reptile 5 read the base 5)",
+    "The hit dice bonus cells (the huge raven 1-1 reads -1 - the buckawn precedent, the hitDice = hdNum + bonus/4 form; the giant raven 3+2 reads +2)",
+    "The avgHp cells (the floor(3.5 x hd + bonus) formula: the vapor rat 7, the raven giant 12, the retch plant and the rock reptile 17; the flat-hp 1/4-die reads carry avgHp 2)",
+    "The attack cells (the loader semantics: the retch plant Nil attacks floored at 1)",
+    "The xp base cells (the raven ordinary I/Nil reads 0 - the phantom precedent; the rock reptile M-row V/400)",
+    "The xp per hit point cells (the rat ordinary 1, the vapor rat 2, the raven huge 1, the raven giant 4, the retch plant 6, the rock reptile 7)",
+    "The in-lair percentage cells (the loader luaGetInt accepts only lua_isnumber strings, so the print 30%/25%/15%/10% cells ride as the bare-numeral 30/25/15/10 read - the R810 pech and pedipalp precedent; the ordinary rat and the retch plant Nil read 0)",
+    "The move cells (the ground move reads: the raven 1/1/3 of the multi-mode cells, the retch plant Nil reads 0)",
+    "The magic resistance cells (every Standard cell reads 0 - the R155 class)"
+   ],
+   "data": [
+    [
+     7,
+     0,
+     0,
+     2,
+     1,
+     2,
+     1,
+     0,
+     15,
+     0
+    ],
+    [
+     6,
+     2,
+     0,
+     7,
+     1,
+     52,
+     2,
+     30,
+     12,
+     0
+    ],
+    [
+     7,
+     0,
+     0,
+     2,
+     1,
+     0,
+     0,
+     25,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     -1,
+     2,
+     1,
+     30,
+     1,
+     15,
+     1,
+     0
+    ],
+    [
+     4,
+     3,
+     2,
+     12,
+     1,
+     60,
+     4,
+     10,
+     3,
+     0
+    ],
+    [
+     8,
+     5,
+     0,
+     17,
+     1,
+     150,
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     5,
+     0,
+     17,
+     1,
+     400,
+     7,
+     30,
+     6,
+     0
+    ]
+   ]
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter R walk round pins (the R812 census)": [
+   {
+    "kind": "const",
+    "name": "mm2rRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rLetterRHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rPriorOwnedEntries"
+   }
+  ],
+  "the rat pins (the R812 MM2 letter R walk)": [
+   {
+    "kind": "const",
+    "name": "mm2rRatOrdinaryXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRatOrdinaryXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRatVaporXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRatVaporXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRatOrdinaryDiseasePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRatVaporLairTreasurePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRatVaporGasReachFeetMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRatVaporGasReachFeetMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRatOrdinaryFightWhenCornered"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRatOrdinaryStarvingPackAttacks"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRatOrdinaryFearFire"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRatVaporGaseousForm"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRatVaporStingingCloudRelease"
+   }
+  ],
+  "the raven (crow) pins (the R812 MM2 letter R walk)": [
+   {
+    "kind": "const",
+    "name": "mm2rRavenOrdinaryXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenOrdinaryXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenHugeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenHugeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenGiantXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenGiantXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenEyeAttackPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenNestTreasurePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenNestQChanceIn6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenNestGemBaseGp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRavenCommonWords"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRavenNeverSurprisedInLight"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRavenScoutsGiveWarning"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRavenLoveGlitteringObjects"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRavenGiantEasilyTrained"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRavenHugeServeEvilMasters"
+   }
+  ],
+  "the retch plant pins (the R812 MM2 letter R walk)": [
+   {
+    "kind": "const",
+    "name": "mm2rRetchPlantXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchPlantXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchGlobesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchGlobesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchSplashRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchSplashContactPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchSplashContactFeetMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchSplashContactFeetMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchRetchingRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchWeaknessTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchWeaknessPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchOdorRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchOdorHoursMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchOdorHoursMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchWalkUnderDropPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchContactGlobesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRetchContactGlobesMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRetchNoSavingThrow"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRetchCarnivoreAttractionDouble"
+   }
+  ],
+  "the rock reptile pins (the R812 MM2 letter R walk)": [
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileLargeXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileLargeXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileLargeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileLargeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileLengthFeetMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileLengthFeetMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileSurpriseMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileSurpriseMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileRushSpeedMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileDamagePerFoot"
+   },
+   {
+    "kind": "const",
+    "name": "mm2rRockReptileLairTreasurePct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRockReptileChameleonPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRockReptileFavorsDarkness"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2rRockReptilePairDoubleMetalGems"
+   }
+  ],
+  "the RStats grid pins (the R812 MM2 letter R walk)": [
+   {
+    "kind": "table",
+    "name": "the ordinary rat to rock reptile stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the Letter R gap box flips (the census walk)",
+   "expr": "m['mm2rRegistryAfter']() - m['mm2rRegistryBefore']() != m['mm2rDefCount']() or m['mm2rDefCount']() != 7 or m['mm2rEntryCount']() != 4 or m['mm2rStatBlockHeadings']() != 7 or m['mm2rDoctrineHeads']() != 0 or m['mm2rLetterRHeadings']() != 4 or m['mm2rRStatRows']() != 7 or m['mm2rGapClosed']() != 23 or m['mm2rGapOpen']() != 14 or m['mm2rPriorOwnedEntries']() != 0"
+  },
+  {
+   "note": "the ordinary rat grid row (p. 105 print order)",
+   "expr": "m['mm2rRStatAc'](0) != 7 or m['mm2rRStatHd'](0) != 0 or m['mm2rRStatHdBonus'](0) != 0 or m['mm2rRStatAvgHp'](0) != 2 or m['mm2rRStatAttacks'](0) != 1 or m['mm2rRStatXp'](0) != 2 or m['mm2rRStatXpHp'](0) != 1 or m['mm2rRStatLairPct'](0) != 0 or m['mm2rRStatMove'](0) != 15 or m['mm2rRStatMr'](0) != 0 or m['mm2rRatOrdinaryXpValue']() != 4 or m['mm2rRatOrdinaryXpLevel']() != 1"
+  },
+  {
+   "note": "the vapor rat grid row (p. 105 print order)",
+   "expr": "m['mm2rRStatAc'](1) != 6 or m['mm2rRStatHd'](1) != 2 or m['mm2rRStatHdBonus'](1) != 0 or m['mm2rRStatAvgHp'](1) != 7 or m['mm2rRStatAttacks'](1) != 1 or m['mm2rRStatXp'](1) != 52 or m['mm2rRStatXpHp'](1) != 2 or m['mm2rRStatLairPct'](1) != 30 or m['mm2rRStatMove'](1) != 12 or m['mm2rRStatMr'](1) != 0 or m['mm2rRatVaporXpValue']() != 66 or m['mm2rRatVaporXpLevel']() != 2"
+  },
+  {
+   "note": "the ordinary raven (crow) grid row (p. 105 print order)",
+   "expr": "m['mm2rRStatAc'](2) != 7 or m['mm2rRStatHd'](2) != 0 or m['mm2rRStatHdBonus'](2) != 0 or m['mm2rRStatAvgHp'](2) != 2 or m['mm2rRStatAttacks'](2) != 1 or m['mm2rRStatXp'](2) != 0 or m['mm2rRStatXpHp'](2) != 0 or m['mm2rRStatLairPct'](2) != 25 or m['mm2rRStatMove'](2) != 1 or m['mm2rRStatMr'](2) != 0 or m['mm2rRavenOrdinaryXpValue']() != 0 or m['mm2rRavenOrdinaryXpLevel']() != 1"
+  },
+  {
+   "note": "the huge raven (crow) grid row (p. 105 print order)",
+   "expr": "m['mm2rRStatAc'](3) != 6 or m['mm2rRStatHd'](3) != 1 or m['mm2rRStatHdBonus'](3) != -1 or m['mm2rRStatAvgHp'](3) != 2 or m['mm2rRStatAttacks'](3) != 1 or m['mm2rRStatXp'](3) != 30 or m['mm2rRStatXpHp'](3) != 1 or m['mm2rRStatLairPct'](3) != 15 or m['mm2rRStatMove'](3) != 1 or m['mm2rRStatMr'](3) != 0 or m['mm2rRavenHugeXpValue']() != 32 or m['mm2rRavenHugeXpLevel']() != 2"
+  },
+  {
+   "note": "the giant raven (crow) grid row (p. 105 print order)",
+   "expr": "m['mm2rRStatAc'](4) != 4 or m['mm2rRStatHd'](4) != 3 or m['mm2rRStatHdBonus'](4) != 2 or m['mm2rRStatAvgHp'](4) != 12 or m['mm2rRStatAttacks'](4) != 1 or m['mm2rRStatXp'](4) != 60 or m['mm2rRStatXpHp'](4) != 4 or m['mm2rRStatLairPct'](4) != 10 or m['mm2rRStatMove'](4) != 3 or m['mm2rRStatMr'](4) != 0 or m['mm2rRavenGiantXpValue']() != 108 or m['mm2rRavenGiantXpLevel']() != 3"
+  },
+  {
+   "note": "the retch plant grid row (p. 106 print order)",
+   "expr": "m['mm2rRStatAc'](5) != 8 or m['mm2rRStatHd'](5) != 5 or m['mm2rRStatHdBonus'](5) != 0 or m['mm2rRStatAvgHp'](5) != 17 or m['mm2rRStatAttacks'](5) != 1 or m['mm2rRStatXp'](5) != 150 or m['mm2rRStatXpHp'](5) != 6 or m['mm2rRStatLairPct'](5) != 0 or m['mm2rRStatMove'](5) != 0 or m['mm2rRStatMr'](5) != 0 or m['mm2rRetchPlantXpValue']() != 252 or m['mm2rRetchPlantXpLevel']() != 3"
+  },
+  {
+   "note": "the rock reptile grid row (p. 106 print order, the M read)",
+   "expr": "m['mm2rRStatAc'](6) != 3 or m['mm2rRStatHd'](6) != 5 or m['mm2rRStatHdBonus'](6) != 0 or m['mm2rRStatAvgHp'](6) != 17 or m['mm2rRStatAttacks'](6) != 1 or m['mm2rRStatXp'](6) != 400 or m['mm2rRStatXpHp'](6) != 7 or m['mm2rRStatLairPct'](6) != 30 or m['mm2rRStatMove'](6) != 6 or m['mm2rRStatMr'](6) != 0 or m['mm2rRockReptileXpValue']() != 519 or m['mm2rRockReptileXpLevel']() != 5 or m['mm2rRockReptileLargeXpValue']() != 753 or m['mm2rRockReptileLargeXpLevel']() != 6 or m['mm2rRockReptileLargeXpBase']() != 600 or m['mm2rRockReptileLargeXpPerHp']() != 9"
+  },
+  {
+   "note": "the raven variant table shares one prose block across its three columns (the pedipalp precedent)",
+   "expr": "m['mm2rRavenEyeAttackPct']() != 10 or m['mm2rRavenNestTreasurePct']() != 25 or m['mm2rRavenNestQChanceIn6']() != 6 or m['mm2rRavenNestGemBaseGp']() != 10 or m['mm2rRavenCommonWords']() != 100"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter R box",
+   "from": "- [ ] **Letter R**",
+   "to": "- [x] **Letter R**"
+  }
+ ],
+ "gap_census": {
+  "closed": 23,
+  "open": 14
+ },
+ "caller_files": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter R def walk (the R811 Q-walk pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R812: the MM2 letter R live def walk ----\n    // The 7 promoted letter R defs\n    // cross-checked live against the mm2r pins:\n    // every stat cell of the 7-row RStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula, the per-def prose markers, and the\n    // registry census floor 726 -> at least 733.\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kR[7] = {\n            \"rat_ordinary\",\n            \"rat_vapor\",\n            \"raven_ordinary\",\n            \"raven_huge\",\n            \"raven_giant\",\n            \"retch_plant\",\n            \"rock_reptile\",\n        };\n        static const char* kRMark[7] = {\n            \"filthy bite\",\n            \"stinking cloud spell\",\n            \"never be surprised during lighted conditions\",\n            \"malicious disposition\",\n            \"easily trained\",\n            \"nauseating fluid\",\n            \"pile of rubble or rocks\",\n        };\n        for (int i = 0; i < 7; ++i) {\n            const auto* d = reg.find(kR[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\")\n                ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2rRStatAc(i))\n                ++bad;\n            if (d->hitDiceNum != mm2rRStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2rRStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2rRStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2rRStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2rRStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2rRStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2rRStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2rRStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2rRStatMr(i))\n                ++bad;\n            if (d->text.find(kRMark[i])\n                == std::string::npos)\n                ++bad;\n        }\n        if ((int)reg.all().size()\n            < mm2rRegistryAfter())\n            ++bad;\n        printf(\"R812 MM2 letter R live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/r/rat_ordinary.lua",
+   "content": "-- Rat, Ordinary: promoted by the R812 MM2 letter R walk round\n-- from the MM2 print\n-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Rat, Ordinary\",\n  page = \"105\",\n  pages = \"105\",\n  source = \"MM2\",\n  race = \"Rat, Ordinary\",\n  hitDice = \"1/4\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"2\",\n  armorClass = \"7\",\n  numAttacks = 1,\n  damage = \"1\",\n  xp = \"2\",\n  xpPerHp = \"1\",\n  xpValue = \"4\",\n  xpSource = \"mm2_print\",\n  frequency = \"Common\",\n  noAppearing = \"1-100\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"S\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Rats of all sizes and colors are found everywhere from forest wilderness to city sewers. Although cowardly, a trapped or cornered rat will fight ferociously. When starved, rat packs will attack anything alive in order to feed. As is true of giant rats, typical rodents of this sort have a filthy bite with a 5% chance of causing a serious disease unless a save vs. poison indicates otherwise. Normal rats fear fire, but, when driven by hunger, they will sometimes brave it.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/r/rat_vapor.lua",
+   "content": "-- Rat, Vapor: promoted by the R812 MM2 letter R walk round\n-- from the MM2 print\n-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Rat, Vapor\",\n  page = \"105\",\n  pages = \"105\",\n  source = \"MM2\",\n  race = \"Rat, Vapor\",\n  hitDice = \"2\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"0\",\n  avgHp = \"7\",\n  armorClass = \"6 (or special)\",\n  numAttacks = 1,\n  damage = \"1-2 hp\",\n  xp = \"52\",\n  xpPerHp = \"2\",\n  xpValue = \"66\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-16\",\n  lairPct = \"30\",\n  treasure = \"See below\",\n  move = \"12\\\"/6\\\" (1\\\")\",\n  size = \"S\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic (neutral)\",\n  specialAttacks = \"Stinking cloud\",\n  specialDefenses = \"Gaseous form\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Vapor rats appear to be nothing more than large, gray giant rats. Their habitat, however, includes areas not common to giant rats, for these creatures also dwell in and on the substantial cloud islands which frequently serve as the abode of cloud giants.\\\\n\\\\nIt is possible for vapor rats to alter the substance of their bodies and assume a gaseous form. In this condition they appear to be wisps of cloud or similar vapors. In normal solid state, vapor rats move very quickly and rapidly, are able to swim well, and are capable of burrowing rapidly through loose soil or the material of cloud islands. In their vaporous condition, they are able to direct their movement much as a ship would steer before the wind, and they are thus able to move from cloud to cloud around the sky.\\\\n\\\\nVapor rats are omnivorous, loving garbage and carrion, which is typical of all rats. While they do not seek treasure, there is a possibility that the remains of their meals will contain some items of value. If discovered in their lair, there is a 25% chance for each of the following treasure types to be there: J (1-4), K (1-4), L (1-4), M (1-4), N (1-2), C-type for gems, jewelry, and magic. If angry, hungry, or cornered, vapor rats will attack by scurrying in and delivering sharp bites. Whenever one is killed or seriously wounded, it gives off a small puff of noxious fumes. This gaseous release is the equivalent of a stinking cloud spell (q.v.), but it will affect only 1 individual if within 5-8 feet of the vapor rat. The rat always directs its release at its opponent, and the gas dissipates beyond the maximum distance shown above. Thus, while it is safe to stay these monsters from a distance, they are particularly dangerous in close proximity.\\\\n\\\\nWounded or seriously threatened vapor rats will always assume gaseous form. In such state, they can only be harmed by attack forms which cause their vapors to be destroyed. Such attack forms include very hot or magical fire, lightning, and exceptionally strong winds.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/r/raven_ordinary.lua",
+   "content": "-- Raven (Crow), Ordinary: promoted by the R812 MM2 letter R walk round\n-- from the MM2 print\n-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Raven (Crow), Ordinary\",\n  page = \"105\",\n  pages = \"105\",\n  source = \"MM2\",\n  race = \"Raven (Crow)\",\n  hitDice = \"1/4\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"2\",\n  armorClass = \"7\",\n  numAttacks = 1,\n  damage = \"1\",\n  xp = \"0\",\n  xpPerHp = \"0\",\n  xpValue = \"0\",\n  xpSource = \"mm2_print\",\n  frequency = \"Common\",\n  noAppearing = \"4-36\",\n  lairPct = \"25\",\n  treasure = \"See below\",\n  move = \"1\\\"/36\\\"\",\n  size = \"S (2'-4' wingspread)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Ravens (or rooks) and crows are found from cold-temperate to tropical climes. They are principally scavengers, but, being omnivorous, they will raid crops, nests, or unattended caches of food. All birds of this type travel in flocks, although a few might be encountered seemingly alone; these are scouts. As soon as any approaching creature which could threaten the flock is seen or detected, the scout or scouts will give warning cries, screen themselves, and maintain a safe distance while keeping track of the creatures and reporting events to the flock by means of raucous calls and, possibly, movements as well. Thus, ravens or crows can never be surprised during lighted conditions. Because of their intelligence, these birds are 10% likely to attack an opponent's eye. In other words, whenever a to-hit roll indicates a hit, there is a 1 in 10 chance of eye attack and resultant loss of the organ.\\\\n\\\\nRavens and crows have their own, limited language. Certain ravens, including some huge and most giant specimens, can speak as many as 100 words of the common tongue and can communicate in meaningful phrases. Huge ravens tend towards a malicious disposition and are known to serve evil masters when opportunity permits. All birds of this sort love objects which glitter and shine. Thus, they are 25% likely to have several small metal objects, gems, and the like in their nests. Giant ravens are both pugnacious and easily trained (if raised from fledglings), and so are often used as guards and messengers. In their nests, there may be Type Q treasure (a 1 in 6 chance per nest, base gem value 10 gp).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/r/raven_huge.lua",
+   "content": "-- Raven (Crow), Huge: promoted by the R812 MM2 letter R walk round\n-- from the MM2 print\n-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Raven (Crow), Huge\",\n  page = \"105\",\n  pages = \"105\",\n  source = \"MM2\",\n  race = \"Raven (Crow)\",\n  hitDice = \"1-1\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"-1\",\n  avgHp = \"2\",\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-2\",\n  xp = \"30\",\n  xpPerHp = \"1\",\n  xpValue = \"32\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-8\",\n  lairPct = \"15\",\n  treasure = \"See below\",\n  move = \"1\\\"/27\\\"\",\n  size = \"M (4'-6' wingspread)\",\n  intelligence = \"Semi-+\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Ravens (or rooks) and crows are found from cold-temperate to tropical climes. They are principally scavengers, but, being omnivorous, they will raid crops, nests, or unattended caches of food. All birds of this type travel in flocks, although a few might be encountered seemingly alone; these are scouts. As soon as any approaching creature which could threaten the flock is seen or detected, the scout or scouts will give warning cries, screen themselves, and maintain a safe distance while keeping track of the creatures and reporting events to the flock by means of raucous calls and, possibly, movements as well. Thus, ravens or crows can never be surprised during lighted conditions. Because of their intelligence, these birds are 10% likely to attack an opponent's eye. In other words, whenever a to-hit roll indicates a hit, there is a 1 in 10 chance of eye attack and resultant loss of the organ.\\\\n\\\\nRavens and crows have their own, limited language. Certain ravens, including some huge and most giant specimens, can speak as many as 100 words of the common tongue and can communicate in meaningful phrases. Huge ravens tend towards a malicious disposition and are known to serve evil masters when opportunity permits. All birds of this sort love objects which glitter and shine. Thus, they are 25% likely to have several small metal objects, gems, and the like in their nests. Giant ravens are both pugnacious and easily trained (if raised from fledglings), and so are often used as guards and messengers. In their nests, there may be Type Q treasure (a 1 in 6 chance per nest, base gem value 10 gp).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/r/raven_giant.lua",
+   "content": "-- Raven (Crow), Giant: promoted by the R812 MM2 letter R walk round\n-- from the MM2 print\n-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Raven (Crow), Giant\",\n  page = \"105\",\n  pages = \"105\",\n  source = \"MM2\",\n  race = \"Raven (Crow)\",\n  hitDice = \"3+2\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"2\",\n  avgHp = \"12\",\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"3-6\",\n  xp = \"60\",\n  xpPerHp = \"4\",\n  xpValue = \"108\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"4-16\",\n  lairPct = \"10\",\n  treasure = \"See below\",\n  move = \"3\\\"/18\\\"\",\n  size = \"M-L (6'-10' wingspread)\",\n  intelligence = \"Low+\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Ravens (or rooks) and crows are found from cold-temperate to tropical climes. They are principally scavengers, but, being omnivorous, they will raid crops, nests, or unattended caches of food. All birds of this type travel in flocks, although a few might be encountered seemingly alone; these are scouts. As soon as any approaching creature which could threaten the flock is seen or detected, the scout or scouts will give warning cries, screen themselves, and maintain a safe distance while keeping track of the creatures and reporting events to the flock by means of raucous calls and, possibly, movements as well. Thus, ravens or crows can never be surprised during lighted conditions. Because of their intelligence, these birds are 10% likely to attack an opponent's eye. In other words, whenever a to-hit roll indicates a hit, there is a 1 in 10 chance of eye attack and resultant loss of the organ.\\\\n\\\\nRavens and crows have their own, limited language. Certain ravens, including some huge and most giant specimens, can speak as many as 100 words of the common tongue and can communicate in meaningful phrases. Huge ravens tend towards a malicious disposition and are known to serve evil masters when opportunity permits. All birds of this sort love objects which glitter and shine. Thus, they are 25% likely to have several small metal objects, gems, and the like in their nests. Giant ravens are both pugnacious and easily trained (if raised from fledglings), and so are often used as guards and messengers. In their nests, there may be Type Q treasure (a 1 in 6 chance per nest, base gem value 10 gp).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/r/retch_plant.lua",
+   "content": "-- Retch Plant (Globe Palm): promoted by the R812 MM2 letter R walk round\n-- from the MM2 print\n-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Retch Plant (Globe Palm)\",\n  page = \"106\",\n  pages = \"106\",\n  source = \"MM2\",\n  race = \"Retch Plant (Globe Palm)\",\n  hitDice = \"5-8\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"0\",\n  avgHp = \"17\",\n  armorClass = \"8\",\n  numAttacks = \"Nil\",\n  damage = \"Nil\",\n  xp = \"150\",\n  xpPerHp = \"6\",\n  xpValue = \"252\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-20\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"Nil\",\n  size = \"L (16'-24' tall)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The retch plant, or globe palm, is found only in warm climates. It is a typical palm tree, except that each constantly has from 5-8 globe-like, coconut-sized fruit growing at its top. Each globe is membranous and taut and blue, violet, or lilac in color. When they strike they burst, and a nauseating fluid is splashed over a 5-foot radius. (A 25% chance for splash contact at 5-9 foot distance.) The sticky, foul liquid will cause creatures splashed to vomit and retch for the next 3 rounds and for 6 turns (1 hour) thereafter to be at 50% normal strength. There is no saving throw allowed.\\\\n\\\\nCreatures splashed must be washed in alcohol (wine, beer, brandy, etc., will do) or be much more likely to attract carnivores in the area at double the normal frequency of checks, with double probabilities of encounter. The odor is discernible within a 50-foot radius. It persists for 1-4 hours. Walking under a retch plant makes it 20% likely that one of its globes will fall. If there is solid contact with a tree trunk - such as banging against, running into, or climbing it - 2-5 of the noisome fruit will plop down.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/r/rock_reptile.lua",
+   "content": "-- Rock Reptile: promoted by the R812 MM2 letter R walk round\n-- from the MM2 print\n-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Rock Reptile\",\n  page = \"106\",\n  pages = \"106\",\n  source = \"MM2\",\n  race = \"Rock Reptile\",\n  hitDice = \"5 +1 hp/1 foot of length\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"0\",\n  avgHp = \"17\",\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"1-4 +1 point/foot of length\",\n  xp = \"400\",\n  xpPerHp = \"7\",\n  xpValue = \"519\",\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-2\",\n  lairPct = \"30\",\n  treasure = \"See below\",\n  move = \"6\\\"\",\n  size = \"M-L (5'-12' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Surprises on 1-3\",\n  specialDefenses = \"Chameleon powers\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"This weird lizard has a lumpy, warty hide and chameleon-like powers. It can thus lie in wait in rocky areas, appearing to be nothing more than a pile of rubble or rocks. The rock reptile favors darkness but will occasionally venture out in daylight if it is sufficiently hungry. Its initial rush is at twice normal speed, thus surprising prey on a 3 in 6 basis. As it drags some prey to its lair, there might be bits of treasure therein - 25% each for types J, K, L, and M, and also types Q, S x 1/4, and T x 1/2. If 2 of the monsters are encountered, they have double metal and gems only.\",\n}\n"
+  }
+ ],
+ "consts": [
+  {
+   "name": "mm2rRound",
+   "value": 812,
+   "comment": "The MM2 letter R walk round: the ordinary rat to rock reptile turns, the SIXTH single-letter pass (Curtiss Go call on the landed letter Q walk)"
+  },
+  {
+   "name": "mm2rRegistryBefore",
+   "value": 726,
+   "comment": "The registry census before the R812 promotion (the landed R811 count)"
+  },
+  {
+   "name": "mm2rRegistryAfter",
+   "value": 733,
+   "comment": "The registry census after the R812 promotion (7 defs)"
+  },
+  {
+   "name": "mm2rDefCount",
+   "value": 7,
+   "comment": "The seven promoted letter R defs (the ordinary rat, the vapor rat, the three raven (crow) columns, the retch plant, the rock reptile)"
+  },
+  {
+   "name": "mm2rEntryCount",
+   "value": 4,
+   "comment": "The four printed letter R entries (the rat head with its ordinary and vapor sub-blocks, the raven (crow) variant table, the retch plant, the rock reptile)"
+  },
+  {
+   "name": "mm2rStatBlockHeadings",
+   "value": 7,
+   "comment": "The seven letter R stat blocks (the rat head carries two, the raven (crow) variant table three)"
+  },
+  {
+   "name": "mm2rDoctrineHeads",
+   "value": 0,
+   "comment": "No doctrine-only letter R heads ride this round"
+  },
+  {
+   "name": "mm2rLetterRHeadings",
+   "value": 4,
+   "comment": "The four letter R headings on pp. 105-106 (RAT, RAVEN (Crow), RETCH PLANT, ROCK REPTILE)"
+  },
+  {
+   "name": "mm2rRStatRows",
+   "value": 7,
+   "comment": "The RStats grid row count (one row per def)"
+  },
+  {
+   "name": "mm2rGapClosed",
+   "value": 23,
+   "comment": "The MM2 gap census after the R-flip: 23 closed"
+  },
+  {
+   "name": "mm2rGapOpen",
+   "value": 14,
+   "comment": "The MM2 gap census after the R-flip: 14 open"
+  },
+  {
+   "name": "mm2rPriorOwnedEntries",
+   "value": 0,
+   "comment": "No prior-owned letter R entries (the MM1 registry prints in r/ - rakshasa, ram, red dragon, remorhaz, roc, roper, rot grub, rust monster and the rest - are MM1 prints, not MM2 box entries)"
+  },
+  {
+   "name": "mm2rRatOrdinaryXpValue",
+   "value": 4,
+   "comment": "The ordinary rat xpValue (I/2 + 1/hp, the flat-hp avgHp 2: 2 + 1x2)"
+  },
+  {
+   "name": "mm2rRatOrdinaryXpLevel",
+   "value": 1,
+   "comment": "The ordinary rat xp level (the I read)"
+  },
+  {
+   "name": "mm2rRatVaporXpValue",
+   "value": 66,
+   "comment": "The vapor rat xpValue (II/52 + 2/hp, the 2-dice avgHp 7: 52 + 2x7)"
+  },
+  {
+   "name": "mm2rRatVaporXpLevel",
+   "value": 2,
+   "comment": "The vapor rat xp level (the II read)"
+  },
+  {
+   "name": "mm2rRavenOrdinaryXpValue",
+   "value": 0,
+   "comment": "The ordinary raven xpValue (I/Nil - the phantom Nil-xp precedent)"
+  },
+  {
+   "name": "mm2rRavenOrdinaryXpLevel",
+   "value": 1,
+   "comment": "The ordinary raven xp level (the I read)"
+  },
+  {
+   "name": "mm2rRavenHugeXpValue",
+   "value": 32,
+   "comment": "The huge raven xpValue (II/30 + 1/hp, the 1-1 avgHp 2: 30 + 1x2)"
+  },
+  {
+   "name": "mm2rRavenHugeXpLevel",
+   "value": 2,
+   "comment": "The huge raven xp level (the II read)"
+  },
+  {
+   "name": "mm2rRavenGiantXpValue",
+   "value": 108,
+   "comment": "The giant raven xpValue (III/60 + 4/hp, the 3+2 avgHp 12: 60 + 4x12)"
+  },
+  {
+   "name": "mm2rRavenGiantXpLevel",
+   "value": 3,
+   "comment": "The giant raven xp level (the III read)"
+  },
+  {
+   "name": "mm2rRetchPlantXpValue",
+   "value": 252,
+   "comment": "The retch plant xpValue (III/150 + 6/hp, the first-number 5 read avgHp 17: 150 + 6x17)"
+  },
+  {
+   "name": "mm2rRetchPlantXpLevel",
+   "value": 3,
+   "comment": "The retch plant xp level (the III read)"
+  },
+  {
+   "name": "mm2rRockReptileXpValue",
+   "value": 519,
+   "comment": "The rock reptile xpValue (the M-row V/400 + 7/hp, the avgHp 17: 400 + 7x17)"
+  },
+  {
+   "name": "mm2rRockReptileXpLevel",
+   "value": 5,
+   "comment": "The rock reptile xp level (the M-row V read)"
+  },
+  {
+   "name": "mm2rRockReptileLargeXpBase",
+   "value": 600,
+   "comment": "The rock reptile large (L) xp base (the L-row VI/600)"
+  },
+  {
+   "name": "mm2rRockReptileLargeXpPerHp",
+   "value": 9,
+   "comment": "The rock reptile large (L) xp/hp cell"
+  },
+  {
+   "name": "mm2rRockReptileLargeXpValue",
+   "value": 753,
+   "comment": "The rock reptile large (L) xpValue (VI/600 + 9/hp, the avgHp 17: 600 + 9x17)"
+  },
+  {
+   "name": "mm2rRockReptileLargeXpLevel",
+   "value": 6,
+   "comment": "The rock reptile large (L) xp level (the VI read)"
+  },
+  {
+   "name": "mm2rRatOrdinaryDiseasePct",
+   "value": 5,
+   "comment": "The ordinary rat filthy bite: 5% chance of causing a serious disease unless a save vs. poison indicates otherwise"
+  },
+  {
+   "name": "mm2rRatVaporLairTreasurePct",
+   "value": 25,
+   "comment": "The vapor rat lair: a 25% chance for each of the J, K, L, M, N and C-type treasure types"
+  },
+  {
+   "name": "mm2rRatVaporGasReachFeetMin",
+   "value": 5,
+   "comment": "The vapor rat stinking cloud release affects only 1 individual if within 5-8 feet"
+  },
+  {
+   "name": "mm2rRatVaporGasReachFeetMax",
+   "value": 8,
+   "comment": "The vapor rat stinking cloud release maximum reach (8 feet; the gas dissipates beyond it)"
+  },
+  {
+   "name": "mm2rRavenEyeAttackPct",
+   "value": 10,
+   "comment": "The raven eye attack: 10% likely to attack an opponent's eye (a 1 in 10 chance on a hit, with resultant loss of the organ)"
+  },
+  {
+   "name": "mm2rRavenNestTreasurePct",
+   "value": 25,
+   "comment": "The raven nest: 25% likely to have several small metal objects, gems, and the like in their nests"
+  },
+  {
+   "name": "mm2rRavenNestQChanceIn6",
+   "value": 6,
+   "comment": "The raven nest Type Q treasure: a 1 in 6 chance per nest"
+  },
+  {
+   "name": "mm2rRavenNestGemBaseGp",
+   "value": 10,
+   "comment": "The raven nest Type Q treasure base gem value (10 gp)"
+  },
+  {
+   "name": "mm2rRavenCommonWords",
+   "value": 100,
+   "comment": "The speaking ravens (some huge and most giant specimens) can speak as many as 100 words of the common tongue"
+  },
+  {
+   "name": "mm2rRetchGlobesMin",
+   "value": 5,
+   "comment": "The retch plant constantly has from 5-8 globe-like, coconut-sized fruit growing at its top"
+  },
+  {
+   "name": "mm2rRetchGlobesMax",
+   "value": 8,
+   "comment": "The retch plant globe count maximum"
+  },
+  {
+   "name": "mm2rRetchSplashRadiusFeet",
+   "value": 5,
+   "comment": "The retch plant globe burst: a nauseating fluid is splashed over a 5-foot radius"
+  },
+  {
+   "name": "mm2rRetchSplashContactPct",
+   "value": 25,
+   "comment": "The retch plant splash: a 25% chance for splash contact at 5-9 foot distance"
+  },
+  {
+   "name": "mm2rRetchSplashContactFeetMin",
+   "value": 5,
+   "comment": "The retch plant splash distance band minimum"
+  },
+  {
+   "name": "mm2rRetchSplashContactFeetMax",
+   "value": 9,
+   "comment": "The retch plant splash distance band maximum"
+  },
+  {
+   "name": "mm2rRetchRetchingRounds",
+   "value": 3,
+   "comment": "The retch plant fluid: creatures splashed vomit and retch for the next 3 rounds"
+  },
+  {
+   "name": "mm2rRetchWeaknessTurns",
+   "value": 6,
+   "comment": "The retch plant fluid: for 6 turns (1 hour) thereafter to be at 50% normal strength"
+  },
+  {
+   "name": "mm2rRetchWeaknessPct",
+   "value": 50,
+   "comment": "The retch plant weakness strength percent"
+  },
+  {
+   "name": "mm2rRetchOdorRadiusFeet",
+   "value": 50,
+   "comment": "The retch plant odor is discernible within a 50-foot radius"
+  },
+  {
+   "name": "mm2rRetchOdorHoursMin",
+   "value": 1,
+   "comment": "The retch plant odor persists for 1-4 hours"
+  },
+  {
+   "name": "mm2rRetchOdorHoursMax",
+   "value": 4,
+   "comment": "The retch plant odor persistence maximum"
+  },
+  {
+   "name": "mm2rRetchWalkUnderDropPct",
+   "value": 20,
+   "comment": "Walking under a retch plant makes it 20% likely that one of its globes will fall"
+  },
+  {
+   "name": "mm2rRetchContactGlobesMin",
+   "value": 2,
+   "comment": "Solid contact with the tree trunk - banging against, running into, or climbing it - brings 2-5 of the noisome fruit down"
+  },
+  {
+   "name": "mm2rRetchContactGlobesMax",
+   "value": 5,
+   "comment": "The solid-contact globe count maximum"
+  },
+  {
+   "name": "mm2rRockReptileLengthFeetMin",
+   "value": 5,
+   "comment": "The rock reptile length band (M-L, 5-12 feet long)"
+  },
+  {
+   "name": "mm2rRockReptileLengthFeetMax",
+   "value": 12,
+   "comment": "The rock reptile length maximum"
+  },
+  {
+   "name": "mm2rRockReptileSurpriseMin",
+   "value": 1,
+   "comment": "The rock reptile surprises on 1-3 (the 3 in 6 basis)"
+  },
+  {
+   "name": "mm2rRockReptileSurpriseMax",
+   "value": 3,
+   "comment": "The rock reptile surprise roll maximum"
+  },
+  {
+   "name": "mm2rRockReptileRushSpeedMultiplier",
+   "value": 2,
+   "comment": "The rock reptile initial rush is at twice normal speed"
+  },
+  {
+   "name": "mm2rRockReptileDamageMin",
+   "value": 1,
+   "comment": "The rock reptile bite damage band (1-4)"
+  },
+  {
+   "name": "mm2rRockReptileDamageMax",
+   "value": 4,
+   "comment": "The rock reptile bite damage maximum"
+  },
+  {
+   "name": "mm2rRockReptileDamagePerFoot",
+   "value": 1,
+   "comment": "The rock reptile damage: +1 point per foot of length"
+  },
+  {
+   "name": "mm2rRockReptileLairTreasurePct",
+   "value": 25,
+   "comment": "The rock reptile lair: 25% each for types J, K, L, and M, and also types Q, S x 1/4, and T x 1/2"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2rRatOrdinaryFightWhenCornered",
+   "value": true,
+   "comment": "Although cowardly, a trapped or cornered rat will fight ferociously"
+  },
+  {
+   "name": "mm2rRatOrdinaryStarvingPackAttacks",
+   "value": true,
+   "comment": "When starved, rat packs will attack anything alive in order to feed"
+  },
+  {
+   "name": "mm2rRatOrdinaryFearFire",
+   "value": true,
+   "comment": "Normal rats fear fire, but, when driven by hunger, they will sometimes brave it"
+  },
+  {
+   "name": "mm2rRatVaporGaseousForm",
+   "value": true,
+   "comment": "Wounded or seriously threatened vapor rats will always assume gaseous form; in such state only very hot or magical fire, lightning, and exceptionally strong winds can harm them"
+  },
+  {
+   "name": "mm2rRatVaporStingingCloudRelease",
+   "value": true,
+   "comment": "Whenever one is killed or seriously wounded, it gives off a small puff of noxious fumes - the stinking cloud spell equivalent"
+  },
+  {
+   "name": "mm2rRavenNeverSurprisedInLight",
+   "value": true,
+   "comment": "Ravens or crows can never be surprised during lighted conditions"
+  },
+  {
+   "name": "mm2rRavenScoutsGiveWarning",
+   "value": true,
+   "comment": "The scouts give warning cries, screen themselves, and maintain a safe distance while reporting to the flock by raucous calls"
+  },
+  {
+   "name": "mm2rRavenLoveGlitteringObjects",
+   "value": true,
+   "comment": "All birds of this sort love objects which glitter and shine"
+  },
+  {
+   "name": "mm2rRavenGiantEasilyTrained",
+   "value": true,
+   "comment": "Giant ravens are both pugnacious and easily trained (if raised from fledglings), and so are often used as guards and messengers"
+  },
+  {
+   "name": "mm2rRavenHugeServeEvilMasters",
+   "value": true,
+   "comment": "Huge ravens tend towards a malicious disposition and are known to serve evil masters when opportunity permits"
+  },
+  {
+   "name": "mm2rRetchNoSavingThrow",
+   "value": true,
+   "comment": "The retch plant fluid: there is no saving throw allowed"
+  },
+  {
+   "name": "mm2rRetchCarnivoreAttractionDouble",
+   "value": true,
+   "comment": "Creatures splashed and unwashed are much more likely to attract carnivores at double the normal frequency of checks, with double probabilities of encounter"
+  },
+  {
+   "name": "mm2rRockReptileChameleonPowers",
+   "value": true,
+   "comment": "The rock reptile chameleon-like powers: it can lie in wait in rocky areas, appearing to be nothing more than a pile of rubble or rocks"
+  },
+  {
+   "name": "mm2rRockReptileFavorsDarkness",
+   "value": true,
+   "comment": "The rock reptile favors darkness but will occasionally venture out in daylight if it is sufficiently hungry"
+  },
+  {
+   "name": "mm2rRockReptilePairDoubleMetalGems",
+   "value": true,
+   "comment": "If 2 of the monsters are encountered, they have double metal and gems only"
+  }
+ ],
+ "inline_count": 88,
+ "prev_record": [
+  "- R811 LANDED 2026-10-24: commit b08e12ba24cfeb09de80515445f3afc1ece42819",
+  "  (census 733 -> 734, pushed bc2d9a5..b08e12b), THE MM2 LETTER Q WALK - THE",
+  "  QUASI-ELEMENTAL LIGHTNING, QUICKLING AND QUICKWOOD (SPY TREE) TURNS - THE",
+  "  Q-FLIP ROUND (Curtiss single-letter Go call on the landed letter P walk;",
+  "  round sixteen of the MM2 arc, the FIFTH single-letter pass).",
+  "THE PIN-TIME WALK: THREE entries on pp. 103-104 - the quasi-elemental",
+  "  lightning p. 103, the quickling pp. 103-104, the quickwood (spy tree) p.",
+  "  104. No doctrine-only heads; no prior-owned entries (the MM1 quasit is an",
+  "  MM1 print, not a box entry). THREE .lua defs ride the R791 data_files",
+  "  extension, registry 723 -> 726. Header rules/mm2q.h, prefix mm2q, 71",
+  "  consts + 18 bools + ONE grid (the 3x10 QStats stat grid) = 99 inline. THE",
+  "  Q-FLIP: the Letter Q gap box flips to closed - 22 closed 15 open.",
+  "THE SETTLED READS (capture primary, the 1eonline transcription the cross-",
+  "  check voice): the quasi-elemental \"6, 9, or 12\" hit dice the first-number",
+  "  6 read (the MM1 earth elemental precedent), AC 2, VII/1000+15 the xpValue",
+  "  1315 at level 7, move 18; the quickling \"1 1/2\" hit dice settled ASCII",
+  "  \"1-1/2\" (hitDiceNum 1, hitDiceBonus 2 - the half die as +2 hp, the loader",
+  "  hitDice 1.5), avgHp 5, the -3 armor class unquoted (the R810 phoenix",
+  "  precedent), IV/200+3 the xpValue 215 at level 4, move 96, lair 10,",
+  "  treasure \"O, P, Q, X\", the \"Save as 19th-level clerics\" MR 0; the",
+  "  quickwood \"5-10 (5 hp/die)\" the flat 5x5 avgHp 25 read (hitDiceNum 5, the",
+  "  R809 obliviax flat-hp precedent, EXCLUDED from the avgHp floor-formula",
+  "  example), V/350+10 the xpValue 600 at level 5, AC 5, move 1, lair 100, the",
+  "  \"Special\" attacks floored at 1, the \"See below\" MR 0; the quickwood",
+  "  \"infravisually\" (the capture \"infravasually\" the OCR artifact).",
+  "ONE REGTEST PATCH: the R811 live def walk at the R227 anchor (the R810",
+  "  P-walk pattern), its registry census a FLOOR 723 -> at least 726.",
+  "LOCAL VERIFICATION (the authoring environment had reset again - the r810",
+  "  helper scripts were gone, so /tmp/adnd1 was rebuilt fresh from the GitHub",
+  "  tarball at bc2d9a5 and the loader sim rebuilt as sim_r811.py): engine",
+  "  double-run 9/0 -> 0/9; rverify GREEN vs bc2d9a5 - 119 mutants, 0 missed;",
+  "  OFFLINE LOADER SIM GREEN - a strict Lua parser ran the whole registry 726",
+  "  defs 0 errors, the loader coercers replicated field for field, the 3-def",
+  "  walk checks cell for cell 0 bad, the skeleton profiled against nereid.lua,",
+  "  a registry-wide raw-newline scan 0 bad; the /tmp tree restored pristine",
+  "  after.",
+  "PREFLIGHT GREEN FIRST PASS: loaded 726, errors 0; xp audit 726/0; R797",
+  "  through R811 live defs all bad 0; AUDIT CENSUS 734 each exactly once, all",
+  "  bad 0; build 0 warnings. Commit 8 files, 2045 insertions. Delivery",
+  "  spec-r811: raw JSON canvas, authored md5 997a70e893eae65bc12f341c6da0ea6e,",
+  "  44987 bytes, landed the same (no editor delta). NEXT - R812: awaits",
+  "  Curtiss's call (the arc is not letter-by-letter - the next slice is",
+  "  Curtiss's call each time; 15 open boxes remain)."
+ ]
+}

@@ -1,0 +1,36 @@
+-- Rat, Vapor: promoted by the R812 MM2 letter R walk round
+-- from the MM2 print
+-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Rat, Vapor",
+  page = "105",
+  pages = "105",
+  source = "MM2",
+  race = "Rat, Vapor",
+  hitDice = "2",
+  hitDiceNum = "2",
+  hitDiceBonus = "0",
+  avgHp = "7",
+  armorClass = "6 (or special)",
+  numAttacks = 1,
+  damage = "1-2 hp",
+  xp = "52",
+  xpPerHp = "2",
+  xpValue = "66",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "2-16",
+  lairPct = "30",
+  treasure = "See below",
+  move = "12\"/6\" (1\")",
+  size = "S",
+  intelligence = "Low",
+  alignment = "Chaotic (neutral)",
+  specialAttacks = "Stinking cloud",
+  specialDefenses = "Gaseous form",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Vapor rats appear to be nothing more than large, gray giant rats. Their habitat, however, includes areas not common to giant rats, for these creatures also dwell in and on the substantial cloud islands which frequently serve as the abode of cloud giants.\\n\\nIt is possible for vapor rats to alter the substance of their bodies and assume a gaseous form. In this condition they appear to be wisps of cloud or similar vapors. In normal solid state, vapor rats move very quickly and rapidly, are able to swim well, and are capable of burrowing rapidly through loose soil or the material of cloud islands. In their vaporous condition, they are able to direct their movement much as a ship would steer before the wind, and they are thus able to move from cloud to cloud around the sky.\\n\\nVapor rats are omnivorous, loving garbage and carrion, which is typical of all rats. While they do not seek treasure, there is a possibility that the remains of their meals will contain some items of value. If discovered in their lair, there is a 25% chance for each of the following treasure types to be there: J (1-4), K (1-4), L (1-4), M (1-4), N (1-2), C-type for gems, jewelry, and magic. If angry, hungry, or cornered, vapor rats will attack by scurrying in and delivering sharp bites. Whenever one is killed or seriously wounded, it gives off a small puff of noxious fumes. This gaseous release is the equivalent of a stinking cloud spell (q.v.), but it will affect only 1 individual if within 5-8 feet of the vapor rat. The rat always directs its release at its opponent, and the gas dissipates beyond the maximum distance shown above. Thus, while it is safe to stay these monsters from a distance, they are particularly dangerous in close proximity.\\n\\nWounded or seriously threatened vapor rats will always assume gaseous form. In such state, they can only be harmed by attack forms which cause their vapors to be destroyed. Such attack forms include very hot or magical fire, lightning, and exceptionally strong winds.",
+}

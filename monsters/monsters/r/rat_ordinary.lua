@@ -1,0 +1,36 @@
+-- Rat, Ordinary: promoted by the R812 MM2 letter R walk round
+-- from the MM2 print
+-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Rat, Ordinary",
+  page = "105",
+  pages = "105",
+  source = "MM2",
+  race = "Rat, Ordinary",
+  hitDice = "1/4",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "2",
+  armorClass = "7",
+  numAttacks = 1,
+  damage = "1",
+  xp = "2",
+  xpPerHp = "1",
+  xpValue = "4",
+  xpSource = "mm2_print",
+  frequency = "Common",
+  noAppearing = "1-100",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "15\"",
+  size = "S",
+  intelligence = "Animal",
+  alignment = "Neutral (evil)",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Rats of all sizes and colors are found everywhere from forest wilderness to city sewers. Although cowardly, a trapped or cornered rat will fight ferociously. When starved, rat packs will attack anything alive in order to feed. As is true of giant rats, typical rodents of this sort have a filthy bite with a 5% chance of causing a serious disease unless a save vs. poison indicates otherwise. Normal rats fear fire, but, when driven by hunger, they will sometimes brave it.",
+}

@@ -1,0 +1,36 @@
+-- Raven (Crow), Huge: promoted by the R812 MM2 letter R walk round
+-- from the MM2 print
+-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Raven (Crow), Huge",
+  page = "105",
+  pages = "105",
+  source = "MM2",
+  race = "Raven (Crow)",
+  hitDice = "1-1",
+  hitDiceNum = "1",
+  hitDiceBonus = "-1",
+  avgHp = "2",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "1-2",
+  xp = "30",
+  xpPerHp = "1",
+  xpValue = "32",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "2-8",
+  lairPct = "15",
+  treasure = "See below",
+  move = "1\"/27\"",
+  size = "M (4'-6' wingspread)",
+  intelligence = "Semi-+",
+  alignment = "Neutral (evil)",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Ravens (or rooks) and crows are found from cold-temperate to tropical climes. They are principally scavengers, but, being omnivorous, they will raid crops, nests, or unattended caches of food. All birds of this type travel in flocks, although a few might be encountered seemingly alone; these are scouts. As soon as any approaching creature which could threaten the flock is seen or detected, the scout or scouts will give warning cries, screen themselves, and maintain a safe distance while keeping track of the creatures and reporting events to the flock by means of raucous calls and, possibly, movements as well. Thus, ravens or crows can never be surprised during lighted conditions. Because of their intelligence, these birds are 10% likely to attack an opponent's eye. In other words, whenever a to-hit roll indicates a hit, there is a 1 in 10 chance of eye attack and resultant loss of the organ.\\n\\nRavens and crows have their own, limited language. Certain ravens, including some huge and most giant specimens, can speak as many as 100 words of the common tongue and can communicate in meaningful phrases. Huge ravens tend towards a malicious disposition and are known to serve evil masters when opportunity permits. All birds of this sort love objects which glitter and shine. Thus, they are 25% likely to have several small metal objects, gems, and the like in their nests. Giant ravens are both pugnacious and easily trained (if raised from fledglings), and so are often used as guards and messengers. In their nests, there may be Type Q treasure (a 1 in 6 chance per nest, base gem value 10 gp).",
+}

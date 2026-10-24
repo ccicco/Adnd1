@@ -1,0 +1,36 @@
+-- Retch Plant (Globe Palm): promoted by the R812 MM2 letter R walk round
+-- from the MM2 print
+-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Retch Plant (Globe Palm)",
+  page = "106",
+  pages = "106",
+  source = "MM2",
+  race = "Retch Plant (Globe Palm)",
+  hitDice = "5-8",
+  hitDiceNum = "5",
+  hitDiceBonus = "0",
+  avgHp = "17",
+  armorClass = "8",
+  numAttacks = "Nil",
+  damage = "Nil",
+  xp = "150",
+  xpPerHp = "6",
+  xpValue = "252",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "2-20",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "Nil",
+  size = "L (16'-24' tall)",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The retch plant, or globe palm, is found only in warm climates. It is a typical palm tree, except that each constantly has from 5-8 globe-like, coconut-sized fruit growing at its top. Each globe is membranous and taut and blue, violet, or lilac in color. When they strike they burst, and a nauseating fluid is splashed over a 5-foot radius. (A 25% chance for splash contact at 5-9 foot distance.) The sticky, foul liquid will cause creatures splashed to vomit and retch for the next 3 rounds and for 6 turns (1 hour) thereafter to be at 50% normal strength. There is no saving throw allowed.\\n\\nCreatures splashed must be washed in alcohol (wine, beer, brandy, etc., will do) or be much more likely to attract carnivores in the area at double the normal frequency of checks, with double probabilities of encounter. The odor is discernible within a 50-foot radius. It persists for 1-4 hours. Walking under a retch plant makes it 20% likely that one of its globes will fall. If there is solid contact with a tree trunk - such as banging against, running into, or climbing it - 2-5 of the noisome fruit will plop down.",
+}

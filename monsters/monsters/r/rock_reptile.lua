@@ -1,0 +1,36 @@
+-- Rock Reptile: promoted by the R812 MM2 letter R walk round
+-- from the MM2 print
+-- (spec tools/spec_r812.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Rock Reptile",
+  page = "106",
+  pages = "106",
+  source = "MM2",
+  race = "Rock Reptile",
+  hitDice = "5 +1 hp/1 foot of length",
+  hitDiceNum = "5",
+  hitDiceBonus = "0",
+  avgHp = "17",
+  armorClass = "3",
+  numAttacks = 1,
+  damage = "1-4 +1 point/foot of length",
+  xp = "400",
+  xpPerHp = "7",
+  xpValue = "519",
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-2",
+  lairPct = "30",
+  treasure = "See below",
+  move = "6\"",
+  size = "M-L (5'-12' long)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Surprises on 1-3",
+  specialDefenses = "Chameleon powers",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "This weird lizard has a lumpy, warty hide and chameleon-like powers. It can thus lie in wait in rocky areas, appearing to be nothing more than a pile of rubble or rocks. The rock reptile favors darkness but will occasionally venture out in daylight if it is sufficiently hungry. Its initial rush is at twice normal speed, thus surprising prey on a 3 in 6 basis. As it drags some prey to its lair, there might be bits of treasure therein - 25% each for types J, K, L, and M, and also types Q, S x 1/4, and T x 1/2. If 2 of the monsters are encountered, they have double metal and gems only.",
+}
