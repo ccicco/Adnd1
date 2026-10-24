@@ -1,0 +1,35 @@
+-- Haunt: promoted by the R806 MM2 letters HI walk round from the MM2 print
+-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Haunt",
+  page = "74",
+  pages = "74-75",
+  source = "MM2",
+  race = "Haunt",
+  hitDice = "5/victim's hp",
+  hitDiceNum = 5,
+  hitDiceBonus = 0,
+  avgHp = 17,
+  armorClass = "0/victim's AC",
+  numAttacks = "1/1, as 5 HD monster",
+  damage = "See below/by weapon",
+  xp = 165,
+  xpPerHp = 5,
+  xpValue = 250,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = 0,
+  treasure = "Nil",
+  move = "6\"/as possessed victim",
+  size = "",
+  intelligence = "Non-",
+  alignment = "Any",
+  specialAttacks = "Possession",
+  specialDefenses = "See below/none",
+  magicResistance = "Nil",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "(Note: Where statistics are separated by a slash, those to the left refer to the haunt in its natural state, those to the right are for the haunt when within a possessed victim.)\n\nA haunt is the restless spirit of a person who died leaving a vital task unfinished. A haunt inhabits an area within 6\" of the site where it died. The haunt's sole purpose is to possess a living body and use it to complete the task, thus gaining a final release.\n\nHaunts can assume either of 2 forms, at will: a hovering, luminescent ball of light (identical in appearance to a will-o-wisp) or a nebulous, translucent image of the haunt's former body. Haunts are similar in appearance to a groaning spirit, spectre, or ghost, for which they are often mistaken.\n\nA haunt's attack will drain 2 points of dexterity per hit. As a character's dexterity is drained, he or she will suffer the penalties of lower dexterity. The character will feel an increasing numbness and cold creeping over his or her body. When a character's dexterity reaches zero, the haunt will step into the body and possess it. Once a body is possessed the dexterity will return to normal.\n\nThe haunt will use the possessed body to complete its unfulfilled task, which need not necessarily be dangerous. Once the task is completed, the haunt will pass on to its final rest, and the victim will regain control of its body. When the haunt leaves a victim the character will have a dexterity of 3. Lost dexterity may be regained at a rate of 1 point for each turn of complete rest. If a haunt's possessed body is slain, it will haunt the place where the body was killed.\n\nIf the possessed victim has an alignment opposite to that of the haunt (good vs. evil), the haunt will try to strangle the character. It will fasten its ghostly hands around the victim's neck on a successful to-hit roll. The victim will then take 1 point of damage the first round, 2 the second, 4 the third, and so on, doubling each round, until the victim is dead or the haunt is driven off.\n\nHaunts may not be turned because they are linked to the site of their deaths. When in their natural forms, haunts can be struck only by silver and magical weapons and by fire. Weapons cause only 1 point of damage per attack plus any magical bonuses. Fire will inflict 1 point of damage per round, and magical fire will do full damage. When a haunt is reduced to zero hit points it will lose control of its ectoplasm and fade away. The haunt will reform in 1 week to haunt its location again until its task is completed. Exorcism will destroy a haunt forever.\n\nAny attacks on a possessed character will do full damage to the character. The only safe ways to free a possessed person are an exorcism or a hold person spell. When a hold person spell is used, the haunt must save vs. paralyzation or it will be expelled from the body.\n\nA haunt must remain within 6\" of the place where it died until it possesses a body. The best defense against a haunt is to leave the area it inhabits."
+}

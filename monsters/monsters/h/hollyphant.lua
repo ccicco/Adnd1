@@ -1,0 +1,35 @@
+-- Hollyphant: promoted by the R806 MM2 letters HI walk round from the MM2 print
+-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Hollyphant",
+  page = "75",
+  pages = "75",
+  source = "MM2",
+  race = "Hollyphant",
+  hitDice = "8+8",
+  hitDiceNum = 8,
+  hitDiceBonus = 8,
+  avgHp = 36,
+  armorClass = -4,
+  numAttacks = 2,
+  damage = "1-3/1-3",
+  xp = 3750,
+  xpPerHp = 14,
+  xpValue = 4254,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-3",
+  lairPct = 0,
+  treasure = "Nil",
+  move = "9\"/42\" (MC:B)",
+  size = "S (2\"+ long)",
+  intelligence = "Genius",
+  alignment = "Good (lawful)",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "60%",
+  psionic = "201-300",
+  attackDefenseModes = "All/all",
+  text = "Hollyphants are creatures of the Upper Outer Planes. They are used as messengers and helpers by the deities, and as such are sometimes encountered on the Prime Material Plane. When so seen, there will be from 1 to 3 hollyphants flying, for it is only 5% probable that a hollyphant will be going by foot. The sight of the strange, golden-furred creatures will engender great fondness and desire to cooperate in good characters, unease in those of neutral standing, and loathing tinged with fear in evil characters. This reaction is caused by the sort of telepathic aura which surrounds hollyphants. No saving throw is permitted. Hollyphants desire to aid Good, dislike Neutral, and will seek to destroy Evil.\n\nNormal attack is by means of their upward-jutting tusks, but Hollyphants have far more effective attack and defense modes. Three times per day each hollyphant can trumpet through its trunk. Each blast can deliver the results desired by the particular hollyphant: blasting as per horn of blasting; deafening as per drums of deafening but in a cone-shape 1\" x 3\" x 7\"; and sun-sparkles, which is a cone-shaped blast of positive energy particles, 1\" x 2\" x 5\", that inflicts 8d6 +8 points of damage on creatures such as undead and those of the Lower Outer Planes.\n\nHollyphants are also able to use the following spell-like powers, 1 at a time, 1 per round, at will, at 16th level of ability: banish once per day (see below); bless, cure serious wounds twice per day; flame strike once per day; heal once per day, light, protection from evil (within a 10-foot radius) twice per day, raise dead once per day, and teleport with no error.\n\nA banishment spell forces some creature from another plane to return instantly to its own abode. The subject cannot come back without some special summoning or means of egress from its own plane. More than 1 creature can be forced into magical banishment, if within 2\" range and if the total hit dice of all affected is 32 or less. If the subject creature makes its saving throw vs. the spell, the hollyphant will be stung by a backlash of energy, take 2-12 points of damage, and be stunned for 2-12 segments.\n\nLive hollyphants are always protected by a globe of invulnerability radiated by their fur. Their tusks give them immunity to all diseases and poisons, but the tusks do not function thus for others. They are harmed only by +1 or better magic weapons. They automatically detect evil in a 2\" radius. Hollyphants can gate (50% success) another hollyphant* (70%) or an appropriate deva* (30%). Psionic disciplines are usually 4 minor and 2 major ones. They never duplicate the hollyphants' spell-like or other powers. Communication is by their own speech or by a limited form of telepathy.\n\nHollyphants are travelers of the Astral and Ethereal planes, of course, for they must travel there in the course of their duties.\n\nThe golden fur of these creatures seems to glow. Their wings are also golden and their small tusks are ivory-colored. Hollyphant eyes are amber-colored to glowing brown, large, and kindly.\n\n* As an alternative, a baku, lamassu, opinicus, shedu, etc., might be possible.\n\n** As an alternative, greater lamassu, greater shedu, ki-rin, phoenix, etc., might be possible."
+}

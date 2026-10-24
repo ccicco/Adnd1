@@ -1,0 +1,35 @@
+-- Hybsil: promoted by the R806 MM2 letters HI walk round from the MM2 print
+-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Hybsil",
+  page = "76",
+  pages = "76-77",
+  source = "MM2",
+  race = "Hybsil",
+  hitDice = "1-1",
+  hitDiceNum = 1,
+  hitDiceBonus = -1,
+  avgHp = 2,
+  armorClass = 7,
+  numAttacks = "1 weapon",
+  damage = "1-4 or by weapon",
+  xp = 22,
+  xpPerHp = 1,
+  xpValue = 24,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1d6 x 10",
+  lairPct = 30,
+  treasure = "I",
+  move = "15\"",
+  size = "S (3' tall)",
+  intelligence = "Average to very",
+  alignment = "Lawful good",
+  specialAttacks = "Nil",
+  specialDefenses = "+4 to all saving throws",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These small antelope centaurs look like a cross between a centaur and a pixie, brownie, or sprite. They speak Hybsil, Elf, and Common. Bugbears, ogres, and especially gnolls are their mortal enemies. They are often on friendly terms with most 4-legged mammals, including antelopes, zebras, deer, and horses.\n\nIn combat, they use short daggers, but their main weapons are their arrows. These cause 1-4 points of damage and are coated with a rare plant juice that causes sleep for 1-4 hours (save vs. poison at -4). Hybsils add +4 to all their saving throws because of their hearty constitutions.\n\nHybsils live in large families or close-knit tribes in temperate or subtropical grasslands. They are seminomadic and may roam over vast areas or live an entire lifetime within a small thicket or grove. The tribal leader will be a witch doctor capable of either druid (60%) or magic-user (40%) spells and a casting ability of up to 7th level."
+}

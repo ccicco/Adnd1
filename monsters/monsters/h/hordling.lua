@@ -1,0 +1,35 @@
+-- Hordling: promoted by the R806 MM2 letters HI walk round from the MM2 print
+-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Hordling",
+  page = "75",
+  pages = "75-76",
+  source = "MM2",
+  race = "Hordling",
+  hitDice = "6+3, 7+2, 8+1, or 9",
+  hitDiceNum = 9,
+  hitDiceBonus = 0,
+  avgHp = 31,
+  armorClass = "3,2,1, OR 0",
+  numAttacks = "By type of hordling",
+  damage = "See Attack Table",
+  xp = 1400,
+  xpPerHp = 12,
+  xpValue = 1772,
+  xpSource = "mm2_print",
+  frequency = "Very rare (common on the Planes of Hades)",
+  noAppearing = "1 (1-6)",
+  lairPct = 0,
+  treasure = "Nil (C in Hades)",
+  move = "6\", 9\", 12\", or 15\" (MC:D with bat wings)",
+  size = "S, M, L (8' tall)",
+  intelligence = "Semi-, low, average, very",
+  alignment = "(Neutral evil)",
+  specialAttacks = "See Special Attacks Table",
+  specialDefenses = "+1 or better weapon to hit, plus see Special Defenses Table",
+  magicResistance = "0%, 5%, 15%, 30%",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The hordlings who form the Hordes of Hades are of varied form, size, power, and appearance. They have in common hideousness and hatefulness. They roam the reaches of Hades preying upon all things, including one another. The strong slay and devour the weak. They will serve under strong leaders such as night hags, but they are untrustworthy, rebellious, and quarrelsome, so hordes are not long-lived (nor are hordlings). The disposition of hordlings is, in fact, chaotic. Similar creatures are also common on the Planes of Tarterus, and a few are found on the Abyssal Planes. The only known method of drawing more than 1 hordling to the Prime Material Plane is the bringer of doom, a strange device created by arcane magic during the Invoked Devastation (see WORLD OF GREYHAWK set) and now lost.\n\nThe exact appearance and abilities of a given hordling are determined randomly. Armor class, movement rate, hit dice, magic resistance, intelligence and size are determined using 1d4 (see above for size, 1=small, 2-3=medium, 4=large.) Roll 1d6 for each physical characteristic detailed below.\n\nHead: 1 = Wedge-shaped; 2 = Conical; 3 = Discoid; 4 = Spherical; 5 = Cubical; 6 = Ovoid.\nHead Adornment: 1 = Bald; 2 = Mane; 3 = Frills; 4 = Lumps; 5 = Spikes (2-8)*; 6 = Horns (1-4)*. (* Attack 1/spike; 1-2/horn.)\nOverall Visage: 1 = Gibbering, drooling; 2 = Glaring, menacing; 3 = Twitching, crawling; 4 = Wrinkled, seamed; 5 = Hanging, flaccid; 6 = Rotting, tattered.\nEars: 2 (1-4) or 4 (5,6): 1 = Large, pointed; 2 = Small, pointed; 3 = Large, drooping; 4 = Large, fan-like; 5 = Huge, humanoid; 6 = None.\nEye Color: 3 (4), 4-6 (5-6): 1 = Dull black; 2 = Purple; 3 = Metallic; 4 = Maroon; 5 = Blank White; 6 = Opalescent.\nEyes: 1 (1), 2 (2,3), 3 (4): 1 = Huge, protruding; 2 = Small, stalked; 3 = Large turreted; 4 = Small, sunken; 5 = Large, round; 6 = Small, slitted.\nNose: 1 = Wide, protruding; 2 = Slits only; 3 = Hanging snout; 4 = Long, pointed; 5 = Large, many-warted; 6 = Narrow, beaked.\nMouth: large (1-4), huge (5,6): 1 = Out-thrust tusks (a); 2 = Many small fangs (b); 3 = Long canines (c); 4 = Tushes (d); 5 = Crushing teeth (e); 6 = Saw-toothed (f).\nAppearance of torso: 1 = Fat; 2 = Rubbery; 3 = Thin; 4 = Narrow, long; 5 = Wide; 6 = Short, thick.\nNeck: 1 = Short, thick; 2 = Short, thin; 3 = Long, thick; 4 = Thrust forward, thick; 5 = Long, thin; 6 = None apparent.\nBack: 1 = Humped; 2 = Hunched; 3 = Knob-maned; 4 = Bristle-maned; 5 = Fan-winged*; 6 = Bat-winged**. (* Flies 18\" - maximum move 9\" on ground. ** Flies 12\" - maximum move 12\" on ground.)\nTail: 1 = Long, prehensile; 2 = Short; 3 = Long; 4 = Long, clubbed (l); 5 = Long, barbed (k); 6 = None.\nArms: 1(1), 2(2-5), 3-4(6): 1 = Multi-jointed; 2 = Telescoping*; 3 = Short, thick; 4 = Trunk-like; 5 = Long, thin; 6 = Tentacle. (* Reach is double.)\nLegs: 2(1-4), 3(5), 4(6): 1 = Long, thin; 2 = Short, bowed; 3 = Short, massive; 4 = Springing*; 5 = Hopping**; 6 = Telescoping.*** (* can spring 20'. ** can jump 10' any direction. *** can add 50% to normal height.)\nHands/extremities: 1 = Large, thick-fingered (g); 2 = Clawed (h); 3 = Taloned (j); 4 = Pinchered (j); 5 = Barbed (k); 6 = Knobbed (l).\nFeet/extremities: 1 = Prehensile toes, long; 2 = Full hoofed (m); 3 = Splay hoofed (n); 4 = Clawed (o); 5 = Suckered; 6 = Full webbed*. (* swims 6\", 9\", 12\" or 15\" (d4).)\nStrength: 1 = 17 (+1/+1); 2 = 18 (+1/+2); 3 = 18/50 (+1/+3); 4 = 18/75 (+2/+3); 5 = 18/90 (+2/+4); 6 = 18/99 (+2/+5).\nColor: 1 = Black-brown; 2 = Russet-red; 3 = Orange-yellow; 4 = Olive-green; 5 = Blue-purple; 6 = Gray-white.\n\nAttack Table - Damage (match with rolled characteristics): a = Tusks, large = 2-8, huge = 2-12; b = Small fangs, large = 2-8, huge = 2-8; c = Long canines, large = 1-6, huge = 1-8; d = Tushes, large = 1-8, huge = 1-10; e = Crushing teeth, large = 3-6, huge = 4-7; f = Saw-toothed, large = 1-3 and 1-4/round thereafter, huge = 1-4 and 1-6/round thereafter; g = Blow = 1 strength, 2 hits = strangle for 2-8 +strength; h = Claw = 2-5; i = Talon = 1-6; j = Pincer = 1-4 strength; k = Barbed = 1/round and held fast (except by tail); l = Knobbed = 1-3 +strength bonus; m = Full hoof = 1-2 +strength; n = Splay hoof = 1-3; o = Claw (hind) = 1-4.\n\nSpecial Attacks Table (10% chance for 2): 1 = Breath equals small stinking cloud spell vs. 1 opponent in 3' range; 2 = Gaze equals ray of enfeeblement spell vs. 1 opponent in 5' range; 3 = Legs used to equal trip spell vs. 1 opponent in melee; 4 = Sound emanation equals fumble spell vs. 1 opponent in 5' range; 5 = Double attacks for 1 round once per turn; 6 = Acidic spittle missile, 10' range, 2-8 points damage, once per turn.\n\nSpecial Defenses Table (10% chance for 2): 1 = +2 or better weapon to hit; 2 = Fire and acid attack immunity; 3 = Cold, gas, and poison immunity; 4 = Electrical and magic missile immunity; 5 = Immunity to illusions and mental paralysis (charm, hold); 6 = Regenerates at 2-5 hp/turn rate.\n\nAll hordlings have ultravisual capabilities. Those with usable hands can use weapons. They all can become near-invisible (75%) for up to 1 full turn once per day; this requires 1 round. Hordlings are otherwise unremarkable. Note: Treat hordlings as minor demons with respect to clerical turning and like effects."
+}

@@ -1,0 +1,1683 @@
+{
+ "round": 806,
+ "prefix": "mm2hi",
+ "header_file": "rules/mm2hi.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 728,
+ "title": "the MM2 letters HI walk - the hangman tree, haunt, hollyphant, hordling and hybsil turns",
+ "audit_label": "R806 MM2 letters HI walk audit",
+ "audit_comment": "THE MM2 LETTERS HI WALK - the hangman tree, the haunt pp. 74-75, the hollyphant, the hordling pp. 75-76 and the hybsil pp. 76-77 promoted to the live registry; the letter-I span walks empty - the ildriss is the only letter-I entry and it rode the R805 FG walk, so the Letter I box closes on the already-pinned def; the contested cells settled: the hangman tree hit-dice cell \"61 hp/year\" pins capture verbatim (the 1eonline compilation notes the intended 6-plus-1-per-year typo reading; the avgHp reads the flat printed 61 hp - the demilich precedent - and the hitDiceNum reads the flat-hp 0 dice; the magic resistance reads the 1% per year); the haunt attacks cell \"1/1, as 5 HD monster\" loads the max 5 (the R798 duergar convention - the R805 grim lesson); the haunt block prints no size or magic resistance line (the size reads empty, the magic resistance reads Nil 0); the hordling or-form cells read their best variant (the 9 hit dice, the 3 armor class, the 6 ground move, the 0 magic resistance, the VII/1400 + 12/hp xp); the hybsil xp level reads II (the capture \"ll\" and the djvu \"11\" both the OCR misreads); the hybsil \"pixie\" (the capture \"poie\" the misread); the hollyphant \"2\\\"+ long\" and hangman tree \"20\\\"+ tall\" feet/inches print typos pinned verbatim",
+ "include_comment": "the MM2 letters HI walk - the hangman tree, haunt, hollyphant, hordling and hybsil turns",
+ "include_after": "#include \"rules/mm2fg.h\"  // R805: the MM2 letters FG walk - the falcon, foo creature, giant and grue turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R805 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R805 LANDED 2026-10-24: commit",
+  "  9189c0498b384ba70d19b41398bdf9cc8f3d492b",
+  "  (census 727 -> 728, pushed",
+  "  49d815f..9189c04), THE MM2",
+  "  LETTERS FG WALK - THE FALCON,",
+  "  FOO CREATURE, GIANT AND GRUE",
+  "  TURNS - THE FG-FLIP ROUND",
+  "  (Curtiss's Go call on the landed",
+  "  letter E walk; round ten of the",
+  "  MM2 arc, and the FIRST",
+  "  TWO-LETTER pass - the user's",
+  "  \"multiple letters\" call, the",
+  "  falcon and hawk table opens p. 64",
+  "  and the varrdig tail closes",
+  "  p. 74). THE PIN-TIME WALK:",
+  "  TWENTY-FIVE entries on pp. 64-74",
+  "  - the falcon, firefriend, giant",
+  "  fly, foo, formian and froghemoth",
+  "  tables of pp. 64-67 (the falcon",
+  "  and hawk small/large pair, the",
+  "  firefriend, the bluebottle and",
+  "  horsefly giant flies, the foo dog",
+  "  and foo lion, the forester's",
+  "  bane, the formian myrmarch,",
+  "  warrior and worker, the",
+  "  froghemoth), then the letter-G",
+  "  pages 68-74 (the galeb duhr, the",
+  "  GIANT family head doctrine only -",
+  "  the fomorian, firbolg and verbeeg",
+  "  blocks ride beneath it - the",
+  "  gibbering mouther, the gloomwing,",
+  "  the goat, the gorgimera, the",
+  "  greenhag, the grippli, the grig,",
+  "  the grim, the GRUE family head",
+  "  doctrine only - the chaggrin,",
+  "  harginn, ildriss and varrdig",
+  "  blocks ride beneath it). TWENTY-",
+  "  EIGHT .lua defs ride the R791",
+  "  data_files extension, registry",
+  "  622 -> 650 - the file paths take",
+  "  the stem FIRST letter (fomorian",
+  "  and firbolg in f/, verbeeg and",
+  "  varrdig in v/, chaggrin in c/,",
+  "  harginn in h/, ildriss in i/).",
+  "  Header rules/mm2fg.h, prefix",
+  "  mm2fg, 293 consts + 15 bools +",
+  "  ONE grid (the 28x10 FgStats stat",
+  "  grid) = 318 inline. THE FG-FLIP:",
+  "  BOTH the Letter F and the Letter",
+  "  G gap boxes flip to closed - 12",
+  "  closed 25 open. THE SETTLED READS",
+  "  (capture primary, transcription",
+  "  and djvu the cross-check voices):",
+  "  the firbolg bat-away roll reads",
+  "  \"6 or better\" (the capture \"8\"",
+  "  the OCR misread, the 75%",
+  "  arithmetic the settle); the",
+  "  firbolg \"chaotic good\" (the",
+  "  capture \"cheotic\" the misread);",
+  "  the froghemoth damage cell",
+  "  \"5d10 or 5-8 (=4)\" capture",
+  "  verbatim (the djvu \"+4\" the",
+  "  misread); the harginn",
+  "  parenthetical treasure reads the",
+  "  letter I (the varrdig \"1/2 x F\"",
+  "  pattern); the verbeeg treasure",
+  "  reads K,L,M; the grig hit dice",
+  "  \"1/2+1 (2-5 hit points)\" reads",
+  "  avgHp 3 (the atomie precedent);",
+  "  the gorgimera AC \"5/2\" reads 5;",
+  "  the galeb duhr HD 8-10 reads the",
+  "  low end 8 (the kuei precedent);",
+  "  the ildriss ground move reads 3",
+  "  (the rolling-fog rate); the",
+  "  gorgimera \"Astal\" print typo",
+  "  kept verbatim. THE LANDING",
+  "  DETOUR (three prefights, two",
+  "  REDs): (1) the first handoff's",
+  "  walk key list carried a DOUBLED",
+  "  COMMA (\"ildriss\", \"varrdig\",,)",
+  "  - regtest.cpp failed to compile",
+  "  and the whole battery census went",
+  "  dark; the fix was one character,",
+  "  fixed spec md5",
+  "  d1707e1b44800706598fbfa069f86db9",
+  "  (168463 bytes); the re-landing",
+  "  then hit the R420 mixed-state",
+  "  abort (the RED run had already",
+  "  applied the old spec's patches),",
+  "  cleaned by the R515",
+  "  restore-and-rerun. (2) the second",
+  "  run built 0 warnings but the",
+  "  walk printed bad 3 - THREE",
+  "  FgStat ATTACK pins broke the",
+  "  loader's composite-attack",
+  "  semantics (the R798 duergar",
+  "  max-read convention):",
+  "  luaGetNumAttacks reads a string",
+  "  with \"and\" as the SUM and every",
+  "  other composite as the MAX, and",
+  "  floors textless cells at 1 - so",
+  "  the forester's bane \"3-6\" loads",
+  "  6 (pinned 3), the froghemoth",
+  "  \"1 or 4\" loads 4 (pinned 1),",
+  "  and the grim \"See below\" loads",
+  "  the 1 floor (pinned 0 -",
+  "  unreachable, the loader can",
+  "  never yield attacks 0); found",
+  "  by replicating the MonsterRegistry",
+  "  loader field-for-field in Python",
+  "  and running the walk checks",
+  "  offline (rverify proves spec vs",
+  "  model, NOT model vs the C++",
+  "  loader - the load-time",
+  "  mismatches are invisible to the",
+  "  mutant battery); the bad walk",
+  "  early-returned so the census",
+  "  read every later audit line 0",
+  "  times; the fix: the three grid",
+  "  cells 6/4/1 and the attacks",
+  "  col_comment now states the",
+  "  max-read convention (the lua",
+  "  prints stay verbatim), fixed",
+  "  spec md5",
+  "  247f417e2236067a820fdad30c401038",
+  "  (168518 bytes); another R515",
+  "  restore-and-rerun, then GREEN.",
+  "  rverify GREEN against 49d815f",
+  "  both times (588 mutants, 0",
+  "  missed), the offline walk",
+  "  simulation 0 bad, and the",
+  "  environment had reset again -",
+  "  the builder was gone, so both",
+  "  repairs re-derived the spec from",
+  "  the delivered canvas (the R802/",
+  "  R803 lost-builder precedent) and",
+  "  the /tmp tree was re-fetched from",
+  "  the GitHub tarball at 49d815f.",
+  "  Commit 33 files, 7183 insertions.",
+  "  Delivery spec-r805: raw JSON",
+  "  canvas (body byte-identical to",
+  "  the landed spec), final md5",
+  "  247f417e2236067a820fdad30c401038.",
+  "  NEXT - R806: awaits Curtiss's",
+  "  call (the natural next walk is",
+  "  the Letter H box - 25 open boxes",
+  "  remain)."
+ ],
+ "banner": {
+  "title": "THE MM2 LETTERS HI WALK - THE HANGMAN TREE, HAUNT, HOLLYPHANT, HORDLING AND HYBSIL TURNS (the hangman tree, the haunt pp. 74-75, the hollyphant, the hordling pp. 75-76 and the hybsil pp. 76-77), promoted to the live registry; the Letter I box closes on the already-pinned ildriss (no new letter-I defs ride the walk)",
+  "provenance": "Round eleven of the MM2 arc, the SECOND TWO-LETTER pass (the user Go call on the landed FG walk: the multiple letters standing call - the hangman tree opens p. 74 and the hybsil tail closes p. 77, the letter-I span holds only the ildriss already promoted by the R805 FG walk - the HI-FLIP round, both the Letter H and the Letter I gap boxes flip to closed). The capture is the Curtiss PDF upload cross-checked against the archive.org djvu OCR, the contested cells settled book-internal first: the hangman tree \"61 hp/year\" cell pins capture verbatim with the flat printed 61 hp read (the 1eonline 6-plus-1-per-year typo note the cross-check voice); the haunt \"1/1, as 5 HD monster\" loads the max 5; the hordling or-form cells read their best variant; the hybsil xp level reads II over the OCR \"ll\"/\"11\" misreads",
+  "sentinel": "LOADER SEMANTICS (the R805 grim lesson): the composite numAttacks strings load as their max (the \"as 5 HD monster\" read 5) and the textless cells floor at 1; the flat-hp monsters carry hitDiceNum 0; every Nil lair reads 0 and every Standard magic resistance reads 0; the walk demands the loaded def equal the pin - walk patches may only touch real MonsterDef fields"
+ },
+ "consts": [
+  {
+   "name": "mm2hiRound",
+   "value": 806,
+   "comment": "The MM2 letters HI walk round: the hangman tree, haunt, hollyphant, hordling and hybsil turns, the second TWO-LETTER pass (the user Go call on the landed FG walk)"
+  },
+  {
+   "name": "mm2hiRegistryBefore",
+   "value": 650,
+   "comment": "The registry census before the R806 promotion (the landed R805 count)"
+  },
+  {
+   "name": "mm2hiRegistryAfter",
+   "value": 655,
+   "comment": "The registry census after the R806 promotion (5 defs)"
+  },
+  {
+   "name": "mm2hiDefCount",
+   "value": 5,
+   "comment": "The .lua defs riding the R806 walk (the hangman tree, the haunt, the hollyphant, the hordling and the hybsil)"
+  },
+  {
+   "name": "mm2hiEntryCount",
+   "value": 5,
+   "comment": "The pin-time walk entry census (5 entries, all with stat blocks)"
+  },
+  {
+   "name": "mm2hiStatBlockHeadings",
+   "value": 5,
+   "comment": "The stat-block headings walked at pin time from the print pp. 74-77"
+  },
+  {
+   "name": "mm2hiDoctrineHeads",
+   "value": 0,
+   "comment": "The doctrine-only family heads riding the letter-H walk (none - the five letter-H entries each carry their own stat block)"
+  },
+  {
+   "name": "mm2hiLetterHHeadings",
+   "value": 5,
+   "comment": "The letter-H headings (the hangman tree, the haunt, the hollyphant, the hordling and the hybsil)"
+  },
+  {
+   "name": "mm2hiLetterIHeadings",
+   "value": 0,
+   "comment": "The letter-I headings walked by R806 (zero new entries - the letter-I span holds only the ildriss)"
+  },
+  {
+   "name": "mm2hiHhStatRows",
+   "value": 5,
+   "comment": "The row count of the hangman-tree-to-hybsil stat grid"
+  },
+  {
+   "name": "mm2hiGapClosed",
+   "value": 14,
+   "comment": "The MM2 gap report closed-box count after the HI-FLIP (the letter H and letter I boxes flip to closed)"
+  },
+  {
+   "name": "mm2hiGapOpen",
+   "value": 23,
+   "comment": "The MM2 gap report open-box count after the HI-FLIP"
+  },
+  {
+   "name": "mm2hiPriorOwnedEntries",
+   "value": 1,
+   "comment": "The prior-owned letter-H-and-I entries (the ildriss, promoted by the R805 FG walk - the letter-I box closes on it)"
+  },
+  {
+   "name": "mm2hiIldrissOwningRound",
+   "value": 805,
+   "comment": "The owning round of the only letter-I entry (the ildriss rode the R805 letters FG walk under the GRUE family head)"
+  },
+  {
+   "name": "mm2hiHangmanTreeXpValue",
+   "value": 2088,
+   "comment": "The hangman tree full kill xp (1600 + 8/hp x 61 avg; level VII)"
+  },
+  {
+   "name": "mm2hiHangmanTreeXpLevel",
+   "value": 7,
+   "comment": "The hangman tree printed xp level (VII)"
+  },
+  {
+   "name": "mm2hiHangmanTreeAppendagesMin",
+   "value": 6,
+   "comment": "The hangman tree appendage count low end (6-9)"
+  },
+  {
+   "name": "mm2hiHangmanTreeAppendagesMax",
+   "value": 9,
+   "comment": "The hangman tree appendage count high end (6-9)"
+  },
+  {
+   "name": "mm2hiHangmanTreeControlledAppendages",
+   "value": 3,
+   "comment": "The hangman tree appendages controllable at one time"
+  },
+  {
+   "name": "mm2hiHangmanTreeVineSeverMin",
+   "value": 13,
+   "comment": "The hangman tree vine sever damage low end (13-20 points)"
+  },
+  {
+   "name": "mm2hiHangmanTreeVineSeverMax",
+   "value": 20,
+   "comment": "The hangman tree vine sever damage high end (13-20 points)"
+  },
+  {
+   "name": "mm2hiHangmanTreeVineDamageMax",
+   "value": 3,
+   "comment": "The hangman tree vine tightening damage high end (1-3 per round)"
+  },
+  {
+   "name": "mm2hiHangmanTreeLiftPounds",
+   "value": 1000,
+   "comment": "The hangman tree vine lift capacity (pounds)"
+  },
+  {
+   "name": "mm2hiHangmanTreeLiftRounds",
+   "value": 4,
+   "comment": "The hangman tree rounds to lift prey to the trunk opening"
+  },
+  {
+   "name": "mm2hiHangmanTreeDropRound",
+   "value": 5,
+   "comment": "The hangman tree round the victim is dropped into the acid (the round after the lift)"
+  },
+  {
+   "name": "mm2hiHangmanTreeAcidDamageMax",
+   "value": 12,
+   "comment": "The hangman tree acid damage high end (3-12 per round)"
+  },
+  {
+   "name": "mm2hiHangmanTreeDigestVictims",
+   "value": 3,
+   "comment": "The man-sized victims fitting the hangman tree digestive cavity"
+  },
+  {
+   "name": "mm2hiHangmanTreePerfumeRangeMinFeet",
+   "value": 30,
+   "comment": "The hangman tree hallucinatory perfume release range low end (30-80 feet distant)"
+  },
+  {
+   "name": "mm2hiHangmanTreePerfumeRangeMaxFeet",
+   "value": 80,
+   "comment": "The hangman tree hallucinatory perfume release range high end"
+  },
+  {
+   "name": "mm2hiHangmanTreeMrPerYear",
+   "value": 1,
+   "comment": "The hangman tree magic resistance (1% per year of age)"
+  },
+  {
+   "name": "mm2hiHangmanTreeSproutAgeMax",
+   "value": 10,
+   "comment": "The hangman tree sprout age band high end (1-10 years)"
+  },
+  {
+   "name": "mm2hiHangmanTreeSaplingAgeMin",
+   "value": 11,
+   "comment": "The hangman tree sapling age band low end (11-25 years)"
+  },
+  {
+   "name": "mm2hiHangmanTreeSaplingAgeMax",
+   "value": 25,
+   "comment": "The hangman tree sapling age band high end"
+  },
+  {
+   "name": "mm2hiHangmanTreeSaplingMoveFeetPerHour",
+   "value": 6,
+   "comment": "The hangman tree sapling movement (feet per hour)"
+  },
+  {
+   "name": "mm2hiHangmanTreeMatureAgeMin",
+   "value": 26,
+   "comment": "The hangman tree mature age band low end (26-75 years)"
+  },
+  {
+   "name": "mm2hiHangmanTreeMatureAgeMax",
+   "value": 75,
+   "comment": "The hangman tree mature age band high end"
+  },
+  {
+   "name": "mm2hiHangmanTreeOldAgeMin",
+   "value": 76,
+   "comment": "The hangman tree old age band low end (76-150 years)"
+  },
+  {
+   "name": "mm2hiHangmanTreeOldAgeMax",
+   "value": 150,
+   "comment": "The hangman tree old age band high end"
+  },
+  {
+   "name": "mm2hiHangmanTreeAncientAgeMin",
+   "value": 151,
+   "comment": "The hangman tree ancient age band low end (151+ years)"
+  },
+  {
+   "name": "mm2hiHangmanTreeDarknessEfficiencyPct",
+   "value": 50,
+   "comment": "The hangman tree efficiency under darkness (half efficiency)"
+  },
+  {
+   "name": "mm2hiHauntXpValue",
+   "value": 250,
+   "comment": "The haunt full kill xp (165 + 5/hp x 17 avg; level IV)"
+  },
+  {
+   "name": "mm2hiHauntXpLevel",
+   "value": 4,
+   "comment": "The haunt printed xp level (IV)"
+  },
+  {
+   "name": "mm2hiHauntAreaRadiusInches",
+   "value": 6,
+   "comment": "The haunt habitation radius around the death site (inches)"
+  },
+  {
+   "name": "mm2hiHauntDexDrain",
+   "value": 2,
+   "comment": "The haunt dexterity drain per hit"
+  },
+  {
+   "name": "mm2hiHauntPossessDexFloor",
+   "value": 0,
+   "comment": "The dexterity score at which the haunt steps into the body"
+  },
+  {
+   "name": "mm2hiHauntReleaseVictimDex",
+   "value": 3,
+   "comment": "The victim dexterity after the haunt leaves the body"
+  },
+  {
+   "name": "mm2hiHauntDexRegainPerTurn",
+   "value": 1,
+   "comment": "The lost dexterity regain rate (1 point per turn of complete rest)"
+  },
+  {
+   "name": "mm2hiHauntStrangleStart",
+   "value": 1,
+   "comment": "The haunt strangling damage the first round"
+  },
+  {
+   "name": "mm2hiHauntStrangleSecond",
+   "value": 2,
+   "comment": "The haunt strangling damage the second round"
+  },
+  {
+   "name": "mm2hiHauntStrangleThird",
+   "value": 4,
+   "comment": "The haunt strangling damage the third round (doubling each round)"
+  },
+  {
+   "name": "mm2hiHauntWeaponDamage",
+   "value": 1,
+   "comment": "The haunt damage per weapon attack (plus any magical bonuses)"
+  },
+  {
+   "name": "mm2hiHauntFireDamagePerRound",
+   "value": 1,
+   "comment": "The haunt damage per round from fire"
+  },
+  {
+   "name": "mm2hiHauntReformWeeks",
+   "value": 1,
+   "comment": "The haunt reform time after being reduced to zero hit points (weeks)"
+  },
+  {
+   "name": "mm2hiHauntAttackAsHd",
+   "value": 5,
+   "comment": "The haunt attack capability in its natural state (the \"1/1, as 5 HD monster\" cell reads the 5)"
+  },
+  {
+   "name": "mm2hiHauntFormCount",
+   "value": 2,
+   "comment": "The haunt assumed forms (the luminescent ball of light and the translucent body image)"
+  },
+  {
+   "name": "mm2hiHollyphantXpValue",
+   "value": 4254,
+   "comment": "The hollyphant full kill xp (3750 + 14/hp x 36 avg; level VIII)"
+  },
+  {
+   "name": "mm2hiHollyphantXpLevel",
+   "value": 8,
+   "comment": "The hollyphant printed xp level (VIII)"
+  },
+  {
+   "name": "mm2hiHollyphantTrumpsPerDay",
+   "value": 3,
+   "comment": "The hollyphant trumpet blasts per day"
+  },
+  {
+   "name": "mm2hiHollyphantDeafenConeLengthInches",
+   "value": 7,
+   "comment": "The hollyphant deafening cone dimensions (1 x 3 x 7 inches)"
+  },
+  {
+   "name": "mm2hiHollyphantSunSparkleDamageDice",
+   "value": 8,
+   "comment": "The hollyphant sun-sparkles damage dice (8d6)"
+  },
+  {
+   "name": "mm2hiHollyphantSunSparkleBonus",
+   "value": 8,
+   "comment": "The hollyphant sun-sparkles damage bonus (+8)"
+  },
+  {
+   "name": "mm2hiHollyphantSpellLevel",
+   "value": 16,
+   "comment": "The hollyphant spell-like ability level (16th)"
+  },
+  {
+   "name": "mm2hiHollyphantBanishRangeInches",
+   "value": 2,
+   "comment": "The hollyphant banishment range (inches)"
+  },
+  {
+   "name": "mm2hiHollyphantBanishHdCap",
+   "value": 32,
+   "comment": "The hollyphant banishment total hit dice cap"
+  },
+  {
+   "name": "mm2hiHollyphantBacklashDamageMin",
+   "value": 2,
+   "comment": "The hollyphant banishment backlash damage low end (2-12)"
+  },
+  {
+   "name": "mm2hiHollyphantBacklashDamageMax",
+   "value": 12,
+   "comment": "The hollyphant banishment backlash damage high end (2-12)"
+  },
+  {
+   "name": "mm2hiHollyphantBacklashStunSegmentsMax",
+   "value": 12,
+   "comment": "The hollyphant banishment backlash stun (2-12 segments)"
+  },
+  {
+   "name": "mm2hiHollyphantCureSeriousWoundsPerDay",
+   "value": 2,
+   "comment": "The hollyphant cure serious wounds uses per day"
+  },
+  {
+   "name": "mm2hiHollyphantProtectionFromEvilPerDay",
+   "value": 2,
+   "comment": "The hollyphant protection from evil uses per day"
+  },
+  {
+   "name": "mm2hiHollyphantProtectionRadiusFeet",
+   "value": 10,
+   "comment": "The hollyphant protection from evil radius (feet)"
+  },
+  {
+   "name": "mm2hiHollyphantGatePct",
+   "value": 50,
+   "comment": "The hollyphant gate success percent"
+  },
+  {
+   "name": "mm2hiHollyphantGateHollyphantPct",
+   "value": 70,
+   "comment": "The gated hollyphant arrival percent"
+  },
+  {
+   "name": "mm2hiHollyphantGateDevaPct",
+   "value": 30,
+   "comment": "The gated deva arrival percent"
+  },
+  {
+   "name": "mm2hiHollyphantDetectEvilRadiusInches",
+   "value": 2,
+   "comment": "The hollyphant automatic detect evil radius (inches)"
+  },
+  {
+   "name": "mm2hiHollyphantPsionicMinor",
+   "value": 4,
+   "comment": "The hollyphant usual minor psionic disciplines"
+  },
+  {
+   "name": "mm2hiHollyphantPsionicMajor",
+   "value": 2,
+   "comment": "The hollyphant usual major psionic disciplines"
+  },
+  {
+   "name": "mm2hiHollyphantFootTravelPct",
+   "value": 5,
+   "comment": "The hollyphant probability of going by foot (percent)"
+  },
+  {
+   "name": "mm2hiHollyphantWeaponPlusMin",
+   "value": 1,
+   "comment": "The weapon enchantment floor to harm a hollyphant"
+  },
+  {
+   "name": "mm2hiHollyphantFlyRate",
+   "value": 42,
+   "comment": "The hollyphant flight rate (42 inches; the ground move reads 9)"
+  },
+  {
+   "name": "mm2hiHollyphantPsionicMin",
+   "value": 201,
+   "comment": "The hollyphant psionic ability score low end (201-300)"
+  },
+  {
+   "name": "mm2hiHollyphantPsionicMax",
+   "value": 300,
+   "comment": "The hollyphant psionic ability score high end (201-300)"
+  },
+  {
+   "name": "mm2hiHordlingXpValue",
+   "value": 1772,
+   "comment": "The hordling full kill xp of the top variant (1400 + 12/hp x 31 avg; level VII - the or-form best read)"
+  },
+  {
+   "name": "mm2hiHordlingXpLevelTop",
+   "value": 7,
+   "comment": "The hordling top-variant printed xp level (VII)"
+  },
+  {
+   "name": "mm2hiHordlingAcTier1",
+   "value": 3,
+   "comment": "The hordling armor class tier 1 (the \"3,2,1, OR 0\" ladder)"
+  },
+  {
+   "name": "mm2hiHordlingAcTier2",
+   "value": 2,
+   "comment": "The hordling armor class tier 2"
+  },
+  {
+   "name": "mm2hiHordlingAcTier3",
+   "value": 1,
+   "comment": "The hordling armor class tier 3"
+  },
+  {
+   "name": "mm2hiHordlingAcTier4",
+   "value": 0,
+   "comment": "The hordling armor class tier 4"
+  },
+  {
+   "name": "mm2hiHordlingMoveTier1",
+   "value": 6,
+   "comment": "The hordling ground move tier 1 (the \"6, 9, 12, or 15\" ladder)"
+  },
+  {
+   "name": "mm2hiHordlingMoveTier4",
+   "value": 15,
+   "comment": "The hordling ground move tier 4"
+  },
+  {
+   "name": "mm2hiHordlingHdTier1",
+   "value": 6,
+   "comment": "The hordling hit dice tier 1 (the 6+3, 7+2, 8+1, or 9 ladder)"
+  },
+  {
+   "name": "mm2hiHordlingHdBonusTier1",
+   "value": 3,
+   "comment": "The hordling hit dice bonus tier 1 (6+3)"
+  },
+  {
+   "name": "mm2hiHordlingHdTier4",
+   "value": 9,
+   "comment": "The hordling hit dice tier 4 (the or-form best read)"
+  },
+  {
+   "name": "mm2hiHordlingHdBonusTier4",
+   "value": 0,
+   "comment": "The hordling hit dice bonus tier 4 (the bare 9)"
+  },
+  {
+   "name": "mm2hiHordlingMrTier1",
+   "value": 0,
+   "comment": "The hordling magic resistance tier 1 (the 0%, 5%, 15%, 30% ladder)"
+  },
+  {
+   "name": "mm2hiHordlingMrTier4",
+   "value": 30,
+   "comment": "The hordling magic resistance tier 4"
+  },
+  {
+   "name": "mm2hiHordlingXpTier1",
+   "value": 525,
+   "comment": "The hordling base xp tier 1 (525 + 8/hp; level VI)"
+  },
+  {
+   "name": "mm2hiHordlingXpHpTier1",
+   "value": 8,
+   "comment": "The hordling xp per hit point tier 1"
+  },
+  {
+   "name": "mm2hiHordlingXpTier4",
+   "value": 1400,
+   "comment": "The hordling base xp tier 4 (1400 + 12/hp; level VII)"
+  },
+  {
+   "name": "mm2hiHordlingXpHpTier4",
+   "value": 12,
+   "comment": "The hordling xp per hit point tier 4"
+  },
+  {
+   "name": "mm2hiHordlingTierDie",
+   "value": 4,
+   "comment": "The hordling tier roll (1d4 for armor class, move, hit dice, magic resistance, intelligence and size)"
+  },
+  {
+   "name": "mm2hiHordlingTraitTableCount",
+   "value": 18,
+   "comment": "The hordling 1d6 physical-characteristic tables (the head through the color)"
+  },
+  {
+   "name": "mm2hiHordlingTraitDie",
+   "value": 6,
+   "comment": "The hordling physical-characteristic roll (1d6 per characteristic)"
+  },
+  {
+   "name": "mm2hiHordlingAttackTableEntries",
+   "value": 15,
+   "comment": "The hordling attack table letter entries (a through o)"
+  },
+  {
+   "name": "mm2hiHordlingSpecialAttackCount",
+   "value": 6,
+   "comment": "The hordling special attacks table entries"
+  },
+  {
+   "name": "mm2hiHordlingSpecialDefenseCount",
+   "value": 6,
+   "comment": "The hordling special defenses table entries"
+  },
+  {
+   "name": "mm2hiHordlingDoubleSpecialPct",
+   "value": 10,
+   "comment": "The hordling chance of 2 special attacks or defenses (percent)"
+  },
+  {
+   "name": "mm2hiHordlingNearInvisiblePct",
+   "value": 75,
+   "comment": "The hordling near-invisibility effectiveness (percent)"
+  },
+  {
+   "name": "mm2hiHordlingNearInvisibleTurns",
+   "value": 1,
+   "comment": "The hordling near-invisibility duration (up to 1 full turn once per day)"
+  },
+  {
+   "name": "mm2hiHordlingLairPctHades",
+   "value": 15,
+   "comment": "The hordling in-lair percent on the Planes of Hades"
+  },
+  {
+   "name": "mm2hiHordlingStrengthToHitMin",
+   "value": 1,
+   "comment": "The hordling strength ladder to-hit bonus low end (the 17 through 18/99 ladder)"
+  },
+  {
+   "name": "mm2hiHordlingStrengthToHitMax",
+   "value": 2,
+   "comment": "The hordling strength ladder to-hit bonus high end"
+  },
+  {
+   "name": "mm2hiHordlingStrengthDamageMin",
+   "value": 1,
+   "comment": "The hordling strength ladder damage bonus low end"
+  },
+  {
+   "name": "mm2hiHordlingStrengthDamageMax",
+   "value": 5,
+   "comment": "The hordling strength ladder damage bonus high end (the 18/99 +2/+5 rung)"
+  },
+  {
+   "name": "mm2hiHordlingAcidSpittleRangeFeet",
+   "value": 10,
+   "comment": "The hordling acidic spittle missile range (feet)"
+  },
+  {
+   "name": "mm2hiHordlingAcidSpittleDamageMax",
+   "value": 8,
+   "comment": "The hordling acidic spittle damage high end (2-8)"
+  },
+  {
+   "name": "mm2hiHordlingRegenerateMin",
+   "value": 2,
+   "comment": "The hordling regeneration rate low end (2-5 hp per turn)"
+  },
+  {
+   "name": "mm2hiHordlingRegenerateMax",
+   "value": 5,
+   "comment": "The hordling regeneration rate high end"
+  },
+  {
+   "name": "mm2hiHybsilXpValue",
+   "value": 24,
+   "comment": "The hybsil full kill xp (22 + 1/hp x 2 avg; level II)"
+  },
+  {
+   "name": "mm2hiHybsilXpLevel",
+   "value": 2,
+   "comment": "The hybsil printed xp level (II - the capture \"ll\" and the djvu \"11\" both the OCR misreads)"
+  },
+  {
+   "name": "mm2hiHybsilNoAppearingDie",
+   "value": 6,
+   "comment": "The hybsil number appearing roll (1d6)"
+  },
+  {
+   "name": "mm2hiHybsilNoAppearingMult",
+   "value": 10,
+   "comment": "The hybsil number appearing multiplier (x 10)"
+  },
+  {
+   "name": "mm2hiHybsilArrowDamageMax",
+   "value": 4,
+   "comment": "The hybsil arrow damage high end (1-4)"
+  },
+  {
+   "name": "mm2hiHybsilSleepHoursMin",
+   "value": 1,
+   "comment": "The hybsil arrow sleep duration low end (1-4 hours)"
+  },
+  {
+   "name": "mm2hiHybsilSleepHoursMax",
+   "value": 4,
+   "comment": "The hybsil arrow sleep duration high end"
+  },
+  {
+   "name": "mm2hiHybsilSleepSavePenalty",
+   "value": 4,
+   "comment": "The hybsil arrow sleep save penalty (save vs. poison at -4)"
+  },
+  {
+   "name": "mm2hiHybsilSaveBonus",
+   "value": 4,
+   "comment": "The hybsil bonus to all saving throws (+4)"
+  },
+  {
+   "name": "mm2hiHybsilWitchDoctorDruidPct",
+   "value": 60,
+   "comment": "The hybsil witch doctor druid-spell probability (percent)"
+  },
+  {
+   "name": "mm2hiHybsilWitchDoctorMuPct",
+   "value": 40,
+   "comment": "The hybsil witch doctor magic-user-spell probability (percent)"
+  },
+  {
+   "name": "mm2hiHybsilWitchDoctorLevelMax",
+   "value": 7,
+   "comment": "The hybsil witch doctor casting ability cap (7th level)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2hiHauntCannotBeTurned",
+   "value": true,
+   "comment": "Haunts may not be turned because they are linked to the site of their deaths"
+  },
+  {
+   "name": "mm2hiHauntStruckOnlyBySilverMagicOrFire",
+   "value": true,
+   "comment": "In natural form the haunt can be struck only by silver and magical weapons and by fire"
+  },
+  {
+   "name": "mm2hiHauntExorcismDestroysForever",
+   "value": true,
+   "comment": "Exorcism will destroy a haunt forever (the reform-in-1-week cycle otherwise)"
+  },
+  {
+   "name": "mm2hiHauntBlockPrintsNoSizeOrMrLine",
+   "value": true,
+   "comment": "The haunt stat block prints no size or magic resistance line (the size reads empty and the magic resistance reads Nil 0)"
+  },
+  {
+   "name": "mm2hiHollyphantGlobeOfInvulnerability",
+   "value": true,
+   "comment": "Live hollyphants are always protected by a globe of invulnerability radiated by their fur"
+  },
+  {
+   "name": "mm2hiHollyphantTusksImmunity",
+   "value": true,
+   "comment": "The hollyphant tusks give immunity to all diseases and poisons (the tusks do not function thus for others)"
+  },
+  {
+   "name": "mm2hiHangmanTreeLightningDoubleDamage",
+   "value": true,
+   "comment": "Lightning or electricity will cause double damage to the hangman tree"
+  },
+  {
+   "name": "mm2hiHangmanTreeHallucinatoryPerfume",
+   "value": true,
+   "comment": "The hangman tree hallucinatory perfume makes victims believe it to be an ordinary quickwood or treant"
+  },
+  {
+   "name": "mm2hiHordlingTurnedAsMinorDemons",
+   "value": true,
+   "comment": "Treat hordlings as minor demons with respect to clerical turning and like effects"
+  },
+  {
+   "name": "mm2hiHordlingUltravisual",
+   "value": true,
+   "comment": "All hordlings have ultravisual capabilities"
+  },
+  {
+   "name": "mm2hiHordlingBringerOfDoomSummoning",
+   "value": true,
+   "comment": "The bringer of doom is the only known method of drawing more than 1 hordling to the Prime Material Plane"
+  },
+  {
+   "name": "mm2hiHybsilPlusFourSaves",
+   "value": true,
+   "comment": "Hybsils add +4 to all their saving throws because of their hearty constitutions"
+  },
+  {
+   "name": "mm2hiHybsilWitchDoctorLeadership",
+   "value": true,
+   "comment": "The hybsil tribal leader will be a witch doctor (druid 60% or magic-user 40% spells)"
+  },
+  {
+   "name": "mm2hiLetterIBoxClosesOnIldriss",
+   "value": true,
+   "comment": "The Letter I gap box closes on the already-pinned ildriss (no new letter-I defs ride the R806 walk)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the hangman tree to hybsil stat grid",
+   "tag": "HhStats",
+   "count": "mm2hiHhStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE HH-GRID: the 5-row HhStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the five letter-H stat blocks, in print order - the hangman tree, the haunt, the hollyphant, the hordling and the hybsil)",
+   "cols": [
+    "mm2hiHhStatAC",
+    "mm2hiHhStatHd",
+    "mm2hiHhStatHdBonus",
+    "mm2hiHhStatAvgHp",
+    "mm2hiHhStatAttacks",
+    "mm2hiHhStatXp",
+    "mm2hiHhStatXpHp",
+    "mm2hiHhStatLairPct",
+    "mm2hiHhStatMove",
+    "mm2hiHhStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the hangman tree \"3/5 (appendages)\" composite reads the trunk 3; the haunt \"0/victim's AC\" reads 0; the hordling \"3,2,1, OR 0\" reads the first 3; the hollyphant -4)",
+    "The hit dice num cells (the hangman tree flat-hp \"61 hp/year\" cell reads 0 dice - the demilich precedent; the hordling or-form reads the best 9",
+    "The hit dice bonus cells (the hybsil \"1-1\" carries the minus 1 - the buckawn precedent; the hollyphant 8+8)",
+    "The book-average hit points (the floor(num x 3.5) + bonus formula; the hangman tree reads the flat printed 61 hp - the demilich \"50 hp and special\" precedent, the 1eonline 6 + 1-per-year typo note the cross-check voice)",
+    "The attack cells (the composite prints read their loaded value, the R798 duergar max-read convention: the haunt \"1/1, as 5 HD monster\" loads the max 5; the hordling \"By type of hordling\" reads the 1 loader floor; the hybsil \"1 weapon\" reads 1)",
+    "The base xp cells (every letter-H print carries the xp level prefix; the hordling reads the top VII/1400 + 12/hp variant)",
+    "The xp per hit point cells",
+    "The lair percentage cells (Nil reads 0; the hordling \"0% (15% in Hades)\" reads 0)",
+    "The ground move-rate cells (the hangman tree \"0'' (effectively)\" reads 0; the haunt \"6''/as possessed victim\" reads 6; the hordling tier list reads the first 6; the hollyphant \"9''/42''\" reads the ground 9)",
+    "The magic resistance cells (the hangman tree \"1% per year of age\" reads 1; the hollyphant 60%; Standard reads 0; the haunt block prints no magic resistance line and reads Nil 0)"
+   ],
+   "data": [
+    [
+     3,
+     0,
+     0,
+     61,
+     3,
+     1600,
+     8,
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     5,
+     0,
+     17,
+     5,
+     165,
+     5,
+     0,
+     6,
+     0
+    ],
+    [
+     -4,
+     8,
+     8,
+     36,
+     2,
+     3750,
+     14,
+     0,
+     9,
+     60
+    ],
+    [
+     3,
+     9,
+     0,
+     31,
+     1,
+     1400,
+     12,
+     0,
+     6,
+     0
+    ],
+    [
+     7,
+     1,
+     -1,
+     2,
+     1,
+     22,
+     1,
+     30,
+     15,
+     0
+    ]
+   ]
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letters HI walk round pins (the R806 census)": [
+   {
+    "kind": "const",
+    "name": "mm2hiRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiLetterHHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiLetterIHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHhStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiPriorOwnedEntries"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiIldrissOwningRound"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHauntCannotBeTurned"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHauntStruckOnlyBySilverMagicOrFire"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHauntExorcismDestroysForever"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHauntBlockPrintsNoSizeOrMrLine"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHollyphantGlobeOfInvulnerability"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHollyphantTusksImmunity"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHangmanTreeLightningDoubleDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHangmanTreeHallucinatoryPerfume"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHordlingTurnedAsMinorDemons"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHordlingUltravisual"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHordlingBringerOfDoomSummoning"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHybsilPlusFourSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiHybsilWitchDoctorLeadership"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2hiLetterIBoxClosesOnIldriss"
+   }
+  ],
+  "the hangman tree pins (the R806 MM2 letters HI walk)": [
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeAppendagesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeAppendagesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeControlledAppendages"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeVineSeverMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeVineSeverMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeVineDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeLiftPounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeLiftRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeDropRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeAcidDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeDigestVictims"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreePerfumeRangeMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreePerfumeRangeMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeMrPerYear"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeSproutAgeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeSaplingAgeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeSaplingAgeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeSaplingMoveFeetPerHour"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeMatureAgeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeMatureAgeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeOldAgeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeOldAgeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeAncientAgeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHangmanTreeDarknessEfficiencyPct"
+   }
+  ],
+  "the haunt pins (the R806 MM2 letters HI walk)": [
+   {
+    "kind": "const",
+    "name": "mm2hiHauntXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntAreaRadiusInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntDexDrain"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntPossessDexFloor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntReleaseVictimDex"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntDexRegainPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntStrangleStart"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntStrangleSecond"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntStrangleThird"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntWeaponDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntFireDamagePerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntReformWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntAttackAsHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHauntFormCount"
+   }
+  ],
+  "the hollyphant pins (the R806 MM2 letters HI walk)": [
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantTrumpsPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantDeafenConeLengthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantSunSparkleDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantSunSparkleBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantBanishRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantBanishHdCap"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantBacklashDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantBacklashDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantBacklashStunSegmentsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantCureSeriousWoundsPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantProtectionFromEvilPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantProtectionRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantGatePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantGateHollyphantPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantGateDevaPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantDetectEvilRadiusInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantPsionicMinor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantPsionicMajor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantFootTravelPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantWeaponPlusMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantFlyRate"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantPsionicMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHollyphantPsionicMax"
+   }
+  ],
+  "the hordling pins (the R806 MM2 letters HI walk)": [
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingXpLevelTop"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingAcTier1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingAcTier2"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingAcTier3"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingAcTier4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingMoveTier1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingMoveTier4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingHdTier1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingHdBonusTier1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingHdTier4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingHdBonusTier4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingMrTier1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingMrTier4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingXpTier1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingXpHpTier1"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingXpTier4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingXpHpTier4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingTierDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingTraitTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingTraitDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingAttackTableEntries"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingSpecialAttackCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingSpecialDefenseCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingDoubleSpecialPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingNearInvisiblePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingNearInvisibleTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingLairPctHades"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingStrengthToHitMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingStrengthToHitMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingStrengthDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingStrengthDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingAcidSpittleRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingAcidSpittleDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingRegenerateMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHordlingRegenerateMax"
+   }
+  ],
+  "the hybsil pins (the R806 MM2 letters HI walk)": [
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilNoAppearingDie"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilNoAppearingMult"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilArrowDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilSleepHoursMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilSleepHoursMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilSleepSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilWitchDoctorDruidPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilWitchDoctorMuPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2hiHybsilWitchDoctorLevelMax"
+   }
+  ],
+  "the MM2 letters HI walk stat grid (the R806 wiring)": [
+   {
+    "kind": "table",
+    "name": "the hangman tree to hybsil stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the two gap boxes flip (the census walk)",
+   "expr": "m['mm2hiRegistryAfter']() - m['mm2hiRegistryBefore']() != m['mm2hiDefCount']() or m['mm2hiDefCount']() != 5 or m['mm2hiEntryCount']() != 5 or m['mm2hiHhStatRows']() != 5 or m['mm2hiGapClosed']() != 14 or m['mm2hiGapOpen']() != 23 or m['mm2hiPriorOwnedEntries']() != 1"
+  },
+  {
+   "note": "the pin-time entry census composition (5 stat-block headings, no doctrine-only family heads, the letter-I span walks empty)",
+   "expr": "m['mm2hiStatBlockHeadings']() != 5 or m['mm2hiDoctrineHeads']() != 0 or m['mm2hiLetterHHeadings']() != 5 or m['mm2hiLetterIHeadings']() != 0 or m['mm2hiIldrissOwningRound']() != 805"
+  },
+  {
+   "note": "the hangman tree composite stat reads (the flat printed 61 hp, the trunk armor class 3, the per-year magic resistance 1, the effective 0 move)",
+   "expr": "m['mm2hiHhStatAC'](0) != 3 or m['mm2hiHhStatHd'](0) != 0 or m['mm2hiHhStatAvgHp'](0) != 61 or m['mm2hiHhStatMr'](0) != 1 or m['mm2hiHhStatMove'](0) != 0 or m['mm2hiHhStatAttacks'](0) != 3"
+  },
+  {
+   "note": "the haunt composite stat reads (the natural-state armor class 0, the 5-dice read, the \"as 5 HD monster\" attack load, the absent magic resistance line reading 0)",
+   "expr": "m['mm2hiHhStatAC'](1) != 0 or m['mm2hiHhStatHd'](1) != 5 or m['mm2hiHhStatAvgHp'](1) != 17 or m['mm2hiHhStatAttacks'](1) != 5 or m['mm2hiHhStatXp'](1) != 165 or m['mm2hiHhStatXpHp'](1) != 5 or m['mm2hiHhStatMove'](1) != 6 or m['mm2hiHhStatMr'](1) != 0"
+  },
+  {
+   "note": "the hollyphant stat reads (the -4 armor class, the 8+8 dice, the 60% magic resistance, the ground 9 move)",
+   "expr": "m['mm2hiHhStatAC'](2) != -4 or m['mm2hiHhStatHd'](2) != 8 or m['mm2hiHhStatHdBonus'](2) != 8 or m['mm2hiHhStatAvgHp'](2) != 36 or m['mm2hiHhStatXp'](2) != 3750 or m['mm2hiHhStatXpHp'](2) != 14 or m['mm2hiHhStatMr'](2) != 60 or m['mm2hiHhStatMove'](2) != 9"
+  },
+  {
+   "note": "the hordling or-form reads (the best 9 hit dice, the first armor class 3, the first 6 move, the first 0 magic resistance, the top VII/1400 + 12/hp xp variant, the \"By type\" attack floor 1)",
+   "expr": "m['mm2hiHhStatAC'](3) != 3 or m['mm2hiHhStatHd'](3) != 9 or m['mm2hiHhStatAvgHp'](3) != 31 or m['mm2hiHhStatAttacks'](3) != 1 or m['mm2hiHhStatXp'](3) != 1400 or m['mm2hiHhStatXpHp'](3) != 12 or m['mm2hiHhStatMr'](3) != 0 or m['mm2hiHhStatMove'](3) != 6"
+  },
+  {
+   "note": "the hybsil stat reads (the \"1-1\" dice with the minus 1 bonus, the 30% lair, the 15 move)",
+   "expr": "m['mm2hiHhStatAC'](4) != 7 or m['mm2hiHhStatHd'](4) != 1 or m['mm2hiHhStatHdBonus'](4) != -1 or m['mm2hiHhStatAvgHp'](4) != 2 or m['mm2hiHhStatXp'](4) != 22 or m['mm2hiHhStatXpHp'](4) != 1 or m['mm2hiHhStatLairPct'](4) != 30 or m['mm2hiHhStatMove'](4) != 15 or m['mm2hiHhStatMr'](4) != 0"
+  },
+  {
+   "note": "the full kill xp values (the base + xp-per-hp x avgHp formula, every letter-H def)",
+   "expr": "m['mm2hiHangmanTreeXpValue']() != 2088 or m['mm2hiHauntXpValue']() != 250 or m['mm2hiHollyphantXpValue']() != 4254 or m['mm2hiHordlingXpValue']() != 1772 or m['mm2hiHybsilXpValue']() != 24"
+  },
+  {
+   "note": "the hordling tier ladders stay whole (the 1d4 armor class, move, hit dice and magic resistance tiers)",
+   "expr": "m['mm2hiHordlingAcTier1']() != 3 or m['mm2hiHordlingAcTier2']() != 2 or m['mm2hiHordlingAcTier3']() != 1 or m['mm2hiHordlingAcTier4']() != 0 or m['mm2hiHordlingMoveTier1']() != 6 or m['mm2hiHordlingMoveTier4']() != 15 or m['mm2hiHordlingHdTier1']() != 6 or m['mm2hiHordlingHdBonusTier1']() != 3 or m['mm2hiHordlingHdTier4']() != 9 or m['mm2hiHordlingHdBonusTier4']() != 0 or m['mm2hiHordlingMrTier1']() != 0 or m['mm2hiHordlingMrTier4']() != 30 or m['mm2hiHordlingXpTier1']() != 525 or m['mm2hiHordlingXpHpTier1']() != 8 or m['mm2hiHordlingXpTier4']() != 1400 or m['mm2hiHordlingXpHpTier4']() != 12"
+  },
+  {
+   "note": "the haunt doctrine arithmetic (the doubling strangling ladder and the dexterity cycle)",
+   "expr": "m['mm2hiHauntStrangleSecond']() != m['mm2hiHauntStrangleStart']() * 2 or m['mm2hiHauntStrangleThird']() != m['mm2hiHauntStrangleSecond']() * 2 or m['mm2hiHauntDexRegainPerTurn']() != 1 or m['mm2hiHauntReformWeeks']() != 1 or m['mm2hiHauntAttackAsHd']() != 5 or m['mm2hiHauntFormCount']() != 2"
+  },
+  {
+   "note": "the hollyphant gate arithmetic (the gate percents sum and the psionic discipline pair)",
+   "expr": "m['mm2hiHollyphantGateHollyphantPct']() != 70 or m['mm2hiHollyphantGateDevaPct']() != 30 or m['mm2hiHollyphantGatePct']() != 50 or m['mm2hiHollyphantPsionicMinor']() != 4 or m['mm2hiHollyphantPsionicMajor']() != 2 or m['mm2hiHollyphantSpellLevel']() != 16 or m['mm2hiHollyphantFlyRate']() != 42"
+  },
+  {
+   "note": "the hangman tree ages ladder (the five print bands, the perfume range, the per-year magic resistance)",
+   "expr": "m['mm2hiHangmanTreeSproutAgeMax']() != 10 or m['mm2hiHangmanTreeSaplingAgeMin']() != 11 or m['mm2hiHangmanTreeSaplingAgeMax']() != 25 or m['mm2hiHangmanTreeMatureAgeMin']() != 26 or m['mm2hiHangmanTreeMatureAgeMax']() != 75 or m['mm2hiHangmanTreeOldAgeMin']() != 76 or m['mm2hiHangmanTreeOldAgeMax']() != 150 or m['mm2hiHangmanTreeAncientAgeMin']() != 151 or m['mm2hiHangmanTreePerfumeRangeMinFeet']() != 30 or m['mm2hiHangmanTreePerfumeRangeMaxFeet']() != 80 or m['mm2hiHangmanTreeMrPerYear']() != 1"
+  },
+  {
+   "note": "the hybsil arithmetic (the witch doctor percents sum to 100, the sleep arrow ladder, the +4 saves)",
+   "expr": "m['mm2hiHybsilWitchDoctorDruidPct']() + m['mm2hiHybsilWitchDoctorMuPct']() != 100 or m['mm2hiHybsilSleepHoursMin']() != 1 or m['mm2hiHybsilSleepHoursMax']() != 4 or m['mm2hiHybsilSleepSavePenalty']() != 4 or m['mm2hiHybsilSaveBonus']() != 4 or m['mm2hiHybsilWitchDoctorLevelMax']() != 7 or m['mm2hiHybsilNoAppearingMult']() != 10 or m['mm2hiHybsilNoAppearingDie']() != 6"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter H box",
+   "from": "- [ ] **Letter H**",
+   "to": "- [x] **Letter H**"
+  },
+  {
+   "note": "the Letter I box",
+   "from": "- [ ] **Letter I**",
+   "to": "- [x] **Letter I**"
+  }
+ ],
+ "gap_census": {
+  "closed": 14,
+  "open": 23
+ },
+ "caller_files": [],
+ "inline_count": 153,
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letters-HI def walk (the R805 FG walk pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R806: the MM2 letters HI live def walk ----\n    // The five promoted letter-H defs\n    // cross-checked live against the mm2hi pins:\n    // every stat cell of the 5-row HhStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula, the hangman tree rope-like\n    // appendages and flat printed 61 hp, the\n    // haunt restless-spirit possession and its\n    // absent magic resistance line, the\n    // hollyphant golden-furred trumpet and\n    // globe of invulnerability, the hordling\n    // Hordes of Hades tiers and the or-form\n    // best 9-dice read, the hybsil antelope\n    // centaurs and +4 saves, and the registry\n    // census floor 650 -> at least 655 (the\n    // letter-I span walks empty - the ildriss\n    // is already pinned by the R805 FG walk).\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kHI[5] = {\n            \"hangman_tree\", \"haunt\",\n            \"hollyphant\", \"hordling\",\n            \"hybsil\",\n        };\n        for (int i = 0; i < 5; ++i) {\n            const auto* d = reg.find(kHI[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\") ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2hiHhStatAC(i))\n                ++bad;\n            if (d->hitDiceNum != mm2hiHhStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus\n                != mm2hiHhStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2hiHhStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2hiHhStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2hiHhStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2hiHhStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2hiHhStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2hiHhStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2hiHhStatMr(i))\n                ++bad;\n        }\n        const auto* pp00 = reg.find(\"hangman_tree\");\n        if (!pp00 || pp00->text.find(\"rope-like appendages\")\n            == std::string::npos) ++bad;\n        const auto* pp01 = reg.find(\"haunt\");\n        if (!pp01 || pp01->text.find(\"restless spirit\")\n            == std::string::npos) ++bad;\n        const auto* pp02 = reg.find(\"hollyphant\");\n        if (!pp02 || pp02->text.find(\"golden-furred\")\n            == std::string::npos) ++bad;\n        const auto* pp03 = reg.find(\"hordling\");\n        if (!pp03 || pp03->text.find(\"Hordes of Hades\")\n            == std::string::npos) ++bad;\n        const auto* pp04 = reg.find(\"hybsil\");\n        if (!pp04 || pp04->text.find(\"antelope centaurs\")\n            == std::string::npos) ++bad;\n        if ((int)reg.all().size()\n            < mm2hiRegistryAfter())\n            ++bad;\n        printf(\"R806 MM2 letters HI live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/h/hangman_tree.lua",
+   "content": "-- Hangman Tree: promoted by the R806 MM2 letters HI walk round from the MM2 print\n-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Hangman Tree\",\n  page = \"74\",\n  pages = \"74\",\n  source = \"MM2\",\n  race = \"Hangman Tree\",\n  hitDice = \"61 hp/year\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 61,\n  armorClass = \"3/5 (appendages)\",\n  numAttacks = 3,\n  damage = \"1-3\",\n  xp = 1600,\n  xpPerHp = 8,\n  xpValue = 2088,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Incidental\",\n  move = \"0\\\" (effectively)\",\n  size = \"L (20\\\"+ tall)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"1% per year of age\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The hangman tree is so named for its rope-like appendages. These sinewy vines resemble nooses at their ends and when dropped down appear much as if they were hanging ropes. Hangman trees are deciduous and are found in temperate to subtropical climes. Their shallow root systems and small numbers of leaves require them to supplement their nutrition by direct ingestion of protein. Thus, each tree traps prey. A hangman tree can move very slowly, its effective movement being but a few feet per day once fully grown. Saplings* move about 6 feet per hour, mature trees at about one-third that rate. All are solitary. During freezing weather, a taproot is put down and the tree is dormant. A hangman tree has no interest in any sort of treasure, and as each moves constantly, it is unlikely that any treasure will be found near one, although indigestible items will be expelled from the belly-trunk periodically. The tree attacks by dropping its noose-like appendages around prey. Although each tree has 6-9 appendages, only 3 can be controlled at one time. It takes 13-20 points to sever and destroy a vine. This is exclusive of damage to the tree proper. When in contact with a victim, the vine-like appendage is drawn tight. From 1-3 points of damage accrue to the victim each round as the vine tightens and lifts the prey (up to 1000 pounds) to the upper trunk opening. This requires 4 full rounds. On the 5th round, the victim is dropped into the acidic secretion contained within the barrel of the trunk of the hangman tree. The victim will suffer 3-12 points of acid damage per round until dead, and then digestion takes place. Escape from the trunk-stomach is nearly impossible due to sharp growths which surround the top opening and point down and inward. About 3 man-sized victims can fit within the tree's digestive cavity at one time.\\n\\nEach hangman tree has a hallucinatory perfume which it can release at will, usually doing so while prey is 30-80 feet distant. This will cause victims to believe the tree to be some ordinary sort of quickwood or treant, etc. A tree of this sort can speak haltingly in Common learned over the years. Each also has a magic resistance based on its age because it draws power from the environment. Lightning or electricity will cause double damage if used to attack the tree. Extreme cold will shock the tree into dormancy until it thaws out. Darkness also causes it to slow down its activity, although it still functions at half efficiency.\\n\\nA hangman tree resembles a thick oak with few branches and sparse foliage. There are knot-like protruberances where the sensory organs are, usually high on the trunk. The lower trunk will show a scar-like place for expulsion of indigestibles.\\n\\n*Optional guide for tree ages: noncombatant sprout, 1-10 years; sapling, 11-25 years; mature tree, 26-75 years; old tree, 76-150 years; ancient tree, 151+ years.\"\n}\n"
+  },
+  {
+   "path": "monsters/monsters/h/haunt.lua",
+   "content": "-- Haunt: promoted by the R806 MM2 letters HI walk round from the MM2 print\n-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Haunt\",\n  page = \"74\",\n  pages = \"74-75\",\n  source = \"MM2\",\n  race = \"Haunt\",\n  hitDice = \"5/victim's hp\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 17,\n  armorClass = \"0/victim's AC\",\n  numAttacks = \"1/1, as 5 HD monster\",\n  damage = \"See below/by weapon\",\n  xp = 165,\n  xpPerHp = 5,\n  xpValue = 250,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"6\\\"/as possessed victim\",\n  size = \"\",\n  intelligence = \"Non-\",\n  alignment = \"Any\",\n  specialAttacks = \"Possession\",\n  specialDefenses = \"See below/none\",\n  magicResistance = \"Nil\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"(Note: Where statistics are separated by a slash, those to the left refer to the haunt in its natural state, those to the right are for the haunt when within a possessed victim.)\\n\\nA haunt is the restless spirit of a person who died leaving a vital task unfinished. A haunt inhabits an area within 6\\\" of the site where it died. The haunt's sole purpose is to possess a living body and use it to complete the task, thus gaining a final release.\\n\\nHaunts can assume either of 2 forms, at will: a hovering, luminescent ball of light (identical in appearance to a will-o-wisp) or a nebulous, translucent image of the haunt's former body. Haunts are similar in appearance to a groaning spirit, spectre, or ghost, for which they are often mistaken.\\n\\nA haunt's attack will drain 2 points of dexterity per hit. As a character's dexterity is drained, he or she will suffer the penalties of lower dexterity. The character will feel an increasing numbness and cold creeping over his or her body. When a character's dexterity reaches zero, the haunt will step into the body and possess it. Once a body is possessed the dexterity will return to normal.\\n\\nThe haunt will use the possessed body to complete its unfulfilled task, which need not necessarily be dangerous. Once the task is completed, the haunt will pass on to its final rest, and the victim will regain control of its body. When the haunt leaves a victim the character will have a dexterity of 3. Lost dexterity may be regained at a rate of 1 point for each turn of complete rest. If a haunt's possessed body is slain, it will haunt the place where the body was killed.\\n\\nIf the possessed victim has an alignment opposite to that of the haunt (good vs. evil), the haunt will try to strangle the character. It will fasten its ghostly hands around the victim's neck on a successful to-hit roll. The victim will then take 1 point of damage the first round, 2 the second, 4 the third, and so on, doubling each round, until the victim is dead or the haunt is driven off.\\n\\nHaunts may not be turned because they are linked to the site of their deaths. When in their natural forms, haunts can be struck only by silver and magical weapons and by fire. Weapons cause only 1 point of damage per attack plus any magical bonuses. Fire will inflict 1 point of damage per round, and magical fire will do full damage. When a haunt is reduced to zero hit points it will lose control of its ectoplasm and fade away. The haunt will reform in 1 week to haunt its location again until its task is completed. Exorcism will destroy a haunt forever.\\n\\nAny attacks on a possessed character will do full damage to the character. The only safe ways to free a possessed person are an exorcism or a hold person spell. When a hold person spell is used, the haunt must save vs. paralyzation or it will be expelled from the body.\\n\\nA haunt must remain within 6\\\" of the place where it died until it possesses a body. The best defense against a haunt is to leave the area it inhabits.\"\n}\n"
+  },
+  {
+   "path": "monsters/monsters/h/hollyphant.lua",
+   "content": "-- Hollyphant: promoted by the R806 MM2 letters HI walk round from the MM2 print\n-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Hollyphant\",\n  page = \"75\",\n  pages = \"75\",\n  source = \"MM2\",\n  race = \"Hollyphant\",\n  hitDice = \"8+8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 8,\n  avgHp = 36,\n  armorClass = -4,\n  numAttacks = 2,\n  damage = \"1-3/1-3\",\n  xp = 3750,\n  xpPerHp = 14,\n  xpValue = 4254,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-3\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"9\\\"/42\\\" (MC:B)\",\n  size = \"S (2\\\"+ long)\",\n  intelligence = \"Genius\",\n  alignment = \"Good (lawful)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"60%\",\n  psionic = \"201-300\",\n  attackDefenseModes = \"All/all\",\n  text = \"Hollyphants are creatures of the Upper Outer Planes. They are used as messengers and helpers by the deities, and as such are sometimes encountered on the Prime Material Plane. When so seen, there will be from 1 to 3 hollyphants flying, for it is only 5% probable that a hollyphant will be going by foot. The sight of the strange, golden-furred creatures will engender great fondness and desire to cooperate in good characters, unease in those of neutral standing, and loathing tinged with fear in evil characters. This reaction is caused by the sort of telepathic aura which surrounds hollyphants. No saving throw is permitted. Hollyphants desire to aid Good, dislike Neutral, and will seek to destroy Evil.\\n\\nNormal attack is by means of their upward-jutting tusks, but Hollyphants have far more effective attack and defense modes. Three times per day each hollyphant can trumpet through its trunk. Each blast can deliver the results desired by the particular hollyphant: blasting as per horn of blasting; deafening as per drums of deafening but in a cone-shape 1\\\" x 3\\\" x 7\\\"; and sun-sparkles, which is a cone-shaped blast of positive energy particles, 1\\\" x 2\\\" x 5\\\", that inflicts 8d6 +8 points of damage on creatures such as undead and those of the Lower Outer Planes.\\n\\nHollyphants are also able to use the following spell-like powers, 1 at a time, 1 per round, at will, at 16th level of ability: banish once per day (see below); bless, cure serious wounds twice per day; flame strike once per day; heal once per day, light, protection from evil (within a 10-foot radius) twice per day, raise dead once per day, and teleport with no error.\\n\\nA banishment spell forces some creature from another plane to return instantly to its own abode. The subject cannot come back without some special summoning or means of egress from its own plane. More than 1 creature can be forced into magical banishment, if within 2\\\" range and if the total hit dice of all affected is 32 or less. If the subject creature makes its saving throw vs. the spell, the hollyphant will be stung by a backlash of energy, take 2-12 points of damage, and be stunned for 2-12 segments.\\n\\nLive hollyphants are always protected by a globe of invulnerability radiated by their fur. Their tusks give them immunity to all diseases and poisons, but the tusks do not function thus for others. They are harmed only by +1 or better magic weapons. They automatically detect evil in a 2\\\" radius. Hollyphants can gate (50% success) another hollyphant* (70%) or an appropriate deva* (30%). Psionic disciplines are usually 4 minor and 2 major ones. They never duplicate the hollyphants' spell-like or other powers. Communication is by their own speech or by a limited form of telepathy.\\n\\nHollyphants are travelers of the Astral and Ethereal planes, of course, for they must travel there in the course of their duties.\\n\\nThe golden fur of these creatures seems to glow. Their wings are also golden and their small tusks are ivory-colored. Hollyphant eyes are amber-colored to glowing brown, large, and kindly.\\n\\n* As an alternative, a baku, lamassu, opinicus, shedu, etc., might be possible.\\n\\n** As an alternative, greater lamassu, greater shedu, ki-rin, phoenix, etc., might be possible.\"\n}\n"
+  },
+  {
+   "path": "monsters/monsters/h/hordling.lua",
+   "content": "-- Hordling: promoted by the R806 MM2 letters HI walk round from the MM2 print\n-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Hordling\",\n  page = \"75\",\n  pages = \"75-76\",\n  source = \"MM2\",\n  race = \"Hordling\",\n  hitDice = \"6+3, 7+2, 8+1, or 9\",\n  hitDiceNum = 9,\n  hitDiceBonus = 0,\n  avgHp = 31,\n  armorClass = \"3,2,1, OR 0\",\n  numAttacks = \"By type of hordling\",\n  damage = \"See Attack Table\",\n  xp = 1400,\n  xpPerHp = 12,\n  xpValue = 1772,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare (common on the Planes of Hades)\",\n  noAppearing = \"1 (1-6)\",\n  lairPct = 0,\n  treasure = \"Nil (C in Hades)\",\n  move = \"6\\\", 9\\\", 12\\\", or 15\\\" (MC:D with bat wings)\",\n  size = \"S, M, L (8' tall)\",\n  intelligence = \"Semi-, low, average, very\",\n  alignment = \"(Neutral evil)\",\n  specialAttacks = \"See Special Attacks Table\",\n  specialDefenses = \"+1 or better weapon to hit, plus see Special Defenses Table\",\n  magicResistance = \"0%, 5%, 15%, 30%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The hordlings who form the Hordes of Hades are of varied form, size, power, and appearance. They have in common hideousness and hatefulness. They roam the reaches of Hades preying upon all things, including one another. The strong slay and devour the weak. They will serve under strong leaders such as night hags, but they are untrustworthy, rebellious, and quarrelsome, so hordes are not long-lived (nor are hordlings). The disposition of hordlings is, in fact, chaotic. Similar creatures are also common on the Planes of Tarterus, and a few are found on the Abyssal Planes. The only known method of drawing more than 1 hordling to the Prime Material Plane is the bringer of doom, a strange device created by arcane magic during the Invoked Devastation (see WORLD OF GREYHAWK set) and now lost.\\n\\nThe exact appearance and abilities of a given hordling are determined randomly. Armor class, movement rate, hit dice, magic resistance, intelligence and size are determined using 1d4 (see above for size, 1=small, 2-3=medium, 4=large.) Roll 1d6 for each physical characteristic detailed below.\\n\\nHead: 1 = Wedge-shaped; 2 = Conical; 3 = Discoid; 4 = Spherical; 5 = Cubical; 6 = Ovoid.\\nHead Adornment: 1 = Bald; 2 = Mane; 3 = Frills; 4 = Lumps; 5 = Spikes (2-8)*; 6 = Horns (1-4)*. (* Attack 1/spike; 1-2/horn.)\\nOverall Visage: 1 = Gibbering, drooling; 2 = Glaring, menacing; 3 = Twitching, crawling; 4 = Wrinkled, seamed; 5 = Hanging, flaccid; 6 = Rotting, tattered.\\nEars: 2 (1-4) or 4 (5,6): 1 = Large, pointed; 2 = Small, pointed; 3 = Large, drooping; 4 = Large, fan-like; 5 = Huge, humanoid; 6 = None.\\nEye Color: 3 (4), 4-6 (5-6): 1 = Dull black; 2 = Purple; 3 = Metallic; 4 = Maroon; 5 = Blank White; 6 = Opalescent.\\nEyes: 1 (1), 2 (2,3), 3 (4): 1 = Huge, protruding; 2 = Small, stalked; 3 = Large turreted; 4 = Small, sunken; 5 = Large, round; 6 = Small, slitted.\\nNose: 1 = Wide, protruding; 2 = Slits only; 3 = Hanging snout; 4 = Long, pointed; 5 = Large, many-warted; 6 = Narrow, beaked.\\nMouth: large (1-4), huge (5,6): 1 = Out-thrust tusks (a); 2 = Many small fangs (b); 3 = Long canines (c); 4 = Tushes (d); 5 = Crushing teeth (e); 6 = Saw-toothed (f).\\nAppearance of torso: 1 = Fat; 2 = Rubbery; 3 = Thin; 4 = Narrow, long; 5 = Wide; 6 = Short, thick.\\nNeck: 1 = Short, thick; 2 = Short, thin; 3 = Long, thick; 4 = Thrust forward, thick; 5 = Long, thin; 6 = None apparent.\\nBack: 1 = Humped; 2 = Hunched; 3 = Knob-maned; 4 = Bristle-maned; 5 = Fan-winged*; 6 = Bat-winged**. (* Flies 18\\\" - maximum move 9\\\" on ground. ** Flies 12\\\" - maximum move 12\\\" on ground.)\\nTail: 1 = Long, prehensile; 2 = Short; 3 = Long; 4 = Long, clubbed (l); 5 = Long, barbed (k); 6 = None.\\nArms: 1(1), 2(2-5), 3-4(6): 1 = Multi-jointed; 2 = Telescoping*; 3 = Short, thick; 4 = Trunk-like; 5 = Long, thin; 6 = Tentacle. (* Reach is double.)\\nLegs: 2(1-4), 3(5), 4(6): 1 = Long, thin; 2 = Short, bowed; 3 = Short, massive; 4 = Springing*; 5 = Hopping**; 6 = Telescoping.*** (* can spring 20'. ** can jump 10' any direction. *** can add 50% to normal height.)\\nHands/extremities: 1 = Large, thick-fingered (g); 2 = Clawed (h); 3 = Taloned (j); 4 = Pinchered (j); 5 = Barbed (k); 6 = Knobbed (l).\\nFeet/extremities: 1 = Prehensile toes, long; 2 = Full hoofed (m); 3 = Splay hoofed (n); 4 = Clawed (o); 5 = Suckered; 6 = Full webbed*. (* swims 6\\\", 9\\\", 12\\\" or 15\\\" (d4).)\\nStrength: 1 = 17 (+1/+1); 2 = 18 (+1/+2); 3 = 18/50 (+1/+3); 4 = 18/75 (+2/+3); 5 = 18/90 (+2/+4); 6 = 18/99 (+2/+5).\\nColor: 1 = Black-brown; 2 = Russet-red; 3 = Orange-yellow; 4 = Olive-green; 5 = Blue-purple; 6 = Gray-white.\\n\\nAttack Table - Damage (match with rolled characteristics): a = Tusks, large = 2-8, huge = 2-12; b = Small fangs, large = 2-8, huge = 2-8; c = Long canines, large = 1-6, huge = 1-8; d = Tushes, large = 1-8, huge = 1-10; e = Crushing teeth, large = 3-6, huge = 4-7; f = Saw-toothed, large = 1-3 and 1-4/round thereafter, huge = 1-4 and 1-6/round thereafter; g = Blow = 1 strength, 2 hits = strangle for 2-8 +strength; h = Claw = 2-5; i = Talon = 1-6; j = Pincer = 1-4 strength; k = Barbed = 1/round and held fast (except by tail); l = Knobbed = 1-3 +strength bonus; m = Full hoof = 1-2 +strength; n = Splay hoof = 1-3; o = Claw (hind) = 1-4.\\n\\nSpecial Attacks Table (10% chance for 2): 1 = Breath equals small stinking cloud spell vs. 1 opponent in 3' range; 2 = Gaze equals ray of enfeeblement spell vs. 1 opponent in 5' range; 3 = Legs used to equal trip spell vs. 1 opponent in melee; 4 = Sound emanation equals fumble spell vs. 1 opponent in 5' range; 5 = Double attacks for 1 round once per turn; 6 = Acidic spittle missile, 10' range, 2-8 points damage, once per turn.\\n\\nSpecial Defenses Table (10% chance for 2): 1 = +2 or better weapon to hit; 2 = Fire and acid attack immunity; 3 = Cold, gas, and poison immunity; 4 = Electrical and magic missile immunity; 5 = Immunity to illusions and mental paralysis (charm, hold); 6 = Regenerates at 2-5 hp/turn rate.\\n\\nAll hordlings have ultravisual capabilities. Those with usable hands can use weapons. They all can become near-invisible (75%) for up to 1 full turn once per day; this requires 1 round. Hordlings are otherwise unremarkable. Note: Treat hordlings as minor demons with respect to clerical turning and like effects.\"\n}\n"
+  },
+  {
+   "path": "monsters/monsters/h/hybsil.lua",
+   "content": "-- Hybsil: promoted by the R806 MM2 letters HI walk round from the MM2 print\n-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Hybsil\",\n  page = \"76\",\n  pages = \"76-77\",\n  source = \"MM2\",\n  race = \"Hybsil\",\n  hitDice = \"1-1\",\n  hitDiceNum = 1,\n  hitDiceBonus = -1,\n  avgHp = 2,\n  armorClass = 7,\n  numAttacks = \"1 weapon\",\n  damage = \"1-4 or by weapon\",\n  xp = 22,\n  xpPerHp = 1,\n  xpValue = 24,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1d6 x 10\",\n  lairPct = 30,\n  treasure = \"I\",\n  move = \"15\\\"\",\n  size = \"S (3' tall)\",\n  intelligence = \"Average to very\",\n  alignment = \"Lawful good\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"+4 to all saving throws\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These small antelope centaurs look like a cross between a centaur and a pixie, brownie, or sprite. They speak Hybsil, Elf, and Common. Bugbears, ogres, and especially gnolls are their mortal enemies. They are often on friendly terms with most 4-legged mammals, including antelopes, zebras, deer, and horses.\\n\\nIn combat, they use short daggers, but their main weapons are their arrows. These cause 1-4 points of damage and are coated with a rare plant juice that causes sleep for 1-4 hours (save vs. poison at -4). Hybsils add +4 to all their saving throws because of their hearty constitutions.\\n\\nHybsils live in large families or close-knit tribes in temperate or subtropical grasslands. They are seminomadic and may roam over vast areas or live an entire lifetime within a small thicket or grove. The tribal leader will be a witch doctor capable of either druid (60%) or magic-user (40%) spells and a casting ability of up to 7th level.\"\n}\n"
+  }
+ ]
+}

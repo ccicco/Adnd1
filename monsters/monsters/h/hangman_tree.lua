@@ -1,0 +1,35 @@
+-- Hangman Tree: promoted by the R806 MM2 letters HI walk round from the MM2 print
+-- (spec tools/spec_r806.json); DO NOT hand-edit; the pin headers
+-- stay the print-fidelity record.
+return {
+  name = "Hangman Tree",
+  page = "74",
+  pages = "74",
+  source = "MM2",
+  race = "Hangman Tree",
+  hitDice = "61 hp/year",
+  hitDiceNum = 0,
+  hitDiceBonus = 0,
+  avgHp = 61,
+  armorClass = "3/5 (appendages)",
+  numAttacks = 3,
+  damage = "1-3",
+  xp = 1600,
+  xpPerHp = 8,
+  xpValue = 2088,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = 0,
+  treasure = "Incidental",
+  move = "0\" (effectively)",
+  size = "L (20\"+ tall)",
+  intelligence = "Low",
+  alignment = "Neutral (evil)",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "1% per year of age",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The hangman tree is so named for its rope-like appendages. These sinewy vines resemble nooses at their ends and when dropped down appear much as if they were hanging ropes. Hangman trees are deciduous and are found in temperate to subtropical climes. Their shallow root systems and small numbers of leaves require them to supplement their nutrition by direct ingestion of protein. Thus, each tree traps prey. A hangman tree can move very slowly, its effective movement being but a few feet per day once fully grown. Saplings* move about 6 feet per hour, mature trees at about one-third that rate. All are solitary. During freezing weather, a taproot is put down and the tree is dormant. A hangman tree has no interest in any sort of treasure, and as each moves constantly, it is unlikely that any treasure will be found near one, although indigestible items will be expelled from the belly-trunk periodically. The tree attacks by dropping its noose-like appendages around prey. Although each tree has 6-9 appendages, only 3 can be controlled at one time. It takes 13-20 points to sever and destroy a vine. This is exclusive of damage to the tree proper. When in contact with a victim, the vine-like appendage is drawn tight. From 1-3 points of damage accrue to the victim each round as the vine tightens and lifts the prey (up to 1000 pounds) to the upper trunk opening. This requires 4 full rounds. On the 5th round, the victim is dropped into the acidic secretion contained within the barrel of the trunk of the hangman tree. The victim will suffer 3-12 points of acid damage per round until dead, and then digestion takes place. Escape from the trunk-stomach is nearly impossible due to sharp growths which surround the top opening and point down and inward. About 3 man-sized victims can fit within the tree's digestive cavity at one time.\n\nEach hangman tree has a hallucinatory perfume which it can release at will, usually doing so while prey is 30-80 feet distant. This will cause victims to believe the tree to be some ordinary sort of quickwood or treant, etc. A tree of this sort can speak haltingly in Common learned over the years. Each also has a magic resistance based on its age because it draws power from the environment. Lightning or electricity will cause double damage if used to attack the tree. Extreme cold will shock the tree into dormancy until it thaws out. Darkness also causes it to slow down its activity, although it still functions at half efficiency.\n\nA hangman tree resembles a thick oak with few branches and sparse foliage. There are knot-like protruberances where the sensory organs are, usually high on the trunk. The lower trunk will show a scar-like place for expulsion of indigestibles.\n\n*Optional guide for tree ages: noncombatant sprout, 1-10 years; sapling, 11-25 years; mature tree, 26-75 years; old tree, 76-150 years; ancient tree, 151+ years."
+}

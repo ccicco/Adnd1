@@ -21264,6 +21264,153 @@ when both halves land.
   Letter F box - the falcon and hawk
   table opens p. 64 - or the next
   arc slice; 27 open boxes remain).
+- R805 LANDED 2026-10-24: commit
+  9189c0498b384ba70d19b41398bdf9cc8f3d492b
+  (census 727 -> 728, pushed
+  49d815f..9189c04), THE MM2
+  LETTERS FG WALK - THE FALCON,
+  FOO CREATURE, GIANT AND GRUE
+  TURNS - THE FG-FLIP ROUND
+  (Curtiss's Go call on the landed
+  letter E walk; round ten of the
+  MM2 arc, and the FIRST
+  TWO-LETTER pass - the user's
+  "multiple letters" call, the
+  falcon and hawk table opens p. 64
+  and the varrdig tail closes
+  p. 74). THE PIN-TIME WALK:
+  TWENTY-FIVE entries on pp. 64-74
+  - the falcon, firefriend, giant
+  fly, foo, formian and froghemoth
+  tables of pp. 64-67 (the falcon
+  and hawk small/large pair, the
+  firefriend, the bluebottle and
+  horsefly giant flies, the foo dog
+  and foo lion, the forester's
+  bane, the formian myrmarch,
+  warrior and worker, the
+  froghemoth), then the letter-G
+  pages 68-74 (the galeb duhr, the
+  GIANT family head doctrine only -
+  the fomorian, firbolg and verbeeg
+  blocks ride beneath it - the
+  gibbering mouther, the gloomwing,
+  the goat, the gorgimera, the
+  greenhag, the grippli, the grig,
+  the grim, the GRUE family head
+  doctrine only - the chaggrin,
+  harginn, ildriss and varrdig
+  blocks ride beneath it). TWENTY-
+  EIGHT .lua defs ride the R791
+  data_files extension, registry
+  622 -> 650 - the file paths take
+  the stem FIRST letter (fomorian
+  and firbolg in f/, verbeeg and
+  varrdig in v/, chaggrin in c/,
+  harginn in h/, ildriss in i/).
+  Header rules/mm2fg.h, prefix
+  mm2fg, 293 consts + 15 bools +
+  ONE grid (the 28x10 FgStats stat
+  grid) = 318 inline. THE FG-FLIP:
+  BOTH the Letter F and the Letter
+  G gap boxes flip to closed - 12
+  closed 25 open. THE SETTLED READS
+  (capture primary, transcription
+  and djvu the cross-check voices):
+  the firbolg bat-away roll reads
+  "6 or better" (the capture "8"
+  the OCR misread, the 75%
+  arithmetic the settle); the
+  firbolg "chaotic good" (the
+  capture "cheotic" the misread);
+  the froghemoth damage cell
+  "5d10 or 5-8 (=4)" capture
+  verbatim (the djvu "+4" the
+  misread); the harginn
+  parenthetical treasure reads the
+  letter I (the varrdig "1/2 x F"
+  pattern); the verbeeg treasure
+  reads K,L,M; the grig hit dice
+  "1/2+1 (2-5 hit points)" reads
+  avgHp 3 (the atomie precedent);
+  the gorgimera AC "5/2" reads 5;
+  the galeb duhr HD 8-10 reads the
+  low end 8 (the kuei precedent);
+  the ildriss ground move reads 3
+  (the rolling-fog rate); the
+  gorgimera "Astal" print typo
+  kept verbatim. THE LANDING
+  DETOUR (three prefights, two
+  REDs): (1) the first handoff's
+  walk key list carried a DOUBLED
+  COMMA ("ildriss", "varrdig",,)
+  - regtest.cpp failed to compile
+  and the whole battery census went
+  dark; the fix was one character,
+  fixed spec md5
+  d1707e1b44800706598fbfa069f86db9
+  (168463 bytes); the re-landing
+  then hit the R420 mixed-state
+  abort (the RED run had already
+  applied the old spec's patches),
+  cleaned by the R515
+  restore-and-rerun. (2) the second
+  run built 0 warnings but the
+  walk printed bad 3 - THREE
+  FgStat ATTACK pins broke the
+  loader's composite-attack
+  semantics (the R798 duergar
+  max-read convention):
+  luaGetNumAttacks reads a string
+  with "and" as the SUM and every
+  other composite as the MAX, and
+  floors textless cells at 1 - so
+  the forester's bane "3-6" loads
+  6 (pinned 3), the froghemoth
+  "1 or 4" loads 4 (pinned 1),
+  and the grim "See below" loads
+  the 1 floor (pinned 0 -
+  unreachable, the loader can
+  never yield attacks 0); found
+  by replicating the MonsterRegistry
+  loader field-for-field in Python
+  and running the walk checks
+  offline (rverify proves spec vs
+  model, NOT model vs the C++
+  loader - the load-time
+  mismatches are invisible to the
+  mutant battery); the bad walk
+  early-returned so the census
+  read every later audit line 0
+  times; the fix: the three grid
+  cells 6/4/1 and the attacks
+  col_comment now states the
+  max-read convention (the lua
+  prints stay verbatim), fixed
+  spec md5
+  247f417e2236067a820fdad30c401038
+  (168518 bytes); another R515
+  restore-and-rerun, then GREEN.
+  rverify GREEN against 49d815f
+  both times (588 mutants, 0
+  missed), the offline walk
+  simulation 0 bad, and the
+  environment had reset again -
+  the builder was gone, so both
+  repairs re-derived the spec from
+  the delivered canvas (the R802/
+  R803 lost-builder precedent) and
+  the /tmp tree was re-fetched from
+  the GitHub tarball at 49d815f.
+  Commit 33 files, 7183 insertions.
+  Delivery spec-r805: raw JSON
+  canvas (body byte-identical to
+  the landed spec), final md5
+  247f417e2236067a820fdad30c401038.
+  NEXT - R806: awaits Curtiss's
+  call (the natural next walk is
+  the Letter H box - 25 open boxes
+  remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

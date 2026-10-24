@@ -98,11 +98,11 @@ the R614 precedent.
   under G; the archive.org heading walk found 7
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter H** (pp. 17-76) - the A-Z entries
+- [x] **Letter H** (pp. 17-76) - the A-Z entries
   under H; the archive.org heading walk found 3
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter I** (pp. 90-90) - the A-Z entries
+- [x] **Letter I** (pp. 90-90) - the A-Z entries
   under I; the archive.org heading walk found 0
   candidate entry headings - the pin-time walk from
   the print is authoritative
