@@ -1,0 +1,383 @@
+{
+ "round": 796,
+ "prefix": "mma",
+ "header_file": "rules/mma.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 718,
+ "title": "the MM2 arc opener",
+ "audit_label": "R796 MM2 arc opener audit",
+ "audit_comment": "THE MM2 ARC OPENER - round zero of the Monster Manual II arc (the user Go call on the new-book candidate, after the next-arc audit found every standing book arc closed). The report mirrors the book structure lossless: the front matter with the preface and acknowledgements, the how-to-use doctrine in three boxes (the number-ranges table, the general entries, the special entries), the A-Z letter boxes with the pin-time sub-census doctrine (the R792 lesson applied at opener - the family sub-rosters walk from the print, never from OCR), the three encounter-table groups, the Index. THIS ROUND pins the front-matter doctrine: the frequency percentages (very rare 3, rare 7, uncommon 20, common 65, unique one), the magic resistance 11th-level base with the 5-percent step, the 8-sided hit-die default, the intelligence ladder bands with the godlike 21 floor, the multi-mode move notation, the MM1 treasure-type reference, the human attack matrix for the demihuman types, the plane and class lines of the special entries. FIVE FLIPS: the front matter, the how-to-use parent and its three doctrine boxes. The gap report is NEW (the R564 opener pattern): published PRE-FLIP, rverify in working-tree mode.",
+ "include_comment": "the MM2 arc opener",
+ "include_after": "#include \"rules/rns.h\"  // R795: the rn self-patch guard",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R795 LANDED 2026-10-23: commit",
+ "prev_record": [
+  "- R795 LANDED 2026-10-23: commit",
+  "  e035fae595e1bae7d4b8bd9c9e100b1f57367bbd",
+  "  (census 717 -> 718, pushed 8f98fda..e035fae),",
+  "  THE RN SELF-PATCH GUARD - the R794",
+  "  self-patching runner lesson closed",
+  "  STRUCTURALLY (the user Go call on the",
+  "  hardening candidate, after the next-arc",
+  "  audit). DESIGN EVOLVED IN AUTHORING:",
+  "  the user's re-exec-on-md5-change pick",
+  "  still carries the hole it fixes - bash",
+  "  reads incrementally and the R794 crash",
+  "  proved the read desyncs BEFORE any",
+  "  mid-script check can run - so the guard",
+  "  goes to the very top: rn ALWAYS execs a",
+  "  private snapshot copy of itself (one env",
+  "  var RN_SNAPSHOT, gate and path in one;",
+  "  one cp; one exec), the executing read",
+  "  becomes immutable for the run, the",
+  "  disk rn is free to change mid-run, and",
+  "  the git add still lands the patched",
+  "  disk copy. A data_files round keeps",
+  "  its one-pass git add (the snapshot is",
+  "  a copy of the CURRENT rn - the R794",
+  "  DFILES handling rides along). ONE",
+  "  PATCH on rn (the guard block after set",
+  "  -eu). splice_engine.py and rverify.py",
+  "  UNTOUCHED. Header rules/rns.h, prefix",
+  "  rns (verified free), 8 consts + 8",
+  "  bools (16 inline), audit \"R795 rn",
+  "  self-patch guard audit\", include after",
+  "  rtk.h. FULLY LOCAL VERIFICATION: the",
+  "  authoring environment ran the engine",
+  "  double-run (5/0 -> 0/5), rverify",
+  "  GREEN (16 mutants, 0 missed), bash -n,",
+  "  AND THE PROOF SIMULATION - a script",
+  "  that rewrites itself mid-run: unguarded",
+  "  it dies with the exact R794 symptom",
+  "  (NE: command not found, exit 127),",
+  "  guarded it runs to completion (exit",
+  "  0) with no snapshot leftovers (the",
+  "  trap). THE BEFORE-PROOF AT LANDING:",
+  "  the first run crashed as predicted -",
+  "  the unguarded old rn desynced AFTER",
+  "  the all-or-nothing applied 5, and",
+  "  bash resumed at a shifted offset",
+  "  INSIDE the flip-round echo line,",
+  "  executing its tail as a command",
+  "  (line 53, == flip round ... No such",
+  "  file or directory); the plain re-run",
+  "  read applied 0/already 5 both passes",
+  "  and landed - the guard live from its",
+  "  first line. THE CLASS DIES HERE: a",
+  "  self-patching round can never desync",
+  "  a landing again. Device gates: battery",
+  "  loaded 478, errors 0; xp audit 478",
+  "  checked, 0 anomalies; AUDIT CENSUS 718",
+  "  each exactly once, all bad 0; build 0",
+  "  warnings; preflight GREEN, one re-run.",
+  "  md5s: spec authored",
+  "  2835d1fdb3ea3083b4d9a878b682bf1a,",
+  "  gate 06dc708c9dbb96baeac2e7a8527088f7.",
+  "  NEXT - R796: Curtiss's call - the",
+  "  next-arc audit candidates stand (a NEW",
+  "  BOOK ARC: MM2 or Fiend Folio on the",
+  "  registry promotion pattern, DDG on",
+  "  the deity prose pattern; or the UA",
+  "  logging-boxes maintenance round)."
+ ],
+ "banner": {
+  "title": "THE MM2 ARC OPENER - the front-matter doctrine, the five flips, and the lossless MM2 gap report",
+  "provenance": "Round zero of the Monster Manual II arc (the user Go call, 2026-10-23). The opener capture is the Curtiss PDF upload (the front matter, pp. 1-7, clean text); the archive.org dual scans are the structural source for the A-Z roster and the table groups. The report mirrors the book with the A-Z sub-censuses deferred to pin time per the R792 census-correction lesson. The round pins the how-to-use doctrine as consts and bools - the frequency percentages, the magic resistance base and step, the hit-die sides, the intelligence ladder floor for godlike, the page anchors of the five book parts - and flips the five front-matter boxes. Registry 478 live, unchanged; the battery census reads loaded 478, errors 0."
+ },
+ "consts": [
+  {
+   "name": "mmaOpenerRound",
+   "value": 796,
+   "comment": "The MM2 arc opener: round zero of the Monster Manual II book (the user Go call)"
+  },
+  {
+   "name": "mmaBookPages",
+   "value": 156,
+   "comment": "The printed page count of MM2 (1983, TSR 2021, Gary Gygax, preface dated October 1982)"
+  },
+  {
+   "name": "mmaAZFirstPage",
+   "value": 8,
+   "comment": "The Monsters from A-Z first printed page"
+  },
+  {
+   "name": "mmaAZLastPage",
+   "value": 132,
+   "comment": "The Monsters from A-Z last printed page"
+  },
+  {
+   "name": "mmaTablesFirstPage",
+   "value": 133,
+   "comment": "The Random Encounter Tables first printed page (to 155; the Index rides at 156)"
+  },
+  {
+   "name": "mmaFreqVeryRarePct",
+   "value": 3,
+   "comment": "Frequency doctrine: very rare is a 3 percent chance of occurrence"
+  },
+  {
+   "name": "mmaFreqRarePct",
+   "value": 7,
+   "comment": "Frequency doctrine: rare is 7 percent"
+  },
+  {
+   "name": "mmaFreqUncommonPct",
+   "value": 20,
+   "comment": "Frequency doctrine: uncommon is 20 percent"
+  },
+  {
+   "name": "mmaFreqCommonPct",
+   "value": 65,
+   "comment": "Frequency doctrine: common is 65 percent"
+  },
+  {
+   "name": "mmaFreqUniqueCount",
+   "value": 1,
+   "comment": "Frequency doctrine: unique means only one of the creatures exists"
+  },
+  {
+   "name": "mmaMagicResistBaseLevel",
+   "value": 11,
+   "comment": "Magic resistance base: the percentage is against an 11th-level caster"
+  },
+  {
+   "name": "mmaMagicResistStepPct",
+   "value": 5,
+   "comment": "Magic resistance step: 5 percent per level below or above the 11th-level base"
+  },
+  {
+   "name": "mmaHitDieSides",
+   "value": 8,
+   "comment": "Hit dice are 8-sided unless stated otherwise; the plus adds hit points after the roll"
+  },
+  {
+   "name": "mmaIntelGodlikeLow",
+   "value": 21,
+   "comment": "The intelligence ladder floor for godlike intelligence (the ladder rides from 0 non-intelligent)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mmaMonsterTermIsGeneric",
+   "value": true,
+   "comment": "The first meaning of monster is generic - any creature encountered, human, humanoid or beast, hostile or not"
+  },
+  {
+   "name": "mmaFrequencyPercentsPinned",
+   "value": true,
+   "comment": "The frequency percentages are pinned as consts and reflected in the encounter tables within statistical limits"
+  },
+  {
+   "name": "mmaMoveNotationMultiMode",
+   "value": true,
+   "comment": "The move notation carries the modes: slash flying, double slash swimming, parentheses burrowing, star web, at-sign trees"
+  },
+  {
+   "name": "mmaManeuverabilityFromDMG",
+   "value": true,
+   "comment": "The maneuverability classes A through E are explained in the DMG, not restated here"
+  },
+  {
+   "name": "mmaHitDiceEightSidedDefault",
+   "value": true,
+   "comment": "Hit dice are 8-sided by default; low-hit creatures roll smaller dice by hit-point range notation"
+  },
+  {
+   "name": "mmaTreasureTypesFromMM1",
+   "value": true,
+   "comment": "Treasure types refer to the MM1 treasure tables; incidental treasure is noted as the accidental kind"
+  },
+  {
+   "name": "mmaMagicResistanceElevenBase",
+   "value": true,
+   "comment": "Magic resistance is stated at the 11th-level base with the 5-percent per-level adjustment, and saving throws still apply"
+  },
+  {
+   "name": "mmaHumanMatrixForDemiHumans",
+   "value": true,
+   "comment": "Humans and the demihuman types always use the human attack matrices, monster or player character"
+  },
+  {
+   "name": "mmaIntelligenceLadderIQ",
+   "value": true,
+   "comment": "The intelligence ratings correspond to character intelligence bands, from non-intelligent 0 to godlike 21-plus"
+  },
+  {
+   "name": "mmaSpecialEntriesPlaneAndClass",
+   "value": true,
+   "comment": "The special entries are the plane line and the class lines: cleric/druid, fighter, magic-user/illusionist, thief/assassin, monk/bard"
+  },
+  {
+   "name": "mmaSizeBandsAreThree",
+   "value": true,
+   "comment": "Size is three bands: S smaller than human, M human-sized, L larger - size feeds weapon damage"
+  },
+  {
+   "name": "mmaLevelXpRideDMGMethod",
+   "value": true,
+   "comment": "Level and experience point values follow the DMG method; varying hit dice show each value"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 opener consts (the R796 front matter)": [
+   {
+    "kind": "const",
+    "name": "mmaOpenerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mmaBookPages"
+   },
+   {
+    "kind": "const",
+    "name": "mmaAZFirstPage"
+   },
+   {
+    "kind": "const",
+    "name": "mmaAZLastPage"
+   },
+   {
+    "kind": "const",
+    "name": "mmaTablesFirstPage"
+   },
+   {
+    "kind": "const",
+    "name": "mmaFreqVeryRarePct"
+   },
+   {
+    "kind": "const",
+    "name": "mmaFreqRarePct"
+   },
+   {
+    "kind": "const",
+    "name": "mmaFreqUncommonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mmaFreqCommonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mmaFreqUniqueCount"
+   },
+   {
+    "kind": "const",
+    "name": "mmaMagicResistBaseLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mmaMagicResistStepPct"
+   },
+   {
+    "kind": "const",
+    "name": "mmaHitDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "mmaIntelGodlikeLow"
+   }
+  ],
+  "the MM2 opener bools (the R796 front matter)": [
+   {
+    "kind": "bool",
+    "name": "mmaMonsterTermIsGeneric"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaFrequencyPercentsPinned"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaMoveNotationMultiMode"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaManeuverabilityFromDMG"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaHitDiceEightSidedDefault"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaTreasureTypesFromMM1"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaMagicResistanceElevenBase"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaHumanMatrixForDemiHumans"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaIntelligenceLadderIQ"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaSpecialEntriesPlaneAndClass"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaSizeBandsAreThree"
+   },
+   {
+    "kind": "bool",
+    "name": "mmaLevelXpRideDMGMethod"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the MM2 front matter walk (the doctrine ints)",
+   "expr": "m['mmaOpenerRound']() != 796 or m['mmaBookPages']() != 156 or m['mmaAZFirstPage']() != 8 or m['mmaAZLastPage']() != 132 or m['mmaTablesFirstPage']() != 133 or m['mmaFreqVeryRarePct']() != 3 or m['mmaFreqRarePct']() != 7 or m['mmaFreqUncommonPct']() != 20 or m['mmaFreqCommonPct']() != 65 or m['mmaFreqUniqueCount']() != 1 or m['mmaMagicResistBaseLevel']() != 11 or m['mmaMagicResistStepPct']() != 5 or m['mmaHitDieSides']() != 8 or m['mmaIntelGodlikeLow']() != 21"
+  },
+  {
+   "note": "the MM2 front matter doctrine bools",
+   "expr": "m['mmaMonsterTermIsGeneric']() != 1 or m['mmaFrequencyPercentsPinned']() != 1 or m['mmaMoveNotationMultiMode']() != 1 or m['mmaManeuverabilityFromDMG']() != 1 or m['mmaHitDiceEightSidedDefault']() != 1 or m['mmaTreasureTypesFromMM1']() != 1 or m['mmaMagicResistanceElevenBase']() != 1 or m['mmaHumanMatrixForDemiHumans']() != 1 or m['mmaIntelligenceLadderIQ']() != 1 or m['mmaSpecialEntriesPlaneAndClass']() != 1 or m['mmaSizeBandsAreThree']() != 1 or m['mmaLevelXpRideDMGMethod']() != 1"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the front matter",
+   "from": "- [ ] **Front matter**",
+   "to": "- [x] **Front matter**"
+  },
+  {
+   "note": "the how-to-use parent",
+   "from": "- [ ] **How To Use This Book**",
+   "to": "- [x] **How To Use This Book**"
+  },
+  {
+   "note": "the number ranges table",
+   "from": "- [ ] **Number Ranges table**",
+   "to": "- [x] **Number Ranges table**"
+  },
+  {
+   "note": "the general entries doctrine",
+   "from": "- [ ] **General Entries doctrine**",
+   "to": "- [x] **General Entries doctrine**"
+  },
+  {
+   "note": "the special entries doctrine",
+   "from": "- [ ] **Special Entries doctrine**",
+   "to": "- [x] **Special Entries doctrine**"
+  }
+ ],
+ "gap_census": {
+  "closed": 5,
+  "open": 32
+ },
+ "caller_files": [],
+ "inline_count": 26,
+ "file_patches": [],
+ "data_files": []
+}

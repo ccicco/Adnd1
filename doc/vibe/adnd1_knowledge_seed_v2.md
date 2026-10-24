@@ -20306,6 +20306,73 @@ when both halves land.
   and the Index pp. 189-192 (per the DMO
   plan; data_files now rides rn's git
   add, so a data round is one pass).
+- R795 LANDED 2026-10-23: commit
+  e035fae595e1bae7d4b8bd9c9e100b1f57367bbd
+  (census 717 -> 718, pushed 8f98fda..e035fae),
+  THE RN SELF-PATCH GUARD - the R794
+  self-patching runner lesson closed
+  STRUCTURALLY (the user Go call on the
+  hardening candidate, after the next-arc
+  audit). DESIGN EVOLVED IN AUTHORING:
+  the user's re-exec-on-md5-change pick
+  still carries the hole it fixes - bash
+  reads incrementally and the R794 crash
+  proved the read desyncs BEFORE any
+  mid-script check can run - so the guard
+  goes to the very top: rn ALWAYS execs a
+  private snapshot copy of itself (one env
+  var RN_SNAPSHOT, gate and path in one;
+  one cp; one exec), the executing read
+  becomes immutable for the run, the
+  disk rn is free to change mid-run, and
+  the git add still lands the patched
+  disk copy. A data_files round keeps
+  its one-pass git add (the snapshot is
+  a copy of the CURRENT rn - the R794
+  DFILES handling rides along). ONE
+  PATCH on rn (the guard block after set
+  -eu). splice_engine.py and rverify.py
+  UNTOUCHED. Header rules/rns.h, prefix
+  rns (verified free), 8 consts + 8
+  bools (16 inline), audit "R795 rn
+  self-patch guard audit", include after
+  rtk.h. FULLY LOCAL VERIFICATION: the
+  authoring environment ran the engine
+  double-run (5/0 -> 0/5), rverify
+  GREEN (16 mutants, 0 missed), bash -n,
+  AND THE PROOF SIMULATION - a script
+  that rewrites itself mid-run: unguarded
+  it dies with the exact R794 symptom
+  (NE: command not found, exit 127),
+  guarded it runs to completion (exit
+  0) with no snapshot leftovers (the
+  trap). THE BEFORE-PROOF AT LANDING:
+  the first run crashed as predicted -
+  the unguarded old rn desynced AFTER
+  the all-or-nothing applied 5, and
+  bash resumed at a shifted offset
+  INSIDE the flip-round echo line,
+  executing its tail as a command
+  (line 53, == flip round ... No such
+  file or directory); the plain re-run
+  read applied 0/already 5 both passes
+  and landed - the guard live from its
+  first line. THE CLASS DIES HERE: a
+  self-patching round can never desync
+  a landing again. Device gates: battery
+  loaded 478, errors 0; xp audit 478
+  checked, 0 anomalies; AUDIT CENSUS 718
+  each exactly once, all bad 0; build 0
+  warnings; preflight GREEN, one re-run.
+  md5s: spec authored
+  2835d1fdb3ea3083b4d9a878b682bf1a,
+  gate 06dc708c9dbb96baeac2e7a8527088f7.
+  NEXT - R796: Curtiss's call - the
+  next-arc audit candidates stand (a NEW
+  BOOK ARC: MM2 or Fiend Folio on the
+  registry promotion pattern, DDG on
+  the deity prose pattern; or the UA
+  logging-boxes maintenance round).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
