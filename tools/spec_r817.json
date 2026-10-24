@@ -1,0 +1,5176 @@
+{
+ "round": 817,
+ "title": "the MM2 outdoor encounter tables walk - the 36 terrain grids",
+ "header_file": "rules/mm2enco.h",
+ "prefix": "mm2enco",
+ "include_after": "#include \"rules/mm2encd.h\"  // R816: the MM2 dungeon encounter tables walk - the ten monster level grids",
+ "include_comment": "the MM2 outdoor encounter tables walk - the 36 terrain grids",
+ "census_before": 739,
+ "audit_label": "R817 MM2 outdoor encounter grids audit",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "audit_comment": "THE MM2 OUTDOOR ENCOUNTER TABLES WALK - the 36 terrain grids (print pp. 140-141+, the 6 main areas x 6 terrains), every die row 2-20 pinned as the three-cell grid (die, source, special). THE SCHEMA: the outdoor grids print no source and no number-encountered columns (the dungeon grids carry both), so the source cells are EDITORIAL - 1 MM1 / 2 MM2 / 3 FF / 0 none - derived from the print own index (the M/F/bare page refs) and the registry provenance (the lua headers); the special cells 1 the Character Party row (the DMG character subtable), 2 the Castle/Fortress structure row, 3 the Patrol men row. THE SETTLED READS (the two word layers, the print index, the registry provenance and the 1eonline FF roster the voices): the Giant, Mountain cell is the print own index pointer - FF p.42, the Lambeosaurus parenthetical - no registry def; the Tween cells are the index Luck Changer, FF p.91; the Dragon, Earth cells the index Li Lung (the FF oriental earth dragon), FF p.28; the Troll, Ice cells the index FF p.90 pointer; the Volt, Vortex, Ettercap, Poltergeist, Rothe, Xvart, Norker, Dakon, Penanggalan, Revenant, Sandman, Scarecrow, Huecuva, Shadow Demon, Blood Hawk, Hoar Fox, Jermlaine, Killmoulis, Kelpie, Kenku, Khargra, Meazel, Ogrillon, Osquip, Quaggoth, Snyad, Tiger Fly, Witherweed, Caterwaul, Coffer Corpse, Crypt Thing, Denzelian, Devil Dog, Disenchanter, Dune Stalker, Firedrake, Firenewt, Forlarren, Gambado, Grabman (the FF Crabman, the print own misspelling) and Aarakocra, Algoid, Assassin Bug, Cifal, Clubnek all FF per the index F-refs and the 1eonline FF roster - the registry carries no FF defs, the rows ride keyless. THE MEN ROWS: the Men, Nomad cells key dervish (the index: Nomad (Dervish)); the Man, Patrol rows (15 cells) cite no stat block anywhere in the MM1/MM2/FF prints - they ride the men row class, keyless. THE EDITORIAL PICKS (all flagged here, the or-row first-creature convention the R816 rule): the Aspis cell aspis_drone, the Formian cell formian_worker, the Grue Elemental cell chaggrin (the first variant of the MM2 p.72 elemental grue entry), the plain Camel cells camel_dromedary, the Bee Giant Honey cells bee_worker, the Treant cell the mature treant, the Bat cells bat_ordinary/bat_mobat, the plain Vulture cells vulture_ordinary, the Demon Type I cell the vrock, the plain Snake cells the MM1 constrictor/poisonous keys (the registry MM2 snake_constrictor/snake_poisonous stay with the MM2 S-walk), the Dwarf Hill and Dwarf Mountain cells the dwarf def, the Volt or Ghoul and Quaggoth or Deadly White Pudding rows keyless (the first creature FF). THE SCAN NOTES: the scan-B Worker cells are Norker misreads (the R816 lesson); the coldSnake cells read Poisonous (white-furred) - the MM1 poisonous snake arctic parenthetical, keyed poisonous_snake. THE FLAGGED CELLS: the Pterodactyl, Small cell (tropical wilderness mountains die 10) - no index entry, no MM1/MM2/FF body def survives in the registry sources - rides keyless for the physical copy; the Lammasu, Greater cells (temperate civilized plains die 2, tropical civilized hills die 20) point at a real MM2 stat block, LAMMASU GREATER p. 79 (between the kraken and the land lamprey) that the R808 LMN walk never promoted - src MM2, keyless pending that promotion round. THE PARTY ROWS: 17 Character Party rows on 16 grids; the cold civilized desert grid alone carries two (dies 7 and 14); the cold wilderness hills grid the one wilderness grid with a party row.",
+ "banner": {
+  "title": "THE MM2 OUTDOOR ENCOUNTER TABLES WALK - THE 36 TERRAIN GRIDS (pp. 140-141+: the 6 main areas cold, temperate and tropical, wilderness and civilized, each x 6 terrains, the Character Party rows, the Castle/Fortress structure rows and the Patrol men rows), the OUTDOOR-FLIP round - the Outdoor Random Encounter Tables gap box flips to closed",
+  "provenance": "Round twenty-two of the MM2 arc, the fifth table-group round (Curtiss Go call on the landed R816 dungeon walk; the pin-time walk found 36 printed grids of 19 die rows each, no defs promoted - the registry stays 809)",
+  "sentinel": "The pin header stays the print-fidelity record; the grids carry the die, editorial source and special cells, the row rosters ride the audit comments, and the walk cross-checks the registry keys live"
+ },
+ "consts": [
+  {
+   "name": "mm2encoRound",
+   "value": 817,
+   "comment": "The MM2 outdoor encounter tables walk round: the 36 terrain grids, the fifth table-group round (Curtiss Go call on the landed R816)"
+  },
+  {
+   "name": "mm2encoAreaCount",
+   "value": 6,
+   "comment": "The tables cover 6 main areas: cold, temperate and tropical, each in wilderness and civilized versions"
+  },
+  {
+   "name": "mm2encoTerrainCount",
+   "value": 6,
+   "comment": "Each main area subdivides into mountains, hills and rough terrain, forest, swamp and marsh, plains and scrub, and desert"
+  },
+  {
+   "name": "mm2encoTableCount",
+   "value": 36,
+   "comment": "The 6 x 6 terrain grids (one area-terrain pairing per grid)"
+  },
+  {
+   "name": "mm2encoRowsPerTable",
+   "value": 19,
+   "comment": "Every grid carries the 19 die rows 2-20"
+  },
+  {
+   "name": "mm2encoTotalRows",
+   "value": 684,
+   "comment": "The 36 x 19 rows pinned across the grids"
+  },
+  {
+   "name": "mm2encoCW1Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold wilderness mountains encounter grid"
+  },
+  {
+   "name": "mm2encoCW2Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold wilderness hills and rough terrain encounter grid"
+  },
+  {
+   "name": "mm2encoCW3Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold wilderness forest encounter grid"
+  },
+  {
+   "name": "mm2encoCW4Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold wilderness swamp and marsh encounter grid"
+  },
+  {
+   "name": "mm2encoCW5Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold wilderness plains and scrub encounter grid"
+  },
+  {
+   "name": "mm2encoCW6Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold wilderness desert encounter grid"
+  },
+  {
+   "name": "mm2encoCC1Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold civilized mountains encounter grid"
+  },
+  {
+   "name": "mm2encoCC2Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold civilized hills and rough terrain encounter grid"
+  },
+  {
+   "name": "mm2encoCC3Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold civilized forest encounter grid"
+  },
+  {
+   "name": "mm2encoCC4Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold civilized swamp and marsh encounter grid"
+  },
+  {
+   "name": "mm2encoCC5Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold civilized plains and scrub encounter grid"
+  },
+  {
+   "name": "mm2encoCC6Count",
+   "value": 19,
+   "comment": "The 19 rows of the the cold civilized desert encounter grid"
+  },
+  {
+   "name": "mm2encoTW1Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate wilderness mountains encounter grid"
+  },
+  {
+   "name": "mm2encoTW2Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate wilderness hills and rough terrain encounter grid"
+  },
+  {
+   "name": "mm2encoTW3Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate wilderness forest encounter grid"
+  },
+  {
+   "name": "mm2encoTW4Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate wilderness swamp and marsh encounter grid"
+  },
+  {
+   "name": "mm2encoTW5Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate wilderness plains and scrub encounter grid"
+  },
+  {
+   "name": "mm2encoTW6Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate wilderness desert encounter grid"
+  },
+  {
+   "name": "mm2encoTC1Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate civilized mountains encounter grid"
+  },
+  {
+   "name": "mm2encoTC2Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate civilized hills and rough terrain encounter grid"
+  },
+  {
+   "name": "mm2encoTC3Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate civilized forest encounter grid"
+  },
+  {
+   "name": "mm2encoTC4Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate civilized swamp and marsh encounter grid"
+  },
+  {
+   "name": "mm2encoTC5Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate civilized plains and scrub encounter grid"
+  },
+  {
+   "name": "mm2encoTC6Count",
+   "value": 19,
+   "comment": "The 19 rows of the the temperate civilized desert encounter grid"
+  },
+  {
+   "name": "mm2encoRW1Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical wilderness mountains encounter grid"
+  },
+  {
+   "name": "mm2encoRW2Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical wilderness hills and rough terrain encounter grid"
+  },
+  {
+   "name": "mm2encoRW3Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical wilderness forest encounter grid"
+  },
+  {
+   "name": "mm2encoRW4Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical wilderness swamp and marsh encounter grid"
+  },
+  {
+   "name": "mm2encoRW5Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical wilderness plains and scrub encounter grid"
+  },
+  {
+   "name": "mm2encoRW6Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical wilderness desert encounter grid"
+  },
+  {
+   "name": "mm2encoRC1Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical civilized mountains encounter grid"
+  },
+  {
+   "name": "mm2encoRC2Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical civilized hills and rough terrain encounter grid"
+  },
+  {
+   "name": "mm2encoRC3Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical civilized forest encounter grid"
+  },
+  {
+   "name": "mm2encoRC4Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical civilized swamp and marsh encounter grid"
+  },
+  {
+   "name": "mm2encoRC5Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical civilized plains and scrub encounter grid"
+  },
+  {
+   "name": "mm2encoRC6Count",
+   "value": 19,
+   "comment": "The 19 rows of the the tropical civilized desert encounter grid"
+  },
+  {
+   "name": "mm2encoDieMin",
+   "value": 2,
+   "comment": "The lowest die roll on every grid"
+  },
+  {
+   "name": "mm2encoDieMax",
+   "value": 20,
+   "comment": "The highest die roll on every grid"
+  },
+  {
+   "name": "mm2encoCharacterPartyRows",
+   "value": 17,
+   "comment": "The Character Party rows across the grids (the DMG character subtable pointer)"
+  },
+  {
+   "name": "mm2encoGridsWithPartyRow",
+   "value": 16,
+   "comment": "The grids that carry a Character Party row (the cold wilderness hills grid the one wild grid with one)"
+  },
+  {
+   "name": "mm2encoColdCivDesertPartyRows",
+   "value": 2,
+   "comment": "The cold civilized desert grid carries TWO Character Party rows (dies 7 and 14) - every other party grid exactly one"
+  },
+  {
+   "name": "mm2encoStructureRows",
+   "value": 5,
+   "comment": "The Castle and Fortress rows (the print structure rows, no monster)"
+  },
+  {
+   "name": "mm2encoPatrolRows",
+   "value": 15,
+   "comment": "The Man, Patrol men-type rows - the print cites no stat block anywhere for the patrol (the men rows without defs)"
+  },
+  {
+   "name": "mm2encoMm1SourceRows",
+   "value": 413,
+   "comment": "The MM1-provenance rows (the editorial source cells; the registry lua headers the authority)"
+  },
+  {
+   "name": "mm2encoMm2SourceRows",
+   "value": 159,
+   "comment": "The MM2-provenance rows (the registry lua headers the authority)"
+  },
+  {
+   "name": "mm2encoFfSourceRows",
+   "value": 74,
+   "comment": "The Fiend Folio rows (the print index F-refs the authority; the registry carries no FF defs - the rows ride keyless)"
+  },
+  {
+   "name": "mm2encoWalkKeyRows",
+   "value": 570,
+   "comment": "The rows with a registry walk key (the MM1 and MM2 defs the registry owns)"
+  },
+  {
+   "name": "mm2encoUnresolvedRows",
+   "value": 1,
+   "comment": "The one row with no print def determined (the Pterodactyl, Small cell - flagged for the physical copy)"
+  },
+  {
+   "name": "mm2encoRegistryFloor",
+   "value": 809,
+   "comment": "The registry census floor (the walk requires at least this many defs loaded)"
+  },
+  {
+   "name": "mm2encoOrRows",
+   "value": 20,
+   "comment": "The or-rows and cross-referenced variant rows (the first creature keys the row, the R816 convention)"
+  },
+  {
+   "name": "mm2encoLammasuGreaterRows",
+   "value": 2,
+   "comment": "The Lammasu, Greater cells - the MM2 p. 79 stat block the R808 LMN walk never promoted; the cells ride keyless pending that promotion"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2encoSixMainAreas",
+   "value": true,
+   "comment": "These tables cover 6 main areas"
+  },
+  {
+   "name": "mm2encoColdIncludesArcticSubarctic",
+   "value": true,
+   "comment": "The cold wilderness area includes arctic and subarctic regions"
+  },
+  {
+   "name": "mm2encoTropicalIncludesSubtropical",
+   "value": true,
+   "comment": "The tropical areas include subtropical regions"
+  },
+  {
+   "name": "mm2encoCivilizedIncludesInhabitedAndPatrolled",
+   "value": true,
+   "comment": "Civilized regions include inhabited and patrolled areas"
+  },
+  {
+   "name": "mm2encoEncountersTypicalToTerrain",
+   "value": true,
+   "comment": "Encounters in each terrain are typical to it"
+  },
+  {
+   "name": "mm2encoDmMayModifyOrReplace",
+   "value": true,
+   "comment": "Feel free to modify or replace these tables, using the suggestions in the section on creating tables"
+  },
+  {
+   "name": "mm2encoPartyRowRollsDmgSubtable",
+   "value": true,
+   "comment": "The Character Party row consults the character subtable in the DMG"
+  },
+  {
+   "name": "mm2encoNoPrintedSourceColumn",
+   "value": true,
+   "comment": "The outdoor grids print no source column (unlike the dungeon grids) - the source cells are editorial, the print index M/F/bare refs and the registry provenance the voices"
+  },
+  {
+   "name": "mm2encoNoPrintedNumberColumn",
+   "value": true,
+   "comment": "The outdoor grids print no number-encountered column (unlike the dungeon grids); the number rides the individual monster entries"
+  },
+  {
+   "name": "mm2encoDieRowsContiguous",
+   "value": true,
+   "comment": "Every grid runs the die rows 2-20 contiguous, one row per die"
+  },
+  {
+   "name": "mm2encoStructureRowIsCastleOrFortress",
+   "value": true,
+   "comment": "The Castle and Fortress rows are the print structure rows (an inhabited site, not a monster)"
+  },
+  {
+   "name": "mm2encoPatrolRowIsMenType",
+   "value": true,
+   "comment": "The Patrol rows are men-type encounter rows; no patrol stat block exists in the MM1/MM2/FF prints (the cells ride the men row class)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the cold wilderness mountains encounter grid",
+   "tag": "EncoCW1",
+   "cols": [
+    "mm2encoCW1Die",
+    "mm2encoCW1Src",
+    "mm2encoCW1Special"
+   ],
+   "count": "mm2encoCW1Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     2,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     0,
+     2
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD WILDERNESS MOUNTAINS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Giant, Mountain (FF, no registry def); die 3 Hoar Fox (FF, no registry def); die 4 Galeb Duhr (MM2 galeb_duh); die 5 Toad, Ice (MM1 ice_toad); die 6 Lycanthrope, Werebear (MM1 werebear); die 7 Dragon, White (MM1 white_dragon); die 8 Wolverine (MM1 wolverine); die 9 Dwarf, Mountain (MM1 dwarf); die 10 Rhinoceros, Woolly (MM1 woolly_rhinoceros); die 11 Mammoth (MM1 mammoth); die 12 Raven, Normal (MM2 raven_ordinary); die 13 Ogre (MM1 ogre); die 14 Lion, Mountain (MM1 mountain_lion); die 15 Giant, Hill (MM1 hill_giant); die 16 Giant, Frost (MM1 frost_giant); die 17 Fortress (the Fortress row (the structure row)); die 18 Taer (MM2 taer); die 19 Yeti (MM1 yeti); die 20 Dragon, Red (MM1 red_dragon)"
+  },
+  {
+   "name": "the cold wilderness hills and rough terrain encounter grid",
+   "tag": "EncoCW2",
+   "cols": [
+    "mm2encoCW2Die",
+    "mm2encoCW2Src",
+    "mm2encoCW2Special"
+   ],
+   "count": "mm2encoCW2Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     0,
+     1
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     3,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD WILDERNESS HILLS AND ROUGH TERRAIN GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Wolf, Winter (MM1 winter_wolf); die 3 Owl, Giant (MM1 giant_owl); die 4 Badger (MM1 badger); die 5 Character Party (the Character Party row (the DMG subtable)); die 6 Bear, Northern (Polar Bear) (MM2 bear_northern); die 7 Troll, Ice (FF, no registry def); die 8 Mammoth (MM1 mammoth); die 9 Giant, Hill (MM1 hill_giant); die 10 Herd Animal (MM1 herd_animal); die 11 Wolf (MM1 wolf); die 12 Orc (MM1 orc); die 13 Dwarf, Hill (MM1 dwarf); die 14 Bear, Cave (MM1 cave_bear); die 15 Snake, Poisonous (white-furred) (MM1 poisonous_snake); die 16 Boar, Wild (MM1 wild_boar); die 17 Wolverine, Giant (MM1 giant_wolverine); die 18 Irish Deer (MM1 irish_deer); die 19 Remorhaz (MM1 remorhaz); die 20 Elf, Grugach (MM2 grugach)"
+  },
+  {
+   "name": "the cold wilderness forest encounter grid",
+   "tag": "EncoCW3",
+   "cols": [
+    "mm2encoCW3Die",
+    "mm2encoCW3Src",
+    "mm2encoCW3Special"
+   ],
+   "count": "mm2encoCW3Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     3,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD WILDERNESS FOREST GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Giant, Frost (MM1 frost_giant); die 3 Forlarren (FF, no registry def); die 4 Treant (MM1 treant_mature_middle_aged); die 5 Pudding, White (MM2 pudding_white); die 6 Bear, Northern (Polar Bear) (MM2 bear_northern); die 7 Porcupine, Giant (MM1 giant_porcupine); die 8 Bugbear (MM1 bugbear); die 9 Wolf (MM1 wolf); die 10 Ogre (MM1 ogre); die 11 Orc (MM1 orc); die 12 Dog, Wild (MM1 wild_dog); die 13 Lycanthrope, Werewolf (MM1 werewolf); die 14 Manticore (MM1 manticore); die 15 Dragon, White (MM1 white_dragon); die 16 Baluchitherium (MM1 baluchitherium); die 17 Ogrillon (FF, no registry def); die 18 Grim (MM2 grim); die 19 Korred (MM2 korred); die 20 Lycanthrope, Foxwoman (MM2 foxwoman)"
+  },
+  {
+   "name": "the cold wilderness swamp and marsh encounter grid",
+   "tag": "EncoCW4",
+   "cols": [
+    "mm2encoCW4Die",
+    "mm2encoCW4Src",
+    "mm2encoCW4Special"
+   ],
+   "count": "mm2encoCW4Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     2,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     3,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     3,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD WILDERNESS SWAMP AND MARSH GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Troll, Ice (FF, no registry def); die 3 Wolf, Winter (MM1 winter_wolf); die 4 Wolf, Dire (MM1 dire_wolf); die 5 Tiger or Spectre (Night) (MM1 tiger); die 6 Crystal Ooze (MM2 crystal_ooze); die 7 Pseudo-undead, Spectre (MM2 pseudo_undead); die 8 Hydra (MM1 hydra); die 9 Dog, Wild (MM1 wild_dog); die 10 Orc (MM1 orc); die 11 Quaggoth or Deadly White Pudding (FF, no registry def); die 12 Ogre (MM1 ogre); die 13 Rat, Giant (MM1 giant_rat); die 14 Volt or Ghoul (Night) (FF, no registry def); die 15 Herd Animal (MM1 herd_animal); die 16 Irish Deer (MM1 irish_deer); die 17 Moon Dog (MM2 moon_dog); die 18 Dragon, White (MM1 white_dragon); die 19 Owl, Giant (MM1 giant_owl); die 20 Black Willow (MM2 willow_black)"
+  },
+  {
+   "name": "the cold wilderness plains and scrub encounter grid",
+   "tag": "EncoCW5",
+   "cols": [
+    "mm2encoCW5Die",
+    "mm2encoCW5Src",
+    "mm2encoCW5Special"
+   ],
+   "count": "mm2encoCW5Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     3,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD WILDERNESS PLAINS AND SCRUB GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Gorgon (MM1 gorgon); die 3 Yeth Hound (MM2 yeth_hound); die 4 Troll, Ice (FF, no registry def); die 5 Men, Dervishes (MM1 dervish); die 6 Giant, Hill (MM1 hill_giant); die 7 Snake, Poisonous (white-furred) (MM1 poisonous_snake); die 8 Men, Bandit (MM1 bandit); die 9 Mammoth (MM1 mammoth); die 10 Mastodon (MM1 mastodon); die 11 Herd Animal (MM1 herd_animal); die 12 Ogre (MM1 ogre); die 13 Camel, Bactrian (MM1 camel_bactrian); die 14 Men, Nomad (MM1 dervish); die 15 Dragon, White (MM1 white_dragon); die 16 Devil Dog (FF, no registry def); die 17 Wolf (MM1 wolf); die 18 Wolfwere (MM2 wolfwere); die 19 Lynx, Giant (MM1 giant_lynx); die 20 Remorhaz (MM1 remorhaz)"
+  },
+  {
+   "name": "the cold wilderness desert encounter grid",
+   "tag": "EncoCW6",
+   "cols": [
+    "mm2encoCW6Die",
+    "mm2encoCW6Src",
+    "mm2encoCW6Special"
+   ],
+   "count": "mm2encoCW6Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     2,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     2,
+     0
+    ],
+    [
+     13,
+     2,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     3,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     3,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD WILDERNESS DESERT GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Dragon, Gold (MM1 gold_dragon); die 3 Hobgoblin (MM1 hobgoblin); die 4 Rock Reptile (MM2 rock_reptile); die 5 Sandling (MM2 sandling); die 6 Hoar Fox (FF, no registry def); die 7 Men, Nomad (MM1 dervish); die 8 Scorpion, Huge (MM2 scorpion_huge); die 9 Dog, Wild (MM1 wild_dog); die 10 Camel, Bactrian (MM1 camel_bactrian); die 11 Herd Animal (MM1 herd_animal); die 12 Scorpion, Large (MM2 scorpion_large); die 13 Raven, Normal (MM2 raven_ordinary); die 14 Tiger (MM1 tiger); die 15 Raven, Giant (MM2 raven_giant); die 16 Wolf (MM1 wolf); die 17 Devil Dog (FF, no registry def); die 18 Bugbear (MM1 bugbear); die 19 Gambado (FF, no registry def); die 20 Succubus (MM1 succubus)"
+  },
+  {
+   "name": "the cold civilized mountains encounter grid",
+   "tag": "EncoCC1",
+   "cols": [
+    "mm2encoCC1Die",
+    "mm2encoCC1Src",
+    "mm2encoCC1Special"
+   ],
+   "count": "mm2encoCC1Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     0,
+     1
+    ],
+    [
+     11,
+     0,
+     3
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     2,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     0,
+     2
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD CIVILIZED MOUNTAINS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Denzelian (FF, no registry def); die 3 Xorn (MM1 xorn); die 4 Aarakocra (FF, no registry def); die 5 Men, Berserker (MM1 berserker); die 6 Quaggoth (FF, no registry def); die 7 Goblin (MM1 goblin); die 8 Bugbear (MM1 bugbear); die 9 Man, Bandit (MM1 bandit); die 10 Character Party (the Character Party row (the DMG subtable)); die 11 Man, Patrol (the Patrol men row (no print def)); die 12 Dwarf, Mountain (MM1 dwarf); die 13 Falcon, Small (MM2 falcon_small); die 14 Hobgoblin (MM1 hobgoblin); die 15 Pilgrim (MM1 pilgrim); die 16 Man, Merchant (MM1 merchant); die 17 Minotaur (MM1 minotaur); die 18 Castle (the Castle row (the structure row)); die 19 Wolf, Dire (MM1 dire_wolf); die 20 Vampire (MM1 vampire)"
+  },
+  {
+   "name": "the cold civilized hills and rough terrain encounter grid",
+   "tag": "EncoCC2",
+   "cols": [
+    "mm2encoCC2Die",
+    "mm2encoCC2Src",
+    "mm2encoCC2Special"
+   ],
+   "count": "mm2encoCC2Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     2,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     0,
+     3
+    ],
+    [
+     11,
+     0,
+     1
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD CIVILIZED HILLS AND ROUGH TERRAIN GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Vampire (MM1 vampire); die 3 Toad, Ice (MM1 ice_toad); die 4 Snyad (FF, no registry def); die 5 Wolf, Dire (MM1 dire_wolf); die 6 Man, Berserker (MM1 berserker); die 7 Pseudo-undead, Vampire (MM2 pseudo_undead); die 8 Hobgoblin (MM1 hobgoblin); die 9 Man, Bandit (MM1 bandit); die 10 Man, Patrol (the Patrol men row (no print def)); die 11 Character Party (the Character Party row (the DMG subtable)); die 12 Man, Merchant (MM1 merchant); die 13 Dwarf, Hill (MM1 dwarf); die 14 Mammoth (MM1 mammoth); die 15 Bat (MM2 bat_ordinary); die 16 Halfling (MM1 halfling); die 17 Goblin (MM1 goblin); die 18 Gnome (MM1 gnome); die 19 Bugbear (MM1 bugbear); die 20 Xaren (MM2 xaren)"
+  },
+  {
+   "name": "the cold civilized forest encounter grid",
+   "tag": "EncoCC3",
+   "cols": [
+    "mm2encoCC3Die",
+    "mm2encoCC3Src",
+    "mm2encoCC3Special"
+   ],
+   "count": "mm2encoCC3Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     0,
+     2
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     2,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     0,
+     3
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     0,
+     1
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     3,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD CIVILIZED FOREST GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Shedu (MM1 shedu); die 3 Groaning Spirit (MM1 groaning_spirit); die 4 Castle (the Castle row (the structure row)); die 5 Lycanthrope, Werebear (MM1 werebear); die 6 Hobgoblin (MM1 hobgoblin); die 7 Bat (MM2 bat_ordinary); die 8 Bugbear (MM1 bugbear); die 9 Man, Patrol (the Patrol men row (no print def)); die 10 Boar, Wild (MM1 wild_boar); die 11 Wolf (MM1 wolf); die 12 Ogre (MM1 ogre); die 13 Man, Bandit (MM1 bandit); die 14 Elf, Wood (MM1 elf); die 15 Character Party (the Character Party row (the DMG subtable)); die 16 Goblin (MM1 goblin); die 17 Shadow (MM1 shadow); die 18 Norker (FF, no registry def); die 19 Bookworm (MM2 bookworm); die 20 Shadow Mastiff or Ghost (Night) (MM2 shadow_mastiff)"
+  },
+  {
+   "name": "the cold civilized swamp and marsh encounter grid",
+   "tag": "EncoCC4",
+   "cols": [
+    "mm2encoCC4Die",
+    "mm2encoCC4Src",
+    "mm2encoCC4Special"
+   ],
+   "count": "mm2encoCC4Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     0,
+     3
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     0,
+     1
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     3,
+     0
+    ],
+    [
+     18,
+     3,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD CIVILIZED SWAMP AND MARSH GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Demon, Alu- (MM2 alu_demon); die 3 Poltergeist (FF, no registry def); die 4 Luck Eater (MM2 luck_eater); die 5 Man, Berserker (MM1 berserker); die 6 Crab, Giant (MM1 giant_crab); die 7 Hobgoblin (MM1 hobgoblin); die 8 Man, Patrol (the Patrol men row (no print def)); die 9 Centipede, Giant or Huge (MM1 giant_centipede); die 10 Rat or Giant Rat (MM2 rat_ordinary); die 11 Man, Bandit (MM1 bandit); die 12 Ogre (MM1 ogre); die 13 Character Party (the Character Party row (the DMG subtable)); die 14 Ghoul (MM1 ghoul); die 15 Pseudo-undead, Ghoul (MM2 pseudo_undead); die 16 Ghast (MM1 ghast); die 17 Penanggalan (FF, no registry def); die 18 Coffer Corpse (FF, no registry def); die 19 Bugbear (MM1 bugbear); die 20 Grue, Varrdig (MM2 varrdig)"
+  },
+  {
+   "name": "the cold civilized plains and scrub encounter grid",
+   "tag": "EncoCC5",
+   "cols": [
+    "mm2encoCC5Die",
+    "mm2encoCC5Src",
+    "mm2encoCC5Special"
+   ],
+   "count": "mm2encoCC5Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     7,
+     3,
+     0
+    ],
+    [
+     8,
+     2,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     0,
+     3
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     0,
+     1
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     3,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD CIVILIZED PLAINS AND SCRUB GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Disenchanter (FF, no registry def); die 3 Hollyphant (MM2 hollyphant); die 4 Dragon, Earth (FF, no registry def); die 5 Wolf, Dire (MM1 dire_wolf); die 6 Quaggoth (FF, no registry def); die 7 Osquip (FF, no registry def); die 8 Owl (MM2 owl); die 9 Man, Bandit (MM1 bandit); die 10 Man, Patrol (the Patrol men row (no print def)); die 11 Man, Merchant (MM1 merchant); die 12 Ogre (MM1 ogre); die 13 Wolf (MM1 wolf); die 14 Bugbear (MM1 bugbear); die 15 Character Party (the Character Party row (the DMG subtable)); die 16 Lycanthrope, Werewolf (MM1 werewolf); die 17 Goblin (MM1 goblin); die 18 Man, Dervish (MM1 dervish); die 19 Lycanthrope, Wererat (MM1 wererat); die 20 Tween (FF, no registry def)"
+  },
+  {
+   "name": "the cold civilized desert encounter grid",
+   "tag": "EncoCC6",
+   "cols": [
+    "mm2encoCC6Die",
+    "mm2encoCC6Src",
+    "mm2encoCC6Special"
+   ],
+   "count": "mm2encoCC6Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     0,
+     1
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     2,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     0,
+     1
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     3,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE COLD CIVILIZED DESERT GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Shedu, Greater (MM1 shedu); die 3 Vortex (FF, no registry def); die 4 Dragon, Gold (MM1 gold_dragon); die 5 Falcon, Large (MM2 falcon_large); die 6 Wolf, Dire (MM1 dire_wolf); die 7 Character Party (the Character Party row (the DMG subtable)); die 8 Pilgrim (MM1 pilgrim); die 9 Man, Merchant (MM1 merchant); die 10 Man, Bandit (MM1 bandit); die 11 Goblin or Jermlaine (MM1 goblin); die 12 Raven, Normal (MM2 raven_ordinary); die 13 Camel, Bactrian (MM1 camel_bactrian); die 14 Character Party (the Character Party row (the DMG subtable)); die 15 Wolf (MM1 wolf); die 16 Man, Dervish (MM1 dervish); die 17 Man, Berserker (MM1 berserker); die 18 Griffon (MM1 griffon); die 19 Crypt Thing (FF, no registry def); die 20 Deva, Movanic (MM2 movanic_deva)"
+  },
+  {
+   "name": "the temperate wilderness mountains encounter grid",
+   "tag": "EncoTW1",
+   "cols": [
+    "mm2encoTW1Die",
+    "mm2encoTW1Src",
+    "mm2encoTW1Special"
+   ],
+   "count": "mm2encoTW1Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ],
+    [
+     9,
+     2,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     2,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     3,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE WILDERNESS MOUNTAINS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Cave Fisher (MM2 cave_fisher); die 3 Gorgimera (MM2 gorgimera); die 4 Dragon, Red (MM1 red_dragon); die 5 Lion, Spotted (MM1 spotted_lion); die 6 Bat, Giant (MM2 bat_mobat); die 7 Giant, Stone (MM1 stone_giant); die 8 Bloodhawk (FF, no registry def); die 9 Vulture, Normal (MM2 vulture_ordinary); die 10 Spider, Large (MM1 large_spider); die 11 Dwarf, Mountain (MM1 dwarf); die 12 Bat (MM2 bat_ordinary); die 13 Orc (MM1 orc); die 14 Lion, Mountain (MM1 mountain_lion); die 15 Cockatrice (MM1 cockatrice); die 16 Bear, Black (MM1 black_bear); die 17 Caveman (MM1 caveman); die 18 Chimera (MM1 chimera); die 19 Khargra (FF, no registry def); die 20 Galeb Duhr (MM2 galeb_duh)"
+  },
+  {
+   "name": "the temperate wilderness hills and rough terrain encounter grid",
+   "tag": "EncoTW2",
+   "cols": [
+    "mm2encoTW2Die",
+    "mm2encoTW2Src",
+    "mm2encoTW2Special"
+   ],
+   "count": "mm2encoTW2Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     2,
+     0
+    ],
+    [
+     8,
+     2,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE WILDERNESS HILLS AND ROUGH TERRAIN GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Gorgon (MM1 gorgon); die 3 Displacer Beast (MM1 displacer_beast); die 4 Ant Lion, Giant (MM2 ant_lion); die 5 Bee, Giant Bumble- (MM2 bee_bumblebee); die 6 Harpy (MM1 harpy); die 7 Giant, Verbeeg (MM2 verbeeg); die 8 Scorpion, Large (MM2 scorpion_large); die 9 Giant, Hill (MM1 hill_giant); die 10 Wolf (MM1 wolf); die 11 Orc (MM1 orc); die 12 Ogre (MM1 ogre); die 13 Lycanthrope, Werewolf (MM1 werewolf); die 14 Tiger (MM1 tiger); die 15 Spider, Huge (MM1 huge_spider); die 16 Mantis, Giant (MM2 giant_mantis); die 17 Aspis (MM2 aspis_drone); die 18 Hybsil (MM2 hybsil); die 19 Vulture, Giant (MM2 vulture_giant); die 20 Manticore (MM1 manticore)"
+  },
+  {
+   "name": "the temperate wilderness forest encounter grid",
+   "tag": "EncoTW3",
+   "cols": [
+    "mm2encoTW3Die",
+    "mm2encoTW3Src",
+    "mm2encoTW3Special"
+   ],
+   "count": "mm2encoTW3Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     3,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE WILDERNESS FOREST GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Death Watch Beetle (MM2 beetle_death_watch); die 3 Elf, Grugach (MM2 grugach); die 4 Atomie (MM2 atomie); die 5 Bee, Giant Honey (MM2 bee_worker); die 6 Dragon, Green (MM1 green_dragon); die 7 Boar, Giant (MM1 giant_boar); die 8 Kobold (MM1 kobold); die 9 Boar, Warthog (MM1 warthog); die 10 Rhinoceros (MM1 rhinoceros); die 11 Centipede, Giant or Huge (MM1 giant_centipede); die 12 Bear, Black (MM1 black_bear); die 13 Beetle, Giant Stag (MM1 stag_beetle); die 14 Porcupine, Giant (MM1 giant_porcupine); die 15 Clubnek (FF, no registry def); die 16 Owlbear (MM1 owlbear); die 17 Kech (MM2 kech); die 18 Green Hag (MM2 greenhag); die 19 Elfin Cat (MM2 elfin_cat); die 20 Basilisk, Greater (MM2 basilisk_greater)"
+  },
+  {
+   "name": "the temperate wilderness swamp and marsh encounter grid",
+   "tag": "EncoTW4",
+   "cols": [
+    "mm2encoTW4Die",
+    "mm2encoTW4Src",
+    "mm2encoTW4Special"
+   ],
+   "count": "mm2encoTW4Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     16,
+     3,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE WILDERNESS SWAMP AND MARSH GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Algoid (FF, no registry def); die 3 Dragon, Mist (MM2 mist_dragon); die 4 Troll, Giant (MM1 troll); die 5 Shambling Mound (MM1 shambling_mound); die 6 Phycomid (MM2 phycomid); die 7 Toad, Poisonous (MM1 poisonous_toad); die 8 Lizard, Giant (MM1 giant_lizard); die 9 Toad, Giant (MM1 giant_toad); die 10 Vulture, Normal (MM2 vulture_ordinary); die 11 Spider, Large or Huge (MM1 large_spider); die 12 Crocodile, Normal (MM1 crocodile); die 13 Orc (MM1 orc); die 14 Wyvern (MM1 wyvern); die 15 Basidirond (MM2 basidirond); die 16 Caterwaul (FF, no registry def); die 17 Eblis (MM2 eblis); die 18 Pseudo-undead, Wight (MM2 pseudo_undead); die 19 Crayfish, Giant (MM1 giant_crayfish); die 20 Beholder (MM1 beholder)"
+  },
+  {
+   "name": "the temperate wilderness plains and scrub encounter grid",
+   "tag": "EncoTW5",
+   "cols": [
+    "mm2encoTW5Die",
+    "mm2encoTW5Src",
+    "mm2encoTW5Special"
+   ],
+   "count": "mm2encoTW5Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     7,
+     3,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     2,
+     0
+    ],
+    [
+     14,
+     2,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE WILDERNESS PLAINS AND SCRUB GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Ascomoid (MM2 ascomoid); die 3 Giant, Firbolg or Verbeeg (MM2 firbolg); die 4 Xvart (FF, no registry def); die 5 Troll (MM1 troll); die 6 Tiger Fly (FF, no registry def); die 7 Kenku (FF, no registry def); die 8 Lion (MM1 lion); die 9 Boar, Wild (MM1 wild_boar); die 10 Cattle, Wild (MM1 wild_cattle); die 11 Wolf (MM1 wolf); die 12 Jackal (MM1 jackal); die 13 Scorpion, Huge (MM2 scorpion_huge); die 14 Shadow Mastiff (MM2 shadow_mastiff); die 15 Titanothere (MM1 titanotherium); die 16 Bee, Giant Bumble- (MM2 bee_bumblebee); die 17 Blink Dog (MM1 blink_dog); die 18 Gnoll (MM1 gnoll); die 19 Yeth Hound (MM2 yeth_hound); die 20 Bulette (MM1 bulette)"
+  },
+  {
+   "name": "the temperate wilderness desert encounter grid",
+   "tag": "EncoTW6",
+   "cols": [
+    "mm2encoTW6Die",
+    "mm2encoTW6Src",
+    "mm2encoTW6Special"
+   ],
+   "count": "mm2encoTW6Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     2,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     2,
+     0
+    ],
+    [
+     13,
+     2,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE WILDERNESS DESERT GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Giant, Fire (MM1 fire_giant); die 3 Dune Stalker (FF, no registry def); die 4 Lammasu (MM1 lammasu); die 5 Purple Worm (MM1 purple_worm); die 6 Fly, Giant Horse- (MM2 fly_horsefly); die 7 Scorpion, Giant or Huge (MM1 giant_scorpion); die 8 Dustdigger (MM2 dustdigger); die 9 Camel, Bactrian (MM1 camel_bactrian); die 10 Spider, Large or Huge (MM1 large_spider); die 11 Jackal (MM1 jackal); die 12 Vulture, Normal (MM2 vulture_ordinary); die 13 Scorpion, Large (MM2 scorpion_large); die 14 Ogre (MM1 ogre); die 15 Snake, Giant Poisonous (MM1 poisonous_snake); die 16 Ant Lion, Giant (MM2 ant_lion); die 17 Man, Dervish (MM1 dervish); die 18 Thunderherder (MM2 thunderherder); die 19 Lamia (MM1 lamia); die 20 Wind Walker (MM1 wind_walker)"
+  },
+  {
+   "name": "the temperate civilized mountains encounter grid",
+   "tag": "EncoTC1",
+   "cols": [
+    "mm2encoTC1Die",
+    "mm2encoTC1Src",
+    "mm2encoTC1Special"
+   ],
+   "count": "mm2encoTC1Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     0,
+     1
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     0,
+     3
+    ],
+    [
+     16,
+     3,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE CIVILIZED MOUNTAINS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Dragonnel (MM2 dragonnel); die 3 Spider, Giant (MM1 giant_spider); die 4 Minotaur (MM1 minotaur); die 5 Ghouls with Ghast (MM1 ghoul); die 6 Dragon, Earth (FF, no registry def); die 7 Gnoll (MM1 gnoll); die 8 Bugbear (MM1 bugbear); die 9 Man, Bandit (MM1 bandit); die 10 Character Party (the Character Party row (the DMG subtable)); die 11 Dwarf, Mountain (MM1 dwarf); die 12 Ogre (MM1 ogre); die 13 Spider, Large (MM1 large_spider); die 14 Goblins (MM1 goblin); die 15 Man, Patrol (the Patrol men row (no print def)); die 16 Norker (FF, no registry def); die 17 Spider, Phase (MM1 phase_spider); die 18 Vampire (MM1 vampire); die 19 Rakshasa (MM1 rakshasa); die 20 Ki-rin (MM1 ki_rin)"
+  },
+  {
+   "name": "the temperate civilized hills and rough terrain encounter grid",
+   "tag": "EncoTC2",
+   "cols": [
+    "mm2encoTC2Die",
+    "mm2encoTC2Src",
+    "mm2encoTC2Special"
+   ],
+   "count": "mm2encoTC2Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     0,
+     3
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     3,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE CIVILIZED HILLS AND ROUGH TERRAIN GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Hollyphant (MM2 hollyphant); die 3 Obliviax (MM2 obliviax); die 4 Scarecrow (FF, no registry def); die 5 Snyad (FF, no registry def); die 6 Beetle, Giant Fire (MM1 fire_beetle); die 7 Basilisk (MM1 basilisk); die 8 Killmoulis (FF, no registry def); die 9 Man, Bandit (MM1 bandit); die 10 Lycanthrope, Werewolf (MM1 werewolf); die 11 Man, Merchant (MM1 merchant); die 12 Man, Patrol (the Patrol men row (no print def)); die 13 Wolf (MM1 wolf); die 14 Gnoll (MM1 gnoll); die 15 Hobgoblin (MM1 hobgoblin); die 16 Jackal (MM1 jackal); die 17 Pedipalp, Large or Huge (MM2 pedipalp_large); die 18 Wolf, Dire (MM1 dire_wolf); die 19 Jackalwere (MM1 jackalwere); die 20 Huecuva (FF, no registry def)"
+  },
+  {
+   "name": "the temperate civilized forest encounter grid",
+   "tag": "EncoTC3",
+   "cols": [
+    "mm2encoTC3Die",
+    "mm2encoTC3Src",
+    "mm2encoTC3Special"
+   ],
+   "count": "mm2encoTC3Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     0,
+     3
+    ],
+    [
+     14,
+     0,
+     1
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     3,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE CIVILIZED FOREST GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Vampire (MM1 vampire); die 3 Bulette (MM1 bulette); die 4 Centipede, Megalo- (MM2 centipede_megalo); die 5 Ankheg (MM1 ankheg); die 6 Man, Berserker (MM1 berserker); die 7 Troll (MM1 troll); die 8 Leprechaun (MM1 leprechaun); die 9 Beetle, Giant Stag (MM1 stag_beetle); die 10 Bull (MM1 bull); die 11 Man, Bandit (MM1 bandit); die 12 Spider, Large (MM1 large_spider); die 13 Man, Patrol (the Patrol men row (no print def)); die 14 Character Party (the Character Party row (the DMG subtable)); die 15 Man, Pilgrim (MM1 pilgrim); die 16 Thessalhydra (MM2 thessalhydra); die 17 Spider, Giant (MM1 giant_spider); die 18 Demon, Bar-lgura (MM2 bar_lgura); die 19 Norker (FF, no registry def); die 20 Shedu, Greater (MM1 shedu)"
+  },
+  {
+   "name": "the temperate civilized swamp and marsh encounter grid",
+   "tag": "EncoTC4",
+   "cols": [
+    "mm2encoTC4Die",
+    "mm2encoTC4Src",
+    "mm2encoTC4Special"
+   ],
+   "count": "mm2encoTC4Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     0,
+     3
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     2,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     2,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE CIVILIZED SWAMP AND MARSH GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Kelpie (FF, no registry def); die 3 Crayfish, Giant (MM1 giant_crayfish); die 4 Goblin (MM1 goblin); die 5 Frog, Poisonous (MM1 poisonous_frog); die 6 Boar, Wild (MM1 wild_boar); die 7 Lycanthrope, Wererat (MM1 wererat); die 8 Man, Patrol (the Patrol men row (no print def)); die 9 Man, Bandit (MM1 bandit); die 10 Rat, Normal or Giant (MM2 rat_ordinary); die 11 Centipede, Giant or Huge (MM1 giant_centipede); die 12 Vulture, Normal (MM2 vulture_ordinary); die 13 Spider, Giant or Huge (MM1 giant_spider); die 14 Vulture, Giant (MM2 vulture_giant); die 15 Basilisk (MM1 basilisk); die 16 Man, Berserker (MM1 berserker); die 17 Crane, Giant (MM2 crane_giant); die 18 Crab, Giant (MM1 giant_crab); die 19 Mud-man (MM2 mud_man); die 20 Zygom (MM2 zygom)"
+  },
+  {
+   "name": "the temperate civilized plains and scrub encounter grid",
+   "tag": "EncoTC5",
+   "cols": [
+    "mm2encoTC5Die",
+    "mm2encoTC5Src",
+    "mm2encoTC5Special"
+   ],
+   "count": "mm2encoTC5Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     0,
+     2
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     2,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     2,
+     0
+    ],
+    [
+     13,
+     0,
+     3
+    ],
+    [
+     14,
+     0,
+     1
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE CIVILIZED PLAINS AND SCRUB GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Lammasu, Greater (MM2 ); die 3 Ghost (MM1 ghost); die 4 Lycanthrope, Wererat (MM1 wererat); die 5 Castle (the Castle row (the structure row)); die 6 Ankheg (MM1 ankheg); die 7 Owl (MM2 owl); die 8 Man, Pilgrim (MM1 pilgrim); die 9 Men, Bandit (MM1 bandit); die 10 Cattle, Wild (MM1 wild_cattle); die 11 Man, Merchant (MM1 merchant); die 12 Falcon, Small (MM2 falcon_small); die 13 Man, Patrol (the Patrol men row (no print def)); die 14 Character Party (the Character Party row (the DMG subtable)); die 15 Bugbear (MM1 bugbear); die 16 Halfling (MM1 halfling); die 17 Man, Dervish (MM1 dervish); die 18 Goblin (MM1 goblin); die 19 Oliphant (MM2 oliphant); die 20 Quasi-elemental, Lightning (MM2 quasi_elemental_lightning)"
+  },
+  {
+   "name": "the temperate civilized desert encounter grid",
+   "tag": "EncoTC6",
+   "cols": [
+    "mm2encoTC6Die",
+    "mm2encoTC6Src",
+    "mm2encoTC6Special"
+   ],
+   "count": "mm2encoTC6Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     0,
+     1
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     3,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     3,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TEMPERATE CIVILIZED DESERT GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Dragon, Copper (MM1 copper_dragon); die 3 Hellhound (MM1 hell_hound); die 4 Bat (MM2 bat_ordinary); die 5 Goblins & Barghest (MM1 goblin); die 6 Man, Dervish (MM1 dervish); die 7 Lion (MM1 lion); die 8 Character Party (the Character Party row (the DMG subtable)); die 9 Man, Bandit (MM1 bandit); die 10 Man, Merchant (MM1 merchant); die 11 Spider, Huge or Large (MM1 huge_spider); die 12 Camel, Bactrian (MM1 camel_bactrian); die 13 Jackal (MM1 jackal); die 14 Man, Pilgrim (MM1 pilgrim); die 15 Osquip (FF, no registry def); die 16 Falcon, Large (MM2 falcon_large); die 17 Pedipalp, Large or Huge (MM2 pedipalp_large); die 18 Vortex (FF, no registry def); die 19 Griffon (MM1 griffon); die 20 Demon, Type I (MM1 type_i_vrock)"
+  },
+  {
+   "name": "the tropical wilderness mountains encounter grid",
+   "tag": "EncoRW1",
+   "cols": [
+    "mm2encoRW1Die",
+    "mm2encoRW1Src",
+    "mm2encoRW1Special"
+   ],
+   "count": "mm2encoRW1Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     0,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     2,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     3,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL WILDERNESS MOUNTAINS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Aarakocra (FF, no registry def); die 3 Dragon, Black (MM1 black_dragon); die 4 Wind Walker (MM1 wind_walker); die 5 Dragon, Red (MM1 red_dragon); die 6 Caveman (MM1 caveman); die 7 Dragon, Copper (MM1 copper_dragon); die 8 Bugbear (MM1 bugbear); die 9 Spider, Large (MM1 large_spider); die 10 Pterodactyl, Small (no print def determined (flagged)); die 11 Dog, Wild (MM1 wild_dog); die 12 Bat (MM2 bat_ordinary); die 13 Ogre (MM1 ogre); die 14 Giant, Fire (MM1 fire_giant); die 15 Manticore (MM1 manticore); die 16 Firedrake (FF, no registry def); die 17 Giant, Storm (MM1 storm_giant); die 18 Pyrolisk (MM2 pyrolisk); die 19 Ogre Magi (MM1 ogre_magi); die 20 Grue, Elemental (MM2 chaggrin)"
+  },
+  {
+   "name": "the tropical wilderness hills and rough terrain encounter grid",
+   "tag": "EncoRW2",
+   "cols": [
+    "mm2encoRW2Die",
+    "mm2encoRW2Src",
+    "mm2encoRW2Special"
+   ],
+   "count": "mm2encoRW2Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     3,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     3,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL WILDERNESS HILLS AND ROUGH TERRAIN GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Zorbo (MM2 zorbo); die 3 Hangman Tree (MM2 hangman_tree); die 4 Firenewt (FF, no registry def); die 5 Bee, Giant Bumble- (MM2 bee_bumblebee); die 6 Ant, Giant (MM1 giant_ant); die 7 Witherweed (FF, no registry def); die 8 Kenku (FF, no registry def); die 9 Cattle, Wild (MM1 wild_cattle); die 10 Giant, Hill (MM1 hill_giant); die 11 Lycanthrope, Werewolf (MM1 werewolf); die 12 Spider, Large (MM1 large_spider); die 13 Wolf (MM1 wolf); die 14 Basilisk (MM1 basilisk); die 15 Scorpion, Large (MM2 scorpion_large); die 16 Hyena (MM1 hyena); die 17 Sphinx, Hieraco- (MM1 hieracosphinx); die 18 Assassin Bug (FF, no registry def); die 19 Axebeak (MM1 axe_beak); die 20 Vilstrak (MM2 vilstrak)"
+  },
+  {
+   "name": "the tropical wilderness forest encounter grid",
+   "tag": "EncoRW3",
+   "cols": [
+    "mm2encoRW3Die",
+    "mm2encoRW3Src",
+    "mm2encoRW3Special"
+   ],
+   "count": "mm2encoRW3Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     2,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL WILDERNESS FOREST GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Dragon, Green (MM1 green_dragon); die 3 Bloodthorn (MM2 bloodthorn); die 4 Grippli (MM2 grippli); die 5 Ettercap (FF, no registry def); die 6 Baluchitherium (MM1 baluchitherium); die 7 Ophidian (MM2 ophidian); die 8 Kobold (MM1 kobold); die 9 Baboon (MM1 baboon); die 10 Boar, Warthog (MM1 warthog); die 11 Flightless Bird (MM1 flightless_bird); die 12 Elephant, African (MM1 elephant_african); die 13 Ogre (MM1 ogre); die 14 Beetle, Giant Rhino (MM1 rhinoceros_beetle); die 15 Jaguar (MM1 jaguar); die 16 Basidirond (MM2 basidirond); die 17 Buckawn (MM2 buckawn); die 18 Forester's Bane (MM2 foresters_bane); die 19 Choke Creeper (MM2 choke_creeper); die 20 Stegocentipede (MM2 stegocentipede)"
+  },
+  {
+   "name": "the tropical wilderness swamp and marsh encounter grid",
+   "tag": "EncoRW4",
+   "cols": [
+    "mm2encoRW4Die",
+    "mm2encoRW4Src",
+    "mm2encoRW4Special"
+   ],
+   "count": "mm2encoRW4Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     3,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     3,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     2,
+     0
+    ],
+    [
+     14,
+     2,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     3,
+     0
+    ],
+    [
+     17,
+     3,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL WILDERNESS SWAMP AND MARSH GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Basilisk, Greater (MM2 basilisk_greater); die 3 Grabman (FF, no registry def); die 4 Shambling Mound (MM1 shambling_mound); die 5 Mongrelman (MM2 mongrelman); die 6 Muckdweller (MM2 muckdweller); die 7 Basilisk (MM1 basilisk); die 8 Meazel (FF, no registry def); die 9 Centipede, Giant or Huge (MM1 giant_centipede); die 10 Scorpion, Large (MM2 scorpion_large); die 11 Spider, Huge (MM1 huge_spider); die 12 Toad, Giant (MM1 giant_toad); die 13 Rat, Normal or Giant (MM2 rat_ordinary); die 14 Sundew, Giant (MM2 sundew_giant); die 15 Troll (MM1 troll); die 16 Caterwaul (FF, no registry def); die 17 Cifal (FF, no registry def); die 18 Dragonfly, Giant (MM2 giant_dragonfly); die 19 Naga, Guardian (MM1 guardian_naga); die 20 Dragon, Black (MM1 black_dragon)"
+  },
+  {
+   "name": "the tropical wilderness plains and scrub encounter grid",
+   "tag": "EncoRW5",
+   "cols": [
+    "mm2encoRW5Die",
+    "mm2encoRW5Src",
+    "mm2encoRW5Special"
+   ],
+   "count": "mm2encoRW5Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     2,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     3,
+     0
+    ],
+    [
+     8,
+     2,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     2,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL WILDERNESS PLAINS AND SCRUB GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Ascomoid (MM2 ascomoid); die 3 Cockatrice (MM1 cockatrice); die 4 Wyvern (MM1 wyvern); die 5 Thri-kreen (MM2 thri_kreen); die 6 Hybsil (MM2 hybsil); die 7 Dakon (FF, no registry def); die 8 Owl (MM2 owl); die 9 Baboon (MM1 baboon); die 10 Boar, Wild (MM1 wild_boar); die 11 Cattle, Wild (MM1 wild_cattle); die 12 Ogre (MM1 ogre); die 13 Scorpion, Large (MM2 scorpion_large); die 14 Man, Nomad (MM1 dervish); die 15 Ghoul (MM1 ghoul); die 16 Cheetah (MM2 cheetah); die 17 Axebeak (MM1 axe_beak); die 18 Giant, Hill (MM1 hill_giant); die 19 Dragon, Blue (MM1 blue_dragon); die 20 Deva, Movanic (MM2 movanic_deva)"
+  },
+  {
+   "name": "the tropical wilderness desert encounter grid",
+   "tag": "EncoRW6",
+   "cols": [
+    "mm2encoRW6Die",
+    "mm2encoRW6Src",
+    "mm2encoRW6Special"
+   ],
+   "count": "mm2encoRW6Count",
+   "data": [
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     3,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     2,
+     0
+    ],
+    [
+     15,
+     2,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     3,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL WILDERNESS DESERT GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Giant, Fire (MM1 fire_giant); die 3 Boalisk (MM2 boalisk); die 4 Sphinx, Gyno- (MM1 gynosphinx); die 5 Sandman (FF, no registry def); die 6 Pudding, Deadly (Dun) (MM2 pudding_dun); die 7 Kenku (FF, no registry def); die 8 Flightless Bird (MM1 flightless_bird); die 9 Camel (MM1 camel_dromedary); die 10 Hyena (MM1 hyena); die 11 Jackal (MM1 jackal); die 12 Scorpion, Giant (MM1 giant_scorpion); die 13 Spider, Large or Huge (MM1 large_spider); die 14 Dustdigger (MM2 dustdigger); die 15 Scorpion, Large or Huge (MM2 scorpion_large); die 16 Ant Lion, Giant (MM2 ant_lion); die 17 Moon Dog (MM2 moon_dog); die 18 Dune Stalker (FF, no registry def); die 19 Formian (MM2 formian_worker); die 20 Jann (MM2 jann)"
+  },
+  {
+   "name": "the tropical civilized mountains encounter grid",
+   "tag": "EncoRC1",
+   "cols": [
+    "mm2encoRC1Die",
+    "mm2encoRC1Src",
+    "mm2encoRC1Special"
+   ],
+   "count": "mm2encoRC1Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     0,
+     2
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     6,
+     3,
+     0
+    ],
+    [
+     7,
+     0,
+     1
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     2,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     2,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     0,
+     3
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     3,
+     0
+    ],
+    [
+     18,
+     3,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL CIVILIZED MOUNTAINS GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Xaren (MM2 xaren); die 3 Castle (the Castle row (the structure row)); die 4 Lammasu (MM1 lammasu); die 5 Norker (FF, no registry def); die 6 Quaggoth (FF, no registry def); die 7 Character Party (the Character Party row (the DMG subtable)); die 8 Bugbear (MM1 bugbear); die 9 Man, Bandit (MM1 bandit); die 10 Bat (MM2 bat_ordinary); die 11 Ogre (MM1 ogre); die 12 Vulture, Normal (MM2 vulture_ordinary); die 13 Spider, Large (MM1 large_spider); die 14 Man, Patrol (the Patrol men row (no print def)); die 15 Man, Pilgrim (MM1 pilgrim); die 16 Dwarf, Hill (MM1 dwarf); die 17 Dragon, Earth (FF, no registry def); die 18 Rothe (FF, no registry def); die 19 Lycanthrope, Wererat (MM1 wererat); die 20 Hell Hound (MM1 hell_hound)"
+  },
+  {
+   "name": "the tropical civilized hills and rough terrain encounter grid",
+   "tag": "EncoRC2",
+   "cols": [
+    "mm2encoRC2Die",
+    "mm2encoRC2Src",
+    "mm2encoRC2Special"
+   ],
+   "count": "mm2encoRC2Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     2,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     2,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     0,
+     3
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     0,
+     1
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL CIVILIZED HILLS AND ROUGH TERRAIN GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Penanggalan (FF, no registry def); die 3 Lycanthrope, Wereboar (MM1 wereboar); die 4 Beetle, Fire (MM1 fire_beetle); die 5 Boar, Wild (MM1 wild_boar); die 6 Falcon, Large (MM2 falcon_large); die 7 Man, Pilgrim (MM1 pilgrim); die 8 Pseudo-undead, Ghoul (MM2 pseudo_undead); die 9 Cattle, Wild (MM1 wild_cattle); die 10 Dwarf, Hill (MM1 dwarf); die 11 Lycanthrope, Werewolf (MM1 werewolf); die 12 Man, Patrol (the Patrol men row (no print def)); die 13 Man, Merchant (MM1 merchant); die 14 Character Party (the Character Party row (the DMG subtable)); die 15 Hobgoblin (MM1 hobgoblin); die 16 Oliphant (MM2 oliphant); die 17 Pedipalp, Huge and Large (MM2 pedipalp_huge); die 18 Shedu (MM1 shedu); die 19 Rakshasa (MM1 rakshasa); die 20 Lammasu, Greater (MM2 )"
+  },
+  {
+   "name": "the tropical civilized forest encounter grid",
+   "tag": "EncoRC3",
+   "cols": [
+    "mm2encoRC3Die",
+    "mm2encoRC3Src",
+    "mm2encoRC3Special"
+   ],
+   "count": "mm2encoRC3Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     0,
+     3
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     0,
+     1
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     3,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL CIVILIZED FOREST GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Shadow Demon (FF, no registry def); die 3 Snake, Giant Amphisbaena (MM1 amphisbaena_snake); die 4 Goblin (MM1 goblin); die 5 Hobgoblin (MM1 hobgoblin); die 6 Cattle, Wild (MM1 wild_cattle); die 7 Man, Merchant (MM1 merchant); die 8 Stirge (MM1 stirge); die 9 Man, Bandit (MM1 bandit); die 10 Elephant (MM1 elephant); die 11 Herd Animal (MM1 herd_animal); die 12 Man, Patrol (the Patrol men row (no print def)); die 13 Bull (MM1 bull); die 14 Character Party (the Character Party row (the DMG subtable)); die 15 Elf, Wood (MM1 elf); die 16 Shadow (MM1 shadow); die 17 Jackal (MM1 jackal); die 18 Halfling (MM1 halfling); die 19 Centipede, Megalo- (MM2 centipede_megalo); die 20 Revenant (FF, no registry def)"
+  },
+  {
+   "name": "the tropical civilized swamp and marsh encounter grid",
+   "tag": "EncoRC4",
+   "cols": [
+    "mm2encoRC4Die",
+    "mm2encoRC4Src",
+    "mm2encoRC4Special"
+   ],
+   "count": "mm2encoRC4Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     0,
+     3
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     2,
+     0
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     2,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     2,
+     0
+    ],
+    [
+     17,
+     2,
+     0
+    ],
+    [
+     18,
+     2,
+     0
+    ],
+    [
+     19,
+     1,
+     0
+    ],
+    [
+     20,
+     2,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL CIVILIZED SWAMP AND MARSH GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Haunt (MM2 haunt); die 3 Crayfish, Giant (MM1 giant_crayfish); die 4 Mud-man (MM2 mud_man); die 5 Frog, Poisonous (MM1 poisonous_frog); die 6 Man, Patrol (the Patrol men row (no print def)); die 7 Lion (MM1 lion); die 8 Crane, Giant (MM2 crane_giant); die 9 Man, Bandit (MM1 bandit); die 10 Centipede, Giant or Huge (MM1 giant_centipede); die 11 Rat, Normal or Giant (MM2 rat_ordinary); die 12 Spider, Huge or Large (MM1 huge_spider); die 13 Toad, Giant (MM1 giant_toad); die 14 Lycanthrope, Wererat (MM1 wererat); die 15 Ghoul (MM1 ghoul); die 16 Vapor Rat (MM2 rat_vapor); die 17 Zombie, Juju (MM2 zombie_juju); die 18 Skeleton, Animal (MM2 skeleton_animal); die 19 Vampire (MM1 vampire); die 20 Shade (MM2 shade)"
+  },
+  {
+   "name": "the tropical civilized plains and scrub encounter grid",
+   "tag": "EncoRC5",
+   "cols": [
+    "mm2encoRC5Die",
+    "mm2encoRC5Src",
+    "mm2encoRC5Special"
+   ],
+   "count": "mm2encoRC5Count",
+   "data": [
+    [
+     2,
+     3,
+     0
+    ],
+    [
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     1,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     0,
+     1
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     0,
+     3
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     1,
+     0
+    ],
+    [
+     14,
+     1,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     3,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL CIVILIZED PLAINS AND SCRUB GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Tween (FF, no registry def); die 3 Zygom (MM2 zygom); die 4 Snake, Giant Amphisbaena (MM1 amphisbaena_snake); die 5 Jackalwere (MM1 jackalwere); die 6 Ankheg (MM1 ankheg); die 7 Lion (MM1 lion); die 8 Character Party (the Character Party row (the DMG subtable)); die 9 Man, Bandit (MM1 bandit); die 10 Man, Patrol (the Patrol men row (no print def)); die 11 Man, Merchant (MM1 merchant); die 12 Herd Animal (MM1 herd_animal); die 13 Jackal (MM1 jackal); die 14 Pilgrims (MM1 pilgrim); die 15 Snake, Poisonous (MM1 poisonous_snake); die 16 Troll (MM1 troll); die 17 Shedu (MM1 shedu); die 18 Basilisk (MM1 basilisk); die 19 Disenchanter (FF, no registry def); die 20 Dragon, Gold (MM1 gold_dragon)"
+  },
+  {
+   "name": "the tropical civilized desert encounter grid",
+   "tag": "EncoRC6",
+   "cols": [
+    "mm2encoRC6Die",
+    "mm2encoRC6Src",
+    "mm2encoRC6Special"
+   ],
+   "count": "mm2encoRC6Count",
+   "data": [
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     3,
+     0
+    ],
+    [
+     5,
+     3,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     0,
+     1
+    ],
+    [
+     9,
+     1,
+     0
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     1,
+     0
+    ],
+    [
+     12,
+     1,
+     0
+    ],
+    [
+     13,
+     2,
+     0
+    ],
+    [
+     14,
+     3,
+     0
+    ],
+    [
+     15,
+     1,
+     0
+    ],
+    [
+     16,
+     1,
+     0
+    ],
+    [
+     17,
+     1,
+     0
+    ],
+    [
+     18,
+     1,
+     0
+    ],
+    [
+     19,
+     2,
+     0
+    ],
+    [
+     20,
+     1,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "The die cells (2-20 contiguous, one row per die)",
+    "The source cells (1 MM1, 2 MM2, 3 FF, 0 the party, structure, patrol and unresolved rows)",
+    "The special cells (0 the monster rows, 1 the Character Party row, 2 the Castle/Fortress structure row, 3 the Patrol men row)"
+   ],
+   "audit_comment": "THE TROPICAL CIVILIZED DESERT GRID: the 19 die rows 2-20, one row per die (die, source, special). Rows: die 2 Thunderherder (MM2 thunderherder); die 3 Griffon (MM1 griffon); die 4 Vortex (FF, no registry def); die 5 Jermlaine (FF, no registry def); die 6 Dervish (MM1 dervish); die 7 Snake, Constrictor (MM1 constrictor_snake); die 8 Character Party (the Character Party row (the DMG subtable)); die 9 Man, Bandit (MM1 bandit); die 10 Man, Merchant (MM1 merchant); die 11 Jackal (MM1 jackal); die 12 Camel (MM1 camel_dromedary); die 13 Vulture (MM2 vulture_ordinary); die 14 Osquip (FF, no registry def); die 15 Snake, Poisonous (MM1 poisonous_snake); die 16 Man, Berserker (MM1 berserker); die 17 Snake, Giant Constrictor (MM1 constrictor_snake); die 18 Lycanthrope, Weretiger (MM1 weretiger); die 19 Jann (MM2 jann); die 20 Demon, Succubus (MM1 succubus)"
+  }
+ ],
+ "table_checks": [],
+ "caller_files": [],
+ "examples": [
+  {
+   "note": "the census walk (the 36-grid arithmetic)",
+   "expr": "m['mm2encoTotalRows']() != m['mm2encoTableCount']() * m['mm2encoRowsPerTable']() or m['mm2encoTableCount']() != 36 or m['mm2encoRowsPerTable']() != 19"
+  },
+  {
+   "note": "the area-terrain pairing",
+   "expr": "m['mm2encoAreaCount']() * m['mm2encoTerrainCount']() != m['mm2encoTableCount']() or m['mm2encoAreaCount']() != 6"
+  },
+  {
+   "note": "the die range",
+   "expr": "m['mm2encoDieMin']() != 2 or m['mm2encoDieMax']() != 20"
+  },
+  {
+   "note": "the party-row arithmetic (the 17 rows on 16 grids)",
+   "expr": "m['mm2encoCharacterPartyRows']() != m['mm2encoGridsWithPartyRow']() + 1"
+  },
+  {
+   "note": "the cold civilized desert double party row",
+   "expr": "m['mm2encoColdCivDesertPartyRows']() != 2"
+  },
+  {
+   "note": "the structure, patrol and unresolved rows",
+   "expr": "m['mm2encoStructureRows']() != 5 or m['mm2encoPatrolRows']() != 15 or m['mm2encoUnresolvedRows']() != 1"
+  },
+  {
+   "note": "the source census sums to the total",
+   "expr": "m['mm2encoMm1SourceRows']() + m['mm2encoMm2SourceRows']() + m['mm2encoFfSourceRows']() + m['mm2encoCharacterPartyRows']() + m['mm2encoStructureRows']() + m['mm2encoPatrolRows']() + m['mm2encoUnresolvedRows']() != m['mm2encoTotalRows']()"
+  },
+  {
+   "note": "the walk-key census (the MM1 and MM2 defs the registry owns)",
+   "expr": "m['mm2encoWalkKeyRows']() != m['mm2encoMm1SourceRows']() + m['mm2encoMm2SourceRows']() - m['mm2encoLammasuGreaterRows']()"
+  }
+ ],
+ "header_sections": {
+  "the R817 census": [
+   {
+    "kind": "const",
+    "name": "mm2encoRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoAreaCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTerrainCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRowsPerTable"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTotalRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCW1Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCW2Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCW3Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCW4Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCW5Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCW6Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCC1Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCC2Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCC3Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCC4Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCC5Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCC6Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTW1Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTW2Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTW3Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTW4Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTW5Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTW6Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTC1Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTC2Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTC3Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTC4Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTC5Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoTC6Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRW1Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRW2Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRW3Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRW4Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRW5Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRW6Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRC1Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRC2Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRC3Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRC4Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRC5Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRC6Count"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoDieMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoDieMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoCharacterPartyRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoGridsWithPartyRow"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoColdCivDesertPartyRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoStructureRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoPatrolRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoMm1SourceRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoMm2SourceRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoFfSourceRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoWalkKeyRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoUnresolvedRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoOrRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2encoLammasuGreaterRows"
+   }
+  ],
+  "the opening doctrine (the R817 census)": [
+   {
+    "kind": "bool",
+    "name": "mm2encoSixMainAreas"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoColdIncludesArcticSubarctic"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoTropicalIncludesSubtropical"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoCivilizedIncludesInhabitedAndPatrolled"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoEncountersTypicalToTerrain"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoDmMayModifyOrReplace"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoPartyRowRollsDmgSubtable"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoNoPrintedSourceColumn"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoNoPrintedNumberColumn"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoDieRowsContiguous"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoStructureRowIsCastleOrFortress"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2encoPatrolRowIsMenType"
+   }
+  ],
+  "the cold wilderness mountains grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold wilderness mountains encounter grid"
+   }
+  ],
+  "the cold wilderness hills and rough terrain grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold wilderness hills and rough terrain encounter grid"
+   }
+  ],
+  "the cold wilderness forest grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold wilderness forest encounter grid"
+   }
+  ],
+  "the cold wilderness swamp and marsh grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold wilderness swamp and marsh encounter grid"
+   }
+  ],
+  "the cold wilderness plains and scrub grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold wilderness plains and scrub encounter grid"
+   }
+  ],
+  "the cold wilderness desert grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold wilderness desert encounter grid"
+   }
+  ],
+  "the cold civilized mountains grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold civilized mountains encounter grid"
+   }
+  ],
+  "the cold civilized hills and rough terrain grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold civilized hills and rough terrain encounter grid"
+   }
+  ],
+  "the cold civilized forest grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold civilized forest encounter grid"
+   }
+  ],
+  "the cold civilized swamp and marsh grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold civilized swamp and marsh encounter grid"
+   }
+  ],
+  "the cold civilized plains and scrub grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold civilized plains and scrub encounter grid"
+   }
+  ],
+  "the cold civilized desert grid pins": [
+   {
+    "kind": "table",
+    "name": "the cold civilized desert encounter grid"
+   }
+  ],
+  "the temperate wilderness mountains grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate wilderness mountains encounter grid"
+   }
+  ],
+  "the temperate wilderness hills and rough terrain grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate wilderness hills and rough terrain encounter grid"
+   }
+  ],
+  "the temperate wilderness forest grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate wilderness forest encounter grid"
+   }
+  ],
+  "the temperate wilderness swamp and marsh grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate wilderness swamp and marsh encounter grid"
+   }
+  ],
+  "the temperate wilderness plains and scrub grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate wilderness plains and scrub encounter grid"
+   }
+  ],
+  "the temperate wilderness desert grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate wilderness desert encounter grid"
+   }
+  ],
+  "the temperate civilized mountains grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate civilized mountains encounter grid"
+   }
+  ],
+  "the temperate civilized hills and rough terrain grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate civilized hills and rough terrain encounter grid"
+   }
+  ],
+  "the temperate civilized forest grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate civilized forest encounter grid"
+   }
+  ],
+  "the temperate civilized swamp and marsh grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate civilized swamp and marsh encounter grid"
+   }
+  ],
+  "the temperate civilized plains and scrub grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate civilized plains and scrub encounter grid"
+   }
+  ],
+  "the temperate civilized desert grid pins": [
+   {
+    "kind": "table",
+    "name": "the temperate civilized desert encounter grid"
+   }
+  ],
+  "the tropical wilderness mountains grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical wilderness mountains encounter grid"
+   }
+  ],
+  "the tropical wilderness hills and rough terrain grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical wilderness hills and rough terrain encounter grid"
+   }
+  ],
+  "the tropical wilderness forest grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical wilderness forest encounter grid"
+   }
+  ],
+  "the tropical wilderness swamp and marsh grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical wilderness swamp and marsh encounter grid"
+   }
+  ],
+  "the tropical wilderness plains and scrub grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical wilderness plains and scrub encounter grid"
+   }
+  ],
+  "the tropical wilderness desert grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical wilderness desert encounter grid"
+   }
+  ],
+  "the tropical civilized mountains grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical civilized mountains encounter grid"
+   }
+  ],
+  "the tropical civilized hills and rough terrain grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical civilized hills and rough terrain encounter grid"
+   }
+  ],
+  "the tropical civilized forest grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical civilized forest encounter grid"
+   }
+  ],
+  "the tropical civilized swamp and marsh grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical civilized swamp and marsh encounter grid"
+   }
+  ],
+  "the tropical civilized plains and scrub grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical civilized plains and scrub encounter grid"
+   }
+  ],
+  "the tropical civilized desert grid pins": [
+   {
+    "kind": "table",
+    "name": "the tropical civilized desert encounter grid"
+   }
+  ]
+ },
+ "inline_count": 177,
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R816 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R816 LANDED 2026-10-24: commit",
+  "  32992bd7dfe313c9fc4dae15191a3c6a8fa43e0d",
+  "  (census 738 -> 739, pushed 8485fb8..32992bd),",
+  "  THE MM2 DUNGEON ENCOUNTER TABLES WALK -",
+  "  THE TEN MONSTER LEVEL GRIDS (Curtiss's Go",
+  "  call on the landed R815; round twenty-one",
+  "  of the MM2 arc, the FOURTH table-group",
+  "  round, the Random Encounter Tables Dungeon",
+  "  box flips - 33 closed 4 open). THE PIN",
+  "  SCOPE: the ten MONSTER LEVEL grids I",
+  "  through X (pp. 133-134), 19 die rows each",
+  "  (the 1d8+1d12 sum, die 2-20 contiguous),",
+  "  190 rows; grid schema [die, src, numMin,",
+  "  numMax, special] with src 1 MM1 / 2 MM2 /",
+  "  3 FF / 4 ALL / 0 party and special 1 the",
+  "  character-party row / 2 the unique court;",
+  "  one party row per grid (dies 11,11,9,9,",
+  "  10,11,9,9,9,13), the Level X unique court",
+  "  at dies 2,3,19,20. Src census MM1 89 MM2",
+  "  63 FF 26 ALL 2 party 10; the FF rows carry",
+  "  no walk keys (no defs). Header",
+  "  rules/mm2encd.h, prefix mm2encd, 33 consts",
+  "  + 13 bools + 10 tables (96 inline). THE",
+  "  REGTEST WALK: kEncD[10][19] key grid plus",
+  "  SIX accessor helpers (encDie/encSrc/",
+  "  encNumMin/encNumMax/encSpecial/",
+  "  encPartyDie) routing the level/row pair to",
+  "  the pinned mm2encd accessors + the",
+  "  fire_giant or-row check + registry floor",
+  "  809. THE SETTLED READS (two archive.org",
+  "  1st-edition word layers, scan A tsr02016",
+  "  and scan B the cleaner monstermanualii-",
+  "  1stedition): Bowler/Norker/Thoqqua/",
+  "  Nupperibo/Grimlock 2-12 via index+registry;",
+  "  the Pseudo-wraith VI-12 the pseudo_undead",
+  "  key; the Daemon Mezzo- VII-20 (scan A's",
+  "  Mono- a scan-layer slip); the Level VII",
+  "  cont. heading (scan A's \"VI cont.\" a",
+  "  single-glyph loss); the Troll at die 15;",
+  "  the Chasme 1-3 (scan B + def corroborate).",
+  "  THE TWO PHYSICAL-COPY-PENDING CELLS (both",
+  "  flagged in the audit prose): the Land",
+  "  Lamprey 2-8 (scan A; scan B reads 2-6) and",
+  "  the Green Slime 1-6 (both word layers drop",
+  "  the cell; settled per the MM1 def",
+  "  noAppearing voice). LOCAL VERIFICATION (the",
+  "  tree rebuilt from the tarball at 8485fb8):",
+  "  engine double-run 6/0 -> 0/6; census",
+  "  738 -> 739; rverify vs 8485fb8 - 996",
+  "  mutants, 0 missed; the walk simulated",
+  "  offline bad 0; all 127 walk keys validated",
+  "  against the registry; all walk lines <= 78",
+  "  cols; registry 809. THE LANDING TOOK TWO",
+  "  DETOURS: (1) the FIRST delivery put the six",
+  "  accessor helpers as `static int` function",
+  "  definitions AHEAD of the walk block - the",
+  "  R227 anchor sits INSIDE a function body,",
+  "  so they landed at function scope and the",
+  "  battery build died with six",
+  "  function-definition-not-allowed errors",
+  "  (the census fail downstream of the dead",
+  "  binary). The fix: the six helpers became",
+  "  LAMBDAS INSIDE the walk block (auto encX =",
+  "  [](L, r) {...};) after `int bad = 0;` -",
+  "  the accessor dispatch comment moved in with",
+  "  them; `auto` already idiom in the file.",
+  "  Everything else byte-identical (the kEncD",
+  "  body onward and every other field verified",
+  "  unchanged). (2) the re-land then hit the",
+  "  R420 mixed-state abort (the RED run had",
+  "  already applied the old spec's patches),",
+  "  cleaned by the R515 restore-and-rerun:",
+  "  git checkout the three tracked files",
+  "  (regtest, seed, gap report) + rm the new",
+  "  header, keep the fixed spec, re-run the",
+  "  one ./rn handoff. ENVIRONMENT NOTE: the",
+  "  sandbox /tmp and the builder tree were",
+  "  wiped BETWEEN authoring and the fix (no",
+  "  compiler in the reset env) - the fixed",
+  "  patch was re-gated by an exact Node",
+  "  simulation of the walk logic (bad 0) plus",
+  "  structural checks (0 statics, 6 lambdas,",
+  "  brace balance 0, all lines <= 78), the",
+  "  JSON round-trip verified byte-stable",
+  "  before re-delivery. PREFLIGHT GREEN FIRST",
+  "  PASS: loaded 809, errors 0; xp audit",
+  "  809/0; R797 through R815 live defs all",
+  "  bad 0; R816 MM2 dungeon encounter grids:",
+  "  bad 0; AUDIT CENSUS 739 each exactly once,",
+  "  all bad 0; build 0 warnings. Commit",
+  "  5 files, 5828 insertions (no .lua - zero",
+  "  data_files this round; the MonsterDef walk",
+  "  checks key existence only, no source",
+  "  field). Delivery spec-r816: raw JSON",
+  "  canvas, authored md5",
+  "  ee38d03b5f78c04718d50d63dc87811c",
+  "  53513 bytes, landed the same. NEXT - R817:",
+  "  awaits Curtiss's call (4 open boxes",
+  "  remain - the Random Encounter Tables",
+  "  parent, Outdoor 140+, Aquatic 150+, and",
+  "  the Index p. 156; likely the Outdoor",
+  "  terrain grids next, then Aquatic +",
+  "  Astral/Ethereal + Creating-Your-Own +",
+  "  the frequency lists + Index)."
+ ],
+ "gap_report": "tools/mm2_gap_report.md",
+ "gap_census": {
+  "closed": 34,
+  "open": 3
+ },
+ "gap_flips": [
+  {
+   "note": "the Outdoor Random Encounter Tables box",
+   "from": "- [ ] **Outdoor Random Encounter Tables**",
+   "to": "- [x] **Outdoor Random Encounter Tables**"
+  }
+ ],
+ "data_files": [],
+ "regtest": "regtest.cpp",
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R817: the MM2 outdoor encounter grids walk ----\n    // The 36 terrain grids cross-checked live:\n    // the die contiguity 2-20, the Character\n    // Party rows per grid (the cold civilized\n    // desert grid carries two, dies 7 and 14), the\n    // Castle/Fortress structure rows, the Patrol\n    // men rows, and the registry key for every\n    // walkable row (the MM1 and MM2 defs).\n    {\n        using namespace rules;\n        int bad = 0;\n        // (the grid/row accessor set for the walk;\n        //  every cell routes to the pinned grid)\n        auto encDie = [](int G, int r) {\n            switch (G) {\n            case 0: return mm2encoCW1Die(r);\n            case 1: return mm2encoCW2Die(r);\n            case 2: return mm2encoCW3Die(r);\n            case 3: return mm2encoCW4Die(r);\n            case 4: return mm2encoCW5Die(r);\n            case 5: return mm2encoCW6Die(r);\n            case 6: return mm2encoCC1Die(r);\n            case 7: return mm2encoCC2Die(r);\n            case 8: return mm2encoCC3Die(r);\n            case 9: return mm2encoCC4Die(r);\n            case 10: return mm2encoCC5Die(r);\n            case 11: return mm2encoCC6Die(r);\n            case 12: return mm2encoTW1Die(r);\n            case 13: return mm2encoTW2Die(r);\n            case 14: return mm2encoTW3Die(r);\n            case 15: return mm2encoTW4Die(r);\n            case 16: return mm2encoTW5Die(r);\n            case 17: return mm2encoTW6Die(r);\n            case 18: return mm2encoTC1Die(r);\n            case 19: return mm2encoTC2Die(r);\n            case 20: return mm2encoTC3Die(r);\n            case 21: return mm2encoTC4Die(r);\n            case 22: return mm2encoTC5Die(r);\n            case 23: return mm2encoTC6Die(r);\n            case 24: return mm2encoRW1Die(r);\n            case 25: return mm2encoRW2Die(r);\n            case 26: return mm2encoRW3Die(r);\n            case 27: return mm2encoRW4Die(r);\n            case 28: return mm2encoRW5Die(r);\n            case 29: return mm2encoRW6Die(r);\n            case 30: return mm2encoRC1Die(r);\n            case 31: return mm2encoRC2Die(r);\n            case 32: return mm2encoRC3Die(r);\n            case 33: return mm2encoRC4Die(r);\n            case 34: return mm2encoRC5Die(r);\n            case 35: return mm2encoRC6Die(r);\n            }\n            return 0;\n        };\n        auto encSrc = [](int G, int r) {\n            switch (G) {\n            case 0: return mm2encoCW1Src(r);\n            case 1: return mm2encoCW2Src(r);\n            case 2: return mm2encoCW3Src(r);\n            case 3: return mm2encoCW4Src(r);\n            case 4: return mm2encoCW5Src(r);\n            case 5: return mm2encoCW6Src(r);\n            case 6: return mm2encoCC1Src(r);\n            case 7: return mm2encoCC2Src(r);\n            case 8: return mm2encoCC3Src(r);\n            case 9: return mm2encoCC4Src(r);\n            case 10: return mm2encoCC5Src(r);\n            case 11: return mm2encoCC6Src(r);\n            case 12: return mm2encoTW1Src(r);\n            case 13: return mm2encoTW2Src(r);\n            case 14: return mm2encoTW3Src(r);\n            case 15: return mm2encoTW4Src(r);\n            case 16: return mm2encoTW5Src(r);\n            case 17: return mm2encoTW6Src(r);\n            case 18: return mm2encoTC1Src(r);\n            case 19: return mm2encoTC2Src(r);\n            case 20: return mm2encoTC3Src(r);\n            case 21: return mm2encoTC4Src(r);\n            case 22: return mm2encoTC5Src(r);\n            case 23: return mm2encoTC6Src(r);\n            case 24: return mm2encoRW1Src(r);\n            case 25: return mm2encoRW2Src(r);\n            case 26: return mm2encoRW3Src(r);\n            case 27: return mm2encoRW4Src(r);\n            case 28: return mm2encoRW5Src(r);\n            case 29: return mm2encoRW6Src(r);\n            case 30: return mm2encoRC1Src(r);\n            case 31: return mm2encoRC2Src(r);\n            case 32: return mm2encoRC3Src(r);\n            case 33: return mm2encoRC4Src(r);\n            case 34: return mm2encoRC5Src(r);\n            case 35: return mm2encoRC6Src(r);\n            }\n            return 0;\n        };\n        auto encSpecial = [](int G, int r) {\n            switch (G) {\n            case 0: return mm2encoCW1Special(r);\n            case 1: return mm2encoCW2Special(r);\n            case 2: return mm2encoCW3Special(r);\n            case 3: return mm2encoCW4Special(r);\n            case 4: return mm2encoCW5Special(r);\n            case 5: return mm2encoCW6Special(r);\n            case 6: return mm2encoCC1Special(r);\n            case 7: return mm2encoCC2Special(r);\n            case 8: return mm2encoCC3Special(r);\n            case 9: return mm2encoCC4Special(r);\n            case 10: return mm2encoCC5Special(r);\n            case 11: return mm2encoCC6Special(r);\n            case 12: return mm2encoTW1Special(r);\n            case 13: return mm2encoTW2Special(r);\n            case 14: return mm2encoTW3Special(r);\n            case 15: return mm2encoTW4Special(r);\n            case 16: return mm2encoTW5Special(r);\n            case 17: return mm2encoTW6Special(r);\n            case 18: return mm2encoTC1Special(r);\n            case 19: return mm2encoTC2Special(r);\n            case 20: return mm2encoTC3Special(r);\n            case 21: return mm2encoTC4Special(r);\n            case 22: return mm2encoTC5Special(r);\n            case 23: return mm2encoTC6Special(r);\n            case 24: return mm2encoRW1Special(r);\n            case 25: return mm2encoRW2Special(r);\n            case 26: return mm2encoRW3Special(r);\n            case 27: return mm2encoRW4Special(r);\n            case 28: return mm2encoRW5Special(r);\n            case 29: return mm2encoRW6Special(r);\n            case 30: return mm2encoRC1Special(r);\n            case 31: return mm2encoRC2Special(r);\n            case 32: return mm2encoRC3Special(r);\n            case 33: return mm2encoRC4Special(r);\n            case 34: return mm2encoRC5Special(r);\n            case 35: return mm2encoRC6Special(r);\n            }\n            return 0;\n        };\n        static const char* kEncO[36][19] = {\n            {  // grid 0, the cold wilderness mountains\n                \"\",\n                \"\",\n                \"galeb_duh\",\n                \"ice_toad\",\n                \"werebear\",\n                \"white_dragon\",\n                \"wolverine\",\n                \"dwarf\",\n                \"woolly_rhinoceros\",\n                \"mammoth\",\n                \"raven_ordinary\",\n                \"ogre\",\n                \"mountain_lion\",\n                \"hill_giant\",\n                \"frost_giant\",\n                \"\",\n                \"taer\",\n                \"yeti\",\n                \"red_dragon\",\n            },\n            {  // grid 1, the cold wilderness hills and rough terrain\n                \"winter_wolf\",\n                \"giant_owl\",\n                \"badger\",\n                \"\",\n                \"bear_northern\",\n                \"\",\n                \"mammoth\",\n                \"hill_giant\",\n                \"herd_animal\",\n                \"wolf\",\n                \"orc\",\n                \"dwarf\",\n                \"cave_bear\",\n                \"poisonous_snake\",\n                \"wild_boar\",\n                \"giant_wolverine\",\n                \"irish_deer\",\n                \"remorhaz\",\n                \"grugach\",\n            },\n            {  // grid 2, the cold wilderness forest\n                \"frost_giant\",\n                \"\",\n                \"treant_mature_middle_aged\",\n                \"pudding_white\",\n                \"bear_northern\",\n                \"giant_porcupine\",\n                \"bugbear\",\n                \"wolf\",\n                \"ogre\",\n                \"orc\",\n                \"wild_dog\",\n                \"werewolf\",\n                \"manticore\",\n                \"white_dragon\",\n                \"baluchitherium\",\n                \"\",\n                \"grim\",\n                \"korred\",\n                \"foxwoman\",\n            },\n            {  // grid 3, the cold wilderness swamp and marsh\n                \"\",\n                \"winter_wolf\",\n                \"dire_wolf\",\n                \"tiger\",\n                \"crystal_ooze\",\n                \"pseudo_undead\",\n                \"hydra\",\n                \"wild_dog\",\n                \"orc\",\n                \"\",\n                \"ogre\",\n                \"giant_rat\",\n                \"\",\n                \"herd_animal\",\n                \"irish_deer\",\n                \"moon_dog\",\n                \"white_dragon\",\n                \"giant_owl\",\n                \"willow_black\",\n            },\n            {  // grid 4, the cold wilderness plains and scrub\n                \"gorgon\",\n                \"yeth_hound\",\n                \"\",\n                \"dervish\",\n                \"hill_giant\",\n                \"poisonous_snake\",\n                \"bandit\",\n                \"mammoth\",\n                \"mastodon\",\n                \"herd_animal\",\n                \"ogre\",\n                \"camel_bactrian\",\n                \"dervish\",\n                \"white_dragon\",\n                \"\",\n                \"wolf\",\n                \"wolfwere\",\n                \"giant_lynx\",\n                \"remorhaz\",\n            },\n            {  // grid 5, the cold wilderness desert\n                \"gold_dragon\",\n                \"hobgoblin\",\n                \"rock_reptile\",\n                \"sandling\",\n                \"\",\n                \"dervish\",\n                \"scorpion_huge\",\n                \"wild_dog\",\n                \"camel_bactrian\",\n                \"herd_animal\",\n                \"scorpion_large\",\n                \"raven_ordinary\",\n                \"tiger\",\n                \"raven_giant\",\n                \"wolf\",\n                \"\",\n                \"bugbear\",\n                \"\",\n                \"succubus\",\n            },\n            {  // grid 6, the cold civilized mountains\n                \"\",\n                \"xorn\",\n                \"\",\n                \"berserker\",\n                \"\",\n                \"goblin\",\n                \"bugbear\",\n                \"bandit\",\n                \"\",\n                \"\",\n                \"dwarf\",\n                \"falcon_small\",\n                \"hobgoblin\",\n                \"pilgrim\",\n                \"merchant\",\n                \"minotaur\",\n                \"\",\n                \"dire_wolf\",\n                \"vampire\",\n            },\n            {  // grid 7, the cold civilized hills and rough terrain\n                \"vampire\",\n                \"ice_toad\",\n                \"\",\n                \"dire_wolf\",\n                \"berserker\",\n                \"pseudo_undead\",\n                \"hobgoblin\",\n                \"bandit\",\n                \"\",\n                \"\",\n                \"merchant\",\n                \"dwarf\",\n                \"mammoth\",\n                \"bat_ordinary\",\n                \"halfling\",\n                \"goblin\",\n                \"gnome\",\n                \"bugbear\",\n                \"xaren\",\n            },\n            {  // grid 8, the cold civilized forest\n                \"shedu\",\n                \"groaning_spirit\",\n                \"\",\n                \"werebear\",\n                \"hobgoblin\",\n                \"bat_ordinary\",\n                \"bugbear\",\n                \"\",\n                \"wild_boar\",\n                \"wolf\",\n                \"ogre\",\n                \"bandit\",\n                \"elf\",\n                \"\",\n                \"goblin\",\n                \"shadow\",\n                \"\",\n                \"bookworm\",\n                \"shadow_mastiff\",\n            },\n            {  // grid 9, the cold civilized swamp and marsh\n                \"alu_demon\",\n                \"\",\n                \"luck_eater\",\n                \"berserker\",\n                \"giant_crab\",\n                \"hobgoblin\",\n                \"\",\n                \"giant_centipede\",\n                \"rat_ordinary\",\n                \"bandit\",\n                \"ogre\",\n                \"\",\n                \"ghoul\",\n                \"pseudo_undead\",\n                \"ghast\",\n                \"\",\n                \"\",\n                \"bugbear\",\n                \"varrdig\",\n            },\n            {  // grid 10, the cold civilized plains and scrub\n                \"\",\n                \"hollyphant\",\n                \"\",\n                \"dire_wolf\",\n                \"\",\n                \"\",\n                \"owl\",\n                \"bandit\",\n                \"\",\n                \"merchant\",\n                \"ogre\",\n                \"wolf\",\n                \"bugbear\",\n                \"\",\n                \"werewolf\",\n                \"goblin\",\n                \"dervish\",\n                \"wererat\",\n                \"\",\n            },\n            {  // grid 11, the cold civilized desert\n                \"shedu\",\n                \"\",\n                \"gold_dragon\",\n                \"falcon_large\",\n                \"dire_wolf\",\n                \"\",\n                \"pilgrim\",\n                \"merchant\",\n                \"bandit\",\n                \"goblin\",\n                \"raven_ordinary\",\n                \"camel_bactrian\",\n                \"\",\n                \"wolf\",\n                \"dervish\",\n                \"berserker\",\n                \"griffon\",\n                \"\",\n                \"movanic_deva\",\n            },\n            {  // grid 12, the temperate wilderness mountains\n                \"cave_fisher\",\n                \"gorgimera\",\n                \"red_dragon\",\n                \"spotted_lion\",\n                \"bat_mobat\",\n                \"stone_giant\",\n                \"\",\n                \"vulture_ordinary\",\n                \"large_spider\",\n                \"dwarf\",\n                \"bat_ordinary\",\n                \"orc\",\n                \"mountain_lion\",\n                \"cockatrice\",\n                \"black_bear\",\n                \"caveman\",\n                \"chimera\",\n                \"\",\n                \"galeb_duh\",\n            },\n            {  // grid 13, the temperate wilderness hills and rough terrain\n                \"gorgon\",\n                \"displacer_beast\",\n                \"ant_lion\",\n                \"bee_bumblebee\",\n                \"harpy\",\n                \"verbeeg\",\n                \"scorpion_large\",\n                \"hill_giant\",\n                \"wolf\",\n                \"orc\",\n                \"ogre\",\n                \"werewolf\",\n                \"tiger\",\n                \"huge_spider\",\n                \"giant_mantis\",\n                \"aspis_drone\",\n                \"hybsil\",\n                \"vulture_giant\",\n                \"manticore\",\n            },\n            {  // grid 14, the temperate wilderness forest\n                \"beetle_death_watch\",\n                \"grugach\",\n                \"atomie\",\n                \"bee_worker\",\n                \"green_dragon\",\n                \"giant_boar\",\n                \"kobold\",\n                \"warthog\",\n                \"rhinoceros\",\n                \"giant_centipede\",\n                \"black_bear\",\n                \"stag_beetle\",\n                \"giant_porcupine\",\n                \"\",\n                \"owlbear\",\n                \"kech\",\n                \"greenhag\",\n                \"elfin_cat\",\n                \"basilisk_greater\",\n            },\n            {  // grid 15, the temperate wilderness swamp and marsh\n                \"\",\n                \"mist_dragon\",\n                \"troll\",\n                \"shambling_mound\",\n                \"phycomid\",\n                \"poisonous_toad\",\n                \"giant_lizard\",\n                \"giant_toad\",\n                \"vulture_ordinary\",\n                \"large_spider\",\n                \"crocodile\",\n                \"orc\",\n                \"wyvern\",\n                \"basidirond\",\n                \"\",\n                \"eblis\",\n                \"pseudo_undead\",\n                \"giant_crayfish\",\n                \"beholder\",\n            },\n            {  // grid 16, the temperate wilderness plains and scrub\n                \"ascomoid\",\n                \"firbolg\",\n                \"\",\n                \"troll\",\n                \"\",\n                \"\",\n                \"lion\",\n                \"wild_boar\",\n                \"wild_cattle\",\n                \"wolf\",\n                \"jackal\",\n                \"scorpion_huge\",\n                \"shadow_mastiff\",\n                \"titanotherium\",\n                \"bee_bumblebee\",\n                \"blink_dog\",\n                \"gnoll\",\n                \"yeth_hound\",\n                \"bulette\",\n            },\n            {  // grid 17, the temperate wilderness desert\n                \"fire_giant\",\n                \"\",\n                \"lammasu\",\n                \"purple_worm\",\n                \"fly_horsefly\",\n                \"giant_scorpion\",\n                \"dustdigger\",\n                \"camel_bactrian\",\n                \"large_spider\",\n                \"jackal\",\n                \"vulture_ordinary\",\n                \"scorpion_large\",\n                \"ogre\",\n                \"poisonous_snake\",\n                \"ant_lion\",\n                \"dervish\",\n                \"thunderherder\",\n                \"lamia\",\n                \"wind_walker\",\n            },\n            {  // grid 18, the temperate civilized mountains\n                \"dragonnel\",\n                \"giant_spider\",\n                \"minotaur\",\n                \"ghoul\",\n                \"\",\n                \"gnoll\",\n                \"bugbear\",\n                \"bandit\",\n                \"\",\n                \"dwarf\",\n                \"ogre\",\n                \"large_spider\",\n                \"goblin\",\n                \"\",\n                \"\",\n                \"phase_spider\",\n                \"vampire\",\n                \"rakshasa\",\n                \"ki_rin\",\n            },\n            {  // grid 19, the temperate civilized hills and rough terrain\n                \"hollyphant\",\n                \"obliviax\",\n                \"\",\n                \"\",\n                \"fire_beetle\",\n                \"basilisk\",\n                \"\",\n                \"bandit\",\n                \"werewolf\",\n                \"merchant\",\n                \"\",\n                \"wolf\",\n                \"gnoll\",\n                \"hobgoblin\",\n                \"jackal\",\n                \"pedipalp_large\",\n                \"dire_wolf\",\n                \"jackalwere\",\n                \"\",\n            },\n            {  // grid 20, the temperate civilized forest\n                \"vampire\",\n                \"bulette\",\n                \"centipede_megalo\",\n                \"ankheg\",\n                \"berserker\",\n                \"troll\",\n                \"leprechaun\",\n                \"stag_beetle\",\n                \"bull\",\n                \"bandit\",\n                \"large_spider\",\n                \"\",\n                \"\",\n                \"pilgrim\",\n                \"thessalhydra\",\n                \"giant_spider\",\n                \"bar_lgura\",\n                \"\",\n                \"shedu\",\n            },\n            {  // grid 21, the temperate civilized swamp and marsh\n                \"\",\n                \"giant_crayfish\",\n                \"goblin\",\n                \"poisonous_frog\",\n                \"wild_boar\",\n                \"wererat\",\n                \"\",\n                \"bandit\",\n                \"rat_ordinary\",\n                \"giant_centipede\",\n                \"vulture_ordinary\",\n                \"giant_spider\",\n                \"vulture_giant\",\n                \"basilisk\",\n                \"berserker\",\n                \"crane_giant\",\n                \"giant_crab\",\n                \"mud_man\",\n                \"zygom\",\n            },\n            {  // grid 22, the temperate civilized plains and scrub\n                \"\",\n                \"ghost\",\n                \"wererat\",\n                \"\",\n                \"ankheg\",\n                \"owl\",\n                \"pilgrim\",\n                \"bandit\",\n                \"wild_cattle\",\n                \"merchant\",\n                \"falcon_small\",\n                \"\",\n                \"\",\n                \"bugbear\",\n                \"halfling\",\n                \"dervish\",\n                \"goblin\",\n                \"oliphant\",\n                \"quasi_elemental_lightning\",\n            },\n            {  // grid 23, the temperate civilized desert\n                \"copper_dragon\",\n                \"hell_hound\",\n                \"bat_ordinary\",\n                \"goblin\",\n                \"dervish\",\n                \"lion\",\n                \"\",\n                \"bandit\",\n                \"merchant\",\n                \"huge_spider\",\n                \"camel_bactrian\",\n                \"jackal\",\n                \"pilgrim\",\n                \"\",\n                \"falcon_large\",\n                \"pedipalp_large\",\n                \"\",\n                \"griffon\",\n                \"type_i_vrock\",\n            },\n            {  // grid 24, the tropical wilderness mountains\n                \"\",\n                \"black_dragon\",\n                \"wind_walker\",\n                \"red_dragon\",\n                \"caveman\",\n                \"copper_dragon\",\n                \"bugbear\",\n                \"large_spider\",\n                \"\",\n                \"wild_dog\",\n                \"bat_ordinary\",\n                \"ogre\",\n                \"fire_giant\",\n                \"manticore\",\n                \"\",\n                \"storm_giant\",\n                \"pyrolisk\",\n                \"ogre_magi\",\n                \"chaggrin\",\n            },\n            {  // grid 25, the tropical wilderness hills and rough terrain\n                \"zorbo\",\n                \"hangman_tree\",\n                \"\",\n                \"bee_bumblebee\",\n                \"giant_ant\",\n                \"\",\n                \"\",\n                \"wild_cattle\",\n                \"hill_giant\",\n                \"werewolf\",\n                \"large_spider\",\n                \"wolf\",\n                \"basilisk\",\n                \"scorpion_large\",\n                \"hyena\",\n                \"hieracosphinx\",\n                \"\",\n                \"axe_beak\",\n                \"vilstrak\",\n            },\n            {  // grid 26, the tropical wilderness forest\n                \"green_dragon\",\n                \"bloodthorn\",\n                \"grippli\",\n                \"\",\n                \"baluchitherium\",\n                \"ophidian\",\n                \"kobold\",\n                \"baboon\",\n                \"warthog\",\n                \"flightless_bird\",\n                \"elephant_african\",\n                \"ogre\",\n                \"rhinoceros_beetle\",\n                \"jaguar\",\n                \"basidirond\",\n                \"buckawn\",\n                \"foresters_bane\",\n                \"choke_creeper\",\n                \"stegocentipede\",\n            },\n            {  // grid 27, the tropical wilderness swamp and marsh\n                \"basilisk_greater\",\n                \"\",\n                \"shambling_mound\",\n                \"mongrelman\",\n                \"muckdweller\",\n                \"basilisk\",\n                \"\",\n                \"giant_centipede\",\n                \"scorpion_large\",\n                \"huge_spider\",\n                \"giant_toad\",\n                \"rat_ordinary\",\n                \"sundew_giant\",\n                \"troll\",\n                \"\",\n                \"\",\n                \"giant_dragonfly\",\n                \"guardian_naga\",\n                \"black_dragon\",\n            },\n            {  // grid 28, the tropical wilderness plains and scrub\n                \"ascomoid\",\n                \"cockatrice\",\n                \"wyvern\",\n                \"thri_kreen\",\n                \"hybsil\",\n                \"\",\n                \"owl\",\n                \"baboon\",\n                \"wild_boar\",\n                \"wild_cattle\",\n                \"ogre\",\n                \"scorpion_large\",\n                \"dervish\",\n                \"ghoul\",\n                \"cheetah\",\n                \"axe_beak\",\n                \"hill_giant\",\n                \"blue_dragon\",\n                \"movanic_deva\",\n            },\n            {  // grid 29, the tropical wilderness desert\n                \"fire_giant\",\n                \"boalisk\",\n                \"gynosphinx\",\n                \"\",\n                \"pudding_dun\",\n                \"\",\n                \"flightless_bird\",\n                \"camel_dromedary\",\n                \"hyena\",\n                \"jackal\",\n                \"giant_scorpion\",\n                \"large_spider\",\n                \"dustdigger\",\n                \"scorpion_large\",\n                \"ant_lion\",\n                \"moon_dog\",\n                \"\",\n                \"formian_worker\",\n                \"jann\",\n            },\n            {  // grid 30, the tropical civilized mountains\n                \"xaren\",\n                \"\",\n                \"lammasu\",\n                \"\",\n                \"\",\n                \"\",\n                \"bugbear\",\n                \"bandit\",\n                \"bat_ordinary\",\n                \"ogre\",\n                \"vulture_ordinary\",\n                \"large_spider\",\n                \"\",\n                \"pilgrim\",\n                \"dwarf\",\n                \"\",\n                \"\",\n                \"wererat\",\n                \"hell_hound\",\n            },\n            {  // grid 31, the tropical civilized hills and rough terrain\n                \"\",\n                \"wereboar\",\n                \"fire_beetle\",\n                \"wild_boar\",\n                \"falcon_large\",\n                \"pilgrim\",\n                \"pseudo_undead\",\n                \"wild_cattle\",\n                \"dwarf\",\n                \"werewolf\",\n                \"\",\n                \"merchant\",\n                \"\",\n                \"hobgoblin\",\n                \"oliphant\",\n                \"pedipalp_huge\",\n                \"shedu\",\n                \"rakshasa\",\n                \"\",\n            },\n            {  // grid 32, the tropical civilized forest\n                \"\",\n                \"amphisbaena_snake\",\n                \"goblin\",\n                \"hobgoblin\",\n                \"wild_cattle\",\n                \"merchant\",\n                \"stirge\",\n                \"bandit\",\n                \"elephant\",\n                \"herd_animal\",\n                \"\",\n                \"bull\",\n                \"\",\n                \"elf\",\n                \"shadow\",\n                \"jackal\",\n                \"halfling\",\n                \"centipede_megalo\",\n                \"\",\n            },\n            {  // grid 33, the tropical civilized swamp and marsh\n                \"haunt\",\n                \"giant_crayfish\",\n                \"mud_man\",\n                \"poisonous_frog\",\n                \"\",\n                \"lion\",\n                \"crane_giant\",\n                \"bandit\",\n                \"giant_centipede\",\n                \"rat_ordinary\",\n                \"huge_spider\",\n                \"giant_toad\",\n                \"wererat\",\n                \"ghoul\",\n                \"rat_vapor\",\n                \"zombie_juju\",\n                \"skeleton_animal\",\n                \"vampire\",\n                \"shade\",\n            },\n            {  // grid 34, the tropical civilized plains and scrub\n                \"\",\n                \"zygom\",\n                \"amphisbaena_snake\",\n                \"jackalwere\",\n                \"ankheg\",\n                \"lion\",\n                \"\",\n                \"bandit\",\n                \"\",\n                \"merchant\",\n                \"herd_animal\",\n                \"jackal\",\n                \"pilgrim\",\n                \"poisonous_snake\",\n                \"troll\",\n                \"shedu\",\n                \"basilisk\",\n                \"\",\n                \"gold_dragon\",\n            },\n            {  // grid 35, the tropical civilized desert\n                \"thunderherder\",\n                \"griffon\",\n                \"\",\n                \"\",\n                \"dervish\",\n                \"constrictor_snake\",\n                \"\",\n                \"bandit\",\n                \"merchant\",\n                \"jackal\",\n                \"camel_dromedary\",\n                \"vulture_ordinary\",\n                \"\",\n                \"poisonous_snake\",\n                \"berserker\",\n                \"constrictor_snake\",\n                \"weretiger\",\n                \"jann\",\n                \"succubus\",\n            },\n        };\n        // (the expected Character Party row count\n        //  per grid; the 0 grids carry none)\n        static const int kEncPartyRows[36] = {\n            0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0,\n            0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0,\n            1, 1,\n        };\n        int partyAll = 0;\n        int partyGrids = 0;\n        int structure = 0;\n        int patrol = 0;\n        int unres = 0;\n        for (int G = 0; G < 36; ++G) {\n            int party = 0;\n            for (int r = 0; r < 19; ++r) {\n                if (encDie(G, r) != r + 2)\n                    ++bad;\n                if (encSpecial(G, r) == 1) {\n                    ++party;\n                    if (encSrc(G, r) != 0)\n                        ++bad;\n                } else if (encSpecial(G, r) == 2) {\n                    ++structure;\n                    if (encSrc(G, r) != 0)\n                        ++bad;\n                } else if (encSpecial(G, r) == 3) {\n                    ++patrol;\n                    if (encSrc(G, r) != 0)\n                        ++bad;\n                } else {\n                    if (encSrc(G, r) == 0) {\n                        ++unres;\n                    }\n                    const char* k = kEncO[G][r];\n                    if (k[0] != 0) {\n                        const auto* d = reg.find(k);\n                        if (!d) ++bad;\n                    }\n                }\n            }\n            if (party != kEncPartyRows[G]) ++bad;\n            partyAll += party;\n            if (party > 0) ++partyGrids;\n        }\n        if (partyAll != mm2encoCharacterPartyRows())\n            ++bad;\n        if (partyGrids != mm2encoGridsWithPartyRow())\n            ++bad;\n        if (structure != mm2encoStructureRows())\n            ++bad;\n        if (patrol != mm2encoPatrolRows())\n            ++bad;\n        if (unres != mm2encoUnresolvedRows())\n            ++bad;\n        // (the cold civilized desert grid, index 11,\n        //  carries the two party rows at dies 7/14)\n        if (encDie(11, 5) != 7\n            || encDie(11, 12) != 14\n            || encSpecial(11, 5) != 1\n            || encSpecial(11, 12) != 1)\n            ++bad;\n        if (!reg.find(\"dervish\")) ++bad;\n        if ((int)reg.all().size()\n            < mm2encoRegistryFloor())\n            ++bad;\n        printf(\"R817 MM2 outdoor encounter grids: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----",
+   "note": "the R817 regtest walk"
+  }
+ ]
+}

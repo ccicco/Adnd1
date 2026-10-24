@@ -180,7 +180,7 @@ the R614 precedent.
   own boxes when those rounds pin
 - [x] **Dungeon Random Encounter Tables** (pp. 133+) -
   the dungeon-level tables
-- [ ] **Outdoor Random Encounter Tables** (pp. 140+) -
+- [x] **Outdoor Random Encounter Tables** (pp. 140+) -
   the terrain tables
 - [ ] **Aquatic Random Encounter Tables** (pp. 150+) -
   the freshwater and saltwater tables

@@ -22108,6 +22108,110 @@ PREFLIGHT GREEN (the repair cut, first pass):
   NEXT - R816: awaits Curtiss's call (5 open
   boxes remain - the MM2 tail beyond the
   A-Z monster section).
+- R816 LANDED 2026-10-24: commit
+  32992bd7dfe313c9fc4dae15191a3c6a8fa43e0d
+  (census 738 -> 739, pushed 8485fb8..32992bd),
+  THE MM2 DUNGEON ENCOUNTER TABLES WALK -
+  THE TEN MONSTER LEVEL GRIDS (Curtiss's Go
+  call on the landed R815; round twenty-one
+  of the MM2 arc, the FOURTH table-group
+  round, the Random Encounter Tables Dungeon
+  box flips - 33 closed 4 open). THE PIN
+  SCOPE: the ten MONSTER LEVEL grids I
+  through X (pp. 133-134), 19 die rows each
+  (the 1d8+1d12 sum, die 2-20 contiguous),
+  190 rows; grid schema [die, src, numMin,
+  numMax, special] with src 1 MM1 / 2 MM2 /
+  3 FF / 4 ALL / 0 party and special 1 the
+  character-party row / 2 the unique court;
+  one party row per grid (dies 11,11,9,9,
+  10,11,9,9,9,13), the Level X unique court
+  at dies 2,3,19,20. Src census MM1 89 MM2
+  63 FF 26 ALL 2 party 10; the FF rows carry
+  no walk keys (no defs). Header
+  rules/mm2encd.h, prefix mm2encd, 33 consts
+  + 13 bools + 10 tables (96 inline). THE
+  REGTEST WALK: kEncD[10][19] key grid plus
+  SIX accessor helpers (encDie/encSrc/
+  encNumMin/encNumMax/encSpecial/
+  encPartyDie) routing the level/row pair to
+  the pinned mm2encd accessors + the
+  fire_giant or-row check + registry floor
+  809. THE SETTLED READS (two archive.org
+  1st-edition word layers, scan A tsr02016
+  and scan B the cleaner monstermanualii-
+  1stedition): Bowler/Norker/Thoqqua/
+  Nupperibo/Grimlock 2-12 via index+registry;
+  the Pseudo-wraith VI-12 the pseudo_undead
+  key; the Daemon Mezzo- VII-20 (scan A's
+  Mono- a scan-layer slip); the Level VII
+  cont. heading (scan A's "VI cont." a
+  single-glyph loss); the Troll at die 15;
+  the Chasme 1-3 (scan B + def corroborate).
+  THE TWO PHYSICAL-COPY-PENDING CELLS (both
+  flagged in the audit prose): the Land
+  Lamprey 2-8 (scan A; scan B reads 2-6) and
+  the Green Slime 1-6 (both word layers drop
+  the cell; settled per the MM1 def
+  noAppearing voice). LOCAL VERIFICATION (the
+  tree rebuilt from the tarball at 8485fb8):
+  engine double-run 6/0 -> 0/6; census
+  738 -> 739; rverify vs 8485fb8 - 996
+  mutants, 0 missed; the walk simulated
+  offline bad 0; all 127 walk keys validated
+  against the registry; all walk lines <= 78
+  cols; registry 809. THE LANDING TOOK TWO
+  DETOURS: (1) the FIRST delivery put the six
+  accessor helpers as `static int` function
+  definitions AHEAD of the walk block - the
+  R227 anchor sits INSIDE a function body,
+  so they landed at function scope and the
+  battery build died with six
+  function-definition-not-allowed errors
+  (the census fail downstream of the dead
+  binary). The fix: the six helpers became
+  LAMBDAS INSIDE the walk block (auto encX =
+  [](L, r) {...};) after `int bad = 0;` -
+  the accessor dispatch comment moved in with
+  them; `auto` already idiom in the file.
+  Everything else byte-identical (the kEncD
+  body onward and every other field verified
+  unchanged). (2) the re-land then hit the
+  R420 mixed-state abort (the RED run had
+  already applied the old spec's patches),
+  cleaned by the R515 restore-and-rerun:
+  git checkout the three tracked files
+  (regtest, seed, gap report) + rm the new
+  header, keep the fixed spec, re-run the
+  one ./rn handoff. ENVIRONMENT NOTE: the
+  sandbox /tmp and the builder tree were
+  wiped BETWEEN authoring and the fix (no
+  compiler in the reset env) - the fixed
+  patch was re-gated by an exact Node
+  simulation of the walk logic (bad 0) plus
+  structural checks (0 statics, 6 lambdas,
+  brace balance 0, all lines <= 78), the
+  JSON round-trip verified byte-stable
+  before re-delivery. PREFLIGHT GREEN FIRST
+  PASS: loaded 809, errors 0; xp audit
+  809/0; R797 through R815 live defs all
+  bad 0; R816 MM2 dungeon encounter grids:
+  bad 0; AUDIT CENSUS 739 each exactly once,
+  all bad 0; build 0 warnings. Commit
+  5 files, 5828 insertions (no .lua - zero
+  data_files this round; the MonsterDef walk
+  checks key existence only, no source
+  field). Delivery spec-r816: raw JSON
+  canvas, authored md5
+  ee38d03b5f78c04718d50d63dc87811c
+  53513 bytes, landed the same. NEXT - R817:
+  awaits Curtiss's call (4 open boxes
+  remain - the Random Encounter Tables
+  parent, Outdoor 140+, Aquatic 150+, and
+  the Index p. 156; likely the Outdoor
+  terrain grids next, then Aquatic +
+  Astral/Ethereal + Creating-Your-Own +
+  the frequency lists + Index).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
