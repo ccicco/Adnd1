@@ -1,0 +1,2509 @@
+{
+ "round": 797,
+ "prefix": "mm2a",
+ "header_file": "rules/mm2a.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 719,
+ "title": "the MM2 letter A",
+ "audit_label": "R797 MM2 letter A audit",
+ "audit_comment": "THE MM2 LETTER A - the first A-Z round of the Monster Manual II arc (the user Go call on the landed opener). The pin-time walk from the print finds TEN entries on pp. 8-12: aboleth, afanc, agathion, annis, ant lion, ascomoid, aspis, atomie, aurumvorax, azer - the opener 7-candidate archive.org walk superseded (the R792 lesson: the print walks at pin time). THIRTEEN defs ride the R791 data_files extension in the MM1 registry schema: the ten stat blocks, the aspis split three ways (drone, larva, cow - the oni multi-form precedent), and the Amaimon paragraph as the azer king sub-entry (the marut sentinel precedent for its unprinted xp and armor class; its unprinted combat lines read the azer kind defaults). THE GRIDS: the 12-row stat grid (every armor class, hit-die, hit, xp and lair cell of the stat blocks), the ant lion lair-items d20, the aspis larva xp ladder, the azer strength bracket grid. THE SETTLED READS: the atomie LEVEL/X.P. prints II/40 + 1/hp - the PDF OCR 11/40 is a roman misread, consistent with the 2-HD aspis larva rung and the azer 2+1 bracket; the annis 7+3-12 and the azer 2+1 to 5+4 ranges pin their low ends in the defs (the R792 range precedent). ONE REGTEST PATCH: the xp audit allowed-source list gains mm2_print. The live def walk (the file-patch site block, no census marker) cross-checks every promoted def against the stat grid, the planes, the xpValue formula and the registry census 478 -> 491.",
+ "include_comment": "the MM2 letter A",
+ "include_after": "#include \"rules/mma.h\"  // R796: the MM2 arc opener",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R796 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R796 LANDED 2026-10-24: commit",
+  "  dd95bc91f8399240fbc4f5c9f33f33f701b2b235",
+  "  (census 718 -> 719, pushed",
+  "  e035fae..dd95bc9), THE MM2 ARC",
+  "  OPENER - the new book arc begins",
+  "  (Curtiss's MM2 pick from the",
+  "  next-arc candidates; the registry",
+  "  promotion pattern). The new",
+  "  tools/mm2_gap_report.md (authored",
+  "  per the OA conventions, 37 line",
+  "  items) opens with five flips: the",
+  "  front matter (pp. 1-4), How To Use",
+  "  This Book (pp. 5-7), the Number",
+  "  Ranges table (p. 5), the General",
+  "  Entries doctrine (pp. 5-6), and",
+  "  the Special Entries doctrine (pp.",
+  "  6-7) - 5 closed, 32 open. Header",
+  "  rules/mma.h, prefix mma. Engine",
+  "  double-run applied 9/already 0 ->",
+  "  0/9 (the seed record, the header,",
+  "  the 5 flips, the include, the",
+  "  audit - no file patches, no data",
+  "  files). Device gates: battery",
+  "  loaded 478, errors 0; xp audit",
+  "  478 checked, 0 anomalies;",
+  "  encounter smoke 2000 rolls, 0",
+  "  bad; AUDIT CENSUS 719 each exactly",
+  "  once, all bad 0; build 0",
+  "  warnings; preflight GREEN, first",
+  "  pass of the landing run. Commit 5",
+  "  files, 874 insertions (mma.h, the",
+  "  gap report, and the spec created;",
+  "  the seed and regtest patched).",
+  "  THE AUTHORED-POST-FLIP LESSON",
+  "  (caught 2026-10-24 after three",
+  "  aborted runs): the gap report",
+  "  canvas was emitted in its",
+  "  POST-round form - the five boxes",
+  "  [x] and the footer stamped \"5",
+  "  closed after the R796 opener",
+  "  flips, 32 open\" - and the",
+  "  authored md5",
+  "  5cd692357d8a8f6e0db4652292a7732b",
+  "  covered that post-flip body, so",
+  "  the md5 gate passed on every run",
+  "  while the engine read the five",
+  "  flips as ALREADY against the",
+  "  applied seed/header/include/audit:",
+  "  the R420 mixed abort on every",
+  "  attempt, the tree never dirty,",
+  "  nothing ever written (the first",
+  "  attempt's output was never seen -",
+  "  every pasted run was the same",
+  "  pre-write abort). DIAGNOSIS: the",
+  "  R420 gate read from",
+  "  tools/splice_engine.py at GitHub",
+  "  HEAD (six census sections: the",
+  "  seed key, the header existence,",
+  "  the gap flips, the include, the",
+  "  audit, the file patches, the data",
+  "  files), then a local mirror of the",
+  "  engine's applied/already checks",
+  "  printed the culprit - all five",
+  "  flips to-in: True on the md5-gated",
+  "  body. REPAIR: reverse the spec's",
+  "  own gap_flips (to -> from) into",
+  "  the file - the TRUE pre-flip md5",
+  "  215f50b2032931fb3a70309b26978e3c",
+  "  - then the one ./rn handoff",
+  "  landed; a canvas re-save once",
+  "  reverted the fix (the post-flip",
+  "  body re-broke the round). STANDING",
+  "  RULES FROM THE CLASS: (a) an",
+  "  arc-opener gap report canvas is",
+  "  authored PRE-FLIP (all boxes",
+  "  [ ]) - an authored-post-flip body",
+  "  is a permanent R420 mixed abort",
+  "  no tree restore can fix; verify",
+  "  the delivered body with",
+  "  `grep -c '^- \\[x\\]'` == 0 (box",
+  "  lines only - legend text may",
+  "  legitimately carry \"[x]\", as the",
+  "  mm2 conventions line does); (b)",
+  "  the engine never reads or writes",
+  "  the gap report footer - authored",
+  "  free text that rides the landed",
+  "  file as written; (c) git checkout",
+  "  with any invalid pathspec restores",
+  "  NOTHING (one bad pathspec errors",
+  "  the whole command), and an",
+  "  untracked flip target can never be",
+  "  git-restored - the spec's",
+  "  gap_flips are their own repair",
+  "  kit. Spec md5",
+  "  46ff674831d42a2e4fe6790870c1adf0",
+  "  (printed at every run, unchanged).",
+  "  NEXT - R797: awaits Curtiss's",
+  "  call (the MM2 arc runs on - 32",
+  "  open boxes in the mm2 gap report)."
+ ],
+ "banner": {
+  "title": "THE MM2 LETTER A - the ten printed A entries, the aspis forms and the azer king, promoted to the live registry",
+  "provenance": "Round one of the Monster Manual II A-Z walk (the user Go call on the landed R796 opener). The capture is the Curtiss PDF upload (pp. 8-12, the full A section, clean text) cross-checked against the archive.org dual scans. The pin-time walk finds TEN entries where the opener structural walk saw seven candidates: aboleth, afanc, agathion, annis, ant lion, ascomoid, aspis, atomie, aurumvorax, azer. The aspis entry splits three ways (drone, larva, cow - the oni precedent) and the azer entry carries the Amaimon sub-entry def: thirteen .lua defs through the data_files extension, registry 478 -> 491. The stat blocks pin in the 12-row grid; the atomie xp reads the roman II (the OCR 11/40 misread settled); the annis and azer hit-dice ranges pin their low ends (the R792 range precedent); Amaimon rides the sentinel path for its unprinted xp and armor class, its combat lines reading the azer kind defaults. The battery census reads loaded 491, errors 0."
+ },
+ "consts": [
+  {
+   "name": "mm2aRound",
+   "value": 797,
+   "comment": "The MM2 letter A round: the ten printed A entries of Monster Manual II (the user Go call on the landed R796 opener)"
+  },
+  {
+   "name": "mm2aEntryCount",
+   "value": 10,
+   "comment": "The pin-time A walk from the print: aboleth, afanc, agathion, annis, ant lion, ascomoid, aspis, atomie, aurumvorax, azer"
+  },
+  {
+   "name": "mm2aDefCount",
+   "value": 13,
+   "comment": "The promoted def census: the ten entries plus the aspis larva and cow forms and the Amaimon sub-entry"
+  },
+  {
+   "name": "mm2aFirstPage",
+   "value": 8,
+   "comment": "The A section first printed page (aboleth)"
+  },
+  {
+   "name": "mm2aLastPage",
+   "value": 12,
+   "comment": "The A section last printed page (azer and the Amaimon paragraph; baku opens B on the same page)"
+  },
+  {
+   "name": "mm2aRegistryBefore",
+   "value": 478,
+   "comment": "The live registry census before the round (the R793 reconciled count)"
+  },
+  {
+   "name": "mm2aRegistryAfter",
+   "value": 491,
+   "comment": "The live registry census after the thirteen letter-A defs land"
+  },
+  {
+   "name": "mm2aStatRows",
+   "value": 12,
+   "comment": "The stat grid row census: the twelve stat-block forms in print order (aspis three rows; Amaimon rides consts)"
+  },
+  {
+   "name": "mm2aAntLionItemRows",
+   "value": 6,
+   "comment": "The ant lion lair-items d20 row census: six bands tiling 1-20"
+  },
+  {
+   "name": "mm2aAspisLarvaRows",
+   "value": 4,
+   "comment": "The aspis larva xp ladder row census: the 2- through 5-HD rungs"
+  },
+  {
+   "name": "mm2aAzerBracketRows",
+   "value": 4,
+   "comment": "The azer bracket row census: the 2+1 through 5+4 hit-die brackets"
+  },
+  {
+   "name": "mm2aAbolethTentacles",
+   "value": 4,
+   "comment": "The 10-foot tentacle count (the four attacks)"
+  },
+  {
+   "name": "mm2aAbolethEnslavesPerDay",
+   "value": 3,
+   "comment": "The enslave attempts per day (a single creature each)"
+  },
+  {
+   "name": "mm2aAbolethEnslaveRangeFt",
+   "value": 30,
+   "comment": "The enslave range: up to 30 feet"
+  },
+  {
+   "name": "mm2aAbolethMembraneMin",
+   "value": 2,
+   "comment": "The tentacle slime membrane change: 2-5 rounds"
+  },
+  {
+   "name": "mm2aAbolethMembraneMax",
+   "value": 5,
+   "comment": "The tentacle slime membrane change: the high end"
+  },
+  {
+   "name": "mm2aAbolethMucusRadiusFt",
+   "value": 1,
+   "comment": "The in-water mucus cloud: 1 foot all around the body"
+  },
+  {
+   "name": "mm2aAbolethSuffocateMin",
+   "value": 2,
+   "comment": "The inhaled-mucus suffocation window: 2-12 rounds"
+  },
+  {
+   "name": "mm2aAbolethSuffocateMax",
+   "value": 12,
+   "comment": "The inhaled-mucus suffocation window: the high end"
+  },
+  {
+   "name": "mm2aAbolethSlaveWaterMin",
+   "value": 1,
+   "comment": "The slave water-breathing duration: 1-3 hours (a potion of water breathing)"
+  },
+  {
+   "name": "mm2aAbolethSlaveWaterMax",
+   "value": 3,
+   "comment": "The slave water-breathing duration: the high end"
+  },
+  {
+   "name": "mm2aAbolethPsionicScore",
+   "value": 250,
+   "comment": "The aboleth psionic ability score"
+  },
+  {
+   "name": "mm2aAfancCircleStartFt",
+   "value": 100,
+   "comment": "The whirlpool circling start: 100 feet out"
+  },
+  {
+   "name": "mm2aAfancCircleCloseFt",
+   "value": 20,
+   "comment": "The circling close rate: 20 feet per round"
+  },
+  {
+   "name": "mm2aAfancCircleInnerFt",
+   "value": 40,
+   "comment": "The circling closes to 40 feet"
+  },
+  {
+   "name": "mm2aAfancWhirlMinRounds",
+   "value": 5,
+   "comment": "The whirlpool creation time: 5-8 rounds"
+  },
+  {
+   "name": "mm2aAfancWhirlMaxRounds",
+   "value": 8,
+   "comment": "The whirlpool creation time: the high end"
+  },
+  {
+   "name": "mm2aAfancMaxShipFt",
+   "value": 60,
+   "comment": "The largest ship the whirlpool draws down (small to small-medium)"
+  },
+  {
+   "name": "mm2aAfancDragFtPerRound",
+   "value": 10,
+   "comment": "The dragged ship sinks 10 feet per round"
+  },
+  {
+   "name": "mm2aAfancTopSpeed",
+   "value": 30,
+   "comment": "The circling top rate: 30 inches or more"
+  },
+  {
+   "name": "mm2aAfancSubmergePct",
+   "value": 10,
+   "comment": "The dragged-prey submerge chance: 10 percent"
+  },
+  {
+   "name": "mm2aAfancSmallCraftFt",
+   "value": 30,
+   "comment": "The rushed-and-capsized small craft: 30 feet or less"
+  },
+  {
+   "name": "mm2aAgathionHumanFormPct",
+   "value": 60,
+   "comment": "The human form likelihood"
+  },
+  {
+   "name": "mm2aAgathionCreatureFormPct",
+   "value": 30,
+   "comment": "The beneficent creature form likelihood"
+  },
+  {
+   "name": "mm2aAgathionItemFormPct",
+   "value": 10,
+   "comment": "The non-corporeal item-housed form likelihood"
+  },
+  {
+   "name": "mm2aAgathionClericLevel",
+   "value": 7,
+   "comment": "The human-form spell powers: a 7th-level cleric"
+  },
+  {
+   "name": "mm2aAgathionWisdom",
+   "value": 18,
+   "comment": "The agathion wisdom (bonus spells applicable)"
+  },
+  {
+   "name": "mm2aAgathionTurnLevel",
+   "value": 14,
+   "comment": "The creature-form undead turning: a 14th-level cleric"
+  },
+  {
+   "name": "mm2aAgathionSaveLevel",
+   "value": 14,
+   "comment": "The save-as level: 14th-level clerics regardless of form"
+  },
+  {
+   "name": "mm2aAgathionItemTurnLevel",
+   "value": 6,
+   "comment": "The item-housed possessor affects undead as a 6th-level cleric"
+  },
+  {
+   "name": "mm2aAgathionSlainMinYears",
+   "value": 10,
+   "comment": "The slain agathion cannot return for 10-60 years"
+  },
+  {
+   "name": "mm2aAgathionSlainMaxYears",
+   "value": 60,
+   "comment": "The slain agathion regains its strength: the high end"
+  },
+  {
+   "name": "mm2aAgathionTouchMin",
+   "value": 7,
+   "comment": "The natural-form touch damage: 7-14 points of positive power"
+  },
+  {
+   "name": "mm2aAgathionTouchMax",
+   "value": 14,
+   "comment": "The natural-form touch damage: the high end"
+  },
+  {
+   "name": "mm2aAgathionPsionicScore",
+   "value": 177,
+   "comment": "The agathion psionic ability score"
+  },
+  {
+   "name": "mm2aAnnisStrength",
+   "value": 19,
+   "comment": "The annis strength: equal to a hill giant (19)"
+  },
+  {
+   "name": "mm2aAnnisCastLevel",
+   "value": 8,
+   "comment": "The fog cloud and change self cast at 8th level"
+  },
+  {
+   "name": "mm2aAnnisUsesPerPowerDay",
+   "value": 2,
+   "comment": "Each power twice per day, 1 at a time, 1 per round"
+  },
+  {
+   "name": "mm2aAnnisEdgedAdjust",
+   "value": -1,
+   "comment": "The edged-weapon damage adjustment vs. the iron-hard skin"
+  },
+  {
+   "name": "mm2aAnnisBluntAdjust",
+   "value": 1,
+   "comment": "The blunt-weapon damage adjustment (flails and morning stars are blunt)"
+  },
+  {
+   "name": "mm2aAntLionPitFt",
+   "value": 60,
+   "comment": "The tapering pit diameter"
+  },
+  {
+   "name": "mm2aAntLionLairLookPct",
+   "value": 50,
+   "comment": "The pit looks like a cave or lair entrance half the time"
+  },
+  {
+   "name": "mm2aAntLionSlipPct",
+   "value": 50,
+   "comment": "The per-round slip chance on the loose sides"
+  },
+  {
+   "name": "mm2aAntLionAutoBiteMin",
+   "value": 5,
+   "comment": "The locked-jaw automatic damage: 5-20 points per round after the hit"
+  },
+  {
+   "name": "mm2aAntLionAutoBiteMax",
+   "value": 20,
+   "comment": "The locked-jaw automatic damage: the high end"
+  },
+  {
+   "name": "mm2aAntLionItemChancePct",
+   "value": 30,
+   "comment": "The lair item chance: 30 percent for 1-4 items from previous kills"
+  },
+  {
+   "name": "mm2aAntLionItemsMin",
+   "value": 1,
+   "comment": "The lair item count: 1-4"
+  },
+  {
+   "name": "mm2aAntLionItemsMax",
+   "value": 4,
+   "comment": "The lair item count: the high end"
+  },
+  {
+   "name": "mm2aAntLionMagicPct",
+   "value": 10,
+   "comment": "The chance a lair item is magical"
+  },
+  {
+   "name": "mm2aAscomoidSporeRangeFt",
+   "value": 30,
+   "comment": "The spore jet length (1 foot in diameter)"
+  },
+  {
+   "name": "mm2aAscomoidCloudMin",
+   "value": 5,
+   "comment": "The spore cloud diameter: 5-20 (variable)"
+  },
+  {
+   "name": "mm2aAscomoidCloudMax",
+   "value": 20,
+   "comment": "The spore cloud diameter: the high end"
+  },
+  {
+   "name": "mm2aAscomoidDeathMin",
+   "value": 1,
+   "comment": "The failed-save infection death: 1-4 rounds"
+  },
+  {
+   "name": "mm2aAscomoidDeathMax",
+   "value": 4,
+   "comment": "The failed-save infection death: the high end"
+  },
+  {
+   "name": "mm2aAscomoidRecoverMin",
+   "value": 1,
+   "comment": "The successful-save blindness recovery: 1-4 rounds"
+  },
+  {
+   "name": "mm2aAscomoidRecoverMax",
+   "value": 4,
+   "comment": "The successful-save blindness recovery: the high end"
+  },
+  {
+   "name": "mm2aAscomoidHelplessHitBonus",
+   "value": 4,
+   "comment": "Attacks on the blinded victims: at +4, no shield or dexterity bonuses"
+  },
+  {
+   "name": "mm2aAscomoidMagicSaveBonus",
+   "value": 4,
+   "comment": "Magical attacks are saved against at +4"
+  },
+  {
+   "name": "mm2aAscomoidMagicDmgPct",
+   "value": 50,
+   "comment": "Magical attack damage: 50 percent of normal (cold at normal probabilities)"
+  },
+  {
+   "name": "mm2aAscomoidPiercingMinFt",
+   "value": 6,
+   "comment": "Spears over 6 feet score double damage"
+  },
+  {
+   "name": "mm2aAspisDroneRearAC",
+   "value": 2,
+   "comment": "The drone two-shield read: armor class 3(2)"
+  },
+  {
+   "name": "mm2aAspisDroneCommonPct",
+   "value": 5,
+   "comment": "The drones able to speak Common: 5 percent"
+  },
+  {
+   "name": "mm2aAspisCowSlimeMin",
+   "value": 1,
+   "comment": "The cow acidic slime flesh burn: 1-8 points per round"
+  },
+  {
+   "name": "mm2aAspisCowSlimeMax",
+   "value": 8,
+   "comment": "The cow acidic slime flesh burn: the high end"
+  },
+  {
+   "name": "mm2aAspisEggChambersMin",
+   "value": 1,
+   "comment": "The nest egg chambers: 1-3"
+  },
+  {
+   "name": "mm2aAspisEggChambersMax",
+   "value": 3,
+   "comment": "The nest egg chambers: the high end"
+  },
+  {
+   "name": "mm2aAspisGranariesMin",
+   "value": 2,
+   "comment": "The nest granaries: 2-4"
+  },
+  {
+   "name": "mm2aAspisGranariesMax",
+   "value": 4,
+   "comment": "The nest granaries: the high end"
+  },
+  {
+   "name": "mm2aAspisHatcheriesMin",
+   "value": 1,
+   "comment": "The nest grub hatcheries: 1-6"
+  },
+  {
+   "name": "mm2aAspisHatcheriesMax",
+   "value": 6,
+   "comment": "The nest grub hatcheries: the high end"
+  },
+  {
+   "name": "mm2aAspisLarvaePerHatcheryMin",
+   "value": 1,
+   "comment": "The larvae per hatchery: 1-10"
+  },
+  {
+   "name": "mm2aAspisLarvaePerHatcheryMax",
+   "value": 10,
+   "comment": "The larvae per hatchery: the high end"
+  },
+  {
+   "name": "mm2aAspisAntsChancePct",
+   "value": 10,
+   "comment": "The chance 10-100 giant ants share the nest"
+  },
+  {
+   "name": "mm2aAspisAntsMin",
+   "value": 10,
+   "comment": "The giant ant cohabitants: 10-100"
+  },
+  {
+   "name": "mm2aAspisAntsMax",
+   "value": 100,
+   "comment": "The giant ant cohabitants: the high end"
+  },
+  {
+   "name": "mm2aAspisTunnelHeightFt",
+   "value": 4,
+   "comment": "The nest tunnel height (well-defended by traps and guards)"
+  },
+  {
+   "name": "mm2aAtomieInitiativeBonus",
+   "value": 1,
+   "comment": "The atomie gain on initiative die rolls"
+  },
+  {
+   "name": "mm2aAtomieFighterLevel",
+   "value": 3,
+   "comment": "The atomies attack as 3rd-level fighters"
+  },
+  {
+   "name": "mm2aAtomiePowerLevel",
+   "value": 5,
+   "comment": "The spell-like powers at 5th-level ability"
+  },
+  {
+   "name": "mm2aAtomieSurprisePct",
+   "value": 90,
+   "comment": "The atomie surprise likelihood"
+  },
+  {
+   "name": "mm2aAtomieSurprisedPct",
+   "value": 10,
+   "comment": "The atomie surprised likelihood"
+  },
+  {
+   "name": "mm2aAtomieInfravisionFt",
+   "value": 120,
+   "comment": "The infravision and ultraviolet range (double normal)"
+  },
+  {
+   "name": "mm2aAtomieGrigPct",
+   "value": 20,
+   "comment": "The chance of grig company"
+  },
+  {
+   "name": "mm2aAtomieCrossbowPct",
+   "value": 20,
+   "comment": "The small crossbow likelihood (3-inch range)"
+  },
+  {
+   "name": "mm2aAtomieSpearPct",
+   "value": 60,
+   "comment": "The small spear likelihood (double damage in diving or charging flight)"
+  },
+  {
+   "name": "mm2aAtomieSwordPct",
+   "value": 40,
+   "comment": "The small sword likelihood (equal to a knife)"
+  },
+  {
+   "name": "mm2aAtomieCrossbowRangeIn",
+   "value": 3,
+   "comment": "The small crossbow range"
+  },
+  {
+   "name": "mm2aAtomieCrossbowDmgMin",
+   "value": 1,
+   "comment": "The small crossbow damage: 1-3 points"
+  },
+  {
+   "name": "mm2aAtomieCrossbowDmgMax",
+   "value": 3,
+   "comment": "The small crossbow damage: the high end"
+  },
+  {
+   "name": "mm2aAtomieSpearDmgMin",
+   "value": 1,
+   "comment": "The small spear damage: 1-4 points thrust or thrown"
+  },
+  {
+   "name": "mm2aAtomieSpearDmgMax",
+   "value": 4,
+   "comment": "The small spear damage: the high end"
+  },
+  {
+   "name": "mm2aAtomieSwordDmgMin",
+   "value": 1,
+   "comment": "The small sword damage: 1-3 points"
+  },
+  {
+   "name": "mm2aAtomieSwordDmgMax",
+   "value": 3,
+   "comment": "The small sword damage: the high end"
+  },
+  {
+   "name": "mm2aAurumvoraxBiteMin",
+   "value": 2,
+   "comment": "The initial bite: 2-8 points"
+  },
+  {
+   "name": "mm2aAurumvoraxBiteMax",
+   "value": 8,
+   "comment": "The initial bite: the high end"
+  },
+  {
+   "name": "mm2aAurumvoraxHoldBite",
+   "value": 8,
+   "comment": "The held bite: 8 points of automatic damage each succeeding round"
+  },
+  {
+   "name": "mm2aAurumvoraxClawMin",
+   "value": 2,
+   "comment": "The additional clawing attacks while holding on: 2-8"
+  },
+  {
+   "name": "mm2aAurumvoraxClawMax",
+   "value": 8,
+   "comment": "The additional clawing attacks: the high end"
+  },
+  {
+   "name": "mm2aAurumvoraxClawDmgMin",
+   "value": 1,
+   "comment": "The claw damage: 1-6 points"
+  },
+  {
+   "name": "mm2aAurumvoraxClawDmgMax",
+   "value": 6,
+   "comment": "The claw damage: the high end"
+  },
+  {
+   "name": "mm2aAurumvoraxSurprisePct",
+   "value": 50,
+   "comment": "The concealed-den surprise chance"
+  },
+  {
+   "name": "mm2aAurumvoraxWeightLbs",
+   "value": 500,
+   "comment": "The dense flesh weighs over 500 pounds"
+  },
+  {
+   "name": "mm2aAzerGraspMin",
+   "value": 2,
+   "comment": "The grasp damage to non-fire-immune creatures: 2-5 points"
+  },
+  {
+   "name": "mm2aAzerGraspMax",
+   "value": 5,
+   "comment": "The grasp damage: the high end"
+  },
+  {
+   "name": "mm2aAzerWeaponHeatBonus",
+   "value": 1,
+   "comment": "The weapon heat damage bonus to such opponents"
+  },
+  {
+   "name": "mm2aAzerColdMultiplier",
+   "value": 2,
+   "comment": "Cold attacks inflict double normal damage"
+  },
+  {
+   "name": "mm2aAzerTempFloorF",
+   "value": 200,
+   "comment": "The survival floor: below 200 degrees F."
+  },
+  {
+   "name": "mm2aAzerSurviveHours",
+   "value": 1,
+   "comment": "They cannot survive there more than an hour or so"
+  },
+  {
+   "name": "mm2aAmaimonHdNum",
+   "value": 9,
+   "comment": "Amaimon the legendary king of the azer: 9+8 hit dice, the largest of all his kind"
+  },
+  {
+   "name": "mm2aAmaimonHdBonus",
+   "value": 8,
+   "comment": "The Amaimon hit-die bonus"
+  },
+  {
+   "name": "mm2aAmaimonAvgHp",
+   "value": 39,
+   "comment": "The Amaimon average hit points (floor of 9 x 3.5 plus 8)"
+  },
+  {
+   "name": "mm2aAmaimonHitBonus",
+   "value": 3,
+   "comment": "The Amaimon strength 18/00 hit bonus"
+  },
+  {
+   "name": "mm2aAmaimonDmgBonus",
+   "value": 6,
+   "comment": "The Amaimon strength 18/00 damage bonus"
+  },
+  {
+   "name": "mm2aAmaimonStrPct",
+   "value": 0,
+   "comment": "The Amaimon percentile strength: 18/00"
+  },
+  {
+   "name": "mm2aAmaimonMR",
+   "value": 35,
+   "comment": "Amaimon has 35 percent magic resistance"
+  },
+  {
+   "name": "mm2aAmaimonNobleHdNum",
+   "value": 7,
+   "comment": "The nobles: 7+6 hit dice, only slightly less superior"
+  },
+  {
+   "name": "mm2aAmaimonNobleHdBonus",
+   "value": 6,
+   "comment": "The noble hit-die bonus"
+  },
+  {
+   "name": "mm2aAmaimonNobleHitBonus",
+   "value": 2,
+   "comment": "The noble strength 18/76-90 hit bonus"
+  },
+  {
+   "name": "mm2aAmaimonNobleDmgBonus",
+   "value": 4,
+   "comment": "The noble strength 18/76-90 damage bonus"
+  },
+  {
+   "name": "mm2aAmaimonNobleStrLo",
+   "value": 76,
+   "comment": "The noble percentile strength floor"
+  },
+  {
+   "name": "mm2aAmaimonNobleStrHi",
+   "value": 90,
+   "comment": "The noble percentile strength ceiling"
+  },
+  {
+   "name": "mm2aAmaimonNobleMR",
+   "value": 25,
+   "comment": "The noble magic resistance: 25 percent"
+  },
+  {
+   "name": "mm2aAmaimonNoblesMin",
+   "value": 8,
+   "comment": "His nobles number from 8-32"
+  },
+  {
+   "name": "mm2aAmaimonNoblesMax",
+   "value": 32,
+   "comment": "His nobles: the high end"
+  },
+  {
+   "name": "mm2aAmaimonHabitationMin",
+   "value": 20,
+   "comment": "When 20 or more are encountered in their habitation"
+  },
+  {
+   "name": "mm2aAmaimonLargestNormals",
+   "value": 2,
+   "comment": "There will be 2 of the largest normal size there also"
+  },
+  {
+   "name": "mm2aAmaimonFemalesMin",
+   "value": 40,
+   "comment": "The non-combatant females and young: 40-70"
+  },
+  {
+   "name": "mm2aAmaimonFemalesMax",
+   "value": 70,
+   "comment": "The non-combatant females and young: the high end"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2aLetterWalkFromPrint",
+   "value": true,
+   "comment": "The pin-time A walk from the print is authoritative: ten entries, the opener 7-candidate archive.org walk superseded (the R792 lesson)"
+  },
+  {
+   "name": "mm2aAspisRidesThreeDefs",
+   "value": true,
+   "comment": "The one aspis print entry rides three form defs: drone, larva and cow (the oni multi-form precedent)"
+  },
+  {
+   "name": "mm2aAmaimonRidesAzerEntry",
+   "value": true,
+   "comment": "The Amaimon paragraph rides the azer print as its own def: the legendary king sub-entry"
+  },
+  {
+   "name": "mm2aAtomieXpIsRomanII",
+   "value": true,
+   "comment": "The atomie LEVEL/X.P. reads II/40 + 1/hp: the PDF OCR 11/40 is a roman-numeral misread, consistent with the 2-HD aspis larva rung and the azer 2+1 bracket"
+  },
+  {
+   "name": "mm2aAmaimonStatsRideSentinels",
+   "value": true,
+   "comment": "Amaimon prints no xp and no armor class: the def rides the xp-0 sentinel path (the marut precedent)"
+  },
+  {
+   "name": "mm2aMm2PrintRidesXpAudit",
+   "value": true,
+   "comment": "The mm2_print source joins the xp audit allowed-source list (the R792 oa/wsg/mop precedent)"
+  },
+  {
+   "name": "mm2aDefsRideDataFiles",
+   "value": true,
+   "comment": "The thirteen defs land through the R791 data_files extension (the R794 git add)"
+  },
+  {
+   "name": "mm2aPinHeaderStaysPrintRecord",
+   "value": true,
+   "comment": "The mm2a pin header stays the print-fidelity record (the promotion seam standing rule)"
+  },
+  {
+   "name": "mm2aAbolethMembraneSaveVsSpells",
+   "value": true,
+   "comment": "The tentacle slime change: save vs. spells or the skin becomes a clear slimy membrane"
+  },
+  {
+   "name": "mm2aAbolethCureDiseaseStops",
+   "value": true,
+   "comment": "A cure disease spell cast on the victim stops the change"
+  },
+  {
+   "name": "mm2aAbolethCureSeriousReverses",
+   "value": true,
+   "comment": "A cure serious wounds spell changes the membrane back to normal skin"
+  },
+  {
+   "name": "mm2aAbolethIllusionsAudibleVisual",
+   "value": true,
+   "comment": "The illusions carry audible and visual components, only while concentrating and doing nothing else"
+  },
+  {
+   "name": "mm2aAbolethEnslaveSingleTarget",
+   "value": true,
+   "comment": "The enslave works only against a single creature; the enslaved will not fight for the aboleth"
+  },
+  {
+   "name": "mm2aAbolethEnslaveBreaksByRemoveCurse",
+   "value": true,
+   "comment": "The charm breaks by remove curse or dispel magic spells or the death of the enslaving aboleth"
+  },
+  {
+   "name": "mm2aAbolethMucusDissolvedBySoapOrWine",
+   "value": true,
+   "comment": "The mucus may be dissolved by soap or wine"
+  },
+  {
+   "name": "mm2aAfancAvoidsLargerShips",
+   "value": true,
+   "comment": "The afanc avoids ships larger than small-medium"
+  },
+  {
+   "name": "mm2aAfancCapsizesSmallCraft",
+   "value": true,
+   "comment": "Rafts, boats and similar small craft are rushed and capsized, the passengers consumed"
+  },
+  {
+   "name": "mm2aAgathionStruckOnlyByPlusOne",
+   "value": true,
+   "comment": "They are struck only by +1 or better magic weapons, regardless of form"
+  },
+  {
+   "name": "mm2aAgathionImmuneLevelDraining",
+   "value": true,
+   "comment": "They are immune to life-level draining"
+  },
+  {
+   "name": "mm2aAgathionImmuneDeathSpells",
+   "value": true,
+   "comment": "They are immune to death spells"
+  },
+  {
+   "name": "mm2aAgathionImmuneDisintegration",
+   "value": true,
+   "comment": "They are immune to disintegration"
+  },
+  {
+   "name": "mm2aAgathionImmunePositiveEnergy",
+   "value": true,
+   "comment": "They are immune to energy from the Positive Material Plane"
+  },
+  {
+   "name": "mm2aAgathionEtherealAtWill",
+   "value": true,
+   "comment": "They can become ethereal at will"
+  },
+  {
+   "name": "mm2aAgathionAstralTravel",
+   "value": true,
+   "comment": "They can travel astrally"
+  },
+  {
+   "name": "mm2aAgathionWisdomBonusSpells",
+   "value": true,
+   "comment": "The wisdom 18 makes bonus spells applicable"
+  },
+  {
+   "name": "mm2aAgathionItemGrantsClericSpells",
+   "value": true,
+   "comment": "The item-housed agathion bestows its 1st-level cleric spell ability on the possessor and automatically detects evil"
+  },
+  {
+   "name": "mm2aAnnisSeizesOnTripleHit",
+   "value": true,
+   "comment": "Three hits on one creature in the same round: the annis has automatically seized and holds the opponent fast"
+  },
+  {
+   "name": "mm2aAnnisSeizedFoeAutoHit",
+   "value": true,
+   "comment": "Next round all annis attacks are automatic hits unless the opponent is stronger, the annis is slain, or the victim escapes magically"
+  },
+  {
+   "name": "mm2aAnnisTreatedAsPlateMail",
+   "value": true,
+   "comment": "The iron-hard skin: treat the annis as clad in plate mail for weapons vs. armor adjustment"
+  },
+  {
+   "name": "mm2aAnnisFlailMorningstarBlunt",
+   "value": true,
+   "comment": "Flails and morning stars count as blunt weapons"
+  },
+  {
+   "name": "mm2aAnnisSuperiorHearingSmell",
+   "value": true,
+   "comment": "Normal infravision but superior hearing and sense of smell"
+  },
+  {
+   "name": "mm2aAntLionJawsLockOnHit",
+   "value": true,
+   "comment": "A hit indicates the jaws have closed and will not release until it or the prey is dead"
+  },
+  {
+   "name": "mm2aAntLionAutoDamageUntilDeath",
+   "value": true,
+   "comment": "Each round after the initial hit the ant lion inflicts damage automatically"
+  },
+  {
+   "name": "mm2aAntLionLairItemsFromKills",
+   "value": true,
+   "comment": "Ant lions do not collect treasure; the lair items are from previous kills"
+  },
+  {
+   "name": "mm2aAntLionLeavesPitToFeed",
+   "value": true,
+   "comment": "They devour 1 or more giant insects each day, so one can be encountered outside its pit"
+  },
+  {
+   "name": "mm2aAscomoidAcceleratingRoll",
+   "value": true,
+   "comment": "The rolling movement accelerates 3, 6, 9 then 12 per round and keeps it up for hours"
+  },
+  {
+   "name": "mm2aAscomoidKnocksDownSmallerFoes",
+   "value": true,
+   "comment": "Small and medium-sized opponents are knocked down and must rise the next round or remain prone"
+  },
+  {
+   "name": "mm2aAscomoidPiercingDoublesOverSixFeet",
+   "value": true,
+   "comment": "Piercing weapons over 6 feet long score double damage; shorter stabbing weapons damage as vs. a small opponent"
+  },
+  {
+   "name": "mm2aAscomoidBluntWeaponsHarmless",
+   "value": true,
+   "comment": "Blunt weapons do not harm ascomoids"
+  },
+  {
+   "name": "mm2aAscomoidEdgedOnePoint",
+   "value": true,
+   "comment": "Slashes and cuts from edged weapons cause only 1 point of damage"
+  },
+  {
+   "name": "mm2aAscomoidColdNormal",
+   "value": true,
+   "comment": "Cold-based attacks are at normal probabilities"
+  },
+  {
+   "name": "mm2aAscomoidMindSpellsUseless",
+   "value": true,
+   "comment": "All spells affecting the brain are useless unless specific to plants"
+  },
+  {
+   "name": "mm2aAspisDroneFourLegsTwoShields",
+   "value": true,
+   "comment": "In combat the drone stands on its hind legs, wielding 2 weapons and 2 shields with the other 4 legs"
+  },
+  {
+   "name": "mm2aAspisDroneNoBows",
+   "value": true,
+   "comment": "The drones are capable of using all weapons but bows"
+  },
+  {
+   "name": "mm2aAspisDroneImmuneElectricCold",
+   "value": true,
+   "comment": "The drones are immune to electrical and cold attacks"
+  },
+  {
+   "name": "mm2aAspisDroneHalfFire",
+   "value": true,
+   "comment": "The drones take only half damage from fire-based attacks"
+  },
+  {
+   "name": "mm2aAspisLarvaBlindDeafByVibration",
+   "value": true,
+   "comment": "The larvae are blind and deaf but locate and identify creatures through vibrations and scent"
+  },
+  {
+   "name": "mm2aAspisLarvaImmuneAcid",
+   "value": true,
+   "comment": "The larvae are immune to acid"
+  },
+  {
+   "name": "mm2aAspisCowSlimeEatsMetalWood",
+   "value": true,
+   "comment": "The cow slime eats through metal or wood in 1 round"
+  },
+  {
+   "name": "mm2aAspisOneCowPerNest",
+   "value": true,
+   "comment": "Only 1 cow will be found in any nest"
+  },
+  {
+   "name": "mm2aAspisDroneSpeaksByScent",
+   "value": true,
+   "comment": "The drones communicate by subtle scents and perfumes; they lack personal names"
+  },
+  {
+   "name": "mm2aAtomiePowersAtWillOnePerRound",
+   "value": true,
+   "comment": "The five powers usable at will, 1 at a time, 1 per round: blink, invisibility, pass plant, speak with animals, summon insects"
+  },
+  {
+   "name": "mm2aAtomieHearingDoubleNorm",
+   "value": true,
+   "comment": "Their hearing is double human norm"
+  },
+  {
+   "name": "mm2aAtomieSpeaksSpriteDialect",
+   "value": true,
+   "comment": "Their own language is a dialect of Sprite; they also speak Pixie and a smattering of Common"
+  },
+  {
+   "name": "mm2aAtomieWeaponsDoubleInDive",
+   "value": true,
+   "comment": "The small spear damage doubles when used in diving or charging flight"
+  },
+  {
+   "name": "mm2aAtomieGrigCompany",
+   "value": true,
+   "comment": "They are sometimes found in company with grigs"
+  },
+  {
+   "name": "mm2aAurumvoraxHoldsAfterBite",
+   "value": true,
+   "comment": "Once it bites successfully the aurumvorax holds on"
+  },
+  {
+   "name": "mm2aAurumvoraxDexNegatedWhenHeld",
+   "value": true,
+   "comment": "The held opponent dexterity is negated for armor class computation"
+  },
+  {
+   "name": "mm2aAurumvoraxOnlyDeathUnlocks",
+   "value": true,
+   "comment": "Only death will unlock its jaws"
+  },
+  {
+   "name": "mm2aAurumvoraxHalfDamageBlunt",
+   "value": true,
+   "comment": "It takes only half damage from blunt weapons"
+  },
+  {
+   "name": "mm2aAurumvoraxImmuneSmallFires",
+   "value": true,
+   "comment": "It is immune to damage from small, normal fires"
+  },
+  {
+   "name": "mm2aAurumvoraxLargeMagicalFiresHalf",
+   "value": true,
+   "comment": "Large, magical fires cause only half normal damage"
+  },
+  {
+   "name": "mm2aAurumvoraxImmunePoisonGas",
+   "value": true,
+   "comment": "Poisons and gases do not harm it at all"
+  },
+  {
+   "name": "mm2aAzerHeatDamagesGrasp",
+   "value": true,
+   "comment": "Creatures not immune to fire take grasp damage from any azer"
+  },
+  {
+   "name": "mm2aAzerWeaponsInflictHeat",
+   "value": true,
+   "comment": "The heat of an azer weapon inflicts bonus damage to such opponents"
+  },
+  {
+   "name": "mm2aAzerColdDoubleDamage",
+   "value": true,
+   "comment": "Cold attacks inflict double normal damage against azer"
+  },
+  {
+   "name": "mm2aAzerJavelinEqualsSpear",
+   "value": true,
+   "comment": "The broad-bladed javelins inflict damage equal to a spear"
+  },
+  {
+   "name": "mm2aAzerMalletEqualsFootmanMace",
+   "value": true,
+   "comment": "The mallet-like weapons equal a footman mace in all respects"
+  },
+  {
+   "name": "mm2aAzerGemsBuyFavors",
+   "value": true,
+   "comment": "For clear purple or red gems they may agree to reasonable requests"
+  },
+  {
+   "name": "mm2aAzerWordIsBond",
+   "value": true,
+   "comment": "Once given, the word of an azer is a solid bond"
+  },
+  {
+   "name": "mm2aAmaimonPowersUnknown",
+   "value": true,
+   "comment": "The other powers of Amaimon and his nobles are currently unknown"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the MM2 letter A stat grid",
+   "tag": "AStats",
+   "count": "mm2aStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "the 12 x 9 stat grid - the stat-block cells of the twelve forms in print order (aboleth, afanc, agathion, annis, ant lion, ascomoid, the aspis drone/larva/cow, atomie, aurumvorax, azer): armor class, hit dice, hit-die bonus, average hit points, attacks, base xp, xp per hit, lair percent and the primary move rate",
+   "cols": [
+    "mm2aStatAC",
+    "mm2aStatHd",
+    "mm2aStatHdBonus",
+    "mm2aStatAvgHp",
+    "mm2aStatAttacks",
+    "mm2aStatXp",
+    "mm2aStatXpHp",
+    "mm2aStatLairPct",
+    "mm2aStatMove"
+   ],
+   "col_comments": [
+    "The ARMOR CLASS cell (the drone 3(2) reads 3; the print strings ride the defs)",
+    "The HIT DICE number (the atomie 1/2 reads 0 - the flat-hp path; the ranges 7+3-12 and 2+1 to 5+4 pin their low ends)",
+    "The HIT DICE bonus points",
+    "The average hit points (floor of dice x 3.5 plus bonus; the atomie 2)",
+    "The NO. OF ATTACKS (the afanc 1 or 2 reads 2 - the loader max)",
+    "The LEVEL/X.P. base value",
+    "The xp per hit point",
+    "The % IN LAIR cell (Nil reads 0)",
+    "The primary MOVE rate in inches"
+   ],
+   "data": [
+    [
+     4,
+     8,
+     0,
+     28,
+     4,
+     1275,
+     10,
+     20,
+     3
+    ],
+    [
+     6,
+     15,
+     0,
+     52,
+     2,
+     4000,
+     20,
+     0,
+     15
+    ],
+    [
+     0,
+     7,
+     7,
+     31,
+     2,
+     1800,
+     10,
+     0,
+     18
+    ],
+    [
+     0,
+     7,
+     3,
+     27,
+     3,
+     1300,
+     10,
+     20,
+     15
+    ],
+    [
+     2,
+     8,
+     0,
+     28,
+     1,
+     575,
+     10,
+     95,
+     9
+    ],
+    [
+     3,
+     6,
+     6,
+     27,
+     1,
+     775,
+     8,
+     40,
+     12
+    ],
+    [
+     3,
+     6,
+     0,
+     21,
+     2,
+     300,
+     6,
+     30,
+     15
+    ],
+    [
+     6,
+     2,
+     0,
+     7,
+     1,
+     28,
+     2,
+     90,
+     1
+    ],
+    [
+     7,
+     10,
+     0,
+     35,
+     1,
+     1350,
+     14,
+     95,
+     3
+    ],
+    [
+     4,
+     0,
+     0,
+     2,
+     2,
+     40,
+     1,
+     35,
+     12
+    ],
+    [
+     0,
+     12,
+     0,
+     42,
+     1,
+     2700,
+     16,
+     30,
+     9
+    ],
+    [
+     2,
+     2,
+     1,
+     8,
+     1,
+     40,
+     3,
+     0,
+     12
+    ]
+   ]
+  },
+  {
+   "name": "the ant lion lair items grid",
+   "tag": "AntLionItems",
+   "count": "mm2aAntLionItemRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "the ant lion lair-items d20 - six bands tiling 1-20: the die low, the die high, and the kind (1 gp lot, 2 pp lot, 3 shield, 4 metal weapon, 5 jewelry, 6 miscellaneous item)",
+   "cols": [
+    "mm2aAntLionItemLo",
+    "mm2aAntLionItemHi",
+    "mm2aAntLionItemKind"
+   ],
+   "col_comments": [
+    "The d20 band low roll",
+    "The d20 band high roll",
+    "The band kind: 1 gp, 2 pp, 3 shield, 4 metal weapon, 5 jewelry, 6 miscellaneous item (10 percent magical)"
+   ],
+   "data": [
+    [
+     1,
+     6,
+     1
+    ],
+    [
+     7,
+     10,
+     2
+    ],
+    [
+     11,
+     13,
+     3
+    ],
+    [
+     14,
+     17,
+     4
+    ],
+    [
+     18,
+     19,
+     5
+    ],
+    [
+     20,
+     20,
+     6
+    ]
+   ]
+  },
+  {
+   "name": "the aspis larva xp ladder grid",
+   "tag": "AspisLarvaXp",
+   "count": "mm2aAspisLarvaRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "the aspis larva LEVEL/X.P. ladder - the hit-die rung, the base xp and the xp per hit point at 2 through 5 hit dice (the 2-HD rung rides the larva def)",
+   "cols": [
+    "mm2aAspisLarvaHd",
+    "mm2aAspisLarvaXp",
+    "mm2aAspisLarvaXpHp"
+   ],
+   "col_comments": [
+    "The larva hit-die rung (2 through 5)",
+    "The rung base xp (II at 2-3 HD, III at 4-5)",
+    "The rung xp per hit point"
+   ],
+   "data": [
+    [
+     2,
+     28,
+     2
+    ],
+    [
+     3,
+     50,
+     3
+    ],
+    [
+     4,
+     85,
+     4
+    ],
+    [
+     5,
+     130,
+     5
+    ]
+   ]
+  },
+  {
+   "name": "the azer bracket grid",
+   "tag": "AzerBrackets",
+   "count": "mm2aAzerBracketRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "the azer hit-die bracket grid - the four brackets 2+1 through 5+4: hit dice, bonus, the strength base and percentile band, the to-hit and damage bonuses, the encounter percent, the base gem value and the LEVEL/X.P. cells",
+   "cols": [
+    "mm2aAzerHd",
+    "mm2aAzerHdBonus",
+    "mm2aAzerStrBase",
+    "mm2aAzerStrLo",
+    "mm2aAzerStrHi",
+    "mm2aAzerToHit",
+    "mm2aAzerToDmg",
+    "mm2aAzerEncounterPct",
+    "mm2aAzerGemValue",
+    "mm2aAzerXp",
+    "mm2aAzerXpHp"
+   ],
+   "col_comments": [
+    "The bracket hit dice",
+    "The bracket hit-die bonus",
+    "The bracket strength base (17 or 18)",
+    "The percentile strength floor (0 = non-percentile)",
+    "The percentile strength ceiling (0 = non-percentile)",
+    "The bracket to-hit bonus",
+    "The bracket damage bonus",
+    "The bracket encounter percent (90, 30, 20, 10 - the print conditional)",
+    "The bracket base gem value in gold pieces",
+    "The bracket LEVEL/X.P. base",
+    "The bracket xp per hit point"
+   ],
+   "data": [
+    [
+     2,
+     1,
+     17,
+     0,
+     0,
+     1,
+     1,
+     90,
+     10,
+     40,
+     3
+    ],
+    [
+     3,
+     2,
+     18,
+     0,
+     0,
+     1,
+     2,
+     30,
+     50,
+     85,
+     4
+    ],
+    [
+     4,
+     3,
+     18,
+     1,
+     50,
+     1,
+     3,
+     20,
+     100,
+     130,
+     5
+    ],
+    [
+     5,
+     4,
+     18,
+     51,
+     75,
+     2,
+     3,
+     10,
+     500,
+     225,
+     6
+    ]
+   ]
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter A round pins (the R797 census)": [
+   {
+    "kind": "const",
+    "name": "mm2aRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aFirstPage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aLastPage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAntLionItemRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisLarvaRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAzerBracketRows"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aLetterWalkFromPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisRidesThreeDefs"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAmaimonRidesAzerEntry"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAtomieXpIsRomanII"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAmaimonStatsRideSentinels"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aMm2PrintRidesXpAudit"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aDefsRideDataFiles"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aPinHeaderStaysPrintRecord"
+   }
+  ],
+  "the aboleth pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAbolethTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethEnslavesPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethEnslaveRangeFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethMembraneMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethMembraneMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethMucusRadiusFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethSuffocateMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethSuffocateMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethSlaveWaterMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethSlaveWaterMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAbolethPsionicScore"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAbolethMembraneSaveVsSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAbolethCureDiseaseStops"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAbolethCureSeriousReverses"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAbolethIllusionsAudibleVisual"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAbolethEnslaveSingleTarget"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAbolethEnslaveBreaksByRemoveCurse"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAbolethMucusDissolvedBySoapOrWine"
+   }
+  ],
+  "the afanc pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAfancCircleStartFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAfancCircleCloseFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAfancCircleInnerFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAfancWhirlMinRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAfancWhirlMaxRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAfancMaxShipFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAfancDragFtPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAfancTopSpeed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAfancSubmergePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAfancSmallCraftFt"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAfancAvoidsLargerShips"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAfancCapsizesSmallCraft"
+   }
+  ],
+  "the agathion pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAgathionHumanFormPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionCreatureFormPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionItemFormPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionClericLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionWisdom"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionTurnLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionSaveLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionItemTurnLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionSlainMinYears"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionSlainMaxYears"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionTouchMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionTouchMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAgathionPsionicScore"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAgathionStruckOnlyByPlusOne"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAgathionImmuneLevelDraining"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAgathionImmuneDeathSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAgathionImmuneDisintegration"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAgathionImmunePositiveEnergy"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAgathionEtherealAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAgathionAstralTravel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAgathionWisdomBonusSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAgathionItemGrantsClericSpells"
+   }
+  ],
+  "the annis pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAnnisStrength"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAnnisCastLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAnnisUsesPerPowerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAnnisEdgedAdjust"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAnnisBluntAdjust"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAnnisSeizesOnTripleHit"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAnnisSeizedFoeAutoHit"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAnnisTreatedAsPlateMail"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAnnisFlailMorningstarBlunt"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAnnisSuperiorHearingSmell"
+   }
+  ],
+  "the ant lion pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAntLionPitFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAntLionLairLookPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAntLionSlipPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAntLionAutoBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAntLionAutoBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAntLionItemChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAntLionItemsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAntLionItemsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAntLionMagicPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAntLionJawsLockOnHit"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAntLionAutoDamageUntilDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAntLionLairItemsFromKills"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAntLionLeavesPitToFeed"
+   },
+   {
+    "kind": "table",
+    "name": "the ant lion lair items grid"
+   }
+  ],
+  "the ascomoid pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidSporeRangeFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidCloudMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidCloudMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidDeathMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidDeathMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidRecoverMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidRecoverMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidHelplessHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidMagicSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidMagicDmgPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAscomoidPiercingMinFt"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAscomoidAcceleratingRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAscomoidKnocksDownSmallerFoes"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAscomoidPiercingDoublesOverSixFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAscomoidBluntWeaponsHarmless"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAscomoidEdgedOnePoint"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAscomoidColdNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAscomoidMindSpellsUseless"
+   }
+  ],
+  "the aspis pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAspisDroneRearAC"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisDroneCommonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisCowSlimeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisCowSlimeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisEggChambersMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisEggChambersMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisGranariesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisGranariesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisHatcheriesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisHatcheriesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisLarvaePerHatcheryMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisLarvaePerHatcheryMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisAntsChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisAntsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisAntsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAspisTunnelHeightFt"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisDroneFourLegsTwoShields"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisDroneNoBows"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisDroneImmuneElectricCold"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisDroneHalfFire"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisLarvaBlindDeafByVibration"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisLarvaImmuneAcid"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisCowSlimeEatsMetalWood"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisOneCowPerNest"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAspisDroneSpeaksByScent"
+   },
+   {
+    "kind": "table",
+    "name": "the aspis larva xp ladder grid"
+   }
+  ],
+  "the atomie pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAtomieInitiativeBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieFighterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomiePowerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieSurprisePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieSurprisedPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieInfravisionFt"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieGrigPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieCrossbowPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieSpearPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieSwordPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieCrossbowRangeIn"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieCrossbowDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieCrossbowDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieSpearDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieSpearDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieSwordDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAtomieSwordDmgMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAtomiePowersAtWillOnePerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAtomieHearingDoubleNorm"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAtomieSpeaksSpriteDialect"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAtomieWeaponsDoubleInDive"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAtomieGrigCompany"
+   }
+  ],
+  "the aurumvorax pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAurumvoraxBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAurumvoraxBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAurumvoraxHoldBite"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAurumvoraxClawMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAurumvoraxClawMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAurumvoraxClawDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAurumvoraxClawDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAurumvoraxSurprisePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAurumvoraxWeightLbs"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAurumvoraxHoldsAfterBite"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAurumvoraxDexNegatedWhenHeld"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAurumvoraxOnlyDeathUnlocks"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAurumvoraxHalfDamageBlunt"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAurumvoraxImmuneSmallFires"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAurumvoraxLargeMagicalFiresHalf"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAurumvoraxImmunePoisonGas"
+   }
+  ],
+  "the azer pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAzerGraspMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAzerGraspMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAzerWeaponHeatBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAzerColdMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAzerTempFloorF"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAzerSurviveHours"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAzerHeatDamagesGrasp"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAzerWeaponsInflictHeat"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAzerColdDoubleDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAzerJavelinEqualsSpear"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAzerMalletEqualsFootmanMace"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAzerGemsBuyFavors"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAzerWordIsBond"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2aAmaimonPowersUnknown"
+   },
+   {
+    "kind": "table",
+    "name": "the azer bracket grid"
+   }
+  ],
+  "the amaimon pins (the R797 MM2 letter A)": [
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonHdNum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonHdBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonAvgHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonStrPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonMR"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonNobleHdNum"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonNobleHdBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonNobleHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonNobleDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonNobleStrLo"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonNobleStrHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonNobleMR"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonNoblesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonNoblesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonHabitationMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonLargestNormals"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonFemalesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2aAmaimonFemalesMax"
+   }
+  ],
+  "the MM2 letter A stat grid (the R797 wiring)": [
+   {
+    "kind": "table",
+    "name": "the MM2 letter A stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count (the census walk)",
+   "expr": "m['mm2aRegistryAfter']() - m['mm2aRegistryBefore']() != m['mm2aDefCount']() or m['mm2aDefCount']() != m['mm2aEntryCount']() + 3"
+  },
+  {
+   "note": "the azer stat row rides the first bracket (the low-end range rule)",
+   "expr": "m['mm2aAzerHd'](0) != m['mm2aStatHd'](11) or m['mm2aAzerHdBonus'](0) != m['mm2aStatHdBonus'](11) or m['mm2aAzerXp'](0) != m['mm2aStatXp'](11) or m['mm2aAzerXpHp'](0) != m['mm2aStatXpHp'](11)"
+  },
+  {
+   "note": "the aspis larva stat row rides the 2-HD rung (the low-end range rule)",
+   "expr": "m['mm2aAspisLarvaHd'](0) != m['mm2aStatHd'](7) or m['mm2aAspisLarvaXp'](0) != m['mm2aStatXp'](7) or m['mm2aAspisLarvaXpHp'](0) != m['mm2aStatXpHp'](7)"
+  },
+  {
+   "note": "the ant lion item bands tile the d20 without gaps or overlaps",
+   "expr": "m['mm2aAntLionItemLo'](0) != 1 or m['mm2aAntLionItemHi'](5) != 20 or m['mm2aAntLionItemLo'](1) != m['mm2aAntLionItemHi'](0) + 1 or m['mm2aAntLionItemLo'](2) != m['mm2aAntLionItemHi'](1) + 1 or m['mm2aAntLionItemLo'](3) != m['mm2aAntLionItemHi'](2) + 1 or m['mm2aAntLionItemLo'](4) != m['mm2aAntLionItemHi'](3) + 1 or m['mm2aAntLionItemLo'](5) != m['mm2aAntLionItemHi'](4) + 1"
+  },
+  {
+   "note": "the azer brackets ladder the hit dice 2+1 through 5+4",
+   "expr": "m['mm2aAzerHd'](1) != m['mm2aAzerHd'](0) + 1 or m['mm2aAzerHd'](2) != m['mm2aAzerHd'](1) + 1 or m['mm2aAzerHd'](3) != m['mm2aAzerHd'](2) + 1 or m['mm2aAzerHdBonus'](1) != m['mm2aAzerHdBonus'](0) + 1 or m['mm2aAzerHdBonus'](2) != m['mm2aAzerHdBonus'](1) + 1 or m['mm2aAzerHdBonus'](3) != m['mm2aAzerHdBonus'](2) + 1"
+  },
+  {
+   "note": "the aspis larva ladder steps the hit dice 2 3 4 5",
+   "expr": "m['mm2aAspisLarvaHd'](1) != m['mm2aAspisLarvaHd'](0) + 1 or m['mm2aAspisLarvaHd'](2) != m['mm2aAspisLarvaHd'](1) + 1 or m['mm2aAspisLarvaHd'](3) != m['mm2aAspisLarvaHd'](2) + 1"
+  },
+  {
+   "note": "Amaimon outranks his nobles by one to-hit point and two of damage",
+   "expr": "m['mm2aAmaimonHitBonus']() != m['mm2aAmaimonNobleHitBonus']() + 1 or m['mm2aAmaimonDmgBonus']() != m['mm2aAmaimonNobleDmgBonus']() + 2"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter A box",
+   "from": "- [ ] **Letter A**",
+   "to": "- [x] **Letter A**"
+  }
+ ],
+ "gap_census": {
+  "closed": 6,
+  "open": 31
+ },
+ "caller_files": [],
+ "inline_count": 235,
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the xp audit allowed-source list gains mm2_print (the R792 oa/wsg/mop precedent)",
+   "from": "                d.xpSource != \"by_level\" && d.xpSource != \"oa_print\" &&\n                d.xpSource != \"wsg_print\" && d.xpSource != \"mop_print\") bad = true;\n",
+   "to": "                d.xpSource != \"by_level\" && d.xpSource != \"oa_print\" &&\n                d.xpSource != \"wsg_print\" && d.xpSource != \"mop_print\" &&\n                d.xpSource != \"mm2_print\") bad = true;\n"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter-A def walk (the R782 site-block pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----\n",
+   "to": "    // ---- R797: the MM2 letter A live def walk (no census marker) ----\n    // The 13 promoted letter-A defs cross-checked live against the\n    // mm2a pins: every stat cell of the 12-form grid, the mm2_print\n    // xp source, the xpValue formula, the plane strings, the Amaimon\n    // sentinels, and the registry census 478 -> 491.\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kA[13] = {\n            \"aboleth\", \"afanc\", \"agathion\", \"annis\", \"ant_lion\",\n            \"ascomoid\", \"aspis_drone\", \"aspis_larva\", \"aspis_cow\",\n            \"atomie\", \"aurumvorax\", \"azer\", \"amaimon\"\n        };\n        for (int i = 0; i < 13; ++i) {\n            const auto* d = reg.find(kA[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\") ++bad;\n            if (d->xpValue != d->xpBase + d->avgHp * d->xpPerHp) ++bad;\n            if (i < 12) {\n                if (d->armorClass != mm2aStatAC(i)) ++bad;\n                if (d->hitDiceNum != mm2aStatHd(i)) ++bad;\n                if (d->hitDiceBonus != mm2aStatHdBonus(i)) ++bad;\n                if (d->avgHp != mm2aStatAvgHp(i)) ++bad;\n                if (d->attacks != mm2aStatAttacks(i)) ++bad;\n                if (d->xpBase != mm2aStatXp(i)) ++bad;\n                if (d->xpPerHp != mm2aStatXpHp(i)) ++bad;\n                if (d->lairPct != mm2aStatLairPct(i)) ++bad;\n                if (d->moveRate != mm2aStatMove(i)) ++bad;\n            }\n        }\n        const auto* az = reg.find(\"azer\");\n        const auto* am = reg.find(\"amaimon\");\n        if (!az || az->plane != \"Elemental Plane of Fire\") ++bad;\n        if (!am || am->plane != \"Elemental Plane of Fire\") ++bad;\n        if (am) {\n            if (am->hitDiceNum != mm2aAmaimonHdNum()) ++bad;\n            if (am->hitDiceBonus != mm2aAmaimonHdBonus()) ++bad;\n            if (am->avgHp != mm2aAmaimonAvgHp()) ++bad;\n            if (am->xpBase != 0 || am->xpPerHp != 0) ++bad;\n            if (am->magicResist != mm2aAmaimonMR()) ++bad;\n        }\n        if ((int)reg.all().size() != mm2aRegistryAfter()) ++bad;\n        printf(\"R797 MM2 letter A live defs: bad %d\\n\", bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----\n"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/a/aboleth.lua",
+   "content": "-- Aboleth: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Aboleth\",\n  page = \"8\",\n  pages = \"8\",\n  source = \"MM2\",\n  race = \"Aboleth\",\n  hitDice = \"8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 28,\n  armorClass = \"4\",\n  numAttacks = 4,\n  damage = \"1-6(x4)\",\n  xp = 1275,\n  xpPerHp = 10,\n  xpValue = 1555,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 20,\n  treasure = \"F\",\n  move = \"3\\\"//18\\\"\",\n  size = \"L\",\n  intelligence = \"high\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See description\",\n  specialDefenses = \"Slime\",\n  magicResistance = \"Standard\",\n  psionic = \"250\",\n  attackDefenseModes = \"C,D,E/G,I,J\",\n  text = \"The aboleth is an amphibious creature that dwells in underground lakes and caverns. Intelligent, it hates most land-going life and seeks methods to enslave or destroy the beings of the surface world. The race is extremely long-lived and has collected a great deal of knowledge more ancient than man. It is perhaps better that men do not know these ancient secrets, for these are rumored to be more horrible and foul than could be thought possible. An aboleth has a slime covered fish-like body with a large fluke-like tail which propels it through the water. It is a blue-green mottled gray in color with a pinkish tan belly. It has blue-black slime-producing organs on either side. Set in its head are 3 long, slit-like, purple-red eyes, one above the other. Over the eyes are protective ridges. Four 10-foot long tentacles grow from the top of its head, and its toothless mouth is located on the underside. On land, an aboleth pulls its obscene mass about with its 4 tentacles. In combat the aboleth attacks with its 4 tentacles for 1-6 points of damage each. Any creature struck by its tentacles must save vs. spells or the creature's skin will change into a clear, slimy membrane in 2-5 rounds. This change can be stopped if a cure disease spell is cast on the victim. Once the change is complete, the membrane must be kept damp with cool water or the victim will take 1-12 points of damage each turn because of intense pain. A cure serious wounds spell will change the membrane back to normal skin. The aboleth is highly intelligent and can create very realistic illusions with audible and visual components if it concentrates and does nothing else. It can also try to enslave other creatures 3 times per day. This ability can be used only against a single creature up to 30 feet away. The victim must save vs. spells or be filled with desire to serve the aboleth. Enslaved creatures will not fight for the aboleth but will attempt to follow any other telepathic commands. If an enslaved character is separated from the aboleth by more than a mile, a new saving throw may be made each day. This charm can be broken by remove curse or dispel magic spells or the death of the enslaving aboleth. In water, an aboleth will secrete a cloud of mucus a distance of 1 foot all around its body. Any creature drawn into the mucus must save vs. poison or it will inhale the stuff and be unable to breathe air, suffocating in 2-12 rounds if it tries to breathe. However, the aboleth uses its mucus to give its slaves the power to breathe water. Thus, its slaves will have the ability to breathe water, as a potion of water breathing, for 1-3 hours. The mucus may be dissolved by soap or wine. There are reports of huge underwater cities built by the aboleths and those they enslaved. But these reports, along with the stories of their vast stores of knowledge, have never been proven.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/afanc.lua",
+   "content": "-- Afanc: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Afanc\",\n  page = \"8\",\n  pages = \"8\",\n  source = \"MM2\",\n  race = \"Afanc\",\n  hitDice = \"15\",\n  hitDiceNum = 15,\n  hitDiceBonus = 0,\n  avgHp = 52,\n  armorClass = \"6\",\n  numAttacks = \"1 or 2\",\n  damage = \"5-20 or 3-12/3-12\",\n  xp = 4000,\n  xpPerHp = 20,\n  xpValue = 5040,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"//15\\\" (see below)\",\n  size = \"L (50' long)\",\n  intelligence = \"low\",\n  alignment = \"neutral (evil)\",\n  specialAttacks = \"Whirlpool (see below)\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The afanc is dreaded because of its ability to swim rapidly and cause a whirlpool. An afanc is generally found in shallow salt water, where it will be swimming leisurely, and it is then usually mistaken for a whale of some sort. While able to attack by bite (5-20) or by striking with its 2 flippers (for 1d12 each), the creature usually attacks surface prey by swimming rapidly around it in closing circles, starting 100 feet out and closing at 20 feet per round to 40 feet. From its usual 15\\\" rate, the circling afanc propels itself at ever-faster speed, until a rate of as much as 30\\\" or more is attained. This swimming creates a whirlpool of size and power sufficient to draw down a ship of small to small-medium size (up to 60 feet in length). Ships will be dragged to the bottom at a rate of 10 feet per round. It will avoid larger ships. As it takes some 5-8 rounds for the circling afanc to create the whirlpool, and because the monster must be at the surface to do so, concerted attack by spells and/or heavy missile fire might drive the creature off. Creatures dragged down are subject to attack as the afanc is 10% likely to submerge and try either some other mode of attack or seek easier prey. Of course, rafts, boats, and similar small craft (30 feet or less in length) are typically rushed, knocked so as to capsize, and the passengers consumed by the greedy beast. An afanc appears similar to a cross between a whale and a great fish. The body is whale-like, but the head is more fish-like, and the tail is vertical. Its color is gray to blue-gray. These creatures are fishes, although they breathe both air and water.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/agathion.lua",
+   "content": "-- Agathion: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Agathion\",\n  page = \"9\",\n  pages = \"9\",\n  source = \"MM2\",\n  race = \"Agathion\",\n  hitDice = \"7+7\",\n  hitDiceNum = 7,\n  hitDiceBonus = 7,\n  avgHp = 31,\n  armorClass = \"0\",\n  numAttacks = 2,\n  damage = \"By weapon type (see below)\",\n  xp = 1800,\n  xpPerHp = 10,\n  xpValue = 2110,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"18\\\"\",\n  size = \"M or L (see below)\",\n  intelligence = \"very to genius\",\n  alignment = \"neutral good\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"35%\",\n  psionic = \"177\",\n  attackDefenseModes = \"All/all\",\n  text = \"The race of agathia are spirits of a beneficent and helpful sort. There are multitudes of them on the Upper Outer Planes, but when encountered on the Prime Material Plane, there will usually be but a single one. Agathia are usually sent to the Prime Material Plane by a deity or perhaps a solar to be ready to aid creatures of good disposition in confronting and defeating evil. Agathia take a material form as desired. One encountered will typically be in human form, in the form of a beneficent creature (such as a lammasu, shedu, or unicorn), or in non-corporeal form and contained in a ring, talisman, or possibly a small vase or flask, etc. Human form is 60% likely. In this form, the agathion will use weapons typical of a cleric and have spell powers and abilities equal to that of a 7th-level cleric. As the agathion's wisdom equals 18, bonus spells are applicable. The appearance of the agathion can be young or old, male or female, handsome or plain, rustic or urbane. In creature form - but 30% probable - the agathion will have whatever attack forms that creature possesses and the creature's spell abilities, if any, and the powers to turn undead of a 14th-level cleric. Only 10% of the time will an agathion be encountered in non-corporeal form and contained within some object. When thus present, the agathion is able to bestow its 1st-level cleric spell ability on the possessor of the item, automatically detect evil, and allow the individual to affect undead as if he or she were a 6th level cleric. In addition to clerical spell powers and turning undead as noted, agathia can become ethereal at will, travel astrally, detect evil, and speak any language by a telepathic means. They are struck only by +1 or better magic weapons, save as 14th-level clerics, regardless of the form they are in, and are immune to life-level draining, death spells, disintegration, and energy from the Positive Material Plane. Psionically, agathia have the following disciplines: clairaudience, clairvoyance, object reading, suspend animation, aura alteration, dimension walk, mind bar, telepathic projection. Performance is at 14th level of mastery. If the agathion voluntarily leaves its form, or is slain, it will return to its own plane. In the former case, it will not come back unless called for. In the latter case, it cannot come back for from 10-60 years during which period it regains its strength. Astral or ethereal travel in pursuit of its mission does not constitute voluntary abandonment of selected form, except in the case of the item-housed agathion when not accompanied by the item's possessor. In its natural form, the agathion is an elf-like creature with opalescent, luminous skin and eyes which actually shine. Male and female agathia are of equal size and power. The physical touch of an agathion in natural form will send 7-14 points of positive power damage to opponents so struck.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/annis.lua",
+   "content": "-- Annis: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Annis\",\n  page = \"9\",\n  pages = \"9\",\n  source = \"MM2\",\n  race = \"Annis\",\n  hitDice = \"7+3-12\",\n  hitDiceNum = 7,\n  hitDiceBonus = 3,\n  avgHp = 27,\n  armorClass = \"0\",\n  numAttacks = 3,\n  damage = \"2-9/2-9/3-9 (with strength bonus 9-16/9-16/3-9)\",\n  xp = 1300,\n  xpPerHp = 10,\n  xpValue = 1570,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1-3\",\n  lairPct = 20,\n  treasure = \"D\",\n  move = \"15\\\"\",\n  size = \"L (7-1/2'-8' tall)\",\n  intelligence = \"low to exceptional\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"Grappling (see below)\",\n  specialDefenses = \"100% vs. illusion/phantasm magic only\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of annis are relatives of the night hags (q.v.) of the Lower Planes. Their appearance is similar to night hags, but annis are larger and more physically powerful. Annis dwell naturally upon the Prime Material Plane. These giantesses are particularly fond of human flesh; however, so voracious is their appetite, they will devour even so rank a beast as a stench kow. It is common for annis to dwell singly or in a small group, but these creatures have also been known to cooperate with such monsters as ogres, trolls, and evil giants for reasons of safety or better provisions, and occasional mixed communities have been encountered. An annis typically attacks with her iron-like talons and teeth, inflicting horrible wounds. As the strength of an annis is equal to that of a hill giant (19), it will also tend to grapple with an opponent. If an annis succeeds in hitting one creature with all 3 of her attacks during the same round, the annis has automatically seized her opponent after inflicting damage, and the opponent is held fast. Next round, all attacks by the annis are automatic hits, unless the opponent is stronger, the annis is slain, or the victim has some means of magical escape. Otherwise, the annis will continue to hold her grip and deliver damage with raking talons and gnawing fangs until the opponent is slain. In addition to normal attacks, an annis has the spell-like ability to cast a fog cloud at an opponent. This will be done to confuse resistance or delay attack by a superior foe. For defense an annis has the spell-like power of change self, so she can appear as a large human, ogre, etc. Such powers are usable 1 at a time, 1 per round, twice each per day. They are cast at 8th level for purposes of determining spell range, duration, etc. Because of the iron-hard skin of an annis, treat the monster as if she were clad in plate mail for purposes of adjusting weapons vs. armor types. In any event, when striking an annis, edged weapons will do -1 damage, and blunt ones +1. (Consider flails and morning stars as blunt weapons.) Annis have normal infravision but superior hearing and sense of smell. They speak their own language, Ogre, common Giant, and a smattering of Common. Some of the most intelligent are able to speak various humanoid languages and are more fluent in Common. An annis is a deep blue color, quite similar in complexion and visage to a night hag. Hair, teeth, and nails are glossy black. The eyes of an annis are usually dull, however, being greenish or yellow instead of the red of their night hag cousins. The tall body is thin, muscular, and wiry. The arms and legs are long and quick. Their garb is not unlike that of peasant women, but usually more tattered and filthy.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/ant_lion.lua",
+   "content": "-- Ant Lion: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Ant Lion\",\n  page = \"10\",\n  pages = \"10\",\n  source = \"MM2\",\n  race = \"Ant Lion\",\n  hitDice = \"8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 28,\n  armorClass = \"2\",\n  numAttacks = 1,\n  damage = \"5-20\",\n  xp = 575,\n  xpPerHp = 10,\n  xpValue = 855,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"1\",\n  lairPct = 95,\n  treasure = \"See below\",\n  move = \"9\\\" (1\\\" in loose soil)\",\n  size = \"L\",\n  intelligence = \"animal\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Giant ant lions are huge insects inhabiting areas of sand and gravel where giant ants and similar large insects are common. Typical habitats are desert fringes, badlands, and areas of rocky terrain. There the ant lions dig tapering pits of about 60 feet in diameter. The pits will look like a cave or lair entrance 50% of the time. Any creature entering these funnel-shaped traps will be 50% likely each round to slip and slide down the loose sides and land at the bottom. Lurking there is the ant lion. It will burst out of the covering of loose sand, gravel, and stones beneath which it has buried itself and attack the victim with its huge mandibles. A hit indicates the ant lion has closed its jaws and will not release its prey until it or the prey is dead. Thus, each round after the initial hit, the ant lion will inflict 5-20 points of damage automatically. Although ant lions do not collect treasure, there is a 30% chance that there will be 1-4 of the following items in the monster's lair from previous kills: 1-6, 10-40 gp; 7-10, 5-20 pp; 11-13, shield; 14-17, metal weapon; 18-19, jewelry; 20, miscellaneous item. There is a 10% chance that such an item will be magical; if so, roll on the appropriate table in the DUNGEON MASTER'S GUIDE or assign an item of relatively low value. Ant lions devour 1 or more giant insects each day, carrying the remains away and concealing them. Thus it is possible to encounter one outside its pit.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/ascomoid.lua",
+   "content": "-- Ascomoid: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Ascomoid\",\n  page = \"10\",\n  pages = \"10\",\n  source = \"MM2\",\n  race = \"Ascomoid\",\n  hitDice = \"6+6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 6,\n  avgHp = 27,\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"1 point/1' cloud diameter\",\n  xp = 775,\n  xpPerHp = 8,\n  xpValue = 991,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 40,\n  treasure = \"Incidental\",\n  move = \"12\\\" (see below)\",\n  size = \"L (5'-10' diameter)\",\n  intelligence = \"unratable\",\n  alignment = \"neutral (evil)\",\n  specialAttacks = \"Spore jet\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Ascomoids are huge puffball-like fungi with very thick, leathery skin. They move by rolling. At first movement is slow - 3\\\" for one round, 6\\\" the next, then 9\\\", then finally 12\\\" - but they can keep it up for hours without tiring. The creature's surface is covered with numerous pocks which serve as sensory organs. Each pock can also emit a jet of spores. Ascomoids attack by rolling into or over opponents. Small and medium-sized opponents are knocked down and must rise during the next round or remain prone. Ascomoids also use their spore jets to attack dangerous enemies. Large opponents or those who have inflicted damage upon the ascomoids will always be attacked by spore jets. The stream of spores is about 1 foot in diameter and 30 feet long. Upon striking, the stream puffs into a cloud of variable diameter (5-20). The creature(s) under attack must save vs. poison or die from infection in its (their) internal systems in 1-4 rounds. Even those saving are blinded and choked to such an extent that they will require 1-4 rounds to recover and rejoin melee. Meanwhile, they are nearly helpless, and all attacks upon them are at +4 with no shield or dexterity bonuses allowed. Different types of weapons affect the ascomoid differently. Piercing weapons, such as spears over 6 feet long, score double damage. Shorter stabbing weapons do damage as if against a small-sized opponent. Similarly, blunt weapons do not harm ascomoids; slashes and cuts from edged weapons cause only 1 point of damage; and magical attacks, such as magic missiles, fireballs, and lightning, etc., are saved against at +4, and damage is only 50% of normal. (Cold-based attacks are at normal probabilities.) As these fungi have no minds by ordinary standards, all spells affecting the brain (charm, ESP, etc.), unless specific to plants, are useless.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/aspis_drone.lua",
+   "content": "-- Aspis Drone: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Aspis Drone\",\n  page = \"10\",\n  pages = \"10-11\",\n  source = \"MM2\",\n  race = \"Aspis Drone\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 21,\n  armorClass = \"3(2)\",\n  numAttacks = 2,\n  damage = \"1-4/1-4 or by weapon type\",\n  xp = 300,\n  xpPerHp = 6,\n  xpValue = 426,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"2-20\",\n  lairPct = 30,\n  treasure = \"F\",\n  move = \"15\\\"\",\n  size = \"M\",\n  intelligence = \"very\",\n  alignment = \"neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Considered mysterious by humans, aspis are seldom encountered in populated lands unless raiding for food. They commonly live in small groups, tending to their own business and only occasionally dealing with outsiders. Few people can report of ever meeting one of these creatures, and the existence of larvae and cows is only rumor. These must exist, however, as they are necessary for the survival of the race. Drones: Aspis drones are the adult males of the nest and perform all functions dealing with the outside world. These creatures lack individual identity even to the point of not having personal names. Fierce warriors, they are capable of using all weapons but bows and can fashion items they need with skill. Although they prefer to travel on all 6 legs, in combat they will stand on their hind legs, using the other 4 to wield 2 weapons and 2 shields (making their armor class 2). They are fanatically loyal to a single cow and will defend her to the death. They are immune to electrical and cold attacks and will only take half-damage from fire-based attacks. Aspis drones speak their own language and 5% will be able to speak Common. They do not have a written language per se but may communicate by using subtle scents and perfumes. Drones are 6 feet long and look like giant weevils. They have an extremely long proboscis and multifaceted eyes. Their diet consists of vegetable matter and meat. Blood is a preferred drink amongst them.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/aspis_larva.lua",
+   "content": "-- Aspis Larva: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Aspis Larva\",\n  page = \"10\",\n  pages = \"10-11\",\n  source = \"MM2\",\n  race = \"Aspis Larva\",\n  hitDice = \"2-5\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 7,\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"2-7\",\n  xp = 28,\n  xpPerHp = 2,\n  xpValue = 42,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"3-30\",\n  lairPct = 90,\n  treasure = \"Nil\",\n  move = \"1\\\"//6\\\"\",\n  size = \"S\",\n  intelligence = \"non-\",\n  alignment = \"neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Immune to acid\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Considered mysterious by humans, aspis are seldom encountered in populated lands unless raiding for food. They commonly live in small groups, tending to their own business and only occasionally dealing with outsiders. Few people can report of ever meeting one of these creatures, and the existence of larvae and cows is only rumor. These must exist, however, as they are necessary for the survival of the race. Larvae: Aspis larvae are the offspring of the nest. Ranging anywhere from 1-1/2 to 3 feet in length, they resemble fat, white grubs. They are blind and deaf but can locate and identify other creatures through vibrations and scent. They have voracious appetites and require an almost constant supply of food. They are most commonly found in hatcheries maintained by the drones, which are usually pits of rotting materials in which the larvae swim or burrow and feed. Occasionally the drones will select 1 larva and feed and treat it in such a way that it will not develop along normal lines, but will instead become an aspis cow.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/aspis_cow.lua",
+   "content": "-- Aspis Cow: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Aspis Cow\",\n  page = \"10\",\n  pages = \"10-11\",\n  source = \"MM2\",\n  race = \"Aspis Cow\",\n  hitDice = \"10\",\n  hitDiceNum = 10,\n  hitDiceBonus = 0,\n  avgHp = 35,\n  armorClass = \"7\",\n  numAttacks = 1,\n  damage = \"3-18\",\n  xp = 1350,\n  xpPerHp = 14,\n  xpValue = 1840,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 95,\n  treasure = \"Nil\",\n  move = \"3\\\"\",\n  size = \"L\",\n  intelligence = \"low\",\n  alignment = \"neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Considered mysterious by humans, aspis are seldom encountered in populated lands unless raiding for food. They commonly live in small groups, tending to their own business and only occasionally dealing with outsiders. Few people can report of ever meeting one of these creatures, and the existence of larvae and cows is only rumor. These must exist, however, as they are necessary for the survival of the race. Cow: Unlike other larvae who metamorphose into drones, the cows retain their larval form, becoming huge and bloated females, 10-15 feet in length. Their sole purpose in life is to lay eggs for the nest. They are sluggish creatures, but their large size makes their bite dangerous. In addition, their skin exudes a milky, acidic slime that will eat through metal or wood in 1 round and will burn exposed flesh for 1-8 points of damage each round until washed off. Aspis lairs are found underground and consist of sloping tunnels bored through soft rock or dirt. A lair or nest will consist of 1-3 egg chambers, 2-4 granaries, 1-6 grub hatcheries, and a central chamber. The tunnels are commonly about 4 feet high and will be well-defended by traps and guards. The grub hatcheries will contain 1-10 larvae each. Only 1 cow will be found in any nest. There is a 10% chance that 10-100 giant ants will share the nest with the aspis.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/atomie.lua",
+   "content": "-- Atomie: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Atomie\",\n  page = \"11\",\n  pages = \"11\",\n  source = \"MM2\",\n  race = \"Atomie\",\n  hitDice = \"1/2\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 2,\n  armorClass = \"4\",\n  numAttacks = 2,\n  damage = \"By weapon type (see below)\",\n  xp = 40,\n  xpPerHp = 1,\n  xpValue = 42,\n  xpSource = \"mm2_print\",\n  frequency = \"rare\",\n  noAppearing = \"30-120\",\n  lairPct = 35,\n  treasure = \"M,Q,C (magic)\",\n  move = \"12\\\"/24\\\" (MC: A)\",\n  size = \"S (1' tall)\",\n  intelligence = \"average to very\",\n  alignment = \"chaotic neutral (good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The smallest of sprites, atomies are found only in secluded glens. Being nocturnal, the atomies issue forth at night to gather food, frolic, and otherwise follow the pursuits common to such folk. They are sometimes (20%) found in company with grigs (q.v.). Atomies dwell in great trees, verdant banks, and similar abodes. There they build arboreal balconies, comfortable chambers in hollow trunks, underground halls and chambers, and so forth. Atomies are nimble and fast, and they can dart in for an attack with spear or sword almost before an opponent realizes it. Thus they gain 1 on initiative die rolls. They attack as 3rd-level fighters. Typical weapons are small crossbows (20%) with a 3\\\" range and 1-3 points of damage, small spears (60%) doing 1-4 points of damage when thrust or thrown (double when used in diving or charging flight), and small swords (40%) equal to a knife doing 1-3 points damage. Atomies have the following spell-like powers, usable at will 1 at a time, 1 per round, at 5th-level ability: blink, invisibility, pass plant, speak with animals, summon insects. Atomies are 90% likely to surprise and only 10% likely to be surprised. Their hearing is double human norm, and they have infravision and ultraviolet of double normal range (120 feet). In addition to their own language, a dialect of Sprite, they speak Pixie and a smattering of Common. Atomies are very thin and have long arms, legs, and fingers. Their heads are long also, as are their narrow ears. Their features are pointy but quite attractive when compared to others of their type, such as sprites, pixies, and grigs.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/aurumvorax.lua",
+   "content": "-- Aurumvorax: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Aurumvorax\",\n  page = \"11\",\n  pages = \"11\",\n  source = \"MM2\",\n  race = \"Aurumvorax\",\n  hitDice = \"12\",\n  hitDiceNum = 12,\n  hitDiceBonus = 0,\n  avgHp = 42,\n  armorClass = \"0\",\n  numAttacks = 1,\n  damage = \"2-8\",\n  xp = 2700,\n  xpPerHp = 16,\n  xpValue = 3372,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare\",\n  noAppearing = \"1\",\n  lairPct = 30,\n  treasure = \"Incidental\",\n  move = \"9\\\" (3\\\")\",\n  size = \"S\",\n  intelligence = \"animal\",\n  alignment = \"neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The aurumvorax, or golden gorger, is mean, vicious, and always hungry. It dwells in open or lightly-forested areas. Despite its small, badger-like size (1-1/2 feet tall, 3 feet long) and shape, it weighs over 500 pounds, as its flesh is very dense. When attacking, it scuttles forth from its burrow, locks its teeth into the victim, and brings 2-8 of its clawed legs into play. Once it bites successfully for 2-8 points, the aurumvorax holds on. On each succeeding round it automatically inflicts 8 points of biting damage, and it has 2-8 additional clawing attacks which inflict 1-6 points of damage when they hit. Dexterity of the opponents is negated for computation of armor class in this case. Only death will unlock its jaws. The attack from a concealed den enables the monster to surprise 50% of the time. Due to its very dense and heavy hide and bones, the aurumvorax takes only half damage from blunt weapons. It is immune to damage from small, normal fires; large, magical fires cause only half normal damage. Poisons and gases do not harm the monster at all. Prey dragged into the lair might have had treasure, and typical items could be mixed with bones and other remains therein. An aurumvorax has a golden coat, often as shining and bright as real gold. Its 8 legs are tipped with copper-colored claws. The creature has coppery teeth as well. Its whiskers and mane guard hairs are a tawny bronze color, and its eyes are silvery with golden pupils.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/azer.lua",
+   "content": "-- Azer: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Azer\",\n  page = \"12\",\n  pages = \"12\",\n  source = \"MM2\",\n  race = \"Azer\",\n  hitDice = \"2+1 to 5+4\",\n  hitDiceNum = 2,\n  hitDiceBonus = 1,\n  avgHp = 8,\n  armorClass = \"2\",\n  numAttacks = 1,\n  damage = \"By weapon type\",\n  xp = 40,\n  xpPerHp = 3,\n  xpValue = 64,\n  xpSource = \"mm2_print\",\n  frequency = \"very rare (common)\",\n  noAppearing = \"1-4 (3-30)\",\n  lairPct = 0,\n  treasure = \"Nil (individuals O; tripled in lair)\",\n  move = \"12\\\"\",\n  size = \"M (4-1/2'-5' tall)\",\n  intelligence = \"low to very\",\n  alignment = \"lawful neutral\",\n  specialAttacks = \"Heat (see below)\",\n  specialDefenses = \"Immune to fire\",\n  magicResistance = \"5-20% (by size)\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The azer are a race of humanoid creatures inhabiting the Elemental Plane of Fire. (Their ruler, Amaimon, is detailed below.) They are common on their own plane but never seen elsewhere unless brought by summoning. They appear much like dwarves with brass-colored skin and flames for hair. Their skin is metallic, which accounts for their high armor class. They wear only kilts or apron-like garments of beaten brass, copper, or bronze. Common azer (hit dice 2+1) are the weakest (encountered 90% of the time), while those with 3+2 hit dice are the next most common (30%). The larger azer are less likely (20%), and the strongest (5+4 hit dice) the least likely to be encountered (10%). The weaker will carry less valuable gems than the stronger (base values 10 gp, 50 gp, 100 gp, and 500 gp, respectively). Azer use broad-bladed javelins which inflict damage equal to a spear. In hand-to-hand combat they employ mallet-like weapons equal to a footman's mace in all respects. Due to their strength, hit probability is always adjusted, as is damage, as follows: 2+1 hit dice, strength 17, +1 to hit, +1 to damage; 3+2 hit dice, strength 18, +1 to hit, +2 to damage; 4+3 hit dice, strength 18/01-50, +1 to hit, +3 to damage; 5+4 hit dice, strength 18/51-75, +2 to hit, +3 to damage. Creatures not immune to fire will take 2-5 points of damage from being grasped by any azer, and the heat of an azer's weapons will inflict damage of +1 to such opponents. However, azer cannot survive in temperatures below 200 degrees F. for more than an hour or so. Cold attacks inflict double normal damage against them. In general, azer are unfriendly, taciturn, and lack compassion. They are greedy, and for clear purple or red gems they may agree to reasonable requests. Once given, the word of an azer is a solid bond.\",\n  plane = \"Elemental Plane of Fire\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/amaimon.lua",
+   "content": "-- Amaimon: promoted by the R797 MM2 letter A round from the MM2 print\n-- (spec tools/spec_r797.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Amaimon\",\n  page = \"12\",\n  pages = \"12\",\n  source = \"MM2\",\n  race = \"Amaimon\",\n  hitDice = \"9+8\",\n  hitDiceNum = 9,\n  hitDiceBonus = 8,\n  avgHp = 39,\n  armorClass = \"Nil\",\n  numAttacks = 1,\n  damage = \"By weapon type\",\n  xp = 0,\n  xpPerHp = 0,\n  xpValue = 0,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"very to genius\",\n  alignment = \"lawful neutral\",\n  specialAttacks = \"Heat (see azer)\",\n  specialDefenses = \"Immune to fire\",\n  magicResistance = \"35%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Amaimon is the legendary king of the azer. He is the largest (9+8 hit dice), strongest (18/00 for +3/+6), and most intelligent of all his kind. His nobles number from 8-32, being only slightly less superior (7+6 hit dice, 18/76-90 for +2/+4). Amaimon has 35% magic resistance; noble azers have 25%. The other powers of these creatures are currently unknown. The people of Amaimon dwell in small groups, their typical abode being a tower worked from the natural basalt of their realm, using the plentiful supply of flame nearby. When 20 or more are encountered in their habitation, there will be 2 of the largest normal size, a noble, and 40-70 non-combatant females and young there also. It is likely that the defenses of the place will include air projectors (bellows-like devices) and even special containers to haul water and pour it upon attackers.\",\n  plane = \"Elemental Plane of Fire\",\n}\n"
+  }
+ ]
+}

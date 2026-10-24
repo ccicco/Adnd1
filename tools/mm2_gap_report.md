@@ -70,7 +70,7 @@ the R614 precedent.
   sub-censuses and the family sub-rosters walk AT
   PIN TIME from the print (the R792 lesson), the
   pinning order TBD by the registry promotion plan
-- [ ] **Letter A** (pp. 8-109) - the A-Z entries
+- [x] **Letter A** (pp. 8-109) - the A-Z entries
   under A; the archive.org heading walk found 7
   candidate entry headings - the pin-time walk from
   the print is authoritative

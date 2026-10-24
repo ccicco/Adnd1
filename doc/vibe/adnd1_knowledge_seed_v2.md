@@ -20373,6 +20373,105 @@ when both halves land.
   registry promotion pattern, DDG on
   the deity prose pattern; or the UA
   logging-boxes maintenance round).
+- R796 LANDED 2026-10-24: commit
+  dd95bc91f8399240fbc4f5c9f33f33f701b2b235
+  (census 718 -> 719, pushed
+  e035fae..dd95bc9), THE MM2 ARC
+  OPENER - the new book arc begins
+  (Curtiss's MM2 pick from the
+  next-arc candidates; the registry
+  promotion pattern). The new
+  tools/mm2_gap_report.md (authored
+  per the OA conventions, 37 line
+  items) opens with five flips: the
+  front matter (pp. 1-4), How To Use
+  This Book (pp. 5-7), the Number
+  Ranges table (p. 5), the General
+  Entries doctrine (pp. 5-6), and
+  the Special Entries doctrine (pp.
+  6-7) - 5 closed, 32 open. Header
+  rules/mma.h, prefix mma. Engine
+  double-run applied 9/already 0 ->
+  0/9 (the seed record, the header,
+  the 5 flips, the include, the
+  audit - no file patches, no data
+  files). Device gates: battery
+  loaded 478, errors 0; xp audit
+  478 checked, 0 anomalies;
+  encounter smoke 2000 rolls, 0
+  bad; AUDIT CENSUS 719 each exactly
+  once, all bad 0; build 0
+  warnings; preflight GREEN, first
+  pass of the landing run. Commit 5
+  files, 874 insertions (mma.h, the
+  gap report, and the spec created;
+  the seed and regtest patched).
+  THE AUTHORED-POST-FLIP LESSON
+  (caught 2026-10-24 after three
+  aborted runs): the gap report
+  canvas was emitted in its
+  POST-round form - the five boxes
+  [x] and the footer stamped "5
+  closed after the R796 opener
+  flips, 32 open" - and the
+  authored md5
+  5cd692357d8a8f6e0db4652292a7732b
+  covered that post-flip body, so
+  the md5 gate passed on every run
+  while the engine read the five
+  flips as ALREADY against the
+  applied seed/header/include/audit:
+  the R420 mixed abort on every
+  attempt, the tree never dirty,
+  nothing ever written (the first
+  attempt's output was never seen -
+  every pasted run was the same
+  pre-write abort). DIAGNOSIS: the
+  R420 gate read from
+  tools/splice_engine.py at GitHub
+  HEAD (six census sections: the
+  seed key, the header existence,
+  the gap flips, the include, the
+  audit, the file patches, the data
+  files), then a local mirror of the
+  engine's applied/already checks
+  printed the culprit - all five
+  flips to-in: True on the md5-gated
+  body. REPAIR: reverse the spec's
+  own gap_flips (to -> from) into
+  the file - the TRUE pre-flip md5
+  215f50b2032931fb3a70309b26978e3c
+  - then the one ./rn handoff
+  landed; a canvas re-save once
+  reverted the fix (the post-flip
+  body re-broke the round). STANDING
+  RULES FROM THE CLASS: (a) an
+  arc-opener gap report canvas is
+  authored PRE-FLIP (all boxes
+  [ ]) - an authored-post-flip body
+  is a permanent R420 mixed abort
+  no tree restore can fix; verify
+  the delivered body with
+  `grep -c '^- \[x\]'` == 0 (box
+  lines only - legend text may
+  legitimately carry "[x]", as the
+  mm2 conventions line does); (b)
+  the engine never reads or writes
+  the gap report footer - authored
+  free text that rides the landed
+  file as written; (c) git checkout
+  with any invalid pathspec restores
+  NOTHING (one bad pathspec errors
+  the whole command), and an
+  untracked flip target can never be
+  git-restored - the spec's
+  gap_flips are their own repair
+  kit. Spec md5
+  46ff674831d42a2e4fe6790870c1adf0
+  (printed at every run, unchanged).
+  NEXT - R797: awaits Curtiss's
+  call (the MM2 arc runs on - 32
+  open boxes in the mm2 gap report).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
