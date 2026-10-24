@@ -74,11 +74,11 @@ the R614 precedent.
   under A; the archive.org heading walk found 7
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter B** (pp. 12-126) - the A-Z entries
+- [x] **Letter B** (pp. 12-126) - the A-Z entries
   under B; the archive.org heading walk found 12
   candidate entry headings - the pin-time walk from
   the print is authoritative
-- [ ] **Letter C** (pp. 10-114) - the A-Z entries
+- [x] **Letter C** (pp. 10-114) - the A-Z entries
   under C; the archive.org heading walk found 9
   candidate entry headings - the pin-time walk from
   the print is authoritative

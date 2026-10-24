@@ -20472,6 +20472,120 @@ when both halves land.
   NEXT - R797: awaits Curtiss's
   call (the MM2 arc runs on - 32
   open boxes in the mm2 gap report).
+- R797 LANDED 2026-10-24: commit
+  dca940051931f8790d3e4f79b21e5879c6ca34a8
+  (census 719 -> 720, pushed
+  dd95bc9..dca9400), THE MM2 LETTER
+  A - the first A-Z round of the MM2
+  arc (Curtiss's Go call on the landed
+  opener). THE PIN-TIME WALK found
+  TEN entries on pp. 8-12 (aboleth,
+  afanc, agathion, annis, ant lion,
+  ascomoid, aspis, atomie, aurumvorax,
+  azer) - the opener's 7-candidate
+  archive.org walk superseded (the
+  R792 lesson holds: the print walks
+  at pin time). THIRTEEN defs ride
+  the R791 data_files extension in
+  the MM1 registry schema: the ten
+  stat blocks, the aspis split three
+  ways (drone, larva, cow - the oni
+  precedent), and the Amaimon
+  paragraph as the azer-king
+  sub-entry (the marut sentinel
+  precedent: unprinted xp 0, AC
+  "Nil" -> 9, and its unprinted
+  combat lines read the azer kind
+  defaults). Registry 478 -> 491.
+  Header rules/mm2a.h, prefix mm2a;
+  138 consts + 71 bools + 4 tables
+  (AStats 12x9, AntLionItems 6x3,
+  AspisLarvaXp 4x3, AzerBrackets
+  4x11) = 235 inline. TWO regtest
+  patches: mm2_print joins the
+  xp-audit allowed-source list; the
+  live def walk at the R227 anchor
+  (the R782 site-block pattern, no
+  census marker) cross-checks all
+  13 defs against the stat grid, the
+  planes, the xpValue formula, the
+  Amaimon sentinels and the registry
+  census. Settled reads: the atomie
+  LEVEL/X.P. II/40 is the roman II
+  (the OCR 11/40 misread); the annis
+  7+3-12 and azer 2+1 to 5+4 ranges
+  pin their low ends (the R792 range
+  precedent); avgHp = floor(num*3.5)
+  + bonus. Gap flip: the Letter A box
+  (6 closed, 31 open). Delivery: raw
+  JSON canvas, spec 97951 bytes md5
+  7f5a59092937eb10e05e23d86b4665a7.
+  AUTHORING LESSON: def Lua text
+  strings join paragraphs with
+  single spaces - raw \n\n newlines
+  inside Lua string literals are a
+  load error (the gaki precedent
+  generalized).
+  FIRST RUN RED-NO-COMMIT, then the
+  repair landed: the battery printed
+  "R797 MM2 letter A live defs:
+  bad 1" plus a wave of CENSUS FAILs
+  (R100-R146, R163-R175, R227-R229)
+  - THE CENSUS WAVE WAS PURE
+  CASCADE, and its signature is the
+  diagnostic: the audit block
+  insertion reuses the base's own
+  "if (bad) return 1; }" as its scope
+  closer, so the round's block sits at
+  the END of the audit pile and a
+  nonzero bad early-returns the
+  battery before every label that
+  prints later in file order.
+  Standing rule: a census missing
+  exactly the labels that print AFTER
+  your block means YOUR block's bad
+  counter, not a census bug - fix the
+  bad, never the census. ROOT CAUSE
+  (one def): afanc carried
+  "numAttacks = 1 or 2" UNQUOTED -
+  valid Lua that loads errors-0 and
+  evaluates to the NUMBER 1 (or
+  short-circuits on truthy), so the
+  loader read attacks 1 against the
+  pin 2. THE BARE-EXPRESSION LESSON:
+  every non-numeric def field rides a
+  QUOTED string; an unquoted "N or M"
+  token is a Lua expression, not a
+  string, and never fails the load -
+  the sim must model Lua expression
+  semantics (the authoring-side
+  loader sim treated the token as the
+  string "1 or 2", max-coerced 2,
+  matched the pin and hid the bug;
+  only the real Lua VM caught it).
+  REPAIR (the R639 flow): one pair of
+  quotes (spec 97947 -> 97951 bytes,
+  md5 7f5a59092937eb10e05e23d86b466
+  5a7); tree reset FIRST - git
+  checkout the three patched tracked
+  files plus rm the header and the 13
+  .lua (data_files idempotency is by
+  existence: a stale afanc.lua would
+  read "already" and keep the bug);
+  md5 gate; one ./rn. Repair run
+  GREEN first pass: loaded 491,
+  errors 0; xp audit 491/0; live
+  defs bad 0; AUDIT CENSUS 720 each
+  exactly once, all bad 0; build 0
+  warnings. Commit 18 files, 5037
+  insertions, 2 deletions (the
+  regtest xp-source line rewritten by
+  the patch). NEXT - R798: awaits
+  Curtiss's call (the MM2 arc runs
+  on - 31 open boxes; NOT
+  letter-by-letter: A was the
+  mechanics shakedown and the next
+  scope is Curtiss's call).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
