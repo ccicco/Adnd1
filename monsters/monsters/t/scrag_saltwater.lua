@@ -1,0 +1,36 @@
+-- Scrag, Saltwater: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Scrag, Saltwater",
+  page = "121",
+  pages = "121",
+  source = "MM2",
+  race = "Scrag",
+  hitDice = "6+12",
+  hitDiceNum = "6",
+  hitDiceBonus = "12",
+  avgHp = "33",
+  armorClass = "2",
+  numAttacks = 3,
+  damage = "1-4/1-4/9-16",
+  xp = "900",
+  xpPerHp = "12",
+  xpValue = 1296,
+  xpSource = "mm2_print",
+  frequency = "Uncommon",
+  noAppearing = "1-8",
+  lairPct = "15",
+  treasure = "D",
+  move = "3\\\"/12\\\"",
+  size = "L (10'+ tall)",
+  intelligence = "Low to average",
+  alignment = "Chaotic evil",
+  specialAttacks = "See below",
+  specialDefenses = "Regeneration",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Marine trolls are a gilled form of the common troll. They inhabit large bodies of water and need considerable room to hunt. Coloration runs from blue-green to olive.\n\nScrags found in seas and oceans are at least as large as ordinary trolls. Their skins are thick and heavily scaled. Some few (10%) are intelligent enough to further protect themselves with armor made of shells and sharkskin or similar substances; such protection gives an effective armor class of 1.\n\nThe forelimbs of the scrags are shorter and weaker than those of ordinary trolls, but the saltwater variety has developed a huge maw and numerous fangs to make up for the loss of talon attacks. As do freshwater scrags, saltwater scrags regenerate when in their saltwater element.",
+}

@@ -1,0 +1,36 @@
+-- Termite, Soldier: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Termite, Soldier",
+  page = "118",
+  pages = "118-119",
+  source = "MM2",
+  race = "Termite, Giant Harvester",
+  hitDice = "2+2",
+  hitDiceNum = "2",
+  hitDiceBonus = "2",
+  avgHp = "9",
+  armorClass = "2/8 (head/body)",
+  numAttacks = 1,
+  damage = "1-4",
+  xp = "50",
+  xpPerHp = "3",
+  xpValue = 77,
+  xpSource = "mm2_print",
+  frequency = "See below",
+  noAppearing = "3-18",
+  lairPct = "20",
+  treasure = "See below",
+  move = "9\\\"",
+  size = "M (4 1/2' long)",
+  intelligence = "Semi-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The soldier termites have strong jaws and are able to spit an irritating fluid (similar to kerosene). This liquid will blind any creature struck unless a saving throw vs. poison is successful. Blindness lasts for 5-20 rounds. The fluid will burn if exposed to flame or heat, and the effect of 1 quantity spit on a target and ignited will inflict 5-16 points of burning damage. The fluid can be spit but once per turn. Range is 1\", volume is about 1 pint.\n\nA group of workers numbering more than 30 will always be accompanied by 3-16 soldier termites. In the lair there will always be 10 times the number of workers and soldiers first encountered. When either the egg or royal chambers are entered by intruders, soldier termites already there will fight fiercely to protect the place, getting a +1 both to hit and to damage.",
+}

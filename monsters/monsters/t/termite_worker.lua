@@ -1,0 +1,36 @@
+-- Termite, Worker: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Termite, Worker",
+  page = "118",
+  pages = "118-119",
+  source = "MM2",
+  race = "Termite, Giant Harvester",
+  hitDice = "1+2",
+  hitDiceNum = "1",
+  hitDiceBonus = "2",
+  avgHp = "5",
+  armorClass = "2/10 (head/body)",
+  numAttacks = 1,
+  damage = "1-2",
+  xp = "20",
+  xpPerHp = "2",
+  xpValue = 30,
+  xpSource = "mm2_print",
+  frequency = "See below",
+  noAppearing = "6-60",
+  lairPct = "20",
+  treasure = "See below",
+  move = "9\\\"",
+  size = "S (3' long)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Giant termites are found in subtropical and tropical forests and jungles where large amounts of vegetation are available. The nest will consist of a stone-hard mound about 100 feet in diameter and 200-500 feet high. There will be numerous circular openings near the top, each of 5-8 feet in diameter. These holes lead to vertical, diagonal and horizontal passages, which in turn lead to various chambers underground.\n\nTermites are nocturnal and shun light. A group of workers numbering more than 30 will always be accompanied by 3-16 soldier termites. While the weak-mandibled worker is able to bite for only 1-2 points of damage, soldier termites have strong jaws and are able to spit an irritating fluid (similar to kerosene).\n\nIn the lair there will always be 10 times the number of workers and soldiers first encountered, but these creatures will be spread throughout the nest. There will be the following additional giant harvester termites: 5-30 workers/attendants in egg chamber, 2-12 soldier/guards in egg chamber, 4-24 worker/attendants in royal chamber, 2-8 soldier/guards in royal chamber, 1 king, and 1 queen.\n\nWhen either the egg or royal chambers are entered by intruders, all regular termites (not special attendants and guards) will begin moving to the violated area. Meanwhile, termites already there will fight fiercely to protect the place. All such workers and guards get a +1 both to hit and to damage. This applies to workers and soldiers entering later as well.\n\nThe worst enemies of giant termites are formians, for formians are bigger and more intelligent, hate termites, and enjoy eating their eggs. If giant termites detect such raiders, they will immediately rush to defend their nest. Communications between giant termites are usually accomplished by touching of antennae. In crisis situations, a broadcast telepathic call is sent out.",
+}

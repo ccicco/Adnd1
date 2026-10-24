@@ -1,0 +1,36 @@
+-- Thri-Kreen (Mantis Warrior): promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Thri-Kreen (Mantis Warrior)",
+  page = "119",
+  pages = "119",
+  source = "MM2",
+  race = "Thri-Kreen",
+  hitDice = "6+3",
+  hitDiceNum = "6",
+  hitDiceBonus = "3",
+  avgHp = "24",
+  armorClass = "5",
+  numAttacks = "5 or 3",
+  damage = "1-4 (x4) or by weapons +2",
+  xp = "800",
+  xpPerHp = "8",
+  xpValue = 992,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "2-12",
+  lairPct = "5",
+  treasure = "Q",
+  move = "18\\\"",
+  size = "M (6')",
+  intelligence = "High",
+  alignment = "Chaotic neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Dodge missiles on roll of 9 or better",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The thri-kreen are a race of carnivorous insectmen who inhabit deserts and dry grasslands. They live in small, lightless burrows and are not social creatures. Thri-kreen warriors hunt many creatures, especially elves. These mantis warriors are strong and agile, able to leap 20 feet upward and 50 feet forward.\n\nThe thri-kreen often use 2 specialized weapons of their own design. One is a polearm with a blade on each end which can be used to slash like a glaive or be thrown as a spear (damage 3-8). The other weapon is a small triangular 'throwing wedge' carved from a hard crystalline substance. These wedges will return to the thrower and may be caught to be thrown again if they miss their target. A thri-kreen may carry up to 10 of the wedges and can throw them up to a distance of 9\" (damage 3-6). A thri-kreen can successfully dodge missiles on a roll of 9 or better on 1d20.\n\nEven unarmed, the insect warriors strike with 4 clawed, arm-like appendages (damage 1-4) and bite with their mandibles (damage 2-5). Anyone bitten must save vs. paralyzation or be paralyzed for 2-16 rounds.",
+}

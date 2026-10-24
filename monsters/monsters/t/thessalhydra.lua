@@ -1,0 +1,36 @@
+-- Thessalhydra: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Thessalhydra",
+  page = "119",
+  pages = "119",
+  source = "MM2",
+  race = "Thessalhydra",
+  hitDice = "12 (body)",
+  hitDiceNum = "12",
+  hitDiceBonus = "0",
+  avgHp = "42",
+  armorClass = "0",
+  numAttacks = "Up to 10",
+  damage = "1-6 (x8)/1-12/1-20",
+  xp = "5800",
+  xpPerHp = "16",
+  xpValue = 6472,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1",
+  lairPct = "50",
+  treasure = "See below",
+  move = "12\\\"",
+  size = "L (36' long, 20' tall)",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "Acid saliva and spitting",
+  specialDefenses = "Immune to acid",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The dreaded thessalhydrae are monsters which love dark and damp conditions, so they are typically encountered in swamps, jungles, and subterranean lairs.\n\nNormal attack is from the fringe of snake-like heads which ring the vast main mouth of the thessalhydra. Each bite inflicts 1-6 points of damage plus an additional 1-6 unless the victim saves vs. poison. In addition, the main mouth bites for 1-20 points plus another 1-20 points of acid damage unless a saving throw vs. poison succeeds. The tail pincer is used to grasp an opponent, inflict 1-12 points of damage in the process, and then deposit the victim in the gaping central maw during the same round.\n\nEach head in the fringe is some 6 feet long, so many creatures can be attacked during a melee round. Fringe heads each take 12 points of damage to sever. Thessalhydrae regenerate lost fringe heads in 12 days. Damage to fringe heads does not harm the body. Once per day a thessalhydra can spit a glob of acidic saliva from its main mouth. The area covered is effectively a 12-foot diameter circle up to 3\" distant from the monster. Creatures within this area will sustain 12-72 points of acid damage and half damage if a saving throw vs. poison is successful.\n\nAcids of any sort, including poisonous acids, have no effect upon a thessalhydra. Note that items placed in the central maw are usually destroyed, as each must save vs. acid and crushing blows every round until the items are removed.",
+}

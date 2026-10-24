@@ -1,0 +1,36 @@
+-- Vegepygmy: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Vegepygmy",
+  page = "124",
+  pages = "124",
+  source = "MM2",
+  race = "Vegepygmy",
+  hitDice = "1 to 6",
+  hitDiceNum = "1",
+  hitDiceBonus = "0",
+  avgHp = "3",
+  armorClass = "4",
+  numAttacks = 1,
+  damage = "1-6 or by weapon type",
+  xp = "53",
+  xpPerHp = "1",
+  xpValue = 56,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "30-300",
+  lairPct = "40",
+  treasure = "O, T, P",
+  move = "12\\\"",
+  size = "S",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Vegepygmies are vegetable creatures of low intelligence. They organize themselves into regional bands and live by scavenging and hunting. Meat forms their diet and they will eat it no matter what its condition.\n\nVegepygmies vary in color and size. Usually their colors will be similar to their normal surroundings. When encountered in areas that match their coloration, they will blend into the background, surprising 50% of the time. They have 1-4 hit dice, although leaders will have more. The composition of a force will be 1 hit die 50%; 2 hit dice 25%; 3 hit dice 15%; and 4 hit dice 10%.\n\nThose with 1 hit die will be 2 feet tall. One-half foot is added for every hit die over 1.\n\nFor every 50 vegepygmies there will be 1 subchief of 5 hit dice and 2-5 bodyguards of 3 hit dice each. Every band will have a leader of 6 hit dice. He will have 2-8 bodyguards of 4 hit dice each.\n\nAttacks from piercing weapons such as arrows and spears do only 1 point of damage to vegepygmies. Electrical attacks do no damage. Fire and cold do normal damage. Vegepygmies are immune to all charm/enchantment spells except those that affect plants. They always have saving throws against enchantment, even if one is not normally given.\n\nVegepygmy lairs are usually found in warm areas underground, although some may be found in dark forests. They form bands near their main food supply and are usually well-organized in the defense of this food supply. They coexist well with other forms of plant life. There is a 40% chance that there will be 1-3 shriekers guarding their lair. Vegepygmies of the same band have the ability to pass by shriekers unnoticed. There is a 70% chance that russet mold will be found in the vicinity of the lair.\n\nVegepygmies are short bipedal creatures with sharp thorn-like claws. Their shoulders, abdomens, and limbs are fringed with leaf-like tendrils. Their heads have a topknot of small leaves. They eat carrion and meat. Vegepygmies reproduce by russet mold or by propagating buds from their bodies. Although they do not have a spoken language, they are capable of vocalized cries. Their major form of communication is a code of chest slappings and thumpings. They live with dog-like creatures (thornres) with the following statistics: AC 3, MV 15\", HD 4, hp 21-30, #AT 1, Dmg 2-5 (plus 3-12 ripping damage from their thorn-like growths if in close combat), animal intelligence, man-sized.",
+}

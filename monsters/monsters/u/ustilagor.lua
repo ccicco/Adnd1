@@ -1,0 +1,36 @@
+-- Ustilagor: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Ustilagor",
+  page = "122",
+  pages = "122",
+  source = "MM2",
+  race = "Ustilagor",
+  hitDice = "3+3",
+  hitDiceNum = "3",
+  hitDiceBonus = "3",
+  avgHp = "13",
+  armorClass = "5",
+  numAttacks = 1,
+  damage = "2-5 (+ poisoning)",
+  xp = "135",
+  xpPerHp = "4",
+  xpValue = 187,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-3",
+  lairPct = "90",
+  treasure = "Q (x 1-20)",
+  move = "9\\\"",
+  size = "S (1' to 1 1/2' diameter)",
+  intelligence = "Unstable",
+  alignment = "Neutral (evil)",
+  specialAttacks = "Psionics",
+  specialDefenses = "Psionics",
+  magicResistance = "See below",
+  psionic = "150 + 5 to 30",
+  attackDefenseModes = "D/F",
+  text = "Ustilagor fungi appear to be brain-like growths with coral-like appendages. Although soft and not fast by normal standards, they can scuttle and dart, and this accounts for their relatively high armor class. Their attack consists of flicking out ribbon-like tendrils about 3 feet long. A hit inflicts damage due to alkaline fluids and causes the victim to save vs. poison or suffer additional like damage (2-5 hp) on the following round as the caustic substance affects its body.\n\nUstilagors have no intelligence or mind as defined by human standards, so mental attacks do not affect them. (Cf., PLAYERS HANDBOOK, p. 11, Wisdom Table, asterisked paragraph regarding magical attack adjustment.) These monsters do, however, have some form of brain, for they have psionic powers. Ustilagors can employ telempathic projection to project the following emotions on an individual during a round: hate for associate, distrust of associate, fear of fungi, loathing of area, or uncertainty. These projected emotions cause attack, bickering, desertion, or dithering, accordingly. Ustilagors also use energy control to protect themselves from spell attacks and the like. They attack psionic individuals only by id insinuation (as related to the strongest basic emotions.) Only a psionic blast will affect them in turn.",
+}

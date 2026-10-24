@@ -1,0 +1,36 @@
+-- Termite, King: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Termite, King",
+  page = "119",
+  pages = "118-119",
+  source = "MM2",
+  race = "Termite, Giant Harvester",
+  hitDice = "6+6",
+  hitDiceNum = "6",
+  hitDiceBonus = "6",
+  avgHp = "27",
+  armorClass = "5",
+  numAttacks = 1,
+  damage = "3-18",
+  xp = "500",
+  xpPerHp = "10",
+  xpValue = 770,
+  xpSource = "mm2_print",
+  frequency = "See below",
+  noAppearing = "1",
+  lairPct = "20",
+  treasure = "See below",
+  move = "6\\\"",
+  size = "L",
+  intelligence = "Semi-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "1 king (AC 5; MV 6\"; HD 6+6; hp 30 or more; #AT 1; Dmg 3-18; SA double range and quantity fluid spit possible every other round) size L.\n\nThe king and queen termites will be found only in the royal chamber somewhere near the bottom of the underground levels of the nest. The egg chamber will be nearby. When either the egg or royal chambers are entered by intruders, termites already there will fight fiercely to protect the place, getting a +1 both to hit and to damage.",
+}

@@ -1,0 +1,36 @@
+-- Thunderherder: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Thunderherder",
+  page = "120",
+  pages = "120",
+  source = "MM2",
+  race = "Thunderherder",
+  hitDice = "7",
+  hitDiceNum = "7",
+  hitDiceBonus = "0",
+  avgHp = "24",
+  armorClass = "3",
+  numAttacks = 1,
+  damage = "Nil",
+  xp = "350",
+  xpPerHp = "8",
+  xpValue = 542,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "10-100+",
+  lairPct = "5",
+  treasure = "Nil",
+  move = "20\\\" (9\\\")",
+  size = "L",
+  intelligence = "Semi",
+  alignment = "Neutral",
+  specialAttacks = "Earthquake",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Thunderherders are distant cousins to the purple worm but are not aggressive. These creatures travel in vast herds just a few feet under the ground. They are inoffensive and of sizes ranging from 3-5 feet wide and 5-10 feet long. They are found in desert regions.\n\nThe main dangers from thunderherders are the incidental earth tremors and the terrible trumpeting that they create as they stampede underground. They do no real damage but generate a great deal of confusion, knock over tents, and panic all pack animals. A single creature can cause a small tremor.",
+}

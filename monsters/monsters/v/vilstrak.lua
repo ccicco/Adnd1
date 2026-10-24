@@ -1,0 +1,36 @@
+-- Vilstrak (Marl Mugger, Tunnel Thug): promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Vilstrak (Marl Mugger, Tunnel Thug)",
+  page = "124",
+  pages = "124",
+  source = "MM2",
+  race = "Vilstrak",
+  hitDice = "1-6 hp",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "6",
+  armorClass = "2",
+  numAttacks = 2,
+  damage = "2-5/2-5",
+  xp = "7",
+  xpPerHp = "1",
+  xpValue = 13,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "2-20",
+  lairPct = "5",
+  treasure = "C",
+  move = "9\\\"",
+  size = "M",
+  intelligence = "Low",
+  alignment = "Neutral (evil)",
+  specialAttacks = "Surprise on a 1-4",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The vilstrak are known as marl muggers or tunnel thugs by humans. A vilstrak's stony substance provides it with both excellent protection and the uncanny ability to physically merge with earth or stone. This makes them 75% undetectable even at as little as a 20-foot distance. A vilstrak's attack consists of 2 club-like blows of its fists.\n\nA vilstrak's lair is typically in a hollow space in the earth or stone, which is reachable only by beings able to pass through solid stone or packed soil. However, not being too bright, vilstraks sometimes (5%) select a den where the hollow can be detected and broken into. There, plunderers will find treasures carried into it by the avaricious creatures.",
+}

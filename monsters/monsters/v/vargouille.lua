@@ -1,0 +1,36 @@
+-- Vargouille: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Vargouille",
+  page = "123",
+  pages = "123",
+  source = "MM2",
+  race = "Vargouille",
+  hitDice = "1+1",
+  hitDiceNum = "1",
+  hitDiceBonus = "1",
+  avgHp = "4",
+  armorClass = "8",
+  numAttacks = 1,
+  damage = "1-4",
+  xp = "118",
+  xpPerHp = "2",
+  xpValue = 126,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-20",
+  lairPct = "80",
+  treasure = "See below",
+  move = "/12\\\" (MC: B)",
+  size = "S (3' wingspread)",
+  intelligence = "Low",
+  alignment = "Neutral evil",
+  specialAttacks = "See below",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These horrible monsters are said to have been spawned in Tarterus and released upon the Prime Material Plane to wreak havoc. Appearing as hideous flying heads crowned with writhing tentacles, they appear at dusk and are gone by dawn. They lair in caves, caverns, and deep subterranean delves. Vargouilles hate light. They will attack and extinguish torches or smash lanterns. They will shun light of brighter sort, and daylight blinds them. They are most feared because their bite is so destructive that hit points are actually lost forever unless a saving throw vs. poison is successfully made for each bite inflicted. Failure indicates permanent loss of points of damage inflicted, i.e. 1-4 hit points lost and not restorable by any means short of a wish. Vargouilles have both infravision and ultravision.\n\nTreasure possessed by vargouilles is incidental only. If some victim happened to have items of value, then these will possibly be amongst the litter of the vargouilles' lair.",
+}

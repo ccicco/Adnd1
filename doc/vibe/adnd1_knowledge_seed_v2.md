@@ -21805,6 +21805,103 @@ PREFLIGHT GREEN FIRST PASS (the repair cut): loaded 733, errors 0; xp audit
   editor delta). NEXT - R813: awaits Curtiss's call (the natural next walk
   the Letter S box - the S entries span pp. 106-112, a likely multi-round
   letter; 14 open boxes remain).
+- R813 LANDED 2026-10-24: commit
+  61fc91a64cf3b4ebe0daadf943834c1fe9f780fe
+  (census 735 -> 736, pushed b8ecc5e..61fc91a), THE
+  MM2 LETTER S WALK - THE SANDLING TO TAER TURNS -
+  THE S-FLIP ROUND (Curtiss single-letter Go call
+  on the landed letter R walk; round eighteen of
+  the MM2 arc, the SEVENTH single-letter pass).
+THE PIN-TIME WALK: THIRTY-THREE new defs on
+  printed pp. 106-117 - TWENTY-NINE entry heads
+  carrying THIRTY-FOUR stat blocks, plus ONE
+  prior-owned head (the greater shedu - the MM1
+  s/shedu.lua owns it, head pins only). The 33
+  defs (sandling, scorpion large/huge, scum
+  creeper, selkie, shade, sirine, skeleton
+  animal, skunk, slime creature, olive slime,
+  constrictor and poisonous snake, solar,
+  solifugid large/huge/giant, spectator, giant
+  marine spider, spriggan, squealer, giant black
+  and ordinary and carnivorous flying squirrel,
+  stegocentipede, stench kow, stone guardian,
+  storoper, giant sundew, swan, swanmay, sword-
+  fish, taer) ride the R791 data_files extension,
+  registry 733 -> 766. Header rules/mm2s.h,
+  prefix mm2s, 245 consts + 40 bools + ONE grid
+  (the 33x10 SStats stat grid) = 295 inline.
+  THE S-FLIP: the Letter S gap box flips to
+  closed - 24 closed 13 open.
+THE SETTLED READS (capture primary, the 1eonline
+  transcription the cross-check voice): the scum
+  creeper, skunk, ordinary squirrel, carnivorous
+  flying squirrel and solar the flat-hp path
+  (hdNum 0); the shade nil block (the phantom
+  precedent, AC 9 default, xp 0); the solar 177
+  hp, X/95000+35 the xpValue 101195, its AC 9
+  print-wins over the transcription -9; the
+  scorpion large sting 1-16 (the capture clip,
+  the transcription confirmed); the solifugid
+  giant "V350" the V/350+8 read; the sirine MR
+  20, AC 3; the spectator AC 4, size 4-foot
+  diameter; the stegocentipede AC 3, attacks
+  1-and-1 the 2 read; the taer NA 11-30,
+  frequency Very rare; the selkie sealwere; the
+  solar Drawmij (the capture Drawnij the OCR
+  artifact); the olive slime 0 attacks the
+  loader clamp 1; the stone guardian xpValue
+  694 (the pre-compaction note's 696 an
+  arithmetic slip - the floor formula wins, the
+  R803 precedent); the percent lair cells the
+  bare-numeral read (the R812 repair lesson).
+THE R813 REPAIR (the R639/R400/R812 repair flow,
+  nothing landed, the same round number
+  re-issued): the first cut's kS[33]/kSMark[33]
+  array lines each carried a DOUBLE COMMA (a
+  builder join bug - the per-line format already
+  ended with a comma and the join separator added
+  another; 64 lines, the last entry of each array
+  single), so the regtest compile died at
+  regtest.cpp:132676 ("sandling",,) and the
+  census step cascade-printed ~600 CENSUS FAILs
+  (the R806 class - every audit "appears 0
+  times"). The md5 gate, engine double-run,
+  rverify 615/0 and the loader sim ALL passed
+  because none compile C++ - the Termux
+  preflight is the ONLY C++ compile gate (the
+  R639 lesson's cousin: grep the authored patch
+  text for C++ syntax hazards - double commas,
+  stray quotes, hyphens in identifiers - before
+  publish). The repair: the double commas
+  collapsed to single, a repair sentence appended
+  to audit_comment (the R812 precedent), md5
+  fede2f4abb3c32c25274341e8106bf7d 184551
+  bytes; the unwind (git checkout + rm of the 33
+  defs, mm2s.h and the spec) preceded the rerun
+  (the idempotent-by-existence rule).
+ONE REGTEST PATCH: the R813 live def walk at
+  the R227 anchor (the R812 R-walk pattern), its
+  registry census a FLOOR 733 -> at least 766.
+  LOCAL VERIFICATION (environment reset again -
+  rebuilt from the tarball at b8ecc5e, the spec
+  recovered byte-exact from the landed canvas
+  copy): engine double-run 39/0 -> 0/39; rverify
+  GREEN vs b8ecc5e - 615 mutants, 0 missed; the
+  offline loader sim result carried over (the
+  repair touched no data file); the /tmp tree
+  restored pristine after.
+PREFLIGHT GREEN (the repair cut, first pass):
+  loaded 766, errors 0; xp audit 766/0; R797
+  through R813 live defs all bad 0; AUDIT CENSUS
+  736 each exactly once, all bad 0; build 0
+  warnings. Commit 38 files, 7779 insertions.
+  Delivery spec-r813: raw JSON canvas, first cut
+  md5 2c4c9a63af50406ee03b619d86b63ced 184449
+  bytes (RED, nothing landed), repair md5
+  fede2f4abb3c32c25274341e8106bf7d 184551
+  bytes, landed the same (no editor delta).
+  NEXT - R814: awaits Curtiss's call (13 open
+  boxes remain).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

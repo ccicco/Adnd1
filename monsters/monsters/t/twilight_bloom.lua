@@ -1,0 +1,36 @@
+-- Twilight Bloom (Purple Death): promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Twilight Bloom (Purple Death)",
+  page = "122",
+  pages = "122",
+  source = "MM2",
+  race = "Twilight Bloom",
+  hitDice = "3+8",
+  hitDiceNum = "3",
+  hitDiceBonus = "8",
+  avgHp = "18",
+  armorClass = "8",
+  numAttacks = "See below",
+  damage = "See below",
+  xp = "125",
+  xpPerHp = "4",
+  xpValue = 197,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-6",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "Nil",
+  size = "L",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "A twilight bloom, or purple death, is a poisonous plant. This tall (8-13 feet), thick-stalked specimen has a branchless, scaled trunk with fern-like foliage at the top. These fronds droop a short distance. Mixed with these are cup-shaped purple flowers with silvery stamens; the flowers point upward. Around the base of the plant is a fine, mossy mat which is actually the roots. The flowers exude a very attractive perfume and sweet sap. The vibrations of any creature passing beneath the cupped lavender blooms will cause them to gently tilt and drip a syrupy poison from the flower. There is a 25% chance of the creature being struck by this toxic sap. If the creature fails to save vs. poison, it dies instantly, and its decomposition feeds the roots of the plant.",
+}

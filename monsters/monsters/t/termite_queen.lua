@@ -1,0 +1,36 @@
+-- Termite, Queen: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Termite, Queen",
+  page = "119",
+  pages = "118-119",
+  source = "MM2",
+  race = "Termite, Giant Harvester",
+  hitDice = "8+8",
+  hitDiceNum = "8",
+  hitDiceBonus = "8",
+  avgHp = "36",
+  armorClass = "4",
+  numAttacks = 1,
+  damage = "5-30",
+  xp = "900",
+  xpPerHp = "13",
+  xpValue = 1368,
+  xpSource = "mm2_print",
+  frequency = "See below",
+  noAppearing = "1",
+  lairPct = "20",
+  treasure = "See below",
+  move = "3\\\"",
+  size = "L",
+  intelligence = "Semi-",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "1 queen (AC 4; MV 3\"; HD 8+8; hp 40 or more; #AT 1; Dmg 5-30) size L.\n\nThe queen will be found only in the royal chamber somewhere near the bottom of the underground levels of the nest. There will be as many eggs in the egg chamber as there are workers and soldiers combined. When either the egg or royal chambers are entered by intruders, termites already there will fight fiercely to protect the place.",
+}

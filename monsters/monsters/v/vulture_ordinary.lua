@@ -1,0 +1,36 @@
+-- Vulture, Ordinary: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Vulture, Ordinary",
+  page = "125",
+  pages = "125",
+  source = "MM2",
+  race = "Vulture",
+  hitDice = "1+1",
+  hitDiceNum = "1",
+  hitDiceBonus = "1",
+  avgHp = "4",
+  armorClass = "6",
+  numAttacks = 1,
+  damage = "1-2",
+  xp = "35",
+  xpPerHp = "0",
+  xpValue = 35,
+  xpSource = "mm2_print",
+  frequency = "Common",
+  noAppearing = "4-24",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "3\\\"/27\\\" (MC: E)",
+  size = "M (5'-6'+ wingspread)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Carrion eaters of this sort are found in temperate to tropical regions. Vultures have eyesight at least equal to that of any falcon, hawk, or eagle. Thus, they remain at a very great altitude, searching the land beneath from a great vantage point. At the sight of erratically moving, crippled, or fallen creatures, any vultures present will swoop lower to determine if the creature is near dead or dead. Helpless or dead creatures will be eaten by vultures. A potential victim able to actually strike at a vulture will cause ordinary vultures to move out of attack range, where they will wait for the victim to weaken past the point of resistance.\n\nDuring the course of a melee in terrain where vultures are present, the vultures will appear 7-12 rounds after a creature is felled, whether it is unconscious, killed, or magically sleeping or held. If combatants are not within 20 feet of fallen creatures, the vultures attracted to the scene will alight and begin pecking at the victim, with 1-6 attacking each round. Note that game killed will not attract vultures if removed quickly and kept in the presence of active, obviously healthy beings.",
+}

@@ -1,0 +1,36 @@
+-- Time Elemental: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Time Elemental",
+  page = "119",
+  pages = "119",
+  source = "MM2",
+  race = "Time Elemental",
+  hitDice = "12 or 16 (20)",
+  hitDiceNum = "12",
+  hitDiceBonus = "0",
+  avgHp = "42",
+  armorClass = "2",
+  numAttacks = 1,
+  damage = "3-12 or 4-16 (5-20)",
+  xp = "3000",
+  xpPerHp = "20",
+  xpValue = 3840,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1 (See below)",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "1\\\"",
+  size = "S",
+  intelligence = "Very to exceptional (genius to supra-genius)",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "+3 or better weapon to hit",
+  magicResistance = "Special, see below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Time elementals are basically of 2 sorts, the regular and noble. Information given in parentheses pertains to noble specimens. Time elementals exist in more than 1 time period, so they are always perceived as small creatures resembling a cloud of fire dust or vapor. They attack normally by spraying a fine, powdery substance at opponents. Those hit suffer damage due to cell death (aging).\n\nCommon time elementals can bring themselves from other times so as to effectively add 1-4 additional creatures, but a hit on any 1 damages all the manifestations of the time elemental. Therefore, when under attack, a time elemental will typically bring its other manifestations to its present time locale, gain multiple attacks that round, and then vanish completely into the timestream the next.\n\nAs a time elemental has the power to move forward, backward or sideways in time, (1 round for each hit die), it can usually avoid contact or break off contact at will. Unless the avoided party also has the ability to travel in time, the time elemental is then absolutely untraceable. Those able to follow will see a faint trail of haze in the direction of the time elemental's movement. Similarly, a time elemental can pursue by time movement, 1\" for each hit die, thus equalling up to a 13\" or 17\" movement rate. This could even put the elemental in front of a fleeing opponent.\n\nAll time-related spells are useless within 3\" physical distance of a time elemental, and no such spell will affect or reveal anything about a time elemental or its actions. In addition, as these creatures exist across multiple times, there is only 1 chance in 10 that any spell cast or magic employed against or upon a time elemental will actually affect it. (To determine this, roll 1d10 to find its current center of vulnerability, then roll a second 1d10 to see if it matches the first number rolled. If so, the spell or magic works.) Again, any opponent able to move through time can determine where the time elemental is most vulnerable, so magic or spells used by such an opponent will function properly, although the time elemental is still allowed a saving throw.\n\nNoble time elementals have all the powers of common ones. In addition, each has the power to cast a time stop spell (which will affect even time elementals of common sort), age a creature by 1-20 years, make a creature younger by 1-20 years, age nonliving vegetable matter by 10-200 years, age mineral material by 100-2000 years, and move up to 4 other creatures along time (forward, backward, or sideways) randomly, or to a desired locale, singly or jointly, providing the creatures are willing to go or fail to save vs. spells. Each power is usable per round, at will, once per day. Time elementals seldom appear on any plane but that of Time; on other planes they feel discomfort and the weight of the forward (or other) motion of time in relation to the plane upon which one of their manifestations exist. Similarly, time elementals cannot be conjured, summoned, or otherwise brought into being by any standard means or known spell.\n\nOn the Time Plane there are other creatures dissimilar to time elementals. There are also said to be certain royal time elementals of greater power than even the nobles. These creatures rule their fellows and serve certain deities. Royal time elementals have 24 or 28 hit dice, cause the same number of hit points of attack damage (6-24 or 7-28), and have double the number of powers. In addition, royal time elementals can summon 1-4 common (70%) or 1-2 noble elementals (30%) once per day.",
+}

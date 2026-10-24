@@ -1,0 +1,36 @@
+-- Thunder Beast: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Thunder Beast",
+  page = "119",
+  pages = "119",
+  source = "MM2",
+  race = "Thunder Beast",
+  hitDice = "4-9, +1/die",
+  hitDiceNum = "4",
+  hitDiceBonus = "1",
+  avgHp = "15",
+  armorClass = "4",
+  numAttacks = 1,
+  damage = "2-12",
+  xp = "650",
+  xpPerHp = "10",
+  xpValue = 800,
+  xpSource = "mm2_print",
+  frequency = "Common (Abyss only)",
+  noAppearing = "5-20 (adults)",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "9\\\" (18\\\" charge)",
+  size = "L (elephant-sized)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Trampling (see below)",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "These bloated, pig-like creatures roam in herds across the layers of the Abyss. They are known as thunder beasts because of their rumbling bellow, intestinal sounds, and offensive breath. The monsters subsist on both vegetation and ooze from which unwholesome growths spring. In turn, they feed many of the other creatures likewise inhabiting the place. Their flesh is rank, fibrous, and disgusting to all but demons and their ilk - and possibly even to them!\n\nFor every 2 adult creatures in a herd of thunder beasts there will be 1 immature specimen. The young have no attack form. Adults attack by biting or by a trampling charge. This latter attack form must be from 2\" or greater distance when it commences. Damage inflicted is 1d4 per hit die if the attack succeeds. (Determine hit dice by rolling 1d6: 1=4, 2=5, 3=6, etc.; at least 1 in every 5 has 9 hit dice.) Frightened or angry thunder beasts will begin bellowing. In combat situations, each creature will breathe on its opponent. This breath builds to equal a fog cloud after 3 rounds. Creatures affected by odors will fight at -2 hit probability. The cloud persists for 1-4 rounds.\n\nA thunderbeast is pig- or hippo-like in form but with longer legs, of which it has 6. Also, its body is quite round and appears swollen. The creature's head is low-set and cylindrical with fan-like ears and a huge mouth. It has small, beady eyes and no nostrils. The tail is broad, thick, flatish and fairly short. Color ranges from yellow brown to olive, all with darker mottling and warty growths.",
+}

@@ -1,0 +1,36 @@
+-- Verme: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Verme",
+  page = "124",
+  pages = "124",
+  source = "MM2",
+  race = "Verme",
+  hitDice = "18+18",
+  hitDiceNum = "18",
+  hitDiceBonus = "18",
+  avgHp = "81",
+  armorClass = "3 (head)/5 (body)",
+  numAttacks = 1,
+  damage = "7-28",
+  xp = "8550",
+  xpPerHp = "25",
+  xpValue = 10575,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "Nil",
+  treasure = "See below",
+  move = "18\\\"",
+  size = "L (50'-80' long)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Swallow whole",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The verme is the largest of fish, usually inhabiting great rivers, although some venture into saltwater. Regardless of its locale, the verme prefers warm water with an abundance of food, such as fish, reptiles, cattle, humans, or virtually anything else. Although the verme is long, it is flattish along its belly and wider than it is high. This enables it to lurk on the bottom and swim in relatively shallow water. The verme's head is heavily scaled and very bony, thus giving it an armor class of 3, while the body is less well protected. Because the verme swallows prey whole - even that as large as a water buffalo - the stomach can contain metallic or other items of indigestible nature (such as gems, crystal, etc.). Swallowing occurs on any hit if prey is not more than 12 feet tall. Damage (3d8+4) is incurred during the swallowing process. Swallowed creatures receive 2-16 points of additional damage per round. Any swallowed being will be dissolved in 6 rounds. The monster is able to upset vessels of up to small galley size when hungry and seeking food. Its thick, slime-covered scales make edged weapons useless, such attacks inflicting but 1 point of damage per blow. Fire-based attacks cause only one-half damage to the verme, unless the attack strikes the inside of the mouth or somewhere internally. In the latter case, damage is at a factor of +1 per die.\n\nThe verme looks much like a giant catfish, except it has large scales and numerous, needle-like teeth. It is pale yellow along its underside, the flanks shading from dark brown to a mottled green and brown back.",
+}

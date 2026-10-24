@@ -1,0 +1,36 @@
+-- Vagabond: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Vagabond",
+  page = "122",
+  pages = "122-123",
+  source = "MM2",
+  race = "Vagabond",
+  hitDice = "As form",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "As form",
+  armorClass = "As form",
+  numAttacks = "As form",
+  damage = "As form",
+  xp = "Variable",
+  xpPerHp = "0",
+  xpValue = 0,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "0",
+  treasure = "See below",
+  move = "As form",
+  size = "As form",
+  intelligence = "Genius to supra-genius",
+  alignment = "Neutral (any)",
+  specialAttacks = "Nil",
+  specialDefenses = "As form",
+  magicResistance = "As form",
+  psionic = "201-300",
+  attackDefenseModes = "All/all",
+  text = "A vagabond is a life force of unknown origin, possibly from a far planet, parallel unverse, or undiscovered plane. Though very rare, it may be encountered anywhere. The life force occupies the form of any one intelligent corporal creature indigenous to the area in which it is encountered, apparently forming or controlling the body for its own ends. A vagabond is often immediately recognizable if communication is established, as its odd speech and behavior patterns (always atypical of the form assumed) indicate its unfamiliarity with local customs and expectations.\n\nAs vagabonds may have nearly any appearance (though they have no power to change the form once assumed), their movement rates and other physical characteristics are those of the creatures. The vagabond is typically very inquisitive, often about mundane or personal details. If attacked, it will use its form to defend (or retreat) as best possible. If invited to accompany a party for an adventure, however, it will usually agree (90%), offering its form as an asset for use in exploration and (if necessary) combat. If the body is slain, the vagabond life force will depart, never to return. If an entire adventure is completed, the creature will give a special gift to each party member before departing. It can enchant any gem with a variety of word of recall (3 uses per enchantment) and will enchant 1 gem per character accompanying it on the adventure by way of thanks. (Only the possessor will know the 1-segment phrase needed to activate the gem.)\n\nVagabonds are creatures of legend, and nothing is known of their true forms or society (if any). They are immune to all forms of mental attack or control, save psionics.",
+}

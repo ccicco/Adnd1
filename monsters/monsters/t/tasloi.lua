@@ -1,0 +1,36 @@
+-- Tasloi: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Tasloi",
+  page = "118",
+  pages = "118",
+  source = "MM2",
+  race = "Tasloi",
+  hitDice = "1",
+  hitDiceNum = "1",
+  hitDiceBonus = "0",
+  avgHp = "3",
+  armorClass = "6 (5)",
+  numAttacks = "2 or 1",
+  damage = "1-3/1-3 or by weapon type",
+  xp = "10",
+  xpPerHp = "1",
+  xpValue = 13,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "10-100",
+  lairPct = "30",
+  treasure = "Q (x5)",
+  move = "9\\\" @ 15\\\"",
+  size = "S (2'-3')",
+  intelligence = "Low to average",
+  alignment = "Chaotic evil",
+  specialAttacks = "Surprise 1-4",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Living in steamy tropical forests, these creatures are rarely seen by man. Shy and malicious, they prefer to lurk in the tree tops where they may surprise the weak and unwary. Adapted to life above ground, they are slow and clumsy when forced to earth, adopting a semi-erect posture. They are quick and nimble in the arboreal passageways, however.\n\nMasters of stealth, tasloi surprise on a 1-4 (1d6). They may also hide in shadows 75% of the time. They have infravision and are suited to dark jungles. Full daylight will cause a -1 on their to-hit rolls.\n\nTasloi will eat anything, but they particularly like all kinds of flesh, especially humans and elves. They normally attack from above, trying to capture if possible. If they gain surprise, they will use their nets. If a party is too vigilant or prepared, the tasloi will attempt to wear down the group through short, sudden attacks followed by retreat. If possible, tasloi will attempt to steal the dead of an enemy after an attack.\n\nThe tasloi live in loosely-structured bands of several families. For every band of 70 or more, there will be a chief (5 HD). There is a 30% chance that any band will have a shaman. Tasloi shamans may advance up to 5th level. Weapons carried are as follows: small shield and javelin (AC 5) 20%; club and javelin 40%; short sword and small shield (AC 5) 10%; javelin and net 15%; short sword and net 10%; javelin and lasso 5%. When using a shield, the armor class of the tasloi becomes 5. Javelins and shields are customarily carried on their backs when they travel through the trees.\n\nWhen found in their lair, in addition to the males, there will be 70% females and 50% young. Females will fight as normal tasloi, but the young will not fight at all. The lair will consist of a series of 1-6 large trees with 4-24 platforms 50-100 feet from the ground. All the trees will be connected by vines and ropes. There is a 60% chance of the tasloi having 1-6 trained giant spiders and a 20% chance of their having 2-8 trained giant wasps. It is said the tasloi are able to ride wasps great distances.\n\nTasloi speak their own tongue and can also speak the languages of monkeys and apes. About 5% of their kind have also learned a pidgin Common that they use when trading.\n\nTasloi are long-legged, flat-headed humanoids. They walk in a crouching posture, touching their knuckles to the ground from time to time. Their skins are a lustrous green and are thinly covered with coarse black hair. Their eyes are similar to a cat's and are gold in color. Their feet are long and prehensile. Often they can be heard at night, speaking in their high and whispery voices.",
+}

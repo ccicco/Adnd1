@@ -1,0 +1,36 @@
+-- Transposer: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Transposer",
+  page = "120",
+  pages = "120",
+  source = "MM2",
+  race = "Transposer",
+  hitDice = "6 (up to 48 hp)",
+  hitDiceNum = "6",
+  hitDiceBonus = "0",
+  avgHp = "21",
+  armorClass = "7",
+  numAttacks = 2,
+  damage = "1-6",
+  xp = "625",
+  xpPerHp = "7",
+  xpValue = 772,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "15\\\"",
+  size = "M (5' tall)",
+  intelligence = "Low",
+  alignment = "Neutral",
+  specialAttacks = "See below",
+  specialDefenses = "See below",
+  magicResistance = "See below",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The bipedal transposer appears vaguely humanoid, although it has no actual features and its limbs end in sucker-like members. It attacks by lashing its arms, and the horny-ridged suckers inflict 1-6 points of damage to the victim. Such a hit also sets up a field of some unknown kind between the creature and the opponent so struck. Thereafter, any damage inflicted by that opponent upon the transposer does the attacker harm and restores hit points to the transposer in equal proportion. Thus a spell attack for 20 points of damage would harm the caster for that amount and restore or build the tranposer hit points to its maximum of 48. Weapon attacks are likewise transposed to harm the attacker and benefit the transposer. Only healing-type spells will harm the creature if the opponent has been contacted by a successful transposer attack. In such case, the curative effect damages the transposer and restores the individual casting the healing spell at the monster. Of course, opponents not bound to the transposer by the field will harm the creature normally.\n\nIn order to disguise itself and its powers, a transposer will use a minor illusion ability, a sort of change self power, to appear as a human, demihuman, etc., in order to entice prey into melee. The illusion power is destroyed only if the transposer flees or is slain. Special aids or disbelief can detect the ruse, but such must be actively employed.",
+}

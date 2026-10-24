@@ -1,0 +1,36 @@
+-- Vulchling: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Vulchling",
+  page = "125",
+  pages = "125",
+  source = "MM2",
+  race = "Vulchling",
+  hitDice = "1",
+  hitDiceNum = "1",
+  hitDiceBonus = "0",
+  avgHp = "3",
+  armorClass = "7",
+  numAttacks = "1 or 2",
+  damage = "2-5 or 1-4/1-4",
+  xp = "10",
+  xpPerHp = "1",
+  xpValue = 13,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "2-16",
+  lairPct = "25",
+  treasure = "J, K, L, M/individual",
+  move = "6\\\"/3\\\" (MC: C)",
+  size = "M",
+  intelligence = "Low",
+  alignment = "Chaotic evil",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Vulchlings are a race of bird-like creatures having the appearance of vultures with vaguely human features. They favor desolate or subterranean lairs. Vulchlings will consort with harpies or even Type I demons at times. They roost in trees or on ledges and swoop down upon unsuspecting prey, attacking with extended talons. Thereafter, they hop to the attack with their sharp beaks. There will be from 0-9 eggs in a vulchling lair.",
+}

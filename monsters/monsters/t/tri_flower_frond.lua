@@ -1,0 +1,36 @@
+-- Tri-Flower Frond: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Tri-Flower Frond",
+  page = "121",
+  pages = "121",
+  source = "MM2",
+  race = "Tri-Flower Frond",
+  hitDice = "2+8",
+  hitDiceNum = "2",
+  hitDiceBonus = "8",
+  avgHp = "15",
+  armorClass = "9",
+  numAttacks = "See below",
+  damage = "See below",
+  xp = "120",
+  xpPerHp = "3",
+  xpValue = 165,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "1-10",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "Nil",
+  size = "M",
+  intelligence = "Non-",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "The deep green 5-8 foot tall stalks of this plant are topped by trumpet-shaped flowers of vivid orange, bright yellow, and intense red. Each flower has its own function. The orange one shoots 2-8 tendrils from its center, each 3 feet long, and any creature struck must save vs. the poison from the pollen of a tendril or fall into a comatose slumber. The yellow bloom will bend over the sleeping victim immediately (sensitive rootlets note where the victim is) and tremble. This vibration looses a shower of sticky enzyme which causes 2-8 points of damage per round until the victim is completely rotted away. Each flask of water dumped upon a victim in the same round as the damage is done will reduce damage by 1 point; total immersion in water removes the sap entirely. The red flower extends tubular tendrils of 1 foot length, sinking them into the slumbering victim, first drawing body fluids at the rate of 1-6 hit points per turn and then sucking up the residual matter after the enzyme has dissolved the victim's body.\n\nOther color combinations of the plant's flowers are white, pale silvery-gray, pink or golden brown, chocolate brown, and russet.",
+}

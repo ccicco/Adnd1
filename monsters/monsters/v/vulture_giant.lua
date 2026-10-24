@@ -1,0 +1,36 @@
+-- Vulture, Giant: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Vulture, Giant",
+  page = "125",
+  pages = "125",
+  source = "MM2",
+  race = "Vulture",
+  hitDice = "2+1",
+  hitDiceNum = "2",
+  hitDiceBonus = "1",
+  avgHp = "8",
+  armorClass = "7",
+  numAttacks = 1,
+  damage = "1-4",
+  xp = "20",
+  xpPerHp = "2",
+  xpValue = 36,
+  xpSource = "mm2_print",
+  frequency = "Very rare",
+  noAppearing = "2-12",
+  lairPct = "Nil",
+  treasure = "Nil",
+  move = "3\\\"/24\\\" (MC: D)",
+  size = "L (12'+ wingspread)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Nil",
+  specialDefenses = "Nil",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Carrion eaters of this sort are found in temperate to tropical regions. Vultures have eyesight at least equal to that of any falcon, hawk, or eagle. Thus, they remain at a very great altitude, searching the land beneath from a great vantage point. At the sight of erratically moving, crippled, or fallen creatures, any vultures present will swoop lower to determine if the creature is near dead or dead. Helpless or dead creatures will be eaten by vultures. Giant specimens, however, must actually be struck (a successful to-hit score) to drive them off to a safe distance.\n\nDuring the course of a melee in terrain where vultures are present, the vultures will appear 7-12 rounds after a creature is felled, whether it is unconscious, killed, or magically sleeping or held. If combatants are not within 20 feet of fallen creatures, the vultures attracted to the scene will alight and begin pecking at the victim, with 1-6 attacking each round. Note that game killed will not attract vultures if removed quickly and kept in the presence of active, obviously healthy beings.",
+}

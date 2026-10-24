@@ -1,0 +1,3619 @@
+{
+ "round": 814,
+ "prefix": "mm2tuv",
+ "header_file": "rules/mm2tuv.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 736,
+ "title": "the MM2 letters TUV walk - the tarrasque to vulture turns",
+ "audit_label": "R814 MM2 letters TUV walk audit",
+ "audit_comment": "THE MM2 LETTERS TUV WALK - the tarrasque p. 117 (its treasure and lair cells the See-below read), the tasloi p. 118, the giant harvester termite variant table pp. 118-119 (the worker and soldier columns, plus the king and queen the royal-pair inline stats), the thessalhydra, the thri-kreen, the thunder beast and the time elemental p. 119, the thunderherder p. 120, the transposer p. 120, the tri-flower frond p. 121, the troll marine (scrag) variant table p. 121 (the fresh and salt water columns), the twilight bloom and the land urchin p. 122, the ustilagor p. 122 and the vagabond pp. 122-123, the vargouille p. 123, the vegepygmy, the verme and the vilstrak p. 124, the vulchling and the vulture variant table p. 125 (the giant and ordinary columns); the TUV-FLIP round: the Letter T, U and V gap boxes flip to closed (27 closed, 10 open). TWENTY-SIX .lua defs ride the R791 data_files extension, registry 766 -> 792; TWENTY-ONE entry heads carrying TWENTY-TWO stat blocks (the termite royal pair the one extra block), no prior-owned heads, no doctrine-only heads. THE SETTLED READS (capture primary, the 1eonline transcription the cross-check voice): the tarrasque 300 hp the flat-hp path (hdNum 0) and its AC -3 the UNQUOTED number (the phoenix precedent); the transposer xp VI/625 the capture-wins read (the transcription 525); the scrag saltwater 6+12 the capture-wins read (the transcription 5+12); the thessalhydra IX/5800 (the capture 5S00, the S an 8 artifact, the transcription the confirm); the ordinary vulture AC 6 the capture-wins read (the transcription 7) and the two vulture xp rows pinned verbatim (the giant I/20 + 2/hp, the ordinary II/35 with no per-hp - the print rows as printed, not a ladder); the vegepygmy HD 1 to 6 the low-end read with its 6-rung xp ladder pinned as consts (53+1, 81+2, 120+3, 175+4, 245+5, 425+6 - the R812 rider precedent) and its treasure O, T, P the capture-wins read (the transcription Q, P); the ustilagor intelligence Unstable the capture-wins read (the transcription Unratable); the land urchin 2-12 spines the loader 10 clamp; the vilstrak 1-6 hp the flat-hp high-end read 6 (the scum creeper precedent); the vagabond the nil block (the phantom precedent - the As-form cells, AC the 9 default, xp 0); the print typos pinned where both voices agree (the lejendary tarrasque, the tranposer, Tarterus, the parallel unverse); every Standard, See-below, As-form and Special magic resistance 0; the percent lair cells the bare-numeral read (the R812 repair lesson). REPAIR OF THE FIRST CUT: the vagabond hitDiceNum cell was authored as the string \"As form\" and the regtest walk came back bad 1 - the loader hitDiceNum default is 1, so a non-numeric cell rides the default instead of reading 0; the cell is now the numeric \"0\" - the shade precedent; the offline loader sim was taught the default-1 semantics (the new sim gate class) so this cannot recur unseen; no other byte changed.",
+ "include_comment": "the MM2 letters TUV walk - the tarrasque to vulture turns",
+ "include_after": "#include \"rules/mm2s.h\"  // R813: the MM2 letter S walk - the sandling to taer turns",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R813 LANDED 2026-10-24: commit",
+ "banner": {
+  "title": "THE MM2 LETTERS TUV WALK - THE TARRASQUE TO VULTURE TURNS (pp. 117-125: the tarrasque p. 117, the tasloi p. 118, the giant harvester termite variant table pp. 118-119 (worker, soldier, plus the king and queen royal pair), the thessalhydra, thri-kreen, thunder beast and time elemental p. 119, the thunderherder and transposer p. 120, the tri-flower frond and the scrag variant table p. 121, the twilight bloom and land urchin p. 122, the ustilagor p. 122 and vagabond pp. 122-123, the vargouille p. 123, the vegepygmy, verme and vilstrak p. 124, the vulchling and vulture variant table p. 125), promoted to the live registry; the TUV-FLIP round, the Letter T, U and V gap boxes flip to closed",
+  "provenance": "Round nineteen of the MM2 arc, the EIGHTH single-letter pass (Curtiss Go call on the landed letter S walk; the letters T, U and V pin-time walk found TWENTY-ONE entry heads carrying TWENTY-TWO stat blocks - the termite, scrag and vulture variant tables one head apiece, the termite royal pair the one extra block, no prior-owned heads, no doctrine-only heads)",
+  "sentinel": "The pin headers stay the print-fidelity record; the twenty-six .lua defs ride the R791 data_files extension in the MM1 registry schema (the defensive coercers load the verbatim print cells, the TUVStats grid carries the loader values)"
+ },
+ "tables": [
+  {
+   "name": "the tarrasque to vulture stat grid",
+   "tag": "TUVStats",
+   "count": "mm2tuvTUVStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE TUV-GRID: the 26-row TUVStats stat grid (every armor class, hit-dice, bonus, avgHp, attack, xp, xp/hp, lair, move and magic-resistance cell of the twenty-six promoted letters TUV stat blocks, in print order - the tarrasque p. 117 through the ordinary vulture p. 125)",
+   "cols": [
+    "mm2tuvTUVStatAc",
+    "mm2tuvTUVStatHd",
+    "mm2tuvTUVStatHdBonus",
+    "mm2tuvTUVStatAvgHp",
+    "mm2tuvTUVStatAttacks",
+    "mm2tuvTUVStatXp",
+    "mm2tuvTUVStatXpHp",
+    "mm2tuvTUVStatLairPct",
+    "mm2tuvTUVStatMove",
+    "mm2tuvTUVStatMr"
+   ],
+   "col_comments": [
+    "The armor class cells (the tarrasque -3 the UNQUOTED number read - the phoenix precedent; the tasloi 6 (5), the termite 2/10 and 2/8 head/body and the verme 3 (head) the first-int reads; the ordinary vulture 6 the capture-wins read against the transcription 7; the vagabond As form the 9 default - the shade precedent)",
+    "The hit dice num cells (the tarrasque and vilstrak the flat-hp path - hdNum 0, avgHp the print hp: 300 and 6 the high-end; the thunder beast 4-9, +1/die and the time elemental 12 or 16 (20) the first-number reads; the vegepygmy 1 to 6 the low-end read; the transposer 6 (up to 48 hp) the 6 read; the vagabond As form the 0 read)",
+    "The hit dice bonus cells (the verme 18+18 the +18; the termite king 6+6 and queen 8+8; the scrag saltwater 6+12 the capture-wins read against the transcription 5+12)",
+    "The avgHp cells (the floor(3.5 x hd + bonus) formula; the flat-hp reads carry the print hp: the tarrasque 300, the vilstrak 6 the high-end read - the scum creeper precedent; the vagabond the nil block 0 - the phantom precedent)",
+    "The attack cells (the loader semantics: the land urchin 2-12 the 10 clamp, the tasloi 2 or 1, the thri-kreen 5 or 3 and the vulchling 1 or 2 the max reads, the thessalhydra Up to 10 the 10 read, the tri-flower and twilight bloom See below and the vagabond As form the 1 floor)",
+    "The xp base cells (the vagabond Variable the 0 read - the phantom precedent; the transposer 625 the capture-wins read against the transcription 525; the thessalhydra 5800 the 5S00 capture read; the ordinary vulture II/35 with no per-hp)",
+    "The xp per hit point cells (the vegepygmy 1-6 ladder the 1/hp low rung; the ordinary vulture the 0 read; the verme 25 and the time elemental 20 the highest letter-TUV rates)",
+    "The lair percent cells (the bare-numeral read - the R812 repair lesson; the ustilagor 90 and vargouille 80 the highest letter-TUV rates; the tarrasque See below the 0 read; the vagabond 0)",
+    "The move cells (the walking-rate first-int read: the vultures 3\"/24\" and 3\"/27\", the scrags 3\"/15\" and 3\"/12\" the 3 reads, the vargouille /12\" the flight-rate 12 read, the thunder beast 9\" (18\" charge) the 9 read; the tri-flower and twilight bloom Nil the 0 reads; the vagabond As form the 0 read)",
+    "The magic resistance cells (every Standard, See below, As form and Special, see below read 0 - no letter-TUV def carries an innate percent)"
+   ],
+   "data": [
+    [
+     -3,
+     0,
+     0,
+     300,
+     6,
+     37500,
+     0,
+     0,
+     9,
+     0
+    ],
+    [
+     6,
+     1,
+     0,
+     3,
+     2,
+     10,
+     1,
+     30,
+     9,
+     0
+    ],
+    [
+     2,
+     1,
+     2,
+     5,
+     1,
+     20,
+     2,
+     20,
+     9,
+     0
+    ],
+    [
+     2,
+     2,
+     2,
+     9,
+     1,
+     50,
+     3,
+     20,
+     9,
+     0
+    ],
+    [
+     5,
+     6,
+     6,
+     27,
+     1,
+     500,
+     10,
+     20,
+     6,
+     0
+    ],
+    [
+     4,
+     8,
+     8,
+     36,
+     1,
+     900,
+     13,
+     20,
+     3,
+     0
+    ],
+    [
+     0,
+     12,
+     0,
+     42,
+     10,
+     5800,
+     16,
+     50,
+     12,
+     0
+    ],
+    [
+     5,
+     6,
+     3,
+     24,
+     5,
+     800,
+     8,
+     5,
+     18,
+     0
+    ],
+    [
+     4,
+     4,
+     1,
+     15,
+     1,
+     650,
+     10,
+     0,
+     9,
+     0
+    ],
+    [
+     2,
+     12,
+     0,
+     42,
+     1,
+     3000,
+     20,
+     0,
+     1,
+     0
+    ],
+    [
+     3,
+     7,
+     0,
+     24,
+     1,
+     350,
+     8,
+     5,
+     20,
+     0
+    ],
+    [
+     7,
+     6,
+     0,
+     21,
+     2,
+     625,
+     7,
+     0,
+     15,
+     0
+    ],
+    [
+     9,
+     2,
+     8,
+     15,
+     1,
+     120,
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     5,
+     5,
+     22,
+     3,
+     400,
+     8,
+     20,
+     3,
+     0
+    ],
+    [
+     2,
+     6,
+     12,
+     33,
+     3,
+     900,
+     12,
+     15,
+     3,
+     0
+    ],
+    [
+     8,
+     3,
+     8,
+     18,
+     1,
+     125,
+     4,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     3,
+     3,
+     13,
+     10,
+     150,
+     4,
+     0,
+     12,
+     0
+    ],
+    [
+     5,
+     3,
+     3,
+     13,
+     1,
+     135,
+     4,
+     90,
+     9,
+     0
+    ],
+    [
+     9,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     8,
+     1,
+     1,
+     4,
+     1,
+     118,
+     2,
+     80,
+     12,
+     0
+    ],
+    [
+     4,
+     1,
+     0,
+     3,
+     1,
+     53,
+     1,
+     40,
+     12,
+     0
+    ],
+    [
+     3,
+     18,
+     18,
+     81,
+     1,
+     8550,
+     25,
+     0,
+     18,
+     0
+    ],
+    [
+     2,
+     0,
+     0,
+     6,
+     2,
+     7,
+     1,
+     5,
+     9,
+     0
+    ],
+    [
+     7,
+     1,
+     0,
+     3,
+     2,
+     10,
+     1,
+     25,
+     6,
+     0
+    ],
+    [
+     7,
+     2,
+     1,
+     8,
+     1,
+     20,
+     2,
+     0,
+     3,
+     0
+    ],
+    [
+     6,
+     1,
+     1,
+     4,
+     1,
+     35,
+     0,
+     0,
+     3,
+     0
+    ]
+   ]
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letters TUV walk round pins (the R814 census)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvStatBlockHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvDoctrineHeads"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvLetterTUVHeadings"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTUVStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvGapClosed"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvGapOpen"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvPriorOwnedEntries"
+   }
+  ],
+  "the tarrasque pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueHitPoints"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueRushBonusInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueTailLashMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueHornMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueReflectChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueSlayThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueDiamondMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueDiamondMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueDiamondBaseGp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueShieldMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueShieldMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueShieldPlus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueDormancyMinMonths"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueDormancyMaxMonths"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTarrasqueActiveToDormantRatio"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTarrasqueFireImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTarrasqueReflectsRays"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTarrasqueMagicWeaponToHit"
+   }
+  ],
+  "the tasloi pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiSurpriseMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiHideInShadowsPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiDaylightPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiChiefBandSize"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiChiefHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiShamanChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiShamanMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiShieldArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiLairTreesMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiLairTreesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiPlatformsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiPlatformsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiPlatformHeightMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiPlatformHeightMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiGiantSpiderChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiGiantWaspChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTasloiPidginCommonPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTasloiInfravision"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTasloiArboreal"
+   }
+  ],
+  "the giant harvester termite pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteWorkerXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteWorkerXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteNestDiameterFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteNestHeightMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteNestHeightMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteOpeningMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteOpeningMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteLairMultiplier"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteSoldierEscortMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteSoldierEscortMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteChamberGuardBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteSoldierXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteSoldierXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteSoldierBlindMinRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteSoldierBlindMaxRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteSoldierBurnMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteSoldierBurnMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteSoldierSpitRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteKingXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteKingXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteKingHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteKingDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteQueenXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteQueenXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteQueenHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTermiteQueenDamageMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTermiteNocturnal"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTermiteFormianEnemies"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTermiteSoldierSpitBlinds"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTermiteSoldierSpitFlammable"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTermiteKingDoubleSpit"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTermiteQueenEggCountMatches"
+   }
+  ],
+  "the thessalhydra pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraFringeHeadFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraSeverDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraFringeRegenDays"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraSpitRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraSpitDiameterFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraSpitMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraSpitMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraMouthMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThessalhydraTailMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvThessalhydraAcidImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvThessalhydraFringeIsolated"
+   }
+  ],
+  "the thri-kreen pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenLeapUpFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenLeapForwardFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenPolearmMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenPolearmMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenWedgeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenWedgeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenWedgeRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenWedgeCarryMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenDodgeRoll"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenBiteMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenParalysisMinRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThriKreenParalysisMaxRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvThriKreenWedgeReturns"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvThriKreenFourClaws"
+   }
+  ],
+  "the thunder beast pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastYoungPerAdults"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastTrampleRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastTrampleDieMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastBreathRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastCloudMinRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastCloudMaxRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastOdorPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastLegs"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastRareHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderBeastRareHdChance"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvThunderBeastFogBreath"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvThunderBeastYoungHarmless"
+   }
+  ],
+  "the time elemental pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalExtraMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalExtraMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalDampenInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalSpellChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalPursuitPerHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalCommonPursuitMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalNoblePursuitMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalTravelPerHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalNobleAgeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalNobleAgeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalMatterAgeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalMatterAgeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalMineralAgeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalMineralAgeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalNobleMoveMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalRoyalHdMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalRoyalHdMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTimeElementalRoyalSummonPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTimeElementalTimeStop"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTimeElementalUnsummonable"
+   }
+  ],
+  "the thunderherder pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderherderXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderherderXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderherderWidthMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderherderWidthMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderherderLengthMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvThunderherderLengthMaxFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvThunderherderTremors"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvThunderherderNonaggressive"
+   }
+  ],
+  "the transposer pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvTransposerXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTransposerXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTransposerMaxHp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTransposerSuckerMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTransposerExampleDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTransposerHealingHarms"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTransposerSelfIllusion"
+   }
+  ],
+  "the tri-flower frond pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerStalkMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerStalkMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerTendrilMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerTendrilMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerTendrilFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerEnzymeMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerEnzymeMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerWaterReduction"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerRedTendrilFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerDrainMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTriFlowerDrainMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTriFlowerImmersionCures"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTriFlowerSlumberPollen"
+   }
+  ],
+  "the scrag pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvScragFreshwaterXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragFreshwaterXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragFreshClawMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragFreshJawMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragFreshJawMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragFreshOpponents"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragSaltwaterXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragSaltwaterXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragSaltArmoredPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragSaltArmoredAc"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragSaltClawMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragSaltMawMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvScragSaltMawMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvScragGilled"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvScragFreshRegenerates"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvScragSaltRegenerates"
+   }
+  ],
+  "the twilight bloom pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvTwilightBloomXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTwilightBloomXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTwilightBloomHeightMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTwilightBloomHeightMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvTwilightBloomSapChancePct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTwilightBloomSapDeadly"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvTwilightBloomPerfumeLure"
+   }
+  ],
+  "the land urchin pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinLandXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinLandXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinSpineMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinSpineMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinSpineDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinParalysisTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinSmokeRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinAntennae"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinLegs"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinPearlMinGp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinPearlMaxGp"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUrchinPearlsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvUrchinSpinesParalyze"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvUrchinSmokeEscape"
+   }
+  ],
+  "the ustilagor pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvUstilagorXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUstilagorXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUstilagorTendrilFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUstilagorAlkaliMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvUstilagorAlkaliMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvUstilagorMindless"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvUstilagorPsionic"
+   }
+  ],
+  "the vagabond pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvVagabondXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVagabondXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVagabondJoinPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVagabondGemCharges"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVagabondMindImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVagabondFormFixed"
+   }
+  ],
+  "the vargouille pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvVargouilleXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVargouilleXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVargouilleBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVargouilleWingspreadFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVargouillePermanentDrain"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVargouilleHatesLight"
+   }
+  ],
+  "the vegepygmy pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmySurprisePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyPiercingDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyShriekerPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyShriekerMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyShriekerMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyRussetMoldPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmySubchiefPer"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmySubchiefHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmySubchiefGuardsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmySubchiefGuardsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmySubchiefGuardHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLeaderHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLeaderGuardsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLeaderGuardsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLeaderGuardHd"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderBase2"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderPerHp2"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderXpValue2"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderLevel2"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderBase3"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderPerHp3"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderXpValue3"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderLevel3"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderBase4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderPerHp4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderXpValue4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderLevel4"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderBase5"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderPerHp5"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderXpValue5"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderLevel5"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderBase6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderPerHp6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderXpValue6"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVegepygmyLadderLevel6"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVegepygmyElectricImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVegepygmyCharmImmune"
+   }
+  ],
+  "the verme pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvVermeXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVermeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVermeSwallowHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVermeSwallowMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVermeSwallowRoundMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVermeSwallowRoundMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVermeDissolveRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVermeEdgedDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVermeSwallowsWhole"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVermeEdgedUseless"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVermeFireHalf"
+   }
+  ],
+  "the vilstrak pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvVilstrakXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVilstrakXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVilstrakUndetectablePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVilstrakDetectFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVilstrakBadLairPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVilstrakMergesWithStone"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVilstrakSurpriseOneToFour"
+   }
+  ],
+  "the vulchling pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvVulchlingXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVulchlingXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVulchlingEggsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVulchlingEggsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVulchlingConsortsWithHarpies"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVulchlingTalonSwoop"
+   }
+  ],
+  "the vulture pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "const",
+    "name": "mm2tuvVultureGiantXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVultureGiantXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVultureArrivalMinRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVultureArrivalMaxRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVulturePeckingFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVulturePeckersMin"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVulturePeckersMax"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVultureGiantWingspreadFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVultureOrdinaryXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVultureOrdinaryXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVultureOrdinaryWingspreadMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2tuvVultureOrdinaryWingspreadMaxFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVultureGiantStruckToDeter"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2tuvVultureOrdinaryWaitsForWeakness"
+   }
+  ],
+  "the TUVStats grid pins (the R814 MM2 letters TUV walk)": [
+   {
+    "kind": "table",
+    "name": "the tarrasque to vulture stat grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count and the Letter T, U and V gap boxes flip (the census walk)",
+   "expr": "m['mm2tuvRegistryAfter']() - m['mm2tuvRegistryBefore']() != m['mm2tuvDefCount']() or m['mm2tuvDefCount']() != 26 or m['mm2tuvEntryCount']() != 21 or m['mm2tuvStatBlockHeadings']() != 22 or m['mm2tuvDoctrineHeads']() != 0 or m['mm2tuvLetterTUVHeadings']() != 21 or m['mm2tuvTUVStatRows']() != 26 or m['mm2tuvGapClosed']() != 27 or m['mm2tuvGapOpen']() != 10 or m['mm2tuvPriorOwnedEntries']() != 0"
+  },
+  {
+   "note": "the tarrasque grid row (p. 117 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](0) != -3 or m['mm2tuvTUVStatHd'](0) != 0 or m['mm2tuvTUVStatHdBonus'](0) != 0 or m['mm2tuvTUVStatAvgHp'](0) != 300 or m['mm2tuvTUVStatAttacks'](0) != 6 or m['mm2tuvTUVStatXp'](0) != 37500 or m['mm2tuvTUVStatXpHp'](0) != 0 or m['mm2tuvTUVStatLairPct'](0) != 0 or m['mm2tuvTUVStatMove'](0) != 9 or m['mm2tuvTUVStatMr'](0) != 0 or m['mm2tuvTarrasqueXpValue']() != 37500 or m['mm2tuvTarrasqueXpLevel']() != 10"
+  },
+  {
+   "note": "the tasloi grid row (p. 118 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](1) != 6 or m['mm2tuvTUVStatHd'](1) != 1 or m['mm2tuvTUVStatHdBonus'](1) != 0 or m['mm2tuvTUVStatAvgHp'](1) != 3 or m['mm2tuvTUVStatAttacks'](1) != 2 or m['mm2tuvTUVStatXp'](1) != 10 or m['mm2tuvTUVStatXpHp'](1) != 1 or m['mm2tuvTUVStatLairPct'](1) != 30 or m['mm2tuvTUVStatMove'](1) != 9 or m['mm2tuvTUVStatMr'](1) != 0 or m['mm2tuvTasloiXpValue']() != 13 or m['mm2tuvTasloiXpLevel']() != 1"
+  },
+  {
+   "note": "the termite, worker grid row (p. 118 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](2) != 2 or m['mm2tuvTUVStatHd'](2) != 1 or m['mm2tuvTUVStatHdBonus'](2) != 2 or m['mm2tuvTUVStatAvgHp'](2) != 5 or m['mm2tuvTUVStatAttacks'](2) != 1 or m['mm2tuvTUVStatXp'](2) != 20 or m['mm2tuvTUVStatXpHp'](2) != 2 or m['mm2tuvTUVStatLairPct'](2) != 20 or m['mm2tuvTUVStatMove'](2) != 9 or m['mm2tuvTUVStatMr'](2) != 0 or m['mm2tuvTermiteWorkerXpValue']() != 30 or m['mm2tuvTermiteWorkerXpLevel']() != 1"
+  },
+  {
+   "note": "the termite, soldier grid row (p. 118 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](3) != 2 or m['mm2tuvTUVStatHd'](3) != 2 or m['mm2tuvTUVStatHdBonus'](3) != 2 or m['mm2tuvTUVStatAvgHp'](3) != 9 or m['mm2tuvTUVStatAttacks'](3) != 1 or m['mm2tuvTUVStatXp'](3) != 50 or m['mm2tuvTUVStatXpHp'](3) != 3 or m['mm2tuvTUVStatLairPct'](3) != 20 or m['mm2tuvTUVStatMove'](3) != 9 or m['mm2tuvTUVStatMr'](3) != 0 or m['mm2tuvTermiteSoldierXpValue']() != 77 or m['mm2tuvTermiteSoldierXpLevel']() != 2"
+  },
+  {
+   "note": "the termite, king grid row (p. 119 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](4) != 5 or m['mm2tuvTUVStatHd'](4) != 6 or m['mm2tuvTUVStatHdBonus'](4) != 6 or m['mm2tuvTUVStatAvgHp'](4) != 27 or m['mm2tuvTUVStatAttacks'](4) != 1 or m['mm2tuvTUVStatXp'](4) != 500 or m['mm2tuvTUVStatXpHp'](4) != 10 or m['mm2tuvTUVStatLairPct'](4) != 20 or m['mm2tuvTUVStatMove'](4) != 6 or m['mm2tuvTUVStatMr'](4) != 0 or m['mm2tuvTermiteKingXpValue']() != 770 or m['mm2tuvTermiteKingXpLevel']() != 5"
+  },
+  {
+   "note": "the termite, queen grid row (p. 119 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](5) != 4 or m['mm2tuvTUVStatHd'](5) != 8 or m['mm2tuvTUVStatHdBonus'](5) != 8 or m['mm2tuvTUVStatAvgHp'](5) != 36 or m['mm2tuvTUVStatAttacks'](5) != 1 or m['mm2tuvTUVStatXp'](5) != 900 or m['mm2tuvTUVStatXpHp'](5) != 13 or m['mm2tuvTUVStatLairPct'](5) != 20 or m['mm2tuvTUVStatMove'](5) != 3 or m['mm2tuvTUVStatMr'](5) != 0 or m['mm2tuvTermiteQueenXpValue']() != 1368 or m['mm2tuvTermiteQueenXpLevel']() != 6"
+  },
+  {
+   "note": "the thessalhydra grid row (p. 119 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](6) != 0 or m['mm2tuvTUVStatHd'](6) != 12 or m['mm2tuvTUVStatHdBonus'](6) != 0 or m['mm2tuvTUVStatAvgHp'](6) != 42 or m['mm2tuvTUVStatAttacks'](6) != 10 or m['mm2tuvTUVStatXp'](6) != 5800 or m['mm2tuvTUVStatXpHp'](6) != 16 or m['mm2tuvTUVStatLairPct'](6) != 50 or m['mm2tuvTUVStatMove'](6) != 12 or m['mm2tuvTUVStatMr'](6) != 0 or m['mm2tuvThessalhydraXpValue']() != 6472 or m['mm2tuvThessalhydraXpLevel']() != 9"
+  },
+  {
+   "note": "the thri-kreen (mantis warrior) grid row (p. 119 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](7) != 5 or m['mm2tuvTUVStatHd'](7) != 6 or m['mm2tuvTUVStatHdBonus'](7) != 3 or m['mm2tuvTUVStatAvgHp'](7) != 24 or m['mm2tuvTUVStatAttacks'](7) != 5 or m['mm2tuvTUVStatXp'](7) != 800 or m['mm2tuvTUVStatXpHp'](7) != 8 or m['mm2tuvTUVStatLairPct'](7) != 5 or m['mm2tuvTUVStatMove'](7) != 18 or m['mm2tuvTUVStatMr'](7) != 0 or m['mm2tuvThriKreenXpValue']() != 992 or m['mm2tuvThriKreenXpLevel']() != 6"
+  },
+  {
+   "note": "the thunder beast grid row (p. 119 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](8) != 4 or m['mm2tuvTUVStatHd'](8) != 4 or m['mm2tuvTUVStatHdBonus'](8) != 1 or m['mm2tuvTUVStatAvgHp'](8) != 15 or m['mm2tuvTUVStatAttacks'](8) != 1 or m['mm2tuvTUVStatXp'](8) != 650 or m['mm2tuvTUVStatXpHp'](8) != 10 or m['mm2tuvTUVStatLairPct'](8) != 0 or m['mm2tuvTUVStatMove'](8) != 9 or m['mm2tuvTUVStatMr'](8) != 0 or m['mm2tuvThunderBeastXpValue']() != 800 or m['mm2tuvThunderBeastXpLevel']() != 6"
+  },
+  {
+   "note": "the time elemental grid row (p. 119 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](9) != 2 or m['mm2tuvTUVStatHd'](9) != 12 or m['mm2tuvTUVStatHdBonus'](9) != 0 or m['mm2tuvTUVStatAvgHp'](9) != 42 or m['mm2tuvTUVStatAttacks'](9) != 1 or m['mm2tuvTUVStatXp'](9) != 3000 or m['mm2tuvTUVStatXpHp'](9) != 20 or m['mm2tuvTUVStatLairPct'](9) != 0 or m['mm2tuvTUVStatMove'](9) != 1 or m['mm2tuvTUVStatMr'](9) != 0 or m['mm2tuvTimeElementalXpValue']() != 3840 or m['mm2tuvTimeElementalXpLevel']() != 7"
+  },
+  {
+   "note": "the thunderherder grid row (p. 120 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](10) != 3 or m['mm2tuvTUVStatHd'](10) != 7 or m['mm2tuvTUVStatHdBonus'](10) != 0 or m['mm2tuvTUVStatAvgHp'](10) != 24 or m['mm2tuvTUVStatAttacks'](10) != 1 or m['mm2tuvTUVStatXp'](10) != 350 or m['mm2tuvTUVStatXpHp'](10) != 8 or m['mm2tuvTUVStatLairPct'](10) != 5 or m['mm2tuvTUVStatMove'](10) != 20 or m['mm2tuvTUVStatMr'](10) != 0 or m['mm2tuvThunderherderXpValue']() != 542 or m['mm2tuvThunderherderXpLevel']() != 5"
+  },
+  {
+   "note": "the transposer grid row (p. 120 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](11) != 7 or m['mm2tuvTUVStatHd'](11) != 6 or m['mm2tuvTUVStatHdBonus'](11) != 0 or m['mm2tuvTUVStatAvgHp'](11) != 21 or m['mm2tuvTUVStatAttacks'](11) != 2 or m['mm2tuvTUVStatXp'](11) != 625 or m['mm2tuvTUVStatXpHp'](11) != 7 or m['mm2tuvTUVStatLairPct'](11) != 0 or m['mm2tuvTUVStatMove'](11) != 15 or m['mm2tuvTUVStatMr'](11) != 0 or m['mm2tuvTransposerXpValue']() != 772 or m['mm2tuvTransposerXpLevel']() != 6"
+  },
+  {
+   "note": "the tri-flower frond grid row (p. 121 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](12) != 9 or m['mm2tuvTUVStatHd'](12) != 2 or m['mm2tuvTUVStatHdBonus'](12) != 8 or m['mm2tuvTUVStatAvgHp'](12) != 15 or m['mm2tuvTUVStatAttacks'](12) != 1 or m['mm2tuvTUVStatXp'](12) != 120 or m['mm2tuvTUVStatXpHp'](12) != 3 or m['mm2tuvTUVStatLairPct'](12) != 0 or m['mm2tuvTUVStatMove'](12) != 0 or m['mm2tuvTUVStatMr'](12) != 0 or m['mm2tuvTriFlowerXpValue']() != 165 or m['mm2tuvTriFlowerXpLevel']() != 3"
+  },
+  {
+   "note": "the scrag, freshwater grid row (p. 121 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](13) != 3 or m['mm2tuvTUVStatHd'](13) != 5 or m['mm2tuvTUVStatHdBonus'](13) != 5 or m['mm2tuvTUVStatAvgHp'](13) != 22 or m['mm2tuvTUVStatAttacks'](13) != 3 or m['mm2tuvTUVStatXp'](13) != 400 or m['mm2tuvTUVStatXpHp'](13) != 8 or m['mm2tuvTUVStatLairPct'](13) != 20 or m['mm2tuvTUVStatMove'](13) != 3 or m['mm2tuvTUVStatMr'](13) != 0 or m['mm2tuvScragFreshwaterXpValue']() != 576 or m['mm2tuvScragFreshwaterXpLevel']() != 5"
+  },
+  {
+   "note": "the scrag, saltwater grid row (p. 121 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](14) != 2 or m['mm2tuvTUVStatHd'](14) != 6 or m['mm2tuvTUVStatHdBonus'](14) != 12 or m['mm2tuvTUVStatAvgHp'](14) != 33 or m['mm2tuvTUVStatAttacks'](14) != 3 or m['mm2tuvTUVStatXp'](14) != 900 or m['mm2tuvTUVStatXpHp'](14) != 12 or m['mm2tuvTUVStatLairPct'](14) != 15 or m['mm2tuvTUVStatMove'](14) != 3 or m['mm2tuvTUVStatMr'](14) != 0 or m['mm2tuvScragSaltwaterXpValue']() != 1296 or m['mm2tuvScragSaltwaterXpLevel']() != 6"
+  },
+  {
+   "note": "the twilight bloom (purple death) grid row (p. 122 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](15) != 8 or m['mm2tuvTUVStatHd'](15) != 3 or m['mm2tuvTUVStatHdBonus'](15) != 8 or m['mm2tuvTUVStatAvgHp'](15) != 18 or m['mm2tuvTUVStatAttacks'](15) != 1 or m['mm2tuvTUVStatXp'](15) != 125 or m['mm2tuvTUVStatXpHp'](15) != 4 or m['mm2tuvTUVStatLairPct'](15) != 0 or m['mm2tuvTUVStatMove'](15) != 0 or m['mm2tuvTUVStatMr'](15) != 0 or m['mm2tuvTwilightBloomXpValue']() != 197 or m['mm2tuvTwilightBloomXpLevel']() != 3"
+  },
+  {
+   "note": "the urchin, land grid row (p. 122 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](16) != 3 or m['mm2tuvTUVStatHd'](16) != 3 or m['mm2tuvTUVStatHdBonus'](16) != 3 or m['mm2tuvTUVStatAvgHp'](16) != 13 or m['mm2tuvTUVStatAttacks'](16) != 10 or m['mm2tuvTUVStatXp'](16) != 150 or m['mm2tuvTUVStatXpHp'](16) != 4 or m['mm2tuvTUVStatLairPct'](16) != 0 or m['mm2tuvTUVStatMove'](16) != 12 or m['mm2tuvTUVStatMr'](16) != 0 or m['mm2tuvUrchinLandXpValue']() != 202 or m['mm2tuvUrchinLandXpLevel']() != 3"
+  },
+  {
+   "note": "the ustilagor grid row (p. 122 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](17) != 5 or m['mm2tuvTUVStatHd'](17) != 3 or m['mm2tuvTUVStatHdBonus'](17) != 3 or m['mm2tuvTUVStatAvgHp'](17) != 13 or m['mm2tuvTUVStatAttacks'](17) != 1 or m['mm2tuvTUVStatXp'](17) != 135 or m['mm2tuvTUVStatXpHp'](17) != 4 or m['mm2tuvTUVStatLairPct'](17) != 90 or m['mm2tuvTUVStatMove'](17) != 9 or m['mm2tuvTUVStatMr'](17) != 0 or m['mm2tuvUstilagorXpValue']() != 187 or m['mm2tuvUstilagorXpLevel']() != 3"
+  },
+  {
+   "note": "the vagabond grid row (p. 122 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](18) != 9 or m['mm2tuvTUVStatHd'](18) != 0 or m['mm2tuvTUVStatHdBonus'](18) != 0 or m['mm2tuvTUVStatAvgHp'](18) != 0 or m['mm2tuvTUVStatAttacks'](18) != 1 or m['mm2tuvTUVStatXp'](18) != 0 or m['mm2tuvTUVStatXpHp'](18) != 0 or m['mm2tuvTUVStatLairPct'](18) != 0 or m['mm2tuvTUVStatMove'](18) != 0 or m['mm2tuvTUVStatMr'](18) != 0 or m['mm2tuvVagabondXpValue']() != 0 or m['mm2tuvVagabondXpLevel']() != 0"
+  },
+  {
+   "note": "the vargouille grid row (p. 123 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](19) != 8 or m['mm2tuvTUVStatHd'](19) != 1 or m['mm2tuvTUVStatHdBonus'](19) != 1 or m['mm2tuvTUVStatAvgHp'](19) != 4 or m['mm2tuvTUVStatAttacks'](19) != 1 or m['mm2tuvTUVStatXp'](19) != 118 or m['mm2tuvTUVStatXpHp'](19) != 2 or m['mm2tuvTUVStatLairPct'](19) != 80 or m['mm2tuvTUVStatMove'](19) != 12 or m['mm2tuvTUVStatMr'](19) != 0 or m['mm2tuvVargouilleXpValue']() != 126 or m['mm2tuvVargouilleXpLevel']() != 3"
+  },
+  {
+   "note": "the vegepygmy grid row (p. 124 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](20) != 4 or m['mm2tuvTUVStatHd'](20) != 1 or m['mm2tuvTUVStatHdBonus'](20) != 0 or m['mm2tuvTUVStatAvgHp'](20) != 3 or m['mm2tuvTUVStatAttacks'](20) != 1 or m['mm2tuvTUVStatXp'](20) != 53 or m['mm2tuvTUVStatXpHp'](20) != 1 or m['mm2tuvTUVStatLairPct'](20) != 40 or m['mm2tuvTUVStatMove'](20) != 12 or m['mm2tuvTUVStatMr'](20) != 0 or m['mm2tuvVegepygmyXpValue']() != 56 or m['mm2tuvVegepygmyXpLevel']() != 3"
+  },
+  {
+   "note": "the verme grid row (p. 124 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](21) != 3 or m['mm2tuvTUVStatHd'](21) != 18 or m['mm2tuvTUVStatHdBonus'](21) != 18 or m['mm2tuvTUVStatAvgHp'](21) != 81 or m['mm2tuvTUVStatAttacks'](21) != 1 or m['mm2tuvTUVStatXp'](21) != 8550 or m['mm2tuvTUVStatXpHp'](21) != 25 or m['mm2tuvTUVStatLairPct'](21) != 0 or m['mm2tuvTUVStatMove'](21) != 18 or m['mm2tuvTUVStatMr'](21) != 0 or m['mm2tuvVermeXpValue']() != 10575 or m['mm2tuvVermeXpLevel']() != 9"
+  },
+  {
+   "note": "the vilstrak (marl mugger, tunnel thug) grid row (p. 124 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](22) != 2 or m['mm2tuvTUVStatHd'](22) != 0 or m['mm2tuvTUVStatHdBonus'](22) != 0 or m['mm2tuvTUVStatAvgHp'](22) != 6 or m['mm2tuvTUVStatAttacks'](22) != 2 or m['mm2tuvTUVStatXp'](22) != 7 or m['mm2tuvTUVStatXpHp'](22) != 1 or m['mm2tuvTUVStatLairPct'](22) != 5 or m['mm2tuvTUVStatMove'](22) != 9 or m['mm2tuvTUVStatMr'](22) != 0 or m['mm2tuvVilstrakXpValue']() != 13 or m['mm2tuvVilstrakXpLevel']() != 1"
+  },
+  {
+   "note": "the vulchling grid row (p. 125 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](23) != 7 or m['mm2tuvTUVStatHd'](23) != 1 or m['mm2tuvTUVStatHdBonus'](23) != 0 or m['mm2tuvTUVStatAvgHp'](23) != 3 or m['mm2tuvTUVStatAttacks'](23) != 2 or m['mm2tuvTUVStatXp'](23) != 10 or m['mm2tuvTUVStatXpHp'](23) != 1 or m['mm2tuvTUVStatLairPct'](23) != 25 or m['mm2tuvTUVStatMove'](23) != 6 or m['mm2tuvTUVStatMr'](23) != 0 or m['mm2tuvVulchlingXpValue']() != 13 or m['mm2tuvVulchlingXpLevel']() != 1"
+  },
+  {
+   "note": "the vulture, giant grid row (p. 125 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](24) != 7 or m['mm2tuvTUVStatHd'](24) != 2 or m['mm2tuvTUVStatHdBonus'](24) != 1 or m['mm2tuvTUVStatAvgHp'](24) != 8 or m['mm2tuvTUVStatAttacks'](24) != 1 or m['mm2tuvTUVStatXp'](24) != 20 or m['mm2tuvTUVStatXpHp'](24) != 2 or m['mm2tuvTUVStatLairPct'](24) != 0 or m['mm2tuvTUVStatMove'](24) != 3 or m['mm2tuvTUVStatMr'](24) != 0 or m['mm2tuvVultureGiantXpValue']() != 36 or m['mm2tuvVultureGiantXpLevel']() != 1"
+  },
+  {
+   "note": "the vulture, ordinary grid row (p. 125 print order)",
+   "expr": "m['mm2tuvTUVStatAc'](25) != 6 or m['mm2tuvTUVStatHd'](25) != 1 or m['mm2tuvTUVStatHdBonus'](25) != 1 or m['mm2tuvTUVStatAvgHp'](25) != 4 or m['mm2tuvTUVStatAttacks'](25) != 1 or m['mm2tuvTUVStatXp'](25) != 35 or m['mm2tuvTUVStatXpHp'](25) != 0 or m['mm2tuvTUVStatLairPct'](25) != 0 or m['mm2tuvTUVStatMove'](25) != 3 or m['mm2tuvTUVStatMr'](25) != 0 or m['mm2tuvVultureOrdinaryXpValue']() != 35 or m['mm2tuvVultureOrdinaryXpLevel']() != 2"
+  }
+ ],
+ "gap_flips": [
+  {
+   "note": "the Letter T box",
+   "from": "- [ ] **Letter T**",
+   "to": "- [x] **Letter T**"
+  },
+  {
+   "note": "the Letter U box",
+   "from": "- [ ] **Letter U**",
+   "to": "- [x] **Letter U**"
+  },
+  {
+   "note": "the Letter V box",
+   "from": "- [ ] **Letter V**",
+   "to": "- [x] **Letter V**"
+  }
+ ],
+ "gap_census": {
+  "closed": 27,
+  "open": 10
+ },
+ "caller_files": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letters TUV def walk (the R813 S-walk pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R814: the MM2 letters TUV live def walk ----\n    // The 26 promoted letters TUV defs\n    // cross-checked live against the mm2tuv pins:\n    // every stat cell of the 26-row TUVStats grid,\n    // the mm2_print xp source and the xpValue\n    // formula, the per-def prose markers, and the\n    // registry census floor 766 -> at least 792.\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kTUV[26] = {\n            \"tarrasque\",\n            \"tasloi\",\n            \"termite_worker\",\n            \"termite_soldier\",\n            \"termite_king\",\n            \"termite_queen\",\n            \"thessalhydra\",\n            \"thri_kreen\",\n            \"thunder_beast\",\n            \"time_elemental\",\n            \"thunderherder\",\n            \"transposer\",\n            \"tri_flower_frond\",\n            \"scrag_freshwater\",\n            \"scrag_saltwater\",\n            \"twilight_bloom\",\n            \"urchin_land\",\n            \"ustilagor\",\n            \"vagabond\",\n            \"vargouille\",\n            \"vegepygmy\",\n            \"verme\",\n            \"vilstrak\",\n            \"vulchling\",\n            \"vulture_giant\",\n            \"vulture_ordinary\",\n        };\n        static const char* kTUVMark[26] = {\n            \"ravishes the countryside for miles\",\n            \"Masters of stealth\",\n            \"weak-mandibled worker\",\n            \"blind any creature struck\",\n            \"hp 30 or more\",\n            \"hp 40 or more\",\n            \"fringe of snake-like heads\",\n            \"carnivorous insectmen\",\n            \"rumbling bellow\",\n            \"cloud of fire dust\",\n            \"distant cousins to the purple worm\",\n            \"sucker-like members\",\n            \"comatose slumber\",\n            \"gilled form of the common troll\",\n            \"armor made of shells and sharkskin\",\n            \"syrupy poison\",\n            \"mistaken for a bush\",\n            \"brain-like growths\",\n            \"parallel unverse\",\n            \"spawned in Tarterus\",\n            \"russet mold\",\n            \"largest of fish\",\n            \"marl muggers\",\n            \"vaguely human features\",\n            \"must actually be struck\",\n            \"weaken past the point of resistance\",\n        };\n        for (int i = 0; i < 26; ++i) {\n            const auto* d = reg.find(kTUV[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\")\n                ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2tuvTUVStatAc(i))\n                ++bad;\n            if (d->hitDiceNum != mm2tuvTUVStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus != mm2tuvTUVStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2tuvTUVStatAvgHp(i))\n                ++bad;\n            if (d->attacks != mm2tuvTUVStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2tuvTUVStatXp(i))\n                ++bad;\n            if (d->xpPerHp != mm2tuvTUVStatXpHp(i))\n                ++bad;\n            if (d->lairPct != mm2tuvTUVStatLairPct(i))\n                ++bad;\n            if (d->moveRate != mm2tuvTUVStatMove(i))\n                ++bad;\n            if (d->magicResist != mm2tuvTUVStatMr(i))\n                ++bad;\n            if (d->text.find(kTUVMark[i])\n                == std::string::npos)\n                ++bad;\n        }\n        if ((int)reg.all().size()\n            < mm2tuvRegistryAfter())\n            ++bad;\n        printf(\"R814 MM2 letters TUV live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/t/tarrasque.lua",
+   "content": "-- Tarrasque: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Tarrasque\",\n  page = \"117\",\n  pages = \"117-118\",\n  source = \"MM2\",\n  race = \"Tarrasque\",\n  hitDice = \"300 hp\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"300\",\n  armorClass = -3,\n  numAttacks = 6,\n  damage = \"1-12/1-12/2-24/5-50/1-10/1-10\",\n  xp = \"37500\",\n  xpPerHp = \"0\",\n  xpValue = 37500,\n  xpSource = \"mm2_print\",\n  frequency = \"Unique\",\n  noAppearing = \"1\",\n  lairPct = \"See below\",\n  treasure = \"See below\",\n  move = \"9\\\\\\\" (+6\\\\\\\" rush)\",\n  size = \"L (50' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"\\\"Sharpness\\\" bite, terror\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil (immune to psionics)\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The legendary tarrasque is possibly the most dreaded monster of all, for when it is active it ravishes the countryside for miles. All vegetation and animal life is devoured or driven away. The land through which the monster passes becomes a barren waste which requires years to recover, The tarrasque eats voraciously and continually, and all living things are food to it, although it prefers warm-blooded creatures over others. Normal attack modes of the tarrasque are with 2 forelimb claws, a sweeping tail lash inflicting 2-24 points of damage, a savage bite (the effect of which resembles a sword of sharpness in that a to-hit score of 18 or better indicates that a victim has some portion severed, such as a limb, head, torso, etc.), and 2 thrusting horn attacks for 1-10 points of damage each. The rush of the tarrasque is possible but once every turn, because the monster is so large and ponderous.\\n\\nThe mere sight of the tarrasque is so terrifying that creatures under 3 levels of hit dice will be paralysed until it is out of their range of vision (no saving throw). Creatures of 3 or more levels or hit dice will flee in panic, although those of 7 or more levels or hit dice who manage to save vs. paralyzation will not be so affected.\\n\\nThe tarrasque has a carapace of exceptional hardness and reflective quality. Bolts and rays such as lightning bolts, cones of cold, and even magic missiles are useless against the tarrasque. The reflection is such that 1 in 6 such attacks actually reflect directly back upon the caster, while the remainder bounce harmlessly away from the monster. Fire of any sort has no effect upon the tarrasque. The monster's metabolic rate is such that it regenerates 1 hit point per round after sustaining damage. The tarrasque can be struck only by +1 or better magic weapons.\\n\\nThe slaying of the tarrasque is said to be possible only if the monster is reduced to -30 or fewer hit points and a wish for its death then used. Otherwise, even the slightest piece of the tarrasque will regenerate and restore the monster completely. Legend says that a great treasure can be extracted from the tarrasque's carapace, The upper portion, treated with acid and then heated in a furnace, will yield gems - 10-100 diamonds of 1000 gp base value each. The underbelly material, mixed with the creature's blood and meteoric iron, will produce a metal which can be forged by dwarf blacksmiths into 1-4 shields of +5 magical power.\\n\\nIt is fortunate that the tarrasque is active only for short periods of time. Typically, the monster comes forth to forage for a week or two, ravaging all but a few square miles of land. The tarrasque then seeks a hidden lair underground and lies dormant, sleeping for 5-20 months before coming forth again. Once every decade or so, the monster will be particularly active, staying abroad for several months. Thereafter its period of dormancy becomes 4-16 years long unless disturbed. The ratio of active to dormant state appears to be about 1:30.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/tasloi.lua",
+   "content": "-- Tasloi: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Tasloi\",\n  page = \"118\",\n  pages = \"118\",\n  source = \"MM2\",\n  race = \"Tasloi\",\n  hitDice = \"1\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"0\",\n  avgHp = \"3\",\n  armorClass = \"6 (5)\",\n  numAttacks = \"2 or 1\",\n  damage = \"1-3/1-3 or by weapon type\",\n  xp = \"10\",\n  xpPerHp = \"1\",\n  xpValue = 13,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"10-100\",\n  lairPct = \"30\",\n  treasure = \"Q (x5)\",\n  move = \"9\\\\\\\" @ 15\\\\\\\"\",\n  size = \"S (2'-3')\",\n  intelligence = \"Low to average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Surprise 1-4\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Living in steamy tropical forests, these creatures are rarely seen by man. Shy and malicious, they prefer to lurk in the tree tops where they may surprise the weak and unwary. Adapted to life above ground, they are slow and clumsy when forced to earth, adopting a semi-erect posture. They are quick and nimble in the arboreal passageways, however.\\n\\nMasters of stealth, tasloi surprise on a 1-4 (1d6). They may also hide in shadows 75% of the time. They have infravision and are suited to dark jungles. Full daylight will cause a -1 on their to-hit rolls.\\n\\nTasloi will eat anything, but they particularly like all kinds of flesh, especially humans and elves. They normally attack from above, trying to capture if possible. If they gain surprise, they will use their nets. If a party is too vigilant or prepared, the tasloi will attempt to wear down the group through short, sudden attacks followed by retreat. If possible, tasloi will attempt to steal the dead of an enemy after an attack.\\n\\nThe tasloi live in loosely-structured bands of several families. For every band of 70 or more, there will be a chief (5 HD). There is a 30% chance that any band will have a shaman. Tasloi shamans may advance up to 5th level. Weapons carried are as follows: small shield and javelin (AC 5) 20%; club and javelin 40%; short sword and small shield (AC 5) 10%; javelin and net 15%; short sword and net 10%; javelin and lasso 5%. When using a shield, the armor class of the tasloi becomes 5. Javelins and shields are customarily carried on their backs when they travel through the trees.\\n\\nWhen found in their lair, in addition to the males, there will be 70% females and 50% young. Females will fight as normal tasloi, but the young will not fight at all. The lair will consist of a series of 1-6 large trees with 4-24 platforms 50-100 feet from the ground. All the trees will be connected by vines and ropes. There is a 60% chance of the tasloi having 1-6 trained giant spiders and a 20% chance of their having 2-8 trained giant wasps. It is said the tasloi are able to ride wasps great distances.\\n\\nTasloi speak their own tongue and can also speak the languages of monkeys and apes. About 5% of their kind have also learned a pidgin Common that they use when trading.\\n\\nTasloi are long-legged, flat-headed humanoids. They walk in a crouching posture, touching their knuckles to the ground from time to time. Their skins are a lustrous green and are thinly covered with coarse black hair. Their eyes are similar to a cat's and are gold in color. Their feet are long and prehensile. Often they can be heard at night, speaking in their high and whispery voices.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/termite_worker.lua",
+   "content": "-- Termite, Worker: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Termite, Worker\",\n  page = \"118\",\n  pages = \"118-119\",\n  source = \"MM2\",\n  race = \"Termite, Giant Harvester\",\n  hitDice = \"1+2\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"2\",\n  avgHp = \"5\",\n  armorClass = \"2/10 (head/body)\",\n  numAttacks = 1,\n  damage = \"1-2\",\n  xp = \"20\",\n  xpPerHp = \"2\",\n  xpValue = 30,\n  xpSource = \"mm2_print\",\n  frequency = \"See below\",\n  noAppearing = \"6-60\",\n  lairPct = \"20\",\n  treasure = \"See below\",\n  move = \"9\\\\\\\"\",\n  size = \"S (3' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Giant termites are found in subtropical and tropical forests and jungles where large amounts of vegetation are available. The nest will consist of a stone-hard mound about 100 feet in diameter and 200-500 feet high. There will be numerous circular openings near the top, each of 5-8 feet in diameter. These holes lead to vertical, diagonal and horizontal passages, which in turn lead to various chambers underground.\\n\\nTermites are nocturnal and shun light. A group of workers numbering more than 30 will always be accompanied by 3-16 soldier termites. While the weak-mandibled worker is able to bite for only 1-2 points of damage, soldier termites have strong jaws and are able to spit an irritating fluid (similar to kerosene).\\n\\nIn the lair there will always be 10 times the number of workers and soldiers first encountered, but these creatures will be spread throughout the nest. There will be the following additional giant harvester termites: 5-30 workers/attendants in egg chamber, 2-12 soldier/guards in egg chamber, 4-24 worker/attendants in royal chamber, 2-8 soldier/guards in royal chamber, 1 king, and 1 queen.\\n\\nWhen either the egg or royal chambers are entered by intruders, all regular termites (not special attendants and guards) will begin moving to the violated area. Meanwhile, termites already there will fight fiercely to protect the place. All such workers and guards get a +1 both to hit and to damage. This applies to workers and soldiers entering later as well.\\n\\nThe worst enemies of giant termites are formians, for formians are bigger and more intelligent, hate termites, and enjoy eating their eggs. If giant termites detect such raiders, they will immediately rush to defend their nest. Communications between giant termites are usually accomplished by touching of antennae. In crisis situations, a broadcast telepathic call is sent out.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/termite_soldier.lua",
+   "content": "-- Termite, Soldier: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Termite, Soldier\",\n  page = \"118\",\n  pages = \"118-119\",\n  source = \"MM2\",\n  race = \"Termite, Giant Harvester\",\n  hitDice = \"2+2\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"2\",\n  avgHp = \"9\",\n  armorClass = \"2/8 (head/body)\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = \"50\",\n  xpPerHp = \"3\",\n  xpValue = 77,\n  xpSource = \"mm2_print\",\n  frequency = \"See below\",\n  noAppearing = \"3-18\",\n  lairPct = \"20\",\n  treasure = \"See below\",\n  move = \"9\\\\\\\"\",\n  size = \"M (4 1/2' long)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The soldier termites have strong jaws and are able to spit an irritating fluid (similar to kerosene). This liquid will blind any creature struck unless a saving throw vs. poison is successful. Blindness lasts for 5-20 rounds. The fluid will burn if exposed to flame or heat, and the effect of 1 quantity spit on a target and ignited will inflict 5-16 points of burning damage. The fluid can be spit but once per turn. Range is 1\\\", volume is about 1 pint.\\n\\nA group of workers numbering more than 30 will always be accompanied by 3-16 soldier termites. In the lair there will always be 10 times the number of workers and soldiers first encountered. When either the egg or royal chambers are entered by intruders, soldier termites already there will fight fiercely to protect the place, getting a +1 both to hit and to damage.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/termite_king.lua",
+   "content": "-- Termite, King: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Termite, King\",\n  page = \"119\",\n  pages = \"118-119\",\n  source = \"MM2\",\n  race = \"Termite, Giant Harvester\",\n  hitDice = \"6+6\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"6\",\n  avgHp = \"27\",\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"3-18\",\n  xp = \"500\",\n  xpPerHp = \"10\",\n  xpValue = 770,\n  xpSource = \"mm2_print\",\n  frequency = \"See below\",\n  noAppearing = \"1\",\n  lairPct = \"20\",\n  treasure = \"See below\",\n  move = \"6\\\\\\\"\",\n  size = \"L\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"1 king (AC 5; MV 6\\\"; HD 6+6; hp 30 or more; #AT 1; Dmg 3-18; SA double range and quantity fluid spit possible every other round) size L.\\n\\nThe king and queen termites will be found only in the royal chamber somewhere near the bottom of the underground levels of the nest. The egg chamber will be nearby. When either the egg or royal chambers are entered by intruders, termites already there will fight fiercely to protect the place, getting a +1 both to hit and to damage.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/termite_queen.lua",
+   "content": "-- Termite, Queen: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Termite, Queen\",\n  page = \"119\",\n  pages = \"118-119\",\n  source = \"MM2\",\n  race = \"Termite, Giant Harvester\",\n  hitDice = \"8+8\",\n  hitDiceNum = \"8\",\n  hitDiceBonus = \"8\",\n  avgHp = \"36\",\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"5-30\",\n  xp = \"900\",\n  xpPerHp = \"13\",\n  xpValue = 1368,\n  xpSource = \"mm2_print\",\n  frequency = \"See below\",\n  noAppearing = \"1\",\n  lairPct = \"20\",\n  treasure = \"See below\",\n  move = \"3\\\\\\\"\",\n  size = \"L\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"1 queen (AC 4; MV 3\\\"; HD 8+8; hp 40 or more; #AT 1; Dmg 5-30) size L.\\n\\nThe queen will be found only in the royal chamber somewhere near the bottom of the underground levels of the nest. There will be as many eggs in the egg chamber as there are workers and soldiers combined. When either the egg or royal chambers are entered by intruders, termites already there will fight fiercely to protect the place.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/thessalhydra.lua",
+   "content": "-- Thessalhydra: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Thessalhydra\",\n  page = \"119\",\n  pages = \"119\",\n  source = \"MM2\",\n  race = \"Thessalhydra\",\n  hitDice = \"12 (body)\",\n  hitDiceNum = \"12\",\n  hitDiceBonus = \"0\",\n  avgHp = \"42\",\n  armorClass = \"0\",\n  numAttacks = \"Up to 10\",\n  damage = \"1-6 (x8)/1-12/1-20\",\n  xp = \"5800\",\n  xpPerHp = \"16\",\n  xpValue = 6472,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = \"50\",\n  treasure = \"See below\",\n  move = \"12\\\\\\\"\",\n  size = \"L (36' long, 20' tall)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Acid saliva and spitting\",\n  specialDefenses = \"Immune to acid\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The dreaded thessalhydrae are monsters which love dark and damp conditions, so they are typically encountered in swamps, jungles, and subterranean lairs.\\n\\nNormal attack is from the fringe of snake-like heads which ring the vast main mouth of the thessalhydra. Each bite inflicts 1-6 points of damage plus an additional 1-6 unless the victim saves vs. poison. In addition, the main mouth bites for 1-20 points plus another 1-20 points of acid damage unless a saving throw vs. poison succeeds. The tail pincer is used to grasp an opponent, inflict 1-12 points of damage in the process, and then deposit the victim in the gaping central maw during the same round.\\n\\nEach head in the fringe is some 6 feet long, so many creatures can be attacked during a melee round. Fringe heads each take 12 points of damage to sever. Thessalhydrae regenerate lost fringe heads in 12 days. Damage to fringe heads does not harm the body. Once per day a thessalhydra can spit a glob of acidic saliva from its main mouth. The area covered is effectively a 12-foot diameter circle up to 3\\\" distant from the monster. Creatures within this area will sustain 12-72 points of acid damage and half damage if a saving throw vs. poison is successful.\\n\\nAcids of any sort, including poisonous acids, have no effect upon a thessalhydra. Note that items placed in the central maw are usually destroyed, as each must save vs. acid and crushing blows every round until the items are removed.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/thri_kreen.lua",
+   "content": "-- Thri-Kreen (Mantis Warrior): promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Thri-Kreen (Mantis Warrior)\",\n  page = \"119\",\n  pages = \"119\",\n  source = \"MM2\",\n  race = \"Thri-Kreen\",\n  hitDice = \"6+3\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"3\",\n  avgHp = \"24\",\n  armorClass = \"5\",\n  numAttacks = \"5 or 3\",\n  damage = \"1-4 (x4) or by weapons +2\",\n  xp = \"800\",\n  xpPerHp = \"8\",\n  xpValue = 992,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-12\",\n  lairPct = \"5\",\n  treasure = \"Q\",\n  move = \"18\\\\\\\"\",\n  size = \"M (6')\",\n  intelligence = \"High\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Dodge missiles on roll of 9 or better\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The thri-kreen are a race of carnivorous insectmen who inhabit deserts and dry grasslands. They live in small, lightless burrows and are not social creatures. Thri-kreen warriors hunt many creatures, especially elves. These mantis warriors are strong and agile, able to leap 20 feet upward and 50 feet forward.\\n\\nThe thri-kreen often use 2 specialized weapons of their own design. One is a polearm with a blade on each end which can be used to slash like a glaive or be thrown as a spear (damage 3-8). The other weapon is a small triangular 'throwing wedge' carved from a hard crystalline substance. These wedges will return to the thrower and may be caught to be thrown again if they miss their target. A thri-kreen may carry up to 10 of the wedges and can throw them up to a distance of 9\\\" (damage 3-6). A thri-kreen can successfully dodge missiles on a roll of 9 or better on 1d20.\\n\\nEven unarmed, the insect warriors strike with 4 clawed, arm-like appendages (damage 1-4) and bite with their mandibles (damage 2-5). Anyone bitten must save vs. paralyzation or be paralyzed for 2-16 rounds.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/thunder_beast.lua",
+   "content": "-- Thunder Beast: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Thunder Beast\",\n  page = \"119\",\n  pages = \"119\",\n  source = \"MM2\",\n  race = \"Thunder Beast\",\n  hitDice = \"4-9, +1/die\",\n  hitDiceNum = \"4\",\n  hitDiceBonus = \"1\",\n  avgHp = \"15\",\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"2-12\",\n  xp = \"650\",\n  xpPerHp = \"10\",\n  xpValue = 800,\n  xpSource = \"mm2_print\",\n  frequency = \"Common (Abyss only)\",\n  noAppearing = \"5-20 (adults)\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"9\\\\\\\" (18\\\\\\\" charge)\",\n  size = \"L (elephant-sized)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Trampling (see below)\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These bloated, pig-like creatures roam in herds across the layers of the Abyss. They are known as thunder beasts because of their rumbling bellow, intestinal sounds, and offensive breath. The monsters subsist on both vegetation and ooze from which unwholesome growths spring. In turn, they feed many of the other creatures likewise inhabiting the place. Their flesh is rank, fibrous, and disgusting to all but demons and their ilk - and possibly even to them!\\n\\nFor every 2 adult creatures in a herd of thunder beasts there will be 1 immature specimen. The young have no attack form. Adults attack by biting or by a trampling charge. This latter attack form must be from 2\\\" or greater distance when it commences. Damage inflicted is 1d4 per hit die if the attack succeeds. (Determine hit dice by rolling 1d6: 1=4, 2=5, 3=6, etc.; at least 1 in every 5 has 9 hit dice.) Frightened or angry thunder beasts will begin bellowing. In combat situations, each creature will breathe on its opponent. This breath builds to equal a fog cloud after 3 rounds. Creatures affected by odors will fight at -2 hit probability. The cloud persists for 1-4 rounds.\\n\\nA thunderbeast is pig- or hippo-like in form but with longer legs, of which it has 6. Also, its body is quite round and appears swollen. The creature's head is low-set and cylindrical with fan-like ears and a huge mouth. It has small, beady eyes and no nostrils. The tail is broad, thick, flatish and fairly short. Color ranges from yellow brown to olive, all with darker mottling and warty growths.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/time_elemental.lua",
+   "content": "-- Time Elemental: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Time Elemental\",\n  page = \"119\",\n  pages = \"119\",\n  source = \"MM2\",\n  race = \"Time Elemental\",\n  hitDice = \"12 or 16 (20)\",\n  hitDiceNum = \"12\",\n  hitDiceBonus = \"0\",\n  avgHp = \"42\",\n  armorClass = \"2\",\n  numAttacks = 1,\n  damage = \"3-12 or 4-16 (5-20)\",\n  xp = \"3000\",\n  xpPerHp = \"20\",\n  xpValue = 3840,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1 (See below)\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"1\\\\\\\"\",\n  size = \"S\",\n  intelligence = \"Very to exceptional (genius to supra-genius)\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+3 or better weapon to hit\",\n  magicResistance = \"Special, see below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Time elementals are basically of 2 sorts, the regular and noble. Information given in parentheses pertains to noble specimens. Time elementals exist in more than 1 time period, so they are always perceived as small creatures resembling a cloud of fire dust or vapor. They attack normally by spraying a fine, powdery substance at opponents. Those hit suffer damage due to cell death (aging).\\n\\nCommon time elementals can bring themselves from other times so as to effectively add 1-4 additional creatures, but a hit on any 1 damages all the manifestations of the time elemental. Therefore, when under attack, a time elemental will typically bring its other manifestations to its present time locale, gain multiple attacks that round, and then vanish completely into the timestream the next.\\n\\nAs a time elemental has the power to move forward, backward or sideways in time, (1 round for each hit die), it can usually avoid contact or break off contact at will. Unless the avoided party also has the ability to travel in time, the time elemental is then absolutely untraceable. Those able to follow will see a faint trail of haze in the direction of the time elemental's movement. Similarly, a time elemental can pursue by time movement, 1\\\" for each hit die, thus equalling up to a 13\\\" or 17\\\" movement rate. This could even put the elemental in front of a fleeing opponent.\\n\\nAll time-related spells are useless within 3\\\" physical distance of a time elemental, and no such spell will affect or reveal anything about a time elemental or its actions. In addition, as these creatures exist across multiple times, there is only 1 chance in 10 that any spell cast or magic employed against or upon a time elemental will actually affect it. (To determine this, roll 1d10 to find its current center of vulnerability, then roll a second 1d10 to see if it matches the first number rolled. If so, the spell or magic works.) Again, any opponent able to move through time can determine where the time elemental is most vulnerable, so magic or spells used by such an opponent will function properly, although the time elemental is still allowed a saving throw.\\n\\nNoble time elementals have all the powers of common ones. In addition, each has the power to cast a time stop spell (which will affect even time elementals of common sort), age a creature by 1-20 years, make a creature younger by 1-20 years, age nonliving vegetable matter by 10-200 years, age mineral material by 100-2000 years, and move up to 4 other creatures along time (forward, backward, or sideways) randomly, or to a desired locale, singly or jointly, providing the creatures are willing to go or fail to save vs. spells. Each power is usable per round, at will, once per day. Time elementals seldom appear on any plane but that of Time; on other planes they feel discomfort and the weight of the forward (or other) motion of time in relation to the plane upon which one of their manifestations exist. Similarly, time elementals cannot be conjured, summoned, or otherwise brought into being by any standard means or known spell.\\n\\nOn the Time Plane there are other creatures dissimilar to time elementals. There are also said to be certain royal time elementals of greater power than even the nobles. These creatures rule their fellows and serve certain deities. Royal time elementals have 24 or 28 hit dice, cause the same number of hit points of attack damage (6-24 or 7-28), and have double the number of powers. In addition, royal time elementals can summon 1-4 common (70%) or 1-2 noble elementals (30%) once per day.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/thunderherder.lua",
+   "content": "-- Thunderherder: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Thunderherder\",\n  page = \"120\",\n  pages = \"120\",\n  source = \"MM2\",\n  race = \"Thunderherder\",\n  hitDice = \"7\",\n  hitDiceNum = \"7\",\n  hitDiceBonus = \"0\",\n  avgHp = \"24\",\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"Nil\",\n  xp = \"350\",\n  xpPerHp = \"8\",\n  xpValue = 542,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"10-100+\",\n  lairPct = \"5\",\n  treasure = \"Nil\",\n  move = \"20\\\\\\\" (9\\\\\\\")\",\n  size = \"L\",\n  intelligence = \"Semi\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Earthquake\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Thunderherders are distant cousins to the purple worm but are not aggressive. These creatures travel in vast herds just a few feet under the ground. They are inoffensive and of sizes ranging from 3-5 feet wide and 5-10 feet long. They are found in desert regions.\\n\\nThe main dangers from thunderherders are the incidental earth tremors and the terrible trumpeting that they create as they stampede underground. They do no real damage but generate a great deal of confusion, knock over tents, and panic all pack animals. A single creature can cause a small tremor.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/transposer.lua",
+   "content": "-- Transposer: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Transposer\",\n  page = \"120\",\n  pages = \"120\",\n  source = \"MM2\",\n  race = \"Transposer\",\n  hitDice = \"6 (up to 48 hp)\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"0\",\n  avgHp = \"21\",\n  armorClass = \"7\",\n  numAttacks = 2,\n  damage = \"1-6\",\n  xp = \"625\",\n  xpPerHp = \"7\",\n  xpValue = 772,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"15\\\\\\\"\",\n  size = \"M (5' tall)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The bipedal transposer appears vaguely humanoid, although it has no actual features and its limbs end in sucker-like members. It attacks by lashing its arms, and the horny-ridged suckers inflict 1-6 points of damage to the victim. Such a hit also sets up a field of some unknown kind between the creature and the opponent so struck. Thereafter, any damage inflicted by that opponent upon the transposer does the attacker harm and restores hit points to the transposer in equal proportion. Thus a spell attack for 20 points of damage would harm the caster for that amount and restore or build the tranposer hit points to its maximum of 48. Weapon attacks are likewise transposed to harm the attacker and benefit the transposer. Only healing-type spells will harm the creature if the opponent has been contacted by a successful transposer attack. In such case, the curative effect damages the transposer and restores the individual casting the healing spell at the monster. Of course, opponents not bound to the transposer by the field will harm the creature normally.\\n\\nIn order to disguise itself and its powers, a transposer will use a minor illusion ability, a sort of change self power, to appear as a human, demihuman, etc., in order to entice prey into melee. The illusion power is destroyed only if the transposer flees or is slain. Special aids or disbelief can detect the ruse, but such must be actively employed.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/tri_flower_frond.lua",
+   "content": "-- Tri-Flower Frond: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Tri-Flower Frond\",\n  page = \"121\",\n  pages = \"121\",\n  source = \"MM2\",\n  race = \"Tri-Flower Frond\",\n  hitDice = \"2+8\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"8\",\n  avgHp = \"15\",\n  armorClass = \"9\",\n  numAttacks = \"See below\",\n  damage = \"See below\",\n  xp = \"120\",\n  xpPerHp = \"3\",\n  xpValue = 165,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-10\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"Nil\",\n  size = \"M\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The deep green 5-8 foot tall stalks of this plant are topped by trumpet-shaped flowers of vivid orange, bright yellow, and intense red. Each flower has its own function. The orange one shoots 2-8 tendrils from its center, each 3 feet long, and any creature struck must save vs. the poison from the pollen of a tendril or fall into a comatose slumber. The yellow bloom will bend over the sleeping victim immediately (sensitive rootlets note where the victim is) and tremble. This vibration looses a shower of sticky enzyme which causes 2-8 points of damage per round until the victim is completely rotted away. Each flask of water dumped upon a victim in the same round as the damage is done will reduce damage by 1 point; total immersion in water removes the sap entirely. The red flower extends tubular tendrils of 1 foot length, sinking them into the slumbering victim, first drawing body fluids at the rate of 1-6 hit points per turn and then sucking up the residual matter after the enzyme has dissolved the victim's body.\\n\\nOther color combinations of the plant's flowers are white, pale silvery-gray, pink or golden brown, chocolate brown, and russet.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/scrag_freshwater.lua",
+   "content": "-- Scrag, Freshwater: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Scrag, Freshwater\",\n  page = \"121\",\n  pages = \"121\",\n  source = \"MM2\",\n  race = \"Scrag\",\n  hitDice = \"5+5\",\n  hitDiceNum = \"5\",\n  hitDiceBonus = \"5\",\n  avgHp = \"22\",\n  armorClass = \"3\",\n  numAttacks = 3,\n  damage = \"2-5/2-5/3-12\",\n  xp = \"400\",\n  xpPerHp = \"8\",\n  xpValue = 576,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-6\",\n  lairPct = \"20\",\n  treasure = \"C\",\n  move = \"3\\\\\\\"/15\\\\\\\"\",\n  size = \"M (7'+ tall)\",\n  intelligence = \"Semi- to low\",\n  alignment = \"Chaotic (evil)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Regeneration\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Marine trolls are a gilled form of the common troll. They inhabit large bodies of water and need considerable room to hunt. Coloration runs from blue-green to olive.\\n\\nScrags found in fresh water are smaller than normal trolls and have heavy scales. Their claws are less formidable, but their enlarged lower jaw bears many small, very sharp fangs. Up to 3 different opponents can be attacked during a single melee round. Scrags regenerate as do trolls (q.v.) but they do so only when immersed in fresh water.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/scrag_saltwater.lua",
+   "content": "-- Scrag, Saltwater: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Scrag, Saltwater\",\n  page = \"121\",\n  pages = \"121\",\n  source = \"MM2\",\n  race = \"Scrag\",\n  hitDice = \"6+12\",\n  hitDiceNum = \"6\",\n  hitDiceBonus = \"12\",\n  avgHp = \"33\",\n  armorClass = \"2\",\n  numAttacks = 3,\n  damage = \"1-4/1-4/9-16\",\n  xp = \"900\",\n  xpPerHp = \"12\",\n  xpValue = 1296,\n  xpSource = \"mm2_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-8\",\n  lairPct = \"15\",\n  treasure = \"D\",\n  move = \"3\\\\\\\"/12\\\\\\\"\",\n  size = \"L (10'+ tall)\",\n  intelligence = \"Low to average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Regeneration\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Marine trolls are a gilled form of the common troll. They inhabit large bodies of water and need considerable room to hunt. Coloration runs from blue-green to olive.\\n\\nScrags found in seas and oceans are at least as large as ordinary trolls. Their skins are thick and heavily scaled. Some few (10%) are intelligent enough to further protect themselves with armor made of shells and sharkskin or similar substances; such protection gives an effective armor class of 1.\\n\\nThe forelimbs of the scrags are shorter and weaker than those of ordinary trolls, but the saltwater variety has developed a huge maw and numerous fangs to make up for the loss of talon attacks. As do freshwater scrags, saltwater scrags regenerate when in their saltwater element.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/twilight_bloom.lua",
+   "content": "-- Twilight Bloom (Purple Death): promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Twilight Bloom (Purple Death)\",\n  page = \"122\",\n  pages = \"122\",\n  source = \"MM2\",\n  race = \"Twilight Bloom\",\n  hitDice = \"3+8\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"8\",\n  avgHp = \"18\",\n  armorClass = \"8\",\n  numAttacks = \"See below\",\n  damage = \"See below\",\n  xp = \"125\",\n  xpPerHp = \"4\",\n  xpValue = 197,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-6\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"Nil\",\n  size = \"L\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"A twilight bloom, or purple death, is a poisonous plant. This tall (8-13 feet), thick-stalked specimen has a branchless, scaled trunk with fern-like foliage at the top. These fronds droop a short distance. Mixed with these are cup-shaped purple flowers with silvery stamens; the flowers point upward. Around the base of the plant is a fine, mossy mat which is actually the roots. The flowers exude a very attractive perfume and sweet sap. The vibrations of any creature passing beneath the cupped lavender blooms will cause them to gently tilt and drip a syrupy poison from the flower. There is a 25% chance of the creature being struck by this toxic sap. If the creature fails to save vs. poison, it dies instantly, and its decomposition feeds the roots of the plant.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/u/urchin_land.lua",
+   "content": "-- Urchin, Land: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Urchin, Land\",\n  page = \"122\",\n  pages = \"122\",\n  source = \"MM2\",\n  race = \"Urchin\",\n  hitDice = \"3+3\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"3\",\n  avgHp = \"13\",\n  armorClass = \"3\",\n  numAttacks = \"2-12\",\n  damage = \"1-2 + paralysis\",\n  xp = \"150\",\n  xpPerHp = \"4\",\n  xpValue = 202,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-2\",\n  lairPct = \"Nil\",\n  treasure = \"See below\",\n  move = \"12\\\\\\\"\",\n  size = \"S (3')\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Paralysis\",\n  specialDefenses = \"Smoke cloud\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"A land-dwelling distant cousin of the sea urchin, the land urchin's spine covered body is often mistaken for a bush. The land urchin is a scavenger that consumes virtually anything that is edible. Its small mouth is located on the underside of its body and it has a rasping tongue with which to saw through armor and gather food. It is a shy creature and will attack only if another creature approaches within 1\\\". It defends itself by shooting 2-12 spines (damage 1-2) per round, and the victim must save vs. poison or be paralyzed for 6 turns. If it must flee, the urchin will release a dark gas cloud with a 10-foot radius to aid in its escape. The land urchin has no visual organs but uses 2 small antennae to detect any movement within 1\\\". It has no front or back, and its 5 spindly legs can rotate to allow it to move in any direction.\\n\\nOccasionally, a land urchin will eat a bit of material that it cannot digest or eliminate. It will coat the object with a shiny greenish-black substance, forming 'pearls' similar to oyster pearls worth 100-600 gp each. Very old urchins may have up to a dozen pearls.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/u/ustilagor.lua",
+   "content": "-- Ustilagor: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Ustilagor\",\n  page = \"122\",\n  pages = \"122\",\n  source = \"MM2\",\n  race = \"Ustilagor\",\n  hitDice = \"3+3\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"3\",\n  avgHp = \"13\",\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"2-5 (+ poisoning)\",\n  xp = \"135\",\n  xpPerHp = \"4\",\n  xpValue = 187,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-3\",\n  lairPct = \"90\",\n  treasure = \"Q (x 1-20)\",\n  move = \"9\\\\\\\"\",\n  size = \"S (1' to 1 1/2' diameter)\",\n  intelligence = \"Unstable\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"Psionics\",\n  specialDefenses = \"Psionics\",\n  magicResistance = \"See below\",\n  psionic = \"150 + 5 to 30\",\n  attackDefenseModes = \"D/F\",\n  text = \"Ustilagor fungi appear to be brain-like growths with coral-like appendages. Although soft and not fast by normal standards, they can scuttle and dart, and this accounts for their relatively high armor class. Their attack consists of flicking out ribbon-like tendrils about 3 feet long. A hit inflicts damage due to alkaline fluids and causes the victim to save vs. poison or suffer additional like damage (2-5 hp) on the following round as the caustic substance affects its body.\\n\\nUstilagors have no intelligence or mind as defined by human standards, so mental attacks do not affect them. (Cf., PLAYERS HANDBOOK, p. 11, Wisdom Table, asterisked paragraph regarding magical attack adjustment.) These monsters do, however, have some form of brain, for they have psionic powers. Ustilagors can employ telempathic projection to project the following emotions on an individual during a round: hate for associate, distrust of associate, fear of fungi, loathing of area, or uncertainty. These projected emotions cause attack, bickering, desertion, or dithering, accordingly. Ustilagors also use energy control to protect themselves from spell attacks and the like. They attack psionic individuals only by id insinuation (as related to the strongest basic emotions.) Only a psionic blast will affect them in turn.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/vagabond.lua",
+   "content": "-- Vagabond: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Vagabond\",\n  page = \"122\",\n  pages = \"122-123\",\n  source = \"MM2\",\n  race = \"Vagabond\",\n  hitDice = \"As form\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"As form\",\n  armorClass = \"As form\",\n  numAttacks = \"As form\",\n  damage = \"As form\",\n  xp = \"Variable\",\n  xpPerHp = \"0\",\n  xpValue = 0,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"0\",\n  treasure = \"See below\",\n  move = \"As form\",\n  size = \"As form\",\n  intelligence = \"Genius to supra-genius\",\n  alignment = \"Neutral (any)\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"As form\",\n  magicResistance = \"As form\",\n  psionic = \"201-300\",\n  attackDefenseModes = \"All/all\",\n  text = \"A vagabond is a life force of unknown origin, possibly from a far planet, parallel unverse, or undiscovered plane. Though very rare, it may be encountered anywhere. The life force occupies the form of any one intelligent corporal creature indigenous to the area in which it is encountered, apparently forming or controlling the body for its own ends. A vagabond is often immediately recognizable if communication is established, as its odd speech and behavior patterns (always atypical of the form assumed) indicate its unfamiliarity with local customs and expectations.\\n\\nAs vagabonds may have nearly any appearance (though they have no power to change the form once assumed), their movement rates and other physical characteristics are those of the creatures. The vagabond is typically very inquisitive, often about mundane or personal details. If attacked, it will use its form to defend (or retreat) as best possible. If invited to accompany a party for an adventure, however, it will usually agree (90%), offering its form as an asset for use in exploration and (if necessary) combat. If the body is slain, the vagabond life force will depart, never to return. If an entire adventure is completed, the creature will give a special gift to each party member before departing. It can enchant any gem with a variety of word of recall (3 uses per enchantment) and will enchant 1 gem per character accompanying it on the adventure by way of thanks. (Only the possessor will know the 1-segment phrase needed to activate the gem.)\\n\\nVagabonds are creatures of legend, and nothing is known of their true forms or society (if any). They are immune to all forms of mental attack or control, save psionics.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/vargouille.lua",
+   "content": "-- Vargouille: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Vargouille\",\n  page = \"123\",\n  pages = \"123\",\n  source = \"MM2\",\n  race = \"Vargouille\",\n  hitDice = \"1+1\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"1\",\n  avgHp = \"4\",\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = \"118\",\n  xpPerHp = \"2\",\n  xpValue = 126,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-20\",\n  lairPct = \"80\",\n  treasure = \"See below\",\n  move = \"/12\\\\\\\" (MC: B)\",\n  size = \"S (3' wingspread)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"These horrible monsters are said to have been spawned in Tarterus and released upon the Prime Material Plane to wreak havoc. Appearing as hideous flying heads crowned with writhing tentacles, they appear at dusk and are gone by dawn. They lair in caves, caverns, and deep subterranean delves. Vargouilles hate light. They will attack and extinguish torches or smash lanterns. They will shun light of brighter sort, and daylight blinds them. They are most feared because their bite is so destructive that hit points are actually lost forever unless a saving throw vs. poison is successfully made for each bite inflicted. Failure indicates permanent loss of points of damage inflicted, i.e. 1-4 hit points lost and not restorable by any means short of a wish. Vargouilles have both infravision and ultravision.\\n\\nTreasure possessed by vargouilles is incidental only. If some victim happened to have items of value, then these will possibly be amongst the litter of the vargouilles' lair.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/vegepygmy.lua",
+   "content": "-- Vegepygmy: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Vegepygmy\",\n  page = \"124\",\n  pages = \"124\",\n  source = \"MM2\",\n  race = \"Vegepygmy\",\n  hitDice = \"1 to 6\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"0\",\n  avgHp = \"3\",\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"1-6 or by weapon type\",\n  xp = \"53\",\n  xpPerHp = \"1\",\n  xpValue = 56,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"30-300\",\n  lairPct = \"40\",\n  treasure = \"O, T, P\",\n  move = \"12\\\\\\\"\",\n  size = \"S\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Vegepygmies are vegetable creatures of low intelligence. They organize themselves into regional bands and live by scavenging and hunting. Meat forms their diet and they will eat it no matter what its condition.\\n\\nVegepygmies vary in color and size. Usually their colors will be similar to their normal surroundings. When encountered in areas that match their coloration, they will blend into the background, surprising 50% of the time. They have 1-4 hit dice, although leaders will have more. The composition of a force will be 1 hit die 50%; 2 hit dice 25%; 3 hit dice 15%; and 4 hit dice 10%.\\n\\nThose with 1 hit die will be 2 feet tall. One-half foot is added for every hit die over 1.\\n\\nFor every 50 vegepygmies there will be 1 subchief of 5 hit dice and 2-5 bodyguards of 3 hit dice each. Every band will have a leader of 6 hit dice. He will have 2-8 bodyguards of 4 hit dice each.\\n\\nAttacks from piercing weapons such as arrows and spears do only 1 point of damage to vegepygmies. Electrical attacks do no damage. Fire and cold do normal damage. Vegepygmies are immune to all charm/enchantment spells except those that affect plants. They always have saving throws against enchantment, even if one is not normally given.\\n\\nVegepygmy lairs are usually found in warm areas underground, although some may be found in dark forests. They form bands near their main food supply and are usually well-organized in the defense of this food supply. They coexist well with other forms of plant life. There is a 40% chance that there will be 1-3 shriekers guarding their lair. Vegepygmies of the same band have the ability to pass by shriekers unnoticed. There is a 70% chance that russet mold will be found in the vicinity of the lair.\\n\\nVegepygmies are short bipedal creatures with sharp thorn-like claws. Their shoulders, abdomens, and limbs are fringed with leaf-like tendrils. Their heads have a topknot of small leaves. They eat carrion and meat. Vegepygmies reproduce by russet mold or by propagating buds from their bodies. Although they do not have a spoken language, they are capable of vocalized cries. Their major form of communication is a code of chest slappings and thumpings. They live with dog-like creatures (thornres) with the following statistics: AC 3, MV 15\\\", HD 4, hp 21-30, #AT 1, Dmg 2-5 (plus 3-12 ripping damage from their thorn-like growths if in close combat), animal intelligence, man-sized.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/verme.lua",
+   "content": "-- Verme: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Verme\",\n  page = \"124\",\n  pages = \"124\",\n  source = \"MM2\",\n  race = \"Verme\",\n  hitDice = \"18+18\",\n  hitDiceNum = \"18\",\n  hitDiceBonus = \"18\",\n  avgHp = \"81\",\n  armorClass = \"3 (head)/5 (body)\",\n  numAttacks = 1,\n  damage = \"7-28\",\n  xp = \"8550\",\n  xpPerHp = \"25\",\n  xpValue = 10575,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"Nil\",\n  treasure = \"See below\",\n  move = \"18\\\\\\\"\",\n  size = \"L (50'-80' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Swallow whole\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The verme is the largest of fish, usually inhabiting great rivers, although some venture into saltwater. Regardless of its locale, the verme prefers warm water with an abundance of food, such as fish, reptiles, cattle, humans, or virtually anything else. Although the verme is long, it is flattish along its belly and wider than it is high. This enables it to lurk on the bottom and swim in relatively shallow water. The verme's head is heavily scaled and very bony, thus giving it an armor class of 3, while the body is less well protected. Because the verme swallows prey whole - even that as large as a water buffalo - the stomach can contain metallic or other items of indigestible nature (such as gems, crystal, etc.). Swallowing occurs on any hit if prey is not more than 12 feet tall. Damage (3d8+4) is incurred during the swallowing process. Swallowed creatures receive 2-16 points of additional damage per round. Any swallowed being will be dissolved in 6 rounds. The monster is able to upset vessels of up to small galley size when hungry and seeking food. Its thick, slime-covered scales make edged weapons useless, such attacks inflicting but 1 point of damage per blow. Fire-based attacks cause only one-half damage to the verme, unless the attack strikes the inside of the mouth or somewhere internally. In the latter case, damage is at a factor of +1 per die.\\n\\nThe verme looks much like a giant catfish, except it has large scales and numerous, needle-like teeth. It is pale yellow along its underside, the flanks shading from dark brown to a mottled green and brown back.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/vilstrak.lua",
+   "content": "-- Vilstrak (Marl Mugger, Tunnel Thug): promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Vilstrak (Marl Mugger, Tunnel Thug)\",\n  page = \"124\",\n  pages = \"124\",\n  source = \"MM2\",\n  race = \"Vilstrak\",\n  hitDice = \"1-6 hp\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"6\",\n  armorClass = \"2\",\n  numAttacks = 2,\n  damage = \"2-5/2-5\",\n  xp = \"7\",\n  xpPerHp = \"1\",\n  xpValue = 13,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-20\",\n  lairPct = \"5\",\n  treasure = \"C\",\n  move = \"9\\\\\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Neutral (evil)\",\n  specialAttacks = \"Surprise on a 1-4\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The vilstrak are known as marl muggers or tunnel thugs by humans. A vilstrak's stony substance provides it with both excellent protection and the uncanny ability to physically merge with earth or stone. This makes them 75% undetectable even at as little as a 20-foot distance. A vilstrak's attack consists of 2 club-like blows of its fists.\\n\\nA vilstrak's lair is typically in a hollow space in the earth or stone, which is reachable only by beings able to pass through solid stone or packed soil. However, not being too bright, vilstraks sometimes (5%) select a den where the hollow can be detected and broken into. There, plunderers will find treasures carried into it by the avaricious creatures.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/vulchling.lua",
+   "content": "-- Vulchling: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Vulchling\",\n  page = \"125\",\n  pages = \"125\",\n  source = \"MM2\",\n  race = \"Vulchling\",\n  hitDice = \"1\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"0\",\n  avgHp = \"3\",\n  armorClass = \"7\",\n  numAttacks = \"1 or 2\",\n  damage = \"2-5 or 1-4/1-4\",\n  xp = \"10\",\n  xpPerHp = \"1\",\n  xpValue = 13,\n  xpSource = \"mm2_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-16\",\n  lairPct = \"25\",\n  treasure = \"J, K, L, M/individual\",\n  move = \"6\\\\\\\"/3\\\\\\\" (MC: C)\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Vulchlings are a race of bird-like creatures having the appearance of vultures with vaguely human features. They favor desolate or subterranean lairs. Vulchlings will consort with harpies or even Type I demons at times. They roost in trees or on ledges and swoop down upon unsuspecting prey, attacking with extended talons. Thereafter, they hop to the attack with their sharp beaks. There will be from 0-9 eggs in a vulchling lair.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/vulture_giant.lua",
+   "content": "-- Vulture, Giant: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Vulture, Giant\",\n  page = \"125\",\n  pages = \"125\",\n  source = \"MM2\",\n  race = \"Vulture\",\n  hitDice = \"2+1\",\n  hitDiceNum = \"2\",\n  hitDiceBonus = \"1\",\n  avgHp = \"8\",\n  armorClass = \"7\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = \"20\",\n  xpPerHp = \"2\",\n  xpValue = 36,\n  xpSource = \"mm2_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"2-12\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"3\\\\\\\"/24\\\\\\\" (MC: D)\",\n  size = \"L (12'+ wingspread)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Carrion eaters of this sort are found in temperate to tropical regions. Vultures have eyesight at least equal to that of any falcon, hawk, or eagle. Thus, they remain at a very great altitude, searching the land beneath from a great vantage point. At the sight of erratically moving, crippled, or fallen creatures, any vultures present will swoop lower to determine if the creature is near dead or dead. Helpless or dead creatures will be eaten by vultures. Giant specimens, however, must actually be struck (a successful to-hit score) to drive them off to a safe distance.\\n\\nDuring the course of a melee in terrain where vultures are present, the vultures will appear 7-12 rounds after a creature is felled, whether it is unconscious, killed, or magically sleeping or held. If combatants are not within 20 feet of fallen creatures, the vultures attracted to the scene will alight and begin pecking at the victim, with 1-6 attacking each round. Note that game killed will not attract vultures if removed quickly and kept in the presence of active, obviously healthy beings.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/vulture_ordinary.lua",
+   "content": "-- Vulture, Ordinary: promoted by the R814 MM2 letters TUV walk\n-- round from the MM2 print\n-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin\n-- headers stay the print-fidelity record.\nreturn {\n  name = \"Vulture, Ordinary\",\n  page = \"125\",\n  pages = \"125\",\n  source = \"MM2\",\n  race = \"Vulture\",\n  hitDice = \"1+1\",\n  hitDiceNum = \"1\",\n  hitDiceBonus = \"1\",\n  avgHp = \"4\",\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-2\",\n  xp = \"35\",\n  xpPerHp = \"0\",\n  xpValue = 35,\n  xpSource = \"mm2_print\",\n  frequency = \"Common\",\n  noAppearing = \"4-24\",\n  lairPct = \"Nil\",\n  treasure = \"Nil\",\n  move = \"3\\\\\\\"/27\\\\\\\" (MC: E)\",\n  size = \"M (5'-6'+ wingspread)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Carrion eaters of this sort are found in temperate to tropical regions. Vultures have eyesight at least equal to that of any falcon, hawk, or eagle. Thus, they remain at a very great altitude, searching the land beneath from a great vantage point. At the sight of erratically moving, crippled, or fallen creatures, any vultures present will swoop lower to determine if the creature is near dead or dead. Helpless or dead creatures will be eaten by vultures. A potential victim able to actually strike at a vulture will cause ordinary vultures to move out of attack range, where they will wait for the victim to weaken past the point of resistance.\\n\\nDuring the course of a melee in terrain where vultures are present, the vultures will appear 7-12 rounds after a creature is felled, whether it is unconscious, killed, or magically sleeping or held. If combatants are not within 20 feet of fallen creatures, the vultures attracted to the scene will alight and begin pecking at the victim, with 1-6 attacking each round. Note that game killed will not attract vultures if removed quickly and kept in the presence of active, obviously healthy beings.\",\n}\n"
+  }
+ ],
+ "consts": [
+  {
+   "name": "mm2tuvRound",
+   "value": 814,
+   "comment": "The MM2 letters TUV walk round: the tarrasque to vulture turns, the EIGHTH single-letter pass (Curtiss Go call on the landed letter S walk)"
+  },
+  {
+   "name": "mm2tuvRegistryBefore",
+   "value": 766,
+   "comment": "The registry census before the R814 promotion (the landed R813 count)"
+  },
+  {
+   "name": "mm2tuvRegistryAfter",
+   "value": 792,
+   "comment": "The registry census after the R814 promotion (26 defs riding the R791 data_files extension)"
+  },
+  {
+   "name": "mm2tuvDefCount",
+   "value": 26,
+   "comment": "The 26 letters TUV defs promoted this round"
+  },
+  {
+   "name": "mm2tuvEntryCount",
+   "value": 21,
+   "comment": "The 21 letters TUV entry heads (the termite, scrag and vulture variant tables one head apiece)"
+  },
+  {
+   "name": "mm2tuvStatBlockHeadings",
+   "value": 22,
+   "comment": "The 22 letters TUV stat blocks (the termite royal pair the one extra block)"
+  },
+  {
+   "name": "mm2tuvDoctrineHeads",
+   "value": 0,
+   "comment": "No doctrine-only family heads in the letters TUV walk"
+  },
+  {
+   "name": "mm2tuvLetterTUVHeadings",
+   "value": 21,
+   "comment": "The 21 letters TUV index entries"
+  },
+  {
+   "name": "mm2tuvTUVStatRows",
+   "value": 26,
+   "comment": "The 26-row TUVStats stat grid"
+  },
+  {
+   "name": "mm2tuvGapClosed",
+   "value": 27,
+   "comment": "The gap census after the TUV-FLIP: 27 boxes closed"
+  },
+  {
+   "name": "mm2tuvGapOpen",
+   "value": 10,
+   "comment": "The gap census after the TUV-FLIP: 10 boxes open"
+  },
+  {
+   "name": "mm2tuvPriorOwnedEntries",
+   "value": 0,
+   "comment": "No prior-owned letters TUV heads (the MM1 t/thought_eater.lua print is an MM1 entry, not an MM2 letter T head)"
+  },
+  {
+   "name": "mm2tuvTarrasqueXpValue",
+   "value": 37500,
+   "comment": "The Tarrasque xpValue (the print 10 base 37500 + 0/hp x avgHp 300)"
+  },
+  {
+   "name": "mm2tuvTarrasqueXpLevel",
+   "value": 10,
+   "comment": "The Tarrasque xp level"
+  },
+  {
+   "name": "mm2tuvTarrasqueHitPoints",
+   "value": 300,
+   "comment": "The tarrasque 300 hp the flat-hp read (hdNum 0)"
+  },
+  {
+   "name": "mm2tuvTarrasqueRushBonusInches",
+   "value": 6,
+   "comment": "The tarrasque rush adds 6\" once every turn"
+  },
+  {
+   "name": "mm2tuvTarrasqueTailLashMax",
+   "value": 24,
+   "comment": "The tarrasque sweeping tail lash 2-24"
+  },
+  {
+   "name": "mm2tuvTarrasqueBiteMax",
+   "value": 50,
+   "comment": "The tarrasque savage bite 5-50"
+  },
+  {
+   "name": "mm2tuvTarrasqueHornMax",
+   "value": 10,
+   "comment": "Each tarrasque horn thrust 1-10 (2 attacks)"
+  },
+  {
+   "name": "mm2tuvTarrasqueReflectChance",
+   "value": 6,
+   "comment": "1 in 6 bolt and ray attacks reflect back upon the caster"
+  },
+  {
+   "name": "mm2tuvTarrasqueRegenPerRound",
+   "value": 1,
+   "comment": "The tarrasque regenerates 1 hit point per round"
+  },
+  {
+   "name": "mm2tuvTarrasqueSlayThreshold",
+   "value": -30,
+   "comment": "The tarrasque dies only at -30 or fewer hit points plus a wish"
+  },
+  {
+   "name": "mm2tuvTarrasqueDiamondMin",
+   "value": 10,
+   "comment": "The carapace yields 10-100 diamonds of 1000 gp base value"
+  },
+  {
+   "name": "mm2tuvTarrasqueDiamondMax",
+   "value": 100,
+   "comment": "The carapace diamonds up to 100"
+  },
+  {
+   "name": "mm2tuvTarrasqueDiamondBaseGp",
+   "value": 1000,
+   "comment": "Each carapace diamond 1000 gp base value"
+  },
+  {
+   "name": "mm2tuvTarrasqueShieldMin",
+   "value": 1,
+   "comment": "The underbelly metal forges 1-4 shields of +5 power"
+  },
+  {
+   "name": "mm2tuvTarrasqueShieldMax",
+   "value": 4,
+   "comment": "The shields up to 4"
+  },
+  {
+   "name": "mm2tuvTarrasqueShieldPlus",
+   "value": 5,
+   "comment": "The forged shields +5"
+  },
+  {
+   "name": "mm2tuvTarrasqueDormancyMinMonths",
+   "value": 5,
+   "comment": "The tarrasque sleeps 5-20 months between foraging"
+  },
+  {
+   "name": "mm2tuvTarrasqueDormancyMaxMonths",
+   "value": 20,
+   "comment": "The dormancy up to 20 months"
+  },
+  {
+   "name": "mm2tuvTarrasqueActiveToDormantRatio",
+   "value": 30,
+   "comment": "The active to dormant ratio about 1:30"
+  },
+  {
+   "name": "mm2tuvTasloiXpValue",
+   "value": 13,
+   "comment": "The Tasloi xpValue (the print 1 base 10 + 1/hp x avgHp 3)"
+  },
+  {
+   "name": "mm2tuvTasloiXpLevel",
+   "value": 1,
+   "comment": "The Tasloi xp level"
+  },
+  {
+   "name": "mm2tuvTasloiSurpriseMax",
+   "value": 4,
+   "comment": "The tasloi surprise on a 1-4 (1d6)"
+  },
+  {
+   "name": "mm2tuvTasloiHideInShadowsPct",
+   "value": 75,
+   "comment": "The tasloi hide in shadows 75% of the time"
+  },
+  {
+   "name": "mm2tuvTasloiDaylightPenalty",
+   "value": 1,
+   "comment": "Full daylight causes a -1 on tasloi to-hit rolls"
+  },
+  {
+   "name": "mm2tuvTasloiChiefBandSize",
+   "value": 70,
+   "comment": "A tasloi chief (5 HD) for every band of 70 or more"
+  },
+  {
+   "name": "mm2tuvTasloiChiefHitDice",
+   "value": 5,
+   "comment": "The tasloi chief 5 HD"
+  },
+  {
+   "name": "mm2tuvTasloiShamanChancePct",
+   "value": 30,
+   "comment": "A 30% chance any band has a shaman"
+  },
+  {
+   "name": "mm2tuvTasloiShamanMaxLevel",
+   "value": 5,
+   "comment": "Tasloi shamans advance up to 5th level"
+  },
+  {
+   "name": "mm2tuvTasloiShieldArmorClass",
+   "value": 5,
+   "comment": "Using a shield the tasloi armor class becomes 5"
+  },
+  {
+   "name": "mm2tuvTasloiLairTreesMin",
+   "value": 1,
+   "comment": "The lair 1-6 large trees"
+  },
+  {
+   "name": "mm2tuvTasloiLairTreesMax",
+   "value": 6,
+   "comment": "The lair trees up to 6"
+  },
+  {
+   "name": "mm2tuvTasloiPlatformsMin",
+   "value": 4,
+   "comment": "The lair 4-24 platforms"
+  },
+  {
+   "name": "mm2tuvTasloiPlatformsMax",
+   "value": 24,
+   "comment": "The platforms up to 24"
+  },
+  {
+   "name": "mm2tuvTasloiPlatformHeightMin",
+   "value": 50,
+   "comment": "The platforms 50-100 feet from the ground"
+  },
+  {
+   "name": "mm2tuvTasloiPlatformHeightMax",
+   "value": 100,
+   "comment": "The platform height up to 100 feet"
+  },
+  {
+   "name": "mm2tuvTasloiGiantSpiderChancePct",
+   "value": 60,
+   "comment": "A 60% chance of 1-6 trained giant spiders"
+  },
+  {
+   "name": "mm2tuvTasloiGiantWaspChancePct",
+   "value": 20,
+   "comment": "A 20% chance of 2-8 trained giant wasps"
+  },
+  {
+   "name": "mm2tuvTasloiPidginCommonPct",
+   "value": 5,
+   "comment": "About 5% of tasloi know a pidgin Common"
+  },
+  {
+   "name": "mm2tuvTermiteWorkerXpValue",
+   "value": 30,
+   "comment": "The Termite, Worker xpValue (the print 1 base 20 + 2/hp x avgHp 5)"
+  },
+  {
+   "name": "mm2tuvTermiteWorkerXpLevel",
+   "value": 1,
+   "comment": "The Termite, Worker xp level"
+  },
+  {
+   "name": "mm2tuvTermiteNestDiameterFeet",
+   "value": 100,
+   "comment": "The termite nest a stone-hard mound about 100 feet in diameter"
+  },
+  {
+   "name": "mm2tuvTermiteNestHeightMinFeet",
+   "value": 200,
+   "comment": "The nest 200-500 feet high"
+  },
+  {
+   "name": "mm2tuvTermiteNestHeightMaxFeet",
+   "value": 500,
+   "comment": "The nest up to 500 feet"
+  },
+  {
+   "name": "mm2tuvTermiteOpeningMinFeet",
+   "value": 5,
+   "comment": "The circular openings 5-8 feet in diameter"
+  },
+  {
+   "name": "mm2tuvTermiteOpeningMaxFeet",
+   "value": 8,
+   "comment": "The openings up to 8 feet"
+  },
+  {
+   "name": "mm2tuvTermiteLairMultiplier",
+   "value": 10,
+   "comment": "In the lair 10 times the workers and soldiers first encountered"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierEscortMin",
+   "value": 3,
+   "comment": "More than 30 workers are accompanied by 3-16 soldiers"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierEscortMax",
+   "value": 16,
+   "comment": "The soldier escort up to 16"
+  },
+  {
+   "name": "mm2tuvTermiteChamberGuardBonus",
+   "value": 1,
+   "comment": "Chamber guards get a +1 both to hit and to damage"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierXpValue",
+   "value": 77,
+   "comment": "The Termite, Soldier xpValue (the print 2 base 50 + 3/hp x avgHp 9)"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierXpLevel",
+   "value": 2,
+   "comment": "The Termite, Soldier xp level"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierBlindMinRounds",
+   "value": 5,
+   "comment": "The soldier spit blinds for 5-20 rounds (save vs. poison negates)"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierBlindMaxRounds",
+   "value": 20,
+   "comment": "The blindness up to 20"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierBurnMin",
+   "value": 5,
+   "comment": "Ignited spit inflicts 5-16 points of burning damage"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierBurnMax",
+   "value": 16,
+   "comment": "The burning damage up to 16"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierSpitRangeInches",
+   "value": 1,
+   "comment": "The spit range 1\", volume about 1 pint, once per turn"
+  },
+  {
+   "name": "mm2tuvTermiteKingXpValue",
+   "value": 770,
+   "comment": "The Termite, King xpValue (the print 5 base 500 + 10/hp x avgHp 27)"
+  },
+  {
+   "name": "mm2tuvTermiteKingXpLevel",
+   "value": 5,
+   "comment": "The Termite, King xp level"
+  },
+  {
+   "name": "mm2tuvTermiteKingHpMin",
+   "value": 30,
+   "comment": "The termite king hp 30 or more"
+  },
+  {
+   "name": "mm2tuvTermiteKingDamageMax",
+   "value": 18,
+   "comment": "The termite king Dmg 3-18"
+  },
+  {
+   "name": "mm2tuvTermiteQueenXpValue",
+   "value": 1368,
+   "comment": "The Termite, Queen xpValue (the print 6 base 900 + 13/hp x avgHp 36)"
+  },
+  {
+   "name": "mm2tuvTermiteQueenXpLevel",
+   "value": 6,
+   "comment": "The Termite, Queen xp level"
+  },
+  {
+   "name": "mm2tuvTermiteQueenHpMin",
+   "value": 40,
+   "comment": "The termite queen hp 40 or more"
+  },
+  {
+   "name": "mm2tuvTermiteQueenDamageMax",
+   "value": 30,
+   "comment": "The termite queen Dmg 5-30"
+  },
+  {
+   "name": "mm2tuvThessalhydraXpValue",
+   "value": 6472,
+   "comment": "The Thessalhydra xpValue (the print 9 base 5800 + 16/hp x avgHp 42)"
+  },
+  {
+   "name": "mm2tuvThessalhydraXpLevel",
+   "value": 9,
+   "comment": "The Thessalhydra xp level"
+  },
+  {
+   "name": "mm2tuvThessalhydraFringeHeadFeet",
+   "value": 6,
+   "comment": "Each fringe head some 6 feet long"
+  },
+  {
+   "name": "mm2tuvThessalhydraSeverDamage",
+   "value": 12,
+   "comment": "Fringe heads each take 12 points of damage to sever"
+  },
+  {
+   "name": "mm2tuvThessalhydraFringeRegenDays",
+   "value": 12,
+   "comment": "Lost fringe heads regenerate in 12 days"
+  },
+  {
+   "name": "mm2tuvThessalhydraSpitRangeInches",
+   "value": 3,
+   "comment": "The acid spit up to 3\" distant"
+  },
+  {
+   "name": "mm2tuvThessalhydraSpitDiameterFeet",
+   "value": 12,
+   "comment": "The spit covers a 12-foot diameter circle"
+  },
+  {
+   "name": "mm2tuvThessalhydraSpitMin",
+   "value": 12,
+   "comment": "The spit inflicts 12-72 points of acid damage (save for half)"
+  },
+  {
+   "name": "mm2tuvThessalhydraSpitMax",
+   "value": 72,
+   "comment": "The spit damage up to 72"
+  },
+  {
+   "name": "mm2tuvThessalhydraMouthMax",
+   "value": 20,
+   "comment": "The main mouth bites 1-20 plus another 1-20 acid"
+  },
+  {
+   "name": "mm2tuvThessalhydraTailMax",
+   "value": 12,
+   "comment": "The tail pincer inflicts 1-12 in the grasping"
+  },
+  {
+   "name": "mm2tuvThriKreenXpValue",
+   "value": 992,
+   "comment": "The Thri-Kreen (Mantis Warrior) xpValue (the print 6 base 800 + 8/hp x avgHp 24)"
+  },
+  {
+   "name": "mm2tuvThriKreenXpLevel",
+   "value": 6,
+   "comment": "The Thri-Kreen (Mantis Warrior) xp level"
+  },
+  {
+   "name": "mm2tuvThriKreenLeapUpFeet",
+   "value": 20,
+   "comment": "The thri-kreen leap 20 feet up"
+  },
+  {
+   "name": "mm2tuvThriKreenLeapForwardFeet",
+   "value": 50,
+   "comment": "The thri-kreen leap 50 feet forward"
+  },
+  {
+   "name": "mm2tuvThriKreenPolearmMin",
+   "value": 3,
+   "comment": "The polearm damage 3-8"
+  },
+  {
+   "name": "mm2tuvThriKreenPolearmMax",
+   "value": 8,
+   "comment": "The polearm damage up to 8"
+  },
+  {
+   "name": "mm2tuvThriKreenWedgeMin",
+   "value": 3,
+   "comment": "The throwing wedge damage 3-6"
+  },
+  {
+   "name": "mm2tuvThriKreenWedgeMax",
+   "value": 6,
+   "comment": "The wedge damage up to 6"
+  },
+  {
+   "name": "mm2tuvThriKreenWedgeRangeInches",
+   "value": 9,
+   "comment": "The wedges thrown up to 9\""
+  },
+  {
+   "name": "mm2tuvThriKreenWedgeCarryMax",
+   "value": 10,
+   "comment": "Up to 10 wedges carried"
+  },
+  {
+   "name": "mm2tuvThriKreenDodgeRoll",
+   "value": 9,
+   "comment": "A thri-kreen dodges missiles on a roll of 9 or better on 1d20"
+  },
+  {
+   "name": "mm2tuvThriKreenBiteMin",
+   "value": 2,
+   "comment": "The mandible bite 2-5"
+  },
+  {
+   "name": "mm2tuvThriKreenBiteMax",
+   "value": 5,
+   "comment": "The bite damage up to 5"
+  },
+  {
+   "name": "mm2tuvThriKreenParalysisMinRounds",
+   "value": 2,
+   "comment": "The bite paralyzes for 2-16 rounds without a save"
+  },
+  {
+   "name": "mm2tuvThriKreenParalysisMaxRounds",
+   "value": 16,
+   "comment": "The paralysis up to 16"
+  },
+  {
+   "name": "mm2tuvThunderBeastXpValue",
+   "value": 800,
+   "comment": "The Thunder Beast xpValue (the print 6 base 650 + 10/hp x avgHp 15)"
+  },
+  {
+   "name": "mm2tuvThunderBeastXpLevel",
+   "value": 6,
+   "comment": "The Thunder Beast xp level"
+  },
+  {
+   "name": "mm2tuvThunderBeastYoungPerAdults",
+   "value": 2,
+   "comment": "For every 2 adults there is 1 immature thunder beast"
+  },
+  {
+   "name": "mm2tuvThunderBeastTrampleRangeInches",
+   "value": 2,
+   "comment": "The trampling charge commences from 2\" or greater"
+  },
+  {
+   "name": "mm2tuvThunderBeastTrampleDieMax",
+   "value": 4,
+   "comment": "The trample inflicts 1d4 per hit die"
+  },
+  {
+   "name": "mm2tuvThunderBeastBreathRounds",
+   "value": 3,
+   "comment": "The breath builds to equal a fog cloud after 3 rounds"
+  },
+  {
+   "name": "mm2tuvThunderBeastCloudMinRounds",
+   "value": 1,
+   "comment": "The cloud persists 1-4"
+  },
+  {
+   "name": "mm2tuvThunderBeastCloudMaxRounds",
+   "value": 4,
+   "comment": "The cloud up to 4 rounds"
+  },
+  {
+   "name": "mm2tuvThunderBeastOdorPenalty",
+   "value": 2,
+   "comment": "Creatures affected by odors fight at -2 hit probability"
+  },
+  {
+   "name": "mm2tuvThunderBeastLegs",
+   "value": 6,
+   "comment": "The thunder beast has 6 longer legs"
+  },
+  {
+   "name": "mm2tuvThunderBeastRareHd",
+   "value": 9,
+   "comment": "At least 1 in every 5 thunder beasts has 9 hit dice"
+  },
+  {
+   "name": "mm2tuvThunderBeastRareHdChance",
+   "value": 5,
+   "comment": "The 9-hit-dice chance 1 in 5"
+  },
+  {
+   "name": "mm2tuvTimeElementalXpValue",
+   "value": 3840,
+   "comment": "The Time Elemental xpValue (the print 7 base 3000 + 20/hp x avgHp 42)"
+  },
+  {
+   "name": "mm2tuvTimeElementalXpLevel",
+   "value": 7,
+   "comment": "The Time Elemental xp level"
+  },
+  {
+   "name": "mm2tuvTimeElementalExtraMin",
+   "value": 1,
+   "comment": "A common time elemental adds 1-4 additional manifestations"
+  },
+  {
+   "name": "mm2tuvTimeElementalExtraMax",
+   "value": 4,
+   "comment": "The manifestations up to 4"
+  },
+  {
+   "name": "mm2tuvTimeElementalDampenInches",
+   "value": 3,
+   "comment": "All time-related spells are useless within 3\" of a time elemental"
+  },
+  {
+   "name": "mm2tuvTimeElementalSpellChance",
+   "value": 10,
+   "comment": "Only 1 chance in 10 that any spell affects a time elemental"
+  },
+  {
+   "name": "mm2tuvTimeElementalPursuitPerHd",
+   "value": 1,
+   "comment": "Time pursuit 1\" for each hit die"
+  },
+  {
+   "name": "mm2tuvTimeElementalCommonPursuitMax",
+   "value": 13,
+   "comment": "The common pursuit rate up to 13\""
+  },
+  {
+   "name": "mm2tuvTimeElementalNoblePursuitMax",
+   "value": 17,
+   "comment": "The noble pursuit rate up to 17\""
+  },
+  {
+   "name": "mm2tuvTimeElementalTravelPerHd",
+   "value": 1,
+   "comment": "Time travel 1 round for each hit die"
+  },
+  {
+   "name": "mm2tuvTimeElementalNobleAgeMin",
+   "value": 1,
+   "comment": "The noble ages or youthens a creature 1-20 years"
+  },
+  {
+   "name": "mm2tuvTimeElementalNobleAgeMax",
+   "value": 20,
+   "comment": "The noble aging up to 20"
+  },
+  {
+   "name": "mm2tuvTimeElementalMatterAgeMin",
+   "value": 10,
+   "comment": "The noble ages vegetable matter 10-200 years"
+  },
+  {
+   "name": "mm2tuvTimeElementalMatterAgeMax",
+   "value": 200,
+   "comment": "The matter aging up to 200"
+  },
+  {
+   "name": "mm2tuvTimeElementalMineralAgeMin",
+   "value": 100,
+   "comment": "The noble ages mineral material 100-2000 years"
+  },
+  {
+   "name": "mm2tuvTimeElementalMineralAgeMax",
+   "value": 2000,
+   "comment": "The mineral aging up to 2000"
+  },
+  {
+   "name": "mm2tuvTimeElementalNobleMoveMax",
+   "value": 4,
+   "comment": "The noble moves up to 4 other creatures along time"
+  },
+  {
+   "name": "mm2tuvTimeElementalRoyalHdMin",
+   "value": 24,
+   "comment": "Royal time elementals have 24 or 28 hit dice"
+  },
+  {
+   "name": "mm2tuvTimeElementalRoyalHdMax",
+   "value": 28,
+   "comment": "The royal hit dice up to 28"
+  },
+  {
+   "name": "mm2tuvTimeElementalRoyalSummonPct",
+   "value": 70,
+   "comment": "Royals summon 1-4 common (70%) or 1-2 noble elementals (30%)"
+  },
+  {
+   "name": "mm2tuvThunderherderXpValue",
+   "value": 542,
+   "comment": "The Thunderherder xpValue (the print 5 base 350 + 8/hp x avgHp 24)"
+  },
+  {
+   "name": "mm2tuvThunderherderXpLevel",
+   "value": 5,
+   "comment": "The Thunderherder xp level"
+  },
+  {
+   "name": "mm2tuvThunderherderWidthMinFeet",
+   "value": 3,
+   "comment": "The thunderherder 3-5 feet wide"
+  },
+  {
+   "name": "mm2tuvThunderherderWidthMaxFeet",
+   "value": 5,
+   "comment": "The width up to 5 feet"
+  },
+  {
+   "name": "mm2tuvThunderherderLengthMinFeet",
+   "value": 5,
+   "comment": "The thunderherder 5-10 feet long"
+  },
+  {
+   "name": "mm2tuvThunderherderLengthMaxFeet",
+   "value": 10,
+   "comment": "The length up to 10 feet"
+  },
+  {
+   "name": "mm2tuvTransposerXpValue",
+   "value": 772,
+   "comment": "The Transposer xpValue (the print 6 base 625 + 7/hp x avgHp 21)"
+  },
+  {
+   "name": "mm2tuvTransposerXpLevel",
+   "value": 6,
+   "comment": "The Transposer xp level"
+  },
+  {
+   "name": "mm2tuvTransposerMaxHp",
+   "value": 48,
+   "comment": "The transposer hit points build to a maximum of 48"
+  },
+  {
+   "name": "mm2tuvTransposerSuckerMax",
+   "value": 6,
+   "comment": "The horny-ridged suckers inflict 1-6 points of damage"
+  },
+  {
+   "name": "mm2tuvTransposerExampleDamage",
+   "value": 20,
+   "comment": "A 20-point spell attack harms the caster and feeds the transposer"
+  },
+  {
+   "name": "mm2tuvTriFlowerXpValue",
+   "value": 165,
+   "comment": "The Tri-Flower Frond xpValue (the print 3 base 120 + 3/hp x avgHp 15)"
+  },
+  {
+   "name": "mm2tuvTriFlowerXpLevel",
+   "value": 3,
+   "comment": "The Tri-Flower Frond xp level"
+  },
+  {
+   "name": "mm2tuvTriFlowerStalkMinFeet",
+   "value": 5,
+   "comment": "The stalks 5-8 feet tall"
+  },
+  {
+   "name": "mm2tuvTriFlowerStalkMaxFeet",
+   "value": 8,
+   "comment": "The stalks up to 8 feet"
+  },
+  {
+   "name": "mm2tuvTriFlowerTendrilMin",
+   "value": 2,
+   "comment": "The orange flower shoots 2-8 tendrils"
+  },
+  {
+   "name": "mm2tuvTriFlowerTendrilMax",
+   "value": 8,
+   "comment": "The tendrils up to 8"
+  },
+  {
+   "name": "mm2tuvTriFlowerTendrilFeet",
+   "value": 3,
+   "comment": "Each tendril 3 feet long"
+  },
+  {
+   "name": "mm2tuvTriFlowerEnzymeMin",
+   "value": 2,
+   "comment": "The sticky enzyme 2-8 points per round"
+  },
+  {
+   "name": "mm2tuvTriFlowerEnzymeMax",
+   "value": 8,
+   "comment": "The enzyme damage up to 8"
+  },
+  {
+   "name": "mm2tuvTriFlowerWaterReduction",
+   "value": 1,
+   "comment": "Each flask of water reduces enzyme damage by 1 point"
+  },
+  {
+   "name": "mm2tuvTriFlowerRedTendrilFeet",
+   "value": 1,
+   "comment": "The red flower tendrils 1 foot long"
+  },
+  {
+   "name": "mm2tuvTriFlowerDrainMin",
+   "value": 1,
+   "comment": "The red flower draws body fluids 1-6 per turn"
+  },
+  {
+   "name": "mm2tuvTriFlowerDrainMax",
+   "value": 6,
+   "comment": "The fluid drain up to 6"
+  },
+  {
+   "name": "mm2tuvScragFreshwaterXpValue",
+   "value": 576,
+   "comment": "The Scrag, Freshwater xpValue (the print 5 base 400 + 8/hp x avgHp 22)"
+  },
+  {
+   "name": "mm2tuvScragFreshwaterXpLevel",
+   "value": 5,
+   "comment": "The Scrag, Freshwater xp level"
+  },
+  {
+   "name": "mm2tuvScragFreshClawMax",
+   "value": 5,
+   "comment": "The freshwater claws 2-5"
+  },
+  {
+   "name": "mm2tuvScragFreshJawMin",
+   "value": 3,
+   "comment": "The enlarged jaw 3-12"
+  },
+  {
+   "name": "mm2tuvScragFreshJawMax",
+   "value": 12,
+   "comment": "The jaw damage up to 12"
+  },
+  {
+   "name": "mm2tuvScragFreshOpponents",
+   "value": 3,
+   "comment": "Up to 3 different opponents can be attacked in a single round"
+  },
+  {
+   "name": "mm2tuvScragSaltwaterXpValue",
+   "value": 1296,
+   "comment": "The Scrag, Saltwater xpValue (the print 6 base 900 + 12/hp x avgHp 33)"
+  },
+  {
+   "name": "mm2tuvScragSaltwaterXpLevel",
+   "value": 6,
+   "comment": "The Scrag, Saltwater xp level"
+  },
+  {
+   "name": "mm2tuvScragSaltArmoredPct",
+   "value": 10,
+   "comment": "Some few (10%) saltwater scrags armor themselves"
+  },
+  {
+   "name": "mm2tuvScragSaltArmoredAc",
+   "value": 1,
+   "comment": "The shell-and-sharkskin armor gives an effective AC 1"
+  },
+  {
+   "name": "mm2tuvScragSaltClawMax",
+   "value": 4,
+   "comment": "The saltwater claws 1-4"
+  },
+  {
+   "name": "mm2tuvScragSaltMawMin",
+   "value": 9,
+   "comment": "The huge maw 9-16"
+  },
+  {
+   "name": "mm2tuvScragSaltMawMax",
+   "value": 16,
+   "comment": "The maw damage up to 16"
+  },
+  {
+   "name": "mm2tuvTwilightBloomXpValue",
+   "value": 197,
+   "comment": "The Twilight Bloom (Purple Death) xpValue (the print 3 base 125 + 4/hp x avgHp 18)"
+  },
+  {
+   "name": "mm2tuvTwilightBloomXpLevel",
+   "value": 3,
+   "comment": "The Twilight Bloom (Purple Death) xp level"
+  },
+  {
+   "name": "mm2tuvTwilightBloomHeightMinFeet",
+   "value": 8,
+   "comment": "The tall stalk 8-13 feet"
+  },
+  {
+   "name": "mm2tuvTwilightBloomHeightMaxFeet",
+   "value": 13,
+   "comment": "The stalk up to 13 feet"
+  },
+  {
+   "name": "mm2tuvTwilightBloomSapChancePct",
+   "value": 25,
+   "comment": "A 25% chance of being struck by the toxic sap"
+  },
+  {
+   "name": "mm2tuvUrchinLandXpValue",
+   "value": 202,
+   "comment": "The Urchin, Land xpValue (the print 3 base 150 + 4/hp x avgHp 13)"
+  },
+  {
+   "name": "mm2tuvUrchinLandXpLevel",
+   "value": 3,
+   "comment": "The Urchin, Land xp level"
+  },
+  {
+   "name": "mm2tuvUrchinSpineMin",
+   "value": 2,
+   "comment": "The urchin shoots 2-12 spines per round"
+  },
+  {
+   "name": "mm2tuvUrchinSpineMax",
+   "value": 12,
+   "comment": "The spines up to 12 (the loader 10)"
+  },
+  {
+   "name": "mm2tuvUrchinSpineDamageMax",
+   "value": 2,
+   "comment": "Each spine 1-2 damage"
+  },
+  {
+   "name": "mm2tuvUrchinParalysisTurns",
+   "value": 6,
+   "comment": "The spine poison paralyzes for 6 turns without a save"
+  },
+  {
+   "name": "mm2tuvUrchinSmokeRadiusFeet",
+   "value": 10,
+   "comment": "The dark gas cloud a 10-foot radius escape aid"
+  },
+  {
+   "name": "mm2tuvUrchinAntennae",
+   "value": 2,
+   "comment": "The 2 small antennae detect movement"
+  },
+  {
+   "name": "mm2tuvUrchinLegs",
+   "value": 5,
+   "comment": "The 5 spindly legs rotate to any direction"
+  },
+  {
+   "name": "mm2tuvUrchinPearlMinGp",
+   "value": 100,
+   "comment": "The urchin pearls worth 100-600 gp"
+  },
+  {
+   "name": "mm2tuvUrchinPearlMaxGp",
+   "value": 600,
+   "comment": "The pearl value up to 600 gp"
+  },
+  {
+   "name": "mm2tuvUrchinPearlsMax",
+   "value": 12,
+   "comment": "Very old urchins up to a dozen pearls"
+  },
+  {
+   "name": "mm2tuvUstilagorXpValue",
+   "value": 187,
+   "comment": "The Ustilagor xpValue (the print 3 base 135 + 4/hp x avgHp 13)"
+  },
+  {
+   "name": "mm2tuvUstilagorXpLevel",
+   "value": 3,
+   "comment": "The Ustilagor xp level"
+  },
+  {
+   "name": "mm2tuvUstilagorTendrilFeet",
+   "value": 3,
+   "comment": "The ribbon-like tendrils about 3 feet long"
+  },
+  {
+   "name": "mm2tuvUstilagorAlkaliMin",
+   "value": 2,
+   "comment": "The alkaline hit 2-5 plus like damage next round without a save"
+  },
+  {
+   "name": "mm2tuvUstilagorAlkaliMax",
+   "value": 5,
+   "comment": "The alkaline damage up to 5"
+  },
+  {
+   "name": "mm2tuvVagabondXpValue",
+   "value": 0,
+   "comment": "The Vagabond xpValue (the print 0 base Variable + 0/hp x avgHp As form - the Variable xp the nil read)"
+  },
+  {
+   "name": "mm2tuvVagabondXpLevel",
+   "value": 0,
+   "comment": "The Vagabond xp level"
+  },
+  {
+   "name": "mm2tuvVagabondJoinPct",
+   "value": 90,
+   "comment": "A vagabond invited along will usually agree (90%)"
+  },
+  {
+   "name": "mm2tuvVagabondGemCharges",
+   "value": 3,
+   "comment": "Each enchanted gem carries 3 uses of word of recall"
+  },
+  {
+   "name": "mm2tuvVargouilleXpValue",
+   "value": 126,
+   "comment": "The Vargouille xpValue (the print 3 base 118 + 2/hp x avgHp 4)"
+  },
+  {
+   "name": "mm2tuvVargouilleXpLevel",
+   "value": 3,
+   "comment": "The Vargouille xp level"
+  },
+  {
+   "name": "mm2tuvVargouilleBiteMax",
+   "value": 4,
+   "comment": "The vargouille bite 1-4 lost forever without a save vs. poison"
+  },
+  {
+   "name": "mm2tuvVargouilleWingspreadFeet",
+   "value": 3,
+   "comment": "The vargouille size S (3' wingspread)"
+  },
+  {
+   "name": "mm2tuvVegepygmyXpValue",
+   "value": 56,
+   "comment": "The Vegepygmy xpValue (the print 3 base 53 + 1/hp x avgHp 3)"
+  },
+  {
+   "name": "mm2tuvVegepygmyXpLevel",
+   "value": 3,
+   "comment": "The Vegepygmy xp level"
+  },
+  {
+   "name": "mm2tuvVegepygmySurprisePct",
+   "value": 50,
+   "comment": "Color-matched vegepygmies surprise 50% of the time"
+  },
+  {
+   "name": "mm2tuvVegepygmyPiercingDamage",
+   "value": 1,
+   "comment": "Piercing weapons do only 1 point of damage to vegepygmies"
+  },
+  {
+   "name": "mm2tuvVegepygmyShriekerPct",
+   "value": 40,
+   "comment": "A 40% chance of 1-3 shriekers guarding the lair"
+  },
+  {
+   "name": "mm2tuvVegepygmyShriekerMin",
+   "value": 1,
+   "comment": "The shrieker guards 1-3"
+  },
+  {
+   "name": "mm2tuvVegepygmyShriekerMax",
+   "value": 3,
+   "comment": "The shriekers up to 3"
+  },
+  {
+   "name": "mm2tuvVegepygmyRussetMoldPct",
+   "value": 70,
+   "comment": "A 70% chance of russet mold near the lair"
+  },
+  {
+   "name": "mm2tuvVegepygmySubchiefPer",
+   "value": 50,
+   "comment": "One subchief (5 HD) for every 50 vegepygmies"
+  },
+  {
+   "name": "mm2tuvVegepygmySubchiefHd",
+   "value": 5,
+   "comment": "The subchief 5 hit dice"
+  },
+  {
+   "name": "mm2tuvVegepygmySubchiefGuardsMin",
+   "value": 2,
+   "comment": "The subchief bodyguards 2-5"
+  },
+  {
+   "name": "mm2tuvVegepygmySubchiefGuardsMax",
+   "value": 5,
+   "comment": "The bodyguards up to 5"
+  },
+  {
+   "name": "mm2tuvVegepygmySubchiefGuardHd",
+   "value": 3,
+   "comment": "The subchief guards 3 hit dice"
+  },
+  {
+   "name": "mm2tuvVegepygmyLeaderHd",
+   "value": 6,
+   "comment": "Every band leader 6 hit dice"
+  },
+  {
+   "name": "mm2tuvVegepygmyLeaderGuardsMin",
+   "value": 2,
+   "comment": "The leader bodyguards 2-8"
+  },
+  {
+   "name": "mm2tuvVegepygmyLeaderGuardsMax",
+   "value": 8,
+   "comment": "The leader guards up to 8"
+  },
+  {
+   "name": "mm2tuvVegepygmyLeaderGuardHd",
+   "value": 4,
+   "comment": "The leader guards 4 hit dice"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderBase2",
+   "value": 81,
+   "comment": "The vegepygmy 2-HD ladder rung xp base (the R812 rider precedent)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderPerHp2",
+   "value": 2,
+   "comment": "The vegepygmy 2-HD ladder rung xp per hit point"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderXpValue2",
+   "value": 95,
+   "comment": "The vegepygmy 2-HD ladder rung xpValue (the floor formula)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderLevel2",
+   "value": 3,
+   "comment": "The vegepygmy 2-HD ladder rung xp level"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderBase3",
+   "value": 120,
+   "comment": "The vegepygmy 3-HD ladder rung xp base (the R812 rider precedent)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderPerHp3",
+   "value": 3,
+   "comment": "The vegepygmy 3-HD ladder rung xp per hit point"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderXpValue3",
+   "value": 150,
+   "comment": "The vegepygmy 3-HD ladder rung xpValue (the floor formula)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderLevel3",
+   "value": 3,
+   "comment": "The vegepygmy 3-HD ladder rung xp level"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderBase4",
+   "value": 175,
+   "comment": "The vegepygmy 4-HD ladder rung xp base (the R812 rider precedent)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderPerHp4",
+   "value": 4,
+   "comment": "The vegepygmy 4-HD ladder rung xp per hit point"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderXpValue4",
+   "value": 231,
+   "comment": "The vegepygmy 4-HD ladder rung xpValue (the floor formula)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderLevel4",
+   "value": 4,
+   "comment": "The vegepygmy 4-HD ladder rung xp level"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderBase5",
+   "value": 245,
+   "comment": "The vegepygmy 5-HD ladder rung xp base (the R812 rider precedent)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderPerHp5",
+   "value": 5,
+   "comment": "The vegepygmy 5-HD ladder rung xp per hit point"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderXpValue5",
+   "value": 330,
+   "comment": "The vegepygmy 5-HD ladder rung xpValue (the floor formula)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderLevel5",
+   "value": 4,
+   "comment": "The vegepygmy 5-HD ladder rung xp level"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderBase6",
+   "value": 425,
+   "comment": "The vegepygmy 6-HD ladder rung xp base (the R812 rider precedent)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderPerHp6",
+   "value": 6,
+   "comment": "The vegepygmy 6-HD ladder rung xp per hit point"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderXpValue6",
+   "value": 551,
+   "comment": "The vegepygmy 6-HD ladder rung xpValue (the floor formula)"
+  },
+  {
+   "name": "mm2tuvVegepygmyLadderLevel6",
+   "value": 5,
+   "comment": "The vegepygmy 6-HD ladder rung xp level"
+  },
+  {
+   "name": "mm2tuvVermeXpValue",
+   "value": 10575,
+   "comment": "The Verme xpValue (the print 9 base 8550 + 25/hp x avgHp 81)"
+  },
+  {
+   "name": "mm2tuvVermeXpLevel",
+   "value": 9,
+   "comment": "The Verme xp level"
+  },
+  {
+   "name": "mm2tuvVermeSwallowHeightFeet",
+   "value": 12,
+   "comment": "Swallowing occurs on any hit if prey is not more than 12 feet tall"
+  },
+  {
+   "name": "mm2tuvVermeSwallowMax",
+   "value": 28,
+   "comment": "The swallowing process damage 3d8+4 (max 28)"
+  },
+  {
+   "name": "mm2tuvVermeSwallowRoundMin",
+   "value": 2,
+   "comment": "Swallowed creatures take 2-16 additional damage per round"
+  },
+  {
+   "name": "mm2tuvVermeSwallowRoundMax",
+   "value": 16,
+   "comment": "The round damage up to 16"
+  },
+  {
+   "name": "mm2tuvVermeDissolveRounds",
+   "value": 6,
+   "comment": "Any swallowed being will be dissolved in 6 rounds"
+  },
+  {
+   "name": "mm2tuvVermeEdgedDamage",
+   "value": 1,
+   "comment": "Edged weapons inflict but 1 point of damage per blow"
+  },
+  {
+   "name": "mm2tuvVilstrakXpValue",
+   "value": 13,
+   "comment": "The Vilstrak (Marl Mugger, Tunnel Thug) xpValue (the print 1 base 7 + 1/hp x avgHp 6)"
+  },
+  {
+   "name": "mm2tuvVilstrakXpLevel",
+   "value": 1,
+   "comment": "The Vilstrak (Marl Mugger, Tunnel Thug) xp level"
+  },
+  {
+   "name": "mm2tuvVilstrakUndetectablePct",
+   "value": 75,
+   "comment": "Vilstraks are 75% undetectable even at 20-foot distance"
+  },
+  {
+   "name": "mm2tuvVilstrakDetectFeet",
+   "value": 20,
+   "comment": "The merge detection 20-foot distance"
+  },
+  {
+   "name": "mm2tuvVilstrakBadLairPct",
+   "value": 5,
+   "comment": "Sometimes (5%) a vilstrak den can be detected and broken into"
+  },
+  {
+   "name": "mm2tuvVulchlingXpValue",
+   "value": 13,
+   "comment": "The Vulchling xpValue (the print 1 base 10 + 1/hp x avgHp 3)"
+  },
+  {
+   "name": "mm2tuvVulchlingXpLevel",
+   "value": 1,
+   "comment": "The Vulchling xp level"
+  },
+  {
+   "name": "mm2tuvVulchlingEggsMin",
+   "value": 0,
+   "comment": "The vulchling lair 0-9 eggs"
+  },
+  {
+   "name": "mm2tuvVulchlingEggsMax",
+   "value": 9,
+   "comment": "The eggs up to 9"
+  },
+  {
+   "name": "mm2tuvVultureGiantXpValue",
+   "value": 36,
+   "comment": "The Vulture, Giant xpValue (the print 1 base 20 + 2/hp x avgHp 8)"
+  },
+  {
+   "name": "mm2tuvVultureGiantXpLevel",
+   "value": 1,
+   "comment": "The Vulture, Giant xp level"
+  },
+  {
+   "name": "mm2tuvVultureArrivalMinRounds",
+   "value": 7,
+   "comment": "Vultures appear 7-12 rounds after a creature is felled"
+  },
+  {
+   "name": "mm2tuvVultureArrivalMaxRounds",
+   "value": 12,
+   "comment": "The arrival up to 12 rounds"
+  },
+  {
+   "name": "mm2tuvVulturePeckingFeet",
+   "value": 20,
+   "comment": "If combatants are not within 20 feet the vultures alight and peck"
+  },
+  {
+   "name": "mm2tuvVulturePeckersMin",
+   "value": 1,
+   "comment": "The pecking vultures 1-6 per round"
+  },
+  {
+   "name": "mm2tuvVulturePeckersMax",
+   "value": 6,
+   "comment": "The peckers up to 6"
+  },
+  {
+   "name": "mm2tuvVultureGiantWingspreadFeet",
+   "value": 12,
+   "comment": "The giant vulture L (12' + wingspread)"
+  },
+  {
+   "name": "mm2tuvVultureOrdinaryXpValue",
+   "value": 35,
+   "comment": "The Vulture, Ordinary xpValue (the print 2 base 35 + 0/hp x avgHp 4)"
+  },
+  {
+   "name": "mm2tuvVultureOrdinaryXpLevel",
+   "value": 2,
+   "comment": "The Vulture, Ordinary xp level"
+  },
+  {
+   "name": "mm2tuvVultureOrdinaryWingspreadMinFeet",
+   "value": 5,
+   "comment": "The ordinary vulture M (5'-6' + wingspread)"
+  },
+  {
+   "name": "mm2tuvVultureOrdinaryWingspreadMaxFeet",
+   "value": 6,
+   "comment": "The ordinary wingspread up to 6 feet"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2tuvTarrasqueFireImmune",
+   "value": true,
+   "comment": "Fire of any sort has no effect upon the tarrasque"
+  },
+  {
+   "name": "mm2tuvTarrasqueReflectsRays",
+   "value": true,
+   "comment": "Bolts and rays bounce off the tarrasque carapace"
+  },
+  {
+   "name": "mm2tuvTarrasqueMagicWeaponToHit",
+   "value": true,
+   "comment": "The tarrasque can be struck only by +1 or better magic weapons"
+  },
+  {
+   "name": "mm2tuvTasloiInfravision",
+   "value": true,
+   "comment": "The tasloi have infravision and are suited to dark jungles"
+  },
+  {
+   "name": "mm2tuvTasloiArboreal",
+   "value": true,
+   "comment": "The tasloi are quick and nimble in the arboreal passageways"
+  },
+  {
+   "name": "mm2tuvTermiteNocturnal",
+   "value": true,
+   "comment": "Termites are nocturnal and shun light"
+  },
+  {
+   "name": "mm2tuvTermiteFormianEnemies",
+   "value": true,
+   "comment": "Formians are the worst enemies of giant termites"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierSpitBlinds",
+   "value": true,
+   "comment": "The soldier fluid blinds any creature struck without a save"
+  },
+  {
+   "name": "mm2tuvTermiteSoldierSpitFlammable",
+   "value": true,
+   "comment": "The soldier spit burns if exposed to flame or heat"
+  },
+  {
+   "name": "mm2tuvTermiteKingDoubleSpit",
+   "value": true,
+   "comment": "The king spits double range and quantity every other round"
+  },
+  {
+   "name": "mm2tuvTermiteQueenEggCountMatches",
+   "value": true,
+   "comment": "As many eggs in the egg chamber as workers and soldiers combined"
+  },
+  {
+   "name": "mm2tuvThessalhydraAcidImmune",
+   "value": true,
+   "comment": "Acids of any sort have no effect upon a thessalhydra"
+  },
+  {
+   "name": "mm2tuvThessalhydraFringeIsolated",
+   "value": true,
+   "comment": "Damage to fringe heads does not harm the body"
+  },
+  {
+   "name": "mm2tuvThriKreenWedgeReturns",
+   "value": true,
+   "comment": "The throwing wedges return to the thrower if they miss"
+  },
+  {
+   "name": "mm2tuvThriKreenFourClaws",
+   "value": true,
+   "comment": "Unarmed the thri-kreen strike with 4 clawed appendages (1-4)"
+  },
+  {
+   "name": "mm2tuvThunderBeastFogBreath",
+   "value": true,
+   "comment": "In combat each thunder beast breathes on its opponent"
+  },
+  {
+   "name": "mm2tuvThunderBeastYoungHarmless",
+   "value": true,
+   "comment": "The young have no attack form"
+  },
+  {
+   "name": "mm2tuvTimeElementalTimeStop",
+   "value": true,
+   "comment": "A noble casts time stop at will, once per day"
+  },
+  {
+   "name": "mm2tuvTimeElementalUnsummonable",
+   "value": true,
+   "comment": "Time elementals cannot be conjured, summoned or otherwise brought"
+  },
+  {
+   "name": "mm2tuvThunderherderTremors",
+   "value": true,
+   "comment": "The stampede tremors panic all pack animals"
+  },
+  {
+   "name": "mm2tuvThunderherderNonaggressive",
+   "value": true,
+   "comment": "Thunderherders are not aggressive and do no real damage"
+  },
+  {
+   "name": "mm2tuvTransposerHealingHarms",
+   "value": true,
+   "comment": "Only healing-type spells harm a bound transposer"
+  },
+  {
+   "name": "mm2tuvTransposerSelfIllusion",
+   "value": true,
+   "comment": "The transposer disguises itself with a change self illusion"
+  },
+  {
+   "name": "mm2tuvTriFlowerImmersionCures",
+   "value": true,
+   "comment": "Total immersion in water removes the sap entirely"
+  },
+  {
+   "name": "mm2tuvTriFlowerSlumberPollen",
+   "value": true,
+   "comment": "The orange pollen comatose slumber without a save vs. poison"
+  },
+  {
+   "name": "mm2tuvScragGilled",
+   "value": true,
+   "comment": "Marine trolls are a gilled form of the common troll"
+  },
+  {
+   "name": "mm2tuvScragFreshRegenerates",
+   "value": true,
+   "comment": "The freshwater scrag regenerates only when immersed in fresh water"
+  },
+  {
+   "name": "mm2tuvScragSaltRegenerates",
+   "value": true,
+   "comment": "The saltwater scrag regenerates in its saltwater element"
+  },
+  {
+   "name": "mm2tuvTwilightBloomSapDeadly",
+   "value": true,
+   "comment": "A failed save vs. poison means instant death"
+  },
+  {
+   "name": "mm2tuvTwilightBloomPerfumeLure",
+   "value": true,
+   "comment": "The flowers exude a very attractive perfume and sweet sap"
+  },
+  {
+   "name": "mm2tuvUrchinSpinesParalyze",
+   "value": true,
+   "comment": "The spine victim saves vs. poison or is paralyzed"
+  },
+  {
+   "name": "mm2tuvUrchinSmokeEscape",
+   "value": true,
+   "comment": "The urchin releases a dark gas cloud to aid its escape"
+  },
+  {
+   "name": "mm2tuvUstilagorMindless",
+   "value": true,
+   "comment": "Ustilagors have no mind as defined by human standards"
+  },
+  {
+   "name": "mm2tuvUstilagorPsionic",
+   "value": true,
+   "comment": "Only a psionic blast will affect an ustilagor in turn"
+  },
+  {
+   "name": "mm2tuvVagabondMindImmune",
+   "value": true,
+   "comment": "Vagabonds are immune to all mental attack or control, save psionics"
+  },
+  {
+   "name": "mm2tuvVagabondFormFixed",
+   "value": true,
+   "comment": "A vagabond has no power to change the form once assumed"
+  },
+  {
+   "name": "mm2tuvVargouillePermanentDrain",
+   "value": true,
+   "comment": "Bite damage is lost permanently, restorable only by a wish"
+  },
+  {
+   "name": "mm2tuvVargouilleHatesLight",
+   "value": true,
+   "comment": "Vargouilles attack torches, shun bright light, are blinded by day"
+  },
+  {
+   "name": "mm2tuvVegepygmyElectricImmune",
+   "value": true,
+   "comment": "Electrical attacks do no damage to vegepygmies"
+  },
+  {
+   "name": "mm2tuvVegepygmyCharmImmune",
+   "value": true,
+   "comment": "Vegepygmies are immune to charm/enchantment spells except plant-affecting"
+  },
+  {
+   "name": "mm2tuvVermeSwallowsWhole",
+   "value": true,
+   "comment": "The verme swallows prey whole, even one as large as a water buffalo"
+  },
+  {
+   "name": "mm2tuvVermeEdgedUseless",
+   "value": true,
+   "comment": "The thick slime-covered scales make edged weapons useless"
+  },
+  {
+   "name": "mm2tuvVermeFireHalf",
+   "value": true,
+   "comment": "Fire-based attacks cause only one-half damage unless internal"
+  },
+  {
+   "name": "mm2tuvVilstrakMergesWithStone",
+   "value": true,
+   "comment": "A vilstrak can physically merge with earth or stone"
+  },
+  {
+   "name": "mm2tuvVilstrakSurpriseOneToFour",
+   "value": true,
+   "comment": "The vilstrak surprise on a 1-4"
+  },
+  {
+   "name": "mm2tuvVulchlingConsortsWithHarpies",
+   "value": true,
+   "comment": "Vulchlings consort with harpies or even Type I demons at times"
+  },
+  {
+   "name": "mm2tuvVulchlingTalonSwoop",
+   "value": true,
+   "comment": "The vulchling swoops with extended talons then hops to the beak"
+  },
+  {
+   "name": "mm2tuvVultureGiantStruckToDeter",
+   "value": true,
+   "comment": "Giant vultures must actually be struck to drive them off"
+  },
+  {
+   "name": "mm2tuvVultureOrdinaryWaitsForWeakness",
+   "value": true,
+   "comment": "Ordinary vultures move out of range and wait for the victim to weaken"
+  }
+ ],
+ "inline_count": 326,
+ "prev_record": [
+  "- R813 LANDED 2026-10-24: commit",
+  "  61fc91a64cf3b4ebe0daadf943834c1fe9f780fe",
+  "  (census 735 -> 736, pushed b8ecc5e..61fc91a), THE",
+  "  MM2 LETTER S WALK - THE SANDLING TO TAER TURNS -",
+  "  THE S-FLIP ROUND (Curtiss single-letter Go call",
+  "  on the landed letter R walk; round eighteen of",
+  "  the MM2 arc, the SEVENTH single-letter pass).",
+  "THE PIN-TIME WALK: THIRTY-THREE new defs on",
+  "  printed pp. 106-117 - TWENTY-NINE entry heads",
+  "  carrying THIRTY-FOUR stat blocks, plus ONE",
+  "  prior-owned head (the greater shedu - the MM1",
+  "  s/shedu.lua owns it, head pins only). The 33",
+  "  defs (sandling, scorpion large/huge, scum",
+  "  creeper, selkie, shade, sirine, skeleton",
+  "  animal, skunk, slime creature, olive slime,",
+  "  constrictor and poisonous snake, solar,",
+  "  solifugid large/huge/giant, spectator, giant",
+  "  marine spider, spriggan, squealer, giant black",
+  "  and ordinary and carnivorous flying squirrel,",
+  "  stegocentipede, stench kow, stone guardian,",
+  "  storoper, giant sundew, swan, swanmay, sword-",
+  "  fish, taer) ride the R791 data_files extension,",
+  "  registry 733 -> 766. Header rules/mm2s.h,",
+  "  prefix mm2s, 245 consts + 40 bools + ONE grid",
+  "  (the 33x10 SStats stat grid) = 295 inline.",
+  "  THE S-FLIP: the Letter S gap box flips to",
+  "  closed - 24 closed 13 open.",
+  "THE SETTLED READS (capture primary, the 1eonline",
+  "  transcription the cross-check voice): the scum",
+  "  creeper, skunk, ordinary squirrel, carnivorous",
+  "  flying squirrel and solar the flat-hp path",
+  "  (hdNum 0); the shade nil block (the phantom",
+  "  precedent, AC 9 default, xp 0); the solar 177",
+  "  hp, X/95000+35 the xpValue 101195, its AC 9",
+  "  print-wins over the transcription -9; the",
+  "  scorpion large sting 1-16 (the capture clip,",
+  "  the transcription confirmed); the solifugid",
+  "  giant \"V350\" the V/350+8 read; the sirine MR",
+  "  20, AC 3; the spectator AC 4, size 4-foot",
+  "  diameter; the stegocentipede AC 3, attacks",
+  "  1-and-1 the 2 read; the taer NA 11-30,",
+  "  frequency Very rare; the selkie sealwere; the",
+  "  solar Drawmij (the capture Drawnij the OCR",
+  "  artifact); the olive slime 0 attacks the",
+  "  loader clamp 1; the stone guardian xpValue",
+  "  694 (the pre-compaction note's 696 an",
+  "  arithmetic slip - the floor formula wins, the",
+  "  R803 precedent); the percent lair cells the",
+  "  bare-numeral read (the R812 repair lesson).",
+  "THE R813 REPAIR (the R639/R400/R812 repair flow,",
+  "  nothing landed, the same round number",
+  "  re-issued): the first cut's kS[33]/kSMark[33]",
+  "  array lines each carried a DOUBLE COMMA (a",
+  "  builder join bug - the per-line format already",
+  "  ended with a comma and the join separator added",
+  "  another; 64 lines, the last entry of each array",
+  "  single), so the regtest compile died at",
+  "  regtest.cpp:132676 (\"sandling\",,) and the",
+  "  census step cascade-printed ~600 CENSUS FAILs",
+  "  (the R806 class - every audit \"appears 0",
+  "  times\"). The md5 gate, engine double-run,",
+  "  rverify 615/0 and the loader sim ALL passed",
+  "  because none compile C++ - the Termux",
+  "  preflight is the ONLY C++ compile gate (the",
+  "  R639 lesson's cousin: grep the authored patch",
+  "  text for C++ syntax hazards - double commas,",
+  "  stray quotes, hyphens in identifiers - before",
+  "  publish). The repair: the double commas",
+  "  collapsed to single, a repair sentence appended",
+  "  to audit_comment (the R812 precedent), md5",
+  "  fede2f4abb3c32c25274341e8106bf7d 184551",
+  "  bytes; the unwind (git checkout + rm of the 33",
+  "  defs, mm2s.h and the spec) preceded the rerun",
+  "  (the idempotent-by-existence rule).",
+  "ONE REGTEST PATCH: the R813 live def walk at",
+  "  the R227 anchor (the R812 R-walk pattern), its",
+  "  registry census a FLOOR 733 -> at least 766.",
+  "  LOCAL VERIFICATION (environment reset again -",
+  "  rebuilt from the tarball at b8ecc5e, the spec",
+  "  recovered byte-exact from the landed canvas",
+  "  copy): engine double-run 39/0 -> 0/39; rverify",
+  "  GREEN vs b8ecc5e - 615 mutants, 0 missed; the",
+  "  offline loader sim result carried over (the",
+  "  repair touched no data file); the /tmp tree",
+  "  restored pristine after.",
+  "PREFLIGHT GREEN (the repair cut, first pass):",
+  "  loaded 766, errors 0; xp audit 766/0; R797",
+  "  through R813 live defs all bad 0; AUDIT CENSUS",
+  "  736 each exactly once, all bad 0; build 0",
+  "  warnings. Commit 38 files, 7779 insertions.",
+  "  Delivery spec-r813: raw JSON canvas, first cut",
+  "  md5 2c4c9a63af50406ee03b619d86b63ced 184449",
+  "  bytes (RED, nothing landed), repair md5",
+  "  fede2f4abb3c32c25274341e8106bf7d 184551",
+  "  bytes, landed the same (no editor delta).",
+  "  NEXT - R814: awaits Curtiss's call (13 open",
+  "  boxes remain)."
+ ]
+}

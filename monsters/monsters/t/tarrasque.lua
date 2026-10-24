@@ -1,0 +1,36 @@
+-- Tarrasque: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Tarrasque",
+  page = "117",
+  pages = "117-118",
+  source = "MM2",
+  race = "Tarrasque",
+  hitDice = "300 hp",
+  hitDiceNum = "0",
+  hitDiceBonus = "0",
+  avgHp = "300",
+  armorClass = -3,
+  numAttacks = 6,
+  damage = "1-12/1-12/2-24/5-50/1-10/1-10",
+  xp = "37500",
+  xpPerHp = "0",
+  xpValue = 37500,
+  xpSource = "mm2_print",
+  frequency = "Unique",
+  noAppearing = "1",
+  lairPct = "See below",
+  treasure = "See below",
+  move = "9\\\" (+6\\\" rush)",
+  size = "L (50' long)",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "\"Sharpness\" bite, terror",
+  specialDefenses = "See below",
+  magicResistance = "Standard",
+  psionic = "Nil (immune to psionics)",
+  attackDefenseModes = "Nil/nil",
+  text = "The legendary tarrasque is possibly the most dreaded monster of all, for when it is active it ravishes the countryside for miles. All vegetation and animal life is devoured or driven away. The land through which the monster passes becomes a barren waste which requires years to recover, The tarrasque eats voraciously and continually, and all living things are food to it, although it prefers warm-blooded creatures over others. Normal attack modes of the tarrasque are with 2 forelimb claws, a sweeping tail lash inflicting 2-24 points of damage, a savage bite (the effect of which resembles a sword of sharpness in that a to-hit score of 18 or better indicates that a victim has some portion severed, such as a limb, head, torso, etc.), and 2 thrusting horn attacks for 1-10 points of damage each. The rush of the tarrasque is possible but once every turn, because the monster is so large and ponderous.\n\nThe mere sight of the tarrasque is so terrifying that creatures under 3 levels of hit dice will be paralysed until it is out of their range of vision (no saving throw). Creatures of 3 or more levels or hit dice will flee in panic, although those of 7 or more levels or hit dice who manage to save vs. paralyzation will not be so affected.\n\nThe tarrasque has a carapace of exceptional hardness and reflective quality. Bolts and rays such as lightning bolts, cones of cold, and even magic missiles are useless against the tarrasque. The reflection is such that 1 in 6 such attacks actually reflect directly back upon the caster, while the remainder bounce harmlessly away from the monster. Fire of any sort has no effect upon the tarrasque. The monster's metabolic rate is such that it regenerates 1 hit point per round after sustaining damage. The tarrasque can be struck only by +1 or better magic weapons.\n\nThe slaying of the tarrasque is said to be possible only if the monster is reduced to -30 or fewer hit points and a wish for its death then used. Otherwise, even the slightest piece of the tarrasque will regenerate and restore the monster completely. Legend says that a great treasure can be extracted from the tarrasque's carapace, The upper portion, treated with acid and then heated in a furnace, will yield gems - 10-100 diamonds of 1000 gp base value each. The underbelly material, mixed with the creature's blood and meteoric iron, will produce a metal which can be forged by dwarf blacksmiths into 1-4 shields of +5 magical power.\n\nIt is fortunate that the tarrasque is active only for short periods of time. Typically, the monster comes forth to forage for a week or two, ravaging all but a few square miles of land. The tarrasque then seeks a hidden lair underground and lies dormant, sleeping for 5-20 months before coming forth again. Once every decade or so, the monster will be particularly active, staying abroad for several months. Thereafter its period of dormancy becomes 4-16 years long unless disturbed. The ratio of active to dormant state appears to be about 1:30.",
+}

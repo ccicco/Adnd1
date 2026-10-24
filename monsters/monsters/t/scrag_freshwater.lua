@@ -1,0 +1,36 @@
+-- Scrag, Freshwater: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Scrag, Freshwater",
+  page = "121",
+  pages = "121",
+  source = "MM2",
+  race = "Scrag",
+  hitDice = "5+5",
+  hitDiceNum = "5",
+  hitDiceBonus = "5",
+  avgHp = "22",
+  armorClass = "3",
+  numAttacks = 3,
+  damage = "2-5/2-5/3-12",
+  xp = "400",
+  xpPerHp = "8",
+  xpValue = 576,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-6",
+  lairPct = "20",
+  treasure = "C",
+  move = "3\\\"/15\\\"",
+  size = "M (7'+ tall)",
+  intelligence = "Semi- to low",
+  alignment = "Chaotic (evil)",
+  specialAttacks = "See below",
+  specialDefenses = "Regeneration",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "Marine trolls are a gilled form of the common troll. They inhabit large bodies of water and need considerable room to hunt. Coloration runs from blue-green to olive.\n\nScrags found in fresh water are smaller than normal trolls and have heavy scales. Their claws are less formidable, but their enlarged lower jaw bears many small, very sharp fangs. Up to 3 different opponents can be attacked during a single melee round. Scrags regenerate as do trolls (q.v.) but they do so only when immersed in fresh water.",
+}

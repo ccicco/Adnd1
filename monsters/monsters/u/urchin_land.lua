@@ -1,0 +1,36 @@
+-- Urchin, Land: promoted by the R814 MM2 letters TUV walk
+-- round from the MM2 print
+-- (spec tools/spec_r814.json); DO NOT hand-edit; the pin
+-- headers stay the print-fidelity record.
+return {
+  name = "Urchin, Land",
+  page = "122",
+  pages = "122",
+  source = "MM2",
+  race = "Urchin",
+  hitDice = "3+3",
+  hitDiceNum = "3",
+  hitDiceBonus = "3",
+  avgHp = "13",
+  armorClass = "3",
+  numAttacks = "2-12",
+  damage = "1-2 + paralysis",
+  xp = "150",
+  xpPerHp = "4",
+  xpValue = 202,
+  xpSource = "mm2_print",
+  frequency = "Rare",
+  noAppearing = "1-2",
+  lairPct = "Nil",
+  treasure = "See below",
+  move = "12\\\"",
+  size = "S (3')",
+  intelligence = "Animal",
+  alignment = "Neutral",
+  specialAttacks = "Paralysis",
+  specialDefenses = "Smoke cloud",
+  magicResistance = "Standard",
+  psionic = "Nil",
+  attackDefenseModes = "Nil/nil",
+  text = "A land-dwelling distant cousin of the sea urchin, the land urchin's spine covered body is often mistaken for a bush. The land urchin is a scavenger that consumes virtually anything that is edible. Its small mouth is located on the underside of its body and it has a rasping tongue with which to saw through armor and gather food. It is a shy creature and will attack only if another creature approaches within 1\". It defends itself by shooting 2-12 spines (damage 1-2) per round, and the victim must save vs. poison or be paralyzed for 6 turns. If it must flee, the urchin will release a dark gas cloud with a 10-foot radius to aid in its escape. The land urchin has no visual organs but uses 2 small antennae to detect any movement within 1\". It has no front or back, and its 5 spindly legs can rotate to allow it to move in any direction.\n\nOccasionally, a land urchin will eat a bit of material that it cannot digest or eliminate. It will coat the object with a shiny greenish-black substance, forming 'pearls' similar to oyster pearls worth 100-600 gp each. Very old urchins may have up to a dozen pearls.",
+}
