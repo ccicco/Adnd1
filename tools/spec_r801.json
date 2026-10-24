@@ -1,0 +1,2739 @@
+{
+ "round": 801,
+ "prefix": "mm2df",
+ "header_file": "rules/mm2df.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/mm2_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "census_before": 723,
+ "title": "the MM2 letter D part 3 - the devil section",
+ "audit_label": "R801 MM2 devil section audit",
+ "audit_comment": "THE MM2 LETTER D PART 3 - the devil section of the Monster Manual II arc (the user Go call on the landed deva turn). The pin-time walk from the print finds THIRTEEN entries on pp. 44-49: the abishai five-form table and the Amon, Bael, bearded devil, Belial, Glasya, Hutijin, Mammon, Mephistopheles, Moloch, nupperibo, Titivilus and spined devil blocks. SEVENTEEN defs ride the R791 data_files extension in the MM1 registry schema (the abishai splits five ways, the aspis precedent). THE GRIDS: the 17-row DevStats stat grid, the 9x12 Frequency of Devils on Plane grid and the 9x12 Frequency of Others on Plane grid (the letter-code legend 0 absent, 1 VVR, 2 VR, 3 R, 4 U, 5 C). THE SETTLED READS: the Titivilus symbol 99 hit points (the capture 98 misread); the Titivilus MOVE 15/30 MC:D; the Mephistopheles rulership print typo verbatim; the abishai command; the nupperibo Standard magic-resistance word; the single stench kow frequency column. NO GAP FLIPS (the Letter D box flips only when all the D parts land - the R791 no-flip precedent). NO XP-AUDIT PATCH (mm2_print rides the allowed-source list since R797). The live def walk (the one file-patch site block, no census marker) cross-checks all 17 defs against the DevStats grid, the loader attack semantics, the nupperibo Standard word and the registry census floor 566 -> 583.",
+ "include_comment": "the MM2 letter D part 3 - the devil section",
+ "include_after": "#include \"rules/mm2dv.h\"  // R800: the MM2 letter D part 2 - the deva turn",
+ "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R800 LANDED 2026-10-24: commit",
+ "prev_record": [
+  "- R800 LANDED 2026-10-24: commit",
+  "  aac9dcb9e629ed1726496d87c17816ce1af99cef",
+  "  (census 722 -> 723, pushed",
+  "  ee10bdf..aac9dcb), THE MM2 LETTER D",
+  "  PART 2 - the deva turn (Curtiss's",
+  "  Go call on the landed letter D",
+  "  part 1; round four of the MM2 arc,",
+  "  the second PART-LETTER walk). THE",
+  "  PIN-TIME WALK: THREE entries on",
+  "  pp. 42-44 - the DEVA family head",
+  "  at the foot of p. 42 with the",
+  "  astral, monadic and movanic deva",
+  "  stat blocks on p. 43 (the movanic",
+  "  prose runs onto p. 44, where the",
+  "  DEVIL section opens mid-page).",
+  "  THREE .lua defs ride the R791",
+  "  data_files extension, registry",
+  "  563 -> 566 - the smallest MM2",
+  "  round so far, a single family",
+  "  walk. Header rules/mm2dv.h,",
+  "  prefix mm2dv, 53 consts + 42",
+  "  bools + the 3x10 DevaStats grid",
+  "  (armor class, hit dice, bonus,",
+  "  avgHp, attacks, xp, xp/hp, lair,",
+  "  move, magic resistance) = 105",
+  "  inline. NO GAP FLIPS: the Letter",
+  "  D box flips only when all the D",
+  "  parts land (8 closed, 29 open).",
+  "  ONE REGTEST PATCH: the R800 live",
+  "  def walk at the R227 anchor (the",
+  "  R782 site-block pattern, no",
+  "  census marker), its registry",
+  "  census a FLOOR 563 -> at least",
+  "  566. SETTLED READS (capture",
+  "  primary, book-internal tiebreak,",
+  "  transcription cross-check): the",
+  "  monadic ARMOR: -4 capture line",
+  "  is the ARMOR CLASS line (the",
+  "  transcription prints the class",
+  "  word); the monadic and movanic",
+  "  LEVEL print IX - the capture 1X",
+  "  is the same OCR misread class as",
+  "  the atomie II; the astral LEVEL",
+  "  prints the roman X, 10,100 +",
+  "  25/hp; the movanic SIZE keeps",
+  "  the print 6 1/2 inches form. The",
+  "  deva-common doctrine pins as",
+  "  round-level doctrine: the",
+  "  material-body rule (the spirit",
+  "  returns for a decade), the",
+  "  spell-like list with its per-day",
+  "  maximums (cure light wounds 7,",
+  "  detect traps 7, dispel magic 7,",
+  "  heal 1), the attack-form",
+  "  immunities with the monadic",
+  "  fire-of-any-sort exception, and",
+  "  the +1-or-better weapon rule.",
+  "  LOCAL VERIFICATION (the",
+  "  authoring environment rebuilt",
+  "  from GitHub at ee10bdf): engine",
+  "  double-run 8/0 -> 0/8; rverify",
+  "  GREEN - restore, double-run,",
+  "  healthy base bad 0, BATTERY 125",
+  "  mutants, 0 missed; a loader-",
+  "  semantics pass on all 3 defs",
+  "  (every non-numeric field a",
+  "  quoted string, no raw newlines -",
+  "  the afanc lesson); the /tmp tree",
+  "  restored pristine after. Landing",
+  "  run GREEN first pass: loaded 566,",
+  "  errors 0; xp audit 566/0; R797,",
+  "  R798, R799 and R800 live defs",
+  "  all bad 0; AUDIT CENSUS 723 each",
+  "  exactly once, all bad 0; build 0",
+  "  warnings. Commit 7 files, 2186",
+  "  insertions. Delivery spec-r800:",
+  "  raw JSON canvas, 42677 bytes md5",
+  "  6e7b4091829a38c683a1af9a62296313.",
+  "  NEXT - R801: awaits Curtiss's",
+  "  call (the DEVIL section and the",
+  "  rest of the letter D box; the",
+  "  arc runs on - 29 open boxes)."
+ ],
+ "banner": {
+  "title": "THE MM2 LETTER D PART 3 - the devil section (the DEVIL family pp. 44-49: the abishai five-form table and the Amon through spined devil stat blocks), promoted to the live registry",
+  "provenance": "Round five of the MM2 arc, the third PART-LETTER walk (the user Go call on the landed deva turn: the letter D continues with the devil section pp. 44-49; the DIAKK turn and the rest of D await the user call). The capture is the Curtiss PDF upload cross-checked against an independent transcription and the archive.org djvu OCR, the contested cells settled: the Titivilus symbol prints 19 levels or hit dice or 99 hit points (the capture 98 is an OCR misread; the transcription and the djvu print 99); the Titivilus MOVE prints 15/30 MC:D (the djvu agrees; the transcription 12 token is its own annotation); the Mephistopheles spell list prints rulership once per day - the print typo pins verbatim (the capture and the djvu agree); the abishai spell list prints command (the capture c-command is an OCR artifact); the nupperibo MAGIC RESISTANCE prints the word Standard (the grid reads 0, the charon Nil precedent applied to the word); the Stench Kow frequency column is a single column (the capture table-split introduced a phantom blank column; the djvu corroborates). The pin-time walk finds thirteen devil stat-block entries - the abishai table splits five ways (the aspis precedent) - so seventeen .lua defs ride the R791 data_files extension, registry 566 -> 583. The stat blocks pin in the 17-row DevStats grid; the two Frequency of Devils and Others on Plane tables pin as 9x12 letter-code grids (the legend 0 absent, 1 VVR, 2 VR, 3 R, 4 U, 5 C); the 61-line Hierarchy of the Planes of Hell roster and the devil-common doctrine (the lemure-status decades, the duke decade, the attack-form chart) pin as round-level doctrine. NO GAP FLIPS: the Letter D box flips only when all the D parts land (the R791 no-flip precedent). NO XP-AUDIT PATCH: mm2_print already rides the allowed-source list (the R797 patch). The live def walk (the one file-patch site block, no census marker) cross-checks all 17 defs against the DevStats grid, the loader attack semantics, the nupperibo Standard word and the registry census 566 -> 583 as a floor."
+ },
+ "consts": [
+  {
+   "name": "mm2dfRound",
+   "value": 801,
+   "comment": "The MM2 letter D part 3 round: the devil section walk (the user Go call on the landed deva turn)"
+  },
+  {
+   "name": "mm2dfEntryCount",
+   "value": 13,
+   "comment": "The pin-time walk from the print (pp. 44-49): thirteen devil stat-block entries - the abishai table counts once, the Amon through spined devil blocks follow"
+  },
+  {
+   "name": "mm2dfAbishaiFormCount",
+   "value": 5,
+   "comment": "The abishai five-form table: black, blue, green, red and white (the aspis split precedent)"
+  },
+  {
+   "name": "mm2dfDefCount",
+   "value": 17,
+   "comment": "The def census: seventeen .lua defs ride the R791 data_files extension (the abishai splits five ways)"
+  },
+  {
+   "name": "mm2dfFirstPage",
+   "value": 44,
+   "comment": "The devil section opens on p. 44 (the DEVIL family head after the movanic deva prose tail)"
+  },
+  {
+   "name": "mm2dfLastPage",
+   "value": 49,
+   "comment": "The devil section closes on p. 49 (the spined devil entry; the DIAKK turn comes with the next D part)"
+  },
+  {
+   "name": "mm2dfRegistryBefore",
+   "value": 566,
+   "comment": "The live registry census at the landed deva turn (the R800 landing count)"
+  },
+  {
+   "name": "mm2dfRegistryAfter",
+   "value": 583,
+   "comment": "The live registry census after the seventeen devil defs (566 + 17)"
+  },
+  {
+   "name": "mm2dfDevStatRows",
+   "value": 17,
+   "comment": "The 17-row devil stat grid: one row per promoted def in print order"
+  },
+  {
+   "name": "mm2dfDevilFreqRows",
+   "value": 9,
+   "comment": "The Frequency of Devils on Plane table: nine rows, one per plane of Hell"
+  },
+  {
+   "name": "mm2dfOthersFreqRows",
+   "value": 9,
+   "comment": "The Frequency of Others on Plane table: nine rows, one per plane of Hell"
+  },
+  {
+   "name": "mm2dfDukeRosterRows",
+   "value": 61,
+   "comment": "The Hierarchy of the Planes of Hell roster: the 61-line dukes-and-henchmen table (no stat blocks ride the roster lines)"
+  },
+  {
+   "name": "mm2dfFreqCodeAbsent",
+   "value": 0,
+   "comment": "The frequency-table legend cell: the dash - the type never appears on that plane"
+  },
+  {
+   "name": "mm2dfFreqCodeVvr",
+   "value": 1,
+   "comment": "The legend cell: very very rare"
+  },
+  {
+   "name": "mm2dfFreqCodeVr",
+   "value": 2,
+   "comment": "The legend cell: very rare"
+  },
+  {
+   "name": "mm2dfFreqCodeR",
+   "value": 3,
+   "comment": "The legend cell: rare"
+  },
+  {
+   "name": "mm2dfFreqCodeU",
+   "value": 4,
+   "comment": "The legend cell: uncommon"
+  },
+  {
+   "name": "mm2dfFreqCodeC",
+   "value": 5,
+   "comment": "The legend cell: common"
+  },
+  {
+   "name": "mm2dfGreaterDevilLemureDecades",
+   "value": 9,
+   "comment": "A greater devil whose material form is destroyed is forced to lemure status for 9 decades of torment before resuming its former station"
+  },
+  {
+   "name": "mm2dfDukePlaneBoundYears",
+   "value": 10,
+   "comment": "A duke whose material form is destroyed is bound to its own particular plane of Hell for a decade (unless again properly called prior to the end of the 10 years) and suffers a great loss of face"
+  },
+  {
+   "name": "mm2dfBlackAbishaiXpValue",
+   "value": 1135,
+   "comment": "The black abishai full kill xp: 855 + 10 x 28 hit points"
+  },
+  {
+   "name": "mm2dfBlueAbishaiXpValue",
+   "value": 658,
+   "comment": "The blue abishai full kill xp: 550 + 6 x 18 hit points"
+  },
+  {
+   "name": "mm2dfGreenAbishaiXpValue",
+   "value": 676,
+   "comment": "The green abishai full kill xp: 550 + 6 x 21 hit points"
+  },
+  {
+   "name": "mm2dfRedAbishaiXpValue",
+   "value": 400,
+   "comment": "The red abishai full kill xp: 320 + 5 x 16 hit points"
+  },
+  {
+   "name": "mm2dfWhiteAbishaiXpValue",
+   "value": 842,
+   "comment": "The white abishai full kill xp: 650 + 8 x 24 hit points"
+  },
+  {
+   "name": "mm2dfAbishaiXpLevel",
+   "value": 6,
+   "comment": "The abishai LEVEL/X.P. prints VI for the black, blue, green and white forms"
+  },
+  {
+   "name": "mm2dfRedAbishaiXpLevel",
+   "value": 5,
+   "comment": "The red abishai LEVEL/X.P. prints V - the weakest form"
+  },
+  {
+   "name": "mm2dfBlackAbishaiStrengthBonus",
+   "value": 4,
+   "comment": "The abishai grapple strength bonus: black +4"
+  },
+  {
+   "name": "mm2dfBlueAbishaiStrengthBonus",
+   "value": 3,
+   "comment": "The abishai grapple strength bonus: blue +3"
+  },
+  {
+   "name": "mm2dfGreenAbishaiStrengthBonus",
+   "value": 2,
+   "comment": "The abishai grapple strength bonus: green +2"
+  },
+  {
+   "name": "mm2dfWhiteAbishaiStrengthBonus",
+   "value": 2,
+   "comment": "The abishai grapple strength bonus: white +2"
+  },
+  {
+   "name": "mm2dfRedAbishaiStrengthBonus",
+   "value": 1,
+   "comment": "The abishai grapple strength bonus: red +1"
+  },
+  {
+   "name": "mm2dfAbishaiGrappleDamageLo",
+   "value": 1,
+   "comment": "The abishai grapple damage: 1-4 from sharp scales, talons, etc., plus the strength bonus"
+  },
+  {
+   "name": "mm2dfAbishaiGrappleDamageHi",
+   "value": 4,
+   "comment": "The abishai grapple damage high end"
+  },
+  {
+   "name": "mm2dfAbishaiTailDamageHi",
+   "value": 2,
+   "comment": "The abishai tail strike: 1-2 points of damage"
+  },
+  {
+   "name": "mm2dfAbishaiRegenPerRound",
+   "value": 1,
+   "comment": "Abishai regenerate at 1 point per round unless struck by silver, holy water, or holy magic weapons"
+  },
+  {
+   "name": "mm2dfAbishaiSummonPct",
+   "value": 20,
+   "comment": "The abishai summon another abishai at 20% chance of success, once per day"
+  },
+  {
+   "name": "mm2dfAbishaiOtherTypesPct",
+   "value": 10,
+   "comment": "In their lair about 10% of the time there will be 1-4 other types with them"
+  },
+  {
+   "name": "mm2dfAbishaiQTreasurePct",
+   "value": 15,
+   "comment": "Abishai occasionally (15%) have charge of Q-type treasure being taken to some greater devil"
+  },
+  {
+   "name": "mm2dfAmonXpValue",
+   "value": 30000,
+   "comment": "The Amon full kill xp: X/30,000 (material form only, no per-hp addend)"
+  },
+  {
+   "name": "mm2dfAmonXpLevel",
+   "value": 10,
+   "comment": "The Amon LEVEL/X.P. prints the roman X"
+  },
+  {
+   "name": "mm2dfAmonPsionicAbility",
+   "value": 229,
+   "comment": "The Amon psionic ability 229, attack/defense modes all/all"
+  },
+  {
+   "name": "mm2dfAmonBoneDevilCompanies",
+   "value": 40,
+   "comment": "Amon is a vassal of Geryon commanding up to 40 companies of bone devils recruited from his fief"
+  },
+  {
+   "name": "mm2dfAmonMaceBonus",
+   "value": 3,
+   "comment": "Amon typically attacks with a huge +3 mace and delivers a vicious bite as well"
+  },
+  {
+   "name": "mm2dfAmonWinterWolfMagicResist",
+   "value": 25,
+   "comment": "The winter wolf companion of Amon is 25% magic resistant"
+  },
+  {
+   "name": "mm2dfAmonWinterWolfBonus",
+   "value": 3,
+   "comment": "The winter wolf companion has +3 to hit and +3 to damage"
+  },
+  {
+   "name": "mm2dfAmonSummonBoneDevilsPct",
+   "value": 60,
+   "comment": "Amon summons 1-4 bone devils with 60% chance of success"
+  },
+  {
+   "name": "mm2dfAmonRegenPerTurnLo",
+   "value": 1,
+   "comment": "Amon regenerates from 1-12 points of damage per turn - the low end"
+  },
+  {
+   "name": "mm2dfAmonRegenPerTurnHi",
+   "value": 12,
+   "comment": "The Amon regeneration high end"
+  },
+  {
+   "name": "mm2dfAmonWolfControlMiles",
+   "value": 1,
+   "comment": "On the Prime Material Plane Amon can summon and control all wolves within 1 mile of him"
+  },
+  {
+   "name": "mm2dfBaelXpValue",
+   "value": 35000,
+   "comment": "The Bael full kill xp: X/35,000 (material form only)"
+  },
+  {
+   "name": "mm2dfBaelXpLevel",
+   "value": 10,
+   "comment": "The Bael LEVEL/X.P. prints the roman X"
+  },
+  {
+   "name": "mm2dfBaelPsionicAbility",
+   "value": 206,
+   "comment": "The Bael psionic ability 206, modes all/all"
+  },
+  {
+   "name": "mm2dfBaelBarbedCompanies",
+   "value": 66,
+   "comment": "Bael is vassal to Mammon, commanding 66 companies of barbed devils"
+  },
+  {
+   "name": "mm2dfBaelMorningStarBonus",
+   "value": 2,
+   "comment": "Bael uses a morning star +2 with a long bronze handle"
+  },
+  {
+   "name": "mm2dfBaelMorningStarLoFeet",
+   "value": 4,
+   "comment": "The handle telescopes magically from 4-8 feet as Bael desires - the low end"
+  },
+  {
+   "name": "mm2dfBaelMorningStarHiFeet",
+   "value": 8,
+   "comment": "The Bael morning star handle high end"
+  },
+  {
+   "name": "mm2dfBaelSpellLevel",
+   "value": 20,
+   "comment": "Bael uses his spell-like powers as a 20th-level magic-user"
+  },
+  {
+   "name": "mm2dfBaelSummonBarbedPct",
+   "value": 65,
+   "comment": "Bael summons 1-4 barbed devils with 65% chance of success"
+  },
+  {
+   "name": "mm2dfBeardedXpValue",
+   "value": 1395,
+   "comment": "The bearded devil full kill xp: 1125 + 10 x 27 hit points"
+  },
+  {
+   "name": "mm2dfBeardedXpLevel",
+   "value": 7,
+   "comment": "The bearded devil LEVEL/X.P. prints VII"
+  },
+  {
+   "name": "mm2dfBeardedGlaiveHookDamageHi",
+   "value": 3,
+   "comment": "The saw-toothed glaive treble-hook entangles for 1-3 points plus held fast unless a die roll equal to opening a door is made"
+  },
+  {
+   "name": "mm2dfBeardedBeardMaxDamage",
+   "value": 8,
+   "comment": "If both hand attacks succeed the beard damage is maximum, i.e., 8 points"
+  },
+  {
+   "name": "mm2dfBeardedRashRounds",
+   "value": 4,
+   "comment": "A creature struck for maximum beard damage must save vs. poison or develop a burning rash reducing dexterity by 1 per round for 4 rounds"
+  },
+  {
+   "name": "mm2dfBeardedRashDexLossPerRound",
+   "value": 1,
+   "comment": "The rash dexterity loss per round"
+  },
+  {
+   "name": "mm2dfBeardedSummonPct",
+   "value": 35,
+   "comment": "Bearded devils summon another bearded devil at 35% chance of success"
+  },
+  {
+   "name": "mm2dfBelialXpValue",
+   "value": 30000,
+   "comment": "The Belial full kill xp: X/30,000 (material form only)"
+  },
+  {
+   "name": "mm2dfBelialXpLevel",
+   "value": 10,
+   "comment": "The Belial LEVEL/X.P. prints the roman X"
+  },
+  {
+   "name": "mm2dfBelialPsionicAbility",
+   "value": 279,
+   "comment": "The Belial psionic ability 279, modes all/all"
+  },
+  {
+   "name": "mm2dfBelialForkBonus",
+   "value": 4,
+   "comment": "Belial utilizes a huge military fork +4 which causes a save vs. spells or a symbol of pain effect"
+  },
+  {
+   "name": "mm2dfBelialSymbolOfPainPerDay",
+   "value": 3,
+   "comment": "Three times per day Belial can use a symbol of pain"
+  },
+  {
+   "name": "mm2dfBelialSummonPct",
+   "value": 85,
+   "comment": "Belial summons (black) abishai (25%), 1-3 barbed devils (25%) or 1-4 bearded devils (50%) with 85% chance of success"
+  },
+  {
+   "name": "mm2dfBelialSpellLevel",
+   "value": 20,
+   "comment": "Belial uses his spell-like powers as a 20th-level magic-user"
+  },
+  {
+   "name": "mm2dfGlasyaXpValue",
+   "value": 20000,
+   "comment": "The Glasya full kill xp: X/20,000 (material form only)"
+  },
+  {
+   "name": "mm2dfGlasyaXpLevel",
+   "value": 10,
+   "comment": "The Glasya LEVEL/X.P. prints the roman X"
+  },
+  {
+   "name": "mm2dfGlasyaPsionicAbility",
+   "value": 206,
+   "comment": "The Glasya psionic ability 206, modes all/all"
+  },
+  {
+   "name": "mm2dfGlasyaRegenPerTurn",
+   "value": 2,
+   "comment": "Glasya regenerates 2 hit points every turn"
+  },
+  {
+   "name": "mm2dfGlasyaSummonLo",
+   "value": 1,
+   "comment": "Glasya summons 1-2 malebranche - the low end"
+  },
+  {
+   "name": "mm2dfGlasyaSummonHi",
+   "value": 2,
+   "comment": "The Glasya summon high end"
+  },
+  {
+   "name": "mm2dfGlasyaSummonPct",
+   "value": 70,
+   "comment": "The Glasya summon chance of success"
+  },
+  {
+   "name": "mm2dfGlasyaSpellLevel",
+   "value": 20,
+   "comment": "Glasya employs her spell-like powers as a 20th-level magic-user"
+  },
+  {
+   "name": "mm2dfHutijinXpValue",
+   "value": 30000,
+   "comment": "The Hutijin full kill xp: X/30,000 (material form only)"
+  },
+  {
+   "name": "mm2dfHutijinXpLevel",
+   "value": 10,
+   "comment": "The Hutijin LEVEL/X.P. prints the roman X"
+  },
+  {
+   "name": "mm2dfHutijinPsionicAbility",
+   "value": 275,
+   "comment": "The Hutijin psionic ability 275, modes all/all"
+  },
+  {
+   "name": "mm2dfHutijinPitFiendCompanies",
+   "value": 2,
+   "comment": "Hutijin commands 2 companies of pit fiends in service to Mephistopheles"
+  },
+  {
+   "name": "mm2dfHutijinTridentBonus",
+   "value": 3,
+   "comment": "Hutijin uses a net of snaring and a +3 trident in battle"
+  },
+  {
+   "name": "mm2dfHutijinFearRadiusFeet",
+   "value": 30,
+   "comment": "Hutijin causes fear by voice tone within a 30-foot radius, save vs. rods et al. applicable"
+  },
+  {
+   "name": "mm2dfHutijinSummonPct",
+   "value": 75,
+   "comment": "Hutijin can summon a pit fiend with 75% chance of success"
+  },
+  {
+   "name": "mm2dfHutijinSpellLevel",
+   "value": 20,
+   "comment": "Hutijin uses his spell-like powers as a 20th-level magic-user"
+  },
+  {
+   "name": "mm2dfMammonXpValue",
+   "value": 32000,
+   "comment": "The Mammon full kill xp: X/32,000 (material form only)"
+  },
+  {
+   "name": "mm2dfMammonXpLevel",
+   "value": 10,
+   "comment": "The Mammon LEVEL/X.P. prints the roman X"
+  },
+  {
+   "name": "mm2dfMammonPsionicAbility",
+   "value": 259,
+   "comment": "The Mammon psionic ability 259, modes all/all"
+  },
+  {
+   "name": "mm2dfMammonSpellLevel",
+   "value": 20,
+   "comment": "Mammon uses his spell-like powers as a 20th-level magic-user"
+  },
+  {
+   "name": "mm2dfMammonSummonPct",
+   "value": 80,
+   "comment": "Mammon summons (green) abishai (50%), 1-3 barbed devils (25%) or 1-3 bearded devils (25%) with 80% chance of success"
+  },
+  {
+   "name": "mm2dfMephistoXpValue",
+   "value": 49000,
+   "comment": "The Mephistopheles full kill xp: X/49,000 (material form only)"
+  },
+  {
+   "name": "mm2dfMephistoXpLevel",
+   "value": 10,
+   "comment": "The Mephistopheles LEVEL/X.P. prints the roman X"
+  },
+  {
+   "name": "mm2dfMephistoPsionicAbility",
+   "value": 309,
+   "comment": "The Mephistopheles psionic ability 309, modes all/all"
+  },
+  {
+   "name": "mm2dfMephistoForkBonus",
+   "value": 3,
+   "comment": "The great 3-tined fork +3 delivers 3-12 points of cold, electrical or fire damage on command, save vs. spells applicable"
+  },
+  {
+   "name": "mm2dfMephistoForkDamageHi",
+   "value": 12,
+   "comment": "The fork function damage high end (3-12)"
+  },
+  {
+   "name": "mm2dfMephistoForkUsesPerDay",
+   "value": 3,
+   "comment": "Each fork function is usable 3 times per day"
+  },
+  {
+   "name": "mm2dfMephistoSummonIceDevilsPct",
+   "value": 90,
+   "comment": "Mephistopheles summons 1-3 ice devils with 90% chance of success"
+  },
+  {
+   "name": "mm2dfMephistoFearRadiusFeet",
+   "value": 10,
+   "comment": "Mephisto causes fear by gaze (save vs. spells) or within a 10-foot radius (save vs. rods et al.)"
+  },
+  {
+   "name": "mm2dfMephistoSpellLevel",
+   "value": 20,
+   "comment": "Mephistopheles uses his spell-like powers as a 20th-level magic-user"
+  },
+  {
+   "name": "mm2dfMolochXpValue",
+   "value": 42000,
+   "comment": "The Moloch full kill xp: X/42,000 (material form only)"
+  },
+  {
+   "name": "mm2dfMolochXpLevel",
+   "value": 10,
+   "comment": "The Moloch LEVEL/X.P. prints the roman X"
+  },
+  {
+   "name": "mm2dfMolochPsionicAbility",
+   "value": 226,
+   "comment": "The Moloch psionic ability 226, modes all/all"
+  },
+  {
+   "name": "mm2dfMolochWhipTails",
+   "value": 6,
+   "comment": "Moloch carries a 6-tailed whip of pliable metal delivering 1, 2, or 4 points per tail striking"
+  },
+  {
+   "name": "mm2dfMolochWhipChargesPerTurn",
+   "value": 20,
+   "comment": "Moloch may expend up to 20 charges per turn; the whip itself has no charges"
+  },
+  {
+   "name": "mm2dfMolochBurningHandsDamage",
+   "value": 16,
+   "comment": "The Moloch burning hands does 16 points of damage"
+  },
+  {
+   "name": "mm2dfMolochFearBreathLo",
+   "value": 1,
+   "comment": "Moloch breathes fear upon 1-8 persons within 30 feet - the low end"
+  },
+  {
+   "name": "mm2dfMolochFearBreathHi",
+   "value": 8,
+   "comment": "The fear breath target high end"
+  },
+  {
+   "name": "mm2dfMolochFearBreathRangeFeet",
+   "value": 30,
+   "comment": "The fear breath range in feet"
+  },
+  {
+   "name": "mm2dfMolochSummonHornedPct",
+   "value": 80,
+   "comment": "Moloch summons 1-3 horned devils with 80% chance of success"
+  },
+  {
+   "name": "mm2dfMolochSpellLevel",
+   "value": 20,
+   "comment": "Moloch uses his spell-like powers as a 20th-level magic-user"
+  },
+  {
+   "name": "mm2dfNupperiboXpValue",
+   "value": 21,
+   "comment": "The nupperibo full kill xp: 18 + 1 x 3 hit points"
+  },
+  {
+   "name": "mm2dfNupperiboXpLevel",
+   "value": 1,
+   "comment": "The nupperibo LEVEL/X.P. prints I/18 + 1/hp"
+  },
+  {
+   "name": "mm2dfNupperiboRegenPerRound",
+   "value": 1,
+   "comment": "In the Infernal Region or areas of total Evil nupperibos regenerate at 1 hit point per round, but elsewhere this power is lost"
+  },
+  {
+   "name": "mm2dfNupperiboReformedPct",
+   "value": 99,
+   "comment": "Nupperibos slain in the cause of evil are 99% likely to be re-formed as nupperibos"
+  },
+  {
+   "name": "mm2dfNupperiboLemurePct",
+   "value": 1,
+   "comment": "There is a 1% chance they will be re-formed as lemures of a special sort, from which the lesser devils are formed"
+  },
+  {
+   "name": "mm2dfNupperiboMillenniumYears",
+   "value": 1000,
+   "comment": "One spending a mere millennium of time as one of these special lemures might attain devilhood"
+  },
+  {
+   "name": "mm2dfTitivilusXpValue",
+   "value": 29000,
+   "comment": "The Titivilus full kill xp: X/29,000 (material form only)"
+  },
+  {
+   "name": "mm2dfTitivilusXpLevel",
+   "value": 10,
+   "comment": "The Titivilus LEVEL/X.P. prints the roman X"
+  },
+  {
+   "name": "mm2dfTitivilusPsionicAbility",
+   "value": 239,
+   "comment": "The Titivilus psionic ability 239, modes all/all"
+  },
+  {
+   "name": "mm2dfTitivilusSymbolLevelsOrDice",
+   "value": 19,
+   "comment": "The Titivilus symbol of discord or sleep affects 19 levels or hit dice (or the hit point total) - the print pins verbatim"
+  },
+  {
+   "name": "mm2dfTitivilusSymbolHitPoints",
+   "value": 99,
+   "comment": "The symbol affects 99 hit points (the settled read: the capture 98 is an OCR misread; the independent transcription and the djvu OCR print 99 - the shator +9 class)"
+  },
+  {
+   "name": "mm2dfTitivilusAwakenChance",
+   "value": 20,
+   "comment": "A saving throw indicates only nodding and dozing with a 1 in 20 chance per round of awakening fully"
+  },
+  {
+   "name": "mm2dfTitivilusSummonErinyesPct",
+   "value": 50,
+   "comment": "Titivilus summons 1-4 erinyes with 50% chance of success"
+  },
+  {
+   "name": "mm2dfTitivilusRegenPerRound",
+   "value": 1,
+   "comment": "Titivilus regenerates from 1 point of damage per round"
+  },
+  {
+   "name": "mm2dfTitivilusSpellLevel",
+   "value": 20,
+   "comment": "Titivilus uses his spell-like powers as a 20th-level magic-user"
+  },
+  {
+   "name": "mm2dfSpinedXpValue",
+   "value": 292,
+   "comment": "The spined devil full kill xp: 240 + 4 x 13 hit points"
+  },
+  {
+   "name": "mm2dfSpinedXpLevel",
+   "value": 4,
+   "comment": "The spined devil LEVEL/X.P. prints IV/240 + 4/hp"
+  },
+  {
+   "name": "mm2dfSpinedForkLengthInches",
+   "value": 54,
+   "comment": "Most spined devils carry a short military fork 4 1/2 feet long"
+  },
+  {
+   "name": "mm2dfSpinedSpineCap",
+   "value": 12,
+   "comment": "Up to 12 spikes can be loosed when flying over an opponent, each inflicting damage as a dart when hits are successful and causing flammable materials to burst into flame"
+  },
+  {
+   "name": "mm2dfSpinedMeleeSpinesLo",
+   "value": 1,
+   "comment": "In melee from 1-4 spines can wound an opponent if the devil hurls itself upon an antagonist - the low end"
+  },
+  {
+   "name": "mm2dfSpinedMeleeSpinesHi",
+   "value": 4,
+   "comment": "The melee spine high end"
+  },
+  {
+   "name": "mm2dfSpinedSummonBarbedPct",
+   "value": 5,
+   "comment": "Spined devils summon once per day a barbed devil with 5% chance of success"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mm2dfDevilsMostPowerfulLawfulEvil",
+   "value": true,
+   "comment": "The inhabitants and rulers of the planes of Hell are principally devils, the most powerful of lawful evil creatures"
+  },
+  {
+   "name": "mm2dfDevilsChainOfCommand",
+   "value": true,
+   "comment": "Devils follow a definite order or chain of command which they dare not break for fear of the arch-devils"
+  },
+  {
+   "name": "mm2dfAsmodeusPlaysOneAgainstOther",
+   "value": true,
+   "comment": "While the lesser devils squabble and the dukes vie to usurp the throne, the archfiend has always succeeded in playing one against the other and still rules from his lowest plane"
+  },
+  {
+   "name": "mm2dfDevilsMoveAboutTheHells",
+   "value": true,
+   "comment": "All devils move about the planes of Hell (sans authorization only the dukes) and to Gehenna, Hades and Acheron at will; through the Astral seldom"
+  },
+  {
+   "name": "mm2dfDevilCannotEnterOtherPlanesUnaided",
+   "value": true,
+   "comment": "No devil enters other planes unless the proper ritual is performed, a gate is opened, or the proper name is spoken and heard"
+  },
+  {
+   "name": "mm2dfGreaterDevilNotSlainOutsideHell",
+   "value": true,
+   "comment": "The material form of a greater devil or duke can be destroyed, but they cannot actually be slain unless fought in Hell or the adjacent lower planes"
+  },
+  {
+   "name": "mm2dfDevilsNeverSubdued",
+   "value": true,
+   "comment": "Devils can never be subdued; the lesser fight until destroyed, the greater negotiate if seriously threatened"
+  },
+  {
+   "name": "mm2dfDevilsServeIfCommanded",
+   "value": true,
+   "comment": "Devils serve if properly commanded, but an improper command breaks the law which binds them, and it typically requires a contract for the soul"
+  },
+  {
+   "name": "mm2dfNonLawfulEvilMayTreat",
+   "value": true,
+   "comment": "Persons other than lawful evil can invoke or otherwise treat with devils"
+  },
+  {
+   "name": "mm2dfMagicCirclesRepelDevils",
+   "value": true,
+   "comment": "Magic circles keep devils off for a time if properly scribed (and ensymboled for greater and arch-devils)"
+  },
+  {
+   "name": "mm2dfHolyArtifactsRepelDevils",
+   "value": true,
+   "comment": "Devils are repelled by holy (Good) artifacts or relics"
+  },
+  {
+   "name": "mm2dfDevilsSplitAttacks",
+   "value": true,
+   "comment": "All devils can direct their attacks against 2 or more opponents if means are at hand"
+  },
+  {
+   "name": "mm2dfDevilTelepathy",
+   "value": true,
+   "comment": "A special form of telepathy lets devils understand and converse with any intelligent creature"
+  },
+  {
+   "name": "mm2dfDevilAcidFullDamage",
+   "value": true,
+   "comment": "The devil attack-form chart: acid, full"
+  },
+  {
+   "name": "mm2dfDevilColdHalfDamage",
+   "value": true,
+   "comment": "The devil attack-form chart: cold, half"
+  },
+  {
+   "name": "mm2dfDevilElectricityFullDamage",
+   "value": true,
+   "comment": "The devil attack-form chart: electricity (lightning), full"
+  },
+  {
+   "name": "mm2dfDevilFireNoneDamage",
+   "value": true,
+   "comment": "The devil attack-form chart: fire (dragon, magical), none"
+  },
+  {
+   "name": "mm2dfDevilGasHalfDamage",
+   "value": true,
+   "comment": "The devil attack-form chart: gas (poisonous, etc.), half"
+  },
+  {
+   "name": "mm2dfDevilIronWeaponNone",
+   "value": true,
+   "comment": "The devil attack-form chart: iron weapon, none unless affected by normal weapons in which case damage is according to the weapon type"
+  },
+  {
+   "name": "mm2dfDevilMagicMissileFullDamage",
+   "value": true,
+   "comment": "The devil attack-form chart: magic missile, full"
+  },
+  {
+   "name": "mm2dfDevilPoisonFullDamage",
+   "value": true,
+   "comment": "The devil attack-form chart: poison, full"
+  },
+  {
+   "name": "mm2dfDevilsResembleDemons",
+   "value": true,
+   "comment": "Devils somewhat resemble the demons of chaos in their characteristics, abilities and general attributes (further information in MM1 under Devil)"
+  },
+  {
+   "name": "mm2dfAbishaiCommonToFirstHell",
+   "value": true,
+   "comment": "The race of abishai, the scaly devils, are common to the First Hell and most serve Tiamat; common on the 1st and 2nd, uncommon on the 3rd, rare on the 4th, very rare on the 5th and 6th"
+  },
+  {
+   "name": "mm2dfAbishaiReptilian",
+   "value": true,
+   "comment": "The abishai are reptilian, appearing as humanoids with small horns, snaky hair, fangs, pointed ears, slanting eyes, leathery wings and barbed tail"
+  },
+  {
+   "name": "mm2dfAbishaiWeaponsByForm",
+   "value": true,
+   "comment": "Attack damage is for the weapon of each sort: black halberds, white flails, red long daggers, green guisarme-voulges, blue tridents"
+  },
+  {
+   "name": "mm2dfAmonFearGaze",
+   "value": true,
+   "comment": "Amon causes fear in any individuals he gazes upon unless they save vs. spells"
+  },
+  {
+   "name": "mm2dfAmonSymbolOfHopelessnessOncePerDay",
+   "value": true,
+   "comment": "Once per day Amon can use a symbol of hopelessness"
+  },
+  {
+   "name": "mm2dfAmonWolfHeaded",
+   "value": true,
+   "comment": "Amon is wolf-headed but otherwise appears human; his torso is well-formed and muscled"
+  },
+  {
+   "name": "mm2dfBaelSymbolOfStunningOncePerDay",
+   "value": true,
+   "comment": "Once per day Bael can employ a symbol of stunning"
+  },
+  {
+   "name": "mm2dfBaelFearRadius",
+   "value": true,
+   "comment": "Bael radiates fear within a 20-foot radius when he so desires"
+  },
+  {
+   "name": "mm2dfBaelRegenerates",
+   "value": true,
+   "comment": "Bael regenerates 1 point per round"
+  },
+  {
+   "name": "mm2dfBaelBovineFeatures",
+   "value": true,
+   "comment": "Bael is a well-formed humanoid with golden skin, small forward curling bull horns and rather bovine features"
+  },
+  {
+   "name": "mm2dfBeardedThirdHell",
+   "value": true,
+   "comment": "Bearded devils populate the Third Hell, the domain of Mammon, as well as planes below that"
+  },
+  {
+   "name": "mm2dfBeardedShockTroops",
+   "value": true,
+   "comment": "Bearded devils are particularly cruel and violent, using any excuse to attack, which makes them desirable as shock troops"
+  },
+  {
+   "name": "mm2dfBelialRulesFourthHell",
+   "value": true,
+   "comment": "Great Belial rules the Fourth Hell from his basalt palace, firmly in the camp of Baalzebul"
+  },
+  {
+   "name": "mm2dfBelialUnholyWordOncePerDay",
+   "value": true,
+   "comment": "Belial can pronounce an unholy word once per day"
+  },
+  {
+   "name": "mm2dfBelialFearByStare",
+   "value": true,
+   "comment": "Belial causes fear in any individual he stares at, saving throw vs. spells applicable"
+  },
+  {
+   "name": "mm2dfBelialMostHandsome",
+   "value": true,
+   "comment": "Belial is the most handsome and diabolic in appearance of all devils, the lord of pain and sufferings"
+  },
+  {
+   "name": "mm2dfGlasyaConsortToMammon",
+   "value": true,
+   "comment": "As consort to Mammon, Glasya is one of the more powerful and influential of female devils"
+  },
+  {
+   "name": "mm2dfGlasyaDaughterOfAsmodeus",
+   "value": true,
+   "comment": "Glasya is the daughter of Asmodeus and incredibly beautiful; her wings, forked tail, horns and copper-colored skin betray her origins"
+  },
+  {
+   "name": "mm2dfGlasyaFingerOfDeathOncePerDay",
+   "value": true,
+   "comment": "Once per day Glasya can employ a finger of death"
+  },
+  {
+   "name": "mm2dfGlasyaDaggerOfVenom",
+   "value": true,
+   "comment": "Glasya carries a short sword with a poisoned blade equal to a dagger of venom"
+  },
+  {
+   "name": "mm2dfHutijinAristocracyOfEighthPlane",
+   "value": true,
+   "comment": "Hutijin commands the aristocracy of the Eighth Plane and is one of the greatest of Hell dukes"
+  },
+  {
+   "name": "mm2dfHutijinSymbolOfPersuasionOncePerDay",
+   "value": true,
+   "comment": "Hutijin can use a symbol of persuasion once per day"
+  },
+  {
+   "name": "mm2dfHutijinHealTwicePerDay",
+   "value": true,
+   "comment": "The Hutijin spell-like list carries heal twice per day"
+  },
+  {
+   "name": "mm2dfHutijinResemblesPitFiend",
+   "value": true,
+   "comment": "Hutijin resembles a pit fiend, with proportionately smaller wings, a larger head, and a dark rust-red hide"
+  },
+  {
+   "name": "mm2dfMammonRulesThirdHell",
+   "value": true,
+   "comment": "Mammon is the king of Hell Third Plane, a boundless series of rifts with slime streams under hot ash from spurting volcanos"
+  },
+  {
+   "name": "mm2dfMammonRidesNightmare",
+   "value": true,
+   "comment": "Mammon rides a nightmare of largest size with a pack of hell hounds at his heels, seeking trophies of the hunt"
+  },
+  {
+   "name": "mm2dfMammonSwordOfWounding",
+   "value": true,
+   "comment": "His fauchard-fork inflicts normal damage (1-8 or 1-10) but otherwise acts as a sword of wounding"
+  },
+  {
+   "name": "mm2dfMammonSymbolOfHopelessnessOncePerDay",
+   "value": true,
+   "comment": "Once per day Mammon can use a symbol of hopelessness and pronounce an unholy word"
+  },
+  {
+   "name": "mm2dfMammonFearByGaze",
+   "value": true,
+   "comment": "Mammon causes fear by means of his gaze, save vs. spells applicable"
+  },
+  {
+   "name": "mm2dfMammonRedGold",
+   "value": true,
+   "comment": "Mammon is a red-gold color, his scaled wings gleam like rubies, and his bloated form is very strong"
+  },
+  {
+   "name": "mm2dfMephistoRulesEighthHell",
+   "value": true,
+   "comment": "The Eighth Hell is ruled by Mephistopheles from a great iron citadel in the ice mountains"
+  },
+  {
+   "name": "mm2dfMephistoWrestSeventhPlane",
+   "value": true,
+   "comment": "His main aim is to wrest the 7th plane from Baalzebul and then challenge Asmodeus for the overlordship of all the hells"
+  },
+  {
+   "name": "mm2dfMephistoRulershipPrintsVerbatim",
+   "value": true,
+   "comment": "The Mephistopheles spell list prints rulership once per day - the print pins verbatim (a genuine print typo that stands; the capture and the djvu OCR agree)"
+  },
+  {
+   "name": "mm2dfMephistoWhisperingWind",
+   "value": true,
+   "comment": "The tall blue-black Mephistopheles has huge muscles, sooty black scales, deep blue wings, horns and talons, pale blue eyes with red irises, and his normal speech is whispering wind"
+  },
+  {
+   "name": "mm2dfMolochRulesSixthHell",
+   "value": true,
+   "comment": "Moloch is a grand duke, viceroy of Baalzebul and lord of Hell Sixth Plane"
+  },
+  {
+   "name": "mm2dfMolochWhipElectrical",
+   "value": true,
+   "comment": "The whip damage is electrical in nature and so greatly feared by less powerful devils"
+  },
+  {
+   "name": "mm2dfMolochFlameStrikeOncePerDay",
+   "value": true,
+   "comment": "Once per day Moloch can create a flame strike, use a symbol of stunning and pronounce an unholy word"
+  },
+  {
+   "name": "mm2dfMolochEnmityWithGeryon",
+   "value": true,
+   "comment": "Great enmity exists between Moloch and Geryon; if not for Baalzebul there would be open warfare"
+  },
+  {
+   "name": "mm2dfMolochSquareBodied",
+   "value": true,
+   "comment": "Moloch is a great square-bodied creature with red-orange skin, short thick arms and legs, huge square hands and feet, and a huge horned head"
+  },
+  {
+   "name": "mm2dfNupperiboMrStandard",
+   "value": true,
+   "comment": "The nupperibo MAGIC RESISTANCE prints Standard (the def carries it verbatim; the grid reads 0 - the charon Nil precedent applied to the word)"
+  },
+  {
+   "name": "mm2dfNupperiboBlindDeafMute",
+   "value": true,
+   "comment": "Nupperibos are blind, deaf and unable to speak; sensitive to mental commands from stronger devils, they sense the presence of their own kind"
+  },
+  {
+   "name": "mm2dfNupperiboHordesMarch",
+   "value": true,
+   "comment": "If uncommanded the hordes of nupperibos continue to march and attack all things not of the Nine Hells"
+  },
+  {
+   "name": "mm2dfNupperiboHolyObjectBlocksRegen",
+   "value": true,
+   "comment": "If a holy object (water, weapon) is used against them, regeneration is not possible"
+  },
+  {
+   "name": "mm2dfNupperiboRemainsOfLawfulEvil",
+   "value": true,
+   "comment": "Nupperibos are the remains of all lawful evil creatures not sufficiently malignant to be changed into lemures"
+  },
+  {
+   "name": "mm2dfTitivilusMessengerForDispater",
+   "value": true,
+   "comment": "Titivilus is the messenger for Dispater, notorious for his ability to twist words"
+  },
+  {
+   "name": "mm2dfTitivilusSilverSwordOfWounding",
+   "value": true,
+   "comment": "It is said that Titivilus possesses a silver sword of wounding; he normally uses his other powers"
+  },
+  {
+   "name": "mm2dfTitivilusFearByTouch",
+   "value": true,
+   "comment": "Titivilus causes fear by touch only"
+  },
+  {
+   "name": "mm2dfTitivilusMovePrintsMCd",
+   "value": true,
+   "comment": "The Titivilus MOVE prints 15/30 MC:D (the djvu agrees; the transcription 12 token is its own annotation)"
+  },
+  {
+   "name": "mm2dfSpinedServantsCouriers",
+   "value": true,
+   "comment": "Spined devils are used as servants and couriers, for they are too small and weak for most other duties"
+  },
+  {
+   "name": "mm2dfSpinedHerdLemures",
+   "value": true,
+   "comment": "Spined devils often herd lemures"
+  },
+  {
+   "name": "mm2dfSpinedAllPlanesOfHell",
+   "value": true,
+   "comment": "Spined devils are found on all the planes of Hell, most common on the 2nd, 3rd, 4th and 5th planes"
+  },
+  {
+   "name": "mm2dfSpinedAttacksAutoHit",
+   "value": true,
+   "comment": "The melee spine hits are automatic, but no other attack is possible in that round"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the devil stat grid",
+   "tag": "DevStats",
+   "count": "mm2dfDevStatRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE DEVIL GRID: the 17-row DevStats stat grid (every armor class, hit-dice, hit, xp, lair, move and magic-resistance cell of the thirteen devil stat blocks with the abishai split five ways)",
+   "cols": [
+    "mm2dfDevStatAC",
+    "mm2dfDevStatHd",
+    "mm2dfDevStatHdBonus",
+    "mm2dfDevStatAvgHp",
+    "mm2dfDevStatAttacks",
+    "mm2dfDevStatXp",
+    "mm2dfDevStatXpHp",
+    "mm2dfDevStatLairPct",
+    "mm2dfDevStatMove",
+    "mm2dfDevStatMr"
+   ],
+   "col_comments": [
+    "The devil armor class cells",
+    "The devil hit dice (num only; the flat-hp uniques read 0 - the charon path)",
+    "The devil hit dice bonus points",
+    "The devil book-average hit points (the flat-hp uniques carry their printed totals)",
+    "The devil attacks per round (the loader semantics: the Amon 1-and-1 sums to 2, the bearded 1-or-3 and nupperibo 2-or-1 max, the spined 1-and/or-2 sums to 3)",
+    "The devil xp base cells (the material-form-only uniques carry no per-hp addend)",
+    "The devil xp per hit point",
+    "The devil % in lair cells (Nil -> 0, the charon precedent)",
+    "The devil primary ground move rate (inches x 10)",
+    "The devil magic resistance percentages (the nupperibo Standard reads 0 - the charon Nil precedent applied to the word)"
+   ],
+   "data": [
+    [
+     2,
+     8,
+     0,
+     28,
+     1,
+     855,
+     10,
+     20,
+     9,
+     35
+    ],
+    [
+     3,
+     5,
+     1,
+     18,
+     1,
+     550,
+     6,
+     35,
+     15,
+     20
+    ],
+    [
+     3,
+     6,
+     0,
+     21,
+     1,
+     550,
+     6,
+     30,
+     12,
+     25
+    ],
+    [
+     1,
+     4,
+     2,
+     16,
+     2,
+     320,
+     5,
+     40,
+     18,
+     40
+    ],
+    [
+     3,
+     7,
+     0,
+     24,
+     2,
+     650,
+     8,
+     25,
+     9,
+     30
+    ],
+    [
+     -2,
+     0,
+     0,
+     126,
+     2,
+     30000,
+     0,
+     60,
+     18,
+     70
+    ],
+    [
+     -3,
+     0,
+     0,
+     106,
+     2,
+     35000,
+     0,
+     55,
+     12,
+     70
+    ],
+    [
+     1,
+     6,
+     6,
+     27,
+     3,
+     1125,
+     10,
+     15,
+     15,
+     45
+    ],
+    [
+     -4,
+     0,
+     0,
+     154,
+     2,
+     30000,
+     0,
+     75,
+     9,
+     80
+    ],
+    [
+     -2,
+     0,
+     0,
+     69,
+     2,
+     20000,
+     0,
+     80,
+     15,
+     60
+    ],
+    [
+     -4,
+     0,
+     0,
+     111,
+     2,
+     30000,
+     0,
+     30,
+     9,
+     65
+    ],
+    [
+     -3,
+     0,
+     0,
+     139,
+     2,
+     32000,
+     0,
+     65,
+     6,
+     75
+    ],
+    [
+     -6,
+     0,
+     0,
+     188,
+     2,
+     49000,
+     0,
+     70,
+     15,
+     85
+    ],
+    [
+     -3,
+     0,
+     0,
+     126,
+     3,
+     42000,
+     0,
+     95,
+     12,
+     70
+    ],
+    [
+     9,
+     1,
+     0,
+     3,
+     2,
+     18,
+     1,
+     0,
+     6,
+     0
+    ],
+    [
+     -2,
+     0,
+     0,
+     86,
+     2,
+     29000,
+     0,
+     35,
+     15,
+     75
+    ],
+    [
+     3,
+     3,
+     3,
+     13,
+     3,
+     240,
+     4,
+     10,
+     6,
+     25
+    ]
+   ]
+  },
+  {
+   "name": "the frequency of devils on plane grid",
+   "tag": "DevilPlaneFreq",
+   "count": "mm2dfDevilFreqRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE PLANE GRID: the Frequency of Devils on Plane table (p. 45) - the letter codes pinned as 0 absent, 1 very very rare, 2 very rare, 3 rare, 4 uncommon, 5 common",
+   "cols": [
+    "mm2dfFreqDAbishai",
+    "mm2dfFreqDArch",
+    "mm2dfFreqDBarbed",
+    "mm2dfFreqDBearded",
+    "mm2dfFreqDBone",
+    "mm2dfFreqDErinyes",
+    "mm2dfFreqDHorned",
+    "mm2dfFreqDIce",
+    "mm2dfFreqDNupperibo",
+    "mm2dfFreqDPitFiend",
+    "mm2dfFreqDSpined",
+    "mm2dfFreqDStyx"
+   ],
+   "col_comments": [
+    "The abishai column (common on the 1st and 2nd, uncommon on the 3rd, rare on the 4th, very rare on the 5th, absent below)",
+    "The arch-devil column (very very rare on every plane)",
+    "The barbed devil column",
+    "The bearded devil column",
+    "The bone devil column",
+    "The erinyes column",
+    "The horned devil column",
+    "The ice devil column",
+    "The nupperibo column (common on every plane but the 1st)",
+    "The pit fiend column",
+    "The spined devil column (common on the 1st through 5th)",
+    "The styx devil column"
+   ],
+   "data": [
+    [
+     5,
+     1,
+     3,
+     0,
+     0,
+     5,
+     0,
+     0,
+     4,
+     0,
+     5,
+     0
+    ],
+    [
+     5,
+     1,
+     4,
+     3,
+     0,
+     5,
+     2,
+     0,
+     5,
+     2,
+     5,
+     0
+    ],
+    [
+     4,
+     1,
+     5,
+     5,
+     4,
+     3,
+     2,
+     0,
+     5,
+     2,
+     5,
+     2
+    ],
+    [
+     3,
+     1,
+     5,
+     5,
+     5,
+     2,
+     3,
+     0,
+     5,
+     2,
+     5,
+     3
+    ],
+    [
+     2,
+     1,
+     3,
+     4,
+     4,
+     0,
+     4,
+     0,
+     5,
+     2,
+     5,
+     5
+    ],
+    [
+     0,
+     1,
+     0,
+     2,
+     3,
+     0,
+     5,
+     0,
+     5,
+     2,
+     4,
+     4
+    ],
+    [
+     0,
+     1,
+     0,
+     0,
+     2,
+     0,
+     5,
+     2,
+     5,
+     2,
+     4,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     2,
+     5,
+     5,
+     3,
+     4,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     2,
+     3,
+     5,
+     5,
+     4,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "the frequency of others on plane grid",
+   "tag": "OthersPlaneFreq",
+   "count": "mm2dfOthersFreqRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "audit_comment": "THE OTHERS GRID: the Frequency of Others on Plane table (p. 45) - the same letter-code legend",
+   "cols": [
+    "mm2dfFreqOAchaierai",
+    "mm2dfFreqOBarghest",
+    "mm2dfFreqODaemon",
+    "mm2dfFreqOHellCat",
+    "mm2dfFreqOHellHound",
+    "mm2dfFreqOHoardling",
+    "mm2dfFreqOImp",
+    "mm2dfFreqOLemure",
+    "mm2dfFreqOMephit",
+    "mm2dfFreqONightmare",
+    "mm2dfFreqORakshasa",
+    "mm2dfFreqOStenchKow"
+   ],
+   "col_comments": [
+    "The achaierai column",
+    "The barghest column (very rare on every plane but the last two)",
+    "The daemon column",
+    "The hell cat column",
+    "The hell hound column",
+    "The hoardling column",
+    "The imp column",
+    "The lemure column",
+    "The mephit column (common on the upper planes, uncommon on the lower)",
+    "The nightmare column",
+    "The rakshasa column",
+    "The stench kow column (the phantom blank capture column resolved: the capture table-split introduced a spurious empty column; the djvu corroborates the single stench kow column)"
+   ],
+   "data": [
+    [
+     3,
+     2,
+     2,
+     0,
+     2,
+     2,
+     2,
+     3,
+     5,
+     2,
+     2,
+     5
+    ],
+    [
+     5,
+     2,
+     2,
+     4,
+     4,
+     4,
+     5,
+     3,
+     5,
+     3,
+     5,
+     5
+    ],
+    [
+     5,
+     2,
+     2,
+     4,
+     4,
+     3,
+     5,
+     4,
+     5,
+     3,
+     5,
+     5
+    ],
+    [
+     4,
+     2,
+     2,
+     3,
+     5,
+     3,
+     4,
+     4,
+     5,
+     3,
+     4,
+     4
+    ],
+    [
+     4,
+     2,
+     2,
+     3,
+     5,
+     3,
+     4,
+     5,
+     5,
+     3,
+     4,
+     4
+    ],
+    [
+     4,
+     2,
+     2,
+     4,
+     3,
+     2,
+     4,
+     5,
+     4,
+     3,
+     3,
+     4
+    ],
+    [
+     3,
+     2,
+     2,
+     3,
+     2,
+     0,
+     3,
+     5,
+     4,
+     3,
+     0,
+     4
+    ],
+    [
+     2,
+     3,
+     2,
+     3,
+     0,
+     0,
+     2,
+     5,
+     4,
+     2,
+     2,
+     4
+    ],
+    [
+     2,
+     3,
+     2,
+     0,
+     4,
+     0,
+     3,
+     5,
+     4,
+     2,
+     2,
+     4
+    ]
+   ]
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the MM2 letter D part 3 round pins (the R801 census)": [
+   {
+    "kind": "const",
+    "name": "mm2dfRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfEntryCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAbishaiFormCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfDefCount"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfFirstPage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfLastPage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfDevStatRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfDevilFreqRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfOthersFreqRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfDukeRosterRows"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfFreqCodeAbsent"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfFreqCodeVvr"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfFreqCodeVr"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfFreqCodeR"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfFreqCodeU"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfFreqCodeC"
+   }
+  ],
+  "the devil doctrine pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfGreaterDevilLemureDecades"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfDukePlaneBoundYears"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilsMostPowerfulLawfulEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilsChainOfCommand"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfAsmodeusPlaysOneAgainstOther"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilsMoveAboutTheHells"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilCannotEnterOtherPlanesUnaided"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfGreaterDevilNotSlainOutsideHell"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilsNeverSubdued"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilsServeIfCommanded"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfNonLawfulEvilMayTreat"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMagicCirclesRepelDevils"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfHolyArtifactsRepelDevils"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilsSplitAttacks"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilTelepathy"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilAcidFullDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilColdHalfDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilElectricityFullDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilFireNoneDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilGasHalfDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilIronWeaponNone"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilMagicMissileFullDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilPoisonFullDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfDevilsResembleDemons"
+   }
+  ],
+  "the MM2 letter D part 3 stat grid (the R801 wiring)": [
+   {
+    "kind": "table",
+    "name": "the devil stat grid"
+   }
+  ],
+  "the frequency of devils on plane grid (the R801 wiring)": [
+   {
+    "kind": "table",
+    "name": "the frequency of devils on plane grid"
+   }
+  ],
+  "the frequency of others on plane grid (the R801 wiring)": [
+   {
+    "kind": "table",
+    "name": "the frequency of others on plane grid"
+   }
+  ],
+  "the abishai pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfBlackAbishaiXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBlueAbishaiXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfGreenAbishaiXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfRedAbishaiXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfWhiteAbishaiXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAbishaiXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfRedAbishaiXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBlackAbishaiStrengthBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBlueAbishaiStrengthBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfGreenAbishaiStrengthBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfWhiteAbishaiStrengthBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfRedAbishaiStrengthBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAbishaiGrappleDamageLo"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAbishaiGrappleDamageHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAbishaiTailDamageHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAbishaiRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAbishaiSummonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAbishaiOtherTypesPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAbishaiQTreasurePct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfAbishaiCommonToFirstHell"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfAbishaiReptilian"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfAbishaiWeaponsByForm"
+   }
+  ],
+  "the Amon pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfAmonXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonBoneDevilCompanies"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonMaceBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonWinterWolfMagicResist"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonWinterWolfBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonSummonBoneDevilsPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonRegenPerTurnLo"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonRegenPerTurnHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfAmonWolfControlMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfAmonFearGaze"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfAmonSymbolOfHopelessnessOncePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfAmonWolfHeaded"
+   }
+  ],
+  "the Bael pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfBaelXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBaelXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBaelPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBaelBarbedCompanies"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBaelMorningStarBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBaelMorningStarLoFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBaelMorningStarHiFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBaelSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBaelSummonBarbedPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBaelSymbolOfStunningOncePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBaelFearRadius"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBaelRegenerates"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBaelBovineFeatures"
+   }
+  ],
+  "the bearded devil pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfBeardedXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBeardedXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBeardedGlaiveHookDamageHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBeardedBeardMaxDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBeardedRashRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBeardedRashDexLossPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBeardedSummonPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBeardedThirdHell"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBeardedShockTroops"
+   }
+  ],
+  "the Belial pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfBelialXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBelialXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBelialPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBelialForkBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBelialSymbolOfPainPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBelialSummonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfBelialSpellLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBelialRulesFourthHell"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBelialUnholyWordOncePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBelialFearByStare"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfBelialMostHandsome"
+   }
+  ],
+  "the Glasya pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfGlasyaXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfGlasyaXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfGlasyaPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfGlasyaRegenPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfGlasyaSummonLo"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfGlasyaSummonHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfGlasyaSummonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfGlasyaSpellLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfGlasyaConsortToMammon"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfGlasyaDaughterOfAsmodeus"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfGlasyaFingerOfDeathOncePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfGlasyaDaggerOfVenom"
+   }
+  ],
+  "the Hutijin pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfHutijinXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfHutijinXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfHutijinPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfHutijinPitFiendCompanies"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfHutijinTridentBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfHutijinFearRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfHutijinSummonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfHutijinSpellLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfHutijinAristocracyOfEighthPlane"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfHutijinSymbolOfPersuasionOncePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfHutijinHealTwicePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfHutijinResemblesPitFiend"
+   }
+  ],
+  "the Mammon pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfMammonXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMammonXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMammonPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMammonSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMammonSummonPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMammonRulesThirdHell"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMammonRidesNightmare"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMammonSwordOfWounding"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMammonSymbolOfHopelessnessOncePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMammonFearByGaze"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMammonRedGold"
+   }
+  ],
+  "the Mephistopheles pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfMephistoXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMephistoXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMephistoPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMephistoForkBonus"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMephistoForkDamageHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMephistoForkUsesPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMephistoSummonIceDevilsPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMephistoFearRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMephistoSpellLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMephistoRulesEighthHell"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMephistoWrestSeventhPlane"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMephistoRulershipPrintsVerbatim"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMephistoWhisperingWind"
+   }
+  ],
+  "the Moloch pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfMolochXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochWhipTails"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochWhipChargesPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochBurningHandsDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochFearBreathLo"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochFearBreathHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochFearBreathRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochSummonHornedPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfMolochSpellLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMolochRulesSixthHell"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMolochWhipElectrical"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMolochFlameStrikeOncePerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMolochEnmityWithGeryon"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfMolochSquareBodied"
+   }
+  ],
+  "the nupperibo pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfNupperiboXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfNupperiboXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfNupperiboRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfNupperiboReformedPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfNupperiboLemurePct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfNupperiboMillenniumYears"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfNupperiboMrStandard"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfNupperiboBlindDeafMute"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfNupperiboHordesMarch"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfNupperiboHolyObjectBlocksRegen"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfNupperiboRemainsOfLawfulEvil"
+   }
+  ],
+  "the Titivilus pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfTitivilusXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfTitivilusXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfTitivilusPsionicAbility"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfTitivilusSymbolLevelsOrDice"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfTitivilusSymbolHitPoints"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfTitivilusAwakenChance"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfTitivilusSummonErinyesPct"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfTitivilusRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfTitivilusSpellLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfTitivilusMessengerForDispater"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfTitivilusSilverSwordOfWounding"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfTitivilusFearByTouch"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfTitivilusMovePrintsMCd"
+   }
+  ],
+  "the spined devil pins (the R801 MM2 letter D part 3)": [
+   {
+    "kind": "const",
+    "name": "mm2dfSpinedXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfSpinedXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfSpinedForkLengthInches"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfSpinedSpineCap"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfSpinedMeleeSpinesLo"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfSpinedMeleeSpinesHi"
+   },
+   {
+    "kind": "const",
+    "name": "mm2dfSpinedSummonBarbedPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfSpinedServantsCouriers"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfSpinedHerdLemures"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfSpinedAllPlanesOfHell"
+   },
+   {
+    "kind": "bool",
+    "name": "mm2dfSpinedAttacksAutoHit"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "note": "the registry grows by exactly the def count (the census walk)",
+   "expr": "m['mm2dfRegistryAfter']() - m['mm2dfRegistryBefore']() != m['mm2dfDefCount']() or m['mm2dfDefCount']() != 17 or m['mm2dfEntryCount']() != 13 or m['mm2dfAbishaiFormCount']() != 5"
+  },
+  {
+   "note": "each grid xp tile equals its pinned full kill xp (the xpValue formula, pin-vs-pin)",
+   "expr": "m['mm2dfDevStatXp'](0) + m['mm2dfDevStatXpHp'](0) * m['mm2dfDevStatAvgHp'](0) != m['mm2dfBlackAbishaiXpValue']() or m['mm2dfDevStatXp'](1) + m['mm2dfDevStatXpHp'](1) * m['mm2dfDevStatAvgHp'](1) != m['mm2dfBlueAbishaiXpValue']() or m['mm2dfDevStatXp'](2) + m['mm2dfDevStatXpHp'](2) * m['mm2dfDevStatAvgHp'](2) != m['mm2dfGreenAbishaiXpValue']() or m['mm2dfDevStatXp'](3) + m['mm2dfDevStatXpHp'](3) * m['mm2dfDevStatAvgHp'](3) != m['mm2dfRedAbishaiXpValue']() or m['mm2dfDevStatXp'](4) + m['mm2dfDevStatXpHp'](4) * m['mm2dfDevStatAvgHp'](4) != m['mm2dfWhiteAbishaiXpValue']() or m['mm2dfDevStatXp'](5) + m['mm2dfDevStatXpHp'](5) * m['mm2dfDevStatAvgHp'](5) != m['mm2dfAmonXpValue']() or m['mm2dfDevStatXp'](6) + m['mm2dfDevStatXpHp'](6) * m['mm2dfDevStatAvgHp'](6) != m['mm2dfBaelXpValue']() or m['mm2dfDevStatXp'](7) + m['mm2dfDevStatXpHp'](7) * m['mm2dfDevStatAvgHp'](7) != m['mm2dfBeardedXpValue']() or m['mm2dfDevStatXp'](8) + m['mm2dfDevStatXpHp'](8) * m['mm2dfDevStatAvgHp'](8) != m['mm2dfBelialXpValue']() or m['mm2dfDevStatXp'](9) + m['mm2dfDevStatXpHp'](9) * m['mm2dfDevStatAvgHp'](9) != m['mm2dfGlasyaXpValue']() or m['mm2dfDevStatXp'](10) + m['mm2dfDevStatXpHp'](10) * m['mm2dfDevStatAvgHp'](10) != m['mm2dfHutijinXpValue']() or m['mm2dfDevStatXp'](11) + m['mm2dfDevStatXpHp'](11) * m['mm2dfDevStatAvgHp'](11) != m['mm2dfMammonXpValue']() or m['mm2dfDevStatXp'](12) + m['mm2dfDevStatXpHp'](12) * m['mm2dfDevStatAvgHp'](12) != m['mm2dfMephistoXpValue']() or m['mm2dfDevStatXp'](13) + m['mm2dfDevStatXpHp'](13) * m['mm2dfDevStatAvgHp'](13) != m['mm2dfMolochXpValue']() or m['mm2dfDevStatXp'](14) + m['mm2dfDevStatXpHp'](14) * m['mm2dfDevStatAvgHp'](14) != m['mm2dfNupperiboXpValue']() or m['mm2dfDevStatXp'](15) + m['mm2dfDevStatXpHp'](15) * m['mm2dfDevStatAvgHp'](15) != m['mm2dfTitivilusXpValue']() or m['mm2dfDevStatXp'](16) + m['mm2dfDevStatXpHp'](16) * m['mm2dfDevStatAvgHp'](16) != m['mm2dfSpinedXpValue']()"
+  },
+  {
+   "note": "the settled LEVEL reads (the abishai VI with the red V, the bearded VII, the nupperibo I, the spined IV)",
+   "expr": "m['mm2dfAbishaiXpLevel']() != 6 or m['mm2dfRedAbishaiXpLevel']() != 5 or m['mm2dfBeardedXpLevel']() != 7 or m['mm2dfNupperiboXpLevel']() != 1 or m['mm2dfSpinedXpLevel']() != 4 or m['mm2dfAmonXpLevel']() != 10"
+  },
+  {
+   "note": "the psionic abilities of the nine unique devils",
+   "expr": "m['mm2dfAmonPsionicAbility']() != 229 or m['mm2dfBaelPsionicAbility']() != 206 or m['mm2dfBelialPsionicAbility']() != 279 or m['mm2dfGlasyaPsionicAbility']() != 206 or m['mm2dfHutijinPsionicAbility']() != 275 or m['mm2dfMammonPsionicAbility']() != 259 or m['mm2dfMephistoPsionicAbility']() != 309 or m['mm2dfMolochPsionicAbility']() != 226 or m['mm2dfTitivilusPsionicAbility']() != 239"
+  },
+  {
+   "note": "the Titivilus symbol settled read (the 99 hit points over the capture 98 misread) and the doctrine roster counts",
+   "expr": "m['mm2dfTitivilusSymbolHitPoints']() != 99 or m['mm2dfTitivilusSymbolLevelsOrDice']() != 19 or m['mm2dfTitivilusAwakenChance']() != 20 or m['mm2dfDukeRosterRows']() != 61 or m['mm2dfGreaterDevilLemureDecades']() != 9 or m['mm2dfDukePlaneBoundYears']() != 10"
+  },
+  {
+   "note": "the frequency-code legend and the plane-grid spot tiles",
+   "expr": "m['mm2dfFreqCodeAbsent']() != 0 or m['mm2dfFreqCodeVvr']() != 1 or m['mm2dfFreqCodeVr']() != 2 or m['mm2dfFreqCodeR']() != 3 or m['mm2dfFreqCodeU']() != 4 or m['mm2dfFreqCodeC']() != 5 or m['mm2dfFreqDAbishai'](0) != m['mm2dfFreqCodeC']() or m['mm2dfFreqDAbishai'](2) != m['mm2dfFreqCodeU']() or m['mm2dfFreqDArch'](8) != m['mm2dfFreqCodeVvr']() or m['mm2dfFreqDNupperibo'](2) != m['mm2dfFreqCodeC']() or m['mm2dfFreqDStyx'](2) != m['mm2dfFreqCodeVr']() or m['mm2dfFreqOLemure'](5) != m['mm2dfFreqCodeC']() or m['mm2dfFreqOStenchKow'](0) != m['mm2dfFreqCodeC']()"
+  },
+  {
+   "note": "the weapon and strength tiles",
+   "expr": "m['mm2dfBlackAbishaiStrengthBonus']() != 4 or m['mm2dfBlueAbishaiStrengthBonus']() != 3 or m['mm2dfGreenAbishaiStrengthBonus']() != 2 or m['mm2dfWhiteAbishaiStrengthBonus']() != 2 or m['mm2dfRedAbishaiStrengthBonus']() != 1 or m['mm2dfAbishaiSummonPct']() != 20 or m['mm2dfAmonMaceBonus']() != 3 or m['mm2dfBaelMorningStarBonus']() != 2 or m['mm2dfBelialForkBonus']() != 4 or m['mm2dfHutijinTridentBonus']() != 3 or m['mm2dfMephistoForkBonus']() != 3 or m['mm2dfMolochWhipTails']() != 6 or m['mm2dfSpinedForkLengthInches']() != 54"
+  },
+  {
+   "note": "the summon chance tiles",
+   "expr": "m['mm2dfAmonSummonBoneDevilsPct']() != 60 or m['mm2dfBaelSummonBarbedPct']() != 65 or m['mm2dfBelialSummonPct']() != 85 or m['mm2dfGlasyaSummonPct']() != 70 or m['mm2dfHutijinSummonPct']() != 75 or m['mm2dfMammonSummonPct']() != 80 or m['mm2dfMephistoSummonIceDevilsPct']() != 90 or m['mm2dfMolochSummonHornedPct']() != 80 or m['mm2dfTitivilusSummonErinyesPct']() != 50 or m['mm2dfBeardedSummonPct']() != 35 or m['mm2dfSpinedSummonBarbedPct']() != 5"
+  }
+ ],
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 8,
+  "open": 29
+ },
+ "caller_files": [],
+ "inline_count": 244,
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the live letter-D-part-3 def walk (the R782 site-block pattern: the printf carries no census marker)",
+   "from": "    // ---- R227: the wis mental save wiring audit ----",
+   "to": "    // ---- R801: the MM2 letter D part 3 live def walk ----\n    // The 17 promoted devil defs cross-checked live\n    // against the mm2df pins: every stat cell of\n    // the 17-row DevStats grid, the magic-resistance\n    // column, the mm2_print xp source, the xpValue\n    // formula, the loader attack semantics (the\n    // Amon 1-and-1 sum, the bearded 1-or-3 max, the\n    // spined 1-and/or-2 sum), the nupperibo\n    // Standard word, and the registry census floor\n    // 566 -> 583 (the arc grows the registry in\n    // later letter rounds; the walk demands at\n    // least the landing count).\n    {\n        using namespace rules;\n        int bad = 0;\n        static const char* kD[17] = {\n            \"black_abishai\", \"blue_abishai\",\n            \"green_abishai\", \"red_abishai\",\n            \"white_abishai\", \"amon\", \"bael\",\n            \"bearded_devil\", \"belial\", \"glasya\",\n            \"hutijin\", \"mammon\", \"mephistopheles\",\n            \"moloch\", \"nupperibo\", \"titivilus\",\n            \"spined_devil\",\n        };\n        for (int i = 0; i < 17; ++i) {\n            const auto* d = reg.find(kD[i]);\n            if (!d) { ++bad; continue; }\n            if (d->xpSource != \"mm2_print\") ++bad;\n            if (d->xpValue != d->xpBase\n                + d->avgHp * d->xpPerHp)\n                ++bad;\n            if (d->armorClass != mm2dfDevStatAC(i))\n                ++bad;\n            if (d->hitDiceNum != mm2dfDevStatHd(i))\n                ++bad;\n            if (d->hitDiceBonus != mm2dfDevStatHdBonus(i))\n                ++bad;\n            if (d->avgHp != mm2dfDevStatAvgHp(i)) ++bad;\n            if (d->attacks != mm2dfDevStatAttacks(i))\n                ++bad;\n            if (d->xpBase != mm2dfDevStatXp(i)) ++bad;\n            if (d->xpPerHp != mm2dfDevStatXpHp(i)) ++bad;\n            if (d->lairPct != mm2dfDevStatLairPct(i)) ++bad;\n            if (d->moveRate != mm2dfDevStatMove(i)) ++bad;\n            if (d->magicResist != mm2dfDevStatMr(i)) ++bad;\n        }\n        const auto* nu = reg.find(\"nupperibo\");\n        if (!nu || nu->magicResist != 0) ++bad;\n        if ((int)reg.all().size() < mm2dfRegistryAfter())\n            ++bad;\n        printf(\"R801 MM2 letter D part 3 live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    // ---- R227: the wis mental save wiring audit ----"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/b/black_abishai.lua",
+   "content": "-- Black Abishai: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Black Abishai\",\n  page = \"45\",\n  pages = \"45\",\n  source = \"MM2\",\n  race = \"Black Abishai\",\n  hitDice = \"8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 28,\n  armorClass = 2,\n  numAttacks = 1,\n  damage = \"5-14\",\n  xp = 855,\n  xpPerHp = 10,\n  xpValue = 1135,\n  xpSource = \"mm2_print\",\n  frequency = \"common\",\n  noAppearing = \"1-3 or 2-8\",\n  lairPct = 20,\n  treasure = \"Nil\",\n  move = \"9\\\"/12\\\" (MC:C)\",\n  size = \"L(8')\",\n  intelligence = \"average\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"35%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of abishai, the scaly devils, are common to the First Hell. They are reptilian, and most serve Tiamat. As to lower infernal planes, abishai are common on the 1st and 2nd, uncommon on the 3rd, rare on the 4th, and very rare on the 5th and 6th. When encountered in their lair there will always be more abishai, and about 10% of the time there will be 1-4 other types with them. Although they do not value treasure, abishai occasionally (15%) have charge of Q-type treasure which they are taking to some greater devil. Attack damage shown is for the weapon type used by a particular sort of abishai, with strength bonus added, i.e., black use halberds; white use flails; red wield long daggers; green use guisarme-voulges; and blue use tridents. In hand-to-hand combat, all abishai can grapple. The damage done is 1-4 (due to cuts from sharp scales, talons, etc.) plus strength bonus: red +1, green or white +2, blue +3, black +4. They are also able to strike with their tails for 1-2 points of damage. Abishai regenerate at the rate of 1 point per round, unless struck by silver, holy water, or holy magic weapons. Abishai can use the following spell-like powers, 1 at a time, 1 per round: change self, command, produce flame, pyrotechnics, scare, summon another abishai (20% chance of success, once per day). Abishai are the epitome of devils, appearing as humanoids with small horns, snaky hair, fangs, pointed ears, slanting eyes, leathery wings, and barbed tail. They have scaled hides and reptilian feet.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/blue_abishai.lua",
+   "content": "-- Blue Abishai: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Blue Abishai\",\n  page = \"45\",\n  pages = \"45\",\n  source = \"MM2\",\n  race = \"Blue Abishai\",\n  hitDice = \"5+1\",\n  hitDiceNum = 5,\n  hitDiceBonus = 1,\n  avgHp = 18,\n  armorClass = 3,\n  numAttacks = 1,\n  damage = \"5-10\",\n  xp = 550,\n  xpPerHp = 6,\n  xpValue = 658,\n  xpSource = \"mm2_print\",\n  frequency = \"common\",\n  noAppearing = \"1-4 or 3-12\",\n  lairPct = 35,\n  treasure = \"Nil\",\n  move = \"15\\\"/15\\\" (MC:C)\",\n  size = \"M(5')\",\n  intelligence = \"average\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of abishai, the scaly devils, are common to the First Hell. They are reptilian, and most serve Tiamat. As to lower infernal planes, abishai are common on the 1st and 2nd, uncommon on the 3rd, rare on the 4th, and very rare on the 5th and 6th. When encountered in their lair there will always be more abishai, and about 10% of the time there will be 1-4 other types with them. Although they do not value treasure, abishai occasionally (15%) have charge of Q-type treasure which they are taking to some greater devil. Attack damage shown is for the weapon type used by a particular sort of abishai, with strength bonus added, i.e., black use halberds; white use flails; red wield long daggers; green use guisarme-voulges; and blue use tridents. In hand-to-hand combat, all abishai can grapple. The damage done is 1-4 (due to cuts from sharp scales, talons, etc.) plus strength bonus: red +1, green or white +2, blue +3, black +4. They are also able to strike with their tails for 1-2 points of damage. Abishai regenerate at the rate of 1 point per round, unless struck by silver, holy water, or holy magic weapons. Abishai can use the following spell-like powers, 1 at a time, 1 per round: change self, command, produce flame, pyrotechnics, scare, summon another abishai (20% chance of success, once per day). Abishai are the epitome of devils, appearing as humanoids with small horns, snaky hair, fangs, pointed ears, slanting eyes, leathery wings, and barbed tail. They have scaled hides and reptilian feet.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/green_abishai.lua",
+   "content": "-- Green Abishai: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Green Abishai\",\n  page = \"45\",\n  pages = \"45\",\n  source = \"MM2\",\n  race = \"Green Abishai\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 21,\n  armorClass = 3,\n  numAttacks = 1,\n  damage = \"4-10\",\n  xp = 550,\n  xpPerHp = 6,\n  xpValue = 676,\n  xpSource = \"mm2_print\",\n  frequency = \"common\",\n  noAppearing = \"1-3 or 3-9\",\n  lairPct = 30,\n  treasure = \"Nil\",\n  move = \"12\\\"/15\\\" (MC:C)\",\n  size = \"M(6')\",\n  intelligence = \"average\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"25%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of abishai, the scaly devils, are common to the First Hell. They are reptilian, and most serve Tiamat. As to lower infernal planes, abishai are common on the 1st and 2nd, uncommon on the 3rd, rare on the 4th, and very rare on the 5th and 6th. When encountered in their lair there will always be more abishai, and about 10% of the time there will be 1-4 other types with them. Although they do not value treasure, abishai occasionally (15%) have charge of Q-type treasure which they are taking to some greater devil. Attack damage shown is for the weapon type used by a particular sort of abishai, with strength bonus added, i.e., black use halberds; white use flails; red wield long daggers; green use guisarme-voulges; and blue use tridents. In hand-to-hand combat, all abishai can grapple. The damage done is 1-4 (due to cuts from sharp scales, talons, etc.) plus strength bonus: red +1, green or white +2, blue +3, black +4. They are also able to strike with their tails for 1-2 points of damage. Abishai regenerate at the rate of 1 point per round, unless struck by silver, holy water, or holy magic weapons. Abishai can use the following spell-like powers, 1 at a time, 1 per round: change self, command, produce flame, pyrotechnics, scare, summon another abishai (20% chance of success, once per day). Abishai are the epitome of devils, appearing as humanoids with small horns, snaky hair, fangs, pointed ears, slanting eyes, leathery wings, and barbed tail. They have scaled hides and reptilian feet.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/r/red_abishai.lua",
+   "content": "-- Red Abishai: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Red Abishai\",\n  page = \"45\",\n  pages = \"45\",\n  source = \"MM2\",\n  race = \"Red Abishai\",\n  hitDice = \"4+2\",\n  hitDiceNum = 4,\n  hitDiceBonus = 2,\n  avgHp = 16,\n  armorClass = 1,\n  numAttacks = 2,\n  damage = \"2-5/2-5\",\n  xp = 320,\n  xpPerHp = 5,\n  xpValue = 400,\n  xpSource = \"mm2_print\",\n  frequency = \"common\",\n  noAppearing = \"1-4 or 3-12\",\n  lairPct = 40,\n  treasure = \"Nil\",\n  move = \"18\\\"/18\\\" (MC:C)\",\n  size = \"S(4')\",\n  intelligence = \"average\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"40%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of abishai, the scaly devils, are common to the First Hell. They are reptilian, and most serve Tiamat. As to lower infernal planes, abishai are common on the 1st and 2nd, uncommon on the 3rd, rare on the 4th, and very rare on the 5th and 6th. When encountered in their lair there will always be more abishai, and about 10% of the time there will be 1-4 other types with them. Although they do not value treasure, abishai occasionally (15%) have charge of Q-type treasure which they are taking to some greater devil. Attack damage shown is for the weapon type used by a particular sort of abishai, with strength bonus added, i.e., black use halberds; white use flails; red wield long daggers; green use guisarme-voulges; and blue use tridents. In hand-to-hand combat, all abishai can grapple. The damage done is 1-4 (due to cuts from sharp scales, talons, etc.) plus strength bonus: red +1, green or white +2, blue +3, black +4. They are also able to strike with their tails for 1-2 points of damage. Abishai regenerate at the rate of 1 point per round, unless struck by silver, holy water, or holy magic weapons. Abishai can use the following spell-like powers, 1 at a time, 1 per round: change self, command, produce flame, pyrotechnics, scare, summon another abishai (20% chance of success, once per day). Abishai are the epitome of devils, appearing as humanoids with small horns, snaky hair, fangs, pointed ears, slanting eyes, leathery wings, and barbed tail. They have scaled hides and reptilian feet.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/w/white_abishai.lua",
+   "content": "-- White Abishai: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"White Abishai\",\n  page = \"45\",\n  pages = \"45\",\n  source = \"MM2\",\n  race = \"White Abishai\",\n  hitDice = \"7\",\n  hitDiceNum = 7,\n  hitDiceBonus = 0,\n  avgHp = 24,\n  armorClass = 3,\n  numAttacks = 2,\n  damage = \"4-9/4-9\",\n  xp = 650,\n  xpPerHp = 8,\n  xpValue = 842,\n  xpSource = \"mm2_print\",\n  frequency = \"common\",\n  noAppearing = \"1-3 or 3-12\",\n  lairPct = 25,\n  treasure = \"Nil\",\n  move = \"9\\\"/15\\\" (MC:C)\",\n  size = \"M(7')\",\n  intelligence = \"average\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"30%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"The race of abishai, the scaly devils, are common to the First Hell. They are reptilian, and most serve Tiamat. As to lower infernal planes, abishai are common on the 1st and 2nd, uncommon on the 3rd, rare on the 4th, and very rare on the 5th and 6th. When encountered in their lair there will always be more abishai, and about 10% of the time there will be 1-4 other types with them. Although they do not value treasure, abishai occasionally (15%) have charge of Q-type treasure which they are taking to some greater devil. Attack damage shown is for the weapon type used by a particular sort of abishai, with strength bonus added, i.e., black use halberds; white use flails; red wield long daggers; green use guisarme-voulges; and blue use tridents. In hand-to-hand combat, all abishai can grapple. The damage done is 1-4 (due to cuts from sharp scales, talons, etc.) plus strength bonus: red +1, green or white +2, blue +3, black +4. They are also able to strike with their tails for 1-2 points of damage. Abishai regenerate at the rate of 1 point per round, unless struck by silver, holy water, or holy magic weapons. Abishai can use the following spell-like powers, 1 at a time, 1 per round: change self, command, produce flame, pyrotechnics, scare, summon another abishai (20% chance of success, once per day). Abishai are the epitome of devils, appearing as humanoids with small horns, snaky hair, fangs, pointed ears, slanting eyes, leathery wings, and barbed tail. They have scaled hides and reptilian feet.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/amon.lua",
+   "content": "-- Amon: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Amon\",\n  page = \"45\",\n  pages = \"45-46\",\n  source = \"MM2\",\n  race = \"Amon\",\n  hitDice = \"126 hp\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 126,\n  armorClass = -2,\n  numAttacks = \"1 and 1\",\n  damage = \"By weapon type +7/3-12\",\n  xp = 30000,\n  xpPerHp = 0,\n  xpValue = 30000,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 60,\n  treasure = \"G, P\",\n  move = \"18\\\"\",\n  size = \"L (9' tall)\",\n  intelligence = \"genius\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"70%\",\n  psionic = \"229\",\n  attackDefenseModes = \"All/all\",\n  text = \"Amon is a vassal of Geryon, mustering and commanding up to 40 companies of bone devils recruited from his fief. He is large and strong, typically attacking with a huge +3 mace and delivering a vicious bite as well. He has a winter wolf of the largest size as a companion and guardian. This creature has +3 to hit and +3 to damage and is 25% magic resistant. One at a time, at will, 1 per turn or melee round, Amon can use the following spell-like powers as a 20th-level magic-user: animate dead, charm monster, detect magic, detect invisible, dispel magic, fly, geas, know alignment, polymorph self, produce flame, read languages, read magic, suggestion, teleportation, wall of ice, fulfill another's limited wish. Amon causes fear in any individuals he gazes upon, unless they make a saving throw vs. spells. Once per day Amon can use a symbol of hopelessness. He can summon 1-4 bone devils with 60% chance of success. Amon is able to regenerate from 1-12 points of damage per turn. On the Prime Material Plane, Amon can summon and control all wolves within 1 mile of him. Amon is wolf-headed but otherwise appears human. His torso is well-formed and muscled.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/bael.lua",
+   "content": "-- Bael: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Bael\",\n  page = \"46\",\n  pages = \"46\",\n  source = \"MM2\",\n  race = \"Bael\",\n  hitDice = \"106 hp\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 106,\n  armorClass = -3,\n  numAttacks = 2,\n  damage = \"By weapon type +6\",\n  xp = 35000,\n  xpPerHp = 0,\n  xpValue = 35000,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 55,\n  treasure = \"G, P\",\n  move = \"12\\\"\",\n  size = \"L(8' + tall)\",\n  intelligence = \"exceptional\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"70%\",\n  psionic = \"206\",\n  attackDefenseModes = \"All/all\",\n  text = \"Bael is vassal to Mammon, commanding 66 companies of barbed devils. In battle array Bael wears armor of bronze fashioned in the ancient style and uses a morning star +2 with a long bronze handle which telescopes magically from 4-8 feet in length as Bael desires. In addition to normal attacks, Bael can, at will, once per round, use the following spell-like powers as a 20th-level magic-user: alter self, animate dead, cause serious wounds, detect invisible, detect magic, dispel magic, invisibility, know alignment, produce fire, pyrotechnics, read languages, read magic, shape change twice per day, suggestion, teleportation, wind walk, fulfill another's limited wish. Once per day Bael can employ a symbol of stunning. He radiates fear within a 20-foot radius when he so desires. He can summon 1-4 barbed devils with a 65% chance of success. Bael regenerates 1 point per round. Bael is a well-formed humanoid with golden skin. His head is rather long and has small, forward curling bull's horns. His features are rather bovine with large, round eyes, a long and broad nose, and protruding ears.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/bearded_devil.lua",
+   "content": "-- Bearded Devil: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Bearded Devil\",\n  page = \"46\",\n  pages = \"46\",\n  source = \"MM2\",\n  race = \"Bearded Devil\",\n  hitDice = \"6+6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 6,\n  avgHp = 27,\n  armorClass = 1,\n  numAttacks = \"1 or 3\",\n  damage = \"By weapon type or 1-8/1-2/1-2\",\n  xp = 1125,\n  xpPerHp = 10,\n  xpValue = 1395,\n  xpSource = \"mm2_print\",\n  frequency = \"common\",\n  noAppearing = \"1-2 or 4-10\",\n  lairPct = 15,\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"M (6 1/2' tall)\",\n  intelligence = \"average to very\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"45%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Bearded devils populate the Third Hell, the domain of Mammon, as well as planes below that. They are particularly cruel and violent, using any excuse to attack. This makes them unpopular and subject to frequent, harsh disciplinary measures, but it also makes them desirable as shock troops. In most cases, bearded devils carry a saw-toothed glaive equipped with a treble-hook arranged at the base of the blade. The treblehook curves backward and is used to entangle or snag opponents closing or fleeing (1-3 points damage plus held fast unless a die roll equal to success of opening a door is made). Without weapons, bearded devils attack with their wire-like beards and clawed hands. If both hand attacks succeed, beard damage is maximum, i.e., 8 points. Any creature struck for maximum beard damage must save vs. poison or immediately develop a burning rash which reduces dexterity by 1 point per round for 4 rounds. At will, 1 at a time, 1 per turn or round as applicable, bearded devils can use the following spell-like powers: affect normal fires, command fear by touch, produce flame, summon another bearded devil (35% chance of success).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/belial.lua",
+   "content": "-- Belial: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Belial\",\n  page = \"46\",\n  pages = \"46\",\n  source = \"MM2\",\n  race = \"Belial\",\n  hitDice = \"154 hp\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 154,\n  armorClass = -4,\n  numAttacks = 2,\n  damage = \"By weapon type +7\",\n  xp = 30000,\n  xpPerHp = 0,\n  xpValue = 30000,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 75,\n  treasure = \"A, S, T, Y\",\n  move = \"9\\\"/15\\\" (MC:B)\",\n  size = \"L (10' tall)\",\n  intelligence = \"genius\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"80%\",\n  psionic = \"279\",\n  attackDefenseModes = \"All/all\",\n  text = \"Great Belial rules the Fourth Hell. He is firmly in the camp of Baalzebul, hating Geryon nearly as much as does Moloch. Also, Belial must guard against the machinations of Mammon, so he does not have freedom to act. From his basalt palace, Belial dictates the disposition of the abishai, barbed, bearded, bone, and spined devils populating the reeking fens and smoking plains of his realm. He utilizes a huge military fork +4 in combat. This weapon causes the creature struck to save vs. spells or be affected as if smitten by a symbol of pain. In addition, Belial can use the following spell-like powers, at will, 1 at a time, 1 per round as a 20th-level magic-user: animate dead, beguile, charm person, detect magic, dispel illusion, detect invisible, dispel magic, geas, illusion, invisibility, know alignment, light, produce flame, pyrotechnics, raise dead fully, read languages, read magic, shape change, suggestion, teleportation, wall of fire, fulfill another's wish. Three times per day Belial can use a symbol of pain. He can also pronounce an unholy word once per day. Belial causes fear in any individual he stares at, saving throw vs. spells applicable. He can summon 1-4 (black) abishai (25%), 1-3 barbed devils (25%), or 1-4 bearded devils (50%) with 85% chance of success. Belial is the most handsome and diabolic in appearance of all devils. His eyes are large, slanted, and glow red. He is also the lord of pain and sufferings.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/glasya.lua",
+   "content": "-- Glasya: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Glasya\",\n  page = \"47\",\n  pages = \"47\",\n  source = \"MM2\",\n  race = \"Glasya\",\n  hitDice = \"69 hp\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 69,\n  armorClass = -2,\n  numAttacks = 2,\n  damage = \"By weapon type +4\",\n  xp = 20000,\n  xpPerHp = 0,\n  xpValue = 20000,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 80,\n  treasure = \"I, Q (x5), S\",\n  move = \"15\\\"/30\\\" (MC:B)\",\n  size = \"L (9' tall)\",\n  intelligence = \"exceptional\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"60%\",\n  psionic = \"206\",\n  attackDefenseModes = \"All/all\",\n  text = \"As consort to Mammon, Glasya is one of the more powerful and influential of female devils. She does not normally engage in combat, but she has a short sword with a poisoned blade equal to a dagger of venom. As a 20th-level magic-user, Glasya can employ the following spell-like powers, 1 at a time, at will: animate dead, charm monster, charm person, dispel magic, illusion, know alignment, poison, polymorph self, produce flame, read languages, read magic, suggestion, teleportation, fulfill another's limited wish. Once per day Glasya can employ a finger of death. She causes fear by speaking to an individual (saving throw vs. spells applicable). She can summon 1-2 malebranche (70% chance of success). She regenerates 2 hit points every turn. Glasya is the daughter of Asmodeus and incredibly beautiful. Her wings, forked tail, horns, and copper-colored skin betray her origins.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/h/hutijin.lua",
+   "content": "-- Hutijin: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Hutijin\",\n  page = \"47\",\n  pages = \"47\",\n  source = \"MM2\",\n  race = \"Hutijin\",\n  hitDice = \"111 hp\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 111,\n  armorClass = -4,\n  numAttacks = 2,\n  damage = \"By weapon type +8\",\n  xp = 30000,\n  xpPerHp = 0,\n  xpValue = 30000,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 30,\n  treasure = \"G\",\n  move = \"9\\\"/18\\\"\",\n  size = \"L (13 1/2' tall)\",\n  intelligence = \"genius\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"65%\",\n  psionic = \"275\",\n  attackDefenseModes = \"All/all\",\n  text = \"Hutijin commands 2 companies of pit fiends in service to Mephistopheles. These creatures are, in fact, the aristocracy of the Eighth Plane, just as Hutijin is one of the greatest of Hell's dukes. He uses a net of snaring and a +3 trident in battle. One at a time, at will, 1 per round, Hutijin can use the following spell-like powers as a 20th-level magic-user: animate dead, detect invisible, detect magic, heal twice per day, hold monster, invisibility, know alignment, polymorph self, produce flame, pyrotechnics, ray of enfeeblement, read languages, read magic, shocking grasp, suggestion, teleportation, wall of fire, fulfill another's limited wish. Hutijin causes fear by voice tone within a 30 foot radius with a saving throw vs. rods et al., applicable. He can use a symbol of persuasion once per day. Hutijin can summon a pit fiend with 75% chance of success. Hutijin resembles a pit fiend, although his wings are proportionately smaller and his head is larger. His hide is a dark rust-red color.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/mammon.lua",
+   "content": "-- Mammon: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Mammon\",\n  page = \"47\",\n  pages = \"47\",\n  source = \"MM2\",\n  race = \"Mammon\",\n  hitDice = \"139 hp\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 139,\n  armorClass = -3,\n  numAttacks = 2,\n  damage = \"By weapon type +7\",\n  xp = 32000,\n  xpPerHp = 0,\n  xpValue = 32000,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 65,\n  treasure = \"H, R\",\n  move = \"6\\\"/12\\\" (MC:D)\",\n  size = \"L (12' tall)\",\n  intelligence = \"genius\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"75%\",\n  psionic = \"259\",\n  attackDefenseModes = \"All/all\",\n  text = \"Mammon is the king of Hell's Third Plane. He and Dispater are supposedly allies and jointly support Mephistopheles, but neither has ever failed to obey Asmodeus. It is also doubtful that Mammon places real trust in Dispater. Mammon's realm is a boundless series of rifts with slime streams along the bottoms. Hot ash falls from spurting volcanos scattered over these badlands. Over this grim domain, Mammon rides a nightmare of largest size with a pack of hell hounds at his heels, and he seeks trophies of the hunt. His weapon is a fauchard-fork which inflicts normal damage (1-8 or 1-10) but acts otherwise as a sword of wounding (q.v.). At will, 1 at a time, 1 per round, Mammon is able to use the following spell-like powers as a 20th-level magic-user: animate dead, beguile, charm person, detect invisible, detect magic, dispel magic, fool's gold, geas, illusion, invisibility, know alignment, produce flame, pyrotechnics, raise dead fully, read languages, read magic, shape change, suggestion, teleportation, wall of fire, fulfill another's wish. Once per day Mammon is able to use a symbol of hopelessness and to pronounce an unholy word. He causes fear by means of his gaze, saving throw vs. spells applicable. Mammon can summon 1-4 (green) abishai (50%), 1-3 barbed devils (25%), or 1-3 bearded devils (25%) with 80% chance of success. Mammon is a red-gold color, and his scaled wings gleam like rubies. His form is bloated and soft looking, but Mammon is very strong. He is otherwise typically diabolic in appearance.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/mephistopheles.lua",
+   "content": "-- Mephistopheles: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Mephistopheles\",\n  page = \"48\",\n  pages = \"48\",\n  source = \"MM2\",\n  race = \"Mephistopheles\",\n  hitDice = \"188 hp\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 188,\n  armorClass = -6,\n  numAttacks = 2,\n  damage = \"By weapon type +9\",\n  xp = 49000,\n  xpPerHp = 0,\n  xpValue = 49000,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 70,\n  treasure = \"R, X, Z\",\n  move = \"15\\\"/18\\\" (MC:C)\",\n  size = \"L (9' tall)\",\n  intelligence = \"supra-genius\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"85%\",\n  psionic = \"309\",\n  attackDefenseModes = \"All/all\",\n  text = \"The Eighth Hell is ruled by Mephistopheles. His main aim is to wrest the 7th plane from Baalzebul and, with the strength thus gained, challenge Asmodeus for the overlordship of all the hells. His great iron citadel in the ice mountains of the frozen plane is a place of much plotting and intrigue. The Eighth Hell's outer marches of oozing slime and the steaming fringe beyond, from whence come Mephisto's malebranche and pit fiends, are said to be a constant source of worry to him. Mephistopheles has a great, 3-tined fork +3 which can, upon his command, deliver 3-12 points of cold, electrical, or fire damage, saving throw vs. spells applicable. Each function is usable 3 times per day. These function damage points are in addition to all other damage caused by the weapon. Mephistopheles can, at will, 1 at a time, 1 per round, use the following spell-like powers as a 20th-level magic-user: animate dead, beguile, charm person, cone of cold, detect invisible, detect magic, dispel illusion, dispel magic, geas, ice storm, illusion, invisibility, know alignment, produce flame, polymorph self, raise dead fully, read languages, read magic, rulership once per day, shape change once per day, suggestion, teleportation, wall of ice, fulfill another's wish, and unholy word once per day. Mephisto causes fear by gaze (save vs. spells applicable) or within a 10-foot radius (save vs. rods et al, applicable). He can summon 1-3 ice devils with 90% chance of success. Mephistopheles is a tall, blue-black humanoid with handsome, if diabolical, features. He has huge muscles as befits his great strength. His scales are sooty black. His wings are deep blue, as are his horns and talons. His eyes are pale blue with red irises and pupils. His normal speech is whispering wind.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/moloch.lua",
+   "content": "-- Moloch: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Moloch\",\n  page = \"48\",\n  pages = \"48\",\n  source = \"MM2\",\n  race = \"Moloch\",\n  hitDice = \"126 hp\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 126,\n  armorClass = -3,\n  numAttacks = 3,\n  damage = \"8-11/8-11/4-16\",\n  xp = 42000,\n  xpPerHp = 0,\n  xpValue = 42000,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 95,\n  treasure = \"I, R, S, T, X\",\n  move = \"12\\\"\",\n  size = \"L (14 1/2' tall)\",\n  intelligence = \"exceptional\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"70%\",\n  psionic = \"226\",\n  attackDefenseModes = \"All/all\",\n  text = \"Moloch is a grand duke, viceroy of Baalzebul, and the lord of Hell's Sixth Plane. He is as strong as a hill giant and attacks by grabbing and crushing or piercing with huge hands and taloned fingers and then by biting with his shark-toothed maw. Moloch carries a 6-tailed whip made of unknown, pliable metal. This device delivers 1, 2, or 4 points of damage per tail striking, depending on the charges Moloch expends. He may expend up to 20 charges per turn. Damage is electrical in nature and so greatly feared by less powerful devils. The whip itself has no charges. Once per turn or melee round, as applicable, Moloch can, at will, use the following spell-like powers as a 20th-level magic-user: affect normal fires, animate dead, beguile, burning hands (16 points of damage), detect invisible, detect magic, fire charm, fly, geas, illusion, know alignment, polymorph self, produce fire, produce flame, pyrotechnics, raise dead fully, read languages, read magic, suggestion, teleport with no error, wall of fire, fulfill another's limited wish. Once per day Moloch is able to create a flame strike, use a symbol of stunning, and pronounce an unholy word. When Moloch chooses, he may breathe upon 1-8 persons within 30 feet. Those who fail their saving throw vs. breath weapon will be affected by such fear that they will drop their weapons and flee. He can summon 1-3 horned devils (80% chance of success). Great enmity exists between Moloch and Geryon. If it were not for Baalzebul, there would be open warfare between these two, much to Moloch's detriment and Mephistopheles' delight. Moloch is a great, square-bodied creature with red-orange skin, short-thick arms and legs, and huge square hands and feet. His feet and head are horned. His head is huge with slanting eyes and gaping mouth.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/n/nupperibo.lua",
+   "content": "-- Nupperibo: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Nupperibo\",\n  page = \"49\",\n  pages = \"49\",\n  source = \"MM2\",\n  race = \"Nupperibo\",\n  hitDice = \"1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 0,\n  avgHp = 3,\n  armorClass = 9,\n  numAttacks = \"2 or 1\",\n  damage = \"1-2/1-2 or by weapon type\",\n  xp = 18,\n  xpPerHp = 1,\n  xpValue = 21,\n  xpSource = \"mm2_print\",\n  frequency = \"common\",\n  noAppearing = \"10-100\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"M\",\n  intelligence = \"special (unratable for spell effects)\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Regenerate 1 point/round\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil/nil\",\n  text = \"Nupperibos exist by the hundreds of thousands throughout the hells. They are the remains of all lawful evil creatures not sufficiently malignant to be changed into lemures (q.v.). They are blind, deaf, and unable to speak. They are sensitive to mental commands from stronger devils, and they also sense the presence of their own kind. They readily obey all commands in order to lessen the pain and torment which is the normal lot in the Infernal Region. The normal attack mode of a nupperibo is 2 clawing rakes with its hands. However, when an infernal army is gathered, each member is given some sort of weapon - usually a club, spear, or polearm. The creatures then march and attack blindly but with effect because of the vast numbers gathered into legions and directed by more powerful devils. (Note that, if uncommanded, the hordes of nupperibos will continue to march and attack all things not of the Nine Hells.) In the Infernal Region or areas of total Evil, nupperibos regenerate at 1 hit point per round, but elsewhere this power is lost. If a holy object (water, weapon) is used against them, regeneration is not possible. Nupperibos which are slain in the cause of evil are 99% likely to be re-formed as nupperibos. There is, however, a 1% chance that they will be re-formed as lemures of a special sort. These special lemures are those from which the lesser devils are formed. One spending a mere millennium of time as one of these lemures might attain devilhood. Because of the limited sensory capabilities of nupperibos, no intelligence, per se, can be assigned them. The possible range, were their status changed, would vary from semi- to exceptionally intelligent.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/titivilus.lua",
+   "content": "-- Titivilus: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Titivilus\",\n  page = \"49\",\n  pages = \"49\",\n  source = \"MM2\",\n  race = \"Titivilus\",\n  hitDice = \"86 hp\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 86,\n  armorClass = -2,\n  numAttacks = 2,\n  damage = \"By weapon type +3\",\n  xp = 29000,\n  xpPerHp = 0,\n  xpValue = 29000,\n  xpSource = \"mm2_print\",\n  frequency = \"unique\",\n  noAppearing = \"1\",\n  lairPct = 35,\n  treasure = \"G, S, T\",\n  move = \"15\\\"/30\\\" (MC:D)\",\n  size = \"M (5 1/2' tall)\",\n  intelligence = \"supra-genius\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"75%\",\n  psionic = \"239\",\n  attackDefenseModes = \"All/all\",\n  text = \"Titivilus is notorious for his ability to twist words, to use words to confuse, and to confuse those using words. Fittingly, he is the messenger for Dispater. He is not large nor particularly strong, but he is most clever. It is said that Titivilus possesses a silver sword of wounding; however, he normally uses his other powers. At will, 1 per round, as applicable, Titivilus can use the following spell-like powers as a 20th-level magic-user: animate dead, bestow curse, charm person or mammal, chaos, emotion, feeblemind once per day, forget, fumble, hypnotism, illusion, illusionary script, improved invisibility, know alignment, message, misdirection, nondetection, polymorph self, protection from good, suggestion, teleport, tongues, ventriloquism, whispering wind. Once per day Titivilus can use a symbol of discord or sleep (19 levels or hit dice or 99 hit points affected. A saving throw indicates only nodding and dozing with a 1 in 20 chance per round of awakening fully). He causes fear by touch only. He can summon 1-4 erinyes (50% chance of success). He regenerates from 1 point of damage per round. Titivilus appears very similar to a satyr, but he is actually more human looking, save for his bat-like wings. His skin is pale, but his cheeks are slightly ruddy.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/spined_devil.lua",
+   "content": "-- Spined Devil: promoted by the R801 MM2 letter D part 3 round from the MM2 print\n-- (spec tools/spec_r801.json); DO NOT hand-edit; the pin headers\n-- stay the print-fidelity record.\nreturn {\n  name = \"Spined Devil\",\n  page = \"49\",\n  pages = \"49\",\n  source = \"MM2\",\n  race = \"Spined Devil\",\n  hitDice = \"3+3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 3,\n  avgHp = 13,\n  armorClass = 3,\n  numAttacks = \"1 and/or 2\",\n  damage = \"By weapon type and/or 1-4/1-4\",\n  xp = 240,\n  xpPerHp = 4,\n  xpValue = 292,\n  xpSource = \"mm2_print\",\n  frequency = \"common\",\n  noAppearing = \"2-5 or 5-20\",\n  lairPct = 10,\n  treasure = \"Nil\",\n  move = \"6\\\"/18\\\" (MC:C)\",\n  size = \"S (3' tall)\",\n  intelligence = \"low to average\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"25%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Spined devils are found on all the planes of Hell, although they are most common on the 2nd, 3rd, 4th, and 5th planes. Spined devils are used as servants, couriers, and the like, for they are too small and weak for most other duties. They often herd lemures. Attack is usually by weapon, as most spined devils carry a short military fork 4 1/2 feet long. When airborne, they are also able to use their taloned feet to inflict considerable raking damage. The spiked projections of a spined devil burst into flame when pulled loose. Up to 12 can be loosed by these creatures when they are flying over an opponent, each inflicting damage as a dart when hits are successful and causing flammable materials to burst into flame. In melee, from 1-4 spines can wound an opponent if the devil chooses to hurl itself upon an antagonist. Hits are automatic, but no other attack is possible. The following spell-like powers can be used by spined devils, 1 at a time, 1 per round, at will: affect normal fires, change self, command, produce flame, scare, summon once per day a barbed devil (5% chance of success).\",\n}\n"
+  }
+ ]
+}

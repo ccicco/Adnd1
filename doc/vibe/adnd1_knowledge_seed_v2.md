@@ -20779,6 +20779,88 @@ when both halves land.
   call (the D part 2 deva turn and
   the rest of the letter D box; the
   arc runs on - 29 open boxes).
+- R800 LANDED 2026-10-24: commit
+  aac9dcb9e629ed1726496d87c17816ce1af99cef
+  (census 722 -> 723, pushed
+  ee10bdf..aac9dcb), THE MM2 LETTER D
+  PART 2 - the deva turn (Curtiss's
+  Go call on the landed letter D
+  part 1; round four of the MM2 arc,
+  the second PART-LETTER walk). THE
+  PIN-TIME WALK: THREE entries on
+  pp. 42-44 - the DEVA family head
+  at the foot of p. 42 with the
+  astral, monadic and movanic deva
+  stat blocks on p. 43 (the movanic
+  prose runs onto p. 44, where the
+  DEVIL section opens mid-page).
+  THREE .lua defs ride the R791
+  data_files extension, registry
+  563 -> 566 - the smallest MM2
+  round so far, a single family
+  walk. Header rules/mm2dv.h,
+  prefix mm2dv, 53 consts + 42
+  bools + the 3x10 DevaStats grid
+  (armor class, hit dice, bonus,
+  avgHp, attacks, xp, xp/hp, lair,
+  move, magic resistance) = 105
+  inline. NO GAP FLIPS: the Letter
+  D box flips only when all the D
+  parts land (8 closed, 29 open).
+  ONE REGTEST PATCH: the R800 live
+  def walk at the R227 anchor (the
+  R782 site-block pattern, no
+  census marker), its registry
+  census a FLOOR 563 -> at least
+  566. SETTLED READS (capture
+  primary, book-internal tiebreak,
+  transcription cross-check): the
+  monadic ARMOR: -4 capture line
+  is the ARMOR CLASS line (the
+  transcription prints the class
+  word); the monadic and movanic
+  LEVEL print IX - the capture 1X
+  is the same OCR misread class as
+  the atomie II; the astral LEVEL
+  prints the roman X, 10,100 +
+  25/hp; the movanic SIZE keeps
+  the print 6 1/2 inches form. The
+  deva-common doctrine pins as
+  round-level doctrine: the
+  material-body rule (the spirit
+  returns for a decade), the
+  spell-like list with its per-day
+  maximums (cure light wounds 7,
+  detect traps 7, dispel magic 7,
+  heal 1), the attack-form
+  immunities with the monadic
+  fire-of-any-sort exception, and
+  the +1-or-better weapon rule.
+  LOCAL VERIFICATION (the
+  authoring environment rebuilt
+  from GitHub at ee10bdf): engine
+  double-run 8/0 -> 0/8; rverify
+  GREEN - restore, double-run,
+  healthy base bad 0, BATTERY 125
+  mutants, 0 missed; a loader-
+  semantics pass on all 3 defs
+  (every non-numeric field a
+  quoted string, no raw newlines -
+  the afanc lesson); the /tmp tree
+  restored pristine after. Landing
+  run GREEN first pass: loaded 566,
+  errors 0; xp audit 566/0; R797,
+  R798, R799 and R800 live defs
+  all bad 0; AUDIT CENSUS 723 each
+  exactly once, all bad 0; build 0
+  warnings. Commit 7 files, 2186
+  insertions. Delivery spec-r800:
+  raw JSON canvas, 42677 bytes md5
+  6e7b4091829a38c683a1af9a62296313.
+  NEXT - R801: awaits Curtiss's
+  call (the DEVIL section and the
+  rest of the letter D box; the
+  arc runs on - 29 open boxes).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
