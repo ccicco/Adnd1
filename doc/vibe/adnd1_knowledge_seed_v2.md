@@ -23336,6 +23336,88 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   tooling decision (shorten
   include comments or split wide
   lines) come first.
+- R834 LANDED 2026-10-25: commit
+  cff3ab18337bad8898c7762f0576d4b006508cd9
+  (census 756 -> 757, pushed
+  93ecec9..cff3ab1), THE
+  HOLDBACK TOOLING PATCH - the third
+  tooling round of the REGTEST
+  DECOMPOSITION ARC (Curtiss's Go
+  on the holdback census: 55 blocks
+  = 8 ready now + 16 no-head + 31
+  width). THE TWO ENGINE PATCHES:
+  the migration head-walk bound
+  widens 800 -> 4000 (one line at
+  the range loop - the no-head
+  blocks sit 823-2325 lines above
+  their labels), and the migrate
+  key gains the per-block
+  allow_wide tolerance (an int
+  above the 78-col gate, checked at
+  the width loop - the width family
+  moves verbatim, never split; the
+  default stands for undeclared
+  blocks). NO BLOCK MOVES THIS
+  ROUND - the R791 lesson binds:
+  tooling lands alone. Header
+  rules/hmb.h, prefix hmb (verified
+  free at 93ecec9, 0 hits), 10
+  consts + 10 bools (inline 20), 4
+  examples, the R833 record seated
+  into the seed, NO gap flips (MM2
+  stays 37 closed 0 open), the
+  round audit rode
+  rules/audits/r834_batch.h. THE
+  ANCHOR DISCOVERY: the R227 wis
+  anchor comment left regtest.cpp
+  for good - it WAS the wis block's
+  head comment and R833 migrated
+  that block, so R834 (and every
+  round after) rides the R833
+  audit include line as the audit
+  anchor; the sim proved it doubles
+  correctly as the migration
+  boundary too. TWO GATES CAUGHT
+  AUTHOR ERRORS PRE-HANDOFF: an
+  example arithmetic slip (4000-
+  2325 is 1675, not 675 - the
+  audit mirror flagged it), and the
+  R835 include-cap lesson: with a
+  3-digit round the fragment
+  basename cap is 29 chars, not 31
+  (the 'R835: migrated' tail eats
+  two more columns; the sim's first
+  cut died at 80 cols on
+  r180_qualification_and_race_gat).
+  GATES: dress rehearsal on a copy
+  of the REAL tree at 93ecec9;
+  double-run 7/0 -> 0/7 (3 standard
+  + 2 audit-file + 2 patches); the
+  patched-engine diff exactly the
+  two intended sites, py_compile
+  clean; census 757, all patterns
+  unique each once; regtest
+  reconstruction byte-for-byte (two
+  include insertions); THE 55-BLOCK
+  SIM - a synthetic final batch on
+  the patched tree ran 60/0 ->
+  0/60, all 55 fragments byte-exact
+  vs the real bodies, inline 56 ->
+  1 (only the R823 wiring audit, by
+  design), the census held - the
+  arc provably closes in one more
+  round; rverify GREEN vs 93ecec9
+  (20 mutants, 0 missed). Delivery
+  spec-r834 canvas: spec 10043
+  bytes, md5
+  07b1feec69f1555fdc54ac402fb0065d,
+  landed the same. NEXT: awaits
+  Curtiss's Go - R835 is the FINAL
+  55-block batch (the 8 ready now +
+  the 16 no-head + the 31 width
+  with allow_wide), closing the arc:
+  census 757 -> 758, inline 1,
+  fragments 757.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
