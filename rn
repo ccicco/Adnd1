@@ -41,6 +41,7 @@ NFPATCH=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('f
 EXTRA=$(python3 -c "import json,sys; print(' '.join(fp['file'] for fp in json.load(open('$SPEC')).get('file_patches',[])))")
 NDATA=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('data_files',[])))")
 DFILES=$(python3 -c "import json,sys; print(' '.join(df['path'] for df in json.load(open('$SPEC')).get('data_files',[])))")
+AFILE=$(python3 -c "import json,sys; print(json.load(open('$SPEC')).get('audit_file',''))")
 
 echo "== rn R${RND}: spec $SPEC"
 echo "== header:  $HDR"
@@ -55,6 +56,9 @@ if [ "$NFPATCH" -gt 0 ]; then
 fi
 if [ "$NDATA" -gt 0 ]; then
     echo "== data-file round ($NDATA data file(s)): $DFILES go in the git add"
+fi
+if [ -n "$AFILE" ]; then
+    echo "== audit-file round: $AFILE goes in the git add"
 fi
 echo "== commit:  $CMSG"
 
@@ -78,6 +82,9 @@ if [ "$NFPATCH" -gt 0 ]; then
 fi
 if [ "$NDATA" -gt 0 ]; then
     git add $DFILES
+fi
+if [ -n "$AFILE" ]; then
+    git add "$AFILE"
 fi
 git commit -m "$CMSG"
 git push

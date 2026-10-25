@@ -49,7 +49,9 @@ if SHA:
         + [fp['file']
            for fp in S.get('file_patches', [])] \
         + [df['path']
-           for df in S.get('data_files', [])]
+           for df in S.get('data_files', [])] \
+        + ([S['audit_file']]
+           if S.get('audit_file') else [])
     for p in sorted(set(files)):
         os.makedirs(os.path.dirname(p) or '.',
                      exist_ok=True)
@@ -75,11 +77,15 @@ r2 = subprocess.run(
     [sys.executable,
      os.path.join(HERE, 'splice_engine.py'),
      SPEC_PATH], capture_output=True, text=True)
-# 4 = seed, header, include, audit; the
-# R774 file patches count the same way
-# as gap flips (the applied/already
+# 3 + 1 = seed, header, include, audit;
+# 2 instead of 1 when the audit rides a
+# fragment (the R822 audit_file: the
+# fragment + the include); the R774 file
+# patches and the R791 data files count
+# the same way (the applied/already
 # census covers them)
-n_patches = (len(S['gap_flips']) + 4
+n_patches = (len(S['gap_flips']) + 3
+             + (2 if S.get('audit_file') else 1)
              + len(S.get('file_patches', []))
              + len(S.get('data_files', [])))
 ok1 = ('applied %d, already 0' % n_patches) in r1.stdout

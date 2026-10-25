@@ -1,0 +1,334 @@
+{
+  "round": 822,
+  "title": "the audit files decomposition wiring",
+  "header_file": "rules/afw.h",
+  "prefix": "afw",
+  "include_after": "#include \"rules/lungp.h\"  // R821: the lung promotion",
+  "include_comment": "the audit files decomposition wiring",
+  "census_before": 744,
+  "audit_label": "R822 audit files wiring audit",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R821 LANDED 2026-10-24: commit",
+  "gap_report": "tools/mm2_gap_report.md",
+  "regtest": "regtest.cpp",
+  "banner": {
+    "title": "THE AUDIT FILES DECOMPOSITION WIRING - the regtest monolith begins to come apart: the engine gains the audit_file spec key (a round's audit block rides a NEW fragment under rules/audits/, regtest gets the one-line #include at the R227 anchor), the census sums regtest.cpp plus the fragments, preflight reads the fragment printfs, and rn adds the fragment to the git add - the tooling round, lands alone, no gap boxes flip",
+    "provenance": "Curtiss's Go call on the audit-files decomposition plan (2026-10-25): the thin-driver route, fragment headers first, same TU, same binary - the per-book migration rounds ride the wiring in later rounds, smallest first",
+    "sentinel": "The R791 lesson binds: the engine can never consume its own extension in the run that patches it in - R822 lands its own audit inline, and the first audit-file round is the next one"
+  },
+  "audit_comment": "THE AUDIT FILES DECOMPOSITION WIRING - the tooling round of the regtest decomposition (the monolith: 5,717,896 bytes at the 951b962 base sha, 744 audit blocks in one TU). THE MECHANISM: a spec that declares audit_file writes its engine-emitted audit block to a NEW fragment under rules/audits/ and regtest gets the one-line #include at the R227 anchor, inside the battery function body - the preprocessor unrolls it, the binary is unchanged, an error names its fragment. THE COUPLINGS all ride along: the engine census sums the label census over regtest.cpp PLUS the fragments (never dropping a fragment label), preflight reads its battery census printf patterns from regtest.cpp plus the fragments, rverify counts the fragment and the include as two applied items, and rn derives the audit_file and adds it to the git add (the R793 untracked lesson). FOUR TOOL FILES, NINE FILE PATCHES: the engine (the audit_file branch and the fragment census), rverify (the restore list and the n_patches count), preflight (the census comment and the pattern source), rn (the fact derivation, the echo, the git add). THE R791 LESSON BINDS: tooling lands alone - R822's own audit lands inline (old way), the engine can never consume its own extension in the run that patches it in, and the first audit-file round is the next one. THE MIGRATION FOLLOWS: the per-book rounds that move the existing 744 blocks into fragments ride the wiring later, smallest first, Curtiss's call each round. NO gap boxes flip (the MM2 arc gap stays 37 closed 0 open).",
+  "consts": [
+    {
+      "name": "afwRound",
+      "value": 822,
+      "comment": "The audit files decomposition wiring round (the regtest monolith begins to come apart)"
+    },
+    {
+      "name": "afwCensusBefore",
+      "value": 744,
+      "comment": "The audit census before the round (the R821 landing closed at 744)"
+    },
+    {
+      "name": "afwCensusAfter",
+      "value": 745,
+      "comment": "The audit census after the round (one audit added)"
+    },
+    {
+      "name": "afwRegtestBytesAtBase",
+      "value": 5717896,
+      "comment": "The regtest.cpp byte size at the 951b962 base sha - the monolith this round begins to decompose"
+    },
+    {
+      "name": "afwToolFilesPatched",
+      "value": 4,
+      "comment": "The four tool files the wiring touches: the engine, rverify, preflight, rn"
+    },
+    {
+      "name": "afwEnginePatches",
+      "value": 2,
+      "comment": "The engine file patches: the audit_file branch and the fragment census"
+    },
+    {
+      "name": "afwRverifyPatches",
+      "value": 2,
+      "comment": "The rverify file patches: the restore list and the n_patches count"
+    },
+    {
+      "name": "afwPreflightPatches",
+      "value": 2,
+      "comment": "The preflight file patches: the census comment and the pattern source"
+    },
+    {
+      "name": "afwRnPatches",
+      "value": 3,
+      "comment": "The rn file patches: the audit_file fact, the echo, the git add"
+    },
+    {
+      "name": "afwFilePatchesTotal",
+      "value": 9,
+      "comment": "The nine file patches the round rides"
+    }
+  ],
+  "bools": [
+    {
+      "name": "afwFragmentCarriesAuditBlock",
+      "value": true,
+      "comment": "A declared audit_file round writes its engine-emitted audit block to a NEW fragment under rules/audits/ - the same block, the same gates, only the file the compiler reads it from changes"
+    },
+    {
+      "name": "afwIncludeAtTheAnchor",
+      "value": true,
+      "comment": "regtest gets the one-line #include at the R227 audit anchor, inside the battery function body - the preprocessor unrolls it and the binary is unchanged"
+    },
+    {
+      "name": "afwCensusCountsFragments",
+      "value": true,
+      "comment": "The engine census sums audit: bad over regtest.cpp PLUS rules/audits/*.h - a fragment label is never dropped"
+    },
+    {
+      "name": "afwPreflightReadsFragments",
+      "value": true,
+      "comment": "The preflight battery census reads its printf patterns from regtest.cpp plus the fragments, so a fragment audit is covered exactly as before"
+    },
+    {
+      "name": "afwRnAddsTheFragment",
+      "value": true,
+      "comment": "rn derives the audit_file from the spec and adds it to the git add (the R793 untracked-defs lesson)"
+    },
+    {
+      "name": "afwRverifyCountsTwo",
+      "value": true,
+      "comment": "An audit-file round counts the fragment and the include as two applied items in rverify (3 + 2 instead of 3 + 1)"
+    },
+    {
+      "name": "afwToolingLandsAlone",
+      "value": true,
+      "comment": "The R791 lesson: tooling lands alone, the content rides the extension in a later round"
+    },
+    {
+      "name": "afwR822LandsOldWay",
+      "value": true,
+      "comment": "R822 itself lands its own audit the pre-R822 way - the engine can never consume its own extension in the run that patches it in"
+    },
+    {
+      "name": "afwFragmentEngineEmitted",
+      "value": true,
+      "comment": "The fragment is emitted by the engine from the spec, never hand-authored - the R515/R608 delivery lessons bind the fragment exactly like a header"
+    },
+    {
+      "name": "afwMigrationFollows",
+      "value": true,
+      "comment": "The per-book migration rounds ride after the wiring, smallest-first, Curtiss's call each round"
+    }
+  ],
+  "tables": [],
+  "examples": [
+    {
+      "note": "the census arithmetic (one audit added)",
+      "expr": "m['afwCensusAfter']() != m['afwCensusBefore']() + 1 or m['afwCensusBefore']() != 744 or m['afwCensusAfter']() != 745"
+    },
+    {
+      "note": "the patch arithmetic (nine file patches over four tool files)",
+      "expr": "m['afwFilePatchesTotal']() != m['afwEnginePatches']() + m['afwRverifyPatches']() + m['afwPreflightPatches']() + m['afwRnPatches']() or m['afwFilePatchesTotal']() != 9 or m['afwToolFilesPatched']() != 4"
+    },
+    {
+      "note": "the monolith size pin (the 951b962 base sha)",
+      "expr": "m['afwRegtestBytesAtBase']() != 5717896"
+    },
+    {
+      "note": "the round pin",
+      "expr": "m['afwRound']() != 822"
+    }
+  ],
+  "header_sections": {
+    "the R822 census": [
+      {
+        "kind": "const",
+        "name": "afwRound"
+      },
+      {
+        "kind": "const",
+        "name": "afwCensusBefore"
+      },
+      {
+        "kind": "const",
+        "name": "afwCensusAfter"
+      },
+      {
+        "kind": "const",
+        "name": "afwRegtestBytesAtBase"
+      },
+      {
+        "kind": "const",
+        "name": "afwToolFilesPatched"
+      }
+    ],
+    "the wiring doctrine (the R822 census)": [
+      {
+        "kind": "bool",
+        "name": "afwFragmentCarriesAuditBlock"
+      },
+      {
+        "kind": "bool",
+        "name": "afwIncludeAtTheAnchor"
+      },
+      {
+        "kind": "bool",
+        "name": "afwCensusCountsFragments"
+      },
+      {
+        "kind": "bool",
+        "name": "afwPreflightReadsFragments"
+      },
+      {
+        "kind": "bool",
+        "name": "afwRnAddsTheFragment"
+      },
+      {
+        "kind": "bool",
+        "name": "afwRverifyCountsTwo"
+      },
+      {
+        "kind": "bool",
+        "name": "afwToolingLandsAlone"
+      },
+      {
+        "kind": "bool",
+        "name": "afwR822LandsOldWay"
+      },
+      {
+        "kind": "bool",
+        "name": "afwFragmentEngineEmitted"
+      },
+      {
+        "kind": "bool",
+        "name": "afwMigrationFollows"
+      }
+    ],
+    "the patch arithmetic (the R822 census)": [
+      {
+        "kind": "const",
+        "name": "afwEnginePatches"
+      },
+      {
+        "kind": "const",
+        "name": "afwRverifyPatches"
+      },
+      {
+        "kind": "const",
+        "name": "afwPreflightPatches"
+      },
+      {
+        "kind": "const",
+        "name": "afwRnPatches"
+      },
+      {
+        "kind": "const",
+        "name": "afwFilePatchesTotal"
+      }
+    ]
+  },
+  "chains": [],
+  "switches": [],
+  "caller_files": [],
+  "table_checks": [],
+  "file_patches": [
+    {
+      "file": "tools/splice_engine.py",
+      "note": "the audit_file branch lands in (e)",
+      "from": "# (e) the audit block\nlbl = S['audit_label']\nif ('\"%s: bad ' % lbl) in rt:\n    already.append('audit')\nelse:\n    anchor = S['audit_anchor']\n    if anchor not in rt:\n        die('the audit anchor is missing')\n    rt = rt.replace(anchor, AUD_BLOCK + anchor, 1)\n    applied.append('audit')\nwrites.append((RT, rt))",
+      "to": "# (e) the audit block / the audit file (the\n# R822 tooling extension): a round lands its\n# audit inline (the pre-R822 shape), or - when\n# the spec declares audit_file - the engine-\n# emitted block rides a NEW fragment under\n# rules/audits/ and regtest gets the one-line\n# #include at the audit anchor: the same\n# statements, the same gates, the same battery\n# output; only the file the compiler reads\n# them from changes. The fragment is emitted\n# by THIS engine (never hand-authored),\n# idempotent by existence, counted in the\n# applied/already census like a file patch.\nlbl = S['audit_label']\nAFILE = S.get('audit_file')\nif AFILE:\n    if not AFILE.startswith('rules/audits/'):\n        die('the audit_file must live under '\n            'rules/audits/: %s' % AFILE)\n    if os.path.exists(AFILE):\n        already.append('audit file')\n    else:\n        _d = os.path.dirname(AFILE)\n        if _d and not os.path.isdir(_d):\n            os.makedirs(_d)\n        writes.append((AFILE, AUD_BLOCK))\n        applied.append('audit file')\n    inc_a = '#include \"%s\"  // R%d: %s' % (\n        AFILE, RND, lbl)\n    if inc_a in rt:\n        already.append('audit include')\n    else:\n        anchor = S['audit_anchor']\n        if anchor not in rt:\n            die('the audit anchor is missing')\n        rt = rt.replace(\n            anchor, inc_a + NL + anchor, 1)\n        applied.append('audit include')\nelif ('\"%s: bad ' % lbl) in rt:\n    already.append('audit')\nelse:\n    anchor = S['audit_anchor']\n    if anchor not in rt:\n        die('the audit anchor is missing')\n    rt = rt.replace(\n        anchor, AUD_BLOCK + anchor, 1)\n    applied.append('audit')\nwrites.append((RT, rt))"
+    },
+    {
+      "file": "tools/splice_engine.py",
+      "note": "the census and label counts read the fragments",
+      "from": "rt_final = rd(RT)\ncensus = rt_final.count('audit: bad')\nwant = S['census_before'] + 1\nif census != want:\n    die('the census is %d, want %d'\n        % (census, want))\nif rt_final.count('\"%s: bad ' % lbl) != 1:\n    die('the audit label count is not 1')",
+      "to": "rt_final = rd(RT)\ncensus = rt_final.count('audit: bad')\nlbl_count = rt_final.count('\"%s: bad ' % lbl)\n# R822: the census reads regtest.cpp PLUS the\n# audit fragments (rules/audits/*.h) - a block\n# that rides a fragment carries its label\n# there, and neither the census nor the label\n# count ever drops it\n_audir = 'rules/audits'\nif os.path.isdir(_audir):\n    for _f in sorted(os.listdir(_audir)):\n        if not _f.endswith('.h'):\n            continue\n        _t = rd(os.path.join(_audir, _f))\n        census += _t.count('audit: bad')\n        lbl_count += _t.count('\"%s: bad ' % lbl)\nwant = S['census_before'] + 1\nif census != want:\n    die('the census is %d, want %d'\n        % (census, want))\nif lbl_count != 1:\n    die('the audit label count is not 1')"
+    },
+    {
+      "file": "tools/rverify.py",
+      "note": "the restore list gains the audit file",
+      "from": "        + [df['path']\n           for df in S.get('data_files', [])]\n    for p in sorted(set(files)):",
+      "to": "        + [df['path']\n           for df in S.get('data_files', [])] \\\n        + ([S['audit_file']]\n           if S.get('audit_file') else [])\n    for p in sorted(set(files)):"
+    },
+    {
+      "file": "tools/rverify.py",
+      "note": "n_patches counts the fragment and the include",
+      "from": "# 4 = seed, header, include, audit; the\n# R774 file patches count the same way\n# as gap flips (the applied/already\n# census covers them)\nn_patches = (len(S['gap_flips']) + 4\n             + len(S.get('file_patches', []))\n             + len(S.get('data_files', [])))",
+      "to": "# 3 + 1 = seed, header, include, audit;\n# 2 instead of 1 when the audit rides a\n# fragment (the R822 audit_file: the\n# fragment + the include); the R774 file\n# patches and the R791 data files count\n# the same way (the applied/already\n# census covers them)\nn_patches = (len(S['gap_flips']) + 3\n             + (2 if S.get('audit_file') else 1)\n             + len(S.get('file_patches', []))\n             + len(S.get('data_files', [])))"
+    },
+    {
+      "file": "tools/preflight.sh",
+      "note": "the census comment names the fragments",
+      "from": "# lesson) and no audit may report a nonzero bad count.\n",
+      "to": "# lesson) and no audit may report a nonzero bad count.\n# R822: the patterns are read from regtest.cpp PLUS\n# the audit fragments (rules/audits/*.h) - a block\n# that rides a fragment still prints its label, and\n# the census covers it exactly as before.\n"
+    },
+    {
+      "file": "tools/preflight.sh",
+      "note": "the census patterns read the fragments",
+      "from": "$(grep 'printf(\"' regtest.cpp | grep -oE '[^\"]*audit: bad %d' | sed 's/%d$//' | sort -u)\n",
+      "to": "$( (grep 'printf(\"' regtest.cpp; grep -h 'printf(\"' rules/audits/*.h 2>/dev/null) | grep -oE '[^\"]*audit: bad %d' | sed 's/%d$//' | sort -u)\n"
+    },
+    {
+      "file": "rn",
+      "note": "rn derives the audit_file fact",
+      "from": "DFILES=$(python3 -c \"import json,sys; print(' '.join(df['path'] for df in json.load(open('$SPEC')).get('data_files',[])))\")\n",
+      "to": "DFILES=$(python3 -c \"import json,sys; print(' '.join(df['path'] for df in json.load(open('$SPEC')).get('data_files',[])))\")\nAFILE=$(python3 -c \"import json,sys; print(json.load(open('$SPEC')).get('audit_file',''))\")\n"
+    },
+    {
+      "file": "rn",
+      "note": "rn echoes the audit-file round",
+      "from": "if [ \"$NDATA\" -gt 0 ]; then\n    echo \"== data-file round ($NDATA data file(s)): $DFILES go in the git add\"\nfi\n",
+      "to": "if [ \"$NDATA\" -gt 0 ]; then\n    echo \"== data-file round ($NDATA data file(s)): $DFILES go in the git add\"\nfi\nif [ -n \"$AFILE\" ]; then\n    echo \"== audit-file round: $AFILE goes in the git add\"\nfi\n"
+    },
+    {
+      "file": "rn",
+      "note": "rn git-adds the fragment",
+      "from": "if [ \"$NDATA\" -gt 0 ]; then\n    git add $DFILES\nfi\n",
+      "to": "if [ \"$NDATA\" -gt 0 ]; then\n    git add $DFILES\nfi\nif [ -n \"$AFILE\" ]; then\n    git add \"$AFILE\"\nfi\n"
+    }
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "prev_record": [
+    "- R821 LANDED 2026-10-24: commit",
+    "  951b96247fd6cc821abe64ee1484dc0c2baa95fe",
+    "  (census 743 -> 744, pushed 8bf462f..951b962),",
+    "   THE LUNG PROMOTION (the lung/shan candidate queued on the landed R820;",
+    "round twenty-six of the MM2 arc, the promotion seam round, the queued R818",
+    "discovery closed - NO gap boxes flip, the MM2 arc gap stays 37 closed 0 open).",
+    "THE DEFS: keys lung_wang and shen_lung, the FIRST FF defs in the registry (the",
+    "new ff_print xp class, the R73 allowed list patched); the Lung Wang (Sea",
+    "Dragon) block FF print p. 28, AC 0, HD 11-13 (avgHp 38), MOVE 3/9 swim, 3",
+    "attacks 1-12/1-12/6-36, treasure H(x2), 60% lair, level VIII XP 4550 + 16/hp",
+    "(xpValue 5158), neutral, very intelligence, size L (up to 30' diameter); the",
+    "Shen Lung (Spirit Dragon) block p. 29, AC 1, HD 9-11 (avgHp 31), MOVE",
+    "12/12//9, 4 attacks 1-4/1-4/2-24/1-8, treasure H, 60% lair, level VII XP 1400",
+    "+ 12/hp (xpValue 1772), chaotic neutral, high intelligence, size L (43' long).",
+    "THE TWO-VOICE SETTLES: the MM2 index OCR reads Shan Lung - the FF print header",
+    "reads Shen Lung (the chiang lung prose agrees) and Shen wins; the lung wang",
+    "block OCR reads the bite 5-36 - the prose reads 6-36 and the prose wins. THE",
+    "REWIRE: the three R818 keyless aquatic cells (CFS die 19 and CSD die 20 sea",
+    "dragon, RFD die 18 spirit dragon) rekey lung_wang/lung_wang/shen_lung - the",
+    "src cells stay 0, the R818 source census unchanged; the walk-key census bumps",
+    "189 -> 192. THE REGISTRY: 810 -> 812 defs, FF 0 -> 2. THE DOCTRINE: the lung",
+    "wang steam cone 100' x 50' up to 3/day (damage equal to current hit points),",
+    "scaly command 4-40 x age level, no water fire, the tribute demand; the shen",
+    "lung no breath weapon, bless/curse 1/day each, control weather and ice storm",
+    "3/day each, no lightning damage but double fire damage, water fire 2-12,",
+    "immune to poison, no insect within 60', MC E, the language shared with the pan",
+    "lung. Header rules/lungp.h, prefix lungp (free at 8bf462f), 40 consts + 13",
+    "bools (inline 53), audit \"R821 lung promotion audit\", 10 file patches + 2 data",
+    "files (the .lua defs), 9 examples, applied 16. GATES: engine double-run 16/0",
+    "-> 0/16; rverify GREEN vs 8bf462f (53 mutants, 0 missed); offline anchors",
+    "unique, walk <=78 with the R227 tail re-emitted, identifier sweep clean, lua",
+    "xpValue arithmetic mirrored (4550+16x38=5158, 1400+12x31=1772); tree restored",
+    "pristine (743 census, 0 traces). NEXT: awaits Curtiss's call."
+  ],
+  "inline_count": 20
+}

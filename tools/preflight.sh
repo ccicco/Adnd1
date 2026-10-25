@@ -117,6 +117,10 @@ echo "== [3/5] battery audit census (R112c) =="
 # Each pattern must appear EXACTLY ONCE in the battery output
 # (a double-inserted audit block ends RED here - the R112b
 # lesson) and no audit may report a nonzero bad count.
+# R822: the patterns are read from regtest.cpp PLUS
+# the audit fragments (rules/audits/*.h) - a block
+# that rides a fragment still prints its label, and
+# the census covers it exactly as before.
 census_fail=0
 if [ ! -f "$batfile" ]; then
   echo "CENSUS FAIL: no battery output (build failed?)"
@@ -131,7 +135,7 @@ while IFS= read -r pat; do
     census_fail=1
   fi
 done <<R112C_PATS
-$(grep 'printf("' regtest.cpp | grep -oE '[^"]*audit: bad %d' | sed 's/%d$//' | sort -u)
+$( (grep 'printf("' regtest.cpp; grep -h 'printf("' rules/audits/*.h 2>/dev/null) | grep -oE '[^"]*audit: bad %d' | sed 's/%d$//' | sort -u)
 R112C_PATS
 if grep -qE 'audit: bad [1-9]' "$batfile" 2>/dev/null; then
   echo "CENSUS FAIL: an audit reported a nonzero bad count:"

@@ -581,15 +581,52 @@ else:
     rt = rt.replace(after, after + NL + inc, 1)
     applied.append('include')
 
-# (e) the audit block
+# (e) the audit block / the audit file (the
+# R822 tooling extension): a round lands its
+# audit inline (the pre-R822 shape), or - when
+# the spec declares audit_file - the engine-
+# emitted block rides a NEW fragment under
+# rules/audits/ and regtest gets the one-line
+# #include at the audit anchor: the same
+# statements, the same gates, the same battery
+# output; only the file the compiler reads
+# them from changes. The fragment is emitted
+# by THIS engine (never hand-authored),
+# idempotent by existence, counted in the
+# applied/already census like a file patch.
 lbl = S['audit_label']
-if ('"%s: bad ' % lbl) in rt:
+AFILE = S.get('audit_file')
+if AFILE:
+    if not AFILE.startswith('rules/audits/'):
+        die('the audit_file must live under '
+            'rules/audits/: %s' % AFILE)
+    if os.path.exists(AFILE):
+        already.append('audit file')
+    else:
+        _d = os.path.dirname(AFILE)
+        if _d and not os.path.isdir(_d):
+            os.makedirs(_d)
+        writes.append((AFILE, AUD_BLOCK))
+        applied.append('audit file')
+    inc_a = '#include "%s"  // R%d: %s' % (
+        AFILE, RND, lbl)
+    if inc_a in rt:
+        already.append('audit include')
+    else:
+        anchor = S['audit_anchor']
+        if anchor not in rt:
+            die('the audit anchor is missing')
+        rt = rt.replace(
+            anchor, inc_a + NL + anchor, 1)
+        applied.append('audit include')
+elif ('"%s: bad ' % lbl) in rt:
     already.append('audit')
 else:
     anchor = S['audit_anchor']
     if anchor not in rt:
         die('the audit anchor is missing')
-    rt = rt.replace(anchor, AUD_BLOCK + anchor, 1)
+    rt = rt.replace(
+        anchor, AUD_BLOCK + anchor, 1)
     applied.append('audit')
 writes.append((RT, rt))
 
@@ -676,11 +713,25 @@ for p, t in writes:
 
 rt_final = rd(RT)
 census = rt_final.count('audit: bad')
+lbl_count = rt_final.count('"%s: bad ' % lbl)
+# R822: the census reads regtest.cpp PLUS the
+# audit fragments (rules/audits/*.h) - a block
+# that rides a fragment carries its label
+# there, and neither the census nor the label
+# count ever drops it
+_audir = 'rules/audits'
+if os.path.isdir(_audir):
+    for _f in sorted(os.listdir(_audir)):
+        if not _f.endswith('.h'):
+            continue
+        _t = rd(os.path.join(_audir, _f))
+        census += _t.count('audit: bad')
+        lbl_count += _t.count('"%s: bad ' % lbl)
 want = S['census_before'] + 1
 if census != want:
     die('the census is %d, want %d'
         % (census, want))
-if rt_final.count('"%s: bad ' % lbl) != 1:
+if lbl_count != 1:
     die('the audit label count is not 1')
 
 hdr_final = rd(HDR)

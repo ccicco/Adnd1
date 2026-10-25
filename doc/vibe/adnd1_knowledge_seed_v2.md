@@ -22566,6 +22566,39 @@ PREFLIGHT GREEN (the repair cut, first pass):
   R817/R818 lung cells, the UA
   appendix spell dueling / index
   class).
+- R821 LANDED 2026-10-24: commit
+  951b96247fd6cc821abe64ee1484dc0c2baa95fe
+  (census 743 -> 744, pushed 8bf462f..951b962),
+   THE LUNG PROMOTION (the lung/shan candidate queued on the landed R820;
+round twenty-six of the MM2 arc, the promotion seam round, the queued R818
+discovery closed - NO gap boxes flip, the MM2 arc gap stays 37 closed 0 open).
+THE DEFS: keys lung_wang and shen_lung, the FIRST FF defs in the registry (the
+new ff_print xp class, the R73 allowed list patched); the Lung Wang (Sea
+Dragon) block FF print p. 28, AC 0, HD 11-13 (avgHp 38), MOVE 3/9 swim, 3
+attacks 1-12/1-12/6-36, treasure H(x2), 60% lair, level VIII XP 4550 + 16/hp
+(xpValue 5158), neutral, very intelligence, size L (up to 30' diameter); the
+Shen Lung (Spirit Dragon) block p. 29, AC 1, HD 9-11 (avgHp 31), MOVE
+12/12//9, 4 attacks 1-4/1-4/2-24/1-8, treasure H, 60% lair, level VII XP 1400
++ 12/hp (xpValue 1772), chaotic neutral, high intelligence, size L (43' long).
+THE TWO-VOICE SETTLES: the MM2 index OCR reads Shan Lung - the FF print header
+reads Shen Lung (the chiang lung prose agrees) and Shen wins; the lung wang
+block OCR reads the bite 5-36 - the prose reads 6-36 and the prose wins. THE
+REWIRE: the three R818 keyless aquatic cells (CFS die 19 and CSD die 20 sea
+dragon, RFD die 18 spirit dragon) rekey lung_wang/lung_wang/shen_lung - the
+src cells stay 0, the R818 source census unchanged; the walk-key census bumps
+189 -> 192. THE REGISTRY: 810 -> 812 defs, FF 0 -> 2. THE DOCTRINE: the lung
+wang steam cone 100' x 50' up to 3/day (damage equal to current hit points),
+scaly command 4-40 x age level, no water fire, the tribute demand; the shen
+lung no breath weapon, bless/curse 1/day each, control weather and ice storm
+3/day each, no lightning damage but double fire damage, water fire 2-12,
+immune to poison, no insect within 60', MC E, the language shared with the pan
+lung. Header rules/lungp.h, prefix lungp (free at 8bf462f), 40 consts + 13
+bools (inline 53), audit "R821 lung promotion audit", 10 file patches + 2 data
+files (the .lua defs), 9 examples, applied 16. GATES: engine double-run 16/0
+-> 0/16; rverify GREEN vs 8bf462f (53 mutants, 0 missed); offline anchors
+unique, walk <=78 with the R227 tail re-emitted, identifier sweep clean, lua
+xpValue arithmetic mirrored (4550+16x38=5158, 1400+12x31=1772); tree restored
+pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
