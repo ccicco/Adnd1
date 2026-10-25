@@ -23162,6 +23162,66 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   441 onward: R562 DSG intro frame
   at the next head), at 100 blocks
   per round; 342 inline remain.
+- R831 LANDED 2026-10-25: commit
+  475a610b66c6d40bfc480b25ba00d89d192b26e4
+  (census 753 -> 754, pushed
+  3a97646..475a610), THE PLANES
+  AND OA MIGRATION BATCH - the
+  eighth batch of real blocks
+  leaves regtest at the
+  100-per-round pace (the REGTEST
+  DECOMPOSITION ARC). THE MOVE:
+  digest idx 441-549 (R562 DSG
+  intro frame through R671 OA wu
+  jen second level spells - the
+  DSG tail, the MotP planes, the
+  DMO sections, the first OA
+  ability, class, family,
+  equipment, and spell pins; 100
+  blocks, 19285 lines) migrated
+  VERBATIM into rules/audits
+  fragments (r562_dsg_intro_frame.h
+  through
+  r671_oa_wu_jen_second_level.h).
+  R831's own audit rode
+  rules/audits/r831_batch.h. Header
+  rules/kmb.h, prefix kmb (verified
+  free at 3a97646, 0 hits), 6 consts
+  + 4 bools (inline 10), 4 examples,
+  the R830 record seated into the
+  seed, NO gap flips (MM2 stays 37
+  closed 0 open), NO tool patches.
+  NINE NEW HELDBACKS: the DMO
+  no-head family R603-R613 (nine
+  labels: legendary-monsters,
+  spells-and-items, item-creation,
+  magical-duels, true-dweomers,
+  high-level skills, wizard-priest,
+  rogues, dueling appendix) sit
+  with no R-prefixed head within
+  the 800-line walk - same
+  signature as R493/R494; the
+  holdback queue is now ~35
+  width-gate + 11 no-head blocks.
+  GATES: dress rehearsal on a copy
+  of the REAL tree at 3a97646 (the
+  whole rules/audits dir carried);
+  double-run 105/0 -> 0/105;
+  fragments byte-exact; regtest
+  reconstruction byte-for-byte;
+  census 242 + 512 = 754, all 754
+  preflight patterns unique each
+  once; rverify GREEN (10 mutants,
+  0 missed). Delivery spec-r831
+  canvas: spec 17601 bytes, md5
+  81d407afbfa5d41bb298604abec78154,
+  landed the same. NEXT: awaits
+  Curtiss's Go - the ninth batch
+  rides the same wiring (digest idx
+  550 onward: R672 OA wu jen third
+  level spells at the next head),
+  at 100 blocks per round; 242
+  inline remain.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
