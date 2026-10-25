@@ -24207,6 +24207,112 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   saved, the missing print census
   at 0; awaits Curtiss's call for
   what follows the FF arc.
+- R846 LANDED 2026-10-25: commit
+  98668ccc77a219b17728ffa3c767125151ea27e8
+  (pushed 18ab27c..98668cc,
+  census 768 -> 769), THE FF
+  MONSTER LEVEL TABLES - round one
+  of the three FF table-group rounds
+  (the queue: R847 the Encounter
+  Listings, R848 the Magic Item
+  Tables). THE WALK: 21 grids, 461
+  rows, every cell pinned - the ten
+  Monster Level grids (print
+  pp. 100-110; 360 rows) plus the
+  eight Dragon Subtables keyed to
+  Levels III-X (83 rows; the L1/L2
+  grids carry NO dragon rows), the
+  Sphinx Subtable (4), the Human
+  Subtable (4) and the Character
+  Subtable (10). THE SHAPE (the
+  R816 MM2 grids mechanics
+  precedent): cols Lo/Hi/Ord/Src/
+  NumMin/NumMax/Sp for the level
+  grids (dragons Lo/Hi/Type/Age/
+  Hd1/Hd2; the subtables their own
+  five/six-col shapes), tags
+  L1-L10/D3-D10/Spx/Hum/Chr, prefix
+  ffn, the round-roster Ord (333
+  labels, first appearance across
+  the grids then the sphinx types,
+  human rows, char classes, dragon
+  types), src 1 MM1/2 MM2/3 FF/
+  4 unkeyed/0 routing. THE CENSUS
+  PINS: 193 MM1 rows, 133 FF rows,
+  ZERO MM2 rows (the print lists
+  MM1 and FF creatures only), 20
+  routing rows (9 Character, 8
+  Dragon, 1 Human 39-46, 1 Sphinx
+  89-90, 1 Elemental 29-30), 14
+  unkeyed rows (the pyrohydra at
+  six levels, the piercer at three
+  levels - the four MM1 size defs,
+  no single key, the R816
+  precedent - the green slaad, the
+  brigand, the four L10 court
+  rows); no defs promoted, the
+  registry floor holds at 995. THE
+  ADJUDICATIONS (three-voice
+  collation, defs advisory): 39
+  forced repairs (the R703 pattern:
+  contiguity-forced or
+  def-corroborated) incl. the L1
+  shrieker 60-84->80-84, the L2
+  crabman 27-26->27-28, the L7
+  efreeti 23->28, the L8 ice devil
+  T9->19, the L9 vampire
+  83-65->83-85, the D4 red/silver
+  and D7 bronze/red bands; TWO
+  PINNED PRINT DEFECTS (both voices
+  agree, pinned as ink, grids NOT
+  asserted full tiling): the L3
+  wererat band 56-63 double-lists
+  the 59/60/61-62/63 rows (5 defect
+  rows), and the L8 ink SKIPS the
+  die band 27-28 (Giant, cloud
+  25-26 jumps to Giant, fog 29-30;
+  the rust monster keeps its
+  single 73-75 row, Retriever
+  71-72, Purple worm 62-70) - an
+  early draft had re-banded the L8
+  mid-table to force tiling and
+  duplicated the rust row; both
+  voices killed it, the literal ink
+  pins. THE NOTED INK: the D3
+  hp/die cells garble (pinned 0),
+  the D4 subtable carries no hp
+  column, the D10 hp cells garble
+  beyond Copper (pinned 0), the L9
+  xorn numbers 2-9 (def 2-5), the
+  vampire footnotes ride L9 (evil
+  cleric 7th-10th) and L10
+  (magic-user 9th-12th), the L10
+  AC column blank except Beholder
+  0/2/7 and Elemental Prince Var,
+  the L10 asterisk rows select one
+  or find randomly, the halfling/
+  badger level footnotes, the
+  elemental choose note, the monk
+  "1 or 1" row, the ink name
+  variants (Anhkheg, Korn, XIII...)
+  pin as scanned with the roster
+  riding the cleaned names.
+  Header rules/ffn.h (63 consts +
+  17 bools + 134 table cols,
+  inline 214), audit "R846 FF
+  monster level tables audit",
+  rode rules/audits/r846_batch.h;
+  27 examples; rverify double-run
+  GREEN, 3196 mutants 0 missed;
+  the R845 record seated into the
+  seed. Spec tools/spec_r846.json,
+  md5 f145c95e5c6fa587ed249a05c08ddd68
+  (authored-plus-newline).
+  NEXT: R847 the FF Encounter
+  Listings (round two of the
+  table-group queue), then R848
+  the Magic Item Tables; awaits
+  Curtiss's go.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
