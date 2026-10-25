@@ -45,6 +45,7 @@
             || mm2encdFfSourceRows() != 26
             || mm2encdAllSourceRows() != 2
             || mm2encdRegistryFloor() != 809
+            || mm2encdWalkKeyRows() != 170
             || mm2encdPartyDieD1() != 11
             || mm2encdPartyDieD2() != 11
             || mm2encdPartyDieD3() != 9
@@ -539,6 +540,19 @@
             ++bad;
         // the grid round (R816)
     if (mm2encdRound() != 816
+        )
+            ++bad;
+        // the walk-key census (the R839 FF promotion rewire)
+    if (mm2encdWalkKeyRows() != mm2encdTotalRows() -
+        mm2encdCharacterPartyRows() - ffuDunMm1BlankCells() -
+        ffuDunMm2BlankCells() - ffuDunCourtKeylessCells() -
+        ffuDunFfKeylessAfter()
+        )
+            ++bad;
+        // the FF row census (the Elemental Prince and Hornet Giant rows
+        // stay keyless)
+    if (mm2encdFfSourceRows() != ffuDunFfKeyed() +
+        ffuDunFfKeylessAfter()
         )
             ++bad;
         printf("R816 MM2 dungeon encounter grids audit: bad %d\n", bad);

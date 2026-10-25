@@ -73,6 +73,16 @@ inline int mm2encdAllSourceRows()
 inline int mm2encdRegistryFloor()
     { return 809; }
 
+// The keyed rows (the MM1, MM2, ALL and promoted FF defs the
+// registry owns; the R839 FF promotion rewired
+// 24 blank cells, 146 -> 170; the two
+// FF rows left keyless: the Elemental
+// Prince row (no print def) and the
+// Hornet, Giant row (the FF p. 52 def
+// rides a future promotion))
+inline int mm2encdWalkKeyRows()
+    { return 170; }
+
 // The character-party die on Monster Level I
 inline int mm2encdPartyDieD1()
     { return 11; }

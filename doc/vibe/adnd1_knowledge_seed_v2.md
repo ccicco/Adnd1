@@ -23658,6 +23658,70 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   FF rows mm2encd, the
   401 FF index lines
   mm2enci).
+- R838 LANDED 2026-10-25: commit
+  36e6a34 (short sha; pushed,
+  HEAD == origin/main), census 760 -> 761,
+  THE THIRD FF PROMOTION BATCH (the FF
+  arc, 25 defs per the R836 pace pin).
+  THE DEFS: 25 new .lua defs lifted from
+  the ff print (ff_print xp class) - the
+  OUTDOOR TAIL letters s-x (scarecrow,
+  screaming devlikin, shadow demon,
+  sheet ghoul, sheet phantom, shocker,
+  skeleton warrior, skulk, snyad, son of
+  kyuss, stunjelly, sussurus, svirfneblin,
+  symbiotic jelly, tabaxi, tentamort,
+  terithran, thoqqua, tiger fly,
+  tirapheg, volt, vortex, witherweed,
+  xvart) - the R836/R837 def shape with
+  the print-fidelity pin headers. THE
+  REWIRE: the outdoor rekeys ride
+  rules/mm2enco.h with the walk-key
+  census chains patched through lmp.h
+  and the audits r817_mm2_outdoor_
+  encounter.h and r820_lammasu_
+  promotion.h (the R837 pattern); the
+  registry 862 -> 887 (battery loaded
+  887, errors 0); NO gap boxes flip
+  (MM2 stays 37 closed 0 open). The
+  round's own audit rode
+  rules/audits/r838_batch.h; file
+  patches: regtest.cpp (13 patches),
+  mm2enco.h, lmp.h, r817/r820 audit
+  fragments. Spec tools/spec_r838.json,
+  md5 28cc388610c6aefe78e8b353847e7905.
+  GATES (per the pasted landing):
+  SYNTAX-OK, all live-def audits bad 0,
+  xp audit 887 checked 0 anomalies,
+  encounter smoke 2000 rolls 0 bad,
+  magic/kind audits clean, audit census
+  761 each exactly once, build 0
+  warnings. LANDING QUIRK: the pasted
+  output was a SECOND ./rn invocation
+  against the already-landed tree
+  ("applied 0, already 48" both passes,
+  tracked files clean) - the preflight
+  hygiene gate fired its RED on the
+  benign duplicate-run signature
+  (untracked old artifacts, no tracked
+  modification). DIAGNOSTIC LESSON: that
+  hygiene FAIL pattern ("untracked
+  present but NO tracked modified") with
+  a uniform "already" engine read means
+  ALREADY COMMITTED, not a splice
+  failure - check git log before
+  diagnosing; a genuinely failed round
+  leaves the tracked files dirty (the
+  R817 lesson). The four untracked
+  leftovers (r599_gap.b64,
+  tools/fix_r608.py, tools/r597.b64,
+  tools/survey_r823.py.b64) are old
+  delivery artifacts, never round
+  content - candidates for rm. NEXT:
+  awaits Curtiss's call - the remaining
+  keyless FF surface: the aquatic tail,
+  the 26 dungeon FF rows (mm2encd), the
+  401 FF index lines (mm2enci).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

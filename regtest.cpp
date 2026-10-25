@@ -540,6 +540,7 @@
 #include "rules/ffp.h"  // R836: the first FF promotion batch
 #include "rules/ffs.h"  // R837: the second FF promotion batch
 #include "rules/fft.h"  // R838: the third FF promotion batch
+#include "rules/ffu.h"  // R839: the fourth FF promotion batch
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -2853,12 +2854,12 @@ int main() {
         };
         static const char* kEncD[10][19] = {
             {
-                "",
+                "al_miraj",
                 "webbird",
-                "",
+                "bullywug",
                 "pedipalp_large",
                 "bowler",
-                "",
+                "bat_giant",
                 "goblin",
                 "bandit",
                 "bat_ordinary",
@@ -2868,7 +2869,7 @@ int main() {
                 "kobold",
                 "",
                 "skeleton",
-                "",
+                "norker",
                 "vulchling",
                 "gnome",
                 "nupperibo",
@@ -2876,7 +2877,7 @@ int main() {
             {
                 "azer",
                 "duergar",
-                "",
+                "coffer_corpse",
                 "gas_spore",
                 "lizard_man",
                 "gnoll",
@@ -2886,21 +2887,21 @@ int main() {
                 "",
                 "troglodyte",
                 "centipede_huge",
-                "",
+                "grimlock",
                 "stirge",
                 "mongrelman",
-                "",
+                "quaggoth",
                 "pedipalp_huge",
                 "poisonous_frog",
                 "fire_bat",
             },
             {
                 "leprechaun",
-                "",
+                "mephit_fire",
                 "phantom",
                 "ankheg",
                 "ochre_jelly",
-                "",
+                "kenku",
                 "luck_eater",
                 "",
                 "ogre",
@@ -2910,15 +2911,15 @@ int main() {
                 "bugbear",
                 "gelatinous_cube",
                 "ustilagor",
-                "",
+                "shocker",
                 "giant_weasel",
-                "",
-                "",
+                "thoqqua",
+                "drow",
             },
             {
-                "",
-                "",
-                "",
+                "lava_children",
+                "meenlock",
+                "hook_horror",
                 "pech",
                 "owlbear",
                 "rust_monster",
@@ -2931,15 +2932,15 @@ int main() {
                 "",
                 "hydra",
                 "ghast",
-                "",
+                "caterwaul",
                 "solifugid_giant",
                 "spectator",
-                "",
+                "githyanki",
             },
             {
                 "chaggrin",
                 "cloaker",
-                "",
+                "algoid",
                 "phycomid",
                 "minotaur",
                 "",
@@ -2962,7 +2963,7 @@ int main() {
                 "rakshasa",
                 "green_slime",
                 "basilisk",
-                "",
+                "grell",
                 "otyugh",
                 "wyvern",
                 "wraith",
@@ -2976,7 +2977,7 @@ int main() {
                 "black_dragon",
                 "ogre_magi",
                 "yuan_ti",
-                "",
+                "red_slaad",
             },
             {
                 "dao",
@@ -2997,7 +2998,7 @@ int main() {
                 "spectre",
                 "invisible_stalker",
                 "diakk",
-                "",
+                "mezzodaemon",
             },
             {
                 "foo_lion",
@@ -3026,7 +3027,7 @@ int main() {
                 "pit_fiend",
                 "red_dragon",
                 "hydra",
-                "",
+                "slaad_grey",
                 "titan",
                 "",
                 "movanic_deva",
@@ -3035,7 +3036,7 @@ int main() {
                 "stone_golem",
                 "black_dragon",
                 "kelubar",
-                "",
+                "nycadaemon",
                 "titan",
                 "baku",
                 "ultrodaemon",
@@ -3051,7 +3052,7 @@ int main() {
                 "solar",
                 "iron_golem",
                 "planetar",
-                "",
+                "slaad_death",
                 "beholder",
                 "",
                 "lich",
@@ -4587,6 +4588,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r839_batch.h"  // R839: R839 fourth FF promotion audit
 #include "rules/audits/r838_batch.h"  // R838: R838 third FF promotion audit
 #include "rules/audits/r837_batch.h"  // R837: R837 second FF promotion audit
 #include "rules/audits/r836_batch.h"  // R836: R836 first FF promotion audit

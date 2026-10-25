@@ -1,0 +1,643 @@
+{
+ "round": 839,
+ "title": "the fourth FF promotion batch",
+ "prefix": "ffu",
+ "regtest": "regtest.cpp",
+ "header_file": "rules/ffu.h",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "gap_report": "tools/mm2_gap_report.md",
+ "banner": {
+  "title": "the fourth FF promotion batch - the dungeon cells rekey",
+  "provenance": "spec-driven; the fourth Fiend Folio promotion batch - twenty-five defs lifted from the ff print as new lua data files (the fifteen NEW defs that key the dungeon FF rows: al_miraj, bullywug, bat_giant, grimlock, mephit_fire, drow, lava_children, meenlock, hook_horror, githyanki, grell, mezzodaemon, slaad_grey, nycadaemon and slaad_death, plus the ten FILL defs in print order: achaierai, adherer, aleax, apparition, astral_searcher, babbler, berbalang, blindheim, bonesnapper and booka), the twenty-four blank dungeon encounter cells rekeyed (fifteen to the new defs, nine to the standing norker, coffer_corpse, quaggoth, kenku, shocker, thoqqua, caterwaul, algoid and red_slaad defs), the two FF rows left keyless (the Elemental Prince row - no print def - and the Hornet Giant row, the FF p. 52 def rides a future promotion), the dungeon walk-key census re-pinned (146 -> 170), the blank census drains 44 -> 20, the registry 887 -> 912, the ff def census 77 -> 102, the source rows stay (ff 26 dungeon), no gap boxes flip; the def bodies carry the print-fidelity pin headers"
+ },
+ "census_before": 761,
+ "inline_count": 28,
+ "consts": [
+  {
+   "name": "ffuRound",
+   "value": 839,
+   "comment": "the round"
+  },
+  {
+   "name": "ffuPaceDefs",
+   "value": 25,
+   "comment": "the standing pace: defs per promotion round"
+  },
+  {
+   "name": "ffuBatchDefs",
+   "value": 25,
+   "comment": "the defs in the fourth FF promotion batch"
+  },
+  {
+   "name": "ffuDunCellsRewired",
+   "value": 24,
+   "comment": "the dungeon cells rekeyed this round"
+  },
+  {
+   "name": "ffuNewDefCells",
+   "value": 15,
+   "comment": "the cells rekeyed to new batch defs"
+  },
+  {
+   "name": "ffuExistingDefCells",
+   "value": 9,
+   "comment": "the cells rekeyed to the standing defs"
+  },
+  {
+   "name": "ffuDunKeyedBefore",
+   "value": 146,
+   "comment": "the dungeon walk-key census before"
+  },
+  {
+   "name": "ffuDunKeyedAfter",
+   "value": 170,
+   "comment": "the dungeon walk-key census after"
+  },
+  {
+   "name": "ffuDunBlankBefore",
+   "value": 44,
+   "comment": "the blank dungeon cells before"
+  },
+  {
+   "name": "ffuDunBlankAfter",
+   "value": 20,
+   "comment": "the blank dungeon cells after"
+  },
+  {
+   "name": "ffuDunPartyBlankRows",
+   "value": 10,
+   "comment": "the character-party rows (blank by design, the DMG subtable)"
+  },
+  {
+   "name": "ffuDunMm1BlankCells",
+   "value": 4,
+   "comment": "the (MM1) rows left blank (no def in the registry)"
+  },
+  {
+   "name": "ffuDunMm2BlankCells",
+   "value": 2,
+   "comment": "the (MM2) rows left blank (no def in the registry)"
+  },
+  {
+   "name": "ffuDunCourtKeylessCells",
+   "value": 2,
+   "comment": "the unique-court rows left keyless (the Level X demon prince and devil duke rows)"
+  },
+  {
+   "name": "ffuDunFfRows",
+   "value": 26,
+   "comment": "the (FF) rows across the ten grids (unchanged)"
+  },
+  {
+   "name": "ffuDunFfKeyed",
+   "value": 24,
+   "comment": "the FF rows keyed after the batch"
+  },
+  {
+   "name": "ffuDunFfKeylessAfter",
+   "value": 2,
+   "comment": "the FF rows left keyless (the Elemental Prince and Hornet Giant rows)"
+  },
+  {
+   "name": "ffuDunFfElementalRows",
+   "value": 1,
+   "comment": "the Elemental Prince row (no print def, the settled no-def read)"
+  },
+  {
+   "name": "ffuDunFfHornetRows",
+   "value": 1,
+   "comment": "the Hornet Giant row (the FF p. 52 def rides a future promotion)"
+  },
+  {
+   "name": "ffuRegistryBefore",
+   "value": 887,
+   "comment": "the registry census before the batch"
+  },
+  {
+   "name": "ffuRegistryAfter",
+   "value": 912,
+   "comment": "the registry census after the batch"
+  },
+  {
+   "name": "ffuFfDefsBefore",
+   "value": 77,
+   "comment": "the ff def census before the batch"
+  },
+  {
+   "name": "ffuFfDefsAfter",
+   "value": 102,
+   "comment": "the ff def census after the batch"
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "bools": [
+  {
+   "name": "ffuDefsFromFfPrint",
+   "value": true,
+   "comment": "every batch def lifts the FF print"
+  },
+  {
+   "name": "ffuSourceRowsStay",
+   "value": true,
+   "comment": "the source rows ride unchanged"
+  },
+  {
+   "name": "ffuNoGapBoxesFlip",
+   "value": true,
+   "comment": "no MM2 gap boxes flip this round"
+  },
+  {
+   "name": "ffuDunElementalStaysKeyless",
+   "value": true,
+   "comment": "the Elemental Prince row rides keyless (the settled no-def read)"
+  },
+  {
+   "name": "ffuDunHornetStaysKeyless",
+   "value": true,
+   "comment": "the Hornet Giant row rides keyless (the FF print def rides a future promotion)"
+  }
+ ],
+ "header_sections": {
+  "the fourth FF promotion batch": [
+   {
+    "kind": "const",
+    "name": "ffuRound"
+   },
+   {
+    "kind": "const",
+    "name": "ffuPaceDefs"
+   },
+   {
+    "kind": "const",
+    "name": "ffuBatchDefs"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunCellsRewired"
+   },
+   {
+    "kind": "const",
+    "name": "ffuNewDefCells"
+   },
+   {
+    "kind": "const",
+    "name": "ffuExistingDefCells"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunKeyedBefore"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunKeyedAfter"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunBlankBefore"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunBlankAfter"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunPartyBlankRows"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunMm1BlankCells"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunMm2BlankCells"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunCourtKeylessCells"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunFfRows"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunFfKeyed"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunFfKeylessAfter"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunFfElementalRows"
+   },
+   {
+    "kind": "const",
+    "name": "ffuDunFfHornetRows"
+   },
+   {
+    "kind": "const",
+    "name": "ffuRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "ffuRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "ffuFfDefsBefore"
+   },
+   {
+    "kind": "const",
+    "name": "ffuFfDefsAfter"
+   },
+   {
+    "kind": "bool",
+    "name": "ffuDefsFromFfPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "ffuSourceRowsStay"
+   },
+   {
+    "kind": "bool",
+    "name": "ffuNoGapBoxesFlip"
+   },
+   {
+    "kind": "bool",
+    "name": "ffuDunElementalStaysKeyless"
+   },
+   {
+    "kind": "bool",
+    "name": "ffuDunHornetStaysKeyless"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['ffuRegistryAfter']() != m['ffuRegistryBefore']() + m['ffuBatchDefs']()",
+   "note": "the registry carries the batch"
+  },
+  {
+   "expr": "m['ffuFfDefsAfter']() != m['ffuFfDefsBefore']() + m['ffuBatchDefs']()",
+   "note": "the ff def census carries the batch"
+  },
+  {
+   "expr": "m['ffuDunKeyedAfter']() != m['ffuDunKeyedBefore']() + m['ffuDunCellsRewired']()",
+   "note": "the dungeon walk-key census carries the rewire"
+  },
+  {
+   "expr": "m['ffuDunBlankAfter']() != m['ffuDunBlankBefore']() - m['ffuDunCellsRewired']()",
+   "note": "the blank census drains by the rewire"
+  },
+  {
+   "expr": "m['ffuDunCellsRewired']() != m['ffuNewDefCells']() + m['ffuExistingDefCells']()",
+   "note": "the rewire splits new-def cells and standing-def cells"
+  },
+  {
+   "expr": "m['ffuDunKeyedBefore']() + m['ffuDunBlankBefore']() != m['ffuDunKeyedAfter']() + m['ffuDunBlankAfter']()",
+   "note": "the ten grids carry 190 rows before and after"
+  },
+  {
+   "expr": "m['ffuDunFfRows']() != m['ffuDunFfKeyed']() + m['ffuDunFfKeylessAfter']()",
+   "note": "the FF row census closes over keyed and keyless"
+  },
+  {
+   "expr": "m['ffuDunFfKeylessAfter']() != m['ffuDunFfElementalRows']() + m['ffuDunFfHornetRows']()",
+   "note": "the keyless FF rows split the Elemental Prince and Hornet Giant rows"
+  },
+  {
+   "expr": "m['ffuDunBlankAfter']() != m['ffuDunPartyBlankRows']() + m['ffuDunMm1BlankCells']() + m['ffuDunMm2BlankCells']() + m['ffuDunCourtKeylessCells']() + m['ffuDunFfKeylessAfter']()",
+   "note": "the blank residue splits party, MM1, MM2, court and FF keyless"
+  }
+ ],
+ "audit_label": "R839 fourth FF promotion audit",
+ "audit_comment": "the fourth promotion wave of the ff arc: twenty-five defs, the twenty-four cells (nine ride the standing defs), the dungeon walk-key census re-pinned, the registry and ff def censuses carried, the two keyless FF rows pinned (the Elemental Prince and Hornet Giant rows); the constants check themselves",
+ "audit_file": "rules/audits/r839_batch.h",
+ "audit_anchor": "#include \"rules/audits/r838_batch.h\"  // R838: R838 third FF promotion audit",
+ "include_after": "#include \"rules/fft.h\"  // R838: the third FF promotion batch",
+ "include_comment": "the fourth FF promotion batch",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R838 LANDED 2026-10-25: commit",
+ "prev_record": [
+  "- R838 LANDED 2026-10-25: commit",
+  "  36e6a34 (short sha; pushed,",
+  "  HEAD == origin/main), census 760 -> 761,",
+  "  THE THIRD FF PROMOTION BATCH (the FF",
+  "  arc, 25 defs per the R836 pace pin).",
+  "  THE DEFS: 25 new .lua defs lifted from",
+  "  the ff print (ff_print xp class) - the",
+  "  OUTDOOR TAIL letters s-x (scarecrow,",
+  "  screaming devlikin, shadow demon,",
+  "  sheet ghoul, sheet phantom, shocker,",
+  "  skeleton warrior, skulk, snyad, son of",
+  "  kyuss, stunjelly, sussurus, svirfneblin,",
+  "  symbiotic jelly, tabaxi, tentamort,",
+  "  terithran, thoqqua, tiger fly,",
+  "  tirapheg, volt, vortex, witherweed,",
+  "  xvart) - the R836/R837 def shape with",
+  "  the print-fidelity pin headers. THE",
+  "  REWIRE: the outdoor rekeys ride",
+  "  rules/mm2enco.h with the walk-key",
+  "  census chains patched through lmp.h",
+  "  and the audits r817_mm2_outdoor_",
+  "  encounter.h and r820_lammasu_",
+  "  promotion.h (the R837 pattern); the",
+  "  registry 862 -> 887 (battery loaded",
+  "  887, errors 0); NO gap boxes flip",
+  "  (MM2 stays 37 closed 0 open). The",
+  "  round's own audit rode",
+  "  rules/audits/r838_batch.h; file",
+  "  patches: regtest.cpp (13 patches),",
+  "  mm2enco.h, lmp.h, r817/r820 audit",
+  "  fragments. Spec tools/spec_r838.json,",
+  "  md5 28cc388610c6aefe78e8b353847e7905.",
+  "  GATES (per the pasted landing):",
+  "  SYNTAX-OK, all live-def audits bad 0,",
+  "  xp audit 887 checked 0 anomalies,",
+  "  encounter smoke 2000 rolls 0 bad,",
+  "  magic/kind audits clean, audit census",
+  "  761 each exactly once, build 0",
+  "  warnings. LANDING QUIRK: the pasted",
+  "  output was a SECOND ./rn invocation",
+  "  against the already-landed tree",
+  "  (\"applied 0, already 48\" both passes,",
+  "  tracked files clean) - the preflight",
+  "  hygiene gate fired its RED on the",
+  "  benign duplicate-run signature",
+  "  (untracked old artifacts, no tracked",
+  "  modification). DIAGNOSTIC LESSON: that",
+  "  hygiene FAIL pattern (\"untracked",
+  "  present but NO tracked modified\") with",
+  "  a uniform \"already\" engine read means",
+  "  ALREADY COMMITTED, not a splice",
+  "  failure - check git log before",
+  "  diagnosing; a genuinely failed round",
+  "  leaves the tracked files dirty (the",
+  "  R817 lesson). The four untracked",
+  "  leftovers (r599_gap.b64,",
+  "  tools/fix_r608.py, tools/r597.b64,",
+  "  tools/survey_r823.py.b64) are old",
+  "  delivery artifacts, never round",
+  "  content - candidates for rm. NEXT:",
+  "  awaits Curtiss's call - the remaining",
+  "  keyless FF surface: the aquatic tail,",
+  "  the 26 dungeon FF rows (mm2encd), the",
+  "  401 FF index lines (mm2enci)."
+ ],
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 37,
+  "open": 0
+ },
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 1 die 2 cell rekeys al_miraj",
+   "from": "            {\n                \"\",\n                \"webbird\",",
+   "to": "            {\n                \"al_miraj\",\n                \"webbird\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 1 die 4 cell rekeys bullywug",
+   "from": "                \"webbird\",\n                \"\",\n                \"pedipalp_large\",",
+   "to": "                \"webbird\",\n                \"bullywug\",\n                \"pedipalp_large\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 1 die 8 cell rekeys bat_giant (the giant bat def)",
+   "from": "                \"bowler\",\n                \"\",\n                \"goblin\",",
+   "to": "                \"bowler\",\n                \"bat_giant\",\n                \"goblin\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 1 die 18 cell rekeys the standing norker def",
+   "from": "                \"skeleton\",\n                \"\",\n                \"vulchling\",",
+   "to": "                \"skeleton\",\n                \"norker\",\n                \"vulchling\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 2 die 4 cell rekeys the standing coffer corpse def",
+   "from": "                \"duergar\",\n                \"\",\n                \"gas_spore\",",
+   "to": "                \"duergar\",\n                \"coffer_corpse\",\n                \"gas_spore\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 2 die 14 cell rekeys grimlock",
+   "from": "                \"centipede_huge\",\n                \"\",\n                \"stirge\",",
+   "to": "                \"centipede_huge\",\n                \"grimlock\",\n                \"stirge\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 2 die 18 cell rekeys the standing quaggoth def",
+   "from": "                \"mongrelman\",\n                \"\",\n                \"pedipalp_huge\",",
+   "to": "                \"mongrelman\",\n                \"quaggoth\",\n                \"pedipalp_huge\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 3 die 3 cell rekeys mephit_fire (the fire mephit def)",
+   "from": "                \"leprechaun\",\n                \"\",\n                \"phantom\",",
+   "to": "                \"leprechaun\",\n                \"mephit_fire\",\n                \"phantom\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 3 die 7 cell rekeys the standing kenku def",
+   "from": "                \"ochre_jelly\",\n                \"\",\n                \"luck_eater\",",
+   "to": "                \"ochre_jelly\",\n                \"kenku\",\n                \"luck_eater\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 3 die 17 cell rekeys the standing shocker def",
+   "from": "                \"ustilagor\",\n                \"\",\n                \"giant_weasel\",",
+   "to": "                \"ustilagor\",\n                \"shocker\",\n                \"giant_weasel\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 3 dies 19 and 20 cells rekey the standing thoqqua def and drow",
+   "from": "                \"giant_weasel\",\n                \"\",\n                \"\",",
+   "to": "                \"giant_weasel\",\n                \"thoqqua\",\n                \"drow\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 4 dies 2-4 cells rekey lava children, meenlock and hook horror",
+   "from": "            {\n                \"\",\n                \"\",\n                \"\",\n                \"pech\",",
+   "to": "            {\n                \"lava_children\",\n                \"meenlock\",\n                \"hook_horror\",\n                \"pech\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 4 die 17 cell rekeys the standing caterwaul def",
+   "from": "                \"ghast\",\n                \"\",\n                \"solifugid_giant\",",
+   "to": "                \"ghast\",\n                \"caterwaul\",\n                \"solifugid_giant\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 4 die 20 cell rekeys githyanki",
+   "from": "                \"spectator\",\n                \"\",\n            },",
+   "to": "                \"spectator\",\n                \"githyanki\",\n            },"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 5 die 4 cell rekeys the standing algoid def",
+   "from": "                \"cloaker\",\n                \"\",\n                \"phycomid\",",
+   "to": "                \"cloaker\",\n                \"algoid\",\n                \"phycomid\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 6 die 6 cell rekeys grell",
+   "from": "                \"basilisk\",\n                \"\",\n                \"otyugh\",",
+   "to": "                \"basilisk\",\n                \"grell\",\n                \"otyugh\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 6 die 20 cell rekeys the standing red slaad def",
+   "from": "                \"yuan_ti\",\n                \"\",\n            },",
+   "to": "                \"yuan_ti\",\n                \"red_slaad\",\n            },"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 7 die 20 cell rekeys mezzodaemon",
+   "from": "                \"diakk\",\n                \"\",\n            },",
+   "to": "                \"diakk\",\n                \"mezzodaemon\",\n            },"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 9 die 8 cell rekeys slaad_grey (the grey slaad def)",
+   "from": "                \"hydra\",\n                \"\",\n                \"titan\",",
+   "to": "                \"hydra\",\n                \"slaad_grey\",\n                \"titan\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 9 die 16 cell rekeys nycadaemon",
+   "from": "                \"kelubar\",\n                \"\",\n                \"titan\",",
+   "to": "                \"kelubar\",\n                \"nycadaemon\",\n                \"titan\","
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the dungeon grid 10 die 11 cell rekeys slaad_death (the death slaad def)",
+   "from": "                \"planetar\",\n                \"\",\n                \"beholder\",",
+   "to": "                \"planetar\",\n                \"slaad_death\",\n                \"beholder\","
+  },
+  {
+   "file": "rules/mm2encd.h",
+   "note": "the dungeon walk-key census inline lands 170",
+   "from": "// The registry census floor (the landed R815 count; this round promotes no\n// defs)\ninline int mm2encdRegistryFloor()\n    { return 809; }",
+   "to": "// The registry census floor (the landed R815 count; this round promotes no\n// defs)\ninline int mm2encdRegistryFloor()\n    { return 809; }\n\n// The keyed rows (the MM1, MM2, ALL and promoted FF defs the\n// registry owns; the R839 FF promotion rewired\n// 24 blank cells, 146 -> 170; the two\n// FF rows left keyless: the Elemental\n// Prince row (no print def) and the\n// Hornet, Giant row (the FF p. 52 def\n// rides a future promotion))\ninline int mm2encdWalkKeyRows()\n    { return 170; }"
+  },
+  {
+   "file": "rules/audits/r816_mm2_dungeon_encounter_gr.h",
+   "note": "the r816 pin rides 170",
+   "from": "            || mm2encdRegistryFloor() != 809",
+   "to": "            || mm2encdRegistryFloor() != 809\n            || mm2encdWalkKeyRows() != 170"
+  },
+  {
+   "file": "rules/audits/r816_mm2_dungeon_encounter_gr.h",
+   "note": "the r816 walk-key chain carries the ffu rewire",
+   "from": "        // the grid round (R816)\n    if (mm2encdRound() != 816\n        )\n            ++bad;\n        printf(\"R816 MM2 dungeon encounter grids audit: bad %d\\n\", bad);",
+   "to": "        // the grid round (R816)\n    if (mm2encdRound() != 816\n        )\n            ++bad;\n        // the walk-key census (the R839 FF promotion rewire)\n    if (mm2encdWalkKeyRows() != mm2encdTotalRows() -\n        mm2encdCharacterPartyRows() - ffuDunMm1BlankCells() -\n        ffuDunMm2BlankCells() - ffuDunCourtKeylessCells() -\n        ffuDunFfKeylessAfter()\n        )\n            ++bad;\n        // the FF row census (the Elemental Prince and Hornet Giant rows\n        // stay keyless)\n    if (mm2encdFfSourceRows() != ffuDunFfKeyed() +\n        ffuDunFfKeylessAfter()\n        )\n            ++bad;\n        printf(\"R816 MM2 dungeon encounter grids audit: bad %d\\n\", bad);"
+  }
+ ],
+ "migrate_blocks": [],
+ "data_files": [
+  {
+   "path": "monsters/monsters/a/achaierai.lua",
+   "content": "-- Achaierai: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Achaierai\",\n  page = \"9\",\n  pages = \"9\",\n  source = \"FF\",\n  race = \"Achaierai\",\n  hitDice = \"Body 40 hit points; legs 15 hit points each\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 100,\n  armorClass = \"Body 8; Legs -1\",\n  numAttacks = 3,\n  damage = \"1-8/1-8/1-10\",\n  xp = 1300,\n  xpPerHp = 14,\n  xpValue = 2700,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-8\",\n  lairPct = 5,\n  treasure = \"F\",\n  move = \"18\\\"\",\n  size = \"L (16' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Toxic Smoke\",\n  magicResistance = \"35%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Though the foul motives which caused these loathsome birds to be first summoned from the infernal regions are now lost from memory, remnants of the original achaierai flock still stalk the earth, haunting shadowy places and underground passages. In form they consist of a huge spherical head-body, with a powerful beak and feathery crest atop four long legs ending in strong claws. Man-sized opponents cannot usually attack the soft body but can only reach the hard, metallic legs. Likewise it will not usually be able to reach a victim with its beak and will therefore fight with two claws, doing 1-8 hit points of damage each.\\n\\nA beak attack, when this is possible, will have the hit probability of a 9-dice monster, while the claws attack with the hit probability of a 4-dice monster in all cases. If a beak attack is delivered, it will inflict 1-10 hit points of damage on the victim.\\n\\nThe achaierai often travel in groups and, though a group need never check morale, each individual bird will try to flee if it loses a leg (a total of 15 hit points of damage or more on a particular leg will break it from the body). Though flightless (the rudimentary wings are scarcely visible and will not support flight), a bird often eludes pursuers with its long strides. Its movement rate is unaffected by the loss of a single leg, but the loss of two legs halves movement rate. An injured leg will regenerate fully in about two days but the birds do not possess other regenerative powers and a leg which has been completely lost will not be re-grown.\\n\\nIf a bird loses three legs, or is otherwise seriously wounded, it will release a cloud of black toxic smoke which in shape and size approximates to a sphere of 10' radius. All within the cloud (except achaierai) take 2-12 hit points of damage automatically and must save against poison or suffer insanity for 3 hours (treat as the Druidic feeblemind spell of limited duration). In the confusion the wounded bird will seek to escape, crawling if three legs have been lost at a 2\\\" movement rate.\\n\\nDescription: The legs are a metallic blue-grey, the body-head a dull scarlet with deep red blotches. The eyes are steel-blue and the wings blue-green. A wide range of crest colours have been observed, the most common being a bright flame-red.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/adherer.lua",
+   "content": "-- Adherer: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Adherer\",\n  page = \"9\",\n  pages = \"9\",\n  source = \"FF\",\n  race = \"Adherer\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"1-3\",\n  xp = 150,\n  xpPerHp = 4,\n  xpValue = 222,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = 20,\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Semi-\",\n  alignment = \"Lawful evil\",\n  specialAttacks = \"Adhesion - see below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This curious creature bears a close resemblance to a mummy - man-sized and with loose folds of dirty white skin which appear on first sight to be a mummy's bandages. Coincidentally, the creature is just as vulnerable to fire as is a mummy due to a resinous solvent in its body fluids. (See ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL - Mummy.) It is immune to all first-level magic-user spells except magic missile which causes it 3-18 hit points of damage per missile.\\n\\nThe creature's skin constantly exudes a sour-smelling glue-like substance with very powerful adhesive properties; any material except stone will adhere to it and only fire, boiling water or the creature's own voluntary secretions will break the adhesion. Thus any weapon which hits the beast will adhere to it (and only deliver half damage). Similarly the creature will stick to any character it hits with its two-handed flailing fist attack (which also inflicts 1-3 hit points of damage on the victim); its favourite tactic is to bind up an opponent in this fashion and use him as an involuntary shield.\\n\\nThe adhesive properties of the secretion wear off in 5-10 turns after the beast is killed.\\n\\nUsually the adherer will catch its prey by waiting in ambush, camouflaging itself by rolling in dirt, sticks, and leaves and then artfully arranging larger pieces of debris to conceal its form. Any prey (regardless of size) passing near its 'hideout' will trigger its attack response and the adherer will pounce on the closest target, attempting to hit and to cling with bulldog-like tenacity until the prey expires. However, if it is spotted and attacked before any potential prey has come into pouncing range (with missile fire, or sometimes even loud noises), it will become confused and beat a hasty retreat.\\n\\nBoiling water (or boiling liquid of other types) will cause the adherer 1-3 hit points of damage if a sizeable quantity is thrown over the beast (the contents of a large bucket would just suffice if thrown from close enough to minimise 'spread') and this will inhibit its adhesive properties for the subsequent melee round.\\n\\nThe adherer's taste for prey is wide-ranging and it will usually attack, given a suitable opportunity. The only exception to this is the spider - the adherer will never attack a spider of whatever variety and sometimes it has been known to co-operate with them in trapping prey.\\n\\nDespite its appearance, the adherer is not an undead creature.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/aleax.lua",
+   "content": "-- Aleax: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Aleax\",\n  page = \"11\",\n  pages = \"11\",\n  source = \"FF\",\n  race = \"Aleax\",\n  hitDice = \"See below\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"0\",\n  armorClass = \"See below\",\n  numAttacks = \"See below\",\n  damage = \"See below\",\n  xp = \"See below\",\n  xpPerHp = \"0\",\n  xpValue = 0,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Genius\",\n  alignment = \"See below\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Regeneration - see below\",\n  magicResistance = \"100%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"An aleax is a physical manifestation of the vengeance of certain gods. There is but one aleax for each such god, sent to punish and redeem those who stray from alignment, fail to sacrifice enough treasure or otherwise anger their god. An aleax will never be met by chance.\\n\\nAn aleax appears in human form and will closely resemble his intended victim. To that victim, the aleax will appear bathed in shimmering light which varies in colour according to the god's alignment - golden for lawful good, deep purple for lawful evil, ever-changing rose-and-blue hues for chaotic good, and so forth. On appearance, the aleax will attack his intended victim - he cannot be detected in any way by others, nor will physical or magical attacks touch the aleax except those from his victim. To an observer, the victim appears to be in conflict with a totally invisible, totally invulnerable being.\\n\\nTo the victim, the aleax will be in all respects (except as indicated elsewhere) his own exact duplicate. It will have the same characteristics, hit points, armour, weapons and so on. There are but two differences in combat:\\na) the aleax regenerates after being first wounded; the round after the wound is taken, it regenerates 1 hit point, the next round 2 hit points, then 4 hit points, then 8 hit points and so on until it is killed (reduced to zero hit points or below) or all hits are restored. If it is then hit again, the progression starts again at 1 hit point;\\nb) any hit scored against an aleax on an unmodified roll of 19 does double damage, and any hit on an unmodified 20 does quadruple damage. (Note that damage inflicted by the aleax on its victim is normal, whatever the 'to hit' roll.)\\n\\nA victim killed by an aleax loses all treasure (even if cached - gods are near-omniscient!) and half his experience points. The character is then automatically raised and may then begin life again at the appropriate experience level. All the victim's magical items lose their magical properties, scrolls become blank, potions become inert and so on. No resurrection is necessary and the character will not receive a further visitation from an aleax providing he remains true to his god thereafter.\\n\\nIf an intended victim kills an aleax, that person is taken to Heaven (or Olympus, Hell, Valhalla as appropriate) to serve his god personally for a year and a day. On return, the character will regain all former possessions (which in this case retain their properties and powers, though they are not available for use by another character during the owner's absence) and the deity will almost certainly (95% chance) add an extra reward (e.g. a powerful magical item, promotion to the next highest experience level etc. - at the referee's discretion).\\n\\nAs it appears, an aleax will, in the victim's alignment language, utter a few brief words to indicate that the victim is to be punished by his god. Otherwise an aleax will never converse, no matter under what duress.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/al_miraj.lua",
+   "content": "-- Al-Mi'Raj: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Al-Mi'Raj\",\n  page = \"11\",\n  pages = \"11\",\n  source = \"FF\",\n  race = \"Al-Mi'Raj\",\n  hitDice = \"1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 0,\n  avgHp = 5,\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = 10,\n  xpPerHp = 1,\n  xpValue = 15,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"2-20\",\n  lairPct = 5,\n  treasure = \"Nil\",\n  move = \"18\\\"\",\n  size = \"S (3' tall)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The al-mi'raj generally roams pastures and woodlands but is sometimes discovered in dungeons. Its lair is usually a small cave just below ground.\\n\\nThe creature resembles a large yellow hare with a long (1 1/2'-2') black horn protruding forwards from the centre of its forehead, resembling that of a unicorn. In melee it will stab with its horn, its nimbleness giving the horn damage potential of a dagger (1-4 hit points of damage).\\n\\nIts intellect is severely limited and its behaviour unpredictable - for instance it may well attack for no good reason. If it is captured alive when young, the beast shows a surprising aptitude for training and its fearlessness makes it a useful companion.\\n\\nThe al-mi'raj has a particularly acute sense of smell and sharp eyesight.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/apparition.lua",
+   "content": "-- Apparition: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Apparition\",\n  page = \"12\",\n  pages = \"12\",\n  source = \"FF\",\n  race = \"Apparition\",\n  hitDice = \"8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 36,\n  armorClass = \"0\",\n  numAttacks = 1,\n  damage = \"See below\",\n  xp = 1000,\n  xpPerHp = 10,\n  xpValue = 1360,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 20,\n  treasure = \"E\",\n  move = \"24\\\"\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Can only be hit by magical or silver weapons\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"An apparition is turned as a spectre. It will be reluctant to approach mirrors or anything else made of silver. The apparition has an emotive E.S.P. ability which enables it to sense potential victims up to 100' away. It surprises a party or an individual on a roll of 1-5 (d6) due to its uncanny appearance from wall, floor or ceiling, using the surprise thus gained to close the distance between it and its victim. When in sight it appears as an insubstantial skeletal being in a thin white robe.\\n\\nEven though the victim may be aware that the apparition cannot physically do them harm, the suggestion is immensely strong. The victim must roll 3d6; a total under the victim's intelligence means that the suggestion is ineffective and the victim is immune (though only to that particular apparition). However, a total equal to or greater than the victim's intelligence means that they are stricken with horror and must again roll 3d6. This score is matched against their constitution. If the total is less than the constitution the victim flees in terror for 1-4 melee rounds (and may be attacked again in so doing). However, if the total is equal to or greater than the constitution the victim suffers a massive heart seizure and dies instantly.\\n\\nA slain victim may be raised but if the body is left, or no attempt is made within one hour to raise it, it will rise as an apparition in 2-8 hours.\\n\\nThe apparition may be 'attacked' normally on the Ethereal Plane by characters able to move and fight on that plane, but remains on the Prime Material Plane for only one melee round per victim attacked and it is only during this period that it can be attacked by non-ethereal means.\\n\\nTo make its 'attack' the apparition need not score a hit in the usual sense so no 'to hit' roll is required.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/astral_searcher.lua",
+   "content": "-- Astral Searcher: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Astral Searcher\",\n  page = \"13\",\n  pages = \"13\",\n  source = \"FF\",\n  race = \"Astral Searcher\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"10\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 73,\n  xpPerHp = 2,\n  xpValue = 91,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"4-24\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Non-\",\n  alignment = \"Any\",\n  specialAttacks = \"All victims AC5\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"50%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Astral searchers - mindless shells of nebulous humanoid shape - are created by concentrated and/or traumatic human thought. Violent death, spells cast while on the Astral Plane and astral combat often result in the creation of astral searchers (an event quite unknown to their creator or source). Driven by their past connection with material beings, astral searchers seek material bodies with complete singleness of purpose. Wandering the Astral Plane, they search for weak points in the fabric connecting the Astral to the Prime Material Plane; they cluster at such points, waiting for the stress lines to become collinear so that they can pass from the Astral to the Material through the singularities thus created. Such weak points exist naturally; they may also be created during astral travel (4% chance) in which case they exist only temporarily.\\n\\nWhen they have been able to cross to the Prime Material Plane, astral searchers emerge there and attack the nearest living humanoids in the hope of possessing their bodies. Astral searchers attack the psyche (so all victims are treated as AC5 against their attack, regardless of physical or magical protection) though their victims will believe the attack to be physical and will sustain damage accordingly. All damage inflicted by astral searchers is illusory and will fade in 3-12 rounds following the termination of the astral searchers' attack.\\n\\nIf an astral searcher reduces its victim to zero hit points or below, the mind and personality of the victim are destroyed and the astral searcher possesses the body. It acquires the victim's physical abilities and hit points (as all damage from the astral searcher's attack now disappears) but not the former owner's personality, and alignment should be redetermined at random. The possessed body becomes a new non-player character in the body of a player character and what this non-player-character may do is entirely in the hands of the referee, who must have regard to the body's alignment in determining its action.\\n\\nAstral searchers can be exorcised from a body, but the original psyche will have been completely destroyed and the player character cannot be raised or brought back. If an astral searcher is driven out of a body, the empty corpus will then be an open invitation to possession by a demon or other similar creature (at the discretion of the referee).\\n\\nAstral searchers may be attacked physically; destruction of the materialised searcher body will result in the destruction and dissipation of the astral searcher itself. Since they exist simultaneously on two planes, astral searchers are 50% resistant to magic.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/babbler.lua",
+   "content": "-- Babbler: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Babbler\",\n  page = \"13\",\n  pages = \"13\",\n  source = \"FF\",\n  race = \"Babbler\",\n  hitDice = \"5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 23,\n  armorClass = \"6\",\n  numAttacks = 3,\n  damage = \"1-6/1-6/1-8\",\n  xp = 130,\n  xpPerHp = 5,\n  xpValue = 245,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"2-12\",\n  lairPct = 15,\n  treasure = \"B\",\n  move = \"6\\\" or 12\\\" (see below)\",\n  size = \"L (8' tall)\",\n  intelligence = \"Average but high cunning\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Weird mutations of lizard men, babblers are large ponderous marsh-dwellers, known as marsh-gibberers to native tribes dwelling near their swamp habitat. Their predominant colour is a dirty yellow, though their undersides are grey. Mottled grey patches create weird designs on their muscular bodies. In form, the babbler resembles a small gorgosaurus with a flexible, tough tail employed to keep the creature stable in erect movement.\\n\\nNormal movement is a surprisingly fast (12\\\" rate) slither on its stomach, but in melee the babbler must stand erect, in which posture its movement rate is reduced to 6\\\", in order to use its two foreclaws (1-6 hit points of damage each) and its bite (1-8 hit points of damage). It has a particularly large mouth, filled with rows of sharp teeth.\\n\\nWhen moving on its belly the babbler is difficult to detect (25% chance) but animals will smell it some distance away. If it is undetected in approach it can strike from behind as a 4th level thief, doing double damage and gaining a bonus of +4 on the 'to hit' roll.\\n\\nThe babbler is particularly fond of human flesh and will attack humans unless outnumbered by more than two to one. Raiding parties of marsh-dwelling lizard men have been observed to be led by one, two or even three babblers in an evil quest for human flesh.\\n\\nThe babbler communicates with its kind in a quasi-lingual babbling tongue which defies efforts at analysis and learning by humans. It can understand the common tongue in a rudimentary fashion.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/bullywug.lua",
+   "content": "-- Bullywug: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Bullywug\",\n  page = \"16\",\n  pages = \"16-17\",\n  source = \"FF\",\n  race = \"Bullywug\",\n  hitDice = \"1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 0,\n  avgHp = 5,\n  armorClass = \"6 (or better)\",\n  numAttacks = \"3 or 1\",\n  damage = \"1-2/1-2/2-5 or by weapon\",\n  xp = 18,\n  xpPerHp = 1,\n  xpValue = 23,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"10-80\",\n  lairPct = 20,\n  treasure = \"J, K, M, Q (x5) & C (magic only) in lair\",\n  move = \"3\\\"/15\\\"\",\n  size = \"S to M\",\n  intelligence = \"Low to average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Hop\",\n  specialDefenses = \"Camouflage\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The bullywugs are a batrachian race of bipedal monsters which inhabit wet places - rainy forests, marshes, damp caves or virtually any other place which is shady or dark and has water nearby, for bullywugs need to dampen their skins from time to time.\\n\\nSome types of these creatures are more intelligent than others. The intelligent groups tend to dwell in caves or deserted human habitations, and they will usually have armour, shields and various forms of weapons (use the example of human bandits for arms and armour). The less advanced bullywugs hate their more intelligent fellows and war upon them.\\n\\nUnless encumbered by armour and shield, a bullywug is able to swim rapidly. Even with such encumbrance, a bullywug can swim at 9\\\" speed. Likewise, with or without adornment, a bullywug can hop forward 3\\\" or upwards 1 1/2\\\". In doing so, the creature adds +1 to its 'to hit' die roll or rolls. If it is using an impaling weapon, the bullywug delivers double damage as a result of a successful hopping attack.\\n\\nThe hopping attack with a weapon is their normal means of melee. However bullywugs without access to weapons, or which have been disarmed, will still hop to the attack in which case they use two claws (1-2 hit points of damage each) and a bite (2-5 hit points of damage).\\n\\nBullywugs have a chameleon-like power; their skin colouration can be grey, green or brown in light or dark shades. Thus, if motionless and in an area which allows use of camouflage power, a bullywug is 75% unlikely to be noticed (this applies to infravision as well, as the colour alteration also alters body heat). When attacking unnoticed from camouflage conditions, the bullywug has a 3 in 6 chance of surprising its victim (5 in 6 if hopping to the attack).\\n\\nThe major weakness of these creatures is that unless they are employing long weapons, their attacks always take place after those of their opponents, due to slow speed of movement or exposure while hopping. Note that a weapon can be set against a hop just as against a charge (which, in effect, a hop is).\\n\\nBullywugs form organised bands and are always led by a large individual with a full 8 hit points. If 30 or more of these creatures are encountered, there will be at least 5 large individuals and a leader of 10-13 hit points (effectively a 2-dice monster) doing +1 damage on all attacks. Those using armour etc. will also have a 10% chance per ten creatures in the group of having a tribal shaman of 11-14 hit points. Groups of 60 or more will have a great chief of 16-19 hit points which does +2 damage on all attacks.\\n\\nThese creatures will readily serve chaotic evil masters, human or otherwise. It is rumoured that bullywug-human crossbreeds are viable and that certain degenerate humans dwell in mixed communities with these monsters, serving unnamed things from caverns deep beneath the earth.\\n\\nThe bullywugs have their own, rather primitive language and the more intelligent ones can converse haltingly in the common tongue, though their vocabulary is rather limited. They are held in disdain by sahuagin, who will occasionally raid a bullywug lair for sport and out of sheer malice, eating any captive alive. Lizard men will rarely associate with bullywugs, though there is no open hostility towards them.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/bat_giant.lua",
+   "content": "-- Bat, Giant: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Bat, Giant\",\n  page = \"14\",\n  pages = \"14\",\n  source = \"FF\",\n  race = \"Bat, Giant\",\n  hitDice = \"1-4 hit points or 1\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 3,\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"1-2 or 1-4\",\n  xp = 5,\n  xpPerHp = 1,\n  xpValue = 8,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"3-18\",\n  lairPct = 50,\n  treasure = \"Nil\",\n  move = \"3\\\"/18\\\"\",\n  size = \"S\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These creatures - giant versions of the carnivorous variety of the ordinary bat, with bodies 3' long and a wingspan of 5'-6' - dwell in dark caverns, usually underground. In flight they emit a high-pitched whistling sound, a navigational device which compensates for their poor eyesight.\\n\\nGiant bats are highly manoeuvrable in flight - anyone with a dexterity of less than 13 who fires a missile at a flying giant bat does so at -3 hit probability. For purposes of aerial combat, they are manoeuvrability class C.\\n\\nThe creature must land - usually on its victim - to attack with its bite (1-2 or 1-4 points of damage). 1% of victims bitten by giant bats contract rabies.\\n\\nOnly 10% of giant bats are of the 1 hit die variety.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/berbalang.lua",
+   "content": "-- Berbalang: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Berbalang\",\n  page = \"14\",\n  pages = \"14\",\n  source = \"FF\",\n  race = \"Berbalang\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 6,\n  armorClass = \"6\",\n  numAttacks = 3,\n  damage = \"1-4/1-4/1-6\",\n  xp = 65,\n  xpPerHp = 2,\n  xpValue = 77,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = \"See below\",\n  treasure = \"D\",\n  move = \"6\\\"/24\\\"\",\n  size = \"M\",\n  intelligence = \"Very\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The berbalang is a solitary biped with leathery skin and bat-like wings. Its eyes are white and watery and its powers of infravision are twice as effective as elves' (120' range).\\n\\nThe creature spends the greater part of each month in an apparently dormant state, hibernating preferably in a well-hidden cave. Though seemingly comatose, the berbalang is actually roaming the Astral Plane where it spends its time hunting and killing creatures weaker than itself and engaging in bizarre and complex courtship and mating rituals with other berbalangs. If its body is discovered and interfered with during the creature's astral roaming, the berbalang will attempt to return to the body and animate it; however this can take a long time (1-100 rounds) depending on the berbalang's actual distance away across the planes. If the body is destroyed, the astral berbalang dies as well. For this reason the creature takes a great deal of care in hiding itself and is very ingenious in this regard.\\n\\nFor three days each month at the time of the full moon, the berbalang returns to its material body, only to alter its form of trance and send forth a physical projection of itself upon the Prime Material Plane. The projection flies in search of food - a freshly-killed human corpse. The projection is physical in the sense that it can receive and inflict damage - in this respect it is a duplicate of the original. The berbalang can use all of the senses of the projection and will command (and essentially 'is') the projection in its quest for food. The projection can range up to 3 miles from the material berbalang body. The projection fights, if it needs to do so, in the same way as the berbalang - with its two claws (1-4 hit points of damage each) and a bite for 1-6 hit points of damage.\\n\\nIf the projection is hit and suffers damage it immediately takes flight, returning at flying speed (24\\\" rate) to the body which will be unable to project again for a number of days equal to the number of hit points lost. If the projection is 'killed' it disappears, and there is a 75% chance that the original will also die from system shock.\\n\\nIf the berbalang survives an attack, it will eventually seek revenge upon its attacker, though this may be delayed while the body recovers. If a wounded projection is followed back to the berbalang lair, the followers may be taken aback when they confront the unwounded physical creature.\\n\\nIf the projection is forced back to the body before the berbalang was able to feed, or if the projection was destroyed before feeding, a new projection will go forth again as soon as possible (after the compulsory period of recovery) regardless of the phase of the moon.\\n\\nTo keep from depleting its food supply or arousing too great a local alarm, a berbalang will move its physical body to a new area every three or four months. They always travel by night and avoid confrontations when they are actually physically present. Since berbalangs live on the edge of civilisation, where lack of organisation allows them free rein, a berbalang is very rarely encountered in its physical form unless adventurers happen upon its lair or follow its projection back to its body.\\n\\nIf a projection kills a human it will immediately pick up the body and fly, at full rate, back to the host which will immediately emerge from its trance. While in flight, the projection will be feeding on the body - a fully-grown human can thus be devoured in one turn, leaving only the bones, garments and equipment.\\n\\nFor the purposes of aerial combat, the berbalang and its projection are both manoeuvrability class B.\\n\\nHow the berbalang derives sustenance when only its projection feeds, and how it reproduces when all mating activity takes place on the Astral Plane, are mysteries so far unexplained.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/blindheim.lua",
+   "content": "-- Blindheim: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Blindheim\",\n  page = \"15\",\n  pages = \"15\",\n  source = \"FF\",\n  race = \"Blindheim\",\n  hitDice = \"4+2\",\n  hitDiceNum = 4,\n  hitDiceBonus = 2,\n  avgHp = 20,\n  armorClass = \"See below\",\n  numAttacks = 1,\n  damage = \"1-8\",\n  xp = 130,\n  xpPerHp = 5,\n  xpValue = 230,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 5,\n  treasure = \"B\",\n  move = \"9\\\"\",\n  size = \"S (4' tall)\",\n  intelligence = \"Animal\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Blinding stare\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This subterranean creature is a yellow frog-like humanoid with huge eyes that shine like searchlights. While in repose, the beast keeps its eyes 'turned off' by means of an extra eyelid; however it can 'attack' instantaneously by opening its eyes, and its acute sense of hearing will usually indicate to it the direction of its 'target'. Those who come within its beams at a range of 30' or less must save (as against wands) or be blinded for 11-20 turns. Anyone with infravision in that range must save at -3.\\n\\nThose not blinded will still be unable to look directly at the beast so its effective armour class is 1. However, if for any reason an attacker is immune to bright light, the blindheim's true armour class is 3.\\n\\nWhen at close quarters, the blindheim attacks with a vicious bite which inflicts 1-8 hit points of damage.\\n\\nDescription: The creature is coloured in varying shades of yellow, the darker shades on its back contrasting with lighter shades on its underbelly. If the eyes of a dead blindheim are opened, they are seen to be a dull gold in colour.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/bonesnapper.lua",
+   "content": "-- Bonesnapper: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Bonesnapper\",\n  page = \"15\",\n  pages = \"15\",\n  source = \"FF\",\n  race = \"Bonesnapper\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"4\",\n  numAttacks = 2,\n  damage = \"1-8/1-4\",\n  xp = 60,\n  xpPerHp = 4,\n  xpValue = 132,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-3\",\n  lairPct = 20,\n  treasure = \"C\",\n  move = \"6\\\"\",\n  size = \"M (5' high)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The bonesnapper is a small descendant of a long-extinct class of carnivorous dinosaur, as stupid as it is aggressive. The large jaw contains many sharp teeth which it uses to inflict 1-8 hit points of damage in melee; at the same time, the tail sweeps round to deliver 1-4 hit points of damage on the same victim. Its aggressive nature leads it always to fight to the death.\\n\\nThough non-intelligent, the bonesnapper has inherited a primeval instinct for the collection of human bones, particularly jawbones, which it uses to decorate its subterranean lair. The number of such bones discovered in a lair will give a good indication of the occupant's status among its kind.\\n\\nDescription: The bonesnapper is a grey-green colour mottled with dark grey spots and patches. It has tiny scarlet eyes and yellow-white teeth.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/booka.lua",
+   "content": "-- Booka: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Booka\",\n  page = \"16\",\n  pages = \"16\",\n  source = \"FF\",\n  race = \"Booka\",\n  hitDice = \"1-4 hit points\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 3,\n  armorClass = \"7\",\n  numAttacks = 0,\n  damage = \"Nil\",\n  xp = 9,\n  xpPerHp = 1,\n  xpValue = 12,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-4\",\n  lairPct = 75,\n  treasure = \"J\",\n  move = \"12\\\"/18\\\"\",\n  size = \"S\",\n  intelligence = \"Very\",\n  alignment = \"Neutral (chaotic good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"10%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The booka are sprite-like creatures given to dwelling in attics, in eaves and on sunny rooftops. They hate cold, and in such climes will always be inside, near chimneys. On bright, sunny mornings they will sweep the stairs or porch of the place they dwell in, always doing so when there is nobody around to observe them. If disturbed when involved in such tasks, they will become angry and immediately remove to a new home.\\n\\nBooka are very fast-moving and can also fly. They can become invisible at will, even when running or flying. They hate evil creatures and will play tricks on them if given the opportunity - hiding valued objects, tangling things like rope, hair, clothing etc., and generally causing trouble.\\n\\nIf a booka is captured or harmed in any way, it is certain that others of its ilk aware of this act will bring dozens of other booka to cause mischief and trouble until the offender frees the captive or makes amends for the harm by giving a valuable gift (such as a sack of gold, jewellery or even something magical) to the booka, placing the item offered on a roof-top and leaving it for a day. Failure to placate angry booka will eventually result in some sort of fatal accident, for the creatures will place snares and traps for the offender.\\n\\nA booka is only about 1' tall. Both males and females tend to have large features and thin bodies. They can be described, at best, as 'homely'. For purposes of aerial combat, they are manoeuvrability class A, though they will avoid combat of this or any other sort by means of their invisibility, if at all possible.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/drow.lua",
+   "content": "-- Drow: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Drow\",\n  page = \"33\",\n  pages = \"33-34\",\n  source = \"FF\",\n  race = \"Drow (Dark Elf)\",\n  hitDice = \"2 (and better)\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"4 (and better)\",\n  numAttacks = \"1 or 2\",\n  damage = \"By weapon type\",\n  xp = \"Variable\",\n  xpPerHp = \"0\",\n  xpValue = 0,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare (at best)\",\n  noAppearing = \"5-50\",\n  lairPct = 0,\n  treasure = \"Individuals: N (x5), Q (x2)\",\n  move = \"12\\\" (females 15\\\")\",\n  size = \"M (5' tall)\",\n  intelligence = \"Mean: highly intelligent\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"50% (and better); all saving throws at +2\",\n  psionic = \"Unknown\",\n  attackDefenseModes = \"Unknown\",\n  text = \"Ages past, when the elvenfolk were but new to the face of the earth, their number was torn by discord and those of better disposition drove from them those of the elves who were selfish and cruel. However constant warfare between the two divisions of elvenfolk continued, with the goodly ones ever victorious, until those of dark nature were forced to withdraw from the lands under the skies and seek safety in the realm of the underworld. Here, in lightless caverns and endless warrens of twisting passages and caves hung with icicles of stone, the dark elvenfolk - the drow - found both refuge and comfort. Over the centuries they grew strong once again and schooled themselves in arcane arts. And though they were strong enough to face and perhaps defeat their former brethren in battle, the drow no longer desired to walk upon the green lands under the sun and stars. They no longer desired a life in the upper world, being content with the gloomy fairyland beneath the earth that they had made their own. Yet they neither forgave nor forgot, and even now, above all else, they bear enmity for all of their distant kin - elves and faeries - who drove them down beneath the earth and now dwell in the meadows and dells of the bright world. Though they are seldom if ever seen by any human or demi-human, the drow still persist, occasionally entering lower dungeon levels and consorting with other creatures in order to work out their schemes and inflict revenge upon those who inhabit the world above.\\n\\nRegardless of the number of drow appearing, there will always be one of higher level than the main body. Drow males are all at least 2nd level fighters - some are as high as 7th level in fighting ability. Males can also be magic-users, some as high as 12th level. Female drow are also at least 2nd level fighters and some have attained 9th level as fighters. Most drow clerics are female, and no upper limit to their level of ability is known; however no male drow cleric has been known to be higher than 4th level.\\n\\nDrow wear a fine mesh armour of exquisite workmanship. It is made of an alloy of steel containing adamantite. Even the lowliest fighters have in effect +1 chainmail, with higher level drow having +2, +3, +4 or even +5 chainmail. Small bucklers are also used - shields of unusual shape - those drow of greater experience level and importance in drow society having bucklers fashioned of adamantite so as to be +1, +2 or even +3 value.\\n\\nAs will be described later, all drow move silently and with graceful speed, even when wearing their black mesh of armour. Each drow carries a small amount of personal wealth in a soft leather bag worn around the neck beneath the mail. In addition they arm themselves with long dagger and short sword of adamantite alloy (+1 to as high as +3 or even +4 borne by noblefolk); 50% or more carry small crossbows which are held in one hand (6\\\" range light crossbow) and shoot darts coated with a poison which renders the victim unconscious (save is at -4). These darts also inflict 1-3 points of damage on a victim.\\n\\nA few drow also carry adamantite maces (+1 to +5) and/or small javelins (also poisoned with the same substance as the darts) with atlatls (9\\\" range, +3/+2/+1 to hit at short/medium/long range).\\n\\nDrow have superior infravision of the 12\\\" range variety and move with silence. The black boots and cloaks that drow wear are similar to cloaks and boots of elvenkind, except that the wearer has only a 75% chance of surprising enemies or blending into shadows. The material will not cut easily and cloaks have a +6 to saving throws vs. fire attacks; however, any alteration to the cloak has a 75% chance of unraveling the material and making it useless. Drow themselves are only 12 1/2% (1 in 8) likely to be surprised by opponents. Drow are also both intelligent and highly co-ordinated, being able to use either or both hands/arms for attack and defence. They make saving throws versus all forms of magic (clerical included) spells, whether from a caster or from a device, at +2. Drow magic resistance increases by 2% for each level of experience they have gained, with multi-classed individuals gaining this bonus for but one of their classes (the highest). Thus, a 7th level drow is 64% resistant to any magic and will save at +2 against any magic which could have an effect.\\n\\nBecause the drow have dwelled so long in the dark labyrinthine places under the surface of the earth, they dislike bright light. They will not venture forth into daylight except on the cloudiest, gloomiest days. If within the radius of a light or continual light spell the dark elves are 90% likely to be seen, they lose 2 from their dexterity and all attacks made by them are at -2 on the 'to hit' roll (+2 on saving throws against such attacks as applicable). If they are attacking targets inside the radius of light or continual light spells, the bright illumination causes them to suffer a 'to hit' penalty of -1 and the converse +1 on saving throws against such attacks is awarded to the target creatures.\\n\\nIf bright light exists, it is 75% likely that drow will retire from the situation because of the illumination, unless such a retreat would imperil one of their number, would otherwise be harmful to their desired ends or would expose some important feature to the light, bringing intruders. In any event, such dimmer light sources as torches, lanterns, magic weapons, fire beetle essence or faerie fire do not adversely affect the performance of the dark elves.\\n\\nDrow are able to speak the subterranean trade language common to most intelligent dwellers in the underworld, the common tongue, gnome, elven and their own language in addition to the other tongues which their level of intelligence allows. Many know the languages of the various races which speak and dwell underground. All of the dark elves also have a silent language composed of hand movements, and this means of communication is highly sophisticated, being able to convey much information to a considerable degree of complexity. When drow are within 30' of each other, they use facial and body expression, movement and posture; these latter means of communication alone are capable of conveying considerable information, and when coupled with hand/finger movements the whole is as erudite as any spoken speech.\\n\\nAll the dark elves can use the following spells once per day: dancing lights, faerie fire, darkness. Those above 4th level are also able to detect magic, know alignment and levitate once per day. Drow females can, in addition, use the following spells once per day: clairvoyance, detect lie, suggestion, dispel magic. Drow have powers which are the same as those of dwarves with respect to stone and things underground. They also detect hidden or secret doors as elves do.\\n\\nDrow abilities are determined as follows: Strength 8 + 1-6 (6 + 1-6 for males); Intelligence 12 + 1-6 (10 + 1-8 for males); Wisdom 8 + 1-10 (8 + 1-4 for males); Dexterity 12 + 2-8; Constitution 4-16; Charisma 10 + 1-8 (8 + 1-8 for males).\\n\\nIf more than 10 drow are encountered there will be in addition a male who is a fighter/magic-user of at least 3rd level. If more than 20 are encountered, there will be a female fighter/cleric of at least 6th level clerical ability in addition to the male fighter/magic-user. If more than 30 drow are encountered, 11-16 will be females, the leader will be a female cleric/fighter of at least 8th/7th ability level, the male fighter/magic-user will be at least of 5th/4th ability level and each will have an assistant of level as previously indicated for the ones present with.\\n\\nSpecial Note Regarding Drow Treasure: Cloaks, armor, and weapons made by the Drow have special properties, although they do not radiate magic. The items are made in the strange homeland of the Drow; vast underground cities of carven stone and minerals, places of weird and fantastic beauty inundated with unknown radiations which impart the special properties to their items. When these are exposed to direct sunlight, irreversible decay starts and the items will become totally useless in 2-12 days. If protected from sunlight, they will retain their special properties for 31-50 days before becoming normal items; and if exposed to the radiations of the Drow homeland for a period of 1 week out of every 4 weeks, the items could remain potent indefinitely. Drow sleep poison decays instantly in sunlight, and will lose its effectiveness after 60 days in any event after being exposed to air, although unopened packets of the poison will remain potent for up to one year.\\n\\nDescription: Drow are black-skinned and pale-haired. They are slight of build and have long, delicate fingers and toes.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/mephit_fire.lua",
+   "content": "-- Mephit (Fire): promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Mephit (Fire)\",\n  page = \"64\",\n  pages = \"64-65\",\n  source = \"FF\",\n  race = \"Mephit (Fire)\",\n  hitDice = \"3+1\",\n  hitDiceNum = 3,\n  hitDiceBonus = 1,\n  avgHp = 15,\n  armorClass = \"5\",\n  numAttacks = 2,\n  damage = \"1-3/1-3\",\n  xp = 150,\n  xpPerHp = 4,\n  xpValue = 210,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"2-12 platinum pieces each\",\n  move = \"12\\\"/24\\\"\",\n  size = \"M (5' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Variable but always evil\",\n  specialAttacks = \"Breath Weapon\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The various mephits are the evil messengers and errand-runners of the powerful creatures of the Lower Planes. They are common inhabitants of all these locales, from the Nine Hells to the Abyss. Their alignment varies, depending on their plane of origin, but they are always evil.\\n\\nWhen mephits appear on the Prime Material Plane, they always have some demoniac or diabolic mission to perform (or a similar mission from another such evil personage). This can vary from a rigorous task (for example seeking out a particular victim and capturing him for transportation to Hades) to a more general mission (such as indiscriminate looting and killing).\\n\\nMephits are connoisseurs of the vulgar and tasteless: they share an extraordinarily twisted sense of humour (to a mephit, the sight of a creature writhing in agony is excruciatingly funny). They delight particularly in tormenting the helpless. If they can obtain them (and it is usual that they do) they will wear clothes of the most garish design and colour possible. They are often seen puffing upon smoking rolls of exceedingly foul-smelling dried vegetation. They adopt a strutting gait and have shrill voices (they all speak a common mephit tongue and their alignment language).\\n\\nAll mephits are about 5' tall, with functional wings and fangs. Other forms of mephit are thought to exist though there is as yet no positive identification of type.\\n\\nSo far as can be ascertained, no particular type of mephit is more or less common on any of the Lower Planes - the types appear to be distributed in an indiscriminate fashion.\\n\\nFor purposes of aerial combat, all mephits are manoeuvrability class B.\\n\\nFire Mephit: These mischievous creatures are dull red in colour, with thin streaks of black. Their bodies are surrounded with wisps of flame - touching them with bare hands will cause 1 hit point of damage.\\n\\nThey attack with two claws (1-3 hit points of damage each plus 1 point of heat damage for a total of 2-4) and a breath weapon. This is either a jet of flame 15\\\" long and 1' in diameter which automatically hits a designated target in range and delivers 2-9 hit points of damage (damage halved if a saving throw is made) or a blanket of flame 5' square immediately in front of the mephit (4 hit points of damage to each victim - no saving throw permitted). The mephit is able to vary the form of its breath weapon according to the circumstances. It can breathe three times per day.\\n\\nThe fire mephit can heat metal and use magic missile (2 missiles) once each per day. Once every hour they may attempt to gate in another mephit - 25% chance of the attempt succeeding. The new arrival will be a fire, lava, smoke or steam mephit (equal probability each type).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/githyanki.lua",
+   "content": "-- Githyanki: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Githyanki\",\n  page = \"43\",\n  pages = \"43-44\",\n  source = \"FF\",\n  race = \"Githyanki\",\n  hitDice = \"Variable (upper limit of 11)\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"0\",\n  armorClass = \"Variable\",\n  numAttacks = \"Variable (as human)\",\n  damage = \"By weapon type\",\n  xp = \"Variable\",\n  xpPerHp = \"0\",\n  xpValue = 0,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 40,\n  treasure = \"Individuals N; lair A, Z (x2)\",\n  move = \"Variable\",\n  size = \"M\",\n  intelligence = \"Exceptional or genius\",\n  alignment = \"Variable but always evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"150-250\",\n  attackDefenseModes = \"All/all but J\",\n  text = \"Many millennia ago the mind flayer (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL - Mind Flayer) conquered a race of evil humans and bound them to service, usually employing them as slaves but from time to time selecting particularly choice victims for food. The humans harboured deep resentment for centuries but could not summon up sufficient strength to free themselves from the mind flayer yoke. Gradually, in secret, they developed their powers and strength. Then under the leadership of the supreme leader Gith, they rebelled against their captors and, after a long and vicious struggle, succeeded in gaining their autonomy. From that moment, the race became known as the githyanki and they quickly gained a reputation as powerful psionicists and deadly fighters with an instinct for violence.\\n\\nThe githyanki now dwell in the Astral Plane but from time to time project themselves to the Prime Material Plane (an innate ability now common to all members of the race) and set up temporary refuges underground, using these as bases from which they mount raids on humans and mind flayers alike. (If githyanki encounter humans and mind flayers simultaneously they will destroy the mind flayers first and may appear to be co-operating with the humans, but as soon as the mind flayers are killed, the githyanki will turn on the humans and attempt to destroy them too.)\\n\\nThe githyanki worship a lich-queen said to have powers at the 24th level of magic-use or even higher.\\n\\nGithyanki progress as fighters, magic-users or fighter/magic-users; they have no ranger, monk, druid or assassin class though illusionists are infrequently (5%) met and there is a form of anti-paladin class - the knight. They have never been known to progress beyond the 11th level of experience and rarely above the 9th - it is assumed that the lich-queen destroys any githyanki who becomes powerful enough to risk challenging her supremacy.\\n\\nThe githyanki dwell in huge castles on the Astral Plane, each castle being ruled by a supreme leader - a fighter/magic-user of 10th/8th or 11th/9th level. The supreme leaders have power of life and death over all under their rule. Each castle will also contain 40 knights (anti-paladins of 9th level) - the supreme leader's elite supporting force and personal guard - and up to 1,000 githyanki of lower status.\\n\\nThey use armour and weapons as men do, though the ornateness of their design is often a distinguishing feature. When on war expeditions they wear +4 splint mail (AC0) but do not carry shields. Fighters and fighter/magic-users of 5th level and above will usually (50% chance) carry two-handed swords of +1 bonus, otherwise using normal two-handed swords. A githyanki fighter of 7th level and above will usually (60%) carry a +2 or +3 longsword, while a knight of 7th level and above will have (100%) a silver sword - a +3 two-handed sword which, if used astrally, has a 20% chance per melee round of cutting the silver cord (this does not affect mind barred victims). A supreme leader will wield a special silver sword which is +5, fully vorpal and affects mind barred victims. The silver swords are non-aligned, though they have intelligence of 5 or more and appropriate powers. Githyanki will go to almost any lengths to prevent any of these silver swords from falling into human hands and the loss of a special silver sword will promote the immediate formation of a very powerful raiding party of githyanki whose task is to recover the sword - failure to do so means instant death.\\n\\nOutside their Prime Material Plane lairs, githyanki will rarely be encountered in parties larger than 4, a typical party consisting of two trainees of any of the three classes (level 1-3), one fighter of level 4-6 and a leader fighter/magic-user of 7th/6th level. Rarely (10%) the githyanki parties encountered will have a special mission in which case there will only be one trainee and the party will be led by a knight of 8th level.\\n\\nIf a lair is found it will house 21-30 githyanki with typical distribution as follows:-\\n1 supreme leader: 11th level fighter or 7th/8th level fighter/magic-user\\n2 captains: 8th level fighter and 7th/6th level fighter/magic-user\\n1 knight: 8th level anti-paladin\\n2 warlocks: magic-users of 4th-7th level\\n3 sergeants: fighters of 4th-7th level\\n2 'gish': fighter/magic-users of 4th/4th level\\n10-19 lower levels: evenly distributed between the three possible classes and with experience levels 1st-3rd.\\n\\nVery infrequently, githyanki parties larger than four in number will be encountered (5% chance). These will be on particularly purposeful missions (though not in search of a lost silver sword - that activity promotes an even larger and stronger party) and will be stronger than normal; 5-10 individuals can be expected, led by the supreme leader of the lair, supported by one of the captains, the knight and 2-7 'lower ranks', evenly distributed. Both in the lair and in a large party, there is a 5% chance that there will be an illusionist of 6th level instead of one of the lower level types.\\n\\nGithyanki have normal human chances for magic item distribution other than swords. A Prime Material Plane lair will contain 5-10 magical items, selected as being particularly appropriate to the mission. In a small githyanki party there will usually (75%) be one magical item and a larger party will have 1-10.\\n\\nGithyanki have a pact with a group of red dragons (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL - Dragon, Red) which, in return for shelter, food and treasure, assist the githyanki when on the Prime Material Plane by acting as steeds. The dragons transport 4-6 and 1-5 githyanki each according to size/age (above sub-adult); thus a small young adult dragon could transport 5 githyanki (4 for size, 1 for age), an average-sized old dragon could transport 8 (5 for size, 3 for age) and a huge ancient dragon could transport 11 (6 for size, 5 for age). These red dragons will obey only githyanki when the latter are on the Prime Material Plane.\\n\\nGithyanki move at 96\\\" movement rate on the Astral Plane.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/grell.lua",
+   "content": "-- Grell: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Grell\",\n  page = \"46\",\n  pages = \"46\",\n  source = \"FF\",\n  race = \"Grell\",\n  hitDice = \"5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 23,\n  armorClass = \"4\",\n  numAttacks = 11,\n  damage = \"10x1-4/1-6\",\n  xp = 840,\n  xpPerHp = 5,\n  xpValue = 955,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Paralysation\",\n  specialDefenses = \"Immune to lightning\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The appearance of this dreadful creature is fearsome indeed - a body like a giant exposed brain approximately 5' in diameter and with a frontal beak, below which trail ten 6' long tentacles. The beast 'flies' by a levitation process, small inflections of the tentacles controlling horizontal movement. It is manoeuvrability class D.\\n\\nGrell are usually found underground but are occasionally seen in ruined/abandoned buildings. They are particularly dangerous and vicious, dropping on their victims from above whenever circumstances permit.\\n\\nAll ten tentacles are brought to bear on a single victim. Each inflicts 1-4 hit points of damage and carries small spines which can inject a venom into the victim; this will paralyse the victim unless he makes his saving throw against paralysation at +4. If any one of the tentacles succeeds in paralysing a victim, each melee round thereafter two tentacles will remain anchored on his body, the grell lashing with the other eight tentacles (for 1-4 hit points of damage each) and rending with its beak for 1-6 hit points of damage. None of these attacks, after the initial paralysation, requires a 'to hit' roll - once the grell has grasped its victim, lucky is he who escapes alive.\\n\\nAny hit on a tentacle will render it inoperative (though if the creature survives, the tentacle will regenerate in 1-2 days) but the damage is not subtracted from the creature's hit points - only by hitting the body can the grell be damaged in the usual way. The body and tentacles all have AC4.\\n\\nGrell are immune to lightning but otherwise have standard resistance to normal and magical attacks.\\n\\nThe body of the grell is a drab olive colour streaked with white; the tentacles are pale olive-green.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/grimlock.lua",
+   "content": "-- Grimlock: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Grimlock\",\n  page = \"47\",\n  pages = \"47\",\n  source = \"FF\",\n  race = \"Grimlock\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"1-6 or by weapon type\",\n  xp = 28,\n  xpPerHp = 2,\n  xpValue = 46,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"20-200\",\n  lairPct = 50,\n  treasure = \"Individuals K, L, M; in lair B\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Save as 6th level fighter (and see below)\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These fierce subterranean humanoid warriors dwell in deep caverns, only emerging in raiding parties to maraud across the earth's surface late at night, searching for humans to butcher and devour. Their eyes are blank and sightless; however they have highly developed senses of hearing and smell, these giving them effective 'vision' within 20'.\\n\\nThey are immune to the effects of spells affecting the visual nerves such as phantasmal force, darkness, invisibility, mirror image and so on. However spells such as audible glamer will partially 'blind' them, reducing their effective range of 'vision' to 10' and reducing their hit probability by 2. Substances such as snuff have the same effects if inhaled by a grimlock.\\n\\nFor every 10 grimlocks encountered there will be a 'leader' of 3 hit dice and AC4, while for every 40 there will also be a 'champion' of 4 hit dice and AC3. In the grimlock lair there will be females (an additional 80% of the number of males, each with 1 hit die and AC6) and young (an additional 100% of the number of males, each with 1 hit point, AC5 and non-combatant).\\n\\nGrimlocks rarely consort with other beings, though there is a small (10%) chance that they will allow medusae to share their lair and a 2% chance that a wandering group of grimlocks will be accompanied by 1-2 mind flayers. For the latter reason, grimlocks are particularly hated by githyanki.\\n\\nGrimlocks prefer edged blood-letting weapons and though they can fight with their bare hands (for 1-6 hit points of damage) they will usually be armed (90% chance) with weapons as follows: hand-axe 20%, battle-axe 15%, two-handed sword 15%, bastard sword 15%, broad sword 15%, long sword 20%.\\n\\nLeaders and champions will wield a battle-axe or two-handed sword.\\n\\nIf encountered in rocky terrain, grimlocks are able to blend with their surroundings; so long as they remain motionless, they cannot be detected other than by detect invisibility (unless someone actually bumps into them).\\n\\nAll grimlocks - whether warrior, leader or champion - make all saving throws as if they were 6th level fighters.\\n\\nDescription: Powerfully-built humanoids with thick, scaly grey skin, they are usually clad in dark rags. Their hair is long, black and usually unkempt. Their teeth are white and particularly sharp.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/h/hook_horror.lua",
+   "content": "-- Hook Horror: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Hook Horror\",\n  page = \"51\",\n  pages = \"51\",\n  source = \"FF\",\n  race = \"Hook Horror\",\n  hitDice = \"5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 23,\n  armorClass = \"3\",\n  numAttacks = 2,\n  damage = \"1-8/1-8\",\n  xp = 90,\n  xpPerHp = 5,\n  xpValue = 205,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-12\",\n  lairPct = 20,\n  treasure = \"P\",\n  move = \"9\\\"\",\n  size = \"L (9' tall)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Large, powerful bipeds, hook horrors have vulture-like heads and a hard plated exoskeleton which is mottled grey in colour. They inhabit deep underground corridors and chambers.\\n\\nThough their vision is very poor, their hearing is extremely acute and there is only a 10% chance of surprising a hook horror. The creature's arms end in sharp hook-like talons which it uses in melee, each inflicting 1-8 hit points of damage.\\n\\nA hook horror cannot speak but communicates with others of its kind by making clacking noises with the exoskeleton - an eerie sound which can alarm the unwary as it echoes around dungeon corridors.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/l/lava_children.lua",
+   "content": "-- Lava Children: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Lava Children\",\n  page = \"61\",\n  pages = \"61\",\n  source = \"FF\",\n  race = \"Lava Children\",\n  hitDice = \"4 or more\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"4\",\n  numAttacks = 3,\n  damage = \"1-6/1-6/2-12\",\n  xp = 150,\n  xpPerHp = 4,\n  xpValue = 222,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"3-18\",\n  lairPct = 0,\n  treasure = \"O\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Spells - see below\",\n  specialDefenses = \"'Immune' to metal - see below\",\n  magicResistance = \"Standard, but see below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These humanoids are approximately the same size as a broadly-built man; however, they have a curious child-like appearance, with pinkish-white skin and a permanent smile on their faces. They are the unnatural offspring of a union between spirits of earth and fire.\\n\\nIn melee they fight with their clawed hands (1-6 hit points of damage each) and a surprisingly powerful bite for 2-12 hit points of damage.\\n\\nThey are peculiarly 'immune' to metal. Metal simply does not exist for lava children. Thus any metal object can pass through them without harming them and they can move through metal without hindrance. Any metal worn by a victim of their attack is ignored for the purposes of computing armour class.\\n\\nMost lava children have 4 hit dice and are of the fighter class, but some are exceptional. In any group of 3-7, there will be one higher-level fighter - a 'warrior' with 5 hit dice - which hits at +1. A group of 8-10 will contain one warrior and one magic-user, also of 5 hit dice. A group of 11-14 will include one warrior, one magic-user and one cleric, each with 5 hit dice, while a group of 15-18 will include all the above plus one double-classed warrior/magic-user of 6 hit dice.\\n\\nMagic-users have the use of the following spells, once each per day: affect normal fires, burning hands, feather fall, light, fools gold, pyrotechnics, fireball and slow. They cast these spells at the 6th level of magic-use.\\n\\nClerics have the use of the following spells: cure light wounds, light, remove fear, find traps (x2), slow poison, continual light, dispel magic.\\n\\nLava children are completely immune to fire and earth magic but vulnerable to air and water magic, taking one extra hit point of damage from the latter per level of the caster.\\n\\nLava children live underground or in volcanic regions. It is said that their highest leaders are triple-classed warrior/magic-user/clerics of 7 hit dice.\\n\\nThey speak their own sibilant tongue and the common tongue.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/meenlock.lua",
+   "content": "-- Meenlock: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Meenlock\",\n  page = \"63\",\n  pages = \"63\",\n  source = \"FF\",\n  race = \"Meenlock\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"7 (but see below)\",\n  numAttacks = 2,\n  damage = \"1-4/1-4\",\n  xp = 240,\n  xpPerHp = 4,\n  xpValue = 312,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"3-5\",\n  lairPct = 100,\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"S (2' tall)\",\n  intelligence = \"Very\",\n  alignment = \"Lawful evil\",\n  specialAttacks = \"Paralysation\",\n  specialDefenses = \"Dimension door\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Meenlocks are small bipedal creatures about 2' tall and covered in black, shaggy fur. Their heads are white, cut with dark ridges. In total they present a horrid appearance and will cause fear in any person with four or fewer hit dice who sees them, this causing the victim to fall inert to the ground for 5-8 melee rounds (the number of rounds is halved if the victim makes his saving throw).\\n\\nThe meenlocks have their lair in dark, sealed, vertical shafts underground. If the seal is removed, the bottom of the shaft cannot be seen and anything dropped in will land noiselessly on a thick moss 'carpet' which lines the walls and floor of the shaft. The shaft will be dark and a smell of rotting corpses will drift upwards. Characters other than the most insensitive will also detect a strong emanation of evil even without the use of a detect evil spell. After descending vertically for 20' or so, the shaft twists and curves, so it is impossible to see the bottom even with a light spell, which will only reveal detail of the upper parts.\\n\\nIf brave adventurers penetrate the shaft they will eventually find the meenlock lair - a large space like a small cave at the very foot of the shaft. The creatures will always attack (exception - bright light will cause them to flee if they are able) and will use their two claws, each of which inflicts 1-4 hit points of damage. The touch of the meenlock causes paralysation (saving throw applicable). At close quarters such as in their lair, however, the meenlocks' telepathic powers are virtually useless - this is their reason for the artificial smell of rotting corpses which they deliberately create in order to deter entrance to the lair.\\n\\nThe creatures will use considerable ingenuity to extinguish sources of light - torches, lanterns and so forth. They have a limited dimension door ability over a distance of 6' every other melee round - when using this ability, attacks on them are at -4 on the 'to hit' roll. However they cannot use this power when carrying a victim - three meenlocks are required for such a task.\\n\\nIt is if adventurers remove the seal from the top of the shaft but subsequently fail to penetrate the meenlocks' lair that the creatures will take fullest advantage. When the adventurers depart, they will be followed at a safe distance by the nasty little beasts, which can climb quickly and noiselessly up the shaft by using the deadening qualities of the moss carpet. One of the adventurers will be 'marked' by the meenlocks - selected at random, though if a paladin is present he will be given priority - and the meenlocks will concentrate their subsequent attacks on him alone, being highly evil and greatly desirous of wreaking vengeance on humankind. The victim selected will always be human if one is present, but if not the creatures will choose an elf, dwarf or any other near-human.\\n\\nFrom the time of his 'marking' onwards, the chosen victim will receive disturbing telepathic messages; the meenlocks can communicate telepathically over a 300' range. The messages will vary in content but the threat will be the same - that the meenlocks are pursuing the victim relentlessly and intend to make him one of them. The victim will also be conscious of stealthy movement in the shadows and of rustling, scratching noises (these will also be illusory and induced telepathically). Companions of the victim will hear and detect nothing and may conclude that their colleague is mentally aberrant.\\n\\nThe meenlocks will not attack until the party beds down to rest. However, until that time the victim will become increasingly preoccupied with his predicament and will be able to concentrate less and less upon the adventure. His efficiency will thus be reduced, though the extent and effect of this will vary and is to be determined by the referee. As a guide, for every hour the victim is harassed by meenlocks, his strength, dexterity, intelligence and wisdom will be reduced temporarily by 1 point each, in addition he will attack at -1 on the 'to hit' roll in melee and (if he is a spell-caster) victims of his spells will receive a +2 bonus on their saving throw. All these effects are cumulative but will disappear as soon as the meenlock threat has somehow been averted (if for example the party moves into an area which is brightly illuminated and which the meenlocks will not be able to enter).\\n\\nWhen the party including the victim has bedded down to rest, the meenlocks will attack, moving very silently (80% chance of obtaining surprise even against a watchful guard - 100% against a sleeper). They will attempt to silence any guards and drag their victim away (they will not attack the victim with their claws unless absolutely necessary, but they show no similar mercy to others). If they succeed in doing so, they will take the victim to their shaft, sealing it after entry. After a short but gruesome treatment, the victim himself becomes a meenlock.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/mezzodaemon.lua",
+   "content": "-- Mezzodaemon: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Mezzodaemon\",\n  page = \"66\",\n  pages = \"66-67\",\n  source = \"FF\",\n  race = \"Mezzodaemon\",\n  hitDice = \"10+40 points\",\n  hitDiceNum = 10,\n  hitDiceBonus = 40,\n  avgHp = 85,\n  armorClass = \"-3\",\n  numAttacks = \"2 or 1 weapon\",\n  damage = \"7-12/7-12 or by weapon +6\",\n  xp = 2700,\n  xpPerHp = 14,\n  xpValue = 3890,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1 (rarely 1-3)\",\n  lairPct = 0,\n  treasure = \"Individuals Q (x5), X\",\n  move = \"15\\\"\",\n  size = \"M (about 7' tall)\",\n  intelligence = \"High - exceptional\",\n  alignment = \"Evil (neutral)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Special\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Mezzodaemons inhabit the Lower Planes between the Abyssal Layers and the Hells - i.e. Tartarus, Hades, Gehenna. There they will be found in numbers. They freely associate with night hags and demons (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL), and are not averse to devils though they find the devils' strict regulations very tiresome. Mezzodaemons roam the Astral and Ethereal Planes at times and it is not too difficult to summon them to the Prime Material Plane, as they enjoy wreaking havoc here and they are willing to associate with evil humans and the like if the price is right and their 'superior' position is generally recognised.\\n\\nA mezzodaemon can use its 18(00) strength to great advantage when attacking physically. Its horny hands and talons can be used to strike blows (each of which will inflict 7-12 hit points of damage) but one will often use some form of magical weapon (battle-axe, flail or sword - bastard or two-handed). A magic shield is usually used with a weapon. They have a +3 'to hit' bonus when so armed.\\n\\nMezzodaemons are able to employ virtually any magical item not restricted by alignment or affecting only a specific class, viz. books, librams, tomes and so on of magical nature affecting the reader. However, their innate magic resistance gives such items varying probabilities of failure, so they are likely to be shunned unless of great power.\\n\\nThe following powers can be used by mezzodaemons: dimension door (twice per day), become ethereal once per day, magic jar once per day, passwall four times per day, repulsion once per day, wind walk once per day and word of recall once per day. They can use at will any one of the following powers during a melee round: comprehend languages, detect invisibility, detect magic, ESP, invisibility, levitate, polymorph self and read magic.\\n\\nAll mezzodaemons are unaffected by non-magical weapons (including iron and silver), paralysis and poisons of any sort. Acid, cold and fire cause them only half normal damage.\\n\\nMagic resistance varies according to the level of the spell. They are 95% resistant to first level spells, 90% to second level, 85% to third level and so on to 55% resistant to ninth level spells. This is based on an 11th level of ability of the caster so will vary upwards or downwards according to whether the caster is of lower or higher level than 11th. A mezzodaemon can never be charmed and a suggestion spell will never affect it.\\n\\nMezzodaemons can see into both the infrared and ultraviolet spectra. They have a limited form of telepathy which allows communication with any creature of low or better intelligence.\\n\\nEach mezzodaemon has his or her own name. They keep these names very secret, of course, to avoid being commanded by nycadaemons, demon lords, arch-devils and like creatures, and to avoid entrapment by a summoning spell.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/n/nycadaemon.lua",
+   "content": "-- Nycadaemon: promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Nycadaemon\",\n  page = \"69\",\n  pages = \"69\",\n  source = \"FF\",\n  race = \"Nycadaemon\",\n  hitDice = \"12+36 points\",\n  hitDiceNum = 12,\n  hitDiceBonus = 36,\n  avgHp = 90,\n  armorClass = \"-4\",\n  numAttacks = \"2 or 1 weapon\",\n  damage = \"9-16/9-16 or by weapon +8\",\n  xp = 6800,\n  xpPerHp = 16,\n  xpValue = 8240,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1 (very rarely 1-2)\",\n  lairPct = 0,\n  treasure = \"Q (x10), X\",\n  move = \"12\\\"/36\\\"\",\n  size = \"L (about 8' tall and broad)\",\n  intelligence = \"Exceptional - genius\",\n  alignment = \"Evil (neutral)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Special\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The race of nycadaemons are among the most powerful of the creatures native to the Middle Lower Planes. Like their cousins the mezzodaemons, nycadaemons are common to the planes of Tarterus, Hades and Gehenna. Unlike their related creatures, they are also able to enter the 666 Layers of the Abyss and the 9 Hells as they will. Nycadaemons are avoided by all lesser creatures - night hags, mezzodaemons, lesser and greater devils, and most demons (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL) - for the race is totally wicked and domineering, caring not who or what they enslave or exploit, but always acting in an intelligent and carefully calculated manner aimed at maximising personal power and safety. Thus, these creatures will co-operate with other evil beings and races whenever mutual actions are likely to prove beneficial to themselves.\\n\\nNycadaemons are very strong (comparable in strength to stone giants - see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL) and gain +8 on damage, so blows from their huge horny fists inflict terrible punishment (9-16 hit points of damage each). However, nycadaemons will employ suitably large magic weapons in conjunction with a shield (c.f. mezzodaemon) whenever such weapons are available. When using a weapon, these creatures have a +4 'to hit' bonus due to their strength.\\n\\nAs nycadaemons are clever and capable they can use all sorts of magic items appropriate to their size and nature. These creatures have a graduated magic resistance which prevents low level magic from functioning except rarely, and even higher level spell devices are likely to malfunction with distressing regularity, so nycadaemons typically shun all but the most powerful dweomered objects - some few miscellaneous objects, artifacts, relics and the like - and enchanted weapons which have no magical projections to be affected by their multi-planar structure.\\n\\nThe following powers can be used by nycadaemons: command three times per day, dispel magic twice per day, dimension door three times per day, gaseous form once per day, mirror image (4 images) twice per day, reverse gravity twice per day, wind walk three times per day and word of recall once per day. They may also employ any one of the following powers once per round: comprehend languages, detect invisibility, detect magic, enlarge (and reverse), fear (by touch), invisibility (up to 10' radius), polymorph self, project image, read magic, telepathy.\\n\\nOnly weapons of +2 or greater enchantment will cause damage to nycadaemons. Iron weapons and silver weapons do not harm these creatures, unless the weapons are enchanted as noted. Paralysis and poisons (including all gases) have no effect on them, and acids, cold and fire cause them only half normal damage. They regenerate 3 hit points of damage per turn (i.e. 0.3 hit points per melee round).\\n\\nNycadaemons are 100% resistant to magic of the first level, and this resistance decreases in 5% increments (c.f. mezzodaemon) to 60% at ninth level. This is based upon 11th level of ability; it decreases in 5% steps if the spell-caster is of 12th or greater level and increases by the same amount if the spell-caster is 10th level or lower. Beguiling, charm and suggestion never affect the nycadaemon.\\n\\nExamples: If a nycadaemon faces a 5th level spell from a 13th level magic-user, its resistance is 80%-10% or 70%. If a 10th level magic-user casts a 4th level spell at a nycadaemon, its resistance is 85%+5% = 90%.\\n\\nThe entire spectrum of radiation can be seen by nycadaemons (i.e. infrared, ultra-violet, X-rays, gamma rays etc.) The telepathic ability of these creatures allows them to communicate on the telepathic level with creatures of intelligence low or better.\\n\\nEach nycadaemon has a personal name which they guard most carefully to avoid entrapment or servitude to some demon lord, arch devil or the like.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/slaad_grey.lua",
+   "content": "-- Slaad (Grey): promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Slaad (Grey)\",\n  page = \"81\",\n  pages = \"81\",\n  source = \"FF\",\n  race = \"Slaad (Grey)\",\n  hitDice = \"10+6\",\n  hitDiceNum = 10,\n  hitDiceBonus = 6,\n  avgHp = 51,\n  armorClass = \"1\",\n  numAttacks = \"3 or 2\",\n  damage = \"2-16/4-10/4-10 or two sword attacks at 1-8 plus bonuses\",\n  xp = 6200,\n  xpPerHp = 16,\n  xpValue = 7016,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 20,\n  treasure = \"Special\",\n  move = \"12\\\"\",\n  size = \"M (6' high)\",\n  intelligence = \"High\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+1 or better weapon to hit; see below\",\n  magicResistance = \"55% and see below\",\n  psionic = 160,\n  attackDefenseModes = \"A,C,D/F,G,H\",\n  text = \"These creatures are the most feared non-master slaadi, being the ones most often sent to the Prime Material Plane as executioners of their masters' will. They appear in normal form as relatively small slaadi, a uniform light grey in colour. They will more normally visit the Prime Material Plane, however, as humans (with charisma at least 12). They have 18(00) strength.\\n\\nWhen fighting in slaad form, the executioners use their two claws for 4-10 hit points of damage each and a bite for 2-16 hit points of damage. In human form they attack twice per round with a sword - usually (75%) a +2 magical sword but sometimes (25%) a more powerful magical weapon such as a sword of sharpness. When on the Prime Material Plane, the executioners usually wear no armour, preferring instead light clothing. They will usually carry treasure - one or two powerful magical items with a pouch of gold or platinum.\\n\\nOnce per melee round they may use one of the following powers: cause fear, cause darkness (15' radius or less, at will), know alignment, infravision 60', create an illusion, flame strike, wind walk, shape change (slaad/man), invisibility, generate a ball of lightning (8d6+6 damage per ball). Once per day they can use a symbol of pain or fear and power word: blind. Given the time and the equipment, they can enchant an item. They may also, once per day, attempt to gate in 1-3 more grey slaad with a 60% chance of the gate opening.\\n\\nGrey slaadi may travel the planes at will and are unaffected by cold or disintegration spells.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/slaad_death.lua",
+   "content": "-- Slaad (Death): promoted by the R839 fourth FF promotion round\n-- from the FF print (spec tools/spec_r839.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Slaad (Death)\",\n  page = \"81\",\n  pages = \"81\",\n  source = \"FF\",\n  race = \"Slaad (Death)\",\n  hitDice = \"15+7\",\n  hitDiceNum = 15,\n  hitDiceBonus = 7,\n  avgHp = 75,\n  armorClass = \"-4\",\n  numAttacks = \"3 or 2\",\n  damage = \"2-20/3-18/3-18 or two sword attacks at 1-8 plus bonuses\",\n  xp = 13250,\n  xpPerHp = 20,\n  xpValue = 14750,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 50,\n  treasure = \"Z (x4)\",\n  move = \"12\\\"\",\n  size = \"M (6' high)\",\n  intelligence = \"Genius\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+2 or better weapon to hit; see below\",\n  magicResistance = \"75%\",\n  psionic = 207,\n  attackDefenseModes = \"All/all\",\n  text = \"Only four of these fearsome monsters are known to exist. They have rarely been seen in slaad form since they use human form exclusively on the Prime Material Plane, wearing no armour but using deadly swords of great magical power (such as swords of sharpness, for example).\\n\\nIn human form they attack with their sword twice in a single melee round. In slaad form they attack with two claws (3-18 hit points of damage each) and a bite for 2-20 hit points of damage; a successful bite drains 1-3 experience levels of the victim (saving throw permitted - if successful it negates the effect).\\n\\nThey may travel the planes at will and also have the following powers at will: astral projection, ESP, fear, darkness 15' radius, detect invisibility, detect magic, invisibility, advanced illusion, cloudkill, wind walk, locate object, shape change (slaad/man), flame strike, weakness. Once per round they may attempt to gate in another slaad with a 90% chance of the gate opening (equal chance of red, blue, green or grey slaad appearing). Once per day they can use any symbol, power word: stun, unholy word, generate an 8d6 fireball, create a phantasmal killer.\",\n}\n"
+  }
+ ]
+}
