@@ -22774,6 +22774,67 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   lines 967-1940), its own audit
   riding audit_file (the first real
   use), Curtiss's call on pace.
+- R824 LANDED 2026-10-25: commit
+  0f7f233cbf383659be5d42f1b1fd1b7c65103959
+  (census 746 -> 747, pushed 90670bf..0f7f233),
+  THE PILOT MIGRATION ROUND - the first
+  real blocks leave regtest (the REGTEST
+  DECOMPOSITION ARC, Curtiss's Go on the
+  pilot). THE MOVE: the first 18 real
+  audit blocks (digest idx 0-17: R79,
+  R80, R81, R82, R83, R85, R86, R87,
+  R88, R89, R90, R91, R92, R93, R94,
+  R95, R96, R97 - 784 lines) migrated
+  VERBATIM into rules/audits fragments
+  (r079_ammo_claims.h through
+  r097_gray_beard.h), each head line
+  replaced by its one-line R824
+  include; inter-block gaps untouched
+  (a byte-for-byte reconstruction of
+  the patched regtest proved only the
+  blocks and their single trailing
+  blank separators moved - 18 blanks
+  eaten, nothing else). R824's own
+  audit rode rules/audits/r824_pilot.h
+  at the R227 anchor - the FIRST REAL
+  USE of the R822 audit_file wiring.
+  Header rules/pmb.h, prefix pmb
+  (verified free at 90670bf, 0 hits),
+  6 consts + 4 bools (inline 10), 4
+  examples, the R823 record seated
+  into the seed, NO gap flips (MM2
+  stays 37 closed 0 open), NO tool
+  patches - the R823 engine carried
+  the round. GATES: the full DRESS
+  REHEARSAL ran on a copy of the
+  REAL tree at 90670bf (real seed,
+  real gap report, real regtest) -
+  engine double-run 23/0 -> 0/23
+  (3 standard + 2 audit-file + 18
+  migrations); all 18 fragments
+  byte-exact vs the real bodies;
+  census 728 + 19 = 747, all 747
+  preflight patterns unique and
+  each exactly once; rverify GREEN
+  (10 mutants, 0 missed). A
+  pre-delivery CATCH (local, never
+  reached Termux): the migration
+  spans consume the blank line
+  after each block's closing brace
+  (the span ends at the NEXT head,
+  not at the brace) - cosmetic,
+  verified harmless by the exact
+  reconstruction; the include lines
+  sit flush between blocks.
+  Delivery spec-r824 canvas: spec
+  9932 bytes, md5
+  97e1965a2db96b715500465baf860ca9,
+  landed the same. NEXT: awaits
+  Curtiss's call on pace - the next
+  per-book migration batch rides the
+  same wiring (digest idx 18 onward:
+  R114 aging at line 1826 is the next
+  head; batch size Curtiss's call).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
