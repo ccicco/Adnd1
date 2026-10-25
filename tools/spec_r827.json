@@ -1,0 +1,408 @@
+{
+  "round": 827,
+  "title": "the subclass migration batch",
+  "prefix": "qmb",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/qmb.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the subclass migration batch - the fourth batch leaves regtest at fifty blocks",
+    "provenance": "spec-driven; the fourth batch of real audit blocks (digest idx 54-119, R179 subclass registry through R245 staves prose, 50 blocks at Curtiss's 50-per-round pace call, 5111 lines - the subclass seams and engines, the class audits, the DMG magic item pins) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"
+  },
+  "census_before": 749,
+  "inline_count": 10,
+  "consts": [
+    {
+      "name": "qmb_batch",
+      "value": 50,
+      "comment": "the blocks in the subclass batch"
+    },
+    {
+      "name": "qmb_moving_lines",
+      "value": 5111,
+      "comment": "the lines the batch moves"
+    },
+    {
+      "name": "qmb_first_head",
+      "value": 5482,
+      "comment": "the digest head line of R179 subclass registry"
+    },
+    {
+      "name": "qmb_last_end",
+      "value": 12797,
+      "comment": "the digest end line of R245 staves prose"
+    },
+    {
+      "name": "qmb_largest",
+      "value": 320,
+      "comment": "the largest moving block - R186 the bard"
+    },
+    {
+      "name": "qmb_smallest",
+      "value": 30,
+      "comment": "the smallest moving block - R234a dual-class seam"
+    }
+  ],
+  "bools": [
+    {
+      "name": "qmb_audit_rides",
+      "value": true,
+      "comment": "this round audit rides a fragment"
+    },
+    {
+      "name": "qmb_blocks_move",
+      "value": true,
+      "comment": "the blocks move verbatim, never hand-authored"
+    },
+    {
+      "name": "qmb_gates_recheck",
+      "value": true,
+      "comment": "the migration gates re-verify each block before it moves"
+    },
+    {
+      "name": "qmb_census_holds",
+      "value": true,
+      "comment": "the census survives the move - the labels relocate"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "header_sections": {
+    "the subclass batch": [
+      {
+        "kind": "const",
+        "name": "qmb_batch"
+      },
+      {
+        "kind": "const",
+        "name": "qmb_moving_lines"
+      },
+      {
+        "kind": "const",
+        "name": "qmb_first_head"
+      },
+      {
+        "kind": "const",
+        "name": "qmb_last_end"
+      },
+      {
+        "kind": "const",
+        "name": "qmb_largest"
+      },
+      {
+        "kind": "const",
+        "name": "qmb_smallest"
+      },
+      {
+        "kind": "bool",
+        "name": "qmb_audit_rides"
+      },
+      {
+        "kind": "bool",
+        "name": "qmb_blocks_move"
+      },
+      {
+        "kind": "bool",
+        "name": "qmb_gates_recheck"
+      },
+      {
+        "kind": "bool",
+        "name": "qmb_census_holds"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['qmb_batch']() != 50",
+      "note": "the batch is the first fifty blocks"
+    },
+    {
+      "expr": "m['qmb_moving_lines']() != m['qmb_batch']() * 102 + 11",
+      "note": "the moving lines against the batch size"
+    },
+    {
+      "expr": "m['qmb_smallest']() + m['qmb_largest']() != 350",
+      "note": "the size extremes of the batch"
+    },
+    {
+      "expr": "m['qmb_last_end']() - m['qmb_first_head']() != 7315",
+      "note": "the digest span of the batch"
+    }
+  ],
+  "audit_label": "R827 subclass batch audit",
+  "audit_comment": "the fourth migration batch: the subclass and class-audit blocks ride the wiring; the batch constants check themselves",
+  "audit_file": "rules/audits/r827_batch.h",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "include_comment": "the subclass migration batch",
+  "include_after": "#include \"rules/tmb.h\"  // R826: the DMG tables migration batch",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R826 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R826 LANDED 2026-10-25: commit",
+    "  76ebfa25e7553e95909df49010becf04a1629b9b",
+    "  (census 748 -> 749, pushed",
+    "  6491e17..76ebfa2), THE DMG TABLES",
+    "  MIGRATION BATCH - the third batch",
+    "  of real blocks leaves regtest (the",
+    "  REGTEST DECOMPOSITION ARC, Curtiss's",
+    "  bare Go). THE MOVE: digest idx 36-53",
+    "  (R147 x3 - dwarf CON save, matrix",
+    "  II.D, Appendix P; R150 appendix I",
+    "  dressing, R151 Appendix O",
+    "  encumbrance, R152 becoming-lost,",
+    "  R153 exceptional strength, R154 PC",
+    "  races, R155 classed monsters, R156",
+    "  convention party, R157 grenade",
+    "  missiles, R158 weapon speed factors,",
+    "  R159 striking to subdue, R160",
+    "  weaponless combat - 303 lines, the",
+    "  new largest - R161 two weapons,",
+    "  R162 level title ladders, R176",
+    "  printed XP tables, R178c DEX and",
+    "  CON tables; 1938 lines) migrated",
+    "  VERBATIM into rules/audits",
+    "  fragments (r147_dwarf_con_save.h",
+    "  through r178c_dex_con_tables.h).",
+    "  R826's own audit rode",
+    "  rules/audits/r826_batch.h. The",
+    "  R178c class proves the migration",
+    "  key handles letter-suffixed round",
+    "  numbers. Header rules/tmb.h,",
+    "  prefix tmb (verified free at",
+    "  6491e17, 0 hits), 6 consts + 4",
+    "  bools (inline 10), 4 examples, the",
+    "  R825 record seated into the seed,",
+    "  NO gap flips (MM2 stays 37 closed 0",
+    "  open), NO tool patches. GATES:",
+    "  dress rehearsal on a copy of the",
+    "  REAL tree at 6491e17 (all 38",
+    "  standing fragments fetched first -",
+    "  the R825 lesson applied); double-",
+    "  run 23/0 -> 0/23; fragments",
+    "  byte-exact; regtest reconstruction",
+    "  byte-for-byte; census 692 + 57 =",
+    "  749, all 749 preflight patterns",
+    "  unique each once; rverify GREEN",
+    "  (10 mutants, 0 missed). Delivery",
+    "  spec-r826 canvas: spec 8352",
+    "  bytes, md5",
+    "  4de78422390148d65b903519e150c979,",
+    "  landed the same. STANDING PACE:",
+    "  three batches landed (54 blocks,",
+    "  4422 lines out of regtest.cpp -",
+    "  744 audit blocks down to 692",
+    "  inline). NEXT: awaits Curtiss's",
+    "  call - the fourth batch rides the",
+    "  same wiring (digest idx 54 onward:",
+    "  R179 subclass registry at the next",
+    "  head), Curtiss's call on pace."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "migrate_blocks": [
+    {
+      "label": "R179 subclass registry audit",
+      "fragment": "rules/audits/r179_subclass_registry.h"
+    },
+    {
+      "label": "R230 subclass creation seam audit",
+      "fragment": "rules/audits/r230_subclass_creation_seam.h"
+    },
+    {
+      "label": "R231 subclass leveling seam audit",
+      "fragment": "rules/audits/r231_subclass_leveling_seam.h"
+    },
+    {
+      "label": "R232 subclass specials hooks audit",
+      "fragment": "rules/audits/r232_subclass_specials_hooks.h"
+    },
+    {
+      "label": "R233a multi-class seam audit",
+      "fragment": "rules/audits/r233a_multi_class_seam.h"
+    },
+    {
+      "label": "R233 multi-class engine audit",
+      "fragment": "rules/audits/r233_multi_class_engine.h"
+    },
+    {
+      "label": "R234a dual-class seam audit",
+      "fragment": "rules/audits/r234a_dual_class_seam.h"
+    },
+    {
+      "label": "R234 dual-class engine audit",
+      "fragment": "rules/audits/r234_dual_class_engine.h"
+    },
+    {
+      "label": "R235a bard career seam audit",
+      "fragment": "rules/audits/r235a_bard_career_seam.h"
+    },
+    {
+      "label": "R235 bard engine audit",
+      "fragment": "rules/audits/r235_bard_engine.h"
+    },
+    {
+      "label": "R236 bard specials audit",
+      "fragment": "rules/audits/r236_bard_specials.h"
+    },
+    {
+      "label": "R181 attacks per melee round audit",
+      "fragment": "rules/audits/r181_attacks_per_melee_round.h"
+    },
+    {
+      "label": "R182 druid spell layer audit",
+      "fragment": "rules/audits/r182_druid_spell_layer.h"
+    },
+    {
+      "label": "R183 illusionist spell layer audit",
+      "fragment": "rules/audits/r183_illusionist_spell_layer.h"
+    },
+    {
+      "label": "R186 the bard audit",
+      "fragment": "rules/audits/r186_bard.h"
+    },
+    {
+      "label": "R187 per-subclass specials audit",
+      "fragment": "rules/audits/r187_per_subclass_specials.h"
+    },
+    {
+      "label": "R189 weapon tables verify audit",
+      "fragment": "rules/audits/r189_weapon_tables_verify.h"
+    },
+    {
+      "label": "R190 starting money audit",
+      "fragment": "rules/audits/r190_starting_money.h"
+    },
+    {
+      "label": "R191 armor class ratings audit",
+      "fragment": "rules/audits/r191_armor_class_ratings.h"
+    },
+    {
+      "label": "R192 wisdom tables audit",
+      "fragment": "rules/audits/r192_wisdom_tables.h"
+    },
+    {
+      "label": "R193 charisma table audit",
+      "fragment": "rules/audits/r193_charisma_table.h"
+    },
+    {
+      "label": "R195 INT languages repin audit",
+      "fragment": "rules/audits/r195_int_languages_repin.h"
+    },
+    {
+      "label": "R196 INT table II audit",
+      "fragment": "rules/audits/r196_int_table_ii.h"
+    },
+    {
+      "label": "R197 mental-form flag audit",
+      "fragment": "rules/audits/r197_mental_form_flag.h"
+    },
+    {
+      "label": "R198 class weapon allowlists audit",
+      "fragment": "rules/audits/r198_class_weapon_allowlists.h"
+    },
+    {
+      "label": "R199 oil and poison columns audit",
+      "fragment": "rules/audits/r199_oil_and_poison_columns.h"
+    },
+    {
+      "label": "R201 NPC monk alignment audit",
+      "fragment": "rules/audits/r201_npc_monk_alignment_split.h"
+    },
+    {
+      "label": "R203 apparent armor AC audit",
+      "fragment": "rules/audits/r203_apparent_armor_ac.h"
+    },
+    {
+      "label": "R204 item saving throw matrix audit",
+      "fragment": "rules/audits/r204_item_saving_throw_matrix.h"
+    },
+    {
+      "label": "R205 spying tables audit",
+      "fragment": "rules/audits/r205_spying_tables.h"
+    },
+    {
+      "label": "R206 pursuit and evasion audit",
+      "fragment": "rules/audits/r206_pursuit_and_evasion.h"
+    },
+    {
+      "label": "R207 town taxation audit",
+      "fragment": "rules/audits/r207_town_taxation.h"
+    },
+    {
+      "label": "R208 social class and rank audit",
+      "fragment": "rules/audits/r208_social_class_and_rank.h"
+    },
+    {
+      "label": "R215 conducting the game pins audit",
+      "fragment": "rules/audits/r215_conducting_game.h"
+    },
+    {
+      "label": "R216 magical research pins audit",
+      "fragment": "rules/audits/r216_magical_research.h"
+    },
+    {
+      "label": "R220 combined hoard table pins audit",
+      "fragment": "rules/audits/r220_combined_hoard_table.h"
+    },
+    {
+      "label": "R221 potions prose pins audit",
+      "fragment": "rules/audits/r221_iii_a_potions.h"
+    },
+    {
+      "label": "R222 scrolls prose pins audit",
+      "fragment": "rules/audits/r222_iii_b_scrolls.h"
+    },
+    {
+      "label": "R223 rings footnote pins audit",
+      "fragment": "rules/audits/r223_iii_c_rings_footnote.h"
+    },
+    {
+      "label": "R224 rods staves wands pins audit",
+      "fragment": "rules/audits/r224_iii_d_rods_staves_wands.h"
+    },
+    {
+      "label": "R225 misc table 1 pins audit",
+      "fragment": "rules/audits/r225_iii_e_table_1.h"
+    },
+    {
+      "label": "R226 misc table 2 pins audit",
+      "fragment": "rules/audits/r226_iii_e_table_2.h"
+    },
+    {
+      "label": "R237 misc table 3 pins audit",
+      "fragment": "rules/audits/r237_iii_e_table_3.h"
+    },
+    {
+      "label": "R238 misc table 4 pins audit",
+      "fragment": "rules/audits/r238_iii_e_table_4.h"
+    },
+    {
+      "label": "R239 misc table 5 pins audit",
+      "fragment": "rules/audits/r239_iii_e_table_5.h"
+    },
+    {
+      "label": "R240 special artifacts pins audit",
+      "fragment": "rules/audits/r240_iii_e_special_artifacts.h"
+    },
+    {
+      "label": "R241 armor and shield pins audit",
+      "fragment": "rules/audits/r241_iii_f_armor_and_shield.h"
+    },
+    {
+      "label": "R242 swords pins audit",
+      "fragment": "rules/audits/r242_iii_g_swords.h"
+    },
+    {
+      "label": "R244 rods prose pins audit",
+      "fragment": "rules/audits/r244_iii_d_rods_explanation.h"
+    },
+    {
+      "label": "R245 staves prose pins audit",
+      "fragment": "rules/audits/r245_iii_d_staves_explanation.h"
+    }
+  ]
+}

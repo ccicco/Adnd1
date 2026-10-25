@@ -22888,6 +22888,64 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   rides the same wiring (digest idx 36
   onward: R147 dwarf CON save at the
   next head), Curtiss's call on pace.
+- R826 LANDED 2026-10-25: commit
+  76ebfa25e7553e95909df49010becf04a1629b9b
+  (census 748 -> 749, pushed
+  6491e17..76ebfa2), THE DMG TABLES
+  MIGRATION BATCH - the third batch
+  of real blocks leaves regtest (the
+  REGTEST DECOMPOSITION ARC, Curtiss's
+  bare Go). THE MOVE: digest idx 36-53
+  (R147 x3 - dwarf CON save, matrix
+  II.D, Appendix P; R150 appendix I
+  dressing, R151 Appendix O
+  encumbrance, R152 becoming-lost,
+  R153 exceptional strength, R154 PC
+  races, R155 classed monsters, R156
+  convention party, R157 grenade
+  missiles, R158 weapon speed factors,
+  R159 striking to subdue, R160
+  weaponless combat - 303 lines, the
+  new largest - R161 two weapons,
+  R162 level title ladders, R176
+  printed XP tables, R178c DEX and
+  CON tables; 1938 lines) migrated
+  VERBATIM into rules/audits
+  fragments (r147_dwarf_con_save.h
+  through r178c_dex_con_tables.h).
+  R826's own audit rode
+  rules/audits/r826_batch.h. The
+  R178c class proves the migration
+  key handles letter-suffixed round
+  numbers. Header rules/tmb.h,
+  prefix tmb (verified free at
+  6491e17, 0 hits), 6 consts + 4
+  bools (inline 10), 4 examples, the
+  R825 record seated into the seed,
+  NO gap flips (MM2 stays 37 closed 0
+  open), NO tool patches. GATES:
+  dress rehearsal on a copy of the
+  REAL tree at 6491e17 (all 38
+  standing fragments fetched first -
+  the R825 lesson applied); double-
+  run 23/0 -> 0/23; fragments
+  byte-exact; regtest reconstruction
+  byte-for-byte; census 692 + 57 =
+  749, all 749 preflight patterns
+  unique each once; rverify GREEN
+  (10 mutants, 0 missed). Delivery
+  spec-r826 canvas: spec 8352
+  bytes, md5
+  4de78422390148d65b903519e150c979,
+  landed the same. STANDING PACE:
+  three batches landed (54 blocks,
+  4422 lines out of regtest.cpp -
+  744 audit blocks down to 692
+  inline). NEXT: awaits Curtiss's
+  call - the fourth batch rides the
+  same wiring (digest idx 54 onward:
+  R179 subclass registry at the next
+  head), Curtiss's call on pace.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
