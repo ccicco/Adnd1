@@ -22677,6 +22677,103 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   wiring, smallest-first pilot (the early DMG
   blocks the natural candidate), Curtiss's
   call on pace each round.
+- R823 LANDED 2026-10-25: commit
+  90670bf69dde17982d75228e0a2986e77803a77b
+  (census 745 -> 746, pushed 55c3b0d..90670bf),
+  THE AUDIT BLOCKS MIGRATION WIRING - the
+  second tooling round of the REGTEST
+  DECOMPOSITION ARC (Curtiss's Go on the
+  thin-driver plan). THE MECHANISM: the
+  engine gains the migrate_blocks spec
+  key - a declared block walks from its
+  printf label up to its head comment
+  (max 800 lines), forward to the next
+  boundary (head, the R227 anchor, the
+  bare return 0, EOF), gets RE-GATED
+  (exactly one bad marker, no bare
+  return 0 in the body, brace delta 0,
+  every line <= 78), then moves
+  BYTE-FOR-BYTE into a rules/audits
+  fragment; regtest keeps a one-line
+  #include at the head line - the
+  census holds, the label relocates,
+  the R822 fragment-reading battery
+  sees it wherever it lives. SIX FILE
+  PATCHES over THREE files: the engine
+  (the migration phase after the
+  data_files loop, before the R420
+  gate), rverify (the restore list
+  gains the fragments via a backslash
+  continuation - the R822 py_compile
+  lesson - and n_patches counts one
+  per migration), rn (derives NMIG +
+  MFRAGS from the spec, echoes the
+  migration round, git-adds the
+  fragments). THE R791 LESSON BINDS:
+  tooling lands alone - R823's own
+  audit landed inline (old way), no
+  block moved in this round. Header
+  rules/migw.h, prefix migw (verified
+  free at 55c3b0d via code search, 0
+  hits), 10 consts + 10 bools
+  (inline 20), 4 examples, the R822
+  record seated into the seed, NO gap
+  flips (MM2 stays 37 closed 0 open),
+  6 file patches + the standard four,
+  applied 10. GATES: engine double-run
+  10/0 -> 0/10 on the synthetic tree
+  (731 stubs + the 12 real R79-R91
+  blocks re-extracted from the survey,
+  census 745); the six patches
+  reproduce the hand-patched files
+  byte-for-byte, independently
+  re-applied from the spec anchors;
+  rverify local GREEN (20 mutants, 0
+  missed); THE FUTURE-PATTERN
+  SHAKEDOWN - a synthetic R824 pilot
+  (its own audit riding audit_file +
+  3 real migrations: R79, R80, R81)
+  ran 8/0 -> 0/8, the fragments
+  byte-exact vs the survey bodies,
+  census 743 + 4 = 747, all 747
+  preflight patterns unique and each
+  exactly once, includes in order
+  above the R227 anchor; negatives
+  all fired (corrupt state fragment +
+  inline label, missing label,
+  fragment outside rules/audits, a
+  long line, brace delta); edge: a
+  block bounded by the bare return 0
+  (the wis block) migrates cleanly.
+  ONE LOCAL CATCH, caught ON TERMUX:
+  the spec declared the rn patches as
+  tools/rn - the ritual lives at the
+  REPO ROOT, and the engine's file
+  patch target gate refused the
+  missing path (clean abort, no
+  partial state - the all-in-memory
+  write design proved itself in
+  flight); fixed the three patch
+  paths to 'rn' in the canvas spec,
+  re-ran the whole battery GREEN
+  (the env reset between turns wiped
+  the work dir; everything rebuilt
+  from the GitHub pristine at
+  55c3b0d + the canvas body). LESSON:
+  a file patch path must name the
+  file WHERE IT LIVES - the spec
+  path is a target, not a convention.
+  Delivery spec-r823 canvas updated
+  in place (the only edit: the three
+  rn paths), spec file 17392 bytes,
+  md5 31a67d4108332940276d4533b1683f1c,
+  landed the same. NEXT: awaits
+  Curtiss's Go - R824 is the pilot
+  migration round, the first 18
+  blocks (digest idx 0-17: R79-R97,
+  lines 967-1940), its own audit
+  riding audit_file (the first real
+  use), Curtiss's call on pace.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

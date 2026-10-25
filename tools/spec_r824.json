@@ -1,0 +1,319 @@
+{
+  "round": 824,
+  "title": "the pilot migration round",
+  "prefix": "pmb",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/pmb.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the pilot migration round - the first real blocks leave regtest",
+    "provenance": "spec-driven; the first 18 real audit blocks (R79-R97, 784 lines) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; this round audit rides a fragment - the first real use of the R822 wiring"
+  },
+  "census_before": 746,
+  "inline_count": 10,
+  "consts": [
+    {
+      "name": "pmb_batch",
+      "value": 18,
+      "comment": "the blocks in the pilot batch"
+    },
+    {
+      "name": "pmb_first_head",
+      "value": 967,
+      "comment": "the digest head line of R79"
+    },
+    {
+      "name": "pmb_last_end",
+      "value": 1825,
+      "comment": "the digest end line of R97"
+    },
+    {
+      "name": "pmb_moving_lines",
+      "value": 784,
+      "comment": "the lines the pilot batch moves"
+    },
+    {
+      "name": "pmb_smallest",
+      "value": 16,
+      "comment": "the smallest moving block - R91 stairs"
+    },
+    {
+      "name": "pmb_largest",
+      "value": 84,
+      "comment": "the largest moving block - R87 burden"
+    }
+  ],
+  "bools": [
+    {
+      "name": "pmb_audit_rides",
+      "value": true,
+      "comment": "this round audit rides a fragment"
+    },
+    {
+      "name": "pmb_blocks_move",
+      "value": true,
+      "comment": "the blocks move verbatim, never hand-authored"
+    },
+    {
+      "name": "pmb_gates_recheck",
+      "value": true,
+      "comment": "the migration gates re-verify each block before it moves"
+    },
+    {
+      "name": "pmb_census_holds",
+      "value": true,
+      "comment": "the census survives the move - the labels relocate"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "header_sections": {
+    "the pilot batch": [
+      {
+        "kind": "const",
+        "name": "pmb_batch"
+      },
+      {
+        "kind": "const",
+        "name": "pmb_first_head"
+      },
+      {
+        "kind": "const",
+        "name": "pmb_last_end"
+      },
+      {
+        "kind": "const",
+        "name": "pmb_moving_lines"
+      },
+      {
+        "kind": "const",
+        "name": "pmb_smallest"
+      },
+      {
+        "kind": "const",
+        "name": "pmb_largest"
+      },
+      {
+        "kind": "bool",
+        "name": "pmb_audit_rides"
+      },
+      {
+        "kind": "bool",
+        "name": "pmb_blocks_move"
+      },
+      {
+        "kind": "bool",
+        "name": "pmb_gates_recheck"
+      },
+      {
+        "kind": "bool",
+        "name": "pmb_census_holds"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['pmb_batch']() != 18",
+      "note": "the pilot batch is the first 18 blocks"
+    },
+    {
+      "expr": "m['pmb_first_head']() + m['pmb_last_end']() != 2792",
+      "note": "the batch spans digest lines 967 to 1825"
+    },
+    {
+      "expr": "m['pmb_smallest']() + m['pmb_largest']() != 100",
+      "note": "stairs plus burden, the size extremes"
+    },
+    {
+      "expr": "m['pmb_moving_lines']() != m['pmb_batch']() * 44 - 8",
+      "note": "the moving-line count against the batch size"
+    }
+  ],
+  "audit_label": "R824 pilot migration audit",
+  "audit_comment": "the pilot round: the wiring from R822 and R823 carries its first real freight - the batch constants check themselves",
+  "audit_file": "rules/audits/r824_pilot.h",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "include_comment": "the pilot migration round",
+  "include_after": "#include \"rules/migw.h\"  // R823: the audit blocks migration wiring",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R823 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R823 LANDED 2026-10-25: commit",
+    "  90670bf69dde17982d75228e0a2986e77803a77b",
+    "  (census 745 -> 746, pushed 55c3b0d..90670bf),",
+    "  THE AUDIT BLOCKS MIGRATION WIRING - the",
+    "  second tooling round of the REGTEST",
+    "  DECOMPOSITION ARC (Curtiss's Go on the",
+    "  thin-driver plan). THE MECHANISM: the",
+    "  engine gains the migrate_blocks spec",
+    "  key - a declared block walks from its",
+    "  printf label up to its head comment",
+    "  (max 800 lines), forward to the next",
+    "  boundary (head, the R227 anchor, the",
+    "  bare return 0, EOF), gets RE-GATED",
+    "  (exactly one bad marker, no bare",
+    "  return 0 in the body, brace delta 0,",
+    "  every line <= 78), then moves",
+    "  BYTE-FOR-BYTE into a rules/audits",
+    "  fragment; regtest keeps a one-line",
+    "  #include at the head line - the",
+    "  census holds, the label relocates,",
+    "  the R822 fragment-reading battery",
+    "  sees it wherever it lives. SIX FILE",
+    "  PATCHES over THREE files: the engine",
+    "  (the migration phase after the",
+    "  data_files loop, before the R420",
+    "  gate), rverify (the restore list",
+    "  gains the fragments via a backslash",
+    "  continuation - the R822 py_compile",
+    "  lesson - and n_patches counts one",
+    "  per migration), rn (derives NMIG +",
+    "  MFRAGS from the spec, echoes the",
+    "  migration round, git-adds the",
+    "  fragments). THE R791 LESSON BINDS:",
+    "  tooling lands alone - R823's own",
+    "  audit landed inline (old way), no",
+    "  block moved in this round. Header",
+    "  rules/migw.h, prefix migw (verified",
+    "  free at 55c3b0d via code search, 0",
+    "  hits), 10 consts + 10 bools",
+    "  (inline 20), 4 examples, the R822",
+    "  record seated into the seed, NO gap",
+    "  flips (MM2 stays 37 closed 0 open),",
+    "  6 file patches + the standard four,",
+    "  applied 10. GATES: engine double-run",
+    "  10/0 -> 0/10 on the synthetic tree",
+    "  (731 stubs + the 12 real R79-R91",
+    "  blocks re-extracted from the survey,",
+    "  census 745); the six patches",
+    "  reproduce the hand-patched files",
+    "  byte-for-byte, independently",
+    "  re-applied from the spec anchors;",
+    "  rverify local GREEN (20 mutants, 0",
+    "  missed); THE FUTURE-PATTERN",
+    "  SHAKEDOWN - a synthetic R824 pilot",
+    "  (its own audit riding audit_file +",
+    "  3 real migrations: R79, R80, R81)",
+    "  ran 8/0 -> 0/8, the fragments",
+    "  byte-exact vs the survey bodies,",
+    "  census 743 + 4 = 747, all 747",
+    "  preflight patterns unique and each",
+    "  exactly once, includes in order",
+    "  above the R227 anchor; negatives",
+    "  all fired (corrupt state fragment +",
+    "  inline label, missing label,",
+    "  fragment outside rules/audits, a",
+    "  long line, brace delta); edge: a",
+    "  block bounded by the bare return 0",
+    "  (the wis block) migrates cleanly.",
+    "  ONE LOCAL CATCH, caught ON TERMUX:",
+    "  the spec declared the rn patches as",
+    "  tools/rn - the ritual lives at the",
+    "  REPO ROOT, and the engine's file",
+    "  patch target gate refused the",
+    "  missing path (clean abort, no",
+    "  partial state - the all-in-memory",
+    "  write design proved itself in",
+    "  flight); fixed the three patch",
+    "  paths to 'rn' in the canvas spec,",
+    "  re-ran the whole battery GREEN",
+    "  (the env reset between turns wiped",
+    "  the work dir; everything rebuilt",
+    "  from the GitHub pristine at",
+    "  55c3b0d + the canvas body). LESSON:",
+    "  a file patch path must name the",
+    "  file WHERE IT LIVES - the spec",
+    "  path is a target, not a convention.",
+    "  Delivery spec-r823 canvas updated",
+    "  in place (the only edit: the three",
+    "  rn paths), spec file 17392 bytes,",
+    "  md5 31a67d4108332940276d4533b1683f1c,",
+    "  landed the same. NEXT: awaits",
+    "  Curtiss's Go - R824 is the pilot",
+    "  migration round, the first 18",
+    "  blocks (digest idx 0-17: R79-R97,",
+    "  lines 967-1940), its own audit",
+    "  riding audit_file (the first real",
+    "  use), Curtiss's call on pace."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "migrate_blocks": [
+    {
+      "label": "R79 claim/caps audit",
+      "fragment": "rules/audits/r079_ammo_claims.h"
+    },
+    {
+      "label": "R80 quiver audit",
+      "fragment": "rules/audits/r080_quiver_math.h"
+    },
+    {
+      "label": "R81 rings/scrolls/status audit",
+      "fragment": "rules/audits/r081_ring_claims.h"
+    },
+    {
+      "label": "R82 death/revival audit",
+      "fragment": "rules/audits/r082_death_revival.h"
+    },
+    {
+      "label": "R83 teleport audit",
+      "fragment": "rules/audits/r083_teleport_gates.h"
+    },
+    {
+      "label": "R85 pack audit",
+      "fragment": "rules/audits/r085_pack_math.h"
+    },
+    {
+      "label": "R86 cursed/hire audit",
+      "fragment": "rules/audits/r086_cursed_hire.h"
+    },
+    {
+      "label": "R87 burden audit",
+      "fragment": "rules/audits/r087_burden.h"
+    },
+    {
+      "label": "R88 warning audit",
+      "fragment": "rules/audits/r088_warning.h"
+    },
+    {
+      "label": "R89 pace audit",
+      "fragment": "rules/audits/r089_pace.h"
+    },
+    {
+      "label": "R90 clock audit",
+      "fragment": "rules/audits/r090_clock.h"
+    },
+    {
+      "label": "R91 stairs audit",
+      "fragment": "rules/audits/r091_stairs.h"
+    },
+    {
+      "label": "R92 road audit",
+      "fragment": "rules/audits/r092_road.h"
+    },
+    {
+      "label": "R93 ledger audit",
+      "fragment": "rules/audits/r093_ledger.h"
+    },
+    {
+      "label": "R94 nerve audit",
+      "fragment": "rules/audits/r094_nerve.h"
+    },
+    {
+      "label": "R95 calendar audit",
+      "fragment": "rules/audits/r095_calendar.h"
+    },
+    {
+      "label": "R96 town clock audit",
+      "fragment": "rules/audits/r096_town_clock.h"
+    },
+    {
+      "label": "R97 gray beard audit",
+      "fragment": "rules/audits/r097_gray_beard.h"
+    }
+  ]
+}
