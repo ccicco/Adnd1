@@ -22946,6 +22946,62 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   same wiring (digest idx 54 onward:
   R179 subclass registry at the next
   head), Curtiss's call on pace.
+- R827 LANDED 2026-10-25: commit
+  2fea2ce510f91a9b2a578a11572a46a3b43568bf
+  (census 749 -> 750, pushed
+  76ebfa2..2fea2ce), THE SUBCLASS
+  MIGRATION BATCH - the fourth batch
+  of real blocks leaves regtest at
+  CURTISS'S 50-PER-ROUND PACE CALL
+  (the REGTEST DECOMPOSITION ARC).
+  THE MOVE: digest idx 54-119 (R179
+  subclass registry through R245
+  staves prose - the subclass seams
+  and engines R230-R236, the
+  R181-R208 class audits, the first
+  DMG magic-item pins R215-R245; 50
+  blocks, 5111 lines) migrated
+  VERBATIM into rules/audits
+  fragments (r179_subclass_registry.h
+  through
+  r245_iii_d_staves_explanation.h).
+  R827's own audit rode
+  rules/audits/r827_batch.h. Header
+  rules/qmb.h, prefix qmb (verified
+  free at 76ebfa2, 0 hits), 6 consts +
+  4 bools (inline 10), 4 examples, the
+  R826 record seated into the seed,
+  NO gap flips (MM2 stays 37 closed 0
+  open), NO tool patches. NEW LESSON:
+  the earlier extraction abort on
+  R184 (89 bad markers) was a phantom
+  - a rerun in isolation proved the
+  block healthy; the real story is
+  the width gates: R209-R211 and R243
+  carry lines past 78 cols and 12
+  more blocks fail the 78-col include
+  cap - 16 blocks in the idx 54-119
+  span HELD BACK for a future round
+  (shorter fragment names, cap 32
+  chars not 33 - or a tooling round
+  to widen the include gate). GATES:
+  dress rehearsal on a copy of the
+  REAL tree at 76ebfa2 (the whole
+  rules/audits dir carried);
+  double-run 55/0 -> 0/55; fragments
+  byte-exact; regtest reconstruction
+  byte-for-byte; census 642 + 108 =
+  750, all 750 preflight patterns
+  unique each once; rverify GREEN (10
+  mutants, 0 missed). Delivery
+  spec-r827 canvas: spec 12540 bytes,
+  md5 faaa178c92537cececab827f26599fd0,
+  landed the same. NEXT: awaits
+  Curtiss's Go - the fifth batch rides
+  the same wiring (digest idx 120
+  onward: R246 wands prose at the
+  next head, minus the 16 held-back
+  blocks), at 50 blocks per round.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
