@@ -105,7 +105,7 @@
             || mm2encoMm1SourceRows() != 413
             || mm2encoMm2SourceRows() != 159
             || mm2encoFfSourceRows() != 74
-            || mm2encoWalkKeyRows() != 632
+            || mm2encoWalkKeyRows() != 645
             || mm2encoUnresolvedRows() != 1
             || mm2encoRegistryFloor() != 809
             || mm2encoOrRows() != 20
@@ -1859,7 +1859,7 @@
         // the walk-key census (the MM1 and MM2 defs the registry owns)
     if (mm2encoWalkKeyRows() != mm2encoMm1SourceRows() +
         mm2encoMm2SourceRows() + ffpOutCellsRewired() +
-        ffsOutCellsRewired()
+        ffsOutCellsRewired() + fftOutCellsRewired()
         )
             ++bad;
         printf("R817 MM2 outdoor encounter grids audit: bad %d\n", bad);

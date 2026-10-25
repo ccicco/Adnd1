@@ -539,6 +539,7 @@
 #include "rules/ymb.h"  // R835: the final holdback batch
 #include "rules/ffp.h"  // R836: the first FF promotion batch
 #include "rules/ffs.h"  // R837: the second FF promotion batch
+#include "rules/fft.h"  // R838: the third FF promotion batch
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -3321,7 +3322,7 @@ int main() {
                 "quaggoth",
                 "ogre",
                 "giant_rat",
-                "",
+                "volt",
                 "herd_animal",
                 "irish_deer",
                 "moon_dog",
@@ -3395,7 +3396,7 @@ int main() {
             {  // grid 7, the cold civilized hills and rough terrain
                 "vampire",
                 "ice_toad",
-                "",
+                "snyad",
                 "dire_wolf",
                 "berserker",
                 "pseudo_undead",
@@ -3456,7 +3457,7 @@ int main() {
                 "varrdig",
             },
             {  // grid 10, the cold civilized plains and scrub
-                "",
+                "disenchanter",
                 "hollyphant",
                 "li_lung",
                 "dire_wolf",
@@ -3478,7 +3479,7 @@ int main() {
             },
             {  // grid 11, the cold civilized desert
                 "shedu",
-                "",
+                "vortex",
                 "gold_dragon",
                 "falcon_large",
                 "dire_wolf",
@@ -3584,9 +3585,9 @@ int main() {
             {  // grid 16, the temperate wilderness plains and scrub
                 "ascomoid",
                 "firbolg",
-                "",
+                "xvart",
                 "troll",
-                "",
+                "tiger_fly",
                 "kenku",
                 "lion",
                 "wild_boar",
@@ -3647,8 +3648,8 @@ int main() {
             {  // grid 19, the temperate civilized hills and rough terrain
                 "hollyphant",
                 "obliviax",
-                "",
-                "",
+                "scarecrow",
+                "snyad",
                 "fire_beetle",
                 "basilisk",
                 "killmoulis",
@@ -3745,7 +3746,7 @@ int main() {
                 "osquip",
                 "falcon_large",
                 "pedipalp_large",
-                "",
+                "vortex",
                 "griffon",
                 "type_i_vrock",
             },
@@ -3776,7 +3777,7 @@ int main() {
                 "firenewt",
                 "bee_bumblebee",
                 "giant_ant",
-                "",
+                "witherweed",
                 "kenku",
                 "wild_cattle",
                 "hill_giant",
@@ -3918,7 +3919,7 @@ int main() {
                 "lammasu_greater",
             },
             {  // grid 32, the tropical civilized forest
-                "",
+                "shadow_demon",
                 "amphisbaena_snake",
                 "goblin",
                 "hobgoblin",
@@ -3977,13 +3978,13 @@ int main() {
                 "troll",
                 "shedu",
                 "basilisk",
-                "",
+                "disenchanter",
                 "gold_dragon",
             },
             {  // grid 35, the tropical civilized desert
                 "thunderherder",
                 "griffon",
-                "",
+                "vortex",
                 "jermlaine",
                 "dervish",
                 "constrictor_snake",
@@ -4586,6 +4587,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r838_batch.h"  // R838: R838 third FF promotion audit
 #include "rules/audits/r837_batch.h"  // R837: R837 second FF promotion audit
 #include "rules/audits/r836_batch.h"  // R836: R836 first FF promotion audit
 #include "rules/audits/r835_batch.h"  // R835: R835 final holdback batch audit

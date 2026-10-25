@@ -246,9 +246,10 @@ inline int mm2encoFfSourceRows()
 // registry owns; the R820 lammasu promotion rewired the 2
 // keyless cells, 570 -> 572; the R836 FF promotion rewired
 // 18 more, 572 -> 590; the R837 FF promotion rewired
-// 42 more, 590 -> 632)
+// 42 more, 590 -> 632; the R838 FF promotion rewired
+// 13 more, 632 -> 645)
 inline int mm2encoWalkKeyRows()
-    { return 632; }
+    { return 645; }
 
 // The one row with no print def determined (the Pterodactyl, Small cell -
 // flagged for the physical copy)

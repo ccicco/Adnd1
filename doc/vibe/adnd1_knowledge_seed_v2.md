@@ -23548,6 +23548,116 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   aquatic tail, the outdoor tail,
   the 26 dungeon FF rows mm2encd,
   the 401 FF index lines mm2enci).
+- R837 LANDED 2026-10-25: commit
+  edc0a2cd443ee072bbf301c4491edb47c7167266
+  (census 759 -> 760,
+  pushed
+  439a4c3..edc0a2c), THE
+  SECOND FF PROMOTION
+  BATCH (the FF arc, 25
+  defs per the R836 pace
+  pin). THE DEFS: 25 new
+  .lua defs lifted from
+  the ff print (ff_print
+  xp class) - all
+  OUTDOOR (disenchanter,
+  ettercap, firenewt,
+  firedrake, forlarren,
+  gambado, hoar fox,
+  huecuva, ice troll,
+  jermlaine, kenku,
+  khargra, killmoulis,
+  li lung, luck changer
+  (the print entry is
+  TWEEN), meazel,
+  norker, ogrillon,
+  osquip, penanggalan,
+  poltergeist, quaggoth,
+  revenant, rothé,
+  sandman) - the def
+  bodies carry the
+  print-fidelity pin
+  headers; the R836 def
+  shape (30 fields, 3
+  comment lines, return
+  brace). THE REWIRE: 42
+  outdoor cells rekeyed
+  - 41 to the new defs +
+  1 Grabman cell to the
+  existing crabman
+  (42=41+1);
+  disenchanter def-only
+  (its FF row is a
+  dungeon kEncD row) -
+  expected and asserted;
+  the outdoor keyless
+  die rows drain 56 ->
+  14; the walk-key
+  census 590 -> 632
+  (413+159+18+42); the
+  registry 837 -> 862,
+  the ff def census 27
+  -> 52; NO gap boxes
+  flip (MM2 stays 37
+  closed 0 open). Header
+  rules/ffs.h, prefix
+  ffs (17 consts + 4
+  bools, inline 21),
+  audit "R837 second FF
+  promotion audit", rode
+  rules/audits/r837_batch.h;
+  the R836 record seated
+  into the seed; file
+  patches on regtest.cpp
+  (39 rekey patches),
+  mm2enco.h, lmp.h and
+  the audits r817/r820
+  (the walk-key census
+  chains). NOTABLE BUGS
+  (both mine, both
+  caught by the Termux
+  preflight as
+  designed): two RED
+  preflights from lua
+  def authoring - (1)
+  the emitter left real
+  newlines inside the
+  text string literal
+  (Lua unfinished
+  string), (2) the fix
+  script reassigned each
+  data_file's whole
+  content to only its
+  text fragment (2
+  lines), starving R817
+  of the rekeyed defs
+  ("bad 41") and
+  truncating the battery
+  with phantom census
+  FAILs (R391-class
+  symptoms, not causes).
+  The standing guard for
+  any future def batch:
+  validate every emitted
+  .lua against the
+  35-line shape AND
+  parse every string
+  literal strictly
+  (backslash, quote,
+  newline) BEFORE
+  publishing the spec.
+  NEXT: awaits Curtiss's
+  call - the third FF
+  promotion batch rides
+  the same pattern at 25
+  per round (the
+  remaining keyless FF
+  surface: the aquatic
+  tail, the outdoor
+  tail, the 26 dungeon
+  FF rows mm2encd, the
+  401 FF index lines
+  mm2enci).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
