@@ -547,6 +547,7 @@
 #include "rules/ffk.h"  // R843: the sixth FF promotion batch
 #include "rules/ffl.h"  // R844: the seventh FF promotion batch
 #include "rules/ffm.h"  // R845: the eighth FF promotion batch
+#include "rules/ffn.h"  // R846: the FF monster level tables
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4594,6 +4595,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r846_batch.h"  // R846: R846 FF monster level tables audit
 #include "rules/audits/r845_batch.h"  // R845: R845 eighth FF promotion audit
 #include "rules/audits/r844_batch.h"  // R844: R844 seventh FF promotion audit
 #include "rules/audits/r843_batch.h"  // R843: R843 sixth FF promotion audit

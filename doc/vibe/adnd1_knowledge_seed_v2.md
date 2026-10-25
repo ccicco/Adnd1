@@ -24120,6 +24120,93 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   short-batch round or a batch
   padded with other work); the
   FF print walk is nearly done.
+- R845 LANDED 2026-10-25: commit
+  18ab27cd7ff5af43f5159e34be72bbef271f3e77
+  (pushed 8eaa27b..18ab27c,
+  census 767 -> 768), THE EIGHTH
+  FF PROMOTION BATCH - the 7-def
+  SHORT BATCH closing the FF print
+  walk (overriding the R836 25 pace
+  pin: the missing print census
+  drains 7 -> 0, ALL 185 FF print
+  stat-blocks saved). THE DEFS: 7
+  new .lua defs lifted from the ff
+  print (ff_print xp class), the
+  last holdouts in ToC order: the
+  yellow urchin p. 92, vision p. 93,
+  whipweed p. 94, witherstench
+  p. 95, xill p. 96, the yellow musk
+  creeper and the yellow musk
+  zombie p. 97 - the R836-R844 def
+  shape with the print-fidelity pin
+  headers. NO encounter rewires, NO
+  gap boxes flip (MM2 stays 37
+  closed 0 open): a def-only batch
+  - the registry 988 -> 995, the ff
+  def census 178 -> 185, the missing
+  print census 7 -> 0. Header
+  rules/ffm.h, prefix ffm (free;
+  16 consts + 6 bools, inline 22),
+  audit "R845 eighth FF promotion
+  audit", rode
+  rules/audits/r845_batch.h
+  (include above the r844_batch.h
+  index-line include; the data
+  include rides the ffl.h
+  index-line include); the R844
+  record seated into the seed.
+  DATA VOICES: the three-voice
+  collation (djvu text, djvu
+  word-geometry xml, abbyy char
+  xml) with the 1eonline /5ff/
+  transcripts; adjudicated
+  ambiguities: the yellow urchin
+  rides the R836 urchin family
+  prose verbatim from the landed
+  urchin_black.lua ("Urchin, Black"
+  naming precedent -> "Urchin,
+  Yellow", treasure "Gem (160-1,600
+  gold pieces)", move '12"//18"',
+  AC 1, HD 4+2 -> avgHp 20, xp
+  IV/205+5 -> 305, dmg
+  1-6/1-6/1-6/1-6, SA Venom); the
+  vision AC "0 (10)", NOA "Nil"
+  (string), SA "Aging", xp
+  825+10x36 -> 1185; the whipweed
+  HD "Stalks 2+4; base 1+4"
+  (hitDiceNum 2, bonus 4, avgHp 13,
+  xp 120+4x13 -> 172), AC "Stalks
+  6; base 4", dmg 1-10/1-10, SA
+  "See below"; the witherstench
+  NO 3-12 (the scan garbles 1 -> 7,
+  the transcript right), SD "See
+  below", xp 65+3x11 -> 98; the
+  xill AC 0, MR "70% (but see
+  below)", dmg "1-4/1-4/1-4/1-4 or
+  by weapon type", avgHp 23, xp
+  325+5x23 -> 440, 11-20 hp/day
+  larvae, the lair paragraph ends
+  "only then attacking the
+  invaders." (the "endeavours..."
+  tail belongs to the XVART); the
+  yellow musk creeper MOVE
+  "Immobile", lairPct 100, TT
+  "Any", NOA "2-12" (string), dmg
+  "Special", avgHp 14, xp 65+3x14
+  -> 107; the yellow musk zombie
+  named "Zombie, Yellow Musk" per
+  the print heading, AC "Variable",
+  MOVE "As human", MR "See below",
+  avgHp 9, xp 28+2x9 -> 46, INT
+  "Non-", AL "Neutral evil". Spec
+  tools/spec_r845.json, md5
+  dd6c638c9af30324a31eeadc37d37720
+  (authored-plus-newline).
+  NEXT: the FF print walk is CLOSED
+  - all 185 FF print stat-blocks
+  saved, the missing print census
+  at 0; awaits Curtiss's call for
+  what follows the FF arc.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
