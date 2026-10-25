@@ -22835,6 +22835,59 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   same wiring (digest idx 18 onward:
   R114 aging at line 1826 is the next
   head; batch size Curtiss's call).
+- R825 LANDED 2026-10-25: commit
+  6491e17c7dcb3da2ad2cfa28540fb7564399a667
+  (census 747 -> 748, pushed
+  0f7f233..6491e17), THE DMG APPENDIX
+  MIGRATION BATCH - the second batch of
+  real blocks leaves regtest (the
+  REGTEST DECOMPOSITION ARC, Curtiss's
+  bare Go - batch size Vibe's call, 18
+  blocks to match the pilot rhythm).
+  THE MOVE: digest idx 18-35 (R114,
+  R115 x2, R116, R117, R118, R119,
+  R120, R121, R122, R123, R124, R125,
+  R126, R127, R128, R130, R131 -
+  1700 lines) migrated VERBATIM into
+  rules/audits fragments (r114_aging.h
+  through r131_slot_plumbing.h); R124
+  appendix A dressing is the largest
+  block yet at 517 lines, its max line
+  exactly 78 - the width gate held.
+  R825's own audit rode
+  rules/audits/r825_dmg_batch.h. Two
+  R115 labels (magic weapon gate +
+  magic aging) migrated as separate
+  blocks - the label, not the round
+  number, is the migration key. Header
+  rules/nmb.h, prefix nmb (verified
+  free at 0f7f233, 0 hits), 6 consts +
+  4 bools (inline 10), 4 examples, the
+  R824 record seated into the seed, NO
+  gap flips (MM2 stays 37 closed 0
+  open), NO tool patches. GATES: dress
+  rehearsal on a copy of the REAL tree
+  at 0f7f233 (all 19 R824 fragments
+  fetched - the first rehearsal read
+  census 729 because the sim copy
+  LACKED the R824 fragments; the
+  engine was right, the fixture was
+  wrong; a sim must carry the whole
+  rules/audits dir, not just
+  regtest); double-run 23/0 -> 0/23;
+  fragments byte-exact; regtest
+  reconstruction byte-for-byte;
+  census 710 + 38 = 748, all 748
+  preflight patterns unique each
+  once; rverify GREEN (10 mutants, 0
+  missed). Delivery spec-r825 canvas:
+  spec 8534 bytes, md5
+  f263545462caa4f6e3b6bbab5ef27a11,
+  landed the same. NEXT: awaits
+  Curtiss's call - the third batch
+  rides the same wiring (digest idx 36
+  onward: R147 dwarf CON save at the
+  next head), Curtiss's call on pace.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
