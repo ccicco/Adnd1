@@ -524,6 +524,7 @@
 #include "rules/lmp.h"  // R820: the lammasu promotion
 #include "rules/lungp.h"  // R821: the lung promotion
 #include "rules/afw.h"  // R822: the audit files decomposition wiring
+#include "rules/migw.h"  // R823: the audit blocks migration wiring
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -139947,6 +139948,54 @@ int main() {
         )
             ++bad;
         printf("R822 audit files wiring audit: bad %d\n", bad);
+        if (bad) return 1;
+    }
+    // ---- R823 audit migration wiring audit ----
+    // the tooling round: no block moves yet - the wiring rides the spec key,
+    // the first real moves are the pilot round; the audit checks the wiring
+    // constants themselves
+    {
+        using namespace rules;
+        int bad = 0;
+    if (migw_frag_gap() != 3
+            || migw_head_walk() != 800
+            || migw_width() != 78
+            || migw_census() != 746
+            || migw_blocks_total() != 745
+            || migw_min_blocks() != 1
+            || migw_anchor_pad() != 4
+            || migw_bad_marker() != 1
+            || migw_brace_delta() != 0
+            || migw_label_len() != 33
+            || !migw_frag_required()
+            || !migw_verbatim()
+            || !migw_no_bare_return()
+            || !migw_include_inline()
+            || !migw_census_holds()
+            || !migw_gates_recheck()
+            || !migw_last_wins()
+            || !migw_rn_adds()
+            || !migw_rverify_counts()
+            || !migw_tooling_alone()
+        )
+            ++bad;
+        // the pilot batch plus the floor stays the pilot batch
+    if (migw_frag_gap() + migw_min_blocks() != 4
+        )
+            ++bad;
+        // the walk reaches any label in the standing census
+    if (migw_head_walk() != migw_blocks_total() + migw_frag_gap() + 52
+        )
+            ++bad;
+        // the marker floor with a flat brace delta
+    if (migw_bad_marker() + migw_brace_delta() != 1
+        )
+            ++bad;
+        // the label length matches this round audit label
+    if (migw_label_len() != migw_anchor_pad() + 29
+        )
+            ++bad;
+        printf("R823 audit migration wiring audit: bad %d\n", bad);
         if (bad) return 1;
     }
     // ---- R227: the wis mental save wiring audit ----

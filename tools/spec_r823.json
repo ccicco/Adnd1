@@ -1,0 +1,353 @@
+{
+  "round": 823,
+  "title": "the audit blocks migration wiring",
+  "prefix": "migw",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/migw.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the audit blocks migration wiring - the tooling round of the regtest decomposition arc",
+    "provenance": "spec-driven; the engine gains the migrate_blocks key - a declared block leaves regtest verbatim for a rules/audits fragment, regtest keeps the one-line include at its head line; the census holds, the label relocates; rverify counts the moves, rn git-adds the fragments"
+  },
+  "census_before": 745,
+  "inline_count": 20,
+  "consts": [
+    {
+      "name": "migw_frag_gap",
+      "value": 3,
+      "comment": "the fragments per pilot migration round"
+    },
+    {
+      "name": "migw_head_walk",
+      "value": 800,
+      "comment": "the max upward walk from a label to its head"
+    },
+    {
+      "name": "migw_width",
+      "value": 78,
+      "comment": "the line-width gate for the moving blocks"
+    },
+    {
+      "name": "migw_census",
+      "value": 746,
+      "comment": "the census after this round lands its own audit"
+    },
+    {
+      "name": "migw_blocks_total",
+      "value": 745,
+      "comment": "the blocks standing before this round"
+    },
+    {
+      "name": "migw_min_blocks",
+      "value": 1,
+      "comment": "the floor on a migration batch"
+    },
+    {
+      "name": "migw_anchor_pad",
+      "value": 4,
+      "comment": "the include indent inside the battery body"
+    },
+    {
+      "name": "migw_bad_marker",
+      "value": 1,
+      "comment": "the bad markers a moving block must carry"
+    },
+    {
+      "name": "migw_brace_delta",
+      "value": 0,
+      "comment": "the brace delta a moving block must show"
+    },
+    {
+      "name": "migw_label_len",
+      "value": 33,
+      "comment": "the audit label length this round"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "bools": [
+    {
+      "name": "migw_frag_required",
+      "value": true,
+      "comment": "the fragment path must sit under rules/audits"
+    },
+    {
+      "name": "migw_verbatim",
+      "value": true,
+      "comment": "the block moves byte for byte"
+    },
+    {
+      "name": "migw_no_bare_return",
+      "value": true,
+      "comment": "a moving block never carries a bare return 0"
+    },
+    {
+      "name": "migw_include_inline",
+      "value": true,
+      "comment": "the one-line include lands at the head line"
+    },
+    {
+      "name": "migw_census_holds",
+      "value": true,
+      "comment": "the total census survives the move"
+    },
+    {
+      "name": "migw_gates_recheck",
+      "value": true,
+      "comment": "the migration gates re-verify each block"
+    },
+    {
+      "name": "migw_last_wins",
+      "value": true,
+      "comment": "the writes list keeps the final regtest"
+    },
+    {
+      "name": "migw_rn_adds",
+      "value": true,
+      "comment": "the ritual git-adds the fragments"
+    },
+    {
+      "name": "migw_rverify_counts",
+      "value": true,
+      "comment": "the harness census counts the migrations"
+    },
+    {
+      "name": "migw_tooling_alone",
+      "value": true,
+      "comment": "tooling lands alone - the R791 lesson"
+    }
+  ],
+  "header_sections": {
+    "the migration wiring": [
+      {
+        "kind": "const",
+        "name": "migw_frag_gap"
+      },
+      {
+        "kind": "const",
+        "name": "migw_head_walk"
+      },
+      {
+        "kind": "const",
+        "name": "migw_width"
+      },
+      {
+        "kind": "const",
+        "name": "migw_census"
+      },
+      {
+        "kind": "const",
+        "name": "migw_blocks_total"
+      },
+      {
+        "kind": "const",
+        "name": "migw_min_blocks"
+      },
+      {
+        "kind": "const",
+        "name": "migw_anchor_pad"
+      },
+      {
+        "kind": "const",
+        "name": "migw_bad_marker"
+      },
+      {
+        "kind": "const",
+        "name": "migw_brace_delta"
+      },
+      {
+        "kind": "const",
+        "name": "migw_label_len"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_frag_required"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_verbatim"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_no_bare_return"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_include_inline"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_census_holds"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_gates_recheck"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_last_wins"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_rn_adds"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_rverify_counts"
+      },
+      {
+        "kind": "bool",
+        "name": "migw_tooling_alone"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['migw_frag_gap']() + m['migw_min_blocks']() != 4",
+      "note": "the pilot batch plus the floor stays the pilot batch"
+    },
+    {
+      "expr": "m['migw_head_walk']() != m['migw_blocks_total']() + m['migw_frag_gap']() + 52",
+      "note": "the walk reaches any label in the standing census"
+    },
+    {
+      "expr": "m['migw_bad_marker']() + m['migw_brace_delta']() != 1",
+      "note": "the marker floor with a flat brace delta"
+    },
+    {
+      "expr": "m['migw_label_len']() != m['migw_anchor_pad']() + 29",
+      "note": "the label length matches this round audit label"
+    }
+  ],
+  "audit_label": "R823 audit migration wiring audit",
+  "audit_comment": "the tooling round: no block moves yet - the wiring rides the spec key, the first real moves are the pilot round; the audit checks the wiring constants themselves",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "include_comment": "the audit blocks migration wiring",
+  "include_after": "#include \"rules/afw.h\"  // R822: the audit files decomposition wiring",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R822 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R822 LANDED 2026-10-25: commit",
+    "  a66299140a2520a090b4c531627b207e79d5bce1",
+    "  (census 744 -> 745, pushed 951b962..a662991),",
+    "  THE AUDIT FILES DECOMPOSITION WIRING - the",
+    "  tooling round of the REGTEST DECOMPOSITION",
+    "  ARC (Curtiss's Go call on the thin-driver",
+    "  plan: regtest.cpp stood at 5,717,896 bytes,",
+    "  744 audit blocks in one TU). THE MECHANISM:",
+    "  the engine gains the audit_file spec key -",
+    "  a declared round writes its ENGINE-EMITTED",
+    "  audit block to a NEW fragment under",
+    "  rules/audits/, and regtest gets the",
+    "  one-line #include at the R227 anchor,",
+    "  inside the battery function body - the",
+    "  preprocessor unrolls it, the binary is",
+    "  unchanged, a syntax error names its",
+    "  fragment. NINE FILE PATCHES over FOUR TOOL",
+    "  FILES: the engine (the audit_file branch in",
+    "  (e) + the census/label counts summing",
+    "  regtest.cpp PLUS rules/audits/*.h),",
+    "  rverify (the restore list gains the",
+    "  fragment + n_patches counts 3+2 instead of",
+    "  3+1), preflight (the battery census printf",
+    "  patterns read regtest.cpp plus the",
+    "  fragments, no-fragment fallback intact),",
+    "  and rn (derives audit_file from the spec,",
+    "  echoes it, git-adds it - the R793 untracked",
+    "  lesson). THE R791 LESSON BINDS: tooling",
+    "  lands alone - R822's own audit landed",
+    "  inline (old way), the engine can never",
+    "  consume its own extension in the run that",
+    "  patches it in, and the FIRST audit-file",
+    "  round is the next one. Header rules/afw.h,",
+    "  prefix afw (verified free at 951b962 via",
+    "  code search - only dnafWaterCaverns",
+    "  case-slices, no \\bafw match), 10 consts +",
+    "  10 bools (inline 20), 4 examples, the R821",
+    "  record seated into the seed, NO gap boxes",
+    "  flip (the MM2 arc gap stays 37 closed 0",
+    "  open), 9 file patches + the standard four,",
+    "  applied 13. GATES: engine double-run 13/0",
+    "  -> 0/13 on a stub tree; rverify local",
+    "  adapted copy GREEN (20 mutants, 0 missed);",
+    "  py_compile on the patched engine/rverify,",
+    "  bash -n on the patched rn/preflight; THE",
+    "  FUTURE-PATTERN SHAKEDOWN - a synthetic",
+    "  R823 audit-file round on the patched tree",
+    "  ran applied 5/0 -> 0/5 with the fragment",
+    "  emitted, the include inserted, the census",
+    "  counted across both, idempotent; the",
+    "  preflight pattern source found the fragment",
+    "  printf; the tree restored pristine. TWO",
+    "  LOCAL CATCHES (the engine's own gates, both",
+    "  pre-delivery): (1) a header COMMENT",
+    "  containing the literal 'inline ' inflated",
+    "  the inline-count gate (reworded - a",
+    "  comment can carry the counter); (2) the",
+    "  audit_comment prose containing the literal",
+    "  'audit: bad' inflated the census (the",
+    "  emitted audit comments land inside",
+    "  regtest.cpp where the census counts them -",
+    "  audit prose must paraphrase the label,",
+    "  never quote it). RETRIEVAL LESSON: the raw",
+    "  open_url fetch WRAPS long lines (~76 cols,",
+    "  re-indenting the wrap) - the byte-faithful",
+    "  source is the GitHub API resource text;",
+    "  always diff the two routes before writing",
+    "  a byte-exact anchor. Delivery spec-r822:",
+    "  raw JSON canvas, 18857 bytes, authored md5",
+    "  25914f9acf5362b127a47393db102150",
+    "  (authored-plus-newline",
+    "  7ffc6e5ddeb8cdae327f481024abc09b), landed",
+    "  the same. NEXT: awaits Curtiss's call - the",
+    "  per-book MIGRATION rounds that move the",
+    "  existing 744 blocks into fragments ride the",
+    "  wiring, smallest-first pilot (the early DMG",
+    "  blocks the natural candidate), Curtiss's",
+    "  call on pace each round."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "file_patches": [
+    {
+      "file": "tools/splice_engine.py",
+      "from": "for df in S.get('data_files', []):\n    p = df['path']\n    if os.path.exists(p):\n        already.append('data: %s' % p)\n    else:\n        writes.append((p, df['content']))\n        applied.append('data: %s' % p)\n\n# ---------- the idempotency gate (the R420 lesson) ----------",
+      "to": "for df in S.get('data_files', []):\n    p = df['path']\n    if os.path.exists(p):\n        already.append('data: %s' % p)\n    else:\n        writes.append((p, df['content']))\n        applied.append('data: %s' % p)\n\n# ---------- the block migrations (the R823 tooling\n# extension): spec-declared audit blocks LEAVE\n# regtest.cpp verbatim for their own fragment\n# under rules/audits/ - the block text moves\n# byte-for-byte, regtest keeps a one-line\n# #include at the block's head line. The same\n# statements, the same gates, the census (the\n# R822 fragment-reading battery) sees the\n# label wherever it lives: the total holds, the\n# label relocates. The block is never hand-\n# authored, the extraction walks from the\n# printf label up to its head comment and\n# forward to the next boundary - and the\n# migration gates (one bad marker, no bare\n# return, brace delta 0, line width) re-check\n# the block before it moves\nmig_done = False\nfor mb in S.get('migrate_blocks', []):\n    frag = mb['fragment']\n    mlbl = mb['label']\n    if not frag.startswith('rules/audits/'):\n        die('the migration fragment must live '\n            'under rules/audits/: %s' % frag)\n    rt_l = rt.split(NL)\n    lab_at = None\n    for n, L in enumerate(rt_l):\n        if ('\"%s: bad ' % mlbl) in L:\n            lab_at = n\n            break\n    if lab_at is None:\n        # the label is gone from regtest: the\n        # block left an earlier run (or rode\n        # its fragment from the start)\n        if os.path.exists(frag):\n            already.append('migrate: %s' % mlbl)\n            continue\n        die('the migration label is missing '\n            'from regtest.cpp: %s' % mlbl)\n    if os.path.exists(frag):\n        die('the corrupt migration state - the '\n            'fragment exists but the label is '\n            'still inline: %s' % mlbl)\n    head_re = re.compile(r'^\\s*//\\s*-+\\s*R\\d+')\n    head_at = None\n    for n in range(lab_at, max(lab_at - 800, -1), -1):\n        if head_re.match(rt_l[n]):\n            head_at = n\n            break\n    if head_at is None:\n        die('the migration head comment is '\n            'missing above the label: %s' % mlbl)\n    end_at = len(rt_l)\n    for n in range(head_at + 1, len(rt_l)):\n        if head_re.match(rt_l[n]):\n            end_at = n\n            break\n        if rt_l[n] == S['audit_anchor'] or \\\n                rt_l[n].rstrip() == '    return 0;':\n            end_at = n\n            break\n    body = rt_l[head_at:end_at]\n    while body and not body[-1].strip():\n        body.pop()\n    if not body:\n        die('the migration block is empty: '\n            '%s' % mlbl)\n    nbad = 0\n    for L in body:\n        if 'audit: bad' in L:\n            nbad += 1\n    if nbad != 1:\n        die('the migration block must carry '\n            'exactly one bad marker: %s' % mlbl)\n    for L in body[1:]:\n        if L.strip() == 'return 0;':\n            die('the migration block carries a '\n                'bare return 0: %s' % mlbl)\n    depth = 0\n    for L in body:\n        s = L.strip()\n        if s.startswith('//') or s.startswith('*'):\n            continue\n        depth += L.count('{') - L.count('}')\n    if depth != 0:\n        die('the migration block brace delta '\n            'is not zero: %s' % mlbl)\n    for L in body:\n        if len(L) > WIDTH:\n            die('the migration block has a long '\n                'line (%d cols): %s'\n                % (len(L), mlbl))\n    _d = os.path.dirname(frag)\n    if _d and not os.path.isdir(_d):\n        os.makedirs(_d)\n    writes.append((frag, NL.join(body) + NL))\n    inc_m = '    #include \"%s\"  // R%d: migrated' % (\n        frag, RND)\n    if len(inc_m) > WIDTH:\n        die('the migration include line is '\n            'too long (%d cols): %s'\n            % (len(inc_m), frag))\n    rt_l[head_at:end_at] = [inc_m]\n    rt = NL.join(rt_l)\n    applied.append('migrate: %s' % mlbl)\n    mig_done = True\nif mig_done:\n    writes.append((RT, rt))\n\n# ---------- the idempotency gate (the R420 lesson) ----------",
+      "note": "the migration phase in the engine"
+    },
+    {
+      "file": "tools/rverify.py",
+      "from": "        + ([S['audit_file']]\n           if S.get('audit_file') else [])",
+      "to": "        + ([S['audit_file']]\n           if S.get('audit_file') else []) \\\n        + [mb['fragment']\n           for mb in S.get('migrate_blocks', [])]",
+      "note": "the rverify restore list gains the migration fragments"
+    },
+    {
+      "file": "tools/rverify.py",
+      "from": "# 3 + 1 = seed, header, include, audit;\n# 2 instead of 1 when the audit rides a\n# fragment (the R822 audit_file: the\n# fragment + the include); the R774 file\n# patches and the R791 data files count\n# the same way (the applied/already\n# census covers them)\nn_patches = (len(S['gap_flips']) + 3\n             + (2 if S.get('audit_file') else 1)\n             + len(S.get('file_patches', []))\n             + len(S.get('data_files', [])))",
+      "to": "# 3 + 1 = seed, header, include, audit;\n# 2 instead of 1 when the audit rides a\n# fragment (the R822 audit_file: the\n# fragment + the include); the R774 file\n# patches and the R791 data files count\n# the same way (the applied/already\n# census covers them); so does the R823\n# block migration (one per moved block)\nn_patches = (len(S['gap_flips']) + 3\n             + (2 if S.get('audit_file') else 1)\n             + len(S.get('file_patches', []))\n             + len(S.get('data_files', []))\n             + len(S.get('migrate_blocks', [])))",
+      "note": "the rverify n_patches counts the migrations"
+    },
+    {
+      "file": "rn",
+      "from": "AFILE=$(python3 -c \"import json,sys; print(json.load(open('$SPEC')).get('audit_file',''))\")",
+      "to": "AFILE=$(python3 -c \"import json,sys; print(json.load(open('$SPEC')).get('audit_file',''))\")\nNMIG=$(python3 -c \"import json,sys; print(len(json.load(open('$SPEC')).get('migrate_blocks',[])))\")\nMFRAGS=$(python3 -c \"import json,sys; print(' '.join(mb['fragment'] for mb in json.load(open('$SPEC')).get('migrate_blocks',[])))\")",
+      "note": "the rn derives the migration count and fragments"
+    },
+    {
+      "file": "rn",
+      "from": "if [ -n \"$AFILE\" ]; then\n    echo \"== audit-file round: $AFILE goes in the git add\"\nfi\necho \"== commit:  $CMSG\"",
+      "to": "if [ -n \"$AFILE\" ]; then\n    echo \"== audit-file round: $AFILE goes in the git add\"\nfi\nif [ \"$NMIG\" -gt 0 ]; then\n    echo \"== migration round ($NMIG block(s)): $MFRAGS go in the git add\"\nfi\necho \"== commit:  $CMSG\"",
+      "note": "the rn echoes the migration round"
+    },
+    {
+      "file": "rn",
+      "from": "if [ -n \"$AFILE\" ]; then\n    git add \"$AFILE\"\nfi\ngit commit -m \"$CMSG\"",
+      "to": "if [ -n \"$AFILE\" ]; then\n    git add \"$AFILE\"\nfi\nif [ \"$NMIG\" -gt 0 ]; then\n    git add $MFRAGS\nfi\ngit commit -m \"$CMSG\"",
+      "note": "the rn git-adds the migration fragments"
+    }
+  ]
+}

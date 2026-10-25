@@ -42,6 +42,8 @@ EXTRA=$(python3 -c "import json,sys; print(' '.join(fp['file'] for fp in json.lo
 NDATA=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('data_files',[])))")
 DFILES=$(python3 -c "import json,sys; print(' '.join(df['path'] for df in json.load(open('$SPEC')).get('data_files',[])))")
 AFILE=$(python3 -c "import json,sys; print(json.load(open('$SPEC')).get('audit_file',''))")
+NMIG=$(python3 -c "import json,sys; print(len(json.load(open('$SPEC')).get('migrate_blocks',[])))")
+MFRAGS=$(python3 -c "import json,sys; print(' '.join(mb['fragment'] for mb in json.load(open('$SPEC')).get('migrate_blocks',[])))")
 
 echo "== rn R${RND}: spec $SPEC"
 echo "== header:  $HDR"
@@ -59,6 +61,9 @@ if [ "$NDATA" -gt 0 ]; then
 fi
 if [ -n "$AFILE" ]; then
     echo "== audit-file round: $AFILE goes in the git add"
+fi
+if [ "$NMIG" -gt 0 ]; then
+    echo "== migration round ($NMIG block(s)): $MFRAGS go in the git add"
 fi
 echo "== commit:  $CMSG"
 
@@ -85,6 +90,9 @@ if [ "$NDATA" -gt 0 ]; then
 fi
 if [ -n "$AFILE" ]; then
     git add "$AFILE"
+fi
+if [ "$NMIG" -gt 0 ]; then
+    git add $MFRAGS
 fi
 git commit -m "$CMSG"
 git push

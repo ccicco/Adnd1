@@ -51,7 +51,9 @@ if SHA:
         + [df['path']
            for df in S.get('data_files', [])] \
         + ([S['audit_file']]
-           if S.get('audit_file') else [])
+           if S.get('audit_file') else []) \
+        + [mb['fragment']
+           for mb in S.get('migrate_blocks', [])]
     for p in sorted(set(files)):
         os.makedirs(os.path.dirname(p) or '.',
                      exist_ok=True)
@@ -83,11 +85,13 @@ r2 = subprocess.run(
 # fragment + the include); the R774 file
 # patches and the R791 data files count
 # the same way (the applied/already
-# census covers them)
+# census covers them); so does the R823
+# block migration (one per moved block)
 n_patches = (len(S['gap_flips']) + 3
              + (2 if S.get('audit_file') else 1)
              + len(S.get('file_patches', []))
-             + len(S.get('data_files', [])))
+             + len(S.get('data_files', []))
+             + len(S.get('migrate_blocks', [])))
 ok1 = ('applied %d, already 0' % n_patches) in r1.stdout
 ok2 = ('applied 0, already %d' % n_patches) in r2.stdout
 print('DOUBLE-RUN: first %s, second %s'

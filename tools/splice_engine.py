@@ -696,6 +696,114 @@ for df in S.get('data_files', []):
         writes.append((p, df['content']))
         applied.append('data: %s' % p)
 
+# ---------- the block migrations (the R823 tooling
+# extension): spec-declared audit blocks LEAVE
+# regtest.cpp verbatim for their own fragment
+# under rules/audits/ - the block text moves
+# byte-for-byte, regtest keeps a one-line
+# #include at the block's head line. The same
+# statements, the same gates, the census (the
+# R822 fragment-reading battery) sees the
+# label wherever it lives: the total holds, the
+# label relocates. The block is never hand-
+# authored, the extraction walks from the
+# printf label up to its head comment and
+# forward to the next boundary - and the
+# migration gates (one bad marker, no bare
+# return, brace delta 0, line width) re-check
+# the block before it moves
+mig_done = False
+for mb in S.get('migrate_blocks', []):
+    frag = mb['fragment']
+    mlbl = mb['label']
+    if not frag.startswith('rules/audits/'):
+        die('the migration fragment must live '
+            'under rules/audits/: %s' % frag)
+    rt_l = rt.split(NL)
+    lab_at = None
+    for n, L in enumerate(rt_l):
+        if ('"%s: bad ' % mlbl) in L:
+            lab_at = n
+            break
+    if lab_at is None:
+        # the label is gone from regtest: the
+        # block left an earlier run (or rode
+        # its fragment from the start)
+        if os.path.exists(frag):
+            already.append('migrate: %s' % mlbl)
+            continue
+        die('the migration label is missing '
+            'from regtest.cpp: %s' % mlbl)
+    if os.path.exists(frag):
+        die('the corrupt migration state - the '
+            'fragment exists but the label is '
+            'still inline: %s' % mlbl)
+    head_re = re.compile(r'^\s*//\s*-+\s*R\d+')
+    head_at = None
+    for n in range(lab_at, max(lab_at - 800, -1), -1):
+        if head_re.match(rt_l[n]):
+            head_at = n
+            break
+    if head_at is None:
+        die('the migration head comment is '
+            'missing above the label: %s' % mlbl)
+    end_at = len(rt_l)
+    for n in range(head_at + 1, len(rt_l)):
+        if head_re.match(rt_l[n]):
+            end_at = n
+            break
+        if rt_l[n] == S['audit_anchor'] or \
+                rt_l[n].rstrip() == '    return 0;':
+            end_at = n
+            break
+    body = rt_l[head_at:end_at]
+    while body and not body[-1].strip():
+        body.pop()
+    if not body:
+        die('the migration block is empty: '
+            '%s' % mlbl)
+    nbad = 0
+    for L in body:
+        if 'audit: bad' in L:
+            nbad += 1
+    if nbad != 1:
+        die('the migration block must carry '
+            'exactly one bad marker: %s' % mlbl)
+    for L in body[1:]:
+        if L.strip() == 'return 0;':
+            die('the migration block carries a '
+                'bare return 0: %s' % mlbl)
+    depth = 0
+    for L in body:
+        s = L.strip()
+        if s.startswith('//') or s.startswith('*'):
+            continue
+        depth += L.count('{') - L.count('}')
+    if depth != 0:
+        die('the migration block brace delta '
+            'is not zero: %s' % mlbl)
+    for L in body:
+        if len(L) > WIDTH:
+            die('the migration block has a long '
+                'line (%d cols): %s'
+                % (len(L), mlbl))
+    _d = os.path.dirname(frag)
+    if _d and not os.path.isdir(_d):
+        os.makedirs(_d)
+    writes.append((frag, NL.join(body) + NL))
+    inc_m = '    #include "%s"  // R%d: migrated' % (
+        frag, RND)
+    if len(inc_m) > WIDTH:
+        die('the migration include line is '
+            'too long (%d cols): %s'
+            % (len(inc_m), frag))
+    rt_l[head_at:end_at] = [inc_m]
+    rt = NL.join(rt_l)
+    applied.append('migrate: %s' % mlbl)
+    mig_done = True
+if mig_done:
+    writes.append((RT, rt))
+
 # ---------- the idempotency gate (the R420 lesson) ----------
 
 if applied and already:

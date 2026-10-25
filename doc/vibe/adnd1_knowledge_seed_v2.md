@@ -22599,6 +22599,84 @@ files (the .lua defs), 9 examples, applied 16. GATES: engine double-run 16/0
 unique, walk <=78 with the R227 tail re-emitted, identifier sweep clean, lua
 xpValue arithmetic mirrored (4550+16x38=5158, 1400+12x31=1772); tree restored
 pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
+- R822 LANDED 2026-10-25: commit
+  a66299140a2520a090b4c531627b207e79d5bce1
+  (census 744 -> 745, pushed 951b962..a662991),
+  THE AUDIT FILES DECOMPOSITION WIRING - the
+  tooling round of the REGTEST DECOMPOSITION
+  ARC (Curtiss's Go call on the thin-driver
+  plan: regtest.cpp stood at 5,717,896 bytes,
+  744 audit blocks in one TU). THE MECHANISM:
+  the engine gains the audit_file spec key -
+  a declared round writes its ENGINE-EMITTED
+  audit block to a NEW fragment under
+  rules/audits/, and regtest gets the
+  one-line #include at the R227 anchor,
+  inside the battery function body - the
+  preprocessor unrolls it, the binary is
+  unchanged, a syntax error names its
+  fragment. NINE FILE PATCHES over FOUR TOOL
+  FILES: the engine (the audit_file branch in
+  (e) + the census/label counts summing
+  regtest.cpp PLUS rules/audits/*.h),
+  rverify (the restore list gains the
+  fragment + n_patches counts 3+2 instead of
+  3+1), preflight (the battery census printf
+  patterns read regtest.cpp plus the
+  fragments, no-fragment fallback intact),
+  and rn (derives audit_file from the spec,
+  echoes it, git-adds it - the R793 untracked
+  lesson). THE R791 LESSON BINDS: tooling
+  lands alone - R822's own audit landed
+  inline (old way), the engine can never
+  consume its own extension in the run that
+  patches it in, and the FIRST audit-file
+  round is the next one. Header rules/afw.h,
+  prefix afw (verified free at 951b962 via
+  code search - only dnafWaterCaverns
+  case-slices, no \bafw match), 10 consts +
+  10 bools (inline 20), 4 examples, the R821
+  record seated into the seed, NO gap boxes
+  flip (the MM2 arc gap stays 37 closed 0
+  open), 9 file patches + the standard four,
+  applied 13. GATES: engine double-run 13/0
+  -> 0/13 on a stub tree; rverify local
+  adapted copy GREEN (20 mutants, 0 missed);
+  py_compile on the patched engine/rverify,
+  bash -n on the patched rn/preflight; THE
+  FUTURE-PATTERN SHAKEDOWN - a synthetic
+  R823 audit-file round on the patched tree
+  ran applied 5/0 -> 0/5 with the fragment
+  emitted, the include inserted, the census
+  counted across both, idempotent; the
+  preflight pattern source found the fragment
+  printf; the tree restored pristine. TWO
+  LOCAL CATCHES (the engine's own gates, both
+  pre-delivery): (1) a header COMMENT
+  containing the literal 'inline ' inflated
+  the inline-count gate (reworded - a
+  comment can carry the counter); (2) the
+  audit_comment prose containing the literal
+  'audit: bad' inflated the census (the
+  emitted audit comments land inside
+  regtest.cpp where the census counts them -
+  audit prose must paraphrase the label,
+  never quote it). RETRIEVAL LESSON: the raw
+  open_url fetch WRAPS long lines (~76 cols,
+  re-indenting the wrap) - the byte-faithful
+  source is the GitHub API resource text;
+  always diff the two routes before writing
+  a byte-exact anchor. Delivery spec-r822:
+  raw JSON canvas, 18857 bytes, authored md5
+  25914f9acf5362b127a47393db102150
+  (authored-plus-newline
+  7ffc6e5ddeb8cdae327f481024abc09b), landed
+  the same. NEXT: awaits Curtiss's call - the
+  per-book MIGRATION rounds that move the
+  existing 744 blocks into fragments ride the
+  wiring, smallest-first pilot (the early DMG
+  blocks the natural candidate), Curtiss's
+  call on pace each round.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
