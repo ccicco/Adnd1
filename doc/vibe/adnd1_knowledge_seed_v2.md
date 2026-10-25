@@ -24313,6 +24313,115 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   table-group queue), then R848
   the Magic Item Tables; awaits
   Curtiss's go.
+- R847 LANDED 2026-10-25: commit
+  4024a96a0e49c44a30f31339b4eeb4c701607279
+  (pushed 98668cc..4024a96,
+  census 769 -> 770), THE FF
+  ENCOUNTER LISTINGS - round two
+  of the three FF table-group rounds
+  (the queue: R848 the Magic Item
+  Tables). THE WALK: 21 tables, 489
+  rows, every cell pinned - the six
+  terrain tables (print pp. 111-119:
+  Arctic 16, Sub-Arctic 31, temperate
+  uninhabited 98, temperate inhabited
+  and patrolled 60, Faerie 47,
+  tropical 89; 341 rows), the twelve
+  subtables (Demi-Human 4, Dragon 15,
+  Frog 3, Giant 12, Humanoid 7,
+  Lycanthrope 5, Men 9, Snake 4,
+  Sphinx 4, Spider 4, Undead 15, the
+  tropical Sphinx 4; 86 rows), the
+  Astral (24) and Ethereal (27)
+  listings and the class level table
+  (11 rows). THE SHAPE (the R846
+  mechanics precedent): cols Ord/Src
+  plus per-terrain Lo/Hi pairs (the
+  dash 0/0, the 00 cell reads 100),
+  the plane tables Ord/Src/Lo/Hi/
+  NumLo/NumHi/Sp (Sp 1 the slash
+  pair, 2 the Human traveller
+  routing), tags Arc/Sub/Tem/Dmi/
+  Drg/Frg/Gnt/Hum/Lyc/Men/Snk/Spx/
+  Spi/Und/Pat/Fae/Tro/Trx/Ast/Eth/
+  Cls, prefix ffo, the round-roster
+  Ord (356 labels, first appearance
+  across the walk order), src 1 MM1/
+  2 MM2/3 FF/4 unkeyed/0 routing.
+  THE CENSUS PINS: 327 MM1 rows, 113
+  FF rows, ZERO MM2 rows (the print
+  lists MM1 and FF creatures only),
+  26 routing rows (the eleven
+  temperate dagger rows, the Men
+  Character row, the tropical Sphinx
+  row, the Human traveller rows, the
+  eleven class rows), 23 unkeyed rows
+  (the demon and devil type rows, the
+  titan rows, the slash pairs, the
+  brigand, the nomad); no defs
+  promoted, the registry floor holds
+  at 995. THE ADJUDICATIONS (the
+  four-voice collation - djvu, the
+  word-geometry xml, abbyy and the
+  pdf Capture layer the fourth voice
+  on the Faerie void columns - defs
+  advisory, the DMG Appendix C parity
+  the tie-breaker): 79 forced repairs
+  (the R703 pattern: 49 digit repairs
+  dominated by the 8-to-6 scan class,
+  16 ink star-for-hyphen repairs, 14
+  dash recoveries incl. the undead
+  Marsh void completions); FOUR
+  PINNED PRINT DEFECTS (both voices
+  agree, pinned as ink, those
+  columns do NOT assert full tiling):
+  the Dragon Subtable Forest hole 23
+  (the DMG carries the same hole),
+  the patrolled Mountains gap 42-49
+  (the Men merchant 50-51, the DMG
+  42-51), the patrolled Marsh gaps 38
+  and 85; the sub-arctic Remorhaz/
+  Rhinoceros/Tiger contested zone
+  settled by the pdf column-order
+  voice (Remorhaz Rough 73-74 and
+  Mountains 75-78, the Rhinoceros
+  Rough dash, the Tiger Rough 75-78).
+  THE NOTED INK: the Men Character
+  row prints 10% in all cases (the
+  per-column bands tiling-recovered),
+  the men-90%-mounted note (one voice
+  reads 00%), the arctic 75%-airborne
+  italic note, the ruins, flinds,
+  ogrillons, lizard king, Lamia and
+  slavers footnotes ride their rows,
+  the plane slash rows read 50% each,
+  the class level table pairs the
+  Human Subtable traveller parties
+  (the DMG parity, the BARD+ row d4),
+  the FF print spellings Grabman,
+  Mantari, Tabari and Giant strider
+  ride the standing crabman, mantari,
+  tabaxi and giant strider defs (the
+  R837 Grabman precedent; the Mantis
+  warrior is NOT thri-kreen), and the
+  ink name variants (Fernicon,
+  PAnanggalan, Quaggoth and the rest)
+  pin as scanned with the roster
+  riding the cleaned print names.
+  Header rules/ffo.h (42 consts + 14
+  bools + 267 table cols, inline 323),
+  audit "R847 FF encounter listings
+  audit", rode rules/audits/
+  r847_batch.h; 21 examples; rverify
+  double-run GREEN, 7418 mutants 0
+  missed; the R846 record seated into
+  the seed. Spec tools/spec_r847.json,
+  md5 247b415dc5e54e67d9ad32d4df31c039
+  (authored-plus-newline).
+  NEXT: R848 the FF Magic Item Tables
+  (round three, the table-group
+  closer), then the FF arc continues;
+  awaits Curtiss's go.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

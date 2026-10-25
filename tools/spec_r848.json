@@ -1,0 +1,957 @@
+{
+ "round": 848,
+ "title": "the FF magic item tables",
+ "header_file": "rules/ffq.h",
+ "prefix": "ffq",
+ "include_after": "#include \"rules/ffo.h\"  // R847: the FF encounter listings",
+ "include_comment": "the FF magic item tables",
+ "census_before": 770,
+ "audit_label": "R848 FF magic item tables audit",
+ "audit_anchor": "#include \"rules/audits/r847_batch.h\"  // R847: R847 FF encounter listings audit",
+ "audit_file": "rules/audits/r848_batch.h",
+ "audit_comment": "THE FF MAGIC ITEM TABLES - the party magic bands and the four item tables of the print pp. 101-102 (the third and closing round of the three FF table-group rounds): the 13 Individual-is-Nth-level party bands (N 1-13, one percent-chance and count pair per offered item table, the percentage dropped at the automatic rows - Table I automatic from 10th, Table II from 12th, Table III at 13th) and the four die tables - Table I the d20 list (20 items: the potions, scrolls, rings, armor, shield, swords, arrows, bolts, dagger, javelin, mace), Table II the (d8, d6) list (16 items: the scroll, rings, staff, wands, bracers, brooch, cloak, dust, figurine, javelins, chainmail set, splint mail, sword, the weapons pair), Table III the (d8, d6) list (16 items: the ring, rod, staff, bag, boots, cloak, gauntlets, pipe, robe, the ropes pair, plate set, shield, sword, mace, spear) and Table IV the d12 list (12 items: the rings, rod, wand, cube, eyes, horn, robe, talisman, plate set, sword, arrow). THE WALK: 5 tables, 77 rows, every cell pinned (band percent, band count, roster ordinal, printed leading count; the roster ordinal walks the 64 distinct item labels in first-appearance order, Tables I through IV). THE SOURCES: the four-voice scan collation from the archive.org item tsr02012fiendfolio (the djvu text, the word-geometry xml, the abbyy char xml and the pdf hidden Acrobat Capture layer) with the DMG npcparty parity (the 1eonline transcription, its editorial angle-bracket notes ignored) the tie-breaker; the party bands walk the p. 101 prose twice (the top bands 6-13 and the bottom bands 1-5), the tables ride pp. 101-102. THE CENSUS PINS: 13 band rows, 64 item rows (20/16/16/12), 64 roster labels, ZERO registry defs touched - the item rows are not monster listings, no defs promoted, the registry floor holds at 995. THE REPAIRS (18, the R703 pattern): the party-prose garbles (Ittirm = Items, i item = 1 item, the Table i/M/ML/111/lit/1 name garbles, the (d8 n d6) header), the Table I garbles (41 = +1, the super-heroism comma, the ring protection +1 restored from the pdf Capture voice), the Table II garbles (chairman = chainmail), the Table III robe garble (b fending = blending), the Table IV garbles (the talisman of, the robe line-order split) and the pdf voice garbles (1 ,BLE = TABLE, sdint = splint). THE NOTED INK: the ring of protection +1 (both char voices drop the +1, the pdf Capture voice carries it, the DMG parity agrees), the FF dust of appearance against the DMG dust of disappearance (the FF ink pinned, the divergence noted), the +1 (or +2) et al dagger row without the DMG six-dagger footnote expansion, the closing prose (the personal-select advice and the groups-or-multiples note), the (d8, d6) linear convention (d6 1-3 reads the d8 result 1-8, d6 4-6 reads d8+8, 9-16 - the DMG linear-range dice convention), and the bands match the DMG listing exactly. No defs promoted this round - the registry floor holds at 995; the round closes the three-round FF table-group arc.",
+ "banner": {
+  "title": "THE FF MAGIC ITEM TABLES - THE PARTY MAGIC BANDS AND THE FOUR ITEM TABLES (the print pp. 101-102: the 13 Individual-is-Nth-level party bands and Tables I through IV), the third and closing round of the three FF table-group rounds (the FF table-group arc closes here)",
+  "provenance": "The FF arc table-group continuation (Curtiss Go call on the landed R847 FF encounter listings; the three-round queue rides the R846 record). The pin-time walk found 5 printed tables and 77 rows - the R846/R847 grid rounds the mechanics precedent - adjudicated from the four-voice scan collation (the djvu text, the word-geometry xml, the abbyy char xml, the pdf hidden Acrobat Capture layer) with the DMG npcparty parity (the 1eonline transcription) the tie-breaker. No defs promoted: the registry floor holds at 995.",
+  "sentinel": "The spliced rounds never edit the landed audits: the battery reads every table cell live, the census walks the arithmetic, and the double engine run lands GREEN before the commit."
+ },
+ "consts": [
+  {
+   "name": "ffqRound",
+   "value": 848,
+   "comment": "the FF magic item tables round: the party magic bands and the four item tables, the third and closing round of the three FF table-group arc (Curtiss Go call on the landed R847)"
+  },
+  {
+   "name": "ffqTableCount",
+   "value": 5,
+   "comment": "the 5 tables: the party band table and the four item tables (Table I through Table IV)"
+  },
+  {
+   "name": "ffqBndRows",
+   "value": 13,
+   "comment": "the 13 party band rows (the Individual-is-Nth-level rows, N 1-13)"
+  },
+  {
+   "name": "ffqT1Rows",
+   "value": 20,
+   "comment": "the Table I rows (the d20 item list)"
+  },
+  {
+   "name": "ffqT2Rows",
+   "value": 16,
+   "comment": "the Table II rows (the (d8, d6) item list)"
+  },
+  {
+   "name": "ffqT3Rows",
+   "value": 16,
+   "comment": "the Table III rows (the (d8, d6) item list)"
+  },
+  {
+   "name": "ffqT4Rows",
+   "value": 12,
+   "comment": "the Table IV rows (the d12 item list)"
+  },
+  {
+   "name": "ffqTotalRows",
+   "value": 77,
+   "comment": "the total rows pinned across the 5 tables"
+  },
+  {
+   "name": "ffqRosterCount",
+   "value": 64,
+   "comment": "the 64 distinct item labels the four tables carry (the roster ordinal walks first appearance, Tables I-IV)"
+  },
+  {
+   "name": "ffqRegistryFloor",
+   "value": 995,
+   "comment": "the landed registry census pin: no defs promoted this round (the item rows are not monster listings)"
+  },
+  {
+   "name": "ffqRepairs",
+   "value": 18,
+   "comment": "the forced repairs (the R703 pattern): the party-prose garbles, the Table-name garbles, the digit and name garbles and the pdf voice garbles"
+  },
+  {
+   "name": "ffqDivergences",
+   "value": 2,
+   "comment": "the two FF-vs-DMG divergences pinned: the dust of appearance (the DMG prints dust of disappearance) and the dagger et al row (the DMG expands the six daggers, the FF prints no footnote)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "ffqPartyMagicProse",
+   "value": true,
+   "comment": "the party magic prose opens the section: In order to simulate a party of adventurers it is absolutely necessary that characters and henchmen have and employ some magic devices (the print p. 101 prose)"
+  },
+  {
+   "name": "ffqBandRule",
+   "value": true,
+   "comment": "the band rule: each Individual-is-Nth-level row carries one percent chance and count pair per offered table, the percentage dropped at the automatic rows (Table I automatic from 10th, Table II from 12th, Table III at 13th)"
+  },
+  {
+   "name": "ffqD20Header",
+   "value": true,
+   "comment": "Table I scores on d20 (the 20-item die column, the die is the row ordinal)"
+  },
+  {
+   "name": "ffqD8D6Linear",
+   "value": true,
+   "comment": "Tables II and III score (d8, d6) as the 1-16 linear convention: d6 1-3 reads the d8 result (1-8), d6 4-6 reads d8+8 (9-16) - the DMG linear-range dice convention"
+  },
+  {
+   "name": "ffqD12Header",
+   "value": true,
+   "comment": "Table IV scores on d12 (the 12-item die column)"
+  },
+  {
+   "name": "ffqPersonalSelect",
+   "value": true,
+   "comment": "the closing advice: It is suggested that you personally select appropriate items, using random determination only when any item would be suitable to the particular individual"
+  },
+  {
+   "name": "ffqGroupsOrMultiples",
+   "value": true,
+   "comment": "the closing note: Note that some items are groups or multiples"
+  },
+  {
+   "name": "ffqDustAppearance",
+   "value": true,
+   "comment": "the Table II item 10 reads dust of appearance in the FF print (both char voices and the pdf Capture voice agree) - the DMG prints dust of disappearance; the FF ink is pinned and the divergence noted"
+  },
+  {
+   "name": "ffqRingProtectionPlus1",
+   "value": true,
+   "comment": "the Table I item 12 ring of protection +1: both char voices drop the +1, the pdf Capture voice carries it (read +7, the 1 class) and the DMG parity agrees - the +1 is pinned"
+  },
+  {
+   "name": "ffqDaggerEtAl",
+   "value": true,
+   "comment": "the Table I item 18 reads +1 (or +2) et al with no footnote expansion - the DMG expands the six daggers behind the et al; the FF prints none"
+  },
+  {
+   "name": "ffqDmgParity",
+   "value": true,
+   "comment": "the 13 bands and all 64 items match the DMG npcparty listing (the 1eonline transcription) modulo the two pinned divergences"
+  }
+ ],
+ "header_sections": {
+  "the R848 census": [
+   {
+    "kind": "const",
+    "name": "ffqRound"
+   },
+   {
+    "kind": "const",
+    "name": "ffqTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "ffqBndRows"
+   },
+   {
+    "kind": "const",
+    "name": "ffqT1Rows"
+   },
+   {
+    "kind": "const",
+    "name": "ffqT2Rows"
+   },
+   {
+    "kind": "const",
+    "name": "ffqT3Rows"
+   },
+   {
+    "kind": "const",
+    "name": "ffqT4Rows"
+   },
+   {
+    "kind": "const",
+    "name": "ffqTotalRows"
+   },
+   {
+    "kind": "const",
+    "name": "ffqRosterCount"
+   },
+   {
+    "kind": "const",
+    "name": "ffqRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "ffqRepairs"
+   },
+   {
+    "kind": "const",
+    "name": "ffqDivergences"
+   }
+  ],
+  "the R848 doctrine": [
+   {
+    "kind": "bool",
+    "name": "ffqPartyMagicProse"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqBandRule"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqD20Header"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqD8D6Linear"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqD12Header"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqPersonalSelect"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqGroupsOrMultiples"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqDustAppearance"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqRingProtectionPlus1"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqDaggerEtAl"
+   },
+   {
+    "kind": "bool",
+    "name": "ffqDmgParity"
+   }
+  ],
+  "the R848 tables": [
+   {
+    "kind": "table",
+    "name": "the party magic bands"
+   },
+   {
+    "kind": "table",
+    "name": "the magic item Table T1"
+   },
+   {
+    "kind": "table",
+    "name": "the magic item Table T2"
+   },
+   {
+    "kind": "table",
+    "name": "the magic item Table T3"
+   },
+   {
+    "kind": "table",
+    "name": "the magic item Table T4"
+   }
+  ]
+ },
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the party magic bands",
+   "tag": "Bnd",
+   "cols": [
+    "ffqBndOrd",
+    "ffqBndIPct",
+    "ffqBndINum",
+    "ffqBndIIPct",
+    "ffqBndIINum",
+    "ffqBndIIIPct",
+    "ffqBndIIINum",
+    "ffqBndIVPct",
+    "ffqBndIVNum"
+   ],
+   "count": "ffqBndRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     1,
+     10,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     20,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     30,
+     2,
+     10,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     40,
+     2,
+     20,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     50,
+     2,
+     30,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     60,
+     3,
+     40,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     7,
+     70,
+     3,
+     50,
+     2,
+     10,
+     1,
+     0,
+     0
+    ],
+    [
+     8,
+     80,
+     3,
+     60,
+     2,
+     20,
+     1,
+     0,
+     0
+    ],
+    [
+     9,
+     90,
+     3,
+     70,
+     2,
+     30,
+     1,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     3,
+     80,
+     2,
+     40,
+     1,
+     0,
+     0
+    ],
+    [
+     11,
+     0,
+     3,
+     90,
+     2,
+     50,
+     1,
+     10,
+     1
+    ],
+    [
+     12,
+     0,
+     3,
+     0,
+     2,
+     60,
+     1,
+     20,
+     1
+    ],
+    [
+     13,
+     0,
+     3,
+     0,
+     2,
+     0,
+     1,
+     60,
+     1
+    ]
+   ],
+   "col_comments": [
+    "The level cells (the Individual-is-Nth-level ordinal, 1-13)",
+    "The Table I percent cells (0 with count 0 = not offered, 0 with count above 0 = the automatic row)",
+    "The Table I count cells (the item count drawn on a hit)",
+    "The Table II percent cells (the same 0 convention)",
+    "The Table II count cells",
+    "The Table III percent cells (the same 0 convention)",
+    "The Table III count cells",
+    "The Table IV percent cells (the same 0 convention)",
+    "The Table IV count cells"
+   ],
+   "audit_comment": "Rows: THE PARTY MAGIC BANDS (print p. 101, the 13 Individual-is-Nth-level rows; Pct 0 with Count 0 = the table not offered at this level, Pct 0 with Count above 0 = the automatic row - Table I automatic from 10th, Table II from 12th, Table III at 13th): 1st 10%/1 from Table I; 2nd 20%/2; 3rd 30%/2 + 10%/1 from Table II; 4th 40%/2 + 20%/1; 5th 50%/2 + 30%/1; 6th 60%/3 + 40%/2; 7th 70%/3 + 50%/2 + 10%/1 from Table III; 8th 80%/3 + 60%/2 + 20%/1; 9th 90%/3 + 70%/2 + 30%/1; 10th 3 automatic + 80%/2 + 40%/1; 11th 3 + 90%/2 + 50%/1 + 10%/1 from Table IV; 12th 3 + 2 automatic + 60%/1 + 20%/1; 13th 3 + 2 + 1 automatic + 60%/1."
+  },
+  {
+   "name": "the magic item Table T1",
+   "tag": "T1",
+   "cols": [
+    "ffqT1Ord",
+    "ffqT1Ct"
+   ],
+   "count": "ffqT1Rows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     10,
+     1
+    ],
+    [
+     11,
+     1
+    ],
+    [
+     12,
+     1
+    ],
+    [
+     13,
+     1
+    ],
+    [
+     14,
+     1
+    ],
+    [
+     15,
+     1
+    ],
+    [
+     16,
+     10
+    ],
+    [
+     17,
+     4
+    ],
+    [
+     18,
+     1
+    ],
+    [
+     19,
+     1
+    ],
+    [
+     20,
+     1
+    ]
+   ],
+   "col_comments": [
+    "The roster cells (the 64-label item roster ordinal, first appearance across Tables I-IV)",
+    "The count cells (the printed leading count: 2 Potions, 1 Scroll, 10 Arrows, 4 Bolts, 3 Javelins, 2 Ropes)"
+   ],
+   "audit_comment": "Rows: THE MAGIC ITEM TABLE T1 (print p. 101, the d20 die column, the die is the row ordinal; Ord the roster ordinal, Ct the printed leading count): 1 [2 Potions: climbing, flying]; 2 [2 Potions: extra-healing, polymorph self]; 3 [2 Potions: fire resistance, speed]; 4 [2 Potions: healing, giant strength]; 5 [2 Potions: heroism, invulnerability]; 6 [2 Potions: human control, levitation]; 7 [2 Potions: super-heroism, animal control]; 8 [1 Scroll: 1 spell, level 1-6]; 9 [1 Scroll: 2 spells, level 1-4]; 10 [1 Scroll, protection from magic]; 11 [1 Ring: mammal control]; 12 [1 Ring: protection +1]; 13 [1 Armor: leather +1]; 14 [1 Shield: +1]; 15 [1 Sword: +1 (no special abilities)]; 16 [10 Arrows: +1]; 17 [4 Bolts: +2]; 18 [1 Dagger: +1 (or +2) et al]; 19 [1 Javelin: +2]; 20 [1 Mace: +1]."
+  },
+  {
+   "name": "the magic item Table T2",
+   "tag": "T2",
+   "cols": [
+    "ffqT2Ord",
+    "ffqT2Ct"
+   ],
+   "count": "ffqT2Rows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     21,
+     1
+    ],
+    [
+     22,
+     2
+    ],
+    [
+     23,
+     1
+    ],
+    [
+     24,
+     1
+    ],
+    [
+     25,
+     1
+    ],
+    [
+     26,
+     1
+    ],
+    [
+     27,
+     1
+    ],
+    [
+     28,
+     1
+    ],
+    [
+     29,
+     1
+    ],
+    [
+     30,
+     1
+    ],
+    [
+     31,
+     1
+    ],
+    [
+     32,
+     3
+    ],
+    [
+     33,
+     1
+    ],
+    [
+     34,
+     1
+    ],
+    [
+     35,
+     1
+    ],
+    [
+     36,
+     2
+    ]
+   ],
+   "col_comments": [
+    "The roster cells (the 64-label item roster ordinal, first appearance across Tables I-IV)",
+    "The count cells (the printed leading count: 2 Potions, 1 Scroll, 10 Arrows, 4 Bolts, 3 Javelins, 2 Ropes)"
+   ],
+   "audit_comment": "Rows: THE MAGIC ITEM TABLE T2 (print p. 102, the (d8, d6) die pair; Ord the roster ordinal, Ct the printed leading count): 21 [1 Scroll: 3 spells, level 2-9 or 2-7]; 22 [2 Rings: fire resistance, invisibility]; 23 [1 Ring: protection +3]; 24 [1 Staff: striking]; 25 [1 Wand: illusion]; 26 [1 Wand: negation]; 27 [1 Bracers of defense, armor class 4]; 28 [1 Brooch of shielding]; 29 [1 Cloak of elvenkind]; 30 [1 Dust of appearance]; 31 [1 Figurine of wondrous power: serpentine owl]; 32 [3 Javelins of lightning]; 33 [1 Set: chainmail +1, shield +2]; 34 [1 Armor: splint mail +4]; 35 [1 Sword: +3 (no special abilities)]; 36 [2 Weapons: crossbow of speed, +2 hammer]."
+  },
+  {
+   "name": "the magic item Table T3",
+   "tag": "T3",
+   "cols": [
+    "ffqT3Ord",
+    "ffqT3Ct"
+   ],
+   "count": "ffqT3Rows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     37,
+     1
+    ],
+    [
+     38,
+     1
+    ],
+    [
+     39,
+     1
+    ],
+    [
+     40,
+     1
+    ],
+    [
+     41,
+     1
+    ],
+    [
+     42,
+     1
+    ],
+    [
+     43,
+     1
+    ],
+    [
+     44,
+     1
+    ],
+    [
+     45,
+     1
+    ],
+    [
+     46,
+     1
+    ],
+    [
+     47,
+     2
+    ],
+    [
+     48,
+     1
+    ],
+    [
+     49,
+     1
+    ],
+    [
+     50,
+     1
+    ],
+    [
+     51,
+     1
+    ],
+    [
+     52,
+     1
+    ]
+   ],
+   "col_comments": [
+    "The roster cells (the 64-label item roster ordinal, first appearance across Tables I-IV)",
+    "The count cells (the printed leading count: 2 Potions, 1 Scroll, 10 Arrows, 4 Bolts, 3 Javelins, 2 Ropes)"
+   ],
+   "audit_comment": "Rows: THE MAGIC ITEM TABLE T3 (print p. 102, the (d8, d6) die pair; Ord the roster ordinal, Ct the printed leading count): 37 [1 Ring: spell storing]; 38 [1 Rod: cancellation]; 39 [1 Staff: serpent - python or adder]; 40 [1 Bag of tricks]; 41 [1 Boots of speed]; 42 [1 Boots of striding and leaping]; 43 [1 Cloak of displacement]; 44 [1 Gauntlets of ogre power]; 45 [1 Pipe of the sewers]; 46 [1 Robe of blending]; 47 [2 Ropes: climbing, entanglement]; 48 [1 Set: plate mail +3, shield +2]; 49 [1 Shield: +5]; 50 [1 Sword: +4, defender]; 51 [1 Mace: +3]; 52 [1 Spear: +3]."
+  },
+  {
+   "name": "the magic item Table T4",
+   "tag": "T4",
+   "cols": [
+    "ffqT4Ord",
+    "ffqT4Ct"
+   ],
+   "count": "ffqT4Rows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     53,
+     1
+    ],
+    [
+     54,
+     1
+    ],
+    [
+     55,
+     1
+    ],
+    [
+     56,
+     1
+    ],
+    [
+     57,
+     1
+    ],
+    [
+     58,
+     1
+    ],
+    [
+     59,
+     1
+    ],
+    [
+     60,
+     1
+    ],
+    [
+     61,
+     1
+    ],
+    [
+     62,
+     1
+    ],
+    [
+     63,
+     1
+    ],
+    [
+     64,
+     1
+    ]
+   ],
+   "col_comments": [
+    "The roster cells (the 64-label item roster ordinal, first appearance across Tables I-IV)",
+    "The count cells (the printed leading count: 2 Potions, 1 Scroll, 10 Arrows, 4 Bolts, 3 Javelins, 2 Ropes)"
+   ],
+   "audit_comment": "Rows: THE MAGIC ITEM TABLE T4 (print p. 102, the d12 die column; Ord the roster ordinal, Ct the printed leading count): 53 [1 Ring: djinni summoning]; 54 [1 Ring: spell turning]; 55 [1 Rod: smiting]; 56 [1 Wand: fire]; 57 [1 Cube of force]; 58 [1 Eyes of charming]; 59 [1 Horn of Valhalla]; 60 [1 Robe of scintillating colors]; 61 [1 Talisman of either ultimate evil or pure good]; 62 [1 Set: plate mail +4, shield +3]; 63 [1 Sword: wounding]; 64 [1 Arrow of slaying (select character type)]."
+  }
+ ],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the 5-table arithmetic)",
+   "expr": "m['ffqTotalRows']() != 77 or m['ffqTableCount']() != 5 or m['ffqBndRows']() + m['ffqT1Rows']() + m['ffqT2Rows']() + m['ffqT3Rows']() + m['ffqT4Rows']() != m['ffqTotalRows']()"
+  },
+  {
+   "note": "the rows census",
+   "expr": "m['ffqBndRows']() != 13 or m['ffqT1Rows']() != 20 or m['ffqT2Rows']() != 16 or m['ffqT3Rows']() != 16 or m['ffqT4Rows']() != 12"
+  },
+  {
+   "note": "the roster census (the 64-label walk)",
+   "expr": "m['ffqRosterCount']() != 64 or m['ffqT1Ord'](0) != 1 or m['ffqT1Ord'](19) != 20 or m['ffqT2Ord'](0) != 21 or m['ffqT2Ord'](15) != 36 or m['ffqT3Ord'](0) != 37 or m['ffqT3Ord'](15) != 52 or m['ffqT4Ord'](0) != 53 or m['ffqT4Ord'](11) != 64"
+  },
+  {
+   "note": "the band walk (the 13 levels)",
+   "expr": "m['ffqBndOrd'](0) != 1 or m['ffqBndOrd'](12) != 13"
+  },
+  {
+   "note": "the Table I percent band",
+   "expr": "m['ffqBndIPct'](0) != 10 or m['ffqBndIPct'](1) != 20 or m['ffqBndIPct'](2) != 30 or m['ffqBndIPct'](3) != 40 or m['ffqBndIPct'](4) != 50 or m['ffqBndIPct'](5) != 60 or m['ffqBndIPct'](6) != 70 or m['ffqBndIPct'](7) != 80 or m['ffqBndIPct'](8) != 90"
+  },
+  {
+   "note": "the automatic rows (the dropped percentage)",
+   "expr": "m['ffqBndIPct'](9) != 0 or m['ffqBndINum'](9) != 3 or m['ffqBndIIPct'](11) != 0 or m['ffqBndIINum'](11) != 2 or m['ffqBndIIIPct'](12) != 0 or m['ffqBndIIINum'](12) != 1"
+  },
+  {
+   "note": "the not-offered cells (1st level: Table I alone)",
+   "expr": "m['ffqBndIIPct'](0) != 0 or m['ffqBndIINum'](0) != 0 or m['ffqBndIIIPct'](0) != 0 or m['ffqBndIIINum'](0) != 0 or m['ffqBndIVPct'](0) != 0 or m['ffqBndIVNum'](0) != 0"
+  },
+  {
+   "note": "the Table II percent walk",
+   "expr": "m['ffqBndIIPct'](2) != 10 or m['ffqBndIIPct'](6) != 50 or m['ffqBndIIPct'](10) != 90"
+  },
+  {
+   "note": "the Table III percent walk",
+   "expr": "m['ffqBndIIIPct'](6) != 10 or m['ffqBndIIIPct'](10) != 50 or m['ffqBndIIIPct'](11) != 60"
+  },
+  {
+   "note": "the Table IV percent walk",
+   "expr": "m['ffqBndIVPct'](10) != 10 or m['ffqBndIVPct'](11) != 20 or m['ffqBndIVPct'](12) != 60"
+  },
+  {
+   "note": "the Table I counts (the potions, arrows, bolts)",
+   "expr": "m['ffqT1Ct'](0) != 2 or m['ffqT1Ct'](15) != 10 or m['ffqT1Ct'](16) != 4 or m['ffqT1Ct'](19) != 1"
+  },
+  {
+   "note": "the Table II counts (rings, javelins, weapons)",
+   "expr": "m['ffqT2Ct'](1) != 2 or m['ffqT2Ct'](11) != 3 or m['ffqT2Ct'](15) != 2"
+  },
+  {
+   "note": "the Table III counts (the ropes pair)",
+   "expr": "m['ffqT3Ct'](10) != 2 or m['ffqT3Ct'](0) != 1"
+  },
+  {
+   "note": "the Table IV counts (all single items)",
+   "expr": "m['ffqT4Ct'](0) != 1 or m['ffqT4Ct'](11) != 1"
+  },
+  {
+   "note": "the repair census",
+   "expr": "m['ffqRepairs']() != 18 or m['ffqDivergences']() != 2"
+  },
+  {
+   "note": "the registry floor",
+   "expr": "m['ffqRegistryFloor']() != 995"
+  }
+ ],
+ "caller_files": [],
+ "data_files": [],
+ "file_patches": [],
+ "migrate_blocks": [],
+ "gap_report": "tools/mm2_gap_report.md",
+ "gap_census": {
+  "closed": 37,
+  "open": 0
+ },
+ "gap_flips": [],
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R847 LANDED 2026-10-25: commit",
+ "prev_record": [
+  "- R847 LANDED 2026-10-25: commit",
+  "  4024a96a0e49c44a30f31339b4eeb4c701607279",
+  "  (pushed 98668cc..4024a96,",
+  "  census 769 -> 770), THE FF",
+  "  ENCOUNTER LISTINGS - round two",
+  "  of the three FF table-group rounds",
+  "  (the queue: R848 the Magic Item",
+  "  Tables). THE WALK: 21 tables, 489",
+  "  rows, every cell pinned - the six",
+  "  terrain tables (print pp. 111-119:",
+  "  Arctic 16, Sub-Arctic 31, temperate",
+  "  uninhabited 98, temperate inhabited",
+  "  and patrolled 60, Faerie 47,",
+  "  tropical 89; 341 rows), the twelve",
+  "  subtables (Demi-Human 4, Dragon 15,",
+  "  Frog 3, Giant 12, Humanoid 7,",
+  "  Lycanthrope 5, Men 9, Snake 4,",
+  "  Sphinx 4, Spider 4, Undead 15, the",
+  "  tropical Sphinx 4; 86 rows), the",
+  "  Astral (24) and Ethereal (27)",
+  "  listings and the class level table",
+  "  (11 rows). THE SHAPE (the R846",
+  "  mechanics precedent): cols Ord/Src",
+  "  plus per-terrain Lo/Hi pairs (the",
+  "  dash 0/0, the 00 cell reads 100),",
+  "  the plane tables Ord/Src/Lo/Hi/",
+  "  NumLo/NumHi/Sp (Sp 1 the slash",
+  "  pair, 2 the Human traveller",
+  "  routing), tags Arc/Sub/Tem/Dmi/",
+  "  Drg/Frg/Gnt/Hum/Lyc/Men/Snk/Spx/",
+  "  Spi/Und/Pat/Fae/Tro/Trx/Ast/Eth/",
+  "  Cls, prefix ffo, the round-roster",
+  "  Ord (356 labels, first appearance",
+  "  across the walk order), src 1 MM1/",
+  "  2 MM2/3 FF/4 unkeyed/0 routing.",
+  "  THE CENSUS PINS: 327 MM1 rows, 113",
+  "  FF rows, ZERO MM2 rows (the print",
+  "  lists MM1 and FF creatures only),",
+  "  26 routing rows (the eleven",
+  "  temperate dagger rows, the Men",
+  "  Character row, the tropical Sphinx",
+  "  row, the Human traveller rows, the",
+  "  eleven class rows), 23 unkeyed rows",
+  "  (the demon and devil type rows, the",
+  "  titan rows, the slash pairs, the",
+  "  brigand, the nomad); no defs",
+  "  promoted, the registry floor holds",
+  "  at 995. THE ADJUDICATIONS (the",
+  "  four-voice collation - djvu, the",
+  "  word-geometry xml, abbyy and the",
+  "  pdf Capture layer the fourth voice",
+  "  on the Faerie void columns - defs",
+  "  advisory, the DMG Appendix C parity",
+  "  the tie-breaker): 79 forced repairs",
+  "  (the R703 pattern: 49 digit repairs",
+  "  dominated by the 8-to-6 scan class,",
+  "  16 ink star-for-hyphen repairs, 14",
+  "  dash recoveries incl. the undead",
+  "  Marsh void completions); FOUR",
+  "  PINNED PRINT DEFECTS (both voices",
+  "  agree, pinned as ink, those",
+  "  columns do NOT assert full tiling):",
+  "  the Dragon Subtable Forest hole 23",
+  "  (the DMG carries the same hole),",
+  "  the patrolled Mountains gap 42-49",
+  "  (the Men merchant 50-51, the DMG",
+  "  42-51), the patrolled Marsh gaps 38",
+  "  and 85; the sub-arctic Remorhaz/",
+  "  Rhinoceros/Tiger contested zone",
+  "  settled by the pdf column-order",
+  "  voice (Remorhaz Rough 73-74 and",
+  "  Mountains 75-78, the Rhinoceros",
+  "  Rough dash, the Tiger Rough 75-78).",
+  "  THE NOTED INK: the Men Character",
+  "  row prints 10% in all cases (the",
+  "  per-column bands tiling-recovered),",
+  "  the men-90%-mounted note (one voice",
+  "  reads 00%), the arctic 75%-airborne",
+  "  italic note, the ruins, flinds,",
+  "  ogrillons, lizard king, Lamia and",
+  "  slavers footnotes ride their rows,",
+  "  the plane slash rows read 50% each,",
+  "  the class level table pairs the",
+  "  Human Subtable traveller parties",
+  "  (the DMG parity, the BARD+ row d4),",
+  "  the FF print spellings Grabman,",
+  "  Mantari, Tabari and Giant strider",
+  "  ride the standing crabman, mantari,",
+  "  tabaxi and giant strider defs (the",
+  "  R837 Grabman precedent; the Mantis",
+  "  warrior is NOT thri-kreen), and the",
+  "  ink name variants (Fernicon,",
+  "  PAnanggalan, Quaggoth and the rest)",
+  "  pin as scanned with the roster",
+  "  riding the cleaned print names.",
+  "  Header rules/ffo.h (42 consts + 14",
+  "  bools + 267 table cols, inline 323),",
+  "  audit \"R847 FF encounter listings",
+  "  audit\", rode rules/audits/",
+  "  r847_batch.h; 21 examples; rverify",
+  "  double-run GREEN, 7418 mutants 0",
+  "  missed; the R846 record seated into",
+  "  the seed. Spec tools/spec_r847.json,",
+  "  md5 247b415dc5e54e67d9ad32d4df31c039",
+  "  (authored-plus-newline).",
+  "  NEXT: R848 the FF Magic Item Tables",
+  "  (round three, the table-group",
+  "  closer), then the FF arc continues;",
+  "  awaits Curtiss's go."
+ ],
+ "regtest": "regtest.cpp",
+ "inline_count": 40
+}
