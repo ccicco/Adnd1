@@ -1,0 +1,315 @@
+{
+  "round": 834,
+  "title": "the holdback tooling patch",
+  "prefix": "hmb",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/hmb.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the holdback tooling patch - the second tooling round of the regtest decomposition arc",
+    "provenance": "spec-driven; the engine head walk widens 800 to 4000 so the sixteen no-head blocks (the WSG weather pair, the DMO family, the MM2 letter walks - heads 823 to 2325 lines above their labels) find their heads, and the migrate key gains a per-block allow_wide tolerance so the thirty-one width-family blocks (77 wide code lines, 79 to 159 cols; regtest itself runs to 305) move verbatim instead of split; the 78-col default stands for every undeclared block; no block moves this round - the tooling lands alone, the final 55-block batch closes the arc"
+  },
+  "census_before": 756,
+  "inline_count": 20,
+  "consts": [
+    {
+      "name": "hmb_head_walk",
+      "value": 4000,
+      "comment": "the widened upward walk from a label to its head"
+    },
+    {
+      "name": "hmb_walk_old",
+      "value": 800,
+      "comment": "the prior head-walk bound"
+    },
+    {
+      "name": "hmb_walk_farthest",
+      "value": 2325,
+      "comment": "the largest label-to-head distance in the no-head family"
+    },
+    {
+      "name": "hmb_no_head",
+      "value": 16,
+      "comment": "the no-head family: the WSG weather pair, the DMO family, the MM2 letters"
+    },
+    {
+      "name": "hmb_width_family",
+      "value": 31,
+      "comment": "the width family held back by the 78-col gate"
+    },
+    {
+      "name": "hmb_ready_now",
+      "value": 8,
+      "comment": "the family that needs no tooling at all"
+    },
+    {
+      "name": "hmb_holdbacks",
+      "value": 55,
+      "comment": "the total holdback blocks awaiting the final batch"
+    },
+    {
+      "name": "hmb_wide_lines",
+      "value": 77,
+      "comment": "the wide code lines the width family carries"
+    },
+    {
+      "name": "hmb_wide_max",
+      "value": 159,
+      "comment": "the widest moving line, in columns"
+    },
+    {
+      "name": "hmb_census",
+      "value": 757,
+      "comment": "the census after this round audit rides its fragment"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "bools": [
+    {
+      "name": "hmb_allow_wide",
+      "value": true,
+      "comment": "the per-block wide tolerance rides the migrate key"
+    },
+    {
+      "name": "hmb_default_width",
+      "value": true,
+      "comment": "the 78-col gate stands for every undeclared block"
+    },
+    {
+      "name": "hmb_verbatim",
+      "value": true,
+      "comment": "the wide lines move byte for byte, never split"
+    },
+    {
+      "name": "hmb_walk_upward",
+      "value": true,
+      "comment": "the head walk goes only up from the label"
+    },
+    {
+      "name": "hmb_gates_hold",
+      "value": true,
+      "comment": "the one-marker, bare-return and brace gates stand unchanged"
+    },
+    {
+      "name": "hmb_tooling_alone",
+      "value": true,
+      "comment": "no block moves in the tooling round"
+    },
+    {
+      "name": "hmb_audit_rides",
+      "value": true,
+      "comment": "this round audit rides a fragment"
+    },
+    {
+      "name": "hmb_wiring_kept",
+      "value": true,
+      "comment": "the wiring audit stays put by design"
+    },
+    {
+      "name": "hmb_census_holds",
+      "value": true,
+      "comment": "the census survives the final move"
+    },
+    {
+      "name": "hmb_arc_closes",
+      "value": true,
+      "comment": "the final 55-block batch closes the decomposition arc"
+    }
+  ],
+  "header_sections": {
+    "the holdback tooling": [
+      {
+        "kind": "const",
+        "name": "hmb_head_walk"
+      },
+      {
+        "kind": "const",
+        "name": "hmb_walk_old"
+      },
+      {
+        "kind": "const",
+        "name": "hmb_walk_farthest"
+      },
+      {
+        "kind": "const",
+        "name": "hmb_no_head"
+      },
+      {
+        "kind": "const",
+        "name": "hmb_width_family"
+      },
+      {
+        "kind": "const",
+        "name": "hmb_ready_now"
+      },
+      {
+        "kind": "const",
+        "name": "hmb_holdbacks"
+      },
+      {
+        "kind": "const",
+        "name": "hmb_wide_lines"
+      },
+      {
+        "kind": "const",
+        "name": "hmb_wide_max"
+      },
+      {
+        "kind": "const",
+        "name": "hmb_census"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_allow_wide"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_default_width"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_verbatim"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_walk_upward"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_gates_hold"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_tooling_alone"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_audit_rides"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_wiring_kept"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_census_holds"
+      },
+      {
+        "kind": "bool",
+        "name": "hmb_arc_closes"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['hmb_no_head']() + m['hmb_width_family']() + m['hmb_ready_now']() != 55",
+      "note": "the three families sum to the holdbacks"
+    },
+    {
+      "expr": "m['hmb_head_walk']() != m['hmb_walk_old']() + 3200",
+      "note": "the walk widens by 3200"
+    },
+    {
+      "expr": "m['hmb_head_walk']() - m['hmb_walk_farthest']() != 1675",
+      "note": "the margin over the farthest no-head label"
+    },
+    {
+      "expr": "m['hmb_wide_max']() - m['hmb_wide_lines']() != 82",
+      "note": "the widest line against the wide count"
+    }
+  ],
+  "audit_label": "R834 holdback tooling patch audit",
+  "audit_comment": "the tooling round: the head walk widens to 4000 and the per-block wide tolerance rides the migrate key - the no-head and width families unlock for the final batch; no block moves this round; the constants check themselves",
+  "audit_file": "rules/audits/r834_batch.h",
+  "audit_anchor": "#include \"rules/audits/r833_batch.h\"  // R833: R833 final digest batch audit",
+  "include_comment": "the holdback tooling patch",
+  "include_after": "#include \"rules/fmb.h\"  // R833: the final digest migration batch",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R833 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R833 LANDED 2026-10-25: commit",
+    "  93ecec9f203c28b74089d1df1d50f0f8bd0fa8ac",
+    "  (census 755 -> 756, pushed",
+    "  a8440e4..93ecec9), THE FINAL",
+    "  DIGEST MIGRATION BATCH - the",
+    "  tenth batch of real blocks",
+    "  leaves regtest and THE DIGEST",
+    "  RUNS DRY (the REGTEST",
+    "  DECOMPOSITION ARC). THE MOVE:",
+    "  digest idx 650-744 (R772 OA",
+    "  Weapons prose through R113",
+    "  class matrix - the OA back",
+    "  matter, the seam and registry",
+    "  blocks R774-R822, the MM2 walks",
+    "  and grids, the early-file blocks",
+    "  R84-R137; 86 blocks - every",
+    "  remaining digest entry that",
+    "  passes the gates - 14289 lines)",
+    "  migrated VERBATIM into",
+    "  rules/audits fragments",
+    "  (r772_oa_weapons_prose.h through",
+    "  r113_class_matrix.h). R833's",
+    "  own audit rode",
+    "  rules/audits/r833_batch.h.",
+    "  Header rules/fmb.h, prefix fmb -",
+    "  NOTE: imb was drafted first and",
+    "  turned out TAKEN (400 hits);",
+    "  the prefix-free check now re-",
+    "  verifies on every round, not",
+    "  just new names. 6 consts + 4",
+    "  bools (inline 10), 4 examples,",
+    "  the R832 record seated into the",
+    "  seed, NO gap flips (MM2 stays 37",
+    "  closed 0 open), NO tool patches.",
+    "  FIVE MORE NO-HEAD HELDBACKS:",
+    "  R798, R808, R813, R814, R817",
+    "  (MM2 letters BC/LMN/S/TUV and",
+    "  outdoor grids) - same signature",
+    "  as the DMO family; plus the four",
+    "  width holdbacks R168, R169, R170,",
+    "  R172. GATES: dress rehearsal on",
+    "  a copy of the REAL tree at",
+    "  a8440e4 (the whole rules/audits",
+    "  dir carried); double-run 91/0 ->",
+    "  0/91; fragments byte-exact;",
+    "  regtest reconstruction",
+    "  byte-for-byte; census 56 + 700 =",
+    "  756, all 756 preflight patterns",
+    "  unique each once; rverify GREEN",
+    "  (10 mutants, 0 missed). Delivery",
+    "  spec-r833 canvas: spec 16373",
+    "  bytes, md5",
+    "  4a1c9d74ccccafba7ed762242887313b,",
+    "  landed the same. THE DIGEST IS",
+    "  DRY: 56 inline blocks remain -",
+    "  all holdbacks (width-gate and",
+    "  no-head families) awaiting the",
+    "  cleanup round(s) that close the",
+    "  arc. NEXT: awaits Curtiss's Go",
+    "  - the holdback census and a",
+    "  tooling decision (shorten",
+    "  include comments or split wide",
+    "  lines) come first."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "file_patches": [
+    {
+      "file": "tools/splice_engine.py",
+      "note": "the head walk bound",
+      "from": "    for n in range(lab_at, max(lab_at - 800, -1), -1):",
+      "to": "    for n in range(lab_at, max(lab_at - 4000, -1), -1):"
+    },
+    {
+      "file": "tools/splice_engine.py",
+      "note": "the per-block wide tolerance",
+      "from": "    for L in body:\n        if len(L) > WIDTH:\n            die('the migration block has a long '\n                'line (%d cols): %s'\n                % (len(L), mlbl))",
+      "to": "    wlim = WIDTH\n    if 'allow_wide' in mb:\n        if not isinstance(mb['allow_wide'],\n                           int) or \\\n                mb['allow_wide'] <= WIDTH:\n            die('the migration allow_wide must '\n                'be an int above the width '\n                'gate: %s' % mlbl)\n        wlim = mb['allow_wide']\n    for L in body:\n        if len(L) > wlim:\n            die('the migration block has a long '\n                'line (%d cols): %s'\n                % (len(L), mlbl))"
+    }
+  ]
+}

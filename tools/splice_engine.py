@@ -740,7 +740,7 @@ for mb in S.get('migrate_blocks', []):
             'still inline: %s' % mlbl)
     head_re = re.compile(r'^\s*//\s*-+\s*R\d+')
     head_at = None
-    for n in range(lab_at, max(lab_at - 800, -1), -1):
+    for n in range(lab_at, max(lab_at - 4000, -1), -1):
         if head_re.match(rt_l[n]):
             head_at = n
             break
@@ -782,8 +782,17 @@ for mb in S.get('migrate_blocks', []):
     if depth != 0:
         die('the migration block brace delta '
             'is not zero: %s' % mlbl)
+    wlim = WIDTH
+    if 'allow_wide' in mb:
+        if not isinstance(mb['allow_wide'],
+                           int) or \
+                mb['allow_wide'] <= WIDTH:
+            die('the migration allow_wide must '
+                'be an int above the width '
+                'gate: %s' % mlbl)
+        wlim = mb['allow_wide']
     for L in body:
-        if len(L) > WIDTH:
+        if len(L) > wlim:
             die('the migration block has a long '
                 'line (%d cols): %s'
                 % (len(L), mlbl))

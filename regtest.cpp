@@ -535,6 +535,7 @@
 #include "rules/kmb.h"  // R831: the planes and OA migration batch
 #include "rules/jmb.h"  // R832: the OA tail migration batch
 #include "rules/fmb.h"  // R833: the final digest migration batch
+#include "rules/hmb.h"  // R834: the holdback tooling patch
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -32493,6 +32494,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r834_batch.h"  // R834: R834 holdback tooling patch audit
 #include "rules/audits/r833_batch.h"  // R833: R833 final digest batch audit
     #include "rules/audits/r227_wis_mental_save_wiring.h"  // R833: migrated
     #include "rules/audits/r228_druid_registry_parameter.h"  // R833: migrated

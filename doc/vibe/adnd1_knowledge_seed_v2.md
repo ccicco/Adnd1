@@ -23273,6 +23273,69 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   round clears the digest; then the
   holdback cleanup round (~35
   width-gate + 11 no-head blocks).
+- R833 LANDED 2026-10-25: commit
+  93ecec9f203c28b74089d1df1d50f0f8bd0fa8ac
+  (census 755 -> 756, pushed
+  a8440e4..93ecec9), THE FINAL
+  DIGEST MIGRATION BATCH - the
+  tenth batch of real blocks
+  leaves regtest and THE DIGEST
+  RUNS DRY (the REGTEST
+  DECOMPOSITION ARC). THE MOVE:
+  digest idx 650-744 (R772 OA
+  Weapons prose through R113
+  class matrix - the OA back
+  matter, the seam and registry
+  blocks R774-R822, the MM2 walks
+  and grids, the early-file blocks
+  R84-R137; 86 blocks - every
+  remaining digest entry that
+  passes the gates - 14289 lines)
+  migrated VERBATIM into
+  rules/audits fragments
+  (r772_oa_weapons_prose.h through
+  r113_class_matrix.h). R833's
+  own audit rode
+  rules/audits/r833_batch.h.
+  Header rules/fmb.h, prefix fmb -
+  NOTE: imb was drafted first and
+  turned out TAKEN (400 hits);
+  the prefix-free check now re-
+  verifies on every round, not
+  just new names. 6 consts + 4
+  bools (inline 10), 4 examples,
+  the R832 record seated into the
+  seed, NO gap flips (MM2 stays 37
+  closed 0 open), NO tool patches.
+  FIVE MORE NO-HEAD HELDBACKS:
+  R798, R808, R813, R814, R817
+  (MM2 letters BC/LMN/S/TUV and
+  outdoor grids) - same signature
+  as the DMO family; plus the four
+  width holdbacks R168, R169, R170,
+  R172. GATES: dress rehearsal on
+  a copy of the REAL tree at
+  a8440e4 (the whole rules/audits
+  dir carried); double-run 91/0 ->
+  0/91; fragments byte-exact;
+  regtest reconstruction
+  byte-for-byte; census 56 + 700 =
+  756, all 756 preflight patterns
+  unique each once; rverify GREEN
+  (10 mutants, 0 missed). Delivery
+  spec-r833 canvas: spec 16373
+  bytes, md5
+  4a1c9d74ccccafba7ed762242887313b,
+  landed the same. THE DIGEST IS
+  DRY: 56 inline blocks remain -
+  all holdbacks (width-gate and
+  no-head families) awaiting the
+  cleanup round(s) that close the
+  arc. NEXT: awaits Curtiss's Go
+  - the holdback census and a
+  tooling decision (shorten
+  include comments or split wide
+  lines) come first.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
