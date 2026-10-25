@@ -468,4 +468,3 @@ history (R172-R312) stays at adnd1_knowledge_backup_v2.md.
   the battery derives from the spec (every table cell, every
   const, every bool). Future splices insert records above as
   usual.
-
