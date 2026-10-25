@@ -1,0 +1,467 @@
+{
+  "round": 844,
+  "title": "the seventh FF promotion batch",
+  "prefix": "ffl",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/ffl.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the seventh FF promotion batch - the missing prints walk on",
+    "provenance": "spec-driven; the seventh Fiend Folio promotion batch - twenty-five of the thirty-two missing FF print stat-blocks lifted as new lua data files, the holdouts in ToC order from the lamia noble p. 59 through the umpleby p. 92 (the lava, smoke and steam mephits promoting as three defs, the two-column variant precedent, riding the print family prose; the giant troll, the giant two-headed troll and the spirit troll carrying their own sections only per the landed ice troll precedent; the two slaad lords Ssendam and Ygorl promoting as unique defs per the imix precedent, the protein polymorph under its print heading NOT the protean); the stat blocks read from the three-voice scan collation (the djvu text, the word-geometry xml, the abbyy char xml) with the 1eonline print transcripts recovering the shredded rows - the qullan magic resistance row is BLANK in the print and both scan voices and rides the query-mark sentinel per the landed precedent; the protein polymorph treasure type reads zero in both scan voices and stands; the needleman no-appearing reads 5-50 in both scan voices over the transcript 5-20 and stands; the nilbog lair treasure reads G in both scans over the transcript C; the retriever lair percentage reads 70 in both scans over the transcript 10; the umpleby size reads 8' + tail in both scans; the scan OCRs 1 as 7 systematically; the registry 963 -> 988, the ff def census 153 -> 178, the missing print census 32 -> 7, no encounter cells rewire, no gap boxes flip; the def bodies carry the print-fidelity pin headers"
+  },
+  "census_before": 766,
+  "inline_count": 24,
+  "consts": [
+    {
+      "name": "fflRound",
+      "value": 844,
+      "comment": "the round"
+    },
+    {
+      "name": "fflDefsPerRound",
+      "value": 25,
+      "comment": "the standing pace: defs per promotion round"
+    },
+    {
+      "name": "fflBatchDefs",
+      "value": 25,
+      "comment": "the defs in the seventh FF promotion batch"
+    },
+    {
+      "name": "fflMephitDefs",
+      "value": 3,
+      "comment": "the mephit variant defs (the lava, smoke and steam)"
+    },
+    {
+      "name": "fflTrollDefs",
+      "value": 3,
+      "comment": "the troll defs (the giant, the giant two-headed and the spirit)"
+    },
+    {
+      "name": "fflSlaadLordDefs",
+      "value": 2,
+      "comment": "the slaad lord defs (Ssendam and Ygorl)"
+    },
+    {
+      "name": "fflHoldoutDefs",
+      "value": 17,
+      "comment": "the holdout defs (the remaining seventeen)"
+    },
+    {
+      "name": "fflFirstPage",
+      "value": 59,
+      "comment": "the first FF print page in the batch (the lamia noble)"
+    },
+    {
+      "name": "fflLastPage",
+      "value": 92,
+      "comment": "the last FF print page in the batch (the umpleby)"
+    },
+    {
+      "name": "fflRegistryBefore",
+      "value": 963,
+      "comment": "the registry census before the batch"
+    },
+    {
+      "name": "fflRegistryAfter",
+      "value": 988,
+      "comment": "the registry census after the batch"
+    },
+    {
+      "name": "fflFfDefsBefore",
+      "value": 153,
+      "comment": "the ff def census before the batch"
+    },
+    {
+      "name": "fflFfDefsAfter",
+      "value": 178,
+      "comment": "the ff def census after the batch"
+    },
+    {
+      "name": "fflPrintStatBlocks",
+      "value": 185,
+      "comment": "the FF print stat-block census (the R841 verification count)"
+    },
+    {
+      "name": "fflPrintSaved",
+      "value": 178,
+      "comment": "the FF print stat-blocks saved after the batch"
+    },
+    {
+      "name": "fflPrintMissingBefore",
+      "value": 32,
+      "comment": "the missing FF print stat-block census before"
+    },
+    {
+      "name": "fflPrintMissingAfter",
+      "value": 7,
+      "comment": "the missing FF print stat-block census after"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "bools": [
+    {
+      "name": "fflDefsFromFfPrint",
+      "value": true,
+      "comment": "the defs lift from the ff print"
+    },
+    {
+      "name": "fflThreeVoiceRead",
+      "value": true,
+      "comment": "the stat blocks read from the three-voice scan collation (the djvu text, the word-geometry xml, the abbyy char xml)"
+    },
+    {
+      "name": "fflVariantDefsSplit",
+      "value": true,
+      "comment": "the two-column variants promote as separate defs (the lava, smoke and steam mephits)"
+    },
+    {
+      "name": "fflMagicResistanceRowBlank",
+      "value": true,
+      "comment": "the qullan magic resistance row is blank in the print and both scan voices - the query-mark sentinel rides the landed precedent"
+    },
+    {
+      "name": "fflTreasureTypeZero",
+      "value": true,
+      "comment": "the protein polymorph treasure type row reads zero in both scan voices - the print value stands"
+    },
+    {
+      "name": "fflSourceRowsStay",
+      "value": true,
+      "comment": "the source census rows stay put"
+    },
+    {
+      "name": "fflNoGapBoxesFlip",
+      "value": true,
+      "comment": "no gap boxes flip this round"
+    }
+  ],
+  "header_sections": {
+    "the seventh FF promotion batch": [
+      {
+        "kind": "const",
+        "name": "fflRound"
+      },
+      {
+        "kind": "const",
+        "name": "fflDefsPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "fflBatchDefs"
+      },
+      {
+        "kind": "const",
+        "name": "fflMephitDefs"
+      },
+      {
+        "kind": "const",
+        "name": "fflTrollDefs"
+      },
+      {
+        "kind": "const",
+        "name": "fflSlaadLordDefs"
+      },
+      {
+        "kind": "const",
+        "name": "fflHoldoutDefs"
+      },
+      {
+        "kind": "const",
+        "name": "fflFirstPage"
+      },
+      {
+        "kind": "const",
+        "name": "fflLastPage"
+      },
+      {
+        "kind": "const",
+        "name": "fflRegistryBefore"
+      },
+      {
+        "kind": "const",
+        "name": "fflRegistryAfter"
+      },
+      {
+        "kind": "const",
+        "name": "fflFfDefsBefore"
+      },
+      {
+        "kind": "const",
+        "name": "fflFfDefsAfter"
+      },
+      {
+        "kind": "const",
+        "name": "fflPrintStatBlocks"
+      },
+      {
+        "kind": "const",
+        "name": "fflPrintSaved"
+      },
+      {
+        "kind": "const",
+        "name": "fflPrintMissingBefore"
+      },
+      {
+        "kind": "const",
+        "name": "fflPrintMissingAfter"
+      },
+      {
+        "kind": "bool",
+        "name": "fflDefsFromFfPrint"
+      },
+      {
+        "kind": "bool",
+        "name": "fflThreeVoiceRead"
+      },
+      {
+        "kind": "bool",
+        "name": "fflVariantDefsSplit"
+      },
+      {
+        "kind": "bool",
+        "name": "fflMagicResistanceRowBlank"
+      },
+      {
+        "kind": "bool",
+        "name": "fflTreasureTypeZero"
+      },
+      {
+        "kind": "bool",
+        "name": "fflSourceRowsStay"
+      },
+      {
+        "kind": "bool",
+        "name": "fflNoGapBoxesFlip"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['fflRegistryAfter']() != m['fflRegistryBefore']() + m['fflBatchDefs']()",
+      "note": "the registry carries the batch"
+    },
+    {
+      "expr": "m['fflFfDefsAfter']() != m['fflFfDefsBefore']() + m['fflBatchDefs']()",
+      "note": "the ff def census carries the batch"
+    },
+    {
+      "expr": "m['fflPrintMissingAfter']() != m['fflPrintMissingBefore']() - m['fflBatchDefs']()",
+      "note": "the missing print census drains by the batch"
+    },
+    {
+      "expr": "m['fflBatchDefs']() != m['fflMephitDefs']() + m['fflTrollDefs']() + m['fflSlaadLordDefs']() + m['fflHoldoutDefs']()",
+      "note": "the batch splits into mephit, troll, slaad lord and holdout defs"
+    },
+    {
+      "expr": "m['fflPrintStatBlocks']() != m['fflPrintSaved']() + m['fflPrintMissingAfter']()",
+      "note": "the print stat-block census closes over saved and missing"
+    },
+    {
+      "expr": "m['fflPrintSaved']() != m['fflFfDefsAfter']()",
+      "note": "every saved print stat-block is an ff def"
+    },
+    {
+      "expr": "m['fflLastPage']() - m['fflFirstPage']() != 33",
+      "note": "the batch page span runs print page 59 through 92"
+    }
+  ],
+  "audit_label": "R844 seventh FF promotion audit",
+  "audit_comment": "THE SEVENTH FF PROMOTION BATCH - twenty-five of the thirty-two missing FF print stat-blocks promoted: the lamia noble, the lizard king, the magnesium spirit, the mantari, the lava, smoke and steam mephits (three defs), the mite, the necrophidius, the needleman, the nilbog, the nonafel, the pernicon, the phantom stalker, the protein polymorph, the qullan, the retriever, the blue slaad, Ssendam, Ygorl, the giant troll, the giant two-headed troll, the spirit troll, the trilloch and the umpleby; the registry 963 -> 988, the ff def census 153 -> 178, the missing print census 32 -> 7; the constants check themselves",
+  "audit_file": "rules/audits/r844_batch.h",
+  "audit_anchor": "#include \"rules/audits/r843_batch.h\"  // R843: R843 sixth FF promotion audit",
+  "include_after": "#include \"rules/ffk.h\"  // R843: the sixth FF promotion batch",
+  "include_comment": "the seventh FF promotion batch",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R843 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R843 LANDED 2026-10-25: commit",
+    "  5abfed02d0f8a2d796b11eb3e20014e099328d66",
+    "  (pushed ebc67e2..5abfed0,",
+    "  census 765 -> 766), THE SIXTH",
+    "  FF PROMOTION BATCH (the FF arc,",
+    "  25 defs per the R836 pace pin).",
+    "  THE DEFS: 25 new .lua defs",
+    "  lifted from the ff print",
+    "  (ff_print xp class), the holdouts",
+    "  in ToC order from the flind p. 39",
+    "  through the kuo-toa pp. 57-59",
+    "  (the garbug promoting as two",
+    "  defs - the black and the violet,",
+    "  the two-column variant precedent;",
+    "  the fog giant, mountain giant and",
+    "  giant strider riding the print",
+    "  family prose, race Giant; the",
+    "  kuo-toa carrying its three-page",
+    "  community entry with the",
+    "  hit-point, arms and slave tables)",
+    "  - the R836-R842 def shape with",
+    "  the print-fidelity pin headers.",
+    "  NO encounter rewires, NO gap",
+    "  boxes flip (MM2 stays 37 closed 0",
+    "  open): a def-only batch - the",
+    "  registry 938 -> 963, the ff def",
+    "  census 128 -> 153, the missing",
+    "  print census 57 -> 32. Header",
+    "  rules/ffk.h, prefix ffk (free;",
+    "  16 consts + 6 bools, inline 22),",
+    "  audit \"R843 sixth FF promotion",
+    "  audit\", rode",
+    "  rules/audits/r843_batch.h",
+    "  (include above the ffj.h R842",
+    "  index-line include); the R842",
+    "  record seated into the seed.",
+    "  DATA VOICES: the three-voice",
+    "  collation (djvu text, djvu",
+    "  word-geometry xml, abbyy char",
+    "  xml) with the 1eonline /5ff/",
+    "  transcripts; the scan OCRs 1 as",
+    "  7 systematically (the galltrit",
+    "  and iron cobra no-appearing, the",
+    "  guardian familiar hit dice and",
+    "  xp reads corrected);",
+    "  adjudicated ambiguities: the",
+    "  garbug numAttacks stay print",
+    "  strings (\"1 and 6\" black, \"2 and",
+    "  6\" violet), the guardian familiar",
+    "  hitDice \"1 (9)\" carries actual hp",
+    "  (avgHp 9, xpValue 1908), the",
+    "  gryph is SIZE S (the earlier L",
+    "  read was the jaculi row), the",
+    "  jaculi size \"L (8' to 12')\" per",
+    "  the landed \"to\" format, the",
+    "  kamadan move 18\" and xp 240+5,",
+    "  the ice lizard 3+3 HD with MR",
+    "  \"80% (but see below)\". ONE ROW",
+    "  PAIR UNRECOVERED: the guardian",
+    "  familiar psionic and",
+    "  attack/defence mode rows shred in",
+    "  BOTH scan voices with no",
+    "  transcription voice - they ride",
+    "  the query-mark sentinel per the",
+    "  landed precedent (dryad, dwarf,",
+    "  dragon turtle), pinned as the",
+    "  ffkPsionicRowUnrecovered bool.",
+    "  Spec tools/spec_r843.json, md5",
+    "  47e09133651f17ade6676e80d952bf11",
+    "  (authored-plus-newline).",
+    "  NEXT: awaits Curtiss's call -",
+    "  32 missing FF monsters remain by",
+    "  the R842-pinned 57 drain (an",
+    "  independent recount makes 33",
+    "  with the yellow urchin p. 92);",
+    "  the next ToC order starts lava",
+    "  children, lizard king, ..."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "file_patches": [],
+  "migrate_blocks": [],
+  "data_files": [
+    {
+      "path": "monsters/monsters/l/lamia_noble.lua",
+      "content": "-- Lamia Noble: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Lamia Noble\",\n  page = \"59\",\n  pages = \"59\",\n  source = \"FF\",\n  race = \"Lamia\",\n  hitDice = \"10+1\",\n  hitDiceNum = 10,\n  hitDiceBonus = 1,\n  avgHp = 46,\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 2550,\n  xpPerHp = 14,\n  xpValue = 3194,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 60,\n  treasure = \"D\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"High\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Spells - see below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These beings have rule over other lamias and the wild, lonely areas they inhabit. They differ from the normal lamia in that the lamia noble's lower body is that of a giant serpent and the upper body can be either male or female.\\n\\nIf male, they wield short swords and have magical ability at experience level 1-6 in addition to the spells charm person, mirror image, suggestion and illusion. Those with female upper bodies are unarmed and only attack by means of spells; however they are more experienced magically and will have abilities at experience level 2-8 together with the spells listed above.\\n\\nThe lamia noble's touch permanently drains 1 point of wisdom from a victim, and when wisdom drops below 3 the victim will willingly do whatever the lamia noble tells him to do.\\n\\nAll lamia nobles are able to assume human form (though intelligent humanoids will always be able to penetrate the disguise) and in this guise attempt to penetrate human society to wreak acts of evil. They speak all the languages of the man-like races.\\n\\nWhen in human form they will be recognized as lamias only by humans and demi-humans of the 7th experience level or above (10% cumulative chance per level above 6th with clerics receiving a flat 15% extra chance).\\n\\nLamia nobles are given to outbursts of senseless violence.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/l/lizard_king.lua",
+      "content": "-- Lizard King: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Lizard King\",\n  page = \"61\",\n  pages = \"61\",\n  source = \"FF\",\n  race = \"Lizard Man\",\n  hitDice = \"8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 36,\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"5-20\",\n  xp = 550,\n  xpPerHp = 10,\n  xpValue = 910,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 20,\n  treasure = \"E\",\n  move = \"15\\\"/12\\\"\",\n  size = \"L (about 8' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Skewering - see below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The lizard king is a variety of the lizard man (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL) - taller, more intelligent and more human-like than a normal lizard man. It dwells in damp areas, usually near an underground river or lake. It will have 10-100 lizard men followers/guards from which it demands 2 human sacrifices each week. These followers will always make every effort to meet the demands of their master since the king, if it lacks human sacrifices to eat, will substitute 2 of its followers for each human not available.\\n\\nThe trident of the lizard king is a fearsome weapon which can inflict 5-20 hit points of damage on a victim. If the 'to hit' die roll is 5 or more greater than the score needed to hit, the trident will skewer the victim, doing double normal damage and a minimum of 15 hit points. However, the trident's special properties only function when used by lizard kings; sages have pondered this singular weapon behaviour for many years but have so far come to no conclusions - certainly the trident behaves, in the hands of a human, just like a normal trident.\\n\\nWith the exceptions noted, the lizard king has all the characteristics of the normal lizard men.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/m/magnesium_spirit.lua",
+      "content": "-- Magnesium Spirit: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Magnesium Spirit\",\n  page = \"62\",\n  pages = \"62\",\n  source = \"FF\",\n  race = \"Magnesium Spirit\",\n  hitDice = \"6+1\",\n  hitDiceNum = 6,\n  hitDiceBonus = 1,\n  avgHp = 28,\n  armorClass = \"0\",\n  numAttacks = 1,\n  damage = \"3-12\",\n  xp = 1300,\n  xpPerHp = 8,\n  xpValue = 1524,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"36\\\"\",\n  size = \"M\",\n  intelligence = \"Very\",\n  alignment = \"Lawful evil\",\n  specialAttacks = \"Energy and strength drain - see below\",\n  specialDefenses = \"Can only be hit by silver and magical weapons; and see below\",\n  magicResistance = \"50% and see below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"It is believed that only three or four of these creatures exist, having been summoned originally to the Prime Material Plane, and stranded there, by an evil magic-user of high experience level who died as a result of the strain of the summoning. Their actual plane of origin is a matter of conjecture. Their behaviour is completely dominated by their need to inhabit the body of a character of 5th or higher level in order to perform the complex spell-casting ritual which will return them to their place of origin. Only a human body will give them the necessary psychic frame of reference, so they attack only humans.\\n\\nIn appearance the magnesium spirit resembles a cylinder of white flame, 5' tall and 3' diameter, with a wispy tail 5' long. However they do not give off any discernable heat.\\n\\nMoving at extraordinary speed, the spirit will approach a party containing humans and quickly reach a position within 10' of its selected victim (chosen at random from the humans present), in which position it will pause and flare up in a split-second blinding flash of white light. All who are within 20' and who are observing the spirit (including non-humans) must make a saving throw versus petrification to escape blindness for 12 turns (two full hours). Treat the effects as the blindness spell of the illusionist.\\n\\nThe spirit will then attack, automatically gaining initiative each round even against hasted opponents. If it scores a hit it drains one energy level and two points of strength from the victim (the latter recoverable at the rate of 1 point per hour, the energy level drain being permanent); it also inflicts 3-12 hit points of damage. Once it has hit it is locked onto its victim's body and will merge gradually into that body, draining energy and strength and causing 3-12 hit points of damage per round as it does so. After two melee rounds of this merging process, the only way to hit the spirit without harming its victim is with holy water which will cause 2-7 hit points of damage to the spirit per vial full and also force it to abandon the merging process (though it may attack the same victim or another human victim in the next round). During the merging process, the spirit causes damage automatically, requiring no 'to hit' roll.\\n\\nIf the spirit has achieved three rounds of the merging process without being forced to abandon its victim (i.e. two rounds during which it is vulnerable to normal attack and one round during which it is vulnerable only to holy water) it will have taken over its victim and the human persona will have been negated. If the victim has five or more energy levels (hit dice) at that time (since he will have lost four, one from the initial attack and three from three rounds of the merging process, he must have been at least 9th level before the attack) the spirit will use the body to shriek out its spell, which takes 5 segments, and then the body and spirit will vanish in a flash of light. The spirit has gone back to its plane of origin, never to return.\\n\\nIf the victim has fewer than five energy levels remaining (i.e. was at most 8th level before the spirit's first attack), the spirit will abandon the body and seek another, turning to another nearby human (if one is available) and commencing the attack process all over again on him. The body of the first victim, now a mindless husk, will collapse and will resist all resurrection attempts (though a powerful spell such as a wish will bring back the victim if used properly).\\n\\nThe magnesium spirit can only be harmed by silver or magical weapons. It has a 50% magic resistance as well as immunity to sleep, charm, hold, paralysation, and fear spells. It is vulnerable to holy water at all times, whether during the merging process or otherwise, taking 2-7 hit points of damage per vial-full thrown onto it.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/m/mantari.lua",
+      "content": "-- Mantari: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Mantari\",\n  page = \"62\",\n  pages = \"62\",\n  source = \"FF\",\n  race = \"Mantari\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 6,\n  armorClass = \"9\",\n  numAttacks = 1,\n  damage = \"Special - see below\",\n  xp = 65,\n  xpPerHp = 2,\n  xpValue = 77,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-3\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"18\\\"\",\n  size = \"S\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This flying creature bears a close resemblance to the marine ray, with a flat body about 3' long (and nearly as wide) and a 4' long thin whiplike tail. The mantari (singular and plural) usually preys on giant rats and the like for food, but it is normally (85%) aggressive when encountering other creatures and humans. It flies with its tail held vertically downwards, but when attacking - diving onto its victim from a height of 10-12' above ground - the tail assumes a forward pointing acute angle with the body.\\n\\nIt strikes solely by whipping a victim with its tail. The sting in the tip of the tail is not poisonous, but acts on the victim's nervous system. The number of hit points of damage inflicted by a hit is equal to the difference between 19 and the victim's constitution (so a victim with constitution 12 would take 7 hit points of damage). No saving throw is permitted against the effects of the sting.\\n\\nFurthermore, if the same victim is hit in two successive melee rounds, the damage inflicted by the second hit is four times normal. There is no additional damage bonus for the third or subsequent successive hit on the same victim - each counts as four times normal.\\n\\nThe mantari is found in most types of locale, though its preferred haunts are dirty dungeon chambers where its prey abounds. For purposes of aerial combat it is manoeuvrability class C.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/m/mephit_lava.lua",
+      "content": "-- Mephit (Lava): promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Mephit (Lava)\",\n  page = \"64\",\n  pages = \"64-65\",\n  source = \"FF\",\n  race = \"Mephit (Lava)\",\n  hitDice = \"3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 0,\n  avgHp = 14,\n  armorClass = \"6\",\n  numAttacks = 2,\n  damage = \"See below\",\n  xp = 105,\n  xpPerHp = 3,\n  xpValue = 147,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"1-10 platinum pieces each\",\n  move = \"12\\\"/24\\\"\",\n  size = \"M (5' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Variable but always evil\",\n  specialAttacks = \"Breath Weapon\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The various mephits are the evil messengers and errand-runners of the powerful creatures of the Lower Planes. They are common inhabitants of all these locales, from the Nine Hells to the Abyss. Their alignment varies, depending on their plane of origin, but they are always evil.\\n\\nWhen mephits appear on the Prime Material Plane, they always have some demoniac or diabolic mission to perform (or a similar mission from another such evil personage). This can vary from a rigorous task (for example seeking out a particular victim and capturing him for transportation to Hades) to a more general mission (such as indiscriminate looting and killing).\\n\\nMephits are connoisseurs of the vulgar and tasteless: they share an extraordinarily twisted sense of humour (to a mephit, the sight of a creature writhing in agony is excruciatingly funny). They delight particularly in tormenting the helpless. If they can obtain them (and it is usual that they do) they will wear clothes of the most garish design and colour possible. They are often seen puffing upon smoking rolls of exceedingly foul-smelling dried vegetation. They adopt a strutting gait and have shrill voices (they all speak a common mephit tongue and their alignment language).\\n\\nAll mephits are about 5' tall, with functional wings and fangs. Other forms of mephit are thought to exist though there is as yet no positive identification of type.\\n\\nSo far as can be ascertained, no particular type of mephit is more or less common on any of the Lower Planes - the types appear to be distributed in an indiscriminate fashion.\\n\\nFor purposes of aerial combat, all mephits are manoeuvrability class B.\\n\\nLava Mephit: These mephits are dull red in colour and constantly ooze molten lava from their bodies in small drops, just as though it were very heavy perspiration. The heat from their bodies can be sensed 30' away and anyone touching a lava mephit with bare flesh receives 1-8 hit points of damage.\\n\\nThey attack using their claws (1 hit point of damage each plus 1-8 hit points of heat damage, for 2-9 points total) and a breath weapon.\\n\\nBreath Weapon: The latter consists of a molten blob of lava which automatically hits any single designated target within a 10' range (1-6 hit points of damage - no saving throw permitted). If the encounter takes place in a volcanic region where molten lava is available, these mephits can regenerate 2 hit points per round simply by keeping in contact with the lava (though this power ceases when the mephit is killed). The lava mephit can use its breath weapon once every three rounds, but unless in contact with molten lava the maximum number of lava blobs which can be projected is 8, and when this 'supply' is exhausted the mephit will no longer be able to breathe that day unless it subsequently 'recharges' by getting in contact with molten lava.\\n\\nThe touch of the lava mephit automatically dissolves materials, dissolving wood slowly at but one inch thickness per hour and metals quickly - destroying plate armour in 3 melee rounds - and all lava mephits may shape change at will into a pool of molten lava (this action will not re-charge the breath weapon). Once per hour they may attempt to gate in 1-2 other mephits (equal probability each type; if two appear they will be of the same type) with a 25% chance of success.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/m/mephit_smoke.lua",
+      "content": "-- Mephit (Smoke): promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Mephit (Smoke)\",\n  page = \"65\",\n  pages = \"65\",\n  source = \"FF\",\n  race = \"Mephit (Smoke)\",\n  hitDice = \"3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 0,\n  avgHp = 14,\n  armorClass = \"4\",\n  numAttacks = 2,\n  damage = \"1-2/1-2\",\n  xp = 105,\n  xpPerHp = 3,\n  xpValue = 147,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"1-10 platinum pieces each\",\n  move = \"12\\\"/24\\\"\",\n  size = \"M (5' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Variable but always evil\",\n  specialAttacks = \"Breath Weapon\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The various mephits are the evil messengers and errand-runners of the powerful creatures of the Lower Planes. They are common inhabitants of all these locales, from the Nine Hells to the Abyss. Their alignment varies, depending on their plane of origin, but they are always evil.\\n\\nWhen mephits appear on the Prime Material Plane, they always have some demoniac or diabolic mission to perform (or a similar mission from another such evil personage). This can vary from a rigorous task (for example seeking out a particular victim and capturing him for transportation to Hades) to a more general mission (such as indiscriminate looting and killing).\\n\\nMephits are connoisseurs of the vulgar and tasteless: they share an extraordinarily twisted sense of humour (to a mephit, the sight of a creature writhing in agony is excruciatingly funny). They delight particularly in tormenting the helpless. If they can obtain them (and it is usual that they do) they will wear clothes of the most garish design and colour possible. They are often seen puffing upon smoking rolls of exceedingly foul-smelling dried vegetation. They adopt a strutting gait and have shrill voices (they all speak a common mephit tongue and their alignment language).\\n\\nAll mephits are about 5' tall, with functional wings and fangs. Other forms of mephit are thought to exist though there is as yet no positive identification of type.\\n\\nSo far as can be ascertained, no particular type of mephit is more or less common on any of the Lower Planes - the types appear to be distributed in an indiscriminate fashion.\\n\\nFor purposes of aerial combat, all mephits are manoeuvrability class B.\\n\\nSmoke Mephit: Like the fire mephits, these creatures attack with two claws (1-2 hit points of damage each) and a breath weapon.\\n\\nBreath Weapon: The latter consists of the discharge of a sooty ball of smoke which does 1-4 hit points of damage to a victim - no saving throw permitted. The ball of smoke will automatically hit any single designated victim within a 20' range. The victim, in addition to receiving damage, is blinded for 1-2 melee rounds. The smoke mephit can use its breath weapon every other melee round; there is no limitation on the total number of times it may breathe.\\n\\nThe smoke mephit can use invisibility and dancing lights once each per day and can, once every hour, attempt to gate in 1-2 other mephits (equal probability each type; if two appear they will be of the same type) with a 20% chance of success.\\n\\nWhen a smoke mephit dies, it coughs up 1 hit point of flame damage to everyone within 10' (no saving throw permitted).\\n\\nThe smoke mephit is black in colour and has smoke oozing from its body. It will inhabit smoky and dark areas while on the Prime Material Plane and will never emerge into bright light unless forced to do so.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/m/mephit_steam.lua",
+      "content": "-- Mephit (Steam): promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Mephit (Steam)\",\n  page = \"65\",\n  pages = \"65-66\",\n  source = \"FF\",\n  race = \"Mephit (Steam)\",\n  hitDice = \"3+3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 3,\n  avgHp = 17,\n  armorClass = \"7\",\n  numAttacks = 2,\n  damage = \"1-4/1-4\",\n  xp = 175,\n  xpPerHp = 4,\n  xpValue = 243,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"3-18 platinum pieces each\",\n  move = \"12\\\"/24\\\"\",\n  size = \"M (5' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Variable but always evil\",\n  specialAttacks = \"Breath Weapon\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The various mephits are the evil messengers and errand-runners of the powerful creatures of the Lower Planes. They are common inhabitants of all these locales, from the Nine Hells to the Abyss. Their alignment varies, depending on their plane of origin, but they are always evil.\\n\\nWhen mephits appear on the Prime Material Plane, they always have some demoniac or diabolic mission to perform (or a similar mission from another such evil personage). This can vary from a rigorous task (for example seeking out a particular victim and capturing him for transportation to Hades) to a more general mission (such as indiscriminate looting and killing).\\n\\nMephits are connoisseurs of the vulgar and tasteless: they share an extraordinarily twisted sense of humour (to a mephit, the sight of a creature writhing in agony is excruciatingly funny). They delight particularly in tormenting the helpless. If they can obtain them (and it is usual that they do) they will wear clothes of the most garish design and colour possible. They are often seen puffing upon smoking rolls of exceedingly foul-smelling dried vegetation. They adopt a strutting gait and have shrill voices (they all speak a common mephit tongue and their alignment language).\\n\\nAll mephits are about 5' tall, with functional wings and fangs. Other forms of mephit are thought to exist though there is as yet no positive identification of type.\\n\\nSo far as can be ascertained, no particular type of mephit is more or less common on any of the Lower Planes - the types appear to be distributed in an indiscriminate fashion.\\n\\nFor purposes of aerial combat, all mephits are manoeuvrability class B.\\n\\nSteam Mephits: These mephits are gray in colour and constantly ooze hot water, leaving a trail of water behind them when they move. Touching a steam mephit with bare flesh will deliver 1 hit point of damage to the victim, together with a 50% chance of his being stunned for one melee round.\\n\\nBreath Weapon: In addition to attacking with their two claws (each of which inflicts 1-4 hit points of damage) they can direct a jet of scalding water at any single designated victim within 20' - this will hit the victim automatically. The jet of water inflicts 1-3 hit points of damage (no saving throw permitted) and there is a 50% chance that the victim will also be stunned for one melee round. The mephit can use this breath weapon a limitless number of times at a frequency of once every two melee rounds.\\n\\nOnce per day the steam mephit can perform a 'rainstorm' of boiling water - treat as ice storm with 2-12 hit points of damage for all victims (no saving throws permitted). Once per hour it can contaminate water (as the reversal of purify water). Once per hour it may also attempt to gate in 1-2 other mephits (equal probability each type; if two appear they will be of the same type) with a 30% chance of success.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/m/mite.lua",
+      "content": "-- Mite: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Mite\",\n  page = \"66\",\n  pages = \"66\",\n  source = \"FF\",\n  race = \"Mite\",\n  hitDice = \"1-1\",\n  hitDiceNum = 1,\n  hitDiceBonus = -1,\n  avgHp = 4,\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"1-3\",\n  xp = 5,\n  xpPerHp = 1,\n  xpValue = 9,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"6-24\",\n  lairPct = 10,\n  treasure = \"C\",\n  move = \"3\\\"\",\n  size = \"S (2' tall)\",\n  intelligence = \"Low\",\n  alignment = \"Lawful evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Mites are a mere 2' in height, humanoid with large heads and evil faces. Their skin varies in colour from light grey to violet. They inhabit networks of narrow tunnels above and below main dungeon corridors; their scurrying feet and high-pitched twittering voices can often be heard by roving groups of adventurers. However they are rarely seen and never openly attack.\\n\\nThey will attempt to ensnare the lone adventurer or unwary straggler using trapdoors, nets, tripwires and other such means, bundling their captive off before help arrives. Those captured by mites are robbed, stripped, bound and beaten. Then, somewhat later, they are returned helpless to the main corridor at the mercy of wandering-monsters. In melee they attack with a nasty bite which can inflict 1-3 hit points of damage. They have borrowed from their cousins the jermlaine the latter's technique of beating captives with loaded clubs, attempting to stun them, and a victim trapped by their methods will almost certainly (90%) be dealt with in this manner by his mite captors.\\n\\nThe entrances to their tunnels are hidden and can only be detected as if they were secret doors. The tunnels are small and difficult of access to those of human build.\\n\\nMites are related to jermlaine and snyads. So far as can be detected, they have no language as such - their vocal twittering does not appear to convey more than very rudimentary information.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/n/necrophidius.lua",
+      "content": "-- Necrophidius: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Necrophidius\",\n  page = \"67\",\n  pages = \"67\",\n  source = \"FF\",\n  race = \"Necrophidius\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"2\",\n  numAttacks = 1,\n  damage = \"1-8\",\n  xp = 118,\n  xpPerHp = 2,\n  xpValue = 136,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 10,\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"L\",\n  intelligence = \"Average\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Paralysation (and see below)\",\n  specialDefenses = \"Immune to poison (and see below)\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This creature appears to be the skeleton of a giant snake with a fanged human skull as a head. It is totally silent, immune to sleep, charm and mind-affecting spells, immune to poison and will never need to check morale.\\n\\nIts bite (1-8 hit points of damage) causes paralysation unless the victim makes his saving throw against magic - this is not a venom. The paralysation lasts 1-4 turns.\\n\\nThe necrophidius achieves surprise 50% of the time (1-3 on d6) and if it is not itself surprised it will execute the Dance of Death - a hypnotic, semi-magical swaying which rivets the attention of any victim observing the worm who fails to make his saving throw against magic. Failure means inability to act; treat as hypnotism. This allows the worm to advance and attack without opposition.\\n\\nA necrophidius is created for one specific purpose and is therefore generally met in the role of an assassin or guard - never as a wandering monster.\\n\\nDespite a number of characteristics to the contrary, the necrophidius is not of the undead class and cannot, e.g., be turned by a cleric.\\n\\nConstruction: There are three ways of creating a necrophidius. The first is by means of a special magical tome, similar to a Manual of Golems. The second method is for a high-level magic-user to employ a limited wish, a geas and a charm person. The third method is for a high-level cleric to employ quest, neutralize poison, prayer, silence and snake charm. The materials include the articulated skeleton of a giant snake (poisonous or constrictor) and the skull of a cold-blooded murderer killed within the previous 24 hours. The cost is 500 g.p. per hit point of the creature and it requires 10 days construction time.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/n/needleman.lua",
+      "content": "-- Needleman: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Needleman\",\n  page = \"67\",\n  pages = \"67\",\n  source = \"FF\",\n  race = \"Needleman\",\n  hitDice = \"3+4\",\n  hitDiceNum = 3,\n  hitDiceBonus = 4,\n  avgHp = 18,\n  armorClass = \"6\",\n  numAttacks = \"1-6\",\n  damage = \"1-2\",\n  xp = 85,\n  xpPerHp = 3,\n  xpValue = 139,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"5-50\",\n  lairPct = 25,\n  treasure = \"G\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Surprise\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Sub-standard - see below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This wood-dwelling, intelligent form of plant life looks like a zombie but in fact is neither animal nor of the undead class. Embedded in its 'flesh' all over its body are masses of small sharp needles, like pine needles. Each round it may 'fire' 1-6 of these needles, each of which inflicts 1-2 hit points of damage on a victim, up to a range of 20' with the accuracy of a short-range arrow. For practical purposes, its supply of needles is infinite.\\n\\nThe creature is particularly vulnerable to magic. Attacks on it by magical means will inflict triple normal damage on it, though it has a saving throw as normal. Other spells of a non-offensive nature (such as charm plants) will be triply effective against it, as appropriate. Of course, the fact that it is a plant makes it immune to certain spells.\\n\\nNeedlemen appear to hate elves and will attack them on sight.\\n\\nWhen amidst conifers or heavy undergrowth, needlemen are nearly (75%) undetectable and will achieve surprise 75% of the time. It is very rare to encounter the creature outside this sort of natural habitat.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/n/nilbog.lua",
+      "content": "-- Nilbog: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Nilbog\",\n  page = \"67\",\n  pages = \"67\",\n  source = \"FF\",\n  race = \"Nilbog\",\n  hitDice = \"1-1\",\n  hitDiceNum = 1,\n  hitDiceBonus = -1,\n  avgHp = 4,\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-6 or by weapon type\",\n  xp = 53,\n  xpPerHp = 1,\n  xpValue = 57,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare (at best)\",\n  noAppearing = \"4-40\",\n  lairPct = 40,\n  treasure = \"Individuals K; in lair G\",\n  move = \"6\\\"\",\n  size = \"S (4' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Lawful evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This creature looks exactly like a normal goblin and has all the characteristics of that race (see Goblin) with one important exception - it suffers from a curious spatio-temporal reversal. It remains a mystery why only goblins are susceptible to this strange disorder. Nilbogism (the name given to the disorder) appears to occur when overly heavy use of magic strains the fabric of the space-time continuum, and leads to some very strange localised events. The coincidence of conditions which lead to nilbogism is extremely rare and it is only imperfectly understood. Although the creature itself does not in any sense transmit the disorder to those around it, some of the effects are transmitted.\\n\\nMany and varied accounts have been received about the nature of the space-time disturbances which take place in the presence of nilbogs. Only one factor appears to be common - the adventurers will have no control over their own actions and will generally pursue courses of action contrary to their normal intent; for example they may feel an overwhelming compulsion to load all their treasure into an empty treasure chest in the nilbog lair and leave empty-handed. There are no saving throws against these effects, nor is there any known defence (though a powerful spell such as a wish will, if used properly, have a good chance of rendering local immunity against the effects).\\n\\nAnother curious feature of the nilbog power is that the creature gains hit points when it is first struck, the addition being equal to the intended damage rolled. It can only lose hit points by such means as casting cure wounds spells on it, forcibly feeding it healing potions and so on.\\n\\nFor obvious reasons, encounters with these strange creatures are dreaded and, as a result, normal goblins tend to be treated with extreme caution lest they turn out to be nilbogs. There appears to be no way of distinguishing between the two apart from the use of such spells as commune or by trial and error.\\n\\nSo far as is known, no other creature has been afflicted with nilbogism.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/n/nonafel.lua",
+      "content": "-- Nonafel: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Nonafel\",\n  page = \"68\",\n  pages = \"68\",\n  source = \"FF\",\n  race = \"Nonafel\",\n  hitDice = \"9\",\n  hitDiceNum = 9,\n  hitDiceBonus = 0,\n  avgHp = 41,\n  armorClass = \"Parent 5, 'children' 6\",\n  numAttacks = 1,\n  damage = \"2-20 or 1-8\",\n  xp = 1400,\n  xpPerHp = 12,\n  xpValue = 1892,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 40,\n  treasure = \"Nil\",\n  move = \"Parent 9\\\", 'children' 12\\\"\",\n  size = \"L\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"On first sight this creature appears to be a large black panther with yellow, bloodshot eyes. It is usually found in caves in warm zones of the underworld. It is carnivorous and its skin has been known to fetch as much as 1,500 g.p.\\n\\nThe creature displays a most unusual dissociative power which enables it to divide into nine individual black panthers. This transformation takes place in one segment of time and appears to be instinctive, requiring no concentration on the part of the 'parent' beast. The creature will always attack a party of adventurers or any other monster it encounters, usually (90%) transforming itself as soon as its enemies are sighted and then attempting to surround the party, all nine 'children' acting in co-operative fashion as though there exists some telepathic bond between them which gives them the effective power of a corporate brain. There is only a small chance (10%) that the creature will remain in parent form before attacking, and even if this is the case the dissociation will take place after 1-2 melee rounds of combat.\\n\\nIf one or more of the 'children' are damaged during melee there is a 25% chance (check each melee round, but the chance is not cumulative) that the children will be re-associated to form the parent. This takes place by means of a blink operation and all the children can be re-associated so long as they are within a 50' radius (the re-association will not take place if all children are not within a 50' radius); the children can still engage in combat during the round of their re-association.\\n\\nWhen re-associated, the parent can regenerate 9 hit points each round, one for each of the offspring (if one or more of the offspring were unharmed before re-association, the hit points due to them from the regeneration are lost and cannot be transferred to one of their damaged brethren). Once one round of regeneration has taken place, the parent will again dissociate into nine (or perhaps fewer, if one has been killed) offspring; again the parent can partake in combat during the melee round of dissociation. If an offspring is killed, the body will blink to the parent-body when re-association takes place, but the regeneration has no effect on that particular individual beast, and when dissociation next takes place, there will be one fewer offspring.\\n\\nAfter the second dissociation, the whole process begins again, with a 25% chance each round that the parent will re-form if one or more of the children have been damaged.\\n\\nThe parent beast has 9 hit dice, each child 1 die. When the creature dissociates, the parent's hits will be divided as equally as possible between the children (so a parent of 49 hits will divide into five children with 5 hits each and four with 6 hits each).\\n\\nThe parent attacks as a 9HD monster using its flail-like tail to hit for 2-20 hit points of damage. The tail is swung over the head in a manner similar to the tail attack of a wyvern.\\n\\nEach child fights as a 2HD monster, using its tail in a similar manner to inflict 1-8 hit points of damage.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/p/pernicon.lua",
+      "content": "-- Pernicon: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Pernicon\",\n  page = \"72\",\n  pages = \"72\",\n  source = \"FF\",\n  race = \"Pernicon\",\n  hitDice = \"4 hit points\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 4,\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"1-3\",\n  xp = 7,\n  xpPerHp = 1,\n  xpValue = 11,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"4-40 (in lair 300-3,000)\",\n  lairPct = 20,\n  treasure = \"1-4 gems and 25% chance of 100-600 gold pieces\",\n  move = \"12\\\"\",\n  size = \"S (2\\\" long)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Constitution drain\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"A brightly-coloured insect rather like a grasshopper about 2\\\" long - red, yellow, ochre and light blue - the pernicon inhabits the outer regions of deserts and is much prized by the nomads of these regions because the antennae on its head are water-diviners, vibrating and giving off a low hum when within 120' of a large quantity of water.\\n\\nThe pernicon is usually inoffensive but will attack in large numbers if disturbed, accidentally or otherwise. It leaps on its victim and grips exposed flesh with the pincers at the rear of its abdomen. If it hits, the pernicon will inflict 1-3 hit points of damage and will also drain water and other body fluids from the victim, causing the loss of 1 point of constitution. Each round thereafter this process will continue automatically, without the need of a 'to hit' roll.\\n\\nEven when the pernicon is killed its pincers continue to grip fast, and removing it from the victim's body will inflict a further 1-4 hit points of damage. If a victim's constitution falls below 3 he collapses unconscious. If it drops below zero he dies. If a victim is not killed he will recover lost constitution points at the same rate as lost hit points. However, if he is killed, a raise dead will only restore half of his original constitution, a raise dead fully only 75% of it.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/p/phantom_stalker.lua",
+      "content": "-- Phantom Stalker: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Phantom Stalker\",\n  page = \"72\",\n  pages = \"72-73\",\n  source = \"FF\",\n  race = \"Phantom Stalker\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 27,\n  armorClass = \"3\",\n  numAttacks = 2,\n  damage = \"1-4/1-4\",\n  xp = 375,\n  xpPerHp = 6,\n  xpValue = 537,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"/24\\\"\",\n  size = \"Variable - usually L\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Impervious to fire\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Phantom stalkers are creatures from the Elemental Plane of Fire, and are usually found on the Prime Material Plane only in the capacity of servitors to high-level magic-users. They are conjured by the use of a spell similar to the one for summoning an invisible stalker (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL).\\n\\nPhantom stalkers serve as body-guards, fighting to protect their masters. A wizard must exercise great care in instructing one, for it will follow the orders to the letter, perverting the intent if possible, anxious for release back to its native plane.\\n\\nThere is one explicit instruction inherent in their conjuration. If the summoner is killed, his phantom stalker(s) will instantly vanish, reappearing 1-4 hours later, intent on vengeance, having unerringly tracked the summoner's slayer from the Ethereal Plane. Phantom stalkers only gain this ethereal tracking ability upon the expiration of their masters, and it disappears as soon as the summoner's slayer has been tracked.\\n\\nPhantom stalkers have the ability to polymorph themselves and have been known to appear in various forms, but the most common is that of a reddish, 8' tall humanoid with huge fiery eyes. They can fly, and this ability is apparently unimpaired by whatever shape they assume (though their manoeuvrability class will vary according to the shape).\\n\\nPhantom stalkers normally attack with their sharp claws, each of which can inflict 1-4 hit points of damage. They are invulnerable to damage from fire, and magical fire attacks actually heal them 1 hit point for each attack die. However, they save against cold at -2 and such attacks add 1 hit point of damage for each die. If a melee is going against a phantom stalker and its death is imminent, it can cast forth its life essence in one 6-dice fireball, after which it dematerialises and dies. They will sometimes simply explode the fireball on themselves in order to harm as many foes as possible. This is only done as a last resort and is never done if it would harm the phantom stalker's summoner, unless the summoner is directly and immediately responsible for the phantom stalker's demise (for example having ordered it to engage in a hopelessly futile and suicidal battle).\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/p/protein_polymorph.lua",
+      "content": "-- Protein Polymorph: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Protein Polymorph\",\n  page = \"73\",\n  pages = \"73\",\n  source = \"FF\",\n  race = \"Protein Polymorph\",\n  hitDice = \"6-8\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 27,\n  armorClass = \"2\",\n  numAttacks = \"Variable\",\n  damage = \"6-36 or by weapon type\",\n  xp = 400,\n  xpPerHp = 6,\n  xpValue = 562,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = 50,\n  treasure = \"0\",\n  move = \"9\\\"\",\n  size = \"L\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Protein polymorphs are intelligent cellular colonies with the ability to assume any form they choose. They may take the form of inanimate objects or animate creatures of 8 or fewer hit dice (depending on the size of the protein polymorph - 6, 7 or 8 hit dice). The form assumed may actually be that of several forms connected by a near-invisible (10% chance of detection) cord or film of protoplasm. The cells of the protein polymorph may specialise or de-specialise at will, taking on different textures and colours, changing completely in only one round.\\n\\nThese 'creatures' are extremely versatile. They may imitate anything from a pile of treasure to a small-sized room, to a party of half a dozen humans or a dozen kobolds. They will, in general, assume any form likely to draw prey, for they feed on humans and animals with little regard for type and size. They may even mix inanimate objects within their structure to add authenticity - a room or a corridor may, for instance, be part-stone and part protein polymorph. Imitated creatures may wear real clothing and wield real weapons (often acquired from previous victims).\\n\\nThere are limits to the protein polymorph's degree of cellular control - it cannot accurately copy facial expressions, nor can it effectively duplicate the sound of speech. These limitations may lead to the exposure of the imposture as animate creatures. Similarly, if a protein polymorph disguises itself as an inanimate object, there is a base chance of detecting the imposture from a distance of 10' away, but upon touch the animate nature of the cells is instantly revealed.\\n\\nThe normal attack of a protein polymorph is to bludgeon its prey and then enfold and crush it, inflicting 6-36 hit points of damage per round. When in the form of weapon-wielding creatures, multiple or single, it will attack as the creatures themselves would normally attack, doing damage by weapon-type as appropriate.\\n\\nProtein polymorphs possess the normal strengths of imitated creatures but not those creatures' special abilities.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/q/qullan.lua",
+      "content": "-- Qullan: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Qullan\",\n  page = \"74\",\n  pages = \"74-75\",\n  source = \"FF\",\n  race = \"Qullan\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"10\",\n  numAttacks = 1,\n  damage = \"5-11\",\n  xp = 73,\n  xpPerHp = 2,\n  xpValue = 91,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-6\",\n  lairPct = 10,\n  treasure = \"most types in lair but in small quantity (10% of A at most)\",\n  move = \"12\\\"\",\n  size = \"L (8' + tall)\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"?\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Qullans are strong, large, seemingly insane humanoids which wear warpaint in a wild variety of clashing colours and sport their battle-scars proudly, often emphasising them with cosmetic paint. They never wear armour, either wandering naked or clad in tiger-skins.\\n\\nThey attack with broadswords which they have honed to an incredible sharpness - a technique so far not emulated by man. These swords hit at +3 hit probability and have a +3 damage bonus (so they inflict 5-11 points of damage). However, the swords blunt easily - there is a cumulative 20% chance per hit that the sword will be blunted and will revert to normal broadsword properties. They wield these broadswords two-handed (though this confers no advantage).\\n\\nAll members of the qullan race continually radiate confusion in a 5' radius. Anyone in melee with them must make a saving throw or be confused, either standing still, attacking the nearest qullan without regard for personal safety or attacking the nearest friend - equal probability. (Roll d6 for effect; 1-2 means stand still; 3-4 means attack qullan; 5-6 means attack friend. Repeat this roll to determine action each round until the victim saves.) A victim of confusion may attempt to save each melee round he is within the radius of effect, and the effect disappears if he moves outside that radius of effect.\\n\\nQullans have never been befriended by human or near-human races; without exception, every encounter has seen the qullans attacking, irrespective of the alignment or size of the party.\\n\\nQullans are so totally chaotic that any attempt to force one to do anything it would not normally do causes its inherent powers of confusion to 'feed back', resulting in the instant death of the creature (this same reaction occurs whenever a qullan fails to save against any charm or control type of spell). Thus no-one has ever been able to learn the methods they use to forge the sharp edges on their swords, nor has anyone been able to induce a qullan to restore the edge to one of their fine broadswords for a non-qullan.\\n\\nA human or near-human may use a qullan sword in melee, since the swords are not in any way magical. However, the sword has the normal chance of blunting if it scores a hit, and a captured sword will thus only display its exceptional qualities for 5 hits at most.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/r/retriever.lua",
+      "content": "-- Retriever: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Retriever\",\n  page = \"75\",\n  pages = \"75\",\n  source = \"FF\",\n  race = \"Retriever\",\n  hitDice = \"10\",\n  hitDiceNum = 10,\n  hitDiceBonus = 0,\n  avgHp = 45,\n  armorClass = \"-2\",\n  numAttacks = 4,\n  damage = \"3-18/3-18/3-18/3-18\",\n  xp = 4950,\n  xpPerHp = 14,\n  xpValue = 5580,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 70,\n  treasure = \"Z\",\n  move = \"18\\\"\",\n  size = \"L (12' tall)\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Eye rays\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Retrievers are constructed by Demogorgon (see ADVANCED DUNGEONS & DRAGONS, MONSTER MANUAL - Demon, Demogorgon) in his laboratories in the Abyss; in doing so, Demogorgon deliberately constructs the creatures so as to strike maximum terror into their victims. They will rarely be found on the Prime Material Plane except when engaged on a specific mission to retrieve (usually dead or alive) one who has offended Demogorgon or one of the more powerful denizens of the Abyss.\\n\\nRetrievers are giant spider-like creatures whose front four limbs end in huge cleavers. Though they are large - approximately the size of a mammoth - they are very fast and nimble out in the open, where they have room to manoeuvre. They each have six eyes, two for vision and four which project rays (up to 2 of the latter may function each round - determine which at random). These rays are, respectively, fire, cold, lightning and transmutation. Once used, a particular eye cannot be used again for 6 rounds, at which time it will have re-charged. These rays can only hit one target within a range of 60'.\\n\\nThe rays of fire, cold and lightning each do damage equal to the current hit points of the retriever, a save (vs. Dragon Breath) indicating half damage. Magic items must also save against these attacks if their owner fails to save. The transmutation ray transmutes the victim into mud, stone, gold or lead (determine which of the four at random). A successful save vs. Petrification indicates no effect. A stone to flesh spell will restore a petrified character to normal but only a philosopher's stone can restore a lead or gold figure. Characters turned to mud can only be revived by the use of mud to rock followed by stone to flesh, both spells being cast within 1 turn of the transmutation.\\n\\nRetrievers can attack with all four cleavers simultaneously on the same victim, each inflicting 3-18 hit points of damage. However they cannot use the eye rays when attacking with their cleavers. Generally speaking, they will use their eye rays first, then, when the eyes are re-charging, use the cleavers.\\n\\nDemons sometimes mount howdahs on the back of a retriever and ride on the creature to the hunt.\\n\\nCreatures of the lower order will flee in panic on sight of a retriever, and even an adventurer of 5th experience level or lower (or a monster of less than 6 HD) will do so unless he saves vs. Magic when a retriever comes within 30' of him.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/s/slaad_blue.lua",
+      "content": "-- Slaad (Blue): promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Slaad (Blue)\",\n  page = \"80\",\n  pages = \"80-81\",\n  source = \"FF\",\n  race = \"Slaad (Blue)\",\n  hitDice = \"8+4\",\n  hitDiceNum = 8,\n  hitDiceBonus = 4,\n  avgHp = 40,\n  armorClass = \"5\",\n  numAttacks = 5,\n  damage = \"2-16/2-12/2-12/2-12/2-12\",\n  xp = 2000,\n  xpPerHp = 12,\n  xpValue = 2480,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-12\",\n  lairPct = 35,\n  treasure = \"Z\",\n  move = \"7\\\"\",\n  size = \"L (10' high)\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"40%\",\n  psionic = \"Defence strength 47\",\n  attackDefenseModes = \"Nil/F,G\",\n  text = \"Though the blue variety is stronger than the red, the blue slaad is still a relatively weak member of the slaad race, more often used to run errands and carry out missions for the masters than for anything else. Its main colour is light electric blue, broken by streaks of gray.\\n\\nThere is a great sense of rivalry between blue and red slaadi, and neither type will help the other except in direst emergency.\\n\\nOn each of the blue slaad's claws are two scimitar-like blades. Thus the creature has, effectively, four claw attacks (2-12 points of damage each) as well as its bite (2-16 hit points of damage).\\n\\nBlue slaad have only defensive psionics. Their magical abilities (usable at will) are: telekinese 100# weight, passwall, hold one person (normal saving throw).\\n\\nFour times per day they can attempt to gate in other slaadi. There is a 40% chance of the gate opening, and if it does the creature gated in will be a green slaad (35%), another blue slaad (50%) or a red slaad (15%).\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/s/ssendam.lua",
+      "content": "-- Ssendam: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Ssendam\",\n  page = \"82\",\n  pages = \"82\",\n  source = \"FF\",\n  race = \"Ssendam\",\n  hitDice = \"197 hit points\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 197,\n  armorClass = \"-6\",\n  numAttacks = \"3 or 1\",\n  damage = \"2-16/2-16/2-16 plus drain levels or special\",\n  xp = 28695,\n  xpPerHp = \"0\",\n  xpValue = 28695,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 30,\n  treasure = \"A(x4), F(x2)\",\n  move = \"16\\\"/19\\\"\",\n  size = \"M\",\n  intelligence = \"Supra genius\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"Spells\",\n  specialDefenses = \"Regeneration, spells; +3 or better weapon to hit\",\n  magicResistance = \"85%\",\n  psionic = 379,\n  attackDefenseModes = \"All/all\",\n  text = \"This weird creature is claimed by some tales to be the most powerful of the slaadi. He either wanders the Prime Material Plane as a man, wearing no armour but using the Black Sword as a weapon (acts as a power word: stun on any victim struck), or as a golden amoeba with a man's brain in place of a nucleus. In either case he attacks as a monster of 16+ hit dice. In amoebic form he fights by extruding three corrosive pseudopods each 10' long, each inflicting 2-16 hit points of damage on its victim and each draining 1-4 experience levels (saving throw permitted but a successful save merely halves the number of experience levels drained, with fractions rounded down).\\n\\nHe may gate in another slaad of any type (except Ygorl) at will, the gate opening automatically. He may use the following powers at will: fear, darkness 15' radius, blink, ESP, know alignment, dispel magic (at 32nd level), detect invisibility, detect magic, locate object, flame strike (at double power), ultravision 60', mass charm, astral projection, symbol of insanity, death spell.\\n\\nOnce per day he can use unholy word and any power word. Once per day he may also fulfil another's wish, though this takes a melee round during which he can do nothing else, so it is rarely used.\\n\\nWhile alive, he regenerates 3 hit points per melee round. He may shape change at will and travel the planes instantaneously. He has 18(00) strength.\\n\\nWhen encountered, Ssendam always gives his true name, though woe betide he who tries to use it. Like gods and demi-gods, Ssendam always leaves his true form behind when he travels the planes. In Limbo, his form is that of a large, golden slaad. Ssendam can only be damaged by a weapon with a +3 bonus or better.\\n\\n* for destroying material form only - if actually killed, multiply experience points figure shown by 10.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/y/ygorl.lua",
+      "content": "-- Ygorl: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Ygorl\",\n  page = \"82\",\n  pages = \"82\",\n  source = \"FF\",\n  race = \"Ygorl\",\n  hitDice = \"210 hit points\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 210,\n  armorClass = \"-7\",\n  numAttacks = 2,\n  damage = \"See below\",\n  xp = 28950,\n  xpPerHp = \"0\",\n  xpValue = 28950,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 75,\n  treasure = \"P(x4), Z(x2)\",\n  move = \"18\\\"\",\n  size = \"L\",\n  intelligence = \"Supra genius\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"+3 or better weapon needed to hit, see below\",\n  magicResistance = \"85%\",\n  psionic = 379,\n  attackDefenseModes = \"All/all\",\n  text = \"This fearsome slaad lord always appears as a skeletal, black, flightless, bat-winged man 12' tall wielding a sickle which measures 8' from tip to handle. He is always in shadow. The sickle is made of adamantite and has the word 'death' inscribed on its blade in the slaad tongue. It has a magical bonus of +5 and on a strike its victim receives instant death unless he saves against poison, in which case the victim escapes with only 6-36 hit points of damage. Ygorl strikes twice each round with his sickle. Only the two slaadi lords, and others of similar status, are immune to the effects of the sickle, the results on others being normal and permanent.\\n\\nYgorl may use the following abilities at will: ESP, darkness 15' radius, symbol of fear, detect magic, know alignment, detect invisibility, blink, sleep, phantasmal killer, advanced illusion, symbol of hopelessness, flame strike. Once per round he may gate in another slaad (except Ssendam) at will, the gate opening automatically.\\n\\nOnce per day Ygorl may use power word: kill, any symbol, unholy word. He may travel by astral projection whenever he wishes.\\n\\nYgorl does not appear to have the shape change power of other high-level slaadi; however it is clear that the form he assumes on the Prime Material Plane is not the same as his form in Limbo. Though no-one has seen him on his own plane, it is said that his form there is of a large slaad, 15' high and totally black.\\n\\nWhen on the Prime Material Plane, Ygorl rides a neutral huge ancient brass dragon called Shkiv and can command undead as a 13th level cleric of the chaotic neutral alignment.\\n\\n* for destroying material form only - if Ygorl is actually killed permanently, multiply the experience points figure by 10.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/t/troll_giant.lua",
+      "content": "-- Giant Troll: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Giant Troll\",\n  page = \"90\",\n  pages = \"90\",\n  source = \"FF\",\n  race = \"Giant Troll\",\n  hitDice = \"8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 36,\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"2-16\",\n  xp = 725,\n  xpPerHp = 10,\n  xpValue = 1085,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-12\",\n  lairPct = 30,\n  treasure = \"C\",\n  move = \"12\\\"\",\n  size = \"L (10' + tall)\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Regeneration\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Giant trolls are hideous hill giant/troll crossbreeds (resembling the latter in all but size). They are greatly feared. Their skin is red-brown and they have red rimmed eyes. (See ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL for description of the hill giant.)\\n\\nDespite their pot-bellied appearance they are immensely strong and inflict terrible damage (2-16 hit points of damage) with their favourite weapon - a large spiked club. It is rare (10% chance) for a giant troll to be encountered without such a weapon, but if so it can fight with its two claws, each of which inflicts 2-7 hit points of damage and can be directed at different opponents.\\n\\nThey regenerate as trolls but at a rate of 2 hit points per melee round, but cannot re-bond severed limbs.\\n\\nThey are able to catch missiles 25% of the time, if in reach.\\n\\nBefore a giant troll can be killed, at least 10 hit points of damage must be inflicted on it by fire. If this condition is not met and the giant troll is reduced to a single hit point, any further damage on it has no effect save to negate regeneration.\\n\\nGiant trolls are found in nearly every clime. They have a very acute sense of smell and 90' infravision.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/t/troll_two_headed.lua",
+      "content": "-- Giant Two-Headed Troll: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Giant Two-Headed Troll\",\n  page = \"90\",\n  pages = \"90\",\n  source = \"FF\",\n  race = \"Giant Two-Headed Troll\",\n  hitDice = \"10\",\n  hitDiceNum = 10,\n  hitDiceBonus = 0,\n  avgHp = 45,\n  armorClass = \"4\",\n  numAttacks = 4,\n  damage = \"1-6/1-6/1-10/1-10\",\n  xp = 1800,\n  xpPerHp = 14,\n  xpValue = 2430,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-3\",\n  lairPct = 40,\n  treasure = \"C, Q\",\n  move = \"12\\\"\",\n  size = \"L (10' + tall)\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Regeneration\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These ferocious ettin/troll crossbreeds are two-headed and stand at least 10' tall. They regenerate as do trolls but at the rate of 1 hit point every melee round, though they cannot re-bond severed limbs.\\n\\nThey attack with two claws (1-6 hit points of damage each) and two bites (1-10 hit points of damage each). Both bites are directed at one opponent.\\n\\nThese creatures prefer darkness; they are basically nocturnal and usually dwell in underground caverns. Their infravision is normal.\\n\\nLike the ettin, the giant two-headed troll can only be surprised 1 chance in 6. They have adopted the ettin mode of dress - moth-eaten and filthy animal skins. (See ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL - Ettin.)\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/t/troll_spirit.lua",
+      "content": "-- Spirit Troll: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Spirit Troll\",\n  page = \"91\",\n  pages = \"91\",\n  source = \"FF\",\n  race = \"Spirit Troll\",\n  hitDice = \"5+5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 5,\n  avgHp = 28,\n  armorClass = \"2\",\n  numAttacks = 3,\n  damage = \"1-6/1-3/1-3\",\n  xp = 575,\n  xpPerHp = 6,\n  xpValue = 743,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"15\\\"\",\n  size = \"L (8' + tall)\",\n  intelligence = \"Very\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Strength point drain\",\n  specialDefenses = \"Regeneration; invulnerable to cold; magical weapons to hit; invisibility\",\n  magicResistance = \"30%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This odious creature is the product of perverted magical inter-breeding of trolls and invisible stalkers, though the secret of its creation is believed to be lost and only thirty or so of these creatures are known to exist.\\n\\nThe spirit troll is invisible; characters able to see invisible will observe it to be very similar to a troll, slightly shorter and with diffused features.\\n\\nThe creature can only be hit with magical weapons. Fire inflicts full damage on it but it is invulnerable to cold. It regenerates as does a troll, and at the same rate (3 hit points per round).\\n\\nIt attacks with its fangs and two sharp claws, against 3 different opponents if it so desires.\\n\\nSpecial Damage: The damage inflicted by its fangs (1-6 hit points) is normal except that the spirit troll adds to its own hit points the number of hit points of damage inflicted on its victim. Damage inflicted by the creature's claws (1-3 hit points each) is taken not only from the hit points of the victim but also from his strength points. Strength points lost in this way are recovered in 2-8 turns. If a character's strength is reduced to zero, he dies, and if it is reduced to 1 or 2 points, he will be rendered comatose, only recovering when (and if) sufficient points are recovered to raise his strength to 3 points or more.\\n\\nThe spirit troll has an acute sense of smell and superior (120') infravision.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/t/trilloch.lua",
+      "content": "-- Trilloch: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Trilloch\",\n  page = \"89\",\n  pages = \"89-90\",\n  source = \"FF\",\n  race = \"Trilloch\",\n  hitDice = \"Not applicable\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = \"0\",\n  armorClass = \"Not applicable\",\n  numAttacks = \"Not applicable\",\n  damage = \"Nil\",\n  xp = \"Not applicable\",\n  xpPerHp = \"0\",\n  xpValue = 0,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare (at best)\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"Not applicable\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Normally undetectable\",\n  magicResistance = \"See below\",\n  psionic = \"Unknown\",\n  attackDefenseModes = \"Unknown\",\n  text = \"The trilloch is an energy being from the Negative Material Plane which lives on the waning life-force of dying creatures and uses its unique powers to accelerate the process which releases its 'food'. So far as is known, the creature has no fixed definite form. It cannot be detected by normal means, though a detect magic spell cast within 60' of the creature will reveal its distinctive aura and dispel magic within the same range will drive it away.\\n\\nSo far as is known, no other magic has any effect on a trilloch. If melee occurs in the presence of a trilloch, detected or otherwise, all attacks will be at +1 hit probability and successful hits will inflict +1 damage. The creature can also influence the behaviour of unintelligent monsters, making them twice as likely to attack a party encountered.\\n\\nA trilloch will often stay with a large, powerful monster, thriving on the huge amounts of life-force released by its victims. If this 'host' is killed, the trilloch will attach itself to the victor and stay with him either until driven off or until another, even more powerful creature, kills its new host, whereupon it will transfer to that creature.\\n\\nExperience of trilloch behaviour is so limited that it may have yet other powers, as yet undetected. Certainly no means have yet been discovered whereby the creature can be harmed, so far as can be detected.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/u/umpleby.lua",
+      "content": "-- Umpleby: promoted by the R844 seventh FF promotion round\n-- from the FF print (spec tools/spec_r844.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Umpleby\",\n  page = \"92\",\n  pages = \"92\",\n  source = \"FF\",\n  race = \"Umpleby\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 27,\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = 350,\n  xpPerHp = 6,\n  xpValue = 512,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"See below\",\n  move = \"9\\\"\",\n  size = \"L (8' + tail)\",\n  intelligence = \"Low (but see below)\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Electric shock\",\n  specialDefenses = \"Immune to electrical-type attacks\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The umpleby is a biped, about 8' tall and weighing about 400 pounds. It is covered in wild, straggly hair of varying shades of brown.\\n\\nIt is apparently rather a stupid creature; on meeting a party of adventurers it will simply shamble along with them, neither helping their endeavours nor willing to be left behind, constantly getting in their way and being apparently incapable of moving in silence. It will fight if attacked but will not normally fight in aid of a party, or against them. If it must, it strikes for 1-4 hit points of damage with its hands.\\n\\nIts appearance, however, is deceptive. It has a great love of treasure and can detect precious metal and gems (more than 1,000 coins and/or 50 gems) up to 100' away, even through solid rock. In its lair it keeps a huge treasure trove of these items but it will never reveal the location of its lair, even if threatened with death (though charm monster may overcome this reluctance).\\n\\nThe umpleby can speak the common tongue in a halting fashion but will rarely do so and is in general an uncommunicative creature. However an offer of food and water (it is incessantly hungry and thirsty) will cause it to assume instant and total loyalty to its benefactor; it will help and advise him (though not to the extent of telling him the location of its lair). This loyalty will only be broken if the benefactor does not reward the umpleby with a reasonable proportion of any coins or gems discovered as a result of its advice; if such an event occurs, the umpleby will leave the party and, if the party pursues the creature, will refuse to co-operate in any way with any members of it.\\n\\nElectric Shock: Within the creature's body it can generate and store large quantities of static electricity. Each day it can deliver a total of 50 hit points of damage by 'discharging' wholly or partially - it does this simply by touching its victim, and a normal 'to hit' roll is required unless the victim is unsuspecting. Any metal armour of whatever type is treated as AC10 with regard to this attack, though appropriate magical and dexterity bonuses still apply. It does not have to deliver all 50 hit points in one strike and can regulate the amount of damage it inflicts, usually selecting the range 9-16 hit points of damage. When it delivers the 50th hit point of damage the umpleby immediately goes to sleep for one hour during which it 'recharges' up to 50% of its full potential, if left undisturbed. It requires at least four hours of sleep to recharge 75% and fully 8 hours to return to a full charge (potential 50 hit points of damage). If awakened prior to having completed a single hour of sleep, the umpleby will have recharged 4-16 points, and similar partial charging will have occurred if the creature is awakened after one hour but before four hours sleep, or after four hours but before eight hours.\\n\\nThe umpleby often makes nets out of its own hair and stores them by wrapping them around its waist. It can throw such a net 30' with the accuracy of a short-range arrow. The hair is very tough and is 50% more difficult to cut, break or burn than a magical web, though there is no danger of suffocation (see AD&D Players Handbook - Spells).\\n\\nIt will only use its nets and electrical attacks if threatened. The creature is immune to attacks of an electrical nature.\",\n}\n"
+    }
+  ]
+}

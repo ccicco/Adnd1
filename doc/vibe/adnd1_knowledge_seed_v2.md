@@ -23950,6 +23950,83 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   order starts flind, flumph,
   frost man, galltrit, garbug,
   fog giant, ...).
+- R843 LANDED 2026-10-25: commit
+  5abfed02d0f8a2d796b11eb3e20014e099328d66
+  (pushed ebc67e2..5abfed0,
+  census 765 -> 766), THE SIXTH
+  FF PROMOTION BATCH (the FF arc,
+  25 defs per the R836 pace pin).
+  THE DEFS: 25 new .lua defs
+  lifted from the ff print
+  (ff_print xp class), the holdouts
+  in ToC order from the flind p. 39
+  through the kuo-toa pp. 57-59
+  (the garbug promoting as two
+  defs - the black and the violet,
+  the two-column variant precedent;
+  the fog giant, mountain giant and
+  giant strider riding the print
+  family prose, race Giant; the
+  kuo-toa carrying its three-page
+  community entry with the
+  hit-point, arms and slave tables)
+  - the R836-R842 def shape with
+  the print-fidelity pin headers.
+  NO encounter rewires, NO gap
+  boxes flip (MM2 stays 37 closed 0
+  open): a def-only batch - the
+  registry 938 -> 963, the ff def
+  census 128 -> 153, the missing
+  print census 57 -> 32. Header
+  rules/ffk.h, prefix ffk (free;
+  16 consts + 6 bools, inline 22),
+  audit "R843 sixth FF promotion
+  audit", rode
+  rules/audits/r843_batch.h
+  (include above the ffj.h R842
+  index-line include); the R842
+  record seated into the seed.
+  DATA VOICES: the three-voice
+  collation (djvu text, djvu
+  word-geometry xml, abbyy char
+  xml) with the 1eonline /5ff/
+  transcripts; the scan OCRs 1 as
+  7 systematically (the galltrit
+  and iron cobra no-appearing, the
+  guardian familiar hit dice and
+  xp reads corrected);
+  adjudicated ambiguities: the
+  garbug numAttacks stay print
+  strings ("1 and 6" black, "2 and
+  6" violet), the guardian familiar
+  hitDice "1 (9)" carries actual hp
+  (avgHp 9, xpValue 1908), the
+  gryph is SIZE S (the earlier L
+  read was the jaculi row), the
+  jaculi size "L (8' to 12')" per
+  the landed "to" format, the
+  kamadan move 18" and xp 240+5,
+  the ice lizard 3+3 HD with MR
+  "80% (but see below)". ONE ROW
+  PAIR UNRECOVERED: the guardian
+  familiar psionic and
+  attack/defence mode rows shred in
+  BOTH scan voices with no
+  transcription voice - they ride
+  the query-mark sentinel per the
+  landed precedent (dryad, dwarf,
+  dragon turtle), pinned as the
+  ffkPsionicRowUnrecovered bool.
+  Spec tools/spec_r843.json, md5
+  47e09133651f17ade6676e80d952bf11
+  (authored-plus-newline).
+  NEXT: awaits Curtiss's call -
+  32 missing FF monsters remain by
+  the R842-pinned 57 drain (an
+  independent recount makes 33
+  with the yellow urchin p. 92);
+  the next ToC order starts lava
+  children, lizard king, ...
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
