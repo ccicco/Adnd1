@@ -1,0 +1,614 @@
+{
+  "round": 829,
+  "title": "the UA and WSG migration batch",
+  "prefix": "vmb",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/vmb.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the UA and WSG migration batch - the sixth batch, a clean hundred",
+    "provenance": "spec-driven; the sixth batch of real audit blocks (digest idx 239-338, R357 UA MU 2nd level spells through R458 WSG portaging - the UA pins and appendices, the WSG pins; 100 blocks at Curtiss's 100-per-round pace call, 18485 lines, zero blocks held back) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"
+  },
+  "census_before": 751,
+  "inline_count": 10,
+  "consts": [
+    {
+      "name": "vmb_batch",
+      "value": 100,
+      "comment": "the blocks in the UA and WSG batch"
+    },
+    {
+      "name": "vmb_moving_lines",
+      "value": 18485,
+      "comment": "the lines the batch moves"
+    },
+    {
+      "name": "vmb_first_head",
+      "value": 32422,
+      "comment": "the digest head line of R357 UA MU 2nd"
+    },
+    {
+      "name": "vmb_last_end",
+      "value": 50954,
+      "comment": "the digest end line of R458 WSG portaging"
+    },
+    {
+      "name": "vmb_largest",
+      "value": 690,
+      "comment": "the largest moving block - R395 treasure rows"
+    },
+    {
+      "name": "vmb_smallest",
+      "value": 50,
+      "comment": "the smallest moving block - R447 slippery"
+    }
+  ],
+  "bools": [
+    {
+      "name": "vmb_audit_rides",
+      "value": true,
+      "comment": "this round audit rides a fragment"
+    },
+    {
+      "name": "vmb_blocks_move",
+      "value": true,
+      "comment": "the blocks move verbatim, never hand-authored"
+    },
+    {
+      "name": "vmb_gates_recheck",
+      "value": true,
+      "comment": "the gates re-verify each block"
+    },
+    {
+      "name": "vmb_census_holds",
+      "value": true,
+      "comment": "the census survives the move"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "header_sections": {
+    "the UA and WSG batch": [
+      {
+        "kind": "const",
+        "name": "vmb_batch"
+      },
+      {
+        "kind": "const",
+        "name": "vmb_moving_lines"
+      },
+      {
+        "kind": "const",
+        "name": "vmb_first_head"
+      },
+      {
+        "kind": "const",
+        "name": "vmb_last_end"
+      },
+      {
+        "kind": "const",
+        "name": "vmb_largest"
+      },
+      {
+        "kind": "const",
+        "name": "vmb_smallest"
+      },
+      {
+        "kind": "bool",
+        "name": "vmb_audit_rides"
+      },
+      {
+        "kind": "bool",
+        "name": "vmb_blocks_move"
+      },
+      {
+        "kind": "bool",
+        "name": "vmb_gates_recheck"
+      },
+      {
+        "kind": "bool",
+        "name": "vmb_census_holds"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['vmb_batch']() != 100",
+      "note": "the batch is the second hundred blocks"
+    },
+    {
+      "expr": "m['vmb_moving_lines']() != m['vmb_batch']() * 184 + 85",
+      "note": "the moving lines against the batch size"
+    },
+    {
+      "expr": "m['vmb_smallest']() + m['vmb_largest']() != 740",
+      "note": "the size extremes of the batch"
+    },
+    {
+      "expr": "m['vmb_last_end']() - m['vmb_first_head']() != 18532",
+      "note": "the digest span of the batch"
+    }
+  ],
+  "audit_label": "R829 UA WSG batch audit",
+  "audit_comment": "the sixth migration batch: the UA pins and appendices and the WSG pins ride the wiring; the batch constants check themselves",
+  "audit_file": "rules/audits/r829_batch.h",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "include_comment": "the UA and WSG migration batch",
+  "include_after": "#include \"rules/zmb.h\"  // R828: the hundred-block migration batch",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R828 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R828 LANDED 2026-10-25: commit",
+    "  508fc728a4d473dcd3550a6410dd220b9b74d635",
+    "  (census 750 -> 751, pushed",
+    "  2fea2ce..508fc72), THE",
+    "  HUNDRED-BLOCK MIGRATION BATCH -",
+    "  the fifth batch of real blocks",
+    "  leaves regtest at CURTISS'S",
+    "  100-PER-ROUND PACE CALL (the",
+    "  REGTEST DECOMPOSITION ARC). THE",
+    "  MOVE: digest idx 120-238 (R246",
+    "  wands prose through R356 UA MU",
+    "  1st level spells - the DMG magic",
+    "  items and artifacts pins, the",
+    "  underwater and seam engines, the",
+    "  first UA pins; 100 blocks, 17574",
+    "  lines) migrated VERBATIM into",
+    "  rules/audits fragments",
+    "  (r246_iii_d_wands_explanation.h",
+    "  through r356_ua_mu_1st_level.h).",
+    "  R828's own audit rode",
+    "  rules/audits/r828_batch.h. Header",
+    "  rules/zmb.h, prefix zmb (verified",
+    "  free at 2fea2ce, 0 hits), 6 consts",
+    "  + 4 bools (inline 10), 4 examples,",
+    "  the R827 record seated into the",
+    "  seed, NO gap flips (MM2 stays 37",
+    "  closed 0 open), NO tool patches.",
+    "  BATCH MECHANICS LESSON: fragment",
+    "  names now derive from the LABEL",
+    "  (minus round and audit), not the",
+    "  head comment - many heads wrap",
+    "  over two comment lines (R260-R295,",
+    "  R314-R331, the UA pins), and the",
+    "  head-text parse died on them while",
+    "  the engine (which keys on the",
+    "  round-prefix head regex) handles",
+    "  them fine; the digest head-text",
+    "  column is also hard-wrapped at 78",
+    "  cols, so regtest itself is the",
+    "  only full head source. The",
+    "  fragment-name cap is 31 chars",
+    "  (include line = 47 + name, gate",
+    "  78). GATES: dress rehearsal on a",
+    "  copy of the REAL tree at 2fea2ce",
+    "  (the whole rules/audits dir",
+    "  carried); double-run 105/0 ->",
+    "  0/105; fragments byte-exact;",
+    "  regtest reconstruction",
+    "  byte-for-byte; census 542 + 209 =",
+    "  751, all 751 preflight patterns",
+    "  unique each once; rverify GREEN",
+    "  (10 mutants, 0 missed). Delivery",
+    "  spec-r828 canvas: spec 19454",
+    "  bytes, md5",
+    "  bbe29eb56eaa728446a0bd04f4061187,",
+    "  landed the same. NEXT: awaits",
+    "  Curtiss's Go - the sixth batch",
+    "  rides the same wiring (digest idx",
+    "  239 onward: R357 UA MU 2nd level",
+    "  spells pin at the next head), at",
+    "  100 blocks per round; the",
+    "  width-gate holdbacks (35-ish,",
+    "  79-81 col lines) stay queued for",
+    "  a future fix round."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "migrate_blocks": [
+    {
+      "label": "R357 UA MU 2nd level spells pin audit",
+      "fragment": "rules/audits/r357_ua_mu_2nd_level_spells_p.h"
+    },
+    {
+      "label": "R358 UA MU 3rd level spells pin audit",
+      "fragment": "rules/audits/r358_ua_mu_3rd_level_spells_p.h"
+    },
+    {
+      "label": "R359 UA MU 4th level spells pin audit",
+      "fragment": "rules/audits/r359_ua_mu_4th_level_spells_p.h"
+    },
+    {
+      "label": "R360 UA MU 5th/6th level spells pin audit",
+      "fragment": "rules/audits/r360_ua_mu_5th_6th_level_spel.h"
+    },
+    {
+      "label": "R361 UA MU 7th level spells pin audit",
+      "fragment": "rules/audits/r361_ua_mu_7th_level_spells_p.h"
+    },
+    {
+      "label": "R362 UA MU 8th/9th level spells pin audit",
+      "fragment": "rules/audits/r362_ua_mu_8th_9th_level_spel.h"
+    },
+    {
+      "label": "R363 UA IL cantrips/1st/2nd pin audit",
+      "fragment": "rules/audits/r363_ua_il_cantrips_1st_2nd_p.h"
+    },
+    {
+      "label": "R364 UA IL 3rd/4th/5th spells pin audit",
+      "fragment": "rules/audits/r364_ua_il_3rd_4th_5th_spells.h"
+    },
+    {
+      "label": "R365 UA IL 6th/7th and DM pin audit",
+      "fragment": "rules/audits/r365_ua_il_6th_7th_and_dm_pin.h"
+    },
+    {
+      "label": "R366 UA DM-section spells pin audit",
+      "fragment": "rules/audits/r366_ua_dm_section_spells_pin.h"
+    },
+    {
+      "label": "R367 UA social/birth pin audit",
+      "fragment": "rules/audits/r367_ua_social_birth_pin.h"
+    },
+    {
+      "label": "R368 UA Cavaliers Table I pin audit",
+      "fragment": "rules/audits/r368_ua_cavaliers_table_i_pin.h"
+    },
+    {
+      "label": "R369 UA cantrip acquisition pin audit",
+      "fragment": "rules/audits/r369_ua_cantrip_acquisition_p.h"
+    },
+    {
+      "label": "R370 UA DM-section smalls pin audit",
+      "fragment": "rules/audits/r370_ua_dm_section_smalls_pin.h"
+    },
+    {
+      "label": "R371 UA expanded armor pin audit",
+      "fragment": "rules/audits/r371_ua_expanded_armor_pin.h"
+    },
+    {
+      "label": "R372 UA cavalier followers pin audit",
+      "fragment": "rules/audits/r372_ua_cavalier_followers_pi.h"
+    },
+    {
+      "label": "R373 UA comeliness note pin audit",
+      "fragment": "rules/audits/r373_ua_comeliness_note_pin.h"
+    },
+    {
+      "label": "R374 UA treasure dial pin audit",
+      "fragment": "rules/audits/r374_ua_treasure_dial_pin.h"
+    },
+    {
+      "label": "R375 UA determination skeleton pin audit",
+      "fragment": "rules/audits/r375_ua_determination_skeleto.h"
+    },
+    {
+      "label": "R376 UA new potions prose part 1 pin audit",
+      "fragment": "rules/audits/r376_ua_new_potions_prose_par.h"
+    },
+    {
+      "label": "R377 UA new scrolls protection pin audit",
+      "fragment": "rules/audits/r377_ua_new_scrolls_protectio.h"
+    },
+    {
+      "label": "R378 UA new rings prose pin audit",
+      "fragment": "rules/audits/r378_ua_new_rings_prose_pin.h"
+    },
+    {
+      "label": "R379 UA new rods staves prose pin audit",
+      "fragment": "rules/audits/r379_ua_new_rods_staves_prose.h"
+    },
+    {
+      "label": "R380 UA new wands prose pin audit",
+      "fragment": "rules/audits/r380_ua_new_wands_prose_pin.h"
+    },
+    {
+      "label": "R381 UA misc magic prose part 1 pin audit",
+      "fragment": "rules/audits/r381_ua_misc_magic_prose_part.h"
+    },
+    {
+      "label": "R382 UA misc magic prose part 2 pin audit",
+      "fragment": "rules/audits/r382_ua_misc_magic_prose_part.h"
+    },
+    {
+      "label": "R383 UA misc magic prose part 3 pin audit",
+      "fragment": "rules/audits/r383_ua_misc_magic_prose_part.h"
+    },
+    {
+      "label": "R384 UA misc magic prose part 4 pin audit",
+      "fragment": "rules/audits/r384_ua_misc_magic_prose_part.h"
+    },
+    {
+      "label": "R385 UA misc magic prose part 5 pin audit",
+      "fragment": "rules/audits/r385_ua_misc_magic_prose_part.h"
+    },
+    {
+      "label": "R386 UA misc magic prose part 6 pin audit",
+      "fragment": "rules/audits/r386_ua_misc_magic_prose_part.h"
+    },
+    {
+      "label": "R387 UA armor and swords prose pin audit",
+      "fragment": "rules/audits/r387_ua_armor_and_swords_pros.h"
+    },
+    {
+      "label": "R388 UA misc weapons prose pin audit",
+      "fragment": "rules/audits/r388_ua_misc_weapons_prose_pi.h"
+    },
+    {
+      "label": "R389 UA weaponless combat pin audit",
+      "fragment": "rules/audits/r389_ua_weaponless_combat_pin.h"
+    },
+    {
+      "label": "R390 UA non-lethal combat pin audit",
+      "fragment": "rules/audits/r390_ua_non_lethal_combat_pin.h"
+    },
+    {
+      "label": "R391 UA pole-arm nomenclature pin audit",
+      "fragment": "rules/audits/r391_ua_pole_arm_nomenclature.h"
+    },
+    {
+      "label": "R392 UA players tables pin audit",
+      "fragment": "rules/audits/r392_ua_players_tables_pin.h"
+    },
+    {
+      "label": "R393 PDF-read completion pin audit",
+      "fragment": "rules/audits/r393_pdf_read_completion_pin.h"
+    },
+    {
+      "label": "R394 UA DM tables manifest pin audit",
+      "fragment": "rules/audits/r394_ua_dm_tables_manifest_pi.h"
+    },
+    {
+      "label": "R395 UA treasure row bodies pin audit",
+      "fragment": "rules/audits/r395_ua_treasure_row_bodies_p.h"
+    },
+    {
+      "label": "R396 UA potions prose completion pin audit",
+      "fragment": "rules/audits/r396_ua_potions_prose_complet.h"
+    },
+    {
+      "label": "R397 UA treasure smalls pin audit",
+      "fragment": "rules/audits/r397_ua_treasure_smalls_pin.h"
+    },
+    {
+      "label": "R398 UA misc magic holes pin audit",
+      "fragment": "rules/audits/r398_ua_misc_magic_holes_pin.h"
+    },
+    {
+      "label": "R399 UA armor weapons holes pin audit",
+      "fragment": "rules/audits/r399_ua_armor_weapons_holes_p.h"
+    },
+    {
+      "label": "R400 UA comeliness site audit",
+      "fragment": "rules/audits/r400_ua_comeliness_site.h"
+    },
+    {
+      "label": "R401 UA cantrip tier seam audit",
+      "fragment": "rules/audits/r401_ua_cantrip_tier_seam.h"
+    },
+    {
+      "label": "R402 UA treasure dial seam audit",
+      "fragment": "rules/audits/r402_ua_treasure_dial_seam.h"
+    },
+    {
+      "label": "R403 mount layer seam audit",
+      "fragment": "rules/audits/r403_mount_layer_seam.h"
+    },
+    {
+      "label": "R404 psionics seam audit",
+      "fragment": "rules/audits/r404_psionics_seam.h"
+    },
+    {
+      "label": "R405 deity layer seam audit",
+      "fragment": "rules/audits/r405_deity_layer_seam.h"
+    },
+    {
+      "label": "R406 UA appendix S stat blocks pin audit",
+      "fragment": "rules/audits/r406_ua_appendix_s_stat_block.h"
+    },
+    {
+      "label": "R407 UA appendix S clerical charts pin audit",
+      "fragment": "rules/audits/r407_ua_appendix_s_clerical_c.h"
+    },
+    {
+      "label": "R408 UA armor class table pin audit",
+      "fragment": "rules/audits/r408_ua_armor_class_table_pin.h"
+    },
+    {
+      "label": "R409 UA appendix S stat lines pin audit",
+      "fragment": "rules/audits/r409_ua_appendix_s_stat_lines.h"
+    },
+    {
+      "label": "R410 UA appendix S class lines pin audit",
+      "fragment": "rules/audits/r410_ua_appendix_s_class_line.h"
+    },
+    {
+      "label": "R411 UA appendix S MOVE values pin audit",
+      "fragment": "rules/audits/r411_ua_appendix_s_move_value.h"
+    },
+    {
+      "label": "R412 UA useful cantrips pin audit",
+      "fragment": "rules/audits/r412_ua_useful_cantrips_pin.h"
+    },
+    {
+      "label": "R413 UA reversed cantrips pin audit",
+      "fragment": "rules/audits/r413_ua_reversed_cantrips_pin.h"
+    },
+    {
+      "label": "R414 UA legerdemain cantrips pin audit",
+      "fragment": "rules/audits/r414_ua_legerdemain_cantrips_.h"
+    },
+    {
+      "label": "R415 UA person-affecting cantrips pin audit",
+      "fragment": "rules/audits/r415_ua_person_affecting_cant.h"
+    },
+    {
+      "label": "R416 UA personal cantrips pin audit",
+      "fragment": "rules/audits/r416_ua_personal_cantrips_pin.h"
+    },
+    {
+      "label": "R417 UA haunting-sound cantrips pin audit",
+      "fragment": "rules/audits/r417_ua_haunting_sound_cantri.h"
+    },
+    {
+      "label": "R418 UA cantrip cast-times part 1 pin audit",
+      "fragment": "rules/audits/r418_ua_cantrip_cast_times_pa.h"
+    },
+    {
+      "label": "R419 UA cantrip cast-times part 2 pin audit",
+      "fragment": "rules/audits/r419_ua_cantrip_cast_times_pa.h"
+    },
+    {
+      "label": "R421 UA IL cantrip cast-times pin audit",
+      "fragment": "rules/audits/r421_ua_il_cantrip_cast_times.h"
+    },
+    {
+      "label": "R422 UA appendix R resolution pin audit",
+      "fragment": "rules/audits/r422_ua_appendix_r_resolution.h"
+    },
+    {
+      "label": "R423 UA appendix S pantheon prose pin audit",
+      "fragment": "rules/audits/r423_ua_appendix_s_pantheon_p.h"
+    },
+    {
+      "label": "R424 UA appendix T resolution pin audit",
+      "fragment": "rules/audits/r424_ua_appendix_t_resolution.h"
+    },
+    {
+      "label": "R425 WSG proficiencies pin audit",
+      "fragment": "rules/audits/r425_wsg_proficiencies_pin.h"
+    },
+    {
+      "label": "R426 WSG dressing pin audit",
+      "fragment": "rules/audits/r426_wsg_dressing_pin.h"
+    },
+    {
+      "label": "R427 WSG environment pin audit",
+      "fragment": "rules/audits/r427_wsg_environment_pin.h"
+    },
+    {
+      "label": "R429 WSG special weather pin audit",
+      "fragment": "rules/audits/r429_wsg_special_weather_pin.h"
+    },
+    {
+      "label": "R430 WSG heat and cold pin audit",
+      "fragment": "rules/audits/r430_wsg_heat_and_cold_pin.h"
+    },
+    {
+      "label": "R431 WSG equipment pin audit",
+      "fragment": "rules/audits/r431_wsg_equipment_pin.h"
+    },
+    {
+      "label": "R432 WSG encumbrance pin audit",
+      "fragment": "rules/audits/r432_wsg_encumbrance_pin.h"
+    },
+    {
+      "label": "R433 WSG animals pin audit",
+      "fragment": "rules/audits/r433_wsg_animals_pin.h"
+    },
+    {
+      "label": "R434 WSG vehicles pin audit",
+      "fragment": "rules/audits/r434_wsg_vehicles_pin.h"
+    },
+    {
+      "label": "R435 WSG climbing pin audit",
+      "fragment": "rules/audits/r435_wsg_climbing_pin.h"
+    },
+    {
+      "label": "R436 WSG climbing checks pin audit",
+      "fragment": "rules/audits/r436_wsg_climbing_checks_pin.h"
+    },
+    {
+      "label": "R437 WSG falling damage pin audit",
+      "fragment": "rules/audits/r437_wsg_falling_damage_pin.h"
+    },
+    {
+      "label": "R438 WSG tumbling damage pin audit",
+      "fragment": "rules/audits/r438_wsg_tumbling_damage_pin.h"
+    },
+    {
+      "label": "R439 WSG stopping a fall pin audit",
+      "fragment": "rules/audits/r439_wsg_stopping_a_fall_pin.h"
+    },
+    {
+      "label": "R440 WSG rope use pin audit",
+      "fragment": "rules/audits/r440_wsg_rope_use_pin.h"
+    },
+    {
+      "label": "R441 WSG roping-together pin audit",
+      "fragment": "rules/audits/r441_wsg_roping_together_pin.h"
+    },
+    {
+      "label": "R442 WSG rappelling pin audit",
+      "fragment": "rules/audits/r442_wsg_rappelling_pin.h"
+    },
+    {
+      "label": "R443 WSG belaying pin audit",
+      "fragment": "rules/audits/r443_wsg_belaying_pin.h"
+    },
+    {
+      "label": "R444 WSG grappling hooks pin audit",
+      "fragment": "rules/audits/r444_wsg_grappling_hooks_pin.h"
+    },
+    {
+      "label": "R445 WSG chasm crossing pin audit",
+      "fragment": "rules/audits/r445_wsg_chasm_crossing_pin.h"
+    },
+    {
+      "label": "R446 WSG mountaineering pin audit",
+      "fragment": "rules/audits/r446_wsg_mountaineering_pin.h"
+    },
+    {
+      "label": "R447 WSG slippery surface movement pin audit",
+      "fragment": "rules/audits/r447_wsg_slippery_surface_mov.h"
+    },
+    {
+      "label": "R448 WSG jumping pin audit",
+      "fragment": "rules/audits/r448_wsg_jumping_pin.h"
+    },
+    {
+      "label": "R449 WSG reduced visibility pin audit",
+      "fragment": "rules/audits/r449_wsg_reduced_visibility_p.h"
+    },
+    {
+      "label": "R450 WSG swimming pin audit",
+      "fragment": "rules/audits/r450_wsg_swimming_pin.h"
+    },
+    {
+      "label": "R451 WSG moving water pin audit",
+      "fragment": "rules/audits/r451_wsg_moving_water_pin.h"
+    },
+    {
+      "label": "R452 WSG diving and surfacing pin audit",
+      "fragment": "rules/audits/r452_wsg_diving_and_surfacing.h"
+    },
+    {
+      "label": "R453 WSG treading water pin audit",
+      "fragment": "rules/audits/r453_wsg_treading_water_pin.h"
+    },
+    {
+      "label": "R454 WSG holding breath pin audit",
+      "fragment": "rules/audits/r454_wsg_holding_breath_pin.h"
+    },
+    {
+      "label": "R455 WSG waterborne vehicles pin audit",
+      "fragment": "rules/audits/r455_wsg_waterborne_vehicles_.h"
+    },
+    {
+      "label": "R456 WSG capsizing pin audit",
+      "fragment": "rules/audits/r456_wsg_capsizing_pin.h"
+    },
+    {
+      "label": "R457 WSG boating pin audit",
+      "fragment": "rules/audits/r457_wsg_boating_pin.h"
+    },
+    {
+      "label": "R458 WSG portaging pin audit",
+      "fragment": "rules/audits/r458_wsg_portaging_pin.h"
+    }
+  ]
+}

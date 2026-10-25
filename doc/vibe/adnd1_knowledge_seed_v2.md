@@ -23002,6 +23002,70 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   onward: R246 wands prose at the
   next head, minus the 16 held-back
   blocks), at 50 blocks per round.
+- R828 LANDED 2026-10-25: commit
+  508fc728a4d473dcd3550a6410dd220b9b74d635
+  (census 750 -> 751, pushed
+  2fea2ce..508fc72), THE
+  HUNDRED-BLOCK MIGRATION BATCH -
+  the fifth batch of real blocks
+  leaves regtest at CURTISS'S
+  100-PER-ROUND PACE CALL (the
+  REGTEST DECOMPOSITION ARC). THE
+  MOVE: digest idx 120-238 (R246
+  wands prose through R356 UA MU
+  1st level spells - the DMG magic
+  items and artifacts pins, the
+  underwater and seam engines, the
+  first UA pins; 100 blocks, 17574
+  lines) migrated VERBATIM into
+  rules/audits fragments
+  (r246_iii_d_wands_explanation.h
+  through r356_ua_mu_1st_level.h).
+  R828's own audit rode
+  rules/audits/r828_batch.h. Header
+  rules/zmb.h, prefix zmb (verified
+  free at 2fea2ce, 0 hits), 6 consts
+  + 4 bools (inline 10), 4 examples,
+  the R827 record seated into the
+  seed, NO gap flips (MM2 stays 37
+  closed 0 open), NO tool patches.
+  BATCH MECHANICS LESSON: fragment
+  names now derive from the LABEL
+  (minus round and audit), not the
+  head comment - many heads wrap
+  over two comment lines (R260-R295,
+  R314-R331, the UA pins), and the
+  head-text parse died on them while
+  the engine (which keys on the
+  round-prefix head regex) handles
+  them fine; the digest head-text
+  column is also hard-wrapped at 78
+  cols, so regtest itself is the
+  only full head source. The
+  fragment-name cap is 31 chars
+  (include line = 47 + name, gate
+  78). GATES: dress rehearsal on a
+  copy of the REAL tree at 2fea2ce
+  (the whole rules/audits dir
+  carried); double-run 105/0 ->
+  0/105; fragments byte-exact;
+  regtest reconstruction
+  byte-for-byte; census 542 + 209 =
+  751, all 751 preflight patterns
+  unique each once; rverify GREEN
+  (10 mutants, 0 missed). Delivery
+  spec-r828 canvas: spec 19454
+  bytes, md5
+  bbe29eb56eaa728446a0bd04f4061187,
+  landed the same. NEXT: awaits
+  Curtiss's Go - the sixth batch
+  rides the same wiring (digest idx
+  239 onward: R357 UA MU 2nd level
+  spells pin at the next head), at
+  100 blocks per round; the
+  width-gate holdbacks (35-ish,
+  79-81 col lines) stay queued for
+  a future fix round.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
