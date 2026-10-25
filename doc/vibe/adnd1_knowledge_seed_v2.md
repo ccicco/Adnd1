@@ -23887,6 +23887,69 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   md5 8915f7f6ed0dc626eba8b939e7cb
   0873 (authored-plus-newline).
   NEXT: awaits Curtiss's call.
+- R842 LANDED 2026-10-25: commit
+  ebc67e28ed4c7180e8c9656f61116b4d0b2b7a69
+  (pushed 094db6c..ebc67e2,
+  census 764 -> 765), THE FIFTH
+  FF PROMOTION BATCH (the FF arc,
+  25 defs per the R836 pace pin).
+  THE DEFS: 25 new .lua defs
+  lifted from the ff print
+  (ff_print xp class) - the 3
+  LUNG DRAGONS (pan lung p. 29,
+  tien lung p. 29, yu lung p. 30),
+  the 5 ELEMENTAL PRINCES
+  (cryonax p. 31, imix p. 31,
+  ogremoch p. 32, olhydra p. 32,
+  yan-c-bin p. 33) and 17 HOLDOUTS
+  in ToC order (bloodworm p. 15
+  through flail snail p. 38) -
+  the R836/R837 def shape with
+  the print-fidelity pin headers;
+  avgHp per the standing
+  conventions (lung dragons
+  floor(num*3.5)). NO encounter
+  rewires, NO gap boxes flip
+  (MM2 stays 37 closed 0 open):
+  a def-only batch - the registry
+  913 -> 938, the ff def census
+  103 -> 128, the missing print
+  census 82 -> 57. Header
+  rules/ffj.h, prefix ffj (free;
+  16 consts + 5 bools, inline 21),
+  audit "R842 fifth FF promotion
+  audit", rode
+  rules/audits/r842_batch.h
+  (include after the ffik.h R841
+  index-line include); the R841
+  record seated into the seed.
+  DATA VOICES: the three-voice
+  collation (djvu text, djvu
+  word-geometry xml, abbyy char
+  xml) with 1eonline /5ff/
+  transcripts + dragonsfoot
+  recovering the shredded dark
+  stalker stat rows; the scan
+  OCRs 1 as 7 systematically
+  (bloodworm, styx, lolth reads
+  corrected); adjudicated
+  ambiguities: lolth move and
+  damage reads, the prince
+  psionics (imix 190/ogremoch
+  185/olhydra 210/yan 220/cryonax
+  200, scan beats 1eonline), pan
+  lung treasure M(x1/2), yan-c-
+  bin lair 75% and damage
+  2-20/2-20. Spec tools/
+  spec_r842.json, md5
+  0177f60932f56d37eb3e3557def00728
+  (authored-plus-newline).
+  NEXT: awaits Curtiss's call -
+  57 missing FF monsters remain
+  (~3 rounds at 25; the next ToC
+  order starts flind, flumph,
+  frost man, galltrit, garbug,
+  fog giant, ...).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

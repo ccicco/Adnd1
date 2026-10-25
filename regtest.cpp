@@ -544,6 +544,7 @@
 #include "rules/ffh.h"  // R840: the hornet promotion
 #include "rules/ffik.h"  // R841: the FF index line walk
 #include "rules/ffj.h"  // R842: the fifth FF promotion batch
+#include "rules/ffk.h"  // R843: the sixth FF promotion batch
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4591,6 +4592,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r843_batch.h"  // R843: R843 sixth FF promotion audit
 #include "rules/audits/r842_batch.h"  // R842: R842 fifth FF promotion audit
 #include "rules/audits/r841_batch.h"  // R841: R841 FF index line walk audit
 #include "rules/audits/r840_batch.h"  // R840: R840 hornet promotion audit
