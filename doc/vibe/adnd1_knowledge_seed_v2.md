@@ -23851,6 +23851,42 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   401 FF index lines (mm2enci); the
   Elemental Prince row stays
   keyless (no print def).
+- R841 LANDED 2026-10-25: commit
+  094db6c64fda683891bb35b5b4d0ba14ca23032a
+  (pushed 2bd8392..094db6c,
+  census 763 -> 764), THE FF INDEX
+  LINE WALK (the FF arc, the R819
+  follow-up - a read-only round,
+  no defs promoted). THE WALK: the
+  414 F-referenced lines of the
+  merged MM2 index (print pp. 156-
+  160) re-read a third time
+  against the geometric xml (the
+  tsr02016 word coordinates, 1595
+  reconstructed lines) and
+  collated with the two djvu texts
+  and the char-level abbyy - the
+  own-name model (a family sub-row
+  letters on its own printed
+  initial, a double-listed row
+  counts each printing); 414 walk
+  lines reconcile the R819 base
+  401 plus 13 recovered rows (the
+  Bunyip, Gold Bug, Burrow Warden,
+  Blind Man, Blending Man, Mephit
+  Devil, Dark Elf, Olhydra and
+  Oriental Dragon reads among
+  them), 214 keyed, 200 keyless,
+  every roster def carries a keyed
+  line (the Penanggalan, Rothe and
+  Terithran diacritics reads ride
+  their own-name rows), the
+  registry stays 913, the ff def
+  census stays 103, no gap boxes
+  flip. Spec tools/spec_r841.json,
+  md5 8915f7f6ed0dc626eba8b939e7cb
+  0873 (authored-plus-newline).
+  NEXT: awaits Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

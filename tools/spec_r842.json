@@ -1,0 +1,399 @@
+{
+ "round": 842,
+ "title": "the fifth FF promotion batch",
+ "prefix": "ffj",
+ "regtest": "regtest.cpp",
+ "header_file": "rules/ffj.h",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "gap_report": "tools/mm2_gap_report.md",
+ "banner": {
+  "title": "the fifth FF promotion batch - the missing prints open",
+  "provenance": "spec-driven; the fifth Fiend Folio promotion batch - twenty-five of the eighty-two missing FF print stat-blocks lifted as new lua data files (the three lung dragons - the pan lung p. 29, the tien lung p. 29, the yu lung p. 30; the five elemental princes of evil - cryonax p. 31, imix p. 31, ogremoch p. 32, olhydra p. 32, yan-c-bin p. 33; and seventeen holdouts from the giant bloodworm p. 15 to the flail snail p. 38), the stat blocks read from the three-voice scan collation (the djvu text, the word-geometry xml, the abbyy char xml) with the shredded dark stalker rows recovered from the print transcriptions, the registry 913 -> 938, the ff def census 103 -> 128, the missing print census 82 -> 57, no encounter cells rewire, no gap boxes flip; the def bodies carry the print-fidelity pin headers"
+ },
+ "census_before": 764,
+ "inline_count": 21,
+ "consts": [
+  {
+   "name": "ffjRound",
+   "value": 842,
+   "comment": "the round"
+  },
+  {
+   "name": "ffjDefsPerRound",
+   "value": 25,
+   "comment": "the standing pace: defs per promotion round"
+  },
+  {
+   "name": "ffjBatchDefs",
+   "value": 25,
+   "comment": "the defs in the fifth FF promotion batch"
+  },
+  {
+   "name": "ffjLungDefs",
+   "value": 3,
+   "comment": "the lung dragon defs (the pan, tien and yu lungs)"
+  },
+  {
+   "name": "ffjPrinceDefs",
+   "value": 5,
+   "comment": "the elemental prince defs (the cold, fire, earth, water and air princes)"
+  },
+  {
+   "name": "ffjHoldoutDefs",
+   "value": 17,
+   "comment": "the holdout defs (the seventeen remaining)"
+  },
+  {
+   "name": "ffjFirstPage",
+   "value": 15,
+   "comment": "the first FF print page in the batch (the giant bloodworm)"
+  },
+  {
+   "name": "ffjLastPage",
+   "value": 38,
+   "comment": "the last FF print page in the batch (the flail snail)"
+  },
+  {
+   "name": "ffjRegistryBefore",
+   "value": 913,
+   "comment": "the registry census before the batch"
+  },
+  {
+   "name": "ffjRegistryAfter",
+   "value": 938,
+   "comment": "the registry census after the batch"
+  },
+  {
+   "name": "ffjFfDefsBefore",
+   "value": 103,
+   "comment": "the ff def census before the batch"
+  },
+  {
+   "name": "ffjFfDefsAfter",
+   "value": 128,
+   "comment": "the ff def census after the batch"
+  },
+  {
+   "name": "ffjPrintStatBlocks",
+   "value": 185,
+   "comment": "the FF print stat-block census (the R841 verification count)"
+  },
+  {
+   "name": "ffjPrintSaved",
+   "value": 128,
+   "comment": "the FF print stat-blocks saved after the batch"
+  },
+  {
+   "name": "ffjPrintMissingBefore",
+   "value": 82,
+   "comment": "the missing FF print stat-block census before"
+  },
+  {
+   "name": "ffjPrintMissingAfter",
+   "value": 57,
+   "comment": "the missing FF print stat-block census after"
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "bools": [
+  {
+   "name": "ffjDefsFromFfPrint",
+   "value": true,
+   "comment": "the defs lift from the ff print"
+  },
+  {
+   "name": "ffjThreeVoiceRead",
+   "value": true,
+   "comment": "the stat blocks read from the three-voice scan collation (the djvu text, the word-geometry xml, the abbyy char xml)"
+  },
+  {
+   "name": "ffjShreddedRowsRecovered",
+   "value": true,
+   "comment": "the shredded dark stalker rows recovered from the print transcriptions"
+  },
+  {
+   "name": "ffjSourceRowsStay",
+   "value": true,
+   "comment": "the source census rows stay put"
+  },
+  {
+   "name": "ffjNoGapBoxesFlip",
+   "value": true,
+   "comment": "no gap boxes flip this round"
+  }
+ ],
+ "header_sections": {
+  "the fifth FF promotion batch": [
+   {
+    "kind": "const",
+    "name": "ffjRound"
+   },
+   {
+    "kind": "const",
+    "name": "ffjDefsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "ffjBatchDefs"
+   },
+   {
+    "kind": "const",
+    "name": "ffjLungDefs"
+   },
+   {
+    "kind": "const",
+    "name": "ffjPrinceDefs"
+   },
+   {
+    "kind": "const",
+    "name": "ffjHoldoutDefs"
+   },
+   {
+    "kind": "const",
+    "name": "ffjFirstPage"
+   },
+   {
+    "kind": "const",
+    "name": "ffjLastPage"
+   },
+   {
+    "kind": "const",
+    "name": "ffjRegistryBefore"
+   },
+   {
+    "kind": "const",
+    "name": "ffjRegistryAfter"
+   },
+   {
+    "kind": "const",
+    "name": "ffjFfDefsBefore"
+   },
+   {
+    "kind": "const",
+    "name": "ffjFfDefsAfter"
+   },
+   {
+    "kind": "const",
+    "name": "ffjPrintStatBlocks"
+   },
+   {
+    "kind": "const",
+    "name": "ffjPrintSaved"
+   },
+   {
+    "kind": "const",
+    "name": "ffjPrintMissingBefore"
+   },
+   {
+    "kind": "const",
+    "name": "ffjPrintMissingAfter"
+   },
+   {
+    "kind": "bool",
+    "name": "ffjDefsFromFfPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "ffjThreeVoiceRead"
+   },
+   {
+    "kind": "bool",
+    "name": "ffjShreddedRowsRecovered"
+   },
+   {
+    "kind": "bool",
+    "name": "ffjSourceRowsStay"
+   },
+   {
+    "kind": "bool",
+    "name": "ffjNoGapBoxesFlip"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['ffjRegistryAfter']() != m['ffjRegistryBefore']() + m['ffjBatchDefs']()",
+   "note": "the registry carries the batch"
+  },
+  {
+   "expr": "m['ffjFfDefsAfter']() != m['ffjFfDefsBefore']() + m['ffjBatchDefs']()",
+   "note": "the ff def census carries the batch"
+  },
+  {
+   "expr": "m['ffjPrintMissingAfter']() != m['ffjPrintMissingBefore']() - m['ffjBatchDefs']()",
+   "note": "the missing print census drains by the batch"
+  },
+  {
+   "expr": "m['ffjBatchDefs']() != m['ffjLungDefs']() + m['ffjPrinceDefs']() + m['ffjHoldoutDefs']()",
+   "note": "the batch splits into lung, prince and holdout defs"
+  },
+  {
+   "expr": "m['ffjPrintStatBlocks']() != m['ffjPrintSaved']() + m['ffjPrintMissingAfter']()",
+   "note": "the print stat-block census closes over saved and missing"
+  },
+  {
+   "expr": "m['ffjPrintSaved']() != m['ffjFfDefsAfter']()",
+   "note": "every saved print stat-block is an ff def"
+  },
+  {
+   "expr": "m['ffjLastPage']() - m['ffjFirstPage']() != 23",
+   "note": "the batch page span runs print page 15 through 38"
+  }
+ ],
+ "audit_label": "R842 fifth FF promotion audit",
+ "audit_comment": "THE FIFTH FF PROMOTION BATCH - twenty-five of the eighty-two missing FF print stat-blocks promoted: the three lung dragons (the pan, tien and yu lungs), the five elemental princes of evil (cryonax, imix, ogremoch, olhydra and yan-c-bin), the seventeen holdouts from the giant bloodworm to the flail snail; the registry 913 -> 938, the ff def census 103 -> 128, the missing print census 82 -> 57; the constants check themselves",
+ "audit_file": "rules/audits/r842_batch.h",
+ "audit_anchor": "#include \"rules/audits/r841_batch.h\"  // R841: R841 FF index line walk audit",
+ "include_after": "#include \"rules/ffik.h\"  // R841: the FF index line walk",
+ "include_comment": "the fifth FF promotion batch",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R841 LANDED 2026-10-25: commit",
+ "prev_record": [
+  "- R841 LANDED 2026-10-25: commit",
+  "  094db6c64fda683891bb35b5b4d0ba14ca23032a",
+  "  (pushed 2bd8392..094db6c,",
+  "  census 763 -> 764), THE FF INDEX",
+  "  LINE WALK (the FF arc, the R819",
+  "  follow-up - a read-only round,",
+  "  no defs promoted). THE WALK: the",
+  "  414 F-referenced lines of the",
+  "  merged MM2 index (print pp. 156-",
+  "  160) re-read a third time",
+  "  against the geometric xml (the",
+  "  tsr02016 word coordinates, 1595",
+  "  reconstructed lines) and",
+  "  collated with the two djvu texts",
+  "  and the char-level abbyy - the",
+  "  own-name model (a family sub-row",
+  "  letters on its own printed",
+  "  initial, a double-listed row",
+  "  counts each printing); 414 walk",
+  "  lines reconcile the R819 base",
+  "  401 plus 13 recovered rows (the",
+  "  Bunyip, Gold Bug, Burrow Warden,",
+  "  Blind Man, Blending Man, Mephit",
+  "  Devil, Dark Elf, Olhydra and",
+  "  Oriental Dragon reads among",
+  "  them), 214 keyed, 200 keyless,",
+  "  every roster def carries a keyed",
+  "  line (the Penanggalan, Rothe and",
+  "  Terithran diacritics reads ride",
+  "  their own-name rows), the",
+  "  registry stays 913, the ff def",
+  "  census stays 103, no gap boxes",
+  "  flip. Spec tools/spec_r841.json,",
+  "  md5 8915f7f6ed0dc626eba8b939e7cb",
+  "  0873 (authored-plus-newline).",
+  "  NEXT: awaits Curtiss's call."
+ ],
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 37,
+  "open": 0
+ },
+ "file_patches": [],
+ "migrate_blocks": [],
+ "data_files": [
+  {
+   "path": "monsters/monsters/b/bloodworm_giant.lua",
+   "content": "-- Bloodworm, Giant: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Bloodworm, Giant\",\n  page = \"15\",\n  pages = \"15\",\n  source = \"FF\",\n  race = \"Bloodworm, Giant\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 27,\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"1-8 + blood drain\",\n  xp = 225,\n  xpPerHp = 6,\n  xpValue = 387,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = 50,\n  treasure = \"O\",\n  move = \"5\\\"\",\n  size = \"L (20' long)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Giant bloodworms are usually found in the shallow pools of underground caverns. They cannot swim, but propel themselves along the bottom of such pools or on nearby firm ground. Their underbelly is a dark slimy brown while their upper surface is mottled green. Lying half in, half out of a pool, a giant bloodworm is easily mistaken in dim light for a moss-covered boulder.\n\nA giant bloodworm will only attack if hungry (they eat once a week) or if trodden on. When the giant bloodworm does attack, it will attempt to fasten its large suckered mouth onto a victim. If successful, it will drain blood from its victim each subsequent round. Though the initial attack requires a successful 'to hit' roll and causes no damage, subsequent blood drains are automatic, requiring no 'to hit' roll, and deliver 1-8 hit points of damage until the bloodworm dies or releases its grasp.\n\nGiant bloodworms are particularly vulnerable to fire - they take double damage from all fire attacks and save at -2 against magical fire. A successful fire attack is the only way, short of killing the beast, to force it to relax its grip on a victim, though if the bloodworm is not killed, it will attempt to re-attach itself to a victim immediately.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/c/carbuncle.lua",
+   "content": "-- Carbuncle: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Carbuncle\",\n  page = \"17\",\n  pages = \"17\",\n  source = \"FF\",\n  race = \"Carbuncle\",\n  hitDice = \"1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 0,\n  avgHp = 5,\n  armorClass = \"2\",\n  numAttacks = \"Nil\",\n  damage = \"Nil\",\n  xp = 14,\n  xpPerHp = 1,\n  xpValue = 19,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = 10,\n  treasure = \"Nil (but see below)\",\n  move = \"3\\\"\",\n  size = \"S (3' long)\",\n  intelligence = \"Low-average\",\n  alignment = \"Neutral with chaotic tendencies\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This small creature is similar to an armadillo with an 'armoured' upper surface of small interlocking 'plates' of tough leathery skin. It feeds exclusively on leaves and small insects and is rarely found outside areas (such as woodland and marshland) where there is a copious supply of such food. Its upper surface armouring is attractively patterned in shades of brown while its underbody is light grey flecked with small green patches.\n\nSet in its head, immediately above its eyes, is a large ruby. This is actually part of the animal and if the beast dies the ruby will shatter into worthless dust. The creature may, however, be coaxed into giving up its ruby by a wizard (or anyone of equal status) who uses a charm monster or charm animal ability. The gem is usually (70%) 500 gp value though rare specimens (25%) have 1,000 gp gems and there is a 5% chance that a carbuncle will have a 5,000 gp gem. If successfully removed a carbuncle's gem will regrow at the rate of 100 gp per month. The value of the gem may change each time it regrows.\n\nThe creature has empathy and telepathy, communicating via the latter, and also slight powers of prophecy concerning the immediate future. Its power of empathy enables it to understand the character of each person it encounters and know what that person knows, though its intelligence does not permit it to formulate more than very basic concepts.\n\nIf attacked, it puts up no resistance and is easily captured. It can will itself to die, however - it has no fear or conception of death and will give up its life if placed under duress. It will usually approach a party of adventurers and communicate the value of its gem to them, seeking to accompany the party. When this objective has been achieved, however, and it has gained the confidence of the party, its malicious nature will lead it to try to cause disruption within the group, using selective telepathy and prophecies, true and false, to breed hostility, suspicion and even fighting between party members. Alternatively - but rarely - it may communicate secretly with nearby monsters to enrage them into attacking the party. Its motives in spreading such dissidence are not entirely clear, but it is the belief of certain sages that the carbuncle's inability to comprehend death makes it fascinated by combat and particularly by death, to the extent that it will do its utmost to promote such events.\n\nHaving achieved its objective, the carbuncle will watch the events in morbid fascination then, choosing an opportune moment, it will quietly slip away.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/c/caryatid_column.lua",
+   "content": "-- Caryatid Column: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Caryatid Column\",\n  page = \"18\",\n  pages = \"18\",\n  source = \"FF\",\n  race = \"Caryatid Column\",\n  hitDice = \"22 hit points\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 22,\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"2-8\",\n  xp = 280,\n  xpPerHp = 0,\n  xpValue = 280,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-12\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"M (7' tall)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"All saving throws at +4\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Caryatid columns are much like stone golems (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL - Golem, Stone) in that they are created by means of a magical tome or by a magic-user of 16th level or higher, who must use the same spells as for the creation of a stone golem; however the cost is slightly higher and the time taken doubles because of the intricacy of the creation.\n\nThe result is a slim, decorative stone pillar about 7' high. A casual glance will reveal nothing more than this decorative piece of stonework which will perhaps stand with an identical partner either side of the entrance into a chamber, chapel or throne-room. Closer inspection will reveal that the column is not, as would be expected, radially symmetrical about its longitudinal axis and has the very slender shape of a human female. Once such detail has been discerned, it will be clear to the observer that one of the 'hands' of the female, held close to her side, carries a slim sword which blends into the rest of the stone so smoothly that it is nearly invisible.\n\nA caryatid column will always have a specific defensive function (and will never be met as a wandering monster). This might be to guard a treasure-chest, to prevent intrusion into a particular area or another similar task. This task will have been set by the creator who, if near at hand when the column animates, will be able to control it with simple verbal commands. More often, though, the creator is absent when the column performs its task, in which case it will follow simple courses of action which have been predetermined by the creator.\n\nThe caryatid column will 'activate' as soon as any act is committed which its task specifically prohibits - the approach of a potential thief towards the treasure the column has been set to guard, an intrusion into a 'forbidden' area and so on. When it does animate, the caryatid column takes on a fleshy appearance, it reduces to about 5' height and its form expands slightly so that it now appears as a fair young maiden. The sword, formerly of stone, becomes steel and it is this weapon that the caryatid column will use in melee if necessary, striking as a creature of 5HD to inflict 2-8 hit points of damage.\n\nHowever the caryatid column will not necessarily enter into combat; its main task is to guard the treasure, prevent intrusion into a particular area or another similar task and if it can carry out this task without combat it will attempt to do so. Its behaviour will depend a great deal on the circumstances and the instructions given by its creator but it might, for example, attempt to divert the attention of intruding adventurers from the forbidden area and lead them to a place where they will be trapped, attacked by a monster or subjected to spell attack by the creator of the column.\n\nIf combat is inevitable, however, the caryatid column will initiate it. Normal weapons inflict only half damage on the creature and magical weapons do full damage but without the magical bonus. If a weapon, magical or otherwise, hits the caryatid column, there is a 25% chance (not cumulative) that it will snap, with each 'plus' of a magical weapon reducing that chance by 5% (so a +4 sword would have a 5% chance of snapping); magical weapons with no 'plus' are treated as if +1.\n\nWhen the caryatid column's task is complete - intruders killed, treasure no longer vulnerable, for example - it will return to its original position and revert to its original stone shape, the sword becoming stone as well. If the column is killed, it returns to stone (as does the sword) on the spot.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/dark_creeper.lua",
+   "content": "-- Dark Creeper: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Dark Creeper\",\n  page = \"22\",\n  pages = \"22\",\n  source = \"FF\",\n  race = \"Dark Creeper\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 6,\n  armorClass = \"0 (or 8 see below)\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = 110,\n  xpPerHp = 2,\n  xpValue = 122,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1 (20-80 see below)\",\n  lairPct = 20,\n  treasure = \"See below\",\n  move = \"9\\\"\",\n  size = \"S (4' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The dark creeper (a folk name for the race since the race name is unknown and the race language incomprehensible to linguists) is a humanoid, slightly-built creature about the same height as a dwarf. Members of the race always dress in sombre, dark-coloured clothing, concealing as much of their pallid skin as possible. They detest light and dwell deep underground - usually leading a solitary existence, though there have been rumours of underground villages inhabited by as many as 80 individuals, including 20%-25% females. These villages are always ruled by a dark stalker.\n\nThe dark creeper is particularly fond of small magical items such as rings and magic daggers - solitary individuals will carry 25% of their treasure in the copious pockets of their cloaks, so there is a 15% chance of a magic dagger, 5% chance of a magical ring and 10% chance of 1-4 gems or 1-2 items of jewellery on any individual encountered. In lair multiply these probable treasure items by the number of male individuals resident, and add 1-100 platinum pieces and 50-500 gold pieces.\n\nThe creeper has the abilities of a 4th level thief in addition to the ability to detect magical items at a range of 15'. It attacks with a normal (or, if one is possessed, a magical) dagger. The creeper also has the innate power to create darkness three times a day - when this power is used, all torches, lanterns and other non-magical sources of illumination within 50' are extinguished and cannot be re-ignited during the next hour (the duration of the creeper's power). During this time the creeper has two main objectives. First, to destroy lanterns and tinderboxes, break flasks of oil and so on - any act which will inhibit the creation of illumination. Secondly, to steal any small magical items detected. Self-preservation ranks marginally above such objectives.\n\nMagical sources of illumination may also be affected by the creeper's darkness abilities. In effect, they obtain a saving roll against magical frost, and if the item makes such a save it is not affected. If the item fails to save, however, it is extinguished for the next hour, after which its property returns to normal.\n\nDuring the darkness, even infravision becomes useless; however the creeper will not use its power against parties not using artificial illumination, so elves using infravision, for instance, will usually pass unmolested. The darkness power may be countered by spells such as light, and if the creeper is attacked in normal illumination its AC is 8. If a creeper is killed its body undergoes spontaneous combustion of such intensity that all within 10' of the victim are blinded (saving roll against magic permitted) for 1-6 full turns. All traces of the creeper are destroyed though metal items will normally (80% chance) be undamaged; magical items, metal or otherwise, will lose their dweomer if they fail to save against magical fire.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/dark_stalker.lua",
+   "content": "-- Dark Stalker: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Dark Stalker\",\n  page = \"23\",\n  pages = \"23\",\n  source = \"FF\",\n  race = \"Dark Stalker\",\n  hitDice = \"2+1\",\n  hitDiceNum = 2,\n  hitDiceBonus = 1,\n  avgHp = 10,\n  armorClass = \"0 (or 8 - see below)\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 200,\n  xpPerHp = 3,\n  xpValue = 230,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 20,\n  treasure = \"See below\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Dark stalkers are the rarely-seen leaders of the dark creepers. They are nearly a race apart, for they breed almost exclusively amongst themselves. They are instantly noticeable amongst a group of dark creepers as they are man-sized and stand head and shoulders above their underlings.\n\nThere is an average of one dark stalker to every 25 dark creepers, and each dark creeper village will contain at least one stalker ruler. Stalkers will rarely be encountered on their own, but this has been known to happen as the stalker goes about some mysterious personal mission.\n\nDark stalkers have all the powers of dark creepers, plus the ability to create a wall of fog twice per day.\n\nThey fight with short swords if they must, and some of these are magical (25% chance). All of their treasure is carried - there is a 7% chance of a magical ring and a 12% chance of 2-5 gems or 1-2 items of jewellery on any given individual encountered. If attacked in normal illumination, the dark stalker has AC 8.\n\nIf killed, a dark stalker explodes in a blinding flash equal to a 5-dice fireball.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/death_dog.lua",
+   "content": "-- Death Dog: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Death Dog\",\n  page = \"23\",\n  pages = \"23\",\n  source = \"FF\",\n  race = \"Death Dog\",\n  hitDice = \"2+1\",\n  hitDiceNum = 2,\n  hitDiceBonus = 1,\n  avgHp = 10,\n  armorClass = \"7\",\n  numAttacks = 2,\n  damage = \"1-10/1-10\",\n  xp = 105,\n  xpPerHp = 3,\n  xpValue = 135,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"5-50\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M (4' high at shoulder)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral with evil tendencies\",\n  specialAttacks = \"Disease\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Large black hounds with two heads, the death dogs can attack with each head independently. They usually hunt in packs, in deserts or in dry areas underground.\n\nEach bite delivers 1-10 hit points of damage and the victim of a bite must save against poison or die as a result of a slow, rotting disease in 4-24 days. Cure disease will be an effective remedy.\n\nWhen attacking, the death dog usually aims for its victim's legs - a natural roll of 19 or 20 on the 'to hit' die against a man-sized or smaller victim means that the victim has been knocked to the ground and attacks at -4 until able to rise again to his feet (which he can do during a single round if he is not knocked down again).\n\nThese vicious hounds, which usually attack humans and near-humans on sight (85% chance), are said to be the descendants of Cerberus; their loud penetrating double bark tends to lend support to this theory.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/death_knight.lua",
+   "content": "-- Death Knight: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Death Knight\",\n  page = \"23\",\n  pages = \"23\",\n  source = \"FF\",\n  race = \"Death Knight\",\n  hitDice = \"9 (10-sided dice)\",\n  hitDiceNum = 9,\n  hitDiceBonus = 0,\n  avgHp = 50,\n  armorClass = \"0\",\n  numAttacks = 1,\n  damage = \"By weapon type\",\n  xp = 3700,\n  xpPerHp = 16,\n  xpValue = 4500,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"Variable\",\n  size = \"M\",\n  intelligence = \"Average-genius\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"75% (see below)\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The death knight - and there are only twelve of these dreadful creatures known to exist - is a horrifying form of lich created by a demon prince (it is thought Demogorgon) from a fallen human paladin. The death knight itself cannot be turned or dispelled (though it is affected by holy word) but it has power over undead equivalent to that of a 6th level cleric. It has 75% magic resistance, and if 11 or lower is rolled on percentage dice a magic spell will be reflected back at the caster (roll each time a spell is attempted).\n\nThe death knight wears light armour (9\\\" or 12\\\" movement depending on its other encumbrance, if any) but is always treated as armour class 0. It has 18(00) strength and usually attacks with a sword (80% chance of this being a magical sword). It will usually be riding a nightmare (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL - Nightmare) one of which can be summoned to serve a death knight every ten years: the beast will serve a death knight as a paladin's horse serves a paladin. The fearsome powers of the death knight derive largely from its use of magic. It continually generates fear in a 5' radius, can create a wall of ice at will and has innate powers of detect magic and detect invisibility. Twice a day it can dispel magic and gate in a demon type I (20%), type II (25%), type III (30%), type IV (20%) or type VI (5%), with a 75% chance of the gate opening. Once per day a death knight can use any one of the power word spells, a symbol of pain/fear and generate a 20-dice fireball. Where appropriate, a death knight's magic use is at the 20th experience level.\n\nA death knight will speak 3-6 languages in addition to its alignment tongue and the common tongue.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/l/lolth.lua",
+   "content": "-- Lolth: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Lolth\",\n  page = \"24\",\n  pages = \"24\",\n  source = \"FF\",\n  race = \"Lolth\",\n  hitDice = \"66 hit points (16 hit dice)\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 66,\n  armorClass = \"-10 (-2)\",\n  numAttacks = \"1 and 1\",\n  damage = \"4-16 + poison and webs (by weapon type)\",\n  xp = 12470,\n  xpPerHp = 0,\n  xpValue = 12470,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 25,\n  treasure = \"Q(x5), R\",\n  move = \"18\\\"//9\\\"(15\\\")\",\n  size = \"L (M)\",\n  intelligence = \"Godlike\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"70%\",\n  psionic = \"266\",\n  attackDefenseModes = \"All/all\",\n  text = \"The demoness Lolth is a very powerful and feared demon lord. She usually takes the form of a giant black widow spider when she is on the Prime Material Plane and she sometimes assumes this form on her own plane as well, but she also enjoys appearing as an exquisitely beautiful female dark elf (the statistics for this form are given in parentheses). Little is known about her aims, and only the fact that the drow worship of Lolth causes her to assume form on the earth permits compilation of any substantial information whatsoever.\n\nLolth enjoys the company of spiders of all sorts - giant species in her arachnid shape, those of normal, large and even huge type in her humanoid form. She is able to converse with all kinds of spiders, and they understand and obey her unquestioningly.\n\nAlthough Lolth has but 66 hit points, her high armour class prevents most damage and she is able to heal herself at will, up to thrice per day. As Lolth enjoys roaming about in one form or another, she will seldom be encountered in her lair no matter what the plane, unless worshippers have invoked her to some special shrine or temple.\n\nIn the form of a giant spider, Lolth is able to cast web strands 30' long from her abdominal spinnerettes which are equal to those of a web spell with the addition of 1-4 hit points of damage per round accruing to webbed victims due to a poisonous excretion upon the strands; during the same melee round she is able to deliver a vicious biting attack for 4-16 hit points of damage plus death if the victim is unable to save against poison at a -4 penalty. In her humanoid form, Lolth will use weapons common to drow.\n\nAs a giant spider, the demoness can use any one of the following powers, one per melee round, at will: comprehend languages, confusion (creature looked at only), darkness (10' radius), dispel magic; once per day gate in a type I (45%), type II (35%) or type III (20%) demon with 66% chance of the gate opening; twice per day use phase door, read magic, shape change; once per day summon 9-16 large (20%), 7-12 huge (30%), 2-8 giant (40%) or 1-4 phase (10%) spiders, teleport with no inaccuracy, tongues and true seeing. In her humanoid shape, Lolth is a 16th level cleric/14th level magic-user with commensurate abilities. However in the latter form she is unable to wear armour of any sort, and her psionic powers are lost to her (see hereafter).\n\nLolth is not affected by weapons which are not magical, silver does her no harm (unless magicked to at least +1) and cold, electrical and gas attack forms cause only half damage. Acid, magic missiles (if her magic resistance fails her) and poison affect the demoness normally. Lolth is especially susceptible to holy water, taking 6 points of damage from a splash and 6-21 points (3d6 + 3) from a direct hit.\n\nThe visual range of the demoness extends into the infrared and ultraviolet spectra to a normal distance of 120'. Lolth has limited telepathy communication ability, as do demons in general. Her psionic disciplines are body equilibrium, clairvoyance, domination and the major sciences of dimension walking, mind bar, molecular rearrangement and probability travel. These disciplines (as well as magical powers) are performed at the 16th experience level of ability.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/styx_devil.lua",
+   "content": "-- Styx Devil: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Styx Devil\",\n  page = \"25\",\n  pages = \"25\",\n  source = \"FF\",\n  race = \"Styx Devil\",\n  hitDice = \"6+6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 6,\n  avgHp = 33,\n  armorClass = \"-1\",\n  numAttacks = 1,\n  damage = \"2-8\",\n  xp = 1275,\n  xpPerHp = 8,\n  xpValue = 1539,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 60,\n  treasure = \"Q, R\",\n  move = \"6\\\"/15\\\"\",\n  size = \"M\",\n  intelligence = \"High\",\n  alignment = \"Lawful evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Cannot be hit by normal weapons - see below\",\n  magicResistance = \"50%\",\n  psionic = \"121\",\n  attackDefenseModes = \"B, D/F, G, H\",\n  text = \"Residents of the fifth plane of Hell, styx devils are humanoid with disproportionately large, ugly heads and wings of black trimmed with silver. Their main task is to search for souls to take back to Geryon, but from time to time they will tour the Material Plane with intent to destroy all humans they meet.\n\nThe styx devil is invulnerable to ordinary weapons but can be damaged by silver weapons and by magical weapons with a bonus of +1 or better.\n\nTheir touch causes 2-8 hit points of damage and has a 50% chance of inflicting an imprisonment spell on the victim (no saving throw allowed). Treat this as if cast at the 22nd level of magic use and regard the styx devil as having perfect information regarding the victim's name and background.\n\nTo dispel a styx devil requires the utterance of holy word. For purposes of aerial combat, the styx devil is manoeuvrability class C.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/dire_corby.lua",
+   "content": "-- Dire Corby: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Dire Corby\",\n  page = \"26\",\n  pages = \"26\",\n  source = \"FF\",\n  race = \"Dire Corby\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"6\",\n  numAttacks = 2,\n  damage = \"1-6/1-6\",\n  xp = 20,\n  xpPerHp = 2,\n  xpValue = 38,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-12\",\n  lairPct = 20,\n  treasure = \"Q(x5), mainly rubies\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This subterranean race of huge black bipedal birds contains ferocious fighters which need never check morale. Long ago the dire corbies lost the power of flight; however they make up for this with their great strength and ferocity, always attacking and fighting to the death.\n\nWhat were once wings have now developed as two powerful arms which end in sharp, rock-hard claws. They fight with these claws and each is capable of inflicting 1-6 hit points of damage on a victim.\n\nThey hunt in flocks, running down their hapless victims, at the same time emitting horrifying shrieks. They have rudimentary language (their attack cry can be recognised as 'Doom! Doom!' by those familiar with it).\n\nDire corbies live in large underground caverns; at one time there was open warfare between them and giant bats, but this has now become an uneasy truce.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/doombat.lua",
+   "content": "-- Doombat: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Doombat\",\n  page = \"27\",\n  pages = \"27\",\n  source = \"FF\",\n  race = \"Doombat\",\n  hitDice = \"6+3\",\n  hitDiceNum = 6,\n  hitDiceBonus = 3,\n  avgHp = 30,\n  armorClass = \"4\",\n  numAttacks = 2,\n  damage = \"1-6/1-4\",\n  xp = 400,\n  xpPerHp = 7,\n  xpValue = 610,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-8\",\n  lairPct = 100,\n  treasure = \"Nil\",\n  move = \"18\\\"\",\n  size = \"M\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Shriek\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This is a species of giant bat found in dismal underground caverns. The monstrous black creature has a wingspan a full 25' and can pick up and carry off objects weighing up to 300 pounds (3,000 gold pieces weight). At night, it flies into the outer world to hunt - always attacking and seeking to kill any living thing. For the purposes of aerial combat it is manoeuvrability class C.\n\nThe bite of the doombat inflicts 1-6 hit points of damage and it also lashes with its tail for 1-4 hit points of damage. The tail, lined with cruel barbs, stretches a considerable distance from the body, and specimens with tails up to 12' long have been reported.\n\nThe normal bat's sonar yip has developed into a terrifying shriek of great sonic power in the doombat. Each doombat can shriek continuously for 2-5 rounds and during the shriek, all within 100' who can hear will not be able to concentrate, making spell use impossible and all attacks at -1. No saving throw is permitted against these effects. The effect of several doombats shrieking at the same time is not cumulative.\n\nBright light (such as a light spell) will keep a doombat at bay, though it is undeterred by torch- or lantern-light.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pan_lung.lua",
+   "content": "-- Pan Lung (Coiled Dragon): promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Pan Lung (Coiled Dragon)\",\n  page = \"29\",\n  pages = \"29\",\n  source = \"FF\",\n  race = \"Pan Lung (Coiled Dragon)\",\n  hitDice = \"6-8\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 21,\n  armorClass = \"2\",\n  numAttacks = 3,\n  damage = \"1-3/1-3/2-16\",\n  xp = 475,\n  xpPerHp = 6,\n  xpValue = 601,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = 60,\n  treasure = \"M(x1/2)\",\n  move = \"12\\\"/12\\\"//9\\\"\",\n  size = \"L (54' long)\",\n  intelligence = \"High\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"Constriction and spells - see below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"A smaller, thinner and longer variety of the shen lung, pan lung live in marshes and swamps. Unlike the shen lung, they have no tail spike, but if they succeed in grasping with their bite (which does 2-16 hit points of damage) they will, on each succeeding round, automatically bite for 1-8 hit points of damage and constrict with their tail for a further 2-12 hit points of damage. They also attack with their two claws, each of which inflicts 1-3 hit points of damage.\n\nPan lung can fly, breathe air or water at will, have the scaly command power over 1-10 creatures times the age level of the dragon, and can use water fire for 1-6 points of damage. They have no breath weapon, but may cast charm monster three times a day.\n\nPan lung are manoeuvrability class E for purposes of aerial combat. In their brain they have a magical organ like that of the shen lung which gives them the power of flight - the organ is inextractable.\n\nPan lung speak their own language which they share with the shen lung.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/tien_lung.lua",
+   "content": "-- T'ien Lung (Celestial Dragon): promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"T'ien Lung (Celestial Dragon)\",\n  page = \"29\",\n  pages = \"29\",\n  source = \"FF\",\n  race = \"T'ien Lung (Celestial Dragon)\",\n  hitDice = \"11-13\",\n  hitDiceNum = 11,\n  hitDiceBonus = 0,\n  avgHp = 38,\n  armorClass = \"-2\",\n  numAttacks = 3,\n  damage = \"1-6/1-6/4-40\",\n  xp = 4550,\n  xpPerHp = 16,\n  xpValue = 5158,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 60,\n  treasure = \"H(x2)\",\n  move = \"9\\\"/48\\\"//6\\\"\",\n  size = \"L (48' long)\",\n  intelligence = \"Exceptional\",\n  alignment = \"Lawful neutral\",\n  specialAttacks = \"Breath weapon and spells - see below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"T'ien lung live on high mountain peaks and in cloud castles; they are rulers of the air. Their usual colouration is yellow. Though wingless, they fly by using the same organ in the brain as possessed by shen lung.\n\nUsually they attack with two claws, each of which does 1-6 hit points of damage, and a bite which does 4-40 hit points of damage.\n\nThey breathe fire in a 90' x 30' cone up to six times a day, doing damage equal to the dragon's current hit points. They may also cast control weather a number of times per day equal to twice the dragon's age level.\n\nT'ien lung of age old and older have a 60% chance of being accompanied by 1-6 wind walkers (see ADVANCED DUNGEONS & DRAGONS, MONSTER MANUAL - Wind Walker); these fanatically loyal servants cannot be charmed from their purpose and will do their utmost to defend their master and, if necessary, avenge his death.\n\nT'ien lung are very fond of eating opals and pearls and will look favourably on any mortal giving them such delicacies.\n\nIn the air, t'ien lung are manoeuvrability class D. They speak their own language, their alignment language and the common tongue.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/y/yu_lung.lua",
+   "content": "-- Yu Lung (Carp Dragon): promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Yu Lung (Carp Dragon)\",\n  page = \"30\",\n  pages = \"30\",\n  source = \"FF\",\n  race = \"Yu Lung (Carp Dragon)\",\n  hitDice = \"5-7\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 17,\n  armorClass = \"3\",\n  numAttacks = 3,\n  damage = \"1-4/1-4/2-16\",\n  xp = 130,\n  xpPerHp = 5,\n  xpValue = 215,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = 60,\n  treasure = \"Nil\",\n  move = \"6\\\"//18\\\"\",\n  size = \"L (18' long)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These shy creatures live in fresh water and have a dragon's head, two forelegs and a giant carp's body/tail. They cannot fly, polymorph or turn invisible; they have no breath weapon and breathe only water, though they can emerge awkwardly onto land for up to one hour.\n\nTheir attack is with two claws for 1-4 hit points of damage each and a bite for 2-16 hit points of damage.\n\nWhen determining the age of yu lung, bring age of all levels of 5 or above down to adult. There are no older yu lung; when they reach 101 years of age, they are metamorphosed into another kind of oriental dragon (equal probability each type).\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/c/cryonax.lua",
+   "content": "-- Cryonax: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Cryonax\",\n  page = \"31\",\n  pages = \"31\",\n  source = \"FF\",\n  race = \"Cryonax\",\n  hitDice = \"90 hit points\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 90,\n  armorClass = \"-6\",\n  numAttacks = 2,\n  damage = \"5-20/5-20\",\n  xp = 28000,\n  xpPerHp = 0,\n  xpValue = 28000,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 55,\n  treasure = \"H, V, X\",\n  move = \"9\\\"\",\n  size = \"L (15' tall)\",\n  intelligence = \"Genius\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Cold damage; spells\",\n  specialDefenses = \"See below\",\n  magicResistance = \"75%\",\n  psionic = \"200\",\n  attackDefenseModes = \"All/all\",\n  text = \"Cryonax appears as a 15' tall yeti with tentacles covered with suction cups in place of arms. He radiates 1-6 points of cold damage continually, affecting all within 15' (those with resistance to cold take half damage, but there is no saving throw as such against this). He attacks as a 20 hit dice monster with two tentacles, each of which inflicts 5-20 hit points of damage; in addition the victim must save versus paralysation or be frozen in place for 3-12 full turns. Cryonax can only be damaged by +2 or better weapons.\n\nThere is a cumulative 10% chance that any particular weapon hitting Cryonax will shatter; if the weapon does break, damage inflicted by that particular hit is nullified.\n\nAs a prince of evil creatures of cold, Cryonax may summon one of the following groups once per day: 1-4 white dragons, 1-4 frost giants or 1-6 yeti. In addition he can, thrice per day, produce a triple-strength wall of ice, can hold person and can cast an ice storm of 4-40 points. Once per day, he can cause a blast of cold of 15-dice strength.\n\nFire attacks against Cryonax are at +2 hit probability and do an additional point of damage per attack die. Cold attacks add to his hit points in an amount equal to the intended damage, up to but not exceeding his original 90 hit points. He is completely immune to poison, nor can he be turned to stone.\n\nThis prince lives in a huge castle of ice, quartz and glass, situated at the juncture of the Planes of Air and Water and drawing power from the Material Plane.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/i/imix.lua",
+   "content": "-- Imix: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Imix\",\n  page = \"31\",\n  pages = \"31\",\n  source = \"FF\",\n  race = \"Imix\",\n  hitDice = \"90 hit points\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 90,\n  armorClass = \"-4\",\n  numAttacks = 1,\n  damage = \"6-36\",\n  xp = 25900,\n  xpPerHp = 0,\n  xpValue = 25900,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 45,\n  treasure = \"R, U\",\n  move = \"18\\\"\",\n  size = \"L (18' tall)\",\n  intelligence = \"Genius\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Fire damage, spells\",\n  specialDefenses = \"See below\",\n  magicResistance = \"85%\",\n  psionic = \"190\",\n  attackDefenseModes = \"All/all\",\n  text = \"Imix generally appears as an 18' high pillar of fire. He radiates 1-20 points of heat damage constantly, affecting all those within 10' (those with resistance to fire take half damage, but there is no saving throw as such against this). He attacks as a 20 hit dice creature once per round for 6-36 hit points of damage. Only +2 or better weapons can harm him.\n\nAs prince of evil fire creatures, Imix may summon one of the following groups once per day: 1-3 efreet, 1-3 fire elementals or 1-3 salamanders. In addition he can perform the following thrice per day: cause painfully bright continual light, cast a triple-strength wall of fire and initiate pyrotechnics. Once a day, Imix can throw a 20-dice fireball.\n\nWater attacks on Imix are at +1 hit probability, while cold attacks are at +2 hit probability and add one point of damage to each attack die. Imix is immune to paralysis, poison and petrifaction.\n\nImix lives in the depths of a monstrous active volcano on the Elemental Plane of Fire. There is great enmity between Imix and Olhydra.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/o/ogremoch.lua",
+   "content": "-- Ogremoch: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Ogremoch\",\n  page = \"32\",\n  pages = \"32\",\n  source = \"FF\",\n  race = \"Ogremoch\",\n  hitDice = \"110 hit points\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 110,\n  armorClass = \"-7\",\n  numAttacks = 2,\n  damage = \"5-50/5-50\",\n  xp = 39450,\n  xpPerHp = 0,\n  xpValue = 39450,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 65,\n  treasure = \"H, U, Z\",\n  move = \"9\\\"\",\n  size = \"L (10' tall)\",\n  intelligence = \"Exceptional\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Spells\",\n  specialDefenses = \"See below\",\n  magicResistance = \"85%\",\n  psionic = \"185\",\n  attackDefenseModes = \"All/all\",\n  text = \"Ogremoch appears in a rough, apparently unfinished bipedal form, 10' tall. He attacks as a 24 hit dice monster, striking twice for 5-50 hit points of damage per attack each round. +3 or better weapons are required to harm him.\n\nAs prince of evil earth creatures, Ogremoch can summon one of the following groups once per day: 1-3 earth elementals, 1-6 evil khargra, 1-4 umber hulks or 1-4 evil xorn. In addition, he can perform the following thrice per day: produce a triple-strength wall of stone, move earth (double area, casting time in rounds rather than turns), flesh to stone. Once per day he can cause an earthquake of 100' diameter.\n\nHe cannot be harmed by normal fire or by poison. Cold, lightning and magical fire attacks subtract 1 point of damage per attack die against him. Ogremoch lives in a great flat-topped mountain on the Elemental Plane of Earth.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/o/olhydra.lua",
+   "content": "-- Olhydra: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Olhydra\",\n  page = \"32\",\n  pages = \"32\",\n  source = \"FF\",\n  race = \"Olhydra\",\n  hitDice = \"90 hit points\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 90,\n  armorClass = \"-5\",\n  numAttacks = 1,\n  damage = \"2-24\",\n  xp = 23000,\n  xpPerHp = 0,\n  xpValue = 23000,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 75,\n  treasure = \"H, S, U\",\n  move = \"6\\\"//18\\\"\",\n  size = \"L (20' diameter)\",\n  intelligence = \"Genius\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Drowning, spells\",\n  specialDefenses = \"See below\",\n  magicResistance = \"70%\",\n  psionic = \"210\",\n  attackDefenseModes = \"All/all\",\n  text = \"Olhydra appears only near water as a watery amorphous blob 20' in diameter. She attacks as a 20 hit dice monster once per round with a water wave which inflicts 2-24 points of damage.\n\nShe can also attack by enveloping and drowning victims; up to five human-sized creatures may be attacked and enveloped at one time, and are powerless to do anything (fight, cast spells) while enveloped. All defenders are considered armour class 6 against this attack (with appropriate magical and dexterity modifiers). Victims drown in 2-8 rounds and take 2-12 hit points of damage each round in any case. The only way to save enveloped victims is to kill or drive away the princess since she cannot move enveloped bodies.\n\nOlhydra can ram ships with the force of two heavy galleys. She can only be hit by +1 or better weapons, and edged weapons only do half damage on her when they hit.\n\nAs princess of evil water creatures, Olhydra may summon one of the following groups once per day: 1-3 water elementals, 1-2 sea hags, 2-5 water weirds or 20-200 sahuagin (salt water only). She can also perform the following thrice per day: produce a triple-strength wall of fog, lower and part water (at 20th level), transmute rock to mud, ice storm.\n\nFire attacks are at +2 hit probability against her and do an additional 1 point of damage per attack die. Cold attacks cannot damage her, but if over 20 points in value, they act as a slow spell upon her (her magical resistance is ineffective in this case, nor does she get a saving throw). Any normal fire within 10' of Olhydra is automatically extinguished. She cannot be paralysed or turned to stone.\n\nOlhydra lives in a great undersea castle on the Elemental Plane of Water. There is great enmity between her and Imix.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/y/yan_c_bin.lua",
+   "content": "-- Yan-C-Bin: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Yan-C-Bin\",\n  page = \"33\",\n  pages = \"33\",\n  source = \"FF\",\n  race = \"Yan-C-Bin\",\n  hitDice = \"85 hit points\",\n  hitDiceNum = \"0\",\n  hitDiceBonus = \"0\",\n  avgHp = 85,\n  armorClass = \"-6\",\n  numAttacks = 2,\n  damage = \"2-20/2-20\",\n  xp = 25650,\n  xpPerHp = 0,\n  xpValue = 25650,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 75,\n  treasure = \"U, Z\",\n  move = \"48\\\"\",\n  size = \"L (10' diameter)\",\n  intelligence = \"Genius\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Spells, whirlwind, monk's abilities\",\n  specialDefenses = \"See below\",\n  magicResistance = \"90%\",\n  psionic = \"220\",\n  attackDefenseModes = \"All/all\",\n  text = \"Yan-C-Bin is naturally invisible, creating a slight disturbance in the air as he flies which may be detected by high-level characters (see ADVANCED DUNGEONS & DRAGONS DUNGEON MASTERS GUIDE - Invisibility). He is about 10' in diameter but has no definite shape. He attacks as a 19 hit dice monster twice per round for 2-20 hit points of damage each attack, with the same chance as that of an 8th level monk to stun or kill an opponent outright. +2 or better weapons are required to harm him. For purposes of aerial combat, he is manoeuvrability class A.\n\nAs Prince of evil aerial creatures, Yan-C-Bin can summon one of the following groups once per day: 1-3 air elementals, 1-4 cloud giants, 1-4 invisible stalkers or 1-3 wind walkers.\n\nLightning attacks are ineffective against Yan-C-Bin, but fire attacks against him are at a hit probability bonus of +1 for every four levels of the attacker (so a 3rd level character would get a bonus of +1, a seventh level character +2 and so on). Yan-C-Bin cannot be harmed by any object cast into the air and is immune to petrifaction. He can form a whirlwind - a truncated reverse cone, with a 2' bottom diameter, a 6' top diameter and a height of 16'. If the full height of the whirlwind cannot be attained due to some overhead obstruction the whirlwind is only half strength. A full strength whirlwind sweeps away and kills all creatures under three hit dice and causes 4-32 hit points of damage on all non-aerial creatures which it fails to kill outright. (A half strength whirlwind does 2-16 hit points of damage). Yan-C-Bin can sustain this form for 2-5 rounds. Formation of this whirlwind or dissipation of it requires one full round.\n\nYan-C-Bin lives in a great airy palace on the Elemental Plane of Air.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/e/enveloper.lua",
+   "content": "-- Enveloper: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Enveloper\",\n  page = \"34\",\n  pages = \"34\",\n  source = \"FF\",\n  race = \"Enveloper\",\n  hitDice = \"3, 5, 7, etc.\",\n  hitDiceNum = \"3\",\n  hitDiceBonus = \"0\",\n  avgHp = 14,\n  armorClass = \"4\",\n  numAttacks = 2,\n  damage = \"1-8/1-8\",\n  xp = \"Variable\",\n  xpPerHp = 0,\n  xpValue = 0,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 85,\n  treasure = \"E\",\n  move = \"9\\\"\",\n  size = \"L\",\n  intelligence = \"Variable\",\n  alignment = \"Variable\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Variable\",\n  psionic = \"Variable\",\n  attackDefenseModes = \"Variable\",\n  text = \"The enveloper is basically a mass of malleable flesh in the form of a rough cylinder 8' tall and 3' in circumference. It can form up to five appendages at will by reshaping flesh in the appropriate areas, and when in view of humans or near-humans it will adopt approximate human form (the appendages being head, arms and legs). It is basically of animal intelligence, of neutral alignment, with standard magic resistance and no psionic abilities.\n\nIn melee the enveloper strikes with two 'fists', each capable of delivering 1-8 hit points of damage.\n\nIf the enveloper kills a victim - monster or character - its first act is to fall on the body which in one melee round is totally consumed, leaving all clothes, weapons etc. behind. After a further delay of three melee rounds (during which time the beast can fight as normal - it cannot attack in its 'consuming round') the beast can use any of the victim's abilities; for example, it gains the victim's experience and knowledge, can speak with the victim's voice, can cast spells memorised by the victim and so forth. For each hit die of the victim, the enveloper gains 1-3 hit points (though it continues to attack with the same hit probability as before, no matter how many extra points it gains).\n\nAs the enveloper consumes additional victims it will gain additional abilities and powers. In the case of mutual conflict (for example in terms of alignment) of attributes or powers, one is discarded at random until the conflict is removed. The beast will tend towards the alignment of its most recently-consumed victim, and alignment language will vary accordingly.\n\nThe enveloper gains hit dice as it ages, in steps of 2 dice; theoretically there is no limit to the number of hit dice, or hit points, an old enveloper may possess.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/e/eye_killer.lua",
+   "content": "-- Eye Killer: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Eye Killer\",\n  page = \"35\",\n  pages = \"35\",\n  source = \"FF\",\n  race = \"Eye Killer\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 150,\n  xpPerHp = 4,\n  xpValue = 222,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4 or 2-8\",\n  lairPct = 25,\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Animal\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Death stare\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"At birth, the eye killer is limbless and almost spherical; later it develops a bat-like upper torso on the body of a large snake. Its stunted wings cannot support flight. The upper part of its body is a dark grey-green while the lower part is a medium green flecked with dull yellow. Its eyes are disproportionately large and apparently lidless.\n\nThe creature dislikes daylight and hates bright naked flame. It dwells in dark places underground, where 2-8 may also (10% chance) be found.\n\nThe behaviour of the creature depends almost entirely on the illumination. If approached and attacked by creatures relying solely on infravision or on low-level natural ambient illumination, the eye killer will attack with its coils only, crushing its victim for 1-6 hit points of damage (a hit indicates that it has managed to wrap its coils round a victim; each melee round thereafter it automatically delivers crushing damage of 1-6 hit points without a 'to hit' roll).\n\nIf an approaching party is carrying lanterns or torches, however, the eye killer can use the dreaded death stare up to a range of 50'. Its eyes gather the illumination falling on them, amplify it enormously and project it back at the light-bearer in a powerful, narrow ray of intense light. This ray strikes a victim as though he were AC 10; the victim must make his saving throw against death ray or die instantly. Victims who make their saving throw take 3-18 hit points of damage. The stare can be reflected - though it does not harm the eye killer - it will simply gather the illumination, amplify it still more, and project it in the same round at another victim. Fortunately for adventurers, the death stare can only be used once per day.\n\nIf torch- or lantern-bearers come close to the eye killer, it will not face the light and will try to flee if the illumination becomes intense (equivalent to three torches at a range of 10'). If the illumination is not strong enough to force its flight, it will attack with its coils as previously described.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/e/eye_of_fear_and_flame.lua",
+   "content": "-- Eye of Fear and Flame: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Eye of Fear and Flame\",\n  page = \"35\",\n  pages = \"35\",\n  source = \"FF\",\n  race = \"Eye of Fear and Flame\",\n  hitDice = \"12\",\n  hitDiceNum = 12,\n  hitDiceBonus = 0,\n  avgHp = 54,\n  armorClass = \"2\",\n  numAttacks = \"See below\",\n  damage = \"See below\",\n  xp = 2850,\n  xpPerHp = 16,\n  xpValue = 3714,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"High\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The eye of fear and flame is a hooded man-sized figure; the face is always invisible, the interior of the hood being seen as an opaque black screen. It constantly stalks the underworld seeking lawful or lawful/neutral parties or individuals. It will command an individual, or a member of a party, to perform evil deeds (speaking in the alignment tongue appropriate to the individual addressed since it has permanent know alignment power and can speak all alignment languages). The nature of the deeds will vary but they will be uniformly evil. If the eye is attacked, or its commands are not obeyed, it will cast back the hood to reveal a bare skull with a red jewel in one eye-socket and black jewel in the other.\n\nThe red gem unleashes a 12-dice fireball once every three melee rounds, while the black gem acts as a fear wand every melee round. The gems are worth 1,000-2,000 gold pieces each, though they lose their properties when removed from the skull or when the creature is killed.\n\nIf melee is going against the creature it has the power to transfer to the Ethereal Plane, taking two melee rounds to do so, where it will try to make its escape. It has no means of fighting hand-to-hand.\n\nIf the spells blindness or power word, blind are cast on the eye, they will be reflected back to the caster with no loss of power.\n\nIt is said that the eyes of fear and flame were either created by the chaotic evil gods for the destruction of lawfuls, or by the lawful/neutral gods for their testing. The truth is hidden. It is rumoured that only about twenty of these creatures exist.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/fire_snake.lua",
+   "content": "-- Fire Snake: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Fire Snake\",\n  page = \"38\",\n  pages = \"38\",\n  source = \"FF\",\n  race = \"Fire Snake\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = 73,\n  xpPerHp = 2,\n  xpValue = 91,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-6\",\n  lairPct = 100,\n  treasure = \"Q\",\n  move = \"4\\\"\",\n  size = \"S (2' to 3' long)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Paralysation\",\n  specialDefenses = \"Immune to fire\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Fire snakes - coloured in shades from blood-red to orange - are always found in fires. Some large permanent fires will contain 1-6 of these creatures, though in smaller, semi-permanent fires such as firepits and oil bowls there may be one snake. Beneath the snakes will be the gems they accumulate.\n\nSince their colour matches well with their surroundings they strike with a 60% chance of gaining surprise. Their bite inflicts 1-4 hit points of damage and injects a mild venom which causes paralysation of the victim for 2-8 turns unless the victim makes a saving throw against poison.\n\nIt is conjectured that fire snakes are larval salamanders.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/firetoad.lua",
+   "content": "-- Firetoad: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Firetoad\",\n  page = \"38\",\n  pages = \"38\",\n  source = \"FF\",\n  race = \"Firetoad\",\n  hitDice = \"4+1\",\n  hitDiceNum = 4,\n  hitDiceBonus = 1,\n  avgHp = 19,\n  armorClass = \"10\",\n  numAttacks = 1,\n  damage = \"Variable\",\n  xp = 165,\n  xpPerHp = 5,\n  xpValue = 260,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-6\",\n  lairPct = 20,\n  treasure = \"C\",\n  move = \"6\\\"\",\n  size = \"S\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"A large red toad about 4' high and covered with warty purple excrescences, this beast shuns water and inhabits dry regions above and below ground. Throwing liquid - even ordinary water - at it will cause it to retreat, though in doing so it will concentrate two fireball attacks, in the single melee round of its retreat, on the person performing this act.\n\nThe firetoad has the power of breathing small fireballs with a range of 30' and a blast radius of 5' at will. This is its only mode of attack, the fireball doing damage equivalent to the number of hit points the firetoad has remaining. A normal saving throw is permitted against this attack, success indicating half damage.\n\nThe firetoad will rarely (20% chance) attack unless threatened, molested or in defence of its treasure.\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/f/flail_snail.lua",
+   "content": "-- Flail Snail: promoted by the R842 fifth FF promotion round\n-- from the FF print (spec tools/spec_r842.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Flail Snail\",\n  page = \"38\",\n  pages = \"38\",\n  source = \"FF\",\n  race = \"Flail Snail\",\n  hitDice = \"4-6\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"4\",\n  numAttacks = \"1 per tentacle\",\n  damage = \"1-8 per tentacle\",\n  xp = 150,\n  xpPerHp = 4,\n  xpValue = 222,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"3\\\"\",\n  size = \"L\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This silicon-based mollusc averages 8' high at the crown of its shell and keeps its club-tentacles (of which it has 4-6) in constant motion, flailing everything in its path. In combat each tentacle has its own hit points and when 'dead' ceases to attack. After all the tentacles have been killed the beast withdraws its head and the rest of its body into its shell: it will die in 1-3 turns, during which time it utters pitiful, wailing cries which have a 50% chance per turn of attracting a wandering monster. The creature's body also has hit points, but it is so adept at withdrawing it into the shell at high speed that it can be regarded as AC -8; any hit on the body will, however, kill the creature outright even if some of the tentacles survive.\n\nIn melee each of the tentacles will strike for 1-8 hit points of damage. Each tentacle represents 1HD of the creature, so a snail with 5 tentacles has 5 hit dice.\n\nThe flail snail is immune to fire (normal or magical) and poison, but is hypersensitive to bright illumination and hence is always encountered at night or underground.\n\nThe highly-coloured shell affords the flail snail partial protection against magic, acting as a type of robe of scintillating colours. Whenever it is attacked by magic the effects are variable - 40% chance of the spell malfunctioning, 30% chance of it functioning normally, 20% of it failing to work at all and 10% chance of it being reflected onto the person casting it. If a spell malfunctions its effects will alter (at the total discretion of the referee, who will not permit more than minor alteration) and the altered effect will be deviated from the snail to the nearest person or creature.\n\nThe shell weighs 250 pounds (2,500 gold pieces weight) and retains its magical properties for 1-6 months after its occupant's death. It can be sold for as much as 5,000 gold pieces.\",\n}\n"
+  }
+ ]
+}
