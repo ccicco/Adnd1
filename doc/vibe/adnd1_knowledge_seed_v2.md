@@ -23418,6 +23418,78 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   with allow_wide), closing the arc:
   census 757 -> 758, inline 1,
   fragments 757.
+- R835 LANDED 2026-10-25: commit
+  f81292a0185f7e41860c98b44eefc96bc3a5be76
+  (census 757 -> 758, pushed
+  cff3ab1..f81292a), THE FINAL
+  HOLDBACK BATCH - THE
+  DECOMPOSITION ARC CLOSES (the
+  REGTEST DECOMPOSITION ARC,
+  Curtiss's Go on the R834 tooling).
+  THE MOVE: all 55 remaining
+  holdback blocks migrated VERBATIM
+  into rules/audits fragments - the
+  8 ready-now blocks (R180, R185,
+  R188, R194, R200, R212, R213,
+  R214), the 16 no-head blocks (the
+  WSG weather pair R493/R494, the
+  DMO family R603-R613, the MM2
+  letters R798/R808/R813/R814/
+  R817 - found by the R834 widened
+  walk), and the 31 width-family
+  blocks riding the per-block
+  allow_wide tolerance (77 wide
+  code lines, up to 159 cols) -
+  29060 lines; the largest block
+  R494 WSG weather effects (2434
+  lines), the smallest R194 wisdom
+  defense repin (38). R835's own
+  audit rode
+  rules/audits/r835_batch.h at the
+  R834 include anchor (the R834
+  anchor discovery carried
+  forward). Header rules/ymb.h,
+  prefix ymb (verified free at
+  cff3ab1, 0 hits), 6 consts + 4
+  bools (inline 10), 4 examples,
+  the R834 record seated into the
+  seed, NO gap flips (MM2 stays 37
+  closed 0 open), NO tool patches.
+  GATES: dress rehearsal on a copy
+  of the REAL tree at cff3ab1;
+  double-run 60/0 -> 0/60 (3
+  standard + 2 audit-file + 55
+  migrations); all 55 fragments
+  byte-exact vs the real bodies;
+  regtest reconstruction exactly
+  +57/-29060 lines; census 758,
+  all patterns unique each once -
+  INLINE 1, FRAGMENTS 757, the
+  only inline label left is the
+  R823 wiring audit BY DESIGN;
+  rverify GREEN vs cff3ab1 (10
+  mutants, 0 missed). Delivery
+  spec-r835 canvas: spec 15717
+  bytes, md5
+  341d4ae24fdea47ae075f123f0224773,
+  landed the same. THE ARC IS
+  CLOSED: eleven migration rounds
+  (R824-R833, R835) moved 745
+  blocks / 140515 lines out of
+  regtest.cpp (690 digest blocks +
+  the 55 holdbacks), leaving 1
+  inline block
+  (the R823 wiring audit) and 757
+  fragments; census 758. NEXT:
+  awaits Curtiss's call - the
+  decomposition arc is done; the
+  standing options remain the FF
+  promotion arc or a new book arc
+  (per the next-arc audit), plus
+  any rverify/rn candidate patches
+  noted along the way (the R792
+  local-adapted-copy debt, retired
+  by R822's rverify patch).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

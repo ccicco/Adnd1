@@ -121,7 +121,7 @@ inline int lmpWalkKeyRowsBefore()
 // The R817 walk-key census after the rewire (the header const and the audit
 // expression both ride this round)
 inline int lmpWalkKeyRowsAfter()
-    { return 572; }
+    { return 590; }
 
 // ---- the opening doctrine (the R820 census) ----
 

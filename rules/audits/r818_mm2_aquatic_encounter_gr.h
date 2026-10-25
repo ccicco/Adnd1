@@ -111,7 +111,7 @@
             || mm2encaMm2SourceRows() != 51
             || mm2encaFfSourceRows() != 19
             || mm2encaNoSourceRows() != 20
-            || mm2encaWalkKeyRows() != 192
+            || mm2encaWalkKeyRows() != 211
             || mm2encaLungDragonRows() != 3
             || mm2encaOrRows() != 14
             || mm2encaRegistryFloor() != 809
@@ -726,7 +726,8 @@
             ++bad;
         // the walk-key census (the MM1 and MM2 defs the registry owns)
     if (mm2encaWalkKeyRows() != mm2encaMm1SourceRows() +
-        mm2encaMm2SourceRows() + lungpCellsRewired()
+        mm2encaMm2SourceRows() + lungpCellsRewired() +
+        ffpAquaCellsRewired()
         )
             ++bad;
         // the whirlpool arithmetic (75 + 25, six rounds to sink)

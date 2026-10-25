@@ -55,7 +55,7 @@
             || lmpGridTC5Index() != 22
             || lmpGridRC2Index() != 31
             || lmpWalkKeyRowsBefore() != 570
-            || lmpWalkKeyRowsAfter() != 572
+            || lmpWalkKeyRowsAfter() != 590
             || !lmpPromotedFromMM2Print()
             || !lmpMoveSettledByTwoVoices()
             || !lmpNilTreasureAndLair()
@@ -85,8 +85,9 @@
         )
             ++bad;
         // the walk-key rewire (the 2 cells)
-    if (lmpWalkKeyRowsAfter() != lmpWalkKeyRowsBefore() + lmpCellsRewired()
-            || lmpWalkKeyRowsAfter() != 572
+    if (lmpWalkKeyRowsAfter() != lmpWalkKeyRowsBefore() +
+        lmpCellsRewired() + ffpOutCellsRewired()
+            || lmpWalkKeyRowsAfter() != 590
         )
             ++bad;
         // the rewired cell grids

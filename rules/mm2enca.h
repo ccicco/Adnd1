@@ -298,9 +298,10 @@ inline int mm2encaNoSourceRows()
 
 // The keyed rows (the MM1, MM2, and promoted FF defs the
 // registry owns; the R821 lung promotion rewired the 3
-// keyless lung dragon cells, 189 -> 192)
+// keyless lung dragon cells, 189 -> 192; the R836 FF
+// promotion rewired 19 more, 192 -> 211)
 inline int mm2encaWalkKeyRows()
-    { return 192; }
+    { return 211; }
 
 // The oriental lung dragon cross-ref cells (the sea lung wang and the spirit
 // shen lung) - the R821 lung promotion keyed them (the FF print defs own

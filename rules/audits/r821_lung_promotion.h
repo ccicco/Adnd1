@@ -74,7 +74,7 @@
             || lungpCellCsdRow() != 18
             || lungpCellRfdRow() != 16
             || lungpWalkKeyRowsBefore() != 189
-            || lungpWalkKeyRowsAfter() != 192
+            || lungpWalkKeyRowsAfter() != 211
             || !lungpPromotedFromFfPrint()
             || !lungpIndexFrefsPointAtFf()
             || !lungpShanShenSettled()
@@ -115,8 +115,8 @@
             ++bad;
         // the walk-key rewire (the 3 cells)
     if (lungpWalkKeyRowsAfter() != lungpWalkKeyRowsBefore() +
-        lungpCellsRewired()
-            || lungpWalkKeyRowsAfter() != 192
+        lungpCellsRewired() + ffpAquaCellsRewired()
+            || lungpWalkKeyRowsAfter() != 211
         )
             ++bad;
         // the rewired cell rows (the die arithmetic rides the row + 2)

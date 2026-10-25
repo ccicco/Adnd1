@@ -248,6 +248,6 @@ inline int lungpWalkKeyRowsBefore()
 // The R818 walk-key census after the rewire (the header const and the audit
 // expression both ride as file patches)
 inline int lungpWalkKeyRowsAfter()
-    { return 192; }
+    { return 211; }
 
 }   // namespace rules

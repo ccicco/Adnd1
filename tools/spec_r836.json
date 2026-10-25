@@ -1,0 +1,667 @@
+{
+  "round": 836,
+  "title": "the first FF promotion batch",
+  "prefix": "ffp",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/ffp.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the first FF promotion batch - the ff arc opens",
+    "provenance": "spec-driven; the first Fiend Folio promotion batch - twenty-five defs lifted from the ff print as new lua data files (thirteen aquatic, twelve outdoor), the thirty-seven blank encounter cells rekeyed to their new defs, the walk-key censuses re-pinned (the aquatic 192 -> 211, the outdoor 572 -> 590), the registry 812 -> 837, the ff def census 2 -> 27, the source rows stay (ff 19 aquatic, 74 outdoor), no gap boxes flip; the def bodies carry the print-fidelity pin headers"
+  },
+  "census_before": 758,
+  "inline_count": 20,
+  "consts": [
+    {
+      "name": "ffpRound",
+      "value": 836,
+      "comment": "the round"
+    },
+    {
+      "name": "ffpDefsPerRound",
+      "value": 25,
+      "comment": "the standing pace: defs per promotion round"
+    },
+    {
+      "name": "ffpBatchDefs",
+      "value": 25,
+      "comment": "the defs in the first FF promotion batch"
+    },
+    {
+      "name": "ffpAquaDefs",
+      "value": 13,
+      "comment": "the aquatic defs in the batch"
+    },
+    {
+      "name": "ffpOutDefs",
+      "value": 12,
+      "comment": "the outdoor defs in the batch"
+    },
+    {
+      "name": "ffpAquaCellsRewired",
+      "value": 19,
+      "comment": "the aquatic cells rekeyed to batch defs"
+    },
+    {
+      "name": "ffpOutCellsRewired",
+      "value": 18,
+      "comment": "the outdoor cells rekeyed to batch defs"
+    },
+    {
+      "name": "ffpCellsRewired",
+      "value": 37,
+      "comment": "the cells rekeyed in the batch"
+    },
+    {
+      "name": "ffpAquaWalkKeysBefore",
+      "value": 192,
+      "comment": "the aquatic walk-key census before"
+    },
+    {
+      "name": "ffpAquaWalkKeysAfter",
+      "value": 211,
+      "comment": "the aquatic walk-key census after"
+    },
+    {
+      "name": "ffpOutWalkKeysBefore",
+      "value": 572,
+      "comment": "the outdoor walk-key census before"
+    },
+    {
+      "name": "ffpOutWalkKeysAfter",
+      "value": 590,
+      "comment": "the outdoor walk-key census after"
+    },
+    {
+      "name": "ffpRegistryBefore",
+      "value": 812,
+      "comment": "the registry census before the batch"
+    },
+    {
+      "name": "ffpRegistryAfter",
+      "value": 837,
+      "comment": "the registry census after the batch"
+    },
+    {
+      "name": "ffpFfDefsBefore",
+      "value": 2,
+      "comment": "the ff def census before the batch"
+    },
+    {
+      "name": "ffpFfDefsAfter",
+      "value": 27,
+      "comment": "the ff def census after the batch"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "bools": [
+    {
+      "name": "ffpDefsFromFfPrint",
+      "value": true,
+      "comment": "the defs lift from the ff print"
+    },
+    {
+      "name": "ffpWalkPriorityFirst",
+      "value": true,
+      "comment": "the walk keys settle before the def prose"
+    },
+    {
+      "name": "ffpSourceCellsStay",
+      "value": true,
+      "comment": "the source census rows stay put"
+    },
+    {
+      "name": "ffpNoGapBoxesFlip",
+      "value": true,
+      "comment": "no gap boxes flip this round"
+    }
+  ],
+  "header_sections": {
+    "the first FF promotion batch": [
+      {
+        "kind": "const",
+        "name": "ffpRound"
+      },
+      {
+        "kind": "const",
+        "name": "ffpDefsPerRound"
+      },
+      {
+        "kind": "const",
+        "name": "ffpBatchDefs"
+      },
+      {
+        "kind": "const",
+        "name": "ffpAquaDefs"
+      },
+      {
+        "kind": "const",
+        "name": "ffpOutDefs"
+      },
+      {
+        "kind": "const",
+        "name": "ffpAquaCellsRewired"
+      },
+      {
+        "kind": "const",
+        "name": "ffpOutCellsRewired"
+      },
+      {
+        "kind": "const",
+        "name": "ffpCellsRewired"
+      },
+      {
+        "kind": "const",
+        "name": "ffpAquaWalkKeysBefore"
+      },
+      {
+        "kind": "const",
+        "name": "ffpAquaWalkKeysAfter"
+      },
+      {
+        "kind": "const",
+        "name": "ffpOutWalkKeysBefore"
+      },
+      {
+        "kind": "const",
+        "name": "ffpOutWalkKeysAfter"
+      },
+      {
+        "kind": "const",
+        "name": "ffpRegistryBefore"
+      },
+      {
+        "kind": "const",
+        "name": "ffpRegistryAfter"
+      },
+      {
+        "kind": "const",
+        "name": "ffpFfDefsBefore"
+      },
+      {
+        "kind": "const",
+        "name": "ffpFfDefsAfter"
+      },
+      {
+        "kind": "bool",
+        "name": "ffpDefsFromFfPrint"
+      },
+      {
+        "kind": "bool",
+        "name": "ffpWalkPriorityFirst"
+      },
+      {
+        "kind": "bool",
+        "name": "ffpSourceCellsStay"
+      },
+      {
+        "kind": "bool",
+        "name": "ffpNoGapBoxesFlip"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['ffpRegistryAfter']() != m['ffpRegistryBefore']() + m['ffpBatchDefs']()",
+      "note": "the registry carries the batch"
+    },
+    {
+      "expr": "m['ffpFfDefsAfter']() != m['ffpFfDefsBefore']() + m['ffpBatchDefs']()",
+      "note": "the ff def census carries the batch"
+    },
+    {
+      "expr": "m['ffpAquaWalkKeysAfter']() != m['ffpAquaWalkKeysBefore']() + m['ffpAquaCellsRewired']()",
+      "note": "the aquatic walk keys carry the rewire"
+    },
+    {
+      "expr": "m['ffpOutWalkKeysAfter']() != m['ffpOutWalkKeysBefore']() + m['ffpOutCellsRewired']()",
+      "note": "the outdoor walk keys carry the rewire"
+    }
+  ],
+  "audit_label": "R836 first FF promotion audit",
+  "audit_comment": "the first promotion wave of the ff arc: twenty-five defs, the thirty-seven cells, the walk keys re-pinned, the registry and ff def censuses carried; the constants check themselves",
+  "audit_file": "rules/audits/r836_batch.h",
+  "audit_anchor": "#include \"rules/audits/r835_batch.h\"  // R835: R835 final holdback batch audit",
+  "include_comment": "the first FF promotion batch",
+  "include_after": "#include \"rules/ymb.h\"  // R835: the final holdback batch",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R835 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R835 LANDED 2026-10-25: commit",
+    "  f81292a0185f7e41860c98b44eefc96bc3a5be76",
+    "  (census 757 -> 758, pushed",
+    "  cff3ab1..f81292a), THE FINAL",
+    "  HOLDBACK BATCH - THE",
+    "  DECOMPOSITION ARC CLOSES (the",
+    "  REGTEST DECOMPOSITION ARC,",
+    "  Curtiss's Go on the R834 tooling).",
+    "  THE MOVE: all 55 remaining",
+    "  holdback blocks migrated VERBATIM",
+    "  into rules/audits fragments - the",
+    "  8 ready-now blocks (R180, R185,",
+    "  R188, R194, R200, R212, R213,",
+    "  R214), the 16 no-head blocks (the",
+    "  WSG weather pair R493/R494, the",
+    "  DMO family R603-R613, the MM2",
+    "  letters R798/R808/R813/R814/",
+    "  R817 - found by the R834 widened",
+    "  walk), and the 31 width-family",
+    "  blocks riding the per-block",
+    "  allow_wide tolerance (77 wide",
+    "  code lines, up to 159 cols) -",
+    "  29060 lines; the largest block",
+    "  R494 WSG weather effects (2434",
+    "  lines), the smallest R194 wisdom",
+    "  defense repin (38). R835's own",
+    "  audit rode",
+    "  rules/audits/r835_batch.h at the",
+    "  R834 include anchor (the R834",
+    "  anchor discovery carried",
+    "  forward). Header rules/ymb.h,",
+    "  prefix ymb (verified free at",
+    "  cff3ab1, 0 hits), 6 consts + 4",
+    "  bools (inline 10), 4 examples,",
+    "  the R834 record seated into the",
+    "  seed, NO gap flips (MM2 stays 37",
+    "  closed 0 open), NO tool patches.",
+    "  GATES: dress rehearsal on a copy",
+    "  of the REAL tree at cff3ab1;",
+    "  double-run 60/0 -> 0/60 (3",
+    "  standard + 2 audit-file + 55",
+    "  migrations); all 55 fragments",
+    "  byte-exact vs the real bodies;",
+    "  regtest reconstruction exactly",
+    "  +57/-29060 lines; census 758,",
+    "  all patterns unique each once -",
+    "  INLINE 1, FRAGMENTS 757, the",
+    "  only inline label left is the",
+    "  R823 wiring audit BY DESIGN;",
+    "  rverify GREEN vs cff3ab1 (10",
+    "  mutants, 0 missed). Delivery",
+    "  spec-r835 canvas: spec 15717",
+    "  bytes, md5",
+    "  341d4ae24fdea47ae075f123f0224773,",
+    "  landed the same. THE ARC IS",
+    "  CLOSED: eleven migration rounds",
+    "  (R824-R833, R835) moved 745",
+    "  blocks / 140515 lines out of",
+    "  regtest.cpp (690 digest blocks +",
+    "  the 55 holdbacks), leaving 1",
+    "  inline block",
+    "  (the R823 wiring audit) and 757",
+    "  fragments; census 758. NEXT:",
+    "  awaits Curtiss's call - the",
+    "  decomposition arc is done; the",
+    "  standing options remain the FF",
+    "  promotion arc or a new book arc",
+    "  (per the next-arc audit), plus",
+    "  any rverify/rn candidate patches",
+    "  noted along the way (the R792",
+    "  local-adapted-copy debt, retired",
+    "  by R822's rverify patch)."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "file_patches": [
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 1 die 4,5 cells rekeys quipper,vodyanoi",
+      "from": "                \"storm_giant\", \"verme\", \"\", \"\", \"sirine\", \"ghoul\",",
+      "to": "                \"storm_giant\", \"verme\", \"quipper\", \"vodyanoi\", \"sirine\", \"ghoul\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 3 die 5,6 cells rekeys urchin_green,urchin_red",
+      "from": "                \"verme\", \"water_weird\", \"seawolf_lesser\", \"\", \"\", \"dolphin\",",
+      "to": "                \"verme\", \"water_weird\", \"seawolf_lesser\", \"urchin_green\", \"urchin_red\", \"dolphin\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 4 die 11 cell rekey throat_leech",
+      "from": "                \"merchant\", \"\", \"crane_giant\", \"\", \"giant_crayfish\",",
+      "to": "                \"merchant\", \"throat_leech\", \"crane_giant\", \"\", \"giant_crayfish\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 5 die 11 cell rekey throat_leech",
+      "from": "                \"water_spider\", \"\", \"crocodile\", \"giant_otter\",",
+      "to": "                \"water_spider\", \"throat_leech\", \"crocodile\", \"giant_otter\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 5 die 19 cell rekey algoid",
+      "from": "                \"octopus\", \"\", \"lizard_man\",",
+      "to": "                \"octopus\", \"algoid\", \"lizard_man\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 6 die 6 cell rekey crabman",
+      "from": "                \"ki_rin\", \"cloud_dragon\", \"\", \"\", \"\", \"giant_eel\", \"\",",
+      "to": "                \"ki_rin\", \"cloud_dragon\", \"\", \"\", \"crabman\", \"giant_eel\", \"\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 7 die 8 cell rekey urchin_black",
+      "from": "                \"giant_shark\", \"sea_lion\", \"\", \"plesiosaurus\", \"sea_horse\",",
+      "to": "                \"giant_shark\", \"sea_lion\", \"urchin_black\", \"plesiosaurus\", \"sea_horse\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 8 die 12 cell rekey throat_leech",
+      "from": "                \"\", \"crocodile\", \"\", \"behemoth\", \"giant_frog\",",
+      "to": "                \"\", \"crocodile\", \"throat_leech\", \"behemoth\", \"giant_frog\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 8 die 19,20 cells rekeys kelpie,thork",
+      "from": "                \"hippopotamus\", \"sirine\", \"merman\", \"manticore\", \"\", \"\",",
+      "to": "                \"hippopotamus\", \"sirine\", \"merman\", \"manticore\", \"kelpie\", \"thork\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 9 die 4,5 cells rekeys kelpie,vodyanoi",
+      "from": "                \"verme\", \"weed\", \"\", \"\", \"behemoth\", \"merman\",",
+      "to": "                \"verme\", \"weed\", \"kelpie\", \"vodyanoi\", \"behemoth\", \"merman\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 9 die 12,13,16 cells rekeys throat_leech,dragonfish,bunyip",
+      "from": "                \"water_spider\", \"\", \"\", \"archelon_ischyros\", \"gargoyle\", \"\",",
+      "to": "                \"water_spider\", \"throat_leech\", \"dragonfish\", \"archelon_ischyros\", \"gargoyle\", \"bunyip\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 11 die 3 cell rekey urchin_silver",
+      "from": "                \"morkoth\", \"\", \"giant_crocodile\", \"octopus\", \"pungi_ray\",",
+      "to": "                \"morkoth\", \"urchin_silver\", \"giant_crocodile\", \"octopus\", \"pungi_ray\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the aquatic grid 11 die 8 cell rekey urchin_black",
+      "from": "                \"sahuagin\", \"\", \"dinichthys\", \"sting_ray\", \"shark\", \"\",",
+      "to": "                \"sahuagin\", \"urchin_black\", \"dinichthys\", \"sting_ray\", \"shark\", \"\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 4 die 16 cell rekey devil_dog",
+      "from": "                \"white_dragon\",\n                \"\",",
+      "to": "                \"white_dragon\",\n                \"devil_dog\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 5 die 17 cell rekey devil_dog",
+      "from": "                \"wolf\",\n                \"\",",
+      "to": "                \"wolf\",\n                \"devil_dog\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 6 die 2 cell rekey denzelian",
+      "from": "            {  // grid 6, the cold civilized mountains\n                \"\",",
+      "to": "            {  // grid 6, the cold civilized mountains\n                \"denzelian\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 6 die 4 cell rekey aarakocra",
+      "from": "                \"xorn\",\n                \"\",",
+      "to": "                \"xorn\",\n                \"aarakocra\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 9 die 18 cell rekey coffer_corpse",
+      "from": "                \"ghast\",\n                \"\",\n                \"\",\n                \"bugbear\",",
+      "to": "                \"ghast\",\n                \"\",\n                \"coffer_corpse\",\n                \"bugbear\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 11 die 19 cell rekey crypt_thing",
+      "from": "                \"griffon\",\n                \"\",\n                \"movanic_deva\",",
+      "to": "                \"griffon\",\n                \"crypt_thing\",\n                \"movanic_deva\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 12 die 8 cell rekey blood_hawk",
+      "from": "                \"stone_giant\",\n                \"\",",
+      "to": "                \"stone_giant\",\n                \"blood_hawk\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 14 die 15 cell rekey clubnek",
+      "from": "                \"giant_porcupine\",\n                \"\",",
+      "to": "                \"giant_porcupine\",\n                \"clubnek\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 15 die 2 cell rekey algoid",
+      "from": "            {  // grid 15, the temperate wilderness swamp and marsh\n                \"\",",
+      "to": "            {  // grid 15, the temperate wilderness swamp and marsh\n                \"algoid\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 15 die 16 cell rekey caterwaul",
+      "from": "                \"basidirond\",\n                \"\",",
+      "to": "                \"basidirond\",\n                \"caterwaul\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 17 die 3 cell rekey dune_stalker",
+      "from": "                \"fire_giant\",\n                \"\",",
+      "to": "                \"fire_giant\",\n                \"dune_stalker\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 21 die 2 cell rekey kelpie",
+      "from": "            {  // grid 21, the temperate civilized swamp and marsh\n                \"\",",
+      "to": "            {  // grid 21, the temperate civilized swamp and marsh\n                \"kelpie\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 24 die 2 cell rekey aarakocra",
+      "from": "            {  // grid 24, the tropical wilderness mountains\n                \"\",",
+      "to": "            {  // grid 24, the tropical wilderness mountains\n                \"aarakocra\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 25 die 18 cell rekey assassin_bug",
+      "from": "                \"hieracosphinx\",\n                \"\",",
+      "to": "                \"hieracosphinx\",\n                \"assassin_bug\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 27 die 16,17 cells rekeys caterwaul,cifal",
+      "from": "                \"sundew_giant\",\n                \"troll\",\n                \"\",\n                \"\",\n                \"giant_dragonfly\",",
+      "to": "                \"sundew_giant\",\n                \"troll\",\n                \"caterwaul\",\n                \"cifal\",\n                \"giant_dragonfly\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 28 die 7 cell rekey dakon",
+      "from": "                \"hybsil\",\n                \"\",",
+      "to": "                \"hybsil\",\n                \"dakon\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 29 die 18 cell rekey dune_stalker",
+      "from": "                \"moon_dog\",\n                \"\",",
+      "to": "                \"moon_dog\",\n                \"dune_stalker\","
+    },
+    {
+      "file": "rules/mm2enca.h",
+      "note": "the mm2enca walk-key census 192 -> 211",
+      "from": "// The keyed rows (the MM1, MM2, and promoted FF defs the\n// registry owns; the R821 lung promotion rewired the 3\n// keyless lung dragon cells, 189 -> 192)\ninline int mm2encaWalkKeyRows()\n    { return 192; }",
+      "to": "// The keyed rows (the MM1, MM2, and promoted FF defs the\n// registry owns; the R821 lung promotion rewired the 3\n// keyless lung dragon cells, 189 -> 192; the R836 FF\n// promotion rewired 19 more, 192 -> 211)\ninline int mm2encaWalkKeyRows()\n    { return 211; }"
+    },
+    {
+      "file": "rules/mm2enco.h",
+      "note": "the mm2enco walk-key census 572 -> 590",
+      "from": "// The rows with a registry walk key (the MM1 and MM2 defs the\n// registry owns; the R820 lammasu promotion rewired the 2\n// keyless cells, 570 -> 572)\ninline int mm2encoWalkKeyRows()\n    { return 572; }",
+      "to": "// The rows with a registry walk key (the MM1 and MM2 defs the\n// registry owns; the R820 lammasu promotion rewired the 2\n// keyless cells, 570 -> 572; the R836 FF promotion rewired\n// 18 more, 572 -> 590)\ninline int mm2encoWalkKeyRows()\n    { return 590; }"
+    },
+    {
+      "file": "rules/lungp.h",
+      "note": "the lungp walk-key after census 192 -> 211",
+      "from": "inline int lungpWalkKeyRowsAfter()\n    { return 192; }",
+      "to": "inline int lungpWalkKeyRowsAfter()\n    { return 211; }"
+    },
+    {
+      "file": "rules/lmp.h",
+      "note": "the lmp walk-key after census 572 -> 590",
+      "from": "inline int lmpWalkKeyRowsAfter()\n    { return 572; }",
+      "to": "inline int lmpWalkKeyRowsAfter()\n    { return 590; }"
+    },
+    {
+      "file": "rules/audits/r818_mm2_aquatic_encounter_gr.h",
+      "note": "the r818 aquatic walk-key pin 192 -> 211",
+      "from": "            || mm2encaWalkKeyRows() != 192\n",
+      "to": "            || mm2encaWalkKeyRows() != 211\n"
+    },
+    {
+      "file": "rules/audits/r818_mm2_aquatic_encounter_gr.h",
+      "note": "the r818 identity chain carries the ffp aqua cells",
+      "from": "    if (mm2encaWalkKeyRows() != mm2encaMm1SourceRows() +\n        mm2encaMm2SourceRows() + lungpCellsRewired()\n        )",
+      "to": "    if (mm2encaWalkKeyRows() != mm2encaMm1SourceRows() +\n        mm2encaMm2SourceRows() + lungpCellsRewired() +\n        ffpAquaCellsRewired()\n        )"
+    },
+    {
+      "file": "rules/audits/r817_mm2_outdoor_encounter.h",
+      "note": "the r817 outdoor walk-key pin 572 -> 590",
+      "from": "            || mm2encoWalkKeyRows() != 572\n",
+      "to": "            || mm2encoWalkKeyRows() != 590\n"
+    },
+    {
+      "file": "rules/audits/r817_mm2_outdoor_encounter.h",
+      "note": "the r817 identity chain carries the ffp outdoor cells",
+      "from": "    if (mm2encoWalkKeyRows() != mm2encoMm1SourceRows() +\n        mm2encoMm2SourceRows()\n        )",
+      "to": "    if (mm2encoWalkKeyRows() != mm2encoMm1SourceRows() +\n        mm2encoMm2SourceRows() + ffpOutCellsRewired()\n        )"
+    },
+    {
+      "file": "rules/audits/r821_lung_promotion.h",
+      "note": "the r821 walk-key after pin 192 -> 211",
+      "from": "            || lungpWalkKeyRowsBefore() != 189\n            || lungpWalkKeyRowsAfter() != 192",
+      "to": "            || lungpWalkKeyRowsBefore() != 189\n            || lungpWalkKeyRowsAfter() != 211"
+    },
+    {
+      "file": "rules/audits/r821_lung_promotion.h",
+      "note": "the r821 rewire arithmetic carries the ffp aqua cells",
+      "from": "    if (lungpWalkKeyRowsAfter() != lungpWalkKeyRowsBefore() +\n        lungpCellsRewired()\n            || lungpWalkKeyRowsAfter() != 192",
+      "to": "    if (lungpWalkKeyRowsAfter() != lungpWalkKeyRowsBefore() +\n        lungpCellsRewired() + ffpAquaCellsRewired()\n            || lungpWalkKeyRowsAfter() != 211"
+    },
+    {
+      "file": "rules/audits/r820_lammasu_promotion.h",
+      "note": "the r820 walk-key after pin 572 -> 590",
+      "from": "            || lmpWalkKeyRowsBefore() != 570\n            || lmpWalkKeyRowsAfter() != 572",
+      "to": "            || lmpWalkKeyRowsBefore() != 570\n            || lmpWalkKeyRowsAfter() != 590"
+    },
+    {
+      "file": "rules/audits/r820_lammasu_promotion.h",
+      "note": "the r820 rewire arithmetic carries the ffp outdoor cells",
+      "from": "    if (lmpWalkKeyRowsAfter() != lmpWalkKeyRowsBefore() + lmpCellsRewired()\n            || lmpWalkKeyRowsAfter() != 572",
+      "to": "    if (lmpWalkKeyRowsAfter() != lmpWalkKeyRowsBefore() +\n        lmpCellsRewired() + ffpOutCellsRewired()\n            || lmpWalkKeyRowsAfter() != 590"
+    }
+  ],
+  "migrate_blocks": [],
+  "data_files": [
+    {
+      "path": "monsters/monsters/a/aarakocra.lua",
+      "content": "-- Aarakocra: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Aarakocra\",\n  page = \"8\",\n  pages = \"8-9\",\n  source = \"FF\",\n  race = \"Aarakocra\",\n  hitDice = \"1+2\",\n  hitDiceNum = 1,\n  hitDiceBonus = 2,\n  avgHp = 7,\n  armorClass = \"7\",\n  numAttacks = 2,\n  damage = \"1-3/1-3 or by weapon type\",\n  xp = 28,\n  xpPerHp = 2,\n  xpValue = 42,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-10\",\n  lairPct = 5,\n  treasure = \"D\",\n  move = \"6\\\"/36\\\"\",\n  size = \"M (20' wing span)\",\n  intelligence = \"Average\",\n  alignment = \"Neutral good\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The aarakocra are a race of intelligent avian humanoids. Their society consists of small tribes of about 11-30; each tribe has a hunting territory of about 10,000 square miles. The bird-men live on high peaks in the mountains, where they can soar all day on the winds and the thermals.\\n\\nAarakocra have little to do with humankind beyond the occasional poaching of a farm animal (they appear incapable of distinguishing between domestic and wild animals, for this act is not one motivated by malice). They have even less to do with demi-humans and actively dislike humanoids. Infrequently, an aarakocra may agree to give information to, or act as a scout for, humans in exchange for shiny coins or gems. As they are extremely reluctant to leave their familiar mountains such an act will only very rarely take place outside the bird-man's own territory.\\n\\nAarakocra stand about 5' high but they have a wing span of 20'. Their wings/arms are built somewhat like those of a pterodactyl, with a hand half-way along each leading edge. The wing-section beyond the hand has as its leading edge an extremely lengthened and strengthened outer finger which locks in place during flight. The wing-hands cannot grasp while in flight, but when the bird-man is on the ground and the wings are folded back, the hands are nearly as useful as normal human hands. Each hand consists of three normal-sized fingers and an opposable thumb.\\n\\nThe bird-man's mighty wing muscles are anchored in a bony keel which projects forward from the chest a full foot beyond the normal extent of a human chest. The legs are powerful, with 'backward-bending' knees and dangerous-looking talons on the feet. The feet are actually more dangerous than they appear: the talons can unlock and fold back, uncovering a pair of fully-functional hands, each with three tough, powerful fingers and a thumb.\\n\\nIt is these nether 'hands' that the bird-man employs in aerial combat, either using the talons alone or clutching heavy fletched javelins, used for stabbing or for throwing. Each feathered warrior usually carries half a dozen of these javelins, which do 2-8 hit points of damage each, strapped to its chest in individual sheaths. Aarakocra are remarkably adept at flinging these javelins while in the air, incurring none of the 'to hit' penalties used in aerial missile fire.\\n\\nTheir most devastating form of attack is to dive upon a victim with a javelin in each nether hand, building up great speed. The bird-man pulls out of the dive just as it reaches its target and snaps the javelins forward into its prey with great force and accuracy, meanwhile emitting a blood-curdling shriek. Such attacks are at +4 hit\\n\\nprobability and do double damage if successful, but the aarakocra needs at least 200' of dive to perform them properly.\\n\\nAarakocra share with eagles the ability to plummet a great distance vertically downwards and pull out at the last moment. For the purposes of aerial combat, they are manoeuvrability class C. Rather than fling it away, a bird-man will save its last javelin for stabbing purposes in battle.\\n\\nThe aarakocra are oviparous and the females tend the eggs during their 8-month incubation period. It is these temporarily nest-bound females which fabricate all the javelins, tools and other small items the tribe uses (the males do no work other than hunting). The females also weave the brilliant feathered banners and pennants which fly above the tribal nest and mark out their territory (each tribe has a unique, highly individual design). The sight of an aarakocra weaving is said to be impressive, as they do so while resting on their backs and using all four hands at the same time. Individually, their hands are not as dextrous as those of a human, but the extra pair more than compensates for this.\\n\\nAarakocra speak their own language and that of the giant eagles, with which they are on mutually respectful terms. 10% of aarakocra also speak the common tongue. They get on very well with all forms of air elemental, and any five aarakocra can summon an air elemental by chanting and flying through an intricate aerial dance (this takes three melee rounds). The air elemental will comply with the bird-men's requests as a favour, but will not fight to the death on their behalf, returning to its own plane (if it can) before such an eventuality could occur. The bird-men are known to have tribal shamans.\\n\\nColour of plumage among the aarakocra varies from tribe to tribe, but the males are always crested and gaudier than the females. This is especially true during the once-yearly mating season when the plumage of the males shows up in particularly striking fashion. Their beaks are about 5\\\" long, grey-black and in shape somewhat between that of a parrot and an eagle. The beak can deliver a nasty bite (1-3 hit points of damage) but is rarely used for fighting unless the bird-man is trapped on the ground. Their faces are in no way similar to human faces, though their eyes are set frontally on the head to provide binocular vision, and in fact their sight is so keen that they can distinguish detail at considerable distances. Though they are powerful, they are also light - an adult weight is typically in the range 50-80 pounds - and are unwilling to become involved in ground melee or fights which could result in grappling, since their hollow bones are quite fragile and could break if, for instance, a bird-man is thrown heavily to the ground. The aarakocra are extremely susceptible to claustrophobia. Such is their fear of being closed in that they will not even enter buildings, and only a mad or insanely-desperate bird-man would venture below ground.\\n\\nAarakocra can carry up to 1,500 g.p. weight (150 pounds) each.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/a/algoid.lua",
+      "content": "-- Algoid: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Algoid\",\n  page = \"11\",\n  pages = \"11\",\n  source = \"FF\",\n  race = \"Algoid\",\n  hitDice = \"5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 23,\n  armorClass = \"5\",\n  numAttacks = 2,\n  damage = \"1-10/1-10\",\n  xp = 280,\n  xpPerHp = 5,\n  xpValue = 395,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-6\",\n  lairPct = 20,\n  treasure = \"D(x1/2)\",\n  move = \"6\\\"\",\n  size = \"M\",\n  intelligence = \"Semi-\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Immune to edged weapons of less than +2 bonus\",\n  magicResistance = \"Immune to fireballs and lightning; otherwise standard\",\n  psionic = \"101-120\",\n  attackDefenseModes = \"Nil\",\n  text = \"This creature appears as a green humanoid with coarse, rough features. Its appearance is misleading, however - it is in fact a colony of algae which, assembled in this form, has developed some mobility and a rudimentary intelligence. Its form is only of a temporary nature.\\n\\nIt is immune to psionic attacks but can deliver one mind blast per day. It attacks otherwise with its powerful fists each of which can inflict 1-10 hit points of damage.\\n\\nEdged weapons will pass through an algoid without doing any damage, unless they have a magical bonus of +2 or better in which case they inflict half normal damage. Blunt weapons - magical or otherwise - will do full damage.\\n\\nThe algoid has control over certain types of trees, similar to the control exerted over trees by the treant (see ADVANCED DUNGEONS & DRAGONS, MONSTER MANUAL - Treant). The types of tree over which the algoid has control are those which will be found near its normal habitat (swamp, lakeside pasture - at all events close to water of some kind whether stagnant or otherwise); thus it will be able to control two willows, water-oaks, cypresses or other similar varieties of tree. Trees thus controlled move at 3\\\" rate and strike with two attacks per round for 1-10 hit points of damage each.\\n\\nDespite their immunity to certain forms of magical attack (fireball, lightning) algoids are particularly vulnerable to part water and lower water spells, each of which inflict 1-6 hit points of damage per experience level or the spell-caster.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/a/assassin_bug.lua",
+      "content": "-- Assassin Bug: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Assassin Bug\",\n  page = \"12\",\n  pages = \"12-13\",\n  source = \"FF\",\n  race = \"Assassin Bug\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 6,\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"1-4\",\n  xp = 65,\n  xpPerHp = 2,\n  xpValue = 77,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2\",\n  lairPct = 50,\n  treasure = \"Nil\",\n  move = \"6\\\"/18\\\"\",\n  size = \"S (up to 2' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Paralysation\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Resembling giant bluebottle flies with four limbs - miniature arms and legs - the assassin bugs are rarely seen except during their mating season (one day in every two months) when a male and a female may be encountered flying in search of a host for their offspring. The natural host is human, but assassin bugs have been known to lay their eggs in demi-humans and (rarely) humanoids.\\n\\nThe male will always attack first, biting a victim for 1-4 hit points of damage while the female flies nearby, as close to the intended victim as possible consistent with not risking being attacked. If the male's attack succeeds, its saliva will paralyse the affected area of the victim's body unless the victim makes his saving roll at +2. The male will continue to attack until destroyed. For purposes of aerial combat, they are manoeuvrability class C.\\n\\nAs soon as one of the male's attacks has achieved the desired paralysation, the female (which detects the scent of the male saliva) will 'attack' the affected area. If successful, the female implants her egg into the victim's body. The female will die as soon as the egg has been implanted.\\n\\nThe egg will hatch, producing 7-12 larvae, 13-24 hours after it has been implanted. During this period only a very powerful spell such as a limited wish or heal will remove or kill the egg. When the larvae hatch, each one will cause 1 hit point of damage to the host each hour as it devours the host's internal organs. After 2 weeks the larvae will leave the host, burrowing out through the area in which the egg was originally implanted and causing an additional 5-8 hit points of damage per larva as they do so. As soon as they are outside the body, they will metamorphose into fully-grown assassin bugs.\\n\\nWhile the larvae are in the host's body, they can be killed by a number of spells cast on the host:\\n\\nCure serious wounds - will kill one larva per experience level of the caster above the 6th level;\\n\\nCure critical wounds - will kill all larvae;\\n\\nHeal - will kill all larvae and restore all but 5-8 of the victim's hit points.\\n\\nA limited wish or similar spell can also be effective during this period.\\n\\nAssassin bug eggs are regarded as great delicacies by trolls, troglodytes and bugbears. The eggs themselves are 4-5\\\" long and oval, coloured a deep blue.\\n\\nDescription: Assassin bugs are generally the colour of bluebottle flies though the female tends to be a lighter shade than the male. The four limbs are the colour of human flesh. The wings are nearly transparent but have a faint silver hue.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/b/blood_hawk.lua",
+      "content": "-- Blood Hawk: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Blood Hawk\",\n  page = \"15\",\n  pages = \"15\",\n  source = \"FF\",\n  race = \"Blood Hawk\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 6,\n  armorClass = \"7\",\n  numAttacks = 3,\n  damage = \"1-4/1-4/1-6\",\n  xp = 20,\n  xpPerHp = 2,\n  xpValue = 32,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"4-15(d12+3)\",\n  lairPct = 25,\n  treasure = \"Qx2\",\n  move = \"24\\\"\",\n  size = \"S\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Blood hawks resemble normal hawks in size alone, as their beaks are razor sharp and their talons unusually strong. Their wings are similar to those of an eagle, giving them considerable speed in flight. For purposes of aerial combat, they are manoeuvrability class B.\\n\\nThey attack with their beaks (1-6 hit points of damage) and two sets of talons (1-4 hit points of damage each set), swooping swiftly and silently onto their victims. Blood hawks are fond of human flesh and will continue to attack humans even when the melee is going against them.\\n\\nThey will pick at the dead bodies of their prey, not only for food but also for gems with which they line their nests as an allurement to blood hawk females. All other types of treasure will be ignored.\\n\\nIn colour the blood hawk is a uniform medium grey.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/b/bunyip.lua",
+      "content": "-- Bunyip: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Bunyip\",\n  page = \"17\",\n  pages = \"17\",\n  source = \"FF\",\n  race = \"Bunyip\",\n  hitDice = \"5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 23,\n  armorClass = \"10\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 90,\n  xpPerHp = 5,\n  xpValue = 205,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = 30,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M (6' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral (chaotic good)\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The bunyip is an aquatic beast resembling a seal covered in thick black fur, with a black mane and unusually powerful jaws. It dwells in lakes, marshes and sluggish rivers.\\n\\nIt is a mischievous beast of playful intent, but is large and strong enough to tip over a small boat. It can also sense the approach of human beings and may (50% chance) rise momentarily above the surface to roar at a nearby party of adventurers; all members of the party who are below the 4th experience level must save at -2 against wands or flee in panic.\\n\\nIf a small creature such as a dwarf is struggling in the water, the bunyip will usually (80% chance) bite in an attempt to sever and swallow a limb, but it will not attack anything larger than a dwarf except in self-defence or unless the victim is already bleeding. A successful bite by the bunyip's powerful jaws inflicts 1-6 hit points of damage. If it attacks on a 'to hit' roll of 20, a limb of the victim is severed (determine at random or according to the circumstances of the attack).\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/c/caterwaul.lua",
+      "content": "-- Caterwaul: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Caterwaul\",\n  page = \"18\",\n  pages = \"18-19\",\n  source = \"FF\",\n  race = \"Caterwaul\",\n  hitDice = \"4+2\",\n  hitDiceNum = 4,\n  hitDiceBonus = 2,\n  avgHp = 20,\n  armorClass = \"6 (see below)\",\n  numAttacks = 3,\n  damage = \"1-4/1-4/1-6\",\n  xp = 170,\n  xpPerHp = 5,\n  xpValue = 270,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = 20,\n  treasure = \"N,R,S,U\",\n  move = \"18\\\" or 24\\\" (see below)\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Screech; multiple attacks\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The caterwaul is a solitary, vicious feline bipedal predator with short midnight-blue fur, yellow eyes and a long tail. Its lair is usually a cave littered with twigs and rushes. Its treasure will consist only of shiny objects and it is particularly fond of gems. The walls of its cave will be covered with raking scratch marks where the caterwaul has honed its claws.\\n\\nThe beast has an uncanny natural agility which varies from individual to individual - roll on the table below when a specimen is encountered, using percentile dice:\\n\\nThe agility table reads: 01-42 no armour class bonus (AC 6) with 1 attack per round; 43-73 -1 (AC 5) with 3 attacks per 2 rounds; 74-92 -2 (AC 4) with 3 attacks per 2 rounds; on 93-00 roll again on the sub-table - 01-40 -3 (AC 3) with 2 attacks per round, 41-67 -4 (AC 2) with 2 attacks per round, 68-85 -5 (AC 1) with 2 attacks per round, 86-96 -6 (AC 0) with 5 attacks per 2 rounds, 97-00 -7 (AC -1) with 5 attacks per 2 rounds.\\n\\nArmour class bonus: this dexterity bonus also applies to dodging ability and to saving throws against fireball, lightning bolt and the like.\\n\\nAttacks/round: use this table in exactly the same way as the multiple attack table for fighters, rangers and paladins.\\n\\nThe caterwaul can move swiftly on two legs and can reach top speed (24\\\" rate) in short bursts when dropping to all-fours. As it has the ability to climb almost every surface (base 5% chance of slipping), move silently (75%) and hide in shadows (75%), its preferred method of attack is to lurk high above and spring down on an unsuspecting quarry. It has keen hearing and an exceptional sense of smell and is therefore difficult to surprise (10% chance).\\n\\nIts initial attack (and this attack only) is always accompanied by a high-pitched keening screech which is of a frequency to do 1-8 hit points of damage to all hearing within 60' (a character who saves against breath takes no damage).\\n\\nThe caterwaul attacks with two claws (1-4 hit points of damage each) and one bite (1-6 hit points of damage) each round, or more frequently as indicated above.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/c/cifal.lua",
+      "content": "-- Cifal: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Cifal\",\n  page = \"19\",\n  pages = \"19\",\n  source = \"FF\",\n  race = \"Cifal\",\n  hitDice = \"8 or 10 (see below)\",\n  hitDiceNum = 10,\n  hitDiceBonus = 0,\n  avgHp = 45,\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-12\",\n  xp = 1350,\n  xpPerHp = 14,\n  xpValue = 1980,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-6\",\n  lairPct = 15,\n  treasure = \"Q\",\n  move = \"6\\\" (see below)\",\n  size = \"M\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Damage from edged weapons reduced - see below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The cifal - the name is acronymic of 'colonial insect-formed artificial life' - is an agglomeration of several swarms of insects (several hundred thousand insects to each swarm) which come together to form a single amorphous creature about man-sized.\\n\\nThe mass as a whole has 8 hit dice while another 2 hit dice are involved in providing the nuclear energy required to keep the constituent swarms locked in a single body. It is from the hit points of the latter 2 hit dice that initial damage is extracted, and if these hit points are lost the mass body will separate into its individual component insects, at which point the insects will fly away at 24\\\" rate - they will only attack and defend in mass body form. However, the hit points of the binding force may be replaced from the hit points of the remainder of the mass body at the rate of 2 hit points per melee round.\\n\\nThe cifal attacks by an agglomeration of tiny bites which collectively inflict 1-12 hit points of damage.\\n\\nEdged weapons only cause 1 hit point of damage on the cifal whatever type of weapon is used and whether it is magical or not. Blunt weapons cause full normal damage.\\n\\nStrictly speaking, this creature does not fly and the movement rate given above refers to movement along the ground, albeit the result of the flying speed of the swarms restricted by the need to maintain coherence of shape. The cifal has no aerial manoeuvrability class, but the constituent insects are of manoeuvrability class A.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/c/clubnek.lua",
+      "content": "-- Clubnek: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Clubnek\",\n  page = \"19\",\n  pages = \"19\",\n  source = \"FF\",\n  race = \"Clubnek\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"8\",\n  numAttacks = 3,\n  damage = \"1-6/1-6/1-8\",\n  xp = 20,\n  xpPerHp = 2,\n  xpValue = 38,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"2-8\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\" (see below)\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These creatures are mutated forms of the ostrich with hard bony beaks which can inflict 1-8 hit points of damage. They also fight with their two claws, each of which inflicts 1-6 hit points of damage.\\n\\nThey can make occasional bursts of high speed and can achieve a movement rate of 24\\\" one melee round in every five.\\n\\nClubneks are coloured varying shades of green and have yellow beaks. They are not normally aggressive unless threatened, but their behaviour is rather erratic and unpredictable. Normally they are herbivorous and are rarely found below the ground, preferring to roam meadowland and woods.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/c/coffer_corpse.lua",
+      "content": "-- Coffer Corpse: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Coffer Corpse\",\n  page = \"19\",\n  pages = \"19-21\",\n  source = \"FF\",\n  race = \"Coffer Corpse\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"1-6 or by weapon type\",\n  xp = 36,\n  xpPerHp = 2,\n  xpValue = 54,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = 80,\n  treasure = \"B\",\n  move = \"6\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Can only be hit by magical weapons\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These foul creatures of the undead class are found in stranded funeral barges or in any other situation in which a corpse has failed to return to its maker. Though the coffer corpse resembles a zombie it is treated as a wraith on the cleric/undead table.\\n\\nNormal weapons appear to do damage, and if a coffer corpse is struck for more than 6 hit points of damage by normal weapons in a single melee round, it will fall to the ground, apparently finished. However normal weapons do not, in fact, do any damage to the creature, and if it has fallen to the ground one round, it will rise up the next and continue melee - at which time all involved in melee with the beast must save against fear or flee in panic.\\n\\nA coffer corpse is occasionally (25%) found with a weapon which it\\n\\nwill use in combat, but otherwise it will attack with its bare hands (treat as a single attack inflicting 1-6 hit points of damage). If attacking with bare hands, a hit indicates that the coffer corpse has locked its hands around its victim's throat. Each round thereafter, it will inflict 1-6 hit points of damage on its victim automatically (a 'to hit' roll is not required) until it is killed or its victim is dead. Nothing will release the grasp of the coffer corpse once it has locked its hands in place.\\n\\nSleep, charm and other mind-influencing spells do not affect these creatures. Magical weapons can inflict damage on these creatures with the usual bonus.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/c/crabman.lua",
+      "content": "-- Crabman: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Crabman\",\n  page = \"21\",\n  pages = \"21\",\n  source = \"FF\",\n  race = \"Crabman\",\n  hitDice = \"3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 0,\n  avgHp = 14,\n  armorClass = \"4\",\n  numAttacks = 2,\n  damage = \"1-4/1-4\",\n  xp = 35,\n  xpPerHp = 3,\n  xpValue = 77,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-12\",\n  lairPct = 25,\n  treasure = \"K\",\n  move = \"9\\\"/6\\\"\",\n  size = \"L (9' tall)\",\n  intelligence = \"Low to average\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Amphibious creatures usually found in sea-shore caves, crabmen are humanoid in appearance but with a hard, reddish-brown exoskeleton. Instead of hands they have two pincers which they use in combat, each inflicting 1-4 hit points of damage on a victim.\\n\\nCrabmen greatly value silver and will go to any lengths to obtain it, even attacking a character suspected of carrying any item made of this metal. In normal circumstances, however, they are quite pacific creatures, though from time to time an instinct makes them leave their coastal dwelling to mount a savage raid inland, roaming in bands of 30 or 40 creatures and pillaging all property in their path, not hesitating to attack those who would defend.\\n\\nCrabmen are often subjected to raids by sahuagin who consider them a tasty delicacy. However the sahuagin's usual net-throwing tactics are ineffective against crabmen since the latter's natural weaponry allows them to cut through nets very quickly.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/c/crypt_thing.lua",
+      "content": "-- Crypt Thing: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Crypt Thing\",\n  page = \"21\",\n  pages = \"21-22\",\n  source = \"FF\",\n  race = \"Crypt Thing\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 27,\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"1-8\",\n  xp = 275,\n  xpPerHp = 6,\n  xpValue = 437,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 100,\n  treasure = \"Z\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Very\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"A pale, solitary skeletal being which always wears a brown, hooded robe, the crypt thing stays in its lair permanently (at least, none have been encountered elsewhere) and will not attack if it is left undisturbed.\\n\\nIts special power is its unfailing ability to cast an improved form of a teleportation spell on a party (once per party encountered). Those who fail to make their saving throws are instantly teleported according to a percentile die roll on the table below:\\n\\nThe teleport destinations read: 01-20 100-1000 feet north; 21-40 100-1000 feet south; 41-60 100-1000 feet east; 61-80 100-1000 feet west; 81-90 one dungeon level up; 91-00 one dungeon level down.\\n\\nDistance and direction are determined individually for each victim teleported. Victims never arrive in solid material and will arrive in the closest open space to the target spot, if the target spot is solid; however victims need not arrive at floor level.\\n\\nThose who make their saving rolls may attack the crypt thing, but it can only be hit by magical weapons. The crypt thing will attack in return, using a two-handed clawing movement which inflicts 1-8 hit points of damage.\\n\\nThe crypt thing can communicate in the neutral tongue, but if it is questioned on the disappearance of some members of a party, it will not reveal its power but will instead maintain they have been disintegrated.\\n\\nThere are rumoured to be aberrant crypt things in existence which, instead of teleporting victims, paralyse them and simultaneously turn them invisible. Neither this nor the more common type feeds on victims, however - their aim appears to be solely that of obtaining pleasure by creating confusion and dissent.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/d/dakon.lua",
+      "content": "-- Dakon: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Dakon\",\n  page = \"22\",\n  pages = \"22\",\n  source = \"FF\",\n  race = \"Dakon\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 6,\n  armorClass = \"5\",\n  numAttacks = 2,\n  damage = \"1-10/1-10\",\n  xp = 20,\n  xpPerHp = 2,\n  xpValue = 32,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"6-60\",\n  lairPct = 50,\n  treasure = \"E\",\n  move = \"6\\\"\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Lawful neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"A shabby, intelligent ape with a reasonable grasp of the common tongue, the dakon will never attack except in self-defence or to recover treasure stolen from it. When it attacks it does so at +2 hit probability bonus because of its strength and sharpness of claws, using each claw to inflict 1-10 hit points of damage.\\n\\nThe dakon is usually a light brown colour with green eyes and black hands. It is found in all types of location except near large expanses of water. It is normally on good terms with lawful humans and near-humans, though it has a suspicion of the motives of humanoids and will not communicate with them.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/d/denzelian.lua",
+      "content": "-- Denzelian: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Denzelian\",\n  page = \"25\",\n  pages = \"25\",\n  source = \"FF\",\n  race = \"Denzelian\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 27,\n  armorClass = \"0\",\n  numAttacks = 0,\n  damage = \"Nil\",\n  xp = 0,\n  xpPerHp = 0,\n  xpValue = 0,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 100,\n  treasure = \"Nil\",\n  move = \"1\\\"\",\n  size = \"S\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The denzelian is a peaceful rock-eater. Very thin, but of large surface area (about 10'x10'x3\\\"), the denzelian tunnels through solid rock at the rate of 1' per week, slowly wearing it away. Generally one male and one female tunnel near one another. The creatures will avoid metal, making a detour round even small deposits - hence denzelian tunnels tend to follow a meandering course.\\n\\nBecause they look like stone, have a repulsive smell and are indigestible, denzelians are rarely bothered by flesh-eaters.\\n\\nDuring its 1,000-year lifespan the denzelian female ovulates once only. If a male is nearby (and one usually is) the resulting litter contains 3-8 eggs which hatch in 100 years. The eggs look like non-descript fist-sized stones. The chance of finding a single egg - for they are not deposited together - in an area frequented by a denzelian female is 1 in 1,000. An egg is worth 1,000 gold pieces or more to certain wealthy mine-owners.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/d/devil_dog.lua",
+      "content": "-- Devil Dog: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Devil Dog\",\n  page = \"26\",\n  pages = \"26\",\n  source = \"FF\",\n  race = \"Devil Dog\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 27,\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"2-8\",\n  xp = 350,\n  xpPerHp = 6,\n  xpValue = 512,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"4-16\",\n  lairPct = 10,\n  treasure = \"Nil\",\n  move = \"30\\\" maximum\",\n  size = \"M (3' at shoulder)\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Throat attack\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Stark-white hounds with blue eyes, devil dogs live in cold regions and when encountered in snow- or frost-covered areas are invisible beyond a range of 30'. They roam in packs in an endless search for food and will always attack human parties, being sly enough to use their protective colouration to the best advantage.\\n\\nThe devil dog uses a vicious biting attack and always jumps for the throat. Normal damage inflicted is 2-8 hit points, but if the 'to hit' die roll is 4 or more greater than required to hit, or a natural 20 in\\n\\nany event, a hit is scored on the throat - the victim suffers double damage, is comatose for 2-8 turns and must receive cure light wounds (or a stronger ministration of the same nature) during the comatose period to avoid death at the end of that period. (Of course the initial damage may kill the victim anyway).\\n\\nWhen attacking or giving chase - and devil dogs move very fast indeed - the creatures emit an intense baying which will cause fear in any character of the third experience level or lower unless they save at -4 on their die roll against magic. They can sustain their extraordinarily high (30\\\") movement rate for three turns, following which they must 'rest' for another three turns during which their maximum movement rate is 12\\\"\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/d/dragonfish.lua",
+      "content": "-- Dragonfish: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Dragonfish\",\n  page = \"30\",\n  pages = \"30\",\n  source = \"FF\",\n  race = \"Dragonfish\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 65,\n  xpPerHp = 2,\n  xpValue = 83,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"S\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Poison\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Dragonfish are 2' long, mottled brown flatfish which lurk on the bed of a shallow fresh-water pool or a slow-moving stream or river. They are very difficult to spot (15% chance even if the searchers know what they are seeking) because they merge extremely well with the background.\\n\\nThey have a fringe of horny spines tipped with poison (highly toxic - saving throw is at -1) which snap off in any victim who steps on them or puts his hand on them. The spines are very strong and will penetrate leather boots.\\n\\nIn melee dragonfish bite for 1-6 hit points of damage. The spines themselves do not cause damage other than the poison damage.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/d/dune_stalker.lua",
+      "content": "-- Dune Stalker: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Dune Stalker\",\n  page = \"30\",\n  pages = \"30\",\n  source = \"FF\",\n  race = \"Dune Stalker\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 27,\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"2-12\",\n  xp = 400,\n  xpPerHp = 6,\n  xpValue = 562,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"High\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Kiss of death\",\n  specialDefenses = \"Only damaged by magical weapons\",\n  magicResistance = \"30%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"A vile naked human in appearance, bony and with long sharp fingers and clawed toes, the dune stalker roams desert areas in response to summons from high level evil magicians. It will attack good characters only; any alignment combined with good will attract attack.\\n\\nIt is a faultless tracker, as the invisible stalker (see ADVANCED DUNGEONS & DRAGONS, MONSTER MANUAL - Invisible Stalker) once set on a particular mission.\\n\\nThe dune stalker's attack is usually by sonic vibration which has a range of 60' and delivers 2-12 hit points of damage on a single target (saving throw not permitted). In close contact the stalker can deliver the 'kiss of death' by placing its lips in direct contact with skin. The sonic vibrations thus set up in the victim's body are of such an intensity that failure to make a saving throw versus spells means instant death. A successful saving throw negates the effect.\\n\\nDune stalkers can only be harmed by magical weapons.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/k/kelpie.lua",
+      "content": "-- Kelpie: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Kelpie\",\n  page = \"55\",\n  pages = \"55\",\n  source = \"FF\",\n  race = \"Kelpie\",\n  hitDice = \"5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 23,\n  armorClass = \"3\",\n  numAttacks = 0,\n  damage = \"Nil\",\n  xp = 165,\n  xpPerHp = 5,\n  xpValue = 280,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-4\",\n  lairPct = 70,\n  treasure = \"D\",\n  move = \"9\\\"//12\\\"\",\n  size = \"M\",\n  intelligence = \"Low-average\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Kelpies are a form of intelligent aquatic plant life that, in their own shape, rather resemble a pile of wet seaweed. They are able to shape their bodies into any form they choose, and will often assume the aspect of a beautiful human woman in order to lure men into deep waters. They have also been known to take the shape of a horse. However, though the form may be changed, the substance still resembles green seaweed and the effect is somewhat grotesque.\\n\\nTo counter this, the kelpie can cast one powerful charm spell per day. If the victim does not save against spells (at -2) he will perceive the kelpie as the most wonderful, perfect and desirable woman (or steed, perhaps) and will willingly leap into the water to join her (or gain it). The kelpie will wrap itself around the charmed man, he will attempt to inhale water and sink with the kelpie in an ecstasy of drowning. If left alone, he will happily drown and be dragged off to the kelpie's lair to be consumed. Even if the kelpie cannot physically reach the charmed victim, he will still try to swim downward and breathe water. If the charming kelpie is killed, the spell will be broken immediately. Charmed victims attempting to drown themselves will suffer 2-20 hit points of damage per melee round until they either surface for air or perish.\\n\\nFor some reason, females are immune to the spell of the kelpie. Legend has it that this is so because kelpies were created by the sea-god as punishment for those men who are rash enough to sail the oceans without paying their lord his proper respect. Women were not involved in these transgressions and thus did not incur the sea-lord's ill will. Others say that Olhydra, the Elemental Princess of Evil Water Creatures, created the kelpies and rendered females immune in proper regard for her own gender.\\n\\nBesides the oceans and the seas, kelpies will also be found in dismal swamps and stagnant subterranean grottos; occasionally they will be found in almost any deep body of water, even man-made. They can leave the water to walk on land for short periods of time (1-3 hours maximum).\\n\\nDue to their slimy wetness, fire attacks do only half damage on kelpies (none if a saving throw is made).\\n\\nKelpies are very cunning and will try to pick off stragglers, lone watchmen or tail-end members of groups if at all possible.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/q/quipper.lua",
+      "content": "-- Quipper: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Quipper\",\n  page = \"74\",\n  pages = \"74\",\n  source = \"FF\",\n  race = \"Quipper\",\n  hitDice = \"1-4 hit points\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 3,\n  armorClass = \"8\",\n  numAttacks = 1,\n  damage = \"1-2\",\n  xp = 5,\n  xpPerHp = 1,\n  xpValue = 8,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"5-50 (5% chance of 10-100)\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"S (3'-6' long)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Quippers are small, vicious fish which usually swim in large shoals. They are dark green in colour and inhabit fresh-water lakes and streams.\\n\\nThe quipper is a rare species of cold-water piranha. If anyone is swimming or wading near a shoal the quippers may (25%) not attack. However if they do attack and score a hit, drawing blood with their sharp teeth and inflicting 1-2 hit points of damage, the entire shoal will go berserk and will inflict double the normal number of attacks per round.\\n\\nUp to 20 quippers can attack a human-sized victim simultaneously. When determining initial attack, roll first to determine whether or not the attack is made. Then roll percentage dice again, if there is to be an attack, to determine the percentage of the shoal which actually attempts to hit in the first round. Roll attacks for that number of quippers, and if at least one hits, all the shoal will attack in the next round (no more than 20 can actually attempt to hit). If all the quippers attacking in the first round fail to hit, it is only 40% likely that they will pursue their attack the next round.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/t/throat_leech.lua",
+      "content": "-- Throat Leech: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Throat Leech\",\n  page = \"88\",\n  pages = \"88\",\n  source = \"FF\",\n  race = \"Throat Leech\",\n  hitDice = \"1 hit point\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 1,\n  armorClass = \"10\",\n  numAttacks = 1,\n  damage = \"1-3\",\n  xp = 6,\n  xpPerHp = 0,\n  xpValue = 6,\n  xpSource = \"ff_print\",\n  frequency = \"Common\",\n  noAppearing = \"1-6\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"1\\\"/1\\\"\",\n  size = \"S (1\\\" long)\",\n  intelligence = \"Non-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Choke\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This leech is about 1\\\" long and resembles an inconspicuous twig. It is always found in fresh water (streams, pools etc.)\\n\\nAnyone drinking water containing a leech may (10% chance) take it into his mouth unless the water is carefully filtered before drinking. The leech will fasten itself onto the soft flesh at the back of the victim's throat, sucking blood at the rate of 1-3 hit points of damage each melee round, until it becomes completely distended; after ten melee rounds of sucking, the leech will be bloated and will not suck any more blood.\\n\\nEach melee round the leech is in the victim's throat, there is a 50% chance that the victim will choke, causing an additional 1-4 hit points of damage. A victim who chokes in three successive rounds will die at the third choking.\\n\\nApart from magical means which may suggest themselves, the only way to kill a throat leech in a victim's throat is to place a thin, heated metal object such as a wire into the bloated leech; the hot metal will cause the leech to burst and no further damage is inflicted on the victim. However the person administering the 'cure' by this method runs a risk of burning the victim's throat for 1-4 hit points rather than the leech - the chance of a successful probe is 5% for each dexterity point of the person making the attempt.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/t/thork.lua",
+      "content": "-- Thork: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Thork\",\n  page = \"88\",\n  pages = \"88\",\n  source = \"FF\",\n  race = \"Thork\",\n  hitDice = \"3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 0,\n  avgHp = 14,\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 90,\n  xpPerHp = 3,\n  xpValue = 132,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-6\",\n  lairPct = 90,\n  treasure = \"1-20 platinum pieces\",\n  move = \"6\\\"/16\\\"\",\n  size = \"L (9' tall)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Breath weapon\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These stork-like birds live exclusively in or near water. Although they are similar to the stork in appearance and shape, closer inspection will reveal that the feathers are metallic - they are in fact pure copper - and for this reason a bird is worth up to 200 gold pieces. An observer will also notice that wisps of steam will normally be seen rising from the bird's beak, though no discernable heat is radiated by the body.\\n\\nThe 'boiler bird' is a benign creature and will only attack in self-defence - if an obviously hostile party approaches within 30', for example.\\n\\nTo attack, the thork squirts a jet of boiling water at its opponent. The jet takes the form of a cone with a 10' base diameter at the extreme range of 40'. If a victim is struck by the water jet, he will suffer 4-32 hit points of damage (a successful saving throw halves the damage). All opponents are treated as AC10 for the purposes of this attack.\\n\\nThe bird is capable of sucking in the necessary quantity of water and heating it in one melee round, so its breath weapon attack will take place one round after the creature decides on this course of action. However it is capable of delivering only three such attacks each day, after which it will attempt to elude its enemies by swimming away (or, if it cannot escape, it will defend itself by striking with its beak for 1-6 hit points of damage).\\n\\nThe thork collects only platinum pieces or other small objects made of that metal; it normally conceals them under a boulder or in a chink in a rock face near the water's edge.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/v/vodyanoi.lua",
+      "content": "-- Vodyanoi: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Vodyanoi\",\n  page = \"93\",\n  pages = \"93\",\n  source = \"FF\",\n  race = \"Vodyanoi\",\n  hitDice = \"8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 36,\n  armorClass = \"2\",\n  numAttacks = 3,\n  damage = \"3-12/3-12/1-10\",\n  xp = 650,\n  xpPerHp = 10,\n  xpValue = 1010,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-3\",\n  lairPct = 30,\n  treasure = \"G\",\n  move = \"6\\\"\",\n  size = \"L (8' tall, 5' wide)\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These predators are close aquatic relatives of the umber hulk (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL) which live in deep bodies of fresh water. They are similar in appearance to their cousins but have only two eyes (and thus lack the confusion ability of the umber hulk); their skin is green and slimy and they have webbed claws. They prey on large fresh-water creatures but view humans as particular delicacies. They are extremely territorial creatures and will ferociously defend the area around their lairs.\\n\\nTheir powerful claws are capable of rending the hull of any passing boat, while their strength and bulk allow them to overturn smaller vessels.\\n\\nIn melee they attack with their two claws (3-12 hit points of damage each) and their mandibles (1-10 hit points of damage). Once per day a vodyanoi can summon (with a 50% chance of success) 1-20 electric eels to its aid.\\n\\nIt is believed that a salt-water species exists which is twice as large and much more ferocious than the vodyanoi or the umber hulk, but little firm information is available.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/u/urchin_black.lua",
+      "content": "-- Urchin, Black: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Urchin, Black\",\n  page = \"92\",\n  pages = \"92\",\n  source = \"FF\",\n  race = \"Urchin, Black\",\n  hitDice = \"1+1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 1,\n  avgHp = 6,\n  armorClass = \"4\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 28,\n  xpPerHp = 2,\n  xpValue = 40,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-6\",\n  lairPct = 10,\n  treasure = \"Gem (10-100 gold pieces)\",\n  move = \"9\\\"//15\\\"\",\n  size = \"S (3' diameter)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The urchins constitute a family of marine creatures resembling 3' diameter balls of various colours with thousands of radiating spines 3\\\" long. The more hit dice the urchin, the more spines the creature can fire in a melee round. For practical purposes, urchins have an unlimited supply of spines to use as missiles.\\n\\nWhen the creature attacks, the spines are fired with the accuracy and range of a light crossbow, with a hit probability bonus numerically the same as the number of attacks (thus an urchin which attacks twice per round would fire two spines each round with the accuracy of a +2 light crossbow). If a spine hits, it inflicts hit points of damage which vary by type of urchin; the victim may also suffer additional effects (see individual descriptions below).\\n\\nUrchins have the innate power of clairvoyance and use this power in hunting victims, though they will not normally attack humans or near-humans unless they themselves are threatened or attacked.\\n\\nA dead urchin can be broken up quite easily; inside its body will be found a gem, its value and colour varying according to the type of urchin.\\n\\nAlthough urchins are usually found in salt-water habitats (90%) there is a 10% chance that an encounter with an urchin will take place on land, always within half a mile of salt water. It has a rolling locomotion on land and is capable of moving at a surprisingly high speed by this means.\\n\\nBlack Urchin: The most common of the urchins, the black urchin is more dark grey in colour than black.\\n\\nEach melee round the black urchin can fire 1 spine with the accuracy of a +1 light crossbow. A successful hit inflicts 1-6 hit points of damage on its victim.\\n\\nThe gem contained within the creature is worth 10-100 gold pieces.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/u/urchin_green.lua",
+      "content": "-- Urchin, Green: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Urchin, Green\",\n  page = \"92\",\n  pages = \"92\",\n  source = \"FF\",\n  race = \"Urchin, Green\",\n  hitDice = \"2+1\",\n  hitDiceNum = 2,\n  hitDiceBonus = 1,\n  avgHp = 10,\n  armorClass = \"3\",\n  numAttacks = 2,\n  damage = \"2-7/2-7\",\n  xp = 50,\n  xpPerHp = 3,\n  xpValue = 80,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = 10,\n  treasure = \"Gem (40-400 gold pieces)\",\n  move = \"9\\\"//18\\\"\",\n  size = \"S (3' diameter)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The urchins constitute a family of marine creatures resembling 3' diameter balls of various colours with thousands of radiating spines 3\\\" long. The more hit dice the urchin, the more spines the creature can fire in a melee round. For practical purposes, urchins have an unlimited supply of spines to use as missiles.\\n\\nWhen the creature attacks, the spines are fired with the accuracy and range of a light crossbow, with a hit probability bonus numerically the same as the number of attacks (thus an urchin which attacks twice per round would fire two spines each round with the accuracy of a +2 light crossbow). If a spine hits, it inflicts hit points of damage which vary by type of urchin; the victim may also suffer additional effects (see individual descriptions below).\\n\\nUrchins have the innate power of clairvoyance and use this power in hunting victims, though they will not normally attack humans or near-humans unless they themselves are threatened or attacked.\\n\\nA dead urchin can be broken up quite easily; inside its body will be found a gem, its value and colour varying according to the type of urchin.\\n\\nAlthough urchins are usually found in salt-water habitats (90%) there is a 10% chance that an encounter with an urchin will take place on land, always within half a mile of salt water. It has a rolling locomotion on land and is capable of moving at a surprisingly high speed by this means.\\n\\nGreen Urchin: This urchin is a pale green colour and is very difficult to detect by sight in water (5% chance).\\n\\nEach melee round the creature can fire two spines with the accuracy of a +2 light crossbow. If a spine hits, it inflicts 2-7 hit points of damage on the victim.\\n\\nThe gem contained within the creature is worth 40-400 gold pieces.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/u/urchin_red.lua",
+      "content": "-- Urchin, Red: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Urchin, Red\",\n  page = \"92\",\n  pages = \"92\",\n  source = \"FF\",\n  race = \"Urchin, Red\",\n  hitDice = \"3+1\",\n  hitDiceNum = 3,\n  hitDiceBonus = 1,\n  avgHp = 15,\n  armorClass = \"2\",\n  numAttacks = 3,\n  damage = \"2-5/2-5/2-5\",\n  xp = 85,\n  xpPerHp = 4,\n  xpValue = 145,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = 10,\n  treasure = \"Gem (90-900 gold pieces)\",\n  move = \"9\\\"//18\\\"\",\n  size = \"S (3' diameter)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Venom\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The urchins constitute a family of marine creatures resembling 3' diameter balls of various colours with thousands of radiating spines 3\\\" long. The more hit dice the urchin, the more spines the creature can fire in a melee round. For practical purposes, urchins have an unlimited supply of spines to use as missiles.\\n\\nWhen the creature attacks, the spines are fired with the accuracy and range of a light crossbow, with a hit probability bonus numerically the same as the number of attacks (thus an urchin which attacks twice per round would fire two spines each round with the accuracy of a +2 light crossbow). If a spine hits, it inflicts hit points of damage which vary by type of urchin; the victim may also suffer additional effects (see individual descriptions below).\\n\\nUrchins have the innate power of clairvoyance and use this power in hunting victims, though they will not normally attack humans or near-humans unless they themselves are threatened or attacked.\\n\\nA dead urchin can be broken up quite easily; inside its body will be found a gem, its value and colour varying according to the type of urchin.\\n\\nAlthough urchins are usually found in salt-water habitats (90%) there is a 10% chance that an encounter with an urchin will take place on land, always within half a mile of salt water. It has a rolling locomotion on land and is capable of moving at a surprisingly high speed by this means.\\n\\nRed Urchin: This creature is a dull red colour though its spines have black tips.\\n\\nEach melee round the red urchin can fire 3 spines with the accuracy of a +3 light crossbow. If a spine hits, it inflicts 2-5 hit points of damage on a victim; the tips of the spines also carry a venom which will put the victim to sleep for 1-4 melee rounds unless he makes a saving throw against poison.\\n\\nThe gem contained within the creature is worth 90-900 gold pieces.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/u/urchin_silver.lua",
+      "content": "-- Urchin, Silver: promoted by the R836 first FF promotion round\n-- from the FF print (spec tools/spec_r836.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Urchin, Silver\",\n  page = \"92\",\n  pages = \"92\",\n  source = \"FF\",\n  race = \"Urchin, Silver\",\n  hitDice = \"5+3\",\n  hitDiceNum = 5,\n  hitDiceBonus = 3,\n  avgHp = 26,\n  armorClass = \"0\",\n  numAttacks = 5,\n  damage = \"2-5/2-5/2-5/2-5/2-5\",\n  xp = 400,\n  xpPerHp = 6,\n  xpValue = 556,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 10,\n  treasure = \"Gem (250-2,500 gold pieces)\",\n  move = \"12\\\"//21\\\"\",\n  size = \"S (3' diameter)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Venom\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The urchins constitute a family of marine creatures resembling 3' diameter balls of various colours with thousands of radiating spines 3\\\" long. The more hit dice the urchin, the more spines the creature can fire in a melee round. For practical purposes, urchins have an unlimited supply of spines to use as missiles.\\n\\nWhen the creature attacks, the spines are fired with the accuracy and range of a light crossbow, with a hit probability bonus numerically the same as the number of attacks (thus an urchin which attacks twice per round would fire two spines each round with the accuracy of a +2 light crossbow). If a spine hits, it inflicts hit points of damage which vary by type of urchin; the victim may also suffer additional effects (see individual descriptions below).\\n\\nUrchins have the innate power of clairvoyance and use this power in hunting victims, though they will not normally attack humans or near-humans unless they themselves are threatened or attacked.\\n\\nA dead urchin can be broken up quite easily; inside its body will be found a gem, its value and colour varying according to the type of urchin.\\n\\nAlthough urchins are usually found in salt-water habitats (90%) there is a 10% chance that an encounter with an urchin will take place on land, always within half a mile of salt water. It has a rolling locomotion on land and is capable of moving at a surprisingly high speed by this means.\\n\\nSilver Urchin: This, the rarest of the urchins, is a dull silver in colour with black tips on the spines.\\n\\nEach melee round the silver urchin can fire 5 spines with the accuracy of a +5 light crossbow. If a spine hits, it inflicts 2-5 hit points of damage on a victim; the tips of the spines carry a venom which acts on the victim's nervous system and puts him into a catatonic trance for 1-3 days unless he makes his saving throw against poison.\\n\\nThe gem contained within the creature is worth 250-2,500 gold pieces.\",\n}\n"
+    }
+  ]
+}

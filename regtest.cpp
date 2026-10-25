@@ -537,6 +537,7 @@
 #include "rules/fmb.h"  // R833: the final digest migration batch
 #include "rules/hmb.h"  // R834: the holdback tooling patch
 #include "rules/ymb.h"  // R835: the final holdback batch
+#include "rules/ffp.h"  // R836: the first FF promotion batch
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -3342,7 +3343,7 @@ int main() {
                 "camel_bactrian",
                 "dervish",
                 "white_dragon",
-                "",
+                "devil_dog",
                 "wolf",
                 "wolfwere",
                 "giant_lynx",
@@ -3364,15 +3365,15 @@ int main() {
                 "tiger",
                 "raven_giant",
                 "wolf",
-                "",
+                "devil_dog",
                 "bugbear",
                 "",
                 "succubus",
             },
             {  // grid 6, the cold civilized mountains
-                "",
+                "denzelian",
                 "xorn",
-                "",
+                "aarakocra",
                 "berserker",
                 "",
                 "goblin",
@@ -3449,7 +3450,7 @@ int main() {
                 "pseudo_undead",
                 "ghast",
                 "",
-                "",
+                "coffer_corpse",
                 "bugbear",
                 "varrdig",
             },
@@ -3492,7 +3493,7 @@ int main() {
                 "dervish",
                 "berserker",
                 "griffon",
-                "",
+                "crypt_thing",
                 "movanic_deva",
             },
             {  // grid 12, the temperate wilderness mountains
@@ -3502,7 +3503,7 @@ int main() {
                 "spotted_lion",
                 "bat_mobat",
                 "stone_giant",
-                "",
+                "blood_hawk",
                 "vulture_ordinary",
                 "large_spider",
                 "dwarf",
@@ -3551,7 +3552,7 @@ int main() {
                 "black_bear",
                 "stag_beetle",
                 "giant_porcupine",
-                "",
+                "clubnek",
                 "owlbear",
                 "kech",
                 "greenhag",
@@ -3559,7 +3560,7 @@ int main() {
                 "basilisk_greater",
             },
             {  // grid 15, the temperate wilderness swamp and marsh
-                "",
+                "algoid",
                 "mist_dragon",
                 "troll",
                 "shambling_mound",
@@ -3573,7 +3574,7 @@ int main() {
                 "orc",
                 "wyvern",
                 "basidirond",
-                "",
+                "caterwaul",
                 "eblis",
                 "pseudo_undead",
                 "giant_crayfish",
@@ -3602,7 +3603,7 @@ int main() {
             },
             {  // grid 17, the temperate wilderness desert
                 "fire_giant",
-                "",
+                "dune_stalker",
                 "lammasu",
                 "purple_worm",
                 "fly_horsefly",
@@ -3685,7 +3686,7 @@ int main() {
                 "shedu",
             },
             {  // grid 21, the temperate civilized swamp and marsh
-                "",
+                "kelpie",
                 "giant_crayfish",
                 "goblin",
                 "poisonous_frog",
@@ -3748,7 +3749,7 @@ int main() {
                 "type_i_vrock",
             },
             {  // grid 24, the tropical wilderness mountains
-                "",
+                "aarakocra",
                 "black_dragon",
                 "wind_walker",
                 "red_dragon",
@@ -3785,7 +3786,7 @@ int main() {
                 "scorpion_large",
                 "hyena",
                 "hieracosphinx",
-                "",
+                "assassin_bug",
                 "axe_beak",
                 "vilstrak",
             },
@@ -3825,8 +3826,8 @@ int main() {
                 "rat_ordinary",
                 "sundew_giant",
                 "troll",
-                "",
-                "",
+                "caterwaul",
+                "cifal",
                 "giant_dragonfly",
                 "guardian_naga",
                 "black_dragon",
@@ -3837,7 +3838,7 @@ int main() {
                 "wyvern",
                 "thri_kreen",
                 "hybsil",
-                "",
+                "dakon",
                 "owl",
                 "baboon",
                 "wild_boar",
@@ -3869,7 +3870,7 @@ int main() {
                 "scorpion_large",
                 "ant_lion",
                 "moon_dog",
-                "",
+                "dune_stalker",
                 "formian_worker",
                 "jann",
             },
@@ -4143,7 +4144,7 @@ int main() {
                 "swanmay",
             },
             {  // grid 1, the the cold freshwater depths
-                "storm_giant", "verme", "", "", "sirine", "ghoul",
+                "storm_giant", "verme", "quipper", "vodyanoi", "sirine", "ghoul",
                 "gargoyle", "giant_crab", "giant_pike", "otter", "octopus",
                 "giant_gar", "merrow", "snapping_turtle", "lamprey",
                 "hippocampus", "morkoth", "giant_otter", "nereid",
@@ -4155,7 +4156,7 @@ int main() {
                 "will_o_wisp", "seawolf_greater", "selkie", "dragon_turtle",
             },
             {  // grid 3, the the cold saltwater depths
-                "verme", "water_weird", "seawolf_lesser", "", "", "dolphin",
+                "verme", "water_weird", "seawolf_lesser", "urchin_green", "urchin_red", "dolphin",
                 "elf", "shark", "giant_crab", "narwhale", "octopus", "whale",
                 "sea_lion", "gargoyle", "giant_squid", "octopus",
                 "green_slime", "titan", "lung_wang",
@@ -4163,39 +4164,39 @@ int main() {
             {  // grid 4, the the temperate freshwater surface
                 "giant_dragonfly", "carp_giant", "lizard_man",
                 "crystal_ooze", "buccaneer", "merrow", "swan", "crocodile",
-                "merchant", "", "crane_giant", "", "giant_crayfish",
+                "merchant", "throat_leech", "crane_giant", "", "giant_crayfish",
                 "giant_frog", "sirine", "giant_otter", "scrag_freshwater",
                 "red_dragon", "boobrie",
             },
             {  // grid 5, the the temperate freshwater depths
                 "mud_man", "muckdweller", "giant_beaver", "giant_lamprey",
                 "lizard_man", "snapping_turtle", "gargoyle", "water_beetle",
-                "water_spider", "", "crocodile", "giant_otter",
+                "water_spider", "throat_leech", "crocodile", "giant_otter",
                 "giant_crayfish", "lamprey", "carp_giant", "giant_gar",
-                "octopus", "", "lizard_man",
+                "octopus", "algoid", "lizard_man",
             },
             {  // grid 6, the the temperate saltwater surface
-                "ki_rin", "cloud_dragon", "", "", "", "giant_eel", "",
+                "ki_rin", "cloud_dragon", "", "", "crabman", "giant_eel", "",
                 "plesiosaurus", "merchant", "shark", "whale", "",
                 "elasmosaurus", "will_o_wisp", "giant_crab", "ghoul",
                 "bronze_dragon", "seawolf_greater", "verme",
             },
             {  // grid 7, the the temperate saltwater depths
                 "morkoth", "kraken", "narwhale", "giant_lamprey",
-                "giant_shark", "sea_lion", "", "plesiosaurus", "sea_horse",
+                "giant_shark", "sea_lion", "urchin_black", "plesiosaurus", "sea_horse",
                 "shark", "whale", "", "masher", "giant_eel", "dragon_turtle",
                 "purple_worm", "seawolf_lesser", "eye_of_the_deep", "titan",
             },
             {  // grid 8, the the tropical freshwater surface
                 "froghemoth", "couatl", "catfish_giant", "crystal_ooze",
                 "mist_dragon", "giant_spider", "giant_crayfish", "merchant",
-                "", "crocodile", "", "behemoth", "giant_frog",
-                "hippopotamus", "sirine", "merman", "manticore", "", "",
+                "", "crocodile", "throat_leech", "behemoth", "giant_frog",
+                "hippopotamus", "sirine", "merman", "manticore", "kelpie", "thork",
             },
             {  // grid 9, the the tropical freshwater depths
-                "verme", "weed", "", "", "behemoth", "merman",
+                "verme", "weed", "kelpie", "vodyanoi", "behemoth", "merman",
                 "snapping_turtle", "water_beetle", "dinichthys",
-                "water_spider", "", "", "archelon_ischyros", "gargoyle", "",
+                "water_spider", "throat_leech", "dragonfish", "archelon_ischyros", "gargoyle", "bunyip",
                 "lizard_man", "shen_lung", "sea_hag", "water_weird",
             },
             {  // grid 10, the the tropical saltwater surface
@@ -4206,8 +4207,8 @@ int main() {
                 "ixitxachitl", "triton",
             },
             {  // grid 11, the the tropical saltwater depths
-                "morkoth", "", "giant_crocodile", "octopus", "pungi_ray",
-                "sahuagin", "", "dinichthys", "sting_ray", "shark", "",
+                "morkoth", "urchin_silver", "giant_crocodile", "octopus", "pungi_ray",
+                "sahuagin", "urchin_black", "dinichthys", "sting_ray", "shark", "",
                 "strangle_weed", "barracuda", "nothosaurus", "electric_eel",
                 "triton", "wereshark", "kraken", "ixitxachitl",
             },
@@ -4584,6 +4585,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r836_batch.h"  // R836: R836 first FF promotion audit
 #include "rules/audits/r835_batch.h"  // R835: R835 final holdback batch audit
 #include "rules/audits/r834_batch.h"  // R834: R834 holdback tooling patch audit
 #include "rules/audits/r833_batch.h"  // R833: R833 final digest batch audit
