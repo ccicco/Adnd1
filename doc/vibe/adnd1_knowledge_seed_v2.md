@@ -23066,6 +23066,51 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   width-gate holdbacks (35-ish,
   79-81 col lines) stay queued for
   a future fix round.
+- R829 LANDED 2026-10-25: commit
+  895e032abea18c53eb3c2bc5f27614138b07467e
+  (census 751 -> 752, pushed
+  508fc72..895e032), THE UA AND
+  WSG MIGRATION BATCH - the sixth
+  batch of real blocks leaves
+  regtest at the 100-per-round
+  pace (the REGTEST DECOMPOSITION
+  ARC). THE MOVE: digest idx
+  239-338 (R357 UA MU 2nd level
+  spells through R458 WSG
+  portaging - the UA pins and
+  appendices, the WSG pins; 100
+  blocks, 18485 lines, ZERO blocks
+  held back) migrated VERBATIM
+  into rules/audits fragments
+  (r357_ua_mu_2nd_level.h through
+  r458_wsg_portaging.h). R829's own
+  audit rode rules/audits/r829_batch.h.
+  Header rules/vmb.h, prefix vmb
+  (verified free at 508fc72, 0
+  hits), 6 consts + 4 bools (inline
+  10), 4 examples, the R828 record
+  seated into the seed, NO gap
+  flips (MM2 stays 37 closed 0
+  open), NO tool patches. GATES:
+  dress rehearsal on a copy of
+  the REAL tree at 508fc72 (the
+  whole rules/audits dir carried);
+  double-run 105/0 -> 0/105;
+  fragments byte-exact; regtest
+  reconstruction byte-for-byte;
+  census 442 + 310 = 752, all 752
+  preflight patterns unique each
+  once; rverify GREEN (10 mutants,
+  0 missed). Delivery spec-r829
+  canvas: spec 19681 bytes, md5
+  95982d286c72b412c953b019bd8b2163,
+  landed the same. NEXT: awaits
+  Curtiss's Go - the seventh batch
+  rides the same wiring (digest idx
+  339 onward: R459 WSG capsized use
+  pin at the next head), at 100
+  blocks per round; the ~35
+  width-gate holdbacks stay queued.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

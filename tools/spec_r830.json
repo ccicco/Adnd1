@@ -1,0 +1,595 @@
+{
+  "round": 830,
+  "title": "the WSG tail and DSG migration batch",
+  "prefix": "xmb",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/xmb.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the WSG tail and DSG migration batch - the seventh batch rides the same wiring",
+    "provenance": "spec-driven; the seventh batch of real audit blocks (digest idx 339-440, R459 WSG capsized use through R561 DSG DM section - the WSG tail pins, the DSG surface and Deepearth and campaign pins; 100 blocks at Curtiss's 100-per-round pace call, 19526 lines) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"
+  },
+  "census_before": 752,
+  "inline_count": 10,
+  "consts": [
+    {
+      "name": "xmb_batch",
+      "value": 100,
+      "comment": "the blocks in the WSG tail and DSG batch"
+    },
+    {
+      "name": "xmb_moving_lines",
+      "value": 19526,
+      "comment": "the lines the batch moves"
+    },
+    {
+      "name": "xmb_first_head",
+      "value": 50955,
+      "comment": "the digest head line of R459 capsized use"
+    },
+    {
+      "name": "xmb_last_end",
+      "value": 74362,
+      "comment": "the digest end line of R561 DSG DM"
+    },
+    {
+      "name": "xmb_largest",
+      "value": 763,
+      "comment": "the largest moving block - R504 DSG movement I"
+    },
+    {
+      "name": "xmb_smallest",
+      "value": 14,
+      "comment": "the smallest moving block - R549 Deepearth closed"
+    }
+  ],
+  "bools": [
+    {
+      "name": "xmb_audit_rides",
+      "value": true,
+      "comment": "this round audit rides a fragment"
+    },
+    {
+      "name": "xmb_blocks_move",
+      "value": true,
+      "comment": "the blocks move verbatim, never hand-authored"
+    },
+    {
+      "name": "xmb_gates_recheck",
+      "value": true,
+      "comment": "the gates re-verify each block"
+    },
+    {
+      "name": "xmb_census_holds",
+      "value": true,
+      "comment": "the census survives the move"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "header_sections": {
+    "the WSG tail and DSG batch": [
+      {
+        "kind": "const",
+        "name": "xmb_batch"
+      },
+      {
+        "kind": "const",
+        "name": "xmb_moving_lines"
+      },
+      {
+        "kind": "const",
+        "name": "xmb_first_head"
+      },
+      {
+        "kind": "const",
+        "name": "xmb_last_end"
+      },
+      {
+        "kind": "const",
+        "name": "xmb_largest"
+      },
+      {
+        "kind": "const",
+        "name": "xmb_smallest"
+      },
+      {
+        "kind": "bool",
+        "name": "xmb_audit_rides"
+      },
+      {
+        "kind": "bool",
+        "name": "xmb_blocks_move"
+      },
+      {
+        "kind": "bool",
+        "name": "xmb_gates_recheck"
+      },
+      {
+        "kind": "bool",
+        "name": "xmb_census_holds"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['xmb_batch']() != 100",
+      "note": "the batch is the third hundred blocks"
+    },
+    {
+      "expr": "m['xmb_moving_lines']() != m['xmb_batch']() * 195 + 26",
+      "note": "the moving lines against the batch size"
+    },
+    {
+      "expr": "m['xmb_smallest']() + m['xmb_largest']() != 777",
+      "note": "the size extremes of the batch"
+    },
+    {
+      "expr": "m['xmb_last_end']() - m['xmb_first_head']() != 23407",
+      "note": "the digest span of the batch"
+    }
+  ],
+  "audit_label": "R830 WSG DSG batch audit",
+  "audit_comment": "the seventh migration batch: the WSG tail pins and the DSG surface, Deepearth, and campaign pins ride the wiring; the batch constants check themselves",
+  "audit_file": "rules/audits/r830_batch.h",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "include_comment": "the WSG tail and DSG migration batch",
+  "include_after": "#include \"rules/vmb.h\"  // R829: the UA and WSG migration batch",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R829 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R829 LANDED 2026-10-25: commit",
+    "  895e032abea18c53eb3c2bc5f27614138b07467e",
+    "  (census 751 -> 752, pushed",
+    "  508fc72..895e032), THE UA AND",
+    "  WSG MIGRATION BATCH - the sixth",
+    "  batch of real blocks leaves",
+    "  regtest at the 100-per-round",
+    "  pace (the REGTEST DECOMPOSITION",
+    "  ARC). THE MOVE: digest idx",
+    "  239-338 (R357 UA MU 2nd level",
+    "  spells through R458 WSG",
+    "  portaging - the UA pins and",
+    "  appendices, the WSG pins; 100",
+    "  blocks, 18485 lines, ZERO blocks",
+    "  held back) migrated VERBATIM",
+    "  into rules/audits fragments",
+    "  (r357_ua_mu_2nd_level.h through",
+    "  r458_wsg_portaging.h). R829's own",
+    "  audit rode rules/audits/r829_batch.h.",
+    "  Header rules/vmb.h, prefix vmb",
+    "  (verified free at 508fc72, 0",
+    "  hits), 6 consts + 4 bools (inline",
+    "  10), 4 examples, the R828 record",
+    "  seated into the seed, NO gap",
+    "  flips (MM2 stays 37 closed 0",
+    "  open), NO tool patches. GATES:",
+    "  dress rehearsal on a copy of",
+    "  the REAL tree at 508fc72 (the",
+    "  whole rules/audits dir carried);",
+    "  double-run 105/0 -> 0/105;",
+    "  fragments byte-exact; regtest",
+    "  reconstruction byte-for-byte;",
+    "  census 442 + 310 = 752, all 752",
+    "  preflight patterns unique each",
+    "  once; rverify GREEN (10 mutants,",
+    "  0 missed). Delivery spec-r829",
+    "  canvas: spec 19681 bytes, md5",
+    "  95982d286c72b412c953b019bd8b2163,",
+    "  landed the same. NEXT: awaits",
+    "  Curtiss's Go - the seventh batch",
+    "  rides the same wiring (digest idx",
+    "  339 onward: R459 WSG capsized use",
+    "  pin at the next head), at 100",
+    "  blocks per round; the ~35",
+    "  width-gate holdbacks stay queued."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "migrate_blocks": [
+    {
+      "label": "R459 WSG capsized use pin audit",
+      "fragment": "rules/audits/r459_wsg_capsized_use_pin.h"
+    },
+    {
+      "label": "R460 WSG flying mounts pin audit",
+      "fragment": "rules/audits/r460_wsg_flying_mounts_pin.h"
+    },
+    {
+      "label": "R461 WSG airborne fall chance pin audit",
+      "fragment": "rules/audits/r461_wsg_airborne_fall_chance.h"
+    },
+    {
+      "label": "R462 WSG food and water pin audit",
+      "fragment": "rules/audits/r462_wsg_food_and_water_pin.h"
+    },
+    {
+      "label": "R463 WSG foraging pin audit",
+      "fragment": "rules/audits/r463_wsg_foraging_pin.h"
+    },
+    {
+      "label": "R464 WSG hunting pin audit",
+      "fragment": "rules/audits/r464_wsg_hunting_pin.h"
+    },
+    {
+      "label": "R465 WSG fishing pin audit",
+      "fragment": "rules/audits/r465_wsg_fishing_pin.h"
+    },
+    {
+      "label": "R466 WSG food carrying pin audit",
+      "fragment": "rules/audits/r466_wsg_food_carrying_pin.h"
+    },
+    {
+      "label": "R467 WSG finding water pin audit",
+      "fragment": "rules/audits/r467_wsg_finding_water_pin.h"
+    },
+    {
+      "label": "R468 WSG where water pin audit",
+      "fragment": "rules/audits/r468_wsg_where_water_pin.h"
+    },
+    {
+      "label": "R469 WSG water in the desert pin audit",
+      "fragment": "rules/audits/r469_wsg_water_in_the_desert_.h"
+    },
+    {
+      "label": "R470 WSG purifying water pin audit",
+      "fragment": "rules/audits/r470_wsg_purifying_water_pin.h"
+    },
+    {
+      "label": "R471 WSG natural shelters pin audit",
+      "fragment": "rules/audits/r471_wsg_natural_shelters_pin.h"
+    },
+    {
+      "label": "R472 WSG portable shelters pin audit",
+      "fragment": "rules/audits/r472_wsg_portable_shelters_pi.h"
+    },
+    {
+      "label": "R473 WSG sleep and shelter pin audit",
+      "fragment": "rules/audits/r473_wsg_sleep_and_shelter_pi.h"
+    },
+    {
+      "label": "R474 WSG rest quality and fire pin audit",
+      "fragment": "rules/audits/r474_wsg_rest_quality_and_fir.h"
+    },
+    {
+      "label": "R475 WSG fuel and fire safety pin audit",
+      "fragment": "rules/audits/r475_wsg_fuel_and_fire_safety.h"
+    },
+    {
+      "label": "R476 WSG uncontrollable fires pin audit",
+      "fragment": "rules/audits/r476_wsg_uncontrollable_fires.h"
+    },
+    {
+      "label": "R477 WSG damage from fire pin audit",
+      "fragment": "rules/audits/r477_wsg_damage_from_fire_pin.h"
+    },
+    {
+      "label": "R478 WSG medicinal plants pin audit",
+      "fragment": "rules/audits/r478_wsg_medicinal_plants_pin.h"
+    },
+    {
+      "label": "R479 WSG plant lore pin audit",
+      "fragment": "rules/audits/r479_wsg_plant_lore_pin.h"
+    },
+    {
+      "label": "R480 WSG injuries treatment pin audit",
+      "fragment": "rules/audits/r480_wsg_injuries_treatment_p.h"
+    },
+    {
+      "label": "R481 WSG first aid equipment pin audit",
+      "fragment": "rules/audits/r481_wsg_first_aid_equipment_.h"
+    },
+    {
+      "label": "R482 WSG normal vision pin audit",
+      "fragment": "rules/audits/r482_wsg_normal_vision_pin.h"
+    },
+    {
+      "label": "R483 WSG infravision pin audit",
+      "fragment": "rules/audits/r483_wsg_infravision_pin.h"
+    },
+    {
+      "label": "R484 WSG ultravision pin audit",
+      "fragment": "rules/audits/r484_wsg_ultravision_pin.h"
+    },
+    {
+      "label": "R485 WSG artificial illumination pin audit",
+      "fragment": "rules/audits/r485_wsg_artificial_illuminat.h"
+    },
+    {
+      "label": "R486 WSG natural hazards pin audit",
+      "fragment": "rules/audits/r486_wsg_natural_hazards_pin.h"
+    },
+    {
+      "label": "R487 WSG hazards closer pin audit",
+      "fragment": "rules/audits/r487_wsg_hazards_closer_pin.h"
+    },
+    {
+      "label": "R488 WSG wilderness combat opener pin audit",
+      "fragment": "rules/audits/r488_wsg_wilderness_combat_op.h"
+    },
+    {
+      "label": "R489 WSG fatigue chapter pin audit",
+      "fragment": "rules/audits/r489_wsg_fatigue_chapter_pin.h"
+    },
+    {
+      "label": "R490 WSG mounts and beasts pin audit",
+      "fragment": "rules/audits/r490_wsg_mounts_and_beasts_pi.h"
+    },
+    {
+      "label": "R491 WSG magic in the wilderness pin audit",
+      "fragment": "rules/audits/r491_wsg_magic_in_the_wildern.h"
+    },
+    {
+      "label": "R492 WSG DM section pin audit",
+      "fragment": "rules/audits/r492_wsg_dm_section_pin.h"
+    },
+    {
+      "label": "R495 WSG compiled tables audit",
+      "fragment": "rules/audits/r495_wsg_compiled_tables.h"
+    },
+    {
+      "label": "R496 WSG gap reconciliation audit",
+      "fragment": "rules/audits/r496_wsg_gap_reconciliation.h"
+    },
+    {
+      "label": "R497 WSG overview audit",
+      "fragment": "rules/audits/r497_wsg_overview.h"
+    },
+    {
+      "label": "R498 WSG proficiencies prose audit",
+      "fragment": "rules/audits/r498_wsg_proficiencies_prose.h"
+    },
+    {
+      "label": "R499 WSG temperature fold audit",
+      "fragment": "rules/audits/r499_wsg_temperature_fold.h"
+    },
+    {
+      "label": "R500 WSG swimmer motion fold audit",
+      "fragment": "rules/audits/r500_wsg_swimmer_motion_fold.h"
+    },
+    {
+      "label": "R501 WSG movement fall fold audit",
+      "fragment": "rules/audits/r501_wsg_movement_fall_fold.h"
+    },
+    {
+      "label": "R502 WSG camp chain fold audit",
+      "fragment": "rules/audits/r502_wsg_camp_chain_fold.h"
+    },
+    {
+      "label": "R503 DSG overview audit",
+      "fragment": "rules/audits/r503_dsg_overview.h"
+    },
+    {
+      "label": "R504 DSG movement I audit",
+      "fragment": "rules/audits/r504_dsg_movement_i.h"
+    },
+    {
+      "label": "R505 DSG movement II audit",
+      "fragment": "rules/audits/r505_dsg_movement_ii.h"
+    },
+    {
+      "label": "R506 DSG proficiencies audit",
+      "fragment": "rules/audits/r506_dsg_proficiencies.h"
+    },
+    {
+      "label": "R507 DSG combat audit",
+      "fragment": "rules/audits/r507_dsg_combat.h"
+    },
+    {
+      "label": "R508 DSG battlesystem audit",
+      "fragment": "rules/audits/r508_dsg_battlesystem.h"
+    },
+    {
+      "label": "R509 DSG air and gases audit",
+      "fragment": "rules/audits/r509_dsg_air_and_gases.h"
+    },
+    {
+      "label": "R510 DSG odor detection audit",
+      "fragment": "rules/audits/r510_dsg_odor_detection.h"
+    },
+    {
+      "label": "R511 DSG cave-in causes audit",
+      "fragment": "rules/audits/r511_dsg_cave_in_causes.h"
+    },
+    {
+      "label": "R512 DSG chain reaction audit",
+      "fragment": "rules/audits/r512_dsg_chain_reaction.h"
+    },
+    {
+      "label": "R513 DSG DPV and hypothermia audit",
+      "fragment": "rules/audits/r513_dsg_dpv_and_hypothermia.h"
+    },
+    {
+      "label": "R514 DSG lodestone and NPC reactions audit",
+      "fragment": "rules/audits/r514_dsg_lodestone_and_npc_re.h"
+    },
+    {
+      "label": "R516 DSG structural decay audit",
+      "fragment": "rules/audits/r516_dsg_structural_decay.h"
+    },
+    {
+      "label": "R517 DSG underground waterways audit",
+      "fragment": "rules/audits/r517_dsg_underground_waterway.h"
+    },
+    {
+      "label": "R518 DSG water travel audit",
+      "fragment": "rules/audits/r518_dsg_water_travel.h"
+    },
+    {
+      "label": "R519 DSG mining prospecting audit",
+      "fragment": "rules/audits/r519_dsg_mining_prospecting.h"
+    },
+    {
+      "label": "R520 DSG mining excavation audit",
+      "fragment": "rules/audits/r520_dsg_mining_excavation.h"
+    },
+    {
+      "label": "R521 DSG mining products audit",
+      "fragment": "rules/audits/r521_dsg_mining_products.h"
+    },
+    {
+      "label": "R522 DSG mine product quality audit",
+      "fragment": "rules/audits/r522_dsg_mine_product_quality.h"
+    },
+    {
+      "label": "R523 DSG mining tail audit",
+      "fragment": "rules/audits/r523_dsg_mining_tail.h"
+    },
+    {
+      "label": "R524 DSG loyalty hazards audit",
+      "fragment": "rules/audits/r524_dsg_loyalty_hazards.h"
+    },
+    {
+      "label": "R525 DSG equipment costs audit",
+      "fragment": "rules/audits/r525_dsg_equipment_costs.h"
+    },
+    {
+      "label": "R526 DSG equipment descriptions audit",
+      "fragment": "rules/audits/r526_dsg_equipment_descriptio.h"
+    },
+    {
+      "label": "R527 DSG proficiency descriptions audit",
+      "fragment": "rules/audits/r527_dsg_proficiency_descript.h"
+    },
+    {
+      "label": "R528 DSG improving-play opener audit",
+      "fragment": "rules/audits/r528_dsg_improving_play_opene.h"
+    },
+    {
+      "label": "R529 DSG improving-play tail audit",
+      "fragment": "rules/audits/r529_dsg_improving_play_tail.h"
+    },
+    {
+      "label": "R530 DSG underground environment audit",
+      "fragment": "rules/audits/r530_dsg_underground_environm.h"
+    },
+    {
+      "label": "R531 DSG geography and theories audit",
+      "fragment": "rules/audits/r531_dsg_geography_and_theori.h"
+    },
+    {
+      "label": "R532 DSG cultures of the underdark audit",
+      "fragment": "rules/audits/r532_dsg_cultures_of_the_unde.h"
+    },
+    {
+      "label": "R533 DSG Deepearth opener audit",
+      "fragment": "rules/audits/r533_dsg_deepearth_opener.h"
+    },
+    {
+      "label": "R534 DSG Deepearth areas 1-3 audit",
+      "fragment": "rules/audits/r534_dsg_deepearth_areas_1_3.h"
+    },
+    {
+      "label": "R535 DSG Deepearth areas 4-5 audit",
+      "fragment": "rules/audits/r535_dsg_deepearth_areas_4_5.h"
+    },
+    {
+      "label": "R536 DSG Deepearth areas 6-7 audit",
+      "fragment": "rules/audits/r536_dsg_deepearth_areas_6_7.h"
+    },
+    {
+      "label": "R537 DSG Deepearth areas 8-9 audit",
+      "fragment": "rules/audits/r537_dsg_deepearth_areas_8_9.h"
+    },
+    {
+      "label": "R538 DSG Deepearth areas 10-11 audit",
+      "fragment": "rules/audits/r538_dsg_deepearth_areas_10_1.h"
+    },
+    {
+      "label": "R539 DSG Deepearth areas 12-13 audit",
+      "fragment": "rules/audits/r539_dsg_deepearth_areas_12_1.h"
+    },
+    {
+      "label": "R540 DSG Deepearth areas 14-15 audit",
+      "fragment": "rules/audits/r540_dsg_deepearth_areas_14_1.h"
+    },
+    {
+      "label": "R541 DSG Deepearth areas 16-17 audit",
+      "fragment": "rules/audits/r541_dsg_deepearth_areas_16_1.h"
+    },
+    {
+      "label": "R542 DSG Deepearth areas 18-19 audit",
+      "fragment": "rules/audits/r542_dsg_deepearth_areas_18_1.h"
+    },
+    {
+      "label": "R543 DSG Deepearth areas 20-21 audit",
+      "fragment": "rules/audits/r543_dsg_deepearth_areas_20_2.h"
+    },
+    {
+      "label": "R544 DSG Deepearth areas 22-23 audit",
+      "fragment": "rules/audits/r544_dsg_deepearth_areas_22_2.h"
+    },
+    {
+      "label": "R545 DSG Deepearth areas 24-25 audit",
+      "fragment": "rules/audits/r545_dsg_deepearth_areas_24_2.h"
+    },
+    {
+      "label": "R546 DSG Deepearth areas 26-27 audit",
+      "fragment": "rules/audits/r546_dsg_deepearth_areas_26_2.h"
+    },
+    {
+      "label": "R547 DSG Deepearth areas 28-29 audit",
+      "fragment": "rules/audits/r547_dsg_deepearth_areas_28_2.h"
+    },
+    {
+      "label": "R548 DSG Deepearth areas 30-31 audit",
+      "fragment": "rules/audits/r548_dsg_deepearth_areas_30_3.h"
+    },
+    {
+      "label": "R549 DSG Deepearth closed audit",
+      "fragment": "rules/audits/r549_dsg_deepearth_closed.h"
+    },
+    {
+      "label": "R550 DSG campaign opener audit",
+      "fragment": "rules/audits/r550_dsg_campaign_opener.h"
+    },
+    {
+      "label": "R551 DSG worlds of adventure audit",
+      "fragment": "rules/audits/r551_dsg_worlds_of_adventure.h"
+    },
+    {
+      "label": "R552 DSG plot and counterplot audit",
+      "fragment": "rules/audits/r552_dsg_plot_and_counterplot.h"
+    },
+    {
+      "label": "R553 DSG story elements tail audit",
+      "fragment": "rules/audits/r553_dsg_story_elements_tail.h"
+    },
+    {
+      "label": "R554 DSG story design techniques audit",
+      "fragment": "rules/audits/r554_dsg_story_design_techniq.h"
+    },
+    {
+      "label": "R555 DSG help from the players audit",
+      "fragment": "rules/audits/r555_dsg_help_from_the_player.h"
+    },
+    {
+      "label": "R556 DSG campaign closed audit",
+      "fragment": "rules/audits/r556_dsg_campaign_closed.h"
+    },
+    {
+      "label": "R557 DSG mapping settings audit",
+      "fragment": "rules/audits/r557_dsg_mapping_settings.h"
+    },
+    {
+      "label": "R558 DSG compiled tables audit",
+      "fragment": "rules/audits/r558_dsg_compiled_tables.h"
+    },
+    {
+      "label": "R559 DSG map plates closed audit",
+      "fragment": "rules/audits/r559_dsg_map_plates_closed.h"
+    },
+    {
+      "label": "R560 DSG index audit",
+      "fragment": "rules/audits/r560_dsg_index.h"
+    },
+    {
+      "label": "R561 DSG DM section audit",
+      "fragment": "rules/audits/r561_dsg_dm_section.h"
+    }
+  ]
+}
