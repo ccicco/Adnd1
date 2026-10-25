@@ -1,0 +1,688 @@
+{
+  "round": 837,
+  "title": "the second FF promotion batch",
+  "prefix": "ffs",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/ffs.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the second FF promotion batch - 25 more ff defs walk",
+    "provenance": "spec-driven; the second Fiend Folio promotion batch - twenty-five defs lifted from the ff print as new lua data files (disenchanter through sandman, the print-order batch), the forty-two blank outdoor encounter cells rekeyed (forty-one to the new defs, the one Grabman cell to the standing crabman def - the print misspelling settle), the outdoor walk-key census re-pinned (590 -> 632), the registry 837 -> 862, the ff def census 27 -> 52, the keyless outdoor FF cells 56 -> 14, the source rows stay (ff 74 outdoor), no aquatic cells this round (the remaining aquatic blanks are structural rows), the huecuva xp line pins the print verbatim (the III/81 per hit point read, the + settle noted in the record), no gap boxes flip; the def bodies carry the print-fidelity pin headers"
+  },
+  "census_before": 759,
+  "inline_count": 21,
+  "consts": [
+    {
+      "name": "ffsRound",
+      "value": 837,
+      "comment": "the round"
+    },
+    {
+      "name": "ffsPaceDefs",
+      "value": 25,
+      "comment": "the standing pace: defs per promotion round"
+    },
+    {
+      "name": "ffsBatchDefs",
+      "value": 25,
+      "comment": "the defs in the second FF promotion batch"
+    },
+    {
+      "name": "ffsOutCellsRewired",
+      "value": 42,
+      "comment": "the outdoor cells rekeyed to batch defs"
+    },
+    {
+      "name": "ffsNewDefCells",
+      "value": 41,
+      "comment": "the cells rekeyed to new batch defs"
+    },
+    {
+      "name": "ffsGrabmanCells",
+      "value": 1,
+      "comment": "the Grabman cell rekeyed to the standing crabman def"
+    },
+    {
+      "name": "ffsAquaCellsRewired",
+      "value": 0,
+      "comment": "the aquatic cells rekeyed this round (none - the tail is structural)"
+    },
+    {
+      "name": "ffsOutWalkKeysBefore",
+      "value": 590,
+      "comment": "the outdoor walk-key census before"
+    },
+    {
+      "name": "ffsOutWalkKeysAfter",
+      "value": 632,
+      "comment": "the outdoor walk-key census after"
+    },
+    {
+      "name": "ffsOutFfKeylessBefore",
+      "value": 56,
+      "comment": "the keyless outdoor FF cells before"
+    },
+    {
+      "name": "ffsOutFfKeylessAfter",
+      "value": 14,
+      "comment": "the keyless outdoor FF cells after"
+    },
+    {
+      "name": "ffsKeyedFfRows",
+      "value": 18,
+      "comment": "the FF rows already keyed (the R820 and R836 rewires)"
+    },
+    {
+      "name": "ffsFfSourceRows",
+      "value": 74,
+      "comment": "the outdoor FF source rows (unchanged)"
+    },
+    {
+      "name": "ffsRegistryBefore",
+      "value": 837,
+      "comment": "the registry census before the batch"
+    },
+    {
+      "name": "ffsRegistryAfter",
+      "value": 862,
+      "comment": "the registry census after the batch"
+    },
+    {
+      "name": "ffsFfDefsBefore",
+      "value": 27,
+      "comment": "the ff def census before the batch"
+    },
+    {
+      "name": "ffsFfDefsAfter",
+      "value": 52,
+      "comment": "the ff def census after the batch"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "bools": [
+    {
+      "name": "ffsDefsFromFfPrint",
+      "value": true,
+      "comment": "every batch def lifts the FF print"
+    },
+    {
+      "name": "ffsSourceCellsStay",
+      "value": true,
+      "comment": "the source rows ride unchanged"
+    },
+    {
+      "name": "ffsNoGapBoxesFlip",
+      "value": true,
+      "comment": "no MM2 gap boxes flip this round"
+    },
+    {
+      "name": "ffsGrabmanIsCrabman",
+      "value": true,
+      "comment": "the print Grabman cell is the FF Crabman (the misspelling settle)"
+    }
+  ],
+  "header_sections": {
+    "the second FF promotion batch": [
+      {
+        "kind": "const",
+        "name": "ffsRound"
+      },
+      {
+        "kind": "const",
+        "name": "ffsPaceDefs"
+      },
+      {
+        "kind": "const",
+        "name": "ffsBatchDefs"
+      },
+      {
+        "kind": "const",
+        "name": "ffsOutCellsRewired"
+      },
+      {
+        "kind": "const",
+        "name": "ffsNewDefCells"
+      },
+      {
+        "kind": "const",
+        "name": "ffsGrabmanCells"
+      },
+      {
+        "kind": "const",
+        "name": "ffsAquaCellsRewired"
+      },
+      {
+        "kind": "const",
+        "name": "ffsOutWalkKeysBefore"
+      },
+      {
+        "kind": "const",
+        "name": "ffsOutWalkKeysAfter"
+      },
+      {
+        "kind": "const",
+        "name": "ffsOutFfKeylessBefore"
+      },
+      {
+        "kind": "const",
+        "name": "ffsOutFfKeylessAfter"
+      },
+      {
+        "kind": "const",
+        "name": "ffsKeyedFfRows"
+      },
+      {
+        "kind": "const",
+        "name": "ffsFfSourceRows"
+      },
+      {
+        "kind": "const",
+        "name": "ffsRegistryBefore"
+      },
+      {
+        "kind": "const",
+        "name": "ffsRegistryAfter"
+      },
+      {
+        "kind": "const",
+        "name": "ffsFfDefsBefore"
+      },
+      {
+        "kind": "const",
+        "name": "ffsFfDefsAfter"
+      },
+      {
+        "kind": "bool",
+        "name": "ffsDefsFromFfPrint"
+      },
+      {
+        "kind": "bool",
+        "name": "ffsSourceCellsStay"
+      },
+      {
+        "kind": "bool",
+        "name": "ffsNoGapBoxesFlip"
+      },
+      {
+        "kind": "bool",
+        "name": "ffsGrabmanIsCrabman"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['ffsRegistryAfter']() != m['ffsRegistryBefore']() + m['ffsBatchDefs']()",
+      "note": "the registry carries the batch"
+    },
+    {
+      "expr": "m['ffsFfDefsAfter']() != m['ffsFfDefsBefore']() + m['ffsBatchDefs']()",
+      "note": "the ff def census carries the batch"
+    },
+    {
+      "expr": "m['ffsOutWalkKeysAfter']() != m['ffsOutWalkKeysBefore']() + m['ffsOutCellsRewired']()",
+      "note": "the outdoor walk keys carry the rewire"
+    },
+    {
+      "expr": "m['ffsOutFfKeylessAfter']() != m['ffsOutFfKeylessBefore']() - m['ffsOutCellsRewired']()",
+      "note": "the keyless census drains by the rewire"
+    },
+    {
+      "expr": "m['ffsFfSourceRows']() != m['ffsOutFfKeylessAfter']() + m['ffsKeyedFfRows']() + m['ffsOutCellsRewired']()",
+      "note": "the FF row census closes over keyed and keyless"
+    },
+    {
+      "expr": "m['ffsOutCellsRewired']() != m['ffsNewDefCells']() + m['ffsGrabmanCells']()",
+      "note": "the rewire splits new-def cells and the Grabman cell"
+    }
+  ],
+  "audit_label": "R837 second FF promotion audit",
+  "audit_comment": "the second promotion wave of the ff arc: twenty-five defs, the forty-two cells (the Grabman cell rides the standing crabman def), the outdoor walk keys re-pinned, the registry and ff def censuses carried, the keyless census drained to fourteen; the constants check themselves",
+  "audit_file": "rules/audits/r837_batch.h",
+  "audit_anchor": "#include \"rules/audits/r836_batch.h\"  // R836: R836 first FF promotion audit",
+  "include_comment": "the second FF promotion batch",
+  "include_after": "#include \"rules/ffp.h\"  // R836: the first FF promotion batch",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R836 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R836 LANDED 2026-10-25: commit",
+    "  439a4c32f000c1a3194ffde2d66cceff92445825",
+    "  (census 758 -> 759, pushed",
+    "  f81292a..439a4c3), THE FIRST FF",
+    "  PROMOTION BATCH - THE FF ARC OPENS",
+    "  (the FF promotion arc, the post-",
+    "  decomposition next-arc option (a),",
+    "  Curtiss's Go). THE DEFS: 25 new",
+    "  .lua defs lifted from the ff print",
+    "  (ff_print xp class) - 13 aquatic",
+    "  (aarakocra, algoid, assassin bug,",
+    "  blood hawk, bunyip, caterwaul,",
+    "  cifal, clubnek, coffer corpse,",
+    "  crabman, crypt thing, dakon,",
+    "  dragonfish) and 12 outdoor",
+    "  (denzelian, devil dog, dune",
+    "  stalker, kelpie, quipper, thork,",
+    "  throat leech, urchin black/green/",
+    "  red/silver, vodyanoi) - the def",
+    "  bodies carry the print-fidelity pin",
+    "  headers. THE REWIRE: the 37 blank",
+    "  encounter cells rekeyed to their",
+    "  new defs - 19 aquatic (the R818",
+    "  keyless die rows) and 18 outdoor",
+    "  (the R817 keyless grids); the",
+    "  source cells stay (ff 19 aquatic,",
+    "  74 outdoor rows), the walk-key",
+    "  censuses re-pinned (aquatic",
+    "  192 -> 211, outdoor 572 -> 590);",
+    "  the registry 812 -> 837, the ff",
+    "  def census 2 -> 27; NO gap boxes",
+    "  flip (MM2 stays 37 closed 0 open).",
+    "  Header rules/ffp.h, prefix ffp",
+    "  (16 consts + 4 bools, inline 20),",
+    "  the standing pace pinned at 25",
+    "  defs per promotion round; audit",
+    "  \"R836 first FF promotion audit\",",
+    "  rode rules/audits/r836_batch.h;",
+    "  the R835 record seated into the",
+    "  seed; file patches on regtest.cpp,",
+    "  mm2enca.h, mm2enco.h, lmp.h,",
+    "  lungp.h and the audits",
+    "  r817/r818/r820/r821 (the walk-key",
+    "  census chains). THE PACE IS",
+    "  USER-SET: 25 defs walking per",
+    "  promotion round (2026-10-25,",
+    "  Curtiss's call after the R836",
+    "  landing) - also pinned in ffp.h",
+    "  as ffpDefsPerRound; each batch",
+    "  sizes to 25 defs unless Curtiss",
+    "  calls a different slice. NEXT:",
+    "  awaits Curtiss's call - the next",
+    "  FF promotion batch rides the same",
+    "  pattern at 25 per round (the",
+    "  remaining keyless FF surface: the",
+    "  aquatic tail, the outdoor tail,",
+    "  the 26 dungeon FF rows mm2encd,",
+    "  the 401 FF index lines mm2enci)."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "file_patches": [
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 0 die 3 cell rekeys hoar_fox",
+      "from": "            {  // grid 0, the cold wilderness mountains\n                \"\",\n                \"\",",
+      "to": "            {  // grid 0, the cold wilderness mountains\n                \"\",\n                \"hoar_fox\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 1 die 7 cell rekeys ice_troll",
+      "from": "                \"bear_northern\",\n                \"\",",
+      "to": "                \"bear_northern\",\n                \"ice_troll\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 2 die 3 cell rekeys forlarren",
+      "from": "            {  // grid 2, the cold wilderness forest\n                \"frost_giant\",\n                \"\",",
+      "to": "            {  // grid 2, the cold wilderness forest\n                \"frost_giant\",\n                \"forlarren\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 2 die 17 cell rekeys ogrillon",
+      "from": "                \"baluchitherium\",\n                \"\",",
+      "to": "                \"baluchitherium\",\n                \"ogrillon\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 3 die 2 cell rekeys ice_troll",
+      "from": "            {  // grid 3, the cold wilderness swamp and marsh\n                \"\",",
+      "to": "            {  // grid 3, the cold wilderness swamp and marsh\n                \"ice_troll\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 3 die 11 cell rekeys quaggoth",
+      "from": "                \"orc\",\n                \"\",",
+      "to": "                \"orc\",\n                \"quaggoth\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 4 die 4 cell rekeys ice_troll",
+      "from": "                \"yeth_hound\",\n                \"\",",
+      "to": "                \"yeth_hound\",\n                \"ice_troll\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 5 die 6 cell rekeys hoar_fox",
+      "from": "                \"sandling\",\n                \"\",",
+      "to": "                \"sandling\",\n                \"hoar_fox\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 5 die 19 cell rekeys gambado",
+      "from": "                \"devil_dog\",\n                \"bugbear\",\n                \"\",",
+      "to": "                \"devil_dog\",\n                \"bugbear\",\n                \"gambado\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 6 die 6 cell rekeys quaggoth",
+      "from": "                \"berserker\",\n                \"\",",
+      "to": "                \"berserker\",\n                \"quaggoth\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 8 die 18 cell rekeys norker",
+      "from": "                \"shadow\",\n                \"\",",
+      "to": "                \"shadow\",\n                \"norker\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 9 die 3 cell rekeys poltergeist",
+      "from": "            {  // grid 9, the cold civilized swamp and marsh\n                \"alu_demon\",\n                \"\",",
+      "to": "            {  // grid 9, the cold civilized swamp and marsh\n                \"alu_demon\",\n                \"poltergeist\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 9 die 17 cell rekeys penanggalan",
+      "from": "                \"pseudo_undead\",\n                \"ghast\",\n                \"\",",
+      "to": "                \"pseudo_undead\",\n                \"ghast\",\n                \"penanggalan\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 10 die 4 cell rekeys li_lung",
+      "from": "                \"hollyphant\",\n                \"\",",
+      "to": "                \"hollyphant\",\n                \"li_lung\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 10 die 6 cells rekeys quaggoth,osquip",
+      "from": "                \"dire_wolf\",\n                \"\",\n                \"\",",
+      "to": "                \"dire_wolf\",\n                \"quaggoth\",\n                \"osquip\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 10 die 20 cell rekeys luck_changer",
+      "from": "                \"dervish\",\n                \"wererat\",\n                \"\",",
+      "to": "                \"dervish\",\n                \"wererat\",\n                \"luck_changer\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 12 die 19 cell rekeys khargra",
+      "from": "                \"chimera\",\n                \"\",",
+      "to": "                \"chimera\",\n                \"khargra\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 16 die 7 cell rekeys kenku",
+      "from": "                \"troll\",\n                \"\",\n                \"\",",
+      "to": "                \"troll\",\n                \"\",\n                \"kenku\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 18 die 6 cell rekeys li_lung",
+      "from": "                \"ghoul\",\n                \"\",",
+      "to": "                \"ghoul\",\n                \"li_lung\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 18 die 16 cell rekeys norker",
+      "from": "                \"goblin\",\n                \"\",\n                \"\",",
+      "to": "                \"goblin\",\n                \"\",\n                \"norker\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 19 die 8 cell rekeys killmoulis",
+      "from": "                \"fire_beetle\",\n                \"basilisk\",\n                \"\",",
+      "to": "                \"fire_beetle\",\n                \"basilisk\",\n                \"killmoulis\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 19 die 20 cell rekeys huecuva",
+      "from": "                \"jackalwere\",\n                \"\",",
+      "to": "                \"jackalwere\",\n                \"huecuva\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 20 die 19 cell rekeys norker",
+      "from": "                \"bar_lgura\",\n                \"\",",
+      "to": "                \"bar_lgura\",\n                \"norker\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 23 die 15 cell rekeys osquip",
+      "from": "                \"pilgrim\",\n                \"\",",
+      "to": "                \"pilgrim\",\n                \"osquip\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 24 die 16 cell rekeys firedrake",
+      "from": "                \"manticore\",\n                \"\",",
+      "to": "                \"manticore\",\n                \"firedrake\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 25 die 4 cell rekeys firenewt",
+      "from": "                \"hangman_tree\",\n                \"\",",
+      "to": "                \"hangman_tree\",\n                \"firenewt\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 25 die 8 cell rekeys kenku",
+      "from": "                \"giant_ant\",\n                \"\",\n                \"\",",
+      "to": "                \"giant_ant\",\n                \"\",\n                \"kenku\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 26 die 5 cell rekeys ettercap",
+      "from": "                \"grippli\",\n                \"\",",
+      "to": "                \"grippli\",\n                \"ettercap\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 27 die 3 cell rekeys crabman",
+      "from": "                \"basilisk_greater\",\n                \"\",",
+      "to": "                \"basilisk_greater\",\n                \"crabman\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 27 die 8 cell rekeys meazel",
+      "from": "                \"muckdweller\",\n                \"basilisk\",\n                \"\",",
+      "to": "                \"muckdweller\",\n                \"basilisk\",\n                \"meazel\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 29 die 5 cell rekeys sandman",
+      "from": "                \"gynosphinx\",\n                \"\",",
+      "to": "                \"gynosphinx\",\n                \"sandman\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 29 die 7 cell rekeys kenku",
+      "from": "                \"pudding_dun\",\n                \"\",",
+      "to": "                \"pudding_dun\",\n                \"kenku\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 30 die 5 cells rekeys norker,quaggoth",
+      "from": "                \"lammasu\",\n                \"\",\n                \"\",",
+      "to": "                \"lammasu\",\n                \"norker\",\n                \"quaggoth\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 30 die 17 cells rekeys li_lung,rothe",
+      "from": "                \"dwarf\",\n                \"\",\n                \"\",",
+      "to": "                \"dwarf\",\n                \"li_lung\",\n                \"rothe\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 31 die 2 cell rekeys penanggalan",
+      "from": "            {  // grid 31, the tropical civilized hills and rough terrain\n                \"\",",
+      "to": "            {  // grid 31, the tropical civilized hills and rough terrain\n                \"penanggalan\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 32 die 20 cell rekeys revenant",
+      "from": "                \"centipede_megalo\",\n                \"\",",
+      "to": "                \"centipede_megalo\",\n                \"revenant\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 34 die 2 cell rekeys luck_changer",
+      "from": "            {  // grid 34, the tropical civilized plains and scrub\n                \"\",",
+      "to": "            {  // grid 34, the tropical civilized plains and scrub\n                \"luck_changer\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 35 die 5 cell rekeys jermlaine",
+      "from": "                \"griffon\",\n                \"\",\n                \"\",",
+      "to": "                \"griffon\",\n                \"\",\n                \"jermlaine\","
+    },
+    {
+      "file": "regtest.cpp",
+      "note": "the outdoor grid 35 die 14 cell rekeys osquip",
+      "from": "                \"vulture_ordinary\",\n                \"\",",
+      "to": "                \"vulture_ordinary\",\n                \"osquip\","
+    },
+    {
+      "file": "rules/mm2enco.h",
+      "note": "the outdoor walk-key census const re-pins 632",
+      "from": "// keyless cells, 570 -> 572; the R836 FF promotion rewired\n// 18 more, 572 -> 590)\ninline int mm2encoWalkKeyRows()\n    { return 590; }",
+      "to": "// keyless cells, 570 -> 572; the R836 FF promotion rewired\n// 18 more, 572 -> 590; the R837 FF promotion rewired\n// 42 more, 590 -> 632)\ninline int mm2encoWalkKeyRows()\n    { return 632; }"
+    },
+    {
+      "file": "rules/lmp.h",
+      "note": "the lammasu rewire check rides 632",
+      "from": "inline int lmpWalkKeyRowsAfter()\n    { return 590; }",
+      "to": "inline int lmpWalkKeyRowsAfter()\n    { return 632; }"
+    },
+    {
+      "file": "rules/audits/r817_mm2_outdoor_encounter.h",
+      "note": "the r817 pin rides 632",
+      "from": "            || mm2encoWalkKeyRows() != 590",
+      "to": "            || mm2encoWalkKeyRows() != 632"
+    },
+    {
+      "file": "rules/audits/r817_mm2_outdoor_encounter.h",
+      "note": "the r817 walk-key chain carries the ffs rewire",
+      "from": "    if (mm2encoWalkKeyRows() != mm2encoMm1SourceRows() +\n        mm2encoMm2SourceRows() + ffpOutCellsRewired()\n        )",
+      "to": "    if (mm2encoWalkKeyRows() != mm2encoMm1SourceRows() +\n        mm2encoMm2SourceRows() + ffpOutCellsRewired() +\n        ffsOutCellsRewired()\n        )"
+    },
+    {
+      "file": "rules/audits/r820_lammasu_promotion.h",
+      "note": "the r820 rewire chain carries the ffs rewire and 632",
+      "from": "    if (lmpWalkKeyRowsAfter() != lmpWalkKeyRowsBefore() +\n        lmpCellsRewired() + ffpOutCellsRewired()\n            || lmpWalkKeyRowsAfter() != 590",
+      "to": "    if (lmpWalkKeyRowsAfter() != lmpWalkKeyRowsBefore() +\n        lmpCellsRewired() + ffpOutCellsRewired() +\n        ffsOutCellsRewired()\n            || lmpWalkKeyRowsAfter() != 632"
+    },
+    {
+      "file": "rules/audits/r820_lammasu_promotion.h",
+      "note": "the r820 pin rides 632",
+      "from": "            || lmpWalkKeyRowsBefore() != 570\n            || lmpWalkKeyRowsAfter() != 590",
+      "to": "            || lmpWalkKeyRowsBefore() != 570\n            || lmpWalkKeyRowsAfter() != 632"
+    }
+  ],
+  "migrate_blocks": [],
+  "data_files": [
+    {
+      "path": "monsters/monsters/d/disenchanter.lua",
+      "content": "-- Disenchanter: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Disenchanter\",\n  page = \"27\",\n  pages = \"27\",\n  source = \"FF\",\n  race = \"Disenchanter\",\n  hitDice = \"5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 23,\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"See below - special effect only\",\n  xp = 205,\n  xpPerHp = 5,\n  xpValue = 320,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-2\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M (5' high at shoulder)\",\n  intelligence = \"Average\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Disenchants - see below\",\n  specialDefenses = \"Can only be hit by magical weapons\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The disenchanter resembles a spindly dromedary-like animal with a long, flexible and muscular snout which can extend as much as 5' from the head in attack. It is a pale electric-blue in colour and slightly translucent; sometimes it may even be seen to shimmer discernably.\\n\\nThe creature has the power to detect magical dweomer - from magical armour, shields, swords and the like - on which it feeds, drawing its sustenance from the powerful enchantments such items carry. It is reasonably discerning in this power, being able for instance to distinguish between armour of etherealness and +1 armour, and selecting the former as containing stronger radiation. Should the beast encounter a party of adventurers it will be able to detect the most powerful magical item present and will attempt, as its attack, to fasten its snout onto the item in question. If it scores a hit, it will drain the magical power, leaving the item unmarked but non-magical.\\n\\nReferees will have to consider the ease with which the disenchanter would be able to 'attack' a particular item, despite the dexterity of its snout. Generally speaking it will attempt a relatively simple disenchantment - say on a magical shield in easy reach - rather than attempt a more difficult attack, say on a more powerful magical item hidden in a backpack or sheath.\\n\\nThe disenchanter can only be hit by magical weapons, but these will not lose their enchantment in hitting the beast - only with its snout can the creature disenchant magical items.\\n\\nNo-one has ever discovered a disenchanter lair, nor come to any proven conclusion about its metabolism, which at the least can be described as curious.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/e/ettercap.lua",
+      "content": "-- Ettercap: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Ettercap\",\n  page = \"35\",\n  pages = \"35\",\n  source = \"FF\",\n  race = \"Ettercap\",\n  hitDice = \"5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 23,\n  armorClass = \"6\",\n  numAttacks = 3,\n  damage = \"1-3/1-3/1-8\",\n  xp = 165,\n  xpPerHp = 5,\n  xpValue = 280,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-2\",\n  lairPct = 30,\n  treasure = \"Nil\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Poison\",\n  specialDefenses = \"Traps - see below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"A biped, roughly man-sized, with very long arms, protruding pot-belly, short legs and hairy skin, the ettercap has clawed hands and two poison fangs protruding one on each side of the mouth. Ettercaps are cruel, cunning and treacherous.\\n\\nThe ettercap attacks with its claws for 1-3 hit points of damage each and also inflicts a poisonous bite for 1-8 hit points of damage.\\n\\nThe creature has silk glands like those of a spider located near the anus. These glands secrete a thin, very tough, silvery cord which the beast uses to make assorted weapons and devices - lariats, nets, garottes, tripwires and so forth. Each ettercap has its preferred weapons and trap devices, so an encounter will vary according to an ettercap's preference, though they will always lay traps and prepare an ambush if there is time to do so.\\n\\nEttercaps get along well with all forms of spider.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/f/firenewt.lua",
+      "content": "-- Firenewt: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Firenewt\",\n  page = \"36\",\n  pages = \"36\",\n  source = \"FF\",\n  race = \"Firenewt\",\n  hitDice = \"2+2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 2,\n  avgHp = 11,\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"By weapon type\",\n  xp = 90,\n  xpPerHp = 3,\n  xpValue = 123,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"10-100\",\n  lairPct = 75,\n  treasure = \"Individuals K, M; in lair F.\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Breathe fire\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These distant relatives of the lizard men live in sun-baked rocky hills, volcanic regions or any other locale which tends to be hot, dry and sometimes sulphurous, whether above or below ground. They are sometimes known as salamen.\\n\\nFirenewt warriors (the most common variety) are typically armoured in chainmail and carry normal weapons - pike and sword (45%), sword only (25%), pike and hand-axe (20%) or battle-axe (10%).\\n\\nFor every ten warriors encountered there will be one elite warrior with 3+3 hit dice and of AC3 (chain plus dexterity bonus). For every 30 encountered there will, in addition to three elite warriors, be one 'priest' with 3+3 hit dice, AC5 and the following druidic powers, each usable once per day: animal friendship, faerie fire, predict weather, produce flame, heat metal and pyrotechnics. Elite warriors always carry battle-axes, while priests use a mace in melee.\\n\\n33% of all firenewts encountered above ground (90% of elite warriors, all priests) will be mounted on giant striders; these beasts are trained by the priests and are highly skilled in melee even if the firenewt 'master' dismounts.\\n\\nAll firenewts have a limited breath weapon. Once per turn they can breathe fire on a foe immediately in front of them and within a 5' range for 1-6 points of damage (a successful saving throw indicates half damage).\\n\\nFirenewts have high resistance to fire-based attacks, saving with a bonus of +3. Additionally, all fire-based attacks which affect them are reduced by 1 hit point of damage per attack die. Conversely, firenewts save at -3 against cold attacks and damage inflicted on them by these attacks is increased by 1 hit point per attack die.\\n\\nFirenewts are cruel marauders - if firenewts are encountered they will usually be the members of a hunting party. They delight in torturing and roasting victims alive before feasting on them.\\n\\nIn a firenewt lair there will be an additional 70% females and 150% young as well as a secret, closely-guarded hatching ground containing 200% eggs. The hatching ground will be under the priests' control and will be guarded by 1-3 young fire lizards (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL - Lizard, Fire). The lair will be ruled by an overlord firenewt of 4+4 hit dice and AC3 who will have a close retinue of four elite warriors.\\n\\nDescription: A typical firenewt is a mottled sepia colour, darkest along the spine and fading to near-white on the belly. The smooth flesh and features are eel-like, though the flesh is dry. The eyes are deep crimson. Females are slightly shorter than males (about 5 1/2' tall) and are a duller brown. The young are light in colour, darkening progressively as they approach maturity.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/f/firedrake.lua",
+      "content": "-- Firedrake: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Firedrake\",\n  page = \"36\",\n  pages = \"36\",\n  source = \"FF\",\n  race = \"Firedrake\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"5\",\n  numAttacks = 1,\n  damage = \"2-8\",\n  xp = 125,\n  xpPerHp = 4,\n  xpValue = 197,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-8\",\n  lairPct = 80,\n  treasure = \"Nil\",\n  move = \"6\\\"/18\\\"\",\n  size = \"S (4' long)\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Breath weapon\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Found only in rocky areas, this small dragonet (4' long or thereabouts) resembles a miniature red dragon in appearance if not in temperament. If it is disturbed even with peaceful intent there is a 50% chance it will attack. Its claws are not used in combat but its bite will cause 2-8 hit points of damage.\\n\\nThe firedrake also has a breath weapon which it can use five times daily. This is a cone of fire 60' long by 10' base diameter which delivers 2-16 hit points of damage (halved if a saving throw is made).\\n\\nFiredrakes have a short lifespan compared with their larger cousins, the dragons - the age-incremental hit point steps do not apply.\\n\\nThe dragonet's blood burns fiercely in air (the breath weapon is in fact a jet of blood) though it is inert if kept in a container under water. Swords dipped in the blood immediately become flaming swords for 3-6 melee rounds though there is a 2% cumulative chance during this time of the sword breaking when a blow is struck with it. It the sword 'survives' this 3-6 round period, it reverts to its original powers after it ceases to flame.\\n\\nFor purposes of aerial combat, the firedrake is manoeuvrability class C.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/f/forlarren.lua",
+      "content": "-- Forlarren: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Forlarren\",\n  page = \"39\",\n  pages = \"39-40\",\n  source = \"FF\",\n  race = \"Forlarren\",\n  hitDice = \"3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 0,\n  avgHp = 14,\n  armorClass = \"2\",\n  numAttacks = 2,\n  damage = \"1-4/1-4\",\n  xp = 90,\n  xpPerHp = 3,\n  xpValue = 132,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Semi-\",\n  alignment = \"Neutral evil\",\n  specialAttacks = \"Heat metal - see below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These creatures are descendents of the offspring of a good nymph and the greater devil who enslaved her. They wander alone, seeking vengeance on good and evil alike, as they detest their own existence in a limbo. They attack characters on sight, using their fists as cudgels for 1-4 points of damage each fist.\\n\\nThe forlarren also has the ability to heat metal once a day by contact and will use this mode of attack on the first opponent wearing metal armour they encounter in melee. All armour classes are treated as AC10 for the purpose of this attack. If the heating of the metal succeeds (i.e. if a 'hit' is scored) the victim will take 3-18 hit points of damage each round contact is maintained if wearing plate mail, 2-16 hit points of damage per round if wearing lighter types of metal armour (the latter category including all types of magical metal armour). Once contact has been made it will be maintained until the forlarren or its victim is dead. A successful saving throw (versus dragon breath) will halve the damage.\\n\\nAs soon as it has killed one character the ambivalent nature of the forlarren is revealed. It will show great remorse and will offer any survivors its services and powers (the blood of its ancestral mother still runs through its veins). After a time the dominant evil part of the forlarren resumes control and it will leave the party it is aiding. From\\n\\nthat time on, the forlarren will again attack on sight, including the party it earlier befriended if it encounters that party again.\\n\\nThe period of friendship is variable and cannot be forecast with accuracy. As an approximation the referee may select 1-6 days, though there is a 10% chance of the period being shorter (13-24 hours) or longer (7-10 days).\\n\\nThe creature can speak a rudimentary form of the common tongue.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/g/gambado.lua",
+      "content": "-- Gambado: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Gambado\",\n  page = \"41\",\n  pages = \"41\",\n  source = \"FF\",\n  race = \"Gambado\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"6\",\n  numAttacks = 3,\n  damage = \"1-8/1-4/1-4\",\n  xp = 85,\n  xpPerHp = 4,\n  xpValue = 157,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-8\",\n  lairPct = 100,\n  treasure = \"P, R\",\n  move = \"See below\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"These extraordinary-looking creatures are man-sized, with a powerful human torso and two arms ending in very sharp claws. Supported on the thin (but very strong) neck is the creature's head which is a skull - usually of an animal but sometimes of primitive man. The lower part of the creature's body consists of a cylinder of muscle and skin which can be compressed spring-style and released, below which are three long and thin single-toed feet. Its manner of locomotion - since it lacks legs as such - is a series of springs; if jumping vertically it can just reach a 14' high ceiling with its head, and when moving horizontally it has speed equivalent to a 12\\\" movement rate.\\n\\nA gambado's normal form of attack is to stand upright in its lair, which is a pit some 6' deep, with its head just at ground level. By shoring up the sides of the pit it can create a 'cover' of rock, wood, rags and old bones, so that to an approaching adventurer the pit is hidden and only the skull is seen, apparently simply lying on the ground. If a living creature comes within 2' of the edge of the pit, (i.e. within 4' or so of the skull-head) the creature will spring out and attack, in the first instance with bite only for 1-8 hit points of damage and thereafter with bite and its claws, each of which inflicts 1-4 hit points of damage. If melee is going against it, it will flee rather than fight to the death.\\n\\nIf a gambado kills a victim it will ignore all booty except coins, gems and small pieces of jewellery. These are taken into the pit and stored either on the pit floor or hidden in a cache-hole in the pit side, packed tightly with earth. Though essentially solitary creatures, a gambado will often dig its pit nearby those of others of its kind; in places where bones are common, as many as 8 of the creatures may be found to have dug pits quite close together, although they do not appear actually to communicate with each other.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/h/hoar_fox.lua",
+      "content": "-- Hoar Fox: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Hoar Fox\",\n  page = \"50\",\n  pages = \"50\",\n  source = \"FF\",\n  race = \"Hoar Fox\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"6\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 28,\n  xpPerHp = 2,\n  xpValue = 46,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-6\",\n  lairPct = 20,\n  treasure = \"See below\",\n  move = \"15\\\"\",\n  size = \"S (4' long)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Breath weapon\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Inhabitants of cold regions, hoar foxes are usually encountered in small packs and are rarely (10% chance) aggressive unless threatened. However their pelts, of beautiful silver-grey fur, are regarded as very valuable - an undamaged specimen will command 100 gold pieces on the open market - and for this reason they are often threatened by adventurers.\\n\\nThough they bite in attack for 1-6 hit points of damage, their main weapon is a breath weapon - a cone of cold with a range of 30', only wide enough to catch one victim. The cold does 2-12 hit points of damage (a saving throw will halve the damage). For the purpose of the breath attack, the victim's AC is treated as 10 (though modifiers for dexterity are permitted).\\n\\nThe hoar fox is immune to cold-based attacks but takes double damage from fire (and fire will, of course, render the pelt valueless).\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/h/huecuva.lua",
+      "content": "-- Huecuva: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Huecuva\",\n  page = \"51\",\n  pages = \"51\",\n  source = \"FF\",\n  race = \"Huecuva\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"3\",\n  numAttacks = 1,\n  damage = \"1-6\",\n  xp = 81,\n  xpPerHp = 0,\n  xpValue = 81,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1-10\",\n  lairPct = 10,\n  treasure = \"C\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Semi-\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Disease\",\n  specialDefenses = \"Can only be hit by silver and magical weapons\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The huecuva is an undead spirit, similar in appearance to a robed skeleton, which is treated as a wight on the cleric/undead matrix. It is resistant to all mind-influencing spells. It is able to polymorph self three times a day.\\n\\nThe touch of the huecuva inflicts 1-6 hit points of damage and unless the victim makes his saving throw against poison he will be infected with an acute cardiovascular-renal disease (as in the ADVANCED DUNGEONS & DRAGONS DUNGEON MASTERS GUIDE under disease).\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/i/ice_troll.lua",
+      "content": "-- Ice Troll: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Ice Troll\",\n  page = \"90\",\n  pages = \"90-91\",\n  source = \"FF\",\n  race = \"Ice Troll\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"8\",\n  numAttacks = 2,\n  damage = \"1-8/1-8\",\n  xp = 44,\n  xpPerHp = 2,\n  xpValue = 62,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-6\",\n  lairPct = 10,\n  treasure = \"D (no magical items)\",\n  move = \"9\\\"\",\n  size = \"L (9' tall)\",\n  intelligence = \"Semi-\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Regeneration; impervious to cold; magical weapons to hit\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"This relative of the normal troll closely resembles its stronger cousin except that it has a very cold, semi-transparent body. These creatures dwell in moist areas of dungeons, usually near running water, and have the regenerative powers of a normal troll but at a rate of 2 hit points per melee round, so long as the regenerating members can immerse themselves in water. A severed limb can move a distance of 30' in search of water and will always move towards water if there is some in range.\\n\\nThe ice troll attacks with two claws for 1-8 hit points of damage each. They may be directed against different opponents.\\n\\nIce trolls are unaffected by cold and can only be hit by magical weapons or missiles. Fire inflicts double damage on them.\\n\\nThey have superior (90') infravision and an acute sense of smell.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/j/jermlaine.lua",
+      "content": "-- Jermlaine: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Jermlaine\",\n  page = \"53\",\n  pages = \"53-54\",\n  source = \"FF\",\n  race = \"Jermlaine\",\n  hitDice = \"1-4 hit points\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 3,\n  armorClass = \"7\",\n  numAttacks = 1,\n  damage = \"1-2 or 1-4\",\n  xp = 7,\n  xpPerHp = 1,\n  xpValue = 10,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"12-48\",\n  lairPct = 0,\n  treasure = \"Per 10 individuals O, Q; in lair C, Q(x5), S, T\",\n  move = \"15\\\"\",\n  size = \"S (1' + tall)\",\n  intelligence = \"Average (with genius level cunning)\",\n  alignment = \"Neutral evil (with slight lawful tendency)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Jermlaine, or jinxkins, sometimes known as bane-midges, dwell in elaborate tunnel and den warrens beneath the ground - often very deep beneath the surface. As they mix freely with rats of all sorts,\\n\\neven the giant variety, they are often (75%) found in company with such rodents and are 50% likely to be sharing an integrated system of burrows, tunnels and holes. (If jermlaine are encountered, a percentile die roll of 01-75 indicates that rats (25%) or giant rats (50%) are with them. If the jermlaine are in their lair, it is 50% probable that there will be connecting rat tunnels). This cohabitation extends to all forms of mutual co-operation and defence.\\n\\nThese evil runts are cowardly and will attack only when it seems probable that they can overwhelm victims without serious opposition. Jinxkins thus waylay weakened and wounded parties or single individuals who are unwary, asleep etc. While strong groups or alert adventurers will not be physically attacked, jermlaine bands will certainly seek to cause them harm and otherwise injure them out of sheer maliciousness. This injury to the adventurers brings both personal gain to the jermlaine and the possibility of eventual gain of new victims.\\n\\nJermlaine are very fast, moving with a scuttling gait, very quiet, and are masters of remaining unseen. On occasion, however, if a party or individual suddenly becomes still and listens carefully, their movement or twittering, squeaking speech can be detected.\\n\\nIt is 60% probable that bane-midges will be within 60' of their lair at any time they are encountered, but the tunnels which give access to such places are twisting mazes and passage is impossible for any creature larger than a gnome - even the latter having to creep and crawl to get through, and of course this exposes the intruder to attack.\\n\\nJermlaine typically arm themselves with needle-sharp darts which they can hurl up to 12' and cause 1-2 hit points of damage. In addition to a dart, each minimus carries a pike-like weapon - a 1 1/2' long wand of supple wood with a sharp metal tip. This instrument is used as a spear or pike to inflict 1-4 hit points of damage. Their favoured attack method is ambush with pit or net, however, taking victims alive.\\n\\nIn little-used passages, these nasty creatures will laboriously prepare pits covered by camouflaged trapdoors, or string overhead nets entwined with silk from the webs of giant spiders, and lay in wait for passing prey. In more travelled ways, jermlaine will stretch thin but strong cords (often woven of human hair) to trip the unwary. Victims not stunned by the trap are pummelled senseless by bane-midges wielding leathern clubs filled with sand or lead shot while others entwine the prone creatures with ropes and cords. Note that beating with the clubs has a 2% cumulative chance per blow of knocking the victim unconscious, but those protected by splint, banded or plate mail will not be so attacked. Well-armoured victims who cannot be bound fast are attacked to kill - possibly with flaming oil missiles or acid. Some victims will be devoured by the jermlaine (or their rat-friends) but most humans will be stripped naked, shaved and left\\n\\ntrussed and helpless in the passageway. The jermlaine will usually watch such victims from a safe hide, awaiting the 'fun' of seeing some passing monster come and devour the bound victims.\\n\\nIf alert creatures should happen to pause near a hidden group of jermlaine, the spiteful things will steal forth and cut belts and straps, packs and seams - typically one such vandalistic act per jinxkin, for they act with haste in order to escape unnoticed and unharmed. Their vandalism will usually be noticed only 1-12 turns later, when a weakened strap parts, a seam opens fully etc. Worse still, if packs and other goods are placed out where jinxkins can reach them, these monstrous atomites will pollute the water, sour the wine and turn it into vinegar, spoil food, desecrate holy water, steal small items (gems, coins, garlic buds, herbs etc.) wedge daggers or swords so that they are difficult to draw out quickly, cut bow strings, blunt arrows, puncture oil flasks and so on.\\n\\nIf more than 35 of these creatures are encountered, there will be one very old and exceptionally evil one who has a very wicked power; this individual bane-midge will be able to drain all magic properties from any magical item (except an artifact or relic) which he can handle for 1-4 rounds.\\n\\nThe grey-brown warty hide of jermlaine blends with earth and stone, and they always dress in scraps and rags of the same colouration so that they can remain concealed from view. Coupled with their ability to move quietly, the jinxkins are likely to surprise opponents on a roll of 1-5 (d6) and they are 75% undetectable if looked for or listened for, unless the action is done suddenly so as to catch them off their guard.\\n\\nJermlaine are treated as 4 hit dice creatures with respect to the effects of magical attacks and saving throws. Because of their size and quickness, jinxkins which save versus attacks which would normally inflict half damage will escape unscathed.\\n\\nAlthough they have weak eyes and their infravision extends only 30', jermlaine have keen hearing and smell, so even invisible creatures are 50% likely to be detected by them under normal dungeon conditions.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/k/kenku.lua",
+      "content": "-- Kenku: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Kenku\",\n  page = \"56\",\n  pages = \"56\",\n  source = \"FF\",\n  race = \"Kenku\",\n  hitDice = \"2-5\",\n  hitDiceNum = 5,\n  hitDiceBonus = 0,\n  avgHp = 23,\n  armorClass = \"5\",\n  numAttacks = 3,\n  damage = \"1-4/1-4/1-6 or by weapon type\",\n  xp = 420,\n  xpPerHp = 5,\n  xpValue = 535,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"2-8\",\n  lairPct = 20,\n  treasure = \"F\",\n  move = \"6\\\"/18\\\"\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"30%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Bipedal humanoid birds with wings, clawed hands and feet, and the head of a hawk with a sharp beak, kenku are mischievous creatures which habitually use their limited magical powers to annoy and inconvenience humans, though their intent is not usually to kill. Every kenku has thieving abilities at the 4th level of experience and they are also expert fighters, usually wielding a quarterstaff or a samurai sword. If unarmed they fight with two claws (1-4 hit points of damage each) and a vicious bite for 1-6 hit points of damage.\\n\\nIf a group of kenku is encountered, its members will depend on the group size. A small group will contain two creatures of 2HD and two of 3HD or three and two respectively; a group of 6 or 7 will contain a leader of 4HD, two creatures of 3HD and three or four of 2HD, while a group of 8 will contain a supreme leader of 5HD.\\n\\nKenku of 3HD or more have certain magical powers. A 3HD creature will have one first-level magic-user spell - often magic missile. They also have the innate ability of shape change once in every 30 days; after 7 days in the changed shape, they must resume normal form. Particularly adventurous kenku have been known to use this power to assume the form of a god and accept offerings from credulous worshippers, and this is but one example of the bizarre uses to which kenku, and particularly the younger of the species, have put this power.\\n\\nKenku of 4HD have all the powers of those with 3HD plus an additional first-level magic-user spell - usually shocking grasp. They also have the innate ability of invisibility with no limitations on frequency of use or duration of effects. Again, these powers are sometimes put to unusual uses, but 4HD kenku tend to be older than the 3HD birds (the innate abilities develop with age and suitable training) and less reckless in their activities.\\n\\nKenku with 5HD have all the powers of those with 4HD plus a second-level magic-user spell - usually mirror-image or web. They may also call lightning - an innate ability which has the same effects as the 3rd level druidic spell.\\n\\nAll kenku have well-developed disguise abilities and can pass for human with only a 50% chance of detection (though the length of the nose usually gives away the deception).\\n\\nKenku favour kidnapping as a source of funds. They will freely give treasure but this is rarely genuine and will crumble to a valueless dust within a day. They will appear helpful to humans and will offer non-verbal advice, though this is usually carefully designed to mislead and to tempt the party into danger and/or difficulties. As a rough guide, the approximate chance of a kenku actually aiding humans is 5%, though this will vary with the circumstances.\\n\\nKenku do not speak; they appear to communicate with each other on the telepathic level.\\n\\nIt is rumoured that kenku of more than 5HD exist with even greater magical powers. Kenku lairs so far discovered have been small underground caverns but it is believed that larger caverns, deeper underground, contain larger numbers of the beasts in a formalised social structure.\\n\\nFor purposes of aerial combat, they are manoeuvrability class D.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/k/khargra.lua",
+      "content": "-- Khargra: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Khargra\",\n  page = \"56\",\n  pages = \"56\",\n  source = \"FF\",\n  race = \"Khargra\",\n  hitDice = \"6\",\n  hitDiceNum = 6,\n  hitDiceBonus = 0,\n  avgHp = 27,\n  armorClass = \"-3\",\n  numAttacks = 1,\n  damage = \"3-18\",\n  xp = 300,\n  xpPerHp = 6,\n  xpValue = 462,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare (at best)\",\n  noAppearing = \"1-6\",\n  lairPct = 0,\n  treasure = \"See below\",\n  move = \"3\\\"(15\\\")\",\n  size = \"S (3 1/2' long)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Surprise on 1-7(d8)\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Creatures from the Elemental Plane of Earth, the khargra occasionally venture onto the Prime Material Plane in search of high-grade ores which they digest and use as food. They 'swim' along the layers of rock in small schools, riding on earth movements and the shifting of geological strata as if swimming - or surfing - in the sea. When they find a suitable vein of ore, they settle down to feed and ingest the material, grinding it up and, through their curious metabolic and digestive processes, actually separating out and refining the metal. The slaggy waste material is excreted and the metal is deposited in the khargra's internal reservoirs, there to be assimilated slowly into the body.\\n\\nNaturally a khargra prefers refined metal to unrefined ore, and if the former is sensed reasonably close to hand, it will forego its normal diet for this new rich source of food. Khargra consider armour and weaponry a tasty meal indeed and are particularly fond of 'eating' metallic treasure.\\n\\nKhargra will leap from the wall or floor of a cavern or subterranean passage like fish leaping from water, flying as far as 10'. They then attempt to fasten themselves with their clawed arms onto large metallic objects, which they will devour. Such attacks will surprise nearby adventurers on a roll of 1-7 (d8), or 1-5 (d6) if dwarves or gnomes are present. A single khargra can swallow up to 5 pounds (50 gold pieces weight) of metal per melee round and has a capacity of 100 pounds or sometimes more.\\n\\nWhen khargra have emerged into the air from their normal rock environment, they must crawl, pulling themselves along with their arms.\\n\\nIf assaulted, the khargra will fight back, annoyed at having its meal disturbed. When attacked with a metal weapon, a khargra will bite the end off and swallow it on any roll of 16 or better. They fight non-metallic opponents by delivering a powerful bite for 3-18 hit points of damage, but their attack will be merely incidental to their main objective of eating metal. They use their three strong clawed arms to grasp and pull themselves towards their prey, and at least one of the three arms must 'hit' a victim before a successful bite can be inflicted on him, though the arms themselves do no damage. Once an arm has grasped, however, it will not let go until the way is clear for it to reach the metal it desires or its victim has been killed. Khargra have been known to bite right through large flesh creatures in order to reach a concentration of metal beyond. Each arm 'hits' as if a creature of 12HD.\\n\\nFortunately, khargra are very rarely seen on the Prime Material Plane and can usually be appeased by the immediate surrender of all metallic items.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/k/killmoulis.lua",
+      "content": "-- Killmoulis: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Killmoulis\",\n  page = \"57\",\n  pages = \"57\",\n  source = \"FF\",\n  race = \"Killmoulis\",\n  hitDice = \"1/2 (1-4 hit points)\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 3,\n  armorClass = \"6\",\n  numAttacks = 0,\n  damage = \"Nil\",\n  xp = 9,\n  xpPerHp = 1,\n  xpValue = 12,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1-3\",\n  lairPct = 60,\n  treasure = \"K\",\n  move = \"15\\\"\",\n  size = \"S\",\n  intelligence = \"Average\",\n  alignment = \"Neutral (chaotic good)\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"See below\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Killmoulis always dwell where some industry is in progress, preferably one involving grain or other foodstuffs. They inhabit the areas under floors, in cracks in walls or amidst the dark rafters, only coming out when the human workers leave. Brownie-like, the killmoulis then work and otherwise make themselves useful, at the same time devouring prodigious amounts of meal, flour, grain or whatever other foodstuffs are available.\\n\\nIt is also an integral part of their nature to play tricks and practical jokes - certain to be destructive or harmful if the inhabitants of the place molest any of the killmoulis, but otherwise of merely bothersome and irksome nature without undue destruction.\\n\\nKillmoulis are very fast and are able to blend with their surroundings and conceal themselves in shadowy places so as to be virtually undetectable (10% chance only). They hate dogs and cats almost as much as they do rats, for these animals will attack killmoulis. While the latter are snared or killed with long pins, the former are typically poisoned if they prove a threat, the killmoulis gaining access to whatever poison is available nearby. If the killmoulis are unable to kill the cats, dogs and rats which threaten them, they will certainly move to another locale.\\n\\nA killmoulis is typically quite small, usually under a foot in height. Each has a thin body and limbs, but a large head with proportionate ears. There is no mouth in the head, food being drawn into the huge nose. Killmoulis appear to communicate with each other on the telepathic level.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/l/li_lung.lua",
+      "content": "-- Li Lung (Earth Dragon): promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Li Lung (Earth Dragon)\",\n  page = \"28\",\n  pages = \"28\",\n  source = \"FF\",\n  race = \"Li Lung (Earth Dragon)\",\n  hitDice = \"7-9\",\n  hitDiceNum = 9,\n  hitDiceBonus = 0,\n  avgHp = 41,\n  armorClass = \"4\",\n  numAttacks = 3,\n  damage = \"2-8/2-8/1-20\",\n  xp = 1400,\n  xpPerHp = 12,\n  xpValue = 1892,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4\",\n  lairPct = 60,\n  treasure = \"H\",\n  move = \"9\\\"/24/6\\\"(1\\\"-6\\\")\",\n  size = \"L (18' long)\",\n  intelligence = \"Average\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Spells - see below\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The only oriental dragon with wings, these have a lion's body and a dragon's head with human features. They live underground and can swim, though they cannot breathe water. They attack with two claws which inflict 2-8 hit points of damage each and a bite which inflicts 1-20 hit points of damage.\\n\\nThey have no breath weapon, but once a day they can cause an earthquake (as the spell but with no chance of it being dispelled) with a width and length in tens of feet equal to three times the age level of the beast (so a sub-adult would produce an effect 30' square). Such a convulsion may bring down the cavern in which the oriental dragon is living, but li lung are never harmed by any earthquake (though they may be inconvenienced by having to dig out of the rubble). Their powerful claws enable them to burrow through solid stone at 1\\\" per turn and through earth at 6 times that rate.\\n\\nLi lung are manoeuvrability class E in the air.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/l/luck_changer.lua",
+      "content": "-- Tween: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Tween\",\n  page = \"91\",\n  pages = \"91\",\n  source = \"FF\",\n  race = \"Tween\",\n  hitDice = \"1\",\n  hitDiceNum = 1,\n  hitDiceBonus = 0,\n  avgHp = 5,\n  armorClass = \"10\",\n  numAttacks = 1,\n  damage = \"By weapon type\",\n  xp = 14,\n  xpPerHp = 1,\n  xpValue = 19,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1 (rarely 1-3 - 10%)\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"Variable\",\n  size = \"M\",\n  intelligence = \"Very\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Etherealness\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The tween is a being existing on the Ethereal Plane but visible to observers on the Prime Material Plane as a smoky, human-like outline. Commonly they assume a squat human shape, but have limited shape change ability.\\n\\nThey can be attacked only by a character with the power to enter the Ethereal Plane or by such means as using oil of etherealness. If such a melee is joined, the tween will fight with a weapon, usually a sword.\\n\\nThe tween's contact with humans on the Prime Material Plane is its adoption of a host - each tween will usually have a host, though occasionally one is without a host temporarily (after the death of its host, for instance). After several hours with a new host, a tween will gradually assume the general shape and characteristics of that host, who will appear to have a 'shadow' nearby. Once a host has been selected, a tween will remain permanently with him until he or the tween dies. In selecting a host, a tween will prefer an intelligent being, human or near-human, though they have no particular preference for player-characters. A tween will communicate telepathically with its host.\\n\\nThe tween has the ability to see a few seconds into the future and is able to increase its host's luck. It is also able to move material things short distances, reacting with such speed that it can affect the movement of a weapon in melee. For example, it can move a sword so that it hits rather than misses. As a result, any character or creature with a tween 'partner' has two die rolls instead of one, whenever a die roll is called for, and may select the more advantageous of these rolls. (This applies to 'to hit' rolls, saving throws and the like).\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/m/meazel.lua",
+      "content": "-- Meazel: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Meazel\",\n  page = \"63\",\n  pages = \"63\",\n  source = \"FF\",\n  race = \"Meazel\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"8\",\n  numAttacks = 2,\n  damage = \"1-4/1-4\",\n  xp = 85,\n  xpPerHp = 4,\n  xpValue = 157,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"1\",\n  lairPct = 95,\n  treasure = \"B\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"See below\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Solitary bipeds just less than man-sized, meazels are rarely encountered outside their lairs - either marshes or small, dank caverns underground. They have natural thieving abilities at the 4th level of experience and will rarely attack openly, preferring to hide and, moving quietly and swiftly, attempt to strangle stragglers from behind or to pick pockets in search of the gold they love. The meazel is a traditional enemy of orcs and kobolds.\\n\\nMeazels rarely venture far from their lairs and take all corpses there to be eaten in safety. Piles of sacks full of bones are often to be found near a meazel lair (any gems the creature has found in treasure will be in these sacks, since it does not recognise the value of precious and semi-precious stones). For the same reason, there will be no gems in the lair.\\n\\nMost creatures of the underworld will attack meazels, for they have a nasty reputation even among dungeon denizens.\\n\\nIn combat they attack with their two claws, each inflicting 1-4 hit points of damage. Alternatively, they use a piece of tough, thin cord to strangle their victims; a 'hit' indicates that the cord has been wrapped round the victim's neck and he will die from strangulation within two melee rounds unless he breaks free, or the meazel dies or is forced to release its hold (for example to defend against attack from another quarter). However the creature can only execute this kind of attack against a victim which is man-sized or smaller and only if it can approach the victim from the rear undetected, achieving surprise.\\n\\nDescription: The meazel has skin which varies from light grey to dark green; irregular patches of an angry red colour will occur on most (85%) individuals due to a skin disease - neither harmful to the creature beyond its disfiguring effect, nor contagious - prevalent in the species, these patches giving the meazel almost a leprous appearance. The eyes are jet black and the feet partially webbed.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/n/norker.lua",
+      "content": "-- Norker: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Norker\",\n  page = \"68\",\n  pages = \"68\",\n  source = \"FF\",\n  race = \"Norker\",\n  hitDice = \"1+2\",\n  hitDiceNum = 1,\n  hitDiceBonus = 2,\n  avgHp = 7,\n  armorClass = \"3\",\n  numAttacks = 2,\n  damage = \"1-3/1-6\",\n  xp = 20,\n  xpPerHp = 2,\n  xpValue = 34,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"3-30\",\n  lairPct = 20,\n  treasure = \"E\",\n  move = \"9\\\"\",\n  size = \"S (4' tall)\",\n  intelligence = \"Average\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Far-distant relatives of hobgoblins, norkers are similar in appearance to their hobgoblin cousins but have developed 3\\\" fangs which they use in melee to inflict 1-3 hit points of damage. In the same round they can also attack the same opponent with a club for 1-6 points of damage, but if they are disarmed they have no effective claw attack.\\n\\nThe norker also has a very tough skin - a form of exoskeleton - which gives it armour class 3.\\n\\nIn all other respects they are similar to hobgoblins (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL).\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/o/ogrillon.lua",
+      "content": "-- Ogrillon: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Ogrillon\",\n  page = \"70\",\n  pages = \"70\",\n  source = \"FF\",\n  race = \"Ogrillon\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"6\",\n  numAttacks = 2,\n  damage = \"2-7/2-7\",\n  xp = 28,\n  xpPerHp = 2,\n  xpValue = 46,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-4 (5-30 in lair)\",\n  lairPct = 20,\n  treasure = \"Individuals M; in lair B, S\",\n  move = \"12\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Chaotic evil\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The ogrillon is a smaller species of the ogre, being an orc-ogre cross-breed and displays the same general behaviour as its larger cousin (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL - Ogre) with one exception - it never wields a weapon and fights with its horny fists. Because of the creature's strength of 18(01) each fist delivers 2-7 hit points of damage if it hits.\\n\\nIn appearance these creatures usually resemble orcs and will often associate with them for short periods. It is 90% unlikely that an ogrillon can be distinguished from an orc, even when the two types of creature are in the same group. However, some (10%) are ogrish in appearance though smaller. These also associate with orcs though they are easily distinguishable.\\n\\nOgrillons speak the ogrish tongue and their alignment language only.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/o/osquip.lua",
+      "content": "-- Osquip: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Osquip\",\n  page = \"70\",\n  pages = \"70\",\n  source = \"FF\",\n  race = \"Osquip\",\n  hitDice = \"3+1\",\n  hitDiceNum = 3,\n  hitDiceBonus = 1,\n  avgHp = 15,\n  armorClass = \"7\",\n  numAttacks = 1,\n  damage = \"2-12\",\n  xp = 60,\n  xpPerHp = 4,\n  xpValue = 120,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"2-24\",\n  lairPct = 80,\n  treasure = \"D\",\n  move = \"12\\\"(1/2\\\")\",\n  size = \"S (2' high at shoulder)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The osquip is a multi-legged hairless rodent-like creature the size of a small dog. Most specimens have 6 legs but some (25%) have eight and there are a few rare creatures (5%) with ten legs. The creature's hide is a very light yellow - almost colourless - and resembles very pliable leather. The eyes are small and set close together, each being heavily protected by surrounding ridges of hide-covered bone. The jaws are unusually large, the entire bony structure projecting several inches forward of the flesh; in each jaw there are large spade like teeth.\\n\\nThe creature will have its lair in the midst of a complex of tunnels beneath the basements of buildings in a town, or in a dungeon. The tunnel system will be quite extensive and the entrances to it, which are too small to permit the comfortable passage of a human or other man-sized creature, will be carefully hidden (the chance of finding them is the same as the chance of finding a secret door).\\n\\nThe creature feeds on rats, mice and other small vermin, though it is a ferocious beast and will always attack without fear, sometimes emerging to surprise a victim from one of the hidden entrances to its tunnel-system. It attacks with its powerful jaws and these can inflict a nasty bite for 2-12 hit points of damage. It has high dexterity (its natural armour class is 9).\\n\\nBy using its powerful jaws, it can burrow through rock at 1/2\\\" movement rate. Its behaviour regarding other tunnel-dwelling creatures, such as jermlaine, mites and snyads, is unpredictable. Sometimes it will be encountered acting in co-operation with one or more of these types of creature; at other times the osquip will invade jermlaine, mite or snyad tunnel-systems on predatory missions.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/p/penanggalan.lua",
+      "content": "-- P\u0113nanggalan: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"P\u0113nanggalan\",\n  page = \"71\",\n  pages = \"71-72\",\n  source = \"FF\",\n  race = \"P\u0113nanggalan\",\n  hitDice = \"Body variable; head and gut when detached 4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"Normal 10; head and gut when detached 8\",\n  numAttacks = 1,\n  damage = \"1-6 or by weapon type\",\n  xp = 290,\n  xpPerHp = 5,\n  xpValue = 380,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"As normal woman; head and gut when detached 12\\\"\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Lawful evil\",\n  specialAttacks = \"Blood drain\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"A female vampire-type undead of fearsome power and nauseating appearance, this vile creature appears during the day as an attractive human female who may be of any character class. This is the female human which the p\u0113nanggalan was before death. She will fight with the same combat abilities as she had when alive, will have spell-use if formerly a spell-caster, thieving abilities if formerly a thief and so on. She will use the weapon (or at least the weapon-type) favoured by her in life. Her body will take the same amount of damage as it could before death (when fully rested) and will fight as though of that experience level. The head, however, will take 4HD of damage and a separate account of hits needs to be kept in case the head itself is struck in this form.\\n\\nException: if the p\u0113nanggalan was a cleric before death, of whatever alignment, she will be unable to use 'good' spells in her new form and must restrict her spells to those of baneful effect.\\n\\nA know alignment spell cast on the creature in this form will reveal the alignment the p\u0113nanggalan pursued while alive; as undead, however, the creature will act in accordance with the lawful evil alignment.\\n\\nIn this form the p\u0113nanggalan is impervious to holy/unholy symbols and cannot be turned or dispelled. It is also immune (in either form) to all spells which attempt to control the mind or body, like other undead.\\n\\nIn such a guise, the p\u0113nanggalan will seek to befriend any unwary party of travellers and attempt to join with them. It will prove extremely useful - over its years of undeath it will have acquired an extensive knowledge of the dungeon which it now roams; it will be able to guide parties to treasure and to warn them of possible dangers. Naturally, it will find some plausible reason for this knowledge and may sometimes make 'deliberate mistakes' or feign ignorance of areas of which it has knowledge, in order not to arouse the suspicion of the party (whose members would naturally become suspicious if their new companion displayed near-omniscience). Having joined a party of adventurers, the p\u0113nanggalan will remain with that party, even to accompanying them out of the dungeon. It will never, however, encamp for the night with the party in the dungeon, nor will it accompany them to spend the night in the\\n\\nsupposed safety of the upper world, making some excuse for being elsewhere.\\n\\nAt night, the p\u0113nanggalan assumes its real undead form. Its head and internal organs detach themselves from the body, rising vertically from the abdomen, and fly in search of human prey, to feast on their living blood. For this reason, it will always return to one of its secret lairs before nightfall (a single p\u0113nanggalan may have as many as six identical lairs hidden in various parts of the dungeon). It is particularly fond of the blood of young children or of pregnant females, but lacking such a victim it will select the party member who appears to be most susceptible to hypnosis, preferring a female to a male. It will always attack humans and will ignore even near-humans.\\n\\nAny unfortunate witness of the scene when the p\u0113nanggalan head and gut detach from the body must make his saving throw against magic or die immediately. If he makes the saving throw, he is treated as if the feeblemind spell had been cast on him.\\n\\nThe head and gut will 'fly' in search of a victim and, when one is discovered, the head will attempt to hypnotise the victim who must save against magic at -3 or fall completely under the control of the creature for as long as it takes to feed. It will make two small lacerations in the victim's throat and feast on the blood throughout the night. For each night's feeding, the victim will lose 1-6 hit points and 1 point each of strength and constitution. The p\u0113nanggalan will select the same victim each night, if possible, and will continue to visit and feed night after night until the victim is dead.\\n\\nIf the victim survives the night, he will remember none of the events except in snatches, as if from a faintly-remembered dream. If for some reason he avoids the subsequent attentions of the p\u0113nanggalan, he will continue to lose hit points at the rate of 1 hit point per night either until dead or until dispel evil is cast on him. Note that hit points drained by the penanggalan cannot be restored by magical means such as cure wound spells - in effect, the victim's maximum hits are being drained. Such spells will only take effect in respect of the lost points after dispel evil has been cast, and even powerful spells such as restoration will have no effect. Similarly the victim's lost strength and constitution points cannot be recovered until after dispel evil has been cast. Once dispel evil has been cast, however, the hit points are restored at the rate of 1 point per day and the strength and constitution points at the rate of 1 point of each per week.\\n\\nIf the victim succumbs on the first occasion to the p\u0113nanggalan, the creature must again hypnotise him the next night before feeding is possible. However the victim's saving throw is progressively more difficult; the throw is made at -4 on the second occasion, -5 on the third and so on. A break in the sequence of one or more nights will halt this progression; the saving throw will again be at -3 if a renewed attempt is made by a p\u0113nanggalan after a break of one or more nights.\\n\\nIf an intended victim makes his save against the creature's attempt at hypnosis, the p\u0113nanggalan will be able to exert no further influence over him and will flee from him in fear before searching for another prey. Furthermore, that person will be immune to further attempts by that p\u0113nanggalan and will be able to recognise one - any one - for what it is, no matter in what guise it appears. He will still, however, be losing hit points at the rate of 1 point per night, as described above, if the creature has fed at least once on his blood.\\n\\nNote that the victim is 'asleep' throughout the visitations of the p\u0113nanggalan. He will never actually see the creature, even if he makes his saving throw against hypnosis. The creature will never attack a victim who is awake. If any person happens to see the head and gut when detached from the body (for example if the intended victim awakens before the creature has had time to commence hypnosis) he must save against fear or flee in abject terror. When in this form, how-\\n\\never, the creature can be turned or dispelled by a cleric; treat as a wraith on the cleric/undead matrix. If the head and gut are thus turned, they must return to the lair and not venture forth again that night; if they are dispelled (a D result on the matrix) they are destroyed and the body will decay (see below). The head and gut will recoil before a strongly-presented holy symbol though it will not be harmed.\\n\\nShould a p\u0113nanggalan kill a male victim, he remains lifeless, and if an attempt is made to raise him, his chances of surviving the system shock will be half normal. If the attempt fails, no further attempts can possibly succeed. If it kills a female victim, she will rise from the grave after three days as a p\u0113nanggalan (not under the control of the original creature). If an attempt is made to raise her during that three-day period, her chances of surviving the system shock are half normal, and failure of that attempt means that no further attempt can possibly succeed - the process by which she becomes a p\u0113nanggalan is then inexorable.\\n\\nIf an attempt to raise any victim succeeds, however, the victim will return to normal (all hit points restored, strength and constitution back to normal) after two months of rest and recuperation; furthermore that victim will be immune to further attacks by a p\u0113nanggalan and will recognise one for what it is.\\n\\nAfter the p\u0113nanggalan head and gut have left the body in the lair, the internal organs swell up, whether feeding takes place or not, and cannot return to the abdomen until they have been soaked in vinegar for an hour, during which time they return to normal size. For this reason, the creature will always keep a large vessel filled with vinegar concealed in each of its lairs, and a p\u0113nanggalan lair may often be detected by the distinctive odour of vinegar which permeates it.\\n\\nIf a ray of sunlight strikes the creature's head and gut when they are detached from the body, the head will be paralysed and will fall helpless to the ground until nightfall. Thus, the creature will always attempt to reunite head and body before cock-crow. In any event, if the head and body are not reunited within seven hours after initial separation, both will start to decay and the evil life-force which animates the creature will be forced to return to Hell. Thus, to destroy the body or the head is a sure way of destroying the creature itself.\\n\\nWhen separated from the body, the head takes 4HD of damage.\\n\\nIn either form, the creature takes normal damage from all weapons. If it is weaponless and in human form, it can bite for 1-6 hit points of damage, but it will try to avoid using this mode of attack for fear of revealing its true nature.\\n\\nWhen detached from the body, the internal organs constantly drip a highly volatile and foul mixture of blood and digestive juices which cause 1-4 hit points of damage on bare flesh (which breaks out in sores and boils in a painful eruption). This horrid liquid evaporates after one round in contact with air.\\n\\nFor purposes of aerial combat, the p\u0113nanggalan is manoeuvrability class D.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/p/poltergeist.lua",
+      "content": "-- Poltergeist: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Poltergeist\",\n  page = \"73\",\n  pages = \"73\",\n  source = \"FF\",\n  race = \"Poltergeist\",\n  hitDice = \"1-4 hit points\",\n  hitDiceNum = 0,\n  hitDiceBonus = 0,\n  avgHp = 3,\n  armorClass = \"10\",\n  numAttacks = 0,\n  damage = \"Nil\",\n  xp = 34,\n  xpPerHp = 1,\n  xpValue = 37,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-8\",\n  lairPct = 95,\n  treasure = \"Nil\",\n  move = \"6\\\"\",\n  size = \"M\",\n  intelligence = \"Low\",\n  alignment = \"Lawful evil\",\n  specialAttacks = \"Fear\",\n  specialDefenses = \"Invisibility; silver or magic weapons to hit\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Though a wandering poltergeist is infrequently encountered (in which case it can be turned or destroyed by a cleric as if it were a skeleton) this undead creature usually remains in the room or corridor in which it was originally 'killed' (and such is the strong bond between the poltergeist and its surroundings that it is in this case treated as a ghoul on the cleric/undead matrix).\\n\\nThe poltergeist is invisible (-4 to hit unless the attacker can see invisible) and non-corporeal; only silver and magical weapons can harm it.\\n\\nThe poltergeist attacks physically by throwing an object - any nearby object light enough to be thrown by a man will suffice - with a chance of hitting its target equal to that of a 5HD monster. If the victim is struck he takes no damage but must save against fear\\n\\n(spells) or flee the area and run in random directions for 2-24 melee rounds before recovering.\\n\\nThere is a 50% chance that the victim will drop whatever he is holding during his flight, but not necessarily at the beginning (roll to determine for how many rounds he must flee, roll again to determine whether he drops whatever he is holding, and if so roll a third time to determine in which of the melee rounds of flight he does so).\\n\\nOnce a person has made his saving throw, he is immune to further fear effects from the poltergeist while in that area.\\n\\nSprinkled holy water or a strongly-presented holy symbol drives back the poltergeist but does not harm it.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/q/quaggoth.lua",
+      "content": "-- Quaggoth: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Quaggoth\",\n  page = \"74\",\n  pages = \"74\",\n  source = \"FF\",\n  race = \"Quaggoth\",\n  hitDice = \"1+2\",\n  hitDiceNum = 1,\n  hitDiceBonus = 2,\n  avgHp = 7,\n  armorClass = \"6\",\n  numAttacks = 2,\n  damage = \"1-4/1-4 or by weapon type\",\n  xp = 28,\n  xpPerHp = 2,\n  xpValue = 42,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"2-24\",\n  lairPct = 50,\n  treasure = \"A\",\n  move = \"12\\\"\",\n  size = \"L (7'+ tall)\",\n  intelligence = \"Low\",\n  alignment = \"Neutral\",\n  specialAttacks = \"See below\",\n  specialDefenses = \"Immune to poison\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Little is known of these great white shaggy bipeds. Some say they once formed a warlike cannibal race - their aggressiveness is unquestionable. Any fleeing or threatening party invites certain attack, and even a party which remains motionless within the quaggoths' field of view is 75% likely to be attacked by the creatures.\\n\\nQuaggoths are usually (70%) unarmed, in which case they fight with two claws for 1-4 hit points of damage each. 30% of quaggoth groups encountered will be armed with either battle-axes or two-handed swords. A particular quaggoth group will always either be unarmed, except for the leader-type, or armed - there will never be a mixture of unarmed and armed creatures in the same group.\\n\\nWith every 12 quaggoths encountered there will be one leader-type with 15 hit points, 3HD and armour class 4. The leader-type will always be armed with a battle-axe or two-handed sword.\\n\\nQuaggoths are totally immune to poison.\\n\\nIf a quaggoth is reduced to a number of hit points between zero and -5, it will continue to fight in a berserk fashion at +2 hit probability and +2 damage. When it reaches -6 hit points it dies.\\n\\nQuaggoths have a particular hatred of surface-dwelling elves and have been known to become slaves of the drow in order to assist the latter in their warfare against elves. They speak a halting, primitive form of the common tongue and can only grasp very simple concepts.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/r/revenant.lua",
+      "content": "-- Revenant: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Revenant\",\n  page = \"75\",\n  pages = \"75-76\",\n  source = \"FF\",\n  race = \"Revenant\",\n  hitDice = \"8\",\n  hitDiceNum = 8,\n  hitDiceBonus = 0,\n  avgHp = 36,\n  armorClass = \"10\",\n  numAttacks = 1,\n  damage = \"2-16\",\n  xp = 1275,\n  xpPerHp = 10,\n  xpValue = 1635,\n  xpSource = \"ff_print\",\n  frequency = \"Very rare\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"See below\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Paralysation\",\n  specialDefenses = \"See below\",\n  magicResistance = \"See below\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Under exceptional circumstances, those who have died a violent death may return from beyond the grave to wreak vengeance on their killer - as a revenant. There are few who can make this journey - to do so, a dead character must have wisdom or intelligence greater than 16 and\\n\\na constitution of 18: all their characteristics must sum to 90 or more: and if both these criteria are met, the chance of the character becoming a revenant after death is 5%.\\n\\nAlthough undead, the revenant is motivated by sheer self-will. Therefore, as it is not inherently evil, it cannot be turned or destroyed by clerics, nor are holy/unholy symbols, holy water or other religious paraphernalia able to affect it. Weapons - normal and magical alike - do not affect the creature, and the surest way to kill it is to reduce it to ashes. Like other undead it is immune to all spells attempting to control or influence its mind or body.\\n\\nEven if a revenant is dismembered, its limbs will continue to function independently, as though guided by the same mind. Like a troll (see ADVANCED DUNGEONS & DRAGONS MONSTER MANUAL), it has regenerative properties which cause the limbs to slither together, re-unite and re-create the revenant. It can also regenerate 3 hit points of damage per round even after 'death', except by burning. It is immune to acid and to gas.\\n\\nThe process of decay of the corpse which now houses the revenant has only slightly been attenuated, after 3-6 months of rebirth, the corpse will decompose rapidly and the spirit of the revenant will be forced to return to the plane from whence it came.\\n\\nThe sole purpose of the revenant's existence is to wreak vengeance on its killer, together with any person or persons who aided his killer in the act. Though it will never attack any one else, except in self-defence, it will stop at nothing to achieve its purpose, being able to locate its intended prime victim wherever he may be. (Those who aided the killer will also be tracked if they happen still to be in the company of the killer, but if they are elsewhere they will be ignored by the revenant which will concentrate on the killer only.)\\n\\nIts mode of attack is to lock its claw-like hands around its victim's throat and then to strangle him, doing 2-16 hit points of damage each round and not releasing its grip until the victim or the revenant is dead. If necessary it will adopt other means to try to kill its victim,\\n\\nusing extreme cunning and guile, but it will never, under any circumstances, resort to the use of weapons.\\n\\nThe revenant can also stare into his killer's eyes and that person must make his saving throw against magic or be paralysed with terror for 2-8 rounds. This power works against none but the revenant's killer.\\n\\nThe revenant will retain all the abilities it had before death, though it will be a creature with 8 hit dice, whatever experience level was previously attained, and will always be of neutral alignment, no matter what alignment it followed in life. It can converse fluently in the neutral and common tongues, though stiffness of its vocal chords deters it from using speech except under extreme circumstances (e.g. to cast a spell, if it was formerly a spell-caster, on its killer). Note that a revenant may never cast a spell at a person other than its killer, whatever the spell-type.\\n\\nIf the associates of the killer are with him in a party, they will be dealt with after the killer has been destroyed, and in that respect they, too, will be regarded as 'killers'. They cannot escape, for if they attempt to do so while the revenant is occupied with the killer, the revenant will track all of them down subsequently.\\n\\nImmunity to certain spells apart (see above) the revenant has the same resistance to magic as it had before death as a character.\\n\\nThe creature presents a pale, corpse-like appearance, with pallid skin drawn tightly over hollow cheekbones; its flesh is unusually cold and clammy. Its eyes - sunken in the face - are at times dull and heavy-lidded but, particularly when nearing its intended victim, they will blaze up with unnatural intensity. Animals will shy away from it, and about the revenant hangs an unmistakable aura of tragic anger, sadness and determination.\\n\\nIf the character who became the revenant died a particularly violent death, it may be unable to re-occupy its former body when it becomes a revenant. In such a case, the spirit will occupy any available, freshly-dead corpse. The revenant's new body may even be of opposite sex to the original character. However its killer and his active associates, if present, will always 'see' the revenant in its former body, while others around him will see it as it is, if they had not been involved in the killing.\\n\\nWhen the revenant has completed its mission by killing all its intended victims, it will immediately disintegrate and will never return again. Its spirit rests in peace.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/r/rothe.lua",
+      "content": "-- Roth\u00e9: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Roth\u00e9\",\n  page = \"76\",\n  pages = \"76\",\n  source = \"FF\",\n  race = \"Roth\u00e9\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = \"7\",\n  numAttacks = 3,\n  damage = \"1-3/1-3/1-8\",\n  xp = 20,\n  xpPerHp = 2,\n  xpValue = 38,\n  xpSource = \"ff_print\",\n  frequency = \"Uncommon\",\n  noAppearing = \"2-20\",\n  lairPct = 40,\n  treasure = \"Nil\",\n  move = \"9\\\"\",\n  size = \"M (4' high)\",\n  intelligence = \"Animal\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Nil\",\n  specialDefenses = \"Nil\",\n  magicResistance = \"Standard\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"Roth\u00e9 are small ox-like creatures with a mass of long black hair. They attack with two horns (1-3 hit points of damage each) and a bite (1-8 hit points of damage).\\n\\nThey are shy creatures with an aversion to bright light; they will generally make their lairs underground, near a lake or river where there is a good supply of lichen and moss to eat.\",\n}\n"
+    },
+    {
+      "path": "monsters/monsters/s/sandman.lua",
+      "content": "-- Sandman: promoted by the R837 second FF promotion round\n-- from the FF print (spec tools/spec_r837.json); DO NOT hand-edit;\n-- the pin headers stay the print-fidelity record.\nreturn {\n  name = \"Sandman\",\n  page = \"77\",\n  pages = \"77\",\n  source = \"FF\",\n  race = \"Sandman\",\n  hitDice = \"4\",\n  hitDiceNum = 4,\n  hitDiceBonus = 0,\n  avgHp = 18,\n  armorClass = \"3\",\n  numAttacks = 0,\n  damage = \"Nil\",\n  xp = 215,\n  xpPerHp = 4,\n  xpValue = 287,\n  xpSource = \"ff_print\",\n  frequency = \"Rare\",\n  noAppearing = \"1-6\",\n  lairPct = 20,\n  treasure = \"100-2,000 gold pieces\",\n  move = \"9\\\"\",\n  size = \"M\",\n  intelligence = \"Average\",\n  alignment = \"Neutral (with evil tendencies)\",\n  specialAttacks = \"Sleep\",\n  specialDefenses = \"See below\",\n  magicResistance = \"20%\",\n  psionic = \"Nil\",\n  attackDefenseModes = \"Nil\",\n  text = \"The sandman's name describes it exactly - a man-like biped made entirely of sand, held together by some form of magical cohesion. Clearly, these are creatures from another plane, but what their purposes are on the Prime Material Plane, none can say.\\n\\nAny character or monster coming within 20' of the sandman must save against magic or go to sleep, irrespective of experience level. Those who manage to stay awake must attempt to save again each time they touch the sandman or are touched by it (a hit on the sandman with a weapon does not constitute a 'touch').\\n\\nOnce the sandman has put a victim to sleep it will take no further action against him, leaving him to doze, though if the encounter took place in its lair it will eject the sleeper first.\\n\\nSandmen automatically attack humans and need never check morale.\\n\\nSleepers will remain asleep for 3 full turns whatever happens. Thereafter, there is a cumulative 10% chance per turn of a sleeper waking of his own accord, and a 95% chance per round of him waking if violently disturbed.\\n\\nSandmen have the natural ability of protection from normal missiles.\",\n}\n"
+    }
+  ]
+}

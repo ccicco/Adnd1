@@ -23490,6 +23490,64 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   noted along the way (the R792
   local-adapted-copy debt, retired
   by R822's rverify patch).
+- R836 LANDED 2026-10-25: commit
+  439a4c32f000c1a3194ffde2d66cceff92445825
+  (census 758 -> 759, pushed
+  f81292a..439a4c3), THE FIRST FF
+  PROMOTION BATCH - THE FF ARC OPENS
+  (the FF promotion arc, the post-
+  decomposition next-arc option (a),
+  Curtiss's Go). THE DEFS: 25 new
+  .lua defs lifted from the ff print
+  (ff_print xp class) - 13 aquatic
+  (aarakocra, algoid, assassin bug,
+  blood hawk, bunyip, caterwaul,
+  cifal, clubnek, coffer corpse,
+  crabman, crypt thing, dakon,
+  dragonfish) and 12 outdoor
+  (denzelian, devil dog, dune
+  stalker, kelpie, quipper, thork,
+  throat leech, urchin black/green/
+  red/silver, vodyanoi) - the def
+  bodies carry the print-fidelity pin
+  headers. THE REWIRE: the 37 blank
+  encounter cells rekeyed to their
+  new defs - 19 aquatic (the R818
+  keyless die rows) and 18 outdoor
+  (the R817 keyless grids); the
+  source cells stay (ff 19 aquatic,
+  74 outdoor rows), the walk-key
+  censuses re-pinned (aquatic
+  192 -> 211, outdoor 572 -> 590);
+  the registry 812 -> 837, the ff
+  def census 2 -> 27; NO gap boxes
+  flip (MM2 stays 37 closed 0 open).
+  Header rules/ffp.h, prefix ffp
+  (16 consts + 4 bools, inline 20),
+  the standing pace pinned at 25
+  defs per promotion round; audit
+  "R836 first FF promotion audit",
+  rode rules/audits/r836_batch.h;
+  the R835 record seated into the
+  seed; file patches on regtest.cpp,
+  mm2enca.h, mm2enco.h, lmp.h,
+  lungp.h and the audits
+  r817/r818/r820/r821 (the walk-key
+  census chains). THE PACE IS
+  USER-SET: 25 defs walking per
+  promotion round (2026-10-25,
+  Curtiss's call after the R836
+  landing) - also pinned in ffp.h
+  as ffpDefsPerRound; each batch
+  sizes to 25 defs unless Curtiss
+  calls a different slice. NEXT:
+  awaits Curtiss's call - the next
+  FF promotion batch rides the same
+  pattern at 25 per round (the
+  remaining keyless FF surface: the
+  aquatic tail, the outdoor tail,
+  the 26 dungeon FF rows mm2encd,
+  the 401 FF index lines mm2enci).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
