@@ -23222,6 +23222,57 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   level spells at the next head),
   at 100 blocks per round; 242
   inline remain.
+- R832 LANDED 2026-10-25: commit
+  a8440e4d34c8fa73b384b9764866cfce8f534fdd
+  (census 754 -> 755, pushed
+  475a610..a8440e4), THE OA TAIL
+  MIGRATION BATCH - the ninth
+  batch of real blocks leaves
+  regtest at the 100-per-round
+  pace (the REGTEST DECOMPOSITION
+  ARC). THE MOVE: digest idx
+  550-649 (R672 OA wu jen third
+  level spells through R771 OA
+  open boxes - the OA spells,
+  combat, calendar, monsters,
+  treasure, armor and weapons,
+  Kara-Tur, daily-life pins; 100
+  blocks, 12737 lines, ZERO blocks
+  held back) migrated VERBATIM
+  into rules/audits fragments
+  (r672_oa_wu_jen_third_level.h
+  through r771_oa_open_boxes.h).
+  R832's own audit rode
+  rules/audits/r832_batch.h.
+  Header rules/jmb.h, prefix jmb
+  (verified free at 475a610, 0
+  hits), 6 consts + 4 bools (inline
+  10), 4 examples, the R831 record
+  seated into the seed, NO gap
+  flips (MM2 stays 37 closed 0
+  open), NO tool patches. GATES:
+  dress rehearsal on a copy of
+  the REAL tree at 475a610 (the
+  whole rules/audits dir carried);
+  double-run 105/0 -> 0/105;
+  fragments byte-exact; regtest
+  reconstruction byte-for-byte;
+  census 142 + 613 = 755, all 755
+  preflight patterns unique each
+  once; rverify GREEN (10 mutants,
+  0 missed). Delivery spec-r832
+  canvas: spec 18808 bytes, md5
+  bdd6e2bafcab767cf1832240e1f99231,
+  landed the same. NEXT: awaits
+  Curtiss's Go - the tenth batch
+  rides the same wiring (digest idx
+  650 onward: R772 OA Weapons
+  prose at the next head), the
+  FINAL stretch - digest idx 650-744
+  holds 95 blocks, so one more
+  round clears the digest; then the
+  holdback cleanup round (~35
+  width-gate + 11 no-head blocks).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
