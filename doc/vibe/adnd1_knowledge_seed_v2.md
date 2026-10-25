@@ -24027,6 +24027,99 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   with the yellow urchin p. 92);
   the next ToC order starts lava
   children, lizard king, ...
+- R844 LANDED 2026-10-25: commit
+  8eaa27be20f462684e5080c771a96092f03c0ee9
+  (pushed 5abfed0..8eaa27b,
+  census 766 -> 767), THE SEVENTH
+  FF PROMOTION BATCH (the FF arc,
+  25 defs per the R836 pace pin).
+  THE DEFS: 25 new .lua defs
+  lifted from the ff print
+  (ff_print xp class), the holdouts
+  in ToC order from the lamia
+  noble p. 59 through the umpleby
+  p. 92 (the lava, smoke and steam
+  mephits promoting as three defs
+  riding the print family prose;
+  the giant troll, the giant
+  two-headed troll and the spirit
+  troll carrying their own sections
+  only per the landed ice troll
+  precedent; the two slaad lords
+  Ssendam and Ygorl promoting as
+  unique defs per the imix
+  precedent; the protein polymorph
+  under its print heading, NOT the
+  protean) - the R836-R843 def
+  shape with the print-fidelity pin
+  headers. NO encounter rewires, NO
+  gap boxes flip (MM2 stays 37
+  closed 0 open): a def-only batch
+  - the registry 963 -> 988, the ff
+  def census 153 -> 178, the missing
+  print census 32 -> 7. Header
+  rules/ffl.h, prefix ffl (free;
+  17 consts + 7 bools, inline 24),
+  audit "R844 seventh FF promotion
+  audit", rode
+  rules/audits/r844_batch.h
+  (include above the ffk.h R843
+  index-line include); the R843
+  record seated into the seed.
+  DATA VOICES: the three-voice
+  collation (djvu text, djvu
+  word-geometry xml, abbyy char
+  xml) with the 1eonline /5ff/
+  transcripts; adjudicated
+  ambiguities: the qullan magic
+  resistance row is BLANK in the
+  print and both scan voices and
+  rides the query-mark sentinel
+  per the landed precedent (dryad,
+  dwarf, dragon turtle), pinned as
+  the fflMagicResistanceRowBlank
+  bool; the protein polymorph
+  treasure type reads zero in both
+  scan voices and stands (the
+  fflTreasureTypeZero bool); the
+  needleman no-appearing 5-50 and
+  the retriever lair percentage 70
+  per both scans over the
+  transcript; the nilbog lair
+  treasure reads G in both scans
+  over the transcript C; the
+  umpleby size reads 8' + tail in
+  both scans; the blue slaad move
+  7" in all three voices (odd but
+  print, the red is 6"); the blue
+  slaad psionic row keeps the
+  print "Defence strength 47"
+  spelling; Ssendam and Ygorl ride
+  flat hit-point rows (197 and 210
+  hit points, xpValue 28695 /
+  28950 with the destroy-material-
+  form-only x10 footnotes riding
+  the texts); the lamia noble
+  seats at p. 59 per the rear
+  index (the old 59/60 compaction
+  was wrong). Spec
+  tools/spec_r844.json, md5
+  3eb7c5c445a2301ad5528993e0d9ae2a
+  (authored-plus-newline).
+  NEXT: awaits Curtiss's call - 7
+  missing FF monsters remain by
+  the R844-pinned 32 drain
+  (the R842-pinned 57 minus the
+  25-def R843 batch minus the
+  25-def R844 batch: vision p. 93,
+  whipweed p. 94,
+  witherstench p. 95, xill p. 96,
+  the yellow musk creeper and
+  yellow musk zombie p. 97 and the
+  yellow urchin p. 92 - one
+  short-batch round or a batch
+  padded with other work); the
+  FF print walk is nearly done.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
