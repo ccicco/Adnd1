@@ -541,6 +541,7 @@
 #include "rules/ffs.h"  // R837: the second FF promotion batch
 #include "rules/fft.h"  // R838: the third FF promotion batch
 #include "rules/ffu.h"  // R839: the fourth FF promotion batch
+#include "rules/ffh.h"  // R840: the hornet promotion
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -2929,7 +2930,7 @@ int main() {
                 "scorpion_huge",
                 "poisonous_toad",
                 "gargoyle",
-                "",
+                "hornet_giant",
                 "hydra",
                 "ghast",
                 "caterwaul",
@@ -4588,6 +4589,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r840_batch.h"  // R840: R840 hornet promotion audit
 #include "rules/audits/r839_batch.h"  // R839: R839 fourth FF promotion audit
 #include "rules/audits/r838_batch.h"  // R838: R838 third FF promotion audit
 #include "rules/audits/r837_batch.h"  // R837: R837 second FF promotion audit

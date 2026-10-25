@@ -23722,6 +23722,74 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   keyless FF surface: the aquatic tail,
   the 26 dungeon FF rows (mm2encd), the
   401 FF index lines (mm2enci).
+- R839 LANDED 2026-10-25: commit
+  fcc1311823b58484b2bd005db703f58e40442193
+  (pushed 36e6a34..fcc1311,
+  census 761 -> 762), THE FOURTH FF
+  PROMOTION BATCH (the FF arc, 25
+  defs per the R836 pace pin). THE
+  DEFS: 25 new .lua defs lifted from
+  the ff print (ff_print xp class) -
+  the 15 NEW defs that key the
+  dungeon FF rows (al_miraj, bullywug,
+  bat_giant, grimlock, mephit_fire,
+  drow, lava_children, meenlock,
+  hook_horror, githyanki, grell,
+  mezzodaemon, slaad_grey,
+  nycadaemon, slaad_death) plus the
+  10 FILL defs in print order
+  (achaierai, adherer, aleax,
+  apparition, astral_searcher,
+  babbler, berbalang, blindheim,
+  bonesnapper, booka) - the
+  R836/R837/R838 def shape with the
+  print-fidelity pin headers. THE
+  REWIRE: 24 kEncD dungeon cells
+  rekeyed - 15 to the new defs + 9 to
+  the standing defs (norker, coffer
+  corpse, quaggoth, kenku, shocker,
+  thoqqua, caterwaul, algoid, red
+  slaad); the dungeon FF rows 26 =
+  24 keyed + 2 keyless (the Elemental
+  Prince row - no print def - and the
+  Hornet Giant row, the FF p. 52
+  def rides a future promotion); the
+  dungeon walk-key census 146 -> 170
+  (new mm2encdWalkKeyRows inline; the
+  r816 audit fragment carries the
+  walk-key and FF-row chains); the
+  blank census 44 -> 20; the registry
+  887 -> 912, the ff def census 77
+  -> 102; NO gap boxes flip (MM2
+  stays 37 closed 0 open). Header
+  rules/ffu.h, prefix ffu (23
+  consts + 5 bools, inline 28),
+  audit "R839 fourth FF promotion
+  audit", rode
+  rules/audits/r839_batch.h; the
+  R838 record seated into the seed;
+  file patches: regtest.cpp (21
+  rekey patches), mm2encd.h and the
+  r816 audit fragment. SPEC-LESSON:
+  the compaction-era rekey plan was
+  wrong on the Level IV grid - the
+  die-14 row is Hornet, Giant (the
+  FF p. 52 stat block DOES exist,
+  appearing 1) and die-17 is
+  Caterwaul (appearing 1, matching
+  the pinned {17,3,1,1,0} cell);
+  solifugid_giant was already keyed
+  at die 18 - the number-encountered
+  cells settle ambiguous rows before
+  any rekey. Spec tools/
+  spec_r839.json, md5 4747d26a36d8
+  e6f71db4218ea1128bdf
+  (authored-plus-newline). NEXT:
+  awaits Curtiss's call - the
+  remaining keyless FF surface: the
+  Hornet Giant cell (needs the
+  giant hornet def), the 401 FF
+  index lines (mm2enci).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
