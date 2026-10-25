@@ -1,0 +1,3814 @@
+{
+ "round": 841,
+ "title": "the FF index line walk",
+ "prefix": "ffik",
+ "regtest": "regtest.cpp",
+ "header_file": "rules/ffik.h",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "gap_report": "tools/mm2_gap_report.md",
+ "banner": {
+  "title": "the FF index line walk - the 414-line F-reference census",
+  "provenance": "spec-driven; the FF index line walk round - the F-referenced lines of the merged MM2 index (print pp. 156-160, the four-column layout) read a third time against the geometric xml (the word coordinates, 1595 reconstructed lines) and collated with the two djvu texts and the char-level abbyy: 414 walk lines (the R819 two-voice census pinned 401; the geometric re-read recovers the thirteen rows the fused texts dropped - the Bunyip, Gold Bug, Burrow Warden, Blind Man, Blending Man, Mephit Devil, Dark Elf, Olhydra and Oriental Dragon reads among them), 214 keyed to the 103 registry FF defs (every roster def carries a keyed line; the Penanggalan, Rothe and Terithran reads ride their own-name rows), 200 keyless (the family rows, the MM2 own rows, the no-def reads), no defs promoted, the registry stays 913, the ff def census stays 103, no gap boxes flip; the walk is the own-name model - a family sub-row letters on its own printed initial and a double-listed row counts each printing"
+ },
+ "census_before": 763,
+ "inline_count": 68,
+ "consts": [
+  {
+   "name": "ffikRound",
+   "value": 841,
+   "comment": "the round"
+  },
+  {
+   "name": "ffikPrintFolio",
+   "value": 156,
+   "comment": "the print folio the index rides on (MM2 p. 156)"
+  },
+  {
+   "name": "ffikFirstPage",
+   "value": 156,
+   "comment": "the first index page"
+  },
+  {
+   "name": "ffikLastPage",
+   "value": 160,
+   "comment": "the last index page"
+  },
+  {
+   "name": "ffikColumnsPerPage",
+   "value": 4,
+   "comment": "the index layout columns per page"
+  },
+  {
+   "name": "ffikLetterCount",
+   "value": 26,
+   "comment": "the letter sections A through Z"
+  },
+  {
+   "name": "ffikWalkLines",
+   "value": 414,
+   "comment": "the F-referenced index lines in the walk"
+  },
+  {
+   "name": "ffikKeyedLines",
+   "value": 214,
+   "comment": "the walk lines keyed to a registry FF def"
+  },
+  {
+   "name": "ffikKeylessLines",
+   "value": 200,
+   "comment": "the walk lines keyless (family rows, MM2 own rows, no-def reads)"
+  },
+  {
+   "name": "ffikKeyedDefs",
+   "value": 103,
+   "comment": "the distinct FF defs the walk keys (every roster def carries a line)"
+  },
+  {
+   "name": "ffikRosterDefs",
+   "value": 103,
+   "comment": "the registry FF def census (unchanged, the R840 census)"
+  },
+  {
+   "name": "ffikReconcileBase",
+   "value": 401,
+   "comment": "the R819 two-voice FF line census (mm2enciFfLines)"
+  },
+  {
+   "name": "ffikReconcileDelta",
+   "value": 13,
+   "comment": "the rows the geometric re-read recovers over the R819 base"
+  },
+  {
+   "name": "ffikMaxLetterLines",
+   "value": 52,
+   "comment": "the largest letter (S)"
+  },
+  {
+   "name": "ffikMinLetterLines",
+   "value": 0,
+   "comment": "the smallest letter (Z, the own-name read carries none)"
+  },
+  {
+   "name": "ffikFirstFfPage",
+   "value": 8,
+   "comment": "the first FF page the walk keys (the aarakocra line)"
+  },
+  {
+   "name": "ffikLastFfPage",
+   "value": 97,
+   "comment": "the last FF page the walk keys (the yellow musk lines)"
+  },
+  {
+   "name": "ffikLetterA",
+   "value": 17,
+   "comment": "the A lines (14 keyed, 3 keyless)"
+  },
+  {
+   "name": "ffikLetterB",
+   "value": 26,
+   "comment": "the B lines (16 keyed, 10 keyless)"
+  },
+  {
+   "name": "ffikLetterC",
+   "value": 26,
+   "comment": "the C lines (10 keyed, 16 keyless)"
+  },
+  {
+   "name": "ffikLetterD",
+   "value": 29,
+   "comment": "the D lines (13 keyed, 16 keyless)"
+  },
+  {
+   "name": "ffikLetterE",
+   "value": 15,
+   "comment": "the E lines (7 keyed, 8 keyless)"
+  },
+  {
+   "name": "ffikLetterF",
+   "value": 26,
+   "comment": "the F lines (10 keyed, 16 keyless)"
+  },
+  {
+   "name": "ffikLetterG",
+   "value": 33,
+   "comment": "the G lines (12 keyed, 21 keyless)"
+  },
+  {
+   "name": "ffikLetterH",
+   "value": 13,
+   "comment": "the H lines (9 keyed, 4 keyless)"
+  },
+  {
+   "name": "ffikLetterI",
+   "value": 14,
+   "comment": "the I lines (4 keyed, 10 keyless)"
+  },
+  {
+   "name": "ffikLetterJ",
+   "value": 5,
+   "comment": "the J lines (3 keyed, 2 keyless)"
+  },
+  {
+   "name": "ffikLetterK",
+   "value": 13,
+   "comment": "the K lines (7 keyed, 6 keyless)"
+  },
+  {
+   "name": "ffikLetterL",
+   "value": 19,
+   "comment": "the L lines (9 keyed, 10 keyless)"
+  },
+  {
+   "name": "ffikLetterM",
+   "value": 21,
+   "comment": "the M lines (11 keyed, 10 keyless)"
+  },
+  {
+   "name": "ffikLetterN",
+   "value": 12,
+   "comment": "the N lines (5 keyed, 7 keyless)"
+  },
+  {
+   "name": "ffikLetterO",
+   "value": 10,
+   "comment": "the O lines (4 keyed, 6 keyless)"
+  },
+  {
+   "name": "ffikLetterP",
+   "value": 18,
+   "comment": "the P lines (5 keyed, 13 keyless)"
+  },
+  {
+   "name": "ffikLetterQ",
+   "value": 4,
+   "comment": "the Q lines (2 keyed, 2 keyless)"
+  },
+  {
+   "name": "ffikLetterR",
+   "value": 11,
+   "comment": "the R lines (8 keyed, 3 keyless)"
+  },
+  {
+   "name": "ffikLetterS",
+   "value": 52,
+   "comment": "the S lines (37 keyed, 15 keyless)"
+  },
+  {
+   "name": "ffikLetterT",
+   "value": 16,
+   "comment": "the T lines (11 keyed, 5 keyless)"
+  },
+  {
+   "name": "ffikLetterU",
+   "value": 6,
+   "comment": "the U lines (4 keyed, 2 keyless)"
+  },
+  {
+   "name": "ffikLetterV",
+   "value": 6,
+   "comment": "the V lines (4 keyed, 2 keyless)"
+  },
+  {
+   "name": "ffikLetterW",
+   "value": 13,
+   "comment": "the W lines (8 keyed, 5 keyless)"
+  },
+  {
+   "name": "ffikLetterX",
+   "value": 2,
+   "comment": "the X lines (1 keyed, 1 keyless)"
+  },
+  {
+   "name": "ffikLetterY",
+   "value": 7,
+   "comment": "the Y lines (0 keyed, 7 keyless)"
+  },
+  {
+   "name": "ffikLetterZ",
+   "value": 0,
+   "comment": "the Z lines (0 keyed, 0 keyless)"
+  },
+  {
+   "name": "ffikRegistryDefs",
+   "value": 913,
+   "comment": "the registry census (unchanged, the R840 census)"
+  },
+  {
+   "name": "ffikDungeonKeyedCells",
+   "value": 171,
+   "comment": "the dungeon walk-key census (unchanged, the R840 census)"
+  },
+  {
+   "name": "ffikDungeonFfRows",
+   "value": 26,
+   "comment": "the dungeon FF rows (unchanged; 25 keyed, the Elemental Prince keyless)"
+  },
+  {
+   "name": "ffikVoiceCount",
+   "value": 3,
+   "comment": "the OCR voices collated (the two djvu texts plus the geometric xml)"
+  },
+  {
+   "name": "ffikGeoLineCensus",
+   "value": 1595,
+   "comment": "the geometric line reconstruction across the five index pages"
+  }
+ ],
+ "bools": [
+  {
+   "name": "ffikNoDefsPromotedThisRound",
+   "value": true,
+   "comment": "the walk promotes no defs (a read-only round)"
+  },
+  {
+   "name": "ffikRegistryStaysAt913",
+   "value": true,
+   "comment": "the registry census rides unchanged"
+  },
+  {
+   "name": "ffikFfDefsStayAt103",
+   "value": true,
+   "comment": "the ff def census rides unchanged"
+  },
+  {
+   "name": "ffikNameBasedResolution",
+   "value": true,
+   "comment": "a line keys on its printed name or parenthetical (order-free token match)"
+  },
+  {
+   "name": "ffikFamilyRowsKeyless",
+   "value": true,
+   "comment": "the family rows (Elf, Demon, Devil, Giant, Mephit, Slaad, Urchin) stay keyless"
+  },
+  {
+   "name": "ffikSubrowsRelettered",
+   "value": true,
+   "comment": "a family sub-row letters on its own printed name initial"
+  },
+  {
+   "name": "ffikDoubleListingsCounted",
+   "value": true,
+   "comment": "a double-listed row counts each printing (the Man and Snake families)"
+  },
+  {
+   "name": "ffikThreeVoiceCollatedRead",
+   "value": true,
+   "comment": "the walk is the three-voice geometric collation (djvu A, djvu B, the xml)"
+  },
+  {
+   "name": "ffikNoGapBoxesFlip",
+   "value": true,
+   "comment": "no MM2 gap boxes flip this round"
+  },
+  {
+   "name": "ffikPagesFollowRosterOracle",
+   "value": true,
+   "comment": "a keyed line carries its def page (the roster oracle), a keyless line the printed F page"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "caller_files": [],
+ "tables": [
+  {
+   "name": "the FF index line walk grid",
+   "tag": "WALK",
+   "cols": [
+    "ffikOrdinal",
+    "ffikLetter",
+    "ffikPage",
+    "ffikDef"
+   ],
+   "count": "ffikWalkLines",
+   "data": [
+    [
+     1,
+     1,
+     8,
+     1
+    ],
+    [
+     2,
+     1,
+     9,
+     2
+    ],
+    [
+     3,
+     1,
+     9,
+     3
+    ],
+    [
+     4,
+     1,
+     33,
+     0
+    ],
+    [
+     5,
+     1,
+     62,
+     0
+    ],
+    [
+     6,
+     1,
+     11,
+     5
+    ],
+    [
+     7,
+     1,
+     11,
+     6
+    ],
+    [
+     8,
+     1,
+     11,
+     6
+    ],
+    [
+     9,
+     1,
+     11,
+     4
+    ],
+    [
+     10,
+     1,
+     84,
+     82
+    ],
+    [
+     11,
+     1,
+     12,
+     7
+    ],
+    [
+     12,
+     1,
+     17,
+     0
+    ],
+    [
+     13,
+     1,
+     12,
+     8
+    ],
+    [
+     14,
+     1,
+     13,
+     9
+    ],
+    [
+     15,
+     1,
+     16,
+     16
+    ],
+    [
+     16,
+     1,
+     75,
+     65
+    ],
+    [
+     17,
+     1,
+     75,
+     65
+    ],
+    [
+     18,
+     2,
+     13,
+     10
+    ],
+    [
+     19,
+     2,
+     53,
+     47
+    ],
+    [
+     20,
+     4,
+     27,
+     0
+    ],
+    [
+     21,
+     7,
+     14,
+     11
+    ],
+    [
+     22,
+     2,
+     35,
+     0
+    ],
+    [
+     23,
+     7,
+     46,
+     0
+    ],
+    [
+     24,
+     2,
+     46,
+     0
+    ],
+    [
+     25,
+     2,
+     14,
+     12
+    ],
+    [
+     26,
+     2,
+     8,
+     1
+    ],
+    [
+     27,
+     2,
+     26,
+     0
+    ],
+    [
+     28,
+     2,
+     41,
+     0
+    ],
+    [
+     29,
+     2,
+     92,
+     95
+    ],
+    [
+     30,
+     2,
+     80,
+     75
+    ],
+    [
+     31,
+     2,
+     15,
+     13
+    ],
+    [
+     32,
+     2,
+     15,
+     14
+    ],
+    [
+     33,
+     2,
+     15,
+     0
+    ],
+    [
+     34,
+     2,
+     96,
+     103
+    ],
+    [
+     35,
+     2,
+     80,
+     0
+    ],
+    [
+     36,
+     2,
+     15,
+     15
+    ],
+    [
+     37,
+     2,
+     16,
+     16
+    ],
+    [
+     38,
+     2,
+     46,
+     41
+    ],
+    [
+     39,
+     2,
+     12,
+     8
+    ],
+    [
+     40,
+     2,
+     46,
+     0
+    ],
+    [
+     41,
+     2,
+     16,
+     17
+    ],
+    [
+     42,
+     2,
+     17,
+     18
+    ],
+    [
+     43,
+     2,
+     84,
+     0
+    ],
+    [
+     44,
+     3,
+     17,
+     0
+    ],
+    [
+     45,
+     3,
+     30,
+     0
+    ],
+    [
+     46,
+     3,
+     18,
+     0
+    ],
+    [
+     47,
+     7,
+     49,
+     0
+    ],
+    [
+     48,
+     8,
+     50,
+     0
+    ],
+    [
+     49,
+     14,
+     68,
+     0
+    ],
+    [
+     50,
+     3,
+     86,
+     85
+    ],
+    [
+     51,
+     3,
+     18,
+     19
+    ],
+    [
+     52,
+     3,
+     29,
+     0
+    ],
+    [
+     53,
+     3,
+     19,
+     20
+    ],
+    [
+     54,
+     3,
+     19,
+     21
+    ],
+    [
+     55,
+     3,
+     52,
+     0
+    ],
+    [
+     56,
+     3,
+     19,
+     22
+    ],
+    [
+     57,
+     3,
+     29,
+     0
+    ],
+    [
+     58,
+     3,
+     46,
+     0
+    ],
+    [
+     59,
+     3,
+     31,
+     0
+    ],
+    [
+     60,
+     3,
+     18,
+     0
+    ],
+    [
+     61,
+     3,
+     88,
+     89
+    ],
+    [
+     62,
+     3,
+     26,
+     0
+    ],
+    [
+     63,
+     3,
+     19,
+     22
+    ],
+    [
+     64,
+     3,
+     21,
+     23
+    ],
+    [
+     65,
+     3,
+     22,
+     0
+    ],
+    [
+     66,
+     3,
+     97,
+     0
+    ],
+    [
+     67,
+     3,
+     31,
+     0
+    ],
+    [
+     68,
+     3,
+     21,
+     24
+    ],
+    [
+     69,
+     7,
+     49,
+     0
+    ],
+    [
+     70,
+     13,
+     66,
+     56
+    ],
+    [
+     71,
+     14,
+     69,
+     58
+    ],
+    [
+     72,
+     4,
+     22,
+     25
+    ],
+    [
+     73,
+     4,
+     67,
+     0
+    ],
+    [
+     74,
+     4,
+     22,
+     0
+    ],
+    [
+     75,
+     4,
+     23,
+     0
+    ],
+    [
+     76,
+     4,
+     33,
+     34
+    ],
+    [
+     77,
+     4,
+     23,
+     0
+    ],
+    [
+     78,
+     4,
+     23,
+     0
+    ],
+    [
+     79,
+     4,
+     23,
+     0
+    ],
+    [
+     80,
+     4,
+     81,
+     76
+    ],
+    [
+     81,
+     4,
+     67,
+     0
+    ],
+    [
+     82,
+     4,
+     84,
+     83
+    ],
+    [
+     83,
+     4,
+     24,
+     0
+    ],
+    [
+     84,
+     6,
+     40,
+     0
+    ],
+    [
+     85,
+     19,
+     78,
+     70
+    ],
+    [
+     86,
+     4,
+     25,
+     26
+    ],
+    [
+     87,
+     4,
+     25,
+     0
+    ],
+    [
+     88,
+     4,
+     26,
+     27
+    ],
+    [
+     89,
+     4,
+     50,
+     0
+    ],
+    [
+     90,
+     4,
+     77,
+     69
+    ],
+    [
+     91,
+     4,
+     26,
+     0
+    ],
+    [
+     92,
+     4,
+     27,
+     28
+    ],
+    [
+     93,
+     4,
+     23,
+     0
+    ],
+    [
+     94,
+     4,
+     26,
+     27
+    ],
+    [
+     95,
+     8,
+     51,
+     0
+    ],
+    [
+     96,
+     4,
+     27,
+     0
+    ],
+    [
+     97,
+     4,
+     34,
+     0
+    ],
+    [
+     98,
+     3,
+     30,
+     0
+    ],
+    [
+     99,
+     3,
+     29,
+     0
+    ],
+    [
+     100,
+     3,
+     29,
+     0
+    ],
+    [
+     101,
+     5,
+     28,
+     29
+    ],
+    [
+     102,
+     13,
+     36,
+     36
+    ],
+    [
+     103,
+     13,
+     52,
+     0
+    ],
+    [
+     104,
+     15,
+     27,
+     0
+    ],
+    [
+     105,
+     19,
+     28,
+     30
+    ],
+    [
+     106,
+     19,
+     29,
+     31
+    ],
+    [
+     107,
+     4,
+     30,
+     32
+    ],
+    [
+     108,
+     4,
+     33,
+     34
+    ],
+    [
+     109,
+     4,
+     30,
+     33
+    ],
+    [
+     110,
+     5,
+     32,
+     0
+    ],
+    [
+     111,
+     5,
+     28,
+     29
+    ],
+    [
+     112,
+     5,
+     56,
+     50
+    ],
+    [
+     113,
+     5,
+     27,
+     28
+    ],
+    [
+     114,
+     5,
+     92,
+     0
+    ],
+    [
+     115,
+     5,
+     79,
+     73
+    ],
+    [
+     116,
+     5,
+     31,
+     0
+    ],
+    [
+     117,
+     5,
+     33,
+     0
+    ],
+    [
+     118,
+     5,
+     82,
+     0
+    ],
+    [
+     119,
+     5,
+     34,
+     0
+    ],
+    [
+     120,
+     5,
+     35,
+     35
+    ],
+    [
+     121,
+     5,
+     81,
+     77
+    ],
+    [
+     122,
+     5,
+     35,
+     0
+    ],
+    [
+     123,
+     5,
+     35,
+     0
+    ],
+    [
+     124,
+     6,
+     50,
+     0
+    ],
+    [
+     125,
+     6,
+     49,
+     0
+    ],
+    [
+     126,
+     6,
+     31,
+     0
+    ],
+    [
+     127,
+     6,
+     64,
+     55
+    ],
+    [
+     128,
+     6,
+     38,
+     0
+    ],
+    [
+     129,
+     6,
+     72,
+     0
+    ],
+    [
+     130,
+     6,
+     87,
+     88
+    ],
+    [
+     131,
+     6,
+     36,
+     36
+    ],
+    [
+     132,
+     6,
+     36,
+     37
+    ],
+    [
+     133,
+     6,
+     42,
+     0
+    ],
+    [
+     134,
+     6,
+     38,
+     0
+    ],
+    [
+     135,
+     6,
+     56,
+     50
+    ],
+    [
+     136,
+     6,
+     57,
+     0
+    ],
+    [
+     137,
+     6,
+     38,
+     0
+    ],
+    [
+     138,
+     6,
+     39,
+     0
+    ],
+    [
+     139,
+     6,
+     39,
+     0
+    ],
+    [
+     140,
+     6,
+     88,
+     91
+    ],
+    [
+     141,
+     6,
+     42,
+     0
+    ],
+    [
+     142,
+     6,
+     39,
+     38
+    ],
+    [
+     143,
+     6,
+     50,
+     43
+    ],
+    [
+     144,
+     6,
+     15,
+     13
+    ],
+    [
+     145,
+     6,
+     16,
+     17
+    ],
+    [
+     146,
+     6,
+     40,
+     0
+    ],
+    [
+     147,
+     7,
+     40,
+     0
+    ],
+    [
+     148,
+     7,
+     41,
+     39
+    ],
+    [
+     149,
+     7,
+     41,
+     0
+    ],
+    [
+     150,
+     7,
+     78,
+     71
+    ],
+    [
+     151,
+     7,
+     41,
+     0
+    ],
+    [
+     152,
+     7,
+     42,
+     0
+    ],
+    [
+     153,
+     7,
+     42,
+     0
+    ],
+    [
+     154,
+     7,
+     43,
+     0
+    ],
+    [
+     155,
+     7,
+     43,
+     40
+    ],
+    [
+     156,
+     7,
+     45,
+     0
+    ],
+    [
+     157,
+     7,
+     84,
+     83
+    ],
+    [
+     158,
+     7,
+     96,
+     103
+    ],
+    [
+     159,
+     7,
+     57,
+     0
+    ],
+    [
+     160,
+     7,
+     46,
+     0
+    ],
+    [
+     161,
+     7,
+     18,
+     0
+    ],
+    [
+     162,
+     7,
+     46,
+     0
+    ],
+    [
+     163,
+     7,
+     46,
+     0
+    ],
+    [
+     164,
+     7,
+     57,
+     51
+    ],
+    [
+     165,
+     7,
+     72,
+     0
+    ],
+    [
+     166,
+     7,
+     93,
+     99
+    ],
+    [
+     167,
+     7,
+     81,
+     0
+    ],
+    [
+     168,
+     7,
+     92,
+     96
+    ],
+    [
+     169,
+     7,
+     46,
+     41
+    ],
+    [
+     170,
+     7,
+     40,
+     0
+    ],
+    [
+     171,
+     7,
+     81,
+     77
+    ],
+    [
+     172,
+     7,
+     47,
+     42
+    ],
+    [
+     173,
+     7,
+     48,
+     0
+    ],
+    [
+     174,
+     7,
+     49,
+     0
+    ],
+    [
+     175,
+     7,
+     49,
+     0
+    ],
+    [
+     176,
+     8,
+     15,
+     14
+    ],
+    [
+     177,
+     8,
+     56,
+     49
+    ],
+    [
+     178,
+     8,
+     50,
+     0
+    ],
+    [
+     179,
+     8,
+     50,
+     43
+    ],
+    [
+     180,
+     8,
+     51,
+     44
+    ],
+    [
+     181,
+     8,
+     52,
+     46
+    ],
+    [
+     182,
+     8,
+     51,
+     44
+    ],
+    [
+     183,
+     8,
+     51,
+     0
+    ],
+    [
+     184,
+     8,
+     51,
+     45
+    ],
+    [
+     185,
+     8,
+     93,
+     99
+    ],
+    [
+     186,
+     8,
+     93,
+     99
+    ],
+    [
+     187,
+     9,
+     40,
+     0
+    ],
+    [
+     188,
+     9,
+     26,
+     27
+    ],
+    [
+     189,
+     9,
+     50,
+     43
+    ],
+    [
+     190,
+     9,
+     52,
+     0
+    ],
+    [
+     191,
+     9,
+     90,
+     93
+    ],
+    [
+     192,
+     9,
+     51,
+     0
+    ],
+    [
+     193,
+     9,
+     52,
+     0
+    ],
+    [
+     194,
+     9,
+     31,
+     0
+    ],
+    [
+     195,
+     9,
+     52,
+     0
+    ],
+    [
+     196,
+     9,
+     82,
+     0
+    ],
+    [
+     197,
+     9,
+     19,
+     20
+    ],
+    [
+     198,
+     9,
+     91,
+     0
+    ],
+    [
+     199,
+     9,
+     52,
+     0
+    ],
+    [
+     200,
+     10,
+     53,
+     0
+    ],
+    [
+     201,
+     10,
+     85,
+     84
+    ],
+    [
+     202,
+     10,
+     53,
+     47
+    ],
+    [
+     203,
+     10,
+     53,
+     47
+    ],
+    [
+     204,
+     11,
+     55,
+     0
+    ],
+    [
+     205,
+     11,
+     55,
+     48
+    ],
+    [
+     206,
+     11,
+     56,
+     49
+    ],
+    [
+     207,
+     11,
+     56,
+     50
+    ],
+    [
+     208,
+     11,
+     35,
+     0
+    ],
+    [
+     209,
+     11,
+     57,
+     51
+    ],
+    [
+     210,
+     11,
+     61,
+     0
+    ],
+    [
+     211,
+     11,
+     23,
+     0
+    ],
+    [
+     212,
+     11,
+     96,
+     103
+    ],
+    [
+     213,
+     11,
+     57,
+     0
+    ],
+    [
+     214,
+     11,
+     83,
+     80
+    ],
+    [
+     215,
+     12,
+     59,
+     0
+    ],
+    [
+     216,
+     12,
+     61,
+     52
+    ],
+    [
+     217,
+     12,
+     64,
+     0
+    ],
+    [
+     218,
+     12,
+     88,
+     90
+    ],
+    [
+     219,
+     12,
+     55,
+     0
+    ],
+    [
+     220,
+     12,
+     81,
+     76
+    ],
+    [
+     221,
+     12,
+     28,
+     29
+    ],
+    [
+     222,
+     12,
+     15,
+     13
+    ],
+    [
+     223,
+     12,
+     52,
+     0
+    ],
+    [
+     224,
+     12,
+     61,
+     0
+    ],
+    [
+     225,
+     12,
+     13,
+     10
+    ],
+    [
+     226,
+     12,
+     61,
+     0
+    ],
+    [
+     227,
+     12,
+     41,
+     0
+    ],
+    [
+     228,
+     12,
+     24,
+     0
+    ],
+    [
+     229,
+     12,
+     82,
+     0
+    ],
+    [
+     230,
+     12,
+     82,
+     0
+    ],
+    [
+     231,
+     12,
+     91,
+     94
+    ],
+    [
+     232,
+     12,
+     28,
+     30
+    ],
+    [
+     233,
+     13,
+     27,
+     28
+    ],
+    [
+     234,
+     13,
+     62,
+     0
+    ],
+    [
+     235,
+     2,
+     86,
+     0
+    ],
+    [
+     236,
+     2,
+     48,
+     0
+    ],
+    [
+     237,
+     3,
+     21,
+     23
+    ],
+    [
+     238,
+     6,
+     40,
+     0
+    ],
+    [
+     239,
+     11,
+     56,
+     49
+    ],
+    [
+     240,
+     11,
+     57,
+     0
+    ],
+    [
+     241,
+     12,
+     61,
+     52
+    ],
+    [
+     242,
+     19,
+     77,
+     67
+    ],
+    [
+     243,
+     19,
+     79,
+     73
+    ],
+    [
+     244,
+     13,
+     62,
+     0
+    ],
+    [
+     245,
+     13,
+     63,
+     53
+    ],
+    [
+     246,
+     13,
+     63,
+     54
+    ],
+    [
+     247,
+     13,
+     64,
+     0
+    ],
+    [
+     248,
+     13,
+     77,
+     69
+    ],
+    [
+     249,
+     13,
+     52,
+     0
+    ],
+    [
+     250,
+     13,
+     66,
+     56
+    ],
+    [
+     251,
+     13,
+     53,
+     47
+    ],
+    [
+     252,
+     13,
+     66,
+     0
+    ],
+    [
+     253,
+     13,
+     42,
+     0
+    ],
+    [
+     254,
+     13,
+     9,
+     3
+    ],
+    [
+     255,
+     13,
+     97,
+     0
+    ],
+    [
+     256,
+     13,
+     97,
+     0
+    ],
+    [
+     257,
+     13,
+     13,
+     10
+    ],
+    [
+     258,
+     13,
+     19,
+     21
+    ],
+    [
+     259,
+     13,
+     95,
+     0
+    ],
+    [
+     260,
+     14,
+     67,
+     0
+    ],
+    [
+     261,
+     14,
+     67,
+     0
+    ],
+    [
+     262,
+     14,
+     36,
+     37
+    ],
+    [
+     263,
+     14,
+     67,
+     0
+    ],
+    [
+     264,
+     14,
+     68,
+     0
+    ],
+    [
+     265,
+     14,
+     68,
+     57
+    ],
+    [
+     266,
+     14,
+     69,
+     58
+    ],
+    [
+     267,
+     14,
+     39,
+     38
+    ],
+    [
+     268,
+     15,
+     32,
+     0
+    ],
+    [
+     269,
+     15,
+     70,
+     0
+    ],
+    [
+     270,
+     15,
+     70,
+     59
+    ],
+    [
+     271,
+     15,
+     32,
+     0
+    ],
+    [
+     272,
+     15,
+     51,
+     0
+    ],
+    [
+     273,
+     15,
+     70,
+     59
+    ],
+    [
+     274,
+     15,
+     70,
+     60
+    ],
+    [
+     275,
+     15,
+     19,
+     21
+    ],
+    [
+     276,
+     15,
+     76,
+     0
+    ],
+    [
+     277,
+     16,
+     29,
+     0
+    ],
+    [
+     278,
+     16,
+     68,
+     0
+    ],
+    [
+     279,
+     16,
+     71,
+     61
+    ],
+    [
+     280,
+     16,
+     72,
+     0
+    ],
+    [
+     281,
+     16,
+     83,
+     79
+    ],
+    [
+     282,
+     16,
+     78,
+     72
+    ],
+    [
+     283,
+     16,
+     72,
+     0
+    ],
+    [
+     284,
+     16,
+     18,
+     0
+    ],
+    [
+     285,
+     16,
+     74,
+     64
+    ],
+    [
+     286,
+     16,
+     73,
+     62
+    ],
+    [
+     287,
+     16,
+     73,
+     0
+    ],
+    [
+     288,
+     16,
+     33,
+     0
+    ],
+    [
+     289,
+     16,
+     31,
+     0
+    ],
+    [
+     290,
+     16,
+     32,
+     0
+    ],
+    [
+     291,
+     16,
+     31,
+     0
+    ],
+    [
+     292,
+     16,
+     32,
+     0
+    ],
+    [
+     293,
+     16,
+     73,
+     0
+    ],
+    [
+     294,
+     17,
+     74,
+     63
+    ],
+    [
+     295,
+     17,
+     24,
+     0
+    ],
+    [
+     296,
+     17,
+     74,
+     64
+    ],
+    [
+     297,
+     17,
+     74,
+     0
+    ],
+    [
+     298,
+     18,
+     11,
+     4
+    ],
+    [
+     299,
+     18,
+     62,
+     0
+    ],
+    [
+     300,
+     18,
+     36,
+     36
+    ],
+    [
+     301,
+     18,
+     82,
+     78
+    ],
+    [
+     302,
+     18,
+     92,
+     97
+    ],
+    [
+     303,
+     18,
+     75,
+     0
+    ],
+    [
+     304,
+     18,
+     75,
+     65
+    ],
+    [
+     305,
+     18,
+     70,
+     60
+    ],
+    [
+     306,
+     18,
+     87,
+     88
+    ],
+    [
+     307,
+     18,
+     76,
+     66
+    ],
+    [
+     308,
+     18,
+     17,
+     0
+    ],
+    [
+     309,
+     19,
+     38,
+     0
+    ],
+    [
+     310,
+     19,
+     77,
+     67
+    ],
+    [
+     311,
+     19,
+     77,
+     68
+    ],
+    [
+     312,
+     19,
+     77,
+     69
+    ],
+    [
+     313,
+     19,
+     18,
+     19
+    ],
+    [
+     314,
+     19,
+     28,
+     30
+    ],
+    [
+     315,
+     19,
+     13,
+     9
+    ],
+    [
+     316,
+     19,
+     55,
+     48
+    ],
+    [
+     317,
+     19,
+     78,
+     70
+    ],
+    [
+     318,
+     19,
+     78,
+     71
+    ],
+    [
+     319,
+     19,
+     78,
+     72
+    ],
+    [
+     320,
+     19,
+     78,
+     72
+    ],
+    [
+     321,
+     19,
+     29,
+     31
+    ],
+    [
+     322,
+     19,
+     79,
+     73
+    ],
+    [
+     323,
+     19,
+     92,
+     98
+    ],
+    [
+     324,
+     19,
+     84,
+     82
+    ],
+    [
+     325,
+     19,
+     21,
+     24
+    ],
+    [
+     326,
+     19,
+     79,
+     74
+    ],
+    [
+     327,
+     19,
+     80,
+     75
+    ],
+    [
+     328,
+     19,
+     95,
+     0
+    ],
+    [
+     329,
+     19,
+     80,
+     0
+    ],
+    [
+     330,
+     19,
+     64,
+     55
+    ],
+    [
+     331,
+     19,
+     38,
+     0
+    ],
+    [
+     332,
+     6,
+     38,
+     0
+    ],
+    [
+     333,
+     9,
+     52,
+     0
+    ],
+    [
+     334,
+     10,
+     53,
+     0
+    ],
+    [
+     335,
+     19,
+     35,
+     0
+    ],
+    [
+     336,
+     19,
+     55,
+     0
+    ],
+    [
+     337,
+     19,
+     83,
+     79
+    ],
+    [
+     338,
+     19,
+     83,
+     80
+    ],
+    [
+     339,
+     19,
+     35,
+     35
+    ],
+    [
+     340,
+     19,
+     75,
+     0
+    ],
+    [
+     341,
+     19,
+     24,
+     0
+    ],
+    [
+     342,
+     19,
+     29,
+     31
+    ],
+    [
+     343,
+     19,
+     62,
+     0
+    ],
+    [
+     344,
+     19,
+     91,
+     0
+    ],
+    [
+     345,
+     19,
+     41,
+     39
+    ],
+    [
+     346,
+     2,
+     16,
+     16
+    ],
+    [
+     347,
+     19,
+     82,
+     0
+    ],
+    [
+     348,
+     4,
+     23,
+     0
+    ],
+    [
+     349,
+     4,
+     30,
+     33
+    ],
+    [
+     350,
+     16,
+     72,
+     0
+    ],
+    [
+     351,
+     19,
+     91,
+     0
+    ],
+    [
+     352,
+     19,
+     65,
+     0
+    ],
+    [
+     353,
+     19,
+     9,
+     3
+    ],
+    [
+     354,
+     19,
+     88,
+     89
+    ],
+    [
+     355,
+     19,
+     63,
+     53
+    ],
+    [
+     356,
+     19,
+     42,
+     0
+    ],
+    [
+     357,
+     19,
+     84,
+     81
+    ],
+    [
+     358,
+     19,
+     25,
+     0
+    ],
+    [
+     359,
+     19,
+     84,
+     82
+    ],
+    [
+     360,
+     19,
+     84,
+     83
+    ],
+    [
+     361,
+     19,
+     85,
+     84
+    ],
+    [
+     362,
+     20,
+     86,
+     85
+    ],
+    [
+     363,
+     20,
+     86,
+     86
+    ],
+    [
+     364,
+     20,
+     87,
+     87
+    ],
+    [
+     365,
+     20,
+     21,
+     24
+    ],
+    [
+     366,
+     20,
+     87,
+     88
+    ],
+    [
+     367,
+     20,
+     88,
+     89
+    ],
+    [
+     368,
+     20,
+     88,
+     90
+    ],
+    [
+     369,
+     20,
+     29,
+     0
+    ],
+    [
+     370,
+     20,
+     88,
+     91
+    ],
+    [
+     371,
+     20,
+     89,
+     92
+    ],
+    [
+     372,
+     20,
+     38,
+     0
+    ],
+    [
+     373,
+     20,
+     89,
+     0
+    ],
+    [
+     374,
+     20,
+     91,
+     94
+    ],
+    [
+     375,
+     20,
+     23,
+     0
+    ],
+    [
+     376,
+     20,
+     90,
+     0
+    ],
+    [
+     377,
+     21,
+     93,
+     99
+    ],
+    [
+     378,
+     21,
+     92,
+     0
+    ],
+    [
+     379,
+     21,
+     75,
+     65
+    ],
+    [
+     380,
+     21,
+     79,
+     74
+    ],
+    [
+     381,
+     21,
+     11,
+     4
+    ],
+    [
+     382,
+     21,
+     92,
+     0
+    ],
+    [
+     383,
+     22,
+     41,
+     0
+    ],
+    [
+     384,
+     22,
+     93,
+     0
+    ],
+    [
+     385,
+     22,
+     93,
+     99
+    ],
+    [
+     386,
+     22,
+     61,
+     52
+    ],
+    [
+     387,
+     22,
+     94,
+     100
+    ],
+    [
+     388,
+     22,
+     94,
+     101
+    ],
+    [
+     389,
+     23,
+     84,
+     81
+    ],
+    [
+     390,
+     23,
+     84,
+     83
+    ],
+    [
+     391,
+     23,
+     79,
+     74
+    ],
+    [
+     392,
+     23,
+     32,
+     0
+    ],
+    [
+     393,
+     23,
+     93,
+     99
+    ],
+    [
+     394,
+     23,
+     94,
+     0
+    ],
+    [
+     395,
+     23,
+     95,
+     102
+    ],
+    [
+     396,
+     23,
+     94,
+     0
+    ],
+    [
+     397,
+     23,
+     52,
+     0
+    ],
+    [
+     398,
+     23,
+     95,
+     0
+    ],
+    [
+     399,
+     23,
+     95,
+     102
+    ],
+    [
+     400,
+     14,
+     67,
+     0
+    ],
+    [
+     401,
+     20,
+     87,
+     88
+    ],
+    [
+     402,
+     23,
+     83,
+     80
+    ],
+    [
+     403,
+     23,
+     78,
+     72
+    ],
+    [
+     404,
+     24,
+     96,
+     0
+    ],
+    [
+     405,
+     24,
+     96,
+     103
+    ],
+    [
+     406,
+     25,
+     33,
+     0
+    ],
+    [
+     407,
+     25,
+     97,
+     0
+    ],
+    [
+     408,
+     25,
+     97,
+     0
+    ],
+    [
+     409,
+     25,
+     93,
+     0
+    ],
+    [
+     410,
+     25,
+     82,
+     0
+    ],
+    [
+     411,
+     25,
+     30,
+     0
+    ],
+    [
+     412,
+     14,
+     67,
+     0
+    ],
+    [
+     413,
+     19,
+     83,
+     80
+    ],
+    [
+     414,
+     25,
+     97,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "the walk line ordinal (1 through 414, the print order)",
+    "the letter section of the line (A is 1)",
+    "the page the line carries (the def page when keyed, the printed F page when keyless)",
+    "the roster def ordinal (0 is the keyless read)"
+   ],
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    200
+   ],
+   "audit_comment": "THE FF INDEX LINE WALK GRID: the 414 F-referenced lines, the cells (ordinal, letter, page, def ordinal). The def column carries the 214 keyed ordinals 1 through 103 and the 200 keyless zeros."
+  },
+  {
+   "name": "the FF roster page grid",
+   "tag": "ROST",
+   "cols": [
+    "ffikRosterOrdinal",
+    "ffikRosterPage"
+   ],
+   "count": "ffikRosterDefs",
+   "data": [
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     5,
+     11
+    ],
+    [
+     6,
+     11
+    ],
+    [
+     7,
+     12
+    ],
+    [
+     8,
+     12
+    ],
+    [
+     9,
+     13
+    ],
+    [
+     10,
+     13
+    ],
+    [
+     11,
+     14
+    ],
+    [
+     12,
+     14
+    ],
+    [
+     13,
+     15
+    ],
+    [
+     14,
+     15
+    ],
+    [
+     15,
+     15
+    ],
+    [
+     16,
+     16
+    ],
+    [
+     17,
+     16
+    ],
+    [
+     18,
+     17
+    ],
+    [
+     19,
+     18
+    ],
+    [
+     20,
+     19
+    ],
+    [
+     21,
+     19
+    ],
+    [
+     22,
+     19
+    ],
+    [
+     23,
+     21
+    ],
+    [
+     24,
+     21
+    ],
+    [
+     25,
+     22
+    ],
+    [
+     26,
+     25
+    ],
+    [
+     27,
+     26
+    ],
+    [
+     28,
+     27
+    ],
+    [
+     29,
+     28
+    ],
+    [
+     30,
+     28
+    ],
+    [
+     31,
+     29
+    ],
+    [
+     32,
+     30
+    ],
+    [
+     33,
+     30
+    ],
+    [
+     34,
+     33
+    ],
+    [
+     35,
+     35
+    ],
+    [
+     36,
+     36
+    ],
+    [
+     37,
+     36
+    ],
+    [
+     38,
+     39
+    ],
+    [
+     39,
+     41
+    ],
+    [
+     40,
+     43
+    ],
+    [
+     41,
+     46
+    ],
+    [
+     42,
+     47
+    ],
+    [
+     43,
+     50
+    ],
+    [
+     44,
+     51
+    ],
+    [
+     45,
+     51
+    ],
+    [
+     46,
+     52
+    ],
+    [
+     47,
+     53
+    ],
+    [
+     48,
+     55
+    ],
+    [
+     49,
+     56
+    ],
+    [
+     50,
+     56
+    ],
+    [
+     51,
+     57
+    ],
+    [
+     52,
+     61
+    ],
+    [
+     53,
+     63
+    ],
+    [
+     54,
+     63
+    ],
+    [
+     55,
+     64
+    ],
+    [
+     56,
+     66
+    ],
+    [
+     57,
+     68
+    ],
+    [
+     58,
+     69
+    ],
+    [
+     59,
+     70
+    ],
+    [
+     60,
+     70
+    ],
+    [
+     61,
+     71
+    ],
+    [
+     62,
+     73
+    ],
+    [
+     63,
+     74
+    ],
+    [
+     64,
+     74
+    ],
+    [
+     65,
+     75
+    ],
+    [
+     66,
+     76
+    ],
+    [
+     67,
+     77
+    ],
+    [
+     68,
+     77
+    ],
+    [
+     69,
+     77
+    ],
+    [
+     70,
+     78
+    ],
+    [
+     71,
+     78
+    ],
+    [
+     72,
+     78
+    ],
+    [
+     73,
+     79
+    ],
+    [
+     74,
+     79
+    ],
+    [
+     75,
+     80
+    ],
+    [
+     76,
+     81
+    ],
+    [
+     77,
+     81
+    ],
+    [
+     78,
+     82
+    ],
+    [
+     79,
+     83
+    ],
+    [
+     80,
+     83
+    ],
+    [
+     81,
+     84
+    ],
+    [
+     82,
+     84
+    ],
+    [
+     83,
+     84
+    ],
+    [
+     84,
+     85
+    ],
+    [
+     85,
+     86
+    ],
+    [
+     86,
+     86
+    ],
+    [
+     87,
+     87
+    ],
+    [
+     88,
+     87
+    ],
+    [
+     89,
+     88
+    ],
+    [
+     90,
+     88
+    ],
+    [
+     91,
+     88
+    ],
+    [
+     92,
+     89
+    ],
+    [
+     93,
+     90
+    ],
+    [
+     94,
+     91
+    ],
+    [
+     95,
+     92
+    ],
+    [
+     96,
+     92
+    ],
+    [
+     97,
+     92
+    ],
+    [
+     98,
+     92
+    ],
+    [
+     99,
+     93
+    ],
+    [
+     100,
+     94
+    ],
+    [
+     101,
+     94
+    ],
+    [
+     102,
+     95
+    ],
+    [
+     103,
+     96
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "the roster def ordinal (1 through 103, the page order)",
+    "the def page in the FF print"
+   ],
+   "sentinel_census": [
+    0,
+    0
+   ],
+   "audit_comment": "THE FF ROSTER PAGE GRID: the 103 registry FF defs in page order (the R840 census, unchanged this round)."
+  },
+  {
+   "name": "the per-letter walk census grid",
+   "tag": "WLET",
+   "cols": [
+    "ffikLetOrdinal",
+    "ffikLetLines",
+    "ffikLetKeyed",
+    "ffikLetKeyless"
+   ],
+   "count": "ffikLetterCount",
+   "data": [
+    [
+     1,
+     17,
+     14,
+     3
+    ],
+    [
+     2,
+     26,
+     16,
+     10
+    ],
+    [
+     3,
+     26,
+     10,
+     16
+    ],
+    [
+     4,
+     29,
+     13,
+     16
+    ],
+    [
+     5,
+     15,
+     7,
+     8
+    ],
+    [
+     6,
+     26,
+     10,
+     16
+    ],
+    [
+     7,
+     33,
+     12,
+     21
+    ],
+    [
+     8,
+     13,
+     9,
+     4
+    ],
+    [
+     9,
+     14,
+     4,
+     10
+    ],
+    [
+     10,
+     5,
+     3,
+     2
+    ],
+    [
+     11,
+     13,
+     7,
+     6
+    ],
+    [
+     12,
+     19,
+     9,
+     10
+    ],
+    [
+     13,
+     21,
+     11,
+     10
+    ],
+    [
+     14,
+     12,
+     5,
+     7
+    ],
+    [
+     15,
+     10,
+     4,
+     6
+    ],
+    [
+     16,
+     18,
+     5,
+     13
+    ],
+    [
+     17,
+     4,
+     2,
+     2
+    ],
+    [
+     18,
+     11,
+     8,
+     3
+    ],
+    [
+     19,
+     52,
+     37,
+     15
+    ],
+    [
+     20,
+     16,
+     11,
+     5
+    ],
+    [
+     21,
+     6,
+     4,
+     2
+    ],
+    [
+     22,
+     6,
+     4,
+     2
+    ],
+    [
+     23,
+     13,
+     8,
+     5
+    ],
+    [
+     24,
+     2,
+     1,
+     1
+    ],
+    [
+     25,
+     7,
+     0,
+     7
+    ],
+    [
+     26,
+     0,
+     0,
+     0
+    ]
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "col_comments": [
+    "the letter ordinal (A is 1, Z is 26)",
+    "the letter walk lines",
+    "the letter keyed lines",
+    "the letter keyless lines"
+   ],
+   "sentinel_census": [
+    0,
+    1,
+    2,
+    1
+   ],
+   "audit_comment": "THE PER-LETTER WALK CENSUS GRID: the 26 letter rows, the cells (ordinal, lines, keyed, keyless). S is the largest (52 lines, 37 keyed); Z carries none (the own-name read)."
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the R841 FF index line walk": [
+   {
+    "kind": "const",
+    "name": "ffikRound"
+   },
+   {
+    "kind": "const",
+    "name": "ffikPrintFolio"
+   },
+   {
+    "kind": "const",
+    "name": "ffikFirstPage"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLastPage"
+   },
+   {
+    "kind": "const",
+    "name": "ffikColumnsPerPage"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterCount"
+   },
+   {
+    "kind": "const",
+    "name": "ffikWalkLines"
+   },
+   {
+    "kind": "const",
+    "name": "ffikKeyedLines"
+   },
+   {
+    "kind": "const",
+    "name": "ffikKeylessLines"
+   },
+   {
+    "kind": "const",
+    "name": "ffikKeyedDefs"
+   },
+   {
+    "kind": "const",
+    "name": "ffikRosterDefs"
+   },
+   {
+    "kind": "const",
+    "name": "ffikReconcileBase"
+   },
+   {
+    "kind": "const",
+    "name": "ffikReconcileDelta"
+   },
+   {
+    "kind": "const",
+    "name": "ffikMaxLetterLines"
+   },
+   {
+    "kind": "const",
+    "name": "ffikMinLetterLines"
+   },
+   {
+    "kind": "const",
+    "name": "ffikFirstFfPage"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLastFfPage"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterA"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterB"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterC"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterD"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterE"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterF"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterG"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterH"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterI"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterJ"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterK"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterL"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterM"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterN"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterO"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterP"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterQ"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterR"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterS"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterT"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterU"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterV"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterW"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterX"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterY"
+   },
+   {
+    "kind": "const",
+    "name": "ffikLetterZ"
+   },
+   {
+    "kind": "const",
+    "name": "ffikRegistryDefs"
+   },
+   {
+    "kind": "const",
+    "name": "ffikDungeonKeyedCells"
+   },
+   {
+    "kind": "const",
+    "name": "ffikDungeonFfRows"
+   },
+   {
+    "kind": "const",
+    "name": "ffikVoiceCount"
+   },
+   {
+    "kind": "const",
+    "name": "ffikGeoLineCensus"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikNoDefsPromotedThisRound"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikRegistryStaysAt913"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikFfDefsStayAt103"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikNameBasedResolution"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikFamilyRowsKeyless"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikSubrowsRelettered"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikDoubleListingsCounted"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikThreeVoiceCollatedRead"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikNoGapBoxesFlip"
+   },
+   {
+    "kind": "bool",
+    "name": "ffikPagesFollowRosterOracle"
+   },
+   {
+    "kind": "table",
+    "name": "the FF index line walk grid"
+   },
+   {
+    "kind": "table",
+    "name": "the FF roster page grid"
+   },
+   {
+    "kind": "table",
+    "name": "the per-letter walk census grid"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['ffikKeyedLines']() + m['ffikKeylessLines']() != m['ffikWalkLines']()",
+   "note": "the walk closes over keyed and keyless"
+  },
+  {
+   "expr": "m['ffikWalkLines']() != m['ffikReconcileBase']() + m['ffikReconcileDelta']()",
+   "note": "the walk reconciles the R819 base plus the thirteen recovered rows"
+  },
+  {
+   "expr": "m['ffikLetterA']() + m['ffikLetterB']() + m['ffikLetterC']() + m['ffikLetterD']() + m['ffikLetterE']() + m['ffikLetterF']() + m['ffikLetterG']() + m['ffikLetterH']() + m['ffikLetterI']() + m['ffikLetterJ']() + m['ffikLetterK']() + m['ffikLetterL']() + m['ffikLetterM']() + m['ffikLetterN']() + m['ffikLetterO']() + m['ffikLetterP']() + m['ffikLetterQ']() + m['ffikLetterR']() + m['ffikLetterS']() + m['ffikLetterT']() + m['ffikLetterU']() + m['ffikLetterV']() + m['ffikLetterW']() + m['ffikLetterX']() + m['ffikLetterY']() + m['ffikLetterZ']() != m['ffikWalkLines']()",
+   "note": "the per-letter pins sum to the walk"
+  },
+  {
+   "expr": "m['ffikLetLines'](0) + m['ffikLetLines'](1) + m['ffikLetLines'](2) + m['ffikLetLines'](3) + m['ffikLetLines'](4) + m['ffikLetLines'](5) + m['ffikLetLines'](6) + m['ffikLetLines'](7) + m['ffikLetLines'](8) + m['ffikLetLines'](9) + m['ffikLetLines'](10) + m['ffikLetLines'](11) + m['ffikLetLines'](12) + m['ffikLetLines'](13) + m['ffikLetLines'](14) + m['ffikLetLines'](15) + m['ffikLetLines'](16) + m['ffikLetLines'](17) + m['ffikLetLines'](18) + m['ffikLetLines'](19) + m['ffikLetLines'](20) + m['ffikLetLines'](21) + m['ffikLetLines'](22) + m['ffikLetLines'](23) + m['ffikLetLines'](24) + m['ffikLetLines'](25) != m['ffikWalkLines']()",
+   "note": "the per-letter grid sums to the walk"
+  },
+  {
+   "expr": "m['ffikLetKeyed'](0) + m['ffikLetKeyless'](0) != m['ffikLetLines'](0) or m['ffikLetKeyed'](18) + m['ffikLetKeyless'](18) != m['ffikLetLines'](18)",
+   "note": "the letter rows close over keyed and keyless (the A and S rows)"
+  },
+  {
+   "expr": "m['ffikLetLines'](18) != m['ffikLetterS']() or m['ffikLetLines'](25) != m['ffikLetterZ']()",
+   "note": "the S and Z grid rows carry the pinned censuses"
+  },
+  {
+   "expr": "m['ffikOrdinal'](0) != 1 or m['ffikOrdinal'](413) != 414 or m['ffikDef'](0) != 1 or m['ffikDef'](413) != 0",
+   "note": "the grid opens on the aarakocra line and closes on the yellow musk zombie line"
+  },
+  {
+   "expr": "m['ffikRosterOrdinal'](0) != 1 or m['ffikRosterOrdinal'](102) != 103 or m['ffikRosterPage'](0) != 8 or m['ffikRosterPage'](102) != 96",
+   "note": "the roster grid opens on the aarakocra def and closes on the xvart def (page 96)"
+  },
+  {
+   "expr": "m['ffikKeyedDefs']() != m['ffikRosterDefs']() or m['ffikKeyedLines']() < m['ffikKeyedDefs']()",
+   "note": "every roster def carries a keyed line"
+  },
+  {
+   "expr": "m['ffikMaxLetterLines']() != 52 or m['ffikMinLetterLines']() != 0 or m['ffikFirstFfPage']() != 8 or m['ffikLastFfPage']() != 97",
+   "note": "the extremes hold (S largest, Z none, the page span 8 through 97)"
+  }
+ ],
+ "audit_label": "R841 FF index line walk audit",
+ "audit_comment": "THE FF INDEX LINE WALK - the F-referenced lines of the merged MM2 index (print pp. 156-160): 414 walk lines (the R819 base 401 plus the 13 recovered rows), 214 keyed, 200 keyless, the letter pins A through Z (S the largest at 52, Z none), the roster pages 8 through 97, every roster def keyed; the registry 913, the ff def census 103, the dungeon walk-key census 171 - all unchanged, the read-only round",
+ "audit_file": "rules/audits/r841_batch.h",
+ "audit_anchor": "#include \"rules/audits/r840_batch.h\"  // R840: R840 hornet promotion audit",
+ "include_after": "#include \"rules/ffh.h\"  // R840: the hornet promotion",
+ "include_comment": "the FF index line walk",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R840 LANDED 2026-10-25: commit",
+ "prev_record": [
+  "- R840 LANDED 2026-10-25: commit",
+  "  2bd8392e58512057b7ff8f0f2fa9dddab2339879",
+  "  (pushed fcc1311..2bd8392,",
+  "  census 762 -> 763), THE HORNET",
+  "  PROMOTION (the FF arc, the single-",
+  "  def R820/R821 pattern). THE DEF:",
+  "  1 new .lua def lifted from the ff",
+  "  print (ff_print xp class) - the",
+  "  giant hornet (FF p. 52, the R839",
+  "  holdout: 5 HD, avgHp 23, xp",
+  "  165 + 5/hp = 280) - the",
+  "  R836/R837/R838/R839 def shape",
+  "  with the print-fidelity pin",
+  "  headers. THE REWIRE: 1 kEncD",
+  "  cell rekeyed (the die 14 Monster",
+  "  Level IV row, the unique",
+  "  gargoyle/blank/hydra anchor); the",
+  "  keyless FF rows drain 2 -> 1 (the",
+  "  Elemental Prince row stays",
+  "  keyless, the settled no-def",
+  "  read); the dungeon walk-key",
+  "  census 170 -> 171 (the",
+  "  mm2encdWalkKeyRows re-pin; the",
+  "  r816 audit fragment pin and both",
+  "  chains carried onto the ffh",
+  "  consts); the blank census 20 ->",
+  "  19; the registry 912 -> 913, the",
+  "  ff def census 102 -> 103; NO gap",
+  "  boxes flip (MM2 stays 37 closed 0",
+  "  open). Header rules/ffh.h, prefix",
+  "  ffh (20 consts + 4 bools, inline",
+  "  24), audit \"R840 hornet promotion",
+  "  audit\", rode",
+  "  rules/audits/r840_batch.h; the",
+  "  R839 record seated into the seed;",
+  "  file patches: regtest.cpp (1",
+  "  rekey patch), mm2encd.h and the",
+  "  r816 audit fragment (3",
+  "  patches). VERIFIED PRE-DELIVERY",
+  "  against the landed fcc1311 tree:",
+  "  engine double-run applied 11 /",
+  "  already 11, rverify GREEN at the",
+  "  base sha (24 mutants, 0 missed);",
+  "  one bug caught before publishing",
+  "  - the first build emitted RAW",
+  "  NEWLINES instead of \\n escapes in",
+  "  the lua text field (the R837",
+  "  unfinished-string class, the",
+  "  standing parse guard works). The",
+  "  FF print def promotion surface",
+  "  CLOSES with the hornet (every FF",
+  "  stat block now owns a def except",
+  "  the printless reads). Spec tools/",
+  "  spec_r840.json, md5 0aae4d3e0697",
+  "  36cd6f2ecd9119ad1f93",
+  "  (authored-plus-newline). NEXT:",
+  "  awaits Curtiss's call - the",
+  "  remaining keyless FF surface: the",
+  "  401 FF index lines (mm2enci); the",
+  "  Elemental Prince row stays",
+  "  keyless (no print def)."
+ ],
+ "gap_flips": [],
+ "gap_census": {
+  "closed": 37,
+  "open": 0
+ },
+ "file_patches": [],
+ "migrate_blocks": [],
+ "data_files": []
+}

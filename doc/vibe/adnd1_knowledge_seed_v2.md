@@ -23790,6 +23790,67 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   Hornet Giant cell (needs the
   giant hornet def), the 401 FF
   index lines (mm2enci).
+- R840 LANDED 2026-10-25: commit
+  2bd8392e58512057b7ff8f0f2fa9dddab2339879
+  (pushed fcc1311..2bd8392,
+  census 762 -> 763), THE HORNET
+  PROMOTION (the FF arc, the single-
+  def R820/R821 pattern). THE DEF:
+  1 new .lua def lifted from the ff
+  print (ff_print xp class) - the
+  giant hornet (FF p. 52, the R839
+  holdout: 5 HD, avgHp 23, xp
+  165 + 5/hp = 280) - the
+  R836/R837/R838/R839 def shape
+  with the print-fidelity pin
+  headers. THE REWIRE: 1 kEncD
+  cell rekeyed (the die 14 Monster
+  Level IV row, the unique
+  gargoyle/blank/hydra anchor); the
+  keyless FF rows drain 2 -> 1 (the
+  Elemental Prince row stays
+  keyless, the settled no-def
+  read); the dungeon walk-key
+  census 170 -> 171 (the
+  mm2encdWalkKeyRows re-pin; the
+  r816 audit fragment pin and both
+  chains carried onto the ffh
+  consts); the blank census 20 ->
+  19; the registry 912 -> 913, the
+  ff def census 102 -> 103; NO gap
+  boxes flip (MM2 stays 37 closed 0
+  open). Header rules/ffh.h, prefix
+  ffh (20 consts + 4 bools, inline
+  24), audit "R840 hornet promotion
+  audit", rode
+  rules/audits/r840_batch.h; the
+  R839 record seated into the seed;
+  file patches: regtest.cpp (1
+  rekey patch), mm2encd.h and the
+  r816 audit fragment (3
+  patches). VERIFIED PRE-DELIVERY
+  against the landed fcc1311 tree:
+  engine double-run applied 11 /
+  already 11, rverify GREEN at the
+  base sha (24 mutants, 0 missed);
+  one bug caught before publishing
+  - the first build emitted RAW
+  NEWLINES instead of \n escapes in
+  the lua text field (the R837
+  unfinished-string class, the
+  standing parse guard works). The
+  FF print def promotion surface
+  CLOSES with the hornet (every FF
+  stat block now owns a def except
+  the printless reads). Spec tools/
+  spec_r840.json, md5 0aae4d3e0697
+  36cd6f2ecd9119ad1f93
+  (authored-plus-newline). NEXT:
+  awaits Curtiss's call - the
+  remaining keyless FF surface: the
+  401 FF index lines (mm2enci); the
+  Elemental Prince row stays
+  keyless (no print def).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
