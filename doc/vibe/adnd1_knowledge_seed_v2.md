@@ -23111,6 +23111,57 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   pin at the next head), at 100
   blocks per round; the ~35
   width-gate holdbacks stay queued.
+- R830 LANDED 2026-10-25: commit
+  3a9764645be2148f30882b5f20e8a77e962bba5c
+  (census 752 -> 753, pushed
+  895e032..3a97646), THE WSG TAIL
+  AND DSG MIGRATION BATCH - the
+  seventh batch of real blocks
+  leaves regtest at the
+  100-per-round pace (the REGTEST
+  DECOMPOSITION ARC). THE MOVE:
+  digest idx 339-440 (R459 WSG
+  capsized use through R561 DSG DM
+  section - the WSG tail pins, the
+  DSG surface and Deepearth and
+  campaign pins; 100 blocks, 19526
+  lines) migrated VERBATIM into
+  rules/audits fragments
+  (r459_wsg_capsized_use.h through
+  r561_dsg_dm_section.h). R830's
+  own audit rode
+  rules/audits/r830_batch.h. Header
+  rules/xmb.h, prefix xmb (verified
+  free at 895e032, 0 hits), 6 consts
+  + 4 bools (inline 10), 4 examples,
+  the R829 record seated into the
+  seed, NO gap flips (MM2 stays 37
+  closed 0 open), NO tool patches.
+  TWO NEW HELDBACKS: R493 and R494
+  (WSG weather generation/effects)
+  - their labels sit with no
+  R-prefixed head within the
+  800-line walk; queued for
+  investigation, alongside the ~35
+  width-gate holdbacks. GATES: dress
+  rehearsal on a copy of the REAL
+  tree at 895e032 (the whole
+  rules/audits dir carried);
+  double-run 105/0 -> 0/105;
+  fragments byte-exact; regtest
+  reconstruction byte-for-byte;
+  census 342 + 411 = 753, all 753
+  preflight patterns unique each
+  once; rverify GREEN (10 mutants,
+  0 missed). Delivery spec-r830
+  canvas: spec 18690 bytes, md5
+  6f7d310f06c24ffcd49ce143bbc93864,
+  landed the same. NEXT: awaits
+  Curtiss's Go - the eighth batch
+  rides the same wiring (digest idx
+  441 onward: R562 DSG intro frame
+  at the next head), at 100 blocks
+  per round; 342 inline remain.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

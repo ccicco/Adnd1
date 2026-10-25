@@ -1,0 +1,601 @@
+{
+  "round": 831,
+  "title": "the planes and OA migration batch",
+  "prefix": "kmb",
+  "regtest": "regtest.cpp",
+  "header_file": "rules/kmb.h",
+  "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+  "gap_report": "tools/mm2_gap_report.md",
+  "banner": {
+    "title": "the planes and OA migration batch - the eighth batch rides the same wiring",
+    "provenance": "spec-driven; the eighth batch of real audit blocks (digest idx 441-549, R562 DSG intro frame through R671 OA wu jen second level spells - the DSG tail, the MotP planes, the DMO sections, the first OA ability, class, family, equipment, and spell pins; 100 blocks at Curtiss's 100-per-round pace call, 19285 lines) move verbatim into rules/audits fragments, regtest keeps the one-line include at each head line; the census holds, the labels relocate; the round audit rides a fragment as before"
+  },
+  "census_before": 753,
+  "inline_count": 10,
+  "consts": [
+    {
+      "name": "kmb_batch",
+      "value": 100,
+      "comment": "the blocks in the planes and OA batch"
+    },
+    {
+      "name": "kmb_moving_lines",
+      "value": 19285,
+      "comment": "the lines the batch moves"
+    },
+    {
+      "name": "kmb_first_head",
+      "value": 74363,
+      "comment": "the digest head line of R562 DSG intro"
+    },
+    {
+      "name": "kmb_last_end",
+      "value": 107482,
+      "comment": "the digest end line of R671 wu jen 2nd"
+    },
+    {
+      "name": "kmb_largest",
+      "value": 687,
+      "comment": "the largest moving block - R615 OA abilities"
+    },
+    {
+      "name": "kmb_smallest",
+      "value": 16,
+      "comment": "the smallest moving block - R563 final census"
+    }
+  ],
+  "bools": [
+    {
+      "name": "kmb_audit_rides",
+      "value": true,
+      "comment": "this round audit rides a fragment"
+    },
+    {
+      "name": "kmb_blocks_move",
+      "value": true,
+      "comment": "the blocks move verbatim, never hand-authored"
+    },
+    {
+      "name": "kmb_gates_recheck",
+      "value": true,
+      "comment": "the gates re-verify each block"
+    },
+    {
+      "name": "kmb_census_holds",
+      "value": true,
+      "comment": "the census survives the move"
+    }
+  ],
+  "chains": [],
+  "tables": [],
+  "header_sections": {
+    "the planes and OA batch": [
+      {
+        "kind": "const",
+        "name": "kmb_batch"
+      },
+      {
+        "kind": "const",
+        "name": "kmb_moving_lines"
+      },
+      {
+        "kind": "const",
+        "name": "kmb_first_head"
+      },
+      {
+        "kind": "const",
+        "name": "kmb_last_end"
+      },
+      {
+        "kind": "const",
+        "name": "kmb_largest"
+      },
+      {
+        "kind": "const",
+        "name": "kmb_smallest"
+      },
+      {
+        "kind": "bool",
+        "name": "kmb_audit_rides"
+      },
+      {
+        "kind": "bool",
+        "name": "kmb_blocks_move"
+      },
+      {
+        "kind": "bool",
+        "name": "kmb_gates_recheck"
+      },
+      {
+        "kind": "bool",
+        "name": "kmb_census_holds"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "expr": "m['kmb_batch']() != 100",
+      "note": "the batch is the fourth hundred blocks"
+    },
+    {
+      "expr": "m['kmb_moving_lines']() != m['kmb_batch']() * 192 + 85",
+      "note": "the moving lines against the batch size"
+    },
+    {
+      "expr": "m['kmb_smallest']() + m['kmb_largest']() != 703",
+      "note": "the size extremes of the batch"
+    },
+    {
+      "expr": "m['kmb_last_end']() - m['kmb_first_head']() != 33119",
+      "note": "the digest span of the batch"
+    }
+  ],
+  "audit_label": "R831 planes OA batch audit",
+  "audit_comment": "the eighth migration batch: the DSG tail, the MotP planes, the DMO sections, and the first OA pins ride the wiring; the batch constants check themselves",
+  "audit_file": "rules/audits/r831_batch.h",
+  "audit_anchor": "    // ---- R227: the wis mental save wiring audit ----",
+  "include_comment": "the planes and OA migration batch",
+  "include_after": "#include \"rules/xmb.h\"  // R830: the WSG tail and DSG migration batch",
+  "seed_anchor": "## Knowledge maintenance",
+  "prev_seed_key": "- R830 LANDED 2026-10-25: commit",
+  "prev_record": [
+    "- R830 LANDED 2026-10-25: commit",
+    "  3a9764645be2148f30882b5f20e8a77e962bba5c",
+    "  (census 752 -> 753, pushed",
+    "  895e032..3a97646), THE WSG TAIL",
+    "  AND DSG MIGRATION BATCH - the",
+    "  seventh batch of real blocks",
+    "  leaves regtest at the",
+    "  100-per-round pace (the REGTEST",
+    "  DECOMPOSITION ARC). THE MOVE:",
+    "  digest idx 339-440 (R459 WSG",
+    "  capsized use through R561 DSG DM",
+    "  section - the WSG tail pins, the",
+    "  DSG surface and Deepearth and",
+    "  campaign pins; 100 blocks, 19526",
+    "  lines) migrated VERBATIM into",
+    "  rules/audits fragments",
+    "  (r459_wsg_capsized_use.h through",
+    "  r561_dsg_dm_section.h). R830's",
+    "  own audit rode",
+    "  rules/audits/r830_batch.h. Header",
+    "  rules/xmb.h, prefix xmb (verified",
+    "  free at 895e032, 0 hits), 6 consts",
+    "  + 4 bools (inline 10), 4 examples,",
+    "  the R829 record seated into the",
+    "  seed, NO gap flips (MM2 stays 37",
+    "  closed 0 open), NO tool patches.",
+    "  TWO NEW HELDBACKS: R493 and R494",
+    "  (WSG weather generation/effects)",
+    "  - their labels sit with no",
+    "  R-prefixed head within the",
+    "  800-line walk; queued for",
+    "  investigation, alongside the ~35",
+    "  width-gate holdbacks. GATES: dress",
+    "  rehearsal on a copy of the REAL",
+    "  tree at 895e032 (the whole",
+    "  rules/audits dir carried);",
+    "  double-run 105/0 -> 0/105;",
+    "  fragments byte-exact; regtest",
+    "  reconstruction byte-for-byte;",
+    "  census 342 + 411 = 753, all 753",
+    "  preflight patterns unique each",
+    "  once; rverify GREEN (10 mutants,",
+    "  0 missed). Delivery spec-r830",
+    "  canvas: spec 18690 bytes, md5",
+    "  6f7d310f06c24ffcd49ce143bbc93864,",
+    "  landed the same. NEXT: awaits",
+    "  Curtiss's Go - the eighth batch",
+    "  rides the same wiring (digest idx",
+    "  441 onward: R562 DSG intro frame",
+    "  at the next head), at 100 blocks",
+    "  per round; 342 inline remain."
+  ],
+  "gap_flips": [],
+  "gap_census": {
+    "closed": 37,
+    "open": 0
+  },
+  "migrate_blocks": [
+    {
+      "label": "R562 DSG intro frame audit",
+      "fragment": "rules/audits/r562_dsg_intro_frame.h"
+    },
+    {
+      "label": "R563 DSG final census audit",
+      "fragment": "rules/audits/r563_dsg_final_census.h"
+    },
+    {
+      "label": "R564 MotP intro audit",
+      "fragment": "rules/audits/r564_motp_intro.h"
+    },
+    {
+      "label": "R565 MotP spell summary audit",
+      "fragment": "rules/audits/r565_motp_spell_summary.h"
+    },
+    {
+      "label": "R566 MotP Ethereal audit",
+      "fragment": "rules/audits/r566_motp_ethereal.h"
+    },
+    {
+      "label": "R567 MotP inner planes audit",
+      "fragment": "rules/audits/r567_motp_inner_planes.h"
+    },
+    {
+      "label": "R568 MotP Air plane audit",
+      "fragment": "rules/audits/r568_motp_air_plane.h"
+    },
+    {
+      "label": "R569 MotP Fire plane audit",
+      "fragment": "rules/audits/r569_motp_fire_plane.h"
+    },
+    {
+      "label": "R570 MotP Earth plane audit",
+      "fragment": "rules/audits/r570_motp_earth_plane.h"
+    },
+    {
+      "label": "R571 MotP Water plane audit",
+      "fragment": "rules/audits/r571_motp_water_plane.h"
+    },
+    {
+      "label": "R572 MotP para-planes audit",
+      "fragment": "rules/audits/r572_motp_para_planes.h"
+    },
+    {
+      "label": "R573 MotP energy planes audit",
+      "fragment": "rules/audits/r573_motp_energy_planes.h"
+    },
+    {
+      "label": "R574 MotP positive quasi-planes audit",
+      "fragment": "rules/audits/r574_motp_positive_quasi_plan.h"
+    },
+    {
+      "label": "R575 MotP negative quasi-planes audit",
+      "fragment": "rules/audits/r575_motp_negative_quasi_plan.h"
+    },
+    {
+      "label": "R576 Astral Plane audit",
+      "fragment": "rules/audits/r576_astral_plane.h"
+    },
+    {
+      "label": "R577 outer planes general audit",
+      "fragment": "rules/audits/r577_outer_planes_general.h"
+    },
+    {
+      "label": "R578 Nirvana-Arcadia audit",
+      "fragment": "rules/audits/r578_nirvana_arcadia.h"
+    },
+    {
+      "label": "R579 Heavens-Twins audit",
+      "fragment": "rules/audits/r579_heavens_twins.h"
+    },
+    {
+      "label": "R580 Elysium-Beastlands audit",
+      "fragment": "rules/audits/r580_elysium_beastlands.h"
+    },
+    {
+      "label": "R581 Olympus-Gladsheim audit",
+      "fragment": "rules/audits/r581_olympus_gladsheim.h"
+    },
+    {
+      "label": "R582 Limbo-Pandemonium audit",
+      "fragment": "rules/audits/r582_limbo_pandemonium.h"
+    },
+    {
+      "label": "R583 Abyss audit",
+      "fragment": "rules/audits/r583_abyss.h"
+    },
+    {
+      "label": "R584 Tarterus audit",
+      "fragment": "rules/audits/r584_tarterus.h"
+    },
+    {
+      "label": "R585 Hades audit",
+      "fragment": "rules/audits/r585_hades.h"
+    },
+    {
+      "label": "R586 Gehenna audit",
+      "fragment": "rules/audits/r586_gehenna.h"
+    },
+    {
+      "label": "R587 Nine Hells audit",
+      "fragment": "rules/audits/r587_nine_hells.h"
+    },
+    {
+      "label": "R588 Acheron audit",
+      "fragment": "rules/audits/r588_acheron.h"
+    },
+    {
+      "label": "R589 Opposition audit",
+      "fragment": "rules/audits/r589_opposition.h"
+    },
+    {
+      "label": "R590 Beyond audit",
+      "fragment": "rules/audits/r590_beyond.h"
+    },
+    {
+      "label": "R591 Outer seal audit",
+      "fragment": "rules/audits/r591_outer_seal.h"
+    },
+    {
+      "label": "R592 Primes audit",
+      "fragment": "rules/audits/r592_primes.h"
+    },
+    {
+      "label": "R593 AppII audit",
+      "fragment": "rules/audits/r593_appii.h"
+    },
+    {
+      "label": "R594 AppIII audit",
+      "fragment": "rules/audits/r594_appiii.h"
+    },
+    {
+      "label": "R595 AppIV audit",
+      "fragment": "rules/audits/r595_appiv.h"
+    },
+    {
+      "label": "R596 Indices audit",
+      "fragment": "rules/audits/r596_indices.h"
+    },
+    {
+      "label": "R598 Ether cyclone audit",
+      "fragment": "rules/audits/r598_ether_cyclone.h"
+    },
+    {
+      "label": "R599 DMO opener audit",
+      "fragment": "rules/audits/r599_dmo_opener.h"
+    },
+    {
+      "label": "R600 DMO maxims audit",
+      "fragment": "rules/audits/r600_dmo_maxims.h"
+    },
+    {
+      "label": "R601 DMO adventures audit",
+      "fragment": "rules/audits/r601_dmo_adventures.h"
+    },
+    {
+      "label": "R602 DMO world-ratings audit",
+      "fragment": "rules/audits/r602_dmo_world_ratings.h"
+    },
+    {
+      "label": "R608 DMO auto-save-failure audit",
+      "fragment": "rules/audits/r608_dmo_auto_save_failure.h"
+    },
+    {
+      "label": "R612 DMO ascension audit",
+      "fragment": "rules/audits/r612_dmo_ascension.h"
+    },
+    {
+      "label": "R614 OA opener audit",
+      "fragment": "rules/audits/r614_oa_opener.h"
+    },
+    {
+      "label": "R615 OA ability tables audit",
+      "fragment": "rules/audits/r615_oa_ability_tables.h"
+    },
+    {
+      "label": "R616 OA ability prose audit",
+      "fragment": "rules/audits/r616_oa_ability_prose.h"
+    },
+    {
+      "label": "R617 OA class combos audit",
+      "fragment": "rules/audits/r617_oa_class_combos.h"
+    },
+    {
+      "label": "R618 OA races audit",
+      "fragment": "rules/audits/r618_oa_races.h"
+    },
+    {
+      "label": "R619 OA barbarian bushi audit",
+      "fragment": "rules/audits/r619_oa_barbarian_bushi.h"
+    },
+    {
+      "label": "R620 OA kensai audit",
+      "fragment": "rules/audits/r620_oa_kensai.h"
+    },
+    {
+      "label": "R621 OA monk audit",
+      "fragment": "rules/audits/r621_oa_monk.h"
+    },
+    {
+      "label": "R622 OA ninja audit",
+      "fragment": "rules/audits/r622_oa_ninja.h"
+    },
+    {
+      "label": "R623 OA samurai audit",
+      "fragment": "rules/audits/r623_oa_samurai.h"
+    },
+    {
+      "label": "R624 OA shukenja audit",
+      "fragment": "rules/audits/r624_oa_shukenja.h"
+    },
+    {
+      "label": "R625 OA sohei audit",
+      "fragment": "rules/audits/r625_oa_sohei.h"
+    },
+    {
+      "label": "R626 OA wu jen audit",
+      "fragment": "rules/audits/r626_oa_wu_jen.h"
+    },
+    {
+      "label": "R627 OA yakuza audit",
+      "fragment": "rules/audits/r627_oa_yakuza.h"
+    },
+    {
+      "label": "R628 OA character abilities audit",
+      "fragment": "rules/audits/r628_oa_character_abilities.h"
+    },
+    {
+      "label": "R629 OA families audit",
+      "fragment": "rules/audits/r629_oa_families.h"
+    },
+    {
+      "label": "R630 OA family structures audit",
+      "fragment": "rules/audits/r630_oa_family_structures.h"
+    },
+    {
+      "label": "R631 OA ancestry audit",
+      "fragment": "rules/audits/r631_oa_ancestry.h"
+    },
+    {
+      "label": "R632 OA holdings audit",
+      "fragment": "rules/audits/r632_oa_holdings.h"
+    },
+    {
+      "label": "R633 OA birthrights audit",
+      "fragment": "rules/audits/r633_oa_birthrights.h"
+    },
+    {
+      "label": "R634 OA honor audit",
+      "fragment": "rules/audits/r634_oa_honor.h"
+    },
+    {
+      "label": "R635 OA effects of honor audit",
+      "fragment": "rules/audits/r635_oa_effects_of_honor.h"
+    },
+    {
+      "label": "R636 OA money audit",
+      "fragment": "rules/audits/r636_oa_money.h"
+    },
+    {
+      "label": "R637 OA starting money audit",
+      "fragment": "rules/audits/r637_oa_starting_money.h"
+    },
+    {
+      "label": "R638 OA exchange audit",
+      "fragment": "rules/audits/r638_oa_exchange.h"
+    },
+    {
+      "label": "R639 OA equipment audit",
+      "fragment": "rules/audits/r639_oa_equipment.h"
+    },
+    {
+      "label": "R640 OA weapons audit",
+      "fragment": "rules/audits/r640_oa_weapons.h"
+    },
+    {
+      "label": "R641 OA handheld audit",
+      "fragment": "rules/audits/r641_oa_handheld.h"
+    },
+    {
+      "label": "R642 OA hurled audit",
+      "fragment": "rules/audits/r642_oa_hurled.h"
+    },
+    {
+      "label": "R643 OA armor audit",
+      "fragment": "rules/audits/r643_oa_armor.h"
+    },
+    {
+      "label": "R644 OA piece armor audit",
+      "fragment": "rules/audits/r644_oa_piece_armor.h"
+    },
+    {
+      "label": "R645 OA encumbrance audit",
+      "fragment": "rules/audits/r645_oa_encumbrance.h"
+    },
+    {
+      "label": "R646 OA barding audit",
+      "fragment": "rules/audits/r646_oa_barding.h"
+    },
+    {
+      "label": "R647 OA misc equipment audit",
+      "fragment": "rules/audits/r647_oa_misc_equipment.h"
+    },
+    {
+      "label": "R648 OA barding prose audit",
+      "fragment": "rules/audits/r648_oa_barding_prose.h"
+    },
+    {
+      "label": "R649 OA armor descriptions audit",
+      "fragment": "rules/audits/r649_oa_armor_descriptions.h"
+    },
+    {
+      "label": "R650 OA proficiencies audit",
+      "fragment": "rules/audits/r650_oa_proficiencies.h"
+    },
+    {
+      "label": "R651 OA missile specializations audit",
+      "fragment": "rules/audits/r651_oa_missile_specializatio.h"
+    },
+    {
+      "label": "R652 OA non-weapon proficiencies audit",
+      "fragment": "rules/audits/r652_oa_non_weapon_proficienc.h"
+    },
+    {
+      "label": "R653 OA character proficiencies audit",
+      "fragment": "rules/audits/r653_oa_character_proficienci.h"
+    },
+    {
+      "label": "R654 OA artisan proficiencies audit",
+      "fragment": "rules/audits/r654_oa_artisan_proficiencies.h"
+    },
+    {
+      "label": "R655 OA barbarian proficiencies audit",
+      "fragment": "rules/audits/r655_oa_barbarian_proficienci.h"
+    },
+    {
+      "label": "R656 OA common proficiencies audit",
+      "fragment": "rules/audits/r656_oa_common_proficiencies.h"
+    },
+    {
+      "label": "R657 OA court proficiencies audit",
+      "fragment": "rules/audits/r657_oa_court_proficiencies.h"
+    },
+    {
+      "label": "R658 OA shukenja spells audit",
+      "fragment": "rules/audits/r658_oa_shukenja_spells.h"
+    },
+    {
+      "label": "R659 OA first level spells audit",
+      "fragment": "rules/audits/r659_oa_first_level_spells.h"
+    },
+    {
+      "label": "R660 OA second level spells audit",
+      "fragment": "rules/audits/r660_oa_second_level_spells.h"
+    },
+    {
+      "label": "R661 OA third level spells audit",
+      "fragment": "rules/audits/r661_oa_third_level_spells.h"
+    },
+    {
+      "label": "R662 OA fourth level spells audit",
+      "fragment": "rules/audits/r662_oa_fourth_level_spells.h"
+    },
+    {
+      "label": "R663 OA fifth level spells audit",
+      "fragment": "rules/audits/r663_oa_fifth_level_spells.h"
+    },
+    {
+      "label": "R664 OA sixth level spells audit",
+      "fragment": "rules/audits/r664_oa_sixth_level_spells.h"
+    },
+    {
+      "label": "R665 OA seventh level spells audit",
+      "fragment": "rules/audits/r665_oa_seventh_level_spells.h"
+    },
+    {
+      "label": "R666 OA divination results audit",
+      "fragment": "rules/audits/r666_oa_divination_results.h"
+    },
+    {
+      "label": "R667 OA speak with dead audit",
+      "fragment": "rules/audits/r667_oa_speak_with_dead.h"
+    },
+    {
+      "label": "R668 OA fate audit",
+      "fragment": "rules/audits/r668_oa_fate.h"
+    },
+    {
+      "label": "R669 OA wu jen spell list audit",
+      "fragment": "rules/audits/r669_oa_wu_jen_spell_list.h"
+    },
+    {
+      "label": "R670 OA wu jen first level spells audit",
+      "fragment": "rules/audits/r670_oa_wu_jen_first_level_sp.h"
+    },
+    {
+      "label": "R671 OA wu jen second level spells audit",
+      "fragment": "rules/audits/r671_oa_wu_jen_second_level_s.h"
+    }
+  ]
+}
