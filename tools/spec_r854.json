@@ -1,0 +1,2875 @@
+{
+ "round": 854,
+ "prefix": "dgf",
+ "title": "the Central American mythos",
+ "header_file": "rules/dgf.h",
+ "audit_file": "rules/audits/r854_batch.h",
+ "audit_label": "R854 Central American mythos audit",
+ "audit_comment": "THE CENTRAL AMERICAN MYTHOS - the D&DG walk round six, print pp. 32-36: fourteen beings (Quetzalcoatl, Camaxtli, Chalchiuhtlicue, Camazotz, Huhueteotl, Huitzilopochtli, Hunapu and Xbalanque the twin heroes, Itzamna, Tezcatlipoca, Mictlantecuhtli, Tlaloc, Tlazolteotl, Xochipilli), the clerical doctrine of the elite clerics, the 20-day rituals and the compass directions, all of it on the one parallel Prime Material Plane. Zero registry defs touched; the floor holds at 995. The flagged eyeball cells: the Tlazolteotl hit points (the 2nd-print extract reads 211, the IA 1st print 217 - the Gawaine 112 precedent), the Tezcatlipoca psionic class (pinned II on the 28px two-glyph IA word against the Termux single I), and the twin heroes size (pinned 5 foot 4, the R853 foot-mark-misread decode of the printed 54 cell).",
+ "census_before": 776,
+ "include_after": "#include \"rules/dge.h\"  // R853: the Celtic mythos",
+ "include_comment": "the Central American mythos",
+ "audit_anchor": "#include \"rules/audits/r853_batch.h\"  // R853: R853 Celtic mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Central American mythos** (pp. 32-36)",
+   "to": "- [x] **Central American mythos** (pp. 32-36)",
+   "note": "the Central American mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 6,
+  "open": 18
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Central American mythos - the D&DG walk round six, print pp. 32-36: fourteen beings from Quetzalcoatl the Law Giver to Xochipilli the Lord of Flowers, the twin heroes Hunapu and Xbalanque, the elite-cleric doctrine with its compass directions, and the one parallel Prime Material Plane the whole mythos dwells on.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 033-037; the second printing); the collation voice: the archive.org 1st-print derivative (deities-demigods-1st-print, djvu.txt + djvu.xml word geometry at 600dpi). The adjudications: the Tezcatlipoca psionic class II (the 28px two-glyph IA word against the Termux single I), the Tlazolteotl hit points (the 2nd-print 211 pinned against the IA 1st-print 217 - a genuine print divergence, the Gawaine 112 precedent, flagged for the physical-copy eyeball), the size decodes (Chalchiuhtlicue 6 foot 4 and the twins 5 foot 4 - the R853 foot-mark-misread lesson, the 149px six-glyph cells; Camazotz, Huhueteotl, Huitzilopochtli, Mictlantecuhtli and Tlaloc the 15-foot cells, Xochipilli the printed 16 feet), and the Tlazolteotl charisma 24/-5 (the Termux clean read over the IA garble)."
+ },
+ "consts": [
+  {
+   "name": "dgfRound",
+   "value": 854,
+   "comment": "the Central American mythos round: the D&DG walk round six, print pp. 32-36"
+  },
+  {
+   "name": "dgfPrintStart",
+   "value": 32,
+   "comment": "the first print page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "dgfPrintEnd",
+   "value": 36,
+   "comment": "the last print page"
+  },
+  {
+   "name": "dgfBeingCount",
+   "value": 14,
+   "comment": "the fourteen beings of the mythos (Quetzalcoatl through Xochipilli, the twin heroes counted separately)"
+  },
+  {
+   "name": "dgfTableCount",
+   "value": 4,
+   "comment": "the four grids (combat, class, ability, roster)"
+  },
+  {
+   "name": "dgfChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "dgfRegistryFloor",
+   "value": 995,
+   "comment": "zero registry defs touched - the floor holds at 995"
+  },
+  {
+   "name": "dgfCbtRows",
+   "value": 14,
+   "comment": "the combat grid rows"
+  },
+  {
+   "name": "dgfClsRows",
+   "value": 14,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "dgfAbiRows",
+   "value": 14,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "dgfRosRows",
+   "value": 14,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "dgfPlaneCount",
+   "value": 1,
+   "comment": "the one printed plane: a parallel Prime Material Plane (the whole mythos)"
+  },
+  {
+   "name": "dgfPsiClassI",
+   "value": 1,
+   "comment": "the printed psionic class I (eleven of the fourteen read the single-glyph bar)"
+  },
+  {
+   "name": "dgfPsiClassII",
+   "value": 2,
+   "comment": "Tezcatlipoca reads the printed class II (the 28px two-glyph IA word against the Termux single I)"
+  },
+  {
+   "name": "dgfPsiClassVI",
+   "value": 6,
+   "comment": "Itzamna reads the printed class VI (the 51px two-glyph word, both voices)"
+  },
+  {
+   "name": "dgfRitualPeriodDays",
+   "value": 20,
+   "comment": "rituals are performed every 20 days"
+  },
+  {
+   "name": "dgfCompassDieSides",
+   "value": 4,
+   "comment": "when the facing direction is not chosen, the DM rolls a 4-sided die for the compass point"
+  },
+  {
+   "name": "dgfCompassHitPlus",
+   "value": 1,
+   "comment": "attacks made in the cleric's own compass direction gain +1 to hit"
+  },
+  {
+   "name": "dgfCompassSaveMinus",
+   "value": 1,
+   "comment": "spells cast in the cleric's own compass direction subtract 1 from the target's saving throw"
+  },
+  {
+   "name": "dgfCamaxtliSacrificeGP",
+   "value": 500000,
+   "comment": "sacrifices to Camaxtli are precious metals worth 500,000 gold pieces or more"
+  },
+  {
+   "name": "dgfCamaxtliFavorPct",
+   "value": 25,
+   "comment": "a 25% chance the god looks favorably on the sacrificer and helps for a short period"
+  },
+  {
+   "name": "dgfCamaxtliRegenPerMelee",
+   "value": 5,
+   "comment": "in the presence of any light, Camaxtli regenerates 5 hit points per melee round"
+  },
+  {
+   "name": "dgfChalchiuhtlicueTransformLo",
+   "value": 3,
+   "comment": "she can transform 3-300 beings into any single form she wishes (usually fish)"
+  },
+  {
+   "name": "dgfChalchiuhtlicueTransformHi",
+   "value": 300,
+   "comment": "the transform count ceiling"
+  },
+  {
+   "name": "dgfChalchiuhtlicueRitualClearMiles",
+   "value": 1,
+   "comment": "the jade ritual: no other being within a mile of the area"
+  },
+  {
+   "name": "dgfChalchiuhtlicueClericPct",
+   "value": 25,
+   "comment": "clerics performing the ceremony for the needy have a 25% chance of success"
+  },
+  {
+   "name": "dgfChalchiuhtlicueWorshiperPct",
+   "value": 1,
+   "comment": "normal worshipers have only a 1% chance of success"
+  },
+  {
+   "name": "dgfChalchiuhtlicueAttemptsPerYear",
+   "value": 4,
+   "comment": "the ritual may be attempted four times a year"
+  },
+  {
+   "name": "dgfCamazotzBatCount",
+   "value": 1000,
+   "comment": "Camazotz is always found with 1,000 normal bats flying around him"
+  },
+  {
+   "name": "dgfCamazotzClawDmgLo",
+   "value": 2,
+   "comment": "his claws do 2-20 per strike (each of the two)"
+  },
+  {
+   "name": "dgfCamazotzClawDmgHi",
+   "value": 20,
+   "comment": "the claw damage ceiling"
+  },
+  {
+   "name": "dgfCamazotzBiteDmgLo",
+   "value": 3,
+   "comment": "his bite does 3-30"
+  },
+  {
+   "name": "dgfCamazotzBiteDmgHi",
+   "value": 30,
+   "comment": "the bite damage ceiling"
+  },
+  {
+   "name": "dgfHuhueteotlBeamDamage",
+   "value": 50,
+   "comment": "Huhueteotl casts a beam of searing light once per round doing 50 points of damage per strike"
+  },
+  {
+   "name": "dgfHuhueteotlBeamRangeMiles",
+   "value": 2,
+   "comment": "the beam has a range of 2 miles"
+  },
+  {
+   "name": "dgfHuhueteotlTimeCycleYears",
+   "value": 52,
+   "comment": "the god keeps time in motion and must have a special sacrifice of gems, feather robes, and humans every 52 years"
+  },
+  {
+   "name": "dgfHuitzilopochtliAxeDmgLo",
+   "value": 3,
+   "comment": "his battle axe does 3-30 points (plus strength bonus) with each of his 3 strikes per melee round"
+  },
+  {
+   "name": "dgfHuitzilopochtliAxeDmgHi",
+   "value": 30,
+   "comment": "the axe damage ceiling"
+  },
+  {
+   "name": "dgfHuitzilopochtliAxeStrBonus",
+   "value": 14,
+   "comment": "the printed (+14) on the axe line - matching the S:25(+7,+14) damage bracket"
+  },
+  {
+   "name": "dgfHuitzilopochtliAppearPct",
+   "value": 5,
+   "comment": "when the god chooses to appear for a battle: a 5% chance"
+  },
+  {
+   "name": "dgfHuitzilopochtliRaisedSaveBonus",
+   "value": 3,
+   "comment": "the raised dead warrior lives a long and lucky life: +3 on all saving throws"
+  },
+  {
+   "name": "dgfTwinBlowgunRangeYards",
+   "value": 200,
+   "comment": "the twin heroes could shoot their blowgun darts up to 200 yards away with accuracy"
+  },
+  {
+   "name": "dgfTwinBlowgunShortYards",
+   "value": 50,
+   "comment": "the blowgun short range: 50 yards"
+  },
+  {
+   "name": "dgfTwinBlowgunMediumYards",
+   "value": 135,
+   "comment": "the blowgun medium range: 135 yards"
+  },
+  {
+   "name": "dgfTwinAxeDmgLo",
+   "value": 1,
+   "comment": "in hand-to-hand combat they use axes which inflict 1-10 points of damage"
+  },
+  {
+   "name": "dgfTwinAxeDmgHi",
+   "value": 10,
+   "comment": "the hand axe damage ceiling"
+  },
+  {
+   "name": "dgfTwinAxePlus",
+   "value": 6,
+   "comment": "the printed (+6) on the damage line - the 18(00) strength bracket damage bonus"
+  },
+  {
+   "name": "dgfTwinResistPerDie",
+   "value": 1,
+   "comment": "they are resistant to cold and fire: one point is subtracted from every die of damage they take"
+  },
+  {
+   "name": "dgfItzamnaStaffDmgLo",
+   "value": 3,
+   "comment": "if battle is forced on him he strikes with his staff or scintillating beams of light for 3-24 points of damage"
+  },
+  {
+   "name": "dgfItzamnaStaffDmgHi",
+   "value": 24,
+   "comment": "the staff/beam damage ceiling"
+  },
+  {
+   "name": "dgfItzamnaNimbusRadiusFeet",
+   "value": 6,
+   "comment": "when attacked he becomes surrounded by a nimbus of light: a protection from evil 6' radius"
+  },
+  {
+   "name": "dgfItzamnaWeaponPlusToHit",
+   "value": 2,
+   "comment": "in light form Itzamna is intangible: it requires +2 or better magical weapons to strike him"
+  },
+  {
+   "name": "dgfTezcatlipocaClawDmgLo",
+   "value": 3,
+   "comment": "in jaguar or bear form he strikes with his claws for 3-30 points of damage each"
+  },
+  {
+   "name": "dgfTezcatlipocaClawDmgHi",
+   "value": 30,
+   "comment": "the claw damage ceiling"
+  },
+  {
+   "name": "dgfMictlantecuhtliSkeletonLo",
+   "value": 20,
+   "comment": "at any given time he can instantly summon 20-200 skeletons"
+  },
+  {
+   "name": "dgfMictlantecuhtliSkeletonHi",
+   "value": 200,
+   "comment": "the skeleton summon ceiling"
+  },
+  {
+   "name": "dgfMictlantecuhtliGhoulLo",
+   "value": 10,
+   "comment": "he can summon 10-100 ghouls"
+  },
+  {
+   "name": "dgfMictlantecuhtliGhoulHi",
+   "value": 100,
+   "comment": "the ghoul summon ceiling"
+  },
+  {
+   "name": "dgfMictlantecuhtliWightLo",
+   "value": 6,
+   "comment": "he can summon 6-36 wights"
+  },
+  {
+   "name": "dgfMictlantecuhtliWightHi",
+   "value": 36,
+   "comment": "the wight summon ceiling"
+  },
+  {
+   "name": "dgfMictlantecuhtliSpectreLo",
+   "value": 2,
+   "comment": "he can summon 2-5 spectres"
+  },
+  {
+   "name": "dgfMictlantecuhtliSpectreHi",
+   "value": 5,
+   "comment": "the spectre summon ceiling"
+  },
+  {
+   "name": "dgfMictlantecuhtliSacrificeGate",
+   "value": 50,
+   "comment": "he can be summoned only after at least 50 live human sacrifices have been given the god in worship"
+  },
+  {
+   "name": "dgfTlalocPitcherCount",
+   "value": 4,
+   "comment": "Tlaloc has four pitchers of water"
+  },
+  {
+   "name": "dgfTlalocLightningArmor",
+   "value": 40,
+   "comment": "his lightning bolt does 40 points of damage to all those in armor"
+  },
+  {
+   "name": "dgfTlalocLightningClothed",
+   "value": 30,
+   "comment": "30 points of damage to all those wearing clothes"
+  },
+  {
+   "name": "dgfTlalocLightningNaked",
+   "value": 20,
+   "comment": "20 points of damage to all naked flesh it hits"
+  },
+  {
+   "name": "dgfTlazolteotlChaAlt",
+   "value": -5,
+   "comment": "the printed CH: 24/-5 charisma line - the -5 alternative (the Termux clean read; the IA garbles identically)"
+  },
+  {
+   "name": "dgfXochipilliAxeDmgLo",
+   "value": 3,
+   "comment": "Xochipilli's hand axe causes 3-30 points of damage per strike"
+  },
+  {
+   "name": "dgfXochipilliAxeDmgHi",
+   "value": 30,
+   "comment": "the hand axe damage ceiling"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgfAztecMayaMoralBackground",
+   "value": true,
+   "comment": "the Aztec and Maya presented closely related gods with a moral background like other mythoi"
+  },
+  {
+   "name": "dgfInscrutableMotives",
+   "value": true,
+   "comment": "the beings are just as evil or good, but are not moved by anything resembling human thoughts - they act on inscrutable motives"
+  },
+  {
+   "name": "dgfFromTheStars",
+   "value": true,
+   "comment": "these beings are said to have come from the stars"
+  },
+  {
+   "name": "dgfParallelPrimeMaterial",
+   "value": true,
+   "comment": "their plane of origin: the Prime Material Plane of a parallel universe"
+  },
+  {
+   "name": "dgfCommuneGateParallelOnly",
+   "value": true,
+   "comment": "commune or gate spells of these clerics connect only with the parallel universe and the plane where their gods dwell"
+  },
+  {
+   "name": "dgfNoSummonWithoutCeremonies",
+   "value": true,
+   "comment": "others cannot summon these deities without the special ceremonies used in contacting them"
+  },
+  {
+   "name": "dgfNoTravelBeyondWorshipers",
+   "value": true,
+   "comment": "the deities cannot travel on any planes but the ones they have worshipers on"
+  },
+  {
+   "name": "dgfEliteClerics",
+   "value": true,
+   "comment": "the clerics of this mythos are the elite of the populace"
+  },
+  {
+   "name": "dgfAbsoluteAuthorityOverPeasants",
+   "value": true,
+   "comment": "even the lowest-level clerics have absolute authority over any of the peasants"
+  },
+  {
+   "name": "dgfHigherLevelsCommandLesser",
+   "value": true,
+   "comment": "any cleric of a higher level may give orders to lesser clerics of the same deity with complete freedom"
+  },
+  {
+   "name": "dgfSectInfighting",
+   "value": true,
+   "comment": "all sects must usually work together, but there is much clandestine infighting for followers among rich and poor alike"
+  },
+  {
+   "name": "dgfSacrificeFoodSpringFall",
+   "value": true,
+   "comment": "sacrifices take many forms: food in the spring and fall seasons"
+  },
+  {
+   "name": "dgfSacrificeHumansBattles",
+   "value": true,
+   "comment": "humans are sacrificed before and after battles and during the rainy winter months"
+  },
+  {
+   "name": "dgfForcedAttendance",
+   "value": true,
+   "comment": "the public is forced to attend these rituals, always held at the temple of the appropriate god"
+  },
+  {
+   "name": "dgfTempleStepPyramid",
+   "value": true,
+   "comment": "all temples are built on the step pyramid design"
+  },
+  {
+   "name": "dgfEntrancesFourCompassPoints",
+   "value": true,
+   "comment": "the temples have entrances at the bottom at the four compass points"
+  },
+  {
+   "name": "dgfAltarTopEast",
+   "value": true,
+   "comment": "the altar at the top sits east of the entrances line of the printed doctrine"
+  },
+  {
+   "name": "dgfPunishmentSwift",
+   "value": true,
+   "comment": "divine punishment of erring clerics is swift"
+  },
+  {
+   "name": "dgfMinorMistakesCostWealthXP",
+   "value": true,
+   "comment": "small mistakes (broken clerical laws, duels lost) cost some wealth and/or experience points"
+  },
+  {
+   "name": "dgfMajorFailuresStripAll",
+   "value": true,
+   "comment": "major failures (lost battles, failed quests, alignment changes) strip all possessions and levels - restart from first level"
+  },
+  {
+   "name": "dgfCompassDirectionChosen",
+   "value": true,
+   "comment": "first level clerics choose a compass direction they pray to, meditate towards, and start quests towards"
+  },
+  {
+   "name": "dgfEastRed",
+   "value": true,
+   "comment": "clerics of the east wear red clothes at all times"
+  },
+  {
+   "name": "dgfSouthYellow",
+   "value": true,
+   "comment": "clerics of the south wear yellow"
+  },
+  {
+   "name": "dgfWestBlack",
+   "value": true,
+   "comment": "clerics of the west wear black"
+  },
+  {
+   "name": "dgfNorthWhite",
+   "value": true,
+   "comment": "clerics of the north wear white"
+  },
+  {
+   "name": "dgfQuetzalcoatlAirGod",
+   "value": true,
+   "comment": "Quetzalcoatl, god of the air, the Law Giver, also known as Kukulcan or (as wind god) Ehecatl"
+  },
+  {
+   "name": "dgfQuetzalcoatlBewilderingForms",
+   "value": true,
+   "comment": "he appears in a bewildering number of forms, usually acting per his alignment but at times in chaotic or evil ways"
+  },
+  {
+   "name": "dgfQuetzalcoatlWorksWithWorshipers",
+   "value": true,
+   "comment": "he appears occasionally on our plane and works closely with his worshipers against other gods"
+  },
+  {
+   "name": "dgfQuetzalcoatlMonsterFormBattle",
+   "value": true,
+   "comment": "in battle he usually assumes a monster form and attacks with it"
+  },
+  {
+   "name": "dgfQuetzalcoatlQuadrupleOnLoss",
+   "value": true,
+   "comment": "if he suffers a great loss of hit points, he takes his beginning-of-battle form, quadruples its powers, and re-attacks"
+  },
+  {
+   "name": "dgfQuetzalcoatlFightsToEnd",
+   "value": true,
+   "comment": "he fights until his side has won or he has been personally defeated"
+  },
+  {
+   "name": "dgfQuetzalcoatlSameFormImmune",
+   "value": true,
+   "comment": "he cannot be hurt by creatures of the same form he is using - as a dragon immune to dragon types, as a magic-user immune to magical spells"
+  },
+  {
+   "name": "dgfQuetzalcoatlMightiestDisputed",
+   "value": true,
+   "comment": "he was the mightiest god of the mythos, though the claim is disputed by the followers of Tezcatlipoca, his arch-enemy"
+  },
+  {
+   "name": "dgfQuetzalcoatlPatronOfArts",
+   "value": true,
+   "comment": "he is patron of the arts and the founder of metallurgy"
+  },
+  {
+   "name": "dgfCamaxtliFateGod",
+   "value": true,
+   "comment": "Camaxtli, god of fate, human-appearing"
+  },
+  {
+   "name": "dgfCamaxtliSeesPastFuture",
+   "value": true,
+   "comment": "he is able to see the past and future of any being and put the information to use in his own way"
+  },
+  {
+   "name": "dgfCamaxtliNotAllowedToKill",
+   "value": true,
+   "comment": "he is not allowed to kill any being"
+  },
+  {
+   "name": "dgfCamaxtliRecreatesDamageForce",
+   "value": true,
+   "comment": "he looks into a being's past, finds the force that did the most physical damage, and recreates that force exactly to do the same damage again"
+  },
+  {
+   "name": "dgfCamaxtliCastIntoBeyond",
+   "value": true,
+   "comment": "the sacrifice is always cast into the beyond by the most powerful means available (a random teleport, a limited wish, or the like)"
+  },
+  {
+   "name": "dgfChalchiuhtlicueWaterLove",
+   "value": true,
+   "comment": "Chalchiuhtlicue, goddess of running water and love, the goddess of the jade petticoat"
+  },
+  {
+   "name": "dgfChalchiuhtlicueLifeAndChasteLove",
+   "value": true,
+   "comment": "she is not only a water deity: the goddess of life and chaste love"
+  },
+  {
+   "name": "dgfChalchiuhtlicueAidsAnyAlignment",
+   "value": true,
+   "comment": "those that sacrifice to her (of any alignment) can expect help if the proper forms are observed, especially for healing or love"
+  },
+  {
+   "name": "dgfChalchiuhtlicueTransformSavesDevout",
+   "value": true,
+   "comment": "the transform ability is used only to save the lives of devout worshipers"
+  },
+  {
+   "name": "dgfChalchiuhtlicueJadeQuality",
+   "value": true,
+   "comment": "the ritual sacrifice: tossing jade (the higher the quality the better the response) into a bottomless pool of water in the mountains"
+  },
+  {
+   "name": "dgfChalchiuhtlicueFullMoonRitual",
+   "value": true,
+   "comment": "the ritual is done by the light of the full moon"
+  },
+  {
+   "name": "dgfChalchiuhtlicueWifeOfTlaloc",
+   "value": true,
+   "comment": "Chalchiuhtlicue is the wife of Tlaloc"
+  },
+  {
+   "name": "dgfCamazotzBatGod",
+   "value": true,
+   "comment": "Camazotz, the bat god, appears as a huge bat"
+  },
+  {
+   "name": "dgfCamazotzInsectTemptation",
+   "value": true,
+   "comment": "he may be tempted to comply to a summons by a being that offers many insects for his followers"
+  },
+  {
+   "name": "dgfCamazotzInsectPlagueAppeasement",
+   "value": true,
+   "comment": "priests can actually appease this deity by offering him insect plagues"
+  },
+  {
+   "name": "dgfCamazotzParalyticSave",
+   "value": true,
+   "comment": "a save is necessary versus (paralytic) poison on claws and bite alike"
+  },
+  {
+   "name": "dgfCamazotzDarknessWeaponsPass",
+   "value": true,
+   "comment": "any weapons cast in the darkness at him will not touch or harm him"
+  },
+  {
+   "name": "dgfHuhueteotlFireGod",
+   "value": true,
+   "comment": "Huhueteotl, the fire god: a demon with humanoid body, reptilian facial features, flames shooting all around, hair patches where the red gem armor does not cover"
+  },
+  {
+   "name": "dgfHuhueteotlFrequentSacrifices",
+   "value": true,
+   "comment": "the god requires frequent human sacrifices"
+  },
+  {
+   "name": "dgfHuhueteotlPunishesWithFlames",
+   "value": true,
+   "comment": "he punishes erring worshipers with destructive flames whenever a whim takes him"
+  },
+  {
+   "name": "dgfHuhueteotlClothingGemsSacrifice",
+   "value": true,
+   "comment": "sacrifices are valuable articles of clothing or gems and jewels, thrown into molten areas in mountains"
+  },
+  {
+   "name": "dgfHuhueteotlWaningMoon",
+   "value": true,
+   "comment": "sacrifices are usually made in the waning of the moon"
+  },
+  {
+   "name": "dgfHuhueteotlStopMotion",
+   "value": true,
+   "comment": "during the fifty-second year the god can stop the motion of any one thing in any single day"
+  },
+  {
+   "name": "dgfHuhueteotlStoppedImmune",
+   "value": true,
+   "comment": "in the stopped state, that thing cannot be harmed by any force in the Prime Material Plane"
+  },
+  {
+   "name": "dgfHuitzilopochtliWarGod",
+   "value": true,
+   "comment": "Huitzilopochtli, god of war, depicted fully armed in blue jade armor, bright red axe, hummingbird-feather headdress"
+  },
+  {
+   "name": "dgfHuitzilopochtliBattlefieldAid",
+   "value": true,
+   "comment": "he may appear on any battlefield where his worshipers are fighting and aid them - but not so as to make sure his side wins"
+  },
+  {
+   "name": "dgfHuitzilopochtliNeverCommuned",
+   "value": true,
+   "comment": "he can rarely be called upon for any non-warlike situation and can never be communed with"
+  },
+  {
+   "name": "dgfHuitzilopochtliRearAttacksReturn",
+   "value": true,
+   "comment": "all attacks on his rear will return on the attacker and never miss"
+  },
+  {
+   "name": "dgfHuitzilopochtliBattleSacrifices",
+   "value": true,
+   "comment": "sacrifices are made to him only in battle and only by fighting clerics"
+  },
+  {
+   "name": "dgfHuitzilopochtliDeadWarriorBody",
+   "value": true,
+   "comment": "when he appears, he takes the body of a dead warrior that won great victories during that battle or in the past"
+  },
+  {
+   "name": "dgfHuitzilopochtliRaisedRegardless",
+   "value": true,
+   "comment": "no matter the outcome (win, lose, or draw) that warrior will be raised and live a long and lucky life"
+  },
+  {
+   "name": "dgfTwinHeroes",
+   "value": true,
+   "comment": "Hunapu and Xbalanque, the twin brothers, 150 hit points each"
+  },
+  {
+   "name": "dgfTwinRevengeThirst",
+   "value": true,
+   "comment": "the twins are legendary for their thirst for revenge"
+  },
+  {
+   "name": "dgfTwinUnderworldVictory",
+   "value": true,
+   "comment": "their father was killed by beings of the underworld; they went down and defeated these beings in games and battle"
+  },
+  {
+   "name": "dgfTwinBlowgunExperts",
+   "value": true,
+   "comment": "they were expert with the blow gun"
+  },
+  {
+   "name": "dgfTwinAvoidMelee",
+   "value": true,
+   "comment": "they try hard not to get close enough to be forced into hand-to-hand combat"
+  },
+  {
+   "name": "dgfTwinPoisonedDarts",
+   "value": true,
+   "comment": "their special attack: poisoned blow gun darts"
+  },
+  {
+   "name": "dgfItzamnaMedicineGod",
+   "value": true,
+   "comment": "Itzamna, god of medicine, normally appears as a toothless old man with sunken cheeks and a Roman nose, leaning on a crooked staff"
+  },
+  {
+   "name": "dgfItzamnaLightForms",
+   "value": true,
+   "comment": "he may assume the form of light in one of its myriad aspects - a blazing globe, a fading ember, a dusty moonbeam - and then may take on any size"
+  },
+  {
+   "name": "dgfItzamnaTravelsWorldOfMen",
+   "value": true,
+   "comment": "Itzamna often travels in the world of men"
+  },
+  {
+   "name": "dgfItzamnaSeesAllWithLight",
+   "value": true,
+   "comment": "he may see everything that transpires in the world if there is a light source present, much like a wizard eye spell"
+  },
+  {
+   "name": "dgfItzamnaFriendOfMen",
+   "value": true,
+   "comment": "he is the friend and benefactor of men, instructing mankind in medicine, drawing and letters"
+  },
+  {
+   "name": "dgfItzamnaIntercedes",
+   "value": true,
+   "comment": "his clerics call on him to intercede for man with the other gods in times of calamities and sicknesses"
+  },
+  {
+   "name": "dgfItzamnaWitsOverArms",
+   "value": true,
+   "comment": "in his dealings with other gods he rarely relies on the strength of his arms, using his wits to move them favorably towards man"
+  },
+  {
+   "name": "dgfItzamnaSonOfTezcatlipoca",
+   "value": true,
+   "comment": "Itzamna is the son of the sun-god Tezcatlipoca and tries to temper his father's harsh dealings with man"
+  },
+  {
+   "name": "dgfItzamnaCallsFather",
+   "value": true,
+   "comment": "if ever in a desperate situation he will call upon his father for help"
+  },
+  {
+   "name": "dgfItzamnaNimbusRobe",
+   "value": true,
+   "comment": "the nimbus also acts as a robe of scintillating colors"
+  },
+  {
+   "name": "dgfItzamnaDrawsSymbols",
+   "value": true,
+   "comment": "he is capable of drawing any one symbol per round in the air"
+  },
+  {
+   "name": "dgfItzamnaClericSpells",
+   "value": true,
+   "comment": "his clerics deal only with spells to bless and heal (abjuration and necromancy) or spells of a written nature (symbols)"
+  },
+  {
+   "name": "dgfItzamnaClericGarb",
+   "value": true,
+   "comment": "these clerics wear few garments or just a coarse robe and carry a staff and medicine pouch"
+  },
+  {
+   "name": "dgfItzamnaRedHandNecklace",
+   "value": true,
+   "comment": "they may be identified by a necklace with a red hand ornament, and are usually excellent scribes"
+  },
+  {
+   "name": "dgfItzamnaBalsamSquirrels",
+   "value": true,
+   "comment": "ceremonies are held throughout the year, particularly at crop planting: sweet balsam is burned and squirrels are sacrificed"
+  },
+  {
+   "name": "dgfTezcatlipocaSunGod",
+   "value": true,
+   "comment": "Tezcatlipoca (the smoking mirror), god of the sun who ripens the crops but also brings drought and famine, also the god of the moon and the night"
+  },
+  {
+   "name": "dgfTezcatlipocaPlotsOverthrow",
+   "value": true,
+   "comment": "he and his followers are always plotting the overthrow of Quetzalcoatl"
+  },
+  {
+   "name": "dgfTezcatlipocaPatronOfTreachery",
+   "value": true,
+   "comment": "he is the patron of treacherous schemings and betrayals"
+  },
+  {
+   "name": "dgfTezcatlipocaInvisibleEthereal",
+   "value": true,
+   "comment": "he rarely takes on physical form, preferring to remain invisible and ethereal"
+  },
+  {
+   "name": "dgfTezcatlipocaJaguarBear",
+   "value": true,
+   "comment": "when he does take form it is usually as a giant jaguar or bear"
+  },
+  {
+   "name": "dgfTezcatlipocaHumanMasquerade",
+   "value": true,
+   "comment": "he occasionally takes human form to masquerade as someone else in furtherance of one of his schemes"
+  },
+  {
+   "name": "dgfTezcatlipocaAnnualHeartSacrifice",
+   "value": true,
+   "comment": "once a year at a great religious gathering his priests sacrifice a young, perfect human male and offer the god his heart"
+  },
+  {
+   "name": "dgfTezcatlipocaPamperedVictim",
+   "value": true,
+   "comment": "the sacrifices (usually war prisoners) are pampered and feted for a full year, given almost anything - and always end up on the altar"
+  },
+  {
+   "name": "dgfTezcatlipocaDisorderAndWealth",
+   "value": true,
+   "comment": "he is a spreader of disorder and war, but also an originator of wealth"
+  },
+  {
+   "name": "dgfMictlantecuhtliDeathGod",
+   "value": true,
+   "comment": "Mictlantecuhtli, god of death, usually appears in a lich form"
+  },
+  {
+   "name": "dgfMictlantecuhtliCommandsUndead",
+   "value": true,
+   "comment": "no undead is able to resist his commands"
+  },
+  {
+   "name": "dgfMictlantecuhtliDarkOfMoon",
+   "value": true,
+   "comment": "the god demands these lives during the dark of the moon"
+  },
+  {
+   "name": "dgfMictlantecuhtliFromWorshipers",
+   "value": true,
+   "comment": "he requires the sacrifices from the ranks of his worshipers"
+  },
+  {
+   "name": "dgfMictlantecuhtliTouchDeath",
+   "value": true,
+   "comment": "in battle, touching his body with anything causes the toucher to make a saving throw versus death"
+  },
+  {
+   "name": "dgfMictlantecuhtliSpellsInBattle",
+   "value": true,
+   "comment": "he will usually attack with spells when personally in battle"
+  },
+  {
+   "name": "dgfMictlantecuhtliJadeRod",
+   "value": true,
+   "comment": "if enemies dare touch him, he draws out a red jade rod that acts as a hammer of thunderbolts per the DUNGEON MASTERS GUIDE"
+  },
+  {
+   "name": "dgfTlalocRainGod",
+   "value": true,
+   "comment": "Tlaloc, rain god, with great tusks and goggle eyes, wearing all black but for a garland of white feathers"
+  },
+  {
+   "name": "dgfTlalocFullMoonChild",
+   "value": true,
+   "comment": "at each full moon a priest of Tlaloc sacrifices a child or baby to him"
+  },
+  {
+   "name": "dgfTlalocAnnualFestival",
+   "value": true,
+   "comment": "once a year a great festival is held in his honor: numerous babies are bought or taken from the populace"
+  },
+  {
+   "name": "dgfTlalocCookAndEat",
+   "value": true,
+   "comment": "the babies are sacrificed to Tlaloc, after which the priests cook and eat them"
+  },
+  {
+   "name": "dgfTlalocCryingGoodSign",
+   "value": true,
+   "comment": "if the babies cry during the sacrifice, this is a good sign that rain will be abundant in the coming year"
+  },
+  {
+   "name": "dgfTlalocGrantsRain",
+   "value": true,
+   "comment": "if the proper rituals and sacrifices have been followed to the letter, he will usually grant the rain his worshipers need"
+  },
+  {
+   "name": "dgfTlalocPunishes",
+   "value": true,
+   "comment": "if he thinks his requirements have not been met, the people will be punished"
+  },
+  {
+   "name": "dgfTlalocPitcherGood",
+   "value": true,
+   "comment": "one pitcher is filled with good water to make crops grow properly"
+  },
+  {
+   "name": "dgfTlalocPitcherBlight",
+   "value": true,
+   "comment": "one with water that contains spiders' eggs and webs and causes blight"
+  },
+  {
+   "name": "dgfTlalocPitcherFrost",
+   "value": true,
+   "comment": "one with water that turns to frost"
+  },
+  {
+   "name": "dgfTlalocPitcherRot",
+   "value": true,
+   "comment": "one with water that rots all fruit"
+  },
+  {
+   "name": "dgfTlalocBoltAsWeapon",
+   "value": true,
+   "comment": "if pressed hard in battle he summons a bolt of lightning and fights with it against all comers - used as a weapon, not a spell"
+  },
+  {
+   "name": "dgfTlazolteotlViceGoddess",
+   "value": true,
+   "comment": "Tlazolteotl, goddess of vice"
+  },
+  {
+   "name": "dgfTlazolteotlMonsterIllusion",
+   "value": true,
+   "comment": "under stress, rushed, or attacked she appears as an incredible monster - humanoid body, demonic fanged face, blazing eyes, talons, black warty greasy skin. This is an illusion"
+  },
+  {
+   "name": "dgfTlazolteotlBeautifulAtEase",
+   "value": true,
+   "comment": "at ease, before her worshipers, working on a victim, or among strangers, she appears as a beautiful woman inspiring desire in any male and jealous respect from any female"
+  },
+  {
+   "name": "dgfTlazolteotlRuinsLawfulGood",
+   "value": true,
+   "comment": "she tries very hard to ruin lawful good beings all over the Prime Material Plane, tempting them and destroying them when they succumb"
+  },
+  {
+   "name": "dgfTlazolteotlNeverFightsPhysically",
+   "value": true,
+   "comment": "though she may assassinate, she will never fight physically; if met with beings that cannot be hurt by spells she teleports away"
+  },
+  {
+   "name": "dgfTlazolteotlCharmFavorite",
+   "value": true,
+   "comment": "her favorite attack is charm spells of all sorts"
+  },
+  {
+   "name": "dgfTlazolteotlEvilCannotHarm",
+   "value": true,
+   "comment": "no evil being can even think of harming her, even if they are magically controlled"
+  },
+  {
+   "name": "dgfXochipilliGamblingGod",
+   "value": true,
+   "comment": "Xochipilli, god of gambling and chance, the Lord of Flowers, almost always appears as a young man"
+  },
+  {
+   "name": "dgfXochipilliWanderingLuck",
+   "value": true,
+   "comment": "he wanders among the people bestowing good and bad luck in the form of lost or granted saving throws"
+  },
+  {
+   "name": "dgfXochipilliPeaceful",
+   "value": true,
+   "comment": "he is predominantly a peaceful being that gives a great deal of happiness to his followers"
+  },
+  {
+   "name": "dgfXochipilliCalculatedRisk",
+   "value": true,
+   "comment": "the god is most pleased with beings that take a large calculated risk"
+  },
+  {
+   "name": "dgfXochipilliNeverMisses",
+   "value": true,
+   "comment": "his hand axe never misses"
+  },
+  {
+   "name": "dgfXochipilliWeaponsMiss",
+   "value": true,
+   "comment": "any weapon that has a chance of missing him will miss"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "dgfCbt",
+   "count": "dgfCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgfCbtAC",
+    "dgfCbtACAlt",
+    "dgfCbtHP",
+    "dgfCbtMove",
+    "dgfCbtMoveAlt",
+    "dgfCbtAtN",
+    "dgfCbtAtD",
+    "dgfCbtMR",
+    "dgfCbtSizeIn"
+   ],
+   "data": [
+    [
+     -2,
+     0,
+     400,
+     -1,
+     0,
+     0,
+     0,
+     75,
+     180
+    ],
+    [
+     -2,
+     0,
+     350,
+     15,
+     24,
+     0,
+     0,
+     50,
+     180
+    ],
+    [
+     -2,
+     0,
+     200,
+     -1,
+     0,
+     3,
+     2,
+     95,
+     76
+    ],
+    [
+     -2,
+     0,
+     362,
+     -1,
+     0,
+     3,
+     0,
+     50,
+     180
+    ],
+    [
+     -2,
+     0,
+     373,
+     18,
+     24,
+     0,
+     0,
+     80,
+     180
+    ],
+    [
+     -3,
+     0,
+     389,
+     12,
+     24,
+     3,
+     0,
+     50,
+     180
+    ],
+    [
+     2,
+     0,
+     150,
+     12,
+     0,
+     3,
+     2,
+     0,
+     64
+    ],
+    [
+     2,
+     0,
+     150,
+     12,
+     0,
+     3,
+     2,
+     0,
+     64
+    ],
+    [
+     -3,
+     0,
+     369,
+     -1,
+     0,
+     2,
+     0,
+     85,
+     0
+    ],
+    [
+     -2,
+     0,
+     400,
+     -1,
+     0,
+     2,
+     0,
+     85,
+     0
+    ],
+    [
+     -2,
+     0,
+     339,
+     -1,
+     0,
+     2,
+     0,
+     95,
+     180
+    ],
+    [
+     -2,
+     0,
+     377,
+     12,
+     24,
+     3,
+     2,
+     50,
+     180
+    ],
+    [
+     -3,
+     0,
+     211,
+     -1,
+     0,
+     0,
+     0,
+     25,
+     180
+    ],
+    [
+     -5,
+     0,
+     381,
+     -1,
+     0,
+     3,
+     2,
+     25,
+     192
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Xochipilli the printed -5, the best of the mythos; Huitzilopochtli and Itzamna -3)",
+    "The range ceiling cells (0 = a single printed armor class; all fourteen read single this round)",
+    "The hit point cells (400 for Quetzalcoatl and Tezcatlipoca down to 150 per twin hero)",
+    "The primary move cells (-1 = the printed Infinite move; the numeric moves: Camaxtli 15, Huhueteotl 18, the 12s)",
+    "The secondary move cells (24 the printed slash ceiling; 0 = a single printed move)",
+    "The attack count cells (0 = the printed 0, the printed Variable (Quetzalcoatl), or the printed See below)",
+    "The attack slash cells (2 = the printed 3/2; 0 = a single printed attack number)",
+    "The magic resistance cells (0 = the printed Standard of the twin heroes, the R849 standard doctrine)",
+    "The size cells in inches (180 = the printed 15 feet, 192 Xochipilli 16 feet, 76 Chalchiuhtlicue 6'4\", 64 the twins 5'4\"; 0 = the printed Variable)"
+   ],
+   "audit_comment": "the combat stat blocks of the fourteen beings (print pp. 32-36) - the armor classes, hit points, moves, attacks, magic resistance and sizes",
+   "sentinel_census": [
+    0,
+    14,
+    0,
+    0,
+    10,
+    4,
+    9,
+    2,
+    2
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "dgfCls",
+   "count": "dgfClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgfClsCleric",
+    "dgfClsDruid",
+    "dgfClsFighterLo",
+    "dgfClsFighterHi",
+    "dgfClsRanger",
+    "dgfClsMagUser",
+    "dgfClsIllus",
+    "dgfClsThief",
+    "dgfClsAssassin",
+    "dgfClsMonk",
+    "dgfClsBard"
+   ],
+   "data": [
+    [
+     25,
+     13,
+     20,
+     20,
+     0,
+     20,
+     20,
+     20,
+     0,
+     0,
+     20
+    ],
+    [
+     20,
+     0,
+     12,
+     12,
+     0,
+     18,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     12,
+     12,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     15,
+     0,
+     10,
+     10,
+     0,
+     20,
+     20,
+     0,
+     15,
+     0,
+     0
+    ],
+    [
+     15,
+     10,
+     10,
+     10,
+     0,
+     15,
+     15,
+     0,
+     15,
+     10,
+     0
+    ],
+    [
+     13,
+     13,
+     0,
+     0,
+     20,
+     8,
+     8,
+     0,
+     15,
+     10,
+     0
+    ],
+    [
+     0,
+     10,
+     0,
+     0,
+     10,
+     8,
+     8,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     10,
+     0,
+     0,
+     10,
+     8,
+     8,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     22,
+     0,
+     13,
+     13,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     9,
+     0,
+     20,
+     20,
+     0,
+     15,
+     0,
+     0,
+     15,
+     0,
+     6
+    ],
+    [
+     14,
+     14,
+     0,
+     0,
+     15,
+     18,
+     18,
+     0,
+     15,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     10,
+     10,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     14,
+     14,
+     0,
+     0,
+     0,
+     15,
+     25,
+     0,
+     15,
+     0,
+     15
+    ],
+    [
+     12,
+     12,
+     12,
+     12,
+     0,
+     12,
+     12,
+     12,
+     0,
+     12,
+     12
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (0 = Nil; Quetzalcoatl the 25th level cleric)",
+    "The druid level cells (0 = Nil; the in-each 13s and 14s, the twins 10th level druids)",
+    "The fighter level floor cells (0 = the printed Nil of Tlazolteotl and the ranger-slot beings)",
+    "The fighter level ceiling cells (single printed levels read floor = ceiling)",
+    "The ranger level cells (Huitzilopochtli 20, the twins 10, Mictlantecuhtli 15 - the ranger fighter slots)",
+    "The magic-user level cells",
+    "The illusionist level cells (Tlazolteotl the 25th level illusionist over her 15th magic-user)",
+    "The thief level cells (0 = Nil; Xochipilli the 12th level thief, Quetzalcoatl the 20th)",
+    "The assassin level cells (the 15s across the evil gods; Xochipilli 0)",
+    "The monk level cells (Huhueteotl and Huitzilopochtli 10th; Xochipilli 12th)",
+    "The bard level cells (Quetzalcoatl 20th, Chalchiuhtlicue 15th; Tezcatlipoca the 6th level bard)"
+   ],
+   "audit_comment": "the five-slot class grid of the fourteen beings (the paladin fighter slots, the ranger slots, the in-each cells)",
+   "sentinel_census": [
+    2,
+    6,
+    5,
+    5,
+    10,
+    0,
+    5,
+    12,
+    8,
+    11,
+    9
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "dgfAbi",
+   "count": "dgfAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgfAbiStr",
+    "dgfAbiStrHit",
+    "dgfAbiStrDmg",
+    "dgfAbiInt",
+    "dgfAbiWis",
+    "dgfAbiDex",
+    "dgfAbiCon",
+    "dgfAbiCha",
+    "dgfAbiPsi"
+   ],
+   "data": [
+    [
+     25,
+     7,
+     14,
+     25,
+     25,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     23,
+     0,
+     0,
+     24,
+     23,
+     23,
+     23,
+     23,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     24,
+     25,
+     25,
+     23,
+     25,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     20,
+     18,
+     20,
+     24,
+     -2,
+     0
+    ],
+    [
+     23,
+     0,
+     0,
+     23,
+     23,
+     23,
+     23,
+     9,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     23,
+     20,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     16,
+     12,
+     18,
+     18,
+     18,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     16,
+     12,
+     18,
+     18,
+     18,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     24,
+     25,
+     17,
+     21,
+     23,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     24,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     24,
+     19,
+     23,
+     24,
+     -4,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     24,
+     23,
+     24,
+     24,
+     19,
+     0
+    ],
+    [
+     10,
+     0,
+     0,
+     25,
+     18,
+     25,
+     25,
+     24,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     24,
+     20,
+     25,
+     24,
+     25,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (the 25s of Quetzalcoatl, Huitzilopochtli and Tezcatlipoca; Tlazolteotl the printed S:10)",
+    "The parenthesized strength to-hit bonus cells (0 = no printed bracket)",
+    "The parenthesized strength damage bonus cells (the +14 brackets matching S:25)",
+    "The intelligence cells",
+    "The wisdom cells (Itzamna the 25)",
+    "The dexterity cells (Itzamna the 17, the lowest)",
+    "The constitution cells (Camazotz the 24, Tlaloc the 24)",
+    "The charisma cells (Camazotz the printed -2, Mictlantecuhtli the printed -4 - the negative printings; Tlazolteotl the 24 with the -5 alternative const)",
+    "The psionic score cells (0 = no printed numeric score this round - the psionic ability prints class letters only)"
+   ],
+   "audit_comment": "the six ability scores with the strength brackets of the fourteen beings",
+   "sentinel_census": [
+    0,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    0,
+    14
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "dgfRos",
+   "count": "dgfRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgfRosOrd",
+    "dgfRosPage",
+    "dgfRosAlign",
+    "dgfRosRank",
+    "dgfRosPsiClass",
+    "dgfRosPlane",
+    "dgfRosDmgFixed",
+    "dgfRosInEach",
+    "dgfRosTwinPair"
+   ],
+   "data": [
+    [
+     0,
+     32,
+     3,
+     1,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     33,
+     4,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     33,
+     2,
+     0,
+     1,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     33,
+     8,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     33,
+     8,
+     1,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     5,
+     34,
+     4,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     34,
+     0,
+     2,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     7,
+     34,
+     0,
+     2,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     8,
+     34,
+     1,
+     1,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     9,
+     35,
+     8,
+     1,
+     2,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     10,
+     35,
+     6,
+     1,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     11,
+     35,
+     6,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     12,
+     36,
+     8,
+     0,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     13,
+     36,
+     4,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Quetzalcoatl through Xochipilli)",
+    "The print page cells (32-36, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 LG the twins, 1 NG Itzamna, 2 CG Chalchiuhtlicue, 3 LN Quetzalcoatl, 4 N Camaxtli/Huitzilopochtli/Xochipilli, 6 LE Mictlantecuhtli/Tlaloc, 8 CE the four - the R852 code scheme)",
+    "The rank cells (0 lesser, 1 greater, 2 hero - the twin heroes carry no rank line)",
+    "The psionic class cells (0 Nil the twins, 1 class I, 2 class II Tezcatlipoca, 6 class VI Itzamna - the R849 class table)",
+    "The plane cells (1 = the parallel Prime Material Plane; 0 = no plane line, the twin heroes)",
+    "The fixed-damage flags (1 = the printed DAMAGE/ATTACK cell is numeric damage; 0 = Nil, See below, or Variable)",
+    "The in-each flags (the printed Nth level in each cells: Quetzalcoatl, Camazotz, Huhueteotl, Huitzilopochtli, Mictlantecuhtli, Tlazolteotl, Xochipilli)",
+    "The twin-pair flags (Hunapu and Xbalanque, the identical twin stat blocks)"
+   ],
+   "audit_comment": "the roster walk of the fourteen beings - ordinals, pages, alignments, ranks, psionic classes, the single parallel plane, the fixed-damage, in-each and twin-pair flags",
+   "sentinel_census": [
+    1,
+    0,
+    2,
+    5,
+    2,
+    2,
+    6,
+    7,
+    12
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the fourteen beings, the one plane)",
+   "expr": "m['dgfTableCount']() != 4 or m['dgfBeingCount']() != 14 or m['dgfCbtRows']() != 14 or m['dgfClsRows']() != 14 or m['dgfAbiRows']() != 14 or m['dgfRosRows']() != 14 or m['dgfPlaneCount']() != 1 or m['dgfChainCount']() != 0 or m['dgfRound']() != 854 or m['dgfPrintStart']() != 32 or m['dgfPrintEnd']() != 36 or m['dgfRegistryFloor']() != 995"
+  },
+  {
+   "note": "the print walk spans pp. 32-36 (the folio offset PRINT = PDF - 1)",
+   "expr": "m['dgfRosPage'](0) != 32 or m['dgfRosPage'](13) != 36 or m['dgfRosOrd'](0) != 0 or m['dgfRosOrd'](13) != 13"
+  },
+  {
+   "note": "the roster ordinals run 0-13 in print order (Quetzalcoatl first, Xochipilli last)",
+   "expr": "m['dgfRosOrd'](0) != 0 or m['dgfRosOrd'](1) != 1 or m['dgfRosOrd'](2) != 2 or m['dgfRosOrd'](3) != 3 or m['dgfRosOrd'](4) != 4 or m['dgfRosOrd'](5) != 5 or m['dgfRosOrd'](6) != 6 or m['dgfRosOrd'](7) != 7 or m['dgfRosOrd'](8) != 8 or m['dgfRosOrd'](9) != 9 or m['dgfRosOrd'](10) != 10 or m['dgfRosOrd'](11) != 11 or m['dgfRosOrd'](12) != 12 or m['dgfRosOrd'](13) != 13"
+  },
+  {
+   "note": "the mythos intro doctrine: the 20-day rituals, the d4 compass, the +1/-1, the colors",
+   "expr": "m['dgfRitualPeriodDays']() != 20 or m['dgfCompassDieSides']() != 4 or m['dgfCompassHitPlus']() != 1 or m['dgfCompassSaveMinus']() != 1"
+  },
+  {
+   "note": "the Quetzalcoatl walk: AC -2, 400 hit points, the Infinite move, 25th cleric over 13th druid, class I",
+   "expr": "m['dgfCbtAC'](0) != -2 or m['dgfCbtHP'](0) != 400 or m['dgfCbtMove'](0) != -1 or m['dgfCbtMR'](0) != 75 or m['dgfCbtSizeIn'](0) != 180 or m['dgfClsCleric'](0) != 25 or m['dgfClsDruid'](0) != 13 or m['dgfClsFighterLo'](0) != 20 or m['dgfClsThief'](0) != 20 or m['dgfClsBard'](0) != 20 or m['dgfRosPsiClass'](0) != 1 or m['dgfRosAlign'](0) != 3 or m['dgfRosRank'](0) != 1"
+  },
+  {
+   "note": "the Quetzalcoatl ability line: S:25(+7,+14) I:25 W:25 D:25 C:25 CH:25",
+   "expr": "m['dgfAbiStr'](0) != 25 or m['dgfAbiStrHit'](0) != 7 or m['dgfAbiStrDmg'](0) != 14 or m['dgfAbiInt'](0) != 25 or m['dgfAbiWis'](0) != 25 or m['dgfAbiDex'](0) != 25 or m['dgfAbiCon'](0) != 25 or m['dgfAbiCha'](0) != 25"
+  },
+  {
+   "note": "the Camaxtli walk: 350 hit points, the 15 over 24 move, the 500,000 gp sacrifice with the 25 percent favor and the 5-point light regeneration",
+   "expr": "m['dgfCbtHP'](1) != 350 or m['dgfCbtMove'](1) != 15 or m['dgfCbtMoveAlt'](1) != 24 or m['dgfCamaxtliSacrificeGP']() != 500000 or m['dgfCamaxtliFavorPct']() != 25 or m['dgfCamaxtliRegenPerMelee']() != 5 or m['dgfClsCleric'](1) != 20 or m['dgfClsMagUser'](1) != 18 or m['dgfAbiStr'](1) != 23 or m['dgfAbiInt'](1) != 24"
+  },
+  {
+   "note": "the Chalchiuhtlicue walk: 200 hit points, 95 percent MR, the 3-300 transform, the jade ritual percents and the 6 foot 4 size",
+   "expr": "m['dgfCbtHP'](2) != 200 or m['dgfCbtMR'](2) != 95 or m['dgfCbtAtN'](2) != 3 or m['dgfCbtAtD'](2) != 2 or m['dgfCbtSizeIn'](2) != 76 or m['dgfChalchiuhtlicueTransformLo']() != 3 or m['dgfChalchiuhtlicueTransformHi']() != 300 or m['dgfChalchiuhtlicueClericPct']() != 25 or m['dgfChalchiuhtlicueWorshiperPct']() != 1 or m['dgfChalchiuhtlicueAttemptsPerYear']() != 4 or m['dgfChalchiuhtlicueRitualClearMiles']() != 1 or m['dgfRosAlign'](2) != 2 or m['dgfRosRank'](2) != 0"
+  },
+  {
+   "note": "the Camazotz walk: 362 hit points, the 1,000 bats, the 2-20 claws and 3-30 bite with the paralytic save, CH -2",
+   "expr": "m['dgfCbtHP'](3) != 362 or m['dgfCamazotzBatCount']() != 1000 or m['dgfCamazotzClawDmgLo']() != 2 or m['dgfCamazotzClawDmgHi']() != 20 or m['dgfCamazotzBiteDmgLo']() != 3 or m['dgfCamazotzBiteDmgHi']() != 30 or m['dgfAbiCha'](3) != -2 or m['dgfClsAssassin'](3) != 15 or m['dgfRosAlign'](3) != 8"
+  },
+  {
+   "note": "the Huhueteotl walk: 373 hit points, 18 over 24 move, the 50-point 2-mile light beam, the 52-year time cycle",
+   "expr": "m['dgfCbtHP'](4) != 373 or m['dgfCbtMove'](4) != 18 or m['dgfCbtMoveAlt'](4) != 24 or m['dgfCbtMR'](4) != 80 or m['dgfHuhueteotlBeamDamage']() != 50 or m['dgfHuhueteotlBeamRangeMiles']() != 2 or m['dgfHuhueteotlTimeCycleYears']() != 52 or m['dgfClsCleric'](4) != 15 or m['dgfClsDruid'](4) != 10 or m['dgfClsMonk'](4) != 10 or m['dgfAbiCha'](4) != 9"
+  },
+  {
+   "note": "the Huitzilopochtli walk: AC -3, 389 hit points, the 3-30 (+14) axe with 3 strikes, the 5 percent appearance and the +3 raised saves",
+   "expr": "m['dgfCbtAC'](5) != -3 or m['dgfCbtHP'](5) != 389 or m['dgfCbtAtN'](5) != 3 or m['dgfClsRanger'](5) != 20 or m['dgfHuitzilopochtliAxeDmgLo']() != 3 or m['dgfHuitzilopochtliAxeDmgHi']() != 30 or m['dgfHuitzilopochtliAxeStrBonus']() != 14 or m['dgfHuitzilopochtliAppearPct']() != 5 or m['dgfHuitzilopochtliRaisedSaveBonus']() != 3 or m['dgfAbiStr'](5) != 25 or m['dgfAbiStrDmg'](5) != 14"
+  },
+  {
+   "note": "the twin heroes walk: AC 2, 150 hit points each, the 200-yard blowgun with 50/135 ranges, the 1-10 (+6) axes, the 1-point-per-die resistance",
+   "expr": "m['dgfCbtAC'](6) != 2 or m['dgfCbtHP'](6) != 150 or m['dgfCbtHP'](7) != 150 or m['dgfCbtMR'](6) != 0 or m['dgfCbtSizeIn'](6) != 64 or m['dgfTwinBlowgunRangeYards']() != 200 or m['dgfTwinBlowgunShortYards']() != 50 or m['dgfTwinBlowgunMediumYards']() != 135 or m['dgfTwinAxeDmgLo']() != 1 or m['dgfTwinAxeDmgHi']() != 10 or m['dgfTwinAxePlus']() != 6 or m['dgfTwinResistPerDie']() != 1 or m['dgfRosTwinPair'](6) != 1 or m['dgfRosTwinPair'](7) != 1 or m['dgfRosRank'](6) != 2 or m['dgfRosPsiClass'](6) != 0 or m['dgfRosPlane'](6) != 0"
+  },
+  {
+   "note": "the twin heroes share one grid row shape (the identical stat blocks)",
+   "expr": "m['dgfCbtAC'](6) != m['dgfCbtAC'](7) or m['dgfClsDruid'](6) != m['dgfClsDruid'](7) or m['dgfClsRanger'](6) != m['dgfClsRanger'](7) or m['dgfClsMagUser'](6) != m['dgfClsMagUser'](7) or m['dgfAbiCha'](6) != m['dgfAbiCha'](7)"
+  },
+  {
+   "note": "the Itzamna walk: AC -3, 369 hit points, the psionic class VI, the 3-24 staff, the 6-foot nimbus, the +2-to-hit light form",
+   "expr": "m['dgfCbtAC'](8) != -3 or m['dgfCbtHP'](8) != 369 or m['dgfCbtAtN'](8) != 2 or m['dgfCbtMR'](8) != 85 or m['dgfCbtSizeIn'](8) != 0 or m['dgfRosPsiClass'](8) != 6 or m['dgfPsiClassVI']() != 6 or m['dgfItzamnaStaffDmgLo']() != 3 or m['dgfItzamnaStaffDmgHi']() != 24 or m['dgfItzamnaNimbusRadiusFeet']() != 6 or m['dgfItzamnaWeaponPlusToHit']() != 2 or m['dgfClsCleric'](8) != 22 or m['dgfAbiWis'](8) != 25 or m['dgfAbiDex'](8) != 17"
+  },
+  {
+   "note": "the Tezcatlipoca adjudications: the psionic class II (the 28px two-glyph word), 400 hit points, the 3-30 claws",
+   "expr": "m['dgfRosPsiClass'](9) != 2 or m['dgfPsiClassII']() != 2 or m['dgfCbtHP'](9) != 400 or m['dgfCbtMR'](9) != 85 or m['dgfTezcatlipocaClawDmgLo']() != 3 or m['dgfTezcatlipocaClawDmgHi']() != 30 or m['dgfClsFighterLo'](9) != 20 or m['dgfClsBard'](9) != 6 or m['dgfClsAssassin'](9) != 15 or m['dgfAbiWis'](9) != 24 or m['dgfRosAlign'](9) != 8"
+  },
+  {
+   "note": "the Mictlantecuhtli walk: 339 hit points, 95 percent MR, the undead summons, the 50-sacrifice gate, CH -4",
+   "expr": "m['dgfCbtHP'](10) != 339 or m['dgfCbtMR'](10) != 95 or m['dgfMictlantecuhtliSkeletonLo']() != 20 or m['dgfMictlantecuhtliSkeletonHi']() != 200 or m['dgfMictlantecuhtliGhoulLo']() != 10 or m['dgfMictlantecuhtliGhoulHi']() != 100 or m['dgfMictlantecuhtliWightLo']() != 6 or m['dgfMictlantecuhtliWightHi']() != 36 or m['dgfMictlantecuhtliSpectreLo']() != 2 or m['dgfMictlantecuhtliSpectreHi']() != 5 or m['dgfMictlantecuhtliSacrificeGate']() != 50 or m['dgfAbiCha'](10) != -4 or m['dgfRosAlign'](10) != 6"
+  },
+  {
+   "note": "the Tlaloc walk: 377 hit points, the four pitchers, the 40/30/20 lightning",
+   "expr": "m['dgfCbtHP'](11) != 377 or m['dgfCbtMove'](11) != 12 or m['dgfCbtMoveAlt'](11) != 24 or m['dgfCbtAtN'](11) != 3 or m['dgfCbtAtD'](11) != 2 or m['dgfTlalocPitcherCount']() != 4 or m['dgfTlalocLightningArmor']() != 40 or m['dgfTlalocLightningClothed']() != 30 or m['dgfTlalocLightningNaked']() != 20 or m['dgfClsMagUser'](11) != 20 or m['dgfAbiStrHit'](11) != 3 or m['dgfRosAlign'](11) != 6"
+  },
+  {
+   "note": "the Tlazolteotl walk: AC -3, the 2nd-print 211 hit points (the IA 1st print reads 217 - the Gawaine precedent, flagged), the 24/-5 charisma, the 25th illusionist",
+   "expr": "m['dgfCbtAC'](12) != -3 or m['dgfCbtHP'](12) != 211 or m['dgfCbtMR'](12) != 25 or m['dgfTlazolteotlChaAlt']() != -5 or m['dgfClsIllus'](12) != 25 or m['dgfClsMagUser'](12) != 15 or m['dgfClsAssassin'](12) != 15 or m['dgfClsBard'](12) != 15 or m['dgfAbiStr'](12) != 10 or m['dgfAbiCha'](12) != 24"
+  },
+  {
+   "note": "the Xochipilli walk: AC -5, 381 hit points, the 16-foot size, the never-missing 3-30 axe",
+   "expr": "m['dgfCbtAC'](13) != -5 or m['dgfCbtHP'](13) != 381 or m['dgfCbtMR'](13) != 25 or m['dgfCbtSizeIn'](13) != 192 or m['dgfXochipilliAxeDmgLo']() != 3 or m['dgfXochipilliAxeDmgHi']() != 30 or m['dgfClsThief'](13) != 12 or m['dgfClsMonk'](13) != 12 or m['dgfAbiStrDmg'](13) != 12 or m['dgfRosAlign'](13) != 4"
+  },
+  {
+   "note": "the negative charismas: Camazotz -2 and Mictlantecuhtli -4 (the printed cells)",
+   "expr": "m['dgfAbiCha'](3) != -2 or m['dgfAbiCha'](10) != -4"
+  },
+  {
+   "note": "the psionic class census: eleven class I, Tezcatlipoca II, Itzamna VI, the twins Nil",
+   "expr": "m['dgfPsiClassI']() != 1 or m['dgfPsiClassII']() != 2 or m['dgfPsiClassVI']() != 6 or m['dgfRosPsiClass'](0) != 1 or m['dgfRosPsiClass'](4) != 1 or m['dgfRosPsiClass'](9) != 2 or m['dgfRosPsiClass'](8) != 6 or m['dgfRosPsiClass'](6) != 0"
+  },
+  {
+   "note": "the single parallel plane: thirteen beings on it, the twin heroes without a plane line",
+   "expr": "m['dgfPlaneCount']() != 1 or m['dgfRosPlane'](0) != 1 or m['dgfRosPlane'](1) != 1 or m['dgfRosPlane'](2) != 1 or m['dgfRosPlane'](3) != 1 or m['dgfRosPlane'](4) != 1 or m['dgfRosPlane'](5) != 1 or m['dgfRosPlane'](8) != 1 or m['dgfRosPlane'](9) != 1 or m['dgfRosPlane'](10) != 1 or m['dgfRosPlane'](11) != 1 or m['dgfRosPlane'](12) != 1 or m['dgfRosPlane'](13) != 1 or m['dgfRosPlane'](6) != 0 or m['dgfRosPlane'](7) != 0"
+  },
+  {
+   "note": "the in-each flags: Quetzalcoatl, Camazotz, Huhueteotl, Huitzilopochtli, Mictlantecuhtli, Tlazolteotl, Xochipilli",
+   "expr": "m['dgfRosInEach'](0) != 1 or m['dgfRosInEach'](3) != 1 or m['dgfRosInEach'](4) != 1 or m['dgfRosInEach'](5) != 1 or m['dgfRosInEach'](10) != 1 or m['dgfRosInEach'](12) != 1 or m['dgfRosInEach'](13) != 1 or m['dgfRosInEach'](1) != 0"
+  },
+  {
+   "note": "the fixed-damage flags against the printed DAMAGE/ATTACK cells",
+   "expr": "m['dgfRosDmgFixed'](2) != 1 or m['dgfRosDmgFixed'](3) != 1 or m['dgfRosDmgFixed'](5) != 1 or m['dgfRosDmgFixed'](6) != 1 or m['dgfRosDmgFixed'](8) != 1 or m['dgfRosDmgFixed'](9) != 1 or m['dgfRosDmgFixed'](13) != 1 or m['dgfRosDmgFixed'](0) != 0 or m['dgfRosDmgFixed'](10) != 0 or m['dgfRosDmgFixed'](11) != 0 or m['dgfRosDmgFixed'](12) != 0"
+  },
+  {
+   "note": "the alignment census: the eight-coded chaotic evils, the lawful evils, the law/neutral goods",
+   "expr": "m['dgfRosAlign'](3) != 8 or m['dgfRosAlign'](4) != 8 or m['dgfRosAlign'](9) != 8 or m['dgfRosAlign'](12) != 8 or m['dgfRosAlign'](6) != 0 or m['dgfRosAlign'](7) != 0 or m['dgfRosAlign'](8) != 1 or m['dgfRosAlign'](2) != 2 or m['dgfRosAlign'](10) != 6 or m['dgfRosAlign'](11) != 6"
+  },
+  {
+   "note": "the rank census: seven greater gods, five lesser, the two heroes",
+   "expr": "m['dgfRosRank'](0) != 1 or m['dgfRosRank'](1) != 1 or m['dgfRosRank'](4) != 1 or m['dgfRosRank'](8) != 1 or m['dgfRosRank'](9) != 1 or m['dgfRosRank'](10) != 1 or m['dgfRosRank'](11) != 1 or m['dgfRosRank'](2) != 0 or m['dgfRosRank'](13) != 0 or m['dgfRosRank'](5) != 0"
+  },
+  {
+   "note": "the ranger fighter slots: Huitzilopochtli 20, Mictlantecuhtli 15, the twins 10",
+   "expr": "m['dgfClsRanger'](5) != 20 or m['dgfClsRanger'](10) != 15 or m['dgfClsRanger'](6) != 10 or m['dgfClsRanger'](7) != 10 or m['dgfClsFighterLo'](5) != 0 or m['dgfClsFighterLo'](10) != 0"
+  },
+  {
+   "note": "the paladin fighter slots: Quetzalcoatl 20, Camaxtli 12, Chalchiuhtlicue 12, Itzamna 13, Xochipilli 12",
+   "expr": "m['dgfClsFighterLo'](0) != 20 or m['dgfClsFighterLo'](1) != 12 or m['dgfClsFighterLo'](2) != 12 or m['dgfClsFighterLo'](8) != 13 or m['dgfClsFighterLo'](13) != 12 or m['dgfClsFighterHi'](0) != 20 or m['dgfClsFighterHi'](13) != 12"
+  },
+  {
+   "note": "the hit point walk across the fourteen stat blocks",
+   "expr": "m['dgfCbtHP'](2) != 200 or m['dgfCbtHP'](3) != 362 or m['dgfCbtHP'](4) != 373 or m['dgfCbtHP'](8) != 369 or m['dgfCbtHP'](9) != 400 or m['dgfCbtHP'](10) != 339 or m['dgfCbtHP'](11) != 377 or m['dgfCbtHP'](13) != 381"
+  },
+  {
+   "note": "the magic resistance walk: the 95s, the 85s, the 25s",
+   "expr": "m['dgfCbtMR'](2) != 95 or m['dgfCbtMR'](10) != 95 or m['dgfCbtMR'](8) != 85 or m['dgfCbtMR'](9) != 85 or m['dgfCbtMR'](12) != 25 or m['dgfCbtMR'](13) != 25 or m['dgfCbtMR'](4) != 80 or m['dgfCbtMR'](0) != 75"
+  }
+ ],
+ "header_sections": {
+  "the R854 census": [
+   {
+    "kind": "const",
+    "name": "dgfRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgfPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "dgfPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "dgfBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgfChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgfRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgfClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgfAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgfRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgfPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgfPsiClassI"
+   },
+   {
+    "kind": "const",
+    "name": "dgfPsiClassII"
+   },
+   {
+    "kind": "const",
+    "name": "dgfPsiClassVI"
+   },
+   {
+    "kind": "const",
+    "name": "dgfRitualPeriodDays"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCompassDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCompassHitPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCompassSaveMinus"
+   }
+  ],
+  "the mythos intro": [
+   {
+    "kind": "bool",
+    "name": "dgfAztecMayaMoralBackground"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfInscrutableMotives"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfFromTheStars"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfParallelPrimeMaterial"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCommuneGateParallelOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfNoSummonWithoutCeremonies"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfNoTravelBeyondWorshipers"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfEliteClerics"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfAbsoluteAuthorityOverPeasants"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHigherLevelsCommandLesser"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfSectInfighting"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfSacrificeFoodSpringFall"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfSacrificeHumansBattles"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfForcedAttendance"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTempleStepPyramid"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfEntrancesFourCompassPoints"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfAltarTopEast"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfPunishmentSwift"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfMinorMistakesCostWealthXP"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfMajorFailuresStripAll"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCompassDirectionChosen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfEastRed"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfSouthYellow"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfWestBlack"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfNorthWhite"
+   }
+  ],
+  "the Quetzalcoatl walk": [
+   {
+    "kind": "bool",
+    "name": "dgfQuetzalcoatlAirGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfQuetzalcoatlBewilderingForms"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfQuetzalcoatlWorksWithWorshipers"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfQuetzalcoatlMonsterFormBattle"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfQuetzalcoatlQuadrupleOnLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfQuetzalcoatlFightsToEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfQuetzalcoatlSameFormImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfQuetzalcoatlMightiestDisputed"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfQuetzalcoatlPatronOfArts"
+   }
+  ],
+  "the Camaxtli walk": [
+   {
+    "kind": "const",
+    "name": "dgfCamaxtliSacrificeGP"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCamaxtliFavorPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCamaxtliRegenPerMelee"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamaxtliFateGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamaxtliSeesPastFuture"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamaxtliNotAllowedToKill"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamaxtliRecreatesDamageForce"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamaxtliCastIntoBeyond"
+   }
+  ],
+  "the Chalchiuhtlicue walk": [
+   {
+    "kind": "const",
+    "name": "dgfChalchiuhtlicueTransformLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfChalchiuhtlicueTransformHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgfChalchiuhtlicueRitualClearMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dgfChalchiuhtlicueClericPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgfChalchiuhtlicueWorshiperPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgfChalchiuhtlicueAttemptsPerYear"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfChalchiuhtlicueWaterLove"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfChalchiuhtlicueLifeAndChasteLove"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfChalchiuhtlicueAidsAnyAlignment"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfChalchiuhtlicueTransformSavesDevout"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfChalchiuhtlicueJadeQuality"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfChalchiuhtlicueFullMoonRitual"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfChalchiuhtlicueWifeOfTlaloc"
+   }
+  ],
+  "the Camazotz walk": [
+   {
+    "kind": "const",
+    "name": "dgfCamazotzBatCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCamazotzClawDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCamazotzClawDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCamazotzBiteDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfCamazotzBiteDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamazotzBatGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamazotzInsectTemptation"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamazotzInsectPlagueAppeasement"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamazotzParalyticSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfCamazotzDarknessWeaponsPass"
+   }
+  ],
+  "the Huhueteotl walk": [
+   {
+    "kind": "const",
+    "name": "dgfHuhueteotlBeamDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgfHuhueteotlBeamRangeMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dgfHuhueteotlTimeCycleYears"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuhueteotlFireGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuhueteotlFrequentSacrifices"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuhueteotlPunishesWithFlames"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuhueteotlClothingGemsSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuhueteotlWaningMoon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuhueteotlStopMotion"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuhueteotlStoppedImmune"
+   }
+  ],
+  "the Huitzilopochtli walk": [
+   {
+    "kind": "const",
+    "name": "dgfHuitzilopochtliAxeDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfHuitzilopochtliAxeDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgfHuitzilopochtliAxeStrBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dgfHuitzilopochtliAppearPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgfHuitzilopochtliRaisedSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuitzilopochtliWarGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuitzilopochtliBattlefieldAid"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuitzilopochtliNeverCommuned"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuitzilopochtliRearAttacksReturn"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuitzilopochtliBattleSacrifices"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuitzilopochtliDeadWarriorBody"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfHuitzilopochtliRaisedRegardless"
+   }
+  ],
+  "the Hunapu and Xbalanque walk": [
+   {
+    "kind": "const",
+    "name": "dgfTwinBlowgunRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTwinBlowgunShortYards"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTwinBlowgunMediumYards"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTwinAxeDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTwinAxeDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTwinAxePlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTwinResistPerDie"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTwinHeroes"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTwinRevengeThirst"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTwinUnderworldVictory"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTwinBlowgunExperts"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTwinAvoidMelee"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTwinPoisonedDarts"
+   }
+  ],
+  "the Itzamna walk": [
+   {
+    "kind": "const",
+    "name": "dgfItzamnaStaffDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfItzamnaStaffDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgfItzamnaNimbusRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgfItzamnaWeaponPlusToHit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaMedicineGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaLightForms"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaTravelsWorldOfMen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaSeesAllWithLight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaFriendOfMen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaIntercedes"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaWitsOverArms"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaSonOfTezcatlipoca"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaCallsFather"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaNimbusRobe"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaDrawsSymbols"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaClericSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaClericGarb"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaRedHandNecklace"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfItzamnaBalsamSquirrels"
+   }
+  ],
+  "the Tezcatlipoca walk": [
+   {
+    "kind": "const",
+    "name": "dgfTezcatlipocaClawDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTezcatlipocaClawDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTezcatlipocaSunGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTezcatlipocaPlotsOverthrow"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTezcatlipocaPatronOfTreachery"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTezcatlipocaInvisibleEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTezcatlipocaJaguarBear"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTezcatlipocaHumanMasquerade"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTezcatlipocaAnnualHeartSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTezcatlipocaPamperedVictim"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTezcatlipocaDisorderAndWealth"
+   }
+  ],
+  "the Mictlantecuhtli walk": [
+   {
+    "kind": "const",
+    "name": "dgfMictlantecuhtliSkeletonLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfMictlantecuhtliSkeletonHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgfMictlantecuhtliGhoulLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfMictlantecuhtliGhoulHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgfMictlantecuhtliWightLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfMictlantecuhtliWightHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgfMictlantecuhtliSpectreLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfMictlantecuhtliSpectreHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgfMictlantecuhtliSacrificeGate"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfMictlantecuhtliDeathGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfMictlantecuhtliCommandsUndead"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfMictlantecuhtliDarkOfMoon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfMictlantecuhtliFromWorshipers"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfMictlantecuhtliTouchDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfMictlantecuhtliSpellsInBattle"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfMictlantecuhtliJadeRod"
+   }
+  ],
+  "the Tlaloc walk": [
+   {
+    "kind": "const",
+    "name": "dgfTlalocPitcherCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTlalocLightningArmor"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTlalocLightningClothed"
+   },
+   {
+    "kind": "const",
+    "name": "dgfTlalocLightningNaked"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocRainGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocFullMoonChild"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocAnnualFestival"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocCookAndEat"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocCryingGoodSign"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocGrantsRain"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocPunishes"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocPitcherGood"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocPitcherBlight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocPitcherFrost"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocPitcherRot"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlalocBoltAsWeapon"
+   }
+  ],
+  "the Tlazolteotl walk": [
+   {
+    "kind": "const",
+    "name": "dgfTlazolteotlChaAlt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlazolteotlViceGoddess"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlazolteotlMonsterIllusion"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlazolteotlBeautifulAtEase"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlazolteotlRuinsLawfulGood"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlazolteotlNeverFightsPhysically"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlazolteotlCharmFavorite"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfTlazolteotlEvilCannotHarm"
+   }
+  ],
+  "the Xochipilli walk": [
+   {
+    "kind": "const",
+    "name": "dgfXochipilliAxeDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgfXochipilliAxeDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfXochipilliGamblingGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfXochipilliWanderingLuck"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfXochipilliPeaceful"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfXochipilliCalculatedRisk"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfXochipilliNeverMisses"
+   },
+   {
+    "kind": "bool",
+    "name": "dgfXochipilliWeaponsMiss"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R853 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R853 LANDED 2026-10-26: commit",
+  "  ba14cd03b3e641b91fbca427ae5c8000fa74d736",
+  "  (pushed 5f6789e..ba14cd0, census 775 ->",
+  "  776), THE CELTIC MYTHOS - the D&DG walk",
+  "  round five, print pp. 26-31: sixteen",
+  "  beings (Dagda, Arawn, Brigit, Cu",
+  "  Chulainn, Diancecht, Dunatis, Goibhnie,",
+  "  Lugh, Manannan Mac Lir, Math, Morrigan,",
+  "  Nuada, Oghma, Silvanus, the Master of",
+  "  the Hunt, the Pack of the Wild Hunt),",
+  "  the druid doctrine (the four feast-day",
+  "  sacrifices: Samain Nov 1, Imbalc Feb 1,",
+  "  Beltane May 1, Lugnasad Aug 1), the",
+  "  Wild Hunt doctrine, the tathlum and the",
+  "  Torc of the Gods. THE SHAPE: 4 grids x",
+  "  16 rows (combat, class, ability, roster;",
+  "  38 cols - the roster col 9 repurposed",
+  "  as the Wild Hunt flag, col 8 as the",
+  "  in-each flag; Move 0 = printed Variable,",
+  "  Cls 99 = printed See below), 135 consts",
+  "  + 151 bools + 38 table cols, inline",
+  "  324; 43 examples; header rules/dge.h,",
+  "  prefix dge; audit \"R853 Celtic mythos",
+  "  audit\", rode rules/audits/r853_batch.h.",
+  "  THE ADJUDICATIONS (the IA 1st-print",
+  "  collation over the Termux fold, the",
+  "  word-geometry tie-breaks): Dagda psionic",
+  "  II (29px two-glyph), Arawn VI (49px),",
+  "  Goibhnie VI (51px), Oghma IV (57px); Cu",
+  "  Chulainn 6'4\" (76in) and Math 5'4\"",
+  "  (64in) - the foot-mark-misread-as-1",
+  "  decode of the printed 614/514 cells; Cu",
+  "  Chulainn I:17 (the Termux 1117 vs the",
+  "  IA 1:97; the 116px four-glyph word);",
+  "  Lugh S:23(+5,+11) (the IA Sr20(",
+  "  misread); the Morrigan CH \"21 or -1\"",
+  "  (both OCR voices garble identically,",
+  "  corroborated by the 1eonline",
+  "  transcription); Silvanus AC -4 and move",
+  "  18\"/48\" through forests (IA recovery);",
+  "  Nuada/Oghma sizes 6' (IA clean vs the",
+  "  Termux & garbles); Dagda M-U/I 15th in",
+  "  each + 20th bard (IA recovery of the",
+  "  fold); Math psionic a 200-point score,",
+  "  modes A,B,C / F,G,H,I. EYEBALL CELLS",
+  "  (flagged): the Manannan trident drain",
+  "  fraction (pinned one-fourth, garbled",
+  "  both voices), the tathlum damage",
+  "  fraction (garbled both voices - a bool",
+  "  only, no const). ZERO registry defs",
+  "  touched - the floor holds at 995. Spec",
+  "  tools/spec_r853.json, md5",
+  "  846a14e4c126f441f21e8f11990c98c2",
+  "  (96,638 bytes). rverify double-run",
+  "  GREEN, 894 mutants 0 missed; hyphen",
+  "  scan clean. NEXT: the D&DG walk",
+  "  continues from the Central American",
+  "  mythos (print pp. 32-36)."
+ ],
+ "inline_count": 235
+}

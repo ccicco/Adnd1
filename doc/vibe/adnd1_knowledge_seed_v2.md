@@ -24559,6 +24559,64 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   (66,343 bytes). NEXT: the D&DG walk
   continues from the Celtic mythos
   (print pp. 26-31).
+  - R853 LANDED 2026-10-26: commit
+  ba14cd03b3e641b91fbca427ae5c8000fa74d736
+  (pushed 5f6789e..ba14cd0, census 775 ->
+  776), THE CELTIC MYTHOS - the D&DG walk
+  round five, print pp. 26-31: sixteen
+  beings (Dagda, Arawn, Brigit, Cu
+  Chulainn, Diancecht, Dunatis, Goibhnie,
+  Lugh, Manannan Mac Lir, Math, Morrigan,
+  Nuada, Oghma, Silvanus, the Master of
+  the Hunt, the Pack of the Wild Hunt),
+  the druid doctrine (the four feast-day
+  sacrifices: Samain Nov 1, Imbalc Feb 1,
+  Beltane May 1, Lugnasad Aug 1), the
+  Wild Hunt doctrine, the tathlum and the
+  Torc of the Gods. THE SHAPE: 4 grids x
+  16 rows (combat, class, ability, roster;
+  38 cols - the roster col 9 repurposed
+  as the Wild Hunt flag, col 8 as the
+  in-each flag; Move 0 = printed Variable,
+  Cls 99 = printed See below), 135 consts
+  + 151 bools + 38 table cols, inline
+  324; 43 examples; header rules/dge.h,
+  prefix dge; audit "R853 Celtic mythos
+  audit", rode rules/audits/r853_batch.h.
+  THE ADJUDICATIONS (the IA 1st-print
+  collation over the Termux fold, the
+  word-geometry tie-breaks): Dagda psionic
+  II (29px two-glyph), Arawn VI (49px),
+  Goibhnie VI (51px), Oghma IV (57px); Cu
+  Chulainn 6'4" (76in) and Math 5'4"
+  (64in) - the foot-mark-misread-as-1
+  decode of the printed 614/514 cells; Cu
+  Chulainn I:17 (the Termux 1117 vs the
+  IA 1:97; the 116px four-glyph word);
+  Lugh S:23(+5,+11) (the IA Sr20(
+  misread); the Morrigan CH "21 or -1"
+  (both OCR voices garble identically,
+  corroborated by the 1eonline
+  transcription); Silvanus AC -4 and move
+  18"/48" through forests (IA recovery);
+  Nuada/Oghma sizes 6' (IA clean vs the
+  Termux & garbles); Dagda M-U/I 15th in
+  each + 20th bard (IA recovery of the
+  fold); Math psionic a 200-point score,
+  modes A,B,C / F,G,H,I. EYEBALL CELLS
+  (flagged): the Manannan trident drain
+  fraction (pinned one-fourth, garbled
+  both voices), the tathlum damage
+  fraction (garbled both voices - a bool
+  only, no const). ZERO registry defs
+  touched - the floor holds at 995. Spec
+  tools/spec_r853.json, md5
+  846a14e4c126f441f21e8f11990c98c2
+  (96,638 bytes). rverify double-run
+  GREEN, 894 mutants 0 missed; hyphen
+  scan clean. NEXT: the D&DG walk
+  continues from the Central American
+  mythos (print pp. 32-36).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
