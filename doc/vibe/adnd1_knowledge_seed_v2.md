@@ -24422,6 +24422,29 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   (round three, the table-group
   closer), then the FF arc continues;
   awaits Curtiss's go.
+  - R849 LANDED 2026-10-26: commit 55e32fc1ed257613a35ce258b25cf79948c72a34
+  (pushed cd645b4..55e32fc, census 771 -> 772), THE DDG FRONT MATTER - the
+  D&DG arc opener, print pp. 1-11 (title, foreword, contents, preface,
+  credits, the explanatory notes with the seven over-18 ability grids and the
+  psionic class table, the standard divine abilities, the DMing doctrine with
+  the intervention modifiers, the clerics and spell-granting ladder, the
+  omens, the soul/spirit mortality doctrine, the divine ascension
+  requirements). THE SHAPE: 9 grids + 1 chain (61 grid rows:
+  Str/Wis/Int/Dex/Con/Cha 7 rows each, the horror table -1 to -7, the psionic
+  classes I-VI, the intervention modifiers), the monster intelligence ladder
+  to godlike; header rules/dga.h (inline 237), prefix dga; audit "R849 DDG
+  front matter audit", rode rules/audits/r849_batch.h; 19 examples. ZERO
+  registry defs touched - the floor holds at 995. THE ADJUDICATIONS
+  (physical-copy eyeball, the extract primary): the strength 23 damage +11
+  (the OCR +1) and the psionic class V lettered modes (attack A,B,C,E; defense
+  F,G,H). THE NEW-ARC LESSON: a NEW arc's gap report is a SEPARATE authored
+  artifact - ./rn on the arc opener died at rd(GR) FileNotFoundError until
+  tools/ddg_gap_report.md was authored (pre-flip, 24 boxes, the census slicing
+  derived to the spec's 1/23: App 4 and the index split, plus the print-p.131
+  FIG. 4/5 alignment-figures pixel-work box; md5 3f3fc4b61b9fac57c47913e8
+  dacdc83c, 1357 bytes); the gap report header carries the folio offset PRINT
+  = PDF - 1. Spec tools/spec_r850.json rides this round. NEXT: the D&DG walk
+  continues from the American Indian mythos (print pp. 12-16).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

@@ -7,7 +7,7 @@ print p. 6; p132 is print 131).
 ## Boxes
 
 - [x] **Front matter** (pp. 1-11)
-- [ ] **American Indian mythos** (pp. 12-16)
+- [x] **American Indian mythos** (pp. 12-16)
 - [ ] **Arthurian mythos** (pp. 17-21)
 - [ ] **Babylonian mythos** (pp. 22-25)
 - [ ] **Celtic mythos** (pp. 26-31)

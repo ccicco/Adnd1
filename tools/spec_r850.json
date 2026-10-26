@@ -1,0 +1,2775 @@
+{
+ "round": 850,
+ "title": "the American Indian mythos",
+ "prefix": "dgb",
+ "header_file": "rules/dgb.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/ddg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "audit_file": "rules/audits/r850_batch.h",
+ "census_before": 772,
+ "inline_count": 232,
+ "audit_label": "R850 American Indian mythos audit",
+ "audit_comment": "THE AMERICAN INDIAN MYTHOS - the D&DG walk round two, print pp. 12-16: fourteen beings (Raven, Coyote, Hastsezini, Hastseltsi, Heng, Hiawatha, Hotoru, Qagwaaz, Shakak, Snake-Man, Stoneribs, the Thunder Bird, Yanauluha, Tobadzistsini), the pantheon-wide cleric doctrine, and the sacred bundle. Zero registry defs touched; the floor holds at 995. The flagged eyeball cells: Hastsezini CH -1 and Shakak CH 6.",
+ "banner": {
+  "title": "the American Indian mythos - the D&DG walk round two, print pp. 12-16: the North American pantheon, fourteen beings from the Raven to Tobadzistsini, the pantheon doctrine and the sacred bundle.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 013-017); the four-voice collation adjudications (the TSV word geometry and the archive.org 1st-print derivative): Heng, Hotoru and Yanauluha attacks printed 3/2 (the 47-48px three-glyph width matches the known-good Qagwaaz/Stoneribs 3/2, against the Termux dropped-glyph 3.2), Coyote psionic class III and Hastsezini II (the IA geometry 47px), Hastsezini CH -1 (both voices read CH:-], five glyphs, the horror-table doctrine), Shakak CH 6 (both voices, four glyphs), the Thunder Bird X/22,600 xp line (both voices), and Stoneribs size 5 and one half feet (66 inches).",
+  "sentinel": "the 0 sentinels: MoveAlt 0 = a single printed move; AtD 0 = a single printed attacks figure; the magic resistance 0 = the printed Standard (Hiawatha, Qagwaaz, Stoneribs); the ability-grid Thunder Bird row is all 0 (the monster-format being prints no ability line); the class-grid 0 = Nil or none printed (Hastsezini magic-user 0 = the printed See below - the 30th-level fire spells ride the consts); roster Plane 0 = none printed (the heroes), worship 0 = none printed, lair percent 0 = none printed, XP 0 = none printed (the Thunder Bird row carries 22600)."
+ },
+ "consts": [
+  {
+   "name": "dgbRound",
+   "value": 850,
+   "comment": "the American Indian mythos round: the D&DG walk round two, print pp. 12-16"
+  },
+  {
+   "name": "dgbPrintStart",
+   "value": 12,
+   "comment": "the walk opens at print p. 12 (the Raven doctrine page)"
+  },
+  {
+   "name": "dgbPrintEnd",
+   "value": 16,
+   "comment": "the walk closes at print p. 16 (the Tobadzistsini block)"
+  },
+  {
+   "name": "dgbBeingCount",
+   "value": 14,
+   "comment": "the fourteen beings of the American Indian mythos"
+  },
+  {
+   "name": "dgbTableCount",
+   "value": 4,
+   "comment": "the four grids: combat, class, ability, roster"
+  },
+  {
+   "name": "dgbChainCount",
+   "value": 0,
+   "comment": "no chains this round - the grids and the prose pins carry the walk"
+  },
+  {
+   "name": "dgbRegistryFloor",
+   "value": 995,
+   "comment": "zero registry defs touched - the MM1 live registry floor holds at 995"
+  },
+  {
+   "name": "dgbCbtRows",
+   "value": 14,
+   "comment": "the combat grid row count (one row per being)"
+  },
+  {
+   "name": "dgbClsRows",
+   "value": 14,
+   "comment": "the class grid row count"
+  },
+  {
+   "name": "dgbAbiRows",
+   "value": 14,
+   "comment": "the ability grid row count"
+  },
+  {
+   "name": "dgbRosRows",
+   "value": 14,
+   "comment": "the roster grid row count"
+  },
+  {
+   "name": "dgbPsiClassMax",
+   "value": 6,
+   "comment": "the psionic class ceiling VI (the front-matter psionic class table)"
+  },
+  {
+   "name": "dgbBundleSaveBonus",
+   "value": 2,
+   "comment": "the sacred bundle: +2 on all saving throws"
+  },
+  {
+   "name": "dgbBundleSurpriseDen",
+   "value": 6,
+   "comment": "the bundle owner is surprised only on a roll of 1 in 6"
+  },
+  {
+   "name": "dgbBundleAC",
+   "value": 2,
+   "comment": "the bundle owner has armor class 2"
+  },
+  {
+   "name": "dgbBundleDmgPerDie",
+   "value": 1,
+   "comment": "one point subtracted from each die of damage done to the owner in battle"
+  },
+  {
+   "name": "dgbBundleMinItems",
+   "value": 5,
+   "comment": "a sacred bundle always holds at least 5 items"
+  },
+  {
+   "name": "dgbBundleMaxItems",
+   "value": 10,
+   "comment": "a sacred bundle never holds more than 10 items"
+  },
+  {
+   "name": "dgbRavenDmg1Lo",
+   "value": 3,
+   "comment": "the Raven damage/attack die 1 low (3-18)"
+  },
+  {
+   "name": "dgbRavenDmg1Hi",
+   "value": 18,
+   "comment": "the Raven damage/attack die 1 high"
+  },
+  {
+   "name": "dgbRavenDmg2Lo",
+   "value": 3,
+   "comment": "the Raven damage/attack die 2 low (3-18)"
+  },
+  {
+   "name": "dgbRavenDmg2Hi",
+   "value": 18,
+   "comment": "the Raven damage/attack die 2 high"
+  },
+  {
+   "name": "dgbRavenDmg3Lo",
+   "value": 3,
+   "comment": "the Raven damage/attack die 3 low (3-30)"
+  },
+  {
+   "name": "dgbRavenDmg3Hi",
+   "value": 30,
+   "comment": "the Raven damage/attack die 3 high"
+  },
+  {
+   "name": "dgbRavenPolySaveMod",
+   "value": 3,
+   "comment": "the Raven polymorph-others special attack: -3 to save"
+  },
+  {
+   "name": "dgbCoyoteBiteLo",
+   "value": 3,
+   "comment": "the Coyote bite damage low (3-30 when cornered)"
+  },
+  {
+   "name": "dgbCoyoteBiteHi",
+   "value": 30,
+   "comment": "the Coyote bite damage high"
+  },
+  {
+   "name": "dgbHastseAuraLo",
+   "value": 2,
+   "comment": "the flame-wreath heat aura damage low (2-20)"
+  },
+  {
+   "name": "dgbHastseAuraHi",
+   "value": 20,
+   "comment": "the flame-wreath heat aura damage high"
+  },
+  {
+   "name": "dgbHastseAuraRange",
+   "value": 10,
+   "comment": "the aura reaches all within 10 yards"
+  },
+  {
+   "name": "dgbHastseFireSense",
+   "value": 50,
+   "comment": "he is aware of anything happening within 50 yards of any fire"
+  },
+  {
+   "name": "dgbHastseShieldPlus",
+   "value": 5,
+   "comment": "he uses a +5 shield in battle that no other being can wield"
+  },
+  {
+   "name": "dgbHastseBowLo",
+   "value": 1,
+   "comment": "the fire-bow shaft damage low (1-10)"
+  },
+  {
+   "name": "dgbHastseBowHi",
+   "value": 10,
+   "comment": "the fire-bow shaft damage high"
+  },
+  {
+   "name": "dgbHastseAxeLo",
+   "value": 2,
+   "comment": "the hand axe damage low (2-20)"
+  },
+  {
+   "name": "dgbHastseAxeHi",
+   "value": 20,
+   "comment": "the hand axe damage high"
+  },
+  {
+   "name": "dgbHastseLanceLo",
+   "value": 3,
+   "comment": "the lance of fire damage low (3-30)"
+  },
+  {
+   "name": "dgbHastseLanceHi",
+   "value": 30,
+   "comment": "the lance of fire damage high"
+  },
+  {
+   "name": "dgbHastsePressCount",
+   "value": 5,
+   "comment": "when hard-pressed by more than 5 enemies he turns to fire spells"
+  },
+  {
+   "name": "dgbHastsePressLevel",
+   "value": 30,
+   "comment": "the fire spells of any type, cast as a 30th level spell caster"
+  },
+  {
+   "name": "dgbHastseltsiHorseAC",
+   "value": 5,
+   "comment": "the giant maroon horse armor class 5"
+  },
+  {
+   "name": "dgbHastseltsiHorseHD",
+   "value": 15,
+   "comment": "the giant maroon horse hit dice 15"
+  },
+  {
+   "name": "dgbHastseltsiHorseHP",
+   "value": 70,
+   "comment": "the giant maroon horse hit points 70"
+  },
+  {
+   "name": "dgbHastseltsiHorseAtN",
+   "value": 3,
+   "comment": "the giant maroon horse attacks: 2-20/2-20/1-12"
+  },
+  {
+   "name": "dgbHastseltsiHorseDmg1Lo",
+   "value": 2,
+   "comment": "the horse damage die 1 low (2-20)"
+  },
+  {
+   "name": "dgbHastseltsiHorseDmg1Hi",
+   "value": 20,
+   "comment": "the horse damage die 1 high"
+  },
+  {
+   "name": "dgbHastseltsiHorseDmg3Lo",
+   "value": 1,
+   "comment": "the horse damage die 3 low (1-12)"
+  },
+  {
+   "name": "dgbHastseltsiHorseDmg3Hi",
+   "value": 12,
+   "comment": "the horse damage die 3 high"
+  },
+  {
+   "name": "dgbHastseltsiAxeLo",
+   "value": 2,
+   "comment": "his hand axe damage low (2-12, a +3 weapon)"
+  },
+  {
+   "name": "dgbHastseltsiAxeHi",
+   "value": 12,
+   "comment": "his hand axe damage high"
+  },
+  {
+   "name": "dgbHastseltsiAxePlus",
+   "value": 3,
+   "comment": "the hand axe +3"
+  },
+  {
+   "name": "dgbHastseltsiKnifeLo",
+   "value": 1,
+   "comment": "his throwing knife damage low (1-10, a +2 weapon)"
+  },
+  {
+   "name": "dgbHastseltsiKnifeHi",
+   "value": 10,
+   "comment": "his throwing knife damage high"
+  },
+  {
+   "name": "dgbHastseltsiKnifePlus",
+   "value": 2,
+   "comment": "the throwing knife +2"
+  },
+  {
+   "name": "dgbHastseltsiDmgMod",
+   "value": 14,
+   "comment": "the damage/attack strength modifier (+14: 2-12 (+14) or 1-10 (+14))"
+  },
+  {
+   "name": "dgbHengBowLo",
+   "value": 6,
+   "comment": "the lightning bow damage low (6-60 per strike)"
+  },
+  {
+   "name": "dgbHengBowHi",
+   "value": 60,
+   "comment": "the lightning bow damage high"
+  },
+  {
+   "name": "dgbHengBowRangeMiles",
+   "value": 30,
+   "comment": "the bow range is 30 miles"
+  },
+  {
+   "name": "dgbHengLanceLo",
+   "value": 3,
+   "comment": "the lance damage low (3-30, used only when closely pressed)"
+  },
+  {
+   "name": "dgbHengLanceHi",
+   "value": 30,
+   "comment": "the lance damage high"
+  },
+  {
+   "name": "dgbHengLuckBonus",
+   "value": 2,
+   "comment": "the warrior he copies gets +2 to hit enemies for the whole year"
+  },
+  {
+   "name": "dgbHengDmgMod",
+   "value": 12,
+   "comment": "the damage/attack strength modifier (+12: 6-60 or 3-30 (+12))"
+  },
+  {
+   "name": "dgbHiawathaHugLo",
+   "value": 2,
+   "comment": "the bear-hug damage low (2-20 per melee round)"
+  },
+  {
+   "name": "dgbHiawathaHugHi",
+   "value": 20,
+   "comment": "the bear-hug damage high"
+  },
+  {
+   "name": "dgbHotoruBoltsPerRound",
+   "value": 3,
+   "comment": "he casts three lightning bolts per round"
+  },
+  {
+   "name": "dgbHotoruBoltLo",
+   "value": 2,
+   "comment": "the lightning bolt damage low (2-20 each)"
+  },
+  {
+   "name": "dgbHotoruBoltHi",
+   "value": 20,
+   "comment": "the lightning bolt damage high"
+  },
+  {
+   "name": "dgbHotoruBoltRange",
+   "value": 900,
+   "comment": "the lightning bolt range is 900 yards"
+  },
+  {
+   "name": "dgbHotoruChiefSaveBonus",
+   "value": 1,
+   "comment": "while he wears the chief's form, that chief gains +1 on all saving throws"
+  },
+  {
+   "name": "dgbShakakAuraDmg",
+   "value": 20,
+   "comment": "the cold aura: 20 points of damage per melee round within 30 yards, no saving throw"
+  },
+  {
+   "name": "dgbShakakAuraRange",
+   "value": 30,
+   "comment": "the cold aura range in yards"
+  },
+  {
+   "name": "dgbShakakSpearLo",
+   "value": 3,
+   "comment": "the ice spear damage low (3-30 per strike)"
+  },
+  {
+   "name": "dgbShakakSpearHi",
+   "value": 30,
+   "comment": "the ice spear damage high"
+  },
+  {
+   "name": "dgbShakakRegenPerRound",
+   "value": 10,
+   "comment": "below freezing he regenerates 10 points per melee round"
+  },
+  {
+   "name": "dgbShakakDmgMod",
+   "value": 9,
+   "comment": "the damage/attack strength modifier (+9: 3-30 (+9))"
+  },
+  {
+   "name": "dgbSnakemanJewelryGP",
+   "value": 75000,
+   "comment": "he always wears 75,000 gold pieces worth of jewelry"
+  },
+  {
+   "name": "dgbSnakemanSummonLo",
+   "value": 5,
+   "comment": "the snake summons low (5-500 random snakes, once per day)"
+  },
+  {
+   "name": "dgbSnakemanSummonHi",
+   "value": 500,
+   "comment": "the snake summons high"
+  },
+  {
+   "name": "dgbStoneribsSizeIn",
+   "value": 66,
+   "comment": "his size is 5 and one half feet - encoded as 66 inches (the adjudicated garbled-size cell)"
+  },
+  {
+   "name": "dgbTbirdBoltsPerRound",
+   "value": 1,
+   "comment": "it can cast one lightning bolt per round"
+  },
+  {
+   "name": "dgbTbirdBoltDmg",
+   "value": 30,
+   "comment": "each bolt does 30 points of damage (save for half)"
+  },
+  {
+   "name": "dgbTbirdBoltRangeLo",
+   "value": 50,
+   "comment": "the bolt range low, 50 yards"
+  },
+  {
+   "name": "dgbTbirdBoltRangeHi",
+   "value": 300,
+   "comment": "the bolt range high, 300 yards"
+  },
+  {
+   "name": "dgbTbirdBeakLo",
+   "value": 1,
+   "comment": "the beak bite damage low (1-10)"
+  },
+  {
+   "name": "dgbTbirdBeakHi",
+   "value": 10,
+   "comment": "the beak bite damage high"
+  },
+  {
+   "name": "dgbTbirdWingLo",
+   "value": 2,
+   "comment": "the wing bludgeon damage low (2-20)"
+  },
+  {
+   "name": "dgbTbirdWingHi",
+   "value": 20,
+   "comment": "the wing bludgeon damage high"
+  },
+  {
+   "name": "dgbYanaAppearPct",
+   "value": 10,
+   "comment": "a 10 percent chance at each occurrence that he appears and personally helps"
+  },
+  {
+   "name": "dgbTobadArrowLo",
+   "value": 1,
+   "comment": "his arrows strike for 1-10 points of damage"
+  },
+  {
+   "name": "dgbTobadArrowHi",
+   "value": 10,
+   "comment": "the arrow damage high"
+  },
+  {
+   "name": "dgbTobadSpearLo",
+   "value": 3,
+   "comment": "his spear strikes for 3-30, hand-to-hand combat only"
+  },
+  {
+   "name": "dgbTobadSpearHi",
+   "value": 30,
+   "comment": "the spear damage high"
+  },
+  {
+   "name": "dgbTobadDmgMod",
+   "value": 14,
+   "comment": "the damage/attack strength modifier (+14: 1-10/3-30 (+14))"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgbGodsPreferCreatureForm",
+   "value": true,
+   "comment": "the gods will always prefer to appear in the form of a creature of the land"
+  },
+  {
+   "name": "dgbHumanFormCostly",
+   "value": true,
+   "comment": "human-form appearances require great energy and may last only a short time"
+  },
+  {
+   "name": "dgbControlRequiresPart",
+   "value": true,
+   "comment": "a controlling ritual must have part of the thing already (the rain-summon sprinkling)"
+  },
+  {
+   "name": "dgbQuestNeedsPart",
+   "value": true,
+   "comment": "a quest spell needs a part of the being - hair, used clothing, or the like"
+  },
+  {
+   "name": "dgbNameBlocksCharm",
+   "value": true,
+   "comment": "no charm spell works on an Indian priest without knowledge of that priest's name"
+  },
+  {
+   "name": "dgbDemonControlNeedsFire",
+   "value": true,
+   "comment": "all rituals involving demons or devils require a large fire for control"
+  },
+  {
+   "name": "dgbSeasonalSacrifice",
+   "value": true,
+   "comment": "the season ebb is the sacrifice time - food, jewelry, battle weapons burned for the tribe"
+  },
+  {
+   "name": "dgbClericMeditatesApart",
+   "value": true,
+   "comment": "Indian clerics are expected apart from the tribe daily in meditation with the patron deity"
+  },
+  {
+   "name": "dgbClericTribeProtector",
+   "value": true,
+   "comment": "when great evil comes it is the cleric who protects the tribe, by action or sacrifice"
+  },
+  {
+   "name": "dgbRelicsBuriedWithCleric",
+   "value": true,
+   "comment": "the fortified magical symbols and relics are buried with the cleric at death"
+  },
+  {
+   "name": "dgbRelicsFromVisions",
+   "value": true,
+   "comment": "the relic selection is personal, from visions received at the career start"
+  },
+  {
+   "name": "dgbPatronSymbolReflected",
+   "value": true,
+   "comment": "one symbol always reflects the patron deity's symbol"
+  },
+  {
+   "name": "dgbYoungClericsFight",
+   "value": true,
+   "comment": "young Indian clerics enter battle alongside the warriors"
+  },
+  {
+   "name": "dgbOldClericsEnlistGods",
+   "value": true,
+   "comment": "the older clerics enlist the help of the tribal gods for the battle"
+  },
+  {
+   "name": "dgbPriestBlessesWarpaint",
+   "value": true,
+   "comment": "the tribal priest makes the warpaint and blesses the men and weapons before battle"
+  },
+  {
+   "name": "dgbLodgeTabooSpirits",
+   "value": true,
+   "comment": "the cleric tent or lodge is taboo to the tribe, guarded by strong spirits"
+  },
+  {
+   "name": "dgbWorshipInTheOpen",
+   "value": true,
+   "comment": "worship of most deities is held in the open"
+  },
+  {
+   "name": "dgbBundleSpiritAdvised",
+   "value": true,
+   "comment": "the bundle items are indicated by a summoned spirit as sacred to that Indian"
+  },
+  {
+   "name": "dgbBundlePriestFinalItem",
+   "value": true,
+   "comment": "the tribal priest demands the last offering placed in the bag be of his own choosing"
+  },
+  {
+   "name": "dgbRavenTransformer",
+   "value": true,
+   "comment": "the great transformer-trickster, responsible for the creation/transformation of the world"
+  },
+  {
+   "name": "dgbRavenFightsAsGiantRaven",
+   "value": true,
+   "comment": "he will fight only as a last resort and then only as a giant raven"
+  },
+  {
+   "name": "dgbRavenExtraForms",
+   "value": true,
+   "comment": "besides a raven he may appear as a fox, a jay or the moon"
+  },
+  {
+   "name": "dgbRavenGreatProvider",
+   "value": true,
+   "comment": "known as the great provider for mankind, including the giving of fire"
+  },
+  {
+   "name": "dgbRavenFoodOfferings",
+   "value": true,
+   "comment": "the most successful appeal is by offerings of food; he intervenes for his worshipers in need"
+  },
+  {
+   "name": "dgbCoyoteTaughtArtsAndFire",
+   "value": true,
+   "comment": "Coyote is responsible for teaching arts, crafts and the use of light and fire"
+  },
+  {
+   "name": "dgbCoyoteBullyingGreedy",
+   "value": true,
+   "comment": "he is primarily a bullying, greedy trickster, difficult to understand"
+  },
+  {
+   "name": "dgbCoyoteBeastCompanions",
+   "value": true,
+   "comment": "as a trickster he is usually accompanied by a giant wolf, sometimes a fox, wildcat, badger or porcupine"
+  },
+  {
+   "name": "dgbCoyoteTricksBackfire",
+   "value": true,
+   "comment": "often his tricks will backfire on him"
+  },
+  {
+   "name": "dgbCoyoteCowardlyThiefRole",
+   "value": true,
+   "comment": "his role is primarily that of a cowardly thief"
+  },
+  {
+   "name": "dgbCoyotePolymorphOnceDaily",
+   "value": true,
+   "comment": "Coyote can polymorph himself once per day but is limited to the animal kingdom"
+  },
+  {
+   "name": "dgbCoyoteFleesWhenPossible",
+   "value": true,
+   "comment": "Coyote will flee combat whenever possible, but when cornered he will fight"
+  },
+  {
+   "name": "dgbCoyoteFavoriteSpells",
+   "value": true,
+   "comment": "in trickery his two favorite spells are invisibility and animate object"
+  },
+  {
+   "name": "dgbCoyoteThievingAppeals",
+   "value": true,
+   "comment": "his followers appeal to him to improve thieving abilities or for illusionist tricks of fire, light or darkness"
+  },
+  {
+   "name": "dgbHastseBlackUglyFlames",
+   "value": true,
+   "comment": "jet black and extremely ugly, always wreathed in flames"
+  },
+  {
+   "name": "dgbHastseNoBehindAttack",
+   "value": true,
+   "comment": "he cannot be attacked from behind"
+  },
+  {
+   "name": "dgbHastseBurnsVillages",
+   "value": true,
+   "comment": "fond of destroying by fire the villages that do not sacrifice to him"
+  },
+  {
+   "name": "dgbHastseNoonOfferings",
+   "value": true,
+   "comment": "fearing tribes sacrifice food and fresh meat by burning at high noon, especially in the dry season"
+  },
+  {
+   "name": "dgbHastseBowLineOfSight",
+   "value": true,
+   "comment": "the fire bow's range is line of sight"
+  },
+  {
+   "name": "dgbHastseAxeAtStrongest",
+   "value": true,
+   "comment": "he often throws the hand axe at the strongest enemy he faces"
+  },
+  {
+   "name": "dgbHastseLanceNeverThrown",
+   "value": true,
+   "comment": "he never throws the lance of fire"
+  },
+  {
+   "name": "dgbHastseOffensiveOnly",
+   "value": true,
+   "comment": "his cleric/druid spells are offensive spells only"
+  },
+  {
+   "name": "dgbHastseltsiRedEquipment",
+   "value": true,
+   "comment": "appears as a man, all of whose equipment is red"
+  },
+  {
+   "name": "dgbHastseltsiRacesAnyone",
+   "value": true,
+   "comment": "he enters a tribal area because he desires to race, with any person and in any way"
+  },
+  {
+   "name": "dgbHastseltsiHidesPower",
+   "value": true,
+   "comment": "he never shows his godlike abilities, always running just a little faster than his opponent"
+  },
+  {
+   "name": "dgbHastseltsiHorseEnchanted",
+   "value": true,
+   "comment": "the horse is enchanted to run faster than anything it competes against"
+  },
+  {
+   "name": "dgbHastseltsiNoProjectileHurt",
+   "value": true,
+   "comment": "Hastseltsi cannot be hurt by any projectile or aerial attack"
+  },
+  {
+   "name": "dgbHastseltsiSymbolOnLodges",
+   "value": true,
+   "comment": "sometimes symbolized by a massively-muscled running horse, on his priests' lodges and shields"
+  },
+  {
+   "name": "dgbHastseltsiAssassinTrained",
+   "value": false,
+   "comment": "the printed THIEF/ASSASSIN line reads 12th level assassin - no thief level is printed"
+  },
+  {
+   "name": "dgbHengPriestsSprinkleWater",
+   "value": true,
+   "comment": "his priests must sprinkle large quantities of water on the ground to attract his attention for rain"
+  },
+  {
+   "name": "dgbHengThunderCloudForm",
+   "value": true,
+   "comment": "if he answers he appears in a rolling thunder cloud as a braided warrior of the summoning tribe"
+  },
+  {
+   "name": "dgbHengFavoredOfTribes",
+   "value": true,
+   "comment": "favored among all the Indian tribes - relied upon to bring rain to those that suffer and luck to those that hurt"
+  },
+  {
+   "name": "dgbHiawathaPaladin",
+   "value": true,
+   "comment": "the FIGHTER line reads 15th level paladin (over) 10th level ranger"
+  },
+  {
+   "name": "dgbHiawathaManyNames",
+   "value": true,
+   "comment": "possibly the greatest of all Indian heroes, found with many other names in many cultures of America"
+  },
+  {
+   "name": "dgbHiawathaSelfMovingCanoe",
+   "value": true,
+   "comment": "he travels the rivers on a canoe that moves by itself"
+  },
+  {
+   "name": "dgbHiawathaAnimalsWarn",
+   "value": true,
+   "comment": "the animals of the area talk to him, warning him of possible dangers"
+  },
+  {
+   "name": "dgbHiawathaPeacemaker",
+   "value": true,
+   "comment": "a loner who transcends tribal feuds, helps all people in trouble, a great peacemaker and defender of the weak"
+  },
+  {
+   "name": "dgbHiawathaGreatBear",
+   "value": true,
+   "comment": "he fought the great bear of death and won through hand-to-hand combat"
+  },
+  {
+   "name": "dgbHotoruWeatherCrops",
+   "value": true,
+   "comment": "sometimes influenced by human needs for weather or crop growth - and can destroy the same for any slight to his priesthood"
+  },
+  {
+   "name": "dgbHotoruChiefForm",
+   "value": true,
+   "comment": "he takes on the form of the chief of any village he is near"
+  },
+  {
+   "name": "dgbHotoruFallenWeapons",
+   "value": true,
+   "comment": "if lightning does not work he will use any fallen weapon he can pick up in battle"
+  },
+  {
+   "name": "dgbQagwaazPlainsSport",
+   "value": true,
+   "comment": "found chasing and capturing horses and buffalo on the plains for sport"
+  },
+  {
+   "name": "dgbQagwaazStrengthTests",
+   "value": true,
+   "comment": "enters villages to test his strength against the best warriors there"
+  },
+  {
+   "name": "dgbQagwaazWoodenClub",
+   "value": true,
+   "comment": "he fights with a huge wooden club, letting his strength do the talking"
+  },
+  {
+   "name": "dgbQagwaazExampleForWarriors",
+   "value": true,
+   "comment": "a hero of the plains, existing to set an example for the best warriors of any given tribe"
+  },
+  {
+   "name": "dgbQagwaazFirstInBattle",
+   "value": true,
+   "comment": "always the first in battle and a favorite among women"
+  },
+  {
+   "name": "dgbShakakColdAtWill",
+   "value": true,
+   "comment": "this white-skinned deity can bring on any kind of cold weather at will"
+  },
+  {
+   "name": "dgbShakakSacrificeLessensWinter",
+   "value": true,
+   "comment": "those that sacrifice to him can often lessen the force of winter"
+  },
+  {
+   "name": "dgbShakakNonePrayForFear",
+   "value": true,
+   "comment": "no one prays to this evil being for fear that he will come"
+  },
+  {
+   "name": "dgbShakakBurnPossessions",
+   "value": true,
+   "comment": "sacrifices always take the form of burning precious possessions during the dead of winter"
+  },
+  {
+   "name": "dgbShakakDemonicFace",
+   "value": true,
+   "comment": "his form is usually human but his face is demonic with fangs and blazing white eyes"
+  },
+  {
+   "name": "dgbShakakColdAuraNoSave",
+   "value": true,
+   "comment": "his body radiates cold: 20 points per melee round within 30 yards, no saving throw"
+  },
+  {
+   "name": "dgbShakakIceSpear",
+   "value": true,
+   "comment": "his spear is made of ice"
+  },
+  {
+   "name": "dgbShakakRegenBelowFreezing",
+   "value": true,
+   "comment": "when the temperature is below freezing he regenerates 10 points per melee round"
+  },
+  {
+   "name": "dgbSnakemanRainbowSkin",
+   "value": true,
+   "comment": "appears in the shape of a man with rainbow-colored skin"
+  },
+  {
+   "name": "dgbSnakemanAgesAtWill",
+   "value": true,
+   "comment": "he ages at will, often visibly turning younger or older in long conversations"
+  },
+  {
+   "name": "dgbSnakemanControlsReptiles",
+   "value": true,
+   "comment": "he can control all reptiles"
+  },
+  {
+   "name": "dgbSnakemanReptilesNeverAttack",
+   "value": true,
+   "comment": "no reptile type will attack him, even if magically controlled"
+  },
+  {
+   "name": "dgbSnakemanFantasticReptilians",
+   "value": true,
+   "comment": "the defense extends to fantastic reptilian beings - certain devils, demons, dragons and the like"
+  },
+  {
+   "name": "dgbSnakemanSpellsOnly",
+   "value": true,
+   "comment": "never known to attack beings with other than spells"
+  },
+  {
+   "name": "dgbSnakemanSnakesVsImpervious",
+   "value": true,
+   "comment": "against magic-impervious creatures he summons snakes to fight for him instead"
+  },
+  {
+   "name": "dgbStoneribsHalibutCloak",
+   "value": true,
+   "comment": "his cloak enables him to turn into a halibut at will"
+  },
+  {
+   "name": "dgbStoneribsShrinksAtWill",
+   "value": true,
+   "comment": "he can shrink to any size he chooses"
+  },
+  {
+   "name": "dgbStoneribsBowOrClub",
+   "value": true,
+   "comment": "he attacks with a bow or club"
+  },
+  {
+   "name": "dgbStoneribsTribesChampion",
+   "value": true,
+   "comment": "famed for great strength, he wanders from tribe to tribe and fights the best each tribe has"
+  },
+  {
+   "name": "dgbStoneribsYearService",
+   "value": true,
+   "comment": "when he loses he stays with the tribe for one year and fights in their battles"
+  },
+  {
+   "name": "dgbTbirdUnique",
+   "value": true,
+   "comment": "frequency: unique, number appearing 1 - the monster-format being of the mythos"
+  },
+  {
+   "name": "dgbTbirdIntGenius",
+   "value": true,
+   "comment": "its intelligence is Genius"
+  },
+  {
+   "name": "dgbTbirdNeverSurprised",
+   "value": true,
+   "comment": "never surprised because of the warning its superb senses give"
+  },
+  {
+   "name": "dgbTbirdThunderWings",
+   "value": true,
+   "comment": "when ready to attack its wings beat together and thunder sounds"
+  },
+  {
+   "name": "dgbTbirdComesOfOwnWill",
+   "value": true,
+   "comment": "never invoked; always comes of its own will and does not leave until the battle is done, known to die and appear again years later"
+  },
+  {
+   "name": "dgbYanaFirstCleric",
+   "value": true,
+   "comment": "the first of all tribal clerics"
+  },
+  {
+   "name": "dgbYanaSummonsPantheon",
+   "value": true,
+   "comment": "able to summon any spirit (god) of this pantheon to his people"
+  },
+  {
+   "name": "dgbYanaFriendlySpirit",
+   "value": true,
+   "comment": "now classified as a friendly spirit"
+  },
+  {
+   "name": "dgbYanaInvokedForBoons",
+   "value": true,
+   "comment": "invoked by Indian priests whenever they need an especially large boon from the gods"
+  },
+  {
+   "name": "dgbYanaNotWorshiped",
+   "value": true,
+   "comment": "not worshiped as a god, though sacrifices in the form of magic items are made to him"
+  },
+  {
+   "name": "dgbYanaOldManForm",
+   "value": true,
+   "comment": "appears as an old man in rich Indian garb who talks very slowly"
+  },
+  {
+   "name": "dgbYanaNeutral",
+   "value": true,
+   "comment": "the only Neutral being of the fourteen (the roster grid Law/Good 0,0)"
+  },
+  {
+   "name": "dgbTobadBuiltMaleForm",
+   "value": true,
+   "comment": "usually appears as a massively built male"
+  },
+  {
+   "name": "dgbTobadShapeChange",
+   "value": true,
+   "comment": "he can shape change at will"
+  },
+  {
+   "name": "dgbTobadWhimsicalBattles",
+   "value": true,
+   "comment": "occasionally on a whim he enters battles between tribes that interest him"
+  },
+  {
+   "name": "dgbTobadBoostsOneSide",
+   "value": true,
+   "comment": "either by personally taking a hand or increasing the abilities of one side or another"
+  },
+  {
+   "name": "dgbTobadSpearHandToHand",
+   "value": true,
+   "comment": "the spear is used only for hand-to-hand combat"
+  },
+  {
+   "name": "dgbTobadKillsBurned",
+   "value": true,
+   "comment": "worshiping warriors promise him kills in battle, which are burned after the victory"
+  }
+ ],
+ "chains": [],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "Cbt",
+   "count": "dgbCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgbCbtAC",
+    "dgbCbtHP",
+    "dgbCbtMove",
+    "dgbCbtMoveAlt",
+    "dgbCbtAtN",
+    "dgbCbtAtD",
+    "dgbCbtMR",
+    "dgbCbtSize"
+   ],
+   "data": [
+    [
+     0,
+     400,
+     24,
+     0,
+     3,
+     0,
+     75,
+     0
+    ],
+    [
+     2,
+     330,
+     24,
+     0,
+     2,
+     0,
+     75,
+     1
+    ],
+    [
+     -3,
+     320,
+     21,
+     0,
+     2,
+     0,
+     45,
+     0
+    ],
+    [
+     3,
+     320,
+     24,
+     48,
+     2,
+     0,
+     50,
+     0
+    ],
+    [
+     2,
+     250,
+     12,
+     24,
+     3,
+     2,
+     20,
+     1
+    ],
+    [
+     5,
+     200,
+     15,
+     0,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     -2,
+     200,
+     12,
+     24,
+     3,
+     2,
+     30,
+     1
+    ],
+    [
+     6,
+     150,
+     15,
+     0,
+     3,
+     2,
+     0,
+     0
+    ],
+    [
+     -2,
+     390,
+     12,
+     0,
+     2,
+     0,
+     90,
+     1
+    ],
+    [
+     -2,
+     350,
+     12,
+     18,
+     0,
+     0,
+     75,
+     0
+    ],
+    [
+     6,
+     150,
+     15,
+     0,
+     3,
+     2,
+     0,
+     0
+    ],
+    [
+     -2,
+     200,
+     15,
+     24,
+     2,
+     0,
+     32,
+     1
+    ],
+    [
+     3,
+     200,
+     12,
+     0,
+     3,
+     2,
+     30,
+     0
+    ],
+    [
+     -2,
+     344,
+     15,
+     0,
+     2,
+     0,
+     30,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells",
+    "The hit point cells (the Thunder Bird hit dice/points 200 rides here)",
+    "The primary move cells (inches)",
+    "The alternate move cells (0 = a single printed move; the 24/48, 12/24, 12/18 and 15/24 dual moves)",
+    "The attacks-per-round numerator cells",
+    "The attacks-per-round denominator cells (0 = a single printed figure; Heng, Hotoru, Qagwaaz, Stoneribs and Yanauluha read the printed 3/2 - the 47-48px three-glyph width matches the known-good Qagwaaz/Stoneribs 3/2, against the Termux dropped-glyph 3.2)",
+    "The magic resistance percent cells (0 = the printed Standard; Shakak 90 is versus fire only)",
+    "The size letter cells (0 = M, 1 = L)"
+   ],
+   "audit_comment": "the combat stat blocks of the fourteen beings (print pp. 12-16) - the AC, hit points, move, attacks, magic resistance and size letter",
+   "sentinel_census": [
+    1,
+    0,
+    0,
+    9,
+    1,
+    9,
+    3,
+    9
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "Cls",
+   "count": "dgbClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgbClsCleric",
+    "dgbClsDruid",
+    "dgbClsFighter",
+    "dgbClsRanger",
+    "dgbClsMagUser",
+    "dgbClsIllus",
+    "dgbClsThief",
+    "dgbClsAssassin",
+    "dgbClsMonk",
+    "dgbClsBard"
+   ],
+   "data": [
+    [
+     12,
+     12,
+     0,
+     10,
+     16,
+     16,
+     14,
+     0,
+     0,
+     0
+    ],
+    [
+     14,
+     14,
+     15,
+     0,
+     14,
+     17,
+     18,
+     0,
+     0,
+     0
+    ],
+    [
+     12,
+     12,
+     0,
+     12,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     0,
+     15,
+     12,
+     12,
+     0,
+     12,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     0,
+     10,
+     12,
+     12,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     8,
+     15,
+     10,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     10,
+     0,
+     10,
+     10,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     12,
+     0,
+     0,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     0,
+     0,
+     0,
+     12,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     10,
+     0,
+     0,
+     15,
+     15,
+     8,
+     0,
+     0,
+     5
+    ],
+    [
+     0,
+     0,
+     0,
+     10,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     13,
+     0,
+     10,
+     9,
+     9,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     10,
+     0,
+     18,
+     10,
+     10,
+     0,
+     10,
+     8,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (0 = Nil or none printed; Yanauluha reads 13th level druid over 20th level cleric - cleric 20, druid 13)",
+    "The druid level cells",
+    "The fighter level cells (Hiawatha 15 is the 15th level paladin half of his line)",
+    "The ranger level cells",
+    "The magic-user level cells (Hastsezini 0 = the printed See below - the 30th-level fire spells ride the consts)",
+    "The illusionist level cells",
+    "The thief level cells",
+    "The assassin level cells",
+    "The monk level cells (0 = Nil)",
+    "The bard level cells (0 = Nil)"
+   ],
+   "audit_comment": "the cleric/druid, fighter, magic-user/illusionist, thief/assassin and monk/bard level lines of the fourteen beings (0 = Nil or none printed)",
+   "sentinel_census": [
+    6,
+    7,
+    11,
+    4,
+    5,
+    6,
+    11,
+    12,
+    13,
+    12
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "Abi",
+   "count": "dgbAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgbAbiStr",
+    "dgbAbiStrHit",
+    "dgbAbiStrDmg",
+    "dgbAbiInt",
+    "dgbAbiWis",
+    "dgbAbiDex",
+    "dgbAbiCon",
+    "dgbAbiCha",
+    "dgbAbiPsi"
+   ],
+   "data": [
+    [
+     19,
+     3,
+     7,
+     24,
+     24,
+     25,
+     23,
+     22,
+     6
+    ],
+    [
+     20,
+     3,
+     8,
+     24,
+     19,
+     24,
+     21,
+     16,
+     3
+    ],
+    [
+     24,
+     6,
+     12,
+     20,
+     19,
+     23,
+     24,
+     -1,
+     2
+    ],
+    [
+     25,
+     7,
+     14,
+     19,
+     18,
+     25,
+     24,
+     22,
+     4
+    ],
+    [
+     24,
+     6,
+     12,
+     23,
+     23,
+     22,
+     24,
+     20,
+     6
+    ],
+    [
+     21,
+     4,
+     9,
+     18,
+     18,
+     19,
+     19,
+     18,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     23,
+     20,
+     23,
+     23,
+     20,
+     6
+    ],
+    [
+     19,
+     3,
+     7,
+     18,
+     19,
+     18,
+     18,
+     18,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     19,
+     19,
+     20,
+     24,
+     6,
+     6
+    ],
+    [
+     24,
+     0,
+     0,
+     24,
+     19,
+     23,
+     24,
+     20,
+     3
+    ],
+    [
+     19,
+     3,
+     7,
+     15,
+     14,
+     18,
+     19,
+     15,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     14,
+     0,
+     0,
+     20,
+     20,
+     18,
+     19,
+     18,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     20,
+     19,
+     25,
+     25,
+     20,
+     4
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (0 = none printed)",
+    "The parenthesized strength to-hit bonus cells (0 = none printed)",
+    "The parenthesized strength damage bonus cells",
+    "The intelligence cells",
+    "The wisdom cells",
+    "The dexterity cells (the printed D: column)",
+    "The constitution cells",
+    "The charisma cells (Hastsezini reads CH -1 - both voices, five glyphs, the horror-table doctrine; Shakak reads CH 6 - both voices, four glyphs)",
+    "The psionic class cells (0 = Nil or none printed, 1-6 the printed I-VI; Coyote III and Hastsezini II are the IA-geometry 47px adjudications against the Termux dropped-glyph reads)"
+   ],
+   "audit_comment": "the S/I/W/D/C/CH ability lines with the parenthesized strength bonuses and the psionic classes (the Thunder Bird row is all 0 - the monster-format being prints no ability line)",
+   "sentinel_census": [
+    1,
+    3,
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    5
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "Ros",
+   "count": "dgbRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgbRosOrd",
+    "dgbRosRank",
+    "dgbRosPage",
+    "dgbRosPlane",
+    "dgbRosLaw",
+    "dgbRosGood",
+    "dgbRosWorship",
+    "dgbRosLairPct",
+    "dgbRosXP"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     12,
+     2,
+     0,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     12,
+     1,
+     0,
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     2,
+     1,
+     13,
+     3,
+     1,
+     -1,
+     3,
+     0,
+     0
+    ],
+    [
+     3,
+     1,
+     13,
+     1,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     4,
+     1,
+     13,
+     2,
+     1,
+     1,
+     4,
+     0,
+     0
+    ],
+    [
+     5,
+     2,
+     14,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     1,
+     14,
+     2,
+     0,
+     1,
+     5,
+     0,
+     0
+    ],
+    [
+     7,
+     2,
+     15,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     8,
+     0,
+     15,
+     1,
+     0,
+     -1,
+     3,
+     0,
+     0
+    ],
+    [
+     9,
+     0,
+     15,
+     1,
+     0,
+     1,
+     5,
+     0,
+     0
+    ],
+    [
+     10,
+     2,
+     15,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     11,
+     3,
+     16,
+     0,
+     0,
+     1,
+     0,
+     25,
+     22600
+    ],
+    [
+     12,
+     4,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     13,
+     1,
+     16,
+     1,
+     1,
+     -1,
+     6,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Raven to Tobadzistsini)",
+    "The rank cells (0 greater god, 1 lesser god, 2 hero, 3 unique creature, 4 the first-priest friendly spirit)",
+    "The print page cells (12-16, the folio offset PRINT = PDF - 1)",
+    "The plane cells (0 none printed, 1 Prime Material, 2 Elemental Plane of Air, 3 Elemental Plane of Fire)",
+    "The alignment lawful axis cells (1 lawful, 0 neutral, -1 chaotic)",
+    "The alignment good axis cells (1 good, 0 neutral, -1 evil)",
+    "The worshiper-alignment cells (0 none printed, 1 all alignments, 2 thieves and chaotic neutrals, 3 see below, 4 good alignments, 5 chaotic good, 6 warriors)",
+    "The in-lair percent cells (0 = none printed; the Thunder Bird 25)",
+    "The experience-value cells (0 = none printed; the Thunder Bird X/22,600 rides as 22600 - both voices)"
+   ],
+   "audit_comment": "the roster of the fourteen beings: ordinals, ranks, print pages, planes, alignments, worshiper alignments, the in-lair percent and the experience values",
+   "sentinel_census": [
+    1,
+    3,
+    0,
+    5,
+    9,
+    3,
+    5,
+    13,
+    13
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the fourteen beings)",
+   "expr": "m['dgbTableCount']() != 4 or m['dgbBeingCount']() != 14 or m['dgbCbtRows']() != 14 or m['dgbClsRows']() != 14 or m['dgbAbiRows']() != 14 or m['dgbRosRows']() != 14"
+  },
+  {
+   "note": "the print walk spans pp. 12-16 (the folio offset PRINT = PDF - 1)",
+   "expr": "m['dgbPrintStart']() != 12 or m['dgbPrintEnd']() != 16 or m['dgbRosPage'](0) != 12 or m['dgbRosPage'](11) != 16 or m['dgbRosPage'](13) != 16"
+  },
+  {
+   "note": "the roster ordinals run 0-13 in print order (Raven first, Tobadzistsini last)",
+   "expr": "m['dgbRosOrd'](0) != 0 or m['dgbRosOrd'](1) != 1 or m['dgbRosOrd'](11) != 11 or m['dgbRosOrd'](13) != 13"
+  },
+  {
+   "note": "the greater gods are Raven, Shakak and Snake-Man (rank 0)",
+   "expr": "m['dgbRosRank'](0) != 0 or m['dgbRosRank'](8) != 0 or m['dgbRosRank'](9) != 0"
+  },
+  {
+   "note": "the unique Thunder Bird rides rank 3, the first priest rank 4",
+   "expr": "m['dgbRosRank'](11) != 3 or m['dgbRosRank'](12) != 4"
+  },
+  {
+   "note": "the printed 3/2 attacks (the adjudicated Heng/Hotoru/Yanauluha cells)",
+   "expr": "m['dgbCbtAtN'](4) != 3 or m['dgbCbtAtD'](4) != 2 or m['dgbCbtAtN'](6) != 3 or m['dgbCbtAtD'](6) != 2 or m['dgbCbtAtN'](12) != 3 or m['dgbCbtAtD'](12) != 2"
+  },
+  {
+   "note": "the 3/2 heroes Qagwaaz and Stoneribs, and the single-figure gods",
+   "expr": "m['dgbCbtAtN'](7) != 3 or m['dgbCbtAtD'](7) != 2 or m['dgbCbtAtN'](10) != 3 or m['dgbCbtAtD'](10) != 2 or m['dgbCbtAtD'](0) != 0 or m['dgbCbtAtD'](9) != 0"
+  },
+  {
+   "note": "the flagged eyeball cell: Hastsezini CH -1 (both voices, the horror-table doctrine)",
+   "expr": "m['dgbAbiCha'](2) != -1"
+  },
+  {
+   "note": "the flagged eyeball cell: Shakak CH 6 (both voices, four glyphs)",
+   "expr": "m['dgbAbiCha'](8) != 6"
+  },
+  {
+   "note": "the psionic class adjudications: Coyote III, Hastsezini II (the IA-geometry 47px voice)",
+   "expr": "m['dgbAbiPsi'](1) != 3 or m['dgbAbiPsi'](2) != 2"
+  },
+  {
+   "note": "the psionic class VI beings (Raven, Heng, Hotoru, Shakak) against the class ceiling",
+   "expr": "m['dgbAbiPsi'](0) != 6 or m['dgbAbiPsi'](4) != 6 or m['dgbAbiPsi'](6) != 6 or m['dgbAbiPsi'](8) != 6 or m['dgbPsiClassMax']() != 6"
+  },
+  {
+   "note": "the Thunder Bird xp line X/22,600 (both voices) and the 25 percent in lair",
+   "expr": "m['dgbRosXP'](11) != 22600 or m['dgbRosLairPct'](11) != 25"
+  },
+  {
+   "note": "the Raven damage/attack triple 3-18/3-18/3-30 and the -3 polymorph save",
+   "expr": "m['dgbRavenDmg1Lo']() != 3 or m['dgbRavenDmg1Hi']() != 18 or m['dgbRavenDmg2Hi']() != 18 or m['dgbRavenDmg3Hi']() != 30 or m['dgbRavenPolySaveMod']() != 3"
+  },
+  {
+   "note": "the sacred bundle: +2 saves, surprised only on 1 in 6, AC 2, one point off each damage die, 5-10 items",
+   "expr": "m['dgbBundleSaveBonus']() != 2 or m['dgbBundleSurpriseDen']() != 6 or m['dgbBundleAC']() != 2 or m['dgbBundleDmgPerDie']() != 1 or m['dgbBundleMinItems']() != 5 or m['dgbBundleMaxItems']() != 10"
+  },
+  {
+   "note": "the Hastsezini fire-walk: 2-20 aura at 10 yards, the 50-yard fire sense, the +5 shield, the 30th-level pressed casting",
+   "expr": "m['dgbHastseAuraLo']() != 2 or m['dgbHastseAuraHi']() != 20 or m['dgbHastseAuraRange']() != 10 or m['dgbHastseFireSense']() != 50 or m['dgbHastseShieldPlus']() != 5 or m['dgbHastsePressLevel']() != 30"
+  },
+  {
+   "note": "the Hastseltsi horse (AC 5, HD 15, hp 70, 2-20/2-20/1-12) and the +3 axe over the +2 knife",
+   "expr": "m['dgbHastseltsiHorseAC']() != 5 or m['dgbHastseltsiHorseHD']() != 15 or m['dgbHastseltsiHorseHP']() != 70 or m['dgbHastseltsiHorseDmg1Hi']() != 20 or m['dgbHastseltsiHorseDmg3Hi']() != 12 or m['dgbHastseltsiAxePlus']() != 3 or m['dgbHastseltsiKnifePlus']() != 2"
+  },
+  {
+   "note": "the Heng rain-walk: the 6-60 lightning bow at 30 miles, the 3-30 lance, the +2 year luck",
+   "expr": "m['dgbHengBowLo']() != 6 or m['dgbHengBowHi']() != 60 or m['dgbHengBowRangeMiles']() != 30 or m['dgbHengLanceHi']() != 30 or m['dgbHengLuckBonus']() != 2 or m['dgbHengDmgMod']() != 12"
+  },
+  {
+   "note": "the Hotoru storm: three bolts per round, 2-20 each, at 900 yards, the +1 chief saves",
+   "expr": "m['dgbHotoruBoltsPerRound']() != 3 or m['dgbHotoruBoltLo']() != 2 or m['dgbHotoruBoltHi']() != 20 or m['dgbHotoruBoltRange']() != 900 or m['dgbHotoruChiefSaveBonus']() != 1"
+  },
+  {
+   "note": "the Shakak winter: 20 points of cold at 30 yards no save, the 3-30 ice spear, 10 points of regeneration below freezing",
+   "expr": "m['dgbShakakAuraDmg']() != 20 or m['dgbShakakAuraRange']() != 30 or m['dgbShakakSpearHi']() != 30 or m['dgbShakakRegenPerRound']() != 10 or m['dgbShakakDmgMod']() != 9"
+  },
+  {
+   "note": "the Snake-Man: 75,000 gp of jewelry, the 5-500 snake summons, the 90-percent-fire-only note rides the combat grid",
+   "expr": "m['dgbSnakemanJewelryGP']() != 75000 or m['dgbSnakemanSummonLo']() != 5 or m['dgbSnakemanSummonHi']() != 500 or m['dgbCbtMR'](9) != 75"
+  },
+  {
+   "note": "the Stoneribs size 5 and one half feet (the adjudicated garbled-size cell, 66 inches)",
+   "expr": "m['dgbStoneribsSizeIn']() != 66"
+  },
+  {
+   "note": "the Thunder Bird: one bolt per round for 30 (save half) at 50-300 yards, the 1-10 beak over the 2-20 wings",
+   "expr": "m['dgbTbirdBoltsPerRound']() != 1 or m['dgbTbirdBoltDmg']() != 30 or m['dgbTbirdBoltRangeLo']() != 50 or m['dgbTbirdBoltRangeHi']() != 300 or m['dgbTbirdBeakHi']() != 10 or m['dgbTbirdWingHi']() != 20"
+  },
+  {
+   "note": "the Yanauluha 10 percent appearance chance, and the Tobadzistsini 1-10 arrows over the 3-30 spear (+14)",
+   "expr": "m['dgbYanaAppearPct']() != 10 or m['dgbTobadArrowLo']() != 1 or m['dgbTobadArrowHi']() != 10 or m['dgbTobadSpearHi']() != 30 or m['dgbTobadDmgMod']() != 14"
+  },
+  {
+   "note": "the class-grid doctrine: the \"in each\" pairs (Raven 12/12 and 16/16, Coyote 14/14 and 14/17, Snake-Man 10/10 and 15/15)",
+   "expr": "m['dgbClsCleric'](0) != 12 or m['dgbClsDruid'](0) != 12 or m['dgbClsMagUser'](0) != 16 or m['dgbClsIllus'](0) != 16 or m['dgbClsIllus'](1) != 17 or m['dgbClsMagUser'](9) != 15 or m['dgbClsIllus'](9) != 15"
+  },
+  {
+   "note": "the Yanauluha split line: 13th level druid over 20th level cleric",
+   "expr": "m['dgbClsDruid'](12) != 13 or m['dgbClsCleric'](12) != 20"
+  }
+ ],
+ "header_sections": {
+  "the R850 census": [
+   {
+    "kind": "const",
+    "name": "dgbRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgbPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "dgbPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "dgbBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgbChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgbRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgbPsiClassMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgbCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgbClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgbAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgbRosRows"
+   }
+  ],
+  "the pantheon doctrine": [
+   {
+    "kind": "bool",
+    "name": "dgbGodsPreferCreatureForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHumanFormCostly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbControlRequiresPart"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbQuestNeedsPart"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbNameBlocksCharm"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbDemonControlNeedsFire"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbSeasonalSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbClericMeditatesApart"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbClericTribeProtector"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbRelicsBuriedWithCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbRelicsFromVisions"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbPatronSymbolReflected"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbYoungClericsFight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbOldClericsEnlistGods"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbPriestBlessesWarpaint"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbLodgeTabooSpirits"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbWorshipInTheOpen"
+   },
+   {
+    "kind": "const",
+    "name": "dgbBundleSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dgbBundleSurpriseDen"
+   },
+   {
+    "kind": "const",
+    "name": "dgbBundleAC"
+   },
+   {
+    "kind": "const",
+    "name": "dgbBundleDmgPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "dgbBundleMinItems"
+   },
+   {
+    "kind": "const",
+    "name": "dgbBundleMaxItems"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbBundleSpiritAdvised"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbBundlePriestFinalItem"
+   }
+  ],
+  "the Raven walk": [
+   {
+    "kind": "const",
+    "name": "dgbRavenDmg1Lo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbRavenDmg1Hi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbRavenDmg2Lo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbRavenDmg2Hi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbRavenDmg3Lo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbRavenDmg3Hi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbRavenPolySaveMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbRavenTransformer"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbRavenFightsAsGiantRaven"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbRavenExtraForms"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbRavenGreatProvider"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbRavenFoodOfferings"
+   }
+  ],
+  "the Coyote walk": [
+   {
+    "kind": "const",
+    "name": "dgbCoyoteBiteLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbCoyoteBiteHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbCoyoteTaughtArtsAndFire"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbCoyoteBullyingGreedy"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbCoyoteBeastCompanions"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbCoyoteTricksBackfire"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbCoyoteCowardlyThiefRole"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbCoyotePolymorphOnceDaily"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbCoyoteFleesWhenPossible"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbCoyoteFavoriteSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbCoyoteThievingAppeals"
+   }
+  ],
+  "the fire god walk (Hastsezini)": [
+   {
+    "kind": "const",
+    "name": "dgbHastseAuraLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseAuraHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseAuraRange"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseFireSense"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseShieldPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseBowLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseBowHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseAxeLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseAxeHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseLanceLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseLanceHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastsePressCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastsePressLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseBlackUglyFlames"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseNoBehindAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseBurnsVillages"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseNoonOfferings"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseBowLineOfSight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseAxeAtStrongest"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseLanceNeverThrown"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseOffensiveOnly"
+   }
+  ],
+  "the racing god walk (Hastseltsi)": [
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiHorseAC"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiHorseHD"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiHorseHP"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiHorseAtN"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiHorseDmg1Lo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiHorseDmg1Hi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiHorseDmg3Lo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiHorseDmg3Hi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiAxeLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiAxeHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiAxePlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiKnifeLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiKnifeHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiKnifePlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHastseltsiDmgMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseltsiRedEquipment"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseltsiRacesAnyone"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseltsiHidesPower"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseltsiHorseEnchanted"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseltsiNoProjectileHurt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseltsiSymbolOnLodges"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHastseltsiAssassinTrained"
+   }
+  ],
+  "the thunder spirit walk (Heng)": [
+   {
+    "kind": "const",
+    "name": "dgbHengBowLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHengBowHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHengBowRangeMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHengLanceLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHengLanceHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHengLuckBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHengDmgMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHengPriestsSprinkleWater"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHengThunderCloudForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHengFavoredOfTribes"
+   }
+  ],
+  "the hero walks (Hiawatha, Qagwaaz, Stoneribs)": [
+   {
+    "kind": "const",
+    "name": "dgbHiawathaHugLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHiawathaHugHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHiawathaPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHiawathaManyNames"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHiawathaSelfMovingCanoe"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHiawathaAnimalsWarn"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHiawathaPeacemaker"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHiawathaGreatBear"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbQagwaazPlainsSport"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbQagwaazStrengthTests"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbQagwaazWoodenClub"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbQagwaazExampleForWarriors"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbQagwaazFirstInBattle"
+   },
+   {
+    "kind": "const",
+    "name": "dgbStoneribsSizeIn"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbStoneribsHalibutCloak"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbStoneribsShrinksAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbStoneribsBowOrClub"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbStoneribsTribesChampion"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbStoneribsYearService"
+   }
+  ],
+  "the wind god walk (Hotoru)": [
+   {
+    "kind": "const",
+    "name": "dgbHotoruBoltsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHotoruBoltLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHotoruBoltHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHotoruBoltRange"
+   },
+   {
+    "kind": "const",
+    "name": "dgbHotoruChiefSaveBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHotoruWeatherCrops"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHotoruChiefForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbHotoruFallenWeapons"
+   }
+  ],
+  "the winter spirit walk (Shakak)": [
+   {
+    "kind": "const",
+    "name": "dgbShakakAuraDmg"
+   },
+   {
+    "kind": "const",
+    "name": "dgbShakakAuraRange"
+   },
+   {
+    "kind": "const",
+    "name": "dgbShakakSpearLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbShakakSpearHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbShakakRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgbShakakDmgMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbShakakColdAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbShakakSacrificeLessensWinter"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbShakakNonePrayForFear"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbShakakBurnPossessions"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbShakakDemonicFace"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbShakakColdAuraNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbShakakIceSpear"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbShakakRegenBelowFreezing"
+   }
+  ],
+  "the serpent god walk (Snake-Man)": [
+   {
+    "kind": "const",
+    "name": "dgbSnakemanJewelryGP"
+   },
+   {
+    "kind": "const",
+    "name": "dgbSnakemanSummonLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbSnakemanSummonHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbSnakemanRainbowSkin"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbSnakemanAgesAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbSnakemanControlsReptiles"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbSnakemanReptilesNeverAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbSnakemanFantasticReptilians"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbSnakemanSpellsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbSnakemanSnakesVsImpervious"
+   }
+  ],
+  "the Thunder Bird walk": [
+   {
+    "kind": "const",
+    "name": "dgbTbirdBoltsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTbirdBoltDmg"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTbirdBoltRangeLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTbirdBoltRangeHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTbirdBeakLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTbirdBeakHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTbirdWingLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTbirdWingHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTbirdUnique"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTbirdIntGenius"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTbirdNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTbirdThunderWings"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTbirdComesOfOwnWill"
+   }
+  ],
+  "the first priest walk (Yanauluha)": [
+   {
+    "kind": "const",
+    "name": "dgbYanaAppearPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbYanaFirstCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbYanaSummonsPantheon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbYanaFriendlySpirit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbYanaInvokedForBoons"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbYanaNotWorshiped"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbYanaOldManForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbYanaNeutral"
+   }
+  ],
+  "the war spirit walk (Tobadzistsini)": [
+   {
+    "kind": "const",
+    "name": "dgbTobadArrowLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTobadArrowHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTobadSpearLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTobadSpearHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgbTobadDmgMod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTobadBuiltMaleForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTobadShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTobadWhimsicalBattles"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTobadBoostsOneSide"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTobadSpearHandToHand"
+   },
+   {
+    "kind": "bool",
+    "name": "dgbTobadKillsBurned"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **American Indian mythos** (pp. 12-16)",
+   "to": "- [x] **American Indian mythos** (pp. 12-16)",
+   "note": "the American Indian mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 2,
+  "open": 22
+ },
+ "include_comment": "the American Indian mythos",
+ "include_after": "#include \"rules/dga.h\"  // R849: the DDG front matter",
+ "audit_anchor": "#include \"rules/audits/r849_batch.h\"  // R849: R849 DDG front matter audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R849 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R849 LANDED 2026-10-26: commit 55e32fc1ed257613a35ce258b25cf79948c72a34",
+  "  (pushed cd645b4..55e32fc, census 771 -> 772), THE DDG FRONT MATTER - the",
+  "  D&DG arc opener, print pp. 1-11 (title, foreword, contents, preface,",
+  "  credits, the explanatory notes with the seven over-18 ability grids and the",
+  "  psionic class table, the standard divine abilities, the DMing doctrine with",
+  "  the intervention modifiers, the clerics and spell-granting ladder, the",
+  "  omens, the soul/spirit mortality doctrine, the divine ascension",
+  "  requirements). THE SHAPE: 9 grids + 1 chain (61 grid rows:",
+  "  Str/Wis/Int/Dex/Con/Cha 7 rows each, the horror table -1 to -7, the psionic",
+  "  classes I-VI, the intervention modifiers), the monster intelligence ladder",
+  "  to godlike; header rules/dga.h (inline 237), prefix dga; audit \"R849 DDG",
+  "  front matter audit\", rode rules/audits/r849_batch.h; 19 examples. ZERO",
+  "  registry defs touched - the floor holds at 995. THE ADJUDICATIONS",
+  "  (physical-copy eyeball, the extract primary): the strength 23 damage +11",
+  "  (the OCR +1) and the psionic class V lettered modes (attack A,B,C,E; defense",
+  "  F,G,H). THE NEW-ARC LESSON: a NEW arc's gap report is a SEPARATE authored",
+  "  artifact - ./rn on the arc opener died at rd(GR) FileNotFoundError until",
+  "  tools/ddg_gap_report.md was authored (pre-flip, 24 boxes, the census slicing",
+  "  derived to the spec's 1/23: App 4 and the index split, plus the print-p.131",
+  "  FIG. 4/5 alignment-figures pixel-work box; md5 3f3fc4b61b9fac57c47913e8",
+  "  dacdc83c, 1357 bytes); the gap report header carries the folio offset PRINT",
+  "  = PDF - 1. Spec tools/spec_r850.json rides this round. NEXT: the D&DG walk",
+  "  continues from the American Indian mythos (print pp. 12-16)."
+ ]
+}
