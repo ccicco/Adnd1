@@ -24467,6 +24467,56 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   mutants, 0 missed) before the re-issue. DELIVERY: raw JSON in a code canvas
   (no base64, user-set), md5 4eba5547393129cf1418472fe21b453b (61,449 bytes).
   NEXT: the D&DG walk continues from the Arthurian mythos (print pp. 17-21).
+  - R851 LANDED 2026-10-26: commit
+  550339f65296e4ac36e0f7e304c696b23805da80
+  (pushed 7e8df39..550339f, census 773 -> 774),
+  THE ARTHURIAN MYTHOS - the D&DG walk
+  round three, print pp. 17-21: fifteen beings
+  (the average knight of renown and knight of
+  quality templates, Arthur, Bernlad, Galahad,
+  Gareth, Garlon, Gawaine, Lamorak, Launcelot,
+  Merlin, Morgan le Fay, Palomides, Pellinore,
+  Tristram) plus the printed name rosters (90
+  good or neutral knights, 26 of quality; 13
+  evil, 3 of quality) riding as the first data
+  file doc/data/ddg_arthurian_knights.txt.
+  THE SHAPE: 4 grids x 15 rows (combat, class,
+  ability, roster), 52 consts + 89 bools + 38
+  table cols, inline 179; header rules/dgc.h,
+  prefix dgc; audit "R851 Arthurian mythos
+  audit", rode rules/audits/r851_batch.h; 25
+  examples. ZERO registry defs touched - the
+  floor holds at 995. THE ADJUDICATIONS (the
+  IA 1st-print collation over the Termux
+  fold): Garlon 80 hit points, one attack, AC
+  1 effectively -3; Arthur FIGHTER 14th level
+  paladin; Gawaine Neutral; Merlin psionic
+  300, modes B C E over All; Morgan 64
+  inches; Palomides 66 inches; the evil roster
+  adds Damas and King Mark. THE MIRROR CATCH:
+  the audit mirror failed at build with 2 bad
+  - the class grid carried Garlon as
+  illusionist 3 and Palomides as assassin 3;
+  the ink reads Garlon 3rd level thief and
+  Palomides 3rd level in each monk and bard;
+  the good roster was one short (Breunor,
+  both voices). EYEBALL CELLS (flagged):
+  Gawaine 112 hit points (the IA 1st print
+  reads 172), the Garlon height, the
+  Pellinore 76 inches single-voice, the
+  Arthur paladin line. THE RED LESSON: the
+  engine writes data files without makedirs -
+  doc/data/ was absent, the engine died
+  mid-write-list with everything else
+  applied; the unwind (git restore the seed,
+  regtest and gap report, rm the two new
+  headers) plus mkdir -p doc/data re-landed
+  clean. DELIVERY: raw JSON in a code canvas
+  (the R850 rule). Spec tools/spec_r851.json,
+  md5 bc29e8d9021d81305d9044811d005a54
+  (56,928 bytes). NEXT: the D&DG walk
+  continues from the Babylonian mythos
+  (print pp. 22-25).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

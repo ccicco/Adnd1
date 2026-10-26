@@ -9,7 +9,7 @@ print p. 6; p132 is print 131).
 - [x] **Front matter** (pp. 1-11)
 - [x] **American Indian mythos** (pp. 12-16)
 - [x] **Arthurian mythos** (pp. 17-21)
-- [ ] **Babylonian mythos** (pp. 22-25)
+- [x] **Babylonian mythos** (pp. 22-25)
 - [ ] **Celtic mythos** (pp. 26-31)
 - [ ] **Central American mythos** (pp. 32-36)
 - [ ] **Chinese mythos** (pp. 37-42)

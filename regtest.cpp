@@ -553,6 +553,7 @@
 #include "rules/dga.h"  // R849: the DDG front matter
 #include "rules/dgb.h"  // R850: the American Indian mythos
 #include "rules/dgc.h"  // R851: the Arthurian mythos
+#include "rules/dgd.h"  // R852: the Babylonian mythos
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4600,6 +4601,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r852_batch.h"  // R852: R852 Babylonian mythos audit
 #include "rules/audits/r851_batch.h"  // R851: R851 Arthurian mythos audit
 #include "rules/audits/r850_batch.h"  // R850: R850 American Indian mythos audit
 #include "rules/audits/r849_batch.h"  // R849: R849 DDG front matter audit

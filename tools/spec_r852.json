@@ -1,0 +1,2603 @@
+{
+ "round": 852,
+ "prefix": "dgd",
+ "title": "the Babylonian mythos",
+ "header_file": "rules/dgd.h",
+ "audit_file": "rules/audits/r852_batch.h",
+ "audit_label": "R852 Babylonian mythos audit",
+ "audit_comment": "THE BABYLONIAN MYTHOS - the D&DG walk round four, print pp. 22-25: ten beings (Anu, Anshar, Dahak, Druaga, Gilgamesh, Girru, Ishtar, Marduk, Nergal, Ramman) - the pantheon-wide cleric doctrine of the kilt and the tithe, and the ten stat blocks. Zero registry defs touched; the floor holds at 995. The flagged eyeball cells: the Dahak move (the 9 over 18 of the second-print extract against the 9 over 15 of the archive.org 1st print) and the Anu size (the 6 clean in both voices, the inch mark garbled).",
+ "census_before": 774,
+ "include_after": "#include \"rules/dgc.h\"  // R851: the Arthurian mythos",
+ "include_comment": "the Babylonian mythos",
+ "audit_anchor": "#include \"rules/audits/r851_batch.h\"  // R851: R851 Arthurian mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Babylonian mythos** (pp. 22-25)",
+   "to": "- [x] **Babylonian mythos** (pp. 22-25)",
+   "note": "the Babylonian mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 4,
+  "open": 20
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Babylonian mythos - the D&DG walk round four, print pp. 22-25: ten beings from Anu the sky chief to Ramman the storm god - the cleric doctrine of the kilt and the tithe, the devil-world ruler Druaga, the three-headed dragon spirit Dahak, and the hero Gilgamesh.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 023-026; the second printing); the collation voice: the archive.org 1st-print derivative (djvu.txt + djvu.xml word geometry). The adjudications: the Gilgamesh two attacks (the IA xml word, clean, against the Termux 3 fold-garble), the Girru +3 axe (the IA voice against the Termux +43 garble), the Anu 2-20 (+7) damage line (the IA voice; the Termux fold ate the line), the Druaga charisma 4 (the single-glyph 15px TSV width against the 24px two-digit calibration), the Nergal 12 over 12 and the Ramman 12 over 48 moves (both voices), the Dahak length 72 feet (the IA foot mark against the Termux inch mark). The Dahak move pins the second-print extract 9 over 18 against the IA 1st-print 9 over 15 - flagged for the physical-copy eyeball."
+ },
+ "consts": [
+  {
+   "name": "dgdRound",
+   "value": 852,
+   "comment": "the Babylonian mythos round: the D&DG walk round four, print pp. 22-25"
+  },
+  {
+   "name": "dgdPrintStart",
+   "value": 22,
+   "comment": "the first print page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "dgdPrintEnd",
+   "value": 25,
+   "comment": "the last print page"
+  },
+  {
+   "name": "dgdBeingCount",
+   "value": 10,
+   "comment": "the ten beings of the mythos (Anu through Ramman)"
+  },
+  {
+   "name": "dgdTableCount",
+   "value": 4,
+   "comment": "the four grids (combat, class, ability, roster)"
+  },
+  {
+   "name": "dgdChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "dgdRegistryFloor",
+   "value": 995,
+   "comment": "zero registry defs touched - the floor holds at 995"
+  },
+  {
+   "name": "dgdCbtRows",
+   "value": 10,
+   "comment": "the combat grid rows"
+  },
+  {
+   "name": "dgdClsRows",
+   "value": 10,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "dgdAbiRows",
+   "value": 10,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "dgdRosRows",
+   "value": 10,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "dgdPlaneCount",
+   "value": 8,
+   "comment": "the eight printed planes of the mythos (Nirvana through Concordant Opposition)"
+  },
+  {
+   "name": "dgdPsiClassVI",
+   "value": 6,
+   "comment": "the printed psionic class VI of the R849 class table (Anu and Anshar)"
+  },
+  {
+   "name": "dgdAnuMaceDmgLo",
+   "value": 2,
+   "comment": "Anu: the brass mace strikes for 2-20"
+  },
+  {
+   "name": "dgdAnuMaceDmgHi",
+   "value": 20,
+   "comment": "Anu: the brass mace damage ceiling"
+  },
+  {
+   "name": "dgdAnuMaceBonus",
+   "value": 7,
+   "comment": "Anu: the strength bonus of 7 points on the mace"
+  },
+  {
+   "name": "dgdAnuCastSavePenalty",
+   "value": 4,
+   "comment": "Anu: beings casting things at him save vs disintegration at -4"
+  },
+  {
+   "name": "dgdAnuCommandSavePenalty",
+   "value": 4,
+   "comment": "Anu: beings save vs magic at -4 to resist his commands"
+  },
+  {
+   "name": "dgdAnuDragonSummonPerWeek",
+   "value": 1,
+   "comment": "Anu: any dragon type summoned once a week, per type (never royalty)"
+  },
+  {
+   "name": "dgdAnsharBeamRangeYards",
+   "value": 300,
+   "comment": "Anshar: the darkness beam range, 300 yards maximum"
+  },
+  {
+   "name": "dgdAnsharBeamDamage",
+   "value": 40,
+   "comment": "Anshar: the beam does 40 points per strike, never regenerated or healed"
+  },
+  {
+   "name": "dgdAnsharSpellStoreLimit",
+   "value": 200,
+   "comment": "Anshar: the 200 spell level storage limit"
+  },
+  {
+   "name": "dgdAnsharAlteredPerRound",
+   "value": 1,
+   "comment": "Anshar: one spell effect altered per melee round"
+  },
+  {
+   "name": "dgdDahakHeadCount",
+   "value": 3,
+   "comment": "Dahak: the three heads"
+  },
+  {
+   "name": "dgdDahakBiteDmgLo",
+   "value": 3,
+   "comment": "Dahak: each head bites for 3-30"
+  },
+  {
+   "name": "dgdDahakBiteDmgHi",
+   "value": 30,
+   "comment": "Dahak: the bite damage ceiling"
+  },
+  {
+   "name": "dgdDahakNoAppearing",
+   "value": 1,
+   "comment": "Dahak: the printed monster-format line, number appearing 1"
+  },
+  {
+   "name": "dgdDahakLairPct",
+   "value": 25,
+   "comment": "Dahak: 25 percent in lair (the printed monster-format line)"
+  },
+  {
+   "name": "dgdDahakXpValue",
+   "value": 24000,
+   "comment": "Dahak: the X/24,000 level/xp value line"
+  },
+  {
+   "name": "dgdDahakLengthFeet",
+   "value": 72,
+   "comment": "Dahak: 72 feet long (the IA 1st-print foot mark against the Termux inch mark)"
+  },
+  {
+   "name": "dgdDruagaMaceDamage",
+   "value": 35,
+   "comment": "Druaga: the mace does 35 points every time it hits"
+  },
+  {
+   "name": "dgdDruagaDevilCallLo",
+   "value": 2,
+   "comment": "Druaga: calls any devil type (never arch-devils), 2-20 a day"
+  },
+  {
+   "name": "dgdDruagaDevilCallHi",
+   "value": 20,
+   "comment": "Druaga: the devil call ceiling"
+  },
+  {
+   "name": "dgdDruagaArmCount",
+   "value": 8,
+   "comment": "Druaga: the real form has 8 arms ending in talons"
+  },
+  {
+   "name": "dgdDruagaLegCount",
+   "value": 4,
+   "comment": "Druaga: 4 legs ending in snakey masses"
+  },
+  {
+   "name": "dgdGilgameshMacePlus",
+   "value": 2,
+   "comment": "Gilgamesh: the +2 mace"
+  },
+  {
+   "name": "dgdGilgameshMaceDmgLo",
+   "value": 2,
+   "comment": "Gilgamesh: the mace hits with brutal force, 2-20"
+  },
+  {
+   "name": "dgdGilgameshMaceDmgHi",
+   "value": 20,
+   "comment": "Gilgamesh: the mace damage ceiling"
+  },
+  {
+   "name": "dgdGirruFireSpellLevel",
+   "value": 40,
+   "comment": "Girru: casts all fire spells as a 40th level magic-user (the See below cell)"
+  },
+  {
+   "name": "dgdGirruHeatDamage",
+   "value": 10,
+   "comment": "Girru: 10 points per melee round of heat damage"
+  },
+  {
+   "name": "dgdGirruHeatFeet",
+   "value": 10,
+   "comment": "Girru: the heat aura reaches 10 feet (no saving throw)"
+  },
+  {
+   "name": "dgdGirruAxePlus",
+   "value": 3,
+   "comment": "Girru: the +3 axe (the IA voice against the Termux +43 garble)"
+  },
+  {
+   "name": "dgdGirruAxeDmgLo",
+   "value": 2,
+   "comment": "Girru: the axe hits for 2-20 plus strength"
+  },
+  {
+   "name": "dgdGirruAxeDmgHi",
+   "value": 20,
+   "comment": "Girru: the axe damage ceiling"
+  },
+  {
+   "name": "dgdGirruStunLo",
+   "value": 2,
+   "comment": "Girru: the axe stuns for 2-8 rounds (save vs petrification)"
+  },
+  {
+   "name": "dgdGirruStunHi",
+   "value": 8,
+   "comment": "Girru: the stun ceiling"
+  },
+  {
+   "name": "dgdGirruPoisonSavePenalty",
+   "value": 4,
+   "comment": "Girru: the mace barb save vs poison at -4"
+  },
+  {
+   "name": "dgdIshtarSpellsPerRound",
+   "value": 2,
+   "comment": "Ishtar: casts 2 spells per melee round"
+  },
+  {
+   "name": "dgdIshtarLionCount",
+   "value": 7,
+   "comment": "Ishtar: the flying chariot is pulled by 7 enchanted lions"
+  },
+  {
+   "name": "dgdIshtarLionHP",
+   "value": 50,
+   "comment": "Ishtar: each lion has 50 hit points"
+  },
+  {
+   "name": "dgdIshtarLionHD",
+   "value": 11,
+   "comment": "Ishtar: each lion has 11 hit dice"
+  },
+  {
+   "name": "dgdIshtarLionAC",
+   "value": -2,
+   "comment": "Ishtar: each lion is armor class -2"
+  },
+  {
+   "name": "dgdIshtarChariotSpeed",
+   "value": 21,
+   "comment": "Ishtar: the chariot travels at 21 inches per turn"
+  },
+  {
+   "name": "dgdIshtarRodMult",
+   "value": 10,
+   "comment": "Ishtar: the crystal rod transforms spell level into energy times ten"
+  },
+  {
+   "name": "dgdIshtarRodMinDamage",
+   "value": 10,
+   "comment": "Ishtar: a first level spell strikes for 10 through the rod"
+  },
+  {
+   "name": "dgdIshtarRodMaxDamage",
+   "value": 90,
+   "comment": "Ishtar: a ninth level spell strikes for 90 through the rod"
+  },
+  {
+   "name": "dgdMardukEyeCount",
+   "value": 4,
+   "comment": "Marduk: always shown with four eyes"
+  },
+  {
+   "name": "dgdMardukEarCount",
+   "value": 4,
+   "comment": "Marduk: and four ears"
+  },
+  {
+   "name": "dgdMardukNetRangeFeet",
+   "value": 50,
+   "comment": "Marduk: the god must remain within 50 feet of the silvery net"
+  },
+  {
+   "name": "dgdMardukLightningDice",
+   "value": 20,
+   "comment": "Marduk: summons 20 dice lightning bolts from the sky"
+  },
+  {
+   "name": "dgdMardukWeaponPlusToHit",
+   "value": 3,
+   "comment": "Marduk: +3 or better weapon to hit"
+  },
+  {
+   "name": "dgdNergalShieldPlus",
+   "value": 5,
+   "comment": "Nergal: the night-black shield has a bonus of +5"
+  },
+  {
+   "name": "dgdNergalDeathAuraFeet",
+   "value": 30,
+   "comment": "Nergal: the death spell aura radius, 30 feet"
+  },
+  {
+   "name": "dgdNergalSpellFloor",
+   "value": 8,
+   "comment": "Nergal: no spell of less than the eighth level affects the shield user"
+  },
+  {
+   "name": "dgdNergalReviveCount",
+   "value": 5,
+   "comment": "Nergal: revives the 5 most powerful dead enemies of his foes"
+  },
+  {
+   "name": "dgdRammanSparkDamage",
+   "value": 30,
+   "comment": "Ramman: sparks do 30 points to anything within 3 inches of his body"
+  },
+  {
+   "name": "dgdRammanSparkRangeInches",
+   "value": 3,
+   "comment": "Ramman: the spark range"
+  },
+  {
+   "name": "dgdRammanBoltDamage",
+   "value": 30,
+   "comment": "Ramman: each lightning bolt does 30 points"
+  },
+  {
+   "name": "dgdRammanBoltsPerRound",
+   "value": 2,
+   "comment": "Ramman: lightning bolts cast two per round"
+  },
+  {
+   "name": "dgdRammanSpellFloor",
+   "value": 5,
+   "comment": "Ramman: spells must be of the fifth level or greater to affect him"
+  },
+  {
+   "name": "dgdRammanRingMailPlus",
+   "value": 4,
+   "comment": "Ramman: the +4 ring mail of cloud vapor"
+  },
+  {
+   "name": "dgdRammanMalletDamage",
+   "value": 30,
+   "comment": "Ramman: the ten-foot mallet does 30 points every time it hits"
+  },
+  {
+   "name": "dgdRammanMalletFeet",
+   "value": 10,
+   "comment": "Ramman: the mallet length in feet"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgdOriginsExtremelyAncient",
+   "value": true,
+   "comment": "the origins of Babylonian mythology are extremely ancient"
+  },
+  {
+   "name": "dgdSourcesConflict",
+   "value": true,
+   "comment": "the consulted sources conflict with each other; the list is designed to be close to historically accurate and still playable"
+  },
+  {
+   "name": "dgdClericKilt",
+   "value": true,
+   "comment": "all Babylonian clerics wear the wraparound kilt of white with red cuneiform writing along the hem"
+  },
+  {
+   "name": "dgdClericsRearOfBattle",
+   "value": true,
+   "comment": "the clerics enter battle, but always in the rear of the action as support"
+  },
+  {
+   "name": "dgdAdvancementByPayment",
+   "value": true,
+   "comment": "advancement within a sect is through the payment of gold to the high priest court"
+  },
+  {
+   "name": "dgdPaymentNotLevel",
+   "value": true,
+   "comment": "the payment is not level advancement: ability increase does not guarantee temporal power"
+  },
+  {
+   "name": "dgdDangerousQuests",
+   "value": true,
+   "comment": "successful priests were given great and highly dangerous quests to prove their worthiness"
+  },
+  {
+   "name": "dgdNewMoonCeremony",
+   "value": true,
+   "comment": "the new moon is a time of great ceremony and a tithe paid to the temples to appease the gods"
+  },
+  {
+   "name": "dgdKingsQuestForRiches",
+   "value": true,
+   "comment": "kings are expected to go forth on quests with clerics and bring back riches to further the sect"
+  },
+  {
+   "name": "dgdMinorLawFasting",
+   "value": true,
+   "comment": "minor lawbreaking is punished by fasting, prayers, meditation and sacrifices until the deity signals forgiveness"
+  },
+  {
+   "name": "dgdMajorTransgressionSpells",
+   "value": true,
+   "comment": "major clerical transgressions are punished by complete denial of spells and excommunication"
+  },
+  {
+   "name": "dgdDemiHumansDemons",
+   "value": true,
+   "comment": "communicating with intelligent creatures or demi-humans is a crime - all are considered demons"
+  },
+  {
+   "name": "dgdQuestAtonement",
+   "value": true,
+   "comment": "an erring cleric may atone by taking up a quest aiding the sect in riches or power"
+  },
+  {
+   "name": "dgdHighPriestKing",
+   "value": true,
+   "comment": "the high priest is often the king and must be a magic-user/cleric of great power"
+  },
+  {
+   "name": "dgdAloofFromPopulace",
+   "value": true,
+   "comment": "clerical types remain aloof from the normal populace in temples and shrines"
+  },
+  {
+   "name": "dgdStatePoliticalWork",
+   "value": true,
+   "comment": "the clerics work to further the state politically as well as spiritually"
+  },
+  {
+   "name": "dgdAnuDistributesMoney",
+   "value": true,
+   "comment": "through Anu and the priest-king all shrine and temple money is dealt out, and political power through appointments"
+  },
+  {
+   "name": "dgdAnuSkyChief",
+   "value": true,
+   "comment": "Anu, god of the sky, chief of all the Babylonian deities, a greater god"
+  },
+  {
+   "name": "dgdAnuAppearsAsMan",
+   "value": true,
+   "comment": "this god appears as a man"
+  },
+  {
+   "name": "dgdAnuBreezeOfGaze",
+   "value": true,
+   "comment": "a strong breeze constantly blows in the direction of his gaze"
+  },
+  {
+   "name": "dgdAnuDisintegrationOnCast",
+   "value": true,
+   "comment": "beings casting things at Anu must save vs disintegration at -4 for both being and thing"
+  },
+  {
+   "name": "dgdAnuVoiceOfLeaders",
+   "value": true,
+   "comment": "his voice is the voice of all leaders; beings save vs magic at -4 to resist his commands"
+  },
+  {
+   "name": "dgdAnuSummonsDragons",
+   "value": true,
+   "comment": "he can summon any dragon type except royalty to fight for him once a week per type"
+  },
+  {
+   "name": "dgdAnuBrassMace",
+   "value": true,
+   "comment": "he uses a brass mace striking for 2-20 plus his bonus of 7"
+  },
+  {
+   "name": "dgdAnuCreatedHeavensEarth",
+   "value": true,
+   "comment": "Anu is said to have created the heavens and the earth"
+  },
+  {
+   "name": "dgdAnuAllBowToAuthority",
+   "value": true,
+   "comment": "all the other Babylonian gods bow to his authority"
+  },
+  {
+   "name": "dgdAnsharGodOfDarkness",
+   "value": true,
+   "comment": "Anshar, god of darkness and the night, a lesser god"
+  },
+  {
+   "name": "dgdAnsharDarkSkinned",
+   "value": true,
+   "comment": "the deity always appears as a dark-skinned human"
+  },
+  {
+   "name": "dgdAnsharNightOnly",
+   "value": true,
+   "comment": "he only appears at night or in deep darkness"
+  },
+  {
+   "name": "dgdAnsharBeamNoRegen",
+   "value": true,
+   "comment": "the darkness beam does 40 per strike; body parts hit may never be regenerated or healed"
+  },
+  {
+   "name": "dgdAnsharTeleportsToShadow",
+   "value": true,
+   "comment": "Anshar can only teleport into areas of shadow or darkness"
+  },
+  {
+   "name": "dgdAnsharUnaffectedByLight",
+   "value": true,
+   "comment": "the god is unaffected by any source of light or light reflector"
+  },
+  {
+   "name": "dgdAnsharGraspsSpells",
+   "value": true,
+   "comment": "the god can grasp spells out of the air as they pass or hit him, saving them like a ring of spell storing or tossing them back"
+  },
+  {
+   "name": "dgdAnsharStartsWithNinths",
+   "value": true,
+   "comment": "when preparing for battle he stores one of every ninth level spell, given by some other god"
+  },
+  {
+   "name": "dgdAnsharSenseSpells",
+   "value": true,
+   "comment": "the storing or returning ability comes from a godly attribute that senses spells passing through his area"
+  },
+  {
+   "name": "dgdDahakDragonSpirit",
+   "value": true,
+   "comment": "Dahak, the three-headed dragon spirit of death, unique"
+  },
+  {
+   "name": "dgdDahakEtherealExceptBite",
+   "value": true,
+   "comment": "the monster has no corporeal form unless attacking with its bite; the rest of the time it is ethereal"
+  },
+  {
+   "name": "dgdDahakScaleColorWhim",
+   "value": true,
+   "comment": "it appears as a huge three-headed dragon, the scale color depending on its whim at the time"
+  },
+  {
+   "name": "dgdDahakEatsLawfulGoodFlesh",
+   "value": true,
+   "comment": "it will only eat the flesh of lawful or good creatures, and it never goes hungry"
+  },
+  {
+   "name": "dgdDahakAnyDragonBreath",
+   "value": true,
+   "comment": "the monster can breathe any type of dragon breath at any time"
+  },
+  {
+   "name": "dgdDahakCrunchesTeeth",
+   "value": true,
+   "comment": "the creature enjoys crunching things with its teeth"
+  },
+  {
+   "name": "dgdDahakNegatesDevices",
+   "value": true,
+   "comment": "it negates any magical device permanently with a touch of all three heads at the same time"
+  },
+  {
+   "name": "dgdDahakAverageIntelligence",
+   "value": true,
+   "comment": "the printed monster-format intelligence line: average"
+  },
+  {
+   "name": "dgdDruagaDevilRuler",
+   "value": true,
+   "comment": "Druaga, ruler of the devil world, a lesser god"
+  },
+  {
+   "name": "dgdDruagaBoyHead",
+   "value": true,
+   "comment": "the real form has the head of a beautiful boy, scaled with ruby red hide"
+  },
+  {
+   "name": "dgdDruagaParalyzingUgliness",
+   "value": true,
+   "comment": "the combination is so hideous it often paralyzes enemies with fear"
+  },
+  {
+   "name": "dgdDruagaShapeChange",
+   "value": true,
+   "comment": "it can shape change at will and never appears the same way twice"
+  },
+  {
+   "name": "dgdDruagaCallsDevils",
+   "value": true,
+   "comment": "it calls on any type of devil (except the arch-devils) once a day in numbers from 2-20"
+  },
+  {
+   "name": "dgdDruagaBreathImmune",
+   "value": true,
+   "comment": "Druaga is not affected by breath weapons from any creature"
+  },
+  {
+   "name": "dgdDruagaSoulObject",
+   "value": true,
+   "comment": "Druaga only fights in person when his soul object, always put in a living being, is threatened"
+  },
+  {
+   "name": "dgdDruagaSoulRegenerates",
+   "value": true,
+   "comment": "if his body is destroyed the soul object regenerates a whole new being with all the memories of the old devil"
+  },
+  {
+   "name": "dgdDruagaHostUnaware",
+   "value": true,
+   "comment": "the human with Druaga soul implanted has no knowledge of it and dies when the devil body dies"
+  },
+  {
+   "name": "dgdDruagaBurialDoctrine",
+   "value": true,
+   "comment": "when the human body is buried there is a safe place for the new devil to grow"
+  },
+  {
+   "name": "dgdDruagaAidsSacrificers",
+   "value": true,
+   "comment": "Druaga occasionally sends devils to aid worshipers who recently sacrificed a virgin"
+  },
+  {
+   "name": "dgdDruagaMaceDevilMaker",
+   "value": true,
+   "comment": "his mace turns beings it hits into devils (random type) under his command unless they save vs magic"
+  },
+  {
+   "name": "dgdGilgameshHero",
+   "value": true,
+   "comment": "Gilgamesh, the hero of legend, warrior/necromancer/high priest ruler of his land"
+  },
+  {
+   "name": "dgdGilgameshGetsThingsDone",
+   "value": true,
+   "comment": "he is noted for going out and getting things done when others were unable"
+  },
+  {
+   "name": "dgdGilgameshPrefersWrestling",
+   "value": true,
+   "comment": "he loves to attack by wrestling, preferring it to all other attack modes"
+  },
+  {
+   "name": "dgdGilgameshWrestledBullGod",
+   "value": true,
+   "comment": "stories abound of him wrestling a mighty bull or god to destruction"
+  },
+  {
+   "name": "dgdGilgameshTyrannical",
+   "value": true,
+   "comment": "a great king noted for his tyrannical rule"
+  },
+  {
+   "name": "dgdGilgameshGovernsWell",
+   "value": true,
+   "comment": "he governs well and maintains peace, using authority to satisfy personal pleasures"
+  },
+  {
+   "name": "dgdGilgameshEarthlyPleasures",
+   "value": true,
+   "comment": "a great lover of all types of earthly pleasure"
+  },
+  {
+   "name": "dgdGilgameshStubbornDirect",
+   "value": true,
+   "comment": "stubborn, preferring the direct method for solving problems"
+  },
+  {
+   "name": "dgdGilgameshFearsDeath",
+   "value": true,
+   "comment": "Gilgamesh has a great fear of death and will do whatever is required to avoid it"
+  },
+  {
+   "name": "dgdGilgameshCourageVsFoe",
+   "value": true,
+   "comment": "his fear seldom occurs when facing a terrible foe; courage heartens him and he fights without wavering"
+  },
+  {
+   "name": "dgdGilgameshCannotBeCharmed",
+   "value": true,
+   "comment": "the printed special defenses line: cannot be charmed"
+  },
+  {
+   "name": "dgdGirruGodOfFire",
+   "value": true,
+   "comment": "Girru, god of fire, a lesser god"
+  },
+  {
+   "name": "dgdGirruManifestsAsMan",
+   "value": true,
+   "comment": "Girru usually manifests himself as a man"
+  },
+  {
+   "name": "dgdGirruHatesEvil",
+   "value": true,
+   "comment": "he hates all things evil and destroys them on contact"
+  },
+  {
+   "name": "dgdGirruUnaffectedByFire",
+   "value": true,
+   "comment": "the god is totally unaffected by fire"
+  },
+  {
+   "name": "dgdGirruTeleportsToFlame",
+   "value": true,
+   "comment": "he can shape change and teleport, though only to places with flame in the area"
+  },
+  {
+   "name": "dgdGirruHeatAura",
+   "value": true,
+   "comment": "all within 10 feet suffer 10 points per melee round of heat, no saving throw"
+  },
+  {
+   "name": "dgdGirruPoisonBarb",
+   "value": true,
+   "comment": "a poisoned barb breaks off the mace and embeds in the victim with each hit, save vs poison at -4"
+  },
+  {
+   "name": "dgdGirruStunningAxe",
+   "value": true,
+   "comment": "the +3 axe: save vs petrification or be stunned 2-8 rounds"
+  },
+  {
+   "name": "dgdGirruWeaponDisintegrate",
+   "value": true,
+   "comment": "any weapon touching the god body disintegrates after doing its damage, no saving throw"
+  },
+  {
+   "name": "dgdIshtarGoddessLoveWar",
+   "value": true,
+   "comment": "Ishtar, goddess of love and war, a greater goddess"
+  },
+  {
+   "name": "dgdIshtarBeautifulWomanOnly",
+   "value": true,
+   "comment": "she never appears to worshipers in any form other than a beautiful woman"
+  },
+  {
+   "name": "dgdIshtarTitanStrength",
+   "value": true,
+   "comment": "she has the strength of a titan"
+  },
+  {
+   "name": "dgdIshtarShapeChange",
+   "value": true,
+   "comment": "she can shape change at will"
+  },
+  {
+   "name": "dgdIshtarVoiceSuggestion",
+   "value": true,
+   "comment": "she uses her voice as a constant suggestion spell"
+  },
+  {
+   "name": "dgdIshtarHeaddressLove",
+   "value": true,
+   "comment": "when interested in a male, the headdress of love and war forces passionate love, no saving throw"
+  },
+  {
+   "name": "dgdIshtarHeaddressEnemyPowers",
+   "value": true,
+   "comment": "when fighting an enemy the headdress gives the wearer the same powers her enemies have"
+  },
+  {
+   "name": "dgdIshtarFlyingChariot",
+   "value": true,
+   "comment": "Ishtar drives a flying chariot pulled by 7 enchanted lions"
+  },
+  {
+   "name": "dgdIshtarLionsUncontrollable",
+   "value": true,
+   "comment": "the lions cannot be controlled by any being except the goddess herself"
+  },
+  {
+   "name": "dgdIshtarNoMetalTouch",
+   "value": true,
+   "comment": "when in the chariot no metal can touch the goddess"
+  },
+  {
+   "name": "dgdIshtarRodEnergy",
+   "value": true,
+   "comment": "the blue crystal rod transforms any spell level into direct energy times ten against magic-resistant beings"
+  },
+  {
+   "name": "dgdMardukGodOfCity",
+   "value": true,
+   "comment": "Marduk, god of the city, wind, thunder, storms and rain, a greater god"
+  },
+  {
+   "name": "dgdMardukNonhumanForm",
+   "value": true,
+   "comment": "one of the few nonhuman-appearing beings of the pantheon"
+  },
+  {
+   "name": "dgdMardukFlameSpeech",
+   "value": true,
+   "comment": "always shown with four eyes, four ears and flames shooting from his mouth when he speaks, reddish tinge to his skin"
+  },
+  {
+   "name": "dgdMardukLeadsWhenAnuBusy",
+   "value": true,
+   "comment": "he occasionally assumes leadership of the Babylonian gods when Anu is preoccupied"
+  },
+  {
+   "name": "dgdMardukBorrowsAbility",
+   "value": true,
+   "comment": "he can borrow any single ability from any one other deity of the pantheon, no saving throw, given back at any distance"
+  },
+  {
+   "name": "dgdMardukSilveryNet",
+   "value": true,
+   "comment": "in battle he uses a net made of the four winds that binds until released, strands unbreakable"
+  },
+  {
+   "name": "dgdMardukWeatherInstant",
+   "value": true,
+   "comment": "the god may create any type of weather condition in an instant"
+  },
+  {
+   "name": "dgdMardukJusticeBringer",
+   "value": true,
+   "comment": "Marduk is called the justice bringer and lord of pure incantations"
+  },
+  {
+   "name": "dgdMardukTiamatLegend",
+   "value": true,
+   "comment": "his battles with Tiamat are legendary"
+  },
+  {
+   "name": "dgdNergalGodOfUnderworld",
+   "value": true,
+   "comment": "Nergal, god of the underworld, a lesser god"
+  },
+  {
+   "name": "dgdNergalRulesTheDead",
+   "value": true,
+   "comment": "this deity rules over all things that are dead"
+  },
+  {
+   "name": "dgdNergalHumanFormOnly",
+   "value": true,
+   "comment": "he never uses any form but a human one"
+  },
+  {
+   "name": "dgdNergalRevivesEnemies",
+   "value": true,
+   "comment": "his favorite tactic is reviving the 5 most powerful dead enemies of his foes to fight for him"
+  },
+  {
+   "name": "dgdNergalBlackShield",
+   "value": true,
+   "comment": "in personal combat he uses the night-black shield, both a weapon and a defense"
+  },
+  {
+   "name": "dgdNergalNoBackAttack",
+   "value": true,
+   "comment": "when the shield is in use no being can attack the god from behind"
+  },
+  {
+   "name": "dgdNergalDeathAura",
+   "value": true,
+   "comment": "the shield casts a death spell aura, saving throw applicable, in a 30 foot radius"
+  },
+  {
+   "name": "dgdNergalBasaltAltar",
+   "value": true,
+   "comment": "his worshipers sacrifice good creatures on the black basalt altar"
+  },
+  {
+   "name": "dgdNergalPromisedSacrifice",
+   "value": true,
+   "comment": "or dedicate the proceeds of evil actions to the church in a type of promised sacrifice"
+  },
+  {
+   "name": "dgdRammanGodOfStorms",
+   "value": true,
+   "comment": "Ramman, god of storms and thunder, a lesser god"
+  },
+  {
+   "name": "dgdRammanHumanMassive",
+   "value": true,
+   "comment": "he appears on earth in human form with a massive build and a rather homely face"
+  },
+  {
+   "name": "dgdRammanSparksOnHit",
+   "value": true,
+   "comment": "when anything hits him sparks fly doing 30 points to anything within 3 inches, no saving throw"
+  },
+  {
+   "name": "dgdRammanLightning",
+   "value": true,
+   "comment": "his lightning bolts are cast two per round, 30 points each"
+  },
+  {
+   "name": "dgdRammanCloudMail",
+   "value": true,
+   "comment": "his +4 ring mail is made out of cloud vapor"
+  },
+  {
+   "name": "dgdRammanMalletReturns",
+   "value": true,
+   "comment": "the thrown mallet does 30 points and returns by itself to his hand"
+  },
+  {
+   "name": "dgdRammanMalletVsResisters",
+   "value": true,
+   "comment": "the mallet is usually only used against creatures that resist his lightning strikes"
+  },
+  {
+   "name": "dgdRammanNightServices",
+   "value": true,
+   "comment": "his neutral worshipers always perform their services at night"
+  },
+  {
+   "name": "dgdRammanRainSacrifices",
+   "value": true,
+   "comment": "other beings sacrifice expensive liquids to bring rain for crops or cooler weather"
+  },
+  {
+   "name": "dgdRammanAllNeutralsWorship",
+   "value": true,
+   "comment": "the printed worshiper line: all neutrals plus special"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "Cbt",
+   "count": "dgdCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgdCbtAC",
+    "dgdCbtACAlt",
+    "dgdCbtHP",
+    "dgdCbtMove",
+    "dgdCbtMoveAlt",
+    "dgdCbtAtN",
+    "dgdCbtAtD",
+    "dgdCbtMR",
+    "dgdCbtSizeIn"
+   ],
+   "data": [
+    [
+     -4,
+     0,
+     400,
+     12,
+     0,
+     2,
+     0,
+     80,
+     72
+    ],
+    [
+     2,
+     0,
+     300,
+     12,
+     0,
+     0,
+     0,
+     50,
+     72
+    ],
+    [
+     1,
+     0,
+     200,
+     9,
+     18,
+     3,
+     0,
+     55,
+     864
+    ],
+    [
+     -1,
+     0,
+     230,
+     21,
+     45,
+     2,
+     0,
+     75,
+     108
+    ],
+    [
+     6,
+     0,
+     180,
+     15,
+     0,
+     2,
+     0,
+     10,
+     72
+    ],
+    [
+     -2,
+     0,
+     280,
+     18,
+     0,
+     2,
+     0,
+     50,
+     72
+    ],
+    [
+     -4,
+     0,
+     250,
+     12,
+     0,
+     2,
+     0,
+     75,
+     72
+    ],
+    [
+     1,
+     0,
+     350,
+     0,
+     0,
+     2,
+     0,
+     50,
+     108
+    ],
+    [
+     1,
+     0,
+     300,
+     12,
+     12,
+     2,
+     0,
+     99,
+     72
+    ],
+    [
+     -4,
+     0,
+     325,
+     12,
+     48,
+     2,
+     0,
+     50,
+     84
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (the ten printed single armor classes)",
+    "The range ceiling cells (0 = a single printed armor class; all ten read single this round)",
+    "The hit point cells (400 for Anu the greater god down to 180 for the hero Gilgamesh)",
+    "The primary move cells (0 = the printed Infinite: Marduk; Dahak reads the flagged 9 of the second-print extract against the 1st-print 15)",
+    "The alternate move cells (0 = a single printed move; Nergal reads 12 over 12, Ramman 12 over 48, Druaga 21 over 45, Dahak the flagged 18)",
+    "The attacks-per-round numerator cells (Anshar reads the printed 0)",
+    "The attacks-per-round denominator cells (0 = a single printed figure)",
+    "The magic resistance cells (99 = the printed See below: Nergal the shield doctrine)",
+    "The size-in-inches cells (Dahak is 72 feet long - 864 inches; Druaga and Marduk are 9 feet - 108; Ramman 7 feet - 84; Anu the 6 is clean in both voices but the inch mark garbles)"
+   ],
+   "audit_comment": "the combat stat blocks of the ten beings (print pp. 22-25) - the armor classes, hit points, moves, attacks, magic resistance and sizes",
+   "sentinel_census": [
+    0,
+    10,
+    0,
+    1,
+    6,
+    1,
+    10,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "Cls",
+   "count": "dgdClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgdClsCleric",
+    "dgdClsDruid",
+    "dgdClsFighterLo",
+    "dgdClsFighterHi",
+    "dgdClsRanger",
+    "dgdClsMagUser",
+    "dgdClsIllus",
+    "dgdClsThief",
+    "dgdClsAssassin",
+    "dgdClsMonk",
+    "dgdClsBard"
+   ],
+   "data": [
+    [
+     20,
+     0,
+     18,
+     18,
+     0,
+     99,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     18,
+     18,
+     0,
+     99,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     15,
+     15,
+     0,
+     15,
+     0,
+     0,
+     15,
+     0,
+     0
+    ],
+    [
+     5,
+     5,
+     0,
+     0,
+     12,
+     10,
+     0,
+     0,
+     0,
+     11,
+     5
+    ],
+    [
+     0,
+     0,
+     16,
+     16,
+     0,
+     99,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     0,
+     20,
+     25,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     19,
+     19,
+     0,
+     16,
+     0,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     25,
+     0,
+     12,
+     12,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     17,
+     17,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (0 = Nil; Nergal the 25th level cleric)",
+    "The druid level cells (Gilgamesh reads 5th level in each with the cleric)",
+    "The fighter level floor cells",
+    "The fighter level ceiling cells",
+    "The ranger level cells (Gilgamesh 12th level ranger, Ishtar 20th)",
+    "The magic-user level cells (99 = the printed See below: Anu, Anshar, Girru - the Girru 40th level fire-spell doctrine rides the consts)",
+    "The illusionist level cells (Ramman 15th level in each with the magic-user)",
+    "The thief level cells (0 = Nil - none printed this round)",
+    "The assassin level cells (Druaga the 15th level assassin)",
+    "The monk level cells (Gilgamesh 11th level monk)",
+    "The bard level cells (Gilgamesh 5th, Marduk 15th)"
+   ],
+   "audit_comment": "the five-slot class grid of the ten beings - the cleric/druid, fighter, magic-user/illusionist, thief/assassin and monk/bard lines (99 = the printed See below)",
+   "sentinel_census": [
+    5,
+    9,
+    3,
+    3,
+    8,
+    1,
+    9,
+    10,
+    9,
+    9,
+    8
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "Abi",
+   "count": "dgdAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgdAbiStr",
+    "dgdAbiStrHit",
+    "dgdAbiStrDmg",
+    "dgdAbiInt",
+    "dgdAbiWis",
+    "dgdAbiDex",
+    "dgdAbiCon",
+    "dgdAbiCha",
+    "dgdAbiPsi"
+   ],
+   "data": [
+    [
+     19,
+     3,
+     7,
+     25,
+     25,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     16,
+     0,
+     1,
+     20,
+     12,
+     18,
+     22,
+     18,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     18,
+     13,
+     23,
+     25,
+     4,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     18,
+     17,
+     18,
+     19,
+     18,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     20,
+     14,
+     18,
+     23,
+     18,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     22,
+     12,
+     25,
+     23,
+     25,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     23,
+     24,
+     20,
+     24,
+     23,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     20,
+     20,
+     19,
+     23,
+     24,
+     0
+    ],
+    [
+     22,
+     4,
+     10,
+     20,
+     16,
+     21,
+     24,
+     16,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (0 = the Dahak monster row, no printed ability grid)",
+    "The parenthesized strength to-hit bonus cells (0 = none printed: Anshar reads the printed 0 bracket)",
+    "The parenthesized strength damage bonus cells",
+    "The intelligence cells",
+    "The wisdom cells",
+    "The dexterity cells",
+    "The constitution cells (the printed C: column)",
+    "The charisma cells (Druaga reads the printed 4 - the single-glyph 15px TSV width against the 24px two-digit calibration)",
+    "The psionic cells (0 = Nil; this mythos prints roman-numeral classes, not scores - the VI cells ride the roster grid)"
+   ],
+   "audit_comment": "the six ability scores with the strength brackets of the ten beings (Dahak the monster row reads the all-sentinel line)",
+   "sentinel_census": [
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    10
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "Ros",
+   "count": "dgdRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgdRosOrd",
+    "dgdRosPage",
+    "dgdRosAlign",
+    "dgdRosRank",
+    "dgdRosPsiClass",
+    "dgdRosPlane",
+    "dgdRosDmgFixed",
+    "dgdRosLairPct",
+    "dgdRosEthereal"
+   ],
+   "data": [
+    [
+     0,
+     22,
+     3,
+     1,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     22,
+     8,
+     0,
+     6,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     23,
+     8,
+     3,
+     0,
+     0,
+     1,
+     25,
+     1
+    ],
+    [
+     3,
+     23,
+     6,
+     0,
+     0,
+     3,
+     1,
+     0,
+     0
+    ],
+    [
+     4,
+     23,
+     1,
+     2,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     24,
+     0,
+     0,
+     0,
+     4,
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     24,
+     4,
+     1,
+     0,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     7,
+     24,
+     3,
+     1,
+     0,
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     8,
+     25,
+     7,
+     0,
+     0,
+     7,
+     0,
+     0,
+     0
+    ],
+    [
+     9,
+     25,
+     4,
+     0,
+     0,
+     8,
+     1,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Anu through Ramman)",
+    "The print page cells (22-25, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 lawful good, 1 neutral good, 3 lawful neutral, 4 neutral, 6 lawful evil, 7 neutral evil, 8 chaotic evil)",
+    "The rank cells (0 lesser god, 1 greater god, 2 hero, 3 monster format: Gilgamesh the hero, Dahak the monster)",
+    "The psionic class cells (6 = the printed class VI of the R849 class table: Anu and Anshar; 0 = Nil)",
+    "The plane cells (1 Nirvana, 2 Pandemonium, 3 Nine Hells, 4 Seven Heavens, 5 Elysium, 6 Arcadia, 7 Hades, 8 Concordant Opposition; 0 = none printed: the Dahak monster row and the Gilgamesh hero row)",
+    "The fixed-damage cells (1 = a printed damage figure instead of by weapon type: Anu 2-20+7, Dahak 3-30 x3, Druaga 35, Gilgamesh 2-20+8, Girru 1-8+12 / 2-20+12, Ramman 30; the four See below / Nil rows read 0)",
+    "The percent-in-lair cells (the Dahak monster-format 25 percent; the deity rows read 0)",
+    "The ethereal cells (1 = the Dahak ethereal-except-bite doctrine)"
+   ],
+   "audit_comment": "the roster walk of the ten beings - ordinals, pages, alignments, ranks, psionic classes, planes, the fixed-damage flags, the Dahak lair percent and ethereal doctrine",
+   "sentinel_census": [
+    1,
+    0,
+    1,
+    5,
+    8,
+    2,
+    4,
+    9,
+    9
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the ten beings, the eight planes)",
+   "expr": "m['dgdTableCount']() != 4 or m['dgdBeingCount']() != 10 or m['dgdCbtRows']() != 10 or m['dgdClsRows']() != 10 or m['dgdAbiRows']() != 10 or m['dgdRosRows']() != 10 or m['dgdPlaneCount']() != 8 or m['dgdChainCount']() != 0"
+  },
+  {
+   "note": "the print walk spans pp. 22-25 (the folio offset PRINT = PDF - 1)",
+   "expr": "m['dgdPrintStart']() != 22 or m['dgdPrintEnd']() != 25"
+  },
+  {
+   "note": "the roster ordinals run 0-9 in print order (Anu first, Ramman last)",
+   "expr": "m['dgdRosOrd'](0) != 0 or m['dgdRosOrd'](9) != 9 or m['dgdRosPage'](0) != 22 or m['dgdRosPage'](9) != 25"
+  },
+  {
+   "note": "the alignment walk: Girru lawful good, Gilgamesh neutral good, Anu and Marduk lawful neutral, Ishtar and Ramman neutral, Druaga lawful evil, Nergal neutral evil, Anshar and Dahak chaotic evil",
+   "expr": "m['dgdRosAlign'](5) != 0 or m['dgdRosAlign'](4) != 1 or m['dgdRosAlign'](0) != 3 or m['dgdRosAlign'](7) != 3 or m['dgdRosAlign'](6) != 4 or m['dgdRosAlign'](9) != 4 or m['dgdRosAlign'](3) != 6 or m['dgdRosAlign'](8) != 7 or m['dgdRosAlign'](1) != 8 or m['dgdRosAlign'](2) != 8"
+  },
+  {
+   "note": "the rank walk: the three greater gods (Anu, Ishtar, Marduk), the hero Gilgamesh, the monster Dahak, the five lesser gods",
+   "expr": "m['dgdRosRank'](0) != 1 or m['dgdRosRank'](6) != 1 or m['dgdRosRank'](7) != 1 or m['dgdRosRank'](4) != 2 or m['dgdRosRank'](2) != 3"
+  },
+  {
+   "note": "the Anu walk: AC -4, 400 hit points, 2 attacks, 80 percent magic resistance, the brass mace 2-20 plus 7",
+   "expr": "m['dgdCbtAC'](0) != -4 or m['dgdCbtHP'](0) != 400 or m['dgdCbtAtN'](0) != 2 or m['dgdCbtMR'](0) != 80 or m['dgdAnuMaceDmgLo']() != 2 or m['dgdAnuMaceDmgHi']() != 20 or m['dgdAnuMaceBonus']() != 7"
+  },
+  {
+   "note": "the Anu class and ability walk: 20th cleric, 18th fighter, the See below magic-user, S:19(+3,+7) and the 25 line, psionic class VI",
+   "expr": "m['dgdClsCleric'](0) != 20 or m['dgdClsFighterLo'](0) != 18 or m['dgdClsFighterHi'](0) != 18 or m['dgdClsMagUser'](0) != 99 or m['dgdAbiStr'](0) != 19 or m['dgdAbiStrHit'](0) != 3 or m['dgdAbiStrDmg'](0) != 7 or m['dgdAbiInt'](0) != 25 or m['dgdAbiWis'](0) != 25 or m['dgdAbiDex'](0) != 25 or m['dgdAbiCon'](0) != 25 or m['dgdAbiCha'](0) != 25 or m['dgdRosPsiClass'](0) != 6 or m['dgdPsiClassVI']() != 6"
+  },
+  {
+   "note": "the Anu doctrines: the -4 casting and command saves, the once-a-week dragon summon",
+   "expr": "m['dgdAnuCastSavePenalty']() != 4 or m['dgdAnuCommandSavePenalty']() != 4 or m['dgdAnuDragonSummonPerWeek']() != 1"
+  },
+  {
+   "note": "the Anshar walk: AC 2, 300 hit points, the printed 0 attacks, Nil damage, 50 percent MR, the 300-yard 40-point beam, the 200-level store",
+   "expr": "m['dgdCbtAC'](1) != 2 or m['dgdCbtHP'](1) != 300 or m['dgdCbtAtN'](1) != 0 or m['dgdRosDmgFixed'](1) != 0 or m['dgdCbtMR'](1) != 50 or m['dgdAnsharBeamRangeYards']() != 300 or m['dgdAnsharBeamDamage']() != 40 or m['dgdAnsharSpellStoreLimit']() != 200"
+  },
+  {
+   "note": "the Anshar class and ability walk: 20th cleric, 18th fighter, S:16(0,+1) I:20 W:12 D:18 C:22 CH:18",
+   "expr": "m['dgdClsCleric'](1) != 20 or m['dgdClsFighterLo'](1) != 18 or m['dgdClsMagUser'](1) != 99 or m['dgdAbiStr'](1) != 16 or m['dgdAbiStrHit'](1) != 0 or m['dgdAbiStrDmg'](1) != 1 or m['dgdAbiInt'](1) != 20 or m['dgdAbiWis'](1) != 12 or m['dgdAbiDex'](1) != 18 or m['dgdAbiCon'](1) != 22 or m['dgdAbiCha'](1) != 18"
+  },
+  {
+   "note": "the Dahak walk: AC 1 or ethereal, 200 hit points, 3 attacks, 3-30 x3, 55 percent MR, 25 percent in lair, X/24,000",
+   "expr": "m['dgdCbtAC'](2) != 1 or m['dgdCbtHP'](2) != 200 or m['dgdCbtAtN'](2) != 3 or m['dgdDahakBiteDmgLo']() != 3 or m['dgdDahakBiteDmgHi']() != 30 or m['dgdDahakHeadCount']() != 3 or m['dgdCbtMR'](2) != 55 or m['dgdRosLairPct'](2) != 25 or m['dgdDahakLairPct']() != 25 or m['dgdDahakXpValue']() != 24000 or m['dgdDahakNoAppearing']() != 1"
+  },
+  {
+   "note": "the flagged eyeball cell: the Dahak move 9 over 18 (the second-print extract against the IA 1st-print 15), the 72-foot length, the ethereal flag",
+   "expr": "m['dgdCbtMove'](2) != 9 or m['dgdCbtMoveAlt'](2) != 18 or m['dgdDahakLengthFeet']() != 72 or m['dgdCbtSizeIn'](2) != 864 or m['dgdRosEthereal'](2) != 1"
+  },
+  {
+   "note": "the Dahak monster row: no class grid, no ability grid, no plane",
+   "expr": "m['dgdClsCleric'](2) != 0 or m['dgdClsFighterLo'](2) != 0 or m['dgdAbiStr'](2) != 0 or m['dgdAbiCha'](2) != 0 or m['dgdAbiPsi'](2) != 0 or m['dgdRosPlane'](2) != 0"
+  },
+  {
+   "note": "the Druaga walk: AC -1, 230 hit points, 21 over 45, the 35-point mace, fighter 15, magic-user 15, assassin 15",
+   "expr": "m['dgdCbtAC'](3) != -1 or m['dgdCbtHP'](3) != 230 or m['dgdCbtMove'](3) != 21 or m['dgdCbtMoveAlt'](3) != 45 or m['dgdDruagaMaceDamage']() != 35 or m['dgdClsFighterLo'](3) != 15 or m['dgdClsMagUser'](3) != 15 or m['dgdClsAssassin'](3) != 15"
+  },
+  {
+   "note": "the Druaga charisma adjudication: the printed 4 (the single-glyph 15px TSV width against the 24px two-digit 18 calibration), S:24(+6,+12)",
+   "expr": "m['dgdAbiCha'](3) != 4 or m['dgdAbiStr'](3) != 24 or m['dgdAbiStrHit'](3) != 6 or m['dgdAbiStrDmg'](3) != 12 or m['dgdAbiInt'](3) != 18 or m['dgdAbiWis'](3) != 13 or m['dgdAbiDex'](3) != 23 or m['dgdAbiCon'](3) != 25"
+  },
+  {
+   "note": "the Druaga devil call: 2-20 a day, never arch-devils; the Nine Hells plane",
+   "expr": "m['dgdDruagaDevilCallLo']() != 2 or m['dgdDruagaDevilCallHi']() != 20 or m['dgdDruagaArmCount']() != 8 or m['dgdDruagaLegCount']() != 4 or m['dgdRosPlane'](3) != 3"
+  },
+  {
+   "note": "the Gilgamesh walk: AC 6, 180 hit points, 15-inch move, the 2 attacks (the IA xml word against the Termux 3 fold), 10 percent MR",
+   "expr": "m['dgdCbtAC'](4) != 6 or m['dgdCbtHP'](4) != 180 or m['dgdCbtMove'](4) != 15 or m['dgdCbtAtN'](4) != 2 or m['dgdCbtMR'](4) != 10"
+  },
+  {
+   "note": "the Gilgamesh class walk: 5th cleric and druid in each, 12th ranger, 10th magic-user, 11th monk, 5th bard, the +2 mace 2-20",
+   "expr": "m['dgdClsCleric'](4) != 5 or m['dgdClsDruid'](4) != 5 or m['dgdClsRanger'](4) != 12 or m['dgdClsMagUser'](4) != 10 or m['dgdClsMonk'](4) != 11 or m['dgdClsBard'](4) != 5 or m['dgdGilgameshMacePlus']() != 2 or m['dgdGilgameshMaceDmgLo']() != 2 or m['dgdGilgameshMaceDmgHi']() != 20"
+  },
+  {
+   "note": "the Gilgamesh ability walk: S:20(+3,+8) I:18 W:17 D:18 C:19 CH:18",
+   "expr": "m['dgdAbiStr'](4) != 20 or m['dgdAbiStrHit'](4) != 3 or m['dgdAbiStrDmg'](4) != 8 or m['dgdAbiInt'](4) != 18 or m['dgdAbiWis'](4) != 17 or m['dgdAbiDex'](4) != 18 or m['dgdAbiCon'](4) != 19 or m['dgdAbiCha'](4) != 18"
+  },
+  {
+   "note": "the Girru walk: AC -2, 280 hit points, 18-inch move, the +3 axe (the IA voice against the Termux +43 garble), the 40th level fire-spell See below",
+   "expr": "m['dgdCbtAC'](5) != -2 or m['dgdCbtHP'](5) != 280 or m['dgdCbtMove'](5) != 18 or m['dgdGirruAxePlus']() != 3 or m['dgdGirruAxeDmgLo']() != 2 or m['dgdGirruAxeDmgHi']() != 20 or m['dgdGirruFireSpellLevel']() != 40 or m['dgdClsMagUser'](5) != 99"
+  },
+  {
+   "note": "the Girru doctrine walk: the 10-point 10-foot heat aura, the 2-8 stun, the -4 poison save, the Seven Heavens",
+   "expr": "m['dgdGirruHeatDamage']() != 10 or m['dgdGirruHeatFeet']() != 10 or m['dgdGirruStunLo']() != 2 or m['dgdGirruStunHi']() != 8 or m['dgdGirruPoisonSavePenalty']() != 4 or m['dgdRosPlane'](5) != 4"
+  },
+  {
+   "note": "the Ishtar walk: AC -4, 250 hit points, 15th cleric, 20th ranger, 25th magic-user, the Elysium plane",
+   "expr": "m['dgdCbtAC'](6) != -4 or m['dgdCbtHP'](6) != 250 or m['dgdClsCleric'](6) != 15 or m['dgdClsRanger'](6) != 20 or m['dgdClsMagUser'](6) != 25 or m['dgdRosPlane'](6) != 5"
+  },
+  {
+   "note": "the Ishtar chariot: 7 lions of 50 hit points, 11 hit dice, armor class -2, the 21-inch chariot, the rod times ten (10 to 90), 2 spells per round",
+   "expr": "m['dgdIshtarLionCount']() != 7 or m['dgdIshtarLionHP']() != 50 or m['dgdIshtarLionHD']() != 11 or m['dgdIshtarLionAC']() != -2 or m['dgdIshtarChariotSpeed']() != 21 or m['dgdIshtarRodMult']() != 10 or m['dgdIshtarRodMinDamage']() != 10 or m['dgdIshtarRodMaxDamage']() != 90 or m['dgdIshtarSpellsPerRound']() != 2"
+  },
+  {
+   "note": "the Ishtar ability walk: S:25(+7,+14) I:22 W:12 D:25 C:23 CH:25",
+   "expr": "m['dgdAbiStr'](6) != 25 or m['dgdAbiStrHit'](6) != 7 or m['dgdAbiStrDmg'](6) != 14 or m['dgdAbiInt'](6) != 22 or m['dgdAbiWis'](6) != 12 or m['dgdAbiDex'](6) != 25 or m['dgdAbiCon'](6) != 23 or m['dgdAbiCha'](6) != 25"
+  },
+  {
+   "note": "the Marduk walk: AC 1, 350 hit points, the printed Infinite move (the 0 sentinel), +3 or better to hit, fighter 19, magic-user 16, bard 15",
+   "expr": "m['dgdCbtAC'](7) != 1 or m['dgdCbtHP'](7) != 350 or m['dgdCbtMove'](7) != 0 or m['dgdCbtMoveAlt'](7) != 0 or m['dgdMardukWeaponPlusToHit']() != 3 or m['dgdClsFighterLo'](7) != 19 or m['dgdClsMagUser'](7) != 16 or m['dgdClsBard'](7) != 15"
+  },
+  {
+   "note": "the Marduk doctrine walk: the four eyes and ears, the 50-foot net range, the 20-dice lightning, the Arcadia plane",
+   "expr": "m['dgdMardukEyeCount']() != 4 or m['dgdMardukEarCount']() != 4 or m['dgdMardukNetRangeFeet']() != 50 or m['dgdMardukLightningDice']() != 20 or m['dgdRosPlane'](7) != 6 or m['dgdCbtSizeIn'](7) != 108"
+  },
+  {
+   "note": "the Marduk ability walk: S:24(+6,+12) I:23 W:24 D:20 C:24 CH:23",
+   "expr": "m['dgdAbiStr'](7) != 24 or m['dgdAbiStrHit'](7) != 6 or m['dgdAbiStrDmg'](7) != 12 or m['dgdAbiInt'](7) != 23 or m['dgdAbiWis'](7) != 24 or m['dgdAbiDex'](7) != 20 or m['dgdAbiCon'](7) != 24 or m['dgdAbiCha'](7) != 23"
+  },
+  {
+   "note": "the Nergal walk: AC 1, 300 hit points, the 12 over 12 move, the See below magic resistance (the 99 sentinel), 25th cleric, the Hades plane",
+   "expr": "m['dgdCbtAC'](8) != 1 or m['dgdCbtHP'](8) != 300 or m['dgdCbtMove'](8) != 12 or m['dgdCbtMoveAlt'](8) != 12 or m['dgdCbtMR'](8) != 99 or m['dgdClsCleric'](8) != 25 or m['dgdRosPlane'](8) != 7"
+  },
+  {
+   "note": "the Nergal shield doctrine: +5, no back attack, the 30-foot death aura, the eighth-level spell floor, the 5 revived enemies",
+   "expr": "m['dgdNergalShieldPlus']() != 5 or m['dgdNergalDeathAuraFeet']() != 30 or m['dgdNergalSpellFloor']() != 8 or m['dgdNergalReviveCount']() != 5"
+  },
+  {
+   "note": "the Ramman walk: AC -4, 325 hit points, 12 over 48, the 30-point damage, magic-user and illusionist 15th in each, the Concordant Opposition plane",
+   "expr": "m['dgdCbtAC'](9) != -4 or m['dgdCbtHP'](9) != 325 or m['dgdCbtMove'](9) != 12 or m['dgdCbtMoveAlt'](9) != 48 or m['dgdRammanBoltDamage']() != 30 or m['dgdClsMagUser'](9) != 15 or m['dgdClsIllus'](9) != 15 or m['dgdRosPlane'](9) != 8 or m['dgdCbtSizeIn'](9) != 84"
+  },
+  {
+   "note": "the Ramman doctrine walk: the 30-point sparks within 3 inches, 2 bolts per round, the fifth-level spell floor, the +4 cloud-vapor mail, the 10-foot mallet",
+   "expr": "m['dgdRammanSparkDamage']() != 30 or m['dgdRammanSparkRangeInches']() != 3 or m['dgdRammanBoltsPerRound']() != 2 or m['dgdRammanSpellFloor']() != 5 or m['dgdRammanRingMailPlus']() != 4 or m['dgdRammanMalletDamage']() != 30 or m['dgdRammanMalletFeet']() != 10"
+  },
+  {
+   "note": "the fixed-damage walk: the six printed-figure rows (Anu, Dahak, Druaga, Gilgamesh, Girru, Ramman) and the four See below / Nil rows",
+   "expr": "m['dgdRosDmgFixed'](0) != 1 or m['dgdRosDmgFixed'](2) != 1 or m['dgdRosDmgFixed'](3) != 1 or m['dgdRosDmgFixed'](4) != 1 or m['dgdRosDmgFixed'](5) != 1 or m['dgdRosDmgFixed'](9) != 1 or m['dgdRosDmgFixed'](1) != 0 or m['dgdRosDmgFixed'](6) != 0 or m['dgdRosDmgFixed'](7) != 0 or m['dgdRosDmgFixed'](8) != 0"
+  },
+  {
+   "note": "the plane walk: Nirvana, Pandemonium, Nine Hells, Seven Heavens, Elysium, Arcadia, Hades, Concordant Opposition",
+   "expr": "m['dgdRosPlane'](0) != 1 or m['dgdRosPlane'](1) != 2 or m['dgdRosPlane'](3) != 3 or m['dgdRosPlane'](5) != 4 or m['dgdRosPlane'](6) != 5 or m['dgdRosPlane'](7) != 6 or m['dgdRosPlane'](8) != 7 or m['dgdRosPlane'](9) != 8"
+  },
+  {
+   "note": "the registry floor holds at 995 - zero defs touched this round",
+   "expr": "m['dgdRegistryFloor']() != 995"
+  }
+ ],
+ "header_sections": {
+  "the R852 census": [
+   {
+    "kind": "const",
+    "name": "dgdRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgdPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "dgdPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "dgdBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgdTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgdChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgdRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgdCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgdClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgdAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgdRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgdPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgdPsiClassVI"
+   }
+  ],
+  "the mythos intro": [
+   {
+    "kind": "bool",
+    "name": "dgdOriginsExtremelyAncient"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdSourcesConflict"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdClericKilt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdClericsRearOfBattle"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAdvancementByPayment"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdPaymentNotLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDangerousQuests"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNewMoonCeremony"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdKingsQuestForRiches"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMinorLawFasting"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMajorTransgressionSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDemiHumansDemons"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdQuestAtonement"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdHighPriestKing"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAloofFromPopulace"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdStatePoliticalWork"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuDistributesMoney"
+   }
+  ],
+  "the Anu walk": [
+   {
+    "kind": "const",
+    "name": "dgdAnuMaceDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgdAnuMaceDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgdAnuMaceBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dgdAnuCastSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dgdAnuCommandSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dgdAnuDragonSummonPerWeek"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuSkyChief"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuAppearsAsMan"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuBreezeOfGaze"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuDisintegrationOnCast"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuVoiceOfLeaders"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuSummonsDragons"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuBrassMace"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuCreatedHeavensEarth"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnuAllBowToAuthority"
+   }
+  ],
+  "the Anshar walk": [
+   {
+    "kind": "const",
+    "name": "dgdAnsharBeamRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "dgdAnsharBeamDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgdAnsharSpellStoreLimit"
+   },
+   {
+    "kind": "const",
+    "name": "dgdAnsharAlteredPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnsharGodOfDarkness"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnsharDarkSkinned"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnsharNightOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnsharBeamNoRegen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnsharTeleportsToShadow"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnsharUnaffectedByLight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnsharGraspsSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnsharStartsWithNinths"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdAnsharSenseSpells"
+   }
+  ],
+  "the Dahak walk": [
+   {
+    "kind": "const",
+    "name": "dgdDahakHeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDahakBiteDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDahakBiteDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDahakNoAppearing"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDahakLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDahakXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDahakLengthFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDahakDragonSpirit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDahakEtherealExceptBite"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDahakScaleColorWhim"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDahakEatsLawfulGoodFlesh"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDahakAnyDragonBreath"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDahakCrunchesTeeth"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDahakNegatesDevices"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDahakAverageIntelligence"
+   }
+  ],
+  "the Druaga walk": [
+   {
+    "kind": "const",
+    "name": "dgdDruagaMaceDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDruagaDevilCallLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDruagaDevilCallHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDruagaArmCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgdDruagaLegCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaDevilRuler"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaBoyHead"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaParalyzingUgliness"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaCallsDevils"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaBreathImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaSoulObject"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaSoulRegenerates"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaHostUnaware"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaBurialDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaAidsSacrificers"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdDruagaMaceDevilMaker"
+   }
+  ],
+  "the Gilgamesh walk": [
+   {
+    "kind": "const",
+    "name": "dgdGilgameshMacePlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGilgameshMaceDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGilgameshMaceDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshHero"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshGetsThingsDone"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshPrefersWrestling"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshWrestledBullGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshTyrannical"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshGovernsWell"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshEarthlyPleasures"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshStubbornDirect"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshFearsDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshCourageVsFoe"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGilgameshCannotBeCharmed"
+   }
+  ],
+  "the Girru walk": [
+   {
+    "kind": "const",
+    "name": "dgdGirruFireSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGirruHeatDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGirruHeatFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGirruAxePlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGirruAxeDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGirruAxeDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGirruStunLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGirruStunHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgdGirruPoisonSavePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGirruGodOfFire"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGirruManifestsAsMan"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGirruHatesEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGirruUnaffectedByFire"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGirruTeleportsToFlame"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGirruHeatAura"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGirruPoisonBarb"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGirruStunningAxe"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdGirruWeaponDisintegrate"
+   }
+  ],
+  "the Ishtar walk": [
+   {
+    "kind": "const",
+    "name": "dgdIshtarSpellsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgdIshtarLionCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgdIshtarLionHP"
+   },
+   {
+    "kind": "const",
+    "name": "dgdIshtarLionHD"
+   },
+   {
+    "kind": "const",
+    "name": "dgdIshtarLionAC"
+   },
+   {
+    "kind": "const",
+    "name": "dgdIshtarChariotSpeed"
+   },
+   {
+    "kind": "const",
+    "name": "dgdIshtarRodMult"
+   },
+   {
+    "kind": "const",
+    "name": "dgdIshtarRodMinDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgdIshtarRodMaxDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarGoddessLoveWar"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarBeautifulWomanOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarTitanStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarVoiceSuggestion"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarHeaddressLove"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarHeaddressEnemyPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarFlyingChariot"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarLionsUncontrollable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarNoMetalTouch"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdIshtarRodEnergy"
+   }
+  ],
+  "the Marduk walk": [
+   {
+    "kind": "const",
+    "name": "dgdMardukEyeCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgdMardukEarCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgdMardukNetRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgdMardukLightningDice"
+   },
+   {
+    "kind": "const",
+    "name": "dgdMardukWeaponPlusToHit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMardukGodOfCity"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMardukNonhumanForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMardukFlameSpeech"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMardukLeadsWhenAnuBusy"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMardukBorrowsAbility"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMardukSilveryNet"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMardukWeatherInstant"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMardukJusticeBringer"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdMardukTiamatLegend"
+   }
+  ],
+  "the Nergal walk": [
+   {
+    "kind": "const",
+    "name": "dgdNergalShieldPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgdNergalDeathAuraFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgdNergalSpellFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgdNergalReviveCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNergalGodOfUnderworld"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNergalRulesTheDead"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNergalHumanFormOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNergalRevivesEnemies"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNergalBlackShield"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNergalNoBackAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNergalDeathAura"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNergalBasaltAltar"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdNergalPromisedSacrifice"
+   }
+  ],
+  "the Ramman walk": [
+   {
+    "kind": "const",
+    "name": "dgdRammanSparkDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgdRammanSparkRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "dgdRammanBoltDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgdRammanBoltsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgdRammanSpellFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgdRammanRingMailPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgdRammanMalletDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgdRammanMalletFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanGodOfStorms"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanHumanMassive"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanSparksOnHit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanLightning"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanCloudMail"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanMalletReturns"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanMalletVsResisters"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanNightServices"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanRainSacrifices"
+   },
+   {
+    "kind": "bool",
+    "name": "dgdRammanAllNeutralsWorship"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R851 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R851 LANDED 2026-10-26: commit",
+  "  550339f65296e4ac36e0f7e304c696b23805da80",
+  "  (pushed 7e8df39..550339f, census 773 -> 774),",
+  "  THE ARTHURIAN MYTHOS - the D&DG walk",
+  "  round three, print pp. 17-21: fifteen beings",
+  "  (the average knight of renown and knight of",
+  "  quality templates, Arthur, Bernlad, Galahad,",
+  "  Gareth, Garlon, Gawaine, Lamorak, Launcelot,",
+  "  Merlin, Morgan le Fay, Palomides, Pellinore,",
+  "  Tristram) plus the printed name rosters (90",
+  "  good or neutral knights, 26 of quality; 13",
+  "  evil, 3 of quality) riding as the first data",
+  "  file doc/data/ddg_arthurian_knights.txt.",
+  "  THE SHAPE: 4 grids x 15 rows (combat, class,",
+  "  ability, roster), 52 consts + 89 bools + 38",
+  "  table cols, inline 179; header rules/dgc.h,",
+  "  prefix dgc; audit \"R851 Arthurian mythos",
+  "  audit\", rode rules/audits/r851_batch.h; 25",
+  "  examples. ZERO registry defs touched - the",
+  "  floor holds at 995. THE ADJUDICATIONS (the",
+  "  IA 1st-print collation over the Termux",
+  "  fold): Garlon 80 hit points, one attack, AC",
+  "  1 effectively -3; Arthur FIGHTER 14th level",
+  "  paladin; Gawaine Neutral; Merlin psionic",
+  "  300, modes B C E over All; Morgan 64",
+  "  inches; Palomides 66 inches; the evil roster",
+  "  adds Damas and King Mark. THE MIRROR CATCH:",
+  "  the audit mirror failed at build with 2 bad",
+  "  - the class grid carried Garlon as",
+  "  illusionist 3 and Palomides as assassin 3;",
+  "  the ink reads Garlon 3rd level thief and",
+  "  Palomides 3rd level in each monk and bard;",
+  "  the good roster was one short (Breunor,",
+  "  both voices). EYEBALL CELLS (flagged):",
+  "  Gawaine 112 hit points (the IA 1st print",
+  "  reads 172), the Garlon height, the",
+  "  Pellinore 76 inches single-voice, the",
+  "  Arthur paladin line. THE RED LESSON: the",
+  "  engine writes data files without makedirs -",
+  "  doc/data/ was absent, the engine died",
+  "  mid-write-list with everything else",
+  "  applied; the unwind (git restore the seed,",
+  "  regtest and gap report, rm the two new",
+  "  headers) plus mkdir -p doc/data re-landed",
+  "  clean. DELIVERY: raw JSON in a code canvas",
+  "  (the R850 rule). Spec tools/spec_r851.json,",
+  "  md5 bc29e8d9021d81305d9044811d005a54",
+  "  (56,928 bytes). NEXT: the D&DG walk",
+  "  continues from the Babylonian mythos",
+  "  (print pp. 22-25)."
+ ],
+ "inline_count": 225
+}
