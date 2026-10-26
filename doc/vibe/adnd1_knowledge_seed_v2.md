@@ -25065,6 +25065,44 @@ convention). Spec tools/spec_r864.json, md5 7725bdcc81fd95739b0b19087d610ef9
 rows), 19 examples; rverify double-run GREEN, 1037 mutants 0 missed; hyphen
 scan clean; zero True/False tokens; ddg gap 16/24 closed, 8 open. NEXT: the
 D&DG walk continues from the Norse mythos - WAIT FOR GO.
+- R865 LANDED 2026-10-26: commit efdb231b2c4c19e01fd7752495b033c167b8cede
+(pushed f555f66..efdb231, census 787 -> 788), THE NORSE MYTHOS - the D&DG walk
+round seventeen, print pp. 113-124, the being-heaviest round of the walk:
+thirty-five beings in print order (Odin, Hugin and Munin, Sleipnir, Freke and
+Gere, Aegir, Balder, Bragi, the Fenris Wolf, Fjalar, Forseti, Fossergrim,
+Frey, Blodug-Hofi, Gullin-Bursti, Skirnir, Freya, Frigga, Garm, Heimdall, Hel,
+Jormungandr, Idun, Loki, Magni, Modi, the Norns, Sif, Surtur, Thor, Thrym,
+Tyr, Uller, Thor's goats, Vidar, the Valkyries) - 11 greater, 10 lesser, 4
+no-rank class-grid rows (Fjalar, Skirnir, the Norns, the Valkyries), 11
+MM-format blocks; prefix nrs (full-repo scan clean); the round's data file
+doc/data/ddg_norse_crossrefs.txt. THE HEADLINE ADJUDICATIONS: THOR AC BARE 4
+(the tsv shows no minus glyph, the L&L voice reads minus 4; pinned as printed
+4, the eyeball flag); the Hel +38 damage garble adjudicated to +8 by the
+strength arithmetic plus the L&L voice; the half-foot sizes Odin/Hel/Tyr 78
+and the Valkyries 66 (the half glyph garbles to )4 and %); the Hugin 1/48 move
+as printed plus the merged V1815 xp = VI/815 (the MM level-VI base
+corroboration); the Frey psionic II (the width-15 two-pipe signature plus the
+L&L voice); the Thrym HP 300 from the L&L voice (the print cell occluded by
+the plate illustration); the Aegir AC -5 (L&L -3) and the Freya AC -3 (L&L -4)
+pinned by the print; the Surtur W:14 D:12 (the W:i4 garble); the Modi 2-or-4 /
+25-or-50 berserk cells (the walk's first non-dice damage); the Thor 2(3)
+glove; the Jormungandr 25,000-mile size -> 0 sentinel plus the const, the
+slashless X 55,000 print; the Balder MU/I Nil, psionic VI. The L&L parity
+voice: the per-being 1eonline pages (odin.htm carries the companions, frey.htm
+carries Blodug, Gullin and Skirnir, thor.htm carries the goats); all stat
+lines cross-verified. Planes: Gladsheim 18, Bragi Elysium, Hel Hades, Loki
+Pandemonium (alt Gladsheim), the Norns Concordant Opposition, 13 none-printed.
+Psionic pipes I x5, II x3, III x1, IV x2, V x3, VI x7, Nil x14. ZERO registry
+defs touched - the floor holds at 995. Spec tools/spec_r865.json, md5
+fef1deae45e43d14eeab11497495c0e3 (122,207 bytes); 471 inlines (259 consts, 175
+bools, 37 table cols, 4 grids x 35 rows), 20 examples; rverify double-run
+GREEN, 1729 mutants 0 missed; hyphen scan clean; zero True/False tokens; ddg
+gap 17/24 closed, 7 open (Sumerian, App 1-4, the index, the alignment
+figures). ENGINE LESSON: the first spec to reference bools in example exprs -
+the audit mirror aborts on a bare bool ref (an operator expected in a audit
+condition); every bool ref in an example must carry an operator (the != 1
+form; a bare not does not translate). NEXT: the D&DG walk continues from the
+Sumerian mythos (print pp. 125-127) - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

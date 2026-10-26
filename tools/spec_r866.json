@@ -1,0 +1,2090 @@
+{
+ "round": 866,
+ "title": "the Sumerian mythos",
+ "prefix": "smr",
+ "banner": {
+  "title": "the Sumerian mythos - the D&DG walk round eighteen, print pp. 125-127: seven stat-block rows - the five greater gods (Enlil, Enki, Inanna, Ki, Utu) and the two lesser (Nanna-Sin, Nin-hursag) - plus the city-temple doctrine of the intro (the patron deity, the priest-king, the punishment ladder, the holy days) and the pantheon-wide cloud chariots doctrine of print p. 127. Every one of the seven beings prints armor class -2, the only uniform-AC pantheon of the walk.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 126-128; the second printing) with the tsv x-y geometry as the fold-swap, dropped-glyph and not-printed-cell arbiter - the psm-4 fold interleaved the Inanna and Ki blocks of print p. 126 across the two columns and the geometry sorted them; the collation voice: the 1eonline L&L transcription (the per-being pages, the R853 parity voice). The adjudications: the Enlil 127/36\" move garble adjudicated 12 by the L&L voice, the Enlil (64\") size = the 6 1/2 foot 78 fraction cell (the L&L voice reads 6.5, the R859 fraction fingerprint), the (&) and (6) size garbles read 72 and 60 through the L&L voice, the Utu 32 attacks garble adjudicated 3/2, the Ki 15/36//36 triple slash pinned as printed in both voices (the R861 convention), the Inanna single-pipe psionic I (the L&L voice reads II) and the Inanna warriors-and-lovers worshipper line pinned by the print, the Enki 10th-level bard (the L&L voice reads 13th in each), the Utu 15th in-each magic-user pair (the L&L voice reads 15th illusionist alone) and the Enlil D:23 CH:24 cells (the L&L voice normalizes to the 25s) pinned by the print."
+ },
+ "census_before": 788,
+ "gap_census": {
+  "closed": 18,
+  "open": 6
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Sumerian mythos** (pp. 125-127)",
+   "to": "- [x] **Sumerian mythos** (pp. 125-127)",
+   "note": "the Sumerian mythos box"
+  }
+ ],
+ "header_file": "rules/smr.h",
+ "include_after": "#include \"rules/nrs.h\"  // R865: the Norse mythos",
+ "include_comment": "the Sumerian mythos",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R865 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "- R865 LANDED 2026-10-26: commit efdb231b2c4c19e01fd7752495b033c167b8cede",
+  "(pushed f555f66..efdb231, census 787 -> 788), THE NORSE MYTHOS - the D&DG walk",
+  "round seventeen, print pp. 113-124, the being-heaviest round of the walk:",
+  "thirty-five beings in print order (Odin, Hugin and Munin, Sleipnir, Freke and",
+  "Gere, Aegir, Balder, Bragi, the Fenris Wolf, Fjalar, Forseti, Fossergrim,",
+  "Frey, Blodug-Hofi, Gullin-Bursti, Skirnir, Freya, Frigga, Garm, Heimdall, Hel,",
+  "Jormungandr, Idun, Loki, Magni, Modi, the Norns, Sif, Surtur, Thor, Thrym,",
+  "Tyr, Uller, Thor's goats, Vidar, the Valkyries) - 11 greater, 10 lesser, 4",
+  "no-rank class-grid rows (Fjalar, Skirnir, the Norns, the Valkyries), 11",
+  "MM-format blocks; prefix nrs (full-repo scan clean); the round's data file",
+  "doc/data/ddg_norse_crossrefs.txt. THE HEADLINE ADJUDICATIONS: THOR AC BARE 4",
+  "(the tsv shows no minus glyph, the L&L voice reads minus 4; pinned as printed",
+  "4, the eyeball flag); the Hel +38 damage garble adjudicated to +8 by the",
+  "strength arithmetic plus the L&L voice; the half-foot sizes Odin/Hel/Tyr 78",
+  "and the Valkyries 66 (the half glyph garbles to )4 and %); the Hugin 1/48 move",
+  "as printed plus the merged V1815 xp = VI/815 (the MM level-VI base",
+  "corroboration); the Frey psionic II (the width-15 two-pipe signature plus the",
+  "L&L voice); the Thrym HP 300 from the L&L voice (the print cell occluded by",
+  "the plate illustration); the Aegir AC -5 (L&L -3) and the Freya AC -3 (L&L -4)",
+  "pinned by the print; the Surtur W:14 D:12 (the W:i4 garble); the Modi 2-or-4 /",
+  "25-or-50 berserk cells (the walk's first non-dice damage); the Thor 2(3)",
+  "glove; the Jormungandr 25,000-mile size -> 0 sentinel plus the const, the",
+  "slashless X 55,000 print; the Balder MU/I Nil, psionic VI. The L&L parity",
+  "voice: the per-being 1eonline pages (odin.htm carries the companions, frey.htm",
+  "carries Blodug, Gullin and Skirnir, thor.htm carries the goats); all stat",
+  "lines cross-verified. Planes: Gladsheim 18, Bragi Elysium, Hel Hades, Loki",
+  "Pandemonium (alt Gladsheim), the Norns Concordant Opposition, 13 none-printed.",
+  "Psionic pipes I x5, II x3, III x1, IV x2, V x3, VI x7, Nil x14. ZERO registry",
+  "defs touched - the floor holds at 995. Spec tools/spec_r865.json, md5",
+  "fef1deae45e43d14eeab11497495c0e3 (122,207 bytes); 471 inlines (259 consts, 175",
+  "bools, 37 table cols, 4 grids x 35 rows), 20 examples; rverify double-run",
+  "GREEN, 1729 mutants 0 missed; hyphen scan clean; zero True/False tokens; ddg",
+  "gap 17/24 closed, 7 open (Sumerian, App 1-4, the index, the alignment",
+  "figures). ENGINE LESSON: the first spec to reference bools in example exprs -",
+  "the audit mirror aborts on a bare bool ref (an operator expected in a audit",
+  "condition); every bool ref in an example must carry an operator (the != 1",
+  "form; a bare not does not translate). NEXT: the D&DG walk continues from the",
+  "Sumerian mythos (print pp. 125-127) - WAIT FOR GO."
+ ],
+ "audit_file": "rules/audits/r866_batch.h",
+ "audit_label": "R866 Sumerian mythos audit",
+ "audit_anchor": "#include \"rules/audits/r865_batch.h\"  // R865: R865 Norse mythos audit",
+ "audit_comment": "THE SUMERIAN MYTHOS - the D&DG walk round eighteen, print pp. 125-127: seven stat-block rows - the five greater gods (Enlil, Enki, Inanna, Ki, Utu) and the two lesser (Nanna-Sin, Nin-hursag) - plus the city-temple doctrine of the intro and the pantheon-wide cloud chariots doctrine of print p. 127; every one of the seven beings prints armor class -2, the only uniform-AC pantheon of the walk.",
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "smrCbt",
+   "cols": [
+    "smrCbtAC",
+    "smrCbtACAlt",
+    "smrCbtHP",
+    "smrCbtMove",
+    "smrCbtMoveAlt",
+    "smrCbtAtN",
+    "smrCbtAtD",
+    "smrCbtMR",
+    "smrCbtSizeIn"
+   ],
+   "col_comments": [
+    "The armor class cells (ALL SEVEN BEINGS PRINT MINUS 2 - the only uniform-AC pantheon of the walk; Inanna the bare-dash-minus _2 print, the w32 dash glyph matching the minus 2 tokens elsewhere)",
+    "The alternative armor class cells (none printed - all 0)",
+    "The hit point cells (Enlil 400 the high, Nanna-Sin 339 the low)",
+    "The move cells (Enlil the 127/36\" print garble adjudicated 12 by the L&L voice; Utu the Infinite print minus 1 sentinel - the R863 Death and R861 Amaterasu precedent)",
+    "The alternative move cells (Ki prints the triple slash 15/36//36 - both voices carry the duplicated third 36, pinned as printed the R861 Susanowo convention with the duplicate in this comment; six dual moves, Utu the lone 0)",
+    "The attacks-per-round numerators (Inanna 2; Ki the printed 0 attacks; Enki, Nin-hursag and Utu the 3 of three-halves - Utu the 32 tesseract garble adjudicated 3/2 by the L&L voice)",
+    "The attacks-per-round denominators (Enki, Nin-hursag and Utu the 2 of three-halves; 0 = a bare number print)",
+    "The magic resistance cells (Ki and Utu 90 the highs, Inanna 66, Nanna-Sin 75, Enlil, Enki and Nin-hursag 50)",
+    "The size cells in inches (Enlil the 6 1/2 foot 78 - the (64\") tesseract garble, the L&L voice reading 6.5, the R859 fraction fingerprint; Enki, Inanna, Nanna-Sin, Nin-hursag and Utu the 6 foot 72, Inanna and Utu the (&) tesseract garble with the L&L voice reading 6; Ki the 5 foot 60 - the (5) print garble)"
+   ],
+   "count": "smrCbtRows",
+   "sentinel": 0,
+   "data": [
+    [
+     -2,
+     0,
+     400,
+     12,
+     36,
+     2,
+     0,
+     50,
+     78
+    ],
+    [
+     -2,
+     0,
+     388,
+     12,
+     24,
+     3,
+     2,
+     50,
+     72
+    ],
+    [
+     -2,
+     0,
+     391,
+     12,
+     24,
+     2,
+     0,
+     66,
+     72
+    ],
+    [
+     -2,
+     0,
+     380,
+     15,
+     36,
+     0,
+     0,
+     90,
+     60
+    ],
+    [
+     -2,
+     0,
+     339,
+     12,
+     24,
+     2,
+     0,
+     75,
+     72
+    ],
+    [
+     -2,
+     0,
+     355,
+     9,
+     12,
+     3,
+     2,
+     50,
+     72
+    ],
+    [
+     -2,
+     0,
+     377,
+     -1,
+     0,
+     3,
+     2,
+     90,
+     72
+    ]
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "smrCls",
+   "cols": [
+    "smrClsClr",
+    "smrClsDrd",
+    "smrClsFtr",
+    "smrClsRng",
+    "smrClsPal",
+    "smrClsMU",
+    "smrClsIll",
+    "smrClsThf",
+    "smrClsAss",
+    "smrClsMnk",
+    "smrClsBrd"
+   ],
+   "col_comments": [
+    "The cleric levels (Ki the 30th level high; Enlil and Enki 20; Inanna and Nanna-Sin the in-each 10 and 13 pairs; Utu 15)",
+    "The druid levels (Ki the 30th-cleric/14th-druid print; Inanna and Nanna-Sin the in-each pairs; Utu 14; Nin-hursag the 13th level druid)",
+    "The fighter levels (Nanna-Sin 16, Nin-hursag 11)",
+    "The ranger levels (Enlil 19, Inanna 20, Utu 13)",
+    "The paladin levels (Enki 13, Ki 10)",
+    "The magic-user levels (Nin-hursag the 30th level high; Enki, Inanna, Ki, Nanna-Sin and Utu the in-each pairs; Enlil 15)",
+    "The illusionist levels (the in-each rows Enki 13, Inanna 12, Ki 20, Nanna-Sin 15, Utu 15; Utu the L&L voice reads 15th illusionist alone, the print pins the in-each pair)",
+    "The thief levels (Inanna the 15th level thief)",
+    "The assassin levels (none printed - all 0)",
+    "The monk levels (none printed - all 0)",
+    "The bard levels (Ki 20 the high, Enlil 12, Nanna-Sin 15, Inanna 10, Utu 5; ENKI PRINTS THE 10TH LEVEL BARD - the L&L voice reads 13th in each, pinned by the print with the divergence noted; Nin-hursag the Nil print)"
+   ],
+   "count": "smrClsRows",
+   "sentinel": 0,
+   "data": [
+    [
+     20,
+     0,
+     0,
+     19,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     12
+    ],
+    [
+     20,
+     0,
+     0,
+     0,
+     13,
+     13,
+     13,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     10,
+     10,
+     0,
+     20,
+     0,
+     12,
+     12,
+     15,
+     0,
+     0,
+     10
+    ],
+    [
+     30,
+     14,
+     0,
+     0,
+     10,
+     20,
+     20,
+     0,
+     0,
+     0,
+     20
+    ],
+    [
+     13,
+     13,
+     16,
+     0,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     13,
+     11,
+     0,
+     0,
+     30,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     14,
+     0,
+     13,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     5
+    ]
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "smrAbi",
+   "cols": [
+    "smrAbiS",
+    "smrAbiHit",
+    "smrAbiDmg",
+    "smrAbiI",
+    "smrAbiW",
+    "smrAbiD",
+    "smrAbiC",
+    "smrAbiCH"
+   ],
+   "col_comments": [
+    "The strength cells (Enlil and Nanna-Sin 25; Ki the bare 25 with no bonus pair; Utu 24)",
+    "The strength to-hit bonuses (Ki the bare-25 print 0; the Enlil (47,4+14) tesseract garble adjudicated (+7,+14) by the L&L voice and the bracket arithmetic)",
+    "The strength damage bonuses (every god bonus pair matches the strength bracket; Utu the (+6, +12) printed-space cell)",
+    "The intelligence cells (Enki 25 the high, Enlil 25, Inanna 21, Nanna-Sin 24, Nin-hursag 23, Utu 20; Ki 23)",
+    "The wisdom cells (Enlil 25, Nanna-Sin 25, Ki 25; Inanna 19 the low)",
+    "The dexterity cells (Inanna 25 the high; ENLIL PRINTS D:23 - the L&L voice normalizes to 25, pinned by the print with the divergence noted)",
+    "The constitution cells (the 25s: Enlil, Enki, Inanna, Ki; Utu 24; Nanna-Sin 23)",
+    "The charisma cells (Inanna 25, Nanna-Sin 25, Utu 25; ENLIL PRINTS CH:24 - the L&L voice normalizes to 25, pinned by the print; Nin-hursag the all-23 row)"
+   ],
+   "count": "smrAbiRows",
+   "sentinel": 0,
+   "data": [
+    [
+     25,
+     7,
+     14,
+     25,
+     25,
+     23,
+     25,
+     24
+    ],
+    [
+     23,
+     5,
+     11,
+     25,
+     24,
+     23,
+     25,
+     23
+    ],
+    [
+     20,
+     3,
+     8,
+     21,
+     19,
+     25,
+     24,
+     25
+    ],
+    [
+     25,
+     0,
+     0,
+     23,
+     25,
+     23,
+     25,
+     25
+    ],
+    [
+     25,
+     7,
+     14,
+     24,
+     25,
+     19,
+     23,
+     25
+    ],
+    [
+     23,
+     5,
+     11,
+     23,
+     23,
+     23,
+     23,
+     23
+    ],
+    [
+     24,
+     6,
+     12,
+     20,
+     22,
+     22,
+     24,
+     25
+    ]
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "smrRos",
+   "cols": [
+    "smrRosPage",
+    "smrRosPlane",
+    "smrRosPlaneAlt",
+    "smrRosAlign",
+    "smrRosRank",
+    "smrRosPsi",
+    "smrRosDmgFixed",
+    "smrRosInEach",
+    "smrRosWorshipOdd"
+   ],
+   "col_comments": [
+    "The print page cells (125 through 127, the Sumerian box of the gap report)",
+    "The plane cells (1 Elysium, 2 Nirvana, 3 Nine Hells, 4 Prime Material Plane)",
+    "The alternative plane cells (none printed - all 0; the L&L Phlegethos and Eronia glosses are transcriber D64 additions)",
+    "The alignment cells (0 LG 1 LN 2 CG 3 CN 4 N 5 NG 6 LE 7 NE 8 CE)",
+    "The rank cells (1 greater, 0 lesser)",
+    "The psionic class cells (I: Inanna and Ki; VI: Utu; 0 = Nil. INANNA PRINTS THE SINGLE PIPE - the w15 one-pipe signature, the L&L voice reads II, pinned by the print with the divergence noted)",
+    "The printed-damage flags (Enlil, Enki, Inanna, Nanna-Sin and Utu the fixed-points rows; Ki the Nil and Nin-hursag the 2-20 dice print carry 0)",
+    "The in-each flags (the five rows printing an Nth-level-in-each pair: Enki, Inanna, Ki, Nanna-Sin, Utu)",
+    "The odd worshipper-alignment prints (Inanna the warriors-and-lovers line - the L&L voice reads Lawful evil, pinned by the print)"
+   ],
+   "count": "smrRosRows",
+   "sentinel": 0,
+   "data": [
+    [
+     125,
+     1,
+     0,
+     5,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     126,
+     2,
+     0,
+     1,
+     1,
+     0,
+     1,
+     1,
+     0
+    ],
+    [
+     126,
+     3,
+     0,
+     6,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     126,
+     4,
+     0,
+     4,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     127,
+     1,
+     0,
+     2,
+     0,
+     0,
+     1,
+     1,
+     0
+    ],
+    [
+     127,
+     1,
+     0,
+     4,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     127,
+     2,
+     0,
+     2,
+     1,
+     6,
+     1,
+     1,
+     0
+    ]
+   ]
+  }
+ ],
+ "header_sections": {
+  "the Sumerian doctrine": [
+   {
+    "kind": "const",
+    "name": "smrRound"
+   },
+   {
+    "kind": "const",
+    "name": "smrPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "smrPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "smrHolyDaySeventh"
+   },
+   {
+    "kind": "const",
+    "name": "smrHolyDayFifteenth"
+   },
+   {
+    "kind": "const",
+    "name": "smrHolyDayTwentyFifth"
+   },
+   {
+    "kind": "const",
+    "name": "smrTroubleLadderCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrCloudChariotMove"
+   },
+   {
+    "kind": "bool",
+    "name": "smrCityPatronDeity"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKingHighPriest"
+   },
+   {
+    "kind": "bool",
+    "name": "smrSteppedPyramidTemples"
+   },
+   {
+    "kind": "bool",
+    "name": "smrZigguratRedBrick"
+   },
+   {
+    "kind": "bool",
+    "name": "smrSacrificeItemsAltars"
+   },
+   {
+    "kind": "bool",
+    "name": "smrClericItemBurning"
+   },
+   {
+    "kind": "bool",
+    "name": "smrHumanSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "smrCondemnedCriminals"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInnerShrineImage"
+   },
+   {
+    "kind": "bool",
+    "name": "smrAltarTableGifts"
+   },
+   {
+    "kind": "bool",
+    "name": "smrCentralCourtyard"
+   },
+   {
+    "kind": "bool",
+    "name": "smrSideChapels"
+   },
+   {
+    "kind": "bool",
+    "name": "smrRightAngleEntrance"
+   },
+   {
+    "kind": "bool",
+    "name": "smrFoodBurntNightly"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNewMoonSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "smrPunishmentGastro"
+   },
+   {
+    "kind": "bool",
+    "name": "smrPunishmentTroubles"
+   },
+   {
+    "kind": "bool",
+    "name": "smrPunishmentDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "smrSacrificeErases"
+   },
+   {
+    "kind": "bool",
+    "name": "smrShavenClerics"
+   },
+   {
+    "kind": "bool",
+    "name": "smrWhiteKiltRobes"
+   },
+   {
+    "kind": "bool",
+    "name": "smrBorderIndicatesPatron"
+   },
+   {
+    "kind": "bool",
+    "name": "smrConicalHats"
+   },
+   {
+    "kind": "bool",
+    "name": "smrGodsCloseToWorshipers"
+   },
+   {
+    "kind": "bool",
+    "name": "smrBabylonianOverlap"
+   },
+   {
+    "kind": "bool",
+    "name": "smrCloudChariotsAll"
+   },
+   {
+    "kind": "bool",
+    "name": "smrCloudChariotRadiance"
+   },
+   {
+    "kind": "bool",
+    "name": "smrCloudChariotImpress"
+   },
+   {
+    "kind": "bool",
+    "name": "smrCloudChariotTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "smrCloudChariotIndestructible"
+   },
+   {
+    "kind": "bool",
+    "name": "smrCloudChariotCarry"
+   },
+   {
+    "kind": "bool",
+    "name": "smrGodsAppearOnChariots"
+   }
+  ],
+  "Enlil": [
+   {
+    "kind": "const",
+    "name": "smrEnlilBoltDmg"
+   },
+   {
+    "kind": "const",
+    "name": "smrEnlilBoltRangeMiles"
+   },
+   {
+    "kind": "const",
+    "name": "smrEnlilAxeDmg"
+   },
+   {
+    "kind": "const",
+    "name": "smrEnlilAxePctTimes"
+   },
+   {
+    "kind": "const",
+    "name": "smrEnlilAxePlatePct"
+   },
+   {
+    "kind": "const",
+    "name": "smrEnlilTeleportFeet"
+   },
+   {
+    "kind": "const",
+    "name": "smrEnlilSpellNegatePct"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilEspAnyDistance"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilRaiseDead"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilLightningImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilWarHelmUnaffected"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilHelmForcedHit"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilHelmChooseTwo"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilHelmNoShock"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilAxeNoMetalDmg"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilAxeDisenchant"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnlilAxeUnbreakable"
+   }
+  ],
+  "Enki": [
+   {
+    "kind": "const",
+    "name": "smrEnkiMaceDmg"
+   },
+   {
+    "kind": "const",
+    "name": "smrEnkiNegateSpellBelow"
+   },
+   {
+    "kind": "const",
+    "name": "smrEnkiWaterGallons"
+   },
+   {
+    "kind": "const",
+    "name": "smrEnkiSummonPerDay"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiAlwaysGreen"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiWaterDeadSummon"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiSummonOnceEver"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiBlinkDogMove"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiHeatImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiTeleportWaterOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiDemonHater"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiStrongestFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiMaceEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiMaceNeverHarmLN"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiWaterArmorAbsorb"
+   },
+   {
+    "kind": "bool",
+    "name": "smrEnkiPatronJewelers"
+   }
+  ],
+  "Inanna": [
+   {
+    "kind": "const",
+    "name": "smrInannaAxeDmg"
+   },
+   {
+    "kind": "const",
+    "name": "smrInannaLionsCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrInannaLionMv"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaBeautifulWoman"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaAidBraveWarriors"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaAidNeverHit"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaAidAlwaysSave"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaAidNeverMiss"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaAidMeleeDuration"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaAnimateStatues"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaSummonDeadKilled"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaAxeArmorDust"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaAxeNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaBreastPlates"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaFickleWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaLionChariot"
+   },
+   {
+    "kind": "bool",
+    "name": "smrInannaLionFlight"
+   }
+  ],
+  "Ki": [
+   {
+    "kind": "const",
+    "name": "smrKiAnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrKiLuckHours"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiElfinWoman"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiUntouchedByThrown"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiShapeChangeNonMonster"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiLuckOfGods"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiLuckHalfDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiAnimalSummon"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiSpeciesOncePerWeek"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiOneTypeAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiLocateAnything"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiHalfDamageAlways"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiAlwaysSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiClericsDruids"
+   },
+   {
+    "kind": "bool",
+    "name": "smrKiGreatDruidComms"
+   }
+  ],
+  "Nanna-Sin": [
+   {
+    "kind": "const",
+    "name": "smrNannaSinGlowFeet"
+   },
+   {
+    "kind": "const",
+    "name": "smrNannaSinAxePlus"
+   },
+   {
+    "kind": "const",
+    "name": "smrNannaSinAxeDmg"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNannaSinBlueGlow"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNannaSinNegateHeat"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNannaSinNegateCold"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNannaSinNegateElectricity"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNannaSinNegateLight"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNannaSinNegateDarkness"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNannaSinSwordOfSharpness"
+   }
+  ],
+  "Nin-hursag": [
+   {
+    "kind": "const",
+    "name": "smrNinhursagWitherSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "smrNinhursagWitherCharges"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNinhursagDarkSkinnedFemale"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNinhursagGravityControl"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNinhursagGiftOfFlight"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNinhursagWitherHated"
+   },
+   {
+    "kind": "bool",
+    "name": "smrNinhursagWitherWishComponents"
+   }
+  ],
+  "Utu": [
+   {
+    "kind": "const",
+    "name": "smrUtuGlowRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "smrUtuGlowStrikeMod"
+   },
+   {
+    "kind": "const",
+    "name": "smrUtuRayCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrUtuRayDmg"
+   },
+   {
+    "kind": "const",
+    "name": "smrUtuHeatThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "smrUtuPolymorphSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "smrUtuSunbitsRangeMiles"
+   },
+   {
+    "kind": "const",
+    "name": "smrUtuSunbitsDmg"
+   },
+   {
+    "kind": "bool",
+    "name": "smrUtuHumanForm"
+   },
+   {
+    "kind": "bool",
+    "name": "smrUtuUndeadWither"
+   },
+   {
+    "kind": "bool",
+    "name": "smrUtuRegenerateHeat"
+   },
+   {
+    "kind": "bool",
+    "name": "smrUtuPolymorphDirt"
+   },
+   {
+    "kind": "bool",
+    "name": "smrUtuAuraMelt"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ],
+  "the R866 census": [
+   {
+    "kind": "const",
+    "name": "smrBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrGreaterCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrLesserCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "smrClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "smrAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "smrRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "smrElysiumCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrNirvanaCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrNineHellsCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrPrimeCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrPsiNilCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrPsiICount"
+   },
+   {
+    "kind": "const",
+    "name": "smrPsiVicount"
+   },
+   {
+    "kind": "const",
+    "name": "smrUniformAcCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrInEachCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrDualMoveCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrDmgFixedCount"
+   },
+   {
+    "kind": "const",
+    "name": "smrWorshipOddCount"
+   }
+  ]
+ },
+ "consts": [
+  {
+   "name": "smrRound",
+   "value": 866,
+   "comment": "the Sumerian mythos round: the D&DG walk round eighteen"
+  },
+  {
+   "name": "smrPrintStart",
+   "value": 125,
+   "comment": "the section opens on print p. 125 (Enlil)"
+  },
+  {
+   "name": "smrPrintEnd",
+   "value": 127,
+   "comment": "the section closes on print p. 127 (Utu, the cloud chariots)"
+  },
+  {
+   "name": "smrHolyDaySeventh",
+   "value": 7,
+   "comment": "the seventh day of the month is a holy day"
+  },
+  {
+   "name": "smrHolyDayFifteenth",
+   "value": 15,
+   "comment": "the fifteenth day of the month is a holy day"
+  },
+  {
+   "name": "smrHolyDayTwentyFifth",
+   "value": 25,
+   "comment": "the twenty-fifth day of the month is a holy day"
+  },
+  {
+   "name": "smrTroubleLadderCount",
+   "value": 15,
+   "comment": "the second-transgression punishment: fifteen troubles, each worse than the last, none automatically fatal"
+  },
+  {
+   "name": "smrCloudChariotMove",
+   "value": 24,
+   "comment": "the cloud chariot movement rate in inches"
+  },
+  {
+   "name": "smrEnlilBoltDmg",
+   "value": 40,
+   "comment": "the lightning bolt damage per strike (save vs. spells for half)"
+  },
+  {
+   "name": "smrEnlilBoltRangeMiles",
+   "value": 1,
+   "comment": "Enlil raises electrical storms and directs lightning bolts at targets up to a mile distant"
+  },
+  {
+   "name": "smrEnlilAxeDmg",
+   "value": 50,
+   "comment": "the stone axe damage per strike"
+  },
+  {
+   "name": "smrEnlilAxePctTimes",
+   "value": 10,
+   "comment": "Enlil's percentage chance of NOT hitting metal is equal to the base armor class of the metallically-armored opponent times ten"
+  },
+  {
+   "name": "smrEnlilAxePlatePct",
+   "value": 30,
+   "comment": "the worked example: a 30 percent chance of striking an unarmored portion of a person in plate mail"
+  },
+  {
+   "name": "smrEnlilTeleportFeet",
+   "value": 100,
+   "comment": "the axe teleports to the god's hand if taken more than 100 feet from his body"
+  },
+  {
+   "name": "smrEnlilSpellNegatePct",
+   "value": 25,
+   "comment": "the axe has a 25 percent chance of negating any spell tossed at the god before the spell reaches him"
+  },
+  {
+   "name": "smrEnkiMaceDmg",
+   "value": 35,
+   "comment": "the jade green mace damage on a successful hit"
+  },
+  {
+   "name": "smrEnkiNegateSpellBelow",
+   "value": 6,
+   "comment": "the mace negates any spell below the 6th level cast at the god"
+  },
+  {
+   "name": "smrEnkiWaterGallons",
+   "value": 50,
+   "comment": "Enki can only teleport to areas with water in quantities of more than 50 gallons"
+  },
+  {
+   "name": "smrEnkiSummonPerDay",
+   "value": 1,
+   "comment": "one being of any species that has died in the water can be summoned per day"
+  },
+  {
+   "name": "smrInannaAxeDmg",
+   "value": 25,
+   "comment": "the double bladed brass axe damage per hit"
+  },
+  {
+   "name": "smrInannaLionsCount",
+   "value": 7,
+   "comment": "the chariot is pulled by seven lions"
+  },
+  {
+   "name": "smrInannaLionMv",
+   "value": 30,
+   "comment": "the flying lions movement rate in inches"
+  },
+  {
+   "name": "smrKiAnimalCount",
+   "value": 100,
+   "comment": "any non-monster animal of any species is hers to summon instantly, in any number up to 100"
+  },
+  {
+   "name": "smrKiLuckHours",
+   "value": 24,
+   "comment": "the luck of the gods lasts for a 24 hour period"
+  },
+  {
+   "name": "smrNannaSinGlowFeet",
+   "value": 10,
+   "comment": "the blue glow acts as a rod of beguiling to all who come within 10 feet of it"
+  },
+  {
+   "name": "smrNannaSinAxePlus",
+   "value": 3,
+   "comment": "the jet black axe bonus"
+  },
+  {
+   "name": "smrNannaSinAxeDmg",
+   "value": 30,
+   "comment": "the axe damage per hit"
+  },
+  {
+   "name": "smrNinhursagWitherSpellLevel",
+   "value": 9,
+   "comment": "the withering takes the form of a special 9th level spell"
+  },
+  {
+   "name": "smrNinhursagWitherCharges",
+   "value": 3,
+   "comment": "the withering works like three charges from a staff of withering"
+  },
+  {
+   "name": "smrUtuGlowRadiusFeet",
+   "value": 10,
+   "comment": "the deity is constantly bathed in a dazzling 10 radius yellow glow"
+  },
+  {
+   "name": "smrUtuGlowStrikeMod",
+   "value": 2,
+   "comment": "the glow causes all enemies to suffer a -2 on all strikes at the god"
+  },
+  {
+   "name": "smrUtuRayCount",
+   "value": 2,
+   "comment": "he can cast two light rays per round at anything in sight"
+  },
+  {
+   "name": "smrUtuRayDmg",
+   "value": 20,
+   "comment": "each light ray damage (save vs. spells for half damage)"
+  },
+  {
+   "name": "smrUtuHeatThreshold",
+   "value": 100,
+   "comment": "he regenerates all lost hit points when touched by heat of any degree above 100 degrees F"
+  },
+  {
+   "name": "smrUtuPolymorphSaveMod",
+   "value": 3,
+   "comment": "he polymorphs living matter into dirt with a -3 on the being saving throw"
+  },
+  {
+   "name": "smrUtuSunbitsRangeMiles",
+   "value": 2,
+   "comment": "the sun-bits can be thrown up to 2 miles away from the god"
+  },
+  {
+   "name": "smrUtuSunbitsDmg",
+   "value": 50,
+   "comment": "the sun-bits strike for 50 points of heat damage when they hit"
+  },
+  {
+   "name": "smrBeingCount",
+   "value": 7,
+   "comment": "the Sumerian mythos beings"
+  },
+  {
+   "name": "smrGreaterCount",
+   "value": 5,
+   "comment": "the greater gods and goddesses (Enlil, Enki, Inanna, Ki, Utu)"
+  },
+  {
+   "name": "smrLesserCount",
+   "value": 2,
+   "comment": "the lesser gods and goddesses (Nanna-Sin, Nin-hursag)"
+  },
+  {
+   "name": "smrTableCount",
+   "value": 4,
+   "comment": "the four grids"
+  },
+  {
+   "name": "smrChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "smrCbtRows",
+   "value": 7,
+   "comment": "the combat grid rows"
+  },
+  {
+   "name": "smrClsRows",
+   "value": 7,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "smrAbiRows",
+   "value": 7,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "smrRosRows",
+   "value": 7,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "smrElysiumCount",
+   "value": 3,
+   "comment": "the Elysium plane rows (Enlil, Nanna-Sin, Nin-hursag)"
+  },
+  {
+   "name": "smrNirvanaCount",
+   "value": 2,
+   "comment": "the Nirvana plane rows (Enki, Utu)"
+  },
+  {
+   "name": "smrNineHellsCount",
+   "value": 1,
+   "comment": "the Nine Hells plane row (Inanna)"
+  },
+  {
+   "name": "smrPrimeCount",
+   "value": 1,
+   "comment": "the Prime Material Plane row (Ki)"
+  },
+  {
+   "name": "smrPsiNilCount",
+   "value": 4,
+   "comment": "the Nil psionic rows (Enlil, Enki, Nanna-Sin, Nin-hursag)"
+  },
+  {
+   "name": "smrPsiICount",
+   "value": 2,
+   "comment": "the class-I psionic rows (Inanna, Ki)"
+  },
+  {
+   "name": "smrPsiVicount",
+   "value": 1,
+   "comment": "the class-VI psionic row (Utu)"
+  },
+  {
+   "name": "smrUniformAcCount",
+   "value": 7,
+   "comment": "every one of the seven beings prints armor class -2, the only such pantheon of the walk"
+  },
+  {
+   "name": "smrInEachCount",
+   "value": 5,
+   "comment": "the in-each rows (Enki, Inanna, Ki, Nanna-Sin, Utu)"
+  },
+  {
+   "name": "smrDualMoveCount",
+   "value": 6,
+   "comment": "the dual-move rows (all but Utu the Infinite)"
+  },
+  {
+   "name": "smrDmgFixedCount",
+   "value": 5,
+   "comment": "the printed fixed-damage rows (Enlil 50, Enki 35, Inanna 25, Nanna-Sin 30, Utu 50)"
+  },
+  {
+   "name": "smrWorshipOddCount",
+   "value": 1,
+   "comment": "the odd worshipper-alignment print (Inanna the warriors-and-lovers line)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "smrCityPatronDeity",
+   "value": true,
+   "comment": "every city has its patron deity and all the people belong to that temple and none other"
+  },
+  {
+   "name": "smrKingHighPriest",
+   "value": true,
+   "comment": "all officials of the city are clerics of the temple and the high priest is always the king or queen of the city-state"
+  },
+  {
+   "name": "smrSteppedPyramidTemples",
+   "value": true,
+   "comment": "the temples have a stepped pyramid shape in the manner of the Aztec temples"
+  },
+  {
+   "name": "smrZigguratRedBrick",
+   "value": true,
+   "comment": "the more important temples are raised up on artificial hills (ziggurats) of red brick"
+  },
+  {
+   "name": "smrSacrificeItemsAltars",
+   "value": true,
+   "comment": "sacrifices and gifts are all made as items that dress up altars and temple surroundings"
+  },
+  {
+   "name": "smrClericItemBurning",
+   "value": true,
+   "comment": "the clerics themselves make items to be directly sacrificed to the gods by burning"
+  },
+  {
+   "name": "smrHumanSacrifice",
+   "value": true,
+   "comment": "human lives are sacrificed to the gods"
+  },
+  {
+   "name": "smrCondemnedCriminals",
+   "value": true,
+   "comment": "the human sacrifices are primarily condemned criminals"
+  },
+  {
+   "name": "smrInnerShrineImage",
+   "value": true,
+   "comment": "each temple has an image of its god on a raised platform in an inner shrine closed off to the public"
+  },
+  {
+   "name": "smrAltarTableGifts",
+   "value": true,
+   "comment": "before the image is a table used as an altar with all the gifts of the year upon it"
+  },
+  {
+   "name": "smrCentralCourtyard",
+   "value": true,
+   "comment": "a central courtyard beyond the main entrance serves public worship"
+  },
+  {
+   "name": "smrSideChapels",
+   "value": true,
+   "comment": "the building has side chapels and storerooms of several types"
+  },
+  {
+   "name": "smrRightAngleEntrance",
+   "value": true,
+   "comment": "the main entrance is set at right angles to the inner temple"
+  },
+  {
+   "name": "smrFoodBurntNightly",
+   "value": true,
+   "comment": "clerics serve the best meat and drink to the gods on special tables beside altars, and the food is burnt every night for the gods use"
+  },
+  {
+   "name": "smrNewMoonSacrifice",
+   "value": true,
+   "comment": "a sacrifice is always held on the night of the new moon"
+  },
+  {
+   "name": "smrPunishmentGastro",
+   "value": true,
+   "comment": "the first major transgression results in an acute severe gastro-intestinal disease (as per DMG) for the offending cleric"
+  },
+  {
+   "name": "smrPunishmentTroubles",
+   "value": true,
+   "comment": "the second transgression results in a punishment of fifteen troubles, each worse than the last"
+  },
+  {
+   "name": "smrPunishmentDeath",
+   "value": true,
+   "comment": "the third transgression results in the death of the offending one"
+  },
+  {
+   "name": "smrSacrificeErases",
+   "value": true,
+   "comment": "any transgression can be erased in the sight of the deity by a sacrifice sufficient and important-or-expensive in proportion to the offense"
+  },
+  {
+   "name": "smrShavenClerics",
+   "value": true,
+   "comment": "clerics of this pantheon must shave all hair from their bodies"
+  },
+  {
+   "name": "smrWhiteKiltRobes",
+   "value": true,
+   "comment": "the clerics wear kilts and robes of white with colorful borders"
+  },
+  {
+   "name": "smrBorderIndicatesPatron",
+   "value": true,
+   "comment": "the shape and color of the border indicates the cleric patron deity"
+  },
+  {
+   "name": "smrConicalHats",
+   "value": true,
+   "comment": "female clerics wear rounded conical hats to cover their baldness"
+  },
+  {
+   "name": "smrGodsCloseToWorshipers",
+   "value": true,
+   "comment": "the gods are unusually close to their worshipers and every worshiper is a servant of his or her god, a willingness to help soon lost to all other mythoi"
+  },
+  {
+   "name": "smrBabylonianOverlap",
+   "value": true,
+   "comment": "the geographical area of the Sumerian mythos is almost exactly the Babylonian; the two were kept separate for diversity, deliberately increased in some cases to prevent overlap (the Greek-Roman manner)"
+  },
+  {
+   "name": "smrCloudChariotsAll",
+   "value": true,
+   "comment": "all of the gods and goddesses have cloud chariots at their personal command"
+  },
+  {
+   "name": "smrCloudChariotRadiance",
+   "value": true,
+   "comment": "the chariots appear to be clouds that give off a dazzling radiance and become platforms of transportation when a god steps on them"
+  },
+  {
+   "name": "smrCloudChariotImpress",
+   "value": true,
+   "comment": "the chariots are also a means to impress worshipers and non-believers alike"
+  },
+  {
+   "name": "smrCloudChariotTeleport",
+   "value": true,
+   "comment": "a cloud chariot can teleport itself to any place where there are clouds in the sky"
+  },
+  {
+   "name": "smrCloudChariotIndestructible",
+   "value": true,
+   "comment": "a cloud chariot is unaffected by any material force and is never destroyed"
+  },
+  {
+   "name": "smrCloudChariotCarry",
+   "value": true,
+   "comment": "the devices are capable of carrying anything the controlling deity wishes"
+  },
+  {
+   "name": "smrGodsAppearOnChariots",
+   "value": true,
+   "comment": "the gods will always appear to their clerics on such devices to prove that they are gods"
+  },
+  {
+   "name": "smrEnlilShapeChange",
+   "value": true,
+   "comment": "at will the god can shape change"
+  },
+  {
+   "name": "smrEnlilEspAnyDistance",
+   "value": true,
+   "comment": "Enlil can ESP at any distance"
+  },
+  {
+   "name": "smrEnlilRaiseDead",
+   "value": true,
+   "comment": "unlike the other deities of this pantheon, Enlil has the power to raise the dead"
+  },
+  {
+   "name": "smrEnlilLightningImmune",
+   "value": true,
+   "comment": "Enlil takes no damage from lightning or electrical attacks"
+  },
+  {
+   "name": "smrEnlilWarHelmUnaffected",
+   "value": true,
+   "comment": "in battle the god wears a war helm that is not affected by anything"
+  },
+  {
+   "name": "smrEnlilHelmForcedHit",
+   "value": true,
+   "comment": "when attacked by only one weapon in a given melee, that weapon is forced to hit the helm (no saving throw)"
+  },
+  {
+   "name": "smrEnlilHelmChooseTwo",
+   "value": true,
+   "comment": "if attacked by two or more weapons, Enlil chooses which shall strike his helm"
+  },
+  {
+   "name": "smrEnlilHelmNoShock",
+   "value": true,
+   "comment": "when wearing the helm Enlil feels no shock or harm from objects hitting it"
+  },
+  {
+   "name": "smrEnlilAxeNoMetalDmg",
+   "value": true,
+   "comment": "the stone axe does no damage if it hits metal"
+  },
+  {
+   "name": "smrEnlilAxeDisenchant",
+   "value": true,
+   "comment": "Enlil's axe disenchant any magic item it comes in contact with (no save)"
+  },
+  {
+   "name": "smrEnlilAxeUnbreakable",
+   "value": true,
+   "comment": "the axe cannot be broken"
+  },
+  {
+   "name": "smrEnkiAlwaysGreen",
+   "value": true,
+   "comment": "this god is always green in color in any of his human manifestations"
+  },
+  {
+   "name": "smrEnkiShapeChange",
+   "value": true,
+   "comment": "at will he shape changes"
+  },
+  {
+   "name": "smrEnkiWaterDeadSummon",
+   "value": true,
+   "comment": "Enki is aware of and can summon any being that has died in the water to do his bidding"
+  },
+  {
+   "name": "smrEnkiSummonOnceEver",
+   "value": true,
+   "comment": "a particular summoned being cannot be summoned ever again"
+  },
+  {
+   "name": "smrEnkiBlinkDogMove",
+   "value": true,
+   "comment": "Enki moves like a blink dog"
+  },
+  {
+   "name": "smrEnkiHeatImmune",
+   "value": true,
+   "comment": "Enki is immune to all forms of heat"
+  },
+  {
+   "name": "smrEnkiTeleportWaterOnly",
+   "value": true,
+   "comment": "he can only teleport to areas where there is water"
+  },
+  {
+   "name": "smrEnkiDemonHater",
+   "value": true,
+   "comment": "the god is known for his great hatred of demons and will slay any person in his presence that has ever dealt with these monsters in a friendly manner"
+  },
+  {
+   "name": "smrEnkiStrongestFirst",
+   "value": true,
+   "comment": "in battle he fights the strongest enemy facing his group first"
+  },
+  {
+   "name": "smrEnkiMaceEthereal",
+   "value": true,
+   "comment": "the mace is ethereal when not held by the god"
+  },
+  {
+   "name": "smrEnkiMaceNeverHarmLN",
+   "value": true,
+   "comment": "the mace will never cause harm to a lawful neutral being it strikes"
+  },
+  {
+   "name": "smrEnkiWaterArmorAbsorb",
+   "value": true,
+   "comment": "Enki's armor, helm and shield are made out of water and automatically absorb the first two hits made against him in any given melee round"
+  },
+  {
+   "name": "smrEnkiPatronJewelers",
+   "value": true,
+   "comment": "Enki is the patron of jewelers, goldsmiths and stonecutters; only the finest jewels, gold items and carvings can be given to his temples in homage"
+  },
+  {
+   "name": "smrInannaBeautifulWoman",
+   "value": true,
+   "comment": "this goddess usually appears in the form of a beautiful woman"
+  },
+  {
+   "name": "smrInannaAidBraveWarriors",
+   "value": true,
+   "comment": "on rare occasions she picks exceptionally brave warriors in battle and aids them"
+  },
+  {
+   "name": "smrInannaAidNeverHit",
+   "value": true,
+   "comment": "the aid takes the form of that warrior never being hit"
+  },
+  {
+   "name": "smrInannaAidAlwaysSave",
+   "value": true,
+   "comment": "the aided warrior always makes his or her saving throw"
+  },
+  {
+   "name": "smrInannaAidNeverMiss",
+   "value": true,
+   "comment": "the aided warrior never misses an attempted hit"
+  },
+  {
+   "name": "smrInannaAidMeleeDuration",
+   "value": true,
+   "comment": "the aid lasts for the duration of the melee"
+  },
+  {
+   "name": "smrInannaShapeChange",
+   "value": true,
+   "comment": "at will the goddess can shape change"
+  },
+  {
+   "name": "smrInannaAnimateStatues",
+   "value": true,
+   "comment": "at will she can animate statues of herself in her temples"
+  },
+  {
+   "name": "smrInannaSummonDeadKilled",
+   "value": true,
+   "comment": "she can summon from the dead any being she has killed in a past battle to aid any given side (only on a one time basis per being)"
+  },
+  {
+   "name": "smrInannaAxeArmorDust",
+   "value": true,
+   "comment": "the axe causes any armor it strikes to turn to dust (no saving throw)"
+  },
+  {
+   "name": "smrInannaAxeNeverSurprised",
+   "value": true,
+   "comment": "the axe user is never surprised"
+  },
+  {
+   "name": "smrInannaBreastPlates",
+   "value": true,
+   "comment": "her breast plates negate any damage caused by heat, cold, fang, or claw to her body"
+  },
+  {
+   "name": "smrInannaFickleWeapons",
+   "value": true,
+   "comment": "the goddess is a fickle being and requires the sacrificing of the best in magical or high quality weapons on her altars"
+  },
+  {
+   "name": "smrInannaLionChariot",
+   "value": true,
+   "comment": "in battle she drives a chariot pulled by seven lions"
+  },
+  {
+   "name": "smrInannaLionFlight",
+   "value": true,
+   "comment": "the chariot lions have been given the gift of flight and are otherwise normal beasts under her complete control"
+  },
+  {
+   "name": "smrKiElfinWoman",
+   "value": true,
+   "comment": "Ki appears as an elfin woman of great beauty"
+  },
+  {
+   "name": "smrKiUntouchedByThrown",
+   "value": true,
+   "comment": "the goddess cannot be touched by anything material cast through the air at her"
+  },
+  {
+   "name": "smrKiShapeChangeNonMonster",
+   "value": true,
+   "comment": "at will she can shape change (into non-monster forms only)"
+  },
+  {
+   "name": "smrKiLuckOfGods",
+   "value": true,
+   "comment": "she can give the luck of the gods to those she favors: the recipient always makes his or her saving throw"
+  },
+  {
+   "name": "smrKiLuckHalfDamage",
+   "value": true,
+   "comment": "the luck of the gods recipient only suffers half damage from any attack"
+  },
+  {
+   "name": "smrKiAnimalSummon",
+   "value": true,
+   "comment": "any non-monster animal of any species is hers to summon instantly"
+  },
+  {
+   "name": "smrKiSpeciesOncePerWeek",
+   "value": true,
+   "comment": "no species can be summoned more than once per week"
+  },
+  {
+   "name": "smrKiOneTypeAtATime",
+   "value": true,
+   "comment": "she can only summon one type of creature at a time"
+  },
+  {
+   "name": "smrKiLocateAnything",
+   "value": true,
+   "comment": "she has the power to instantly know where any given thing is on the surface of the earth"
+  },
+  {
+   "name": "smrKiHalfDamageAlways",
+   "value": true,
+   "comment": "when forced to do combat she will take only half damage from any attack"
+  },
+  {
+   "name": "smrKiAlwaysSaves",
+   "value": true,
+   "comment": "she will always make her saving throw on all things"
+  },
+  {
+   "name": "smrKiClericsDruids",
+   "value": true,
+   "comment": "Ki's clerics are druids"
+  },
+  {
+   "name": "smrKiGreatDruidComms",
+   "value": true,
+   "comment": "her Great Druid may receive communications directly from the goddess"
+  },
+  {
+   "name": "smrNannaSinBlueGlow",
+   "value": true,
+   "comment": "this human-appearing god is always bathed in a blue glow that acts as a rod of beguiling"
+  },
+  {
+   "name": "smrNannaSinNegateHeat",
+   "value": true,
+   "comment": "at will Nanna-Sin can negate heat"
+  },
+  {
+   "name": "smrNannaSinNegateCold",
+   "value": true,
+   "comment": "at will Nanna-Sin can negate cold"
+  },
+  {
+   "name": "smrNannaSinNegateElectricity",
+   "value": true,
+   "comment": "at will Nanna-Sin can negate electricity"
+  },
+  {
+   "name": "smrNannaSinNegateLight",
+   "value": true,
+   "comment": "at will Nanna-Sin can negate light"
+  },
+  {
+   "name": "smrNannaSinNegateDarkness",
+   "value": true,
+   "comment": "at will Nanna-Sin can negate darkness"
+  },
+  {
+   "name": "smrNannaSinSwordOfSharpness",
+   "value": true,
+   "comment": "the axe also acts as a sword of sharpness"
+  },
+  {
+   "name": "smrNinhursagDarkSkinnedFemale",
+   "value": true,
+   "comment": "this deity always appears as a dark-skinned female"
+  },
+  {
+   "name": "smrNinhursagGravityControl",
+   "value": true,
+   "comment": "she is mistress of gravity and magnetism and has complete control over these forces"
+  },
+  {
+   "name": "smrNinhursagGiftOfFlight",
+   "value": true,
+   "comment": "she can give the gift of flight to those she especially favors"
+  },
+  {
+   "name": "smrNinhursagWitherHated",
+   "value": true,
+   "comment": "she has the power to wither those she hates"
+  },
+  {
+   "name": "smrNinhursagWitherWishComponents",
+   "value": true,
+   "comment": "the withering requires the same components as a wish spell"
+  },
+  {
+   "name": "smrUtuHumanForm",
+   "value": true,
+   "comment": "this deity is always in human form"
+  },
+  {
+   "name": "smrUtuUndeadWither",
+   "value": true,
+   "comment": "all undead wither to dust at a touch of his glow"
+  },
+  {
+   "name": "smrUtuRegenerateHeat",
+   "value": true,
+   "comment": "he regenerates all lost hit points when touched by heat"
+  },
+  {
+   "name": "smrUtuPolymorphDirt",
+   "value": true,
+   "comment": "he is able to polymorph living matter into dirt"
+  },
+  {
+   "name": "smrUtuAuraMelt",
+   "value": true,
+   "comment": "his aura causes anything striking his body to melt unless the thing is indestructible"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the seven beings, the rank, plane, psionic and uniform-AC counts)",
+   "expr": "m['smrRound']() != 866 or m['smrBeingCount']() != 7 or m['smrTableCount']() != 4 or m['smrChainCount']() != 0 or m['smrCbtRows']() != 7 or m['smrClsRows']() != 7 or m['smrAbiRows']() != 7 or m['smrRosRows']() != 7 or m['smrGreaterCount']() != 5 or m['smrLesserCount']() != 5 - 3 or m['smrElysiumCount']() != 3 or m['smrNirvanaCount']() != 2 or m['smrNineHellsCount']() != 1 or m['smrPrimeCount']() != 1 or m['smrPsiNilCount']() != 4 or m['smrPsiICount']() != 2 or m['smrPsiVicount']() != 1 or m['smrUniformAcCount']() != 7 or m['smrInEachCount']() != 5 or m['smrDualMoveCount']() != 6 or m['smrDmgFixedCount']() != 5 or m['smrWorshipOddCount']() != 1"
+  },
+  {
+   "note": "the combat grid (the uniform armor class, the hit points, the moves, the magic resistance and the sizes)",
+   "expr": "m['smrCbtAC'](0) != -2 or m['smrCbtAC'](3) != -2 or m['smrCbtAC'](6) != -2 or m['smrCbtHP'](0) != 400 or m['smrCbtHP'](4) != 339 or m['smrCbtMove'](0) != 12 or m['smrCbtMoveAlt'](0) != 36 or m['smrCbtMove'](5) != 9 or m['smrCbtMove'](6) != -1 or m['smrCbtMoveAlt'](3) != 36 or m['smrCbtMR'](3) != 90 or m['smrCbtSizeIn'](0) != 78 or m['smrCbtSizeIn'](3) != 60 or m['smrCbtSizeIn'](1) != 72"
+  },
+  {
+   "note": "the attacks cells (the three-halves prints, the Ki zero-attacks and the Utu garble)",
+   "expr": "m['smrCbtAtN'](1) != 3 or m['smrCbtAtD'](1) != 2 or m['smrCbtAtN'](5) != 3 or m['smrCbtAtD'](6) != 2 or m['smrCbtAtN'](3) != 0 or m['smrCbtAtN'](0) != 2 or m['smrCbtAtD'](2) != 0"
+  },
+  {
+   "note": "the class grid (the Enlil cleric and ranger, the Ki triple, the Inanna thief, the Utu bard)",
+   "expr": "m['smrClsClr'](0) != 20 or m['smrClsRng'](0) != 19 or m['smrClsClr'](3) != 30 or m['smrClsDrd'](3) != 14 or m['smrClsPal'](3) != 10 or m['smrClsThf'](2) != 15 or m['smrClsBrd'](6) != 5 or m['smrClsMU'](5) != 30 or m['smrClsBrd'](0) != 12"
+  },
+  {
+   "note": "the in-each pairs (Enki magic-user and illusionist, Inanna cleric and druid, the Nanna-Sin and Utu pairs)",
+   "expr": "m['smrClsMU'](1) != 13 or m['smrClsIll'](1) != 13 or m['smrClsClr'](2) != 10 or m['smrClsDrd'](2) != 10 or m['smrClsMU'](2) != 12 or m['smrClsIll'](2) != 12 or m['smrClsClr'](4) != 13 or m['smrClsMU'](6) != 15 or m['smrClsIll'](6) != 15 or m['smrClsFtr'](4) != 16"
+  },
+  {
+   "note": "the Enki bard divergence and the Nin-hursag Nil row (the print pins over the L&L voice)",
+   "expr": "m['smrClsBrd'](1) != 10 or m['smrClsBrd'](5) != 0 or m['smrClsClr'](5) != 0 or m['smrClsIll'](5) != 0"
+  },
+  {
+   "note": "the ability grid (the Enlil print pins, the bonus pairs, the all-23 row)",
+   "expr": "m['smrAbiS'](0) != 25 or m['smrAbiHit'](0) != 7 or m['smrAbiDmg'](0) != 14 or m['smrAbiD'](0) != 23 or m['smrAbiCH'](0) != 24 or m['smrAbiS'](3) != 25 or m['smrAbiHit'](3) != 0 or m['smrAbiD'](2) != 25 or m['smrAbiS'](6) != 24 or m['smrAbiDmg'](6) != 12 or m['smrAbiW'](5) != 23 or m['smrAbiCH'](5) != 23 or m['smrAbiC'](5) != 23"
+  },
+  {
+   "note": "the roster grid (the pages, the planes, the ranks, the Inanna single pipe, the worship-odd print)",
+   "expr": "m['smrRosPage'](0) != 125 or m['smrRosPage'](6) != 127 or m['smrRosPlane'](0) != 1 or m['smrRosPlane'](1) != 2 or m['smrRosPlane'](2) != 3 or m['smrRosPlane'](3) != 4 or m['smrRosRank'](4) != 0 or m['smrRosRank'](0) != 1 or m['smrRosPsi'](2) != 1 or m['smrRosPsi'](6) != 6 or m['smrRosPsi'](0) != 0 or m['smrRosAlign'](2) != 6 or m['smrRosAlign'](0) != 5 or m['smrRosInEach'](1) != 1 or m['smrRosWorshipOdd'](2) != 1 or m['smrRosDmgFixed'](5) != 0"
+  },
+  {
+   "note": "the Enlil bolts and the raise-dead uniqueness",
+   "expr": "m['smrEnlilBoltDmg']() != 40 or m['smrEnlilBoltRangeMiles']() != 1 or m['smrEnlilRaiseDead']() != 1 or m['smrEnlilLightningImmune']() != 1 or m['smrEnlilEspAnyDistance']() != 1 or m['smrEnlilShapeChange']() != 1"
+  },
+  {
+   "note": "the Enlil war helm (the forced hit, the two-or-more choice)",
+   "expr": "m['smrEnlilHelmForcedHit']() != 1 or m['smrEnlilHelmChooseTwo']() != 1 or m['smrEnlilHelmNoShock']() != 1 or m['smrEnlilWarHelmUnaffected']() != 1"
+  },
+  {
+   "note": "the Enlil stone axe (the damage, the metal rule, the disenchant, the teleport, the spell negate)",
+   "expr": "m['smrEnlilAxeDmg']() != 50 or m['smrEnlilAxePctTimes']() != 10 or m['smrEnlilAxePlatePct']() != 30 or m['smrEnlilAxeNoMetalDmg']() != 1 or m['smrEnlilAxeDisenchant']() != 1 or m['smrEnlilAxeUnbreakable']() != 1 or m['smrEnlilTeleportFeet']() != 100 or m['smrEnlilSpellNegatePct']() != 25"
+  },
+  {
+   "note": "the Enki mace, the water laws and the demon hatred",
+   "expr": "m['smrEnkiMaceDmg']() != 35 or m['smrEnkiNegateSpellBelow']() != 6 or m['smrEnkiWaterGallons']() != 50 or m['smrEnkiSummonPerDay']() != 1 or m['smrEnkiDemonHater']() != 1 or m['smrEnkiStrongestFirst']() != 1 or m['smrEnkiHeatImmune']() != 1 or m['smrEnkiBlinkDogMove']() != 1 or m['smrEnkiTeleportWaterOnly']() != 1"
+  },
+  {
+   "note": "the Enki mace ethics and the water armor",
+   "expr": "m['smrEnkiMaceEthereal']() != 1 or m['smrEnkiMaceNeverHarmLN']() != 1 or m['smrEnkiWaterArmorAbsorb']() != 1 or m['smrEnkiAlwaysGreen']() != 1 or m['smrEnkiShapeChange']() != 1 or m['smrEnkiWaterDeadSummon']() != 1 or m['smrEnkiSummonOnceEver']() != 1 or m['smrEnkiPatronJewelers']() != 1"
+  },
+  {
+   "note": "the Inanna axe, statues and the dead she has killed",
+   "expr": "m['smrInannaAxeDmg']() != 25 or m['smrInannaAxeArmorDust']() != 1 or m['smrInannaAxeNeverSurprised']() != 1 or m['smrInannaAnimateStatues']() != 1 or m['smrInannaSummonDeadKilled']() != 1 or m['smrInannaShapeChange']() != 1 or m['smrInannaBreastPlates']() != 1"
+  },
+  {
+   "note": "the Inanna aid, the fickle altars and the seven flying lions",
+   "expr": "m['smrInannaAidBraveWarriors']() != 1 or m['smrInannaAidNeverHit']() != 1 or m['smrInannaAidAlwaysSave']() != 1 or m['smrInannaAidNeverMiss']() != 1 or m['smrInannaAidMeleeDuration']() != 1 or m['smrInannaFickleWeapons']() != 1 or m['smrInannaLionsCount']() != 7 or m['smrInannaLionMv']() != 30 or m['smrInannaLionFlight']() != 1"
+  },
+  {
+   "note": "the Ki summons, the luck of the gods and the druid clergy",
+   "expr": "m['smrKiAnimalCount']() != 100 or m['smrKiLuckHours']() != 24 or m['smrKiAnimalSummon']() != 1 or m['smrKiSpeciesOncePerWeek']() != 1 or m['smrKiOneTypeAtATime']() != 1 or m['smrKiLocateAnything']() != 1 or m['smrKiLuckOfGods']() != 1 or m['smrKiLuckHalfDamage']() != 1 or m['smrKiClericsDruids']() != 1 or m['smrKiGreatDruidComms']() != 1 or m['smrKiUntouchedByThrown']() != 1 or m['smrKiShapeChangeNonMonster']() != 1"
+  },
+  {
+   "note": "the Nanna-Sin glow, the negations and the jet black axe",
+   "expr": "m['smrNannaSinGlowFeet']() != 10 or m['smrNannaSinBlueGlow']() != 1 or m['smrNannaSinNegateHeat']() != 1 or m['smrNannaSinNegateCold']() != 1 or m['smrNannaSinNegateElectricity']() != 1 or m['smrNannaSinNegateLight']() != 1 or m['smrNannaSinNegateDarkness']() != 1 or m['smrNannaSinAxePlus']() != 3 or m['smrNannaSinAxeDmg']() != 30 or m['smrNannaSinSwordOfSharpness']() != 1"
+  },
+  {
+   "note": "the Nin-hursag gravity and the withering",
+   "expr": "m['smrNinhursagGravityControl']() != 1 or m['smrNinhursagGiftOfFlight']() != 1 or m['smrNinhursagWitherHated']() != 1 or m['smrNinhursagWitherSpellLevel']() != 9 or m['smrNinhursagWitherCharges']() != 3 or m['smrNinhursagWitherWishComponents']() != 1 or m['smrNinhursagDarkSkinnedFemale']() != 1"
+  },
+  {
+   "note": "the Utu glow, the light rays and the sun-bits",
+   "expr": "m['smrUtuGlowRadiusFeet']() != 10 or m['smrUtuGlowStrikeMod']() != 2 or m['smrUtuRayCount']() != 2 or m['smrUtuRayDmg']() != 20 or m['smrUtuSunbitsRangeMiles']() != 2 or m['smrUtuSunbitsDmg']() != 50 or m['smrUtuUndeadWither']() != 1 or m['smrUtuRegenerateHeat']() != 1 or m['smrUtuHeatThreshold']() != 100 or m['smrUtuPolymorphDirt']() != 1 or m['smrUtuPolymorphSaveMod']() != 3 or m['smrUtuAuraMelt']() != 1 or m['smrUtuHumanForm']() != 1"
+  },
+  {
+   "note": "the temple doctrine (the holy days, the punishment ladder, the dress)",
+   "expr": "m['smrHolyDaySeventh']() != 7 or m['smrHolyDayFifteenth']() != 15 or m['smrHolyDayTwentyFifth']() != 25 or m['smrTroubleLadderCount']() != 15 or m['smrPunishmentGastro']() != 1 or m['smrPunishmentTroubles']() != 1 or m['smrPunishmentDeath']() != 1 or m['smrSacrificeErases']() != 1 or m['smrNewMoonSacrifice']() != 1 or m['smrFoodBurntNightly']() != 1 or m['smrShavenClerics']() != 1 or m['smrWhiteKiltRobes']() != 1 or m['smrConicalHats']() != 1 or m['smrBorderIndicatesPatron']() != 1"
+  },
+  {
+   "note": "the city-temple structure and the priest-king",
+   "expr": "m['smrCityPatronDeity']() != 1 or m['smrKingHighPriest']() != 1 or m['smrSteppedPyramidTemples']() != 1 or m['smrZigguratRedBrick']() != 1 or m['smrInnerShrineImage']() != 1 or m['smrAltarTableGifts']() != 1 or m['smrCentralCourtyard']() != 1 or m['smrSideChapels']() != 1 or m['smrRightAngleEntrance']() != 1 or m['smrClericItemBurning']() != 1 or m['smrHumanSacrifice']() != 1 or m['smrCondemnedCriminals']() != 1"
+  },
+  {
+   "note": "the cloud chariots (the pantheon-wide doctrine of print p. 127)",
+   "expr": "m['smrCloudChariotMove']() != 24 or m['smrCloudChariotsAll']() != 1 or m['smrCloudChariotRadiance']() != 1 or m['smrCloudChariotImpress']() != 1 or m['smrCloudChariotTeleport']() != 1 or m['smrCloudChariotIndestructible']() != 1 or m['smrCloudChariotCarry']() != 1 or m['smrGodsAppearOnChariots']() != 1"
+  },
+  {
+   "note": "the Babylonian overlap note and the close gods",
+   "expr": "m['smrBabylonianOverlap']() != 1 or m['smrGodsCloseToWorshipers']() != 1 or m['smrSacrificeItemsAltars']() != 1"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "inline_count": 196,
+ "data_files": [],
+ "regtest": "regtest.cpp"
+}
