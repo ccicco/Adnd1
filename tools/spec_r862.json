@@ -1,0 +1,4733 @@
+{
+ "round": 862,
+ "prefix": "mlb",
+ "title": "the Melnibonean mythos",
+ "header_file": "rules/mlb.h",
+ "audit_file": "rules/audits/r862_batch.h",
+ "audit_label": "R862 Melnibonean mythos audit",
+ "audit_comment": "THE MELNIBONEAN MYTHOS - the D&DG walk round fourteen, print pp. 86-95, the monster-heaviest round of the walk: fourteen of the thirty-three rows are monsters, from the Assassinator of the Gods to the Vulture Lion. The headline adjudication: the ELRIC DUAL PRINT - the emperor carries the walk's only dual armor class (6 and minus 6, the latter the Stormbringer wield-state) and a dual move (6 and 15); his printed Standard-or-85% magic resistance pins 0 with the 85 riding the Stormbringer consts. The SEE BELOW 99 PAIRS (the egp Isis precedent): Grome and Nuru-ah print See below on both the cleric and magic-user lines, Kakatal, Misha and Straasha on the magic-user/illusionist line - all pinned 99. The VARIABLE PINS: Arioch prints both SIZE: Variable and CHARISMA: Variable - both pinned 0 with col comments. The negative charisma cells: Nnuurrr and Pyaray print CH: -6. The flagged odd prints pinned as printed: the Haaashastaak and Nnuurrr W: 3 wisdom cells. The BARE AND STRAY SIZE PRINTS: Fileet the bare L pinned 0 (the R861 bare-M precedent), the Vampire Trees the L-plus-25-feet-tall print read as 300 with the stray plus noted. The XP romans of the monster rows verified: VIII/6,200 Assassinator flat, X/21,450 Quaolnargn flat, VIII/6,391 Mordagz flat, and the per-hit-point rows Clakar VI/650+10, Dharzi II/90+5, Myyrrhn III/125+4, Nihrain and Oonai VII/1,950+14, Mist Giant VIII/4,950+16, Vampire Trees VIII/3,850+16, Vulture Lion IX/5,600+20; the Kelmain Variable XP rides a bool. The fraction fingerprint: three X 1/2 cells - Moonglum 66, Theleb K'aarna 66, Yyrkoon 78. The ELENOIN-GRAHUK ENMITY PAIR: the hereditary enemy flags, the grk printed-rivalry precedent, the round's only rivalry print. The psionic pipes: the w10 single pipe I of Arioch, Darnizhaan, Meerclar and Nuru-ah, Pyaray II, the w49 VI of Grome, Haaashastaak, Misha, Roofdrak and Straasha.",
+ "census_before": 784,
+ "include_after": "#include \"rules/jpn.h\"  // R861: the Japanese mythos",
+ "include_comment": "the Melnibonean mythos",
+ "audit_anchor": "#include \"rules/audits/r861_batch.h\"  // R861: R861 Japanese mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Melnibonean mythos** (pp. 86-95)",
+   "to": "- [x] **Melnibonean mythos** (pp. 86-95)",
+   "note": "the Melnibonean mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 14,
+  "open": 10
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Melnibonean mythos - the D&DG walk round fourteen, print pp. 86-95: thirty-three beings from Elric the albino emperor of Melnibone through Yyrkoon the evil cousin, the three greater gods (Arioch, Donblas, Xiombarg), the six lesser gods (Darnizhaan, Grome, Kakatal, Misha, Pyaray, Straasha), the six demigod master types of the demi-planes (Fileet, Haaashastaak, Meerclar, Nnuurrr, Nuru-ah, Roofdrak), the four heroes (Elric, Moonglum, Theleb K'aarna, Yyrkoon) and fourteen monsters across thirteen plane codes.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 087-096; the second printing) with the column-split tsv dumps; the collation voice: the archive.org 1st-print derivative (deities-demigods-1st-print) - the chocr char-level word geometry at 600dpi plus the djvu.xml word geometry. The adjudications: the Elric 6/minus 6 dual armor class and 6/15 dual move with the Standard-or-85 magic resistance pinned 0, the See below 99 pairs (Grome, Nuru-ah, Kakatal, Misha, Straasha), the Arioch Variable size and charisma pins 0, the Nnuurrr and Pyaray minus 6 charisma cells, the Haaashastaak and Nnuurrr wisdom 3 odd pins, the Fileet bare L and the Vampire Trees stray plus size prints, the fourteen monster XP roman decodes, the three fraction cells (Moonglum 66, Theleb 66, Yyrkoon 78) and the Elenoin-Grahuk enmity pair."
+ },
+ "consts": [
+  {
+   "name": "mlbRound",
+   "value": 862,
+   "comment": "the Melnibonean mythos round: the D&DG walk round fourteen, print pp. 86-95"
+  },
+  {
+   "name": "mlbPrintStart",
+   "value": 86,
+   "comment": "the first print page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "mlbPrintEnd",
+   "value": 95,
+   "comment": "the last print page of the mythos"
+  },
+  {
+   "name": "mlbBeingCount",
+   "value": 33,
+   "comment": "the thirty-three beings of the mythos (Elric through Yyrkoon: three greater, six lesser, six demigods, four heroes, fourteen monsters)"
+  },
+  {
+   "name": "mlbTableCount",
+   "value": 4,
+   "comment": "the four grids of the round (combat, class, ability, roster)"
+  },
+  {
+   "name": "mlbChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "mlbRegistryFloor",
+   "value": 995,
+   "comment": "the ddg registry floor (the wrap78 record seating)"
+  },
+  {
+   "name": "mlbCbtRows",
+   "value": 33,
+   "comment": "the combat grid rows (Elric through Yyrkoon, the print order)"
+  },
+  {
+   "name": "mlbClsRows",
+   "value": 33,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "mlbAbiRows",
+   "value": 33,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "mlbRosRows",
+   "value": 33,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "mlbPlaneCount",
+   "value": 13,
+   "comment": "the plane codes (none, Prime Material, Special, the four elemental planes of the four elemental lords, the six demi-plane species courts: birds, reptiles, cats, insects, cattle, dogs)"
+  },
+  {
+   "name": "mlbGreaterCount",
+   "value": 3,
+   "comment": "the three greater gods (Arioch, Donblas, Xiombarg)"
+  },
+  {
+   "name": "mlbLesserCount",
+   "value": 6,
+   "comment": "the six lesser gods (Darnizhaan, Grome, Kakatal, Misha, Pyaray, Straasha)"
+  },
+  {
+   "name": "mlbDemigodCount",
+   "value": 6,
+   "comment": "the six demigods (Fileet, Haaashastaak, Meerclar, Nnuurrr, Nuru-ah, Roofdrak - the master types of the demi-planes)"
+  },
+  {
+   "name": "mlbHeroCount",
+   "value": 4,
+   "comment": "the four heroes (Elric, Moonglum, Theleb K'aarna, Yyrkoon)"
+  },
+  {
+   "name": "mlbMonsterCount",
+   "value": 14,
+   "comment": "the fourteen monster rows (the Assassinator, the Clakar, the Dharzi, the Elenoin, the Grahuk, the Kelmain, the Mist Giant, Mordagz, the Myyrrhn, the Nihrain, the Oonai, Quaolnargn, the Vampire Trees, the Vulture Lion) - the monster-heaviest round of the walk"
+  },
+  {
+   "name": "mlbInEachCount",
+   "value": 4,
+   "comment": "the four printed Nth level in each cells (Arioch MU/I 20, Darnizhaan MU/I 15, Donblas MU/I 30, Pyaray MU/I 10)"
+  },
+  {
+   "name": "mlbEnmityCount",
+   "value": 2,
+   "comment": "the Elenoin-Grahuk hereditary enemy pair (the grk printed-rivalry precedent)"
+  },
+  {
+   "name": "mlbPaladinCount",
+   "value": 0,
+   "comment": "no paladins this round"
+  },
+  {
+   "name": "mlbPsiClassKinds",
+   "value": 3,
+   "comment": "the psionic class kinds printed (I, II, VI)"
+  },
+  {
+   "name": "mlbHalfFootCount",
+   "value": 3,
+   "comment": "the three X 1/2 foot size cells (Moonglum 66, Theleb K'aarna 66, Yyrkoon 78)"
+  },
+  {
+   "name": "mlbArtifactCount",
+   "value": 3,
+   "comment": "the three artifacts of the mythos intro (the Arrows of Law, the Black Crystal Door, the Nanorion Stones)"
+  },
+  {
+   "name": "mlbChaosArrows",
+   "value": 8,
+   "comment": "the Chaos symbol: eight red arrows issuing from a small circle"
+  },
+  {
+   "name": "mlbLawArrows",
+   "value": 1,
+   "comment": "the Law symbol: a single amber arrow pointing up"
+  },
+  {
+   "name": "mlbArrowsOfLawPerQuiver",
+   "value": 20,
+   "comment": "the Arrows of Law: twenty to a quiver"
+  },
+  {
+   "name": "mlbNanorionHeartPct",
+   "value": 5,
+   "comment": "the Nanorion Stones: a 5% chance of finding one as the heart of a demon"
+  },
+  {
+   "name": "mlbNanorionDemonHp",
+   "value": 80,
+   "comment": "the demon must have over 80 hit points"
+  },
+  {
+   "name": "mlbNanorionUsesMax",
+   "value": 4,
+   "comment": "the stone functions 1-4 times"
+  },
+  {
+   "name": "mlbNanorionClericLevel",
+   "value": 15,
+   "comment": "only clerics of 15th or higher level can use a Nanorion Stone"
+  },
+  {
+   "name": "mlbStormbringerPlus",
+   "value": 5,
+   "comment": "Stormbringer: a +5 rune sword"
+  },
+  {
+   "name": "mlbStormbringerInt",
+   "value": 18,
+   "comment": "Stormbringer: intelligence 18"
+  },
+  {
+   "name": "mlbStormbringerEgo",
+   "value": 20,
+   "comment": "Stormbringer: ego 20"
+  },
+  {
+   "name": "mlbStormbringerLevelsPerGain",
+   "value": 2,
+   "comment": "per two levels drained"
+  },
+  {
+   "name": "mlbStormbringerHpPerGain",
+   "value": 5,
+   "comment": "Elric gains 5 hit points"
+  },
+  {
+   "name": "mlbStormbringerStrPerGain",
+   "value": 1,
+   "comment": "and one strength point"
+  },
+  {
+   "name": "mlbStormbringerMaxStr",
+   "value": 23,
+   "comment": "the Stormbringer strength ceiling"
+  },
+  {
+   "name": "mlbStormbringerSatietyLevels",
+   "value": 200,
+   "comment": "the 200-level satiety"
+  },
+  {
+   "name": "mlbStormbringerSatietyHours",
+   "value": 8,
+   "comment": "the satiety lasts 8 hours"
+  },
+  {
+   "name": "mlbStormbringerLastGainTurns",
+   "value": 10,
+   "comment": "the last 10 turns of the satiety are gained"
+  },
+  {
+   "name": "mlbStormbringerSummonPct",
+   "value": 60,
+   "comment": "the 60% chance of summoning Stormbringer"
+  },
+  {
+   "name": "mlbStormbringerMrPct",
+   "value": 85,
+   "comment": "85% magic resistance while wielding Stormbringer"
+  },
+  {
+   "name": "mlbStormbringerMoveInches",
+   "value": 15,
+   "comment": "the 15 inch move while wielding Stormbringer"
+  },
+  {
+   "name": "mlbStormbringerAc",
+   "value": 6,
+   "comment": "armor class 6 while wielding Stormbringer"
+  },
+  {
+   "name": "mlbStormbringerDancePct",
+   "value": 15,
+   "comment": "the 15% dancing-sword chance"
+  },
+  {
+   "name": "mlbStormbringerFearHd",
+   "value": 5,
+   "comment": "creatures of less than 5 hit dice"
+  },
+  {
+   "name": "mlbStormbringerFearFeet",
+   "value": 30,
+   "comment": "within 30 feet flee in panic"
+  },
+  {
+   "name": "mlbRingSummonPct",
+   "value": 70,
+   "comment": "with the ring: 70% to summon one aid plus minions"
+  },
+  {
+   "name": "mlbRingControlPct",
+   "value": 80,
+   "comment": "with the ring: 80% to control the aid"
+  },
+  {
+   "name": "mlbRingBareSummonPct",
+   "value": 20,
+   "comment": "without the ring: 20% to summon"
+  },
+  {
+   "name": "mlbRingBareControlPct",
+   "value": 30,
+   "comment": "without the ring: 30% to control"
+  },
+  {
+   "name": "mlbElricPotionChancePct",
+   "value": 85,
+   "comment": "an 85% chance the potions and herbs restore his strength and constitution"
+  },
+  {
+   "name": "mlbElricPotionStatMax",
+   "value": 15,
+   "comment": "up to 15"
+  },
+  {
+   "name": "mlbAriochDancePct",
+   "value": 15,
+   "comment": "the 15% dancing-sword chance of Arioch"
+  },
+  {
+   "name": "mlbAssassinatorWingsFeet",
+   "value": 50,
+   "comment": "the 50-foot wings"
+  },
+  {
+   "name": "mlbAssassinatorTalonHd",
+   "value": 11,
+   "comment": "the talons attack as an 11 hit dice monster"
+  },
+  {
+   "name": "mlbAssassinatorFoulPct",
+   "value": 50,
+   "comment": "the 50% chance a wing fouls the opponent's weapon that round"
+  },
+  {
+   "name": "mlbAssassinatorHitDice",
+   "value": 8,
+   "comment": "the XP value: VIII"
+  },
+  {
+   "name": "mlbAssassinatorXpBase",
+   "value": 6200,
+   "comment": "XP: 6,200 flat"
+  },
+  {
+   "name": "mlbClakarRendMax",
+   "value": 8,
+   "comment": "claw/claw plus a rend of 1-8 if both claws hit"
+  },
+  {
+   "name": "mlbClakarHitDice",
+   "value": 6,
+   "comment": "the XP value: VI"
+  },
+  {
+   "name": "mlbClakarXpBase",
+   "value": 650,
+   "comment": "XP: 650 plus"
+  },
+  {
+   "name": "mlbClakarXpPerHp",
+   "value": 10,
+   "comment": "10 per hit point"
+  },
+  {
+   "name": "mlbDharziScentDays",
+   "value": 7,
+   "comment": "a scent up to a week old"
+  },
+  {
+   "name": "mlbDharziClawMax",
+   "value": 4,
+   "comment": "claw/claw/bite: 1-4/1-4/2-12"
+  },
+  {
+   "name": "mlbDharziBiteMax",
+   "value": 12,
+   "comment": "the bite ceiling of the claw/claw/bite print"
+  },
+  {
+   "name": "mlbDharziHitDice",
+   "value": 2,
+   "comment": "the XP value: II"
+  },
+  {
+   "name": "mlbDharziXpBase",
+   "value": 90,
+   "comment": "XP: 90 plus"
+  },
+  {
+   "name": "mlbDharziXpPerHp",
+   "value": 5,
+   "comment": "5 per hit point"
+  },
+  {
+   "name": "mlbDarnizhaanDiggerPct",
+   "value": 5,
+   "comment": "a 5% chance of attacking those digging deeper than 100 feet"
+  },
+  {
+   "name": "mlbDarnizhaanDiggerFeet",
+   "value": 100,
+   "comment": "the deep-digger depth trigger"
+  },
+  {
+   "name": "mlbDarnizhaanFistMax",
+   "value": 60,
+   "comment": "the fists: 6-60 each"
+  },
+  {
+   "name": "mlbDonblasWorshipLevel",
+   "value": 12,
+   "comment": "the worship threshold level"
+  },
+  {
+   "name": "mlbDonblasRodDmgMax",
+   "value": 30,
+   "comment": "the rod: 3-30 damage"
+  },
+  {
+   "name": "mlbElenoinGrahukPct",
+   "value": 5,
+   "comment": "a 5% chance that Grahluks appear where they are summoned"
+  },
+  {
+   "name": "mlbElenoinHitDice",
+   "value": 7,
+   "comment": "the XP value: VII"
+  },
+  {
+   "name": "mlbElenoinXpBase",
+   "value": 1670,
+   "comment": "XP: 1,670 flat"
+  },
+  {
+   "name": "mlbGrahukStrength",
+   "value": 22,
+   "comment": "strength 22"
+  },
+  {
+   "name": "mlbGrahukHitDice",
+   "value": 8,
+   "comment": "the XP value: VIII"
+  },
+  {
+   "name": "mlbGrahukXpBase",
+   "value": 6650,
+   "comment": "XP: 6,650 flat"
+  },
+  {
+   "name": "mlbFileetWingspanFeet",
+   "value": 120,
+   "comment": "the 120-foot wingspan"
+  },
+  {
+   "name": "mlbFileetBirdsMax",
+   "value": 100,
+   "comment": "calls 1-100 predatory birds"
+  },
+  {
+   "name": "mlbGromeEarthSpellLevel",
+   "value": 50,
+   "comment": "any earth-related spell as a 50th level caster (plant and animal growth too)"
+  },
+  {
+   "name": "mlbGromeElementalMax",
+   "value": 20,
+   "comment": "summons 1-20 earth elementals of 16 hit dice"
+  },
+  {
+   "name": "mlbGromeElementalHd",
+   "value": 16,
+   "comment": "the summoned elemental hit dice"
+  },
+  {
+   "name": "mlbHaaashastaakBiteMax",
+   "value": 70,
+   "comment": "the bite: 7-70"
+  },
+  {
+   "name": "mlbKakatalFireSpellLevel",
+   "value": 30,
+   "comment": "all fire spells as a 30th level caster"
+  },
+  {
+   "name": "mlbKakatalHeatDmgMax",
+   "value": 40,
+   "comment": "his body heat does 4-40 within 20 feet"
+  },
+  {
+   "name": "mlbKakatalHeatFeet",
+   "value": 20,
+   "comment": "the body-heat radius"
+  },
+  {
+   "name": "mlbKakatalFistMax",
+   "value": 48,
+   "comment": "the flaming fist: 6-48"
+  },
+  {
+   "name": "mlbKakatalElementalMax",
+   "value": 10,
+   "comment": "summons 1-10 fire elementals of 16 hit dice"
+  },
+  {
+   "name": "mlbKakatalElementalHd",
+   "value": 16,
+   "comment": "the summoned elemental hit dice"
+  },
+  {
+   "name": "mlbKelmainTroopMin",
+   "value": 10,
+   "comment": "armies of 10 to 10,000"
+  },
+  {
+   "name": "mlbKelmainTroopMax",
+   "value": 10000,
+   "comment": "the army size ceiling"
+  },
+  {
+   "name": "mlbKelmainLeaderLevelMax",
+   "value": 8,
+   "comment": "one 8th level leader per 10,000"
+  },
+  {
+   "name": "mlbKelmainLeaderLevelMin",
+   "value": 2,
+   "comment": "a 2nd level leader per 5 troops"
+  },
+  {
+   "name": "mlbMeerclarClawMax",
+   "value": 72,
+   "comment": "the claws: 6-72"
+  },
+  {
+   "name": "mlbMeerclarBiteMax",
+   "value": 100,
+   "comment": "the bite: 10-100"
+  },
+  {
+   "name": "mlbMistGiantArms",
+   "value": 4,
+   "comment": "four arms with talons"
+  },
+  {
+   "name": "mlbMistGiantInvisiblePct",
+   "value": 90,
+   "comment": "90% invisible in fog or mist"
+  },
+  {
+   "name": "mlbMistGiantSurpriseMax",
+   "value": 5,
+   "comment": "surprises on 1-5 on d6"
+  },
+  {
+   "name": "mlbMistGiantHitDice",
+   "value": 12,
+   "comment": "the XP value: VIII"
+  },
+  {
+   "name": "mlbMistGiantXpBase",
+   "value": 4950,
+   "comment": "XP: 4,950 plus"
+  },
+  {
+   "name": "mlbMistGiantXpPerHp",
+   "value": 16,
+   "comment": "16 per hit point"
+  },
+  {
+   "name": "mlbMishaWhirlwindInches",
+   "value": 30,
+   "comment": "the 30-inch-tall whirlwind"
+  },
+  {
+   "name": "mlbMishaWhirlwindRounds",
+   "value": 3,
+   "comment": "formed in 3 melee rounds"
+  },
+  {
+   "name": "mlbMishaWhirlwindBottomInches",
+   "value": 6,
+   "comment": "6 inches at the bottom"
+  },
+  {
+   "name": "mlbMishaWhirlwindTopInches",
+   "value": 18,
+   "comment": "18 inches at the top"
+  },
+  {
+   "name": "mlbMishaWhirlwindDmgMax",
+   "value": 60,
+   "comment": "the whirlwind: 6-60"
+  },
+  {
+   "name": "mlbMishaStrikeMax",
+   "value": 64,
+   "comment": "the strike: 8-64"
+  },
+  {
+   "name": "mlbMishaElementalMax",
+   "value": 20,
+   "comment": "summons 1-20 air elementals of 16 hit dice"
+  },
+  {
+   "name": "mlbMishaElementalHd",
+   "value": 16,
+   "comment": "the summoned elemental hit dice"
+  },
+  {
+   "name": "mlbMishaWeatherLevel",
+   "value": 20,
+   "comment": "weather and wind spells as a 20th level magic-user, druid or cleric"
+  },
+  {
+   "name": "mlbMordagzShieldFeet",
+   "value": 5,
+   "comment": "a 5-foot round shield bearing the eight-arrowed Chaos symbol"
+  },
+  {
+   "name": "mlbMordagzHitDice",
+   "value": 8,
+   "comment": "the XP value: VIII"
+  },
+  {
+   "name": "mlbMordagzXpBase",
+   "value": 6391,
+   "comment": "XP: 6,391 flat"
+  },
+  {
+   "name": "mlbMyyrrnWingspanFeet",
+   "value": 10,
+   "comment": "a 10-foot wingspan"
+  },
+  {
+   "name": "mlbMyyrrnFleeBelowHp",
+   "value": 5,
+   "comment": "flee if below 5 hit points"
+  },
+  {
+   "name": "mlbMyyrrnHitDice",
+   "value": 3,
+   "comment": "the XP value: III"
+  },
+  {
+   "name": "mlbMyyrrnXpBase",
+   "value": 125,
+   "comment": "XP: 125 plus"
+  },
+  {
+   "name": "mlbMyyrrnXpPerHp",
+   "value": 4,
+   "comment": "4 per hit point"
+  },
+  {
+   "name": "mlbNnuurrrObeyPct",
+   "value": 55,
+   "comment": "a 55% chance of obeying, then tries to kill the summoner"
+  },
+  {
+   "name": "mlbNnuurrrFearLevel",
+   "value": 8,
+   "comment": "those below 8th level flee in fear, no save"
+  },
+  {
+   "name": "mlbNnuurrrPoisonSavePenalty",
+   "value": 4,
+   "comment": "the poison: save at -4 or die"
+  },
+  {
+   "name": "mlbNnuurrrDrainMax",
+   "value": 40,
+   "comment": "4-40 blood drain even on a successful save"
+  },
+  {
+   "name": "mlbNnuurrrWingspanFeet",
+   "value": 140,
+   "comment": "the 140-foot wingspan (a giant mosquito)"
+  },
+  {
+   "name": "mlbNihrainEtherealPct",
+   "value": 25,
+   "comment": "a 25% chance of shifting ethereal when hit (the hit inflicts nothing)"
+  },
+  {
+   "name": "mlbNihrainGallopHours",
+   "value": 48,
+   "comment": "gallops 48 hours over water, land and chasms without rest"
+  },
+  {
+   "name": "mlbNihrainHitDice",
+   "value": 7,
+   "comment": "the XP value: VII"
+  },
+  {
+   "name": "mlbNihrainXpBase",
+   "value": 1950,
+   "comment": "XP: 1,950 plus"
+  },
+  {
+   "name": "mlbNihrainXpPerHp",
+   "value": 14,
+   "comment": "14 per hit point"
+  },
+  {
+   "name": "mlbOonaiFormHdMax",
+   "value": 10,
+   "comment": "cannot exceed 10 hit dice forms"
+  },
+  {
+   "name": "mlbOonaiHitDice",
+   "value": 7,
+   "comment": "the XP value: VII"
+  },
+  {
+   "name": "mlbOonaiXpBase",
+   "value": 1950,
+   "comment": "XP: 1,950 plus"
+  },
+  {
+   "name": "mlbOonaiXpPerHp",
+   "value": 14,
+   "comment": "14 per hit point"
+  },
+  {
+   "name": "mlbQuaolnargnSaveTarget",
+   "value": 3,
+   "comment": "a saving throw of 3 for anything else"
+  },
+  {
+   "name": "mlbQuaolnargnDrainLevels",
+   "value": 4,
+   "comment": "drains 4 energy levels per round, no save"
+  },
+  {
+   "name": "mlbQuaolnargnBiteMax",
+   "value": 10,
+   "comment": "plus 1-10 damage"
+  },
+  {
+   "name": "mlbQuaolnargnHitDice",
+   "value": 10,
+   "comment": "the XP value: X"
+  },
+  {
+   "name": "mlbQuaolnargnXpBase",
+   "value": 21450,
+   "comment": "XP: 21,450 flat"
+  },
+  {
+   "name": "mlbPyarayTentacles",
+   "value": 6,
+   "comment": "six tentacles"
+  },
+  {
+   "name": "mlbPyarayTentacleMax",
+   "value": 40,
+   "comment": "5-40 each"
+  },
+  {
+   "name": "mlbPyarayGemHp",
+   "value": 10,
+   "comment": "will not lose the last 10 hit points until the gem is crushed"
+  },
+  {
+   "name": "mlbRoofdrakMaceMax",
+   "value": 90,
+   "comment": "the mace: 9-90"
+  },
+  {
+   "name": "mlbRoofdrakWolfMax",
+   "value": 100,
+   "comment": "summons 1-100 dire wolves"
+  },
+  {
+   "name": "mlbStraashaWaterLevel",
+   "value": 20,
+   "comment": "all water spells at 20th level"
+  },
+  {
+   "name": "mlbStraashaKindredMin",
+   "value": 3,
+   "comment": "summons 3-18 kindred"
+  },
+  {
+   "name": "mlbStraashaKindredMax",
+   "value": 18,
+   "comment": "the kindred summon ceiling"
+  },
+  {
+   "name": "mlbStraashaWaveMax",
+   "value": 48,
+   "comment": "two waves of water per round, 8-48 each, out of thin air"
+  },
+  {
+   "name": "mlbVampTreeLeafDmgMax",
+   "value": 8,
+   "comment": "2-8 damage per round per attached leaf"
+  },
+  {
+   "name": "mlbVampTreeLeafHp",
+   "value": 2,
+   "comment": "the leaves: armor class 9 with 2 hit points"
+  },
+  {
+   "name": "mlbVampTreeLeafAc",
+   "value": 9,
+   "comment": "the leaf armor class"
+  },
+  {
+   "name": "mlbVampTreeLeafControlMax",
+   "value": 10,
+   "comment": "the tree controls at most 10 leaves"
+  },
+  {
+   "name": "mlbVampTreeRangeYards",
+   "value": 120,
+   "comment": "the leaves return when the victim is beyond 120 yards or bloodless"
+  },
+  {
+   "name": "mlbVampTreeFireSavePenalty",
+   "value": 2,
+   "comment": "fire attacks: save at -2"
+  },
+  {
+   "name": "mlbVampTreeHitDice",
+   "value": 8,
+   "comment": "the XP value: VIII"
+  },
+  {
+   "name": "mlbVampTreeXpBase",
+   "value": 3850,
+   "comment": "XP: 3,850 plus"
+  },
+  {
+   "name": "mlbVampTreeXpPerHp",
+   "value": 16,
+   "comment": "16 per hit point"
+  },
+  {
+   "name": "mlbThelebAncestorSpellLevel",
+   "value": 7,
+   "comment": "a special 7th level spell from his ancestors"
+  },
+  {
+   "name": "mlbVultureLionTalonMax",
+   "value": 24,
+   "comment": "the talons: 4-24/4-24"
+  },
+  {
+   "name": "mlbVultureLionBiteMax",
+   "value": 18,
+   "comment": "the beak: 3-18"
+  },
+  {
+   "name": "mlbVultureLionHitDice",
+   "value": 9,
+   "comment": "the XP value: IX"
+  },
+  {
+   "name": "mlbVultureLionXpBase",
+   "value": 5600,
+   "comment": "XP: 5,600 plus"
+  },
+  {
+   "name": "mlbVultureLionXpPerHp",
+   "value": 20,
+   "comment": "20 per hit point"
+  },
+  {
+   "name": "mlbXiombargAxePlus",
+   "value": 4,
+   "comment": "the +4 double-edged battle axe, glowing light blue"
+  },
+  {
+   "name": "mlbXiombargAxeMax",
+   "value": 42,
+   "comment": "the axe: 7-42 plus strength bonus"
+  },
+  {
+   "name": "mlbXiombargPlusToHit",
+   "value": 3,
+   "comment": "+3 weapon to hit"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mlbGodsManyPlanes",
+   "value": true,
+   "comment": "the gods of the mythos occupy many planes at the same time, in thousands of bodies"
+  },
+  {
+   "name": "mlbAvatarConnection",
+   "value": true,
+   "comment": "all the bodies are connected and aware of each other"
+  },
+  {
+   "name": "mlbOneClassAttribute",
+   "value": true,
+   "comment": "a god materializing on a lower plane has only one class attribute"
+  },
+  {
+   "name": "mlbFullPowersHomePlane",
+   "value": true,
+   "comment": "the full powers only in the home plane"
+  },
+  {
+   "name": "mlbOtherChaosGodsNamed",
+   "value": true,
+   "comment": "the other chaos gods named: Haborym, Balan, Maluk, Stortor the Old, Baloan, Marthim, Aesma, Alastor, Soebas, Verdelet, Mizilfkm, Balo the Jester, Checkalakh of the Flame Body"
+  },
+  {
+   "name": "mlbLawfulGodsSilkForm",
+   "value": true,
+   "comment": "the lawful gods appear as slim, perfectly formed humans in silks with feather-like armor, wielding slender weapons of incredible power"
+  },
+  {
+   "name": "mlbMasterTypesDoctrine",
+   "value": true,
+   "comment": "the master types: every animal species has a ruler on its own demi-plane (a half-world)"
+  },
+  {
+   "name": "mlbDogsWorshipOwnImage",
+   "value": true,
+   "comment": "the dogs worship their own image, so their ruler looks like a dog (Roofdrak)"
+  },
+  {
+   "name": "mlbArrowsOfLawSlayChaotic",
+   "value": true,
+   "comment": "an arrow always hits and kills one chaotic creature (a saving throw vs death applies)"
+  },
+  {
+   "name": "mlbArrowsOfLawNormalRanges",
+   "value": true,
+   "comment": "the normal longbow ranges apply to the Arrows of Law"
+  },
+  {
+   "name": "mlbCrystalDoorUnbreakable",
+   "value": true,
+   "comment": "the Black Crystal Door: interdimensional metal that will not break"
+  },
+  {
+   "name": "mlbCrystalDoorMagicImmune",
+   "value": true,
+   "comment": "the Black Crystal Door is immune to magic"
+  },
+  {
+   "name": "mlbCrystalDoorOpensOnWord",
+   "value": true,
+   "comment": "the Black Crystal Door opens only on the proper word"
+  },
+  {
+   "name": "mlbCrystalDoorDrainsSpells",
+   "value": true,
+   "comment": "a magic-user trying to open the Black Crystal Door has all spells drained"
+  },
+  {
+   "name": "mlbCrystalDoorDrainsDevices",
+   "value": true,
+   "comment": "devices used against the Black Crystal Door are permanently drained"
+  },
+  {
+   "name": "mlbNanorionRaisePower",
+   "value": true,
+   "comment": "a Nanorion Stone awakens a sleeper or raises the dead"
+  },
+  {
+   "name": "mlbStormbringerDrainsLevels",
+   "value": true,
+   "comment": "Stormbringer drains all the levels of a victim (50% of the time, half the levels otherwise)"
+  },
+  {
+   "name": "mlbStormbringerDevoursSouls",
+   "value": true,
+   "comment": "the souls are devoured: no raise possible"
+  },
+  {
+   "name": "mlbStormbringerEvilRadiance",
+   "value": true,
+   "comment": "the evil moaning and black radiance of Stormbringer"
+  },
+  {
+   "name": "mlbRingOfKingsPowers",
+   "value": true,
+   "comment": "the Ring of Kings: the Actorios gem, a ring of many spell storings, summoning aid and rod-of-rulership-like control"
+  },
+  {
+   "name": "mlbElricAlbino",
+   "value": true,
+   "comment": "the albino weakness of the Melnibonean royal line"
+  },
+  {
+   "name": "mlbElricSwordAltersMakeup",
+   "value": true,
+   "comment": "Stormbringer alters the makeup of his body"
+  },
+  {
+   "name": "mlbAriochElricPatron",
+   "value": true,
+   "comment": "the patron of Elric"
+  },
+  {
+   "name": "mlbAriochNoArmor",
+   "value": true,
+   "comment": "he wears no armor in battle"
+  },
+  {
+   "name": "mlbAriochSwordCancellation",
+   "value": true,
+   "comment": "his sword acts as a rod of cancellation"
+  },
+  {
+   "name": "mlbAriochAnyPlane",
+   "value": true,
+   "comment": "he can appear in any plane"
+  },
+  {
+   "name": "mlbAriochHumanSacrifice",
+   "value": true,
+   "comment": "human sacrifices and his mood decide his aid"
+  },
+  {
+   "name": "mlbAriochHandsomeToAll",
+   "value": true,
+   "comment": "incredibly handsome to any kind of creature"
+  },
+  {
+   "name": "mlbAriochShortTemper",
+   "value": true,
+   "comment": "arrogant with a short temper"
+  },
+  {
+   "name": "mlbMoonglumAmbidextrous",
+   "value": true,
+   "comment": "ambidextrous (a high dexterity): two swords with no penalty with either hand"
+  },
+  {
+   "name": "mlbMoonglumElricCompanion",
+   "value": true,
+   "comment": "the companion and servant of Elric"
+  },
+  {
+   "name": "mlbMoonglumDapper",
+   "value": true,
+   "comment": "dapper, cheerfully slays his attackers"
+  },
+  {
+   "name": "mlbAssassinatorPeacockFeathers",
+   "value": true,
+   "comment": "peacock-like tail feathers"
+  },
+  {
+   "name": "mlbAssassinatorChaosErrand",
+   "value": true,
+   "comment": "sent by the gods of Chaos to kill special enemies"
+  },
+  {
+   "name": "mlbClakarWingedApes",
+   "value": true,
+   "comment": "winged apes, the perfect guards"
+  },
+  {
+   "name": "mlbClakarFearImmune",
+   "value": true,
+   "comment": "immune to magical fear"
+  },
+  {
+   "name": "mlbClakarNeverSurprised",
+   "value": true,
+   "comment": "never surprised"
+  },
+  {
+   "name": "mlbDharziHawkHead",
+   "value": true,
+   "comment": "half bird half dog: a giant hawk head on wolfhound legs"
+  },
+  {
+   "name": "mlbDharziFaultlessTrackers",
+   "value": true,
+   "comment": "faultless trackers by scent"
+  },
+  {
+   "name": "mlbDharziPacks",
+   "value": true,
+   "comment": "they hunt in packs"
+  },
+  {
+   "name": "mlbDarnizhaanDeadGodsKing",
+   "value": true,
+   "comment": "the greatest of the Dead Gods, ruling before the law and chaos gods came"
+  },
+  {
+   "name": "mlbDarnizhaanFearsNewGods",
+   "value": true,
+   "comment": "fears the new gods and will not come near them"
+  },
+  {
+   "name": "mlbDarnizhaanManufacturedImmune",
+   "value": true,
+   "comment": "immune to manufactured items"
+  },
+  {
+   "name": "mlbDonblasIncrediblyBeautiful",
+   "value": true,
+   "comment": "so beautiful that those of less than 12th level fall down and worship regardless of alignment"
+  },
+  {
+   "name": "mlbDonblasDrivenOff",
+   "value": true,
+   "comment": "driven off the Prime Material Plane by the forces of Chaos"
+  },
+  {
+   "name": "mlbDonblasWaitsSummon",
+   "value": true,
+   "comment": "waits on his own plane to be summoned back"
+  },
+  {
+   "name": "mlbDonblasRodOfThree",
+   "value": true,
+   "comment": "his rod: a mace of disruption plus a hammer of thunderbolts plus a rod of lordly might"
+  },
+  {
+   "name": "mlbDonblasComesToFight",
+   "value": true,
+   "comment": "he comes to any plane with the fighting attribute"
+  },
+  {
+   "name": "mlbElenoinSharkTeeth",
+   "value": true,
+   "comment": "tall women, flaming red hair, shark's teeth, two-handed swords"
+  },
+  {
+   "name": "mlbElenoinTenthFighters",
+   "value": true,
+   "comment": "10th level fighters"
+  },
+  {
+   "name": "mlbElenoinHereditaryEnemies",
+   "value": true,
+   "comment": "they fear no enemy save the Grahluks, their hereditary enemies"
+  },
+  {
+   "name": "mlbGrahukGiantApes",
+   "value": true,
+   "comment": "giant apes"
+  },
+  {
+   "name": "mlbGrahukAttackAsFifteen",
+   "value": true,
+   "comment": "attack as 15 hit dice monsters"
+  },
+  {
+   "name": "mlbGrahukNetsAndRopes",
+   "value": true,
+   "comment": "nets, shields and ropes plus their fists"
+  },
+  {
+   "name": "mlbGrahukOnlyGoal",
+   "value": true,
+   "comment": "their only goal is the death of the Elenoin"
+  },
+  {
+   "name": "mlbGrahukSuicide",
+   "value": true,
+   "comment": "they kill themselves after a victory"
+  },
+  {
+   "name": "mlbFileetGoldenEagle",
+   "value": true,
+   "comment": "a 40-foot-tall golden eagle"
+  },
+  {
+   "name": "mlbFileetAvianSight",
+   "value": true,
+   "comment": "she senses anything seen by any avian"
+  },
+  {
+   "name": "mlbFileetAvianHomage",
+   "value": true,
+   "comment": "no human following, but all avian creatures pay homage"
+  },
+  {
+   "name": "mlbGromeKingOfEarth",
+   "value": true,
+   "comment": "the king of the earth elementals"
+  },
+  {
+   "name": "mlbGromeWaterCrossing",
+   "value": true,
+   "comment": "crosses water without penalty"
+  },
+  {
+   "name": "mlbGromeOakForm",
+   "value": true,
+   "comment": "a gnarled, earth-colored oak form"
+  },
+  {
+   "name": "mlbGromeFistBarrier",
+   "value": true,
+   "comment": "no barrier withstands his fist"
+  },
+  {
+   "name": "mlbGromeUndergroundHomage",
+   "value": true,
+   "comment": "earth elementals and underground creatures pay homage"
+  },
+  {
+   "name": "mlbHaaashastaakTyrannosaur",
+   "value": true,
+   "comment": "a giant tyrannosaurus rex"
+  },
+  {
+   "name": "mlbHaaashastaakEatsCaller",
+   "value": true,
+   "comment": "if he cannot send the caller back he eats him"
+  },
+  {
+   "name": "mlbHaaashastaakNeverMisses",
+   "value": true,
+   "comment": "his bite never misses"
+  },
+  {
+   "name": "mlbHaaashastaakWishToReturn",
+   "value": true,
+   "comment": "returning him requires a wish"
+  },
+  {
+   "name": "mlbHaaashastaakReptilianHomage",
+   "value": true,
+   "comment": "revered by all reptilians"
+  },
+  {
+   "name": "mlbHaaashastaakLizardAware",
+   "value": true,
+   "comment": "aware of any lizard within sensing range"
+  },
+  {
+   "name": "mlbKakatalFireKing",
+   "value": true,
+   "comment": "the lord of the fire elementals"
+  },
+  {
+   "name": "mlbKakatalWaterFireImmune",
+   "value": true,
+   "comment": "no water or fire attack affects him"
+  },
+  {
+   "name": "mlbKakatalFireHomage",
+   "value": true,
+   "comment": "fire creatures pay homage"
+  },
+  {
+   "name": "mlbKakatalPetrifyImmune",
+   "value": true,
+   "comment": "immune to petrification and paralysis"
+  },
+  {
+   "name": "mlbKelmainLimboHome",
+   "value": true,
+   "comment": "from Limbo"
+  },
+  {
+   "name": "mlbKelmainGoldenSkin",
+   "value": true,
+   "comment": "golden, carved-rock-like skin with square eyes"
+  },
+  {
+   "name": "mlbKelmainGoldArmor",
+   "value": true,
+   "comment": "golden armor and gold broadswords"
+  },
+  {
+   "name": "mlbKelmainKeepTheLand",
+   "value": true,
+   "comment": "they fight until the battle is won, then keep the land"
+  },
+  {
+   "name": "mlbKelmainPetrifyImmune",
+   "value": true,
+   "comment": "immune to petrification and paralysis"
+  },
+  {
+   "name": "mlbKelmainXpVariable",
+   "value": true,
+   "comment": "the XP value: Variable"
+  },
+  {
+   "name": "mlbMeerclarSabreTooth",
+   "value": true,
+   "comment": "a giant sabre-toothed tigress"
+  },
+  {
+   "name": "mlbMeerclarCatEyes",
+   "value": true,
+   "comment": "sees from the eyes of any feline"
+  },
+  {
+   "name": "mlbMeerclarKillsCaller",
+   "value": true,
+   "comment": "if forced to come she tries to kill the caller"
+  },
+  {
+   "name": "mlbMeerclarFelineHomage",
+   "value": true,
+   "comment": "all felines pay homage"
+  },
+  {
+   "name": "mlbMistGiantFogForm",
+   "value": true,
+   "comment": "bodies of white fog, a shapeless head with yellow eyes"
+  },
+  {
+   "name": "mlbMistGiantSlither",
+   "value": true,
+   "comment": "a snaky lower body that slithers over bogs"
+  },
+  {
+   "name": "mlbMistGiantSilent",
+   "value": true,
+   "comment": "cannot be heard"
+  },
+  {
+   "name": "mlbMistGiantPlusTwoToHit",
+   "value": true,
+   "comment": "+2 weapon to hit"
+  },
+  {
+   "name": "mlbMishaAirKing",
+   "value": true,
+   "comment": "the lord of the air elementals"
+  },
+  {
+   "name": "mlbMishaAirLaunchedImmune",
+   "value": true,
+   "comment": "not affected by physical weaponry launched into the air"
+  },
+  {
+   "name": "mlbMishaAirHomage",
+   "value": true,
+   "comment": "air elementals pay homage"
+  },
+  {
+   "name": "mlbMishaPlusFourToHit",
+   "value": true,
+   "comment": "+4 weapon to hit"
+  },
+  {
+   "name": "mlbMordagzDemotedLord",
+   "value": true,
+   "comment": "once a Lord of Chaos, demoted to mortal storm-giant status"
+  },
+  {
+   "name": "mlbMordagzChaosShieldGuard",
+   "value": true,
+   "comment": "guards the Shield of Chaos to the death"
+  },
+  {
+   "name": "mlbMordagzFrontOnly",
+   "value": true,
+   "comment": "the shield blocks all Chaos attacks from the front only"
+  },
+  {
+   "name": "mlbMordagzFightsAsFifteen",
+   "value": true,
+   "comment": "fights as a 15 hit dice monster"
+  },
+  {
+   "name": "mlbMyyrrnWingedHumanoids",
+   "value": true,
+   "comment": "winged humanoids with hawkish faces"
+  },
+  {
+   "name": "mlbMyyrrnAirCombat",
+   "value": true,
+   "comment": "prefer air combat"
+  },
+  {
+   "name": "mlbMyyrrnOwlEnemies",
+   "value": true,
+   "comment": "hereditary enemies: the giant owls"
+  },
+  {
+   "name": "mlbNnuurrrHatesSummoning",
+   "value": true,
+   "comment": "hates being summoned"
+  },
+  {
+   "name": "mlbNnuurrrInsectHomage",
+   "value": true,
+   "comment": "insect races pay homage"
+  },
+  {
+   "name": "mlbNihrainBlackStallion",
+   "value": true,
+   "comment": "a great black stallion"
+  },
+  {
+   "name": "mlbNihrainNeutralService",
+   "value": true,
+   "comment": "lent only to mortals in direct service of the primary forces of neutrality"
+  },
+  {
+   "name": "mlbNuruAhPacifist",
+   "value": true,
+   "comment": "totally pacifistic"
+  },
+  {
+   "name": "mlbNuruAhCureRaise",
+   "value": true,
+   "comment": "only function: cure the sick and wounded - cure or raise any creature once per summoning"
+  },
+  {
+   "name": "mlbNuruAhWoundedSafe",
+   "value": true,
+   "comment": "wounded beings cannot bring themselves to attack him"
+  },
+  {
+   "name": "mlbNuruAhBovineWorship",
+   "value": true,
+   "comment": "bovines worship him"
+  },
+  {
+   "name": "mlbOonaiShapeChangers",
+   "value": true,
+   "comment": "natural shape changers with the chosen shape's non-magical powers"
+  },
+  {
+   "name": "mlbOonaiBeastsOnly",
+   "value": true,
+   "comment": "only monster and beast types"
+  },
+  {
+   "name": "mlbOonaiOneAtATime",
+   "value": true,
+   "comment": "attack one at a time, the most powerful first"
+  },
+  {
+   "name": "mlbOonaiRetainAcHp",
+   "value": true,
+   "comment": "always retain armor class -2 and their original hit points"
+  },
+  {
+   "name": "mlbOonaiUnknownForm",
+   "value": true,
+   "comment": "their actual form is unknown"
+  },
+  {
+   "name": "mlbQuaolnargnAbyssToad",
+   "value": true,
+   "comment": "a giant toad demon from the Abyss"
+  },
+  {
+   "name": "mlbQuaolnargnPetrifyImmune",
+   "value": true,
+   "comment": "immune to petrification and polymorph"
+  },
+  {
+   "name": "mlbQuaolnargnSixteenHdBite",
+   "value": true,
+   "comment": "bites as a 16+ hit dice monster"
+  },
+  {
+   "name": "mlbQuaolnargnEarlyKillRefund",
+   "value": true,
+   "comment": "killed early: the victim regains the levels at one turn per level"
+  },
+  {
+   "name": "mlbPyarayOceanAbyss",
+   "value": true,
+   "comment": "the Lord of the Ocean Abysses: a huge blood-red octopus"
+  },
+  {
+   "name": "mlbPyarayBlueGem",
+   "value": true,
+   "comment": "a pulsing blue gem atop his head (the symbol: a blue gem with eight rays)"
+  },
+  {
+   "name": "mlbPyarayGemDiamondHard",
+   "value": true,
+   "comment": "the gem is of diamond hardness"
+  },
+  {
+   "name": "mlbPyarayChaosFleet",
+   "value": true,
+   "comment": "commands the Chaos fleet of sunken ships with undead sailors"
+  },
+  {
+   "name": "mlbRoofdrakWolfhound",
+   "value": true,
+   "comment": "a giant wolfhound, upright, with manipulative paws"
+  },
+  {
+   "name": "mlbRoofdrakLeadMace",
+   "value": true,
+   "comment": "wields a huge lead mace"
+  },
+  {
+   "name": "mlbRoofdrakCanineSense",
+   "value": true,
+   "comment": "senses anything within range of any canine"
+  },
+  {
+   "name": "mlbRoofdrakCanineHomage",
+   "value": true,
+   "comment": "canines pay homage"
+  },
+  {
+   "name": "mlbStraashaWaterKing",
+   "value": true,
+   "comment": "the ruler of the water elementals"
+  },
+  {
+   "name": "mlbStraashaDoublePower",
+   "value": true,
+   "comment": "has double the power of a normal water elemental"
+  },
+  {
+   "name": "mlbStraashaHeatImmune",
+   "value": true,
+   "comment": "the only one of his type not affected by heat-based attacks"
+  },
+  {
+   "name": "mlbStraashaGreenSkin",
+   "value": true,
+   "comment": "green skin, turquoise hair and beard"
+  },
+  {
+   "name": "mlbStraashaPlusFourToHit",
+   "value": true,
+   "comment": "+4 weapon to hit"
+  },
+  {
+   "name": "mlbVampTreeAttachLeaves",
+   "value": true,
+   "comment": "release leaves that attach to victims, attacking as 12 hit dice"
+  },
+  {
+   "name": "mlbVampTreeFireFears",
+   "value": true,
+   "comment": "fears fire: never sends leaves near flame"
+  },
+  {
+   "name": "mlbVampTreeFirePerDie",
+   "value": true,
+   "comment": "+1 damage per die from fire"
+  },
+  {
+   "name": "mlbVampTreeNeverSurprised",
+   "value": true,
+   "comment": "never surprised"
+  },
+  {
+   "name": "mlbThelebPanTangian",
+   "value": true,
+   "comment": "an evil wizard of Pan Tang"
+  },
+  {
+   "name": "mlbThelebCallsPowers",
+   "value": true,
+   "comment": "calls demons, elementals and demigods"
+  },
+  {
+   "name": "mlbThelebBloodOnly",
+   "value": true,
+   "comment": "works only for those of the blood of Pan Tang"
+  },
+  {
+   "name": "mlbThelebElricEnemy",
+   "value": true,
+   "comment": "an enemy of Elric"
+  },
+  {
+   "name": "mlbVultureLionChaosFiber",
+   "value": true,
+   "comment": "created by Elric's ancestors from the fiber of Chaos"
+  },
+  {
+   "name": "mlbVultureLionLimboHome",
+   "value": true,
+   "comment": "summoned from Limbo"
+  },
+  {
+   "name": "mlbVultureLionNoMorale",
+   "value": true,
+   "comment": "fights fiercely, never checking morale"
+  },
+  {
+   "name": "mlbVultureLionSlaysBadSummoner",
+   "value": true,
+   "comment": "improperly summoned: slays the summoner and returns to Limbo"
+  },
+  {
+   "name": "mlbVultureLionFearImmune",
+   "value": true,
+   "comment": "immune to fear"
+  },
+  {
+   "name": "mlbXiombargYoungGirlForm",
+   "value": true,
+   "comment": "appears as a slim young girl"
+  },
+  {
+   "name": "mlbXiombargParalyzingHit",
+   "value": true,
+   "comment": "paralysis unless a save is made"
+  },
+  {
+   "name": "mlbXiombargCravesBlood",
+   "value": true,
+   "comment": "craves blood and souls like Arioch"
+  },
+  {
+   "name": "mlbXiombargSacrificeResponse",
+   "value": true,
+   "comment": "responds to proper sacrifices"
+  },
+  {
+   "name": "mlbYyrkoonEvilPrince",
+   "value": true,
+   "comment": "the evil prince of Melnibone"
+  },
+  {
+   "name": "mlbYyrkoonElricCousin",
+   "value": true,
+   "comment": "Elric's cousin and implacable enemy"
+  },
+  {
+   "name": "mlbYyrkoonAncestorSpells",
+   "value": true,
+   "comment": "unusual spells from his ancestors"
+  },
+  {
+   "name": "mlbYyrkoonMournblade",
+   "value": true,
+   "comment": "known to fight with Mournblade, the twin of Stormbringer, similar in all respects"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "mlbCbt",
+   "count": "mlbCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "mlbCbtAC",
+    "mlbCbtACAlt",
+    "mlbCbtHP",
+    "mlbCbtMove",
+    "mlbCbtMoveAlt",
+    "mlbCbtAtN",
+    "mlbCbtAtD",
+    "mlbCbtMR",
+    "mlbCbtSizeIn"
+   ],
+   "data": [
+    [
+     6,
+     -6,
+     45,
+     6,
+     15,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     -2,
+     0,
+     379,
+     18,
+     18,
+     2,
+     0,
+     90,
+     0
+    ],
+    [
+     2,
+     0,
+     98,
+     12,
+     0,
+     4,
+     0,
+     0,
+     66
+    ],
+    [
+     -2,
+     0,
+     100,
+     12,
+     24,
+     2,
+     0,
+     90,
+     108
+    ],
+    [
+     4,
+     0,
+     0,
+     6,
+     18,
+     2,
+     0,
+     25,
+     96
+    ],
+    [
+     4,
+     0,
+     0,
+     15,
+     0,
+     3,
+     0,
+     0,
+     60
+    ],
+    [
+     -8,
+     0,
+     300,
+     18,
+     24,
+     2,
+     0,
+     95,
+     240
+    ],
+    [
+     -6,
+     0,
+     400,
+     15,
+     24,
+     2,
+     0,
+     50,
+     84
+    ],
+    [
+     6,
+     0,
+     55,
+     12,
+     0,
+     3,
+     2,
+     25,
+     72
+    ],
+    [
+     -2,
+     0,
+     70,
+     15,
+     0,
+     1,
+     0,
+     95,
+     120
+    ],
+    [
+     -2,
+     0,
+     176,
+     18,
+     96,
+     2,
+     0,
+     50,
+     0
+    ],
+    [
+     -5,
+     0,
+     335,
+     18,
+     48,
+     1,
+     0,
+     50,
+     240
+    ],
+    [
+     -3,
+     0,
+     197,
+     21,
+     0,
+     1,
+     0,
+     75,
+     720
+    ],
+    [
+     2,
+     0,
+     289,
+     24,
+     0,
+     1,
+     0,
+     50,
+     240
+    ],
+    [
+     2,
+     0,
+     0,
+     12,
+     0,
+     1,
+     0,
+     0,
+     72
+    ],
+    [
+     -2,
+     0,
+     152,
+     30,
+     0,
+     3,
+     0,
+     50,
+     240
+    ],
+    [
+     -6,
+     0,
+     0,
+     9,
+     0,
+     4,
+     0,
+     0,
+     96
+    ],
+    [
+     -2,
+     0,
+     189,
+     72,
+     0,
+     1,
+     0,
+     50,
+     360
+    ],
+    [
+     -4,
+     0,
+     80,
+     15,
+     0,
+     1,
+     0,
+     0,
+     252
+    ],
+    [
+     8,
+     0,
+     0,
+     12,
+     24,
+     1,
+     0,
+     5,
+     72
+    ],
+    [
+     -2,
+     0,
+     300,
+     12,
+     48,
+     2,
+     0,
+     15,
+     480
+    ],
+    [
+     -2,
+     0,
+     0,
+     24,
+     0,
+     3,
+     0,
+     25,
+     96
+    ],
+    [
+     -2,
+     0,
+     200,
+     15,
+     0,
+     0,
+     0,
+     100,
+     240
+    ],
+    [
+     -2,
+     0,
+     0,
+     12,
+     0,
+     0,
+     0,
+     0,
+     60
+    ],
+    [
+     -4,
+     0,
+     150,
+     12,
+     0,
+     1,
+     0,
+     85,
+     96
+    ],
+    [
+     -2,
+     0,
+     250,
+     12,
+     0,
+     6,
+     0,
+     50,
+     120
+    ],
+    [
+     -2,
+     0,
+     97,
+     18,
+     0,
+     1,
+     0,
+     10,
+     156
+    ],
+    [
+     -2,
+     0,
+     189,
+     12,
+     36,
+     2,
+     0,
+     50,
+     120
+    ],
+    [
+     0,
+     0,
+     0,
+     12,
+     0,
+     10,
+     0,
+     0,
+     300
+    ],
+    [
+     10,
+     0,
+     44,
+     12,
+     0,
+     1,
+     0,
+     0,
+     66
+    ],
+    [
+     2,
+     0,
+     0,
+     15,
+     0,
+     3,
+     0,
+     25,
+     120
+    ],
+    [
+     -2,
+     0,
+     376,
+     18,
+     0,
+     2,
+     0,
+     50,
+     60
+    ],
+    [
+     -4,
+     0,
+     84,
+     12,
+     0,
+     2,
+     0,
+     0,
+     78
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Darnizhaan the minus eight best, Donblas minus six, Arioch and Xiombarg minus two; Elric the 6/minus 6 dual print; the Vampire Trees the 0; Theleb 10 the worst)",
+    "The alternative armor class cells (Elric the minus 6 Stormbringer cell; all the rest single-printed 0)",
+    "The hit point cells (Donblas 400, Arioch 379, Xiombarg 376; the hit-dice rows pinned 0 with the dice here: Clakar 8, Dharzi 5, the Mist Giant 12, Myyrrhn 4, the Nihrain 10, the Oonai 10, the Vampire Trees 12, the Vulture Lion 15; the Kelmain See below row)",
+    "The primary move cells (Misha the 72 whirlwind; Fileet 18 with the 96 airborne, Grome 18 with the 48; Elric 6 with the 15 Stormbringer cell)",
+    "The secondary move cells (Fileet 96, Grome 48, Nnuurrr 48, the Assassinator 24, Darnizhaan 24, Donblas 24, Myyrrhn 24, the Nihrain 24, Straasha 36)",
+    "The attack count cells (Nuru-ah the 0 zero-attack pacifist row; the Oonai Variable pinned 0; the Vampire Trees 10 the ceiling of the printed 1-10 leaf range)",
+    "The alternate-attack cells (Elenoin, Nnuurrr and Straasha the 3/2 pairs; 0 elsewhere)",
+    "The magic resistance cells (Nuru-ah 100, Darnizhaan 95, Grahuk 95, the Assassinator 90, Arioch 90, Quaolnargn 85; Elric Standard-or-85 pinned 0 with the 85 riding the Stormbringer consts; Roofdrak 10)",
+    "The size inch cells (Haaashastaak the 720 sixty-footer, Nnuurrr 480, the Vampire Trees 300 - the printed L plus a stray 25 feet tall noted, Misha 360; Fileet the bare L and Arioch the Variable pinned 0; the fraction cells Moonglum 66, Theleb 66, Yyrkoon 78)"
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "mlbCls",
+   "count": "mlbClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "mlbClsCleric",
+    "mlbClsDruid",
+    "mlbClsFighterLo",
+    "mlbClsFighterHi",
+    "mlbClsRanger",
+    "mlbClsMagUser",
+    "mlbClsIllus",
+    "mlbClsThief",
+    "mlbClsAssassin",
+    "mlbClsMonk",
+    "mlbClsBard"
+   ],
+   "data": [
+    [
+     10,
+     5,
+     15,
+     0,
+     0,
+     19,
+     10,
+     0,
+     10,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     15,
+     0,
+     0,
+     20,
+     20,
+     0,
+     15,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     14,
+     0,
+     0,
+     0,
+     0,
+     13,
+     0,
+     0,
+     5
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     14,
+     20,
+     0,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     25,
+     0,
+     0,
+     30,
+     30,
+     0,
+     0,
+     15,
+     15
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     99,
+     99,
+     0,
+     0,
+     18,
+     99,
+     99,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     18,
+     0,
+     0,
+     99,
+     99,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     14,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     18,
+     99,
+     99,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     18,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     99,
+     99,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     15,
+     0,
+     0,
+     10,
+     10,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     19,
+     0,
+     0,
+     99,
+     99,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     15,
+     8,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     15,
+     0,
+     0,
+     25,
+     0,
+     0,
+     15,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     15,
+     0,
+     0,
+     17,
+     0,
+     0,
+     0,
+     0,
+     5
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (Elric 10, Arioch 20, Donblas 20; Grome and Nuru-ah the printed See below pinned 99, the egp Isis precedent)",
+    "The druid level cells (Elric 5, Darnizhaan 14, Meerclar 14; Grome and Nuru-ah the See below 99 pairs)",
+    "The lower fighter level cells (Donblas 25, Arioch 15, Darnizhaan 20, Elric 15, Fileet 15, Haaashastaak 20, Kakatal 18, Meerclar 15, Nnuurrr 18, Pyaray 15, Straasha 19, Xiombarg 15, Yyrkoon 15, Moonglum 14)",
+    "The upper fighter level cells (0 throughout - the round prints no paladins)",
+    "The ranger level cells (Grome 18, Misha 18, Roofdrak 15 - the Nth level ranger prints)",
+    "The magic-user level cells (Donblas 30, Elric 19, Arioch 20, Xiombarg 25, Theleb 15, Yyrkoon 17; the See below 99 pairs: Grome, Kakatal, Misha, Straasha)",
+    "The illusionist level cells (Elric 10, Arioch 20, Darnizhaan 15, Donblas 30, Pyaray 10, Theleb 8; the See below 99 pairs: Grome, Kakatal, Misha, Straasha)",
+    "The thief level cells (Moonglum the 13th - the only print)",
+    "The assassin level cells (Elric 10, Arioch 15, Xiombarg 15)",
+    "The monk level cells (Donblas 15 in each with the bard pair; 0 elsewhere)",
+    "The bard level cells (Donblas 15 in each, Arioch 10, Fileet 15, Moonglum 5, Roofdrak 10, Yyrkoon 5)"
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "mlbAbi",
+   "count": "mlbAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "mlbAbiStr",
+    "mlbAbiStrHit",
+    "mlbAbiStrDmg",
+    "mlbAbiInt",
+    "mlbAbiWis",
+    "mlbAbiDex",
+    "mlbAbiCon",
+    "mlbAbiCha",
+    "mlbAbiPsi"
+   ],
+   "data": [
+    [
+     6,
+     0,
+     0,
+     18,
+     17,
+     17,
+     3,
+     18,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     21,
+     25,
+     25,
+     0,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     11,
+     9,
+     19,
+     18,
+     15,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     13,
+     25,
+     25,
+     16,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     25,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     23,
+     0,
+     0,
+     23,
+     23,
+     25,
+     20,
+     23,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     10,
+     10,
+     15,
+     25,
+     13,
+     0
+    ],
+    [
+     25,
+     0,
+     0,
+     11,
+     3,
+     19,
+     24,
+     4,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     20,
+     8,
+     20,
+     25,
+     7,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     22,
+     13,
+     25,
+     20,
+     21,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     19,
+     13,
+     22,
+     25,
+     10,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     0,
+     0,
+     10,
+     3,
+     20,
+     25,
+     -6,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     0,
+     0,
+     15,
+     25,
+     15,
+     25,
+     9,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     0,
+     0,
+     23,
+     9,
+     18,
+     24,
+     -6,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     20,
+     20,
+     21,
+     22,
+     19,
+     0
+    ],
+    [
+     25,
+     0,
+     0,
+     15,
+     15,
+     20,
+     25,
+     22,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     12,
+     0,
+     0,
+     18,
+     11,
+     15,
+     17,
+     7,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     23,
+     22,
+     25,
+     24,
+     25,
+     0
+    ],
+    [
+     16,
+     0,
+     0,
+     18,
+     8,
+     15,
+     17,
+     18,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (the thirteen 25s of the gods; Elric the 6(15) albino row, Yyrkoon 16, Moonglum 17)",
+    "The strength to-hit bonuses (the +7s of the printed 25(70) brackets; 0 the no-printed-bracket rows: Elric, Fileet, Haaashastaak, Nnuurrr, Nuru-ah, Pyaray, Straasha, Theleb, Yyrkoon)",
+    "The strength damage bonuses (the 14s of the printed brackets)",
+    "The intelligence cells (Arioch, Darnizhaan and Donblas 25; Fileet 23, Pyaray 23, Elric 18)",
+    "The wisdom cells (Donblas 25, Nuru-ah 25; the Haaashastaak and Nnuurrr 3 cells flagged odd and pinned as printed)",
+    "The dexterity cells (Arioch, Darnizhaan and Donblas 25; Elric 17)",
+    "The constitution cells (the 25s; Elric the 3(15) sickly row)",
+    "The charisma cells (Donblas 25, Xiombarg 25; the Nnuurrr and Pyaray minus 6 cells - the negative charisma prints; Arioch Variable pinned 0)",
+    "The psionic cells (0 throughout - the psionic classes ride the roster grid)"
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "mlbRos",
+   "count": "mlbRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "mlbRosOrd",
+    "mlbRosPage",
+    "mlbRosAlign",
+    "mlbRosRank",
+    "mlbRosPsiClass",
+    "mlbRosPlane",
+    "mlbRosDmgFixed",
+    "mlbRosInEach",
+    "mlbRosEnmity"
+   ],
+   "data": [
+    [
+     0,
+     86,
+     8,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     87,
+     8,
+     1,
+     1,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     2,
+     87,
+     4,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     87,
+     8,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     4,
+     88,
+     8,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     88,
+     4,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     88,
+     7,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     88,
+     0,
+     1,
+     1,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     8,
+     89,
+     4,
+     5,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     9,
+     89,
+     4,
+     5,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     10,
+     89,
+     5,
+     2,
+     0,
+     7,
+     1,
+     0,
+     0
+    ],
+    [
+     11,
+     89,
+     4,
+     0,
+     6,
+     3,
+     1,
+     0,
+     0
+    ],
+    [
+     12,
+     90,
+     4,
+     2,
+     6,
+     8,
+     1,
+     0,
+     0
+    ],
+    [
+     13,
+     90,
+     5,
+     0,
+     0,
+     4,
+     1,
+     0,
+     0
+    ],
+    [
+     14,
+     90,
+     5,
+     5,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     91,
+     5,
+     2,
+     1,
+     9,
+     1,
+     0,
+     0
+    ],
+    [
+     16,
+     91,
+     8,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     17,
+     91,
+     4,
+     0,
+     6,
+     5,
+     1,
+     0,
+     0
+    ],
+    [
+     18,
+     91,
+     5,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     19,
+     92,
+     1,
+     5,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     92,
+     4,
+     2,
+     0,
+     10,
+     1,
+     0,
+     0
+    ],
+    [
+     21,
+     92,
+     4,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     22,
+     92,
+     4,
+     2,
+     1,
+     11,
+     0,
+     0,
+     0
+    ],
+    [
+     23,
+     93,
+     5,
+     5,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     24,
+     93,
+     8,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     25,
+     93,
+     8,
+     0,
+     2,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     26,
+     93,
+     4,
+     2,
+     6,
+     12,
+     1,
+     0,
+     0
+    ],
+    [
+     27,
+     94,
+     4,
+     0,
+     6,
+     6,
+     1,
+     0,
+     0
+    ],
+    [
+     28,
+     94,
+     7,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     29,
+     94,
+     6,
+     3,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     30,
+     95,
+     5,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     31,
+     95,
+     8,
+     1,
+     1,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     32,
+     95,
+     8,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Elric through Yyrkoon)",
+    "The print page cells (86-95, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 LG, 1 NG, 2 CG, 3 LN, 4 N, 5 CN, 6 LE, 7 NE, 8 CE - the R852 code scheme; fourteen of the thirty-three print the neutral 4)",
+    "The rank cells (0 lesser, 1 greater, 2 demigod, 3 hero, 5 monster - the fourteen monster rows make this the monster-heaviest round of the walk)",
+    "The psionic class cells (I the single pipe w10: Arioch, Darnizhaan, Meerclar, Nuru-ah; II Pyaray; VI the w49: Grome, Haaashastaak, Misha, Roofdrak, Straasha; 0 the Nil heroes and monsters)",
+    "The plane cells (0 none; 1 Prime Material: Darnizhaan, Pyaray; 2 Special: Arioch, Donblas, Xiombarg; 3 Earth Grome; 4 Fire Kakatal; 5 Air Misha; 6 Water Straasha; the demi-plane courts: 7 birds Fileet, 8 reptiles Haaashastaak, 9 cats Meerclar, 10 insects Nnuurrr, 11 cattle Nuru-ah, 12 dogs Roofdrak)",
+    "The fixed-damage flags (0 the by-weapon rows Elric, Moonglum, Kelmain, Myyrrhn, Yyrkoon; the Nuru-ah Nil damage and the Oonai Variable)",
+    "The in-each flags (the four MU/I pairs: Arioch 20, Darnizhaan 15, Donblas 30, Pyaray 10)",
+    "The enmity flags (the Elenoin-Grahuk hereditary enemy pair, the grk printed-rivalry precedent)"
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the thirty-three beings, the thirteen plane codes, the three in-each kinds... eleven counts)",
+   "expr": "m['mlbTableCount']() != 4 or m['mlbBeingCount']() != 33 or m['mlbCbtRows']() != 33 or m['mlbClsRows']() != 33 or m['mlbAbiRows']() != 33 or m['mlbRosRows']() != 33 or m['mlbPlaneCount']() != 13 or m['mlbGreaterCount']() != 3 or m['mlbLesserCount']() != 6 or m['mlbDemigodCount']() != 6 or m['mlbHeroCount']() != 4 or m['mlbMonsterCount']() != 14 or m['mlbInEachCount']() != 4 or m['mlbEnmityCount']() != 2 or m['mlbPaladinCount']() != 0 or m['mlbPsiClassKinds']() != 3 or m['mlbHalfFootCount']() != 3 or m['mlbArtifactCount']() != 3 or m['mlbChainCount']() != 0 or m['mlbRegistryFloor']() != 995"
+  },
+  {
+   "note": "the print walk spans pp. 86-95 and the roster ordinals run 0-32 in print order",
+   "expr": "m['mlbPrintStart']() != 86 or m['mlbPrintEnd']() != 95 or m['mlbRosPage'](0) != 86 or m['mlbRosPage'](3) != 87 or m['mlbRosPage'](6) != 88 or m['mlbRosPage'](10) != 89 or m['mlbRosPage'](13) != 90 or m['mlbRosPage'](15) != 91 or m['mlbRosPage'](19) != 92 or m['mlbRosPage'](23) != 93 or m['mlbRosPage'](27) != 94 or m['mlbRosPage'](30) != 95 or m['mlbRosOrd'](0) != 0 or m['mlbRosOrd'](16) != 16 or m['mlbRosOrd'](32) != 32"
+  },
+  {
+   "note": "Elric the albino emperor: the 6/minus 6 dual armor class, the 6/15 Stormbringer move, the 85% magic resistance riding the sword consts, the Ring of Kings percentages",
+   "expr": "m['mlbCbtAC'](0) != 6 or m['mlbCbtACAlt'](0) != -6 or m['mlbCbtHP'](0) != 45 or m['mlbCbtMove'](0) != 6 or m['mlbCbtMoveAlt'](0) != 15 or m['mlbCbtMR'](0) != 0 or m['mlbStormbringerMrPct']() != 85 or m['mlbStormbringerAc']() != 6 or m['mlbStormbringerPlus']() != 5 or m['mlbStormbringerSatietyLevels']() != 200 or m['mlbStormbringerMaxStr']() != 23 or m['mlbStormbringerDancePct']() != 15 or m['mlbRingSummonPct']() != 70 or m['mlbRingControlPct']() != 80 or m['mlbRingBareSummonPct']() != 20 or m['mlbRingBareControlPct']() != 30 or m['mlbElricPotionChancePct']() != 85 or m['mlbElricPotionStatMax']() != 15"
+  },
+  {
+   "note": "Arioch the Duke of Chaos: the minus 2 armor class, the Variable size and charisma pinned 0, the MU/I 20 in-each pair, the 15% dancing chance",
+   "expr": "m['mlbCbtAC'](1) != -2 or m['mlbCbtHP'](1) != 379 or m['mlbCbtMR'](1) != 90 or m['mlbCbtSizeIn'](1) != 0 or m['mlbAbiCha'](1) != 0 or m['mlbClsMagUser'](1) != 20 or m['mlbClsIllus'](1) != 20 or m['mlbRosInEach'](1) != 1 or m['mlbRosPlane'](1) != 2 or m['mlbRosPsiClass'](1) != 1 or m['mlbAriochDancePct']() != 15"
+  },
+  {
+   "note": "Moonglum the companion: the 66 fraction cell, the 13th thief, the 5th bard, the four attacks",
+   "expr": "m['mlbCbtSizeIn'](2) != 66 or m['mlbClsThief'](2) != 13 or m['mlbClsBard'](2) != 5 or m['mlbCbtAtN'](2) != 4 or m['mlbAbiDex'](2) != 19"
+  },
+  {
+   "note": "the monster XP walk: the fourteen monster rows, the flat-XP pins (Mordagz 6,391, Quaolnargn 21,450, the Assassinator 6,200, Elenoin 1,670, Grahuk 6,650)",
+   "expr": "m['mlbAssassinatorHitDice']() != 8 or m['mlbAssassinatorXpBase']() != 6200 or m['mlbClakarHitDice']() != 6 or m['mlbClakarXpBase']() != 650 or m['mlbClakarXpPerHp']() != 10 or m['mlbDharziHitDice']() != 2 or m['mlbDharziXpBase']() != 90 or m['mlbDharziXpPerHp']() != 5 or m['mlbElenoinHitDice']() != 7 or m['mlbElenoinXpBase']() != 1670 or m['mlbGrahukHitDice']() != 8 or m['mlbGrahukXpBase']() != 6650 or m['mlbMistGiantHitDice']() != 12 or m['mlbMistGiantXpBase']() != 4950 or m['mlbMistGiantXpPerHp']() != 16 or m['mlbMordagzHitDice']() != 8 or m['mlbMordagzXpBase']() != 6391 or m['mlbMyyrrnHitDice']() != 3 or m['mlbMyyrrnXpBase']() != 125 or m['mlbMyyrrnXpPerHp']() != 4 or m['mlbNihrainHitDice']() != 7 or m['mlbNihrainXpBase']() != 1950 or m['mlbNihrainXpPerHp']() != 14 or m['mlbOonaiHitDice']() != 7 or m['mlbOonaiXpBase']() != 1950 or m['mlbOonaiXpPerHp']() != 14 or m['mlbQuaolnargnHitDice']() != 10 or m['mlbQuaolnargnXpBase']() != 21450 or m['mlbVampTreeHitDice']() != 8 or m['mlbVampTreeXpBase']() != 3850 or m['mlbVampTreeXpPerHp']() != 16 or m['mlbVultureLionHitDice']() != 9 or m['mlbVultureLionXpBase']() != 5600 or m['mlbVultureLionXpPerHp']() != 20"
+  },
+  {
+   "note": "the four elemental lords: Grome the 50th, Kakatal the 30th, Misha and Straasha the 20th; the 16 hit dice elementals; the VI psionic class (Kakatal the fire lord prints Nil psionics)",
+   "expr": "m['mlbGromeEarthSpellLevel']() != 50 or m['mlbKakatalFireSpellLevel']() != 30 or m['mlbMishaWeatherLevel']() != 20 or m['mlbStraashaWaterLevel']() != 20 or m['mlbGromeElementalHd']() != 16 or m['mlbKakatalElementalHd']() != 16 or m['mlbMishaElementalHd']() != 16 or m['mlbRosPsiClass'](11) != 6 or m['mlbRosPsiClass'](13) != 0 or m['mlbRosPsiClass'](17) != 6 or m['mlbRosPsiClass'](27) != 6 or m['mlbRosPlane'](11) != 3 or m['mlbRosPlane'](13) != 4 or m['mlbRosPlane'](17) != 5 or m['mlbRosPlane'](27) != 6"
+  },
+  {
+   "note": "the Elenoin-Grahuk enmity pair: the hereditary enemy flags and the 5% Grahuk appearance",
+   "expr": "m['mlbRosEnmity'](8) != 1 or m['mlbRosEnmity'](9) != 1 or m['mlbElenoinGrahukPct']() != 5 or m['mlbGrahukStrength']() != 22 or m['mlbRosRank'](8) != 5 or m['mlbRosRank'](9) != 5 or m['mlbCbtHP'](8) != 55 or m['mlbCbtHP'](9) != 70"
+  },
+  {
+   "note": "Darnizhaan the Dead God and Donblas the Mortifier: the minus 8 and minus 6 armor classes, the 6-60 fists, the rod of three, the 12th level worship threshold",
+   "expr": "m['mlbCbtAC'](6) != -8 or m['mlbCbtMR'](6) != 95 or m['mlbDarnizhaanFistMax']() != 60 or m['mlbDarnizhaanDiggerFeet']() != 100 or m['mlbCbtAC'](7) != -6 or m['mlbCbtHP'](7) != 400 or m['mlbDonblasRodDmgMax']() != 30 or m['mlbDonblasWorshipLevel']() != 12 or m['mlbRosPlane'](6) != 1 or m['mlbRosPlane'](7) != 2"
+  },
+  {
+   "note": "Fileet the bird master: the bare L size pinned 0, the 18/96 airborne move, the 120-foot wingspan, the 1-100 birds, the birds demi-plane",
+   "expr": "m['mlbCbtSizeIn'](10) != 0 or m['mlbCbtMove'](10) != 18 or m['mlbCbtMoveAlt'](10) != 96 or m['mlbFileetWingspanFeet']() != 120 or m['mlbFileetBirdsMax']() != 100 or m['mlbRosPlane'](10) != 7 or m['mlbRosRank'](10) != 2"
+  },
+  {
+   "note": "the two giants of the round: Haaashastaak the 720 sixty-footer with the never-missing 7-70 bite, Nnuurrr the 480 mosquito with the minus 4 poison save",
+   "expr": "m['mlbCbtSizeIn'](12) != 720 or m['mlbHaaashastaakBiteMax']() != 70 or m['mlbRosPlane'](12) != 8 or m['mlbCbtSizeIn'](20) != 480 or m['mlbNnuurrrPoisonSavePenalty']() != 4 or m['mlbNnuurrrObeyPct']() != 55 or m['mlbNnuurrrWingspanFeet']() != 140 or m['mlbAbiCha'](20) != -6 or m['mlbRosPlane'](20) != 10"
+  },
+  {
+   "note": "Nuru-ah the pacifist: the zero-attack row, the 100% magic resistance, the cattle demi-plane, the See below 99/99 cleric pair",
+   "expr": "m['mlbCbtAtN'](22) != 0 or m['mlbCbtMR'](22) != 100 or m['mlbRosPlane'](22) != 11 or m['mlbRosDmgFixed'](22) != 0 or m['mlbClsCleric'](22) != 99 or m['mlbClsDruid'](22) != 99 or m['mlbCbtHP'](22) != 200"
+  },
+  {
+   "note": "the Kelmain war band: the See below hit points, the 10-to-10,000 troop range, the leader levels 8 down to 2",
+   "expr": "m['mlbCbtHP'](14) != 0 or m['mlbRosDmgFixed'](14) != 0 or m['mlbKelmainTroopMin']() != 10 or m['mlbKelmainTroopMax']() != 10000 or m['mlbKelmainLeaderLevelMax']() != 8 or m['mlbKelmainLeaderLevelMin']() != 2"
+  },
+  {
+   "note": "the Vampire Trees: the 12-hit-dice row, the 300-inch size, the 1-10 leaf attacks, the fire save at minus 2",
+   "expr": "m['mlbCbtHP'](28) != 0 or m['mlbCbtSizeIn'](28) != 300 or m['mlbCbtAtN'](28) != 10 or m['mlbVampTreeLeafHp']() != 2 or m['mlbVampTreeLeafAc']() != 9 or m['mlbVampTreeRangeYards']() != 120 or m['mlbVampTreeFireSavePenalty']() != 2 or m['mlbVampTreeLeafControlMax']() != 10"
+  },
+  {
+   "note": "the two Chaotic Evil greater gods and the evil cousin: Xiombarg the +4 axe, Yyrkoon the 78 fraction cell, Theleb the minus 10 armor class",
+   "expr": "m['mlbXiombargAxePlus']() != 4 or m['mlbXiombargAxeMax']() != 42 or m['mlbCbtHP'](31) != 376 or m['mlbAbiCha'](31) != 25 or m['mlbCbtSizeIn'](32) != 78 or m['mlbCbtAC'](32) != -4 or m['mlbClsMagUser'](32) != 17 or m['mlbCbtAC'](29) != 10 or m['mlbCbtSizeIn'](29) != 66 or m['mlbClsMagUser'](29) != 15 or m['mlbClsIllus'](29) != 8 or m['mlbThelebAncestorSpellLevel']() != 7"
+  },
+  {
+   "note": "the Stormbringer artifact trio of the intro: the Arrows of Law quiver, the Nanorion Stone thresholds, the Chaos and Law symbols",
+   "expr": "m['mlbArrowsOfLawPerQuiver']() != 20 or m['mlbNanorionHeartPct']() != 5 or m['mlbNanorionDemonHp']() != 80 or m['mlbNanorionUsesMax']() != 4 or m['mlbNanorionClericLevel']() != 15 or m['mlbChaosArrows']() != 8 or m['mlbLawArrows']() != 1 or m['mlbStormbringerFearHd']() != 5 or m['mlbStormbringerFearFeet']() != 30"
+  }
+ ],
+ "header_sections": {
+  "the R862 census": [
+   {
+    "kind": "const",
+    "name": "mlbRound"
+   },
+   {
+    "kind": "const",
+    "name": "mlbPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "mlbPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "mlbBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "mlbCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "mlbClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "mlbAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "mlbRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "mlbPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbGreaterCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbLesserCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDemigodCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbHeroCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMonsterCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbInEachCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbEnmityCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbPaladinCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbPsiClassKinds"
+   },
+   {
+    "kind": "const",
+    "name": "mlbHalfFootCount"
+   },
+   {
+    "kind": "const",
+    "name": "mlbArtifactCount"
+   }
+  ],
+  "the Melnibonean pantheon doctrine": [
+   {
+    "kind": "bool",
+    "name": "mlbGodsManyPlanes"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbAvatarConnection"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbOneClassAttribute"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbFullPowersHomePlane"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbOtherChaosGodsNamed"
+   },
+   {
+    "kind": "const",
+    "name": "mlbChaosArrows"
+   },
+   {
+    "kind": "const",
+    "name": "mlbLawArrows"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbLawfulGodsSilkForm"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMasterTypesDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbDogsWorshipOwnImage"
+   },
+   {
+    "kind": "const",
+    "name": "mlbArrowsOfLawPerQuiver"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbArrowsOfLawSlayChaotic"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbArrowsOfLawNormalRanges"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbCrystalDoorUnbreakable"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbCrystalDoorMagicImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbCrystalDoorOpensOnWord"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbCrystalDoorDrainsSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbCrystalDoorDrainsDevices"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNanorionHeartPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNanorionDemonHp"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNanorionUsesMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNanorionClericLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbNanorionRaisePower"
+   }
+  ],
+  "Elric": [
+   {
+    "kind": "const",
+    "name": "mlbStormbringerPlus"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerInt"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerEgo"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbStormbringerDrainsLevels"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbStormbringerDevoursSouls"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerLevelsPerGain"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerHpPerGain"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerStrPerGain"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerMaxStr"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerSatietyLevels"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerSatietyHours"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerLastGainTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerSummonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerMrPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerMoveInches"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerAc"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerDancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerFearHd"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStormbringerFearFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbStormbringerEvilRadiance"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbRingOfKingsPowers"
+   },
+   {
+    "kind": "const",
+    "name": "mlbRingSummonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbRingControlPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbRingBareSummonPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbRingBareControlPct"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbElricAlbino"
+   },
+   {
+    "kind": "const",
+    "name": "mlbElricPotionChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbElricPotionStatMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbElricSwordAltersMakeup"
+   }
+  ],
+  "Arioch": [
+   {
+    "kind": "bool",
+    "name": "mlbAriochElricPatron"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbAriochNoArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbAriochSwordCancellation"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbAriochAnyPlane"
+   },
+   {
+    "kind": "const",
+    "name": "mlbAriochDancePct"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbAriochHumanSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbAriochHandsomeToAll"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbAriochShortTemper"
+   }
+  ],
+  "Moonglum": [
+   {
+    "kind": "bool",
+    "name": "mlbMoonglumAmbidextrous"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMoonglumElricCompanion"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMoonglumDapper"
+   }
+  ],
+  "the Assassinator of the Gods": [
+   {
+    "kind": "const",
+    "name": "mlbAssassinatorWingsFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbAssassinatorPeacockFeathers"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbAssassinatorChaosErrand"
+   },
+   {
+    "kind": "const",
+    "name": "mlbAssassinatorTalonHd"
+   },
+   {
+    "kind": "const",
+    "name": "mlbAssassinatorFoulPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbAssassinatorHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbAssassinatorXpBase"
+   }
+  ],
+  "the Clakar": [
+   {
+    "kind": "bool",
+    "name": "mlbClakarWingedApes"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbClakarFearImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbClakarNeverSurprised"
+   },
+   {
+    "kind": "const",
+    "name": "mlbClakarRendMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbClakarHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbClakarXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mlbClakarXpPerHp"
+   }
+  ],
+  "the Dharzi Hunting Dog": [
+   {
+    "kind": "bool",
+    "name": "mlbDharziHawkHead"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbDharziFaultlessTrackers"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDharziScentDays"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbDharziPacks"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDharziClawMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDharziBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDharziHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDharziXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDharziXpPerHp"
+   }
+  ],
+  "Darnizhaan": [
+   {
+    "kind": "bool",
+    "name": "mlbDarnizhaanDeadGodsKing"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbDarnizhaanFearsNewGods"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbDarnizhaanManufacturedImmune"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDarnizhaanDiggerPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDarnizhaanDiggerFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDarnizhaanFistMax"
+   }
+  ],
+  "Donblas": [
+   {
+    "kind": "bool",
+    "name": "mlbDonblasIncrediblyBeautiful"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDonblasWorshipLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbDonblasDrivenOff"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbDonblasWaitsSummon"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbDonblasRodOfThree"
+   },
+   {
+    "kind": "const",
+    "name": "mlbDonblasRodDmgMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbDonblasComesToFight"
+   }
+  ],
+  "the Elenoin": [
+   {
+    "kind": "bool",
+    "name": "mlbElenoinSharkTeeth"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbElenoinTenthFighters"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbElenoinHereditaryEnemies"
+   },
+   {
+    "kind": "const",
+    "name": "mlbElenoinGrahukPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbElenoinHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbElenoinXpBase"
+   }
+  ],
+  "the Grahuk": [
+   {
+    "kind": "bool",
+    "name": "mlbGrahukGiantApes"
+   },
+   {
+    "kind": "const",
+    "name": "mlbGrahukStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbGrahukAttackAsFifteen"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbGrahukNetsAndRopes"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbGrahukOnlyGoal"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbGrahukSuicide"
+   },
+   {
+    "kind": "const",
+    "name": "mlbGrahukHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbGrahukXpBase"
+   }
+  ],
+  "Fileet": [
+   {
+    "kind": "bool",
+    "name": "mlbFileetGoldenEagle"
+   },
+   {
+    "kind": "const",
+    "name": "mlbFileetWingspanFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbFileetAvianSight"
+   },
+   {
+    "kind": "const",
+    "name": "mlbFileetBirdsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbFileetAvianHomage"
+   }
+  ],
+  "Grome": [
+   {
+    "kind": "bool",
+    "name": "mlbGromeKingOfEarth"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbGromeWaterCrossing"
+   },
+   {
+    "kind": "const",
+    "name": "mlbGromeEarthSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mlbGromeElementalMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbGromeElementalHd"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbGromeOakForm"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbGromeFistBarrier"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbGromeUndergroundHomage"
+   }
+  ],
+  "Haaashastaak": [
+   {
+    "kind": "bool",
+    "name": "mlbHaaashastaakTyrannosaur"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbHaaashastaakEatsCaller"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbHaaashastaakNeverMisses"
+   },
+   {
+    "kind": "const",
+    "name": "mlbHaaashastaakBiteMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbHaaashastaakWishToReturn"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbHaaashastaakReptilianHomage"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbHaaashastaakLizardAware"
+   }
+  ],
+  "Kakatal": [
+   {
+    "kind": "bool",
+    "name": "mlbKakatalFireKing"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKakatalFireSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKakatalHeatDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKakatalHeatFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKakatalFistMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKakatalElementalMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKakatalElementalHd"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbKakatalWaterFireImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbKakatalFireHomage"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbKakatalPetrifyImmune"
+   }
+  ],
+  "the Kelmain": [
+   {
+    "kind": "bool",
+    "name": "mlbKelmainLimboHome"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbKelmainGoldenSkin"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbKelmainGoldArmor"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKelmainTroopMin"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKelmainTroopMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKelmainLeaderLevelMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbKelmainLeaderLevelMin"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbKelmainKeepTheLand"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbKelmainPetrifyImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbKelmainXpVariable"
+   }
+  ],
+  "Meerclar": [
+   {
+    "kind": "bool",
+    "name": "mlbMeerclarSabreTooth"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMeerclarCatEyes"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMeerclarKillsCaller"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMeerclarFelineHomage"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMeerclarClawMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMeerclarBiteMax"
+   }
+  ],
+  "the Mist Giant": [
+   {
+    "kind": "bool",
+    "name": "mlbMistGiantFogForm"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMistGiantArms"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMistGiantSlither"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMistGiantInvisiblePct"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMistGiantSilent"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMistGiantSurpriseMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMistGiantPlusTwoToHit"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMistGiantHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMistGiantXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMistGiantXpPerHp"
+   }
+  ],
+  "Misha": [
+   {
+    "kind": "bool",
+    "name": "mlbMishaAirKing"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMishaWhirlwindInches"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMishaWhirlwindRounds"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMishaWhirlwindBottomInches"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMishaWhirlwindTopInches"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMishaWhirlwindDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMishaStrikeMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMishaAirLaunchedImmune"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMishaElementalMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMishaElementalHd"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMishaWeatherLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMishaAirHomage"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMishaPlusFourToHit"
+   }
+  ],
+  "Mordagz": [
+   {
+    "kind": "bool",
+    "name": "mlbMordagzDemotedLord"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMordagzChaosShieldGuard"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMordagzFrontOnly"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMordagzShieldFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMordagzFightsAsFifteen"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMordagzHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMordagzXpBase"
+   }
+  ],
+  "the Myyrrhn": [
+   {
+    "kind": "bool",
+    "name": "mlbMyyrrnWingedHumanoids"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMyyrrnWingspanFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMyyrrnAirCombat"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMyyrrnFleeBelowHp"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbMyyrrnOwlEnemies"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMyyrrnHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMyyrrnXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mlbMyyrrnXpPerHp"
+   }
+  ],
+  "Nnuurrr": [
+   {
+    "kind": "bool",
+    "name": "mlbNnuurrrHatesSummoning"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNnuurrrObeyPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNnuurrrFearLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNnuurrrPoisonSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNnuurrrDrainMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNnuurrrWingspanFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbNnuurrrInsectHomage"
+   }
+  ],
+  "the Nihrain Horse": [
+   {
+    "kind": "bool",
+    "name": "mlbNihrainBlackStallion"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNihrainEtherealPct"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNihrainGallopHours"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbNihrainNeutralService"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNihrainHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNihrainXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mlbNihrainXpPerHp"
+   }
+  ],
+  "Nuru-ah": [
+   {
+    "kind": "bool",
+    "name": "mlbNuruAhPacifist"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbNuruAhCureRaise"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbNuruAhWoundedSafe"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbNuruAhBovineWorship"
+   }
+  ],
+  "the Oonai": [
+   {
+    "kind": "bool",
+    "name": "mlbOonaiShapeChangers"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbOonaiBeastsOnly"
+   },
+   {
+    "kind": "const",
+    "name": "mlbOonaiFormHdMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbOonaiOneAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbOonaiRetainAcHp"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbOonaiUnknownForm"
+   },
+   {
+    "kind": "const",
+    "name": "mlbOonaiHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbOonaiXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mlbOonaiXpPerHp"
+   }
+  ],
+  "Quaolnargn": [
+   {
+    "kind": "bool",
+    "name": "mlbQuaolnargnAbyssToad"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbQuaolnargnPetrifyImmune"
+   },
+   {
+    "kind": "const",
+    "name": "mlbQuaolnargnSaveTarget"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbQuaolnargnSixteenHdBite"
+   },
+   {
+    "kind": "const",
+    "name": "mlbQuaolnargnDrainLevels"
+   },
+   {
+    "kind": "const",
+    "name": "mlbQuaolnargnBiteMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbQuaolnargnEarlyKillRefund"
+   },
+   {
+    "kind": "const",
+    "name": "mlbQuaolnargnHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbQuaolnargnXpBase"
+   }
+  ],
+  "Pyaray": [
+   {
+    "kind": "bool",
+    "name": "mlbPyarayOceanAbyss"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbPyarayBlueGem"
+   },
+   {
+    "kind": "const",
+    "name": "mlbPyarayTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "mlbPyarayTentacleMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbPyarayGemHp"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbPyarayGemDiamondHard"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbPyarayChaosFleet"
+   }
+  ],
+  "Roofdrak": [
+   {
+    "kind": "bool",
+    "name": "mlbRoofdrakWolfhound"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbRoofdrakLeadMace"
+   },
+   {
+    "kind": "const",
+    "name": "mlbRoofdrakMaceMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbRoofdrakCanineSense"
+   },
+   {
+    "kind": "const",
+    "name": "mlbRoofdrakWolfMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbRoofdrakCanineHomage"
+   }
+  ],
+  "Straasha": [
+   {
+    "kind": "bool",
+    "name": "mlbStraashaWaterKing"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbStraashaDoublePower"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStraashaWaterLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbStraashaHeatImmune"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStraashaKindredMin"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStraashaKindredMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbStraashaWaveMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbStraashaGreenSkin"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbStraashaPlusFourToHit"
+   }
+  ],
+  "the Vampire Trees": [
+   {
+    "kind": "bool",
+    "name": "mlbVampTreeAttachLeaves"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVampTreeLeafDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVampTreeLeafHp"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVampTreeLeafAc"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVampTreeLeafControlMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVampTreeRangeYards"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbVampTreeFireFears"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVampTreeFireSavePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbVampTreeFirePerDie"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbVampTreeNeverSurprised"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVampTreeHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVampTreeXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVampTreeXpPerHp"
+   }
+  ],
+  "Theleb K'aarna": [
+   {
+    "kind": "bool",
+    "name": "mlbThelebPanTangian"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbThelebCallsPowers"
+   },
+   {
+    "kind": "const",
+    "name": "mlbThelebAncestorSpellLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbThelebBloodOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbThelebElricEnemy"
+   }
+  ],
+  "the Vulture Lion": [
+   {
+    "kind": "bool",
+    "name": "mlbVultureLionChaosFiber"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbVultureLionLimboHome"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbVultureLionNoMorale"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbVultureLionSlaysBadSummoner"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbVultureLionFearImmune"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVultureLionTalonMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVultureLionBiteMax"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVultureLionHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVultureLionXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "mlbVultureLionXpPerHp"
+   }
+  ],
+  "Xiombarg": [
+   {
+    "kind": "bool",
+    "name": "mlbXiombargYoungGirlForm"
+   },
+   {
+    "kind": "const",
+    "name": "mlbXiombargAxePlus"
+   },
+   {
+    "kind": "const",
+    "name": "mlbXiombargAxeMax"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbXiombargParalyzingHit"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbXiombargCravesBlood"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbXiombargSacrificeResponse"
+   },
+   {
+    "kind": "const",
+    "name": "mlbXiombargPlusToHit"
+   }
+  ],
+  "Yyrkoon": [
+   {
+    "kind": "bool",
+    "name": "mlbYyrkoonEvilPrince"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbYyrkoonElricCousin"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbYyrkoonAncestorSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "mlbYyrkoonMournblade"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R861 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "- R861 LANDED 2026-10-26: commit 98bd7f9240b5aff49100beed37b3e69f945c356d",
+  "(pushed a4690e2..98bd7f9, census 783 -> 784), THE JAPANESE MYTHOS - the",
+  "D&DG walk round thirteen, print pp. 81-85: thirteen beings (Ama-Tsu-Mara,",
+  "Amaterasu Omikami, Daikoku, Ebisu, Hachiman, Kishijoten, Oh-Kuni-Nushi,",
+  "Raiden, Raiko, Susanowo, Tsukiyomi, Yamamoto Date, Yoshi-iye), 5 greater,",
+  "3 lesser, 2 demigods, 3 heroes, no monsters; prefix jpn ('jap' burned:",
+  "lowercase 'jape' hits in r356_splice.py and uamuspells1.h; jpn scanned",
+  "clean repo-wide). The headline adjudication: the DIGIT-SPLIT calibration",
+  "- a narrow printed 1 splits into 1 and 7 fragments in the chocr char",
+  "geometry at 600dpi: Kishijoten 31717 = 311 hp and 17 = 1 attack, Ebisu",
+  "3173 = 313 hp, Hachiman 175th = the 15th assassin. The FRACTION",
+  "FINGERPRINT: five X 1/2 cells (Ama-Tsu-Mara 78, Daikoku 66, Ebisu 66,",
+  "Hachiman 78, Susanowo 78). The EBISU PLANE CATCH: the chocr reads the",
+  "Seven Heavens where the merged voice said Prime Material. The AMATERASU",
+  "WRAP-LINE CATCH: the 'in each' wrap restores illusionist 20, the round's",
+  "only double in-each (MU/I 20 and M/B 15). Conventions: the Amaterasu",
+  "Infinite move -1 sentinel (the Ptah precedent); the Susanowo 12/36/48",
+  "triple slash encodes two with the 48 in the col comment (the klv Ahto",
+  "precedent); the bare SIZE: M hero rows pinned 0 (Yamamoto Date,",
+  "Yoshi-iye); the MONK/BARD in-each cells new this round (Amaterasu 15,",
+  "Oh-Kuni 10, Yoshi-iye 5). Flagged odd prints pinned: Hachiman 28/21,",
+  "Oh-Kuni-Nushi 15/12, Tsukiyomi 12/21 (descending pairs), Raiko 29,",
+  "Yoshi-iye 19 (no slash). Spec a6c9678bcbe90271431041a204ecb130, 51297",
+  "bytes; 179 inlines (57 consts, 84 bools, 38 table cols), 15 examples, no",
+  "data files; engine applied 6/already 6 double-run; rverify GREEN, 635",
+  "mutants 0 missed; hyphen scan clean; zero True/False tokens. NEXT: WAIT",
+  "FOR GO.",
+  "## Knowledge maintenance"
+ ],
+ "inline_count": 355
+}

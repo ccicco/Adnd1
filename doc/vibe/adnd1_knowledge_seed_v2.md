@@ -24906,6 +24906,34 @@ hyphen scan clean; zero True/False tokens. Engine lesson: the R859
 section-mapper bare first-words (In, Half) carried over; the IA voices live
 in the repo extract plus the archive.org derivative stream (chocr + djvu
 fetched per round). NEXT: WAIT FOR GO.
+- R861 LANDED 2026-10-26: commit 98bd7f9240b5aff49100beed37b3e69f945c356d
+(pushed a4690e2..98bd7f9, census 783 -> 784), THE JAPANESE MYTHOS - the
+D&DG walk round thirteen, print pp. 81-85: thirteen beings (Ama-Tsu-Mara,
+Amaterasu Omikami, Daikoku, Ebisu, Hachiman, Kishijoten, Oh-Kuni-Nushi,
+Raiden, Raiko, Susanowo, Tsukiyomi, Yamamoto Date, Yoshi-iye), 5 greater,
+3 lesser, 2 demigods, 3 heroes, no monsters; prefix jpn ('jap' burned:
+lowercase 'jape' hits in r356_splice.py and uamuspells1.h; jpn scanned
+clean repo-wide). The headline adjudication: the DIGIT-SPLIT calibration
+- a narrow printed 1 splits into 1 and 7 fragments in the chocr char
+geometry at 600dpi: Kishijoten 31717 = 311 hp and 17 = 1 attack, Ebisu
+3173 = 313 hp, Hachiman 175th = the 15th assassin. The FRACTION
+FINGERPRINT: five X 1/2 cells (Ama-Tsu-Mara 78, Daikoku 66, Ebisu 66,
+Hachiman 78, Susanowo 78). The EBISU PLANE CATCH: the chocr reads the
+Seven Heavens where the merged voice said Prime Material. The AMATERASU
+WRAP-LINE CATCH: the 'in each' wrap restores illusionist 20, the round's
+only double in-each (MU/I 20 and M/B 15). Conventions: the Amaterasu
+Infinite move -1 sentinel (the Ptah precedent); the Susanowo 12/36/48
+triple slash encodes two with the 48 in the col comment (the klv Ahto
+precedent); the bare SIZE: M hero rows pinned 0 (Yamamoto Date,
+Yoshi-iye); the MONK/BARD in-each cells new this round (Amaterasu 15,
+Oh-Kuni 10, Yoshi-iye 5). Flagged odd prints pinned: Hachiman 28/21,
+Oh-Kuni-Nushi 15/12, Tsukiyomi 12/21 (descending pairs), Raiko 29,
+Yoshi-iye 19 (no slash). Spec a6c9678bcbe90271431041a204ecb130, 51297
+bytes; 179 inlines (57 consts, 84 bools, 38 table cols), 15 examples, no
+data files; engine applied 6/already 6 double-run; rverify GREEN, 635
+mutants 0 missed; hyphen scan clean; zero True/False tokens. NEXT: WAIT
+FOR GO.
+## Knowledge maintenance
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
