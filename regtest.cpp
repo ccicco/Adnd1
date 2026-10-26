@@ -550,6 +550,7 @@
 #include "rules/ffn.h"  // R846: the FF monster level tables
 #include "rules/ffo.h"  // R847: the FF encounter listings
 #include "rules/ffq.h"  // R848: the FF magic item tables
+#include "rules/dga.h"  // R849: the DDG front matter
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4597,6 +4598,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r849_batch.h"  // R849: R849 DDG front matter audit
 #include "rules/audits/r848_batch.h"  // R848: R848 FF magic item tables audit
 #include "rules/audits/r847_batch.h"  // R847: R847 FF encounter listings audit
 #include "rules/audits/r846_batch.h"  // R846: R846 FF monster level tables audit

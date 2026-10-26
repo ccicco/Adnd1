@@ -1,0 +1,2680 @@
+{
+ "round": 849,
+ "prefix": "dga",
+ "header_file": "rules/dga.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/ddg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v3.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R848 LANDED 2026-10-25: commit",
+ "prev_record": [
+  "- R848 LANDED 2026-10-25: commit",
+  "  96831bb65334302564a3c0bbbf92cdf24207acdd",
+  "  (pushed 4024a96..96831bb,",
+  "  census 770 -> 771), THE FF",
+  "  MAGIC ITEM TABLES - round three",
+  "  of the three FF table-group rounds",
+  "  (the table-group closer). THE",
+  "  WALK: 5 tables, 77 rows, every",
+  "  cell pinned - the 13 party magic",
+  "  bands (print p. 101, the",
+  "  Individual-is-Nth-level rows, N",
+  "  1-13, one percent-chance and",
+  "  count pair per offered table,",
+  "  the percentage dropped at the",
+  "  automatic rows: Table I automatic",
+  "  from 10th, Table II from 12th,",
+  "  Table III at 13th) and the four",
+  "  die tables (print pp. 101-102:",
+  "  Table I 20, Table II 16, Table",
+  "  III 16, Table IV 12; 64 roster",
+  "  labels). THE SHAPE: the band",
+  "  cols Ord/Pct/Num per table",
+  "  I-IV (Pct 0 with Count 0 = not",
+  "  offered, 0 with Count above 0 =",
+  "  automatic), the item cols",
+  "  Ord/Ct (Ord the 64-label roster",
+  "  ordinal, first appearance",
+  "  Tables I-IV; Ct the printed",
+  "  leading count), tags Bnd/T1/T2/",
+  "  T3/T4, prefix ffq (ffp taken:",
+  "  the R836 promotion header owns",
+  "  rules/ffp.h). THE CENSUS PINS:",
+  "  ZERO registry defs touched (the",
+  "  item rows are not monster",
+  "  listings, no defs promoted, the",
+  "  registry floor holds at 995). THE",
+  "  ADJUDICATIONS (the four-voice",
+  "  collation - djvu, the",
+  "  word-geometry xml, abbyy and the",
+  "  pdf Capture layer - the DMG",
+  "  npcparty parity the",
+  "  tie-breaker): 18 forced repairs",
+  "  (the party-prose garbles Ittirm =",
+  "  Items and i item = 1 item, the",
+  "  Table i/M/ML/111/lit name",
+  "  garbles, the (d8 n d6) header,",
+  "  41 = +1, the super-heroism",
+  "  comma, chairman = chainmail, the",
+  "  robe b fending = blending, the",
+  "  talisman of, the pdf ,BLE and",
+  "  sdint garbles). THE NOTED INK:",
+  "  the ring of protection +1 (both",
+  "  char voices drop the +1, the pdf",
+  "  Capture voice reads it, the DMG",
+  "  parity agrees - pinned), the FF",
+  "  dust of appearance against the",
+  "  DMG dust of disappearance (FF ink",
+  "  pinned, the divergence noted),",
+  "  the +1 (or +2) et al dagger row",
+  "  without the DMG six-dagger",
+  "  footnote, the (d8, d6) linear",
+  "  convention (d6 1-3 the d8 result",
+  "  1-8, d6 4-6 d8+8, 9-16), the",
+  "  personal-select advice and the",
+  "  groups-or-multiples note, and the",
+  "  bands match the DMG listing",
+  "  exactly. Header rules/ffq.h (12",
+  "  consts + 11 bools + 17 table",
+  "  cols, inline 40), audit \"R848 FF",
+  "  magic item tables audit\", rode",
+  "  rules/audits/r848_batch.h; 16",
+  "  examples; rverify double-run",
+  "  GREEN, 268 mutants 0 missed; the",
+  "  R847 record seated into the seed.",
+  "  Spec tools/spec_r848.json, md5",
+  "  a2d67003832b6f6450c9789d5ea51eb3",
+  "  (authored-plus-newline). NEXT:",
+  "  the FF table-group arc closed",
+  "  (round three of three); the",
+  "  splice queue reopens with",
+  "  Curtiss's call."
+ ],
+ "title": "the DDG front matter",
+ "include_comment": "the DDG front matter",
+ "include_after": "#include \"rules/ffq.h\"  // R848: the FF magic item tables",
+ "audit_anchor": "#include \"rules/audits/r848_batch.h\"  // R848: R848 FF magic item tables audit",
+ "audit_file": "rules/audits/r849_batch.h",
+ "audit_label": "R849 DDG front matter audit",
+ "audit_comment": "THE DDG FRONT MATTER - the D&DG arc opener, print pp. 1-11: the title page, foreword, contents, preface, credits, the explanatory notes with the seven over-18 ability grids and the psionic class table, the standard divine abilities, the DMing doctrine with the intervention modifiers, the clerics and spell-granting ladder, the omens, the soul/spirit mortality doctrine, and the divine ascension requirements. Zero registry defs touched; the floor holds at 995. The physical-copy eyeball adjudications: the strength 23 damage +11 and the psionic class V lettered modes.",
+ "census_before": 771,
+ "inline_count": 237,
+ "banner": {
+  "title": "the DDG front matter - the arc opener. DEITIES & DEMIGODS, the 1980 second printing (Ward with Kuntz), print pp. 1-11: the front matter walk.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1); the physical-copy eyeball settled the strength 23 damage +11, the psionic roman numerals I-VI and the class V lettered mode lists (A,B,C,E attack, F,G,H defense); the archive.org L&L parity voice is lending-gated and was not obtainable.",
+  "sentinel": "the odPd 0 sentinel encodes the single-number open-doors parentheses (five rows); the wisdom loLvl/loCnt 0 pair encodes the two-spell rows (23, 24); the constitution regen 0 is the Nil row; the psionic class VI row is all 0 with the asterisked invulnerability noted in the bools."
+ },
+ "consts": [
+  {
+   "name": "dgaRound",
+   "value": 849,
+   "comment": "the DDG front matter round: the D&DG arc opener, print pp. 1-11 (Curtiss go on the landed R848)"
+  },
+  {
+   "name": "dgaPrintYear",
+   "value": 1980,
+   "comment": "DEITIES & DEMIGODS, the 1980 second printing (TSR 2017, Ward with Kuntz, Schick editor)"
+  },
+  {
+   "name": "dgaMythoiCount",
+   "value": 17,
+   "comment": "the 17 mythoi of the contents walk (American Indian through Sumerian, Cthulhu and Melnibonean included)"
+  },
+  {
+   "name": "dgaFrontMatterStart",
+   "value": 1,
+   "comment": "the front matter opens at print p. 1"
+  },
+  {
+   "name": "dgaFrontMatterEnd",
+   "value": 11,
+   "comment": "the front matter ends at print p. 11 (the divine ascension section)"
+  },
+  {
+   "name": "dgaTableCount",
+   "value": 9,
+   "comment": "the nine over-18 and doctrine grids pinned this round"
+  },
+  {
+   "name": "dgaChainCount",
+   "value": 1,
+   "comment": "the one chain pinned this round (the monster intelligence ladder)"
+  },
+  {
+   "name": "dgaRegistryFloor",
+   "value": 995,
+   "comment": "ZERO registry defs touched this round (a doctrine round, the floor holds at 995)"
+  },
+  {
+   "name": "dgaStrRows",
+   "value": 7,
+   "comment": "the strength table rows (scores 19-25)"
+  },
+  {
+   "name": "dgaWisRows",
+   "value": 7,
+   "comment": "the wisdom table rows (scores 19-25)"
+  },
+  {
+   "name": "dgaIntRows",
+   "value": 7,
+   "comment": "the intelligence table rows (scores 19-25)"
+  },
+  {
+   "name": "dgaDexRows",
+   "value": 7,
+   "comment": "the dexterity table rows (scores 19-25)"
+  },
+  {
+   "name": "dgaConRows",
+   "value": 7,
+   "comment": "the constitution table rows (scores 19-25)"
+  },
+  {
+   "name": "dgaChaRows",
+   "value": 7,
+   "comment": "the charisma table rows (scores 19-25)"
+  },
+  {
+   "name": "dgaHorrorRows",
+   "value": 7,
+   "comment": "the negative-charisma horror table rows (scores -1 to -7)"
+  },
+  {
+   "name": "dgaPsiRows",
+   "value": 6,
+   "comment": "the psionic class table rows (classes I-VI*)"
+  },
+  {
+   "name": "dgaIntModsRows",
+   "value": 6,
+   "comment": "the divine intervention modifier rows"
+  },
+  {
+   "name": "dgaPantheonLeadersHp",
+   "value": 400,
+   "comment": "all the leaders of the pantheons were given 400 hit points, the rest scaled down from there (the preface)"
+  },
+  {
+   "name": "dgaFreqVeryRare",
+   "value": 4,
+   "comment": "very rare indicates a 4% chance of occurrence (the explanatory notes)"
+  },
+  {
+   "name": "dgaFreqRare",
+   "value": 11,
+   "comment": "rare indicates an 11% chance of occurrence"
+  },
+  {
+   "name": "dgaFreqUncommon",
+   "value": 20,
+   "comment": "uncommon indicates a 20% chance of occurrence"
+  },
+  {
+   "name": "dgaFreqCommon",
+   "value": 65,
+   "comment": "common indicates a 65% chance of occurrence"
+  },
+  {
+   "name": "dgaMrCasterBase",
+   "value": 11,
+   "comment": "magic resistance is based on the spell being cast by an 11th level spell-caster"
+  },
+  {
+   "name": "dgaMrPerLevel",
+   "value": 5,
+   "comment": "magic resistance adjusts 5% per level above or below the 11th level base"
+  },
+  {
+   "name": "dgaLevelFloorDemi",
+   "value": 15,
+   "comment": "the magic ability and psionic discipline level floor for demigods (15th)"
+  },
+  {
+   "name": "dgaLevelFloorLesser",
+   "value": 20,
+   "comment": "the level floor for lesser gods (20th)"
+  },
+  {
+   "name": "dgaLevelFloorGreater",
+   "value": 25,
+   "comment": "the level floor for greater gods (25th)"
+  },
+  {
+   "name": "dgaStdAbilities",
+   "value": 8,
+   "comment": "the eight standard divine abilities (command, comprehend languages, detect alignment, gate, geas, quest, teleport, true seeing)"
+  },
+  {
+   "name": "dgaCommandLesser",
+   "value": 2,
+   "comment": "the command ability lasts 2 rounds for lesser gods"
+  },
+  {
+   "name": "dgaCommandGreater",
+   "value": 3,
+   "comment": "the command ability lasts 3 rounds for greater gods"
+  },
+  {
+   "name": "dgaGeasRange",
+   "value": 9,
+   "comment": "the geas ability: as the spell, but with a range of 9"
+  },
+  {
+   "name": "dgaQuestRange",
+   "value": 9,
+   "comment": "the quest ability: as the spell with a range of 9 inches, and no saving throw"
+  },
+  {
+   "name": "dgaInterventionBase",
+   "value": 10,
+   "comment": "the straight 10% chance some creature is sent if the beseeching character is exemplary and this is the first request"
+  },
+  {
+   "name": "dgaGodSave",
+   "value": 2,
+   "comment": "all gods and demigods have a saving throw of 2 in all categories (only a 1 on d20 misses)"
+  },
+  {
+   "name": "dgaHeroSave",
+   "value": 3,
+   "comment": "all heroes delineated in the book have saves of 3 in all categories"
+  },
+  {
+   "name": "dgaDivineRanks",
+   "value": 3,
+   "comment": "the three divine ranks: demigod, lesser god, greater god"
+  },
+  {
+   "name": "dgaDemigodMaxSpell",
+   "value": 5,
+   "comment": "a demigod cannot grant spells above 5th level"
+  },
+  {
+   "name": "dgaSoulRaces",
+   "value": 5,
+   "comment": "the five soul races (humans, dwarves, halflings, gnomes, half-elves - the raise dead and resurrection targets)"
+  },
+  {
+   "name": "dgaDeathLagMin",
+   "value": 3,
+   "comment": "the death-to-plane journey takes as little as 3 days relative to the Prime Material Plane"
+  },
+  {
+   "name": "dgaDeathLagMax",
+   "value": 30,
+   "comment": "the death-to-plane journey takes up to 30 days relative to the Prime Material Plane"
+  },
+  {
+   "name": "dgaSpiritRestMin",
+   "value": 10,
+   "comment": "a spirit may spend as little as ten years on its plane before returning to the Prime Material Plane"
+  },
+  {
+   "name": "dgaSpiritRestMax",
+   "value": 1000,
+   "comment": "a spirit may spend a millennium or more on its plane before returning (time is not important to a deity)"
+  },
+  {
+   "name": "dgaRestDemonsCentury",
+   "value": 100,
+   "comment": "type V and VI demons must rest a century before returning unaided to the plane where they were slain"
+  },
+  {
+   "name": "dgaRestPrincesMin",
+   "value": 2,
+   "comment": "demon princes and lords, greater devils and arch-devils require 2-8 weeks of rest"
+  },
+  {
+   "name": "dgaRestPrincesMax",
+   "value": 8,
+   "comment": "the top of the 2-8 week demon prince rest range"
+  },
+  {
+   "name": "dgaRestGreaterMin",
+   "value": 1,
+   "comment": "even greater deities require 1-4 weeks of rest before dealing with activities outside their home plane"
+  },
+  {
+   "name": "dgaRestGreaterMax",
+   "value": 4,
+   "comment": "the top of the 1-4 week greater deity rest range"
+  },
+  {
+   "name": "dgaAscensionReqts",
+   "value": 4,
+   "comment": "the four divine ascension requirements (level, abilities, worshipers, faithful follower)"
+  },
+  {
+   "name": "dgaAscAvg5Min",
+   "value": 9,
+   "comment": "at an average campaign level of 5, an ascension candidate should be around 9th-10th level"
+  },
+  {
+   "name": "dgaAscAvg5Max",
+   "value": 10,
+   "comment": "the top of the average-5 example (9th-10th level)"
+  },
+  {
+   "name": "dgaAscAvg15Min",
+   "value": 25,
+   "comment": "at an average campaign level of 15, a candidate would be in the realm of 25th-30th level"
+  },
+  {
+   "name": "dgaAscAvg15Max",
+   "value": 30,
+   "comment": "the top of the average-15 example (25th-30th level)"
+  },
+  {
+   "name": "dgaWishAgingYears",
+   "value": 3,
+   "comment": "each wish spell weakens the caster and ages him or her 3 years (the ascension cost note)"
+  },
+  {
+   "name": "dgaOmenWispDays",
+   "value": 7,
+   "comment": "the coming of a will-o-wisp means some building will burn to the ground within seven days"
+  },
+  {
+   "name": "dgaPsiClasses",
+   "value": 6,
+   "comment": "the gods psionic abilities fall into six standardized classes (I-VI)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgaNotSupplement",
+   "value": true,
+   "comment": "the foreword thesis: do not fall into the error of regarding it as a supplement - it is integral to Dungeon Mastering a true AD&D campaign"
+  },
+  {
+   "name": "dgaForewordPantheonSelection",
+   "value": true,
+   "comment": "deities are presented in pantheons; the DM selects which ones, combinations, or parts of pantheons suit the campaign"
+  },
+  {
+   "name": "dgaDemigodsIncluded",
+   "value": true,
+   "comment": "the book includes major, minor, and almost-gods (demigods), plus a few divine monsters and magic items"
+  },
+  {
+   "name": "dgaMatchForDeitiesAscended",
+   "value": true,
+   "comment": "characters who become a match for the deities are to be ranked amongst their number and removed from daily campaign interaction (the ascension seed in the foreword)"
+  },
+  {
+   "name": "dgaThreeFourthsSourced",
+   "value": true,
+   "comment": "three-fourths of the information was drawn from knowledgeable sources rather than the imagination of the authors (the preface)"
+  },
+  {
+   "name": "dgaScaledDown",
+   "value": true,
+   "comment": "when a being was made too all-powerful in AD&D terms we scaled them down to be compatible in game terms (the preface)"
+  },
+  {
+   "name": "dgaBeginningFramework",
+   "value": true,
+   "comment": "the book should be used as a beginning framework for the DM - sample it and take what is wanted (the preface)"
+  },
+  {
+   "name": "dgaChaosiumCredit",
+   "value": true,
+   "comment": "special thanks are given to Chaosium, Inc. for permission to use the Cthulhu Mythos and the Melnibonean Mythos material (print p. 4, the credits)"
+  },
+  {
+   "name": "dgaSecondPrinting",
+   "value": true,
+   "comment": "the Chaosium credit is present, the only 1st-vs-2nd printing delta - the upload is the 1980 second printing"
+  },
+  {
+   "name": "dgaFreqUnique",
+   "value": true,
+   "comment": "unique indicates that there is only one of the creature in existence"
+  },
+  {
+   "name": "dgaNumAppearingGuideline",
+   "value": true,
+   "comment": "number appearing is furnished as a guideline only, not generally recommended for establishing dungeon level populations"
+  },
+  {
+   "name": "dgaAcMagicalNature",
+   "value": true,
+   "comment": "a god or hero armor class may not jibe with stated armor and dexterity due to the magical nature of the being"
+  },
+  {
+   "name": "dgaMoveTwoMediums",
+   "value": true,
+   "comment": "a doubled move number indicates the creature can travel in two mediums or modes (flying, swimming, burrowing, web)"
+  },
+  {
+   "name": "dgaInfiniteMoveTeleport",
+   "value": true,
+   "comment": "infinite movement is a sort of continuous no-error teleport ability to any point desired"
+  },
+  {
+   "name": "dgaDeityHpBanish",
+   "value": true,
+   "comment": "hit points killed for a deity means temporarily banished back to its plane of origin, not measure of attack ability"
+  },
+  {
+   "name": "dgaMrStandardDoctrine",
+   "value": true,
+   "comment": "magic resistance is the percentage chance of a spell absolutely failing, at the 11th level base, adjusted 5% per level either way"
+  },
+  {
+   "name": "dgaMrPossessionsOnly",
+   "value": true,
+   "comment": "a creature magic resistance extends only to its immediate possessions - anything carried or worn"
+  },
+  {
+   "name": "dgaMrAreaEffectNote",
+   "value": true,
+   "comment": "area-effect spells will still function if targeted, even against a magic-resistant creature"
+  },
+  {
+   "name": "dgaMrSavesStillApply",
+   "value": true,
+   "comment": "even if a spell does affect a magic-resistant creature, it is entitled to normal saving throws if applicable"
+  },
+  {
+   "name": "dgaClassGridDoctrine",
+   "value": true,
+   "comment": "the five-slot class grid: CLERIC/DRUID, FIGHTER, MAGIC-USER/ILLUSIONIST, THIEF/ASSASSIN, MONK/BARD - Nth level X or Nil (the stat block format)"
+  },
+  {
+   "name": "dgaHitPointsNotDice",
+   "value": true,
+   "comment": "deity stat blocks list hit POINTS, not hit dice (the stat block format finding)"
+  },
+  {
+   "name": "dgaWisdomSpellBonusesApply",
+   "value": true,
+   "comment": "wisdom spell bonuses apply to the number of spells a divine CLERIC/DRUID can have"
+  },
+  {
+   "name": "dgaDruidNeedNotNeutral",
+   "value": true,
+   "comment": "a divine being need not be of neutral alignment to have levels of druidical ability"
+  },
+  {
+   "name": "dgaMultiClassInconsistent",
+   "value": true,
+   "comment": "nothing prevents deities from functioning in several different apparently-inconsistent classes at once"
+  },
+  {
+   "name": "dgaMagicLevelFloor",
+   "value": true,
+   "comment": "the deity magic-ability level is its highest class level, unless that is less than the 15/20/25 floor by divine rank"
+  },
+  {
+   "name": "dgaStrengthParen",
+   "value": true,
+   "comment": "the strength score is always followed in parentheses by the being bonus to hit and damage, corresponding to the over-18 table"
+  },
+  {
+   "name": "dgaDeityAlignmentLoose",
+   "value": true,
+   "comment": "deities are not always constrained to follow their alignment to the letter - their motives and purposes are far above the mortal"
+  },
+  {
+   "name": "dgaClericAlignIdentical",
+   "value": true,
+   "comment": "the alignment of the deity clerics must be identical with their patron (the explanatory notes)"
+  },
+  {
+   "name": "dgaSizeThreeFold",
+   "value": true,
+   "comment": "size is abbreviated S (smaller than human), M (man-sized), L (larger than man-sized with greater mass)"
+  },
+  {
+   "name": "dgaIntIllusionCumulative",
+   "value": true,
+   "comment": "the intelligence illusion/phantasm immunities are cumulative with higher intelligence"
+  },
+  {
+   "name": "dgaIntNeverFooled",
+   "value": true,
+   "comment": "beings of very high intelligence will not be fooled by illusion/phantasm spells - a 19 intelligence never believes a 1st level illusion"
+  },
+  {
+   "name": "dgaWisdomImmunitiesCumulative",
+   "value": true,
+   "comment": "the wisdom spell immunities are cumulative with higher wisdom"
+  },
+  {
+   "name": "dgaWisdomAutoThrowOff",
+   "value": true,
+   "comment": "beings with high wisdom are simply able to automatically throw off the effects of the immune spells"
+  },
+  {
+   "name": "dgaDexThiefColsNote",
+   "value": true,
+   "comment": "the dexterity thief-skill columns (picking pockets, open locks, traps, move silently, hide) apply only to beings with thief, assassin or monk abilities"
+  },
+  {
+   "name": "dgaConRerollDoctrine",
+   "value": true,
+   "comment": "the constitution no-1s doctrine: 1s rolled on hit dice count as 2s; at 21-22 the 1s and 2s count as 3s, and so on"
+  },
+  {
+   "name": "dgaConNonFighterCap2",
+   "value": true,
+   "comment": "beings without fighter, paladin or ranger class receive no more than 2 bonus hit points per die"
+  },
+  {
+   "name": "dgaAweDivineOnly",
+   "value": true,
+   "comment": "the awe power applies only to divine beings (gods and demigods) - mortals with godlike charisma do not radiate it"
+  },
+  {
+   "name": "dgaAweStunNoSave",
+   "value": true,
+   "comment": "the awe stun works through any control up to and including a magic jar spell, with no saving throw"
+  },
+  {
+   "name": "dgaAweStunnedDefendOnly",
+   "value": true,
+   "comment": "creatures stunned by awe can initiate nothing but physical defense if attacked"
+  },
+  {
+   "name": "dgaHorrorDivineOnly",
+   "value": true,
+   "comment": "the horror aura applies only to the truly ghastly divine beings - a cursed non-divine negative charisma does not confer it"
+  },
+  {
+   "name": "dgaHorrorDefendOnly",
+   "value": true,
+   "comment": "a horror-stunned creature can do nothing but defend itself physically until the being leaves sight"
+  },
+  {
+   "name": "dgaNegativeChaNoHenchmen",
+   "value": true,
+   "comment": "beings with negative charisma will never have henchmen of a normal nature"
+  },
+  {
+   "name": "dgaPsionicLevelFloor",
+   "value": true,
+   "comment": "psionic disciplines function at a minimum level of 15th for demigods, 20th for lesser gods and 25th for greater gods"
+  },
+  {
+   "name": "dgaCommandNoSave",
+   "value": true,
+   "comment": "the command ability has no saving throw vs. this divine ability"
+  },
+  {
+   "name": "dgaComprehendSpeakWrite",
+   "value": true,
+   "comment": "the comprehend languages divine ability also grants the ability to speak or write the language in question"
+  },
+  {
+   "name": "dgaDetectAlignNoError",
+   "value": true,
+   "comment": "the detect alignment ability enables the deity to detect the alignment of objects or creatures with no error"
+  },
+  {
+   "name": "dgaGateSameMythos",
+   "value": true,
+   "comment": "the deity can only attempt to gate in other beings of the same mythos"
+  },
+  {
+   "name": "dgaQuestNoSave",
+   "value": true,
+   "comment": "the quest divine ability carries no saving throw"
+  },
+  {
+   "name": "dgaTeleportNoError",
+   "value": true,
+   "comment": "the teleport ability allows the deity to move from place to place or plane to plane with no error"
+  },
+  {
+   "name": "dgaAbilitiesAtWillNotContinuous",
+   "value": true,
+   "comment": "the standard abilities all function instantaneously and at will, but not continuously"
+  },
+  {
+   "name": "dgaBonusPowersDmJudgment",
+   "value": true,
+   "comment": "the gods sometimes manifest surprising abilities - changing ability scores, granting wishes, teleporting others - at DM judgment"
+  },
+  {
+   "name": "dgaPowerFromWorshipers",
+   "value": true,
+   "comment": "the source of a deity godhead is connected to earthly worshipers; power often increases or decreases as worshiper numbers vary"
+  },
+  {
+   "name": "dgaRaisedAbilitiesNoDivine",
+   "value": true,
+   "comment": "a human raised into the 20s by ultra-potent magic does not gain the powers reserved for the gods"
+  },
+  {
+   "name": "dgaGodsNotMonsterLists",
+   "value": true,
+   "comment": "the statistics do not tell how a deity should be played - treating gods as lists of armor classes reduces them to mere monsters"
+  },
+  {
+   "name": "dgaFlatterySeenThrough",
+   "value": true,
+   "comment": "any god with a wisdom score above 15 knows flattery for what it is and generally guesses the flatterer motives"
+  },
+  {
+   "name": "dgaInt20PredictsAction",
+   "value": true,
+   "comment": "gods with intelligence above 20 can often tell what action a mortal is about to attempt from preparatory motions"
+  },
+  {
+   "name": "dgaAvoidDefeatTeleport",
+   "value": true,
+   "comment": "a god in combat always attempts to avoid physical defeat - the innate teleport leaves or blinks away, taking no time or concentration"
+  },
+  {
+   "name": "dgaSummonAidDepart",
+   "value": true,
+   "comment": "deities in combat almost always summon a retinue, and many gods then depart the field leaving the retinue to fight"
+  },
+  {
+   "name": "dgaDeitiesAvoidEachOther",
+   "value": true,
+   "comment": "unless they have a history of mutual antipathy, deities are always unwilling to fight other deities, backing off from confrontation"
+  },
+  {
+   "name": "dgaGateBringsServants",
+   "value": true,
+   "comment": "gate spells are more likely to bring one of the god followers than the deity; a gate spell cannot compel a deity appearance"
+  },
+  {
+   "name": "dgaSpecificAidRare",
+   "value": true,
+   "comment": "specific aid to individuals is extremely rare; the gods prefer subtle general aid to their worshipers as a whole"
+  },
+  {
+   "name": "dgaEvilGodsAppearForConverts",
+   "value": true,
+   "comment": "the evil gods, demons and devils are prone to appear when their name is spoken - provided they stand to gain converts"
+  },
+  {
+   "name": "dgaInterventionNoWhim",
+   "value": true,
+   "comment": "intervention by a deity is no trifling matter and is not to be allowed on a whim, even if characters are in extremis"
+  },
+  {
+   "name": "dgaFirstRequestRule",
+   "value": true,
+   "comment": "an exemplary character gets the straight 10% creature-sent chance only the first time help is asked"
+  },
+  {
+   "name": "dgaDeityComesOn00",
+   "value": true,
+   "comment": "if 00 is rolled there is a percentage chance equal to the character level that the deity itself comes, modified by the intervention table"
+  },
+  {
+   "name": "dgaCharactersBecomeIntervention",
+   "value": true,
+   "comment": "characters asked to take part in the maneuverings of the gods may actually become part of the intervention itself"
+  },
+  {
+   "name": "dgaInterventionPrimeOnly",
+   "value": true,
+   "comment": "the intervention modifiers apply only to activities on the Prime Material Plane"
+  },
+  {
+   "name": "dgaInterventionNoOuterPlanes",
+   "value": true,
+   "comment": "deities will not intervene on the planes which are the habitations of other deities, i.e. the Outer Planes"
+  },
+  {
+   "name": "dgaInterventionNotPosNeg",
+   "value": true,
+   "comment": "deities will neither venture to involve themselves in the Positive or Negative Material Planes"
+  },
+  {
+   "name": "dgaInterventionElementalDmOption",
+   "value": true,
+   "comment": "intervention in the Elemental Planes is subject to DM option; if there are elemental gods, the Outer Planes deities will NOT go there"
+  },
+  {
+   "name": "dgaInterventionOccasionalAstral",
+   "value": true,
+   "comment": "intervention occurs only on the Prime Material Plane in most cases, with occasional intervention in the Astral and Ethereal Planes"
+  },
+  {
+   "name": "dgaSpells12KnowledgeFaith",
+   "value": true,
+   "comment": "1st and 2nd level cleric spells are gained through the cleric knowledge and faith, not prayer"
+  },
+  {
+   "name": "dgaSpells345ServantsMinions",
+   "value": true,
+   "comment": "3rd, 4th and 5th level spells are granted by the supernatural servants or minions of the deity, ranging up to demigod level"
+  },
+  {
+   "name": "dgaDemigodDirect345",
+   "value": true,
+   "comment": "clerics whose patrons are demigods receive their 3rd through 5th level spells directly from their deity"
+  },
+  {
+   "name": "dgaDemigodNo67",
+   "value": true,
+   "comment": "a cleric of a demigod could never receive 6th or 7th level spells"
+  },
+  {
+   "name": "dgaSixthSeventhFromDeity",
+   "value": true,
+   "comment": "sixth and seventh level spells are granted to clerics directly from their deities"
+  },
+  {
+   "name": "dgaSeventhGreaterOnly",
+   "value": true,
+   "comment": "only the greater gods may grant 7th level spells"
+  },
+  {
+   "name": "dgaRankAlterable",
+   "value": true,
+   "comment": "the DM may carefully consider altering the demigod/lesser/greater designations if they do not suit the campaign"
+  },
+  {
+   "name": "dgaSavesIrreducible",
+   "value": true,
+   "comment": "gods and heroes saving throw numbers are irreducible regardless of magical aids and adjustments"
+  },
+  {
+   "name": "dgaClericExemplary",
+   "value": true,
+   "comment": "clerics are expected to behave in a manner exemplary of the teachings of their faith, role models exhibiting greater wisdom"
+  },
+  {
+   "name": "dgaClericRitualsRequired",
+   "value": true,
+   "comment": "cleric adventurers must maintain appearances and perform the proper rituals essential to their faith and alignment"
+  },
+  {
+   "name": "dgaClericTempleBuilding",
+   "value": true,
+   "comment": "clerics build places of worship from roadside shrines to whole temples, in places of relative security - desecration is a terrible blow to a religion honor"
+  },
+  {
+   "name": "dgaMinorTransgressionWarningOmen",
+   "value": true,
+   "comment": "a minor offense by a higher level cleric typically brings an unmistakable omen sent by one of the deity servants"
+  },
+  {
+   "name": "dgaSpellsDeniedDuringAtonement",
+   "value": true,
+   "comment": "until the atonement period is complete, use of certain spells or spell levels may be denied the errant cleric"
+  },
+  {
+   "name": "dgaGraveSinAllPossessions",
+   "value": true,
+   "comment": "a grave transgression may require sacrificing all possessions and going on a major quest to restore good standing"
+  },
+  {
+   "name": "dgaExcommunicationTotal",
+   "value": true,
+   "comment": "irredeemable sins bring immediate and total excommunication - never again clerical spells in that deity name, nor aid from its followers"
+  },
+  {
+   "name": "dgaOmensCorrectionDevices",
+   "value": true,
+   "comment": "omens are devices for judges (the DM) to use in correcting players that constantly do improper things"
+  },
+  {
+   "name": "dgaOmenPartialPowerLoss",
+   "value": true,
+   "comment": "the most common bad omen is a partial loss of power: forgotten higher-level spells, constant illness (one-fourth to one-half hit points), failed renewals"
+  },
+  {
+   "name": "dgaOmenEscalation",
+   "value": true,
+   "comment": "if a temporary loss of power does not deter the player, more severe omens can be given or the effects made permanent"
+  },
+  {
+   "name": "dgaOmenResultsOptional",
+   "value": true,
+   "comment": "any and all omen powers or results are entirely optional; a player cannot badger a DM into bonuses for carrying lucky charms"
+  },
+  {
+   "name": "dgaOmenGoodPortents",
+   "value": true,
+   "comment": "good-luck portents: finding a four-leaf clover, seeing the crescent moon, and finding a toadstool"
+  },
+  {
+   "name": "dgaOmenGoodSymbols",
+   "value": true,
+   "comment": "good-luck symbols: dice, crossed fingers, a shoe, a fish, a dog, a wheel, and the three apes that see, hear and speak no evil"
+  },
+  {
+   "name": "dgaOmenMistletoe",
+   "value": true,
+   "comment": "finding mistletoe in the wild is good luck; boiled with pure spring water it is a universal cure for poisons"
+  },
+  {
+   "name": "dgaOmenLeatherRepels",
+   "value": true,
+   "comment": "the wearing of leather from top to bottom is said to repel demons and devils"
+  },
+  {
+   "name": "dgaOmenDung",
+   "value": true,
+   "comment": "dung has both properties: the dung-covered cannot be touched by the undead, but dung cast on a good altar defiles it"
+  },
+  {
+   "name": "dgaOmenMirrorSalt",
+   "value": true,
+   "comment": "breaking a mirror and spilling salt are universally recognized bad omens"
+  },
+  {
+   "name": "dgaOmenCelestials",
+   "value": true,
+   "comment": "the appearance of meteors, comets and eclipses portends great changes or happenings, usually not good"
+  },
+  {
+   "name": "dgaOmenOldWoman",
+   "value": true,
+   "comment": "meeting an old woman as one sets out on a journey is ill fortune"
+  },
+  {
+   "name": "dgaOmenBatWindow",
+   "value": true,
+   "comment": "a bat flying in the window is ill fortune"
+  },
+  {
+   "name": "dgaOmenTripping",
+   "value": true,
+   "comment": "tripping as one enters a doorway is ill fortune"
+  },
+  {
+   "name": "dgaOmenBirdOnSymbol",
+   "value": true,
+   "comment": "a bird perched on a holy symbol means horrible things will happen to that sect in the near future"
+  },
+  {
+   "name": "dgaOmenCrossedKnives",
+   "value": true,
+   "comment": "finding crossed knives in a room is a sure sign that person will be cut the very next time they are attacked"
+  },
+  {
+   "name": "dgaOmenThirteen",
+   "value": true,
+   "comment": "thirteen of anything in one group is the height of bad luck; taking objects from a group of thirteen invites a horrible death"
+  },
+  {
+   "name": "dgaOmenWispFire",
+   "value": true,
+   "comment": "the coming of a will-o-wisp means some building is going to burn to the ground within seven days"
+  },
+  {
+   "name": "dgaOmenBanshee",
+   "value": true,
+   "comment": "the wail of a banshee certainly means someone is going to die that very night"
+  },
+  {
+   "name": "dgaOmenRainbow",
+   "value": true,
+   "comment": "a rainbow is a definite statement from a deity: either it wants to converse with a mortal or to give the mortal a quest"
+  },
+  {
+   "name": "dgaOmenBifrost",
+   "value": true,
+   "comment": "in Norse legend men and women of power could travel to Asgard by touching a rainbow (part of the bridge Bifrost) and wishing to be there"
+  },
+  {
+   "name": "dgaSoulSpiritDoctrine",
+   "value": true,
+   "comment": "the anima is one of two sorts: souls (the five raiseable races) or spirits (all other beings that worship deities, the DM deciding case by case)"
+  },
+  {
+   "name": "dgaSpiritMinIntLow",
+   "value": true,
+   "comment": "monsters with spirits must have at least an intelligence rating of Low"
+  },
+  {
+   "name": "dgaSoulPlaneDmChoice",
+   "value": true,
+   "comment": "the plane a soul or spirit goes to is the DM call, judged on the alignment behavior of the mortal life; the faithful pass to their deity plane"
+  },
+  {
+   "name": "dgaSoulEternalResident",
+   "value": true,
+   "comment": "for souls the destination plane is the beginning of eternity - the soul remains there forever, enjoying the benefits or suffering the torments"
+  },
+  {
+   "name": "dgaSpiritRewardsLess",
+   "value": true,
+   "comment": "spirits are but temporary residents: their rewards and punishments are less than that received by souls"
+  },
+  {
+   "name": "dgaSpiritReincarnation",
+   "value": true,
+   "comment": "a spirit can be returned to the Prime Material Plane - reincarnated with no overt memories, the new form not necessarily the same as the old"
+  },
+  {
+   "name": "dgaRaisedLimitRationale",
+   "value": true,
+   "comment": "the 3-30 day death lag is the rationale for the progressive time limit on the raise dead spell - the farther the soul has travelled, the more powerful the cleric needed"
+  },
+  {
+   "name": "dgaAstralPerilDoctrine",
+   "value": true,
+   "comment": "the road through the Astral Plane is clearly marked for the dead but not free of peril - hence burial chambers with weapons, treasure and bodyguards"
+  },
+  {
+   "name": "dgaResurrectionCooperation",
+   "value": true,
+   "comment": "resurrection recalls the soul from its deity plane with that deity cooperation; resurrecting a radically different alignment may greatly offend"
+  },
+  {
+   "name": "dgaServantsAreSpirits",
+   "value": true,
+   "comment": "the minions of some deities (demons, devils, couatl, ki-rin, titans) are actually spirits put into those forms; the MONSTER MANUAL forms are not the only ones"
+  },
+  {
+   "name": "dgaImmortalityEternalYouth",
+   "value": true,
+   "comment": "immortality does not confer everlasting existence - what the gods enjoy is eternal youth"
+  },
+  {
+   "name": "dgaLongevityPotionReversal",
+   "value": true,
+   "comment": "a character with apparent immortality through potions of longevity need not fear natural causes until the final potion reverses all previous ones"
+  },
+  {
+   "name": "dgaSilverCordUnbreakable",
+   "value": true,
+   "comment": "the silver cord anchoring traveling deities and minions to their home plane cannot be broken by the Psychic Wind or any other means"
+  },
+  {
+   "name": "dgaCordPullNearInstant",
+   "value": true,
+   "comment": "the cord pulls a spirit back to its plane of origin near-instantaneously when its material form is destroyed, at enormous energy cost"
+  },
+  {
+   "name": "dgaDeityDeathFades",
+   "value": true,
+   "comment": "when a deity dies on the Prime Material Plane the person and possessions fade away and disappear, though certain items might remain at DM discretion"
+  },
+  {
+   "name": "dgaDormancyBlocksSpells",
+   "value": true,
+   "comment": "during a resting deity dormancy its clerics can acquire or recover no spells of third level or higher"
+  },
+  {
+   "name": "dgaDormancyReadAsOmen",
+   "value": true,
+   "comment": "the dormancy spell loss may be interpreted with dismay as a bad omen, but no information will be forthcoming until the dormancy is over"
+  },
+  {
+   "name": "dagaDeityNeverAdmitsDefeat",
+   "value": true,
+   "comment": "it is unlikely that a deity would admit to its followers that it had been defeated"
+  },
+  {
+   "name": "dgaHomePlaneDeathAbsolute",
+   "value": true,
+   "comment": "a being slain on its home plane is absolutely and irrevocably dead - no power in the multiverse can restore it, including other deities"
+  },
+  {
+   "name": "dgaHomePlaneDeityNearImpossible",
+   "value": true,
+   "comment": "it should be next to impossible for anything except another deity to slay a deity on its own plane; brazen characters are dealt with severely"
+  },
+  {
+   "name": "dgaAscLevelAboveAverage",
+   "value": true,
+   "comment": "the first requirement: an experience level significantly above the average of adventure-type characters in the campaign"
+  },
+  {
+   "name": "dgaAscAbilitiesRaised",
+   "value": true,
+   "comment": "the second requirement: ability scores raised through mighty world-shaking magic to be on par with the lesser demigods - dozens of wishes, each aging the caster 3 years"
+  },
+  {
+   "name": "dgaAscSincereWorshipers",
+   "value": true,
+   "comment": "the third requirement: a body of sincere worshipers, genuine and honest in their adoration, convinced by witnessed mighty deeds and miracles"
+  },
+  {
+   "name": "dgaAscFaithfulFollower",
+   "value": true,
+   "comment": "the fourth requirement: the person must be and have been a faithful and true follower of his or her alignment and patron deity"
+  },
+  {
+   "name": "dgaAscDivineQuests",
+   "value": true,
+   "comment": "with all four conditions met and a sufficient number of divine quests fulfilled, the deity may invest the person with divine power"
+  },
+  {
+   "name": "dgaServantCenturiesToDemigod",
+   "value": true,
+   "comment": "the ascended serve as minor functionaries; after several centuries of superior service, exceptional servants may be awarded demigod status with an earthly priesthood"
+  },
+  {
+   "name": "dgaAscensionRemovesFromCampaign",
+   "value": true,
+   "comment": "ascension to divinity effectively removes the character from the general campaign as a non-player member of the DM pantheon"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the strength grid",
+   "tag": "Str",
+   "cols": [
+    "dgaStrScore",
+    "dgaStrToHit",
+    "dgaStrDmg",
+    "dgaStrWt",
+    "dgaStrOdN",
+    "dgaStrOdD",
+    "dgaStrOdPn",
+    "dgaStrOdPd",
+    "dgaStrBendPct"
+   ],
+   "count": "dgaStrRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     19,
+     3,
+     7,
+     4500,
+     7,
+     8,
+     3,
+     0,
+     50
+    ],
+    [
+     20,
+     3,
+     8,
+     5000,
+     7,
+     8,
+     3,
+     0,
+     60
+    ],
+    [
+     21,
+     4,
+     9,
+     6000,
+     9,
+     10,
+     4,
+     0,
+     70
+    ],
+    [
+     22,
+     4,
+     10,
+     7500,
+     11,
+     12,
+     4,
+     0,
+     80
+    ],
+    [
+     23,
+     5,
+     11,
+     9000,
+     11,
+     12,
+     5,
+     0,
+     90
+    ],
+    [
+     24,
+     6,
+     12,
+     12000,
+     19,
+     20,
+     7,
+     8,
+     100
+    ],
+    [
+     25,
+     7,
+     14,
+     15000,
+     23,
+     24,
+     9,
+     10,
+     100
+    ]
+   ],
+   "col_comments": [
+    "The strength score cells (19-25, the over-18 doctrine)",
+    "The to-hit bonus cells (the parenthesized first figure)",
+    "The damage bonus cells (the parenthesized second figure; the 23 row reads +11 - the physical-copy eyeball against a +1 misread)",
+    "The weight allowance cells (gold piece weight)",
+    "The open-doors numerator cells (the 1-in-N figure)",
+    "The open-doors denominator cells",
+    "The parenthesized open-doors numerator cells (odPd 0 = a single parenthesized number, the no-paren rows)",
+    "The parenthesized open-doors denominator cells (0 = none printed)",
+    "The bend bars/lift gates percent cells (with the giant-comparison column noted in the header comment)"
+   ],
+   "audit_comment": "the strength table for scores above 18 (print p. 6) - the 23 row damage +11 is the physical-copy adjudicated cell",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5,
+    0
+   ]
+  },
+  {
+   "name": "the wisdom grid",
+   "tag": "Wis",
+   "cols": [
+    "dgaWisScore",
+    "dgaWisHiLvl",
+    "dgaWisHiCnt",
+    "dgaWisLoLvl",
+    "dgaWisLoCnt"
+   ],
+   "count": "dgaWisRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     19,
+     4,
+     1,
+     1,
+     1
+    ],
+    [
+     20,
+     4,
+     1,
+     2,
+     1
+    ],
+    [
+     21,
+     5,
+     1,
+     3,
+     1
+    ],
+    [
+     22,
+     5,
+     1,
+     4,
+     1
+    ],
+    [
+     23,
+     5,
+     2,
+     0,
+     0
+    ],
+    [
+     24,
+     6,
+     2,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     1,
+     6,
+     1
+    ]
+   ],
+   "col_comments": [
+    "The wisdom score cells (19-25)",
+    "The high-level spell cells (4th, 5th, 6th, 7th by row)",
+    "The high-level spell count cells (one or two)",
+    "The low-level spell cells (1st-4th, 0 = none at the two-spell rows)",
+    "The low-level spell count cells (0 = none at the two-spell rows)"
+   ],
+   "audit_comment": "the wisdom spell bonus table for scores above 18 (print p. 7)",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    2,
+    2
+   ]
+  },
+  {
+   "name": "the intelligence grid",
+   "tag": "Int",
+   "cols": [
+    "dgaIntScore",
+    "dgaIntKnowPct",
+    "dgaIntMinSpells",
+    "dgaIntIllusLvl"
+   ],
+   "count": "dgaIntRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     19,
+     95,
+     11,
+     1
+    ],
+    [
+     20,
+     96,
+     12,
+     2
+    ],
+    [
+     21,
+     97,
+     13,
+     3
+    ],
+    [
+     22,
+     98,
+     14,
+     4
+    ],
+    [
+     23,
+     99,
+     15,
+     5
+    ],
+    [
+     24,
+     100,
+     16,
+     6
+    ],
+    [
+     25,
+     100,
+     17,
+     7
+    ]
+   ],
+   "col_comments": [
+    "The intelligence score cells (19-25)",
+    "The chance-to-know-a-spell percent cells",
+    "The minimum spells per level cells (11-17)",
+    "The illusion/phantasm immunity level cells (1st-7th level illusions disbelieved)"
+   ],
+   "audit_comment": "the intelligence table for scores above 18 (print p. 7)"
+  },
+  {
+   "name": "the dexterity grid",
+   "tag": "Dex",
+   "cols": [
+    "dgaDexScore",
+    "dgaDexReact",
+    "dgaDexDef",
+    "dgaDexPockets",
+    "dgaDexLocks",
+    "dgaDexTraps",
+    "dgaDexSilent",
+    "dgaDexHide"
+   ],
+   "count": "dgaDexRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     19,
+     3,
+     -4,
+     15,
+     20,
+     10,
+     12,
+     12
+    ],
+    [
+     20,
+     3,
+     -4,
+     20,
+     25,
+     15,
+     15,
+     15
+    ],
+    [
+     21,
+     4,
+     -5,
+     25,
+     30,
+     20,
+     18,
+     18
+    ],
+    [
+     22,
+     4,
+     -5,
+     30,
+     35,
+     25,
+     20,
+     20
+    ],
+    [
+     23,
+     4,
+     -5,
+     35,
+     40,
+     30,
+     23,
+     23
+    ],
+    [
+     24,
+     5,
+     -6,
+     40,
+     45,
+     35,
+     25,
+     25
+    ],
+    [
+     25,
+     5,
+     -6,
+     45,
+     50,
+     40,
+     30,
+     30
+    ]
+   ],
+   "col_comments": [
+    "The dexterity score cells (19-25)",
+    "The reaction/attacking adjustment cells (+3 to +5)",
+    "The defensive adjustment cells (-4 to -6)",
+    "The picking pockets bonus percent cells (thief cols)",
+    "The open locks bonus percent cells",
+    "The locate/remove traps bonus percent cells",
+    "The move silently bonus percent cells",
+    "The hiding in shadows bonus percent cells"
+   ],
+   "audit_comment": "the dexterity table for scores above 18 (print p. 7) - the five thief columns per the note bool"
+  },
+  {
+   "name": "the constitution grid",
+   "tag": "Con",
+   "cols": [
+    "dgaConScore",
+    "dgaConHpAdj",
+    "dgaConPoisonSave",
+    "dgaConRegenTurns"
+   ],
+   "count": "dgaConRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     19,
+     5,
+     1,
+     0
+    ],
+    [
+     20,
+     5,
+     1,
+     6
+    ],
+    [
+     21,
+     6,
+     2,
+     5
+    ],
+    [
+     22,
+     6,
+     2,
+     4
+    ],
+    [
+     23,
+     6,
+     3,
+     3
+    ],
+    [
+     24,
+     7,
+     3,
+     2
+    ],
+    [
+     25,
+     7,
+     4,
+     1
+    ]
+   ],
+   "col_comments": [
+    "The constitution score cells (19-25)",
+    "The hit point adjustment cells (+5 to +7, the no-1s doctrine per the bool)",
+    "The poison save adjustment cells (+1 to +4)",
+    "The regeneration turn cells (1 point per N turns; 0 = the Nil row)"
+   ],
+   "audit_comment": "the constitution table for scores above 18 (print p. 7)",
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "name": "the charisma grid",
+   "tag": "Cha",
+   "cols": [
+    "dgaChaScore",
+    "dgaChaHench",
+    "dgaChaLoyalty",
+    "dgaChaReact",
+    "dgaChaAweHd"
+   ],
+   "count": "dgaChaRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     19,
+     20,
+     50,
+     40,
+     1
+    ],
+    [
+     20,
+     25,
+     60,
+     45,
+     2
+    ],
+    [
+     21,
+     30,
+     70,
+     50,
+     4
+    ],
+    [
+     22,
+     35,
+     80,
+     55,
+     6
+    ],
+    [
+     23,
+     40,
+     90,
+     60,
+     8
+    ],
+    [
+     24,
+     45,
+     100,
+     65,
+     10
+    ],
+    [
+     25,
+     50,
+     100,
+     70,
+     12
+    ]
+   ],
+   "col_comments": [
+    "The charisma score cells (19-25)",
+    "The maximum henchmen cells (20-50)",
+    "The loyalty base cells (50-100 percent)",
+    "The reaction adjustment cells (40-70 percent)",
+    "The awe power cells (up to N HD/levels stunned)"
+   ],
+   "audit_comment": "the charisma table for scores above 18 (print p. 7) - the awe doctrine per the bools"
+  },
+  {
+   "name": "the horror grid",
+   "tag": "Hor",
+   "cols": [
+    "dgaHorScore",
+    "dgaHorReact",
+    "dgaHorHd"
+   ],
+   "count": "dgaHorrorRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     -1,
+     -40,
+     1
+    ],
+    [
+     -2,
+     -45,
+     2
+    ],
+    [
+     -3,
+     -50,
+     4
+    ],
+    [
+     -4,
+     -55,
+     6
+    ],
+    [
+     -5,
+     -60,
+     8
+    ],
+    [
+     -6,
+     -65,
+     10
+    ],
+    [
+     -7,
+     -70,
+     12
+    ]
+   ],
+   "col_comments": [
+    "The negative charisma score cells (-1 to -7)",
+    "The reaction adjustment cells (-40 to -70 percent)",
+    "The horror cells (up to N HD/levels stunned with fear and detestation)"
+   ],
+   "audit_comment": "the negative charisma horror table (print p. 7) - the ghastly-divine-being doctrine"
+  },
+  {
+   "name": "the psionic class grid",
+   "tag": "Psi",
+   "cols": [
+    "dgaPsiCls",
+    "dgaPsiStrLo",
+    "dgaPsiStrHi",
+    "dgaPsiMinDis",
+    "dgaPsiMajDis",
+    "dgaPsiAtkCnt",
+    "dgaPsiDefCnt"
+   ],
+   "count": "dgaPsiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     1,
+     326,
+     365,
+     5,
+     2,
+     5,
+     5
+    ],
+    [
+     2,
+     276,
+     315,
+     4,
+     2,
+     5,
+     5
+    ],
+    [
+     3,
+     236,
+     265,
+     3,
+     2,
+     5,
+     5
+    ],
+    [
+     4,
+     181,
+     210,
+     3,
+     1,
+     5,
+     5
+    ],
+    [
+     5,
+     91,
+     110,
+     2,
+     1,
+     4,
+     3
+    ],
+    [
+     6,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The psionic class cells (I-VI, the physical-copy roman-numeral adjudication)",
+    "The psionic strength range lower bound cells",
+    "The psionic strength range upper bound cells",
+    "The minor discipline count cells (5 down to 2; 0 = the Nil class VI row)",
+    "The major discipline count cells (2 down to 1; 0 = the Nil row)",
+    "The attack mode count cells (5 = All, 4 = the class V lettered list A,B,C,E; 0 = Nil)",
+    "The defense mode count cells (5 = All, 3 = the class V lettered list F,G,H; 0 = Nil)"
+   ],
+   "audit_comment": "the six standardized psionic classes (print p. 6) - classes I-IV All/All, class V the lettered modes, class VI the asterisked Nil row",
+   "sentinel_census": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "name": "the intervention modifier grid",
+   "tag": "IntMods",
+   "cols": [
+    "dgaIntModsOrd",
+    "dgaIntModsPct"
+   ],
+   "count": "dgaIntModsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     10
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     25
+    ]
+   ],
+   "col_comments": [
+    "The modifier ordinal cells (the printed list order)",
+    "The percent modifier cells (previous intervention 5, average alignment behavior 5, borderline 10, direct confrontation required 10, opposing diametric forces 1, serving the deity proximately 25)"
+   ],
+   "audit_comment": "the divine intervention modifiers (print p. 9) - the 00-roll deity-comes chance table"
+  }
+ ],
+ "chains": [
+  {
+   "name": "dgaIntRating",
+   "limits": [
+    0,
+    1,
+    4,
+    7,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20
+   ],
+   "tail": 10,
+   "arg": "x",
+   "comment": "the monster intelligence rating ladder (the explanatory notes): band 0 non-intelligent or not ratable, 1 animal, 2 semi-intelligent (2-4), 3 low (5-7), 4 average human (8-10), 5 very intelligent (11-12), 6 highly intelligent (13-14), 7 exceptionally intelligent (15-16), 8 genius (17-18), 9 supra-genius (19-20), and the tail band 10 godlike (21 and above)"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the census walk (the nine grids and the chain)",
+   "expr": "m['dgaTableCount']() != 9 or m['dgaChainCount']() != 1 or m['dgaStrRows']() + m['dgaWisRows']() + m['dgaIntRows']() + m['dgaDexRows']() + m['dgaConRows']() + m['dgaChaRows']() + m['dgaHorrorRows']() + m['dgaPsiRows']() + m['dgaIntModsRows']() != 61"
+  },
+  {
+   "note": "the front matter bounds (print pp. 1-11)",
+   "expr": "m['dgaFrontMatterStart']() != 1 or m['dgaFrontMatterEnd']() != 11"
+  },
+  {
+   "note": "the registry floor census pin (zero defs touched)",
+   "expr": "m['dgaRegistryFloor']() != 995"
+  },
+  {
+   "note": "the MR worked example (a 95% resistance: the 10th-level caster has no chance, the 12th-level has 10%)",
+   "expr": "m['dgaMrCasterBase']() != 11 or m['dgaMrPerLevel']() != 5 or 95 + m['dgaMrPerLevel']() != 100 or 95 - m['dgaMrPerLevel']() != 90"
+  },
+  {
+   "note": "the strength 23 adjudicated cell (the physical-copy eyeball: damage +11, not the OCR +1)",
+   "expr": "m['dgaStrToHit'](4) != 5 or m['dgaStrDmg'](4) != 11 or m['dgaStrWt'](4) != 9000 or m['dgaStrBendPct'](4) != 90"
+  },
+  {
+   "note": "the storm giant and titan rows (the parenthesized open-doors pairs)",
+   "expr": "m['dgaStrOdN'](5) != 19 or m['dgaStrOdD'](5) != 20 or m['dgaStrOdPn'](5) != 7 or m['dgaStrOdPd'](5) != 8 or m['dgaStrOdN'](6) != 23 or m['dgaStrOdD'](6) != 24 or m['dgaStrOdPn'](6) != 9 or m['dgaStrOdPd'](6) != 10"
+  },
+  {
+   "note": "the wisdom 25 row (One 6th and one 7th)",
+   "expr": "m['dgaWisHiLvl'](6) != 7 or m['dgaWisHiCnt'](6) != 1 or m['dgaWisLoLvl'](6) != 6 or m['dgaWisLoCnt'](6) != 1"
+  },
+  {
+   "note": "the wisdom two-spell rows (23 and 24: two 5th, two 6th, no low-level spell)",
+   "expr": "m['dgaWisHiCnt'](4) != 2 or m['dgaWisLoLvl'](4) != 0 or m['dgaWisHiCnt'](5) != 2 or m['dgaWisLoLvl'](5) != 0"
+  },
+  {
+   "note": "the psionic class V lettered modes (4 attack A,B,C,E; 3 defense F,G,H - the physical-copy adjudication)",
+   "expr": "m['dgaPsiAtkCnt'](4) != 4 or m['dgaPsiDefCnt'](4) != 3 or m['dgaPsiMinDis'](4) != 2 or m['dgaPsiMajDis'](4) != 1"
+  },
+  {
+   "note": "the intervention modifier extremes (the +1% row and the +25% proximate-service row)",
+   "expr": "m['dgaIntModsPct'](4) != 1 or m['dgaIntModsPct'](5) != 25 or m['dgaIntModsPct'](3) != 10"
+  },
+  {
+   "note": "the saves doctrine (gods 2, heroes 3, irreducible)",
+   "expr": "m['dgaGodSave']() != 2 or m['dgaHeroSave']() != 3"
+  },
+  {
+   "note": "the command rounds (lesser 2, greater 3)",
+   "expr": "m['dgaCommandLesser']() != 2 or m['dgaCommandGreater']() != 3"
+  },
+  {
+   "note": "the frequency doctrine (4/11/20/65 percent)",
+   "expr": "m['dgaFreqVeryRare']() != 4 or m['dgaFreqRare']() != 11 or m['dgaFreqUncommon']() != 20 or m['dgaFreqCommon']() != 65"
+  },
+  {
+   "note": "the death lag and rest doctrine (3-30 days; century, 2-8 weeks, 1-4 weeks)",
+   "expr": "m['dgaDeathLagMin']() != 3 or m['dgaDeathLagMax']() != 30 or m['dgaRestDemonsCentury']() != 100 or m['dgaRestPrincesMin']() != 2 or m['dgaRestPrincesMax']() != 8 or m['dgaRestGreaterMin']() != 1 or m['dgaRestGreaterMax']() != 4"
+  },
+  {
+   "note": "the ascension level examples (average 5 gives 9th-10th, average 15 gives 25th-30th)",
+   "expr": "m['dgaAscAvg5Min']() != 9 or m['dgaAscAvg5Max']() != 10 or m['dgaAscAvg15Min']() != 25 or m['dgaAscAvg15Max']() != 30"
+  },
+  {
+   "note": "the intelligence ladder boundary walk (the chain bands)",
+   "expr": "m['dgaIntRating'](0) != 0 or m['dgaIntRating'](1) != 1 or m['dgaIntRating'](2) != 2 or m['dgaIntRating'](5) != 3 or m['dgaIntRating'](8) != 4 or m['dgaIntRating'](11) != 5 or m['dgaIntRating'](13) != 6 or m['dgaIntRating'](15) != 7 or m['dgaIntRating'](17) != 8 or m['dgaIntRating'](19) != 9 or m['dgaIntRating'](21) != 10 or m['dgaIntRating'](25) != 10"
+  },
+  {
+   "note": "the spell-granting ladder (a demigod caps at 5th)",
+   "expr": "m['dgaDemigodMaxSpell']() != 5 or m['dgaDivineRanks']() != 3"
+  },
+  {
+   "note": "the will-o-wisp omen (seven days)",
+   "expr": "m['dgaOmenWispDays']() != 7"
+  },
+  {
+   "note": "the level floors (15/20/25 for both the magic ability and the psionic disciplines)",
+   "expr": "m['dgaLevelFloorDemi']() != 15 or m['dgaLevelFloorLesser']() != 20 or m['dgaLevelFloorGreater']() != 25"
+  }
+ ],
+ "header_sections": {
+  "the R849 census": [
+   {
+    "kind": "const",
+    "name": "dgaRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgaPrintYear"
+   },
+   {
+    "kind": "const",
+    "name": "dgaMythoiCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgaFrontMatterStart"
+   },
+   {
+    "kind": "const",
+    "name": "dgaFrontMatterEnd"
+   },
+   {
+    "kind": "const",
+    "name": "dgaTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgaChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgaRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgaStrRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgaWisRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgaIntRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgaDexRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgaConRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgaChaRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgaHorrorRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgaPsiRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgaIntModsRows"
+   }
+  ],
+  "the preface and foreword doctrine": [
+   {
+    "kind": "const",
+    "name": "dgaPantheonLeadersHp"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaNotSupplement"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaForewordPantheonSelection"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDemigodsIncluded"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMatchForDeitiesAscended"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaThreeFourthsSourced"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaScaledDown"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaBeginningFramework"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaChaosiumCredit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSecondPrinting"
+   }
+  ],
+  "the explanatory notes doctrine": [
+   {
+    "kind": "const",
+    "name": "dgaFreqVeryRare"
+   },
+   {
+    "kind": "const",
+    "name": "dgaFreqRare"
+   },
+   {
+    "kind": "const",
+    "name": "dgaFreqUncommon"
+   },
+   {
+    "kind": "const",
+    "name": "dgaFreqCommon"
+   },
+   {
+    "kind": "const",
+    "name": "dgaMrCasterBase"
+   },
+   {
+    "kind": "const",
+    "name": "dgaMrPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgaLevelFloorDemi"
+   },
+   {
+    "kind": "const",
+    "name": "dgaLevelFloorLesser"
+   },
+   {
+    "kind": "const",
+    "name": "dgaLevelFloorGreater"
+   },
+   {
+    "kind": "const",
+    "name": "dgaPsiClasses"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaFreqUnique"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaNumAppearingGuideline"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAcMagicalNature"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMoveTwoMediums"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaInfiniteMoveTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDeityHpBanish"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMrStandardDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMrPossessionsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMrAreaEffectNote"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMrSavesStillApply"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaClassGridDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaHitPointsNotDice"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaWisdomSpellBonusesApply"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDruidNeedNotNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMultiClassInconsistent"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMagicLevelFloor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaStrengthParen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDeityAlignmentLoose"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaClericAlignIdentical"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSizeThreeFold"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaIntIllusionCumulative"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaIntNeverFooled"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaWisdomImmunitiesCumulative"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaWisdomAutoThrowOff"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDexThiefColsNote"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaConRerollDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaConNonFighterCap2"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAweDivineOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAweStunNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAweStunnedDefendOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaHorrorDivineOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaHorrorDefendOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaNegativeChaNoHenchmen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaPsionicLevelFloor"
+   },
+   {
+    "kind": "chain",
+    "name": "dgaIntRating"
+   }
+  ],
+  "the nine over-18 and doctrine grids": [
+   {
+    "kind": "table",
+    "name": "the strength grid"
+   },
+   {
+    "kind": "table",
+    "name": "the intelligence grid"
+   },
+   {
+    "kind": "table",
+    "name": "the wisdom grid"
+   },
+   {
+    "kind": "table",
+    "name": "the dexterity grid"
+   },
+   {
+    "kind": "table",
+    "name": "the constitution grid"
+   },
+   {
+    "kind": "table",
+    "name": "the charisma grid"
+   },
+   {
+    "kind": "table",
+    "name": "the horror grid"
+   },
+   {
+    "kind": "table",
+    "name": "the psionic class grid"
+   },
+   {
+    "kind": "table",
+    "name": "the intervention modifier grid"
+   }
+  ],
+  "the standard divine abilities and saves": [
+   {
+    "kind": "const",
+    "name": "dgaStdAbilities"
+   },
+   {
+    "kind": "const",
+    "name": "dgaCommandLesser"
+   },
+   {
+    "kind": "const",
+    "name": "dgaCommandGreater"
+   },
+   {
+    "kind": "const",
+    "name": "dgaGeasRange"
+   },
+   {
+    "kind": "const",
+    "name": "dgaQuestRange"
+   },
+   {
+    "kind": "const",
+    "name": "dgaGodSave"
+   },
+   {
+    "kind": "const",
+    "name": "dgaHeroSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaCommandNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaComprehendSpeakWrite"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDetectAlignNoError"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaGateSameMythos"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaQuestNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaTeleportNoError"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAbilitiesAtWillNotContinuous"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaBonusPowersDmJudgment"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSavesIrreducible"
+   }
+  ],
+  "the dungeon mastering and intervention doctrine": [
+   {
+    "kind": "const",
+    "name": "dgaInterventionBase"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaPowerFromWorshipers"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaRaisedAbilitiesNoDivine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaGodsNotMonsterLists"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaFlatterySeenThrough"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaInt20PredictsAction"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAvoidDefeatTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSummonAidDepart"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDeitiesAvoidEachOther"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaGateBringsServants"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSpecificAidRare"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaEvilGodsAppearForConverts"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaInterventionNoWhim"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaFirstRequestRule"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDeityComesOn00"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaCharactersBecomeIntervention"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaInterventionPrimeOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaInterventionNoOuterPlanes"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaInterventionNotPosNeg"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaInterventionElementalDmOption"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaInterventionOccasionalAstral"
+   }
+  ],
+  "the clerics and spell-granting doctrine": [
+   {
+    "kind": "const",
+    "name": "dgaDivineRanks"
+   },
+   {
+    "kind": "const",
+    "name": "dgaDemigodMaxSpell"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSpells12KnowledgeFaith"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSpells345ServantsMinions"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDemigodDirect345"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDemigodNo67"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSixthSeventhFromDeity"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSeventhGreaterOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaRankAlterable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaClericExemplary"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaClericRitualsRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaClericTempleBuilding"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaMinorTransgressionWarningOmen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSpellsDeniedDuringAtonement"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaGraveSinAllPossessions"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaExcommunicationTotal"
+   }
+  ],
+  "the omens": [
+   {
+    "kind": "const",
+    "name": "dgaOmenWispDays"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmensCorrectionDevices"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenPartialPowerLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenEscalation"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenResultsOptional"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenGoodPortents"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenGoodSymbols"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenMistletoe"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenLeatherRepels"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenDung"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenMirrorSalt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenCelestials"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenOldWoman"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenBatWindow"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenTripping"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenBirdOnSymbol"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenCrossedKnives"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenThirteen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenWispFire"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenBanshee"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenRainbow"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaOmenBifrost"
+   }
+  ],
+  "the mortality and immortality doctrine": [
+   {
+    "kind": "const",
+    "name": "dgaSoulRaces"
+   },
+   {
+    "kind": "const",
+    "name": "dgaDeathLagMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgaDeathLagMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgaSpiritRestMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgaSpiritRestMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgaRestDemonsCentury"
+   },
+   {
+    "kind": "const",
+    "name": "dgaRestPrincesMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgaRestPrincesMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgaRestGreaterMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgaRestGreaterMax"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSoulSpiritDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSpiritMinIntLow"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSoulPlaneDmChoice"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSoulEternalResident"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSpiritRewardsLess"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSpiritReincarnation"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaRaisedLimitRationale"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAstralPerilDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaResurrectionCooperation"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaServantsAreSpirits"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaImmortalityEternalYouth"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaLongevityPotionReversal"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaSilverCordUnbreakable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaCordPullNearInstant"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDeityDeathFades"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDormancyBlocksSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaDormancyReadAsOmen"
+   },
+   {
+    "kind": "bool",
+    "name": "dagaDeityNeverAdmitsDefeat"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaHomePlaneDeathAbsolute"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaHomePlaneDeityNearImpossible"
+   }
+  ],
+  "the divine ascension doctrine": [
+   {
+    "kind": "const",
+    "name": "dgaAscensionReqts"
+   },
+   {
+    "kind": "const",
+    "name": "dgaAscAvg5Min"
+   },
+   {
+    "kind": "const",
+    "name": "dgaAscAvg5Max"
+   },
+   {
+    "kind": "const",
+    "name": "dgaAscAvg15Min"
+   },
+   {
+    "kind": "const",
+    "name": "dgaAscAvg15Max"
+   },
+   {
+    "kind": "const",
+    "name": "dgaWishAgingYears"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAscLevelAboveAverage"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAscAbilitiesRaised"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAscSincereWorshipers"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAscFaithfulFollower"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAscDivineQuests"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaServantCenturiesToDemigod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgaAscensionRemovesFromCampaign"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **Front matter** (pp. 1-11)",
+   "to": "- [x] **Front matter** (pp. 1-11)",
+   "note": "the front matter box"
+  }
+ ],
+ "gap_census": {
+  "closed": 1,
+  "open": 23
+ }
+}

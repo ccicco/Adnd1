@@ -451,6 +451,87 @@ history (R172-R312) stays at adnd1_knowledge_backup_v2.md.
 
 ## Round state (update each land)
 
+- R848 LANDED 2026-10-25: commit
+  96831bb65334302564a3c0bbbf92cdf24207acdd
+  (pushed 4024a96..96831bb,
+  census 770 -> 771), THE FF
+  MAGIC ITEM TABLES - round three
+  of the three FF table-group rounds
+  (the table-group closer). THE
+  WALK: 5 tables, 77 rows, every
+  cell pinned - the 13 party magic
+  bands (print p. 101, the
+  Individual-is-Nth-level rows, N
+  1-13, one percent-chance and
+  count pair per offered table,
+  the percentage dropped at the
+  automatic rows: Table I automatic
+  from 10th, Table II from 12th,
+  Table III at 13th) and the four
+  die tables (print pp. 101-102:
+  Table I 20, Table II 16, Table
+  III 16, Table IV 12; 64 roster
+  labels). THE SHAPE: the band
+  cols Ord/Pct/Num per table
+  I-IV (Pct 0 with Count 0 = not
+  offered, 0 with Count above 0 =
+  automatic), the item cols
+  Ord/Ct (Ord the 64-label roster
+  ordinal, first appearance
+  Tables I-IV; Ct the printed
+  leading count), tags Bnd/T1/T2/
+  T3/T4, prefix ffq (ffp taken:
+  the R836 promotion header owns
+  rules/ffp.h). THE CENSUS PINS:
+  ZERO registry defs touched (the
+  item rows are not monster
+  listings, no defs promoted, the
+  registry floor holds at 995). THE
+  ADJUDICATIONS (the four-voice
+  collation - djvu, the
+  word-geometry xml, abbyy and the
+  pdf Capture layer - the DMG
+  npcparty parity the
+  tie-breaker): 18 forced repairs
+  (the party-prose garbles Ittirm =
+  Items and i item = 1 item, the
+  Table i/M/ML/111/lit name
+  garbles, the (d8 n d6) header,
+  41 = +1, the super-heroism
+  comma, chairman = chainmail, the
+  robe b fending = blending, the
+  talisman of, the pdf ,BLE and
+  sdint garbles). THE NOTED INK:
+  the ring of protection +1 (both
+  char voices drop the +1, the pdf
+  Capture voice reads it, the DMG
+  parity agrees - pinned), the FF
+  dust of appearance against the
+  DMG dust of disappearance (FF ink
+  pinned, the divergence noted),
+  the +1 (or +2) et al dagger row
+  without the DMG six-dagger
+  footnote, the (d8, d6) linear
+  convention (d6 1-3 the d8 result
+  1-8, d6 4-6 d8+8, 9-16), the
+  personal-select advice and the
+  groups-or-multiples note, and the
+  bands match the DMG listing
+  exactly. Header rules/ffq.h (12
+  consts + 11 bools + 17 table
+  cols, inline 40), audit "R848 FF
+  magic item tables audit", rode
+  rules/audits/r848_batch.h; 16
+  examples; rverify double-run
+  GREEN, 268 mutants 0 missed; the
+  R847 record seated into the seed.
+  Spec tools/spec_r848.json, md5
+  a2d67003832b6f6450c9789d5ea51eb3
+  (authored-plus-newline). NEXT:
+  the FF table-group arc closed
+  (round three of three); the
+  splice queue reopens with
+  Curtiss's call.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
