@@ -1,0 +1,648 @@
+{
+ "prefix": "tpl",
+ "round": 868,
+ "title": "temple trappings",
+ "header_file": "rules/tpl.h",
+ "audit_file": "rules/audits/r868_batch.h",
+ "audit_label": "R868 temple trappings audit",
+ "include_after": "#include \"rules/pln.h\"  // R867: the known planes of existence",
+ "audit_anchor": "#include \"rules/audits/r867_batch.h\"  // R867: R867 known planes audit",
+ "include_comment": "temple trappings",
+ "audit_comment": "APPENDIX 2: TEMPLE TRAPPINGS - the D&DG walk round twenty, print p. 134: the representative-sample doctrine, the DM stocking and keying doctrine, and the 40-band trappings list (01-05 altar through 99-00 vestments) riding the roster data file; the L&L <cleric scrolls> and <+5 holy avenger, etc.> glosses are 5th-print additions, absent from the 2nd print.",
+ "banner": {
+  "title": "Appendix 2: temple trappings - the D&DG walk round twenty, print p. 134: the stocking doctrine and the 40-band trappings list (01-05 altar through 99-00 vestments), the representative-sample doctrine and the DM keying rules of the intro, the 40-label roster riding the round data file.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, page 135; the second printing) with the tsv x-y geometry as the label arbiter; the collation voice: the 1eonline L&L x2.htm appendix transcription. The adjudications: the choir area two-word print (the psm-4 fold merged the words; the L&L voice keeps the space), the font/immersion chamber print (no space after the slash), the lectern/dais print (the L&L transcription trims to lectern), the books-and-tomes print (the L&L double-ampersand is a transcription artifact), and the L&L <cleric scrolls> and <+5 holy avenger, etc.> glosses noted as 5th-print additions absent from the 2nd print. The vestments 00 reads 100 (the R867 High convention)."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R867 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "- R867 LANDED 2026-10-26: commit",
+  "35f7686ab8a50813697be0f958e75e086ad4779f (pushed",
+  "2e8ee02..35f7686, census 789 -> 790), APPENDIX 1",
+  "THE KNOWN PLANES OF EXISTENCE - the D&DG walk round",
+  "nineteen, print pp. 128-133: the planar-cosmology prose",
+  "(the infinite multiverse, the Inner Planes around the",
+  "Prime Material, the Ethereal and Astral conduits, the",
+  "Great Wheel, the seventeen outer planes, the elemental/",
+  "para-elemental/positive/negative doctrine) plus EIGHT",
+  "grids: the ethereal encounter table (31 rows), the",
+  "astral encounter table (24 rows), the seventeen-outer-",
+  "planes list (17 rows), the cyclone, wind and",
+  "para-elemental tables (4 rows each), the inner-plane",
+  "random bands (13 rows) and the outer-plane random bands",
+  "(18 rows) - plus the round's data file doc/data/",
+  "ddg_planes_encounters.txt (the 39-label creature roster",
+  "+ both printed encounter tables); prefix pln (full-repo",
+  "scan clean); header rules/pln.h; audit \"R867 known planes",
+  "audit\", rode rules/audits/r867_batch.h. THE HEADLINE",
+  "ADJUDICATIONS: the wind-table 13-16 garble",
+  "\"Blocwozr;tfefr;:ourse\" = \"Blows off course\" (the L&L",
+  "transcription); the inner-random fold bands 8.9 -> 8-9",
+  "and 1011 -> 10-11, the Negative 5-7 band by the 1-20",
+  "tiling arithmetic; the ethereal \"Elemental, earth ]\"",
+  "count = 1 (the tiling geometry); the astral single-",
+  "number tokens (the shedu 2-5 etc.) read from L&L; the",
+  "Titan lesser band 93-97 pinned over the L&L 92-97 typo;",
+  "\"Tifan, major\" = Titan major; the BARDT/91h bard-",
+  "footnote glyph garbles (fighter 7-8, thief 6-9 d4+5);",
+  "the High \"00\" -> 100 convention; Flag 1 = the asterisk",
+  "creatures (basilisk, cockatrice, gorgon, medusa), Flag",
+  "2 = the human traveller subtable row. ZERO registry defs",
+  "touched - the floor holds at 995. Spec",
+  "tools/spec_r867.json, md5",
+  "3116ee4c80ec448ea28960991bdbdb8c (79,784 bytes); 238",
+  "inlines (71 consts, 137 bools, 30 table cols, 8 grids),",
+  "23 examples; rverify double-run GREEN, 718 mutants 0",
+  "missed; hyphen scan clean; zero True/False tokens (the",
+  "R854 rule); all bool example refs in the != 1 operator",
+  "form (the R865 rule held first-try); the audit mirror",
+  "caught two builder example ordinal slips pre-publish",
+  "plus a builder f-string slip - M('col')}(i) emits",
+  "m[...]()(i), the index must ride INSIDE the M() call;",
+  "renamed the concordant bool (the original name's",
+  "true-substring tripped the no-T/F-token scan). ddg gap 19/24 closed, 5 open",
+  "(App 2-4, the index, the alignment figures). NEXT: the",
+  "D&DG arc tail - App 2 temple trappings p. 134 or",
+  "Curtiss's call - WAIT FOR GO."
+ ],
+ "census_before": 790,
+ "gap_census": {
+  "closed": 20,
+  "open": 4
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Appendix 2: temple trappings** (p. 134)",
+   "to": "- [x] **Appendix 2: temple trappings** (p. 134)",
+   "note": "the Appendix 2 box"
+  }
+ ],
+ "consts": [
+  {
+   "name": "tplRound",
+   "value": 868,
+   "comment": "the temple trappings round: the D&DG walk round twenty"
+  },
+  {
+   "name": "tplPrintPage",
+   "value": 134,
+   "comment": "the print folio of Appendix 2 (pdf p. 135)"
+  },
+  {
+   "name": "tplRows",
+   "value": 40,
+   "comment": "the trappings list rows (01-05 altar through 99-00 vestments)"
+  },
+  {
+   "name": "tplBandTotal",
+   "value": 100,
+   "comment": "the percentile tiling of the list (01 through 00, the 00 reads 100)"
+  },
+  {
+   "name": "tplFirstBandLow",
+   "value": 1,
+   "comment": "the first band low (the altar row)"
+  },
+  {
+   "name": "tplFirstBandHigh",
+   "value": 5,
+   "comment": "the first band high (the altar row)"
+  },
+  {
+   "name": "tplLastBandLow",
+   "value": 99,
+   "comment": "the last band low (the vestments row)"
+  },
+  {
+   "name": "tplLastBandHigh",
+   "value": 100,
+   "comment": "the last band high (the vestments row, the printed 00)"
+  },
+  {
+   "name": "tplWidestBand",
+   "value": 6,
+   "comment": "the widest band (six numbers wide: the books row 30-35)"
+  },
+  {
+   "name": "tplWidestBandLow",
+   "value": 30,
+   "comment": "the widest band low (the holy/unholy books and tomes row)"
+  },
+  {
+   "name": "tplSingleRows",
+   "value": 11,
+   "comment": "the single-number rows (chalice, chimes, choir area, flame pit, treasure, pedal organ, prayer wheels, sacrifice, scrolls, stained glass, throne)"
+  },
+  {
+   "name": "tplDoubleRows",
+   "value": 17,
+   "comment": "the two-number rows (the 17 pairs: bells through gong, the weapons through mosaics run, paintings, sanctuary, vestry, vestments)"
+  },
+  {
+   "name": "tplWideRows",
+   "value": 12,
+   "comment": "the wide rows (three or more numbers: altar, columns, the books/inscriptions/symbols bands, offertory, pews, pulpit, robes, shrine, statue, tapestry)"
+  },
+  {
+   "name": "tplHolyUnholyRows",
+   "value": 5,
+   "comment": "the rows carrying the holy/unholy prefix (books and tomes, inscriptions, symbols, treasure, weapons)"
+  },
+  {
+   "name": "tplRosterCount",
+   "value": 40,
+   "comment": "the trappings roster labels riding the data file"
+  },
+  {
+   "name": "tplTableCount",
+   "value": 1,
+   "comment": "the R868 grid count"
+  },
+  {
+   "name": "tplChainCount",
+   "value": 0,
+   "comment": "the R868 chain count"
+  }
+ ],
+ "bools": [
+  {
+   "name": "tplRepresentativeSample",
+   "value": true,
+   "comment": "the listing gives a representative sample of typical items that might be found in a temple of some of the deities listed in this work"
+  },
+  {
+   "name": "tplKeyedByDM",
+   "value": true,
+   "comment": "any worshipers or servitors of the temple should be keyed by the DM"
+  },
+  {
+   "name": "tplChooseFromList",
+   "value": true,
+   "comment": "the DM should choose from the list to stock the temple"
+  },
+  {
+   "name": "tplRandomOnlyDetails",
+   "value": true,
+   "comment": "random selection is used only to fill in details"
+  },
+  {
+   "name": "tplRandomOnlySpurOfMoment",
+   "value": true,
+   "comment": "random selection is used only in spur-of-the-moment situations"
+  },
+  {
+   "name": "tplSomeNotApplicable",
+   "value": true,
+   "comment": "some of the items below will not be applicable to certain religions"
+  },
+  {
+   "name": "tplNoFlamePitsLawfulGood",
+   "value": true,
+   "comment": "the printed example: no flame pits for living sacrifices in a lawful good temple"
+  },
+  {
+   "name": "tplAlphabeticalList",
+   "value": true,
+   "comment": "the list runs alphabetically (01-05 altar first, 99-00 vestments last)"
+  },
+  {
+   "name": "tplChoirAreaTwoWords",
+   "value": true,
+   "comment": "the print reads choir area (two words; the psm-4 fold merged them)"
+  },
+  {
+   "name": "tplFontImmersionPrint",
+   "value": true,
+   "comment": "the print reads font/immersion chamber (no space after the slash)"
+  },
+  {
+   "name": "tplLecternDaisPrint",
+   "value": true,
+   "comment": "the print reads lectern/dais (the L&L transcription trims to lectern)"
+  },
+  {
+   "name": "tplGlossesNotPrint",
+   "value": true,
+   "comment": "the L&L <cleric scrolls> and <+5 holy avenger, etc.> glosses are 5th-print additions, absent from the 2nd print (noted divergences)"
+  },
+  {
+   "name": "tplAndTomesPrint",
+   "value": true,
+   "comment": "the print reads holy/unholy books and tomes (the L&L voice carries a transcription double-ampersand)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the temple trappings grid",
+   "tag": "tplTrap",
+   "cols": [
+    "tplTrapOrd",
+    "tplTrapLow",
+    "tplTrapHigh"
+   ],
+   "col_comments": [
+    "The trappings roster ordinals (40 labels, the row itself - the labels ride the data file)",
+    "The percentile band lows (01-05 altar through 99-00 vestments)",
+    "The percentile band highs (the printed 00 of the vestments row reads 100)"
+   ],
+   "count": "tplRows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     1,
+     5
+    ],
+    [
+     1,
+     6,
+     7
+    ],
+    [
+     2,
+     8,
+     9
+    ],
+    [
+     3,
+     10,
+     11
+    ],
+    [
+     4,
+     12,
+     12
+    ],
+    [
+     5,
+     13,
+     13
+    ],
+    [
+     6,
+     14,
+     14
+    ],
+    [
+     7,
+     15,
+     16
+    ],
+    [
+     8,
+     17,
+     18
+    ],
+    [
+     9,
+     19,
+     22
+    ],
+    [
+     10,
+     23,
+     24
+    ],
+    [
+     11,
+     25,
+     25
+    ],
+    [
+     12,
+     26,
+     27
+    ],
+    [
+     13,
+     28,
+     29
+    ],
+    [
+     14,
+     30,
+     35
+    ],
+    [
+     15,
+     36,
+     40
+    ],
+    [
+     16,
+     41,
+     45
+    ],
+    [
+     17,
+     46,
+     46
+    ],
+    [
+     18,
+     47,
+     48
+    ],
+    [
+     19,
+     49,
+     50
+    ],
+    [
+     20,
+     51,
+     52
+    ],
+    [
+     21,
+     53,
+     54
+    ],
+    [
+     22,
+     55,
+     56
+    ],
+    [
+     23,
+     57,
+     61
+    ],
+    [
+     24,
+     62,
+     63
+    ],
+    [
+     25,
+     64,
+     64
+    ],
+    [
+     26,
+     65,
+     68
+    ],
+    [
+     27,
+     69,
+     69
+    ],
+    [
+     28,
+     70,
+     74
+    ],
+    [
+     29,
+     75,
+     79
+    ],
+    [
+     30,
+     80,
+     80
+    ],
+    [
+     31,
+     81,
+     82
+    ],
+    [
+     32,
+     83,
+     83
+    ],
+    [
+     33,
+     84,
+     86
+    ],
+    [
+     34,
+     87,
+     87
+    ],
+    [
+     35,
+     88,
+     91
+    ],
+    [
+     36,
+     92,
+     95
+    ],
+    [
+     37,
+     96,
+     96
+    ],
+    [
+     38,
+     97,
+     98
+    ],
+    [
+     39,
+     99,
+     100
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the one grid, the roster, the row-class counts, the band widths)",
+   "expr": "m['tplRound']() != 868 or m['tplPrintPage']() != 134 or m['tplTableCount']() != 1 or m['tplChainCount']() != 0 or m['tplRows']() != 40 or m['tplRosterCount']() != 40 or m['tplBandTotal']() != 100 or m['tplWidestBand']() != 6 or m['tplSingleRows']() != 11 or m['tplDoubleRows']() != 17 or m['tplWideRows']() != 12 or m['tplHolyUnholyRows']() != 5"
+  },
+  {
+   "note": "the temple trappings doctrine (the stocking and keying rules of the intro)",
+   "expr": "m['tplRepresentativeSample']() != 1 or m['tplKeyedByDM']() != 1 or m['tplChooseFromList']() != 1 or m['tplRandomOnlyDetails']() != 1 or m['tplRandomOnlySpurOfMoment']() != 1 or m['tplSomeNotApplicable']() != 1 or m['tplNoFlamePitsLawfulGood']() != 1 or m['tplAlphabeticalList']() != 1"
+  },
+  {
+   "note": "the band tiling head and tail (the altar row, the vestments row, the 00 reads 100)",
+   "expr": "m['tplFirstBandLow']() != 1 or m['tplFirstBandHigh']() != 5 or m['tplLastBandLow']() != 99 or m['tplLastBandHigh']() != 100 or m['tplTrapLow'](0) != 1 or m['tplTrapHigh'](0) != 5 or m['tplTrapLow'](39) != 99 or m['tplTrapHigh'](39) != 100 or m['tplTrapOrd'](0) != 0 or m['tplTrapOrd'](39) != 39"
+  },
+  {
+   "note": "the single-number rows (chalice, flame pit, sacrifice, scrolls, throne)",
+   "expr": "m['tplTrapLow'](4) != 12 or m['tplTrapHigh'](4) != 12 or m['tplTrapLow'](11) != 25 or m['tplTrapHigh'](11) != 25 or m['tplTrapLow'](30) != 80 or m['tplTrapHigh'](30) != 80 or m['tplTrapLow'](32) != 83 or m['tplTrapHigh'](32) != 83 or m['tplTrapLow'](37) != 96 or m['tplTrapHigh'](37) != 96"
+  },
+  {
+   "note": "the widest band and the holy/unholy rows (books 30-35, weapons 47-48)",
+   "expr": "m['tplTrapLow'](14) != 30 or m['tplTrapHigh'](14) != 35 or m['tplWidestBandLow']() != 30 or m['tplTrapLow'](18) != 47 or m['tplTrapHigh'](18) != 48 or m['tplTrapLow'](15) != 36 or m['tplTrapHigh'](15) != 40 or m['tplTrapLow'](16) != 41 or m['tplTrapHigh'](16) != 45 or m['tplTrapLow'](17) != 46 or m['tplTrapHigh'](17) != 46"
+  },
+  {
+   "note": "the mid-list bands (columns 19-22, crypts 23-24, offertory 57-61, pews 65-68, pulpit 70-74, robes 75-79)",
+   "expr": "m['tplTrapLow'](9) != 19 or m['tplTrapHigh'](9) != 22 or m['tplTrapLow'](10) != 23 or m['tplTrapHigh'](10) != 24 or m['tplTrapLow'](23) != 57 or m['tplTrapHigh'](23) != 61 or m['tplTrapLow'](26) != 65 or m['tplTrapHigh'](26) != 68 or m['tplTrapLow'](28) != 70 or m['tplTrapHigh'](28) != 74 or m['tplTrapLow'](29) != 75 or m['tplTrapHigh'](29) != 79"
+  },
+  {
+   "note": "the tail bands (shrine 84-86, stained glass 87, statue 88-91, tapestry 92-95, vestry 97-98)",
+   "expr": "m['tplTrapLow'](33) != 84 or m['tplTrapHigh'](33) != 86 or m['tplTrapLow'](34) != 87 or m['tplTrapHigh'](34) != 87 or m['tplTrapLow'](35) != 88 or m['tplTrapHigh'](35) != 91 or m['tplTrapLow'](36) != 92 or m['tplTrapHigh'](36) != 95 or m['tplTrapLow'](38) != 97 or m['tplTrapHigh'](38) != 98"
+  },
+  {
+   "note": "the early bands (bells 06-07, braziers 08-09, candlesticks 10-11, choir area 14, cassocks 15-16, gong 28-29)",
+   "expr": "m['tplTrapLow'](1) != 6 or m['tplTrapHigh'](1) != 7 or m['tplTrapLow'](2) != 8 or m['tplTrapHigh'](2) != 9 or m['tplTrapLow'](3) != 10 or m['tplTrapHigh'](3) != 11 or m['tplTrapLow'](6) != 14 or m['tplTrapHigh'](6) != 14 or m['tplTrapLow'](7) != 15 or m['tplTrapHigh'](7) != 16 or m['tplTrapLow'](13) != 28 or m['tplTrapHigh'](13) != 29"
+  },
+  {
+   "note": "the second half of the list (idol/icon 49-50, incense burners 51-52, lectern/dais 53-54, mosaics 55-56, paintings 62-63, pedal organ 64, prayer wheels 69, sanctuary 81-82)",
+   "expr": "m['tplTrapLow'](19) != 49 or m['tplTrapHigh'](19) != 50 or m['tplTrapLow'](20) != 51 or m['tplTrapHigh'](20) != 52 or m['tplTrapLow'](21) != 53 or m['tplTrapHigh'](21) != 54 or m['tplTrapLow'](22) != 55 or m['tplTrapHigh'](22) != 56 or m['tplTrapLow'](24) != 62 or m['tplTrapHigh'](24) != 63 or m['tplTrapLow'](25) != 64 or m['tplTrapHigh'](25) != 64 or m['tplTrapLow'](27) != 69 or m['tplTrapHigh'](27) != 69 or m['tplTrapLow'](31) != 81 or m['tplTrapHigh'](31) != 82"
+  },
+  {
+   "note": "the print-form pins (the choir area and font/immersion chamber reads, the lectern/dais print, the and-tomes print)",
+   "expr": "m['tplChoirAreaTwoWords']() != 1 or m['tplFontImmersionPrint']() != 1 or m['tplLecternDaisPrint']() != 1 or m['tplAndTomesPrint']() != 1"
+  },
+  {
+   "note": "the L&L parity notes (the 5th-print glosses absent from the 2nd print)",
+   "expr": "m['tplGlossesNotPrint']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the temple trappings doctrine": [
+   {
+    "kind": "const",
+    "name": "tplRound"
+   },
+   {
+    "kind": "const",
+    "name": "tplPrintPage"
+   },
+   {
+    "kind": "bool",
+    "name": "tplRepresentativeSample"
+   },
+   {
+    "kind": "bool",
+    "name": "tplKeyedByDM"
+   },
+   {
+    "kind": "bool",
+    "name": "tplChooseFromList"
+   },
+   {
+    "kind": "bool",
+    "name": "tplRandomOnlyDetails"
+   },
+   {
+    "kind": "bool",
+    "name": "tplRandomOnlySpurOfMoment"
+   },
+   {
+    "kind": "bool",
+    "name": "tplSomeNotApplicable"
+   },
+   {
+    "kind": "bool",
+    "name": "tplNoFlamePitsLawfulGood"
+   },
+   {
+    "kind": "bool",
+    "name": "tplAlphabeticalList"
+   }
+  ],
+  "the trappings census": [
+   {
+    "kind": "const",
+    "name": "tplRows"
+   },
+   {
+    "kind": "const",
+    "name": "tplBandTotal"
+   },
+   {
+    "kind": "const",
+    "name": "tplFirstBandLow"
+   },
+   {
+    "kind": "const",
+    "name": "tplFirstBandHigh"
+   },
+   {
+    "kind": "const",
+    "name": "tplLastBandLow"
+   },
+   {
+    "kind": "const",
+    "name": "tplLastBandHigh"
+   },
+   {
+    "kind": "const",
+    "name": "tplWidestBand"
+   },
+   {
+    "kind": "const",
+    "name": "tplWidestBandLow"
+   },
+   {
+    "kind": "const",
+    "name": "tplSingleRows"
+   },
+   {
+    "kind": "const",
+    "name": "tplDoubleRows"
+   },
+   {
+    "kind": "const",
+    "name": "tplWideRows"
+   },
+   {
+    "kind": "const",
+    "name": "tplHolyUnholyRows"
+   },
+   {
+    "kind": "const",
+    "name": "tplRosterCount"
+   },
+   {
+    "kind": "const",
+    "name": "tplTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "tplChainCount"
+   }
+  ],
+  "the temple trappings grid": [
+   {
+    "kind": "table",
+    "name": "the temple trappings grid"
+   }
+  ],
+  "the L&L parity pins": [
+   {
+    "kind": "bool",
+    "name": "tplChoirAreaTwoWords"
+   },
+   {
+    "kind": "bool",
+    "name": "tplFontImmersionPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "tplLecternDaisPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "tplGlossesNotPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "tplAndTomesPrint"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_temple_trappings.txt",
+   "content": "The DDG print p. 134 (Appendix 2) temple trappings list - the\n40-label roster (the roster ordinals are the grid Ord column)\nand the printed rows.\n\n== the roster (40) ==\n00 altar\n01 bells\n02 braziers\n03 candlesticks\n04 chalice\n05 chimes\n06 choir area\n07 cassocks\n08 cloth, altar\n09 columns\n10 crypts/floor marker stones\n11 flame pit\n12 font/immersion chamber\n13 gong\n14 holy/unholy books and tomes\n15 holy/unholy inscriptions\n16 holy/unholy symbols\n17 holy/unholy treasure\n18 holy/unholy weapons (non-magical)\n19 idol/icon\n20 incense burners\n21 lectern/dais\n22 mosaics\n23 offertory\n24 paintings\n25 pedal organ\n26 pews\n27 prayer wheels\n28 pulpit\n29 robes\n30 sacrifice\n31 sanctuary\n32 scrolls\n33 shrine\n34 stained glass\n35 statue\n36 tapestry\n37 throne\n38 vestry\n39 vestments\n\n== the printed rows ==\n01-05 altar\n06-07 bells\n08-09 braziers\n10-11 candlesticks\n12 chalice\n13 chimes\n14 choir area\n15-16 cassocks\n17-18 cloth, altar\n19-22 columns\n23-24 crypts/floor marker stones\n25 flame pit\n26-27 font/immersion chamber\n28-29 gong\n30-35 holy/unholy books and tomes\n36-40 holy/unholy inscriptions\n41-45 holy/unholy symbols\n46 holy/unholy treasure\n47-48 holy/unholy weapons (non-magical)\n49-50 idol/icon\n51-52 incense burners\n53-54 lectern/dais\n55-56 mosaics\n57-61 offertory\n62-63 paintings\n64 pedal organ\n65-68 pews\n69 prayer wheels\n70-74 pulpit\n75-79 robes\n80 sacrifice\n81-82 sanctuary\n83 scrolls\n84-86 shrine\n87 stained glass\n88-91 statue\n92-95 tapestry\n96 throne\n97-98 vestry\n99-00 vestments\n"
+  }
+ ],
+ "inline_count": 33
+}
+

@@ -1,0 +1,87 @@
+The DDG print p. 134 (Appendix 2) temple trappings list - the
+40-label roster (the roster ordinals are the grid Ord column)
+and the printed rows.
+
+== the roster (40) ==
+00 altar
+01 bells
+02 braziers
+03 candlesticks
+04 chalice
+05 chimes
+06 choir area
+07 cassocks
+08 cloth, altar
+09 columns
+10 crypts/floor marker stones
+11 flame pit
+12 font/immersion chamber
+13 gong
+14 holy/unholy books and tomes
+15 holy/unholy inscriptions
+16 holy/unholy symbols
+17 holy/unholy treasure
+18 holy/unholy weapons (non-magical)
+19 idol/icon
+20 incense burners
+21 lectern/dais
+22 mosaics
+23 offertory
+24 paintings
+25 pedal organ
+26 pews
+27 prayer wheels
+28 pulpit
+29 robes
+30 sacrifice
+31 sanctuary
+32 scrolls
+33 shrine
+34 stained glass
+35 statue
+36 tapestry
+37 throne
+38 vestry
+39 vestments
+
+== the printed rows ==
+01-05 altar
+06-07 bells
+08-09 braziers
+10-11 candlesticks
+12 chalice
+13 chimes
+14 choir area
+15-16 cassocks
+17-18 cloth, altar
+19-22 columns
+23-24 crypts/floor marker stones
+25 flame pit
+26-27 font/immersion chamber
+28-29 gong
+30-35 holy/unholy books and tomes
+36-40 holy/unholy inscriptions
+41-45 holy/unholy symbols
+46 holy/unholy treasure
+47-48 holy/unholy weapons (non-magical)
+49-50 idol/icon
+51-52 incense burners
+53-54 lectern/dais
+55-56 mosaics
+57-61 offertory
+62-63 paintings
+64 pedal organ
+65-68 pews
+69 prayer wheels
+70-74 pulpit
+75-79 robes
+80 sacrifice
+81-82 sanctuary
+83 scrolls
+84-86 shrine
+87 stained glass
+88-91 statue
+92-95 tapestry
+96 throne
+97-98 vestry
+99-00 vestments

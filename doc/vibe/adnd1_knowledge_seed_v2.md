@@ -25134,6 +25134,54 @@ gap 18/24 closed, 6 open. NEXT: the D&DG walk past the mythoi - the appendices
 and the index (App 1 the planes pp. 128-133, App 2 temple trappings p. 134,
 App 3 clerical chart pp. 134-142, App 4 + index p. 143, the p.131
 alignment-figures pixel work) - WAIT FOR GO.
+- R867 LANDED 2026-10-26: commit
+35f7686ab8a50813697be0f958e75e086ad4779f (pushed
+2e8ee02..35f7686, census 789 -> 790), APPENDIX 1
+THE KNOWN PLANES OF EXISTENCE - the D&DG walk round
+nineteen, print pp. 128-133: the planar-cosmology prose
+(the infinite multiverse, the Inner Planes around the
+Prime Material, the Ethereal and Astral conduits, the
+Great Wheel, the seventeen outer planes, the elemental/
+para-elemental/positive/negative doctrine) plus EIGHT
+grids: the ethereal encounter table (31 rows), the
+astral encounter table (24 rows), the seventeen-outer-
+planes list (17 rows), the cyclone, wind and
+para-elemental tables (4 rows each), the inner-plane
+random bands (13 rows) and the outer-plane random bands
+(18 rows) - plus the round's data file doc/data/
+ddg_planes_encounters.txt (the 39-label creature roster
++ both printed encounter tables); prefix pln (full-repo
+scan clean); header rules/pln.h; audit "R867 known planes
+audit", rode rules/audits/r867_batch.h. THE HEADLINE
+ADJUDICATIONS: the wind-table 13-16 garble
+"Blocwozr;tfefr;:ourse" = "Blows off course" (the L&L
+transcription); the inner-random fold bands 8.9 -> 8-9
+and 1011 -> 10-11, the Negative 5-7 band by the 1-20
+tiling arithmetic; the ethereal "Elemental, earth ]"
+count = 1 (the tiling geometry); the astral single-
+number tokens (the shedu 2-5 etc.) read from L&L; the
+Titan lesser band 93-97 pinned over the L&L 92-97 typo;
+"Tifan, major" = Titan major; the BARDT/91h bard-
+footnote glyph garbles (fighter 7-8, thief 6-9 d4+5);
+the High "00" -> 100 convention; Flag 1 = the asterisk
+creatures (basilisk, cockatrice, gorgon, medusa), Flag
+2 = the human traveller subtable row. ZERO registry defs
+touched - the floor holds at 995. Spec
+tools/spec_r867.json, md5
+3116ee4c80ec448ea28960991bdbdb8c (79,784 bytes); 238
+inlines (71 consts, 137 bools, 30 table cols, 8 grids),
+23 examples; rverify double-run GREEN, 718 mutants 0
+missed; hyphen scan clean; zero True/False tokens (the
+R854 rule); all bool example refs in the != 1 operator
+form (the R865 rule held first-try); the audit mirror
+caught two builder example ordinal slips pre-publish
+plus a builder f-string slip - M('col')}(i) emits
+m[...]()(i), the index must ride INSIDE the M() call;
+renamed the concordant bool (the original name's
+true-substring tripped the no-T/F-token scan). ddg gap 19/24 closed, 5 open
+(App 2-4, the index, the alignment figures). NEXT: the
+D&DG arc tail - App 2 temple trappings p. 134 or
+Curtiss's call - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
