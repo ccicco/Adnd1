@@ -24848,6 +24848,36 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   count (engine dies on the mismatch); fixed via an explicit shared exclusion
   set + walk_names filter in the builder. NEXT: the D&DG walk continues from
   the Greek mythos (print pp. 63-74, the next open box) - WAIT FOR GO.
+  - R859 LANDED 2026-10-26: commit 57b84aea31961dc9fd5bfea77dc2f956d14d3be1
+  (pushed db45480..57b84ae, census 781 -> 782), THE GREEK MYTHOS - the D&DG
+  walk round eleven, print pp. 63-74: forty beings (Zeus, the White Eagle,
+  Achilles, Aphrodite, Antaeus, Apollo, Ares, Artemis, Athena, Atlas,
+  Bellerophon, Cerberus, Circe, Coeus, Crius, the greater and lesser cyclopes,
+  Demeter, Dionysus, Enceladus, Epimetheus, the Furies, Hades, Hecate, the
+  Hecatoncheire, Hephaestus, Hera, Heracles, Hermes, Jason, Kronos, Nike,
+  Oceanus, Odysseus, Pan, Perseus, Poseidon, Prometheus, Theseus, Tyche), 10
+  greater, 8 lesser, 1 demigod, 6 heroes, 6 greater titans, 9 monsters; prefix
+  grk (full-repo scan clean). The headline adjudication: the FRACTION
+  FINGERPRINT - the half-height glyphs of the printed X 1/2 foot size cells
+  decode as fractions, not X'Y" inches: Zeus 78, Achilles 66, Aphrodite 66,
+  Artemis 66, Bellerophon 66, Hecate 66, Hera 66, Hermes 78, Hades 78 (the
+  draft 6'1" was the fraction); Odysseus 5'4" the one true inch cell; Coeus
+  CH:-4 pixel-verified; Dionysus and Hades psionic class III (three pipe bars,
+  the R850 Coyote precedent, chocr glyph widths I 9-11px II 30 III 47 IV 54 V
+  36 VI 50). Merged-column catches: Ares/Athena class swap, Atlas CE /
+  Cerberus NE swap, Achilles Fighter 15. Flagged odd prints pinned as printed:
+  Ares move 26/24, Hades move 29, Hades CH 24(-9), Bellerophon move 12. The
+  R851-R858 16-cell repair table (all X 1/2 misreads: Morgan, Anu, CuChulainn,
+  Math, Chalchiuhtlicue, the twins, ShangTi, ChaoKungMing, ChihSungTzu 0->78,
+  Horus, Isis, Nephthys, Seker, MinionsOfSet, Thoth, Kullervo, Mielikki)
+  verified and reported, NOT patched - Curtiss's call. Spec
+  2f13b02dcce08dc6a61f3cf9fe5010bf, 99258 bytes; 332 inlines (116 consts, 178
+  bools, 38 table cols), 40 examples, no data files; engine applied 6/already
+  6 double-run; rverify GREEN, 1814 mutants 0 missed; hyphen scan clean; zero
+  True/False tokens (bool examples dropped per the R854 rule - no spec has
+  ever referenced a bool in an example). Engine lesson: the R859 census consts
+  needed bare first-words in the section mapper (In, Half) - the camel regex
+  stops at the second cap. NEXT: WAIT FOR GO. ## Knowledge maintenance
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

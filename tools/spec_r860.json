@@ -1,0 +1,3009 @@
+{
+ "round": 860,
+ "prefix": "idn",
+ "title": "the Indian mythos",
+ "header_file": "rules/idn.h",
+ "audit_file": "rules/audits/r860_batch.h",
+ "audit_label": "R860 Indian mythos audit",
+ "audit_comment": "THE INDIAN MYTHOS - the D&DG walk round twelve, print pp. 75-80. The headline adjudication: the PSIONIC THREE-PIPE CATCH - the Indra glyph group reads TI! at 47px word width and Kali prints III as I(9)I(10)I(10) in the chocr char geometry, exactly the Kali three-pipe class III and the Indra class III (the Termux voice read 11l and 1Nl, both three glyphs) - the chocr 600dpi calibration: single pipe w10, V w36, VI w49, III w47. The fraction fingerprint rides again: the Ushas (514) and Varuna (614) size cells are the half-foot clusters (small-1 w24 + low-4 w40), 5 1/2 and 6 1/2 foot, 66 and 78 inches. The Surya AC catch: the chocr reads the minus three the Termux dash dropped. The flagged odd prints pinned as printed: Indra AC the em-dash minus twelve, Kali move 27 without a slash, Kali wisdom 5 and MR 39 percent, the Marut move 9 apostrophe, the Buffalo 12 inch shoulders cell, Yama MR 25 with the 100 percent robes.",
+ "census_before": 782,
+ "include_after": "#include \"rules/grk.h\"  // R859: the Greek mythos",
+ "include_comment": "the Indian mythos",
+ "audit_anchor": "#include \"rules/audits/r859_batch.h\"  // R859: R859 Greek mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Indian mythos** (pp. 75-80)",
+   "to": "- [x] **Indian mythos** (pp. 75-80)",
+   "note": "the Indian mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 12,
+  "open": 12
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Indian mythos - the D&DG walk round twelve, print pp. 75-80: eighteen beings from Indra the first ruler of the gods and master of the atmosphere to Yama the judge of the dead and his water buffalo, the six greater gods (Indra, Agni, Rudra, Surya, Varuna, Vishnu), the three lesser gods (Kali, Lakshmi, Ushas), the four demigods (Karttikeya, Ratri, Tvashtri, Yama), and the five monsters across nine plane codes.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 076-081; the second printing) with the column-split tsv dumps; the collation voice: the archive.org 1st-print derivative (deities-demigods-1st-print) - the chocr char-level word geometry at 600dpi plus the djvu.xml word geometry. The adjudications: the psionic three-pipe catch (Indra TI! w47 and Kali III I(9)I(10)I(10), both class III; single pipe w10 Agni, Tvashtri, Vishnu; V w36 Ratri, Rudra, Yama; VI w49 Karttikeya, Lakshmi, Surya, Ushas, Varuna), the fraction fingerprint (Ushas 5 1/2 = 66, Varuna 6 1/2 = 78, the small-1 + low-4 clusters), the Surya AC -3 over the Termux bare dash, the MU/I See below 99/99 of Agni and Yama (the egp Isis precedent), the three paladin pairs (Surya 16, Varuna 14, Vishnu 17), the Kali in-each double pair (C/D 10 and MU/I 15), and the flagged odd prints pinned: Indra AC em-dash minus twelve, Kali move 27, Kali wisdom 5 and MR 39, the Marut move 9 apostrophe, the Buffalo 12 inch shoulders, Yama MR 25 robes 100."
+ },
+ "consts": [
+  {
+   "name": "idnRound",
+   "value": 860,
+   "comment": "the Indian mythos round: the D&DG walk round twelve, print pp. 75-80"
+  },
+  {
+   "name": "idnPrintStart",
+   "value": 75,
+   "comment": "the first print page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "idnPrintEnd",
+   "value": 80,
+   "comment": "the last print page of the mythos"
+  },
+  {
+   "name": "idnBeingCount",
+   "value": 18,
+   "comment": "the eighteen beings of the Indian mythos (six greater, three lesser, four demigods, five monsters; no heroes, no titans)"
+  },
+  {
+   "name": "idnTableCount",
+   "value": 4,
+   "comment": "the four grids: combat, class, ability, roster"
+  },
+  {
+   "name": "idnChainCount",
+   "value": 0,
+   "comment": "no chains this round: no banded thresholds printed in the mythos"
+  },
+  {
+   "name": "idnRegistryFloor",
+   "value": 995,
+   "comment": "the registry floor holds: zero registry defs touched this round"
+  },
+  {
+   "name": "idnCbtRows",
+   "value": 18,
+   "comment": "the combat grid rows (eighteen beings)"
+  },
+  {
+   "name": "idnClsRows",
+   "value": 18,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "idnAbiRows",
+   "value": 18,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "idnRosRows",
+   "value": 18,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "idnPlaneCount",
+   "value": 9,
+   "comment": "the nine plane codes: none, Limbo, Gladsheim, the Abyss, Hades, Nirvana, the Seven Heavens, Elysium, Concordant Opposition"
+  },
+  {
+   "name": "idnGreaterCount",
+   "value": 6,
+   "comment": "the six greater gods (Indra, Agni, Rudra, Surya, Varuna, Vishnu)"
+  },
+  {
+   "name": "idnLesserCount",
+   "value": 3,
+   "comment": "the three lesser gods (Kali, Lakshmi, Ushas)"
+  },
+  {
+   "name": "idnDemigodCount",
+   "value": 4,
+   "comment": "the four demigods (Karttikeya, Ratri, Tvashtri, Yama)"
+  },
+  {
+   "name": "idnMonsterCount",
+   "value": 5,
+   "comment": "the five monsters (the Elephant, the Peacock, the Marut, Garuda, the Water Buffalo)"
+  },
+  {
+   "name": "idnInEachCount",
+   "value": 3,
+   "comment": "the three printed Nth level in each rows (Indra MU/I 20, Kali C/D 10 and MU/I 15, Lakshmi MU/I 20)"
+  },
+  {
+   "name": "idnEnmityCount",
+   "value": 0,
+   "comment": "no printed rivalry lines this round: zero enmity flags"
+  },
+  {
+   "name": "idnPaladinCount",
+   "value": 3,
+   "comment": "the three paladins of the FIGHTER lines (Surya 16, Varuna 14, Vishnu 17)"
+  },
+  {
+   "name": "idnPsiClassKinds",
+   "value": 4,
+   "comment": "all four printed psionic classes appear (I Agni, Tvashtri, Vishnu; III Indra, Kali; V Ratri, Rudra, Yama; VI Karttikeya, Lakshmi, Surya, Ushas, Varuna)"
+  },
+  {
+   "name": "idnHalfFootCount",
+   "value": 2,
+   "comment": "the two pixel-verified X 1/2 foot fraction cells (Ushas 5 1/2, Varuna 6 1/2)"
+  },
+  {
+   "name": "idnArtifactCount",
+   "value": 0,
+   "comment": "no artifacts this round"
+  },
+  {
+   "name": "idnIndraBoltsPerRound",
+   "value": 2,
+   "comment": "the rainbow bow shoots two lightning bolts per melee round"
+  },
+  {
+   "name": "idnIndraBoltDamage",
+   "value": 30,
+   "comment": "each lightning bolt does 3-30 points of damage"
+  },
+  {
+   "name": "idnIndraBoltRange",
+   "value": 1000,
+   "comment": "the bow range 1,000 yards, all treated as short range"
+  },
+  {
+   "name": "idnIndraSwordPlus",
+   "value": 3,
+   "comment": "the +3 flaming sword"
+  },
+  {
+   "name": "idnIndraArmorPlus",
+   "value": 4,
+   "comment": "the +4 plate mail and the +4 shield"
+  },
+  {
+   "name": "idnElephantHitDice",
+   "value": 16,
+   "comment": "the elephant attacks as a 16+ HD monster"
+  },
+  {
+   "name": "idnElephantXpBase",
+   "value": 21450,
+   "comment": "the xp X/21,450 line"
+  },
+  {
+   "name": "idnAgniLegs",
+   "value": 3,
+   "comment": "Agni has 3 legs"
+  },
+  {
+   "name": "idnAgniArms",
+   "value": 7,
+   "comment": "Agni has 7 arms"
+  },
+  {
+   "name": "idnAgniHeads",
+   "value": 3,
+   "comment": "Agni has as many as 3 heads"
+  },
+  {
+   "name": "idnAgniControlMiles",
+   "value": 1,
+   "comment": "the control of fire beings within 1 mile"
+  },
+  {
+   "name": "idnAgniFireSpellLevel",
+   "value": 50,
+   "comment": "he casts all fire spells as a 50th level spell-caster"
+  },
+  {
+   "name": "idnAgniAuraDamage",
+   "value": 25,
+   "comment": "the fire aura does 25 points of flame damage to hand-to-hand attackers"
+  },
+  {
+   "name": "idnAgniMeltPlus",
+   "value": 4,
+   "comment": "the aura melts weapons of less than +4 bonus"
+  },
+  {
+   "name": "idnAgniBreathUses",
+   "value": 3,
+   "comment": "the breath weapon is usable 3 times per day"
+  },
+  {
+   "name": "idnAgniBreathYards",
+   "value": 30,
+   "comment": "the flame stream reaches 30 yards"
+  },
+  {
+   "name": "idnAgniBreathDamage",
+   "value": 50,
+   "comment": "the breath does 5-50 points of damage"
+  },
+  {
+   "name": "idnAgniChariotGround",
+   "value": 36,
+   "comment": "the fire chariot ground rate 36 inches"
+  },
+  {
+   "name": "idnAgniChariotAir",
+   "value": 48,
+   "comment": "the fire chariot air rate 48 inches"
+  },
+  {
+   "name": "idnAgniHorseAc",
+   "value": 2,
+   "comment": "the red horses AC 2"
+  },
+  {
+   "name": "idnAgniHorseHd",
+   "value": 10,
+   "comment": "the red horses HD 10"
+  },
+  {
+   "name": "idnAgniHorseHp",
+   "value": 90,
+   "comment": "the red horses hp 90"
+  },
+  {
+   "name": "idnKaliEyes",
+   "value": 3,
+   "comment": "Kali has 3 eyes"
+  },
+  {
+   "name": "idnKaliArms",
+   "value": 4,
+   "comment": "Kali has 4 arms ending in talons"
+  },
+  {
+   "name": "idnKaliTalonDamage",
+   "value": 40,
+   "comment": "each taloned hand strikes for 4-40 points of damage"
+  },
+  {
+   "name": "idnKaliSwordDamage",
+   "value": 24,
+   "comment": "her sword inflicts 2-24 points of damage plus strength bonus"
+  },
+  {
+   "name": "idnKarttikeyaHeads",
+   "value": 6,
+   "comment": "Karttikeya has 6 heads"
+  },
+  {
+   "name": "idnKarttikeyaArms",
+   "value": 12,
+   "comment": "Karttikeya has 12 arms"
+  },
+  {
+   "name": "idnKarttikeyaSwords",
+   "value": 10,
+   "comment": "he carries swords in 10 of his 12 hands"
+  },
+  {
+   "name": "idnKarttikeyaSwordDamage",
+   "value": 12,
+   "comment": "each sword strikes for 2-12 points of damage"
+  },
+  {
+   "name": "idnKarttikeyaAidPct",
+   "value": 2,
+   "comment": "his clerics have a 2 percent chance of requesting aid against devils"
+  },
+  {
+   "name": "idnPeacockHitDice",
+   "value": 16,
+   "comment": "the peacock attacks as a 16+ HD monster"
+  },
+  {
+   "name": "idnPeacockBeakDamage",
+   "value": 36,
+   "comment": "the beak strikes for 3-36 points of damage"
+  },
+  {
+   "name": "idnPeacockXpBase",
+   "value": 12200,
+   "comment": "the xp X/12,200 line"
+  },
+  {
+   "name": "idnLakshmiLotusSpeed",
+   "value": 75,
+   "comment": "the giant floating lotus travels at 75 inches"
+  },
+  {
+   "name": "idnMarutAppearLo",
+   "value": 1,
+   "comment": "the marut appearing 1-10"
+  },
+  {
+   "name": "idnMarutAppearHi",
+   "value": 10,
+   "comment": "the marut appearing 1-10"
+  },
+  {
+   "name": "idnMarutBattleHi",
+   "value": 100,
+   "comment": "the marut appearing 10-100 in battles"
+  },
+  {
+   "name": "idnMarutLairPct",
+   "value": 25,
+   "comment": "the marut 25 percent in lair"
+  },
+  {
+   "name": "idnMarutHitDice",
+   "value": 16,
+   "comment": "the marut attacks as a 16+ HD monster"
+  },
+  {
+   "name": "idnMarutXpBase",
+   "value": 16700,
+   "comment": "the xp X/16,700 line"
+  },
+  {
+   "name": "idnRatriDarknessRadius",
+   "value": 15,
+   "comment": "her darkness area is 15 inches radius, no saving throw"
+  },
+  {
+   "name": "idnRudraSavePenalty",
+   "value": 6,
+   "comment": "the save vs. death at -6 negates his rotting disease"
+  },
+  {
+   "name": "idnSuryaSleepRange",
+   "value": 15,
+   "comment": "his sleep ability range 15 inches"
+  },
+  {
+   "name": "idnSuryaSleepLevel",
+   "value": 20,
+   "comment": "he sleeps any number of 20th level or lesser non-divine beings, no save"
+  },
+  {
+   "name": "idnSuryaSwordPlus",
+   "value": 4,
+   "comment": "the +4 shaft of light swordlike weapon"
+  },
+  {
+   "name": "idnSuryaSwordDamage",
+   "value": 40,
+   "comment": "the light shaft does 4-40 points of damage per strike"
+  },
+  {
+   "name": "idnSuryaLightYards",
+   "value": 1000,
+   "comment": "it dispels illusions and darkness within 1,000 yards"
+  },
+  {
+   "name": "idnSuryaChariotHorses",
+   "value": 7,
+   "comment": "his chariot is pulled by 7 magical horses, one per rainbow color"
+  },
+  {
+   "name": "idnSuryaChariotHeat",
+   "value": 30,
+   "comment": "against demons the chariot shines for 30 points of heat damage per round"
+  },
+  {
+   "name": "idnTvashtriNullifyYards",
+   "value": 200,
+   "comment": "the pinwheel nullifies all magic devices in a 200 yard radius"
+  },
+  {
+   "name": "idnTvashtriBeamDamage",
+   "value": 40,
+   "comment": "the black beams do 4-40 points of damage and never miss"
+  },
+  {
+   "name": "idnTvashtriBeamRange",
+   "value": 30,
+   "comment": "the black beams reach 30 inches"
+  },
+  {
+   "name": "idnTvashtriRegen",
+   "value": 20,
+   "comment": "he regenerates 20 lost hit points per melee round from the air"
+  },
+  {
+   "name": "idnUshasBlindTurns",
+   "value": 4,
+   "comment": "her brilliant light blinds for 1-4 turns, no save"
+  },
+  {
+   "name": "idnUshasRegen",
+   "value": 30,
+   "comment": "she regenerates 30 hit points per round while the sun shines on her"
+  },
+  {
+   "name": "idnUshasGazeDamage",
+   "value": 10,
+   "comment": "her gaze does 1-10 points of damage once per round"
+  },
+  {
+   "name": "idnVarunaOathPct",
+   "value": 1,
+   "comment": "the 1 percent chance per level that Varuna punishes an oathbreaker"
+  },
+  {
+   "name": "idnVarunaAuraFeet",
+   "value": 5,
+   "comment": "no chaotic non-divine creature approaches within 5 feet of his lawful aura"
+  },
+  {
+   "name": "idnVarunaSpearDamage",
+   "value": 50,
+   "comment": "his jet black spear strikes for 5-50 points of damage"
+  },
+  {
+   "name": "idnVishnuPeaceYards",
+   "value": 30,
+   "comment": "his no-violence aura extends 30 yards, no saving throw"
+  },
+  {
+   "name": "idnVishnuDiscDamage",
+   "value": 50,
+   "comment": "the disc weapon fire stream does 5-50 points of damage"
+  },
+  {
+   "name": "idnVishnuDiscYards",
+   "value": 40,
+   "comment": "the disc discharges to a 40 yard maximum range"
+  },
+  {
+   "name": "idnVishnuAidMaxPct",
+   "value": 20,
+   "comment": "the aid chance rises to a 20 percent maximum with worshipers in danger"
+  },
+  {
+   "name": "idnVishnuLotusUses",
+   "value": 3,
+   "comment": "the lotus flower heals all lost hit points up to three times per day"
+  },
+  {
+   "name": "idnVishnuAvatarClericLevel",
+   "value": 15,
+   "comment": "a clerical avatar would be 15th level with maximum hit points"
+  },
+  {
+   "name": "idnVishnuAvatarWisdom",
+   "value": 25,
+   "comment": "the clerical avatar carries a wisdom of 25"
+  },
+  {
+   "name": "idnGarudaCarryGods",
+   "value": 5,
+   "comment": "Garuda carries 5 gods in full battle armor unslowed"
+  },
+  {
+   "name": "idnGarudaSenseMiles",
+   "value": 1,
+   "comment": "he senses evil within a 1 mile radius"
+  },
+  {
+   "name": "idnGarudaWingDamage",
+   "value": 24,
+   "comment": "each wing batters for 2-24 points of damage"
+  },
+  {
+   "name": "idnGarudaHitDice",
+   "value": 16,
+   "comment": "Garuda fights as a 16+ HD monster"
+  },
+  {
+   "name": "idnGarudaXpBase",
+   "value": 17100,
+   "comment": "the xp X/17,100 line"
+  },
+  {
+   "name": "idnYamaRobeMr",
+   "value": 100,
+   "comment": "the red robes give 100 percent magic resistance"
+  },
+  {
+   "name": "idnYamaNoosePlus",
+   "value": 5,
+   "comment": "the +5 magical noose"
+  },
+  {
+   "name": "idnYamaNooseRounds",
+   "value": 3,
+   "comment": "the noose strangles in 3 melee rounds regardless of hit points"
+  },
+  {
+   "name": "idnYamaMacePlus",
+   "value": 3,
+   "comment": "the +3 mace"
+  },
+  {
+   "name": "idnYamaFlashRounds",
+   "value": 2,
+   "comment": "the robes flash red 2 melee rounds before any attack, no surprise"
+  },
+  {
+   "name": "idnYamaSpellLevel",
+   "value": 20,
+   "comment": "he casts any magic-user spell as if 20th level, if it damages his enemies"
+  },
+  {
+   "name": "idnBuffaloCarryGods",
+   "value": 2,
+   "comment": "the buffalo carries 2 gods in full armor without strain"
+  },
+  {
+   "name": "idnBuffaloGoreDamage",
+   "value": 40,
+   "comment": "the goring does 4-40 points of damage"
+  },
+  {
+   "name": "idnBuffaloHitDice",
+   "value": 16,
+   "comment": "it fights as a 16+ HD monster"
+  },
+  {
+   "name": "idnBuffaloShoulderInches",
+   "value": 12,
+   "comment": "the one true-inch size cell: L, 12 inches tall at the shoulders"
+  },
+  {
+   "name": "idnBuffaloXpBase",
+   "value": 11500,
+   "comment": "the xp X/11,500 line"
+  }
+ ],
+ "bools": [
+  {
+   "name": "idnVedicHinduMixture",
+   "value": true,
+   "comment": "the pantheon is a mixture of Vedic and Hindu concepts, usually leaning toward the Vedic"
+  },
+  {
+   "name": "idnAloofGreaterThanNormal",
+   "value": true,
+   "comment": "these gods maintain an aloofness greater than normal compared with the other pantheons"
+  },
+  {
+   "name": "idnBornToStation",
+   "value": true,
+   "comment": "a character may be born a cleric, magic-user or fighter under the caste system"
+  },
+  {
+   "name": "idnNoClassSwitch",
+   "value": true,
+   "comment": "one does not switch from class to class, which usually prevents two classes"
+  },
+  {
+   "name": "idnMagicUserCasteSupreme",
+   "value": true,
+   "comment": "the magic-user caste is deemed superior to all other castes including the warriors"
+  },
+  {
+   "name": "idnHigherStatusRespect",
+   "value": true,
+   "comment": "persons of higher status are treated with respect and obeyed or left strictly alone"
+  },
+  {
+   "name": "idnProperSacrificeAnswered",
+   "value": true,
+   "comment": "all prayers are answered if the proper sacrifices are made"
+  },
+  {
+   "name": "idnImproperSacrificeRepeat",
+   "value": true,
+   "comment": "an unanswered prayer means impropriety, so the prayers are done again and again"
+  },
+  {
+   "name": "idnWorshipMarksWorn",
+   "value": true,
+   "comment": "worshipers are identified by marks they wear on their persons"
+  },
+  {
+   "name": "idnVishnuForeheadMark",
+   "value": true,
+   "comment": "the followers of Vishnu wear two parallel white-earth lines joined by a perpendicular line"
+  },
+  {
+   "name": "idnAvatarLesserPowers",
+   "value": true,
+   "comment": "an avatar usually has lesser powers and a different appearance than its deity"
+  },
+  {
+   "name": "idnAvatarSpecificFunction",
+   "value": true,
+   "comment": "avatars are often created to perform one specific function or aspect"
+  },
+  {
+   "name": "idnAvatarSeveralSimultaneous",
+   "value": true,
+   "comment": "a deity may have several avatars simultaneously co-existent, each uninvolved with the others"
+  },
+  {
+   "name": "idnVishnuManyAvatars",
+   "value": true,
+   "comment": "Vishnu in particular has many avatars"
+  },
+  {
+   "name": "idnHugeShrines",
+   "value": true,
+   "comment": "there are awesomely huge shrines to single gods many stories high"
+  },
+  {
+   "name": "idnTinyShrines",
+   "value": true,
+   "comment": "the same areas hold tiny shrines to all the gods that a single worshiper can use"
+  },
+  {
+   "name": "idnManyHeadsArms",
+   "value": true,
+   "comment": "the deities are often described as having many heads and/or arms"
+  },
+  {
+   "name": "idnArmsMatchAbilities",
+   "value": true,
+   "comment": "the number of arms matches the number of important abilities, varying by account"
+  },
+  {
+   "name": "idnIndraFirstRuler",
+   "value": true,
+   "comment": "Indra is the first ruler of the gods"
+  },
+  {
+   "name": "idnIndraWeatherControl",
+   "value": true,
+   "comment": "his main attribute is the creation and control of any form of weather at will"
+  },
+  {
+   "name": "idnIndraStaffOfCommand",
+   "value": true,
+   "comment": "he influences humans, animals and plants as a staff of command"
+  },
+  {
+   "name": "idnIndraShapeChange",
+   "value": true,
+   "comment": "he can shape change at will"
+  },
+  {
+   "name": "idnElephantCarryWeight",
+   "value": true,
+   "comment": "the white beast carries any weight his master wishes"
+  },
+  {
+   "name": "idnElephantPlaneCarry",
+   "value": true,
+   "comment": "it carries its master through the air, through the planes, or on the ground"
+  },
+  {
+   "name": "idnAgniCompletelyRed",
+   "value": true,
+   "comment": "Agni is completely red"
+  },
+  {
+   "name": "idnAgniFireControl",
+   "value": true,
+   "comment": "his main attribute is the control of all forms of fire"
+  },
+  {
+   "name": "idnAgniAxeSlayLesser",
+   "value": true,
+   "comment": "his axe of flame slays lesser demons and devils on a hit, no saving throw"
+  },
+  {
+   "name": "idnAgniAuraMeltsWeapons",
+   "value": true,
+   "comment": "the aura destroys any striking weapon of less than +4 bonus"
+  },
+  {
+   "name": "idnAgniCureDisease",
+   "value": true,
+   "comment": "he is able to cure or cause any disease"
+  },
+  {
+   "name": "idnAgniVoiceCharm",
+   "value": true,
+   "comment": "his voice charms as the charm person or charm monster spell"
+  },
+  {
+   "name": "idnAgniShapeChange",
+   "value": true,
+   "comment": "he can shape change at will"
+  },
+  {
+   "name": "idnAgniHorsesImmuneHeat",
+   "value": true,
+   "comment": "his two giant red horses are immune to all forms of heat"
+  },
+  {
+   "name": "idnKaliBlackEarthMother",
+   "value": true,
+   "comment": "Kali is the black earth mother, destruction incarnate"
+  },
+  {
+   "name": "idnKaliVisageFear",
+   "value": true,
+   "comment": "her visage causes fear as the spell, save vs. spells negates"
+  },
+  {
+   "name": "idnKaliShapeChange",
+   "value": true,
+   "comment": "she can shape change at will"
+  },
+  {
+   "name": "idnKaliBloodSacrifice",
+   "value": true,
+   "comment": "her worship requires blood sacrifices and even an occasional human sacrifice"
+  },
+  {
+   "name": "idnKaliCultBerserk",
+   "value": true,
+   "comment": "her cult defenders fight in a berserk suicidal manner until slain"
+  },
+  {
+   "name": "idnKarttikeyaCreatedForDevils",
+   "value": true,
+   "comment": "the demigod was created to fight devils wherever they are found"
+  },
+  {
+   "name": "idnKarttikeyaRidesPeacock",
+   "value": true,
+   "comment": "he rides a giant peacock into battle and the bird is his symbol"
+  },
+  {
+   "name": "idnPeacockMetalFeathers",
+   "value": true,
+   "comment": "the peacock is said to have feathers made of metal"
+  },
+  {
+   "name": "idnPeacockLightningBeak",
+   "value": true,
+   "comment": "its beak strikes with the swiftness of lightning at the god enemies"
+  },
+  {
+   "name": "idnPeacockIndependent",
+   "value": true,
+   "comment": "it obeys the commands of the god perfectly and can act independently"
+  },
+  {
+   "name": "idnLakshmiGoldenSkin",
+   "value": true,
+   "comment": "Lakshmi appears as a golden-skinned woman"
+  },
+  {
+   "name": "idnLakshmiLotusOnlyHer",
+   "value": true,
+   "comment": "the giant floating lotus carries only her"
+  },
+  {
+   "name": "idnLakshmiAlwaysSaves",
+   "value": true,
+   "comment": "Lakshmi always makes her saving throws"
+  },
+  {
+   "name": "idnLakshmiImmuneFlying",
+   "value": true,
+   "comment": "she is immune to attacks from creatures that are flying"
+  },
+  {
+   "name": "idnLakshmiRightEyeLuck",
+   "value": true,
+   "comment": "her right eye grants always-made saves and always-hit for an hour"
+  },
+  {
+   "name": "idnLakshmiLeftEyeAnti",
+   "value": true,
+   "comment": "her left eye has the opposite effect, save vs. spells negates either"
+  },
+  {
+   "name": "idnMarutWindTroops",
+   "value": true,
+   "comment": "the maruts are humanoids created out of the wind, troops for the gods"
+  },
+  {
+   "name": "idnMarutInvisibleUnlessAttacking",
+   "value": true,
+   "comment": "they are invisible unless attacking the enemies of the gods"
+  },
+  {
+   "name": "idnMarutUncharmable",
+   "value": true,
+   "comment": "they are not subject to the will of any but divine beings, so cannot be charmed or enchanted"
+  },
+  {
+   "name": "idnMarutFly",
+   "value": true,
+   "comment": "as wind creatures they naturally have the ability to fly"
+  },
+  {
+   "name": "idnRatriWellProportioned",
+   "value": true,
+   "comment": "Ratri appears as a well-proportioned woman"
+  },
+  {
+   "name": "idnRatriShadowBlind",
+   "value": true,
+   "comment": "she permanently blinds any being that crosses her shadow, save vs. spells"
+  },
+  {
+   "name": "idnRatriCloakEthereal",
+   "value": true,
+   "comment": "her cloak casts touching objects or persons into the Ethereal Plane, no save"
+  },
+  {
+   "name": "idnRatriAngryLook",
+   "value": true,
+   "comment": "her physical attack is an angry look from her eyes, once per round"
+  },
+  {
+   "name": "idnRudraDiseaseArrows",
+   "value": true,
+   "comment": "his black bow shoots arrows of disease like a mummy touch rot"
+  },
+  {
+   "name": "idnRudraDiseaseRemedies",
+   "value": true,
+   "comment": "he governs both the spread of disease and its remedies"
+  },
+  {
+   "name": "idnRudraStormControl",
+   "value": true,
+   "comment": "he can also create and control storms"
+  },
+  {
+   "name": "idnRudraPortableHole",
+   "value": true,
+   "comment": "his treasure hole opens into an area the size of the Grand Canyon"
+  },
+  {
+   "name": "idnSuryaPaladin",
+   "value": true,
+   "comment": "the printed 16th level paladin of the FIGHTER line, the R859 paladin convention"
+  },
+  {
+   "name": "idnSuryaSleepNoSave",
+   "value": true,
+   "comment": "his sleep ability hits 20th level or lesser non-divine beings with no saving throw"
+  },
+  {
+   "name": "idnSuryaSeesSunlit",
+   "value": true,
+   "comment": "he can see anything in the Prime Material Plane the sun shines on"
+  },
+  {
+   "name": "idnSuryaContinualLight",
+   "value": true,
+   "comment": "the light shaft acts as a non-negatable continual light spell"
+  },
+  {
+   "name": "idnSuryaDemonsFirst",
+   "value": true,
+   "comment": "he attacks demons first in any battle where they appear"
+  },
+  {
+   "name": "idnTvashtriArtificerGod",
+   "value": true,
+   "comment": "Tvashtri designs objects of great utility and weapons of awesome power"
+  },
+  {
+   "name": "idnTvashtriGodWeaponsSafe",
+   "value": true,
+   "comment": "virtually all the gods weapons were his design, so none can hurt him"
+  },
+  {
+   "name": "idnTvashtriRegenFullAttention",
+   "value": true,
+   "comment": "his air-grab healing requires all his attention, no attack or defense"
+  },
+  {
+   "name": "idnTvashtriPatronArtisans",
+   "value": true,
+   "comment": "he is the patron of artisans and inventors, his clerics resourceful and original"
+  },
+  {
+   "name": "idnUshasReincarnate",
+   "value": true,
+   "comment": "she can reincarnate any living thing into any other non-divine living form"
+  },
+  {
+   "name": "idnUshasDawnRespawn",
+   "value": true,
+   "comment": "she is responsible for the endless reincarnation of the daytime"
+  },
+  {
+   "name": "idnUshasLightBlind",
+   "value": true,
+   "comment": "her brilliant light blinds all looking at her, no saving throw"
+  },
+  {
+   "name": "idnUshasInstantAwakening",
+   "value": true,
+   "comment": "she awakens all dormant good creatures and dispels charm influences"
+  },
+  {
+   "name": "idnVarunaPaladin",
+   "value": true,
+   "comment": "the printed 14th level paladin of the FIGHTER line"
+  },
+  {
+   "name": "idnVarunaOathProtector",
+   "value": true,
+   "comment": "Varuna is the protector of all oaths and the personification of lawfulness"
+  },
+  {
+   "name": "idnVarunaEthereal",
+   "value": true,
+   "comment": "he can become ethereal at will"
+  },
+  {
+   "name": "idnVarunaLawfulAura",
+   "value": true,
+   "comment": "his aura of lawfulness bars chaotic non-divine creatures from 5 feet"
+  },
+  {
+   "name": "idnVishnuPaladin",
+   "value": true,
+   "comment": "the printed 17th level paladin of the FIGHTER line"
+  },
+  {
+   "name": "idnVishnuFourArms",
+   "value": true,
+   "comment": "Vishnu most commonly appears as a normal man with four arms"
+  },
+  {
+   "name": "idnVishnuNoViolence",
+   "value": true,
+   "comment": "he can bar any intelligent creature from committing violence within 30 yards, no save, while he cannot do harm"
+  },
+  {
+   "name": "idnVishnuPrismaticDouble",
+   "value": true,
+   "comment": "he casts double strength prismatic wall spells at will"
+  },
+  {
+   "name": "idnVishnuUndeadDust",
+   "value": true,
+   "comment": "undead turn to dust at his glance"
+  },
+  {
+   "name": "idnVishnuMaceDisintegrate",
+   "value": true,
+   "comment": "his mace disintegrates anything it hits, save vs. spells applicable"
+  },
+  {
+   "name": "idnVishnuShellEthereal",
+   "value": true,
+   "comment": "his magical sea shell sends him into the Ethereal Plane when about to be killed"
+  },
+  {
+   "name": "idnVishnuGarudaCharmImmune",
+   "value": true,
+   "comment": "riding Garuda he is not affected by charm spells of any type"
+  },
+  {
+   "name": "idnVishnuShowsMercy",
+   "value": true,
+   "comment": "his clerics combat evil with determination but show mercy to redeemable defeated opponents"
+  },
+  {
+   "name": "idnGarudaHatesEvil",
+   "value": true,
+   "comment": "the half-man half-bird hates all things evil with a mad passion"
+  },
+  {
+   "name": "idnGarudaSummonAvians",
+   "value": true,
+   "comment": "he summons 1-10 avian creatures once per day, even over other gods commands"
+  },
+  {
+   "name": "idnGarudaSenseEvil",
+   "value": true,
+   "comment": "he senses any evil creatures or things within a 1 mile radius"
+  },
+  {
+   "name": "idnYamaFirstMortal",
+   "value": true,
+   "comment": "Yama started life as the first mortal and was made immortal for his destructiveness"
+  },
+  {
+   "name": "idnYamaJudgeOfDead",
+   "value": true,
+   "comment": "he is the judge of the dead, deciding the plane of afterlife by the record of deeds"
+  },
+  {
+   "name": "idnYamaRobeNegateHeat",
+   "value": true,
+   "comment": "the red robes negate all damage from heat, cold and light sources"
+  },
+  {
+   "name": "idnYamaRobeFly",
+   "value": true,
+   "comment": "the robes let him fly and swim as fast as he moves on land"
+  },
+  {
+   "name": "idnYamaEtherealArmor",
+   "value": true,
+   "comment": "he enters battle wearing armor of etherealness"
+  },
+  {
+   "name": "idnBuffaloPlaneTravel",
+   "value": true,
+   "comment": "it moves over land, air, water or space with ease"
+  },
+  {
+   "name": "idnBuffaloPullUnattached",
+   "value": true,
+   "comment": "it can pull any weight not attached to the earth"
+  },
+  {
+   "name": "idnBuffaloLoyalToYama",
+   "value": true,
+   "comment": "it is slavishly loyal to Yama and will not allow itself to be used by others"
+  },
+  {
+   "name": "idnBuffaloComplexOrders",
+   "value": true,
+   "comment": "it can obey complicated orders from Yama"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "idnCbt",
+   "count": "idnCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "idnCbtAC",
+    "idnCbtACAlt",
+    "idnCbtHP",
+    "idnCbtMove",
+    "idnCbtMoveAlt",
+    "idnCbtAtN",
+    "idnCbtAtD",
+    "idnCbtMR",
+    "idnCbtSizeIn"
+   ],
+   "data": [
+    [
+     -12,
+     0,
+     400,
+     18,
+     24,
+     2,
+     0,
+     80,
+     72
+    ],
+    [
+     0,
+     0,
+     150,
+     18,
+     24,
+     5,
+     0,
+     25,
+     240
+    ],
+    [
+     -2,
+     0,
+     378,
+     18,
+     18,
+     2,
+     0,
+     75,
+     120
+    ],
+    [
+     -9,
+     0,
+     279,
+     27,
+     0,
+     4,
+     0,
+     39,
+     240
+    ],
+    [
+     -8,
+     0,
+     222,
+     18,
+     0,
+     10,
+     0,
+     50,
+     240
+    ],
+    [
+     2,
+     0,
+     120,
+     24,
+     36,
+     1,
+     0,
+     0,
+     240
+    ],
+    [
+     -3,
+     0,
+     300,
+     18,
+     75,
+     0,
+     0,
+     100,
+     72
+    ],
+    [
+     -2,
+     0,
+     100,
+     9,
+     24,
+     1,
+     0,
+     50,
+     72
+    ],
+    [
+     -2,
+     0,
+     250,
+     18,
+     0,
+     1,
+     0,
+     25,
+     60
+    ],
+    [
+     -2,
+     0,
+     344,
+     18,
+     24,
+     2,
+     0,
+     25,
+     72
+    ],
+    [
+     -3,
+     0,
+     360,
+     18,
+     0,
+     2,
+     0,
+     50,
+     120
+    ],
+    [
+     -3,
+     0,
+     227,
+     15,
+     0,
+     1,
+     0,
+     65,
+     72
+    ],
+    [
+     -2,
+     0,
+     300,
+     18,
+     24,
+     0,
+     0,
+     60,
+     66
+    ],
+    [
+     -2,
+     0,
+     329,
+     15,
+     24,
+     3,
+     2,
+     80,
+     78
+    ],
+    [
+     -5,
+     0,
+     389,
+     18,
+     27,
+     2,
+     0,
+     85,
+     72
+    ],
+    [
+     -1,
+     0,
+     100,
+     18,
+     48,
+     2,
+     0,
+     75,
+     720
+    ],
+    [
+     -1,
+     0,
+     229,
+     15,
+     0,
+     2,
+     0,
+     25,
+     84
+    ],
+    [
+     3,
+     0,
+     100,
+     24,
+     0,
+     1,
+     0,
+     0,
+     12
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Vishnu -5 the best of the gods, Indra the flagged em-dash minus twelve odd print, Kali -9; the Buffalo 3 the worst)",
+    "The range ceiling cells (0 = a single printed armor class; all eighteen read single this round)",
+    "The hit point cells (Indra 400 the supreme, down to the four 100 hp monsters)",
+    "The primary move cells (Kali the flagged 27 odd print without a slash; Tvashtri and Yama 15; the Marut the flagged 9 apostrophe print)",
+    "The secondary move cells (Lakshmi the 75 lotus ceiling, Garuda the 48 flight, the Peacock 24/36; 0 = the single-printed moves)",
+    "The attack count cells (Karttikeya the ten swords, the Elephant 5, Kali 4; Lakshmi and Ushas the zero rows)",
+    "The attack alternative cells (Varuna the one 3/2 slash of the round)",
+    "The magic resistance cells (0 = the printed Standard of the Peacock and the Buffalo; Lakshmi the 100 ceiling, Vishnu 85, Indra 80; Yama the flagged 25 with the 100 percent robes note)",
+    "The size cells in inches (the two pixel-verified X 1/2 foot fractions - Ushas 66, Varuna 78; the Buffalo the one true-inch 12 inch shoulders cell; Garuda the 720 sixty-footer)"
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "idnCls",
+   "count": "idnClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "idnClsCleric",
+    "idnClsDruid",
+    "idnClsFighterLo",
+    "idnClsFighterHi",
+    "idnClsRanger",
+    "idnClsMagUser",
+    "idnClsIllus",
+    "idnClsThief",
+    "idnClsAssassin",
+    "idnClsMonk",
+    "idnClsBard"
+   ],
+   "data": [
+    [
+     25,
+     0,
+     14,
+     0,
+     0,
+     20,
+     20,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     15,
+     0,
+     0,
+     99,
+     99,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     10,
+     20,
+     0,
+     0,
+     15,
+     15,
+     0,
+     15,
+     13,
+     0
+    ],
+    [
+     0,
+     0,
+     18,
+     0,
+     0,
+     0,
+     0,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     0,
+     0,
+     0,
+     20,
+     20,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     0,
+     0,
+     0,
+     5,
+     15,
+     0,
+     15,
+     0,
+     0
+    ],
+    [
+     0,
+     14,
+     14,
+     0,
+     0,
+     0,
+     25,
+     15,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     16,
+     16,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     8
+    ],
+    [
+     15,
+     0,
+     11,
+     0,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     0,
+     0,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     14,
+     14,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     4
+    ],
+    [
+     15,
+     0,
+     17,
+     17,
+     0,
+     25,
+     18,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     14,
+     0,
+     0,
+     99,
+     99,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (Indra 25 the ceiling, Lakshmi and Surya 20)",
+    "The druid level cells (Kali 10 the in-each pair, Rudra 14 the printed 14th level druid)",
+    "The lower fighter level cells (the three paladin pairs: Surya 16, Varuna 14, Vishnu 17)",
+    "The upper fighter level cells (the paladin hi cells; all other fighters single-printed, 0)",
+    "The ranger level cells (none printed this round)",
+    "The magic-user level cells (99 = the Agni and Yama printed See below, the egp Isis precedent; Vishnu 25 the ceiling)",
+    "The illusionist level cells (99 the See below pairs; Rudra 25 the ceiling)",
+    "The thief level cells (Rudra 15 the maximum thieving god, Karttikeya 18)",
+    "The assassin level cells (Kali 15, Ratri 15)",
+    "The monk level cells (Kali 13 the only one printed)",
+    "The bard level cells (Indra 10, Lakshmi 10, Surya 8, Varuna 4)"
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "idnAbi",
+   "count": "idnAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "idnAbiStr",
+    "idnAbiStrHit",
+    "idnAbiStrDmg",
+    "idnAbiInt",
+    "idnAbiWis",
+    "idnAbiDex",
+    "idnAbiCon",
+    "idnAbiCha",
+    "idnAbiPsi"
+   ],
+   "data": [
+    [
+     25,
+     7,
+     14,
+     25,
+     25,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     21,
+     20,
+     25,
+     24,
+     20,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     18,
+     5,
+     25,
+     24,
+     -7,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     20,
+     16,
+     25,
+     20,
+     18,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     0,
+     25,
+     25,
+     20,
+     23,
+     24,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     22,
+     20,
+     19,
+     21,
+     23,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     23,
+     20,
+     25,
+     24,
+     20,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     24,
+     24,
+     24,
+     24,
+     20,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     25,
+     22,
+     21,
+     23,
+     19,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     21,
+     23,
+     25,
+     22,
+     23,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     25,
+     25,
+     23,
+     22,
+     18,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     23,
+     25,
+     24,
+     24,
+     25,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     24,
+     18,
+     18,
+     18,
+     18,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (the six 25s of Indra, Kali, Karttikeya, Rudra and Agni 24; Lakshmi the mortal 10)",
+    "The strength to-hit bonuses (0 = the no-printed-bracket rows: Lakshmi and the five monsters)",
+    "The strength damage bonuses (the four 14s and the Rudra 9)",
+    "The intelligence cells (Tvashtri 25 the artificer ceiling, Lakshmi 25; Agni 21)",
+    "The wisdom cells (Kali the flagged 5 odd print pinned by both voices; the four 25s of Indra, Lakshmi, Varuna, Vishnu)",
+    "The dexterity cells (Rudra and Ushas 25; Kali 25; the Yama 18 mortal row)",
+    "The constitution cells (Indra and Rudra 25; Yama 18)",
+    "The charisma cells (Kali the minus 7; Vishnu 25; Yama the 18 row)",
+    "The psionic score cells (0 = every being reads the R849 class table this round; no monster point scores printed)"
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "idnRos",
+   "count": "idnRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "idnRosOrd",
+    "idnRosPage",
+    "idnRosAlign",
+    "idnRosRank",
+    "idnRosPsiClass",
+    "idnRosPlane",
+    "idnRosDmgFixed",
+    "idnRosInEach",
+    "idnRosEnmity"
+   ],
+   "data": [
+    [
+     0,
+     75,
+     5,
+     1,
+     3,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     75,
+     4,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     76,
+     5,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     76,
+     8,
+     0,
+     3,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     76,
+     2,
+     2,
+     6,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     76,
+     0,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     77,
+     2,
+     0,
+     6,
+     2,
+     0,
+     1,
+     0
+    ],
+    [
+     7,
+     77,
+     4,
+     5,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     8,
+     77,
+     7,
+     2,
+     5,
+     4,
+     1,
+     0,
+     0
+    ],
+    [
+     9,
+     77,
+     3,
+     1,
+     5,
+     5,
+     1,
+     0,
+     0
+    ],
+    [
+     10,
+     78,
+     0,
+     1,
+     6,
+     6,
+     1,
+     0,
+     0
+    ],
+    [
+     11,
+     78,
+     4,
+     2,
+     1,
+     8,
+     1,
+     0,
+     0
+    ],
+    [
+     12,
+     78,
+     1,
+     0,
+     6,
+     7,
+     0,
+     0,
+     0
+    ],
+    [
+     13,
+     79,
+     3,
+     1,
+     6,
+     5,
+     1,
+     0,
+     0
+    ],
+    [
+     14,
+     79,
+     0,
+     1,
+     1,
+     6,
+     1,
+     0,
+     0
+    ],
+    [
+     15,
+     79,
+     0,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     16,
+     80,
+     3,
+     2,
+     5,
+     5,
+     1,
+     0,
+     0
+    ],
+    [
+     17,
+     80,
+     3,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Indra through the Water Buffalo)",
+    "The print page cells (75-80, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 LG, 1 NG, 2 CG, 3 LN, 4 N, 5 CN, 6 LE, 7 NE, 8 CE - the R852 code scheme)",
+    "The rank cells (0 lesser, 1 greater, 2 demigod, 5 monster - no heroes, no titans this round)",
+    "The psionic class cells (the chocr glyph-width decode at 600dpi: the single pipe w10 of Agni, Tvashtri, Vishni... corrected: Agni, Tvashtri, Vishnu; the Indra TI! w47 three-pipe class III and the Kali III - the R859 fraction-era calibration; V w36 Ratri, Rudra, Yama; VI w49 Karttikeya, Lakshmi, Surya, Ushas, Varuna)",
+    "The plane cells (0 none, 1 Limbo, 2 Gladsheim, 3 the Abyss of Kali, 4 Hades of Ratri, 5 Nirvana of Rudra, Varuna, Yama, 6 the Seven Heavens of Surya, Vishnu, Garuda, 7 Elysium of Ushas, 8 Concordant Opposition of Tvashtri)",
+    "The fixed-damage flags (1 = the printed numeric damage; 0 = the Marut by-weapon row and the Lakshmi and Ushas Nil rows)",
+    "The in-each flags (the printed Nth level in each cells: Indra MU/I, Kali C/D and MU/I, Lakshmi MU/I)",
+    "The enmity flags (none printed this round: zero flags)"
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the eighteen beings, the nine plane codes, the three paladins)",
+   "expr": "m['idnTableCount']() != 4 or m['idnBeingCount']() != 18 or m['idnCbtRows']() != 18 or m['idnClsRows']() != 18 or m['idnAbiRows']() != 18 or m['idnRosRows']() != 18 or m['idnPlaneCount']() != 9 or m['idnGreaterCount']() != 6 or m['idnLesserCount']() != 3 or m['idnDemigodCount']() != 4 or m['idnMonsterCount']() != 5 or m['idnInEachCount']() != 3 or m['idnEnmityCount']() != 0 or m['idnPaladinCount']() != 3 or m['idnPsiClassKinds']() != 4 or m['idnHalfFootCount']() != 2 or m['idnArtifactCount']() != 0 or m['idnChainCount']() != 0 or m['idnRegistryFloor']() != 995"
+  },
+  {
+   "note": "the print walk spans pp. 75-80 and the roster ordinals run 0-17 in print order",
+   "expr": "m['idnPrintStart']() != 75 or m['idnPrintEnd']() != 80 or m['idnRosPage'](0) != 75 or m['idnRosPage'](2) != 76 or m['idnRosPage'](6) != 77 or m['idnRosPage'](10) != 78 or m['idnRosPage'](13) != 79 or m['idnRosPage'](16) != 80 or m['idnRosOrd'](0) != 0 or m['idnRosOrd'](17) != 17"
+  },
+  {
+   "note": "Indra the first ruler: the em-dash minus twelve, 400 hp, the MU/I 20 in each, psionic III",
+   "expr": "m['idnCbtAC'](0) != -12 or m['idnCbtHP'](0) != 400 or m['idnClsMagUser'](0) != 20 or m['idnClsIllus'](0) != 20 or m['idnRosInEach'](0) != 1 or m['idnRosPsiClass'](0) != 3 or m['idnAbiStr'](0) != 25 or m['idnAbiStrDmg'](0) != 14 or m['idnClsCleric'](0) != 25 or m['idnIndraBoltDamage']() != 30 or m['idnIndraBoltsPerRound']() != 2"
+  },
+  {
+   "note": "the Elephant of Indra: 5 attacks, the 240-inch L 20 foot, the X/21,450 xp",
+   "expr": "m['idnCbtAtN'](1) != 5 or m['idnCbtSizeIn'](1) != 240 or m['idnCbtHP'](1) != 150 or m['idnCbtMR'](1) != 25 or m['idnRosRank'](1) != 5 or m['idnElephantXpBase']() != 21450 or m['idnElephantHitDice']() != 16"
+  },
+  {
+   "note": "Agni the fire god: fighter 15, the See below 99/99 pair, S:24(+6,+12), the 50th level fire spells",
+   "expr": "m['idnClsFighterLo'](2) != 15 or m['idnClsMagUser'](2) != 99 or m['idnClsIllus'](2) != 99 or m['idnAbiStr'](2) != 24 or m['idnAbiStrHit'](2) != 6 or m['idnAbiStrDmg'](2) != 12 or m['idnRosPsiClass'](2) != 1 or m['idnAgniFireSpellLevel']() != 50 or m['idnAgniArms']() != 7 or m['idnCbtSizeIn'](2) != 120"
+  },
+  {
+   "note": "Kali the black earth mother: the minus 7 charisma, the flagged wisdom 5, psionic III, assassin 15 monk 13",
+   "expr": "m['idnAbiCha'](3) != -7 or m['idnAbiWis'](3) != 5 or m['idnRosPsiClass'](3) != 3 or m['idnClsAssassin'](3) != 15 or m['idnClsMonk'](3) != 13 or m['idnClsCleric'](3) != 10 or m['idnClsDruid'](3) != 10 or m['idnRosInEach'](3) != 1 or m['idnCbtMR'](3) != 39 or m['idnKaliTalonDamage']() != 40"
+  },
+  {
+   "note": "Karttikeya: the ten sword attacks, AC -8, thief 10, the 2 percent devil aid",
+   "expr": "m['idnCbtAtN'](4) != 10 or m['idnCbtAC'](4) != -8 or m['idnClsThief'](4) != 10 or m['idnKarttikeyaAidPct']() != 2 or m['idnKarttikeyaHeads']() != 6 or m['idnKarttikeyaSwords']() != 10 or m['idnRosPsiClass'](4) != 6 or m['idnRosPlane'](4) != 2"
+  },
+  {
+   "note": "the Peacock of Karttikeya: MR Standard 0, the 3-36 beak, xp X/12,200",
+   "expr": "m['idnCbtMR'](5) != 0 or m['idnPeacockBeakDamage']() != 36 or m['idnPeacockXpBase']() != 12200 or m['idnRosAlign'](5) != 0 or m['idnCbtMove'](5) != 24 or m['idnCbtMoveAlt'](5) != 36"
+  },
+  {
+   "note": "Lakshmi: the zero attack row, MR 100, the 18/75 lotus move, bard 10",
+   "expr": "m['idnCbtAtN'](6) != 0 or m['idnCbtMR'](6) != 100 or m['idnCbtMove'](6) != 18 or m['idnCbtMoveAlt'](6) != 75 or m['idnClsBard'](6) != 10 or m['idnRosDmgFixed'](6) != 0 or m['idnLakshmiLotusSpeed']() != 75 or m['idnAbiStr'](6) != 10"
+  },
+  {
+   "note": "the Marut: the flagged 9 apostrophe move, by-weapon damage 0, the wind troop flags",
+   "expr": "m['idnCbtMove'](7) != 9 or m['idnCbtMoveAlt'](7) != 24 or m['idnRosDmgFixed'](7) != 0 or m['idnMarutLairPct']() != 25 or m['idnMarutXpBase']() != 16700 or m['idnMarutAppearHi']() != 10 or m['idnMarutBattleHi']() != 100 or m['idnCbtAC'](7) != -2"
+  },
+  {
+   "note": "Ratri the night: MU 5 illusionist 15, neutral evil, the Hades plane, psionic V",
+   "expr": "m['idnClsMagUser'](8) != 5 or m['idnClsIllus'](8) != 15 or m['idnRosAlign'](8) != 7 or m['idnRosPlane'](8) != 4 or m['idnRosPsiClass'](8) != 5 or m['idnClsAssassin'](8) != 15 or m['idnRatriDarknessRadius']() != 15 or m['idnAbiStr'](8) != 19"
+  },
+  {
+   "note": "Rudra: the 14th druid, 25th illusionist, thief 15, S:21(+4,+9)",
+   "expr": "m['idnClsDruid'](9) != 14 or m['idnClsIllus'](9) != 25 or m['idnClsThief'](9) != 15 or m['idnClsFighterLo'](9) != 14 or m['idnAbiStrHit'](9) != 4 or m['idnAbiStrDmg'](9) != 9 or m['idnRudraSavePenalty']() != 6 or m['idnRosPlane'](9) != 5"
+  },
+  {
+   "note": "Surya the AC catch: the chocr minus three over the Termux bare dash, the paladin 16/16 pair",
+   "expr": "m['idnCbtAC'](10) != -3 or m['idnClsFighterLo'](10) != 16 or m['idnClsFighterHi'](10) != 16 or m['idnSuryaSwordPlus']() != 4 or m['idnSuryaSleepLevel']() != 20 or m['idnSuryaChariotHorses']() != 7 or m['idnCbtSizeIn'](10) != 120 or m['idnClsBard'](10) != 8"
+  },
+  {
+   "note": "Tvashtri the artificer: the pixel-verified D:21, psionic I, the Concordant Opposition plane 8",
+   "expr": "m['idnAbiDex'](11) != 21 or m['idnRosPsiClass'](11) != 1 or m['idnRosPlane'](11) != 8 or m['idnClsCleric'](11) != 15 or m['idnClsFighterLo'](11) != 11 or m['idnTvashtriNullifyYards']() != 200 or m['idnTvashtriRegen']() != 20 or m['idnAbiInt'](11) != 25"
+  },
+  {
+   "note": "Ushas the fraction: the pixel-verified 5 1/2 foot 66 cell, illusionist 15, MR 60",
+   "expr": "m['idnCbtSizeIn'](12) != 66 or m['idnClsIllus'](12) != 15 or m['idnCbtMR'](12) != 60 or m['idnUshasRegen']() != 30 or m['idnUshasGazeDamage']() != 10 or m['idnUshasBlindTurns']() != 4 or m['idnRosPlane'](12) != 7 or m['idnRosAlign'](12) != 1"
+  },
+  {
+   "note": "Varuna the fraction: the 6 1/2 foot 78 cell, the 3/2 attacks, the paladin 14/14 pair, MR 80",
+   "expr": "m['idnCbtSizeIn'](13) != 78 or m['idnCbtAtN'](13) != 3 or m['idnCbtAtD'](13) != 2 or m['idnClsFighterLo'](13) != 14 or m['idnClsFighterHi'](13) != 14 or m['idnCbtMR'](13) != 80 or m['idnVarunaOathPct']() != 1 or m['idnVarunaSpearDamage']() != 50 or m['idnClsBard'](13) != 4"
+  },
+  {
+   "note": "Vishnu: AC -5, the paladin 17/17 pair, MU 25 illusionist 18, psionic I",
+   "expr": "m['idnCbtAC'](14) != -5 or m['idnClsFighterLo'](14) != 17 or m['idnClsFighterHi'](14) != 17 or m['idnClsMagUser'](14) != 25 or m['idnClsIllus'](14) != 18 or m['idnRosPsiClass'](14) != 1 or m['idnAbiCha'](14) != 25 or m['idnVishnuPeaceYards']() != 30 or m['idnVishnuLotusUses']() != 3"
+  },
+  {
+   "note": "Garuda the king of all birds: the 720-inch L 60 foot, sense evil a mile, xp X/17,100",
+   "expr": "m['idnCbtSizeIn'](15) != 720 or m['idnCbtMoveAlt'](15) != 48 or m['idnGarudaXpBase']() != 17100 or m['idnGarudaCarryGods']() != 5 or m['idnGarudaWingDamage']() != 24 or m['idnRosRank'](15) != 5 or m['idnCbtAC'](15) != -1"
+  },
+  {
+   "note": "Yama the judge of the dead: the See below 99/99 pair, MR 25 with the 100 robes, S:21(+4,+9)",
+   "expr": "m['idnClsMagUser'](16) != 99 or m['idnClsIllus'](16) != 99 or m['idnCbtMR'](16) != 25 or m['idnYamaRobeMr']() != 100 or m['idnAbiStr'](16) != 21 or m['idnAbiStrHit'](16) != 4 or m['idnAbiStrDmg'](16) != 9 or m['idnYamaNooseRounds']() != 3 or m['idnYamaSpellLevel']() != 20 or m['idnCbtSizeIn'](16) != 84"
+  },
+  {
+   "note": "the Water Buffalo of Yama: AC 3, the one true-inch 12 inch shoulders cell, MR Standard 0",
+   "expr": "m['idnCbtAC'](17) != 3 or m['idnCbtSizeIn'](17) != 12 or m['idnCbtMR'](17) != 0 or m['idnBuffaloGoreDamage']() != 40 or m['idnBuffaloCarryGods']() != 2 or m['idnBuffaloShoulderInches']() != 12 or m['idnBuffaloXpBase']() != 11500"
+  },
+  {
+   "note": "the monster rows carry no class, ability or psionic cells",
+   "expr": "m['idnClsCleric'](1) != 0 or m['idnClsFighterLo'](7) != 0 or m['idnAbiStr'](15) != 0 or m['idnRosPsiClass'](5) != 0 or m['idnAbiCha'](17) != 0 or m['idnClsBard'](1) != 0"
+  }
+ ],
+ "header_sections": {
+  "the R860 census": [
+   {
+    "kind": "const",
+    "name": "idnRound"
+   },
+   {
+    "kind": "const",
+    "name": "idnPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "idnPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "idnBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "idnCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "idnClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "idnAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "idnRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "idnPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnGreaterCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnLesserCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnDemigodCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnMonsterCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnInEachCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnEnmityCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnPaladinCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnPsiClassKinds"
+   },
+   {
+    "kind": "const",
+    "name": "idnHalfFootCount"
+   },
+   {
+    "kind": "const",
+    "name": "idnArtifactCount"
+   }
+  ],
+  "the Indian pantheon doctrine": [
+   {
+    "kind": "bool",
+    "name": "idnVedicHinduMixture"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAloofGreaterThanNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "idnBornToStation"
+   },
+   {
+    "kind": "bool",
+    "name": "idnNoClassSwitch"
+   },
+   {
+    "kind": "bool",
+    "name": "idnMagicUserCasteSupreme"
+   },
+   {
+    "kind": "bool",
+    "name": "idnHigherStatusRespect"
+   },
+   {
+    "kind": "bool",
+    "name": "idnProperSacrificeAnswered"
+   },
+   {
+    "kind": "bool",
+    "name": "idnImproperSacrificeRepeat"
+   },
+   {
+    "kind": "bool",
+    "name": "idnWorshipMarksWorn"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuForeheadMark"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAvatarLesserPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAvatarSpecificFunction"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAvatarSeveralSimultaneous"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuManyAvatars"
+   },
+   {
+    "kind": "bool",
+    "name": "idnHugeShrines"
+   },
+   {
+    "kind": "bool",
+    "name": "idnTinyShrines"
+   },
+   {
+    "kind": "bool",
+    "name": "idnManyHeadsArms"
+   },
+   {
+    "kind": "bool",
+    "name": "idnArmsMatchAbilities"
+   }
+  ],
+  "Indra": [
+   {
+    "kind": "const",
+    "name": "idnIndraBoltsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "idnIndraBoltDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnIndraBoltRange"
+   },
+   {
+    "kind": "const",
+    "name": "idnIndraSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "idnIndraArmorPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "idnIndraFirstRuler"
+   },
+   {
+    "kind": "bool",
+    "name": "idnIndraWeatherControl"
+   },
+   {
+    "kind": "bool",
+    "name": "idnIndraStaffOfCommand"
+   },
+   {
+    "kind": "bool",
+    "name": "idnIndraShapeChange"
+   }
+  ],
+  "the Elephant of Indra": [
+   {
+    "kind": "const",
+    "name": "idnElephantHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "idnElephantXpBase"
+   },
+   {
+    "kind": "bool",
+    "name": "idnElephantCarryWeight"
+   },
+   {
+    "kind": "bool",
+    "name": "idnElephantPlaneCarry"
+   }
+  ],
+  "Agni": [
+   {
+    "kind": "const",
+    "name": "idnAgniLegs"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniArms"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniHeads"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniControlMiles"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniFireSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniAuraDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniMeltPlus"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniBreathUses"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniBreathYards"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniBreathDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniChariotGround"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniChariotAir"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniHorseAc"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniHorseHd"
+   },
+   {
+    "kind": "const",
+    "name": "idnAgniHorseHp"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAgniCompletelyRed"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAgniFireControl"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAgniAxeSlayLesser"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAgniAuraMeltsWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAgniCureDisease"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAgniVoiceCharm"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAgniShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "idnAgniHorsesImmuneHeat"
+   }
+  ],
+  "Kali": [
+   {
+    "kind": "const",
+    "name": "idnKaliEyes"
+   },
+   {
+    "kind": "const",
+    "name": "idnKaliArms"
+   },
+   {
+    "kind": "const",
+    "name": "idnKaliTalonDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnKaliSwordDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "idnKaliBlackEarthMother"
+   },
+   {
+    "kind": "bool",
+    "name": "idnKaliVisageFear"
+   },
+   {
+    "kind": "bool",
+    "name": "idnKaliShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "idnKaliBloodSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "idnKaliCultBerserk"
+   }
+  ],
+  "Karttikeya": [
+   {
+    "kind": "const",
+    "name": "idnKarttikeyaHeads"
+   },
+   {
+    "kind": "const",
+    "name": "idnKarttikeyaArms"
+   },
+   {
+    "kind": "const",
+    "name": "idnKarttikeyaSwords"
+   },
+   {
+    "kind": "const",
+    "name": "idnKarttikeyaSwordDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnKarttikeyaAidPct"
+   },
+   {
+    "kind": "bool",
+    "name": "idnKarttikeyaCreatedForDevils"
+   },
+   {
+    "kind": "bool",
+    "name": "idnKarttikeyaRidesPeacock"
+   }
+  ],
+  "the Peacock of Karttikeya": [
+   {
+    "kind": "const",
+    "name": "idnPeacockHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "idnPeacockBeakDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnPeacockXpBase"
+   },
+   {
+    "kind": "bool",
+    "name": "idnPeacockMetalFeathers"
+   },
+   {
+    "kind": "bool",
+    "name": "idnPeacockLightningBeak"
+   },
+   {
+    "kind": "bool",
+    "name": "idnPeacockIndependent"
+   }
+  ],
+  "Lakshmi": [
+   {
+    "kind": "const",
+    "name": "idnLakshmiLotusSpeed"
+   },
+   {
+    "kind": "bool",
+    "name": "idnLakshmiGoldenSkin"
+   },
+   {
+    "kind": "bool",
+    "name": "idnLakshmiLotusOnlyHer"
+   },
+   {
+    "kind": "bool",
+    "name": "idnLakshmiAlwaysSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "idnLakshmiImmuneFlying"
+   },
+   {
+    "kind": "bool",
+    "name": "idnLakshmiRightEyeLuck"
+   },
+   {
+    "kind": "bool",
+    "name": "idnLakshmiLeftEyeAnti"
+   }
+  ],
+  "the Marut": [
+   {
+    "kind": "const",
+    "name": "idnMarutAppearLo"
+   },
+   {
+    "kind": "const",
+    "name": "idnMarutAppearHi"
+   },
+   {
+    "kind": "const",
+    "name": "idnMarutBattleHi"
+   },
+   {
+    "kind": "const",
+    "name": "idnMarutLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "idnMarutHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "idnMarutXpBase"
+   },
+   {
+    "kind": "bool",
+    "name": "idnMarutWindTroops"
+   },
+   {
+    "kind": "bool",
+    "name": "idnMarutInvisibleUnlessAttacking"
+   },
+   {
+    "kind": "bool",
+    "name": "idnMarutUncharmable"
+   },
+   {
+    "kind": "bool",
+    "name": "idnMarutFly"
+   }
+  ],
+  "Ratri": [
+   {
+    "kind": "const",
+    "name": "idnRatriDarknessRadius"
+   },
+   {
+    "kind": "bool",
+    "name": "idnRatriWellProportioned"
+   },
+   {
+    "kind": "bool",
+    "name": "idnRatriShadowBlind"
+   },
+   {
+    "kind": "bool",
+    "name": "idnRatriCloakEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "idnRatriAngryLook"
+   }
+  ],
+  "Rudra": [
+   {
+    "kind": "const",
+    "name": "idnRudraSavePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "idnRudraDiseaseArrows"
+   },
+   {
+    "kind": "bool",
+    "name": "idnRudraDiseaseRemedies"
+   },
+   {
+    "kind": "bool",
+    "name": "idnRudraStormControl"
+   },
+   {
+    "kind": "bool",
+    "name": "idnRudraPortableHole"
+   }
+  ],
+  "Surya": [
+   {
+    "kind": "const",
+    "name": "idnSuryaSleepRange"
+   },
+   {
+    "kind": "const",
+    "name": "idnSuryaSleepLevel"
+   },
+   {
+    "kind": "const",
+    "name": "idnSuryaSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "idnSuryaSwordDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnSuryaLightYards"
+   },
+   {
+    "kind": "const",
+    "name": "idnSuryaChariotHorses"
+   },
+   {
+    "kind": "const",
+    "name": "idnSuryaChariotHeat"
+   },
+   {
+    "kind": "bool",
+    "name": "idnSuryaPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "idnSuryaSleepNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "idnSuryaSeesSunlit"
+   },
+   {
+    "kind": "bool",
+    "name": "idnSuryaContinualLight"
+   },
+   {
+    "kind": "bool",
+    "name": "idnSuryaDemonsFirst"
+   }
+  ],
+  "Tvashtri": [
+   {
+    "kind": "const",
+    "name": "idnTvashtriNullifyYards"
+   },
+   {
+    "kind": "const",
+    "name": "idnTvashtriBeamDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnTvashtriBeamRange"
+   },
+   {
+    "kind": "const",
+    "name": "idnTvashtriRegen"
+   },
+   {
+    "kind": "bool",
+    "name": "idnTvashtriArtificerGod"
+   },
+   {
+    "kind": "bool",
+    "name": "idnTvashtriGodWeaponsSafe"
+   },
+   {
+    "kind": "bool",
+    "name": "idnTvashtriRegenFullAttention"
+   },
+   {
+    "kind": "bool",
+    "name": "idnTvashtriPatronArtisans"
+   }
+  ],
+  "Ushas": [
+   {
+    "kind": "const",
+    "name": "idnUshasBlindTurns"
+   },
+   {
+    "kind": "const",
+    "name": "idnUshasRegen"
+   },
+   {
+    "kind": "const",
+    "name": "idnUshasGazeDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "idnUshasReincarnate"
+   },
+   {
+    "kind": "bool",
+    "name": "idnUshasDawnRespawn"
+   },
+   {
+    "kind": "bool",
+    "name": "idnUshasLightBlind"
+   },
+   {
+    "kind": "bool",
+    "name": "idnUshasInstantAwakening"
+   }
+  ],
+  "Varuna": [
+   {
+    "kind": "const",
+    "name": "idnVarunaOathPct"
+   },
+   {
+    "kind": "const",
+    "name": "idnVarunaAuraFeet"
+   },
+   {
+    "kind": "const",
+    "name": "idnVarunaSpearDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVarunaPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVarunaOathProtector"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVarunaEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVarunaLawfulAura"
+   }
+  ],
+  "Vishnu": [
+   {
+    "kind": "const",
+    "name": "idnVishnuPeaceYards"
+   },
+   {
+    "kind": "const",
+    "name": "idnVishnuDiscDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnVishnuDiscYards"
+   },
+   {
+    "kind": "const",
+    "name": "idnVishnuAidMaxPct"
+   },
+   {
+    "kind": "const",
+    "name": "idnVishnuLotusUses"
+   },
+   {
+    "kind": "const",
+    "name": "idnVishnuAvatarClericLevel"
+   },
+   {
+    "kind": "const",
+    "name": "idnVishnuAvatarWisdom"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuFourArms"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuNoViolence"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuPrismaticDouble"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuUndeadDust"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuMaceDisintegrate"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuShellEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuGarudaCharmImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "idnVishnuShowsMercy"
+   }
+  ],
+  "Garuda": [
+   {
+    "kind": "const",
+    "name": "idnGarudaCarryGods"
+   },
+   {
+    "kind": "const",
+    "name": "idnGarudaSenseMiles"
+   },
+   {
+    "kind": "const",
+    "name": "idnGarudaWingDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnGarudaHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "idnGarudaXpBase"
+   },
+   {
+    "kind": "bool",
+    "name": "idnGarudaHatesEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "idnGarudaSummonAvians"
+   },
+   {
+    "kind": "bool",
+    "name": "idnGarudaSenseEvil"
+   }
+  ],
+  "Yama": [
+   {
+    "kind": "const",
+    "name": "idnYamaRobeMr"
+   },
+   {
+    "kind": "const",
+    "name": "idnYamaNoosePlus"
+   },
+   {
+    "kind": "const",
+    "name": "idnYamaNooseRounds"
+   },
+   {
+    "kind": "const",
+    "name": "idnYamaMacePlus"
+   },
+   {
+    "kind": "const",
+    "name": "idnYamaFlashRounds"
+   },
+   {
+    "kind": "const",
+    "name": "idnYamaSpellLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "idnYamaFirstMortal"
+   },
+   {
+    "kind": "bool",
+    "name": "idnYamaJudgeOfDead"
+   },
+   {
+    "kind": "bool",
+    "name": "idnYamaRobeNegateHeat"
+   },
+   {
+    "kind": "bool",
+    "name": "idnYamaRobeFly"
+   },
+   {
+    "kind": "bool",
+    "name": "idnYamaEtherealArmor"
+   }
+  ],
+  "the Water Buffalo of Yama": [
+   {
+    "kind": "const",
+    "name": "idnBuffaloCarryGods"
+   },
+   {
+    "kind": "const",
+    "name": "idnBuffaloGoreDamage"
+   },
+   {
+    "kind": "const",
+    "name": "idnBuffaloHitDice"
+   },
+   {
+    "kind": "const",
+    "name": "idnBuffaloShoulderInches"
+   },
+   {
+    "kind": "const",
+    "name": "idnBuffaloXpBase"
+   },
+   {
+    "kind": "bool",
+    "name": "idnBuffaloPlaneTravel"
+   },
+   {
+    "kind": "bool",
+    "name": "idnBuffaloPullUnattached"
+   },
+   {
+    "kind": "bool",
+    "name": "idnBuffaloLoyalToYama"
+   },
+   {
+    "kind": "bool",
+    "name": "idnBuffaloComplexOrders"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R859 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R859 LANDED 2026-10-26: commit 57b84aea31961dc9fd5bfea77dc2f956d14d3be1",
+  "  (pushed db45480..57b84ae, census 781 -> 782), THE GREEK MYTHOS - the D&DG",
+  "  walk round eleven, print pp. 63-74: forty beings (Zeus, the White Eagle,",
+  "  Achilles, Aphrodite, Antaeus, Apollo, Ares, Artemis, Athena, Atlas,",
+  "  Bellerophon, Cerberus, Circe, Coeus, Crius, the greater and lesser cyclopes,",
+  "  Demeter, Dionysus, Enceladus, Epimetheus, the Furies, Hades, Hecate, the",
+  "  Hecatoncheire, Hephaestus, Hera, Heracles, Hermes, Jason, Kronos, Nike,",
+  "  Oceanus, Odysseus, Pan, Perseus, Poseidon, Prometheus, Theseus, Tyche), 10",
+  "  greater, 8 lesser, 1 demigod, 6 heroes, 6 greater titans, 9 monsters; prefix",
+  "  grk (full-repo scan clean). The headline adjudication: the FRACTION",
+  "  FINGERPRINT - the half-height glyphs of the printed X 1/2 foot size cells",
+  "  decode as fractions, not X'Y\" inches: Zeus 78, Achilles 66, Aphrodite 66,",
+  "  Artemis 66, Bellerophon 66, Hecate 66, Hera 66, Hermes 78, Hades 78 (the",
+  "  draft 6'1\" was the fraction); Odysseus 5'4\" the one true inch cell; Coeus",
+  "  CH:-4 pixel-verified; Dionysus and Hades psionic class III (three pipe bars,",
+  "  the R850 Coyote precedent, chocr glyph widths I 9-11px II 30 III 47 IV 54 V",
+  "  36 VI 50). Merged-column catches: Ares/Athena class swap, Atlas CE /",
+  "  Cerberus NE swap, Achilles Fighter 15. Flagged odd prints pinned as printed:",
+  "  Ares move 26/24, Hades move 29, Hades CH 24(-9), Bellerophon move 12. The",
+  "  R851-R858 16-cell repair table (all X 1/2 misreads: Morgan, Anu, CuChulainn,",
+  "  Math, Chalchiuhtlicue, the twins, ShangTi, ChaoKungMing, ChihSungTzu 0->78,",
+  "  Horus, Isis, Nephthys, Seker, MinionsOfSet, Thoth, Kullervo, Mielikki)",
+  "  verified and reported, NOT patched - Curtiss's call. Spec",
+  "  2f13b02dcce08dc6a61f3cf9fe5010bf, 99258 bytes; 332 inlines (116 consts, 178",
+  "  bools, 38 table cols), 40 examples, no data files; engine applied 6/already",
+  "  6 double-run; rverify GREEN, 1814 mutants 0 missed; hyphen scan clean; zero",
+  "  True/False tokens (bool examples dropped per the R854 rule - no spec has",
+  "  ever referenced a bool in an example). Engine lesson: the R859 census consts",
+  "  needed bare first-words in the section mapper (In, Half) - the camel regex",
+  "  stops at the second cap. NEXT: WAIT FOR GO. ## Knowledge maintenance"
+ ],
+ "inline_count": 241
+}

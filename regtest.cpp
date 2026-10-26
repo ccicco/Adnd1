@@ -561,6 +561,7 @@
 #include "rules/egp.h"  // R857: the Egyptian mythos
 #include "rules/klv.h"  // R858: the Finnish mythos
 #include "rules/grk.h"  // R859: the Greek mythos
+#include "rules/idn.h"  // R860: the Indian mythos
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4608,6 +4609,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r860_batch.h"  // R860: R860 Indian mythos audit
 #include "rules/audits/r859_batch.h"  // R859: R859 Greek mythos audit
 #include "rules/audits/r858_batch.h"  // R858: R858 Finnish mythos audit
 #include "rules/audits/r857_batch.h"  // R857: R857 Egyptian mythos audit
