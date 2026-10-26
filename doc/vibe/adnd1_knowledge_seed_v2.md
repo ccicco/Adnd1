@@ -25182,6 +25182,55 @@ true-substring tripped the no-T/F-token scan). ddg gap 19/24 closed, 5 open
 (App 2-4, the index, the alignment figures). NEXT: the
 D&DG arc tail - App 2 temple trappings p. 134 or
 Curtiss's call - WAIT FOR GO.
+- R868 LANDED 2026-10-26: commit
+e4220b7bc9a7e1f14db3da193b1561a7fab21b0e (pushed
+35f7686..e4220b7, census 790 -> 791), APPENDIX 2
+TEMPLE TRAPPINGS - the D&DG walk round twenty,
+print p. 134: the stocking doctrine of the intro
+(the representative sample, the DM keying of
+worshipers and servitors, choose-from-list with
+random only for details or spur-of-the-moment, the
+not-applicable caveat, the no flame pits in a
+lawful good temple example) plus the 40-band
+trappings list (01-05 altar through 99-00 vestments)
+as the round's one grid (40 rows, Ord/Low/High) with
+the 40-label roster riding the round's data file
+doc/data/ddg_temple_trappings.txt; prefix tpl
+(full-repo scan clean); header rules/tpl.h; audit
+"R868 temple trappings audit", rode
+rules/audits/r868_batch.h. THE HEADLINE
+ADJUDICATIONS: the print reads CHOIR AREA (two
+words - the psm-4 fold merged them, the L&L voice
+keeps the space); FONT/IMMERSION CHAMBER (no space
+after the slash); LECTERN/DAIS (the L&L
+transcription trims to lectern - the print pinned);
+holy/unholy books AND tomes (the L&L
+double-ampersand a transcription artifact); and
+the L&L <cleric scrolls> and <+5 holy avenger,
+etc.> glosses are 5TH-PRINT ADDITIONS, absent from
+the 2nd print - noted divergences, not pinned. The
+vestments 00 reads 100 (the R867 High convention).
+THE BAND CLASSES: 11 single-number rows, 17
+two-number rows, 12 wide rows, the widest band six
+numbers (the books row 30-35); the list tiles
+01-00 = 100. ZERO registry defs touched - the
+floor holds at 995. Spec tools/spec_r868.json, md5
+e452e379e10f0fddfdd8be12f0598724 (19,954 bytes);
+33 inlines (17 consts, 13 bools, 3 table cols), 11
+examples; rverify double-run GREEN, 150 mutants 0
+missed; hyphen scan clean; zero True/False tokens
+in the emitted files (the seed record may carry
+them - the R867 spec precedent); the R865
+bool-operator rule held first-try. ENGINE LESSONS:
+the banner NEEDS a provenance field (the engine
+reads it unconditionally) and a grid
+header_sections ref is {kind: table, name: <the
+table name>} - a bare {kind: table} dies at
+pool[item[name]]. ddg gap 20/24 closed, 4 open
+(App 3, App 4, the index, the alignment figures).
+NEXT: App 3 the clerical chart pp. 134-142 (the
+big tabular tail, likely multiple rounds) or
+Curtiss's call - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

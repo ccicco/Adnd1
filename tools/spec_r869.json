@@ -1,0 +1,1019 @@
+{
+ "prefix": "cqc",
+ "round": 869,
+ "title": "the clerical chart, batch one",
+ "header_file": "rules/cqc.h",
+ "audit_file": "rules/audits/r869_batch.h",
+ "audit_label": "R869 clerical chart batch one audit",
+ "include_after": "#include \"rules/tpl.h\"  // R868: temple trappings",
+ "audit_anchor": "#include \"rules/audits/r868_batch.h\"  // R868: R868 temple trappings audit",
+ "include_comment": "the clerical chart, batch one",
+ "audit_comment": "APPENDIX 3: THE CLERICAL QUICK-REFERENCE CHARTS, BATCH ONE - the D&DG walk round twenty-one, print pp. 134-135: the legend and ordering doctrine of the chart intro, and the first batch of deity rows - American Indian (9), Babylonian (8), Celtic (12) - riding the roster data file; the App 3 gap box stays open until the last chart batch lands. The chart prints landscape: the print voice is the ROTATED tesseract pass (pdfimages + PIL rotate -90, pNNN_rot_*), collated against the 1eonline L&L per-deity chart rows. The headline divergence: the print reads a female-clerics X for Druaga where the L&L voice reads male-only - pinned by print, eyeball flag.",
+ "banner": {
+  "title": "Appendix 3: the clerical quick-reference chart, batch one - the D&DG walk round twenty-one, print pp. 134-135: the chart doctrine (alphabetical within pantheon, most important first, guidelines only), the legend definitions, and the 29 rows of the American Indian, Babylonian and Celtic pantheons across the 13 printed columns.",
+  "provenance": "primary ink: the ROTATED extract/ddg tesseract pass (pNNN_rot_full.txt + pNNN_rot_tsv.tsv, pages 135-136; the second printing) - the chart prints landscape, the pass rides a PIL rotate(-90) over the pg renders (pdftoppm -r 300), committed c7ced34/97fcaac/06c35eb after two zero-byte strays (the tesseract .txt-append trap - stdout redirect is the fix); the collation voice: the 1eonline L&L per-deity chart rows (the mml.htm slug for Manannan Mac Lir). The adjudications: the Druaga female-clerics X (print over L&L male-only, eyeball flag), the sphere semicolons pinned by print (Heng, Hotoru, Ishtar, Marduk, Brigit), the Hastsezini jade green (the jode garble, L&L), the Arawn at death frequency (the fold), the Lugh Ltugh garble, and the Silvanus stray quote glyph noted. The chart carries no Arthurian block (heroes only)."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R868 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "- R868 LANDED 2026-10-26: commit",
+  "e4220b7bc9a7e1f14db3da193b1561a7fab21b0e (pushed",
+  "35f7686..e4220b7, census 790 -> 791), APPENDIX 2",
+  "TEMPLE TRAPPINGS - the D&DG walk round twenty,",
+  "print p. 134: the stocking doctrine of the intro",
+  "(the representative sample, the DM keying of",
+  "worshipers and servitors, choose-from-list with",
+  "random only for details or spur-of-the-moment, the",
+  "not-applicable caveat, the no flame pits in a",
+  "lawful good temple example) plus the 40-band",
+  "trappings list (01-05 altar through 99-00 vestments)",
+  "as the round's one grid (40 rows, Ord/Low/High) with",
+  "the 40-label roster riding the round's data file",
+  "doc/data/ddg_temple_trappings.txt; prefix tpl",
+  "(full-repo scan clean); header rules/tpl.h; audit",
+  "\"R868 temple trappings audit\", rode",
+  "rules/audits/r868_batch.h. THE HEADLINE",
+  "ADJUDICATIONS: the print reads CHOIR AREA (two",
+  "words - the psm-4 fold merged them, the L&L voice",
+  "keeps the space); FONT/IMMERSION CHAMBER (no space",
+  "after the slash); LECTERN/DAIS (the L&L",
+  "transcription trims to lectern - the print pinned);",
+  "holy/unholy books AND tomes (the L&L",
+  "double-ampersand a transcription artifact); and",
+  "the L&L <cleric scrolls> and <+5 holy avenger,",
+  "etc.> glosses are 5TH-PRINT ADDITIONS, absent from",
+  "the 2nd print - noted divergences, not pinned. The",
+  "vestments 00 reads 100 (the R867 High convention).",
+  "THE BAND CLASSES: 11 single-number rows, 17",
+  "two-number rows, 12 wide rows, the widest band six",
+  "numbers (the books row 30-35); the list tiles",
+  "01-00 = 100. ZERO registry defs touched - the",
+  "floor holds at 995. Spec tools/spec_r868.json, md5",
+  "e452e379e10f0fddfdd8be12f0598724 (19,954 bytes);",
+  "33 inlines (17 consts, 13 bools, 3 table cols), 11",
+  "examples; rverify double-run GREEN, 150 mutants 0",
+  "missed; hyphen scan clean; zero True/False tokens",
+  "in the emitted files (the seed record may carry",
+  "them - the R867 spec precedent); the R865",
+  "bool-operator rule held first-try. ENGINE LESSONS:",
+  "the banner NEEDS a provenance field (the engine",
+  "reads it unconditionally) and a grid",
+  "header_sections ref is {kind: table, name: <the",
+  "table name>} - a bare {kind: table} dies at",
+  "pool[item[name]]. ddg gap 20/24 closed, 4 open",
+  "(App 3, App 4, the index, the alignment figures).",
+  "NEXT: App 3 the clerical chart pp. 134-142 (the",
+  "big tabular tail, likely multiple rounds) or",
+  "Curtiss's call - WAIT FOR GO."
+ ],
+ "census_before": 791,
+ "gap_census": {
+  "closed": 20,
+  "open": 4
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "cqcRound",
+   "value": 869,
+   "comment": "the clerical chart batch one round: the D&DG walk round twenty-one"
+  },
+  {
+   "name": "cqcBatch",
+   "value": 1,
+   "comment": "the first chart batch (the App 3 box stays open until the last batch lands)"
+  },
+  {
+   "name": "cqcPrintStart",
+   "value": 134,
+   "comment": "the print folio where the chart begins (pdf p. 135)"
+  },
+  {
+   "name": "cqcPrintEnd",
+   "value": 135,
+   "comment": "the print folio where batch one ends (pdf p. 136)"
+  },
+  {
+   "name": "cqcRows",
+   "value": 29,
+   "comment": "the batch one deity rows (American Indian 9, Babylonian 8, Celtic 12)"
+  },
+  {
+   "name": "cqcAIRows",
+   "value": 9,
+   "comment": "the American Indian rows (Raven, Coyote, Hastseltsi, Hastsezini, Heng, Hotoru, Shakak, Snake-Man, Tobadzistsini)"
+  },
+  {
+   "name": "cqcBabRows",
+   "value": 8,
+   "comment": "the Babylonian rows (Anu, Anshar, Druaga, Girru, Ishtar, Marduk, Nergal, Ramman)"
+  },
+  {
+   "name": "cqcCelRows",
+   "value": 12,
+   "comment": "the Celtic rows (Dagda, Arawn, Brigit, Diancecht, Dunatis, Goibhnie, Lugh, Manannan Mac Lir, Morrigan, Nuada, Oghma, Silvanus)"
+  },
+  {
+   "name": "cqcMaleRows",
+   "value": 29,
+   "comment": "the rows printing a male-clerics X (every row of the batch)"
+  },
+  {
+   "name": "cqcFemaleRows",
+   "value": 27,
+   "comment": "the rows printing a female-clerics X (all but Dagda and Arawn)"
+  },
+  {
+   "name": "cqcNonHumanRows",
+   "value": 6,
+   "comment": "the rows printing a non-human-clerics X (Snake-Man, Nergal, Diancecht, Goibhnie, Lugh, Silvanus)"
+  },
+  {
+   "name": "cqcNoAnimalRows",
+   "value": 12,
+   "comment": "the rows printing n/a for the animal (every Celtic row)"
+  },
+  {
+   "name": "cqcPrintedColumns",
+   "value": 13,
+   "comment": "the printed chart columns (deity, sphere of control, animal, M, F, N-H, head, body, colors, holy days, frequency, form, place of worship)"
+  },
+  {
+   "name": "cqcSphereCount",
+   "value": 25,
+   "comment": "the sphere-of-control roster labels"
+  },
+  {
+   "name": "cqcAnimalCount",
+   "value": 16,
+   "comment": "the animal roster labels"
+  },
+  {
+   "name": "cqcHeadCount",
+   "value": 9,
+   "comment": "the raiment head roster labels"
+  },
+  {
+   "name": "cqcBodyCount",
+   "value": 15,
+   "comment": "the raiment body roster labels"
+  },
+  {
+   "name": "cqcColorCount",
+   "value": 23,
+   "comment": "the color roster labels"
+  },
+  {
+   "name": "cqcHolyDayCount",
+   "value": 8,
+   "comment": "the holy-days roster labels"
+  },
+  {
+   "name": "cqcFreqCount",
+   "value": 7,
+   "comment": "the sacrifice-frequency roster labels"
+  },
+  {
+   "name": "cqcFormCount",
+   "value": 21,
+   "comment": "the sacrifice-form roster labels"
+  },
+  {
+   "name": "cqcPlaceCount",
+   "value": 15,
+   "comment": "the place-of-worship roster labels"
+  },
+  {
+   "name": "cqcTableCount",
+   "value": 1,
+   "comment": "the R869 grid count"
+  },
+  {
+   "name": "cqcChainCount",
+   "value": 0,
+   "comment": "the R869 chain count"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cqcQuickReferencePurpose",
+   "value": true,
+   "comment": "the listing is provided for quick reference when specific information about a cleric religion is needed"
+  },
+  {
+   "name": "cqcAlphabeticalWithinPantheon",
+   "value": true,
+   "comment": "deities are arranged alphabetically within their pantheon, except that the most important deity is listed first"
+  },
+  {
+   "name": "cqcGuidelinesOnly",
+   "value": true,
+   "comment": "the information presented is to be used as guidelines only - all clerics of one deity will not necessarily dress identically"
+  },
+  {
+   "name": "cqcRankByColor",
+   "value": true,
+   "comment": "rank within the temple is often differentiated by variations in color, lining or stripes"
+  },
+  {
+   "name": "cqcOrdainedAnytime",
+   "value": true,
+   "comment": "special sacrifices and holy days may be ordained at any time, at the pleasure of the temple or its deity"
+  },
+  {
+   "name": "cqcSphereMeaning",
+   "value": true,
+   "comment": "the sphere of control is the item, condition or element over which the deity exerts some measure of control (e.g. Air, Rain, The Hunt, Affairs of the Heart)"
+  },
+  {
+   "name": "cqcAnimalMeaning",
+   "value": true,
+   "comment": "the animal is the one most commonly associated with or sacred to that deity; clerics of the deity will often protect this type of animal; some deities are not associated with an animal"
+  },
+  {
+   "name": "cqcClericsMeaning",
+   "value": true,
+   "comment": "the clerics column describes whether the clerics of this deity can be male (M), female (F), or non-human (N-H)"
+  },
+  {
+   "name": "cqcRaimentMeaning",
+   "value": true,
+   "comment": "raiment is the prescribed form of adornment for a cleric of the deity (robes, headdresses, hairstyles, tattoos, makeup, physical disfigurations, ornaments, jewelry, footwear)"
+  },
+  {
+   "name": "cqcColorsMeaning",
+   "value": true,
+   "comment": "the colors column lists the colors, if any, associated with the deity or its clerics (ceremonial robes, altar drapings, candles, holy banners)"
+  },
+  {
+   "name": "cqcHolyDaysMeaning",
+   "value": true,
+   "comment": "the holy days listing gives the highest holy days associated with the deity and its worshipers; sacrifices, rituals and prayers on these days are more likely to be heard and acknowledged"
+  },
+  {
+   "name": "cqcAcknowledgementNotGranting",
+   "value": true,
+   "comment": "acknowledgement is not the same thing as granting a prayer or request"
+  },
+  {
+   "name": "cqcSacrificeMeaning",
+   "value": true,
+   "comment": "the sacrifice column lists both the frequency and the form of sacrifices expected of the worshipers of this deity, plus the grateful, repentant and begging-a-favor offerings"
+  },
+  {
+   "name": "cqcPlaceMeaning",
+   "value": true,
+   "comment": "the place of worship gives the most common locale or construction, whether natural or man-made, in which clerics of the deity gather to worship that deity"
+  },
+  {
+   "name": "cqcDruagaFemaleClericsPrint",
+   "value": true,
+   "comment": "the print reads two X marks for Druaga (male and female clerics); the L&L transcription reads male-only - pinned by print, eyeball flag (the Gawaine 112 precedent)"
+  },
+  {
+   "name": "cqcSphereSemicolonsPrint",
+   "value": true,
+   "comment": "the print uses semicolons in the multi-word spheres (Heng thunder; weather, Hotoru wind; weather, Ishtar love; war, Marduk cities; weather, Brigit fire; poetry) where the L&L transcription normalizes to commas"
+  },
+  {
+   "name": "cqcHastseziniJadeGreen",
+   "value": true,
+   "comment": "the Hastsezini jode green print garble reads jade green (the L&L voice)"
+  },
+  {
+   "name": "cqcArawnAtDeath",
+   "value": true,
+   "comment": "the Arawn frequency reads at death (the psm-4 fold merged the two words)"
+  },
+  {
+   "name": "cqcNoArthurianRows",
+   "value": true,
+   "comment": "the chart carries no Arthurian block - the Arthurian section is heroes-only, no deities (the batch order runs American Indian, Babylonian, Celtic)"
+  },
+  {
+   "name": "cqcSilvanusStrayQuote",
+   "value": true,
+   "comment": "the Silvanus tree planting cell carries a stray quote glyph on the print (noted, not pinned)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the clerical chart batch one grid",
+   "tag": "cqcChart",
+   "cols": [
+    "cqcChartOrd",
+    "cqcChartSphere",
+    "cqcChartAnimal",
+    "cqcChartM",
+    "cqcChartF",
+    "cqcChartNh",
+    "cqcChartHead",
+    "cqcChartBody",
+    "cqcChartColor",
+    "cqcChartHolyday",
+    "cqcChartFreq",
+    "cqcChartForm",
+    "cqcChartPlace"
+   ],
+   "col_comments": [
+    "The row ordinals (0-28, the batch walk order: American Indian 0-8, Babylonian 9-16, Celtic 17-28)",
+    "The sphere-of-control roster ordinals (the labels ride the data file)",
+    "The animal roster ordinals (the n/a rows read 12)",
+    "The male clerics flag (the printed X reads 1)",
+    "The female clerics flag (the printed X reads 1; the Druaga X is the round divergence pin)",
+    "The non-human clerics flag (the printed X reads 1)",
+    "The raiment head roster ordinals",
+    "The raiment body roster ordinals",
+    "The color roster ordinals",
+    "The holy-days roster ordinals",
+    "The sacrifice-frequency roster ordinals",
+    "The sacrifice-form roster ordinals",
+    "The place-of-worship roster ordinals"
+   ],
+   "count": "cqcRows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     2,
+     1,
+     1,
+     0,
+     1,
+     2,
+     2,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     3,
+     3,
+     3,
+     1,
+     1,
+     0,
+     0,
+     3,
+     3,
+     0,
+     0,
+     1,
+     2
+    ],
+    [
+     4,
+     4,
+     4,
+     1,
+     1,
+     0,
+     1,
+     4,
+     4,
+     1,
+     0,
+     0,
+     2
+    ],
+    [
+     5,
+     5,
+     5,
+     1,
+     1,
+     0,
+     2,
+     5,
+     5,
+     2,
+     0,
+     2,
+     0
+    ],
+    [
+     6,
+     6,
+     6,
+     1,
+     1,
+     0,
+     2,
+     5,
+     6,
+     3,
+     1,
+     0,
+     3
+    ],
+    [
+     7,
+     7,
+     3,
+     1,
+     1,
+     1,
+     0,
+     0,
+     7,
+     0,
+     0,
+     3,
+     0
+    ],
+    [
+     8,
+     8,
+     7,
+     1,
+     1,
+     0,
+     0,
+     6,
+     8,
+     0,
+     0,
+     4,
+     2
+    ],
+    [
+     9,
+     9,
+     8,
+     1,
+     1,
+     0,
+     3,
+     7,
+     9,
+     4,
+     2,
+     5,
+     4
+    ],
+    [
+     10,
+     10,
+     0,
+     1,
+     1,
+     0,
+     4,
+     7,
+     10,
+     3,
+     3,
+     6,
+     4
+    ],
+    [
+     11,
+     11,
+     9,
+     1,
+     1,
+     0,
+     4,
+     8,
+     11,
+     4,
+     2,
+     7,
+     4
+    ],
+    [
+     12,
+     3,
+     10,
+     1,
+     1,
+     0,
+     4,
+     9,
+     12,
+     5,
+     4,
+     6,
+     4
+    ],
+    [
+     13,
+     12,
+     11,
+     1,
+     1,
+     0,
+     5,
+     10,
+     13,
+     6,
+     2,
+     8,
+     5
+    ],
+    [
+     14,
+     13,
+     12,
+     1,
+     1,
+     0,
+     4,
+     11,
+     14,
+     7,
+     2,
+     9,
+     4
+    ],
+    [
+     15,
+     14,
+     13,
+     1,
+     1,
+     1,
+     4,
+     12,
+     0,
+     6,
+     2,
+     10,
+     4
+    ],
+    [
+     16,
+     15,
+     14,
+     1,
+     1,
+     0,
+     4,
+     7,
+     4,
+     4,
+     2,
+     11,
+     4
+    ],
+    [
+     17,
+     16,
+     15,
+     1,
+     0,
+     0,
+     6,
+     7,
+     15,
+     6,
+     2,
+     12,
+     6
+    ],
+    [
+     18,
+     17,
+     15,
+     1,
+     0,
+     0,
+     7,
+     7,
+     0,
+     0,
+     5,
+     13,
+     7
+    ],
+    [
+     19,
+     18,
+     15,
+     1,
+     1,
+     0,
+     7,
+     7,
+     16,
+     0,
+     6,
+     14,
+     8
+    ],
+    [
+     20,
+     19,
+     15,
+     1,
+     1,
+     1,
+     0,
+     7,
+     17,
+     6,
+     2,
+     15,
+     9
+    ],
+    [
+     21,
+     20,
+     15,
+     1,
+     1,
+     0,
+     8,
+     13,
+     18,
+     0,
+     0,
+     6,
+     10
+    ],
+    [
+     22,
+     21,
+     15,
+     1,
+     1,
+     1,
+     0,
+     7,
+     19,
+     0,
+     0,
+     8,
+     11
+    ],
+    [
+     23,
+     22,
+     15,
+     1,
+     1,
+     1,
+     0,
+     7,
+     20,
+     0,
+     0,
+     12,
+     12
+    ],
+    [
+     24,
+     23,
+     15,
+     1,
+     1,
+     0,
+     7,
+     7,
+     7,
+     0,
+     0,
+     16,
+     13
+    ],
+    [
+     25,
+     8,
+     15,
+     1,
+     1,
+     0,
+     7,
+     14,
+     21,
+     0,
+     6,
+     17,
+     8
+    ],
+    [
+     26,
+     8,
+     15,
+     1,
+     1,
+     0,
+     7,
+     14,
+     22,
+     0,
+     6,
+     18,
+     8
+    ],
+    [
+     27,
+     1,
+     15,
+     1,
+     1,
+     0,
+     0,
+     7,
+     5,
+     0,
+     0,
+     19,
+     12
+    ],
+    [
+     28,
+     24,
+     15,
+     1,
+     1,
+     1,
+     0,
+     7,
+     13,
+     5,
+     0,
+     20,
+     14
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the batch rows, the pantheon counts, the roster counts, the cleric flags)",
+   "expr": "m['cqcRound']() != 869 or m['cqcBatch']() != 1 or m['cqcPrintStart']() != 134 or m['cqcPrintEnd']() != 135 or m['cqcRows']() != 29 or m['cqcAIRows']() != 9 or m['cqcBabRows']() != 8 or m['cqcCelRows']() != 12 or m['cqcMaleRows']() != 29 or m['cqcFemaleRows']() != 27 or m['cqcNonHumanRows']() != 6 or m['cqcNoAnimalRows']() != 12 or m['cqcSphereCount']() != 25 or m['cqcAnimalCount']() != 16 or m['cqcHeadCount']() != 9 or m['cqcBodyCount']() != 15 or m['cqcColorCount']() != 23 or m['cqcHolyDayCount']() != 8 or m['cqcFreqCount']() != 7 or m['cqcFormCount']() != 21 or m['cqcPlaceCount']() != 15 or m['cqcPrintedColumns']() != 13 or m['cqcTableCount']() != 1 or m['cqcChainCount']() != 0"
+  },
+  {
+   "note": "the chart doctrine (the ordering, the legend definitions, the holy-days caveat)",
+   "expr": "m['cqcQuickReferencePurpose']() != 1 or m['cqcAlphabeticalWithinPantheon']() != 1 or m['cqcGuidelinesOnly']() != 1 or m['cqcRankByColor']() != 1 or m['cqcOrdainedAnytime']() != 1 or m['cqcSphereMeaning']() != 1 or m['cqcAnimalMeaning']() != 1 or m['cqcClericsMeaning']() != 1 or m['cqcRaimentMeaning']() != 1 or m['cqcColorsMeaning']() != 1 or m['cqcHolyDaysMeaning']() != 1 or m['cqcAcknowledgementNotGranting']() != 1 or m['cqcSacrificeMeaning']() != 1 or m['cqcPlaceMeaning']() != 1"
+  },
+  {
+   "note": "the head and tail rows (Raven 0, Silvanus 28, the ordinals run)",
+   "expr": "m['cqcChartOrd'](0) != 0 or m['cqcChartOrd'](28) != 28 or m['cqcChartSphere'](0) != 0 or m['cqcChartAnimal'](0) != 0 or m['cqcChartM'](0) != 1 or m['cqcChartF'](0) != 1 or m['cqcChartPlace'](0) != 0 or m['cqcChartSphere'](28) != 24 or m['cqcChartM'](28) != 1 or m['cqcChartF'](28) != 1 or m['cqcChartNh'](28) != 1 or m['cqcChartHolyday'](28) != 5 or m['cqcChartPlace'](28) != 14"
+  },
+  {
+   "note": "the American Indian rows (the spheres, the forms, the places of the nine)",
+   "expr": "m['cqcChartSphere'](1) != 1 or m['cqcChartForm'](1) != 0 or m['cqcChartPlace'](1) != 0 or m['cqcChartSphere'](2) != 2 or m['cqcChartAnimal'](2) != 2 or m['cqcChartPlace'](2) != 1 or m['cqcChartColor'](3) != 3 or m['cqcChartBody'](3) != 3 or m['cqcChartForm'](3) != 1 or m['cqcChartPlace'](3) != 2 or m['cqcChartSphere'](4) != 4 or m['cqcChartHolyday'](4) != 1 or m['cqcChartPlace'](4) != 2 or m['cqcChartSphere'](5) != 5 or m['cqcChartForm'](5) != 2 or m['cqcChartSphere'](6) != 6 or m['cqcChartHolyday'](6) != 3 or m['cqcChartFreq'](6) != 1 or m['cqcChartPlace'](6) != 3 or m['cqcChartNh'](7) != 1 or m['cqcChartFreq'](7) != 0 or m['cqcChartForm'](7) != 3 or m['cqcChartForm'](8) != 4 or m['cqcChartPlace'](8) != 2"
+  },
+  {
+   "note": "the Babylonian rows (Anu the brass skullcap, Anshar the annually, the frequency classes)",
+   "expr": "m['cqcChartHead'](9) != 3 or m['cqcChartBody'](9) != 7 or m['cqcChartColor'](9) != 9 or m['cqcChartHolyday'](9) != 4 or m['cqcChartFreq'](9) != 2 or m['cqcChartForm'](9) != 5 or m['cqcChartHolyday'](10) != 3 or m['cqcChartFreq'](10) != 3 or m['cqcChartForm'](10) != 6 or m['cqcChartColor'](12) != 12 or m['cqcChartFreq'](12) != 4 or m['cqcChartForm'](12) != 6 or m['cqcChartBody'](13) != 10 or m['cqcChartForm'](13) != 8 or m['cqcChartPlace'](13) != 5 or m['cqcChartSphere'](14) != 13 or m['cqcChartHolyday'](15) != 6 or m['cqcChartForm'](15) != 10 or m['cqcChartNh'](15) != 1 or m['cqcChartFreq'](16) != 2 or m['cqcChartForm'](16) != 11 or m['cqcChartPlace'](16) != 4"
+  },
+  {
+   "note": "the Druaga divergence row (the print reads the female-clerics X)",
+   "expr": "m['cqcChartM'](11) != 1 or m['cqcChartF'](11) != 1 or m['cqcChartNh'](11) != 0 or m['cqcChartSphere'](11) != 11 or m['cqcChartAnimal'](11) != 9 or m['cqcChartColor'](11) != 11 or m['cqcChartForm'](11) != 7 or m['cqcChartHead'](11) != 4 or m['cqcChartBody'](11) != 8"
+  },
+  {
+   "note": "the Celtic rows (Dagda the grove, Arawn the at-death grave, Brigit the verse)",
+   "expr": "m['cqcChartSphere'](17) != 16 or m['cqcChartF'](17) != 0 or m['cqcChartNh'](17) != 0 or m['cqcChartHead'](17) != 6 or m['cqcChartColor'](17) != 15 or m['cqcChartPlace'](17) != 6 or m['cqcChartF'](18) != 0 or m['cqcChartFreq'](18) != 5 or m['cqcChartForm'](18) != 13 or m['cqcChartPlace'](18) != 7 or m['cqcChartFreq'](19) != 6 or m['cqcChartForm'](19) != 14 or m['cqcChartPlace'](19) != 8 or m['cqcChartFreq'](20) != 2 or m['cqcChartForm'](20) != 15 or m['cqcChartNh'](20) != 1 or m['cqcChartHead'](21) != 8 or m['cqcChartPlace'](21) != 10"
+  },
+  {
+   "note": "the Celtic raiment and places (the helm and armor pairs, the anywhere rows)",
+   "expr": "m['cqcChartHead'](25) != 7 or m['cqcChartBody'](25) != 14 or m['cqcChartForm'](25) != 17 or m['cqcChartPlace'](25) != 8 or m['cqcChartHead'](26) != 7 or m['cqcChartBody'](26) != 14 or m['cqcChartForm'](26) != 18 or m['cqcChartForm'](27) != 19 or m['cqcChartPlace'](27) != 12 or m['cqcChartColor'](23) != 20 or m['cqcChartForm'](23) != 12 or m['cqcChartPlace'](23) != 12 or m['cqcChartForm'](22) != 8 or m['cqcChartPlace'](22) != 11 or m['cqcChartForm'](24) != 16 or m['cqcChartHead'](24) != 7"
+  },
+  {
+   "note": "the non-human clerics rows (Snake-Man, Nergal, Diancecht, Goibhnie, Lugh, Silvanus)",
+   "expr": "m['cqcChartNh'](7) != 1 or m['cqcChartNh'](15) != 1 or m['cqcChartNh'](20) != 1 or m['cqcChartNh'](22) != 1 or m['cqcChartNh'](23) != 1 or m['cqcChartNh'](28) != 1 or m['cqcChartAnimal'](20) != 15 or m['cqcChartColor'](22) != 19 or m['cqcChartSphere'](22) != 21 or m['cqcChartFreq'](22) != 0 or m['cqcChartPlace'](22) != 11"
+  },
+  {
+   "note": "the parity and garble pins (the print-divergence doctrine of the round)",
+   "expr": "m['cqcDruagaFemaleClericsPrint']() != 1 or m['cqcSphereSemicolonsPrint']() != 1 or m['cqcHastseziniJadeGreen']() != 1 or m['cqcArawnAtDeath']() != 1 or m['cqcNoArthurianRows']() != 1 or m['cqcSilvanusStrayQuote']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the chart doctrine": [
+   {
+    "kind": "const",
+    "name": "cqcRound"
+   },
+   {
+    "kind": "const",
+    "name": "cqcBatch"
+   },
+   {
+    "kind": "const",
+    "name": "cqcPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "cqcPrintEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcQuickReferencePurpose"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcAlphabeticalWithinPantheon"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcGuidelinesOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcRankByColor"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcOrdainedAnytime"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcSphereMeaning"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcAnimalMeaning"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcClericsMeaning"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcRaimentMeaning"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcColorsMeaning"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcHolyDaysMeaning"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcAcknowledgementNotGranting"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcSacrificeMeaning"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcPlaceMeaning"
+   }
+  ],
+  "the batch one census": [
+   {
+    "kind": "const",
+    "name": "cqcRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqcAIRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqcBabRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqcCelRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqcMaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqcFemaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqcNonHumanRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqcNoAnimalRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqcPrintedColumns"
+   },
+   {
+    "kind": "const",
+    "name": "cqcSphereCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcAnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcHeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcBodyCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcColorCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcHolyDayCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcFreqCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcFormCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcPlaceCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqcChainCount"
+   }
+  ],
+  "the clerical chart batch one grid": [
+   {
+    "kind": "table",
+    "name": "the clerical chart batch one grid"
+   }
+  ],
+  "the parity pins": [
+   {
+    "kind": "bool",
+    "name": "cqcDruagaFemaleClericsPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcSphereSemicolonsPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcHastseziniJadeGreen"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcArawnAtDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcNoArthurianRows"
+   },
+   {
+    "kind": "bool",
+    "name": "cqcSilvanusStrayQuote"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_clerical_chart_1.txt",
+   "content": "The DDG print pp. 134-135 clerical quick-reference chart rows -\nbatch one (American Indian, Babylonian, Celtic). The per-column\nrosters (first-appearance ordinals = the grid cells) and the\nprinted rows. Primary ink: the rotated tesseract pass.\n== the sphere roster (25) ==\n00 nature; creation\n01 knowledge\n02 racing\n03 fire\n04 thunder; weather\n05 wind; weather\n06 winter\n07 reptiles\n08 war\n09 sky\n10 darkness\n11 devils\n12 love; war\n13 cities; weather\n14 underworld\n15 storms\n16 authority; rulership\n17 death\n18 fire; poetry\n19 healing\n20 mountains\n21 metalworking\n22 generality\n23 sea\n24 nature\n== the animal roster (16) ==\n00 raven\n01 coyote\n02 hawk or horse\n03 snake\n04 eagle\n05 falcon\n06 wolf\n07 ant\n08 dragon\n09 devil\n10 phoenix\n11 lion\n12 any bird\n13 earth grub\n14 seagull\n15 n/a\n== the head roster (9) ==\n00 bare\n01 feather\n02 fur cap\n03 brass skullcap\n04 bald\n05 pointed helm\n06 knit cap\n07 helm\n08 leather cap\n== the body roster (15) ==\n00 loincloth\n01 rawhide vest\n02 deerskin vest\n03 snake fang ornaments\n04 amber studs\n05 fur tunic\n06 war harness\n07 kilt\n08 breech cloth\n09 leather armor\n10 bronze mail\n11 gold badge\n12 black robes\n13 boots\n14 armor\n== the color roster (23) ==\n00 black\n01 brown\n02 maroon\n03 jade green\n04 amber\n05 gray\n06 white\n07 emerald\n08 blood red\n09 azure\n10 deep gray\n11 yellow\n12 scarlet\n13 sapphire\n14 gold\n15 earth\n16 vermilion\n17 hazel\n18 roan\n19 iron\n20 off-white\n21 carmine\n22 silver\n== the holyday roster (8) ==\n00 n/a\n01 solstices\n02 spring equinox\n03 winter solstice\n04 full moon\n05 equinox\n06 new moon\n07 quarter moon\n== the freq roster (7) ==\n00 varies\n01 varies (in winter)\n02 monthly\n03 annually\n04 semiannually\n05 at death\n06 in battle\n== the form roster (21) ==\n00 offerings\n01 self-inflicted wounds\n02 berry juices\n03 crafted item\n04 war trophy\n05 gems\n06 precious metals\n07 humans\n08 weapons\n09 jewelry\n10 good creatures\n11 precious liquids\n12 spilt wine\n13 valuables\n14 verse\n15 burnt herbs\n16 gold\n17 enemy casualties\n18 silver\n19 extension of knowledge\n20 tree planting\n== the place roster (15) ==\n00 fireside\n01 mountainside\n02 tribal center\n03 in the wild\n04 temple\n05 temple, battlefield\n06 grove\n07 grave\n08 battlefield\n09 forest temple\n10 mountains\n11 forge, temple\n12 anywhere\n13 shipboard, coast\n14 forest\n\n== the printed rows ==\nRaven :: nature; creation | raven | X X - | bare | loincloth | black | n/a | varies | offerings | fireside\nCoyote :: knowledge | coyote | X X - | feather | rawhide vest | brown | n/a | varies | offerings | fireside\nHastseltsi :: racing | hawk or horse | X X - | feather | deerskin vest | maroon | n/a | varies | offerings | mountainside\nHastsezini :: fire | snake | X X - | bare | snake fang ornaments | jade green | n/a | varies | self-inflicted wounds | tribal center\nHeng :: thunder; weather | eagle | X X - | feather | amber studs | amber | solstices | varies | offerings | tribal center\nHotoru :: wind; weather | falcon | X X - | fur cap | fur tunic | gray | spring equinox | varies | berry juices | fireside\nShakak :: winter | wolf | X X - | fur cap | fur tunic | white | winter solstice | varies (in winter) | offerings | in the wild\nSnake-Man :: reptiles | snake | X X X | bare | loincloth | emerald | n/a | varies | crafted item | fireside\nTobadzistsini :: war | ant | X X - | bare | war harness | blood red | n/a | varies | war trophy | tribal center\nAnu :: sky | dragon | X X - | brass skullcap | kilt | azure | full moon | monthly | gems | temple\nAnshar :: darkness | raven | X X - | bald | kilt | deep gray | winter solstice | annually | precious metals | temple\nDruaga :: devils | devil | X X - | bald | breech cloth | yellow | full moon | monthly | humans | temple\nGirru :: fire | phoenix | X X - | bald | leather armor | scarlet | equinox | semiannually | precious metals | temple\nIshtar :: love; war | lion | X X - | pointed helm | bronze mail | sapphire | new moon | monthly | weapons | temple, battlefield\nMarduk :: cities; weather | any bird | X X - | bald | gold badge | gold | quarter moon | monthly | jewelry | temple\nNergal :: underworld | earth grub | X X X | bald | black robes | black | new moon | monthly | good creatures | temple\nRamman :: storms | seagull | X X - | bald | kilt | amber | full moon | monthly | precious liquids | temple\nDagda :: authority; rulership | n/a | X - - | knit cap | kilt | earth | new moon | monthly | spilt wine | grove\nArawn :: death | n/a | X - - | helm | kilt | black | n/a | at death | valuables | grave\nBrigit :: fire; poetry | n/a | X X - | helm | kilt | vermilion | n/a | in battle | verse | battlefield\nDiancecht :: healing | n/a | X X X | bare | kilt | hazel | new moon | monthly | burnt herbs | forest temple\nDunatis :: mountains | n/a | X X - | leather cap | boots | roan | n/a | varies | precious metals | mountains\nGoibhnie :: metalworking | n/a | X X X | bare | kilt | iron | n/a | varies | weapons | forge, temple\nLugh :: generality | n/a | X X X | bare | kilt | off-white | n/a | varies | spilt wine | anywhere\nManannan Mac Lir :: sea | n/a | X X - | helm | kilt | emerald | n/a | varies | gold | shipboard, coast\nMorrigan :: war | n/a | X X - | helm | armor | carmine | n/a | in battle | enemy casualties | battlefield\nNuada :: war | n/a | X X - | helm | armor | silver | n/a | in battle | silver | battlefield\nOghma :: knowledge | n/a | X X - | bare | kilt | gray | n/a | varies | extension of knowledge | anywhere\nSilvanus :: nature | n/a | X X X | bare | kilt | sapphire | equinox | varies | tree planting | forest\n"
+  }
+ ],
+ "inline_count": 57
+}

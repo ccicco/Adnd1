@@ -1,0 +1,183 @@
+The DDG print pp. 134-135 clerical quick-reference chart rows -
+batch one (American Indian, Babylonian, Celtic). The per-column
+rosters (first-appearance ordinals = the grid cells) and the
+printed rows. Primary ink: the rotated tesseract pass.
+== the sphere roster (25) ==
+00 nature; creation
+01 knowledge
+02 racing
+03 fire
+04 thunder; weather
+05 wind; weather
+06 winter
+07 reptiles
+08 war
+09 sky
+10 darkness
+11 devils
+12 love; war
+13 cities; weather
+14 underworld
+15 storms
+16 authority; rulership
+17 death
+18 fire; poetry
+19 healing
+20 mountains
+21 metalworking
+22 generality
+23 sea
+24 nature
+== the animal roster (16) ==
+00 raven
+01 coyote
+02 hawk or horse
+03 snake
+04 eagle
+05 falcon
+06 wolf
+07 ant
+08 dragon
+09 devil
+10 phoenix
+11 lion
+12 any bird
+13 earth grub
+14 seagull
+15 n/a
+== the head roster (9) ==
+00 bare
+01 feather
+02 fur cap
+03 brass skullcap
+04 bald
+05 pointed helm
+06 knit cap
+07 helm
+08 leather cap
+== the body roster (15) ==
+00 loincloth
+01 rawhide vest
+02 deerskin vest
+03 snake fang ornaments
+04 amber studs
+05 fur tunic
+06 war harness
+07 kilt
+08 breech cloth
+09 leather armor
+10 bronze mail
+11 gold badge
+12 black robes
+13 boots
+14 armor
+== the color roster (23) ==
+00 black
+01 brown
+02 maroon
+03 jade green
+04 amber
+05 gray
+06 white
+07 emerald
+08 blood red
+09 azure
+10 deep gray
+11 yellow
+12 scarlet
+13 sapphire
+14 gold
+15 earth
+16 vermilion
+17 hazel
+18 roan
+19 iron
+20 off-white
+21 carmine
+22 silver
+== the holyday roster (8) ==
+00 n/a
+01 solstices
+02 spring equinox
+03 winter solstice
+04 full moon
+05 equinox
+06 new moon
+07 quarter moon
+== the freq roster (7) ==
+00 varies
+01 varies (in winter)
+02 monthly
+03 annually
+04 semiannually
+05 at death
+06 in battle
+== the form roster (21) ==
+00 offerings
+01 self-inflicted wounds
+02 berry juices
+03 crafted item
+04 war trophy
+05 gems
+06 precious metals
+07 humans
+08 weapons
+09 jewelry
+10 good creatures
+11 precious liquids
+12 spilt wine
+13 valuables
+14 verse
+15 burnt herbs
+16 gold
+17 enemy casualties
+18 silver
+19 extension of knowledge
+20 tree planting
+== the place roster (15) ==
+00 fireside
+01 mountainside
+02 tribal center
+03 in the wild
+04 temple
+05 temple, battlefield
+06 grove
+07 grave
+08 battlefield
+09 forest temple
+10 mountains
+11 forge, temple
+12 anywhere
+13 shipboard, coast
+14 forest
+
+== the printed rows ==
+Raven :: nature; creation | raven | X X - | bare | loincloth | black | n/a | varies | offerings | fireside
+Coyote :: knowledge | coyote | X X - | feather | rawhide vest | brown | n/a | varies | offerings | fireside
+Hastseltsi :: racing | hawk or horse | X X - | feather | deerskin vest | maroon | n/a | varies | offerings | mountainside
+Hastsezini :: fire | snake | X X - | bare | snake fang ornaments | jade green | n/a | varies | self-inflicted wounds | tribal center
+Heng :: thunder; weather | eagle | X X - | feather | amber studs | amber | solstices | varies | offerings | tribal center
+Hotoru :: wind; weather | falcon | X X - | fur cap | fur tunic | gray | spring equinox | varies | berry juices | fireside
+Shakak :: winter | wolf | X X - | fur cap | fur tunic | white | winter solstice | varies (in winter) | offerings | in the wild
+Snake-Man :: reptiles | snake | X X X | bare | loincloth | emerald | n/a | varies | crafted item | fireside
+Tobadzistsini :: war | ant | X X - | bare | war harness | blood red | n/a | varies | war trophy | tribal center
+Anu :: sky | dragon | X X - | brass skullcap | kilt | azure | full moon | monthly | gems | temple
+Anshar :: darkness | raven | X X - | bald | kilt | deep gray | winter solstice | annually | precious metals | temple
+Druaga :: devils | devil | X X - | bald | breech cloth | yellow | full moon | monthly | humans | temple
+Girru :: fire | phoenix | X X - | bald | leather armor | scarlet | equinox | semiannually | precious metals | temple
+Ishtar :: love; war | lion | X X - | pointed helm | bronze mail | sapphire | new moon | monthly | weapons | temple, battlefield
+Marduk :: cities; weather | any bird | X X - | bald | gold badge | gold | quarter moon | monthly | jewelry | temple
+Nergal :: underworld | earth grub | X X X | bald | black robes | black | new moon | monthly | good creatures | temple
+Ramman :: storms | seagull | X X - | bald | kilt | amber | full moon | monthly | precious liquids | temple
+Dagda :: authority; rulership | n/a | X - - | knit cap | kilt | earth | new moon | monthly | spilt wine | grove
+Arawn :: death | n/a | X - - | helm | kilt | black | n/a | at death | valuables | grave
+Brigit :: fire; poetry | n/a | X X - | helm | kilt | vermilion | n/a | in battle | verse | battlefield
+Diancecht :: healing | n/a | X X X | bare | kilt | hazel | new moon | monthly | burnt herbs | forest temple
+Dunatis :: mountains | n/a | X X - | leather cap | boots | roan | n/a | varies | precious metals | mountains
+Goibhnie :: metalworking | n/a | X X X | bare | kilt | iron | n/a | varies | weapons | forge, temple
+Lugh :: generality | n/a | X X X | bare | kilt | off-white | n/a | varies | spilt wine | anywhere
+Manannan Mac Lir :: sea | n/a | X X - | helm | kilt | emerald | n/a | varies | gold | shipboard, coast
+Morrigan :: war | n/a | X X - | helm | armor | carmine | n/a | in battle | enemy casualties | battlefield
+Nuada :: war | n/a | X X - | helm | armor | silver | n/a | in battle | silver | battlefield
+Oghma :: knowledge | n/a | X X - | bare | kilt | gray | n/a | varies | extension of knowledge | anywhere
+Silvanus :: nature | n/a | X X X | bare | kilt | sapphire | equinox | varies | tree planting | forest
