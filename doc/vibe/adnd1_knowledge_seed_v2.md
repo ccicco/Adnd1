@@ -24984,6 +24984,50 @@ only in the Termux landing output (not in the pasted
 excerpt) - amend at the next touch if Curtiss wants it
 recorded. NEXT: the D&DG walk continues from the
 Nehwon mythos (print pp. 96-104) - WAIT FOR GO.
+- R863 LANDED 2026-10-26: commit f34a53247168a8fce37956671653d54e50128eb0
+(pushed f21b8dc..f34a532, census 785 -> 786), THE NEHWON MYTHOS - the D&DG
+walk round fifteen, print pp. 96-104: twenty-nine beings - the four heroes
+(Fafhrd, the Gray Mouser, Movarl, Pulgh), the two wizards (Ningauble of the
+Seven Eyes, Sheelba of the Eyeless Face), the two greater gods (Death, Kos),
+the six lesser gods (the Gods of Trouble, Hate, the Nehwon Earth God, the Rat
+God, the Red God, Tyaa), the five demigods (Aarth, the Gods of Lankhmar, Issek
+of the Jug, the Spider God, Votishal) and ten monsters (Astral Wolf, Behemoth,
+Bird of Tyaa, Cold Woman, Devourer, Nehwon Ghoul, Leviathan, Snow Serpent,
+Salt Spider, Water Cobra) - plus the Lankhmar doctrine of the intro (the
+Thieves Guild, the Slayers' Brotherhood, the Snow Witches, the Fire Sorcerers,
+the gems, the Cults of the Beast, the Godsland) and the six outdoor encounter
+tables of print p. 104 riding as the fifth grid (74 rows) plus the round's
+data file doc/data/ ddg_nehwon_encounters.txt; prefix nhw (GitHub code search
+clean: only camelCase ConTinhWeapon nhW substrings, no lowercase nhw token).
+THE HEADLINE ADJUDICATIONS: the QUARTER-FOOT DECODE - the Mouser prints SIZE M
+(5 1/4 foot), the walk's first quarter-cell, pinned 63 inches (the 1eonline
+voice reads 5.25'); Aarth the half-foot 5 1/2 print pinned 66. The DIVERGENT
+CELLS pinned by the 2nd-print extract with the L&L parity noted: Death AC -5
+(L&L -4), the Gods of Trouble AC -2 (L&L -3, tsv-verified minus 2 at w22),
+Votishal HP 344 (L&L 244, the token confirmed on-page), Tyaa AC the bare-dash
+print pinned 0 (L&L -3, the w2 dash glyph) and Votishal AC the dash-minus
+pinned -2 (the Surma dash-token precedent). The odd prints pinned as printed:
+the Issek 12/12 dual move, Hate HP 0, the Hate See below MU/I pair 99/99 (the
+egp Isis precedent), the Hate dash W/C/CH cells 0, Death Infinite move -1
+sentinel, the bird of Tyaa 1/18 move split, Ningauble Nil attacks, Sheelba the
+bare M (the R861 precedent), the Gods of Trouble Special MR 0 with the 30-foot
+no-magic radius const, the Devourer Variable size 0. The monster XP romans
+verified against both voices: III/90+3 astral wolf, VIII/4,000+20 behemoth,
+II/30+1 bird, X/28,500 cold woman flat, II/50+3 ghoul, X/15,800+35 leviathan,
+VII/2,050+14 snow serpent, III/105+3 salt spider, III/150+4 water cobra. The
+encounter-table catches: the marsh Men-brigand 21-42 / Men-merchant 43-50 rows
+restored from the fold-garbled Termux voice via the L&L transcription, and the
+mountains overlap print (astral wolf 01-05, bird of Tyaa 03-06) pinned as
+printed. The psionic pipes: class I of Death, the Gods of Trouble and the Rat
+God, class V of the Gods of Lankhmar and Votishal, class VI of the Nehwon
+Earth God and the Red God. The advisor rivalry pair of Ningauble and Sheelba
+(the mlb Elenoin-Grahuk precedent). ZERO registry defs touched - the floor
+holds at 995. Spec tools/spec_r863.json, md5 8e9b030eeeeb422dfa238a8400159cf1
+(82,563 bytes); 268 inlines (147 consts, 79 bools, 42 table cols, 5 grids x 29
+rows + the 74-row encounter grid), 17 examples; rverify double-run GREEN, 1624
+mutants 0 missed; hyphen scan clean; zero True/False tokens; ddg gap 15/24
+closed, 9 open. NEXT: the D&DG walk continues from the Nonhumans' Deities
+(print pp. 105-112) - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

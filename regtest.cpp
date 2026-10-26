@@ -565,6 +565,7 @@
 #include "rules/jpn.h"  // R861: the Japanese mythos
 #include "rules/mlb.h"  // R862: the Melnibonean mythos
 #include "rules/nhw.h"  // R863: the Nehwon mythos
+#include "rules/nhg.h"  // R864: the Nonhumans' Deities
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4612,6 +4613,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r864_batch.h"  // R864: R864 nonhumans' deities audit
 #include "rules/audits/r863_batch.h"  // R863: R863 Nehwon mythos audit
 #include "rules/audits/r862_batch.h"  // R862: R862 Melnibonean mythos audit
 #include "rules/audits/r861_batch.h"  // R861: R861 Japanese mythos audit

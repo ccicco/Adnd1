@@ -1,0 +1,3944 @@
+{
+ "round": 864,
+ "prefix": "nhg",
+ "title": "the Nonhumans' Deities",
+ "header_file": "rules/nhg.h",
+ "audit_file": "rules/audits/r864_batch.h",
+ "audit_label": "R864 nonhumans' deities audit",
+ "audit_comment": "THE NONHUMANS' DEITIES - the D&DG walk round sixteen, print pp. 105-112: twenty stat-block rows - the six greater gods (Moradin the Soul Forger, Corellon Larethian, Maglubiyet, Garl Glittergold, Yondalla, Gruumsh), the twelve lesser (Hruggek, Skerrit the Forester, Deep Sashelas, Lolth, Rillifane Rallathil, Grolantor, Skoraeus Stonebones, Kurtulmak, Blibdoolpoolp, Semuanya, Eadro, Sekolah) and the two demigods (Vaprak, Laogzed) - plus the shaman and witch doctor doctrine of the intro (the 1-4 hit point ladder, the 2-5 tandem bonus, the per-two-levels hit dice improvement, the gnoll/goblin/orc examples, the thirteen-being NOTE list of MM and FF lesser gods) and the section-wide shaman level caps (3rd to 14th) riding as consts, with the cross-reference roster as the round's data file. THE HEADLINE ADJUDICATIONS: the MORADIN-CORELLON FOLD SWAP - the psm-4 extract interleave gave Moradin the S:21(+4,+9) I:25 W:25 D:25 C:21 CH:25 line and Corellon the S:25(+7,+14) I:23 W:20 D:21 C:25 CH:19(25 to dwarves) line; the tsv x-coordinates settle both (the x=1306 right-column line is Corellon, the x=398 left-column line is Moradin) and the damage riders corroborate (Moradin 4-40 (+14), Corellon 3-30 (+9)) - the R857 Ra/Anhur geometry-swap precedent. The KURTULMAK-BLIBDOOLPOOLP TAIL SWAP: the same fold swapped the thief/psionic/ability tails; geometry gives Kurtulmak the 12th assassin, the VI pipe and S:22(+4,+10) I:19 W:9 D:19 C:19 CH:19, and Blibdoolpoolp the 15th assassin, the III print and S:21(+4,+9) I:20 W:10 D:21 C:23 CH:11 - the L&L transcription agrees on every cell. THE NOT-PRINTED DEX: Hruggek ability line has no dex cell - the tsv geometry shows only the bare 36px inter-cell gap between W:8 and C:24, and the L&L marks the same gap; pinned 0. THE FRACTION SIZES (the R859 fingerprint): Yondalla prints the 4 1/2 foot cell (the tesseract 42 inches, the L&L 4.5 feet) pinned 54; Kurtulmak the 5 1/2 foot (the tesseract 5 percent glyph) pinned 66. THE DIVERGENT CELLS pinned by the 2nd print with the L&L noted: Sashelas D:21 (L&L 18), Vaprak W:12 (L&L 18 - eyeball flag, the tesseract conf 90), Lolth MR 70 (L&L 75), Lolth psionic See below with the discipline prose (the L&L block prints 266 with all modes - a later-print or transcription gloss), Blibdoolpoolp MU 20th magic-user (L&L illusionist), Laogzed harmful spells (L&L destructive), and the Nine Hells planes of Maglubiyet, Kurtulmak, Gruumsh and Sekolah (the L&L Gehenna and Acheron and Stygia glosses are the transcriber D64 annotations, not print ink). THE LOLTH SPIDER PRINT: the AC -10 with the drow-form paren (the tesseract +2 misread at conf 53, the L&L -2, the game-sense tiebreak - the paren is an armor class and a plus-signed cell is not legal notation - eyeball flag), the MOVE 1 inch / 9 inch web walk of the MM giant spider convention (the tesseract 17 misread) with the drow-form 15 riding a const, the 66 hit points, and the See below 99 pairs on both class lines (the egp Isis precedent) with the 16th cleric / 14th magic-user drow form riding consts. The psionic pipes: I Corellon, Rillifane, Sekolah; II Semuanya, Eadro (the tsv I/ and Il misreads, both corroborated by the L&L); III Sashelas, Blibdoolpoolp; V Skerrit, Gruumsh; VI Moradin, Grolantor, Skoraeus, Maglubiyet, Kurtulmak, Vaprak. The As 16+ HD monster fighter cells (twelve) pin 16 with the as-monster-HD reading noted in the col comment. ZERO registry defs touched - the floor holds at 995.",
+ "census_before": 786,
+ "include_after": "#include \"rules/nhw.h\"  // R863: the Nehwon mythos",
+ "include_comment": "the Nonhumans' Deities",
+ "audit_anchor": "#include \"rules/audits/r863_batch.h\"  // R863: R863 Nehwon mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Nonhumans' Deities** (pp. 105-112)",
+   "to": "- [x] **Nonhumans' Deities** (pp. 105-112)",
+   "note": "the Nonhumans' Deities box"
+  }
+ ],
+ "gap_census": {
+  "closed": 16,
+  "open": 8
+ },
+ "banner": {
+  "title": "the Nonhumans' Deities - the D&DG walk round sixteen, print pp. 105-112: twenty stat-block rows - the six greater gods (Moradin, Corellon Larethian, Maglubiyet, Garl Glittergold, Yondalla, Gruumsh), the twelve lesser (Hruggek, Skerrit, Deep Sashelas, Lolth, Rillifane Rallathil, Grolantor, Skoraeus Stonebones, Kurtulmak, Blibdoolpoolp, Semuanya, Eadro, Sekolah) and the two demigods (Vaprak, Laogzed) - plus the shaman doctrine and the NOTE list of the intro.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 106-113; the second printing) with the tsv x-y geometry as the fold-swap and not-printed-cell arbiter; the collation voice: the 1eonline L&L transcription (the R853 parity voice). The adjudications: the Moradin-Corellon and Kurtulmak-Blibdoolpoolp fold swaps, the Hruggek dex gap, the Yondalla and Kurtulmak fraction sizes, the Lolth 1/9 web walk and the -2 drow paren, the Vaprak W 12 and Sashelas D 21 divergences, and the Nine Hells plane pins against the L&L D64 glosses."
+ },
+ "consts": [
+  {
+   "name": "nhgRound",
+   "value": 864,
+   "comment": "the nonhumans deities round: the D&DG walk round sixteen"
+  },
+  {
+   "name": "nhgPrintStart",
+   "value": 105,
+   "comment": "the section opens on print p. 105"
+  },
+  {
+   "name": "nhgPrintEnd",
+   "value": 112,
+   "comment": "the section closes on print p. 112 (Laogzed)"
+  },
+  {
+   "name": "nhgBeingCount",
+   "value": 20,
+   "comment": "twenty stat-block rows walk the section"
+  },
+  {
+   "name": "nhgTableCount",
+   "value": 4,
+   "comment": "the four grids (combat, class, ability, roster)"
+  },
+  {
+   "name": "nhgChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "nhgRegistryFloor",
+   "value": 995,
+   "comment": "zero registry defs touched - the floor holds"
+  },
+  {
+   "name": "nhgCbtRows",
+   "value": 20,
+   "comment": "the combat grid rows"
+  },
+  {
+   "name": "nhgClsRows",
+   "value": 20,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "nhgAbiRows",
+   "value": 20,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "nhgRosRows",
+   "value": 20,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "nhgGreaterCount",
+   "value": 6,
+   "comment": "six greater gods: Moradin, Corellon, Maglubiyet, Garl, Yondalla, Gruumsh"
+  },
+  {
+   "name": "nhgLesserCount",
+   "value": 12,
+   "comment": "twelve lesser gods and goddesses"
+  },
+  {
+   "name": "nhgDemigodCount",
+   "value": 2,
+   "comment": "two demigods: Vaprak and Laogzed"
+  },
+  {
+   "name": "nhgPlaneCount",
+   "value": 11,
+   "comment": "eleven distinct planes printed across the roster"
+  },
+  {
+   "name": "nhgNineHellsCount",
+   "value": 4,
+   "comment": "four Nine Hells rows: Maglubiyet, Kurtulmak, Gruumsh, Sekolah"
+  },
+  {
+   "name": "nhgOlympusCount",
+   "value": 3,
+   "comment": "three Olympus rows: Corellon, Sashelas, Rillifane"
+  },
+  {
+   "name": "nhgAbyssCount",
+   "value": 3,
+   "comment": "three Abyss rows: Lolth, Vaprak, Laogzed"
+  },
+  {
+   "name": "nhgSevenHeavensCount",
+   "value": 2,
+   "comment": "two Seven Heavens rows: Moradin and Yondalla"
+  },
+  {
+   "name": "nhgConcordantCount",
+   "value": 2,
+   "comment": "two Concordant Opposition rows: Semuanya and Eadro"
+  },
+  {
+   "name": "nhgAsMonsterHDCount",
+   "value": 12,
+   "comment": "twelve As 16+ HD monster fighter cells pin 16"
+  },
+  {
+   "name": "nhgPsionicRowCount",
+   "value": 15,
+   "comment": "fifteen rows print a psionic class"
+  },
+  {
+   "name": "nhgPsiNilCount",
+   "value": 5,
+   "comment": "five rows print Nil or See below psionics"
+  },
+  {
+   "name": "nhgInEachCount",
+   "value": 6,
+   "comment": "six rows print an in-each class pair"
+  },
+  {
+   "name": "nhgFractionSizeCount",
+   "value": 2,
+   "comment": "two fraction size cells: Yondalla 4 1/2 foot, Kurtulmak 5 1/2 foot"
+  },
+  {
+   "name": "nhgDualACCount",
+   "value": 2,
+   "comment": "two dual armor class prints: Lolth and Eadro"
+  },
+  {
+   "name": "nhgDualMoveCount",
+   "value": 5,
+   "comment": "five dual move prints: Corellon, Sashelas, Lolth, Semuanya, Eadro"
+  },
+  {
+   "name": "nhgDmgFixedCount",
+   "value": 17,
+   "comment": "seventeen printed-damage formula rows"
+  },
+  {
+   "name": "nhgSeeBelowCount",
+   "value": 7,
+   "comment": "seven See below cells: Lolth clr/mu/psionic, Skerrit attacks, Rillifane dmg/attacks/size"
+  },
+  {
+   "name": "nhgShamanHpLow",
+   "value": 1,
+   "comment": "the shaman bonus hit points per level, low die"
+  },
+  {
+   "name": "nhgShamanHpHigh",
+   "value": 4,
+   "comment": "the shaman bonus hit points per level, high die"
+  },
+  {
+   "name": "nhgWitchHpLow",
+   "value": 2,
+   "comment": "the tandem witch doctor hit points, low die"
+  },
+  {
+   "name": "nhgWitchHpHigh",
+   "value": 5,
+   "comment": "the tandem witch doctor hit points, high die"
+  },
+  {
+   "name": "nhgHdBetterLevels",
+   "value": 2,
+   "comment": "the levels per one hit dice of fighting improvement"
+  },
+  {
+   "name": "nhgGnollBaseHd",
+   "value": 2,
+   "comment": "the gnoll shaman base hit dice (2d8)"
+  },
+  {
+   "name": "nhgGnollBonusDice",
+   "value": 3,
+   "comment": "the gnoll shaman bonus dice (3d4)"
+  },
+  {
+   "name": "nhgGnollFightsHd",
+   "value": 4,
+   "comment": "the gnoll shaman fights as a 4 hit dice monster"
+  },
+  {
+   "name": "nhgGoblinDice",
+   "value": 4,
+   "comment": "the goblin shaman dice (4d4)"
+  },
+  {
+   "name": "nhgGoblinBonusLow",
+   "value": 1,
+   "comment": "the goblin shaman bonus hit points, low"
+  },
+  {
+   "name": "nhgGoblinBonusHigh",
+   "value": 7,
+   "comment": "the goblin shaman bonus hit points, high"
+  },
+  {
+   "name": "nhgGoblinFightsHd",
+   "value": 3,
+   "comment": "the goblin shaman fights as the 3-1 print"
+  },
+  {
+   "name": "nhgOrcDice",
+   "value": 1,
+   "comment": "the orc witch doctor base dice (1d8)"
+  },
+  {
+   "name": "nhgOrcBonusDice",
+   "value": 2,
+   "comment": "the orc witch doctor bonus dice (2d4)"
+  },
+  {
+   "name": "nhgOrcBonusHp",
+   "value": 2,
+   "comment": "the orc witch doctor bonus hit points"
+  },
+  {
+   "name": "nhgOrcFightsHd",
+   "value": 2,
+   "comment": "the orc witch doctor fights as a 2 hit dice monster"
+  },
+  {
+   "name": "nhgOrcWitchLevel",
+   "value": 3,
+   "comment": "the example orc witch doctor is 3/3"
+  },
+  {
+   "name": "nhgNoteLesserGods",
+   "value": 13,
+   "comment": "the NOTE list: thirteen beings treated as lesser gods"
+  },
+  {
+   "name": "nhgNoteMMCount",
+   "value": 10,
+   "comment": "the Monster Manual half of the NOTE list"
+  },
+  {
+   "name": "nhgNoteFFCount",
+   "value": 3,
+   "comment": "the Fiend Folio half of the NOTE list"
+  },
+  {
+   "name": "nhgGnollShamanMax",
+   "value": 5,
+   "comment": "the gnoll shamans advance to the 5th level"
+  },
+  {
+   "name": "nhgBugbearShamanMax",
+   "value": 5,
+   "comment": "the bugbear shamans rise to the 5th level"
+  },
+  {
+   "name": "nhgCentaurShamanMax",
+   "value": 3,
+   "comment": "the centaur shamans advance to the 3rd level"
+  },
+  {
+   "name": "nhgEttinShamanMax",
+   "value": 3,
+   "comment": "the ettin shamans stop at the 3rd level"
+  },
+  {
+   "name": "nhgHillGiantShamanMax",
+   "value": 7,
+   "comment": "the hill giant shamans range to the 7th level"
+  },
+  {
+   "name": "nhgFireGiantShamanMax",
+   "value": 7,
+   "comment": "the fire giant shamans rise to the 7th level"
+  },
+  {
+   "name": "nhgFrostGiantShamanMax",
+   "value": 7,
+   "comment": "the frost giant shamans attain the 7th level"
+  },
+  {
+   "name": "nhgStoneGiantShamanMax",
+   "value": 7,
+   "comment": "the stone giant shamans attain the 7th level"
+  },
+  {
+   "name": "nhgIxitxachitlClericMax",
+   "value": 8,
+   "comment": "the ixitxachitl progress to the 8th level"
+  },
+  {
+   "name": "nhgKoboldShamanMax",
+   "value": 5,
+   "comment": "the kobold shamans rise to the 5th level"
+  },
+  {
+   "name": "nhgKuoToanClericMax",
+   "value": 12,
+   "comment": "the kuo-toan clerics attain the 12th level"
+  },
+  {
+   "name": "nhgLizardManShamanMax",
+   "value": 7,
+   "comment": "the lizard man shamans attain the 7th level"
+  },
+  {
+   "name": "nhgLocathahShamanMax",
+   "value": 3,
+   "comment": "the locathah have shamans of up to the 3rd level"
+  },
+  {
+   "name": "nhgMermanClericMax",
+   "value": 5,
+   "comment": "the merman clerics reach the 5th level"
+  },
+  {
+   "name": "nhgOgreTrollShamanMax",
+   "value": 3,
+   "comment": "the ogre and troll shamans stop at the 3rd level"
+  },
+  {
+   "name": "nhgOrcShamanMax",
+   "value": 5,
+   "comment": "the orcish shamans range to the 5th level"
+  },
+  {
+   "name": "nhgSahuaginClericMax",
+   "value": 5,
+   "comment": "the sahuagin clerics advance to the 5th level"
+  },
+  {
+   "name": "nhgTroglodyteShamanMax",
+   "value": 3,
+   "comment": "the troglodyte shamans work to the 3rd level"
+  },
+  {
+   "name": "nhgGoblinShamanMax",
+   "value": 7,
+   "comment": "the goblin and hobgoblin shamans rise to the 7th level"
+  },
+  {
+   "name": "nhgDwarfClericMax",
+   "value": 7,
+   "comment": "the dwarven non-player clerics rise to the 7th level"
+  },
+  {
+   "name": "nhgElfClericMax",
+   "value": 7,
+   "comment": "the elven non-player clerics attain the 7th level"
+  },
+  {
+   "name": "nhgAquaticElfClericMax",
+   "value": 7,
+   "comment": "the aquatic elven clerics advance to the 7th level"
+  },
+  {
+   "name": "nhgGnomeClericMax",
+   "value": 7,
+   "comment": "the gnomish non-player clerics advance to the 7th level"
+  },
+  {
+   "name": "nhgHalflingClericMax",
+   "value": 5,
+   "comment": "the halfling non-player clerics rise to the 5th level"
+  },
+  {
+   "name": "nhgWoodElfClericMax",
+   "value": 7,
+   "comment": "the wood elf clerics of both cults work to the 7th level"
+  },
+  {
+   "name": "nhgDrowClericMax",
+   "value": 14,
+   "comment": "the female drow of 18 wisdom reach the 14th level"
+  },
+  {
+   "name": "nhgHruggekMorningstarPlus",
+   "value": 3,
+   "comment": "the ten-foot +3 morningstar"
+  },
+  {
+   "name": "nhgHruggekMorningstarLow",
+   "value": 3,
+   "comment": "the morningstar damage low"
+  },
+  {
+   "name": "nhgHruggekMorningstarHigh",
+   "value": 30,
+   "comment": "the morningstar damage high"
+  },
+  {
+   "name": "nhgHruggekClawLow",
+   "value": 2,
+   "comment": "the claw damage low"
+  },
+  {
+   "name": "nhgHruggekClawHigh",
+   "value": 16,
+   "comment": "the claw damage high"
+  },
+  {
+   "name": "nhgHruggekWeaponToHit",
+   "value": 2,
+   "comment": "the +2 or better weapon to hit"
+  },
+  {
+   "name": "nhgHruggekChaToBugbears",
+   "value": 23,
+   "comment": "the charisma 23 to bugbears"
+  },
+  {
+   "name": "nhgHruggekPantheonSize",
+   "value": 6,
+   "comment": "the simple bugbear pantheon of six deities"
+  },
+  {
+   "name": "nhgSkerritACFloor",
+   "value": 2,
+   "comment": "the Variable (at least 2) armor class floor"
+  },
+  {
+   "name": "nhgSkerritSpearPlus",
+   "value": 3,
+   "comment": "the centaur-form +3 spear"
+  },
+  {
+   "name": "nhgSkerritSpearLow",
+   "value": 2,
+   "comment": "the spear damage low"
+  },
+  {
+   "name": "nhgSkerritSpearHigh",
+   "value": 20,
+   "comment": "the spear damage high (plus strength bonus)"
+  },
+  {
+   "name": "nhgSkerritFormAC",
+   "value": 2,
+   "comment": "the centaur-form armor class 2"
+  },
+  {
+   "name": "nhgSkerritFormMove",
+   "value": 21,
+   "comment": "the centaur-form move 21 inches"
+  },
+  {
+   "name": "nhgSkerritForestToHit",
+   "value": -4,
+   "comment": "the -4 to hit him in the forests"
+  },
+  {
+   "name": "nhgMoradinHammerPlus",
+   "value": 5,
+   "comment": "the +5 glowing hammer"
+  },
+  {
+   "name": "nhgMoradinHammerLow",
+   "value": 4,
+   "comment": "the hammer damage low"
+  },
+  {
+   "name": "nhgMoradinHammerHigh",
+   "value": 40,
+   "comment": "the hammer damage high"
+  },
+  {
+   "name": "nhgMoradinChaToDwarves",
+   "value": 25,
+   "comment": "the charisma 25 to dwarves"
+  },
+  {
+   "name": "nhgCorellonBowLow",
+   "value": 2,
+   "comment": "the longbow damage low"
+  },
+  {
+   "name": "nhgCorellonBowHigh",
+   "value": 20,
+   "comment": "the longbow damage high"
+  },
+  {
+   "name": "nhgCorellonSwordPlus",
+   "value": 5,
+   "comment": "the +5 sword made from a star"
+  },
+  {
+   "name": "nhgCorellonSwordLow",
+   "value": 3,
+   "comment": "the sword damage low"
+  },
+  {
+   "name": "nhgCorellonSwordHigh",
+   "value": 30,
+   "comment": "the sword damage high"
+  },
+  {
+   "name": "nhgCorellonSwordBurnLow",
+   "value": 10,
+   "comment": "the other-wielder burn damage low"
+  },
+  {
+   "name": "nhgCorellonSwordBurnHigh",
+   "value": 100,
+   "comment": "the other-wielder burn damage high"
+  },
+  {
+   "name": "nhgSashelasDmgLow",
+   "value": 3,
+   "comment": "the damage low (trident or weapon)"
+  },
+  {
+   "name": "nhgSashelasDmgHigh",
+   "value": 30,
+   "comment": "the damage high"
+  },
+  {
+   "name": "nhgSashelasDolphins",
+   "value": 20,
+   "comment": "the twenty strongest dolphins follow him"
+  },
+  {
+   "name": "nhgSashelasWaterMR",
+   "value": 100,
+   "comment": "the 100 percent magic resistance under water"
+  },
+  {
+   "name": "nhgLolthDrowMove",
+   "value": 15,
+   "comment": "the drow-form move 15 inches"
+  },
+  {
+   "name": "nhgLolthWebRange",
+   "value": 30,
+   "comment": "the web strand range in feet"
+  },
+  {
+   "name": "nhgLolthWebDmgLow",
+   "value": 1,
+   "comment": "the web poison damage low per round"
+  },
+  {
+   "name": "nhgLolthWebDmgHigh",
+   "value": 4,
+   "comment": "the web poison damage high per round"
+  },
+  {
+   "name": "nhgLolthBiteLow",
+   "value": 4,
+   "comment": "the spider bite damage low"
+  },
+  {
+   "name": "nhgLolthBiteHigh",
+   "value": 16,
+   "comment": "the spider bite damage high"
+  },
+  {
+   "name": "nhgLolthPoisonSaveMod",
+   "value": -4,
+   "comment": "the spider bite save modifier"
+  },
+  {
+   "name": "nhgLolthHealsPerDay",
+   "value": 3,
+   "comment": "she heals herself up to thrice per day"
+  },
+  {
+   "name": "nhgLolthPoisonOnePct",
+   "value": 45,
+   "comment": "the poison type I chance"
+  },
+  {
+   "name": "nhgLolthPoisonTwoPct",
+   "value": 35,
+   "comment": "the poison type II chance"
+  },
+  {
+   "name": "nhgLolthPoisonThreePct",
+   "value": 20,
+   "comment": "the poison type III chance"
+  },
+  {
+   "name": "nhgLolthGatePct",
+   "value": 66,
+   "comment": "the demon gate success chance"
+  },
+  {
+   "name": "nhgLolthSummonLargePct",
+   "value": 20,
+   "comment": "the 9-16 large spiders summon chance"
+  },
+  {
+   "name": "nhgLolthSummonHugePct",
+   "value": 30,
+   "comment": "the 7-12 huge spiders summon chance"
+  },
+  {
+   "name": "nhgLolthSummonGiantPct",
+   "value": 40,
+   "comment": "the 2-8 giant spiders summon chance"
+  },
+  {
+   "name": "nhgLolthSummonPhasePct",
+   "value": 10,
+   "comment": "the 1-4 phase spiders summon chance"
+  },
+  {
+   "name": "nhgLolthHolyWaterSplash",
+   "value": 6,
+   "comment": "the holy water splash damage"
+  },
+  {
+   "name": "nhgLolthHolyWaterLow",
+   "value": 6,
+   "comment": "the direct holy water hit low (3d6+3)"
+  },
+  {
+   "name": "nhgLolthHolyWaterHigh",
+   "value": 21,
+   "comment": "the direct holy water hit high"
+  },
+  {
+   "name": "nhgLolthSightRange",
+   "value": 120,
+   "comment": "the infrared and ultraviolet sight in inches"
+  },
+  {
+   "name": "nhgLolthDrowClericLevel",
+   "value": 16,
+   "comment": "the humanoid-form cleric level"
+  },
+  {
+   "name": "nhgLolthDrowMagUserLevel",
+   "value": 14,
+   "comment": "the humanoid-form magic-user level"
+  },
+  {
+   "name": "nhgLolthDisciplineLevel",
+   "value": 16,
+   "comment": "the psionic disciplines perform at the 16th level"
+  },
+  {
+   "name": "nhgLolthChaDrow",
+   "value": 23,
+   "comment": "the charisma 23 of the dark elf form"
+  },
+  {
+   "name": "nhgGrolantorClubLow",
+   "value": 4,
+   "comment": "the Dwarfcrusher damage low"
+  },
+  {
+   "name": "nhgGrolantorClubHigh",
+   "value": 40,
+   "comment": "the Dwarfcrusher damage high"
+  },
+  {
+   "name": "nhgSkoraeusFistLow",
+   "value": 6,
+   "comment": "the fist damage low"
+  },
+  {
+   "name": "nhgSkoraeusFistHigh",
+   "value": 60,
+   "comment": "the fist damage high"
+  },
+  {
+   "name": "nhgSkoraeusRegen",
+   "value": 5,
+   "comment": "the regeneration 5 points per round on stone"
+  },
+  {
+   "name": "nhgSkoraeusEarthquakeLevel",
+   "value": 30,
+   "comment": "the earthquake spell at the 30th level"
+  },
+  {
+   "name": "nhgSkoraeusSummonLow",
+   "value": 2,
+   "comment": "the stone giant summon low"
+  },
+  {
+   "name": "nhgSkoraeusSummonHigh",
+   "value": 20,
+   "comment": "the stone giant summon high"
+  },
+  {
+   "name": "nhgMaglubiyetDmgLow",
+   "value": 2,
+   "comment": "the damage low"
+  },
+  {
+   "name": "nhgMaglubiyetDmgHigh",
+   "value": 20,
+   "comment": "the damage high"
+  },
+  {
+   "name": "nhgGarlAxePlus",
+   "value": 5,
+   "comment": "the intelligent +5 mithral-steel axe Arumdina"
+  },
+  {
+   "name": "nhgGarlAxeLow",
+   "value": 3,
+   "comment": "the Arumdina damage low"
+  },
+  {
+   "name": "nhgGarlAxeHigh",
+   "value": 30,
+   "comment": "the Arumdina damage high"
+  },
+  {
+   "name": "nhgYondallaWitherCharges",
+   "value": 3,
+   "comment": "the staff of withering charges expended"
+  },
+  {
+   "name": "nhgYondallaWitherLow",
+   "value": 2,
+   "comment": "the withering damage low"
+  },
+  {
+   "name": "nhgYondallaWitherHigh",
+   "value": 5,
+   "comment": "the withering damage high"
+  },
+  {
+   "name": "nhgYondallaWitherAge",
+   "value": 10,
+   "comment": "the withering age in years"
+  },
+  {
+   "name": "nhgKurtulmakSmellMiles",
+   "value": 1,
+   "comment": "he smells gnomes up to a mile away"
+  },
+  {
+   "name": "nhgKurtulmakFearFeet",
+   "value": 10,
+   "comment": "the fear aura radius in feet"
+  },
+  {
+   "name": "nhgKurtulmakFearSaveMod",
+   "value": -4,
+   "comment": "the gnomes save modifier in the fear aura"
+  },
+  {
+   "name": "nhgKurtulmakSpearPlus",
+   "value": 4,
+   "comment": "the +4 spear"
+  },
+  {
+   "name": "nhgKurtulmakSpearLow",
+   "value": 2,
+   "comment": "the spear damage low"
+  },
+  {
+   "name": "nhgKurtulmakSpearHigh",
+   "value": 24,
+   "comment": "the spear damage high"
+  },
+  {
+   "name": "nhgKurtulmakTailLow",
+   "value": 1,
+   "comment": "the tail sting damage low"
+  },
+  {
+   "name": "nhgKurtulmakTailHigh",
+   "value": 6,
+   "comment": "the tail sting damage high"
+  },
+  {
+   "name": "nhgBlibClawLow",
+   "value": 4,
+   "comment": "the claw snap damage low"
+  },
+  {
+   "name": "nhgBlibClawHigh",
+   "value": 24,
+   "comment": "the claw snap damage high"
+  },
+  {
+   "name": "nhgBlibGazeSaveMod",
+   "value": -4,
+   "comment": "the insanity gaze save modifier"
+  },
+  {
+   "name": "nhgBlibSummonLobsterLow",
+   "value": 3,
+   "comment": "the giant lobster summon low"
+  },
+  {
+   "name": "nhgBlibSummonLobsterHigh",
+   "value": 30,
+   "comment": "the giant lobster summon high"
+  },
+  {
+   "name": "nhgBlibSummonElementalLow",
+   "value": 1,
+   "comment": "the water elemental summon low"
+  },
+  {
+   "name": "nhgBlibSummonElementalHigh",
+   "value": 10,
+   "comment": "the water elemental summon high"
+  },
+  {
+   "name": "nhgBlibElementalHD",
+   "value": 16,
+   "comment": "the summoned water elementals hit dice"
+  },
+  {
+   "name": "nhgBlibGemFavorPct",
+   "value": 1,
+   "comment": "the favor chance percent per gem value"
+  },
+  {
+   "name": "nhgBlibGemFavorPerGp",
+   "value": 1000,
+   "comment": "the gems value per favor percent"
+  },
+  {
+   "name": "nhgBlibPearlPerGp",
+   "value": 500,
+   "comment": "the pearls value per favor percent"
+  },
+  {
+   "name": "nhgSemuanyaClubLow",
+   "value": 2,
+   "comment": "the club damage low"
+  },
+  {
+   "name": "nhgSemuanyaClubHigh",
+   "value": 20,
+   "comment": "the club damage high (plus strength)"
+  },
+  {
+   "name": "nhgSemuanyaSummonLow",
+   "value": 3,
+   "comment": "the minotaur lizard summon low"
+  },
+  {
+   "name": "nhgSemuanyaSummonHigh",
+   "value": 18,
+   "comment": "the minotaur lizard summon high"
+  },
+  {
+   "name": "nhgSemuanyaRegen",
+   "value": 5,
+   "comment": "the regeneration 5 points per round"
+  },
+  {
+   "name": "nhgSemuanyaChaToLizardMen",
+   "value": 25,
+   "comment": "the charisma 25 toward lizard men"
+  },
+  {
+   "name": "nhgEadroWhipCount",
+   "value": 8,
+   "comment": "the eight water-whips of the amorphous form"
+  },
+  {
+   "name": "nhgEadroWhipLow",
+   "value": 1,
+   "comment": "the water-whip damage low"
+  },
+  {
+   "name": "nhgEadroWhipHigh",
+   "value": 10,
+   "comment": "the water-whip damage high"
+  },
+  {
+   "name": "nhgEadroSummonLow",
+   "value": 2,
+   "comment": "the water elemental summon low"
+  },
+  {
+   "name": "nhgEadroSummonHigh",
+   "value": 8,
+   "comment": "the water elemental summon high"
+  },
+  {
+   "name": "nhgEadroElementalHD",
+   "value": 16,
+   "comment": "the summoned water elementals hit dice"
+  },
+  {
+   "name": "nhgVaprakClawLow",
+   "value": 2,
+   "comment": "the claw damage low"
+  },
+  {
+   "name": "nhgVaprakClawHigh",
+   "value": 20,
+   "comment": "the claw damage high"
+  },
+  {
+   "name": "nhgVaprakBiteLow",
+   "value": 1,
+   "comment": "the bite damage low"
+  },
+  {
+   "name": "nhgVaprakBiteHigh",
+   "value": 12,
+   "comment": "the bite damage high"
+  },
+  {
+   "name": "nhgVaprakRegen",
+   "value": 7,
+   "comment": "the regeneration 7 points per melee round"
+  },
+  {
+   "name": "nhgVaprakBerserkPct",
+   "value": 2,
+   "comment": "the berserk rage reward chance"
+  },
+  {
+   "name": "nhgVaprakBerserkHit",
+   "value": 2,
+   "comment": "the berserk to-hit and damage bonus"
+  },
+  {
+   "name": "nhgVaprakBerserkAC",
+   "value": -2,
+   "comment": "the berserk armor class penalty"
+  },
+  {
+   "name": "nhgGruumshSpearPlus",
+   "value": 5,
+   "comment": "the great iron +5 spear"
+  },
+  {
+   "name": "nhgGruumshSpearLow",
+   "value": 3,
+   "comment": "the spear damage low"
+  },
+  {
+   "name": "nhgGruumshSpearHigh",
+   "value": 30,
+   "comment": "the spear damage high"
+  },
+  {
+   "name": "nhgGruumshParalysisSaveMod",
+   "value": -4,
+   "comment": "the paralysis save modifier"
+  },
+  {
+   "name": "nhgGruumshChaToOrcs",
+   "value": 25,
+   "comment": "the charisma 25 to orcs"
+  },
+  {
+   "name": "nhgSekolahBiteLow",
+   "value": 6,
+   "comment": "the bite damage low"
+  },
+  {
+   "name": "nhgSekolahBiteHigh",
+   "value": 60,
+   "comment": "the bite damage high"
+  },
+  {
+   "name": "nhgSekolahSwallowRoll",
+   "value": 16,
+   "comment": "the to-hit roll that swallows man-sized whole"
+  },
+  {
+   "name": "nhgSekolahHolySharksLow",
+   "value": 1,
+   "comment": "the holy sharks count low"
+  },
+  {
+   "name": "nhgSekolahHolySharksHigh",
+   "value": 3,
+   "comment": "the holy sharks count high"
+  },
+  {
+   "name": "nhgLaogzedAcidLow",
+   "value": 3,
+   "comment": "the acid skin damage low"
+  },
+  {
+   "name": "nhgLaogzedAcidHigh",
+   "value": 18,
+   "comment": "the acid skin damage high"
+  },
+  {
+   "name": "nhgLaogzedAcidSaveMod",
+   "value": -4,
+   "comment": "the acid poison save modifier"
+  },
+  {
+   "name": "nhgLaogzedBiteLow",
+   "value": 6,
+   "comment": "the bite damage low"
+  },
+  {
+   "name": "nhgLaogzedBiteHigh",
+   "value": 60,
+   "comment": "the bite damage high"
+  }
+ ],
+ "bools": [
+  {
+   "name": "nhgShamanHdLadder",
+   "value": true,
+   "comment": "every two shaman levels fight as one hit dice better"
+  },
+  {
+   "name": "nhgWitchDoctorPaired",
+   "value": true,
+   "comment": "the witch doctor shaman and magic-user levels are paired, not added"
+  },
+  {
+   "name": "nhgWitchTandemBonus",
+   "value": true,
+   "comment": "the 2-5 hit point bonus holds only while advancing in tandem"
+  },
+  {
+   "name": "nhgGoblinHdAltPrint",
+   "value": true,
+   "comment": "the goblin shaman 3-1 print carries the (or 2-3+) alternate"
+  },
+  {
+   "name": "nhgNoteMMLesserGods",
+   "value": true,
+   "comment": "the NOTE list beings are treated as lesser gods"
+  },
+  {
+   "name": "nhgNoteLolthDetailed",
+   "value": true,
+   "comment": "Lolth is the one NOTE being detailed in this volume"
+  },
+  {
+   "name": "nhgHruggekBloodOfferings",
+   "value": true,
+   "comment": "the bugbear shamans offer him the blood of their enemies"
+  },
+  {
+   "name": "nhgHruggekCaveHeads",
+   "value": true,
+   "comment": "his Pandemonium cave is decorated with severed heads"
+  },
+  {
+   "name": "nhgHruggekMostPowerful",
+   "value": true,
+   "comment": "Hruggek is the most powerful bugbear god but rules none"
+  },
+  {
+   "name": "nhgSkerritAnyForestForm",
+   "value": true,
+   "comment": "Skerrit can appear as any creature of the forest"
+  },
+  {
+   "name": "nhgSkerritPossessPlants",
+   "value": true,
+   "comment": "his spirit temporarily possesses plants and animals"
+  },
+  {
+   "name": "nhgSkerritForestDefense",
+   "value": true,
+   "comment": "the branches and leaves block blows in the forests"
+  },
+  {
+   "name": "nhgSkerritFullMoonDances",
+   "value": true,
+   "comment": "the centaurs worship through dances and mock hunts on full-moon nights"
+  },
+  {
+   "name": "nhgSkerritSatyrsNoClerics",
+   "value": true,
+   "comment": "the satyrs worship Skerrit but have no clerical members"
+  },
+  {
+   "name": "nhgMoradinForgedDwarves",
+   "value": true,
+   "comment": "Moradin forged the dwarves from iron and mithral"
+  },
+  {
+   "name": "nhgMoradinHammerReturns",
+   "value": true,
+   "comment": "the hammer disappears from others hands and returns to him"
+  },
+  {
+   "name": "nhgMoradinArmorUnremovable",
+   "value": true,
+   "comment": "his armor and shield cannot be removed from his body"
+  },
+  {
+   "name": "nhgMoradinForgedWeaponsCannotHarm",
+   "value": true,
+   "comment": "no forged weapon can harm the Soul Forger"
+  },
+  {
+   "name": "nhgMoradinHearthForge",
+   "value": true,
+   "comment": "the shrine center is the ever-burning hearth and forge"
+  },
+  {
+   "name": "nhgCorellonBowNeverMisses",
+   "value": true,
+   "comment": "the arrows fired from his bow never miss"
+  },
+  {
+   "name": "nhgCorellonSwordDetectsDanger",
+   "value": true,
+   "comment": "the sword detects the most dangerous opponents"
+  },
+  {
+   "name": "nhgCorellonBanishedLolth",
+   "value": true,
+   "comment": "Corellon personally banished Lolth from the sunlit Upperworld"
+  },
+  {
+   "name": "nhgCorellonElvesFromBlood",
+   "value": true,
+   "comment": "the elves sprang from the drops of his blood"
+  },
+  {
+   "name": "nhgCorellonQuarterMoonTalisman",
+   "value": true,
+   "comment": "his clerics wear the blue quarter-moon talisman"
+  },
+  {
+   "name": "nhgCorellonNoShrines",
+   "value": true,
+   "comment": "the elves build no shrines, only natural formations"
+  },
+  {
+   "name": "nhgSashelasDoubleDamageUnderwater",
+   "value": true,
+   "comment": "he does double damage under water"
+  },
+  {
+   "name": "nhgSashelasFullWaterMR",
+   "value": true,
+   "comment": "the 100 percent magic resistance holds under water"
+  },
+  {
+   "name": "nhgSashelasDolphinMaster",
+   "value": true,
+   "comment": "he is the master of the dolphins"
+  },
+  {
+   "name": "nhgSashelasSharkHunts",
+   "value": true,
+   "comment": "his clerics conduct ritual shark hunts"
+  },
+  {
+   "name": "nhgSashelasTideCeremonies",
+   "value": true,
+   "comment": "the ceremonies time to the high and low tides"
+  },
+  {
+   "name": "nhgLolthSpiderAndDrowForms",
+   "value": true,
+   "comment": "the spider and the dark elf forms, the parens give the drow stats"
+  },
+  {
+   "name": "nhgLolthConverseWithSpiders",
+   "value": true,
+   "comment": "all spiders understand and obey her unquestioningly"
+  },
+  {
+   "name": "nhgLolthSpiderPowersList",
+   "value": true,
+   "comment": "the one-per-melee spider power list at will"
+  },
+  {
+   "name": "nhgLolthTwicePerDayPowers",
+   "value": true,
+   "comment": "the phase door, read magic and shape change twice per day"
+  },
+  {
+   "name": "nhgLolthSilverImmune",
+   "value": true,
+   "comment": "silver alone does her no harm; weapons must be magical (at least +1) to harm her"
+  },
+  {
+   "name": "nhgLolthHalfDamageForms",
+   "value": true,
+   "comment": "cold, electrical and gas attacks do half damage"
+  },
+  {
+   "name": "nhgLolthPsionicLostInSpiderForm",
+   "value": true,
+   "comment": "her psionic powers are lost in the spider form"
+  },
+  {
+   "name": "nhgLolthDevBodyEquilibrium",
+   "value": true,
+   "comment": "the minor devotion of body equilibrium"
+  },
+  {
+   "name": "nhgLolthDevClairvoyance",
+   "value": true,
+   "comment": "the minor devotion of clairvoyance"
+  },
+  {
+   "name": "nhgLolthDevDomination",
+   "value": true,
+   "comment": "the minor devotion of domination"
+  },
+  {
+   "name": "nhgLolthSciDimensionWalking",
+   "value": true,
+   "comment": "the major science of dimension walking"
+  },
+  {
+   "name": "nhgLolthSciMindBar",
+   "value": true,
+   "comment": "the major science of mind bar"
+  },
+  {
+   "name": "nhgLolthSciMolecularRearrangement",
+   "value": true,
+   "comment": "the major science of molecular rearrangement"
+  },
+  {
+   "name": "nhgLolthSciProbabilityTravel",
+   "value": true,
+   "comment": "the major science of probability travel"
+  },
+  {
+   "name": "nhgLolthHolyWaterSusceptible",
+   "value": true,
+   "comment": "she is especially susceptible to holy water"
+  },
+  {
+   "name": "nhgRillifaneArrowsAlwaysSlay",
+   "value": true,
+   "comment": "his bow arrows always slay on a hit, no save"
+  },
+  {
+   "name": "nhgRillifaneBarkArmor",
+   "value": true,
+   "comment": "he appears as a green-skinned elf clad in bark armor"
+  },
+  {
+   "name": "nhgRillifaneRootsMingle",
+   "value": true,
+   "comment": "his oak roots mingle with every other plant in the world"
+  },
+  {
+   "name": "nhgRillifaneHuntsSportEnemies",
+   "value": true,
+   "comment": "his clerics are deadly enemies of those who hunt for sport"
+  },
+  {
+   "name": "nhgGrolantorPersecutesSmaller",
+   "value": true,
+   "comment": "his creed is persecution of all inferior races"
+  },
+  {
+   "name": "nhgGrolantorDwarfbeardBelts",
+   "value": true,
+   "comment": "he wears belts of woven dwarfbeards"
+  },
+  {
+   "name": "nhgGrolantorEttinWorship",
+   "value": true,
+   "comment": "the ettins worship him in a two-headed aspect"
+  },
+  {
+   "name": "nhgSkoraeusNeverAboveGround",
+   "value": true,
+   "comment": "he never ventures above ground and cannot be gated there"
+  },
+  {
+   "name": "nhgSkoraeusListensToRock",
+   "value": true,
+   "comment": "he knows everything touching rock through its vibrations"
+  },
+  {
+   "name": "nhgSkoraeusEarthquakePerRound",
+   "value": true,
+   "comment": "he casts one earthquake spell per round"
+  },
+  {
+   "name": "nhgMaglubiyetSpiritArmies",
+   "value": true,
+   "comment": "his goblin spirit armies eternally war with the orcish spirit army"
+  },
+  {
+   "name": "nhgMaglubiyetNewMoonSacrifices",
+   "value": true,
+   "comment": "the sacrifices of creatures with souls fall on new-moon nights"
+  },
+  {
+   "name": "nhgMaglubiyetAlwaysWinsClaim",
+   "value": true,
+   "comment": "the shamans claim he always wins; the spirits re-form"
+  },
+  {
+   "name": "nhgGarlArumdinaIntelligent",
+   "value": true,
+   "comment": "Arumdina is an intelligent axe"
+  },
+  {
+   "name": "nhgGarlArumdinaHeals",
+   "value": true,
+   "comment": "Arumdina can heal Garl completely once per day"
+  },
+  {
+   "name": "nhgGarlKoboldCavernCollapse",
+   "value": true,
+   "comment": "Garl collapsed the Kobold King cavern"
+  },
+  {
+   "name": "nhgGarlWarLeader",
+   "value": true,
+   "comment": "he is a grim war leader when his people are threatened"
+  },
+  {
+   "name": "nhgGarlGoldSacrifices",
+   "value": true,
+   "comment": "his clerics require gold for the sacrifices"
+  },
+  {
+   "name": "nhgYondallaProviderAspect",
+   "value": true,
+   "comment": "the Provider aspect of fertility and growing things"
+  },
+  {
+   "name": "nhgYondallaProtectorAspect",
+   "value": true,
+   "comment": "the Protector aspect of warding off evil"
+  },
+  {
+   "name": "nhgYondallaWitheringNoSave",
+   "value": true,
+   "comment": "the withering wave has no saving throw"
+  },
+  {
+   "name": "nhgYondallaSafeday",
+   "value": true,
+   "comment": "the halflings set aside one day per week as safeday"
+  },
+  {
+   "name": "nhgKurtulmakSmellsGnomes",
+   "value": true,
+   "comment": "the gnome scent drives him into a killing frenzy"
+  },
+  {
+   "name": "nhgKurtulmakFearAura",
+   "value": true,
+   "comment": "the fear aura saves vs spells or flee in panic"
+  },
+  {
+   "name": "nhgKurtulmakTailPoison",
+   "value": true,
+   "comment": "the tail sting poison is save or die"
+  },
+  {
+   "name": "nhgKurtulmakOrangeRobes",
+   "value": true,
+   "comment": "the kobold shamans wear orange robes with the white death-head sigil"
+  },
+  {
+   "name": "nhgBlibLobsterSacrifices",
+   "value": true,
+   "comment": "her worshipers regularly sacrifice lobsters to her"
+  },
+  {
+   "name": "nhgBlibGazeInsanity",
+   "value": true,
+   "comment": "her close-range gaze causes insanity on a failed save"
+  },
+  {
+   "name": "nhgBlibDrowningSacrifices",
+   "value": true,
+   "comment": "the clerics sacrifice captured humans by drowning"
+  },
+  {
+   "name": "nhgBlibHatesSurfaceRaces",
+   "value": true,
+   "comment": "she hates all who drove the kuo-toa into the underworld"
+  },
+  {
+   "name": "nhgSemuanyaCommandsLizards",
+   "value": true,
+   "comment": "Semuanya can command all lizards"
+  },
+  {
+   "name": "nhgSemuanyaTaciturn",
+   "value": true,
+   "comment": "the shamans emulate his taciturnity and counsel avoidance"
+  },
+  {
+   "name": "nhgSemuanyaSurvivalCreed",
+   "value": true,
+   "comment": "the whole creed is survival and propagation"
+  },
+  {
+   "name": "nhgEadroLivingWater",
+   "value": true,
+   "comment": "Eadro appears as a being of living water"
+  },
+  {
+   "name": "nhgEadroAmorphousBlob",
+   "value": true,
+   "comment": "in battle he becomes the amorphous blob of water-whips"
+  },
+  {
+   "name": "nhgEadroSpiritsAsFish",
+   "value": true,
+   "comment": "between lives the spirits take the form of tiny fish"
+  },
+  {
+   "name": "nhgEadroSeaSpaceRivalry",
+   "value": true,
+   "comment": "the locathah and mermen compete for the same sea-space"
+  },
+  {
+   "name": "nhgVaprakTearsPrey",
+   "value": true,
+   "comment": "he prefers to tear his prey apart with his claws"
+  },
+  {
+   "name": "nhgVaprakAlwaysHungry",
+   "value": true,
+   "comment": "the Destroyer is always hungry"
+  },
+  {
+   "name": "nhgVaprakBerserkRage",
+   "value": true,
+   "comment": "he sometimes rewards worshipers with berserk rage"
+  },
+  {
+   "name": "nhgGruumshOneEye",
+   "value": true,
+   "comment": "he has one large unwinking eye in the center of his forehead"
+  },
+  {
+   "name": "nhgGruumshDestructiveSpellsOnly",
+   "value": true,
+   "comment": "his clerics use only destructive spells"
+  },
+  {
+   "name": "nhgGruumshPlucksLeftEye",
+   "value": true,
+   "comment": "an orc must pluck out his own left eye to become a shaman"
+  },
+  {
+   "name": "nhgGruumshBloodWorship",
+   "value": true,
+   "comment": "proper worship requires blood in large quantities"
+  },
+  {
+   "name": "nhgGruumshSpiritOrcArmies",
+   "value": true,
+   "comment": "his spirit-orcs war continuously in Hell"
+  },
+  {
+   "name": "nhgSekolahSwallowWhole",
+   "value": true,
+   "comment": "he swallows man-sized creatures whole"
+  },
+  {
+   "name": "nhgSekolahFeedsWeakAged",
+   "value": true,
+   "comment": "the sahuagin sacrifice their weak, crippled and aged to him"
+  },
+  {
+   "name": "nhgSekolahHolySharks",
+   "value": true,
+   "comment": "the 1-3 holy sharks always accompany sahuagin clerics"
+  },
+  {
+   "name": "nhgLaogzedAcidSkin",
+   "value": true,
+   "comment": "his oozing skin is an acidic poison that destroys weapons"
+  },
+  {
+   "name": "nhgLaogzedStinkingCloud",
+   "value": true,
+   "comment": "he exhales a stinking cloud at will"
+  },
+  {
+   "name": "nhgLaogzedHarmfulSpellsOnly",
+   "value": true,
+   "comment": "his clerics use only harmful spells"
+  },
+  {
+   "name": "nhgLaogzedSheddingOfSkins",
+   "value": true,
+   "comment": "the Midwinter ritual of the Shedding of Skins"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "tag": "nhgCbt",
+   "name": "the combat grid",
+   "count": "nhgCbtRows",
+   "cols": [
+    "nhgCbtAC",
+    "nhgCbtACAlt",
+    "nhgCbtHP",
+    "nhgCbtMove",
+    "nhgCbtMoveAlt",
+    "nhgCbtAtN",
+    "nhgCbtAtD",
+    "nhgCbtMR",
+    "nhgCbtSizeIn"
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     0,
+     0,
+     221,
+     12,
+     0,
+     1,
+     2,
+     25,
+     144
+    ],
+    [
+     2,
+     0,
+     290,
+     0,
+     0,
+     0,
+     0,
+     35,
+     0
+    ],
+    [
+     -9,
+     0,
+     400,
+     12,
+     0,
+     2,
+     0,
+     60,
+     240
+    ],
+    [
+     -4,
+     0,
+     350,
+     15,
+     18,
+     2,
+     0,
+     95,
+     84
+    ],
+    [
+     -3,
+     0,
+     300,
+     12,
+     24,
+     1,
+     0,
+     0,
+     84
+    ],
+    [
+     -10,
+     -2,
+     66,
+     1,
+     9,
+     1,
+     1,
+     70,
+     0
+    ],
+    [
+     -2,
+     0,
+     317,
+     12,
+     0,
+     2,
+     0,
+     75,
+     0
+    ],
+    [
+     0,
+     0,
+     259,
+     21,
+     0,
+     2,
+     0,
+     45,
+     300
+    ],
+    [
+     0,
+     0,
+     380,
+     15,
+     0,
+     2,
+     0,
+     50,
+     360
+    ],
+    [
+     -2,
+     0,
+     350,
+     12,
+     0,
+     2,
+     0,
+     50,
+     132
+    ],
+    [
+     -2,
+     0,
+     350,
+     12,
+     0,
+     3,
+     2,
+     25,
+     48
+    ],
+    [
+     2,
+     0,
+     350,
+     12,
+     0,
+     3,
+     2,
+     75,
+     54
+    ],
+    [
+     0,
+     0,
+     219,
+     12,
+     0,
+     2,
+     0,
+     55,
+     66
+    ],
+    [
+     -1,
+     0,
+     310,
+     12,
+     48,
+     2,
+     0,
+     55,
+     240
+    ],
+    [
+     -4,
+     0,
+     211,
+     12,
+     24,
+     1,
+     0,
+     78,
+     144
+    ],
+    [
+     0,
+     -6,
+     227,
+     12,
+     24,
+     1,
+     8,
+     72,
+     84
+    ],
+    [
+     0,
+     0,
+     198,
+     15,
+     0,
+     3,
+     0,
+     50,
+     180
+    ],
+    [
+     -1,
+     0,
+     350,
+     12,
+     0,
+     1,
+     0,
+     75,
+     120
+    ],
+    [
+     0,
+     0,
+     329,
+     36,
+     0,
+     2,
+     0,
+     47,
+     420
+    ],
+    [
+     0,
+     0,
+     187,
+     15,
+     0,
+     1,
+     0,
+     29,
+     120
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Moradin minus 9 the best with his armor, Lolth minus 10 the raw best; Skerrit prints Variable (at least 2) - pinned as the floor 2 with the form cells riding consts; Lolth and Eadro the two dual prints, the drow paren minus 2 and the amorphous minus 6)",
+    "The alternate armor class cells (only the two dual prints carry one: Lolth the dark elf paren, Eadro the amorphous blob)",
+    "The hit point cells (Moradin 400 the high, Garl and Maglubiyet and Yondalla and Gruumsh 350, Lolth 66 the low - her high AC does the protecting)",
+    "The primary move cells (Skerrit prints Variable - 0; Lolth the 1-inch web walk of the spider print; Sekolah the 36-inch swim)",
+    "The secondary move cells (the duals: Corellon 15/18, Sashelas and Semuanya and Eadro the 12/24s, Lolth the 9-inch web strand rate)",
+    "The attack count cells (Garl and Yondalla the 3/2 prints; Vaprak 3; Eadro the 1 of the 1-or-8)",
+    "The alternate-attack cells (Hruggek the 2 of the 1-or-2 claw pair; Garl and Yondalla the 3/2 halves; Eadro the 8 water-whips)",
+    "The magic resistance cells (Corellon 95 the high, Maglubiyet and Skoraeus and Sekolah the 50s, Laogzed 29 the low; Sashelas prints Standard (out of water) - 0 with the 100 percent underwater cell riding a const)",
+    "The size inch cells (Sekolah the 35-foot shark 420, Skoraeus 360, Blibdoolpoolp 240, Moradin 240, Vaprak 180, Grolantor 300; the two fraction cells Yondalla 4 1/2 foot 54 and Kurtulmak 5 1/2 foot 66; Lolth prints L (M) and Rillifane See below - both 0 sentinels)"
+   ]
+  },
+  {
+   "tag": "nhgCls",
+   "name": "the class grid",
+   "count": "nhgClsRows",
+   "cols": [
+    "nhgClsCleric",
+    "nhgClsDruid",
+    "nhgClsFighterLo",
+    "nhgClsFighterHi",
+    "nhgClsRanger",
+    "nhgClsMagUser",
+    "nhgClsIllus",
+    "nhgClsThief",
+    "nhgClsAssassin",
+    "nhgClsMonk",
+    "nhgClsBard"
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     15,
+     0,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     14,
+     14,
+     16,
+     0,
+     0,
+     0,
+     10,
+     0,
+     0,
+     0,
+     9
+    ],
+    [
+     15,
+     14,
+     20,
+     0,
+     0,
+     19,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     13,
+     13,
+     0,
+     0,
+     20,
+     20,
+     20,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     19,
+     0,
+     15,
+     0,
+     0,
+     12,
+     12,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     99,
+     99,
+     16,
+     0,
+     0,
+     99,
+     99,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     14,
+     14,
+     0,
+     0,
+     15,
+     12,
+     12,
+     0,
+     0,
+     10,
+     10
+    ],
+    [
+     10,
+     0,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     16,
+     0,
+     0,
+     12,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     16,
+     0,
+     0,
+     0,
+     6,
+     0,
+     10,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     10,
+     0,
+     0,
+     0,
+     16,
+     20,
+     0,
+     0,
+     8
+    ],
+    [
+     12,
+     12,
+     10,
+     0,
+     0,
+     0,
+     25,
+     15,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     12,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     15,
+     0,
+     0,
+     20,
+     0,
+     0,
+     15,
+     0,
+     0
+    ],
+    [
+     13,
+     13,
+     16,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     16,
+     0,
+     0,
+     6,
+     0,
+     0,
+     8,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The cleric levels (Eadro 20 the high, Sashelas 19; Lolth prints See below - the 99 pair with the drow 16th riding a const; Gruumsh and Laogzed the destructive-only and harmful-only prints ride bools)",
+    "The druid levels (the in-each pairs: Skerrit 14, Moradin 14, Rillifane 14, Semuanya 13, Yondalla 12)",
+    "The fighter level cells (Moradin 20 and Corellon the 20th ranger; Garl 10, Yondalla 10; the twelve As 16+ HD monster cells pin 16 - the as-monster-HD reading, not a fighter level)",
+    "The paladin level cells (none printed this section - all 0)",
+    "The ranger levels (Corellon the Ranger Lord 20, Rillifane 15)",
+    "The magic-user levels (Moradin 19, Blibdoolpoolp 20, Skoraeus and Semuanya 12 and 15, Gruumsh 6; Lolth the 99 pair with the drow 14th riding a const; Sashelas prints Standard MR - the MU 12 is clean)",
+    "The illusionist levels (Garl 16, Yondalla 25 the high, Maglubiyet 6, Skerrit 10; the in-each pairs Corellon 20, Sashelas 12, Rillifane 12; Lolth the 99 pair)",
+    "The thief levels (Garl 20 the master thief, Yondalla 15)",
+    "The assassin levels (Blibdoolpoolp 15, Kurtulmak 12, Maglubiyet 10, Gruumsh 8)",
+    "The monk levels (none printed this section - all 0)",
+    "The bard levels (Corellon 15, Skerrit 9, Sashelas 10, Garl 8; the Rillifane M/B 10 in-each pair)"
+   ]
+  },
+  {
+   "tag": "nhgAbi",
+   "name": "the ability grid",
+   "count": "nhgAbiRows",
+   "cols": [
+    "nhgAbiStr",
+    "nhgAbiStrHit",
+    "nhgAbiStrDmg",
+    "nhgAbiInt",
+    "nhgAbiWis",
+    "nhgAbiDex",
+    "nhgAbiCon",
+    "nhgAbiCha",
+    "nhgAbiPsi"
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     23,
+     5,
+     11,
+     17,
+     8,
+     0,
+     24,
+     7,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     19,
+     17,
+     23,
+     24,
+     21,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     23,
+     20,
+     21,
+     25,
+     19,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     25,
+     25,
+     25,
+     21,
+     25,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     20,
+     18,
+     21,
+     21,
+     23,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     21,
+     16,
+     21,
+     21,
+     3,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     23,
+     19,
+     25,
+     21,
+     24,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     14,
+     10,
+     19,
+     20,
+     16,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     19,
+     20,
+     19,
+     25,
+     17,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     19,
+     17,
+     20,
+     22,
+     -2,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     23,
+     22,
+     24,
+     22,
+     24,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     25,
+     25,
+     25,
+     23,
+     22,
+     0
+    ],
+    [
+     22,
+     4,
+     10,
+     19,
+     9,
+     19,
+     19,
+     19,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     20,
+     10,
+     21,
+     23,
+     11,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     20,
+     19,
+     20,
+     22,
+     7,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     22,
+     18,
+     22,
+     21,
+     19,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     18,
+     12,
+     17,
+     19,
+     -1,
+     0
+    ],
+    [
+     22,
+     4,
+     10,
+     19,
+     18,
+     23,
+     24,
+     8,
+     0
+    ],
+    [
+     25,
+     0,
+     0,
+     18,
+     18,
+     19,
+     25,
+     16,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     18,
+     17,
+     19,
+     19,
+     -2,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (Sekolah the bare 25 with no bracket; the fold-swap pair resolved by geometry: Moradin 25(+7,+14) and Corellon 21(+4,+9))",
+    "The strength hit bonuses (Moradin 25 (+7,+14); Corellon 21 (+4,+9))",
+    "The strength damage bonuses (Hruggek 23 (+5,+11); Vaprak 25 (+7,+14); Sekolah 0 - the bare S: 25 print)",
+    "The intelligence cells (Corellon 25, Yondalla 25, Garl 23; Kurtulmak 19)",
+    "The wisdom cells (Vaprak the 12-vs-18 divergence: the 2nd print 12 pinned, the L&L 18 noted; Kurtulmak 9 the low, Blibdoolpoolp 10, Grolantor 10)",
+    "The dexterity cells (Hruggek dex not printed - the tsv geometry shows the bare 36px inter-cell gap between W and C; Rillifane 25, Corellon 25, Yondalla 25)",
+    "The constitution cells (Moradin 25, Sekolah 25; Lolth 21)",
+    "The charisma cells (the negatives: Maglubiyet -2, Laogzed -2, Vaprak -1; Lolth 3 with the drow-form 23 riding a const; Gruumsh 8, Laogzed and Maglubiyet the worshiper parens ride consts)",
+    "The psionic ability cells (none printed with a score - the Lolth See below rides consts and bools)"
+   ]
+  },
+  {
+   "tag": "nhgRos",
+   "name": "the roster grid",
+   "count": "nhgRosRows",
+   "cols": [
+    "nhgRosOrd",
+    "nhgRosPage",
+    "nhgRosAlign",
+    "nhgRosRank",
+    "nhgRosPsiClass",
+    "nhgRosPlane",
+    "nhgRosDmgFixed",
+    "nhgRosInEach"
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     0,
+     105,
+     8,
+     0,
+     0,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     105,
+     4,
+     0,
+     5,
+     2,
+     0,
+     1
+    ],
+    [
+     2,
+     106,
+     0,
+     1,
+     6,
+     3,
+     1,
+     0
+    ],
+    [
+     3,
+     106,
+     2,
+     1,
+     1,
+     4,
+     1,
+     1
+    ],
+    [
+     4,
+     107,
+     2,
+     0,
+     3,
+     4,
+     1,
+     1
+    ],
+    [
+     5,
+     107,
+     8,
+     0,
+     0,
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     108,
+     2,
+     0,
+     1,
+     4,
+     0,
+     1
+    ],
+    [
+     7,
+     108,
+     8,
+     0,
+     6,
+     6,
+     1,
+     0
+    ],
+    [
+     8,
+     108,
+     4,
+     0,
+     6,
+     9,
+     1,
+     0
+    ],
+    [
+     9,
+     109,
+     6,
+     1,
+     6,
+     7,
+     1,
+     0
+    ],
+    [
+     10,
+     109,
+     0,
+     1,
+     0,
+     8,
+     1,
+     0
+    ],
+    [
+     11,
+     109,
+     0,
+     1,
+     0,
+     3,
+     0,
+     1
+    ],
+    [
+     12,
+     110,
+     6,
+     0,
+     6,
+     7,
+     1,
+     0
+    ],
+    [
+     13,
+     110,
+     7,
+     0,
+     3,
+     11,
+     1,
+     0
+    ],
+    [
+     14,
+     111,
+     4,
+     0,
+     2,
+     10,
+     1,
+     1
+    ],
+    [
+     15,
+     111,
+     4,
+     0,
+     2,
+     10,
+     1,
+     0
+    ],
+    [
+     16,
+     111,
+     8,
+     3,
+     6,
+     5,
+     1,
+     0
+    ],
+    [
+     17,
+     112,
+     6,
+     1,
+     5,
+     7,
+     1,
+     0
+    ],
+    [
+     18,
+     112,
+     6,
+     0,
+     1,
+     7,
+     1,
+     0
+    ],
+    [
+     19,
+     112,
+     8,
+     3,
+     0,
+     5,
+     1,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinals 0-19 in print order",
+    "The print pages 105-112",
+    "The alignment codes (0 LG 2 CG 4 N 6 LE 7 NE 8 CE; Skerrit N-tending-CG, Blibdoolpoolp NE-chaotic, Semuanya and Eadro the pure neutrals)",
+    "The rank codes (0 lesser 1 greater 3 demigod; the six greater and the two demigods)",
+    "The psionic class cells (I Corellon, Rillifane, Sekolah; II Semuanya, Eadro; III Sashelas, Blibdoolpoolp; V Skerrit, Gruumsh; VI Moradin, Grolantor, Skoraeus, Maglubiyet, Kurtulmak, Vaprak; 0 = Nil or See below)",
+    "The plane codes (1 Pandemonium, 2 Happy Hunting Grounds, 3 Seven Heavens, 4 Olympus, 5 Abyss, 6 Tarterus, 7 Nine Hells, 8 Twin Paradises, 9 Prime Material, 10 Concordant Opposition, 11 Elemental Plane of Water)",
+    "The printed-damage flags (seventeen rows; Skerrit and Rillifane and Yondalla the Variable and See below and by-weapon rows carry 0)",
+    "The in-each flags (the six rows printing an Nth-level-in-each pair: Skerrit, Corellon, Sashelas, Rillifane, Yondalla, Semuanya)"
+   ]
+  }
+ ],
+ "header_sections": {
+  "the shaman doctrine": [
+   {
+    "kind": "const",
+    "name": "nhgRound"
+   },
+   {
+    "kind": "const",
+    "name": "nhgPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "nhgPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "nhgShamanHpLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgShamanHpHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHdBetterLevels"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgShamanHdLadder"
+   },
+   {
+    "kind": "const",
+    "name": "nhgWitchHpLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgWitchHpHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgWitchDoctorPaired"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgWitchTandemBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGnollBaseHd"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGnollBonusDice"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGnollFightsHd"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGoblinDice"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGoblinBonusLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGoblinBonusHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGoblinFightsHd"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGoblinHdAltPrint"
+   },
+   {
+    "kind": "const",
+    "name": "nhgOrcDice"
+   },
+   {
+    "kind": "const",
+    "name": "nhgOrcBonusDice"
+   },
+   {
+    "kind": "const",
+    "name": "nhgOrcBonusHp"
+   },
+   {
+    "kind": "const",
+    "name": "nhgOrcFightsHd"
+   },
+   {
+    "kind": "const",
+    "name": "nhgOrcWitchLevel"
+   },
+   {
+    "kind": "const",
+    "name": "nhgNoteLesserGods"
+   },
+   {
+    "kind": "const",
+    "name": "nhgNoteMMCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgNoteFFCount"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgNoteMMLesserGods"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgNoteLolthDetailed"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGnollShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgIxitxachitlClericMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgDrowClericMax"
+   }
+  ],
+  "the shaman level caps": [
+   {
+    "kind": "const",
+    "name": "nhgBugbearShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgCentaurShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgEttinShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHillGiantShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgFireGiantShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgFrostGiantShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgStoneGiantShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgKoboldShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgKuoToanClericMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLizardManShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLocathahShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgMermanClericMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgOgreTrollShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgOrcShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSahuaginClericMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgTroglodyteShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGoblinShamanMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgDwarfClericMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgElfClericMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgAquaticElfClericMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGnomeClericMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHalflingClericMax"
+   },
+   {
+    "kind": "const",
+    "name": "nhgWoodElfClericMax"
+   }
+  ],
+  "Hruggek": [
+   {
+    "kind": "const",
+    "name": "nhgHruggekMorningstarPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHruggekMorningstarLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHruggekMorningstarHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHruggekClawLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHruggekClawHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHruggekWeaponToHit"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHruggekChaToBugbears"
+   },
+   {
+    "kind": "const",
+    "name": "nhgHruggekPantheonSize"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgHruggekBloodOfferings"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgHruggekCaveHeads"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgHruggekMostPowerful"
+   }
+  ],
+  "Skerrit the Forester": [
+   {
+    "kind": "const",
+    "name": "nhgSkerritACFloor"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkerritSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkerritSpearLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkerritSpearHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkerritFormAC"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkerritFormMove"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkerritForestToHit"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSkerritAnyForestForm"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSkerritPossessPlants"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSkerritForestDefense"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSkerritFullMoonDances"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSkerritSatyrsNoClerics"
+   }
+  ],
+  "Moradin the Soul Forger": [
+   {
+    "kind": "const",
+    "name": "nhgMoradinHammerPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nhgMoradinHammerLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgMoradinHammerHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgMoradinChaToDwarves"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgMoradinForgedDwarves"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgMoradinHammerReturns"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgMoradinArmorUnremovable"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgMoradinForgedWeaponsCannotHarm"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgMoradinHearthForge"
+   }
+  ],
+  "Corellon Larethian": [
+   {
+    "kind": "const",
+    "name": "nhgCorellonBowLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgCorellonBowHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgCorellonSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nhgCorellonSwordLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgCorellonSwordHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgCorellonSwordBurnLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgCorellonSwordBurnHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgCorellonBowNeverMisses"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgCorellonSwordDetectsDanger"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgCorellonBanishedLolth"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgCorellonElvesFromBlood"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgCorellonQuarterMoonTalisman"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgCorellonNoShrines"
+   }
+  ],
+  "Deep Sashelas": [
+   {
+    "kind": "const",
+    "name": "nhgSashelasDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSashelasDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSashelasDolphins"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSashelasWaterMR"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSashelasDoubleDamageUnderwater"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSashelasFullWaterMR"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSashelasDolphinMaster"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSashelasSharkHunts"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSashelasTideCeremonies"
+   }
+  ],
+  "Lolth": [
+   {
+    "kind": "const",
+    "name": "nhgLolthDrowMove"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthWebRange"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthWebDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthWebDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthBiteLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthBiteHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthPoisonSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthHealsPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthPoisonOnePct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthPoisonTwoPct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthPoisonThreePct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthGatePct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthSummonLargePct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthSummonHugePct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthSummonGiantPct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthSummonPhasePct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthHolyWaterSplash"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthHolyWaterLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthHolyWaterHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthSightRange"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthDrowClericLevel"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthDrowMagUserLevel"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthDisciplineLevel"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLolthChaDrow"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthSpiderAndDrowForms"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthConverseWithSpiders"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthSpiderPowersList"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthTwicePerDayPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthSilverImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthHalfDamageForms"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthPsionicLostInSpiderForm"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthDevBodyEquilibrium"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthDevClairvoyance"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthDevDomination"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthSciDimensionWalking"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthSciMindBar"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthSciMolecularRearrangement"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthSciProbabilityTravel"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLolthHolyWaterSusceptible"
+   }
+  ],
+  "Rillifane Rallathil": [
+   {
+    "kind": "bool",
+    "name": "nhgRillifaneArrowsAlwaysSlay"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgRillifaneBarkArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgRillifaneRootsMingle"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgRillifaneHuntsSportEnemies"
+   }
+  ],
+  "Grolantor": [
+   {
+    "kind": "const",
+    "name": "nhgGrolantorClubLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGrolantorClubHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGrolantorPersecutesSmaller"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGrolantorDwarfbeardBelts"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGrolantorEttinWorship"
+   }
+  ],
+  "Skoraeus Stonebones": [
+   {
+    "kind": "const",
+    "name": "nhgSkoraeusFistLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkoraeusFistHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkoraeusRegen"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkoraeusEarthquakeLevel"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkoraeusSummonLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSkoraeusSummonHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSkoraeusNeverAboveGround"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSkoraeusListensToRock"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSkoraeusEarthquakePerRound"
+   }
+  ],
+  "Maglubiyet": [
+   {
+    "kind": "const",
+    "name": "nhgMaglubiyetDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgMaglubiyetDmgHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgMaglubiyetSpiritArmies"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgMaglubiyetNewMoonSacrifices"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgMaglubiyetAlwaysWinsClaim"
+   }
+  ],
+  "Garl Glittergold": [
+   {
+    "kind": "const",
+    "name": "nhgGarlAxePlus"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGarlAxeLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGarlAxeHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGarlArumdinaIntelligent"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGarlArumdinaHeals"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGarlKoboldCavernCollapse"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGarlWarLeader"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGarlGoldSacrifices"
+   }
+  ],
+  "Yondalla": [
+   {
+    "kind": "const",
+    "name": "nhgYondallaWitherCharges"
+   },
+   {
+    "kind": "const",
+    "name": "nhgYondallaWitherLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgYondallaWitherHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgYondallaWitherAge"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgYondallaProviderAspect"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgYondallaProtectorAspect"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgYondallaWitheringNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgYondallaSafeday"
+   }
+  ],
+  "Kurtulmak": [
+   {
+    "kind": "const",
+    "name": "nhgKurtulmakSmellMiles"
+   },
+   {
+    "kind": "const",
+    "name": "nhgKurtulmakFearFeet"
+   },
+   {
+    "kind": "const",
+    "name": "nhgKurtulmakFearSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "nhgKurtulmakSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nhgKurtulmakSpearLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgKurtulmakSpearHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgKurtulmakTailLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgKurtulmakTailHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgKurtulmakSmellsGnomes"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgKurtulmakFearAura"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgKurtulmakTailPoison"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgKurtulmakOrangeRobes"
+   }
+  ],
+  "Blibdoolpoolp": [
+   {
+    "kind": "const",
+    "name": "nhgBlibClawLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibClawHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibGazeSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibSummonLobsterLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibSummonLobsterHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibSummonElementalLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibSummonElementalHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibElementalHD"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibGemFavorPct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibGemFavorPerGp"
+   },
+   {
+    "kind": "const",
+    "name": "nhgBlibPearlPerGp"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgBlibLobsterSacrifices"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgBlibGazeInsanity"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgBlibDrowningSacrifices"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgBlibHatesSurfaceRaces"
+   }
+  ],
+  "Semuanya": [
+   {
+    "kind": "const",
+    "name": "nhgSemuanyaClubLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSemuanyaClubHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSemuanyaSummonLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSemuanyaSummonHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSemuanyaRegen"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSemuanyaChaToLizardMen"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSemuanyaCommandsLizards"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSemuanyaTaciturn"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSemuanyaSurvivalCreed"
+   }
+  ],
+  "Eadro": [
+   {
+    "kind": "const",
+    "name": "nhgEadroWhipCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgEadroWhipLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgEadroWhipHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgEadroSummonLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgEadroSummonHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgEadroElementalHD"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgEadroLivingWater"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgEadroAmorphousBlob"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgEadroSpiritsAsFish"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgEadroSeaSpaceRivalry"
+   }
+  ],
+  "Vaprak": [
+   {
+    "kind": "const",
+    "name": "nhgVaprakClawLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgVaprakClawHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgVaprakBiteLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgVaprakBiteHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgVaprakRegen"
+   },
+   {
+    "kind": "const",
+    "name": "nhgVaprakBerserkPct"
+   },
+   {
+    "kind": "const",
+    "name": "nhgVaprakBerserkHit"
+   },
+   {
+    "kind": "const",
+    "name": "nhgVaprakBerserkAC"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgVaprakTearsPrey"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgVaprakAlwaysHungry"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgVaprakBerserkRage"
+   }
+  ],
+  "Gruumsh": [
+   {
+    "kind": "const",
+    "name": "nhgGruumshSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGruumshSpearLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGruumshSpearHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGruumshParalysisSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGruumshChaToOrcs"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGruumshOneEye"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGruumshDestructiveSpellsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGruumshPlucksLeftEye"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGruumshBloodWorship"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgGruumshSpiritOrcArmies"
+   }
+  ],
+  "Sekolah": [
+   {
+    "kind": "const",
+    "name": "nhgSekolahBiteLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSekolahBiteHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSekolahSwallowRoll"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSekolahHolySharksLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSekolahHolySharksHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSekolahSwallowWhole"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSekolahFeedsWeakAged"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgSekolahHolySharks"
+   }
+  ],
+  "Laogzed": [
+   {
+    "kind": "const",
+    "name": "nhgLaogzedAcidLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLaogzedAcidHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLaogzedAcidSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLaogzedBiteLow"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLaogzedBiteHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLaogzedAcidSkin"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLaogzedStinkingCloud"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLaogzedHarmfulSpellsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "nhgLaogzedSheddingOfSkins"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ],
+  "the R864 census": [
+   {
+    "kind": "const",
+    "name": "nhgBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "nhgCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "nhgClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "nhgAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "nhgRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "nhgGreaterCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgLesserCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgDemigodCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgNineHellsCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgOlympusCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgAbyssCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSevenHeavensCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgConcordantCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgAsMonsterHDCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgPsionicRowCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgPsiNilCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgInEachCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgFractionSizeCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgDualACCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgDualMoveCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgDmgFixedCount"
+   },
+   {
+    "kind": "const",
+    "name": "nhgSeeBelowCount"
+   }
+  ]
+ },
+ "regtest": "regtest.cpp",
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the twenty beings, the rank and plane counts)",
+   "expr": "m['nhgTableCount']() != 4 or m['nhgBeingCount']() != 20 or m['nhgCbtRows']() != 20 or m['nhgClsRows']() != 20 or m['nhgAbiRows']() != 20 or m['nhgRosRows']() != 20 or m['nhgGreaterCount']() != 6 or m['nhgLesserCount']() != 12 or m['nhgDemigodCount']() != 2 or m['nhgPlaneCount']() != 11 or m['nhgNineHellsCount']() != 4 or m['nhgOlympusCount']() != 3 or m['nhgAbyssCount']() != 3 or m['nhgSevenHeavensCount']() != 2 or m['nhgConcordantCount']() != 2 or m['nhgAsMonsterHDCount']() != 12 or m['nhgRegistryFloor']() != 995 or m['nhgChainCount']() != 0"
+  },
+  {
+   "note": "the print walk spans pp. 105-112 and the roster ordinals run 0-19 in print order",
+   "expr": "m['nhgPrintStart']() != 105 or m['nhgPrintEnd']() != 112 or m['nhgRosOrd'](0) != 0 or m['nhgRosOrd'](19) != 19 or m['nhgRosPage'](0) != 105 or m['nhgRosPage'](19) != 112 or m['nhgRosPage'](2) != 106 or m['nhgRosPage'](4) != 107 or m['nhgRosPage'](7) != 108 or m['nhgRosPage'](9) != 109 or m['nhgRosPage'](12) != 110 or m['nhgRosPage'](14) != 111 or m['nhgRosRank'](2) != 1 or m['nhgRosRank'](16) != 3 or m['nhgRosRank'](0) != 0"
+  },
+  {
+   "note": "the MORADIN-CORELLON FOLD SWAP resolved by tsv geometry: Moradin S 25 (+7,+14) and Corellon S 21 (+4,+9)",
+   "expr": "m['nhgAbiStr'](2) != 25 or m['nhgAbiStrHit'](2) != 7 or m['nhgAbiStrDmg'](2) != 14 or m['nhgAbiInt'](2) != 23 or m['nhgAbiWis'](2) != 20 or m['nhgAbiDex'](2) != 21 or m['nhgAbiCon'](2) != 25 or m['nhgAbiCha'](2) != 19 or m['nhgMoradinChaToDwarves']() != 25 or m['nhgAbiStr'](3) != 21 or m['nhgAbiStrHit'](3) != 4 or m['nhgAbiStrDmg'](3) != 9 or m['nhgAbiInt'](3) != 25 or m['nhgAbiWis'](3) != 25 or m['nhgAbiDex'](3) != 25 or m['nhgAbiCon'](3) != 21 or m['nhgAbiCha'](3) != 25"
+  },
+  {
+   "note": "Moradin the Soul Forger: the minus 9 armor class, the 400 hit points, the +5 hammer, the psionic VI",
+   "expr": "m['nhgCbtAC'](2) != -9 or m['nhgCbtHP'](2) != 400 or m['nhgCbtAtN'](2) != 2 or m['nhgCbtMR'](2) != 60 or m['nhgCbtSizeIn'](2) != 240 or m['nhgClsCleric'](2) != 15 or m['nhgClsDruid'](2) != 14 or m['nhgClsFighterLo'](2) != 20 or m['nhgClsMagUser'](2) != 19 or m['nhgRosPsiClass'](2) != 6 or m['nhgRosPlane'](2) != 3 or m['nhgMoradinHammerPlus']() != 5 or m['nhgMoradinHammerHigh']() != 40"
+  },
+  {
+   "note": "Corellon Larethian the Ranger Lord: the 15/18 dual move, the 95 percent resistance, the in-each triple",
+   "expr": "m['nhgCbtAC'](3) != -4 or m['nhgCbtMove'](3) != 15 or m['nhgCbtMoveAlt'](3) != 18 or m['nhgCbtHP'](3) != 350 or m['nhgCbtMR'](3) != 95 or m['nhgCbtSizeIn'](3) != 84 or m['nhgClsCleric'](3) != 13 or m['nhgClsRanger'](3) != 20 or m['nhgClsMagUser'](3) != 20 or m['nhgClsIllus'](3) != 20 or m['nhgClsBard'](3) != 15 or m['nhgRosInEach'](3) != 1 or m['nhgCorellonSwordPlus']() != 5 or m['nhgCorellonBowHigh']() != 20"
+  },
+  {
+   "note": "Lolth the demon queen: the -10 (-2) print, the 1/9 web walk, the 66 hit points, the See below 99 pairs",
+   "expr": "m['nhgCbtAC'](5) != -10 or m['nhgCbtACAlt'](5) != -2 or m['nhgCbtHP'](5) != 66 or m['nhgCbtMove'](5) != 1 or m['nhgCbtMoveAlt'](5) != 9 or m['nhgCbtAtN'](5) != 1 or m['nhgCbtAtD'](5) != 1 or m['nhgCbtMR'](5) != 70 or m['nhgCbtSizeIn'](5) != 0 or m['nhgClsCleric'](5) != 99 or m['nhgClsDruid'](5) != 99 or m['nhgClsMagUser'](5) != 99 or m['nhgClsIllus'](5) != 99 or m['nhgAbiCha'](5) != 3 or m['nhgLolthDrowMove']() != 15 or m['nhgLolthDrowClericLevel']() != 16 or m['nhgLolthDrowMagUserLevel']() != 14 or m['nhgLolthChaDrow']() != 23 or m['nhgLolthHolyWaterHigh']() != 21 or m['nhgLolthGatePct']() != 66 or m['nhgLolthBiteHigh']() != 16"
+  },
+  {
+   "note": "the Lolth discipline walk: the three devotions and four sciences at the 16th level",
+   "expr": "m['nhgLolthDisciplineLevel']() != 16 or m['nhgLolthPoisonSaveMod']() != -4 or m['nhgLolthHealsPerDay']() != 3 or m['nhgLolthPoisonOnePct']() != 45 or m['nhgLolthPoisonTwoPct']() != 35 or m['nhgLolthPoisonThreePct']() != 20 or m['nhgLolthSummonLargePct']() != 20 or m['nhgLolthSummonHugePct']() != 30 or m['nhgLolthSummonGiantPct']() != 40 or m['nhgLolthSummonPhasePct']() != 10 or m['nhgLolthHolyWaterSplash']() != 6 or m['nhgLolthSightRange']() != 120 or m['nhgLolthWebRange']() != 30 or m['nhgLolthWebDmgHigh']() != 4"
+  },
+  {
+   "note": "Skerrit the Variable god: the at-least-2 floor, the zero sentinels, the centaur-form consts",
+   "expr": "m['nhgCbtAC'](1) != 2 or m['nhgCbtMove'](1) != 0 or m['nhgCbtAtN'](1) != 0 or m['nhgCbtSizeIn'](1) != 0 or m['nhgCbtHP'](1) != 290 or m['nhgCbtMR'](1) != 35 or m['nhgClsCleric'](1) != 14 or m['nhgClsDruid'](1) != 14 or m['nhgClsIllus'](1) != 10 or m['nhgClsBard'](1) != 9 or m['nhgRosPsiClass'](1) != 5 or m['nhgRosPlane'](1) != 2 or m['nhgSkerritACFloor']() != 2 or m['nhgSkerritFormAC']() != 2 or m['nhgSkerritFormMove']() != 21 or m['nhgSkerritForestToHit']() != -4 or m['nhgSkerritSpearPlus']() != 3 or m['nhgSkerritSpearHigh']() != 20"
+  },
+  {
+   "note": "Deep Sashelas: the Standard-out-of-water resistance pinned 0 with the 100 percent underwater const",
+   "expr": "m['nhgCbtAC'](4) != -3 or m['nhgCbtMove'](4) != 12 or m['nhgCbtMoveAlt'](4) != 24 or m['nhgCbtHP'](4) != 300 or m['nhgCbtMR'](4) != 0 or m['nhgCbtSizeIn'](4) != 84 or m['nhgClsCleric'](4) != 19 or m['nhgClsFighterLo'](4) != 15 or m['nhgClsMagUser'](4) != 12 or m['nhgClsIllus'](4) != 12 or m['nhgClsBard'](4) != 10 or m['nhgRosPsiClass'](4) != 3 or m['nhgSashelasWaterMR']() != 100 or m['nhgSashelasDolphins']() != 20 or m['nhgAbiDex'](4) != 21 or m['nhgAbiCha'](4) != 23"
+  },
+  {
+   "note": "the fraction size cells: Yondalla 4 1/2 foot = 54 and Kurtulmak 5 1/2 foot = 66",
+   "expr": "m['nhgCbtSizeIn'](11) != 54 or m['nhgCbtSizeIn'](12) != 66 or m['nhgFractionSizeCount']() != 2 or m['nhgCbtAtN'](11) != 3 or m['nhgCbtAtD'](11) != 2 or m['nhgCbtAC'](11) != 2 or m['nhgCbtMR'](11) != 75 or m['nhgClsIllus'](11) != 25 or m['nhgClsThief'](11) != 15 or m['nhgClsDruid'](11) != 12 or m['nhgCbtAC'](12) != 0 or m['nhgCbtHP'](12) != 219 or m['nhgCbtMR'](12) != 55 or m['nhgClsAssassin'](12) != 12 or m['nhgRosPsiClass'](12) != 6"
+  },
+  {
+   "note": "the KURTULMAK-BLIBDOOLPOOLP TAIL SWAP resolved by geometry: the assassin, psionic and ability lines",
+   "expr": "m['nhgAbiStr'](12) != 22 or m['nhgAbiStrHit'](12) != 4 or m['nhgAbiStrDmg'](12) != 10 or m['nhgAbiInt'](12) != 19 or m['nhgAbiWis'](12) != 9 or m['nhgAbiDex'](12) != 19 or m['nhgAbiCon'](12) != 19 or m['nhgAbiCha'](12) != 19 or m['nhgKurtulmakSpearPlus']() != 4 or m['nhgKurtulmakSpearHigh']() != 24 or m['nhgKurtulmakTailHigh']() != 6 or m['nhgKurtulmakFearFeet']() != 10 or m['nhgAbiStr'](13) != 21 or m['nhgAbiInt'](13) != 20 or m['nhgAbiWis'](13) != 10 or m['nhgAbiDex'](13) != 21 or m['nhgAbiCon'](13) != 23 or m['nhgAbiCha'](13) != 11 or m['nhgClsAssassin'](13) != 15 or m['nhgClsMagUser'](13) != 20 or m['nhgRosPsiClass'](13) != 3 or m['nhgRosPlane'](13) != 11"
+  },
+  {
+   "note": "Blibdoolpoolp the Sea Mother: the gaze insanity, the summons and the gem-favor calculus",
+   "expr": "m['nhgCbtAC'](13) != -1 or m['nhgCbtMoveAlt'](13) != 48 or m['nhgCbtHP'](13) != 310 or m['nhgCbtSizeIn'](13) != 240 or m['nhgBlibClawHigh']() != 24 or m['nhgBlibGazeSaveMod']() != -4 or m['nhgBlibSummonLobsterLow']() != 3 or m['nhgBlibSummonLobsterHigh']() != 30 or m['nhgBlibSummonElementalHigh']() != 10 or m['nhgBlibElementalHD']() != 16 or m['nhgBlibGemFavorPerGp']() != 1000 or m['nhgBlibPearlPerGp']() != 500 or m['nhgKuoToanClericMax']() != 12"
+  },
+  {
+   "note": "Hruggek and the not-printed dex cell: the geometry catch of the bare inter-cell gap",
+   "expr": "m['nhgCbtAC'](0) != 0 or m['nhgCbtHP'](0) != 221 or m['nhgCbtAtN'](0) != 1 or m['nhgCbtAtD'](0) != 2 or m['nhgCbtMR'](0) != 25 or m['nhgCbtSizeIn'](0) != 144 or m['nhgClsCleric'](0) != 15 or m['nhgClsFighterLo'](0) != 16 or m['nhgAbiStr'](0) != 23 or m['nhgAbiStrHit'](0) != 5 or m['nhgAbiStrDmg'](0) != 11 or m['nhgAbiInt'](0) != 17 or m['nhgAbiWis'](0) != 8 or m['nhgAbiDex'](0) != 0 or m['nhgAbiCon'](0) != 24 or m['nhgAbiCha'](0) != 7 or m['nhgHruggekChaToBugbears']() != 23 or m['nhgHruggekMorningstarHigh']() != 30 or m['nhgHruggekClawHigh']() != 16"
+  },
+  {
+   "note": "the giant and goblinoid gods: Grolantor, Skoraeus, Maglubiyet and Gruumsh",
+   "expr": "m['nhgCbtAC'](7) != 0 or m['nhgCbtMove'](7) != 21 or m['nhgCbtHP'](7) != 259 or m['nhgCbtMR'](7) != 45 or m['nhgCbtSizeIn'](7) != 300 or m['nhgRosPlane'](7) != 6 or m['nhgGrolantorClubHigh']() != 40 or m['nhgCbtAC'](8) != 0 or m['nhgCbtHP'](8) != 380 or m['nhgCbtMR'](8) != 50 or m['nhgCbtSizeIn'](8) != 360 or m['nhgRosPlane'](8) != 9 or m['nhgSkoraeusFistHigh']() != 60 or m['nhgSkoraeusEarthquakeLevel']() != 30 or m['nhgCbtAC'](9) != -2 or m['nhgCbtHP'](9) != 350 or m['nhgCbtSizeIn'](9) != 132 or m['nhgAbiCha'](9) != -2 or m['nhgClsIllus'](9) != 6 or m['nhgClsAssassin'](9) != 10 or m['nhgRosPlane'](9) != 7 or m['nhgCbtAC'](17) != -1 or m['nhgCbtMR'](17) != 75 or m['nhgAbiCha'](17) != 8 or m['nhgGruumshSpearPlus']() != 5 or m['nhgGruumshChaToOrcs']() != 25 or m['nhgClsAssassin'](17) != 8"
+  },
+  {
+   "note": "Garl Glittergold and Yondalla: the 3/2 attack pairs, the Arumdina axe and the withering wave",
+   "expr": "m['nhgCbtAC'](10) != -2 or m['nhgCbtHP'](10) != 350 or m['nhgCbtAtN'](10) != 3 or m['nhgCbtAtD'](10) != 2 or m['nhgCbtMR'](10) != 25 or m['nhgCbtSizeIn'](10) != 48 or m['nhgClsThief'](10) != 20 or m['nhgClsIllus'](10) != 16 or m['nhgClsBard'](10) != 8 or m['nhgRosPlane'](10) != 8 or m['nhgGarlAxePlus']() != 5 or m['nhgGarlAxeHigh']() != 30 or m['nhgYondallaWitherCharges']() != 3 or m['nhgYondallaWitherLow']() != 2 or m['nhgYondallaWitherHigh']() != 5 or m['nhgYondallaWitherAge']() != 10"
+  },
+  {
+   "note": "the neutral water gods: Semuanya and Eadro on Concordant Opposition",
+   "expr": "m['nhgCbtAC'](14) != -4 or m['nhgCbtHP'](14) != 211 or m['nhgCbtMR'](14) != 78 or m['nhgCbtSizeIn'](14) != 144 or m['nhgAbiStr'](14) != 23 or m['nhgAbiCha'](14) != 7 or m['nhgSemuanyaChaToLizardMen']() != 25 or m['nhgSemuanyaRegen']() != 5 or m['nhgSemuanyaSummonHigh']() != 18 or m['nhgRosPlane'](14) != 10 or m['nhgCbtAC'](15) != 0 or m['nhgCbtACAlt'](15) != -6 or m['nhgCbtAtN'](15) != 1 or m['nhgCbtAtD'](15) != 8 or m['nhgCbtMR'](15) != 72 or m['nhgClsCleric'](15) != 20 or m['nhgEadroWhipCount']() != 8 or m['nhgEadroWhipHigh']() != 10 or m['nhgEadroSummonHigh']() != 8 or m['nhgEadroElementalHD']() != 16 or m['nhgRosPlane'](15) != 10"
+  },
+  {
+   "note": "Vaprak the Destroyer: the three claws, the regeneration 7 and the berserk calculus",
+   "expr": "m['nhgCbtAC'](16) != 0 or m['nhgCbtHP'](16) != 198 or m['nhgCbtAtN'](16) != 3 or m['nhgCbtMR'](16) != 50 or m['nhgCbtSizeIn'](16) != 180 or m['nhgAbiStr'](16) != 25 or m['nhgAbiWis'](16) != 12 or m['nhgAbiCha'](16) != -1 or m['nhgRosRank'](16) != 3 or m['nhgRosPlane'](16) != 5 or m['nhgVaprakRegen']() != 7 or m['nhgVaprakBerserkPct']() != 2 or m['nhgVaprakBerserkHit']() != 2 or m['nhgVaprakBerserkAC']() != -2 or m['nhgVaprakClawHigh']() != 20"
+  },
+  {
+   "note": "Sekolah and Laogzed: the shark swallow and the troglodyte acid skin",
+   "expr": "m['nhgCbtAC'](18) != 0 or m['nhgCbtMove'](18) != 36 or m['nhgCbtHP'](18) != 329 or m['nhgCbtMR'](18) != 47 or m['nhgCbtSizeIn'](18) != 420 or m['nhgAbiStr'](18) != 25 or m['nhgAbiStrHit'](18) != 0 or m['nhgAbiStrDmg'](18) != 0 or m['nhgAbiCha'](18) != 16 or m['nhgRosPsiClass'](18) != 1 or m['nhgSekolahBiteHigh']() != 60 or m['nhgSekolahSwallowRoll']() != 16 or m['nhgSekolahHolySharksHigh']() != 3 or m['nhgCbtMR'](19) != 29 or m['nhgCbtHP'](19) != 187 or m['nhgAbiCha'](19) != -2 or m['nhgRosRank'](19) != 3 or m['nhgLaogzedAcidHigh']() != 18 or m['nhgLaogzedAcidSaveMod']() != -4 or m['nhgLaogzedBiteHigh']() != 60"
+  },
+  {
+   "note": "the shaman doctrine of the intro: the hit dice ladder, the three examples and the NOTE list",
+   "expr": "m['nhgShamanHpLow']() != 1 or m['nhgShamanHpHigh']() != 4 or m['nhgWitchHpLow']() != 2 or m['nhgWitchHpHigh']() != 5 or m['nhgHdBetterLevels']() != 2 or m['nhgGnollBaseHd']() != 2 or m['nhgGnollBonusDice']() != 3 or m['nhgGnollFightsHd']() != 4 or m['nhgGoblinDice']() != 4 or m['nhgGoblinBonusHigh']() != 7 or m['nhgGoblinFightsHd']() != 3 or m['nhgOrcDice']() != 1 or m['nhgOrcBonusDice']() != 2 or m['nhgOrcBonusHp']() != 2 or m['nhgOrcFightsHd']() != 2 or m['nhgOrcWitchLevel']() != 3 or m['nhgNoteLesserGods']() != 13 or m['nhgNoteMMCount']() != 10 or m['nhgNoteFFCount']() != 3"
+  }
+ ],
+ "table_checks": [],
+ "data_files": [
+  {
+   "path": "doc/data/ddg_nonhuman_crossrefs.txt",
+   "content": "DDG Nonhumans' Deities cross references (print pp. 105-112,\nthe 2nd printing). The NOTE list of beings treated as lesser gods\nthough they very rarely have human worshipers, plus the section's\nwalk-forward worship pointers (all detailed in the MONSTER MANUAL\nor FIEND FOLIO except Lolth, whose stat block rides this section).\n\nMONSTER MANUAL lesser gods (the NOTE list)\n  Demon:   Demogorgon, Juiblex, Orcus, Yeenoghu\n  Devil:   Asmodeus, Baalzebul, Dispater, Geryon\n  Dragon:  Bahamut, Tiamat\n\nFIEND FOLIO lesser gods (the NOTE list)\n  Demon:   Lolth (detailed in this volume)\n  Elemental Princes of Evil (unnamed here)\n  Slaad:   Ssendam, Ygorl\n\nWorship pointers of the section (race -> deity, shaman/cleric cap)\n  bugbears      -> Hruggek (5th)\n  centaurs      -> Skerrit (3rd); satyrs too, but no clerical members\n  dwarves       -> Moradin (NPC clerics 7th)\n  elves         -> Corellon Larethian (NPC clerics 7th)\n  elves, aquatic-> Deep Sashelas (clerics 7th)\n  elves, drow   -> Lolth (female WIS 18 clerics to 14th)\n  elves, wood   -> Rillifane Rallathil (clerics of both cults 7th)\n  ettins        -> Grolantor (3rd, the two-headed aspect)\n  giants, fire  -> Surtur (7th; the cured steel head talisman)\n  giants, frost -> Thrym (7th; the frozen sacrifices)\n  giants, hill  -> Grolantor (7th)\n  giants, stone -> Skoraeus Stonebones (7th)\n  gnolls        -> Yeenoghu (5th, the triple flail)\n  gnomes        -> Garl Glittergold (NPC clerics 7th)\n  goblins       -> Maglubiyet (7th)\n  halflings     -> Yondalla (NPC clerics 5th)\n  hobgoblins    -> Maglubiyet (7th, see GOBLINS)\n  ixitxachitl   -> Demogorgon (8th)\n  kobolds       -> Kurtulmak (5th)\n  kuo-toa       -> Blibdoolpoolp (clerics 12th)\n  lizard men    -> Semuanya (7th)\n  locathah      -> Eadro (shamans 3rd)\n  mermen        -> Eadro (clerics 5th)\n  ogres, trolls -> Vaprak (3rd)\n  orcs          -> Gruumsh (5th; pluck the left eye)\n  sahuagin      -> Sekolah (5th)\n  troglodytes   -> Laogzed (3rd)\n"
+  }
+ ],
+ "prev_seed_key": "- R863 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "- R863 LANDED 2026-10-26: commit f34a53247168a8fce37956671653d54e50128eb0",
+  "(pushed f21b8dc..f34a532, census 785 -> 786), THE NEHWON MYTHOS - the D&DG",
+  "walk round fifteen, print pp. 96-104: twenty-nine beings - the four heroes",
+  "(Fafhrd, the Gray Mouser, Movarl, Pulgh), the two wizards (Ningauble of the",
+  "Seven Eyes, Sheelba of the Eyeless Face), the two greater gods (Death, Kos),",
+  "the six lesser gods (the Gods of Trouble, Hate, the Nehwon Earth God, the Rat",
+  "God, the Red God, Tyaa), the five demigods (Aarth, the Gods of Lankhmar, Issek",
+  "of the Jug, the Spider God, Votishal) and ten monsters (Astral Wolf, Behemoth,",
+  "Bird of Tyaa, Cold Woman, Devourer, Nehwon Ghoul, Leviathan, Snow Serpent,",
+  "Salt Spider, Water Cobra) - plus the Lankhmar doctrine of the intro (the",
+  "Thieves Guild, the Slayers' Brotherhood, the Snow Witches, the Fire Sorcerers,",
+  "the gems, the Cults of the Beast, the Godsland) and the six outdoor encounter",
+  "tables of print p. 104 riding as the fifth grid (74 rows) plus the round's",
+  "data file doc/data/ ddg_nehwon_encounters.txt; prefix nhw (GitHub code search",
+  "clean: only camelCase ConTinhWeapon nhW substrings, no lowercase nhw token).",
+  "THE HEADLINE ADJUDICATIONS: the QUARTER-FOOT DECODE - the Mouser prints SIZE M",
+  "(5 1/4 foot), the walk's first quarter-cell, pinned 63 inches (the 1eonline",
+  "voice reads 5.25'); Aarth the half-foot 5 1/2 print pinned 66. The DIVERGENT",
+  "CELLS pinned by the 2nd-print extract with the L&L parity noted: Death AC -5",
+  "(L&L -4), the Gods of Trouble AC -2 (L&L -3, tsv-verified minus 2 at w22),",
+  "Votishal HP 344 (L&L 244, the token confirmed on-page), Tyaa AC the bare-dash",
+  "print pinned 0 (L&L -3, the w2 dash glyph) and Votishal AC the dash-minus",
+  "pinned -2 (the Surma dash-token precedent). The odd prints pinned as printed:",
+  "the Issek 12/12 dual move, Hate HP 0, the Hate See below MU/I pair 99/99 (the",
+  "egp Isis precedent), the Hate dash W/C/CH cells 0, Death Infinite move -1",
+  "sentinel, the bird of Tyaa 1/18 move split, Ningauble Nil attacks, Sheelba the",
+  "bare M (the R861 precedent), the Gods of Trouble Special MR 0 with the 30-foot",
+  "no-magic radius const, the Devourer Variable size 0. The monster XP romans",
+  "verified against both voices: III/90+3 astral wolf, VIII/4,000+20 behemoth,",
+  "II/30+1 bird, X/28,500 cold woman flat, II/50+3 ghoul, X/15,800+35 leviathan,",
+  "VII/2,050+14 snow serpent, III/105+3 salt spider, III/150+4 water cobra. The",
+  "encounter-table catches: the marsh Men-brigand 21-42 / Men-merchant 43-50 rows",
+  "restored from the fold-garbled Termux voice via the L&L transcription, and the",
+  "mountains overlap print (astral wolf 01-05, bird of Tyaa 03-06) pinned as",
+  "printed. The psionic pipes: class I of Death, the Gods of Trouble and the Rat",
+  "God, class V of the Gods of Lankhmar and Votishal, class VI of the Nehwon",
+  "Earth God and the Red God. The advisor rivalry pair of Ningauble and Sheelba",
+  "(the mlb Elenoin-Grahuk precedent). ZERO registry defs touched - the floor",
+  "holds at 995. Spec tools/spec_r863.json, md5 8e9b030eeeeb422dfa238a8400159cf1",
+  "(82,563 bytes); 268 inlines (147 consts, 79 bools, 42 table cols, 5 grids x 29",
+  "rows + the 74-row encounter grid), 17 examples; rverify double-run GREEN, 1624",
+  "mutants 0 missed; hyphen scan clean; zero True/False tokens; ddg gap 15/24",
+  "closed, 9 open. NEXT: the D&DG walk continues from the Nonhumans' Deities",
+  "(print pp. 105-112) - WAIT FOR GO."
+ ],
+ "inline_count": 334
+}

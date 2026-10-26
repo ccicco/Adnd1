@@ -1,0 +1,44 @@
+DDG Nonhumans' Deities cross references (print pp. 105-112,
+the 2nd printing). The NOTE list of beings treated as lesser gods
+though they very rarely have human worshipers, plus the section's
+walk-forward worship pointers (all detailed in the MONSTER MANUAL
+or FIEND FOLIO except Lolth, whose stat block rides this section).
+
+MONSTER MANUAL lesser gods (the NOTE list)
+  Demon:   Demogorgon, Juiblex, Orcus, Yeenoghu
+  Devil:   Asmodeus, Baalzebul, Dispater, Geryon
+  Dragon:  Bahamut, Tiamat
+
+FIEND FOLIO lesser gods (the NOTE list)
+  Demon:   Lolth (detailed in this volume)
+  Elemental Princes of Evil (unnamed here)
+  Slaad:   Ssendam, Ygorl
+
+Worship pointers of the section (race -> deity, shaman/cleric cap)
+  bugbears      -> Hruggek (5th)
+  centaurs      -> Skerrit (3rd); satyrs too, but no clerical members
+  dwarves       -> Moradin (NPC clerics 7th)
+  elves         -> Corellon Larethian (NPC clerics 7th)
+  elves, aquatic-> Deep Sashelas (clerics 7th)
+  elves, drow   -> Lolth (female WIS 18 clerics to 14th)
+  elves, wood   -> Rillifane Rallathil (clerics of both cults 7th)
+  ettins        -> Grolantor (3rd, the two-headed aspect)
+  giants, fire  -> Surtur (7th; the cured steel head talisman)
+  giants, frost -> Thrym (7th; the frozen sacrifices)
+  giants, hill  -> Grolantor (7th)
+  giants, stone -> Skoraeus Stonebones (7th)
+  gnolls        -> Yeenoghu (5th, the triple flail)
+  gnomes        -> Garl Glittergold (NPC clerics 7th)
+  goblins       -> Maglubiyet (7th)
+  halflings     -> Yondalla (NPC clerics 5th)
+  hobgoblins    -> Maglubiyet (7th, see GOBLINS)
+  ixitxachitl   -> Demogorgon (8th)
+  kobolds       -> Kurtulmak (5th)
+  kuo-toa       -> Blibdoolpoolp (clerics 12th)
+  lizard men    -> Semuanya (7th)
+  locathah      -> Eadro (shamans 3rd)
+  mermen        -> Eadro (clerics 5th)
+  ogres, trolls -> Vaprak (3rd)
+  orcs          -> Gruumsh (5th; pluck the left eye)
+  sahuagin      -> Sekolah (5th)
+  troglodytes   -> Laogzed (3rd)
