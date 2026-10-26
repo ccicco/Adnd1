@@ -1,0 +1,113 @@
+-- The Arthurian knight rosters (D&DG print pp. 17-18).
+-- DO NOT hand-edit: written by the R851 Arthurian
+-- mythos splice (spec tools/spec_r851.json); the
+-- consts pin the counts (90 + 13 = 103, 26 + 3 of
+-- quality). The asterisk marks a knight of quality.
+-- The good or neutral knights (all practiced
+-- chivalry in some form or degree):
+Abellius
+Ablamor o' the Marsh
+Accolon o' Gaul*
+Aglovale
+Agravaine (brother of Gawaine, betrayer of Launcelot)*
+Alisander
+Allardin o' the Isles
+Bagdemagus, King
+Balin*
+Barant Les Apres (King of the Hundred Knights)*
+Bedivere*
+Belleus o' the Pavilion
+Berel
+Blamor
+Bleoberis
+Bohort*
+Bors de Ganis*
+Brandiles
+Breunor
+Brian o' the Forest
+Bruin le Noire (La Cote Male Taile)*
+Cador o' Cornwall
+Caradoc
+Carados, King of Scotland
+Chestelaine
+Clairemonde
+Clegis
+Dagonet (Arthur's court jester)
+Darras
+Dinadan*
+Dodinas le Savage
+Ebel
+Ector de Maris*
+Edward
+Elias
+Epinogris
+Ewaine
+Feldenak
+Felot o' Langdue
+Florence*
+Floridas
+Gahalatine
+Gaheris (brother of Gawaine)*
+Gainus
+Galagers
+Gaunter
+Gilbert
+Gilmere
+Gouvernail (Tristram's squire)
+Griflet
+Hector
+Helior le Preuse
+Herlen
+Hervis de Revel
+Hontzlake o' Wentland
+Ider
+Kay (Arthur's seneschal)*
+Kehydius
+Lanceor
+Lavaine*
+Lionel*
+Lucan de Butterlere
+Mador de la Porte
+Managgen
+Marhaus*
+Melias
+Meliot de Logres
+Miles o' the Lands*
+Naram
+Ontzlake
+Patrice
+Pelleas*
+Pelles, King
+Percard (knight of the black lawns)*
+Percivale*
+Perimones (the red knight)*
+Persante of Inde (the blue knight)
+Persides
+Pertelope (the green knight)*
+Priamus the Saracen
+Sadok
+Safere
+Sagramour le Desirous*
+Segwarides
+Sorlons
+Trantrist o' the White*
+Ulfius*
+Uriens, king of Gore
+Uwaine*
+Wisshard
+-- The evil knights (evil through and through,
+-- chivalry used solely for the advantage it gives):
+Andred
+Breunis Sans Pite
+Damas
+Edward the Knight Perilous*
+Gringamore
+Helius
+Hue the Knight Perilous
+King Mark
+Meleagrance
+Mordred*
+Phelot
+Pinell
+Turquine*
+-- * Indicates a knight of quality.

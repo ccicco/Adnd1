@@ -1,0 +1,2369 @@
+{
+ "round": 851,
+ "title": "the Arthurian mythos",
+ "prefix": "dgc",
+ "header_file": "rules/dgc.h",
+ "regtest": "regtest.cpp",
+ "gap_report": "tools/ddg_gap_report.md",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "audit_file": "rules/audits/r851_batch.h",
+ "census_before": 773,
+ "inline_count": 179,
+ "audit_label": "R851 Arthurian mythos audit",
+ "audit_comment": "THE ARTHURIAN MYTHOS - the D&DG walk round three, print pp. 17-21: the chivalry doctrine, the two knight templates (the average knight of renown and the knight of quality), the two printed knight rosters (90 good or neutral, 13 evil, 29 of quality - the names ride the data file doc/data/ddg_arthurian_knights.txt), and thirteen named beings from King Arthur to Sir Tristram of Lyonesse. Zero registry defs touched; the floor holds at 995. The flagged eyeball cells: the Gawaine hit points (the 112 of the second-print extract against the 172 of the archive.org 1st print), the Merlin single attack (the IA 17 a djvu artifact), the Garlon height (garbled in both voices) and the Pellinore 6-foot-4 single-voice size.",
+ "banner": {
+  "title": "the Arthurian mythos - the D&DG walk round three, print pp. 17-21: the knights of the Round Table - the chivalry doctrine, the two knight templates, the two printed rosters, and thirteen named beings from King Arthur to Sir Tristram.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 018-022; the second printing); the collation voice: the archive.org 1st-print derivative (djvu.txt + djvu.xml word geometry). The adjudications: Garlon hit points 80 and one attack (the IA xml words, clean, against the Termux fold), the Arthur 14th level paladin fighter line (the IA voice; the Termux extract dropped the line), the Gawaine Neutral alignment (the 107px geometry match), the Morgan 5 feet 4 inches and Palomides 5 and a half feet sizes (both voices), the Merlin psionic 300 point score with the B C E over All modes (both voices), and the evil-roster Damas and King Mark entries (the IA voice; the Termux two-column interleave dropped them). The Gawaine hit points pin the second-print extract 112 against the 1st-print 172 - flagged for the physical-copy eyeball.",
+  "sentinel": "the 0 sentinels: ACAlt 0 = a single printed armor class (the two templates read the printed 3 to -2 range); MoveAlt 0 = a single printed move; AtD 0 = a single printed attacks figure; the magic resistance 0 = the printed Standard (all fifteen); the size 0 = the unresolved or ranged cell (the renown template 5-foot-4-to-6 range, the Garlon garble); the class-grid 0 = Nil or none printed; the ability-grid template rows are all 0 (the printed Specials ride the consts); the psi 0 = Nil (Merlin carries the printed 300); the roster flags 0 = the doctrine does not apply; the LawfulPct 0 = a fixed alignment."
+ },
+ "consts": [
+  {
+   "name": "dgcRound",
+   "value": 851,
+   "comment": "the Arthurian mythos round: the D&DG walk round three, print pp. 17-21"
+  },
+  {
+   "name": "dgcPrintStart",
+   "value": 17,
+   "comment": "the walk opens at print p. 17 (the chivalry doctrine and the knight templates)"
+  },
+  {
+   "name": "dgcPrintEnd",
+   "value": 21,
+   "comment": "the walk closes at print p. 21 (the Sir Tristram block)"
+  },
+  {
+   "name": "dgcBeingCount",
+   "value": 15,
+   "comment": "the fifteen beings of the Arthurian mythos: the two knight templates and thirteen named beings"
+  },
+  {
+   "name": "dgcTableCount",
+   "value": 4,
+   "comment": "the four grids: combat, class, ability, roster"
+  },
+  {
+   "name": "dgcChainCount",
+   "value": 0,
+   "comment": "no chains this round - the grids and the prose pins carry the walk"
+  },
+  {
+   "name": "dgcRegistryFloor",
+   "value": 995,
+   "comment": "zero registry defs touched - the MM1 live registry floor holds at 995"
+  },
+  {
+   "name": "dgcCbtRows",
+   "value": 15,
+   "comment": "the combat grid row count (one row per being)"
+  },
+  {
+   "name": "dgcClsRows",
+   "value": 15,
+   "comment": "the class grid row count"
+  },
+  {
+   "name": "dgcAbiRows",
+   "value": 15,
+   "comment": "the ability grid row count"
+  },
+  {
+   "name": "dgcRosRows",
+   "value": 15,
+   "comment": "the roster grid row count"
+  },
+  {
+   "name": "dgcKnightCount",
+   "value": 103,
+   "comment": "the named knights of the two printed rosters: 90 good or neutral + 13 evil"
+  },
+  {
+   "name": "dgcGoodKnightCount",
+   "value": 90,
+   "comment": "the good or neutral roster (print pp. 17-18)"
+  },
+  {
+   "name": "dgcEvilKnightCount",
+   "value": 13,
+   "comment": "the evil roster (print p. 18)"
+  },
+  {
+   "name": "dgcQualityKnightCount",
+   "value": 29,
+   "comment": "the asterisked knights of quality across both rosters"
+  },
+  {
+   "name": "dgcGoodQualityCount",
+   "value": 26,
+   "comment": "the knights of quality in the good or neutral roster"
+  },
+  {
+   "name": "dgcEvilQualityCount",
+   "value": 3,
+   "comment": "the knights of quality in the evil roster: Edward the Knight Perilous, Mordred, Turquine"
+  },
+  {
+   "name": "dgcRenownHPFloor",
+   "value": 60,
+   "comment": "the average knight of renown: hit points variable with level but never less than 60"
+  },
+  {
+   "name": "dgcRenownFighterLo",
+   "value": 8,
+   "comment": "the average knight of renown: 8th through 10th level fighter"
+  },
+  {
+   "name": "dgcRenownFighterHi",
+   "value": 10,
+   "comment": "the fighter level ceiling"
+  },
+  {
+   "name": "dgcRenownSpecialFloor",
+   "value": 10,
+   "comment": "the renown specials: variable numbers never below 10"
+  },
+  {
+   "name": "dgcRenownSpecialAvg",
+   "value": 15,
+   "comment": "the renown specials most often average 15"
+  },
+  {
+   "name": "dgcRenownLawfulPct",
+   "value": 80,
+   "comment": "the average knight of renown: variable alignment but 80 percent lawful"
+  },
+  {
+   "name": "dgcQualityHPFloor",
+   "value": 70,
+   "comment": "the knight of quality: hit points variable with level but never less than 70"
+  },
+  {
+   "name": "dgcQualityFighterLo",
+   "value": 10,
+   "comment": "the knight of quality: 10th through 13th level fighter"
+  },
+  {
+   "name": "dgcQualityFighterHi",
+   "value": 13,
+   "comment": "the fighter level ceiling"
+  },
+  {
+   "name": "dgcQualitySpecialFloor",
+   "value": 13,
+   "comment": "the quality specials: variable numbers never below 13"
+  },
+  {
+   "name": "dgcQualitySpecialAvg",
+   "value": 16,
+   "comment": "the quality specials most often average 16"
+  },
+  {
+   "name": "dgcQualityLawfulPct",
+   "value": 85,
+   "comment": "the knight of quality: variable alignment but 85 percent lawful"
+  },
+  {
+   "name": "dgcQualitySquirePct",
+   "value": 60,
+   "comment": "the knight of quality often (60 percent) travels with squires and men-at-arms"
+  },
+  {
+   "name": "dgcQualitySquireLo",
+   "value": 1,
+   "comment": "the quality knight squires: 1-4"
+  },
+  {
+   "name": "dgcQualitySquireHi",
+   "value": 4,
+   "comment": "the squire count ceiling"
+  },
+  {
+   "name": "dgcQualityMenAtArmsLo",
+   "value": 1,
+   "comment": "the quality knight men-at-arms: 1-10"
+  },
+  {
+   "name": "dgcQualityMenAtArmsHi",
+   "value": 10,
+   "comment": "the men-at-arms count ceiling"
+  },
+  {
+   "name": "dgcQualityMercyPct",
+   "value": 75,
+   "comment": "the knight of quality usually (75 percent of the time) grants mercy to all who ask during battle"
+  },
+  {
+   "name": "dgcSquireBetterPct",
+   "value": 5,
+   "comment": "the 5 percent chance that a squire is better at fighting than the knight he serves"
+  },
+  {
+   "name": "dgcExcaliburPlus",
+   "value": 5,
+   "comment": "Excalibur: a +5 lawful good sword of sharpness"
+  },
+  {
+   "name": "dgcBernladAxePlus",
+   "value": 3,
+   "comment": "Bernlad wields a +3 axe"
+  },
+  {
+   "name": "dgcGarlonEffectiveAC",
+   "value": -3,
+   "comment": "the invisible knight: armor class 1, effectively -3 due to invisibility"
+  },
+  {
+   "name": "dgcGawaineStrEarly",
+   "value": 19,
+   "comment": "from 9 to 10 in the morning he has a 19 strength"
+  },
+  {
+   "name": "dgcGawaineStrMid",
+   "value": 20,
+   "comment": "from 10 to 11 he has a 20 strength"
+  },
+  {
+   "name": "dgcGawaineStrLate",
+   "value": 21,
+   "comment": "from 11 to 12 his strength is 21"
+  },
+  {
+   "name": "dgcGawaineSunStart",
+   "value": 9,
+   "comment": "the sun-strength window opens at 9 in the morning"
+  },
+  {
+   "name": "dgcGawaineSunEnd",
+   "value": 12,
+   "comment": "after 12 noon his strength returns to normal"
+  },
+  {
+   "name": "dgcGalatinePlus",
+   "value": 2,
+   "comment": "his sword, Galatine, is a +2 weapon"
+  },
+  {
+   "name": "dgcMerlinDmgLo",
+   "value": 1,
+   "comment": "Merlin's damage/attack: 1-10"
+  },
+  {
+   "name": "dgcMerlinDmgHi",
+   "value": 10,
+   "comment": "the damage/attack ceiling"
+  },
+  {
+   "name": "dgcMerlinPsi",
+   "value": 300,
+   "comment": "the printed PSIONIC ABILITY: 300 - the point score, not a roman-numeral class (both voices)"
+  },
+  {
+   "name": "dgcMerlinRegen",
+   "value": 1,
+   "comment": "his demonic heritage allows him to regenerate 1 hit point per melee round"
+  },
+  {
+   "name": "dgcMorganDmgLo",
+   "value": 1,
+   "comment": "Morgan's damage/attack: 1-4"
+  },
+  {
+   "name": "dgcMorganDmgHi",
+   "value": 4,
+   "comment": "the damage/attack ceiling"
+  },
+  {
+   "name": "dgcMorganRingPlus",
+   "value": 3,
+   "comment": "she wears a +3 ring of protection"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgcMaloryCollected",
+   "value": true,
+   "comment": "Sir Thomas Malory's Le Morte D'Arthur collected the legends of Arthur and his Knights of the Round Table"
+  },
+  {
+   "name": "dgcKnightsRepresentChivalry",
+   "value": true,
+   "comment": "Arthur's knights represent the concept of chivalry to modern readers more than any other group"
+  },
+  {
+   "name": "dgcChivalryIsFairPlay",
+   "value": true,
+   "comment": "chivalrous conduct basically means playing fair"
+  },
+  {
+   "name": "dgcMisfortuneDishonorable",
+   "value": true,
+   "comment": "taking advantage of an opponent's misfortune is dishonorable"
+  },
+  {
+   "name": "dgcBetterOddsDishonorable",
+   "value": true,
+   "comment": "fighting at better-than-even odds is dishonorable"
+  },
+  {
+   "name": "dgcRespectsLadiesAndClerics",
+   "value": true,
+   "comment": "a chivalrous knight shows respect to ladies and good clerics"
+  },
+  {
+   "name": "dgcSuspiciousOfSorcery",
+   "value": true,
+   "comment": "a chivalrous knight is suspicious of sorcery and will avoid it if possible"
+  },
+  {
+   "name": "dgcQuestsWithOaths",
+   "value": true,
+   "comment": "knights undertake quests to win fame and prove virtue, swearing oaths of unceasing effort"
+  },
+  {
+   "name": "dgcRoundTableOptional",
+   "value": true,
+   "comment": "the knights of the Round Table may not fit into some AD&D worlds - the trip to Arthur's Britain is a DM spice option"
+  },
+  {
+   "name": "dgcCamelotBoardgameReference",
+   "value": true,
+   "comment": "more useful information can be found in TSR's KNIGHTS OF CAMELOT Fantasy Boardgame"
+  },
+  {
+   "name": "dgcKnightsHaveWarhorse",
+   "value": true,
+   "comment": "knights always have a high quality heavy war-horse"
+  },
+  {
+   "name": "dgcKnightWeaponList",
+   "value": true,
+   "comment": "knights use a lance, a bastard sword, a two-handed sword, or a morningstar in battle"
+  },
+  {
+   "name": "dgcKnightsHaveLesserBeast",
+   "value": true,
+   "comment": "knights always have a lesser beast to ride when not fighting"
+  },
+  {
+   "name": "dgcKnightsHaveSquire",
+   "value": true,
+   "comment": "knights always have a squire of some type to aid them with their equipment"
+  },
+  {
+   "name": "dgcSquiresRestrained",
+   "value": true,
+   "comment": "squires cannot use swords in battle nor fight from horseback until they have been made knights"
+  },
+  {
+   "name": "dgcAverageKnightsKill",
+   "value": true,
+   "comment": "average knights will most often kill their defeated opponents, rather than grant mercy"
+  },
+  {
+   "name": "dgcQualityKnightsMerciful",
+   "value": true,
+   "comment": "the knights of quality usually grant mercy (the 75 percent doctrine rides the consts)"
+  },
+  {
+   "name": "dgcArthurPaladin",
+   "value": true,
+   "comment": "the printed FIGHTER line: 14th level paladin (the IA voice; the Termux extract dropped the line)"
+  },
+  {
+   "name": "dgcArthurSwordFromStone",
+   "value": true,
+   "comment": "Arthur pulled the sword from the stone and identified himself as rightful king of all England"
+  },
+  {
+   "name": "dgcArthurUtherMerlinEctor",
+   "value": true,
+   "comment": "Uther Pendragon died in Arthur's boyhood; Merlin hid the babe with Sir Ector, trained in war by Ector and in kingliness by Merlin"
+  },
+  {
+   "name": "dgcArthurRoundTable",
+   "value": true,
+   "comment": "Arthur married his lady Gwynevere and organized the Knights of the Round Table to fight for all that is right and proper"
+  },
+  {
+   "name": "dgcArthurLawfulRighteousness",
+   "value": true,
+   "comment": "Arthur upholds the idea of lawful righteousness and fair play"
+  },
+  {
+   "name": "dgcExcaliburSharpness",
+   "value": true,
+   "comment": "he wields the sword Excalibur, a lawful good sword of sharpness"
+  },
+  {
+   "name": "dgcScabbardPreventsCutting",
+   "value": true,
+   "comment": "the scabbard prevents him from being cut by any attack"
+  },
+  {
+   "name": "dgcArthurHalfDamageDoctrine",
+   "value": true,
+   "comment": "thrusting and slashing attacks against Arthur do half damage (from the force of the blow); bludgeoning attacks do full damage"
+  },
+  {
+   "name": "dgcArthurGoldDragonShield",
+   "value": true,
+   "comment": "his shield device is a gold dragon"
+  },
+  {
+   "name": "dgcBernladGreenArmor",
+   "value": true,
+   "comment": "as long as he wears his bright green armor, Bernlad cannot be hurt by physical weapons"
+  },
+  {
+   "name": "dgcBernladArmorPersonal",
+   "value": true,
+   "comment": "the armor is enchanted for Bernlad only, and is normal plate mail for anyone else"
+  },
+  {
+   "name": "dgcBernladNeutralStance",
+   "value": true,
+   "comment": "one of the few powerful good knights that would not side with Arthur - though he also would not side with Arthur's enemies"
+  },
+  {
+   "name": "dgcBernladBaitsKnights",
+   "value": true,
+   "comment": "he was fond of baiting knights of the Round Table to test their courage"
+  },
+  {
+   "name": "dgcGalahadWhiteArmor",
+   "value": true,
+   "comment": "dressed in white armor"
+  },
+  {
+   "name": "dgcGalahadParentage",
+   "value": true,
+   "comment": "the bastard son of Sir Launcelot and Princess Elaine"
+  },
+  {
+   "name": "dgcGalahadParagon",
+   "value": true,
+   "comment": "the perfect representation of knighthood - a paragon of purity and invincibility"
+  },
+  {
+   "name": "dgcGalahadHolyGrail",
+   "value": true,
+   "comment": "it was he who successfully completed the quest for the Holy Grail"
+  },
+  {
+   "name": "dgcGarethSonOfLot",
+   "value": true,
+   "comment": "the young son of King Lot, Gareth served in the kitchens of King Arthur"
+  },
+  {
+   "name": "dgcGarethEnemyOfKay",
+   "value": true,
+   "comment": "he became the enemy of Sir Kay, who called him Beaumains"
+  },
+  {
+   "name": "dgcGarethModest",
+   "value": true,
+   "comment": "he was the most modest of all the knights"
+  },
+  {
+   "name": "dgcGarethHelpsLadies",
+   "value": true,
+   "comment": "he used his great fighting skills to help many a lady in distress, especially one Lady Lyoness"
+  },
+  {
+   "name": "dgcGarethManyColors",
+   "value": true,
+   "comment": "noted for the many colors he used on his armor and shield"
+  },
+  {
+   "name": "dgcGarlonFightsInvisibly",
+   "value": true,
+   "comment": "this knight would always fight invisibly"
+  },
+  {
+   "name": "dgcGarlonDefeatedByConcert",
+   "value": true,
+   "comment": "only defeated by the combined might of several knights of quality acting in concert"
+  },
+  {
+   "name": "dgcGarlonWitchOfTheFens",
+   "value": true,
+   "comment": "given the power of invisibility by a witch of the fens"
+  },
+  {
+   "name": "dgcGarlonPowerForEvil",
+   "value": true,
+   "comment": "he promised the witch to only use the power for evil"
+  },
+  {
+   "name": "dgcGawaineMagicalGift",
+   "value": true,
+   "comment": "Gawaine has been given a magical gift of an unusual nature: from 9 in the morning till 12 noon he gains in strength"
+  },
+  {
+   "name": "dgcGawaineStrengthReturns",
+   "value": true,
+   "comment": "after 12 his strength returns to normal (the armor move of 6 is at normal strength)"
+  },
+  {
+   "name": "dgcGawaineFavoriteCousin",
+   "value": true,
+   "comment": "the favorite cousin of King Arthur"
+  },
+  {
+   "name": "dgcGawaineRevengeful",
+   "value": true,
+   "comment": "a revengeful knight who would travel to the ends of the earth to right some supposed wrong done to him or his family"
+  },
+  {
+   "name": "dgcLamorakSonOfPellinore",
+   "value": true,
+   "comment": "the son of King Pellinore"
+  },
+  {
+   "name": "dgcLamorakTournamentChampion",
+   "value": true,
+   "comment": "a constant champion at many tournaments held by Queen Margawse, Lamorak's lover"
+  },
+  {
+   "name": "dgcLamorakKilledTable",
+   "value": true,
+   "comment": "this knight was the death of several members of the Round Table"
+  },
+  {
+   "name": "dgcLamorakEnemyOfGawaine",
+   "value": true,
+   "comment": "his greatest enemy was Sir Gawaine and his brothers"
+  },
+  {
+   "name": "dgcLamorakKilledTwelve",
+   "value": true,
+   "comment": "noted for a battle in which he killed 12 renegade knights of Morgan le Fay"
+  },
+  {
+   "name": "dgcLauncelotBestOfBest",
+   "value": true,
+   "comment": "the best of the best in the circle of the Round Table"
+  },
+  {
+   "name": "dgcLauncelotFellFromGrace",
+   "value": true,
+   "comment": "able to use all the powers of a Paladin, until he fell from grace by being tricked into loving King Pelles' daughter, the lovely Elaine"
+  },
+  {
+   "name": "dgcLauncelotGalahadSon",
+   "value": true,
+   "comment": "Elaine bore him a son, the knight Sir Galahad"
+  },
+  {
+   "name": "dgcLauncelotLeftTheKing",
+   "value": true,
+   "comment": "forced to leave the side of King Arthur, who had treated Launcelot as the king's champion"
+  },
+  {
+   "name": "dgcLauncelotNeverFails",
+   "value": true,
+   "comment": "he would never fail to aid the king in time of need"
+  },
+  {
+   "name": "dgcLauncelotQuests",
+   "value": true,
+   "comment": "he went on all of the most important quests for the king and his weapons skills defended the King's side in major battles"
+  },
+  {
+   "name": "dgcMerlinParentage",
+   "value": true,
+   "comment": "the son of a sorceress and an incubus (a succubus shape-changed into male form)"
+  },
+  {
+   "name": "dgcMerlinPowersBeyondMortals",
+   "value": true,
+   "comment": "Merlin has a combination of powers and abilities far beyond those of mortals"
+  },
+  {
+   "name": "dgcMerlinGreatDruid",
+   "value": true,
+   "comment": "a great deal of evidence supports the concept that Merlin is a being as powerful as the Great Druid with magical powers thrown in"
+  },
+  {
+   "name": "dgcMerlinNoArmorOrWeapons",
+   "value": true,
+   "comment": "he never uses armor or normal physical weapons"
+  },
+  {
+   "name": "dgcMerlinStaffSpellStorings",
+   "value": true,
+   "comment": "his staff is as a staff of many spell storings and acts as a staff of striking"
+  },
+  {
+   "name": "dgcMerlinAbsorbsSpells",
+   "value": true,
+   "comment": "with this device Merlin can absorb spells thrown at him and turn the power into spells of his own needs (like a staff of the magi)"
+  },
+  {
+   "name": "dgcMerlinForeseesRandomly",
+   "value": true,
+   "comment": "Merlin can foresee the future in a random manner; his inability to see just ahead causes him great problems"
+  },
+  {
+   "name": "dgcMerlinTeleportsFromDanger",
+   "value": true,
+   "comment": "he always teleports away from danger that could cause him a quick death"
+  },
+  {
+   "name": "dgcMerlinSurvivedMortalDamage",
+   "value": true,
+   "comment": "on several occasions he was attacked and suffered damage that would kill a mortal man"
+  },
+  {
+   "name": "dgcMerlinHealsMagically",
+   "value": true,
+   "comment": "his magical skills allow him to heal the remainder (beyond the regeneration)"
+  },
+  {
+   "name": "dgcMerlinEarthy",
+   "value": true,
+   "comment": "a very earthy being - a pretty face may cause him to act rather boyish in order to impress a lady"
+  },
+  {
+   "name": "dgcMerlinAttackModesBCE",
+   "value": true,
+   "comment": "the printed attack/defense modes: attack B, C, E"
+  },
+  {
+   "name": "dgcMerlinAllDefenses",
+   "value": true,
+   "comment": "the printed defense modes: All"
+  },
+  {
+   "name": "dgcMorganHalfSister",
+   "value": true,
+   "comment": "the half sister to King Arthur"
+  },
+  {
+   "name": "dgcMorganIllusionQueen",
+   "value": true,
+   "comment": "this sorceress constantly uses the powers of illusion to attempt to become queen of the British Isles"
+  },
+  {
+   "name": "dgcMorganBloodTie",
+   "value": true,
+   "comment": "Arthur was aware of her evil but never acted openly against her because of their blood tie"
+  },
+  {
+   "name": "dgcMorganPartiallyNonhuman",
+   "value": true,
+   "comment": "as her name indicates (Fay = Faerie), Morgan is at least partially nonhuman"
+  },
+  {
+   "name": "dgcMorganTricksKnights",
+   "value": true,
+   "comment": "sometimes able to trick knights of the Round Table into her castle"
+  },
+  {
+   "name": "dgcMorganSeduceOrImprison",
+   "value": true,
+   "comment": "she will either seduce them to evil ways or imprison them for a time"
+  },
+  {
+   "name": "dgcMorganPoisonedDagger",
+   "value": true,
+   "comment": "her special attack: poisoned dagger"
+  },
+  {
+   "name": "dgcPalomidesRivalOfTristram",
+   "value": true,
+   "comment": "a bitter rival of Sir Tristram"
+  },
+  {
+   "name": "dgcPalomidesScimitar",
+   "value": true,
+   "comment": "noted for the quickness of his scimitar and his courage in battle"
+  },
+  {
+   "name": "dgcPalomidesCompositeBow",
+   "value": true,
+   "comment": "noted for his use of the composite bow - a weapon not usually used by knights of any order"
+  },
+  {
+   "name": "dgcPellinoreFoughtArthur",
+   "value": true,
+   "comment": "this knight fought with King Arthur and almost defeated him"
+  },
+  {
+   "name": "dgcPellinoreRoundTable",
+   "value": true,
+   "comment": "he later joined the Round Table and became one of the Queen's Guards"
+  },
+  {
+   "name": "dgcPellinoreQuestingBeast",
+   "value": true,
+   "comment": "Pellinore hunts a strange unique creature, the Questing Beast"
+  },
+  {
+   "name": "dgcPellinoreFatedPursuit",
+   "value": true,
+   "comment": "his family is fated to pursue it, though neither they nor anybody else will ever catch it"
+  },
+  {
+   "name": "dgcPellinorePastMiddleAge",
+   "value": true,
+   "comment": "at the time of Arthur's court, Pellinore is just past middle age, though still a stout fighter"
+  },
+  {
+   "name": "dgcTristramSecondBest",
+   "value": true,
+   "comment": "known for his skill of arms and savagery in battle, considered by many second only to Launcelot in battle skills"
+  },
+  {
+   "name": "dgcTristramIsolde",
+   "value": true,
+   "comment": "well-known for his ill-fated romance with the beautiful Lady Isolde, who is married to the evil and cowardly King Mark"
+  },
+  {
+   "name": "dgcTristramMarkJealous",
+   "value": true,
+   "comment": "the insanely jealous King searches constantly for ways to discredit or destroy the noble Tristram"
+  }
+ ],
+ "chains": [],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "Cbt",
+   "count": "dgcCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgcCbtAC",
+    "dgcCbtACAlt",
+    "dgcCbtHP",
+    "dgcCbtMove",
+    "dgcCbtMoveAlt",
+    "dgcCbtAtN",
+    "dgcCbtAtD",
+    "dgcCbtMR",
+    "dgcCbtSizeIn"
+   ],
+   "data": [
+    [
+     3,
+     -2,
+     60,
+     12,
+     6,
+     3,
+     2,
+     0,
+     0
+    ],
+    [
+     3,
+     -2,
+     70,
+     12,
+     6,
+     3,
+     2,
+     0,
+     78
+    ],
+    [
+     0,
+     0,
+     123,
+     12,
+     6,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     99,
+     0,
+     99,
+     12,
+     0,
+     2,
+     0,
+     0,
+     84
+    ],
+    [
+     -4,
+     0,
+     120,
+     12,
+     6,
+     3,
+     0,
+     0,
+     84
+    ],
+    [
+     -2,
+     0,
+     105,
+     12,
+     6,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     1,
+     0,
+     80,
+     12,
+     6,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     -2,
+     0,
+     112,
+     12,
+     6,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     -2,
+     0,
+     99,
+     12,
+     6,
+     1,
+     0,
+     0,
+     78
+    ],
+    [
+     -3,
+     0,
+     141,
+     12,
+     6,
+     2,
+     0,
+     0,
+     78
+    ],
+    [
+     2,
+     0,
+     175,
+     15,
+     0,
+     1,
+     0,
+     0,
+     72
+    ],
+    [
+     4,
+     0,
+     39,
+     12,
+     0,
+     1,
+     0,
+     0,
+     64
+    ],
+    [
+     2,
+     0,
+     93,
+     12,
+     9,
+     2,
+     0,
+     0,
+     66
+    ],
+    [
+     -2,
+     0,
+     65,
+     12,
+     6,
+     1,
+     0,
+     0,
+     76
+    ],
+    [
+     -3,
+     0,
+     120,
+     12,
+     6,
+     2,
+     0,
+     0,
+     72
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (99 = the printed See below: Bernlad's green armor; the templates read the printed range 3 to -2)",
+    "The range ceiling cells for the two template rows (0 = a single printed armor class)",
+    "The hit point cells (the templates carry their floors: never less than 60 and 70)",
+    "The primary move cells (inches; Bernlad rides his special armor without the note)",
+    "The alternate move cells (0 = a single printed move; Palomides reads 12 over 9 in chain armor; Gawaine's 6 applies at normal strength)",
+    "The attacks-per-round numerator cells",
+    "The attacks-per-round denominator cells (0 = a single printed figure; the two templates read the printed 3/2)",
+    "The magic resistance cells (0 = the printed Standard - all fifteen read Standard)",
+    "The size-in-inches cells (0 = the unresolved or ranged cell: the renown template prints the 5'4\"-6' range, Garlon's height garbles in both voices; the half-foot cells read 78 for the 6-and-a-half-foot rows and 66 for Palomides 5 and a half feet)"
+   ],
+   "audit_comment": "the combat stat blocks of the fifteen beings (print pp. 17-21) - the AC (with the template ranges and the Bernlad See below), hit points, moves, attacks, magic resistance and sizes",
+   "sentinel_census": [
+    1,
+    13,
+    0,
+    0,
+    3,
+    0,
+    13,
+    15,
+    2
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "Cls",
+   "count": "dgcClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgcClsCleric",
+    "dgcClsDruid",
+    "dgcClsFighterLo",
+    "dgcClsFighterHi",
+    "dgcClsRanger",
+    "dgcClsMagUser",
+    "dgcClsIllus",
+    "dgcClsThief",
+    "dgcClsAssassin",
+    "dgcClsMonk",
+    "dgcClsBard"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     8,
+     10,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     10,
+     13,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     14,
+     14,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     0,
+     0,
+     14,
+     14,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     20,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     17,
+     17,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     13,
+     13,
+     0,
+     0,
+     0,
+     3,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     17,
+     17,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     20,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     14,
+     0,
+     0,
+     0,
+     15,
+     10,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     12,
+     12,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     16,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3,
+     3
+    ],
+    [
+     0,
+     0,
+     12,
+     12,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     17,
+     17,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (0 = Nil)",
+    "The druid level cells (Merlin 14th level druid)",
+    "The fighter level floor cells (the templates carry their printed ranges)",
+    "The fighter level ceiling cells (the named knights carry lo = hi)",
+    "The ranger level cells (0 = Nil - no printed ranger this round)",
+    "The magic-user level cells (Merlin 15th, Morgan 12th)",
+    "The illusionist level cells (Merlin 10th, Morgan 12th in each)",
+    "The thief level cells (Garlon 3rd level thief)",
+    "The assassin level cells (0 = Nil)",
+    "The monk level cells (Palomides 3rd level in each)",
+    "The bard level cells (Arthur 5th level bard, Palomides 3rd level in each)"
+   ],
+   "audit_comment": "the cleric/druid, fighter (with the template level ranges), magic-user/illusionist, thief/assassin, monk/bard level lines of the fifteen beings (0 = Nil or none printed)",
+   "sentinel_census": [
+    15,
+    14,
+    2,
+    2,
+    15,
+    13,
+    13,
+    14,
+    15,
+    14,
+    13
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "Abi",
+   "count": "dgcAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgcAbiStr",
+    "dgcAbiStrHit",
+    "dgcAbiStrDmg",
+    "dgcAbiInt",
+    "dgcAbiWis",
+    "dgcAbiDex",
+    "dgcAbiCon",
+    "dgcAbiCha",
+    "dgcAbiPsi"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     18,
+     2,
+     3,
+     18,
+     19,
+     16,
+     18,
+     18,
+     0
+    ],
+    [
+     18,
+     2,
+     4,
+     17,
+     14,
+     13,
+     18,
+     12,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     15,
+     18,
+     18,
+     18,
+     18,
+     0
+    ],
+    [
+     18,
+     2,
+     3,
+     12,
+     11,
+     18,
+     18,
+     12,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     15,
+     9,
+     15,
+     17,
+     15,
+     0
+    ],
+    [
+     18,
+     1,
+     3,
+     16,
+     13,
+     18,
+     18,
+     16,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     13,
+     8,
+     18,
+     18,
+     17,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     14,
+     13,
+     18,
+     18,
+     18,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     19,
+     19,
+     18,
+     18,
+     18,
+     300
+    ],
+    [
+     10,
+     0,
+     0,
+     18,
+     7,
+     17,
+     18,
+     18,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     18,
+     11,
+     18,
+     17,
+     18,
+     0
+    ],
+    [
+     18,
+     1,
+     3,
+     15,
+     10,
+     18,
+     18,
+     15,
+     0
+    ],
+    [
+     18,
+     2,
+     5,
+     16,
+     13,
+     19,
+     18,
+     17,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (0 = the printed Special of the two templates - the floors and averages ride the consts)",
+    "The parenthesized strength to-hit bonus cells (0 = none printed)",
+    "The parenthesized strength damage bonus cells",
+    "The intelligence cells",
+    "The wisdom cells",
+    "The dexterity cells",
+    "The constitution cells (the printed C: column)",
+    "The charisma cells",
+    "The psionic cells (0 = Nil; Merlin reads the printed 300 point score - a score, not a roman-numeral class)"
+   ],
+   "audit_comment": "the S/I/W/D/C/CH ability lines with the parenthesized strength bonuses and the psionic cells (the two template rows are all 0 - the printed Specials ride the consts)",
+   "sentinel_census": [
+    2,
+    5,
+    5,
+    2,
+    2,
+    2,
+    2,
+    2,
+    14
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "Ros",
+   "count": "dgcRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgcRosOrd",
+    "dgcRosPage",
+    "dgcRosAlign",
+    "dgcRosPaladin",
+    "dgcRosPsiModes",
+    "dgcRosHPFloor",
+    "dgcRosStrVaries",
+    "dgcRosDmgFixed",
+    "dgcRosLawfulPct"
+   ],
+   "data": [
+    [
+     0,
+     17,
+     7,
+     0,
+     0,
+     1,
+     0,
+     0,
+     80
+    ],
+    [
+     1,
+     17,
+     8,
+     0,
+     0,
+     1,
+     0,
+     0,
+     85
+    ],
+    [
+     2,
+     18,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     19,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     19,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     19,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     6,
+     19,
+     7,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     7,
+     19,
+     3,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     8,
+     20,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     9,
+     20,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     20,
+     1,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     11,
+     20,
+     7,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     12,
+     21,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     13,
+     21,
+     8,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     14,
+     21,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, the two templates through Tristram)",
+    "The print page cells (17-21, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 lawful good, 1 neutral good, 2 chaotic good, 3 neutral, 7 chaotic evil, 8 lawful neutral, and the two variable-template codes: 7? no - the variable codes are 4 = the renown variable-but-80-lawful and 5 = the quality variable-but-85-lawful; see the builder note)",
+    "The paladin flag cells (1 = the printed paladin class: Arthur, Galahad, Launcelot)",
+    "The attack/defense modes cells (1 = modes printed: Merlin B, C, E over All)",
+    "The hit-point-floor cells (1 = the printed variable-with-level floor: the two templates)",
+    "The strength-varies cells (1 = Gawaine, the sun-strength doctrine)",
+    "The fixed-damage cells (1 = a printed damage/attack figure instead of by weapon type: Merlin 1-10, Morgan 1-4)",
+    "The lawful percent cells (the templates: 80 and 85; 0 = a fixed alignment)"
+   ],
+   "audit_comment": "the roster of the fifteen beings: ordinals, print pages, alignments (with the two variable-template codes 4 and 5), paladin flags, psionic modes, hp floors, the Gawaine strength-varies flag, the fixed-damage flags and the template lawful percents",
+   "sentinel_census": [
+    1,
+    0,
+    3,
+    12,
+    14,
+    13,
+    14,
+    13,
+    13
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the fifteen beings)",
+   "expr": "m['dgcTableCount']() != 4 or m['dgcBeingCount']() != 15 or m['dgcCbtRows']() != 15 or m['dgcClsRows']() != 15 or m['dgcAbiRows']() != 15 or m['dgcRosRows']() != 15"
+  },
+  {
+   "note": "the knight rosters: 90 good or neutral + 13 evil = 103, with 26 + 3 = 29 of quality",
+   "expr": "m['dgcGoodKnightCount']() != 90 or m['dgcEvilKnightCount']() != 13 or m['dgcKnightCount']() != 103 or m['dgcGoodQualityCount']() != 26 or m['dgcEvilQualityCount']() != 3 or m['dgcQualityKnightCount']() != 29 or m['dgcGoodKnightCount']() + m['dgcEvilKnightCount']() != m['dgcKnightCount']()"
+  },
+  {
+   "note": "the print walk spans pp. 17-21 (the folio offset PRINT = PDF - 1)",
+   "expr": "m['dgcPrintStart']() != 17 or m['dgcPrintEnd']() != 21 or m['dgcRosPage'](0) != 17 or m['dgcRosPage'](2) != 18 or m['dgcRosPage'](10) != 20 or m['dgcRosPage'](14) != 21"
+  },
+  {
+   "note": "the roster ordinals run 0-14 in print order (the renown template first, Tristram last)",
+   "expr": "m['dgcRosOrd'](0) != 0 or m['dgcRosOrd'](2) != 2 or m['dgcRosOrd'](14) != 14"
+  },
+  {
+   "note": "the template doctrine: renown 60 hp floor and 8-10 fighter; quality 70 hp floor and 10-13 fighter",
+   "expr": "m['dgcRenownHPFloor']() != 60 or m['dgcRenownFighterLo']() != 8 or m['dgcRenownFighterHi']() != 10 or m['dgcQualityHPFloor']() != 70 or m['dgcQualityFighterLo']() != 10 or m['dgcQualityFighterHi']() != 13"
+  },
+  {
+   "note": "the template specials: renown never below 10 averaging 15; quality never below 13 averaging 16",
+   "expr": "m['dgcRenownSpecialFloor']() != 10 or m['dgcRenownSpecialAvg']() != 15 or m['dgcQualitySpecialFloor']() != 13 or m['dgcQualitySpecialAvg']() != 16"
+  },
+  {
+   "note": "the template retinues: 60 percent with 1-4 squires and 1-10 men-at-arms, 75 percent mercy, the 5 percent better squire",
+   "expr": "m['dgcQualitySquirePct']() != 60 or m['dgcQualitySquireLo']() != 1 or m['dgcQualitySquireHi']() != 4 or m['dgcQualityMenAtArmsLo']() != 1 or m['dgcQualityMenAtArmsHi']() != 10 or m['dgcQualityMercyPct']() != 75 or m['dgcSquireBetterPct']() != 5"
+  },
+  {
+   "note": "the variable-template alignments: 80 percent lawful (renown) and 85 percent lawful (quality)",
+   "expr": "m['dgcRenownLawfulPct']() != 80 or m['dgcQualityLawfulPct']() != 85 or m['dgcRosLawfulPct'](0) != 80 or m['dgcRosLawfulPct'](1) != 85"
+  },
+  {
+   "note": "the two templates read the printed 3/2 attacks (like the R850 Qagwaaz/Stoneribs rows)",
+   "expr": "m['dgcCbtAtN'](0) != 3 or m['dgcCbtAtD'](0) != 2 or m['dgcCbtAtN'](1) != 3 or m['dgcCbtAtD'](1) != 2"
+  },
+  {
+   "note": "the Arthur walk: AC 0, 123 hit points, Excalibur the +5 lawful good sword of sharpness, 14th level paladin",
+   "expr": "m['dgcCbtAC'](2) != 0 or m['dgcCbtHP'](2) != 123 or m['dgcExcaliburPlus']() != 5 or m['dgcClsFighterLo'](2) != 14 or m['dgcRosPaladin'](2) != 1 or m['dgcClsBard'](2) != 5"
+  },
+  {
+   "note": "the Arthur abilities S:18(52)(+2,+3) I:18 W:19 D:16 C:18 CH:18",
+   "expr": "m['dgcAbiStr'](2) != 18 or m['dgcAbiStrHit'](2) != 2 or m['dgcAbiStrDmg'](2) != 3 or m['dgcAbiInt'](2) != 18 or m['dgcAbiWis'](2) != 19 or m['dgcAbiDex'](2) != 16 or m['dgcAbiCha'](2) != 18"
+  },
+  {
+   "note": "the Bernlad walk: the green-armor See below (AC 99), 99 hit points, the +3 axe, 7 feet tall",
+   "expr": "m['dgcCbtAC'](3) != 99 or m['dgcCbtHP'](3) != 99 or m['dgcBernladAxePlus']() != 3 or m['dgcCbtSizeIn'](3) != 84"
+  },
+  {
+   "note": "the Galahad walk: AC -4, 120 hit points, 3 attacks, the 20th level paladin, 7 feet tall",
+   "expr": "m['dgcCbtAC'](4) != -4 or m['dgcCbtHP'](4) != 120 or m['dgcCbtAtN'](4) != 3 or m['dgcCbtAtD'](4) != 0 or m['dgcClsFighterLo'](4) != 20 or m['dgcRosPaladin'](4) != 1 or m['dgcCbtSizeIn'](4) != 84"
+  },
+  {
+   "note": "the Gareth walk: AC -2, 105 hit points, 17th level fighter, 6 feet tall",
+   "expr": "m['dgcCbtAC'](5) != -2 or m['dgcCbtHP'](5) != 105 or m['dgcClsFighterLo'](5) != 17 or m['dgcCbtSizeIn'](5) != 72"
+  },
+  {
+   "note": "the Garlon adjudications (the IA voice against the Termux fold): 80 hit points, 1 attack, AC 1 effectively -3, chaotic evil",
+   "expr": "m['dgcCbtHP'](6) != 80 or m['dgcCbtAtN'](6) != 1 or m['dgcCbtAC'](6) != 1 or m['dgcGarlonEffectiveAC']() != -3 or m['dgcRosAlign'](6) != 7 or m['dgcClsThief'](6) != 3"
+  },
+  {
+   "note": "the flagged eyeball cell: Gawaine 112 hit points in the second-print extract against the 172 of the archive.org 1st print",
+   "expr": "m['dgcCbtHP'](7) != 112"
+  },
+  {
+   "note": "the Gawaine sun-strength walk: 19, 20, 21 from 9 till 12, then normal",
+   "expr": "m['dgcGawaineStrEarly']() != 19 or m['dgcGawaineStrMid']() != 20 or m['dgcGawaineStrLate']() != 21 or m['dgcGawaineSunStart']() != 9 or m['dgcGawaineSunEnd']() != 12 or m['dgcRosStrVaries'](7) != 1"
+  },
+  {
+   "note": "the Gawaine equipment: Galatine the +2 sword, the at-normal-strength armor move",
+   "expr": "m['dgcGalatinePlus']() != 2 or m['dgcCbtMoveAlt'](7) != 6 or m['dgcAbiStrHit'](7) != 1 or m['dgcAbiStrDmg'](7) != 3"
+  },
+  {
+   "note": "the Lamorak and Launcelot walks: 99 and 141 hit points, S:18(00)(+3,+6) and S:19(+3,+7)",
+   "expr": "m['dgcCbtHP'](8) != 99 or m['dgcCbtHP'](9) != 141 or m['dgcAbiStrDmg'](8) != 6 or m['dgcAbiStr'](9) != 19 or m['dgcRosPaladin'](9) != 1"
+  },
+  {
+   "note": "the Merlin walk: AC 2 (bracers), 175 hit points, 1-10 damage, druid 14 over magic-user 15 and illusionist 10, the 300 psionic points, B C E over All",
+   "expr": "m['dgcCbtAC'](10) != 2 or m['dgcCbtHP'](10) != 175 or m['dgcMerlinDmgLo']() != 1 or m['dgcMerlinDmgHi']() != 10 or m['dgcClsDruid'](10) != 14 or m['dgcClsMagUser'](10) != 15 or m['dgcClsIllus'](10) != 10 or m['dgcMerlinPsi']() != 300 or m['dgcAbiPsi'](10) != 300 or m['dgcRosPsiModes'](10) != 1"
+  },
+  {
+   "note": "the flagged eyeball cell: Merlin 1 attack (the IA 17 is a djvu artifact) and the 1-point regeneration",
+   "expr": "m['dgcCbtAtN'](10) != 1 or m['dgcCbtAtD'](10) != 0 or m['dgcMerlinRegen']() != 1"
+  },
+  {
+   "note": "the Morgan walk: AC 4, 39 hit points, 1-4 damage, the +3 ring, magic-user/illusionist 12th in each, 5 feet 4 inches",
+   "expr": "m['dgcCbtAC'](11) != 4 or m['dgcCbtHP'](11) != 39 or m['dgcMorganDmgLo']() != 1 or m['dgcMorganDmgHi']() != 4 or m['dgcMorganRingPlus']() != 3 or m['dgcClsMagUser'](11) != 12 or m['dgcClsIllus'](11) != 12 or m['dgcCbtSizeIn'](11) != 64 or m['dgcRosDmgFixed'](11) != 1"
+  },
+  {
+   "note": "the Palomides walk: AC 2, 93 hit points, the 12 over 9 chain-armor move, 16th level fighter with monk/bard 3rd in each, 5 and a half feet (66 inches)",
+   "expr": "m['dgcCbtAC'](12) != 2 or m['dgcCbtHP'](12) != 93 or m['dgcCbtMove'](12) != 12 or m['dgcCbtMoveAlt'](12) != 9 or m['dgcClsFighterLo'](12) != 16 or m['dgcClsMonk'](12) != 3 or m['dgcClsBard'](12) != 3 or m['dgcCbtSizeIn'](12) != 66"
+  },
+  {
+   "note": "the Pellinore walk: 65 hit points, 1 attack, lawful neutral, the 6 feet 4 inches single-voice size",
+   "expr": "m['dgcCbtHP'](13) != 65 or m['dgcCbtAtN'](13) != 1 or m['dgcRosAlign'](13) != 8 or m['dgcCbtSizeIn'](13) != 76"
+  },
+  {
+   "note": "the Tristram walk: AC -3, 120 hit points, 17th level fighter, S:18(99)(+2,+5), Dexterity 19",
+   "expr": "m['dgcCbtAC'](14) != -3 or m['dgcCbtHP'](14) != 120 or m['dgcClsFighterLo'](14) != 17 or m['dgcAbiStrDmg'](14) != 5 or m['dgcAbiDex'](14) != 19"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "doc/data/ddg_arthurian_knights.txt",
+   "content": "-- The Arthurian knight rosters (D&DG print pp. 17-18).\n-- DO NOT hand-edit: written by the R851 Arthurian\n-- mythos splice (spec tools/spec_r851.json); the\n-- consts pin the counts (90 + 13 = 103, 26 + 3 of\n-- quality). The asterisk marks a knight of quality.\n-- The good or neutral knights (all practiced\n-- chivalry in some form or degree):\nAbellius\nAblamor o' the Marsh\nAccolon o' Gaul*\nAglovale\nAgravaine (brother of Gawaine, betrayer of Launcelot)*\nAlisander\nAllardin o' the Isles\nBagdemagus, King\nBalin*\nBarant Les Apres (King of the Hundred Knights)*\nBedivere*\nBelleus o' the Pavilion\nBerel\nBlamor\nBleoberis\nBohort*\nBors de Ganis*\nBrandiles\nBreunor\nBrian o' the Forest\nBruin le Noire (La Cote Male Taile)*\nCador o' Cornwall\nCaradoc\nCarados, King of Scotland\nChestelaine\nClairemonde\nClegis\nDagonet (Arthur's court jester)\nDarras\nDinadan*\nDodinas le Savage\nEbel\nEctor de Maris*\nEdward\nElias\nEpinogris\nEwaine\nFeldenak\nFelot o' Langdue\nFlorence*\nFloridas\nGahalatine\nGaheris (brother of Gawaine)*\nGainus\nGalagers\nGaunter\nGilbert\nGilmere\nGouvernail (Tristram's squire)\nGriflet\nHector\nHelior le Preuse\nHerlen\nHervis de Revel\nHontzlake o' Wentland\nIder\nKay (Arthur's seneschal)*\nKehydius\nLanceor\nLavaine*\nLionel*\nLucan de Butterlere\nMador de la Porte\nManaggen\nMarhaus*\nMelias\nMeliot de Logres\nMiles o' the Lands*\nNaram\nOntzlake\nPatrice\nPelleas*\nPelles, King\nPercard (knight of the black lawns)*\nPercivale*\nPerimones (the red knight)*\nPersante of Inde (the blue knight)\nPersides\nPertelope (the green knight)*\nPriamus the Saracen\nSadok\nSafere\nSagramour le Desirous*\nSegwarides\nSorlons\nTrantrist o' the White*\nUlfius*\nUriens, king of Gore\nUwaine*\nWisshard\n-- The evil knights (evil through and through,\n-- chivalry used solely for the advantage it gives):\nAndred\nBreunis Sans Pite\nDamas\nEdward the Knight Perilous*\nGringamore\nHelius\nHue the Knight Perilous\nKing Mark\nMeleagrance\nMordred*\nPhelot\nPinell\nTurquine*\n-- * Indicates a knight of quality.\n"
+  }
+ ],
+ "header_sections": {
+  "the R851 census": [
+   {
+    "kind": "const",
+    "name": "dgcRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgcPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "dgcPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "dgcBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgcTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgcChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgcRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgcCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgcClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgcAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgcRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgcKnightCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgcGoodKnightCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgcEvilKnightCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualityKnightCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgcGoodQualityCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgcEvilQualityCount"
+   }
+  ],
+  "the chivalry doctrine": [
+   {
+    "kind": "bool",
+    "name": "dgcMaloryCollected"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcKnightsRepresentChivalry"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcChivalryIsFairPlay"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMisfortuneDishonorable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcBetterOddsDishonorable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcRespectsLadiesAndClerics"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcSuspiciousOfSorcery"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcQuestsWithOaths"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcRoundTableOptional"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcCamelotBoardgameReference"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcKnightsHaveWarhorse"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcKnightWeaponList"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcKnightsHaveLesserBeast"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcKnightsHaveSquire"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcSquiresRestrained"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcAverageKnightsKill"
+   },
+   {
+    "kind": "const",
+    "name": "dgcSquireBetterPct"
+   }
+  ],
+  "the knight templates": [
+   {
+    "kind": "const",
+    "name": "dgcRenownHPFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgcRenownFighterLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgcRenownFighterHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgcRenownSpecialFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgcRenownSpecialAvg"
+   },
+   {
+    "kind": "const",
+    "name": "dgcRenownLawfulPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualityHPFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualityFighterLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualityFighterHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualitySpecialFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualitySpecialAvg"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualityLawfulPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualitySquirePct"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualitySquireLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualitySquireHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualityMenAtArmsLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualityMenAtArmsHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgcQualityMercyPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcQualityKnightsMerciful"
+   }
+  ],
+  "the Arthur walk": [
+   {
+    "kind": "const",
+    "name": "dgcExcaliburPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcArthurPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcArthurSwordFromStone"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcArthurUtherMerlinEctor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcArthurRoundTable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcArthurLawfulRighteousness"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcExcaliburSharpness"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcScabbardPreventsCutting"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcArthurHalfDamageDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcArthurGoldDragonShield"
+   }
+  ],
+  "the Bernlad walk": [
+   {
+    "kind": "const",
+    "name": "dgcBernladAxePlus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcBernladGreenArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcBernladArmorPersonal"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcBernladNeutralStance"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcBernladBaitsKnights"
+   }
+  ],
+  "the Galahad walk": [
+   {
+    "kind": "bool",
+    "name": "dgcGalahadWhiteArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGalahadParentage"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGalahadParagon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGalahadHolyGrail"
+   }
+  ],
+  "the Gareth walk": [
+   {
+    "kind": "bool",
+    "name": "dgcGarethSonOfLot"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGarethEnemyOfKay"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGarethModest"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGarethHelpsLadies"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGarethManyColors"
+   }
+  ],
+  "the Garlon walk": [
+   {
+    "kind": "const",
+    "name": "dgcGarlonEffectiveAC"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGarlonFightsInvisibly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGarlonDefeatedByConcert"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGarlonWitchOfTheFens"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGarlonPowerForEvil"
+   }
+  ],
+  "the Gawaine walk": [
+   {
+    "kind": "const",
+    "name": "dgcGawaineStrEarly"
+   },
+   {
+    "kind": "const",
+    "name": "dgcGawaineStrMid"
+   },
+   {
+    "kind": "const",
+    "name": "dgcGawaineStrLate"
+   },
+   {
+    "kind": "const",
+    "name": "dgcGawaineSunStart"
+   },
+   {
+    "kind": "const",
+    "name": "dgcGawaineSunEnd"
+   },
+   {
+    "kind": "const",
+    "name": "dgcGalatinePlus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGawaineMagicalGift"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGawaineStrengthReturns"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGawaineFavoriteCousin"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcGawaineRevengeful"
+   }
+  ],
+  "the Lamorak walk": [
+   {
+    "kind": "bool",
+    "name": "dgcLamorakSonOfPellinore"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcLamorakTournamentChampion"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcLamorakKilledTable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcLamorakEnemyOfGawaine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcLamorakKilledTwelve"
+   }
+  ],
+  "the Launcelot walk": [
+   {
+    "kind": "bool",
+    "name": "dgcLauncelotBestOfBest"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcLauncelotFellFromGrace"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcLauncelotGalahadSon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcLauncelotLeftTheKing"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcLauncelotNeverFails"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcLauncelotQuests"
+   }
+  ],
+  "the Merlin walk": [
+   {
+    "kind": "const",
+    "name": "dgcMerlinDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgcMerlinDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgcMerlinPsi"
+   },
+   {
+    "kind": "const",
+    "name": "dgcMerlinRegen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinParentage"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinPowersBeyondMortals"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinGreatDruid"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinNoArmorOrWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinStaffSpellStorings"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinAbsorbsSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinForeseesRandomly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinTeleportsFromDanger"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinSurvivedMortalDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinHealsMagically"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinEarthy"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinAttackModesBCE"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMerlinAllDefenses"
+   }
+  ],
+  "the Morgan walk": [
+   {
+    "kind": "const",
+    "name": "dgcMorganDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgcMorganDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgcMorganRingPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMorganHalfSister"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMorganIllusionQueen"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMorganBloodTie"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMorganPartiallyNonhuman"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMorganTricksKnights"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMorganSeduceOrImprison"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcMorganPoisonedDagger"
+   }
+  ],
+  "the Palomides walk": [
+   {
+    "kind": "bool",
+    "name": "dgcPalomidesRivalOfTristram"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcPalomidesScimitar"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcPalomidesCompositeBow"
+   }
+  ],
+  "the Pellinore walk": [
+   {
+    "kind": "bool",
+    "name": "dgcPellinoreFoughtArthur"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcPellinoreRoundTable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcPellinoreQuestingBeast"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcPellinoreFatedPursuit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcPellinorePastMiddleAge"
+   }
+  ],
+  "the Tristram walk": [
+   {
+    "kind": "bool",
+    "name": "dgcTristramSecondBest"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcTristramIsolde"
+   },
+   {
+    "kind": "bool",
+    "name": "dgcTristramMarkJealous"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **Arthurian mythos** (pp. 17-21)",
+   "to": "- [x] **Arthurian mythos** (pp. 17-21)",
+   "note": "the Arthurian mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 3,
+  "open": 21
+ },
+ "include_comment": "the Arthurian mythos",
+ "include_after": "#include \"rules/dgb.h\"  // R850: the American Indian mythos",
+ "audit_anchor": "#include \"rules/audits/r850_batch.h\"  // R850: R850 American Indian mythos audit",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R850 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R850 LANDED 2026-10-26: commit 7e8df392b3c0d7f567098fa1dcecb1c98baeb891",
+  "  (pushed 55e32fc..7e8df39, census 772 -> 773), THE AMERICAN INDIAN MYTHOS -",
+  "  the D&DG walk round two, print pp. 12-16: fourteen beings (Raven, Coyote,",
+  "  Hastsezini, Hastseltsi, Heng, Hiawatha, Hotoru, Qagwaaz, Shakak, Snake-Man,",
+  "  Stoneribs, the Thunder Bird, Yanauluha, Tobadzistsini), the pantheon-wide",
+  "  cleric doctrine and the sacred bundle. THE SHAPE: 4 grids (combat, class,",
+  "  ability, roster; 36 cols, 14 rows each - one row per being), 93 consts + 103",
+  "  bools + 25 examples, inline 232; header rules/dgb.h, prefix dgb; audit \"R850",
+  "  American Indian mythos audit\", rode rules/audits/r850_batch.h. ZERO registry",
+  "  defs touched - the floor holds at 995. THE ADJUDICATIONS (the four-voice",
+  "  collation): Heng/Hotoru/Yanauluha attacks printed 3/2 (the 47-48px",
+  "  three-glyph width), Coyote psionic class III and Hastsezini II (the IA",
+  "  geometry 47px), Hastsezini CH -1 (both voices, the horror-table doctrine),",
+  "  Shakak CH 6 (both voices), the Thunder Bird X/22,600 xp line, Stoneribs size",
+  "  5 and one half feet (66 inches). THE REBUILD LESSON: a session reset between",
+  "  delivery and land took the authored spec, the builder and the b64 canvas -",
+  "  only what is committed or seated in Knowledge is durable; the recovery",
+  "  re-fetched the repo at the base sha, rebuilt from the extraction voices plus",
+  "  the seated adjudications (a fresh md5) and re-ran the full battery (700",
+  "  mutants, 0 missed) before the re-issue. DELIVERY: raw JSON in a code canvas",
+  "  (no base64, user-set), md5 4eba5547393129cf1418472fe21b453b (61,449 bytes).",
+  "  NEXT: the D&DG walk continues from the Arthurian mythos (print pp. 17-21)."
+ ]
+}

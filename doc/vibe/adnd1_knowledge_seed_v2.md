@@ -24445,6 +24445,28 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   dacdc83c, 1357 bytes); the gap report header carries the folio offset PRINT
   = PDF - 1. Spec tools/spec_r850.json rides this round. NEXT: the D&DG walk
   continues from the American Indian mythos (print pp. 12-16).
+  - R850 LANDED 2026-10-26: commit 7e8df392b3c0d7f567098fa1dcecb1c98baeb891
+  (pushed 55e32fc..7e8df39, census 772 -> 773), THE AMERICAN INDIAN MYTHOS -
+  the D&DG walk round two, print pp. 12-16: fourteen beings (Raven, Coyote,
+  Hastsezini, Hastseltsi, Heng, Hiawatha, Hotoru, Qagwaaz, Shakak, Snake-Man,
+  Stoneribs, the Thunder Bird, Yanauluha, Tobadzistsini), the pantheon-wide
+  cleric doctrine and the sacred bundle. THE SHAPE: 4 grids (combat, class,
+  ability, roster; 36 cols, 14 rows each - one row per being), 93 consts + 103
+  bools + 25 examples, inline 232; header rules/dgb.h, prefix dgb; audit "R850
+  American Indian mythos audit", rode rules/audits/r850_batch.h. ZERO registry
+  defs touched - the floor holds at 995. THE ADJUDICATIONS (the four-voice
+  collation): Heng/Hotoru/Yanauluha attacks printed 3/2 (the 47-48px
+  three-glyph width), Coyote psionic class III and Hastsezini II (the IA
+  geometry 47px), Hastsezini CH -1 (both voices, the horror-table doctrine),
+  Shakak CH 6 (both voices), the Thunder Bird X/22,600 xp line, Stoneribs size
+  5 and one half feet (66 inches). THE REBUILD LESSON: a session reset between
+  delivery and land took the authored spec, the builder and the b64 canvas -
+  only what is committed or seated in Knowledge is durable; the recovery
+  re-fetched the repo at the base sha, rebuilt from the extraction voices plus
+  the seated adjudications (a fresh md5) and re-ran the full battery (700
+  mutants, 0 missed) before the re-issue. DELIVERY: raw JSON in a code canvas
+  (no base64, user-set), md5 4eba5547393129cf1418472fe21b453b (61,449 bytes).
+  NEXT: the D&DG walk continues from the Arthurian mythos (print pp. 17-21).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
