@@ -1,0 +1,3835 @@
+{
+ "round": 858,
+ "prefix": "klv",
+ "title": "the Finnish mythos",
+ "header_file": "rules/klv.h",
+ "audit_file": "rules/audits/r858_batch.h",
+ "audit_label": "R858 Finnish mythos audit",
+ "audit_comment": "THE FINNISH MYTHOS - the D&DG walk round ten, print pp. 57-62: twenty beings (Vainamoinen, Ahto, the Water Dwarf, Ilmarinen, Hiisi, Ilmatar, Kiputytto, Lemminkainen, Kullervo, Tiera, Louhi, Loviatar, Mielikki, the Son of Pohjola, Surma, Tuonetar, Tuoni, Ukko, Untamo, the Air Maiden), the Kalevala doctrine, and the three magic items (the Great Tree, the Magic Wool, the Rake of Iron). Zero registry defs touched; the floor holds at 995. The adjudications: the KULLERVO TIERA FOLD SWAP (the Termux psm fold interleaved the two stat blocks; the geometry columns plus the clean tsv columns plus the prose settled the swap), the Lemminkainen MOVE 12 (the geometry word against the Termux full-text 15), the Louhi HP 110 (the 81px token too narrow for four glyphs), the Mielikki class I pipe (8px), the Tuonetar CH minus 6 (both voices), the Hiisi W:10 and Kullervo W:6 (both voices agree on the odd prints), the foot-mark size decodes (Lemminkainen 6 foot 2, Kullervo 6 foot 1, Tiera 5 foot 4, Mielikki 5 foot 1), the triple-slash moves of Ahto 18/24/24 and Tuoni 18/18/48, and the flagged cells: the Tuonetar fear radius 30 feet (djvu feet against tsv inches), the strength brackets (the Water Dwarf 18(37), Lemminkainen 18(09), the Son of Pohjola 18(00)), and the Loviatar 16(0,+1) bracket.",
+ "census_before": 780,
+ "include_after": "#include \"rules/egp.h\"  // R857: the Egyptian mythos",
+ "include_comment": "the Finnish mythos",
+ "audit_anchor": "#include \"rules/audits/r857_batch.h\"  // R857: R857 Egyptian mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Finnish mythos** (pp. 57-62)",
+   "to": "- [x] **Finnish mythos** (pp. 57-62)",
+   "note": "the Finnish mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 10,
+  "open": 14
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Finnish mythos - the D&DG walk round ten, print pp. 57-62: twenty beings from Vainamoinen the greatest hero and minstrel of the Kalevala to the Air Maiden of Ukko, the six heroes (Vainamoinen, Ilmarinen, Lemminkainen, Kullervo, Tiera, the Son of Pohjola), the two servants (the Water Dwarf of Ahto, the Air Maiden of Ukko), the three magic items of the mythos intro (the Great Tree, the Magic Wool, the Rake of Iron), and the Kalevala doctrine, across seven planes.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 058-063; the second printing); the collation voice: the archive.org 1st-print derivative (deities-demigods-1st-print, djvu.xml word geometry at 600dpi, segs 57-62). The adjudications: the KULLERVO TIERA FOLD SWAP (the Termux full-text interleave gave Kullervo the lawful good ranger block and Tiera the chaotic neutral block; the djvu column geometry, the tsv clean columns and the prose settled Kullervo as the chaotic neutral S:19(+3,+7) I:15 W:6 D:18 C:19 CH:14 fighter-thief-bard and Tiera as the lawful good S:17(+1,+1) ranger shield man of Lemminkainen), the Lemminkainen MOVE 12 (the djvu and the tsv word against the Termux full-text 15), the Louhi HP 110 (the tsv against the djvu 1170 garble; the 81px token too narrow for four glyphs), the Kiputytto attack 1 (the 11px single glyph against the djvu 17), the psionic pipe of Mielikki (the 8px single stroke read as class I), the negative charisma of Tuonetar (both voices print the minus six), the Hiisi W:10 and the Kullervo W:6 (both voices agree on the odd prints), the foot-mark size decodes (Lemminkainen 6 foot 2, Kullervo 6 foot 1, Tiera 5 foot 4, Mielikki 5 foot 1), the triple-slash moves of Ahto 18/24/24 and Tuoni 18/18/48, the Tuonetar fear radius 30 feet (the djvu feet against the tsv inches), and the Surka armor class minus two (the 64px dash-two token against the bare 2 garble)."
+ },
+ "consts": [
+  {
+   "name": "klvRound",
+   "value": 858,
+   "comment": "the Finnish mythos round: the D&DG walk round ten, print pp. 57-62"
+  },
+  {
+   "name": "klvPrintStart",
+   "value": 57,
+   "comment": "the first print page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "klvPrintEnd",
+   "value": 62,
+   "comment": "the last print page of the mythos"
+  },
+  {
+   "name": "klvBeingCount",
+   "value": 20,
+   "comment": "the twenty beings of the mythos (Vainamoinen through the Air Maiden: six heroes, five greater gods, four lesser gods, three demigods, two servants)"
+  },
+  {
+   "name": "klvTableCount",
+   "value": 4,
+   "comment": "the four grids (combat, class, ability, roster)"
+  },
+  {
+   "name": "klvChainCount",
+   "value": 0,
+   "comment": "no chains this round: no banded thresholds printed in the mythos"
+  },
+  {
+   "name": "klvRegistryFloor",
+   "value": 995,
+   "comment": "the registry floor holds: zero registry defs touched this round"
+  },
+  {
+   "name": "klvCbtRows",
+   "value": 20,
+   "comment": "the combat grid rows (one per being)"
+  },
+  {
+   "name": "klvClsRows",
+   "value": 20,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "klvAbiRows",
+   "value": 20,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "klvRosRows",
+   "value": 20,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "klvPlaneCount",
+   "value": 7,
+   "comment": "the seven printed planes: Prime Material, Elemental Water, Tarterus, Gehenna, Pandemonium, the Twin Paradises, Concordant Opposition"
+  },
+  {
+   "name": "klvHeroCount",
+   "value": 6,
+   "comment": "the six heroes (Vainamoinen, Ilmarinen, Lemminkainen, Kullervo, Tiera, the Son of Pohjola)"
+  },
+  {
+   "name": "klvServantCount",
+   "value": 2,
+   "comment": "the two servant beings (the Water Dwarf of Ahto, the Air Maiden of Ukko)"
+  },
+  {
+   "name": "klvGreaterCount",
+   "value": 5,
+   "comment": "the five greater powers (Ahto, Hiisi, Tuonetar, Tuoni, Ukko)"
+  },
+  {
+   "name": "klvLesserCount",
+   "value": 4,
+   "comment": "the four lesser powers (Ilmatar, Louhi, Mielikki, Untamo)"
+  },
+  {
+   "name": "klvDemigodCount",
+   "value": 3,
+   "comment": "the three demigods (Kiputytto, Loviatar, Surma)"
+  },
+  {
+   "name": "klvArtifactCount",
+   "value": 3,
+   "comment": "the three magic items of the mythos intro (the Great Tree, the Magic Wool, the Rake of Iron)"
+  },
+  {
+   "name": "klvPsiClassKinds",
+   "value": 4,
+   "comment": "the four psionic classes printed this round (I, II, IV, VI)"
+  },
+  {
+   "name": "klvBardCount",
+   "value": 13,
+   "comment": "the thirteen printed bard levels across the roster (the all-heroes-are-bards doctrine of the Kalevala)"
+  },
+  {
+   "name": "klvTreeArrowsLo",
+   "value": 1,
+   "comment": "each branch can be made into 1-10 magic arrows: the floor"
+  },
+  {
+   "name": "klvTreeArrowsHi",
+   "value": 10,
+   "comment": "the 1-10 magic arrow ceiling per branch"
+  },
+  {
+   "name": "klvTreeSpearPlus",
+   "value": 1,
+   "comment": "each branch can be made into a +1 magical spear"
+  },
+  {
+   "name": "klvWoolSheepCount",
+   "value": 30,
+   "comment": "the wool rubbed against the flesh produces a flock of 30 sheep"
+  },
+  {
+   "name": "klvWoolPerMonth",
+   "value": 1,
+   "comment": "the flock comes once a month"
+  },
+  {
+   "name": "klvRakeRestLengthInches",
+   "value": 36,
+   "comment": "the rake appears 3 feet in length: 36 inches"
+  },
+  {
+   "name": "klvRakeElongateYards",
+   "value": 200,
+   "comment": "the rake can elongate as far as the user wishes, up to 200 yards"
+  },
+  {
+   "name": "klvRakeStrokePct",
+   "value": 10,
+   "comment": "the 10 percent chance per stroke of raking out a specific item from under the water"
+  },
+  {
+   "name": "klvVainaAxePlus",
+   "value": 5,
+   "comment": "the +5 battle axe wielded alternately with the sword"
+  },
+  {
+   "name": "klvVainaSwordPlus",
+   "value": 3,
+   "comment": "the intelligent +3 sword of sharpness"
+  },
+  {
+   "name": "klvVainaSwordFearPerDay",
+   "value": 1,
+   "comment": "the sword casts a fear spell once per day"
+  },
+  {
+   "name": "klvVainaGirdleStr",
+   "value": 23,
+   "comment": "the girdle of cloud giant strength gives him a strength of 23"
+  },
+  {
+   "name": "klvVainaArmorPlus",
+   "value": 5,
+   "comment": "he appears as an elderly fighter wearing +5 leather armor"
+  },
+  {
+   "name": "klvVainaSummoningLo",
+   "value": 1,
+   "comment": "the monster summoning I-IV at will: the floor"
+  },
+  {
+   "name": "klvVainaSummoningHi",
+   "value": 4,
+   "comment": "the monster summoning I-IV at will: the ceiling"
+  },
+  {
+   "name": "klvVainaHorseAC",
+   "value": 3,
+   "comment": "his special horse: armor class 3"
+  },
+  {
+   "name": "klvVainaHorseMV",
+   "value": 24,
+   "comment": "the horse move of 24 inches"
+  },
+  {
+   "name": "klvVainaHorseHD",
+   "value": 10,
+   "comment": "the horse hit dice"
+  },
+  {
+   "name": "klvVainaHorseHp",
+   "value": 59,
+   "comment": "the horse hit points"
+  },
+  {
+   "name": "klvVainaHorseAt",
+   "value": 3,
+   "comment": "the horse attacks per round"
+  },
+  {
+   "name": "klvVainaHorseDmgHi",
+   "value": 10,
+   "comment": "the horse damage of 1-10/1-10/1-6: the 1-10 ceiling (twice printed)"
+  },
+  {
+   "name": "klvVainaHorseDmgThirdHi",
+   "value": 6,
+   "comment": "the third horse damage ceiling of 1-6"
+  },
+  {
+   "name": "klvVainaHorseGpLimit",
+   "value": 300000,
+   "comment": "the horse pulls sledges drawing up to 300,000 gp with no appreciable loss of speed"
+  },
+  {
+   "name": "klvVainaBoatGpLimit",
+   "value": 60000,
+   "comment": "the canoe-sized boat holds up to 60,000 gp of weight, much as a bag of holding"
+  },
+  {
+   "name": "klvVainaBoatCubicFeet",
+   "value": 1000,
+   "comment": "the boat volume of 1,000 cubic feet"
+  },
+  {
+   "name": "klvAhtoSicklePlus",
+   "value": 4,
+   "comment": "the +4 sickle that strikes for 2-20 points of damage"
+  },
+  {
+   "name": "klvAhtoSickleDmgLo",
+   "value": 2,
+   "comment": "the sickle damage floor"
+  },
+  {
+   "name": "klvAhtoSickleDmgHi",
+   "value": 20,
+   "comment": "the sickle damage ceiling"
+  },
+  {
+   "name": "klvAhtoSpellLevel",
+   "value": 40,
+   "comment": "he can use any spell involving wind or water as a 40th level spell caster"
+  },
+  {
+   "name": "klvAhtoMRWater",
+   "value": 100,
+   "comment": "the magic resistance of 100 percent in water"
+  },
+  {
+   "name": "klvAhtoMROtherwise",
+   "value": 50,
+   "comment": "the magic resistance of 50 percent otherwise"
+  },
+  {
+   "name": "klvAhtoMoveMid",
+   "value": 24,
+   "comment": "the middle 24 of the triple-slash 18/24/24 move print (both alts read 24 - flagged)"
+  },
+  {
+   "name": "klvDwarfAidPct",
+   "value": 25,
+   "comment": "the 25 percent chance that Ahto will aid the dwarf in any difficulty"
+  },
+  {
+   "name": "klvDwarfAppearPct",
+   "value": 100,
+   "comment": "the 100 percent chance that the god will appear if the dwarf is slain"
+  },
+  {
+   "name": "klvDwarfMacePlus",
+   "value": 3,
+   "comment": "the +3 mace for hand-to-hand combat"
+  },
+  {
+   "name": "klvDwarfRegen",
+   "value": 5,
+   "comment": "the regeneration of 5 points per melee round"
+  },
+  {
+   "name": "klvDwarfRegenRangeFeet",
+   "value": 50,
+   "comment": "the regeneration works when within 50 feet of a body of water"
+  },
+  {
+   "name": "klvIlmaHammerPlus",
+   "value": 4,
+   "comment": "the +4 hammer that strikes for 1-10 points of damage"
+  },
+  {
+   "name": "klvIlmaHammerDmgLo",
+   "value": 1,
+   "comment": "the hammer damage floor"
+  },
+  {
+   "name": "klvIlmaHammerDmgHi",
+   "value": 10,
+   "comment": "the hammer damage ceiling"
+  },
+  {
+   "name": "klvIlmaArmorPlus",
+   "value": 4,
+   "comment": "the +4 leather armor"
+  },
+  {
+   "name": "klvIlmaSledgeRate",
+   "value": 21,
+   "comment": "the magical sledge pulls itself at a rate of 21 and travels over land or water"
+  },
+  {
+   "name": "klvHiisiClubDmgLo",
+   "value": 4,
+   "comment": "the giant club does 4-40 points per strike: the floor"
+  },
+  {
+   "name": "klvHiisiClubDmgHi",
+   "value": 40,
+   "comment": "the club damage ceiling"
+  },
+  {
+   "name": "klvHiisiEvilHeroesLo",
+   "value": 1,
+   "comment": "he sends in a group of 1-10 evil heroes: the floor"
+  },
+  {
+   "name": "klvHiisiEvilHeroesHi",
+   "value": 10,
+   "comment": "the evil hero group ceiling"
+  },
+  {
+   "name": "klvHiisiEvilHeroAC",
+   "value": 2,
+   "comment": "each evil hero wears armor class 2"
+  },
+  {
+   "name": "klvHiisiEvilHeroLevel",
+   "value": 4,
+   "comment": "each evil hero is 4th level, armed with swords"
+  },
+  {
+   "name": "klvIlmatarSledgeRate",
+   "value": 24,
+   "comment": "her sledge moves by itself on the land, air and water at a rate of 24"
+  },
+  {
+   "name": "klvKipuSicknessHpPerTurn",
+   "value": 5,
+   "comment": "the sickness takes away 5 hit points from its victim per turn until dead or cured (saving throw applicable)"
+  },
+  {
+   "name": "klvKipuSymbolBowl",
+   "value": 0,
+   "comment": "her symbol is a battered metal bowl over a flame (the 0 rides the prose pin; the symbol cells need no number this round)"
+  },
+  {
+   "name": "klvLemmJavelinPlus",
+   "value": 3,
+   "comment": "the +3 javelin of distance"
+  },
+  {
+   "name": "klvLemmJavelinRangeInches",
+   "value": 36,
+   "comment": "the javelin range of 36 inches"
+  },
+  {
+   "name": "klvLemmBowPlus",
+   "value": 3,
+   "comment": "the +3 bow"
+  },
+  {
+   "name": "klvLemmSwordPlus",
+   "value": 5,
+   "comment": "the +5 sword"
+  },
+  {
+   "name": "klvLemmDaggerPlus",
+   "value": 3,
+   "comment": "the +3 dagger"
+  },
+  {
+   "name": "klvLemmChainmailPlus",
+   "value": 4,
+   "comment": "the +4 chainmail"
+  },
+  {
+   "name": "klvLemmSnowshoeRate",
+   "value": 24,
+   "comment": "the snowshoes of speed and traveling enable him to proceed at a rate of 24 on snow-covered ground"
+  },
+  {
+   "name": "klvKullAxePlus",
+   "value": 2,
+   "comment": "the +2 axe of sharpness (as the sword of the same name)"
+  },
+  {
+   "name": "klvKullAxeDmgLo",
+   "value": 1,
+   "comment": "the axe strikes for 1-10: the floor"
+  },
+  {
+   "name": "klvKullAxeDmgHi",
+   "value": 10,
+   "comment": "the axe damage ceiling"
+  },
+  {
+   "name": "klvTieraSpearPlus",
+   "value": 3,
+   "comment": "the +3 spear that glows when a lie is told in its presence"
+  },
+  {
+   "name": "klvTieraSpearDmgLo",
+   "value": 1,
+   "comment": "the spear does 1-10 points of damage: the floor"
+  },
+  {
+   "name": "klvTieraSpearDmgHi",
+   "value": 10,
+   "comment": "the spear damage ceiling"
+  },
+  {
+   "name": "klvLouhiFighterCount",
+   "value": 4,
+   "comment": "she can summon four invisible fighters at will to defend her"
+  },
+  {
+   "name": "klvLouhiFighterAC",
+   "value": 7,
+   "comment": "each fighter wears armor class 7"
+  },
+  {
+   "name": "klvLouhiFighterEffAC",
+   "value": 3,
+   "comment": "the fighters are effectively armor class 3 because invisible"
+  },
+  {
+   "name": "klvLouhiFighterLevel",
+   "value": 6,
+   "comment": "each fighter is level 6"
+  },
+  {
+   "name": "klvLouhiFighterHp",
+   "value": 27,
+   "comment": "each fighter has 27 hit points, armed with spears"
+  },
+  {
+   "name": "klvLoviPainExampleHp",
+   "value": 49,
+   "comment": "the printed example: the worst pain re-experienced, as 49 hit points of damage from a fireball"
+  },
+  {
+   "name": "klvMielDryadAidPct",
+   "value": 1,
+   "comment": "the 1 percent chance that she will aid her dryads when they are in extreme danger within the bounds of the forest"
+  },
+  {
+   "name": "klvMielAttackPct",
+   "value": 5,
+   "comment": "the 5 percent chance that she will attack those that try to destroy her domain, for whatever reason"
+  },
+  {
+   "name": "klvMielTreeRatio",
+   "value": 2,
+   "comment": "men like woodcutters must plant two trees for every one that they cut down, or eventually face her wrath"
+  },
+  {
+   "name": "klvMielCharmNegateYards",
+   "value": 30,
+   "comment": "she automatically negates all charm-type spells within a 30 yard radius of her body"
+  },
+  {
+   "name": "klvSonSwordPlus",
+   "value": 3,
+   "comment": "his sword does 2-20 points of damage per strike and is a +3 weapon"
+  },
+  {
+   "name": "klvSonSwordDmgLo",
+   "value": 2,
+   "comment": "the sword damage floor"
+  },
+  {
+   "name": "klvSonSwordDmgHi",
+   "value": 20,
+   "comment": "the sword damage ceiling"
+  },
+  {
+   "name": "klvSonWolfAC",
+   "value": 5,
+   "comment": "the giant wolf from his mother: armor class 5"
+  },
+  {
+   "name": "klvSonWolfMV",
+   "value": 18,
+   "comment": "the wolf move of 18 inches"
+  },
+  {
+   "name": "klvSonWolfHD",
+   "value": 6,
+   "comment": "the wolf hit dice"
+  },
+  {
+   "name": "klvSonWolfHp",
+   "value": 40,
+   "comment": "the wolf hit points"
+  },
+  {
+   "name": "klvSonWolfAt",
+   "value": 1,
+   "comment": "the wolf attacks per round"
+  },
+  {
+   "name": "klvSonWolfDmgLo",
+   "value": 1,
+   "comment": "the wolf damage of 1-10: the floor"
+  },
+  {
+   "name": "klvSonWolfDmgHi",
+   "value": 10,
+   "comment": "the wolf damage ceiling"
+  },
+  {
+   "name": "klvSurmaClubDmgLo",
+   "value": 3,
+   "comment": "his club strikes for 3-30 points of damage: the floor"
+  },
+  {
+   "name": "klvSurmaClubDmgHi",
+   "value": 30,
+   "comment": "the club damage ceiling"
+  },
+  {
+   "name": "klvTuonetaTouchDmgLo",
+   "value": 4,
+   "comment": "her merest touch inflicts 4-40 points of damage: the floor"
+  },
+  {
+   "name": "klvTuonetaTouchDmgHi",
+   "value": 40,
+   "comment": "the touch damage ceiling"
+  },
+  {
+   "name": "klvTuonetaFearRadiusFeet",
+   "value": 30,
+   "comment": "any creature that comes within 30 feet of her must save vs. spells or be affected by her fear aura (the djvu feet word against the tsv inches - flagged)"
+  },
+  {
+   "name": "klvTuoniClubDmgLo",
+   "value": 3,
+   "comment": "his club does 3-30 points of damage: the floor"
+  },
+  {
+   "name": "klvTuoniClubDmgHi",
+   "value": 30,
+   "comment": "the club damage ceiling"
+  },
+  {
+   "name": "klvTuoniMoveMid",
+   "value": 18,
+   "comment": "the middle 18 of the triple-slash 18/18/48 move print (the land and water alts read the same - flagged)"
+  },
+  {
+   "name": "klvTuoniReclaimPct",
+   "value": 1,
+   "comment": "the 1 percent chance that he will actually come in person to reclaim the raised person soul"
+  },
+  {
+   "name": "klvUkkoSwordDmgLo",
+   "value": 3,
+   "comment": "the flaming sword does 3-30 points of damage: the floor"
+  },
+  {
+   "name": "klvUkkoSwordDmgHi",
+   "value": 30,
+   "comment": "the sword damage ceiling"
+  },
+  {
+   "name": "klvUkkoDeathSaveMod",
+   "value": -6,
+   "comment": "the sword has the power to slay anything it hits as a death spell; saving throw at -6 applicable"
+  },
+  {
+   "name": "klvUkkoMaidenPct",
+   "value": 30,
+   "comment": "when a devout follower calls his name he is likely (30 percent) to send a warrior maiden"
+  },
+  {
+   "name": "klvUntaSleepHours",
+   "value": 13,
+   "comment": "he cannot be hurt by any being that has not recently slept for 13 hours or more"
+  },
+  {
+   "name": "klvUntaServiceYears",
+   "value": 1,
+   "comment": "those that summon him must agree to serve his needs for one year to receive his help in any matter"
+  },
+  {
+   "name": "klvUntaClubDmgLo",
+   "value": 3,
+   "comment": "his club strikes for 3-30 points of damage: the floor"
+  },
+  {
+   "name": "klvUntaClubDmgHi",
+   "value": 30,
+   "comment": "the club damage ceiling"
+  },
+  {
+   "name": "klvMaidenSwordPlus",
+   "value": 3,
+   "comment": "each maiden is armed with a +3 frost brand sword"
+  },
+  {
+   "name": "klvMaidenFlyRate",
+   "value": 48,
+   "comment": "each maiden may fly at up to 48 without tiring"
+  },
+  {
+   "name": "klvDwarfStrPct",
+   "value": 37,
+   "comment": "the Water Dwarf S:18(37) bracket print (both voices read 37 - flagged)"
+  },
+  {
+   "name": "klvLemmStrPct",
+   "value": 9,
+   "comment": "the Lemminkainen S:18(09) bracket print (both voices read 09 - flagged)"
+  },
+  {
+   "name": "klvSonStrPct",
+   "value": 0,
+   "comment": "the Son of Pohjola S:18(00) bracket print: the double zero of exceptional strength"
+  }
+ ],
+ "bools": [
+  {
+   "name": "klvKalevalaTheEpic",
+   "value": true,
+   "comment": "the stories magnificently told in The Kalevala, the Finnish national epic"
+  },
+  {
+   "name": "klvTalesFocusOnHeroes",
+   "value": true,
+   "comment": "the tales focus on the exploits of the heroes rather than the gods"
+  },
+  {
+   "name": "klvHeroesBeyondMortal",
+   "value": true,
+   "comment": "the heroes of The Kalevala are very powerful, with abilities beyond those of mortal men"
+  },
+  {
+   "name": "klvMostHaveDivineAncestors",
+   "value": true,
+   "comment": "most of the heroes have divine ancestors"
+  },
+  {
+   "name": "klvOnlyVainamoinenMeddles",
+   "value": true,
+   "comment": "only Vainamoinen is powerful and skillful enough to successfully meddle with the gods"
+  },
+  {
+   "name": "klvKalevalaVersusPohjola",
+   "value": true,
+   "comment": "the core of the epic: the continuing conflict between Kalevala the land of good heroes and Pohjola the land of evil and wizardry"
+  },
+  {
+   "name": "klvAllHeroesGreatBards",
+   "value": true,
+   "comment": "all of the heroes are great bards and make mighty magics with their songs"
+  },
+  {
+   "name": "klvClericsAboveNormalMen",
+   "value": true,
+   "comment": "the clerics of the gods consider themselves above normal men, generally well respected and or feared"
+  },
+  {
+   "name": "klvClericsChastiseWithSpells",
+   "value": true,
+   "comment": "the clerics have no qualms about using spells to chastise those who offend them or threaten their power"
+  },
+  {
+   "name": "klvTreeFragmentsMakeItems",
+   "value": true,
+   "comment": "the fragments of the Great Tree can be used to make various magic items"
+  },
+  {
+   "name": "klvTreeRawMaterialsOnly",
+   "value": true,
+   "comment": "the wood merely supplies the raw materials: it cannot just be cut into the shape of magic weapons"
+  },
+  {
+   "name": "klvTreeMustBeEnchanted",
+   "value": true,
+   "comment": "the wood still must be enchanted properly"
+  },
+  {
+   "name": "klvWoolOfPohjola",
+   "value": true,
+   "comment": "certain mighty persons of Pohjola have some of this material"
+  },
+  {
+   "name": "klvWoolRubbedOnFlesh",
+   "value": true,
+   "comment": "the rubbing against the flesh produces the flock"
+  },
+  {
+   "name": "klvRakeNeedsApproxLocation",
+   "value": true,
+   "comment": "the approximate location of the item must be known"
+  },
+  {
+   "name": "klvRakeOfLemminkainensMother",
+   "value": true,
+   "comment": "the rake was used by Lemminkainen mother in recovering his body, which was deep under water"
+  },
+  {
+   "name": "klvVainaGreatestHero",
+   "value": true,
+   "comment": "Vainamoinen is the Kalevala greatest hero and minstrel"
+  },
+  {
+   "name": "klvVainaSonOfTheWind",
+   "value": true,
+   "comment": "he is called the Son of the Wind by friends and enemies alike"
+  },
+  {
+   "name": "klvVainaSwordTalks",
+   "value": true,
+   "comment": "the sword of sharpness talks"
+  },
+  {
+   "name": "klvVainaCrossbowCombo",
+   "value": true,
+   "comment": "his first crossbow combines the abilities of crossbows of accuracy, distance and speed"
+  },
+  {
+   "name": "klvVainaCrossbowSelfFiring",
+   "value": true,
+   "comment": "the other crossbow, once started, loads and fires itself at his enemies until stopped, much like a dancing sword"
+  },
+  {
+   "name": "klvVainaShapeChange",
+   "value": true,
+   "comment": "he can shape change at will"
+  },
+  {
+   "name": "klvVainaDispelMagic",
+   "value": true,
+   "comment": "he can dispel magic at will"
+  },
+  {
+   "name": "klvVainaCharmImmune",
+   "value": true,
+   "comment": "he is immune to the effects of charm-type spells"
+  },
+  {
+   "name": "klvVainaDiseaseImmune",
+   "value": true,
+   "comment": "he is immune to disease"
+  },
+  {
+   "name": "klvVainaHorseMagicalImmune",
+   "value": true,
+   "comment": "the special horse is immune to magical attacks"
+  },
+  {
+   "name": "klvVainaHorseLandOrWater",
+   "value": true,
+   "comment": "the horse pulls his sledges across land or water"
+  },
+  {
+   "name": "klvAhtoGodOfSeas",
+   "value": true,
+   "comment": "Ahto is the god of the seas and waters, a greater god"
+  },
+  {
+   "name": "klvAhtoGreenBearded",
+   "value": true,
+   "comment": "he appears to the world as a green-bearded man"
+  },
+  {
+   "name": "klvAhtoRarelyReveals",
+   "value": true,
+   "comment": "he rarely reveals himself to mortals"
+  },
+  {
+   "name": "klvAhtoSendsTheWaterDwarf",
+   "value": true,
+   "comment": "when called on to aid mortals he sends the Water Dwarf"
+  },
+  {
+   "name": "klvAhtoSacrificesDeepWater",
+   "value": true,
+   "comment": "sacrifices are made to Ahto by placing the objects into deep water and calling on him"
+  },
+  {
+   "name": "klvDwarfAhtosShieldMan",
+   "value": true,
+   "comment": "the Water Dwarf is the shield man of Ahto"
+  },
+  {
+   "name": "klvDwarfCrossbowTwiceRate",
+   "value": true,
+   "comment": "he uses a crossbow of accuracy at twice the usual rate of fire"
+  },
+  {
+   "name": "klvDwarfSentOnMissions",
+   "value": true,
+   "comment": "the dwarf is often sent on missions for Ahto, carefully observed by the god"
+  },
+  {
+   "name": "klvIlmaBlacksmith",
+   "value": true,
+   "comment": "Ilmarinen is a blacksmith of great magical power, with the ability to create mighty magic items of many sorts"
+  },
+  {
+   "name": "klvIlmaMassivelyBuilt",
+   "value": true,
+   "comment": "he is a massively built man"
+  },
+  {
+   "name": "klvIlmaYokesDeer",
+   "value": true,
+   "comment": "when traveling incognito or among enemies he will yoke deer to the front of the sledge to conceal its magical nature"
+  },
+  {
+   "name": "klvHiisiGodOfEvil",
+   "value": true,
+   "comment": "Hiisi is the god of evil, a greater god"
+  },
+  {
+   "name": "klvHiisiHugeRobedMan",
+   "value": true,
+   "comment": "he always appears as a huge, richly robed man with coarse features"
+  },
+  {
+   "name": "klvHiisiAidsEvilCreatures",
+   "value": true,
+   "comment": "he constantly aids evil creatures"
+  },
+  {
+   "name": "klvHiisiAvoidsDirectBattle",
+   "value": true,
+   "comment": "he does not like to directly enter battle, preferring to sit on the sidelines while sending in the evil heroes"
+  },
+  {
+   "name": "klvHiisiEvilCannotHurtHim",
+   "value": true,
+   "comment": "evil beings are unable to do any damage to him either directly or indirectly"
+  },
+  {
+   "name": "klvIlmatarGoddessOfMothers",
+   "value": true,
+   "comment": "Ilmatar is the goddess of mothers, a lesser goddess"
+  },
+  {
+   "name": "klvIlmatarDaughterOfTheAir",
+   "value": true,
+   "comment": "she is described as the Daughter of the Air"
+  },
+  {
+   "name": "klvIlmatarMotherOfVainamoinen",
+   "value": true,
+   "comment": "she is the mother of Vainamoinen"
+  },
+  {
+   "name": "klvIlmatarGatesAnyFinnishGod",
+   "value": true,
+   "comment": "she can instantly gate in any Finnish god or goddess, and they will help her or her son as they all owe her favors"
+  },
+  {
+   "name": "klvIlmatarBallOfCreation",
+   "value": true,
+   "comment": "her hand-sized ball, carried in a copper box, has written upon it all the legends of creation and the spells used in that formation"
+  },
+  {
+   "name": "klvIlmatarKnowsAllBeings",
+   "value": true,
+   "comment": "she is able to use the ball to know all the powers and abilities of any being that ever existed"
+  },
+  {
+   "name": "klvKipuGoddessOfSickness",
+   "value": true,
+   "comment": "Kiputytto is the goddess of sickness, the Mother of the Plague, a demigoddess"
+  },
+  {
+   "name": "klvKipuTouchRots",
+   "value": true,
+   "comment": "anything that touches her will rot away, including swords, armor, claw or fang"
+  },
+  {
+   "name": "klvKipuFloatsInvisible",
+   "value": true,
+   "comment": "she is very fond of floating above a battle invisibly and affecting those that have minor wounds and are forced to retreat"
+  },
+  {
+   "name": "klvKipuTwistedCrone",
+   "value": true,
+   "comment": "she appears most often as a black skinned, twisted old crone with a scarred face"
+  },
+  {
+   "name": "klvKipuCultWastedDisease",
+   "value": true,
+   "comment": "the members of her cult seem to have all suffered from some wasting disease and bear the marks on their faces"
+  },
+  {
+   "name": "klvKipuHarmingSpellsOnly",
+   "value": true,
+   "comment": "her 14th level cleric/druid and 15th level magic-user/illusionist spells are harming spells only"
+  },
+  {
+   "name": "klvLemmJovialReckless",
+   "value": true,
+   "comment": "Lemminkainen is jovial and reckless, constantly getting himself into serious scrapes"
+  },
+  {
+   "name": "klvLemmShapeChangeMaster",
+   "value": true,
+   "comment": "he has mastered the art of shape changing"
+  },
+  {
+   "name": "klvLemmBeastsWillNotAttack",
+   "value": true,
+   "comment": "bears and wolves will not attack him"
+  },
+  {
+   "name": "klvLemmPoisonImmune",
+   "value": true,
+   "comment": "he is immune to poisons of all types"
+  },
+  {
+   "name": "klvLemmBowAnimalSlaying",
+   "value": true,
+   "comment": "the bow comes with a quiver of animal slaying arrows"
+  },
+  {
+   "name": "klvLemmSwordSharpnessFlaming",
+   "value": true,
+   "comment": "the +5 sword is both a sword of sharpness and a flaming sword"
+  },
+  {
+   "name": "klvLemmFrostGirdle",
+   "value": true,
+   "comment": "he uses a girdle of frost giant strength"
+  },
+  {
+   "name": "klvLemmBrushShedsBlood",
+   "value": true,
+   "comment": "his magical brush, left at home on adventures, sheds blood when Lemminkainen is in trouble"
+  },
+  {
+   "name": "klvLemmMotherSendsAid",
+   "value": true,
+   "comment": "by that token his mother, a mighty magic-user in her own right, knows that she should send aid"
+  },
+  {
+   "name": "klvKullervoTheFoil",
+   "value": true,
+   "comment": "Kullervo is the foil of the good heroes of Kalevala, doomed to eventually betray Kalevala and become evil, and acts as if he knows it"
+  },
+  {
+   "name": "klvKullervoShapeChange",
+   "value": true,
+   "comment": "Kullervo can shape change"
+  },
+  {
+   "name": "klvKullervoFireImmune",
+   "value": true,
+   "comment": "Kullervo is immune to fire-based attacks"
+  },
+  {
+   "name": "klvTieraTheShieldMan",
+   "value": true,
+   "comment": "Tiera is the shield man of Lemminkainen"
+  },
+  {
+   "name": "klvTieraAidsHisMaster",
+   "value": true,
+   "comment": "this fighter will always aid his master to the best of his ability"
+  },
+  {
+   "name": "klvLouhiOldCroneOfPohjola",
+   "value": true,
+   "comment": "Louhi is the old crone of Pohjola, a lesser goddess"
+  },
+  {
+   "name": "klvLouhiIronHand",
+   "value": true,
+   "comment": "she rules the evil land of Pohjola with an iron hand"
+  },
+  {
+   "name": "klvLouhiOpposesTheHeroes",
+   "value": true,
+   "comment": "she opposes all of the good heroes of Kalevala and works continuously for their downfall"
+  },
+  {
+   "name": "klvLouhiTwoGuardTwoAttack",
+   "value": true,
+   "comment": "of the four fighters two will guard her while two attack the enemy"
+  },
+  {
+   "name": "klvLouhiPoisonAndSleepPotions",
+   "value": true,
+   "comment": "she is very adept at the creation of poison and sleep potions, which she uses on guests she wants to eliminate"
+  },
+  {
+   "name": "klvLoviatarMaidenOfPain",
+   "value": true,
+   "comment": "Loviatar is the goddess of hurt, the Maiden of Pain, a demigoddess"
+  },
+  {
+   "name": "klvLoviatarColdMaiden",
+   "value": true,
+   "comment": "she is described as a beautiful cold maiden, usually dressed in white silks"
+  },
+  {
+   "name": "klvLoviatarColdWindSpeaks",
+   "value": true,
+   "comment": "when she speaks a cold wind blows"
+  },
+  {
+   "name": "klvLoviatarInflictsPain",
+   "value": true,
+   "comment": "her main concern is the inflicting of pain"
+  },
+  {
+   "name": "klvLoviatarDaggerOfIce",
+   "value": true,
+   "comment": "she owns a dagger of ice that makes her immune to all magical spells"
+  },
+  {
+   "name": "klvLoviatarPainReflection",
+   "value": true,
+   "comment": "when attacked or when magic is used against her, the attacker will once again re-experience the worst pain he or she has ever suffered (no saving throw)"
+  },
+  {
+   "name": "klvLoviatarSecondWorstPain",
+   "value": true,
+   "comment": "a second attack on the part of that character would result in the second most painful thing hurting him, and so on"
+  },
+  {
+   "name": "klvMielikkiMistressOfTheForest",
+   "value": true,
+   "comment": "Mielikki is the goddess of nature, the Mistress of the Forest, a lesser goddess"
+  },
+  {
+   "name": "klvMielikkiGreenGossamer",
+   "value": true,
+   "comment": "the goddess is always dressed in a green gossamer gown, even in the coldest of winters, and is always surrounded with summer songbirds"
+  },
+  {
+   "name": "klvMielikkiWatchesRangers",
+   "value": true,
+   "comment": "she watches over rangers and all creatures of the forest, especially dryads"
+  },
+  {
+   "name": "klvMielikkiWildsCannotHurtHer",
+   "value": true,
+   "comment": "no creature that lives in the wilds is able to hurt her, even if controlled"
+  },
+  {
+   "name": "klvMielikkiClericalImmune",
+   "value": true,
+   "comment": "she is not affected by clerical spells of any type"
+  },
+  {
+   "name": "klvMielikkiSummonsWolvesAndHawks",
+   "value": true,
+   "comment": "when magic has failed to hurt her enemies, she has been known to summon huge packs of wolves and flights of hawks to attack despoilers of the forest"
+  },
+  {
+   "name": "klvSonEvilHero",
+   "value": true,
+   "comment": "the Son of Pohjola is an evil hero"
+  },
+  {
+   "name": "klvSonLeaderOfPohjola",
+   "value": true,
+   "comment": "this son of Louhi was a leader of the people of Pohjola"
+  },
+  {
+   "name": "klvSonEnemyOfLemminkainen",
+   "value": true,
+   "comment": "he is a savage enemy to Lemminkainen and the other good heroes of Kalevala"
+  },
+  {
+   "name": "klvSonWolfObeysEveryCommand",
+   "value": true,
+   "comment": "the giant wolf obeys his every command"
+  },
+  {
+   "name": "klvSonWolfColdImmune",
+   "value": true,
+   "comment": "the giant wolf is immune to cold attacks"
+  },
+  {
+   "name": "klvSonWolfFromLouhi",
+   "value": true,
+   "comment": "his mother has given him the giant wolf"
+  },
+  {
+   "name": "klvSurmaDemigodOfDeath",
+   "value": true,
+   "comment": "Surma is the demigod of death"
+  },
+  {
+   "name": "klvSurmaClubOnlyHeCanWield",
+   "value": true,
+   "comment": "only Surma can wield this weapon"
+  },
+  {
+   "name": "klvSurmaChallengesAll",
+   "value": true,
+   "comment": "he occasionally travels about the country challenging all he meets to combat"
+  },
+  {
+   "name": "klvSurmaKillsRefusersInSleep",
+   "value": true,
+   "comment": "if they refuse, he lets them go only to follow them and kill them in their sleep"
+  },
+  {
+   "name": "klvSurmaAgingWarrior",
+   "value": true,
+   "comment": "he often appears as a slightly aging warrior in leather buckskins and red boots"
+  },
+  {
+   "name": "klvTuonetarGoddessOfTheUnderworld",
+   "value": true,
+   "comment": "Tuonetar is the goddess of the underworld, a greater goddess, the wife of Tuoni"
+  },
+  {
+   "name": "klvTuonetarUglyCrone",
+   "value": true,
+   "comment": "she appears to the world as an incredibly ugly old crone"
+  },
+  {
+   "name": "klvTuonetarFleeUntilExhaustion",
+   "value": true,
+   "comment": "those affected by the fear aura flee until exhaustion sets in"
+  },
+  {
+   "name": "klvTuonetarEnemyOfVainamoinen",
+   "value": true,
+   "comment": "she is an implacable enemy of Vainamoinen"
+  },
+  {
+   "name": "klvTuoniGodOfTheUnderworld",
+   "value": true,
+   "comment": "Tuoni is the god of the underworld, a greater god"
+  },
+  {
+   "name": "klvTuoniDarkFurs",
+   "value": true,
+   "comment": "this god is usually dressed in dark furs"
+  },
+  {
+   "name": "klvTuoniDeathAndPrismaticWall",
+   "value": true,
+   "comment": "at will he can constantly shape change and cast death and prismatic wall spells"
+  },
+  {
+   "name": "klvTuoniDeathCharmImmune",
+   "value": true,
+   "comment": "he is immune to all death and charm-type spells"
+  },
+  {
+   "name": "klvTuoniVisionOnRaise",
+   "value": true,
+   "comment": "the god will always appear as if in a vision when a being who worships the Finnish pantheon is raised from the dead"
+  },
+  {
+   "name": "klvTuoniClubOnlyHeCanLift",
+   "value": true,
+   "comment": "his club, which only he can lift, always disenchants one randomly determined magic item on the being hit (no saving throw)"
+  },
+  {
+   "name": "klvTuoniClericsTakeValuables",
+   "value": true,
+   "comment": "his clerics go about the battlefield and aid those near death to reach the land of the dead, sending the near dead off a bit too soon, and take the dead person valuables as recompense"
+  },
+  {
+   "name": "klvUkkoSupremeGod",
+   "value": true,
+   "comment": "Ukko is the supreme god of the Kalevala, a greater god"
+  },
+  {
+   "name": "klvUkkoTheOldMan",
+   "value": true,
+   "comment": "Ukko is represented as an old man"
+  },
+  {
+   "name": "klvUkkoSupportsGoodHeroes",
+   "value": true,
+   "comment": "he is very supportive of all the good heroes in the mythos"
+  },
+  {
+   "name": "klvUkkoMagicAttackFirst",
+   "value": true,
+   "comment": "while he usually uses a magic attack, when hard pressed in battle he uses the flaming sword"
+  },
+  {
+   "name": "klvUkkoSkyMaster",
+   "value": true,
+   "comment": "this god is master of the sky and air, and supports the world: he is responsible for all weather and protects all avian life"
+  },
+  {
+   "name": "klvUkkoNonintervention",
+   "value": true,
+   "comment": "because he is the supreme god he will never directly intervene in worldly affairs unless there is a strong possibility of the world being destroyed by evil, especially chaotics"
+  },
+  {
+   "name": "klvUkkoMaidenAdviseThenRescue",
+   "value": true,
+   "comment": "the warrior maiden is sent first to advise, then to rescue the imperiled believer"
+  },
+  {
+   "name": "klvUkkoMaidensOnlyCertainDeath",
+   "value": true,
+   "comment": "these powerful warriors will be sent only when his worshipers face certain death at the hands of demons, devils or very powerful evil characters"
+  },
+  {
+   "name": "klvUntamoGodOfSleep",
+   "value": true,
+   "comment": "Untamo is the god of sleep and dreams, a lesser god"
+  },
+  {
+   "name": "klvUntamoVeryMild",
+   "value": true,
+   "comment": "this god is very mild in all of his actions and dislikes being summoned for any reason"
+  },
+  {
+   "name": "klvUntamoSleepAuraOnContact",
+   "value": true,
+   "comment": "those who have not slept will go to sleep instantly in his presence"
+  },
+  {
+   "name": "klvUntamoClubSleep",
+   "value": true,
+   "comment": "those that do not make their saving throw vs. spells will fall instantly asleep"
+  },
+  {
+   "name": "klvMaidenUkkosWarrior",
+   "value": true,
+   "comment": "the Air Maiden is the warrior of Ukko"
+  },
+  {
+   "name": "klvMaidenWingedLight",
+   "value": true,
+   "comment": "an air maiden appears as a winged human with a sword, garbed in flowing robes, and glowing with a brilliant light"
+  },
+  {
+   "name": "klvMaidenOneAtATime",
+   "value": true,
+   "comment": "only one air maiden will appear at a time"
+  },
+  {
+   "name": "klvMaidenTelepathy",
+   "value": true,
+   "comment": "when sent by Ukko, a maiden will first advise the worshiper as to the best course of action, using telepathy"
+  },
+  {
+   "name": "klvMaidenVanishesOnDeath",
+   "value": true,
+   "comment": "if a maiden is slain, she and all her possessions including the sword will vanish"
+  },
+  {
+   "name": "klvMaidenReplacedOnDeath",
+   "value": true,
+   "comment": "should an air maiden be slain before her mission is completed, another will immediately appear"
+  },
+  {
+   "name": "klvSonStrDoubleZero",
+   "value": true,
+   "comment": "the 18(00) strength of the Son of Pohjola is the maximum percentile print"
+  },
+  {
+   "name": "klvLoviStrZeroBracket",
+   "value": true,
+   "comment": "Loviatar prints the odd S:16(0, +1) bracket: a zero to hit bonus over a +1 damage bonus"
+  },
+  {
+   "name": "klvVainaPaladin",
+   "value": true,
+   "comment": "Vainamoinen prints a 20th level paladin on the fighter line (the R857 convention: paladins ride the fighter cols)"
+  },
+  {
+   "name": "klvIlmaPaladin",
+   "value": true,
+   "comment": "Ilmatar prints a 10th level paladin on the fighter line"
+  },
+  {
+   "name": "klvUkkoPaladin",
+   "value": true,
+   "comment": "Ukko prints a 20th level paladin on the fighter line"
+  },
+  {
+   "name": "klvTieraRanger",
+   "value": true,
+   "comment": "Tiera prints a 9th level ranger on the fighter line (rides the fighter cols, the bool carries the ranger word)"
+  },
+  {
+   "name": "klvMielRanger",
+   "value": true,
+   "comment": "Mielikki prints a 10th level ranger on the fighter line"
+  },
+  {
+   "name": "klvSurmaRanger",
+   "value": true,
+   "comment": "Surma prints a 15th level ranger on the fighter line"
+  },
+  {
+   "name": "klvAhtoInEachMagUser",
+   "value": true,
+   "comment": "Ahto prints the 15th level in each magic-user/illusionist pair"
+  },
+  {
+   "name": "klvIlmatarInEachCleric",
+   "value": true,
+   "comment": "Ilmatar prints the 13th level in each cleric/druid pair"
+  },
+  {
+   "name": "klvKiputyttoInEachBoth",
+   "value": true,
+   "comment": "Kiputytto prints the in-each pair twice: 14th cleric/druid and 15th magic-user/illusionist"
+  },
+  {
+   "name": "klvLouhiInEachCleric",
+   "value": true,
+   "comment": "Louhi prints the 10th level in each cleric/druid pair"
+  },
+  {
+   "name": "klvLoviatarInEachCleric",
+   "value": true,
+   "comment": "Loviatar prints the 12th level in each cleric/druid pair"
+  },
+  {
+   "name": "klvMielikkiInEachBoth",
+   "value": true,
+   "comment": "Mielikki prints the in-each pair twice: 14th cleric/druid and 12th magic-user/illusionist"
+  },
+  {
+   "name": "klvSurmaInEachBoth",
+   "value": true,
+   "comment": "Surma prints the in-each pair twice: 14th cleric/druid and 12th magic-user/illusionist, both harming spells only"
+  },
+  {
+   "name": "klvTuonetarInEachMagUser",
+   "value": true,
+   "comment": "Tuonetar prints the 20th level in each magic-user/illusionist pair"
+  },
+  {
+   "name": "klvTuoniInEachMagUser",
+   "value": true,
+   "comment": "Tuoni prints the 15th level in each magic-user/illusionist pair"
+  },
+  {
+   "name": "klvIlmarinenInEachMagUser",
+   "value": true,
+   "comment": "Ilmarinen prints the 9th level in each magic-user/illusionist pair"
+  },
+  {
+   "name": "klvKullervoInEachMagUser",
+   "value": true,
+   "comment": "Kullervo prints the 8th level in each magic-user/illusionist pair"
+  },
+  {
+   "name": "klvTieraInEachMagUser",
+   "value": true,
+   "comment": "Tiera prints the 8th level in each magic-user/illusionist pair"
+  },
+  {
+   "name": "klvHiisiInEachCleric",
+   "value": false,
+   "comment": "Hiisi prints single class lines (15th level cleric and 15th level illusionist over a Nil magic-user), not the in-each pair"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "klvCbt",
+   "count": "klvCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "klvCbtAC",
+    "klvCbtACAlt",
+    "klvCbtHP",
+    "klvCbtMove",
+    "klvCbtMoveAlt",
+    "klvCbtAtN",
+    "klvCbtAtD",
+    "klvCbtMR",
+    "klvCbtSizeIn"
+   ],
+   "data": [
+    [
+     -4,
+     0,
+     250,
+     15,
+     0,
+     2,
+     0,
+     0,
+     84
+    ],
+    [
+     -2,
+     0,
+     324,
+     18,
+     24,
+     3,
+     2,
+     50,
+     84
+    ],
+    [
+     -2,
+     0,
+     99,
+     12,
+     0,
+     2,
+     0,
+     0,
+     48
+    ],
+    [
+     0,
+     0,
+     167,
+     15,
+     0,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     2,
+     0,
+     333,
+     18,
+     0,
+     2,
+     0,
+     45,
+     84
+    ],
+    [
+     4,
+     0,
+     200,
+     12,
+     24,
+     1,
+     0,
+     50,
+     60
+    ],
+    [
+     2,
+     0,
+     189,
+     12,
+     24,
+     1,
+     0,
+     25,
+     60
+    ],
+    [
+     -2,
+     0,
+     149,
+     12,
+     0,
+     2,
+     0,
+     0,
+     74
+    ],
+    [
+     1,
+     0,
+     119,
+     15,
+     0,
+     2,
+     0,
+     0,
+     73
+    ],
+    [
+     4,
+     0,
+     66,
+     12,
+     0,
+     3,
+     2,
+     0,
+     64
+    ],
+    [
+     8,
+     0,
+     110,
+     9,
+     0,
+     1,
+     0,
+     15,
+     60
+    ],
+    [
+     2,
+     0,
+     227,
+     24,
+     48,
+     1,
+     0,
+     25,
+     60
+    ],
+    [
+     4,
+     0,
+     322,
+     -1,
+     0,
+     3,
+     2,
+     50,
+     61
+    ],
+    [
+     4,
+     0,
+     119,
+     15,
+     0,
+     3,
+     2,
+     0,
+     84
+    ],
+    [
+     -2,
+     0,
+     224,
+     18,
+     0,
+     2,
+     0,
+     40,
+     72
+    ],
+    [
+     6,
+     0,
+     340,
+     9,
+     0,
+     1,
+     0,
+     70,
+     60
+    ],
+    [
+     -2,
+     0,
+     389,
+     18,
+     48,
+     2,
+     0,
+     64,
+     120
+    ],
+    [
+     -2,
+     0,
+     400,
+     -1,
+     0,
+     2,
+     0,
+     85,
+     84
+    ],
+    [
+     0,
+     0,
+     319,
+     18,
+     36,
+     3,
+     2,
+     25,
+     84
+    ],
+    [
+     5,
+     0,
+     85,
+     48,
+     0,
+     2,
+     0,
+     50,
+     72
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Vainamoinen -4, Kullervo 1, Louhi 8 the worst, the Air Maiden 5)",
+    "The range ceiling cells (0 = a single printed armor class; all twenty read single this round)",
+    "The hit point cells (Ukko 400 the supreme, down to 66 per Tiera; Louhi the 110 decode against the djvu 1170 garble)",
+    "The primary move cells (-1 = the printed Infinite of Mielikki and Ukko, the R854 convention; Lemminkainen the 12 catch)",
+    "The secondary move cells (the printed slash ceilings; Ahto the 18/24/24 and Tuoni the 18/18/48 triple prints)",
+    "The attack count cells (the 1s of Ilmatar, Kiputytto, Louhi, Loviatar and Tuonetar; Vainamoinen through Ukko the 2s)",
+    "The attack alternative cells (the 3/2 slashes of Ahto, Tiera, Mielikki, the Son of Pohjola and Untamo)",
+    "The magic resistance cells (0 = the printed Standard of the seven hero and servant rows; Ahto the 50 otherwise)",
+    "The size cells in inches (the foot-mark decodes: Lemminkainen 6 foot 2, Kullervo 6 foot 1, Tiera 5 foot 4, Mielikki 5 foot 1; Tuoni the L 10 foot)"
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "klvCls",
+   "count": "klvClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "klvClsCleric",
+    "klvClsDruid",
+    "klvClsFighterLo",
+    "klvClsFighterHi",
+    "klvClsRanger",
+    "klvClsMagUser",
+    "klvClsIllus",
+    "klvClsThief",
+    "klvClsAssassin",
+    "klvClsMonk",
+    "klvClsBard"
+   ],
+   "data": [
+    [
+     12,
+     0,
+     20,
+     20,
+     0,
+     0,
+     12,
+     0,
+     0,
+     0,
+     23
+    ],
+    [
+     10,
+     0,
+     12,
+     12,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     16,
+     16,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     15,
+     15,
+     0,
+     9,
+     9,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     15,
+     0,
+     15,
+     15,
+     0,
+     0,
+     15,
+     0,
+     15,
+     0,
+     15
+    ],
+    [
+     13,
+     13,
+     10,
+     10,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     9
+    ],
+    [
+     14,
+     14,
+     4,
+     4,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     8,
+     18,
+     18,
+     0,
+     10,
+     15,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     19,
+     19,
+     0,
+     8,
+     8,
+     10,
+     0,
+     0,
+     5
+    ],
+    [
+     0,
+     0,
+     9,
+     9,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     10,
+     10,
+     0,
+     0,
+     0,
+     15,
+     10,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     12,
+     12,
+     5,
+     5,
+     0,
+     10,
+     15,
+     0,
+     10,
+     0,
+     10
+    ],
+    [
+     14,
+     14,
+     10,
+     10,
+     0,
+     12,
+     12,
+     0,
+     0,
+     0,
+     12
+    ],
+    [
+     0,
+     5,
+     12,
+     12,
+     0,
+     0,
+     10,
+     0,
+     8,
+     0,
+     5
+    ],
+    [
+     14,
+     14,
+     15,
+     15,
+     0,
+     12,
+     12,
+     0,
+     15,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     0,
+     0,
+     20,
+     20,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     20,
+     0,
+     15,
+     15,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     20,
+     0,
+     20,
+     20,
+     0,
+     25,
+     0,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     15,
+     0,
+     10,
+     10,
+     0,
+     0,
+     25,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     7,
+     0,
+     16,
+     16,
+     0,
+     7,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (Tuoni 20th, Ukko 20th, Hiisi 15th; the in-each pairs of Ilmatar, Kiputytto, Louhi, Loviatar, Mielikki and Surma)",
+    "The druid level cells (the in-each pairs; Ilmarinen, Lemminkainen and the Son of Pohjola the single druid prints)",
+    "The fighter level floor cells (the paladins Vainamoinen, Ilmatar and Ukko ride the fighter cols; Kullervo 19th, Lemminkainen 18th)",
+    "The fighter level ceiling cells (single printed levels read floor = ceiling)",
+    "The ranger level cells (0 = no separate ranger line this round; Tiera, Mielikki and Surma print the ranger on the fighter line and ride the bools)",
+    "The magic-user level cells (Ukko 25th, Ilmatar 20th, Tuonetar 20th in each; Hiisi, the Son of Pohjola and Untamo print Nil magic-users)",
+    "The illusionist level cells (Untamo 25th, Set-style Nil MU pairs; the in-each pairs of Ahto, Ilmarinen, Kiputytto, Kullervo, Mielikki, Surma, Tuonetar and Tuoni)",
+    "The thief level cells (Kullervo the 10th level thief, Tiera-style zero elsewhere)",
+    "The assassin level cells (Hiisi 15th, Loviatar 10th, Surma 15th, the Son of Pohjola 8th)",
+    "The monk level cells (all Nil this round)",
+    "The bard level cells (the all-heroes-are-bards doctrine: Vainamoinen 23rd, thirteen printed bard levels total)"
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "klvAbi",
+   "count": "klvAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "klvAbiStr",
+    "klvAbiStrHit",
+    "klvAbiStrDmg",
+    "klvAbiInt",
+    "klvAbiWis",
+    "klvAbiDex",
+    "klvAbiCon",
+    "klvAbiCha",
+    "klvAbiPsi"
+   ],
+   "data": [
+    [
+     19,
+     3,
+     7,
+     18,
+     18,
+     24,
+     20,
+     18,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     22,
+     24,
+     22,
+     23,
+     23,
+     0
+    ],
+    [
+     18,
+     1,
+     3,
+     16,
+     15,
+     18,
+     18,
+     7,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     18,
+     17,
+     18,
+     19,
+     17,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     22,
+     10,
+     21,
+     22,
+     23,
+     0
+    ],
+    [
+     14,
+     0,
+     0,
+     19,
+     22,
+     20,
+     22,
+     19,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     19,
+     19,
+     19,
+     19,
+     6,
+     0
+    ],
+    [
+     18,
+     1,
+     3,
+     18,
+     18,
+     18,
+     20,
+     18,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     15,
+     6,
+     18,
+     19,
+     14,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     17,
+     17,
+     17,
+     18,
+     17,
+     0
+    ],
+    [
+     8,
+     0,
+     0,
+     19,
+     14,
+     18,
+     19,
+     7,
+     0
+    ],
+    [
+     16,
+     0,
+     1,
+     20,
+     20,
+     16,
+     22,
+     20,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     22,
+     25,
+     19,
+     23,
+     23,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     15,
+     15,
+     19,
+     19,
+     17,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     19,
+     19,
+     23,
+     22,
+     18,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     18,
+     21,
+     17,
+     25,
+     -6,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     20,
+     19,
+     18,
+     24,
+     14,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     24,
+     25,
+     23,
+     25,
+     23,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     25,
+     23,
+     24,
+     24,
+     20,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     19,
+     19,
+     19,
+     19,
+     19,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (the FOLD SWAP catch: Kullervo the S:19(+3,+7) line the Termux full text gave to Tiera; Tiera the S:17(+1,+1))",
+    "The parenthesized strength to-hit bonus cells (0 = no printed bracket; Loviatar the printed zero over the +1 damage)",
+    "The parenthesized strength damage bonus cells (the +14s of Surma, Tuoni and Ukko; the +12s of Ahto and Hiisi)",
+    "The intelligence cells (Untamo 25th-season I:25, Ukko I:24, the Air Maiden and Kiputytto the 19s)",
+    "The wisdom cells (Hiisi the W:10 and Kullervo the W:6 - both voices agree on the odd prints; Mielikki W:25)",
+    "The dexterity cells (Vainamoinen D:24, Ahto D:22; Loviatar D:16 the lowest)",
+    "The constitution cells (Tuonetar C:25, Ukko C:25; Louhi C:19 over the S:8)",
+    "The charisma cells (Tuonetar the negative six print; Kiputytto CH:6, Louhi CH:7, the Water Dwarf CH:7)",
+    "The psionic score cells (0 = every being reads the R849 class table this round; no point scores printed)"
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "klvRos",
+   "count": "klvRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "klvRosOrd",
+    "klvRosPage",
+    "klvRosAlign",
+    "klvRosRank",
+    "klvRosPsiClass",
+    "klvRosPlane",
+    "klvRosDmgFixed",
+    "klvRosInEach",
+    "klvRosEnmity"
+   ],
+   "data": [
+    [
+     0,
+     57,
+     0,
+     4,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     57,
+     1,
+     1,
+     4,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     2,
+     58,
+     0,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     58,
+     1,
+     4,
+     0,
+     0,
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     58,
+     8,
+     1,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     58,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     6,
+     59,
+     8,
+     2,
+     0,
+     3,
+     0,
+     1,
+     0
+    ],
+    [
+     7,
+     59,
+     1,
+     4,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     8,
+     59,
+     5,
+     4,
+     0,
+     0,
+     1,
+     1,
+     1
+    ],
+    [
+     9,
+     59,
+     0,
+     4,
+     0,
+     0,
+     1,
+     1,
+     0
+    ],
+    [
+     10,
+     60,
+     6,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    [
+     11,
+     60,
+     6,
+     2,
+     6,
+     4,
+     0,
+     1,
+     0
+    ],
+    [
+     12,
+     60,
+     1,
+     0,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     13,
+     61,
+     6,
+     4,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     14,
+     61,
+     7,
+     2,
+     6,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     15,
+     61,
+     8,
+     1,
+     2,
+     5,
+     1,
+     1,
+     1
+    ],
+    [
+     16,
+     61,
+     5,
+     1,
+     0,
+     5,
+     1,
+     1,
+     0
+    ],
+    [
+     17,
+     62,
+     0,
+     1,
+     6,
+     6,
+     1,
+     0,
+     0
+    ],
+    [
+     18,
+     62,
+     4,
+     0,
+     0,
+     7,
+     1,
+     0,
+     0
+    ],
+    [
+     19,
+     62,
+     0,
+     3,
+     0,
+     0,
+     1,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Vainamoinen through the Air Maiden)",
+    "The print page cells (57-62, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 LG, 1 NG, 4 N, 5 CN the Kullervo and Tuoni evil-tendency prints, 6 LE, 7 NE, 8 CE - the R852 code scheme)",
+    "The rank cells (0 lesser, 1 greater, 2 demigod, 3 servant - the Water Dwarf and the Air Maiden, 4 hero - the six Kalevala heroes)",
+    "The psionic class cells (Ahto IV, Tuonetar II, Mielikki the 8px pipe read as class I, Hiisi, Loviatar, Surma and Ukko VI)",
+    "The plane cells (0 = none printed for the heroes and servants; 1 Prime Material, 2 Elemental Water, 3 Tarterus, 4 Gehenna, 5 Pandemonium, 6 Twin Paradises, 7 Concordant Opposition)",
+    "The fixed-damage flags (1 = the printed DAMAGE/ATTACK cell is numeric damage; 0 = the by-weapon rows)",
+    "The in-each flags (the printed Nth level in each cells, both the cleric/druid and magic-user/illusionist pairs)",
+    "The Pohjola-enmity flags (the printed enemy lines: Kullervo the doomed foil, Louhi, the Son of Pohjola, Tuonetar the implacable enemy of Vainamoinen)"
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the twenty beings, the seven planes, the six heroes)",
+   "expr": "m['klvTableCount']() != 4 or m['klvBeingCount']() != 20 or m['klvCbtRows']() != 20 or m['klvClsRows']() != 20 or m['klvAbiRows']() != 20 or m['klvRosRows']() != 20 or m['klvPlaneCount']() != 7 or m['klvHeroCount']() != 6 or m['klvServantCount']() != 2 or m['klvGreaterCount']() != 5 or m['klvLesserCount']() != 4 or m['klvDemigodCount']() != 3 or m['klvArtifactCount']() != 3 or m['klvPsiClassKinds']() != 4 or m['klvChainCount']() != 0 or m['klvRegistryFloor']() != 995"
+  },
+  {
+   "note": "the print walk spans pp. 57-62 and the roster ordinals run 0-19 in print order",
+   "expr": "m['klvRosPage'](0) != 57 or m['klvRosPage'](2) != 58 or m['klvRosPage'](6) != 59 or m['klvRosPage'](10) != 60 or m['klvRosPage'](13) != 61 or m['klvRosPage'](17) != 62 or m['klvRosPage'](19) != 62 or m['klvRosOrd'](0) != 0 or m['klvRosOrd'](19) != 19 or m['klvPrintStart']() != 57 or m['klvPrintEnd']() != 62"
+  },
+  {
+   "note": "the alignment walk (the R852 code scheme)",
+   "expr": "m['klvRosAlign'](0) != 0 or m['klvRosAlign'](4) != 8 or m['klvRosAlign'](8) != 5 or m['klvRosAlign'](10) != 6 or m['klvRosAlign'](14) != 7 or m['klvRosAlign'](16) != 5 or m['klvRosAlign'](18) != 4 or m['klvRosAlign'](12) != 1"
+  },
+  {
+   "note": "the rank walk (greater, lesser, demigod, servant, hero)",
+   "expr": "m['klvRosRank'](1) != 1 or m['klvRosRank'](5) != 0 or m['klvRosRank'](6) != 2 or m['klvRosRank'](2) != 3 or m['klvRosRank'](19) != 3 or m['klvRosRank'](0) != 4 or m['klvRosRank'](13) != 4"
+  },
+  {
+   "note": "the psionic class walk (Ahto IV, Tuonetar II, Mielikki the pipe read as I, the four VI readers)",
+   "expr": "m['klvRosPsiClass'](1) != 4 or m['klvRosPsiClass'](15) != 2 or m['klvRosPsiClass'](12) != 1 or m['klvRosPsiClass'](4) != 6 or m['klvRosPsiClass'](11) != 6 or m['klvRosPsiClass'](14) != 6 or m['klvRosPsiClass'](17) != 6 or m['klvRosPsiClass'](0) != 0 or m['klvRosPsiClass'](7) != 0"
+  },
+  {
+   "note": "the plane walk (the seven printed planes; heroes and servants read 0)",
+   "expr": "m['klvRosPlane'](4) != 1 or m['klvRosPlane'](1) != 2 or m['klvRosPlane'](6) != 3 or m['klvRosPlane'](11) != 4 or m['klvRosPlane'](15) != 5 or m['klvRosPlane'](17) != 6 or m['klvRosPlane'](18) != 7 or m['klvRosPlane'](0) != 0 or m['klvRosPlane'](2) != 0"
+  },
+  {
+   "note": "the combat AC walk (the negatives and the odd positives)",
+   "expr": "m['klvCbtAC'](0) != -4 or m['klvCbtAC'](7) != -2 or m['klvCbtAC'](8) != 1 or m['klvCbtAC'](10) != 8 or m['klvCbtAC'](19) != 5 or m['klvCbtAC'](4) != 2 or m['klvCbtACAlt'](0) != 0"
+  },
+  {
+   "note": "the hit point walk (Ukko 400 down to Tiera 66; the Louhi 110 decode)",
+   "expr": "m['klvCbtHP'](17) != 400 or m['klvCbtHP'](9) != 66 or m['klvCbtHP'](10) != 110 or m['klvCbtHP'](1) != 324 or m['klvCbtHP'](16) != 389 or m['klvCbtHP'](12) != 322 or m['klvCbtHP'](19) != 85"
+  },
+  {
+   "note": "the move walk (the Infinite -1s, the slash ceilings, the Lemminkainen 12 catch)",
+   "expr": "m['klvCbtMove'](12) != -1 or m['klvCbtMove'](17) != -1 or m['klvCbtMove'](7) != 12 or m['klvCbtMoveAlt'](11) != 48 or m['klvCbtMoveAlt'](1) != 24 or m['klvCbtMoveAlt'](16) != 48 or m['klvCbtMoveAlt'](18) != 36 or m['klvCbtMove'](10) != 9 or m['klvCbtMove'](19) != 48 or m['klvAhtoMoveMid']() != 24 or m['klvTuoniMoveMid']() != 18"
+  },
+  {
+   "note": "the attack walk (the 3/2 slashes and the single attacks)",
+   "expr": "m['klvCbtAtN'](1) != 3 or m['klvCbtAtD'](1) != 2 or m['klvCbtAtN'](9) != 3 or m['klvCbtAtD'](9) != 2 or m['klvCbtAtN'](12) != 3 or m['klvCbtAtN'](13) != 3 or m['klvCbtAtN'](18) != 3 or m['klvCbtAtN'](5) != 1 or m['klvCbtAtN'](15) != 1 or m['klvCbtAtN'](17) != 2"
+  },
+  {
+   "note": "the magic resistance walk (0 = the printed Standard; the numeric prints)",
+   "expr": "m['klvCbtMR'](0) != 0 or m['klvCbtMR'](2) != 0 or m['klvCbtMR'](7) != 0 or m['klvCbtMR'](8) != 0 or m['klvCbtMR'](9) != 0 or m['klvCbtMR'](13) != 0 or m['klvCbtMR'](1) != 50 or m['klvCbtMR'](4) != 45 or m['klvCbtMR'](14) != 40 or m['klvCbtMR'](15) != 70 or m['klvCbtMR'](16) != 64 or m['klvCbtMR'](17) != 85 or m['klvCbtMR'](10) != 15 or m['klvAhtoMRWater']() != 100 or m['klvAhtoMROtherwise']() != 50"
+  },
+  {
+   "note": "the size walk (the foot-mark decodes; Tuoni the L 10 foot)",
+   "expr": "m['klvCbtSizeIn'](7) != 74 or m['klvCbtSizeIn'](8) != 73 or m['klvCbtSizeIn'](9) != 64 or m['klvCbtSizeIn'](12) != 61 or m['klvCbtSizeIn'](16) != 120 or m['klvCbtSizeIn'](2) != 48 or m['klvCbtSizeIn'](17) != 84 or m['klvCbtSizeIn'](19) != 72"
+  },
+  {
+   "note": "the class walk (the all-heroes-are-bards doctrine and the in-each pairs)",
+   "expr": "m['klvClsBard'](0) != 23 or m['klvClsBard'](7) != 15 or m['klvClsBard'](3) != 15 or m['klvClsBard'](17) != 15 or m['klvClsBard'](8) != 5 or m['klvClsBard'](2) != 0 or m['klvBardCount']() != 13"
+  },
+  {
+   "note": "the cleric and druid walk (the in-each pairs and the single prints)",
+   "expr": "m['klvClsCleric'](16) != 20 or m['klvClsCleric'](17) != 20 or m['klvClsCleric'](5) != 13 or m['klvClsDruid'](5) != 13 or m['klvClsDruid'](3) != 5 or m['klvClsDruid'](7) != 8 or m['klvClsDruid'](13) != 5 or m['klvClsCleric'](6) != 14 or m['klvClsDruid'](6) != 14"
+  },
+  {
+   "note": "the magic-user and illusionist walk (the Nil MU pairs and the 25th level illusionist)",
+   "expr": "m['klvClsMagUser'](17) != 25 or m['klvClsIllus'](18) != 25 or m['klvClsIllus'](4) != 15 or m['klvClsMagUser'](4) != 0 or m['klvClsIllus'](13) != 10 or m['klvClsMagUser'](13) != 0 or m['klvClsMagUser'](5) != 20 or m['klvClsMagUser'](15) != 20 or m['klvClsIllus'](15) != 20 or m['klvClsMagUser'](7) != 10 or m['klvClsIllus'](7) != 15"
+  },
+  {
+   "note": "the thief and assassin walk",
+   "expr": "m['klvClsThief'](8) != 10 or m['klvClsAssassin'](4) != 15 or m['klvClsAssassin'](11) != 10 or m['klvClsAssassin'](13) != 8 or m['klvClsAssassin'](14) != 15 or m['klvClsThief'](9) != 0"
+  },
+  {
+   "note": "the fighter walk (the paladins ride the cols; Kullervo the 19th of the fold swap)",
+   "expr": "m['klvClsFighterLo'](0) != 20 or m['klvClsFighterLo'](5) != 10 or m['klvClsFighterLo'](17) != 20 or m['klvClsFighterLo'](8) != 19 or m['klvClsFighterLo'](7) != 18 or m['klvClsFighterLo'](9) != 9 or m['klvClsFighterLo'](10) != 0 or m['klvClsFighterLo'](12) != 10 or m['klvClsFighterLo'](14) != 15 or m['klvClsFighterLo'](19) != 16"
+  },
+  {
+   "note": "the ability walk (the fold swap catch lines and the odd prints)",
+   "expr": "m['klvAbiStr'](8) != 19 or m['klvAbiStrHit'](8) != 3 or m['klvAbiStrDmg'](8) != 7 or m['klvAbiInt'](8) != 15 or m['klvAbiWis'](8) != 6 or m['klvAbiCha'](8) != 14 or m['klvAbiStr'](9) != 17 or m['klvAbiStr'](10) != 8 or m['klvAbiStr'](13) != 18"
+  },
+  {
+   "note": "the wisdom and charisma walk (the W:10, the W:6, the negative six)",
+   "expr": "m['klvAbiWis'](4) != 10 or m['klvAbiWis'](12) != 25 or m['klvAbiCha'](15) != -6 or m['klvAbiCha'](6) != 6 or m['klvAbiCha'](10) != 7 or m['klvAbiCha'](2) != 7 or m['klvAbiCon'](15) != 25 or m['klvAbiInt'](18) != 25"
+  },
+  {
+   "note": "the strength bracket walk (the percentile prints ride the consts)",
+   "expr": "m['klvDwarfStrPct']() != 37 or m['klvLemmStrPct']() != 9 or m['klvSonStrPct']() != 0 or m['klvAbiStrHit'](11) != 0 or m['klvAbiStrDmg'](11) != 1 or m['klvAbiStr'](14) != 25 or m['klvAbiStrHit'](14) != 7 or m['klvAbiStrDmg'](14) != 14"
+  },
+  {
+   "note": "the roster fixed-damage and in-each walk",
+   "expr": "m['klvRosDmgFixed'](0) != 0 or m['klvRosDmgFixed'](1) != 1 or m['klvRosDmgFixed'](15) != 1 or m['klvRosDmgFixed'](11) != 0 or m['klvRosInEach'](1) != 1 or m['klvRosInEach'](6) != 1 or m['klvRosInEach'](12) != 1 or m['klvRosInEach'](14) != 1 or m['klvRosInEach'](4) != 0 or m['klvRosInEach'](17) != 0"
+  },
+  {
+   "note": "the Pohjola-enmity walk (the four printed enemy lines)",
+   "expr": "m['klvRosEnmity'](8) != 1 or m['klvRosEnmity'](10) != 1 or m['klvRosEnmity'](13) != 1 or m['klvRosEnmity'](15) != 1 or m['klvRosEnmity'](0) != 0 or m['klvRosEnmity'](16) != 0 or m['klvRosEnmity'](7) != 0"
+  },
+  {
+   "note": "the Vainamoinen walk (the girdle strength, the horse, the boat)",
+   "expr": "m['klvVainaGirdleStr']() != 23 or m['klvVainaHorseHp']() != 59 or m['klvVainaHorseGpLimit']() != 300000 or m['klvVainaBoatGpLimit']() != 60000 or m['klvVainaBoatCubicFeet']() != 1000 or m['klvVainaSwordPlus']() != 3 or m['klvVainaAxePlus']() != 5 or m['klvVainaSummoningHi']() != 4 or m['klvVainaSwordFearPerDay']() != 1"
+  },
+  {
+   "note": "the Ahto walk (the 40th level wind and water casting, the dual magic resistance)",
+   "expr": "m['klvAhtoSpellLevel']() != 40 or m['klvAhtoSicklePlus']() != 4 or m['klvAhtoSickleDmgHi']() != 20 or m['klvAhtoSickleDmgLo']() != 2 or m['klvAhtoMRWater']() != 100 or m['klvAhtoMROtherwise']() != 50"
+  },
+  {
+   "note": "the Water Dwarf and Ilmarinen walk (the aid percentages, the sledge)",
+   "expr": "m['klvDwarfAidPct']() != 25 or m['klvDwarfAppearPct']() != 100 or m['klvDwarfRegen']() != 5 or m['klvDwarfRegenRangeFeet']() != 50 or m['klvIlmaSledgeRate']() != 21 or m['klvIlmaHammerPlus']() != 4 or m['klvIlmaHammerDmgHi']() != 10"
+  },
+  {
+   "note": "the Hiisi and Ilmatar walk (the evil hero group, the sledge of creation)",
+   "expr": "m['klvHiisiEvilHeroesHi']() != 10 or m['klvHiisiEvilHeroAC']() != 2 or m['klvHiisiEvilHeroLevel']() != 4 or m['klvHiisiClubDmgHi']() != 40 or m['klvIlmatarSledgeRate']() != 24 or m['klvHiisiClubDmgLo']() != 4"
+  },
+  {
+   "note": "the Kiputytto and Louhi walk (the sickness, the invisible fighters)",
+   "expr": "m['klvKipuSicknessHpPerTurn']() != 5 or m['klvLouhiFighterCount']() != 4 or m['klvLouhiFighterHp']() != 27 or m['klvLouhiFighterLevel']() != 6 or m['klvLouhiFighterAC']() != 7 or m['klvLouhiFighterEffAC']() != 3"
+  },
+  {
+   "note": "the Lemminkainen walk (the weapons, the snowshoes, the javelin range)",
+   "expr": "m['klvLemmSwordPlus']() != 5 or m['klvLemmJavelinRangeInches']() != 36 or m['klvLemmSnowshoeRate']() != 24 or m['klvLemmChainmailPlus']() != 4 or m['klvLemmBowPlus']() != 3 or m['klvLemmDaggerPlus']() != 3"
+  },
+  {
+   "note": "the Kullervo and Tiera walk (the fold swap arms)",
+   "expr": "m['klvKullAxePlus']() != 2 or m['klvKullAxeDmgHi']() != 10 or m['klvTieraSpearPlus']() != 3 or m['klvTieraSpearDmgLo']() != 1 or m['klvTieraSpearDmgHi']() != 10"
+  },
+  {
+   "note": "the Son of Pohjola walk (the sword and the giant wolf)",
+   "expr": "m['klvSonSwordPlus']() != 3 or m['klvSonSwordDmgHi']() != 20 or m['klvSonWolfAC']() != 5 or m['klvSonWolfHp']() != 40 or m['klvSonWolfHD']() != 6 or m['klvSonWolfDmgHi']() != 10 or m['klvSonWolfMV']() != 18"
+  },
+  {
+   "note": "the underworld walk (Tuonetar and Tuoni)",
+   "expr": "m['klvTuonetaTouchDmgHi']() != 40 or m['klvTuonetaFearRadiusFeet']() != 30 or m['klvTuoniClubDmgHi']() != 30 or m['klvTuoniReclaimPct']() != 1 or m['klvTuoniClubDmgLo']() != 3"
+  },
+  {
+   "note": "the Ukko and Untamo walk (the flaming sword death save, the sleep hours, the year of service)",
+   "expr": "m['klvUkkoSwordDmgLo']() != 3 or m['klvUkkoDeathSaveMod']() != -6 or m['klvUkkoMaidenPct']() != 30 or m['klvUntaSleepHours']() != 13 or m['klvUntaServiceYears']() != 1 or m['klvUntaClubDmgHi']() != 30"
+  },
+  {
+   "note": "the Air Maiden walk (the frost brand, the fly rate)",
+   "expr": "m['klvMaidenSwordPlus']() != 3 or m['klvMaidenFlyRate']() != 48 or m['klvCbtMR'](19) != 50"
+  },
+  {
+   "note": "the artifact walk (the Great Tree, the Magic Wool, the Rake of Iron)",
+   "expr": "m['klvTreeArrowsHi']() != 10 or m['klvTreeArrowsLo']() != 1 or m['klvTreeSpearPlus']() != 1 or m['klvWoolSheepCount']() != 30 or m['klvRakeElongateYards']() != 200 or m['klvRakeStrokePct']() != 10 or m['klvRakeRestLengthInches']() != 36 or m['klvArtifactCount']() != 3"
+  }
+ ],
+ "header_sections": {
+  "the R858 census": [
+   {
+    "kind": "const",
+    "name": "klvRound"
+   },
+   {
+    "kind": "const",
+    "name": "klvPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "klvPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "klvBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "klvCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "klvClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "klvAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "klvRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "klvPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvHeroCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvServantCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvGreaterCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvLesserCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvDemigodCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvArtifactCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvPsiClassKinds"
+   },
+   {
+    "kind": "const",
+    "name": "klvBardCount"
+   }
+  ],
+  "the Kalevala intro": [
+   {
+    "kind": "bool",
+    "name": "klvKalevalaTheEpic"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTalesFocusOnHeroes"
+   },
+   {
+    "kind": "bool",
+    "name": "klvHeroesBeyondMortal"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMostHaveDivineAncestors"
+   },
+   {
+    "kind": "bool",
+    "name": "klvOnlyVainamoinenMeddles"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKalevalaVersusPohjola"
+   },
+   {
+    "kind": "bool",
+    "name": "klvAllHeroesGreatBards"
+   },
+   {
+    "kind": "bool",
+    "name": "klvClericsAboveNormalMen"
+   },
+   {
+    "kind": "bool",
+    "name": "klvClericsChastiseWithSpells"
+   }
+  ],
+  "the Great Tree walk": [
+   {
+    "kind": "const",
+    "name": "klvTreeArrowsLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvTreeArrowsHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvTreeSpearPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTreeFragmentsMakeItems"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTreeRawMaterialsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTreeMustBeEnchanted"
+   }
+  ],
+  "the Magic Wool walk": [
+   {
+    "kind": "const",
+    "name": "klvWoolSheepCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvWoolPerMonth"
+   },
+   {
+    "kind": "bool",
+    "name": "klvWoolOfPohjola"
+   },
+   {
+    "kind": "bool",
+    "name": "klvWoolRubbedOnFlesh"
+   }
+  ],
+  "the Rake of Iron walk": [
+   {
+    "kind": "const",
+    "name": "klvRakeRestLengthInches"
+   },
+   {
+    "kind": "const",
+    "name": "klvRakeElongateYards"
+   },
+   {
+    "kind": "const",
+    "name": "klvRakeStrokePct"
+   },
+   {
+    "kind": "bool",
+    "name": "klvRakeNeedsApproxLocation"
+   },
+   {
+    "kind": "bool",
+    "name": "klvRakeOfLemminkainensMother"
+   }
+  ],
+  "the Vainamoinen walk": [
+   {
+    "kind": "const",
+    "name": "klvVainaAxePlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaSwordFearPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaGirdleStr"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaArmorPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaSummoningLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaSummoningHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaHorseAC"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaHorseMV"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaHorseHD"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaHorseHp"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaHorseAt"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaHorseDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaHorseDmgThirdHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaHorseGpLimit"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaBoatGpLimit"
+   },
+   {
+    "kind": "const",
+    "name": "klvVainaBoatCubicFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaGreatestHero"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaSonOfTheWind"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaSwordTalks"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaCrossbowCombo"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaCrossbowSelfFiring"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaDispelMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaCharmImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaDiseaseImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaHorseMagicalImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "klvVainaHorseLandOrWater"
+   }
+  ],
+  "the Ahto walk": [
+   {
+    "kind": "const",
+    "name": "klvAhtoSicklePlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvAhtoSickleDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvAhtoSickleDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvAhtoSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "klvAhtoMRWater"
+   },
+   {
+    "kind": "const",
+    "name": "klvAhtoMROtherwise"
+   },
+   {
+    "kind": "const",
+    "name": "klvAhtoMoveMid"
+   },
+   {
+    "kind": "bool",
+    "name": "klvAhtoGodOfSeas"
+   },
+   {
+    "kind": "bool",
+    "name": "klvAhtoGreenBearded"
+   },
+   {
+    "kind": "bool",
+    "name": "klvAhtoRarelyReveals"
+   },
+   {
+    "kind": "bool",
+    "name": "klvAhtoSendsTheWaterDwarf"
+   },
+   {
+    "kind": "bool",
+    "name": "klvAhtoSacrificesDeepWater"
+   }
+  ],
+  "the Water Dwarf walk": [
+   {
+    "kind": "const",
+    "name": "klvDwarfAidPct"
+   },
+   {
+    "kind": "const",
+    "name": "klvDwarfAppearPct"
+   },
+   {
+    "kind": "const",
+    "name": "klvDwarfMacePlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvDwarfRegen"
+   },
+   {
+    "kind": "const",
+    "name": "klvDwarfRegenRangeFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "klvDwarfAhtosShieldMan"
+   },
+   {
+    "kind": "bool",
+    "name": "klvDwarfCrossbowTwiceRate"
+   },
+   {
+    "kind": "bool",
+    "name": "klvDwarfSentOnMissions"
+   }
+  ],
+  "the Ilmarinen walk": [
+   {
+    "kind": "const",
+    "name": "klvIlmaHammerPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvIlmaHammerDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvIlmaHammerDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvIlmaArmorPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvIlmaSledgeRate"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmaBlacksmith"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmaMassivelyBuilt"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmaYokesDeer"
+   }
+  ],
+  "the Hiisi walk": [
+   {
+    "kind": "const",
+    "name": "klvHiisiClubDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvHiisiClubDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvHiisiEvilHeroesLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvHiisiEvilHeroesHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvHiisiEvilHeroAC"
+   },
+   {
+    "kind": "const",
+    "name": "klvHiisiEvilHeroLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "klvHiisiGodOfEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "klvHiisiHugeRobedMan"
+   },
+   {
+    "kind": "bool",
+    "name": "klvHiisiAidsEvilCreatures"
+   },
+   {
+    "kind": "bool",
+    "name": "klvHiisiAvoidsDirectBattle"
+   },
+   {
+    "kind": "bool",
+    "name": "klvHiisiEvilCannotHurtHim"
+   },
+   {
+    "kind": "bool",
+    "name": "klvHiisiInEachCleric"
+   }
+  ],
+  "the Ilmatar walk": [
+   {
+    "kind": "const",
+    "name": "klvIlmatarSledgeRate"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmatarGoddessOfMothers"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmatarDaughterOfTheAir"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmatarMotherOfVainamoinen"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmatarGatesAnyFinnishGod"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmatarBallOfCreation"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmatarKnowsAllBeings"
+   }
+  ],
+  "the Kiputytto walk": [
+   {
+    "kind": "const",
+    "name": "klvKipuSicknessHpPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "klvKipuSymbolBowl"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKipuGoddessOfSickness"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKipuTouchRots"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKipuFloatsInvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKipuTwistedCrone"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKipuCultWastedDisease"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKipuHarmingSpellsOnly"
+   }
+  ],
+  "the Lemminkainen walk": [
+   {
+    "kind": "const",
+    "name": "klvLemmJavelinPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvLemmJavelinRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "klvLemmBowPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvLemmSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvLemmDaggerPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvLemmChainmailPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvLemmSnowshoeRate"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLemmJovialReckless"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLemmShapeChangeMaster"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLemmBeastsWillNotAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLemmPoisonImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLemmBowAnimalSlaying"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLemmSwordSharpnessFlaming"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLemmFrostGirdle"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLemmBrushShedsBlood"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLemmMotherSendsAid"
+   }
+  ],
+  "the Kullervo walk": [
+   {
+    "kind": "const",
+    "name": "klvKullAxePlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvKullAxeDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvKullAxeDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKullervoTheFoil"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKullervoShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKullervoFireImmune"
+   }
+  ],
+  "the Tiera walk": [
+   {
+    "kind": "const",
+    "name": "klvTieraSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvTieraSpearDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvTieraSpearDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTieraTheShieldMan"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTieraAidsHisMaster"
+   }
+  ],
+  "the Louhi walk": [
+   {
+    "kind": "const",
+    "name": "klvLouhiFighterCount"
+   },
+   {
+    "kind": "const",
+    "name": "klvLouhiFighterAC"
+   },
+   {
+    "kind": "const",
+    "name": "klvLouhiFighterEffAC"
+   },
+   {
+    "kind": "const",
+    "name": "klvLouhiFighterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "klvLouhiFighterHp"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLouhiOldCroneOfPohjola"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLouhiIronHand"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLouhiOpposesTheHeroes"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLouhiTwoGuardTwoAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLouhiPoisonAndSleepPotions"
+   }
+  ],
+  "the Loviatar walk": [
+   {
+    "kind": "const",
+    "name": "klvLoviPainExampleHp"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLoviatarMaidenOfPain"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLoviatarColdMaiden"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLoviatarColdWindSpeaks"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLoviatarInflictsPain"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLoviatarDaggerOfIce"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLoviatarPainReflection"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLoviatarSecondWorstPain"
+   }
+  ],
+  "the Mielikki walk": [
+   {
+    "kind": "const",
+    "name": "klvMielDryadAidPct"
+   },
+   {
+    "kind": "const",
+    "name": "klvMielAttackPct"
+   },
+   {
+    "kind": "const",
+    "name": "klvMielTreeRatio"
+   },
+   {
+    "kind": "const",
+    "name": "klvMielCharmNegateYards"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMielikkiMistressOfTheForest"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMielikkiGreenGossamer"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMielikkiWatchesRangers"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMielikkiWildsCannotHurtHer"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMielikkiClericalImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMielikkiSummonsWolvesAndHawks"
+   }
+  ],
+  "the Son of Pohjola walk": [
+   {
+    "kind": "const",
+    "name": "klvSonSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonSwordDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonSwordDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonWolfAC"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonWolfMV"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonWolfHD"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonWolfHp"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonWolfAt"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonWolfDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonWolfDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSonEvilHero"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSonLeaderOfPohjola"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSonEnemyOfLemminkainen"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSonWolfObeysEveryCommand"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSonWolfColdImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSonWolfFromLouhi"
+   }
+  ],
+  "the Surma walk": [
+   {
+    "kind": "const",
+    "name": "klvSurmaClubDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvSurmaClubDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSurmaDemigodOfDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSurmaClubOnlyHeCanWield"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSurmaChallengesAll"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSurmaKillsRefusersInSleep"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSurmaAgingWarrior"
+   }
+  ],
+  "the Tuonetar walk": [
+   {
+    "kind": "const",
+    "name": "klvTuonetaTouchDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvTuonetaTouchDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvTuonetaFearRadiusFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuonetarGoddessOfTheUnderworld"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuonetarUglyCrone"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuonetarFleeUntilExhaustion"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuonetarEnemyOfVainamoinen"
+   }
+  ],
+  "the Tuoni walk": [
+   {
+    "kind": "const",
+    "name": "klvTuoniClubDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvTuoniClubDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvTuoniMoveMid"
+   },
+   {
+    "kind": "const",
+    "name": "klvTuoniReclaimPct"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuoniGodOfTheUnderworld"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuoniDarkFurs"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuoniDeathAndPrismaticWall"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuoniDeathCharmImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuoniVisionOnRaise"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuoniClubOnlyHeCanLift"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuoniClericsTakeValuables"
+   }
+  ],
+  "the Ukko walk": [
+   {
+    "kind": "const",
+    "name": "klvUkkoSwordDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvUkkoSwordDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "klvUkkoDeathSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "klvUkkoMaidenPct"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUkkoSupremeGod"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUkkoTheOldMan"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUkkoSupportsGoodHeroes"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUkkoMagicAttackFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUkkoSkyMaster"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUkkoNonintervention"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUkkoMaidenAdviseThenRescue"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUkkoMaidensOnlyCertainDeath"
+   }
+  ],
+  "the Untamo walk": [
+   {
+    "kind": "const",
+    "name": "klvUntaSleepHours"
+   },
+   {
+    "kind": "const",
+    "name": "klvUntaServiceYears"
+   },
+   {
+    "kind": "const",
+    "name": "klvUntaClubDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "klvUntaClubDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUntamoGodOfSleep"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUntamoVeryMild"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUntamoSleepAuraOnContact"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUntamoClubSleep"
+   }
+  ],
+  "the Air Maiden walk": [
+   {
+    "kind": "const",
+    "name": "klvMaidenSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "klvMaidenFlyRate"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMaidenUkkosWarrior"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMaidenWingedLight"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMaidenOneAtATime"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMaidenTelepathy"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMaidenVanishesOnDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMaidenReplacedOnDeath"
+   }
+  ],
+  "the strength bracket walk": [
+   {
+    "kind": "const",
+    "name": "klvDwarfStrPct"
+   },
+   {
+    "kind": "const",
+    "name": "klvLemmStrPct"
+   },
+   {
+    "kind": "const",
+    "name": "klvSonStrPct"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSonStrDoubleZero"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLoviStrZeroBracket"
+   }
+  ],
+  "the ranger and paladin walk": [
+   {
+    "kind": "bool",
+    "name": "klvVainaPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmaPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "klvUkkoPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTieraRanger"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMielRanger"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSurmaRanger"
+   }
+  ],
+  "the in-each walk": [
+   {
+    "kind": "bool",
+    "name": "klvAhtoInEachMagUser"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmatarInEachCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKiputyttoInEachBoth"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLouhiInEachCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "klvLoviatarInEachCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "klvMielikkiInEachBoth"
+   },
+   {
+    "kind": "bool",
+    "name": "klvSurmaInEachBoth"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuonetarInEachMagUser"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTuoniInEachMagUser"
+   },
+   {
+    "kind": "bool",
+    "name": "klvIlmarinenInEachMagUser"
+   },
+   {
+    "kind": "bool",
+    "name": "klvKullervoInEachMagUser"
+   },
+   {
+    "kind": "bool",
+    "name": "klvTieraInEachMagUser"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R857 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R857 LANDED 2026-10-26: commit",
+  "    08b8283602d9e1b0c6ae01340595e8e6",
+  "    bc566343 (pushed 4852c1b..",
+  "    08b8283, census 779 -> 780), THE",
+  "    EGYPTIAN MYTHOS - the D&DG walk",
+  "    round nine, print pp. 49-56:",
+  "    twenty-one beings (Ra, Anhur,",
+  "    Anubis, Apep, Apshai, Bast, Bes,",
+  "    the Flame Snake, Geb, Horus, Isis,",
+  "    Nephthys, Osiris, the Phoenix,",
+  "    Ptah, Seker, Set, the Minions of",
+  "    Set, Shu, Tefnut, Thoth), the",
+  "    temple and cleric-ladder",
+  "    doctrine, the true Ankh artifact",
+  "    and the 97-word hieroglyph grid",
+  "    (the round's first data file,",
+  "    doc/data/ddg_egyptian_hieroglyphs",
+  "    .txt, riding the R851 precedent).",
+  "    The headline adjudication: the",
+  "    GEOMETRY SWAP catch - the Termux",
+  "    fold had Ra/Anhur ability lines",
+  "    reversed, settled by geometry",
+  "    plus Anhur's +14 strength prose",
+  "    (Ra S:20 I:25 W:25 D:20 C:25",
+  "    CH:25; Anhur S:25(+7,+14)).",
+  "    Flagged eyeballs: Bast W:10",
+  "    (geometry over Termux W:70), Set",
+  "    MR 59 and Shu/Tefnut MR 69 pinned",
+  "    as printed, Horus size 6'2\" and",
+  "    15\"/15\" move decode, Nephthys",
+  "    5'4\" twin decode, Minions 6'4\",",
+  "    Flame Snake xp base 745 garble,",
+  "    the hieroglyph AT word, Apep",
+  "    300' (IA feet over Termux",
+  "    inches), Ptah Infinite move ->",
+  "    -1 sentinel, Phoenix MR \"See",
+  "    below\" -> 0, Ra #AT 0/Nil ->",
+  "    DmgFixed 0. Spec a1cc786df9139f3",
+  "    24fac5a8f23a399ee, 400 inlines",
+  "    (152 consts, 210 bools, 38",
+  "    table cols), 31 examples, 21x38",
+  "    grids; engine applied 7/already",
+  "    7 double-run; rverify GREEN,",
+  "    1160 mutants 0 missed; hyphen",
+  "    scan clean; zero True/False",
+  "    tokens (the artifact name rides",
+  "    lowercased 'true Ankh' in",
+  "    comments after the raw grep",
+  "    caught 'True Ankh'); a builder",
+  "    grid slip (Bes/Osiris bard values",
+  "    in the Monk column, Thoth",
+  "    in-each 0) was caught first-try",
+  "    by the emitted-header audit",
+  "    mirror. NEXT: the D&DG walk",
+  "    continues from the Finnish",
+  "    mythos (print pp. 57-62) - WAIT",
+  "    FOR GO."
+ ],
+ "inline_count": 312
+}

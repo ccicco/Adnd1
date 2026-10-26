@@ -24763,6 +24763,63 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   missed; hyphen scan clean; zero True/False tokens.
   NEXT: the D&DG walk continues from the Egyptian
   mythos (print pp. 49-56) - WAIT FOR GO.
+  - R857 LANDED 2026-10-26: commit
+    08b8283602d9e1b0c6ae01340595e8e6
+    bc566343 (pushed 4852c1b..
+    08b8283, census 779 -> 780), THE
+    EGYPTIAN MYTHOS - the D&DG walk
+    round nine, print pp. 49-56:
+    twenty-one beings (Ra, Anhur,
+    Anubis, Apep, Apshai, Bast, Bes,
+    the Flame Snake, Geb, Horus, Isis,
+    Nephthys, Osiris, the Phoenix,
+    Ptah, Seker, Set, the Minions of
+    Set, Shu, Tefnut, Thoth), the
+    temple and cleric-ladder
+    doctrine, the true Ankh artifact
+    and the 97-word hieroglyph grid
+    (the round's first data file,
+    doc/data/ddg_egyptian_hieroglyphs
+    .txt, riding the R851 precedent).
+    The headline adjudication: the
+    GEOMETRY SWAP catch - the Termux
+    fold had Ra/Anhur ability lines
+    reversed, settled by geometry
+    plus Anhur's +14 strength prose
+    (Ra S:20 I:25 W:25 D:20 C:25
+    CH:25; Anhur S:25(+7,+14)).
+    Flagged eyeballs: Bast W:10
+    (geometry over Termux W:70), Set
+    MR 59 and Shu/Tefnut MR 69 pinned
+    as printed, Horus size 6'2" and
+    15"/15" move decode, Nephthys
+    5'4" twin decode, Minions 6'4",
+    Flame Snake xp base 745 garble,
+    the hieroglyph AT word, Apep
+    300' (IA feet over Termux
+    inches), Ptah Infinite move ->
+    -1 sentinel, Phoenix MR "See
+    below" -> 0, Ra #AT 0/Nil ->
+    DmgFixed 0. Spec a1cc786df9139f3
+    24fac5a8f23a399ee, 400 inlines
+    (152 consts, 210 bools, 38
+    table cols), 31 examples, 21x38
+    grids; engine applied 7/already
+    7 double-run; rverify GREEN,
+    1160 mutants 0 missed; hyphen
+    scan clean; zero True/False
+    tokens (the artifact name rides
+    lowercased 'true Ankh' in
+    comments after the raw grep
+    caught 'True Ankh'); a builder
+    grid slip (Bes/Osiris bard values
+    in the Monk column, Thoth
+    in-each 0) was caught first-try
+    by the emitted-header audit
+    mirror. NEXT: the D&DG walk
+    continues from the Finnish
+    mythos (print pp. 57-62) - WAIT
+    FOR GO.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

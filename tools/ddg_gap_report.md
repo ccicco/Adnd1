@@ -15,7 +15,7 @@ print p. 6; p132 is print 131).
 - [x] **Chinese mythos** (pp. 37-42)
 - [x] **Cthulhu mythos** (pp. 43-48)
 - [x] **Egyptian mythos** (pp. 49-56)
-- [ ] **Finnish mythos** (pp. 57-62)
+- [x] **Finnish mythos** (pp. 57-62)
 - [ ] **Greek mythos** (pp. 63-74)
 - [ ] **Indian mythos** (pp. 75-80)
 - [ ] **Japanese mythos** (pp. 81-85)
