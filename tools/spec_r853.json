@@ -1,0 +1,3814 @@
+{
+ "round": 853,
+ "prefix": "dge",
+ "title": "the Celtic mythos",
+ "header_file": "rules/dge.h",
+ "audit_file": "rules/audits/r853_batch.h",
+ "audit_label": "R853 Celtic mythos audit",
+ "audit_comment": "THE CELTIC MYTHOS - the D&DG walk round five, print pp. 26-31: sixteen beings (Dagda, Arawn, Brigit, Cu Chulainn, Diancecht, Dunatis, Goibhnie, Lugh, Manannan Mac Lir, Math, Morrigan, Nuada, Oghma, Silvanus, the Master of the Hunt, the Pack of the Wild Hunt) - the druid doctrine of the robes, torc and cauldron, the Wild Hunt doctrine, the tathlum and the Torc of the Gods. Zero registry defs touched; the floor holds at 995. The flagged eyeball cells: the Manannan trident drain fraction (one-fourth, garbled in both voices), the tathlum damage fraction (garbled in both voices), and the Morrigan charisma 21 or -1 (both print voices garble identically; the 1eonline transcription corroborates).",
+ "census_before": 775,
+ "include_after": "#include \"rules/dgd.h\"  // R852: the Babylonian mythos",
+ "include_comment": "the Celtic mythos",
+ "audit_anchor": "#include \"rules/audits/r852_batch.h\"  // R852: R852 Babylonian mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Celtic mythos** (pp. 26-31)",
+   "to": "- [x] **Celtic mythos** (pp. 26-31)",
+   "note": "the Celtic mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 5,
+  "open": 19
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Celtic mythos - the D&DG walk round five, print pp. 26-31: sixteen beings from Dagda the dozen king to the Pack of the Wild Hunt - the druid doctrine of the feast-day sacrifices, the torc and the cauldron, seven greater gods, and the Wild Hunt itself.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 027-032; the second printing); the collation voices: the archive.org 1st-print derivative (djvu.txt + djvu.xml word geometry) and the 1eonline.info transcription (the Lugh S:23 and Morrigan charisma tie-breaks). The adjudications: the Dagda psionic class II (the 29px two-glyph IA word against the Termux I-slash), the Dagda magic-user/illusionist 15th in each and 20th bard (the IA recovery of the Termux fold), the Silvanus AC -4 and the 18 over 48 through-forests move (the IA recovery of fold-garbled lines), the Cu Chulainn 6-foot-4 and Math 5-foot-4 sizes (the foot-mark-as-1 decode of the printed 614 and 514 cells), the Cu Chulainn intelligence 17 (the Termux against the IA 1:97 misread), the Lugh strength 23 plus 5 plus 11 (the Termux and the transcription against the IA S:20 misread), the Lugh fighter slot kept as the printed 19th level ranger (both print voices; the transcription normalizes to fighter), the Nuada and Oghma 6-foot sizes (the IA clean read against the Termux ampersand garbles), the Goibhnie psionic VI (the 51px V-slash word), and the Morrigan charisma line 21 or -1 (the print variable-charisma cell, the transcription corroborating). Flagged for the physical-copy eyeball: the Manannan trident one-fourth drain and the tathlum damage fraction (both garbled in both voices)."
+ },
+ "consts": [
+  {
+   "name": "dgeRound",
+   "value": 853,
+   "comment": "the Celtic mythos round: the D&DG walk round five, print pp. 26-31"
+  },
+  {
+   "name": "dgePrintStart",
+   "value": 26,
+   "comment": "the first print page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "dgePrintEnd",
+   "value": 31,
+   "comment": "the last print page"
+  },
+  {
+   "name": "dgeBeingCount",
+   "value": 16,
+   "comment": "the sixteen beings of the mythos (Dagda through the Pack of the Wild Hunt)"
+  },
+  {
+   "name": "dgeTableCount",
+   "value": 4,
+   "comment": "the four grids (combat, class, ability, roster)"
+  },
+  {
+   "name": "dgeChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "dgeRegistryFloor",
+   "value": 995,
+   "comment": "zero registry defs touched - the floor holds at 995"
+  },
+  {
+   "name": "dgeCbtRows",
+   "value": 16,
+   "comment": "the combat grid rows"
+  },
+  {
+   "name": "dgeClsRows",
+   "value": 16,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "dgeAbiRows",
+   "value": 16,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "dgeRosRows",
+   "value": 16,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "dgePlaneCount",
+   "value": 2,
+   "comment": "the two printed planes: Concordant Opposition and the Prime Material Plane (Arawn)"
+  },
+  {
+   "name": "dgePsiClassVI",
+   "value": 6,
+   "comment": "the printed psionic class VI (ten of the sixteen read VI this round)"
+  },
+  {
+   "name": "dgePsiClassII",
+   "value": 2,
+   "comment": "Dagda reads the printed class II (the 29px two-glyph IA word against the Termux I-slash garble)"
+  },
+  {
+   "name": "dgePsiClassIV",
+   "value": 4,
+   "comment": "Oghma reads the printed class IV (the 57px three-glyph word)"
+  },
+  {
+   "name": "dgeSamainMonth",
+   "value": 11,
+   "comment": "the Samain sacrifice, November 1, celebrating winter start"
+  },
+  {
+   "name": "dgeSamainDay",
+   "value": 1,
+   "comment": "the Samain day"
+  },
+  {
+   "name": "dgeImbalcMonth",
+   "value": 2,
+   "comment": "the Imbalc sacrifice, February 1, celebrating winter leavetaking"
+  },
+  {
+   "name": "dgeImbalcDay",
+   "value": 1,
+   "comment": "the Imbalc day"
+  },
+  {
+   "name": "dgeBeltaneMonth",
+   "value": 5,
+   "comment": "the Beltane sacrifice, May 1, celebrating spring planting"
+  },
+  {
+   "name": "dgeBeltaneDay",
+   "value": 1,
+   "comment": "the Beltane day"
+  },
+  {
+   "name": "dgeLugnasadMonth",
+   "value": 8,
+   "comment": "the Lugnasad sacrifice, August 1, celebrating the time of harvest"
+  },
+  {
+   "name": "dgeLugnasadDay",
+   "value": 1,
+   "comment": "the Lugnasad day"
+  },
+  {
+   "name": "dgeSacrificesPerYear",
+   "value": 4,
+   "comment": "the four human sacrifices a year (condemned criminals the typical sacrifice)"
+  },
+  {
+   "name": "dgeDruidBlueLevelMax",
+   "value": 6,
+   "comment": "druids of the sixth level or less wear light blue robes; higher levels always white"
+  },
+  {
+   "name": "dgeCauldronCrystalLevel",
+   "value": 10,
+   "comment": "the cauldrons of tenth level or higher druids act as crystal balls when filled with human blood"
+  },
+  {
+   "name": "dgeWheelSymbolLoLevel",
+   "value": 11,
+   "comment": "druids of the eleventh through fourteenth levels carry the wheel with a crossed spiral on all their tools"
+  },
+  {
+   "name": "dgeWheelSymbolHiLevel",
+   "value": 14,
+   "comment": "the wheel-symbol ceiling"
+  },
+  {
+   "name": "dgeDagdaEntityCount",
+   "value": 12,
+   "comment": "Dagda separates himself into 12 distinct and powerful entities"
+  },
+  {
+   "name": "dgeDagdaEtherealCount",
+   "value": 11,
+   "comment": "eleven of the twelve are ethereal and roam the earth with unlimited range"
+  },
+  {
+   "name": "dgeDagdaClubDmgLo",
+   "value": 5,
+   "comment": "Dagda: the club does 5-50 when striking"
+  },
+  {
+   "name": "dgeDagdaClubDmgHi",
+   "value": 50,
+   "comment": "Dagda: the club damage ceiling"
+  },
+  {
+   "name": "dgeDagdaStrBonus",
+   "value": 14,
+   "comment": "Dagda: the strength bonus of 14 points on the club"
+  },
+  {
+   "name": "dgeArawnDeathSpells",
+   "value": 2,
+   "comment": "Arawn flashes 2 death spells from his eyes at any time, striking independent targets"
+  },
+  {
+   "name": "dgeArawnSpellLevelMax",
+   "value": 3,
+   "comment": "Arawn uses any spell of up to the third level"
+  },
+  {
+   "name": "dgeArawnSpellAsLevel",
+   "value": 20,
+   "comment": "Arawn casts those spells as a 20th level magic-user"
+  },
+  {
+   "name": "dgeArawnRestoreChancePerLevel",
+   "value": 2,
+   "comment": "Arawn appears on a 2 percent chance per level of a restored dead Celtic worshiper"
+  },
+  {
+   "name": "dgeArawnSubstitutePct",
+   "value": 25,
+   "comment": "Arawn offers a substitute from the ranks of the dead 25 percent of the time"
+  },
+  {
+   "name": "dgeArawnClubPlus",
+   "value": 3,
+   "comment": "Arawn fights with a +3 club"
+  },
+  {
+   "name": "dgeArawnClubDmgLo",
+   "value": 2,
+   "comment": "Arawn: the club strikes for 2-20"
+  },
+  {
+   "name": "dgeArawnClubDmgHi",
+   "value": 20,
+   "comment": "Arawn: the club damage ceiling"
+  },
+  {
+   "name": "dgeArawnStrBonus",
+   "value": 11,
+   "comment": "Arawn: the strength bonus of 11 points"
+  },
+  {
+   "name": "dgeBrigitFireSpellLevel",
+   "value": 35,
+   "comment": "Brigit uses any fire spell as a 35th level spell-caster (the See below cell)"
+  },
+  {
+   "name": "dgeBrigitArmorPlus",
+   "value": 5,
+   "comment": "Brigit has +5 armor in the form of tongues of flame"
+  },
+  {
+   "name": "dgeBrigitSongPct",
+   "value": 5,
+   "comment": "Brigit favors a singer of an original composition 5 percent of the time"
+  },
+  {
+   "name": "dgeBrigitSongBoost",
+   "value": 1,
+   "comment": "the favored singer is raised 1 level for the length of the battle"
+  },
+  {
+   "name": "dgeBrigitAuraDamage",
+   "value": 30,
+   "comment": "Brigit: the flame aura does 30 points of damage"
+  },
+  {
+   "name": "dgeBrigitAuraFeet",
+   "value": 30,
+   "comment": "Brigit: the aura reaches all within 30 feet"
+  },
+  {
+   "name": "dgeBrigitMeltPlus",
+   "value": 3,
+   "comment": "Brigit: weapons less than +3 melt when touching her"
+  },
+  {
+   "name": "dgeBrigitStaffDmgLo",
+   "value": 2,
+   "comment": "Brigit: the flame staff does 2-20 when striking"
+  },
+  {
+   "name": "dgeBrigitStaffDmgHi",
+   "value": 20,
+   "comment": "Brigit: the staff damage ceiling"
+  },
+  {
+   "name": "dgeCuSpearPlus",
+   "value": 4,
+   "comment": "Cu Chulainn: Gae Bolg, the +4 spear of sea-dragon bones"
+  },
+  {
+   "name": "dgeCuSpearDmgLo",
+   "value": 4,
+   "comment": "Gae Bolg does 4-40 points of damage"
+  },
+  {
+   "name": "dgeCuSpearDmgHi",
+   "value": 40,
+   "comment": "Gae Bolg: the damage ceiling"
+  },
+  {
+   "name": "dgeCuGlarePenalty",
+   "value": 4,
+   "comment": "Cu Chulainn: his mortal enemies take -4 on their chances to hit (the brilliance)"
+  },
+  {
+   "name": "dgeCuStrBonus",
+   "value": 8,
+   "comment": "Cu Chulainn: the strength bonus of 8 points"
+  },
+  {
+   "name": "dgeDiancechtSummonPct",
+   "value": 10,
+   "comment": "Diancecht: 12th level or above clerics have a 10 percent chance of summoning him"
+  },
+  {
+   "name": "dgeDiancechtSummonerLevel",
+   "value": 12,
+   "comment": "Diancecht: the summoner level floor (with the year-long pilgrimage oath)"
+  },
+  {
+   "name": "dgeDiancechtImmuneDiv",
+   "value": 4,
+   "comment": "Diancecht is immune to anything doing less than one-fourth of his hit points in one strike"
+  },
+  {
+   "name": "dgeDiancechtSpearPlus",
+   "value": 3,
+   "comment": "Diancecht fights with a +3 spear"
+  },
+  {
+   "name": "dgeDiancechtSpearDmgLo",
+   "value": 3,
+   "comment": "Diancecht: the spear does 3-30 when it hits"
+  },
+  {
+   "name": "dgeDiancechtSpearDmgHi",
+   "value": 30,
+   "comment": "Diancecht: the spear damage ceiling"
+  },
+  {
+   "name": "dgeDiancechtStrBonus",
+   "value": 10,
+   "comment": "Diancecht: the strength bonus of 10 points"
+  },
+  {
+   "name": "dgeDunatisArmorPlus",
+   "value": 4,
+   "comment": "Dunatis enters battle using +4 armor and shield"
+  },
+  {
+   "name": "dgeDunatisBoulderDmgLo",
+   "value": 8,
+   "comment": "Dunatis: the boulders do 8-80 points of damage"
+  },
+  {
+   "name": "dgeDunatisBoulderDmgHi",
+   "value": 80,
+   "comment": "Dunatis: the boulder damage ceiling"
+  },
+  {
+   "name": "dgeDunatisBoulderRangeYards",
+   "value": 1000,
+   "comment": "Dunatis throws the boulders up to 1,000 yards with great accuracy"
+  },
+  {
+   "name": "dgeDunatisStrBonus",
+   "value": 14,
+   "comment": "Dunatis: the strength bonus of 14 points"
+  },
+  {
+   "name": "dgeGoibhnieThunderboltDamage",
+   "value": 50,
+   "comment": "Goibhnie: the impossible-hit thunderbolt does 50 points, no saving throw"
+  },
+  {
+   "name": "dgeGoibhnieAmuletProtectCount",
+   "value": 500,
+   "comment": "Goibhnie: an amulet can protect up to 500 persons with hands linked in series"
+  },
+  {
+   "name": "dgeGoibhnieSpearPlus",
+   "value": 4,
+   "comment": "Goibhnie: the +4 spear"
+  },
+  {
+   "name": "dgeGoibhnieSpearDmgLo",
+   "value": 3,
+   "comment": "Goibhnie: the spear does 3-30 plus strength"
+  },
+  {
+   "name": "dgeGoibhnieSpearDmgHi",
+   "value": 30,
+   "comment": "Goibhnie: the spear damage ceiling"
+  },
+  {
+   "name": "dgeGoibhnieStrBonus",
+   "value": 14,
+   "comment": "Goibhnie: the strength bonus of 14 points"
+  },
+  {
+   "name": "dgeLughDruidSpellLevel",
+   "value": 30,
+   "comment": "Lugh casts druidical spells at the 30th level of magic use, unlimited (the Nil/see below cell)"
+  },
+  {
+   "name": "dgeLughStrBonus",
+   "value": 11,
+   "comment": "Lugh: the strength bonus of 11 points"
+  },
+  {
+   "name": "dgeManannanArmorPlus",
+   "value": 5,
+   "comment": "Manannan wears +5 armor of sea shells"
+  },
+  {
+   "name": "dgeManannanTridentDrainDiv",
+   "value": 4,
+   "comment": "Manannan: the trident drains one-fourth of the victim original hit points (the fraction garbles in both voices - flagged)"
+  },
+  {
+   "name": "dgeManannanRetaliatorDmgLo",
+   "value": 3,
+   "comment": "Manannan: Retaliator does 3-30 plus strength even when the save is made"
+  },
+  {
+   "name": "dgeManannanRetaliatorDmgHi",
+   "value": 30,
+   "comment": "Manannan: the Retaliator damage ceiling"
+  },
+  {
+   "name": "dgeManannanSummonCount",
+   "value": 50,
+   "comment": "Manannan calls any non-godlike sea creature in numbers up to 50"
+  },
+  {
+   "name": "dgeManannanStrBonus",
+   "value": 12,
+   "comment": "Manannan: the strength bonus of 12 points"
+  },
+  {
+   "name": "dgeMathPsiScore",
+   "value": 200,
+   "comment": "Math: the printed 200 point psionic score (like Merlin 300 - a score, not a class)"
+  },
+  {
+   "name": "dgeMathMuLevel",
+   "value": 30,
+   "comment": "Math: 30th level magic-user"
+  },
+  {
+   "name": "dgeMathIllusLevel",
+   "value": 10,
+   "comment": "Math: 10th level illusionist"
+  },
+  {
+   "name": "dgeMorriganChaAlt",
+   "value": -1,
+   "comment": "Morrigan: the printed charisma line reads 21 or -1 (the hideous-face doctrine)"
+  },
+  {
+   "name": "dgeMorriganSightMiles",
+   "value": 15,
+   "comment": "Morrigan sees clearly over 15 miles"
+  },
+  {
+   "name": "dgeMorriganFleeStrikePct",
+   "value": 5,
+   "comment": "Morrigan strikes dead a fleeing worshiper 5 percent of the time"
+  },
+  {
+   "name": "dgeMorriganWatchingPct",
+   "value": 10,
+   "comment": "the chance she is watching any given battle"
+  },
+  {
+   "name": "dgeMorriganSpearDmgLo",
+   "value": 3,
+   "comment": "Morrigan: the two spears strike for 3-36 each and never miss"
+  },
+  {
+   "name": "dgeMorriganSpearDmgHi",
+   "value": 36,
+   "comment": "Morrigan: the spear damage ceiling"
+  },
+  {
+   "name": "dgeMorriganServantCount",
+   "value": 4,
+   "comment": "Morrigan: the four demi-goddesses of war, Fen, Neman, Badb and Macha"
+  },
+  {
+   "name": "dgeMorriganServantHP",
+   "value": 200,
+   "comment": "Morrigan: each demi-goddess has 200 hit points"
+  },
+  {
+   "name": "dgeMorriganStrBonus",
+   "value": 14,
+   "comment": "Morrigan: the strength bonus of 14 points"
+  },
+  {
+   "name": "dgeNuadaHitPlus",
+   "value": 3,
+   "comment": "Nuada gives any weapon he holds a +3 bonus to hit"
+  },
+  {
+   "name": "dgeNuadaDoubleDamage",
+   "value": 2,
+   "comment": "Nuada doubles the weapon normal damaging power"
+  },
+  {
+   "name": "dgeNuadaHandDmgLo",
+   "value": 6,
+   "comment": "Nuada: the silver hand enters battle as a dancing sword hitting for 6-36"
+  },
+  {
+   "name": "dgeNuadaHandDmgHi",
+   "value": 36,
+   "comment": "Nuada: the silver-hand damage ceiling"
+  },
+  {
+   "name": "dgeNuadaArmorPlus",
+   "value": 4,
+   "comment": "Nuada: the +4 suit of studded leather armor"
+  },
+  {
+   "name": "dgeNuadaSwordPlus",
+   "value": 5,
+   "comment": "Nuada: the +5 sword"
+  },
+  {
+   "name": "dgeNuadaFendCount",
+   "value": 3,
+   "comment": "Nuada: the sword fends off any 3 weapons used against its master"
+  },
+  {
+   "name": "dgeNuadaStrBonus",
+   "value": 14,
+   "comment": "Nuada: the strength bonus of 14 points"
+  },
+  {
+   "name": "dgeOghmaListenPct",
+   "value": 1,
+   "comment": "Oghma: a 1 percent chance he is listening to an original composition when sung"
+  },
+  {
+   "name": "dgeOghmaRewardPct",
+   "value": 5,
+   "comment": "Oghma: a 5 percent chance he rewards a spread song or tale with great wealth"
+  },
+  {
+   "name": "dgeOghmaChainmailPlus",
+   "value": 4,
+   "comment": "Oghma wears +4 chainmail and demands wrestling"
+  },
+  {
+   "name": "dgeOghmaStrBonus",
+   "value": 14,
+   "comment": "Oghma: the asterisked strength bonus of 14 points (the See below doctrine)"
+  },
+  {
+   "name": "dgeSilvanusArmorPlus",
+   "value": 5,
+   "comment": "Silvanus: the leaf armor acts like +5 plate mail"
+  },
+  {
+   "name": "dgeSilvanusMalletPlus",
+   "value": 5,
+   "comment": "Silvanus: the +5 wooden mallet"
+  },
+  {
+   "name": "dgeSilvanusMalletDmgLo",
+   "value": 5,
+   "comment": "Silvanus: the mallet strikes for 5-50 in his hands"
+  },
+  {
+   "name": "dgeSilvanusMalletDmgHi",
+   "value": 50,
+   "comment": "Silvanus: the mallet damage ceiling"
+  },
+  {
+   "name": "dgeSilvanusHoundAC",
+   "value": 3,
+   "comment": "Silvanus: the giant wolfhound, armor class 3"
+  },
+  {
+   "name": "dgeSilvanusHoundHD",
+   "value": 10,
+   "comment": "Silvanus: the wolfhound hit dice"
+  },
+  {
+   "name": "dgeSilvanusHoundHP",
+   "value": 100,
+   "comment": "Silvanus: the wolfhound hit points"
+  },
+  {
+   "name": "dgeSilvanusHoundAtN",
+   "value": 1,
+   "comment": "Silvanus: the wolfhound attacks once"
+  },
+  {
+   "name": "dgeSilvanusHoundDmgLo",
+   "value": 2,
+   "comment": "Silvanus: the wolfhound does 2-20"
+  },
+  {
+   "name": "dgeSilvanusHoundDmgHi",
+   "value": 20,
+   "comment": "Silvanus: the wolfhound damage ceiling"
+  },
+  {
+   "name": "dgeSilvanusHoundRegen",
+   "value": 5,
+   "comment": "Silvanus: the wolfhound regenerates 5 hit points per melee round"
+  },
+  {
+   "name": "dgeSilvanusGroveAppearPct",
+   "value": 1,
+   "comment": "Silvanus: a 1 percent chance he appears when harm is done to a high level druid or grove"
+  },
+  {
+   "name": "dgeSilvanusStrBonus",
+   "value": 14,
+   "comment": "Silvanus: the strength bonus of 14 points"
+  },
+  {
+   "name": "dgeHuntStartMiles",
+   "value": 10,
+   "comment": "the Wild Hunt always begins ten miles from the source of evil"
+  },
+  {
+   "name": "dgeHuntSpotPctPerMile",
+   "value": 10,
+   "comment": "each mile nearer the source, a 10 percent chance the observer becomes the object of the Hunt"
+  },
+  {
+   "name": "dgeHuntLookPct",
+   "value": 25,
+   "comment": "beings passed by the Hunt look at the pack on a 25 percent chance"
+  },
+  {
+   "name": "dgeHuntHuntedPct",
+   "value": 90,
+   "comment": "beings that see it and fail the save have a 90 percent chance of becoming the hunted"
+  },
+  {
+   "name": "dgeHuntResnarePct",
+   "value": 50,
+   "comment": "all who have been in the Hunt have a 50 percent chance of being ensnared again at every sighting"
+  },
+  {
+   "name": "dgeHuntPackCount",
+   "value": 20,
+   "comment": "the pack appears in numbers of 20 hounds"
+  },
+  {
+   "name": "dgeHuntHoundHP",
+   "value": 30,
+   "comment": "each hound has 30 hit points (the printed hit dice/points line)"
+  },
+  {
+   "name": "dgeHoundDmgLo",
+   "value": 2,
+   "comment": "the hounds do 2-8"
+  },
+  {
+   "name": "dgeHoundDmgHi",
+   "value": 8,
+   "comment": "the hound damage ceiling"
+  },
+  {
+   "name": "dgeHoundAttackHD",
+   "value": 8,
+   "comment": "the hounds attack as 8 hit dice monsters"
+  },
+  {
+   "name": "dgeHoundXpValue",
+   "value": 950,
+   "comment": "the pack xp line: VI/950 per hound"
+  },
+  {
+   "name": "dgeMasterSpearPlus",
+   "value": 3,
+   "comment": "the Master uses a +3 spear in battle"
+  },
+  {
+   "name": "dgeMasterHornMiles",
+   "value": 1,
+   "comment": "the Master sounds his horn at every 1 mile increment of the chase"
+  },
+  {
+   "name": "dgeTathlumCoatDays",
+   "value": 1,
+   "comment": "the tathlum: one day per lime coat"
+  },
+  {
+   "name": "dgeTathlumCoatWeeks",
+   "value": 1,
+   "comment": "the tathlum: each coat takes one week to dry"
+  },
+  {
+   "name": "dgeTathlumRelativeDiv",
+   "value": 2,
+   "comment": "the tathlum: one-half the hit points are taken from a relative of the head"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgeNotConfinedToBritishIsles",
+   "value": true,
+   "comment": "the Celtic mythology is by no means confined to the British Isles"
+  },
+  {
+   "name": "dgeAllHumanForm",
+   "value": true,
+   "comment": "the listed beings are all in human form, unlike some of the other pantheons"
+  },
+  {
+   "name": "dgeSpheresOfInfluence",
+   "value": true,
+   "comment": "the gods all have spheres of influence - areas of control; major manipulations make the god take an interest in force"
+  },
+  {
+   "name": "dgeClericsAreDruids",
+   "value": true,
+   "comment": "the clerics of most of these deities are druids, fully detailed in Players Handbook"
+  },
+  {
+   "name": "dgeServicesInWoodedAreas",
+   "value": true,
+   "comment": "all religious services are performed by druids in wooded areas made holy by the planting of mistletoe and holly"
+  },
+  {
+   "name": "dgeWellsAndPits",
+   "value": true,
+   "comment": "in these areas are deep natural wells or dug pits where sacrifices are thrown"
+  },
+  {
+   "name": "dgeHumanSacrifices",
+   "value": true,
+   "comment": "human sacrifices are made four times a year on the four feast days"
+  },
+  {
+   "name": "dgeCondemnedCriminals",
+   "value": true,
+   "comment": "condemned criminals are the typical sacrifices"
+  },
+  {
+   "name": "dgeGrovesGuardedByBoars",
+   "value": true,
+   "comment": "druid groves are the only places druids can cast commune with nature; they are guarded by packs of wild boars under complete control, the pack growing with the grove"
+  },
+  {
+   "name": "dgeDruidRobes",
+   "value": true,
+   "comment": "sixth level or less druids wear light blue robes, higher levels always white"
+  },
+  {
+   "name": "dgeTheTorc",
+   "value": true,
+   "comment": "every druid wears a torc, an ornamental neck ring representing the favored god - the more powerful the druid, the better the torc"
+  },
+  {
+   "name": "dgeTorcMagic",
+   "value": true,
+   "comment": "the best torcs are encrusted with gems and imparted with magic along the lines of a +1 or +2 protection ring or talisman"
+  },
+  {
+   "name": "dgeDruidCauldron",
+   "value": true,
+   "comment": "every druid makes a cauldron as a first level druid, used to catch the blood or sap of sacrifices"
+  },
+  {
+   "name": "dgeWheelSymbol",
+   "value": true,
+   "comment": "druids of the eleventh through fourteenth levels mark all their tools with the wheel with a crossed spiral"
+  },
+  {
+   "name": "dgeTolerantOfPriests",
+   "value": true,
+   "comment": "the Celtic gods are very tolerant of their priests actions as long as they further the sect"
+  },
+  {
+   "name": "dgeNaturePrimeConcern",
+   "value": true,
+   "comment": "regard for nature is the prime concern; trifling with nature harmfully is reason for punishment"
+  },
+  {
+   "name": "dgeEliteSeparateGroup",
+   "value": true,
+   "comment": "druids consider themselves an elite group, separate from all other humans, mating only within the sect"
+  },
+  {
+   "name": "dgeDagdaDozenKing",
+   "value": true,
+   "comment": "Dagda, the dozen king, a greater god and ruler of a very loose pantheon"
+  },
+  {
+   "name": "dgeDagdaSeparatesSelf",
+   "value": true,
+   "comment": "his primary attribute is separating himself into 12 distinct powerful entities"
+  },
+  {
+   "name": "dgeDagdaEtherealServants",
+   "value": true,
+   "comment": "eleven of the twelve are ethereal, fully aware and mobile, roaming with unlimited range and supplying information to Dagda"
+  },
+  {
+   "name": "dgeDagdaShapeChange",
+   "value": true,
+   "comment": "unlimited use of shape change, telepathy and legend lore"
+  },
+  {
+   "name": "dgeDagdaShabbyMan",
+   "value": true,
+   "comment": "he is fond of walking the earth as a shabbily dressed man with a large club"
+  },
+  {
+   "name": "dgeDagdaBreaksAnything",
+   "value": true,
+   "comment": "Dagda has the strength to break anything in his two hands"
+  },
+  {
+   "name": "dgeDagdaClubDeathEnd",
+   "value": true,
+   "comment": "the club large end acts as a death spell when it touches a being"
+  },
+  {
+   "name": "dgeDagdaClubRaiseEnd",
+   "value": true,
+   "comment": "the small end raises the dead no matter how long dead - only a portion of the body is needed"
+  },
+  {
+   "name": "dgeDagdaCauldron",
+   "value": true,
+   "comment": "he can summon a cauldron that brews any non-magical liquid or food"
+  },
+  {
+   "name": "dgeDagdaSentientHarp",
+   "value": true,
+   "comment": "he sings with a sentient harp that talks in the common tongue and can control weather"
+  },
+  {
+   "name": "dgeArawnGodOfDead",
+   "value": true,
+   "comment": "Arawn, god of the dead, The Dark One, a greater god"
+  },
+  {
+   "name": "dgeArawnIslandOfDead",
+   "value": true,
+   "comment": "Arawn appears as a normal man and lives on an island only the dead can find"
+  },
+  {
+   "name": "dgeArawnEyeDeathSpells",
+   "value": true,
+   "comment": "he flashes 2 death spells from his eyes at any time, striking independent targets"
+  },
+  {
+   "name": "dgeArawnThirdLevelSpells",
+   "value": true,
+   "comment": "he uses any spell of up to the third level as a 20th level magic-user (the See below cell)"
+  },
+  {
+   "name": "dgeArawnAppearsOnRestore",
+   "value": true,
+   "comment": "the god appears if someone restores to life a person he wants kept in his domain"
+  },
+  {
+   "name": "dgeArawnFightsOrSubstitutes",
+   "value": true,
+   "comment": "he fights for the dead person or offers a substitute from the vast ranks of the dead"
+  },
+  {
+   "name": "dgeArawnImmuneToDirectDamage",
+   "value": true,
+   "comment": "Arawn is immune to any magical or clerical spell causing direct damage to the body"
+  },
+  {
+   "name": "dgeArawnWeaponTouchDeath",
+   "value": true,
+   "comment": "any being touching him with a magical weapon dies, saving throw applicable"
+  },
+  {
+   "name": "dgeBrigitFireAndPoetry",
+   "value": true,
+   "comment": "Brigit, goddess of fire and poetry, a lesser goddess"
+  },
+  {
+   "name": "dgeBrigitFlameHair",
+   "value": true,
+   "comment": "Brigit appears as a tall woman with flame-colored hair"
+  },
+  {
+   "name": "dgeBrigitSongFavor",
+   "value": true,
+   "comment": "she loves poetry sung on the battlefield and may raise a singer of an original composition 1 level"
+  },
+  {
+   "name": "dgeBrigitBattleSongDoctrine",
+   "value": true,
+   "comment": "the printed note: a player wishing to worship Brigit must make up an original battle-song on the spot and sing it"
+  },
+  {
+   "name": "dgeBrigitFireImmunities",
+   "value": true,
+   "comment": "Brigit is immune to fire, cold, petrification and dragon breath attacks"
+  },
+  {
+   "name": "dgeBrigitFlameAura",
+   "value": true,
+   "comment": "in battle she is surrounded with flame doing 30 points to all within 30 feet"
+  },
+  {
+   "name": "dgeBrigitMeltsWeapons",
+   "value": true,
+   "comment": "weapons less than +3 melt when touching her"
+  },
+  {
+   "name": "dgeBrigitFlameStaff",
+   "value": true,
+   "comment": "her staff turns into a tongue of flame at her command, doing 2-20"
+  },
+  {
+   "name": "dgeCuHero",
+   "value": true,
+   "comment": "Cu Chulainn, the hero"
+  },
+  {
+   "name": "dgeCuGaeBolg",
+   "value": true,
+   "comment": "he always uses the spear Gae Bolg, made from the bones of a sea dragon - a +4 weapon doing 4-40"
+  },
+  {
+   "name": "dgeCuNeverSurprised",
+   "value": true,
+   "comment": "when holding Gae Bolg he cannot be surprised; none but Cu Chulainn can wield it"
+  },
+  {
+   "name": "dgeCuBattleBrilliance",
+   "value": true,
+   "comment": "in battle he shines so his mortal enemies cannot look directly at him, -4 to hit"
+  },
+  {
+   "name": "dgeCuFightsGiants",
+   "value": true,
+   "comment": "the hero exists to fight giants and right wrongs; he often appears when all hope is lost"
+  },
+  {
+   "name": "dgeCuCannotBeCharmed",
+   "value": false,
+   "comment": "the printed special defenses line: See below (the brilliance doctrine rides the consts; the R851 Merlin cannot-be-charmed parallel does not apply here)"
+  },
+  {
+   "name": "dgeDiancechtPhysician",
+   "value": true,
+   "comment": "Diancecht, physician of the gods, a lesser god"
+  },
+  {
+   "name": "dgeDiancechtAppearsYoung",
+   "value": true,
+   "comment": "Diancecht appears as a young man"
+  },
+  {
+   "name": "dgeDiancechtHealsAnything",
+   "value": true,
+   "comment": "he can heal any wound or restore any dead being, no matter how long dead"
+  },
+  {
+   "name": "dgeDiancechtSummonedByDeities",
+   "value": true,
+   "comment": "the god appears whenever any Celtic deity summons him to help"
+  },
+  {
+   "name": "dgeDiancechtPilgrimage",
+   "value": true,
+   "comment": "12th level or above clerics may summon him swearing a year-long pilgrimage to heal all things knowing hurt, including opposite alignments; failure brings his revenge"
+  },
+  {
+   "name": "dgeDiancechtHeadlessLimit",
+   "value": true,
+   "comment": "his power will not work on beings who have had their head taken away"
+  },
+  {
+   "name": "dgeDiancechtWonVsArawn",
+   "value": true,
+   "comment": "he never fights in large battles but has fought Arawn over some of his dead, always winning"
+  },
+  {
+   "name": "dgeDiancechtHealsAllSides",
+   "value": true,
+   "comment": "he is hardly ever attacked because he heals friends and enemies alike during a battle"
+  },
+  {
+   "name": "dgeDunatisMountainGod",
+   "value": true,
+   "comment": "Dunatis, god of the mountains and peaks, a lesser god"
+  },
+  {
+   "name": "dgeDunatisAppearsNormal",
+   "value": true,
+   "comment": "this god always appears as a normal man"
+  },
+  {
+   "name": "dgeDunatisRaisesPeaks",
+   "value": true,
+   "comment": "he can raise a mountain peak from a flat plain, or flatten a giant mountain into a prairie, instantaneously"
+  },
+  {
+   "name": "dgeDunatisDestroysForts",
+   "value": true,
+   "comment": "the power was often done to destroy forts and the like"
+  },
+  {
+   "name": "dgeDunatisAirBoulders",
+   "value": true,
+   "comment": "his weapons are boulders formed instantly from thin air"
+  },
+  {
+   "name": "dgeDunatisImmunities",
+   "value": true,
+   "comment": "he is immune to paralysis, petrification, and charming attacks"
+  },
+  {
+   "name": "dgeGoibhnieBlacksmith",
+   "value": true,
+   "comment": "Goibhnie, blacksmith of the gods, a lesser god"
+  },
+  {
+   "name": "dgeGoibhnieHugeMan",
+   "value": true,
+   "comment": "this god appears as a hugely proportioned man"
+  },
+  {
+   "name": "dgeGoibhnieWeaponsNeverMiss",
+   "value": true,
+   "comment": "the weapons he makes never miss their target"
+  },
+  {
+   "name": "dgeGoibhnieAmulets",
+   "value": true,
+   "comment": "his amulets nullify any one specific spell; effects of the protected spell never appear, or solids turn to dust"
+  },
+  {
+   "name": "dgeGoibhnieImpossibleHit",
+   "value": true,
+   "comment": "an impossible hit with his weapon lands, then the weapon shatters and the thunderbolt comes"
+  },
+  {
+   "name": "dgeGoibhnieOneAmulet",
+   "value": true,
+   "comment": "it is impossible to wear more than one of the amulets at a time - they shatter"
+  },
+  {
+   "name": "dgeGoibhniePhysicalImmune",
+   "value": true,
+   "comment": "the god has made himself immune to any damage done by physical weaponry of any type"
+  },
+  {
+   "name": "dgeLughGeneralities",
+   "value": true,
+   "comment": "Lugh long handed, god of generalities, a greater god"
+  },
+  {
+   "name": "dgeLughBorrowedAttribute",
+   "value": true,
+   "comment": "he is unique: he can use any one attribute of any being he has ever met"
+  },
+  {
+   "name": "dgeLughLargeHands",
+   "value": true,
+   "comment": "he appears as a tall man with very large hands"
+  },
+  {
+   "name": "dgeLughNoArmor",
+   "value": true,
+   "comment": "he never uses armor and depends on his one power to defeat his foe"
+  },
+  {
+   "name": "dgeLughDruidicalIdeal",
+   "value": true,
+   "comment": "he is a druidical ideal, casting druidical spells at the 30th level, unlimited"
+  },
+  {
+   "name": "dgeLughImmunities",
+   "value": true,
+   "comment": "he is immune to control, petrification, or paralyzation"
+  },
+  {
+   "name": "dgeManannanSeaGod",
+   "value": true,
+   "comment": "Manannan Mac Lir, god of the sea, a greater god"
+  },
+  {
+   "name": "dgeManannanRedBeard",
+   "value": true,
+   "comment": "this god appears as a large red-bearded man"
+  },
+  {
+   "name": "dgeManannanTridentDrains",
+   "value": true,
+   "comment": "his trident absorbs moisture from bodies it hits, draining one-fourth of the victim original hit points"
+  },
+  {
+   "name": "dgeManannanRetaliator",
+   "value": true,
+   "comment": "against the fire giants he uses the sword Retaliator, which kills every time it hits, magic save applicable, and does 3-30 plus strength even on a save"
+  },
+  {
+   "name": "dgeManannanSeaSummon",
+   "value": true,
+   "comment": "he calls on any non-godlike sea creature in numbers up to 50, arriving under their own power"
+  },
+  {
+   "name": "dgeManannanSaltWaterImmune",
+   "value": true,
+   "comment": "he is immune to any magical device attack while in salt water"
+  },
+  {
+   "name": "dgeMathMagicUser",
+   "value": true,
+   "comment": "Math, the magic-user, greatest of all the legendary wizards in Celtic myth"
+  },
+  {
+   "name": "dgeMathHearsBreezes",
+   "value": true,
+   "comment": "he has given himself the power to hear anything said in a breeze anywhere in the world"
+  },
+  {
+   "name": "dgeMathTorcBearer",
+   "value": true,
+   "comment": "he has been given a Torc of the Gods for what he has done for the gods"
+  },
+  {
+   "name": "dgeMathWaterRod",
+   "value": true,
+   "comment": "when forced to fight he uses a rod that turns any being touched into a pool of water, permanently, magic save applicable"
+  },
+  {
+   "name": "dgeMathPolymorphOthers",
+   "value": true,
+   "comment": "he enjoys using polymorph others to turn opponents into animals"
+  },
+  {
+   "name": "dgeMorriganWarGoddess",
+   "value": true,
+   "comment": "Morrigan, goddess of war, a lesser goddess"
+  },
+  {
+   "name": "dgeMorriganHideousFace",
+   "value": true,
+   "comment": "she appears as a well-proportioned woman with a hideous face - the printed charisma line reads 21 or -1"
+  },
+  {
+   "name": "dgeMorriganFear",
+   "value": true,
+   "comment": "she deprives all who face her of their courage, as the fear spell"
+  },
+  {
+   "name": "dgeMorriganInvisibleFight",
+   "value": true,
+   "comment": "she can fight invisibly"
+  },
+  {
+   "name": "dgeMorriganChaseSpeed",
+   "value": true,
+   "comment": "she travels on land at any speed she wishes when chasing a foe (the Variable move)"
+  },
+  {
+   "name": "dgeMorriganStrikesFleeing",
+   "value": true,
+   "comment": "she strikes dead a fleeing worshiper 5 percent of the time when watching, 10 percent per battle"
+  },
+  {
+   "name": "dgeMorriganTwoSpears",
+   "value": true,
+   "comment": "her two spears, red-headed and yellow-headed, strike for 3-36 each and never miss"
+  },
+  {
+   "name": "dgeMorriganMagicImmune",
+   "value": true,
+   "comment": "she is immune to attacks by magic-using beings not of godlike power while in battle"
+  },
+  {
+   "name": "dgeMorriganDemiGoddesses",
+   "value": true,
+   "comment": "her servants include four demi-goddesses of war, Fen, Neman, Badb and Macha, identical in all regards save 200 hit points each"
+  },
+  {
+   "name": "dgeNuadaSilverHand",
+   "value": true,
+   "comment": "Nuada, god of war, god of the Silver Hand, a greater god"
+  },
+  {
+   "name": "dgeNuadaArtificialHand",
+   "value": true,
+   "comment": "he appears as a man with an artificial silver hand"
+  },
+  {
+   "name": "dgeNuadaWeaponBonus",
+   "value": true,
+   "comment": "he gives any weapon he holds a +3 bonus to hit and double its damaging power"
+  },
+  {
+   "name": "dgeNuadaDancingHand",
+   "value": true,
+   "comment": "in battle he detaches the silver hand, which enters battle as a dancing sword hitting for 6-36"
+  },
+  {
+   "name": "dgeNuadaFendingSword",
+   "value": true,
+   "comment": "the +5 sword fends off any 3 weapons against its master, however powerful, and still attacks"
+  },
+  {
+   "name": "dgeNuadaWrestles",
+   "value": true,
+   "comment": "he demands his enemies wrestle him; the winner stays, the loser leaves the battle"
+  },
+  {
+   "name": "dgeNuadaEqualStrength",
+   "value": true,
+   "comment": "his strength is such that facing any being he has strength equal to that being plus his own"
+  },
+  {
+   "name": "dgeNuadaControlImmune",
+   "value": true,
+   "comment": "the god is immune to any type of magical control spell"
+  },
+  {
+   "name": "dgeOghmaBinder",
+   "value": true,
+   "comment": "Oghma, god of knowledge, The Binder, Patron of all Bards, a greater god"
+  },
+  {
+   "name": "dgeOghmaAgedMan",
+   "value": true,
+   "comment": "Oghma looks like an aged, white-haired man"
+  },
+  {
+   "name": "dgeOghmaBestWrestler",
+   "value": true,
+   "comment": "he is the best wrestler of all the gods, their champion against giants"
+  },
+  {
+   "name": "dgeOghmaCreativePatron",
+   "value": true,
+   "comment": "he is patron of things creative and beautiful in man and woman alike"
+  },
+  {
+   "name": "dgeOghmaSeeksGifted",
+   "value": true,
+   "comment": "his love of song, story and poetry brings him to earth seeking especially gifted people from hold to hold"
+  },
+  {
+   "name": "dgeOghmaAnswerMachine",
+   "value": true,
+   "comment": "he can answer any question after a short period of study - the more difficult, the longer it takes"
+  },
+  {
+   "name": "dgeOghmaSecretNames",
+   "value": true,
+   "comment": "he knows the secret name of any non-godlike creature; knowing it lets one control the being or make it die, save vs death applicable"
+  },
+  {
+   "name": "dgeOghmaVariableStrength",
+   "value": true,
+   "comment": "the asterisked strength: facing any being he has strength equal to that being plus his own (the printed See below)"
+  },
+  {
+   "name": "dgeOghmaImprisonsDemons",
+   "value": true,
+   "comment": "Oghma is known as The Binder for forcing demons and devils into his special prison until he wishes them out"
+  },
+  {
+   "name": "dgeSilvanusForestGod",
+   "value": true,
+   "comment": "Silvanus, god of the forests and nature, a greater god"
+  },
+  {
+   "name": "dgeSilvanusLongLegs",
+   "value": true,
+   "comment": "Silvanus looks like a man with very long legs"
+  },
+  {
+   "name": "dgeSilvanusVoiceControl",
+   "value": true,
+   "comment": "he can control any number of animals and creatures of the forest with the sound of his voice"
+  },
+  {
+   "name": "dgeSilvanusPlants",
+   "value": true,
+   "comment": "he makes plants grow and/or shrink at any rate he wills"
+  },
+  {
+   "name": "dgeSilvanusLeafArmor",
+   "value": true,
+   "comment": "he wears armor made of leaves that act like +5 plate mail; the +5 wooden mallet strikes for 5-50"
+  },
+  {
+   "name": "dgeSilvanusWolfhound",
+   "value": true,
+   "comment": "a giant wolfhound fights at his side, so fast it takes all the damage meant for its master, but cannot block spells"
+  },
+  {
+   "name": "dgeSilvanusGroveProtector",
+   "value": true,
+   "comment": "he is a protector of the druid places: groves, villages, colleges and woodland paths"
+  },
+  {
+   "name": "dgeMasterOfTheHunt",
+   "value": true,
+   "comment": "the Master of the Hunt, the huge black-skinned man with antlers"
+  },
+  {
+   "name": "dgeMasterGreenEyes",
+   "value": true,
+   "comment": "the Master has jet black skin and glowing green eyes"
+  },
+  {
+   "name": "dgeMasterBlackLeather",
+   "value": true,
+   "comment": "his head is crowned by stag antlers and he wears a suit of black leather"
+  },
+  {
+   "name": "dgeMasterNeverSpeaks",
+   "value": true,
+   "comment": "the Master never speaks"
+  },
+  {
+   "name": "dgeMasterRunsBehind",
+   "value": true,
+   "comment": "he runs a few feet behind his pack and sounds his horn every 1 mile increment"
+  },
+  {
+   "name": "dgePackGreenFire",
+   "value": true,
+   "comment": "the hounds have licks of green fire for tongues and green fire for eyes, casting the eerie glow but doing no damage"
+  },
+  {
+   "name": "dgePackWaitsForHunters",
+   "value": true,
+   "comment": "the beasts never attack the hunted until all the beings drawn into the Hunt have had their chance to kill"
+  },
+  {
+   "name": "dgePackTakesOverIfKilled",
+   "value": true,
+   "comment": "if the pack is killed the Master battles the being"
+  },
+  {
+   "name": "dgePackDeathsUnnoticed",
+   "value": true,
+   "comment": "the death of any member goes unnoticed by the rest and disappears after the battle"
+  },
+  {
+   "name": "dgeHuntManifestation",
+   "value": true,
+   "comment": "the Wild Hunt exists in all lands where druids and their deities dwell - a physical manifestation of life force"
+  },
+  {
+   "name": "dgeHuntOneForm",
+   "value": true,
+   "comment": "it always takes on the same form: one huge black-skinned antlered man and his pack of hounds"
+  },
+  {
+   "name": "dgeHuntSummonedByEvil",
+   "value": true,
+   "comment": "the Hunt appears whenever there is evil in the land - an evil temple, a 12th level evil priest, or a grossly evil act"
+  },
+  {
+   "name": "dgeHuntPursuitNoise",
+   "value": true,
+   "comment": "the noise of the howling dogs or the Master horn can be heard for miles in the night"
+  },
+  {
+   "name": "dgeHuntPursuersJoin",
+   "value": true,
+   "comment": "any being actively pursuing the noise becomes part of the Hunt when they sight the pack and its master"
+  },
+  {
+   "name": "dgeHuntTwoRoles",
+   "value": true,
+   "comment": "beings taken into the Hunt become the hunters or the hunted"
+  },
+  {
+   "name": "dgeHuntNeverEntersBuildings",
+   "value": true,
+   "comment": "the Hunt passes close by the source of evil but never enters a building, passing within inches"
+  },
+  {
+   "name": "dgeHuntOnePerNight",
+   "value": true,
+   "comment": "there is only one Hunt on the Prime Material Plane on any given night, drawn to the greatest evil in the Celtic area"
+  },
+  {
+   "name": "dgeHuntKillsOrDisappears",
+   "value": true,
+   "comment": "if the Hunt finds a being to hunt, it attacks to kill and disappears at its summoning source"
+  },
+  {
+   "name": "dgeHuntBigGameFallback",
+   "value": true,
+   "comment": "if no one becomes the hunted after ten miles, the pack turns on the nearest big game creature"
+  },
+  {
+   "name": "dgeHuntCompelledAlignment",
+   "value": true,
+   "comment": "hunters must attack the quarry even against their alignment - paladins might have to attack helpless women"
+  },
+  {
+   "name": "dgeHuntEternal",
+   "value": true,
+   "comment": "the Master and pack can be slain, only to reappear the next night - the force creating the Hunt is eternal"
+  },
+  {
+   "name": "dgeHuntKeepsPace",
+   "value": true,
+   "comment": "the magic of the Hunt sweeps along its members, mounted or on foot, to keep the hound pace"
+  },
+  {
+   "name": "dgeHuntFlies",
+   "value": true,
+   "comment": "the Hunt pursues on the ground but can run right into the air over obstacles or difficult terrain"
+  },
+  {
+   "name": "dgeHuntDeathMelee",
+   "value": true,
+   "comment": "when the hunted is run down there is an instant melee to the death; all fight to the death, no holding back"
+  },
+  {
+   "name": "dgeHuntEscape",
+   "value": true,
+   "comment": "the only escapes: run out of the 10 mile radius, elude the pack until morning, or slay the Master and his pack"
+  },
+  {
+   "name": "dgeHuntSightingResnare",
+   "value": true,
+   "comment": "any being that has been part of the Hunt has a 50% chance of becoming ensnared again with every sighting of the Master and his pack"
+  },
+  {
+   "name": "dgeTathlumWeapon",
+   "value": true,
+   "comment": "the tathlum: a weapon of war anyone of the Celtic religions can make - an enemy head coated with lime into a rock hard ball"
+  },
+  {
+   "name": "dgeTathlumSunshine",
+   "value": true,
+   "comment": "thrown at friends of the former head owner under bright sunshine, it damages up to a fraction of the original hit points (the fraction garbles in both voices - flagged)"
+  },
+  {
+   "name": "dgeTathlumOnceOnly",
+   "value": true,
+   "comment": "the tathlum is usable only once"
+  },
+  {
+   "name": "dgeTorcOfTheGods",
+   "value": true,
+   "comment": "the Torc of the Gods, made by Goibhnie: the holder can shape change or polymorph others"
+  },
+  {
+   "name": "dgeTorcRareMetals",
+   "value": true,
+   "comment": "the Torc is like the other druidical torcs but made of rare metals with a large gem of random type set into the front"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "Cbt",
+   "count": "dgeCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgeCbtAC",
+    "dgeCbtACAlt",
+    "dgeCbtHP",
+    "dgeCbtMove",
+    "dgeCbtMoveAlt",
+    "dgeCbtAtN",
+    "dgeCbtAtD",
+    "dgeCbtMR",
+    "dgeCbtSizeIn"
+   ],
+   "data": [
+    [
+     -4,
+     0,
+     400,
+     12,
+     0,
+     2,
+     0,
+     80,
+     72
+    ],
+    [
+     -4,
+     0,
+     325,
+     15,
+     0,
+     2,
+     0,
+     75,
+     84
+    ],
+    [
+     -4,
+     0,
+     325,
+     12,
+     0,
+     3,
+     2,
+     50,
+     72
+    ],
+    [
+     -1,
+     0,
+     150,
+     15,
+     0,
+     2,
+     0,
+     20,
+     76
+    ],
+    [
+     -1,
+     0,
+     300,
+     12,
+     0,
+     1,
+     0,
+     100,
+     72
+    ],
+    [
+     -10,
+     0,
+     350,
+     24,
+     0,
+     2,
+     0,
+     10,
+     72
+    ],
+    [
+     -4,
+     0,
+     329,
+     9,
+     0,
+     2,
+     0,
+     75,
+     72
+    ],
+    [
+     0,
+     0,
+     375,
+     12,
+     0,
+     2,
+     0,
+     90,
+     84
+    ],
+    [
+     -2,
+     0,
+     389,
+     12,
+     48,
+     2,
+     0,
+     75,
+     72
+    ],
+    [
+     6,
+     0,
+     100,
+     12,
+     0,
+     1,
+     0,
+     35,
+     64
+    ],
+    [
+     -4,
+     0,
+     388,
+     0,
+     0,
+     2,
+     0,
+     50,
+     72
+    ],
+    [
+     -4,
+     0,
+     390,
+     15,
+     0,
+     3,
+     0,
+     10,
+     72
+    ],
+    [
+     -6,
+     0,
+     310,
+     12,
+     0,
+     2,
+     0,
+     85,
+     72
+    ],
+    [
+     -4,
+     0,
+     333,
+     18,
+     48,
+     3,
+     2,
+     30,
+     84
+    ],
+    [
+     0,
+     0,
+     100,
+     18,
+     0,
+     2,
+     0,
+     25,
+     84
+    ],
+    [
+     5,
+     0,
+     30,
+     18,
+     0,
+     1,
+     0,
+     15,
+     48
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Dunatis the printed -10; Silvanus -4 - the IA recovery of the Termux fold-garbled line)",
+    "The range ceiling cells (0 = a single printed armor class; all sixteen read single this round)",
+    "The hit point cells (400 for Dagda down to 30 per hound)",
+    "The primary move cells (0 = the printed Variable: Morrigan the any-speed chase doctrine; Silvanus reads 18 over 48 through forests - the IA recovery of the Termux fold)",
+    "The alternate move cells (0 = a single printed move)",
+    "The attacks-per-round numerator cells (Brigit and Silvanus read the printed 3/2)",
+    "The attacks-per-round denominator cells (0 = a single printed figure)",
+    "The magic resistance cells (Diancecht the printed 100 percent; the Pack 15 percent)",
+    "The size-in-inches cells (the foot-mark-as-1 decode: Cu Chulainn 6 feet 4 inches - 76, Math 5 feet 4 inches - 64; the Master and Silvanus 7 feet; the Pack L, 4 feet at the shoulder - 48)"
+   ],
+   "audit_comment": "the combat stat blocks of the sixteen beings (print pp. 26-31) - the armor classes, hit points, moves, attacks, magic resistance and sizes",
+   "sentinel_census": [
+    2,
+    16,
+    0,
+    1,
+    14,
+    0,
+    14,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "Cls",
+   "count": "dgeClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgeClsCleric",
+    "dgeClsDruid",
+    "dgeClsFighterLo",
+    "dgeClsFighterHi",
+    "dgeClsRanger",
+    "dgeClsMagUser",
+    "dgeClsIllus",
+    "dgeClsThief",
+    "dgeClsAssassin",
+    "dgeClsMonk",
+    "dgeClsBard"
+   ],
+   "data": [
+    [
+     15,
+     14,
+     18,
+     18,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     20
+    ],
+    [
+     20,
+     14,
+     0,
+     0,
+     17,
+     99,
+     0,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     14,
+     12,
+     12,
+     0,
+     99,
+     0,
+     0,
+     0,
+     0,
+     18
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     18,
+     0,
+     12,
+     0,
+     0,
+     0,
+     8
+    ],
+    [
+     25,
+     14,
+     14,
+     14,
+     0,
+     12,
+     0,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     15,
+     0,
+     18,
+     18,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     20
+    ],
+    [
+     0,
+     14,
+     18,
+     18,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     99,
+     0,
+     0,
+     19,
+     0,
+     0,
+     0,
+     0,
+     0,
+     19
+    ],
+    [
+     25,
+     0,
+     16,
+     16,
+     0,
+     99,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     6,
+     4,
+     4,
+     0,
+     30,
+     10,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     10,
+     0,
+     0,
+     20,
+     0,
+     0,
+     0,
+     15,
+     0,
+     10
+    ],
+    [
+     0,
+     10,
+     0,
+     0,
+     20,
+     0,
+     0,
+     0,
+     12,
+     0,
+     10
+    ],
+    [
+     15,
+     15,
+     15,
+     15,
+     0,
+     18,
+     18,
+     0,
+     0,
+     0,
+     20
+    ],
+    [
+     14,
+     14,
+     13,
+     13,
+     0,
+     0,
+     19,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (0 = Nil; Diancecht the 25th level cleric)",
+    "The druid level cells (99 = the printed See below: Lugh the 30th level druidical-spell doctrine)",
+    "The fighter level floor cells",
+    "The fighter level ceiling cells",
+    "The ranger level cells (the Celtic fighter-slot rangers: Arawn 17, Cu Chulainn 18, Lugh 19, Morrigan 20, Nuada 20, the Master 15)",
+    "The magic-user level cells (99 = the printed See below: Arawn the third-level-spells doctrine, Brigit the 35th level fire spells, Manannan; Math the printed 30)",
+    "The illusionist level cells (Dagda 15th in each, Oghma 18th in each, Silvanus the 19th level illusionist, Cu Chulainn 12, Math 10)",
+    "The thief level cells (0 = Nil - none printed this round)",
+    "The assassin level cells (Morrigan the 15th, Nuada the 12th)",
+    "The monk level cells (0 = Nil - none printed this round)",
+    "The bard level cells (Dagda 20, Brigit 18, Dunatis 20, Lugh 19, Oghma 20, the Morrigan/Nuada 10, Diancecht 10, Goibhnie 15, Silvanus 15, Cu Chulainn 8)"
+   ],
+   "audit_comment": "the five-slot class grid of the sixteen beings (99 = the printed See below; the Celtic ranger-heavy fighter slots)",
+   "sentinel_census": [
+    9,
+    5,
+    7,
+    7,
+    10,
+    9,
+    11,
+    16,
+    14,
+    16,
+    4
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "Abi",
+   "count": "dgeAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgeAbiStr",
+    "dgeAbiStrHit",
+    "dgeAbiStrDmg",
+    "dgeAbiInt",
+    "dgeAbiWis",
+    "dgeAbiDex",
+    "dgeAbiCon",
+    "dgeAbiCha",
+    "dgeAbiPsi"
+   ],
+   "data": [
+    [
+     25,
+     7,
+     14,
+     25,
+     25,
+     23,
+     25,
+     25,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     24,
+     23,
+     25,
+     24,
+     20,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     22,
+     22,
+     25,
+     24,
+     25,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     17,
+     16,
+     19,
+     18,
+     17,
+     0
+    ],
+    [
+     22,
+     4,
+     10,
+     25,
+     25,
+     20,
+     23,
+     24,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     20,
+     22,
+     20,
+     24,
+     23,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     24,
+     23,
+     20,
+     25,
+     19,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     25,
+     24,
+     25,
+     24,
+     24,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     24,
+     23,
+     21,
+     24,
+     22,
+     0
+    ],
+    [
+     18,
+     1,
+     2,
+     18,
+     18,
+     18,
+     18,
+     18,
+     200
+    ],
+    [
+     25,
+     7,
+     14,
+     22,
+     19,
+     25,
+     24,
+     21,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     22,
+     19,
+     25,
+     25,
+     24,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     25,
+     22,
+     20,
+     23,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     24,
+     25,
+     24,
+     25,
+     23,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     18,
+     18,
+     18,
+     18,
+     15,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (the Master reads the printed S:18(00)(+3, +6); the Pack monster row reads the all-sentinel line)",
+    "The parenthesized strength to-hit bonus cells (Math the printed +1)",
+    "The parenthesized strength damage bonus cells (Math the printed +2; Oghma the asterisked 14 - the See below equal-plus-own doctrine)",
+    "The intelligence cells (Cu Chulainn 17: the Termux 1117 against the IA 1:97 misread)",
+    "The wisdom cells",
+    "The dexterity cells",
+    "The constitution cells (the printed C: column)",
+    "The charisma cells (Morrigan reads the printed 21 or -1 - the alt value rides the consts; the hideous-face doctrine)",
+    "The psionic cells (Math reads the printed 200 point score like the R851 Merlin 300 - a score, not a roman-numeral class; the classes ride the roster grid)"
+   ],
+   "audit_comment": "the six ability scores with the strength brackets of the sixteen beings (the Pack monster row reads the all-sentinel line)",
+   "sentinel_census": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    15
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "Ros",
+   "count": "dgeRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dgeRosOrd",
+    "dgeRosPage",
+    "dgeRosAlign",
+    "dgeRosRank",
+    "dgeRosPsiClass",
+    "dgeRosPlane",
+    "dgeRosDmgFixed",
+    "dgeRosInEach",
+    "dgeRosWildHunt"
+   ],
+   "data": [
+    [
+     0,
+     26,
+     4,
+     1,
+     2,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     26,
+     6,
+     1,
+     6,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     27,
+     4,
+     0,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     27,
+     1,
+     2,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     4,
+     27,
+     0,
+     0,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     27,
+     4,
+     0,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     28,
+     4,
+     0,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     7,
+     28,
+     4,
+     1,
+     6,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     8,
+     28,
+     5,
+     1,
+     6,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     9,
+     28,
+     4,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     29,
+     4,
+     0,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     11,
+     29,
+     4,
+     1,
+     6,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     12,
+     29,
+     4,
+     1,
+     4,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     13,
+     30,
+     4,
+     1,
+     6,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     14,
+     31,
+     4,
+     2,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     15,
+     31,
+     4,
+     3,
+     0,
+     0,
+     1,
+     0,
+     1
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Dagda through the Pack)",
+    "The print page cells (26-31, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 lawful good, 1 neutral good, 4 neutral, 5 chaotic neutral, 6 lawful evil - the R852 code scheme)",
+    "The rank cells (0 lesser, 1 greater, 2 hero or no-rank-line, 3 monster format: the seven greater gods, the five lesser, Cu Chulainn/Math/the Master, the Pack)",
+    "The psionic class cells (6 = VI, 2 = Dagda II, 4 = Oghma IV, 0 = Nil or a printed score - the Math 200 rides the ability grid)",
+    "The plane cells (1 Concordant Opposition, 2 the Prime Material Plane - Arawn, 0 none printed: Cu Chulainn, Math, the Master, the Pack)",
+    "The fixed-damage cells (1 = a printed damage figure: the eleven printed rows; 0 = by weapon type or See below: Lugh, Manannan, Math, Nuada, Oghma, the Master)",
+    "The in-each cells (1 = a printed Nth level in each class line: Dagda magic-user/illusionist 15, Oghma both slots, Silvanus cleric/druid 14)",
+    "The Wild Hunt cells (1 = a member of the Hunt roster: the Master and the Pack; the fourteen mythos beings read 0)"
+   ],
+   "audit_comment": "the roster walk of the sixteen beings - ordinals, pages, alignments, ranks, psionic classes, planes, the fixed-damage and in-each flags, and the Wild Hunt membership",
+   "sentinel_census": [
+    1,
+    0,
+    1,
+    5,
+    4,
+    4,
+    6,
+    13,
+    14
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the sixteen beings, the two planes)",
+   "expr": "m['dgeTableCount']() != 4 or m['dgeBeingCount']() != 16 or m['dgeCbtRows']() != 16 or m['dgeClsRows']() != 16 or m['dgeAbiRows']() != 16 or m['dgeRosRows']() != 16 or m['dgePlaneCount']() != 2 or m['dgeChainCount']() != 0"
+  },
+  {
+   "note": "the print walk spans pp. 26-31 (the folio offset PRINT = PDF - 1)",
+   "expr": "m['dgePrintStart']() != 26 or m['dgePrintEnd']() != 31"
+  },
+  {
+   "note": "the roster ordinals run 0-15 in print order (Dagda first, the Pack last)",
+   "expr": "m['dgeRosOrd'](0) != 0 or m['dgeRosOrd'](15) != 15 or m['dgeRosPage'](0) != 26 or m['dgeRosPage'](15) != 31"
+  },
+  {
+   "note": "the druid doctrine: four sacrifices a year on the four feast days (Samain, Imbalc, Beltane, Lugnasad)",
+   "expr": "m['dgeSacrificesPerYear']() != 4 or m['dgeSamainMonth']() != 11 or m['dgeSamainDay']() != 1 or m['dgeImbalcMonth']() != 2 or m['dgeBeltaneMonth']() != 5 or m['dgeLugnasadMonth']() != 8 or m['dgeLugnasadDay']() != 1"
+  },
+  {
+   "note": "the druid regalia: blue at sixth or less, the crystal-ball cauldron at tenth, the wheel symbol eleventh through fourteenth",
+   "expr": "m['dgeDruidBlueLevelMax']() != 6 or m['dgeCauldronCrystalLevel']() != 10 or m['dgeWheelSymbolLoLevel']() != 11 or m['dgeWheelSymbolHiLevel']() != 14"
+  },
+  {
+   "note": "the Dagda walk: AC -4, 400 hit points, 2 attacks, 80 percent MR, the club 5-50 plus 14, 20th level bard",
+   "expr": "m['dgeCbtAC'](0) != -4 or m['dgeCbtHP'](0) != 400 or m['dgeCbtAtN'](0) != 2 or m['dgeCbtMR'](0) != 80 or m['dgeDagdaClubDmgLo']() != 5 or m['dgeDagdaClubDmgHi']() != 50 or m['dgeDagdaStrBonus']() != 14 or m['dgeClsBard'](0) != 20"
+  },
+  {
+   "note": "the Dagda adjudications: the 12 entities with 11 ethereal, the psionic class II (the 29px two-glyph IA word against the Termux I-slash), S:25(+7,+14) I:25 W:25 D:23 C:25 CH:25",
+   "expr": "m['dgeDagdaEntityCount']() != 12 or m['dgeDagdaEtherealCount']() != 11 or m['dgeRosPsiClass'](0) != 2 or m['dgePsiClassII']() != 2 or m['dgeAbiStr'](0) != 25 or m['dgeAbiStrHit'](0) != 7 or m['dgeAbiStrDmg'](0) != 14 or m['dgeAbiInt'](0) != 25 or m['dgeAbiWis'](0) != 25 or m['dgeAbiDex'](0) != 23 or m['dgeAbiCon'](0) != 25 or m['dgeAbiCha'](0) != 25"
+  },
+  {
+   "note": "the Dagda class walk: 15th cleric, 14th druid, 18th fighter, magic-user/illusionist 15th in each (the IA recovery of the Termux fold)",
+   "expr": "m['dgeClsCleric'](0) != 15 or m['dgeClsDruid'](0) != 14 or m['dgeClsFighterLo'](0) != 18 or m['dgeClsMagUser'](0) != 15 or m['dgeClsIllus'](0) != 15 or m['dgeRosInEach'](0) != 1"
+  },
+  {
+   "note": "the Arawn walk: AC -4, 325 hit points, 15-inch move, 7 feet, lawful evil, the Prime Material Plane",
+   "expr": "m['dgeCbtAC'](1) != -4 or m['dgeCbtHP'](1) != 325 or m['dgeCbtMove'](1) != 15 or m['dgeCbtSizeIn'](1) != 84 or m['dgeRosAlign'](1) != 6 or m['dgeRosPlane'](1) != 2"
+  },
+  {
+   "note": "the Arawn doctrines: the 2 eye death spells, the third-level spells as a 20th, the 2 percent per level, the 25 percent substitute, the +3 club 2-20 plus 11",
+   "expr": "m['dgeArawnDeathSpells']() != 2 or m['dgeArawnSpellLevelMax']() != 3 or m['dgeArawnSpellAsLevel']() != 20 or m['dgeArawnRestoreChancePerLevel']() != 2 or m['dgeArawnSubstitutePct']() != 25 or m['dgeArawnClubPlus']() != 3 or m['dgeArawnClubDmgLo']() != 2 or m['dgeArawnClubDmgHi']() != 20 or m['dgeArawnStrBonus']() != 11"
+  },
+  {
+   "note": "the Brigit walk: AC -4, 325 hit points, the printed 3/2 attacks, 14th druid, 18th bard, the 35th level fire spells (the See below), psionic VI",
+   "expr": "m['dgeCbtAC'](2) != -4 or m['dgeCbtHP'](2) != 325 or m['dgeCbtAtN'](2) != 3 or m['dgeCbtAtD'](2) != 2 or m['dgeClsDruid'](2) != 14 or m['dgeClsBard'](2) != 18 or m['dgeBrigitFireSpellLevel']() != 35 or m['dgeClsMagUser'](2) != 99 or m['dgeRosPsiClass'](2) != 6"
+  },
+  {
+   "note": "the Brigit doctrines: the +5 flame armor, the 5 percent song favor, the 30-point 30-foot aura, the +3 melt line, the 2-20 staff",
+   "expr": "m['dgeBrigitArmorPlus']() != 5 or m['dgeBrigitSongPct']() != 5 or m['dgeBrigitAuraDamage']() != 30 or m['dgeBrigitAuraFeet']() != 30 or m['dgeBrigitMeltPlus']() != 3 or m['dgeBrigitStaffDmgLo']() != 2 or m['dgeBrigitStaffDmgHi']() != 20"
+  },
+  {
+   "note": "the Cu Chulainn walk: AC -1, 150 hit points, 18th ranger, 12th illusionist, 8th bard, Gae Bolg the +4 spear 4-40, the -4 glare",
+   "expr": "m['dgeCbtAC'](3) != -1 or m['dgeCbtHP'](3) != 150 or m['dgeClsRanger'](3) != 18 or m['dgeClsIllus'](3) != 12 or m['dgeClsBard'](3) != 8 or m['dgeCuSpearPlus']() != 4 or m['dgeCuSpearDmgLo']() != 4 or m['dgeCuSpearDmgHi']() != 40 or m['dgeCuGlarePenalty']() != 4"
+  },
+  {
+   "note": "the Cu Chulainn adjudications: S:20(+3,+8) I:17 W:16 D:19 C:18 CH:17 (the Termux 1117 against the IA 1:97 misread), the 6-foot-4 size (the foot-mark-as-1 decode of the printed 614)",
+   "expr": "m['dgeAbiStr'](3) != 20 or m['dgeAbiStrHit'](3) != 3 or m['dgeAbiStrDmg'](3) != 8 or m['dgeAbiInt'](3) != 17 or m['dgeAbiWis'](3) != 16 or m['dgeAbiDex'](3) != 19 or m['dgeAbiCon'](3) != 18 or m['dgeAbiCha'](3) != 17 or m['dgeCbtSizeIn'](3) != 76"
+  },
+  {
+   "note": "the Diancecht walk: AC -1, 300 hit points, 1 attack, the printed 100 percent MR, 25th cleric, 14th druid, 12th magic-user, 10th bard",
+   "expr": "m['dgeCbtAC'](4) != -1 or m['dgeCbtHP'](4) != 300 or m['dgeCbtAtN'](4) != 1 or m['dgeCbtMR'](4) != 100 or m['dgeClsCleric'](4) != 25 or m['dgeClsDruid'](4) != 14 or m['dgeClsMagUser'](4) != 12 or m['dgeClsBard'](4) != 10"
+  },
+  {
+   "note": "the Diancecht doctrines: the 10 percent 12th-level summon with the pilgrimage oath, the one-fourth immunity, the +3 spear 3-30 plus 10",
+   "expr": "m['dgeDiancechtSummonPct']() != 10 or m['dgeDiancechtSummonerLevel']() != 12 or m['dgeDiancechtImmuneDiv']() != 4 or m['dgeDiancechtSpearPlus']() != 3 or m['dgeDiancechtSpearDmgLo']() != 3 or m['dgeDiancechtSpearDmgHi']() != 30 or m['dgeDiancechtStrBonus']() != 10"
+  },
+  {
+   "note": "the Dunatis walk: AC -10, 350 hit points, 24-inch move, the boulders 8-80 up to 1,000 yards, 20th bard, psionic VI",
+   "expr": "m['dgeCbtAC'](5) != -10 or m['dgeCbtHP'](5) != 350 or m['dgeCbtMove'](5) != 24 or m['dgeDunatisBoulderDmgLo']() != 8 or m['dgeDunatisBoulderDmgHi']() != 80 or m['dgeDunatisBoulderRangeYards']() != 1000 or m['dgeDunatisArmorPlus']() != 4 or m['dgeClsBard'](5) != 20 or m['dgeRosPsiClass'](5) != 6"
+  },
+  {
+   "note": "the Goibhnie walk: AC -4, 329 hit points, 9-inch move, 75 percent MR, 14th druid, 15th bard, the psionic VI (the 51px V-slash word), the +4 spear 3-30 plus 14",
+   "expr": "m['dgeCbtAC'](6) != -4 or m['dgeCbtHP'](6) != 329 or m['dgeCbtMove'](6) != 9 or m['dgeCbtMR'](6) != 75 or m['dgeClsDruid'](6) != 14 or m['dgeClsBard'](6) != 15 or m['dgeRosPsiClass'](6) != 6 or m['dgeGoibhnieSpearPlus']() != 4 or m['dgeGoibhnieSpearDmgLo']() != 3 or m['dgeGoibhnieStrBonus']() != 14"
+  },
+  {
+   "note": "the Goibhnie doctrines: the never-miss weapons, the 50-point thunderbolt, the 500-person amulet chain",
+   "expr": "m['dgeGoibhnieThunderboltDamage']() != 50 or m['dgeGoibhnieAmuletProtectCount']() != 500"
+  },
+  {
+   "note": "the Lugh walk: AC 0, 375 hit points, 90 percent MR, 7 feet, 19th ranger, 19th bard, psionic VI",
+   "expr": "m['dgeCbtAC'](7) != 0 or m['dgeCbtHP'](7) != 375 or m['dgeCbtMR'](7) != 90 or m['dgeCbtSizeIn'](7) != 84 or m['dgeClsRanger'](7) != 19 or m['dgeClsBard'](7) != 19 or m['dgeRosPsiClass'](7) != 6"
+  },
+  {
+   "note": "the Lugh adjudications: S:23(+5,+11) I:25 W:24 D:25 C:24 CH:24 (the Termux and the 1eonline transcription against the IA S:20 misread), the Nil/see below cleric line and the 30th level druidical doctrine",
+   "expr": "m['dgeAbiStr'](7) != 23 or m['dgeAbiStrHit'](7) != 5 or m['dgeAbiStrDmg'](7) != 11 or m['dgeAbiInt'](7) != 25 or m['dgeAbiWis'](7) != 24 or m['dgeAbiDex'](7) != 25 or m['dgeAbiCon'](7) != 24 or m['dgeAbiCha'](7) != 24 or m['dgeClsCleric'](7) != 0 or m['dgeClsDruid'](7) != 99 or m['dgeLughDruidSpellLevel']() != 30"
+  },
+  {
+   "note": "the Manannan walk: AC -2, 389 hit points, 12 over 48, chaotic neutral, 25th cleric, 16th fighter, the See below magic-user, psionic VI",
+   "expr": "m['dgeCbtAC'](8) != -2 or m['dgeCbtHP'](8) != 389 or m['dgeCbtMove'](8) != 12 or m['dgeCbtMoveAlt'](8) != 48 or m['dgeRosAlign'](8) != 5 or m['dgeClsCleric'](8) != 25 or m['dgeClsFighterLo'](8) != 16 or m['dgeClsMagUser'](8) != 99 or m['dgeRosPsiClass'](8) != 6"
+  },
+  {
+   "note": "the flagged eyeball cell: the Manannan trident drains one-fourth of the original hit points (the fraction garbles in both voices), the +5 sea-shell armor, the Retaliator 3-30, the 50-creature sea call",
+   "expr": "m['dgeManannanTridentDrainDiv']() != 4 or m['dgeManannanArmorPlus']() != 5 or m['dgeManannanRetaliatorDmgLo']() != 3 or m['dgeManannanRetaliatorDmgHi']() != 30 or m['dgeManannanSummonCount']() != 50 or m['dgeManannanStrBonus']() != 12"
+  },
+  {
+   "note": "the Math walk: AC 6, 100 hit points, 6th druid, 4th fighter, 30th magic-user, 10th illusionist, the printed 200 point psionic score (like the R851 Merlin 300), the modes A B C over F G H I",
+   "expr": "m['dgeCbtAC'](9) != 6 or m['dgeCbtHP'](9) != 100 or m['dgeClsDruid'](9) != 6 or m['dgeClsFighterLo'](9) != 4 or m['dgeClsMagUser'](9) != 30 or m['dgeClsIllus'](9) != 10 or m['dgeAbiPsi'](9) != 200 or m['dgeMathPsiScore']() != 200"
+  },
+  {
+   "note": "the Math adjudications: S:18(+1,+2) I:18 W:18 D:18 C:18 CH:18, the 5-foot-4 size (the foot-mark-as-1 decode of the printed 514)",
+   "expr": "m['dgeAbiStr'](9) != 18 or m['dgeAbiStrHit'](9) != 1 or m['dgeAbiStrDmg'](9) != 2 or m['dgeAbiInt'](9) != 18 or m['dgeAbiWis'](9) != 18 or m['dgeAbiDex'](9) != 18 or m['dgeAbiCon'](9) != 18 or m['dgeAbiCha'](9) != 18 or m['dgeCbtSizeIn'](9) != 64"
+  },
+  {
+   "note": "the Morrigan walk: AC -4, 388 hit points, the Variable move sentinel, 20th ranger, 15th assassin, 10th bard, psionic VI",
+   "expr": "m['dgeCbtAC'](10) != -4 or m['dgeCbtHP'](10) != 388 or m['dgeCbtMove'](10) != 0 or m['dgeClsRanger'](10) != 20 or m['dgeClsAssassin'](10) != 15 or m['dgeClsBard'](10) != 10 or m['dgeRosPsiClass'](10) != 6"
+  },
+  {
+   "note": "the flagged eyeball cell: the Morrigan charisma line reads 21 or -1 (both voices garble identically; the 1eonline transcription corroborates) - the alt rides the consts",
+   "expr": "m['dgeAbiCha'](10) != 21 or m['dgeMorriganChaAlt']() != -1"
+  },
+  {
+   "note": "the Morrigan doctrines: the 15-mile sight, the 5 percent strike on fleeing worshipers, the 10 percent watching, the 3-36 never-miss spears, the four 200-hit-point demi-goddesses",
+   "expr": "m['dgeMorriganSightMiles']() != 15 or m['dgeMorriganFleeStrikePct']() != 5 or m['dgeMorriganWatchingPct']() != 10 or m['dgeMorriganSpearDmgLo']() != 3 or m['dgeMorriganSpearDmgHi']() != 36 or m['dgeMorriganServantCount']() != 4 or m['dgeMorriganServantHP']() != 200 or m['dgeMorriganStrBonus']() != 14"
+  },
+  {
+   "note": "the Nuada walk: AC -4, 390 hit points, 3 attacks, 10 percent MR, 20th ranger, 12th assassin, 10th bard, psionic VI",
+   "expr": "m['dgeCbtAC'](11) != -4 or m['dgeCbtHP'](11) != 390 or m['dgeCbtAtN'](11) != 3 or m['dgeCbtMR'](11) != 10 or m['dgeClsRanger'](11) != 20 or m['dgeClsAssassin'](11) != 12 or m['dgeClsBard'](11) != 10 or m['dgeRosPsiClass'](11) != 6"
+  },
+  {
+   "note": "the Nuada doctrines: the +3 to hit and double damage, the 6-36 silver hand, the +4 leather, the +5 sword fending 3 weapons, the equal-plus-own strength",
+   "expr": "m['dgeNuadaHitPlus']() != 3 or m['dgeNuadaDoubleDamage']() != 2 or m['dgeNuadaHandDmgLo']() != 6 or m['dgeNuadaHandDmgHi']() != 36 or m['dgeNuadaArmorPlus']() != 4 or m['dgeNuadaSwordPlus']() != 5 or m['dgeNuadaFendCount']() != 3 or m['dgeNuadaStrBonus']() != 14"
+  },
+  {
+   "note": "the Oghma walk: AC -6, 310 hit points, 85 percent MR, cleric and druid 15th in each, magic-user and illusionist 18th in each, 20th bard, psionic IV (the 57px word)",
+   "expr": "m['dgeCbtAC'](12) != -6 or m['dgeCbtHP'](12) != 310 or m['dgeCbtMR'](12) != 85 or m['dgeClsCleric'](12) != 15 or m['dgeClsDruid'](12) != 15 or m['dgeClsMagUser'](12) != 18 or m['dgeClsIllus'](12) != 18 or m['dgeClsBard'](12) != 20 or m['dgeRosPsiClass'](12) != 4 or m['dgeRosInEach'](12) != 1"
+  },
+  {
+   "note": "the Oghma adjudications: S:25(+7,+14) asterisked (the See below equal-plus-own strength doctrine), I:25 W:25 D:22 C:20 CH:23, the 6-foot size (the IA clean read against the Termux ampersand garble)",
+   "expr": "m['dgeAbiStr'](12) != 25 or m['dgeAbiStrHit'](12) != 7 or m['dgeAbiStrDmg'](12) != 14 or m['dgeAbiInt'](12) != 25 or m['dgeAbiWis'](12) != 25 or m['dgeAbiDex'](12) != 22 or m['dgeAbiCon'](12) != 20 or m['dgeAbiCha'](12) != 23 or m['dgeCbtSizeIn'](12) != 72 or m['dgeOghmaChainmailPlus']() != 4 or m['dgeOghmaListenPct']() != 1 or m['dgeOghmaRewardPct']() != 5"
+  },
+  {
+   "note": "the Silvanus adjudications: AC -4 and the 18 over 48 through-forests move (the IA recovery of the Termux fold-garbled lines), the printed 3/2 attacks, 5-50 plus 14, cleric and druid 14th in each, 19th illusionist, 15th bard, psionic VI",
+   "expr": "m['dgeCbtAC'](13) != -4 or m['dgeCbtMove'](13) != 18 or m['dgeCbtMoveAlt'](13) != 48 or m['dgeCbtAtN'](13) != 3 or m['dgeCbtAtD'](13) != 2 or m['dgeCbtHP'](13) != 333 or m['dgeSilvanusMalletDmgLo']() != 5 or m['dgeSilvanusMalletDmgHi']() != 50 or m['dgeSilvanusStrBonus']() != 14 or m['dgeClsCleric'](13) != 14 or m['dgeClsDruid'](13) != 14 or m['dgeClsIllus'](13) != 19 or m['dgeClsBard'](13) != 15 or m['dgeRosPsiClass'](13) != 6 or m['dgeRosInEach'](13) != 1"
+  },
+  {
+   "note": "the Silvanus doctrines: the +5 leaf armor and mallet, the wolfhound (AC 3, HD 10, hp 100, 1 attack, 2-20, regenerating 5), the 1 percent grove appearance",
+   "expr": "m['dgeSilvanusArmorPlus']() != 5 or m['dgeSilvanusMalletPlus']() != 5 or m['dgeSilvanusHoundAC']() != 3 or m['dgeSilvanusHoundHD']() != 10 or m['dgeSilvanusHoundHP']() != 100 or m['dgeSilvanusHoundAtN']() != 1 or m['dgeSilvanusHoundDmgLo']() != 2 or m['dgeSilvanusHoundDmgHi']() != 20 or m['dgeSilvanusHoundRegen']() != 5 or m['dgeSilvanusGroveAppearPct']() != 1"
+  },
+  {
+   "note": "the Master walk: AC 0, 100 hit points, 18-inch move, 15th ranger, the +3 spear, the horn every mile",
+   "expr": "m['dgeCbtAC'](14) != 0 or m['dgeCbtHP'](14) != 100 or m['dgeCbtMove'](14) != 18 or m['dgeClsRanger'](14) != 15 or m['dgeMasterSpearPlus']() != 3 or m['dgeMasterHornMiles']() != 1 or m['dgeRosWildHunt'](14) != 1"
+  },
+  {
+   "note": "the Master abilities: S:18(00)(+3,+6) I:18 W:18 D:18 C:18 CH:15, the 7-foot size",
+   "expr": "m['dgeAbiStr'](14) != 18 or m['dgeAbiStrHit'](14) != 3 or m['dgeAbiStrDmg'](14) != 6 or m['dgeAbiInt'](14) != 18 or m['dgeAbiWis'](14) != 18 or m['dgeAbiDex'](14) != 18 or m['dgeAbiCon'](14) != 18 or m['dgeAbiCha'](14) != 15 or m['dgeCbtSizeIn'](14) != 84"
+  },
+  {
+   "note": "the Pack walk: AC 5, 30 hit points, 2-8 damage, 15 percent MR, 4 feet at the shoulder, attacking as 8 hit dice monsters, 950 xp per hound, the all-sentinel class and ability rows",
+   "expr": "m['dgeCbtAC'](15) != 5 or m['dgeCbtHP'](15) != 30 or m['dgeHoundDmgLo']() != 2 or m['dgeHoundDmgHi']() != 8 or m['dgeCbtMR'](15) != 15 or m['dgeCbtSizeIn'](15) != 48 or m['dgeHoundAttackHD']() != 8 or m['dgeHoundXpValue']() != 950 or m['dgeClsFighterLo'](15) != 0 or m['dgeAbiStr'](15) != 0 or m['dgeRosWildHunt'](15) != 1 or m['dgeRosRank'](15) != 3"
+  },
+  {
+   "note": "the Wild Hunt doctrine: ten miles out, 10 percent a mile, the 25 percent look, the 90 percent hunted, the 50 percent re-ensnare, the pack of 20",
+   "expr": "m['dgeHuntStartMiles']() != 10 or m['dgeHuntSpotPctPerMile']() != 10 or m['dgeHuntLookPct']() != 25 or m['dgeHuntHuntedPct']() != 90 or m['dgeHuntResnarePct']() != 50 or m['dgeHuntPackCount']() != 20 or m['dgeHuntHoundHP']() != 30"
+  },
+  {
+   "note": "the tathlum: one day per coat, one week to dry, one-half the hit points from a relative, usable only once; the Torc of the Gods by Goibhnie",
+   "expr": "m['dgeTathlumCoatDays']() != 1 or m['dgeTathlumCoatWeeks']() != 1 or m['dgeTathlumRelativeDiv']() != 2"
+  },
+  {
+   "note": "the rank walk: the seven greater gods (Dagda, Arawn, Lugh, Manannan, Nuada, Oghma, Silvanus), the five lesser (Brigit, Diancecht, Dunatis, Goibhnie, Morrigan), the three no-rank (Cu Chulainn, Math, the Master), the Pack monster format",
+   "expr": "m['dgeRosRank'](0) != 1 or m['dgeRosRank'](1) != 1 or m['dgeRosRank'](7) != 1 or m['dgeRosRank'](8) != 1 or m['dgeRosRank'](11) != 1 or m['dgeRosRank'](12) != 1 or m['dgeRosRank'](13) != 1 or m['dgeRosRank'](2) != 0 or m['dgeRosRank'](4) != 0 or m['dgeRosRank'](5) != 0 or m['dgeRosRank'](6) != 0 or m['dgeRosRank'](10) != 0 or m['dgeRosRank'](3) != 2 or m['dgeRosRank'](9) != 2 or m['dgeRosRank'](14) != 2"
+  },
+  {
+   "note": "the alignment walk: Diancecht lawful good, Cu Chulainn neutral good, Arawn lawful evil, Manannan chaotic neutral, the twelve neutrals",
+   "expr": "m['dgeRosAlign'](4) != 0 or m['dgeRosAlign'](3) != 1 or m['dgeRosAlign'](1) != 6 or m['dgeRosAlign'](8) != 5 or m['dgeRosAlign'](0) != 4 or m['dgeRosAlign'](15) != 4"
+  },
+  {
+   "note": "the fixed-damage walk: the eleven printed-figure rows and the five See below or by-weapon rows",
+   "expr": "m['dgeRosDmgFixed'](0) != 1 or m['dgeRosDmgFixed'](1) != 1 or m['dgeRosDmgFixed'](2) != 1 or m['dgeRosDmgFixed'](3) != 1 or m['dgeRosDmgFixed'](4) != 1 or m['dgeRosDmgFixed'](5) != 1 or m['dgeRosDmgFixed'](6) != 1 or m['dgeRosDmgFixed'](10) != 1 or m['dgeRosDmgFixed'](13) != 1 or m['dgeRosDmgFixed'](15) != 1 or m['dgeRosDmgFixed'](7) != 0 or m['dgeRosDmgFixed'](8) != 0 or m['dgeRosDmgFixed'](9) != 0 or m['dgeRosDmgFixed'](11) != 0 or m['dgeRosDmgFixed'](12) != 0 or m['dgeRosDmgFixed'](14) != 0"
+  },
+  {
+   "note": "the registry floor holds at 995 - zero defs touched this round",
+   "expr": "m['dgeRegistryFloor']() != 995"
+  }
+ ],
+ "header_sections": {
+  "the R853 census": [
+   {
+    "kind": "const",
+    "name": "dgeRound"
+   },
+   {
+    "kind": "const",
+    "name": "dgePrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "dgePrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dgeCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgeClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgeAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgeRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgePlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgePsiClassVI"
+   },
+   {
+    "kind": "const",
+    "name": "dgePsiClassII"
+   },
+   {
+    "kind": "const",
+    "name": "dgePsiClassIV"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSamainMonth"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSamainDay"
+   },
+   {
+    "kind": "const",
+    "name": "dgeImbalcMonth"
+   },
+   {
+    "kind": "const",
+    "name": "dgeImbalcDay"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBeltaneMonth"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBeltaneDay"
+   },
+   {
+    "kind": "const",
+    "name": "dgeLugnasadMonth"
+   },
+   {
+    "kind": "const",
+    "name": "dgeLugnasadDay"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSacrificesPerYear"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDruidBlueLevelMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgeCauldronCrystalLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgeWheelSymbolLoLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgeWheelSymbolHiLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHoundDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHoundDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHoundAttackHD"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHoundXpValue"
+   }
+  ],
+  "the mythos intro": [
+   {
+    "kind": "bool",
+    "name": "dgeNotConfinedToBritishIsles"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeAllHumanForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSpheresOfInfluence"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeClericsAreDruids"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeServicesInWoodedAreas"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeWellsAndPits"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHumanSacrifices"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeCondemnedCriminals"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeGrovesGuardedByBoars"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDruidRobes"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeTheTorc"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeTorcMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDruidCauldron"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeWheelSymbol"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeTolerantOfPriests"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeNaturePrimeConcern"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeEliteSeparateGroup"
+   }
+  ],
+  "the Dagda walk": [
+   {
+    "kind": "const",
+    "name": "dgeDagdaEntityCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDagdaEtherealCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDagdaClubDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDagdaClubDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDagdaStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaDozenKing"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaSeparatesSelf"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaEtherealServants"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaShabbyMan"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaBreaksAnything"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaClubDeathEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaClubRaiseEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaCauldron"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDagdaSentientHarp"
+   }
+  ],
+  "the Arawn walk": [
+   {
+    "kind": "const",
+    "name": "dgeArawnDeathSpells"
+   },
+   {
+    "kind": "const",
+    "name": "dgeArawnSpellLevelMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgeArawnSpellAsLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgeArawnRestoreChancePerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgeArawnSubstitutePct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeArawnClubPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeArawnClubDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeArawnClubDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeArawnStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeArawnGodOfDead"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeArawnIslandOfDead"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeArawnEyeDeathSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeArawnThirdLevelSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeArawnAppearsOnRestore"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeArawnFightsOrSubstitutes"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeArawnImmuneToDirectDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeArawnWeaponTouchDeath"
+   }
+  ],
+  "the Brigit walk": [
+   {
+    "kind": "const",
+    "name": "dgeBrigitFireSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBrigitArmorPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBrigitSongPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBrigitSongBoost"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBrigitAuraDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBrigitAuraFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBrigitMeltPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBrigitStaffDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeBrigitStaffDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBrigitFireAndPoetry"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBrigitFlameHair"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBrigitSongFavor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBrigitBattleSongDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBrigitFireImmunities"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBrigitFlameAura"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBrigitMeltsWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeBrigitFlameStaff"
+   }
+  ],
+  "the Cu Chulainn walk": [
+   {
+    "kind": "const",
+    "name": "dgeCuSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeCuSpearDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeCuSpearDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeCuGlarePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dgeCuStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeCuHero"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeCuGaeBolg"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeCuNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeCuBattleBrilliance"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeCuFightsGiants"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeCuCannotBeCharmed"
+   }
+  ],
+  "the Diancecht walk": [
+   {
+    "kind": "const",
+    "name": "dgeDiancechtSummonPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDiancechtSummonerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDiancechtImmuneDiv"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDiancechtSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDiancechtSpearDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDiancechtSpearDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDiancechtStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDiancechtPhysician"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDiancechtAppearsYoung"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDiancechtHealsAnything"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDiancechtSummonedByDeities"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDiancechtPilgrimage"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDiancechtHeadlessLimit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDiancechtWonVsArawn"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDiancechtHealsAllSides"
+   }
+  ],
+  "the Dunatis walk": [
+   {
+    "kind": "const",
+    "name": "dgeDunatisArmorPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDunatisBoulderDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDunatisBoulderDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDunatisBoulderRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "dgeDunatisStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDunatisMountainGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDunatisAppearsNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDunatisRaisesPeaks"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDunatisDestroysForts"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDunatisAirBoulders"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeDunatisImmunities"
+   }
+  ],
+  "the Goibhnie walk": [
+   {
+    "kind": "const",
+    "name": "dgeGoibhnieThunderboltDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgeGoibhnieAmuletProtectCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeGoibhnieSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeGoibhnieSpearDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeGoibhnieSpearDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeGoibhnieStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeGoibhnieBlacksmith"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeGoibhnieHugeMan"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeGoibhnieWeaponsNeverMiss"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeGoibhnieAmulets"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeGoibhnieImpossibleHit"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeGoibhnieOneAmulet"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeGoibhniePhysicalImmune"
+   }
+  ],
+  "the Lugh walk": [
+   {
+    "kind": "const",
+    "name": "dgeLughDruidSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgeLughStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeLughGeneralities"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeLughBorrowedAttribute"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeLughLargeHands"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeLughNoArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeLughDruidicalIdeal"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeLughImmunities"
+   }
+  ],
+  "the Manannan walk": [
+   {
+    "kind": "const",
+    "name": "dgeManannanArmorPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeManannanTridentDrainDiv"
+   },
+   {
+    "kind": "const",
+    "name": "dgeManannanRetaliatorDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeManannanRetaliatorDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeManannanSummonCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeManannanStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeManannanSeaGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeManannanRedBeard"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeManannanTridentDrains"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeManannanRetaliator"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeManannanSeaSummon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeManannanSaltWaterImmune"
+   }
+  ],
+  "the Math walk": [
+   {
+    "kind": "const",
+    "name": "dgeMathPsiScore"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMathMuLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMathIllusLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMathMagicUser"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMathHearsBreezes"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMathTorcBearer"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMathWaterRod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMathPolymorphOthers"
+   }
+  ],
+  "the Morrigan walk": [
+   {
+    "kind": "const",
+    "name": "dgeMorriganChaAlt"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMorriganSightMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMorriganFleeStrikePct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMorriganWatchingPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMorriganSpearDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMorriganSpearDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMorriganServantCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMorriganServantHP"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMorriganStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMorriganWarGoddess"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMorriganHideousFace"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMorriganFear"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMorriganInvisibleFight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMorriganChaseSpeed"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMorriganStrikesFleeing"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMorriganTwoSpears"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMorriganMagicImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMorriganDemiGoddesses"
+   }
+  ],
+  "the Nuada walk": [
+   {
+    "kind": "const",
+    "name": "dgeNuadaHitPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeNuadaDoubleDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dgeNuadaHandDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeNuadaHandDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeNuadaArmorPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeNuadaSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeNuadaFendCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeNuadaStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeNuadaSilverHand"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeNuadaArtificialHand"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeNuadaWeaponBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeNuadaDancingHand"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeNuadaFendingSword"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeNuadaWrestles"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeNuadaEqualStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeNuadaControlImmune"
+   }
+  ],
+  "the Oghma walk": [
+   {
+    "kind": "const",
+    "name": "dgeOghmaListenPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeOghmaRewardPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeOghmaChainmailPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeOghmaStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeOghmaBinder"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeOghmaAgedMan"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeOghmaBestWrestler"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeOghmaCreativePatron"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeOghmaSeeksGifted"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeOghmaAnswerMachine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeOghmaSecretNames"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeOghmaVariableStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeOghmaImprisonsDemons"
+   }
+  ],
+  "the Silvanus walk": [
+   {
+    "kind": "const",
+    "name": "dgeSilvanusArmorPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusMalletPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusMalletDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusMalletDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusHoundAC"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusHoundHD"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusHoundHP"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusHoundAtN"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusHoundDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusHoundDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusHoundRegen"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusGroveAppearPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeSilvanusStrBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSilvanusForestGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSilvanusLongLegs"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSilvanusVoiceControl"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSilvanusPlants"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSilvanusLeafArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSilvanusWolfhound"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeSilvanusGroveProtector"
+   }
+  ],
+  "the Master walk": [
+   {
+    "kind": "const",
+    "name": "dgeMasterSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dgeMasterHornMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMasterOfTheHunt"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMasterGreenEyes"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMasterBlackLeather"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMasterNeverSpeaks"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeMasterRunsBehind"
+   }
+  ],
+  "the Pack walk": [
+   {
+    "kind": "bool",
+    "name": "dgePackGreenFire"
+   },
+   {
+    "kind": "bool",
+    "name": "dgePackWaitsForHunters"
+   },
+   {
+    "kind": "bool",
+    "name": "dgePackTakesOverIfKilled"
+   },
+   {
+    "kind": "bool",
+    "name": "dgePackDeathsUnnoticed"
+   }
+  ],
+  "the Wild Hunt doctrine": [
+   {
+    "kind": "const",
+    "name": "dgeHuntStartMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHuntSpotPctPerMile"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHuntLookPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHuntHuntedPct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHuntResnarePct"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHuntPackCount"
+   },
+   {
+    "kind": "const",
+    "name": "dgeHuntHoundHP"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntManifestation"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntOneForm"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntSummonedByEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntPursuitNoise"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntPursuersJoin"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntTwoRoles"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntNeverEntersBuildings"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntOnePerNight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntKillsOrDisappears"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntBigGameFallback"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntCompelledAlignment"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntEternal"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntKeepsPace"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntFlies"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntDeathMelee"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntEscape"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeHuntSightingResnare"
+   }
+  ],
+  "the tathlum and the torc": [
+   {
+    "kind": "const",
+    "name": "dgeTathlumCoatDays"
+   },
+   {
+    "kind": "const",
+    "name": "dgeTathlumCoatWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "dgeTathlumRelativeDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeTathlumWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeTathlumSunshine"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeTathlumOnceOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeTorcOfTheGods"
+   },
+   {
+    "kind": "bool",
+    "name": "dgeTorcRareMetals"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R852 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R852 LANDED 2026-10-26: commit",
+  "  5f6789e9e1484e699cedc08d304b516898b28cb8",
+  "  (pushed 550339f..5f6789e, census 774 -> 775),",
+  "  THE BABYLONIAN MYTHOS - the D&DG walk",
+  "  round four, print pp. 22-25: ten beings",
+  "  (Anu, Anshar, Dahak, Druaga, Gilgamesh,",
+  "  Girru, Ishtar, Marduk, Nergal, Ramman),",
+  "  the pantheon-wide cleric doctrine of the",
+  "  kilt and the tithe. THE SHAPE: 4 grids",
+  "  x 10 rows (combat, class, ability,",
+  "  roster; 38 cols), 73 consts + 114 bools,",
+  "  inline 225; header rules/dgd.h, prefix",
+  "  dgd; audit \"R852 Babylonian mythos",
+  "  audit\", rode rules/audits/r852_batch.h;",
+  "  34 examples. The roster grid carries",
+  "  the alignment codes (0 LG, 1 NG, 3 LN,",
+  "  4 N, 6 LE, 7 NE, 8 CE), the rank codes",
+  "  (0 lesser, 1 greater, 2 hero, 3",
+  "  monster), the plane codes (Nirvana",
+  "  through Concordant Opposition) and the",
+  "  psionic class cells (Anu and Anshar VI).",
+  "  THE ADJUDICATIONS (the IA 1st-print",
+  "  collation over the Termux fold):",
+  "  Gilgamesh 2 attacks (the IA xml word vs",
+  "  the Termux 3 fold-garble), the Girru +3",
+  "  axe (vs the +43 garble), the Anu 2-20",
+  "  (+7) line (IA; the fold ate it), Druaga",
+  "  CH 4 (the single-glyph 15px TSV width",
+  "  vs the 24px two-digit calibration),",
+  "  Nergal 12/12 and Ramman 12/48 moves,",
+  "  Dahak 72 feet long. EYEBALL CELLS",
+  "  (flagged): the Dahak move 9/18 (the",
+  "  2nd-print extract vs the IA 1st-print",
+  "  9/15, the Gawaine 112 precedent), the",
+  "  Anu size (the 6 clean, the inch mark",
+  "  garbled in both voices). ZERO registry",
+  "  defs touched - the floor holds at 995.",
+  "  Spec tools/spec_r852.json, md5",
+  "  00af93e06db06c75d19ee15561ca920a",
+  "  (66,343 bytes). NEXT: the D&DG walk",
+  "  continues from the Celtic mythos",
+  "  (print pp. 26-31)."
+ ],
+ "inline_count": 324
+}

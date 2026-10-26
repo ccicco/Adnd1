@@ -24517,6 +24517,48 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   (56,928 bytes). NEXT: the D&DG walk
   continues from the Babylonian mythos
   (print pp. 22-25).
+  - R852 LANDED 2026-10-26: commit
+  5f6789e9e1484e699cedc08d304b516898b28cb8
+  (pushed 550339f..5f6789e, census 774 -> 775),
+  THE BABYLONIAN MYTHOS - the D&DG walk
+  round four, print pp. 22-25: ten beings
+  (Anu, Anshar, Dahak, Druaga, Gilgamesh,
+  Girru, Ishtar, Marduk, Nergal, Ramman),
+  the pantheon-wide cleric doctrine of the
+  kilt and the tithe. THE SHAPE: 4 grids
+  x 10 rows (combat, class, ability,
+  roster; 38 cols), 73 consts + 114 bools,
+  inline 225; header rules/dgd.h, prefix
+  dgd; audit "R852 Babylonian mythos
+  audit", rode rules/audits/r852_batch.h;
+  34 examples. The roster grid carries
+  the alignment codes (0 LG, 1 NG, 3 LN,
+  4 N, 6 LE, 7 NE, 8 CE), the rank codes
+  (0 lesser, 1 greater, 2 hero, 3
+  monster), the plane codes (Nirvana
+  through Concordant Opposition) and the
+  psionic class cells (Anu and Anshar VI).
+  THE ADJUDICATIONS (the IA 1st-print
+  collation over the Termux fold):
+  Gilgamesh 2 attacks (the IA xml word vs
+  the Termux 3 fold-garble), the Girru +3
+  axe (vs the +43 garble), the Anu 2-20
+  (+7) line (IA; the fold ate it), Druaga
+  CH 4 (the single-glyph 15px TSV width
+  vs the 24px two-digit calibration),
+  Nergal 12/12 and Ramman 12/48 moves,
+  Dahak 72 feet long. EYEBALL CELLS
+  (flagged): the Dahak move 9/18 (the
+  2nd-print extract vs the IA 1st-print
+  9/15, the Gawaine 112 precedent), the
+  Anu size (the 6 clean, the inch mark
+  garbled in both voices). ZERO registry
+  defs touched - the floor holds at 995.
+  Spec tools/spec_r852.json, md5
+  00af93e06db06c75d19ee15561ca920a
+  (66,343 bytes). NEXT: the D&DG walk
+  continues from the Celtic mythos
+  (print pp. 26-31).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
