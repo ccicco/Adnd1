@@ -25103,6 +25103,37 @@ the audit mirror aborts on a bare bool ref (an operator expected in a audit
 condition); every bool ref in an example must carry an operator (the != 1
 form; a bare not does not translate). NEXT: the D&DG walk continues from the
 Sumerian mythos (print pp. 125-127) - WAIT FOR GO.
+- R866 LANDED 2026-10-26: commit 2e8ee02cc6e28ac2a3fda0c593dcfb172e2af252
+(pushed efdb231..2e8ee02, census 788 -> 789), THE SUMERIAN MYTHOS - the D&DG
+walk round eighteen, print pp. 125-127: seven beings - the five greater gods
+(Enlil, Enki, Inanna, Ki, Utu) and the two lesser (Nanna-Sin, Nin-hursag) -
+plus the city-temple doctrine of the intro (the patron deity per city, the
+priest-king, the ziggurat temples, the 7th/15th/25th holy days, the new-moon
+sacrifice, the three-degree punishment ladder, the shaven clerics) and the
+pantheon-wide cloud chariots doctrine of print p. 127 (MV 24,
+teleport-to-clouds, indestructible); prefix smr (full-repo scan clean); no
+data files. THE CENSUS ODDITY: EVERY ONE OF THE SEVEN BEINGS PRINTS AC -2, the
+only uniform-AC pantheon of the walk. THE HEADLINE ADJUDICATIONS: the Enlil
+127/36" move garble -> 12/36 (L&L) and the (64") size = the 6 1/2 foot 78
+fraction cell (L&L reads 6.5, the R859 fingerprint); the (&) and (5)/(6) size
+garbles read 72/60 through the L&L voice; the Utu 32 attacks garble -> 3/2
+(L&L); the Ki 15"/36"/ /36" triple slash pinned as printed in BOTH voices (the
+R861 Susanowo convention, the duplicate 36 in the col comment); the Inanna
+single-pipe psionic I (L&L reads II) and the warriors-and-lovers worshipper
+line (L&L reads Lawful evil) pinned by print; the Enki 10th-level bard (L&L
+reads 13th in each) and the Enlil D:23 CH:24 cells (the L&L voice normalizes
+to the 25s) pinned by print with the divergences noted; Utu the Infinite move
+-1 sentinel; Nin-hursag the 2-20 dice damage (the DmgFixed 0 row); the psm-4
+fold interleaved the Inanna and Ki blocks of print 126 across the columns, the
+tsv x-y geometry sorted them. ZERO registry defs touched - the floor holds at
+995. Spec tools/spec_r866.json, md5 36c031af18651f33961cd62cc1729acf (57,917
+bytes); 196 inlines (58 consts, 101 bools, 37 table cols, 4 grids x 7 rows),
+23 examples; rverify double-run GREEN, 418 mutants 0 missed; hyphen scan
+clean; zero True/False tokens; the R865 bool-operator rule held first-try; ddg
+gap 18/24 closed, 6 open. NEXT: the D&DG walk past the mythoi - the appendices
+and the index (App 1 the planes pp. 128-133, App 2 temple trappings p. 134,
+App 3 clerical chart pp. 134-142, App 4 + index p. 143, the p.131
+alignment-figures pixel work) - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

@@ -1,0 +1,113 @@
+The DDG print pp. 128-133 encounter tables - the shared creature
+roster (first-appearance ordinals) and the printed rows.
+
+== the shared roster (39) ==
+00 Aerial servant
+01 Basilisk*
+02 Cockatrice*
+03 Couatl
+04 Djinni
+05 Dragon, chromatic
+06 Dragon, platinum
+07 Efreeti
+08 Elemental, air
+09 Elemental, earth
+10 Elemental, fire
+11 Elemental, water
+12 Ghost
+13 Gorgon*
+14 Groaning spirit
+15 Human traveller
+16 Intellect devourer
+17 Invisible stalker
+18 Ki-rin
+19 Lammasu
+20 Medusa*
+21 Nightmare
+22 Salamander
+23 Shedu
+24 Spider, phase
+25 Thought eater
+26 Titan, elder
+27 Titan, lesser
+28 Titan, major
+29 Wind walker
+30 Xorn
+31 Demon, major
+32 Demon, minor
+33 Demon, prince
+34 Devil, arch-
+35 Devil, greater-
+36 Devil, lesser-
+37 Night hag
+38 Rakshasa
+
+== the Ethereal Encounter Table (print p. 132) ==
+01-04  Aerial servant                           1
+05-08  Basilisk*                                1-2
+09-11  Cockatrice*                              1-4
+12-16  Couatl                                   1-4
+17-23  Djinni                                   1-6
+   24  Dragon, chromatic                        1
+   25  Dragon, platinum                         1
+26-27  Efreeti                                  1-3
+28-32  Elemental, air                           1
+33-34  Elemental, earth                         1
+35-36  Elemental, fire                          1
+   37  Elemental, water                         1
+38-42  Ghost                                    1
+43-44  Gorgon*                                  1-2
+45-46  Groaning spirit                          1-2
+47-51  Human traveller - see Character Subtable** 
+52-53  Intellect devourer                       1-2
+54-56  Invisible stalker                        1-3
+57-61  Ki-rin                                   1
+62-68  Lammasu                                  2-8
+69-70  Medusa*                                  1-2
+71-72  Nightmare                                1-4
+73-74  Salamander                               2-5
+75-77  Shedu                                    1
+78-81  Spider, phase                            1-6
+82-88  Thought eater                            1-3
+   89  Titan, elder                             1
+90-92  Titan, lesser                            1
+93-94  Titan, major                             1
+95-97  Wind walker                              2-5
+98-00  Xorn                                     3-6
+
+* = perceptions extend into the Astral and Ethereal Planes (as do
+their magical attack forms), but they do not actually travel
+therein; applies only when the party is near the Prime Material
+Plane. ** = the DMG DUNGEON RANDOM MONSTER ENCOUNTERS Character
+Subtable with the print-p. 132 modifications.
+
+== the Astral Encounter Table (print p. 133) ==
+01-04  Aerial servant                           1
+05-10  Basilisk*                                1-2
+11-13  Cockatrice*                              1-4
+14-16  Demon, major                             1
+17-22  Demon, minor                             1-3
+   23  Demon, prince                            1
+   24  Devil, arch-                             1
+25-28  Devil, greater-                          1
+29-37  Devil, lesser-                           1-3
+   38  Dragon, chromatic                        1
+   39  Dragon, platinum                         1
+40-41  Gorgon*                                  1-2
+42-46  Human traveller - see Character Subtable** 
+47-49  Intellect devourer                       1-2
+50-55  Invisible stalker                        1-3
+56-61  Ki-rin                                   1
+62-63  Medusa*                                  1-2
+64-71  Night hag                                1-4
+72-74  Nightmare                                1-4
+75-79  Rakshasa                                 1-3
+80-91  Shedu                                    2-5
+   92  Titan, elder                             1
+93-97  Titan, lesser                            1
+98-00  Titan, major                             1
+
+* and ** as beneath the Ethereal Encounter Table. The printed
+98-00 row reads Tifan, major (the tesseract garble of Titan).
+The L&L voice prints 92-97 for Titan, lesser (a transcription
+typo - the print pins 93-97).

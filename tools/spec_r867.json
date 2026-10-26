@@ -1,0 +1,3008 @@
+{
+ "round": 867,
+ "title": "the known planes of existence",
+ "prefix": "pln",
+ "banner": {
+  "title": "Appendix 1: the known planes of existence - the D&DG walk round nineteen, print pp. 128-133: the inner planes (the Prime Material, Positive, Negative, four Elemental, four Para-Elemental), the Ethereal, Shadow and Astral planes, the seventeen Outer Planes with their alignment bands, the ethereal and astral travel-and-combat rules, the Ether Cyclone and the psychic wind, the silver-cord doctrine, the two encounter tables (31 and 24 rows), the two random plane-determination tables, and the character subtable level bands. FIG. 4 and FIG. 5 of print p. 131 remain the open pixel-work box.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 129-134; the second printing) with the tsv x-y geometry as the fold-swap, dropped-glyph and band arbiter - the psm-4 fold garbled the psychic wind 13-16 row (Blocwozr;tfefr;:ourse), the inner random-table bands (8.9, 1011, the N of N-hegative) and the BARDT footnote glyph, all adjudicated by geometry plus the collation voice; the collation voice: the 1eonline L&L x1.htm appendix transcription. The adjudications: the ethereal elemental-earth ] glyph = 1 (the w6 token at the numbers column x-position), the astral Titan lesser 93-97 pinned by the print over the L&L 92-97 typo, the astral-only numbers read from the L&L voice (the tesseract dropped the single-number tokens), the Tifan, major garble = Titan, major, the inner random Negative band 5-7 adjudicated by band arithmetic (the 1-20 tiling), and the character subtable bard footnote (the BARDT print cell is the footnote glyph, the 91h is 9th)."
+ },
+ "census_before": 789,
+ "gap_census": {
+  "closed": 19,
+  "open": 5
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Appendix 1: the planes** (pp. 128-133)",
+   "to": "- [x] **Appendix 1: the planes** (pp. 128-133)",
+   "note": "the Appendix 1 box"
+  }
+ ],
+ "header_file": "rules/pln.h",
+ "include_after": "#include \"rules/smr.h\"  // R866: the Sumerian mythos",
+ "include_comment": "the known planes of existence",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R866 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "- R866 LANDED 2026-10-26: commit 2e8ee02cc6e28ac2a3fda0c593dcfb172e2af252",
+  "(pushed efdb231..2e8ee02, census 788 -> 789), THE SUMERIAN MYTHOS - the D&DG",
+  "walk round eighteen, print pp. 125-127: seven beings - the five greater gods",
+  "(Enlil, Enki, Inanna, Ki, Utu) and the two lesser (Nanna-Sin, Nin-hursag) -",
+  "plus the city-temple doctrine of the intro (the patron deity per city, the",
+  "priest-king, the ziggurat temples, the 7th/15th/25th holy days, the new-moon",
+  "sacrifice, the three-degree punishment ladder, the shaven clerics) and the",
+  "pantheon-wide cloud chariots doctrine of print p. 127 (MV 24,",
+  "teleport-to-clouds, indestructible); prefix smr (full-repo scan clean); no",
+  "data files. THE CENSUS ODDITY: EVERY ONE OF THE SEVEN BEINGS PRINTS AC -2, the",
+  "only uniform-AC pantheon of the walk. THE HEADLINE ADJUDICATIONS: the Enlil",
+  "127/36\" move garble -> 12/36 (L&L) and the (64\") size = the 6 1/2 foot 78",
+  "fraction cell (L&L reads 6.5, the R859 fingerprint); the (&) and (5)/(6) size",
+  "garbles read 72/60 through the L&L voice; the Utu 32 attacks garble -> 3/2",
+  "(L&L); the Ki 15\"/36\"/ /36\" triple slash pinned as printed in BOTH voices (the",
+  "R861 Susanowo convention, the duplicate 36 in the col comment); the Inanna",
+  "single-pipe psionic I (L&L reads II) and the warriors-and-lovers worshipper",
+  "line (L&L reads Lawful evil) pinned by print; the Enki 10th-level bard (L&L",
+  "reads 13th in each) and the Enlil D:23 CH:24 cells (the L&L voice normalizes",
+  "to the 25s) pinned by print with the divergences noted; Utu the Infinite move",
+  "-1 sentinel; Nin-hursag the 2-20 dice damage (the DmgFixed 0 row); the psm-4",
+  "fold interleaved the Inanna and Ki blocks of print 126 across the columns, the",
+  "tsv x-y geometry sorted them. ZERO registry defs touched - the floor holds at",
+  "995. Spec tools/spec_r866.json, md5 36c031af18651f33961cd62cc1729acf (57,917",
+  "bytes); 196 inlines (58 consts, 101 bools, 37 table cols, 4 grids x 7 rows),",
+  "23 examples; rverify double-run GREEN, 418 mutants 0 missed; hyphen scan",
+  "clean; zero True/False tokens; the R865 bool-operator rule held first-try; ddg",
+  "gap 18/24 closed, 6 open. NEXT: the D&DG walk past the mythoi - the appendices",
+  "and the index (App 1 the planes pp. 128-133, App 2 temple trappings p. 134,",
+  "App 3 clerical chart pp. 134-142, App 4 + index p. 143, the p.131",
+  "alignment-figures pixel work) - WAIT FOR GO."
+ ],
+ "audit_file": "rules/audits/r867_batch.h",
+ "audit_label": "R867 known planes audit",
+ "audit_anchor": "#include \"rules/audits/r866_batch.h\"  // R866: R866 Sumerian mythos audit",
+ "audit_comment": "APPENDIX 1: THE KNOWN PLANES OF EXISTENCE - the D&DG walk round nineteen, print pp. 128-133: the inner planes, the ethereal and astral travel-and-combat rules, the seventeen Outer Planes, the two encounter tables, the Ether Cyclone, the psychic wind, the silver-cord doctrine and the character subtable level bands; FIG. 4/5 remain the open pixel-work box.",
+ "tables": [
+  {
+   "name": "the ethereal encounter grid",
+   "tag": "plnEtc",
+   "cols": [
+    "plnEtcOrd",
+    "plnEtcLow",
+    "plnEtcHigh",
+    "plnEtcNumLo",
+    "plnEtcNumHi",
+    "plnEtcFlag"
+   ],
+   "col_comments": [
+    "The shared creature-roster ordinals (39 labels; the astral-only demons, devils, night hag and rakshasa follow the ethereal roster; the labels ride the data file)",
+    "The percentile band lows (01-04 aerial servant through 98-00 xorn)",
+    "The percentile band highs (the printed 00 = 100, the R863 encounter-grid convention)",
+    "The numbers-encountered lows (0 = the human traveller character-subtable row)",
+    "The numbers-encountered highs (the ethereal elemental, earth ] print garble adjudicated 1 by the geometry and the L&L voice)",
+    "The flag cells (1 = the asterisked perceptions-extend creatures - basilisk, cockatrice, gorgon, medusa; 2 = the human traveller character subtable row)"
+   ],
+   "count": "plnEtcRows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     1,
+     4,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     8,
+     1,
+     2,
+     1
+    ],
+    [
+     2,
+     9,
+     11,
+     1,
+     4,
+     1
+    ],
+    [
+     3,
+     12,
+     16,
+     1,
+     4,
+     0
+    ],
+    [
+     4,
+     17,
+     23,
+     1,
+     6,
+     0
+    ],
+    [
+     5,
+     24,
+     24,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     25,
+     25,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     26,
+     27,
+     1,
+     3,
+     0
+    ],
+    [
+     8,
+     28,
+     32,
+     1,
+     1,
+     0
+    ],
+    [
+     9,
+     33,
+     34,
+     1,
+     1,
+     0
+    ],
+    [
+     10,
+     35,
+     36,
+     1,
+     1,
+     0
+    ],
+    [
+     11,
+     37,
+     37,
+     1,
+     1,
+     0
+    ],
+    [
+     12,
+     38,
+     42,
+     1,
+     1,
+     0
+    ],
+    [
+     13,
+     43,
+     44,
+     1,
+     2,
+     1
+    ],
+    [
+     14,
+     45,
+     46,
+     1,
+     2,
+     0
+    ],
+    [
+     15,
+     47,
+     51,
+     0,
+     0,
+     2
+    ],
+    [
+     16,
+     52,
+     53,
+     1,
+     2,
+     0
+    ],
+    [
+     17,
+     54,
+     56,
+     1,
+     3,
+     0
+    ],
+    [
+     18,
+     57,
+     61,
+     1,
+     1,
+     0
+    ],
+    [
+     19,
+     62,
+     68,
+     2,
+     8,
+     0
+    ],
+    [
+     20,
+     69,
+     70,
+     1,
+     2,
+     1
+    ],
+    [
+     21,
+     71,
+     72,
+     1,
+     4,
+     0
+    ],
+    [
+     22,
+     73,
+     74,
+     2,
+     5,
+     0
+    ],
+    [
+     23,
+     75,
+     77,
+     1,
+     1,
+     0
+    ],
+    [
+     24,
+     78,
+     81,
+     1,
+     6,
+     0
+    ],
+    [
+     25,
+     82,
+     88,
+     1,
+     3,
+     0
+    ],
+    [
+     26,
+     89,
+     89,
+     1,
+     1,
+     0
+    ],
+    [
+     27,
+     90,
+     92,
+     1,
+     1,
+     0
+    ],
+    [
+     28,
+     93,
+     94,
+     1,
+     1,
+     0
+    ],
+    [
+     29,
+     95,
+     97,
+     2,
+     5,
+     0
+    ],
+    [
+     30,
+     98,
+     100,
+     3,
+     6,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "the astral encounter grid",
+   "tag": "plnAtc",
+   "cols": [
+    "plnAtcOrd",
+    "plnAtcLow",
+    "plnAtcHigh",
+    "plnAtcNumLo",
+    "plnAtcNumHi",
+    "plnAtcFlag"
+   ],
+   "col_comments": [
+    "The shared creature-roster ordinals (the demons 31-33, the devils 34-36, the night hag 37 and the rakshasa 38 are the astral-only entries)",
+    "The percentile band lows (01-04 aerial servant through 98-00 titan major)",
+    "The percentile band highs (the printed 00 = 100)",
+    "The numbers-encountered lows (0 = the human traveller character-subtable row)",
+    "The numbers-encountered highs (the single-number rows read 1 by the L&L voice - the tesseract dropped the tokens; TITAN LESSER 93-97 pinned by the print over the L&L 92-97 typo)",
+    "The flag cells (1 = the asterisked creatures; 2 = the human traveller character subtable row)"
+   ],
+   "count": "plnAtcRows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     1,
+     4,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     5,
+     10,
+     1,
+     2,
+     1
+    ],
+    [
+     2,
+     11,
+     13,
+     1,
+     4,
+     1
+    ],
+    [
+     31,
+     14,
+     16,
+     1,
+     1,
+     0
+    ],
+    [
+     32,
+     17,
+     22,
+     1,
+     3,
+     0
+    ],
+    [
+     33,
+     23,
+     23,
+     1,
+     1,
+     0
+    ],
+    [
+     34,
+     24,
+     24,
+     1,
+     1,
+     0
+    ],
+    [
+     35,
+     25,
+     28,
+     1,
+     1,
+     0
+    ],
+    [
+     36,
+     29,
+     37,
+     1,
+     3,
+     0
+    ],
+    [
+     5,
+     38,
+     38,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     39,
+     39,
+     1,
+     1,
+     0
+    ],
+    [
+     13,
+     40,
+     41,
+     1,
+     2,
+     1
+    ],
+    [
+     15,
+     42,
+     46,
+     0,
+     0,
+     2
+    ],
+    [
+     16,
+     47,
+     49,
+     1,
+     2,
+     0
+    ],
+    [
+     17,
+     50,
+     55,
+     1,
+     3,
+     0
+    ],
+    [
+     18,
+     56,
+     61,
+     1,
+     1,
+     0
+    ],
+    [
+     20,
+     62,
+     63,
+     1,
+     2,
+     1
+    ],
+    [
+     37,
+     64,
+     71,
+     1,
+     4,
+     0
+    ],
+    [
+     21,
+     72,
+     74,
+     1,
+     4,
+     0
+    ],
+    [
+     38,
+     75,
+     79,
+     1,
+     3,
+     0
+    ],
+    [
+     23,
+     80,
+     91,
+     2,
+     5,
+     0
+    ],
+    [
+     26,
+     92,
+     92,
+     1,
+     1,
+     0
+    ],
+    [
+     27,
+     93,
+     97,
+     1,
+     1,
+     0
+    ],
+    [
+     28,
+     98,
+     100,
+     1,
+     1,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "the outer planes grid",
+   "tag": "plnOut",
+   "cols": [
+    "plnOutPos",
+    "plnOutLayers",
+    "plnOutDesc"
+   ],
+   "col_comments": [
+    "The print list positions 1-17 (Seven Heavens through Concordant Opposition, the print p. 129 order)",
+    "The layers-word flags (Elysium, Olympus, Gladsheim, Limbo, Pandemonium, the Abyss, Tarterus, Acheron)",
+    "The descriptor cells (0 none, 1 the 666 layers of the Abyss, 2 the Three Glooms of Hades, 3 the furnaces of Gehenna, 4 the nether layers of Acheron)"
+   ],
+   "count": "plnOutRows",
+   "sentinel": 0,
+   "data": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     0,
+     0
+    ],
+    [
+     3,
+     1,
+     0
+    ],
+    [
+     4,
+     0,
+     0
+    ],
+    [
+     5,
+     1,
+     0
+    ],
+    [
+     6,
+     1,
+     0
+    ],
+    [
+     7,
+     1,
+     0
+    ],
+    [
+     8,
+     1,
+     0
+    ],
+    [
+     9,
+     1,
+     1
+    ],
+    [
+     10,
+     1,
+     0
+    ],
+    [
+     11,
+     0,
+     2
+    ],
+    [
+     12,
+     0,
+     3
+    ],
+    [
+     13,
+     0,
+     0
+    ],
+    [
+     14,
+     1,
+     4
+    ],
+    [
+     15,
+     0,
+     0
+    ],
+    [
+     16,
+     0,
+     0
+    ],
+    [
+     17,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "the cyclone grid",
+   "tag": "plnCyc",
+   "cols": [
+    "plnCycLow",
+    "plnCycHigh",
+    "plnCycEffect"
+   ],
+   "col_comments": [
+    "The cyclone dice band lows (1-10, 11-15, 16-18, 19-20)",
+    "The cyclone dice band highs",
+    "The cyclone effect codes (1 random direction at 120 per round plus 1 check, 2 blown to a different plane plus the usual checks, 3 lost 5-60 days then a different plane, 4 lost 10-120 days plus the save-versus-spells-or-Astral rule)"
+   ],
+   "count": "plnCycRows",
+   "sentinel": 0,
+   "data": [
+    [
+     1,
+     10,
+     1
+    ],
+    [
+     11,
+     15,
+     2
+    ],
+    [
+     16,
+     18,
+     3
+    ],
+    [
+     19,
+     20,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "the wind grid",
+   "tag": "plnWnd",
+   "cols": [
+    "plnWndLow",
+    "plnWndHigh",
+    "plnWndEffect"
+   ],
+   "col_comments": [
+    "The wind dice band lows (1-12, 13-16, 17-19, 20)",
+    "The wind dice band highs",
+    "The wind effect codes (1 slowed plus 1 check, 2 blown off course and lost 2-20 days then return, 3 a different destination, 4 the save-versus-magic silver-cord rule and lost 4-40 days; the 13-16 Blocwozr;tfefr;:ourse print garble adjudicated blows-off-course by the L&L voice)"
+   ],
+   "count": "plnWndRows",
+   "sentinel": 0,
+   "data": [
+    [
+     1,
+     12,
+     1
+    ],
+    [
+     13,
+     16,
+     2
+    ],
+    [
+     17,
+     19,
+     3
+    ],
+    [
+     20,
+     20,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "the inner random grid",
+   "tag": "plnIrt",
+   "cols": [
+    "plnIrtLow",
+    "plnIrtHigh",
+    "plnIrtPlane"
+   ],
+   "col_comments": [
+    "The inner random d20 band lows (the 8.9 and 1011 fold garbles adjudicated 8-9 and 10-11; the Negative row band 5-7 adjudicated by band arithmetic - the printed band glyph garbled to the N of N-hegative)",
+    "The inner random d20 band highs",
+    "The inner plane codes (0 Prime Material, 1 alternate world, 2 Positive, 3 Negative, 4 Earth, 5 Fire, 6 Water, 7 Dust, 8 Heat, 9 Ice, 10 Vapor, 11 Ethereal, 12 Shadow)"
+   ],
+   "count": "plnIrtRows",
+   "sentinel": 0,
+   "data": [
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     3,
+     3,
+     1
+    ],
+    [
+     4,
+     4,
+     2
+    ],
+    [
+     5,
+     7,
+     3
+    ],
+    [
+     8,
+     9,
+     4
+    ],
+    [
+     10,
+     11,
+     5
+    ],
+    [
+     12,
+     13,
+     6
+    ],
+    [
+     14,
+     14,
+     7
+    ],
+    [
+     15,
+     15,
+     8
+    ],
+    [
+     16,
+     16,
+     9
+    ],
+    [
+     17,
+     17,
+     10
+    ],
+    [
+     18,
+     19,
+     11
+    ],
+    [
+     20,
+     20,
+     12
+    ]
+   ]
+  },
+  {
+   "name": "the outer random grid",
+   "tag": "plnRno",
+   "cols": [
+    "plnRnoLow",
+    "plnRnoHigh",
+    "plnRnoPlane"
+   ],
+   "col_comments": [
+    "The outer random d20 band lows (Astral 1-3 through Concordant Opposition 20)",
+    "The outer random d20 band highs",
+    "The outer plane codes (0 Astral, 1 Seven Heavens, 2 Twin Paradises, 3 Elysium, 4 Happy Hunting Grounds, 5 Olympus, 6 Gladsheim, 7 Limbo, 8 Pandemonium, 9 Abyss, 10 Tarterus, 11 Hades, 12 Gehenna, 13 Nine Hells, 14 Acheron, 15 Nirvana, 16 Arcadia, 17 Concordant Opposition)"
+   ],
+   "count": "plnRnoRows",
+   "sentinel": 0,
+   "data": [
+    [
+     1,
+     3,
+     0
+    ],
+    [
+     4,
+     4,
+     1
+    ],
+    [
+     5,
+     5,
+     2
+    ],
+    [
+     6,
+     6,
+     3
+    ],
+    [
+     7,
+     7,
+     4
+    ],
+    [
+     8,
+     8,
+     5
+    ],
+    [
+     9,
+     9,
+     6
+    ],
+    [
+     10,
+     10,
+     7
+    ],
+    [
+     11,
+     11,
+     8
+    ],
+    [
+     12,
+     12,
+     9
+    ],
+    [
+     13,
+     13,
+     10
+    ],
+    [
+     14,
+     14,
+     11
+    ],
+    [
+     15,
+     15,
+     12
+    ],
+    [
+     16,
+     16,
+     13
+    ],
+    [
+     17,
+     17,
+     14
+    ],
+    [
+     18,
+     18,
+     15
+    ],
+    [
+     19,
+     19,
+     16
+    ],
+    [
+     20,
+     20,
+     17
+    ]
+   ]
+  },
+  {
+   "name": "the para-elemental grid",
+   "tag": "plnPel",
+   "cols": [
+    "plnPelOrd",
+    "plnPelElemA",
+    "plnPelElemB"
+   ],
+   "col_comments": [
+    "The para-elemental ordinals (0 Ice, 1 Dust, 2 Heat, 3 Vapor - the print p. 128 list order)",
+    "The first elemental codes (0 Air, 1 Earth, 2 Fire, 3 Water - the print list order)",
+    "The second elemental codes (Ice where Air and Water meet, Dust at the conjunction of Air and Fire, Heat where Fire and Earth converge - lava, Vapor at the meeting of Earth and Water)"
+   ],
+   "count": "plnPelRows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     3
+    ],
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     3,
+     1,
+     3
+    ]
+   ]
+  }
+ ],
+ "header_sections": {
+  "the planes doctrine": [
+   {
+    "kind": "const",
+    "name": "plnRound"
+   },
+   {
+    "kind": "const",
+    "name": "plnPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "plnPrintEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "plnPluralUniverses"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOnlyNormalTied"
+   },
+   {
+    "kind": "bool",
+    "name": "plnParallelsNotShown"
+   },
+   {
+    "kind": "bool",
+    "name": "plnRealityRefereeDependent"
+   },
+   {
+    "kind": "bool",
+    "name": "plnPmpCenter"
+   },
+   {
+    "kind": "bool",
+    "name": "plnPmpHousesUniverse"
+   },
+   {
+    "kind": "bool",
+    "name": "plnPmpPlaneOfTerra"
+   },
+   {
+    "kind": "bool",
+    "name": "plnPmpBoundedByInner"
+   },
+   {
+    "kind": "bool",
+    "name": "plnPmpFourElements"
+   },
+   {
+    "kind": "bool",
+    "name": "plnPosEnergyLight"
+   },
+   {
+    "kind": "bool",
+    "name": "plnPosConsumePrime"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNegAntiMatter"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNegUncertainCreatures"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNegDrainPrime"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEleSurroundPmp"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEleInfiniteEffect"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEleApparentSizes"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEleMoveViaPara"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEleHomesOfCreatures"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEleTrafficHeaviest"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEleTravelGatesOrEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNexialDeepestOcean"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNexialHighAtmosphere"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNexialFarUnderground"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNexialActiveVolcano"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNexialTemporary"
+   },
+   {
+    "kind": "bool",
+    "name": "plnParaAtConjunctions"
+   },
+   {
+    "kind": "bool",
+    "name": "plnParaHomes"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthSurroundsAll"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthInsubstantial"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthFloatingIslands"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthPhantoms"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthPassNoDifficulty"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthChillSpine"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthRealToEachOther"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthNotToOuter"
+   },
+   {
+    "kind": "bool",
+    "name": "plnShadCoExists"
+   },
+   {
+    "kind": "bool",
+    "name": "plnShadInteraction"
+   },
+   {
+    "kind": "bool",
+    "name": "plnShadNegDarkPosLight"
+   },
+   {
+    "kind": "bool",
+    "name": "plnShadMutableCreatures"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstRadiatesNonSpace"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstTravelUses"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstTouchesUpperOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "plnFig1Inner"
+   },
+   {
+    "kind": "bool",
+    "name": "plnFig2Elemental"
+   },
+   {
+    "kind": "bool",
+    "name": "plnFig3Outer"
+   },
+   {
+    "kind": "bool",
+    "name": "plnFig45PixelWork"
+   }
+  ],
+  "the seventeen outer planes": [
+   {
+    "kind": "const",
+    "name": "plnOutNineAlignments"
+   },
+   {
+    "kind": "const",
+    "name": "plnOutBorderlineCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnOutSeventeenCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnAbyssLayers"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOutHomesOfDeities"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOutExactCorrespondence"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOutDegreeNotAbsolute"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOutLeTendsGehenna"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOutContactTopmost"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOutAdjacentMoves"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOutAbyssMoves"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOutHadesMoves"
+   },
+   {
+    "kind": "bool",
+    "name": "plnSevenHeavensAbsLG"
+   },
+   {
+    "kind": "bool",
+    "name": "plnTwinParadisesLNG"
+   },
+   {
+    "kind": "bool",
+    "name": "plnElysiumLayersNG"
+   },
+   {
+    "kind": "bool",
+    "name": "plnHappyHuntingCGNG"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOlympusLayersACG"
+   },
+   {
+    "kind": "bool",
+    "name": "plnGladsheimLayersNGC"
+   },
+   {
+    "kind": "bool",
+    "name": "plnLimboLayersChaos"
+   },
+   {
+    "kind": "bool",
+    "name": "plnPandemoniumLayersNEC"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAbyssAbsCE"
+   },
+   {
+    "kind": "bool",
+    "name": "plnTarterusLayersNCE"
+   },
+   {
+    "kind": "bool",
+    "name": "plnHadesThreeGlooms"
+   },
+   {
+    "kind": "bool",
+    "name": "plnGehennaFurnacesNLE"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNineHellsAbsLE"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAcheronNetherNEL"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNirvanaAbsLaw"
+   },
+   {
+    "kind": "bool",
+    "name": "plnArcadiaNGL"
+   },
+   {
+    "kind": "bool",
+    "name": "plnConcordantOfOpposition"
+   }
+  ],
+  "the ethereal travel": [
+   {
+    "kind": "const",
+    "name": "plnCycPct"
+   },
+   {
+    "kind": "const",
+    "name": "plnCycMoveRate"
+   },
+   {
+    "kind": "const",
+    "name": "plnCycLostShortLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnCycLostShortHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnCycLostLongLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnCycLostLongHi"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthStateByMeans"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthMoveInnerPlanes"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthPlaneToPlane"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthWillMovement"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthConcentrationHalts"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthTirelessRapid"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthNoNeeds"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthShadowToShadow"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthMentalTrail"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEncUnfamiliarTriple"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEncEvasionFaster"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEncEvasionFamiliar"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEncEvasionIntelligence"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEncMentalFunction"
+   },
+   {
+    "kind": "bool",
+    "name": "plnCycInnerFluctuations"
+   },
+   {
+    "kind": "bool",
+    "name": "plnCycOnlyBetweenPlanes"
+   },
+   {
+    "kind": "bool",
+    "name": "plnCycSlowAddCheck"
+   },
+   {
+    "kind": "bool",
+    "name": "plnCycDifferentPlane"
+   },
+   {
+    "kind": "bool",
+    "name": "plnCycSaveSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthCombatReal"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthCombatPartial"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthSpellsToPmp"
+   },
+   {
+    "kind": "bool",
+    "name": "plnEthDamageActual"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstPerceptionNote"
+   }
+  ],
+  "the astral travel": [
+   {
+    "kind": "const",
+    "name": "plnWindPct"
+   },
+   {
+    "kind": "const",
+    "name": "plnWindLostShortLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnWindLostShortHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnWindLostLongLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnWindLostLongHi"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstBySpellsPsionics"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstTouchesSeventeen"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstNoInnerOther"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstClericalSpellRef"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstSpeedy"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstNoNeeds"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstConcentrateMove"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstLearnsTheWay"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstEvasionAsEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "plnWindUnknown"
+   },
+   {
+    "kind": "bool",
+    "name": "plnWindSlow"
+   },
+   {
+    "kind": "bool",
+    "name": "plnWindLostShort"
+   },
+   {
+    "kind": "bool",
+    "name": "plnWindDifferentDest"
+   },
+   {
+    "kind": "bool",
+    "name": "plnWindSaveMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "plnWindLostLong"
+   },
+   {
+    "kind": "bool",
+    "name": "plnWindNoCord"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstCombatReal"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstNoPossessions"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstNaturalWeaponry"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstDestroyBodyMost"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstPowerfulSnap"
+   }
+  ],
+  "the planar travel summary": [
+   {
+    "kind": "bool",
+    "name": "plnInnerViaEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOuterCantGoEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "plnGatesAvoidEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "plnGateBySpell"
+   },
+   {
+    "kind": "bool",
+    "name": "plnGateByItems"
+   },
+   {
+    "kind": "bool",
+    "name": "plnGateByDivine"
+   },
+   {
+    "kind": "bool",
+    "name": "plnNexialDirect"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOuterViaGatesOrAstral"
+   },
+   {
+    "kind": "bool",
+    "name": "plnAstralEntryOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "plnGatedComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "plnProjectionLeavesBody"
+   },
+   {
+    "kind": "bool",
+    "name": "plnSilverCordKilled"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOuterBodyForms"
+   },
+   {
+    "kind": "bool",
+    "name": "plnBothBodiesCorded"
+   },
+   {
+    "kind": "bool",
+    "name": "plnOuterKilledReturnPmp"
+   },
+   {
+    "kind": "bool",
+    "name": "plnCordSnapUnoccupiedDies"
+   }
+  ],
+  "the character subtable": [
+   {
+    "kind": "const",
+    "name": "plnSubPartyLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubPartyHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubClrLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubClrHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubDrdLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubDrdHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubFtrLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubFtrHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubPalLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubPalHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubRngLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubRngHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubMuLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubMuHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubIllLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubIllHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubThfLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubThfHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubAssLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubAssHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubMnkLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubMnkHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubBrdLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubBrdHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubBardFighterLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubBardFighterHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubBardThiefLo"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubBardThiefHi"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubBardThiefDie"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubBardThiefBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "plnSubNoClassLimits"
+   },
+   {
+    "kind": "bool",
+    "name": "plnSubAlwaysCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "plnSubMinMagicUser"
+   },
+   {
+    "kind": "bool",
+    "name": "plnSubBardFootnote"
+   }
+  ],
+  "the ethereal encounter grid": [
+   {
+    "kind": "table",
+    "name": "the ethereal encounter grid"
+   }
+  ],
+  "the astral encounter grid": [
+   {
+    "kind": "table",
+    "name": "the astral encounter grid"
+   }
+  ],
+  "the outer planes grid": [
+   {
+    "kind": "table",
+    "name": "the outer planes grid"
+   }
+  ],
+  "the cyclone grid": [
+   {
+    "kind": "table",
+    "name": "the cyclone grid"
+   }
+  ],
+  "the wind grid": [
+   {
+    "kind": "table",
+    "name": "the wind grid"
+   }
+  ],
+  "the inner random grid": [
+   {
+    "kind": "table",
+    "name": "the inner random grid"
+   }
+  ],
+  "the outer random grid": [
+   {
+    "kind": "table",
+    "name": "the outer random grid"
+   }
+  ],
+  "the para-elemental grid": [
+   {
+    "kind": "table",
+    "name": "the para-elemental grid"
+   }
+  ],
+  "the R867 census": [
+   {
+    "kind": "const",
+    "name": "plnTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnEtcRows"
+   },
+   {
+    "kind": "const",
+    "name": "plnAtcRows"
+   },
+   {
+    "kind": "const",
+    "name": "plnOutRows"
+   },
+   {
+    "kind": "const",
+    "name": "plnCycRows"
+   },
+   {
+    "kind": "const",
+    "name": "plnWndRows"
+   },
+   {
+    "kind": "const",
+    "name": "plnIrtRows"
+   },
+   {
+    "kind": "const",
+    "name": "plnRnoRows"
+   },
+   {
+    "kind": "const",
+    "name": "plnPelRows"
+   },
+   {
+    "kind": "const",
+    "name": "plnRosterCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnEncounterChance"
+   },
+   {
+    "kind": "const",
+    "name": "plnChecksFirst"
+   },
+   {
+    "kind": "const",
+    "name": "plnChecksSecond"
+   },
+   {
+    "kind": "const",
+    "name": "plnChecksSubsequent"
+   },
+   {
+    "kind": "const",
+    "name": "plnAsteriskCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnSubtableRowCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnElementalCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnParaElementalCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnNexialCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnLayersWordCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnDescriptorCount"
+   },
+   {
+    "kind": "const",
+    "name": "plnFigCount"
+   }
+  ]
+ },
+ "consts": [
+  {
+   "name": "plnRound",
+   "value": 867,
+   "comment": "the known planes round: the D&DG walk round nineteen"
+  },
+  {
+   "name": "plnPrintStart",
+   "value": 128,
+   "comment": "the section opens on print p. 128 (the inner planes)"
+  },
+  {
+   "name": "plnPrintEnd",
+   "value": 133,
+   "comment": "the section closes on print p. 133 (the random determination tables)"
+  },
+  {
+   "name": "plnOutNineAlignments",
+   "value": 9,
+   "comment": "there are nine basic alignments, and nine planes which correspond to those alignments"
+  },
+  {
+   "name": "plnOutBorderlineCount",
+   "value": 8,
+   "comment": "there are also eight other planes between the nine which represent borderline alignments"
+  },
+  {
+   "name": "plnOutSeventeenCount",
+   "value": 17,
+   "comment": "the seventeen Outer Planes in total"
+  },
+  {
+   "name": "plnAbyssLayers",
+   "value": 666,
+   "comment": "the 666 layers of the Abyss"
+  },
+  {
+   "name": "plnCycPct",
+   "value": 5,
+   "comment": "a non-cumulative 5 percent chance per plane crossed that a party will encounter the Ether Cyclone"
+  },
+  {
+   "name": "plnCycMoveRate",
+   "value": 120,
+   "comment": "the cyclone blows so as to move the party in a random direction at 120 inches per round"
+  },
+  {
+   "name": "plnCycLostShortLo",
+   "value": 5,
+   "comment": "the lost-for-days band low (5-60 days, arriving at a different plane by random means when no longer lost)"
+  },
+  {
+   "name": "plnCycLostShortHi",
+   "value": 60,
+   "comment": "the lost-for-days band high"
+  },
+  {
+   "name": "plnCycLostLongLo",
+   "value": 10,
+   "comment": "the storm-cyclone lost band low (10-120 days)"
+  },
+  {
+   "name": "plnCycLostLongHi",
+   "value": 120,
+   "comment": "the storm-cyclone lost band high"
+  },
+  {
+   "name": "plnWindPct",
+   "value": 5,
+   "comment": "the chance of a delayed or disrupted journey is a non-cumulative 5 percent per plane crossed (including alternate worlds of the Prime Material) or solar system travelled to (if journeying across the Prime Material)"
+  },
+  {
+   "name": "plnWindLostShortLo",
+   "value": 2,
+   "comment": "the blown-off-course lost band low (2-20 days)"
+  },
+  {
+   "name": "plnWindLostShortHi",
+   "value": 20,
+   "comment": "the blown-off-course lost band high"
+  },
+  {
+   "name": "plnWindLostLongLo",
+   "value": 4,
+   "comment": "the storm-wind lost band low (4-40 days)"
+  },
+  {
+   "name": "plnWindLostLongHi",
+   "value": 40,
+   "comment": "the storm-wind lost band high"
+  },
+  {
+   "name": "plnSubPartyLo",
+   "value": 1,
+   "comment": "the character subtable party size low (1-6)"
+  },
+  {
+   "name": "plnSubPartyHi",
+   "value": 6,
+   "comment": "the character subtable party size high"
+  },
+  {
+   "name": "plnSubClrLo",
+   "value": 9,
+   "comment": "the cleric level low (9th-18th)"
+  },
+  {
+   "name": "plnSubClrHi",
+   "value": 18,
+   "comment": "the cleric level high"
+  },
+  {
+   "name": "plnSubDrdLo",
+   "value": 7,
+   "comment": "the druid level low (7th-14th)"
+  },
+  {
+   "name": "plnSubDrdHi",
+   "value": 14,
+   "comment": "the druid level high"
+  },
+  {
+   "name": "plnSubFtrLo",
+   "value": 8,
+   "comment": "the fighter level low (8th-15th)"
+  },
+  {
+   "name": "plnSubFtrHi",
+   "value": 15,
+   "comment": "the fighter level high"
+  },
+  {
+   "name": "plnSubPalLo",
+   "value": 7,
+   "comment": "the paladin level low (7th-16th)"
+  },
+  {
+   "name": "plnSubPalHi",
+   "value": 16,
+   "comment": "the paladin level high"
+  },
+  {
+   "name": "plnSubRngLo",
+   "value": 7,
+   "comment": "the ranger level low (7th-16th)"
+  },
+  {
+   "name": "plnSubRngHi",
+   "value": 16,
+   "comment": "the ranger level high"
+  },
+  {
+   "name": "plnSubMuLo",
+   "value": 11,
+   "comment": "the magic-user level low (11th-20th)"
+  },
+  {
+   "name": "plnSubMuHi",
+   "value": 20,
+   "comment": "the magic-user level high"
+  },
+  {
+   "name": "plnSubIllLo",
+   "value": 10,
+   "comment": "the illusionist level low (10th-17th)"
+  },
+  {
+   "name": "plnSubIllHi",
+   "value": 17,
+   "comment": "the illusionist level high"
+  },
+  {
+   "name": "plnSubThfLo",
+   "value": 9,
+   "comment": "the thief level low (9th-16th)"
+  },
+  {
+   "name": "plnSubThfHi",
+   "value": 16,
+   "comment": "the thief level high"
+  },
+  {
+   "name": "plnSubAssLo",
+   "value": 10,
+   "comment": "the assassin level low (10th-15th)"
+  },
+  {
+   "name": "plnSubAssHi",
+   "value": 15,
+   "comment": "the assassin level high"
+  },
+  {
+   "name": "plnSubMnkLo",
+   "value": 8,
+   "comment": "the monk level low (8th-17th)"
+  },
+  {
+   "name": "plnSubMnkHi",
+   "value": 17,
+   "comment": "the monk level high"
+  },
+  {
+   "name": "plnSubBrdLo",
+   "value": 11,
+   "comment": "the bard level low (11th-18th)"
+  },
+  {
+   "name": "plnSubBrdHi",
+   "value": 18,
+   "comment": "the bard level high"
+  },
+  {
+   "name": "plnSubBardFighterLo",
+   "value": 7,
+   "comment": "the bard footnote fighter ability low (7th or 8th)"
+  },
+  {
+   "name": "plnSubBardFighterHi",
+   "value": 8,
+   "comment": "the bard footnote fighter ability high"
+  },
+  {
+   "name": "plnSubBardThiefLo",
+   "value": 6,
+   "comment": "the bard footnote thief ability low (6th to 9th)"
+  },
+  {
+   "name": "plnSubBardThiefHi",
+   "value": 9,
+   "comment": "the bard footnote thief ability high"
+  },
+  {
+   "name": "plnSubBardThiefDie",
+   "value": 4,
+   "comment": "the bard footnote thief level die (d4+5)"
+  },
+  {
+   "name": "plnSubBardThiefBonus",
+   "value": 5,
+   "comment": "the bard footnote thief level bonus"
+  },
+  {
+   "name": "plnTableCount",
+   "value": 8,
+   "comment": "the eight grids"
+  },
+  {
+   "name": "plnChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "plnEtcRows",
+   "value": 31,
+   "comment": "the ethereal encounter grid rows"
+  },
+  {
+   "name": "plnAtcRows",
+   "value": 24,
+   "comment": "the astral encounter grid rows"
+  },
+  {
+   "name": "plnOutRows",
+   "value": 17,
+   "comment": "the seventeen outer planes grid rows"
+  },
+  {
+   "name": "plnCycRows",
+   "value": 4,
+   "comment": "the ether cyclone grid rows"
+  },
+  {
+   "name": "plnWndRows",
+   "value": 4,
+   "comment": "the psychic wind grid rows"
+  },
+  {
+   "name": "plnIrtRows",
+   "value": 13,
+   "comment": "the inner planes random grid rows"
+  },
+  {
+   "name": "plnRnoRows",
+   "value": 18,
+   "comment": "the outer planes random grid rows"
+  },
+  {
+   "name": "plnPelRows",
+   "value": 4,
+   "comment": "the para-elemental conjunction grid rows"
+  },
+  {
+   "name": "plnRosterCount",
+   "value": 39,
+   "comment": "the shared encounter-creature roster (the first-appearance ordinals across the two tables)"
+  },
+  {
+   "name": "plnEncounterChance",
+   "value": 20,
+   "comment": "encounters occur on a 1 in 20, on both the Ethereal and the Astral"
+  },
+  {
+   "name": "plnChecksFirst",
+   "value": 3,
+   "comment": "the first journey between two known points: three encounter checks"
+  },
+  {
+   "name": "plnChecksSecond",
+   "value": 2,
+   "comment": "the second journey: two checks"
+  },
+  {
+   "name": "plnChecksSubsequent",
+   "value": 1,
+   "comment": "all subsequent journeys: one check"
+  },
+  {
+   "name": "plnAsteriskCount",
+   "value": 4,
+   "comment": "the asterisked creatures in each table (basilisk, cockatrice, gorgon, medusa - the same four in both)"
+  },
+  {
+   "name": "plnSubtableRowCount",
+   "value": 11,
+   "comment": "the character subtable class rows (cleric through bard)"
+  },
+  {
+   "name": "plnElementalCount",
+   "value": 4,
+   "comment": "the Elemental Planes (Air, Earth, Fire, Water)"
+  },
+  {
+   "name": "plnParaElementalCount",
+   "value": 4,
+   "comment": "the Para-Elemental Planes (Ice, Dust, Heat, Vapor)"
+  },
+  {
+   "name": "plnNexialCount",
+   "value": 4,
+   "comment": "the four permanent nexial-point locations (ocean, atmosphere, underground, volcano)"
+  },
+  {
+   "name": "plnLayersWordCount",
+   "value": 8,
+   "comment": "the seventeen-list planes printing the layers word (Elysium, Olympus, Gladsheim, Limbo, Pandemonium, the Abyss, Tarterus, Acheron)"
+  },
+  {
+   "name": "plnDescriptorCount",
+   "value": 4,
+   "comment": "the descriptor-printing planes (the 666 layers, the Three Glooms, the furnaces, the nether layers)"
+  },
+  {
+   "name": "plnFigCount",
+   "value": 5,
+   "comment": "FIG. 1 through FIG. 5 (the two print-p.131 alignment figures are the open pixel-work box)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "plnPluralUniverses",
+   "value": true,
+   "comment": "there exists an infinite number of parallel universes and planes of existence in the fantastic multiverse of ADVANCED DUNGEONS AND DRAGONS"
+  },
+  {
+   "name": "plnOnlyNormalTied",
+   "value": true,
+   "comment": "the charts and explanations show only the various planes tied to that of normal existence"
+  },
+  {
+   "name": "plnParallelsNotShown",
+   "value": true,
+   "comment": "the parallel universes are not shown, and their existence might or might not be actual"
+  },
+  {
+   "name": "plnRealityRefereeDependent",
+   "value": true,
+   "comment": "all of these worlds co-exist, but how real each is depends entirely on the development of each campaign referee"
+  },
+  {
+   "name": "plnPmpCenter",
+   "value": true,
+   "comment": "the Prime Material Plane (or Physical Plane) is at the center of the Inner Planes"
+  },
+  {
+   "name": "plnPmpHousesUniverse",
+   "value": true,
+   "comment": "it houses the universe and all of its parallels"
+  },
+  {
+   "name": "plnPmpPlaneOfTerra",
+   "value": true,
+   "comment": "it is the plane of Terra, and your campaign, in all likelihood"
+  },
+  {
+   "name": "plnPmpBoundedByInner",
+   "value": true,
+   "comment": "the Prime Material is bounded or permeated by all of the Inner Planes and the Astral Plane"
+  },
+  {
+   "name": "plnPmpFourElements",
+   "value": true,
+   "comment": "the Prime Material Plane is made up of the four elements plus positive and negative energy"
+  },
+  {
+   "name": "plnPosEnergyLight",
+   "value": true,
+   "comment": "the Positive Material Plane is a place of energy and light, the source of much that is vital and active, the power supply for good"
+  },
+  {
+   "name": "plnPosConsumePrime",
+   "value": true,
+   "comment": "any creature from the Prime Material that tried to enter the Positive Material Plane (e.g. from the Ethereal Plane) would probably be instantly consumed by the powerful energies there"
+  },
+  {
+   "name": "plnNegAntiMatter",
+   "value": true,
+   "comment": "the Negative Material Plane is a place of anti-matter and negative force, the source of power for undead, the energy area from which evil grows"
+  },
+  {
+   "name": "plnNegUncertainCreatures",
+   "value": true,
+   "comment": "no one is certain what types of creature may exist on the Negative (or Positive) Material Plane"
+  },
+  {
+   "name": "plnNegDrainPrime",
+   "value": true,
+   "comment": "any creature from the Prime Material Plane would probably be completely drained of all life and energy"
+  },
+  {
+   "name": "plnEleSurroundPmp",
+   "value": true,
+   "comment": "the planes of Air, Earth, Fire and Water surround the Prime Material Plane"
+  },
+  {
+   "name": "plnEleInfiniteEffect",
+   "value": true,
+   "comment": "there are an infinite number of parallel Prime Material Planes, each bounded by the Elemental Planes, so the Elemental Planes are themselves infinite, in effect"
+  },
+  {
+   "name": "plnEleApparentSizes",
+   "value": true,
+   "comment": "do not be fooled by the apparent sizes of the planes represented in Fig. 1"
+  },
+  {
+   "name": "plnEleMoveViaPara",
+   "value": true,
+   "comment": "it is possible to actually physically move from one Elemental Plane to another by moving through the Para-Elemental Planes"
+  },
+  {
+   "name": "plnEleHomesOfCreatures",
+   "value": true,
+   "comment": "the Elemental Planes are the homes of many different kinds of elemental creatures, and some of them have the ability to travel to the Prime Material Plane"
+  },
+  {
+   "name": "plnEleTrafficHeaviest",
+   "value": true,
+   "comment": "there is probably more traffic between the Prime Material and the Elemental planes than between any others"
+  },
+  {
+   "name": "plnEleTravelGatesOrEthereal",
+   "value": true,
+   "comment": "the elemental traffic is usually either direct travel (through gates or summoning) or by way of the Ethereal Plane"
+  },
+  {
+   "name": "plnNexialDeepestOcean",
+   "value": true,
+   "comment": "nexial points in distant out-of-the-way places lead directly to the Elemental Planes: the deepest ocean leads to the Plane of Water"
+  },
+  {
+   "name": "plnNexialHighAtmosphere",
+   "value": true,
+   "comment": "high in the atmosphere leads to the Plane of Air"
+  },
+  {
+   "name": "plnNexialFarUnderground",
+   "value": true,
+   "comment": "far underground leads to the Plane of Earth"
+  },
+  {
+   "name": "plnNexialActiveVolcano",
+   "value": true,
+   "comment": "in an active volcano leads to the Plane of Fire"
+  },
+  {
+   "name": "plnNexialTemporary",
+   "value": true,
+   "comment": "temporary nexial points may also be established occasionally, such as an opening to the Elemental Plane of Fire in the middle of a raging forest fire"
+  },
+  {
+   "name": "plnParaAtConjunctions",
+   "value": true,
+   "comment": "where the Elemental Planes meet are the lesser Para-Elemental Planes"
+  },
+  {
+   "name": "plnParaHomes",
+   "value": true,
+   "comment": "these planes are home to many para-elementals, and they can be reached in the same manners the Elemental Planes can be reached"
+  },
+  {
+   "name": "plnEthSurroundsAll",
+   "value": true,
+   "comment": "the Ethereal Plane surrounds, touches and permeates all of the Inner Planes and the endless parallel worlds of the universe without being a part of them"
+  },
+  {
+   "name": "plnEthInsubstantial",
+   "value": true,
+   "comment": "the Ethereal Plane is basically insubstantial, and few real creatures actually live there"
+  },
+  {
+   "name": "plnEthFloatingIslands",
+   "value": true,
+   "comment": "there are rumors of floating islands of solid ether, populated by exiles, which drift about the Ethereal Plane"
+  },
+  {
+   "name": "plnEthPhantoms",
+   "value": true,
+   "comment": "to creatures on the Ethereal Plane, objects on the Prime Material Plane (or any of the Inner Planes) appear as incorporeal phantoms"
+  },
+  {
+   "name": "plnEthPassNoDifficulty",
+   "value": true,
+   "comment": "ethereal creatures may pass through these phantoms with no difficulty"
+  },
+  {
+   "name": "plnEthChillSpine",
+   "value": true,
+   "comment": "a person being passed through might experience a chill down the spine"
+  },
+  {
+   "name": "plnEthRealToEachOther",
+   "value": true,
+   "comment": "ethereal beings or things are real to each other"
+  },
+  {
+   "name": "plnEthNotToOuter",
+   "value": true,
+   "comment": "the Ethereal Plane does not extend to the Outer Planes, so it is not possible for creatures on those planes to go ethereal"
+  },
+  {
+   "name": "plnShadCoExists",
+   "value": true,
+   "comment": "the Plane of Shadow co-exists with the Prime Material Plane"
+  },
+  {
+   "name": "plnShadInteraction",
+   "value": true,
+   "comment": "it is a result of the interaction of that plane and the Positive and Negative Material Planes"
+  },
+  {
+   "name": "plnShadNegDarkPosLight",
+   "value": true,
+   "comment": "the Negative plane provides the darkness, and the Positive plane the light; these meet at the Prime Material Plane, which casts the shadow"
+  },
+  {
+   "name": "plnShadMutableCreatures",
+   "value": true,
+   "comment": "the Plane of Shadow is a place of distorted and mutable shadow-creatures, of white, black and all shades of gray"
+  },
+  {
+   "name": "plnAstRadiatesNonSpace",
+   "value": true,
+   "comment": "the Astral Plane radiates from the Prime Material to a non-space where endless vortices spiral to the parallel Prime Material Planes, and to the Outer Planes as well"
+  },
+  {
+   "name": "plnAstTravelUses",
+   "value": true,
+   "comment": "this plane can be used to travel to distant worlds, to parallel planes, or to the Outer Planes themselves"
+  },
+  {
+   "name": "plnAstTouchesUpperOnly",
+   "value": true,
+   "comment": "the Astral Plane touches only the upper layer of each of the Outer Planes, and of the Inner Planes it touches only the Prime Material (see Fig. 3)"
+  },
+  {
+   "name": "plnFig1Inner",
+   "value": true,
+   "comment": "FIG. 1 THE INNER PLANES: the Positive Material above, the Prime Material Plane at center within the Elemental band, the Negative Material below, the Ethereal Plane outermost"
+  },
+  {
+   "name": "plnFig2Elemental",
+   "value": true,
+   "comment": "FIG. 2 THE ELEMENTAL PLANES: one way of visualizing the Elemental Planes relationship to each other"
+  },
+  {
+   "name": "plnFig3Outer",
+   "value": true,
+   "comment": "FIG. 3 THE OUTER PLANES: the Outer Planes contacting each other at their topmost layers, the Astral Plane between them and the Inner Planes"
+  },
+  {
+   "name": "plnFig45PixelWork",
+   "value": true,
+   "comment": "FIG. 4 and FIG. 5 (print p. 131) - the character alignment graph and the planes-of-alignment figures, the open pixel-work box of the gap report, not pinned in this round"
+  },
+  {
+   "name": "plnOutHomesOfDeities",
+   "value": true,
+   "comment": "the Outer Planes are the homes of the deities and the source of alignment (religious/philosophical/ethical ideals)"
+  },
+  {
+   "name": "plnOutExactCorrespondence",
+   "value": true,
+   "comment": "there is an exact correspondence between alignment and the Outer Planes; the alignment positions on the Character Alignment Graph match up exactly with the Outer Planes of identical alignment"
+  },
+  {
+   "name": "plnOutDegreeNotAbsolute",
+   "value": true,
+   "comment": "alignment is a matter of degree rather than absolute definition"
+  },
+  {
+   "name": "plnOutLeTendsGehenna",
+   "value": true,
+   "comment": "a lawful evil character who tended towards neutral evil would probably end up in Gehenna rather than Hades or the Nine Hells"
+  },
+  {
+   "name": "plnOutContactTopmost",
+   "value": true,
+   "comment": "the seventeen Outer Planes contact each other at their topmost layers"
+  },
+  {
+   "name": "plnOutAdjacentMoves",
+   "value": true,
+   "comment": "it is possible to move directly from the upper layer of one Outer Plane to an adjacent one (though it is not necessarily advisable or safe)"
+  },
+  {
+   "name": "plnOutAbyssMoves",
+   "value": true,
+   "comment": "a being could go from the topmost layer of the Abyss to Pandemonium or Tarterus"
+  },
+  {
+   "name": "plnOutHadesMoves",
+   "value": true,
+   "comment": "it is likewise possible to move from Hades to Tarterus, Gehenna, or the plane of Concordant Opposition"
+  },
+  {
+   "name": "plnSevenHeavensAbsLG",
+   "value": true,
+   "comment": "the Seven Heavens of absolute lawful good"
+  },
+  {
+   "name": "plnTwinParadisesLNG",
+   "value": true,
+   "comment": "the Twin Paradises of lawful/neutral good"
+  },
+  {
+   "name": "plnElysiumLayersNG",
+   "value": true,
+   "comment": "the layers of Elysium of neutral good"
+  },
+  {
+   "name": "plnHappyHuntingCGNG",
+   "value": true,
+   "comment": "the Happy Hunting Grounds of chaotic/neutral good"
+  },
+  {
+   "name": "plnOlympusLayersACG",
+   "value": true,
+   "comment": "the layers of Olympus of absolute chaotic good"
+  },
+  {
+   "name": "plnGladsheimLayersNGC",
+   "value": true,
+   "comment": "the layers of Gladsheim (Asgard, Vanaheim, etc.) of neutral/good chaotics"
+  },
+  {
+   "name": "plnLimboLayersChaos",
+   "value": true,
+   "comment": "the layers of Limbo of neutral (absolute) chaos"
+  },
+  {
+   "name": "plnPandemoniumLayersNEC",
+   "value": true,
+   "comment": "the layers of Pandemonium of neutral/evil chaotics"
+  },
+  {
+   "name": "plnAbyssAbsCE",
+   "value": true,
+   "comment": "the 666 layers of the Abyss of absolute chaotic evil"
+  },
+  {
+   "name": "plnTarterusLayersNCE",
+   "value": true,
+   "comment": "the layers of Tarterus of neutral/chaotic evil"
+  },
+  {
+   "name": "plnHadesThreeGlooms",
+   "value": true,
+   "comment": "Hades' Three Glooms of neutral (absolute) evil"
+  },
+  {
+   "name": "plnGehennaFurnacesNLE",
+   "value": true,
+   "comment": "the furnaces of Gehenna of neutral/lawful evil"
+  },
+  {
+   "name": "plnNineHellsAbsLE",
+   "value": true,
+   "comment": "the Nine Hells of absolute lawful evil"
+  },
+  {
+   "name": "plnAcheronNetherNEL",
+   "value": true,
+   "comment": "the nether layers of Acheron of neutral/evil law"
+  },
+  {
+   "name": "plnNirvanaAbsLaw",
+   "value": true,
+   "comment": "Nirvana of neutral (absolute) law"
+  },
+  {
+   "name": "plnArcadiaNGL",
+   "value": true,
+   "comment": "the plane of Arcadia of neutral/good law"
+  },
+  {
+   "name": "plnConcordantOfOpposition",
+   "value": true,
+   "comment": "the plane of Concordant Opposition of true neutrals"
+  },
+  {
+   "name": "plnEthStateByMeans",
+   "value": true,
+   "comment": "a character can achieve the ethereal state by magic spells, magic items, magical ointment (oil of etherealness) or psionic discipline"
+  },
+  {
+   "name": "plnEthMoveInnerPlanes",
+   "value": true,
+   "comment": "it is possible to move to or about any of the Inner Planes which the Ethereal Plane permeates"
+  },
+  {
+   "name": "plnEthPlaneToPlane",
+   "value": true,
+   "comment": "it is possible to move from plane to plane ethereally"
+  },
+  {
+   "name": "plnEthWillMovement",
+   "value": true,
+   "comment": "to move on the Ethereal Plane, an entity has but to will movement for it to happen"
+  },
+  {
+   "name": "plnEthConcentrationHalts",
+   "value": true,
+   "comment": "if concentration upon movement lapses, progress immediately halts"
+  },
+  {
+   "name": "plnEthTirelessRapid",
+   "value": true,
+   "comment": "ethereal travel is tireless and rapid"
+  },
+  {
+   "name": "plnEthNoNeeds",
+   "value": true,
+   "comment": "creatures in ethereal state need neither food, drink, rest nor sleep"
+  },
+  {
+   "name": "plnEthShadowToShadow",
+   "value": true,
+   "comment": "ethereal creatures may move from plane to plane by moving from the shadow of one plane to the shadow of another, accomplished by concentrating upon moving to the desired destination"
+  },
+  {
+   "name": "plnEthMentalTrail",
+   "value": true,
+   "comment": "this gets easier with practice, as the being marks out a mental trail through the ether"
+  },
+  {
+   "name": "plnEncUnfamiliarTriple",
+   "value": true,
+   "comment": "if the party is following an unfamiliar path, check for encounters three times total: at the beginning, midpoint, and at the end of the journey"
+  },
+  {
+   "name": "plnEncEvasionFaster",
+   "value": true,
+   "comment": "evasion is possible only if the adventurers are able to move more quickly than the monster encountered"
+  },
+  {
+   "name": "plnEncEvasionFamiliar",
+   "value": true,
+   "comment": "evasion will occur only if the party is both following a familiar path"
+  },
+  {
+   "name": "plnEncEvasionIntelligence",
+   "value": true,
+   "comment": "and the least-intelligent member of the party has a higher intelligence score than the most-intelligent pursuer"
+  },
+  {
+   "name": "plnEncMentalFunction",
+   "value": true,
+   "comment": "due to the fact that ethereal travel is a function of mental concentration"
+  },
+  {
+   "name": "plnCycInnerFluctuations",
+   "value": true,
+   "comment": "the twisting vortex of the Ether Cyclone is caused by fluctuations of the Inner Planes"
+  },
+  {
+   "name": "plnCycOnlyBetweenPlanes",
+   "value": true,
+   "comment": "the cyclone is only encountered on ethereal journeys between planes"
+  },
+  {
+   "name": "plnCycSlowAddCheck",
+   "value": true,
+   "comment": "if travelling is involved, the party is slowed so as to incur 1 additional encounter check"
+  },
+  {
+   "name": "plnCycDifferentPlane",
+   "value": true,
+   "comment": "the cyclone blows to a plane different than that which the party is near or desires to travel to; the usual encounter checks must be made"
+  },
+  {
+   "name": "plnCycSaveSpells",
+   "value": true,
+   "comment": "unless a saving throw versus spells is made, the party is blown to the Astral Plane; if a save is successful, the party will still arrive at a randomly determined plane touched by the ether"
+  },
+  {
+   "name": "plnEthCombatReal",
+   "value": true,
+   "comment": "creatures on the Ethereal Plane are real to each other, and normal melee or spell casting is possible between ethereal beings"
+  },
+  {
+   "name": "plnEthCombatPartial",
+   "value": true,
+   "comment": "it is also possible to combat creatures who exist or function partially on the Ethereal Plane"
+  },
+  {
+   "name": "plnEthSpellsToPmp",
+   "value": true,
+   "comment": "it is only in these instances that spells can be cast from the Ethereal to the Prime Material Plane, and then they will only affect the creature with ethereal connections"
+  },
+  {
+   "name": "plnEthDamageActual",
+   "value": true,
+   "comment": "ethereal combat damage is actual damage"
+  },
+  {
+   "name": "plnAstPerceptionNote",
+   "value": true,
+   "comment": "the asterisked table creatures perceptions extend into the Astral and Ethereal Planes (as do their magical attack forms), but they do not actually travel therein; their possible appearance applies only when the encountering party is near to the Prime Material Plane"
+  },
+  {
+   "name": "plnAstBySpellsPsionics",
+   "value": true,
+   "comment": "astral travel is possible by various means including magic spells and psionic discipline"
+  },
+  {
+   "name": "plnAstTouchesSeventeen",
+   "value": true,
+   "comment": "the Astral Plane touches only the endless Prime Material Plane and the 17 first layers of the Outer Planes"
+  },
+  {
+   "name": "plnAstNoInnerOther",
+   "value": true,
+   "comment": "the Astral Plane does not touch any of the Inner Planes other than the Prime Material Plane"
+  },
+  {
+   "name": "plnAstClericalSpellRef",
+   "value": true,
+   "comment": "it is possible to move about, in, or to any of the Prime Material universes or to the first layers of the Outer Planes by means of astral travel (see the clerical astral spell for pertinent details)"
+  },
+  {
+   "name": "plnAstSpeedy",
+   "value": true,
+   "comment": "movement through the Astral Plane is speedy"
+  },
+  {
+   "name": "plnAstNoNeeds",
+   "value": true,
+   "comment": "while there the individual needs no food, drink, rest or even sleep"
+  },
+  {
+   "name": "plnAstConcentrateMove",
+   "value": true,
+   "comment": "beings in an astral state move from place to place simply by concentrating upon moving to the desired destination"
+  },
+  {
+   "name": "plnAstLearnsTheWay",
+   "value": true,
+   "comment": "as with ethereal travel, this gets easier with practice, as the astral traveller learns the way"
+  },
+  {
+   "name": "plnAstEvasionAsEthereal",
+   "value": true,
+   "comment": "astral evasion is handled as described under Ethereal Encounters"
+  },
+  {
+   "name": "plnWindUnknown",
+   "value": true,
+   "comment": "no one knows how or why the psychic wind blows, but all fear its effects"
+  },
+  {
+   "name": "plnWindSlow",
+   "value": true,
+   "comment": "the wind slows travel only, incurring 1 additional check for random encounter"
+  },
+  {
+   "name": "plnWindLostShort",
+   "value": true,
+   "comment": "the wind blows off course, and the party is lost for 2-20 days time, then must return to the starting place"
+  },
+  {
+   "name": "plnWindDifferentDest",
+   "value": true,
+   "comment": "the wind blows off course so that the party arrives at a different destination as determined by random method"
+  },
+  {
+   "name": "plnWindSaveMagic",
+   "value": true,
+   "comment": "the storm blows, and unless a saving throw versus magic is made, the silver cord is broken, and the party is killed"
+  },
+  {
+   "name": "plnWindLostLong",
+   "value": true,
+   "comment": "if a save is successful, the party is lost for 4-40 days and must return to the starting place thereafter"
+  },
+  {
+   "name": "plnWindNoCord",
+   "value": true,
+   "comment": "if astral projection does not involve a silver cord attachment, then the party concerned is both lost and arrives at a different destination when struck by a psychic storm wind"
+  },
+  {
+   "name": "plnAstCombatReal",
+   "value": true,
+   "comment": "astral beings are real to each other, and can cast spells and melee normally"
+  },
+  {
+   "name": "plnAstNoPossessions",
+   "value": true,
+   "comment": "astral travellers employing an astral spell or the psionic astral projection discipline do not carry their possessions with them into the Astral Plane (except for certain magic items that have a multi-planar existence, e.g. an amulet of the planes)"
+  },
+  {
+   "name": "plnAstNaturalWeaponry",
+   "value": true,
+   "comment": "beings travelling astrally by these modes will therefore have to rely on their natural weaponry or spells without material components in any astral melee"
+  },
+  {
+   "name": "plnAstDestroyBodyMost",
+   "value": true,
+   "comment": "most creatures can do no more than destroy the astral body, causing the silver cord to return to the material body and preventing further astral travel for a period of time"
+  },
+  {
+   "name": "plnAstPowerfulSnap",
+   "value": true,
+   "comment": "very powerful beings (gods, demigods, etc.) might be able to snap the silver cord, thus killing the astral and material bodies simultaneously"
+  },
+  {
+   "name": "plnInnerViaEthereal",
+   "value": true,
+   "comment": "travel among the Inner Planes is usually done by means of the Ethereal Plane, as it permeates all of the Inner Planes"
+  },
+  {
+   "name": "plnOuterCantGoEthereal",
+   "value": true,
+   "comment": "it is not possible for creatures on the Outer Planes to go ethereal"
+  },
+  {
+   "name": "plnGatesAvoidEthereal",
+   "value": true,
+   "comment": "as with all planar travel, it is also possible to pass directly from one plane to another by means of gates, thereby avoiding ethereal travel"
+  },
+  {
+   "name": "plnGateBySpell",
+   "value": true,
+   "comment": "a gate may be formed by a magic spell (such as a gate spell, or conjure elemental, which forms a direct opening between the planes)"
+  },
+  {
+   "name": "plnGateByItems",
+   "value": true,
+   "comment": "or a magic item (e.g. an amulet of the planes, a well of many worlds, a cubic gate, or any of the various elemental-summoning devices)"
+  },
+  {
+   "name": "plnGateByDivine",
+   "value": true,
+   "comment": "or divine intervention"
+  },
+  {
+   "name": "plnNexialDirect",
+   "value": true,
+   "comment": "there are also direct nexial points connecting the Prime Material and Elemental Planes"
+  },
+  {
+   "name": "plnOuterViaGatesOrAstral",
+   "value": true,
+   "comment": "travel to and from the Outer Planes is usually by means of gates or via the Astral Plane"
+  },
+  {
+   "name": "plnAstralEntryOnly",
+   "value": true,
+   "comment": "the Astral Plane can only be entered from the Prime Material Plane or one of the first layers of the 17 Outer Planes"
+  },
+  {
+   "name": "plnGatedComplete",
+   "value": true,
+   "comment": "if a being is gated to one of the Outer Planes, he comes complete with body and possessions, leaving no part of himself behind"
+  },
+  {
+   "name": "plnProjectionLeavesBody",
+   "value": true,
+   "comment": "if a being astrally projects and travels the Astral Plane to one of the Outer Planes, he leaves his material body behind on the Prime Material Plane, connected to his essence by a silver cord"
+  },
+  {
+   "name": "plnSilverCordKilled",
+   "value": true,
+   "comment": "if his material body is destroyed or the silver cord is snapped while he is in the Astral Plane, the being is permanently and irrevocably killed"
+  },
+  {
+   "name": "plnOuterBodyForms",
+   "value": true,
+   "comment": "if he moves to one of the Outer Planes from the Astral Plane, a body forms around him, but it is devoid of possessions"
+  },
+  {
+   "name": "plnBothBodiesCorded",
+   "value": true,
+   "comment": "both bodies are now connected by the silver cord, and if either body is destroyed, the being will continue on in the remaining body"
+  },
+  {
+   "name": "plnOuterKilledReturnPmp",
+   "value": true,
+   "comment": "returning instantly to the Prime Material if the Outer Plane body is killed"
+  },
+  {
+   "name": "plnCordSnapUnoccupiedDies",
+   "value": true,
+   "comment": "if the silver cord is snapped on the Astral Plane, the unoccupied body dies"
+  },
+  {
+   "name": "plnSubNoClassLimits",
+   "value": true,
+   "comment": "no limits to the number of characters of one class apply"
+  },
+  {
+   "name": "plnSubAlwaysCleric",
+   "value": true,
+   "comment": "there will always be 1 cleric"
+  },
+  {
+   "name": "plnSubMinMagicUser",
+   "value": true,
+   "comment": "if there are 2 or more in the party, there will also be a minimum of 1 magic-user"
+  },
+  {
+   "name": "plnSubBardFootnote",
+   "value": true,
+   "comment": "the BARD line carries the footnote: 7th or 8th level fighter ability, 6th to 9th level (d4+5) thief ability (the printed BARDT and 91h cells are the footnote-glyph and 9th garbles)"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the census walk (the eight grids, the row counts, the roster, the outer-plane counts)",
+   "expr": "m['plnRound']() != 867 or m['plnTableCount']() != 8 or m['plnChainCount']() != 0 or m['plnEtcRows']() != 31 or m['plnAtcRows']() != 24 or m['plnOutRows']() != 17 or m['plnCycRows']() != 4 or m['plnWndRows']() != 4 or m['plnIrtRows']() != 13 or m['plnRnoRows']() != 18 or m['plnPelRows']() != 4 or m['plnRosterCount']() != 39 or m['plnOutNineAlignments']() != 9 or m['plnOutBorderlineCount']() != 8 or m['plnOutSeventeenCount']() != 17 or m['plnAsteriskCount']() != 4 or m['plnElementalCount']() != 4 or m['plnParaElementalCount']() != 4 or m['plnNexialCount']() != 4 or m['plnLayersWordCount']() != 8 or m['plnDescriptorCount']() != 4 or m['plnFigCount']() != 5"
+  },
+  {
+   "note": "the ethereal encounter grid bands (the head and tail rows, the band tiling to 100)",
+   "expr": "m['plnEtcLow'](0) != 1 or m['plnEtcHigh'](0) != 4 or m['plnEtcLow'](30) != 98 or m['plnEtcHigh'](30) != 100 or m['plnEtcLow'](15) != 47 or m['plnEtcHigh'](15) != 51 or m['plnEtcOrd'](19) != 19 or m['plnEtcHigh'](3) != 16 or m['plnEtcLow'](26) != 89 or m['plnEtcHigh'](26) != 89"
+  },
+  {
+   "note": "the ethereal encounter numbers and flags (the xorn, the lammasu, the asterisks, the subtable row)",
+   "expr": "m['plnEtcNumLo'](30) != 3 or m['plnEtcNumHi'](30) != 6 or m['plnEtcNumLo'](19) != 2 or m['plnEtcNumHi'](19) != 8 or m['plnEtcNumHi'](9) != 1 or m['plnEtcFlag'](1) != 1 or m['plnEtcFlag'](20) != 1 or m['plnEtcFlag'](15) != 2 or m['plnEtcNumLo'](15) != 0 or m['plnEtcFlag'](22) != 0"
+  },
+  {
+   "note": "the astral encounter grid (the demons and devils, the night hag band, the titan rows)",
+   "expr": "m['plnAtcOrd'](3) != 31 or m['plnAtcOrd'](4) != 32 or m['plnAtcOrd'](6) != 34 or m['plnAtcOrd'](8) != 36 or m['plnAtcLow'](17) != 64 or m['plnAtcHigh'](17) != 71 or m['plnAtcOrd'](17) != 37 or m['plnAtcHigh'](20) != 91 or m['plnAtcLow'](22) != 93 or m['plnAtcHigh'](22) != 97 or m['plnAtcOrd'](23) != 28 or m['plnAtcHigh'](23) != 100"
+  },
+  {
+   "note": "the astral encounter numbers and flags (the shedu 2-5, the rakshasa, the asterisk rows)",
+   "expr": "m['plnAtcNumLo'](20) != 2 or m['plnAtcNumHi'](20) != 5 or m['plnAtcNumLo'](19) != 1 or m['plnAtcNumHi'](19) != 3 or m['plnAtcNumHi'](21) != 1 or m['plnAtcNumHi'](23) != 1 or m['plnAtcFlag'](1) != 1 or m['plnAtcFlag'](11) != 1 or m['plnAtcFlag'](12) != 2"
+  },
+  {
+   "note": "the seventeen outer planes grid (the positions, the layers words, the descriptors)",
+   "expr": "m['plnOutPos'](0) != 1 or m['plnOutPos'](16) != 17 or m['plnOutLayers'](2) != 1 or m['plnOutLayers'](4) != 1 or m['plnOutLayers'](8) != 1 or m['plnOutLayers'](13) != 1 or m['plnOutDesc'](8) != 1 or m['plnAbyssLayers']() != 666 or m['plnOutDesc'](10) != 2 or m['plnOutDesc'](11) != 3 or m['plnOutDesc'](13) != 4 or m['plnOutDesc'](0) != 0"
+  },
+  {
+   "note": "the cyclone and wind grids (the dice bands, the effect codes)",
+   "expr": "m['plnCycLow'](0) != 1 or m['plnCycHigh'](0) != 10 or m['plnCycLow'](1) != 11 or m['plnCycHigh'](1) != 15 or m['plnCycLow'](2) != 16 or m['plnCycHigh'](3) != 20 or m['plnCycEffect'](0) != 1 or m['plnCycEffect'](3) != 4 or m['plnWndLow'](0) != 1 or m['plnWndHigh'](0) != 12 or m['plnWndLow'](1) != 13 or m['plnWndHigh'](1) != 16 or m['plnWndLow'](3) != 20 or m['plnWndEffect'](3) != 4"
+  },
+  {
+   "note": "the inner random grid (the band arithmetic, the fold-garbled bands)",
+   "expr": "m['plnIrtLow'](0) != 1 or m['plnIrtHigh'](0) != 2 or m['plnIrtPlane'](0) != 0 or m['plnIrtPlane'](1) != 1 or m['plnIrtPlane'](2) != 2 or m['plnIrtLow'](3) != 5 or m['plnIrtHigh'](3) != 7 or m['plnIrtPlane'](3) != 3 or m['plnIrtLow'](4) != 8 or m['plnIrtHigh'](4) != 9 or m['plnIrtLow'](5) != 10 or m['plnIrtHigh'](5) != 11 or m['plnIrtPlane'](12) != 12 or m['plnIrtHigh'](12) != 20"
+  },
+  {
+   "note": "the outer random grid (the astral triple band, the single-plane bands, the tail)",
+   "expr": "m['plnRnoLow'](0) != 1 or m['plnRnoHigh'](0) != 3 or m['plnRnoPlane'](0) != 0 or m['plnRnoPlane'](1) != 1 or m['plnRnoHigh'](9) != 12 or m['plnRnoPlane'](9) != 9 or m['plnRnoPlane'](13) != 13 or m['plnRnoPlane'](17) != 17 or m['plnRnoHigh'](17) != 20 or m['plnRnoLow'](17) != 20"
+  },
+  {
+   "note": "the para-elemental grid (the conjunctions: ice, dust, heat, vapor)",
+   "expr": "m['plnPelOrd'](0) != 0 or m['plnPelElemA'](0) != 0 or m['plnPelElemB'](0) != 3 or m['plnPelElemA'](1) != 0 or m['plnPelElemB'](1) != 2 or m['plnPelElemA'](2) != 2 or m['plnPelElemB'](2) != 1 or m['plnPelElemA'](3) != 1 or m['plnPelElemB'](3) != 3"
+  },
+  {
+   "note": "the inner planes doctrine (the center, the elements, the positive and negative)",
+   "expr": "m['plnPmpCenter']() != 1 or m['plnPmpFourElements']() != 1 or m['plnPosConsumePrime']() != 1 or m['plnNegDrainPrime']() != 1 or m['plnNegUncertainCreatures']() != 1 or m['plnEleSurroundPmp']() != 1 or m['plnEleInfiniteEffect']() != 1 or m['plnEleMoveViaPara']() != 1 or m['plnEleTrafficHeaviest']() != 1 or m['plnPluralUniverses']() != 1 or m['plnOnlyNormalTied']() != 1 or m['plnPmpHousesUniverse']() != 1 or m['plnRealityRefereeDependent']() != 1"
+  },
+  {
+   "note": "the nexial points (the four locations plus the temporary openings)",
+   "expr": "m['plnNexialDeepestOcean']() != 1 or m['plnNexialHighAtmosphere']() != 1 or m['plnNexialFarUnderground']() != 1 or m['plnNexialActiveVolcano']() != 1 or m['plnNexialTemporary']() != 1 or m['plnEleTravelGatesOrEthereal']() != 1 or m['plnParaAtConjunctions']() != 1 or m['plnParaHomes']() != 1"
+  },
+  {
+   "note": "the ethereal plane and the plane of shadow",
+   "expr": "m['plnEthSurroundsAll']() != 1 or m['plnEthInsubstantial']() != 1 or m['plnEthFloatingIslands']() != 1 or m['plnEthPhantoms']() != 1 or m['plnEthPassNoDifficulty']() != 1 or m['plnEthChillSpine']() != 1 or m['plnEthRealToEachOther']() != 1 or m['plnEthNotToOuter']() != 1 or m['plnShadCoExists']() != 1 or m['plnShadInteraction']() != 1 or m['plnShadNegDarkPosLight']() != 1 or m['plnShadMutableCreatures']() != 1"
+  },
+  {
+   "note": "the astral plane and the outer-planes overview (the degree doctrine, the adjacency moves)",
+   "expr": "m['plnAstRadiatesNonSpace']() != 1 or m['plnAstTravelUses']() != 1 or m['plnAstTouchesUpperOnly']() != 1 or m['plnOutHomesOfDeities']() != 1 or m['plnOutExactCorrespondence']() != 1 or m['plnOutDegreeNotAbsolute']() != 1 or m['plnOutLeTendsGehenna']() != 1 or m['plnOutContactTopmost']() != 1 or m['plnOutAdjacentMoves']() != 1 or m['plnOutAbyssMoves']() != 1 or m['plnOutHadesMoves']() != 1"
+  },
+  {
+   "note": "the seventeen list (the heavens through the concordant opposition)",
+   "expr": "m['plnSevenHeavensAbsLG']() != 1 or m['plnTwinParadisesLNG']() != 1 or m['plnElysiumLayersNG']() != 1 or m['plnHappyHuntingCGNG']() != 1 or m['plnOlympusLayersACG']() != 1 or m['plnGladsheimLayersNGC']() != 1 or m['plnLimboLayersChaos']() != 1 or m['plnPandemoniumLayersNEC']() != 1 or m['plnAbyssAbsCE']() != 1 or m['plnTarterusLayersNCE']() != 1 or m['plnHadesThreeGlooms']() != 1 or m['plnGehennaFurnacesNLE']() != 1 or m['plnNineHellsAbsLE']() != 1 or m['plnAcheronNetherNEL']() != 1 or m['plnNirvanaAbsLaw']() != 1 or m['plnArcadiaNGL']() != 1 or m['plnConcordantOfOpposition']() != 1"
+  },
+  {
+   "note": "the ethereal travel and encounter rules (the checks ladder, the evasion laws, the cyclone)",
+   "expr": "m['plnEncounterChance']() != 20 or m['plnChecksFirst']() != 3 or m['plnChecksSecond']() != 2 or m['plnChecksSubsequent']() != 1 or m['plnEncUnfamiliarTriple']() != 1 or m['plnEncEvasionFaster']() != 1 or m['plnEncEvasionIntelligence']() != 1 or m['plnEncMentalFunction']() != 1 or m['plnCycPct']() != 5 or m['plnCycMoveRate']() != 120 or m['plnCycLostShortLo']() != 5 or m['plnCycLostShortHi']() != 60 or m['plnCycLostLongLo']() != 10 or m['plnCycLostLongHi']() != 120"
+  },
+  {
+   "note": "the ethereal travel means and combat (the state, the will movement, the actual damage)",
+   "expr": "m['plnEthStateByMeans']() != 1 or m['plnEthMoveInnerPlanes']() != 1 or m['plnEthWillMovement']() != 1 or m['plnEthConcentrationHalts']() != 1 or m['plnEthTirelessRapid']() != 1 or m['plnEthNoNeeds']() != 1 or m['plnEthShadowToShadow']() != 1 or m['plnEthMentalTrail']() != 1 or m['plnEthCombatReal']() != 1 or m['plnEthCombatPartial']() != 1 or m['plnEthSpellsToPmp']() != 1 or m['plnEthDamageActual']() != 1 or m['plnAstPerceptionNote']() != 1"
+  },
+  {
+   "note": "the astral travel and the psychic wind (the wind constants, the cord rule)",
+   "expr": "m['plnAstBySpellsPsionics']() != 1 or m['plnAstTouchesSeventeen']() != 1 or m['plnAstNoInnerOther']() != 1 or m['plnAstSpeedy']() != 1 or m['plnAstConcentrateMove']() != 1 or m['plnAstLearnsTheWay']() != 1 or m['plnWindPct']() != 5 or m['plnWindUnknown']() != 1 or m['plnWindLostShortLo']() != 2 or m['plnWindLostShortHi']() != 20 or m['plnWindLostLongLo']() != 4 or m['plnWindLostLongHi']() != 40 or m['plnWindSaveMagic']() != 1 or m['plnWindNoCord']() != 1 or m['plnWindSlow']() != 1 or m['plnWindDifferentDest']() != 1"
+  },
+  {
+   "note": "the astral combat (the possessions rule, the cord return, the powerful snap)",
+   "expr": "m['plnAstCombatReal']() != 1 or m['plnAstNoPossessions']() != 1 or m['plnAstNaturalWeaponry']() != 1 or m['plnAstDestroyBodyMost']() != 1 or m['plnAstPowerfulSnap']() != 1 or m['plnAstEvasionAsEthereal']() != 1 or m['plnAstClericalSpellRef']() != 1 or m['plnAstNoNeeds']() != 1"
+  },
+  {
+   "note": "the planar travel summary (the gates, the silver cord, the two bodies)",
+   "expr": "m['plnInnerViaEthereal']() != 1 or m['plnOuterCantGoEthereal']() != 1 or m['plnGatesAvoidEthereal']() != 1 or m['plnGateBySpell']() != 1 or m['plnGateByItems']() != 1 or m['plnGateByDivine']() != 1 or m['plnNexialDirect']() != 1 or m['plnOuterViaGatesOrAstral']() != 1 or m['plnAstralEntryOnly']() != 1 or m['plnGatedComplete']() != 1 or m['plnProjectionLeavesBody']() != 1 or m['plnSilverCordKilled']() != 1 or m['plnOuterBodyForms']() != 1 or m['plnBothBodiesCorded']() != 1 or m['plnOuterKilledReturnPmp']() != 1 or m['plnCordSnapUnoccupiedDies']() != 1"
+  },
+  {
+   "note": "the character subtable levels (the eleven class bands)",
+   "expr": "m['plnSubClrLo']() != 9 or m['plnSubClrHi']() != 18 or m['plnSubDrdLo']() != 7 or m['plnSubDrdHi']() != 14 or m['plnSubFtrLo']() != 8 or m['plnSubFtrHi']() != 15 or m['plnSubPalLo']() != 7 or m['plnSubPalHi']() != 16 or m['plnSubRngLo']() != 7 or m['plnSubRngHi']() != 16 or m['plnSubMuLo']() != 11 or m['plnSubMuHi']() != 20 or m['plnSubIllLo']() != 10 or m['plnSubIllHi']() != 17 or m['plnSubThfLo']() != 9 or m['plnSubThfHi']() != 16 or m['plnSubAssLo']() != 10 or m['plnSubAssHi']() != 15 or m['plnSubMnkLo']() != 8 or m['plnSubMnkHi']() != 17 or m['plnSubBrdLo']() != 11 or m['plnSubBrdHi']() != 18 or m['plnSubtableRowCount']() != 11"
+  },
+  {
+   "note": "the character subtable rules and the bard footnote (the garbled print cells)",
+   "expr": "m['plnSubPartyLo']() != 1 or m['plnSubPartyHi']() != 6 or m['plnSubNoClassLimits']() != 1 or m['plnSubAlwaysCleric']() != 1 or m['plnSubMinMagicUser']() != 1 or m['plnSubBardFootnote']() != 1 or m['plnSubBardFighterLo']() != 7 or m['plnSubBardFighterHi']() != 8 or m['plnSubBardThiefLo']() != 6 or m['plnSubBardThiefHi']() != 9 or m['plnSubBardThiefDie']() != 4 or m['plnSubBardThiefBonus']() != 5"
+  },
+  {
+   "note": "the figure pins (FIG. 1 through 5, the pixel-work box note)",
+   "expr": "m['plnFig1Inner']() != 1 or m['plnFig2Elemental']() != 1 or m['plnFig3Outer']() != 1 or m['plnFig45PixelWork']() != 1 or m['plnEleApparentSizes']() != 1"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "inline_count": 238,
+ "data_files": [
+  {
+   "path": "doc/data/ddg_planes_encounters.txt",
+   "content": "The DDG print pp. 128-133 encounter tables - the shared creature\nroster (first-appearance ordinals) and the printed rows.\n\n== the shared roster (39) ==\n00 Aerial servant\n01 Basilisk*\n02 Cockatrice*\n03 Couatl\n04 Djinni\n05 Dragon, chromatic\n06 Dragon, platinum\n07 Efreeti\n08 Elemental, air\n09 Elemental, earth\n10 Elemental, fire\n11 Elemental, water\n12 Ghost\n13 Gorgon*\n14 Groaning spirit\n15 Human traveller\n16 Intellect devourer\n17 Invisible stalker\n18 Ki-rin\n19 Lammasu\n20 Medusa*\n21 Nightmare\n22 Salamander\n23 Shedu\n24 Spider, phase\n25 Thought eater\n26 Titan, elder\n27 Titan, lesser\n28 Titan, major\n29 Wind walker\n30 Xorn\n31 Demon, major\n32 Demon, minor\n33 Demon, prince\n34 Devil, arch-\n35 Devil, greater-\n36 Devil, lesser-\n37 Night hag\n38 Rakshasa\n\n== the Ethereal Encounter Table (print p. 132) ==\n01-04  Aerial servant                           1\n05-08  Basilisk*                                1-2\n09-11  Cockatrice*                              1-4\n12-16  Couatl                                   1-4\n17-23  Djinni                                   1-6\n   24  Dragon, chromatic                        1\n   25  Dragon, platinum                         1\n26-27  Efreeti                                  1-3\n28-32  Elemental, air                           1\n33-34  Elemental, earth                         1\n35-36  Elemental, fire                          1\n   37  Elemental, water                         1\n38-42  Ghost                                    1\n43-44  Gorgon*                                  1-2\n45-46  Groaning spirit                          1-2\n47-51  Human traveller - see Character Subtable** \n52-53  Intellect devourer                       1-2\n54-56  Invisible stalker                        1-3\n57-61  Ki-rin                                   1\n62-68  Lammasu                                  2-8\n69-70  Medusa*                                  1-2\n71-72  Nightmare                                1-4\n73-74  Salamander                               2-5\n75-77  Shedu                                    1\n78-81  Spider, phase                            1-6\n82-88  Thought eater                            1-3\n   89  Titan, elder                             1\n90-92  Titan, lesser                            1\n93-94  Titan, major                             1\n95-97  Wind walker                              2-5\n98-00  Xorn                                     3-6\n\n* = perceptions extend into the Astral and Ethereal Planes (as do\ntheir magical attack forms), but they do not actually travel\ntherein; applies only when the party is near the Prime Material\nPlane. ** = the DMG DUNGEON RANDOM MONSTER ENCOUNTERS Character\nSubtable with the print-p. 132 modifications.\n\n== the Astral Encounter Table (print p. 133) ==\n01-04  Aerial servant                           1\n05-10  Basilisk*                                1-2\n11-13  Cockatrice*                              1-4\n14-16  Demon, major                             1\n17-22  Demon, minor                             1-3\n   23  Demon, prince                            1\n   24  Devil, arch-                             1\n25-28  Devil, greater-                          1\n29-37  Devil, lesser-                           1-3\n   38  Dragon, chromatic                        1\n   39  Dragon, platinum                         1\n40-41  Gorgon*                                  1-2\n42-46  Human traveller - see Character Subtable** \n47-49  Intellect devourer                       1-2\n50-55  Invisible stalker                        1-3\n56-61  Ki-rin                                   1\n62-63  Medusa*                                  1-2\n64-71  Night hag                                1-4\n72-74  Nightmare                                1-4\n75-79  Rakshasa                                 1-3\n80-91  Shedu                                    2-5\n   92  Titan, elder                             1\n93-97  Titan, lesser                            1\n98-00  Titan, major                             1\n\n* and ** as beneath the Ethereal Encounter Table. The printed\n98-00 row reads Tifan, major (the tesseract garble of Titan).\nThe L&L voice prints 92-97 for Titan, lesser (a transcription\ntypo - the print pins 93-97).\n"
+  }
+ ],
+ "regtest": "regtest.cpp"
+}
