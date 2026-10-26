@@ -1,0 +1,135 @@
+JAPANESE MYTHOS JAPANESE MYTHOS
+RAIKO (hero) %
+
+ARMOR CLASS: -1
+
+MOVE: 29"
+
+HIT POINTS: 180
+
+NO. OF ATTACKS: 2 (or 3 with open
+hand)
+
+DAMAGE/ATTACK: By weapon type
+(or 6-24 with open hand)
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: Ni/
+
+MAGIC RESISTANCE: Standard
+
+SIZE: M (6')
+
+ALIGNMENT: Neutral good
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 18th level ranger
+
+MAGIC-USER/ILLUSIONIST: Nil
+
+THIEF/ASSASSIN: 12th level assassin
+
+MONK/BARD: 15th level monk
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+S:18(00) (+3, +6) 1:18 W:11 D:19 C:18 CH:18
+
+Raiko, favored of the gods, is a fighter of enchanted monsters, and for his
+many victories over giants, demons, the undead, and other ghastly things
+he has been given greater endurance (thus his increased hit points) and
+has achieved a speed of movement that is quite unhuman (thus his greater
+dexterity). His weapons are the longbow and sword; with his arrows he
+can achieve twice the distance and damage of normal longbowmen, and
+his sword is said to be swifter than the striking serpent. Raiko is known to
+some as Yorimitsu.
+
+SUSANOWO (storm god and lord of the seas) i . \ \\\\ AR
+Greater god N,‘ N\ \ \\\ ‘
+
+ARMOR CLASS: -4
+
+MOVE: 12"/36"/ /48"
+
+HIT POINTS: 400
+
+NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: 3-30 (+ 14)
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: See below
+
+MAGIC RESISTANCE: 30% or 100%
+(see below)
+
+SIZE: M (6%")
+
+ALIGNMENT: Chaotic neutral
+
+WORSHIPER’S ALIGN: Chaotic
+
+SYMBOL: Katana (sword)
+
+PLANE: Limbo
+
+CLERIC/DRUID: 10th level in each
+
+FIGHTER: 13th level ranger
+
+MAGIC-USER/ILLUSIONIST: 20th level
+magic-user
+
+TSUKIYOMI (moon god)
+Greater god
+
+ARMOR CLASS: -7
+
+MOVE: 12/21"
+
+HIT POINTS: 400
+
+NO. OF ATTACKS: 3/2
+DAMAGE/ATTACK: 40 points
+SPECIAL ATTACKS: Nil
+SPECIAL DEFENSES: See below
+MAGIC RESISTANCE: 30%
+
+THIEF/ASSASSIN: Nil SIZE: M (7’)
+MONK/BARD: Nil - PERAN ) Y ALIGNMENT: Nevutral good
+PSIONIC ABILITY: V WORSHIPER’S ALIGN: Good align-
+S:25(+7,+14) 1:24 W:20 D:25 C:25 CH:22 ments
+SYMBOL: White disk
+A large bearded oriental with long flowing black hair, this deity can often PLANE: Elysium
+be found riding a thunder cloud. He casts lightning bolts (doing 30 points CLERIC/DRUID: 20th level cleric
+of damage per strike) any time he wills. He shape changes at will, can FIGHTER: 12th level ranger
+summon any time 1-10 air or water elementals to do his bidding, and he MAGIC-USER/ILLUSIONIST: 15th level
+can take away the power of flight from any being for up to 1 week (no sav- in each
+ing throw). He wears yellow +4 splint mail into battle that emits blasts of THIEF/ASSASSIN: 15th level assassin
+heat once per round (doing 20 points of damage to all within 10 feet of the MONK/BARD: 10th level bard
+god, no saving throw). PSIONIC ABILITY: VI
+
+S:25(+7,+14) 1123 W:23 D:25 C:25 CH:25
+
+He uses a +4 yellow sword that strikes for 3-30 points of damage with
+every hit, and if the weapon misses his enemy in any given melee round,
+the next closest enemy will be hit. While the god is in the water, he is 100%
+magic resistant, and all the nearby creatures of the sea will throw them-
+selves in front of him so that they are hit instead of the god.
+
+This god has light blue skin, but otherwise appears to be a massively built
+human male. At will the god can shape change, and summon one of any
+type of flying creature (up to 5 times per day). He also has the ability to
+summon any object he sees to his hand (magic saving throw applicable)
+so that enemies’ weapons and the like can be taken away from them.
+
+He uses a + 4 pike in battle that strikes for 40 points of damage with every
+hit and cannot be broken by any force on the Prime Material Plane. The
+weapon also makes the god immune to poison, petrification, and magic
+jar attacks.
+
+84

@@ -1,0 +1,126 @@
+NORSE MYTHOS NORSE MYTHOS
+
+AEGIR (god of storms and the sea) He fights with a +3 two-handed sword which does 3-30 points of damage.
+No female of any species can attack him, even if controlled by someone
+Lesser god else.
+
+ARMOR CLASS: -5
+
+MOVE: 42"
+HIT POINTS: 387 BRAGI (god of poetry, eloquence, and song)
+NO. OF ATTACKS: 2
+DAMAGE/ATTACK: 4-40 (+11) Lesser god
+SPECIAL ATTACKS: Nil
+SPECIAL DEFENSES: See below ARMOR CLASS: —4
+MAGIC RESISTANCE: 50% MOVE: 18"
+SIZE: M (7') HIT POINTS: 370
+ALIGNMENT: Chaotic neutral NO. OF ATTACKS: 3/2
+WORSHIPER’S ALIGN: Chaotic DAMAGE/ATTACK: 2-20 (+11)
+
+neutral SPECIAL ATTACKS: See below
+SYMBOL: Rough ocean waves SPECIAL DEFENSES: See below
+PLANE: Gladsheim MAGIC RESISTANCE: 75% (when
+CLERIC/DRUID: 15th level cleric singing, totally immune)
+FIGHTER: 15th level ranger SIZE: M (6')
+MAGIC-USER/ILLUSIONIST: 10th level ALIGNMENT: Neutral good
+
+in each WORSHIPER’S ALIGN: Neutral good
+THIEF/ASSASSIN: Nil and all bard types
+MONK/BARD: 5th level bard SYMBOL: Harp
+PSIONIC ABILITY: V PLANE: Elysium
+$:23(45 +11) 1123 W:18 D:23 C:24 CH:9 CLERIC/DRUID: 10th level in each
+
+FIGHTER: 7th level ranger
+Aegir is neither Aesir nor Vanir, and is actually related to the Giants. MAGIC-USER/ILLUSIONIST: 15th level
+illusionist
+This god usually appears as a human with a long gray beard, and delights THIEF/ASSASSIN: Nil
+in overturning ships and dragging them down to his realm under the water MONK/BARD: 23rd level bard
+if they have not sacrificed to him. He uses a club in the shape of a maiden PSIONIC ABILITY: V
+which does 4-40 points per strike. All those that meet him in battle under S:23(+5 +11) 1:24 W:24 D:25 C:25 CH:24
+the water are slowed (no saving throw). When in the seq, the god is 60
+feet tall, and in this form will fight any of the Aesir and the Vanir who dare All beings with violence on their minds that come within 30 yards of Bragi
+to enter his realm without his permission. He has a great castle underwater while he is singing will be overcome by the god’s song or verse (no save).
+where he lives with Ran, his wife. Beings so affected will lose all of their former intentions and join this god
+for song and revelry until he is satisfied that they have learned their
+
+Aegir will calm storms as often as create them, especially if it will aid lesson, whereupon he will set them free. Bragi cannot have violence on
+those who are his friends. He is friendly and sociable with the Aesir, but his mind at this time either and this power will not stop the enemies of the
+they keep a close watch on Aegir because of his unpredictable nature. gods from fighting after the song is over. This power will work for up to 5
+
+hours at a time with any given creature.
+
+Any human hearing his Harp of Calm will cease fighting or quarreling for 7
+BALDER (god of beauty, “‘charisma’’) days (unless attacked in that time). This harp has all the powers of all
+
+magical bard instruments plus the ability to stop any creature from attack-
+Greater god ing for a short period of time, plus the ability to uncharm anything.
+There is a 5% chance that every bard of this religion, at the time of their
+first performance in front of a crowd of more than 50 beings, will be
+granted a “‘great legend’” by the god, in the form of knowledge of the
+nearest lost treasure in the area.
+
+ARMOR CLASS: —4
+
+MOVE: 18"
+
+HIT POINTS: 388
+
+NO. OF ATTACKS: 3/2
+
+DAMAGE/ATTACK: 3-30 (+10)
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: See below
+
+MAGIC RESISTANCE: 75%
+
+SIZE: M (6)
+
+ALIGNMENT: Neutral good
+
+WORSHIPER’S ALIGN: Neutral good
+
+SYMBOL: Gem-encrusted silver
+chalice
+
+PLANE: Gladsheim
+
+The god strikes with a +2 sword for 2-20 points of damage.
+
+_FENRIS WOLF
+
+FREQUENCY: Unigue
+NO. APPEARING: 1
+ARMOR CLASS: —4
+
+CLERIC/DRUID: 12th level in each MOVE: 24/12"
+FIGHTER: 10th level ranger HIT DICE/POINTS: 400 hp
+MAGIC-USER/ILLUSIONIST: Nil % IN LAIR: Nil
+
+THIEF/ASSASSIN: Nil TREASURE TYPE: Nil
+
+MONK/BARD: 20th level bard »- XV NO. OF ATTACKS: 1
+
+PSIONIC ABILITY: VI DAMAGE/ATTACK: 9-90
+
+$:22(+4,+10) 1:24 W:24 D:24 C:25 CH:25 SPECIAL ATTACKS: Nil
+SPECIAL DEFENSES: +4 or better
+
+This god is able to grant 2 points of charisma to any being he wishes (once weapon to hit
+
+in their life). Those mortal females that look upon this god must save or be- MAGIC RESISTANCE: 99%
+
+come immediately ““enchanted’”” with his beauty. Those enchanted must INTELLIGENCE: Average
+
+roll another magical saving throw; if they fail, they will follow his faith ALIGNMENT: Chaotic evil
+
+with slavish devotion for the rest of their lives. The god may ask those SIZE: L (50" at the shoulder)
+
+females with 15 or greater charismas to serve him personally in his hold- PSIONIC ABILITY: Nil
+
+ings on a 1% chance. He cannot be harmed by any weapon without mistle- Attack/Defense Modes: Nil
+
+toe in it. He lives in Gladsheim in his hall of Breidablik. LEVEL/X.P. VALUE: X/33,200
+
+115

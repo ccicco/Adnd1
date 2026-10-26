@@ -1,0 +1,105 @@
+NONHUMANS’ DEITIES NONHUMANS’ DEITIES
+
+ELVES, Aquatic
+DEEP SASHELAS
+Lesser god
+
+ARMOR CLASS: -3
+
+MOVE: 12"/ /24"
+
+HIT POINTS: 300
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: 3-30
+
+SPECIAL ATTACKS: Double damage
+under water
+
+SPECIAL DEFENSES: 100% magic
+resistance under water
+
+MAGIC RESISTANCE: Standard (out
+of water)
+
+SIZE: M (7°)
+
+ALIGNMENT: Chaotic good
+
+WORSHIPER’S ALIGN: Chaotic good
+(aquatic elves) and sailors
+
+SYMBOL: Dolphin
+
+PLANE: Olympus
+
+CLERIC/DRUID: 19th level cleric
+
+FIGHTER: 15th level fighter The demoness Lolth is a very powerful and feared demon Lord. She usually
+MAGIC-USER/ILLUSIONIST: 12th level takes the form of a giant black widow spider when she is on the Prime
+
+in each Material Plane, and sometimes assumes this form on her own plane as
+THIEF/ASSASSIN: Nil well, but she also enjoys appearing as an exquisitely beautiful female
+MONK/BARD: 10th level bard dark elf (the statistics for this form are given in parenthesis). Little is known
+PSIONIC ABILITY: 11l about her aims, and only the fact that the Drow worship of Lolth causes her
+$:25(+7,+14) 1:20 W:18 D:21 C:21 CH:23 to assume form on the earth permits compilation of any substantial in-
+
+formation whatsoever.
+Sashelas is the ““Knowledgeable One’’, the being who always knows
+
+where food or the enemy can be found. He is master of the dolphins and Lolth enjoys the company of spiders of all sorts — giant species while in
+20 of their strongest always follow him in the sea. Mortal sailors sacrifice to her arachnid shape, those of normal, large and even huge species while in
+the god for their safety and aquatic elven clerics take these offerings and her humanoid form. She is able to converse with all kinds of spiders, and
+trade with other mortals for the gain of the entire race. Clerics of Sashelas they understand and obey her unquestioningly.
+
+time their religious ceremonies to coincide with especially high or low
+
+tides. The sea elves, like their friends the dolphins, are mortal enemies of Although the Queen of Spiders has but 66 hit points, her high armor class
+sharks. Clerics will often conduct ritual shark hunts. They, like their cousins, prevents most damage, and she is able to heal herself at will, up to
+can advance to the 7th level of clerical ability. thrice/day. As Lolth enjoys roving about in one form or another, she will
+
+seldom be encountered in her lair no matter what the plane, unless
+worshipers have invoked her to some special shrine or temple.
+ELVES, Drow
+
+In the form of a giant spider, Lolth is able to cast web strands 30 long from
+
+LOLTH (demon queen of spiders) her abdomenal spinnerets which are equal to a web spell with the addi-
+tion of 1-4 points of damage per round accruing to webbed victims due to
+Lesser goddess a poisonous excretion upon the strands; and during the same melee round
+she is able to deliver a vicious biting attack for 4-16 hit points of damage
+ARMOR CLASS: ~10 (+2) plus death if the victim fails to make his, her, or its saving throw vs. poison
+MOVE: 17 *9" (15") at -4. In her humanoid form, Lolth will use weapons common to Drow.
+HIT POINTS: 66
+NO. OF ATTACKS: 1 and 1 (1) As a giant spider, the demoness can use any one of the following powers,
+DAMAGE/ATTACK: 4-16 and webs one per melee round, at will: comprehend languages, confusion (creature
+(by weapon type) looked at only), darkness (10’ radius), dispel magic; once per day gate ina
+SPECIAL ATTACKS: Poison type | (45%), type Il (35%), or type Il (20%) demon (with 66% chance of
+SPECIAL DEFENSES: See below success), summon 9-16 large (20%), 7-12 huge (30%), 2-8 giant (40%) or 1-
+MAGIC RESISTANCE: 70% 4 phase (10%) spiders, teleport with no error, tongues, true seeing; twice
+SIZE: L (M) per day use phase door, read magic, and shape change. In her humanoid
+ALIGNMENT: Chaotic evil shape, Lolth is a 16th level cleric/14th level magic-user with commen-
+WORSHIPER’S ALIGN: Chaotic evil surate abilities. However, in spider form she is unable to wear armor of
+(Drow) any sort, and her psionic powers are lost (see below).
+SYMBOL: Spider
+PLANE: Abyss Lolth is not affected by weapons which are not magical, silver does her no
+CLERIC/DRUID: See below harm (unless magicked to at least + 1), and cold, electrical and gas attack
+FIGHTER: As 16+ HD monster forms cause only one-half damage. Acid, magic missiles (if her magic re-
+MAGIC-USER/ILLUSIONIST: See sistance fails her, of course), and poison affect the demoness normally.
+below Lolth is especially susceptible to holy water, taking 6 points of damage
+THIEF/ASSASSIN: Nil from a splash and 6-21 points (3d6+ 3) from a direct hit.
+MONK/BARD: Nil
+PSIONIC ABILITY: See below The visual range of the demoness extends into the infrared and ultraviolet
+S$:21(+4,4+9) 1:21 W:16 D:21 C:21 CH:3(23) spectrums to a normal distance of 120". Lolth has limited telepathic com-
+
+munication ability as do demons in general.
+The dark elves worship demon lords from the Abyss. The best known
+
+example is the worship of the Demon Queen Lolth. Drow sacrifice both Lolth’s psionic disciplines are the minor devotions of body equilibrium,
+blood (of others) and riches to her. (For particulars, see ADVANCED D&D clairvoyance, domination, and the major sciences of dimension walking,
+DUNGEON MODULES D3, THE VAULT OF THE DROW, and Q1, QUEEN OF mind bar, molecular rearrangement, and probability travel. These
+THE DEMONWEB PITS.) Female Drow with wisdoms of 18 can progress as disciplines (as well as her magical powers) are performed at 16th level of
+high as the 14th level of clerical ability. ability (experience).
+
+107

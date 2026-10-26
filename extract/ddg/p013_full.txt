@@ -1,0 +1,88 @@
+INO1Q0¥
+nMytmos
+
+The gods of the Indians of North America were as close to nature as their RAVEN
+worshipers could make them. The natural world is the most important
+aspect of the Indians’ existence. The gods will always prefer to appear in Greater god
+the form of a creature of the land. They can, if necessary, appear in human
+form, but such appearances require great energy and may only last a short ARMOR CLASS: 0
+time. MOVE: 24"
+HIT POINTS: 400
+In all Indian rituals where a cleric wants to control something, he or she NO. OF ATTACKS: 3
+must have part of it already. If the cleric is summoning rain he or she must DAMAGE/ATTACK: 3-18/3-18/3-30
+sprinkle water on the ground in the process of the spell. If the cleric is cast- SPECIAL ATTACKS: Polymorph others
+ing a quest upon a being for whatever purpose, he or she must have a part (-3 to save)
+of that being for the spell (a piece of hair, article of used clothing, etc.). SPECIAL DEFENSES: Polymorph self,
+The symbolism of a name is very important to the Indians, so important shape change
+that no charm spell will work on an Indian priest without knowledge of MAGICAL RESISTANCE: 75%
+that priest’s name. All Indian rituals involving demons or devils require the SIZE: M (6') @
+use of a large fire for control of the creature. ALIGNMENT: Chaotic good
+WORSHIPER’S ALIGN: All alignments
+Rituals revolve around the seasons. The ebbing of one season into another SYMBOL: Large raven
+is a time of sacrificing important possessions of the tribe. Food, finely PLANE: Elemental Plane of Air
+made jewelry, weapons used successfully in battle and the like are burned CLERIC/DRUID: 12th level in each
+at these times for the good of the tribe in the upcoming season. Indian FIGHTER: 10th level ranger
+clerics are expected to be apart from the tribe daily in meditation with the MAGIC-USER/ILLUSIONIST: 16th level
+village’s patron deity. When great evil comes on the tribe, it is up to the in each
+cleric to protect the tribe, either by direct action or personal sacrifice. THIEE/ASSASSIN: 14th level thief
+MONK/BARD: Nil
+All Indian clerics dress with a number of magical symbols and relics that PSIONIC ABILITY: VI
+they have fortified with holy power. These relics are buried with the cleric S:19(+3,+7) 1:24 W:24 D:25 C:23 CH:22
+in the event of his death. The selection of these symbols is personal to the
+cleric, based on visions he will have received at the beginning of his or her The Raven is the great transformer-trickster who is responsible for the
+career. One of these symbols will always reflect the patron deity’s symbol. creation/transformation of the world. Because of his great poly-
+morph/shape change abilities he can appear in virtually any form he
+Young Indian clerics enter battle alongside the rest of the warriors of the chooses. In addition to a raven, he may also appear as a fox, a jay or the
+tribe, while the older clerics attempt to enlist the help of the tribal gods for moon. He will fight only as a last resort and then only as a giant raven. Al-
+the battle. It is the job of the tribal priest to make the warpaint of the though known as the great provider for mankind (including the giving of
+warriors and bless the men and weapons before battle. fire) the raven loves to play tricks, usually for the purpose of obtaining
+
+food to satisfy his ravenous appetite.
+The tent or lodge of the cleric(s) is a place taboo to the rest of the tribe and
+
+supposedly guarded by strong spirits. Worship of most deities is held in the He is most likely to intervene on the behalf of his worshipers when they
+open. are in need of necessities. The most successful way to appeal to him is by
+offerings of food.
+
+SACRED BUNDLE
+
+With the help of a tribal cleric and the advice of an Indian spirit that has
+been summoned for this purpose, a warrior can make a sacred bundle. COYOTE
+This thing could be made out of anything that the summoned spirit
+indicates is sacred to that Indian. It gives the owner the following benefits:
+
++2 on all saving throws; the warrior is surprised only on aroll of 1 in 6; he Lesser god
+has an armor class of 2; and one point is subtracted from each die of ARMOR CLASS: 2
+damage done to the being in battle. MOVE: 24"
+
+HIT POINTS: 330
+There are always from 5 to 10 items in a bundle, and the summoned spirit NO. OF ATTACKS: 2
+chooses several of the items so that they are very dangerous to secure DAMAGE/ATTACK: 3-30
+(thus proving the worthiness of the supplicant). Things like a rattle from a SPECIAL ATTACKS: Nil
+cave of giant snakes, a feather from a high nesting giant eagle, or the hair SPECIAL DEFENSES: Nil
+of 13 enemies killed in battle are the type of items that go into a sacred MAGIC RESISTANCE: 75%
+bundle. When all of the items have been acquired, the priest of the tribe SIZE: L (8')
+must be brought; he will demand that the last offering placed in the bag ALIGNMENT: Chaotic neutral
+be of his choosing. This thing is always something that the priest can use a WORSHIPER’S ALIGN: Thieves and
+part of for his own purposes. chaotic neutrals
+
+SYMBOL: Coyote
+
+PLANE: Prime Material Plane
+
+CLERIC/DRUID: 14th level in each
+
+FIGHTER: 15th level fighter
+
+MAGIC-USER/ILLUSIONIST: 14th level
+magic-user/17th level illusionist
+
+THIEF/ASSASSIN: 18th level thief
+
+MONK/BARD: Nil
+
+PSIONIC ABILITY: I
+
+S:20(+3,+8) 1:24 W:19 D:24 C:21 CH:16
+
+12

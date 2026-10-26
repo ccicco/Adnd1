@@ -1,0 +1,77 @@
+NORSE MYTHOS NORSE MYTHOS
+
+Though Uller is in many ways an outsider, the other Aesir have a high VIDAR (god of strength and silence)
+regard for his capabilities, and he has been known to temporarily rule in
+Odin’s place when Odin was elsewhere. Lesser god
+Uller is the patron of archers, and a mighty bowman. He uses a +5 long ARMOR CLASS: -3
+bow; he can shoot it at any target that he can see, with no range penalties, MOVE: 21"
+and he never misses targets less than 200" away. He also wields a +4 HIT POINTS: 380
+two-handed sword that strikes for 2-20 points of damage (plus strength NO. OF ATTACKS: 2
+bonus). DAMAGE/ATTACK: 8-80
+SPECIAL ATTACKS: See below
+Uller is also the god of winter, and sometimes gives aid to those less able SPECIAL DEFENSES: Silence, +2 or
+to survive it than he. better weapon to hit
+
+MAGIC RESISTANCE: 95%
+
+SIZE: L (20°)
+
+ALIGNMENT: Chaotic good
+WORSHIPER’S ALIGN: Chaotic good
+SYMBOL: Iron shoe
+
+PLANE: Gladsheim
+
+CLERIC/DRUID: 10th level druid
+FIGHTER: 18th level ranger
+MAGIC-USER/ILLUSIONIST: Nil
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nil
+
+PSIONIC ABILITY: VI
+S:25(+7,+14) 1:20 W:19 D:25 C:25 CH:22
+
+VALKYRIES ‘‘Choosers of the Slain’’ i
+
+ARMOR CLASS: -2
+
+MOVE: 15"
+
+HIT POINTS: 100
+
+NO. OF ATTACKS: 2
+DAMAGE/ATTACK: By weapon type
+SPECIAL ATTACKS: Nil
+SPECIAL DEFENSES: Nil
+MAGIC RESISTANCE: 25%
+SIZE: M (5%)
+
+ALIGNMENT: Chaotic neutral
+CLERIC/DRUID: Nil
+
+FIGHTER: 15th level fighter
+MAGIC-USER/ILLUSIONIST: Nil
+THIEF/ASSASSIN: Nil
+
+Vidar, a son of Odin, is a stoic bastion of strength for the Aesir in times of
+need. He speaks only when he must, and then he uses as few words as
+@ possible. Though not a sociable god, his hate of evil is strong, and when
+
+MONK/BARD: 8th level bard ‘/A\VA@:' the Aesir don’t need him, he combats it in his own way.
+PSIONIC ABILITY: Nil _ | g
+
+Attack/Defense Modes: Nil Though not a greater god, Vidar’s strength and constitution are renowned,
+$:19(+3,+7) 1:17 W:17 D:18 C:19 CH:19 and he is a fearsome opponent to enemies such as giants. On his right foot
+
+he wears a magical iron shoe, with which he can strike twice per round for
+
+These warrior maidens ride pegasi of maximum hit points. These mounts 8-80 points of damage. Any object or person that Vidar steps on with this
+are the offspring of Sleipner. It is the Valkyries’ duty to bring the souls of shoe (successful ““to hit’”” roll required) will be pinned until the god
+the best and most valiant slain warriors from battlefields to Valhalla, the chooses to let them go. No creature can fight or cast spells when under
+hall of Odin. They act as serving maids in Odin’s hall and as handmaidens Vidar’s shoe.
+to Frigga. When they ride forth to choose the slain, their armor gives off a
+pearly, flickering light that is said to cause the Aurora Borealis. They travel At will, Vidar can make a 24" radius around himself completely silent. This
+ethereally, and are only visible to warriors in mortal danger. effect cannot be countered by dispel magic, spell turning, or anything else.
+
+124

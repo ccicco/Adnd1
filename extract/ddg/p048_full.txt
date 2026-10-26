@@ -1,0 +1,44 @@
+CTHULHU MYTHOS CTHULHU MYTHOS
+
+SHUB-NIGGURATH (black goat of the woods with a thou- If any enemy is so foolish as to approach to within 30’ of the being, the
+sand young) pool will lash out with a huge powerful tentacle; if it hits, it will pull the
+. unfortunate victim into the pool, where he or she will immediately be-
+Lesser god come part of the evil swirling protoplasm. Any creature struck has a per-
+centage chance of not being pulled into the pool equal to his or her
+ARMOR CLASS: 4 strength. Shub-Niggurath strikes only once per turn in this way and can si-
+MOVE: None multaneously create monsters.
+HIT POINTS: 400
+NO. OF ATTACKS: 1 Though its body is trapped deep in the caverns, Shub-Niggurath travels the
+DAMAGE/ATTACK: See below Prime Material Plane in astral form, using its psionic powers to do evil and
+SPECIAL ATTACKS: Monster creation aid its worshipers.
+SPECIAL DEFENSES: + 2 or better
+weapon to hit YOG-SOTHOTH (the key and guardian of the gate)
+MAGIC RESISTANCE: 95%
+SIZE: L (100" in diameter) Greater god
+ALIGNMENT: Chaotic evil
+WORSHIPER'S ALIGN: Chaotic evil ARMOR CLASS: -2
+SYMBOL: Black goat MOVE: 18"
+PLANE: Prime Material Plane HIT POINTS: 400
+CLERIC/DRUID: Nil NO. OF ATTACKS: 12
+FIGHTER: As 16+ HD monster DAMAGE/ATTACK: 1-8
+MAGIC-USER/ILLUSIONIST: Nil SPECIAL ATTACKS: See below
+THIEF/ASSASSIN: Nil SPECIAL DEFENSES: Immune to
+MONK/BARD: Nil charm
+PSIONIC ABILITY: | MAGIC RESISTANCE: 50%
+S:24(+6, +12) 1:25 W:20 D:19 C:25 CH:-4 SIZE: L (50" diameter)
+ALIGNMENT: Chaotic evil
+This fountain of uncleanliness is a huge pool of gray matter, 100 feet WORSHIPER’S ALIGN: Chaotic evil
+across, in the caverns beneath Mount Voormithadreth. It is constantly SYMBOL: Y rune
+bubbling and putting forth mouths, limbs, pseudopods and whole PLANE: Astral Plane
+creatures. 1-100 small monsters are created from the pool each round, and CLERIC/DRUID: Nil
+they go crawling, flopping, or flying away into the caverns above. Some FIGHTER: As 16+ HD monster
+fall back into the pool, which then grows mouths and devours them. Shub- MAGIC-USER/ILLUSIONIST: 15th level
+Niggurath is intelligent and telepathically sensitive. When it senses the ap- magic-user
+proach of enemies (range 1,000") it will begin creating monsters to defend THIEF/ASSASSIN: Nil
+itself, one per melee round. These will be random according to the follow- MONK/BARD: Nil
+ing table (d6): 1. Byakhee; 2. Deep One; 3. Great Race; 4. Mi-Go; PSIONIC ABILITY: |
+5. Primordial One; 6. Shoggoth. S$:25(+7,+14) 1125 W:23 D:20 C:25 CH:-7
+
+R AR 7 )
+e ,!f-’.rf‘ A0
+

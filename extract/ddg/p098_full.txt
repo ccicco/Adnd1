@@ -1,0 +1,149 @@
+NEHWON MYTHOS NEHWON MYTHOS
+GRAY MOUSER (hero) His temples are among the mightiest in all of Lankhmar. It seems that the
+more powerful patrons are devoted to the cult more out of fear of “the re-
+vealing of information”” than faith in the might of the religion. Clerics
+make it their personal duty to sneak about the town, learning all they can
+about the populace.
+
+ARMOR CLASS: 2
+
+MOVE: 12"
+
+HIT POINTS: 96
+
+NO. OF ATTACKS: 3/2 (or 3; see
+below)
+
+DAMAGE/ATTACK: By weapon type
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: Standard
+
+SIZE: M (5%)
+
+ALIGNMENT: Neutral
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 11th level fighter
+
+MAGIC-USER/ILLUSIONIST: 3rd level
+magic-user
+
+THIEF/ASSASSIN: 15th level thief
+
+MONK/BARD: Nil
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+ASTRAL WOLF
+
+FREQUENCY: Very rare
+
+NO. APPEARING: 3-12
+
+ARMOR CLASS: 3 (on the astral
+plane)
+
+MOVE: 18"
+
+HIT DICE/POINTS: 3 HD
+
+% IN LAIR: 50%
+
+TREASURE TYPE: Nil
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: 2-8
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: Nil
+
+$:16(0,+1) 1:18 W:14 D:19 C:17 CH: 18 MAGIC RESISTANCE: Standard
+INTELLIGENCE: Animal
+
+This short man of the western cities supplies the refinement and delicacy ALIGNMENT: Neutral evil
+
+his brawny partner lacks. He calls his rapier Scalpel and the dagger he SIZE: L (4" ot the shoulder)
+
+uses (balanced for throwing) Cat’s Claw. The Gray Mouser is very fond of PSIONIC ABILITY: Nil
+
+studying things arcane, but has not the magical skills to master his studies. Attack/Defense Modes: Nil
+
+He has a great aversion to anything sharp being pointed at him, an LEVEL/X.P. VALUE: 111/90 + 3 per hp
+
+aversion that has saved his life many times. He generally fights with
+Scalpel in his right hand and Cat’s Claw in his left, incurring no penalties to
+hit due to his phenomenal dexterity. When so armed, he strikes 3 times per
+melee round, with a 50% chance that the third strike will be with either
+
+These creatures are wolves that have died hungry and now roam about the
+wastelands in astral form, seeking to fill their now ever-empty bodies. All
+
+weapon attacks are made in isolated areas. These creatures are able to force sleep-
+
+) ing humans into the astral plane when there are 5 or more wolves con-
+While the Mouser grew up on the streets (with all that that implies), his centrating on the act (save vs. spells GPP|iC9b|9)j When humans are at-
+teen years were spent with an old hedge magician who taught him the tacked in this other plane, their earthly bodies will show the damage of
+ways of law and a little magic. It was these days spent in the forests with the wolves’ fangs.
+
+his mentor that gave Mouser his streak of morality. It was shortly after this
+
+time that the young man met his lifelong friend Fafhrd. While the Gray
+
+Mouser is a thief, a liar, and a trickster supreme, he can be relied upon to BEHEMOTH
+keep faith for causes he supports and people he favors.
+
+FREQUENCY: Very rare
+NO. APPEARING: 1
+ARMOR CLASS: 4
+
+By B
+
+AARTH MOVE: 12"/ /18"
+HIT DICE/POINTS: 15 HD
+Demigod % IN LAIR: 30%
+TREASURE TYPE: Nil
+
+ARMOR CLASS: 2 NO. OF ATTACKS: 1
+MOVE: 18" DAMAGE/ATTACK: 4-40
+HIT POINTS: 244 SPECIAL ATTACKS: Nil
+NO. OF ATTACKS: 32 SPECIAL DEFENSES: Nil
+DAMAGE/ATTACK: By weapon type MAGIC RESISTANCE: Standard R
+SPECIAL ATTACKS: See below INTELLIGENCE: Animal - /
+SPECIAL DEFENSES: See below ALIGNMENT:I Neutral v / 7
+MAGIC RESISTANCE: 25% SIZE: L (40" long) ;7 (g )
+SIZE: M (5%") PSIONIC ABILITY: Nil =“‘®‘7///
+ALIGNMENT: Lawful neutral Attack/Defense Modes: Nil
+WORSHIPER’S ALIGN: Lawful neutral LEVEL/X.P. VALUE: VII1/4,000 + 20 Tt IAQURYS
+SYMBOL: Glowing gold rectangle per hp
+
+on a field of black
+PLANE: Godsland Imagine a killer whale with four stubby legs and no fins and you have a
+CLERIC/DRUID: 15th level cleric perfect picture of a swamp behemoth. These fearsome mammals are
+FIGHTER: 10th level fighter easily capable of crossing water, marsh grass, and quicksand. A behemoth
+MAGIC-USER/ILLUSIONIST: 30th level always attacks the largest thing in any given group. It has a white cousin of
+
+magic-user the snowy North which has a thick coat of fur and short claws on its feet.
+THIEF/ASSASSIN: Nil This snow beast is known to hunt during the fiercest of blizzards. There is
+MONK/BARD: Nil also a jet black species with much longer legs that inhabits the plains and
+PSIONIC ABILITY: Nil hills of Nehwon.
+
+$:20(+3,+8) 1:25 W:24 D:25 C:23 CH:22
+
+Aarth was once a powerful wizard, becoming so renowned that after his
+death, he achieved demigodhood. Because of the vast numbers of his wor-
+shipers, when the cult is suffering greatly, he will be brought to the Prime
+Material Plane to help his followers.
+
+He instantly knows the powers of any device used against him and he has
+a special spell that can negate any magical device as a rod of cancella-
+tion. When he takes personal part in a battle, he fights invisibly.
+
+97

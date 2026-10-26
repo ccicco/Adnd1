@@ -1,0 +1,102 @@
+EXPLANATORY NOTES EXPLANATORY NOTES
+
+DAMAGE PER ATTACK: This simply indicates the amount of damage a the alignment of the deity’s clerics, which must be identical with their
+given attack will cause when it hits expressed as a spread of hit points. In patron’s.
+
+the case of intelligent beings who can use weapons, the damage from the
+
+primary weapon(s) of employment is listed, but this may vary if other SYMBOL: Fairly self-explanatory, this is the symbol by which the deity and
+weapons are substituted. Magical weapon bonuses are not included. his or her faithful followers are known. It will be found engraved upon
+
+most holy items.
+SPECIAL ATTACKS: This notes such attack modes as breath weapons,
+
+poison, magic use, inherent abilities, special weapon powers, etc. A full PLANE: This refers to the deity’s plane of origin. Usually this will be an
+explanation of the mode is detailed in the body of the description below. outer plane corresponding to the deity’s alignment, but sometimes it varies
+This listing only includes special abilities above and beyond character due to the being’s particular sphere of influence, as with those deities
+class abilities (if such are listed in the statistics). originating on the elemental planes or actually existing on the Prime
+
+Material Plane. Also, some deities may be located on a plane which seems
+SPECIAL DEFENSES: These are simply what the term implies and are de- to conflict with their alignment because other deities of the same pan-
+tailed in the material describing the being. theon with whom he or she is associated are also located there.
+
+CLERIC/DRUID: This refers to the being’s ability to function as a cleric
+
+MAGIC RESISTANCE: This indicates the percentage chance of any spell ab- and/or druid. Wisdom spell bonuses apply to the number of spells that
+solutely failing to affect the magic-resistant creature. It is based on the being can have. Note that a divine being need not be of neutral alignment
+spell being cast by a spell-caster of 11th level, and it must be adjusted up- fo have levels of druidical ability. Furthermore, nothing prevents deities
+wards 5% for each level below 11th or downwards 5% for each level from functioning in several different apparently-inconsistent classes at
+above 11th of the spell-caster casting the spell. Thus a magic resistance of once.
+
+95% means that a 10th level spell-caster has no chance of affecting the
+
+creature with a spell or spell-like effect, while a 12th level spell-caster has FIGHTER: This refers to the being’s ability to function as a fighter, paladin
+a 10% chance. Even if a spell does affect a magic-resistant creature, the or ranger. Note that alignment does not necessarily preclude inconsistent
+creature is entitled to normal saving throws (if applicable). A creature’s classing here, either.
+
+magic resistance extends only to its immediate possessions, i.e. anything
+
+carried or worn. Area-effect spells will still function if targeted with a MAGIC-USER/ILLUSIONIST: This describes the level of the being’s general
+magic-resistant creature within their area; the creature itself might not be magical spell ability, if any. Simultaneous classification in both areas is
+affected, though all others in the spell area will be subject to spell effects. possible.
+
+(A fireball, for example, may wipe out a cluster of orcs, and a devil stand-
+
+ing in their midst might be totally unaffected due to its magic resistance). THIEF/ASSASSIN: This refers to the being’s level of ability in regard to the
+The magic resistance of a creature has an effect on certain existing spells thief and/or assassin classes. Once again, alignment does not preclude in-
+such as hold portal, where it indicates the probability of the magic resist- consistent classing.
+
+ance shattering the existing spell.
+MONK/BARD: This refers to the being’s abilities as a monk or bard, if any.
+
+Special Note: Certain deities have special abilities (of a magical origin) Note that alignment is not necessarily a consideration here for either of
+that “never fail”, e.g. a weapon that never misses, or an ability against these classes, and that bardic ability indicates only that a being has the
+which there is no save. Creatures with magic resistance may still avoid the corresponding bardic powers, and does not necessarily imply abilities in
+effects of these abilities if they make a successful magic resistance roll. To the fighter and thief classes.
+
+determine level of the deity with the magic ability, use the deity’s highest
+
+level character class ability, unless it is less than 15th level for demigods, PSIONIC ABILITY: Where psionic abilities are indicated for heroes or
+20th level for lesser gods, or 25th level for greater gods, in which case the monsters, they are listed as a strength point value, with attack and defense
+aforementioned levels should be used. modes noted. However, the gods’ psionic abilities are somewhat stand-
+
+ardized, and fall into the following six classes:
+INTELLIGENCE: In monsters, this indicates the basic equivalent of human
+
+"I1Q”. Certain monsters are instinctively, or otherwise, cunning, and such is Psionic Attack Defense
+accordingly noted in the body of the descriptive material. The ratings cor- Class Strength Disciplines Modes Modes
+respond roughly to the following character intelligence scores: | 326-365 5 minor, 2 major All All
+
+1l 276-315 4 minor, 2 major All All
+0 Non-intelligent or not ratable ] 236-265 3 minor, 2 major All All
+1 Animal intelligence v 181-210 3 minor, 1 major All All
+2-4 Semi-intelligent \% 91-110 2 minor, 1 major A,B,CE F,G,H
+5-7  Low intelligence VI* Nil Nil Nil Nil
+8-10 Average (human) intelligence
+11-12 Very intelligent * Beings listed as class VI cannot use psionics and are invulnerable to any
+13-14 Highly intelligent type of psionic attack, including psionic blast.
+15-16 Exceptionally intelligent
+17-18 Genius Psionic disciplines function at @ minimum level of 15th for demigods, 20th
+19-20 Supra-genius for lesser gods and 25th for greater gods.
+
+21+ Gaodlike intelligence
+S: I: W: D: C: CH: These are the abbreviations for the being’s abilities.
+
+SIZE: This is abbreviated as: "'S’’, smaller than a typical human; “M"’, ap- They are followed by the entity’s scores. Ability scores that exceed 18 are
+proximately man-sized (5" to 7’ tall and of approximate human build); and explained below.
+"L, larger than man-sized in one way or another and generally having
+greater mass. STRENGTH: This score is always followed in parentheses by the being’s
+bonus ““to hit” and damage, if any. These correspond to the following
+ALIGNMENT: This shows the characteristic bent of a monster or hero to law table, for those scores above 18:
+or chaos, good or evil or towards neutral behavior possibly modified by
+good or evil intent. It is important with regard to the general behavior of "To Hit" Damage Weight Open
+the being when encountered. Score Bonus Bonus Allowance Doors Bend Bars/Lift Gates
+19 +3 +7 4,500 7in8(3) 50% (as hill giant)
+The above is also true as regards the alignment of divine beings, except 20 +3 +8 5,000 7in8(3) 60% (as stone giant)
+that deities are not always constrained to follow their alignment to the 21 +4 +9 6,000 9in10(4) 70% (as frost giant)
+letter. Their motives and purposes are far above the mortal, and though a 22 +4 +10 7,500 11in12(4) 80% (as fire giant)
+deity will generally follow his or her alignment, the being’s specific 23 +5 +1 9,000 11in12(5) 90% (as cloud giant)
+actions may sometimes seem to contradict this. 24 +6 +12 12,000 19in20  100% (as storm giant)
+(7 in 8)
+WORSHIPER'S ALIGN: This refers to the general alignment of those who 25 +7 +14 15,000 23in24 100% (as titan)
+worship, adore or propitiate the deity. This does not necessarily apply to (9in10)

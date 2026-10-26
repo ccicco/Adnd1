@@ -1,0 +1,175 @@
+MELNIBONEAN MYTHOS MELNIBONEAN MYTHOS
+
+MYYRRHN NNUUURRRR'C'C’ (master of the insect swarm)
+o “King with Wings"’
+
+FREQUENCY: Rare
+
+NO. APPEARING: 3-30
+
+ARMOR CLASS: 8
+
+MOVE: 1277/24"
+
+HIT DICE/POINTS: 4 HD
+
+% IN LAIR: 50%
+
+TREASURE TYPE: D
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: By weapon type
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: 5%
+
+INTELLIGENCE: Average to very
+
+ALIGNMENT: Neutral good
+
+SIZE: M (&)
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+LEVEL/X.P. VALUE: 1117125 + 4 per
+
+hp
+
+Demigod
+
+ARMOR CLASS: -2
+
+MOVE: 12°'/48"
+
+HIT POINTS: 300
+
+NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: 4-40
+
+SPECIAL ATTACKS: Poison
+
+SPECIAL DEFENSES: Fear aura
+
+MAGIC RESISTANCE: 15%
+
+SIZE: L (40’ tall)
+
+ALIGNMENT: Neutral
+
+WORSHIPER’S ALIGN: Neutral
+(insects)
+
+SYMBOL: Mosquito
+
+PLANE: Demi-plane of insects
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 18th level fighter
+
+MAGIC-USER/ILLUSIONIST: Nil
+
+Winged humanoids with h'ow|.<ish‘fc1ces gnd a wing span of ten feet, the THIEF/ASSASSIN: Nil
+
+Myyrrhn are very fond of fighting in the air and try to avoid combat on the MONK/BARD: Nil
+
+ground. When they are reduced to less than 5 hit points they will fly away, PSIONIC ABILITY: Nil
+
+leaving their comrades to continue the battle. They generally use swords 5:25 1:10 W‘é D:20 C:25 CH:-6
+in battle. Their hereditary enemies are a race of giant owls (see AD&D ) ’ '
+
+MONSTER MANUAL).
+
+This giant mosquito with a wing span of 140 feet would fill any being with
+horror. It hates to be summoned: there is a 55% chance that it will do what
+the summoner asks and then attempt to kill him or her. Beings of less than
+8th level will run in fear from it as if affected by a fear spell (no saving
+throw).
+
+NIHRAIN HORSE
+
+FREQUENCY: Very rare
+
+NO. APPEARING: 1
+
+ARMOR CLASS: -2
+
+MOVE: 24"
+
+HIT DICE/POINTS: 10 HD
+
+% IN LAIR: 5%
+
+TREASURE TYPE: Nil
+
+NO. OF ATTACKS: 3
+DAMAGE/ATTACK: 1-10/1-10/2-8
+SPECIAL ATTACKS: Nil
+SPECIAL DEFENSES: See below
+MAGIC RESISTANCE: 25%
+INTELLIGENCE: Average
+ALIGNMENT: Neutral
+
+SIZE: L (8’ at the shoulder)
+
+PSIONIC ABILITY: Nil NURU-AH (master of cattle)
+Attack/Defense Modes: Nil
+
+Any creature hit by its proboscis must save vs. poison at -4 or die instantly.
+Even if the victim saves, it will suffer 4-40 points of damage (blood drain).
+
+While this being has few human worshipers, all insect races do it homage.
+
+LEVEL/X.P. VALUE: VII/1,950 + 14 Demigod
+
+per hp
+
+ARMOR CLASS: -2
+
+A horse of this type appears to be a great black stallion. It can shift into the MOVE: 15"
+Ethereal Plane at random times and thus there is a 25% chance that any HIT POINTS: 200
+successful hit will not inflict damage on a Nihrain horse. These creatures NO. OF ATTACKS: 0
+can gallop continuously for up to 48 hours, passing with equal ease over DAMAGE/ATTACK: Nil
+both water and land, and flying over chasms or other impediments when SPECIAL ATTACKS: Nil
+necessary. Members of this magical race of horses will only be lent to SPECIAL DEFENSES: See below
+mortals who are in the direct service of the primary forces of neutrality. MAGIC RESISTANCE: 100%
+
+SIZE: L (20’ at shoulder)
+
+ALIGNMENT: Neutral
+
+WORSHIPER’S ALIGN: Neutral
+(bovines)
+
+SYMBOL: Two cow horns
+
+PLANE: Demi-plane of cattle
+
+CLERIC/DRUID: See below
+
+FIGHTER: Nil
+
+MAGIC-USER/ILLUSIONIST: Nil
+
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nil
+
+PSIONIC ABILITY: |
+
+S:25 1115 W:25 D:15 C:25 CH:9
+
+Nuru-ah looks like a giant cow. It is totally pacifistic and its only function is
+to cure the sick and wounded. It can cure or raise any creature once per
+summoning. Any being with a wound or loss of hit points will not be able
+to attack this deity.
+
+While Nuru-ah has few human worshipers, it is worshiped by all bovines.
+
+92

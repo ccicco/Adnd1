@@ -1,0 +1,65 @@
+SUNERIAN - AYTHOS
+
+This culture was among man’s first attempts at civilization, and it is one of ENLIL (air & war god) ““ruler of the pantheon”
+man’s first recorded religions. Because of this, the gods are unusually close
+to their worshipers and every worshiper is a servant of his or her god. We Greater god
+
+constantly see a willingness to help that is soon lost to all other mythoi.
+ARMOR CLASS: -2
+
+Every city has its patron deity; all the people belong to that temple and MOVE: 127/36"
+none other. All officials of the city are clerics of the temple and the high HIT POINTS: 400
+priest is always the king or queen of that city-state. The temples have a NO. OF ATTACKS: 2
+stepped pyramid shape in the manner of the Aztec temples. DAMAGE/ATTACK: 50 points
+SPECIAL ATTACKS: See below
+Sacrifices and gifts to the deities are all made as items that will dress up SPECIAL DEFENSES: See below
+altars and the temple surroundings; the richer and more valuable the MAGIC RESISTANCE: 50%
+better. The clerics themselves make items to be directly sacrificed to the SIZE: M (64")
+gods by burning at the same time that human lives are sacrificed to the ALIGNMENT: Neutral good
+gods (primarily condemned criminals). WORSHIPER’S ALIGN: All good
+alignments
+Each temple has an image of its god on a raised platform in an inner shrine SYMBOL: Pickaxe
+closed off to the public. Before the image is a table used as an altar that PLANE: Elysium
+has all the gifts of the year placed upon it. There is a central courtyard CLERIC/DRUID: 20th level cleric
+beyond the main entrance for public worship. The building will have side FIGHTER: 19th level ranger
+chapels and storerooms of several types. The main entrance to the temple MAGIC-USER/ILLUSIONIST: 15th level
+is set at right angles to the inner temple. The more important temples are magic-user
+raised up on artificial hills (or ziggurats) of red brick. THIEF/ASSASSIN: Nil
+MONK/BARD: 12th level bard
+Clerics serve the best meat and drink to the gods on special tables beside PSIONIC ABILITY: Nil
+altars. This food is burnt every night for the gods’ use. The seventh, fif- $:25(47,4+14) 1:25 W:25 D:23 C:25 CH:24
+teenth, and twenty-fifth days of the month are holy days. A sacrifice is al-
+ways held on the night of the new moon. Enlil always appears as a tall man with a heavy dark beard and curly hair.
+At will, the god can shape change, and can ESP at any distance. Enlil can
+There are three degrees of punishment for clerical sins. Committing the raise electrical storms, and from them direct lightning bolts at targets up to
+first major transgression results in an acute severe gastro-intestinal disease a mile distant, doing 40 points of damage per strike (save vs. spells for half
+(as per DMG) for the offending cleric. The second transgression results in a damage). Unlike the other deities of this pantheon, Enlil has the power to
+punishment of 15 troubles, each worse than the last (though none are raise the dead. Enlil takes no damage from lightning or electrical attacks.
+automatically fatal). Thus, a cleric might be stung by a bee, then sprain an
+ankle, then suffer food poisoning, etc. If these warnings are not enough, In battle, the god wears a war helm that is not affected by anything. When
+the third transgression results in the death of the offending one. Any trans- Enlil is wearing it, he feels no shock or harm from objects hitting the helm.
+gression can be erased in the sight of the deity by a sacrifice sufficient in In any given melee, when attacked by only one weapon, that weapon is
+proportion to the nature of the offense. These sacrifices must be important forced to hit the helm (no saving throw). In other words, if Enlil were fight-
+and/or expensive. ing Thor, who uses Mjolnir, the hammer would be forced to hit the helm
+every time, no matter what Thor wanted, and Enlil would feel nothing. If
+Clerics of this pantheon must shave all hair from their bodies and wear attacked by two or more weapons, Enlil chooses which shall strike his
+kilts and robes of white with colorful borders. The shape and color of the helm. The god wields a stone axe in battle that does 50 points of damage
+border indicates the cleric’s patron deity. Female clerics wear rounded per strike, but no damage if it hits metal. (Enlil’s percentage chance of not
+conical hats to cover their baldness. hitting metal (if in combat with a metallically-armored opponent) is equal
+to the base armor class of the opponent times ten. For example, Enlil
+Note: The geographical area of the Sumerian mythos is almost exactly the would have only a 30% chance of striking an unarmored portion of a
+same as the Babylonian. Though separated by time, they share similar person in plate mail, if he “’hits”’.) Enlil’s axe does disenchant any magic
+cultures and ideas. (This overlap is in much the same manner as that of the item that it comes in contact with (no save). It cannot be broken, will tele-
+Greek and Roman mythoi.) While we could have listed these groups to- port to the god’s hand if taken more than 100 feet from the body of the
+gether, we thought that there was enough diversity between these two god, and has a 25% chance of negating any spell tossed at the god before
+sections to warrant separation. In some cases, this diversity has been the spell reaches him. (In addition, Enlil has 50% magic resistance, and a
+deliberately increased in order to prevent overlap. saving throw, if applicable.)
+W
+(i
+g
+| o =
+ﬁe/.,
+0 50
+el
+
+125

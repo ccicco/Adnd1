@@ -1,0 +1,136 @@
+GREEK MYTHOS GREEK MYTHOS
+PROMETHEUS (greater titan) ‘‘Forethought’’ THESEUS (hero)
+
+Lesser god ARMOR CLASS: 4
+
+MOVE: 12"
+
+HIT POINTS: 103
+
+NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: By weapon type
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: Standard
+
+SIZE: M (&)
+
+ALIGNMENT: Lawful good
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 13th level paladin
+
+MAGIC-USER/ILLUSIONIST: Nil
+
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: 9th level bard
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+S:18(76)(+2,+4) 1:18 W:17 D:18 C:18 CH:18
+
+ARMOR CLASS: -2
+
+MOVE: 15/24"
+
+HIT POINTS: 388
+
+NO. OF ATTACKS: 2 (fists)
+
+DAMAGE/ATTACK: 5-50/5-50
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: 50%
+
+SIZE: L(100°)
+
+ALIGNMENT: Neutral good
+
+WORSHIPER’S ALIGN: Good (human)
+
+SYMBOL: Torch
+
+PLANE: Olympus
+
+CLERIC/DRUID: 13th in each
+
+FIGHTER: 16th level ranger
+
+MAGIC-USER/ILLUSIONIST: 15th level
+magic-user
+
+THIEF/ASSASSIN: 10th level thief This hero was credited with defeating the first and most powerful
+
+MONK/BARD: 10th level bard “ " N minotaur. He was noted for his bravery and fearlessness, but often lost
+
+PSIONIC ABILITY: V j V struggles for power because of his refusal to deal on anything but an
+
+S:24(+6,+12) 1:25 W:20 D:24 C:24 CH:25 honest and open level with his enemies. He can be counted on to know
+the habits and weaknesses of all enemies he faces, both magical and non-
+Prometheus is the son of lapetus and Clymene, and the brother of Atlas magical.
+
+and Epimetheus. When the gods revolted against the titans, Prometheus
+sided with the gods since he correctly deduced the outcome of the
+struggle. Prometheus is credited with making the first man and woman
+from clay, and he has made it his task to help mankind whenever possible.
+Prometheus taught humans many of the civilized arts, including the medic-
+inal use of plants, cultivation of grains, and domestication of wild animals.
+
+Prometheus stole fire from the sun and gave it to humankind. For this af-
+front, Zeus ordered Prometheus chained to a mountain top where his
+perpetually-regenerating liver was torn out afresh each day by a griffon-
+
+vulture. Zeus repented after 30 years and allowed Heracles to free Prom- TYCHE (goddess of good fortune)
+etheus. After he was freed, Prometheus was invited to Olympus to join the
+gods. Lesser goddess
+Prometheus is the only titan worshiped as a god. As a token of his punish- ARMOR CLASS: -3
+ment, Zeus ordered Prometheus to wear a ring made from his chains. MOVE: 12°/36"
+Prometheus’ clerics also wear an iron ring set with a chip of stone HIT POINTS: 200
+supposedly from the mountain where Prometheus was chained. NO. OF ATTACKS: 1
+Prometheus expects his clerics to be self-reliant, but not self-centered. DAMAGE/ATTACK: See below
+Trickery and cunning are fair weapons but only if the end serves the SPECIAL ATTACKS: Nil
+human race as a whole. Prometheus will side with faithful clerics against SPECIAL DEFENSES: See below
+any force, even the most powerful god, but he takes a dim view of clerics MAGIC RESISTANCE: 100%
+calling upon him unless they have absolutely no chance of survival other- SIZE: M (5')
+wise. ALIGNMENT: Neutral
+WORSHIPER’S ALIGN: Neutral, or
+The clerics of Prometheus will take any available opportunity to kill a those wishing luck
+griffon. They will also do all in their power to prevent humans from attack- SYMBOL: Red pentagram
+ing any titan, and will actually side with Atlas or Epimetheus if they see PLANE: Olympus
+either titan under attack. CLERIC/DRUID: Nil
+FIGHTER: Nil
+Prometheus can create any mortal creature from clay in 2 melee rounds. MAGIC-USER/ILLUSIONIST: 15th level
+This creature will serve him until it dies, though Prometheus usually sefs it in each
+free after a specific service. In return for extraordinary service by one of THIEF/ASSASSIN: Nil
+his clerics, Prometheus may reward the cleric with a companion creature MONK/BARD: 10th level bard
+suitable to the cleric’s level of experience. PSIONIC ABILITY: !/
+
+S$:20(+3,+8) 1:25 W:25 D:25 C:22 CH:25
+
+Tyche appears as a rather small, slim, elfin human. She is able to cast
+’good luck’ as a spell. The recipient of this spell will always win any
+single contest, no matter what the odds. She can also shape change at will
+and speak with anything. If threatened, her touch drains one-half the total
+original hit points of her attacker (no saving throw).
+
+She has a small blue sphere that is able to absorb any one single attack in
+any given melee round and reflect the total damage that the attack would
+have done back at any being within touching distance of her person. This
+device is a function of her luck, and will not work for anyone else.
+
+The goddess is not treated very well in the pantheon, as the other deities
+think of her as a poor relative and not really of divine caliber. She is there-
+fore not often willing to aid them in their struggles against giants, titans,
+and the like.
+
+74

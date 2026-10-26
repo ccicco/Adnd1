@@ -1,0 +1,136 @@
+ABYPRTIAR Sicres:
+
+The ancient Egyptians developed a culture lasting over 3,000 years. It is Ra usually appears with the body of a man and the head of a hawk, sur-
+only natural that their faith would undergo a change in that time. Their mounted by a solar disk. Often he can be seen in the shape of a hawk. He
+deities aged, with Ra starting as the ruler and growing senile and Osiris can shape change at will, and has a permanent anti-magic shell which
+taking over after being killed by Set and being brought back to life. The prevents the entrance of others’ spell effects but allows Ra to cast his own
+pantheon presented is one with Ra in prominence only because there are spells. He can cast the light of day into any area he wishes. He rides
+more beings of power in this early grouping. through the air in a huge war galley made of part of the sun and called the
+Matet (this galley changes into a simple barge at night called the
+Temples were many in Egyptian society, but each city had only one major Semktet). It travels at a rate of 24", is surrounded by flames (which inflict
+deity. All the other deities could be worshiped, but only in an inferior posi- 40 points of searing damage on contact), and is never affected by magic.
+
+tion. Temples always follow the same design and differ only in size and
+splendor. They are shaped in a large rectangle, and enclosed with high
+walls. The entrance (only one obvious one, though there are several secret
+ones) is supported by 2 large pylons that are marked with the symbol of
+the god of the city. There is always a large public hall whose walls are
+covered with hieroglyphics depicting the story of the deity of the temple,
+but no image of that being is permitted here. There is always an inner
+sanctuary where the deity’s image is presented in the best materials the
+sect can afford (marble, alabaster, silver, gold, and the like). Near the
+temple is a cultivated garden where the priests and priestesses of the In battle, Ra has the power to shoot rays of intense heat from his hands,
+temple have to bathe every day. two at a time, to a range of 500 yards. These rays inflict 4-40 points of
+damage, and cannot be negated by any power in the universe.
+
+This area is holy, and if desecrated, the entire temple is rendered useless.
+
+Offerings are always objects that are pleasing to the eye and made to This god prevents fighting among the other beings of the pantheon and is
+dress up the altar, either in the outer hall or the inner court. Only priests able to reduce all conflict to a state where only the clerics of each sect are
+and priestesses are allowed in the inner sanctuary. able to do battle, with their respective gods never taking a hand, unless Ra
+
+himself is out of commission.
+Clerics of less than the fourth level are expected to serve their deity by
+serving the people with their knowledge, healing, or the like. Clerics of
+
+the fourth through the sixth level serve the needs of the temple, either by ANHUR (god of war)
+being messengers, using their powers to fight for the sect, or whatever else
+
+the higher clerics need. Female clerics can rise no higher than the 9th level Lesser god
+
+in ability, but it is necessary for all 11th level males or higher to take on a
+
+female cleric as a consort and advisor, and these women often rule in the ARMOR CLASS: -5
+
+stead of their male counterparts when the males have to be away from the MOVE: 15"/24"
+
+temple. The female clerics keep all official temple records. All clerics wear HIT POINTS: 345
+
+white in some part of their dress, and it is a great sin to be stripped of white NO. OF ATTACKS: 2
+
+for any reason and is cause for going on a major quest of redemption if it DAMAGE/ATTACK: 6-60 (+ 14)
+happens. Otherwise, clerics are as other humans, save that the males SPECIAL ATTACKS: See below
+shave their heads upon attaining the fourth or higher levels, while the fe- SPECIAL DEFENSES: Ability negation
+males wear long hair at all times. Egyptian clerics can only rise in levels by (see below); +2 or better
+donating large sums to the sect for its use (in AD&D terms it is necessary to weapon to hit
+
+donate the equivalent of the needed experience points in gold in order to MAGIC RESISTANCE: 20%
+
+rise in levels). SIZE: M (7’)
+
+ALIGNMENT: Chaotic good
+WORSHIPER’S ALIGN: Warriors
+
+RA (sungod) “Pharaoh to the Gods"’ SYMBOL: A cord
+PLANE: Prime Material Plane
+Greater god CLERIC/DRUID: Nil
+
+FIGHTER: 20th level ranger
+
+MAGIC-USER/ILLUSIONIST: 8th level
+in each
+
+-THIEF/ASSASSIN: 10th level assassin
+
+MONK/BARD: 7th level monk
+
+PSIONIC ABILITY: VI
+
+S:25(+7, +14) 1:19 W:12 D:25 C:25 CH:12
+
+ARMOR CLASS: -3
+
+MOVE: 24"/24"
+
+HIT POINTS: 400
+
+NO. OF ATTACKS: 0
+
+DAMAGE/ATTACK: Nil
+
+SPECIAL ATTACKS: Heat rays
+
+SPECIAL DEFENSES: Anti-magic shell,
++ 3 or better weapon to hit
+
+MAGIC RESISTANCE: 80%
+
+SIZE: M (&)
+
+ALIGNMENT: Neutral good
+
+WORSHIPER’S ALIGN: Neutral good
+
+SYMBOL: Solar disk encircled by a
+serpent
+
+PLANE: Prime Material Plane
+
+CLERIC/DRUID: 20th level cleric
+
+FIGHTER: 16th level fighter
+
+MAGIC-USER/ILLUSIONIST: 19th level
+magic-user
+
+THIEF/ASSASSIN: Nil
+
+Anhur is unusually tall and always appears as a human. He shape
+changes, but only when attacked by more than one being. He will some-
+times take forms with more than two arms to allow him to use more
+weapons. He commonly fights in +4 scale mail and his lance (the tip of
+which is made out of a part of the sun) is a +5 weapon that hits for 6-60
+points of damage plus his strength bonus of 14 points. It destroys all un-
+dead within 50 yards, no matter what is shielding them. In combat, Anhur
+always magically negates his enemy’s strongest ability (no saving throw
+applicable).
+
+A worshiper of Anhur offers sacrifices to him in battle, in the form of
+powerful enemies. If a follower of Anhur promises the god a foe’s life as a
+sacrifice, and the foe is at least twice as powerful as the worshiper (con-
+
+MONK/BARD: Nil sidering levels, hit points, special abilities, etc.), then if the worshiper is
+PSIONIC ABILITY: VI successful, there is a 1% chance that Anhur will immediately grant him or
+S$:20 1:25 W:25 D:20 C:25 CH:25 her sufficient experience to raise one level of experience.
+
+49

@@ -1,0 +1,131 @@
+EGYPTIAN MYTHOS EGYPTIAN MYTHOS
+
+ANUBIS (guardian of the dead) This great serpent not only has a poisonous bite (3-30 points damage and
+save at -4 or die), he can breathe 6-60 points of flame every other melee
+round in a 10” long by 4" wide cone. Apep attacks as a 16+ HD monster,
+with the ability to constrict for 4-24 points of damage. His scaly hide is so
+tough that 43 or better weapons are required to hit him, and nonmagical
+weapons shatter when they strike.
+
+Lesser god
+
+ARMOR CLASS: -2
+
+MOVE: 12"
+
+HIT POINTS: 300
+
+NO. OF ATTACKS: 3/2
+
+DAMAGE/ATTACK: 3-30
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: Blink ability; +2
+or better weapon to hit
+
+MAGIC RESISTANCE: 80%
+
+SIZE: M (6°)
+
+ALIGNMENT: Lawful good
+
+WORSHIPER’S ALIGN: All alignments
+
+SYMBOL: Black jackal
+
+PLANE: Astral Plane
+
+CLERIC/DRUID: 20th level cleric
+
+FIGHTER: 12th level paladin
+
+MAGIC-USER/ILLUSIONIST: 20th level
+
+magic-user
+
+APSHAI (god of insects)
+Demigod
+
+ARMOR CLASS: 3
+
+MOVE: 21"/21"
+
+HIT POINTS: 289
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: 6-60
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: + 1 or better
+weapon to hit
+
+MAGIC RESISTANCE: 10%
+
+THIEF/ASSASSIN: Nil SIZE: L (15')
+MONK/BARD: Nil ALIGNMENT: Neutral
+PSIONIC ABILITY: 11/ WORSHIPER’S ALIGN: Farmers
+S:24(+6,+12) 1:24 W:24 D:19 C:22 CH:19 SYMBOL: Praying mantis
+PLANE: Prime Material Plane
+Anubis appears as a man with the head of a jackal. He can animate any CLERIC/DRUID: Nil
+statue of himself, cast 2 charm monster spells at the same time, shape FIGHTER: 15th level fighter
+change at will, and short range teleport like a blink dog. The god hates all MAGIC-USER/ILLUSIONIST: Nil
+thieves, and if a tomb with his image within is being robbed, there is a 5% THIEF/ASSASSIN: Nil
+chance that he will come and kill the robber(s). MONK/BARD: Nil
+PSIONIC ABILITY: VI
+If this tomb has been consecrated especially to Anubis, there is a 10% S:20(+3,+8) 1:17 W:25 D:18 C:19 CH:-3
+
+chance that he will come, but this involves the intercession of a 10th level
+
+priest and the sacrifice to Anubis of 50,000 gp worth of precious gems. Apshai is a great praying mantis, able to shape change at will and call an
+
+insect plague on a person, town, or country. He can control any type of
+
+In his role as the collector of souls for transportation to the house of the insect (of a non-divine nature).
+dead, there is a 20% chance that a dead being (worshiping any Egyptian
+deity) will, while in the process of being raised from the dead by a cleric, His bite does 6-60 points of damage and he never misses his prey.
+
+attract the anger of the god, and as a result that cleric will be forced to go
+on a quest for the purpose of increasing the power of the cult of Anubis (no
+saving throw; judge’s option as to the quest).
+
+While the god is perfectly able to use spells or the like on his enemies, he BAST (cat goddess)
+particularly likes to bite them to death and does 3-30 points of damage
+when he attacks. Lesser goddess
+
+ARMOR CLASS: -2
+
+MOVE: 24"
+HIT POINTS: 300
+APEP (king of serpents) NO. OF ATTACKS: 2
+DAMAGE/ATTACK: 5-50/5-50
+FREQUENCY: Unique SPECIAL ATTACKS: Shape change
+NO. APPEARING: 1 SPECIAL DEFENSES: + 2 or better
+ARMOR CLASS: -4 weapon to hit; also see below
+MOVE: 18" MAGIC RESISTANCE: 45%
+HIT DICE/POINTS: 250 hp SIZE: M (6')
+% IN LAIR: 70% ALIGNMENT: Chaotic good
+TREASURE TYPE: H (X 3) WORSHIPER’S ALIGN: Chaotics of all
+NO. OF ATTACKS: 2 types
+DAMAGE/ATTACK: 3-30 (bite)/4-24 SYMBOL: Cat
+(constriction) PLANE: Gladsheim
+SPECIAL ATTACKS: Poison, breath CLERIC/DRUID: 15th level cleric
+weapon FIGHTER: 10th level fighter
+SPECIAL DEFENSES: + 3 or better MAGIC-USER/ILLUSIONIST: 15th level
+weapon to hit in each
+MAGIC RESISTANCE: 40% THIEF/ASSASSIN: Nil
+INTELLIGENCE: High MONK/BARD: Nil
+ALIGNMENT: Chaotic evil PSIONIC ABILITY: 11
+SIZE: L (300" long) S$:25(+7,+14) 1:24 W:70 D:23 C:20 CH:22
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil Bast’s bitter enemies are Set and his minions. When fighting evil with her
+LEVEL/X.P. VALUE: X28,350 claws, she often teleports about and shape changes so that she can use
+more claws in battle. She can sense evil within 100 yards. She is the
+This creature of the Abyss is the deadly enemy of the gods, particularly protector of all cat kind, and there is a 2% chance that she will see a being
+Osiris. Apep is the physical embodiment of chaotic evil in the Egyptian killing one of the cat race. When this happens, she may (5%) do one of the
+mythos. He is usually attended by 5-50 flame snakes (q.v.), who act at his following: come and kill the slayer, or demand that he or she devote one-
+will. half of the rest of his or her life to Bast.
+
+50

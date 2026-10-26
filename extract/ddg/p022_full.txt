@@ -1,0 +1,82 @@
+ARTHURIAN HEROES ARTHURIAN HEROES
+
+SIR PALOMIDES THE SARACEN This knight fought with King Arthur and almost defeated him. He later
+
+joined the Round Table and became one of the Queen’s Guards. Pellinore
+ARMOR CLASS: 2 hunts a strange unique creature, the Questing Beast, which his family is
+MOVE: 12" (9" in chain armor) fated to pursue, though neither they nor anybody else will ever catch it. At
+HIT POINTS: 93 the time of Arthur’s court, Pellinore is just past middle age, though still a
+NO. OF ATTACKS: 2 stout fighter.
+
+DAMAGE/ATTACK: By weapon type
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: Nil SIR TRISTRAM OF LYONESS
+
+MAGIC RESISTANCE: Standard
+
+SIZE: M (5%") ARMOR CLASS: -3
+
+ALIGNMENT: Neutral MOVE: 12" (6" in armor)
+
+CLERIC/DRUID: Nil HIT POINTS: 120
+
+FIGHTER: 16th level fighter NO. OF ATTACKS: 2
+
+MAGIC-USER/ILLUSIONIST: Nil DAMAGE/ATTACK: By weapon type
+
+THIEF/ASSASSIN: Nil SPECIAL ATTACKS: Nil
+
+MONK/BARD: 3rd level in each SPECIAL DEFENSES: Nil
+
+PSIONIC ABILITY: Nil MAGIC RESISTANCE: Standard
+
+Attack/Defense Modes: Nil SIZE: M (&)
+
+S:17(+1,+1) 1:18 W:11 D:18 C:17 CH:18 ALIGNMENT: Neutral
+CLERIC/DRUID: Nil
+
+A bitter rival of Sir Tristram, Palomides was noted for the quickness of his FIGHTER: 17th level fighter
+
+scimitar and his courage in battle. The man was also noted for his use of MAGIC-USER/ILLUSIONIST: Nil
+
+the composite bow (a weapon not usually used by knights of any order). THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nil
+PSIONIC ABILITY: Nil
+
+KING PELLINORE (knight of the questing beast) Attack/Defense Modes: Nil
+S:18(99) (+2, +5) 1:16 W:13 D:19 C:18 CH:17
+
+ARMOR CLASS: -2
+
+MOVE: 12" (6" in armor) Known for his skill of arms and savagery in battle, this knight was con-
+HIT POINTS: 65 sidered by many to be second only to Launcelot in battle skills. Tristram is
+NO. OF ATTACKS: 1 well-known for his ill-fated romance with the beautiful Lady Isolde, who is
+DAMAGE/ATTACK: By weapon type married to the evil and cowardly King Mark. The insanely jealous King
+SPECIAL ATTACKS: Nil searches constantly for ways to discredit or destroy the noble Tristram.
+
+SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: Standard
+
+SIZE: M (6%)
+
+ALIGNMENT: Lawful neutral
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 12th level fighter
+
+MAGIC-USER/ILLUSIONIST: Nil
+
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nil
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+S:18(01)(+1,+3) 1:15 W:10 D:18 C:18 CH: 15
+
+21

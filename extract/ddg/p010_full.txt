@@ -1,0 +1,87 @@
+DUNGEON MASTERING DIVINE BEINGS CLERICS AND DEITIES
+
+have better things to do than fight with mortals.) This summoning of aid the Positive or Negative Material Planes. Intervention in the Elemental
+takes no more time or effort than the teleport ability. Planes is subject to DM option, based upon the population he or she has
+
+placed there. (If there are elemental gods, the deities from the Outer
+Unless they have a history of mutual antipathy, deities will always be un- Planes will NOT go there.) Intervention occurs only on the Prime Material
+willing to fight other deities. They will back off from confrontation situa- Plane in most cases, with occasional intervention in the Astral and Ethereal
+tions whenever possible, preferring to work through underlings or chosen Planes.
+
+champions. For example, if a meddling party of characters accidentally
+summoned an evil god, they might wish to attempt to gate in a good god
+to protect them. They are almost sure to be disappointed. In all probability,
+the most aid they will receive through the gate is one (or more) of the
+god’s servants, or a quick teleport to a safe location.
+
+CLERICS AND DEITIES
+
+In fact, gate spells in general are more likely to result in the appearance of When a DM is deciding which gods will be commonly worshiped in his or
+one of the god’s followers, rather than the deity itself. A gate spell cannot her campaign, he must be aware of the fact that not all gods are equally
+compel a deity’s appearance — a god will come only if he or she chooses. powerful, and that this affects their ability to grant spells to their clerics. As
+is explained in the DUNGEON MASTERS GUIDE, 1st and 2nd level spells
+The gods are not unwilling to aid their worshipers. The fact is, gods have so are gained through the cleric’s knowledge and faith. All other spells are
+many worshipers that they prefer to give aid of a less specific and more gained through prayer. Third, fourth and fifth level spells are granted by
+general nature — subtle aid that will help their worshipers as a whole. This the supernatural servants or minions of the cleric’s deity. These servants
+type of aid usually goes unnoticed in the short run (except by high level range up to demigod level. Clerics whose patrons are demigods (and not
+clerics, who know what to expect). Specific aid to individuals is extremely lesser or greater gods) will receive their 3rd through 5th level spells direct-
+rare, despite the fact that this is the kind of aid deities are most frequently ly from their deity. A demigod cannot grant spells above 5th level, so a
+requested to supply. If the supernatural powers of the various QOuter Planes cleric of a demigod could never receive 6th or 7th level spells.
+could and would continually and constantly involve themselves in the
+affairs of the millions upon the Prime Material Plane, they would not only Sixth and seventh level spells are granted to clerics directly from their
+be so busy as to get neither rest nor relaxation, but these deities would be deities. Only the greater gods may grant 7th level spells.
+virtually handling all of their own affairs and confronting each other
+regularly and often. If an entreaty for aid were heard one time in 100, In each mythos included here, the deities have been divided into demi-
+surely each and every deity would be as busy as a switchboard operator gods, lesser gods and greater gods. The DM may carefully consider alter-
+during some sort of natural disaster. Even if each deity had a nominal ing these designations if they do not suit his or her campaign or concept of
+number of servants whose purpose is to supply aid to desperate ad- the deity.
+venturers, the situation would be frenzied at best. It is cbvious that inter-
+vention by a deity is no trifling matter, and it is not to be allowed on a Deities of all types, from the highest to the lowest, expect a great deal of
+whim, even if characters are in extremis! work from their clerics in return for the power to perform miracles. Clerics
+are expected to behave in a manner exemplary of the teachings of their
+This is not to dictate that deities will never come to characters. The mighty faith. Even common everyday concerns must be viewed in the light of their
+evil gods, demons, and devils are prone to appear when their name is beliefs. Clerics must stand out from the common fold as role models of
+spoken — provided they stand the possibility of gaining converts to their correct behavior, exhibiting greater wisdom and thoughtfulness, and
+cause. The forces of good might send some powerful creature of like align- living out the precepts of their religions and alignments.
+ment to aid characters on a mission in their behalf (e.g., a ki-rin, couatl, or
+good dragon). Certainly in the case of some contest between opposing The DM must also make sure that the cleric is aware of his or her place in
+deities all sorts of intervention will take place — but always so as not to the community and the church hierarchy. Cleric “adventurers”, which in-
+cause the deities themselves to be forced into direct confrontation! Other- cludes nearly all AD&D player character clerics, are often greatly re-
+wise, the accumulation of hit points and the ever-greater abilities and spected and admired (or feared) by the populace. However, due to their
+better saving throws of characters represents the aid supplied by super- somewhat unorthodox behavior, they rarely have any important place in
+natural forces. This is particularly true when characters advance to high their religion’s hierarchy. They are required to maintain appearances and
+level and become prominent. Deities often regard such characters as perform the proper rituals essential to their faith and alignment, regardless
+important among their mortal worshipers, and the characters themselves of their special mission in life.
+may be asked to (or be given no choice but to) take part in the maneuver-
+ings of the gods’ forces upon earth. Characters are usually totally without A cleric, no matter where he or she is, acts as an agent and representative
+knowledge of the part they play. In these cases, rather than being re- of his or her deity. The cleric should miss no opportunity to explain and
+questers of divine intervention, characters may actually become part of show to others, through both word and deed, the truth and rightness of his
+the intervention itself! or her religion. When clerics rise to high level, they are often expected to
+
+be judges, interpreters and arbitrators of the congregation’s needs.
+As Dungeon Master, you will have to determine the amount of involve-
+
+ment of deities as you develop your campaign. Spur of the moment inter- One of the more dangerous functions of any cleric is that of pawn of the
+vention can be handled as follows: If the character beseeching help has god he or she serves. Clerics are sometimes required to attempt to block
+been exemplary in faithfulness, then allow a straight 10% chance that the plans of the servants of other deities, and they may even be sacrificed
+some creature will be sent to his or her aid if this is the first time the for the ultimate goals of the god they serve.
+character has asked for (not received) help. If 00 is rolled, there is a per-
+centage chance equal to the character’s level of experience that the deity In addition to the above, there are other requirements which a cleric must
+itself will come, and this chance is modified as follows: fulfill if he or she is to remain in good standing with the patron god. De-
+pending upon the religion (and the DM’s decision), certain rituals and
+Each previous intervention in behalf of the character 5% services must be performed, sometimes at precise and regular intervals.
+The cleric should also freely undertake the performance of exceptional
+Alignment behavior only average 5% duties in the form of quests, heroism, and even (if necessary) voluntary
+martyrdom.
+Alignment behavior borderline 10%
+One important and sometimes expensive duty of a cleric is the creation of
+Direct confrontation with another deity required by the situation 10% places of worship for his or her deity. This could mean the building of
+simple roadside shrines at low level, while at a high level a cleric might
+Character opposing forces of diametrically opposed alignment +1% finance the construction of an entire temple. These structures or areas must
+be put in places of relative security, for the desecration of a temple is a
+Character serving deity proximately (through direct instructions or terrible blow to a religion’s honor.
+by means of some intermediary +25%
+There may come a time in the campaign when a cleric may fall away from
+The above applies only to activities on the Prime Material Plane. Deities the path of the deity he or she serves and need to be corrected or punished
+will not intervene on the planes which are the habitations of other deities, in some way. Clerics using only first and second level spells usually need
+i.e., the Outer Planes. They will neither venture to involve themselves in fear little direct retribution from their deity; the god expects higher level

@@ -1,0 +1,176 @@
+NEHWON MYTHOS NEHWON MYTHOS
+SPIDER GOD TYAA (winged goddess of evil birds)
+
+Demigod Lesser goddess
+
+ARMOR CLASS: 2
+
+MOVE: 18"
+
+HIT POINTS: 249
+
+NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: 3-30
+
+SPECIAL ATTACKS: Poison
+
+SPECIAL DEFENSES: See below
+
+MAGIC RESISTANCE: 10%
+
+SIZE: L (18’ at the shoulders)
+
+ALIGNMENT: Chaotic evil
+
+WORSHIPER’S ALIGN: Chaotic evil
+
+SYMBOL: Black opal
+
+PLANE: Godsland
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 15th level fighter
+
+MAGIC-USER/ILLUSIONIST: 15th level
+magic-users
+
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nil THIEF/ASSASSIN: Nil
+
+PSIONIC ABILITY: Nil 2 MONK/BARD: Nil
+
+$:22(+4,4+10) 1:18 W:9 D:22 C:24 CH:-3 PSIONIC ABILITY: Nil
+
+S:18(+1,+2) 1:19 W:20 D:25 C:20 CH:24
+
+Tyaa has the power to manifest herself in her high priestess, though this is
+rare. She can summon 20 of any predatory birds, but prefers to use the
+Birds of Tyaa, of which she can summon 100 a day. If forced into combat
+she uses weapons that are poisoned, preferring a + 2 longsword.
+
+ARMOR CLASS: —
+
+MOVE: 9/36"
+
+HIT POINTS: 311
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: By weapon type
+
+SPECIAL ATTACKS: Poisoned
+weapons
+
+SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: 32%
+
+SIZE: M (5')
+
+ALIGNMENT: Chootic evil
+
+WORSHIPER’S ALIGN: Chaotic evil
+
+SYMBOL: Bird of Tyaa
+
+PLANE: Godsland
+
+CLERIC/DRUID: 15th level cleric
+
+FIGHTER: 10th level fighter
+
+MAGIC-USER/ILLUSIONIST: 15th level
+magic-user
+
+Appearing as a giant black spider, this deity is known for its delight in re-
+ceiving human sacrifices. Its powers include the ability to summon 30
+phase spiders per day, the power to make all arachnids obey, and the
+ability to transfer the powers of a spider to its most powerful high priest.
+
+Its evil clerics work diligently to keep their god satisfied by way of human
+sacrifices. It rewards them with a gift of a pet large spider once per each
+ten sacrifices.
+
+Tyaa’s cult was banished from Lankhmar, but its worshipers can still be
+found in the mountains of Nehwon. Only women are permitted in the high
+priesthood and Tyaa demands the sacrifice of body parts from her more at-
+tractive worshipers. The Falconers of Tyaa are the male arm of the cult and
+always have some type of bird as a fighting companion. They, like the
+
+SPIDER, SALT priestesses, are able to communicate with all avian life.
+
+FREQUENCY: Rare
+
+NO. APPEARING: 1-6 VOTISHAL
+
+ARMOR CLASS: 6 '
+
+MOVE: 15" * 18" Demigod
+
+HIT DICE/POINTS: 3 HD
+
+% IN LAIR: 25% ARMOR CLASS: -
+
+TREASURE TYPE: Nil MOVE: 18"
+
+NO. OF ATTACKS: 1 HIT POINTS: 344
+
+DAMAGE/ATTACK: 1-8 NO. OF ATTACKS: 3/2
+
+SPECIAL ATTACKS: Poison DAMAGE/ATTACK: By weapon type
+
+SPECIAL DEFENSES: Nil SPECIAL ATTACKS: Nil
+
+MAGIC RESISTANCE: Standard SPECIAL DEFENSES: Nil
+
+INTELLIGENCE: Animal MAGIC RESISTANCE: 35%
+
+ALIGNMENT: Neutral SIZE: M (6')
+
+SIZE: M (4" long) ALIGNMENT: Lawful good
+
+PSIONIC ABILITY: Nil WORSHIPER’S ALIGN: Lawful good
+Attack/Defense Modes: Nil SYMBOL: Leather pouch
+
+LEVEL/X.P. VALUE: 11I/105 + 3 per PLANE: Godsland
+
+CLERIC/DRUID: 13th level cleric
+FIGHTER: 12th level fighter
+MAGIC-USER/ILLUSIONIST: 15th level
+magic-user
+THIEF/ASSASSIN: 25th level thief
+MONK/BARD: 3rd level bard
+PSIONIC ABILITY: V
+$:20(+3,+8) 1121 W:19 D:25 C:20 CH:20
+
+Votishal appears as a normal thief in all of his idol representations. This is
+another case of a man of great ability becoming venerated by later gener-
+ations. He was a master thief of the 14th level who reformed to the cause
+of good and law. His thieving abilities then went in the direction of rob-
+bing from evil groups to benefit the lawful good group he supported.
+
+hp
+
+This is a huge ugly spider about the size of a large pig. It has large suction
+pads on its feet allowing it to travel over any non-slippery surface. It lives
+in great salty swamps, where it makes complicated sticky web traps. It has
+a deadly poisonous bite.
+
+M '/
+
+\ \ Ze A
+
+If he manifests himself on the Prime Material Plane, he will try to kill all
+evil beings he encounters. His clerics rise alternately in the clerical class
+and the thief class. They are very zealous in their efforts to rob all evil
+people (especially evil shrines). They are in direct opposition to the
+Thieves’ Guild, and constantly try to get member thieves to join the sect by
+kidnapping them and brainwashing them in the temple crypts. The high
+clerics of this order are always 15th level patriarchs/12th level master
+thieves. No cleric can rise above the tenth level in this sect unless they
+have carried away some amount of riches from an evil temple.
+
+103

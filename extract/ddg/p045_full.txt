@@ -1,0 +1,127 @@
+CTHULHU MYTHOS CTHULHU MYTHOS
+
+AZATHOTH (the center of the universe) CTHUGA (master of the fire element)
+
+Greater god Greater god
+
+ARMOR CLASS: -2 ARMOR CLASS: -6
+
+MOVE: None MOVE: 36"
+
+HIT POINTS: 400 HIT POINTS: 400
+
+NO. OF ATTACKS: 20 NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: 3-18 (x 20) DAMAGE/ATTACK: 3-30/3-30
+
+SPECIAL ATTACKS: Nil SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: Insanity SPECIAL DEFENSES: See below
+
+MAGIC RESISTANCE: 95% MAGIC RESISTANCE: 50%
+
+SIZE: L (inconceivable) SIZE: L (40 yard radius)
+
+ALIGNMENT: Chaotic neutral ALIGNMENT: Chaotic evil
+
+WORSHIPER’S ALIGN: Chaotic WORSHIPER’S ALIGN: Chaotic evil
+
+(neutral or evil) SYMBOL: Flame
+
+SYMBOL: Seven-pointed star PLANE: Elemental Plane of Fire
+
+PLANE: Astral CLERIC/DRUID: See below
+
+CLERIC/DRUID: Nil FIGHTER: As 16+ HD monster
+
+FIGHTER: As 16+ HD monster MAGIC-USER/ILLUSIONIST: See
+
+MAGIC-USER/ILLUSIONIST: Nil below
+
+THIEF/ASSASSIN: Nil THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nil MONK/BARD: Nil
+
+PSIONIC ABILITY: VI PSIONIC ABILITY: |
+
+S:25(+7,4+14) I:— W:— D:20 C:25 CH:-7 $:25(+7,+14) 1:12 W:18 D:25 C:25 CH: 1
+
+Azathoth is a blind, mindless, amorphous mass the size of a star, floating This creature resembles a flaming amoeba with tentacles that appear to be
+
+at the center of the universe on the astral plane. It is attended by satellite flames emanating from its body. The heat of Cthuga’s body does 5-50
+
+creatures that provide an eerie music, like the sound of idiot flute players. points of damage to all within 100 yards of it, and it attacks with fire spells
+
+Azathoth is somewhat solid near the center, and can be attacked there, but at the same time. It cannot be controlled, and is immune to all heat and
+
+it will defend itself with its many pseudopods if so attacked. Any creature cold attacks. It is able to cast any fire spell of any type as a 30th level spell
+
+coming within 1,000 miles of Azathoth must save vs. spells at -6 or go caster, at the rate of two per round. While casting fire spells, it also lashes
+
+permanently mad. out with two of its tentacles per melee round; these do 3-30 points of
+damage each. It moves as a blink dog and attempts to destroy everything
+
+Those who worship Azathoth worship insanity, and Azathoth’s clerics are within any area to which it is summoned. When appearing in any location,
+
+themselves insane. It is unknown how Azathoth grants powers to its clerics, its first act is to summon 1-20 of its flame creatures. Cthuga can only be
+
+or even if Azathoth is aware of them (which is doubtful). struck by + 3 weapons or better as all others melt when touching him.
+
+The creature has a direct connection with the Prime Material Plane by way
+of a Palace of Fire that it has created in an active volcano. This palace is
+said to be filled with treasure resistant to flame and heat: gems, certain
+magic items, and the like.
+
+FREQUENCY: Very rare
+NO. APPEARING: 1-4
+ARMOR CLASS: 9
+MOVE: 6""/24"
+
+HIT DICE/POINTS: 10 HD
+% IN LAIR: 5%
+
+Cthuga's Flame Creature
+
+FREQUENCY: Very rare
+NO. APPEARING: 1-4
+ARMOR CLASS: -2
+
+) MOVE: 24"
+TREASURE TYPE: Nil it HIT DICE/POINTS: 16 HD
+NO. OF ATTACKS: 2 % IN LAIR: Nil
+
+DAMAGE/ATTACK: 1-10/1-10
+SPECIAL ATTACKS: Nil
+SPECIAL DEFENSES: Nil
+MAGIC RESISTANCE: 20%
+INTELLIGENCE: Average
+ALIGNMENT: Chaotic evil
+
+, “\““‘W{A TREASURE TYPE: Nil
+
+| NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: 2-20
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: Flame aura, +2
+or better weapon to hit
+
+: ‘»// | )/
+’/'\%,\ ,,,W ,/;,,/
+
+SIZE: L (20° tall) z MAGIC RESISTANCE: 10%
+PSIONIC ABILITY: 1V INTELLIGENCE: Average
+LEVEL/X.P. VALUE: 1X/9,350 + 20 4 ALIGNMENT: Chaotic evil
+per hp SIZE: L (30" radius)
+PSIONIC ABILITY: V
+LEVEL/X.P. VALUE: VII/1,950 + 14
+These giant furry bat-like creatures have humanoid legs that enable them per hp
+to stand like men. They can be summoned by clerics of Hastur through use
+of a gate spell (1-4 Byakhee will appear). They are able to teleport These creatures appear to be smaller versions of their master. Their bodies
+throughout the Prime Material Plane at will, carrying human beings with radiate 10 points of heat damage to all who come within 20 yards of them,
+them on their backs or in their talons. They are intelligent, telepathic, and and they can cast a single heat ray from their body every melee round that
+will obey those who carry the Elder Sign or who appeal successfully to does 2-20 points of damage if it hits. One of their functions is to appear
+Hastur. when the god is supposed to appear but is too busy or chooses not to come.
+

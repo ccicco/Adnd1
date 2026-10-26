@@ -1,0 +1,149 @@
+FINNISH MYTHOS FINNISH MYTHOS
+
+Water Dwarf (Ahto’s shield man) ILMARINEN (hero)
+
+ARMOR CLASS: -2 ARMOR CLASS: 0
+
+MOVE: 12" MOVE: 15"
+
+HIT POINTS: 99 HIT POINTS: 167
+
+NO. OF ATTACKS: 2 NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: By weapon type DAMAGE/ATTACK: 1-10 (+7)
+
+SPECIAL ATTACKS: Magical crossbow SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: Regeneration SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: Standard MAGIC RESISTANCE: Standard
+
+SIZE: S (4') SIZE: M (6')
+
+ALIGNMENT: Lawful good ALIGNMENT: Neutral good
+
+CLERIC/DRUID: Nil CLERIC/DRUID: 5th level druid
+
+FIGHTER: 16th level fighter FIGHTER: 15th level fighter
+
+MAGIC-USER/ILLUSIONIST: Nil MAGIC-USER/ILLUSIONIST: 9th level
+
+THIEF/ASSASSIN: Nil in each
+
+MONK/BARD: Nil THIEF/ASSASSIN: Nil
+
+PSIONIC ABILITY: Nil MONK/BARD: 15th level bard
+Attack/Defense Modes: Nil PSIONIC ABILITY: Nil
+
+S:18(37)(+1,+3) 1:16 W:15 D:18 C:18 CH:7 Attack/Defense Modes: Nil
+
+S:19(+3,+7) 1118 W:17 D:18 C:19 CH:17
+This dwarf is often sent on missions for Ahto, and at these times he is care-
+
+fully observed by the god. There is a 25% chance that Ahto will aid him in Ilmarinen is a blacksmith of great magical power, with the ability to create
+any difficulties he encounters and 100% chance that the god will appear if mighty magic items of many sorts. He is a massively built man who wears
+the dwarf is slain. + 4 leather armor and wields a +4 hammer that strikes for 1-10 points of
+
+damage. He has a magical sledge that pulls itself at a rate of 21 and can
+He uses a crossbow of accuracy at twice the usual rate of fire. For hand-to- travel over land or water. When traveling incognito or among enemies,
+hand combat he uses a +3 mace. Ahto has given him the ability to regen- llmarinen will yoke deer to the front of this sledge to conceal its magical
+erate 5 points per melee round when within 50 feet of a body of water. nature.
+
+HIISI (god of evil)
+
+Greater god
+
+ARMOR CLASS: 2
+
+MOVE: 18"
+
+HIT POINTS: 333
+
+NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: 4-40 (+12)
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: See below
+
+MAGIC RESISTANCE: 45%
+
+SIZE: M (7')
+
+ALIGNMENT: Chaotic evil
+
+WORSHIPER’S ALIGN: Chaotic evil
+
+SYMBOL: Lightning bolt in the night
+sky
+
+PLANE: Prime Material Plane
+
+CLERIC/DRUID: 15th level cleric
+
+FIGHTER: 15th level fighter
+
+MAGIC-USER/ILLUSIONIST: 15th level
+
+ILMATAR (goddess of mothers)
+Lesser goddess
+
+ARMOR CLASS: 4
+
+MOVE: 12"/24"
+
+HIT POINTS: 200
+
+NO. OF ATTACKS: 1
+DAMAGE/ATTACK: By weapon type
+
+illusionist '
+THIEF/ASSASSIN: 15th level assassin SPECIAL ATTACKS: N:_I
+MONK/BARD: 15th level bard SPECIAL DEFENSES: Nil
+PSIONIC ABILITY: VI MAGIC RESISTANCE: 50%
+S:24(46,4+12) 1:22 W:10 D:21 C:22 CH:23 SIZE: M (57)
+
+ALIGNMENT: Lawful good
+
+WORSHIPER’S ALIGN: Lawful beings
+of all types
+
+SYMBOL: Looped cross
+
+PLANE: Prime Material Plane
+
+CLERIC/DRUID: 13th level in each
+
+FIGHTER: 10th level paladin
+
+MAGIC-USER/ILLUSIONIST: 20th level
+magic-user
+
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: 9th level bard
+
+PSIONIC ABILITY: Nil
+
+S:14 1119 W:22 D:20 C:22 CH:19
+
+This god always appears as a huge, richly robed man with coarse features.
+His giant club does 4-40 points per strike. He constantly aids evil creatures,
+but does not like to directly enter battle, preferring to sit on the sidelines
+while sending in a group of 1-10 evil heroes (AC 2, 4th level, armed with
+swords).
+
+Evil beings are unable to do any damage to him either directly or in-
+directly.
+
+llmatar is Vainamoinen’s mother and is described as the Daughter of the
+Air. She can instantly gate in any Finnish god or goddess, and they will
+help her or her son, as they all owe her favors. She has a hand-sized ball
+that she carries in a copper box. This ball has written upon it all of the
+legends of creation and the spells used in that formation. She is able to use
+this thing to know all of the powers and abilities of any being that ever
+existed. She also has a sledge that moves by itself on the land, air, and
+water at a rate of 24",
+
+58

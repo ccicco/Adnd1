@@ -1,0 +1,158 @@
+MELNIBONEAN MYTHOS MELNIBONEAN MYTHOS
+HAAASHASTAAK (master of all lizardkind)
+
+Demigod
+
+ARMOR CLASS: -3
+
+MOVE: 21"
+
+HIT POINTS: 197
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: 7-70
+
+SPECIAL ATTACKS: Never misses
+
+SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: 75%
+
+SIZE: L (60" tall)
+
+ALIGNMENT: Neutral
+
+WORSHIPER’S ALIGN: Neutral
+(reptiles)
+
+SYMBOL: Lizard head
+
+PLANE: Demi-plane of reptiles
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 20th level fighter
+
+MAGIC-USER/ILLUSIONIST: Nil
+
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nil
+
+PSIONIC ABILITY: VI
+
+S:25 1111 W:3 D:19 C:24 CH:4
+
+Haaashastaak appears much like a giant tyrannosaurus rex. If, after sum-
+moning him, the caller lacks the proper means to send him back, he will
+eat the caller and then disappear. Returning him requires the power of a
+wish. The creature does 7-70 points of damage with each bite and never
+misses.
+
+KELMAIN
+
+While he has no human worshipers, he is revered by all reptilian types. He
+is aware of anything within the sensing range of any lizard. FREQUENCY: Very rare
+NO. APPEARING: See below
+ARMOR CLASS: 2
+
+KAKATAL (the fire lord) MOVE: 12"
+HIT DICE/POINTS: See below
+
+Lesser god % IN LAIR: 85%
+_— TREASURE TYPE: H
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: By weapon type
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: Immune to petri-
+fication and paralysis
+
+MAGIC RESISTANCE: Standard
+
+INTELLIGENCE: Very
+
+ALIGNMENT: Chaotic neutral
+
+SIZE: M (6')
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+LEVEL/X.P. VALUE: Variable
+
+ARMOR CLASS: 2
+
+MOVE: 24"
+
+HIT POINTS: 289
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: 6-48
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: +4 or better
+weapon to hit, plus see below
+
+MAGIC RESISTANCE: 50%
+
+SIZE: L (20" tall)
+
+ALIGNMENT: Chaotic neutral
+
+WORSHIPER’S ALIGN: See below
+
+SYMBOL: Three flames
+
+PLANE: Elemental Plane of Fire
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 18th level fighter
+
+MAGIC-USER/ILLUSIONIST: See
+below
+
+THIEF/ASSASSIN: Nil
+
+=
+These creatures are a savage race from the dimension of Limbo. They have
+golden skin that appears to be carved out of rock. They are humanoid in
+shape and have square eyes. The Kelmain fight in golden-colored armor
+and usually wield gold-colored broadswords. When summoned, they will
+fight on the summoner’s plane until the battle is won, and then keep the
+MONK/BARD: Nil land they have fought over. They appear in fighting forces of 10-10,000 de-
+
+PSIONIC ABILITY: Nil pending on the power and desires of the summoner (and the referee’s dis-
+S:25(+7,+14) 1:20 W:8 D:20 C:25 CH:7 cretion).
+
+The bulk of the army are 1st level fighters. Additional leaders are as fol-
+
+A lord of the fire elementals, Kakatal is able to use all fire spells as a 30th lows:
+
+level spell caster. The heat of his body does 4-40 points of damage to any
+
+Number of Troo Additional Leader
+who come within 20 feet of it. He strikes with his flaming ““fist’” for 6-48 Y 5rlst |e\,e’|,s 2nd level
+points of damage. No amount of water or fire can affect this being, and he 10 3rd level
+cansummon 1-10 16 HD fire elementals whenever he wishes. 50 4th level
+
+250 5th level
+
+While he has no human worshipers, all fire creatures pay Kakatal homage. 1,000 ) 6th le:ZI
+5,000 7th level
+
+10,000 8th level
+
+Thus, if 10,000 Kelmain troops appear, they will be led by one 8th level
+leader, two 7th level leaders, ten 6th level, forty 5th level, two hundred 4th
+level, one thousand third level, and two thousand 2nd level leaders for a
+total of 13,253 Kelmain. If 10 troops arrived, there would be one 3rd level
+and two 2nd level leaders.
+

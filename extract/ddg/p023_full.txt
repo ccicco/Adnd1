@@ -1,0 +1,143 @@
+BABYLONIAL SUThHOS.
+
+The origins of Babylonian mythology are extremely ancient. Because of ANU (god of the sky) "Chief of all the Babylonian Deities"’
+this, misconceptions, duality among the gods and goddesses, and similari-
+ties between their deities and those of other pantheons exist. In formulat-
+ing this list for your use, we have consulted many sources, and some of
+these conflict with each other. This version is designed to be close to
+historically accurate and still playable in AD&D terms.
+
+Greater god
+
+ARMOR CLASS: -4
+MOVE: 12"
+
+(NOTE: If you wish to look hard enough, we are sure that you will find HIT POINTS: 400
+many points of disagreement with certain historical sources. This is un- NO. OF ATTACKS: 2
+
+avoidable, when so many sources conflict.) EQ@Q?E/@TT;@% é‘QO (+7;
+: Command power
+
+SPECIAL DEFENSES: See below
+
+MAGIC RESISTANCE: 80%
+
+SIZE: M (6'%')
+
+ALIGNMENT: Lawful neutral
+
+WORSHIPER'S ALIGN: All alignments
+
+SYMBOL: Gold sun partially blocked
+by a gray cloud
+
+PLANE: Nirvana
+
+CLERIC/DRUID: 20th level cleric
+
+FIGHTER: 18th level fighter
+
+MAGIC-USER/ILLUSIONIST: See
+below
+
+THIEF/ASSASSIN: Nil
+
+Punishment for failing in duties is always severe for the cleric. The break- MONK/BARD: Nil
+
+ing of minor laws requires fasting, prayers, meditation, and sacrifices of PSIONIC ABILITY: VI
+
+animals and goods the cleric owns until the deity makes it known through S:19(+3,+7) 1125 W:25 D:25 C:25 CH:25
+the higher-level clerics that everything is forgiven. Sacrifices are common-
+ly made in gold or precious jewels. Major clerical transgressions include
+helping the enemies of the sect, communicating with intelligent creatures
+or demi-humans (all of whom are considered “demons’’) other than
+humans, and dealing with humans of the opposite alignment. These
+crimes are all dealt with in the same manner, by complete denial of spells
+at all levels and excommunication from the sect, unless the erring one will
+take up a quest which will greatly aid the sect (either in terms of monetary
+riches or loss of power to other cults).
+
+The high priest of this religion is often the king of the country and must be
+a combination magic-user/cleric of great power. All clerical types must re-
+main aloof from the normal populace in temples or shrines and work to
+further the state politically as well as spiritually.
+
+Through Anu and the priest-king, all money collected by the shrines and
+temples is dealt out. The ruler also distributes all political power through
+appointments. The new moon is looked on as a time of great ceremony,
+and also a time for the people to pay money to the temples as a sort of
+tithe to appease the gods. Kings are expected to go forth occasionally on
+quests with other clerics of differing levels and bring back riches (usually
+through conquest) to further the sect.
+
+This god appears as a man. A strong breeze constantly blows in the direc-
+tion of his gaze. Beings casting things at this god must make a saving throw
+against disintegration at -4 for both the being and the thing cast. His voice
+is the voice of all leaders, and any being must make a saving throw versus
+magic at —4 to resist his commands. He can summon any dragon type
+(except for the king and queen and any other types of dragon royalty) to
+fight for him once a week, per dragon type.
+
+He uses a brass mace in battle that strikes for 2-20 points of damage plus
+
+The traditional attire of all Babylonian clerics is a wraparound kilt of white A A
+his bonus of 7 points.
+
+with red cuneiform writing along the hem. They have been known to enter
+battle, but always in the rear of the action as support. Advancement within
+a sect is through the payment of gold to the high priest’s court. Note that
+this is not the same as level advancement. Increase in ability does not
+guarantee increase in temporal power. Priests of a successful nature were
+known to be given great (and highly dangerous) quests to prove their
+worthiness to stand by the King.
+
+Anvu is said to have created the heavens and the earth. All of the other
+Babylonian gods bow to his authority.
+
+ANSHAR (god of darkness and the night)
+
+Lesser god
+
+ARMOR CLASS: 2
+
+MOVE: 12"
+
+HIT POINTS: 300
+
+NO. OF ATTACKS: 0
+
+DAMAGE/ATTACK: Nil
+
+SPECIAL ATTACKS: Beam of darkness
+
+SPECIAL DEFENSES: See below
+
+MAGIC RESISTANCE: 50%
+
+SIZE: M (67)
+
+ALIGNMENT: Chaotic evil
+
+WORSHIPER’S ALIGN: Neutral evil
+and chaotic evil
+
+SYMBOL: Black sphere
+
+PLANE: Pandemonium
+
+CLERIC/DRUID: 20th level cleric
+
+FIGHTER: 18th level fighter
+
+MAGIC-USER/ILLUSIONIST: See
+below
+
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nil
+
+PSIONIC ABILITY: VI
+
+S:16(0, +1) 1520 W:12 D:18 C:22 CH:18
+
+22

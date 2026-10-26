@@ -1,0 +1,130 @@
+NEHWON MYTHOS NEHWON MYTHOS
+
+BIRD OF TYAA DEATH
+FREQUENCY: Rare Greater god
+NO. APPEARING: 3-30
+ARMOR CLASS: 7 ARMOR CLASS: -5
+MOVE: 1/18" MOVE: Infinite
+HIT DICE/POINTS: 1-4 hp HIT POINTS: 350
+% IN LAIR: 10% NO. OF ATTACKS: 10 (1 per
+TREASURE TYPE: Q segment)
+NO. OF ATTACKS: 1 DAMAGE/ATTACK: Special
+DAMAGE/ATTACK: 1-6 SPECIAL ATTACKS: See below
+SPECIAL ATTACKS: 20% have poison SPECIAL DEFENSES: Nil
+
+claws MAGIC RESISTANCE: 95%
+SPECIAL DEFENSES: Nil SIZE: M (7°)
+MAGIC RESISTANCE: Standard ALIGNMENT: Neutral
+INTELLIGENCE: Low WORSHIPER’S ALIGN: All alignments
+ALIGNMENT: Neutral evil SYMBOL: Death’s head
+SIZE: S(1') PLANE: Prime Material Plane
+PSIONIC ABILITY: Nijl CLERIC/DRUID: 30th level cleric
+
+Attack/Defense Modes: Nil FIGHTER: 30th level fighter
+LEVEL/X.P. VALUE: 11/30 + 1 per hp MAGIC-USER/ILLUSIONIST: 30th level
+
+in each
+THIEF/ASSASSIN: 15th level assassin
+
+This avian is closely related to the raven, but has a much higher level of MONK/BARD: 23rd level bard
+sentience. It is commonly found in the mountains and hills. There is a 20% PSIONIC ABILITY: |
+chance that the bird’s claws are poisoned, as it is able to crush some types S:24(+6,+12) 1:24 W:24 D:24 C:24 CH:21
+
+of deadly berries for that effect. The bird knows how to strike for exposed
+
+body parts and uses a diving attack. These evil birds are among the fol-
+
+lowers of the goddess Tyaa (q.v.).
+
+Referred to as a minor death, this deity is responsible for all the dying on
+the world of Nehwon. He is given quotas to be met by the Lords of Neces-
+sity (beings about which very little is known). He appears as a man with a
+cadaverous skin color and he has the power to know the entire past history
+of a being at a glance.
+
+COLD WOMAN
+
+FREQUENCY: Unique
+
+NO. APPEARING: 1
+
+ARMOR CLASS: -2
+
+MOVE: 9
+
+HIT DICE/POINTS: 180 hp
+
+% IN LAIR: 10%
+
+TREASURE TYPE: U (X 5)
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: 4-40
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: See below
+
+MAGIC RESISTANCE: 25%
+
+INTELLIGENCE: Very
+
+ALIGNMENT: Neutral
+
+SIZE: L (30 tall)
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+LEVEL/X.P. VALUE: X/28,500
+
+His sword slays anything it touches. On Nehwon, all beings are mortal. It
+was pointed out that even Death is aware that at some future date, he will
+die.
+
+He lives in a huge fort in the heart of Shadowland, a land of perpetual twi-
+light where the dead rest under the earth, to be called on at the will of
+Death.
+
+DEVOURER (alien wizard)
+
+ARMOR CLASS: 7
+
+MOVE: 15"
+
+HIT POINTS: 50
+
+NO. OF ATTACKS: 1
+DAMAGE/ATTACK: By weapon type
+
+This creature is basically a huge white pudding. Her powers include il- SPECIAL ATTACKS: Nil
+lusion generation, and a cold ray with a range of 6" which does 7-70 SPECIAL DEFENSES: Nil
+points of damage if it hits. (Successful save vs. spells indicates a miss. Sav- MAGIC RESISTANCE: 24%
+ing throw is adjusted by dexterity modifiers to AC, e.g. 17 dexterity gives a SIZE: Variable
++3). Cold Woman “’bites”” for 4-40, attacking as a 16+ hit dice monster, ALIGNMENT: Lawful evil
+and those bitten who fail to save are paralyzed. CLERIC/DRUID: Nil
+
+FIGHTER: 5th level fighter
+Chopping or striking Cold Woman has no effect, as severed parts im- MAGIC-USER/ILLUSIONIST: 13th level
+mediately rejoin the creature. Lightning has the same effect. Cold, of magic-user/25th level illusionist
+course, does not bother her in the least. Her corrosive secretions dissolve THIEF/ASSASSIN: 10th level thief
+metal at the same rate as a black pudding: chainmail is destroyed in 1 MONK/BARD: Nil
+round, plate mail in 2, with each magical plus of the armor adding a round PSIONIC ABILITY: Nil
+to the time needed to corrode. Attack/Defense Modes: Nil
+
+S:15 1119 W:5 D:17 C:19 CH:20
+Cold Woman lures persons into her lair with gems and jewelry, which are
+
+scattered about her cave. She then paralyzes them and inserts one of her Aliens of high magical ability, these creatures are totally occupied with
+eggs into the body. In a day’s time the egg hatches and her spawn (a white selling. This preoccupation forces them to any extreme in perfecting their
+pudding) eats the host. The egg is easily removable and the spawn will die art. The best of them sell only junk they have magicked into something
+if exposed to the air before hatching. appearing to be valuable.
+
+In the wastes, it is said that the excessively evil or greedy fall prey to her They come from another Prime Material Plane of existence. Their usual
+power most often. She always abandons a lair after laying one batch of practice in any given place is to establish a sales beachhead and trick
+eggs. Legend has it that there is only one Cold Woman at a time; all the whole nations and peoples into trading all of their valued items for the
+rest await her death, and then the strongest one becomes the mother. Her Devourer’s junk, until all the valuables are gone and they must work as the
+young are known as Cold Spawn. Devourer’s slaves to acquire the magicians’ worthless wares.
+
+98

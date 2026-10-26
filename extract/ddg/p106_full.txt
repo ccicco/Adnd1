@@ -1,0 +1,137 @@
+NONHUMANS' DEITIES
+
+There is a whole host of creatures which have been created for the game
+of ADVANCED DUNGEONS AND DRAGONS that have either been
+spawned from the minds and myths of past man or created entirely from
+the minds of the game masters. Such a wide diversity of creatures and sub-
+cultures requires an equally wide diversity of deities and lesser beings of
+power. The nonhuman races occupy different places in every Dungeon
+Master’s individual world. Therefore, it would be extremely difficult to
+create complete pantheons of nonhuman gods that would be appropriate
+to every campaign. This section seeks only to outline some major beings
+important to the races created in the AD&D family. A complete pantheon
+of all dwarven gods, demigods and heroes can be easily imagined, but its
+complete notation is too awesome a task for a work of this limited size (as
+would be the complete notation of the deities of any of the nonhuman
+races). Let this section serve as a springboard for the DM. It presents a start
+for any extensive pantheon that the referee feels he or she may need.
+
+As humanoid shamans (and witch doctors) increase in level, they also in-
+crease to a degree in hit dice and combat ability. For each level of ability
+above the 1st, the shaman adds 1-4 hit points (1d4) to his or her total. For
+every two levels of shaman ability, the creature fights as if one hit dice
+better on the ATTACK MATRIX FOR MONSTERS.
+
+Witch doctors’ clerical (shaman) and magic-user levels are not added to-
+gether, but are paired, like multi-classed characters. They gain 2-5 hit
+points for each level above 1st/1st as fong as they advance in tandem, but
+only the normal 1-4 hit points per level when their shaman abilities surpass
+their maximum magic-user abilities. The levels of experience of witch
+doctors’ magic-user abilities are not detailed in this volume, but may be
+found in the DUNGEON MASTERS GUIDE.
+
+Examples: A 4th level gnoll shaman would have the following hit dice: 2d8
+(his normal amount) + 3d4 (his shaman bonus). He would fight as a 4 hit
+dice monster. A 5th level goblin shaman would have 4d4 plus 1-7 hit
+points, and would fight as a 3-1 (or “2-3+ ) hit dice monster. A 3/3 orc
+witch doctor would have 1d8 plus 2d4 + 2 hit points, and would fight as a
+2 hit dice monster.
+
+NOTE: The following beings from the MONSTER MANUAL and FIEND
+FOLIO should be treated as lesser gods, though they very rarely have
+human worshipers:
+
+MONSTER MANUAL
+
+Demon:
+Demogorgon
+Juiblex
+Orcus
+Yeenoghu
+
+Devil:
+Asmodeus
+Baalzebul
+Dispater
+Geryon
+
+Dragon:
+
+Bahamut
+Tiamat
+
+FIEND FOLIO
+
+Demon:
+Lolth (detailed in this volume)
+
+Elemental Princes of Evil
+Slaad:
+
+Ssendam
+Ygorl
+
+105
+
+BUGBEARS
+HRUGGEK
+Lesser god
+
+ARMOR CLASS: 0
+
+MOVE: 12"
+
+HIT POINTS: 221
+
+NO. OF ATTACKS: 1 or 2
+
+DAMAGE/ATTACK: 3-30 (+11) or
+2-16/2-16
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: + 2 or better
+weapon to hit
+
+MAGIC RESISTANCE: 25%
+
+SIZE: L (12" tall)
+
+ALIGNMENT: Chaotic evil
+
+WORSHIPER’S ALIGN: Chaotic evil
+(bugbears)
+
+SYMBOL: Morningstar
+
+PLANE: Pandemonium
+
+CLERIC/DRUID: 15th level cleric
+
+FIGHTER: As 16+ HD monster
+
+MAGIC-USER/ILLUSIONIST: Nil
+
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nil
+
+PSIONIC ABILITY: Nil
+
+S:23(+5,+11) 1:17 W:8 C:24 CH:7(23tobugbears)
+
+Bugbears have a simple pantheon of six deities, including gods of earth,
+death, fertility, hunting and fear. Hruggek, the god of battle, is the most
+powerful and important, though he doesn’t rule the others.
+
+Hruggek appears as a huge, powerful bugbear with great fangs and
+clawed hands and feet. These clawed hands can each strike for 2-16 points
+of damage. He wields a ten-foot +3 morningstar that does 3-30 points of
+damage when it hits.
+
+Hruggek lives in a great cave in Pandemonium which is decorated with the
+severed heads of his conquered opponents. Bugbear shamans worship
+Hruggek by offering him the blood of their enemies. The shamans’ status is
+dependent upon how many opponents they have defeated. Bugbear
+shamans can rise to the 5th level in clerical ability.
+

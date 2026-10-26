@@ -1,0 +1,112 @@
+EGYPTIAN MYTHOS EGYPTIAN MYTHOS
+
+gods to attain. It regenerates 5 points per melee round and no magical SEKER (god oflighr)
+spell can affect the creature. The bird is constantly burning, and anything
+within 10 yards of it takes 25 points of fire damage per melee round (no Lesser god
+saving throw) even if resistant to fire and heat. Any weapon less than +4
+will melt when striking the body of the creature, doing no damage. ARMOR CLASS: -2
+MOVE: 24"
+If assaulted the phoenix will defend itself, attacking as a 12 hit dice HIT POINTS: 300
+monster with its wings (for 3-18) and its beak (4-24), plus its heat damage. NO. OF ATTACKS: 2
+DAMAGE/ATTACK: 3-30 (+ 14:
+If killed, the phoenix’s body is consumed by its own flames in a great ex- halberd) or 2-24 (+ 14: mace)
+plosion of heat that incinerates everything within 5. If creatures within SPECIAL ATTACKS: See below
+this radius save (vs. breath weapons, or magical fire, if an object), they SPECIAL DEFENSES: +2 or better
+only take 10-100 points of damage from the explosion. weapon to hit
+MAGIC RESISTANCE: 40%
+3-18 rounds after its death, the phoenix will be reborn whole from its own SIZE: M (6%5)
+ashes. There is no way by which the phoenix can be killed permanently. ALIGNMENT: Neutral good
+Even if its ashes are destroyed, it will rise again, seemingly out of nothing- WORSHIPER’S ALIGN: Worshipers of
+ness. light
+
+SYMBOL: Hawk-headed mummy
+with an ankh in his right hand
+PTAH (creator of the universe) 'Opener of the Ways"’ PLANE: Elysium
+CLERIC/DRUID: 13th level in each
+FIGHTER: 15th level paladin
+MAGIC-USER/ILLUSIONIST: 12th level
+in each
+
+THIEF/ASSASSIN: Nil
+MONK/BARD: Nil
+PSIONIC ABILITY: VI
+S:25(+7,+14) 1118 W:18 D:25 C:24 CH:24
+
+Greater god
+
+ARMOR CLASS: -5
+
+MOVE: Infinite
+
+HIT POINTS: 390
+
+NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: 1-100 (+9)
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: + 3 or better
+weapon to hit
+
+MAGIC RESISTANCE: 70%
+
+SIZE: S (4')
+
+ALIGNMENT: Lawful neutral
+
+WORSHIPER’S ALIGN: Lawful neutral
+
+SYMBOL: Apis bull
+
+PLANE: Ethereal
+
+CLERIC/DRUID: 20th level cleric
+
+FIGHTER: 14th level fighter
+
+MAGIC-USER/ILLUSIONIST: 25th level
+magic-user
+
+THIEF/ASSASSIN: Nil
+
+Cousin to Shu, Seker appears as a rather ordinary man. This god is relent-
+less in his efforts to destroy all evil on the earth. He always fights with his
+halberd, which does 3-30 points of damage. He also uses a +3 mace of
+disintegration; anything it hits must save vs. spells or be disintegrated. If
+the save is successful, the mace still inflicts 2-24 points of damage.
+
+He casts shafts of light from his hands that kill any undead they touch
+(range 500 yards), and he shape changes at will.
+
+Seker is one of the gods of the afterworld, and protects neutral good souls
+(of the Egyptian cults) after death.
+
+MONK/BARD: Nil SET (god of evil and the night)
+PSIONIC ABILITY: 11
+S:21(+4,+9) 1:25 W:25 D:18 C:23 CH:20 Greater god
+ARMOR CLASS: -4
+Ptah appears as a dwarf with eyes that reflect the universe. He exudes a MOVE: 18"
+feeling of great power. According to legend, Ptah formed the Prime Ma- HIT POINTS: 378
+terial Plane out of the Ethereal, and created the Egyptian pantheon of NO. OF ATTACKS: 2
+gods. However, he is not really a member of their group, and generally DAMAGE/ATTACK: 7-70
+makes his own way. SPECIAL ATTACKS: Alignment
+change
+Ptah is a master of planar travel. His gaze can force others out of the Prime SPECIAL DEFENSES: Poison skin; +3
+Material Plane to a plane of Ptah’s choice, one being per round (save vs. or better weapon to hit
+spells at -6). He can teleport anywhere in the multiverse with accuracy, MAGIC RESISTANCE: 59%
+and there is no limit to the speed with which he can travel through any SIZE: M (7°)
+medium. In combat he never uses armor and fights with the Scepter of the ALIGNMENT: Lawful evil
+Gods. This weapon tells its user of the strong points of any enemy faced, is WORSHIPER’S ALIGN: Evil beings
+able to nullify one of any type spell.or magical device used against it per SYMBOL: Coiled cobra
+melee round, and also hits for 1-100 points of damage per strike. PLANE: Nine Hells
+CLERIC/DRUID: 15th level cleric
+Ptah enjoys new ideas and devices. When a being creates a device that is FIGHTER: 17th level fighter
+highly useful there is a 5% chance that the god will reward that being with MAGIC-USER/ILLUSIONIST: 30th level
+a Thet. This chance goes up by 5% if that being is a worshiper of the cult illusionist
+and 10% if that being is a cleric. The Thet is an amulet geared to do one of THIEF/ASSASSIN: 15th level assassin
+two things: it can project an anti-magic shell around the user which does MONK/BARD: Nil
+not effect the user’s ability to cast spells, or it enables the wearer to be- PSIONIC ABILITY: Il
+come ethereal once a week. In either form, a Thet has 2-12 charges. S:14 1:25 W:23 D:20 C:25 CH:-2
+
+53

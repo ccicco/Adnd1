@@ -1,0 +1,135 @@
+CELTIC MYTHOS CELTIC MYTHOS
+
+Math is the greatest of all the legendary wizards in Celtic myth. He has This god appears as a man with an artificial silver hand. He has the ability
+given himself the power to hear anything said in a breeze anywhere in the to give any weapon he holds a 43 bonus to hit and double the weapon’s
+world. He has done so much for the gods that he has been given a Torc of normal damaging power. When in battle, he detaches his hand of silver,
+the Gods (q.v.). and it will enter battle with a weapon as a dancing sword, hitting for 6-36
+points of damage. He commonly uses a + 4 suit of studded leather armor
+When forced to fight, he uses a rod that turns any being touched by it into a and a +5 sword that has the power to fend off any 3 weapons used
+pool of water (permanently), magic saving throw applicable. He also against its master, no matter how powerful the weapons, and still attack
+enjoys using polymorph others to turn opponents into animals. without difficulty. The god is immune to any type of magical control spell.
+
+MORRIGAN (goddess of war)
+
+Lesser goddess
+
+ARMOR CLASS: —4
+
+MOVE: Variable (see below)
+HIT POINTS 388
+
+NO. OF ATTACKS: 2
+DAMAGE/ATTACK: 3-36 (+ 14)
+SPECIAL ATTACKS: See below
+SPECIAL DEFENSES: Nil
+MAGIC RESISTANCE: 50%
+SIZE: M (6)
+
+ALIGNMENT: Neutral
+
+OGHMA (god of knowledge) ‘The Binder, Patron of all
+
+WORSHIPER’S ALIGN: All beings Bards’’
+living by war
+SYMBOL: 2 crossed spears Greater god
+
+PLANE: Concordant Opposition
+CLERIC/DRUID: 10th level druid
+FIGHTER: 20th level ranger
+MAGIC-USER/ILLUSIONIST: Nil
+THIEF/ASSASSIN: 15th level assassin
+
+ARMOR CLASS: -6
+MOVE: 12"
+
+HIT POINTS: 310
+NO. OF ATTACKS: 2
+
+MONK/BARD: 10th level bard DAMAGE/ATTACK: See below
+PSIONIC ABILITY: VI SPECIAL ATTACKS: Nil
+S:25(+7,+14) 1:22 W:19 D:25 C:24 CH:2lor-1 SPECIAL DEFENSES: Nil
+MAGIC RESISTANCE: 85%
+This goddess appears as a well-proportioned woman with a hideous face. SIZE: M (&)
+She has the power to deprive all who face her of their courage (as the fear ALIGNMENT: Neutral
+spell). She can fight invisibly, see clearly over 15 miles, and travel on land WORSHIPER’S ALIGN: Neutral
+at any speed she wishes when chasing a foe. It is said that she will strike SYMBOL: An unfurled scroll
+dead (5% chance) any one of her worshipers who runs away from a battle PLANE: Concordant Opposition
+she is watching (there is a 10% chance she is watching any given battle). CLERIC/DRUID: 15th level in each
+FIGHTER: 15th level fighter
+She uses 2 spears, one with a red head and one with a yellow head, that MAGIC-USER/ILLUSIONIST: 18th level
+strike for 3-36 points each and never miss. She is immune to any attack by in each
+a magic-using being not of godlike power while she is in battle. THIEF/ASSASSIN: Nil
+MONK/BARD: 20th level bard
+Morrigan’s servants include four demi-goddesses of war, Fen, Neman, PSIONIC ABILITY: IV
+Badb, and Macha, who are identical to her in all regards save hit points S:25(+7,+14)* 1:25 W:25 D:22 C:20 CH:23
+
+(they each have 200).
+*See below
+
+Oghma looks like an aged, white-haired man. He is the best wrestler of all
+
+NUADA (god of war) “‘god of the Silver Hand"" the gods and considered their champion when fights with giants occur. He
+is also patron of things creative and beautiful in man and woman alike.
+Greater god His love of song, story, and poetry causes him to often visit the earth in
+
+human shape and travel from hold to hold seeking especially gifted
+people. There is a 1% chance that he is listening to an original composition
+when it is sung, and there is a 5% chance that if a song or tale was spread
+by others he would hear it and reward the creator with great wealth in the
+form of gold “’strangely’” given by the lord of the particular hold that the
+person was visiting and performing at.
+
+ARMOR CLASS: -4
+
+MOVE: 15
+
+HIT POINTS: 390
+
+NO. OF ATTACKS: 3
+
+DAMAGE/ATTACK: See below
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: Immune to
+charm-type spells
+
+MAGIC RESISTANCE: 10%
+
+SIZE: M (&)
+
+ALIGNMENT: Neutral
+
+WORSHIPER’S ALIGN: Warriors
+
+SYMBOL: Asilver hand on a black
+background
+
+PLANE: Concordant Opposition
+
+CLERIC/DRUID: 10th level druid
+
+FIGHTER: 20th level ranger
+
+MAGIC-USER/ILLUSIONIST: Nil
+
+THIEF/ASSASSIN: 12th level assassin
+
+His two main powers are the ability to answer any question after a short
+period of study (the more difficult the question, the longer it takes) and the
+fact that he knows the secret name of any non-godlike creature. In Celtic
+mythology, everything has a name it gives to the world, and another
+secret name that links it to its soul. If any being knows the secret name, he
+or she can control the creature or being or simply make them die (save vs.
+death applicable).
+
+In battle he wears +4 chainmail and demands that all his enemies wrestle
+(grapple) with him. If they win, he leaves the battle. If he wins, they are
+forced to leave the battle. His strength is such that when facing any being,
+he will have equal to that being’s strength plus his own.
+
+MONK/BARD: 10th level bard Oghma is known as The Binder for his ability to successfully force demons
+PSIONIC ABILITY: VI and devils into a special prison of his making where they stay imprisoned
+S$:25(+7,+14) 1:22 W:19 D:25 C:25 CH:24 until he wishes to bring them out.
+
+29

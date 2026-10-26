@@ -1,0 +1,148 @@
+MELNIBONEAN MYTHOS MELNIBONEAN MYTHOS
+
+STRAASHA (lord of the water elementals) VAMPIRE TREES
+
+Lesser god FREQUENCY: Very rare
+NO. APPEARING: 1-20
+
+ARMOR CLASS: -2 ARMOR CLASS: 0
+
+MOVE: 12" /36"
+
+HIT POINTS: 189
+
+NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: 8-48/8-48
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: +4 or better
+weapon to hit, immune to heat
+
+MOVE: 12" (leaves only)
+
+HIT DICE/POINTS: 12 HD
+
+% IN LAIR: 100%
+
+TREASURE TYPE: Q (X 5), S
+NO. OF ATTACKS: 1-10
+DAMAGE/ATTACK: 2-8
+SPECIAL ATTACKS: See below
+
+attacks SPECIAL DEFENSES: Never surprised
+MAGIC RESISTANCE: 50% MAGIC RESISTANCE: Standard
+SIZE: L (10') INTELLIGENCE: Low
+
+ALIGNMENT: Neutral evil
+
+SIZE: L (+25'tall)
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+LEVEL/X.P. VALUE: VIII/3,850 + 16
+
+per hp
+
+ALIGNMENT: Neutral
+
+WORSHIPER’S ALIGN: Neutral (water
+elementals)
+
+SYMBOL: Wave of water
+
+PLANE: Elemental Plane of Water
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 19th level fighter
+
+MAGIC-USER/ILLUSIONIST: See
+below
+
+THIEF/ASSASSIN: Nil
+
+JEFF DEE 1380,
+
+These creatures use their leaves as attacking weapons. They are released
+from the branches to float downward and attempt to attach themselves
+(attacking as 12 HD monsters) to a body. When attached, they suck blood,
+
+MONK/BARD: Nil 4 doing 2-8 points of damage per attached leaf. Damage is automatic after
+PSIONIC ABILITY: VI the first successful attack, each attached leaf continuing to drain 2-8 hit
+S:25 115 W15 D:20 C:25 CH:22 points per round. The leaves are AC 9, and each has only 2 hit points, plus
+
+any hit points drained from the victim. The leaves will return to the tree
+when any being travels more than 120 yards from the parent tree or when
+the creature has no blood left. The tree can only control 10 leaves at a
+time.
+
+This creature appears as a huge humanoid with green skin and turquoise
+hair and beard.
+
+As a ruler of the water elementals, Straasha has double the power of nor-
+mal water elementals, plus the ability to cast all water spells at the 20th
+level of magic-use. He is the only one of his type not affected by heat-
+based attacks. He can summon 3-18 of his kindred to aid him in battle.
+
+Vampire trees save vs. fire at a -2 penalty, and take +1 extra point of
+damage for every die of damage done by flame. They fear fire, and will
+never send their leaves near flame.
+
+Straasha can strike with two waves of water per round that hit for 8-48
+points each; these are created by the being out of thin air.
+
+While he has few (if any) human worshipers, many water elementals and
+water creatures are aware of Straasha and pay him homage.
+
+THELEB K'AARNA (evil wizard)
+
+ARMOR CLASS: 10
+
+MOVE: 12"
+
+HIT POINTS: 44
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: 1-4
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: Standard
+
+SIZE: M (5%")
+
+ALIGNMENT: Lawful evil
+
+CLERIC/DRUID: Nil
+
+FIGHTER: Nil
+
+MAGIC-USER/ILLUSIONIST: 15th level
+magic-user/8th level illusionist
+
+THIEF/ASSASSIN: Nil
+
+MONK/BARD: Nif
+
+PSIONIC ABILITY: Nil
+
+Attack/Defense Modes: Nil
+
+S:12 1:18 W:11 D:15 C:17 CH:7
+
+An evil Pan Tangian wizard, this man was able to call upon demons,
+elementals of unusual power, and demigods from other planes to aid him.
+He uses a special 7th level spell bequested to him by his ancestors for all of
+these summonings. It is said that the spell will only work for those of Pan
+Tang blood.
+
+Theleb K’aarna is a powerful enemy who often fights Elric, and has tried to
+kill him on several occasions.
+
+94

@@ -1,0 +1,161 @@
+NEHWON MYTHOS NEHWON MYTHOS
+
+GHOUL, Nehwon are those of the many religions in the many temples lining the Street of the
+Gods. Some are powerful, some are weak, and their fortunes change with
+the quantity and quality of their worshipers, who are a fickle lot. Though
+most Lankhmarts worship at one or another of the temples on the Street of
+the Gods, all secretly believe in and fear the gods of Lankhmar, who
+protect the city so that worship may continue. As long as this is the case,
+the gods of Lankhmar are indifferent to the existence of the gods in
+Lankhmar.
+
+FREQUENCY: Rare
+
+NO. APPEARING: 1-100
+
+ARMOR CLASS: 10
+
+MOVE: 12"
+
+HIT DICE/POINTS: 3 HD
+
+% IN LAIR: 80%
+
+TREASURE TYPE: A
+
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: By weapon type
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: 80% invisible in
+dark
+
+MAGIC RESISTANCE: Standard
+
+INTELLIGENCE: Average-Very
+
+ALIGNMENT: Neutral evil
+
+SIZE: M (5')
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+LEVEL/X.P. VALUE: 11/50 + 3 per hp
+
+GODS OF TROUBLE
+
+Lesser gods
+
+ARMOR CLASS: -2
+
+MOVE: 12"'/24"
+
+‘HIT POINTS: 366
+
+NO. OF ATTACKS: 1
+DAMAGE/ATTACK: See below
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: See below
+MAGIC RESISTANCE: Special (see
+
+below
+Nehwon’s ghouls are not of the AD&D undead type, but are a species of SIZE: M (é')
+humanoids unto themselves. They are almost totally transparent, except ALIGNMENT: Chaotic evil
+for their bones, which are grey. They are often mistaken for skeletons, and WORSHIPER’S ALIGN: Chaotic evil
+are almost invisible (80%) in the dark. Once detected, however, they are SYMBOL: Three-pointed star
+easily kept track of. They enjoy the taste of human flesh and sometimes PLANE: Godsland
+raid human settlements for loot and food. It is said that some ride ghoulish CLERIC/DRUID: 15th level cleric
+horses, transparent to the bones like their masters. FIGHTER: Nil
+MAGIC-USER/ILLUSIONIST: 20th level
+in each
+THIEF/ASSASSIN: 15th level assassin
+GODS OF LANKHMAR MONK/BARD: Nil
+
+PSIONIC ABILITY: [
+
+S:12 1:23 W:18 D:18 C:23 CH:18
+Demigods
+These 3 beings of trouble have no constant form and are entities of energy
+that feed on all the trouble caused on the Prime Material Plane. Within 30
+feet of their forms, no magic works, and when they gaze at a being, that
+being fails in whatever he or she or it is attempting (no saving throw).
+When under attack of any kind, they are immediately transported to the
+astral plane before any force can hurt them.
+
+ARMOR CLASS: 3
+
+MOVE: 9"
+
+HIT POINTS: 200
+
+NO. OF ATTACKS: 1
+DAMAGE/ATTACK: 3-30
+SPECIAL ATTACKS: Withering
+SPECIAL DEFENSES: Nil
+MAGIC RESISTANCE: Standard
+SIZE: M (&)
+
+ALIGNMENT: Neutral evil
+WORSHIPER’S ALIGN: Neutral evil
+
+They enjoy roaming the world astrally, affecting all alignments equally.
+They have a very small sect of worshipers. The high priest of this cult has
+the gazing power of his god (saving throw vs. spells applicable). They care
+nothing for their worshipers, and inflict troubles upon them impartially if
+they should cross their path. The cult is quite naturally a rather fatalistic
+
+and citizens of Lankhmar one.
+SYMBOL: Skeleton holding a staff
+PLANE: Prime Material Plane
+CLERIC/DRUID: 15th level cleric
+FIGHTER: 5th level fighter ' HATE
+MAGIC-USER/ILLUSIONIST: 20th level }
+Lesser god
+
+magic-user
+THIEF/ASSASSIN: Nil
+MONK/BARD: Nil
+PSIONIC ABILITY: V
+S:19(+3,+7) 1:24 W:9 D:20 C:23 CH:-3
+
+ARMOR CLASS: See below
+MOVE: 6"
+
+HIT POINTS: 0
+
+NO. OF ATTACKS: 6
+DAMAGE/ATTACK: See below
+
+Ancient mummified skeletons sustaining themselves through the use of SPECIAL ATTACKS: See below
+
+mighty magics, these beings are able to use spells twice as fast as mortal SPECIAL DEFENSES: See below
+
+spell casters. They each carry a double-strength staff of withering. These MAGIC RESISTANCE: 25%
+
+gods appear only when their city is threatened with grave danger. When SIZE: L (90’ long)
+
+the problem is solved, they cast about the city wreaking havoc as a re- ALIGNMENT: Chaotic evil
+
+minder that they are not to be called on too often. They inhabit one large WORSHIPER’S ALIGN: Chaotic evil
+
+temple at the end of the Street of the Gods. SYMBOL: Foggy image with floating
+eyes
+
+PLANE: Astral plane
+
+The temple is a giant double-roomed structure with a set of 13 crypts CLERIC/DRUID: Nil
+
+underneath that hold the ““gods”; the temple has no clerics. When
+
+:/orshipers wish a favor frqm 'the gods, they toss gifts into the door and ;/I\igTE?US'\EIg/ILLUSIONIST: See
+ope for the best. The material is never there an hour later. below
+THIEF/ASSASSIN: Nil
+NOTE: The gods of Lankhmar are open to much free interpretation by the MONK/BARD: Nil
+DM. There is a special difference between the gods of Lankhmar, the old- PSIONIC ABILITY: Nil
+est city of Nehwon, and the gods “/in”” Lankhmar. The gods in Lankhmar S:10 1:10 W:— D:10 C:— CH:—
+
+99

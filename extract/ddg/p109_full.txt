@@ -1,0 +1,106 @@
+NONHUMANS’ DEITIES NONHUMANS’ DEITIES
+
+ELVES, Wood GIANTS, Hill
+RILLIFANE RALLATHIL '‘The Leaflord” GROLANTOR
+Lesser god Lesser god
+ARMOR CLASS: -2 ARMOR CLASS: 0
+MOVE: 12" MOVE: 21"
+HIT POINTS: 317 HIT POINTS: 259
+NO. OF ATTACKS: 2 NO. OF ATTACKS: 2
+DAMAGE/ATTACK: See below DAMAGE/ATTACK: 4-40 (+ 14)
+SPECIAL ATTACKS: See below SPECIAL ATTACKS: Nil
+SPECIAL DEFENSES: +2 or better SPECIAL DEFENSES: +2 or better
+weapon to hit weapon to hit
+MAGIC RESISTANCE: 75% MAGIC RESISTANCE: 45%
+SIZE: See below SIZE: L (25" tall)
+ALIGNMENT: Chaotic good ALIGNMENT: Chaotic evil
+WORSHIPER’S ALIGN: Chaotic good WORSHIPER’S ALIGN: Chaotic evil
+(wood elves) (hill giants)
+SYMBOL: Oak SYMBOL: Wooden club
+PLANE: Olympus PLANE: Tarterus
+CLERIC/DRUID: 14th level in each CLERIC/DRUID: 10th level cleric
+FIGHTER: 15th level ranger FIGHTER: As 16+ HD monster
+MAGIC-USER/ILLUSIONIST: 12th level MAGIC-USER/ILLUSIONIST: Nil
+in each THIEF/ASSASSIN: Nil
+THIEF/ASSASSIN: Nil MONK/BARD: Nil
+MONK/BARD: 10th level in each PSIONIC ABILITY: VI
+PSIONIC ABILITY: [ S:25(+7,+14) 1:14 W:10 D:19 C:20 CH:16
+
+S:19(+3,+7) 1:23 W:19 D:25 C:21 CH:24
+
+Grolantor appears to be a huge and powerful hill giant. He wields a huge
+club named Dwarfcrusher that hits for 4-40 points of damage, and he
+usually wears several belts of woven dwarfbeards.
+
+Rillifane is often likened by his clerics to a giant ethereal oak tree so huge
+that its roots mingle with the roots of every other plant in the world. On a
+more mundane level, Rillifane can appear on the Prime Material Plane as
+a green-skinned elf clad in bark armor and carrying a magic bow. Arrows
+shot from this bow by Rillifane always slay their target if they hit (no
+saving throw).
+
+Grolantor’s creed is persecution of all inferior races (i.e. all those smaller
+than hill giants). Hill giant shamans will refuse to admit that other giants
+are actually larger than they, preferring to think of them as equals. Hill
+
+Rillifane is primarily concerned that all creatures have the opportunity to giant shamans range up to the 7th level of clerical ability.
+
+act out their roles in nature without abusing them. Rillifane’s clerics are
+
+deadly enemies of those who hunt for sport and those who harm trees Ettins also worship Grolantor, though in a slightly different (two-headed)
+
+maliciously or unnecessarily. aspect. However, this does not necessarily make them friendly toward hill
+giants. Despite (or perhaps because of) their two heads, ettins are less
+
+While the majority of the wood elves worship Rillifane, many of those wise than giants, and cannot become greater than 3rd level shamans.
+
+more neutral in alignment prefer to honor Skerrit the Forester (see
+CENTAURS, Skerrit). There is no friction between the two cults. Non-player
+character clerics of both can work up to the 7th level. GIANTS, Stone
+
+SKORAEUS STONEBONES ''King of the Rock’’
+
+Lesser god
+
+ARMOR CLASS: 0
+MOVE: 15"
+HIT POINTS: 380
+
+AR \/ /// NO. OF ATTACKS: 2
+{ . DAMAGE/ATTACK: 6-60
+
+4 .
+7 -7//%,_1 A ’,; SPECIAL ATTACKS: Earthquake
+/,/////"///%, SPECIAL DEFENSES: Regeneration,
+ki / +2 or better weapon to hit
+
+MAGIC RESISTANCE: 50%
+SIZE: L (30" tall)
+ALIGNMENT: Neutral P
+WORSHIPER'S ALIGN: Neutral (stone |2¢
+giants)
+SYMBOL: Stalactite
+PLANE: Prime Material Plane
+. CLERIC/DRUID: 15th level cleric
+GIANTS, Fire FIGHTER: As 16+ HD monster
+MAGIC-USER/ILLUSIONIST: 12th level e
+magic-user 2
+THIEF/ASSASSIN: Nil
+MONK/BARD: Nil
+PSIONIC ABILITY: VI
+
+ETTINS
+
+see, GIANTS, Hill
+
+The deity of the fire giants is Surtur (g.v.). Fire giants can rise up to the 7th
+level as shamans. As a talisman, fire giant shamans often carry a severed
+head (usually human) that has been cured and dipped in molten steel.
+
+GIANTS, Frost S$:25(+7,+14) 1119 W:20 D:19 C:25 CH:17
+
+Thrym (q.v.) is the patron of the frost giants, whose shamans, like those of Skoraeus is the Living Rock, a huge granite humanoid who lies at the heart
+other giants, can attain the 7th level. Frost giant shamans often placate of the world. He knows everything that happens in areas touching rock by
+Thrym by freezing their still-living sacrifices in new ice. listening to the vibrations that are carried to him.
+
+108

@@ -1,0 +1,158 @@
+GREEK MYTHOS GREEK MYTHOS
+
+FURIES (Alecto, Tisiphone, Megarea) forget his or her past and become devoted to Hades when sat in (he often
+
+) ] tricked powerful mortals and lesser gods and goddesses into the chair, and
+there they remained until freed). His jet black chariot is pulled by night-
+mares, and while in this vehicle he cannot be touched by mortals or gods
+alike. The god also possesses a helm that renders him invisible to all be-
+ings, even in battle, though he is only allowed to use this device in service
+against the enemies of the gods of Olympus. There is only one entrance to
+the House of Hades and that one is guarded by Cerberus (cf.).
+
+N\
+FREQUENCY: Unique
+NO. APPEARING: 3
+ARMOR CLASS: -1
+MOVE: 18"'/24"
+HIT DICE/POINTS: 200 hp each
+% IN LAIR: 1%
+TREASURE TYPE: Nil
+NO. OF ATTACKS: 1
+
+DAMAGE/ATTACK: 5-30 :
+SPECIAL ATTACKS: Ability reducrio
+SPECIAL DEFENSES: Nil
+MAGIC RESISTANCE: 100%
+INTELLIGENCE: High
+ALIGNMENT: Neutral
+SIZE: M (5')
+
+The god uses a +4 sword in battle that does 5-50 hit points of damage per
+strike.
+
+HECATE (goddess of magic)
+
+Lesser goddess
+
+ARMOR CLASS: -2
+
+PSIONIC ABILITY: V MOVE: 12"
+
+HIT POINTS: 289
+These 3 spirits are the punishment force of the gods. Mortals who perform NO. OF ATTACKS: 1|
+an act that the gods determine must be punished will face the wrath of the DAMAGE/ATTACK: See below
+Furies. They appear as old winged crones carrying metal-barbed whips SPECIAL ATTACKS: See below
+and attack as 16+ HD monsters. Their main attribute is the power to find SPECIAL DEFENSES: See below
+anyone or anything on any plane they are on (as long as he, she, or it is MAGIC RESISTANCE: 89%
+not hidden by magical means). SIZE: M (5!°)
+
+ALIGNMENT: Lawful evil
+
+WORSHIPER’S ALIGN: Any being
+working with magic
+
+SYMBOL: Setting moon
+
+PLANE: Nine Hells
+
+CLERIC/DRUID: 14th level druid
+
+FIGHTER: Nil
+
+HADES (god of the underworld and death) nﬁ;ﬁggf\ggm—uﬂgmsn Special
+
+: Ni
+
+MONK/BARD: Nil
+
+PSIONIC ABILITY: |
+
+S:12 1:25 W:9 D:20 C:22 CH:25
+
+Their punishments cannot be appealed, and the whips have the power to
+strip away points in a being’s ability categories with every hit (intelligence
+points, strength points, and the like) besides doing hit point damage. The
+amount and type of ability points lost is always commensurate with the
+victim’s crime against the gods.
+
+Greater god
+
+ARMOR CLASS: -1
+
+MOVE: 29"
+
+HIT POINTS: 390
+
+NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: 5-50 (+12)
+
+SPECIAL ATTACKS: See below
+
+SPECIAL DEFENSES: See below
+
+MAGIC RESISTANCE: 75%
+
+SIZE: M (6%")
+
+ALIGNMENT: Neutral evil
+
+WORSHIPER’S ALIGN: Neutral evil
+
+SYMBOL: Black ram
+
+PLANE: Hades
+
+CLERIC/DRUID: 20th level cleric
+
+FIGHTER: 15th level fighter ‘
+
+MAGIC-USER/ILLUSIONIST: 25th level
+illusionist
+
+THIEF/ASSASSIN: 15th level assassin
+
+MONK/BARD: 15th level monk
+
+Hecate appears as a beautiful woman and is able to use any magic-user or
+illusionist spell as often as she likes without restriction as if she were 20th
+level. From sunset to sunrise, she is able to cast two spells per melee round
+in any combination. During the day, she casts one per round.
+
+She has twin spheres of annihilation with her at all times that move to at-
+tack her enemies. These devices move by themselves after being started
+and cannot be controlled by mortals.
+
+She has 9 hell hounds as servants (with maximum hit points and abilities).
+These creatures are sent out to hunt down all those who would desecrate
+her temples or attack her clerics of greater than 10th level (a 10% chance
+of this happening with every such act). All of her clerics have a special
+rapport with hell hounds. Hell hounds will never attack them in any case,
+and Hecate’s clerics have a chance of controlling them equal to their
+chance of affecting “’special’” undead.
+
+PSIONIC ABILITY: /I Hecate’s clerics sacrifice to her on the night of the full moon. Her images
+S:24(+6,+12) 1:24 W:20 D:24 C:25 CH:24(-9) often have three faces.
+The plane where Hades resides is known to most mortals by the name of its HECATONCHEIRE (hundred handed one)
+most powerful ruler. Hades appears as a heavily muscled, dark skinned
+man. When in a pleasant mood and talking to mortals, he appears hand- FREQUENCY: Very rare
+some and kind, but when fighting, the god appears as a hideous human- NO. APPEARING: 1
+oid with fangs and flame for eyes! Hades shape changes at will, and his ARMOR CLASS: 5
+eyes can cast 2 death spells every melee round, up to a range of 120’, if he MOVE: 15"
+is not engaged in hand-to-hand combat. HIT DICE/POINTS: 300 hp
+: % IN LAIR: 89%
+To touch his body with any nonmetal object will cause an explosion of TREASURE TYPE: H
+death rays to strike all those in a 30" radius (saving throw applicable). NO. OF ATTACKS: 10
+DAMAGE/ATTACK: 3-30 each
+He has complete control over all things made of the earth and can alter the SPECIAL ATTACKS: Hurled boulders
+form of any amount of earth with a word. With this power, the god can SPECIAL DEFENSES: Nil
+make a sword turn into dust or a suit of armor turn into gold (saving throw MAGIC RESISTANCE: 25%
+applicable). INTELLIGENCE: Low
+ALIGNMENT: Chaotic neutral
+The house of Hades is a dark underground place with eternal fires of lava SIZE: L (100°)
+burning in pools. The dead move to the god’s command and mortals do PSIONIC ABILITY: Nil
+not see them unless Hades wills it so. In this place are several items of note Attack/Defense Modes: Nil
+such as his chair of forgetfulness which was designed to cause a being to LEVEL/X.P. VALUE: X29,300
+
+69

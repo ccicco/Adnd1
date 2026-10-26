@@ -1,0 +1,119 @@
+EDITOR’S INTRODUCTION EXPLANATORY NOTES
+EDITOR'S INTRODUCTION EXPLANATORY NOTES
+
+Well, here it is, DEITIES & DEMIGODS, the latest addition to the series of FREQUENCY: This refers to the likelihood of a particular creature being en-
+ADVANCED D&D volumes. But what exactly is it? Let’s see, it has a nice countered in a region or area where it might be an inhabitant. Very rare
+cover — open it up, inside there are lots of pictures next to sets of stacked indicates a 4% chance of occurrence, rare indicates an 11% chance, un-
+statistics . . . it must be just like the MONSTER MANUAL! There, that was common indicates a 20% chance, and common indicates a 65% chance.
+easy. Now that we know what it is, we know what to do with it, right? Unique indicates that there is only one of the creature in existence.
+Wrong. NUMBER APPEARING: This indicates a good average spread. The RANGE
+is furnished as a guideline only, and it should be altered to suit the circum-
+DDG (for short) may resemble MONSTER MANUAL, and in fact does in- stances particular to any adventure as the need arises. It is not generally
+clude some monsters. However, the purpose of this book is not to provide recommended for use in establishing the population of dungeon levels or
+adversaries for players’ characters. The information listed herein is primar- similar encounter areas.
+ily for the Dungeon Master’s use in creating, intensifying or expanding his
+or her campaign. No fantasy world is complete without the gods, mighty ARMOR CLASS: This is a measure of how difficult it is to hit a creature, and
+deities who influence the fates of men and move mortals about like chess- subsumes the general type of protection worn by humans or human-
+pieces in their obscure games of power. Such figures can be perfect shaped beings, protection inherent to the creature due to its physical struc-
+embodiments of the DM’s control of the game. They are one of the ture or magical nature, or the degree of difficulty in hitting a creature due
+Dungeon Master’s most important tools in his or her shaping of events. to its speed, reflexes, etc. Occasionally, a god’s or hero’s armor class may
+not jibe with the being’s stated armor and dexterity, but this is due to the
+The gods serve an important purpose for the players as well. Serving a magical nature of the being.
+deity is a significant part of AD&D, and all player characters should have a
+patron god. Alignment assumes its full importance when tied to the MOVE: This shows the relative speed of a creature on a constant basis.
+worship of a deity. The possibility of the invocation of divine wrath, should Higher speeds may be possible for short periods, but as this is generally
+the player make a serious misstep, makes alignment conduct @ much more applicable to all sorts of beings, a constant is shown. It can be scaled to
+vital concern. whatever time period is desired by adjusting ground scale accordingly. A
+
+standard time scale is inches per turn. The number might be double, and
+
+Of course, serving a deity is of greatest importance fo clerics. This book this indicates that the creature can travel in two mediums or modes:
+
+should help that sometimes-neglected class come into its own. Players
+whose characters are clerics will find much more range and many more
+
+possibilities in their roles when the information herein is used to flesh /#" = flying speed
+them out completely. Clerics can and should have a great influence on the //#"” = swimming speed
+course of an AD&D campaign. They are prominent members of society (#) = burrowing speed
+(much more so than the common fighters or the reclusive magic-users and Wk 2 = speed in web
+
+thieves); they often have a close relationship with the populace, and are
+usually well-acquainted with local leaders. They are looked up to as
+masters of ritual and keepers of knowledge. In addition to this special rela-
+tionship with men, a cleric has a special relationship with his or her deity,
+an affinity usually denied to other mortals. This makes clerics a special
+class indeed, a class with a lot of room for creative innovation on the part
+of experienced players.
+
+Infinite indicates that the entity can travel to any point desired with no
+time lapse, and this is the being’s preferred mode of movement. Infinite
+movement is a sort of continuous no-error teleport ability.
+
+HIT POINTS: This indicates the amount of damage a creature can with-
+stand before being killed (or, in the case of deities, temporarily banished
+back to their plane of origin). It is not used as a measure of the attack
+ability of the being, as that is determined by using the entity’s most ad-
+vantageous character class ability.
+
+At first glance, Dungeon Masters may well find the profusion of gods and
+goddesses in this work confusing. The DM will have to consider with care
+before choosing which pantheon or pantheons to use in his or her
+campaign. The DM should consider the flavor of the campaign: is it
+medieval, ancient, oriental, or different from all of these? Which
+pantheon(s) will be most appropriate to the milieu? (It is possible to
+imagine a campaign where all the gods in this book — and perhaps more
+— are co-existent. This would require a truly vast world, one large enough
+to contain all of the worshipers necessary to sustain such a multiplicity of
+gods! Perhaps, as in the ancient world, such different pantheons are wor-
+shiped in different regions.)
+
+HIT DICE: This indicates the parameters of the number of hit points a crea-
+ture can withstand before being killed. Unless stated otherwise, hit dice
+are 8-sided (1-8 hit points). The indicated number of dice are rolled, and
+the numbers shown on each are added together to arrive at a total number
+of hit points. Some creatures have hit points which are less than a full 8-
+sided die, and this is shown by stating their hit dice as a point spread.
+Some creatures have additional points added to their hit dice; this is
+indicated by a plus sign followed by a number shown after the number of
+hit dice they have, i.e. HIT DICE: 4 + 4 (which equals 4-32 hit points +4
+points, or 8-36 hit points). Creatures without character classes use hit dice
+as a measure of their attack ability.
+
+The most important thing to remember about this book is that, unlike the
+other AD&D volumes, everything contained within this book is guidelines,
+not rules. DDG is an aid for the DM, not instructions. We would not
+presume to tell a Dungeon Master how to set up his or her campaign’s
+religious system. Probably no facet of AD&D varies more from campaign to
+campaign than this, and that’s the way it should be. Many DMs will choose
+to use pantheons or systems other than the ones included herein, or will
+alter the information presented. Feel free.
+
+% IN LAIR: This indicates the chance of encountering the creature in
+question where it domiciles on the Prime Material Plane (if it ever does). If
+a creature encountered is not in its lair it will not have any treasure unless
+it carries “’individual” treasure or some form of magic. Whether or not an
+encounter is occurring in the creature’s lair might be totally unknown to
+
+ilati i i i f the encounter i
+In our research and compilation of this book, we ourselves have altered the person or persons involved until after the outcome of the encounter is
+
+many facts, either for reasons of game balance and consistency or be- resolved.
+
+cause sources conflict. DEITIES & DEMIGODS is not a scholarly work or
+
+reference — it is a game accessory. After choosing which pantheon(s) to TREASURE TYPE: This refers to the table of treasure types on page 105 of
+use, the best thing you can do as Dungeon Master is to take a trip to the ADVANCED DUNGEONS & DRAGONS, MONSTER MANUAL. The des-
+library or bookstore and read up on the background of the chosen mythos. cription of the table’s use is on page 5 of the aforementioned book.
+
+There you will discover the fascinating stories behind these immortal char-
+
+acters, and get a really solid feel for how 1o play them. NUMBER OF ATTACKS: This shows the number of physical attacks the
+
+being is able to make during a given melee round. This number can be
+The other half of Heroic Fantasy is Mythology. With DEITIES & DEMIGODS modified by hits which sever members, spells such as haste orslow, and so
+as an introduction, you can open up whole new realms of wonder. As forth. It does not usually consider unusual or special attack forms. Multiple
+someone else has said, the possibilities are limitless! attacks usually indicate the use of several members, such as multiple
+heads, or two claws and a bite, or multiple attacks due to a being’s high-
+level fighter or monk ability. A listing such as ““3/2” indicates 3 strikes per
+
+LJS every 2 rounds.

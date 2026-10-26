@@ -1,0 +1,88 @@
+FINNISH MYTHOS FINNISH MYTHOS
+
+SON OF POHIJOLA (evil hero) TUONETAR (goddess of the underworld)
+ARMOR CLASS: 4 Greater goddess
+MOVE: 15"
+HIT POINTS: 119 ARMOR CLASS: 6
+NO. OF ATTACKS: 372 MOVE: 9"
+DAMAGE/ATTACK: 2-20 (+6) HIT POINTS: 340
+SPECIAL ATTACKS: Nil NO. OF ATTACKS: 1
+SPECIAL DEFENSES: Nil DAMAGE/ATTACK: 4-40
+MAGIC RESISTANCE: Standard SPECIAL ATTACKS: Nil
+SIZE: M (7') SPECIAL DEFENSES: Fear aura
+ALIGNMENT: Lawful evil MAGIC RESISTANCE: 70%
+CLERIC/DRUID: 5th level druid SIZE: M (5)
+FIGHTER: 12th level fighter ALIGNMENT: Chaotic evil
+MAGIC-USER/ILLUSIONIST: 10th level WORSHIPER’S ALIGN: Chaotic evil
+illusionist SYMBOL: Decapitated head
+THIEF/ASSASSIN: 8th level assassin PLANE: Pandemonium
+MONK/BARD: 5th level bard CLERIC/DRUID: 15th level cleric
+PSIONIC ABILITY: Nil FIGHTER: Nil
+Attack/Defense Modes: Nil MAGIC-USER/ILLUSIONIST: 20th level
+S:18(00) (+3, +6) 1:15 W:15 D:19 C:19 CH:17 in each
+THIEF/ASSASSIN: Nil
+This son of Louhi was a leader of the people of Pohjola and a savage MONK/BARD: 5th level bard
+enemy to Lemminkainen and the other good heroes of Kalevala. His sword PSIONIC ABILITY: Il
+does 2-20 points of damage per strike and is a + 3 weapon. S:15 1118 W:21 D:17 C:25 CH: -6
+His mother has given him a giant wolf (AC 5, MV 18", HD 6, hp 40, #AT 1, The wife of Tuoni, Tuonetar appears to the world as an incredibly ugly old
+D 1-10, immune to cold attacks) that obeys his every command. crone. Any creature that comes within 30" of her must save vs. spells or be
+
+affected by her fear aura, fleeing until exhaustion sets in. Tuonetar’s
+merest touch inflicts 4-40 points of damage. She is an implacable enemy of
+Vainamoinen.
+
+TUONI (god of the underworld)
+
+Greater god
+
+ARMOR CLASS: -2
+
+MOVE: 18"7/18"'/ /48"
+
+HIT POINTS: 389 .
+
+NO. OF ATTACKS: 2
+DAMAGE/ATTACK: 3-30 (+ 14)
+SPECIAL ATTACKS: See below
+SPECIAL DEFENSES: Immune to
+
+SURMA (demigod of death) charm/enchantment and death
+spells
+Demigod MAGIC RESISTANCE: 64%
+SIZE: L (10)
+
+ARMOR CLASS: -2 ALIGNMENT: Chaotic neutral (evil)
+MOVE: 18" WORSHIPER’S ALIGN: Chaotic align-
+HIT POINTS: 224 ments
+NO. OF ATTACKS: 2 SYMBOL: His club in a clenched fist
+DAMAGE/ATTACK: 3-30 (+14) PLANE: Pandemonium
+SPECIAL ATTACKS: Nil CLERIC/DRUID: 20th level cleric
+SPECIAL DEFENSES: + 1 or better FIGHTER: 15th level fighter
+
+weapon to hit MAGIC-USER/ILLUSIONIST: 15th level
+MAGIC RESISTANCE: 40% in each
+SIZE: M (6') THIEF/ASSASSIN: Nil
+ALIGNMENT: Neutral evil MONK/BARD: 10th level bard
+WORSHIPER’S ALIGN: Evil align- PSIONIC ABILITY: Nil
+
+ments $:25(+7,+14) 1:20 W:19 D:18 C:24 CH: 14
+SYMBOL: Withered oak branch
+PLANE: Tarterus This god is usually dressed in dark furs. At will he can constantly shape
+CLERIC/DRUID: 14th level in each change and castdeath and prismatic wall spells. He is immune to all death
+
+(harming spells only) and charm-type spells. The god will always appear as if in a vision when a
+FIGHTER: 15th level ranger being who worships the Finnish pantheon is raised from the dead, and
+MAGIC-USER/ILLUSIONIST: 12th level there is a 1% chance that he will actually come in person to reclaim the
+
+in each (harming spells only) raised person’s soul.
+THIEF/ASSASSIN: 15th level assassin
+MONK/BARD: Nil His club (which only he can lift) does 3-30 points of damage, and always
+PSIONIC ABILITY: VI disenchants one randomly-determined magic item on the being hit (no
+S:25(+7,+14) 1119 W:19 D:23 C:22 CH:18 saving throw).
+Surma occasionally travels about the country challenging all he meets to Tuoni’s clerics go about the battlefield and aid those that are near death to
+combat, and if they refuse, he lets them go only to follow them and kill reach the land of the dead. They have been noted for sending the near-
+them in their sleep. He often appears as a slightly aging warrior in leather dead off a bit too soon. After they administer these rites, they take the
+buckskins and red boots. He uses a club in battle that strikes for 3-30 points dead person’s valuables as recompense for their aid in helping the person
+of damage; only Surma can wield this weapon. to go to the land of the dead.
+
+61

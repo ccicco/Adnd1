@@ -1,0 +1,129 @@
+MELNIBONEAN MYTHOS MELNIBONEAN MYTHOS
+VULTURE LION XIOMBARG
+
+FREQUENCY: Very rare Greater god
+
+NO. APPEARING: 3-12
+
+ARMOR CLASS: 2
+
+MOVE: 15"
+
+HIT DICE/POINTS: 15 HD
+
+% IN LAIR: 0%
+
+TREASURE TYPE: Nil
+
+NO. OF ATTACKS: 3
+
+DAMAGE/ATTACK: 4-24/4-24/3-18
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: Immune to fear
+
+MAGIC RESISTANCE: 25%
+
+INTELLIGENCE: Low
+
+ALIGNMENT: Chaotic neutral
+
+SIZE: L (10 at the shoulder)
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+LEVEL/X.P. VALUE: IX/5,600 + 20
+
+per hp
+
+ARMOR CLASS: -2
+
+MOVE: 18"
+
+HIT POINTS: 376
+
+NO. OF ATTACKS: 2
+
+DAMAGE/ATTACK: 7-42 (+ 14)
+
+SPECIAL ATTACKS: Shape change
+
+SPECIAL DEFENSES: + 3 or better
+weapon to hit
+
+MAGIC RESISTANCE: 50%
+
+SIZE: M (5')
+
+ALIGNMENT: Chaotic evil
+
+WORSHIPER’S ALIGN: Chaotic evil
+
+SYMBOL: Image of a slim young girl
+
+PLANE: Special
+
+CLERIC/DRUID: Nil
+
+FIGHTER: 15th level fighter
+
+MAGIC-USER/ILLUSIONIST: 25th level
+magic-user
+
+Created by Elric’s ancestors from the fiber of Chaos, these beasts have the THIEF/ASSASSIN: 15th level assassin
+
+body of a lion and the head and talons of a vulture. When summoned from MONK/BARD: Nil
+
+their home plane of Limbo by one with the power to command them, they PSIONIC ABILITY: 1!
+
+will fight fiercely, never needing to check morale. If improperly sum- $:25(+7,+14) 1:23 W:22 D:25 C:24 CH:25
+moned they will attempt to slay the summoner, returning to Limbo after-
+
+Xiombarg appears on the Prime Material Plane as a slim young girl, and
+wields a great double-edged battle axe in battle. This is a +4 weapon
+that glows with a light-blue radiance and inflicts 7-42 points of damage on
+a hit (plus strength bonus), paralyzing any being hit who does not save vs.
+this effect.
+
+wards.
+
+Xiombarg craves blood and souls (much as Arioch does), and may respond
+favorably to proper sacrifices.
+
+YYRKOON (evil hero)
+
+ARMOR CLASS: -4
+MOVE: 12" B !
+HIT POINTS: 84 )
+NO. OF ATTACKS: 2 - Gl e
+DAMAGE/ATTACK: By weapon type Y ‘ ‘ﬂ o
+SPECIAL ATTACKS: See below g & o
+SPECIAL DEFENSES: Nil
+MAGIC RESISTANCE: Standard |
+SIZE: M (6%) L
+ALIGNMENT: Chaotic evil
+CLERIC/DRUID: Nil
+
+FIGHTER: 15th level fighter
+MAGIC-USER/ILLUSIONIST: 17th level -
+
+N
+20
+
+/ // , magic-user
+
+/7 %J THIEF/ASSASSIN: Nil
+. MONK/BARD: 5th level bard }7 Ao
+=7 PSIONIC ABILITY: Nil
+
+Attack/Defense Modes: Nil
+S:16 1:18 W:8 D:15 C:17 CH:18
+
+This evil prince of Melnibone is Elric’s cousin, and an implacable enemy of
+his. Yyrkoon can also use many unusual spells which his (and Elric’s) an-
+cestors developed. He has been known to fight with Mournblade, twin to
+Elric’'s enchanted blade Stormbringer (q.v.). This weapon’s abilities are
+similar in all respects to those of Stormbringer.
+

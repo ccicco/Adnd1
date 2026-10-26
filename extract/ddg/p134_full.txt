@@ -1,0 +1,85 @@
+KNOWN PLANES OF EXISTENCE KNOWN PLANES OF EXISTENCE
+
+Astral Encounter Table PLANAR TRAVEL
+Dice The purpose of this section is to sum up all of the information that has been
+Score  Creature Encountered Numbers stated or implied about planar travel. First, travel among the Inner Planes:
+01-04 Aerial servant 1 this is usually done by means of the Ethereal Plane, as it permeates all of
+05-10 Basilisk* 1-2 the Inner Planes. (It is not possible for creatures on the Outer Planes to “‘go
+11-13 Cockatrice* 1-4 ethereal”.) As with all planar travel, it is also possible to pass directly from
+14-16 Demon, major 1 one plane to another by means of ““gates”’, thereby avoiding ethereal
+17-22 Demon, minor 1-3 travel. A gate may be formed by a magic spell (such as a gate spell, or
+23 Demon, prince 1 conjure elemental, which forms a direct opening between the planes) a
+24 Devil, arch- 1 magic item (e.g. an amulet of the planes, a well of many worlds, a cubic
+25-28 Devil, greater- 1 gate, or any of the various elemental-summoning devices), or divine inter-
+29-37 Devil, lesser- 1-3 vention. There are also direct nexial points connecting the Prime Material
+38 Dragon, chromatic 1 and Elemental Planes.
+39 Dragon, platinum 1
+40-41 Gorgon* 1-2 Travel to and from the Outer Planes is usually by means of gates or via the
+42-46  Human traveller — see Character Subtable* * Astral Plane. (Note that the Astral Plane can only be entered from the
+47-49 Intellect devourer 1-2 Prime Material Plane or one of the ““first layers’” of the 17 Outer Planes.) If
+50-55 Invisible stalker 1-3 a being is gated to one of the Outer Planes, he comes complete with body
+56-61 Ki-rin 1 and possessions, leaving no part of himself behind. However, if a being
+62-63 Medusa* 1-2 astrally projects and travels the Astral Plane to one of the Outer Planes, he
+64-71 Night hag 1-4 leaves his material body behind on the Prime Material Plane, connected to
+72-74 Nightmare 1-4 his essence by a silver cord. If his material body is destroyed or the silver
+75-79 Rakshasa 1-3 cord is snapped while he is in the Astral Plane, the being is permanently
+80-91 Shedu 2-5 and irrevocably killed. If he moves to one of the Outer Planes from the
+92 Titan, elder 1 Astral Plane, a body forms around him, but it is devoid of possessions. Both
+93-97  Titan, lesser 1 bodies are now connected by the silver cord, and if either body is
+98-00 Tifan, major 1 destroyed, the being will continue on in the remaining body (returning in-
+stantly to the Prime Material if the Outer Plane body is killed). If the silver
+*See beneath Ethereal Encounter Table. cord is snapped on the Astral Plane, the unoccupied body dies.
+
+**See beneath Ethereal Encounter Table.
+Random Determination of Planes
+
+The Psychic Wind If for some reason it becomes necessary to choose a plane of existence at
+random, the following tables may be used:
+
+Perhaps the most dangerous thing that can happen to an astral traveller is
+
+getting caught in the psychic wind. No one knows how or why the wind
+
+blows, but all fear its effects. The chance of a delayed or disrupted journey Inner Planes
+is a non-cumulative 5% per plane crossed (including alternate worlds of
+the Prime Material) or solar system travelled to (if journeying across the Die Roll Plane
+Prime Material). The effects of the psychic wind are shown below: 1-2 Prime Material Plane
+3 Prime Material Plane (alternate world)
+4 Positive Material Plane
+Dice Score  Effect Of Wind N hegative Materiol Plane
+1-12 Slows travel only, incur 1 additional check for random en- 8.9 Elemental Plane of Earth
+13-16 Blocwozr;tfefr;:ourse and party is lost for 2-20 days’ time, then 1011 Elemental Plane of Fire
+C o Y ! 12-13 Elemental Plane of Water
+must return to starting place. ) ) ) 14 Para-Elemental Plane of Dust
+17-19 Blows off course so that party arrives at a different destina- 15 Para-Elemental Plane of Heat
+tion as determined by random method. 16 Para-Elemental Plane of Ice
+20 Storm blows, and unless a saving throw versus magic is 17 Para-Elemental Plane of Vapor
+made, the silver cord is broken, and the party is killed. If 18-19 Ethereal Plane
+a save is successful, the party is lost for 4-40 days and 20 Plane of Shadow
+
+must return to the starting place thereafter.
+
+Outer Planes
+Note: If astral projection does not involve a silver cord attachment, then
+
+the party concerned is both lost and arrives at a different destination when Die Roll Plane
+struck by apsychic storm wind. 1-3 Astral Plane
+4 Seven Heavens
+5 Twin Paradises
+6 Elysium
+Astral Combat 7 Happy Hunting Grounds
+8 Olympus
+As on the Ethereal Plane, astral beings are ““real”” to each other, and can 9 Gladsheim
+cast spells and melee normally. The major impediment to these activities is 10 Limbo
+that astral travellers employing an astral spell or the psionic astral projec- 1 Pandemonium
+tion discipline do not carry their possessions with them into the Astral 12 Abyss
+Plane (except for certain magic items that have a multi-planar existence, 13 Tarterus
+e.g. an amulet of the planes). Beings travelling astrally by these modes 14 Hades
+will therefore have to rely on their natural weaponry or spells without 15 Gehenna
+material components in any astral melee. Most creatures can do no more 16 Nine Hells
+than destroy the astral body, causing the silver cord to return to the 17 Acheron
+material body and preventing further astral travel for a period of time. 18 Nirvana
+Very powerful beings (gods, demigods, etc.) might be able to snap the 19 Arcadia
+silver cord, thus killing the astral and material bodies simultaneously. 20 Concordant Opposition
+
+133

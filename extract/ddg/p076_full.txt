@@ -1,0 +1,90 @@
+Indian Mytbos.
+
+The translation of these beings into AD&D terms was one of the more diffi- INDRA (god of the atmosphere, storms and rain)
+cult tasks of this work. They were very hard to categorize in the lawful or
+chaotic sense because of the diversity of their worldly actions. The pan- Greater god
+theon that resulted is a mixture of Vedic and Hindu concepts, usually lean-
+ing toward the Vedic. These gods and goddesses maintain an aloofness ARMOR CLASS: —12
+greater than normal when compared with some of the other pantheons. MOVE: 18"/24"
+HIT POINTS: 400
+There are several concepts that are original with this section that must be NO. OF ATTACKS: 2
+dealt with for gaming purposes. The culture that created this mythos also DAMAGE/ATTACK: 3-30 (+ 14)
+created one of the most rigid caste systems ever known, where one is born SPECIAL ATTACKS: See below
+to his or her station in life and learns to live with it. In a campaign under SPECIAL DEFENSES: + 3 or better
+the influence of these gods, a character may be born a cleric, magic-user weapon to hit
+or a fighter. One does not switch from class to class or overlap into other MAGIC RESISTANCE: 80%
+areas (which usually prevents any characters from having two classes). SIZE: M (67) )
+The caste system also modifies the behavior of players toward one another ALIGNMENT: Chaotic neutral
+and toward non-player characters. Persons of higher status are to be WORSHIPER’S ALIGN: Chaotic
+treated with respect and honor and either obeyed or left strictly alone. neutral and farmers
+Those of the magic-user caste are deemed superior to all other castes, SYMBOL: White elephant
+including the warriors. All of this is followed strictly by those who obey any PLANE: Limbo
+sort of lawful code. CLERIC/DRUID: 25th level cleric
+FIGHTER: 14th level fighter
+There is also a belief that all prayers will be answered if the proper sacri- MAGIC-USER/ILLUSIONIST: 20th level
+fices are made to the gods. If the prayer is not immediately answered, in each
+then some impropriety was made and the prayers must be done again THIEF/ASSASSIN: Nil
+(and again) until the desired result is achieved. MONK/BARD: 10th level bard
+PSIONIC ABILITY: 11l
+Worshipers are identified by marks they wear. For example, the followers S:25(+7,+14) 1:25 W:25 D:25 C:25 CH:25
+of Vishnu have two parallel lines of a special white earth drawn from the
+hair-line to the bridge of the nose, with a perpendicular line connecting Indra, the first ruler of the gods, appears as a heavily muscled man. His
+them at the bottom. All worshipers have marks of this type somewhere on main attribute is the ability to create and control any form of weather at
+their persons. will. He can also influence humans, animals, and plants as a staff of com-
+
+mand. He canshape change at will.
+Probably the most difficult concept this mythos presents, at least in AD&D
+
+terms, is that of the ““avatar’”. An avatar is a physical manifestation of a Indra wears + 4 plate mail and a + 4 shield in battle. He plies a bow made
+deity upon the Prime Material Plane. An avatar usually has lesser powers out of rainbows which shoots lightning bolts at the rate of two per melee
+and a different appearance than the deity it has sprung from. Avatars round, each doing 3-30 points of damage, with a 1,000 yard range (all of
+often represent one particular aspect or side of a deity, and may have which is treated as short range). For hand-to-hand combat, he uses a +3
+been created to perform a specific function. A deity may have several flaming sword that does 3-30 points of damage per hit.
+
+avatars simultaneously co-existent, each one different and uninvolved
+with the others. Vishnu, in particular, has many avatars.
+
+Temples and cultural trappings within this pantheon vary from one ex-
+treme to another. On one hand, there are awesomely huge shrines to
+single gods that are many stories high, and in the same area there are tiny
+
+Indra’s Elephant
+
+shrines dedicated to all of the gods that a single worshiper can use. FREQUENCY: Unique
+
+NO. APPEARING: 1
+The deities of this mythos are often described as having many heads ARMOR CLASS: 0
+and/or arms. This multiplicity is somewhat representative of the powers of MOVE: 18"/24"
+the deity. For example, if a deity has seven important abilities, he or she HIT DICE/POINTS: 150 hp
+will probably have seven arms. This number may vary from one account to % IN LAIR: Nil
+another. Given most of the deities’ ability to shape change, it is only TREASURE TYPE: Nil
+logical that they have as many arms (or heads) as they need. NO. OF ATTACKS: 5
+
+DAMAGE/ATTACK: 2-20 (X 5)
+
+SPECIAL ATTACKS: Nil
+
+SPECIAL DEFENSES: Nil
+
+MAGIC RESISTANCE: 25%
+
+INTELLIGENCE: Low
+
+ALIGNMENT: Neutral
+
+SIZE: L (20 tall)
+
+PSIONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+
+LEVEL/X.P. VALUE: X/21,450
+
+This huge white beast is able to carry any weight his master wishes
+through the air, through the planes, or on the ground. It attacks as a 16+
+HD monster, stabbing with its tusks, constricting with its trunk, and tramp-
+ling with its great columnar forelegs. Each of these attacks does 2-20 points
+of damage.
+
+Z
+
+75

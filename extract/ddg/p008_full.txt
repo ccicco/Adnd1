@@ -1,0 +1,79 @@
+EXPLANATORY NOTES EXPLANATORY NOTES
+
+The numbers in parentheses under Open Doors indicate the chance of WISDOM: The following table applies to wisdom scores over 18:
+forcing open a locked, barred, magically held or wizard locked door, but
+only one attempt ever (per door) may be made, and if it fails no further at-
+
+tempts can succeed. Score Spell Bonus Spell Immunities
+19 One 4th & one 1st Cause fear, charm person, command,
+INTELLIGENCE: The following table applies to intelligence scores over 18: friends, hypnotism
+20 One 4th & one 2nd Forget, hold person, ray of enfeeblement,
+Chanceto  Minimum scare
+K."°W Each  Number of 21 One 5th & one 3rd Beguiling, domination, fear
+Score Listed Spell Spelis/Level Spell Immunities 22 One 5th & one 4th Charm monster, confusion, emotion,
+19 95% 11 first level illusion/phantasm spells fumble, suggestion, telempathic projection
+20 96% 12 second level illusion/phantasm spells 23 Two 5th levels Chaos, feeblemind, hold monster, magic
+21 97% 13 third level illusion/phantasm spells jar, mass domination, quest
+22 98% 14 fourth level illusion/phantasm spells 24 Two 6th levels Geas, mass suggestion, rulership
+23 99% 15 fifth level illusion/phantasm spells 25 One 6th & one 7th Antipathy/sympathy, finger of death, mass
+24 100% 16 sixth level illusion/phantasm spells charm, Otto’s irresistable dance
+25 100% 17 seventh level illusion/phantasm spells
+Beings of very high intelligence will not be fooled by illusion/phantasm Beings of very high wisdom are immune to the effects of certain charm-
+spells; they will note some inconsistency or inexactness which will prevent type spells, psionic abilities and spell-like effects. These immunities are
+their belief in the illusion. A being with a 19 intelligence will never be- cumulative with higher wisdom. Beings with high wisdom are simply able
+lieve a 1st level illusion/phantasm spell, even if cast by a high-level spell- to automatically throw off the effects of these spells.
+
+caster, and will thus avoid all effects. Beings with greater intelligence can
+also ignore higher level illusions, as indicated. All effects noted are
+cumulative (e.g. a 20 intelligence gives immunity to first and second level
+illusions).
+
+DEXTERITY: The following table applies to dexterity scores over 18:
+
+Reaction/Attacking -
+Score Adjustment Defensive Adjustment  Picking Pockets Openlocks Locate/Remove Traps  Move Silently  Hiding in Shadows
+19 +3 -4 +15% +20% +10% +12% +12%
+20 +3 -4 20 25 15 15 15
+21 +4 -5 25 30 20 18 18
+22 +4 -5 30 35 25 20 20
+23 +4 -5 35 40 30 23 23
+24 +5 -6 40 45 35 25 25
+25 +5 -6 45 50 40 30 30
+
+Note: The last five columns (Picking Pockets, etc.) apply only to beings with thief, assassin or monk abilities.
+
+CONSTITUTION: The following table applies to constitution scores over 18: every case dealing with the levels listed, creatures that gaze upon a divine
+being will be stunned into inaction so that they will be aware of nothing
+Score Hit Point Adjustment* Poison Save Regeneration but the presence of the deity until the deity disappears from sight (no sav-
+19 +5 (no Isrolled) +1 Nil ing throw). This works through any control up to and including a magic jar
+20 +5 (no 1srolled) +1 1 point/6é turns spell. Stunned creatures cannot initiate any other action than physical
+21 +6(no 1sor 2s) +2 1 point/5 turns defense if attacked while under the influence of the awe power. Note that
+22 +6(nolsor2s) +2 1 point/4 turns the awe power applies only to divine beings (gods and demigods). Mortal-
+23 +6(nols, 2s or 3s) +3 1 point/3 turns born persons who somehow acquire godlike charisma will not radiate this
+24 +7 (nols, 2s or 3s) +3 1 point/2 turns aura.
+25 +7 (no1s,2s or 3s) +4 1 point/1 turn
+In certain instances, some divinities are so loathsome and repellent as to
+* The additions to each hit die are for fighter, paladins and rangers only; actually have negative charisma. This applies only to the truly ghastly
+all beings without one of these classes can receive no more than 2 bonus divine beings. The horror which their appearance and presence inspires
+points per die. The other modifications to the dice are applicable to any causes creatures in the hit dice or level range noted below to be stunned
+class. The notation “‘no 1s rolled’” indicates that any 1s rolled when hit with fear and detestation until the being is no longer in sight. While in this
+points are being figured should be counted as 2s. At 21 and 22 constitu- condition a creature can do nothing but defend itself physically against
+tion, 1s and 2s are counted as 3s, and so on. attacks. As with awe power, even if a person were to be given negative
+
+charisma through some terrible curse or change, he or she would not
+acquire the horror ability. The reaction of the average creature to a hypo-
+
+CHARISMA: The following table applies to charisma scores over 18: thetical non-divine being with a negative charisma would be a desire to
+kill it immediately.
+
+Maximum No. Reaction
+Score of Henchmen Loyalty Base Adjustment Awe Power Charisma Score Reaction Adjustment Horror
+19 20 +50% + 40% Up to 1 HD/level -1 -40% Up to 1 HD/level
+20 25 60 45 Up to 2 HD/levels -2 45 Up to 2 HD/levels
+21 30 70 50 Up to 4 HD/levels -3 50 Up to 4 HD/levels
+22 35 80 55 Up to 6 HD/levels -4 55 Up to 6 HD/levels
+23 40 90 60 Up to 8 HD/levels -5 60 Up to 8 HD/levels
+24 45 100 65 Up to 10 HD/levels -6 65 Up to 10 HD/levels
+25 50 100 70 Up to 12 HD/levels -7 70 Up to 12 HD/levels
+Awe Power is defined as the reverential fear or dread or overpowering Beings with negative charisma will never have henchmen of a normal
+desire to worship caused by the mere sight and presence of a divinity. In nature.
