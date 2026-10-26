@@ -557,6 +557,7 @@
 #include "rules/dge.h"  // R853: the Celtic mythos
 #include "rules/dgf.h"  // R854: the Central American mythos
 #include "rules/dgg.h"  // R855: the Chinese mythos
+#include "rules/cth.h"  // R856: the Cthulhu mythos
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4604,6 +4605,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r856_batch.h"  // R856: R856 Cthulhu mythos audit
 #include "rules/audits/r855_batch.h"  // R855: R855 Chinese mythos audit
 #include "rules/audits/r854_batch.h"  // R854: R854 Central American mythos audit
 #include "rules/audits/r853_batch.h"  // R853: R853 Celtic mythos audit

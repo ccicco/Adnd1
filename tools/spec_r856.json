@@ -1,0 +1,3718 @@
+{
+ "round": 856,
+ "prefix": "cth",
+ "title": "the Cthulhu mythos",
+ "header_file": "rules/cth.h",
+ "audit_file": "rules/audits/r856_batch.h",
+ "audit_label": "R856 Cthulhu mythos audit",
+ "audit_comment": "THE CTHULHU MYTHOS - the D&DG walk round eight, print pp. 43-48: fifteen beings (Cthulhu, Azathoth, Cthugha, the Byakhee servants of Hastur, the Flame Creatures, the Deep Ones, Hastur the Unspeakable, the Great Race, Ithaqua the Wind Walker, the Mi-Go, Nyarlathotep the crawling chaos, the Primordial Ones, the Shoggoths, Shub-Niggurath, Yog-Sothoth), the Old Ones lore with the name-speaking and nature-warning doctrines, and the two artifacts: the Elder Sign and the Necronomicon. Zero registry defs touched; the floor holds at 995. The flagged eyeball cells: the Cthulhu charisma (both voices read 7 with the minus lost in the scrawl - pinned 7), the Cthugha ability line (IA-garbled, the Termux fold pinned: I 12, W 18, CH 1), the Azathoth size (the printed inconceivable, sentinel), the Nyarlathotep size (the printed Variable, sentinel), the Primordial One move (the printed 18/12 slash) and the Mi-Go size (the IA 8 feet against the Termux 8 inches).",
+ "census_before": 778,
+ "include_after": "#include \"rules/dgg.h\"  // R855: the Chinese mythos",
+ "include_comment": "the Cthulhu mythos",
+ "audit_anchor": "#include \"rules/audits/r855_batch.h\"  // R855: R855 Chinese mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Cthulhu mythos** (pp. 43-48)",
+   "to": "- [x] **Cthulhu mythos** (pp. 43-48)",
+   "note": "the Cthulhu mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 8,
+  "open": 16
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Cthulhu mythos - the D&DG walk round eight, print pp. 43-48: fifteen beings from Cthulhu the dreamer in sunken R lyeh to Yog-Sothoth the key and guardian of the gate, the seven monster races of the Old Ones, and the two artifacts - the Elder Sign and the Necronomicon - across four planes.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 044-049; the second printing); the collation voice: the archive.org 1st-print derivative (deities-demigods-1st-print, djvu.txt + djvu.xml word geometry at 600dpi, segs 43-48). The adjudications: the psionic classes by word geometry (the 10px single bars of Cthulhu, Cthugha, Hastur, Shub-Niggurath and Yog-Sothoth; Byakhee the 54px IV, Ithaqua the IV, the Flame Creature V, Nyarlathotep V, Azathoth VI), the monster psionic point scores (Great Race 280, Mi-Go 90, Primordial One 206 - the R853 Math 200 precedent), the Mi-Go size (the IA geometry 8 feet against the Termux 8 inches), the Primordial One move (the printed 18/12 slash in both voices - flagged), the Cthulhu charisma (both voices read 7, the minus lost - pinned 7, flagged for the physical-copy eyeball), and the Cthugha ability line (IA scrawl, the Termux fold pinned, flagged)."
+ },
+ "consts": [
+  {
+   "name": "cthRound",
+   "value": 856,
+   "comment": "the Cthulhu mythos round: the D&DG walk round eight, print pp. 43-48"
+  },
+  {
+   "name": "cthPrintStart",
+   "value": 43,
+   "comment": "the first print page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "cthPrintEnd",
+   "value": 48,
+   "comment": "the last print page"
+  },
+  {
+   "name": "cthBeingCount",
+   "value": 15,
+   "comment": "the fifteen beings of the mythos (Cthulhu through Yog-Sothoth, the eight deities and the seven monster races)"
+  },
+  {
+   "name": "cthTableCount",
+   "value": 4,
+   "comment": "the four grids (combat, class, ability, roster)"
+  },
+  {
+   "name": "cthChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "cthRegistryFloor",
+   "value": 995,
+   "comment": "the live registry def count floor: zero defs touched this round"
+  },
+  {
+   "name": "cthCbtRows",
+   "value": 15,
+   "comment": "the combat grid rows (one per being)"
+  },
+  {
+   "name": "cthClsRows",
+   "value": 15,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "cthAbiRows",
+   "value": 15,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "cthRosRows",
+   "value": 15,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "cthPlaneCount",
+   "value": 4,
+   "comment": "the four printed planes: Prime Material, Astral, Elemental Fire, Elemental Air (0 = the monster rows)"
+  },
+  {
+   "name": "cthPsiClassI",
+   "value": 1,
+   "comment": "the R849 psionic class I (Cthulhu, Cthugha, Hastur, Shub-Niggurath, Yog-Sothoth)"
+  },
+  {
+   "name": "cthPsiClassIV",
+   "value": 4,
+   "comment": "the R849 psionic class IV (Byakhee, Ithaqua)"
+  },
+  {
+   "name": "cthPsiClassV",
+   "value": 5,
+   "comment": "the R849 psionic class V (the Flame Creatures, Nyarlathotep)"
+  },
+  {
+   "name": "cthPsiClassVI",
+   "value": 6,
+   "comment": "the R849 psionic class VI (Azathoth)"
+  },
+  {
+   "name": "cthArtifactCount",
+   "value": 2,
+   "comment": "the two artifacts: the Elder Sign and the Necronomicon"
+  },
+  {
+   "name": "cthLoreNameHeardPct",
+   "value": 5,
+   "comment": "the name-speaking doctrine: a 5 percent chance the god hears its spoken name"
+  },
+  {
+   "name": "cthLoreRlyehSaveBonus",
+   "value": 4,
+   "comment": "the +4 saving throws against fear and insanity inside risen R lyeh"
+  },
+  {
+   "name": "cthLoreReleaseRadiusMiles",
+   "value": 100,
+   "comment": "the death-or-insanity saving throw radius in miles when the Elder Sign seal is broken"
+  },
+  {
+   "name": "cthLoreLesserBookCount",
+   "value": 7,
+   "comment": "the seven lesser forbidden books (Eibon, Celaeno, Cultes des Goules, De Vermis Mysteriis, Dhol Chants, Pnakotic Manuscripts, Unausprechlichen Kulten)"
+  },
+  {
+   "name": "cthElderSignAC",
+   "value": -2,
+   "comment": "the Elder Sign armor class (broken only by magic or incredible force)"
+  },
+  {
+   "name": "cthElderSignProtectionBonus",
+   "value": 6,
+   "comment": "the +6 protection against the attacks of the more powerful masters (as a ring of protection)"
+  },
+  {
+   "name": "cthNecronomiconInsanityPct",
+   "value": 40,
+   "comment": "the 40 percent probability of alignment change or madness for readers below 5th level"
+  },
+  {
+   "name": "cthNecronomiconLevelFloor",
+   "value": 5,
+   "comment": "the level floor of that 40 percent roll"
+  },
+  {
+   "name": "cthNecronomiconPctDecrement",
+   "value": 5,
+   "comment": "the probability decreases by 5 percent per level above 4th"
+  },
+  {
+   "name": "cthNecronomiconIntReq",
+   "value": 18,
+   "comment": "only magic-users of 18 intelligence have a chance of understanding the spells"
+  },
+  {
+   "name": "cthNecronomiconStudyPct",
+   "value": 5,
+   "comment": "the 5 percent per level chance of understanding, starting at the 6th level"
+  },
+  {
+   "name": "cthNecronomiconStudyStart",
+   "value": 6,
+   "comment": "the starting level of that study chance"
+  },
+  {
+   "name": "cthNecronomiconSummonInsanityPct",
+   "value": 30,
+   "comment": "the straight 30 percent chance of insanity when casting a greater summoning"
+  },
+  {
+   "name": "cthCthulhuDmgLo",
+   "value": 1,
+   "comment": "the 1-10 damage per attack (x 30)"
+  },
+  {
+   "name": "cthCthulhuDmgHi",
+   "value": 10,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthCthulhuRegen",
+   "value": 10,
+   "comment": "the 10 hit points regenerated per melee round"
+  },
+  {
+   "name": "cthCthulhuTeleportRangeFeet",
+   "value": 2640,
+   "comment": "the one-half mile teleport at will"
+  },
+  {
+   "name": "cthCthulhuCallDeepOnesLo",
+   "value": 10,
+   "comment": "the 10-100 Deep Ones called up from the sea"
+  },
+  {
+   "name": "cthCthulhuCallDeepOnesHi",
+   "value": 100,
+   "comment": "the call ceiling"
+  },
+  {
+   "name": "cthAzathothDmgLo",
+   "value": 3,
+   "comment": "the 3-18 damage per pseudopod (x 20)"
+  },
+  {
+   "name": "cthAzathothDmgHi",
+   "value": 18,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthAzathothAuraMiles",
+   "value": 1000,
+   "comment": "the 1,000 mile radius of the permanent-madness aura"
+  },
+  {
+   "name": "cthAzathothAuraSaveMod",
+   "value": -6,
+   "comment": "the save vs spells modifier inside the aura"
+  },
+  {
+   "name": "cthCthughaDmgLo",
+   "value": 3,
+   "comment": "the 3-30 damage per tentacle lash"
+  },
+  {
+   "name": "cthCthughaDmgHi",
+   "value": 30,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthCthughaHeatLo",
+   "value": 5,
+   "comment": "the 5-50 body heat damage"
+  },
+  {
+   "name": "cthCthughaHeatHi",
+   "value": 50,
+   "comment": "the heat ceiling"
+  },
+  {
+   "name": "cthCthughaHeatRangeYards",
+   "value": 100,
+   "comment": "the heat damage radius in yards"
+  },
+  {
+   "name": "cthCthughaFireCasterLevel",
+   "value": 30,
+   "comment": "the 30th level fire spell casting"
+  },
+  {
+   "name": "cthCthughaSpellsPerRound",
+   "value": 2,
+   "comment": "two fire spells per round"
+  },
+  {
+   "name": "cthCthughaWeaponPlus",
+   "value": 3,
+   "comment": "the +3 or better weapon needed to strike it"
+  },
+  {
+   "name": "cthCthughaSummonLo",
+   "value": 1,
+   "comment": "the 1-20 flame creatures summoned on arrival"
+  },
+  {
+   "name": "cthCthughaSummonHi",
+   "value": 20,
+   "comment": "the summon ceiling"
+  },
+  {
+   "name": "cthByakheeDmgLo",
+   "value": 1,
+   "comment": "the 1-10 damage per attack"
+  },
+  {
+   "name": "cthByakheeDmgHi",
+   "value": 10,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthByakheeHD",
+   "value": 10,
+   "comment": "the 10 hit dice"
+  },
+  {
+   "name": "cthByakheeAppearingLo",
+   "value": 1,
+   "comment": "the 1-4 appearing"
+  },
+  {
+   "name": "cthByakheeAppearingHi",
+   "value": 4,
+   "comment": "the appearing ceiling"
+  },
+  {
+   "name": "cthByakheeLairPct",
+   "value": 5,
+   "comment": "the 5 percent in lair"
+  },
+  {
+   "name": "cthByakheeXpLevel",
+   "value": 9,
+   "comment": "the IX level/xp value label"
+  },
+  {
+   "name": "cthByakheeXpBase",
+   "value": 9350,
+   "comment": "the 9,350 base xp"
+  },
+  {
+   "name": "cthByakheeXpPerHp",
+   "value": 20,
+   "comment": "the 20 xp per hit point"
+  },
+  {
+   "name": "cthByakheeGateSummonLo",
+   "value": 1,
+   "comment": "the 1-4 Byakhee of the Hastur gate spell"
+  },
+  {
+   "name": "cthByakheeGateSummonHi",
+   "value": 4,
+   "comment": "the gate ceiling"
+  },
+  {
+   "name": "cthFlameDmgLo",
+   "value": 2,
+   "comment": "the 2-20 damage per attack"
+  },
+  {
+   "name": "cthFlameDmgHi",
+   "value": 20,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthFlameHD",
+   "value": 16,
+   "comment": "the 16 hit dice"
+  },
+  {
+   "name": "cthFlameAppearingLo",
+   "value": 1,
+   "comment": "the 1-4 appearing"
+  },
+  {
+   "name": "cthFlameAppearingHi",
+   "value": 4,
+   "comment": "the appearing ceiling"
+  },
+  {
+   "name": "cthFlameHeatDmg",
+   "value": 10,
+   "comment": "the 10 points of heat damage radiated"
+  },
+  {
+   "name": "cthFlameHeatRangeYards",
+   "value": 20,
+   "comment": "the 20 yard heat radius"
+  },
+  {
+   "name": "cthFlameHeatRayLo",
+   "value": 2,
+   "comment": "the 2-20 heat ray damage"
+  },
+  {
+   "name": "cthFlameHeatRayHi",
+   "value": 20,
+   "comment": "the heat ray ceiling"
+  },
+  {
+   "name": "cthFlameXpLevel",
+   "value": 7,
+   "comment": "the VII level/xp value label"
+  },
+  {
+   "name": "cthFlameXpBase",
+   "value": 1950,
+   "comment": "the 1,950 base xp"
+  },
+  {
+   "name": "cthFlameXpPerHp",
+   "value": 14,
+   "comment": "the 14 xp per hit point"
+  },
+  {
+   "name": "cthDeepOnesDmgLo",
+   "value": 1,
+   "comment": "the 1-4 claw damage (+2)"
+  },
+  {
+   "name": "cthDeepOnesDmgHi",
+   "value": 4,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthDeepOnesWeaponPlus",
+   "value": 2,
+   "comment": "the +2 on the claw damage"
+  },
+  {
+   "name": "cthDeepOnesHD",
+   "value": 4,
+   "comment": "the 4 hit dice"
+  },
+  {
+   "name": "cthDeepOnesAppearingLo",
+   "value": 1,
+   "comment": "the 1-100 appearing"
+  },
+  {
+   "name": "cthDeepOnesAppearingHi",
+   "value": 100,
+   "comment": "the appearing ceiling"
+  },
+  {
+   "name": "cthDeepOnesLairPct",
+   "value": 90,
+   "comment": "the 90 percent in lair"
+  },
+  {
+   "name": "cthDeepOnesXpLevel",
+   "value": 3,
+   "comment": "the III level/xp value label"
+  },
+  {
+   "name": "cthDeepOnesXpBase",
+   "value": 60,
+   "comment": "the 60 base xp"
+  },
+  {
+   "name": "cthDeepOnesXpPerHp",
+   "value": 4,
+   "comment": "the 4 xp per hit point"
+  },
+  {
+   "name": "cthDeepOnesStr",
+   "value": 18,
+   "comment": "the great strength (18) of the prose"
+  },
+  {
+   "name": "cthDeepOnesTransformAge",
+   "value": 21,
+   "comment": "the age of 21 when the hybrid transformation begins"
+  },
+  {
+   "name": "cthHasturDmgLo",
+   "value": 20,
+   "comment": "the 20-200 damage per attack"
+  },
+  {
+   "name": "cthHasturDmgHi",
+   "value": 200,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthHasturTentacles",
+   "value": 200,
+   "comment": "the 200 projecting tentacles"
+  },
+  {
+   "name": "cthHasturRegen",
+   "value": 5,
+   "comment": "the 5 hit points regenerated per melee round"
+  },
+  {
+   "name": "cthHasturSummonLo",
+   "value": 2,
+   "comment": "the 2-20 Byakhee summoned to battle"
+  },
+  {
+   "name": "cthHasturSummonHi",
+   "value": 20,
+   "comment": "the summon ceiling"
+  },
+  {
+   "name": "cthHasturNameHearPct",
+   "value": 25,
+   "comment": "the 25 percent chance the spoken name is heard"
+  },
+  {
+   "name": "cthHasturByakheeLo",
+   "value": 1,
+   "comment": "the 1-4 Byakhee sent to slay the speaker"
+  },
+  {
+   "name": "cthHasturByakheeHi",
+   "value": 4,
+   "comment": "the Byakhee ceiling"
+  },
+  {
+   "name": "cthHasturAppearPct",
+   "value": 25,
+   "comment": "the 25 percent chance Hastur himself appears"
+  },
+  {
+   "name": "cthGreatRaceDmgLo",
+   "value": 1,
+   "comment": "the 1-8 damage per attack"
+  },
+  {
+   "name": "cthGreatRaceDmgHi",
+   "value": 8,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthGreatRaceHD",
+   "value": 8,
+   "comment": "the 8 hit dice"
+  },
+  {
+   "name": "cthGreatRaceAppearingLo",
+   "value": 1,
+   "comment": "the 1-10 appearing"
+  },
+  {
+   "name": "cthGreatRaceAppearingHi",
+   "value": 10,
+   "comment": "the appearing ceiling"
+  },
+  {
+   "name": "cthGreatRaceLairPct",
+   "value": 95,
+   "comment": "the 95 percent in lair"
+  },
+  {
+   "name": "cthGreatRaceXpLevel",
+   "value": 6,
+   "comment": "the VI level/xp value label"
+  },
+  {
+   "name": "cthGreatRaceXpBase",
+   "value": 650,
+   "comment": "the 650 base xp"
+  },
+  {
+   "name": "cthGreatRaceXpPerHp",
+   "value": 10,
+   "comment": "the 10 xp per hit point"
+  },
+  {
+   "name": "cthGreatRacePsiScore",
+   "value": 280,
+   "comment": "the 280 point psionic ability score"
+  },
+  {
+   "name": "cthGreatRaceConeWidthFeet",
+   "value": 10,
+   "comment": "the ten foot wide cone"
+  },
+  {
+   "name": "cthGreatRaceTentacles",
+   "value": 4,
+   "comment": "the four tentacles at the top"
+  },
+  {
+   "name": "cthGreatRaceTentacleFeet",
+   "value": 10,
+   "comment": "the ten foot long tentacles"
+  },
+  {
+   "name": "cthIthaquaDmgLo",
+   "value": 4,
+   "comment": "the 4-40 damage per attack"
+  },
+  {
+   "name": "cthIthaquaDmgHi",
+   "value": 40,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthIthaquaWeatherMultiplier",
+   "value": 3,
+   "comment": "the tripled range and effects of his weather control"
+  },
+  {
+   "name": "cthMiGoDmgLo",
+   "value": 1,
+   "comment": "the 1-8 damage per attack"
+  },
+  {
+   "name": "cthMiGoDmgHi",
+   "value": 8,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthMiGoHD",
+   "value": 5,
+   "comment": "the 5 hit dice"
+  },
+  {
+   "name": "cthMiGoAppearingLo",
+   "value": 2,
+   "comment": "the 2-12 appearing"
+  },
+  {
+   "name": "cthMiGoAppearingHi",
+   "value": 12,
+   "comment": "the appearing ceiling"
+  },
+  {
+   "name": "cthMiGoLairPct",
+   "value": 40,
+   "comment": "the 40 percent in lair"
+  },
+  {
+   "name": "cthMiGoXpLevel",
+   "value": 4,
+   "comment": "the IV level/xp value label"
+  },
+  {
+   "name": "cthMiGoXpBase",
+   "value": 240,
+   "comment": "the 240 base xp"
+  },
+  {
+   "name": "cthMiGoXpPerHp",
+   "value": 5,
+   "comment": "the 5 xp per hit point"
+  },
+  {
+   "name": "cthMiGoPsiScore",
+   "value": 90,
+   "comment": "the 90 point psionic ability score"
+  },
+  {
+   "name": "cthMiGoCiliaInches",
+   "value": 3,
+   "comment": "the 3 inch wiry cilia"
+  },
+  {
+   "name": "cthMiGoEyes",
+   "value": 5,
+   "comment": "the 5 red-irised globed eyes"
+  },
+  {
+   "name": "cthMiGoMouthTentacles",
+   "value": 5,
+   "comment": "the 5 mouthed tentacles at the top"
+  },
+  {
+   "name": "cthMiGoLegTentacles",
+   "value": 5,
+   "comment": "the 5 locomotion tentacles at the base"
+  },
+  {
+   "name": "cthNyarlathotepDmgLo",
+   "value": 3,
+   "comment": "the 3-30 damage per attack"
+  },
+  {
+   "name": "cthNyarlathotepDmgHi",
+   "value": 30,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthNyarlathotepGoodSave",
+   "value": 4,
+   "comment": "the +4 save of good-aligned beings against his presence"
+  },
+  {
+   "name": "cthNyarlathotepEvilSave",
+   "value": -4,
+   "comment": "the -4 save of evil-aligned beings"
+  },
+  {
+   "name": "cthNyarlathotepArmyLo",
+   "value": 1,
+   "comment": "the 1-100 wild beasts or mindless humans called up"
+  },
+  {
+   "name": "cthNyarlathotepArmyHi",
+   "value": 100,
+   "comment": "the army ceiling"
+  },
+  {
+   "name": "cthNyarlathotepArmyHours",
+   "value": 1,
+   "comment": "the one hour notice of the army"
+  },
+  {
+   "name": "cthNyarlathotepDrainLo",
+   "value": 3,
+   "comment": "the 3-30 hit points drained per hit"
+  },
+  {
+   "name": "cthNyarlathotepDrainHi",
+   "value": 30,
+   "comment": "the drain ceiling"
+  },
+  {
+   "name": "cthNyarlathotepDrainTurns",
+   "value": 1,
+   "comment": "the drained points add to his total for one full turn"
+  },
+  {
+   "name": "cthNyarlathotepLightRepelPct",
+   "value": 5,
+   "comment": "the 5 percent chance a continual light drives him into the Astral Plane"
+  },
+  {
+   "name": "cthPrimordialDmgLo",
+   "value": 1,
+   "comment": "the 1-6 damage per tentacle (x 3)"
+  },
+  {
+   "name": "cthPrimordialDmgHi",
+   "value": 6,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthPrimordialHD",
+   "value": 8,
+   "comment": "the 8 hit dice"
+  },
+  {
+   "name": "cthPrimordialAppearingLo",
+   "value": 1,
+   "comment": "the 1-8 appearing"
+  },
+  {
+   "name": "cthPrimordialAppearingHi",
+   "value": 8,
+   "comment": "the appearing ceiling"
+  },
+  {
+   "name": "cthPrimordialLairPct",
+   "value": 95,
+   "comment": "the 95 percent in lair"
+  },
+  {
+   "name": "cthPrimordialXpLevel",
+   "value": 6,
+   "comment": "the VI level/xp value label"
+  },
+  {
+   "name": "cthPrimordialXpBase",
+   "value": 550,
+   "comment": "the 550 base xp"
+  },
+  {
+   "name": "cthPrimordialXpPerHp",
+   "value": 10,
+   "comment": "the 10 xp per hit point"
+  },
+  {
+   "name": "cthPrimordialPsiScore",
+   "value": 206,
+   "comment": "the 206 point psionic ability score"
+  },
+  {
+   "name": "cthPrimordialAtkTentacles",
+   "value": 3,
+   "comment": "the three walking tentacle strikes"
+  },
+  {
+   "name": "cthPrimordialEyes",
+   "value": 5,
+   "comment": "the 5 eyes on the globe"
+  },
+  {
+   "name": "cthPrimordialMouthTentacles",
+   "value": 5,
+   "comment": "the 5 mouthed tentacles at the top"
+  },
+  {
+   "name": "cthPrimordialLegTentacles",
+   "value": 5,
+   "comment": "the 5 locomotion tentacles at the base"
+  },
+  {
+   "name": "cthShoggothDmgLo",
+   "value": 3,
+   "comment": "the 3-30 damage per attack"
+  },
+  {
+   "name": "cthShoggothDmgHi",
+   "value": 30,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthShoggothHD",
+   "value": 20,
+   "comment": "the 20 hit dice"
+  },
+  {
+   "name": "cthShoggothAppearingLo",
+   "value": 1,
+   "comment": "the 1-4 appearing"
+  },
+  {
+   "name": "cthShoggothAppearingHi",
+   "value": 4,
+   "comment": "the appearing ceiling"
+  },
+  {
+   "name": "cthShoggothLairPct",
+   "value": 90,
+   "comment": "the 90 percent in lair"
+  },
+  {
+   "name": "cthShoggothXpLevel",
+   "value": 9,
+   "comment": "the IX level/xp value label"
+  },
+  {
+   "name": "cthShoggothXpBase",
+   "value": 6500,
+   "comment": "the 6,500 base xp"
+  },
+  {
+   "name": "cthShoggothXpPerHp",
+   "value": 30,
+   "comment": "the 30 xp per hit point"
+  },
+  {
+   "name": "cthShubPoolDiameterFeet",
+   "value": 100,
+   "comment": "the 100 feet across gray matter pool"
+  },
+  {
+   "name": "cthShubSenseRangeInches",
+   "value": 1000,
+   "comment": "the 1,000 inch approach sense range"
+  },
+  {
+   "name": "cthShubCreateLo",
+   "value": 1,
+   "comment": "the 1-100 small monsters created from the pool each round"
+  },
+  {
+   "name": "cthShubCreateHi",
+   "value": 100,
+   "comment": "the creation ceiling"
+  },
+  {
+   "name": "cthShubDefendPerMelee",
+   "value": 1,
+   "comment": "one defending monster created per melee round"
+  },
+  {
+   "name": "cthShubSummonDie",
+   "value": 6,
+   "comment": "the d6 random monster table (Byakhee, Deep One, Great Race, Mi-Go, Primordial One, Shoggoth)"
+  },
+  {
+   "name": "cthYogDmgLo",
+   "value": 1,
+   "comment": "the 1-8 damage per attack (x 12)"
+  },
+  {
+   "name": "cthYogDmgHi",
+   "value": 8,
+   "comment": "the damage ceiling"
+  },
+  {
+   "name": "cthYogGatePerMelee",
+   "value": 1,
+   "comment": "one Spawn or subject race gated in per melee round"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cthOldOnesFromStars",
+   "value": true,
+   "comment": "the Old Ones descended to Earth from the stars in pre-human times"
+  },
+  {
+   "name": "cthOldOnesBanished",
+   "value": true,
+   "comment": "the Old Ones were later banished or locked away by the elder gods"
+  },
+  {
+   "name": "cthElderGodsMysterious",
+   "value": true,
+   "comment": "the elder gods do not enter the stories much and their identity is a mystery"
+  },
+  {
+   "name": "cthForbiddenBooksDangerous",
+   "value": true,
+   "comment": "bits of the old lore were transcribed into books, extremely dangerous books"
+  },
+  {
+   "name": "cthDerlethArkhamHouse",
+   "value": true,
+   "comment": "August Derleth founded Arkham House to reprint the works and wrote the good-vs-evil struggle"
+  },
+  {
+   "name": "cthLovecraftIndifferent",
+   "value": true,
+   "comment": "Lovecraft's original concept: all his gods evil and chaotic, the best mankind could expect was indifference"
+  },
+  {
+   "name": "cthNatureCreaturesFlee",
+   "value": true,
+   "comment": "all creatures of nature call out their warning sounds and flee when the Old Ones or minions come within range"
+  },
+  {
+   "name": "cthInsanityMonthsEqualIntelligence",
+   "value": true,
+   "comment": "the release insanity lasts a number of months equal to the creature intelligence"
+  },
+  {
+   "name": "cthNameSpeakingGodAppears",
+   "value": true,
+   "comment": "a god who hears its name spoken will appear and attempt to kill the speaker"
+  },
+  {
+   "name": "cthNameSpeakingMaySendMinions",
+   "value": true,
+   "comment": "some of the greater gods will send minions to accomplish the killing"
+  },
+  {
+   "name": "cthCthulhuCultSecret",
+   "value": true,
+   "comment": "Cthulhu's cult is hidden and secret, dedicated to bringing about his return and conquest"
+  },
+  {
+   "name": "cthElderSignGreyStone",
+   "value": true,
+   "comment": "the small grey (sometimes greenish) stone in the shape of a five-pointed star"
+  },
+  {
+   "name": "cthElderSignPsionicProof",
+   "value": true,
+   "comment": "the true potent Elder Signs are 100 percent protection against psionic attacks"
+  },
+  {
+   "name": "cthElderSignDrivesOffMinions",
+   "value": true,
+   "comment": "strongly presented, they drive off all Shoggoths, Byakhee, Flame Creatures, Deep Ones and Mi-Go"
+  },
+  {
+   "name": "cthElderSignPlusSixVsMasters",
+   "value": true,
+   "comment": "against the more powerful masters they provide the +6 protection (as a ring of protection)"
+  },
+  {
+   "name": "cthElderSignBrokenByMagicOrForce",
+   "value": true,
+   "comment": "the Elder Signs resist destruction - broken only by magic or incredible force"
+  },
+  {
+   "name": "cthElderSignSealedPrisons",
+   "value": true,
+   "comment": "the Elder Sign was used by the elder gods to seal off the prisons and breaking-through places"
+  },
+  {
+   "name": "cthNecronomiconAlAzifTitle",
+   "value": true,
+   "comment": "originally written as Al Azif, the nocturnal sounds of insects"
+  },
+  {
+   "name": "cthNecronomiconMadArab",
+   "value": true,
+   "comment": "written by Abdul Alhazred, the Mad Arab, after ten years alone in the desert"
+  },
+  {
+   "name": "cthNecronomiconDevouredByDemons",
+   "value": true,
+   "comment": "Alhazred was seized in the streets of a desert city by invisible demons and devoured horribly"
+  },
+  {
+   "name": "cthNecronomiconBannedDestroyed",
+   "value": true,
+   "comment": "the book was banned and all known copies destroyed, but a few translated editions remain"
+  },
+  {
+   "name": "cthNecronomiconAlignmentOrMadness",
+   "value": true,
+   "comment": "the d6 sub-roll: 1-3 alignment change to chaotic, 4-6 going mad"
+  },
+  {
+   "name": "cthNecronomiconStarsMustBeRight",
+   "value": true,
+   "comment": "many spells require that the stars be right, at certain times of the year or in certain places"
+  },
+  {
+   "name": "cthNecronomiconProtectionFails",
+   "value": true,
+   "comment": "the spells often fail to protect the caster from the thing called from the outer darkness"
+  },
+  {
+   "name": "cthNecronomiconSimulacraAppear",
+   "value": true,
+   "comment": "the unfortunates are rarely seen again, though simulacra or zombie-like imitations sometimes appear"
+  },
+  {
+   "name": "cthLesserBooksWeakerPowers",
+   "value": true,
+   "comment": "some of the seven lesser books have powers similar to, but lesser than, the Necronomicon itself"
+  },
+  {
+   "name": "cthCthulhuOctopoidHead",
+   "value": true,
+   "comment": "the bloated humanoid form with an octopoid head and a face of tentacle-like cilia"
+  },
+  {
+   "name": "cthCthulhuBatWings",
+   "value": true,
+   "comment": "the pair of folded bat-like wings protruding from between its shoulders"
+  },
+  {
+   "name": "cthCthulhuSunkenRlyeh",
+   "value": true,
+   "comment": "R'lyeh the great sunken city of non-Euclidian geometry hidden beneath the ocean"
+  },
+  {
+   "name": "cthCthulhuNonEuclidian",
+   "value": true,
+   "comment": "so bizarre its construction that entrants save at +4 against fear and insanity"
+  },
+  {
+   "name": "cthCthulhuImmuneWaterColdVacuum",
+   "value": true,
+   "comment": "totally immune to the effects of water, cold and vacuum"
+  },
+  {
+   "name": "cthCthulhuRetreatElderSign",
+   "value": true,
+   "comment": "he retreats into his lair if confronted with an intact Elder Sign"
+  },
+  {
+   "name": "cthCthulhuRetreatOldOne",
+   "value": true,
+   "comment": "he retreats if confronted with another of the Old Ones (such as Hastur)"
+  },
+  {
+   "name": "cthCthulhuRetreatCatastrophe",
+   "value": true,
+   "comment": "he retreats at some natural catastrophe, such as the re-sinking of R lyeh"
+  },
+  {
+   "name": "cthCthulhuServedByDeepOnes",
+   "value": true,
+   "comment": "served by the Deep Ones as well as his human worshipers"
+  },
+  {
+   "name": "cthCthulhuInterbreedingCult",
+   "value": true,
+   "comment": "his human worshipers often interbreed with the fish-men"
+  },
+  {
+   "name": "cthCthulhuFighterAs16HDMonster",
+   "value": true,
+   "comment": "the printed FIGHTER cell: As 16+ HD monster"
+  },
+  {
+   "name": "cthAzathothBlindMindless",
+   "value": true,
+   "comment": "a blind, mindless, amorphous mass the size of a star at the center of the universe"
+  },
+  {
+   "name": "cthAzathothAmorphousStar",
+   "value": true,
+   "comment": "floating on the astral plane, somewhat solid near the center where it can be attacked"
+  },
+  {
+   "name": "cthAzathothFluteMusic",
+   "value": true,
+   "comment": "attended by satellite creatures that provide an eerie music, like idiot flute players"
+  },
+  {
+   "name": "cthAzathothPseudopodDefense",
+   "value": true,
+   "comment": "it defends itself with its many pseudopods when attacked at the solid center"
+  },
+  {
+   "name": "cthAzathothClericsInsane",
+   "value": true,
+   "comment": "those who worship Azathoth worship insanity, and his clerics are themselves insane"
+  },
+  {
+   "name": "cthAzathothMaybeUnaware",
+   "value": true,
+   "comment": "it is unknown how Azathoth grants powers, or even if he is aware of his clerics (doubtful)"
+  },
+  {
+   "name": "cthAzathothFighterAs16HDMonster",
+   "value": true,
+   "comment": "the printed FIGHTER cell: As 16+ HD monster"
+  },
+  {
+   "name": "cthCthughaFlamingAmoeba",
+   "value": true,
+   "comment": "resembles a flaming amoeba with tentacle-like flames emanating from its body"
+  },
+  {
+   "name": "cthCthughaClericSeeBelow",
+   "value": true,
+   "comment": "the printed CLERIC/DRUID cell: See below"
+  },
+  {
+   "name": "cthCthughaMUSeeBelow",
+   "value": true,
+   "comment": "the printed MAGIC-USER/ILLUSIONIST cell: See below"
+  },
+  {
+   "name": "cthCthughaMovesAsBlinkDog",
+   "value": true,
+   "comment": "it moves as a blink dog and attempts to destroy everything in the summoned area"
+  },
+  {
+   "name": "cthCthughaImmuneHeatCold",
+   "value": true,
+   "comment": "it cannot be controlled, and is immune to all heat and cold attacks"
+  },
+  {
+   "name": "cthCthughaMeltsWeapons",
+   "value": true,
+   "comment": "only +3 or better weapons strike it; all others melt when touching him"
+  },
+  {
+   "name": "cthCthughaPalaceOfFire",
+   "value": true,
+   "comment": "its Palace of Fire in an active volcano, filled with flame-resistant treasure"
+  },
+  {
+   "name": "cthCthughaFighterAs16HDMonster",
+   "value": true,
+   "comment": "the printed FIGHTER cell: As 16+ HD monster"
+  },
+  {
+   "name": "cthByakheeServantsOfHastur",
+   "value": true,
+   "comment": "the printed name block: Byakhee (servants of Hastur)"
+  },
+  {
+   "name": "cthByakheeBatLike",
+   "value": true,
+   "comment": "giant furry bat-like creatures with humanoid legs that enable them to stand like men"
+  },
+  {
+   "name": "cthByakheeHumanoidLegs",
+   "value": true,
+   "comment": "the humanoid legs carrying human beings on their backs or in their talons"
+  },
+  {
+   "name": "cthByakheeGateSummon",
+   "value": true,
+   "comment": "summoned by clerics of Hastur through use of a gate spell"
+  },
+  {
+   "name": "cthByakheeTeleport",
+   "value": true,
+   "comment": "able to teleport throughout the Prime Material Plane at will"
+  },
+  {
+   "name": "cthByakheeObeyElderSign",
+   "value": true,
+   "comment": "they obey those who carry the Elder Sign or who appeal successfully to Hastur"
+  },
+  {
+   "name": "cthByakheeTelepathic",
+   "value": true,
+   "comment": "they are intelligent and telepathic"
+  },
+  {
+   "name": "cthFlameSmallerVersion",
+   "value": true,
+   "comment": "appear to be smaller versions of their master"
+  },
+  {
+   "name": "cthFlameStandInForGod",
+   "value": true,
+   "comment": "one of their functions is to appear when the god is too busy or chooses not to come"
+  },
+  {
+   "name": "cthDeepOnesAmphibious",
+   "value": true,
+   "comment": "humanoid amphibious men-fish, cold-blooded creatures of great strength"
+  },
+  {
+   "name": "cthDeepOnesInfravision",
+   "value": true,
+   "comment": "they have infravision as well as normal sight"
+  },
+  {
+   "name": "cthDeepOnesInterbreed",
+   "value": true,
+   "comment": "they interact with evil humans and interbreed with them"
+  },
+  {
+   "name": "cthDeepOnesSoullessImmortal",
+   "value": true,
+   "comment": "the Deep Ones are soulless and apparently immortal"
+  },
+  {
+   "name": "cthDeepOnesPromoteEvil",
+   "value": true,
+   "comment": "they promote evil in preparation of Cthulhu's return, funding the cult with sea treasures"
+  },
+  {
+   "name": "cthDeepOnesTreasureTypeZ",
+   "value": true,
+   "comment": "the printed treasure type Z"
+  },
+  {
+   "name": "cthHasturScaledBody",
+   "value": true,
+   "comment": "the scaled elongated body, lizard head and maw, taloned lizard claws"
+  },
+  {
+   "name": "cthHasturTeleports",
+   "value": true,
+   "comment": "at will it can teleport anywhere in the Prime Material Plane"
+  },
+  {
+   "name": "cthHasturFlyersNeverAttack",
+   "value": true,
+   "comment": "creatures able to fly naturally will never attack Hastur, even if controlled"
+  },
+  {
+   "name": "cthHasturFearSave",
+   "value": true,
+   "comment": "any being trying to attack the god must make a saving throw against fear"
+  },
+  {
+   "name": "cthHasturHalfBrotherCthulhu",
+   "value": true,
+   "comment": "Hastur is half-brother to Cthulhu"
+  },
+  {
+   "name": "cthHasturElderSignImprisoned",
+   "value": true,
+   "comment": "like Cthulhu, Hastur has been imprisoned by the star-shaped Elder Sign"
+  },
+  {
+   "name": "cthHasturCryptLakeHali",
+   "value": true,
+   "comment": "he lies in a crypt at the bottom of Lake Hali near the alien city of Carcosa"
+  },
+  {
+   "name": "cthHasturPartialElementalAir",
+   "value": true,
+   "comment": "he exists partly on the Prime Material Plane and partly on the Elemental Plane of Air"
+  },
+  {
+   "name": "cthHasturNeverFullySolid",
+   "value": true,
+   "comment": "never more than partially present and therefore not completely solid"
+  },
+  {
+   "name": "cthHasturFighterAs16HDMonster",
+   "value": true,
+   "comment": "the printed FIGHTER cell: As 16+ HD monster"
+  },
+  {
+   "name": "cthGreatRaceScientificPsionics",
+   "value": true,
+   "comment": "a highly advanced scientific civilization, with psionics rather than magic"
+  },
+  {
+   "name": "cthGreatRaceFrozenInTime",
+   "value": true,
+   "comment": "when the civilization was destroyed some were frozen in time and are occasionally discovered"
+  },
+  {
+   "name": "cthGreatRaceDesertCities",
+   "value": true,
+   "comment": "their cities still exist, buried in deserts or other out of the way places"
+  },
+  {
+   "name": "cthGreatRaceGiftsOfKnowledge",
+   "value": true,
+   "comment": "humans discovering and freeing them are sometimes rewarded with gifts of knowledge"
+  },
+  {
+   "name": "cthGreatRaceModesBCDEAll",
+   "value": true,
+   "comment": "the printed Attack/Defense Modes: B, C, D, E/All"
+  },
+  {
+   "name": "cthIthaquaFogShape",
+   "value": true,
+   "comment": "appears as a cloud of fog or snow, huge but human in shape"
+  },
+  {
+   "name": "cthIthaquaBlazingRedEyes",
+   "value": true,
+   "comment": "the blazing red eyes"
+  },
+  {
+   "name": "cthIthaquaTwoStarsIllusion",
+   "value": true,
+   "comment": "seen passing overhead, the illusion of two bright stars close together"
+  },
+  {
+   "name": "cthIthaquaWeatherControl",
+   "value": true,
+   "comment": "worshiped by the natives of the far North because of his weather control"
+  },
+  {
+   "name": "cthIthaquaHumanSacrifice",
+   "value": true,
+   "comment": "his worshipers propitiate him with human sacrifices, carried off no one knows where"
+  },
+  {
+   "name": "cthIthaquaPursuesWitnesses",
+   "value": true,
+   "comment": "he pursues and captures anyone who sees or annoys him or meddles with his altars"
+  },
+  {
+   "name": "cthIthaquaServesHastur",
+   "value": true,
+   "comment": "Ithaqua serves Hastur in special missions of great importance"
+  },
+  {
+   "name": "cthMiGoFungiFromYuggoth",
+   "value": true,
+   "comment": "the printed name block: the Fungi from Yuggoth"
+  },
+  {
+   "name": "cthMiGoLobsterLike",
+   "value": true,
+   "comment": "red bat-winged creatures resembling lobsters, actually fungus creatures"
+  },
+  {
+   "name": "cthMiGoImmuneColdDarkVacuum",
+   "value": true,
+   "comment": "immune to the effects of cold, dark and vacuum"
+  },
+  {
+   "name": "cthMiGoInterstellarFlight",
+   "value": true,
+   "comment": "they can fly across interstellar space"
+  },
+  {
+   "name": "cthMiGoClickingPincers",
+   "value": true,
+   "comment": "they cannot speak but communicate by clicking their pincers"
+  },
+  {
+   "name": "cthMiGoModesCDFGH",
+   "value": true,
+   "comment": "the printed Attack/Defense Modes: C, D/F, G, H"
+  },
+  {
+   "name": "cthNyarlathotepCrawlingChaos",
+   "value": true,
+   "comment": "the printed name block: the crawling chaos, the messenger of the gods"
+  },
+  {
+   "name": "cthNyarlathotepForetellsReturn",
+   "value": true,
+   "comment": "his appearance foretells the return of the Old Ones from their imprisonment"
+  },
+  {
+   "name": "cthNyarlathotepCharmPresence",
+   "value": true,
+   "comment": "he charms humans, humanoids and non-magical animals by his mere presence"
+  },
+  {
+   "name": "cthNyarlathotepRedBatGuise",
+   "value": true,
+   "comment": "believed to have various guises, including a red bat-like form with three evil eyes"
+  },
+  {
+   "name": "cthNyarlathotepWildBeastArmy",
+   "value": true,
+   "comment": "he can call up an army of wild beasts or mindless humans within an hour notice"
+  },
+  {
+   "name": "cthNyarlathotepLightRepel",
+   "value": true,
+   "comment": "the continual light chance drives this being off into the Astral Plane"
+  },
+  {
+   "name": "cthPrimordialAlienScience",
+   "value": true,
+   "comment": "an alien race of high intelligence and advanced science"
+  },
+  {
+   "name": "cthPrimordialHateIntelligence",
+   "value": true,
+   "comment": "they hate all other types of intelligence and will destroy them if possible"
+  },
+  {
+   "name": "cthPrimordialBarrelShape",
+   "value": true,
+   "comment": "barrel-shaped cylinders with membranous wings and many-colored cilia"
+  },
+  {
+   "name": "cthPrimordialMembranousWings",
+   "value": true,
+   "comment": "the membranous wings of the barrel body"
+  },
+  {
+   "name": "cthPrimordialModesBCDAll",
+   "value": true,
+   "comment": "the printed Attack/Defense Modes: B, C, D/All"
+  },
+  {
+   "name": "cthShoggothCreatedServants",
+   "value": true,
+   "comment": "originally created by the Primordial Ones as servants"
+  },
+  {
+   "name": "cthShoggothRebelled",
+   "value": true,
+   "comment": "they eventually rebelled and destroyed the civilization of their masters"
+  },
+  {
+   "name": "cthShoggothShapeAnything",
+   "value": true,
+   "comment": "huge intelligent amoebae, forming legs, eyes, mouths or huge weapons as needed"
+  },
+  {
+   "name": "cthShoggothAidOldOnes",
+   "value": true,
+   "comment": "the few remaining lurk in distant areas, sometimes aiding servants of the Old Ones"
+  },
+  {
+   "name": "cthShoggothImmuneWeakness",
+   "value": true,
+   "comment": "immune to weakness, paralysis and charm"
+  },
+  {
+   "name": "cthShubBlackGoatOfTheWoods",
+   "value": true,
+   "comment": "the printed name block: black goat of the woods with a thousand young"
+  },
+  {
+   "name": "cthShubBubblingPool",
+   "value": true,
+   "comment": "the constantly bubbling pool, putting forth mouths, limbs, pseudopods and whole creatures"
+  },
+  {
+   "name": "cthShubDevoursOwnSpawn",
+   "value": true,
+   "comment": "some monsters fall back into the pool, which grows mouths and devours them"
+  },
+  {
+   "name": "cthShubTelepathic",
+   "value": true,
+   "comment": "intelligent and telepathically sensitive"
+  },
+  {
+   "name": "cthShubTentaclePullStrength",
+   "value": true,
+   "comment": "the pool tentacle pulls victims in; the escape chance equals the victim strength percentage"
+  },
+  {
+   "name": "cthShubAstralTravels",
+   "value": true,
+   "comment": "though its body is trapped, it travels the Prime Material Plane in astral form"
+  },
+  {
+   "name": "cthShubFighterAs16HDMonster",
+   "value": true,
+   "comment": "the printed FIGHTER cell: As 16+ HD monster"
+  },
+  {
+   "name": "cthYogIridescentGlobes",
+   "value": true,
+   "comment": "the astral shape: a congeries of iridescent globes like giant soap bubbles"
+  },
+  {
+   "name": "cthYogFeltersShape",
+   "value": true,
+   "comment": "the material shape: a gigantic mass of feelers, legs and stalked organs"
+  },
+  {
+   "name": "cthYogSpawnOfYogSothoth",
+   "value": true,
+   "comment": "in this shape he mates with humans, producing the Spawn of Yog-Sothoth (the Dunwich Horror)"
+  },
+  {
+   "name": "cthYogOutsideSpaceTime",
+   "value": true,
+   "comment": "not subject to the laws of space and time, entering the universe at any point"
+  },
+  {
+   "name": "cthYogSimultaneous",
+   "value": true,
+   "comment": "he can appear at various parts of the universe simultaneously"
+  },
+  {
+   "name": "cthYogHighlyChaotic",
+   "value": true,
+   "comment": "highly intelligent and extremely chaotic and unpredictable"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "cthCbt",
+   "count": "cthCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "cthCbtAC",
+    "cthCbtACAlt",
+    "cthCbtHP",
+    "cthCbtMove",
+    "cthCbtMoveAlt",
+    "cthCbtAtN",
+    "cthCbtAtD",
+    "cthCbtMR",
+    "cthCbtSizeIn"
+   ],
+   "data": [
+    [
+     2,
+     0,
+     400,
+     18,
+     36,
+     30,
+     0,
+     80,
+     1200
+    ],
+    [
+     -2,
+     0,
+     400,
+     0,
+     0,
+     20,
+     0,
+     95,
+     0
+    ],
+    [
+     -6,
+     0,
+     400,
+     36,
+     0,
+     2,
+     0,
+     50,
+     1440
+    ],
+    [
+     9,
+     0,
+     0,
+     6,
+     24,
+     2,
+     0,
+     20,
+     240
+    ],
+    [
+     -2,
+     0,
+     0,
+     24,
+     0,
+     1,
+     0,
+     10,
+     360
+    ],
+    [
+     3,
+     0,
+     0,
+     12,
+     24,
+     2,
+     1,
+     0,
+     72
+    ],
+    [
+     -2,
+     0,
+     400,
+     36,
+     36,
+     2,
+     0,
+     50,
+     7200
+    ],
+    [
+     5,
+     0,
+     0,
+     15,
+     0,
+     2,
+     0,
+     0,
+     120
+    ],
+    [
+     2,
+     0,
+     250,
+     24,
+     0,
+     2,
+     0,
+     30,
+     240
+    ],
+    [
+     4,
+     0,
+     0,
+     15,
+     30,
+     2,
+     0,
+     0,
+     96
+    ],
+    [
+     1,
+     0,
+     200,
+     15,
+     0,
+     2,
+     0,
+     25,
+     0
+    ],
+    [
+     6,
+     0,
+     0,
+     18,
+     12,
+     3,
+     0,
+     0,
+     108
+    ],
+    [
+     2,
+     0,
+     0,
+     9,
+     0,
+     2,
+     0,
+     30,
+     180
+    ],
+    [
+     4,
+     0,
+     400,
+     0,
+     0,
+     1,
+     0,
+     95,
+     1200
+    ],
+    [
+     -2,
+     0,
+     400,
+     18,
+     0,
+     12,
+     0,
+     50,
+     600
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Cthulhu 2, Azathoth -2, Cthugha -6, Nyarlathotep 1, Shub-Niggurath 4, Yog-Sothoth -2)",
+    "The range ceiling cells (0 = a single printed armor class; all fifteen read single this round)",
+    "The hit point cells (400 the four greater gods and Shub-Niggurath, Ithaqua 250, Nyarlathotep 200; 0 = the hit-dice monster rows)",
+    "The primary move cells (0 = the printed None of Azathoth and Shub-Niggurath; Shoggoth the printed 9)",
+    "The secondary move cells (the printed slash ceilings; Primordial One the printed 18/12 - flagged; Mi-Go 15/30)",
+    "The attack count cells (Cthulhu 30, Azathoth 20, Yog-Sothoth 12, Primordial One 3)",
+    "The attack alternative cells (the Deep Ones printed 2 or 1)",
+    "The magic resistance cells (0 = the printed Standard of the Deep Ones, Great Race, Mi-Go and Primordial One)",
+    "The size cells in inches (Cthulhu 100 feet, Hastur 600 feet, Cthugha the 40 yard radius, Azathoth the printed inconceivable and Nyarlathotep the printed Variable - both sentinels, flagged; Mi-Go the IA 8 feet against the Termux 8 inches - flagged)"
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "cthCls",
+   "count": "cthClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "cthClsCleric",
+    "cthClsDruid",
+    "cthClsFighterLo",
+    "cthClsFighterHi",
+    "cthClsRanger",
+    "cthClsMagUser",
+    "cthClsIllus",
+    "cthClsThief",
+    "cthClsAssassin",
+    "cthClsMonk",
+    "cthClsBard"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     99,
+     0,
+     0,
+     0,
+     0,
+     99,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     23,
+     23,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     13,
+     0,
+     15,
+     15,
+     0,
+     0,
+     12,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     12,
+     12,
+     15,
+     15,
+     0,
+     13,
+     13,
+     0,
+     15,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (99 = the printed See below: Cthugha the 30th level fire caster doctrine; Ithaqua 13th, Nyarlathotep 12th in each)",
+    "The druid level cells (Nyarlathotep 12th in each; all others Nil)",
+    "The fighter level floor cells (Ithaqua 15th and Nyarlathotep 15th; 0 = the as-16-plus-HD-monster gods, pinned as bools, and the monster rows)",
+    "The fighter level ceiling cells (single printed levels read floor = ceiling)",
+    "The ranger level cells (all Nil this round)",
+    "The magic-user level cells (99 = the printed See below: Cthugha; Cthulhu 20th, Hastur 23rd in each, Nyarlathotep 13th in each, Yog-Sothoth 15th)",
+    "The illusionist level cells (Ithaqua 12th; Hastur and Nyarlathotep the in-each 23s and 13s)",
+    "The thief level cells (all Nil this round)",
+    "The assassin level cells (Nyarlathotep the 15th level assassin)",
+    "The monk level cells (all Nil this round)",
+    "The bard level cells (all Nil this round)"
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "cthAbi",
+   "count": "cthAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "cthAbiStr",
+    "cthAbiStrHit",
+    "cthAbiStrDmg",
+    "cthAbiInt",
+    "cthAbiWis",
+    "cthAbiDex",
+    "cthAbiCon",
+    "cthAbiCha",
+    "cthAbiPsi"
+   ],
+   "data": [
+    [
+     25,
+     7,
+     14,
+     20,
+     23,
+     20,
+     25,
+     7,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     0,
+     0,
+     20,
+     25,
+     -7,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     12,
+     18,
+     25,
+     25,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     22,
+     23,
+     21,
+     23,
+     -4,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     280
+    ],
+    [
+     21,
+     4,
+     9,
+     16,
+     13,
+     18,
+     20,
+     -1,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     90
+    ],
+    [
+     19,
+     3,
+     7,
+     20,
+     12,
+     19,
+     20,
+     19,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     206
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     25,
+     20,
+     19,
+     25,
+     -4,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     23,
+     20,
+     25,
+     -7,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (the S:25s of five gods, Ithaqua 21, Shub-Niggurath 24; the monster rows 0 - the Deep Ones strength 18 rides a const)",
+    "The parenthesized strength to-hit bonus cells (0 = no printed bracket)",
+    "The parenthesized strength damage bonus cells (the +14s of the S:25s, the +9 of Ithaqua)",
+    "The intelligence cells (Azathoth the printed dash, 0; Yog-Sothoth 25, Cthulhu 20)",
+    "The wisdom cells (Azathoth the printed dash, 0; the rest as printed)",
+    "The dexterity cells (Cthugha 25 the Termux fold line, flagged)",
+    "The constitution cells (the 25s)",
+    "The charisma cells (Cthulhu the flagged 7 - both voices drop the minus, eyeball; Cthugha the flagged 1; Azathoth and Yog-Sothoth -7, Hastur and Shub-Niggurath -4, Ithaqua -1, Nyarlathotep 19)",
+    "The psionic score cells (the monster point scores: Great Race 280, Mi-Go 90, Primordial One 206; 0 = the deities read the R849 class table and the Nil monsters)"
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "cthRos",
+   "count": "cthRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "cthRosOrd",
+    "cthRosPage",
+    "cthRosAlign",
+    "cthRosRank",
+    "cthRosPsiClass",
+    "cthRosPlane",
+    "cthRosDmgFixed",
+    "cthRosInEach",
+    "cthRosSummonList"
+   ],
+   "data": [
+    [
+     0,
+     43,
+     8,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     44,
+     5,
+     1,
+     6,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     44,
+     8,
+     1,
+     1,
+     3,
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     44,
+     8,
+     3,
+     4,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     4,
+     44,
+     8,
+     3,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     45,
+     8,
+     3,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     6,
+     45,
+     8,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     45,
+     3,
+     3,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     8,
+     45,
+     8,
+     2,
+     4,
+     4,
+     1,
+     0,
+     0
+    ],
+    [
+     9,
+     46,
+     8,
+     3,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     10,
+     46,
+     8,
+     0,
+     5,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     11,
+     46,
+     6,
+     3,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     12,
+     46,
+     8,
+     3,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     13,
+     47,
+     8,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     14,
+     47,
+     8,
+     1,
+     1,
+     2,
+     1,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Cthulhu through Yog-Sothoth)",
+    "The print page cells (43-47, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (3 LN the Great Race, 5 CN Azathoth, 6 LE the Primordial One, 8 CE the other twelve - the R852 code scheme)",
+    "The rank cells (0 lesser Nyarlathotep and Shub-Niggurath, 1 greater, 2 demigod Ithaqua, 3 monster - the seven monster races)",
+    "The psionic class cells (0 Nil the five Nil monsters and the score-readers, 1 the class I gods, 4 Byakhee and Ithaqua, 5 the Flame Creatures and Nyarlathotep, 6 Azathoth - the R849 class table)",
+    "The plane cells (1 Prime Material, 2 Astral, 3 Elemental Fire, 4 Elemental Air; 0 = the monster rows)",
+    "The fixed-damage flags (1 = the printed DAMAGE/ATTACK cell is numeric damage; 0 = Shub-Niggurath the printed See below)",
+    "The in-each flags (the printed Nth level in each cells: Hastur the 23rd, Nyarlathotep the 12th cleric-druid and 13th magic-user-illusionist)",
+    "The summon-list flags (the six Shub-Niggurath d6 table monsters: Byakhee, Deep One, Great Race, Mi-Go, Primordial One, Shoggoth)"
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the fifteen beings, the four planes)",
+   "expr": "m['cthTableCount']() != 4 or m['cthBeingCount']() != 15 or m['cthCbtRows']() != 15 or m['cthClsRows']() != 15 or m['cthAbiRows']() != 15 or m['cthRosRows']() != 15 or m['cthPlaneCount']() != 4 or m['cthArtifactCount']() != 2 or m['cthChainCount']() != 0 or m['cthRound']() != 856 or m['cthPrintStart']() != 43 or m['cthPrintEnd']() != 48 or m['cthRegistryFloor']() != 995"
+  },
+  {
+   "note": "the print walk spans pp. 43-48 and the roster ordinals run 0-14 in print order",
+   "expr": "m['cthRosPage'](0) != 43 or m['cthRosPage'](1) != 44 or m['cthRosPage'](2) != 44 or m['cthRosPage'](3) != 44 or m['cthRosPage'](4) != 44 or m['cthRosPage'](5) != 45 or m['cthRosPage'](6) != 45 or m['cthRosPage'](7) != 45 or m['cthRosPage'](8) != 45 or m['cthRosPage'](9) != 46 or m['cthRosPage'](10) != 46 or m['cthRosPage'](11) != 46 or m['cthRosPage'](12) != 46 or m['cthRosPage'](13) != 47 or m['cthRosPage'](14) != 47 or m['cthRosOrd'](0) != 0 or m['cthRosOrd'](1) != 1 or m['cthRosOrd'](2) != 2 or m['cthRosOrd'](3) != 3 or m['cthRosOrd'](4) != 4 or m['cthRosOrd'](5) != 5 or m['cthRosOrd'](6) != 6 or m['cthRosOrd'](7) != 7 or m['cthRosOrd'](8) != 8 or m['cthRosOrd'](9) != 9 or m['cthRosOrd'](10) != 10 or m['cthRosOrd'](11) != 11 or m['cthRosOrd'](12) != 12 or m['cthRosOrd'](13) != 13 or m['cthRosOrd'](14) != 14"
+  },
+  {
+   "note": "the combat grid walk: the eight deities and the seven monster rows",
+   "expr": "m['cthCbtAC'](0) != 2 or m['cthCbtAC'](1) != -2 or m['cthCbtAC'](2) != -6 or m['cthCbtAC'](3) != 9 or m['cthCbtAC'](4) != -2 or m['cthCbtAC'](5) != 3 or m['cthCbtAC'](6) != -2 or m['cthCbtAC'](7) != 5 or m['cthCbtAC'](8) != 2 or m['cthCbtAC'](9) != 4 or m['cthCbtAC'](10) != 1 or m['cthCbtAC'](11) != 6 or m['cthCbtAC'](12) != 2 or m['cthCbtAC'](13) != 4 or m['cthCbtAC'](14) != -2"
+  },
+  {
+   "note": "the class grid walk: the level cells",
+   "expr": "m['cthClsMagUser'](0) != 20 or m['cthClsMagUser'](6) != 23 or m['cthClsIllus'](6) != 23 or m['cthClsCleric'](8) != 13 or m['cthClsIllus'](8) != 12 or m['cthClsCleric'](10) != 12 or m['cthClsDruid'](10) != 12 or m['cthClsMagUser'](10) != 13 or m['cthClsIllus'](10) != 13 or m['cthClsAssassin'](10) != 15 or m['cthClsMagUser'](14) != 15 or m['cthClsCleric'](2) != 99 or m['cthClsMagUser'](2) != 99"
+  },
+  {
+   "note": "the ability grid walk: the S:25 gods and the monster sentinels",
+   "expr": "m['cthAbiStr'](0) != 25 or m['cthAbiStrHit'](0) != 7 or m['cthAbiStrDmg'](0) != 14 or m['cthAbiCha'](1) != -7 or m['cthAbiCha'](6) != -4 or m['cthAbiCha'](8) != -1 or m['cthAbiCha'](10) != 19 or m['cthAbiCha'](13) != -4 or m['cthAbiCha'](14) != -7 or m['cthAbiPsi'](7) != 280 or m['cthAbiPsi'](9) != 90 or m['cthAbiPsi'](11) != 206 or m['cthAbiStr'](3) != 0 or m['cthAbiStr'](12) != 0"
+  },
+  {
+   "note": "the roster walk: the ranks, classes, planes and summon-list flags",
+   "expr": "m['cthRosRank'](0) != 1 or m['cthRosRank'](8) != 2 or m['cthRosRank'](10) != 0 or m['cthRosRank'](13) != 0 or m['cthRosPsiClass'](1) != 6 or m['cthRosPsiClass'](3) != 4 or m['cthRosPsiClass'](4) != 5 or m['cthRosPsiClass'](10) != 5 or m['cthRosPlane'](2) != 3 or m['cthRosPlane'](8) != 4 or m['cthRosPlane'](1) != 2 or m['cthRosDmgFixed'](13) != 0 or m['cthRosInEach'](6) != 1 or m['cthRosSummonList'](3) != 1 or m['cthRosSummonList'](5) != 1 or m['cthRosSummonList'](7) != 1 or m['cthRosSummonList'](9) != 1 or m['cthRosSummonList'](11) != 1 or m['cthRosSummonList'](12) != 1 or m['cthRosSummonList'](0) != 0"
+  },
+  {
+   "note": "the lore doctrine: the name-speaking 5 percent, the R lyeh saves, the release radius",
+   "expr": "m['cthLoreNameHeardPct']() != 5 or m['cthLoreRlyehSaveBonus']() != 4 or m['cthLoreReleaseRadiusMiles']() != 100 or m['cthLoreLesserBookCount']() != 7"
+  },
+  {
+   "note": "the Elder Sign walk: the -2 armor class, the +6 protection, the minion drives",
+   "expr": "m['cthElderSignAC']() != -2 or m['cthElderSignProtectionBonus']() != 6"
+  },
+  {
+   "note": "the Necronomicon walk: the 40 percent, the -5 per level, the 30th level study, the 30 percent summoning insanity",
+   "expr": "m['cthNecronomiconInsanityPct']() != 40 or m['cthNecronomiconLevelFloor']() != 5 or m['cthNecronomiconPctDecrement']() != 5 or m['cthNecronomiconIntReq']() != 18 or m['cthNecronomiconStudyPct']() != 5 or m['cthNecronomiconStudyStart']() != 6 or m['cthNecronomiconSummonInsanityPct']() != 30"
+  },
+  {
+   "note": "the Cthulhu walk: the 1-10 x 30 damage, the 10 point regen, the half-mile teleport, the 10-100 Deep Ones",
+   "expr": "m['cthCthulhuDmgLo']() != 1 or m['cthCthulhuDmgHi']() != 10 or m['cthCthulhuRegen']() != 10 or m['cthCthulhuTeleportRangeFeet']() != 2640 or m['cthCthulhuCallDeepOnesLo']() != 10 or m['cthCthulhuCallDeepOnesHi']() != 100 or m['cthCbtHP'](0) != 400 or m['cthCbtAtN'](0) != 30 or m['cthCbtMR'](0) != 80 or m['cthCbtSizeIn'](0) != 1200"
+  },
+  {
+   "note": "the Cthulhu flagged charisma: both voices read 7, the minus dropped in the scrawl - pinned 7, eyeball",
+   "expr": "m['cthAbiCha'](0) != 7 or m['cthAbiInt'](0) != 20 or m['cthAbiWis'](0) != 23 or m['cthAbiDex'](0) != 20 or m['cthAbiCon'](0) != 25"
+  },
+  {
+   "note": "the Azathoth walk: the 3-18 x 20 damage, the 1,000 mile aura at -6, the printed dashes",
+   "expr": "m['cthAzathothDmgLo']() != 3 or m['cthAzathothDmgHi']() != 18 or m['cthAzathothAuraMiles']() != 1000 or m['cthAzathothAuraSaveMod']() != -6 or m['cthCbtMR'](1) != 95 or m['cthAbiInt'](1) != 0 or m['cthAbiWis'](1) != 0 or m['cthCbtSizeIn'](1) != 0"
+  },
+  {
+   "note": "the Cthugha walk: the 5-50 heat at 100 yards, the 30th level caster, the +3 weapons, the 1-20 summon",
+   "expr": "m['cthCthughaDmgLo']() != 3 or m['cthCthughaDmgHi']() != 30 or m['cthCthughaHeatLo']() != 5 or m['cthCthughaHeatHi']() != 50 or m['cthCthughaHeatRangeYards']() != 100 or m['cthCthughaFireCasterLevel']() != 30 or m['cthCthughaSpellsPerRound']() != 2 or m['cthCthughaWeaponPlus']() != 3 or m['cthCthughaSummonLo']() != 1 or m['cthCthughaSummonHi']() != 20 or m['cthCthughaDmgLo']() != 3 or m['cthCbtSizeIn'](2) != 1440"
+  },
+  {
+   "note": "the Cthugha flagged ability line: the IA scrawl against the Termux fold - I 12, W 18, D 25, CH 1 pinned, eyeball",
+   "expr": "m['cthAbiInt'](2) != 12 or m['cthAbiWis'](2) != 18 or m['cthAbiDex'](2) != 25 or m['cthAbiCha'](2) != 1 or m['cthAbiCon'](2) != 25"
+  },
+  {
+   "note": "the Byakhee walk: 10 hit dice, the IX/9350 + 20 xp line, the 1-4 gate, the class IV",
+   "expr": "m['cthByakheeDmgLo']() != 1 or m['cthByakheeDmgHi']() != 10 or m['cthByakheeHD']() != 10 or m['cthByakheeAppearingLo']() != 1 or m['cthByakheeAppearingHi']() != 4 or m['cthByakheeLairPct']() != 5 or m['cthByakheeXpLevel']() != 9 or m['cthByakheeXpBase']() != 9350 or m['cthByakheeXpPerHp']() != 20 or m['cthByakheeGateSummonLo']() != 1 or m['cthByakheeGateSummonHi']() != 4"
+  },
+  {
+   "note": "the Flame Creature walk: 16 hit dice, the 10 point heat at 20 yards, the 2-20 ray, the VII/1950 + 14",
+   "expr": "m['cthFlameDmgLo']() != 2 or m['cthFlameDmgHi']() != 20 or m['cthFlameHD']() != 16 or m['cthFlameHeatDmg']() != 10 or m['cthFlameHeatRangeYards']() != 20 or m['cthFlameHeatRayLo']() != 2 or m['cthFlameHeatRayHi']() != 20 or m['cthFlameXpLevel']() != 7 or m['cthFlameXpBase']() != 1950 or m['cthFlameXpPerHp']() != 14"
+  },
+  {
+   "note": "the Deep Ones walk: 4 hit dice, the III/60 + 4 xp line, the 1-100 appearing, the strength 18, the age 21",
+   "expr": "m['cthDeepOnesDmgLo']() != 1 or m['cthDeepOnesDmgHi']() != 4 or m['cthDeepOnesWeaponPlus']() != 2 or m['cthDeepOnesHD']() != 4 or m['cthDeepOnesAppearingLo']() != 1 or m['cthDeepOnesAppearingHi']() != 100 or m['cthDeepOnesLairPct']() != 90 or m['cthDeepOnesXpLevel']() != 3 or m['cthDeepOnesXpBase']() != 60 or m['cthDeepOnesXpPerHp']() != 4 or m['cthDeepOnesStr']() != 18 or m['cthDeepOnesTransformAge']() != 21"
+  },
+  {
+   "note": "the Hastur walk: the 20-200 damage, the 200 tentacles, the 5 point regen, the 25 percent name-hear with 1-4 Byakhee",
+   "expr": "m['cthHasturDmgLo']() != 20 or m['cthHasturDmgHi']() != 200 or m['cthHasturTentacles']() != 200 or m['cthHasturRegen']() != 5 or m['cthHasturSummonLo']() != 2 or m['cthHasturSummonHi']() != 20 or m['cthHasturNameHearPct']() != 25 or m['cthHasturByakheeLo']() != 1 or m['cthHasturByakheeHi']() != 4 or m['cthHasturAppearPct']() != 25 or m['cthCbtSizeIn'](6) != 7200"
+  },
+  {
+   "note": "the Great Race walk: 8 hit dice, the VI/650 + 10 xp line, the 280 point score, the B C D E/All modes",
+   "expr": "m['cthGreatRaceDmgLo']() != 1 or m['cthGreatRaceDmgHi']() != 8 or m['cthGreatRaceHD']() != 8 or m['cthGreatRaceAppearingLo']() != 1 or m['cthGreatRaceAppearingHi']() != 10 or m['cthGreatRaceLairPct']() != 95 or m['cthGreatRaceXpLevel']() != 6 or m['cthGreatRaceXpBase']() != 650 or m['cthGreatRaceXpPerHp']() != 10 or m['cthGreatRacePsiScore']() != 280 or m['cthGreatRaceConeWidthFeet']() != 10 or m['cthGreatRaceTentacles']() != 4 or m['cthGreatRaceTentacleFeet']() != 10"
+  },
+  {
+   "note": "the Ithaqua walk: the 4-40 damage, the tripled weather, the class IV, the -1 charisma",
+   "expr": "m['cthIthaquaDmgLo']() != 4 or m['cthIthaquaDmgHi']() != 40 or m['cthIthaquaWeatherMultiplier']() != 3 or m['cthCbtHP'](8) != 250 or m['cthAbiCha'](8) != -1"
+  },
+  {
+   "note": "the Mi-Go walk: 5 hit dice, the IV/240 + 5 xp line, the 90 point score, the C D/F G H modes, the 3 inch cilia",
+   "expr": "m['cthMiGoDmgLo']() != 1 or m['cthMiGoDmgHi']() != 8 or m['cthMiGoHD']() != 5 or m['cthMiGoAppearingLo']() != 2 or m['cthMiGoAppearingHi']() != 12 or m['cthMiGoLairPct']() != 40 or m['cthMiGoXpLevel']() != 4 or m['cthMiGoXpBase']() != 240 or m['cthMiGoXpPerHp']() != 5 or m['cthMiGoPsiScore']() != 90 or m['cthMiGoCiliaInches']() != 3 or m['cthMiGoEyes']() != 5 or m['cthMiGoMouthTentacles']() != 5 or m['cthMiGoLegTentacles']() != 5"
+  },
+  {
+   "note": "the Nyarlathotep walk: the 3-30 damage, the +4/-4 presence saves, the 1-100 army in an hour, the 3-30 drain",
+   "expr": "m['cthNyarlathotepDmgLo']() != 3 or m['cthNyarlathotepDmgHi']() != 30 or m['cthNyarlathotepGoodSave']() != 4 or m['cthNyarlathotepEvilSave']() != -4 or m['cthNyarlathotepArmyLo']() != 1 or m['cthNyarlathotepArmyHi']() != 100 or m['cthNyarlathotepArmyHours']() != 1 or m['cthNyarlathotepDrainLo']() != 3 or m['cthNyarlathotepDrainHi']() != 30 or m['cthNyarlathotepDrainTurns']() != 1 or m['cthNyarlathotepLightRepelPct']() != 5"
+  },
+  {
+   "note": "the Primordial One walk: 8 hit dice, the VI/550 + 10 xp line, the 206 point score, the B C D/All modes, the 1-6 x 3 damage",
+   "expr": "m['cthPrimordialDmgLo']() != 1 or m['cthPrimordialDmgHi']() != 6 or m['cthPrimordialHD']() != 8 or m['cthPrimordialAppearingLo']() != 1 or m['cthPrimordialAppearingHi']() != 8 or m['cthPrimordialLairPct']() != 95 or m['cthPrimordialXpLevel']() != 6 or m['cthPrimordialXpBase']() != 550 or m['cthPrimordialXpPerHp']() != 10 or m['cthPrimordialPsiScore']() != 206 or m['cthPrimordialAtkTentacles']() != 3 or m['cthCbtAtN'](11) != 3"
+  },
+  {
+   "note": "the Primordial One flagged move: the printed 18/12 slash (both voices), and the Mi-Go 15/30",
+   "expr": "m['cthCbtMove'](11) != 18 or m['cthCbtMoveAlt'](11) != 12 or m['cthCbtMove'](9) != 15 or m['cthCbtMoveAlt'](9) != 30"
+  },
+  {
+   "note": "the Shoggoth walk: 20 hit dice, the IX/6500 + 30 xp line, the 3-30/3-30 damage",
+   "expr": "m['cthShoggothDmgLo']() != 3 or m['cthShoggothDmgHi']() != 30 or m['cthShoggothHD']() != 20 or m['cthShoggothAppearingLo']() != 1 or m['cthShoggothAppearingHi']() != 4 or m['cthShoggothLairPct']() != 90 or m['cthShoggothXpLevel']() != 9 or m['cthShoggothXpBase']() != 6500 or m['cthShoggothXpPerHp']() != 30"
+  },
+  {
+   "note": "the Shub-Niggurath walk: the 100 foot pool, the 1,000 inch sense, the 1-100 creation, the d6 table",
+   "expr": "m['cthShubPoolDiameterFeet']() != 100 or m['cthShubSenseRangeInches']() != 1000 or m['cthShubCreateLo']() != 1 or m['cthShubCreateHi']() != 100 or m['cthShubDefendPerMelee']() != 1 or m['cthShubSummonDie']() != 6 or m['cthCbtMove'](13) != 0 or m['cthCbtAtN'](13) != 1"
+  },
+  {
+   "note": "the Yog-Sothoth walk: the 12 attacks, the 1-8 damage, the one-per-melee gate, the -7 charisma",
+   "expr": "m['cthYogDmgLo']() != 1 or m['cthYogDmgHi']() != 8 or m['cthYogGatePerMelee']() != 1 or m['cthCbtAtN'](14) != 12 or m['cthAbiCha'](14) != -7 or m['cthAbiInt'](14) != 25"
+  },
+  {
+   "note": "the as-16-plus-HD-monster fighter cells (the five printed gods)",
+   "expr": "m['cthCthulhuFighterAs16HDMonster']() != 1 or m['cthAzathothFighterAs16HDMonster']() != 1 or m['cthCthughaFighterAs16HDMonster']() != 1 or m['cthHasturFighterAs16HDMonster']() != 1 or m['cthShubFighterAs16HDMonster']() != 1"
+  },
+  {
+   "note": "the psionic mode lines (the Great Race, Mi-Go and Primordial One)",
+   "expr": "m['cthGreatRaceModesBCDEAll']() != 1 or m['cthMiGoModesCDFGH']() != 1 or m['cthPrimordialModesBCDAll']() != 1"
+  }
+ ],
+ "header_sections": {
+  "the R856 census": [
+   {
+    "kind": "const",
+    "name": "cthRound"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "cthBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "cthTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "cthChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "cthRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "cthCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "cthClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "cthAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "cthRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "cthPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "cthPsiClassI"
+   },
+   {
+    "kind": "const",
+    "name": "cthPsiClassIV"
+   },
+   {
+    "kind": "const",
+    "name": "cthPsiClassV"
+   },
+   {
+    "kind": "const",
+    "name": "cthPsiClassVI"
+   },
+   {
+    "kind": "const",
+    "name": "cthArtifactCount"
+   }
+  ],
+  "the mythos intro": [
+   {
+    "kind": "bool",
+    "name": "cthOldOnesFromStars"
+   },
+   {
+    "kind": "bool",
+    "name": "cthOldOnesBanished"
+   },
+   {
+    "kind": "bool",
+    "name": "cthElderGodsMysterious"
+   },
+   {
+    "kind": "bool",
+    "name": "cthForbiddenBooksDangerous"
+   },
+   {
+    "kind": "bool",
+    "name": "cthDerlethArkhamHouse"
+   },
+   {
+    "kind": "bool",
+    "name": "cthLovecraftIndifferent"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNatureCreaturesFlee"
+   },
+   {
+    "kind": "bool",
+    "name": "cthInsanityMonthsEqualIntelligence"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNameSpeakingGodAppears"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNameSpeakingMaySendMinions"
+   },
+   {
+    "kind": "bool",
+    "name": "cthLesserBooksWeakerPowers"
+   }
+  ],
+  "the mythos lore": [
+   {
+    "kind": "const",
+    "name": "cthLoreNameHeardPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthLoreRlyehSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "cthLoreReleaseRadiusMiles"
+   },
+   {
+    "kind": "const",
+    "name": "cthLoreLesserBookCount"
+   }
+  ],
+  "the Elder Sign walk": [
+   {
+    "kind": "const",
+    "name": "cthElderSignAC"
+   },
+   {
+    "kind": "const",
+    "name": "cthElderSignProtectionBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "cthElderSignGreyStone"
+   },
+   {
+    "kind": "bool",
+    "name": "cthElderSignPsionicProof"
+   },
+   {
+    "kind": "bool",
+    "name": "cthElderSignDrivesOffMinions"
+   },
+   {
+    "kind": "bool",
+    "name": "cthElderSignPlusSixVsMasters"
+   },
+   {
+    "kind": "bool",
+    "name": "cthElderSignBrokenByMagicOrForce"
+   },
+   {
+    "kind": "bool",
+    "name": "cthElderSignSealedPrisons"
+   }
+  ],
+  "the Necronomicon walk": [
+   {
+    "kind": "const",
+    "name": "cthNecronomiconInsanityPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthNecronomiconLevelFloor"
+   },
+   {
+    "kind": "const",
+    "name": "cthNecronomiconPctDecrement"
+   },
+   {
+    "kind": "const",
+    "name": "cthNecronomiconIntReq"
+   },
+   {
+    "kind": "const",
+    "name": "cthNecronomiconStudyPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthNecronomiconStudyStart"
+   },
+   {
+    "kind": "const",
+    "name": "cthNecronomiconSummonInsanityPct"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNecronomiconAlAzifTitle"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNecronomiconMadArab"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNecronomiconDevouredByDemons"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNecronomiconBannedDestroyed"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNecronomiconAlignmentOrMadness"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNecronomiconStarsMustBeRight"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNecronomiconProtectionFails"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNecronomiconSimulacraAppear"
+   }
+  ],
+  "the Cthulhu walk": [
+   {
+    "kind": "const",
+    "name": "cthCthulhuDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthulhuDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthulhuRegen"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthulhuTeleportRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthulhuCallDeepOnesLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthulhuCallDeepOnesHi"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuCultSecret"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuOctopoidHead"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuBatWings"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuSunkenRlyeh"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuNonEuclidian"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuImmuneWaterColdVacuum"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuRetreatElderSign"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuRetreatOldOne"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuRetreatCatastrophe"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuServedByDeepOnes"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuInterbreedingCult"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthulhuFighterAs16HDMonster"
+   }
+  ],
+  "the Azathoth walk": [
+   {
+    "kind": "const",
+    "name": "cthAzathothDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthAzathothDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthAzathothAuraMiles"
+   },
+   {
+    "kind": "const",
+    "name": "cthAzathothAuraSaveMod"
+   },
+   {
+    "kind": "bool",
+    "name": "cthAzathothBlindMindless"
+   },
+   {
+    "kind": "bool",
+    "name": "cthAzathothAmorphousStar"
+   },
+   {
+    "kind": "bool",
+    "name": "cthAzathothFluteMusic"
+   },
+   {
+    "kind": "bool",
+    "name": "cthAzathothPseudopodDefense"
+   },
+   {
+    "kind": "bool",
+    "name": "cthAzathothClericsInsane"
+   },
+   {
+    "kind": "bool",
+    "name": "cthAzathothMaybeUnaware"
+   },
+   {
+    "kind": "bool",
+    "name": "cthAzathothFighterAs16HDMonster"
+   }
+  ],
+  "the Cthugha walk": [
+   {
+    "kind": "const",
+    "name": "cthCthughaDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthughaDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthughaHeatLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthughaHeatHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthughaHeatRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthughaFireCasterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthughaSpellsPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthughaWeaponPlus"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthughaSummonLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthCthughaSummonHi"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthughaFlamingAmoeba"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthughaClericSeeBelow"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthughaMUSeeBelow"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthughaMovesAsBlinkDog"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthughaImmuneHeatCold"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthughaMeltsWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthughaPalaceOfFire"
+   },
+   {
+    "kind": "bool",
+    "name": "cthCthughaFighterAs16HDMonster"
+   }
+  ],
+  "the Byakhee walk": [
+   {
+    "kind": "const",
+    "name": "cthByakheeDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeHD"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeAppearingLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeAppearingHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeGateSummonLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthByakheeGateSummonHi"
+   },
+   {
+    "kind": "bool",
+    "name": "cthByakheeServantsOfHastur"
+   },
+   {
+    "kind": "bool",
+    "name": "cthByakheeBatLike"
+   },
+   {
+    "kind": "bool",
+    "name": "cthByakheeHumanoidLegs"
+   },
+   {
+    "kind": "bool",
+    "name": "cthByakheeGateSummon"
+   },
+   {
+    "kind": "bool",
+    "name": "cthByakheeTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "cthByakheeObeyElderSign"
+   },
+   {
+    "kind": "bool",
+    "name": "cthByakheeTelepathic"
+   }
+  ],
+  "the Flame Creature walk": [
+   {
+    "kind": "const",
+    "name": "cthFlameDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameHD"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameAppearingLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameAppearingHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameHeatDmg"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameHeatRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameHeatRayLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameHeatRayHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "cthFlameXpPerHp"
+   },
+   {
+    "kind": "bool",
+    "name": "cthFlameSmallerVersion"
+   },
+   {
+    "kind": "bool",
+    "name": "cthFlameStandInForGod"
+   }
+  ],
+  "the Deep Ones walk": [
+   {
+    "kind": "const",
+    "name": "cthDeepOnesDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesWeaponPlus"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesHD"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesAppearingLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesAppearingHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesStr"
+   },
+   {
+    "kind": "const",
+    "name": "cthDeepOnesTransformAge"
+   },
+   {
+    "kind": "bool",
+    "name": "cthDeepOnesAmphibious"
+   },
+   {
+    "kind": "bool",
+    "name": "cthDeepOnesInfravision"
+   },
+   {
+    "kind": "bool",
+    "name": "cthDeepOnesInterbreed"
+   },
+   {
+    "kind": "bool",
+    "name": "cthDeepOnesSoullessImmortal"
+   },
+   {
+    "kind": "bool",
+    "name": "cthDeepOnesPromoteEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "cthDeepOnesTreasureTypeZ"
+   }
+  ],
+  "the Hastur walk": [
+   {
+    "kind": "const",
+    "name": "cthHasturDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthHasturDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthHasturTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "cthHasturRegen"
+   },
+   {
+    "kind": "const",
+    "name": "cthHasturSummonLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthHasturSummonHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthHasturNameHearPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthHasturByakheeLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthHasturByakheeHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthHasturAppearPct"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturScaledBody"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturTeleports"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturFlyersNeverAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturFearSave"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturHalfBrotherCthulhu"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturElderSignImprisoned"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturCryptLakeHali"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturPartialElementalAir"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturNeverFullySolid"
+   },
+   {
+    "kind": "bool",
+    "name": "cthHasturFighterAs16HDMonster"
+   }
+  ],
+  "the Great Race walk": [
+   {
+    "kind": "const",
+    "name": "cthGreatRaceDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceHD"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceAppearingLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceAppearingHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRacePsiScore"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceConeWidthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "cthGreatRaceTentacleFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "cthGreatRaceScientificPsionics"
+   },
+   {
+    "kind": "bool",
+    "name": "cthGreatRaceFrozenInTime"
+   },
+   {
+    "kind": "bool",
+    "name": "cthGreatRaceDesertCities"
+   },
+   {
+    "kind": "bool",
+    "name": "cthGreatRaceGiftsOfKnowledge"
+   },
+   {
+    "kind": "bool",
+    "name": "cthGreatRaceModesBCDEAll"
+   }
+  ],
+  "the Ithaqua walk": [
+   {
+    "kind": "const",
+    "name": "cthIthaquaDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthIthaquaDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthIthaquaWeatherMultiplier"
+   },
+   {
+    "kind": "bool",
+    "name": "cthIthaquaFogShape"
+   },
+   {
+    "kind": "bool",
+    "name": "cthIthaquaBlazingRedEyes"
+   },
+   {
+    "kind": "bool",
+    "name": "cthIthaquaTwoStarsIllusion"
+   },
+   {
+    "kind": "bool",
+    "name": "cthIthaquaWeatherControl"
+   },
+   {
+    "kind": "bool",
+    "name": "cthIthaquaHumanSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "cthIthaquaPursuesWitnesses"
+   },
+   {
+    "kind": "bool",
+    "name": "cthIthaquaServesHastur"
+   }
+  ],
+  "the Mi-Go walk": [
+   {
+    "kind": "const",
+    "name": "cthMiGoDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoHD"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoAppearingLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoAppearingHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoPsiScore"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoCiliaInches"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoEyes"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoMouthTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "cthMiGoLegTentacles"
+   },
+   {
+    "kind": "bool",
+    "name": "cthMiGoFungiFromYuggoth"
+   },
+   {
+    "kind": "bool",
+    "name": "cthMiGoLobsterLike"
+   },
+   {
+    "kind": "bool",
+    "name": "cthMiGoImmuneColdDarkVacuum"
+   },
+   {
+    "kind": "bool",
+    "name": "cthMiGoInterstellarFlight"
+   },
+   {
+    "kind": "bool",
+    "name": "cthMiGoClickingPincers"
+   },
+   {
+    "kind": "bool",
+    "name": "cthMiGoModesCDFGH"
+   }
+  ],
+  "the Nyarlathotep walk": [
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepGoodSave"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepEvilSave"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepArmyLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepArmyHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepArmyHours"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepDrainLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepDrainHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepDrainTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cthNyarlathotepLightRepelPct"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNyarlathotepCrawlingChaos"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNyarlathotepForetellsReturn"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNyarlathotepCharmPresence"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNyarlathotepRedBatGuise"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNyarlathotepWildBeastArmy"
+   },
+   {
+    "kind": "bool",
+    "name": "cthNyarlathotepLightRepel"
+   }
+  ],
+  "the Primordial One walk": [
+   {
+    "kind": "const",
+    "name": "cthPrimordialDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialHD"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialAppearingLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialAppearingHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialPsiScore"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialAtkTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialEyes"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialMouthTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "cthPrimordialLegTentacles"
+   },
+   {
+    "kind": "bool",
+    "name": "cthPrimordialAlienScience"
+   },
+   {
+    "kind": "bool",
+    "name": "cthPrimordialHateIntelligence"
+   },
+   {
+    "kind": "bool",
+    "name": "cthPrimordialBarrelShape"
+   },
+   {
+    "kind": "bool",
+    "name": "cthPrimordialMembranousWings"
+   },
+   {
+    "kind": "bool",
+    "name": "cthPrimordialModesBCDAll"
+   }
+  ],
+  "the Shoggoth walk": [
+   {
+    "kind": "const",
+    "name": "cthShoggothDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthShoggothDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthShoggothHD"
+   },
+   {
+    "kind": "const",
+    "name": "cthShoggothAppearingLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthShoggothAppearingHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthShoggothLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "cthShoggothXpLevel"
+   },
+   {
+    "kind": "const",
+    "name": "cthShoggothXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "cthShoggothXpPerHp"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShoggothCreatedServants"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShoggothRebelled"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShoggothShapeAnything"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShoggothAidOldOnes"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShoggothImmuneWeakness"
+   }
+  ],
+  "the Shub-Niggurath walk": [
+   {
+    "kind": "const",
+    "name": "cthShubPoolDiameterFeet"
+   },
+   {
+    "kind": "const",
+    "name": "cthShubSenseRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cthShubCreateLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthShubCreateHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthShubDefendPerMelee"
+   },
+   {
+    "kind": "const",
+    "name": "cthShubSummonDie"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShubBlackGoatOfTheWoods"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShubBubblingPool"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShubDevoursOwnSpawn"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShubTelepathic"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShubTentaclePullStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShubAstralTravels"
+   },
+   {
+    "kind": "bool",
+    "name": "cthShubFighterAs16HDMonster"
+   }
+  ],
+  "the Yog-Sothoth walk": [
+   {
+    "kind": "const",
+    "name": "cthYogDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "cthYogDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "cthYogGatePerMelee"
+   },
+   {
+    "kind": "bool",
+    "name": "cthYogIridescentGlobes"
+   },
+   {
+    "kind": "bool",
+    "name": "cthYogFeltersShape"
+   },
+   {
+    "kind": "bool",
+    "name": "cthYogSpawnOfYogSothoth"
+   },
+   {
+    "kind": "bool",
+    "name": "cthYogOutsideSpaceTime"
+   },
+   {
+    "kind": "bool",
+    "name": "cthYogSimultaneous"
+   },
+   {
+    "kind": "bool",
+    "name": "cthYogHighlyChaotic"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R855 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R855 LANDED 2026-10-26: commit",
+  "  978337ddec018650d5d6730c4a986ca44a0c75eb (pushed",
+  "  e10a209..978337d, census 777 -> 778), THE CHINESE",
+  "  MYTHOS - the D&DG walk round seven, print pp.",
+  "  37-42: eighteen beings (Shang-Ti, Chao Kung Ming,",
+  "  Chih Sung-Tzu, Chih-Chiang Fyu-Ya, Chung Kuel, Fei",
+  "  Lien and Feng Po the Counts of the Wind, Huan-Ti,",
+  "  Kuan Yin, Lei Kung, Lu Yueh, Ma Yuan, No Cha, Shan",
+  "  Hai Ching, the Spirits of the Air, Tou Mu, Wen",
+  "  Chung, Yen-Wang-Yeh), the celestial bureaucracy",
+  "  doctrine, and the seven devices (Iron Wand, Jade",
+  "  Scepter, Wind Fire Wheels, Canon of Changes,",
+  "  Dancing Sword of Lightning, Fire Gems, Giant Black",
+  "  Pearl). THE SHAPE: 132 consts + 109 bools + 4",
+  "  grids (38 table cols), 279 inlines, 28 examples;",
+  "  header rules/dgg.h, prefix dgg; audit \"R855",
+  "  Chinese mythos audit\", rode",
+  "  rules/audits/r855_batch.h. THE ADJUDICATIONS (IA",
+  "  1st-print djvu.xml geometry at 600dpi over the",
+  "  Termux extract): the psionic class cells (Chao",
+  "  Kung Ming II 27px and Tou Mu II 29px vs the Termux",
+  "  /I and //; Chih-Chiang Fyu-Ya VI 49px vs the",
+  "  Termux 11), the size decodes (Shang-Ti 5 foot 4",
+  "  and Chao 6 foot 2 - the 149px foot-mark cells, the",
+  "  R853 lesson), the Standard-MR cells to 0 (Chih",
+  "  Sung-Tzu, Fei/Feng, Lu Yueh, Spirits), Kuan Yin D",
+  "  12 and M-U See below (Cls 99, prose level 20), the",
+  "  Spirits NO. APPEARING 1-100 (Termux plus prose",
+  "  over the IA 17-1700 djvu garble). EYEBALL CELLS",
+  "  (flagged): the Wen Chung hit points (the 2nd-print",
+  "  213 pinned vs the IA 1st-print 273 - a genuine",
+  "  print divergence, the Gawaine 112 precedent), the",
+  "  Chih Sung-Tzu size (garbled identically in both",
+  "  voices, the 0 sentinel pinned), the Wen Chung",
+  "  12/21 move (both voices agree on the unusual",
+  "  printed slash - noted). ZERO registry defs touched",
+  "  - the floor holds at 995. Spec",
+  "  tools/spec_r855.json, md5",
+  "  f79efb40036dd62b2f56ed50d4df0f14 (85,816 bytes).",
+  "  rverify double-run GREEN, 925 mutants 0 missed;",
+  "  hyphen scan clean; zero True/False tokens (the",
+  "  R854 rule held first-try). NEXT: the D&DG walk",
+  "  continues from the Cthulhu mythos (print pp.",
+  "  43-48) - WAIT FOR GO."
+ ],
+ "inline_count": 330
+}

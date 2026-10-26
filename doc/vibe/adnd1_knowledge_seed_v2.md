@@ -24678,6 +24678,50 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   scan clean. NEXT: the D&DG walk
   continues from the Chinese mythos
   (print pp. 37-42).
+  - R855 LANDED 2026-10-26: commit
+  978337ddec018650d5d6730c4a986ca44a0c75eb (pushed
+  e10a209..978337d, census 777 -> 778), THE CHINESE
+  MYTHOS - the D&DG walk round seven, print pp.
+  37-42: eighteen beings (Shang-Ti, Chao Kung Ming,
+  Chih Sung-Tzu, Chih-Chiang Fyu-Ya, Chung Kuel, Fei
+  Lien and Feng Po the Counts of the Wind, Huan-Ti,
+  Kuan Yin, Lei Kung, Lu Yueh, Ma Yuan, No Cha, Shan
+  Hai Ching, the Spirits of the Air, Tou Mu, Wen
+  Chung, Yen-Wang-Yeh), the celestial bureaucracy
+  doctrine, and the seven devices (Iron Wand, Jade
+  Scepter, Wind Fire Wheels, Canon of Changes,
+  Dancing Sword of Lightning, Fire Gems, Giant Black
+  Pearl). THE SHAPE: 132 consts + 109 bools + 4
+  grids (38 table cols), 279 inlines, 28 examples;
+  header rules/dgg.h, prefix dgg; audit "R855
+  Chinese mythos audit", rode
+  rules/audits/r855_batch.h. THE ADJUDICATIONS (IA
+  1st-print djvu.xml geometry at 600dpi over the
+  Termux extract): the psionic class cells (Chao
+  Kung Ming II 27px and Tou Mu II 29px vs the Termux
+  /I and //; Chih-Chiang Fyu-Ya VI 49px vs the
+  Termux 11), the size decodes (Shang-Ti 5 foot 4
+  and Chao 6 foot 2 - the 149px foot-mark cells, the
+  R853 lesson), the Standard-MR cells to 0 (Chih
+  Sung-Tzu, Fei/Feng, Lu Yueh, Spirits), Kuan Yin D
+  12 and M-U See below (Cls 99, prose level 20), the
+  Spirits NO. APPEARING 1-100 (Termux plus prose
+  over the IA 17-1700 djvu garble). EYEBALL CELLS
+  (flagged): the Wen Chung hit points (the 2nd-print
+  213 pinned vs the IA 1st-print 273 - a genuine
+  print divergence, the Gawaine 112 precedent), the
+  Chih Sung-Tzu size (garbled identically in both
+  voices, the 0 sentinel pinned), the Wen Chung
+  12/21 move (both voices agree on the unusual
+  printed slash - noted). ZERO registry defs touched
+  - the floor holds at 995. Spec
+  tools/spec_r855.json, md5
+  f79efb40036dd62b2f56ed50d4df0f14 (85,816 bytes).
+  rverify double-run GREEN, 925 mutants 0 missed;
+  hyphen scan clean; zero True/False tokens (the
+  R854 rule held first-try). NEXT: the D&DG walk
+  continues from the Cthulhu mythos (print pp.
+  43-48) - WAIT FOR GO.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
