@@ -1,0 +1,5875 @@
+{
+ "round": 865,
+ "title": "the Norse mythos",
+ "prefix": "nrs",
+ "banner": {
+  "title": "the Norse mythos - the D&DG walk round seventeen, print pp. 113-124: thirty-five stat-block rows - the eleven greater gods (Odin, Balder, Forseti, Frey, Freya, Frigga, Heimdall, Hel, Loki, Thor, Tyr), the ten lesser (Aegir, Bragi, Idun, Magni, Modi, Sif, Surtur, Thrym, Uller, Vidar), the four no-rank class-grid rows (Fjalar, Skirnir, the Norns, the Valkyries) and the eleven MM-style companion and monster blocks (Hugin and Munin, Sleipner, Freke and Gere, the Fenris Wolf, Fossergrim, Blodug-Hofi, Gullin-Bursti, Garm, Jormungandr, the Thor goats) - plus the Ragnarok and sacrifice doctrine of the intro.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 114-125; the second printing) with the tsv x-y geometry as the fold-swap, dropped-glyph and not-printed-cell arbiter; the collation voice: the 1eonline L&L transcription (norse.htm and the per-being pages, the R853 parity voice). The adjudications: the THOR BARE 4 armor class (no minus glyph on the tsv line, the L&L reads minus 4, pinned as printed with the eyeball flag), the Hel +38 damage garble adjudicated to 8 by the strength-bonus arithmetic and the L&L voice, the half-foot size cells (Odin, Hel, Tyr 78 and the Valkyries 66 - the half glyph garbles to )4 and %), the Hugin 1 over 48 move and the merged V1815 XP glyph (VI/815, the MM level VI base), the Frey II pipe at width 15, the Thrym 300 hit points from the L&L voice (the print cell occluded by the plate illustration), and the divergent Aegir and Freya armor classes pinned by the print."
+ },
+ "census_before": 787,
+ "gap_census": {
+  "closed": 17,
+  "open": 7
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Norse mythos** (pp. 113-124)",
+   "to": "- [x] **Norse mythos** (pp. 113-124)",
+   "note": "the Norse mythos box"
+  }
+ ],
+ "header_file": "rules/nrs.h",
+ "include_after": "#include \"rules/nhg.h\"  // R864: the Nonhumans' Deities",
+ "include_comment": "the Norse mythos",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R864 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "- R864 LANDED 2026-10-26: commit f555f6634463913be47052f47e10bcf72606b1fc",
+  "(pushed f34a532..f555f66, census 786 -> 787), THE NONHUMANS' DEITIES - the",
+  "D&DG walk round sixteen, print pp. 105-112: twenty beings - the six greater",
+  "gods (Moradin, Corellon Larethian, Maglubiyet, Garl Glittergold, Yondalla,",
+  "Gruumsh), the twelve lesser gods (Hruggek, Skerrit, Deep Sashelas, Lolth,",
+  "Rillifane Rallathil, Grolantor, Skoraeus Stonebones, Kurtulmak, Blibdoolpoolp,",
+  "Semuanya, Eadro, Sekolah) and the two demigods (Vaprak, Laogzed) - plus the",
+  "shaman/witch-doctor doctrine of the intro (the 1d4 hp ladder, the fight-as-",
+  "one-HD- better-per-two-levels rule, the paired witch-doctor 2-5) and the NOTE",
+  "list (13 MM/FF beings treated as lesser gods) with the round's data file",
+  "doc/data/ ddg_nonhuman_crossrefs.txt; prefix nhg (nhd BURNED -",
+  "uapantheon.h/r405 owns it). THE HEADLINE ADJUDICATIONS: the MORADIN-CORELLON",
+  "FOLD SWAP - the raw extract interleaves the two folded blocks, the tsv",
+  "x-coords settle it (Moradin left col S:25(+7,+14) psionic VI, the 4-40 (+14)",
+  "hammer; Corellon right col S:21 (+4,+9) psionic I, the 3-30 (+9) sword); the",
+  "KURTULMAK-BLIBDOOLPOOLP TAIL SWAP the same way (Kurtulmak the 12th assassin /",
+  "psionic VI / M 5 1/2 foot 66, Blibdoolpoolp the 15th assassin / psionic III /",
+  "the 20th-level MU); HRUGGEK DEX NOT PRINTED (the tsv shows the bare 36px",
+  "inter-cell gap between W and C - pinned 0); the FRACTION SIZES Yondalla 4 1/2",
+  "foot 54 (the tesseract 42 misread) and Kurtulmak 66. LOLTH: the drow-form",
+  "paren pinned -2 (the tesseract +2 conf 53, L&L -2, the game-sense tiebreak,",
+  "eyeball flag), the MOVE 1\"/9\" web (the MM spider convention; the tesseract 17",
+  "misread), drow move 15 const, MR 70 (L&L 75), the See below clr/drd and mu/ill",
+  "lines 99 pairs with the 16th-cleric/14th-MU drow consts, CH 3(23), L (M) -> 0.",
+  "Other divergent cells pinned with the L&L parity noted: Vaprak W 12 (L&L 18,",
+  "conf 90), Sashelas D 21 (L&L 18), Laogzed the harmful-spells cleric (L&L",
+  "destructive), the Nine Hells planes pinned for",
+  "Maglubiyet/Kurtulmak/Gruumsh/Sekolah (the L&L Gehenna/Acheron/Stygia are",
+  "transcriber D64 glosses). Skerrit: the Variable cells 0-sentinel with the AC 2",
+  "floor pin and the centaur-form consts (AC 2 / move 21 / the +3 spear 2-20 /",
+  "forest -4). Eadro: the dual AC 0/-6, AT 1/8, the psionic II (the tsv I/ w15",
+  "width-match). The 12 As-16+-HD fighter cells pinned 16 (the new round",
+  "convention). Spec tools/spec_r864.json, md5 7725bdcc81fd95739b0b19087d610ef9",
+  "(92,675 bytes); 334 inlines (200 consts, 97 bools, 37 table cols, 4 grids x 20",
+  "rows), 19 examples; rverify double-run GREEN, 1037 mutants 0 missed; hyphen",
+  "scan clean; zero True/False tokens; ddg gap 16/24 closed, 8 open. NEXT: the",
+  "D&DG walk continues from the Norse mythos - WAIT FOR GO."
+ ],
+ "audit_file": "rules/audits/r865_batch.h",
+ "audit_label": "R865 Norse mythos audit",
+ "audit_anchor": "#include \"rules/audits/r864_batch.h\"  // R864: R864 nonhumans' deities audit",
+ "audit_comment": "THE NORSE MYTHOS - the D&DG walk round seventeen, print pp. 113-124: thirty-five stat-block rows - the eleven greater gods (Odin, Balder, Forseti, Frey, Freya, Frigga, Heimdall, Hel, Loki, Thor, Tyr), the ten lesser (Aegir, Bragi, Idun, Magni, Modi, Sif, Surtur, Thrym, Uller, Vidar), the four no-rank class-grid rows (Fjalar, Skirnir, the Norns, the Valkyries) and the eleven MM-style companion and monster blocks (Hugin and Munin, Sleipner, Freke and Gere, the Fenris Wolf, Fossergrim, Blodug-Hofi, Gullin-Bursti, Garm, Jormungandr, the Thor goats) - plus the Ragnarok and sacrifice doctrine of the intro (the Aesir and the Vanir, the last battle, the hanged-and-speared sacrifice on the oak pyre, the lunar month worship, the blasphemy forgiven by battle) and the round data file doc/data/ddg_norse_crossrefs.txt; prefix nrs (full-repo scan clean). THE HEADLINE ADJUDICATIONS: the THOR BARE 4 - the tsv armor class line shows no minus glyph, the L&L voice reads minus 4, pinned as printed with the eyeball flag; the Hel +38 damage garble adjudicated to 8 (the strength arithmetic and the L&L voice agree, the print token at conf 28); the HALF-FOOT SIZES: Odin, Hel and Tyr the 6 and a half foot 78, the Valkyries the 5 and a half foot 66 (the half glyph garbles to )4 and % in the tesseract pass); the Hugin odd prints: the 1 over 48 move cell and the merged V1815 XP glyph = VI/815 (the MM level VI base value); the Frey II pipe (the width 15 two pipe signature); the Thrym 300 hit points from the L&L voice (the print cell occluded by the plate illustration on the pdf page); the dual prints pinned as printed: Loki 12/12 and the goats 24/24 dual-same moves, the Modi 2-or-4 and 25-or-50 berserk cells (the walk first non-dice damage print), the Thor 2(3) glove cell, the Hel Infinite move (the R863 Death minus 1 sentinel precedent), the Jormungandr 25,000-miles size (the 0 sentinel with the const) and the slashless X 55,000 XP print. The psionic pipes: I Odin, Hel, the Norns, Tyr, Uller; II Forseti, Frey, Frigga; III Heimdall; IV Loki, Modi; V Aegir, Bragi, Idun; VI Balder, Freya, Magni, Sif, Skirnir, Thor, Vidar. The L&L divergences noted: Aegir minus 3, Freya minus 4 (both pinned the print way). ZERO registry defs touched - the floor holds at 995.",
+ "tables": [
+  {
+   "tag": "nrsCbt",
+   "name": "the combat grid",
+   "count": "nrsCbtRows",
+   "cols": [
+    "nrsCbtAC",
+    "nrsCbtACAlt",
+    "nrsCbtHP",
+    "nrsCbtMove",
+    "nrsCbtMoveAlt",
+    "nrsCbtAtN",
+    "nrsCbtAtD",
+    "nrsCbtMR",
+    "nrsCbtSizeIn"
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     -6,
+     0,
+     400,
+     15,
+     0,
+     2,
+     0,
+     85,
+     78
+    ],
+    [
+     2,
+     0,
+     30,
+     1,
+     48,
+     1,
+     0,
+     75,
+     36
+    ],
+    [
+     -1,
+     0,
+     200,
+     24,
+     0,
+     3,
+     0,
+     25,
+     144
+    ],
+    [
+     4,
+     0,
+     75,
+     24,
+     0,
+     1,
+     0,
+     50,
+     120
+    ],
+    [
+     -5,
+     0,
+     387,
+     42,
+     0,
+     2,
+     0,
+     50,
+     84
+    ],
+    [
+     -4,
+     0,
+     388,
+     18,
+     0,
+     3,
+     2,
+     75,
+     72
+    ],
+    [
+     -4,
+     0,
+     370,
+     18,
+     0,
+     3,
+     2,
+     75,
+     72
+    ],
+    [
+     -4,
+     0,
+     400,
+     24,
+     12,
+     1,
+     0,
+     99,
+     600
+    ],
+    [
+     -3,
+     0,
+     99,
+     12,
+     0,
+     2,
+     0,
+     0,
+     48
+    ],
+    [
+     -4,
+     0,
+     389,
+     18,
+     0,
+     3,
+     2,
+     85,
+     72
+    ],
+    [
+     0,
+     0,
+     5,
+     9,
+     36,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     -5,
+     0,
+     388,
+     18,
+     0,
+     3,
+     2,
+     75,
+     72
+    ],
+    [
+     3,
+     0,
+     50,
+     24,
+     18,
+     3,
+     0,
+     75,
+     108
+    ],
+    [
+     -4,
+     0,
+     100,
+     18,
+     32,
+     2,
+     0,
+     75,
+     120
+    ],
+    [
+     -3,
+     0,
+     99,
+     12,
+     0,
+     3,
+     2,
+     0,
+     72
+    ],
+    [
+     -3,
+     0,
+     339,
+     18,
+     48,
+     1,
+     0,
+     80,
+     72
+    ],
+    [
+     -4,
+     0,
+     366,
+     15,
+     0,
+     0,
+     0,
+     75,
+     72
+    ],
+    [
+     -1,
+     0,
+     200,
+     18,
+     0,
+     1,
+     0,
+     80,
+     144
+    ],
+    [
+     -5,
+     0,
+     390,
+     15,
+     0,
+     2,
+     0,
+     80,
+     84
+    ],
+    [
+     -5,
+     0,
+     350,
+     -1,
+     0,
+     3,
+     2,
+     95,
+     78
+    ],
+    [
+     -3,
+     0,
+     300,
+     0,
+     0,
+     1,
+     0,
+     99,
+     0
+    ],
+    [
+     -3,
+     0,
+     329,
+     12,
+     18,
+     3,
+     2,
+     25,
+     72
+    ],
+    [
+     -4,
+     0,
+     300,
+     12,
+     12,
+     3,
+     2,
+     75,
+     72
+    ],
+    [
+     -4,
+     0,
+     325,
+     18,
+     0,
+     2,
+     0,
+     70,
+     84
+    ],
+    [
+     -4,
+     0,
+     379,
+     21,
+     0,
+     2,
+     4,
+     95,
+     84
+    ],
+    [
+     0,
+     0,
+     299,
+     12,
+     21,
+     1,
+     0,
+     80,
+     60
+    ],
+    [
+     -4,
+     0,
+     349,
+     18,
+     0,
+     2,
+     0,
+     80,
+     72
+    ],
+    [
+     -2,
+     0,
+     380,
+     15,
+     0,
+     2,
+     0,
+     60,
+     240
+    ],
+    [
+     4,
+     0,
+     399,
+     18,
+     0,
+     2,
+     3,
+     80,
+     84
+    ],
+    [
+     -2,
+     0,
+     300,
+     15,
+     0,
+     2,
+     0,
+     60,
+     252
+    ],
+    [
+     -5,
+     0,
+     380,
+     18,
+     0,
+     3,
+     0,
+     25,
+     78
+    ],
+    [
+     -3,
+     0,
+     390,
+     24,
+     0,
+     2,
+     0,
+     50,
+     84
+    ],
+    [
+     0,
+     0,
+     100,
+     24,
+     24,
+     3,
+     0,
+     25,
+     108
+    ],
+    [
+     -3,
+     0,
+     380,
+     21,
+     0,
+     2,
+     0,
+     95,
+     240
+    ],
+    [
+     -2,
+     0,
+     100,
+     15,
+     0,
+     2,
+     0,
+     25,
+     66
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Odin minus 6 the best; THOR PRINTS THE BARE 4 - the tsv line shows no minus glyph, the L&L voice reads minus 4, pinned as printed with the eyeball flag; Freke the positive 4 and the goats and Fossergrim the 0 cells; the L&L divergences Aegir minus 3 and Freya minus 4 pinned the other way by the print)",
+    "The alternative armor class cells (none printed - all 0)",
+    "The hit point cells (Odin 400 and Thor 399 the highs, Fjalar and Skirnir the 99 lows; Thrym 300 pinned from the L&L voice - the print cell is occluded by the plate illustration on the pdf page; the Fossergrim 5 is the 5 HD print, hit dice not points)",
+    "The move cells (Aegir 42 the high; Hel the Infinite print minus 1 sentinel - the R863 Death precedent; Jormungandr See below 0; Frigga move 15 with her as-per-shape attacks in the AtN col)",
+    "The alternative move cells (Hugin 48, Fossergrim 36, Gullin-Bursti 32, Blodug-Hofi 18, Freya 48, Idun 18, the Norns 21; Loki 12 and the goats 24 the two dual-same prints; the Fenris Wolf 12)",
+    "The attacks-per-round numerators (Frigga the As per shape print 0 sentinel; Modi the 2 of his 2-or-4 berserk; Odin 2 and Tyr 3)",
+    "The attacks-per-round denominators (Modi the berserk 4, Thor the glove 3 of his 2(3) print; 0 = a bare number print)",
+    "The magic resistance cells (the Fenris Wolf and Jormungandr 99 the highs; Fjalar and Skirnir the Standard prints 0, the Fossergrim 100 percent rides only in splashing water)",
+    "The size cells in inches (the Fenris Wolf the 50-foot wolf 600, Thrym 252, Surtur and Vidar 240; the four half-foot cells - Odin, Hel and Tyr the 6 and a half foot 78, the Valkyries the 5 and a half foot 66, the half glyph garbling to )4 and % in the tesseract pass while the L&L voice reads 6.5 and 5.5; Jormungandr the 25,000-miles print 0 sentinel with the const)"
+   ]
+  },
+  {
+   "tag": "nrsCls",
+   "name": "the class grid",
+   "count": "nrsClsRows",
+   "cols": [
+    "nrsClsClr",
+    "nrsClsDrd",
+    "nrsClsFtr",
+    "nrsClsRng",
+    "nrsClsPal",
+    "nrsClsMU",
+    "nrsClsIll",
+    "nrsClsThf",
+    "nrsClsAss",
+    "nrsClsMnk",
+    "nrsClsBrd"
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     30,
+     14,
+     0,
+     18,
+     0,
+     30,
+     0,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     15,
+     0,
+     10,
+     10,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     12,
+     12,
+     0,
+     10,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     20
+    ],
+    [
+     10,
+     10,
+     0,
+     7,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     23
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5,
+     0,
+     10,
+     0,
+     0,
+     0,
+     0,
+     10,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     10,
+     0,
+     15,
+     0,
+     10,
+     10,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     13,
+     13,
+     0,
+     15,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     9,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     15,
+     10,
+     0,
+     7,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     12
+    ],
+    [
+     15,
+     0,
+     0,
+     7,
+     0,
+     18,
+     0,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     12,
+     12,
+     0,
+     17,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     8
+    ],
+    [
+     20,
+     10,
+     0,
+     12,
+     0,
+     15,
+     15,
+     0,
+     15,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     14,
+     0,
+     7,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     13
+    ],
+    [
+     12,
+     12,
+     0,
+     12,
+     0,
+     11,
+     20,
+     0,
+     15,
+     5,
+     5
+    ],
+    [
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     9
+    ],
+    [
+     12,
+     12,
+     0,
+     5,
+     0,
+     15,
+     15,
+     10,
+     0,
+     8,
+     8
+    ],
+    [
+     0,
+     12,
+     0,
+     12,
+     0,
+     0,
+     0,
+     0,
+     0,
+     12,
+     12
+    ],
+    [
+     15,
+     0,
+     20,
+     0,
+     0,
+     5,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     10,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3
+    ],
+    [
+     10,
+     0,
+     20,
+     0,
+     0,
+     0,
+     3,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     13,
+     0,
+     0,
+     25,
+     0,
+     10,
+     15,
+     0,
+     10,
+     10
+    ],
+    [
+     0,
+     13,
+     0,
+     18,
+     0,
+     0,
+     12,
+     0,
+     12,
+     0,
+     12
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     10,
+     0,
+     18,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     8
+    ]
+   ],
+   "col_comments": [
+    "The cleric levels (Odin the 30th level Special print, Hel 20, Freya 15, Surtur 15; 0 = Nil or an MM block)",
+    "The druid levels (Tyr 13, Uller 13, Idun 14, Sif 12, Thor 10, Forseti 10, Vidar 10)",
+    "The fighter levels (Surtur, Thrym and Thor 20; Modi and Magni 15, the Valkyries 15, Fjalar 10)",
+    "The ranger levels (Odin 18, Uller 18, Vidar 18, Heimdall 17, Frey 15, Aegir 15, Loki 12, Hel 12, Sif 12)",
+    "The paladin levels (Tyr 25 - the walk first paladin cell)",
+    "The magic-user levels (Odin 30 the high, Frey 20, Frigga 18, Hel 15, Loki 11, Surtur 5)",
+    "The illusionist levels (Freya 15, Bragi 15, the Norns 15, Hel 15, Uller 12, Tyr 10, Thrym 3)",
+    "The thief levels (Tyr 15, Fjalar 10, the Norns 10; Uller 0 - his 12th rides the assassin col)",
+    "The assassin levels (Loki 15, Hel 15, Uller 12)",
+    "The monk levels (Loki 5 and the Norns 8 the in-each M/B pairs, Tyr 10)",
+    "The bard levels (Bragi 23 the high, Balder 20, Idun 13, Freya 12, Sif 12, Uller 12, Odin 15, Frey 15, the Valkyries 8, Thor 3)"
+   ]
+  },
+  {
+   "tag": "nrsAbi",
+   "name": "the ability grid",
+   "count": "nrsAbiRows",
+   "cols": [
+    "nrsAbiS",
+    "nrsAbiHit",
+    "nrsAbiDmg",
+    "nrsAbiI",
+    "nrsAbiW",
+    "nrsAbiD",
+    "nrsAbiC",
+    "nrsAbiCH"
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     25,
+     7,
+     14,
+     25,
+     25,
+     25,
+     25,
+     25
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     23,
+     18,
+     23,
+     24,
+     9
+    ],
+    [
+     22,
+     4,
+     10,
+     24,
+     24,
+     24,
+     25,
+     25
+    ],
+    [
+     23,
+     5,
+     11,
+     24,
+     24,
+     25,
+     25,
+     24
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     15,
+     15,
+     18,
+     18,
+     12
+    ],
+    [
+     24,
+     6,
+     12,
+     25,
+     24,
+     22,
+     25,
+     23
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     24,
+     23,
+     24,
+     25,
+     23
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     14,
+     18,
+     18,
+     18,
+     18
+    ],
+    [
+     24,
+     6,
+     12,
+     24,
+     24,
+     24,
+     25,
+     20
+    ],
+    [
+     20,
+     3,
+     8,
+     23,
+     20,
+     24,
+     25,
+     25
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     23,
+     24,
+     25,
+     25,
+     23
+    ],
+    [
+     20,
+     3,
+     8,
+     24,
+     25,
+     24,
+     25,
+     25
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     22,
+     23,
+     24,
+     24,
+     24
+    ],
+    [
+     24,
+     6,
+     12,
+     25,
+     19,
+     24,
+     24,
+     24
+    ],
+    [
+     25,
+     0,
+     0,
+     20,
+     20,
+     24,
+     25,
+     22
+    ],
+    [
+     24,
+     6,
+     12,
+     23,
+     22,
+     24,
+     25,
+     25
+    ],
+    [
+     23,
+     5,
+     11,
+     22,
+     25,
+     23,
+     25,
+     9
+    ],
+    [
+     23,
+     5,
+     11,
+     24,
+     22,
+     25,
+     25,
+     25
+    ],
+    [
+     25,
+     7,
+     14,
+     19,
+     14,
+     12,
+     25,
+     20
+    ],
+    [
+     25,
+     7,
+     16,
+     20,
+     20,
+     25,
+     25,
+     24
+    ],
+    [
+     25,
+     7,
+     14,
+     16,
+     12,
+     21,
+     25,
+     20
+    ],
+    [
+     24,
+     6,
+     12,
+     20,
+     20,
+     25,
+     25,
+     24
+    ],
+    [
+     23,
+     5,
+     11,
+     24,
+     24,
+     25,
+     25,
+     25
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     20,
+     19,
+     25,
+     25,
+     22
+    ],
+    [
+     19,
+     3,
+     7,
+     17,
+     17,
+     18,
+     19,
+     19
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (the 25s: Odin, Heimdall, Surtur, Thrym, Magni, Vidar; Magni the bare 25(special) with no bonus pair, Thor the Special +7 +16 print)",
+    "The strength to-hit bonuses (0 = the MM blocks and the Magni special)",
+    "The strength damage bonuses (Thor +16 the high; every god damage cell matches his strength bonus - the Hel +38 print garble adjudicated to 8 by that arithmetic and the L&L voice)",
+    "The intelligence cells (Odin 25, Loki 25; the MM blocks 0)",
+    "The wisdom cells (Odin 25, Hel 25, the Norns 25; Surtur 14 the W:i4 tesseract garble, the L&L voice agrees 14)",
+    "The dexterity cells (Odin 25, Heimdall 25, Freya 24, Hel 24; Surtur 12)",
+    "The constitution cells (the 25s: Odin, Freya, Heimdall, Hel, Sif, Tyr, Uller)",
+    "The charisma cells (Odin 25, Balder 25; Aegir 9 and the Norns 9 the lows)"
+   ]
+  },
+  {
+   "tag": "nrsRos",
+   "name": "the roster grid",
+   "count": "nrsRosRows",
+   "cols": [
+    "nrsRosPage",
+    "nrsRosPlane",
+    "nrsRosPlaneAlt",
+    "nrsRosAlign",
+    "nrsRosRank",
+    "nrsRosPsi",
+    "nrsRosDmgFixed",
+    "nrsRosInEach",
+    "nrsRosParen"
+   ],
+   "sentinel": 0,
+   "col_default": 0,
+   "data": [
+    [
+     113,
+     1,
+     0,
+     5,
+     1,
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     114,
+     0,
+     0,
+     4,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     114,
+     0,
+     0,
+     1,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     114,
+     0,
+     0,
+     4,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     115,
+     1,
+     0,
+     3,
+     0,
+     5,
+     1,
+     1,
+     0
+    ],
+    [
+     115,
+     1,
+     0,
+     5,
+     1,
+     6,
+     1,
+     1,
+     0
+    ],
+    [
+     115,
+     2,
+     0,
+     5,
+     0,
+     5,
+     1,
+     1,
+     0
+    ],
+    [
+     115,
+     0,
+     0,
+     8,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     116,
+     0,
+     0,
+     4,
+     4,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     116,
+     1,
+     0,
+     0,
+     1,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     116,
+     0,
+     0,
+     4,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     116,
+     1,
+     0,
+     5,
+     1,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     117,
+     0,
+     0,
+     4,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     117,
+     0,
+     0,
+     4,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     117,
+     0,
+     0,
+     5,
+     4,
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     117,
+     1,
+     0,
+     5,
+     1,
+     6,
+     0,
+     0,
+     0
+    ],
+    [
+     118,
+     1,
+     0,
+     1,
+     1,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     118,
+     0,
+     0,
+     6,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     118,
+     1,
+     0,
+     0,
+     1,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     119,
+     3,
+     0,
+     7,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     119,
+     0,
+     0,
+     8,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     119,
+     1,
+     0,
+     2,
+     0,
+     5,
+     0,
+     0,
+     0
+    ],
+    [
+     119,
+     4,
+     1,
+     8,
+     1,
+     4,
+     0,
+     1,
+     0
+    ],
+    [
+     120,
+     1,
+     0,
+     2,
+     0,
+     6,
+     1,
+     0,
+     0
+    ],
+    [
+     120,
+     1,
+     0,
+     2,
+     0,
+     4,
+     1,
+     0,
+     0
+    ],
+    [
+     120,
+     5,
+     0,
+     4,
+     4,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     121,
+     1,
+     0,
+     2,
+     0,
+     6,
+     1,
+     1,
+     0
+    ],
+    [
+     121,
+     1,
+     0,
+     6,
+     0,
+     0,
+     1,
+     0,
+     2
+    ],
+    [
+     121,
+     1,
+     0,
+     2,
+     1,
+     6,
+     1,
+     0,
+     0
+    ],
+    [
+     122,
+     1,
+     0,
+     8,
+     0,
+     0,
+     1,
+     0,
+     2
+    ],
+    [
+     122,
+     1,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     122,
+     1,
+     0,
+     3,
+     0,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     122,
+     0,
+     0,
+     4,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     123,
+     1,
+     0,
+     2,
+     0,
+     6,
+     1,
+     0,
+     0
+    ],
+    [
+     123,
+     0,
+     0,
+     3,
+     4,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The print page cells (113 through 124, the Norse box of the gap report)",
+    "The plane cells (1 Gladsheim, 2 Elysium, 3 Hades, 4 Pandemonium, 5 Concordant Opposition, 0 none printed - the MM blocks, Fjalar, Skirnir and the Valkyries)",
+    "The alternative plane cells (Loki the Pandemonium-or-Gladsheim print, his home by current status with the gods)",
+    "The alignment cells (0 LG 1 LN 2 CG 3 CN 4 N 5 NG 6 LE 7 NE 8 CE)",
+    "The rank cells (1 greater, 0 lesser, 4 the class-grid rows with no rank line - Fjalar, Skirnir, the Norns, the Valkyries, 5 the eleven MM-style blocks)",
+    "The psionic class cells (I: Odin, Hel, the Norns, Tyr, Uller; II: Forseti, Frey, Frigga; III: Heimdall; IV: Loki, Modi; V: Aegir, Bragi, Idun; VI: Balder, Freya, Magni, Sif, Skirnir, Thor, Vidar; 0 = Nil)",
+    "The printed-damage flags (27 rows; Odin, Fossergrim, Skirnir, Freya, Frigga, Idun, Loki and the Valkyries the by-weapon and as-per-shape rows carry 0)",
+    "The in-each flags (the eleven rows printing an Nth-level-in-each pair: Aegir, Balder, Bragi, Forseti, Frey, Heimdall, Hel, Loki, the Norns, Sif, Tyr)",
+    "The plane parenthetical cells (1 Valhalla - Odin, 2 Jotunheim - Surtur and Thrym)"
+   ]
+  }
+ ],
+ "header_sections": {
+  "the Norse doctrine": [
+   {
+    "kind": "const",
+    "name": "nrsPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "nrsRound"
+   }
+  ],
+  "Odin": [
+   {
+    "kind": "const",
+    "name": "nrsOdinTelepathyMiles"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinBerserkYards"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinAllyYards"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinAllyLevels"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinGazeSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinFearYards"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinTouchHpCost"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinSameAlignHpPct"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinBowPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinBowArrows"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinWandPowers"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinWandElementalLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinWandElementalHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinWandSpells"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinWandDrainLevels"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinWandDrainHp"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinArmorPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinDraupnirGp"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinHealSleepLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsOdinHealSleepHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinCannotRaiseDead"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinAntsPolymorph"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinHlidskialf"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinOldManGuise"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinCompanionTrio"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinGungnirFear"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinPrayerDouble"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinRuneWandArtifact"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinRuneWandDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOdinHealingComa"
+   }
+  ],
+  "Hugin and Munin": [
+   {
+    "kind": "const",
+    "name": "nrsHuginCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHuginHpEach"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHuginXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHuginXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHuginAttackHd"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHuginDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHuginDmgHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHuginOddMovePrint"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHuginPlaneTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHuginSeeHearThrough"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHuginVerbalMessages"
+   }
+  ],
+  "Sleipner": [
+   {
+    "kind": "const",
+    "name": "nrsSleipnerXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSleipnerXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSleipnerFightHd"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSleipnerKickLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSleipnerKickHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSleipnerBiteLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSleipnerBiteHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSleipnerOdinOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSleipnerOneAttacker"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSleipnerAnyMedium"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSleipnerOneMaster"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSleipnerValkyrieRide"
+   }
+  ],
+  "Freke and Gere": [
+   {
+    "kind": "const",
+    "name": "nrsFrekeHpEach"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFrekeXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFrekeXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFrekeFightHd"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFrekeDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFrekeDmgHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFrekePunishers"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFrekeSenseMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFrekeSeeHidden"
+   }
+  ],
+  "Aegir": [
+   {
+    "kind": "const",
+    "name": "nrsAegirDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsAegirDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsAegirDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsAegirSeaFormFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsAegirGiantKin"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsAegirSlowNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsAegirOverturnsShips"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsAegirCastleWithRan"
+   }
+  ],
+  "Balder": [
+   {
+    "kind": "const",
+    "name": "nrsBalderDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBalderDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBalderDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBalderSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBalderCharismaGift"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBalderServePct"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBalderMinCha"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBalderMistletoeOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBalderEnchantGaze"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBalderHallBreidablik"
+   }
+  ],
+  "Bragi": [
+   {
+    "kind": "const",
+    "name": "nrsBragiDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBragiDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBragiDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBragiSongYards"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBragiSongHours"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBragiHarpDays"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBragiLegendPct"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBragiCrowdMin"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBragiNoViolence"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBragiHarpUncharm"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBragiHarpStopsAttack"
+   }
+  ],
+  "the Fenris Wolf": [
+   {
+    "kind": "const",
+    "name": "nrsFenrisDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFenrisDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFenrisXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFenrisXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFenrisWeaponPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFenrisSwallowHalf"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFenrisGleipnirChain"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFenrisAsgardLoophole"
+   }
+  ],
+  "Fjalar": [
+   {
+    "kind": "const",
+    "name": "nrsFjalarDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFjalarDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFjalarGauntletPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFjalarShunPlusTwo"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFjalarBattleLeader"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFjalarDurinRace"
+   }
+  ],
+  "Forseti": [
+   {
+    "kind": "const",
+    "name": "nrsForsetiDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsForsetiDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsForsetiDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsForsetiLieDays"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsForsetiDetectLies"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsForsetiEvilMinusOne"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsForsetiEvilPlusTwo"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsForsetiNeverLies"
+   }
+  ],
+  "Fossergrim": [
+   {
+    "kind": "const",
+    "name": "nrsFossergrimHd"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFossergrimXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFossergrimXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFossergrimXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFossergrimMileLimit"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFossergrimRegen"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFossergrimCannotMissWater"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFossergrimMaleOffspring"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFossergrimWaterfallBound"
+   }
+  ],
+  "Frey": [
+   {
+    "kind": "const",
+    "name": "nrsFreyDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreySwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyFireGiantLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyFireGiantHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyOtherGiantLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyOtherGiantHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyShipRate"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaFrostPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaFireSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaCatAc"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaCatHd"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaCatHp"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaCatPawLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaCatPawHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaCatRearLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaCatRearHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaChariotMove"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaNecklaceGp"
+   },
+   {
+    "kind": "const",
+    "name": "nrsFreyaCloakRate"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFreyShipFolds"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFreyWeatherControl"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFreyElfCommand"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFreyaRemoveCurse"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFreyaFalconGuise"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFreyaValkyrieLeader"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFreyaAvianFireImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFreyaNecklaceLieGlow"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFreyaVanirTwin"
+   }
+  ],
+  "Blodug-Hofi": [
+   {
+    "kind": "const",
+    "name": "nrsBlodugBiteLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBlodugBiteHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBlodugKickLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBlodugKickHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBlodugFireSavePlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBlodugFireDieSave"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBlodugUndeadYards"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBlodugFightHd"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBlodugXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsBlodugXpBase"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBlodugDaylightGlow"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBlodugDefendMaster"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBlodugTeleportWill"
+   }
+  ],
+  "Gullin-Bursti": [
+   {
+    "kind": "const",
+    "name": "nrsGullinDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGullinDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGullinRegen"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGullinXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGullinXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGullinFightHd"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsGullinNightRegen"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsGullinTeleportWithGod"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsGullinChariotPuller"
+   }
+  ],
+  "Skirnir": [
+   {
+    "kind": "const",
+    "name": "nrsSkirnirMailPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSkirnirSwordPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSkirnirAutoTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSkirnirLoyalShieldman"
+   }
+  ],
+  "Frigga": [
+   {
+    "kind": "const",
+    "name": "nrsFriggaMaidenNames"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFriggaWeatherControl"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFriggaNecklaceCharm"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFriggaSeesBreezeAreas"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFriggaShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFriggaDragonToAvian"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFriggaFlaxGold"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsFriggaHandmaidenValkyries"
+   }
+  ],
+  "Garm": [
+   {
+    "kind": "const",
+    "name": "nrsGarmDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGarmDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGarmXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGarmXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGarmFightHd"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGarmWolfPack"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGarmFleeLevel"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGarmFearSaveMod"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsGarmHelGateGuard"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsGarmTravelsPlanes"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsGarmTreasureOfTheDead"
+   }
+  ],
+  "Heimdall": [
+   {
+    "kind": "const",
+    "name": "nrsHeimdallDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHeimdallDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHeimdallDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHeimdallArmorPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHeimdallAlwaysSurprise"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHeimdallNeverSurprised"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHeimdallUnlimitedClairvoyance"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHeimdallVorpalHofud"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHeimdallFrostSlaying"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHeimdallHornGjaller"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHeimdallLokiEnmity"
+   }
+  ],
+  "Hel": [
+   {
+    "kind": "const",
+    "name": "nrsHelDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHelDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHelDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHelSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHelWitherYards"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHelWitherHp"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHelPlagueHp"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHelSwordDisease"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHelImperviousWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHelHalfWhiteHalfBlack"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHelSpectralHorse"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHelNiflheimPalace"
+   }
+  ],
+  "Jormungandr": [
+   {
+    "kind": "const",
+    "name": "nrsJormHeadHp"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormMiles"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormBiteLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormBiteHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormConstrictionLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormConstrictionHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormPoisonSaveMod"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormDeathRounds"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormVenomCloudFeet"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJormFightHd"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsJormBodyInfinite"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsJormHeadAnywhere"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsJormRegenNextRound"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsJormBitesOwnTail"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsJormThorDoom"
+   }
+  ],
+  "Idun": [
+   {
+    "kind": "const",
+    "name": "nrsIdunAppleYears"
+   },
+   {
+    "kind": "const",
+    "name": "nrsIdunAppleHp"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsIdunChestAlwaysFull"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsIdunWifeOfBragi"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsIdunApplesImmortal"
+   }
+  ],
+  "Loki": [
+   {
+    "kind": "const",
+    "name": "nrsLokiIllusionLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiBloodBrother"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiSuggestionPower"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiThreeRoundNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiIllusionsAbove"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiBootsOfFour"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiRedBlack"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiFireImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiNoMagicControl"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLokiWouldBetray"
+   }
+  ],
+  "Magni": [
+   {
+    "kind": "const",
+    "name": "nrsMagniDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsMagniDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsMagniHammerPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsMagniCatchPct"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsMagniBendAnything"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsMagniLiftAnything"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsMagniBluntImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsMagniLimitlessStrength"
+   }
+  ],
+  "Modi": [
+   {
+    "kind": "const",
+    "name": "nrsModiVorpalDmg"
+   },
+   {
+    "kind": "const",
+    "name": "nrsModiBerserkDmg"
+   },
+   {
+    "kind": "const",
+    "name": "nrsModiAuraYards"
+   },
+   {
+    "kind": "const",
+    "name": "nrsModiAuraBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsModiAlwaysForefront"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsModiRetreatSense"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsModiBerserkDoubles"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsModiControlImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsModiVorpalBlade"
+   }
+  ],
+  "the Norns": [
+   {
+    "kind": "const",
+    "name": "nrsNornsCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsNornsDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsNornsDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsNornsGiftPct"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsNornsSwanForm"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsNornsYggdrasil"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsNornsAbilityDrain"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsNornsNonmagicalImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsNornsNoWorshipers"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsNornsImpartialFate"
+   }
+  ],
+  "Sif": [
+   {
+    "kind": "const",
+    "name": "nrsSifDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSifDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSifDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSifSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSifBlessPct"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSifPatronYoungWarriors"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSifGoldenHair"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSifControlImmune"
+   }
+  ],
+  "Surtur": [
+   {
+    "kind": "const",
+    "name": "nrsSurturDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSurturDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSurturArmorDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSurturArmorDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsSurturSwordFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSurturFireImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSurturRagnarokLeader"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsSurturFireGiantDeity"
+   }
+  ],
+  "Thor": [
+   {
+    "kind": "const",
+    "name": "nrsThorDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorMjolnirPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorThrowYards"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorLightningDice"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorStunRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorRedirectInches"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorLiftStrength"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorAllyPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThorAllyYards"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThorGloveJarngrieper"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThorGirdleMeginjarder"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThorHammerReturns"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThorThrownOnlyAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThorPowerWordStun"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThorClericsUseHammers"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThorGiantMorale"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThorAlertsWorshipers"
+   }
+  ],
+  "Thrym": [
+   {
+    "kind": "const",
+    "name": "nrsThrymDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThrymDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThrymDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThrymAxePlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThrymBrothers"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThrymBrotherAc"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThrymBrotherHp"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThrymBrotherMove"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThrymBrotherDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsThrymBrotherDmgHigh"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThrymColdImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThrymWhiteFur"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThrymRagnarokLeader"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThrymBrothersFight16"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsThrymFrostGiantDeity"
+   }
+  ],
+  "Tyr": [
+   {
+    "kind": "const",
+    "name": "nrsTyrDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsTyrDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsTyrDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsTyrSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsTyrThiefSenseInches"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsTyrRightHandLost"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsTyrLawByContract"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsTyrValkyrieWatch"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsTyrSeeInvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsTyrLeftHandSword"
+   }
+  ],
+  "Uller": [
+   {
+    "kind": "const",
+    "name": "nrsUllerDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsUllerDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsUllerDmgBonus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsUllerBowPlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsUllerBowRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "nrsUllerSwordPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsUllerNoRangePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsUllerElementalImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsUllerRuledForOdin"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsUllerWinterAid"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsUllerWanedPower"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsUllerPatronArchers"
+   }
+  ],
+  "Tanngrisner and Tanngjost": [
+   {
+    "kind": "const",
+    "name": "nrsGoatsCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGoatsDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGoatsDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGoatsChargePlus"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGoatsXpRoman"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGoatsXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGoatsFightHd"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsGoatsEatenReborn"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsGoatsPullChariot"
+   }
+  ],
+  "Vidar": [
+   {
+    "kind": "const",
+    "name": "nrsVidarDmgLow"
+   },
+   {
+    "kind": "const",
+    "name": "nrsVidarDmgHigh"
+   },
+   {
+    "kind": "const",
+    "name": "nrsVidarSilenceRadiusInches"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsVidarIronShoe"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsVidarPinUnderfoot"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsVidarStoicSilent"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsVidarHatesEvil"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsVidarSilenceUncounterable"
+   }
+  ],
+  "the Valkyries": [
+   {
+    "kind": "bool",
+    "name": "nrsValkyriePegasiMaxHp"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsValkyrieEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsValkyrieAuroraLight"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsValkyrieVisibleToDoomed"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsValkyrieChooseSlain"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsValkyrieSleipnerOffspring"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsValkyrieServeOdin"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ],
+  "the R865 census": [
+   {
+    "kind": "const",
+    "name": "nrsBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "nrsCensusAfter"
+   },
+   {
+    "kind": "const",
+    "name": "nrsCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "nrsClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "nrsAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "nrsRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGreaterCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsLesserCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsNoRankCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsMonsterCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsGladsheimCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsElysiumCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHadesCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPandemoniumCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsConcordantCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsNoPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsDualPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPlaneCodeCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPsiRowCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPsiNilCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPsiOneCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPsiTwoCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPsiThreeCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPsiFourCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPsiFiveCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsPsiSixCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsDmgFixedCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsInEachCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsDualMoveCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsDualSameMoveCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsInfiniteMoveCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsHalfFootCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsValhallaCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsJotunheimCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsCompanionCount"
+   },
+   {
+    "kind": "const",
+    "name": "nrsEinheriarMinLevel"
+   },
+   {
+    "kind": "const",
+    "name": "nrsDwarfRaces"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsAesirVanirAllies"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsVanirNotMen"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsRagnarokEvilWins"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsCureSpellsRare"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsHangedAndSpeared"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsOakPyre"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsLunarMonthWorship"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsGoldSilverUseful"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBlasphemyForgivenByBattle"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsBifrostHidden"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsJotunheimBlot"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsEinheriarRagnarokArmy"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsModsognerNonviolent"
+   },
+   {
+    "kind": "bool",
+    "name": "nrsDurinWeapons"
+   }
+  ]
+ },
+ "consts": [
+  {
+   "name": "nrsRound",
+   "value": 865,
+   "comment": "the Norse mythos round: the D&DG walk round seventeen"
+  },
+  {
+   "name": "nrsPrintStart",
+   "value": 113,
+   "comment": "the section opens on print p. 113 (Odin)"
+  },
+  {
+   "name": "nrsPrintEnd",
+   "value": 124,
+   "comment": "the section closes on print p. 124 (Vidar, the Valkyries)"
+  },
+  {
+   "name": "nrsBeingCount",
+   "value": 35,
+   "comment": "thirty-five stat-block rows"
+  },
+  {
+   "name": "nrsTableCount",
+   "value": 4,
+   "comment": "four grids: combat, class, ability, roster"
+  },
+  {
+   "name": "nrsChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "nrsRegistryFloor",
+   "value": 995,
+   "comment": "zero registry defs touched, the floor holds"
+  },
+  {
+   "name": "nrsCensusAfter",
+   "value": 788,
+   "comment": "the battery census after this round lands"
+  },
+  {
+   "name": "nrsCbtRows",
+   "value": 35,
+   "comment": "the combat grid rows"
+  },
+  {
+   "name": "nrsClsRows",
+   "value": 35,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "nrsAbiRows",
+   "value": 35,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "nrsRosRows",
+   "value": 35,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "nrsGreaterCount",
+   "value": 11,
+   "comment": "eleven greater gods: Odin, Balder, Forseti, Frey, Freya, Frigga, Heimdall, Hel, Loki, Thor, Tyr"
+  },
+  {
+   "name": "nrsLesserCount",
+   "value": 10,
+   "comment": "ten lesser: Aegir, Bragi, Idun, Magni, Modi, Sif, Surtur, Thrym, Uller, Vidar"
+  },
+  {
+   "name": "nrsNoRankCount",
+   "value": 4,
+   "comment": "four class-grid rows printing no rank line: Fjalar, Skirnir, the Norns, the Valkyries"
+  },
+  {
+   "name": "nrsMonsterCount",
+   "value": 11,
+   "comment": "eleven MM-style blocks: Hugin, Sleipner, Freke, the Fenris Wolf, Fossergrim, Blodug-Hofi, Gullin-Bursti, Garm, Jormungandr, the goats, plus the Norns block riding class grids"
+  },
+  {
+   "name": "nrsGladsheimCount",
+   "value": 18,
+   "comment": "eighteen Gladsheim rows (the Surtur and Thrym parentheticals are Jotunheim in Gladsheim)"
+  },
+  {
+   "name": "nrsElysiumCount",
+   "value": 1,
+   "comment": "one Elysium row: Bragi"
+  },
+  {
+   "name": "nrsHadesCount",
+   "value": 1,
+   "comment": "one Hades row: Hel"
+  },
+  {
+   "name": "nrsPandemoniumCount",
+   "value": 1,
+   "comment": "one Pandemonium row: Loki (his Gladsheim alt rides the plane alt col)"
+  },
+  {
+   "name": "nrsConcordantCount",
+   "value": 1,
+   "comment": "one Concordant Opposition row: the Norns"
+  },
+  {
+   "name": "nrsNoPlaneCount",
+   "value": 13,
+   "comment": "thirteen rows printing no PLANE line: the eleven MM blocks minus none, plus Fjalar, Skirnir and the Valkyries"
+  },
+  {
+   "name": "nrsDualPlaneCount",
+   "value": 1,
+   "comment": "one dual-plane print: Loki the Pandemonium or Gladsheim"
+  },
+  {
+   "name": "nrsPlaneCodeCount",
+   "value": 5,
+   "comment": "five plane codes in play: Gladsheim, Elysium, Hades, Pandemonium, Concordant Opposition"
+  },
+  {
+   "name": "nrsPsiRowCount",
+   "value": 21,
+   "comment": "twenty-one rows printing a psionic class"
+  },
+  {
+   "name": "nrsPsiNilCount",
+   "value": 14,
+   "comment": "fourteen Nil or no-line rows"
+  },
+  {
+   "name": "nrsPsiOneCount",
+   "value": 5,
+   "comment": "the class I pipes: Odin, Hel, the Norns, Tyr, Uller"
+  },
+  {
+   "name": "nrsPsiTwoCount",
+   "value": 3,
+   "comment": "the class II pipes: Forseti, Frey, Frigga"
+  },
+  {
+   "name": "nrsPsiThreeCount",
+   "value": 1,
+   "comment": "the class III pipes: Heimdall"
+  },
+  {
+   "name": "nrsPsiFourCount",
+   "value": 2,
+   "comment": "the class IV pipes: Loki, Modi"
+  },
+  {
+   "name": "nrsPsiFiveCount",
+   "value": 3,
+   "comment": "the class V pipes: Aegir, Bragi, Idun"
+  },
+  {
+   "name": "nrsPsiSixCount",
+   "value": 7,
+   "comment": "the class VI pipes: Balder, Freya, Magni, Sif, Skirnir, Thor, Vidar"
+  },
+  {
+   "name": "nrsDmgFixedCount",
+   "value": 27,
+   "comment": "twenty-seven printed-damage rows; the by-weapon, as-per-shape and see-below rows carry 0"
+  },
+  {
+   "name": "nrsInEachCount",
+   "value": 11,
+   "comment": "eleven in-each rows: Aegir, Balder, Bragi, Forseti, Frey, Heimdall, Hel, Loki, the Norns, Sif, Tyr"
+  },
+  {
+   "name": "nrsDualMoveCount",
+   "value": 10,
+   "comment": "ten dual-move rows: Hugin, the Fenris Wolf, Fossergrim, Blodug-Hofi, Gullin-Bursti, Freya, Idun, Loki, the Norns, the goats"
+  },
+  {
+   "name": "nrsDualSameMoveCount",
+   "value": 2,
+   "comment": "two dual-same prints: Loki 12 over 12 and the goats 24 over 24"
+  },
+  {
+   "name": "nrsInfiniteMoveCount",
+   "value": 1,
+   "comment": "one Infinite move print: Hel, the minus 1 sentinel (the R863 Death precedent)"
+  },
+  {
+   "name": "nrsHalfFootCount",
+   "value": 4,
+   "comment": "four half-foot size cells: Odin, Hel and Tyr the 6 and a half foot 78, the Valkyries the 5 and a half foot 66"
+  },
+  {
+   "name": "nrsValhallaCount",
+   "value": 1,
+   "comment": "one Valhalla parenthetical: Odin Gladsheim (Valhalla)"
+  },
+  {
+   "name": "nrsJotunheimCount",
+   "value": 2,
+   "comment": "two Jotunheim parentheticals: Surtur and Thrym"
+  },
+  {
+   "name": "nrsCompanionCount",
+   "value": 6,
+   "comment": "six companion blocks: Hugin and Munin, Sleipner, Freke and Gere, Blodug-Hofi, Gullin-Bursti, the goats"
+  },
+  {
+   "name": "nrsEinheriarMinLevel",
+   "value": 4,
+   "comment": "the Einheriar are always of the 4th level and above"
+  },
+  {
+   "name": "nrsDwarfRaces",
+   "value": 2,
+   "comment": "two principal dwarven races: Modsogner and Durin"
+  },
+  {
+   "name": "nrsFriggaMaidenNames",
+   "value": 10,
+   "comment": "ten named Frigga handmaidens: Fulla, Vara, Lofn, Vor, Gna, Eira, Hlin, Syn, Vjofn, Snotra"
+  },
+  {
+   "name": "nrsOdinTelepathyMiles",
+   "value": 300,
+   "comment": "Odin telepathy has a range of 300 miles"
+  },
+  {
+   "name": "nrsOdinBerserkYards",
+   "value": 30,
+   "comment": "Odin inspires berserker rages within 30 yards"
+  },
+  {
+   "name": "nrsOdinAllyYards",
+   "value": 20,
+   "comment": "allies within 20 yards gain fighting levels"
+  },
+  {
+   "name": "nrsOdinAllyLevels",
+   "value": 4,
+   "comment": "the ally gain is 4 levels of fighting ability"
+  },
+  {
+   "name": "nrsOdinGazeSaveMod",
+   "value": -4,
+   "comment": "Odin gaze paralysis save at minus 4, one being per round"
+  },
+  {
+   "name": "nrsOdinSpearPlus",
+   "value": 5,
+   "comment": "Gungnir the spear is +5"
+  },
+  {
+   "name": "nrsOdinFearYards",
+   "value": 20,
+   "comment": "Gungnir held aloft strikes fear within 20 yards"
+  },
+  {
+   "name": "nrsOdinTouchHpCost",
+   "value": 1,
+   "comment": "each Gungnir prayer touch takes 1 hit point from Odin"
+  },
+  {
+   "name": "nrsOdinSameAlignHpPct",
+   "value": 50,
+   "comment": "same-alignment Gungnir touchers lose 50 percent of original hit points"
+  },
+  {
+   "name": "nrsOdinBowPlus",
+   "value": 3,
+   "comment": "Odin bow is +3 composite recurved"
+  },
+  {
+   "name": "nrsOdinBowArrows",
+   "value": 10,
+   "comment": "the bow fires 10 +3 arrows per melee round"
+  },
+  {
+   "name": "nrsOdinWandPowers",
+   "value": 5,
+   "comment": "the golden Rune Wand has five powers"
+  },
+  {
+   "name": "nrsOdinWandElementalLow",
+   "value": 1,
+   "comment": "the wand summons 1-4 elementals once per week, low"
+  },
+  {
+   "name": "nrsOdinWandElementalHigh",
+   "value": 4,
+   "comment": "the wand summons 1-4 elementals once per week, high"
+  },
+  {
+   "name": "nrsOdinWandSpells",
+   "value": 12,
+   "comment": "the wand stores 12 spells of Odin choice"
+  },
+  {
+   "name": "nrsOdinWandDrainLevels",
+   "value": 6,
+   "comment": "the wand drains 6 energy levels from a grabber"
+  },
+  {
+   "name": "nrsOdinWandDrainHp",
+   "value": 100,
+   "comment": "the wand drains 100 hit points from a grabber"
+  },
+  {
+   "name": "nrsOdinArmorPlus",
+   "value": 5,
+   "comment": "Odin wears +5 corselet of mail and +5 helm"
+  },
+  {
+   "name": "nrsOdinDraupnirGp",
+   "value": 30000,
+   "comment": "Draupnir produces a 30,000 gold piece twin every night"
+  },
+  {
+   "name": "nrsOdinHealSleepLow",
+   "value": 1,
+   "comment": "healing anyone forces a sleep of 1-10 days, low"
+  },
+  {
+   "name": "nrsOdinHealSleepHigh",
+   "value": 10,
+   "comment": "healing anyone forces a sleep of 1-10 days, high"
+  },
+  {
+   "name": "nrsHuginCount",
+   "value": 2,
+   "comment": "two ravens: Hugin and Munin, Thought and Memory"
+  },
+  {
+   "name": "nrsHuginHpEach",
+   "value": 30,
+   "comment": "30 hit points each"
+  },
+  {
+   "name": "nrsHuginXpRoman",
+   "value": 6,
+   "comment": "the XP level VI (the print merges the roman into V1815)"
+  },
+  {
+   "name": "nrsHuginXpBase",
+   "value": 815,
+   "comment": "the XP base 815, the MM level VI base value"
+  },
+  {
+   "name": "nrsHuginAttackHd",
+   "value": 7,
+   "comment": "the ravens attack as 7 hit dice monsters"
+  },
+  {
+   "name": "nrsHuginDmgLow",
+   "value": 1,
+   "comment": "the beak strike 1-8, low"
+  },
+  {
+   "name": "nrsHuginDmgHigh",
+   "value": 8,
+   "comment": "the beak strike 1-8, high"
+  },
+  {
+   "name": "nrsSleipnerXpRoman",
+   "value": 10,
+   "comment": "the XP level X"
+  },
+  {
+   "name": "nrsSleipnerXpBase",
+   "value": 20600,
+   "comment": "the XP base 20,600"
+  },
+  {
+   "name": "nrsSleipnerFightHd",
+   "value": 16,
+   "comment": "Sleipner fights as a 16+ hit dice monster"
+  },
+  {
+   "name": "nrsSleipnerKickLow",
+   "value": 2,
+   "comment": "the fore-hoove kick 2-20, low"
+  },
+  {
+   "name": "nrsSleipnerKickHigh",
+   "value": 20,
+   "comment": "the fore-hoove kick 2-20, high"
+  },
+  {
+   "name": "nrsSleipnerBiteLow",
+   "value": 1,
+   "comment": "the bite 1-10, low"
+  },
+  {
+   "name": "nrsSleipnerBiteHigh",
+   "value": 10,
+   "comment": "the bite 1-10, high"
+  },
+  {
+   "name": "nrsFrekeHpEach",
+   "value": 75,
+   "comment": "75 hit points each"
+  },
+  {
+   "name": "nrsFrekeXpRoman",
+   "value": 9,
+   "comment": "the XP level IX"
+  },
+  {
+   "name": "nrsFrekeXpBase",
+   "value": 8875,
+   "comment": "the XP base 8,875"
+  },
+  {
+   "name": "nrsFrekeFightHd",
+   "value": 16,
+   "comment": "the wolves attack as 16+ hit dice monsters"
+  },
+  {
+   "name": "nrsFrekeDmgLow",
+   "value": 2,
+   "comment": "the bite 2-20, low"
+  },
+  {
+   "name": "nrsFrekeDmgHigh",
+   "value": 20,
+   "comment": "the bite 2-20, high"
+  },
+  {
+   "name": "nrsAegirDmgLow",
+   "value": 4,
+   "comment": "the maiden-club strike 4-40, low"
+  },
+  {
+   "name": "nrsAegirDmgHigh",
+   "value": 40,
+   "comment": "the maiden-club strike 4-40, high"
+  },
+  {
+   "name": "nrsAegirDmgBonus",
+   "value": 11,
+   "comment": "the printed +11 damage bonus"
+  },
+  {
+   "name": "nrsAegirSeaFormFeet",
+   "value": 60,
+   "comment": "in the sea Aegir is 60 feet tall and fights the Aesir and Vanir trespassers"
+  },
+  {
+   "name": "nrsBalderDmgLow",
+   "value": 3,
+   "comment": "the +2 sword strike 3-30, low"
+  },
+  {
+   "name": "nrsBalderDmgHigh",
+   "value": 30,
+   "comment": "the +2 sword strike 3-30, high"
+  },
+  {
+   "name": "nrsBalderDmgBonus",
+   "value": 10,
+   "comment": "the printed +10 damage bonus"
+  },
+  {
+   "name": "nrsBalderSwordPlus",
+   "value": 2,
+   "comment": "the Balder sword is +2"
+  },
+  {
+   "name": "nrsBalderCharismaGift",
+   "value": 2,
+   "comment": "Balder can grant 2 charisma points once in a being life"
+  },
+  {
+   "name": "nrsBalderServePct",
+   "value": 1,
+   "comment": "the 1 percent chance he asks a 15-plus-charisma female to serve him"
+  },
+  {
+   "name": "nrsBalderMinCha",
+   "value": 15,
+   "comment": "the charisma floor of the serving females"
+  },
+  {
+   "name": "nrsBragiDmgLow",
+   "value": 2,
+   "comment": "the strike 2-20, low"
+  },
+  {
+   "name": "nrsBragiDmgHigh",
+   "value": 20,
+   "comment": "the strike 2-20, high"
+  },
+  {
+   "name": "nrsBragiDmgBonus",
+   "value": 11,
+   "comment": "the printed +11 damage bonus"
+  },
+  {
+   "name": "nrsBragiSongYards",
+   "value": 30,
+   "comment": "violent minds within 30 yards are overcome by the song, no save"
+  },
+  {
+   "name": "nrsBragiSongHours",
+   "value": 5,
+   "comment": "the song power works up to 5 hours at a time per creature"
+  },
+  {
+   "name": "nrsBragiHarpDays",
+   "value": 7,
+   "comment": "the Harp of Calm stops fighting or quarreling for 7 days"
+  },
+  {
+   "name": "nrsBragiLegendPct",
+   "value": 5,
+   "comment": "the 5 percent chance a first-performance bard is granted a great legend"
+  },
+  {
+   "name": "nrsBragiCrowdMin",
+   "value": 50,
+   "comment": "the great-legend grant needs a crowd of more than 50 beings"
+  },
+  {
+   "name": "nrsFenrisDmgLow",
+   "value": 9,
+   "comment": "the bite 9-90, low"
+  },
+  {
+   "name": "nrsFenrisDmgHigh",
+   "value": 90,
+   "comment": "the bite 9-90, high"
+  },
+  {
+   "name": "nrsFenrisXpRoman",
+   "value": 10,
+   "comment": "the XP level X"
+  },
+  {
+   "name": "nrsFenrisXpBase",
+   "value": 33200,
+   "comment": "the XP base 33,200"
+  },
+  {
+   "name": "nrsFenrisWeaponPlus",
+   "value": 4,
+   "comment": "a +4 or better weapon to hit"
+  },
+  {
+   "name": "nrsFjalarDmgLow",
+   "value": 2,
+   "comment": "the gauntlet punch 2-20, low"
+  },
+  {
+   "name": "nrsFjalarDmgHigh",
+   "value": 20,
+   "comment": "the gauntlet punch 2-20, high"
+  },
+  {
+   "name": "nrsFjalarGauntletPlus",
+   "value": 3,
+   "comment": "the magical iron gauntlets give +3 to hit"
+  },
+  {
+   "name": "nrsForsetiDmgLow",
+   "value": 1,
+   "comment": "the sword strike 1-10, low"
+  },
+  {
+   "name": "nrsForsetiDmgHigh",
+   "value": 10,
+   "comment": "the sword strike 1-10, high"
+  },
+  {
+   "name": "nrsForsetiDmgBonus",
+   "value": 12,
+   "comment": "the printed +12 damage bonus"
+  },
+  {
+   "name": "nrsForsetiLieDays",
+   "value": 7,
+   "comment": "the sword always hits a being that has lied in the last 7 days or is chaotic"
+  },
+  {
+   "name": "nrsFossergrimHd",
+   "value": 5,
+   "comment": "the printed 5 HD cell (hit dice, not points)"
+  },
+  {
+   "name": "nrsFossergrimXpRoman",
+   "value": 5,
+   "comment": "the XP level V"
+  },
+  {
+   "name": "nrsFossergrimXpBase",
+   "value": 320,
+   "comment": "the XP base 320, the MM level V base value"
+  },
+  {
+   "name": "nrsFossergrimXpPerHp",
+   "value": 5,
+   "comment": "the XP 5 per hit point rider"
+  },
+  {
+   "name": "nrsFossergrimMileLimit",
+   "value": 1,
+   "comment": "a fossergrim cannot live more than a mile from its waterfall"
+  },
+  {
+   "name": "nrsFossergrimRegen",
+   "value": 5,
+   "comment": "regeneration 5 points per melee round in splashing water"
+  },
+  {
+   "name": "nrsFreyDmgLow",
+   "value": 2,
+   "comment": "the +4 two-handed sword 2-20, low"
+  },
+  {
+   "name": "nrsFreyDmgHigh",
+   "value": 20,
+   "comment": "the +4 two-handed sword 2-20, high"
+  },
+  {
+   "name": "nrsFreyDmgBonus",
+   "value": 12,
+   "comment": "the printed +12 damage bonus"
+  },
+  {
+   "name": "nrsFreySwordPlus",
+   "value": 4,
+   "comment": "the Frey two-handed sword is +4"
+  },
+  {
+   "name": "nrsFreyFireGiantLow",
+   "value": 10,
+   "comment": "the sword does 10-100 to fire giants, low"
+  },
+  {
+   "name": "nrsFreyFireGiantHigh",
+   "value": 100,
+   "comment": "the sword does 10-100 to fire giants, high"
+  },
+  {
+   "name": "nrsFreyOtherGiantLow",
+   "value": 5,
+   "comment": "the sword does 5-50 to all other giants, low"
+  },
+  {
+   "name": "nrsFreyOtherGiantHigh",
+   "value": 50,
+   "comment": "the sword does 5-50 to all other giants, high"
+  },
+  {
+   "name": "nrsFreyShipRate",
+   "value": 60,
+   "comment": "Skidbladnir travels at 60 and holds all the gods and their mounts"
+  },
+  {
+   "name": "nrsBlodugBiteLow",
+   "value": 1,
+   "comment": "the bite 1-6, low"
+  },
+  {
+   "name": "nrsBlodugBiteHigh",
+   "value": 6,
+   "comment": "the bite 1-6, high"
+  },
+  {
+   "name": "nrsBlodugKickLow",
+   "value": 1,
+   "comment": "the fore-hoove kick 1-10, low"
+  },
+  {
+   "name": "nrsBlodugKickHigh",
+   "value": 10,
+   "comment": "the fore-hoove kick 1-10, high"
+  },
+  {
+   "name": "nrsBlodugFireSavePlus",
+   "value": 4,
+   "comment": "+4 on saves vs fire attacks"
+  },
+  {
+   "name": "nrsBlodugFireDieSave",
+   "value": 1,
+   "comment": "the fire-resistant coat subtracts 1 point per die of damage"
+  },
+  {
+   "name": "nrsBlodugUndeadYards",
+   "value": 200,
+   "comment": "the daylight glow kills undead with a light beam within 200 yards"
+  },
+  {
+   "name": "nrsBlodugFightHd",
+   "value": 11,
+   "comment": "the horse fights as an 11 hit dice monster"
+  },
+  {
+   "name": "nrsBlodugXpRoman",
+   "value": 8,
+   "comment": "the XP level VIII"
+  },
+  {
+   "name": "nrsBlodugXpBase",
+   "value": 4500,
+   "comment": "the XP base 4,500"
+  },
+  {
+   "name": "nrsGullinDmgLow",
+   "value": 2,
+   "comment": "the tusk strike 2-20, low"
+  },
+  {
+   "name": "nrsGullinDmgHigh",
+   "value": 20,
+   "comment": "the tusk strike 2-20, high"
+  },
+  {
+   "name": "nrsGullinRegen",
+   "value": 1,
+   "comment": "the boar normally regenerates 1 hit point per round"
+  },
+  {
+   "name": "nrsGullinXpRoman",
+   "value": 10,
+   "comment": "the XP level X"
+  },
+  {
+   "name": "nrsGullinXpBase",
+   "value": 22300,
+   "comment": "the XP base 22,300"
+  },
+  {
+   "name": "nrsGullinFightHd",
+   "value": 16,
+   "comment": "the boar attacks as a 16+ hit dice monster"
+  },
+  {
+   "name": "nrsSkirnirMailPlus",
+   "value": 4,
+   "comment": "Skirnir wears +4 chainmail"
+  },
+  {
+   "name": "nrsSkirnirSwordPlus",
+   "value": 3,
+   "comment": "Skirnir wields a +3 two-handed sword"
+  },
+  {
+   "name": "nrsFreyaFrostPlus",
+   "value": 3,
+   "comment": "Freya uses a +3 frost brand"
+  },
+  {
+   "name": "nrsFreyaFireSpellLevel",
+   "value": 30,
+   "comment": "Freya commands all fire spells as a 30th level caster"
+  },
+  {
+   "name": "nrsFreyaCatAc",
+   "value": 5,
+   "comment": "her chariot cats are AC 5"
+  },
+  {
+   "name": "nrsFreyaCatHd",
+   "value": 5,
+   "comment": "the cats are 5 hit dice"
+  },
+  {
+   "name": "nrsFreyaCatHp",
+   "value": 30,
+   "comment": "the cats have 30 hit points each"
+  },
+  {
+   "name": "nrsFreyaCatPawLow",
+   "value": 1,
+   "comment": "the cat paw 1-8, low"
+  },
+  {
+   "name": "nrsFreyaCatPawHigh",
+   "value": 8,
+   "comment": "the cat paw 1-8, high"
+  },
+  {
+   "name": "nrsFreyaCatRearLow",
+   "value": 1,
+   "comment": "the cat rear 1-12, low"
+  },
+  {
+   "name": "nrsFreyaCatRearHigh",
+   "value": 12,
+   "comment": "the cat rear 1-12, high"
+  },
+  {
+   "name": "nrsFreyaChariotMove",
+   "value": 18,
+   "comment": "the chariot moves at 18"
+  },
+  {
+   "name": "nrsFreyaNecklaceGp",
+   "value": 1000000,
+   "comment": "Brisingamen is worth 1 million gold pieces"
+  },
+  {
+   "name": "nrsFreyaCloakRate",
+   "value": 48,
+   "comment": "the falcon cloak flies at 48"
+  },
+  {
+   "name": "nrsGarmDmgLow",
+   "value": 6,
+   "comment": "the bite 6-60, low"
+  },
+  {
+   "name": "nrsGarmDmgHigh",
+   "value": 60,
+   "comment": "the bite 6-60, high"
+  },
+  {
+   "name": "nrsGarmXpRoman",
+   "value": 10,
+   "comment": "the XP level X"
+  },
+  {
+   "name": "nrsGarmXpBase",
+   "value": 26200,
+   "comment": "the XP base 26,200"
+  },
+  {
+   "name": "nrsGarmFightHd",
+   "value": 16,
+   "comment": "Garm attacks as a 16+ hit dice monster"
+  },
+  {
+   "name": "nrsGarmWolfPack",
+   "value": 20,
+   "comment": "Garm travels with a pack of 20 dire wolves"
+  },
+  {
+   "name": "nrsGarmFleeLevel",
+   "value": 6,
+   "comment": "beings of the 6th level or less flee in terror automatically"
+  },
+  {
+   "name": "nrsGarmFearSaveMod",
+   "value": -4,
+   "comment": "higher-level beings save vs fear at minus 4"
+  },
+  {
+   "name": "nrsHeimdallDmgLow",
+   "value": 3,
+   "comment": "the Hofud strike 3-30, low"
+  },
+  {
+   "name": "nrsHeimdallDmgHigh",
+   "value": 30,
+   "comment": "the Hofud strike 3-30, high"
+  },
+  {
+   "name": "nrsHeimdallDmgBonus",
+   "value": 14,
+   "comment": "the printed +14 strength bonus"
+  },
+  {
+   "name": "nrsHeimdallArmorPlus",
+   "value": 3,
+   "comment": "the +3 white armor acts as a gem of brightness"
+  },
+  {
+   "name": "nrsHelDmgLow",
+   "value": 5,
+   "comment": "the sword strike 5-50, low"
+  },
+  {
+   "name": "nrsHelDmgHigh",
+   "value": 50,
+   "comment": "the sword strike 5-50, high"
+  },
+  {
+   "name": "nrsHelDmgBonus",
+   "value": 8,
+   "comment": "the +8 bonus - the print shows the +38 garble at conf 28, the ability grid arithmetic and the L&L voice agree on 8"
+  },
+  {
+   "name": "nrsHelSwordPlus",
+   "value": 3,
+   "comment": "her sword is +3 and also causes disease when it hits"
+  },
+  {
+   "name": "nrsHelWitherYards",
+   "value": 90,
+   "comment": "her withering aura radius is 90 yards"
+  },
+  {
+   "name": "nrsHelWitherHp",
+   "value": 20,
+   "comment": "the aura subtracts 20 hit points, magic save applicable"
+  },
+  {
+   "name": "nrsHelPlagueHp",
+   "value": 5,
+   "comment": "her plagues take away 5 hit points per round until dead or cured"
+  },
+  {
+   "name": "nrsJormHeadHp",
+   "value": 300,
+   "comment": "the head has 300 hit points - 300 or more in one round kills it"
+  },
+  {
+   "name": "nrsJormMiles",
+   "value": 25000,
+   "comment": "the printed L (25,000 miles long) cell - the size col carries the 0 sentinel"
+  },
+  {
+   "name": "nrsJormBiteLow",
+   "value": 5,
+   "comment": "the bite 5-50, low"
+  },
+  {
+   "name": "nrsJormBiteHigh",
+   "value": 50,
+   "comment": "the bite 5-50, high"
+  },
+  {
+   "name": "nrsJormConstrictionLow",
+   "value": 10,
+   "comment": "the constriction 10-100, low"
+  },
+  {
+   "name": "nrsJormConstrictionHigh",
+   "value": 100,
+   "comment": "the constriction 10-100, high"
+  },
+  {
+   "name": "nrsJormPoisonSaveMod",
+   "value": -5,
+   "comment": "the venom save at minus 5"
+  },
+  {
+   "name": "nrsJormDeathRounds",
+   "value": 2,
+   "comment": "an unsaved bite kills within two melee rounds"
+  },
+  {
+   "name": "nrsJormVenomCloudFeet",
+   "value": 50,
+   "comment": "at its death the venom spews - save within 50 feet or die"
+  },
+  {
+   "name": "nrsJormXpRoman",
+   "value": 10,
+   "comment": "the XP level X"
+  },
+  {
+   "name": "nrsJormXpBase",
+   "value": 55000,
+   "comment": "the XP base 55,000 (the print drops the slash: X 55,000)"
+  },
+  {
+   "name": "nrsJormFightHd",
+   "value": 16,
+   "comment": "it attacks as a 16+ HD monster"
+  },
+  {
+   "name": "nrsIdunAppleYears",
+   "value": 10,
+   "comment": "an Apple of Youth returns 10 years of youth per bite"
+  },
+  {
+   "name": "nrsIdunAppleHp",
+   "value": 50,
+   "comment": "an apple restores up to 50 lost hit points per bite"
+  },
+  {
+   "name": "nrsLokiIllusionLevel",
+   "value": 20,
+   "comment": "illusions work on Loki only when cast by beings above the 20th level"
+  },
+  {
+   "name": "nrsMagniDmgLow",
+   "value": 8,
+   "comment": "the +3 hammer strike 8-80, low"
+  },
+  {
+   "name": "nrsMagniDmgHigh",
+   "value": 80,
+   "comment": "the +3 hammer strike 8-80, high"
+  },
+  {
+   "name": "nrsMagniHammerPlus",
+   "value": 3,
+   "comment": "the Magni hammer is +3"
+  },
+  {
+   "name": "nrsMagniCatchPct",
+   "value": 90,
+   "comment": "he catches and throws back any object, hitting 90 percent of the time"
+  },
+  {
+   "name": "nrsModiVorpalDmg",
+   "value": 25,
+   "comment": "the vorpal blade strikes for 25 points per hit - the walk first non-dice damage print, low cell"
+  },
+  {
+   "name": "nrsModiBerserkDmg",
+   "value": 50,
+   "comment": "the berserk doubles all powers: 4 hits per round for 50 points"
+  },
+  {
+   "name": "nrsModiAuraYards",
+   "value": 90,
+   "comment": "his courage aura affects all within a 90 yard radius"
+  },
+  {
+   "name": "nrsModiAuraBonus",
+   "value": 4,
+   "comment": "his inspired followers do an extra 4 points of damage per hit"
+  },
+  {
+   "name": "nrsNornsCount",
+   "value": 3,
+   "comment": "the three Norns: Urd, Verdandi and Skuld - past, present and future"
+  },
+  {
+   "name": "nrsNornsDmgLow",
+   "value": 1,
+   "comment": "the dagger strike 1-10, low"
+  },
+  {
+   "name": "nrsNornsDmgHigh",
+   "value": 10,
+   "comment": "the dagger strike 1-10, high"
+  },
+  {
+   "name": "nrsNornsGiftPct",
+   "value": 1,
+   "comment": "expensive gold and silver gifts buy a fate telling 1 percent of the time"
+  },
+  {
+   "name": "nrsSifDmgLow",
+   "value": 3,
+   "comment": "the +3 sword strike 3-30, low"
+  },
+  {
+   "name": "nrsSifDmgHigh",
+   "value": 30,
+   "comment": "the +3 sword strike 3-30, high"
+  },
+  {
+   "name": "nrsSifDmgBonus",
+   "value": 11,
+   "comment": "the printed +11 damage bonus"
+  },
+  {
+   "name": "nrsSifSwordPlus",
+   "value": 3,
+   "comment": "the Sif sword is +3"
+  },
+  {
+   "name": "nrsSifBlessPct",
+   "value": 1,
+   "comment": "a 1st level fighter devoted to Sif has a 1 percent chance of a bless spell before battle"
+  },
+  {
+   "name": "nrsSurturDmgLow",
+   "value": 6,
+   "comment": "the flaming sword strike 6-60, low"
+  },
+  {
+   "name": "nrsSurturDmgHigh",
+   "value": 60,
+   "comment": "the flaming sword strike 6-60, high"
+  },
+  {
+   "name": "nrsSurturArmorDmgLow",
+   "value": 1,
+   "comment": "his hot iron armor does 1-10 to exposed-flesh contacters, low"
+  },
+  {
+   "name": "nrsSurturArmorDmgHigh",
+   "value": 10,
+   "comment": "his hot iron armor does 1-10 to exposed-flesh contacters, high"
+  },
+  {
+   "name": "nrsSurturSwordFeet",
+   "value": 15,
+   "comment": "he wields a 15-foot flaming iron sword"
+  },
+  {
+   "name": "nrsThorDmgLow",
+   "value": 10,
+   "comment": "the Mjolnir strike 10-100, low"
+  },
+  {
+   "name": "nrsThorDmgHigh",
+   "value": 100,
+   "comment": "the Mjolnir strike 10-100, high"
+  },
+  {
+   "name": "nrsThorDmgBonus",
+   "value": 16,
+   "comment": "the Special +16 of the ability line"
+  },
+  {
+   "name": "nrsThorMjolnirPlus",
+   "value": 5,
+   "comment": "Mjolnir is +5"
+  },
+  {
+   "name": "nrsThorThrowYards",
+   "value": 200,
+   "comment": "Mjolnir can be thrown up to 200 yards"
+  },
+  {
+   "name": "nrsThorLightningDice",
+   "value": 100,
+   "comment": "up to 100 dice of lightning bolts per day, of any split"
+  },
+  {
+   "name": "nrsThorStunRadiusFeet",
+   "value": 30,
+   "comment": "the thunderclap power word stun affects all within 30 feet, save vs magic negates"
+  },
+  {
+   "name": "nrsThorRedirectInches",
+   "value": 200,
+   "comment": "a lightning spell cast within 200 inches of Thor turns on its caster"
+  },
+  {
+   "name": "nrsThorLiftStrength",
+   "value": 25,
+   "comment": "only a 25 strength can lift Mjolnir, more to wield it"
+  },
+  {
+   "name": "nrsThorAllyPlus",
+   "value": 2,
+   "comment": "servants and allies within 90 yards gain +2 on all dice throws"
+  },
+  {
+   "name": "nrsThorAllyYards",
+   "value": 90,
+   "comment": "the ally bonus radius"
+  },
+  {
+   "name": "nrsThrymDmgLow",
+   "value": 4,
+   "comment": "the +3 double-bladed axe strike 4-40, low"
+  },
+  {
+   "name": "nrsThrymDmgHigh",
+   "value": 40,
+   "comment": "the +3 double-bladed axe strike 4-40, high"
+  },
+  {
+   "name": "nrsThrymDmgBonus",
+   "value": 14,
+   "comment": "the printed +14 damage bonus"
+  },
+  {
+   "name": "nrsThrymAxePlus",
+   "value": 3,
+   "comment": "the Thrym axe is +3"
+  },
+  {
+   "name": "nrsThrymBrothers",
+   "value": 10,
+   "comment": "Thrym has ten brothers like normal frost giants"
+  },
+  {
+   "name": "nrsThrymBrotherAc",
+   "value": 4,
+   "comment": "the brothers are AC 4"
+  },
+  {
+   "name": "nrsThrymBrotherHp",
+   "value": 100,
+   "comment": "each brother has 100 hit points"
+  },
+  {
+   "name": "nrsThrymBrotherMove",
+   "value": 12,
+   "comment": "the brothers move 12"
+  },
+  {
+   "name": "nrsThrymBrotherDmgLow",
+   "value": 4,
+   "comment": "the brother damage 4-24, low"
+  },
+  {
+   "name": "nrsThrymBrotherDmgHigh",
+   "value": 24,
+   "comment": "the brother damage 4-24, high"
+  },
+  {
+   "name": "nrsTyrDmgLow",
+   "value": 2,
+   "comment": "the +3 sword strike 2-20, low"
+  },
+  {
+   "name": "nrsTyrDmgHigh",
+   "value": 20,
+   "comment": "the +3 sword strike 2-20, high"
+  },
+  {
+   "name": "nrsTyrDmgBonus",
+   "value": 12,
+   "comment": "the printed +12 damage bonus"
+  },
+  {
+   "name": "nrsTyrSwordPlus",
+   "value": 3,
+   "comment": "the Tyr sword is +3"
+  },
+  {
+   "name": "nrsTyrThiefSenseInches",
+   "value": 100,
+   "comment": "Tyr senses any thief within 100 inches"
+  },
+  {
+   "name": "nrsUllerDmgLow",
+   "value": 2,
+   "comment": "the +4 two-handed sword strike 2-20, low"
+  },
+  {
+   "name": "nrsUllerDmgHigh",
+   "value": 20,
+   "comment": "the +4 two-handed sword strike 2-20, high"
+  },
+  {
+   "name": "nrsUllerDmgBonus",
+   "value": 11,
+   "comment": "the printed +11 damage bonus"
+  },
+  {
+   "name": "nrsUllerBowPlus",
+   "value": 5,
+   "comment": "the Uller longbow is +5"
+  },
+  {
+   "name": "nrsUllerBowRangeInches",
+   "value": 200,
+   "comment": "he never misses targets less than 200 inches away"
+  },
+  {
+   "name": "nrsUllerSwordPlus",
+   "value": 4,
+   "comment": "the Uller two-handed sword is +4"
+  },
+  {
+   "name": "nrsGoatsCount",
+   "value": 2,
+   "comment": "two goats: Tanngrisner the white and Tanngjost the black"
+  },
+  {
+   "name": "nrsGoatsDmgLow",
+   "value": 3,
+   "comment": "the horn butt 3-24, low"
+  },
+  {
+   "name": "nrsGoatsDmgHigh",
+   "value": 24,
+   "comment": "the horn butt 3-24, high"
+  },
+  {
+   "name": "nrsGoatsChargePlus",
+   "value": 6,
+   "comment": "they add +6 to damage when they charge"
+  },
+  {
+   "name": "nrsGoatsXpRoman",
+   "value": 10,
+   "comment": "the XP level X"
+  },
+  {
+   "name": "nrsGoatsXpBase",
+   "value": 14100,
+   "comment": "the XP base 14,100"
+  },
+  {
+   "name": "nrsGoatsFightHd",
+   "value": 16,
+   "comment": "the goats attack as 16+ hit dice monsters"
+  },
+  {
+   "name": "nrsVidarDmgLow",
+   "value": 8,
+   "comment": "the iron shoe strike 8-80, low"
+  },
+  {
+   "name": "nrsVidarDmgHigh",
+   "value": 80,
+   "comment": "the iron shoe strike 8-80, high"
+  },
+  {
+   "name": "nrsVidarSilenceRadiusInches",
+   "value": 24,
+   "comment": "at will Vidar makes a 24 inch radius completely silent"
+  }
+ ],
+ "bools": [
+  {
+   "name": "nrsAesirVanirAllies",
+   "value": true,
+   "comment": "the Vanir are allies of the Aesir at Ragnarok but separate"
+  },
+  {
+   "name": "nrsVanirNotMen",
+   "value": true,
+   "comment": "the Vanir do not deal with the lives of men"
+  },
+  {
+   "name": "nrsRagnarokEvilWins",
+   "value": true,
+   "comment": "at Ragnarok evil triumphs and both hosts are destroyed"
+  },
+  {
+   "name": "nrsCureSpellsRare",
+   "value": true,
+   "comment": "the warlike majority cannot cure; only those noted in the text"
+  },
+  {
+   "name": "nrsHangedAndSpeared",
+   "value": true,
+   "comment": "a human sacrifice is simultaneously hanged and speared through the heart"
+  },
+  {
+   "name": "nrsOakPyre",
+   "value": true,
+   "comment": "the sacrifice is burned on a pyre of oak"
+  },
+  {
+   "name": "nrsLunarMonthWorship",
+   "value": true,
+   "comment": "the god images are taken out for worship every lunar month"
+  },
+  {
+   "name": "nrsGoldSilverUseful",
+   "value": true,
+   "comment": "sacrifices are gold and silver, useful and pleasing to the eye"
+  },
+  {
+   "name": "nrsBlasphemyForgivenByBattle",
+   "value": true,
+   "comment": "swearing, broken oaths and defaced images are forgiven by success in the next battle"
+  },
+  {
+   "name": "nrsBifrostHidden",
+   "value": true,
+   "comment": "Bifrost the Rainbow Bridge is kept hidden behind a veil of illusion"
+  },
+  {
+   "name": "nrsJotunheimBlot",
+   "value": true,
+   "comment": "Jotunheim is the anomalous blot of evil upon Gladsheim"
+  },
+  {
+   "name": "nrsEinheriarRagnarokArmy",
+   "value": true,
+   "comment": "the Einheriar are the army of the Norse gods at Ragnarok"
+  },
+  {
+   "name": "nrsModsognerNonviolent",
+   "value": true,
+   "comment": "the Modsogner dwarves produce magic items of a non-violent nature"
+  },
+  {
+   "name": "nrsDurinWeapons",
+   "value": true,
+   "comment": "the Durin dwarves create magical weapons of tremendous power"
+  },
+  {
+   "name": "nrsOdinCannotRaiseDead",
+   "value": true,
+   "comment": "Odin cannot raise the dead"
+  },
+  {
+   "name": "nrsOdinAntsPolymorph",
+   "value": true,
+   "comment": "different-alignment Gungnir touchers are polymorphed into normal ants, no save"
+  },
+  {
+   "name": "nrsOdinHlidskialf",
+   "value": true,
+   "comment": "the all-seeing throne Hlidskialf is an unlimited crystal ball with clairaudience"
+  },
+  {
+   "name": "nrsOdinOldManGuise",
+   "value": true,
+   "comment": "Odin walks among men as an old man on a mangy horse"
+  },
+  {
+   "name": "nrsOdinCompanionTrio",
+   "value": true,
+   "comment": "Odin keeps a pair of ravens, a pair of wolves and a magical horse"
+  },
+  {
+   "name": "nrsOdinGungnirFear",
+   "value": true,
+   "comment": "the fear works only when Odin holds Gungnir aloft, as the fear symbol"
+  },
+  {
+   "name": "nrsOdinPrayerDouble",
+   "value": true,
+   "comment": "Odin-allowed Gungnir touchers get a double effect prayer for the battle"
+  },
+  {
+   "name": "nrsOdinRuneWandArtifact",
+   "value": true,
+   "comment": "the Rune Wand is an artifact, undetectable by magical detection"
+  },
+  {
+   "name": "nrsOdinRuneWandDeath",
+   "value": true,
+   "comment": "the wand causes instantaneous death to any mortal touching it"
+  },
+  {
+   "name": "nrsOdinHealingComa",
+   "value": true,
+   "comment": "the curing power forces a temporary coma nothing can wake"
+  },
+  {
+   "name": "nrsHuginOddMovePrint",
+   "value": true,
+   "comment": "the printed 1 over 48 move cell is odd ink - both voices read it, pinned as printed"
+  },
+  {
+   "name": "nrsHuginPlaneTeleport",
+   "value": true,
+   "comment": "the ravens teleport from plane to plane"
+  },
+  {
+   "name": "nrsHuginSeeHearThrough",
+   "value": true,
+   "comment": "Odin sees and hears through his spies"
+  },
+  {
+   "name": "nrsHuginVerbalMessages",
+   "value": true,
+   "comment": "the ravens carry verbal messages for Odin"
+  },
+  {
+   "name": "nrsSleipnerOdinOnly",
+   "value": true,
+   "comment": "only Odin rides Sleipner, save Odin-ordered one-ride mercy trips"
+  },
+  {
+   "name": "nrsSleipnerOneAttacker",
+   "value": true,
+   "comment": "only one being per round can attack Sleipner rider"
+  },
+  {
+   "name": "nrsSleipnerAnyMedium",
+   "value": true,
+   "comment": "Sleipner can be ridden in any medium - air, earth, water and the like"
+  },
+  {
+   "name": "nrsSleipnerOneMaster",
+   "value": true,
+   "comment": "Sleipner will only obey one master at a time"
+  },
+  {
+   "name": "nrsSleipnerValkyrieRide",
+   "value": true,
+   "comment": "a Valkyrie may pick up a fine dead hero on Sleipner"
+  },
+  {
+   "name": "nrsFrekePunishers",
+   "value": true,
+   "comment": "the wolves punish humans who aid the giants against the gods"
+  },
+  {
+   "name": "nrsFrekeSenseMagic",
+   "value": true,
+   "comment": "the wolves see any hidden object and sense all things magical"
+  },
+  {
+   "name": "nrsFrekeSeeHidden",
+   "value": true,
+   "comment": "the wolves travel the planes for Odin and report the worlds"
+  },
+  {
+   "name": "nrsAegirGiantKin",
+   "value": true,
+   "comment": "Aegir is neither Aesir nor Vanir but related to the giants"
+  },
+  {
+   "name": "nrsAegirSlowNoSave",
+   "value": true,
+   "comment": "those meeting him in battle under the water are slowed, no saving throw"
+  },
+  {
+   "name": "nrsAegirOverturnsShips",
+   "value": true,
+   "comment": "Aegir overturns ships that have not sacrificed and drags them down"
+  },
+  {
+   "name": "nrsAegirCastleWithRan",
+   "value": true,
+   "comment": "Aegir lives in a great underwater castle with his wife Ran"
+  },
+  {
+   "name": "nrsBalderMistletoeOnly",
+   "value": true,
+   "comment": "Balder cannot be harmed by any weapon without mistletoe in it"
+  },
+  {
+   "name": "nrsBalderEnchantGaze",
+   "value": true,
+   "comment": "mortal females looking on him save or become enchanted, then devotion-save"
+  },
+  {
+   "name": "nrsBalderHallBreidablik",
+   "value": true,
+   "comment": "Balder lives in his hall of Breidablik in Gladsheim"
+  },
+  {
+   "name": "nrsBragiNoViolence",
+   "value": true,
+   "comment": "Bragi cannot have violence on his mind while singing"
+  },
+  {
+   "name": "nrsBragiHarpUncharm",
+   "value": true,
+   "comment": "the harp has all magical bard instrument powers plus uncharm"
+  },
+  {
+   "name": "nrsBragiHarpStopsAttack",
+   "value": true,
+   "comment": "the harp can stop any creature from attacking for a short time"
+  },
+  {
+   "name": "nrsFenrisSwallowHalf",
+   "value": true,
+   "comment": "a bite totaling more than half the victim hit points swallows him whole"
+  },
+  {
+   "name": "nrsFenrisGleipnirChain",
+   "value": true,
+   "comment": "the dwarves forged the silken golden chain from thoughts and concepts, unbreakable until Ragnarok"
+  },
+  {
+   "name": "nrsFenrisAsgardLoophole",
+   "value": true,
+   "comment": "the wolf lived in Asgard by the technicality sparing divine offspring"
+  },
+  {
+   "name": "nrsFjalarShunPlusTwo",
+   "value": true,
+   "comment": "Fjalar cannot be hit by +2 or better weapons - he makes them shun his skin"
+  },
+  {
+   "name": "nrsFjalarBattleLeader",
+   "value": true,
+   "comment": "Fjalar is the battle leader of the dwarves"
+  },
+  {
+   "name": "nrsFjalarDurinRace",
+   "value": true,
+   "comment": "Fjalar is a dwarven hero of the Durin race"
+  },
+  {
+   "name": "nrsForsetiDetectLies",
+   "value": true,
+   "comment": "Forseti detects lies and is called on when Odin cannot be impartial"
+  },
+  {
+   "name": "nrsForsetiEvilMinusOne",
+   "value": true,
+   "comment": "evil beings suffer -1 on their chance to hit Forseti"
+  },
+  {
+   "name": "nrsForsetiEvilPlusTwo",
+   "value": true,
+   "comment": "Forseti attacks evil beings at +2 both to hit and damage"
+  },
+  {
+   "name": "nrsForsetiNeverLies",
+   "value": true,
+   "comment": "the son of Balder has never been known to lie; his hall Glitner is gold and silver"
+  },
+  {
+   "name": "nrsFossergrimCannotMissWater",
+   "value": true,
+   "comment": "in battle in the water they cannot miss any standing being"
+  },
+  {
+   "name": "nrsFossergrimMaleOffspring",
+   "value": true,
+   "comment": "their offspring by bathing maidens are always male and find their own falls"
+  },
+  {
+   "name": "nrsFossergrimWaterfallBound",
+   "value": true,
+   "comment": "they appear as normal men in chainmail until attacked or forced from the fall"
+  },
+  {
+   "name": "nrsFreyShipFolds",
+   "value": true,
+   "comment": "the ship folds to a 1-inch cube for the god pocket"
+  },
+  {
+   "name": "nrsFreyWeatherControl",
+   "value": true,
+   "comment": "Frey is a weather deity and controls all manner of storms and calms"
+  },
+  {
+   "name": "nrsFreyElfCommand",
+   "value": true,
+   "comment": "Frey the Vanir is god of Fairyland and commands all the elves of Alfheim"
+  },
+  {
+   "name": "nrsBlodugDaylightGlow",
+   "value": true,
+   "comment": "Blodug-Hofi glows with the light of day in any battle"
+  },
+  {
+   "name": "nrsBlodugDefendMaster",
+   "value": true,
+   "comment": "if Frey is down the horse stays near to defend him unto death"
+  },
+  {
+   "name": "nrsBlodugTeleportWill",
+   "value": true,
+   "comment": "the horse teleports at will"
+  },
+  {
+   "name": "nrsGullinNightRegen",
+   "value": true,
+   "comment": "eaten by day, the boar regenerates at night from bones and skin if none are broken"
+  },
+  {
+   "name": "nrsGullinTeleportWithGod",
+   "value": true,
+   "comment": "with a god on it the boar teleports where the god wills"
+  },
+  {
+   "name": "nrsGullinChariotPuller",
+   "value": true,
+   "comment": "Frey uses the golden boar to pull his war chariot"
+  },
+  {
+   "name": "nrsSkirnirAutoTeleport",
+   "value": true,
+   "comment": "a split second before a death blow Skirnir is teleported to Alfheim"
+  },
+  {
+   "name": "nrsSkirnirLoyalShieldman",
+   "value": true,
+   "comment": "the shield-man is loyal to Frey and always at his side in battle"
+  },
+  {
+   "name": "nrsFreyaRemoveCurse",
+   "value": true,
+   "comment": "Freya can remove any curse with a touch of her hand"
+  },
+  {
+   "name": "nrsFreyaFalconGuise",
+   "value": true,
+   "comment": "she travels in falcon guise and can shape change into any bird form"
+  },
+  {
+   "name": "nrsFreyaValkyrieLeader",
+   "value": true,
+   "comment": "Freya is the leader of the Valkyries and accompanies them to choose the slain"
+  },
+  {
+   "name": "nrsFreyaAvianFireImmune",
+   "value": true,
+   "comment": "no avian or fire attack can hurt Freya"
+  },
+  {
+   "name": "nrsFreyaNecklaceLieGlow",
+   "value": true,
+   "comment": "Brisingamen glows when a lie is told in its presence"
+  },
+  {
+   "name": "nrsFreyaVanirTwin",
+   "value": true,
+   "comment": "Freya is a Vanir, the twin sister of Frey"
+  },
+  {
+   "name": "nrsFriggaWeatherControl",
+   "value": true,
+   "comment": "Frigga controls all forms of weather"
+  },
+  {
+   "name": "nrsFriggaNecklaceCharm",
+   "value": true,
+   "comment": "her black opal necklace charms a being to do nothing but flatter her, save applicable"
+  },
+  {
+   "name": "nrsFriggaSeesBreezeAreas",
+   "value": true,
+   "comment": "Frigga can view any area with a breeze blowing through it"
+  },
+  {
+   "name": "nrsFriggaShapeChange",
+   "value": true,
+   "comment": "in battle she shape changes into creatures and fights with their powers"
+  },
+  {
+   "name": "nrsFriggaDragonToAvian",
+   "value": true,
+   "comment": "she starts with dragon forms and goes to avian forms toward the end of a battle"
+  },
+  {
+   "name": "nrsFriggaFlaxGold",
+   "value": true,
+   "comment": "she spins flax into gold for Odin clothes"
+  },
+  {
+   "name": "nrsFriggaHandmaidenValkyries",
+   "value": true,
+   "comment": "her handmaidens are Valkyries"
+  },
+  {
+   "name": "nrsGarmHelGateGuard",
+   "value": true,
+   "comment": "Garm guards the gateway to the land of the dead"
+  },
+  {
+   "name": "nrsGarmTravelsPlanes",
+   "value": true,
+   "comment": "Garm obeys the laws of Hel and travels all planes when Hel is out collecting the dead"
+  },
+  {
+   "name": "nrsGarmTreasureOfTheDead",
+   "value": true,
+   "comment": "its treasure is the goods of those who failed to pass"
+  },
+  {
+   "name": "nrsHeimdallAlwaysSurprise",
+   "value": true,
+   "comment": "Heimdall always attacks with surprise"
+  },
+  {
+   "name": "nrsHeimdallNeverSurprised",
+   "value": true,
+   "comment": "Heimdall is never surprised"
+  },
+  {
+   "name": "nrsHeimdallUnlimitedClairvoyance",
+   "value": true,
+   "comment": "his eyesight is an unlimited range and duration clairvoyance"
+  },
+  {
+   "name": "nrsHeimdallVorpalHofud",
+   "value": true,
+   "comment": "Hofud is a vorpal weapon"
+  },
+  {
+   "name": "nrsHeimdallFrostSlaying",
+   "value": true,
+   "comment": "Hofud is also a sword of frost giant slaying"
+  },
+  {
+   "name": "nrsHeimdallHornGjaller",
+   "value": true,
+   "comment": "his horn Gjaller is the alarm of Asgard, blown for the frost giants and for visitors"
+  },
+  {
+   "name": "nrsHeimdallLokiEnmity",
+   "value": true,
+   "comment": "Heimdall is the sworn enemy of Loki, who mocks his guardianship"
+  },
+  {
+   "name": "nrsHelSwordDisease",
+   "value": true,
+   "comment": "the +3 sword causes disease whenever it hits"
+  },
+  {
+   "name": "nrsHelImperviousWeapons",
+   "value": true,
+   "comment": "Hel is totally impervious to all physical weaponry"
+  },
+  {
+   "name": "nrsHelHalfWhiteHalfBlack",
+   "value": true,
+   "comment": "her body is white on the left, jet black on the right, the left face blank"
+  },
+  {
+   "name": "nrsHelSpectralHorse",
+   "value": true,
+   "comment": "she rides a white spectral three-legged horse"
+  },
+  {
+   "name": "nrsHelNiflheimPalace",
+   "value": true,
+   "comment": "she lives in a dismal palace in the Niflheim area of Hades"
+  },
+  {
+   "name": "nrsJormBodyInfinite",
+   "value": true,
+   "comment": "the body hit points are infinite - only the head is vulnerable"
+  },
+  {
+   "name": "nrsJormHeadAnywhere",
+   "value": true,
+   "comment": "the serpent shifts its body and locates its head anywhere in one melee round"
+  },
+  {
+   "name": "nrsJormRegenNextRound",
+   "value": true,
+   "comment": "head and body regenerate all lost hit points the next melee round, even if severed"
+  },
+  {
+   "name": "nrsJormBitesOwnTail",
+   "value": true,
+   "comment": "it grew until it circled the earth and could bite its own tail"
+  },
+  {
+   "name": "nrsJormThorDoom",
+   "value": true,
+   "comment": "the Norns foretold Thor drowns in its venom at Ragnarok"
+  },
+  {
+   "name": "nrsIdunChestAlwaysFull",
+   "value": true,
+   "comment": "the 1-foot wicker chest always appears full but holds any amount"
+  },
+  {
+   "name": "nrsIdunWifeOfBragi",
+   "value": true,
+   "comment": "Idun is the wife of Bragi"
+  },
+  {
+   "name": "nrsIdunApplesImmortal",
+   "value": true,
+   "comment": "the gods eat the Apples of Youth to remain immortal"
+  },
+  {
+   "name": "nrsLokiBloodBrother",
+   "value": true,
+   "comment": "Loki is blood brother to Odin and once saved the Asgardians"
+  },
+  {
+   "name": "nrsLokiSuggestionPower",
+   "value": true,
+   "comment": "Loki relies on his suggestion power to force beings to his desires"
+  },
+  {
+   "name": "nrsLokiThreeRoundNoSave",
+   "value": true,
+   "comment": "looking at Loki for 3 melee rounds or more negates all saves against the suggestion"
+  },
+  {
+   "name": "nrsLokiIllusionsAbove",
+   "value": true,
+   "comment": "magic resistance still applies; illusions only above 20th level"
+  },
+  {
+   "name": "nrsLokiBootsOfFour",
+   "value": true,
+   "comment": "his boots combine water walking, flying, travelling and speed"
+  },
+  {
+   "name": "nrsLokiRedBlack",
+   "value": true,
+   "comment": "his colors are red and black, worn even in another guise"
+  },
+  {
+   "name": "nrsLokiFireImmune",
+   "value": true,
+   "comment": "Loki is immune to fire"
+  },
+  {
+   "name": "nrsLokiNoMagicControl",
+   "value": true,
+   "comment": "Loki cannot be magically controlled"
+  },
+  {
+   "name": "nrsLokiShapeChange",
+   "value": true,
+   "comment": "the god shape changes at will"
+  },
+  {
+   "name": "nrsLokiWouldBetray",
+   "value": true,
+   "comment": "Loki is the one most likely to betray the gods to the giants"
+  },
+  {
+   "name": "nrsMagniBendAnything",
+   "value": true,
+   "comment": "he can bend anything he can grip and put his fist through anything"
+  },
+  {
+   "name": "nrsMagniLiftAnything",
+   "value": true,
+   "comment": "he can lift nearly anything, even the unliftable, judge option"
+  },
+  {
+   "name": "nrsMagniBluntImmune",
+   "value": true,
+   "comment": "blunt weapons of any type cannot harm him"
+  },
+  {
+   "name": "nrsMagniLimitlessStrength",
+   "value": true,
+   "comment": "his strength was supposed to be almost limitless"
+  },
+  {
+   "name": "nrsModiAlwaysForefront",
+   "value": true,
+   "comment": "Thor son Modi is always in the forefront of any battle"
+  },
+  {
+   "name": "nrsModiRetreatSense",
+   "value": true,
+   "comment": "he knows when best to retreat and regroup his forces"
+  },
+  {
+   "name": "nrsModiBerserkDoubles",
+   "value": true,
+   "comment": "after losing half his hit points he berserks and doubles all combat powers"
+  },
+  {
+   "name": "nrsModiControlImmune",
+   "value": true,
+   "comment": "he is immune to all forms of magical control or illusions"
+  },
+  {
+   "name": "nrsModiVorpalBlade",
+   "value": true,
+   "comment": "the special attack is the vorpal blade decapitating power"
+  },
+  {
+   "name": "nrsNornsSwanForm",
+   "value": true,
+   "comment": "they travel the Prime Material Plane as swans dealing out prophecy"
+  },
+  {
+   "name": "nrsNornsYggdrasil",
+   "value": true,
+   "comment": "they tend the tree of life Yggdrasil and advise the gods"
+  },
+  {
+   "name": "nrsNornsAbilityDrain",
+   "value": true,
+   "comment": "their weapons subtract 1 point from every ability score, no save"
+  },
+  {
+   "name": "nrsNornsNonmagicalImmune",
+   "value": true,
+   "comment": "they are immune to all nonmagical attacks"
+  },
+  {
+   "name": "nrsNornsNoWorshipers",
+   "value": true,
+   "comment": "the Norns are not normal goddesses and have no worshipers"
+  },
+  {
+   "name": "nrsNornsImpartialFate",
+   "value": true,
+   "comment": "they weave the web of fate impartially"
+  },
+  {
+   "name": "nrsSifPatronYoungWarriors",
+   "value": true,
+   "comment": "Sif is the patron of young warriors"
+  },
+  {
+   "name": "nrsSifGoldenHair",
+   "value": true,
+   "comment": "her golden hair was a gift from the dwarves"
+  },
+  {
+   "name": "nrsSifControlImmune",
+   "value": true,
+   "comment": "Sif is immune to magical control"
+  },
+  {
+   "name": "nrsSurturFireImmune",
+   "value": true,
+   "comment": "Surtur is immune to fire attacks of any kind"
+  },
+  {
+   "name": "nrsSurturRagnarokLeader",
+   "value": true,
+   "comment": "he waits in Jotunheim to lead the fire giants at Ragnarok"
+  },
+  {
+   "name": "nrsSurturFireGiantDeity",
+   "value": true,
+   "comment": "most fire giants regard Surtur as their leader and deity"
+  },
+  {
+   "name": "nrsThorGloveJarngrieper",
+   "value": true,
+   "comment": "the glove Jarn Grieper gives the third attack per round and handles the red-hot hammer"
+  },
+  {
+   "name": "nrsThorGirdleMeginjarder",
+   "value": true,
+   "comment": "the girdle Meginjarder gives the strength to wield Mjolnir and break any barrier"
+  },
+  {
+   "name": "nrsThorHammerReturns",
+   "value": true,
+   "comment": "thrown Mjolnir never misses and returns automatically"
+  },
+  {
+   "name": "nrsThorThrownOnlyAttack",
+   "value": true,
+   "comment": "a thrown Mjolnir is Thor only attack that round"
+  },
+  {
+   "name": "nrsThorPowerWordStun",
+   "value": true,
+   "comment": "the throw trails a lightning bolt and stuns on the hit clap"
+  },
+  {
+   "name": "nrsThorClericsUseHammers",
+   "value": true,
+   "comment": "all Thor clerics rely on hammers for their weapons"
+  },
+  {
+   "name": "nrsThorGiantMorale",
+   "value": true,
+   "comment": "his name is enough to make giants check morale"
+  },
+  {
+   "name": "nrsThorAlertsWorshipers",
+   "value": true,
+   "comment": "Thor often alerts his worshipers to incursions of evil"
+  },
+  {
+   "name": "nrsThrymColdImmune",
+   "value": true,
+   "comment": "Thrym is immune to cold attacks"
+  },
+  {
+   "name": "nrsThrymWhiteFur",
+   "value": true,
+   "comment": "he wears a coat of white fur over his chainmail"
+  },
+  {
+   "name": "nrsThrymRagnarokLeader",
+   "value": true,
+   "comment": "he waits to lead the frost giants against the Aesir at Ragnarok"
+  },
+  {
+   "name": "nrsThrymBrothersFight16",
+   "value": true,
+   "comment": "each brother attacks as a 16+ hit dice monster"
+  },
+  {
+   "name": "nrsThrymFrostGiantDeity",
+   "value": true,
+   "comment": "Thrym is both leader and deity of the frost giants"
+  },
+  {
+   "name": "nrsTyrRightHandLost",
+   "value": true,
+   "comment": "Fenris bit off Tyr right hand at the binding"
+  },
+  {
+   "name": "nrsTyrLawByContract",
+   "value": true,
+   "comment": "by honoring the binding contract Tyr became the god of law and trust"
+  },
+  {
+   "name": "nrsTyrValkyrieWatch",
+   "value": true,
+   "comment": "as war god he watches the Valkyries - only the most valiant reach Valhalla"
+  },
+  {
+   "name": "nrsTyrSeeInvisible",
+   "value": true,
+   "comment": "he can see invisible objects"
+  },
+  {
+   "name": "nrsTyrLeftHandSword",
+   "value": true,
+   "comment": "he wields his sword in his left hand"
+  },
+  {
+   "name": "nrsUllerNoRangePenalty",
+   "value": true,
+   "comment": "he shoots any target he can see with no range penalties"
+  },
+  {
+   "name": "nrsUllerElementalImmune",
+   "value": true,
+   "comment": "he cannot be harmed by fire, cold, lightning or elementals"
+  },
+  {
+   "name": "nrsUllerRuledForOdin",
+   "value": true,
+   "comment": "he has temporarily ruled in Odin place"
+  },
+  {
+   "name": "nrsUllerWinterAid",
+   "value": true,
+   "comment": "as god of winter he sometimes gives aid to those less able to survive it"
+  },
+  {
+   "name": "nrsUllerWanedPower",
+   "value": true,
+   "comment": "his power waned with the ascension of Odin"
+  },
+  {
+   "name": "nrsUllerPatronArchers",
+   "value": true,
+   "comment": "Uller is the patron of archers and a mighty bowman"
+  },
+  {
+   "name": "nrsGoatsEatenReborn",
+   "value": true,
+   "comment": "eaten by Thor and friends, they regenerate from bones and skin in morning light"
+  },
+  {
+   "name": "nrsGoatsPullChariot",
+   "value": true,
+   "comment": "the enchanted goats pull Thor chariot through air and land"
+  },
+  {
+   "name": "nrsVidarIronShoe",
+   "value": true,
+   "comment": "the magical iron shoe on his right foot strikes twice per round"
+  },
+  {
+   "name": "nrsVidarPinUnderfoot",
+   "value": true,
+   "comment": "what he steps on is pinned until he lets go - no fighting or spellcasting under the shoe"
+  },
+  {
+   "name": "nrsVidarStoicSilent",
+   "value": true,
+   "comment": "he speaks only when he must, in as few words as possible"
+  },
+  {
+   "name": "nrsVidarHatesEvil",
+   "value": true,
+   "comment": "the son of Odin combats evil in his own way"
+  },
+  {
+   "name": "nrsVidarSilenceUncounterable",
+   "value": true,
+   "comment": "the silence cannot be countered by dispel magic, spell turning or anything else"
+  },
+  {
+   "name": "nrsValkyriePegasiMaxHp",
+   "value": true,
+   "comment": "the warrior maidens ride pegasi of maximum hit points"
+  },
+  {
+   "name": "nrsValkyrieEthereal",
+   "value": true,
+   "comment": "they travel ethereally"
+  },
+  {
+   "name": "nrsValkyrieAuroraLight",
+   "value": true,
+   "comment": "their pearly flickering armor light is said to cause the Aurora Borealis"
+  },
+  {
+   "name": "nrsValkyrieVisibleToDoomed",
+   "value": true,
+   "comment": "they are only visible to warriors in mortal danger"
+  },
+  {
+   "name": "nrsValkyrieChooseSlain",
+   "value": true,
+   "comment": "they bring the souls of the best slain warriors to Valhalla"
+  },
+  {
+   "name": "nrsValkyrieSleipnerOffspring",
+   "value": true,
+   "comment": "their mounts are the offspring of Sleipner"
+  },
+  {
+   "name": "nrsValkyrieServeOdin",
+   "value": true,
+   "comment": "they act as serving maids in Odin hall and handmaidens to Frigga"
+  }
+ ],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the thirty-five beings, the rank, plane and psionic counts)",
+   "expr": "m['nrsRound']() != 865 or m['nrsBeingCount']() != 35 or m['nrsTableCount']() != 4 or m['nrsChainCount']() != 0 or m['nrsCbtRows']() != 35 or m['nrsClsRows']() != 35 or m['nrsAbiRows']() != 35 or m['nrsRosRows']() != 35 or m['nrsGreaterCount']() != 11 or m['nrsLesserCount']() != 10 or m['nrsNoRankCount']() != 4 or m['nrsMonsterCount']() != 11 or m['nrsGladsheimCount']() != 18 or m['nrsElysiumCount']() != 1 or m['nrsHadesCount']() != 1 or m['nrsPandemoniumCount']() != 1 or m['nrsConcordantCount']() != 1 or m['nrsNoPlaneCount']() != 13 or m['nrsDualPlaneCount']() != 1 or m['nrsPlaneCodeCount']() != 5 or m['nrsPsiRowCount']() != 21 or m['nrsPsiNilCount']() != 14 or m['nrsPsiOneCount']() != 5 or m['nrsPsiTwoCount']() != 3 or m['nrsPsiThreeCount']() != 1 or m['nrsPsiFourCount']() != 2 or m['nrsPsiFiveCount']() != 3 or m['nrsPsiSixCount']() != 7 or m['nrsDmgFixedCount']() != 27 or m['nrsInEachCount']() != 11 or m['nrsDualMoveCount']() != 10 or m['nrsDualSameMoveCount']() != 2 or m['nrsInfiniteMoveCount']() != 1 or m['nrsHalfFootCount']() != 4 or m['nrsValhallaCount']() != 1 or m['nrsJotunheimCount']() != 2 or m['nrsCompanionCount']() != 6 or m['nrsRegistryFloor']() != 995 or m['nrsCensusAfter']() != 788 or m['nrsPrintStart']() != 113 or m['nrsPrintEnd']() != 124"
+  },
+  {
+   "note": "the combat grid head cells (the AC and hit point extremes, the odd prints)",
+   "expr": "m['nrsCbtAC'](0) != -6 or m['nrsCbtHP'](0) != 400 or m['nrsCbtAC'](28) != 4 or m['nrsCbtHP'](3) != 75 or m['nrsCbtMR'](7) != 99 or m['nrsCbtMR'](20) != 99 or m['nrsCbtAC'](8) != -3 or m['nrsCbtHP'](8) != 99 or m['nrsCbtHP'](10) != 5 or m['nrsCbtMove'](19) != -1 or m['nrsCbtMove'](20) != 0 or m['nrsCbtAtN'](16) != 0 or m['nrsCbtAtD'](24) != 4 or m['nrsCbtAtD'](28) != 3 or m['nrsCbtSizeIn'](7) != 600 or m['nrsCbtSizeIn'](20) != 0"
+  },
+  {
+   "note": "the half-foot size decode and the L&L parity (the 6 and a half foot gods and the 5 and a half foot Valkyries)",
+   "expr": "m['nrsCbtSizeIn'](0) != 78 or m['nrsCbtSizeIn'](19) != 78 or m['nrsCbtSizeIn'](30) != 78 or m['nrsCbtSizeIn'](34) != 66 or m['nrsAbiS'](0) != 25"
+  },
+  {
+   "note": "Odin the All Father (the 30th level Special cleric, the rune wand, the companions)",
+   "expr": "m['nrsClsClr'](0) != 30 or m['nrsClsDrd'](0) != 14 or m['nrsClsRng'](0) != 18 or m['nrsClsMU'](0) != 30 or m['nrsClsBrd'](0) != 15 or m['nrsRosPsi'](0) != 1 or m['nrsOdinTelepathyMiles']() != 300 or m['nrsOdinWandPowers']() != 5 or m['nrsOdinWandSpells']() != 12 or m['nrsOdinDraupnirGp']() != 30000 or m['nrsOdinBowArrows']() != 10 or m['nrsOdinSpearPlus']() != 5 or m['nrsOdinCannotRaiseDead']() != 1 or m['nrsOdinAntsPolymorph']() != 1"
+  },
+  {
+   "note": "the Odin companion trio (the ravens, the steed, the wolves - the walk first companion blocks)",
+   "expr": "m['nrsCbtAC'](1) != 2 or m['nrsCbtMove'](1) != 1 or m['nrsCbtMoveAlt'](1) != 48 or m['nrsHuginXpRoman']() != 6 or m['nrsHuginXpBase']() != 815 or m['nrsHuginAttackHd']() != 7 or m['nrsSleipnerXpBase']() != 20600 or m['nrsFrekeXpRoman']() != 9 or m['nrsFrekeHpEach']() != 75 or m['nrsCbtSizeIn'](2) != 144 or m['nrsHuginOddMovePrint']() != 1 or m['nrsSleipnerOneAttacker']() != 1"
+  },
+  {
+   "note": "the sea and storm gods (Aegir the giant-kin, the Balder charisma gift, the Bragi song)",
+   "expr": "m['nrsCbtAC'](4) != -5 or m['nrsCbtMove'](4) != 42 or m['nrsAegirDmgBonus']() != 11 or m['nrsBalderCharismaGift']() != 2 or m['nrsBragiSongYards']() != 30 or m['nrsBragiHarpDays']() != 7 or m['nrsRosPlane'](6) != 2 or m['nrsAegirSlowNoSave']() != 1 or m['nrsBalderMistletoeOnly']() != 1"
+  },
+  {
+   "note": "the Fenris Wolf and the binding (the 9-90 bite, the swallow rule)",
+   "expr": "m['nrsCbtAC'](7) != -4 or m['nrsCbtHP'](7) != 400 or m['nrsCbtMoveAlt'](7) != 12 or m['nrsFenrisXpBase']() != 33200 or m['nrsFenrisDmgHigh']() != 90 or m['nrsFenrisWeaponPlus']() != 4 or m['nrsFenrisSwallowHalf']() != 1 or m['nrsFenrisGleipnirChain']() != 1"
+  },
+  {
+   "note": "the dwarven hero and the justice god (Fjalar the shun-skin, Forseti the peacemaker)",
+   "expr": "m['nrsRosRank'](8) != 4 or m['nrsClsThf'](8) != 10 or m['nrsFjalarGauntletPlus']() != 3 or m['nrsForsetiDmgBonus']() != 12 or m['nrsForsetiLieDays']() != 7 or m['nrsRosPsi'](9) != 2 or m['nrsFjalarShunPlusTwo']() != 1 or m['nrsForsetiDetectLies']() != 1"
+  },
+  {
+   "note": "the fossergrim waterfall men (the 5 HD print, the V/320+5 XP)",
+   "expr": "m['nrsCbtHP'](10) != 5 or m['nrsFossergrimXpBase']() != 320 or m['nrsFossergrimXpPerHp']() != 5 or m['nrsFossergrimMileLimit']() != 1 or m['nrsFossergrimRegen']() != 5 or m['nrsFossergrimCannotMissWater']() != 1"
+  },
+  {
+   "note": "Frey the Vanir and his household (the giant-slaying sword, the folding ship, the boar and horse)",
+   "expr": "m['nrsRosPlane'](11) != 1 or m['nrsClsClr'](11) != 13 or m['nrsFreyFireGiantHigh']() != 100 or m['nrsFreyOtherGiantHigh']() != 50 or m['nrsFreyShipRate']() != 60 or m['nrsBlodugFireSavePlus']() != 4 or m['nrsGullinRegen']() != 1 or m['nrsBlodugXpBase']() != 4500 or m['nrsGullinXpBase']() != 22300 or m['nrsFreyShipFolds']() != 1 or m['nrsSkirnirAutoTeleport']() != 1"
+  },
+  {
+   "note": "the greater goddesses (Freya the Valkyrie leader, Frigga the weather wife, Hel the withering death)",
+   "expr": "m['nrsCbtAC'](15) != -3 or m['nrsFreyaFireSpellLevel']() != 30 or m['nrsFreyaNecklaceGp']() != 1000000 or m['nrsHelWitherYards']() != 90 or m['nrsHelWitherHp']() != 20 or m['nrsHelPlagueHp']() != 5 or m['nrsHelDmgBonus']() != 8 or m['nrsRosPlane'](19) != 3 or m['nrsFreyaValkyrieLeader']() != 1 or m['nrsFriggaDragonToAvian']() != 1 or m['nrsHelImperviousWeapons']() != 1"
+  },
+  {
+   "note": "the guardians (Garm the Hel gate, Heimdall the Bifrost watchman)",
+   "expr": "m['nrsGarmXpBase']() != 26200 or m['nrsGarmWolfPack']() != 20 or m['nrsGarmFearSaveMod']() != -4 or m['nrsHeimdallDmgBonus']() != 14 or m['nrsHeimdallArmorPlus']() != 3 or m['nrsRosPsi'](18) != 3 or m['nrsGarmHelGateGuard']() != 1 or m['nrsHeimdallVorpalHofud']() != 1 or m['nrsHeimdallLokiEnmity']() != 1"
+  },
+  {
+   "note": "the Jormungandr oddities (the 25,000 miles, the infinite body, the slashless XP print)",
+   "expr": "m['nrsJormMiles']() != 25000 or m['nrsJormHeadHp']() != 300 or m['nrsJormConstrictionHigh']() != 100 or m['nrsJormPoisonSaveMod']() != -5 or m['nrsJormXpBase']() != 55000 or m['nrsJormFightHd']() != 16 or m['nrsJormBodyInfinite']() != 1 or m['nrsJormHeadAnywhere']() != 1"
+  },
+  {
+   "note": "Loki the mischief god (the Pandemonium-or-Gladsheim dual plane, the suggestion power, the red and black)",
+   "expr": "m['nrsRosPlane'](22) != 4 or m['nrsRosPlaneAlt'](22) != 1 or m['nrsLokiIllusionLevel']() != 20 or m['nrsClsAss'](22) != 15 or m['nrsClsMnk'](22) != 5 or m['nrsRosPsi'](22) != 4 or m['nrsLokiBloodBrother']() != 1 or m['nrsLokiThreeRoundNoSave']() != 1 or m['nrsLokiBootsOfFour']() != 1"
+  },
+  {
+   "note": "the Thor sons and the Norns (Magni the limitless, Modi the vorpal berserk, the three fates)",
+   "expr": "m['nrsAbiS'](23) != 25 or m['nrsAbiHit'](23) != 0 or m['nrsModiVorpalDmg']() != 25 or m['nrsModiBerserkDmg']() != 50 or m['nrsModiAuraBonus']() != 4 or m['nrsNornsCount']() != 3 or m['nrsRosPlane'](25) != 5 or m['nrsFriggaMaidenNames']() != 10 or m['nrsMagniBluntImmune']() != 1 or m['nrsModiBerserkDoubles']() != 1 or m['nrsNornsAbilityDrain']() != 1"
+  },
+  {
+   "note": "the thunder family and the giant lords (Sif, Thor, Surtur, Thrym, the Tyr law, Uller the archer)",
+   "expr": "m['nrsCbtAC'](28) != 4 or m['nrsThorMjolnirPlus']() != 5 or m['nrsThorLightningDice']() != 100 or m['nrsThorAllyPlus']() != 2 or m['nrsThrymBrothers']() != 10 or m['nrsThrymDmgBonus']() != 14 or m['nrsClsPal'](30) != 25 or m['nrsTyrThiefSenseInches']() != 100 or m['nrsUllerBowPlus']() != 5 or m['nrsThorGloveJarngrieper']() != 1 or m['nrsSurturFireImmune']() != 1 or m['nrsTyrLawByContract']() != 1 or m['nrsUllerElementalImmune']() != 1"
+  },
+  {
+   "note": "the chariot goats and the Valkyries (the eaten-and-reborn pair, the choosers of the slain)",
+   "expr": "m['nrsGoatsChargePlus']() != 6 or m['nrsGoatsXpBase']() != 14100 or m['nrsGoatsDmgHigh']() != 24 or m['nrsCbtMoveAlt'](32) != 24 or m['nrsCbtHP'](34) != 100 or m['nrsCbtSizeIn'](34) != 66 or m['nrsGoatsEatenReborn']() != 1 or m['nrsValkyrieSleipnerOffspring']() != 1 or m['nrsValkyrieAuroraLight']() != 1"
+  },
+  {
+   "note": "Vidar the silent strength (the iron shoe, the uncounterable silence)",
+   "expr": "m['nrsVidarDmgHigh']() != 80 or m['nrsVidarSilenceRadiusInches']() != 24 or m['nrsCbtSizeIn'](33) != 240 or m['nrsVidarIronShoe']() != 1 or m['nrsVidarSilenceUncounterable']() != 1"
+  },
+  {
+   "note": "the in-each pairs and the roster walk (every in-each row and its class cells)",
+   "expr": "m['nrsRosInEach'](4) + m['nrsRosInEach'](5) + m['nrsRosInEach'](6) + m['nrsRosInEach'](9) + m['nrsRosInEach'](11) + m['nrsRosInEach'](18) + m['nrsRosInEach'](19) + m['nrsRosInEach'](22) + m['nrsRosInEach'](25) + m['nrsRosInEach'](26) + m['nrsRosInEach'](30) != 11 or m['nrsClsMU'](4) != 10 or m['nrsClsIll'](4) != 10 or m['nrsClsMnk'](26) != 12 or m['nrsClsBrd'](26) != 12 or m['nrsClsMnk'](30) != 10 or m['nrsClsBrd'](30) != 10"
+  },
+  {
+   "note": "the psionic pipe geometry (the II pipes at width 15, the III of Heimdall, the I singles)",
+   "expr": "m['nrsRosPsi'](9) != 2 or m['nrsRosPsi'](11) != 2 or m['nrsRosPsi'](16) != 2 or m['nrsRosPsi'](18) != 3 or m['nrsRosPsi'](14) != 6 or m['nrsRosPsi'](31) != 1 or m['nrsRosPsi'](24) != 4 or m['nrsRosPsi'](27) != 0 or m['nrsRosPsi'](29) != 0"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "inline_count": 471,
+ "data_files": [
+  {
+   "path": "doc/data/ddg_norse_crossrefs.txt",
+   "content": "DDG Norse mythos cross references (print pp. 113-124, the 2nd\nprinting). The companion-block pointers, the family and rivalry cross\nreferences, the plane parentheticals and the worship pointers of the\nsection.\n\nOdin three companion blocks (print p. 114)\n  Hugin and Munin (Thought and Memory) - aerial reconnaissance,\n    verbal messages; Odin sees and hears through them\n  Sleipner - the eight-legged steed; only Odin rides (or Odin-ordered\n    one-ride trips for beings in extreme need)\n  Freke and Gere - the plane-walking punisher wolves of Odin\n\nFrey household (print p. 117)\n  Blodug-Hofi - the fire-resistant horse, defends the fallen Frey\n  Gullin-Bursti - the golden boar, pulls the war chariot; a dwarf gift\n  Skirnir - the mortal shield-man, auto-teleports to Alfheim a split\n    second before a death blow\n\nThor chariot goats (print p. 122)\n  Tanngrisner (white) and Tanngjost (black) - eaten by Thor and\n    friends, reborn from bones and skin in morning light\n\nFamily and marriage cross references\n  Odin and Frigga - husband and wife (she spins flax into gold)\n  Balder - father of Forseti (the hall Glitner of gold and silver)\n  Bragi - husband of Idun (the Apples of Youth)\n  Frey and Freya - Vanir twins, children of Njord and Skadi\n  Thor - father of Modi and Magni; Sif is Thor wife\n  Loki - blood brother of Odin; offspring by the giantess\n    Angur-boda: the Fenris Wolf, Jormungandr and Hel\n  Vidar - a son of Odin\n  Tyr - lost his right hand to the Fenris Wolf at the binding\n    (the dwarf-forged cord), the contract that made him the law god\n  The Norns (Urd, Verdandi, Skuld) - past, present and future;\n    they tend Yggdrasil and advise the gods\n\nRivalries and enmities (the mlb Elenoin-Grahuk rivalry precedent)\n  Heimdall vs Loki - the sworn-enemy pair (Loki mocks the\n    guardianship of Bifrost)\n  Odin vs Loki - the Ragnarok pairing (good against evil at the\n    last battle; evil triumphs, both hosts destroyed)\n  Aegir vs the Aesir and Vanir - fights trespassers in his sea\n    realm; friendly and sociable but watched\n  Garm vs the heroes and gods - killed several who came to\n    retrieve a loved one from Hel\n\nPlane parentheticals\n  Odin   - Gladsheim (Valhalla)\n  Surtur - Gladsheim (Jotunheim)\n  Thrym  - Gladsheim (Jotunheim)\n  Loki   - Pandemonium or Gladsheim (by his current status with\n    the gods)\n\nGiants and Jotunheim pointers of the intro\n  frost giants -> Thrym (leader and deity)\n  fire giants  -> Surtur (leader and deity)\n  Jotunheim - attached to the planes of Gladsheim, the anomalous\n    blot of evil; the giants have clerical or illusionist powers\n    and magical weapons\n\nHandmaiden pointers\n  The Valkyries - Freya is their leader; they also serve as Odin\n    hall maids and Frigga handmaidens (Fulla, Vara, Lofn, Vor,\n    Gna, Eira, Hlin, Syn, Vjofn, Snotra); they ride pegasi, the\n    offspring of Sleipner\n  The Einheriar - the honored slain of Valhalla (always 4th level\n    and above), the army of the Norse gods at Ragnarok\n"
+  }
+ ],
+ "regtest": "regtest.cpp"
+}

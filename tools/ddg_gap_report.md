@@ -22,7 +22,7 @@ print p. 6; p132 is print 131).
 - [x] **Melnibonean mythos** (pp. 86-95)
 - [x] **Nehwon mythos** (pp. 96-104)
 - [x] **Nonhumans' Deities** (pp. 105-112)
-- [ ] **Norse mythos** (pp. 113-124)
+- [x] **Norse mythos** (pp. 113-124)
 - [ ] **Sumerian mythos** (pp. 125-127)
 - [ ] **Appendix 1: the planes** (pp. 128-133)
 - [ ] **Appendix 2: temple trappings** (p. 134)

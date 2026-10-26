@@ -25028,6 +25028,43 @@ rows + the 74-row encounter grid), 17 examples; rverify double-run GREEN, 1624
 mutants 0 missed; hyphen scan clean; zero True/False tokens; ddg gap 15/24
 closed, 9 open. NEXT: the D&DG walk continues from the Nonhumans' Deities
 (print pp. 105-112) - WAIT FOR GO.
+- R864 LANDED 2026-10-26: commit f555f6634463913be47052f47e10bcf72606b1fc
+(pushed f34a532..f555f66, census 786 -> 787), THE NONHUMANS' DEITIES - the
+D&DG walk round sixteen, print pp. 105-112: twenty beings - the six greater
+gods (Moradin, Corellon Larethian, Maglubiyet, Garl Glittergold, Yondalla,
+Gruumsh), the twelve lesser gods (Hruggek, Skerrit, Deep Sashelas, Lolth,
+Rillifane Rallathil, Grolantor, Skoraeus Stonebones, Kurtulmak, Blibdoolpoolp,
+Semuanya, Eadro, Sekolah) and the two demigods (Vaprak, Laogzed) - plus the
+shaman/witch-doctor doctrine of the intro (the 1d4 hp ladder, the fight-as-
+one-HD- better-per-two-levels rule, the paired witch-doctor 2-5) and the NOTE
+list (13 MM/FF beings treated as lesser gods) with the round's data file
+doc/data/ ddg_nonhuman_crossrefs.txt; prefix nhg (nhd BURNED -
+uapantheon.h/r405 owns it). THE HEADLINE ADJUDICATIONS: the MORADIN-CORELLON
+FOLD SWAP - the raw extract interleaves the two folded blocks, the tsv
+x-coords settle it (Moradin left col S:25(+7,+14) psionic VI, the 4-40 (+14)
+hammer; Corellon right col S:21 (+4,+9) psionic I, the 3-30 (+9) sword); the
+KURTULMAK-BLIBDOOLPOOLP TAIL SWAP the same way (Kurtulmak the 12th assassin /
+psionic VI / M 5 1/2 foot 66, Blibdoolpoolp the 15th assassin / psionic III /
+the 20th-level MU); HRUGGEK DEX NOT PRINTED (the tsv shows the bare 36px
+inter-cell gap between W and C - pinned 0); the FRACTION SIZES Yondalla 4 1/2
+foot 54 (the tesseract 42 misread) and Kurtulmak 66. LOLTH: the drow-form
+paren pinned -2 (the tesseract +2 conf 53, L&L -2, the game-sense tiebreak,
+eyeball flag), the MOVE 1"/9" web (the MM spider convention; the tesseract 17
+misread), drow move 15 const, MR 70 (L&L 75), the See below clr/drd and mu/ill
+lines 99 pairs with the 16th-cleric/14th-MU drow consts, CH 3(23), L (M) -> 0.
+Other divergent cells pinned with the L&L parity noted: Vaprak W 12 (L&L 18,
+conf 90), Sashelas D 21 (L&L 18), Laogzed the harmful-spells cleric (L&L
+destructive), the Nine Hells planes pinned for
+Maglubiyet/Kurtulmak/Gruumsh/Sekolah (the L&L Gehenna/Acheron/Stygia are
+transcriber D64 glosses). Skerrit: the Variable cells 0-sentinel with the AC 2
+floor pin and the centaur-form consts (AC 2 / move 21 / the +3 spear 2-20 /
+forest -4). Eadro: the dual AC 0/-6, AT 1/8, the psionic II (the tsv I/ w15
+width-match). The 12 As-16+-HD fighter cells pinned 16 (the new round
+convention). Spec tools/spec_r864.json, md5 7725bdcc81fd95739b0b19087d610ef9
+(92,675 bytes); 334 inlines (200 consts, 97 bools, 37 table cols, 4 grids x 20
+rows), 19 examples; rverify double-run GREEN, 1037 mutants 0 missed; hyphen
+scan clean; zero True/False tokens; ddg gap 16/24 closed, 8 open. NEXT: the
+D&DG walk continues from the Norse mythos - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
