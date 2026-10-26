@@ -24820,6 +24820,34 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
     continues from the Finnish
     mythos (print pp. 57-62) - WAIT
     FOR GO.
+  - R858 LANDED 2026-10-26: commit db4548071b69807c1e78a8ed0f63688beaa 990c1
+  (pushed 08b8283..db45480, census 780 -> 781), THE FINNISH MYTHOS - the D&DG
+  walk round ten, print pp. 57-62: twenty beings (Vainamoinen, Ahto, the Water
+  Dwarf, Ilmarinen, Hiisi, Ilmatar, Kiputytto, Lemminkainen, Kullervo, Tiera,
+  Louhi, Loviatar, Mielikki, the Son of Pohjola, Surma, Tuonetar, Tuoni, Ukko,
+  Untamo, the Air Maiden), 6 heroes, 5 greater, 4 lesser, 3 demigods, 2
+  servants; prefix klv ('fin' burned r312, full-repo scan clean). The headline
+  adjudication: the KULLERVO/TIERA FOLD SWAP - the Termux full.txt interleaved
+  the two blocks; geometry + tsv + prose settled Kullervo = CN, AC 1,
+  S:19(+3,+7), Fighter 19, MU/I 8 each, Thief 10, Bard 5, and Tiera = LG, AC
+  4, S:17(+1,+1), fighter- ranger 9, Bard 5. Flagged eyeballs: Lemminkainen
+  MOVE 12 (both alt voices), Louhi HP 110 (81px token too narrow for 4
+  glyphs), Kiputytto #AT 1 (single 11px glyph), Mielikki psionic pipe -> class
+  I, Tuonetar CH:-6, Hiisi W:10 and Kullervo W:6 pinned, foot-mark size
+  decodes (Lemminkainen 6'2", Kullervo 6'1", Tiera 5'4", Mielikki 5'1", Tuoni
+  L 10'), triple-slash moves Ahto 18/24/24 and Tuoni 18/18/48, Tuonetar fear
+  radius 30 FEET (djvu feet over tsv inches), Surma AC -2 (dash token),
+  strength brackets Water Dwarf 18(37), Lemminkainen 18(09), Son of Pohjola
+  18(00), Loviatar 16(0,+1); Pohjola-enmity flags on Kullervo, Louhi, Son of
+  Pohjola, Tuonetar. Spec 565fae2736f6d1715893344385b5fbaa, 312 inlines (126
+  consts, 148 bools, 38 table cols), 34 examples, no data files; engine
+  applied 6/already 6 double-run; rverify GREEN, 1034 mutants 0 missed; hyphen
+  scan clean; zero True/False tokens. Engine lesson: the emitted header
+  contains ONLY names referenced in header_sections and every const/bool must
+  be referenced EXACTLY ONCE - duplicate refs re-emit and inflate the inline
+  count (engine dies on the mismatch); fixed via an explicit shared exclusion
+  set + walk_names filter in the builder. NEXT: the D&DG walk continues from
+  the Greek mythos (print pp. 63-74, the next open box) - WAIT FOR GO.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

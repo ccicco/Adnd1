@@ -1,0 +1,4968 @@
+{
+ "round": 859,
+ "prefix": "grk",
+ "title": "the Greek mythos",
+ "header_file": "rules/grk.h",
+ "audit_file": "rules/audits/r859_batch.h",
+ "audit_label": "R859 Greek mythos audit",
+ "audit_comment": "THE GREEK MYTHOS - the D&DG walk round eleven, print pp. 63-74. The headline adjudication: the FRACTION FINGERPRINT - the tiny half-height glyphs of the printed \"X 1/2 foot\" size cells OCR-merge into garbles the earlier rounds misread as X'Y\" inch cells; the archive.org 1st-print page pixels (a pure-Python JPEG decode of the BookReader page images, rendered glyph by glyph) settle nine fraction cells - Zeus, Achilles, Aphrodite, Artemis, Bellerophon, Hecate, Hera, Hermes and Hades (the printed 6'1\" of the draft was the Hades 6 1/2 fraction, 78 inches) - plus the one true inch cell Odysseus 5'4\". The merged-column catch: the extract tsv fold swapped the Ares and Athena class lines and the Atlas and Cerberus alignments; the column-split dumps fixed five merged-column errors (Achilles fighter 15 not Nil among them). The psionic decode: the chocr glyph widths (I 9-11px, II 30, III 47, IV 54, V 36, VI 50) settle all forty class cells, Dionysus and Hades the pixel-verified three-pipe class III. The odd prints flagged as pinned: Ares move 26/24, Hades move 29, Hades CH 24(-9), Bellerophon move 12, and the pixel-verified Coeus charisma minus four.",
+ "census_before": 781,
+ "include_after": "#include \"rules/klv.h\"  // R858: the Finnish mythos",
+ "include_comment": "the Greek mythos",
+ "audit_anchor": "#include \"rules/audits/r858_batch.h\"  // R858: R858 Finnish mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Greek mythos** (pp. 63-74)",
+   "to": "- [x] **Greek mythos** (pp. 63-74)",
+   "note": "the Greek mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 11,
+  "open": 13
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Greek mythos - the D&DG walk round eleven, print pp. 63-74: forty beings from Zeus the thunderbolt sovereign of Olympus to Tyche the luck goddess, the ten greater gods (Zeus, Aphrodite, Apollo, Ares, Athena, Dionysus, Hades, Hera, Hermes, Poseidon), the eight lesser gods, the six heroes (Achilles, Bellerophon, Jason, Odysseus, Perseus, Theseus), the six greater titans (Atlas, Coeus, Crius, Epimetheus, Kronos, Oceanus), the demigod Heracles, and the nine monsters across seven planes.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 064-075; the second printing) with the column-split tsv dumps; the collation voice: the archive.org 1st-print derivative (deities-demigods-1st-print) - the chocr char-level word geometry plus the pure-Python JPEG decode of the BookReader page images rendered glyph by glyph. The adjudications: the FRACTION FINGERPRINT (the half-height small-1, the long slash and the low looped 2 of the printed X 1/2 foot cells decode nine sizes as fractions, not X'Y\" inches: Zeus 78, Achilles 66, Aphrodite 66, Artemis 66, Bellerophon 66, Hecate 66, Hera 66, Hermes 78, Hades 78 - the Hades 6'1\" draft read was the fraction), the Odysseus 5'4\" the one true inch cell, the merged-column swaps (Ares/Athena classes, Atlas/Cerberus alignments, Achilles fighter 15), the psionic glyph-width decode (Dionysus and Hades the pixel-verified class III three-pipe), the Coeus charisma minus four, and the flagged odd prints pinned as printed: Ares move 26/24, Hades move 29, Hades CH 24(-9), Bellerophon move 12."
+ },
+ "consts": [
+  {
+   "name": "grkRound",
+   "value": 859,
+   "comment": "the Greek mythos round: the D&DG walk round eleven, print pp. 63-74"
+  },
+  {
+   "name": "grkPrintStart",
+   "value": 63,
+   "comment": "the first print page of the mythos (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "grkPrintEnd",
+   "value": 74,
+   "comment": "the last print page of the mythos"
+  },
+  {
+   "name": "grkBeingCount",
+   "value": 40,
+   "comment": "the forty beings of the mythos (Zeus through Tyche: eleven greater, seven lesser, one demigod, six heroes, six greater titans, nine monsters)"
+  },
+  {
+   "name": "grkTableCount",
+   "value": 4,
+   "comment": "the four grids of the round (combat, class, ability, roster)"
+  },
+  {
+   "name": "grkChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "grkRegistryFloor",
+   "value": 995,
+   "comment": "zero registry defs touched - the floor holds"
+  },
+  {
+   "name": "grkCbtRows",
+   "value": 40,
+   "comment": "the combat grid rows"
+  },
+  {
+   "name": "grkClsRows",
+   "value": 40,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "grkAbiRows",
+   "value": 40,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "grkRosRows",
+   "value": 40,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "grkPlaneCount",
+   "value": 7,
+   "comment": "the plane codes (none, Olympus, Tarterus, Hades, the Nine Hells, the Prime Material, the Twin Paradises)"
+  },
+  {
+   "name": "grkHeroCount",
+   "value": 6,
+   "comment": "the six heroes (Achilles, Bellerophon, Jason, Odysseus, Perseus, Theseus)"
+  },
+  {
+   "name": "grkGreaterCount",
+   "value": 10,
+   "comment": "the ten greater gods (Zeus, Aphrodite, Apollo, Ares, Athena, Dionysus, Hades, Hera, Hermes, Poseidon)"
+  },
+  {
+   "name": "grkLesserCount",
+   "value": 8,
+   "comment": "the eight lesser gods (Artemis, Demeter, Hecate, Hephaestus, Nike, Pan, Prometheus, Tyche)"
+  },
+  {
+   "name": "grkDemigodCount",
+   "value": 1,
+   "comment": "the one demigod (Heracles)"
+  },
+  {
+   "name": "grkTitanCount",
+   "value": 6,
+   "comment": "the six greater titans (Atlas, Coeus, Crius, Epimetheus, Kronos, Oceanus - Prometheus the printed lesser god rides rank 0)"
+  },
+  {
+   "name": "grkMonsterCount",
+   "value": 9,
+   "comment": "the nine monster rows (the White Eagle, Antaeus, Cerberus, Circe, both cyclopes, Enceladus, the Furies, the Hecatoncheire)"
+  },
+  {
+   "name": "grkInEachCount",
+   "value": 9,
+   "comment": "the nine printed Nth level in each cells (Zeus MU/I, Apollo MU/I, Athena MU/I, Epimetheus C/D, Hera MU/I, Poseidon C/D and MU/I, Oceanus C/D, Prometheus C/D, Tyche MU/I)"
+  },
+  {
+   "name": "grkEnmityCount",
+   "value": 4,
+   "comment": "the four printed rivalry lines (Ares, Athena, Pan against Apollo, Odysseus under the Poseidon curse)"
+  },
+  {
+   "name": "grkPaladinCount",
+   "value": 2,
+   "comment": "the two paladin heroes (Perseus 15th, Theseus 13th - the fighter lo/hi pair plus a bool each)"
+  },
+  {
+   "name": "grkPsiClassKinds",
+   "value": 6,
+   "comment": "all six psionic classes of the R849 table appear (I Hecate, Pan, Tyche; II Zeus; III Dionysus, Hades; IV Hephaestus, Hermes; V the ten Vs; VI the six VIs)"
+  },
+  {
+   "name": "grkHalfFootCount",
+   "value": 9,
+   "comment": "the nine X 1/2 foot size cells (Zeus, Achilles, Aphrodite, Artemis, Bellerophon, Hecate, Hera, Hermes, Hades - the pixel-verified fraction cluster)"
+  },
+  {
+   "name": "grkArtifactCount",
+   "value": 1,
+   "comment": "the one artifact (the Aegis of Zeus)"
+  },
+  {
+   "name": "grkSpellLossLevels",
+   "value": 3,
+   "comment": "the interfaith transgression strips the third and higher level spells"
+  },
+  {
+   "name": "grkSpellLossDays",
+   "value": 28,
+   "comment": "the lunar month of the spell loss (the psm-4 lunar month)"
+  },
+  {
+   "name": "grkZeusBoltDamage",
+   "value": 30,
+   "comment": "the Zeus lightning bolt cast every melee round alongside the attack"
+  },
+  {
+   "name": "grkZeusBloodMonsterLevel",
+   "value": 6,
+   "comment": "the blood-spill forms a random sixth level monster"
+  },
+  {
+   "name": "grkZeusBloodHours",
+   "value": 48,
+   "comment": "the blood monster fights for Zeus until dead or 48 hours elapse"
+  },
+  {
+   "name": "grkAegisPlus",
+   "value": 5,
+   "comment": "the Aegis is a +5 shield"
+  },
+  {
+   "name": "grkAegisFearYards",
+   "value": 10,
+   "comment": "the Aegis fear reaches 10 yards, save vs. spells"
+  },
+  {
+   "name": "grkEagleXpBase",
+   "value": 14100,
+   "comment": "the eagle xp line X/14,100"
+  },
+  {
+   "name": "grkEagleHitDice",
+   "value": 16,
+   "comment": "the eagle attacks as a 16+ hit dice monster"
+  },
+  {
+   "name": "grkAchillesChariotRate",
+   "value": 24,
+   "comment": "the immortal horses pull the chariot at 24 per turn"
+  },
+  {
+   "name": "grkAphroditePainDamage",
+   "value": 10,
+   "comment": "the wave of her hand causes 1-10 points of pain, no save"
+  },
+  {
+   "name": "grkAphroditeFemaleCh",
+   "value": 15,
+   "comment": "her female clerics need charisma 15 or greater"
+  },
+  {
+   "name": "grkAphroditeMaleCon",
+   "value": 16,
+   "comment": "her male clerics need constitution 16 or better"
+  },
+  {
+   "name": "grkAphroditeVengeancePct",
+   "value": 10,
+   "comment": "the 10 percent chance the vain goddess hears an unfavorable comparison"
+  },
+  {
+   "name": "grkAntaeusHpBase",
+   "value": 100,
+   "comment": "the printed 100 hp starting block"
+  },
+  {
+   "name": "grkAntaeusGrowHeal",
+   "value": 25,
+   "comment": "each growth step heals all damage and adds 25 hit points"
+  },
+  {
+   "name": "grkAntaeusHpMax",
+   "value": 250,
+   "comment": "the growth ceiling of 250 total hit points"
+  },
+  {
+   "name": "grkAntaeusXpBase",
+   "value": 14000,
+   "comment": "the xp line X/14,000"
+  },
+  {
+   "name": "grkAntaeusXpPerHp",
+   "value": 35,
+   "comment": "plus 35 per hp when killed"
+  },
+  {
+   "name": "grkApolloBowPlus",
+   "value": 4,
+   "comment": "the +4 bow of line-of-sight range"
+  },
+  {
+   "name": "grkApolloArrowPlus",
+   "value": 3,
+   "comment": "the adamantite +3 arrows"
+  },
+  {
+   "name": "grkApolloCompanionPct",
+   "value": 60,
+   "comment": "the 60 percent chance Artemis comes to the aid of Apollo"
+  },
+  {
+   "name": "grkApolloHazePlus",
+   "value": 5,
+   "comment": "the purple haze acts as a +5 ring of protection"
+  },
+  {
+   "name": "grkAresSpearFearYards",
+   "value": 10,
+   "comment": "the +3 spear causes fear within 10 yards"
+  },
+  {
+   "name": "grkArtemisRangeYards",
+   "value": 1000,
+   "comment": "her maximum bow range of 1,000 yards"
+  },
+  {
+   "name": "grkBellerophonWatchPct",
+   "value": 25,
+   "comment": "the 25 percent chance an Olympian watches over him"
+  },
+  {
+   "name": "grkBellerophonSavePct",
+   "value": 75,
+   "comment": "the 75 percent chance the watcher saves him from mortal danger"
+  },
+  {
+   "name": "grkCerberusHeads",
+   "value": 3,
+   "comment": "the three mastiff heads"
+  },
+  {
+   "name": "grkCerberusHpPerHead",
+   "value": 30,
+   "comment": "the 30 hp per head"
+  },
+  {
+   "name": "grkCerberusHpBody",
+   "value": 100,
+   "comment": "the 100 hit points for the body"
+  },
+  {
+   "name": "grkCerberusRegen",
+   "value": 5,
+   "comment": "the creature regenerates 5 points per melee round"
+  },
+  {
+   "name": "grkCerberusSpittleInches",
+   "value": 30,
+   "comment": "the poisonous spittle reaches up to 30 inches"
+  },
+  {
+   "name": "grkCerberusXpBase",
+   "value": 26240,
+   "comment": "the xp line X/26,240"
+  },
+  {
+   "name": "grkCoeusFearLossPct",
+   "value": 25,
+   "comment": "each angry sight costs 25 percent of total original hit points"
+  },
+  {
+   "name": "grkCoeusApproachYards",
+   "value": 20,
+   "comment": "within 20 yards a save vs. spells or die of fright"
+  },
+  {
+   "name": "grkCoeusSaveRounds",
+   "value": 4,
+   "comment": "after that a save every 4 melee rounds"
+  },
+  {
+   "name": "grkCoeusFleeTurns",
+   "value": 10,
+   "comment": "the failed save runs in fear for 10 turns"
+  },
+  {
+   "name": "grkCriusHeavyRoundsMax",
+   "value": 4,
+   "comment": "the too-heavy-to-lift power lasts 1-4 melee rounds"
+  },
+  {
+   "name": "grkCriusHitPenalty",
+   "value": 4,
+   "comment": "attackers in his gravity field are -4 to hit"
+  },
+  {
+   "name": "grkCriusAcPenalty",
+   "value": 1,
+   "comment": "attackers in the field are -1 on armor class"
+  },
+  {
+   "name": "grkCyclopsGrHd",
+   "value": 15,
+   "comment": "the greater cyclops 15 HD"
+  },
+  {
+   "name": "grkCyclopsGrBonusHpMax",
+   "value": 8,
+   "comment": "plus 1-8 hit points"
+  },
+  {
+   "name": "grkCyclopsGrGiftRewardPct",
+   "value": 20,
+   "comment": "the 20 percent reward chance for gift bringers"
+  },
+  {
+   "name": "grkCyclopsGrKillPct",
+   "value": 80,
+   "comment": "the 80 percent kill chance for the presumption"
+  },
+  {
+   "name": "grkCyclopsGrXpBase",
+   "value": 7800,
+   "comment": "the xp line IX/7,800"
+  },
+  {
+   "name": "grkCyclopsGrXpPerHp",
+   "value": 20,
+   "comment": "plus 20 per hp"
+  },
+  {
+   "name": "grkCyclopsLsHd",
+   "value": 13,
+   "comment": "the lesser cyclops 13 HD"
+  },
+  {
+   "name": "grkCyclopsLsRockRange",
+   "value": 50,
+   "comment": "the hurled boulders reach 50 inches"
+  },
+  {
+   "name": "grkCyclopsLsXpBase",
+   "value": 3950,
+   "comment": "the xp line VIII/3,950"
+  },
+  {
+   "name": "grkCyclopsLsXpPerHp",
+   "value": 18,
+   "comment": "plus 18 per hp"
+  },
+  {
+   "name": "grkDionysusPantherAc",
+   "value": 2,
+   "comment": "the chariot panthers armor class 2"
+  },
+  {
+   "name": "grkDionysusPantherHd",
+   "value": 11,
+   "comment": "the panthers 11 HD"
+  },
+  {
+   "name": "grkDionysusPantherHp",
+   "value": 50,
+   "comment": "the panthers 50 hp each"
+  },
+  {
+   "name": "grkDionysusMadnessSavePenalty",
+   "value": 4,
+   "comment": "the madness save vs. spells at -4"
+  },
+  {
+   "name": "grkEnceladusSpellGrabs",
+   "value": 4,
+   "comment": "up to four spells grabbed per melee round"
+  },
+  {
+   "name": "grkEnceladusFearYards",
+   "value": 100,
+   "comment": "the fear radius of 100 yards"
+  },
+  {
+   "name": "grkEnceladusXpBase",
+   "value": 21175,
+   "comment": "the xp line X/21,175"
+  },
+  {
+   "name": "grkEpimetheusFightPct",
+   "value": 45,
+   "comment": "the 45 percent chance his creation fights him"
+  },
+  {
+   "name": "grkEpimetheusClayPct",
+   "value": 5,
+   "comment": "the 5 percent chance of the clay ball reward"
+  },
+  {
+   "name": "grkEpimetheusBallLevel",
+   "value": 4,
+   "comment": "the clay ball makes any 4th level creature"
+  },
+  {
+   "name": "grkEpimetheusBetrayPct",
+   "value": 60,
+   "comment": "the 60 percent chance the ball creature tries to kill its maker"
+  },
+  {
+   "name": "grkFuriesCount",
+   "value": 3,
+   "comment": "the three spirits (Alecto, Tisiphone, Megarea)"
+  },
+  {
+   "name": "grkFuriesHpEach",
+   "value": 200,
+   "comment": "the 200 hp each"
+  },
+  {
+   "name": "grkHadesDeathSpells",
+   "value": 2,
+   "comment": "the eyes cast 2 death spells every melee round"
+  },
+  {
+   "name": "grkHadesDeathRangeFeet",
+   "value": 120,
+   "comment": "the death spell range of 120 feet"
+  },
+  {
+   "name": "grkHadesExplosionInches",
+   "value": 30,
+   "comment": "the death ray explosion radius of 30 inches"
+  },
+  {
+   "name": "grkHecateHellHounds",
+   "value": 9,
+   "comment": "the 9 hell hound servants"
+  },
+  {
+   "name": "grkHecateHoundPct",
+   "value": 10,
+   "comment": "the 10 percent hound-hunt chance per act of desecration"
+  },
+  {
+   "name": "grkHecatoncheireArms",
+   "value": 100,
+   "comment": "the hundred arms"
+  },
+  {
+   "name": "grkHecatoncheireHeads",
+   "value": 50,
+   "comment": "the fifty heads"
+  },
+  {
+   "name": "grkHecatoncheireBoulderRange",
+   "value": 30,
+   "comment": "the boulder maximum range of 30 inches"
+  },
+  {
+   "name": "grkHecatoncheireXpBase",
+   "value": 29300,
+   "comment": "the xp line X/29,300"
+  },
+  {
+   "name": "grkHecatoncheireGrabPct",
+   "value": 10,
+   "comment": "the grabbed strength-18(50%) being has a 10 percent pull-free chance"
+  },
+  {
+   "name": "grkHecatoncheireGrabPerPct",
+   "value": 1,
+   "comment": "plus 1 percent per strength point over 50"
+  },
+  {
+   "name": "grkHephaestusShieldPct",
+   "value": 5,
+   "comment": "the 5 percent chance of the +5 any-class shield reward"
+  },
+  {
+   "name": "grkHeraListenPct",
+   "value": 5,
+   "comment": "the 5 percent chance the goddess hears a prayer"
+  },
+  {
+   "name": "grkHeraVoiceDamage",
+   "value": 20,
+   "comment": "her angry voice does 20 points to all within range"
+  },
+  {
+   "name": "grkHeraVoiceYards",
+   "value": 50,
+   "comment": "the voice reaches 50 yards, no saving throw"
+  },
+  {
+   "name": "grkHeraclesBowRangeMiles",
+   "value": 1,
+   "comment": "the bow range of 1 mile"
+  },
+  {
+   "name": "grkHeraclesRageBonus",
+   "value": 25,
+   "comment": "the berserker rage strength bonus of +25 damage"
+  },
+  {
+   "name": "grkHermesGraftPct",
+   "value": 15,
+   "comment": "the 15 percent punishment chance per bribe offense"
+  },
+  {
+   "name": "grkJasonFleeceDeathDays",
+   "value": 3,
+   "comment": "the fleece raises the dead of less than 3 days"
+  },
+  {
+   "name": "grkJasonFleeceVanishPct",
+   "value": 10,
+   "comment": "the 10 percent chance the fleece vanishes after each use"
+  },
+  {
+   "name": "grkKronosLavaRangeYards",
+   "value": 200,
+   "comment": "the lava ball maximum range of 200 yards"
+  },
+  {
+   "name": "grkPanVoiceYards",
+   "value": 50,
+   "comment": "the voice fear range of 50 yards, save applies"
+  },
+  {
+   "name": "grkPanShoutInches",
+   "value": 100,
+   "comment": "the panic shout reaches 100 inches"
+  },
+  {
+   "name": "grkPanShoutRounds",
+   "value": 4,
+   "comment": "the shout fear lasts 4 melee rounds, no save"
+  },
+  {
+   "name": "grkPanShoutThresholdPct",
+   "value": 25,
+   "comment": "the shout comes after losing more than 25 percent of hit points"
+  },
+  {
+   "name": "grkPoseidonTridentPlus",
+   "value": 5,
+   "comment": "the +5 trident"
+  },
+  {
+   "name": "grkPoseidonHazePlus",
+   "value": 5,
+   "comment": "the watery haze acts as a +5 ring of protection"
+  },
+  {
+   "name": "grkPrometheusCreateRounds",
+   "value": 2,
+   "comment": "the clay creation takes 2 melee rounds"
+  },
+  {
+   "name": "grkPrometheusChainYears",
+   "value": 30,
+   "comment": "the 30 years chained before Zeus repented"
+  }
+ ],
+ "bools": [
+  {
+   "name": "grkTitansAncestry",
+   "value": true,
+   "comment": "many of the gods descended from the greater titans"
+  },
+  {
+   "name": "grkWorshipGavePower",
+   "value": true,
+   "comment": "the worship by man gave the sons and daughters of the titans unknown power"
+  },
+  {
+   "name": "grkThrewDownTitans",
+   "value": true,
+   "comment": "the gods threw down the titans and mastered the Prime Material Plane"
+  },
+  {
+   "name": "grkMortalTraits",
+   "value": true,
+   "comment": "the gods are jealous, envious, petty and fly into blind rages"
+  },
+  {
+   "name": "grkFirstWorshipNatural",
+   "value": true,
+   "comment": "the first places of worship were areas of natural beauty"
+  },
+  {
+   "name": "grkCityTemples",
+   "value": true,
+   "comment": "city clerics must build or work in temples"
+  },
+  {
+   "name": "grkCountryNatural",
+   "value": true,
+   "comment": "country clerics must find a natural setting for worship"
+  },
+  {
+   "name": "grkPoseidonClericsRide",
+   "value": true,
+   "comment": "only clerics worshiping Poseidon may ride horses"
+  },
+  {
+   "name": "grkNoOtherSects",
+   "value": true,
+   "comment": "no cleric may deal with other sects on non-hostile terms"
+  },
+  {
+   "name": "grkOneTemple",
+   "value": true,
+   "comment": "all clerics permanently attach to one temple"
+  },
+  {
+   "name": "grkHighSpellsMeditation",
+   "value": true,
+   "comment": "the sixth and seventh level spells come only from meditation there"
+  },
+  {
+   "name": "grkSackedTempleLoss",
+   "value": true,
+   "comment": "a sacked or despoiled temple costs the higher spells until reconsecrated"
+  },
+  {
+   "name": "grkZeusShapeChange",
+   "value": true,
+   "comment": "Zeus often shape changes"
+  },
+  {
+   "name": "grkZeusDisdainsArmor",
+   "value": true,
+   "comment": "Zeus disdains armor but will use his +5 shield"
+  },
+  {
+   "name": "grkAegisFear",
+   "value": true,
+   "comment": "the Aegis throws fear into beings near it, save vs. spells"
+  },
+  {
+   "name": "grkAegisCloakForm",
+   "value": true,
+   "comment": "the shield forms itself into a displacer cloak at a word"
+  },
+  {
+   "name": "grkAegisAthenaCustody",
+   "value": true,
+   "comment": "Athena often has custody of the Aegis"
+  },
+  {
+   "name": "grkEagleTeleport",
+   "value": true,
+   "comment": "the eagle teleports from plane to plane"
+  },
+  {
+   "name": "grkEagleTalksToZeus",
+   "value": true,
+   "comment": "the eagle talks to Zeus"
+  },
+  {
+   "name": "grkEagleThunderBolts",
+   "value": true,
+   "comment": "it carries the god thunder bolts into battle"
+  },
+  {
+   "name": "grkEagleMessenger",
+   "value": true,
+   "comment": "it acts as Zeus messenger and symbol"
+  },
+  {
+   "name": "grkAchillesEdgedImmune",
+   "value": true,
+   "comment": "his skin cannot be pierced by edged weapons except at his left heel"
+  },
+  {
+   "name": "grkAchillesBludgeonOnly",
+   "value": true,
+   "comment": "only bludgeon-type weapons can harm him"
+  },
+  {
+   "name": "grkAchillesGoldPlated",
+   "value": true,
+   "comment": "he wears gold plated +2 chainmail and a +2 shield"
+  },
+  {
+   "name": "grkAphroditeCharmPermanent",
+   "value": true,
+   "comment": "a charmed viewer can never attack her again"
+  },
+  {
+   "name": "grkAphroditeDoves",
+   "value": true,
+   "comment": "her clerics sacrifice doves every 10 days"
+  },
+  {
+   "name": "grkAphroditeNewMoon",
+   "value": true,
+   "comment": "jewelry is destroyed on her altar every new moon"
+  },
+  {
+   "name": "grkAphroditeVainJealous",
+   "value": true,
+   "comment": "the goddess is extremely vain and jealous"
+  },
+  {
+   "name": "grkAntaeusGrowsEachRound",
+   "value": true,
+   "comment": "Antaeus grows each round he fights on the earth, to titan size"
+  },
+  {
+   "name": "grkAntaeusGrowthHeals",
+   "value": true,
+   "comment": "each growth heals all damage taken"
+  },
+  {
+   "name": "grkAntaeusEarthHealing",
+   "value": true,
+   "comment": "on the earth his damage heals each round even after growth stops"
+  },
+  {
+   "name": "grkAntaeusLiftedWeakens",
+   "value": true,
+   "comment": "lifted off the ground he loses strength and size at the same rate"
+  },
+  {
+   "name": "grkApolloShapeChange",
+   "value": true,
+   "comment": "Apollo shape changes at will"
+  },
+  {
+   "name": "grkApolloLyreStormGiant",
+   "value": true,
+   "comment": "the lyre raises a friendly being strength to a storm giant"
+  },
+  {
+   "name": "grkApolloLyreCurses",
+   "value": true,
+   "comment": "the lyre bestows curses and casts disintegrate once per round"
+  },
+  {
+   "name": "grkApolloLaurel",
+   "value": true,
+   "comment": "his clerics wear laurel leaves and use laurel wood"
+  },
+  {
+   "name": "grkApolloSunChariot",
+   "value": true,
+   "comment": "the sun god carries the sun across the sky in his solar chariot"
+  },
+  {
+   "name": "grkAresChainmailPlus5",
+   "value": true,
+   "comment": "Ares appears as a normal man wearing +5 chainmail"
+  },
+  {
+   "name": "grkAresSpearOnlyHeLifts",
+   "value": true,
+   "comment": "no being in the Prime Material but Ares can pick up his spear"
+  },
+  {
+   "name": "grkAresSwordAntiMagic",
+   "value": true,
+   "comment": "the +5 sword creates an anti-magic shell at will"
+  },
+  {
+   "name": "grkAresSwordOrSpear",
+   "value": true,
+   "comment": "he uses either the spear or the sword, never both at once"
+  },
+  {
+   "name": "grkAresBlinkDog",
+   "value": true,
+   "comment": "with the spear in hand he moves as a blink dog"
+  },
+  {
+   "name": "grkAresAthenaRivalry",
+   "value": true,
+   "comment": "the great rivalry between Athena and Ares - their clerics oppose each other at every opportunity"
+  },
+  {
+   "name": "grkArtemisSpellReflect",
+   "value": true,
+   "comment": "any magical spell sent to hurt her reflects back to the sender"
+  },
+  {
+   "name": "grkArtemisHastedAnimal",
+   "value": true,
+   "comment": "in animal shape she is hasted as the spell"
+  },
+  {
+   "name": "grkArtemisFangClawImmune",
+   "value": true,
+   "comment": "magical fang-and-claw creatures cannot hurt her after seeing her once"
+  },
+  {
+   "name": "grkArtemisAnimalPower",
+   "value": true,
+   "comment": "she has absolute power over all nonmagical forest animals"
+  },
+  {
+   "name": "grkArtemisDruidsOnly",
+   "value": true,
+   "comment": "all the clerics in her sect are druids"
+  },
+  {
+   "name": "grkArtemisPureBody",
+   "value": true,
+   "comment": "her druids must be pure of body as well as spirit"
+  },
+  {
+   "name": "grkAthenaBlinkDog",
+   "value": true,
+   "comment": "Athena moves as a blink dog"
+  },
+  {
+   "name": "grkAthenaNeverMisses",
+   "value": true,
+   "comment": "she never misses her target"
+  },
+  {
+   "name": "grkAthenaMedusaShield",
+   "value": true,
+   "comment": "her shield bears a medusa head that turns stone-lookers"
+  },
+  {
+   "name": "grkAthenaHelmAntiMagic",
+   "value": true,
+   "comment": "her helm creates an anti-magic shell through which she casts"
+  },
+  {
+   "name": "grkAthenaClericsAggressive",
+   "value": true,
+   "comment": "her clerics aggressively spread her worship and scorn all others"
+  },
+  {
+   "name": "grkAtlasPrimeStrength",
+   "value": true,
+   "comment": "on the Prime Material there is nothing he cannot lift, bend or break"
+  },
+  {
+   "name": "grkAtlasOtherPlaneStrength",
+   "value": true,
+   "comment": "on other planes his strength is only 25"
+  },
+  {
+   "name": "grkAtlasKeepsWord",
+   "value": true,
+   "comment": "despite his alignment he keeps his word even unto death"
+  },
+  {
+   "name": "grkBellerophonPegasus",
+   "value": true,
+   "comment": "he rode a pegasus into battle"
+  },
+  {
+   "name": "grkCerberusKeepsIn",
+   "value": true,
+   "comment": "he keeps beings out of the House of Hades - and keeps them in"
+  },
+  {
+   "name": "grkCerberusNoMagicRemoval",
+   "value": true,
+   "comment": "he cannot be magicked away from his post by any force"
+  },
+  {
+   "name": "grkCerberusGazeStone",
+   "value": true,
+   "comment": "the collective gaze of the 3 heads turns mortals to stone, one per round, save applies"
+  },
+  {
+   "name": "grkCerberusPoisonSpittle",
+   "value": true,
+   "comment": "the middle head spews poisonous spittle that kills on contact, no save"
+  },
+  {
+   "name": "grkCerberusOneFormPerHead",
+   "value": true,
+   "comment": "only one attack form per head per round"
+  },
+  {
+   "name": "grkCircePolymorphDevices",
+   "value": true,
+   "comment": "she has every device capable of turning creatures into other creatures"
+  },
+  {
+   "name": "grkCirceProphetic",
+   "value": true,
+   "comment": "she possesses great prophetic powers"
+  },
+  {
+   "name": "grkCirceAlmostImmortal",
+   "value": true,
+   "comment": "she is almost immortal and does not appear to age"
+  },
+  {
+   "name": "grkCoeusDieOfFright",
+   "value": true,
+   "comment": "the failed first-approach save kills by fright"
+  },
+  {
+   "name": "grkCoeusSwordPlus5",
+   "value": true,
+   "comment": "he uses a +5 sword striking for 5-30"
+  },
+  {
+   "name": "grkCoeusNightOnly",
+   "value": true,
+   "comment": "he travels only at night and never fights during the day"
+  },
+  {
+   "name": "grkCriusWeightControl",
+   "value": true,
+   "comment": "he increases the weight of objects at will and makes things weightless"
+  },
+  {
+   "name": "grkCriusPermanency",
+   "value": true,
+   "comment": "a full turn of work makes the heaviness permanent, save vs. the permanency"
+  },
+  {
+   "name": "grkCriusGravityField",
+   "value": true,
+   "comment": "his battle field drops physical attacks short, kills dexterity bonuses"
+  },
+  {
+   "name": "grkCyclopsGrHephaestusGift",
+   "value": true,
+   "comment": "the greater cyclopes were a gift to Hephaestus from Hera"
+  },
+  {
+   "name": "grkCyclopsGrFireImmune",
+   "value": true,
+   "comment": "they are immune to all fire attacks"
+  },
+  {
+   "name": "grkCyclopsGrScaleMail",
+   "value": true,
+   "comment": "each greater cyclops wears a personal set of magical scale mail"
+  },
+  {
+   "name": "grkCyclopsLsHurlRocks",
+   "value": true,
+   "comment": "the lesser brutes hurl huge boulders for 4-40 points"
+  },
+  {
+   "name": "grkDemeterWeather",
+   "value": true,
+   "comment": "she creates any weather for any length of time"
+  },
+  {
+   "name": "grkDemeterPlantAnimal",
+   "value": true,
+   "comment": "she summons and controls any plant or animal"
+  },
+  {
+   "name": "grkDemeterGreenDragons",
+   "value": true,
+   "comment": "her chariot is pulled by two ancient green dragons"
+  },
+  {
+   "name": "grkDemeterGrainDuty",
+   "value": true,
+   "comment": "no grain grows if she neglects her duties"
+  },
+  {
+   "name": "grkDionysusThyrsusRaise",
+   "value": true,
+   "comment": "the thyrsus restores all dead things as a raise dead"
+  },
+  {
+   "name": "grkDionysusThyrsusTeleport",
+   "value": true,
+   "comment": "it teleports the holder from plant to plant"
+  },
+  {
+   "name": "grkDionysusThyrsusMirror",
+   "value": true,
+   "comment": "it acts as a mirror of life trapping at a touch"
+  },
+  {
+   "name": "grkDionysusFelineControl",
+   "value": true,
+   "comment": "he controls any feline or ursine creature"
+  },
+  {
+   "name": "grkDionysusMadness",
+   "value": true,
+   "comment": "he inflicts madness on attackers or temple defilers"
+  },
+  {
+   "name": "grkEnceladusSpellGrab",
+   "value": true,
+   "comment": "he grabs spells out of the air and negates them"
+  },
+  {
+   "name": "grkEnceladusTwoHanded",
+   "value": true,
+   "comment": "he grabs two spells with one hand and strikes with the other"
+  },
+  {
+   "name": "grkEnceladusOlympusFoe",
+   "value": true,
+   "comment": "he has been known to fight the gods of Olympus"
+  },
+  {
+   "name": "grkEpimetheusCreates",
+   "value": true,
+   "comment": "he creates creatures as Prometheus does"
+  },
+  {
+   "name": "grkEpimetheusBallCreature",
+   "value": true,
+   "comment": "the clay ball creature obeys until its death if it does not attack"
+  },
+  {
+   "name": "grkFuriesPunishmentForce",
+   "value": true,
+   "comment": "they are the punishment force of the gods"
+  },
+  {
+   "name": "grkFuriesFindAnyone",
+   "value": true,
+   "comment": "they can find anyone or anything on their plane unless hidden by magic"
+  },
+  {
+   "name": "grkFuriesNoAppeal",
+   "value": true,
+   "comment": "their punishments cannot be appealed"
+  },
+  {
+   "name": "grkFuriesWhipDrain",
+   "value": true,
+   "comment": "the metal-barbed whips strip ability points with every hit"
+  },
+  {
+   "name": "grkHadesShapeChange",
+   "value": true,
+   "comment": "Hades shape changes at will"
+  },
+  {
+   "name": "grkHadesDeathEyes",
+   "value": true,
+   "comment": "his eyes cast death spells when not in hand-to-hand combat"
+  },
+  {
+   "name": "grkHadesNonmetalExplosion",
+   "value": true,
+   "comment": "a nonmetal touch explodes death rays in a radius, save applies"
+  },
+  {
+   "name": "grkHadesEarthControl",
+   "value": true,
+   "comment": "he has complete control over all things made of the earth"
+  },
+  {
+   "name": "grkHadesChairForgetfulness",
+   "value": true,
+   "comment": "his chair of forgetfulness traps sitters until freed"
+  },
+  {
+   "name": "grkHadesChariotUntouchable",
+   "value": true,
+   "comment": "in his black chariot he cannot be touched by mortals or gods"
+  },
+  {
+   "name": "grkHadesHelmInvisible",
+   "value": true,
+   "comment": "his helm renders him invisible, used only against Olympus enemies"
+  },
+  {
+   "name": "grkHadesOneEntrance",
+   "value": true,
+   "comment": "the House of Hades has one entrance, guarded by Cerberus"
+  },
+  {
+   "name": "grkHecateAnySpell",
+   "value": true,
+   "comment": "she uses any magic-user or illusionist spell at will as if 20th level"
+  },
+  {
+   "name": "grkHecateNightTwoSpells",
+   "value": true,
+   "comment": "from sunset to sunrise she casts two spells per melee round, one by day"
+  },
+  {
+   "name": "grkHecateTwinSpheres",
+   "value": true,
+   "comment": "her twin spheres of annihilation move by themselves"
+  },
+  {
+   "name": "grkHecateHoundRapport",
+   "value": true,
+   "comment": "her clerics have a special rapport with hell hounds"
+  },
+  {
+   "name": "grkHecateFullMoon",
+   "value": true,
+   "comment": "her clerics sacrifice on the night of the full moon"
+  },
+  {
+   "name": "grkHecateThreeFaces",
+   "value": true,
+   "comment": "her images often have three faces"
+  },
+  {
+   "name": "grkHecatoncheireMeteorSwarm",
+   "value": true,
+   "comment": "their hurled boulder groups act as a meteor swarm"
+  },
+  {
+   "name": "grkHecatoncheireTenFists",
+   "value": true,
+   "comment": "up to ten fists strike close opponents, plus 3-30 for huge ones"
+  },
+  {
+   "name": "grkHecatoncheireOlympusEnemies",
+   "value": true,
+   "comment": "all are bitter enemies of the gods of Olympus"
+  },
+  {
+   "name": "grkHephaestusAdamant",
+   "value": true,
+   "comment": "he is the only being able to easily work adamant"
+  },
+  {
+   "name": "grkHephaestusShieldAnyClass",
+   "value": true,
+   "comment": "the +5 reward shield is useable by any class"
+  },
+  {
+   "name": "grkHephaestusForgeHelpers",
+   "value": true,
+   "comment": "he works with greater cyclopes, fire elementals, efreet and demons"
+  },
+  {
+   "name": "grkHephaestusDwarfFriend",
+   "value": true,
+   "comment": "he is friend to the dwarves and teaches their smiths"
+  },
+  {
+   "name": "grkHephaestusRedDragon",
+   "value": true,
+   "comment": "a red dragon guards the tunnel to his mountain"
+  },
+  {
+   "name": "grkHeraCurse",
+   "value": true,
+   "comment": "a heard prayer about husband problems may curse the offending male, save negates"
+  },
+  {
+   "name": "grkHeraSpying",
+   "value": true,
+   "comment": "tracking her husband paramours gave her unparalleled spying methods"
+  },
+  {
+   "name": "grkHeraClericVengeance",
+   "value": true,
+   "comment": "her clerics carry a vengeance drive, planning defeats for years"
+  },
+  {
+   "name": "grkHeraVoiceFear",
+   "value": true,
+   "comment": "the failed save flees in terror from her screaming, as the fear spell"
+  },
+  {
+   "name": "grkHeraclesNemeanSkin",
+   "value": true,
+   "comment": "the Nemean lion skin cannot be pierced; thrusts do one point, slashes half"
+  },
+  {
+   "name": "grkHeraclesBerserkerRage",
+   "value": true,
+   "comment": "past half his hit points he rages and attacks friend and foe alike"
+  },
+  {
+   "name": "grkHeraclesBowNeverMiss",
+   "value": true,
+   "comment": "his special bow cannot miss"
+  },
+  {
+   "name": "grkHeraclesNoMagicUsers",
+   "value": true,
+   "comment": "he will have nothing to do with magic-users or clerics"
+  },
+  {
+   "name": "grkHermesMaxThieving",
+   "value": true,
+   "comment": "he has maximum thieving abilities"
+  },
+  {
+   "name": "grkHermesBlinkDog",
+   "value": true,
+   "comment": "he moves as a blink dog and is always hasted"
+  },
+  {
+   "name": "grkHermesWingedSandals",
+   "value": true,
+   "comment": "his winged sandals allow flight"
+  },
+  {
+   "name": "grkHermesHelmInvisible",
+   "value": true,
+   "comment": "his helm of invisibility is as the ring of the same name"
+  },
+  {
+   "name": "grkHermesCaduceus",
+   "value": true,
+   "comment": "the white caduceus controls all nonmagical creatures other than man, no save"
+  },
+  {
+   "name": "grkHermesMessenger",
+   "value": true,
+   "comment": "he is the messenger of the gods to mortals"
+  },
+  {
+   "name": "grkHermesArbiter",
+   "value": true,
+   "comment": "he acts as arbiter of disputes between the gods"
+  },
+  {
+   "name": "grkHermesClericsFit",
+   "value": true,
+   "comment": "his clerics must keep physically fit and run long distances"
+  },
+  {
+   "name": "grkHermesWhiteRod",
+   "value": true,
+   "comment": "they must carry a white rod as their symbol"
+  },
+  {
+   "name": "grkJasonGoldenFleece",
+   "value": true,
+   "comment": "the golden fleece heals any wound and raises the recently dead"
+  },
+  {
+   "name": "grkJasonLeadership",
+   "value": true,
+   "comment": "Jason is noted for his leadership ability and strength"
+  },
+  {
+   "name": "grkKronosLavaBalls",
+   "value": true,
+   "comment": "at battle start he hurls lava balls created out of thin air"
+  },
+  {
+   "name": "grkKronosSickleAdamant",
+   "value": true,
+   "comment": "his adamant sickle strikes as a +5 weapon"
+  },
+  {
+   "name": "grkNikeDivineAwe",
+   "value": true,
+   "comment": "she always uses her divine awe power to stun lesser creatures"
+  },
+  {
+   "name": "grkNikeRodPower",
+   "value": true,
+   "comment": "her rod of power inflicts 5-50 at a touch, no save"
+  },
+  {
+   "name": "grkNikeDeviceDestroy",
+   "value": true,
+   "comment": "she destroys any device used against her with a touch, save applies"
+  },
+  {
+   "name": "grkNikeClericStrict",
+   "value": true,
+   "comment": "her clerics may not transgress once - the penalty is total destruction by lightning"
+  },
+  {
+   "name": "grkOceanusGreenShimmer",
+   "value": true,
+   "comment": "the titan always has a green shimmer around his body"
+  },
+  {
+   "name": "grkOceanusHurricane",
+   "value": true,
+   "comment": "he raises hurricane winds with a motion of his hand"
+  },
+  {
+   "name": "grkOceanusWaterCommand",
+   "value": true,
+   "comment": "water creatures of less than divine status must obey him"
+  },
+  {
+   "name": "grkOceanusPoseidonOutranks",
+   "value": true,
+   "comment": "Poseidon outranks him on the Prime Material"
+  },
+  {
+   "name": "grkOdysseusBowOnly",
+   "value": true,
+   "comment": "only he can string his powerful bow, gaining his strength bonuses with it"
+  },
+  {
+   "name": "grkOdysseusWitOverStrength",
+   "value": true,
+   "comment": "he prefers wit and cunning over strength"
+  },
+  {
+   "name": "grkOdysseusPoseidonCurse",
+   "value": true,
+   "comment": "blinding Polyphemus brought the Poseidon curse and ten years of wandering"
+  },
+  {
+   "name": "grkPanTwoAspects",
+   "value": true,
+   "comment": "the god of nature is both beneficent and fearsomely destructive"
+  },
+  {
+   "name": "grkPanVoiceFear",
+   "value": true,
+   "comment": "his voice causes fear as the spell, save applies"
+  },
+  {
+   "name": "grkPanSyrinx",
+   "value": true,
+   "comment": "his syrinx pipes play as a rod of beguiling"
+  },
+  {
+   "name": "grkPanShout",
+   "value": true,
+   "comment": "past a quarter of his hit points he shouts 4 rounds of fear with no save"
+  },
+  {
+   "name": "grkPanApolloEnemy",
+   "value": true,
+   "comment": "he and Apollo are enemies - the rivalry reaches the Prime Material"
+  },
+  {
+   "name": "grkPerseusPaladin",
+   "value": true,
+   "comment": "Perseus is a 15th level paladin"
+  },
+  {
+   "name": "grkPerseusMedusaHead",
+   "value": true,
+   "comment": "he took the head of the first and most powerful medusa"
+  },
+  {
+   "name": "grkPerseusHadesHelm",
+   "value": true,
+   "comment": "Hades loaned him the helm of invisibility"
+  },
+  {
+   "name": "grkPerseusHermesSandals",
+   "value": true,
+   "comment": "Hermes gave him the winged sandals and a vorpal blade"
+  },
+  {
+   "name": "grkPerseusAegis",
+   "value": true,
+   "comment": "Athena lent him the bright Aegis shield - all later returned"
+  },
+  {
+   "name": "grkPoseidonWaterCommand",
+   "value": true,
+   "comment": "he commands any non-divine creature of the water"
+  },
+  {
+   "name": "grkPoseidonCreateLife",
+   "value": true,
+   "comment": "he creates life in any form, often originating new life forms"
+  },
+  {
+   "name": "grkPoseidonCoastAnger",
+   "value": true,
+   "comment": "a coastal town that fails the monthly sacrifice risks blood, rubble or flood"
+  },
+  {
+   "name": "grkPoseidonHorses",
+   "value": true,
+   "comment": "he is responsible for the creation of all horses"
+  },
+  {
+   "name": "grkPoseidonPaladinHorse",
+   "value": true,
+   "comment": "he rewards high priests with a paladin-quality horse"
+  },
+  {
+   "name": "grkPoseidonTridentAbsorb",
+   "value": true,
+   "comment": "the trident absorbs one spell per round and returns a like spell"
+  },
+  {
+   "name": "grkPoseidonWateryHaze",
+   "value": true,
+   "comment": "his watery haze acts like a +5 ring of protection"
+  },
+  {
+   "name": "grkPrometheusClayCreation",
+   "value": true,
+   "comment": "he creates any mortal creature from clay"
+  },
+  {
+   "name": "grkPrometheusFireTheft",
+   "value": true,
+   "comment": "he stole fire from the sun for humankind"
+  },
+  {
+   "name": "grkPrometheusVulture",
+   "value": true,
+   "comment": "his regenerating liver was torn out afresh by a griffon-vulture"
+  },
+  {
+   "name": "grkPrometheusIronRing",
+   "value": true,
+   "comment": "his clerics wear an iron ring set with a mountain stone chip"
+  },
+  {
+   "name": "grkPrometheusSelfReliant",
+   "value": true,
+   "comment": "he expects self-reliance, not self-centeredness - trickery serves only the whole human race"
+  },
+  {
+   "name": "grkPrometheusKillGriffons",
+   "value": true,
+   "comment": "his clerics kill griffons and protect titans from attack"
+  },
+  {
+   "name": "grkTheseusPaladin",
+   "value": true,
+   "comment": "Theseus is a 13th level paladin"
+  },
+  {
+   "name": "grkTheseusMinotaur",
+   "value": true,
+   "comment": "he defeated the first and most powerful minotaur"
+  },
+  {
+   "name": "grkTheseusKnowWeaknesses",
+   "value": true,
+   "comment": "he can be counted on to know the habits and weaknesses of all his enemies"
+  },
+  {
+   "name": "grkTycheGoodLuck",
+   "value": true,
+   "comment": "her good luck spell makes the recipient always win any single contest"
+  },
+  {
+   "name": "grkTycheTouchDrain",
+   "value": true,
+   "comment": "her touch drains one-half the attacker total original hit points, no save"
+  },
+  {
+   "name": "grkTycheBlueSphere",
+   "value": true,
+   "comment": "her blue sphere absorbs one attack per round and reflects the damage back"
+  },
+  {
+   "name": "grkTychePoorRelative",
+   "value": true,
+   "comment": "the pantheon treats her as a poor relative, so she rarely aids them"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "grkCbt",
+   "count": "grkCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "grkCbtAC",
+    "grkCbtACAlt",
+    "grkCbtHP",
+    "grkCbtMove",
+    "grkCbtMoveAlt",
+    "grkCbtAtN",
+    "grkCbtAtD",
+    "grkCbtMR",
+    "grkCbtSizeIn"
+   ],
+   "data": [
+    [
+     -2,
+     0,
+     400,
+     18,
+     24,
+     2,
+     0,
+     75,
+     78
+    ],
+    [
+     2,
+     0,
+     100,
+     6,
+     48,
+     3,
+     0,
+     10,
+     50
+    ],
+    [
+     0,
+     0,
+     90,
+     18,
+     0,
+     2,
+     0,
+     0,
+     66
+    ],
+    [
+     4,
+     0,
+     259,
+     12,
+     24,
+     1,
+     0,
+     50,
+     66
+    ],
+    [
+     4,
+     0,
+     100,
+     15,
+     0,
+     1,
+     0,
+     0,
+     132
+    ],
+    [
+     1,
+     0,
+     376,
+     15,
+     0,
+     2,
+     0,
+     56,
+     240
+    ],
+    [
+     -2,
+     0,
+     333,
+     26,
+     24,
+     2,
+     0,
+     59,
+     72
+    ],
+    [
+     1,
+     0,
+     219,
+     18,
+     0,
+     2,
+     0,
+     0,
+     66
+    ],
+    [
+     -2,
+     0,
+     329,
+     15,
+     24,
+     2,
+     0,
+     80,
+     72
+    ],
+    [
+     -3,
+     0,
+     350,
+     24,
+     30,
+     3,
+     0,
+     95,
+     600
+    ],
+    [
+     4,
+     0,
+     69,
+     12,
+     0,
+     3,
+     2,
+     0,
+     66
+    ],
+    [
+     1,
+     0,
+     100,
+     24,
+     0,
+     3,
+     0,
+     25,
+     360
+    ],
+    [
+     10,
+     0,
+     51,
+     12,
+     0,
+     1,
+     0,
+     0,
+     60
+    ],
+    [
+     2,
+     0,
+     344,
+     24,
+     0,
+     2,
+     0,
+     50,
+     252
+    ],
+    [
+     -3,
+     0,
+     390,
+     24,
+     0,
+     2,
+     0,
+     50,
+     1200
+    ],
+    [
+     -4,
+     0,
+     0,
+     15,
+     0,
+     1,
+     0,
+     25,
+     252
+    ],
+    [
+     2,
+     0,
+     0,
+     15,
+     0,
+     1,
+     0,
+     0,
+     240
+    ],
+    [
+     1,
+     0,
+     219,
+     15,
+     0,
+     3,
+     2,
+     29,
+     60
+    ],
+    [
+     4,
+     0,
+     380,
+     15,
+     0,
+     2,
+     0,
+     45,
+     84
+    ],
+    [
+     1,
+     0,
+     219,
+     15,
+     0,
+     2,
+     0,
+     0,
+     1020
+    ],
+    [
+     -3,
+     0,
+     345,
+     24,
+     0,
+     2,
+     0,
+     50,
+     1200
+    ],
+    [
+     -1,
+     0,
+     200,
+     18,
+     24,
+     1,
+     0,
+     100,
+     60
+    ],
+    [
+     -1,
+     0,
+     390,
+     29,
+     0,
+     2,
+     0,
+     75,
+     78
+    ],
+    [
+     -2,
+     0,
+     289,
+     12,
+     0,
+     1,
+     0,
+     89,
+     66
+    ],
+    [
+     5,
+     0,
+     300,
+     15,
+     0,
+     10,
+     0,
+     25,
+     1200
+    ],
+    [
+     -5,
+     0,
+     312,
+     9,
+     0,
+     2,
+     0,
+     50,
+     240
+    ],
+    [
+     2,
+     0,
+     300,
+     12,
+     0,
+     3,
+     2,
+     50,
+     66
+    ],
+    [
+     -2,
+     0,
+     187,
+     15,
+     0,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     2,
+     0,
+     340,
+     18,
+     48,
+     2,
+     0,
+     35,
+     78
+    ],
+    [
+     3,
+     0,
+     129,
+     12,
+     0,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     2,
+     0,
+     400,
+     24,
+     0,
+     2,
+     0,
+     50,
+     1200
+    ],
+    [
+     -4,
+     0,
+     357,
+     24,
+     36,
+     2,
+     0,
+     85,
+     84
+    ],
+    [
+     -3,
+     0,
+     390,
+     24,
+     0,
+     2,
+     0,
+     50,
+     1200
+    ],
+    [
+     2,
+     0,
+     83,
+     12,
+     0,
+     2,
+     0,
+     0,
+     64
+    ],
+    [
+     -2,
+     0,
+     359,
+     18,
+     0,
+     3,
+     2,
+     89,
+     60
+    ],
+    [
+     3,
+     0,
+     112,
+     12,
+     24,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     3,
+     0,
+     390,
+     18,
+     0,
+     2,
+     0,
+     75,
+     360
+    ],
+    [
+     -2,
+     0,
+     388,
+     15,
+     24,
+     2,
+     0,
+     50,
+     1200
+    ],
+    [
+     4,
+     0,
+     103,
+     12,
+     0,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     -3,
+     0,
+     200,
+     12,
+     36,
+     1,
+     0,
+     100,
+     60
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Hephaestus -5 the best, Circe 10 the worst; the greater cyclops the printed -4 dash garble)",
+    "The range ceiling cells (0 = a single printed armor class; all forty read single this round)",
+    "The hit point cells (Zeus and Kronos 400 the supreme, down to Circe 51; 0 = the hit-dice rows of the two cyclopes, the egp Flame Snake precedent)",
+    "The primary move cells (Hades the flagged 29 odd print; Ares the flagged 26)",
+    "The secondary move cells (the printed slash ceilings - Zeus 18/24, the eagle 6/48, Nike 24/36, Tyche 12/36, Atlas 24/30, Ares the flagged 26/24)",
+    "The attack count cells (the Hecatoncheire the ten fists, the eagle and Cerberus 3, most gods 2)",
+    "The attack alternative cells (the 3/2 slashes of Bellerophon, Demeter, Hera, Pan)",
+    "The magic resistance cells (0 = the printed Standard or See below of the eight hero and sorceress rows; the Furies and Tyche the 100 ceiling)",
+    "The size cells in inches (the nine pixel-verified X 1/2 foot fractions - Zeus, Achilles, Aphrodite, Artemis, Bellerophon, Hecate, Hera, Hermes, Hades; Odysseus the one true inch cell 5 foot 4; Antaeus the 11-21 growth range floor; the eagle the 50 wingspan)"
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "grkCls",
+   "count": "grkClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "grkClsCleric",
+    "grkClsDruid",
+    "grkClsFighterLo",
+    "grkClsFighterHi",
+    "grkClsRanger",
+    "grkClsMagUser",
+    "grkClsIllus",
+    "grkClsThief",
+    "grkClsAssassin",
+    "grkClsMonk",
+    "grkClsBard"
+   ],
+   "data": [
+    [
+     25,
+     0,
+     17,
+     0,
+     0,
+     20,
+     20,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     0,
+     0,
+     0,
+     12,
+     15,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     14,
+     0,
+     0,
+     15,
+     15,
+     15,
+     15,
+     0,
+     0,
+     23
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     20,
+     0,
+     10,
+     0,
+     12,
+     12,
+     0
+    ],
+    [
+     0,
+     14,
+     0,
+     0,
+     16,
+     0,
+     10,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     20,
+     14,
+     20,
+     0,
+     0,
+     12,
+     12,
+     0,
+     0,
+     0,
+     12
+    ],
+    [
+     0,
+     0,
+     19,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     10,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     10,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     0,
+     0,
+     12,
+     9,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     0,
+     0,
+     16,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     16,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     14,
+     0,
+     0,
+     12,
+     0,
+     15,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     15,
+     0,
+     14,
+     0,
+     0,
+     13,
+     13,
+     0,
+     0,
+     0,
+     19
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     10,
+     14,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     15,
+     0,
+     0,
+     0,
+     25,
+     0,
+     15,
+     15,
+     0
+    ],
+    [
+     0,
+     14,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     15,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     18,
+     0,
+     0,
+     18,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15,
+     0,
+     10,
+     0,
+     0,
+     12,
+     12,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3
+    ],
+    [
+     0,
+     14,
+     0,
+     0,
+     15,
+     0,
+     15,
+     25,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     16,
+     0,
+     0,
+     4,
+     0,
+     0,
+     7
+    ],
+    [
+     25,
+     0,
+     17,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     20,
+     0,
+     0,
+     99,
+     99,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     10,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     13,
+     0,
+     0,
+     0,
+     0,
+     9,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     14,
+     0,
+     0,
+     13,
+     0,
+     15,
+     15,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     5
+    ],
+    [
+     12,
+     12,
+     13,
+     0,
+     0,
+     17,
+     17,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     13,
+     13,
+     0,
+     0,
+     16,
+     15,
+     0,
+     10,
+     0,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     13,
+     13,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     9
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     10
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (Zeus and Kronos 25 the ceiling, Apollo and Athena 20)",
+    "The druid level cells (Artemis, Demeter, Hecate, Hermes, Pan; Apollo and Athena the printed cleric/druid pair)",
+    "The lower fighter level cells (the paladin pairs of Perseus 15 and Theseus 13)",
+    "The upper fighter level cells (the paladin hi cells; all other fighters single-printed, 0)",
+    "The ranger level cells (Ares 20 the flagged print, Artemis 16, Jason 16, Apollo 15, Athena none - the merged-column swap settled by the tsv x-geometry)",
+    "The magic-user level cells (99 = the Nike printed See below, the egp Isis precedent)",
+    "The illusionist level cells (Hades 25 the ceiling; 99 the Nike See below)",
+    "The thief level cells (Hermes 25 the maximum thieving god)",
+    "The assassin level cells (Ares 12, Hades 15, Hecate 15)",
+    "The monk level cells (Atlas and Ares 10, Hades 15)",
+    "The bard level cells (Apollo 23 the ceiling, Dionysus 19, Hermes and Pan 15)"
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "grkAbi",
+   "count": "grkAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "grkAbiStr",
+    "grkAbiStrHit",
+    "grkAbiStrDmg",
+    "grkAbiInt",
+    "grkAbiWis",
+    "grkAbiDex",
+    "grkAbiCon",
+    "grkAbiCha",
+    "grkAbiPsi"
+   ],
+   "data": [
+    [
+     25,
+     7,
+     14,
+     25,
+     25,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     18,
+     2,
+     3,
+     12,
+     10,
+     18,
+     18,
+     18,
+     0
+    ],
+    [
+     19,
+     3,
+     7,
+     20,
+     20,
+     23,
+     21,
+     25,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     24,
+     23,
+     25,
+     24,
+     25,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     20,
+     9,
+     25,
+     24,
+     22,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     23,
+     24,
+     24,
+     19,
+     25,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     25,
+     25,
+     22,
+     23,
+     21,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     12,
+     12,
+     20,
+     23,
+     20,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     17,
+     17,
+     18,
+     17,
+     18,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     0,
+     17,
+     9,
+     17,
+     18,
+     18,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     20,
+     14,
+     20,
+     23,
+     -4,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     23,
+     19,
+     23,
+     23,
+     23,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     21,
+     4,
+     9,
+     24,
+     24,
+     25,
+     21,
+     25,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     22,
+     20,
+     23,
+     25,
+     23,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     21,
+     19,
+     23,
+     22,
+     22,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     24,
+     20,
+     24,
+     25,
+     24,
+     0
+    ],
+    [
+     12,
+     0,
+     0,
+     25,
+     9,
+     20,
+     22,
+     25,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     20,
+     22,
+     23,
+     9,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     20,
+     25,
+     23,
+     23,
+     23,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     11,
+     9,
+     19,
+     20,
+     17,
+     0
+    ],
+    [
+     22,
+     4,
+     10,
+     25,
+     19,
+     25,
+     24,
+     24,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     16,
+     14,
+     18,
+     18,
+     19,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     14,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     23,
+     23,
+     23,
+     24,
+     25,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     24,
+     10,
+     24,
+     25,
+     20,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     18,
+     10,
+     16,
+     17,
+     18,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     18,
+     18,
+     25,
+     25,
+     22,
+     0
+    ],
+    [
+     18,
+     2,
+     4,
+     14,
+     12,
+     18,
+     18,
+     18,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     20,
+     22,
+     24,
+     25,
+     22,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     25,
+     20,
+     24,
+     24,
+     25,
+     0
+    ],
+    [
+     18,
+     2,
+     4,
+     18,
+     17,
+     18,
+     18,
+     18,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     25,
+     25,
+     25,
+     22,
+     25,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (the five 25s of the titans and Apollo, Poseidon, Pan; Circe the mortal 10; Hecate 12)",
+    "The strength to-hit bonuses (0 = no printed bracket: the two monsters, Circe, Hecate)",
+    "The strength damage bonuses (Hermes the unusual +10)",
+    "The intelligence cells (Hephaestus and Prometheus 25; Heracles the mortal 11)",
+    "The wisdom cells (Ares the printed 9 odd, Hera 25)",
+    "The dexterity cells (the many 25s; Odysseus 16)",
+    "The constitution cells (Hades 25; the printed Coeus 23)",
+    "The charisma cells (Coeus the pixel-verified -4 minus, Hephaestus the 9, Heracles 17; Hades the flagged printed 24(-9))",
+    "The psionic score cells (0 = every being reads the R849 class table this round; no monster point scores printed)"
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "grkRos",
+   "count": "grkRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "grkRosOrd",
+    "grkRosPage",
+    "grkRosAlign",
+    "grkRosRank",
+    "grkRosPsiClass",
+    "grkRosPlane",
+    "grkRosDmgFixed",
+    "grkRosInEach",
+    "grkRosEnmity"
+   ],
+   "data": [
+    [
+     0,
+     63,
+     2,
+     1,
+     2,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     63,
+     1,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     64,
+     1,
+     3,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     64,
+     2,
+     1,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     4,
+     64,
+     8,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     64,
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     65,
+     8,
+     1,
+     5,
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     7,
+     65,
+     4,
+     0,
+     5,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     8,
+     65,
+     0,
+     1,
+     6,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     9,
+     66,
+     8,
+     4,
+     5,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     10,
+     66,
+     0,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     11,
+     66,
+     7,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     12,
+     66,
+     8,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     13,
+     67,
+     8,
+     4,
+     5,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     14,
+     67,
+     8,
+     4,
+     5,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     15,
+     67,
+     2,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     16,
+     67,
+     8,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     17,
+     68,
+     1,
+     0,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     18,
+     68,
+     5,
+     1,
+     3,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     19,
+     68,
+     8,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     20,
+     68,
+     2,
+     4,
+     5,
+     6,
+     1,
+     1,
+     0
+    ],
+    [
+     21,
+     69,
+     4,
+     5,
+     5,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     22,
+     69,
+     7,
+     1,
+     3,
+     3,
+     1,
+     0,
+     0
+    ],
+    [
+     23,
+     69,
+     6,
+     0,
+     1,
+     4,
+     0,
+     0,
+     0
+    ],
+    [
+     24,
+     69,
+     5,
+     5,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     25,
+     70,
+     4,
+     0,
+     4,
+     5,
+     1,
+     0,
+     0
+    ],
+    [
+     26,
+     70,
+     4,
+     1,
+     6,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     27,
+     70,
+     5,
+     2,
+     0,
+     5,
+     1,
+     0,
+     0
+    ],
+    [
+     28,
+     71,
+     4,
+     1,
+     4,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     29,
+     71,
+     1,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     30,
+     72,
+     8,
+     4,
+     5,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     31,
+     72,
+     3,
+     0,
+     6,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     32,
+     72,
+     8,
+     4,
+     5,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     33,
+     72,
+     2,
+     3,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     34,
+     73,
+     5,
+     0,
+     1,
+     5,
+     1,
+     0,
+     1
+    ],
+    [
+     35,
+     73,
+     0,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     36,
+     73,
+     5,
+     1,
+     6,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     37,
+     74,
+     1,
+     0,
+     5,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     38,
+     74,
+     0,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     39,
+     74,
+     4,
+     0,
+     1,
+     1,
+     0,
+     1,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Zeus through Tyche)",
+    "The print page cells (63-74, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 LG, 1 NG, 2 CG, 3 LN, 4 N, 5 CN, 6 LE, 7 NE, 8 CE - the R852 code scheme)",
+    "The rank cells (0 lesser, 1 greater, 2 demigod Heracles, 3 hero, 4 greater titan, 5 monster - Prometheus the printed lesser god)",
+    "The psionic class cells (the chocr glyph-width decode: I 9-11px Hecate, Pan, Tyche, Apollo; II 30px Zeus; III 47px Dionysus and Hades - the three pipe bars, the R850 Coyote precedent, pixel-verified; IV Hephaestus, Hermes; V the ten 36px readers; VI the six 50px readers)",
+    "The plane cells (0 none, 1 Olympus, 2 Tarterus, 3 Hades, 4 the Nine Hells of Hecate, 5 the Prime Material of Hephaestus and Heracles, 6 the Twin Paradises of Epimetheus)",
+    "The fixed-damage flags (1 = the printed numeric damage; 0 = the by-weapon rows of Bellerophon, Jason, Perseus, Theseus and the See-below rows of Hecate, Tyche)",
+    "The in-each flags (the printed Nth level in each cells: Zeus, Apollo, Athena, Epimetheus, Hera, Poseidon, Oceanus, Prometheus, Tyche)",
+    "The enmity flags (the printed rivalry lines: Ares and Athena the war rivalry, Pan the Apollo enemy, Odysseus under the Poseidon curse)"
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the forty beings, the seven planes, the six heroes)",
+   "expr": "m['grkTableCount']() != 4 or m['grkBeingCount']() != 40 or m['grkCbtRows']() != 40 or m['grkClsRows']() != 40 or m['grkAbiRows']() != 40 or m['grkRosRows']() != 40 or m['grkPlaneCount']() != 7 or m['grkHeroCount']() != 6 or m['grkGreaterCount']() != 10 or m['grkLesserCount']() != 8 or m['grkDemigodCount']() != 1 or m['grkTitanCount']() != 6 or m['grkMonsterCount']() != 9 or m['grkInEachCount']() != 9 or m['grkEnmityCount']() != 4 or m['grkPaladinCount']() != 2 or m['grkPsiClassKinds']() != 6 or m['grkHalfFootCount']() != 9 or m['grkArtifactCount']() != 1 or m['grkChainCount']() != 0 or m['grkRegistryFloor']() != 995"
+  },
+  {
+   "note": "the print walk spans pp. 63-74 and the roster ordinals run 0-39 in print order",
+   "expr": "m['grkPrintStart']() != 63 or m['grkPrintEnd']() != 74 or m['grkRosPage'](0) != 63 or m['grkRosPage'](2) != 64 or m['grkRosPage'](6) != 65 or m['grkRosPage'](9) != 66 or m['grkRosPage'](13) != 67 or m['grkRosPage'](17) != 68 or m['grkRosPage'](21) != 69 or m['grkRosPage'](25) != 70 or m['grkRosPage'](28) != 71 or m['grkRosPage'](30) != 72 or m['grkRosPage'](34) != 73 or m['grkRosPage'](37) != 74 or m['grkRosOrd'](0) != 0 or m['grkRosOrd'](39) != 39"
+  },
+  {
+   "note": "Zeus the supreme: AC -2, 400 hp, the 6-60 (+14) spear, class II, the 78-inch 6 1/2 foot cell",
+   "expr": "m['grkCbtAC'](0) != -2 or m['grkCbtHP'](0) != 400 or m['grkRosPsiClass'](0) != 2 or m['grkCbtSizeIn'](0) != 78 or m['grkAbiStr'](0) != 25 or m['grkAbiStrDmg'](0) != 14 or m['grkClsCleric'](0) != 25 or m['grkClsIllus'](0) != 20 or m['grkRosPlane'](0) != 1 or m['grkZeusBoltDamage']() != 30"
+  },
+  {
+   "note": "the White Eagle: the 50-inch wingspan, 3 attacks, xp X/14,100",
+   "expr": "m['grkCbtSizeIn'](1) != 50 or m['grkCbtAtN'](1) != 3 or m['grkEagleXpBase']() != 14100 or m['grkEagleHitDice']() != 16 or m['grkCbtMR'](1) != 10 or m['grkRosRank'](1) != 5"
+  },
+  {
+   "note": "Achilles the hero: AC 0, fighter 15, the 66-inch fraction cell, S:18(51%)(+2,+3)",
+   "expr": "m['grkCbtAC'](2) != 0 or m['grkClsFighterLo'](2) != 15 or m['grkCbtSizeIn'](2) != 66 or m['grkAbiStr'](2) != 18 or m['grkAbiStrHit'](2) != 2 or m['grkAbiStrDmg'](2) != 3 or m['grkRosRank'](2) != 3 or m['grkAchillesChariotRate']() != 24"
+  },
+  {
+   "note": "Aphrodite: the 259 hp, MU 12 / illusionist 15, psionic VI, the 66-inch fraction",
+   "expr": "m['grkCbtHP'](3) != 259 or m['grkClsMagUser'](3) != 12 or m['grkClsIllus'](3) != 15 or m['grkRosPsiClass'](3) != 6 or m['grkCbtSizeIn'](3) != 66 or m['grkAphroditePainDamage']() != 10 or m['grkAphroditeFemaleCh']() != 15"
+  },
+  {
+   "note": "Antaeus the growth giant: the 132-inch floor, the 25-point growth heal, the 250 ceiling",
+   "expr": "m['grkCbtSizeIn'](4) != 132 or m['grkAntaeusGrowHeal']() != 25 or m['grkAntaeusHpMax']() != 250 or m['grkAntaeusXpPerHp']() != 35 or m['grkRosRank'](4) != 5"
+  },
+  {
+   "note": "Apollo: 376 hp, MR 56, the L 20 foot 240 cell, psionic I, bard 23",
+   "expr": "m['grkCbtHP'](5) != 376 or m['grkCbtMR'](5) != 56 or m['grkCbtSizeIn'](5) != 240 or m['grkRosPsiClass'](5) != 1 or m['grkClsBard'](5) != 23 or m['grkClsRanger'](5) != 15 or m['grkApolloCompanionPct']() != 60"
+  },
+  {
+   "note": "Ares the flagged odd print: move 26/24, the ranger 20, assassin 12, monk 12, psionic V",
+   "expr": "m['grkCbtMove'](6) != 26 or m['grkCbtMoveAlt'](6) != 24 or m['grkClsRanger'](6) != 20 or m['grkClsAssassin'](6) != 12 or m['grkClsMonk'](6) != 12 or m['grkRosPsiClass'](6) != 5 or m['grkRosEnmity'](6) != 1 or m['grkAresSpearFearYards']() != 10"
+  },
+  {
+   "note": "Artemis: the printed lesser goddess rank 0, the 66-inch fraction, MR See below 0",
+   "expr": "m['grkRosRank'](7) != 0 or m['grkCbtSizeIn'](7) != 66 or m['grkCbtMR'](7) != 0 or m['grkClsDruid'](7) != 14 or m['grkArtemisRangeYards']() != 1000 or m['grkAbiCha'](7) != 25"
+  },
+  {
+   "note": "Athena: fighter 20, MU/I 12 in each, psionic VI, the Ares rivalry enmity",
+   "expr": "m['grkClsFighterLo'](8) != 20 or m['grkClsMagUser'](8) != 12 or m['grkClsIllus'](8) != 12 or m['grkRosPsiClass'](8) != 6 or m['grkRosEnmity'](8) != 1 or m['grkRosInEach'](8) != 1 or m['grkCbtMR'](8) != 80"
+  },
+  {
+   "note": "Atlas the greater titan: 600 inches, MR 95, plane Tarterus, monk 10",
+   "expr": "m['grkCbtSizeIn'](9) != 600 or m['grkCbtMR'](9) != 95 or m['grkRosPlane'](9) != 2 or m['grkClsMonk'](9) != 10 or m['grkRosRank'](9) != 4 or m['grkCbtAtN'](9) != 3"
+  },
+  {
+   "note": "Bellerophon: the 3/2 attacks, ranger 10, the 66-inch fraction, S:18(00)(+3,+6)",
+   "expr": "m['grkCbtAtN'](10) != 3 or m['grkCbtAtD'](10) != 2 or m['grkClsRanger'](10) != 10 or m['grkCbtSizeIn'](10) != 66 or m['grkAbiStrDmg'](10) != 6 or m['grkBellerophonWatchPct']() != 25 or m['grkBellerophonSavePct']() != 75 or m['grkRosDmgFixed'](10) != 0"
+  },
+  {
+   "note": "Cerberus: 3 heads, 30 hp per head, 100 body hp, the 360-inch L 30 foot, xp X/26,240",
+   "expr": "m['grkCerberusHeads']() != 3 or m['grkCerberusHpPerHead']() != 30 or m['grkCerberusHpBody']() != 100 or m['grkCbtSizeIn'](11) != 360 or m['grkCerberusXpBase']() != 26240 or m['grkRosAlign'](11) != 7"
+  },
+  {
+   "note": "Circe the black sorceress: AC 10, the 60-inch 5 foot, cleric 15 / MU 12 / illusionist 9",
+   "expr": "m['grkCbtAC'](12) != 10 or m['grkCbtSizeIn'](12) != 60 or m['grkClsCleric'](12) != 15 or m['grkClsMagUser'](12) != 12 or m['grkClsIllus'](12) != 9 or m['grkAbiStr'](12) != 10 or m['grkAbiWis'](12) != 9"
+  },
+  {
+   "note": "Coeus the fear titan: the pixel-verified charisma -4, the 25 percent fear loss, psionic V",
+   "expr": "m['grkAbiCha'](13) != -4 or m['grkCoeusFearLossPct']() != 25 or m['grkCoeusApproachYards']() != 20 or m['grkCoeusSaveRounds']() != 4 or m['grkRosPlane'](13) != 2 or m['grkCbtSizeIn'](13) != 252"
+  },
+  {
+   "note": "Crius the gravity titan: 1200 inches, the -4 hit penalty, S:25(+7,+14)",
+   "expr": "m['grkCbtSizeIn'](14) != 1200 or m['grkCriusHitPenalty']() != 4 or m['grkCriusAcPenalty']() != 1 or m['grkAbiStrHit'](14) != 7 or m['grkRosPsiClass'](14) != 5"
+  },
+  {
+   "note": "the two cyclopes: the hit-dice HP 0 rows, the greater -4 AC, the lesser 2",
+   "expr": "m['grkCbtHP'](15) != 0 or m['grkCbtHP'](16) != 0 or m['grkCyclopsGrHd']() != 15 or m['grkCyclopsLsHd']() != 13 or m['grkCbtAC'](15) != -4 or m['grkCbtAC'](16) != 2 or m['grkCyclopsGrKillPct']() != 80 or m['grkRosAlign'](15) != 2 or m['grkRosAlign'](16) != 8"
+  },
+  {
+   "note": "Demeter: the 3/2 attacks, druid 14, psionic VI, the 60-inch cell, MR 29",
+   "expr": "m['grkCbtAtN'](17) != 3 or m['grkCbtAtD'](17) != 2 or m['grkClsDruid'](17) != 14 or m['grkRosPsiClass'](17) != 6 or m['grkCbtMR'](17) != 29 or m['grkCbtSizeIn'](17) != 60"
+  },
+  {
+   "note": "Dionysus: the pixel-verified psionic III (the three pipe bars), 84-inch 7 foot, bard 19",
+   "expr": "m['grkRosPsiClass'](18) != 3 or m['grkCbtSizeIn'](18) != 84 or m['grkClsBard'](18) != 19 or m['grkDionysusPantherHp']() != 50 or m['grkRosRank'](18) != 1 or m['grkAbiCon'](18) != 25"
+  },
+  {
+   "note": "Enceladus: 219 hp, the 1020-inch L 85 foot, the four spell grabs",
+   "expr": "m['grkCbtHP'](19) != 219 or m['grkCbtSizeIn'](19) != 1020 or m['grkEnceladusSpellGrabs']() != 4 or m['grkEnceladusXpBase']() != 21175 or m['grkRosRank'](19) != 5"
+  },
+  {
+   "note": "Epimetheus: the Twin Paradises plane 6, the in-each cleric/druid 10, psionic V",
+   "expr": "m['grkRosPlane'](20) != 6 or m['grkClsCleric'](20) != 10 or m['grkClsDruid'](20) != 10 or m['grkRosInEach'](20) != 1 or m['grkRosPsiClass'](20) != 5 or m['grkEpimetheusBetrayPct']() != 60"
+  },
+  {
+   "note": "the Furies: 100 MR, the 200 hp each, psionic V, the ability-drain whips",
+   "expr": "m['grkCbtMR'](21) != 100 or m['grkFuriesHpEach']() != 200 or m['grkFuriesCount']() != 3 or m['grkRosPsiClass'](21) != 5 or m['grkCbtSizeIn'](21) != 60 or m['grkRosAlign'](21) != 4"
+  },
+  {
+   "note": "Hades the flagged odd print: move 29, the pixel-verified psionic III, the 78-inch 6 1/2 foot, the Hades plane",
+   "expr": "m['grkCbtMove'](22) != 29 or m['grkRosPsiClass'](22) != 3 or m['grkCbtSizeIn'](22) != 78 or m['grkRosPlane'](22) != 3 or m['grkClsIllus'](22) != 25 or m['grkHadesDeathRangeFeet']() != 120 or m['grkAbiCha'](22) != 24"
+  },
+  {
+   "note": "Hecate: the Nine Hells plane 4, assassin 15, psionic I, the 9 hell hounds, the 66-inch fraction",
+   "expr": "m['grkRosPlane'](23) != 4 or m['grkClsAssassin'](23) != 15 or m['grkRosPsiClass'](23) != 1 or m['grkHecateHellHounds']() != 9 or m['grkCbtSizeIn'](23) != 66 or m['grkAbiInt'](23) != 25"
+  },
+  {
+   "note": "the Hecatoncheire: the ten attacks, 100 arms, 50 heads, xp X/29,300",
+   "expr": "m['grkCbtAtN'](24) != 10 or m['grkHecatoncheireArms']() != 100 or m['grkHecatoncheireHeads']() != 50 or m['grkHecatoncheireXpBase']() != 29300 or m['grkCbtSizeIn'](24) != 1200 or m['grkRosAlign'](24) != 5"
+  },
+  {
+   "note": "Hephaestus: AC -5, move 9, the charisma 9 print, the Prime Material plane 5, psionic IV",
+   "expr": "m['grkCbtAC'](25) != -5 or m['grkCbtMove'](25) != 9 or m['grkAbiCha'](25) != 9 or m['grkRosPlane'](25) != 5 or m['grkRosPsiClass'](25) != 4 or m['grkClsMagUser'](25) != 18 or m['grkCbtSizeIn'](25) != 240"
+  },
+  {
+   "note": "Hera: the in-each MU/I 12, psionic VI, S:17(+1,+1), the voice 20 damage",
+   "expr": "m['grkClsMagUser'](26) != 12 or m['grkClsIllus'](26) != 12 or m['grkRosInEach'](26) != 1 or m['grkRosPsiClass'](26) != 6 or m['grkAbiStrHit'](26) != 1 or m['grkHeraVoiceDamage']() != 20 or m['grkHeraVoiceYards']() != 50 or m['grkCbtSizeIn'](26) != 66"
+  },
+  {
+   "note": "Heracles the demigod: rank 2, ranger 15, the berserker +25, S:25(+7,+14)",
+   "expr": "m['grkRosRank'](27) != 2 or m['grkClsRanger'](27) != 15 or m['grkHeraclesRageBonus']() != 25 or m['grkAbiStr'](27) != 25 or m['grkClsBard'](27) != 3 or m['grkRosPlane'](27) != 5"
+  },
+  {
+   "note": "Hermes: thief 25, move 18/48, psionic IV, S:22(+4,+10)",
+   "expr": "m['grkClsThief'](28) != 25 or m['grkCbtMoveAlt'](28) != 48 or m['grkRosPsiClass'](28) != 4 or m['grkAbiStrDmg'](28) != 10 or m['grkHermesGraftPct']() != 15 or m['grkCbtSizeIn'](28) != 78"
+  },
+  {
+   "note": "Jason: ranger 16, thief 4, bard 7, the golden fleece 3-day and 10 percent cells",
+   "expr": "m['grkClsRanger'](29) != 16 or m['grkClsThief'](29) != 4 or m['grkClsBard'](29) != 7 or m['grkJasonFleeceDeathDays']() != 3 or m['grkJasonFleeceVanishPct']() != 10 or m['grkRosDmgFixed'](29) != 0"
+  },
+  {
+   "note": "Kronos: 400 hp, cleric 25, fighter 17, psionic V, plane Tarterus",
+   "expr": "m['grkCbtHP'](30) != 400 or m['grkClsCleric'](30) != 25 or m['grkClsFighterLo'](30) != 17 or m['grkRosPsiClass'](30) != 5 or m['grkRosPlane'](30) != 2 or m['grkKronosLavaRangeYards']() != 200 or m['grkCbtSizeIn'](30) != 1200"
+  },
+  {
+   "note": "Nike: AC -4, move 24/36, the MU/I See below 99s, psionic VI, lawful neutral",
+   "expr": "m['grkCbtAC'](31) != -4 or m['grkCbtMoveAlt'](31) != 36 or m['grkClsMagUser'](31) != 99 or m['grkClsIllus'](31) != 99 or m['grkRosPsiClass'](31) != 6 or m['grkRosAlign'](31) != 3 or m['grkCbtSizeIn'](31) != 84"
+  },
+  {
+   "note": "Oceanus: the in-each cleric/druid 10, fighter 15, S:25(+7,+14), the 10 wisdom",
+   "expr": "m['grkClsCleric'](32) != 10 or m['grkClsDruid'](32) != 10 or m['grkRosInEach'](32) != 1 or m['grkClsFighterLo'](32) != 15 or m['grkAbiWis'](32) != 10 or m['grkRosPlane'](32) != 2"
+  },
+  {
+   "note": "Odysseus: the one true-inch 64 cell, fighter 13, thief 9, the Poseidon-curse enmity",
+   "expr": "m['grkCbtSizeIn'](33) != 64 or m['grkClsFighterLo'](33) != 13 or m['grkClsThief'](33) != 9 or m['grkRosEnmity'](33) != 1 or m['grkAbiInt'](33) != 18 or m['grkCbtHP'](33) != 83"
+  },
+  {
+   "note": "Pan: druid 14, illusionist 15, thief 15, bard 15, psionic I, the Prime Material plane",
+   "expr": "m['grkClsDruid'](34) != 14 or m['grkClsIllus'](34) != 15 or m['grkClsThief'](34) != 15 or m['grkClsBard'](34) != 15 or m['grkRosPsiClass'](34) != 1 or m['grkRosPlane'](34) != 5 or m['grkPanShoutRounds']() != 4 or m['grkRosEnmity'](34) != 1"
+  },
+  {
+   "note": "Perseus the paladin: the fighter 15/15 pair, the 25 percent watchman of Bellerophon contrast, the 72-inch 6 foot",
+   "expr": "m['grkClsFighterLo'](35) != 15 or m['grkClsFighterHi'](35) != 15 or m['grkCbtSizeIn'](35) != 72 or m['grkClsBard'](35) != 5 or m['grkAbiStrDmg'](35) != 4"
+  },
+  {
+   "note": "Poseidon: the in-each cleric/druid 12 and MU/I 17, the 360-inch L 30 foot, psionic VI",
+   "expr": "m['grkClsCleric'](36) != 12 or m['grkClsDruid'](36) != 12 or m['grkClsMagUser'](36) != 17 or m['grkClsIllus'](36) != 17 or m['grkRosInEach'](36) != 1 or m['grkCbtSizeIn'](36) != 360 or m['grkRosPsiClass'](36) != 6 or m['grkPoseidonTridentPlus']() != 5"
+  },
+  {
+   "note": "Prometheus the printed lesser god: rank 0, plane Olympus, the in-each cleric/druid 13, psionic V",
+   "expr": "m['grkRosRank'](37) != 0 or m['grkRosPlane'](37) != 1 or m['grkClsCleric'](37) != 13 or m['grkClsDruid'](37) != 13 or m['grkRosInEach'](37) != 1 or m['grkRosPsiClass'](37) != 5 or m['grkPrometheusChainYears']() != 30 or m['grkCbtSizeIn'](37) != 1200"
+  },
+  {
+   "note": "Theseus the paladin: the fighter 13/13 pair, bard 9, S:18(76)(+2,+4)",
+   "expr": "m['grkClsFighterLo'](38) != 13 or m['grkClsFighterHi'](38) != 13 or m['grkClsBard'](38) != 9 or m['grkAbiStrHit'](38) != 2 or m['grkRosDmgFixed'](38) != 0 or m['grkCbtSizeIn'](38) != 72"
+  },
+  {
+   "note": "Tyche: MR 100, psionic I, the in-each MU/I 15, the good luck doctrine",
+   "expr": "m['grkCbtMR'](39) != 100 or m['grkRosPsiClass'](39) != 1 or m['grkClsMagUser'](39) != 15 or m['grkClsIllus'](39) != 15 or m['grkRosInEach'](39) != 1 or m['grkCbtMoveAlt'](39) != 36 or m['grkRosDmgFixed'](39) != 0 or m['grkCbtSizeIn'](39) != 60"
+  },
+  {
+   "note": "the Greek doctrine: the spell-loss lunar month and the pantheon worship rules",
+   "expr": "m['grkSpellLossLevels']() != 3 or m['grkSpellLossDays']() != 28 or m['grkPoseidonTridentPlus']() != 5 or m['grkZeusBoltDamage']() != 30"
+  },
+  {
+   "note": "the monster rows carry no class, ability or psionic cells",
+   "expr": "m['grkClsCleric'](4) != 0 or m['grkClsFighterLo'](4) != 0 or m['grkAbiStr'](4) != 0 or m['grkRosPsiClass'](4) != 0 or m['grkAbiPsi'](21) != 0 or m['grkClsBard'](24) != 0"
+  }
+ ],
+ "header_sections": {
+  "the R859 census": [
+   {
+    "kind": "const",
+    "name": "grkRound"
+   },
+   {
+    "kind": "const",
+    "name": "grkPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "grkPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "grkBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "grkCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "grkClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "grkAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "grkRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "grkPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkHeroCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkGreaterCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkLesserCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkDemigodCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkTitanCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkMonsterCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkInEachCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkEnmityCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkPaladinCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkPsiClassKinds"
+   },
+   {
+    "kind": "const",
+    "name": "grkHalfFootCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkArtifactCount"
+   }
+  ],
+  "the Greek pantheon doctrine": [
+   {
+    "kind": "const",
+    "name": "grkSpellLossLevels"
+   },
+   {
+    "kind": "const",
+    "name": "grkSpellLossDays"
+   },
+   {
+    "kind": "bool",
+    "name": "grkTitansAncestry"
+   },
+   {
+    "kind": "bool",
+    "name": "grkWorshipGavePower"
+   },
+   {
+    "kind": "bool",
+    "name": "grkThrewDownTitans"
+   },
+   {
+    "kind": "bool",
+    "name": "grkMortalTraits"
+   },
+   {
+    "kind": "bool",
+    "name": "grkFirstWorshipNatural"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCityTemples"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCountryNatural"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPoseidonClericsRide"
+   },
+   {
+    "kind": "bool",
+    "name": "grkNoOtherSects"
+   },
+   {
+    "kind": "bool",
+    "name": "grkOneTemple"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHighSpellsMeditation"
+   },
+   {
+    "kind": "bool",
+    "name": "grkSackedTempleLoss"
+   }
+  ],
+  "Zeus and the Aegis": [
+   {
+    "kind": "const",
+    "name": "grkZeusBoltDamage"
+   },
+   {
+    "kind": "const",
+    "name": "grkZeusBloodMonsterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "grkZeusBloodHours"
+   },
+   {
+    "kind": "const",
+    "name": "grkAegisPlus"
+   },
+   {
+    "kind": "const",
+    "name": "grkAegisFearYards"
+   },
+   {
+    "kind": "bool",
+    "name": "grkZeusShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "grkZeusDisdainsArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAegisFear"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAegisCloakForm"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAegisAthenaCustody"
+   }
+  ],
+  "the White Eagle of Zeus": [
+   {
+    "kind": "const",
+    "name": "grkEagleXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "grkEagleHitDice"
+   },
+   {
+    "kind": "bool",
+    "name": "grkEagleTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "grkEagleTalksToZeus"
+   },
+   {
+    "kind": "bool",
+    "name": "grkEagleThunderBolts"
+   },
+   {
+    "kind": "bool",
+    "name": "grkEagleMessenger"
+   }
+  ],
+  "Achilles": [
+   {
+    "kind": "const",
+    "name": "grkAchillesChariotRate"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAchillesEdgedImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAchillesBludgeonOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAchillesGoldPlated"
+   }
+  ],
+  "Aphrodite": [
+   {
+    "kind": "const",
+    "name": "grkAphroditePainDamage"
+   },
+   {
+    "kind": "const",
+    "name": "grkAphroditeFemaleCh"
+   },
+   {
+    "kind": "const",
+    "name": "grkAphroditeMaleCon"
+   },
+   {
+    "kind": "const",
+    "name": "grkAphroditeVengeancePct"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAphroditeCharmPermanent"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAphroditeDoves"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAphroditeNewMoon"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAphroditeVainJealous"
+   }
+  ],
+  "Antaeus": [
+   {
+    "kind": "const",
+    "name": "grkAntaeusHpBase"
+   },
+   {
+    "kind": "const",
+    "name": "grkAntaeusGrowHeal"
+   },
+   {
+    "kind": "const",
+    "name": "grkAntaeusHpMax"
+   },
+   {
+    "kind": "const",
+    "name": "grkAntaeusXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "grkAntaeusXpPerHp"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAntaeusGrowsEachRound"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAntaeusGrowthHeals"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAntaeusEarthHealing"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAntaeusLiftedWeakens"
+   }
+  ],
+  "Apollo": [
+   {
+    "kind": "const",
+    "name": "grkApolloBowPlus"
+   },
+   {
+    "kind": "const",
+    "name": "grkApolloArrowPlus"
+   },
+   {
+    "kind": "const",
+    "name": "grkApolloCompanionPct"
+   },
+   {
+    "kind": "const",
+    "name": "grkApolloHazePlus"
+   },
+   {
+    "kind": "bool",
+    "name": "grkApolloShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "grkApolloLyreStormGiant"
+   },
+   {
+    "kind": "bool",
+    "name": "grkApolloLyreCurses"
+   },
+   {
+    "kind": "bool",
+    "name": "grkApolloLaurel"
+   },
+   {
+    "kind": "bool",
+    "name": "grkApolloSunChariot"
+   }
+  ],
+  "Ares": [
+   {
+    "kind": "const",
+    "name": "grkAresSpearFearYards"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAresChainmailPlus5"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAresSpearOnlyHeLifts"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAresSwordAntiMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAresSwordOrSpear"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAresBlinkDog"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAresAthenaRivalry"
+   }
+  ],
+  "Artemis": [
+   {
+    "kind": "const",
+    "name": "grkArtemisRangeYards"
+   },
+   {
+    "kind": "bool",
+    "name": "grkArtemisSpellReflect"
+   },
+   {
+    "kind": "bool",
+    "name": "grkArtemisHastedAnimal"
+   },
+   {
+    "kind": "bool",
+    "name": "grkArtemisFangClawImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "grkArtemisAnimalPower"
+   },
+   {
+    "kind": "bool",
+    "name": "grkArtemisDruidsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "grkArtemisPureBody"
+   }
+  ],
+  "Athena": [
+   {
+    "kind": "bool",
+    "name": "grkAthenaBlinkDog"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAthenaNeverMisses"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAthenaMedusaShield"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAthenaHelmAntiMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAthenaClericsAggressive"
+   }
+  ],
+  "Atlas": [
+   {
+    "kind": "bool",
+    "name": "grkAtlasPrimeStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAtlasOtherPlaneStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "grkAtlasKeepsWord"
+   }
+  ],
+  "Bellerophon": [
+   {
+    "kind": "const",
+    "name": "grkBellerophonWatchPct"
+   },
+   {
+    "kind": "const",
+    "name": "grkBellerophonSavePct"
+   },
+   {
+    "kind": "bool",
+    "name": "grkBellerophonPegasus"
+   }
+  ],
+  "Cerberus": [
+   {
+    "kind": "const",
+    "name": "grkCerberusHeads"
+   },
+   {
+    "kind": "const",
+    "name": "grkCerberusHpPerHead"
+   },
+   {
+    "kind": "const",
+    "name": "grkCerberusHpBody"
+   },
+   {
+    "kind": "const",
+    "name": "grkCerberusRegen"
+   },
+   {
+    "kind": "const",
+    "name": "grkCerberusSpittleInches"
+   },
+   {
+    "kind": "const",
+    "name": "grkCerberusXpBase"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCerberusKeepsIn"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCerberusNoMagicRemoval"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCerberusGazeStone"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCerberusPoisonSpittle"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCerberusOneFormPerHead"
+   }
+  ],
+  "Circe": [
+   {
+    "kind": "bool",
+    "name": "grkCircePolymorphDevices"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCirceProphetic"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCirceAlmostImmortal"
+   }
+  ],
+  "Coeus": [
+   {
+    "kind": "const",
+    "name": "grkCoeusFearLossPct"
+   },
+   {
+    "kind": "const",
+    "name": "grkCoeusApproachYards"
+   },
+   {
+    "kind": "const",
+    "name": "grkCoeusSaveRounds"
+   },
+   {
+    "kind": "const",
+    "name": "grkCoeusFleeTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCoeusDieOfFright"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCoeusSwordPlus5"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCoeusNightOnly"
+   }
+  ],
+  "Crius": [
+   {
+    "kind": "const",
+    "name": "grkCriusHeavyRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "grkCriusHitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "grkCriusAcPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCriusWeightControl"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCriusPermanency"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCriusGravityField"
+   }
+  ],
+  "the two cyclopes": [
+   {
+    "kind": "const",
+    "name": "grkCyclopsGrHd"
+   },
+   {
+    "kind": "const",
+    "name": "grkCyclopsGrBonusHpMax"
+   },
+   {
+    "kind": "const",
+    "name": "grkCyclopsGrGiftRewardPct"
+   },
+   {
+    "kind": "const",
+    "name": "grkCyclopsGrKillPct"
+   },
+   {
+    "kind": "const",
+    "name": "grkCyclopsGrXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "grkCyclopsGrXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "grkCyclopsLsHd"
+   },
+   {
+    "kind": "const",
+    "name": "grkCyclopsLsRockRange"
+   },
+   {
+    "kind": "const",
+    "name": "grkCyclopsLsXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "grkCyclopsLsXpPerHp"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCyclopsGrHephaestusGift"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCyclopsGrFireImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCyclopsGrScaleMail"
+   },
+   {
+    "kind": "bool",
+    "name": "grkCyclopsLsHurlRocks"
+   }
+  ],
+  "Demeter": [
+   {
+    "kind": "bool",
+    "name": "grkDemeterWeather"
+   },
+   {
+    "kind": "bool",
+    "name": "grkDemeterPlantAnimal"
+   },
+   {
+    "kind": "bool",
+    "name": "grkDemeterGreenDragons"
+   },
+   {
+    "kind": "bool",
+    "name": "grkDemeterGrainDuty"
+   }
+  ],
+  "Dionysus": [
+   {
+    "kind": "const",
+    "name": "grkDionysusPantherAc"
+   },
+   {
+    "kind": "const",
+    "name": "grkDionysusPantherHd"
+   },
+   {
+    "kind": "const",
+    "name": "grkDionysusPantherHp"
+   },
+   {
+    "kind": "const",
+    "name": "grkDionysusMadnessSavePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "grkDionysusThyrsusRaise"
+   },
+   {
+    "kind": "bool",
+    "name": "grkDionysusThyrsusTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "grkDionysusThyrsusMirror"
+   },
+   {
+    "kind": "bool",
+    "name": "grkDionysusFelineControl"
+   },
+   {
+    "kind": "bool",
+    "name": "grkDionysusMadness"
+   }
+  ],
+  "Enceladus": [
+   {
+    "kind": "const",
+    "name": "grkEnceladusSpellGrabs"
+   },
+   {
+    "kind": "const",
+    "name": "grkEnceladusFearYards"
+   },
+   {
+    "kind": "const",
+    "name": "grkEnceladusXpBase"
+   },
+   {
+    "kind": "bool",
+    "name": "grkEnceladusSpellGrab"
+   },
+   {
+    "kind": "bool",
+    "name": "grkEnceladusTwoHanded"
+   },
+   {
+    "kind": "bool",
+    "name": "grkEnceladusOlympusFoe"
+   }
+  ],
+  "Epimetheus": [
+   {
+    "kind": "const",
+    "name": "grkEpimetheusFightPct"
+   },
+   {
+    "kind": "const",
+    "name": "grkEpimetheusClayPct"
+   },
+   {
+    "kind": "const",
+    "name": "grkEpimetheusBallLevel"
+   },
+   {
+    "kind": "const",
+    "name": "grkEpimetheusBetrayPct"
+   },
+   {
+    "kind": "bool",
+    "name": "grkEpimetheusCreates"
+   },
+   {
+    "kind": "bool",
+    "name": "grkEpimetheusBallCreature"
+   }
+  ],
+  "the Furies": [
+   {
+    "kind": "const",
+    "name": "grkFuriesCount"
+   },
+   {
+    "kind": "const",
+    "name": "grkFuriesHpEach"
+   },
+   {
+    "kind": "bool",
+    "name": "grkFuriesPunishmentForce"
+   },
+   {
+    "kind": "bool",
+    "name": "grkFuriesFindAnyone"
+   },
+   {
+    "kind": "bool",
+    "name": "grkFuriesNoAppeal"
+   },
+   {
+    "kind": "bool",
+    "name": "grkFuriesWhipDrain"
+   }
+  ],
+  "Hades": [
+   {
+    "kind": "const",
+    "name": "grkHadesDeathSpells"
+   },
+   {
+    "kind": "const",
+    "name": "grkHadesDeathRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "grkHadesExplosionInches"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHadesShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHadesDeathEyes"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHadesNonmetalExplosion"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHadesEarthControl"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHadesChairForgetfulness"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHadesChariotUntouchable"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHadesHelmInvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHadesOneEntrance"
+   }
+  ],
+  "Hecate": [
+   {
+    "kind": "const",
+    "name": "grkHecateHellHounds"
+   },
+   {
+    "kind": "const",
+    "name": "grkHecateHoundPct"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHecateAnySpell"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHecateNightTwoSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHecateTwinSpheres"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHecateHoundRapport"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHecateFullMoon"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHecateThreeFaces"
+   }
+  ],
+  "the Hecatoncheire": [
+   {
+    "kind": "const",
+    "name": "grkHecatoncheireArms"
+   },
+   {
+    "kind": "const",
+    "name": "grkHecatoncheireHeads"
+   },
+   {
+    "kind": "const",
+    "name": "grkHecatoncheireBoulderRange"
+   },
+   {
+    "kind": "const",
+    "name": "grkHecatoncheireXpBase"
+   },
+   {
+    "kind": "const",
+    "name": "grkHecatoncheireGrabPct"
+   },
+   {
+    "kind": "const",
+    "name": "grkHecatoncheireGrabPerPct"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHecatoncheireMeteorSwarm"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHecatoncheireTenFists"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHecatoncheireOlympusEnemies"
+   }
+  ],
+  "Hephaestus": [
+   {
+    "kind": "const",
+    "name": "grkHephaestusShieldPct"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHephaestusAdamant"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHephaestusShieldAnyClass"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHephaestusForgeHelpers"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHephaestusDwarfFriend"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHephaestusRedDragon"
+   }
+  ],
+  "Hera": [
+   {
+    "kind": "const",
+    "name": "grkHeraListenPct"
+   },
+   {
+    "kind": "const",
+    "name": "grkHeraVoiceDamage"
+   },
+   {
+    "kind": "const",
+    "name": "grkHeraVoiceYards"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHeraCurse"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHeraSpying"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHeraClericVengeance"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHeraVoiceFear"
+   }
+  ],
+  "Heracles": [
+   {
+    "kind": "const",
+    "name": "grkHeraclesBowRangeMiles"
+   },
+   {
+    "kind": "const",
+    "name": "grkHeraclesRageBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHeraclesNemeanSkin"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHeraclesBerserkerRage"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHeraclesBowNeverMiss"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHeraclesNoMagicUsers"
+   }
+  ],
+  "Hermes": [
+   {
+    "kind": "const",
+    "name": "grkHermesGraftPct"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHermesMaxThieving"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHermesBlinkDog"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHermesWingedSandals"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHermesHelmInvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHermesCaduceus"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHermesMessenger"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHermesArbiter"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHermesClericsFit"
+   },
+   {
+    "kind": "bool",
+    "name": "grkHermesWhiteRod"
+   }
+  ],
+  "Jason": [
+   {
+    "kind": "const",
+    "name": "grkJasonFleeceDeathDays"
+   },
+   {
+    "kind": "const",
+    "name": "grkJasonFleeceVanishPct"
+   },
+   {
+    "kind": "bool",
+    "name": "grkJasonGoldenFleece"
+   },
+   {
+    "kind": "bool",
+    "name": "grkJasonLeadership"
+   }
+  ],
+  "Kronos": [
+   {
+    "kind": "const",
+    "name": "grkKronosLavaRangeYards"
+   },
+   {
+    "kind": "bool",
+    "name": "grkKronosLavaBalls"
+   },
+   {
+    "kind": "bool",
+    "name": "grkKronosSickleAdamant"
+   }
+  ],
+  "Nike": [
+   {
+    "kind": "bool",
+    "name": "grkNikeDivineAwe"
+   },
+   {
+    "kind": "bool",
+    "name": "grkNikeRodPower"
+   },
+   {
+    "kind": "bool",
+    "name": "grkNikeDeviceDestroy"
+   },
+   {
+    "kind": "bool",
+    "name": "grkNikeClericStrict"
+   }
+  ],
+  "Oceanus": [
+   {
+    "kind": "bool",
+    "name": "grkOceanusGreenShimmer"
+   },
+   {
+    "kind": "bool",
+    "name": "grkOceanusHurricane"
+   },
+   {
+    "kind": "bool",
+    "name": "grkOceanusWaterCommand"
+   },
+   {
+    "kind": "bool",
+    "name": "grkOceanusPoseidonOutranks"
+   }
+  ],
+  "Odysseus": [
+   {
+    "kind": "bool",
+    "name": "grkOdysseusBowOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "grkOdysseusWitOverStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "grkOdysseusPoseidonCurse"
+   }
+  ],
+  "Pan": [
+   {
+    "kind": "const",
+    "name": "grkPanVoiceYards"
+   },
+   {
+    "kind": "const",
+    "name": "grkPanShoutInches"
+   },
+   {
+    "kind": "const",
+    "name": "grkPanShoutRounds"
+   },
+   {
+    "kind": "const",
+    "name": "grkPanShoutThresholdPct"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPanTwoAspects"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPanVoiceFear"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPanSyrinx"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPanShout"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPanApolloEnemy"
+   }
+  ],
+  "Perseus": [
+   {
+    "kind": "bool",
+    "name": "grkPerseusPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPerseusMedusaHead"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPerseusHadesHelm"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPerseusHermesSandals"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPerseusAegis"
+   }
+  ],
+  "Poseidon": [
+   {
+    "kind": "const",
+    "name": "grkPoseidonTridentPlus"
+   },
+   {
+    "kind": "const",
+    "name": "grkPoseidonHazePlus"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPoseidonWaterCommand"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPoseidonCreateLife"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPoseidonCoastAnger"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPoseidonHorses"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPoseidonPaladinHorse"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPoseidonTridentAbsorb"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPoseidonWateryHaze"
+   }
+  ],
+  "Prometheus": [
+   {
+    "kind": "const",
+    "name": "grkPrometheusCreateRounds"
+   },
+   {
+    "kind": "const",
+    "name": "grkPrometheusChainYears"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPrometheusClayCreation"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPrometheusFireTheft"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPrometheusVulture"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPrometheusIronRing"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPrometheusSelfReliant"
+   },
+   {
+    "kind": "bool",
+    "name": "grkPrometheusKillGriffons"
+   }
+  ],
+  "Theseus": [
+   {
+    "kind": "bool",
+    "name": "grkTheseusPaladin"
+   },
+   {
+    "kind": "bool",
+    "name": "grkTheseusMinotaur"
+   },
+   {
+    "kind": "bool",
+    "name": "grkTheseusKnowWeaknesses"
+   }
+  ],
+  "Tyche": [
+   {
+    "kind": "bool",
+    "name": "grkTycheGoodLuck"
+   },
+   {
+    "kind": "bool",
+    "name": "grkTycheTouchDrain"
+   },
+   {
+    "kind": "bool",
+    "name": "grkTycheBlueSphere"
+   },
+   {
+    "kind": "bool",
+    "name": "grkTychePoorRelative"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R858 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R858 LANDED 2026-10-26: commit db4548071b69807c1e78a8ed0f63688beaa 990c1",
+  "  (pushed 08b8283..db45480, census 780 -> 781), THE FINNISH MYTHOS - the D&DG",
+  "  walk round ten, print pp. 57-62: twenty beings (Vainamoinen, Ahto, the Water",
+  "  Dwarf, Ilmarinen, Hiisi, Ilmatar, Kiputytto, Lemminkainen, Kullervo, Tiera,",
+  "  Louhi, Loviatar, Mielikki, the Son of Pohjola, Surma, Tuonetar, Tuoni, Ukko,",
+  "  Untamo, the Air Maiden), 6 heroes, 5 greater, 4 lesser, 3 demigods, 2",
+  "  servants; prefix klv ('fin' burned r312, full-repo scan clean). The headline",
+  "  adjudication: the KULLERVO/TIERA FOLD SWAP - the Termux full.txt interleaved",
+  "  the two blocks; geometry + tsv + prose settled Kullervo = CN, AC 1,",
+  "  S:19(+3,+7), Fighter 19, MU/I 8 each, Thief 10, Bard 5, and Tiera = LG, AC",
+  "  4, S:17(+1,+1), fighter- ranger 9, Bard 5. Flagged eyeballs: Lemminkainen",
+  "  MOVE 12 (both alt voices), Louhi HP 110 (81px token too narrow for 4",
+  "  glyphs), Kiputytto #AT 1 (single 11px glyph), Mielikki psionic pipe -> class",
+  "  I, Tuonetar CH:-6, Hiisi W:10 and Kullervo W:6 pinned, foot-mark size",
+  "  decodes (Lemminkainen 6'2\", Kullervo 6'1\", Tiera 5'4\", Mielikki 5'1\", Tuoni",
+  "  L 10'), triple-slash moves Ahto 18/24/24 and Tuoni 18/18/48, Tuonetar fear",
+  "  radius 30 FEET (djvu feet over tsv inches), Surma AC -2 (dash token),",
+  "  strength brackets Water Dwarf 18(37), Lemminkainen 18(09), Son of Pohjola",
+  "  18(00), Loviatar 16(0,+1); Pohjola-enmity flags on Kullervo, Louhi, Son of",
+  "  Pohjola, Tuonetar. Spec 565fae2736f6d1715893344385b5fbaa, 312 inlines (126",
+  "  consts, 148 bools, 38 table cols), 34 examples, no data files; engine",
+  "  applied 6/already 6 double-run; rverify GREEN, 1034 mutants 0 missed; hyphen",
+  "  scan clean; zero True/False tokens. Engine lesson: the emitted header",
+  "  contains ONLY names referenced in header_sections and every const/bool must",
+  "  be referenced EXACTLY ONCE - duplicate refs re-emit and inflate the inline",
+  "  count (engine dies on the mismatch); fixed via an explicit shared exclusion",
+  "  set + walk_names filter in the builder. NEXT: the D&DG walk continues from",
+  "  the Greek mythos (print pp. 63-74, the next open box) - WAIT FOR GO."
+ ],
+ "inline_count": 332
+}
