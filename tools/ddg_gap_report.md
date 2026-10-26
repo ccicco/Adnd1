@@ -18,7 +18,7 @@ print p. 6; p132 is print 131).
 - [x] **Finnish mythos** (pp. 57-62)
 - [x] **Greek mythos** (pp. 63-74)
 - [x] **Indian mythos** (pp. 75-80)
-- [ ] **Japanese mythos** (pp. 81-85)
+- [x] **Japanese mythos** (pp. 81-85)
 - [ ] **Melnibonean mythos** (pp. 86-95)
 - [ ] **Nehwon mythos** (pp. 96-104)
 - [ ] **Nonhumans' Deities** (pp. 105-112)

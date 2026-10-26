@@ -24878,6 +24878,34 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   ever referenced a bool in an example). Engine lesson: the R859 census consts
   needed bare first-words in the section mapper (In, Half) - the camel regex
   stops at the second cap. NEXT: WAIT FOR GO. ## Knowledge maintenance
+- R860 LANDED 2026-10-26: commit a4690e27d272601c4287c3486ab08958feed9a99
+(pushed 57b84ae..a4690e2, census 782 -> 783), THE INDIAN MYTHOS - the D&DG
+walk round twelve, print pp. 75-80: eighteen beings (Indra, the Elephant of
+Indra, Agni, Kali, Karttikeya, the Peacock of Karttikeya, Lakshmi, the
+Marut, Ratri, Rudra, Surya, Tvashtri, Ushas, Varuna, Vishnu, Garuda, Yama,
+the Water Buffalo of Yama), 6 greater, 3 lesser, 4 demigods, 5 monsters, no
+heroes, no titans; prefix idn ('ind' burned: six bare hits in
+MonsterRegistry.cpp; idn scanned clean repo-wide, the klv/fin precedent).
+The headline adjudication: the PSIONIC THREE-PIPE CATCH - the chocr char
+geometry at 600dpi (single pipe w10, V w36, VI w49, III w47) settles Indra
+TI! w47 = class III and Kali I(9)I(10)I(10) = III (the Termux voice read 11l
+and 1Nl, both three glyphs); I Agni, Tvashtri, Vishnu; V Ratri, Rudra, Yama;
+VI Karttikeya, Lakshmi, Surya, Ushas, Varuna. The FRACTION FINGERPRINT rides
+again: Ushas (514) = 5 1/2 foot = 66 and Varuna (614) = 6 1/2 foot = 78, the
+small-1 w24 + low-4 w40 clusters. The SURYA AC CATCH: chocr reads -3 where
+the Termux voice printed only the bare dash. Flagged odd prints pinned as
+printed: Indra AC em-dash -12, Kali move 27 without a slash, Kali W:5 and MR
+39%, the Marut move 9 apostrophe, the Buffalo L 12 inches at the shoulders
+(the one true-inch cell), Yama MR 25 percent with the 100 percent robes.
+Conventions: Agni/Yama MU/I See below -> 99/99 (the egp Isis precedent);
+paladin pairs Surya 16, Varuna 14, Vishnu 17; the Kali double in-each (C/D
+10 and MU/I 15). Spec 897b1742f51ca43d8c580317b9b9aa61, 66814 bytes; 241
+inlines (105 consts, 98 bools, 38 table cols), 21 examples, no data files;
+engine applied 6/already 6 double-run; rverify GREEN, 887 mutants 0 missed;
+hyphen scan clean; zero True/False tokens. Engine lesson: the R859
+section-mapper bare first-words (In, Half) carried over; the IA voices live
+in the repo extract plus the archive.org derivative stream (chocr + djvu
+fetched per round). NEXT: WAIT FOR GO.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

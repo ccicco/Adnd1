@@ -1,0 +1,2185 @@
+{
+ "round": 861,
+ "prefix": "jpn",
+ "title": "the Japanese mythos",
+ "header_file": "rules/jpn.h",
+ "audit_file": "rules/audits/r861_batch.h",
+ "audit_label": "R861 Japanese mythos audit",
+ "audit_comment": "THE JAPANESE MYTHOS - the D&DG walk round thirteen, print pp. 81-85. The headline adjudication: the DIGIT-SPLIT calibration - a narrow printed 1 splits into 1 and 7 fragments in the chocr char geometry at 600dpi: the Kishijoten hit points read 31717 and decode as 311, the Kishijoten attack count reads 17 and decodes as 1, the Ebisu hit points read 3173 and decode as 313, and the Hachiman assassin line reads 175th and decodes as 15th. The fraction fingerprint rides again: five X 1/2 foot size cells - Ama-Tsu-Mara 78, Daikoku 66, Ebisu 66, Hachiman 78, Susanowo 78. The EBISU PLANE CATCH: the chocr reads the Seven Heavens where the merged-column voice said Prime Material. The AMATERASU WRAP-LINE CATCH: the printed MU/I 20th level in each wrap line restores the illusionist 20 the merged voice dropped. The Amaterasu Infinite move pins as the -1 sentinel (the R857 Ptah precedent); the Susanowo 12/36/48 triple slash encodes Move 12 MoveAlt 36 with the 48 in the col comment (the klv Ahto precedent); the two hero rows print a bare SIZE: M with no height, pinned as 0 (Yamamoto Date, Yoshi-iye). The MONK/BARD in-each cells are new this round: the Amaterasu 15, Oh-Kuni-Nushi 10 and Yoshi-iye 5 pairs carry the flag. The flagged odd prints pinned as printed: the Hachiman 28/21 and Oh-Kuni-Nushi 15/12 descending move pairs, Tsukiyomi 12/21, and the Raiko 29 and Yoshi-iye 19 moves without a slash.",
+ "census_before": 783,
+ "include_after": "#include \"rules/idn.h\"  // R860: the Indian mythos",
+ "include_comment": "the Japanese mythos",
+ "audit_anchor": "#include \"rules/audits/r860_batch.h\"  // R860: R860 Indian mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Japanese mythos** (pp. 81-85)",
+   "to": "- [x] **Japanese mythos** (pp. 81-85)",
+   "note": "the Japanese mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 13,
+  "open": 11
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Japanese mythos - the D&DG walk round thirteen, print pp. 81-85: thirteen beings from Ama-Tsu-Mara the god of blacksmiths to Yoshi-iye the hero whose arrows pierce rocks, the five greater gods (Amaterasu Omikami, Daikoku, Raiden, Susanowo, Tsukiyomi), the three lesser gods (Ama-Tsu-Mara, Ebisu, Kishijoten), the two demigods (Hachiman, Oh-Kuni-Nushi), and the three heroes (Raiko, Yamamoto Date, Yoshi-iye) across seven plane codes.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 082-086; the second printing) with the column-split tsv dumps; the collation voice: the archive.org 1st-print derivative (deities-demigods-1st-print) - the chocr char-level word geometry at 600dpi plus the djvu.xml word geometry. The adjudications: the digit-split calibration (the narrow 1 splits: Kishijoten 31717 = 311 hp, 17 = 1 attack; Ebisu 3173 = 313 hp; Hachiman 175th = the 15th assassin), the fraction fingerprint (the five X 1/2 cells: Ama-Tsu-Mara 78, Daikoku 66, Ebisu 66, Hachiman 78, Susanowo 78), the Ebisu Seven Heavens plane catch over the merged-voice Prime Material, the Amaterasu MU/I in-each wrap-line catch, the Amaterasu Infinite move -1 sentinel of the Ptah precedent, the Susanowo 12/36/48 triple slash of the Ahto precedent, and the two bare-M hero size rows pinned 0. Flagged odd prints pinned: Hachiman 28/21, Oh-Kuni-Nushi 15/12, Tsukiyomi 12/21, Raiko 29, Yoshi-iye 19."
+ },
+ "consts": [
+  {
+   "name": "jpnRound",
+   "value": 861,
+   "comment": "the Japanese mythos round: the D&DG walk round thirteen, print pp. 81-85"
+  },
+  {
+   "name": "jpnPrintStart",
+   "value": 81,
+   "comment": "the first print page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "jpnPrintEnd",
+   "value": 85,
+   "comment": "the last print page of the mythos"
+  },
+  {
+   "name": "jpnBeingCount",
+   "value": 13,
+   "comment": "the thirteen beings of the Japanese mythos"
+  },
+  {
+   "name": "jpnTableCount",
+   "value": 4,
+   "comment": "the four grids: combat, class, ability, roster"
+  },
+  {
+   "name": "jpnChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "jpnRegistryFloor",
+   "value": 995,
+   "comment": "the registry floor holds: zero registry defs touched this round"
+  },
+  {
+   "name": "jpnCbtRows",
+   "value": 13,
+   "comment": "the combat grid rows (one per being)"
+  },
+  {
+   "name": "jpnClsRows",
+   "value": 13,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "jpnAbiRows",
+   "value": 13,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "jpnRosRows",
+   "value": 13,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "jpnPlaneCount",
+   "value": 7,
+   "comment": "the plane codes: 0 none, 1 Prime Material, 2 Gladsheim, 3 Seven Heavens, 4 Elysium, 5 Limbo, 6 Elemental Air"
+  },
+  {
+   "name": "jpnGreaterCount",
+   "value": 5,
+   "comment": "the greater gods: Amaterasu Omikami, Daikoku, Raiden, Susanowo, Tsukiyomi"
+  },
+  {
+   "name": "jpnLesserCount",
+   "value": 3,
+   "comment": "the lesser gods: Ama-Tsu-Mara, Ebisu, Kishijoten"
+  },
+  {
+   "name": "jpnDemigodCount",
+   "value": 2,
+   "comment": "the two demigods: Hachiman, Oh-Kuni-Nushi"
+  },
+  {
+   "name": "jpnHeroCount",
+   "value": 3,
+   "comment": "the three heroes: Raiko, Yamamoto Date, Yoshi-iye"
+  },
+  {
+   "name": "jpnInEachCount",
+   "value": 8,
+   "comment": "the in-each flags: Amaterasu MU/I 20 and M/B 15, Daikoku MU/I 12, Kishijoten MU/I 20, Oh-Kuni-Nushi M/B 10, Raiden MU/I 15, Susanowo C/D 10, Tsukiyomi MU/I 15, Yoshi-iye M/B 5"
+  },
+  {
+   "name": "jpnEnmityCount",
+   "value": 0,
+   "comment": "no enmity flags printed this round"
+  },
+  {
+   "name": "jpnPaladinCount",
+   "value": 2,
+   "comment": "the paladin pairs: Ebisu 10, Yamamoto Date 15"
+  },
+  {
+   "name": "jpnPsiClassKinds",
+   "value": 4,
+   "comment": "the psionic classes: I Amaterasu, Ebisu, Hachiman; II Kishijoten; V Ama-Tsu-Mara, Oh-Kuni-Nushi, Raiden, Susanowo; VI Daikoku, Tsukiyomi"
+  },
+  {
+   "name": "jpnHalfFootCount",
+   "value": 5,
+   "comment": "the five X 1/2 foot size cells: Ama-Tsu-Mara 78, Daikoku 66, Ebisu 66, Hachiman 78, Susanowo 78"
+  },
+  {
+   "name": "jpnArtifactCount",
+   "value": 0,
+   "comment": "no artifacts this round"
+  },
+  {
+   "name": "jpnAmaTsuAxeDamage",
+   "value": 45,
+   "comment": "the double-edged axe does 45 points of damage"
+  },
+  {
+   "name": "jpnAmaTsuAxeFeet",
+   "value": 12,
+   "comment": "the double-edged axe is 12 feet long"
+  },
+  {
+   "name": "jpnAmaTsuBlessingPct",
+   "value": 2,
+   "comment": "the 2 percent chance a weapon gains the +4 blessing"
+  },
+  {
+   "name": "jpnAmaTsuWeaponWeek",
+   "value": 1,
+   "comment": "Ama-Tsu-Mara makes any magical weapon in one week"
+  },
+  {
+   "name": "jpnAmaterasuFistDamageHi",
+   "value": 100,
+   "comment": "her fist does 1 to 100 points of damage"
+  },
+  {
+   "name": "jpnAmaterasuPolymorphSavePenalty",
+   "value": 8,
+   "comment": "the polymorph touch saves at minus 8"
+  },
+  {
+   "name": "jpnDaikokuMalletDamage",
+   "value": 20,
+   "comment": "the wooden mallet does 20 points of damage"
+  },
+  {
+   "name": "jpnDaikokuMalletShrinkPct",
+   "value": 50,
+   "comment": "the mallet shrinks a victim to half size"
+  },
+  {
+   "name": "jpnEbisuStaffDamageHi",
+   "value": 30,
+   "comment": "the staff of striking does 3 to 30 points of damage"
+  },
+  {
+   "name": "jpnHachimanDragonRevertHours",
+   "value": 48,
+   "comment": "the red dragon form reverts after 48 hours"
+  },
+  {
+   "name": "jpnHachimanDragonRounds",
+   "value": 100,
+   "comment": "the dragon can fight for up to 100 melee rounds"
+  },
+  {
+   "name": "jpnHachimanSwordDamageHi",
+   "value": 40,
+   "comment": "the two-handed sword does 4 to 40 points of damage"
+  },
+  {
+   "name": "jpnHachimanOpenHandDamageHi",
+   "value": 20,
+   "comment": "the open hand does 5 to 20 points of damage"
+  },
+  {
+   "name": "jpnKishijotenLuckPct",
+   "value": 2,
+   "comment": "the 2 percent chance she favors a character with luck"
+  },
+  {
+   "name": "jpnOhKuniSwordDamageHi",
+   "value": 30,
+   "comment": "the red two-handed sword does 3 to 30 points of damage"
+  },
+  {
+   "name": "jpnOhKuniSwordPlus",
+   "value": 8,
+   "comment": "the red two-handed sword damage bonus"
+  },
+  {
+   "name": "jpnRaidenTalonDamageHi",
+   "value": 24,
+   "comment": "the scaled skin talons do 2 to 24 points of damage"
+  },
+  {
+   "name": "jpnRaidenBoltDamage",
+   "value": 25,
+   "comment": "the lightning bolts do 25 points of damage"
+  },
+  {
+   "name": "jpnRaidenMacePlus",
+   "value": 3,
+   "comment": "the jet black mace bonus"
+  },
+  {
+   "name": "jpnRaidenMaceDamageHi",
+   "value": 20,
+   "comment": "the mace does 2 to 20 points of damage"
+  },
+  {
+   "name": "jpnRaidenSplintPlus",
+   "value": 3,
+   "comment": "the black splint mail bonus"
+  },
+  {
+   "name": "jpnRaidenShieldPlus",
+   "value": 4,
+   "comment": "the shield bonus"
+  },
+  {
+   "name": "jpnRaidenShieldWeaponStops",
+   "value": 1,
+   "comment": "the shield stops one weapon per round"
+  },
+  {
+   "name": "jpnRaidenSlayingArrows",
+   "value": 10,
+   "comment": "the ten arrows of slaying mortals"
+  },
+  {
+   "name": "jpnRaikoLongbowMultiplier",
+   "value": 2,
+   "comment": "the longbow shoots double distance and damage"
+  },
+  {
+   "name": "jpnSusanowoBoltDamage",
+   "value": 30,
+   "comment": "the lightning bolts do 30 points of damage"
+  },
+  {
+   "name": "jpnSusanowoElementalsLo",
+   "value": 1,
+   "comment": "the elemental summons run 1 to 10"
+  },
+  {
+   "name": "jpnSusanowoElementalsHi",
+   "value": 10,
+   "comment": "the air and water elemental summon ceiling"
+  },
+  {
+   "name": "jpnSusanowoFlightLossDays",
+   "value": 7,
+   "comment": "the flight removal lasts one week with no save"
+  },
+  {
+   "name": "jpnSusanowoSplintDamage",
+   "value": 20,
+   "comment": "the yellow splint mail heat blasts do 20 points of damage"
+  },
+  {
+   "name": "jpnSusanowoSplintBlastFeet",
+   "value": 10,
+   "comment": "the heat blast radius in feet"
+  },
+  {
+   "name": "jpnSusanowoSwordDamageHi",
+   "value": 30,
+   "comment": "the yellow sword does 3 to 30 points of damage"
+  },
+  {
+   "name": "jpnTsukiyomiFlyingSummonsPerDay",
+   "value": 5,
+   "comment": "the flying creature summons per day"
+  },
+  {
+   "name": "jpnTsukiyomiPikeDamage",
+   "value": 40,
+   "comment": "the unbreakable pike does 40 points of damage"
+  },
+  {
+   "name": "jpnYamamotoDisguiseLevel",
+   "value": 11,
+   "comment": "the disguise skill of an 11th level assassin"
+  }
+ ],
+ "bools": [
+  {
+   "name": "jpnShintoNatureLove",
+   "value": true,
+   "comment": "the way of the gods is a deep love of the workings of nature"
+  },
+  {
+   "name": "jpnTemplesTreesGardens",
+   "value": true,
+   "comment": "the temples are built around living trees and gardens"
+  },
+  {
+   "name": "jpnMaleFemaleClerics",
+   "value": true,
+   "comment": "both male and female clerics serve the pantheon"
+  },
+  {
+   "name": "jpnEightMillionKami",
+   "value": true,
+   "comment": "the Shinto religion worships the eight million kami"
+  },
+  {
+   "name": "jpnNoTempleImages",
+   "value": true,
+   "comment": "the temples hold no images of the gods"
+  },
+  {
+   "name": "jpnShrinesFaceSouthEast",
+   "value": true,
+   "comment": "the shrines face south or east"
+  },
+  {
+   "name": "jpnNeverNorthWest",
+   "value": true,
+   "comment": "no shrine ever faces north or west"
+  },
+  {
+   "name": "jpnToriiGateways",
+   "value": true,
+   "comment": "the torii gateways mark the shrine approaches"
+  },
+  {
+   "name": "jpnThreeHolySymbols",
+   "value": true,
+   "comment": "the three holy symbols: the mirror, the sword, the gemstones"
+  },
+  {
+   "name": "jpnPunishmentStripsAbility",
+   "value": true,
+   "comment": "the punishment of the gods strips ability points"
+  },
+  {
+   "name": "jpnAbilityEarnedBack",
+   "value": true,
+   "comment": "the stripped ability points are earned back with service"
+  },
+  {
+   "name": "jpnKamiUniversalConcept",
+   "value": true,
+   "comment": "the kami are a universal concept of spirits"
+  },
+  {
+   "name": "jpnKamiMaterializeDruid",
+   "value": true,
+   "comment": "the kami materialize as a druid or illusionist when the place is threatened"
+  },
+  {
+   "name": "jpnAmaTsuDancingSwords",
+   "value": true,
+   "comment": "the smith god makes the dancing swords"
+  },
+  {
+   "name": "jpnAmaTsuAxeSlaysFire",
+   "value": true,
+   "comment": "the axe slays any fire-type creature on contact"
+  },
+  {
+   "name": "jpnAmaterasuMotherOfPantheon",
+   "value": true,
+   "comment": "the mother of the Japanese pantheon"
+  },
+  {
+   "name": "jpnAmaterasuTrinity",
+   "value": true,
+   "comment": "the trinity with Susanowo and Tsukiyomi"
+  },
+  {
+   "name": "jpnAmaterasuWeaponsToBirds",
+   "value": true,
+   "comment": "the weapons hurled at her turn into small birds"
+  },
+  {
+   "name": "jpnAmaterasuContinualLight",
+   "value": true,
+   "comment": "she radiates continual light"
+  },
+  {
+   "name": "jpnDaikokuPatronFarmers",
+   "value": true,
+   "comment": "the patron of farmers"
+  },
+  {
+   "name": "jpnDaikokuWeatherControl",
+   "value": true,
+   "comment": "he controls the weather at will"
+  },
+  {
+   "name": "jpnDaikokuGrowthControl",
+   "value": true,
+   "comment": "he controls plant and animal growth"
+  },
+  {
+   "name": "jpnDaikokuEtherealWanderer",
+   "value": true,
+   "comment": "he wanders the Ethereal Plane"
+  },
+  {
+   "name": "jpnDaikokuWealthReward",
+   "value": true,
+   "comment": "the sacrificed wealth is rewarded to the descendants"
+  },
+  {
+   "name": "jpnDaikokuNegatesMiscMagic",
+   "value": true,
+   "comment": "the mallet negates miscellaneous magic items"
+  },
+  {
+   "name": "jpnDaikokuMalletSafety",
+   "value": true,
+   "comment": "the mallet transports its master to safety"
+  },
+  {
+   "name": "jpnEbisuElderlyMale",
+   "value": true,
+   "comment": "he appears as an elderly male"
+  },
+  {
+   "name": "jpnEbisuRewardsHardWorkers",
+   "value": true,
+   "comment": "he rewards those who work hard"
+  },
+  {
+   "name": "jpnEbisuAlwaysSaves",
+   "value": true,
+   "comment": "he always makes his saving throws"
+  },
+  {
+   "name": "jpnEbisuAttackersHalfDamage",
+   "value": true,
+   "comment": "his attackers take half damage back"
+  },
+  {
+   "name": "jpnEbisuMissEveryOtherHit",
+   "value": true,
+   "comment": "his attackers miss every other hit"
+  },
+  {
+   "name": "jpnEbisuPaladin",
+   "value": true,
+   "comment": "the 10th level paladin pair"
+  },
+  {
+   "name": "jpnHachimanShapeChange",
+   "value": true,
+   "comment": "he shape changes at will"
+  },
+  {
+   "name": "jpnHachimanImmuneLowSpells",
+   "value": true,
+   "comment": "immune to spells of 7th level and less"
+  },
+  {
+   "name": "jpnHachimanImmuneIllusions",
+   "value": true,
+   "comment": "immune to illusions"
+  },
+  {
+   "name": "jpnHachimanThrowingKnifeDragon",
+   "value": true,
+   "comment": "the throwing knife turns into an ancient red dragon"
+  },
+  {
+   "name": "jpnHachimanSwordOnlyHeLifts",
+   "value": true,
+   "comment": "the two-handed sword that only he can lift"
+  },
+  {
+   "name": "jpnHachimanSwordOfSharpness",
+   "value": true,
+   "comment": "the sword acts as a sword of sharpness"
+  },
+  {
+   "name": "jpnKishijotenHumanForm",
+   "value": true,
+   "comment": "she takes human form when struggles involve mortals"
+  },
+  {
+   "name": "jpnKishijotenShapeChange",
+   "value": true,
+   "comment": "she shape changes at will"
+  },
+  {
+   "name": "jpnKishijotenAlwaysSaves",
+   "value": true,
+   "comment": "she always makes her saving throws"
+  },
+  {
+   "name": "jpnKishijotenMonthlyGoodSummon",
+   "value": true,
+   "comment": "she summons one good creature once a month"
+  },
+  {
+   "name": "jpnKishijotenSummonFreeWill",
+   "value": true,
+   "comment": "the summoned creature has free will"
+  },
+  {
+   "name": "jpnKishijotenNeverFights",
+   "value": true,
+   "comment": "she never fights herself"
+  },
+  {
+   "name": "jpnOhKuniLandMaster",
+   "value": true,
+   "comment": "the Land Master can converse with, heal and grow natural creatures"
+  },
+  {
+   "name": "jpnOhKuniGroundSpeaks",
+   "value": true,
+   "comment": "the ground speaks to him of who passed and what is hidden"
+  },
+  {
+   "name": "jpnOhKuniClericsHeroicActs",
+   "value": true,
+   "comment": "his clerics need heroic acts to gain each level"
+  },
+  {
+   "name": "jpnRaidenScaledSkin",
+   "value": true,
+   "comment": "the scaled skin with the 2 to 24 talons"
+  },
+  {
+   "name": "jpnRaidenShapeChange",
+   "value": true,
+   "comment": "he shape changes at will"
+  },
+  {
+   "name": "jpnRaidenWeatherControl",
+   "value": true,
+   "comment": "he controls the weather at will"
+  },
+  {
+   "name": "jpnRaidenMaceDisenchants",
+   "value": true,
+   "comment": "the mace disenchants weapons it strikes"
+  },
+  {
+   "name": "jpnRaidenWindStormBlocksMissiles",
+   "value": true,
+   "comment": "the wind storm blocks missile fire"
+  },
+  {
+   "name": "jpnRaidenAuraNegatesSpells",
+   "value": true,
+   "comment": "the shadowy aura negates magic-user spells of 8th level and less"
+  },
+  {
+   "name": "jpnRaidenDrumsOfPanic",
+   "value": true,
+   "comment": "the drums of panic at double strength"
+  },
+  {
+   "name": "jpnRaidenFletcherPatron",
+   "value": true,
+   "comment": "the patron of fletchers"
+  },
+  {
+   "name": "jpnRaidenArrowsUndetectable",
+   "value": true,
+   "comment": "the arrows of slaying mortals are undetectable"
+  },
+  {
+   "name": "jpnRaikoFavoredOfGods",
+   "value": true,
+   "comment": "the hero favored of the gods"
+  },
+  {
+   "name": "jpnRaikoEnchantedMonsterFighter",
+   "value": true,
+   "comment": "the fighter of enchanted monsters"
+  },
+  {
+   "name": "jpnRaikoGreaterEndurance",
+   "value": true,
+   "comment": "the greater endurance and speed"
+  },
+  {
+   "name": "jpnRaikoSwifterSword",
+   "value": true,
+   "comment": "the magically swifter sword"
+  },
+  {
+   "name": "jpnRaikoAkaYorimitsu",
+   "value": true,
+   "comment": "also known as Yorimitsu"
+  },
+  {
+   "name": "jpnSusanowoBearded",
+   "value": true,
+   "comment": "the bearded god"
+  },
+  {
+   "name": "jpnSusanowoThunderCloud",
+   "value": true,
+   "comment": "the thunder cloud follows him"
+  },
+  {
+   "name": "jpnSusanowoShapeChange",
+   "value": true,
+   "comment": "he shape changes at will"
+  },
+  {
+   "name": "jpnSusanowoRemovesFlight",
+   "value": true,
+   "comment": "he removes flight for one week with no save"
+  },
+  {
+   "name": "jpnSusanowoSwordDeflects",
+   "value": true,
+   "comment": "the yellow sword deflects blows to the nearest enemy"
+  },
+  {
+   "name": "jpnSusanowoFullMrInWater",
+   "value": true,
+   "comment": "his magic resistance is 100 percent in water"
+  },
+  {
+   "name": "jpnSusanowoSeaCreaturesShield",
+   "value": true,
+   "comment": "the sea creatures shield him in the water"
+  },
+  {
+   "name": "jpnTsukiyomiLightBlueSkin",
+   "value": true,
+   "comment": "the light blue skin"
+  },
+  {
+   "name": "jpnTsukiyomiShapeChange",
+   "value": true,
+   "comment": "he shape changes at will"
+  },
+  {
+   "name": "jpnTsukiyomiSummonFlying",
+   "value": true,
+   "comment": "he summons flying creatures five times a day"
+  },
+  {
+   "name": "jpnTsukiyomiObjectToHand",
+   "value": true,
+   "comment": "he summons any object seen to his hand with a magic save"
+  },
+  {
+   "name": "jpnTsukiyomiPikeUnbreakable",
+   "value": true,
+   "comment": "the pike is unbreakable"
+  },
+  {
+   "name": "jpnTsukiyomiImmunePoisonPetrif",
+   "value": true,
+   "comment": "immune to poison and petrification"
+  },
+  {
+   "name": "jpnTsukiyomiImmuneMagicJar",
+   "value": true,
+   "comment": "immune to the magic jar"
+  },
+  {
+   "name": "jpnYamamotoEmperorSon",
+   "value": true,
+   "comment": "the son of the emperor"
+  },
+  {
+   "name": "jpnYamamotoDisguiseSkill",
+   "value": true,
+   "comment": "the disguise skill of an 11th level assassin"
+  },
+  {
+   "name": "jpnYamamotoDragonSlayingSword",
+   "value": true,
+   "comment": "the magic sword of dragon slaying"
+  },
+  {
+   "name": "jpnYamamotoSwordSharpness",
+   "value": true,
+   "comment": "the sword acts as a sword of sharpness"
+  },
+  {
+   "name": "jpnYamamotoBladeSpeed",
+   "value": true,
+   "comment": "the speed with any blade"
+  },
+  {
+   "name": "jpnYoshiiyeHachimanAnswers",
+   "value": true,
+   "comment": "Hachiman answers his prayers personally"
+  },
+  {
+   "name": "jpnYoshiiyeMightyAnyWeapon",
+   "value": true,
+   "comment": "mighty with any weapon"
+  },
+  {
+   "name": "jpnYoshiiyeLegendaryBow",
+   "value": true,
+   "comment": "the legendary bow"
+  },
+  {
+   "name": "jpnYoshiiyeArrowsPierceRocks",
+   "value": true,
+   "comment": "the arrows pierce rocks"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "jpnCbt",
+   "count": "jpnCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "jpnCbtAC",
+    "jpnCbtACAlt",
+    "jpnCbtHP",
+    "jpnCbtMove",
+    "jpnCbtMoveAlt",
+    "jpnCbtAtN",
+    "jpnCbtAtD",
+    "jpnCbtMR",
+    "jpnCbtSizeIn"
+   ],
+   "data": [
+    [
+     -4,
+     0,
+     299,
+     12,
+     12,
+     3,
+     2,
+     50,
+     78
+    ],
+    [
+     -7,
+     0,
+     400,
+     -1,
+     0,
+     1,
+     0,
+     75,
+     60
+    ],
+    [
+     2,
+     0,
+     350,
+     9,
+     12,
+     2,
+     0,
+     20,
+     66
+    ],
+    [
+     -5,
+     0,
+     313,
+     9,
+     12,
+     2,
+     0,
+     50,
+     66
+    ],
+    [
+     1,
+     0,
+     300,
+     28,
+     21,
+     2,
+     0,
+     35,
+     78
+    ],
+    [
+     -10,
+     0,
+     311,
+     12,
+     12,
+     1,
+     0,
+     100,
+     60
+    ],
+    [
+     -4,
+     0,
+     200,
+     15,
+     12,
+     2,
+     0,
+     20,
+     72
+    ],
+    [
+     -8,
+     0,
+     337,
+     12,
+     24,
+     2,
+     0,
+     80,
+     84
+    ],
+    [
+     -1,
+     0,
+     180,
+     29,
+     0,
+     2,
+     0,
+     0,
+     72
+    ],
+    [
+     -4,
+     0,
+     400,
+     12,
+     36,
+     2,
+     0,
+     30,
+     78
+    ],
+    [
+     -7,
+     0,
+     400,
+     12,
+     21,
+     3,
+     2,
+     30,
+     84
+    ],
+    [
+     2,
+     0,
+     189,
+     12,
+     0,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     0,
+     109,
+     19,
+     0,
+     3,
+     2,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Kishijoten the minus 10 best, Amaterasu and Tsukiyomi the minus sevens; the three heroes 2 and -1 the worst)",
+    "The range ceiling cells (0 = a single printed armor class; all thirteen read single this round)",
+    "The hit point cells (the three 400s of Amaterasu, Susanowo and Tsukiyomi; down to Yoshi-iye 109; the digit-split decode Kishijoten 311 and Ebisu 313)",
+    "The primary move cells (Amaterasu the Infinite -1 sentinel of the Ptah precedent; the flagged odd prints pinned: Raiko 29 and Yoshi-iye 19 without a slash, Hachiman the 28/21 descending pair)",
+    "The secondary move cells (the Susanowo 12/36 of the printed 12/36/48 triple slash, the 48 in this comment per the klv Ahto precedent; Oh-Kuni-Nushi the flagged 15/12 descending pair, Tsukiyomi 12/21; 0 = the single-printed moves)",
+    "The attack count cells (Ama-Tsu-Mara, Tsukiyomi and Yoshi-iye the 3/2 rows; Kishijoten the digit-split single; 0 = none)",
+    "The attack alternative cells (the three 3/2 slash denominators: Ama-Tsu-Mara, Tsukiyomi, Yoshi-iye)",
+    "The magic resistance cells (Kishijoten the 100 ceiling, Raiden 80, Amaterasu 75; 0 = the printed Standard of the three heroes)",
+    "The size cells in inches (the five pixel-verified X 1/2 foot fractions: Ama-Tsu-Mara 78, Daikoku 66, Ebisu 66, Hachiman 78, Susanowo 78; the two bare M hero rows print no height, 0: Yamamoto Date, Yoshi-iye)"
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "jpnCls",
+   "count": "jpnClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "jpnClsCleric",
+    "jpnClsDruid",
+    "jpnClsFighterLo",
+    "jpnClsFighterHi",
+    "jpnClsRanger",
+    "jpnClsMagUser",
+    "jpnClsIllus",
+    "jpnClsThief",
+    "jpnClsAssassin",
+    "jpnClsMonk",
+    "jpnClsBard"
+   ],
+   "data": [
+    [
+     10,
+     0,
+     12,
+     0,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     8
+    ],
+    [
+     20,
+     14,
+     0,
+     0,
+     0,
+     20,
+     20,
+     0,
+     0,
+     15,
+     15
+    ],
+    [
+     10,
+     14,
+     12,
+     0,
+     0,
+     12,
+     12,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     30,
+     0,
+     10,
+     10,
+     0,
+     25,
+     0,
+     0,
+     0,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     20,
+     0,
+     0,
+     0,
+     15,
+     14,
+     0
+    ],
+    [
+     25,
+     0,
+     0,
+     0,
+     0,
+     20,
+     20,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     18,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     10,
+     10
+    ],
+    [
+     15,
+     0,
+     13,
+     0,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     18,
+     0,
+     0,
+     0,
+     12,
+     15,
+     0
+    ],
+    [
+     10,
+     10,
+     0,
+     0,
+     13,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     0,
+     0,
+     12,
+     15,
+     15,
+     0,
+     15,
+     0,
+     10
+    ],
+    [
+     0,
+     0,
+     15,
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     13,
+     0,
+     0,
+     0,
+     0,
+     5,
+     5
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (Ebisu the 30th level ceiling, Tsukiyomi 20, Amaterasu 20; Hachiman, Oh-Kuni-Nushi and the three heroes Nil)",
+    "The druid level cells (Amaterasu and Daikoku the printed 14th druid pairs; Susanowo the 10 in-each pair)",
+    "The lower fighter level cells (the two paladin pairs: Ebisu 10, Yamamoto Date 15; the plain fighters Ama-Tsu-Mara 12, Daikoku 12, Oh-Kuni-Nushi 18, Raiden 13)",
+    "The upper fighter level cells (the paladin hi cells; all other fighters single-printed, 0)",
+    "The ranger level cells (the Nth level ranger prints on the FIGHTER lines: Hachiman 20, Raiko 18, Susanowo 13, Tsukiyomi 12, Yoshi-iye 13)",
+    "The magic-user level cells (Ama-Tsu-Mara the printed 20th level magic-user single; the MU/I in-each pairs: Amaterasu 20, Daikoku 12, Kishijoten 20, Raiden 15, Tsukiyomi 15)",
+    "The illusionist level cells (the in-each mirrors; 0 = the named magic-user single prints)",
+    "The thief level cells (none printed this round)",
+    "The assassin level cells (Hachiman the digit-split 15th, Raiko 12, Tsukiyomi 15)",
+    "The monk level cells (the MONK/BARD in-each pairs new this round: Amaterasu 15, Oh-Kuni-Nushi 10, Yoshi-iye 5; Hachiman the printed 14th monk; Raiko 15)",
+    "The bard level cells (the in-each mirrors of Amaterasu, Oh-Kuni-Nushi and Yoshi-iye; the named bard prints: Ama-Tsu-Mara 8, Daikoku 10, Ebisu 10, Kishijoten 15, Tsukiyomi 10)"
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "jpnAbi",
+   "count": "jpnAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "jpnAbiStr",
+    "jpnAbiStrHit",
+    "jpnAbiStrDmg",
+    "jpnAbiInt",
+    "jpnAbiWis",
+    "jpnAbiDex",
+    "jpnAbiCon",
+    "jpnAbiCha",
+    "jpnAbiPsi"
+   ],
+   "data": [
+    [
+     25,
+     7,
+     14,
+     24,
+     23,
+     25,
+     22,
+     20,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     25,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     22,
+     4,
+     10,
+     23,
+     25,
+     24,
+     25,
+     20,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     25,
+     25,
+     22,
+     23,
+     24,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     21,
+     17,
+     25,
+     25,
+     21,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     25,
+     25,
+     20,
+     24,
+     25,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     20,
+     10,
+     20,
+     20,
+     20,
+     0
+    ],
+    [
+     24,
+     5,
+     12,
+     22,
+     19,
+     24,
+     24,
+     19,
+     0
+    ],
+    [
+     18,
+     3,
+     6,
+     18,
+     11,
+     19,
+     18,
+     18,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     24,
+     20,
+     25,
+     25,
+     22,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     23,
+     23,
+     25,
+     25,
+     25,
+     0
+    ],
+    [
+     17,
+     1,
+     1,
+     17,
+     11,
+     19,
+     18,
+     17,
+     0
+    ],
+    [
+     18,
+     2,
+     4,
+     17,
+     15,
+     19,
+     19,
+     18,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (the four 25s of Ama-Tsu-Mara, Amaterasu, Susanowo, Tsukiyomi; Raiko the 18(00), Yoshi-iye the 18(89))",
+    "The strength to-hit bonuses (0 = the no-printed-bracket row: Kishijoten)",
+    "The strength damage bonuses (the four 14s; Yamamoto the 1/1 mortal row)",
+    "The intelligence cells (the 25s of Amaterasu, Ebisu, Kishijoten; Hachiman 21)",
+    "The wisdom cells (Amaterasu, Ebisu, Kishijoten the 25s; Oh-Kuni-Nushi the 10)",
+    "The dexterity cells (the 25s of Amaterasu, Hachiman, Susanowo, Tsukiyomi)",
+    "The constitution cells (the 25s of Amaterasu, Hachiman, Susanowo, Tsukiyomi)",
+    "The charisma cells (Amaterasu and Tsukiyomi 25; Kishijoten 25; Yamamoto the 17 mortal row)",
+    "The psionic score cells (0 = every being reads the R849 class table this round; no point scores printed)"
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "jpnRos",
+   "count": "jpnRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "jpnRosOrd",
+    "jpnRosPage",
+    "jpnRosAlign",
+    "jpnRosRank",
+    "jpnRosPsiClass",
+    "jpnRosPlane",
+    "jpnRosDmgFixed",
+    "jpnRosInEach",
+    "jpnRosEnmity"
+   ],
+   "data": [
+    [
+     0,
+     81,
+     4,
+     0,
+     5,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     81,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     2,
+     81,
+     0,
+     1,
+     6,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     3,
+     82,
+     0,
+     0,
+     1,
+     3,
+     1,
+     0,
+     0
+    ],
+    [
+     4,
+     82,
+     2,
+     2,
+     1,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     82,
+     1,
+     0,
+     2,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     6,
+     83,
+     2,
+     2,
+     5,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     83,
+     4,
+     1,
+     5,
+     6,
+     1,
+     1,
+     0
+    ],
+    [
+     8,
+     84,
+     1,
+     3,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     9,
+     84,
+     5,
+     1,
+     5,
+     5,
+     1,
+     1,
+     0
+    ],
+    [
+     10,
+     84,
+     1,
+     1,
+     6,
+     4,
+     1,
+     1,
+     0
+    ],
+    [
+     11,
+     85,
+     0,
+     3,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     12,
+     85,
+     1,
+     3,
+     0,
+     0,
+     0,
+     1,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Ama-Tsu-Mara through Yoshi-iye)",
+    "The print page cells (81-85, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 LG, 1 NG, 2 CG, 3 LN, 4 N, 5 CN, 6 LE, 7 NE, 8 CE - the R852 code scheme)",
+    "The rank cells (0 lesser, 1 greater, 2 demigod, 3 hero - no titans, no monsters this round)",
+    "The psionic class cells (the chocr glyph-width decode at 600dpi: single pipe w10 Amaterasu, Ebisu, Hachiman; II w30 Kishijoten; V w36 Ama-Tsu-Mara, Oh-Kuni-Nushi, Raiden, Susanowo; VI w49 Daikoku, Tsukiyomi; 0 the Nil heroes)",
+    "The plane cells (0 none of the three heroes, 1 Prime Material of Ama-Tsu-Mara, Amaterasu, Daikoku, Kishijoten, 2 Gladsheim of Hachiman and Oh-Kuni-Nushi, 3 the Seven Heavens of Ebisu the pixel catch, 4 Elysium of Tsukiyomi, 5 Limbo of Susanowo, 6 the Elemental Plane of Air of Raiden)",
+    "The fixed-damage flags (1 = the printed numeric damage; 0 = the Raiko by-weapon row and the Yoshi-iye arrow-or-weapon row)",
+    "The in-each flags (the printed Nth level in each cells: Amaterasu MU/I 20 and M/B 15, Daikoku MU/I 12, Kishijoten MU/I 20, Oh-Kuni-Nushi M/B 10, Raiden MU/I 15, Susanowo C/D 10, Tsukiyomi MU/I 15, Yoshi-iye M/B 5 - the MONK/BARD in-each pairs new this round)",
+    "The enmity flags (none printed this round: zero flags)"
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the thirteen beings, the seven plane codes, the two paladins)",
+   "expr": "m['jpnTableCount']() != 4 or m['jpnBeingCount']() != 13 or m['jpnCbtRows']() != 13 or m['jpnClsRows']() != 13 or m['jpnAbiRows']() != 13 or m['jpnRosRows']() != 13 or m['jpnPlaneCount']() != 7 or m['jpnGreaterCount']() != 5 or m['jpnLesserCount']() != 3 or m['jpnDemigodCount']() != 2 or m['jpnHeroCount']() != 3 or m['jpnInEachCount']() != 8 or m['jpnEnmityCount']() != 0 or m['jpnPaladinCount']() != 2 or m['jpnPsiClassKinds']() != 4 or m['jpnHalfFootCount']() != 5 or m['jpnArtifactCount']() != 0 or m['jpnChainCount']() != 0 or m['jpnRegistryFloor']() != 995"
+  },
+  {
+   "note": "the print walk spans pp. 81-85 and the roster ordinals run 0-12 in print order",
+   "expr": "m['jpnPrintStart']() != 81 or m['jpnPrintEnd']() != 85 or m['jpnRosPage'](0) != 81 or m['jpnRosPage'](3) != 82 or m['jpnRosPage'](6) != 83 or m['jpnRosPage'](8) != 84 or m['jpnRosPage'](11) != 85 or m['jpnRosOrd'](0) != 0 or m['jpnRosOrd'](12) != 12"
+  },
+  {
+   "note": "Ama-Tsu-Mara the smith: the 78 fraction cell, the 3/2 attacks, the 45-point axe, the dancing swords",
+   "expr": "m['jpnCbtSizeIn'](0) != 78 or m['jpnCbtAtN'](0) != 3 or m['jpnCbtAtD'](0) != 2 or m['jpnAmaTsuAxeDamage']() != 45 or m['jpnAmaTsuAxeFeet']() != 12 or m['jpnAmaTsuBlessingPct']() != 2 or m['jpnAmaTsuWeaponWeek']() != 1 or m['jpnRosPsiClass'](0) != 5 or m['jpnAbiStr'](0) != 25"
+  },
+  {
+   "note": "Amaterasu the mother: the Infinite -1 sentinel move, the double in-each 20 and 15 pairs, the 1 to 100 fist",
+   "expr": "m['jpnCbtMove'](1) != -1 or m['jpnClsMagUser'](1) != 20 or m['jpnClsIllus'](1) != 20 or m['jpnClsMonk'](1) != 15 or m['jpnClsBard'](1) != 15 or m['jpnRosInEach'](1) != 1 or m['jpnAmaterasuFistDamageHi']() != 100 or m['jpnAmaterasuPolymorphSavePenalty']() != 8 or m['jpnCbtAC'](1) != -7 or m['jpnCbtMR'](1) != 75"
+  },
+  {
+   "note": "Daikoku the farmer patron: the 66 fraction cell, the cleric 10 druid 14 pair, the MU/I 12 in each, the 20-point mallet",
+   "expr": "m['jpnCbtSizeIn'](2) != 66 or m['jpnClsCleric'](2) != 10 or m['jpnClsDruid'](2) != 14 or m['jpnClsMagUser'](2) != 12 or m['jpnClsIllus'](2) != 12 or m['jpnDaikokuMalletDamage']() != 20 or m['jpnDaikokuMalletShrinkPct']() != 50 or m['jpnRosPsiClass'](2) != 6"
+  },
+  {
+   "note": "Ebisu the Seven Heavens catch: the plane 3 pixel read, the paladin 10/10 pair, the 313 digit-split hp",
+   "expr": "m['jpnRosPlane'](3) != 3 or m['jpnClsFighterLo'](3) != 10 or m['jpnClsFighterHi'](3) != 10 or m['jpnCbtHP'](3) != 313 or m['jpnCbtAC'](3) != -5 or m['jpnEbisuStaffDamageHi']() != 30 or m['jpnClsCleric'](3) != 30 or m['jpnClsMagUser'](3) != 25 or m['jpnRosPsiClass'](3) != 1"
+  },
+  {
+   "note": "Hachiman the god of war: the flagged 28/21 move, the 20th ranger, the 15th assassin 14th monk, the 48-hour dragon",
+   "expr": "m['jpnCbtMove'](4) != 28 or m['jpnCbtMoveAlt'](4) != 21 or m['jpnClsRanger'](4) != 20 or m['jpnClsAssassin'](4) != 15 or m['jpnClsMonk'](4) != 14 or m['jpnHachimanDragonRevertHours']() != 48 or m['jpnHachimanDragonRounds']() != 100 or m['jpnHachimanSwordDamageHi']() != 40 or m['jpnRosPlane'](4) != 2"
+  },
+  {
+   "note": "Kishijoten the luck goddess: the minus 10 armor class, the 311 digit-split hp, the single attack, MR 100",
+   "expr": "m['jpnCbtAC'](5) != -10 or m['jpnCbtHP'](5) != 311 or m['jpnCbtAtN'](5) != 1 or m['jpnCbtMR'](5) != 100 or m['jpnKishijotenLuckPct']() != 2 or m['jpnClsBard'](5) != 15 or m['jpnRosPsiClass'](5) != 2 or m['jpnAbiStr'](5) != 15"
+  },
+  {
+   "note": "Oh-Kuni-Nushi the Land Master: the flagged 15/12 move, the 18th fighter, the monk/bard 10 in-each pair",
+   "expr": "m['jpnCbtMove'](6) != 15 or m['jpnCbtMoveAlt'](6) != 12 or m['jpnClsFighterLo'](6) != 18 or m['jpnClsMonk'](6) != 10 or m['jpnClsBard'](6) != 10 or m['jpnRosInEach'](6) != 1 or m['jpnOhKuniSwordPlus']() != 8 or m['jpnOhKuniSwordDamageHi']() != 30 or m['jpnRosPlane'](6) != 2"
+  },
+  {
+   "note": "Raiden the thunder god: the Elemental Air plane, the 25-point bolts, the ten slaying arrows, the +4 shield",
+   "expr": "m['jpnRosPlane'](7) != 6 or m['jpnRaidenBoltDamage']() != 25 or m['jpnRaidenSlayingArrows']() != 10 or m['jpnRaidenShieldPlus']() != 4 or m['jpnRaidenMacePlus']() != 3 or m['jpnRaidenTalonDamageHi']() != 24 or m['jpnCbtAC'](7) != -8 or m['jpnCbtMR'](7) != 80 or m['jpnRosPsiClass'](7) != 5"
+  },
+  {
+   "note": "Raiko the hero: the flagged 29 move, the 18th ranger, by-weapon damage 0, the bare 72 six-footer",
+   "expr": "m['jpnCbtMove'](8) != 29 or m['jpnClsRanger'](8) != 18 or m['jpnRosDmgFixed'](8) != 0 or m['jpnCbtMR'](8) != 0 or m['jpnRaikoLongbowMultiplier']() != 2 or m['jpnRosRank'](8) != 3 or m['jpnClsAssassin'](8) != 12 or m['jpnClsMonk'](8) != 15 or m['jpnRosPlane'](8) != 0"
+  },
+  {
+   "note": "Susanowo the storm: the 12/36 triple-slash with the 48 in the comment, MR 30 or 100 in water, the 7-day flight loss",
+   "expr": "m['jpnCbtMove'](9) != 12 or m['jpnCbtMoveAlt'](9) != 36 or m['jpnCbtMR'](9) != 30 or m['jpnSusanowoFlightLossDays']() != 7 or m['jpnSusanowoBoltDamage']() != 30 or m['jpnSusanowoElementalsHi']() != 10 or m['jpnSusanowoSwordDamageHi']() != 30 or m['jpnRosPlane'](9) != 5 or m['jpnCbtSizeIn'](9) != 78"
+  },
+  {
+   "note": "Tsukiyomi the moon: the Elysium plane, the 3/2 attacks, the MU/I 15 in each, the unbreakable 40-point pike",
+   "expr": "m['jpnRosPlane'](10) != 4 or m['jpnCbtAtN'](10) != 3 or m['jpnCbtAtD'](10) != 2 or m['jpnClsMagUser'](10) != 15 or m['jpnClsIllus'](10) != 15 or m['jpnTsukiyomiPikeDamage']() != 40 or m['jpnTsukiyomiFlyingSummonsPerDay']() != 5 or m['jpnClsBard'](10) != 10 or m['jpnRosPsiClass'](10) != 6"
+  },
+  {
+   "note": "Yamamoto Date the hero: the bare M size 0 row, the paladin 15/15 pair, the 11th level disguise skill",
+   "expr": "m['jpnCbtSizeIn'](11) != 0 or m['jpnClsFighterLo'](11) != 15 or m['jpnClsFighterHi'](11) != 15 or m['jpnYamamotoDisguiseLevel']() != 11 or m['jpnCbtHP'](11) != 189 or m['jpnCbtAC'](11) != 2 or m['jpnRosRank'](11) != 3 or m['jpnRosPsiClass'](11) != 0 or m['jpnRosPlane'](11) != 0"
+  },
+  {
+   "note": "Yoshi-iye the hero: the bare M size 0 row, the flagged 19 move, the monk/bard 5 in-each pair, the arrow-or-weapon damage",
+   "expr": "m['jpnCbtSizeIn'](12) != 0 or m['jpnCbtMove'](12) != 19 or m['jpnClsMonk'](12) != 5 or m['jpnClsBard'](12) != 5 or m['jpnRosInEach'](12) != 1 or m['jpnRosDmgFixed'](12) != 0 or m['jpnClsRanger'](12) != 13 or m['jpnCbtAtN'](12) != 3 or m['jpnCbtHP'](12) != 109"
+  }
+ ],
+ "header_sections": {
+  "the R861 census": [
+   {
+    "kind": "const",
+    "name": "jpnRound"
+   },
+   {
+    "kind": "const",
+    "name": "jpnPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "jpnPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "jpnBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "jpnCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "jpnClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "jpnAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "jpnRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "jpnPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnGreaterCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnLesserCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnDemigodCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnHeroCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnInEachCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnEnmityCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnPaladinCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnPsiClassKinds"
+   },
+   {
+    "kind": "const",
+    "name": "jpnHalfFootCount"
+   },
+   {
+    "kind": "const",
+    "name": "jpnArtifactCount"
+   }
+  ],
+  "the Japanese pantheon doctrine": [
+   {
+    "kind": "bool",
+    "name": "jpnShintoNatureLove"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnTemplesTreesGardens"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnMaleFemaleClerics"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnEightMillionKami"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnNoTempleImages"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnShrinesFaceSouthEast"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnNeverNorthWest"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnToriiGateways"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnThreeHolySymbols"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnPunishmentStripsAbility"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnAbilityEarnedBack"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnKamiUniversalConcept"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnKamiMaterializeDruid"
+   }
+  ],
+  "Ama-Tsu-Mara": [
+   {
+    "kind": "const",
+    "name": "jpnAmaTsuAxeDamage"
+   },
+   {
+    "kind": "const",
+    "name": "jpnAmaTsuAxeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "jpnAmaTsuBlessingPct"
+   },
+   {
+    "kind": "const",
+    "name": "jpnAmaTsuWeaponWeek"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnAmaTsuDancingSwords"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnAmaTsuAxeSlaysFire"
+   }
+  ],
+  "Amaterasu Omikami": [
+   {
+    "kind": "const",
+    "name": "jpnAmaterasuFistDamageHi"
+   },
+   {
+    "kind": "const",
+    "name": "jpnAmaterasuPolymorphSavePenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnAmaterasuMotherOfPantheon"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnAmaterasuTrinity"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnAmaterasuWeaponsToBirds"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnAmaterasuContinualLight"
+   }
+  ],
+  "Daikoku": [
+   {
+    "kind": "const",
+    "name": "jpnDaikokuMalletDamage"
+   },
+   {
+    "kind": "const",
+    "name": "jpnDaikokuMalletShrinkPct"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnDaikokuPatronFarmers"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnDaikokuWeatherControl"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnDaikokuGrowthControl"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnDaikokuEtherealWanderer"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnDaikokuWealthReward"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnDaikokuNegatesMiscMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnDaikokuMalletSafety"
+   }
+  ],
+  "Ebisu": [
+   {
+    "kind": "const",
+    "name": "jpnEbisuStaffDamageHi"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnEbisuElderlyMale"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnEbisuRewardsHardWorkers"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnEbisuAlwaysSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnEbisuAttackersHalfDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnEbisuMissEveryOtherHit"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnEbisuPaladin"
+   }
+  ],
+  "Hachiman": [
+   {
+    "kind": "const",
+    "name": "jpnHachimanDragonRevertHours"
+   },
+   {
+    "kind": "const",
+    "name": "jpnHachimanDragonRounds"
+   },
+   {
+    "kind": "const",
+    "name": "jpnHachimanSwordDamageHi"
+   },
+   {
+    "kind": "const",
+    "name": "jpnHachimanOpenHandDamageHi"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnHachimanShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnHachimanImmuneLowSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnHachimanImmuneIllusions"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnHachimanThrowingKnifeDragon"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnHachimanSwordOnlyHeLifts"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnHachimanSwordOfSharpness"
+   }
+  ],
+  "Kishijoten": [
+   {
+    "kind": "const",
+    "name": "jpnKishijotenLuckPct"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnKishijotenHumanForm"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnKishijotenShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnKishijotenAlwaysSaves"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnKishijotenMonthlyGoodSummon"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnKishijotenSummonFreeWill"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnKishijotenNeverFights"
+   }
+  ],
+  "Oh-Kuni-Nushi": [
+   {
+    "kind": "const",
+    "name": "jpnOhKuniSwordDamageHi"
+   },
+   {
+    "kind": "const",
+    "name": "jpnOhKuniSwordPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnOhKuniLandMaster"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnOhKuniGroundSpeaks"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnOhKuniClericsHeroicActs"
+   }
+  ],
+  "Raiden": [
+   {
+    "kind": "const",
+    "name": "jpnRaidenTalonDamageHi"
+   },
+   {
+    "kind": "const",
+    "name": "jpnRaidenBoltDamage"
+   },
+   {
+    "kind": "const",
+    "name": "jpnRaidenMacePlus"
+   },
+   {
+    "kind": "const",
+    "name": "jpnRaidenMaceDamageHi"
+   },
+   {
+    "kind": "const",
+    "name": "jpnRaidenSplintPlus"
+   },
+   {
+    "kind": "const",
+    "name": "jpnRaidenShieldPlus"
+   },
+   {
+    "kind": "const",
+    "name": "jpnRaidenShieldWeaponStops"
+   },
+   {
+    "kind": "const",
+    "name": "jpnRaidenSlayingArrows"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaidenScaledSkin"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaidenShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaidenWeatherControl"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaidenMaceDisenchants"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaidenWindStormBlocksMissiles"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaidenAuraNegatesSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaidenDrumsOfPanic"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaidenFletcherPatron"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaidenArrowsUndetectable"
+   }
+  ],
+  "Raiko": [
+   {
+    "kind": "const",
+    "name": "jpnRaikoLongbowMultiplier"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaikoFavoredOfGods"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaikoEnchantedMonsterFighter"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaikoGreaterEndurance"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaikoSwifterSword"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnRaikoAkaYorimitsu"
+   }
+  ],
+  "Susanowo": [
+   {
+    "kind": "const",
+    "name": "jpnSusanowoBoltDamage"
+   },
+   {
+    "kind": "const",
+    "name": "jpnSusanowoElementalsLo"
+   },
+   {
+    "kind": "const",
+    "name": "jpnSusanowoElementalsHi"
+   },
+   {
+    "kind": "const",
+    "name": "jpnSusanowoFlightLossDays"
+   },
+   {
+    "kind": "const",
+    "name": "jpnSusanowoSplintDamage"
+   },
+   {
+    "kind": "const",
+    "name": "jpnSusanowoSplintBlastFeet"
+   },
+   {
+    "kind": "const",
+    "name": "jpnSusanowoSwordDamageHi"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnSusanowoBearded"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnSusanowoThunderCloud"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnSusanowoShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnSusanowoRemovesFlight"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnSusanowoSwordDeflects"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnSusanowoFullMrInWater"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnSusanowoSeaCreaturesShield"
+   }
+  ],
+  "Tsukiyomi": [
+   {
+    "kind": "const",
+    "name": "jpnTsukiyomiFlyingSummonsPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "jpnTsukiyomiPikeDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnTsukiyomiLightBlueSkin"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnTsukiyomiShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnTsukiyomiSummonFlying"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnTsukiyomiObjectToHand"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnTsukiyomiPikeUnbreakable"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnTsukiyomiImmunePoisonPetrif"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnTsukiyomiImmuneMagicJar"
+   }
+  ],
+  "Yamamoto Date": [
+   {
+    "kind": "const",
+    "name": "jpnYamamotoDisguiseLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnYamamotoEmperorSon"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnYamamotoDisguiseSkill"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnYamamotoDragonSlayingSword"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnYamamotoSwordSharpness"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnYamamotoBladeSpeed"
+   }
+  ],
+  "Yoshi-iye": [
+   {
+    "kind": "bool",
+    "name": "jpnYoshiiyeHachimanAnswers"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnYoshiiyeMightyAnyWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnYoshiiyeLegendaryBow"
+   },
+   {
+    "kind": "bool",
+    "name": "jpnYoshiiyeArrowsPierceRocks"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R860 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "- R860 LANDED 2026-10-26: commit a4690e27d272601c4287c3486ab08958feed9a99",
+  "(pushed 57b84ae..a4690e2, census 782 -> 783), THE INDIAN MYTHOS - the D&DG",
+  "walk round twelve, print pp. 75-80: eighteen beings (Indra, the Elephant of",
+  "Indra, Agni, Kali, Karttikeya, the Peacock of Karttikeya, Lakshmi, the",
+  "Marut, Ratri, Rudra, Surya, Tvashtri, Ushas, Varuna, Vishnu, Garuda, Yama,",
+  "the Water Buffalo of Yama), 6 greater, 3 lesser, 4 demigods, 5 monsters, no",
+  "heroes, no titans; prefix idn ('ind' burned: six bare hits in",
+  "MonsterRegistry.cpp; idn scanned clean repo-wide, the klv/fin precedent).",
+  "The headline adjudication: the PSIONIC THREE-PIPE CATCH - the chocr char",
+  "geometry at 600dpi (single pipe w10, V w36, VI w49, III w47) settles Indra",
+  "TI! w47 = class III and Kali I(9)I(10)I(10) = III (the Termux voice read 11l",
+  "and 1Nl, both three glyphs); I Agni, Tvashtri, Vishnu; V Ratri, Rudra, Yama;",
+  "VI Karttikeya, Lakshmi, Surya, Ushas, Varuna. The FRACTION FINGERPRINT rides",
+  "again: Ushas (514) = 5 1/2 foot = 66 and Varuna (614) = 6 1/2 foot = 78, the",
+  "small-1 w24 + low-4 w40 clusters. The SURYA AC CATCH: chocr reads -3 where",
+  "the Termux voice printed only the bare dash. Flagged odd prints pinned as",
+  "printed: Indra AC em-dash -12, Kali move 27 without a slash, Kali W:5 and MR",
+  "39%, the Marut move 9 apostrophe, the Buffalo L 12 inches at the shoulders",
+  "(the one true-inch cell), Yama MR 25 percent with the 100 percent robes.",
+  "Conventions: Agni/Yama MU/I See below -> 99/99 (the egp Isis precedent);",
+  "paladin pairs Surya 16, Varuna 14, Vishnu 17; the Kali double in-each (C/D",
+  "10 and MU/I 15). Spec 897b1742f51ca43d8c580317b9b9aa61, 66814 bytes; 241",
+  "inlines (105 consts, 98 bools, 38 table cols), 21 examples, no data files;",
+  "engine applied 6/already 6 double-run; rverify GREEN, 887 mutants 0 missed;",
+  "hyphen scan clean; zero True/False tokens. Engine lesson: the R859",
+  "section-mapper bare first-words (In, Half) carried over; the IA voices live",
+  "in the repo extract plus the archive.org derivative stream (chocr + djvu",
+  "fetched per round). NEXT: WAIT FOR GO."
+ ],
+ "inline_count": 179
+}
