@@ -24722,6 +24722,47 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   R854 rule held first-try). NEXT: the D&DG walk
   continues from the Cthulhu mythos (print pp.
   43-48) - WAIT FOR GO.
+  - R856 LANDED 2026-10-26: commit
+  4852c1baf90d017fbc888e5bba4c3f88a97f4700 (pushed
+  978337d..4852c1b, census 778 -> 779), THE CTHULHU
+  MYTHOS - the D&DG walk round eight, print pp.
+  43-48: fifteen beings (Cthulhu, Azathoth, Cthugha,
+  the Byakhee servants of Hastur, the Flame
+  Creatures, the Deep Ones, Hastur the Unspeakable,
+  the Great Race, Ithaqua the Wind Walker, the Mi-
+  Go, Nyarlathotep the crawling chaos, the
+  Primordial Ones, the Shoggoths, Shub-Niggurath,
+  Yog-Sothoth), the Old Ones lore, and the two
+  artifacts: the Elder Sign and the Necronomicon.
+  THE SHAPE: 168 consts + 124 bools + 4 grids (38
+  table cols - the roster col 9 repurposed as the
+  Shub-Niggurath d6 summon-list flag), 330 inlines,
+  29 examples; header rules/cth.h, prefix cth; audit
+  "R856 Cthulhu mythos audit", rode
+  rules/audits/r856_batch.h. THE PREFIX CATCH: dgh
+  was NOT free - rules/oamonk.h owns dghMonkMinStr,
+  and the OA book burned dgb through dgz; R856 rode
+  the mnemonic prefix cth, verified free repo-wide
+  before authoring. STANDING RULE: the prefix
+  freedom check is a FULL-REPO scan, not just
+  regtest.cpp plus rules/. THE ADJUDICATIONS: the
+  psionic classes by word geometry, the monster
+  psionic point scores (Great Race 280, Mi-Go 90,
+  Primordial One 206), the Mi-Go size (the IA 8 feet
+  against the Termux 8 inches), the layout
+  disentangle of segs 43-48. EYEBALL CELLS
+  (flagged): the Cthulhu charisma (both voices read
+  7, the minus lost - pinned 7), the Cthugha ability
+  line (the Termux fold pinned: I 12, W 18, CH 1),
+  the Azathoth inconceivable and Nyarlathotep
+  Variable size sentinels, the Primordial One 18/12
+  move, the Mi-Go size. ZERO registry defs touched -
+  the floor holds at 995. Spec tools/spec_r856.json,
+  md5 e18b66d0ba51639c60b9506f3b697582 (87,377
+  bytes). rverify double-run GREEN, 862 mutants 0
+  missed; hyphen scan clean; zero True/False tokens.
+  NEXT: the D&DG walk continues from the Egyptian
+  mythos (print pp. 49-56) - WAIT FOR GO.
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,

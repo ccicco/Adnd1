@@ -1,0 +1,105 @@
+-- The Egyptian hieroglyph word list (D&DG print pp. 55-56).
+-- DO NOT hand-edit: written by the R857 Egyptian
+-- mythos splice (spec tools/spec_r857.json); the
+-- egpHieroglyphWordCount const pins the 97 count.
+-- The print order rows of the glyph grid; the word
+-- pictures themselves are unpinnable art, the WORD
+-- labels ride here. The AT cell is flagged (garbled
+-- in both voices); DESTROY confirmed full by the IA.
+ADVANCE
+ALTAR
+ANUBIS
+APEP
+APSHAI
+AT
+BAST
+BEFORE
+BEHOLD
+BLOOD
+BODYGUARD
+BONES
+COME
+CROWN
+CURSE
+DARKNESS
+DAY
+DECAY
+DESTROY
+DOOR
+EARTH
+EAST
+ENTER
+ETERNITY
+EVERY
+EVIL
+FIRE
+GEB
+TO GIVE
+GOD
+GOLD
+GREAT
+HAIL
+HE
+HEAD
+HEAVEN
+HIDDEN
+HIS
+HORIZON
+HORUS
+HOUSE
+I AM
+IN
+IS
+ISIS
+KILLED
+LIFE
+LIVING
+MAGIC
+MAGICAL
+MAGICAL CHARM
+MAGICAL POWERS
+MAKING
+MEN
+MIGHTY
+NEPHTHYS
+NORTH
+NOT
+NOW
+OF
+ON
+OSIRIS
+OVER
+PAIN
+PASSAGE
+PEACE
+PHOENIX
+POWER
+PROTECT
+PTAH
+RA
+RIGHT
+RULE
+SEE
+SEKER
+SET
+SHOOTING
+SHU
+SORROW
+SOUL
+SOUTH
+STRENGTH
+THIS
+TERROR
+THOTH
+UNDER
+VICTORY
+WEAPON
+WEST
+WHAT
+WHEN
+WILL
+WIND
+WITH
+WITHIN
+YESTERDAY
+YOU
