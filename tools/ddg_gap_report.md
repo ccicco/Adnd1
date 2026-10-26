@@ -12,7 +12,7 @@ print p. 6; p132 is print 131).
 - [x] **Babylonian mythos** (pp. 22-25)
 - [x] **Celtic mythos** (pp. 26-31)
 - [x] **Central American mythos** (pp. 32-36)
-- [ ] **Chinese mythos** (pp. 37-42)
+- [x] **Chinese mythos** (pp. 37-42)
 - [ ] **Cthulhu mythos** (pp. 43-48)
 - [ ] **Egyptian mythos** (pp. 49-56)
 - [ ] **Finnish mythos** (pp. 57-62)

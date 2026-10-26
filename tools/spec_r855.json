@@ -1,0 +1,3460 @@
+{
+ "round": 855,
+ "prefix": "dgg",
+ "title": "the Chinese mythos",
+ "header_file": "rules/dgg.h",
+ "audit_file": "rules/audits/r855_batch.h",
+ "audit_label": "R855 Chinese mythos audit",
+ "audit_comment": "THE CHINESE MYTHOS - the D&DG walk round seven, print pp. 37-42: eighteen beings (Shang-Ti, Chao Kung Ming, Chih Sung-Tzu, Chih-Chiang Fyu-Ya, Chung Kuel, Fei Lien and Feng Po the Counts of the Wind, Huan-Ti, Kuan Yin, Lei Kung, Lu Yueh, Ma Yuan, No Cha, Shan Hai Ching, the Spirits of the Air, Tou Mu, Wen Chung, Yen-Wang-Yeh), the celestial bureaucracy doctrine, and the seven devices of the mythos. Zero registry defs touched; the floor holds at 995. The flagged eyeball cells: the Wen Chung hit points (the 2nd-print 213 pinned against the IA 1st-print 273, the Gawaine 112 precedent), the Chih Sung-Tzu size (garbled in both voices, the sentinel pinned), and the Wen Chung 12/21 move (both voices agreeing on an unusual printed slash).",
+ "census_before": 777,
+ "include_after": "#include \"rules/dgf.h\"  // R854: the Central American mythos",
+ "include_comment": "the Chinese mythos",
+ "audit_anchor": "#include \"rules/audits/r854_batch.h\"  // R854: R854 Central American mythos audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **Chinese mythos** (pp. 37-42)",
+   "to": "- [x] **Chinese mythos** (pp. 37-42)",
+   "note": "the Chinese mythos box"
+  }
+ ],
+ "gap_census": {
+  "closed": 7,
+  "open": 17
+ },
+ "regtest": "regtest.cpp",
+ "banner": {
+  "title": "the Chinese mythos - the D&DG walk round seven, print pp. 37-42: eighteen beings from Shang-Ti the head of the Celestial Bureaucracy to Yen-Wang-Yeh the judge of the dead, the two Counts of the Wind, Ma Yuan the killer of gods, the Spirits of the Air, and the seven devices of the mythos across nine planes.",
+  "provenance": "primary ink: the extract/ddg tesseract pass (commit cd645b4, pNNN_full.txt + pNNN_tsv.tsv, print = pdf - 1, pages 038-043; the second printing); the collation voice: the archive.org 1st-print derivative (deities-demigods-1st-print, djvu.txt + djvu.xml word geometry at 600dpi). The adjudications: the psionic classes by word geometry (Chao Kung Ming and Chung Kuel the 27px II words, Chih-Chiang Fyu-Ya the 49px VI, Tou Mu the 29px II against the Termux single I, Shang-Ti the single bar I), the size decodes (Shang-Ti 5 foot 4 from the printed 514 cell and Chao Kung Ming 6 foot 2 from the 612 cell - the R853 foot-mark-misread lesson; Kuan Yin 5 feet and D 12, the IA geometry words against the Termux 72 garble), the Wen Chung hit points (the 2nd-print 213 pinned against the IA 1st-print 273 - the Gawaine 112 precedent, flagged), the Spirits appearing 1-100 (the Termux clean read plus the up-to-100 prose against the IA 17-1700 djvu garble), and the Chih Sung-Tzu size (garbled in both voices, the sentinel pinned, flagged for the physical-copy eyeball)."
+ },
+ "consts": [
+  {
+   "name": "dggRound",
+   "value": 855,
+   "comment": "the Chinese mythos round: the D&DG walk round seven, print pp. 37-42"
+  },
+  {
+   "name": "dggPrintStart",
+   "value": 37,
+   "comment": "the first print page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "dggPrintEnd",
+   "value": 42,
+   "comment": "the last print page"
+  },
+  {
+   "name": "dggBeingCount",
+   "value": 18,
+   "comment": "the eighteen beings of the mythos (Shang-Ti through Yen-Wang-Yeh, the two Counts and the two monster-format listings)"
+  },
+  {
+   "name": "dggTableCount",
+   "value": 4,
+   "comment": "the four grids (combat, class, ability, roster)"
+  },
+  {
+   "name": "dggChainCount",
+   "value": 0,
+   "comment": "no chains this round"
+  },
+  {
+   "name": "dggRegistryFloor",
+   "value": 995,
+   "comment": "zero registry defs touched - the floor holds at 995"
+  },
+  {
+   "name": "dggCbtRows",
+   "value": 18,
+   "comment": "the combat grid rows"
+  },
+  {
+   "name": "dggClsRows",
+   "value": 18,
+   "comment": "the class grid rows"
+  },
+  {
+   "name": "dggAbiRows",
+   "value": 18,
+   "comment": "the ability grid rows"
+  },
+  {
+   "name": "dggRosRows",
+   "value": 18,
+   "comment": "the roster grid rows"
+  },
+  {
+   "name": "dggPlaneCount",
+   "value": 9,
+   "comment": "the nine printed planes: Nirvana, the Elemental Plane of Air, Gehenna, the Seven Heavens, Limbo, Acheron, the Abyss, the Nine Hells, Concordant Opposition"
+  },
+  {
+   "name": "dggPsiClassI",
+   "value": 1,
+   "comment": "the printed psionic class I (Shang-Ti, the single-glyph bar)"
+  },
+  {
+   "name": "dggPsiClassII",
+   "value": 2,
+   "comment": "the printed psionic class II (Chao Kung Ming and Chung Kuel the 27px two-glyph words, Tou Mu the 29px)"
+  },
+  {
+   "name": "dggPsiClassV",
+   "value": 5,
+   "comment": "the printed psionic class V (the two Counts of the Wind)"
+  },
+  {
+   "name": "dggPsiClassVI",
+   "value": 6,
+   "comment": "the printed psionic class VI (ten of the eighteen read the 49-51px two-glyph word)"
+  },
+  {
+   "name": "dggArtifactCount",
+   "value": 7,
+   "comment": "the seven devices of the mythos: the Iron Wand, the Jade Scepter of Defending, the Wind Fire Wheels, the Canon of Changes, the Dancing Sword of Lightning, the Fire Gems, the Giant Black Pearl"
+  },
+  {
+   "name": "dggIronWandRadiusInches",
+   "value": 30,
+   "comment": "the Iron Wand makes all invisible things appear within a 30\" radius"
+  },
+  {
+   "name": "dggIronWandLengthInches",
+   "value": 100,
+   "comment": "the wand grows to a length of 100\" upon command and becomes roughened for easy climbing"
+  },
+  {
+   "name": "dggWindFireWheelCount",
+   "value": 25,
+   "comment": "there are 25 Wind Fire Wheels, handed out by Shang-Ti to the demi-deities and their servants"
+  },
+  {
+   "name": "dggWindFireChargePerHP",
+   "value": 5,
+   "comment": "for every 5 charges expended, one hit point is drawn from the using being"
+  },
+  {
+   "name": "dggCanonLearnHours",
+   "value": 72,
+   "comment": "the Canon of Changes: 72 hours of constant reading to learn the words for any one given thing"
+  },
+  {
+   "name": "dggCanonRecreateHours",
+   "value": 72,
+   "comment": "after uttering them, another 72 hours pass before another creation of even the same thing"
+  },
+  {
+   "name": "dggLightningSwordDamage",
+   "value": 30,
+   "comment": "the Dancing Sword of Lightning shoots one lightning bolt per melee round doing 30 points per strike (saving throw applicable)"
+  },
+  {
+   "name": "dggFireGemDmgLo",
+   "value": 6,
+   "comment": "the Fire Gems shoot flame doing 6-60 points of damage per strike"
+  },
+  {
+   "name": "dggFireGemDmgHi",
+   "value": 60,
+   "comment": "the fire gem damage ceiling"
+  },
+  {
+   "name": "dggFireGemRangeYards",
+   "value": 50,
+   "comment": "the fire gems have a maximum range of 50 yards, firing once per turn"
+  },
+  {
+   "name": "dggFireGemChargesLo",
+   "value": 2,
+   "comment": "each gem has 2-12 charges"
+  },
+  {
+   "name": "dggFireGemChargesHi",
+   "value": 12,
+   "comment": "the fire gem charge ceiling"
+  },
+  {
+   "name": "dggPearlSizeFeet",
+   "value": 3,
+   "comment": "the Giant Black Pearl is a 3 foot sphere"
+  },
+  {
+   "name": "dggPearlRadiusMiles",
+   "value": 1,
+   "comment": "the pearl negates all wind and earth turbulence in a one mile radius"
+  },
+  {
+   "name": "dggShangTiShaftDmgLo",
+   "value": 3,
+   "comment": "Shang-Ti uses a shaft of light as a weapon doing 3-36 points of damage per strike"
+  },
+  {
+   "name": "dggShangTiShaftDmgHi",
+   "value": 36,
+   "comment": "the light shaft damage ceiling"
+  },
+  {
+   "name": "dggChaoSpearDmgLo",
+   "value": 10,
+   "comment": "Chao Kung Ming strikes with a spear of power for 10-60 points of damage"
+  },
+  {
+   "name": "dggChaoSpearDmgHi",
+   "value": 60,
+   "comment": "the spear of power damage ceiling"
+  },
+  {
+   "name": "dggChaoTigerAC",
+   "value": 3,
+   "comment": "his giant flying tiger: AC 3, MV 24\"/24\", HD 11, hp 50, 3 attacks for 1-8/1-8/2-16"
+  },
+  {
+   "name": "dggChaoTigerHD",
+   "value": 11,
+   "comment": "the flying tiger hit dice"
+  },
+  {
+   "name": "dggChaoTigerHP",
+   "value": 50,
+   "comment": "the flying tiger hit points"
+  },
+  {
+   "name": "dggChaoTigerAtN",
+   "value": 3,
+   "comment": "the flying tiger attacks"
+  },
+  {
+   "name": "dggChaoScaleMailPlus",
+   "value": 3,
+   "comment": "his special +3 scale mail does not interfere with the use of his monk abilities"
+  },
+  {
+   "name": "dggChihSungHelmSpeedInches",
+   "value": 48,
+   "comment": "the blue war helm gives constant haste and flying at twice his own speed (48\")"
+  },
+  {
+   "name": "dggChihSungCloudSpeedInches",
+   "value": 24,
+   "comment": "he prefers to ride a storm cloud that travels at 24\""
+  },
+  {
+   "name": "dggChihSungCloudBeings",
+   "value": 10,
+   "comment": "the storm cloud can support up to 10 beings of any size"
+  },
+  {
+   "name": "dggChihSungMaceDmgLo",
+   "value": 3,
+   "comment": "his +3 mace strikes for 3-30 points per hit"
+  },
+  {
+   "name": "dggChihSungMaceDmgHi",
+   "value": 30,
+   "comment": "the mace damage ceiling"
+  },
+  {
+   "name": "dggChihSungScaleMailPlus",
+   "value": 3,
+   "comment": "his +3 scale mail appears to be badly rusted"
+  },
+  {
+   "name": "dggChihChiangArrowDmgLo",
+   "value": 2,
+   "comment": "his arrows inflict 2-20 points of damage when they hit"
+  },
+  {
+   "name": "dggChihChiangArrowDmgHi",
+   "value": 20,
+   "comment": "the arrow damage ceiling"
+  },
+  {
+   "name": "dggChihChiangSwordDmgLo",
+   "value": 2,
+   "comment": "his sword strikes for 2-24 points in hand-to-hand combat"
+  },
+  {
+   "name": "dggChihChiangSwordDmgHi",
+   "value": 24,
+   "comment": "the sword damage ceiling"
+  },
+  {
+   "name": "dggChihChiangPlatePlus",
+   "value": 4,
+   "comment": "he wears green +4 plate mail in battle"
+  },
+  {
+   "name": "dggChihChiangWingSpanFeet",
+   "value": 40,
+   "comment": "his leathery wings have a span of 40 feet"
+  },
+  {
+   "name": "dggChungKuelSwordPlus",
+   "value": 3,
+   "comment": "Chung Kuel carries a +3 sword of sharpness at all times"
+  },
+  {
+   "name": "dggWindCountsPlatePlus",
+   "value": 2,
+   "comment": "Fei Lien and Feng Po wear +2 plate mail into battle"
+  },
+  {
+   "name": "dggWindCountsSwordDmgLo",
+   "value": 2,
+   "comment": "their swords strike for 2-20"
+  },
+  {
+   "name": "dggWindCountsSwordDmgHi",
+   "value": 20,
+   "comment": "the sword damage ceiling"
+  },
+  {
+   "name": "dggWindCountsElectricDmg",
+   "value": 6,
+   "comment": "their swords do an additional 6 points of electrical damage per blow (no saving throw)"
+  },
+  {
+   "name": "dggWindCountsWhirlwindRounds",
+   "value": 2,
+   "comment": "their leather sacks blow whirlwinds like those of the djinn, lasting two rounds"
+  },
+  {
+   "name": "dggWindCountsWhirlwindPerDay",
+   "value": 1,
+   "comment": "the whirlwinds can only be conjured up once per day"
+  },
+  {
+   "name": "dggWindCountsWindConjureRounds",
+   "value": 10,
+   "comment": "their wind-pieces take 10 melee rounds to conjure up"
+  },
+  {
+   "name": "dggHuanTiHalberdPlus",
+   "value": 2,
+   "comment": "Huan-Ti wields a +2 halberd doing 3-30 points of damage"
+  },
+  {
+   "name": "dggHuanTiHalberdDmgLo",
+   "value": 3,
+   "comment": "the halberd damage floor"
+  },
+  {
+   "name": "dggHuanTiHalberdDmgHi",
+   "value": 30,
+   "comment": "the halberd damage ceiling"
+  },
+  {
+   "name": "dggHuanTiSwordPlus",
+   "value": 3,
+   "comment": "his +3 sword also does 3-30 points of damage"
+  },
+  {
+   "name": "dggHuanTiPlatePlus",
+   "value": 3,
+   "comment": "he appears as a heavily-muscled man in red +3 plate mail"
+  },
+  {
+   "name": "dggHuanTiChariotPegasi",
+   "value": 4,
+   "comment": "his black-winged chariot is pulled by 4 Pegasi at 24\"/48\""
+  },
+  {
+   "name": "dggHuanTiDedicationCount",
+   "value": 10,
+   "comment": "a mortal dedicates the last ten slain enemies to him"
+  },
+  {
+   "name": "dggHuanTiDedicationPct",
+   "value": 1,
+   "comment": "on a 1% chance he may destroy utterly the very next enemy that being faces"
+  },
+  {
+   "name": "dggKuanYinMuLevel",
+   "value": 20,
+   "comment": "Kuan Yin has the powers of a 20th level magic-user (the printed See below class cell)"
+  },
+  {
+   "name": "dggKuanYinGoodActWorshipers",
+   "value": 50,
+   "comment": "a good act affecting 50 or more worshipers of Kuan Yin, with the goddess near"
+  },
+  {
+   "name": "dggKuanYinWishPct",
+   "value": 5,
+   "comment": "the good act may be granted a wish: a 5% chance"
+  },
+  {
+   "name": "dggLeiKungFistDmgLo",
+   "value": 7,
+   "comment": "in hand-to-hand combat Lei Kung uses his fists for 7-42 points of damage"
+  },
+  {
+   "name": "dggLeiKungFistDmgHi",
+   "value": 42,
+   "comment": "the fist damage ceiling"
+  },
+  {
+   "name": "dggLeiKungHammerPlus",
+   "value": 4,
+   "comment": "his +4 hammer strikes for 25 points of electrical damage per hit (no saving throw)"
+  },
+  {
+   "name": "dggLeiKungHammerDmg",
+   "value": 25,
+   "comment": "the hammer electrical damage"
+  },
+  {
+   "name": "dggLeiKungMailPlus",
+   "value": 3,
+   "comment": "anything touching his +3 plate mail suffers 10 points of electrical damage, no saving throw"
+  },
+  {
+   "name": "dggLeiKungMailDamage",
+   "value": 10,
+   "comment": "the plate mail electrical damage"
+  },
+  {
+   "name": "dggLeiKungWingSpanFeet",
+   "value": 40,
+   "comment": "his red spotted wings have a span of 40 feet"
+  },
+  {
+   "name": "dggLuYuehRegenPerRound",
+   "value": 25,
+   "comment": "Lu Yueh regenerates at a rate of 25 points per round - all wounds instantly close themselves"
+  },
+  {
+   "name": "dggLuYuehRotRangeFeet",
+   "value": 10,
+   "comment": "those hitting him from less than 10 feet away will suffer the rotting sickness (no saving throw)"
+  },
+  {
+   "name": "dggLuYuehRedFeverPerMelee",
+   "value": 3,
+   "comment": "his touch causes the Red Fever that subtracts 3 hit points from those hit every melee round until cured"
+  },
+  {
+   "name": "dggLuYuehCloudSizeInches",
+   "value": 3,
+   "comment": "he can wave his hand and cast a sickness in a cloud 3\" x 3\" x 3\" causing the Red Fever to all who breathe it"
+  },
+  {
+   "name": "dggLuYuehEvilActPeople",
+   "value": 500,
+   "comment": "his gifts are decided whenever an evil act affects more than 500 people"
+  },
+  {
+   "name": "dggLuYuehWatchingPct",
+   "value": 1,
+   "comment": "if the god is watching, on a 1% chance"
+  },
+  {
+   "name": "dggLuYuehGiftPct",
+   "value": 5,
+   "comment": "a 5% chance he will give the evil being a disease-causing present with no strings attached"
+  },
+  {
+   "name": "dggMaYuanDmgLo",
+   "value": 3,
+   "comment": "Ma Yuan: 3-30 (x4) and 5-40 damage per attack"
+  },
+  {
+   "name": "dggMaYuanDmgHi",
+   "value": 30,
+   "comment": "the primary damage ceiling"
+  },
+  {
+   "name": "dggMaYuanDmg2Lo",
+   "value": 5,
+   "comment": "the secondary damage floor"
+  },
+  {
+   "name": "dggMaYuanDmg2Hi",
+   "value": 40,
+   "comment": "the secondary damage ceiling"
+  },
+  {
+   "name": "dggMaYuanWeaponPlusToHit",
+   "value": 3,
+   "comment": "+3 or better weapon to hit"
+  },
+  {
+   "name": "dggMaYuanMinDeitiesKilled",
+   "value": 10,
+   "comment": "the creature is known to have killed at least 10 minor deities"
+  },
+  {
+   "name": "dggMaYuanAttackHD",
+   "value": 16,
+   "comment": "it attacks as a 16+ hit dice monster"
+  },
+  {
+   "name": "dggMaYuanXpValue",
+   "value": 32300,
+   "comment": "the printed X/32,300 experience point value"
+  },
+  {
+   "name": "dggNoChaSpearPlus",
+   "value": 3,
+   "comment": "No Cha often fights with a +3 flaming spear"
+  },
+  {
+   "name": "dggNoChaSpearDmg",
+   "value": 30,
+   "comment": "the spear hits for 30 points of damage plus a disintegrate spell (save applicable)"
+  },
+  {
+   "name": "dggNoChaGoldDmgLo",
+   "value": 5,
+   "comment": "his small brick of gold throws for 5-50 points of damage up to 100 yards away"
+  },
+  {
+   "name": "dggNoChaGoldDmgHi",
+   "value": 50,
+   "comment": "the gold brick damage ceiling"
+  },
+  {
+   "name": "dggNoChaGoldRangeYards",
+   "value": 100,
+   "comment": "the gold brick range"
+  },
+  {
+   "name": "dggNoChaBraceletRounds",
+   "value": 5,
+   "comment": "his bracelet strangles its target in 5 melee rounds unless they alter their form or teleport to another plane"
+  },
+  {
+   "name": "dggNoChaFireballDmg",
+   "value": 30,
+   "comment": "he has the power to throw one 30 point fireball per round"
+  },
+  {
+   "name": "dggShanHaiHurricaneDmgLo",
+   "value": 5,
+   "comment": "Shan Hai Ching's hurricane wind does 5-50 points of damage per melee round"
+  },
+  {
+   "name": "dggShanHaiHurricaneDmgHi",
+   "value": 50,
+   "comment": "the hurricane damage ceiling"
+  },
+  {
+   "name": "dggSpiritsSummonPerDay",
+   "value": 100,
+   "comment": "the Spirits of the Air can be summoned by the wind gods in numbers of up to 100 every day"
+  },
+  {
+   "name": "dggSpiritsAttackHD",
+   "value": 11,
+   "comment": "they exist to fight for the gods, attacking as 11 hit dice monsters"
+  },
+  {
+   "name": "dggSpiritsHP",
+   "value": 50,
+   "comment": "50 hit points per spirit (the printed HIT DICE/POINTS line)"
+  },
+  {
+   "name": "dggSpiritsAppearingLo",
+   "value": 1,
+   "comment": "the printed NO. APPEARING 1-100 (the Termux clean read; the IA 17-1700 is a djvu garble of the same cell)"
+  },
+  {
+   "name": "dggSpiritsAppearingHi",
+   "value": 100,
+   "comment": "the appearing ceiling"
+  },
+  {
+   "name": "dggTouMuArmsCount",
+   "value": 16,
+   "comment": "Tou Mu appears on the earth with 16 massive arms, 3 eyes in her barely human head, and red scaly skin"
+  },
+  {
+   "name": "dggTouMuBowRangeYards",
+   "value": 100,
+   "comment": "her magical bow never misses anything within 100 yards"
+  },
+  {
+   "name": "dggTouMuArrowDmgLo",
+   "value": 1,
+   "comment": "her arrows do 1-10 points of damage per strike"
+  },
+  {
+   "name": "dggTouMuArrowDmgHi",
+   "value": 10,
+   "comment": "the arrow damage ceiling"
+  },
+  {
+   "name": "dggTouMuSpearPlus",
+   "value": 3,
+   "comment": "her +3 spear hits for 3-30 points per strike"
+  },
+  {
+   "name": "dggTouMuSpearDmgLo",
+   "value": 3,
+   "comment": "the spear damage floor"
+  },
+  {
+   "name": "dggTouMuSpearDmgHi",
+   "value": 30,
+   "comment": "the spear damage ceiling"
+  },
+  {
+   "name": "dggTouMuFlagDeathSpells",
+   "value": 3,
+   "comment": "her large red flag projects 3 death spells from its folds every melee round"
+  },
+  {
+   "name": "dggTouMuDragonHeadHP",
+   "value": 80,
+   "comment": "her living red dragon's head breathes fire as a normal dragon, with 80 hit points"
+  },
+  {
+   "name": "dggTouMuChariotCount",
+   "value": 5,
+   "comment": "she has 5 chariots that fly through the air at 24\" and move at her command, with no visible force to pull them"
+  },
+  {
+   "name": "dggTouMuChariotSpeedInches",
+   "value": 24,
+   "comment": "the chariot speed"
+  },
+  {
+   "name": "dggTouMuChariotTongueFeet",
+   "value": 32,
+   "comment": "the chariot tongues appear to be made of solid diamond and are 32 feet long"
+  },
+  {
+   "name": "dggTouMuOverrunDmgLo",
+   "value": 2,
+   "comment": "running beings over in battle inflicts 2-12 points of damage"
+  },
+  {
+   "name": "dggTouMuOverrunDmgHi",
+   "value": 12,
+   "comment": "the overrun damage ceiling"
+  },
+  {
+   "name": "dggTouMuAttacksPerMelee",
+   "value": 8,
+   "comment": "she may make up to 8 attacks per melee round"
+  },
+  {
+   "name": "dggWenChungEyeBoltDmg",
+   "value": 20,
+   "comment": "Wen Chung's third eye can cast a 20 point lightning bolt"
+  },
+  {
+   "name": "dggWenChungEyeBoltRangeYards",
+   "value": 180,
+   "comment": "the eye bolt range: 180 yards or closer"
+  },
+  {
+   "name": "dggWenChungEyeBoltPerDay",
+   "value": 10,
+   "comment": "the eye bolt: ten times a day"
+  },
+  {
+   "name": "dggWenChungSwordPlus",
+   "value": 3,
+   "comment": "his +3 sword does 3-30 points of damage"
+  },
+  {
+   "name": "dggWenChungSwordDmgLo",
+   "value": 3,
+   "comment": "the sword damage floor"
+  },
+  {
+   "name": "dggWenChungSwordDmgHi",
+   "value": 30,
+   "comment": "the sword damage ceiling"
+  },
+  {
+   "name": "dggYenWangSwordPlus",
+   "value": 3,
+   "comment": "Yen-Wang-Yeh's +3 broad sword does 2-20 points per strike"
+  },
+  {
+   "name": "dggYenWangSwordDmgLo",
+   "value": 2,
+   "comment": "the broad sword damage floor"
+  },
+  {
+   "name": "dggYenWangSwordDmgHi",
+   "value": 20,
+   "comment": "the broad sword damage ceiling"
+  },
+  {
+   "name": "dggYenWangDeathRaysPerMelee",
+   "value": 2,
+   "comment": "his eyes cast 2 death rays every melee round"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dggVastMythologyCaveat",
+   "value": true,
+   "comment": "the title caveat: the Chinese mythology is too vast and varied to cover adequately, so the most appropriate deities were chosen"
+  },
+  {
+   "name": "dggGreatBureaucracy",
+   "value": true,
+   "comment": "the Chinese image of the Heavens is that of a great bureaucracy"
+  },
+  {
+   "name": "dggSpecialTaskDeities",
+   "value": true,
+   "comment": "many of the deities exist to perform a special task and watch over a special area of life"
+  },
+  {
+   "name": "dggSupervisionChains",
+   "value": true,
+   "comment": "each god is supervised by a more important deity, responsible for seeing things are done correctly"
+  },
+  {
+   "name": "dggEmperorAccountability",
+   "value": true,
+   "comment": "every being is accountable to the Emperor of the Heavens"
+  },
+  {
+   "name": "dggAnnualReports",
+   "value": true,
+   "comment": "every year the gods send reports to their supervisors - promotion or demotion for the year's work is not uncommon"
+  },
+  {
+   "name": "dggClericsSupportGovernment",
+   "value": true,
+   "comment": "the clerics support the existing mortal government and preach the divinity of their emperor"
+  },
+  {
+   "name": "dggEmperorHeadOfChurch",
+   "value": true,
+   "comment": "the emperor is head of state and of the church, gifted with high priest powers by the gods"
+  },
+  {
+   "name": "dggAtonementBySacrifice",
+   "value": true,
+   "comment": "atonement for all sins: sacrificing items of value commensurate with the improper act"
+  },
+  {
+   "name": "dggAtonementMayBeDeath",
+   "value": true,
+   "comment": "if the deed was severe enough, the atonement might even be death"
+  },
+  {
+   "name": "dggTravelPreaching",
+   "value": true,
+   "comment": "clerics must travel about the countryside preaching to rich and poor alike"
+  },
+  {
+   "name": "dggIronWandRevealsInvisible",
+   "value": true,
+   "comment": "the Iron Wand makes all invisible things appear"
+  },
+  {
+   "name": "dggIronWandDustDisappearance",
+   "value": true,
+   "comment": "it can make one object disappear as dust of disappearance"
+  },
+  {
+   "name": "dggIronWandStaffOfStriking",
+   "value": true,
+   "comment": "it acts as a staff of striking with unlimited charges"
+  },
+  {
+   "name": "dggIronWandGrowsToClimb",
+   "value": true,
+   "comment": "it grows to 100\" upon command, roughened for easy climbing"
+  },
+  {
+   "name": "dggJadeScepterBlocksMaterial",
+   "value": true,
+   "comment": "the Jade Scepter of Defending defends the user from any number of material weapons - none may strike its master"
+  },
+  {
+   "name": "dggJadeScepterConcentration",
+   "value": true,
+   "comment": "while concentrating on defense, no other action may even be contemplated"
+  },
+  {
+   "name": "dggWindFireWheelStaffOfMagi",
+   "value": true,
+   "comment": "the Wind Fire Wheels shoot fire and/or wind as a staff of the magi, used in large battles the gods fear losing"
+  },
+  {
+   "name": "dggWindFireWheelFans",
+   "value": true,
+   "comment": "they are 1 foot circular fans, started by a command word from the holder"
+  },
+  {
+   "name": "dggCanonCreatesNonmagical",
+   "value": true,
+   "comment": "the Canon of Changes allows the reader to create any nonmagical object instantly when the command words are spoken"
+  },
+  {
+   "name": "dggCanonImmortalsOnly",
+   "value": true,
+   "comment": "only immortals have the constitutional stamina to read the passages for the length of time required"
+  },
+  {
+   "name": "dggLightningSwordDancingParity",
+   "value": true,
+   "comment": "the Dancing Sword of Lightning behaves as a dancing sword per the DUNGEON MASTERS GUIDE"
+  },
+  {
+   "name": "dggLightningSwordUnlimited",
+   "value": true,
+   "comment": "it has unlimited charges"
+  },
+  {
+   "name": "dggLightningSwordAirDemigods",
+   "value": true,
+   "comment": "it is the favorite weapon of the demigods of the air, when they can use it in their turn"
+  },
+  {
+   "name": "dggLightningSwordMortalNormal",
+   "value": true,
+   "comment": "it performs as a normal sword when held by mortals"
+  },
+  {
+   "name": "dggFireGemOncePerTurn",
+   "value": true,
+   "comment": "the fire gems fire once per turn when the command words are spoken"
+  },
+  {
+   "name": "dggPearlUncontrolled",
+   "value": true,
+   "comment": "the Giant Black Pearl negates turbulence of its own accord and cannot be controlled to make it stop"
+  },
+  {
+   "name": "dggShangTiSupremeGod",
+   "value": true,
+   "comment": "Shang-Ti, supreme god of the heavens, god of the sky and agriculture"
+  },
+  {
+   "name": "dggShangTiTravelsAmongMortals",
+   "value": true,
+   "comment": "he sometimes travels among mortals as an aged man with a long white beard, dressed in tattered robes"
+  },
+  {
+   "name": "dggShangTiFloatsEthereal",
+   "value": true,
+   "comment": "he likes to float in the air ethereally, viewing cities and towns and how he is or isn't being worshiped"
+  },
+  {
+   "name": "dggShangTiWeaponsReturn",
+   "value": true,
+   "comment": "all physical weapon attacks sent through the air at the god will turn and strike the sender"
+  },
+  {
+   "name": "dggShangTiShaftRangeSight",
+   "value": true,
+   "comment": "the light shaft's range is sight"
+  },
+  {
+   "name": "dggShangTiWeatherControl",
+   "value": true,
+   "comment": "as god of the sky and agriculture he has complete control over weather - instantly summoning or banishing any type he desires"
+  },
+  {
+   "name": "dggShangTiBureaucracyHead",
+   "value": true,
+   "comment": "he is the head of the Celestial Bureaucracy; all the other deities ultimately report to him"
+  },
+  {
+   "name": "dggShangTiWordIsLaw",
+   "value": true,
+   "comment": "his word is law among all the gods and goddesses regardless of alignment; he is the final arbitrator in any dispute"
+  },
+  {
+   "name": "dggChaoWarDemigod",
+   "value": true,
+   "comment": "Chao Kung Ming, demigod of war: a very muscular man with bright red skin"
+  },
+  {
+   "name": "dggChaoRidesFlyingTiger",
+   "value": true,
+   "comment": "he rides a giant flying tiger into battle"
+  },
+  {
+   "name": "dggChaoPlaneTravel",
+   "value": true,
+   "comment": "this god is able to travel from plane to plane with however many beings he wishes"
+  },
+  {
+   "name": "dggChihSungRainLord",
+   "value": true,
+   "comment": "Chih Sung-Tzu, lord of rain: a very muscular man who always wears a blue war helm"
+  },
+  {
+   "name": "dggChihSungWeatherOnCommand",
+   "value": true,
+   "comment": "like Shang-Ti, he can create weather of any type upon command"
+  },
+  {
+   "name": "dggChihSungRustsMetal",
+   "value": true,
+   "comment": "when any other metal touches his scale mail, that metal completely rusts away (no saving throw)"
+  },
+  {
+   "name": "dggChihChiangArcherGod",
+   "value": true,
+   "comment": "Chih-Chiang Fyu-Ya, god of archers, punisher of the gods: fiery red scaled skin, a black demonic head with tusks, elephant ears, cloven hooves"
+  },
+  {
+   "name": "dggChihChiangHitsAnyTargetInSight",
+   "value": true,
+   "comment": "with his bow he can hit any target within sight"
+  },
+  {
+   "name": "dggChihChiangReversesWeapons",
+   "value": true,
+   "comment": "he is able to reverse any weapon thrown through the air at him and send it back at its caster"
+  },
+  {
+   "name": "dggChihChiangBowBackfires",
+   "value": true,
+   "comment": "his bow is magicked so that use of it by anyone else will cause the arrows to fly at the user"
+  },
+  {
+   "name": "dggChihChiangShapeChange",
+   "value": true,
+   "comment": "the god can shape change at will"
+  },
+  {
+   "name": "dggChihChiangAvengeGods",
+   "value": true,
+   "comment": "it is his duty to avenge offenses against the gods, particularly desecration of temples"
+  },
+  {
+   "name": "dggChungKuelTruthGod",
+   "value": true,
+   "comment": "Chung Kuel, god of truth and testing, always dressed in costly robes"
+  },
+  {
+   "name": "dggChungKuelWellOfKnowledge",
+   "value": true,
+   "comment": "his primary ability: to draw from a well of knowledge so he can meet any test with success, given time to visit his well"
+  },
+  {
+   "name": "dggChungKuelSecuresWinning",
+   "value": true,
+   "comment": "in any physical contest, if his normal powers will not let him immediately win, he will run and secure the materials that allow him to win, doing nothing else until he does"
+  },
+  {
+   "name": "dggChungKuelRodOfCancellation",
+   "value": true,
+   "comment": "he also carries a rod of cancellation at all times"
+  },
+  {
+   "name": "dggChungKuelRiddleTravels",
+   "value": true,
+   "comment": "he travels the Prime Material Plane dressed as an old pot-bellied man with a long grey beard, asking beings riddles"
+  },
+  {
+   "name": "dggChungKuelRiddleRewards",
+   "value": true,
+   "comment": "correct answers may earn a reward, perhaps even a limited wish - the more difficult the riddle, the greater the reward"
+  },
+  {
+   "name": "dggWindCountsOfTheWind",
+   "value": true,
+   "comment": "Fei Lien and Feng Po, the Counts of the Wind, man-shaped beings"
+  },
+  {
+   "name": "dggWindCountsRideTheWind",
+   "value": true,
+   "comment": "they each ride a piece of the wind, easily negated by any spell affecting weather or wind"
+  },
+  {
+   "name": "dggWindCountsLeatherSacks",
+   "value": true,
+   "comment": "they each have a large sack of leather that blows djinn-like whirlwinds when opened"
+  },
+  {
+   "name": "dggWindCountsBattleGoBetweens",
+   "value": true,
+   "comment": "they figure prominently in all major battles of the gods and are often used as go-betweens for gods and men"
+  },
+  {
+   "name": "dggWindCountsDemonicLook",
+   "value": true,
+   "comment": "their skin is jet black, their eyes blaze fire and they are tusked"
+  },
+  {
+   "name": "dggHuanTiWarGod",
+   "value": true,
+   "comment": "Huan-Ti, god of war"
+  },
+  {
+   "name": "dggHuanTiDualWield",
+   "value": true,
+   "comment": "when pressed by more than one enemy he simultaneously uses both his halberd and his sword (2 or 4 attacks)"
+  },
+  {
+   "name": "dggHuanTiChariotSpellImmune",
+   "value": true,
+   "comment": "when flying in his chariot, no magic spell can affect him or the steeds"
+  },
+  {
+   "name": "dggHuanTiWatchesBattles",
+   "value": true,
+   "comment": "he watches every battle in which his worshipers take part"
+  },
+  {
+   "name": "dggHuanTiHeadsBurned",
+   "value": true,
+   "comment": "slain enemies dedicated to him must have their heads taken off and burned, or the sacrifices will not be received"
+  },
+  {
+   "name": "dggHuanTiRedArmorAlways",
+   "value": true,
+   "comment": "clerics of this god must always wear red armor or clothes"
+  },
+  {
+   "name": "dggKuanYinMercyGoddess",
+   "value": true,
+   "comment": "Kuan Yin, goddess of mercy and child bearing: a slim young woman wearing a green satin dress"
+  },
+  {
+   "name": "dggKuanYinNegateViolence",
+   "value": true,
+   "comment": "her main attribute: the ability to negate any single act of violence directed at anyone, once per melee round"
+  },
+  {
+   "name": "dggKuanYinNeverHarmfulSpells",
+   "value": true,
+   "comment": "she will never use her spells to cause harm"
+  },
+  {
+   "name": "dggKuanYinNoViolenceAgainstHer",
+   "value": true,
+   "comment": "no act of violence can be directed towards her by any being in the universe - she could walk safely through 500 different types of demons and devils"
+  },
+  {
+   "name": "dggKuanYinCommonFolk",
+   "value": true,
+   "comment": "her main following is with the common folk, and all may work in her cause and expect to be rewarded someday"
+  },
+  {
+   "name": "dggKuanYinPeacemakers",
+   "value": true,
+   "comment": "her clerics are the peacemakers of the world and work diligently for the end of violence"
+  },
+  {
+   "name": "dggLeiKungThunderDuke",
+   "value": true,
+   "comment": "Lei Kung, duke of thunder: a man with smoking black skin and eyes with pupils like lightning bolts, 2 large tusks and a huge nose"
+  },
+  {
+   "name": "dggLeiKungGreenDrums",
+   "value": true,
+   "comment": "when battling large numbers of opponents he uses a set of green drums that act as a horn of blasting and drums of panic combined"
+  },
+  {
+   "name": "dggLeiKungFoulWeatherOnRequest",
+   "value": true,
+   "comment": "he exists to make foul weather of one type or another at the request of the other gods, when their worshipers need a lesson"
+  },
+  {
+   "name": "dggLeiKungDelightsInWindstorms",
+   "value": true,
+   "comment": "he particularly delights in creating wind storms that destroy fragile things of beauty or value"
+  },
+  {
+   "name": "dggLuYuehEpidemicGod",
+   "value": true,
+   "comment": "Lu Yueh, god of epidemics: 3 demon-like heads, 6 arms ending in claws, green scaled skin, a look of death and an odor of putrescence"
+  },
+  {
+   "name": "dggLuYuehRottingSicknessSpell",
+   "value": true,
+   "comment": "his main attribute: a rotting sickness spell that kills his enemies who fail a saving throw versus poison in 2 melee rounds"
+  },
+  {
+   "name": "dggLuYuehNoArmor",
+   "value": true,
+   "comment": "he never wears armor because all wounds instantly close themselves"
+  },
+  {
+   "name": "dggMaYuanGodKiller",
+   "value": true,
+   "comment": "Ma Yuan, killer of the gods: a unique monster with 3 eyes in his tyrannosaurus-shaped head and 4 large humanoid arms"
+  },
+  {
+   "name": "dggMaYuanStormGiantStrength",
+   "value": true,
+   "comment": "he has the strength of a storm giant but rarely relies on this in battle"
+  },
+  {
+   "name": "dggMaYuanTriangularStone",
+   "value": true,
+   "comment": "he has a powerful magical device shaped as a small triangular piece of stone that turns into any weapon the holder wishes, magical or otherwise"
+  },
+  {
+   "name": "dggMaYuanDoublePowerTactic",
+   "value": true,
+   "comment": "his favorite tactic: to make a weapon from his stone that is double the power of the one being used against him"
+  },
+  {
+   "name": "dggMaYuanPreventsComplacency",
+   "value": true,
+   "comment": "the existence of Ma Yuan prevents complacency among the gods"
+  },
+  {
+   "name": "dggNoChaThievesDemigod",
+   "value": true,
+   "comment": "No Cha, demigod of thieves: a three-headed, eight-armed man with silvery scaled skin and eyes that blaze like fire"
+  },
+  {
+   "name": "dggNoChaGrowShrink",
+   "value": true,
+   "comment": "he has the ability to grow or shrink in size"
+  },
+  {
+   "name": "dggNoChaPantherWhirlwind",
+   "value": true,
+   "comment": "his panther skin bag blows a whirlwind like that of a djinni"
+  },
+  {
+   "name": "dggNoChaStranglerBracelet",
+   "value": true,
+   "comment": "his thrown bracelet attaches itself to the neck of its target and strangles him or her"
+  },
+  {
+   "name": "dggNoChaThievesPatron",
+   "value": true,
+   "comment": "No Cha is the patron of thieves, and there are many tales of his famous thieving exploits"
+  },
+  {
+   "name": "dggShanHaiWindSeaGod",
+   "value": true,
+   "comment": "Shan Hai Ching, god of wind and sea: a roc's body with the oversized head of a man"
+  },
+  {
+   "name": "dggShanHaiHurricaneWind",
+   "value": true,
+   "comment": "the power to raise up a hurricane wind - said to last a full day when great wrath is upon the deity"
+  },
+  {
+   "name": "dggShanHaiSeaSummoning",
+   "value": true,
+   "comment": "the power to call forth any creature of the sea (of non-divine nature) to do his bidding; the summoning will seem to create beings from the very water"
+  },
+  {
+   "name": "dggShanHaiSpellTurning",
+   "value": true,
+   "comment": "one spell attack against him per round will be turned back upon the caster; if multiple spells are cast, the one turned is chosen at random"
+  },
+  {
+   "name": "dggShanHaiSeaSacrifice",
+   "value": true,
+   "comment": "he and his clerics serve all beings using the sea, and any trip out into the oceans requires a sacrifice to this deity for good winds and the like"
+  },
+  {
+   "name": "dggSpiritsOfTheAir",
+   "value": true,
+   "comment": "the Spirits of the Air: very rare minions of the wind gods"
+  },
+  {
+   "name": "dggSpiritsLook",
+   "value": true,
+   "comment": "they have black skin, large bat wings, clawed feet (which they use in battle), and a tusked monkey's head"
+  },
+  {
+   "name": "dggTouMuNorthStarGoddess",
+   "value": true,
+   "comment": "Tou Mu, goddess of the north star"
+  },
+  {
+   "name": "dggTouMuDancingSword",
+   "value": true,
+   "comment": "she wields a +3 dancing sword"
+  },
+  {
+   "name": "dggTouMuMoonPiece",
+   "value": true,
+   "comment": "a piece of the moon is able to block any single hit directed at her person in any given melee round"
+  },
+  {
+   "name": "dggTouMuLotusHeals",
+   "value": true,
+   "comment": "a lotus flower heals all wounds at a touch"
+  },
+  {
+   "name": "dggTouMuFreeClaws",
+   "value": true,
+   "comment": "her free claws do 1-10 points of damage per hit"
+  },
+  {
+   "name": "dggTouMuAdamantChariots",
+   "value": true,
+   "comment": "the chariots are all of adamant with gold figures of dragons; the wheels are of unbreakable green jade and sparks fly from them whenever they run over beings in battle"
+  },
+  {
+   "name": "dggWenChungThunderMinister",
+   "value": true,
+   "comment": "Wen Chung, minister of thunder: 3 eyes in his head and a massive dark-skinned body"
+  },
+  {
+   "name": "dggWenChungSummonsWeather",
+   "value": true,
+   "comment": "he summons weather for Lei Kung and for his chaotic worshipers"
+  },
+  {
+   "name": "dggWenChungImmunities",
+   "value": true,
+   "comment": "he is totally immune to lightning, cold, or light attacks"
+  },
+  {
+   "name": "dggYenWangDeadJudge",
+   "value": true,
+   "comment": "Yen-Wang-Yeh, judge of the dead: a warrior with black skin"
+  },
+  {
+   "name": "dggYenWangDragonShape",
+   "value": true,
+   "comment": "in battle he likes to shape change into an oriental dragon and use its powers for dealing out death"
+  },
+  {
+   "name": "dggYenWangTouchParalysis",
+   "value": true,
+   "comment": "anyone touching his body with anything will become paralyzed (saving throw applicable)"
+  },
+  {
+   "name": "dggYenWangCollectsSouls",
+   "value": true,
+   "comment": "he collects all the souls and spirits of the dead, transports them to the proper plane, and makes sure they do not roam the earth at will"
+  },
+  {
+   "name": "dggYenWangTracksRogues",
+   "value": true,
+   "comment": "he tracks down spirits that do roam and makes them suffer for eternity"
+  },
+  {
+   "name": "dggYenWangNoPowerOverRisen",
+   "value": true,
+   "comment": "he has no power over the dead who have risen to a higher plane through their good deeds"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the combat grid",
+   "tag": "dggCbt",
+   "count": "dggCbtRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dggCbtAC",
+    "dggCbtACAlt",
+    "dggCbtHP",
+    "dggCbtMove",
+    "dggCbtMoveAlt",
+    "dggCbtAtN",
+    "dggCbtAtD",
+    "dggCbtMR",
+    "dggCbtSizeIn"
+   ],
+   "data": [
+    [
+     -2,
+     0,
+     400,
+     24,
+     24,
+     2,
+     0,
+     50,
+     64
+    ],
+    [
+     -4,
+     0,
+     199,
+     15,
+     0,
+     2,
+     0,
+     5,
+     74
+    ],
+    [
+     -2,
+     0,
+     388,
+     12,
+     24,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     7,
+     0,
+     287,
+     12,
+     30,
+     2,
+     0,
+     20,
+     96
+    ],
+    [
+     -2,
+     0,
+     319,
+     12,
+     12,
+     2,
+     0,
+     80,
+     72
+    ],
+    [
+     -4,
+     0,
+     150,
+     24,
+     24,
+     3,
+     2,
+     0,
+     72
+    ],
+    [
+     -4,
+     0,
+     150,
+     24,
+     24,
+     3,
+     2,
+     0,
+     72
+    ],
+    [
+     -7,
+     0,
+     380,
+     18,
+     0,
+     2,
+     4,
+     50,
+     84
+    ],
+    [
+     -3,
+     0,
+     376,
+     12,
+     12,
+     0,
+     0,
+     100,
+     60
+    ],
+    [
+     -4,
+     0,
+     354,
+     12,
+     24,
+     2,
+     0,
+     5,
+     72
+    ],
+    [
+     -2,
+     0,
+     367,
+     12,
+     12,
+     6,
+     0,
+     0,
+     120
+    ],
+    [
+     -4,
+     0,
+     300,
+     24,
+     24,
+     5,
+     0,
+     65,
+     840
+    ],
+    [
+     -2,
+     0,
+     239,
+     15,
+     48,
+     8,
+     0,
+     10,
+     720
+    ],
+    [
+     -2,
+     0,
+     366,
+     6,
+     48,
+     2,
+     0,
+     35,
+     720
+    ],
+    [
+     4,
+     0,
+     50,
+     12,
+     24,
+     2,
+     0,
+     0,
+     96
+    ],
+    [
+     -3,
+     0,
+     300,
+     24,
+     24,
+     8,
+     0,
+     25,
+     240
+    ],
+    [
+     -2,
+     0,
+     213,
+     12,
+     21,
+     3,
+     2,
+     15,
+     96
+    ],
+    [
+     -5,
+     0,
+     349,
+     12,
+     12,
+     2,
+     0,
+     75,
+     72
+    ]
+   ],
+   "col_comments": [
+    "The armor class cells (Huan-Ti the printed -7, Chih-Chiang the printed +7)",
+    "The range ceiling cells (0 = a single printed armor class; all eighteen read single this round)",
+    "The hit point cells (400 for Shang-Ti down to 50 per Spirit)",
+    "The primary move cells (the printed moves; Huan-Ti 18, Shan Hai Ching 6)",
+    "The secondary move cells (the printed slash ceilings; Wen Chung the printed 12/21, both voices agreeing)",
+    "The attack count cells (Huan-Ti the printed 2 or 4; Tou Mu and No Cha 8, Lu Yueh 6, Ma Yuan 5)",
+    "The attack alternative cells (the 3/2 slashes and Huan-Ti's or-4 ceiling)",
+    "The magic resistance cells (0 = the printed Standard of Chih Sung-Tzu, the Counts and Lu Yueh; Kuan Yin the printed 100%)",
+    "The size cells in inches (Shang-Ti 5'4\" the 514 decode and Chao 6'2\" the 612 decode - the R853 foot-mark lesson; Chih Sung-Tzu the sentinel, garbled in both voices - flagged; the monsters Ma Yuan 70', Spirits 8')"
+   ],
+   "audit_comment": "the combat stat blocks of the eighteen beings (print pp. 37-42) - the armor classes, hit points, moves, attacks, magic resistance and sizes",
+   "sentinel_census": [
+    0,
+    18,
+    0,
+    0,
+    2,
+    1,
+    14,
+    5,
+    1
+   ]
+  },
+  {
+   "name": "the class grid",
+   "tag": "dggCls",
+   "count": "dggClsRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dggClsCleric",
+    "dggClsDruid",
+    "dggClsFighterLo",
+    "dggClsFighterHi",
+    "dggClsRanger",
+    "dggClsMagUser",
+    "dggClsIllus",
+    "dggClsThief",
+    "dggClsAssassin",
+    "dggClsMonk",
+    "dggClsBard"
+   ],
+   "data": [
+    [
+     13,
+     0,
+     15,
+     15,
+     0,
+     20,
+     20,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     17,
+     0,
+     0,
+     0,
+     10,
+     7,
+     0
+    ],
+    [
+     20,
+     0,
+     13,
+     13,
+     0,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     18,
+     18,
+     0,
+     0,
+     0,
+     0,
+     0,
+     10,
+     10
+    ],
+    [
+     20,
+     14,
+     0,
+     0,
+     20,
+     15,
+     15,
+     0,
+     15,
+     10,
+     10
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     10,
+     0,
+     0,
+     10,
+     0,
+     5,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     10,
+     0,
+     0,
+     10,
+     0,
+     5,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     20,
+     0,
+     0,
+     0,
+     15,
+     12,
+     0
+    ],
+    [
+     25,
+     14,
+     0,
+     0,
+     0,
+     99,
+     0,
+     0,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     10,
+     14,
+     14,
+     0,
+     14,
+     14,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     15,
+     15,
+     0,
+     19,
+     19,
+     19,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     10,
+     12,
+     12,
+     0,
+     0,
+     17,
+     20,
+     0,
+     0,
+     0
+    ],
+    [
+     10,
+     0,
+     15,
+     15,
+     0,
+     10,
+     10,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     0,
+     0,
+     15,
+     6,
+     6,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     10,
+     15,
+     15,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     20,
+     0,
+     18,
+     18,
+     0,
+     15,
+     0,
+     0,
+     15,
+     12,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The cleric level cells (0 = Nil; Kuan Yin the 25th level cleric)",
+    "The druid level cells (Lei Kung and No Cha the 10th level druids; the 14s)",
+    "The fighter level floor cells (0 = the ranger-slot beings, Kuan Yin's Nil, and the monster rows)",
+    "The fighter level ceiling cells (single printed levels read floor = ceiling)",
+    "The ranger level cells (Chao 17, Chung Kuel 20, Huan-Ti 20, the Counts 10, Tou Mu 15, Wen Chung 10)",
+    "The magic-user level cells (99 = the printed See below: Kuan Yin the 20th level magic-user doctrine)",
+    "The illusionist level cells (No Cha the 17th level illusionist over a Nil magic-user)",
+    "The thief level cells (the Counts 10th, Lu Yueh the 19th level thief, No Cha the 20th)",
+    "The assassin level cells (the 15s; Chao 10th, Wen Chung-era none)",
+    "The monk level cells (Chao 7, the Counts 5, Huan-Ti 12, Chih-Chiang 10, Chung Kuel 10, Yen-Wang-Yeh 12)",
+    "The bard level cells (Shang-Ti 15th, Kuan Yin 15th, Chih-Chiang and Chung Kuel 10)"
+   ],
+   "audit_comment": "the five-slot class grid of the eighteen beings (the printed See below, the ranger slots, the demigod monk abilities)",
+   "sentinel_census": [
+    10,
+    14,
+    10,
+    10,
+    11,
+    8,
+    10,
+    14,
+    14,
+    11,
+    14
+   ]
+  },
+  {
+   "name": "the ability grid",
+   "tag": "dggAbi",
+   "count": "dggAbiRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dggAbiStr",
+    "dggAbiStrHit",
+    "dggAbiStrDmg",
+    "dggAbiInt",
+    "dggAbiWis",
+    "dggAbiDex",
+    "dggAbiCon",
+    "dggAbiCha",
+    "dggAbiPsi"
+   ],
+   "data": [
+    [
+     20,
+     3,
+     8,
+     25,
+     25,
+     25,
+     25,
+     20,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     18,
+     14,
+     20,
+     20,
+     20,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     20,
+     24,
+     19,
+     23,
+     23,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     22,
+     22,
+     25,
+     22,
+     -2,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     25,
+     25,
+     20,
+     20,
+     19,
+     0
+    ],
+    [
+     14,
+     0,
+     0,
+     14,
+     14,
+     19,
+     20,
+     9,
+     0
+    ],
+    [
+     14,
+     0,
+     0,
+     14,
+     14,
+     19,
+     20,
+     9,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     23,
+     18,
+     25,
+     25,
+     10,
+     0
+    ],
+    [
+     8,
+     0,
+     0,
+     25,
+     25,
+     12,
+     22,
+     25,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     23,
+     17,
+     20,
+     23,
+     7,
+     0
+    ],
+    [
+     20,
+     3,
+     8,
+     17,
+     5,
+     17,
+     25,
+     -3,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     25,
+     7,
+     14,
+     25,
+     7,
+     25,
+     20,
+     10,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     21,
+     23,
+     17,
+     24,
+     19,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     23,
+     5,
+     11,
+     25,
+     3,
+     25,
+     19,
+     5,
+     0
+    ],
+    [
+     24,
+     6,
+     12,
+     20,
+     22,
+     21,
+     19,
+     15,
+     0
+    ],
+    [
+     14,
+     0,
+     0,
+     24,
+     20,
+     25,
+     23,
+     19,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The strength cells (Kuan Yin the printed S:8, Yen-Wang-Yeh and the Counts 14)",
+    "The parenthesized strength to-hit bonus cells (0 = no printed bracket)",
+    "The parenthesized strength damage bonus cells (the +14s of the S:25s)",
+    "The intelligence cells (Tou Mu W:3 and No Cha W:7 the low wisdoms ride the int col commentary; the printed I line)",
+    "The wisdom cells (No Cha the printed W:7, Tou Mu the printed W:3)",
+    "The dexterity cells (Kuan Yin the printed D:12 - the IA geometry word against the Termux 72 garble)",
+    "The constitution cells (the 25s)",
+    "The charisma cells (Chih-Chiang the printed -2 and Lu Yueh the printed -3; Lei Kung 7, the Counts 9)",
+    "The psionic score cells (0 = no numeric scores; the monster rows read the all-sentinel line)"
+   ],
+   "audit_comment": "the six ability scores with the strength brackets of the eighteen beings (the monster rows read the all-sentinel line)",
+   "sentinel_census": [
+    2,
+    6,
+    6,
+    2,
+    2,
+    2,
+    2,
+    2,
+    18
+   ]
+  },
+  {
+   "name": "the roster grid",
+   "tag": "dggRos",
+   "count": "dggRosRows",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dggRosOrd",
+    "dggRosPage",
+    "dggRosAlign",
+    "dggRosRank",
+    "dggRosPsiClass",
+    "dggRosPlane",
+    "dggRosDmgFixed",
+    "dggRosInEach",
+    "dggRosTwinPair"
+   ],
+   "data": [
+    [
+     0,
+     37,
+     3,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     38,
+     1,
+     2,
+     2,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     38,
+     4,
+     1,
+     6,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     38,
+     6,
+     2,
+     6,
+     3,
+     1,
+     1,
+     0
+    ],
+    [
+     4,
+     38,
+     0,
+     1,
+     2,
+     4,
+     0,
+     1,
+     0
+    ],
+    [
+     5,
+     39,
+     1,
+     2,
+     5,
+     2,
+     1,
+     0,
+     1
+    ],
+    [
+     6,
+     39,
+     1,
+     2,
+     5,
+     2,
+     1,
+     0,
+     1
+    ],
+    [
+     7,
+     39,
+     2,
+     0,
+     6,
+     5,
+     1,
+     0,
+     0
+    ],
+    [
+     8,
+     39,
+     0,
+     1,
+     6,
+     4,
+     0,
+     0,
+     0
+    ],
+    [
+     9,
+     40,
+     6,
+     1,
+     6,
+     6,
+     1,
+     1,
+     0
+    ],
+    [
+     10,
+     40,
+     8,
+     0,
+     6,
+     7,
+     1,
+     1,
+     0
+    ],
+    [
+     11,
+     41,
+     8,
+     3,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     12,
+     41,
+     7,
+     2,
+     6,
+     8,
+     0,
+     0,
+     0
+    ],
+    [
+     13,
+     42,
+     3,
+     1,
+     6,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     14,
+     42,
+     4,
+     3,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     15,
+     42,
+     8,
+     0,
+     2,
+     7,
+     0,
+     1,
+     0
+    ],
+    [
+     16,
+     42,
+     5,
+     2,
+     6,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     17,
+     42,
+     4,
+     1,
+     6,
+     9,
+     1,
+     0,
+     0
+    ]
+   ],
+   "col_comments": [
+    "The roster ordinal cells (the print order, Shang-Ti through Yen-Wang-Yeh)",
+    "The print page cells (37-42, the folio offset PRINT = PDF - 1)",
+    "The alignment cells (0 LG, 1 NG, 2 CG, 3 LN, 4 N, 5 CN Wen Chung, 6 LE, 7 NE No Cha, 8 CE - the R852 code scheme)",
+    "The rank cells (0 lesser, 1 greater, 2 demigod, 3 monster format - Ma Yuan and the Spirits)",
+    "The psionic class cells (0 Nil the monsters, 1 Shang-Ti, 2 Chao/Chung Kuel/Tou Mu, 5 the Counts, 6 the ten VI readers - the R849 class table)",
+    "The plane cells (1 Nirvana, 2 Elemental Plane of Air, 3 Gehenna, 4 Seven Heavens, 5 Limbo, 6 Acheron, 7 Abyss, 8 Nine Hells, 9 Concordant Opposition; 0 = the monster rows)",
+    "The fixed-damage flags (1 = the printed DAMAGE/ATTACK cell is numeric damage; 0 = Nil, See below, or Variable)",
+    "The in-each flags (the printed Nth level in each cells: the M-U/I pairs and the monk/bard in-eachs)",
+    "The twin-pair flags (Fei Lien and Feng Po, the identical Counts of the Wind stat blocks)"
+   ],
+   "audit_comment": "the roster walk of the eighteen beings - ordinals, pages, alignments, ranks, psionic classes, the nine planes, the fixed-damage, in-each and twin-pair flags",
+   "sentinel_census": [
+    1,
+    0,
+    2,
+    3,
+    2,
+    2,
+    4,
+    10,
+    16
+   ]
+  }
+ ],
+ "chains": [],
+ "examples": [
+  {
+   "note": "the census walk (the four grids, the eighteen beings, the nine planes)",
+   "expr": "m['dggTableCount']() != 4 or m['dggBeingCount']() != 18 or m['dggCbtRows']() != 18 or m['dggClsRows']() != 18 or m['dggAbiRows']() != 18 or m['dggRosRows']() != 18 or m['dggPlaneCount']() != 9 or m['dggArtifactCount']() != 7 or m['dggChainCount']() != 0 or m['dggRound']() != 855 or m['dggPrintStart']() != 37 or m['dggPrintEnd']() != 42 or m['dggRegistryFloor']() != 995"
+  },
+  {
+   "note": "the print walk spans pp. 37-42 and the roster ordinals run 0-17 in print order",
+   "expr": "m['dggRosPage'](0) != 37 or m['dggRosPage'](17) != 42 or m['dggRosOrd'](0) != 0 or m['dggRosOrd'](1) != 1 or m['dggRosOrd'](2) != 2 or m['dggRosOrd'](3) != 3 or m['dggRosOrd'](4) != 4 or m['dggRosOrd'](5) != 5 or m['dggRosOrd'](6) != 6 or m['dggRosOrd'](7) != 7 or m['dggRosOrd'](8) != 8 or m['dggRosOrd'](9) != 9 or m['dggRosOrd'](10) != 10 or m['dggRosOrd'](11) != 11 or m['dggRosOrd'](12) != 12 or m['dggRosOrd'](13) != 13 or m['dggRosOrd'](14) != 14 or m['dggRosOrd'](15) != 15 or m['dggRosOrd'](16) != 16 or m['dggRosOrd'](17) != 17"
+  },
+  {
+   "note": "the psionic class census: Shang-Ti I, the II readers, the V Counts, the ten VIs, the monsters Nil",
+   "expr": "m['dggPsiClassI']() != 1 or m['dggPsiClassII']() != 2 or m['dggPsiClassV']() != 5 or m['dggPsiClassVI']() != 6 or m['dggRosPsiClass'](0) != 1 or m['dggRosPsiClass'](1) != 2 or m['dggRosPsiClass'](4) != 2 or m['dggRosPsiClass'](15) != 2 or m['dggRosPsiClass'](5) != 5 or m['dggRosPsiClass'](11) != 0 or m['dggRosPsiClass'](14) != 0 or m['dggRosPsiClass'](8) != 6"
+  },
+  {
+   "note": "the plane census: the nine planes across the sixteen deity rows",
+   "expr": "m['dggRosPlane'](0) != 1 or m['dggRosPlane'](1) != 2 or m['dggRosPlane'](3) != 3 or m['dggRosPlane'](8) != 4 or m['dggRosPlane'](7) != 5 or m['dggRosPsiClass'](9) != 6 or m['dggRosPlane'](9) != 6 or m['dggRosPlane'](10) != 7 or m['dggRosPlane'](12) != 8 or m['dggRosPlane'](17) != 9 or m['dggRosPlane'](11) != 0 or m['dggRosPlane'](14) != 0"
+  },
+  {
+   "note": "the bureaucracy intro: the seven-artifact doctrine rides the mythos",
+   "expr": "m['dggArtifactCount']() != 7 or m['dggIronWandRadiusInches']() != 30 or m['dggIronWandLengthInches']() != 100 or m['dggWindFireWheelCount']() != 25 or m['dggWindFireChargePerHP']() != 5 or m['dggCanonLearnHours']() != 72 or m['dggCanonRecreateHours']() != 72 or m['dggLightningSwordDamage']() != 30"
+  },
+  {
+   "note": "the fire gems and the pearl",
+   "expr": "m['dggFireGemDmgLo']() != 6 or m['dggFireGemDmgHi']() != 60 or m['dggFireGemRangeYards']() != 50 or m['dggFireGemChargesLo']() != 2 or m['dggFireGemChargesHi']() != 12 or m['dggPearlSizeFeet']() != 3 or m['dggPearlRadiusMiles']() != 1"
+  },
+  {
+   "note": "the Shang-Ti walk: AC -2, 400 hit points, the 24 over 24 move, the 3-36 light shaft, the 5 foot 4 size decode",
+   "expr": "m['dggCbtAC'](0) != -2 or m['dggCbtHP'](0) != 400 or m['dggCbtMove'](0) != 24 or m['dggCbtMoveAlt'](0) != 24 or m['dggCbtMR'](0) != 50 or m['dggCbtSizeIn'](0) != 64 or m['dggShangTiShaftDmgLo']() != 3 or m['dggShangTiShaftDmgHi']() != 36 or m['dggClsCleric'](0) != 13 or m['dggClsMagUser'](0) != 20 or m['dggClsBard'](0) != 15 or m['dggAbiStr'](0) != 20 or m['dggAbiStrHit'](0) != 3 or m['dggAbiStrDmg'](0) != 8"
+  },
+  {
+   "note": "the Chao Kung Ming adjudications: the psionic class II (the 27px two-glyph word vs the Termux /I), the 6 foot 2 size decode, the tiger stats",
+   "expr": "m['dggRosPsiClass'](1) != 2 or m['dggCbtAC'](1) != -4 or m['dggCbtHP'](1) != 199 or m['dggCbtSizeIn'](1) != 74 or m['dggChaoSpearDmgLo']() != 10 or m['dggChaoSpearDmgHi']() != 60 or m['dggChaoTigerAC']() != 3 or m['dggChaoTigerHD']() != 11 or m['dggChaoTigerHP']() != 50 or m['dggChaoTigerAtN']() != 3 or m['dggChaoScaleMailPlus']() != 3 or m['dggClsRanger'](1) != 17 or m['dggClsAssassin'](1) != 10 or m['dggClsMonk'](1) != 7"
+  },
+  {
+   "note": "the Chih Sung-Tzu walk: 388 hit points, the 48-inch helm haste, the storm cloud at 24 with 10 beings, the rusting mail",
+   "expr": "m['dggCbtHP'](2) != 388 or m['dggCbtMR'](2) != 0 or m['dggCbtSizeIn'](2) != 0 or m['dggChihSungHelmSpeedInches']() != 48 or m['dggChihSungCloudSpeedInches']() != 24 or m['dggChihSungCloudBeings']() != 10 or m['dggChihSungMaceDmgLo']() != 3 or m['dggChihSungMaceDmgHi']() != 30 or m['dggChihSungScaleMailPlus']() != 3 or m['dggClsCleric'](2) != 20 or m['dggClsFighterLo'](2) != 13"
+  },
+  {
+   "note": "the Chih-Chiang Fyu-Ya walk: AC 7, the 12 over 30 move, the 2-20 arrows and 2-24 sword, the +4 plate, CH -2, class VI",
+   "expr": "m['dggCbtAC'](3) != 7 or m['dggCbtMove'](3) != 12 or m['dggCbtMoveAlt'](3) != 30 or m['dggCbtMR'](3) != 20 or m['dggChihChiangArrowDmgLo']() != 2 or m['dggChihChiangArrowDmgHi']() != 20 or m['dggChihChiangSwordDmgLo']() != 2 or m['dggChihChiangSwordDmgHi']() != 24 or m['dggChihChiangPlatePlus']() != 4 or m['dggChihChiangWingSpanFeet']() != 40 or m['dggAbiCha'](3) != -2 or m['dggRosPsiClass'](3) != 6 or m['dggRosPlane'](3) != 3"
+  },
+  {
+   "note": "the Chung Kuel walk: the psionic class II, the well of knowledge, the riddle rewards, the 319 hit points",
+   "expr": "m['dggRosPsiClass'](4) != 2 or m['dggCbtHP'](4) != 319 or m['dggCbtMR'](4) != 80 or m['dggChungKuelSwordPlus']() != 3 or m['dggClsCleric'](4) != 20 or m['dggClsDruid'](4) != 14 or m['dggClsRanger'](4) != 20 or m['dggClsIllus'](4) != 15 or m['dggAbiInt'](4) != 25 or m['dggRosPlane'](4) != 4"
+  },
+  {
+   "note": "the Counts of the Wind walk: 150 hit points each, the +2 plate, the 6-point electrical blows, class V, the twin-pair flags",
+   "expr": "m['dggCbtHP'](5) != 150 or m['dggCbtHP'](6) != 150 or m['dggCbtAC'](5) != -4 or m['dggCbtAtN'](5) != 3 or m['dggCbtAtD'](5) != 2 or m['dggRosPsiClass'](5) != 5 or m['dggWindCountsPlatePlus']() != 2 or m['dggWindCountsSwordDmgLo']() != 2 or m['dggWindCountsSwordDmgHi']() != 20 or m['dggWindCountsElectricDmg']() != 6 or m['dggWindCountsWhirlwindRounds']() != 2 or m['dggWindCountsWhirlwindPerDay']() != 1 or m['dggWindCountsWindConjureRounds']() != 10 or m['dggRosTwinPair'](5) != 1 or m['dggRosTwinPair'](6) != 1"
+  },
+  {
+   "note": "the Huan-Ti walk: AC -7, the 2-or-4 attacks, the chariot spell immunity, the dedication doctrine",
+   "expr": "m['dggCbtAC'](7) != -7 or m['dggCbtHP'](7) != 380 or m['dggCbtAtN'](7) != 2 or m['dggCbtAtD'](7) != 4 or m['dggHuanTiHalberdPlus']() != 2 or m['dggHuanTiSwordPlus']() != 3 or m['dggHuanTiPlatePlus']() != 3 or m['dggHuanTiChariotPegasi']() != 4 or m['dggHuanTiDedicationCount']() != 10 or m['dggHuanTiDedicationPct']() != 1 or m['dggClsRanger'](7) != 20 or m['dggAbiCha'](7) != 10"
+  },
+  {
+   "note": "the Kuan Yin walk: 100 percent MR, the See below magic-user cell, the violence negation and the wish doctrine",
+   "expr": "m['dggCbtMR'](8) != 100 or m['dggCbtHP'](8) != 376 or m['dggCbtAtN'](8) != 0 or m['dggClsMagUser'](8) != 99 or m['dggKuanYinMuLevel']() != 20 or m['dggKuanYinGoodActWorshipers']() != 50 or m['dggKuanYinWishPct']() != 5 or m['dggClsCleric'](8) != 25 or m['dggClsDruid'](8) != 14 or m['dggAbiStr'](8) != 8 or m['dggAbiDex'](8) != 12"
+  },
+  {
+   "note": "the Lei Kung walk: the 7-42 fists, the +4 hammer for 25, the +3 mail for 10, class VI",
+   "expr": "m['dggCbtHP'](9) != 354 or m['dggCbtMR'](9) != 5 or m['dggLeiKungFistDmgLo']() != 7 or m['dggLeiKungFistDmgHi']() != 42 or m['dggLeiKungHammerPlus']() != 4 or m['dggLeiKungHammerDmg']() != 25 or m['dggLeiKungMailPlus']() != 3 or m['dggLeiKungMailDamage']() != 10 or m['dggLeiKungWingSpanFeet']() != 40 or m['dggClsDruid'](9) != 10 or m['dggAbiWis'](9) != 17 or m['dggRosPlane'](9) != 6"
+  },
+  {
+   "note": "the Lu Yueh walk: the 25-point regeneration, the rotting sickness doctrine, the evil-gift percents, CH -3",
+   "expr": "m['dggCbtHP'](10) != 367 or m['dggCbtAtN'](10) != 6 or m['dggCbtMR'](10) != 0 or m['dggCbtSizeIn'](10) != 120 or m['dggLuYuehRegenPerRound']() != 25 or m['dggLuYuehRotRangeFeet']() != 10 or m['dggLuYuehRedFeverPerMelee']() != 3 or m['dggLuYuehCloudSizeInches']() != 3 or m['dggLuYuehEvilActPeople']() != 500 or m['dggLuYuehWatchingPct']() != 1 or m['dggLuYuehGiftPct']() != 5 or m['dggAbiCha'](10) != -3 or m['dggAbiWis'](10) != 5"
+  },
+  {
+   "note": "the Ma Yuan monster walk: 300 hit points, +3 to hit, the 10 slain deities, the 16+ attacks, X/32,300",
+   "expr": "m['dggCbtAC'](11) != -4 or m['dggCbtHP'](11) != 300 or m['dggCbtAtN'](11) != 5 or m['dggCbtMR'](11) != 65 or m['dggCbtSizeIn'](11) != 840 or m['dggMaYuanDmgLo']() != 3 or m['dggMaYuanDmgHi']() != 30 or m['dggMaYuanDmg2Lo']() != 5 or m['dggMaYuanDmg2Hi']() != 40 or m['dggMaYuanWeaponPlusToHit']() != 3 or m['dggMaYuanMinDeitiesKilled']() != 10 or m['dggMaYuanAttackHD']() != 16 or m['dggMaYuanXpValue']() != 32300 or m['dggRosRank'](11) != 3 or m['dggRosPsiClass'](11) != 0"
+  },
+  {
+   "note": "the No Cha walk: 8 attacks, the +3 flaming spear for 30, the gold brick 5-50 at 100 yards, the 5-round bracelet, the 30-point fireball",
+   "expr": "m['dggCbtHP'](12) != 239 or m['dggCbtAtN'](12) != 8 or m['dggCbtMove'](12) != 15 or m['dggCbtMoveAlt'](12) != 48 or m['dggNoChaSpearPlus']() != 3 or m['dggNoChaSpearDmg']() != 30 or m['dggNoChaGoldDmgLo']() != 5 or m['dggNoChaGoldDmgHi']() != 50 or m['dggNoChaGoldRangeYards']() != 100 or m['dggNoChaBraceletRounds']() != 5 or m['dggNoChaFireballDmg']() != 30 or m['dggClsIllus'](12) != 17 or m['dggClsThief'](12) != 20 or m['dggRosAlign'](12) != 7 or m['dggRosPlane'](12) != 8"
+  },
+  {
+   "note": "the Shan Hai Ching walk: the 5-50 hurricane, the sea summoning, the spell turning, the 6 over 48 move",
+   "expr": "m['dggCbtHP'](13) != 366 or m['dggCbtMove'](13) != 6 or m['dggCbtMoveAlt'](13) != 48 or m['dggCbtMR'](13) != 35 or m['dggShanHaiHurricaneDmgLo']() != 5 or m['dggShanHaiHurricaneDmgHi']() != 50 or m['dggClsCleric'](13) != 10 or m['dggAbiStr'](13) != 24 or m['dggRosPlane'](13) != 1"
+  },
+  {
+   "note": "the Spirits of the Air walk: 50 hit points, the 1-100 appearing, the 11-HD attacks, the 100-per-day summons",
+   "expr": "m['dggCbtAC'](14) != 4 or m['dggCbtHP'](14) != 50 or m['dggCbtAtN'](14) != 2 or m['dggCbtMR'](14) != 0 or m['dggSpiritsSummonPerDay']() != 100 or m['dggSpiritsAttackHD']() != 11 or m['dggSpiritsHP']() != 50 or m['dggSpiritsAppearingLo']() != 1 or m['dggSpiritsAppearingHi']() != 100 or m['dggRosRank'](14) != 3 or m['dggRosAlign'](14) != 4"
+  },
+  {
+   "note": "the Tou Mu adjudications: the psionic class II (the 29px word vs the Termux I), 8 attacks, the 16 arms, the chariot doctrine",
+   "expr": "m['dggRosPsiClass'](15) != 2 or m['dggCbtHP'](15) != 300 or m['dggCbtAtN'](15) != 8 or m['dggCbtMR'](15) != 25 or m['dggCbtSizeIn'](15) != 240 or m['dggTouMuArmsCount']() != 16 or m['dggTouMuBowRangeYards']() != 100 or m['dggTouMuArrowDmgLo']() != 1 or m['dggTouMuArrowDmgHi']() != 10 or m['dggTouMuFlagDeathSpells']() != 3 or m['dggTouMuDragonHeadHP']() != 80 or m['dggTouMuChariotCount']() != 5 or m['dggTouMuChariotTongueFeet']() != 32 or m['dggTouMuOverrunDmgLo']() != 2 or m['dggTouMuOverrunDmgHi']() != 12 or m['dggTouMuAttacksPerMelee']() != 8"
+  },
+  {
+   "note": "the Wen Chung adjudications: the 2nd-print 213 hit points (the IA 1st print reads 273 - the Gawaine precedent, flagged), the printed 12 over 21 move",
+   "expr": "m['dggCbtHP'](16) != 213 or m['dggCbtMove'](16) != 12 or m['dggCbtMoveAlt'](16) != 21 or m['dggCbtMR'](16) != 15 or m['dggCbtAtN'](16) != 3 or m['dggCbtAtD'](16) != 2 or m['dggWenChungEyeBoltDmg']() != 20 or m['dggWenChungEyeBoltRangeYards']() != 180 or m['dggWenChungEyeBoltPerDay']() != 10 or m['dggWenChungSwordPlus']() != 3 or m['dggAbiStrDmg'](16) != 12 or m['dggRosAlign'](16) != 5"
+  },
+  {
+   "note": "the Yen-Wang-Yeh walk: AC -5, the 2-20 broad sword, the 2 death rays per melee, the soul collection",
+   "expr": "m['dggCbtAC'](17) != -5 or m['dggCbtHP'](17) != 349 or m['dggCbtMR'](17) != 75 or m['dggYenWangSwordPlus']() != 3 or m['dggYenWangSwordDmgLo']() != 2 or m['dggYenWangSwordDmgHi']() != 20 or m['dggYenWangDeathRaysPerMelee']() != 2 or m['dggClsFighterLo'](17) != 18 or m['dggClsAssassin'](17) != 15 or m['dggClsMonk'](17) != 12 or m['dggAbiStr'](17) != 14 or m['dggRosPlane'](17) != 9"
+  },
+  {
+   "note": "the in-each flags across the class grid",
+   "expr": "m['dggRosInEach'](0) != 1 or m['dggRosInEach'](3) != 1 or m['dggRosInEach'](4) != 1 or m['dggRosInEach'](9) != 1 or m['dggRosInEach'](10) != 1 or m['dggRosInEach'](13) != 1 or m['dggRosInEach'](15) != 1 or m['dggRosInEach'](16) != 1 or m['dggRosInEach'](1) != 0 or m['dggRosInEach'](8) != 0"
+  },
+  {
+   "note": "the alignment census: the lawful evils, the neutral evil No Cha, the chaotic neutral Wen Chung",
+   "expr": "m['dggRosAlign'](3) != 6 or m['dggRosAlign'](9) != 6 or m['dggRosAlign'](0) != 3 or m['dggRosAlign'](13) != 3 or m['dggRosAlign'](12) != 7 or m['dggRosAlign'](16) != 5 or m['dggRosAlign'](7) != 2 or m['dggRosAlign'](17) != 4"
+  },
+  {
+   "note": "the rank census: the seven greaters, the four demigods, the five lessers, the two monster rows",
+   "expr": "m['dggRosRank'](0) != 1 or m['dggRosRank'](2) != 1 or m['dggRosRank'](4) != 1 or m['dggRosRank'](8) != 1 or m['dggRosRank'](9) != 1 or m['dggRosRank'](13) != 1 or m['dggRosRank'](17) != 1 or m['dggRosRank'](1) != 2 or m['dggRosRank'](3) != 2 or m['dggRosRank'](5) != 2 or m['dggRosRank'](12) != 2 or m['dggRosRank'](16) != 2"
+  },
+  {
+   "note": "the monster rows read the all-sentinel ability lines",
+   "expr": "m['dggAbiStr'](11) != 0 or m['dggAbiCha'](11) != 0 or m['dggAbiStr'](14) != 0 or m['dggAbiCha'](14) != 0 or m['dggAbiPsi'](11) != 0 or m['dggAbiPsi'](14) != 0"
+  },
+  {
+   "note": "the hit point walk across the eighteen stat blocks",
+   "expr": "m['dggCbtHP'](1) != 199 or m['dggCbtHP'](3) != 287 or m['dggCbtHP'](4) != 319 or m['dggCbtHP'](7) != 380 or m['dggCbtHP'](10) != 367 or m['dggCbtHP'](13) != 366 or m['dggCbtHP'](15) != 300 or m['dggCbtHP'](16) != 213"
+  }
+ ],
+ "header_sections": {
+  "the R855 census": [
+   {
+    "kind": "const",
+    "name": "dggRound"
+   },
+   {
+    "kind": "const",
+    "name": "dggPrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "dggPrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "dggBeingCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggTableCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggChainCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggRegistryFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dggCbtRows"
+   },
+   {
+    "kind": "const",
+    "name": "dggClsRows"
+   },
+   {
+    "kind": "const",
+    "name": "dggAbiRows"
+   },
+   {
+    "kind": "const",
+    "name": "dggRosRows"
+   },
+   {
+    "kind": "const",
+    "name": "dggPlaneCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggPsiClassI"
+   },
+   {
+    "kind": "const",
+    "name": "dggPsiClassII"
+   },
+   {
+    "kind": "const",
+    "name": "dggPsiClassV"
+   },
+   {
+    "kind": "const",
+    "name": "dggPsiClassVI"
+   },
+   {
+    "kind": "const",
+    "name": "dggArtifactCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggWindFireChargePerHP"
+   }
+  ],
+  "the mythos intro": [
+   {
+    "kind": "bool",
+    "name": "dggVastMythologyCaveat"
+   },
+   {
+    "kind": "bool",
+    "name": "dggGreatBureaucracy"
+   },
+   {
+    "kind": "bool",
+    "name": "dggSpecialTaskDeities"
+   },
+   {
+    "kind": "bool",
+    "name": "dggSupervisionChains"
+   },
+   {
+    "kind": "bool",
+    "name": "dggEmperorAccountability"
+   },
+   {
+    "kind": "bool",
+    "name": "dggAnnualReports"
+   },
+   {
+    "kind": "bool",
+    "name": "dggClericsSupportGovernment"
+   },
+   {
+    "kind": "bool",
+    "name": "dggEmperorHeadOfChurch"
+   },
+   {
+    "kind": "bool",
+    "name": "dggAtonementBySacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "dggAtonementMayBeDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "dggTravelPreaching"
+   }
+  ],
+  "the artifacts": [
+   {
+    "kind": "const",
+    "name": "dggIronWandRadiusInches"
+   },
+   {
+    "kind": "const",
+    "name": "dggIronWandLengthInches"
+   },
+   {
+    "kind": "const",
+    "name": "dggWindFireWheelCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggCanonLearnHours"
+   },
+   {
+    "kind": "const",
+    "name": "dggCanonRecreateHours"
+   },
+   {
+    "kind": "const",
+    "name": "dggLightningSwordDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dggFireGemDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggFireGemDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggFireGemRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "dggFireGemChargesLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggFireGemChargesHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggPearlSizeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dggPearlRadiusMiles"
+   },
+   {
+    "kind": "bool",
+    "name": "dggIronWandRevealsInvisible"
+   },
+   {
+    "kind": "bool",
+    "name": "dggIronWandDustDisappearance"
+   },
+   {
+    "kind": "bool",
+    "name": "dggIronWandStaffOfStriking"
+   },
+   {
+    "kind": "bool",
+    "name": "dggIronWandGrowsToClimb"
+   },
+   {
+    "kind": "bool",
+    "name": "dggJadeScepterBlocksMaterial"
+   },
+   {
+    "kind": "bool",
+    "name": "dggJadeScepterConcentration"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWindFireWheelStaffOfMagi"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWindFireWheelFans"
+   },
+   {
+    "kind": "bool",
+    "name": "dggCanonCreatesNonmagical"
+   },
+   {
+    "kind": "bool",
+    "name": "dggCanonImmortalsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLightningSwordDancingParity"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLightningSwordUnlimited"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLightningSwordAirDemigods"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLightningSwordMortalNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "dggFireGemOncePerTurn"
+   },
+   {
+    "kind": "bool",
+    "name": "dggPearlUncontrolled"
+   }
+  ],
+  "the Shang-Ti walk": [
+   {
+    "kind": "const",
+    "name": "dggShangTiShaftDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggShangTiShaftDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShangTiSupremeGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShangTiTravelsAmongMortals"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShangTiFloatsEthereal"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShangTiWeaponsReturn"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShangTiShaftRangeSight"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShangTiWeatherControl"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShangTiBureaucracyHead"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShangTiWordIsLaw"
+   }
+  ],
+  "the Chao Kung Ming walk": [
+   {
+    "kind": "const",
+    "name": "dggChaoSpearDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggChaoSpearDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggChaoTigerAC"
+   },
+   {
+    "kind": "const",
+    "name": "dggChaoTigerHD"
+   },
+   {
+    "kind": "const",
+    "name": "dggChaoTigerHP"
+   },
+   {
+    "kind": "const",
+    "name": "dggChaoTigerAtN"
+   },
+   {
+    "kind": "const",
+    "name": "dggChaoScaleMailPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChaoWarDemigod"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChaoRidesFlyingTiger"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChaoPlaneTravel"
+   }
+  ],
+  "the Chih Sung-Tzu walk": [
+   {
+    "kind": "const",
+    "name": "dggChihSungHelmSpeedInches"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihSungCloudSpeedInches"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihSungCloudBeings"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihSungMaceDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihSungMaceDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihSungScaleMailPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChihSungRainLord"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChihSungWeatherOnCommand"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChihSungRustsMetal"
+   }
+  ],
+  "the Chih-Chiang Fyu-Ya walk": [
+   {
+    "kind": "const",
+    "name": "dggChihChiangArrowDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihChiangArrowDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihChiangSwordDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihChiangSwordDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihChiangPlatePlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggChihChiangWingSpanFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChihChiangArcherGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChihChiangHitsAnyTargetInSight"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChihChiangReversesWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChihChiangBowBackfires"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChihChiangShapeChange"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChihChiangAvengeGods"
+   }
+  ],
+  "the Chung Kuel walk": [
+   {
+    "kind": "const",
+    "name": "dggChungKuelSwordPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChungKuelTruthGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChungKuelWellOfKnowledge"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChungKuelSecuresWinning"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChungKuelRodOfCancellation"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChungKuelRiddleTravels"
+   },
+   {
+    "kind": "bool",
+    "name": "dggChungKuelRiddleRewards"
+   }
+  ],
+  "the Fei Lien and Feng Po walk": [
+   {
+    "kind": "const",
+    "name": "dggWindCountsPlatePlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggWindCountsSwordDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggWindCountsSwordDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggWindCountsElectricDmg"
+   },
+   {
+    "kind": "const",
+    "name": "dggWindCountsWhirlwindRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dggWindCountsWhirlwindPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dggWindCountsWindConjureRounds"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWindCountsOfTheWind"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWindCountsRideTheWind"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWindCountsLeatherSacks"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWindCountsBattleGoBetweens"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWindCountsDemonicLook"
+   }
+  ],
+  "the Huan-Ti walk": [
+   {
+    "kind": "const",
+    "name": "dggHuanTiHalberdPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggHuanTiHalberdDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggHuanTiHalberdDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggHuanTiSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggHuanTiPlatePlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggHuanTiChariotPegasi"
+   },
+   {
+    "kind": "const",
+    "name": "dggHuanTiDedicationCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggHuanTiDedicationPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dggHuanTiWarGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dggHuanTiDualWield"
+   },
+   {
+    "kind": "bool",
+    "name": "dggHuanTiChariotSpellImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "dggHuanTiWatchesBattles"
+   },
+   {
+    "kind": "bool",
+    "name": "dggHuanTiHeadsBurned"
+   },
+   {
+    "kind": "bool",
+    "name": "dggHuanTiRedArmorAlways"
+   }
+  ],
+  "the Kuan Yin walk": [
+   {
+    "kind": "const",
+    "name": "dggKuanYinMuLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dggKuanYinGoodActWorshipers"
+   },
+   {
+    "kind": "const",
+    "name": "dggKuanYinWishPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKuanYinMercyGoddess"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKuanYinNegateViolence"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKuanYinNeverHarmfulSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKuanYinNoViolenceAgainstHer"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKuanYinCommonFolk"
+   },
+   {
+    "kind": "bool",
+    "name": "dggKuanYinPeacemakers"
+   }
+  ],
+  "the Lei Kung walk": [
+   {
+    "kind": "const",
+    "name": "dggLeiKungFistDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggLeiKungFistDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggLeiKungHammerPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggLeiKungHammerDmg"
+   },
+   {
+    "kind": "const",
+    "name": "dggLeiKungMailPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggLeiKungMailDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dggLeiKungWingSpanFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLeiKungThunderDuke"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLeiKungGreenDrums"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLeiKungFoulWeatherOnRequest"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLeiKungDelightsInWindstorms"
+   }
+  ],
+  "the Lu Yueh walk": [
+   {
+    "kind": "const",
+    "name": "dggLuYuehRegenPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dggLuYuehRotRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dggLuYuehRedFeverPerMelee"
+   },
+   {
+    "kind": "const",
+    "name": "dggLuYuehCloudSizeInches"
+   },
+   {
+    "kind": "const",
+    "name": "dggLuYuehEvilActPeople"
+   },
+   {
+    "kind": "const",
+    "name": "dggLuYuehWatchingPct"
+   },
+   {
+    "kind": "const",
+    "name": "dggLuYuehGiftPct"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLuYuehEpidemicGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLuYuehRottingSicknessSpell"
+   },
+   {
+    "kind": "bool",
+    "name": "dggLuYuehNoArmor"
+   }
+  ],
+  "the Ma Yuan walk": [
+   {
+    "kind": "const",
+    "name": "dggMaYuanDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggMaYuanDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggMaYuanDmg2Lo"
+   },
+   {
+    "kind": "const",
+    "name": "dggMaYuanDmg2Hi"
+   },
+   {
+    "kind": "const",
+    "name": "dggMaYuanWeaponPlusToHit"
+   },
+   {
+    "kind": "const",
+    "name": "dggMaYuanMinDeitiesKilled"
+   },
+   {
+    "kind": "const",
+    "name": "dggMaYuanAttackHD"
+   },
+   {
+    "kind": "const",
+    "name": "dggMaYuanXpValue"
+   },
+   {
+    "kind": "bool",
+    "name": "dggMaYuanGodKiller"
+   },
+   {
+    "kind": "bool",
+    "name": "dggMaYuanStormGiantStrength"
+   },
+   {
+    "kind": "bool",
+    "name": "dggMaYuanTriangularStone"
+   },
+   {
+    "kind": "bool",
+    "name": "dggMaYuanDoublePowerTactic"
+   },
+   {
+    "kind": "bool",
+    "name": "dggMaYuanPreventsComplacency"
+   }
+  ],
+  "the No Cha walk": [
+   {
+    "kind": "const",
+    "name": "dggNoChaSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggNoChaSpearDmg"
+   },
+   {
+    "kind": "const",
+    "name": "dggNoChaGoldDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggNoChaGoldDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggNoChaGoldRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "dggNoChaBraceletRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dggNoChaFireballDmg"
+   },
+   {
+    "kind": "bool",
+    "name": "dggNoChaThievesDemigod"
+   },
+   {
+    "kind": "bool",
+    "name": "dggNoChaGrowShrink"
+   },
+   {
+    "kind": "bool",
+    "name": "dggNoChaPantherWhirlwind"
+   },
+   {
+    "kind": "bool",
+    "name": "dggNoChaStranglerBracelet"
+   },
+   {
+    "kind": "bool",
+    "name": "dggNoChaThievesPatron"
+   }
+  ],
+  "the Shan Hai Ching walk": [
+   {
+    "kind": "const",
+    "name": "dggShanHaiHurricaneDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggShanHaiHurricaneDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShanHaiWindSeaGod"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShanHaiHurricaneWind"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShanHaiSeaSummoning"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShanHaiSpellTurning"
+   },
+   {
+    "kind": "bool",
+    "name": "dggShanHaiSeaSacrifice"
+   }
+  ],
+  "the Spirits of the Air walk": [
+   {
+    "kind": "const",
+    "name": "dggSpiritsSummonPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dggSpiritsAttackHD"
+   },
+   {
+    "kind": "const",
+    "name": "dggSpiritsHP"
+   },
+   {
+    "kind": "const",
+    "name": "dggSpiritsAppearingLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggSpiritsAppearingHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dggSpiritsOfTheAir"
+   },
+   {
+    "kind": "bool",
+    "name": "dggSpiritsLook"
+   }
+  ],
+  "the Tou Mu walk": [
+   {
+    "kind": "const",
+    "name": "dggTouMuArmsCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuBowRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuArrowDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuArrowDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuSpearPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuSpearDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuSpearDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuFlagDeathSpells"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuDragonHeadHP"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuChariotCount"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuChariotSpeedInches"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuChariotTongueFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuOverrunDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuOverrunDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggTouMuAttacksPerMelee"
+   },
+   {
+    "kind": "bool",
+    "name": "dggTouMuNorthStarGoddess"
+   },
+   {
+    "kind": "bool",
+    "name": "dggTouMuDancingSword"
+   },
+   {
+    "kind": "bool",
+    "name": "dggTouMuMoonPiece"
+   },
+   {
+    "kind": "bool",
+    "name": "dggTouMuLotusHeals"
+   },
+   {
+    "kind": "bool",
+    "name": "dggTouMuFreeClaws"
+   },
+   {
+    "kind": "bool",
+    "name": "dggTouMuAdamantChariots"
+   }
+  ],
+  "the Wen Chung walk": [
+   {
+    "kind": "const",
+    "name": "dggWenChungEyeBoltDmg"
+   },
+   {
+    "kind": "const",
+    "name": "dggWenChungEyeBoltRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "dggWenChungEyeBoltPerDay"
+   },
+   {
+    "kind": "const",
+    "name": "dggWenChungSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggWenChungSwordDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggWenChungSwordDmgHi"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWenChungThunderMinister"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWenChungSummonsWeather"
+   },
+   {
+    "kind": "bool",
+    "name": "dggWenChungImmunities"
+   }
+  ],
+  "the Yen-Wang-Yeh walk": [
+   {
+    "kind": "const",
+    "name": "dggYenWangSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "dggYenWangSwordDmgLo"
+   },
+   {
+    "kind": "const",
+    "name": "dggYenWangSwordDmgHi"
+   },
+   {
+    "kind": "const",
+    "name": "dggYenWangDeathRaysPerMelee"
+   },
+   {
+    "kind": "bool",
+    "name": "dggYenWangDeadJudge"
+   },
+   {
+    "kind": "bool",
+    "name": "dggYenWangDragonShape"
+   },
+   {
+    "kind": "bool",
+    "name": "dggYenWangTouchParalysis"
+   },
+   {
+    "kind": "bool",
+    "name": "dggYenWangCollectsSouls"
+   },
+   {
+    "kind": "bool",
+    "name": "dggYenWangTracksRogues"
+   },
+   {
+    "kind": "bool",
+    "name": "dggYenWangNoPowerOverRisen"
+   }
+  ],
+  "the combat grid": [
+   {
+    "kind": "table",
+    "name": "the combat grid"
+   }
+  ],
+  "the class grid": [
+   {
+    "kind": "table",
+    "name": "the class grid"
+   }
+  ],
+  "the ability grid": [
+   {
+    "kind": "table",
+    "name": "the ability grid"
+   }
+  ],
+  "the roster grid": [
+   {
+    "kind": "table",
+    "name": "the roster grid"
+   }
+  ]
+ },
+ "data_files": [],
+ "prev_seed_key": "- R854 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "  - R854 LANDED 2026-10-26: commit",
+  "  e10a2090a52e95456c827c2c52b2e58d1e9c0949",
+  "  (pushed ba14cd0..e10a209, census 776 ->",
+  "  777), THE CENTRAL AMERICAN MYTHOS - the",
+  "  D&DG walk round six, print pp. 32-36:",
+  "  fourteen beings (Quetzalcoatl, Camaxtli,",
+  "  Chalchiuhtlicue, Camazotz, Huhueteotl,",
+  "  Huitzilopochtli, the twin heroes Hunapu",
+  "  and Xbalanque, Itzamna, Tezcatlipoca,",
+  "  Mictlantecuhtli, Tlaloc, Tlazolteotl,",
+  "  Xochipilli), the elite-cleric doctrine",
+  "  with the compass directions, all on the",
+  "  one parallel Prime Material Plane. THE",
+  "  SHAPE: 4 grids x 14 rows (combat, class,",
+  "  ability, roster; 38 cols - the roster",
+  "  col 9 repurposed as the twin-pair flag,",
+  "  col 8 as the in-each flag; Move -1 =",
+  "  printed Infinite), 70 consts + 127",
+  "  bools + 38 table cols, inline 235; 30",
+  "  examples; header rules/dgf.h, prefix",
+  "  dgf; audit \"R854 Central American",
+  "  mythos audit\", rode",
+  "  rules/audits/r854_batch.h. THE",
+  "  ADJUDICATIONS (the IA 1st-print",
+  "  djvu.xml geometry at 600dpi over the",
+  "  Termux extract): Tezcatlipoca psionic",
+  "  class II (the 28px two-glyph word vs",
+  "  the Termux single I), the size decodes",
+  "  (Chalchiuhtlicue 6'4\" and the twins",
+  "  5'4\" - the 149px six-glyph cells, the",
+  "  R853 foot-mark-misread lesson;",
+  "  Xochipilli the printed 16 feet), the",
+  "  Tlazolteotl charisma 24/-5. EYEBALL",
+  "  CELLS (flagged): the Tlazolteotl hit",
+  "  points (the 2nd-print 211 pinned vs",
+  "  the IA 1st-print 217 - a genuine print",
+  "  divergence, the Gawaine 112 precedent).",
+  "  ZERO registry defs touched - the floor",
+  "  holds at 995. THE RED LESSON",
+  "  (first-land abort, no commit): the",
+  "  intro-doctrine example carried Python",
+  "  True literals - py_expr_to_cpp",
+  "  translates m['x'] and ' or ' but",
+  "  passes True through verbatim, so the",
+  "  audit emitted 'dgfEastRed() != True'",
+  "  and died at the Termux compile. STANDING",
+  "  RULE: never put Python True/False",
+  "  literals in example exprs - scan the",
+  "  spec for True/False tokens before",
+  "  publish; the rverify Python sim cannot",
+  "  see undeclared C++ identifiers (the",
+  "  R392 sim-blindness class). The",
+  "  unwind+re-land rode the R817 rule",
+  "  (git restore to ba14cd0 + rm of the",
+  "  new header/audit; fresh md5",
+  "  cf07a5ef6e8988f1728ad9259cb200a3,",
+  "  75,550 bytes). rverify double-run",
+  "  GREEN, 729 mutants 0 missed; hyphen",
+  "  scan clean. NEXT: the D&DG walk",
+  "  continues from the Chinese mythos",
+  "  (print pp. 37-42)."
+ ],
+ "inline_count": 279
+}

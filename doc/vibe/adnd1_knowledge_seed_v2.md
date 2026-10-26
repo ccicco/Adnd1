@@ -24617,6 +24617,67 @@ pristine (743 census, 0 traces). NEXT: awaits Curtiss's call.
   scan clean. NEXT: the D&DG walk
   continues from the Central American
   mythos (print pp. 32-36).
+  - R854 LANDED 2026-10-26: commit
+  e10a2090a52e95456c827c2c52b2e58d1e9c0949
+  (pushed ba14cd0..e10a209, census 776 ->
+  777), THE CENTRAL AMERICAN MYTHOS - the
+  D&DG walk round six, print pp. 32-36:
+  fourteen beings (Quetzalcoatl, Camaxtli,
+  Chalchiuhtlicue, Camazotz, Huhueteotl,
+  Huitzilopochtli, the twin heroes Hunapu
+  and Xbalanque, Itzamna, Tezcatlipoca,
+  Mictlantecuhtli, Tlaloc, Tlazolteotl,
+  Xochipilli), the elite-cleric doctrine
+  with the compass directions, all on the
+  one parallel Prime Material Plane. THE
+  SHAPE: 4 grids x 14 rows (combat, class,
+  ability, roster; 38 cols - the roster
+  col 9 repurposed as the twin-pair flag,
+  col 8 as the in-each flag; Move -1 =
+  printed Infinite), 70 consts + 127
+  bools + 38 table cols, inline 235; 30
+  examples; header rules/dgf.h, prefix
+  dgf; audit "R854 Central American
+  mythos audit", rode
+  rules/audits/r854_batch.h. THE
+  ADJUDICATIONS (the IA 1st-print
+  djvu.xml geometry at 600dpi over the
+  Termux extract): Tezcatlipoca psionic
+  class II (the 28px two-glyph word vs
+  the Termux single I), the size decodes
+  (Chalchiuhtlicue 6'4" and the twins
+  5'4" - the 149px six-glyph cells, the
+  R853 foot-mark-misread lesson;
+  Xochipilli the printed 16 feet), the
+  Tlazolteotl charisma 24/-5. EYEBALL
+  CELLS (flagged): the Tlazolteotl hit
+  points (the 2nd-print 211 pinned vs
+  the IA 1st-print 217 - a genuine print
+  divergence, the Gawaine 112 precedent).
+  ZERO registry defs touched - the floor
+  holds at 995. THE RED LESSON
+  (first-land abort, no commit): the
+  intro-doctrine example carried Python
+  True literals - py_expr_to_cpp
+  translates m['x'] and ' or ' but
+  passes True through verbatim, so the
+  audit emitted 'dgfEastRed() != True'
+  and died at the Termux compile. STANDING
+  RULE: never put Python True/False
+  literals in example exprs - scan the
+  spec for True/False tokens before
+  publish; the rverify Python sim cannot
+  see undeclared C++ identifiers (the
+  R392 sim-blindness class). The
+  unwind+re-land rode the R817 rule
+  (git restore to ba14cd0 + rm of the
+  new header/audit; fresh md5
+  cf07a5ef6e8988f1728ad9259cb200a3,
+  75,550 bytes). rverify double-run
+  GREEN, 729 mutants 0 missed; hyphen
+  scan clean. NEXT: the D&DG walk
+  continues from the Chinese mythos
+  (print pp. 37-42).
 ## Knowledge maintenance
 
 - Each land appends ONE entry to Round state above (date,
