@@ -24933,6 +24933,58 @@ bytes; 179 inlines (57 consts, 84 bools, 38 table cols), 15 examples, no
 data files; engine applied 6/already 6 double-run; rverify GREEN, 635
 mutants 0 missed; hyphen scan clean; zero True/False tokens. NEXT: WAIT
 FOR GO.
+- R862 LANDED 2026-10-26: commit
+f21b8dcae902666becfe41e36ad958fee2ad6a7d (pushed
+98bd7f9..f21b8dc, census 784 -> 785), THE MELNIBONEAN
+MYTHOS - the D&DG walk round fourteen, print pp. 86-95,
+the monster-heaviest round of the walk: thirty-three
+beings - the four heroes (Elric, Moonglum, Theleb
+K'aarna, Yyrkoon), the three greater gods (Arioch,
+Donblas, Xiombarg), the six lesser gods (Darnizhaan,
+Grome, Kakatal, Misha, Pyaray, Straasha), the six
+demigod masters of the demi-planes (Fileet,
+Haaashastaak, Meerclar, Nnuurrr, Nuru-ah, Roofdrak)
+and fourteen monsters (the Assassinator of the Gods
+through the Vulture Lion); prefix mlb (full-repo scan
+clean). The headline adjudication: the ELRIC DUAL
+PRINT - the walk's only dual armor class (6 and minus
+6, the latter the Stormbringer wield-state) and a dual
+move (6 and 15); his printed Standard-or-85% magic
+resistance pins 0 with the 85 riding the Stormbringer
+consts. The SEE BELOW 99 PAIRS (the egp Isis
+precedent): Grome and Nuru-ah on both lines, Kakatal,
+Misha and Straasha on the MU/I line. The VARIABLE
+PINS: Arioch prints both SIZE: Variable and CHARISMA:
+Variable - both 0 with col comments; Nnuurrr and
+Pyaray print CH: -6. Flagged odd prints pinned as
+printed: the Haaashastaak and Nnuurrr W: 3 cells.
+The BARE AND STRAY SIZE PRINTS: Fileet the bare L
+pinned 0 (the R861 bare-M precedent), the Vampire
+Trees the L-plus-25-feet-tall print read as 300 with
+the stray plus noted. The monster XP romans verified:
+VIII/6,200 Assassinator flat, X/21,450 Quaolnargn
+flat, VIII/6,391 Mordagz flat, the per-hp rows Clakar
+VI/650+10, Dharzi II/90+5, Myyrrhn III/125+4, Nihrain
+and Oonai VII/1,950+14, Mist Giant VIII/4,950+16,
+Vampire Trees VIII/3,850+16, Vulture Lion IX/5,600+20;
+the Kelmain Variable XP rides a bool. The fraction
+fingerprint: Moonglum 66, Theleb K'aarna 66, Yyrkoon
+78. The ELENOIN-GRAHUK ENMITY PAIR (the grk
+printed-rivalry precedent, the round's only rivalry
+print). The psionic pipes: the w10 single pipe I of
+Arioch, Darnizhaan, Meerclar and Nuru-ah, Pyaray II,
+the w49 VI of Grome, Haaashastaak, Misha, Roofdrak
+and Straasha. ZERO registry defs touched - the floor
+holds at 995. Spec tools/spec_r862.json, md5
+5bb54a60bef7347b448f4f7a8ea153ec (93,354 bytes);
+355 inlines (167 consts, 150 bools, 38 table cols, 4
+grids x 33 rows), 16 examples, no data files; ddg gap
+14/24 closed, 10 open. The rverify mutant count rode
+only in the Termux landing output (not in the pasted
+excerpt) - amend at the next touch if Curtiss wants it
+recorded. NEXT: the D&DG walk continues from the
+Nehwon mythos (print pp. 96-104) - WAIT FOR GO.
+## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
 

@@ -20,7 +20,7 @@ print p. 6; p132 is print 131).
 - [x] **Indian mythos** (pp. 75-80)
 - [x] **Japanese mythos** (pp. 81-85)
 - [x] **Melnibonean mythos** (pp. 86-95)
-- [ ] **Nehwon mythos** (pp. 96-104)
+- [x] **Nehwon mythos** (pp. 96-104)
 - [ ] **Nonhumans' Deities** (pp. 105-112)
 - [ ] **Norse mythos** (pp. 113-124)
 - [ ] **Sumerian mythos** (pp. 125-127)

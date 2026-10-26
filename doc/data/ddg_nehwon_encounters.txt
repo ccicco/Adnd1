@@ -1,0 +1,92 @@
+DDG Nehwon encounter tables (print p. 104, the 2nd printing)
+Six outdoor regions; 00 reads as 100. The asterisk rows are
+the Nehwon-section monsters; all others are from MONSTER MANUAL.
+The mountains table prints an overlap: the astral wolf 01-05 and
+the bird of Tyaa 03-06 - pinned as printed (the audit walk).
+
+COLD REGION
+* Behemoth, snow                           01-02
+  Bugbear                                  03-08
+  Cold spawn (white pudding)               09-12
+  Dragon, white                            13-17
+  Elf, winter (as wood elf)                18-21
+  Giant, frost                             22-25
+  Giant, hill                              26-31
+  Gnome, ice (northern gnome)              32-34
+  Griffon                                  35-40
+  Hydra, snow (as normal hydra, but furred) 41-43
+  Men, bandit                              44-55
+  Men, barbarian                           56-61
+  Men, berserker                           62-65
+  Men, merchant                            66-70
+  Ogre                                     71-77
+  Snake, giant, furred (constrictor)       78-82
+* Snow serpent                             83-85
+* Snow witch                               86-90
+  Tiger, ice (as normal tiger, but white)  91-96
+  Yeti                                     97-00
+
+FOREST
+  Centaur                                  01-06
+  Dryad                                    07-09
+  Elf, wood                                10-18
+* Ghoul, Nehwon                            19-26
+  Lion                                     27-34
+  Men, bandit                              35-50
+  Men, barbarian                           51-58
+  Men, merchant                            59-66
+  Ogre                                     67-82
+  Satyr                                    83-90
+  Snake, wood (spitting)                   91-96
+  Unicorn                                  97-00
+
+MARSH
+* Behemoth, swamp                          01-03
+  Eel, giant                               04-15
+* Ghoul, Nehwon                            16-20
+  Men, brigand                             21-42
+  Men, merchant                            43-50
+  Rat, swamp (giant)                       51-70
+  Slug, swamp (giant)                      71-80
+* Spider, salt                             81-85
+* Water cobra                              86-95
+  Worm, giant (purple)                     96-00
+
+MOUNTAINS
+* Astral wolf                              01-05
+* Bird of Tyaa                             03-06
+* Ghoul, Nehwon                            07-15
+  Lion                                     16-24
+  Men, bandit                              25-45
+  Men, barbarian                           46-57
+  Men, merchant                            58-66
+  Ogre                                     67-82
+  Satyr                                    83-90
+  Snake, wood (spitting)                   91-96
+  Unicorn                                  97-00
+
+PLAINS/HILLS
+* Behemoth, black                          01-02
+* Bird of Tyaa                             03-07
+  Bugbear                                  08-16
+* Fire magician                            17-18
+* Ghoul, Nehwon                            19-27
+  Griffon                                  28-37
+  Hippogriff                               38-43
+  Lion                                     44-52
+  Men, bandit                              53-61
+  Men, barbarian                           62-70
+  Men, merchant                            71-90
+  Men, Mingol (as dervish)                 91-00
+
+WATERBORNE
+* Behemoth                                 01-03
+  Dragon, water (as hydra, aquatic)        04-15
+* Leviathan                                16-17
+  Men, barbarian (raider)                  18-29
+  Men, buccaneer                           30-39
+  Men, merchant                            40-64
+  Men, pirate                              65-74
+  Merman                                   75-86
+  Shark                                    87-00
+
