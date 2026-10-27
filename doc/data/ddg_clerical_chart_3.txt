@@ -1,0 +1,202 @@
+The DDG print pp. 138-139 clerical quick-reference chart rows -
+batch three (Egyptian, Finnish; the Egyptian block rides pdf 138
+below the R870 Cthulhu tail). The per-column rosters (first-
+appearance ordinals = the grid cells) and the printed rows. Primary ink:
+the rotated tesseract pass; the collation voice: the 1eonline L&L
+per-deity chart rows.
+== the sphere roster (26) ==
+00 sun
+01 war
+02 guards dead
+03 insects
+04 felines
+05 luck
+06 earth
+07 vengeance
+08 magic
+09 protection; wealth
+10 nature; the dead
+11 universe
+12 light
+13 evil
+14 sky
+15 storms; water
+16 knowledge
+17 water
+18 motherhood
+19 sickness
+20 pain
+21 nature
+22 death
+23 underworld
+24 sky; air
+25 sleep; dreams
+== the animal roster (27) ==
+00 hawk
+01 lion
+02 jackal
+03 scarab
+04 cat
+05 fox
+06 goose
+07 falcon
+08 gull
+09 raven
+10 dog
+11 dragon
+12 sparrowhawk
+13 serpent
+14 ostrich
+15 carp
+16 ibis
+17 turtle
+18 wolf
+19 dove
+20 worm
+21 fly
+22 elk
+23 spider
+24 snake
+25 eagle
+26 wood duck
+== the head roster (15) ==
+00 gold helm
+01 helm
+02 bare
+03 cat helm
+04 silvered helm
+05 n/a
+06 black helm
+07 feathered helm
+08 scaled helm
+09 shell helm
+10 silver helm
+11 white fur cap
+12 pointed fur cap
+13 leather helm
+14 war helm
+== the body roster (26) ==
+00 kilt
+01 leather
+02 onyx jewelry
+03 yellow kilt
+04 gray kilt
+05 leather vest, kilt
+06 ring mail
+07 war harness
+08 scarlet kilt
+09 black tunic
+10 green tunic
+11 jade ornaments
+12 white tunic
+13 leather tunic
+14 blue vest
+15 leather vest
+16 cotton tunic
+17 green cloak
+18 leather cloak
+19 white shift
+20 black shift
+21 ivory cloak
+22 red boots
+23 brown shift
+24 chain mail
+25 blue tunic
+== the color roster (24) ==
+00 gold
+01 blood red
+02 black
+03 yellow
+04 tan
+05 orange
+06 brown
+07 bright blue
+08 crimson
+09 charcoal
+10 bright green
+11 black, silver
+12 white
+13 emerald, black
+14 light blue
+15 rusty red
+16 purple
+17 sea green
+18 maroon
+19 gray
+20 ivory
+21 forest green
+22 charcoal black
+23 pale blue
+== the holyday roster (11) ==
+00 equinox, solstice
+01 equinox
+02 full moon
+03 spring equinox
+04 new moon
+05 half moon
+06 solstice
+07 summer solstice
+08 n/a
+09 fall equinox
+10 winter solstice
+== the freq roster (6) ==
+00 often
+01 in battle; semiannually
+02 monthly
+03 annually
+04 semiannually
+05 n/a
+== the form roster (17) ==
+00 valuables
+01 enemies
+02 animal
+03 snakes
+04 precious stones
+05 precious fluids
+06 offerings
+07 jewelry
+08 gems
+09 precious jewelry
+10 n/a
+11 crafted items
+12 gold cups
+13 burnt offering
+14 burnt herbs
+15 silver armbands
+16 precious liquids
+== the place roster (5) ==
+00 temple
+01 temple, home
+02 special hall
+03 n/a
+04 forest glens
+
+== the printed rows ==
+Ra :: sun | hawk | X X - | gold helm | kilt | gold | equinox, solstice | often | valuables | temple
+Anhur :: war | lion | X - - | helm | leather | blood red | equinox | in battle; semiannually | enemies | temple
+Anubis :: guards dead | jackal | X X - | bare | onyx jewelry | black | full moon | monthly | valuables | temple
+Apshai :: insects | scarab | X X X | bare | yellow kilt | yellow | spring equinox | annually | animal | temple
+Bast :: felines | cat | X X X | cat helm | gray kilt | tan | full moon | monthly | snakes | temple, home
+Bes :: luck | fox | X X - | silvered helm | leather vest, kilt | orange | new moon | monthly | valuables | temple
+Geb :: earth | goose | X X - | n/a | ring mail | brown | half moon | monthly | precious stones | temple
+Horus :: vengeance | falcon | X X - | helm | war harness | bright blue | solstice | semiannually | precious fluids | temple, home
+Isis :: magic | gull | X X X | bare | scarlet kilt | crimson | full moon | monthly | valuables | temple
+Nephthys :: protection; wealth | raven | X X - | bare | black tunic | charcoal | new moon | monthly | valuables | temple
+Osiris :: nature; the dead | dog | X X - | bare | green tunic | bright green | equinox | semiannually | offerings | temple
+Ptah :: universe | dragon | X X X | black helm | jade ornaments | black, silver | new moon | monthly | precious stones | temple
+Seker :: light | sparrowhawk | X X - | feathered helm | white tunic | white | summer solstice | annually | jewelry | temple
+Set :: evil | serpent | X X X | black helm | leather tunic | emerald, black | full moon | monthly | valuables | temple
+Shu :: sky | ostrich | X X - | bare | blue vest | light blue | equinox | semiannually | gems | temple
+Tefnut :: storms; water | carp | X X - | scaled helm | leather vest | rusty red | spring equinox | annually | animal | temple
+Thoth :: knowledge | ibis | X X X | bare | cotton tunic | purple | equinox | semiannually | offerings | temple
+Ahto :: water | turtle | X X - | shell helm | green cloak | sea green | spring equinox | annually | precious jewelry | special hall
+Hiisi :: evil | wolf | X X - | bare | leather cloak | maroon | n/a | n/a | n/a | n/a
+Ilmatar :: motherhood | dove | - X - | bare | white shift | white | full moon | monthly | crafted items | special hall
+Kiputytto :: sickness | worm | X X - | silver helm | black shift | gray | fall equinox | annually | gold cups | special hall
+Loviatar :: pain | fly | X X - | white fur cap | ivory cloak | ivory | winter solstice | annually | burnt offering | special hall
+Mielikki :: nature | elk | X X - | bare | green tunic | forest green | spring equinox | annually | burnt herbs | forest glens
+Surma :: death | fox | X X - | pointed fur cap | red boots | crimson | n/a | n/a | n/a | n/a
+Tuonetar :: underworld | spider | X X - | feathered helm | brown shift | charcoal black | n/a | n/a | n/a | n/a
+Tuoni :: underworld | snake | X X - | leather helm | leather vest | purple | n/a | n/a | n/a | n/a
+Ukko :: sky; air | eagle | X X - | war helm | chain mail | gold | full moon | monthly | silver armbands | special hall
+Untamo :: sleep; dreams | wood duck | X X - | bare | blue tunic | pale blue | new moon | monthly | precious liquids | special hall

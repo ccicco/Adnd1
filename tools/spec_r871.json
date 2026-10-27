@@ -1,0 +1,877 @@
+{
+ "prefix": "cqc3",
+ "round": 871,
+ "title": "the clerical chart, batch three",
+ "header_file": "rules/cqc3.h",
+ "audit_file": "rules/audits/r871_batch.h",
+ "audit_label": "R871 clerical chart batch three audit",
+ "include_after": "#include \"rules/cqc2.h\"  // R870: the clerical chart, batch two",
+ "audit_anchor": "#include \"rules/audits/r870_batch.h\"  // R870: R870 clerical chart batch two audit",
+ "include_comment": "the clerical chart, batch three",
+ "audit_comment": "APPENDIX 3: THE CLERICAL QUICK-REFERENCE CHARTS, BATCH THREE - the D&DG walk round twenty-three, print pp. 138-139: the third batch of deity rows - Egyptian (17), Finnish (11) - riding the roster data file, the Egyptian block below the R870 Cthulhu tail on pdf 138; the App 3 gap box stays open until the last chart batch lands. The print voice is the ROTATED tesseract pass, collated against the 1eonline L&L per-deity chart rows. The headline divergence: the L&L Seker row duplicates Shu - the print reads the distinct Seker row (feathered helm, white tunic, white, summer solstice, annually, jewelry) - pinned by print, eyeball flag.",
+ "banner": {
+  "title": "Appendix 3: the clerical quick-reference chart, batch three - the D&DG walk round twenty-three, print pp. 138-139: the 28 rows of the Egyptian and Finnish pantheons across the 13 printed columns.",
+  "provenance": "primary ink: the ROTATED extract/ddg tesseract pass (pNNN_rot_full.txt + pNNN_rot_tsv.tsv, pdf pages 138-139; the second printing) - the Egyptian block sits below the R870 Cthulhu tail on pdf 138, the Finnish block spans the pdf 138 tail and the pdf 139 head; the collation voice: the 1eonline L&L per-deity chart rows. The adjudications: the Seker row (the L&L voice duplicates Shu - the print row pinned, eyeball flag), the empty L&L sphere cells (Geb earth, Set evil - the print pinned), the Isis magic spelling (the L&L magick <(The Occult)> gloss a 5th-print addition), the Ilmatar single-X geometry seated in the F column by the TSV (female-only, both voices agree), the Bes Ie;:nher garble restored to leather vest, kilt, the Ukko chain mail pinned over the L&L chian typo, and the Mielikki lowercase nature pinned. The batch order runs Egyptian, Finnish."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R870 LANDED 2026-10-27: commit",
+ "prev_record": [
+  "- R870 LANDED 2026-10-27: commit",
+  "87bf7db2853dd0138ef61c040fc3a376e9a61598 (pushed",
+  "7ced163..87bf7db, census 792 -> 793), APPENDIX 3 THE",
+  "CLERICAL CHART, BATCH TWO - the D&DG walk round",
+  "twenty-two, print pp. 136-137: the Central American (12),",
+  "Chinese (15) and Cthulhu (8) deity rows as the round's one",
+  "grid (35 rows, 13 cols: Ord, the nine string-field roster",
+  "ordinals, the M/F/N-H flags) with the nine per-column",
+  "rosters riding doc/data/ddg_clerical_chart_2.txt; prefix",
+  "cqc2 (full-repo scan clean); header rules/cqc2.h; audit",
+  "\"R870 clerical chart batch two audit\", rode",
+  "rules/audits/r870_batch.h. NO GAP FLIP - the App 3 box",
+  "stays open until the last chart batch (the R869 no-flip",
+  "precedent; gap census 20/4 unchanged). THE PAGE-BREAK",
+  "LESSON: the Cthulhu block spills onto pdf p138's head",
+  "(Ithaqua, Nyarlathotep, Shub-Niggurath, Yog-Sothoth) -",
+  "each chart pdf page may carry the previous batch's tail;",
+  "the L&L slugs for the odd names ride the index pages",
+  "(flafp.htm for Fei Lien and Feng Po, nocha.htm for No",
+  "Cha). THE HEADLINE ADJUDICATIONS: the HASTUR COLOR - the",
+  "print reads sky blue where the L&L voice reads",
+  "yellow-orange (an L&L duplication of the Cthuga entry) -",
+  "pinned by print, eyeball flag (the Druaga precedent); the",
+  "print's gray spellings (Ithaqua, Shub-Niggurath) pinned",
+  "over the L&L grey; the L&L <sea caves> gloss on the",
+  "Cthulhu place a 5th-print addition, noted not pinned; the",
+  "chart prints CTHUGA where the write-up and the R856 walk",
+  "pin Cthugha (the chart garble noted, the row rides the",
+  "write-up spelling); the !-glyph name garbles (Huehueteotl,",
+  "Tlazolteotl) and the FeiLien space restored from L&L; the",
+  "semicolon spheres (bats; evil, life; love; water,",
+  "gambling; chance) - both voices agree here, both pinned.",
+  "THE FLAG CLASSES: every batch two row reads a male X (35),",
+  "22 female X (11 CA, 9 Chinese, 2 Cthulhu), 12 non-human X",
+  "(4 CA - the Chinese pantheon reads none - 8 Cthulhu, every",
+  "Cthulhu row). ZERO registry defs touched - the floor holds",
+  "at 995. Spec tools/spec_r870.json, md5",
+  "484a83271432d34dc09e0b3c3c00b84a (31,335 bytes,",
+  "authored-plus-newline); 46 inlines (23 consts, 10 bools,",
+  "13 table cols), 7 examples; rverify double-run GREEN, 488",
+  "mutants 0 missed (re-run GREEN on the exact final bytes",
+  "after the trailing-newline append); hyphen scan clean;",
+  "zero True/False tokens in the emitted files; the R865",
+  "bool-operator rule held first-try; the chk(name, field)",
+  "builder pattern held first-try (zero wrong-ordinal",
+  "examples - the R869 lesson paid off). NEXT: the App 3",
+  "chart batches continue from Egyptian + Finnish (pdf 138)",
+  "or Curtiss's call - WAIT FOR GO."
+ ],
+ "census_before": 793,
+ "gap_census": {
+  "closed": 20,
+  "open": 4
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "cqc3Round",
+   "value": 871,
+   "comment": "the clerical chart batch three round: the D&DG walk round twenty-three"
+  },
+  {
+   "name": "cqc3Batch",
+   "value": 3,
+   "comment": "the third chart batch (the App 3 box stays open until the last batch lands)"
+  },
+  {
+   "name": "cqc3PrintStart",
+   "value": 138,
+   "comment": "the chart batch three print pages open at 138"
+  },
+  {
+   "name": "cqc3PrintEnd",
+   "value": 139,
+   "comment": "the chart batch three print pages close at 139"
+  },
+  {
+   "name": "cqc3Rows",
+   "value": 28,
+   "comment": "the batch rows (Egyptian 17, Finnish 11)"
+  },
+  {
+   "name": "cqc3EgyRows",
+   "value": 17,
+   "comment": "the Egyptian pantheon rows"
+  },
+  {
+   "name": "cqc3FinRows",
+   "value": 11,
+   "comment": "the Finnish mythos rows"
+  },
+  {
+   "name": "cqc3MaleRows",
+   "value": 27,
+   "comment": "the rows reading a male-clerics X (Ilmatar the only row without)"
+  },
+  {
+   "name": "cqc3FemaleRows",
+   "value": 27,
+   "comment": "the rows reading a female-clerics X (Anhur the only row without)"
+  },
+  {
+   "name": "cqc3NonHumanRows",
+   "value": 6,
+   "comment": "the rows reading a non-human clerics X (all Egyptian; the Finnish rows read none)"
+  },
+  {
+   "name": "cqc3PrintedColumns",
+   "value": 13,
+   "comment": "the printed columns of the chart (the 13 the batch grids encode)"
+  },
+  {
+   "name": "cqc3SphereCount",
+   "value": 26,
+   "comment": "the sphere-of-control roster ordinals of the batch"
+  },
+  {
+   "name": "cqc3AnimalCount",
+   "value": 27,
+   "comment": "the animal roster ordinals of the batch"
+  },
+  {
+   "name": "cqc3HeadCount",
+   "value": 15,
+   "comment": "the raiment head roster ordinals of the batch (the Geb n/a rides the roster)"
+  },
+  {
+   "name": "cqc3BodyCount",
+   "value": 26,
+   "comment": "the raiment body roster ordinals of the batch"
+  },
+  {
+   "name": "cqc3ColorCount",
+   "value": 24,
+   "comment": "the color roster ordinals of the batch"
+  },
+  {
+   "name": "cqc3HolyDayCount",
+   "value": 11,
+   "comment": "the holy-days roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc3FreqCount",
+   "value": 6,
+   "comment": "the sacrifice-frequency roster ordinals of the batch"
+  },
+  {
+   "name": "cqc3FormCount",
+   "value": 17,
+   "comment": "the sacrifice-form roster ordinals of the batch"
+  },
+  {
+   "name": "cqc3PlaceCount",
+   "value": 5,
+   "comment": "the place-of-worship roster ordinals of the batch (the special hall and the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc3TableCount",
+   "value": 1,
+   "comment": "the batch grid count (one grid per batch round)"
+  },
+  {
+   "name": "cqc3ChainCount",
+   "value": 0,
+   "comment": "the batch chain count (the chart grids carry no chains)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cqc3SekerDistinctPrint",
+   "value": true,
+   "comment": "the headline divergence: the L&L Seker row duplicates Shu (bare, blue vest, light blue, equinox, semiannually, gems) - the print reads the distinct Seker row (feathered helm, white tunic, white, summer solstice, annually, jewelry) - pinned by print, eyeball flag"
+  },
+  {
+   "name": "cqc3GebSpherePrint",
+   "value": true,
+   "comment": "the print reads earth for the Geb sphere where the L&L sphere cell is empty - pinned by print"
+  },
+  {
+   "name": "cqc3SetSpherePrint",
+   "value": true,
+   "comment": "the print reads evil for the Set sphere where the L&L sphere cell is empty - pinned by print"
+  },
+  {
+   "name": "cqc3IsisMagicPinned",
+   "value": true,
+   "comment": "the print reads magic for the Isis sphere; the L&L magick <(The Occult)> gloss is a 5th-print addition - pinned by print, noted"
+  },
+  {
+   "name": "cqc3IlmatarFemaleOnly",
+   "value": true,
+   "comment": "the Ilmatar row reads a single X - the TSV geometry seats it in the F column (x 1085 against the M 1030 / F 1086 column bars), the L&L voice agrees: female-only clerics"
+  },
+  {
+   "name": "cqc3BesVestRestored",
+   "value": true,
+   "comment": "the rotated pass garbles the Bes raiment (the Ie;:nher glyph run) - the leather vest, kilt restored from the L&L voice"
+  },
+  {
+   "name": "cqc3UkkoChainMail",
+   "value": true,
+   "comment": "the print reads chain mail for the Ukko raiment body - the L&L chian typo noted, the print pinned"
+  },
+  {
+   "name": "cqc3MielikkiLowercaseNature",
+   "value": true,
+   "comment": "the print reads the Mielikki sphere lowercase nature - the L&L capital noted, the print pinned"
+  },
+  {
+   "name": "cqc3IlmatarSoleFemaleOnly",
+   "value": true,
+   "comment": "Ilmatar is the only batch three row reading a female-only cleric flag"
+  },
+  {
+   "name": "cqc3FinnishNoNonHuman",
+   "value": true,
+   "comment": "the Finnish mythos rows carry no non-human clerics X"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the clerical chart batch three grid",
+   "tag": "cqc3Chart",
+   "cols": [
+    "cqc3ChartOrd",
+    "cqc3ChartSphere",
+    "cqc3ChartAnimal",
+    "cqc3ChartM",
+    "cqc3ChartF",
+    "cqc3ChartNh",
+    "cqc3ChartHead",
+    "cqc3ChartBody",
+    "cqc3ChartColor",
+    "cqc3ChartHolyday",
+    "cqc3ChartFreq",
+    "cqc3ChartForm",
+    "cqc3ChartPlace"
+   ],
+   "col_comments": [
+    "The row ordinals (0-27, the batch walk order: Egyptian 0-16, Finnish 17-27)",
+    "The sphere-of-control roster ordinals (the labels ride the data file)",
+    "The animal roster ordinals",
+    "The male clerics flag (the printed X reads 1; Ilmatar the only row without)",
+    "The female clerics flag (the printed X reads 1; Anhur the only row without)",
+    "The non-human clerics flag (the printed X reads 1; the Finnish rows read none)",
+    "The raiment head roster ordinals (the Geb n/a rides the roster)",
+    "The raiment body roster ordinals",
+    "The color roster ordinals (the Seker white is the round divergence pin)",
+    "The holy-days roster ordinals (the n/a rows ride the roster)",
+    "The sacrifice-frequency roster ordinals (the n/a rows ride the roster)",
+    "The sacrifice-form roster ordinals (the n/a rows ride the roster)",
+    "The place-of-worship roster ordinals (the special hall and the n/a rows ride the roster)"
+   ],
+   "count": "cqc3Rows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     2,
+     2,
+     2,
+     1,
+     1,
+     0,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     3,
+     3,
+     3,
+     1,
+     1,
+     1,
+     2,
+     3,
+     3,
+     3,
+     3,
+     2,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     1,
+     1,
+     1,
+     3,
+     4,
+     4,
+     2,
+     2,
+     3,
+     1
+    ],
+    [
+     5,
+     5,
+     5,
+     1,
+     1,
+     0,
+     4,
+     5,
+     5,
+     4,
+     2,
+     0,
+     0
+    ],
+    [
+     6,
+     6,
+     6,
+     1,
+     1,
+     0,
+     5,
+     6,
+     6,
+     5,
+     2,
+     4,
+     0
+    ],
+    [
+     7,
+     7,
+     7,
+     1,
+     1,
+     0,
+     1,
+     7,
+     7,
+     6,
+     4,
+     5,
+     1
+    ],
+    [
+     8,
+     8,
+     8,
+     1,
+     1,
+     1,
+     2,
+     8,
+     8,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     9,
+     9,
+     9,
+     1,
+     1,
+     0,
+     2,
+     9,
+     9,
+     4,
+     2,
+     0,
+     0
+    ],
+    [
+     10,
+     10,
+     10,
+     1,
+     1,
+     0,
+     2,
+     10,
+     10,
+     1,
+     4,
+     6,
+     0
+    ],
+    [
+     11,
+     11,
+     11,
+     1,
+     1,
+     1,
+     6,
+     11,
+     11,
+     4,
+     2,
+     4,
+     0
+    ],
+    [
+     12,
+     12,
+     12,
+     1,
+     1,
+     0,
+     7,
+     12,
+     12,
+     7,
+     3,
+     7,
+     0
+    ],
+    [
+     13,
+     13,
+     13,
+     1,
+     1,
+     1,
+     6,
+     13,
+     13,
+     2,
+     2,
+     0,
+     0
+    ],
+    [
+     14,
+     14,
+     14,
+     1,
+     1,
+     0,
+     2,
+     14,
+     14,
+     1,
+     4,
+     8,
+     0
+    ],
+    [
+     15,
+     15,
+     15,
+     1,
+     1,
+     0,
+     8,
+     15,
+     15,
+     3,
+     3,
+     2,
+     0
+    ],
+    [
+     16,
+     16,
+     16,
+     1,
+     1,
+     1,
+     2,
+     16,
+     16,
+     1,
+     4,
+     6,
+     0
+    ],
+    [
+     17,
+     17,
+     17,
+     1,
+     1,
+     0,
+     9,
+     17,
+     17,
+     3,
+     3,
+     9,
+     2
+    ],
+    [
+     18,
+     13,
+     18,
+     1,
+     1,
+     0,
+     2,
+     18,
+     18,
+     8,
+     5,
+     10,
+     3
+    ],
+    [
+     19,
+     18,
+     19,
+     0,
+     1,
+     0,
+     2,
+     19,
+     12,
+     2,
+     2,
+     11,
+     2
+    ],
+    [
+     20,
+     19,
+     20,
+     1,
+     1,
+     0,
+     10,
+     20,
+     19,
+     9,
+     3,
+     12,
+     2
+    ],
+    [
+     21,
+     20,
+     21,
+     1,
+     1,
+     0,
+     11,
+     21,
+     20,
+     10,
+     3,
+     13,
+     2
+    ],
+    [
+     22,
+     21,
+     22,
+     1,
+     1,
+     0,
+     2,
+     10,
+     21,
+     3,
+     3,
+     14,
+     4
+    ],
+    [
+     23,
+     22,
+     5,
+     1,
+     1,
+     0,
+     12,
+     22,
+     8,
+     8,
+     5,
+     10,
+     3
+    ],
+    [
+     24,
+     23,
+     23,
+     1,
+     1,
+     0,
+     7,
+     23,
+     22,
+     8,
+     5,
+     10,
+     3
+    ],
+    [
+     25,
+     23,
+     24,
+     1,
+     1,
+     0,
+     13,
+     15,
+     16,
+     8,
+     5,
+     10,
+     3
+    ],
+    [
+     26,
+     24,
+     25,
+     1,
+     1,
+     0,
+     14,
+     24,
+     0,
+     2,
+     2,
+     15,
+     2
+    ],
+    [
+     27,
+     25,
+     26,
+     1,
+     1,
+     0,
+     2,
+     25,
+     23,
+     4,
+     2,
+     16,
+     2
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the batch rows, the pantheon counts, the roster counts, the cleric flags)",
+   "expr": "m['cqc3Round']() != 871 or m['cqc3Batch']() != 3 or m['cqc3PrintStart']() != 138 or m['cqc3PrintEnd']() != 139 or m['cqc3Rows']() != 28 or m['cqc3EgyRows']() != 17 or m['cqc3FinRows']() != 11 or m['cqc3MaleRows']() != 27 or m['cqc3FemaleRows']() != 27 or m['cqc3NonHumanRows']() != 6 or m['cqc3PrintedColumns']() != 13 or m['cqc3SphereCount']() != 26 or m['cqc3AnimalCount']() != 27 or m['cqc3HeadCount']() != 15 or m['cqc3BodyCount']() != 26 or m['cqc3ColorCount']() != 24 or m['cqc3HolyDayCount']() != 11 or m['cqc3FreqCount']() != 6 or m['cqc3FormCount']() != 17 or m['cqc3PlaceCount']() != 5 or m['cqc3TableCount']() != 1 or m['cqc3ChainCount']() != 0"
+  },
+  {
+   "note": "the parity pins (the headline Seker divergence, the empty-cell spheres, the Ilmatar geometry pin)",
+   "expr": "m['cqc3SekerDistinctPrint']() != 1 or m['cqc3GebSpherePrint']() != 1 or m['cqc3SetSpherePrint']() != 1 or m['cqc3IsisMagicPinned']() != 1 or m['cqc3IlmatarFemaleOnly']() != 1 or m['cqc3BesVestRestored']() != 1 or m['cqc3UkkoChainMail']() != 1 or m['cqc3MielikkiLowercaseNature']() != 1 or m['cqc3IlmatarSoleFemaleOnly']() != 1 or m['cqc3FinnishNoNonHuman']() != 1"
+  },
+  {
+   "note": "the head and tail rows (Ra 0, Untamo 27, the ordinals run)",
+   "expr": "m['cqc3ChartOrd'](0) != 0 or m['cqc3ChartOrd'](27) != 27 or m['cqc3ChartSphere'](0) != 0 or m['cqc3ChartHead'](0) != 0 or m['cqc3ChartM'](0) != 1 or m['cqc3ChartF'](0) != 1 or m['cqc3ChartHolyday'](0) != 0 or m['cqc3ChartFreq'](0) != 0 or m['cqc3ChartPlace'](0) != 0 or m['cqc3ChartSphere'](27) != 25 or m['cqc3ChartBody'](27) != 25 or m['cqc3ChartM'](27) != 1 or m['cqc3ChartF'](27) != 1 or m['cqc3ChartPlace'](27) != 2"
+  },
+  {
+   "note": "the Egyptian rows (the Seker pin cells, the Ptah ornaments, the Anhur frequency)",
+   "expr": "m['cqc3ChartFreq'](1) != 1 or m['cqc3ChartForm'](1) != 1 or m['cqc3ChartF'](1) != 0 or m['cqc3ChartSphere'](2) != 2 or m['cqc3ChartBody'](2) != 2 or m['cqc3ChartForm'](3) != 2 or m['cqc3ChartNh'](4) != 1 or m['cqc3ChartPlace'](4) != 1 or m['cqc3ChartBody'](5) != 5 or m['cqc3ChartSphere'](6) != 6 or m['cqc3ChartHead'](6) != 5 or m['cqc3ChartBody'](7) != 7 or m['cqc3ChartPlace'](7) != 1 or m['cqc3ChartSphere'](8) != 8 or m['cqc3ChartNh'](8) != 1 or m['cqc3ChartSphere'](9) != 9 or m['cqc3ChartColor'](9) != 9 or m['cqc3ChartSphere'](10) != 10 or m['cqc3ChartForm'](10) != 6 or m['cqc3ChartBody'](11) != 11 or m['cqc3ChartColor'](11) != 11 or m['cqc3ChartNh'](11) != 1 or m['cqc3ChartHead'](12) != 7 or m['cqc3ChartBody'](12) != 12 or m['cqc3ChartColor'](12) != 12 or m['cqc3ChartHolyday'](12) != 7 or m['cqc3ChartFreq'](12) != 3 or m['cqc3ChartForm'](12) != 7 or m['cqc3ChartSphere'](13) != 13 or m['cqc3ChartColor'](13) != 13 or m['cqc3ChartBody'](14) != 14 or m['cqc3ChartColor'](14) != 14 or m['cqc3ChartSphere'](15) != 15 or m['cqc3ChartBody'](16) != 16 or m['cqc3ChartNh'](16) != 1"
+  },
+  {
+   "note": "the Finnish rows (the special hall, the n/a classes, the Ilmatar flags)",
+   "expr": "m['cqc3ChartPlace'](17) != 2 or m['cqc3ChartForm'](17) != 9 or m['cqc3ChartHolyday'](18) != 8 or m['cqc3ChartFreq'](18) != 5 or m['cqc3ChartForm'](18) != 10 or m['cqc3ChartPlace'](18) != 3 or m['cqc3ChartSphere'](19) != 18 or m['cqc3ChartM'](19) != 0 or m['cqc3ChartF'](19) != 1 or m['cqc3ChartNh'](19) != 0 or m['cqc3ChartPlace'](19) != 2 or m['cqc3ChartForm'](20) != 12 or m['cqc3ChartHead'](21) != 11 or m['cqc3ChartForm'](21) != 13 or m['cqc3ChartColor'](22) != 21 or m['cqc3ChartPlace'](22) != 4 or m['cqc3ChartBody'](23) != 22 or m['cqc3ChartColor'](24) != 22 or m['cqc3ChartSphere'](25) != 23 or m['cqc3ChartSphere'](26) != 24 or m['cqc3ChartBody'](26) != 24 or m['cqc3ChartForm'](26) != 15"
+  },
+  {
+   "note": "the cleric flags (the female and non-human census cells)",
+   "expr": "m['cqc3ChartF'](0) != 1 or m['cqc3ChartF'](2) != 1 or m['cqc3ChartNh'](3) != 1 or m['cqc3ChartNh'](4) != 1 or m['cqc3ChartNh'](8) != 1 or m['cqc3ChartNh'](13) != 1 or m['cqc3ChartNh'](16) != 1 or m['cqc3ChartF'](17) != 1 or m['cqc3ChartF'](18) != 1 or m['cqc3ChartF'](23) != 1 or m['cqc3ChartF'](25) != 1 or m['cqc3ChartF'](26) != 1 or m['cqc3ChartNh'](17) != 0 or m['cqc3ChartNh'](26) != 0"
+  }
+ ],
+ "header_sections": {
+  "the batch three census": [
+   {
+    "kind": "const",
+    "name": "cqc3Round"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3Batch"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3PrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3PrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3Rows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3EgyRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3FinRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3MaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3FemaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3NonHumanRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3PrintedColumns"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3SphereCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3AnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3HeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3BodyCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3ColorCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3HolyDayCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3FreqCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3FormCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3PlaceCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3TableCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc3ChainCount"
+   }
+  ],
+  "the clerical chart batch three grid": [
+   {
+    "kind": "table",
+    "name": "the clerical chart batch three grid"
+   }
+  ],
+  "the parity pins": [
+   {
+    "kind": "bool",
+    "name": "cqc3SekerDistinctPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc3GebSpherePrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc3SetSpherePrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc3IsisMagicPinned"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc3IlmatarFemaleOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc3BesVestRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc3UkkoChainMail"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc3MielikkiLowercaseNature"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc3IlmatarSoleFemaleOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc3FinnishNoNonHuman"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_clerical_chart_3.txt",
+   "content": "The DDG print pp. 138-139 clerical quick-reference chart rows -\nbatch three (Egyptian, Finnish; the Egyptian block rides pdf 138\nbelow the R870 Cthulhu tail). The per-column rosters (first-\nappearance ordinals = the grid cells) and the printed rows. Primary ink:\nthe rotated tesseract pass; the collation voice: the 1eonline L&L\nper-deity chart rows.\n== the sphere roster (26) ==\n00 sun\n01 war\n02 guards dead\n03 insects\n04 felines\n05 luck\n06 earth\n07 vengeance\n08 magic\n09 protection; wealth\n10 nature; the dead\n11 universe\n12 light\n13 evil\n14 sky\n15 storms; water\n16 knowledge\n17 water\n18 motherhood\n19 sickness\n20 pain\n21 nature\n22 death\n23 underworld\n24 sky; air\n25 sleep; dreams\n== the animal roster (27) ==\n00 hawk\n01 lion\n02 jackal\n03 scarab\n04 cat\n05 fox\n06 goose\n07 falcon\n08 gull\n09 raven\n10 dog\n11 dragon\n12 sparrowhawk\n13 serpent\n14 ostrich\n15 carp\n16 ibis\n17 turtle\n18 wolf\n19 dove\n20 worm\n21 fly\n22 elk\n23 spider\n24 snake\n25 eagle\n26 wood duck\n== the head roster (15) ==\n00 gold helm\n01 helm\n02 bare\n03 cat helm\n04 silvered helm\n05 n/a\n06 black helm\n07 feathered helm\n08 scaled helm\n09 shell helm\n10 silver helm\n11 white fur cap\n12 pointed fur cap\n13 leather helm\n14 war helm\n== the body roster (26) ==\n00 kilt\n01 leather\n02 onyx jewelry\n03 yellow kilt\n04 gray kilt\n05 leather vest, kilt\n06 ring mail\n07 war harness\n08 scarlet kilt\n09 black tunic\n10 green tunic\n11 jade ornaments\n12 white tunic\n13 leather tunic\n14 blue vest\n15 leather vest\n16 cotton tunic\n17 green cloak\n18 leather cloak\n19 white shift\n20 black shift\n21 ivory cloak\n22 red boots\n23 brown shift\n24 chain mail\n25 blue tunic\n== the color roster (24) ==\n00 gold\n01 blood red\n02 black\n03 yellow\n04 tan\n05 orange\n06 brown\n07 bright blue\n08 crimson\n09 charcoal\n10 bright green\n11 black, silver\n12 white\n13 emerald, black\n14 light blue\n15 rusty red\n16 purple\n17 sea green\n18 maroon\n19 gray\n20 ivory\n21 forest green\n22 charcoal black\n23 pale blue\n== the holyday roster (11) ==\n00 equinox, solstice\n01 equinox\n02 full moon\n03 spring equinox\n04 new moon\n05 half moon\n06 solstice\n07 summer solstice\n08 n/a\n09 fall equinox\n10 winter solstice\n== the freq roster (6) ==\n00 often\n01 in battle; semiannually\n02 monthly\n03 annually\n04 semiannually\n05 n/a\n== the form roster (17) ==\n00 valuables\n01 enemies\n02 animal\n03 snakes\n04 precious stones\n05 precious fluids\n06 offerings\n07 jewelry\n08 gems\n09 precious jewelry\n10 n/a\n11 crafted items\n12 gold cups\n13 burnt offering\n14 burnt herbs\n15 silver armbands\n16 precious liquids\n== the place roster (5) ==\n00 temple\n01 temple, home\n02 special hall\n03 n/a\n04 forest glens\n\n== the printed rows ==\nRa :: sun | hawk | X X - | gold helm | kilt | gold | equinox, solstice | often | valuables | temple\nAnhur :: war | lion | X - - | helm | leather | blood red | equinox | in battle; semiannually | enemies | temple\nAnubis :: guards dead | jackal | X X - | bare | onyx jewelry | black | full moon | monthly | valuables | temple\nApshai :: insects | scarab | X X X | bare | yellow kilt | yellow | spring equinox | annually | animal | temple\nBast :: felines | cat | X X X | cat helm | gray kilt | tan | full moon | monthly | snakes | temple, home\nBes :: luck | fox | X X - | silvered helm | leather vest, kilt | orange | new moon | monthly | valuables | temple\nGeb :: earth | goose | X X - | n/a | ring mail | brown | half moon | monthly | precious stones | temple\nHorus :: vengeance | falcon | X X - | helm | war harness | bright blue | solstice | semiannually | precious fluids | temple, home\nIsis :: magic | gull | X X X | bare | scarlet kilt | crimson | full moon | monthly | valuables | temple\nNephthys :: protection; wealth | raven | X X - | bare | black tunic | charcoal | new moon | monthly | valuables | temple\nOsiris :: nature; the dead | dog | X X - | bare | green tunic | bright green | equinox | semiannually | offerings | temple\nPtah :: universe | dragon | X X X | black helm | jade ornaments | black, silver | new moon | monthly | precious stones | temple\nSeker :: light | sparrowhawk | X X - | feathered helm | white tunic | white | summer solstice | annually | jewelry | temple\nSet :: evil | serpent | X X X | black helm | leather tunic | emerald, black | full moon | monthly | valuables | temple\nShu :: sky | ostrich | X X - | bare | blue vest | light blue | equinox | semiannually | gems | temple\nTefnut :: storms; water | carp | X X - | scaled helm | leather vest | rusty red | spring equinox | annually | animal | temple\nThoth :: knowledge | ibis | X X X | bare | cotton tunic | purple | equinox | semiannually | offerings | temple\nAhto :: water | turtle | X X - | shell helm | green cloak | sea green | spring equinox | annually | precious jewelry | special hall\nHiisi :: evil | wolf | X X - | bare | leather cloak | maroon | n/a | n/a | n/a | n/a\nIlmatar :: motherhood | dove | - X - | bare | white shift | white | full moon | monthly | crafted items | special hall\nKiputytto :: sickness | worm | X X - | silver helm | black shift | gray | fall equinox | annually | gold cups | special hall\nLoviatar :: pain | fly | X X - | white fur cap | ivory cloak | ivory | winter solstice | annually | burnt offering | special hall\nMielikki :: nature | elk | X X - | bare | green tunic | forest green | spring equinox | annually | burnt herbs | forest glens\nSurma :: death | fox | X X - | pointed fur cap | red boots | crimson | n/a | n/a | n/a | n/a\nTuonetar :: underworld | spider | X X - | feathered helm | brown shift | charcoal black | n/a | n/a | n/a | n/a\nTuoni :: underworld | snake | X X - | leather helm | leather vest | purple | n/a | n/a | n/a | n/a\nUkko :: sky; air | eagle | X X - | war helm | chain mail | gold | full moon | monthly | silver armbands | special hall\nUntamo :: sleep; dreams | wood duck | X X - | bare | blue tunic | pale blue | new moon | monthly | precious liquids | special hall\n"
+  }
+ ],
+ "inline_count": 45
+}

@@ -25292,6 +25292,54 @@ caught all 8 wrong-ordinal examples pre-publish. NEXT: the
 App 3 chart batches continue from Central American +
 Chinese + Cthulhu (pdf pp. 136-137) or Curtiss's call -
 WAIT FOR GO.
+- R870 LANDED 2026-10-27: commit
+87bf7db2853dd0138ef61c040fc3a376e9a61598 (pushed
+7ced163..87bf7db, census 792 -> 793), APPENDIX 3 THE
+CLERICAL CHART, BATCH TWO - the D&DG walk round
+twenty-two, print pp. 136-137: the Central American (12),
+Chinese (15) and Cthulhu (8) deity rows as the round's one
+grid (35 rows, 13 cols: Ord, the nine string-field roster
+ordinals, the M/F/N-H flags) with the nine per-column
+rosters riding doc/data/ddg_clerical_chart_2.txt; prefix
+cqc2 (full-repo scan clean); header rules/cqc2.h; audit
+"R870 clerical chart batch two audit", rode
+rules/audits/r870_batch.h. NO GAP FLIP - the App 3 box
+stays open until the last chart batch (the R869 no-flip
+precedent; gap census 20/4 unchanged). THE PAGE-BREAK
+LESSON: the Cthulhu block spills onto pdf p138's head
+(Ithaqua, Nyarlathotep, Shub-Niggurath, Yog-Sothoth) -
+each chart pdf page may carry the previous batch's tail;
+the L&L slugs for the odd names ride the index pages
+(flafp.htm for Fei Lien and Feng Po, nocha.htm for No
+Cha). THE HEADLINE ADJUDICATIONS: the HASTUR COLOR - the
+print reads sky blue where the L&L voice reads
+yellow-orange (an L&L duplication of the Cthuga entry) -
+pinned by print, eyeball flag (the Druaga precedent); the
+print's gray spellings (Ithaqua, Shub-Niggurath) pinned
+over the L&L grey; the L&L <sea caves> gloss on the
+Cthulhu place a 5th-print addition, noted not pinned; the
+chart prints CTHUGA where the write-up and the R856 walk
+pin Cthugha (the chart garble noted, the row rides the
+write-up spelling); the !-glyph name garbles (Huehueteotl,
+Tlazolteotl) and the FeiLien space restored from L&L; the
+semicolon spheres (bats; evil, life; love; water,
+gambling; chance) - both voices agree here, both pinned.
+THE FLAG CLASSES: every batch two row reads a male X (35),
+22 female X (11 CA, 9 Chinese, 2 Cthulhu), 12 non-human X
+(4 CA - the Chinese pantheon reads none - 8 Cthulhu, every
+Cthulhu row). ZERO registry defs touched - the floor holds
+at 995. Spec tools/spec_r870.json, md5
+484a83271432d34dc09e0b3c3c00b84a (31,335 bytes,
+authored-plus-newline); 46 inlines (23 consts, 10 bools,
+13 table cols), 7 examples; rverify double-run GREEN, 488
+mutants 0 missed (re-run GREEN on the exact final bytes
+after the trailing-newline append); hyphen scan clean;
+zero True/False tokens in the emitted files; the R865
+bool-operator rule held first-try; the chk(name, field)
+builder pattern held first-try (zero wrong-ordinal
+examples - the R869 lesson paid off). NEXT: the App 3
+chart batches continue from Egyptian + Finnish (pdf 138)
+or Curtiss's call - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
