@@ -25518,6 +25518,54 @@ round (the bare curl UA hit the Mod_Security 406 again;
 the domain is 1eonline.info, not .com). NEXT: the App 3
 chart batches continue from the Nonhumans' Deities rows
 (pdf 142) or Curtiss's call - WAIT FOR GO.
+- R875 LANDED 2026-10-27: commit
+91b983c320a3a228771974e35be5c355f0263981 (pushed
+bb7ff63..91b983c, census 797 -> 798), APPENDIX 3 THE
+CLERICAL CHART, BATCH SEVEN - the D&DG walk round twenty-
+seven, print p. 142: the twenty-four Nonhumans' Deities
+rows as the round's one grid (24 rows, 13 cols: Ord, the
+nine string-field roster ordinals, the M/F/N-H flags) with
+the nine per-column rosters riding
+doc/data/ddg_clerical_chart_7.txt; prefix cqc7 (full-repo
+scan clean); header rules/cqc7.h; audit "R875 clerical
+chart batch seven audit", rode rules/audits/r875_batch.h.
+NO GAP FLIP - the App 3 box stays open until the last
+chart batch (the R869 no-flip precedent; gap census 20/4
+unchanged). THE HEADLINE GEOMETRY: THE WHOLE BATCH IS N-H-
+ONLY - all 24 X marks seat at the N-H column (headers M
+1014, F 1071, N-H 1127; zero M and zero F marks anywhere);
+the L&L voice agrees on all 22 rows it carries. THE
+ADJUDICATIONS: the DEMOGORGON AND YEENOGHU PRINT-ONLY ROWS
+(the L&L MM pages carry no chart row) - the Demogorgon
+color reptile green and the ixitxachitl sphere garble
+restored ride the print; the NAME GARBLE CLASS - Sekolah,
+Semuanya, Skoraeus Stonebones, Surtur, Thrym and Yeenoghu
+restored per the R864 crossref pins (the stray 4 glyph
+before Surtur noted); the Deep Sashelas seqa green garble
+restored to sea green (the R872 Poseidon class); the
+Grolantor daork brown and na garbles restored; the Garl
+warhelm and Gruumsh waorhelm folds restored to war helm
+(the R874 red studded class); the Gruumsh body wrap black
+plate mail with its underscore and dash-pair strays noted;
+the Lolth stray i glyph and wrap-line dot noted; the
+Yondalla colon glyph noted (both voices carry it). THE
+FLAG CLASSES: male 0, female 0, non-human 24. ZERO
+registry defs touched - the floor holds at 995. Spec
+tools/spec_r875.json, md5 208bde026f0a66983ad7899d4ae9c389
+(27,785 bytes, authored-plus-newline); 44 inlines (21
+consts, 10 bools, 13 table cols), 6 examples; rverify
+double-run GREEN, 343 mutants 0 missed; hyphen scan clean;
+zero True/False tokens in the emitted files; the builder
+computed every ordinal from the rosters (the R869 lesson
+held); the canvas spec-r875 gated byte-exact (frontmatter
++ spec bytes, no extra newline). NOTE: the builder may
+carry apostrophes in the emitted header comments via
+double-quoted Python string literals (Nonhumans' Deities)
+- the engine gates count double quotes only, and the
+R873/R874 apostrophe-free style was builder convenience,
+not a gate. NEXT: the LAST chart batch - Norse + Sumerian
+(pdf 143, the R865/ R866 mythos rows) - carries the App 3
+gap flip; scope it with Curtiss - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

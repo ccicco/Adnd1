@@ -1,0 +1,182 @@
+The DDG print p. 143 clerical quick-reference chart rows -
+batch eight (the LAST chart batch: the twenty-one Norse rows
+- the nineteen data rows plus the Surtur and Thrym
+cross-references - and the seven Sumerian rows). The
+per-column rosters (first-appearance ordinals = the grid
+cells) and the printed rows. Primary ink: the rotated
+tesseract pass; the collation voice: the 1eonline L&L
+per-deity chart rows.
+
+== the sphere roster (25) ==
+00 authority; rulership
+01 storms; the sea
+02 charisma
+03 poetry; song
+04 justice
+05 elves
+06 love
+07 weather
+08 gates; open paths
+09 death
+10 spring; youth
+11 strife; fire
+12 strength
+13 courage
+14 battle skills
+15 thunder
+16 war; law
+17 hunting skills
+18 air; war
+19 rivers; oceans
+20 love; war
+21 nature
+22 moon
+23 earth
+24 sun
+
+== the animal roster (22) ==
+00 wolves, ravens
+01 gull
+02 horse
+03 lark
+04 owl
+05 unicorn
+06 falcon
+07 cat
+08 eagle
+09 wolf
+10 sparrow hawk
+11 monsters
+12 ox
+13 bear
+14 blue jay
+15 goat
+16 war horse
+17 hound
+18 raven
+19 ibex
+20 tiger
+21 mole
+
+== the head roster (10) ==
+00 war helm
+01 felt cap
+02 silver helm
+03 pointed cap
+04 bare
+05 ornate helm
+06 ornate cap
+07 horned helm
+08 leather cap
+09 conical hat
+
+== the body roster (13) ==
+00 ring mail
+01 green cloak
+02 costly tunic
+03 leather vest
+04 yellow cloak
+05 costly gown
+06 white plate mail
+07 black leather
+08 costly robe
+09 chain mail
+10 black cloak
+11 leather
+12 kilt
+
+== the color roster (24) ==
+00 sapphire
+01 emerald
+02 silver
+03 crimson
+04 ivory
+05 bright green
+06 yellow
+07 sky blue
+08 white
+09 black & white
+10 apple green
+11 red & black
+12 purple
+13 ruby red
+14 silver & white
+15 black & gold
+16 gray
+17 forest green
+18 orange
+19 red, white
+20 sea green
+21 lime
+22 silver, blue
+23 dust
+
+== the holyday roster (12) ==
+00 equinox
+01 half moon
+02 full moon
+03 n/a
+04 new moon
+05 midyear's day
+06 midwinter's day
+07 spring equinox
+08 before battle
+09 summer solstice
+10 quarter moon
+11 eclipses
+
+== the freq roster (5) ==
+00 semiannually
+01 monthly
+02 n/a
+03 annually
+04 varies
+
+== the form roster (10) ==
+00 burnt offering
+01 crafted items
+02 n/a
+03 human
+04 precious metals
+05 weapons
+06 burnt animals
+07 gems
+08 artworks
+09 burnt rams
+
+== the place roster (5) ==
+00 temple hall
+01 meadows
+02 n/a
+03 forest meadows
+04 temple
+
+== the printed rows ==
+Odin :: authority; rulership | wolves, ravens | X - - | war helm | ring mail | sapphire | equinox | semiannually | burnt offering | temple hall
+Aegir :: storms; the sea | gull | X X - | felt cap | green cloak | emerald | half moon | monthly | burnt offering | temple hall
+Balder :: charisma | horse | X X - | silver helm | ring mail | silver | full moon | monthly | crafted items | meadows
+Bragi :: poetry; song | lark | X X - | pointed cap | costly tunic | crimson | equinox | semiannually | crafted items | meadows
+Forseti :: justice | owl | X X - | bare | ring mail | ivory | n/a | n/a | n/a | n/a
+Frey :: elves | unicorn | X X X | ornate helm | leather vest | bright green | n/a | n/a | n/a | n/a
+Freya :: love | falcon | X X - | ornate cap | yellow cloak | yellow | full moon | monthly | crafted items | temple hall
+Frigga :: weather | cat | - X - | bare | costly gown | sky blue | new moon | monthly | burnt offering | temple hall
+Heimdall :: gates; open paths | eagle | X - - | war helm | white plate mail | white | midyear's day | annually | burnt offering | temple hall
+Hel :: death | wolf | X - - | bare | black leather | black & white | midwinter's day | annually | human | temple hall
+Idun :: spring; youth | sparrow hawk | X X - | bare | costly robe | apple green | spring equinox | annually | crafted items | forest meadows
+Loki :: strife; fire | monsters | X - - | war helm | leather vest | red & black | midwinter's day | annually | burnt offering | temple hall
+Magni :: strength | ox | X - - | horned helm | ring mail | purple | full moon | monthly | precious metals | temple hall
+Modi :: courage | bear | X - - | war helm | ring mail | ruby red | before battle | varies | burnt offering | temple hall
+Sif :: battle skills | blue jay | X X - | war helm | chain mail | silver & white | full moon | monthly | weapons | temple hall
+Surtur :: see Nonhumans' Deities (the R875 batch seven rows)
+Thor :: thunder | goat | X X - | war helm | ring mail | black & gold | new moon | monthly | burnt animals | temple hall
+Thrym :: see Nonhumans' Deities (the R875 batch seven rows)
+Tyr :: war; law | war horse | X X - | war helm | black cloak | gray | new moon | monthly | crafted items | temple hall
+Uller :: hunting skills | hound | X X - | leather cap | leather | forest green | equinox | semiannually | burnt offering | forest meadows
+Vidar :: strength | horse | X - - | bare | leather vest | orange | summer solstice | annually | burnt offering | temple hall
+Enlil :: air; war | raven | X X - | bare | kilt | red, white | full moon | monthly | gems | temple
+Enki :: rivers; oceans | ibex | X X X | bare | kilt | sea green | quarter moon | monthly | precious metals | temple
+Inanna :: love; war | cat | X X - | conical hat | kilt | lime | full moon | monthly | artworks | temple
+Ki :: nature | tiger | X X X | conical hat | kilt | forest green | equinox | semiannually | burnt rams | temple
+Nanna-Sin :: moon | owl | X - - | bare | kilt | silver, blue | full moon | monthly | gems | temple
+Nin-Hursag :: earth | mole | X X - | bare | kilt | dust | spring equinox | annually | weapons | temple
+Utu :: sun | falcon | X - - | bare | kilt | orange | eclipses | annually | weapons | temple

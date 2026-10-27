@@ -1,0 +1,877 @@
+{
+ "prefix": "cqc8",
+ "round": 876,
+ "title": "the clerical chart, batch eight",
+ "header_file": "rules/cqc8.h",
+ "audit_file": "rules/audits/r876_batch.h",
+ "audit_label": "R876 clerical chart batch eight audit",
+ "include_after": "#include \"rules/cqc7.h\"  // R875: the clerical chart, batch seven",
+ "audit_anchor": "#include \"rules/audits/r875_batch.h\"  // R875: R875 clerical chart batch seven audit",
+ "include_comment": "the clerical chart, batch eight",
+ "audit_comment": "APPENDIX 3: THE CLERICAL QUICK-REFERENCE CHARTS, BATCH EIGHT - the D&DG walk round twenty-eight, print p. 143: the eighth and LAST batch of deity rows - the twenty-one Norse rows (the nineteen data rows plus the Surtur and Thrym cross-references) and the seven Sumerian rows - riding the roster data file. NO GAP FLIP - the App 3 box stays open: the flip was held one more round per Curtiss (the R869 no-flip precedent extends past the last chart batch; gap_flips reads empty, the census holds 20/4). The print voice is the ROTATED tesseract pass, collated against the 1eonline L&L per-deity chart rows. The headline adjudications: the Frigga female-only flag (the geometry seats the single X at the F column, the L&L voice agrees) and the Hel male-only flag (the same class); the Thor form burnt animals pinned by print over the L&L crafted items (eyeball flag, the R869 Druaga precedent); the Frey ornate helm restored over the L&L orntate garble; the Loki strife; fire semicolon pinned by print; the Uty and idun name garbles restored per the R865/R866 pins; the Surtur and Thrym cross-reference rows pinned as grid rows with 0-sentinel fields (their chart data landed in R875).",
+ "banner": {
+  "title": "Appendix 3: the clerical quick-reference chart, batch eight - the D&DG walk round twenty-eight, print p. 143: the 21 Norse and 7 Sumerian rows across the 13 printed columns.",
+  "provenance": "primary ink: the ROTATED extract/ddg tesseract pass (pNNN_rot_full.txt + pNNN_rot_tsv.tsv, pdf page 143; the second printing); the collation voice: the 1eonline L&L per-deity chart rows. The adjudications: the Frigga female-only and Hel male-only single-X flags (the TSV geometry seats them, both voices agree); the Thor form burnt animals pinned by print over the L&L crafted items (eyeball flag); the Frey ornate helm restored over the L&L orntate garble; the Loki strife; fire semicolon pinned by print; the Uty and idun garbles restored per the R865/R866 crossref pins; the Nin-Hursag chart capitalization pinned per the chart print; the Surtur and Thrym cross-reference rows pinned as grid rows with 0-sentinel fields (their chart data landed in R875). NO GAP FLIP: the App 3 box stays open - the flip held one more round per Curtiss. The batch order runs the alphabetical Norse walk then the alphabetical Sumerian walk."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R875 LANDED 2026-10-27: commit",
+ "prev_record": [
+  "- R875 LANDED 2026-10-27: commit",
+  "91b983c320a3a228771974e35be5c355f0263981 (pushed",
+  "bb7ff63..91b983c, census 797 -> 798), APPENDIX 3 THE",
+  "CLERICAL CHART, BATCH SEVEN - the D&DG walk round twenty-",
+  "seven, print p. 142: the twenty-four Nonhumans' Deities",
+  "rows as the round's one grid (24 rows, 13 cols: Ord, the",
+  "nine string-field roster ordinals, the M/F/N-H flags) with",
+  "the nine per-column rosters riding",
+  "doc/data/ddg_clerical_chart_7.txt; prefix cqc7 (full-repo",
+  "scan clean); header rules/cqc7.h; audit \"R875 clerical",
+  "chart batch seven audit\", rode rules/audits/r875_batch.h.",
+  "NO GAP FLIP - the App 3 box stays open until the last",
+  "chart batch (the R869 no-flip precedent; gap census 20/4",
+  "unchanged). THE HEADLINE GEOMETRY: THE WHOLE BATCH IS N-H-",
+  "ONLY - all 24 X marks seat at the N-H column (headers M",
+  "1014, F 1071, N-H 1127; zero M and zero F marks anywhere);",
+  "the L&L voice agrees on all 22 rows it carries. THE",
+  "ADJUDICATIONS: the DEMOGORGON AND YEENOGHU PRINT-ONLY ROWS",
+  "(the L&L MM pages carry no chart row) - the Demogorgon",
+  "color reptile green and the ixitxachitl sphere garble",
+  "restored ride the print; the NAME GARBLE CLASS - Sekolah,",
+  "Semuanya, Skoraeus Stonebones, Surtur, Thrym and Yeenoghu",
+  "restored per the R864 crossref pins (the stray 4 glyph",
+  "before Surtur noted); the Deep Sashelas seqa green garble",
+  "restored to sea green (the R872 Poseidon class); the",
+  "Grolantor daork brown and na garbles restored; the Garl",
+  "warhelm and Gruumsh waorhelm folds restored to war helm",
+  "(the R874 red studded class); the Gruumsh body wrap black",
+  "plate mail with its underscore and dash-pair strays noted;",
+  "the Lolth stray i glyph and wrap-line dot noted; the",
+  "Yondalla colon glyph noted (both voices carry it). THE",
+  "FLAG CLASSES: male 0, female 0, non-human 24. ZERO",
+  "registry defs touched - the floor holds at 995. Spec",
+  "tools/spec_r875.json, md5 208bde026f0a66983ad7899d4ae9c389",
+  "(27,785 bytes, authored-plus-newline); 44 inlines (21",
+  "consts, 10 bools, 13 table cols), 6 examples; rverify",
+  "double-run GREEN, 343 mutants 0 missed; hyphen scan clean;",
+  "zero True/False tokens in the emitted files; the builder",
+  "computed every ordinal from the rosters (the R869 lesson",
+  "held); the canvas spec-r875 gated byte-exact (frontmatter",
+  "+ spec bytes, no extra newline). NOTE: the builder may",
+  "carry apostrophes in the emitted header comments via",
+  "double-quoted Python string literals (Nonhumans' Deities)",
+  "- the engine gates count double quotes only, and the",
+  "R873/R874 apostrophe-free style was builder convenience,",
+  "not a gate. NEXT: the LAST chart batch - Norse + Sumerian",
+  "(pdf 143, the R865/ R866 mythos rows) - carries the App 3",
+  "gap flip; scope it with Curtiss - WAIT FOR GO."
+ ],
+ "census_before": 798,
+ "gap_census": {
+  "closed": 20,
+  "open": 4
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "cqc8Round",
+   "value": 876,
+   "comment": "the clerical chart batch eight round: the D&DG walk round twenty-eight"
+  },
+  {
+   "name": "cqc8Batch",
+   "value": 8,
+   "comment": "the eighth chart batch (the LAST chart batch of the App 3 walk)"
+  },
+  {
+   "name": "cqc8PrintStart",
+   "value": 143,
+   "comment": "the chart batch eight print page opens at 143"
+  },
+  {
+   "name": "cqc8PrintEnd",
+   "value": 143,
+   "comment": "the chart batch eight print page closes at 143"
+  },
+  {
+   "name": "cqc8Rows",
+   "value": 28,
+   "comment": "the batch rows (the twenty-one Norse and seven Sumerian rows)"
+  },
+  {
+   "name": "cqc8NorseRows",
+   "value": 21,
+   "comment": "the Norse rows (the nineteen data rows plus the Surtur and Thrym cross-references)"
+  },
+  {
+   "name": "cqc8SumerianRows",
+   "value": 7,
+   "comment": "the Sumerian rows (the R866 mythos beings)"
+  },
+  {
+   "name": "cqc8CrossrefRows",
+   "value": 2,
+   "comment": "the cross-reference rows (Surtur and Thrym - see Nonhumans' Deities; their chart data landed R875)"
+  },
+  {
+   "name": "cqc8MaleRows",
+   "value": 25,
+   "comment": "the rows reading a male-clerics X"
+  },
+  {
+   "name": "cqc8FemaleRows",
+   "value": 17,
+   "comment": "the rows reading a female-clerics X (twelve Norse, five Sumerian)"
+  },
+  {
+   "name": "cqc8NonHumanFlagRows",
+   "value": 3,
+   "comment": "the rows reading a non-human clerics X (Frey, Enki and Ki)"
+  },
+  {
+   "name": "cqc8PrintedColumns",
+   "value": 13,
+   "comment": "the printed columns of the chart (the 13 the batch grids encode)"
+  },
+  {
+   "name": "cqc8SphereCount",
+   "value": 25,
+   "comment": "the sphere-of-control roster ordinals of the batch"
+  },
+  {
+   "name": "cqc8AnimalCount",
+   "value": 22,
+   "comment": "the animal roster ordinals of the batch"
+  },
+  {
+   "name": "cqc8HeadCount",
+   "value": 10,
+   "comment": "the raiment head roster ordinals of the batch"
+  },
+  {
+   "name": "cqc8BodyCount",
+   "value": 13,
+   "comment": "the raiment body roster ordinals of the batch"
+  },
+  {
+   "name": "cqc8ColorCount",
+   "value": 24,
+   "comment": "the color roster ordinals of the batch (one color per data row)"
+  },
+  {
+   "name": "cqc8HolyDayCount",
+   "value": 12,
+   "comment": "the holy-days roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc8FreqCount",
+   "value": 5,
+   "comment": "the sacrifice-frequency roster ordinals of the batch"
+  },
+  {
+   "name": "cqc8FormCount",
+   "value": 10,
+   "comment": "the sacrifice-form roster ordinals of the batch"
+  },
+  {
+   "name": "cqc8PlaceCount",
+   "value": 5,
+   "comment": "the place-of-worship roster ordinals of the batch"
+  },
+  {
+   "name": "cqc8TableCount",
+   "value": 1,
+   "comment": "the batch grid count (one grid per batch round)"
+  },
+  {
+   "name": "cqc8ChainCount",
+   "value": 0,
+   "comment": "the batch chain count (the chart grids carry no chains)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cqc8NoGapFlip",
+   "value": true,
+   "comment": "the App 3 gap flip held one more round per Curtiss - the R869 no-flip precedent extends past the last chart batch; gap_flips reads empty and the census holds 20/4"
+  },
+  {
+   "name": "cqc8CrossrefRowsPinned",
+   "value": true,
+   "comment": "the Surtur and Thrym cross-reference rows print as see Nonhumans' Deities rows - pinned as grid rows with 0-sentinel fields (their chart data landed in the R875 batch seven)"
+  },
+  {
+   "name": "cqc8FriggaFemaleOnly",
+   "value": true,
+   "comment": "the Frigga single X seats at the F column (the geometry, no M mark) - the L&L voice agrees (the walk's first female-only Norse row)"
+  },
+  {
+   "name": "cqc8HelMaleOnly",
+   "value": true,
+   "comment": "the Hel single X seats at the M column - the L&L voice agrees (X - -)"
+  },
+  {
+   "name": "cqc8ThorFormPrintPin",
+   "value": true,
+   "comment": "the Thor form reads burnt animals in the print where the L&L voice reads crafted items - pinned by print, eyeball flag (the R869 Druaga precedent)"
+  },
+  {
+   "name": "cqc8OrnateHelmRestored",
+   "value": true,
+   "comment": "the Frey head reads ornate helm in the print - the L&L voice garbles it orntate; the print pinned"
+  },
+  {
+   "name": "cqc8LokiSemicolonPinned",
+   "value": true,
+   "comment": "the Loki sphere semicolon strife; fire pinned by print (the L&L transcription comma an artifact - the R869 sphere-semicolon class)"
+  },
+  {
+   "name": "cqc8NameGarblesRestored",
+   "value": true,
+   "comment": "the Uty garble restored to Utu and the lowercase idun cap restored to Idun (the R865/R866 crossref pins); the Nin-Hursag chart capitalization pinned per the chart print"
+  },
+  {
+   "name": "cqc8WrapLinesRestored",
+   "value": true,
+   "comment": "the fold wraps restored - Odin wolves, ravens; Heimdall white plate mail; Idun forest meadows (both voices agree on the joined field text)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the clerical chart batch eight grid",
+   "tag": "cqc8Chart",
+   "cols": [
+    "cqc8ChartOrd",
+    "cqc8ChartSphere",
+    "cqc8ChartAnimal",
+    "cqc8ChartM",
+    "cqc8ChartF",
+    "cqc8ChartNh",
+    "cqc8ChartHead",
+    "cqc8ChartBody",
+    "cqc8ChartColor",
+    "cqc8ChartHolyday",
+    "cqc8ChartFreq",
+    "cqc8ChartForm",
+    "cqc8ChartPlace"
+   ],
+   "col_comments": [
+    "The row ordinals (0-27, the batch walk order: the Norse rows then the Sumerian rows; the Surtur and Thrym cross-reference rows read 0-sentinel fields)",
+    "The sphere-of-control roster ordinals (the labels ride the data file)",
+    "The animal roster ordinals",
+    "The male clerics flag (the printed X reads 1; Frigga the only row without)",
+    "The female clerics flag (the printed X reads 1)",
+    "The non-human clerics flag (the printed X reads 1; Frey, Enki and Ki)",
+    "The raiment head roster ordinals",
+    "The raiment body roster ordinals",
+    "The color roster ordinals (one color per data row)",
+    "The holy-days roster ordinals (the n/a rows ride the roster)",
+    "The sacrifice-frequency roster ordinals",
+    "The sacrifice-form roster ordinals (the n/a rows ride the roster)",
+    "The place-of-worship roster ordinals"
+   ],
+   "count": "cqc8Rows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     2,
+     1,
+     1,
+     0,
+     2,
+     0,
+     2,
+     2,
+     1,
+     1,
+     1
+    ],
+    [
+     3,
+     3,
+     3,
+     1,
+     1,
+     0,
+     3,
+     2,
+     3,
+     0,
+     0,
+     1,
+     1
+    ],
+    [
+     4,
+     4,
+     4,
+     1,
+     1,
+     0,
+     4,
+     0,
+     4,
+     3,
+     2,
+     2,
+     2
+    ],
+    [
+     5,
+     5,
+     5,
+     1,
+     1,
+     1,
+     5,
+     3,
+     5,
+     3,
+     2,
+     2,
+     2
+    ],
+    [
+     6,
+     6,
+     6,
+     1,
+     1,
+     0,
+     6,
+     4,
+     6,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     7,
+     7,
+     7,
+     0,
+     1,
+     0,
+     4,
+     5,
+     7,
+     4,
+     1,
+     0,
+     0
+    ],
+    [
+     8,
+     8,
+     8,
+     1,
+     0,
+     0,
+     0,
+     6,
+     8,
+     5,
+     3,
+     0,
+     0
+    ],
+    [
+     9,
+     9,
+     9,
+     1,
+     0,
+     0,
+     4,
+     7,
+     9,
+     6,
+     3,
+     3,
+     0
+    ],
+    [
+     10,
+     10,
+     10,
+     1,
+     1,
+     0,
+     4,
+     8,
+     10,
+     7,
+     3,
+     1,
+     3
+    ],
+    [
+     11,
+     11,
+     11,
+     1,
+     0,
+     0,
+     0,
+     3,
+     11,
+     6,
+     3,
+     0,
+     0
+    ],
+    [
+     12,
+     12,
+     12,
+     1,
+     0,
+     0,
+     7,
+     0,
+     12,
+     2,
+     1,
+     4,
+     0
+    ],
+    [
+     13,
+     13,
+     13,
+     1,
+     0,
+     0,
+     0,
+     0,
+     13,
+     8,
+     4,
+     0,
+     0
+    ],
+    [
+     14,
+     14,
+     14,
+     1,
+     1,
+     0,
+     0,
+     9,
+     14,
+     2,
+     1,
+     5,
+     0
+    ],
+    [
+     15,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     16,
+     15,
+     15,
+     1,
+     1,
+     0,
+     0,
+     0,
+     15,
+     4,
+     1,
+     6,
+     0
+    ],
+    [
+     17,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     18,
+     16,
+     16,
+     1,
+     1,
+     0,
+     0,
+     10,
+     16,
+     4,
+     1,
+     1,
+     0
+    ],
+    [
+     19,
+     17,
+     17,
+     1,
+     1,
+     0,
+     8,
+     11,
+     17,
+     0,
+     0,
+     0,
+     3
+    ],
+    [
+     20,
+     12,
+     2,
+     1,
+     0,
+     0,
+     4,
+     3,
+     18,
+     9,
+     3,
+     0,
+     0
+    ],
+    [
+     21,
+     18,
+     18,
+     1,
+     1,
+     0,
+     4,
+     12,
+     19,
+     2,
+     1,
+     7,
+     4
+    ],
+    [
+     22,
+     19,
+     19,
+     1,
+     1,
+     1,
+     4,
+     12,
+     20,
+     10,
+     1,
+     4,
+     4
+    ],
+    [
+     23,
+     20,
+     7,
+     1,
+     1,
+     0,
+     9,
+     12,
+     21,
+     2,
+     1,
+     8,
+     4
+    ],
+    [
+     24,
+     21,
+     20,
+     1,
+     1,
+     1,
+     9,
+     12,
+     17,
+     0,
+     0,
+     9,
+     4
+    ],
+    [
+     25,
+     22,
+     4,
+     1,
+     0,
+     0,
+     4,
+     12,
+     22,
+     2,
+     1,
+     7,
+     4
+    ],
+    [
+     26,
+     23,
+     21,
+     1,
+     1,
+     0,
+     4,
+     12,
+     23,
+     7,
+     3,
+     5,
+     4
+    ],
+    [
+     27,
+     24,
+     6,
+     1,
+     0,
+     0,
+     4,
+     12,
+     18,
+     11,
+     3,
+     5,
+     4
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the batch rows, the pantheon counts, the roster counts)",
+   "expr": "m['cqc8Round']() != 876 or m['cqc8Batch']() != 8 or m['cqc8PrintStart']() != 143 or m['cqc8PrintEnd']() != 143 or m['cqc8Rows']() != 28 or m['cqc8NorseRows']() != 21 or m['cqc8SumerianRows']() != 7 or m['cqc8CrossrefRows']() != 2 or m['cqc8MaleRows']() != 25 or m['cqc8FemaleRows']() != 17 or m['cqc8NonHumanFlagRows']() != 3 or m['cqc8PrintedColumns']() != 13 or m['cqc8SphereCount']() != 25 or m['cqc8AnimalCount']() != 22 or m['cqc8HeadCount']() != 10 or m['cqc8BodyCount']() != 13 or m['cqc8ColorCount']() != 24 or m['cqc8HolyDayCount']() != 12 or m['cqc8FreqCount']() != 5 or m['cqc8FormCount']() != 10 or m['cqc8PlaceCount']() != 5 or m['cqc8TableCount']() != 1 or m['cqc8ChainCount']() != 0"
+  },
+  {
+   "note": "the parity pins (the held flip, the cross-reference rows, the geometry flags)",
+   "expr": "m['cqc8NoGapFlip']() != 1 or m['cqc8CrossrefRowsPinned']() != 1 or m['cqc8FriggaFemaleOnly']() != 1 or m['cqc8HelMaleOnly']() != 1 or m['cqc8ThorFormPrintPin']() != 1 or m['cqc8OrnateHelmRestored']() != 1 or m['cqc8LokiSemicolonPinned']() != 1 or m['cqc8NameGarblesRestored']() != 1 or m['cqc8WrapLinesRestored']() != 1"
+  },
+  {
+   "note": "the head and tail rows (Odin 0, Utu 27, the ordinals run)",
+   "expr": "m['cqc8ChartOrd'](0) != 0 or m['cqc8ChartOrd'](27) != 27 or m['cqc8ChartSphere'](0) != 0 or m['cqc8ChartSphere'](27) != 24 or m['cqc8ChartAnimal'](0) != 0 or m['cqc8ChartAnimal'](27) != 6 or m['cqc8ChartHead'](0) != 0 or m['cqc8ChartHead'](27) != 4 or m['cqc8ChartBody'](0) != 0 or m['cqc8ChartBody'](27) != 12 or m['cqc8ChartColor'](0) != 0 or m['cqc8ChartColor'](27) != 18 or m['cqc8ChartHolyday'](0) != 0 or m['cqc8ChartHolyday'](27) != 11 or m['cqc8ChartFreq'](0) != 0 or m['cqc8ChartFreq'](27) != 3 or m['cqc8ChartForm'](0) != 0 or m['cqc8ChartForm'](27) != 5 or m['cqc8ChartPlace'](0) != 0 or m['cqc8ChartPlace'](27) != 4 or m['cqc8ChartM'](0) != 1 or m['cqc8ChartF'](0) != 0 or m['cqc8ChartNh'](0) != 0 or m['cqc8ChartM'](27) != 1 or m['cqc8ChartF'](27) != 0 or m['cqc8ChartNh'](27) != 0"
+  },
+  {
+   "note": "the divergent rows (the Frigga female-only and Hel male-only flags, the Frey ornate helm, the Thor burnt animals, the Loki semicolon)",
+   "expr": "m['cqc8ChartM'](7) != 0 or m['cqc8ChartF'](7) != 1 or m['cqc8ChartNh'](7) != 0 or m['cqc8ChartM'](9) != 1 or m['cqc8ChartF'](9) != 0 or m['cqc8ChartNh'](9) != 0 or m['cqc8ChartHead'](5) != 5 or m['cqc8ChartForm'](16) != 6 or m['cqc8ChartSphere'](11) != 11 or m['cqc8ChartColor'](9) != 9 or m['cqc8ChartForm'](9) != 3 or m['cqc8ChartBody'](8) != 6 or m['cqc8ChartPlace'](10) != 3 or m['cqc8ChartColor'](10) != 10 or m['cqc8ChartPlace'](2) != 1"
+  },
+  {
+   "note": "the cross-reference rows (Surtur 15 and Thrym 17 - see Nonhumans' Deities, the 0-sentinel fields)",
+   "expr": "m['cqc8ChartOrd'](15) != 15 or m['cqc8ChartSphere'](15) != 0 or m['cqc8ChartAnimal'](15) != 0 or m['cqc8ChartHead'](15) != 0 or m['cqc8ChartBody'](15) != 0 or m['cqc8ChartColor'](15) != 0 or m['cqc8ChartHolyday'](15) != 0 or m['cqc8ChartFreq'](15) != 0 or m['cqc8ChartForm'](15) != 0 or m['cqc8ChartPlace'](15) != 0 or m['cqc8ChartM'](15) != 0 or m['cqc8ChartF'](15) != 0 or m['cqc8ChartNh'](15) != 0 or m['cqc8ChartOrd'](17) != 17 or m['cqc8ChartSphere'](17) != 0 or m['cqc8ChartAnimal'](17) != 0 or m['cqc8ChartHead'](17) != 0 or m['cqc8ChartBody'](17) != 0 or m['cqc8ChartColor'](17) != 0 or m['cqc8ChartHolyday'](17) != 0 or m['cqc8ChartFreq'](17) != 0 or m['cqc8ChartForm'](17) != 0 or m['cqc8ChartPlace'](17) != 0 or m['cqc8ChartM'](17) != 0 or m['cqc8ChartF'](17) != 0 or m['cqc8ChartNh'](17) != 0"
+  },
+  {
+   "note": "the cleric flags (every row's M/F/N-H marks: 25 male, 17 female, 3 non-human)",
+   "expr": "m['cqc8ChartM'](0) != 1 or m['cqc8ChartF'](0) != 0 or m['cqc8ChartNh'](0) != 0 or m['cqc8ChartM'](1) != 1 or m['cqc8ChartF'](1) != 1 or m['cqc8ChartNh'](1) != 0 or m['cqc8ChartM'](2) != 1 or m['cqc8ChartF'](2) != 1 or m['cqc8ChartNh'](2) != 0 or m['cqc8ChartM'](3) != 1 or m['cqc8ChartF'](3) != 1 or m['cqc8ChartNh'](3) != 0 or m['cqc8ChartM'](4) != 1 or m['cqc8ChartF'](4) != 1 or m['cqc8ChartNh'](4) != 0 or m['cqc8ChartM'](5) != 1 or m['cqc8ChartF'](5) != 1 or m['cqc8ChartNh'](5) != 1 or m['cqc8ChartM'](6) != 1 or m['cqc8ChartF'](6) != 1 or m['cqc8ChartNh'](6) != 0 or m['cqc8ChartM'](7) != 0 or m['cqc8ChartF'](7) != 1 or m['cqc8ChartNh'](7) != 0 or m['cqc8ChartM'](8) != 1 or m['cqc8ChartF'](8) != 0 or m['cqc8ChartNh'](8) != 0 or m['cqc8ChartM'](9) != 1 or m['cqc8ChartF'](9) != 0 or m['cqc8ChartNh'](9) != 0 or m['cqc8ChartM'](10) != 1 or m['cqc8ChartF'](10) != 1 or m['cqc8ChartNh'](10) != 0 or m['cqc8ChartM'](11) != 1 or m['cqc8ChartF'](11) != 0 or m['cqc8ChartNh'](11) != 0 or m['cqc8ChartM'](12) != 1 or m['cqc8ChartF'](12) != 0 or m['cqc8ChartNh'](12) != 0 or m['cqc8ChartM'](13) != 1 or m['cqc8ChartF'](13) != 0 or m['cqc8ChartNh'](13) != 0 or m['cqc8ChartM'](14) != 1 or m['cqc8ChartF'](14) != 1 or m['cqc8ChartNh'](14) != 0 or m['cqc8ChartM'](15) != 0 or m['cqc8ChartF'](15) != 0 or m['cqc8ChartNh'](15) != 0 or m['cqc8ChartM'](16) != 1 or m['cqc8ChartF'](16) != 1 or m['cqc8ChartNh'](16) != 0 or m['cqc8ChartM'](17) != 0 or m['cqc8ChartF'](17) != 0 or m['cqc8ChartNh'](17) != 0 or m['cqc8ChartM'](18) != 1 or m['cqc8ChartF'](18) != 1 or m['cqc8ChartNh'](18) != 0 or m['cqc8ChartM'](19) != 1 or m['cqc8ChartF'](19) != 1 or m['cqc8ChartNh'](19) != 0 or m['cqc8ChartM'](20) != 1 or m['cqc8ChartF'](20) != 0 or m['cqc8ChartNh'](20) != 0 or m['cqc8ChartM'](21) != 1 or m['cqc8ChartF'](21) != 1 or m['cqc8ChartNh'](21) != 0 or m['cqc8ChartM'](22) != 1 or m['cqc8ChartF'](22) != 1 or m['cqc8ChartNh'](22) != 1 or m['cqc8ChartM'](23) != 1 or m['cqc8ChartF'](23) != 1 or m['cqc8ChartNh'](23) != 0 or m['cqc8ChartM'](24) != 1 or m['cqc8ChartF'](24) != 1 or m['cqc8ChartNh'](24) != 1 or m['cqc8ChartM'](25) != 1 or m['cqc8ChartF'](25) != 0 or m['cqc8ChartNh'](25) != 0 or m['cqc8ChartM'](26) != 1 or m['cqc8ChartF'](26) != 1 or m['cqc8ChartNh'](26) != 0 or m['cqc8ChartM'](27) != 1 or m['cqc8ChartF'](27) != 0 or m['cqc8ChartNh'](27) != 0"
+  }
+ ],
+ "header_sections": {
+  "the batch eight census": [
+   {
+    "kind": "const",
+    "name": "cqc8Round"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8Batch"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8PrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8PrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8Rows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8NorseRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8SumerianRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8CrossrefRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8MaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8FemaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8NonHumanFlagRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8PrintedColumns"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8SphereCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8AnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8HeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8BodyCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8ColorCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8HolyDayCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8FreqCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8FormCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8PlaceCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8TableCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc8ChainCount"
+   }
+  ],
+  "the clerical chart batch eight grid": [
+   {
+    "kind": "table",
+    "name": "the clerical chart batch eight grid"
+   }
+  ],
+  "the parity pins": [
+   {
+    "kind": "bool",
+    "name": "cqc8NoGapFlip"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc8CrossrefRowsPinned"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc8FriggaFemaleOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc8HelMaleOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc8ThorFormPrintPin"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc8OrnateHelmRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc8LokiSemicolonPinned"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc8NameGarblesRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc8WrapLinesRestored"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_clerical_chart_8.txt",
+   "content": "The DDG print p. 143 clerical quick-reference chart rows -\nbatch eight (the LAST chart batch: the twenty-one Norse rows\n- the nineteen data rows plus the Surtur and Thrym\ncross-references - and the seven Sumerian rows). The\nper-column rosters (first-appearance ordinals = the grid\ncells) and the printed rows. Primary ink: the rotated\ntesseract pass; the collation voice: the 1eonline L&L\nper-deity chart rows.\n\n== the sphere roster (25) ==\n00 authority; rulership\n01 storms; the sea\n02 charisma\n03 poetry; song\n04 justice\n05 elves\n06 love\n07 weather\n08 gates; open paths\n09 death\n10 spring; youth\n11 strife; fire\n12 strength\n13 courage\n14 battle skills\n15 thunder\n16 war; law\n17 hunting skills\n18 air; war\n19 rivers; oceans\n20 love; war\n21 nature\n22 moon\n23 earth\n24 sun\n\n== the animal roster (22) ==\n00 wolves, ravens\n01 gull\n02 horse\n03 lark\n04 owl\n05 unicorn\n06 falcon\n07 cat\n08 eagle\n09 wolf\n10 sparrow hawk\n11 monsters\n12 ox\n13 bear\n14 blue jay\n15 goat\n16 war horse\n17 hound\n18 raven\n19 ibex\n20 tiger\n21 mole\n\n== the head roster (10) ==\n00 war helm\n01 felt cap\n02 silver helm\n03 pointed cap\n04 bare\n05 ornate helm\n06 ornate cap\n07 horned helm\n08 leather cap\n09 conical hat\n\n== the body roster (13) ==\n00 ring mail\n01 green cloak\n02 costly tunic\n03 leather vest\n04 yellow cloak\n05 costly gown\n06 white plate mail\n07 black leather\n08 costly robe\n09 chain mail\n10 black cloak\n11 leather\n12 kilt\n\n== the color roster (24) ==\n00 sapphire\n01 emerald\n02 silver\n03 crimson\n04 ivory\n05 bright green\n06 yellow\n07 sky blue\n08 white\n09 black & white\n10 apple green\n11 red & black\n12 purple\n13 ruby red\n14 silver & white\n15 black & gold\n16 gray\n17 forest green\n18 orange\n19 red, white\n20 sea green\n21 lime\n22 silver, blue\n23 dust\n\n== the holyday roster (12) ==\n00 equinox\n01 half moon\n02 full moon\n03 n/a\n04 new moon\n05 midyear's day\n06 midwinter's day\n07 spring equinox\n08 before battle\n09 summer solstice\n10 quarter moon\n11 eclipses\n\n== the freq roster (5) ==\n00 semiannually\n01 monthly\n02 n/a\n03 annually\n04 varies\n\n== the form roster (10) ==\n00 burnt offering\n01 crafted items\n02 n/a\n03 human\n04 precious metals\n05 weapons\n06 burnt animals\n07 gems\n08 artworks\n09 burnt rams\n\n== the place roster (5) ==\n00 temple hall\n01 meadows\n02 n/a\n03 forest meadows\n04 temple\n\n== the printed rows ==\nOdin :: authority; rulership | wolves, ravens | X - - | war helm | ring mail | sapphire | equinox | semiannually | burnt offering | temple hall\nAegir :: storms; the sea | gull | X X - | felt cap | green cloak | emerald | half moon | monthly | burnt offering | temple hall\nBalder :: charisma | horse | X X - | silver helm | ring mail | silver | full moon | monthly | crafted items | meadows\nBragi :: poetry; song | lark | X X - | pointed cap | costly tunic | crimson | equinox | semiannually | crafted items | meadows\nForseti :: justice | owl | X X - | bare | ring mail | ivory | n/a | n/a | n/a | n/a\nFrey :: elves | unicorn | X X X | ornate helm | leather vest | bright green | n/a | n/a | n/a | n/a\nFreya :: love | falcon | X X - | ornate cap | yellow cloak | yellow | full moon | monthly | crafted items | temple hall\nFrigga :: weather | cat | - X - | bare | costly gown | sky blue | new moon | monthly | burnt offering | temple hall\nHeimdall :: gates; open paths | eagle | X - - | war helm | white plate mail | white | midyear's day | annually | burnt offering | temple hall\nHel :: death | wolf | X - - | bare | black leather | black & white | midwinter's day | annually | human | temple hall\nIdun :: spring; youth | sparrow hawk | X X - | bare | costly robe | apple green | spring equinox | annually | crafted items | forest meadows\nLoki :: strife; fire | monsters | X - - | war helm | leather vest | red & black | midwinter's day | annually | burnt offering | temple hall\nMagni :: strength | ox | X - - | horned helm | ring mail | purple | full moon | monthly | precious metals | temple hall\nModi :: courage | bear | X - - | war helm | ring mail | ruby red | before battle | varies | burnt offering | temple hall\nSif :: battle skills | blue jay | X X - | war helm | chain mail | silver & white | full moon | monthly | weapons | temple hall\nSurtur :: see Nonhumans' Deities (the R875 batch seven rows)\nThor :: thunder | goat | X X - | war helm | ring mail | black & gold | new moon | monthly | burnt animals | temple hall\nThrym :: see Nonhumans' Deities (the R875 batch seven rows)\nTyr :: war; law | war horse | X X - | war helm | black cloak | gray | new moon | monthly | crafted items | temple hall\nUller :: hunting skills | hound | X X - | leather cap | leather | forest green | equinox | semiannually | burnt offering | forest meadows\nVidar :: strength | horse | X - - | bare | leather vest | orange | summer solstice | annually | burnt offering | temple hall\nEnlil :: air; war | raven | X X - | bare | kilt | red, white | full moon | monthly | gems | temple\nEnki :: rivers; oceans | ibex | X X X | bare | kilt | sea green | quarter moon | monthly | precious metals | temple\nInanna :: love; war | cat | X X - | conical hat | kilt | lime | full moon | monthly | artworks | temple\nKi :: nature | tiger | X X X | conical hat | kilt | forest green | equinox | semiannually | burnt rams | temple\nNanna-Sin :: moon | owl | X - - | bare | kilt | silver, blue | full moon | monthly | gems | temple\nNin-Hursag :: earth | mole | X X - | bare | kilt | dust | spring equinox | annually | weapons | temple\nUtu :: sun | falcon | X - - | bare | kilt | orange | eclipses | annually | weapons | temple\n"
+  }
+ ],
+ "inline_count": 45
+}
