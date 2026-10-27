@@ -25840,6 +25840,74 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   rewritten by the normalizer and shipped as spec
   data_files byte-exact; THEN the DDG lua promotion
   (promotion-from-headers). WAIT FOR GO.
+  - R880 LANDED 2026-10-27: commit
+  22f9d1b55fa1401128b90b1f57c395a6d3ce8ce1 (pushed
+  dbe3170..22f9d1b, census 802 -> 803), THE DDG LUA
+  PROMOTION, BATCH ONE - the first promotion round,
+  the first registry growth since the 995 floor: 55
+  full-field defs (American Indian 14, Arthurian
+  15, Babylonian 10, Celtic 16), the floor 995 ->
+  1050.
+  THE SHAPE: generated ONLY from the adjudicated
+  pin headers (dgb/dgc/dgd/dge) - the four grids x
+  rows (combat, class, ability, roster) parsed
+  straight from the switch accessors; the name
+  orders LOCKED by the pinned cross-references (the
+  3/2 attacks comment, the Standard magic-
+  resistance trio, the CH -1 and CH 6 cells, the
+  Thunder Bird X/22,600, the Yanauluha
+  cleric-20/druid-13, the Merlin 300-score) and
+  verified against the primary ink extract pages;
+  the legend tables decode verbatim (alignments,
+  ranks, planes, worshipper alignments, the 99 see-
+  below code, Standard/Infinite/Variable).
+  THE HONEST BOUNDARIES: the prose stays contract-
+  side (text/specials sentinel); damage emits ONLY
+  pinned figures (the dgb strength bonuses, Merlin
+  1-10 and Morgan 1-4, the six Babylonian figures)
+  - the ten flagged Celtic rows carry figures the
+  walk never adjudicated into the header, they stay
+  n/a; symbols and areas of control stay n/a (no
+  symbol grids pinned for these mythoi, though the
+  print carries them - a possible future pin
+  round); the two Arthurian templates emit
+  alignment variable with the 80/85-lawful note
+  (the header's own 4/5-code erratum vs the landed
+  7/8 cells - NOT touched).
+  THE CATCHES: the dgb Shakak/Snake-Man order
+  corrected by the CH 6 pin (row 8, the tesseract
+  column interleave misleads); the dge legend says
+  eleven fixed-damage rows but the grid and audit
+  pin ten - the grid wins.
+  THE MECHANICS: prefix dpe (full-repo scan clean),
+  header rules/dpe.h (92 opener-only), audit "R880
+  DDG promotion audit" rode
+  rules/audits/r880_batch.h (801 -> 802 audit
+  files); 12 consts, 10 bools, 2 grids (mythoi 4x4,
+  key-fill 57x2), 7 examples, inline 28; file
+  patches: splice_engine.py makedirs before a data-
+  file write (the R851 lesson - the promoted defs
+  land in new lettered subdirs),
+  normalize_registry.py book_of + DDG, the
+  registry_census.txt refresh (the DDG column,
+  floor 1050); seed + the 53-line R879 record.
+  VERIFIED: rverify GREEN, 152 mutants 0 missed;
+  the patched normalizer census reads 1050 defs
+  (DDG=55, every key on every DDG def); idempotency
+  - first pass rewrites only the 995 sparse MM defs
+  (their cargo rides the book rounds), the 55 DDG
+  defs never rewrite; the landed tree verified
+  BYTE-EXACT vs a full re-derive from pristine
+  dbe3170 plus the canvas spec (whole-repo diff
+  zero). Spec tools/spec_r880.json, md5
+  40c3faa414ae3d618d6906baa707ef20 (110,210 bytes);
+  the canvas spec-r880 gated byte-exact.
+  NEXT: the promotion continues print-order - batch
+  two (Central American 14 + Chinese 18 + Cthulhu
+  15 + Egyptian 21 = 68 defs), then the
+  Greek/Finnish, Indian/Japanese/Melnibonean and
+  tail batches through Nonhumans and Norse. WAIT
+  FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
