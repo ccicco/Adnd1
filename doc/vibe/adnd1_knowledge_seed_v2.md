@@ -25999,6 +25999,52 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Indian/Japanese/Melnibonean, then the tail
   batches through Nonhumans and Norse. WAIT
   FOR GO.
+  - R883 LANDED 2026-10-27: commit
+  e1bb81748d7a4a73c1a685b0a74b799ed4b15e5f
+  (pushed 2c96981..e1bb817, census 805 -> 806),
+  THE DDG LUA PROMOTION, BATCH FOUR - 31
+  full-field defs (Indian 18, Japanese 13),
+  the floor 1178 -> 1209, DDG 214. THE SHAPE:
+  generated ONLY from the adjudicated idn/jpn
+  pin headers, prefix dpw; def emission rides
+  the primary-ink print order (Amaterasu sits
+  in the LEFT column of print 81 below the
+  intro, so she reads before Ama-Tsu-Mara -
+  the geometry-verified swap). PinnedDamage
+  26 (idn 15, jpn 11 - Yamamoto Date 3-18 is
+  pinned); the fixed-points damage cells
+  (45/20/40 points); parens == StrDmg where
+  printed. THE MARUT RENAME: the MOP Marut
+  holds m/marut.lua, so the DDG Marut rides
+  the R881 Phoenix precedent as "Marut
+  (Indian)" (m/marut_indian.lua). The
+  rangers print on the FIGHTER lines
+  (Hachiman 20, Raiko 18, Susanowo 13,
+  Tsukiyomi 12, Yoshi-iye 13); Susanowo is
+  R13, not F13. HONEST BOUNDARIES: the
+  buffalo 12-inch shoulder size (the one
+  true-inch cell), the Susanowo and
+  Kishijoten move slashes (the printed 48
+  and third /12 ride col comments/garbles),
+  Susanowo MR dual print (grid 30), the
+  digit-split cells (Ebisu HP 3173 -> 313,
+  Kishijoten HP 31717 -> 311, Kishijoten
+  AtN 17 -> 1, Hachiman AC ~1, Hachiman
+  assassin 175th -> 15, Tvashtri F ink 17
+  vs grid 11); lair percents unpinned;
+  worshippersAlignment, symbol, areaOfControl
+  n/a all. Spec tools/spec_r883.json, md5
+  99cd81742b062b3bfdb7191c55f75d66
+  (71,581 bytes); the canvas spec-r883 gated
+  byte-exact; rverify 144 mutants 0 missed;
+  the land verified byte-exact against the
+  fresh-tarball rebuild (1209 defs, dpw.h,
+  audit, census, seed, regtest, spec
+  identical; engine idempotent applied 37 /
+  already 37). NEXT: the promotion continues
+  print-order - Melnibonean, then the tail
+  batches through Nonhumans and Norse. WAIT
+  FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

@@ -585,6 +585,7 @@
 #include "rules/dpt.h"  // R881: the DDG lua promotion, batch two
 #include "rules/dpu.h"  // R882: the DDG lua promotion, batch three
 #include "rules/dpw.h"  // R883: the DDG lua promotion, batch four
+#include "rules/dpx.h"  // R884: the DDG lua promotion, batch five
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4632,6 +4633,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r884_batch.h"  // R884: R884 DDG promotion audit
 #include "rules/audits/r883_batch.h"  // R883: R883 DDG promotion audit
 #include "rules/audits/r882_batch.h"  // R882: R882 DDG promotion audit
 #include "rules/audits/r881_batch.h"  // R881: R881 DDG promotion audit
