@@ -25340,6 +25340,48 @@ builder pattern held first-try (zero wrong-ordinal
 examples - the R869 lesson paid off). NEXT: the App 3
 chart batches continue from Egyptian + Finnish (pdf 138)
 or Curtiss's call - WAIT FOR GO.
+- R871 LANDED 2026-10-27: commit
+42a4fb828c2cbe10129484405a6ba7c5007d704a (pushed
+87bf7db..42a4fb8, census 793 -> 794), APPENDIX 3 THE
+CLERICAL CHART, BATCH THREE - the D&DG walk round
+twenty-three, print pp. 138-139: the Egyptian (17) and
+Finnish (11) deity rows as the round's one grid (28 rows,
+13 cols: Ord, the nine string-field roster ordinals, the
+M/F/N-H flags) with the nine per-column rosters riding
+doc/data/ddg_clerical_chart_3.txt; prefix cqc3 (full-repo
+scan clean); header rules/cqc3.h; audit "R871 clerical
+chart batch three audit", rode rules/audits/r871_batch.h.
+NO GAP FLIP - the App 3 box stays open until the last
+chart batch (the R869 no-flip precedent; gap census 20/4
+unchanged). THE HEADLINE ADJUDICATIONS: the SEKER ROW -
+the L&L transcription duplicates Shu onto Seker (bare,
+blue vest, light blue, equinox, semiannually, gems) while
+the print reads the distinct Seker row (feathered helm,
+white tunic, white, summer solstice, annually, jewelry) -
+pinned by print, eyeball flag (the Hastur/R869 Druaga
+precedent class: L&L duplication); the empty L&L sphere
+cells (Geb earth, Set evil) pinned by print; the Isis
+magic spelling pinned (the L&L magick <(The Occult)> gloss
+a 5th-print addition); the ILMATAR SINGLE X - the TSV
+geometry seats it in the F column (x 1085 against the M
+1030 / F 1086 bars; the first geometry pin of the chart
+rounds), female-only, both voices agree; the Bes Ie;:nher
+garble restored to leather vest, kilt from L&L; the Ukko
+chain mail pinned over the L&L chian typo; the Mielikki
+lowercase nature pinned. THE FLAG CLASSES: male 27
+(Ilmatar the only row without), female 27 (Anhur the only
+row without), non-human 6 (all Egyptian - the Finnish rows
+read none). ZERO registry defs touched - the floor holds
+at 995. Spec tools/spec_r871.json, md5
+de52a8ab7a2121174bb201ed53cbd208 (27,624 bytes,
+authored-plus-newline); 45 inlines (22 consts, 10 bools,
+13 table cols), 7 examples; rverify double-run GREEN, 396
+mutants 0 missed; hyphen scan clean; zero True/False
+tokens in the emitted files; the R865 bool-operator rule
+held first-try; the chk(name, field) builder pattern held
+first-try. NEXT: the App 3 chart batches continue from
+Greek + Indian (pdf 139, the Greek block below the R871
+Finnish tail) or Curtiss's call - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

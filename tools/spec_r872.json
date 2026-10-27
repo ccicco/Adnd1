@@ -1,0 +1,916 @@
+{
+ "prefix": "cqc4",
+ "round": 872,
+ "title": "the clerical chart, batch four",
+ "header_file": "rules/cqc4.h",
+ "audit_file": "rules/audits/r872_batch.h",
+ "audit_label": "R872 clerical chart batch four audit",
+ "include_after": "#include \"rules/cqc3.h\"  // R871: the clerical chart, batch three",
+ "audit_anchor": "#include \"rules/audits/r871_batch.h\"  // R871: R871 clerical chart batch three audit",
+ "include_comment": "the clerical chart, batch four",
+ "audit_comment": "APPENDIX 3: THE CLERICAL QUICK-REFERENCE CHARTS, BATCH FOUR - the D&DG walk round twenty-four, print pp. 139-140: the fourth batch of deity rows - Greek (18), Indian (13) - riding the roster data file, the Greek block below the R871 Finnish tail on pdf 139, the Indian block spanning the pdf 139 tail / 140 head; the App 3 gap box stays open until the last chart batch lands. The print voice is the ROTATED tesseract pass, collated against the 1eonline L&L per-deity chart rows. The headline divergence: the print reads two X marks for Aphrodite (M and F) where the L&L voice reads female-only - pinned by print, eyeball flag.",
+ "banner": {
+  "title": "Appendix 3: the clerical quick-reference chart, batch four - the D&DG walk round twenty-four, print pp. 139-140: the 31 rows of the Greek and Indian pantheons across the 13 printed columns.",
+  "provenance": "primary ink: the ROTATED extract/ddg tesseract pass (pNNN_rot_full.txt + pNNN_rot_tsv.tsv, pdf pages 139-140; the second printing) - the Greek block sits below the R871 Finnish tail on pdf 139, the Indian block spans the pdf 139 tail and the pdf 140 head; the collation voice: the 1eonline L&L per-deity chart rows (the zeus and aphrodite slugs plain). The adjudications: the Aphrodite X pair (print over the L&L female-only read, eyeball flag, the Druaga precedent), the Zeus white / red sunrise column split (both voices agree - an eyeball oddity), the Poseidon seqa garble restored to sea; earthquakes from L&L, the Apollo laure! garble restored to laurel wreath, the Indra rainbow pinned plain (the L&L <> glyph an artifact), the Yama no-article form pinned (the L&L a noted) with the stray colon glyph noted, the Ushas at-dawn fold restored (the Arawn class), and the Rudra red, black comma pinned. The batch order runs Greek, Indian."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R871 LANDED 2026-10-27: commit",
+ "prev_record": [
+  "- R871 LANDED 2026-10-27: commit",
+  "42a4fb828c2cbe10129484405a6ba7c5007d704a (pushed",
+  "87bf7db..42a4fb8, census 793 -> 794), APPENDIX 3 THE",
+  "CLERICAL CHART, BATCH THREE - the D&DG walk round",
+  "twenty-three, print pp. 138-139: the Egyptian (17) and",
+  "Finnish (11) deity rows as the round's one grid (28 rows,",
+  "13 cols: Ord, the nine string-field roster ordinals, the",
+  "M/F/N-H flags) with the nine per-column rosters riding",
+  "doc/data/ddg_clerical_chart_3.txt; prefix cqc3 (full-repo",
+  "scan clean); header rules/cqc3.h; audit \"R871 clerical",
+  "chart batch three audit\", rode rules/audits/r871_batch.h.",
+  "NO GAP FLIP - the App 3 box stays open until the last",
+  "chart batch (the R869 no-flip precedent; gap census 20/4",
+  "unchanged). THE HEADLINE ADJUDICATIONS: the SEKER ROW -",
+  "the L&L transcription duplicates Shu onto Seker (bare,",
+  "blue vest, light blue, equinox, semiannually, gems) while",
+  "the print reads the distinct Seker row (feathered helm,",
+  "white tunic, white, summer solstice, annually, jewelry) -",
+  "pinned by print, eyeball flag (the Hastur/R869 Druaga",
+  "precedent class: L&L duplication); the empty L&L sphere",
+  "cells (Geb earth, Set evil) pinned by print; the Isis",
+  "magic spelling pinned (the L&L magick <(The Occult)> gloss",
+  "a 5th-print addition); the ILMATAR SINGLE X - the TSV",
+  "geometry seats it in the F column (x 1085 against the M",
+  "1030 / F 1086 bars; the first geometry pin of the chart",
+  "rounds), female-only, both voices agree; the Bes Ie;:nher",
+  "garble restored to leather vest, kilt from L&L; the Ukko",
+  "chain mail pinned over the L&L chian typo; the Mielikki",
+  "lowercase nature pinned. THE FLAG CLASSES: male 27",
+  "(Ilmatar the only row without), female 27 (Anhur the only",
+  "row without), non-human 6 (all Egyptian - the Finnish rows",
+  "read none). ZERO registry defs touched - the floor holds",
+  "at 995. Spec tools/spec_r871.json, md5",
+  "de52a8ab7a2121174bb201ed53cbd208 (27,624 bytes,",
+  "authored-plus-newline); 45 inlines (22 consts, 10 bools,",
+  "13 table cols), 7 examples; rverify double-run GREEN, 396",
+  "mutants 0 missed; hyphen scan clean; zero True/False",
+  "tokens in the emitted files; the R865 bool-operator rule",
+  "held first-try; the chk(name, field) builder pattern held",
+  "first-try. NEXT: the App 3 chart batches continue from",
+  "Greek + Indian (pdf 139, the Greek block below the R871",
+  "Finnish tail) or Curtiss's call - WAIT FOR GO."
+ ],
+ "census_before": 794,
+ "gap_census": {
+  "closed": 20,
+  "open": 4
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "cqc4Round",
+   "value": 872,
+   "comment": "the clerical chart batch four round: the D&DG walk round twenty-four"
+  },
+  {
+   "name": "cqc4Batch",
+   "value": 4,
+   "comment": "the fourth chart batch (the App 3 box stays open until the last batch lands)"
+  },
+  {
+   "name": "cqc4PrintStart",
+   "value": 139,
+   "comment": "the chart batch four print pages open at 139"
+  },
+  {
+   "name": "cqc4PrintEnd",
+   "value": 140,
+   "comment": "the chart batch four print pages close at 140"
+  },
+  {
+   "name": "cqc4Rows",
+   "value": 31,
+   "comment": "the batch rows (Greek 18, Indian 13)"
+  },
+  {
+   "name": "cqc4GreekRows",
+   "value": 18,
+   "comment": "the Greek pantheon rows"
+  },
+  {
+   "name": "cqc4IndianRows",
+   "value": 13,
+   "comment": "the Indian pantheon rows"
+  },
+  {
+   "name": "cqc4MaleRows",
+   "value": 29,
+   "comment": "the rows reading a male-clerics X (Artemis and Ushas the rows without)"
+  },
+  {
+   "name": "cqc4FemaleRows",
+   "value": 26,
+   "comment": "the rows reading a female-clerics X (Apollo, Pan, Indra, Karttikeya and Yama the rows without)"
+  },
+  {
+   "name": "cqc4NonHumanRows",
+   "value": 9,
+   "comment": "the rows reading a non-human clerics X (5 Greek, 4 Indian)"
+  },
+  {
+   "name": "cqc4PrintedColumns",
+   "value": 13,
+   "comment": "the printed columns of the chart (the 13 the batch grids encode)"
+  },
+  {
+   "name": "cqc4SphereCount",
+   "value": 30,
+   "comment": "the sphere-of-control roster ordinals of the batch"
+  },
+  {
+   "name": "cqc4AnimalCount",
+   "value": 29,
+   "comment": "the animal roster ordinals of the batch"
+  },
+  {
+   "name": "cqc4HeadCount",
+   "value": 9,
+   "comment": "the raiment head roster ordinals of the batch"
+  },
+  {
+   "name": "cqc4BodyCount",
+   "value": 18,
+   "comment": "the raiment body roster ordinals of the batch"
+  },
+  {
+   "name": "cqc4ColorCount",
+   "value": 24,
+   "comment": "the color roster ordinals of the batch"
+  },
+  {
+   "name": "cqc4HolyDayCount",
+   "value": 13,
+   "comment": "the holy-days roster ordinals of the batch"
+  },
+  {
+   "name": "cqc4FreqCount",
+   "value": 15,
+   "comment": "the sacrifice-frequency roster ordinals of the batch"
+  },
+  {
+   "name": "cqc4FormCount",
+   "value": 23,
+   "comment": "the sacrifice-form roster ordinals of the batch"
+  },
+  {
+   "name": "cqc4PlaceCount",
+   "value": 17,
+   "comment": "the place-of-worship roster ordinals of the batch"
+  },
+  {
+   "name": "cqc4TableCount",
+   "value": 1,
+   "comment": "the batch grid count (one grid per batch round)"
+  },
+  {
+   "name": "cqc4ChainCount",
+   "value": 0,
+   "comment": "the batch chain count (the chart grids carry no chains)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cqc4AphroditeMaleClericsPrint",
+   "value": true,
+   "comment": "the headline divergence: the print reads two X marks for Aphrodite (M and F, the geometry at x 1049/1104) where the L&L voice reads female-only - pinned by print, eyeball flag (the Druaga precedent)"
+  },
+  {
+   "name": "cqc4ZeusRedSunrise",
+   "value": true,
+   "comment": "the print reads the Zeus color white and the holy days red sunrise (the odd column split both voices carry) - pinned, eyeball oddity"
+  },
+  {
+   "name": "cqc4PoseidonSphereRestored",
+   "value": true,
+   "comment": "the print garbles the Poseidon sphere (seqa;) - restored to sea; earthquakes from the L&L voice (the sea/seas ambiguity rides the restoration)"
+  },
+  {
+   "name": "cqc4ApolloLaurelRestored",
+   "value": true,
+   "comment": "the print garbles the Apollo head (the laure! glyph run) - the laurel wreath restored from the L&L voice"
+  },
+  {
+   "name": "cqc4IndraRainbowNoGlyph",
+   "value": true,
+   "comment": "the L&L rainbow <> gloss glyph on the Indra color is an artifact - the print reads the plain rainbow, pinned"
+  },
+  {
+   "name": "cqc4YamaTalesNoArticle",
+   "value": true,
+   "comment": "the print reads the Yama form tales of dead one's deeds, valuables (no article) where the L&L voice inserts a - pinned by print"
+  },
+  {
+   "name": "cqc4YamaStrayColon",
+   "value": true,
+   "comment": "the stray : glyph in the Yama raiment fold is a print artifact, not ink - noted, the red robes with copper tracery restored"
+  },
+  {
+   "name": "cqc4AtDawnFoldRestored",
+   "value": true,
+   "comment": "the Ushas atdawn fold merged (the Arawn at death and Hades atdeath fold class) - the monthly, at dawn frequency restored"
+  },
+  {
+   "name": "cqc4RudraRedBlackComma",
+   "value": true,
+   "comment": "the print reads the Rudra color red, black (with the comma) - the L&L red black noted, the print pinned"
+  },
+  {
+   "name": "cqc4TwoFemaleOnlyRows",
+   "value": true,
+   "comment": "the batch four female-only rows run Artemis and Ushas"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the clerical chart batch four grid",
+   "tag": "cqc4Chart",
+   "cols": [
+    "cqc4ChartOrd",
+    "cqc4ChartSphere",
+    "cqc4ChartAnimal",
+    "cqc4ChartM",
+    "cqc4ChartF",
+    "cqc4ChartNh",
+    "cqc4ChartHead",
+    "cqc4ChartBody",
+    "cqc4ChartColor",
+    "cqc4ChartHolyday",
+    "cqc4ChartFreq",
+    "cqc4ChartForm",
+    "cqc4ChartPlace"
+   ],
+   "col_comments": [
+    "The row ordinals (0-30, the batch walk order: Greek 0-17, Indian 18-30)",
+    "The sphere-of-control roster ordinals (the labels ride the data file)",
+    "The animal roster ordinals",
+    "The male clerics flag (the printed X reads 1; Artemis and Ushas the rows without)",
+    "The female clerics flag (the printed X reads 1; the Aphrodite X pair is the round divergence pin)",
+    "The non-human clerics flag (the printed X reads 1)",
+    "The raiment head roster ordinals",
+    "The raiment body roster ordinals",
+    "The color roster ordinals (the Zeus white / red sunrise split is the eyeball oddity pin)",
+    "The holy-days roster ordinals",
+    "The sacrifice-frequency roster ordinals (the Ushas at-dawn fold restored)",
+    "The sacrifice-form roster ordinals",
+    "The place-of-worship roster ordinals"
+   ],
+   "count": "cqc4Rows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     2,
+     1,
+     0,
+     0,
+     1,
+     0,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    [
+     3,
+     3,
+     3,
+     1,
+     1,
+     0,
+     2,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    [
+     4,
+     4,
+     4,
+     0,
+     1,
+     1,
+     0,
+     2,
+     4,
+     4,
+     0,
+     4,
+     4
+    ],
+    [
+     5,
+     5,
+     5,
+     1,
+     1,
+     0,
+     2,
+     3,
+     5,
+     5,
+     2,
+     0,
+     1
+    ],
+    [
+     6,
+     6,
+     6,
+     1,
+     1,
+     0,
+     0,
+     0,
+     6,
+     6,
+     4,
+     5,
+     5
+    ],
+    [
+     7,
+     7,
+     7,
+     1,
+     1,
+     0,
+     0,
+     0,
+     7,
+     6,
+     4,
+     6,
+     6
+    ],
+    [
+     8,
+     8,
+     8,
+     1,
+     1,
+     1,
+     2,
+     4,
+     8,
+     5,
+     5,
+     2,
+     7
+    ],
+    [
+     9,
+     9,
+     9,
+     1,
+     1,
+     0,
+     0,
+     0,
+     9,
+     7,
+     6,
+     3,
+     8
+    ],
+    [
+     10,
+     10,
+     10,
+     1,
+     1,
+     1,
+     0,
+     5,
+     10,
+     5,
+     7,
+     7,
+     9
+    ],
+    [
+     11,
+     11,
+     11,
+     1,
+     1,
+     0,
+     0,
+     0,
+     11,
+     8,
+     8,
+     8,
+     1
+    ],
+    [
+     12,
+     12,
+     12,
+     1,
+     1,
+     0,
+     3,
+     0,
+     12,
+     5,
+     9,
+     9,
+     10
+    ],
+    [
+     13,
+     13,
+     13,
+     1,
+     1,
+     0,
+     4,
+     0,
+     13,
+     9,
+     10,
+     3,
+     1
+    ],
+    [
+     14,
+     14,
+     14,
+     1,
+     0,
+     1,
+     5,
+     6,
+     14,
+     6,
+     4,
+     10,
+     4
+    ],
+    [
+     15,
+     15,
+     15,
+     1,
+     1,
+     1,
+     0,
+     0,
+     15,
+     5,
+     7,
+     11,
+     1
+    ],
+    [
+     16,
+     16,
+     16,
+     1,
+     1,
+     0,
+     0,
+     0,
+     16,
+     4,
+     11,
+     12,
+     11
+    ],
+    [
+     17,
+     17,
+     17,
+     1,
+     1,
+     0,
+     0,
+     0,
+     17,
+     5,
+     7,
+     6,
+     6
+    ],
+    [
+     18,
+     18,
+     18,
+     1,
+     0,
+     0,
+     6,
+     7,
+     18,
+     5,
+     8,
+     2,
+     1
+    ],
+    [
+     19,
+     19,
+     19,
+     1,
+     1,
+     0,
+     6,
+     8,
+     19,
+     5,
+     8,
+     13,
+     1
+    ],
+    [
+     20,
+     20,
+     20,
+     1,
+     1,
+     1,
+     6,
+     9,
+     8,
+     5,
+     12,
+     14,
+     12
+    ],
+    [
+     21,
+     3,
+     11,
+     1,
+     0,
+     0,
+     6,
+     10,
+     17,
+     10,
+     13,
+     15,
+     13
+    ],
+    [
+     22,
+     21,
+     21,
+     1,
+     1,
+     0,
+     6,
+     11,
+     2,
+     5,
+     8,
+     16,
+     1
+    ],
+    [
+     23,
+     22,
+     22,
+     1,
+     1,
+     1,
+     6,
+     12,
+     20,
+     11,
+     8,
+     17,
+     1
+    ],
+    [
+     24,
+     23,
+     23,
+     1,
+     1,
+     0,
+     7,
+     13,
+     21,
+     5,
+     5,
+     2,
+     14
+    ],
+    [
+     25,
+     24,
+     13,
+     1,
+     1,
+     0,
+     6,
+     13,
+     13,
+     12,
+     4,
+     18,
+     1
+    ],
+    [
+     26,
+     25,
+     24,
+     1,
+     1,
+     1,
+     6,
+     14,
+     6,
+     5,
+     8,
+     19,
+     15
+    ],
+    [
+     27,
+     26,
+     25,
+     0,
+     1,
+     0,
+     8,
+     11,
+     22,
+     5,
+     14,
+     20,
+     1
+    ],
+    [
+     28,
+     27,
+     26,
+     1,
+     1,
+     0,
+     6,
+     15,
+     0,
+     8,
+     8,
+     2,
+     1
+    ],
+    [
+     29,
+     28,
+     27,
+     1,
+     1,
+     1,
+     6,
+     16,
+     12,
+     11,
+     8,
+     21,
+     1
+    ],
+    [
+     30,
+     29,
+     28,
+     1,
+     0,
+     0,
+     6,
+     17,
+     23,
+     5,
+     5,
+     22,
+     16
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the batch rows, the pantheon counts, the roster counts, the cleric flags)",
+   "expr": "m['cqc4Round']() != 872 or m['cqc4Batch']() != 4 or m['cqc4PrintStart']() != 139 or m['cqc4PrintEnd']() != 140 or m['cqc4Rows']() != 31 or m['cqc4GreekRows']() != 18 or m['cqc4IndianRows']() != 13 or m['cqc4MaleRows']() != 29 or m['cqc4FemaleRows']() != 26 or m['cqc4NonHumanRows']() != 9 or m['cqc4PrintedColumns']() != 13 or m['cqc4SphereCount']() != 30 or m['cqc4AnimalCount']() != 29 or m['cqc4HeadCount']() != 9 or m['cqc4BodyCount']() != 18 or m['cqc4ColorCount']() != 24 or m['cqc4HolyDayCount']() != 13 or m['cqc4FreqCount']() != 15 or m['cqc4FormCount']() != 23 or m['cqc4PlaceCount']() != 17 or m['cqc4TableCount']() != 1 or m['cqc4ChainCount']() != 0"
+  },
+  {
+   "note": "the parity pins (the headline Aphrodite divergence, the restorations, the fold classes)",
+   "expr": "m['cqc4AphroditeMaleClericsPrint']() != 1 or m['cqc4ZeusRedSunrise']() != 1 or m['cqc4PoseidonSphereRestored']() != 1 or m['cqc4ApolloLaurelRestored']() != 1 or m['cqc4IndraRainbowNoGlyph']() != 1 or m['cqc4YamaTalesNoArticle']() != 1 or m['cqc4YamaStrayColon']() != 1 or m['cqc4AtDawnFoldRestored']() != 1 or m['cqc4RudraRedBlackComma']() != 1 or m['cqc4TwoFemaleOnlyRows']() != 1"
+  },
+  {
+   "note": "the head and tail rows (Zeus 0, Yama 30, the ordinals run)",
+   "expr": "m['cqc4ChartOrd'](0) != 0 or m['cqc4ChartOrd'](30) != 30 or m['cqc4ChartColor'](0) != 0 or m['cqc4ChartHolyday'](0) != 0 or m['cqc4ChartFreq'](0) != 0 or m['cqc4ChartM'](0) != 1 or m['cqc4ChartF'](0) != 1 or m['cqc4ChartPlace'](0) != 0 or m['cqc4ChartBody'](30) != 17 or m['cqc4ChartColor'](30) != 23 or m['cqc4ChartM'](30) != 1 or m['cqc4ChartF'](30) != 0 or m['cqc4ChartForm'](30) != 22 or m['cqc4ChartPlace'](30) != 16"
+  },
+  {
+   "note": "the Greek rows (the Aphrodite pin, the triple flags, the seldom and never frequencies)",
+   "expr": "m['cqc4ChartM'](1) != 1 or m['cqc4ChartF'](1) != 1 or m['cqc4ChartForm'](1) != 1 or m['cqc4ChartHead'](2) != 1 or m['cqc4ChartHolyday'](2) != 2 or m['cqc4ChartF'](2) != 0 or m['cqc4ChartBody'](3) != 1 or m['cqc4ChartFreq'](3) != 3 or m['cqc4ChartM'](4) != 0 or m['cqc4ChartNh'](4) != 1 or m['cqc4ChartBody'](5) != 3 or m['cqc4ChartFreq'](8) != 5 or m['cqc4ChartNh'](8) != 1 or m['cqc4ChartFreq'](9) != 6 or m['cqc4ChartForm'](10) != 7 or m['cqc4ChartNh'](10) != 1 or m['cqc4ChartColor'](11) != 11 or m['cqc4ChartSphere'](12) != 12 or m['cqc4ChartFreq'](12) != 9 or m['cqc4ChartHead'](13) != 4 or m['cqc4ChartF'](14) != 0 or m['cqc4ChartNh'](14) != 1 or m['cqc4ChartSphere'](15) != 15 or m['cqc4ChartNh'](15) != 1 or m['cqc4ChartFreq'](16) != 11 or m['cqc4ChartForm'](17) != 6"
+  },
+  {
+   "note": "the Indian rows (the rainbow, the before-battle pair, the copper tracery)",
+   "expr": "m['cqc4ChartBody'](18) != 7 or m['cqc4ChartColor'](18) != 18 or m['cqc4ChartM'](18) != 1 or m['cqc4ChartF'](18) != 0 or m['cqc4ChartColor'](19) != 19 or m['cqc4ChartNh'](20) != 1 or m['cqc4ChartPlace'](20) != 12 or m['cqc4ChartBody'](21) != 10 or m['cqc4ChartHolyday'](21) != 10 or m['cqc4ChartFreq'](21) != 13 or m['cqc4ChartF'](21) != 0 or m['cqc4ChartForm'](22) != 16 or m['cqc4ChartNh'](23) != 1 or m['cqc4ChartHead'](24) != 7 or m['cqc4ChartColor'](24) != 21 or m['cqc4ChartForm'](25) != 18 or m['cqc4ChartNh'](26) != 1 or m['cqc4ChartPlace'](26) != 15 or m['cqc4ChartM'](27) != 0 or m['cqc4ChartF'](27) != 1 or m['cqc4ChartFreq'](27) != 14 or m['cqc4ChartSphere'](28) != 27 or m['cqc4ChartBody'](29) != 16 or m['cqc4ChartNh'](29) != 1"
+  },
+  {
+   "note": "the cleric flags (the female and non-human census cells)",
+   "expr": "m['cqc4ChartF'](3) != 1 or m['cqc4ChartF'](6) != 1 or m['cqc4ChartF'](9) != 1 or m['cqc4ChartF'](12) != 1 or m['cqc4ChartF'](13) != 1 or m['cqc4ChartF'](16) != 1 or m['cqc4ChartF'](19) != 1 or m['cqc4ChartF'](22) != 1 or m['cqc4ChartF'](25) != 1 or m['cqc4ChartF'](28) != 1 or m['cqc4ChartNh'](4) != 1 or m['cqc4ChartNh'](14) != 1 or m['cqc4ChartNh'](15) != 1 or m['cqc4ChartNh'](20) != 1 or m['cqc4ChartNh'](23) != 1 or m['cqc4ChartNh'](29) != 1"
+  }
+ ],
+ "header_sections": {
+  "the batch four census": [
+   {
+    "kind": "const",
+    "name": "cqc4Round"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4Batch"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4PrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4PrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4Rows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4GreekRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4IndianRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4MaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4FemaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4NonHumanRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4PrintedColumns"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4SphereCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4AnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4HeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4BodyCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4ColorCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4HolyDayCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4FreqCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4FormCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4PlaceCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4TableCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc4ChainCount"
+   }
+  ],
+  "the clerical chart batch four grid": [
+   {
+    "kind": "table",
+    "name": "the clerical chart batch four grid"
+   }
+  ],
+  "the parity pins": [
+   {
+    "kind": "bool",
+    "name": "cqc4AphroditeMaleClericsPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc4ZeusRedSunrise"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc4PoseidonSphereRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc4ApolloLaurelRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc4IndraRainbowNoGlyph"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc4YamaTalesNoArticle"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc4YamaStrayColon"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc4AtDawnFoldRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc4RudraRedBlackComma"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc4TwoFemaleOnlyRows"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_clerical_chart_4.txt",
+   "content": "The DDG print pp. 139-140 clerical quick-reference chart rows -\nbatch four (Greek, Indian; the Greek block rides pdf 139 below the\nR871 Finnish tail, the Indian block spans the pdf 139 tail / 140\nhead). The per-column rosters (first-appearance ordinals = the grid\ncells) and the printed rows. Primary ink: the rotated tesseract\npass; the collation voice: the 1eonline L&L per-deity chart rows.\n== the sphere roster (30) ==\n00 air\n01 love; beauty\n02 sun; music; archery\n03 war\n04 hunt; moon\n05 wisdom; combat\n06 agriculture\n07 wine\n08 underworld\n09 magic\n10 blacksmiths\n11 marriage; intrigue\n12 thieves; liars; gamblers\n13 victory\n14 nature\n15 sea; earthquakes\n16 creation\n17 good fortune\n18 air; storms; rain\n19 fire; lightning\n20 evil\n21 fortune\n22 night; thieves\n23 storms; the dead\n24 sun\n25 artifice; science\n26 dawn\n27 order; oaths\n28 mercy; light\n29 death\n== the animal roster (29) ==\n00 eagle\n01 dove\n02 falcon\n03 wolf\n04 deer\n05 owl\n06 cow\n07 dolphin\n08 nightmare\n09 hell hound\n10 bull\n11 peacock\n12 fox\n13 pegasus\n14 satyr\n15 horse\n16 man\n17 bluebird\n18 elephant\n19 tiger\n20 snake\n21 cobra\n22 monkey\n23 jackal\n24 mongoose\n25 songbirds\n26 dog\n27 bird\n28 water buffalo\n== the head roster (9) ==\n00 bare\n01 laurel wreath\n02 helm\n03 winged cap\n04 olive wreath\n05 wreath\n06 bald\n07 bald, black hood\n08 bald, red hood\n== the body roster (18) ==\n00 tunic\n01 breastplate\n02 deerskin\n03 armor or tunic\n04 armor\n05 leather apron\n06 fur\n07 multicolored robes\n08 orange robes\n09 black robes\n10 blue leather armor\n11 gold robes\n12 dark gray robes\n13 red robes\n14 green robes\n15 white robes\n16 silver chain mail\n17 red robes with copper tracery\n== the color roster (24) ==\n00 white\n01 ivory\n02 gold\n03 crimson\n04 moss green\n05 gray\n06 green\n07 purple\n08 black\n09 blue-white\n10 bronze\n11 iridescent blue\n12 silver\n13 red\n14 olive\n15 blue-green\n16 amber\n17 blue\n18 rainbow\n19 orange-red\n20 dark gray\n21 red, black\n22 red, gold\n23 red, copper\n== the holyday roster (13) ==\n00 red sunrise\n01 spring\n02 every 10 days in summer\n03 wartime\n04 equinox\n05 n/a\n06 spring equinox\n07 fall equinox\n08 full moon\n09 spring thaw\n10 before battle\n11 new moon\n12 summer solstice\n== the freq roster (15) ==\n00 full moon\n01 every 10 days\n02 new moon\n03 before battles\n04 annually\n05 at death\n06 monthly at full moon\n07 varies\n08 monthly\n09 seldom\n10 victory\n11 never\n12 often\n13 before battle\n14 monthly, at dawn\n== the form roster (23) ==\n00 cow\n01 artistic creation\n02 valuables\n03 ox\n04 deer\n05 seeds\n06 spilt wine\n07 gold, gems\n08 hair\n09 bird feathers\n10 fowl\n11 fish\n12 n/a\n13 burnt butter\n14 human blood\n15 weapons\n16 lotus\n17 stolen items\n18 gold, horses\n19 crafted items\n20 precious stones\n21 beautiful offerings\n22 tales of dead one's deeds, valuables\n== the place roster (17) ==\n00 temple, grove\n01 temple\n02 temple, cave\n03 battlefield\n04 glen\n05 field, temple\n06 anywhere\n07 grave\n08 mountain glen\n09 forge\n10 temple, open plain\n11 home\n12 temple, underground\n13 temple, battlefield\n14 temple, grave\n15 temple, workshop\n16 temple, grave or pyre\n\n== the printed rows ==\nZeus :: air | eagle | X X - | bare | tunic | white | red sunrise | full moon | cow | temple, grove\nAphrodite :: love; beauty | dove | X X - | bare | tunic | ivory | spring | every 10 days | artistic creation | temple\nApollo :: sun; music; archery | falcon | X - - | laurel wreath | tunic | gold | every 10 days in summer | new moon | valuables | temple, cave\nAres :: war | wolf | X X - | helm | breastplate | crimson | wartime | before battles | ox | battlefield\nArtemis :: hunt; moon | deer | - X X | bare | deerskin | moss green | equinox | full moon | deer | glen\nAthena :: wisdom; combat | owl | X X - | helm | armor or tunic | gray | n/a | new moon | cow | temple\nDemeter :: agriculture | cow | X X - | bare | tunic | green | spring equinox | annually | seeds | field, temple\nDionysus :: wine | dolphin | X X - | bare | tunic | purple | spring equinox | annually | spilt wine | anywhere\nHades :: underworld | nightmare | X X X | helm | armor | black | n/a | at death | valuables | grave\nHecate :: magic | hell hound | X X - | bare | tunic | blue-white | fall equinox | monthly at full moon | ox | mountain glen\nHephaestus :: blacksmiths | bull | X X X | bare | leather apron | bronze | n/a | varies | gold, gems | forge\nHera :: marriage; intrigue | peacock | X X - | bare | tunic | iridescent blue | full moon | monthly | hair | temple\nHermes :: thieves; liars; gamblers | fox | X X - | winged cap | tunic | silver | n/a | seldom | bird feathers | temple, open plain\nNike :: victory | pegasus | X X - | olive wreath | tunic | red | spring thaw | victory | ox | temple\nPan :: nature | satyr | X - X | wreath | fur | olive | spring equinox | annually | fowl | glen\nPoseidon :: sea; earthquakes | horse | X X X | bare | tunic | blue-green | n/a | varies | fish | temple\nPrometheus :: creation | man | X X - | bare | tunic | amber | equinox | never | n/a | home\nTyche :: good fortune | bluebird | X X - | bare | tunic | blue | n/a | varies | spilt wine | anywhere\nIndra :: air; storms; rain | elephant | X - - | bald | multicolored robes | rainbow | n/a | monthly | valuables | temple\nAgni :: fire; lightning | tiger | X X - | bald | orange robes | orange-red | n/a | monthly | burnt butter | temple\nKali :: evil | snake | X X X | bald | black robes | black | n/a | often | human blood | temple, underground\nKarttikeya :: war | peacock | X - - | bald | blue leather armor | blue | before battle | before battle | weapons | temple, battlefield\nLakshmi :: fortune | cobra | X X - | bald | gold robes | gold | n/a | monthly | lotus | temple\nRatri :: night; thieves | monkey | X X X | bald | dark gray robes | dark gray | new moon | monthly | stolen items | temple\nRudra :: storms; the dead | jackal | X X - | bald, black hood | red robes | red, black | n/a | at death | valuables | temple, grave\nSurya :: sun | pegasus | X X - | bald | red robes | red | summer solstice | annually | gold, horses | temple\nTvashtri :: artifice; science | mongoose | X X X | bald | green robes | green | n/a | monthly | crafted items | temple, workshop\nUshas :: dawn | songbirds | - X - | bald, red hood | gold robes | red, gold | n/a | monthly, at dawn | precious stones | temple\nVaruna :: order; oaths | dog | X X - | bald | white robes | white | full moon | monthly | valuables | temple\nVishnu :: mercy; light | bird | X X X | bald | silver chain mail | silver | new moon | monthly | beautiful offerings | temple\nYama :: death | water buffalo | X - - | bald | red robes with copper tracery | red, copper | n/a | at death | tales of dead one's deeds, valuables | temple, grave or pyre\n"
+  }
+ ],
+ "inline_count": 45
+}

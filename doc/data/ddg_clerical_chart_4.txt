@@ -1,0 +1,226 @@
+The DDG print pp. 139-140 clerical quick-reference chart rows -
+batch four (Greek, Indian; the Greek block rides pdf 139 below the
+R871 Finnish tail, the Indian block spans the pdf 139 tail / 140
+head). The per-column rosters (first-appearance ordinals = the grid
+cells) and the printed rows. Primary ink: the rotated tesseract
+pass; the collation voice: the 1eonline L&L per-deity chart rows.
+== the sphere roster (30) ==
+00 air
+01 love; beauty
+02 sun; music; archery
+03 war
+04 hunt; moon
+05 wisdom; combat
+06 agriculture
+07 wine
+08 underworld
+09 magic
+10 blacksmiths
+11 marriage; intrigue
+12 thieves; liars; gamblers
+13 victory
+14 nature
+15 sea; earthquakes
+16 creation
+17 good fortune
+18 air; storms; rain
+19 fire; lightning
+20 evil
+21 fortune
+22 night; thieves
+23 storms; the dead
+24 sun
+25 artifice; science
+26 dawn
+27 order; oaths
+28 mercy; light
+29 death
+== the animal roster (29) ==
+00 eagle
+01 dove
+02 falcon
+03 wolf
+04 deer
+05 owl
+06 cow
+07 dolphin
+08 nightmare
+09 hell hound
+10 bull
+11 peacock
+12 fox
+13 pegasus
+14 satyr
+15 horse
+16 man
+17 bluebird
+18 elephant
+19 tiger
+20 snake
+21 cobra
+22 monkey
+23 jackal
+24 mongoose
+25 songbirds
+26 dog
+27 bird
+28 water buffalo
+== the head roster (9) ==
+00 bare
+01 laurel wreath
+02 helm
+03 winged cap
+04 olive wreath
+05 wreath
+06 bald
+07 bald, black hood
+08 bald, red hood
+== the body roster (18) ==
+00 tunic
+01 breastplate
+02 deerskin
+03 armor or tunic
+04 armor
+05 leather apron
+06 fur
+07 multicolored robes
+08 orange robes
+09 black robes
+10 blue leather armor
+11 gold robes
+12 dark gray robes
+13 red robes
+14 green robes
+15 white robes
+16 silver chain mail
+17 red robes with copper tracery
+== the color roster (24) ==
+00 white
+01 ivory
+02 gold
+03 crimson
+04 moss green
+05 gray
+06 green
+07 purple
+08 black
+09 blue-white
+10 bronze
+11 iridescent blue
+12 silver
+13 red
+14 olive
+15 blue-green
+16 amber
+17 blue
+18 rainbow
+19 orange-red
+20 dark gray
+21 red, black
+22 red, gold
+23 red, copper
+== the holyday roster (13) ==
+00 red sunrise
+01 spring
+02 every 10 days in summer
+03 wartime
+04 equinox
+05 n/a
+06 spring equinox
+07 fall equinox
+08 full moon
+09 spring thaw
+10 before battle
+11 new moon
+12 summer solstice
+== the freq roster (15) ==
+00 full moon
+01 every 10 days
+02 new moon
+03 before battles
+04 annually
+05 at death
+06 monthly at full moon
+07 varies
+08 monthly
+09 seldom
+10 victory
+11 never
+12 often
+13 before battle
+14 monthly, at dawn
+== the form roster (23) ==
+00 cow
+01 artistic creation
+02 valuables
+03 ox
+04 deer
+05 seeds
+06 spilt wine
+07 gold, gems
+08 hair
+09 bird feathers
+10 fowl
+11 fish
+12 n/a
+13 burnt butter
+14 human blood
+15 weapons
+16 lotus
+17 stolen items
+18 gold, horses
+19 crafted items
+20 precious stones
+21 beautiful offerings
+22 tales of dead one's deeds, valuables
+== the place roster (17) ==
+00 temple, grove
+01 temple
+02 temple, cave
+03 battlefield
+04 glen
+05 field, temple
+06 anywhere
+07 grave
+08 mountain glen
+09 forge
+10 temple, open plain
+11 home
+12 temple, underground
+13 temple, battlefield
+14 temple, grave
+15 temple, workshop
+16 temple, grave or pyre
+
+== the printed rows ==
+Zeus :: air | eagle | X X - | bare | tunic | white | red sunrise | full moon | cow | temple, grove
+Aphrodite :: love; beauty | dove | X X - | bare | tunic | ivory | spring | every 10 days | artistic creation | temple
+Apollo :: sun; music; archery | falcon | X - - | laurel wreath | tunic | gold | every 10 days in summer | new moon | valuables | temple, cave
+Ares :: war | wolf | X X - | helm | breastplate | crimson | wartime | before battles | ox | battlefield
+Artemis :: hunt; moon | deer | - X X | bare | deerskin | moss green | equinox | full moon | deer | glen
+Athena :: wisdom; combat | owl | X X - | helm | armor or tunic | gray | n/a | new moon | cow | temple
+Demeter :: agriculture | cow | X X - | bare | tunic | green | spring equinox | annually | seeds | field, temple
+Dionysus :: wine | dolphin | X X - | bare | tunic | purple | spring equinox | annually | spilt wine | anywhere
+Hades :: underworld | nightmare | X X X | helm | armor | black | n/a | at death | valuables | grave
+Hecate :: magic | hell hound | X X - | bare | tunic | blue-white | fall equinox | monthly at full moon | ox | mountain glen
+Hephaestus :: blacksmiths | bull | X X X | bare | leather apron | bronze | n/a | varies | gold, gems | forge
+Hera :: marriage; intrigue | peacock | X X - | bare | tunic | iridescent blue | full moon | monthly | hair | temple
+Hermes :: thieves; liars; gamblers | fox | X X - | winged cap | tunic | silver | n/a | seldom | bird feathers | temple, open plain
+Nike :: victory | pegasus | X X - | olive wreath | tunic | red | spring thaw | victory | ox | temple
+Pan :: nature | satyr | X - X | wreath | fur | olive | spring equinox | annually | fowl | glen
+Poseidon :: sea; earthquakes | horse | X X X | bare | tunic | blue-green | n/a | varies | fish | temple
+Prometheus :: creation | man | X X - | bare | tunic | amber | equinox | never | n/a | home
+Tyche :: good fortune | bluebird | X X - | bare | tunic | blue | n/a | varies | spilt wine | anywhere
+Indra :: air; storms; rain | elephant | X - - | bald | multicolored robes | rainbow | n/a | monthly | valuables | temple
+Agni :: fire; lightning | tiger | X X - | bald | orange robes | orange-red | n/a | monthly | burnt butter | temple
+Kali :: evil | snake | X X X | bald | black robes | black | n/a | often | human blood | temple, underground
+Karttikeya :: war | peacock | X - - | bald | blue leather armor | blue | before battle | before battle | weapons | temple, battlefield
+Lakshmi :: fortune | cobra | X X - | bald | gold robes | gold | n/a | monthly | lotus | temple
+Ratri :: night; thieves | monkey | X X X | bald | dark gray robes | dark gray | new moon | monthly | stolen items | temple
+Rudra :: storms; the dead | jackal | X X - | bald, black hood | red robes | red, black | n/a | at death | valuables | temple, grave
+Surya :: sun | pegasus | X X - | bald | red robes | red | summer solstice | annually | gold, horses | temple
+Tvashtri :: artifice; science | mongoose | X X X | bald | green robes | green | n/a | monthly | crafted items | temple, workshop
+Ushas :: dawn | songbirds | - X - | bald, red hood | gold robes | red, gold | n/a | monthly, at dawn | precious stones | temple
+Varuna :: order; oaths | dog | X X - | bald | white robes | white | full moon | monthly | valuables | temple
+Vishnu :: mercy; light | bird | X X X | bald | silver chain mail | silver | new moon | monthly | beautiful offerings | temple
+Yama :: death | water buffalo | X - - | bald | red robes with copper tracery | red, copper | n/a | at death | tales of dead one's deeds, valuables | temple, grave or pyre
