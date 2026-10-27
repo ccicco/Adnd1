@@ -25962,6 +25962,43 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Indian/Japanese/Melnibonean and tail batches
   through Nonhumans and Norse. WAIT
   FOR GO.
+  - R882 LANDED 2026-10-27: commit
+  2c9698198f68482bc5d9b2b159ff6a95b7f2c051
+  (pushed 7dc48c2..2c96981, census 804 -> 805),
+  THE DDG LUA PROMOTION, BATCH THREE - 60
+  full-field defs (Finnish 20, Greek 40),
+  the floor 1118 -> 1178, DDG 183. THE SHAPE:
+  generated ONLY from the adjudicated klv/grk
+  pin headers, prefix dpu; the grids hold the
+  header row order while def emission rides
+  the primary-ink print order (four adjacent
+  pairs differ: Ilmarinen/Hiisi,
+  Lemminkainen/Kullervo, Untamo/Air Maiden,
+  Aphrodite/Antaeus - stat signatures verified
+  both ways). PinnedDamage 44 (klv 12, grk 32);
+  damage parens print on only some rows, and
+  where printed equal the strength-damage grid
+  (Artemis alone prints her +5 weapon bonus).
+  HONEST BOUNDARIES: Apollo damage
+  "By weapon type" and Poseidon's garbled cell
+  -> n/a + flags; Atlas AtN pin 3 vs print 2;
+  Ahto MR dual print (grid 50); Hermes AtN
+  unrecovered; Furies/Circe xp -1; lair
+  percents unpinned; worshippersAlignment,
+  symbol, areaOfControl n/a all; the ranger
+  prints ride the FIGHTER line (grids zero).
+  Spec tools/spec_r882.json, md5
+  39ba336b6f0fe28722d7daa531ba1178
+  (117,796 bytes); the canvas spec-r882 gated
+  byte-exact; rverify 144 mutants 0 missed;
+  the land verified byte-exact against the
+  fresh-tarball rebuild (1178 defs, dpu.h,
+  audit, census, seed, regtest identical;
+  engine idempotent applied 66 / already 66).
+  NEXT: the promotion continues print-order -
+  Indian/Japanese/Melnibonean, then the tail
+  batches through Nonhumans and Norse. WAIT
+  FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
