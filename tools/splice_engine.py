@@ -53,6 +53,9 @@ def rd(p):
 
 
 def wr(p, s):
+    _d = os.path.dirname(p)
+    if _d:
+        os.makedirs(_d, exist_ok=True)
     with open(p, 'w') as fh:
         fh.write(s)
 

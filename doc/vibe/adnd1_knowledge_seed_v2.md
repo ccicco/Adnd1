@@ -25787,6 +25787,59 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   promotion-from-headers doctrine; the stale "open
   calls: pin-only vs promoted" line RETIRED).
   WAIT FOR GO.
+  - R879 LANDED 2026-10-27: commit
+  dbe31707f510a24507fa34a1f69ac40b0641e996 (pushed
+  7f44709..dbe3170, census 801 -> 802), THE
+  REGISTRY SCHEMA - the maintenance-arc opener, the
+  registry-wide schema pass.
+  THE SHAPE: the live union schema pinned at 57
+  keys (40 mm2lua base + 8 adjustment + 9 new DDG:
+  divineRank, worshippersAlignment, symbol,
+  areaOfControl, classLevelsRaw, classLevelsCooked,
+  hitPointsRaw, hitPoints, hitPointsNote); mm2lua
+  FIELD_ORDER widened + the emit loop switched
+  full-field; MonsterRegistry.h/.cpp +9 DDG fields,
+  uniform coercers one pass; sentinels DISTINCT
+  from print values ("n/a" strings, -1 ints - 13
+  int keys: hitDiceNum, hitDiceBonus, avgHp, xp,
+  xpPerHp, xpValue, lairPct, saveAsBonus,
+  loadNormal, loadMax, rank, wsgRoles, hitPoints);
+  the one-shot idempotent normalizer shipped as a
+  data_file (tools/normalize_registry.py) plus
+  doc/data/registry_schema.txt +
+  doc/data/registry_census.txt (the REAL per-key-
+  per-book census).
+  THE CENSUS PINS: floor 995 - MM1 408, MM2 332, FF
+  185, OA 47, WSG 15, MOP 8; ZERO registry defs
+  touched by R879 (the book rounds rewrite them);
+  wsgRoles rides 15 WSG defs PLUS 3 MM1 mounts
+  (pony, ape, mule) - the anchor catch of the
+  round.
+  THE MECHANICS: prefix rsc (full-repo scan clean),
+  header rules/rsc.h (maxwidth 92 opener-only),
+  audit "R879 registry schema audit" rode
+  rules/audits/r879_batch.h (78 char-based); 10
+  consts, 9 bools, 2 grids (books 6x2, keys 57x7
+  real census), 7 examples (bool refs != 1 form),
+  28 inlines, seed + the 76-line R878 record before
+  the maintenance anchor; gap census 24/0
+  untouched.
+  VERIFIED: rverify GREEN, 430 mutants 0 missed;
+  the normalizer proven idempotent in-sandbox (995
+  rewritten once, zero on rerun, byte-identical);
+  no compiler in the sandbox - Curtiss's ./rn
+  preflight is the compile gate; the landed tree
+  verified BYTE-EXACT vs a full re-derive from
+  pristine 7f44709 plus the canvas spec (whole-repo
+  diff zero). Spec tools/spec_r879.json, md5
+  a5e8ae3e7d657338b4b97be1bcf85ffe (36,162 bytes);
+  the canvas spec-r879 gated byte-exact.
+  NEXT: the arc continues - the per-book
+  normalization rounds (MM1 408, likely split; MM2
+  332; FF 185; OA 47; WSG+MOP 23 tail), the defs
+  rewritten by the normalizer and shipped as spec
+  data_files byte-exact; THEN the DDG lua promotion
+  (promotion-from-headers). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

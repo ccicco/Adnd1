@@ -102,8 +102,9 @@ def render(hdr, fields, cmts):
 
 
 def book_of(fields):
-    m = re.fullmatch(r'"(MM1|MM2|FF|OA|WSG|MOP)"',
-                     fields.get('source', ''))
+    m = re.fullmatch(
+        r'"(MM1|MM2|FF|OA|WSG|MOP|DDG)"',
+        fields.get('source', ''))
     if not m:
         raise ValueError('unknown source: %r'
                          % fields.get('source'))
