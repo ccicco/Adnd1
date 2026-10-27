@@ -25711,6 +25711,82 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Curtiss. NEXT: the D&DG tail is ONE item - the
   print-p.131 FIG. 4/5 alignment-figures pixel
   round - Curtiss's call - WAIT FOR GO.
+  - R878 LANDED 2026-10-27: commit
+  7f4470980c34031928bf2e830f29f686ca98fb64 (pushed
+  6a95b8b..7f44709, census 800 -> 801), THE
+  ALIGNMENT FIGURES - the D&DG walk round thirty,
+  the PIXEL round, print p. 131 (pdf 132): FIG. 4
+  the character alignment graph and FIG. 5 the
+  planes of alignment. THE LAST GAP FLIP: the
+  alignment figures box closed - gap census
+  23/1 -> 24/0, THE D&DG WALK COMPLETE. ROUND
+  FACTS (vision reads of Curtiss's pdftoppm
+  renders at c8bf507 and 1028ebe; both text
+  voices near-zero on the page): FIG. 4 - nine
+  alignments in print reading order (Ord 0
+  NEUTRAL GOOD north through Ord 8 NEUTRAL
+  center), CURVED lines converging at center
+  (the crescent read, NOT crossing Venn
+  lenses), the center circle NEUTRAL (true
+  neutral), the four curved corner descriptors
+  Saintly LG / Beatific CG / Diabolic LE /
+  Demoniac CE only; the NEUTRAL EVIL label and
+  the center circle are vision-only (tesseract
+  TSV misses them). FIG. 5 - 16 segments around
+  the CONCORDANT OPPOSITION center, straight
+  radial dividers, plane names only, no arrows;
+  ELYSIUM top, HADES bottom; the cycle reads the
+  p. 129 print list order CLOCKWISE; the figure
+  spells TARTARUS where the p. 129 list reads
+  Tarterus (the pln.h pin) - the figure-vs-list
+  delta pinned both as printed, TARTARUS
+  eyeball-confirmed by Curtiss; the wheel matches
+  the pln.h seventeen-planes pin. THE SHAPE:
+  afgG4 one row per alignment (9 rows, cols
+  Ord/Pos/Desc, 0-sentinel), afgG5 one row per
+  plane (17 rows, cols Ord/Pos - the positions
+  computed: Ord 3 ELYSIUM at 1 through Ord 1 at
+  15, Ord 2 at 16, Ord 17 center at 0); the
+  rosters ride doc/data/ddg_fig4.txt and
+  doc/data/ddg_fig5.txt; prefix afg (full-repo
+  scan clean); header rules/afg.h; audit "R878
+  alignment figures audit" rode
+  rules/audits/r878_batch.h; regtest.cpp +2
+  include lines; 19 consts, 18 bools, 5 cols, 6
+  examples (bool refs in the != 1 operator form
+  per the R865 rule), 42 inlines. ZERO registry
+  defs touched - the floor holds at 995. Spec
+  tools/spec_r878.json, md5
+  2e17babe37da1924d126d439aecbb66d (24,009
+  bytes); the canvas spec-r878 gated byte-exact.
+  THE MECHANISM NOTE: same canvas handoff - the
+  spec transited via the gated canvas, CURTISS
+  ran ./rn in Termux, zero deviation; the landed
+  tree verified byte-exact against a sandbox
+  re-derive from the pristine 1028ebe tree plus
+  the canvas spec (the env reset wiped the build
+  trees mid-verify - the canvas proved the
+  authoritative transit, all eight files
+  cmp-clean, zero strays). rverify GREEN, 98
+  mutants 0 missed; statics clean (audits dir
+  800 = 799+1, afg.h maxwidth 92 opener-only,
+  r878_batch.h 78 chars char-based, zero
+  True/False tokens in the emitted C++ files,
+  quote parity even, hyphen scan clean - the
+  standard section dividers only); the R877
+  record seated in the seed before the
+  maintenance anchor, idempotency key present.
+  NEXT: the D&DG walk is COMPLETE - the queue per
+  Curtiss's call 2026-10-27: the MAINTENANCE ARC
+  FIRST (the registry-wide schema pass: full-field
+  emission, the new DDG fields on all defs,
+  sentinels distinct from print values), THEN the
+  DDG lua promotion (all the D&DG monsters - the
+  deities and the monster races - generated from
+  the adjudicated pin headers, the
+  promotion-from-headers doctrine; the stale "open
+  calls: pin-only vs promoted" line RETIRED).
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

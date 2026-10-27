@@ -157,6 +157,18 @@ struct MonsterDef {
     // ---- R793: the WSG service role mask ----
     int   wsgRoles = 0;         // WSG service mask: 1 normal, 2 mount, 4 pack
 
+    // ---- R879: the DDG schema fields (the maintenance arc; the
+    // promotion rounds feed them from the adjudicated pin headers) ----
+    std::string divineRank;    // DDG: the DMO legendary-ladder rank
+    std::string worshippersAlignment;  // DDG: the worshippers' alignment
+    std::string symbol;        // DDG: the deity's symbol
+    std::string areaOfControl; // DDG: the deity's area of control
+    std::string classLevelsRaw;   // DDG: the 5-slot class grid verbatim
+    std::string classLevelsCooked;  // DDG: the CLERIC:14|FIGHTER:9 form
+    std::string hitPointsRaw;  // DDG: hit points verbatim (points, not dice)
+    int   hitPoints = 0;       // DDG: cooked hit points (0 = not printed)
+    std::string hitPointsNote; // DDG: the exceptional-stat bracket riders
+
     // R71: treasure type letters + verbatim Lua text (bestiary/debug)
     TreasureSpec treasure;
     std::string treasureText;

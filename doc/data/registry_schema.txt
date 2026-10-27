@@ -1,0 +1,75 @@
+The R879 registry schema - the maintenance-arc opener, the
+FINAL post-DDG schema every def of every book normalizes
+to. The base MM1 field order (40 keys, mm2lua.py), the
+eight schema-adjustment keys the promotion seams added
+(saveAs, saveAsBonus, loadNormal, loadMax, rank, plane,
+transform, wsgRoles), and the nine DDG keys the deity
+promotion feeds (divineRank, worshippersAlignment, symbol,
+areaOfControl, classLevelsRaw, classLevelsCooked,
+hitPointsRaw, hitPoints, hitPointsNote).
+
+The sentinel doctrine: full-field emission fills every key
+the book does not print - "n/a" for strings, -1 for ints -
+both distinct from every real print value (the printed
+"Nil" and "None" are REAL values and stay). The audits
+read the sentinels exactly, so fail-on-wrong stays honest.
+
+Ord Key                  Kind Sentinel  Origin
+--- -------------------- ---- -------- ------
+  0 name                 str  "n/a"    base
+  1 mmName               str  "n/a"    base
+  2 page                 str  "n/a"    base
+  3 pages                str  "n/a"    base
+  4 source               str  "n/a"    base
+  5 family               str  "n/a"    base
+  6 race                 str  "n/a"    base
+  7 variantOf            str  "n/a"    base
+  8 variantOfType        str  "n/a"    base
+  9 hitDice              str  "n/a"    base
+ 10 hitDiceNum           int  -1       base
+ 11 hitDiceBonus         int  -1       base
+ 12 avgHp                int  -1       base
+ 13 armorClass           str  "n/a"    base
+ 14 numAttacks           str  "n/a"    base
+ 15 numAttacksRaw        str  "n/a"    base
+ 16 damage               str  "n/a"    base
+ 17 xp                   int  -1       base
+ 18 xpPerHp              int  -1       base
+ 19 xpValue              int  -1       base
+ 20 xpSource             str  "n/a"    base
+ 21 xpNote               str  "n/a"    base
+ 22 frequency            str  "n/a"    base
+ 23 noAppearing          str  "n/a"    base
+ 24 lairPct              int  -1       base
+ 25 lairPctRaw           str  "n/a"    base
+ 26 treasure             str  "n/a"    base
+ 27 move                 str  "n/a"    base
+ 28 size                 str  "n/a"    base
+ 29 intelligence         str  "n/a"    base
+ 30 alignment            str  "n/a"    base
+ 31 specialAttacks       str  "n/a"    base
+ 32 specialDefenses      str  "n/a"    base
+ 33 magicResistance      str  "n/a"    base
+ 34 psionic              str  "n/a"    base
+ 35 attackDefenseModes   str  "n/a"    base
+ 36 text                 str  "n/a"    base
+ 37 familyText           str  "n/a"    base
+ 38 statBlockMissing     str  "n/a"    base
+ 39 statNote             str  "n/a"    base
+ 40 saveAs               str  "n/a"    adjusted
+ 41 saveAsBonus          int  -1       adjusted
+ 42 loadNormal           int  -1       adjusted
+ 43 loadMax              int  -1       adjusted
+ 44 rank                 int  -1       adjusted
+ 45 plane                str  "n/a"    adjusted
+ 46 transform            str  "n/a"    adjusted
+ 47 wsgRoles             int  -1       adjusted
+ 48 divineRank           str  "n/a"    DDG
+ 49 worshippersAlignment str  "n/a"    DDG
+ 50 symbol               str  "n/a"    DDG
+ 51 areaOfControl        str  "n/a"    DDG
+ 52 classLevelsRaw       str  "n/a"    DDG
+ 53 classLevelsCooked    str  "n/a"    DDG
+ 54 hitPointsRaw         str  "n/a"    DDG
+ 55 hitPoints            int  -1       DDG
+ 56 hitPointsNote        str  "n/a"    DDG

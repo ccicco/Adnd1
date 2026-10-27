@@ -766,6 +766,18 @@ bool MonsterRegistry::loadFile(const std::string& path,
     // ---- R793: the WSG service role mask ----
     def.wsgRoles             = luaGetInt(L, "wsgRoles", 0);
 
+    // ---- R879: the DDG schema fields (uniform coercers, one
+    // pass, no per-book special-casing - the sentinel doctrine) ----
+    def.divineRank           = luaGetStr(L, "divineRank", "");
+    def.worshippersAlignment = luaGetStr(L, "worshippersAlignment", "");
+    def.symbol               = luaGetStr(L, "symbol", "");
+    def.areaOfControl        = luaGetStr(L, "areaOfControl", "");
+    def.classLevelsRaw       = luaGetStr(L, "classLevelsRaw", "");
+    def.classLevelsCooked    = luaGetStr(L, "classLevelsCooked", "");
+    def.hitPointsRaw         = luaGetStr(L, "hitPointsRaw", "");
+    def.hitPoints            = luaGetInt(L, "hitPoints", 0);
+    def.hitPointsNote        = luaGetStr(L, "hitPointsNote", "");
+
     // ---- R71: treasure type letters ----
     def.treasureText = luaGetStr(L, "treasure", "");
     def.treasure = parseTreasureText(def.key, def.treasureText);

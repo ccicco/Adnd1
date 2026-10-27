@@ -524,7 +524,24 @@ FIELD_ORDER = ['name', 'mmName', 'page', 'pages', 'source', 'family', 'race',
                'lairPct', 'lairPctRaw', 'treasure', 'move', 'size',
                'intelligence', 'alignment', 'specialAttacks', 'specialDefenses',
                'magicResistance', 'psionic', 'attackDefenseModes', 'text',
-               'familyText', 'statBlockMissing', 'statNote']
+               'familyText', 'statBlockMissing', 'statNote',
+               # the schema-adjustment keys the promotion seams added
+               'saveAs', 'saveAsBonus', 'loadNormal', 'loadMax', 'rank',
+               'plane', 'transform', 'wsgRoles',
+               # the DDG keys the deity promotion feeds (R879)
+               'divineRank', 'worshippersAlignment', 'symbol',
+               'areaOfControl', 'classLevelsRaw', 'classLevelsCooked',
+               'hitPointsRaw', 'hitPoints', 'hitPointsNote']
+
+# the R879 sentinel doctrine: full-field emission fills every
+# key the book does not print - "n/a" for strings, -1 for ints;
+# both distinct from every real print value ("Nil" included -
+# the printed Nil and None are REAL values and stay)
+STRING_SENTINEL = 'n/a'
+INT_KEYS = ('hitDiceNum', 'hitDiceBonus', 'avgHp', 'xp', 'xpPerHp',
+            'xpValue', 'lairPct', 'saveAsBonus', 'loadNormal',
+            'loadMax', 'rank', 'wsgRoles', 'hitPoints')
+INT_SENTINEL = -1
 
 def emit(rec, outdir):
     fields = build_fields(rec)
@@ -532,9 +549,10 @@ def emit(rec, outdir):
            '-- DO NOT hand-edit; regenerate instead.',
            'return {']
     for k in FIELD_ORDER:
-        if fields.get(k) is None:
-            continue
-        v = fields[k]
+        v = fields.get(k)
+        if v is None:
+            v = (INT_SENTINEL if k in INT_KEYS
+                 else STRING_SENTINEL)
         if isinstance(v, str):
             out.append('  %s = %s,' % (k, q(v)))
         else:
