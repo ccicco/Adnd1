@@ -26045,6 +26045,50 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   print-order - Melnibonean, then the tail
   batches through Nonhumans and Norse. WAIT
   FOR GO.
+  - R884 LANDED 2026-10-27: commit
+  d838c9a95b0242007049a065075fc208085f4b40
+  (pushed e1bb817..d838c9a, census 806 -> 807),
+  THE DDG LUA PROMOTION, BATCH FIVE - 33
+  full-field defs (the Melnibonean mythos),
+  the floor 1209 -> 1242, DDG 247. THE SHAPE:
+  generated ONLY from the adjudicated mlb pin
+  headers, prefix dpx; def emission rides the
+  grid order (Elric through Yyrkoon, the
+  print order). Monster rows 14, hit-dice
+  rows 8 (Clakar 6, Dharzi 2, Mist Giant 12,
+  Myyrrhn 3, Nihrain 7, Oonai 7, vampire
+  trees 8, vulture lion 9), PinnedDamage 26;
+  parens == StrDmg where printed (Arioch,
+  Donblas, Xiombarg +14). The ranger cells
+  print on the FIGHTER lines (Grome 18,
+  Misha 18, Roofdrak 15 - the pin adjudicates
+  the Nth level ranger prints; no F tokens
+  on those rows). HONEST BOUNDARIES: the
+  HD-row tsv garbles vs the pins, the Kelmain
+  See-below hit dice and Variable xp, the
+  Oonai Variable attacks, the vampire trees
+  1-10 attack band, the Arioch Variable
+  size and the Fileet bare L, the Elric
+  Standard-or-85 MR and the Stormbringer
+  alt AC -6 (unpinned; armorClass rides the
+  primary 6), the Theleb pin neutral evil vs
+  the ink lawful evil, the Nuru-ah
+  single-pipe psionic I, the junk-swallowed
+  Moonglum, Nnuurrr and Nuru-ah columns read
+  from the full-text voice; lair percents
+  unpinned; worshippersAlignment, symbol,
+  areaOfControl n/a all. Spec
+  tools/spec_r884.json, md5
+  3a857818399309d709c22fe8c2121ef8 (75,595
+  bytes); the canvas spec-r884 gated
+  byte-exact; rverify 140 mutants 0 missed;
+  the land verified byte-exact against the
+  fresh-tarball rebuild (1242 defs, dpx.h,
+  audit, census, seed, regtest, spec
+  identical; engine idempotent applied 39 /
+  already 39). NEXT: the promotion continues
+  print-order - Nonhumans, then the Norse
+  tail. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

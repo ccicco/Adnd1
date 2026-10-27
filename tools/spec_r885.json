@@ -1,0 +1,810 @@
+{
+ "round": 885,
+ "title": "The DDG lua promotion, batch six",
+ "prefix": "dpy",
+ "census_before": 807,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R884 LANDED 2026-10-27: commit",
+ "prev_record": [
+  "  - R884 LANDED 2026-10-27: commit",
+  "  d838c9a95b0242007049a065075fc208085f4b40",
+  "  (pushed e1bb817..d838c9a, census 806 -> 807),",
+  "  THE DDG LUA PROMOTION, BATCH FIVE - 33",
+  "  full-field defs (the Melnibonean mythos),",
+  "  the floor 1209 -> 1242, DDG 247. THE SHAPE:",
+  "  generated ONLY from the adjudicated mlb pin",
+  "  headers, prefix dpx; def emission rides the",
+  "  grid order (Elric through Yyrkoon, the",
+  "  print order). Monster rows 14, hit-dice",
+  "  rows 8 (Clakar 6, Dharzi 2, Mist Giant 12,",
+  "  Myyrrhn 3, Nihrain 7, Oonai 7, vampire",
+  "  trees 8, vulture lion 9), PinnedDamage 26;",
+  "  parens == StrDmg where printed (Arioch,",
+  "  Donblas, Xiombarg +14). The ranger cells",
+  "  print on the FIGHTER lines (Grome 18,",
+  "  Misha 18, Roofdrak 15 - the pin adjudicates",
+  "  the Nth level ranger prints; no F tokens",
+  "  on those rows). HONEST BOUNDARIES: the",
+  "  HD-row tsv garbles vs the pins, the Kelmain",
+  "  See-below hit dice and Variable xp, the",
+  "  Oonai Variable attacks, the vampire trees",
+  "  1-10 attack band, the Arioch Variable",
+  "  size and the Fileet bare L, the Elric",
+  "  Standard-or-85 MR and the Stormbringer",
+  "  alt AC -6 (unpinned; armorClass rides the",
+  "  primary 6), the Theleb pin neutral evil vs",
+  "  the ink lawful evil, the Nuru-ah",
+  "  single-pipe psionic I, the junk-swallowed",
+  "  Moonglum, Nnuurrr and Nuru-ah columns read",
+  "  from the full-text voice; lair percents",
+  "  unpinned; worshippersAlignment, symbol,",
+  "  areaOfControl n/a all. Spec",
+  "  tools/spec_r884.json, md5",
+  "  3a857818399309d709c22fe8c2121ef8 (75,595",
+  "  bytes); the canvas spec-r884 gated",
+  "  byte-exact; rverify 140 mutants 0 missed;",
+  "  the land verified byte-exact against the",
+  "  fresh-tarball rebuild (1242 defs, dpx.h,",
+  "  audit, census, seed, regtest, spec",
+  "  identical; engine idempotent applied 39 /",
+  "  already 39). NEXT: the promotion continues",
+  "  print-order - Nonhumans, then the Norse",
+  "  tail. WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/dpx.h\"  // R884: the DDG lua promotion, batch five",
+ "include_comment": "the DDG lua promotion, batch six",
+ "header_file": "rules/dpy.h",
+ "audit_file": "rules/audits/r885_batch.h",
+ "audit_label": "R885 DDG promotion audit",
+ "audit_anchor": "#include \"rules/audits/r884_batch.h\"  // R884: R884 DDG promotion audit",
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_census": {
+  "closed": 24,
+  "open": 0
+ },
+ "gap_flips": [],
+ "banner": {
+  "title": "The DDG lua promotion, batch six - 49 full-field defs (the Nehwon mythos and the Nonhumans' Deities) generated ONLY from the adjudicated pin headers, the registry floor 1242 -> 1291.",
+  "provenance": "Generated from rules/nhw.h and rules/nhg.h at d838c9a: the four grids x rows (combat, class, ability, roster) per mythos, the being name orders locked by the pinned cross-references (the Fafhrd-through-Water-Cobra and Hruggek-through-Laogzed print orders) and verified against the 2nd-print ink (the tesseract tsv voice) with the 1eonline L&L pages as the parity voice; the legend tables decode verbatim from the header comments; the unpinned cells emit the sentinels.",
+  "sentinel": "The sentinels ride the R879 doctrine unchanged: n/a for strings, -1 for ints, distinct from every real print value; the printed See below, Standard, Nil, None and Infinite are REAL values and stay. The audits read the sentinels exactly, so fail-on-wrong stays the rule."
+ },
+ "consts": [
+  {
+   "name": "dpyRound",
+   "value": 885,
+   "comment": "the DDG lua promotion round, batch six: the Nehwon mythos and the Nonhumans' Deities (Curtiss 2026-10-27: the print-order batches)"
+  },
+  {
+   "name": "dpyCensusBefore",
+   "value": 807,
+   "comment": "the audit census at d838c9a (the R884 land)"
+  },
+  {
+   "name": "dpyCensusAfter",
+   "value": 808,
+   "comment": "the audit census after this round (one new audit line, the batch-six promotion audit)"
+  },
+  {
+   "name": "dpyDefs",
+   "value": 49,
+   "comment": "the promoted defs this round, one per adjudicated stat-block row (Fafhrd through the Water Cobra, then Hruggek through Laogzed, the print orders)"
+  },
+  {
+   "name": "dpyMythoi",
+   "value": 2,
+   "comment": "the mythoi of batch six (the print order: Nehwon, the Nonhumans' Deities)"
+  },
+  {
+   "name": "dpyFloorBefore",
+   "value": 1242,
+   "comment": "the registry floor at d838c9a (the batch-five promotion land)"
+  },
+  {
+   "name": "dpyFloorAfter",
+   "value": 1291,
+   "comment": "the registry floor after this round (1242 + 49)"
+  },
+  {
+   "name": "dpyFullFieldKeys",
+   "value": 57,
+   "comment": "every DDG def carries every key of the final schema (the R879 57-key FIELD_ORDER)"
+  },
+  {
+   "name": "dpyMonsterRows",
+   "value": 10,
+   "comment": "the monster-format rows promoted (the Astral Wolf, the Behemoth, the Bird of Tyaa, the Cold Woman, the Devourer, the Nehwon Ghoul, the Leviathan, the Snow Serpent, the Salt Spider, the Water Cobra - the Nehwon ten; the Nonhumans' Deities rows are all divine)"
+  },
+  {
+   "name": "dpyHitDiceRows",
+   "value": 7,
+   "comment": "the hit-dice rows promoted (the Astral Wolf 3, the Behemoth 15, the Nehwon Ghoul 3, the Leviathan 40, the Snow Serpent 10, the Salt Spider 3, the Water Cobra 3 with the +3 bonus - the first DDG hit-dice bonus cell)"
+  },
+  {
+   "name": "dpyPinnedDamage",
+   "value": 34,
+   "comment": "the fixed-damage cells emitted (the verbatim print figures cross-checked against the strength-bonus grids; nhw 17, nhg 17 - the ghoul by-weapon print and the earth god 5-50 ride the pin-internal flags, both emitting the n/a sentinel)"
+  },
+  {
+   "name": "dpySeeBelowCode",
+   "value": 99,
+   "comment": "the grid code for the printed See below (the Hate MU/I pair and the Lolth clr/drd and mu/ill pairs)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dpyPromotionBatchSix",
+   "value": true,
+   "comment": "this round is the DDG lua promotion, batch six - the print-order continuation (the Nehwon mythos and the Nonhumans' Deities)"
+  },
+  {
+   "name": "dpyFromHeadersOnly",
+   "value": true,
+   "comment": "every value is generated ONLY from the adjudicated pin headers (the nhw and nhg grids and consts; the pin rounds are the firewall)"
+  },
+  {
+   "name": "dpyNameOrdersLocked",
+   "value": true,
+   "comment": "the being-to-row name orders are locked by the pinned cross-references (the R863 and R864 walk records; the Fafhrd-through-Water-Cobra and Hruggek-through-Laogzed print orders)"
+  },
+  {
+   "name": "dpyFullFieldDdg",
+   "value": true,
+   "comment": "every promoted def is full-field: all 57 keys, the sentinels where the print or the headers pin nothing"
+  },
+  {
+   "name": "dpySentinelsDistinct",
+   "value": true,
+   "comment": "the sentinels ride the R879 doctrine: n/a for strings, -1 for ints, distinct from every real print value; the printed See below, Standard, Nil, None and Infinite are REAL values and stay"
+  },
+  {
+   "name": "dpyProseContractSide",
+   "value": true,
+   "comment": "the prose stays contract-side: text, specials, symbols, areas of control and worshipper alignments emit the sentinels (unpinned this batch)"
+  },
+  {
+   "name": "dpyDamagePinnedOnly",
+   "value": true,
+   "comment": "damage emits ONLY the fixed-damage rows (the verbatim print cells cross-checked against the strength-bonus grids); every by-weapon, Nil, Special, See below and Variable cell emits the sentinel"
+  },
+  {
+   "name": "dpySymbolsUnpinned",
+   "value": true,
+   "comment": "the symbols and areas of control stay n/a (no symbol grids pinned for these mythoi, though the prints carry the lines)"
+  },
+  {
+   "name": "dpyWorshipUnpinned",
+   "value": true,
+   "comment": "the worshipper alignments stay n/a (no RosWorship grids pinned - the batch-three boundary carried forward)"
+  },
+  {
+   "name": "dpyNormalizerDdgAware",
+   "value": true,
+   "comment": "the normalizer census reads the promoted defs: every DDG def full-field, the DDG column and the floor refreshed by the census patch"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "the batch-six mythos grid",
+   "tag": "dpyMyth",
+   "cols": [
+    "dpyMythOrd",
+    "dpyMythPageLo",
+    "dpyMythPageHi",
+    "dpyMythDefs"
+   ],
+   "col_comments": [
+    "The mythos ordinals (0-1, the print order: Nehwon, the Nonhumans' Deities)",
+    "The first print page of the mythos (the folio offset PRINT = PDF - 1)",
+    "The last print page of the mythos",
+    "The promoted defs of the mythos (one per adjudicated stat-block row)"
+   ],
+   "count": "dpyMythoi",
+   "sentinel": -1,
+   "data": [
+    [
+     0,
+     96,
+     104,
+     29
+    ],
+    [
+     1,
+     105,
+     112,
+     20
+    ]
+   ]
+  },
+  {
+   "name": "the DDG key-fill grid",
+   "tag": "dpyKeyFill",
+   "cols": [
+    "dpyKeyOrd",
+    "dpyKeyDdgCount"
+   ],
+   "col_comments": [
+    "The key ordinals (0-56, the R879 FIELD_ORDER walk)",
+    "The DDG defs carrying the key (every def full-field: 57 x 49)"
+   ],
+   "count": "dpyFullFieldKeys",
+   "sentinel": -1,
+   "data": [
+    [
+     0,
+     49
+    ],
+    [
+     1,
+     49
+    ],
+    [
+     2,
+     49
+    ],
+    [
+     3,
+     49
+    ],
+    [
+     4,
+     49
+    ],
+    [
+     5,
+     49
+    ],
+    [
+     6,
+     49
+    ],
+    [
+     7,
+     49
+    ],
+    [
+     8,
+     49
+    ],
+    [
+     9,
+     49
+    ],
+    [
+     10,
+     49
+    ],
+    [
+     11,
+     49
+    ],
+    [
+     12,
+     49
+    ],
+    [
+     13,
+     49
+    ],
+    [
+     14,
+     49
+    ],
+    [
+     15,
+     49
+    ],
+    [
+     16,
+     49
+    ],
+    [
+     17,
+     49
+    ],
+    [
+     18,
+     49
+    ],
+    [
+     19,
+     49
+    ],
+    [
+     20,
+     49
+    ],
+    [
+     21,
+     49
+    ],
+    [
+     22,
+     49
+    ],
+    [
+     23,
+     49
+    ],
+    [
+     24,
+     49
+    ],
+    [
+     25,
+     49
+    ],
+    [
+     26,
+     49
+    ],
+    [
+     27,
+     49
+    ],
+    [
+     28,
+     49
+    ],
+    [
+     29,
+     49
+    ],
+    [
+     30,
+     49
+    ],
+    [
+     31,
+     49
+    ],
+    [
+     32,
+     49
+    ],
+    [
+     33,
+     49
+    ],
+    [
+     34,
+     49
+    ],
+    [
+     35,
+     49
+    ],
+    [
+     36,
+     49
+    ],
+    [
+     37,
+     49
+    ],
+    [
+     38,
+     49
+    ],
+    [
+     39,
+     49
+    ],
+    [
+     40,
+     49
+    ],
+    [
+     41,
+     49
+    ],
+    [
+     42,
+     49
+    ],
+    [
+     43,
+     49
+    ],
+    [
+     44,
+     49
+    ],
+    [
+     45,
+     49
+    ],
+    [
+     46,
+     49
+    ],
+    [
+     47,
+     49
+    ],
+    [
+     48,
+     49
+    ],
+    [
+     49,
+     49
+    ],
+    [
+     50,
+     49
+    ],
+    [
+     51,
+     49
+    ],
+    [
+     52,
+     49
+    ],
+    [
+     53,
+     49
+    ],
+    [
+     54,
+     49
+    ],
+    [
+     55,
+     49
+    ],
+    [
+     56,
+     49
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "note": "the round walk (the promotion batch six, the census step)",
+   "expr": "m['dpyRound']() != 885 or m['dpyCensusBefore']() != 807 or m['dpyCensusAfter']() != 808"
+  },
+  {
+   "note": "the floor walk",
+   "expr": "m['dpyFloorBefore']() != 1242 or m['dpyFloorAfter']() != 1291 or m['dpyDefs']() != 49 or m['dpyFullFieldKeys']() != 57"
+  },
+  {
+   "note": "the mythos grid walk",
+   "expr": "m['dpyMythPageLo'](0) != 96 or m['dpyMythPageHi'](0) != 104 or m['dpyMythDefs'](0) != 29 or m['dpyMythOrd'](0) != 0 or m['dpyMythOrd'](1) != 1 or m['dpyMythPageLo'](1) != 105 or m['dpyMythPageHi'](1) != 112 or m['dpyMythDefs'](1) != 20 or m['dpyMythoi']() != 2"
+  },
+  {
+   "note": "the key-fill walk",
+   "expr": "m['dpyKeyDdgCount'](0) != 49 or m['dpyKeyDdgCount'](56) != 49 or m['dpyKeyOrd'](56) != 56 or m['dpyKeyOrd'](0) != 0"
+  },
+  {
+   "note": "the doctrine walk",
+   "expr": "m['dpyFromHeadersOnly']() != 1 or m['dpyNameOrdersLocked']() != 1 or m['dpyFullFieldDdg']() != 1 or m['dpySentinelsDistinct']() != 1 or m['dpyProseContractSide']() != 1"
+  },
+  {
+   "note": "the boundary walk",
+   "expr": "m['dpyDamagePinnedOnly']() != 1 or m['dpySymbolsUnpinned']() != 1 or m['dpyWorshipUnpinned']() != 1 or m['dpyPinnedDamage']() != 34 or m['dpySeeBelowCode']() != 99"
+  },
+  {
+   "note": "the shape walk",
+   "expr": "m['dpyMonsterRows']() != 10 or m['dpyHitDiceRows']() != 7 or m['dpyNormalizerDdgAware']() != 1 or m['dpyPromotionBatchSix']() != 1"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [
+  {
+   "file": "doc/data/registry_census.txt",
+   "note": "the post-promotion census refresh (the DDG column 296, the 1291 def floor)",
+   "from": "The R884 post-promotion registry census - the key\npresence counts at the batch-five DDG promotion land\n(defs 1242: the 1209 defs at e1bb817 plus the\n33 full-field DDG defs, every key on every DDG def).\nPer key, how many defs of each book carry it;\ncomputed by the census walk of\ntools/normalize_registry.py.\n\nKey                   MM1  MM2   FF   OA  WSG  MOP  DDG  Total\n--------------------  ---  ---  ---  ---  ---  ---  ---  -----\nname                  408  332  185   47   15    8  247   1242\nmmName                 10    0    0    0    0    0  247    257\npage                  408  332  185   47   15    8  247   1242\npages                 408  332  185   47   15    8  247   1242\nsource                408  332  185   47   15    8  247   1242\nfamily                185    0    0    0    0    0  247    432\nrace                  408  332  185   47   15    8  247   1242\nvariantOf              50    0    0    0    0    0  247    297\nvariantOfType          10    0    0    0    0    0  247    257\nhitDice               408  331  185   47   15    8  247   1241\nhitDiceNum            306  332  185   45   15    8  247   1138\nhitDiceBonus          306  331  185   45   15    8  247   1137\navgHp                 306  331  185   44   15    8  247   1136\narmorClass            408  332  185   47   15    8  247   1242\nnumAttacks            400  331  185   47   15    8  247   1233\nnumAttacksRaw         408    0    0    0    0    0  247    655\ndamage                408  332  185   47   15    8  247   1242\nxp                    365  328  185   47   15    8  247   1195\nxpPerHp               346  328  185   47   15    8  247   1176\nxpValue               288  328  185   47   15    8  247   1118\nxpSource              408  332  185   47   15    8  247   1242\nxpNote                  1    0    0    0    0    0  247    248\nfrequency             408  331  185   47   15    8  247   1241\nnoAppearing           408  331  185   47   15    8  247   1241\nlairPct               408  331  185   47   15    8  247   1241\nlairPctRaw            408    0    0    0    0    0  247    655\ntreasure              408  331  185   47   15    8  247   1241\nmove                  408  331  185   47   15    8  247   1241\nsize                  408  331  185   47   15    8  247   1241\nintelligence          408  331  185   47   15    8  247   1241\nalignment             408  331  185   47   15    8  247   1241\nspecialAttacks        408  331  185   47   15    8  247   1241\nspecialDefenses       408  331  185   47   15    8  247   1241\nmagicResistance       408  331  185   47   15    8  247   1241\npsionic               408  331  185   47   15    8  247   1241\nattackDefenseModes    408  331  185   47   15    8  247   1241\ntext                  270  332  185   47   15    8  247   1104\nfamilyText            181    0    0    0    0    0  247    428\nstatBlockMissing        0    0    0    0    0    0  247    247\nstatNote               34    0    0    0    0    0  247    281\nsaveAs                  5    0    0    0    0    0  247    252\nsaveAsBonus             1    0    0    0    0    0  247    248\nloadNormal              3    0    0    0   15    0  247    265\nloadMax                 3    0    0    0   15    0  247    265\nrank                    0    0    0    0    0    0  247    247\nplane                   0    5    0    0    0    8  247    260\ntransform               0    0    0    0    0    0  247    247\nwsgRoles                3    0    0    0   15    0  247    265\ndivineRank              0    0    0    0    0    0  247    247\nworshippersAlignment    0    0    0    0    0    0  247    247\nsymbol                  0    0    0    0    0    0  247    247\nareaOfControl           0    0    0    0    0    0  247    247\nclassLevelsRaw          0    0    0    0    0    0  247    247\nclassLevelsCooked       0    0    0    0    0    0  247    247\nhitPointsRaw            0    0    0    0    0    0  247    247\nhitPoints               0    0    0    0    0    0  247    247\nhitPointsNote           0    0    0    0    0    0  247    247\n",
+   "to": "The R885 post-promotion registry census - the key\npresence counts at the batch-six DDG promotion land\n(defs 1291: the 1242 defs at d838c9a plus the\n49 full-field DDG defs, every key on every DDG def).\nPer key, how many defs of each book carry it;\ncomputed by the census walk of\ntools/normalize_registry.py.\n\nKey                   MM1  MM2   FF   OA  WSG  MOP  DDG  Total\n--------------------  ---  ---  ---  ---  ---  ---  ---  -----\nname                  408  332  185   47   15    8  296   1291\nmmName                 10    0    0    0    0    0  296    306\npage                  408  332  185   47   15    8  296   1291\npages                 408  332  185   47   15    8  296   1291\nsource                408  332  185   47   15    8  296   1291\nfamily                185    0    0    0    0    0  296    481\nrace                  408  332  185   47   15    8  296   1291\nvariantOf              50    0    0    0    0    0  296    346\nvariantOfType          10    0    0    0    0    0  296    306\nhitDice               408  331  185   47   15    8  296   1290\nhitDiceNum            306  332  185   45   15    8  296   1187\nhitDiceBonus          306  331  185   45   15    8  296   1186\navgHp                 306  331  185   44   15    8  296   1185\narmorClass            408  332  185   47   15    8  296   1291\nnumAttacks            400  331  185   47   15    8  296   1282\nnumAttacksRaw         408    0    0    0    0    0  296    704\ndamage                408  332  185   47   15    8  296   1291\nxp                    365  328  185   47   15    8  296   1244\nxpPerHp               346  328  185   47   15    8  296   1225\nxpValue               288  328  185   47   15    8  296   1167\nxpSource              408  332  185   47   15    8  296   1291\nxpNote                  1    0    0    0    0    0  296    297\nfrequency             408  331  185   47   15    8  296   1290\nnoAppearing           408  331  185   47   15    8  296   1290\nlairPct               408  331  185   47   15    8  296   1290\nlairPctRaw            408    0    0    0    0    0  296    704\ntreasure              408  331  185   47   15    8  296   1290\nmove                  408  331  185   47   15    8  296   1290\nsize                  408  331  185   47   15    8  296   1290\nintelligence          408  331  185   47   15    8  296   1290\nalignment             408  331  185   47   15    8  296   1290\nspecialAttacks        408  331  185   47   15    8  296   1290\nspecialDefenses       408  331  185   47   15    8  296   1290\nmagicResistance       408  331  185   47   15    8  296   1290\npsionic               408  331  185   47   15    8  296   1290\nattackDefenseModes    408  331  185   47   15    8  296   1290\ntext                  270  332  185   47   15    8  296   1153\nfamilyText            181    0    0    0    0    0  296    477\nstatBlockMissing        0    0    0    0    0    0  296    296\nstatNote               34    0    0    0    0    0  296    330\nsaveAs                  5    0    0    0    0    0  296    301\nsaveAsBonus             1    0    0    0    0    0  296    297\nloadNormal              3    0    0    0   15    0  296    314\nloadMax                 3    0    0    0   15    0  296    314\nrank                    0    0    0    0    0    0  296    296\nplane                   0    5    0    0    0    8  296    309\ntransform               0    0    0    0    0    0  296    296\nwsgRoles                3    0    0    0   15    0  296    314\ndivineRank              0    0    0    0    0    0  296    296\nworshippersAlignment    0    0    0    0    0    0  296    296\nsymbol                  0    0    0    0    0    0  296    296\nareaOfControl           0    0    0    0    0    0  296    296\nclassLevelsRaw          0    0    0    0    0    0  296    296\nclassLevelsCooked       0    0    0    0    0    0  296    296\nhitPointsRaw            0    0    0    0    0    0  296    296\nhitPoints               0    0    0    0    0    0  296    296\nhitPointsNote           0    0    0    0    0    0  296    296\n"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/f/fafhrd.lua",
+   "content": "-- Fafhrd: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Fafhrd\",\n  mmName = \"n/a\",\n  page = \"96\",\n  pages = \"96\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Fafhrd\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"3\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"M (6 feet, 11 inches)\",\n  intelligence = \"17\",\n  alignment = \"neutral good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 2,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"hero\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"R15 T13 B5\",\n  classLevelsCooked = \"R15/T13/B5\",\n  hitPointsRaw = \"120\",\n  hitPoints = 120,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_gray_mouser.lua",
+   "content": "-- the Gray Mouser: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Gray Mouser\",\n  mmName = \"n/a\",\n  page = \"97\",\n  pages = \"97\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Gray Mouser\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"2\",\n  numAttacks = 3,\n  numAttacksRaw = \"3/2\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"M (5\u00bc')\",\n  intelligence = \"18\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 2,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"hero\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"F11 M3 T15\",\n  classLevelsCooked = \"F11/M3/T15\",\n  hitPointsRaw = \"96\",\n  hitPoints = 96,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/a/aarth.lua",
+   "content": "-- Aarth: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Aarth\",\n  mmName = \"n/a\",\n  page = \"97\",\n  pages = \"97\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Aarth\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"2\",\n  numAttacks = 3,\n  numAttacksRaw = \"3/2\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"18\",\n  size = \"M (5\u00bd')\",\n  intelligence = \"25\",\n  alignment = \"lawful neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"25\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 3,\n  plane = \"Godsland\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"demigod\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F10 M30\",\n  classLevelsCooked = \"C15/F10/M30\",\n  hitPointsRaw = \"244\",\n  hitPoints = 244,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_astral_wolf.lua",
+   "content": "-- the Astral Wolf: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Astral Wolf\",\n  mmName = \"n/a\",\n  page = \"97\",\n  pages = \"97\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Astral Wolf\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3 HD\",\n  hitDiceNum = 3,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"3\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"2-8\",\n  xp = 90,\n  xpPerHp = 3,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"18\",\n  size = \"L (4' at the shoulder)\",\n  intelligence = \"n/a\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/behemoth_nehwon.lua",
+   "content": "-- Behemoth (Nehwon): generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Behemoth (Nehwon)\",\n  mmName = \"n/a\",\n  page = \"97\",\n  pages = \"97\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Behemoth (Nehwon)\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"15 HD\",\n  hitDiceNum = 15,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"4\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"4-40\",\n  xp = 4000,\n  xpPerHp = 20,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12/18\",\n  size = \"L (40' long)\",\n  intelligence = \"n/a\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_bird_of_tyaa.lua",
+   "content": "-- the Bird of Tyaa: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Bird of Tyaa\",\n  mmName = \"n/a\",\n  page = \"98\",\n  pages = \"98\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Bird of Tyaa\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"7\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"1-6\",\n  xp = 30,\n  xpPerHp = 1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"1/18\",\n  size = \"S (1')\",\n  intelligence = \"n/a\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/death.lua",
+   "content": "-- Death: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Death\",\n  mmName = \"n/a\",\n  page = \"98\",\n  pages = \"98\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Death\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-5\",\n  numAttacks = 10,\n  numAttacksRaw = \"10\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"Infinite\",\n  size = \"M (7')\",\n  intelligence = \"24\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"95\",\n  psionic = \"I\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 1,\n  plane = \"Prime Material Plane\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"greater god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C30 F30 M30 I30 A15 B23\",\n  classLevelsCooked = \"C30/F30/M30/I30/A15/B23\",\n  hitPointsRaw = \"350\",\n  hitPoints = 350,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_cold_woman.lua",
+   "content": "-- the Cold Woman: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Cold Woman\",\n  mmName = \"n/a\",\n  page = \"98\",\n  pages = \"98\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Cold Woman\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-2\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"4-40\",\n  xp = 28500,\n  xpPerHp = -1,\n  xpValue = 28500,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"9\",\n  size = \"L (30' tall)\",\n  intelligence = \"n/a\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"25\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"180\",\n  hitPoints = 180,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_devourer.lua",
+   "content": "-- the Devourer: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Devourer\",\n  mmName = \"n/a\",\n  page = \"98\",\n  pages = \"98\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Devourer\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"7\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"15\",\n  size = \"Variable\",\n  intelligence = \"19\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"24\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"F5 M13 I25 T10\",\n  classLevelsCooked = \"F5/M13/I25/T10\",\n  hitPointsRaw = \"50\",\n  hitPoints = 50,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_nehwon_ghoul.lua",
+   "content": "-- the Nehwon Ghoul: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Nehwon Ghoul\",\n  mmName = \"n/a\",\n  page = \"99\",\n  pages = \"99\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Nehwon Ghoul\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3 HD\",\n  hitDiceNum = 3,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"10\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"n/a\",\n  xp = 50,\n  xpPerHp = 3,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"M (5')\",\n  intelligence = \"n/a\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_gods_of_lankhmar.lua",
+   "content": "-- the Gods of Lankhmar: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Gods of Lankhmar\",\n  mmName = \"n/a\",\n  page = \"99\",\n  pages = \"99\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Gods of Lankhmar\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"3\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"3-30\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"9\",\n  size = \"M (6')\",\n  intelligence = \"24\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"V\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 3,\n  plane = \"Prime Material Plane\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"demigod\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F5 M20\",\n  classLevelsCooked = \"C15/F5/M20\",\n  hitPointsRaw = \"200\",\n  hitPoints = 200,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_gods_of_trouble.lua",
+   "content": "-- the Gods of Trouble: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Gods of Trouble\",\n  mmName = \"n/a\",\n  page = \"99\",\n  pages = \"99\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Gods of Trouble\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-2\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12/24\",\n  size = \"M (6')\",\n  intelligence = \"23\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"I\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Godsland\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 M20 I20 A15\",\n  classLevelsCooked = \"C15/M20/I20/A15\",\n  hitPointsRaw = \"366\",\n  hitPoints = 366,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/h/hate.lua",
+   "content": "-- Hate: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Hate\",\n  mmName = \"n/a\",\n  page = \"100\",\n  pages = \"100\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Hate\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 6,\n  numAttacksRaw = \"6\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"6\",\n  size = \"L (90' long)\",\n  intelligence = \"10\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"25\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Astral\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"M See below I See below\",\n  classLevelsCooked = \"M/See/below/I/See/below\",\n  hitPointsRaw = \"0\",\n  hitPoints = 0,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/i/issek_of_the_jug.lua",
+   "content": "-- Issek of the Jug: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Issek of the Jug\",\n  mmName = \"n/a\",\n  page = \"100\",\n  pages = \"100\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Issek of the Jug\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-3\",\n  numAttacks = 3,\n  numAttacksRaw = \"3/2\",\n  damage = \"3-30\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12/12\",\n  size = \"M (7')\",\n  intelligence = \"23\",\n  alignment = \"lawful good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 3,\n  plane = \"Godsland\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"demigod\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F12 M10 B15\",\n  classLevelsCooked = \"C15/F12/M10/B15\",\n  hitPointsRaw = \"210\",\n  hitPoints = 210,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/k/kos.lua",
+   "content": "-- Kos: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Kos\",\n  mmName = \"n/a\",\n  page = \"100\",\n  pages = \"100\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Kos\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-4\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"8-80 (+14) or 3-30 (+14)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"18\",\n  size = \"M (7')\",\n  intelligence = \"24\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"35\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 1,\n  plane = \"Godsland\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"greater god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"D10 R15 M20\",\n  classLevelsCooked = \"D10/R15/M20\",\n  hitPointsRaw = \"377\",\n  hitPoints = 377,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_leviathan.lua",
+   "content": "-- the Leviathan: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Leviathan\",\n  mmName = \"n/a\",\n  page = \"100\",\n  pages = \"100\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Leviathan\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"40 HD\",\n  hitDiceNum = 40,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-1\",\n  numAttacks = 8,\n  numAttacksRaw = \"8\",\n  damage = \"4-40 or special\",\n  xp = 15800,\n  xpPerHp = 35,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"9/15\",\n  size = \"L (300' long)\",\n  intelligence = \"n/a\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/movarl.lua",
+   "content": "-- Movarl: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Movarl\",\n  mmName = \"n/a\",\n  page = \"101\",\n  pages = \"101\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Movarl\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"2\",\n  numAttacks = 3,\n  numAttacksRaw = \"3/2\",\n  damage = \"2-20 (+3)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"M (6')\",\n  intelligence = \"14\",\n  alignment = \"lawful good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 2,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"hero\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"F12\",\n  classLevelsCooked = \"F12\",\n  hitPointsRaw = \"86\",\n  hitPoints = 86,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/n/ningauble_of_the_seven_eyes.lua",
+   "content": "-- Ningauble of the Seven Eyes: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Ningauble of the Seven Eyes\",\n  mmName = \"n/a\",\n  page = \"101\",\n  pages = \"101\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Ningauble of the Seven Eyes\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-2\",\n  numAttacks = 0,\n  numAttacksRaw = \"0\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"9\",\n  size = \"L (9')\",\n  intelligence = \"19\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 4,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"wizard\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"M20 I12 B10\",\n  classLevelsCooked = \"M20/I12/B10\",\n  hitPointsRaw = \"150\",\n  hitPoints = 150,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_nehwon_earth_god.lua",
+   "content": "-- the Nehwon Earth God: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Nehwon Earth God\",\n  mmName = \"n/a\",\n  page = \"101\",\n  pages = \"101\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Nehwon Earth God\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-2\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"L (15')\",\n  intelligence = \"10\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"50\",\n  psionic = \"VI\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Prime Material Plane\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"D14 F15\",\n  classLevelsCooked = \"D14/F15\",\n  hitPointsRaw = \"300\",\n  hitPoints = 300,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/p/pulgh.lua",
+   "content": "-- Pulgh: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Pulgh\",\n  mmName = \"n/a\",\n  page = \"101\",\n  pages = \"101\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Pulgh\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"2\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"2-12 (+1)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"M (6')\",\n  intelligence = \"14\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 2,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"hero\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C4 F15 A5\",\n  classLevelsCooked = \"C4/F15/A5\",\n  hitPointsRaw = \"72\",\n  hitPoints = 72,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_rat_god.lua",
+   "content": "-- the Rat God: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Rat God\",\n  mmName = \"n/a\",\n  page = \"102\",\n  pages = \"102\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Rat God\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"2\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"4-40\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"18\",\n  size = \"L (10' at the shoulder)\",\n  intelligence = \"18\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"20\",\n  psionic = \"I\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Godsland\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C13 F15 A12\",\n  classLevelsCooked = \"C13/F15/A12\",\n  hitPointsRaw = \"222\",\n  hitPoints = 222,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/sheelba_of_the_eyeless_face.lua",
+   "content": "-- Sheelba of the Eyeless Face: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Sheelba of the Eyeless Face\",\n  mmName = \"n/a\",\n  page = \"102\",\n  pages = \"102\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Sheelba of the Eyeless Face\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"2\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"1-10 (+8)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"9\",\n  size = \"M\",\n  intelligence = \"19\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 4,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"wizard\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"M20 I5 K10\",\n  classLevelsCooked = \"M20/I5/K10\",\n  hitPointsRaw = \"150\",\n  hitPoints = 150,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_red_god.lua",
+   "content": "-- the Red God: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Red God\",\n  mmName = \"n/a\",\n  page = \"102\",\n  pages = \"102\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Red God\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-2\",\n  numAttacks = 4,\n  numAttacksRaw = \"4\",\n  damage = \"3-30 (+12) twice / 1-10 (+12) twice\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"18\",\n  size = \"L (8')\",\n  intelligence = \"22\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"25\",\n  psionic = \"VI\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Godsland\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F20 M12 I12 A10 K10\",\n  classLevelsCooked = \"C15/F20/M12/I12/A10/K10\",\n  hitPointsRaw = \"311\",\n  hitPoints = 311,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_snow_serpent.lua",
+   "content": "-- the Snow Serpent: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Snow Serpent\",\n  mmName = \"n/a\",\n  page = \"102\",\n  pages = \"102\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Snow Serpent\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"10 HD\",\n  hitDiceNum = 10,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"6\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"1-10\",\n  xp = 2050,\n  xpPerHp = 14,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"9\",\n  size = \"L (100' long)\",\n  intelligence = \"n/a\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_spider_god.lua",
+   "content": "-- the Spider God: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Spider God\",\n  mmName = \"n/a\",\n  page = \"103\",\n  pages = \"103\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Spider God\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"2\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"3-30\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"18\",\n  size = \"L (18' at the shoulders)\",\n  intelligence = \"18\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"10\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 3,\n  plane = \"Godsland\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"demigod\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"F15 M15\",\n  classLevelsCooked = \"F15/M15\",\n  hitPointsRaw = \"249\",\n  hitPoints = 249,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_salt_spider.lua",
+   "content": "-- the Salt Spider: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Salt Spider\",\n  mmName = \"n/a\",\n  page = \"103\",\n  pages = \"103\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Salt Spider\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3 HD\",\n  hitDiceNum = 3,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"6\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"1-8\",\n  xp = 105,\n  xpPerHp = 3,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"15/18\",\n  size = \"M (4' long)\",\n  intelligence = \"n/a\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/tyaa.lua",
+   "content": "-- Tyaa: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Tyaa\",\n  mmName = \"n/a\",\n  page = \"103\",\n  pages = \"103\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Tyaa\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"9/36\",\n  size = \"M (5')\",\n  intelligence = \"19\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"32\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Godsland\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F10 M15\",\n  classLevelsCooked = \"C15/F10/M15\",\n  hitPointsRaw = \"311\",\n  hitPoints = 311,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/votishal.lua",
+   "content": "-- Votishal: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Votishal\",\n  mmName = \"n/a\",\n  page = \"103\",\n  pages = \"103\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"Votishal\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-2\",\n  numAttacks = 3,\n  numAttacksRaw = \"3/2\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"18\",\n  size = \"M (6')\",\n  intelligence = \"21\",\n  alignment = \"lawful good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"35\",\n  psionic = \"V\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 3,\n  plane = \"Godsland\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"demigod\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C13 F12 M15 T25 B3\",\n  classLevelsCooked = \"C13/F12/M15/T25/B3\",\n  hitPointsRaw = \"344\",\n  hitPoints = 344,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/t/the_water_cobra.lua",
+   "content": "-- the Water Cobra: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"the Water Cobra\",\n  mmName = \"n/a\",\n  page = \"104\",\n  pages = \"104\",\n  source = \"DDG\",\n  family = \"Nehwon mythos\",\n  race = \"the Water Cobra\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"3+3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 3,\n  avgHp = -1,\n  armorClass = \"8\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"1-4\",\n  xp = 150,\n  xpPerHp = 4,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"S (4' long)\",\n  intelligence = \"n/a\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 5,\n  plane = \"n/a\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"monster format\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"n/a\",\n  classLevelsCooked = \"n/a\",\n  hitPointsRaw = \"n/a\",\n  hitPoints = -1,\n  hitPointsNote = \"hit dice/points\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/h/hruggek.lua",
+   "content": "-- Hruggek: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Hruggek\",\n  mmName = \"n/a\",\n  page = \"105\",\n  pages = \"105\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Hruggek\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 1,\n  numAttacksRaw = \"1 or 2\",\n  damage = \"3-30 (+11) or 2-16/2-16\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"L (12' tall)\",\n  intelligence = \"17\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"25\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Pandemonium\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F16\",\n  classLevelsCooked = \"C15/F16\",\n  hitPointsRaw = \"221\",\n  hitPoints = 221,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/skerrit_the_forester.lua",
+   "content": "-- Skerrit the Forester: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Skerrit the Forester\",\n  mmName = \"n/a\",\n  page = \"105\",\n  pages = \"105\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Skerrit the Forester\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"2\",\n  numAttacks = 0,\n  numAttacksRaw = \"0\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"Variable\",\n  size = \"Variable\",\n  intelligence = \"19\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"35\",\n  psionic = \"V\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Happy Hunting Grounds\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C14 D14 F16 I10 B9\",\n  classLevelsCooked = \"C14/D14/F16/I10/B9\",\n  hitPointsRaw = \"290\",\n  hitPoints = 290,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/moradin_the_soul_forger.lua",
+   "content": "-- Moradin the Soul Forger: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Moradin the Soul Forger\",\n  mmName = \"n/a\",\n  page = \"106\",\n  pages = \"106\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Moradin the Soul Forger\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-9\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"4-40 (+14)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"L (20')\",\n  intelligence = \"23\",\n  alignment = \"lawful good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"60\",\n  psionic = \"VI\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 1,\n  plane = \"Seven Heavens\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"greater god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 D14 F20 M19\",\n  classLevelsCooked = \"C15/D14/F20/M19\",\n  hitPointsRaw = \"400\",\n  hitPoints = 400,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/c/corellon_larethian.lua",
+   "content": "-- Corellon Larethian: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Corellon Larethian\",\n  mmName = \"n/a\",\n  page = \"106\",\n  pages = \"106\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Corellon Larethian\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-4\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"2-20 (longbow) or 3-30 (+9; sword)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"15/18\",\n  size = \"M (7')\",\n  intelligence = \"25\",\n  alignment = \"chaotic good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"95\",\n  psionic = \"I\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 1,\n  plane = \"Olympus\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"greater god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C13 D13 R20 M20 I20 B15\",\n  classLevelsCooked = \"C13/D13/R20/M20/I20/B15\",\n  hitPointsRaw = \"350\",\n  hitPoints = 350,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/d/deep_sashelas.lua",
+   "content": "-- Deep Sashelas: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Deep Sashelas\",\n  mmName = \"n/a\",\n  page = \"107\",\n  pages = \"107\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Deep Sashelas\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-3\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"3-30\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12/24\",\n  size = \"M (7')\",\n  intelligence = \"20\",\n  alignment = \"chaotic good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"Standard\",\n  psionic = \"III\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Olympus\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C19 F15 M12 I12 B10\",\n  classLevelsCooked = \"C19/F15/M12/I12/B10\",\n  hitPointsRaw = \"300\",\n  hitPoints = 300,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/l/lolth_nonhumans_deities.lua",
+   "content": "-- Lolth (Nonhumans' Deities): generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Lolth (Nonhumans' Deities)\",\n  mmName = \"n/a\",\n  page = \"107\",\n  pages = \"107\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Lolth (Nonhumans' Deities)\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-10\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"4-16 + poison and webs (by weapon type)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"1/9\",\n  size = \"L (M)\",\n  intelligence = \"21\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"70\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Abyss\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C See below D See below F16 M See below I See below\",\n  classLevelsCooked = \"C/See/below/D/See/below/F16/M/See/below/I/See/below\",\n  hitPointsRaw = \"66\",\n  hitPoints = 66,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/r/rillifane_rallathil.lua",
+   "content": "-- Rillifane Rallathil: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Rillifane Rallathil\",\n  mmName = \"n/a\",\n  page = \"108\",\n  pages = \"108\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Rillifane Rallathil\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-2\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"See below\",\n  intelligence = \"23\",\n  alignment = \"chaotic good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"75\",\n  psionic = \"I\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Olympus\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C14 D14 R15 M12 I12 K10 B10\",\n  classLevelsCooked = \"C14/D14/R15/M12/I12/K10/B10\",\n  hitPointsRaw = \"317\",\n  hitPoints = 317,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/grolantor.lua",
+   "content": "-- Grolantor: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Grolantor\",\n  mmName = \"n/a\",\n  page = \"108\",\n  pages = \"108\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Grolantor\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"4-40 (+14)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"21\",\n  size = \"L (25' tall)\",\n  intelligence = \"14\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"45\",\n  psionic = \"VI\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Tarterus\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C10 F16\",\n  classLevelsCooked = \"C10/F16\",\n  hitPointsRaw = \"259\",\n  hitPoints = 259,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/skoraeus_stonebones.lua",
+   "content": "-- Skoraeus Stonebones: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Skoraeus Stonebones\",\n  mmName = \"n/a\",\n  page = \"108\",\n  pages = \"108\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Skoraeus Stonebones\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"6-60\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"15\",\n  size = \"L (30' tall)\",\n  intelligence = \"19\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"50\",\n  psionic = \"VI\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Prime Material Plane\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F16 M12\",\n  classLevelsCooked = \"C15/F16/M12\",\n  hitPointsRaw = \"380\",\n  hitPoints = 380,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/m/maglubiyet.lua",
+   "content": "-- Maglubiyet: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Maglubiyet\",\n  mmName = \"n/a\",\n  page = \"109\",\n  pages = \"109\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Maglubiyet\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-2\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"2-20\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"L (11' tall)\",\n  intelligence = \"19\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"50\",\n  psionic = \"VI\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 1,\n  plane = \"Nine Hells\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"greater god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C10 F16 I6 A10\",\n  classLevelsCooked = \"C10/F16/I6/A10\",\n  hitPointsRaw = \"350\",\n  hitPoints = 350,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/garl_glittergold.lua",
+   "content": "-- Garl Glittergold: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Garl Glittergold\",\n  mmName = \"n/a\",\n  page = \"109\",\n  pages = \"109\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Garl Glittergold\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-2\",\n  numAttacks = 3,\n  numAttacksRaw = \"3/2\",\n  damage = \"3-30 (+8)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"S (4' tall)\",\n  intelligence = \"23\",\n  alignment = \"lawful good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"25\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 1,\n  plane = \"Twin Paradises\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"greater god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F10 I16 T20 B8\",\n  classLevelsCooked = \"C15/F10/I16/T20/B8\",\n  hitPointsRaw = \"350\",\n  hitPoints = 350,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/y/yondalla.lua",
+   "content": "-- Yondalla: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Yondalla\",\n  mmName = \"n/a\",\n  page = \"109\",\n  pages = \"109\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Yondalla\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"2\",\n  numAttacks = 3,\n  numAttacksRaw = \"3/2\",\n  damage = \"n/a\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"M (4\u00bd')\",\n  intelligence = \"25\",\n  alignment = \"lawful good\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"75\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 1,\n  plane = \"Seven Heavens\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"greater god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C12 D12 F10 I25 T15\",\n  classLevelsCooked = \"C12/D12/F10/I25/T15\",\n  hitPointsRaw = \"350\",\n  hitPoints = 350,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/k/kurtulmak.lua",
+   "content": "-- Kurtulmak: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Kurtulmak\",\n  mmName = \"n/a\",\n  page = \"110\",\n  pages = \"110\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Kurtulmak\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"2-24/1-6\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"M (5\u00bd')\",\n  intelligence = \"19\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"55\",\n  psionic = \"VI\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Nine Hells\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C10 F16 A12\",\n  classLevelsCooked = \"C10/F16/A12\",\n  hitPointsRaw = \"219\",\n  hitPoints = 219,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/b/blibdoolpoolp.lua",
+   "content": "-- Blibdoolpoolp: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Blibdoolpoolp\",\n  mmName = \"n/a\",\n  page = \"110\",\n  pages = \"110\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Blibdoolpoolp\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-1\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"4-24/4-24\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12/48\",\n  size = \"L (20' tall)\",\n  intelligence = \"20\",\n  alignment = \"neutral evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"55\",\n  psionic = \"III\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Elemental Plane of Water\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F15 M20 A15\",\n  classLevelsCooked = \"C15/F15/M20/A15\",\n  hitPointsRaw = \"310\",\n  hitPoints = 310,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/semuanya.lua",
+   "content": "-- Semuanya: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Semuanya\",\n  mmName = \"n/a\",\n  page = \"111\",\n  pages = \"111\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Semuanya\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-4\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"2-20 (+11)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12/24\",\n  size = \"L (12' tall)\",\n  intelligence = \"20\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"78\",\n  psionic = \"II\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Concordant Opposition\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C13 D13 F16 M15\",\n  classLevelsCooked = \"C13/D13/F16/M15\",\n  hitPointsRaw = \"211\",\n  hitPoints = 211,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/e/eadro.lua",
+   "content": "-- Eadro: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Eadro\",\n  mmName = \"n/a\",\n  page = \"111\",\n  pages = \"111\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Eadro\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 1,\n  numAttacksRaw = \"1 or 8\",\n  damage = \"By weapon type or 1-10\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12/24\",\n  size = \"M (7')\",\n  intelligence = \"22\",\n  alignment = \"neutral\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"72\",\n  psionic = \"II\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Concordant Opposition\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C20 F15\",\n  classLevelsCooked = \"C20/F15\",\n  hitPointsRaw = \"227\",\n  hitPoints = 227,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/vaprak.lua",
+   "content": "-- Vaprak: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Vaprak\",\n  mmName = \"n/a\",\n  page = \"111\",\n  pages = \"111\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Vaprak\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 3,\n  numAttacksRaw = \"3\",\n  damage = \"2-20/2-20/1-12\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"15\",\n  size = \"L (15' tall)\",\n  intelligence = \"18\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"50\",\n  psionic = \"VI\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 3,\n  plane = \"Abyss\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"demigod\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C10 F16\",\n  classLevelsCooked = \"C10/F16\",\n  hitPointsRaw = \"198\",\n  hitPoints = 198,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/g/gruumsh.lua",
+   "content": "-- Gruumsh: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Gruumsh\",\n  mmName = \"n/a\",\n  page = \"112\",\n  pages = \"112\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Gruumsh\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"-1\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"3-30 (+10)\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"12\",\n  size = \"L (10' tall)\",\n  intelligence = \"19\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"75\",\n  psionic = \"V\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 1,\n  plane = \"Nine Hells\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"greater god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F16 M6 A8\",\n  classLevelsCooked = \"C15/F16/M6/A8\",\n  hitPointsRaw = \"350\",\n  hitPoints = 350,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/s/sekolah.lua",
+   "content": "-- Sekolah: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Sekolah\",\n  mmName = \"n/a\",\n  page = \"112\",\n  pages = \"112\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Sekolah\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 2,\n  numAttacksRaw = \"2\",\n  damage = \"6-60\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"36\",\n  size = \"L (35' long)\",\n  intelligence = \"18\",\n  alignment = \"lawful evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"47\",\n  psionic = \"I\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 0,\n  plane = \"Nine Hells\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"lesser god\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F16\",\n  classLevelsCooked = \"C15/F16\",\n  hitPointsRaw = \"329\",\n  hitPoints = 329,\n  hitPointsNote = \"n/a\",\n}\n"
+  },
+  {
+   "path": "monsters/monsters/l/laogzed.lua",
+   "content": "-- Laogzed: generated from the adjudicated D&DG pin headers (R885)\n-- DO NOT hand-edit; the promotion regenerates instead.\nreturn {\n  name = \"Laogzed\",\n  mmName = \"n/a\",\n  page = \"112\",\n  pages = \"112\",\n  source = \"DDG\",\n  family = \"Nonhumans' Deities mythos\",\n  race = \"Laogzed\",\n  variantOf = \"n/a\",\n  variantOfType = \"n/a\",\n  hitDice = \"n/a\",\n  hitDiceNum = -1,\n  hitDiceBonus = -1,\n  avgHp = -1,\n  armorClass = \"0\",\n  numAttacks = 1,\n  numAttacksRaw = \"1\",\n  damage = \"6-60\",\n  xp = -1,\n  xpPerHp = -1,\n  xpValue = -1,\n  xpSource = \"ddg\",\n  xpNote = \"n/a\",\n  frequency = \"n/a\",\n  noAppearing = \"n/a\",\n  lairPct = -1,\n  lairPctRaw = \"n/a\",\n  treasure = \"n/a\",\n  move = \"15\",\n  size = \"L (10' tall)\",\n  intelligence = \"18\",\n  alignment = \"chaotic evil\",\n  specialAttacks = \"n/a\",\n  specialDefenses = \"n/a\",\n  magicResistance = \"29\",\n  psionic = \"n/a\",\n  attackDefenseModes = \"n/a\",\n  text = \"n/a\",\n  familyText = \"n/a\",\n  statBlockMissing = \"n/a\",\n  statNote = \"n/a\",\n  saveAs = \"n/a\",\n  saveAsBonus = -1,\n  loadNormal = -1,\n  loadMax = -1,\n  rank = 3,\n  plane = \"Abyss\",\n  transform = \"n/a\",\n  wsgRoles = -1,\n  divineRank = \"demigod\",\n  worshippersAlignment = \"n/a\",\n  symbol = \"n/a\",\n  areaOfControl = \"n/a\",\n  classLevelsRaw = \"C15 F16\",\n  classLevelsCooked = \"C15/F16\",\n  hitPointsRaw = \"187\",\n  hitPoints = 187,\n  hitPointsNote = \"n/a\",\n}\n"
+  }
+ ],
+ "inline_count": 28,
+ "header_sections": {
+  "the promotion census": [
+   {
+    "kind": "const",
+    "name": "dpyRound"
+   },
+   {
+    "kind": "const",
+    "name": "dpyCensusBefore"
+   },
+   {
+    "kind": "const",
+    "name": "dpyCensusAfter"
+   },
+   {
+    "kind": "const",
+    "name": "dpyDefs"
+   },
+   {
+    "kind": "const",
+    "name": "dpyMythoi"
+   },
+   {
+    "kind": "const",
+    "name": "dpyFloorBefore"
+   },
+   {
+    "kind": "const",
+    "name": "dpyFloorAfter"
+   }
+  ],
+  "the promotion doctrine": [
+   {
+    "kind": "const",
+    "name": "dpyFullFieldKeys"
+   },
+   {
+    "kind": "const",
+    "name": "dpyMonsterRows"
+   },
+   {
+    "kind": "const",
+    "name": "dpyHitDiceRows"
+   },
+   {
+    "kind": "const",
+    "name": "dpyPinnedDamage"
+   },
+   {
+    "kind": "const",
+    "name": "dpySeeBelowCode"
+   },
+   {
+    "kind": "bool",
+    "name": "dpyPromotionBatchSix"
+   },
+   {
+    "kind": "bool",
+    "name": "dpyFromHeadersOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dpyNameOrdersLocked"
+   },
+   {
+    "kind": "bool",
+    "name": "dpyFullFieldDdg"
+   },
+   {
+    "kind": "bool",
+    "name": "dpySentinelsDistinct"
+   },
+   {
+    "kind": "bool",
+    "name": "dpyProseContractSide"
+   },
+   {
+    "kind": "bool",
+    "name": "dpyDamagePinnedOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dpySymbolsUnpinned"
+   },
+   {
+    "kind": "bool",
+    "name": "dpyWorshipUnpinned"
+   },
+   {
+    "kind": "bool",
+    "name": "dpyNormalizerDdgAware"
+   }
+  ],
+  "the batch-six grids": [
+   {
+    "kind": "table",
+    "name": "the batch-six mythos grid"
+   },
+   {
+    "kind": "table",
+    "name": "the DDG key-fill grid"
+   }
+  ]
+ },
+ "audit_comment": "THE DDG LUA PROMOTION, BATCH SIX - the sixth promotion round: 49 full-field defs (the Nehwon mythos and the Nonhumans' Deities) generated only from the adjudicated pin headers, the registry floor 1242 -> 1291, the census refresh and the batch-six honest boundaries (the ghoul by-weapon print against the DmgFixed flag and the earth god 5-50 print against its 0 - both pin-internal, both emitting the n/a sentinel; the Votishal hp 344 against the L&L 244; the Hate See-below armor class and the Tyaa bare dash pinned 0; the Gods of Trouble Special magic resistance pinned 0 as Standard; the Skerrit Variable cells with the armor-class 2 floor pin; the Lolth monster-block voice - the -2 drow paren, the 1/9 web walk, the MR 70 against the L&L 75, the See below class pairs and the L (M) size sentinel; the twelve as-16-plus-HD fighter cells reading as F16; the Sashelas Standard (out of water); the Nine Hells plane pins against the L&L D64 glosses; the Behemoth and Lolth collision renames; the Mouser quarter-foot and the Yondalla and Kurtulmak fraction sizes; the unpinned lair percents, worshipper alignments, symbols and areas of control stay sentinel)."
+}
