@@ -1,0 +1,665 @@
+{
+ "prefix": "afg",
+ "round": 878,
+ "title": "The alignment figures",
+ "header_file": "rules/afg.h",
+ "audit_file": "rules/audits/r878_batch.h",
+ "audit_label": "R878 alignment figures audit",
+ "include_after": "#include \"rules/idx.h\"  // R877: Appendix 4 and the index",
+ "audit_anchor": "#include \"rules/audits/r877_batch.h\"  // R877: R877 Appendix 4 and index audit",
+ "include_comment": "the alignment figures",
+ "audit_comment": "THE ALIGNMENT FIGURES - the D&DG walk round thirty, print p. 131 (pdf 132): FIG. 4 the character alignment graph and FIG. 5 the planes of alignment - the LAST D&DG tail page, and the pixel round: both text voices read near-zero here (the tesseract pass and the IA djvu - line art), so the evidence is the pdftoppm renders (committed c8bf507 and 1028ebe) read by the vision passes, collated against the TSV label geometry, with the TARTARUS eyeball by Curtiss. THE GAP FLIP: the alignment figures box closes - the ddg report reads 24/0, the walk COMPLETE. THE HEADLINE ADJUDICATIONS: the four curved descriptors ride the four corner alignments (Saintly LG, Beatific CG, Diabolic LE, Demoniac CE - the crescent regions); the settled structure read - CURVED dividers converging at the center, not crossing Venn lenses; the center circle NEUTRAL (the true neutral); the NEUTRAL EVIL label and the center circle vision-only (the TSV misses them); the FIG. 5 wheel - sixteen segments, straight radial dividers, plane names only, no arrows; ELYSIUM the top segment, HADES the bottom, CONCORDANT OPPOSITION the center; the cycle reads the p. 129 list order clockwise; the figure spells TARTARUS where the list reads Tarterus - the figure-vs-list delta, both pinned as printed. The wheel matches the Appendix 1 seventeen-planes pin. ZERO registry defs touched - the floor holds at 995.",
+ "banner": {
+  "title": "The alignment figures - the D&DG walk round thirty, print p. 131: FIG. 4 the character alignment graph (the nine alignments, the four descriptors) and FIG. 5 the planes of alignment (the seventeen-plane wheel); the LAST ddg gap box closes (24/0, the walk complete).",
+  "provenance": "primary ink: the pixel reads - both text voices (the extract/ddg tesseract pass and the archive.org 1st-print djvu) read near-zero on the page (line art); the evidence is the pdftoppm renders at 300/600/1200 dpi (committed c8bf507 and 1028ebe) read by the vision passes, collated against the tesseract TSV label geometry. The adjudications: the four descriptors (Saintly LG, Beatific CG, Diabolic LE, Demoniac CE); the curved non-crossing dividers (the settled structure read); the NEUTRAL center circle; the FIG. 5 wheel (Elysium top, Hades bottom, Concordant Opposition center, the p. 129 list order clockwise); the TARTARUS figure spelling vs the Tarterus list (the eyeball confirmation, both pinned); the wheel matches the pln.h seventeen-planes pin. The FIG. 4 roster rides doc/data/ddg_fig4.txt; the FIG. 5 roster rides doc/data/ddg_fig5.txt."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R877 LANDED 2026-10-27: commit",
+ "prev_record": [
+  "  - R877 LANDED 2026-10-27: commit",
+  "  6a95b8b8b9d4cc77c2ba2dd8994dcc6043b16e84 (pushed",
+  "  021f18a..6a95b8b, census 799 -> 800), APPENDIX 4",
+  "  AND THE INDEX - the D&DG walk round twenty-nine,",
+  "  print pp. 143-144 (pdf 144-145): the whole D&D",
+  "  tail - the seventeen-entry FURTHER REFERENCE",
+  "  bibliography (pdf 144 top) and the 433-term INDEX",
+  "  OF PROPER NAMES across the six column runs",
+  "  (61/61/61/84/83/83). THE TRIPLE GAP FLIP: the",
+  "  App 3, App 4 and index boxes closed together (the",
+  "  parked App 3 flip riding R877 per Curtiss's",
+  "  assignment, the R485 doctrine) - gap census",
+  "  20/4 -> 23/1, the alignment figures the lone open",
+  "  box. THE MECHANISM NOTE: the sandbox lost git and",
+  "  every C++ compiler and the GitHub App connector",
+  "  proved read-only (403 on all writes), so the",
+  "  spec transited via the gated canvas and CURTISS",
+  "  ran ./rn in Termux - zero deviation, preflight",
+  "  GREEN on his fresh binary; the landed tree",
+  "  verified byte-exact against the sandbox",
+  "  reference (tarball fetch, all eight files",
+  "  cmp-clean). ROUND FACTS: 637 citations, 307",
+  "  single-page terms, Odin Ord 287 the only 8-page",
+  "  term (113,114,116,118,119,120,123,124), Thrym",
+  "  Ord 379 the 123,108,113 wrap; App 4: 17 entries,",
+  "  16 dated, Paperback 4 (Budge, Davidson, Malory,",
+  "  Squire), TwoVolumes 2 (Hodge, Malory), NoDate 1",
+  "  (Hackin). THE HEADLINE ADJUDICATIONS: the",
+  "  leading-1 drop class has EIGHT members",
+  "  (Blodug-Hofi 117 found at the final-parse",
+  "  review); the fused-glyph pages (Eadro 111,",
+  "  Vaprak 111, Jason 71, Harp of Calm 115); the",
+  "  name garbles restored per the walk pins (R'lyeh",
+  "  through Ningauble of the 7 Eyes - the numeral 7",
+  "  rides the print); the Caduceus + Nemean lion",
+  "  skin 71 class (the IA voice drops the leading",
+  "  7); Ankh true lowercased per the R857 grep-gate",
+  "  precedent; the print order quirks (7) pinned as",
+  "  printed, both voices agreeing; the",
+  "  word-convention sorts read as convention; the",
+  "  non-ascending citation lists and double listings",
+  "  pinned (Karttikeya x2, Deep Sashelas, the Hunt",
+  "  packs); Rakel of Iron the eyeball flag; the",
+  "  Horus stray dash; the write-up divergences",
+  "  (Chuthga, Sleipnir, Snake-Man) pinned by print;",
+  "  the App 4 IA restores (Encyclopedia to",
+  "  Encyclopaedia, Indians, Lid., in-cluded, Eric!)",
+  "  and print oddities (Rowan & Littlefield,",
+  "  Bullfinch) pinned as printed; the boldface",
+  "  doctrine pinned with the noted per-term",
+  "  bold-detection limitation; the INDEX headers not",
+  "  terms. THE SHAPE: the index grid one row per",
+  "  term (433 rows, 10 cols: Ord + P1..P8 + Count,",
+  "  0-sentinel), the App 4 grid one row per entry",
+  "  (17 rows, 5 cols: Ord, Year, Paperback,",
+  "  TwoVolumes, NoDate); the rosters ride",
+  "  doc/data/ddg_index.txt and doc/data/",
+  "  ddg_app4.txt; prefix idx (full-repo scan clean);",
+  "  header rules/idx.h; audit \"R877 Appendix 4 and",
+  "  index audit\" rode rules/audits/r877_batch.h;",
+  "  regtest.cpp +2 include lines. ZERO registry",
+  "  defs touched - the floor holds at 995. Spec",
+  "  tools/spec_r877.json, md5",
+  "  9e5402c229888deaf566d9921f8d1d8d (80,636 bytes,",
+  "  authored-plus-newline); 57 inlines (24 consts,",
+  "  18 bools, 15 cols), 6 examples; the builder",
+  "  computed every ordinal from the rosters.",
+  "  LESSON: const names collided with table col",
+  "  names (idxApp4Paperback etc.) - the engine's",
+  "  parse_header dedupe caught it, renamed to",
+  "  idxApp4PaperbackCount/idxApp4TwoVolumesCount/",
+  "  idxApp4NoDateCount; the engine skips writing",
+  "  header/audit when the file exists (idempotency)",
+  "  - a spec change needs a fresh pristine tree",
+  "  re-extract. rverify double-run GREEN, 4,457",
+  "  mutants 0 missed; statics clean (audits dir",
+  "  799 = 798+1, idx.h maxwidth 92 opener-only,",
+  "  r877_batch.h 78 chars char-based - an earlier",
+  "  \"80\" was awk counting UTF-8 bytes of the right",
+  "  single quote; zero True/False tokens; quote",
+  "  parity even, idx.h zero double quotes; hyphen",
+  "  scan clean); the R876 record seated in the",
+  "  seed at line 25569; the canvas spec-r877 gated",
+  "  byte-exact (frontmatter + spec bytes, no extra",
+  "  newline). The v4 fresh start stays deferred per",
+  "  Curtiss. NEXT: the D&DG tail is ONE item - the",
+  "  print-p.131 FIG. 4/5 alignment-figures pixel",
+  "  round - Curtiss's call - WAIT FOR GO."
+ ],
+ "census_before": 800,
+ "gap_census": {
+  "closed": 24,
+  "open": 0
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [
+  {
+   "note": "the alignment figures box (the LAST open ddg box)",
+   "from": "- [ ] **The alignment figures** (print p. 131, FIG. 4/5 - pixel work)",
+   "to": "- [x] **The alignment figures** (print p. 131, FIG. 4/5 - pixel work)"
+  }
+ ],
+ "consts": [
+  {
+   "name": "afgRound",
+   "value": 878,
+   "comment": "the alignment figures round: the D&DG walk round thirty"
+  },
+  {
+   "name": "afgPrintPage",
+   "value": 131,
+   "comment": "the round lands print p. 131 (pdf 132), the last D&DG tail page"
+  },
+  {
+   "name": "afgPdfPage",
+   "value": 132,
+   "comment": "the pdf page (the folio offset PRINT = PDF - 1)"
+  },
+  {
+   "name": "afgFigures",
+   "value": 2,
+   "comment": "the two figures: FIG. 4 the character alignment graph, FIG. 5 the planes of alignment"
+  },
+  {
+   "name": "afgFigFour",
+   "value": 4,
+   "comment": "the print figure number of the character alignment graph"
+  },
+  {
+   "name": "afgFigFive",
+   "value": 5,
+   "comment": "the print figure number of the planes of alignment"
+  },
+  {
+   "name": "afgG4Alignments",
+   "value": 9,
+   "comment": "the FIG. 4 alignment labels (the eight wedges plus the center circle)"
+  },
+  {
+   "name": "afgG4Compass",
+   "value": 9,
+   "comment": "the compass positions (the eight directions plus the center)"
+  },
+  {
+   "name": "afgG4Descriptors",
+   "value": 4,
+   "comment": "the four curved descriptor words (Saintly, Beatific, Diabolic, Demoniac)"
+  },
+  {
+   "name": "afgG4Described",
+   "value": 4,
+   "comment": "the alignments carrying a descriptor (the four corners)"
+  },
+  {
+   "name": "afgG4Top",
+   "value": 0,
+   "comment": "the top wedge ordinal (NEUTRAL GOOD)"
+  },
+  {
+   "name": "afgG4Bottom",
+   "value": 6,
+   "comment": "the bottom wedge ordinal (NEUTRAL EVIL)"
+  },
+  {
+   "name": "afgG4Center",
+   "value": 8,
+   "comment": "the center circle ordinal (NEUTRAL, the true neutral)"
+  },
+  {
+   "name": "afgG5Planes",
+   "value": 17,
+   "comment": "the FIG. 5 plane labels (the sixteen segments plus the center)"
+  },
+  {
+   "name": "afgG5Segments",
+   "value": 16,
+   "comment": "the wheel segments around the center"
+  },
+  {
+   "name": "afgG5TopOrd",
+   "value": 3,
+   "comment": "the top segment plane (Elysium, the p. 129 list ordinal 3)"
+  },
+  {
+   "name": "afgG5BottomOrd",
+   "value": 11,
+   "comment": "the bottom segment plane (Hades, the list ordinal 11)"
+  },
+  {
+   "name": "afgG5CenterOrd",
+   "value": 17,
+   "comment": "the center plane (Concordant Opposition, the list ordinal 17)"
+  },
+  {
+   "name": "afgG5TartarusOrd",
+   "value": 10,
+   "comment": "the plane the figure spells TARTARUS (the p. 129 list reads Tarterus)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "afgPixelRound",
+   "value": true,
+   "comment": "the round rides the pixel reads: both text voices (the tesseract pass and the IA djvu) read near-zero on the page - line art; the evidence is the pdftoppm renders read by the vision passes, committed c8bf507 and 1028ebe"
+  },
+  {
+   "name": "afgG4CurvedDividers",
+   "value": true,
+   "comment": "FIG. 4 divides by CURVED lines converging at the center - crescent regions, not crossing Venn lenses (the settled structure read)"
+  },
+  {
+   "name": "afgG4CenterTrueNeutral",
+   "value": true,
+   "comment": "the FIG. 4 center circle reads NEUTRAL - the true neutral"
+  },
+  {
+   "name": "afgG4DescriptorsCorners",
+   "value": true,
+   "comment": "the four descriptors ride the four corner alignments only; the axis wedges and the center carry none"
+  },
+  {
+   "name": "afgG4SaintlyLG",
+   "value": true,
+   "comment": "Saintly arcs the LAWFUL GOOD region"
+  },
+  {
+   "name": "afgG4BeatificCG",
+   "value": true,
+   "comment": "Beatific arcs the CHAOTIC GOOD region"
+  },
+  {
+   "name": "afgG4DiabolicLE",
+   "value": true,
+   "comment": "Diabolic arcs the LAWFUL EVIL region"
+  },
+  {
+   "name": "afgG4DemoniacCE",
+   "value": true,
+   "comment": "Demoniac arcs the CHAOTIC EVIL region"
+  },
+  {
+   "name": "afgNoArrows",
+   "value": true,
+   "comment": "neither figure prints arrows or connecting marks - both read as pure segment graphs"
+  },
+  {
+   "name": "afgG5RadialDividers",
+   "value": true,
+   "comment": "FIG. 5 divides its sixteen segments by straight radial lines"
+  },
+  {
+   "name": "afgG5SegmentsNamesOnly",
+   "value": true,
+   "comment": "each FIG. 5 segment carries only its plane name - no second line, no symbols"
+  },
+  {
+   "name": "afgG5ElysiumTop",
+   "value": true,
+   "comment": "ELYSIUM rides the top segment (the neutral good pole, the FIG. 4 compass shared)"
+  },
+  {
+   "name": "afgG5HadesBottom",
+   "value": true,
+   "comment": "HADES rides the bottom segment"
+  },
+  {
+   "name": "afgG5ConcordantCenter",
+   "value": true,
+   "comment": "CONCORDANT OPPOSITION rides the wheel center"
+  },
+  {
+   "name": "afgG5ListOrderClockwise",
+   "value": true,
+   "comment": "the wheel cycle reads the print p. 129 list order clockwise (Seven Heavens through Arcadia, the top segment Elysium)"
+  },
+  {
+   "name": "afgG5TartarusSpelling",
+   "value": true,
+   "comment": "the figure spells TARTARUS where the p. 129 list reads Tarterus - the figure-vs-list delta, both pinned as printed (the eyeball confirmation)"
+  },
+  {
+   "name": "afgG5SeventeenMatch",
+   "value": true,
+   "comment": "the wheel matches the Appendix 1 seventeen-planes pin (the plnOutSeventeenCount doctrine, rules/pln.h)"
+  },
+  {
+   "name": "afgLastBox",
+   "value": true,
+   "comment": "this round closes the LAST ddg open box - the gap report reads 24/0, the walk complete"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the character alignment graph grid",
+   "tag": "afgG4",
+   "cols": [
+    "afgG4Ord",
+    "afgG4Pos",
+    "afgG4Desc"
+   ],
+   "col_comments": [
+    "The alignment ordinals (0-8, the print reading order: the wedge labels top-to-bottom then left-to-right, the center circle last)",
+    "The compass position ordinal (0 north .. 7 northwest, 8 the center circle)",
+    "The curved descriptor ordinal (1 Saintly, 2 Beatific, 3 Diabolic, 4 Demoniac; 0-sentinel for the five without)"
+   ],
+   "count": "afgG4Alignments",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     7,
+     1
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     3,
+     6,
+     0
+    ],
+    [
+     4,
+     2,
+     0
+    ],
+    [
+     5,
+     5,
+     3
+    ],
+    [
+     6,
+     4,
+     0
+    ],
+    [
+     7,
+     3,
+     4
+    ],
+    [
+     8,
+     8,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "the planes of alignment wheel grid",
+   "tag": "afgG5",
+   "cols": [
+    "afgG5Ord",
+    "afgG5Pos"
+   ],
+   "col_comments": [
+    "The plane ordinals (1-17, the print p. 129 list order, the figure spellings)",
+    "The clockwise segment (1 the top segment .. 16; 0-sentinel the wheel center)"
+   ],
+   "count": "afgG5Planes",
+   "sentinel": 0,
+   "data": [
+    [
+     1,
+     15
+    ],
+    [
+     2,
+     16
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     10,
+     8
+    ],
+    [
+     11,
+     9
+    ],
+    [
+     12,
+     10
+    ],
+    [
+     13,
+     11
+    ],
+    [
+     14,
+     12
+    ],
+    [
+     15,
+     13
+    ],
+    [
+     16,
+     14
+    ],
+    [
+     17,
+     0
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the round, the page, both figures)",
+   "expr": "m['afgRound']() != 878 or m['afgPrintPage']() != 131 or m['afgPdfPage']() != 132 or m['afgFigures']() != 2 or m['afgFigFour']() != 4 or m['afgFigFive']() != 5 or m['afgG4Alignments']() != 9 or m['afgG4Descriptors']() != 4 or m['afgG4Described']() != 4 or m['afgG5Planes']() != 17 or m['afgG5Segments']() != 16"
+  },
+  {
+   "note": "the FIG. 4 wedge rows (the reading order, the compass, the descriptors)",
+   "expr": "m['afgG4Ord'](0) != 0 or m['afgG4Pos'](0) != 0 or m['afgG4Desc'](0) != 0 or m['afgG4Ord'](1) != 1 or m['afgG4Pos'](1) != 7 or m['afgG4Desc'](1) != 1 or m['afgG4Ord'](2) != 2 or m['afgG4Pos'](2) != 1 or m['afgG4Desc'](2) != 2 or m['afgG4Ord'](3) != 3 or m['afgG4Pos'](3) != 6 or m['afgG4Ord'](4) != 4 or m['afgG4Pos'](4) != 2 or m['afgG4Desc'](4) != 0 or m['afgG4Ord'](5) != 5 or m['afgG4Pos'](5) != 5 or m['afgG4Desc'](5) != 3 or m['afgG4Ord'](6) != 6 or m['afgG4Pos'](6) != 4 or m['afgG4Desc'](6) != 0 or m['afgG4Ord'](7) != 7 or m['afgG4Pos'](7) != 3 or m['afgG4Desc'](7) != 4 or m['afgG4Ord'](8) != 8 or m['afgG4Pos'](8) != 8 or m['afgG4Desc'](8) != 0"
+  },
+  {
+   "note": "the FIG. 5 wheel rows (the list order, the clockwise segments, the center)",
+   "expr": "m['afgG5Ord'](0) != 1 or m['afgG5Pos'](0) != 15 or m['afgG5Ord'](2) != 3 or m['afgG5Pos'](2) != 1 or m['afgG5Ord'](10) != 11 or m['afgG5Pos'](10) != 9 or m['afgG5Ord'](16) != 17 or m['afgG5Pos'](16) != 0 or m['afgG5Ord'](9) != 10 or m['afgG5Pos'](9) != 8 or m['afgG5Ord'](1) != 2 or m['afgG5Pos'](1) != 16 or m['afgG5Ord'](15) != 16 or m['afgG5Pos'](15) != 14"
+  },
+  {
+   "note": "the descriptor census (the four corners carry the four curved words)",
+   "expr": "m['afgG4Desc'](0) != 0 or m['afgG4Desc'](3) != 0 or m['afgG4Desc'](4) != 0 or m['afgG4Desc'](6) != 0 or m['afgG4Desc'](8) != 0 or m['afgG4Desc'](1) != 1 or m['afgG4Desc'](2) != 2 or m['afgG4Desc'](5) != 3 or m['afgG4Desc'](7) != 4"
+  },
+  {
+   "note": "the structure and doctrine pins (the bool-operator form per the R865 rule)",
+   "expr": "m['afgPixelRound']() != 1 or m['afgG4CurvedDividers']() != 1 or m['afgG4CenterTrueNeutral']() != 1 or m['afgG4DescriptorsCorners']() != 1 or m['afgNoArrows']() != 1 or m['afgG5RadialDividers']() != 1 or m['afgG5SegmentsNamesOnly']() != 1 or m['afgLastBox']() != 1"
+  },
+  {
+   "note": "the wheel poles, the list-order cycle and the TARTARUS delta",
+   "expr": "m['afgG5ElysiumTop']() != 1 or m['afgG5HadesBottom']() != 1 or m['afgG5ConcordantCenter']() != 1 or m['afgG5ListOrderClockwise']() != 1 or m['afgG5TartarusSpelling']() != 1 or m['afgG5SeventeenMatch']() != 1 or m['afgG5TopOrd']() != 3 or m['afgG5BottomOrd']() != 11 or m['afgG5CenterOrd']() != 17 or m['afgG5TartarusOrd']() != 10"
+  }
+ ],
+ "header_sections": {
+  "the round thirty census": [
+   {
+    "kind": "const",
+    "name": "afgRound"
+   },
+   {
+    "kind": "const",
+    "name": "afgPrintPage"
+   },
+   {
+    "kind": "const",
+    "name": "afgPdfPage"
+   },
+   {
+    "kind": "const",
+    "name": "afgFigures"
+   },
+   {
+    "kind": "const",
+    "name": "afgFigFour"
+   },
+   {
+    "kind": "const",
+    "name": "afgFigFive"
+   },
+   {
+    "kind": "const",
+    "name": "afgG4Alignments"
+   },
+   {
+    "kind": "const",
+    "name": "afgG4Compass"
+   },
+   {
+    "kind": "const",
+    "name": "afgG4Descriptors"
+   },
+   {
+    "kind": "const",
+    "name": "afgG4Described"
+   },
+   {
+    "kind": "const",
+    "name": "afgG4Top"
+   },
+   {
+    "kind": "const",
+    "name": "afgG4Bottom"
+   },
+   {
+    "kind": "const",
+    "name": "afgG4Center"
+   },
+   {
+    "kind": "const",
+    "name": "afgG5Planes"
+   },
+   {
+    "kind": "const",
+    "name": "afgG5Segments"
+   },
+   {
+    "kind": "const",
+    "name": "afgG5TopOrd"
+   },
+   {
+    "kind": "const",
+    "name": "afgG5BottomOrd"
+   },
+   {
+    "kind": "const",
+    "name": "afgG5CenterOrd"
+   },
+   {
+    "kind": "const",
+    "name": "afgG5TartarusOrd"
+   }
+  ],
+  "the pixel-round pins": [
+   {
+    "kind": "bool",
+    "name": "afgPixelRound"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG4CurvedDividers"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG4CenterTrueNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG4DescriptorsCorners"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG4SaintlyLG"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG4BeatificCG"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG4DiabolicLE"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG4DemoniacCE"
+   },
+   {
+    "kind": "bool",
+    "name": "afgNoArrows"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG5RadialDividers"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG5SegmentsNamesOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG5ElysiumTop"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG5HadesBottom"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG5ConcordantCenter"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG5ListOrderClockwise"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG5TartarusSpelling"
+   },
+   {
+    "kind": "bool",
+    "name": "afgG5SeventeenMatch"
+   },
+   {
+    "kind": "bool",
+    "name": "afgLastBox"
+   }
+  ],
+  "the figure grids": [
+   {
+    "kind": "table",
+    "name": "the character alignment graph grid"
+   },
+   {
+    "kind": "table",
+    "name": "the planes of alignment wheel grid"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_fig4.txt",
+   "content": "The DDG print p. 131 FIG. 4 CHARACTER ALIGNMENT GRAPH - the D&DG walk\nround thirty, the pixel round. Both text voices (the extract/ddg\ntesseract pass and the archive.org 1st-print djvu) read near-zero on\nthis page - line art; the evidence is the pdftoppm renders (300/600/\n1200 dpi, committed c8bf507 and 1028ebe) read by the vision passes,\ncollated against the tesseract TSV label geometry, with the TARTARUS\neyeball confirmation by Curtiss.\n\nThe graph: a circle divided by CURVED lines converging at the center\n(crescent regions, not crossing Venn lenses), the small center circle\nreading NEUTRAL (the true neutral), the eight wedge labels printed as\nstacked two-line caps. The four curved descriptors ride the four\ncorner alignments: Saintly arcs the LAWFUL GOOD region, Beatific the\nCHAOTIC GOOD, Diabolic the LAWFUL EVIL, Demoniac the CHAOTIC EVIL;\nthe axis wedges and the center carry none.\n\nThe nine alignments, the print reading order (the wedge labels\ntop-to-bottom then left-to-right, the center circle last), with the\ncompass position and the descriptor ordinal (0 = none):\n\n0. NEUTRAL GOOD - north, no descriptor\n1. LAWFUL GOOD - northwest, Saintly\n2. CHAOTIC GOOD - northeast, Beatific\n3. LAWFUL NEUTRAL - west, no descriptor\n4. CHAOTIC NEUTRAL - east, no descriptor\n5. LAWFUL EVIL - southwest, Diabolic\n6. NEUTRAL EVIL - south, no descriptor\n7. CHAOTIC EVIL - southeast, Demoniac\n8. NEUTRAL (the center circle) - center, no descriptor\n\nThe tesseract TSV anchors the readable labels (NEUTRAL GOOD 202, LAW-\nFUL GOOD 463, CHAOTIC GOOD 464, LAWFUL NEUTRAL 853, CHAOTIC\nNEUTRAL 854, LAWFUL 1193, CHAOTIC 1193, EVIL 1241 at the 300-dpi\npage); the NEUTRAL EVIL label and the center circle are vision-only.\n"
+  },
+  {
+   "path": "doc/data/ddg_fig5.txt",
+   "content": "The DDG print p. 131 FIG. 5 THE PLANES OF ALIGNMENT - the D&DG walk\nround thirty, the pixel round. The wheel: sixteen segments around the\ncenter circle reading CONCORDANT OPPOSITION, divided by straight\nradial lines, each segment carrying only its plane name, no arrows or\nconnecting marks. The evidence: the pdftoppm renders read by the\nvision passes (see ddg_fig4.txt for the voice note).\n\nThe wheel cycle reads the print p. 129 list order CLOCKWISE, with\nELYSIUM at the top segment (the neutral good pole, the FIG. 4 compass\nshared), HADES at the bottom, CONCORDANT OPPOSITION at the center.\nThe seventeen planes (the p. 129 list ordinals, the FIGURE\nspellings - the figure prints TARTARUS where the list reads Tarterus,\nboth pinned as printed):\n\n1. Seven Heavens - clockwise segment 15\n2. Twin Paradises - segment 16\n3. Elysium - segment 1 (the top)\n4. Happy Hunting Grounds - segment 2\n5. Olympus - segment 3\n6. Gladsheim - segment 4\n7. Limbo - segment 5\n8. Pandemonium - segment 6\n9. Abyss - segment 7\n10. Tartarus - segment 8 (the bottom-right of Hades)\n11. Hades - segment 9 (the bottom)\n12. Gehenna - segment 10\n13. Nine Hells - segment 11\n14. Acheron - segment 12\n15. Nirvana - segment 13\n16. Arcadia - segment 14\n17. Concordant Opposition - the center (segment 0)\n\nThe wheel matches the Appendix 1 seventeen-planes pin (rules/pln.h,\nthe plnOutSeventeenCount doctrine): the alignment bands follow the\nFIG. 4 compass - the lawful planes upper-left, the chaotic\nupper-right, the good pole up, the evil pole down.\n"
+  }
+ ],
+ "inline_count": 42
+}

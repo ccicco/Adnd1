@@ -1,0 +1,34 @@
+The DDG print p. 131 FIG. 4 CHARACTER ALIGNMENT GRAPH - the D&DG walk
+round thirty, the pixel round. Both text voices (the extract/ddg
+tesseract pass and the archive.org 1st-print djvu) read near-zero on
+this page - line art; the evidence is the pdftoppm renders (300/600/
+1200 dpi, committed c8bf507 and 1028ebe) read by the vision passes,
+collated against the tesseract TSV label geometry, with the TARTARUS
+eyeball confirmation by Curtiss.
+
+The graph: a circle divided by CURVED lines converging at the center
+(crescent regions, not crossing Venn lenses), the small center circle
+reading NEUTRAL (the true neutral), the eight wedge labels printed as
+stacked two-line caps. The four curved descriptors ride the four
+corner alignments: Saintly arcs the LAWFUL GOOD region, Beatific the
+CHAOTIC GOOD, Diabolic the LAWFUL EVIL, Demoniac the CHAOTIC EVIL;
+the axis wedges and the center carry none.
+
+The nine alignments, the print reading order (the wedge labels
+top-to-bottom then left-to-right, the center circle last), with the
+compass position and the descriptor ordinal (0 = none):
+
+0. NEUTRAL GOOD - north, no descriptor
+1. LAWFUL GOOD - northwest, Saintly
+2. CHAOTIC GOOD - northeast, Beatific
+3. LAWFUL NEUTRAL - west, no descriptor
+4. CHAOTIC NEUTRAL - east, no descriptor
+5. LAWFUL EVIL - southwest, Diabolic
+6. NEUTRAL EVIL - south, no descriptor
+7. CHAOTIC EVIL - southeast, Demoniac
+8. NEUTRAL (the center circle) - center, no descriptor
+
+The tesseract TSV anchors the readable labels (NEUTRAL GOOD 202, LAW-
+FUL GOOD 463, CHAOTIC GOOD 464, LAWFUL NEUTRAL 853, CHAOTIC
+NEUTRAL 854, LAWFUL 1193, CHAOTIC 1193, EVIL 1241 at the 300-dpi
+page); the NEUTRAL EVIL label and the center circle are vision-only.

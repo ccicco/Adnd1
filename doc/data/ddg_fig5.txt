@@ -1,0 +1,36 @@
+The DDG print p. 131 FIG. 5 THE PLANES OF ALIGNMENT - the D&DG walk
+round thirty, the pixel round. The wheel: sixteen segments around the
+center circle reading CONCORDANT OPPOSITION, divided by straight
+radial lines, each segment carrying only its plane name, no arrows or
+connecting marks. The evidence: the pdftoppm renders read by the
+vision passes (see ddg_fig4.txt for the voice note).
+
+The wheel cycle reads the print p. 129 list order CLOCKWISE, with
+ELYSIUM at the top segment (the neutral good pole, the FIG. 4 compass
+shared), HADES at the bottom, CONCORDANT OPPOSITION at the center.
+The seventeen planes (the p. 129 list ordinals, the FIGURE
+spellings - the figure prints TARTARUS where the list reads Tarterus,
+both pinned as printed):
+
+1. Seven Heavens - clockwise segment 15
+2. Twin Paradises - segment 16
+3. Elysium - segment 1 (the top)
+4. Happy Hunting Grounds - segment 2
+5. Olympus - segment 3
+6. Gladsheim - segment 4
+7. Limbo - segment 5
+8. Pandemonium - segment 6
+9. Abyss - segment 7
+10. Tartarus - segment 8 (the bottom-right of Hades)
+11. Hades - segment 9 (the bottom)
+12. Gehenna - segment 10
+13. Nine Hells - segment 11
+14. Acheron - segment 12
+15. Nirvana - segment 13
+16. Arcadia - segment 14
+17. Concordant Opposition - the center (segment 0)
+
+The wheel matches the Appendix 1 seventeen-planes pin (rules/pln.h,
+the plnOutSeventeenCount doctrine): the alignment bands follow the
+FIG. 4 compass - the lawful planes upper-left, the chaotic
+upper-right, the good pole up, the evil pole down.

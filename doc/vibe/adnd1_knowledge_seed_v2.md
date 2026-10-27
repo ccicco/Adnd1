@@ -25623,6 +25623,94 @@ rides past 100KB. NEXT: the chart walk is COMPLETE - the
 D&DG tail is App 4 (pdf 143), the index (pdf 143), the
 print-p.131 FIG. 4/5 alignment-figures pixel work, and the
 parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
+  - R877 LANDED 2026-10-27: commit
+  6a95b8b8b9d4cc77c2ba2dd8994dcc6043b16e84 (pushed
+  021f18a..6a95b8b, census 799 -> 800), APPENDIX 4
+  AND THE INDEX - the D&DG walk round twenty-nine,
+  print pp. 143-144 (pdf 144-145): the whole D&D
+  tail - the seventeen-entry FURTHER REFERENCE
+  bibliography (pdf 144 top) and the 433-term INDEX
+  OF PROPER NAMES across the six column runs
+  (61/61/61/84/83/83). THE TRIPLE GAP FLIP: the
+  App 3, App 4 and index boxes closed together (the
+  parked App 3 flip riding R877 per Curtiss's
+  assignment, the R485 doctrine) - gap census
+  20/4 -> 23/1, the alignment figures the lone open
+  box. THE MECHANISM NOTE: the sandbox lost git and
+  every C++ compiler and the GitHub App connector
+  proved read-only (403 on all writes), so the
+  spec transited via the gated canvas and CURTISS
+  ran ./rn in Termux - zero deviation, preflight
+  GREEN on his fresh binary; the landed tree
+  verified byte-exact against the sandbox
+  reference (tarball fetch, all eight files
+  cmp-clean). ROUND FACTS: 637 citations, 307
+  single-page terms, Odin Ord 287 the only 8-page
+  term (113,114,116,118,119,120,123,124), Thrym
+  Ord 379 the 123,108,113 wrap; App 4: 17 entries,
+  16 dated, Paperback 4 (Budge, Davidson, Malory,
+  Squire), TwoVolumes 2 (Hodge, Malory), NoDate 1
+  (Hackin). THE HEADLINE ADJUDICATIONS: the
+  leading-1 drop class has EIGHT members
+  (Blodug-Hofi 117 found at the final-parse
+  review); the fused-glyph pages (Eadro 111,
+  Vaprak 111, Jason 71, Harp of Calm 115); the
+  name garbles restored per the walk pins (R'lyeh
+  through Ningauble of the 7 Eyes - the numeral 7
+  rides the print); the Caduceus + Nemean lion
+  skin 71 class (the IA voice drops the leading
+  7); Ankh true lowercased per the R857 grep-gate
+  precedent; the print order quirks (7) pinned as
+  printed, both voices agreeing; the
+  word-convention sorts read as convention; the
+  non-ascending citation lists and double listings
+  pinned (Karttikeya x2, Deep Sashelas, the Hunt
+  packs); Rakel of Iron the eyeball flag; the
+  Horus stray dash; the write-up divergences
+  (Chuthga, Sleipnir, Snake-Man) pinned by print;
+  the App 4 IA restores (Encyclopedia to
+  Encyclopaedia, Indians, Lid., in-cluded, Eric!)
+  and print oddities (Rowan & Littlefield,
+  Bullfinch) pinned as printed; the boldface
+  doctrine pinned with the noted per-term
+  bold-detection limitation; the INDEX headers not
+  terms. THE SHAPE: the index grid one row per
+  term (433 rows, 10 cols: Ord + P1..P8 + Count,
+  0-sentinel), the App 4 grid one row per entry
+  (17 rows, 5 cols: Ord, Year, Paperback,
+  TwoVolumes, NoDate); the rosters ride
+  doc/data/ddg_index.txt and doc/data/
+  ddg_app4.txt; prefix idx (full-repo scan clean);
+  header rules/idx.h; audit "R877 Appendix 4 and
+  index audit" rode rules/audits/r877_batch.h;
+  regtest.cpp +2 include lines. ZERO registry
+  defs touched - the floor holds at 995. Spec
+  tools/spec_r877.json, md5
+  9e5402c229888deaf566d9921f8d1d8d (80,636 bytes,
+  authored-plus-newline); 57 inlines (24 consts,
+  18 bools, 15 cols), 6 examples; the builder
+  computed every ordinal from the rosters.
+  LESSON: const names collided with table col
+  names (idxApp4Paperback etc.) - the engine's
+  parse_header dedupe caught it, renamed to
+  idxApp4PaperbackCount/idxApp4TwoVolumesCount/
+  idxApp4NoDateCount; the engine skips writing
+  header/audit when the file exists (idempotency)
+  - a spec change needs a fresh pristine tree
+  re-extract. rverify double-run GREEN, 4,457
+  mutants 0 missed; statics clean (audits dir
+  799 = 798+1, idx.h maxwidth 92 opener-only,
+  r877_batch.h 78 chars char-based - an earlier
+  "80" was awk counting UTF-8 bytes of the right
+  single quote; zero True/False tokens; quote
+  parity even, idx.h zero double quotes; hyphen
+  scan clean); the R876 record seated in the
+  seed at line 25569; the canvas spec-r877 gated
+  byte-exact (frontmatter + spec bytes, no extra
+  newline). The v4 fresh start stays deferred per
+  Curtiss. NEXT: the D&DG tail is ONE item - the
+  print-p.131 FIG. 4/5 alignment-figures pixel
+  round - Curtiss's call - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

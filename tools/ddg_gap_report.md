@@ -29,7 +29,7 @@ print p. 6; p132 is print 131).
 - [x] **Appendix 3: the clerical chart** (pp. 134-142)
 - [x] **Appendix 4** (p. 143)
 - [x] **The index** (p. 143)
-- [ ] **The alignment figures** (print p. 131, FIG. 4/5 - pixel work)
+- [x] **The alignment figures** (print p. 131, FIG. 4/5 - pixel work)
 
 24 boxes, 0 closed, 24 open at the R849 authoring. The R849 flip closes the
 front matter box (1 closed, 23 open after the round).
