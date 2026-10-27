@@ -25566,6 +25566,63 @@ R873/R874 apostrophe-free style was builder convenience,
 not a gate. NEXT: the LAST chart batch - Norse + Sumerian
 (pdf 143, the R865/ R866 mythos rows) - carries the App 3
 gap flip; scope it with Curtiss - WAIT FOR GO.
+- R876 LANDED 2026-10-27: commit
+021f18afa8f1e80b199a68809c410029c56e1fa6 (pushed
+91b983c..021f18a, census 798 -> 799), APPENDIX 3 THE
+CLERICAL CHART, BATCH EIGHT - the D&DG walk round twenty-
+eight, print p. 143: the LAST chart batch - the twenty-one
+Norse rows (the nineteen data rows plus the Surtur and
+Thrym cross-references) and the seven Sumerian rows as the
+round's one grid (28 rows, 13 cols: Ord, the nine string-
+field roster ordinals, the M/F/N-H flags) with the nine
+per-column rosters riding
+doc/data/ddg_clerical_chart_8.txt; prefix cqc8 (full-repo
+scan clean); header rules/cqc8.h; audit "R876 clerical
+chart batch eight audit", rode rules/audits/r876_batch.h.
+NO GAP FLIP - the App 3 flip was HELD at the R876 scoping
+per Curtiss ("hold the no-flip precedent one more round"):
+gap_flips reads empty, the census holds 20/4, and the no-
+flip precedent now extends PAST the last chart batch - the
+flip rides whichever round Curtiss assigns it to. THE
+CROSSREF SCOPING (author's call per Curtiss): the Surtur
+and Thrym "see Nonhumans' Deities" rows pinned AS GRID
+ROWS with 0-sentinel fields and the crossref comment (they
+physically print as chart rows; their field data landed
+R875 - print fidelity, the bare-cell/See-below 0-sentinel
+convention). THE HEADLINE ADJUDICATIONS (the rotated pass
+primary, the TSV geometry, the 1eonline L&L collation -
+full Chrome UA + Referer, the R874 note held first-try):
+the FRIGGA FEMALE-ONLY single X (geometry seats it at the
+F column, no M mark - the L&L voice agrees, the walk's
+first female-only Norse row) and the HEL MALE-ONLY single
+X (the same class, both voices agree); the THOR FORM
+DIVERGENCE - the print reads burnt animals where the L&L
+voice reads crafted items - pinned by print, eyeball flag
+(the R869 Druaga precedent); the Frey ornate helm restored
+over the L&L orntate garble; the Loki strife; fire
+semicolon pinned by print (the L&L comma an artifact); the
+Uty -> Utu and lowercase idun -> Idun garbles restored per
+the R865/R866 pins; the Nin-Hursag chart capitalization
+pinned per the chart print; the Odin wolves, ravens,
+Heimdall white plate mail and Idun forest meadows wraps
+restored. THE FLAG CLASSES: male 25, female 17 (Frigga the
+only row without an M mark), non-human 3 (Frey, Enki, Ki).
+ZERO registry defs touched - the floor holds at 995. Spec
+tools/spec_r876.json, md5 a849eac50ab05afa9d1d40e75424036d
+(29,736 bytes, authored-plus-newline); 45 inlines (23
+consts, 9 bools, 13 table cols), 6 examples; the builder
+computed every ordinal from the rosters (the R869 chk
+pattern held first-try; a builder-side female recount 16
+-> 17 caught pre-publish by the assert); rverify double-
+run GREEN, 396 mutants 0 missed; hyphen scan clean; zero
+True/False tokens in the emitted files; the canvas
+spec-r876 gated byte-exact (frontmatter + spec bytes, no
+extra newline). The v4 fresh start stays deferred per
+Curtiss ("later - just keep seating records"), the topic
+rides past 100KB. NEXT: the chart walk is COMPLETE - the
+D&DG tail is App 4 (pdf 143), the index (pdf 143), the
+print-p.131 FIG. 4/5 alignment-figures pixel work, and the
+parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

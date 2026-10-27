@@ -1,0 +1,480 @@
+The DDG print pp. 143-144 index of proper names - the D&DG walk round
+twenty-nine. The 433 terms across the six column runs (print p. 143 cols
+1-3, print p. 144 cols 1-3; the pdf pages 144-145), alphabetical within
+each run, with the per-term page citations AS PRINTED (the non-ascending
+citations pinned: Surtur 121,108,113,123; Thoth 113,55; Hades
+69,66,69,73 with the duplicate 69 real ink; Poseidon 73,63,64,67,72; Set
+53,49,50,52,54; Tezcatlipoca 35,32,34). Primary ink: the extract/ddg
+tesseract pass (the psm-4 dump collated against the archive.org 1st-
+print djvu text). The headline restorations: the leading-1 drop class
+(Idun 119, Apples of Youth 119, Brisingamen 117, Blodug-Hofi 117,
+Skirnir 117, Semuanya 111, Laogzed 112, Freya 117 the z a 7); the fused-
+glyph pages (Eadro 111, Vaprak 111, Jason 71, Harp of Calm 115); the
+name garbles restored per the walk pins (R’lyeh, Surma, Surya, Osiris,
+Apep, Fafhrd, Ilmarinen, Ilmatar, Itzamna, Ki, Girru, Grome, Hiisi,
+Laogzed, Thrym, Lei Kung, Circe, Aegir, Galahad, Vishnu, Tyr, Susanowo,
+Myyrrhn, Nnuurrr, Qagwaaz, Oonai, Ningauble of the 7 Eyes); the
+mechanical space restores (Thunder Bird, Deep Ones, Gods of Trouble and
+the rest); the Thrym 113 wrap restored (the IA voice plus the printed
+trailing comma); the Thrym, Ningauble and Horus band strays noted; the
+index headers and running heads noted, not terms. The print order quirks
+pinned as printed (both voices agree): Ama-Tsu-Mara before Amaterasu,
+Fire Sorcerers of the East before Fialar, Mi-Go before Mictlantecuhtli,
+Spider, Salt before Spider God, Lu Yueh before Lugh, Nin-Hursag before
+Ningauble, Yama’s Water Buffalo before Yamamoto Date; the word-
+convention sorts (Ma Yuan before Magic Wool, Shan Hai Ching before
+Shang-Ti, Gods of Trouble before Godsland) read as the word-by-word
+convention, not quirks. The write-up pins ride where the index spellings
+diverge: Cthugha, Sleipnir, Snake-Man (the index glyph runs noted). The
+double listings pinned as printed: Karttikeya and Karttikeya, Peacock
+of; Deep Sashelas and Sashelas, Deep; Master of the Hunt, Pack of the
+Wild Hunt and Wild Hunt. Rake of Iron 57 rides as the best joint read of
+two garbled voices (eyeball flag). Ankh, true rides the index capital
+lowercased per the R857 grep-gate precedent (the write-up prints TRUE
+ANKH). The terms print with trailing periods opening the dot leaders
+(not carried here).
+
+- print p. 143 column 1 (61 terms, Aarth .. Cerberus):
+Aarth :: 97
+Achilles :: 64
+Aegir :: 115
+Aegis — shield :: 63,73
+Aesir :: 113,115,116,123,124
+Agni :: 76
+Ahto :: 57,58
+Air Maiden :: 62
+Alhazred, Abdul :: 48
+Ama-Tsu-Mara :: 81
+Amaterasu Omikami :: 81
+Amulet of Power (Goibhnie) :: 28
+Anhur :: 49
+Ankh, true :: 55
+Anshar :: 22,23
+Antaeus :: 64
+Anu :: 22,24
+Anubis :: 50
+Apep :: 50
+Aphrodite :: 64
+Apollo :: 64,65,71,73
+Apples of Youth (Idun) :: 119
+Apshai :: 50
+Arawn :: 26,27
+Ares :: 65,66
+Arioch :: 87,86,95
+Arrows of Law :: 86
+Arrows of Slaying Mortals :: 83
+Artemis :: 65
+Arthur, King :: 18,19,20,21
+Arumdina — battleaxe (Glittergold) :: 109
+Asgard :: 113,116,118,120,123
+Assassinator of the Gods :: 87
+Astral Wolf :: 97,104
+Athena :: 65,66,73
+Atlas :: 66,74
+Avatar :: 75,79,86
+Average Knight of Renown :: 17
+Azathoth :: 44
+Balder :: 115,116
+Bast :: 50,51
+Behemoth :: 97,109
+Bellerophon :: 66
+Bernlad de Hautdesert, Sir :: 19
+Bes :: 51
+Bifrost :: 113,118
+Bird of Tyaa :: 98,104
+Black Crystal Door :: 86
+Blibdoolpoolp :: 110
+Blodug-Hofi :: 117
+Blue Sphere (Tyche) :: 74
+Bragi :: 115,119
+Brigit :: 27
+Brisingamen — necklace (Freya) :: 117
+Byakhee :: 44,47,48
+Caduceus — rod (Hermes) :: 71
+Camaxtli :: 33
+Camazotz :: 33
+Canon of Changes :: 37
+Cat’s Claw — dagger (Gray Mouser) :: 97
+Cerberus :: 66,69
+
+- print p. 143 column 2 (61 terms, Chair of Forgetfulness (Hades) .. Fileet):
+Chair of Forgetfulness (Hades) :: 69
+Chalchiuhtlicue :: 33
+Chao Kung Ming :: 38
+Chih-Chiang Fyu-Ya :: 38
+Chih Sung-Tzu :: 38
+Chung Kuel :: 38
+CirCe v :: 66,72
+Clakar :: 88
+Cloud Chariot :: 127
+Coeus ..ot :: 67
+ColdWoman :: 98
+Corellon Larethian :: 106
+Coyote .ot :: 12,13
+Crius :: 67
+Cthugha :: 44
+Cthugha’s Flame Creature :: 44,48
+Cthulhu :: 43,45,46
+Cu Chulainn :: 27
+Cults of the Beast :: 96
+Cyclops, greater :: 67,70
+Cyclops, lesser :: 67,72
+Dagda :: 26
+Dagger of Ice (Loviatar) :: 60
+Dahak :: 23
+Daikoku :: 81,82
+Dancing Sword of Lightning :: 37
+Darnizhaan :: 88
+Death :: 98
+Deep Ones :: 45,43,47,48
+Deep Sashelas :: 107
+Demeter :: 68
+Demogorgon :: 105,110
+Devourer :: 98
+Dharzi Hunting Dog :: 88
+Diancecht :: 27
+Dionysus :: 68
+Donblas the Justice Maker :: 88,86
+Dragons of Melnibone :: 88
+Draupnir —ring (Odin) :: 114
+Druaga :: 23
+Dunatis ...t :: 27,28
+Dwarf, Norse :: 113
+Dwarfcrusher — club (Grolantor) :: 108
+Eadro :: 111
+Eagle of Zeus, White :: 63,64
+Earth God, Nehwon :: 101
+Ebisu :: 82
+Einheriar :: 113
+ElderSign :: 48
+Elenoin :: 89
+Elric :: 86,87,94,95
+Enceladus :: 68
+Encounter Tables (Nehwon) :: 104
+Enki :: 126
+Enlil :: 125
+Epimetheus :: 68,74
+Excalibur — sword (Arthur) :: 18
+Fafhrd :: 96,97,101
+Feilien and Feng Po :: 39
+Fenris Wolf :: 115,116,119,123
+Fileet :: 89
+
+- print p. 143 column 3 (61 terms, Fire Gems .. Heracles):
+Fire Gems :: 37
+Fire Sorcerers of the East :: 96
+Fialar :: 116
+Flame Snake :: 51,50
+Forseti :: 116
+Fossergrim :: 116
+Freke (and Gere) :: 114
+Frey :: 116,117
+Freya :: 117
+Frigga :: 118
+Furies :: 69
+Gae Bolg — spear (Cu Chulainn) :: 27
+Galahad, Sir :: 19,20
+Galatine — sword (Gawaine) :: 19
+Gareth of Orkney, Sir :: 19
+Garl Glittergold :: 109
+Garlon, Sir :: 19
+Garm :: 118
+Garuda :: 79
+Gawaine, Sir :: 19
+Geb :: 51
+Gems (Nehwon) :: 96
+Ghoul, Nehwon :: 99,104
+Giant Black Pearl :: 37
+Giant, Norse :: 113
+Gilgamesh :: 23
+Girru :: 24
+Gjaller — horn (Heimdall) :: 118
+Gods of Lankhmar :: 99
+Gods of Trouble :: 99
+Godsland :: 96
+Goibhnie :: 28,30
+Golden Fleece (Jason) :: 71
+Grahluk :: 89
+Gray Mouser :: 97,96,101,102
+Graywand — sword (Fafhrd) :: 96
+Great Race :: 45,47
+Great Tree :: 57
+Grolantor :: 108
+GromMe oot :: 89
+Gruumsh :: 112
+Gullin-Bursti :: 117
+Gungnir — spear (Odin) :: 114
+Haaashastaak :: 90
+Hachiman :: 82
+Hades :: 69,66,69,73
+Harp of Calm (Bragi) :: 115
+Hastseltsi :: 13
+Hastsezini :: 13
+Hastur the Unspeakable :: 45,43,44,46
+Hate :: 99,100
+Headdress of Love and War (Ishtar) :: 24
+Heartseeker — dirk (Fafhrd) :: 96
+Hecate :: 69
+Hecatoncheire :: 69,70
+Heimdall :: 118
+Hel :: 119,118
+Heng :: 13,14
+Hephaestus :: 70,67
+Hera :: 70,67
+Heracles :: 70,71,74
+
+- print p. 144 column 1 (84 terms, Hermes .. Morrigan):
+Hermes :: 71,73
+Hiawatha :: 14
+Hiisi :: 58
+Hlidskialf — throne (Odin) :: 114
+Hofud — sword (Heimdall) :: 118
+Horus :: 51,52,54
+Hotoru :: 14
+Hruggek :: 105
+Huan-Ti :: 39
+Hugin (and Munin) :: 114
+Huhueteotl :: 33,34
+Huitzilopochtli :: 34
+Hunapu (and Xbalanque) :: 34
+Idun :: 119
+Ilmarinen :: 58
+Ilmatar :: 58,59
+Inanna :: 126
+Indra :: 75
+Indra’s Elephant :: 75
+Iron Wand :: 37
+Ishtar :: 24
+Isis :: 52
+Issek of thedug :: 100
+Ithaqua :: 45,46
+Itzamna :: 34,35
+Jade Scepter of Defending :: 37
+Jarn Grieper — glove (Thor) :: 121
+Jason :: 71
+Jormungandr :: 119
+Jotunheim :: 113,121
+Kakatal :: 90
+Kalevala :: 57,60,61
+Kali :: 76
+Karttikeya :: 76
+Karttikeya, Peacockof :: 76
+Kelmain :: 90
+Ki :: 126
+Kiputytto :: 59
+Kishijoten :: 82,83
+Knight of Quality :: 17
+Kos :: 100
+Kronos :: 72,63,73
+Kuan Yin :: 39
+Kullervo :: 59
+Kurtulmak :: 110
+Lakshmi :: 77
+Lamorak, Sir :: 20
+Laogzed :: 112
+Launcelot du Lake, Sir :: 20,19
+Lei Kung :: 40,42
+Lemminkainen :: 59,61
+Leviathan :: 100
+Loki :: 119,113,114,116,118,120
+Lolth :: 107,105,106
+Louhi :: 60,61
+Loviatar :: 60
+Lu Yueh :: 40
+Lugh :: 28
+Ma Yuan :: 40
+Magic Wool :: 57
+Maglubiyet :: 109
+Magni :: 120
+Manannan Mac Lir :: 28
+Marduk :: 24
+Marut :: 77
+Master of the Hunt :: 31,30
+Master Types :: 86,89
+Matet — war galley (Ra) :: 49
+Math :: 28,29
+Meerclar :: 91
+Meginjarder — girdle (Thor) :: 121,125
+Merlin :: 20,18
+Mi-Go :: 46,47,48
+Mictlantecuhtli :: 35
+Mielikki :: 60
+Misha :: 91
+Mist Giant :: 91
+Mjolnir — hammer (Thor) :: 121,125
+Modi :: 120
+Moonglum :: 87
+Moradin :: 106
+Mordagz :: 91
+Morgan le Fay :: 20
+Morrigan :: 29
+
+- print p. 144 column 2 (83 terms, Mournblade — sword (Yyrkoon) .. Skoraeus Stonebones):
+Mournblade — sword (Yyrkoon) :: 95
+Movarl :: 109
+Myyrrhn :: 92
+Nanna-Sin :: 127
+NanorianStones :: 86
+Necronomicon :: 48
+Nemean lion skin (Heracles) :: 71
+Nephthys :: 52
+Nergal :: 25
+NihrainHorse :: 92
+Nike :: 72
+Nin-Hursag :: 127
+Ningauble of the 7 Eyes :: 101,102
+Nnuuurrre'e’c :: 92
+No Cha :: 40,41
+Norns :: 120,119,121
+Nuada :: 29
+Nuru-Ah :: 92
+Nyarlathotep :: 46
+Oceanus :: 72
+Odin :: 113,114,116,118,119,120,123,124
+Odysseus ..ot :: 72,66
+Oghma :: 29
+Oh-Kuni-Nushi :: 83
+Old Ones :: 43,46,48
+Oonai :: 93
+Osiris :: 52,49,50,54
+Pack of the Wild Hunt :: 31,30
+Palomides the Saracen, Sir :: 21
+Pan :: 73
+Pellinore, King :: 21,20
+Perseus :: 73
+Phoenix :: 52,53,54
+Poseidon :: 73,63,64,67,72
+Primordial One :: 46,47
+Prometheus :: 74,68
+Ptah :: 53
+Pulgh :: 101
+Pyaray :: 93
+Qagwaaz :: 15
+Quaolnargn :: 93
+Quetzalcoatl :: 32,35
+Ra :: 49,52
+Ragnarok :: 113,119,121
+Raiden :: 83
+Raiko :: 84
+Rake of Iron :: 57
+Ramman :: 25
+Rat God :: 102
+Ratri :: 77
+Raven :: 12
+Red God :: 102
+Retaliator — sword (Manannan Mac Lir) :: 28
+Rillifane Rallathil :: 108,106
+Ring of Kings (Elric) :: 86
+R’lyeh :: 43
+Roofdrak :: 93,86
+Rudra :: 77
+Rune Wand (Odin) :: 114
+Sacred Bundle :: 12
+Sashelas, Deep :: 107
+Scalpel — rapier (Gray Mouser) :: 97
+Scepter of the Gods (Ptah) :: 53
+Seker :: 53
+Sekolah :: 112
+Semktet — barge (Ra) :: 49
+Semuanya :: 111
+Set :: 53,49,50,52,54
+Set, Minions of :: 54
+Shakak :: 15
+Shan Hai Ching :: 41
+Shang-Ti :: 37,38
+Sheelba of the Eyeless Face :: 102,101
+Shield of Chaos (Mordagz) :: 91
+Shoggoth :: 46,47,48
+Shu :: 54,53
+Shub-Niggurath :: 47
+Sif :: 121
+Silvanus :: 30
+Skerrit :: 106,108
+Skidbladnir — ship (Frey) :: 116
+Skirnir :: 117
+Skoraeus Stonebones :: 108,109
+
+- print p. 144 column 3 (83 terms, Slayers’ Brotherhood .. Zeus):
+Slayers’ Brotherhood :: 96
+Sleipnir :: 114,124
+Snake-Man :: 15
+Snow Serpent :: 102,104
+Snow Witches :: 96
+Son of Pohjola :: 61
+Spear of Darkness (Set) :: 54
+Spider, Salt :: 103,104
+Spider God :: 103
+Spirits of the Air :: 41
+Stoneribs :: 15
+Stormbringer — sword (Elric) :: 87,86,95
+Straasha :: 94
+Surma :: 61
+Surtur :: 121,108,113,123
+Surya :: 78
+Surya’s Chariot :: 78
+Susanowo :: 84
+Syrinx — pipes (Pan) :: 73
+Tanngrisner and Tanngjost :: 123
+Tathlum :: 30
+Tefnut :: 54
+Tezcatlipoca :: 35,32,34
+Theleb K’aarna :: 94
+Theseus :: 74
+Thet —amulet (Ptah) :: 53
+Thieves’ Guild of Lankhmar :: 96,103
+Thor :: 121,117,119,123,125
+Thoth :: 113,55
+Thrym :: 123,108,113
+Thunder Bird :: 16
+Thyrsus — staff (Dionysus) :: 68
+Tiera :: 59
+Tlaloc :: 35,33,36
+Tlazolteotl :: 36
+Tobadzistsini :: 16
+Torc :: 26
+Torc of the Gods :: 30,29
+Tou Mu :: 41
+Tristram of Lyoness, Sir :: 21
+Tsukiyomi :: 84
+Tuonetar :: 61
+Tuoni :: 61
+Tvashtri :: 78
+Tyaa :: 103
+Tyche :: 74
+Tyr :: 123
+Ukko :: 62
+Uller :: 123,124
+Untamo :: 62
+Ushas :: 78
+Utu :: 127
+Vainamoinen :: 57,58,61
+Valkyrie :: 124,113,114,117,118,123
+Vampire Tree :: 94
+Vanir :: 113,115,116,117
+Vaprak :: 111
+Varuna :: 79
+Vidar :: 124
+Vishnu :: 79,75,77
+Votishal :: 103
+Vulture Lion :: 95
+Water Cobra :: 104
+Water Dwarf :: 58,57
+Weapon of Power (Goibhnie) :: 28
+Wen Chung :: 42
+Wild Hunt :: 30,31
+Wind Fire Wheels :: 37
+Xiombarg :: 95
+Xochipilli :: 36
+Yama :: 80
+Yama’s Water Buffalo :: 80
+Yamamoto Date :: 85
+Yanauluha :: 16
+Yeenoghu :: 105,109
+Yen-Wang-Yeh :: 42
+Yggdrasil :: 120
+Yog-Sothoth :: 47,48
+Yondalla :: 109,110
+Yoshi-iye :: 85
+Yuggoth :: 46
+Yyrkoon :: 95
+Zeus :: 63,64,65,70,73,74

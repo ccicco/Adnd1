@@ -1,0 +1,48 @@
+The DDG print p. 143 Appendix 4: FURTHER REFERENCE - the D&DG walk round
+twenty-nine. The intro paragraph, the seventeen bibliography entries
+(the left column: Aldington through Gantz; the right column: Hackin
+through Tripp) and the Chaosium credit line. Primary ink: the
+extract/ddg tesseract pass (pdf page 144 top), collated against the
+archive.org 1st-print djvu text. The restorations: the Encyclopedio ->
+Encyclopedia and Indions -> Indians IA restores; the Lid. -> Ltd. glyph
+class (the Davidson and Gantz entries); the in-cluded hyphen wrap; the
+Elric/ scan glyph restored to Elric! per the IA voice. The print
+oddities pinned as printed, both voices agreeing: Rowan & Littlefield
+(the real-world publisher Rowman) and Bullfinch (the author Bulfinch);
+the Hamilton Mythology scan-space artifact noted. The Hackin entry reads
+(no date) - the grid rides a 0 year with the no-date flag set.
+
+APPENDIX 4: FURTHER REFERENCE
+
+The books listed below constitute some of the references used in
+compiling this work. They, as well as numerous other works, contain much
+more detailed accounts of the gods and their divine characteristics than
+can be included herein. Further research is recommended to the DM who
+wishes to augment the given information.
+
+ 0. Aldington, R. et al. (translators). New Larousse Encyclopedia of Mythology. New York: Putnam, 1968.
+ 1. Budge, E. A. Wallis. The Egyptian Book of the Dead. New York: Dover, 1967. Paperback.
+ 2. Bullfinch, Thomas. The Age of Fable. New York: Cromwell, 1970.
+ 3. Christie, Anthony. Chinese Mythology. England: Paul Hamlyn, 1968.
+ 4. Davidson, H. R. Ellis. Gods and Myths of Northern Europe. New York: Penguin Books Ltd., 1964. Paperback.
+ 5. Frazer, Sir James G. The Golden Bough. New York: University Books, 1961.
+ 6. Gantz, Jeffrey (trans.). The Mabinogion. Middlesex, England: Penguin Books Ltd., 1977.
+ 7. Hackin, J. et al. Asiatic Mythology. New York: Crescent, (no date).
+ 8. Hamilton, Edith. Mythology. Boston: Little, Brown & Co., 1942.
+ 9. Hodge, Frederick Webb. Handbook of American Indians. New York: Rowan & Littlefield, 1965 (2 volumes).
+10. Kramer, Samuel N. (ed.). Mythologies of the Ancient World. New York: Doubleday, 1961.
+11. Leach, Maria & Fried, Jerome (eds.). Funk & Wagnall’s Standard Dictionary of Folklore, Mythology, and Legend. New York: Funk & Wagnall, 1972.
+12. Malory, Sir Thomas. Le Morte d’Arthur (2 volumes). England: Penguin Books, 1978. Paperback.
+13. Nicholson, Irene. Mexican and Central American Mythology. England: Paul Hamlyn, 1967.
+14. Schwab, Gustav. Gods and Heroes. New York: Pantheon, 1946.
+15. Squire, Charles. Celtic Myth and Legend. Hollywood: Newcastle Press, 1975. Paperback.
+16. Tripp, Edward. Meridian Handbook of Classical Mythology. New York: Crowell, 1970.
+
+Stormbringer, White Wolf and Elric!; Chaosium, Inc., P.O. Box 6302,
+Albany, CA 94706.
+
+The index of proper names opens below the Appendix 4 columns on print p.
+143: INDEX OF PROPER NAMES. A boldfaced number indicates that the term
+is a separate entry in this book. The per-term boldface detection is not
+possible from the tesseract pass (noted limitation); the boldface
+doctrine pinned as the index’s own note.

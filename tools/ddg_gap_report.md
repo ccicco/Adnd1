@@ -26,9 +26,9 @@ print p. 6; p132 is print 131).
 - [x] **Sumerian mythos** (pp. 125-127)
 - [x] **Appendix 1: the planes** (pp. 128-133)
 - [x] **Appendix 2: temple trappings** (p. 134)
-- [ ] **Appendix 3: the clerical chart** (pp. 134-142)
-- [ ] **Appendix 4** (p. 143)
-- [ ] **The index** (p. 143)
+- [x] **Appendix 3: the clerical chart** (pp. 134-142)
+- [x] **Appendix 4** (p. 143)
+- [x] **The index** (p. 143)
 - [ ] **The alignment figures** (print p. 131, FIG. 4/5 - pixel work)
 
 24 boxes, 0 closed, 24 open at the R849 authoring. The R849 flip closes the
