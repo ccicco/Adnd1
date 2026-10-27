@@ -1,0 +1,1008 @@
+{
+ "prefix": "cqc2",
+ "round": 870,
+ "title": "the clerical chart, batch two",
+ "header_file": "rules/cqc2.h",
+ "audit_file": "rules/audits/r870_batch.h",
+ "audit_label": "R870 clerical chart batch two audit",
+ "include_after": "#include \"rules/cqc.h\"  // R869: the clerical chart, batch one",
+ "audit_anchor": "#include \"rules/audits/r869_batch.h\"  // R869: R869 clerical chart batch one audit",
+ "include_comment": "the clerical chart, batch two",
+ "audit_comment": "APPENDIX 3: THE CLERICAL QUICK-REFERENCE CHARTS, BATCH TWO - the D&DG walk round twenty-two, print pp. 136-137: the second batch of deity rows - Central American (12), Chinese (15), Cthulhu (8) - riding the roster data file, the Cthulhu tail on the next pdf page head; the App 3 gap box stays open until the last chart batch lands. The print voice is the ROTATED tesseract pass, collated against the 1eonline L&L per-deity chart rows. The headline divergence: the print reads sky blue for the Hastur raiment color where the L&L voice reads yellow-orange - pinned by print, eyeball flag.",
+ "banner": {
+  "title": "Appendix 3: the clerical quick-reference chart, batch two - the D&DG walk round twenty-two, print pp. 136-137: the 35 rows of the Central American, Chinese and Cthulhu pantheons across the 13 printed columns.",
+  "provenance": "primary ink: the ROTATED extract/ddg tesseract pass (pNNN_rot_full.txt + pNNN_rot_tsv.tsv, pdf pages 136-138; the second printing) - the Cthulhu block spills onto pdf p138 head (Ithaqua, Nyarlathotep, Shub-Niggurath, Yog-Sothoth); the collation voice: the 1eonline L&L per-deity chart rows (the flafp.htm slug for Fei Lien and Feng Po, the nocha.htm slug for No Cha). The adjudications: the Hastur sky blue color (print over the L&L yellow-orange, eyeball flag), the gray spellings of the print pinned over the L&L grey, the L&L <sea caves> gloss on the Cthulhu place a 5th-print addition, the chart-print Cthuga garble (the R856 walk pins Cthugha), the ! glyph name garbles (Huehueteotl, Tlazolteotl), the FeiLien space restored, and the semicolon spheres (both voices agree). The batch order runs Central American, Chinese, Cthulhu."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R869 LANDED 2026-10-26: commit",
+ "prev_record": [
+  "- R869 LANDED 2026-10-26: commit",
+  "7ced16344157530ffbf05f1b97ec80624f28e140 (pushed",
+  "06c35eb..7ced163, census 791 -> 792), APPENDIX 3 THE",
+  "CLERICAL CHART, BATCH ONE - the D&DG walk round",
+  "twenty-one, print pp. 134-135: the chart intro/legend",
+  "doctrine (quick-reference purpose,",
+  "alphabetical-within-pantheon with the most important",
+  "first, guidelines-only, rank-by-color, the",
+  "ordained-anytime rule, the six field definitions with the",
+  "acknowledgement-is-not-granting caveat) plus the FIRST",
+  "BATCH of deity rows - American Indian (9), Babylonian (8),",
+  "Celtic (12) - as the round's one grid (29 rows, 13 cols:",
+  "Ord, the nine string-field roster ordinals, the M/F/N-H",
+  "flags) with the nine per-column rosters riding",
+  "doc/data/ddg_clerical_chart_1.txt; prefix cqc (full-repo",
+  "scan clean); header rules/cqc.h; audit \"R869 clerical",
+  "chart batch one audit\", rode rules/audits/r869_batch.h. NO",
+  "GAP FLIP - the App 3 box stays open until the last chart",
+  "batch (the first no-flip round; gap_flips: [] is legal,",
+  "gap census 20/4 unchanged). THE PRINT VOICE: the chart",
+  "prints LANDSCAPE - the committed psm-4 pass is 90-degree",
+  "garbage and the IA 1st-print scan is 180-flipped (decoded",
+  "with noise: uoow=moon); the voice is the ROTATED tesseract",
+  "pass (pdftoppm -r 300 renders the pdf pages, PIL",
+  "rotate(-90), tesseract stdout redirect), committed 97fcaac",
+  "(pdf 136-143) + 06c35eb (pdf 135, the App 2 page's rotated",
+  "block) after TWO zero-byte stray commits (c7ced34, 23af32b",
+  "- the tesseract output-base .txt-APPEND trap doubles the",
+  "extension and the empty files ride the commit; the fix:",
+  "stdout redirect; and the pg-*.png were missing,",
+  "regenerated via poppler). THE COLLATION VOICE: the",
+  "1eonline L&L per-deity chart rows (12 values after the",
+  "Place of Worship header line; the mml.htm slug for",
+  "Manannan Mac Lir; urllib is 406-blocked, curl works). THE",
+  "HEADLINE ADJUDICATIONS: the DRUAGA FEMALE-CLERICS X - the",
+  "print reads two X marks (M and F) where the L&L voice",
+  "reads male-only - pinned by print, eyeball flag (the",
+  "Gawaine 112 precedent); the sphere semicolons pinned by",
+  "print (Heng thunder; weather, Hotoru wind; weather, Ishtar",
+  "love; war, Marduk cities; weather, Brigit fire; poetry -",
+  "the L&L transcription normalizes to commas); the",
+  "Hastsezini jode green = jade green (L&L); the Arawn at",
+  "death frequency (the fold); the Lugh Ltugh print garble;",
+  "the Silvanus stray quote glyph noted; and the chart",
+  "carries NO ARTHURIAN BLOCK (the Arthurian section is",
+  "heroes-only - the batch order runs American Indian,",
+  "Babylonian, Celtic). ZERO registry defs touched - the",
+  "floor holds at 995. Spec tools/spec_r869.json, md5",
+  "ca2f5f4ed13cbdc0453570e05df41ad9 (31,794 bytes); 57",
+  "inlines (24 consts, 20 bools, 13 table cols), 10 examples;",
+  "rverify double-run GREEN, 421 mutants 0 missed; hyphen",
+  "scan clean; zero True/False tokens in the emitted files;",
+  "the R865 bool-operator rule held first-try. BUILDER",
+  "LESSON: hand-guessed roster ordinals in example exprs are",
+  "a losing bet - derive every grid-cell term from the",
+  "computed rosters (a chk(name, field) helper building",
+  "m[...](row) != code from ROWS/CODES); the audit mirror",
+  "caught all 8 wrong-ordinal examples pre-publish. NEXT: the",
+  "App 3 chart batches continue from Central American +",
+  "Chinese + Cthulhu (pdf pp. 136-137) or Curtiss's call -",
+  "WAIT FOR GO."
+ ],
+ "census_before": 792,
+ "gap_census": {
+  "closed": 20,
+  "open": 4
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "cqc2Round",
+   "value": 870,
+   "comment": "the clerical chart batch two round: the D&DG walk round twenty-two"
+  },
+  {
+   "name": "cqc2Batch",
+   "value": 2,
+   "comment": "the second chart batch (the App 3 box stays open until the last batch lands)"
+  },
+  {
+   "name": "cqc2PrintStart",
+   "value": 136,
+   "comment": "the chart batch two print pages open at 136"
+  },
+  {
+   "name": "cqc2PrintEnd",
+   "value": 137,
+   "comment": "the chart batch two print pages close at 137 (the Cthulhu tail rides the next pdf head)"
+  },
+  {
+   "name": "cqc2Rows",
+   "value": 35,
+   "comment": "the batch rows (Central American 12, Chinese 15, Cthulhu 8)"
+  },
+  {
+   "name": "cqc2CARows",
+   "value": 12,
+   "comment": "the Central American pantheon rows"
+  },
+  {
+   "name": "cqc2ChineseRows",
+   "value": 15,
+   "comment": "the Chinese pantheon rows"
+  },
+  {
+   "name": "cqc2CthulhuRows",
+   "value": 8,
+   "comment": "the Cthulhu mythos rows"
+  },
+  {
+   "name": "cqc2MaleRows",
+   "value": 35,
+   "comment": "the rows reading a male-clerics X (every batch two row)"
+  },
+  {
+   "name": "cqc2FemaleRows",
+   "value": 22,
+   "comment": "the rows reading a female-clerics X"
+  },
+  {
+   "name": "cqc2NonHumanRows",
+   "value": 12,
+   "comment": "the rows reading a non-human clerics X (the Chinese pantheon reads none)"
+  },
+  {
+   "name": "cqc2PrintedColumns",
+   "value": 13,
+   "comment": "the printed columns of the chart (the 13 the batch one grid encodes)"
+  },
+  {
+   "name": "cqc2SphereCount",
+   "value": 30,
+   "comment": "the sphere-of-control roster ordinals of the batch"
+  },
+  {
+   "name": "cqc2AnimalCount",
+   "value": 25,
+   "comment": "the animal roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc2HeadCount",
+   "value": 12,
+   "comment": "the raiment head roster ordinals of the batch"
+  },
+  {
+   "name": "cqc2BodyCount",
+   "value": 22,
+   "comment": "the raiment body roster ordinals of the batch"
+  },
+  {
+   "name": "cqc2ColorCount",
+   "value": 32,
+   "comment": "the color roster ordinals of the batch"
+  },
+  {
+   "name": "cqc2HolyDayCount",
+   "value": 14,
+   "comment": "the holy-days roster ordinals of the batch"
+  },
+  {
+   "name": "cqc2FreqCount",
+   "value": 9,
+   "comment": "the sacrifice-frequency roster ordinals of the batch"
+  },
+  {
+   "name": "cqc2FormCount",
+   "value": 22,
+   "comment": "the sacrifice-form roster ordinals of the batch"
+  },
+  {
+   "name": "cqc2PlaceCount",
+   "value": 16,
+   "comment": "the place-of-worship roster ordinals of the batch"
+  },
+  {
+   "name": "cqc2TableCount",
+   "value": 1,
+   "comment": "the batch grid count (one grid per batch round)"
+  },
+  {
+   "name": "cqc2ChainCount",
+   "value": 0,
+   "comment": "the batch chain count (the chart grids carry no chains)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cqc2HasturSkyBluePrint",
+   "value": true,
+   "comment": "the headline divergence: the print reads sky blue for the Hastur raiment color where the L&L transcription reads yellow-orange - pinned by print, eyeball flag"
+  },
+  {
+   "name": "cqc2GraySpelledWithA",
+   "value": true,
+   "comment": "the print spells the Ithaqua and Shub-Niggurath colors gray - the L&L voice reads grey, the print pinned"
+  },
+  {
+   "name": "cqc2CthulhuPlaceNoGloss",
+   "value": true,
+   "comment": "the L&L <sea caves> gloss on the Cthulhu place of worship is a 5th-print addition, absent from the 2nd print - a noted divergence, not pinned"
+  },
+  {
+   "name": "cqc2ChartPrintsCthuga",
+   "value": true,
+   "comment": "the chart print reads Cthuga where the deity write-up and the R856 walk pin Cthugha - the chart garble noted, the write-up spelling rides the roster row"
+  },
+  {
+   "name": "cqc2TlGlyphGarbles",
+   "value": true,
+   "comment": "the rotated pass garbles the Huehueteotl and Tlazolteotl names with the ! glyph standing in for tl - the L&L voice restores the names"
+  },
+  {
+   "name": "cqc2FeiLienSpaceRestored",
+   "value": true,
+   "comment": "the rotated pass merges the Fei Lien name (FeiLien) - the space restored from the L&L voice"
+  },
+  {
+   "name": "cqc2SemicolonSpheres",
+   "value": true,
+   "comment": "the multi-word spheres read semicolons in print (bats; evil, life; love; water, gambling; chance) - the L&L voice agrees here, both voices pinned"
+  },
+  {
+   "name": "cqc2ChineseNoNonHuman",
+   "value": true,
+   "comment": "the Chinese pantheon rows carry no non-human clerics X"
+  },
+  {
+   "name": "cqc2EveryRowMale",
+   "value": true,
+   "comment": "every batch two row reads a male-clerics X"
+  },
+  {
+   "name": "cqc2CthulhuAllNonHuman",
+   "value": true,
+   "comment": "every Cthulhu mythos row reads a non-human clerics X"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the clerical chart batch two grid",
+   "tag": "cqc2Chart",
+   "cols": [
+    "cqc2ChartOrd",
+    "cqc2ChartSphere",
+    "cqc2ChartAnimal",
+    "cqc2ChartM",
+    "cqc2ChartF",
+    "cqc2ChartNh",
+    "cqc2ChartHead",
+    "cqc2ChartBody",
+    "cqc2ChartColor",
+    "cqc2ChartHolyday",
+    "cqc2ChartFreq",
+    "cqc2ChartForm",
+    "cqc2ChartPlace"
+   ],
+   "col_comments": [
+    "The row ordinals (0-34, the batch walk order: Central American 0-11, Chinese 12-26, Cthulhu 27-34)",
+    "The sphere-of-control roster ordinals (the labels ride the data file)",
+    "The animal roster ordinals (the n/a rows ride the roster)",
+    "The male clerics flag (the printed X reads 1)",
+    "The female clerics flag (the printed X reads 1)",
+    "The non-human clerics flag (the printed X reads 1; the Chinese pantheon reads none)",
+    "The raiment head roster ordinals",
+    "The raiment body roster ordinals (the n/a rows ride the roster)",
+    "The color roster ordinals (the Hastur sky blue is the round divergence pin)",
+    "The holy-days roster ordinals (the n/a rows ride the roster)",
+    "The sacrifice-frequency roster ordinals",
+    "The sacrifice-form roster ordinals",
+    "The place-of-worship roster ordinals"
+   ],
+   "count": "cqc2Rows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     1,
+     2,
+     1
+    ],
+    [
+     3,
+     3,
+     3,
+     1,
+     1,
+     0,
+     3,
+     0,
+     3,
+     3,
+     1,
+     3,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     1,
+     1,
+     1,
+     2,
+     2,
+     4,
+     3,
+     2,
+     4,
+     2
+    ],
+    [
+     5,
+     5,
+     5,
+     1,
+     0,
+     0,
+     0,
+     3,
+     5,
+     3,
+     1,
+     5,
+     3
+    ],
+    [
+     6,
+     6,
+     6,
+     1,
+     1,
+     0,
+     0,
+     0,
+     6,
+     4,
+     3,
+     6,
+     4
+    ],
+    [
+     7,
+     7,
+     7,
+     1,
+     1,
+     1,
+     0,
+     2,
+     7,
+     3,
+     4,
+     7,
+     0
+    ],
+    [
+     8,
+     8,
+     8,
+     1,
+     1,
+     0,
+     1,
+     1,
+     8,
+     5,
+     5,
+     7,
+     0
+    ],
+    [
+     9,
+     9,
+     9,
+     1,
+     1,
+     0,
+     2,
+     0,
+     9,
+     5,
+     5,
+     8,
+     0
+    ],
+    [
+     10,
+     10,
+     10,
+     1,
+     1,
+     1,
+     0,
+     4,
+     8,
+     3,
+     1,
+     9,
+     0
+    ],
+    [
+     11,
+     11,
+     11,
+     1,
+     1,
+     0,
+     1,
+     5,
+     10,
+     3,
+     1,
+     10,
+     5
+    ],
+    [
+     12,
+     12,
+     12,
+     1,
+     1,
+     0,
+     4,
+     6,
+     1,
+     6,
+     5,
+     9,
+     0
+    ],
+    [
+     13,
+     5,
+     13,
+     1,
+     0,
+     0,
+     5,
+     7,
+     11,
+     3,
+     6,
+     11,
+     0
+    ],
+    [
+     14,
+     13,
+     14,
+     1,
+     0,
+     0,
+     6,
+     8,
+     12,
+     5,
+     5,
+     12,
+     0
+    ],
+    [
+     15,
+     9,
+     15,
+     1,
+     1,
+     0,
+     7,
+     9,
+     13,
+     5,
+     5,
+     13,
+     6
+    ],
+    [
+     16,
+     14,
+     16,
+     1,
+     1,
+     0,
+     4,
+     10,
+     14,
+     0,
+     0,
+     14,
+     0
+    ],
+    [
+     17,
+     15,
+     5,
+     1,
+     1,
+     0,
+     8,
+     7,
+     15,
+     5,
+     5,
+     13,
+     0
+    ],
+    [
+     18,
+     5,
+     17,
+     1,
+     0,
+     0,
+     7,
+     11,
+     16,
+     1,
+     0,
+     15,
+     0
+    ],
+    [
+     19,
+     16,
+     18,
+     1,
+     1,
+     0,
+     8,
+     12,
+     17,
+     1,
+     0,
+     16,
+     7
+    ],
+    [
+     20,
+     17,
+     19,
+     1,
+     0,
+     0,
+     8,
+     13,
+     18,
+     7,
+     5,
+     0,
+     0
+    ],
+    [
+     21,
+     18,
+     20,
+     1,
+     1,
+     0,
+     6,
+     14,
+     19,
+     1,
+     0,
+     9,
+     0
+    ],
+    [
+     22,
+     19,
+     21,
+     1,
+     1,
+     0,
+     9,
+     15,
+     20,
+     0,
+     0,
+     17,
+     0
+    ],
+    [
+     23,
+     20,
+     22,
+     1,
+     1,
+     0,
+     10,
+     16,
+     21,
+     7,
+     7,
+     18,
+     8
+    ],
+    [
+     24,
+     21,
+     23,
+     1,
+     0,
+     0,
+     11,
+     17,
+     22,
+     8,
+     5,
+     19,
+     0
+    ],
+    [
+     25,
+     22,
+     23,
+     1,
+     0,
+     0,
+     4,
+     18,
+     23,
+     9,
+     5,
+     20,
+     0
+    ],
+    [
+     26,
+     23,
+     24,
+     1,
+     1,
+     0,
+     4,
+     19,
+     24,
+     4,
+     8,
+     19,
+     0
+    ],
+    [
+     27,
+     24,
+     23,
+     1,
+     1,
+     1,
+     8,
+     20,
+     25,
+     10,
+     5,
+     21,
+     9
+    ],
+    [
+     28,
+     25,
+     23,
+     1,
+     0,
+     1,
+     8,
+     20,
+     26,
+     8,
+     5,
+     21,
+     10
+    ],
+    [
+     29,
+     4,
+     23,
+     1,
+     0,
+     1,
+     8,
+     20,
+     27,
+     11,
+     5,
+     21,
+     11
+    ],
+    [
+     30,
+     0,
+     23,
+     1,
+     0,
+     1,
+     8,
+     20,
+     28,
+     11,
+     5,
+     21,
+     12
+    ],
+    [
+     31,
+     26,
+     23,
+     1,
+     0,
+     1,
+     8,
+     20,
+     29,
+     12,
+     5,
+     21,
+     13
+    ],
+    [
+     32,
+     27,
+     23,
+     1,
+     0,
+     1,
+     8,
+     21,
+     24,
+     13,
+     1,
+     21,
+     14
+    ],
+    [
+     33,
+     28,
+     23,
+     1,
+     0,
+     1,
+     8,
+     20,
+     30,
+     10,
+     5,
+     21,
+     15
+    ],
+    [
+     34,
+     29,
+     23,
+     1,
+     1,
+     1,
+     8,
+     20,
+     31,
+     8,
+     5,
+     21,
+     15
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the batch rows, the pantheon counts, the roster counts, the cleric flags)",
+   "expr": "m['cqc2Round']() != 870 or m['cqc2Batch']() != 2 or m['cqc2PrintStart']() != 136 or m['cqc2PrintEnd']() != 137 or m['cqc2Rows']() != 35 or m['cqc2CARows']() != 12 or m['cqc2ChineseRows']() != 15 or m['cqc2CthulhuRows']() != 8 or m['cqc2MaleRows']() != 35 or m['cqc2FemaleRows']() != 22 or m['cqc2NonHumanRows']() != 12 or m['cqc2PrintedColumns']() != 13 or m['cqc2SphereCount']() != 30 or m['cqc2AnimalCount']() != 25 or m['cqc2HeadCount']() != 12 or m['cqc2BodyCount']() != 22 or m['cqc2ColorCount']() != 32 or m['cqc2HolyDayCount']() != 14 or m['cqc2FreqCount']() != 9 or m['cqc2FormCount']() != 22 or m['cqc2PlaceCount']() != 16 or m['cqc2TableCount']() != 1 or m['cqc2ChainCount']() != 0"
+  },
+  {
+   "note": "the parity pins (the headline Hastur divergence, the spelling pins, the chart garbles)",
+   "expr": "m['cqc2HasturSkyBluePrint']() != 1 or m['cqc2GraySpelledWithA']() != 1 or m['cqc2CthulhuPlaceNoGloss']() != 1 or m['cqc2ChartPrintsCthuga']() != 1 or m['cqc2TlGlyphGarbles']() != 1 or m['cqc2FeiLienSpaceRestored']() != 1 or m['cqc2SemicolonSpheres']() != 1 or m['cqc2ChineseNoNonHuman']() != 1 or m['cqc2EveryRowMale']() != 1 or m['cqc2CthulhuAllNonHuman']() != 1"
+  },
+  {
+   "note": "the head and tail rows (Quetzalcoatl 0, Yog-Sothoth 34, the ordinals run)",
+   "expr": "m['cqc2ChartOrd'](0) != 0 or m['cqc2ChartOrd'](34) != 34 or m['cqc2ChartSphere'](0) != 0 or m['cqc2ChartAnimal'](0) != 0 or m['cqc2ChartM'](0) != 1 or m['cqc2ChartF'](0) != 1 or m['cqc2ChartPlace'](0) != 0 or m['cqc2ChartSphere'](34) != 29 or m['cqc2ChartM'](34) != 1 or m['cqc2ChartF'](34) != 1 or m['cqc2ChartNh'](34) != 1 or m['cqc2ChartHolyday'](34) != 8 or m['cqc2ChartPlace'](34) != 15"
+  },
+  {
+   "note": "the Central American rows (the semicolon spheres, the waning-moon frequency, the active volcanoes)",
+   "expr": "m['cqc2ChartSphere'](1) != 1 or m['cqc2ChartHead'](1) != 1 or m['cqc2ChartSphere'](2) != 2 or m['cqc2ChartNh'](2) != 1 or m['cqc2ChartSphere'](3) != 3 or m['cqc2ChartBody'](3) != 0 or m['cqc2ChartColor'](4) != 4 or m['cqc2ChartFreq'](4) != 2 or m['cqc2ChartForm'](4) != 4 or m['cqc2ChartPlace'](4) != 2 or m['cqc2ChartF'](5) != 0 or m['cqc2ChartForm'](5) != 5 or m['cqc2ChartPlace'](5) != 3 or m['cqc2ChartFreq'](6) != 3 or m['cqc2ChartForm'](6) != 6 or m['cqc2ChartPlace'](6) != 4 or m['cqc2ChartColor'](7) != 7 or m['cqc2ChartSphere'](8) != 8 or m['cqc2ChartBody'](8) != 1 or m['cqc2ChartAnimal'](9) != 9 or m['cqc2ChartBody'](10) != 4 or m['cqc2ChartNh'](10) != 1 or m['cqc2ChartSphere'](11) != 11 or m['cqc2ChartBody'](11) != 5 or m['cqc2ChartPlace'](11) != 5"
+  },
+  {
+   "note": "the Chinese rows (the bald heads, the splint mail, the before-war frequencies)",
+   "expr": "m['cqc2ChartBody'](12) != 6 or m['cqc2ChartHolyday'](12) != 6 or m['cqc2ChartF'](13) != 0 or m['cqc2ChartFreq'](13) != 6 or m['cqc2ChartForm'](13) != 11 or m['cqc2ChartSphere'](14) != 13 or m['cqc2ChartHead'](14) != 6 or m['cqc2ChartForm'](14) != 12 or m['cqc2ChartPlace'](15) != 6 or m['cqc2ChartSphere'](16) != 14 or m['cqc2ChartBody'](16) != 10 or m['cqc2ChartSphere'](17) != 15 or m['cqc2ChartBody'](17) != 7 or m['cqc2ChartNh'](18) != 0 or m['cqc2ChartBody'](18) != 11 or m['cqc2ChartBody'](19) != 12 or m['cqc2ChartPlace'](19) != 7 or m['cqc2ChartSphere'](20) != 17 or m['cqc2ChartColor'](20) != 18 or m['cqc2ChartHead'](22) != 9 or m['cqc2ChartForm'](22) != 17 or m['cqc2ChartFreq'](23) != 7 or m['cqc2ChartPlace'](23) != 8 or m['cqc2ChartHead'](24) != 11 or m['cqc2ChartColor'](24) != 22 or m['cqc2ChartHolyday'](25) != 9 or m['cqc2ChartForm'](25) != 20 or m['cqc2ChartAnimal'](26) != 24 or m['cqc2ChartColor'](26) != 24"
+  },
+  {
+   "note": "the Cthulhu rows (the sky blue pin, the bare n/a raiment, the human sacrifices)",
+   "expr": "m['cqc2ChartColor'](27) != 25 or m['cqc2ChartPlace'](27) != 9 or m['cqc2ChartSphere'](28) != 25 or m['cqc2ChartNh'](28) != 1 or m['cqc2ChartColor'](29) != 27 or m['cqc2ChartFreq'](29) != 5 or m['cqc2ChartPlace'](29) != 11 or m['cqc2ChartColor'](30) != 28 or m['cqc2ChartHolyday'](30) != 11 or m['cqc2ChartPlace'](30) != 12 or m['cqc2ChartSphere'](31) != 26 or m['cqc2ChartColor'](31) != 29 or m['cqc2ChartPlace'](31) != 13 or m['cqc2ChartSphere'](32) != 27 or m['cqc2ChartBody'](32) != 21 or m['cqc2ChartHolyday'](32) != 13 or m['cqc2ChartFreq'](32) != 1 or m['cqc2ChartColor'](33) != 30 or m['cqc2ChartColor'](34) != 31"
+  },
+  {
+   "note": "the cleric flags (the female and non-human census cells)",
+   "expr": "m['cqc2ChartF'](1) != 1 or m['cqc2ChartF'](5) != 0 or m['cqc2ChartF'](13) != 0 or m['cqc2ChartF'](18) != 0 or m['cqc2ChartF'](24) != 0 or m['cqc2ChartF'](25) != 0 or m['cqc2ChartF'](27) != 1 or m['cqc2ChartF'](34) != 1 or m['cqc2ChartNh'](3) != 0 or m['cqc2ChartNh'](12) != 0 or m['cqc2ChartNh'](27) != 1 or m['cqc2ChartNh'](28) != 1 or m['cqc2ChartNh'](30) != 1 or m['cqc2ChartNh'](32) != 1 or m['cqc2ChartNh'](33) != 1"
+  }
+ ],
+ "header_sections": {
+  "the batch two census": [
+   {
+    "kind": "const",
+    "name": "cqc2Round"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2Batch"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2PrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2PrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2Rows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2CARows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2ChineseRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2CthulhuRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2MaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2FemaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2NonHumanRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2PrintedColumns"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2SphereCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2AnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2HeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2BodyCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2ColorCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2HolyDayCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2FreqCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2FormCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2PlaceCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2TableCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc2ChainCount"
+   }
+  ],
+  "the clerical chart batch two grid": [
+   {
+    "kind": "table",
+    "name": "the clerical chart batch two grid"
+   }
+  ],
+  "the parity pins": [
+   {
+    "kind": "bool",
+    "name": "cqc2HasturSkyBluePrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc2GraySpelledWithA"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc2CthulhuPlaceNoGloss"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc2ChartPrintsCthuga"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc2TlGlyphGarbles"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc2FeiLienSpaceRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc2SemicolonSpheres"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc2ChineseNoNonHuman"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc2EveryRowMale"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc2CthulhuAllNonHuman"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_clerical_chart_2.txt",
+   "content": "The DDG print pp. 136-137 clerical quick-reference chart rows -\nbatch two (Central American, Chinese, Cthulhu; the Cthulhu tail\nrides the next pdf page head). The per-column rosters (first-appearance\nordinals = the grid cells) and the printed rows. Primary ink: the\nrotated tesseract pass; the collation voice: the 1eonline L&L\nper-deity chart rows.\n== the sphere roster (30) ==\n00 air\n01 fate\n02 bats; evil\n03 life; love; water\n04 fire\n05 war\n06 healing\n07 death\n08 sun\n09 rain\n10 vice\n11 gambling; chance\n12 leadership\n13 archery\n14 truth\n15 wind\n16 mercy\n17 foul weather\n18 epidemics\n19 thieving\n20 sea\n21 space\n22 thunderstorms\n23 dead\n24 water\n25 chaos\n26 air (cold)\n27 evil knowledge\n28 procreation\n29 gates\n== the animal roster (25) ==\n00 snake\n01 lizard\n02 bat\n03 fish\n04 phoenix\n05 eagle\n06 any bird\n07 dog\n08 jaguar\n09 deer\n10 ocelot\n11 monkey\n12 sparrow\n13 tiger\n14 elephant\n15 seagull\n16 fox\n17 pegasus\n18 nightingale\n19 raven\n20 carrion bird\n21 mockingbird\n22 whale\n23 n/a\n24 winterhawk\n== the head roster (12) ==\n00 feathered helm\n01 jeweled helm\n02 leather helm\n03 shell helm\n04 bald\n05 helm\n06 pointed cap\n07 war helm\n08 bare\n09 pocketed hat\n10 green cap\n11 face-covering helm\n== the body roster (22) ==\n00 feathered cloak\n01 feathered kilt\n02 leather armor\n03 metal armor\n04 expensive kilt\n05 feathered vest\n06 tattered robes\n07 splint mail\n08 leather vest\n09 gray robe\n10 rich robes\n11 red splint mail\n12 green satin\n13 black leather\n14 padded tunic\n15 pocketed tunic\n16 tunic\n17 black splint mail\n18 silver belt\n19 black tunic\n20 n/a\n21 black clothes\n== the color roster (32) ==\n00 lemon yellow\n01 gold\n02 saffron\n03 jade green\n04 cherry red\n05 scarlet\n06 yellow\n07 maroon\n08 orange\n09 ash gray\n10 copper\n11 blood red\n12 green\n13 blue\n14 white\n15 pale blue\n16 red\n17 pale green\n18 deep gray\n19 muddy yellow\n20 silver\n21 sea green\n22 midnight blue\n23 steel\n24 inky black\n25 yellow-gray\n26 blue-olive\n27 yellow-orange\n28 sky blue\n29 light gray\n30 dark gray\n31 black-green\n== the holyday roster (14) ==\n00 new moon\n01 full moon\n02 quarter moon\n03 n/a\n04 equinox\n05 spring equinox\n06 first day of spring\n07 fall equinox\n08 winter solstice\n09 rainy season\n10 summer solstice\n11 midsummer's day\n12 midwinter's day\n13 solar eclipses\n== the freq roster (9) ==\n00 monthly\n01 varies\n02 waning moon\n03 spring\n04 new moon\n05 annually\n06 before war\n07 before ocean voyages\n08 semiannually\n== the form roster (22) ==\n00 gold\n01 precious metals\n02 insects\n03 jade\n04 humans, precious metals\n05 human heart\n06 burnt herbs, squirrels\n07 human hearts\n08 human babies\n09 gems\n10 flowers\n11 ritual weapons\n12 golden arrows\n13 spilt wine\n14 crafted items\n15 war prizes\n16 requests\n17 stolen items\n18 precious objects\n19 burnt offerings\n20 silver coins\n21 human\n== the place roster (16) ==\n00 temple\n01 caves\n02 active volcanoes\n03 battlefield\n04 gardens, fields\n05 anywhere\n06 fields, temple\n07 temple, home\n08 temple, ship\n09 underwater caverns\n10 mountain caverns\n11 volcanic slopes\n12 caverns\n13 frozen wasteland\n14 underground\n15 deep caverns\n\n== the printed rows ==\nQuetzalcoatl :: air | snake | X X - | feathered helm | feathered cloak | lemon yellow | new moon | monthly | gold | temple\nCamaxtli :: fate | lizard | X X - | jeweled helm | feathered kilt | gold | full moon | monthly | precious metals | temple\nCamazotz :: bats; evil | bat | X X X | leather helm | leather armor | saffron | quarter moon | varies | insects | caves\nChalchiuhtlicue :: life; love; water | fish | X X - | shell helm | feathered cloak | jade green | n/a | varies | jade | temple\nHuehueteotl :: fire | phoenix | X X X | leather helm | leather armor | cherry red | n/a | waning moon | humans, precious metals | active volcanoes\nHuitzilopochtli :: war | eagle | X - - | feathered helm | metal armor | scarlet | n/a | varies | human heart | battlefield\nItzamna :: healing | any bird | X X - | feathered helm | feathered cloak | yellow | equinox | spring | burnt herbs, squirrels | gardens, fields\nMictlantecuhtli :: death | dog | X X X | feathered helm | leather armor | maroon | n/a | new moon | human hearts | temple\nTezcatlipoca :: sun | jaguar | X X - | jeweled helm | feathered kilt | orange | spring equinox | annually | human hearts | temple\nTlaloc :: rain | deer | X X - | leather helm | feathered cloak | ash gray | spring equinox | annually | human babies | temple\nTlazolteotl :: vice | ocelot | X X X | feathered helm | expensive kilt | orange | n/a | varies | gems | temple\nXochipilli :: gambling; chance | monkey | X X - | jeweled helm | feathered vest | copper | n/a | varies | flowers | anywhere\nShang-Ti :: leadership | sparrow | X X - | bald | tattered robes | gold | first day of spring | annually | gems | temple\nChao Kung Ming :: war | tiger | X - - | helm | splint mail | blood red | n/a | before war | ritual weapons | temple\nChih-Chiang Fyu-Ya :: archery | elephant | X - - | pointed cap | leather vest | green | spring equinox | annually | golden arrows | temple\nChih Sung-Tzu :: rain | seagull | X X - | war helm | gray robe | blue | spring equinox | annually | spilt wine | fields, temple\nChung Kuel :: truth | fox | X X - | bald | rich robes | white | new moon | monthly | crafted items | temple\nFei Lien & Feng Po :: wind | eagle | X X - | bare | splint mail | pale blue | spring equinox | annually | spilt wine | temple\nHuan-Ti :: war | pegasus | X - - | war helm | red splint mail | red | full moon | monthly | war prizes | temple\nKuan Yin :: mercy | nightingale | X X - | bare | green satin | pale green | full moon | monthly | requests | temple, home\nLei Kung :: foul weather | raven | X - - | bare | black leather | deep gray | fall equinox | annually | gold | temple\nLu Yueh :: epidemics | carrion bird | X X - | pointed cap | padded tunic | muddy yellow | full moon | monthly | gems | temple\nNo Cha :: thieving | mockingbird | X X - | pocketed hat | pocketed tunic | silver | new moon | monthly | stolen items | temple\nShan Hai Ching :: sea | whale | X X - | green cap | tunic | sea green | fall equinox | before ocean voyages | precious objects | temple, ship\nTou Mu :: space | n/a | X - - | face-covering helm | black splint mail | midnight blue | winter solstice | annually | burnt offerings | temple\nWen Chung :: thunderstorms | n/a | X - - | bald | silver belt | steel | rainy season | annually | silver coins | temple\nYen-Wang-Yeh :: dead | winterhawk | X X - | bald | black tunic | inky black | equinox | semiannually | burnt offerings | temple\nCthulhu :: water | n/a | X X X | bare | n/a | yellow-gray | summer solstice | annually | human | underwater caverns\nAzathoth :: chaos | n/a | X - X | bare | n/a | blue-olive | winter solstice | annually | human | mountain caverns\nCthugha :: fire | n/a | X - X | bare | n/a | yellow-orange | midsummer's day | annually | human | volcanic slopes\nHastur :: air | n/a | X - X | bare | n/a | sky blue | midsummer's day | annually | human | caverns\nIthaqua :: air (cold) | n/a | X - X | bare | n/a | light gray | midwinter's day | annually | human | frozen wasteland\nNyarlathotep :: evil knowledge | n/a | X - X | bare | black clothes | inky black | solar eclipses | varies | human | underground\nShub-Niggurath :: procreation | n/a | X - X | bare | n/a | dark gray | summer solstice | annually | human | deep caverns\nYog-Sothoth :: gates | n/a | X X X | bare | n/a | black-green | winter solstice | annually | human | deep caverns\n"
+  }
+ ],
+ "inline_count": 46
+}

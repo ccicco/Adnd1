@@ -1,0 +1,234 @@
+The DDG print pp. 136-137 clerical quick-reference chart rows -
+batch two (Central American, Chinese, Cthulhu; the Cthulhu tail
+rides the next pdf page head). The per-column rosters (first-appearance
+ordinals = the grid cells) and the printed rows. Primary ink: the
+rotated tesseract pass; the collation voice: the 1eonline L&L
+per-deity chart rows.
+== the sphere roster (30) ==
+00 air
+01 fate
+02 bats; evil
+03 life; love; water
+04 fire
+05 war
+06 healing
+07 death
+08 sun
+09 rain
+10 vice
+11 gambling; chance
+12 leadership
+13 archery
+14 truth
+15 wind
+16 mercy
+17 foul weather
+18 epidemics
+19 thieving
+20 sea
+21 space
+22 thunderstorms
+23 dead
+24 water
+25 chaos
+26 air (cold)
+27 evil knowledge
+28 procreation
+29 gates
+== the animal roster (25) ==
+00 snake
+01 lizard
+02 bat
+03 fish
+04 phoenix
+05 eagle
+06 any bird
+07 dog
+08 jaguar
+09 deer
+10 ocelot
+11 monkey
+12 sparrow
+13 tiger
+14 elephant
+15 seagull
+16 fox
+17 pegasus
+18 nightingale
+19 raven
+20 carrion bird
+21 mockingbird
+22 whale
+23 n/a
+24 winterhawk
+== the head roster (12) ==
+00 feathered helm
+01 jeweled helm
+02 leather helm
+03 shell helm
+04 bald
+05 helm
+06 pointed cap
+07 war helm
+08 bare
+09 pocketed hat
+10 green cap
+11 face-covering helm
+== the body roster (22) ==
+00 feathered cloak
+01 feathered kilt
+02 leather armor
+03 metal armor
+04 expensive kilt
+05 feathered vest
+06 tattered robes
+07 splint mail
+08 leather vest
+09 gray robe
+10 rich robes
+11 red splint mail
+12 green satin
+13 black leather
+14 padded tunic
+15 pocketed tunic
+16 tunic
+17 black splint mail
+18 silver belt
+19 black tunic
+20 n/a
+21 black clothes
+== the color roster (32) ==
+00 lemon yellow
+01 gold
+02 saffron
+03 jade green
+04 cherry red
+05 scarlet
+06 yellow
+07 maroon
+08 orange
+09 ash gray
+10 copper
+11 blood red
+12 green
+13 blue
+14 white
+15 pale blue
+16 red
+17 pale green
+18 deep gray
+19 muddy yellow
+20 silver
+21 sea green
+22 midnight blue
+23 steel
+24 inky black
+25 yellow-gray
+26 blue-olive
+27 yellow-orange
+28 sky blue
+29 light gray
+30 dark gray
+31 black-green
+== the holyday roster (14) ==
+00 new moon
+01 full moon
+02 quarter moon
+03 n/a
+04 equinox
+05 spring equinox
+06 first day of spring
+07 fall equinox
+08 winter solstice
+09 rainy season
+10 summer solstice
+11 midsummer's day
+12 midwinter's day
+13 solar eclipses
+== the freq roster (9) ==
+00 monthly
+01 varies
+02 waning moon
+03 spring
+04 new moon
+05 annually
+06 before war
+07 before ocean voyages
+08 semiannually
+== the form roster (22) ==
+00 gold
+01 precious metals
+02 insects
+03 jade
+04 humans, precious metals
+05 human heart
+06 burnt herbs, squirrels
+07 human hearts
+08 human babies
+09 gems
+10 flowers
+11 ritual weapons
+12 golden arrows
+13 spilt wine
+14 crafted items
+15 war prizes
+16 requests
+17 stolen items
+18 precious objects
+19 burnt offerings
+20 silver coins
+21 human
+== the place roster (16) ==
+00 temple
+01 caves
+02 active volcanoes
+03 battlefield
+04 gardens, fields
+05 anywhere
+06 fields, temple
+07 temple, home
+08 temple, ship
+09 underwater caverns
+10 mountain caverns
+11 volcanic slopes
+12 caverns
+13 frozen wasteland
+14 underground
+15 deep caverns
+
+== the printed rows ==
+Quetzalcoatl :: air | snake | X X - | feathered helm | feathered cloak | lemon yellow | new moon | monthly | gold | temple
+Camaxtli :: fate | lizard | X X - | jeweled helm | feathered kilt | gold | full moon | monthly | precious metals | temple
+Camazotz :: bats; evil | bat | X X X | leather helm | leather armor | saffron | quarter moon | varies | insects | caves
+Chalchiuhtlicue :: life; love; water | fish | X X - | shell helm | feathered cloak | jade green | n/a | varies | jade | temple
+Huehueteotl :: fire | phoenix | X X X | leather helm | leather armor | cherry red | n/a | waning moon | humans, precious metals | active volcanoes
+Huitzilopochtli :: war | eagle | X - - | feathered helm | metal armor | scarlet | n/a | varies | human heart | battlefield
+Itzamna :: healing | any bird | X X - | feathered helm | feathered cloak | yellow | equinox | spring | burnt herbs, squirrels | gardens, fields
+Mictlantecuhtli :: death | dog | X X X | feathered helm | leather armor | maroon | n/a | new moon | human hearts | temple
+Tezcatlipoca :: sun | jaguar | X X - | jeweled helm | feathered kilt | orange | spring equinox | annually | human hearts | temple
+Tlaloc :: rain | deer | X X - | leather helm | feathered cloak | ash gray | spring equinox | annually | human babies | temple
+Tlazolteotl :: vice | ocelot | X X X | feathered helm | expensive kilt | orange | n/a | varies | gems | temple
+Xochipilli :: gambling; chance | monkey | X X - | jeweled helm | feathered vest | copper | n/a | varies | flowers | anywhere
+Shang-Ti :: leadership | sparrow | X X - | bald | tattered robes | gold | first day of spring | annually | gems | temple
+Chao Kung Ming :: war | tiger | X - - | helm | splint mail | blood red | n/a | before war | ritual weapons | temple
+Chih-Chiang Fyu-Ya :: archery | elephant | X - - | pointed cap | leather vest | green | spring equinox | annually | golden arrows | temple
+Chih Sung-Tzu :: rain | seagull | X X - | war helm | gray robe | blue | spring equinox | annually | spilt wine | fields, temple
+Chung Kuel :: truth | fox | X X - | bald | rich robes | white | new moon | monthly | crafted items | temple
+Fei Lien & Feng Po :: wind | eagle | X X - | bare | splint mail | pale blue | spring equinox | annually | spilt wine | temple
+Huan-Ti :: war | pegasus | X - - | war helm | red splint mail | red | full moon | monthly | war prizes | temple
+Kuan Yin :: mercy | nightingale | X X - | bare | green satin | pale green | full moon | monthly | requests | temple, home
+Lei Kung :: foul weather | raven | X - - | bare | black leather | deep gray | fall equinox | annually | gold | temple
+Lu Yueh :: epidemics | carrion bird | X X - | pointed cap | padded tunic | muddy yellow | full moon | monthly | gems | temple
+No Cha :: thieving | mockingbird | X X - | pocketed hat | pocketed tunic | silver | new moon | monthly | stolen items | temple
+Shan Hai Ching :: sea | whale | X X - | green cap | tunic | sea green | fall equinox | before ocean voyages | precious objects | temple, ship
+Tou Mu :: space | n/a | X - - | face-covering helm | black splint mail | midnight blue | winter solstice | annually | burnt offerings | temple
+Wen Chung :: thunderstorms | n/a | X - - | bald | silver belt | steel | rainy season | annually | silver coins | temple
+Yen-Wang-Yeh :: dead | winterhawk | X X - | bald | black tunic | inky black | equinox | semiannually | burnt offerings | temple
+Cthulhu :: water | n/a | X X X | bare | n/a | yellow-gray | summer solstice | annually | human | underwater caverns
+Azathoth :: chaos | n/a | X - X | bare | n/a | blue-olive | winter solstice | annually | human | mountain caverns
+Cthugha :: fire | n/a | X - X | bare | n/a | yellow-orange | midsummer's day | annually | human | volcanic slopes
+Hastur :: air | n/a | X - X | bare | n/a | sky blue | midsummer's day | annually | human | caverns
+Ithaqua :: air (cold) | n/a | X - X | bare | n/a | light gray | midwinter's day | annually | human | frozen wasteland
+Nyarlathotep :: evil knowledge | n/a | X - X | bare | black clothes | inky black | solar eclipses | varies | human | underground
+Shub-Niggurath :: procreation | n/a | X - X | bare | n/a | dark gray | summer solstice | annually | human | deep caverns
+Yog-Sothoth :: gates | n/a | X X X | bare | n/a | black-green | winter solstice | annually | human | deep caverns

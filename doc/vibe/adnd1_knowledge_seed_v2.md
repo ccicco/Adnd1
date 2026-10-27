@@ -25231,6 +25231,67 @@ pool[item[name]]. ddg gap 20/24 closed, 4 open
 NEXT: App 3 the clerical chart pp. 134-142 (the
 big tabular tail, likely multiple rounds) or
 Curtiss's call - WAIT FOR GO.
+- R869 LANDED 2026-10-26: commit
+7ced16344157530ffbf05f1b97ec80624f28e140 (pushed
+06c35eb..7ced163, census 791 -> 792), APPENDIX 3 THE
+CLERICAL CHART, BATCH ONE - the D&DG walk round
+twenty-one, print pp. 134-135: the chart intro/legend
+doctrine (quick-reference purpose,
+alphabetical-within-pantheon with the most important
+first, guidelines-only, rank-by-color, the
+ordained-anytime rule, the six field definitions with the
+acknowledgement-is-not-granting caveat) plus the FIRST
+BATCH of deity rows - American Indian (9), Babylonian (8),
+Celtic (12) - as the round's one grid (29 rows, 13 cols:
+Ord, the nine string-field roster ordinals, the M/F/N-H
+flags) with the nine per-column rosters riding
+doc/data/ddg_clerical_chart_1.txt; prefix cqc (full-repo
+scan clean); header rules/cqc.h; audit "R869 clerical
+chart batch one audit", rode rules/audits/r869_batch.h. NO
+GAP FLIP - the App 3 box stays open until the last chart
+batch (the first no-flip round; gap_flips: [] is legal,
+gap census 20/4 unchanged). THE PRINT VOICE: the chart
+prints LANDSCAPE - the committed psm-4 pass is 90-degree
+garbage and the IA 1st-print scan is 180-flipped (decoded
+with noise: uoow=moon); the voice is the ROTATED tesseract
+pass (pdftoppm -r 300 renders the pdf pages, PIL
+rotate(-90), tesseract stdout redirect), committed 97fcaac
+(pdf 136-143) + 06c35eb (pdf 135, the App 2 page's rotated
+block) after TWO zero-byte stray commits (c7ced34, 23af32b
+- the tesseract output-base .txt-APPEND trap doubles the
+extension and the empty files ride the commit; the fix:
+stdout redirect; and the pg-*.png were missing,
+regenerated via poppler). THE COLLATION VOICE: the
+1eonline L&L per-deity chart rows (12 values after the
+Place of Worship header line; the mml.htm slug for
+Manannan Mac Lir; urllib is 406-blocked, curl works). THE
+HEADLINE ADJUDICATIONS: the DRUAGA FEMALE-CLERICS X - the
+print reads two X marks (M and F) where the L&L voice
+reads male-only - pinned by print, eyeball flag (the
+Gawaine 112 precedent); the sphere semicolons pinned by
+print (Heng thunder; weather, Hotoru wind; weather, Ishtar
+love; war, Marduk cities; weather, Brigit fire; poetry -
+the L&L transcription normalizes to commas); the
+Hastsezini jode green = jade green (L&L); the Arawn at
+death frequency (the fold); the Lugh Ltugh print garble;
+the Silvanus stray quote glyph noted; and the chart
+carries NO ARTHURIAN BLOCK (the Arthurian section is
+heroes-only - the batch order runs American Indian,
+Babylonian, Celtic). ZERO registry defs touched - the
+floor holds at 995. Spec tools/spec_r869.json, md5
+ca2f5f4ed13cbdc0453570e05df41ad9 (31,794 bytes); 57
+inlines (24 consts, 20 bools, 13 table cols), 10 examples;
+rverify double-run GREEN, 421 mutants 0 missed; hyphen
+scan clean; zero True/False tokens in the emitted files;
+the R865 bool-operator rule held first-try. BUILDER
+LESSON: hand-guessed roster ordinals in example exprs are
+a losing bet - derive every grid-cell term from the
+computed rosters (a chk(name, field) helper building
+m[...](row) != code from ROWS/CODES); the audit mirror
+caught all 8 wrong-ordinal examples pre-publish. NEXT: the
+App 3 chart batches continue from Central American +
+Chinese + Cthulhu (pdf pp. 136-137) or Curtiss's call -
+WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
