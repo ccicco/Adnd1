@@ -25471,6 +25471,53 @@ pattern held first-try; the canvas spec-r873 gated
 byte-exact (frontmatter + spec bytes, no extra newline).
 NEXT: the App 3 chart batches continue from Nehwon (pdf
 141) or Curtiss's call - WAIT FOR GO.
+- R874 LANDED 2026-10-27: commit
+bb7ff6330d1b90f983ae1fe981243384eed2db28 (pushed
+397b33b..bb7ff63, census 796 -> 797), APPENDIX 3 THE
+CLERICAL CHART, BATCH SIX - the D&DG walk round
+twenty-six, print p. 141: the thirteen Nehwon deity rows
+as the round's one grid (13 rows, 13 cols: Ord, the nine
+string-field roster ordinals, the M/F/N-H flags) with the
+nine per-column rosters riding
+doc/data/ddg_clerical_chart_6.txt; prefix cqc6 (full-repo
+scan clean); header rules/cqc6.h; audit "R874 clerical
+chart batch six audit", rode rules/audits/r874_batch.h. NO
+GAP FLIP - the App 3 box stays open until the last chart
+batch (the R869 no-flip precedent; gap census 20/4
+unchanged). THE HEADLINE ADJUDICATIONS: the AARTH
+DIVERGENCE - the print reads the flags male + female only
+(the geometry seats no X at the N-H column) where the L&L
+voice reads a third X - pinned by print, eyeball flag; the
+RED GOD SPHERE - the print glyph run reads fire where the
+L&L voice reads underground areas - pinned by print (the
+red-failed hawk garble restored to red-tailed hawk, the
+redstudded fold restored to red studded leather); the HATE
+PLACE - the print reads the single word underground (the
+garble restored) where the L&L voice adds temple - pinned
+by print; the EARTH GOD NAME - the rotated pass reads
+Earth God but the row sorts after Kos (the N of Nehwon)
+and the R863 prose name carries the prefix - pinned Nehwon
+Earth God; the RAT GOD GEOMETRY - the X pair at M and N-H,
+none at F (the L&L voice agrees); the TYAA female-only
+flag (the single X at the F column, the L&L voice agrees);
+the Gods of Lankhmar year's end and Spider God summer
+solstice garbles restored; the Gods of Trouble stray dot
+noted (a print artifact, not ink). THE FLAG CLASSES: male
+12, female 11, non-human 2 (Death and the Rat God). ZERO
+registry defs touched - the floor holds at 995. Spec
+tools/spec_r874.json, md5 87cc63bfd273f47e5fde5c4b96290a1a
+(23,144 bytes, authored-plus-newline); 44 inlines (21
+consts, 10 bools, 13 table cols), 6 examples; rverify
+double-run GREEN, 200 mutants 0 missed; hyphen scan clean;
+zero true/false tokens in the emitted files; the builder
+computed every ordinal from the rosters (the R869 lesson
+held); the canvas spec-r874 gated byte-exact (frontmatter
++ spec bytes, no extra newline). NOTE: the 1eonline fetch
+needed the full Chrome UA plus the Referer header this
+round (the bare curl UA hit the Mod_Security 406 again;
+the domain is 1eonline.info, not .com). NEXT: the App 3
+chart batches continue from the Nonhumans' Deities rows
+(pdf 142) or Curtiss's call - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

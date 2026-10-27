@@ -1,0 +1,193 @@
+The DDG print p. 142 clerical quick-reference chart rows -
+batch seven (the twenty-four Nonhumans' Deities rows: the twenty
+R864 mythos beings plus Demogorgon, Surtur, Thrym and Yeenoghu
+per the R864 crossref list). The per-column rosters
+(first-appearance ordinals = the grid cells) and the printed
+rows. Primary ink: the rotated tesseract pass; the collation
+voice: the 1eonline L&L per-deity chart rows.
+
+== the sphere roster (24) ==
+00 Kuo-toa
+01 elves
+02 aquatic elves
+03 ixitxachitl
+04 locathah; mermen
+05 gnomes
+06 hill giants
+07 orcs
+08 bugbears
+09 kobolds
+10 troglodytes
+11 Drow
+12 goblins
+13 dwarves
+14 wood elves
+15 sahuagin
+16 lizard men
+17 centaurs
+18 stone giants
+19 fire giants
+20 frost giants
+21 ogres
+22 gnolls
+23 halflings
+
+== the animal roster (16) ==
+00 lobster
+01 n/a
+02 dolphin
+03 jellyfish
+04 dire wolf
+05 giant rat
+06 rook
+07 toad
+08 arachnids
+09 forest birds
+10 shark
+11 alligator
+12 cave bear
+13 hell hound
+14 white dragon
+15 dove
+
+== the head roster (11) ==
+00 shell helm
+01 silver circlet
+02 bare
+03 war helm
+04 skulls
+05 iron helm
+06 Drow helm
+07 conical hat
+08 silvered helm
+09 laurel wreath
+10 horned helm
+
+== the body roster (21) ==
+00 nets
+01 gossamer robes
+02 shell mail
+03 n/a
+04 gold belt
+05 horn armor
+06 black plate mail
+07 bare
+08 scale mail
+09 bone belt
+10 Drow tunic
+11 chain mail
+12 tree bark armor
+13 hide kilt
+14 leafy vest
+15 skins
+16 iron plate mail
+17 white fur
+18 plate mail
+19 long tunic
+20 saffron cloak
+
+== the color roster (24) ==
+00 pearl
+01 azure
+02 sea green
+03 reptile green
+04 sand
+05 gold
+06 dark brown
+07 dark red
+08 black
+09 orange
+10 topaz
+11 red & black
+12 gray-green
+13 earthy
+14 dark green
+15 gray-white
+16 blue-green
+17 tan
+18 stone gray
+19 fiery red
+20 snowy white
+21 blood red
+22 muddy yellow
+23 yellow-green
+
+== the holyday roster (10) ==
+00 new moon
+01 quarter moon
+02 highest & lowest tides
+03 n/a
+04 full moon
+05 crescent moon
+06 midwinter's day
+07 equinox
+08 midsummer's day
+09 5th day of the week
+
+== the freq roster (6) ==
+00 monthly
+01 varies
+02 n/a
+03 annually
+04 semiannually
+05 weekly
+
+== the form roster (15) ==
+00 gems, pearls, humans, lobsters
+01 beautiful objects
+02 precious natural objects
+03 n/a
+04 gold
+05 blood
+06 enemies
+07 burnt humans
+08 enemies & riches
+09 hearts
+10 melted metals
+11 carved items
+12 hunting prizes
+13 ritual hunt, dances
+14 food offering
+
+== the place roster (15) ==
+00 underwater shrines
+01 natural geological formations
+02 undersea coral temples
+03 n/a
+04 dens
+05 cave halls
+06 lairs
+07 cave temples
+08 natural caverns
+09 underground marble temples
+10 forges & hearths
+11 tree platforms
+12 stone shrines
+13 large groves
+14 homes
+
+== the printed rows ==
+Blibdoolpoolp :: Kuo-toa | lobster | - - X | shell helm | nets | pearl | new moon | monthly | gems, pearls, humans, lobsters | underwater shrines
+Corellon Larethian :: elves | n/a | - - X | silver circlet | gossamer robes | azure | quarter moon | monthly | beautiful objects | natural geological formations
+Deep Sashelas :: aquatic elves | dolphin | - - X | bare | shell mail | sea green | highest & lowest tides | varies | precious natural objects | undersea coral temples
+Demogorgon :: ixitxachitl | n/a | - - X | bare | n/a | reptile green | n/a | n/a | n/a | n/a
+Eadro :: locathah; mermen | jellyfish | - - X | bare | n/a | sand | n/a | n/a | n/a | dens
+Garl Glittergold :: gnomes | n/a | - - X | war helm | gold belt | gold | new moon | monthly | gold | cave halls
+Grolantor :: hill giants | dire wolf | - - X | skulls | horn armor | dark brown | n/a | n/a | n/a | n/a
+Gruumsh :: orcs | giant rat | - - X | war helm | black plate mail | dark red | new moon | monthly | blood | lairs
+Hruggek :: bugbears | n/a | - - X | skulls | bare | black | full moon | monthly | blood | cave halls
+Kurtulmak :: kobolds | rook | - - X | iron helm | scale mail | orange | crescent moon | monthly | enemies | cave temples
+Laogzed :: troglodytes | toad | - - X | bare | bone belt | topaz | midwinter's day | annually | burnt humans | natural caverns
+Lolth :: Drow | arachnids | - - X | Drow helm | Drow tunic | red & black | full moon | monthly | enemies & riches | underground marble temples
+Maglubiyet :: goblins | n/a | - - X | conical hat | scale mail | gray-green | new moon | monthly | hearts | cave temples
+Moradin :: dwarves | n/a | - - X | silvered helm | chain mail | earthy | crescent moon | monthly | melted metals | forges & hearths
+Rillifane Rallathil :: wood elves | forest birds | - - X | laurel wreath | tree bark armor | dark green | equinox | semiannually | carved items | tree platforms
+Sekolah :: sahuagin | shark | - - X | bare | n/a | gray-white | highest & lowest tides | varies | enemies | natural caverns
+Semuanya :: lizard men | alligator | - - X | bare | hide kilt | blue-green | full moon | monthly | hunting prizes | stone shrines
+Skerrit :: centaurs | n/a | - - X | bare | leafy vest | tan | full moon | monthly | ritual hunt, dances | large groves
+Skoraeus Stonebones :: stone giants | cave bear | - - X | bare | skins | stone gray | n/a | n/a | n/a | n/a
+Surtur :: fire giants | hell hound | - - X | war helm | iron plate mail | fiery red | midsummer's day | n/a | n/a | n/a
+Thrym :: frost giants | white dragon | - - X | horned helm | white fur | snowy white | midwinter's day | n/a | n/a | n/a
+Vaprak :: ogres | n/a | - - X | war helm | plate mail | blood red | n/a | n/a | n/a | dens
+Yeenoghu :: gnolls | n/a | - - X | skulls | long tunic | muddy yellow | quarter moon | monthly | blood | cave temples
+Yondalla :: halflings | dove | - - X | bare | saffron cloak | yellow-green | 5th day of the week | weekly | food offering | homes

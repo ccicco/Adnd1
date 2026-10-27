@@ -1,0 +1,807 @@
+{
+ "prefix": "cqc7",
+ "round": 875,
+ "title": "the clerical chart, batch seven",
+ "header_file": "rules/cqc7.h",
+ "audit_file": "rules/audits/r875_batch.h",
+ "audit_label": "R875 clerical chart batch seven audit",
+ "include_after": "#include \"rules/cqc6.h\"  // R874: the clerical chart, batch six",
+ "audit_anchor": "#include \"rules/audits/r874_batch.h\"  // R874: R874 clerical chart batch six audit",
+ "include_comment": "the clerical chart, batch seven",
+ "audit_comment": "APPENDIX 3: THE CLERICAL QUICK-REFERENCE CHARTS, BATCH SEVEN - the D&DG walk round twenty-seven, print p. 142: the seventh batch of deity rows - the twenty-four Nonhumans' Deities rows (the twenty R864 mythos beings plus Demogorgon, Surtur, Thrym and Yeenoghu) - riding the roster data file; the App 3 gap box stays open until the last chart batch lands. The print voice is the ROTATED tesseract pass, collated against the 1eonline L&L per-deity chart rows. The headline geometry: every row reads the N-H-only flag (all 24 X marks at the N-H column, no M or F mark in the batch).",
+ "banner": {
+  "title": "Appendix 3: the clerical quick-reference chart, batch seven - the D&DG walk round twenty-seven, print p. 142: the 24 rows of the Nonhumans' Deities across the 13 printed columns.",
+  "provenance": "primary ink: the ROTATED extract/ddg tesseract pass (pNNN_rot_full.txt + pNNN_rot_tsv.tsv, pdf page 142; the second printing); the collation voice: the 1eonline L&L per-deity chart rows (the Demogorgon and Yeenoghu MM pages carry no chart row - those two rows ride the print alone). The adjudications: the whole batch reads the N-H-only flag (the geometry seats all 24 X marks at the N-H column, no M or F mark anywhere; the L&L voice agrees on all 22 covered rows); the Sekolah, Semuanya, Skoraeus Stonebones, Surtur, Thrym and Yeenoghu name garbles restored per the R864 crossref pins (the stray 4 glyph before Surtur noted); the Deep Sashelas seqa green garble restored to sea green (the R872 Poseidon class); the Grolantor daork brown and na garbles restored; the Garl warhelm and Gruumsh waorhelm folds restored to war helm; the Gruumsh body wrap black plate mail with its underscore and dash-pair strays noted; the Lolth stray i glyph and wrap-line dot noted; the Yondalla colon glyph noted (both voices carry it); the Demogorgon color reptile green and the ixitxachitl sphere restore ride the print. The batch order runs the alphabetical Nonhumans walk (Blibdoolpoolp through Yondalla)."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R874 LANDED 2026-10-27: commit",
+ "prev_record": [
+  "- R874 LANDED 2026-10-27: commit",
+  "bb7ff6330d1b90f983ae1fe981243384eed2db28 (pushed",
+  "397b33b..bb7ff63, census 796 -> 797), APPENDIX 3 THE",
+  "CLERICAL CHART, BATCH SIX - the D&DG walk round",
+  "twenty-six, print p. 141: the thirteen Nehwon deity rows",
+  "as the round's one grid (13 rows, 13 cols: Ord, the nine",
+  "string-field roster ordinals, the M/F/N-H flags) with the",
+  "nine per-column rosters riding",
+  "doc/data/ddg_clerical_chart_6.txt; prefix cqc6 (full-repo",
+  "scan clean); header rules/cqc6.h; audit \"R874 clerical",
+  "chart batch six audit\", rode rules/audits/r874_batch.h. NO",
+  "GAP FLIP - the App 3 box stays open until the last chart",
+  "batch (the R869 no-flip precedent; gap census 20/4",
+  "unchanged). THE HEADLINE ADJUDICATIONS: the AARTH",
+  "DIVERGENCE - the print reads the flags male + female only",
+  "(the geometry seats no X at the N-H column) where the L&L",
+  "voice reads a third X - pinned by print, eyeball flag; the",
+  "RED GOD SPHERE - the print glyph run reads fire where the",
+  "L&L voice reads underground areas - pinned by print (the",
+  "red-failed hawk garble restored to red-tailed hawk, the",
+  "redstudded fold restored to red studded leather); the HATE",
+  "PLACE - the print reads the single word underground (the",
+  "garble restored) where the L&L voice adds temple - pinned",
+  "by print; the EARTH GOD NAME - the rotated pass reads",
+  "Earth God but the row sorts after Kos (the N of Nehwon)",
+  "and the R863 prose name carries the prefix - pinned Nehwon",
+  "Earth God; the RAT GOD GEOMETRY - the X pair at M and N-H,",
+  "none at F (the L&L voice agrees); the TYAA female-only",
+  "flag (the single X at the F column, the L&L voice agrees);",
+  "the Gods of Lankhmar year's end and Spider God summer",
+  "solstice garbles restored; the Gods of Trouble stray dot",
+  "noted (a print artifact, not ink). THE FLAG CLASSES: male",
+  "12, female 11, non-human 2 (Death and the Rat God). ZERO",
+  "registry defs touched - the floor holds at 995. Spec",
+  "tools/spec_r874.json, md5 87cc63bfd273f47e5fde5c4b96290a1a",
+  "(23,144 bytes, authored-plus-newline); 44 inlines (21",
+  "consts, 10 bools, 13 table cols), 6 examples; rverify",
+  "double-run GREEN, 200 mutants 0 missed; hyphen scan clean;",
+  "zero true/false tokens in the emitted files; the builder",
+  "computed every ordinal from the rosters (the R869 lesson",
+  "held); the canvas spec-r874 gated byte-exact (frontmatter",
+  "+ spec bytes, no extra newline). NOTE: the 1eonline fetch",
+  "needed the full Chrome UA plus the Referer header this",
+  "round (the bare curl UA hit the Mod_Security 406 again;",
+  "the domain is 1eonline.info, not .com). NEXT: the App 3",
+  "chart batches continue from the Nonhumans' Deities rows",
+  "(pdf 142) or Curtiss's call - WAIT FOR GO."
+ ],
+ "census_before": 797,
+ "gap_census": {
+  "closed": 20,
+  "open": 4
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "cqc7Round",
+   "value": 875,
+   "comment": "the clerical chart batch seven round: the D&DG walk round twenty-seven"
+  },
+  {
+   "name": "cqc7Batch",
+   "value": 7,
+   "comment": "the seventh chart batch (the App 3 box stays open until the last batch lands)"
+  },
+  {
+   "name": "cqc7PrintStart",
+   "value": 142,
+   "comment": "the chart batch seven print page opens at 142"
+  },
+  {
+   "name": "cqc7PrintEnd",
+   "value": 142,
+   "comment": "the chart batch seven print page closes at 142"
+  },
+  {
+   "name": "cqc7Rows",
+   "value": 24,
+   "comment": "the batch rows (the twenty-four Nonhumans' Deities rows)"
+  },
+  {
+   "name": "cqc7NonhumanRows",
+   "value": 24,
+   "comment": "the Nonhumans' Deities rows (the twenty mythos beings plus Demogorgon, Surtur, Thrym and Yeenoghu)"
+  },
+  {
+   "name": "cqc7MaleRows",
+   "value": 0,
+   "comment": "the rows reading a male-clerics X (none - the batch reads no human-cleric marks)"
+  },
+  {
+   "name": "cqc7FemaleRows",
+   "value": 0,
+   "comment": "the rows reading a female-clerics X (none)"
+  },
+  {
+   "name": "cqc7NonHumanFlagRows",
+   "value": 24,
+   "comment": "the rows reading a non-human clerics X (every row of the batch)"
+  },
+  {
+   "name": "cqc7PrintedColumns",
+   "value": 13,
+   "comment": "the printed columns of the chart (the 13 the batch grids encode)"
+  },
+  {
+   "name": "cqc7SphereCount",
+   "value": 24,
+   "comment": "the sphere-of-control roster ordinals of the batch (one sphere per row)"
+  },
+  {
+   "name": "cqc7AnimalCount",
+   "value": 16,
+   "comment": "the animal roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc7HeadCount",
+   "value": 11,
+   "comment": "the raiment head roster ordinals of the batch"
+  },
+  {
+   "name": "cqc7BodyCount",
+   "value": 21,
+   "comment": "the raiment body roster ordinals of the batch"
+  },
+  {
+   "name": "cqc7ColorCount",
+   "value": 24,
+   "comment": "the color roster ordinals of the batch (one color per row)"
+  },
+  {
+   "name": "cqc7HolyDayCount",
+   "value": 10,
+   "comment": "the holy-days roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc7FreqCount",
+   "value": 6,
+   "comment": "the sacrifice-frequency roster ordinals of the batch"
+  },
+  {
+   "name": "cqc7FormCount",
+   "value": 15,
+   "comment": "the sacrifice-form roster ordinals of the batch"
+  },
+  {
+   "name": "cqc7PlaceCount",
+   "value": 15,
+   "comment": "the place-of-worship roster ordinals of the batch"
+  },
+  {
+   "name": "cqc7TableCount",
+   "value": 1,
+   "comment": "the batch grid count (one grid per batch round)"
+  },
+  {
+   "name": "cqc7ChainCount",
+   "value": 0,
+   "comment": "the batch chain count (the chart grids carry no chains)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cqc7AllNonHumanOnly",
+   "value": true,
+   "comment": "every row of the batch reads the N-H-only flag - the geometry seats all 24 X marks at the N-H column (no M or F X anywhere) - the L&L voice agrees on all 22 covered rows"
+  },
+  {
+   "name": "cqc7NameGarblesRestored",
+   "value": true,
+   "comment": "the Sekolah, Semuanya, Skoraeus Stonebones, Surtur, Thrym and Yeenoghu name garbles restored (the R864 crossref pins); the stray 4 glyph before the Surtur name noted"
+  },
+  {
+   "name": "cqc7SeqaGreenRestored",
+   "value": true,
+   "comment": "the Deep Sashelas seqa green garble restored to sea green (the R872 Poseidon seqa class)"
+  },
+  {
+   "name": "cqc7GrolantorGarblesRestored",
+   "value": true,
+   "comment": "the Grolantor daork brown garble restored to dark brown; the na frequency garble restored to n/a"
+  },
+  {
+   "name": "cqc7WarHelmFolds",
+   "value": true,
+   "comment": "the Garl warhelm and Gruumsh waorhelm folds restored to war helm (the R874 red studded class)"
+  },
+  {
+   "name": "cqc7GruumshStrays",
+   "value": true,
+   "comment": "the Gruumsh body wraps to black plate mail; the underscore glyph at the name and the dash pair on the wrap line noted (print artifacts, not ink)"
+  },
+  {
+   "name": "cqc7LolthStrays",
+   "value": true,
+   "comment": "the Lolth name stray i glyph and the stray dot on the red and black wrap line noted (print artifacts, not ink)"
+  },
+  {
+   "name": "cqc7YondallaColonGlyph",
+   "value": true,
+   "comment": "the colon glyph before the Yondalla dove noted - both voices carry it (a shared artifact, not a field)"
+  },
+  {
+   "name": "cqc7DemogorgonPrintOnly",
+   "value": true,
+   "comment": "the Demogorgon and Yeenoghu rows ride the print voice alone (the L&L MM pages carry no chart row); the Demogorgon color reptile green and the ixitxachitl sphere garble restored ride the print"
+  },
+  {
+   "name": "cqc7NoHumanClerics",
+   "value": true,
+   "comment": "the male and female cleric columns read zero X marks across the whole batch (the nonhuman deities take nonhuman clerics only)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the clerical chart batch seven grid",
+   "tag": "cqc7Chart",
+   "cols": [
+    "cqc7ChartOrd",
+    "cqc7ChartSphere",
+    "cqc7ChartAnimal",
+    "cqc7ChartM",
+    "cqc7ChartF",
+    "cqc7ChartNh",
+    "cqc7ChartHead",
+    "cqc7ChartBody",
+    "cqc7ChartColor",
+    "cqc7ChartHolyday",
+    "cqc7ChartFreq",
+    "cqc7ChartForm",
+    "cqc7ChartPlace"
+   ],
+   "col_comments": [
+    "The row ordinals (0-23, the batch walk order: the twenty-four Nonhumans rows)",
+    "The sphere-of-control roster ordinals (the labels ride the data file; one sphere per row)",
+    "The animal roster ordinals (the n/a rows ride the roster)",
+    "The male clerics flag (the printed X reads 1; the batch reads no M marks)",
+    "The female clerics flag (the printed X reads 1; the batch reads no F marks)",
+    "The non-human clerics flag (the printed X reads 1; every row of the batch)",
+    "The raiment head roster ordinals",
+    "The raiment body roster ordinals (the wraps ride the roster labels)",
+    "The color roster ordinals (one color per row)",
+    "The holy-days roster ordinals (the n/a rows ride the roster)",
+    "The sacrifice-frequency roster ordinals",
+    "The sacrifice-form roster ordinals (the n/a rows ride the roster)",
+    "The place-of-worship roster ordinals (the wraps ride the roster labels)"
+   ],
+   "count": "cqc7Rows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     2,
+     0,
+     0,
+     1,
+     2,
+     2,
+     2,
+     2,
+     1,
+     2,
+     2
+    ],
+    [
+     3,
+     3,
+     1,
+     0,
+     0,
+     1,
+     2,
+     3,
+     3,
+     3,
+     2,
+     3,
+     3
+    ],
+    [
+     4,
+     4,
+     3,
+     0,
+     0,
+     1,
+     2,
+     3,
+     4,
+     3,
+     2,
+     3,
+     4
+    ],
+    [
+     5,
+     5,
+     1,
+     0,
+     0,
+     1,
+     3,
+     4,
+     5,
+     0,
+     0,
+     4,
+     5
+    ],
+    [
+     6,
+     6,
+     4,
+     0,
+     0,
+     1,
+     4,
+     5,
+     6,
+     3,
+     2,
+     3,
+     3
+    ],
+    [
+     7,
+     7,
+     5,
+     0,
+     0,
+     1,
+     3,
+     6,
+     7,
+     0,
+     0,
+     5,
+     6
+    ],
+    [
+     8,
+     8,
+     1,
+     0,
+     0,
+     1,
+     4,
+     7,
+     8,
+     4,
+     0,
+     5,
+     5
+    ],
+    [
+     9,
+     9,
+     6,
+     0,
+     0,
+     1,
+     5,
+     8,
+     9,
+     5,
+     0,
+     6,
+     7
+    ],
+    [
+     10,
+     10,
+     7,
+     0,
+     0,
+     1,
+     2,
+     9,
+     10,
+     6,
+     3,
+     7,
+     8
+    ],
+    [
+     11,
+     11,
+     8,
+     0,
+     0,
+     1,
+     6,
+     10,
+     11,
+     4,
+     0,
+     8,
+     9
+    ],
+    [
+     12,
+     12,
+     1,
+     0,
+     0,
+     1,
+     7,
+     8,
+     12,
+     0,
+     0,
+     9,
+     7
+    ],
+    [
+     13,
+     13,
+     1,
+     0,
+     0,
+     1,
+     8,
+     11,
+     13,
+     5,
+     0,
+     10,
+     10
+    ],
+    [
+     14,
+     14,
+     9,
+     0,
+     0,
+     1,
+     9,
+     12,
+     14,
+     7,
+     4,
+     11,
+     11
+    ],
+    [
+     15,
+     15,
+     10,
+     0,
+     0,
+     1,
+     2,
+     3,
+     15,
+     2,
+     1,
+     6,
+     8
+    ],
+    [
+     16,
+     16,
+     11,
+     0,
+     0,
+     1,
+     2,
+     13,
+     16,
+     4,
+     0,
+     12,
+     12
+    ],
+    [
+     17,
+     17,
+     1,
+     0,
+     0,
+     1,
+     2,
+     14,
+     17,
+     4,
+     0,
+     13,
+     13
+    ],
+    [
+     18,
+     18,
+     12,
+     0,
+     0,
+     1,
+     2,
+     15,
+     18,
+     3,
+     2,
+     3,
+     3
+    ],
+    [
+     19,
+     19,
+     13,
+     0,
+     0,
+     1,
+     3,
+     16,
+     19,
+     8,
+     2,
+     3,
+     3
+    ],
+    [
+     20,
+     20,
+     14,
+     0,
+     0,
+     1,
+     10,
+     17,
+     20,
+     6,
+     2,
+     3,
+     3
+    ],
+    [
+     21,
+     21,
+     1,
+     0,
+     0,
+     1,
+     3,
+     18,
+     21,
+     3,
+     2,
+     3,
+     4
+    ],
+    [
+     22,
+     22,
+     1,
+     0,
+     0,
+     1,
+     4,
+     19,
+     22,
+     1,
+     0,
+     5,
+     7
+    ],
+    [
+     23,
+     23,
+     15,
+     0,
+     0,
+     1,
+     2,
+     20,
+     23,
+     9,
+     5,
+     14,
+     14
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the batch rows, the nonhuman counts, the roster counts, the zero M/F flags)",
+   "expr": "m['cqc7Round']() != 875 or m['cqc7Batch']() != 7 or m['cqc7PrintStart']() != 142 or m['cqc7PrintEnd']() != 142 or m['cqc7Rows']() != 24 or m['cqc7NonhumanRows']() != 24 or m['cqc7MaleRows']() != 0 or m['cqc7FemaleRows']() != 0 or m['cqc7NonHumanFlagRows']() != 24 or m['cqc7PrintedColumns']() != 13 or m['cqc7SphereCount']() != 24 or m['cqc7AnimalCount']() != 16 or m['cqc7HeadCount']() != 11 or m['cqc7BodyCount']() != 21 or m['cqc7ColorCount']() != 24 or m['cqc7HolyDayCount']() != 10 or m['cqc7FreqCount']() != 6 or m['cqc7FormCount']() != 15 or m['cqc7PlaceCount']() != 15 or m['cqc7TableCount']() != 1 or m['cqc7ChainCount']() != 0"
+  },
+  {
+   "note": "the parity pins (the N-H-only geometry, the name garbles, the folds and strays)",
+   "expr": "m['cqc7AllNonHumanOnly']() != 1 or m['cqc7NameGarblesRestored']() != 1 or m['cqc7SeqaGreenRestored']() != 1 or m['cqc7GrolantorGarblesRestored']() != 1 or m['cqc7WarHelmFolds']() != 1 or m['cqc7GruumshStrays']() != 1 or m['cqc7LolthStrays']() != 1 or m['cqc7YondallaColonGlyph']() != 1 or m['cqc7DemogorgonPrintOnly']() != 1 or m['cqc7NoHumanClerics']() != 1"
+  },
+  {
+   "note": "the head and tail rows (Blibdoolpoolp 0, Yondalla 23, the ordinals run)",
+   "expr": "m['cqc7ChartOrd'](0) != 0 or m['cqc7ChartNh'](0) != 1 or m['cqc7ChartM'](0) != 0 or m['cqc7ChartF'](0) != 0 or m['cqc7ChartHead'](0) != 0 or m['cqc7ChartBody'](0) != 0 or m['cqc7ChartColor'](0) != 0 or m['cqc7ChartHolyday'](0) != 0 or m['cqc7ChartFreq'](0) != 0 or m['cqc7ChartForm'](0) != 0 or m['cqc7ChartPlace'](0) != 0 or m['cqc7ChartOrd'](23) != 23 or m['cqc7ChartSphere'](23) != 23 or m['cqc7ChartAnimal'](23) != 15 or m['cqc7ChartHead'](23) != 2 or m['cqc7ChartBody'](23) != 20 or m['cqc7ChartColor'](23) != 23 or m['cqc7ChartHolyday'](23) != 9 or m['cqc7ChartFreq'](23) != 5 or m['cqc7ChartForm'](23) != 14 or m['cqc7ChartPlace'](23) != 14"
+  },
+  {
+   "note": "the elf and goblin rows (the wraps, the sea green pin, the gray-green class)",
+   "expr": "m['cqc7ChartHead'](1) != 1 or m['cqc7ChartBody'](1) != 1 or m['cqc7ChartColor'](1) != 1 or m['cqc7ChartHolyday'](1) != 1 or m['cqc7ChartBody'](2) != 2 or m['cqc7ChartColor'](2) != 2 or m['cqc7ChartHolyday'](2) != 2 or m['cqc7ChartFreq'](2) != 1 or m['cqc7ChartForm'](2) != 2 or m['cqc7ChartPlace'](2) != 2 or m['cqc7ChartSphere'](3) != 3 or m['cqc7ChartColor'](3) != 3 or m['cqc7ChartHead'](8) != 4 or m['cqc7ChartColor'](8) != 8 or m['cqc7ChartForm'](8) != 5 or m['cqc7ChartHead'](12) != 7 or m['cqc7ChartColor'](12) != 12 or m['cqc7ChartFreq'](12) != 0 or m['cqc7ChartForm'](12) != 9 or m['cqc7ChartHead'](13) != 8 or m['cqc7ChartBody'](13) != 11 or m['cqc7ChartColor'](13) != 13 or m['cqc7ChartFreq'](13) != 0 or m['cqc7ChartForm'](13) != 10 or m['cqc7ChartPlace'](13) != 10"
+  },
+  {
+   "note": "the giant and monster rows (the name-restored rows, the print-only rows)",
+   "expr": "m['cqc7ChartAnimal'](6) != 4 or m['cqc7ChartHead'](6) != 4 or m['cqc7ChartBody'](6) != 5 or m['cqc7ChartColor'](6) != 6 or m['cqc7ChartBody'](7) != 6 or m['cqc7ChartColor'](7) != 7 or m['cqc7ChartForm'](7) != 5 or m['cqc7ChartPlace'](7) != 6 or m['cqc7ChartBody'](14) != 12 or m['cqc7ChartColor'](14) != 14 or m['cqc7ChartFreq'](14) != 4 or m['cqc7ChartPlace'](14) != 11 or m['cqc7ChartColor'](15) != 15 or m['cqc7ChartHolyday'](15) != 2 or m['cqc7ChartFreq'](15) != 1 or m['cqc7ChartPlace'](15) != 8 or m['cqc7ChartSphere'](18) != 18 or m['cqc7ChartAnimal'](18) != 12 or m['cqc7ChartColor'](18) != 18 or m['cqc7ChartAnimal'](19) != 13 or m['cqc7ChartBody'](19) != 16 or m['cqc7ChartColor'](19) != 19 or m['cqc7ChartHolyday'](19) != 8 or m['cqc7ChartAnimal'](20) != 14 or m['cqc7ChartHead'](20) != 10 or m['cqc7ChartColor'](20) != 20 or m['cqc7ChartHolyday'](20) != 6 or m['cqc7ChartBody'](22) != 19 or m['cqc7ChartColor'](22) != 22 or m['cqc7ChartForm'](22) != 5"
+  },
+  {
+   "note": "the cleric flags (every row reads the N-H mark, none the M or F)",
+   "expr": "m['cqc7ChartNh'](0) != 1 or m['cqc7ChartNh'](1) != 1 or m['cqc7ChartNh'](2) != 1 or m['cqc7ChartNh'](3) != 1 or m['cqc7ChartNh'](4) != 1 or m['cqc7ChartNh'](5) != 1 or m['cqc7ChartNh'](6) != 1 or m['cqc7ChartNh'](7) != 1 or m['cqc7ChartNh'](8) != 1 or m['cqc7ChartNh'](9) != 1 or m['cqc7ChartNh'](10) != 1 or m['cqc7ChartNh'](11) != 1 or m['cqc7ChartNh'](12) != 1 or m['cqc7ChartNh'](13) != 1 or m['cqc7ChartNh'](14) != 1 or m['cqc7ChartNh'](15) != 1 or m['cqc7ChartNh'](16) != 1 or m['cqc7ChartNh'](17) != 1 or m['cqc7ChartNh'](18) != 1 or m['cqc7ChartNh'](19) != 1 or m['cqc7ChartNh'](20) != 1 or m['cqc7ChartNh'](21) != 1 or m['cqc7ChartNh'](22) != 1 or m['cqc7ChartNh'](23) != 1 or m['cqc7ChartM'](0) != 0 or m['cqc7ChartM'](11) != 0 or m['cqc7ChartM'](23) != 0 or m['cqc7ChartF'](0) != 0 or m['cqc7ChartF'](11) != 0 or m['cqc7ChartF'](23) != 0"
+  }
+ ],
+ "header_sections": {
+  "the batch seven census": [
+   {
+    "kind": "const",
+    "name": "cqc7Round"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7Batch"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7PrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7PrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7Rows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7NonhumanRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7MaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7FemaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7NonHumanFlagRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7PrintedColumns"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7SphereCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7AnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7HeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7BodyCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7ColorCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7HolyDayCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7FreqCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7FormCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7PlaceCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7TableCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc7ChainCount"
+   }
+  ],
+  "the clerical chart batch seven grid": [
+   {
+    "kind": "table",
+    "name": "the clerical chart batch seven grid"
+   }
+  ],
+  "the parity pins": [
+   {
+    "kind": "bool",
+    "name": "cqc7AllNonHumanOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc7NameGarblesRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc7SeqaGreenRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc7GrolantorGarblesRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc7WarHelmFolds"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc7GruumshStrays"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc7LolthStrays"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc7YondallaColonGlyph"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc7DemogorgonPrintOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc7NoHumanClerics"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_clerical_chart_7.txt",
+   "content": "The DDG print p. 142 clerical quick-reference chart rows -\nbatch seven (the twenty-four Nonhumans' Deities rows: the twenty\nR864 mythos beings plus Demogorgon, Surtur, Thrym and Yeenoghu\nper the R864 crossref list). The per-column rosters\n(first-appearance ordinals = the grid cells) and the printed\nrows. Primary ink: the rotated tesseract pass; the collation\nvoice: the 1eonline L&L per-deity chart rows.\n\n== the sphere roster (24) ==\n00 Kuo-toa\n01 elves\n02 aquatic elves\n03 ixitxachitl\n04 locathah; mermen\n05 gnomes\n06 hill giants\n07 orcs\n08 bugbears\n09 kobolds\n10 troglodytes\n11 Drow\n12 goblins\n13 dwarves\n14 wood elves\n15 sahuagin\n16 lizard men\n17 centaurs\n18 stone giants\n19 fire giants\n20 frost giants\n21 ogres\n22 gnolls\n23 halflings\n\n== the animal roster (16) ==\n00 lobster\n01 n/a\n02 dolphin\n03 jellyfish\n04 dire wolf\n05 giant rat\n06 rook\n07 toad\n08 arachnids\n09 forest birds\n10 shark\n11 alligator\n12 cave bear\n13 hell hound\n14 white dragon\n15 dove\n\n== the head roster (11) ==\n00 shell helm\n01 silver circlet\n02 bare\n03 war helm\n04 skulls\n05 iron helm\n06 Drow helm\n07 conical hat\n08 silvered helm\n09 laurel wreath\n10 horned helm\n\n== the body roster (21) ==\n00 nets\n01 gossamer robes\n02 shell mail\n03 n/a\n04 gold belt\n05 horn armor\n06 black plate mail\n07 bare\n08 scale mail\n09 bone belt\n10 Drow tunic\n11 chain mail\n12 tree bark armor\n13 hide kilt\n14 leafy vest\n15 skins\n16 iron plate mail\n17 white fur\n18 plate mail\n19 long tunic\n20 saffron cloak\n\n== the color roster (24) ==\n00 pearl\n01 azure\n02 sea green\n03 reptile green\n04 sand\n05 gold\n06 dark brown\n07 dark red\n08 black\n09 orange\n10 topaz\n11 red & black\n12 gray-green\n13 earthy\n14 dark green\n15 gray-white\n16 blue-green\n17 tan\n18 stone gray\n19 fiery red\n20 snowy white\n21 blood red\n22 muddy yellow\n23 yellow-green\n\n== the holyday roster (10) ==\n00 new moon\n01 quarter moon\n02 highest & lowest tides\n03 n/a\n04 full moon\n05 crescent moon\n06 midwinter's day\n07 equinox\n08 midsummer's day\n09 5th day of the week\n\n== the freq roster (6) ==\n00 monthly\n01 varies\n02 n/a\n03 annually\n04 semiannually\n05 weekly\n\n== the form roster (15) ==\n00 gems, pearls, humans, lobsters\n01 beautiful objects\n02 precious natural objects\n03 n/a\n04 gold\n05 blood\n06 enemies\n07 burnt humans\n08 enemies & riches\n09 hearts\n10 melted metals\n11 carved items\n12 hunting prizes\n13 ritual hunt, dances\n14 food offering\n\n== the place roster (15) ==\n00 underwater shrines\n01 natural geological formations\n02 undersea coral temples\n03 n/a\n04 dens\n05 cave halls\n06 lairs\n07 cave temples\n08 natural caverns\n09 underground marble temples\n10 forges & hearths\n11 tree platforms\n12 stone shrines\n13 large groves\n14 homes\n\n== the printed rows ==\nBlibdoolpoolp :: Kuo-toa | lobster | - - X | shell helm | nets | pearl | new moon | monthly | gems, pearls, humans, lobsters | underwater shrines\nCorellon Larethian :: elves | n/a | - - X | silver circlet | gossamer robes | azure | quarter moon | monthly | beautiful objects | natural geological formations\nDeep Sashelas :: aquatic elves | dolphin | - - X | bare | shell mail | sea green | highest & lowest tides | varies | precious natural objects | undersea coral temples\nDemogorgon :: ixitxachitl | n/a | - - X | bare | n/a | reptile green | n/a | n/a | n/a | n/a\nEadro :: locathah; mermen | jellyfish | - - X | bare | n/a | sand | n/a | n/a | n/a | dens\nGarl Glittergold :: gnomes | n/a | - - X | war helm | gold belt | gold | new moon | monthly | gold | cave halls\nGrolantor :: hill giants | dire wolf | - - X | skulls | horn armor | dark brown | n/a | n/a | n/a | n/a\nGruumsh :: orcs | giant rat | - - X | war helm | black plate mail | dark red | new moon | monthly | blood | lairs\nHruggek :: bugbears | n/a | - - X | skulls | bare | black | full moon | monthly | blood | cave halls\nKurtulmak :: kobolds | rook | - - X | iron helm | scale mail | orange | crescent moon | monthly | enemies | cave temples\nLaogzed :: troglodytes | toad | - - X | bare | bone belt | topaz | midwinter's day | annually | burnt humans | natural caverns\nLolth :: Drow | arachnids | - - X | Drow helm | Drow tunic | red & black | full moon | monthly | enemies & riches | underground marble temples\nMaglubiyet :: goblins | n/a | - - X | conical hat | scale mail | gray-green | new moon | monthly | hearts | cave temples\nMoradin :: dwarves | n/a | - - X | silvered helm | chain mail | earthy | crescent moon | monthly | melted metals | forges & hearths\nRillifane Rallathil :: wood elves | forest birds | - - X | laurel wreath | tree bark armor | dark green | equinox | semiannually | carved items | tree platforms\nSekolah :: sahuagin | shark | - - X | bare | n/a | gray-white | highest & lowest tides | varies | enemies | natural caverns\nSemuanya :: lizard men | alligator | - - X | bare | hide kilt | blue-green | full moon | monthly | hunting prizes | stone shrines\nSkerrit :: centaurs | n/a | - - X | bare | leafy vest | tan | full moon | monthly | ritual hunt, dances | large groves\nSkoraeus Stonebones :: stone giants | cave bear | - - X | bare | skins | stone gray | n/a | n/a | n/a | n/a\nSurtur :: fire giants | hell hound | - - X | war helm | iron plate mail | fiery red | midsummer's day | n/a | n/a | n/a\nThrym :: frost giants | white dragon | - - X | horned helm | white fur | snowy white | midwinter's day | n/a | n/a | n/a\nVaprak :: ogres | n/a | - - X | war helm | plate mail | blood red | n/a | n/a | n/a | dens\nYeenoghu :: gnolls | n/a | - - X | skulls | long tunic | muddy yellow | quarter moon | monthly | blood | cave temples\nYondalla :: halflings | dove | - - X | bare | saffron cloak | yellow-green | 5th day of the week | weekly | food offering | homes\n"
+  }
+ ],
+ "inline_count": 44
+}
