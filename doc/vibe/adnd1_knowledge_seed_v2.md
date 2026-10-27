@@ -25908,6 +25908,60 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Greek/Finnish, Indian/Japanese/Melnibonean and
   tail batches through Nonhumans and Norse. WAIT
   FOR GO.
+  - R881 LANDED 2026-10-27: commit
+  7dc48c28fc968a35cc6b255d50198d51bb201765 (pushed
+  22f9d1b..7dc48c2, census 803 -> 804), THE DDG LUA
+  PROMOTION, BATCH TWO: 68 full-field defs (Central
+  American 14, Chinese 18, Cthulhu 15, Egyptian
+  21), the floor 1050 -> 1118 (DDG 55 -> 123).
+  THE SHAPE: batch two generated ONLY from the
+  adjudicated pin headers (dgf/dgg/cth/egp) - the
+  same four-grid parse as batch one; the name
+  orders LOCKED by the pinned cross-references (the
+  2-being Fei Lien and Feng Po section, the GREAT
+  RACE print without its of Yith, the Phoenix r13
+  grid cell) and verified cell-by-cell against the
+  primary ink pages; the MM2 name collision
+  resolved print-verbatim: Phoenix (Egyptian) - the
+  Charon (The Boatman) parenthetical precedent,
+  stem phoenix_egyptian.
+  THE HONEST BOUNDARIES: worshippersAlignment
+  unpinned for all 68 (no RosWorship grids - a
+  possible future pin round); the Anhur 20th-ranger
+  and the Horus/Seker/Shu paladin prints live in
+  prose the grids never pinned (F/R cells zero - no
+  tokens emitted); size sentinels flagged (Azathoth
+  inconceivable, Nyarlathotep variable, Chih Sung-
+  Tzu garbled); the Spirits of the Air damage cell
+  garbled in both voices - stays n/a; monster INT
+  words stay n/a; the unpinned lair percents emit
+  -1; Chalchiuhtlicue 1-4 and Isis 1-10 extract-
+  verified (no consts); Chih-Chiang +7 per legend;
+  Kuan Yin 60 inches decodes M (5'); the Hastur
+  distant-future plane qualifier dropped per grid.
+  THE MECHANICS: prefix dpt (full-repo scan clean),
+  header rules/dpt.h, audit R881 DDG promotion
+  audit rode rules/audits/r881_batch.h (802 -> 803
+  audit files); 12 consts, 10 bools, 2 grids
+  (mythoi 4x4, key-fill 57x2), 7 examples, inline
+  28; file patches: the registry_census.txt refresh
+  only (DDG 55 -> 123, floor 1118) - the engine
+  makedirs and book_of landed at R880; no engine
+  patches.
+  VERIFIED: rverify GREEN vs 22f9d1b, 0 mutants
+  missed; the patched normalizer census reads 1118
+  defs (DDG=123); idempotency - a second engine
+  pass applies nothing; the landed tree verified
+  BYTE-EXACT vs a full re-derive from pristine
+  22f9d1b plus the canvas spec (whole-repo diff
+  zero). Spec tools/spec_r881.json, md5
+  f36a706f2659f089e2b6d7f62d5819b9 (132649 bytes);
+  the canvas spec-r881 gated byte-exact.
+  NEXT: the promotion continues print-order - batch
+  three (Finnish 20 + Greek 40 = 60 defs), then the
+  Indian/Japanese/Melnibonean and tail batches
+  through Nonhumans and Norse. WAIT
+  FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
