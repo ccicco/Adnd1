@@ -1,0 +1,828 @@
+{
+ "prefix": "cqc5",
+ "round": 873,
+ "title": "the clerical chart, batch five",
+ "header_file": "rules/cqc5.h",
+ "audit_file": "rules/audits/r873_batch.h",
+ "audit_label": "R873 clerical chart batch five audit",
+ "include_after": "#include \"rules/cqc4.h\"  // R872: the clerical chart, batch four",
+ "audit_anchor": "#include \"rules/audits/r872_batch.h\"  // R872: R872 clerical chart batch four audit",
+ "include_comment": "the clerical chart, batch five",
+ "audit_comment": "APPENDIX 3: THE CLERICAL QUICK-REFERENCE CHARTS, BATCH FIVE - the D&DG walk round twenty-five, print pp. 140-141: the fifth batch of deity rows - Japanese (10), Melnibonean (15) - riding the roster data file, the Arioch row on the pdf 140 tail; the App 3 gap box stays open until the last chart batch lands. The print voice is the ROTATED tesseract pass, collated against the 1eonline L&L per-deity chart rows. The headline divergence: the print reads the Ama-Tsu-Mara form metalwork and place hearth where the L&L voice reads precious metalwork and temple - pinned by print, eyeball flag.",
+ "banner": {
+  "title": "Appendix 3: the clerical quick-reference chart, batch five - the D&DG walk round twenty-five, print pp. 140-141: the 25 rows of the Japanese and Melnibonean pantheons across the 13 printed columns.",
+  "provenance": "primary ink: the ROTATED extract/ddg tesseract pass (pNNN_rot_full.txt + pNNN_rot_tsv.tsv, pdf pages 140-141; the second printing) - the Arioch row rides the pdf 140 tail, the rest of the Melnibonean block rides pdf 141; the collation voice: the 1eonline L&L per-deity chart rows (the nnkuuurrrrcc and nuruah slugs run flat; the Tsukiyomi page header reads Sphere of Worship, the odd one). The adjudications: the Ama-Tsu-Mara metalwork + hearth pin (print over the L&L precious metalwork + temple, eyeball flag), the Daikoku wealth; luck sphere restored (the raunchiest garble of the rotated pass) with the name restored to the R861 Daikoku pin, the ten N-H-only Melnibonean rows (the geometry seats every single X at the N-H column; the L&L voice agrees), the Haaashastaak animal lizard, dinosaur pinned (the L&L shifts the columns), the L&L [swan]/[tiger]/[whale] brackets noted as gloss markers, the Hachiman equinox and Ebisu brown robes folds restored, and the Roofdrak and Grome stray glyphs noted. The batch order runs Japanese, Melnibonean."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R872 LANDED 2026-10-27: commit",
+ "prev_record": [
+  "- R872 LANDED 2026-10-27: commit",
+  "aa3e815c2ea1ec164d7e3aeb2d775d552642990d (pushed",
+  "42a4fb8..aa3e815, census 794 -> 795), APPENDIX 3 THE",
+  "CLERICAL CHART, BATCH FOUR - the D&DG walk round",
+  "twenty-four, print pp. 139-140: the Greek (18) and Indian",
+  "(13) deity rows as the round's one grid (31 rows, 13 cols:",
+  "Ord, the nine string-field roster ordinals, the M/F/N-H",
+  "flags) with the nine per-column rosters riding",
+  "doc/data/ddg_clerical_chart_4.txt; prefix cqc4 (full-repo",
+  "scan clean); header rules/cqc4.h; audit \"R872 clerical",
+  "chart batch four audit\", rode rules/audits/r872_batch.h.",
+  "NO GAP FLIP - the App 3 box stays open until the last",
+  "chart batch (the R869 no-flip precedent; gap census 20/4",
+  "unchanged). THE HEADLINE ADJUDICATIONS: the APHRODITE X",
+  "PAIR - the print reads two X marks (M and F, the TSV",
+  "geometry at x 1049/1104) where the L&L voice reads",
+  "female-only - pinned by print, eyeball flag (the Druaga",
+  "precedent); the ZEUS COLUMN SPLIT - the print reads color",
+  "white and holy days red sunrise (both voices agree - an",
+  "eyeball oddity, not a divergence); the Poseidon seqa",
+  "garble restored to sea; earthquakes from L&L (the sea/seas",
+  "ambiguity rides the restoration); the Apollo laure! garble",
+  "restored to laurel wreath; the Indra rainbow pinned plain",
+  "(the L&L <> glyph an artifact); the Yama no-article form",
+  "pinned (the L&L inserts a) with the stray : glyph noted;",
+  "the Ushas atdawn fold restored (the Arawn/Hades fold",
+  "class); the Rudra red, black comma pinned; the geometry",
+  "confirmed Artemis (F + N-H), Pan (M + N-H),",
+  "Indra/Karttikeya/Yama male-only - all agreeing with L&L.",
+  "THE FLAG CLASSES: male 29 (Artemis and Ushas the rows",
+  "without), female 26 (Apollo, Pan, Indra, Karttikeya, Yama",
+  "the rows without), non-human 9 (5 Greek, 4 Indian). ZERO",
+  "registry defs touched - the floor holds at 995. Spec",
+  "tools/spec_r872.json, md5 fa6e5f1302a257f93722b66a89479330",
+  "(28,203 bytes, authored-plus-newline); 45 inlines (22",
+  "consts, 10 bools, 13 table cols), 7 examples; rverify",
+  "double-run GREEN, 435 mutants 0 missed; hyphen scan clean;",
+  "zero True/False tokens in the emitted files; the R865",
+  "bool-operator rule held first-try; the chk(name, field)",
+  "builder pattern held (one census-comment fix mid-build -",
+  "the male count comment named only Artemis, Ushas",
+  "corrected). NEXT: the App 3 chart batches continue from",
+  "Japanese + Melnibonean (pdf 140, the Japanese block below",
+  "the R872 Indian tail) or Curtiss's call - WAIT FOR GO."
+ ],
+ "census_before": 795,
+ "gap_census": {
+  "closed": 20,
+  "open": 4
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "cqc5Round",
+   "value": 873,
+   "comment": "the clerical chart batch five round: the D&DG walk round twenty-five"
+  },
+  {
+   "name": "cqc5Batch",
+   "value": 5,
+   "comment": "the fifth chart batch (the App 3 box stays open until the last batch lands)"
+  },
+  {
+   "name": "cqc5PrintStart",
+   "value": 140,
+   "comment": "the chart batch five print pages open at 140"
+  },
+  {
+   "name": "cqc5PrintEnd",
+   "value": 141,
+   "comment": "the chart batch five print pages close at 141"
+  },
+  {
+   "name": "cqc5Rows",
+   "value": 25,
+   "comment": "the batch rows (Japanese 10, Melnibonean 15)"
+  },
+  {
+   "name": "cqc5JapaneseRows",
+   "value": 10,
+   "comment": "the Japanese pantheon rows"
+  },
+  {
+   "name": "cqc5MelniboneanRows",
+   "value": 15,
+   "comment": "the Melnibonean mythos rows"
+  },
+  {
+   "name": "cqc5MaleRows",
+   "value": 15,
+   "comment": "the rows reading a male-clerics X (the ten Japanese rows and five Melnibonean)"
+  },
+  {
+   "name": "cqc5FemaleRows",
+   "value": 13,
+   "comment": "the rows reading a female-clerics X (Hachiman and the ten N-H-only Melnibonean rows without)"
+  },
+  {
+   "name": "cqc5NonHumanRows",
+   "value": 15,
+   "comment": "the rows reading a non-human clerics X (every Melnibonean row; the Japanese rows read none)"
+  },
+  {
+   "name": "cqc5PrintedColumns",
+   "value": 13,
+   "comment": "the printed columns of the chart (the 13 the batch grids encode)"
+  },
+  {
+   "name": "cqc5SphereCount",
+   "value": 24,
+   "comment": "the sphere-of-control roster ordinals of the batch"
+  },
+  {
+   "name": "cqc5AnimalCount",
+   "value": 18,
+   "comment": "the animal roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc5HeadCount",
+   "value": 8,
+   "comment": "the raiment head roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc5BodyCount",
+   "value": 14,
+   "comment": "the raiment body roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc5ColorCount",
+   "value": 22,
+   "comment": "the color roster ordinals of the batch"
+  },
+  {
+   "name": "cqc5HolyDayCount",
+   "value": 9,
+   "comment": "the holy-days roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc5FreqCount",
+   "value": 5,
+   "comment": "the sacrifice-frequency roster ordinals of the batch"
+  },
+  {
+   "name": "cqc5FormCount",
+   "value": 14,
+   "comment": "the sacrifice-form roster ordinals of the batch"
+  },
+  {
+   "name": "cqc5PlaceCount",
+   "value": 4,
+   "comment": "the place-of-worship roster ordinals of the batch"
+  },
+  {
+   "name": "cqc5TableCount",
+   "value": 1,
+   "comment": "the batch grid count (one grid per batch round)"
+  },
+  {
+   "name": "cqc5ChainCount",
+   "value": 0,
+   "comment": "the batch chain count (the chart grids carry no chains)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cqc5AmaTsuMaraHearthPrint",
+   "value": true,
+   "comment": "the headline divergence: the print reads the Ama-Tsu-Mara form metalwork and place hearth where the L&L voice reads precious metalwork and temple - pinned by print, eyeball flag"
+  },
+  {
+   "name": "cqc5DaikokuLuckRestored",
+   "value": true,
+   "comment": "the print garbles the Daikoku sphere (the wealth; fuck glyph run) - restored to wealth; luck from the L&L voice; the Daikoky name garble restored to the R861 Daikoku pin"
+  },
+  {
+   "name": "cqc5MelniboneanNonHumanOnly",
+   "value": true,
+   "comment": "ten of the fifteen Melnibonean rows read an N-H-only flag - the TSV geometry seats every single X at x 1144-1152, the N-H column, and the L&L voice agrees"
+  },
+  {
+   "name": "cqc5HaaashastaakAnimalPrint",
+   "value": true,
+   "comment": "the print reads the Haaashastaak sphere reptiles and animal lizard, dinosaur - the L&L voice shifts (sphere reptiles, dinosaurs, animal n/a) - the print pinned"
+  },
+  {
+   "name": "cqc5TsukiyomiAlternateHeader",
+   "value": true,
+   "comment": "the L&L Tsukiyomi page header reads Sphere of Worship (the odd one of the chart pages) - the row itself agrees with the print"
+  },
+  {
+   "name": "cqc5BracketGlossesNoted",
+   "value": true,
+   "comment": "the L&L [swan], [tiger] and [whale] brackets are gloss markers, not print ink - the plain print animals pinned"
+  },
+  {
+   "name": "cqc5EquinoxFoldRestored",
+   "value": true,
+   "comment": "the Hachiman equirox garble restored to fall equinox; the Ebisu brownrobes fold restored to brown robes"
+  },
+  {
+   "name": "cqc5RoofdrakStrayGlyph",
+   "value": true,
+   "comment": "the stray glyph on the Roofdrak row (the double-arrow after the dog) noted - a print artifact, not ink"
+  },
+  {
+   "name": "cqc5GromeStrayApostrophe",
+   "value": true,
+   "comment": "the stray apostrophe before the Grome n/a noted - a print artifact, not ink"
+  },
+  {
+   "name": "cqc5JapaneseNoNonHuman",
+   "value": true,
+   "comment": "the Japanese rows carry no non-human clerics X"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the clerical chart batch five grid",
+   "tag": "cqc5Chart",
+   "cols": [
+    "cqc5ChartOrd",
+    "cqc5ChartSphere",
+    "cqc5ChartAnimal",
+    "cqc5ChartM",
+    "cqc5ChartF",
+    "cqc5ChartNh",
+    "cqc5ChartHead",
+    "cqc5ChartBody",
+    "cqc5ChartColor",
+    "cqc5ChartHolyday",
+    "cqc5ChartFreq",
+    "cqc5ChartForm",
+    "cqc5ChartPlace"
+   ],
+   "col_comments": [
+    "The row ordinals (0-24, the batch walk order: Japanese 0-9, Melnibonean 10-24)",
+    "The sphere-of-control roster ordinals (the labels ride the data file)",
+    "The animal roster ordinals (the n/a rows ride the roster)",
+    "The male clerics flag (the printed X reads 1)",
+    "The female clerics flag (the printed X reads 1; Hachiman the only Japanese row without)",
+    "The non-human clerics flag (the printed X reads 1; the Ama-Tsu-Mara hearth is the round divergence pin)",
+    "The raiment head roster ordinals (the n/a rows ride the roster)",
+    "The raiment body roster ordinals (the n/a rows ride the roster)",
+    "The color roster ordinals",
+    "The holy-days roster ordinals (the n/a rows ride the roster)",
+    "The sacrifice-frequency roster ordinals",
+    "The sacrifice-form roster ordinals",
+    "The place-of-worship roster ordinals"
+   ],
+   "count": "cqc5Rows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     2,
+     1,
+     1,
+     0,
+     2,
+     2,
+     2,
+     0,
+     0,
+     2,
+     0
+    ],
+    [
+     3,
+     3,
+     3,
+     1,
+     1,
+     0,
+     0,
+     3,
+     3,
+     2,
+     1,
+     3,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     1,
+     0,
+     0,
+     3,
+     4,
+     4,
+     3,
+     1,
+     4,
+     0
+    ],
+    [
+     5,
+     5,
+     5,
+     1,
+     1,
+     0,
+     0,
+     5,
+     5,
+     0,
+     0,
+     5,
+     0
+    ],
+    [
+     6,
+     6,
+     6,
+     1,
+     1,
+     0,
+     0,
+     6,
+     6,
+     4,
+     2,
+     6,
+     0
+    ],
+    [
+     7,
+     7,
+     7,
+     1,
+     1,
+     0,
+     4,
+     7,
+     7,
+     0,
+     0,
+     7,
+     0
+    ],
+    [
+     8,
+     8,
+     8,
+     1,
+     1,
+     0,
+     0,
+     8,
+     8,
+     5,
+     3,
+     8,
+     0
+    ],
+    [
+     9,
+     9,
+     9,
+     1,
+     1,
+     0,
+     0,
+     9,
+     9,
+     6,
+     3,
+     9,
+     0
+    ],
+    [
+     10,
+     10,
+     10,
+     1,
+     1,
+     1,
+     0,
+     10,
+     10,
+     1,
+     0,
+     10,
+     2
+    ],
+    [
+     11,
+     11,
+     10,
+     1,
+     0,
+     1,
+     5,
+     11,
+     1,
+     7,
+     3,
+     11,
+     3
+    ],
+    [
+     12,
+     12,
+     11,
+     1,
+     1,
+     1,
+     6,
+     12,
+     0,
+     8,
+     4,
+     12,
+     2
+    ],
+    [
+     13,
+     13,
+     12,
+     0,
+     0,
+     1,
+     7,
+     13,
+     11,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     14,
+     14,
+     10,
+     0,
+     0,
+     1,
+     7,
+     13,
+     12,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     15,
+     15,
+     13,
+     0,
+     0,
+     1,
+     7,
+     13,
+     13,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     16,
+     16,
+     10,
+     0,
+     0,
+     1,
+     7,
+     13,
+     14,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     17,
+     17,
+     6,
+     0,
+     0,
+     1,
+     7,
+     13,
+     15,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     18,
+     18,
+     10,
+     0,
+     0,
+     1,
+     7,
+     13,
+     16,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     19,
+     19,
+     14,
+     0,
+     0,
+     1,
+     7,
+     13,
+     6,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     20,
+     20,
+     15,
+     0,
+     0,
+     1,
+     7,
+     13,
+     17,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     21,
+     21,
+     16,
+     1,
+     1,
+     1,
+     7,
+     13,
+     18,
+     4,
+     4,
+     10,
+     2
+    ],
+    [
+     22,
+     22,
+     17,
+     0,
+     0,
+     1,
+     7,
+     13,
+     19,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     23,
+     23,
+     10,
+     0,
+     0,
+     1,
+     7,
+     13,
+     20,
+     4,
+     4,
+     13,
+     2
+    ],
+    [
+     24,
+     10,
+     10,
+     1,
+     1,
+     1,
+     7,
+     13,
+     21,
+     4,
+     4,
+     10,
+     2
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the batch rows, the pantheon counts, the roster counts, the cleric flags)",
+   "expr": "m['cqc5Round']() != 873 or m['cqc5Batch']() != 5 or m['cqc5PrintStart']() != 140 or m['cqc5PrintEnd']() != 141 or m['cqc5Rows']() != 25 or m['cqc5JapaneseRows']() != 10 or m['cqc5MelniboneanRows']() != 15 or m['cqc5MaleRows']() != 15 or m['cqc5FemaleRows']() != 13 or m['cqc5NonHumanRows']() != 15 or m['cqc5PrintedColumns']() != 13 or m['cqc5SphereCount']() != 24 or m['cqc5AnimalCount']() != 18 or m['cqc5HeadCount']() != 8 or m['cqc5BodyCount']() != 14 or m['cqc5ColorCount']() != 22 or m['cqc5HolyDayCount']() != 9 or m['cqc5FreqCount']() != 5 or m['cqc5FormCount']() != 14 or m['cqc5PlaceCount']() != 4 or m['cqc5TableCount']() != 1 or m['cqc5ChainCount']() != 0"
+  },
+  {
+   "note": "the parity pins (the Ama-Tsu-Mara divergence, the N-H-only geometry, the garble restorations)",
+   "expr": "m['cqc5AmaTsuMaraHearthPrint']() != 1 or m['cqc5DaikokuLuckRestored']() != 1 or m['cqc5MelniboneanNonHumanOnly']() != 1 or m['cqc5HaaashastaakAnimalPrint']() != 1 or m['cqc5TsukiyomiAlternateHeader']() != 1 or m['cqc5BracketGlossesNoted']() != 1 or m['cqc5EquinoxFoldRestored']() != 1 or m['cqc5RoofdrakStrayGlyph']() != 1 or m['cqc5GromeStrayApostrophe']() != 1 or m['cqc5JapaneseNoNonHuman']() != 1"
+  },
+  {
+   "note": "the head and tail rows (Amaterasu Omikami 0, Xiombarg 24, the ordinals run)",
+   "expr": "m['cqc5ChartOrd'](0) != 0 or m['cqc5ChartOrd'](24) != 24 or m['cqc5ChartBody'](0) != 0 or m['cqc5ChartM'](0) != 1 or m['cqc5ChartF'](0) != 1 or m['cqc5ChartForm'](0) != 0 or m['cqc5ChartSphere'](24) != 10 or m['cqc5ChartNh'](24) != 1 or m['cqc5ChartColor'](24) != 21 or m['cqc5ChartForm'](24) != 10 or m['cqc5ChartPlace'](24) != 2"
+  },
+  {
+   "note": "the Japanese rows (the hearth pin, the vestments classes, the used weapons)",
+   "expr": "m['cqc5ChartForm'](1) != 1 or m['cqc5ChartPlace'](1) != 1 or m['cqc5ChartM'](1) != 1 or m['cqc5ChartSphere'](2) != 2 or m['cqc5ChartAnimal'](2) != 2 or m['cqc5ChartBody'](3) != 3 or m['cqc5ChartForm'](3) != 3 or m['cqc5ChartF'](4) != 0 or m['cqc5ChartHolyday'](4) != 3 or m['cqc5ChartBody'](4) != 4 or m['cqc5ChartForm'](5) != 5 or m['cqc5ChartBody'](6) != 6 or m['cqc5ChartForm'](6) != 6 or m['cqc5ChartHead'](7) != 4 or m['cqc5ChartBody'](7) != 7 or m['cqc5ChartSphere'](8) != 8 or m['cqc5ChartBody'](8) != 8 or m['cqc5ChartForm'](8) != 8 or m['cqc5ChartBody'](9) != 9 or m['cqc5ChartHolyday'](9) != 6 or m['cqc5ChartForm'](9) != 9"
+  },
+  {
+   "note": "the Melnibonean rows (the N-H-only classes, the triple flags, the favors sacrifices)",
+   "expr": "m['cqc5ChartM'](10) != 1 or m['cqc5ChartNh'](10) != 1 or m['cqc5ChartBody'](10) != 10 or m['cqc5ChartHead'](11) != 5 or m['cqc5ChartBody'](11) != 11 or m['cqc5ChartF'](11) != 0 or m['cqc5ChartNh'](11) != 1 or m['cqc5ChartSphere'](12) != 12 or m['cqc5ChartForm'](12) != 12 or m['cqc5ChartM'](13) != 0 or m['cqc5ChartNh'](13) != 1 or m['cqc5ChartAnimal'](13) != 12 or m['cqc5ChartSphere'](14) != 14 or m['cqc5ChartColor'](14) != 12 or m['cqc5ChartAnimal'](15) != 13 or m['cqc5ChartColor'](16) != 14 or m['cqc5ChartAnimal'](17) != 6 or m['cqc5ChartColor'](18) != 16 or m['cqc5ChartAnimal'](19) != 14 or m['cqc5ChartSphere'](20) != 20 or m['cqc5ChartSphere'](21) != 21 or m['cqc5ChartForm'](21) != 10 or m['cqc5ChartAnimal'](22) != 17 or m['cqc5ChartColor'](23) != 20"
+  },
+  {
+   "note": "the cleric flags (the female and non-human census cells)",
+   "expr": "m['cqc5ChartF'](2) != 1 or m['cqc5ChartF'](3) != 1 or m['cqc5ChartF'](5) != 1 or m['cqc5ChartF'](7) != 1 or m['cqc5ChartF'](8) != 1 or m['cqc5ChartF'](9) != 1 or m['cqc5ChartF'](10) != 1 or m['cqc5ChartF'](12) != 1 or m['cqc5ChartF'](21) != 1 or m['cqc5ChartF'](24) != 1 or m['cqc5ChartNh'](14) != 1 or m['cqc5ChartNh'](16) != 1 or m['cqc5ChartNh'](17) != 1 or m['cqc5ChartNh'](18) != 1 or m['cqc5ChartNh'](23) != 1"
+  }
+ ],
+ "header_sections": {
+  "the batch five census": [
+   {
+    "kind": "const",
+    "name": "cqc5Round"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5Batch"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5PrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5PrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5Rows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5JapaneseRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5MelniboneanRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5MaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5FemaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5NonHumanRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5PrintedColumns"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5SphereCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5AnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5HeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5BodyCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5ColorCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5HolyDayCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5FreqCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5FormCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5PlaceCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5TableCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc5ChainCount"
+   }
+  ],
+  "the clerical chart batch five grid": [
+   {
+    "kind": "table",
+    "name": "the clerical chart batch five grid"
+   }
+  ],
+  "the parity pins": [
+   {
+    "kind": "bool",
+    "name": "cqc5AmaTsuMaraHearthPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc5DaikokuLuckRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc5MelniboneanNonHumanOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc5HaaashastaakAnimalPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc5TsukiyomiAlternateHeader"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc5BracketGlossesNoted"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc5EquinoxFoldRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc5RoofdrakStrayGlyph"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc5GromeStrayApostrophe"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc5JapaneseNoNonHuman"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_clerical_chart_5.txt",
+   "content": "The DDG print pp. 140-141 clerical quick-reference chart rows -\nbatch five (Japanese, Melnibonean; the Arioch row rides the pdf 140\ntail, the rest of the Melnibonean block rides pdf 141). The per-column\nrosters (first-appearance ordinals = the grid cells) and the printed\nrows. Primary ink: the rotated tesseract pass; the collation voice: the\n1eonline L&L per-deity chart rows.\n== the sphere roster (24) ==\n00 sun\n01 blacksmiths\n02 wealth; luck\n03 luck; work\n04 war\n05 fate\n06 heroism\n07 weather\n08 storms; seas\n09 moon\n10 chaos; evil\n11 earth\n12 justice; law\n13 avians\n14 elemental earth\n15 reptiles\n16 fire\n17 felines\n18 air\n19 insects\n20 cattle; healing\n21 ocean depths; chaos\n22 canines\n23 water\n== the animal roster (18) ==\n00 goldfish\n01 badger\n02 swan\n03 bee\n04 bear\n05 dove\n06 tiger\n07 goose\n08 whale\n09 nightingale\n10 n/a\n11 owl\n12 eagle\n13 lizard, dinosaur\n14 mosquito\n15 cow\n16 octopus\n17 dog\n== the head roster (8) ==\n00 bare\n01 leather cap\n02 blue cap\n03 helm\n04 red cap\n05 clay helm\n06 gold cap\n07 n/a\n== the body roster (14) ==\n00 green vestments\n01 leather vest\n02 gray robes\n03 brown robes\n04 splint mail\n05 white vestments\n06 war vestments\n07 crimson vestments\n08 hide tunic\n09 dark blue vestments\n10 black robes\n11 jade belt\n12 bronze armor\n13 n/a\n== the color roster (22) ==\n00 gold\n01 black\n02 yellow\n03 light green\n04 emerald green\n05 white\n06 scarlet\n07 amber\n08 sea green\n09 light blue\n10 silver\n11 dark blue\n12 dark brown\n13 green\n14 red/yellow\n15 tawny\n16 sky blue\n17 tan\n18 deep red\n19 hazel\n20 gray-green\n21 silver-blue\n== the holyday roster (9) ==\n00 solstice\n01 equinox\n02 spring equinox\n03 fall equinox\n04 n/a\n05 full moon\n06 new moon\n07 quarter moon\n08 eclipses\n== the freq roster (5) ==\n00 semiannually\n01 annually\n02 n/a\n03 monthly\n04 varies\n== the form roster (14) ==\n00 handicrafts\n01 metalwork\n02 precious metals\n03 precious fluids\n04 weapons\n05 written wishes\n06 used weapons\n07 gems\n08 jade\n09 ivory\n10 humans\n11 hands or claws\n12 golden objects\n13 favors\n== the place roster (4) ==\n00 temple\n01 hearth\n02 anywhere\n03 underground\n\n== the printed rows ==\nAmaterasu Omikami :: sun | goldfish | X X - | bare | green vestments | gold | solstice | semiannually | handicrafts | temple\nAma-Tsu-Mara :: blacksmiths | badger | X X - | leather cap | leather vest | black | equinox | semiannually | metalwork | hearth\nDaikoku :: wealth; luck | swan | X X - | blue cap | gray robes | yellow | solstice | semiannually | precious metals | temple\nEbisu :: luck; work | bee | X X - | bare | brown robes | light green | spring equinox | annually | precious fluids | temple\nHachiman :: war | bear | X - - | helm | splint mail | emerald green | fall equinox | annually | weapons | temple\nKishijoten :: fate | dove | X X - | bare | white vestments | white | solstice | semiannually | written wishes | temple\nOh-Kuni-Nushi :: heroism | tiger | X X - | bare | war vestments | scarlet | n/a | n/a | used weapons | temple\nRaiden :: weather | goose | X X - | red cap | crimson vestments | amber | solstice | semiannually | gems | temple\nSusanowo :: storms; seas | whale | X X - | bare | hide tunic | sea green | full moon | monthly | jade | temple\nTsukiyomi :: moon | nightingale | X X - | bare | dark blue vestments | light blue | new moon | monthly | ivory | temple\nArioch :: chaos; evil | n/a | X X X | bare | black robes | silver | equinox | semiannually | humans | anywhere\nDarnizhaan :: earth | n/a | X - X | clay helm | jade belt | black | quarter moon | monthly | hands or claws | underground\nDonblas :: justice; law | owl | X X X | gold cap | bronze armor | gold | eclipses | varies | golden objects | anywhere\nFileet :: avians | eagle | - - X | n/a | n/a | dark blue | n/a | varies | favors | anywhere\nGrome :: elemental earth | n/a | - - X | n/a | n/a | dark brown | n/a | varies | favors | anywhere\nHaaashastaak :: reptiles | lizard, dinosaur | - - X | n/a | n/a | green | n/a | varies | favors | anywhere\nKakatal :: fire | n/a | - - X | n/a | n/a | red/yellow | n/a | varies | favors | anywhere\nMeerclar :: felines | tiger | - - X | n/a | n/a | tawny | n/a | varies | favors | anywhere\nMisha :: air | n/a | - - X | n/a | n/a | sky blue | n/a | varies | favors | anywhere\nNnuuurrrr'c'c :: insects | mosquito | - - X | n/a | n/a | scarlet | n/a | varies | favors | anywhere\nNuru-ah :: cattle; healing | cow | - - X | n/a | n/a | tan | n/a | varies | favors | anywhere\nPyaray :: ocean depths; chaos | octopus | X X X | n/a | n/a | deep red | n/a | varies | humans | anywhere\nRoofdrak :: canines | dog | - - X | n/a | n/a | hazel | n/a | varies | favors | anywhere\nStraasha :: water | n/a | - - X | n/a | n/a | gray-green | n/a | varies | favors | anywhere\nXiombarg :: chaos; evil | n/a | X X X | n/a | n/a | silver-blue | n/a | varies | humans | anywhere\n"
+  }
+ ],
+ "inline_count": 45
+}

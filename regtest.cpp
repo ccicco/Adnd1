@@ -574,6 +574,7 @@
 #include "rules/cqc2.h"  // R870: the clerical chart, batch two
 #include "rules/cqc3.h"  // R871: the clerical chart, batch three
 #include "rules/cqc4.h"  // R872: the clerical chart, batch four
+#include "rules/cqc5.h"  // R873: the clerical chart, batch five
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4621,6 +4622,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r873_batch.h"  // R873: R873 clerical chart batch five audit
 #include "rules/audits/r872_batch.h"  // R872: R872 clerical chart batch four audit
 #include "rules/audits/r871_batch.h"  // R871: R871 clerical chart batch three audit
 #include "rules/audits/r870_batch.h"  // R870: R870 clerical chart batch two audit

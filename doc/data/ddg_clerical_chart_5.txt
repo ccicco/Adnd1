@@ -1,0 +1,160 @@
+The DDG print pp. 140-141 clerical quick-reference chart rows -
+batch five (Japanese, Melnibonean; the Arioch row rides the pdf 140
+tail, the rest of the Melnibonean block rides pdf 141). The per-column
+rosters (first-appearance ordinals = the grid cells) and the printed
+rows. Primary ink: the rotated tesseract pass; the collation voice: the
+1eonline L&L per-deity chart rows.
+== the sphere roster (24) ==
+00 sun
+01 blacksmiths
+02 wealth; luck
+03 luck; work
+04 war
+05 fate
+06 heroism
+07 weather
+08 storms; seas
+09 moon
+10 chaos; evil
+11 earth
+12 justice; law
+13 avians
+14 elemental earth
+15 reptiles
+16 fire
+17 felines
+18 air
+19 insects
+20 cattle; healing
+21 ocean depths; chaos
+22 canines
+23 water
+== the animal roster (18) ==
+00 goldfish
+01 badger
+02 swan
+03 bee
+04 bear
+05 dove
+06 tiger
+07 goose
+08 whale
+09 nightingale
+10 n/a
+11 owl
+12 eagle
+13 lizard, dinosaur
+14 mosquito
+15 cow
+16 octopus
+17 dog
+== the head roster (8) ==
+00 bare
+01 leather cap
+02 blue cap
+03 helm
+04 red cap
+05 clay helm
+06 gold cap
+07 n/a
+== the body roster (14) ==
+00 green vestments
+01 leather vest
+02 gray robes
+03 brown robes
+04 splint mail
+05 white vestments
+06 war vestments
+07 crimson vestments
+08 hide tunic
+09 dark blue vestments
+10 black robes
+11 jade belt
+12 bronze armor
+13 n/a
+== the color roster (22) ==
+00 gold
+01 black
+02 yellow
+03 light green
+04 emerald green
+05 white
+06 scarlet
+07 amber
+08 sea green
+09 light blue
+10 silver
+11 dark blue
+12 dark brown
+13 green
+14 red/yellow
+15 tawny
+16 sky blue
+17 tan
+18 deep red
+19 hazel
+20 gray-green
+21 silver-blue
+== the holyday roster (9) ==
+00 solstice
+01 equinox
+02 spring equinox
+03 fall equinox
+04 n/a
+05 full moon
+06 new moon
+07 quarter moon
+08 eclipses
+== the freq roster (5) ==
+00 semiannually
+01 annually
+02 n/a
+03 monthly
+04 varies
+== the form roster (14) ==
+00 handicrafts
+01 metalwork
+02 precious metals
+03 precious fluids
+04 weapons
+05 written wishes
+06 used weapons
+07 gems
+08 jade
+09 ivory
+10 humans
+11 hands or claws
+12 golden objects
+13 favors
+== the place roster (4) ==
+00 temple
+01 hearth
+02 anywhere
+03 underground
+
+== the printed rows ==
+Amaterasu Omikami :: sun | goldfish | X X - | bare | green vestments | gold | solstice | semiannually | handicrafts | temple
+Ama-Tsu-Mara :: blacksmiths | badger | X X - | leather cap | leather vest | black | equinox | semiannually | metalwork | hearth
+Daikoku :: wealth; luck | swan | X X - | blue cap | gray robes | yellow | solstice | semiannually | precious metals | temple
+Ebisu :: luck; work | bee | X X - | bare | brown robes | light green | spring equinox | annually | precious fluids | temple
+Hachiman :: war | bear | X - - | helm | splint mail | emerald green | fall equinox | annually | weapons | temple
+Kishijoten :: fate | dove | X X - | bare | white vestments | white | solstice | semiannually | written wishes | temple
+Oh-Kuni-Nushi :: heroism | tiger | X X - | bare | war vestments | scarlet | n/a | n/a | used weapons | temple
+Raiden :: weather | goose | X X - | red cap | crimson vestments | amber | solstice | semiannually | gems | temple
+Susanowo :: storms; seas | whale | X X - | bare | hide tunic | sea green | full moon | monthly | jade | temple
+Tsukiyomi :: moon | nightingale | X X - | bare | dark blue vestments | light blue | new moon | monthly | ivory | temple
+Arioch :: chaos; evil | n/a | X X X | bare | black robes | silver | equinox | semiannually | humans | anywhere
+Darnizhaan :: earth | n/a | X - X | clay helm | jade belt | black | quarter moon | monthly | hands or claws | underground
+Donblas :: justice; law | owl | X X X | gold cap | bronze armor | gold | eclipses | varies | golden objects | anywhere
+Fileet :: avians | eagle | - - X | n/a | n/a | dark blue | n/a | varies | favors | anywhere
+Grome :: elemental earth | n/a | - - X | n/a | n/a | dark brown | n/a | varies | favors | anywhere
+Haaashastaak :: reptiles | lizard, dinosaur | - - X | n/a | n/a | green | n/a | varies | favors | anywhere
+Kakatal :: fire | n/a | - - X | n/a | n/a | red/yellow | n/a | varies | favors | anywhere
+Meerclar :: felines | tiger | - - X | n/a | n/a | tawny | n/a | varies | favors | anywhere
+Misha :: air | n/a | - - X | n/a | n/a | sky blue | n/a | varies | favors | anywhere
+Nnuuurrrr'c'c :: insects | mosquito | - - X | n/a | n/a | scarlet | n/a | varies | favors | anywhere
+Nuru-ah :: cattle; healing | cow | - - X | n/a | n/a | tan | n/a | varies | favors | anywhere
+Pyaray :: ocean depths; chaos | octopus | X X X | n/a | n/a | deep red | n/a | varies | humans | anywhere
+Roofdrak :: canines | dog | - - X | n/a | n/a | hazel | n/a | varies | favors | anywhere
+Straasha :: water | n/a | - - X | n/a | n/a | gray-green | n/a | varies | favors | anywhere
+Xiombarg :: chaos; evil | n/a | X X X | n/a | n/a | silver-blue | n/a | varies | humans | anywhere

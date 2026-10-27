@@ -25382,6 +25382,50 @@ held first-try; the chk(name, field) builder pattern held
 first-try. NEXT: the App 3 chart batches continue from
 Greek + Indian (pdf 139, the Greek block below the R871
 Finnish tail) or Curtiss's call - WAIT FOR GO.
+- R872 LANDED 2026-10-27: commit
+aa3e815c2ea1ec164d7e3aeb2d775d552642990d (pushed
+42a4fb8..aa3e815, census 794 -> 795), APPENDIX 3 THE
+CLERICAL CHART, BATCH FOUR - the D&DG walk round
+twenty-four, print pp. 139-140: the Greek (18) and Indian
+(13) deity rows as the round's one grid (31 rows, 13 cols:
+Ord, the nine string-field roster ordinals, the M/F/N-H
+flags) with the nine per-column rosters riding
+doc/data/ddg_clerical_chart_4.txt; prefix cqc4 (full-repo
+scan clean); header rules/cqc4.h; audit "R872 clerical
+chart batch four audit", rode rules/audits/r872_batch.h.
+NO GAP FLIP - the App 3 box stays open until the last
+chart batch (the R869 no-flip precedent; gap census 20/4
+unchanged). THE HEADLINE ADJUDICATIONS: the APHRODITE X
+PAIR - the print reads two X marks (M and F, the TSV
+geometry at x 1049/1104) where the L&L voice reads
+female-only - pinned by print, eyeball flag (the Druaga
+precedent); the ZEUS COLUMN SPLIT - the print reads color
+white and holy days red sunrise (both voices agree - an
+eyeball oddity, not a divergence); the Poseidon seqa
+garble restored to sea; earthquakes from L&L (the sea/seas
+ambiguity rides the restoration); the Apollo laure! garble
+restored to laurel wreath; the Indra rainbow pinned plain
+(the L&L <> glyph an artifact); the Yama no-article form
+pinned (the L&L inserts a) with the stray : glyph noted;
+the Ushas atdawn fold restored (the Arawn/Hades fold
+class); the Rudra red, black comma pinned; the geometry
+confirmed Artemis (F + N-H), Pan (M + N-H),
+Indra/Karttikeya/Yama male-only - all agreeing with L&L.
+THE FLAG CLASSES: male 29 (Artemis and Ushas the rows
+without), female 26 (Apollo, Pan, Indra, Karttikeya, Yama
+the rows without), non-human 9 (5 Greek, 4 Indian). ZERO
+registry defs touched - the floor holds at 995. Spec
+tools/spec_r872.json, md5 fa6e5f1302a257f93722b66a89479330
+(28,203 bytes, authored-plus-newline); 45 inlines (22
+consts, 10 bools, 13 table cols), 7 examples; rverify
+double-run GREEN, 435 mutants 0 missed; hyphen scan clean;
+zero True/False tokens in the emitted files; the R865
+bool-operator rule held first-try; the chk(name, field)
+builder pattern held (one census-comment fix mid-build -
+the male count comment named only Artemis, Ushas
+corrected). NEXT: the App 3 chart batches continue from
+Japanese + Melnibonean (pdf 140, the Japanese block below
+the R872 Indian tail) or Curtiss's call - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
