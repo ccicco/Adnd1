@@ -26089,6 +26089,62 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   already 39). NEXT: the promotion continues
   print-order - Nonhumans, then the Norse
   tail. WAIT FOR GO.
+  - R885 LANDED 2026-10-27: commit
+  a187f5044959bac894c0719f228ddb706d7d8ce4 (pushed
+  d838c9a..a187f50, census 807 -> 808), THE DDG LUA
+  PROMOTION, BATCH SIX - 49 full-field defs (the
+  Nehwon mythos 29 and the Nonhumans' Deities 20),
+  the floor 1242 -> 1291, DDG 296. THE SHAPE:
+  generated ONLY from the adjudicated nhw/nhg pin
+  headers, prefix dpy (full-repo scan clean); def
+  emission rides the grid orders (Fafhrd through
+  the Water Cobra, then Hruggek through Laogzed).
+  Monster rows 10 (all Nehwon), hit-dice rows 7
+  (the Water Cobra 3+3 the first DDG hit-dice
+  bonus), PinnedDamage 34 (nhw 17, nhg 17); parens
+  == StrDmg where printed. THE RENAMES: the MM2
+  Behemoth and the FF Lolth hold the stems, so the
+  DDG rows ride the Phoenix/Marut precedent as
+  "Behemoth (Nehwon)" (b/behemoth_nehwon.lua) and
+  "Lolth (Nonhumans' Deities)"
+  (l/lolth_nonhumans_deities.lua). The rangers
+  print on the FIGHTER lines (Fafhrd R15, Kos R15,
+  Corellon R20, Rillifane R15 - no F tokens); the
+  twelve As-16+-HD fighter cells read as F16; the
+  Devourer is a monster-format row that still
+  carries class cells (F5 M13 I25 T10) and Int 19,
+  per grid. HONEST BOUNDARIES: the ghoul by-weapon
+  print against its DmgFixed flag and the earth god
+  5-50 print against its 0 - both pin-internal,
+  both emitting the n/a sentinel (the grid's 18
+  ones vs the const 17; the Godsland 8-vs-9 and
+  InEach 3-vs-1 the same divergence class), the
+  Votishal hp 344 against the L&L 244, the Hate
+  See-below armor class and the Tyaa bare dash
+  pinned 0, the Gods of Trouble Special MR 0 as
+  Standard, Ningauble Nil attacks 0 and the L (9')
+  against the L&L M (9'), the Lolth monster-block
+  voice (the -2 drow paren, the 1/9 web walk, the
+  MR 70 against the L&L 75, the See-below class
+  pairs, the L (M) size, no plane printed - the
+  grid Abyss), the Skerrit Variable cells with the
+  armor-class 2 floor, the Sashelas Standard (out
+  of water), the Nine Hells plane pins against the
+  L&L D64 glosses, Moradin 4-40 (+14) against the
+  L&L +17, the fraction and quarter sizes (the
+  Mouser 5 1/4, Yondalla 4 1/2, Kurtulmak 5 1/2),
+  the Hruggek 1-or-2 and Eadro 1-or-8 attack raws;
+  lair percents unpinned; worshippersAlignment,
+  symbol, areaOfControl n/a all. Spec
+  tools/spec_r885.json, md5
+  43e5f6bcd27746fcbef08b8cfbb2e260 (102,346 bytes);
+  the canvas spec-r885 gated byte-exact; rverify
+  144 mutants 0 missed; the land verified
+  byte-exact against the fresh-tarball rebuild
+  (1291 defs, dpy.h, audit, census, seed, regtest,
+  spec identical; engine idempotent applied 55 /
+  already 55). NEXT: the promotion tail - Norse,
+  then Sumerian. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
