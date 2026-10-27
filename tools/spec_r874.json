@@ -1,0 +1,640 @@
+{
+ "prefix": "cqc6",
+ "round": 874,
+ "title": "the clerical chart, batch six",
+ "header_file": "rules/cqc6.h",
+ "audit_file": "rules/audits/r874_batch.h",
+ "audit_label": "R874 clerical chart batch six audit",
+ "include_after": "#include \"rules/cqc5.h\"  // R873: the clerical chart, batch five",
+ "audit_anchor": "#include \"rules/audits/r873_batch.h\"  // R873: R873 clerical chart batch five audit",
+ "include_comment": "the clerical chart, batch six",
+ "audit_comment": "APPENDIX 3: THE CLERICAL QUICK-REFERENCE CHARTS, BATCH SIX - the D&DG walk round twenty-six, print p. 141: the sixth batch of deity rows - the thirteen Nehwon rows - riding the roster data file, the block below the R873 Melnibonean tail on the same pdf page; the App 3 gap box stays open until the last chart batch lands. The print voice is the ROTATED tesseract pass, collated against the 1eonline L&L per-deity chart rows. The headline divergences: the print reads the Aarth flags male + female only where the L&L voice reads a third X, and the Red God sphere fire where the L&L voice reads underground areas - pinned by print, eyeball flags.",
+ "banner": {
+  "title": "Appendix 3: the clerical quick-reference chart, batch six - the D&DG walk round twenty-six, print p. 141: the 13 rows of the Nehwon mythos across the 13 printed columns.",
+  "provenance": "primary ink: the ROTATED extract/ddg tesseract pass (pNNN_rot_full.txt + pNNN_rot_tsv.tsv, pdf page 141; the second printing) - the batch rides the pdf 141 block below the R873 Melnibonean tail; the collation voice: the 1eonline L&L per-deity chart rows (the Nehwon slugs run flat). The adjudications: the Aarth male + female pin (print over the L&L third X, eyeball flag), the Red God sphere fire pinned (the L&L voice reads underground areas; the print glyph run reads the short word), the Hate place underground pinned (the garble restored; the L&L voice adds temple), the Earth God name pinned Nehwon Earth God (the pass reads Earth God; the row sorts after Kos and the R863 prose name carries the prefix), the Gods of Lankhmar year-s end and Spider God summer solstice garbles restored, the Red God red-tailed hawk garble and red studded leather fold restored, the Rat God M + N-H geometry (no F X; the L&L voice agrees), the Tyaa female-only flag (the single X at the F column), and the Gods of Trouble stray dot noted. The batch order runs the Nehwon walk (Aarth through Votishal)."
+ },
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "- R873 LANDED 2026-10-27: commit",
+ "prev_record": [
+  "- R873 LANDED 2026-10-27: commit",
+  "397b33b8317fdcfb3f002f906b7edb6aaf8f0172 (pushed",
+  "aa3e815..397b33b, census 795 -> 796), APPENDIX 3 THE",
+  "CLERICAL CHART, BATCH FIVE - the D&DG walk round",
+  "twenty-five, print pp. 140-141: the Japanese (10) and",
+  "Melnibonean (15) deity rows as the round's one grid (25",
+  "rows, 13 cols: Ord, the nine string-field roster ordinals,",
+  "the M/F/N-H flags) with the nine per-column rosters riding",
+  "doc/data/ddg_clerical_chart_5.txt; prefix cqc5 (full-repo",
+  "scan clean); header rules/cqc5.h; audit \"R873 clerical",
+  "chart batch five audit\", rode rules/audits/r873_batch.h.",
+  "NO GAP FLIP - the App 3 box stays open until the last",
+  "chart batch (the R869 no-flip precedent; gap census 20/4",
+  "unchanged). THE HEADLINE ADJUDICATIONS: the AMA-TSU-MARA",
+  "DIVERGENCE - the print reads metalwork at the hearth where",
+  "the L&L voice reads precious metalwork and temple - pinned",
+  "by print (metalwork + hearth); the DAIKOKU SPHERE GARBLE",
+  "restored (wealth; luck, the name on the R861 Daikoku pin);",
+  "the TEN MELNIBONEAN N-H-ONLY ROWS - TSV geometry (single X",
+  "at the N-H column) with L&L agreeing - Arioch, Darnizhaan",
+  "(M + N-H), Donblas, Pyaray, Xiombarg carry M/F marks, the",
+  "elemental/beast rows carry none; the HAAASHASTAAK COLUMN",
+  "SHIFT - the L&L voice moves dinosaurs from animal to",
+  "sphere, the print animal pinned (lizard, dinosaur); the",
+  "L&L [swan]/[tiger]/[whale] brackets read as gloss markers,",
+  "not ink - the plain print animals pinned; the Hachiman",
+  "equirox garble restored (fall equinox); the Ebisu",
+  "brownrobes fold restored (brown robes); the Tsukiyomi L&L",
+  "page header read Sphere of Worship (the alternate header)",
+  "- the row itself agrees; the Roofdrak stray glyph and the",
+  "Grome stray apostrophe noted (print artifacts, not ink).",
+  "THE FLAG CLASSES: male 15, female 13, non-human 15 (the",
+  "ten N-H-only Melnibonean rows plus Darnizhaan, Donblas,",
+  "Arioch, Pyaray, Xiombarg; the Japanese rows read no N-H",
+  "marks). ZERO registry defs touched - the floor holds at",
+  "995. Spec tools/spec_r873.json, md5",
+  "87dc83f95d916d3454361658d82804c2 (25,853 bytes,",
+  "authored-plus-newline); 45 inlines (22 consts, 10 bools,",
+  "13 table cols), 6 examples; rverify double-run GREEN, 357",
+  "mutants 0 missed; hyphen scan clean; zero true/false",
+  "tokens in the emitted files; the chk(name, field) builder",
+  "pattern held first-try; the canvas spec-r873 gated",
+  "byte-exact (frontmatter + spec bytes, no extra newline).",
+  "NEXT: the App 3 chart batches continue from Nehwon (pdf",
+  "141) or Curtiss's call - WAIT FOR GO."
+ ],
+ "census_before": 796,
+ "gap_census": {
+  "closed": 20,
+  "open": 4
+ },
+ "gap_report": "tools/ddg_gap_report.md",
+ "gap_flips": [],
+ "consts": [
+  {
+   "name": "cqc6Round",
+   "value": 874,
+   "comment": "the clerical chart batch six round: the D&DG walk round twenty-six"
+  },
+  {
+   "name": "cqc6Batch",
+   "value": 6,
+   "comment": "the sixth chart batch (the App 3 box stays open until the last batch lands)"
+  },
+  {
+   "name": "cqc6PrintStart",
+   "value": 141,
+   "comment": "the chart batch six print page opens at 141"
+  },
+  {
+   "name": "cqc6PrintEnd",
+   "value": 141,
+   "comment": "the chart batch six print page closes at 141"
+  },
+  {
+   "name": "cqc6Rows",
+   "value": 13,
+   "comment": "the batch rows (the thirteen Nehwon rows)"
+  },
+  {
+   "name": "cqc6NehwonRows",
+   "value": 13,
+   "comment": "the Nehwon mythos rows (the block rides pdf 141 below the R873 Melnibonean tail)"
+  },
+  {
+   "name": "cqc6MaleRows",
+   "value": 12,
+   "comment": "the rows reading a male-clerics X (Tyaa the row without)"
+  },
+  {
+   "name": "cqc6FemaleRows",
+   "value": 11,
+   "comment": "the rows reading a female-clerics X (the Earth God and Rat God rows without, Tyaa the row with the flag alone)"
+  },
+  {
+   "name": "cqc6NonHumanRows",
+   "value": 2,
+   "comment": "the rows reading a non-human clerics X (Death and the Rat God)"
+  },
+  {
+   "name": "cqc6PrintedColumns",
+   "value": 13,
+   "comment": "the printed columns of the chart (the 13 the batch grids encode)"
+  },
+  {
+   "name": "cqc6SphereCount",
+   "value": 13,
+   "comment": "the sphere-of-control roster ordinals of the batch"
+  },
+  {
+   "name": "cqc6AnimalCount",
+   "value": 9,
+   "comment": "the animal roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc6HeadCount",
+   "value": 10,
+   "comment": "the raiment head roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc6BodyCount",
+   "value": 13,
+   "comment": "the raiment body roster ordinals of the batch"
+  },
+  {
+   "name": "cqc6ColorCount",
+   "value": 12,
+   "comment": "the color roster ordinals of the batch (the red with black web wrap rides the roster)"
+  },
+  {
+   "name": "cqc6HolyDayCount",
+   "value": 7,
+   "comment": "the holy-days roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc6FreqCount",
+   "value": 4,
+   "comment": "the sacrifice-frequency roster ordinals of the batch"
+  },
+  {
+   "name": "cqc6FormCount",
+   "value": 8,
+   "comment": "the sacrifice-form roster ordinals of the batch (the n/a rows ride the roster)"
+  },
+  {
+   "name": "cqc6PlaceCount",
+   "value": 4,
+   "comment": "the place-of-worship roster ordinals of the batch"
+  },
+  {
+   "name": "cqc6TableCount",
+   "value": 1,
+   "comment": "the batch grid count (one grid per batch round)"
+  },
+  {
+   "name": "cqc6ChainCount",
+   "value": 0,
+   "comment": "the batch chain count (the chart grids carry no chains)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cqc6AarthMfOnlyPrint",
+   "value": true,
+   "comment": "the headline divergence: the print reads the Aarth flags male + female only (no N-H mark) where the L&L voice reads a third X - pinned by print, eyeball flag"
+  },
+  {
+   "name": "cqc6RedGodSphereFire",
+   "value": true,
+   "comment": "the print reads the Red God sphere fire where the L&L voice reads underground areas - the print glyph run reads the short word, pinned by print"
+  },
+  {
+   "name": "cqc6HatePlaceUnderground",
+   "value": true,
+   "comment": "the Hate place garble restored to underground; the L&L voice adds temple - the print reads the single word, pinned by print"
+  },
+  {
+   "name": "cqc6EarthGodNamePin",
+   "value": true,
+   "comment": "the rotated pass reads the chart label Earth God; the row sorts after Kos (the N of Nehwon) and the R863 prose name pins Nehwon Earth God"
+  },
+  {
+   "name": "cqc6YearsEndRestored",
+   "value": true,
+   "comment": "the Gods of Lankhmar yeor-s end garble restored to year-s end (the L&L voice agrees)"
+  },
+  {
+   "name": "cqc6RedTailedRestored",
+   "value": true,
+   "comment": "the Red God red-failed hawk garble restored to red-tailed hawk; the redstudded fold restored to red studded leather"
+  },
+  {
+   "name": "cqc6SummerRestored",
+   "value": true,
+   "comment": "the Spider God summgr solstice garble restored to summer solstice"
+  },
+  {
+   "name": "cqc6RatGodNhGeometry",
+   "value": true,
+   "comment": "the Rat God flags read male + N-H only (the X pair at the M and N-H columns, none at F) - the L&L voice agrees"
+  },
+  {
+   "name": "cqc6GodsOfTroubleStrayDot",
+   "value": true,
+   "comment": "the stray dot before the Gods of Trouble form n/a noted - a print artifact, not ink"
+  },
+  {
+   "name": "cqc6TyaaFemaleOnly",
+   "value": true,
+   "comment": "the Tyaa row reads a female-only flag (the single X at the F column) - the L&L voice agrees"
+  }
+ ],
+ "tables": [
+  {
+   "name": "the clerical chart batch six grid",
+   "tag": "cqc6Chart",
+   "cols": [
+    "cqc6ChartOrd",
+    "cqc6ChartSphere",
+    "cqc6ChartAnimal",
+    "cqc6ChartM",
+    "cqc6ChartF",
+    "cqc6ChartNh",
+    "cqc6ChartHead",
+    "cqc6ChartBody",
+    "cqc6ChartColor",
+    "cqc6ChartHolyday",
+    "cqc6ChartFreq",
+    "cqc6ChartForm",
+    "cqc6ChartPlace"
+   ],
+   "col_comments": [
+    "The row ordinals (0-12, the batch walk order: the thirteen Nehwon rows)",
+    "The sphere-of-control roster ordinals (the labels ride the data file)",
+    "The animal roster ordinals (the n/a rows ride the roster)",
+    "The male clerics flag (the printed X reads 1)",
+    "The female clerics flag (the printed X reads 1; Tyaa the row with the flag alone)",
+    "The non-human clerics flag (the printed X reads 1; the Aarth divergence pins the print against the L&L third X)",
+    "The raiment head roster ordinals (the n/a rows ride the roster)",
+    "The raiment body roster ordinals",
+    "The color roster ordinals (the red with black web wrap rides the roster)",
+    "The holy-days roster ordinals (the n/a rows ride the roster)",
+    "The sacrifice-frequency roster ordinals",
+    "The sacrifice-form roster ordinals (the n/a rows ride the roster)",
+    "The place-of-worship roster ordinals (the underground pin rides the roster)"
+   ],
+   "count": "cqc6Rows",
+   "sentinel": 0,
+   "data": [
+    [
+     0,
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     2,
+     1,
+     1,
+     0,
+     2,
+     2,
+     2,
+     2,
+     1,
+     1,
+     0
+    ],
+    [
+     3,
+     3,
+     2,
+     1,
+     1,
+     0,
+     3,
+     3,
+     3,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     4,
+     4,
+     2,
+     1,
+     1,
+     0,
+     4,
+     4,
+     4,
+     3,
+     0,
+     2,
+     2
+    ],
+    [
+     5,
+     5,
+     2,
+     1,
+     1,
+     0,
+     0,
+     5,
+     5,
+     0,
+     0,
+     3,
+     3
+    ],
+    [
+     6,
+     6,
+     3,
+     1,
+     1,
+     0,
+     5,
+     6,
+     6,
+     4,
+     0,
+     4,
+     0
+    ],
+    [
+     7,
+     7,
+     2,
+     1,
+     0,
+     0,
+     6,
+     7,
+     7,
+     5,
+     2,
+     5,
+     0
+    ],
+    [
+     8,
+     8,
+     4,
+     1,
+     0,
+     1,
+     0,
+     8,
+     4,
+     4,
+     0,
+     5,
+     0
+    ],
+    [
+     9,
+     9,
+     5,
+     1,
+     1,
+     0,
+     7,
+     9,
+     8,
+     6,
+     0,
+     6,
+     0
+    ],
+    [
+     10,
+     10,
+     6,
+     1,
+     1,
+     0,
+     0,
+     10,
+     9,
+     6,
+     3,
+     5,
+     0
+    ],
+    [
+     11,
+     11,
+     7,
+     0,
+     1,
+     0,
+     8,
+     11,
+     10,
+     4,
+     2,
+     7,
+     0
+    ],
+    [
+     12,
+     12,
+     8,
+     1,
+     1,
+     0,
+     9,
+     12,
+     11,
+     0,
+     2,
+     7,
+     0
+    ]
+   ]
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "table_checks": [],
+ "examples": [
+  {
+   "note": "the census walk (the batch rows, the Nehwon count, the roster counts, the cleric flags)",
+   "expr": "m['cqc6Round']() != 874 or m['cqc6Batch']() != 6 or m['cqc6PrintStart']() != 141 or m['cqc6PrintEnd']() != 141 or m['cqc6Rows']() != 13 or m['cqc6NehwonRows']() != 13 or m['cqc6MaleRows']() != 12 or m['cqc6FemaleRows']() != 11 or m['cqc6NonHumanRows']() != 2 or m['cqc6PrintedColumns']() != 13 or m['cqc6SphereCount']() != 13 or m['cqc6AnimalCount']() != 9 or m['cqc6HeadCount']() != 10 or m['cqc6BodyCount']() != 13 or m['cqc6ColorCount']() != 12 or m['cqc6HolyDayCount']() != 7 or m['cqc6FreqCount']() != 4 or m['cqc6FormCount']() != 8 or m['cqc6PlaceCount']() != 4 or m['cqc6TableCount']() != 1 or m['cqc6ChainCount']() != 0"
+  },
+  {
+   "note": "the parity pins (the Aarth and Red God divergences, the garble restorations, the geometry pins)",
+   "expr": "m['cqc6AarthMfOnlyPrint']() != 1 or m['cqc6RedGodSphereFire']() != 1 or m['cqc6HatePlaceUnderground']() != 1 or m['cqc6EarthGodNamePin']() != 1 or m['cqc6YearsEndRestored']() != 1 or m['cqc6RedTailedRestored']() != 1 or m['cqc6SummerRestored']() != 1 or m['cqc6RatGodNhGeometry']() != 1 or m['cqc6GodsOfTroubleStrayDot']() != 1 or m['cqc6TyaaFemaleOnly']() != 1"
+  },
+  {
+   "note": "the head and tail rows (Aarth 0, Votishal 12, the ordinals run)",
+   "expr": "m['cqc6ChartOrd'](0) != 0 or m['cqc6ChartM'](0) != 1 or m['cqc6ChartF'](0) != 1 or m['cqc6ChartNh'](0) != 0 or m['cqc6ChartHead'](0) != 0 or m['cqc6ChartBody'](0) != 0 or m['cqc6ChartColor'](0) != 0 or m['cqc6ChartHolyday'](0) != 0 or m['cqc6ChartFreq'](0) != 0 or m['cqc6ChartForm'](0) != 0 or m['cqc6ChartPlace'](0) != 0 or m['cqc6ChartOrd'](12) != 12 or m['cqc6ChartSphere'](12) != 12 or m['cqc6ChartAnimal'](12) != 8 or m['cqc6ChartHead'](12) != 9 or m['cqc6ChartBody'](12) != 12 or m['cqc6ChartColor'](12) != 11 or m['cqc6ChartFreq'](12) != 2 or m['cqc6ChartForm'](12) != 7"
+  },
+  {
+   "note": "the mid rows (the year-s end and suffering classes, the color wrap, the Rat God geometry)",
+   "expr": "m['cqc6ChartSphere'](2) != 2 or m['cqc6ChartHead'](2) != 2 or m['cqc6ChartColor'](2) != 2 or m['cqc6ChartHolyday'](2) != 2 or m['cqc6ChartSphere'](3) != 3 or m['cqc6ChartColor'](3) != 3 or m['cqc6ChartForm'](3) != 1 or m['cqc6ChartSphere'](4) != 4 or m['cqc6ChartForm'](4) != 2 or m['cqc6ChartPlace'](4) != 2 or m['cqc6ChartHead'](5) != 0 or m['cqc6ChartForm'](5) != 3 or m['cqc6ChartPlace'](5) != 3 or m['cqc6ChartAnimal'](6) != 3 or m['cqc6ChartHead'](6) != 5 or m['cqc6ChartForm'](6) != 4 or m['cqc6ChartHead'](7) != 6 or m['cqc6ChartColor'](7) != 7 or m['cqc6ChartHolyday'](7) != 5 or m['cqc6ChartFreq'](7) != 2 or m['cqc6ChartSphere'](8) != 8 or m['cqc6ChartM'](8) != 1 or m['cqc6ChartF'](8) != 0 or m['cqc6ChartNh'](8) != 1 or m['cqc6ChartHead'](8) != 0"
+  },
+  {
+   "note": "the god rows (the fire sphere pin, the red-tailed hawk, the female-only Tyaa)",
+   "expr": "m['cqc6ChartSphere'](9) != 9 or m['cqc6ChartAnimal'](9) != 5 or m['cqc6ChartHead'](9) != 7 or m['cqc6ChartBody'](9) != 9 or m['cqc6ChartColor'](9) != 8 or m['cqc6ChartHolyday'](9) != 6 or m['cqc6ChartForm'](9) != 6 or m['cqc6ChartSphere'](10) != 10 or m['cqc6ChartBody'](10) != 10 or m['cqc6ChartColor'](10) != 9 or m['cqc6ChartFreq'](10) != 3 or m['cqc6ChartSphere'](11) != 11 or m['cqc6ChartAnimal'](11) != 7 or m['cqc6ChartM'](11) != 0 or m['cqc6ChartF'](11) != 1 or m['cqc6ChartNh'](11) != 0 or m['cqc6ChartHead'](11) != 8 or m['cqc6ChartColor'](11) != 10 or m['cqc6ChartFreq'](11) != 2 or m['cqc6ChartForm'](11) != 7"
+  },
+  {
+   "note": "the cleric flags (the female and non-human census cells)",
+   "expr": "m['cqc6ChartF'](0) != 1 or m['cqc6ChartF'](1) != 1 or m['cqc6ChartF'](2) != 1 or m['cqc6ChartF'](3) != 1 or m['cqc6ChartF'](4) != 1 or m['cqc6ChartF'](5) != 1 or m['cqc6ChartF'](6) != 1 or m['cqc6ChartF'](7) != 0 or m['cqc6ChartF'](8) != 0 or m['cqc6ChartF'](9) != 1 or m['cqc6ChartF'](10) != 1 or m['cqc6ChartF'](11) != 1 or m['cqc6ChartF'](12) != 1 or m['cqc6ChartM'](7) != 1 or m['cqc6ChartM'](8) != 1 or m['cqc6ChartM'](11) != 0 or m['cqc6ChartNh'](0) != 0 or m['cqc6ChartNh'](1) != 1 or m['cqc6ChartNh'](2) != 0 or m['cqc6ChartNh'](3) != 0 or m['cqc6ChartNh'](4) != 0 or m['cqc6ChartNh'](5) != 0 or m['cqc6ChartNh'](6) != 0 or m['cqc6ChartNh'](7) != 0 or m['cqc6ChartNh'](8) != 1 or m['cqc6ChartNh'](9) != 0 or m['cqc6ChartNh'](10) != 0 or m['cqc6ChartNh'](11) != 0 or m['cqc6ChartNh'](12) != 0"
+  }
+ ],
+ "header_sections": {
+  "the batch six census": [
+   {
+    "kind": "const",
+    "name": "cqc6Round"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6Batch"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6PrintStart"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6PrintEnd"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6Rows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6NehwonRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6MaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6FemaleRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6NonHumanRows"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6PrintedColumns"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6SphereCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6AnimalCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6HeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6BodyCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6ColorCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6HolyDayCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6FreqCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6FormCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6PlaceCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6TableCount"
+   },
+   {
+    "kind": "const",
+    "name": "cqc6ChainCount"
+   }
+  ],
+  "the clerical chart batch six grid": [
+   {
+    "kind": "table",
+    "name": "the clerical chart batch six grid"
+   }
+  ],
+  "the parity pins": [
+   {
+    "kind": "bool",
+    "name": "cqc6AarthMfOnlyPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc6RedGodSphereFire"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc6HatePlaceUnderground"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc6EarthGodNamePin"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc6YearsEndRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc6RedTailedRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc6SummerRestored"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc6RatGodNhGeometry"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc6GodsOfTroubleStrayDot"
+   },
+   {
+    "kind": "bool",
+    "name": "cqc6TyaaFemaleOnly"
+   }
+  ]
+ },
+ "data_files": [
+  {
+   "path": "doc/data/ddg_clerical_chart_6.txt",
+   "content": "The DDG print p. 141 clerical quick-reference chart rows -\nbatch six (the thirteen Nehwon rows; the block rides pdf 141 below\nthe R873 Melnibonean tail). The per-column rosters (first-appearance\nordinals = the grid cells) and the printed rows. Primary ink: the\nrotated tesseract pass; the collation voice: the\n1eonline L&L per-deity chart rows.\n\n== the sphere roster (13) ==\n00 knowledge\n01 death\n02 Lankhmar\n03 evil fate\n04 harm; hate\n05 suffering\n06 doom\n07 earth\n08 underground areas\n09 fire\n10 fear\n11 evil birds\n12 stealth\n\n== the animal roster (9) ==\n00 cheetah\n01 raven\n02 n/a\n03 polar bear\n04 rat\n05 red-tailed hawk\n06 spider\n07 bird of Tyaa\n08 fox\n\n== the head roster (10) ==\n00 bald\n01 black helm\n02 skull cap\n03 n/a\n04 turban\n05 fur cap\n06 felt cap\n07 pointed helm\n08 tiara\n09 leather cap\n\n== the body roster (13) ==\n00 white kilt\n01 plate mail\n02 cloth wrappings\n03 n/a\n04 cotton uniform\n05 breechcloth\n06 fur tunic\n07 light tunic\n08 gray tunic\n09 red studded leather\n10 black kilt\n11 cotton shift\n12 leather tunic\n\n== the color roster (12) ==\n00 tan\n01 black\n02 dark yellow\n03 amber\n04 gray\n05 red\n06 white\n07 red with black web\n08 bronze\n09 lime green\n10 silver\n11 gold\n\n== the holyday roster (7) ==\n00 new year's day\n01 n/a\n02 year's end\n03 fall equinox\n04 spring equinox\n05 midsummer's day\n06 summer solstice\n\n== the freq roster (4) ==\n00 annually\n01 n/a\n02 monthly\n03 frequently\n\n== the form roster (8) ==\n00 jewelry\n01 n/a\n02 mental draining\n03 gold\n04 burnt offering\n05 human\n06 valuables\n07 precious items\n\n== the place roster (4) ==\n00 temple\n01 n/a\n02 underground\n03 outdoor temple\n\n== the printed rows ==\nAarth :: knowledge | cheetah | X X - | bald | white kilt | tan | new year's day | annually | jewelry | temple\nDeath :: death | raven | X X X | black helm | plate mail | black | n/a | n/a | n/a | n/a\nGods of Lankhmar :: Lankhmar | n/a | X X - | skull cap | cloth wrappings | dark yellow | year's end | n/a | n/a | temple\nGods of Trouble :: evil fate | n/a | X X - | n/a | n/a | amber | n/a | n/a | n/a | n/a\nHate :: harm; hate | n/a | X X - | turban | cotton uniform | gray | fall equinox | annually | mental draining | underground\nIssek of the Jug :: suffering | n/a | X X - | bald | breechcloth | red | new year's day | annually | gold | outdoor temple\nKos :: doom | polar bear | X X - | fur cap | fur tunic | white | spring equinox | annually | burnt offering | temple\nNehwon Earth God :: earth | n/a | X - - | felt cap | light tunic | red with black web | midsummer's day | monthly | human | temple\nRat God :: underground areas | rat | X - X | bald | gray tunic | gray | spring equinox | annually | human | temple\nRed God :: fire | red-tailed hawk | X X - | pointed helm | red studded leather | bronze | summer solstice | annually | valuables | temple\nSpider God :: fear | spider | X X - | bald | black kilt | lime green | summer solstice | frequently | human | temple\nTyaa :: evil birds | bird of Tyaa | - X - | tiara | cotton shift | silver | spring equinox | monthly | precious items | temple\nVotishal :: stealth | fox | X X - | leather cap | leather tunic | gold | new year's day | monthly | precious items | temple\n"
+  }
+ ],
+ "inline_count": 44
+}

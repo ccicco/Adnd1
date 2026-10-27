@@ -1,0 +1,119 @@
+The DDG print p. 141 clerical quick-reference chart rows -
+batch six (the thirteen Nehwon rows; the block rides pdf 141 below
+the R873 Melnibonean tail). The per-column rosters (first-appearance
+ordinals = the grid cells) and the printed rows. Primary ink: the
+rotated tesseract pass; the collation voice: the
+1eonline L&L per-deity chart rows.
+
+== the sphere roster (13) ==
+00 knowledge
+01 death
+02 Lankhmar
+03 evil fate
+04 harm; hate
+05 suffering
+06 doom
+07 earth
+08 underground areas
+09 fire
+10 fear
+11 evil birds
+12 stealth
+
+== the animal roster (9) ==
+00 cheetah
+01 raven
+02 n/a
+03 polar bear
+04 rat
+05 red-tailed hawk
+06 spider
+07 bird of Tyaa
+08 fox
+
+== the head roster (10) ==
+00 bald
+01 black helm
+02 skull cap
+03 n/a
+04 turban
+05 fur cap
+06 felt cap
+07 pointed helm
+08 tiara
+09 leather cap
+
+== the body roster (13) ==
+00 white kilt
+01 plate mail
+02 cloth wrappings
+03 n/a
+04 cotton uniform
+05 breechcloth
+06 fur tunic
+07 light tunic
+08 gray tunic
+09 red studded leather
+10 black kilt
+11 cotton shift
+12 leather tunic
+
+== the color roster (12) ==
+00 tan
+01 black
+02 dark yellow
+03 amber
+04 gray
+05 red
+06 white
+07 red with black web
+08 bronze
+09 lime green
+10 silver
+11 gold
+
+== the holyday roster (7) ==
+00 new year's day
+01 n/a
+02 year's end
+03 fall equinox
+04 spring equinox
+05 midsummer's day
+06 summer solstice
+
+== the freq roster (4) ==
+00 annually
+01 n/a
+02 monthly
+03 frequently
+
+== the form roster (8) ==
+00 jewelry
+01 n/a
+02 mental draining
+03 gold
+04 burnt offering
+05 human
+06 valuables
+07 precious items
+
+== the place roster (4) ==
+00 temple
+01 n/a
+02 underground
+03 outdoor temple
+
+== the printed rows ==
+Aarth :: knowledge | cheetah | X X - | bald | white kilt | tan | new year's day | annually | jewelry | temple
+Death :: death | raven | X X X | black helm | plate mail | black | n/a | n/a | n/a | n/a
+Gods of Lankhmar :: Lankhmar | n/a | X X - | skull cap | cloth wrappings | dark yellow | year's end | n/a | n/a | temple
+Gods of Trouble :: evil fate | n/a | X X - | n/a | n/a | amber | n/a | n/a | n/a | n/a
+Hate :: harm; hate | n/a | X X - | turban | cotton uniform | gray | fall equinox | annually | mental draining | underground
+Issek of the Jug :: suffering | n/a | X X - | bald | breechcloth | red | new year's day | annually | gold | outdoor temple
+Kos :: doom | polar bear | X X - | fur cap | fur tunic | white | spring equinox | annually | burnt offering | temple
+Nehwon Earth God :: earth | n/a | X - - | felt cap | light tunic | red with black web | midsummer's day | monthly | human | temple
+Rat God :: underground areas | rat | X - X | bald | gray tunic | gray | spring equinox | annually | human | temple
+Red God :: fire | red-tailed hawk | X X - | pointed helm | red studded leather | bronze | summer solstice | annually | valuables | temple
+Spider God :: fear | spider | X X - | bald | black kilt | lime green | summer solstice | frequently | human | temple
+Tyaa :: evil birds | bird of Tyaa | - X - | tiara | cotton shift | silver | spring equinox | monthly | precious items | temple
+Votishal :: stealth | fox | X X - | leather cap | leather tunic | gold | new year's day | monthly | precious items | temple

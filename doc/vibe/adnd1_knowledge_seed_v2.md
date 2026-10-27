@@ -25426,6 +25426,51 @@ the male count comment named only Artemis, Ushas
 corrected). NEXT: the App 3 chart batches continue from
 Japanese + Melnibonean (pdf 140, the Japanese block below
 the R872 Indian tail) or Curtiss's call - WAIT FOR GO.
+- R873 LANDED 2026-10-27: commit
+397b33b8317fdcfb3f002f906b7edb6aaf8f0172 (pushed
+aa3e815..397b33b, census 795 -> 796), APPENDIX 3 THE
+CLERICAL CHART, BATCH FIVE - the D&DG walk round
+twenty-five, print pp. 140-141: the Japanese (10) and
+Melnibonean (15) deity rows as the round's one grid (25
+rows, 13 cols: Ord, the nine string-field roster ordinals,
+the M/F/N-H flags) with the nine per-column rosters riding
+doc/data/ddg_clerical_chart_5.txt; prefix cqc5 (full-repo
+scan clean); header rules/cqc5.h; audit "R873 clerical
+chart batch five audit", rode rules/audits/r873_batch.h.
+NO GAP FLIP - the App 3 box stays open until the last
+chart batch (the R869 no-flip precedent; gap census 20/4
+unchanged). THE HEADLINE ADJUDICATIONS: the AMA-TSU-MARA
+DIVERGENCE - the print reads metalwork at the hearth where
+the L&L voice reads precious metalwork and temple - pinned
+by print (metalwork + hearth); the DAIKOKU SPHERE GARBLE
+restored (wealth; luck, the name on the R861 Daikoku pin);
+the TEN MELNIBONEAN N-H-ONLY ROWS - TSV geometry (single X
+at the N-H column) with L&L agreeing - Arioch, Darnizhaan
+(M + N-H), Donblas, Pyaray, Xiombarg carry M/F marks, the
+elemental/beast rows carry none; the HAAASHASTAAK COLUMN
+SHIFT - the L&L voice moves dinosaurs from animal to
+sphere, the print animal pinned (lizard, dinosaur); the
+L&L [swan]/[tiger]/[whale] brackets read as gloss markers,
+not ink - the plain print animals pinned; the Hachiman
+equirox garble restored (fall equinox); the Ebisu
+brownrobes fold restored (brown robes); the Tsukiyomi L&L
+page header read Sphere of Worship (the alternate header)
+- the row itself agrees; the Roofdrak stray glyph and the
+Grome stray apostrophe noted (print artifacts, not ink).
+THE FLAG CLASSES: male 15, female 13, non-human 15 (the
+ten N-H-only Melnibonean rows plus Darnizhaan, Donblas,
+Arioch, Pyaray, Xiombarg; the Japanese rows read no N-H
+marks). ZERO registry defs touched - the floor holds at
+995. Spec tools/spec_r873.json, md5
+87dc83f95d916d3454361658d82804c2 (25,853 bytes,
+authored-plus-newline); 45 inlines (22 consts, 10 bools,
+13 table cols), 6 examples; rverify double-run GREEN, 357
+mutants 0 missed; hyphen scan clean; zero true/false
+tokens in the emitted files; the chk(name, field) builder
+pattern held first-try; the canvas spec-r873 gated
+byte-exact (frontmatter + spec bytes, no extra newline).
+NEXT: the App 3 chart batches continue from Nehwon (pdf
+141) or Curtiss's call - WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
