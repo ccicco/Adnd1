@@ -56,3 +56,21 @@ and the current state. Do not re-derive the protocol; the
 knowledge is authoritative for process.
 
 That is all the setup. I will say what the next round is.
+## Amendment (appended 2026-10-27, R848 -> R886)
+
+State at R886: the repo should be at commit
+69d4b93 ("R886: The DDG lua promotion, batch
+seven (census 809)") or the doc/vibe v3 append
+commit just after it; the battery census is 809
+audit lines, the registry floor 1333. R887 is
+the next round. The DDG lua promotion is
+COMPLETE (338 defs, batches one to seven); the
+next queue item is the per-book normalization
+rounds (MM1 408, MM2 332, FF 185, OA 47,
+WSG+MOP 23) - NOT authorized until I say go.
+The seed and the backup now carry the R849-R886
+increment appended after their R848 content -
+STEP 1's "seat the R848 record" is history:
+the records through R886 ride in the appended
+increment, and the seed's own Round state plus
+the increment covers the rebuild.
