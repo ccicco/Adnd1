@@ -27146,6 +27146,73 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   md5 1828d31c13c37a2459fea522c6f9f849. NEXT: the
   issue-5 opener (the next Dragon walk round) or
   Curtiss's next adjudication. WAIT FOR GO.
+  - R902 LANDED 2026-10-29: commit
+47aacaefbbe1c35bfa8edf854633248ae5950081 (base
+f6cc644, census 824 -> 825), the Dragon issue-5
+opener: Curtiss's adjudication - ALL THREE
+engine-relevant chains in one round (a first),
+from Dragon #5, March 1977 (the archive.org
+scan, accessory-dragon-magazine-006). THE
+SHAPE: prefix wch (regtest-scan clean), header
+rules/wch.h (151 inline: 115 consts + 23 bools
++ 3 tables / 13 cols), audit "R902 Dragon
+issue-5 audit" at rules/audits/r902_batch.h, 62
+examples, 6 header_sections, ZERO file_patches,
+33 data_files (32 issue-page transcripts under
+extract/dragon/005/ + the gap report 005 pre-
+flip), NO gap flips (the round's gap_report
+points at report 004, verified 1 closed / 0
+open no-op; report 005 ships 0 / 1 open per the
+pre-flip rule). THE PINS, all cited: the
+Witchcraft Supplement (folios 4-9, the
+anonymous ms. - the editor never learned the
+author) as the witch class variant layer - the
+encounter doctrine (rolls 5 or 7, the 35/65
+split), the 12-sided Order ladder (Low 1-8,
+High 9-11, Secret 12), the spell quotas (good
+7, Priestess 10+1 weekly, Low 4 Minor, High
+4+2, Secret 6 Group A + 3 Group B), the 21-row
+spell matrix (range/duration as printed, 0 the
+no-duration sentinel), the trade economy, the
+4-row lair treasure cache table (the Secret
+lair's unprinted jewelry line the 0 sentinel);
+the Anhkheg (folios 12, 28) as a LORE-AGAINST-
+DEF pin - the merged MM1 ankheg.lua exists, so
+the bulette/Remorhaz precedent applies for the
+first time on the Dragon walk: a provenance
+pin, never a competing def, every print
+divergence noted (lair 25 vs 15, enzyme 1-10 vs
+1-4, treasure B2 vs C, the 1-6-dice acid squirt
+vs the def 8-32); the Wizard Research Rules by
+Goforth (folios 24-26, 28) - the 10-row
+research cost ladder (weeks = level, the
+investment doubling per level from 2,000 /
+10,000 at the flat 20 percent), the +1 and
+serious enchanting, the True Ring (300k xp) and
+Wizard Blade (200k xp, d8 over the 11-property
+list, +6 to -6 named level, the larger 12/16/20
+dice at 300k/400k/500k), the Memorial
+Enchanting d8. The garbled folio-4 wilderness
+encounter grid scoped out on OCR garble per the
+standing caution. DROPPED: the MA chains (Ward
+10-11, Gygax 16), the fiction (Fox 18-24, the
+Gnome Cache 29-30), the Tolkien lore (14), the
+Gandalf analysis (27), the letters, the ads,
+the preview (32). The R901 record (41 lines)
+seated in the seed via prev_record. VERIFIED:
+engine double-run GREEN applied 38 / already
+38; rverify against pristine f6cc644: 242
+mutants 0 missed; the raw JSON round-trip byte-
+exact. Spec tools/spec_r902.json, 236,110
+bytes, 1,973 lines, md5
+6c48b861ba26d9c7e64a82329e5420ab. ENV NOTE: the
+reset wiped dragon005 mid-round - re-fetched
+the djvu.xml from archive.org and rebuilt the
+32 page transcripts in-turn; verify md5s at
+landing time, never quote a pre-reset one.
+NEXT: the issue-5 box's closing round (a pure
+flip, R901 precedent) or the next adjudication.
+WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

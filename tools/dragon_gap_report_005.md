@@ -30,7 +30,7 @@ the next-issue preview (32).
 
 ## Boxes
 
-- [ ] **The Witchcraft Supplement, the Anhkheg and the Wizard
+- [x] **The Witchcraft Supplement, the Anhkheg and the Wizard
   Research Rules** (folios 4-9, 12+28, 24-26+28) - the issue-5
   opener round
 
