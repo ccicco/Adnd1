@@ -103,12 +103,15 @@ def render(hdr, fields, cmts):
 
 def book_of(fields):
     m = re.fullmatch(
-        r'"(MM1|MM2|FF|OA|WSG|MOP|DDG)"',
+        r'"(MM1|MM2|FF|OA|WSG|MOP|DDG|The Dragon #[0-9]+)"',
         fields.get('source', ''))
     if not m:
         raise ValueError('unknown source: %r'
                          % fields.get('source'))
-    return m.group(1)
+    b = m.group(1)
+    if b.startswith('The Dragon'):
+        b = 'DRG'
+    return b
 
 
 def main():

@@ -601,6 +601,7 @@
 #include "rules/fsc.h"  // R897: the Samurai and Berserker fighting sub-classes round
 #include "rules/chr.h"  // R898: the Dwarves, birth tables and Eldar deltas character round
 #include "rules/cmv.h"  // R899: the Idiot, Jester and dexterity mods comedy round
+#include "rules/cfe.h"  // R900: the Dragon issue-4 opener, the Creature Features monsters
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -764,7 +765,8 @@ int main() {
                 d.xpSource != "by_level" && d.xpSource != "oa_print" &&
                 d.xpSource != "wsg_print" && d.xpSource != "mop_print" &&
                 d.xpSource != "mm2_print" &&
-                d.xpSource != "ff_print") bad = true;
+                d.xpSource != "ff_print" &&
+                d.xpSource != "dragon_print") bad = true;
             if (bad && anom < 10) {
                 printf("ANOM: %-24s xpSource=%s xpValue=%d xpPerHp=%d\n",
                        kv.first.c_str(), d.xpSource.c_str(),
@@ -2809,6 +2811,67 @@ int main() {
                bad);
         if (bad) return 1;
     }
+    // ---- R900: the Dragon issue-4 Creature Features live def walk
+    // (no census marker) ----
+    // The three promoted Creature Features defs (the Mihalli, the
+    // Vriyagga, the Qu'uni) cross-checked live against the numbers
+    // the cfe pin header carries: the dragon_print xp source, the
+    // XP formula, the hit dice, the armor classes, the lair
+    // percents, the moves, and the registry census floor: 1308 loaded
+    // base defs + the three promotions = 1311 live (the 1333 base
+    // files include 25 long-standing load-error defs that never
+    // enter the registry, a pre-R900 state not touched by this
+    // round). (The walk pins the registry side with literals -
+    // the audit header holds the cfe-side mirror, so the regtest
+    // source stays free of the round prefix per the R411 gate.)
+    {
+        using namespace rules;
+        int bad = 0;
+        const auto* mi = reg.find("mihalli");
+        const auto* vr = reg.find("vriyagga");
+        const auto* qu = reg.find("qu_uni");
+        if (!mi) ++bad;
+        if (mi) {
+            if (mi->xpSource != "dragon_print") ++bad;
+            if (mi->armorClass != 1) ++bad;
+            if (mi->hitDiceNum != 3) ++bad;
+            if (mi->avgHp != 13) ++bad;
+            if (mi->xpBase != 115) ++bad;
+            if (mi->xpPerHp != 3) ++bad;
+            if (mi->xpValue != 154) ++bad;
+            if (mi->lairPct != 40) ++bad;
+            if (mi->moveRate != 15) ++bad;
+        }
+        if (!vr) ++bad;
+        if (vr) {
+            if (vr->xpSource != "dragon_print") ++bad;
+            if (vr->armorClass != 1) ++bad;
+            if (vr->hitDiceNum != 15) ++bad;
+            if (vr->avgHp != 67) ++bad;
+            if (vr->xpBase != 5250) ++bad;
+            if (vr->xpPerHp != 20) ++bad;
+            if (vr->xpValue != 6590) ++bad;
+            if (vr->lairPct != 40) ++bad;
+            if (vr->moveRate != 12) ++bad;
+        }
+        if (!qu) ++bad;
+        if (qu) {
+            if (qu->xpSource != "dragon_print") ++bad;
+            if (qu->armorClass != 3) ++bad;
+            if (qu->hitDiceNum != 2) ++bad;
+            if (qu->avgHp != 9) ++bad;
+            if (qu->xpBase != 20) ++bad;
+            if (qu->xpPerHp != 2) ++bad;
+            if (qu->xpValue != 38) ++bad;
+            if (qu->moveRate != 10) ++bad;
+        }
+        if ((int)reg.all().size()
+            < 1311)
+            ++bad;
+        printf("R900 Dragon Creature Features live defs: bad %d\n",
+               bad);
+        if (bad) return 1;
+    }
     #include "rules/audits/r816_mm2_dungeon_encounter_gr.h"  // R833: migrated
     // ---- R816: the MM2 dungeon encounter grids walk ----
     // The ten Monster Level grids cross-checked live:
@@ -4648,6 +4711,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r900_batch.h"  // R900: R900 Dragon Creature Features audit
 #include "rules/audits/r899_batch.h"  // R899: R899 comedy and small-variants audit
 #include "rules/audits/r898_batch.h"  // R898: R898 character round audit
 #include "rules/audits/r897_batch.h"  // R897: R897 fighting sub-classes audit

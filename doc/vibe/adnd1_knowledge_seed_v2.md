@@ -26945,6 +26945,79 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   dexterity mods folio 30), flipping the
   character box -> issue-3 report 4 closed / 1
   open, closing the issue-3 walk. WAIT FOR GO.
+  - R899 LANDED 2026-10-29: commit
+  8cd97c84bf324307933db64e0a012ea2bdfb65c5 (base
+  c113aa3, census 821 -> 822), the comedy and
+  small-variants round: Davidson's Idiot (folio
+  28) + Carner, Cannon and Simon's Jester (folios
+  28-29) + Cline's dexterity combat mods (folio
+  30), from Dragon #3. THE SHAPE: prefix cmv
+  (regtest-scan clean), header rules/cmv.h (205
+  inline: 147 consts + 18 bools + 8 tables / 40
+  columns), audit "R899 comedy and small-variants
+  audit" at rules/audits/r899_batch.h, 95
+  examples, 3 header_sections, include after
+  chr.h, prev_seed_key the R898 record. THE PINS:
+  the Idiot - the 160-gold hire with the 50
+  percent city chance, the 200-gold midget adding
+  5 percent, the confusion purpose with 3 melee
+  turns and the 15 percent attack-anyhow, the
+  seven-row first-level chart 65 down to 5, the
+  confuse grid (the even monster rows 2/4/6
+  across eleven Idiot levels, the odd rows and
+  the 12th column garbling in the OCR and riding
+  unpinned), the BAD Abilities chart 3/5/7/10 out
+  of 10, the falls (100 feet, 1-6 breakage, 2-6
+  bloody nose, 1-10 arm), the twelve-level ladder
+  Dummy 0 to Idiot 200,101 at the 200,001 step;
+  the Jester - Int 15 Dex 15 Cha 6-or-less, the
+  racial caps Dwarf-infinite / Hobbit 10 / Elf 6
+  / Men 5 / others 4, the d4 hit die 10 max then
+  +1, the nine joke weapons, the saves tables
+  4-18 and 19-5, the fourteen-row XP grid eight
+  progression columns AS SCANNED with the caps 15
+  (Dwarf-infinite) / 5 (Men-Fool) / 4 (Comic)
+  landing on the first/sixth/seventh columns, the
+  eight joke levels with the noted conversions
+  (half-damage 50 percent, quarter-per-turn 25
+  percent, Armor Class -4 pinned as 4), the
+  wisdom-based spell chance; Cline's dexterity
+  grid 12 bands x 6 columns with the printed N
+  CONVERTED to 0, the four percent-band rows
+  riding AS SCANNED as garbles. LESSON (R899, two
+  legs): (1) the generator emitted the Jester XP
+  grid 10-WIDE - a spurious all-zero column
+  wedged after XP shifted every value one column
+  right and died at the Termux C++ preflight with
+  excess-elements errors, and the census 0 was
+  pure knock-on of the dead build; the fix was
+  9-wide AS SCANNED with the 14 examples and the
+  column prose regenerated from the corrected
+  data - rverify CANNOT catch a row-width vs
+  declared-cols mismatch, only the C++ preflight
+  can, so re-check every table's row lengths
+  against its cols count before publishing; (2)
+  the re-land then aborted with 'the EMITTED
+  header fails its own audit mirror (87 bad)'
+  because the failed first land left the Termux
+  tree FULLY APPLIED (the R895 lesson, Termux
+  side) - the repair rode with its unwind: git
+  checkout the three tracked files, rm the two
+  new headers, one ./rn. VERIFIED: engine double-
+  run GREEN applied 6 / already 6; rverify
+  against pristine c113aa3: 491 mutants 0 missed;
+  the raw JSON round-trip byte-exact. Spec
+  tools/spec_r899.json, 86,544 bytes, 2,710
+  lines, md5 6df0920aef36f66cea68c2fcea7ac0d4
+  (authored-plus-newline). GAP REPORT: the
+  character box flipped in
+  tools/dragon_gap_report_003.md -> issue-3
+  report 4 closed / 1 open, the adjudicated
+  issue-3 walk closed; the comedy box itself
+  flips at the next Dragon round per the pre-flip
+  rule. NEXT: Curtiss's adjudication - the
+  issue-4 opener or the comedy box's closing
+  round. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

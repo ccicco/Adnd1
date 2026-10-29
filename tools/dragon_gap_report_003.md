@@ -30,7 +30,7 @@ deltas.
   sub-classes round
 - [x] **The new-view Dwarves, the birth tables and the Eldar deltas**
   (folios 14-16, 26-27, 20-21) - the character round
-- [ ] **The Idiot, the Jester and the dexterity mods** (folios 28-30) -
+- [x] **The Idiot, the Jester and the dexterity mods** (folios 28-30) -
   the comedy and small-variants round
 
 5 boxes, 0 closed, 5 open at the R895 authoring. The R895 round ships

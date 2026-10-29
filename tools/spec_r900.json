@@ -1,0 +1,1064 @@
+{
+ "round": 900,
+ "title": "The Dragon issue-4 opener: the Creature Features monsters pin",
+ "regtest": "regtest.cpp",
+ "census_before": 822,
+ "prefix": "cfe",
+ "header_file": "rules/cfe.h",
+ "inline_count": 72,
+ "audit_file": "rules/audits/r900_batch.h",
+ "audit_label": "R900 Dragon Creature Features audit",
+ "include_after": "#include \"rules/cmv.h\"  // R899: the Idiot, Jester and dexterity mods comedy round",
+ "include_comment": "the Dragon issue-4 opener, the Creature Features monsters",
+ "audit_anchor": "#include \"rules/audits/r899_batch.h\"  // R899: R899 comedy and small-variants audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R899 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R899 LANDED 2026-10-29: commit",
+  "  8cd97c84bf324307933db64e0a012ea2bdfb65c5 (base",
+  "  c113aa3, census 821 -> 822), the comedy and",
+  "  small-variants round: Davidson's Idiot (folio",
+  "  28) + Carner, Cannon and Simon's Jester (folios",
+  "  28-29) + Cline's dexterity combat mods (folio",
+  "  30), from Dragon #3. THE SHAPE: prefix cmv",
+  "  (regtest-scan clean), header rules/cmv.h (205",
+  "  inline: 147 consts + 18 bools + 8 tables / 40",
+  "  columns), audit \"R899 comedy and small-variants",
+  "  audit\" at rules/audits/r899_batch.h, 95",
+  "  examples, 3 header_sections, include after",
+  "  chr.h, prev_seed_key the R898 record. THE PINS:",
+  "  the Idiot - the 160-gold hire with the 50",
+  "  percent city chance, the 200-gold midget adding",
+  "  5 percent, the confusion purpose with 3 melee",
+  "  turns and the 15 percent attack-anyhow, the",
+  "  seven-row first-level chart 65 down to 5, the",
+  "  confuse grid (the even monster rows 2/4/6",
+  "  across eleven Idiot levels, the odd rows and",
+  "  the 12th column garbling in the OCR and riding",
+  "  unpinned), the BAD Abilities chart 3/5/7/10 out",
+  "  of 10, the falls (100 feet, 1-6 breakage, 2-6",
+  "  bloody nose, 1-10 arm), the twelve-level ladder",
+  "  Dummy 0 to Idiot 200,101 at the 200,001 step;",
+  "  the Jester - Int 15 Dex 15 Cha 6-or-less, the",
+  "  racial caps Dwarf-infinite / Hobbit 10 / Elf 6",
+  "  / Men 5 / others 4, the d4 hit die 10 max then",
+  "  +1, the nine joke weapons, the saves tables",
+  "  4-18 and 19-5, the fourteen-row XP grid eight",
+  "  progression columns AS SCANNED with the caps 15",
+  "  (Dwarf-infinite) / 5 (Men-Fool) / 4 (Comic)",
+  "  landing on the first/sixth/seventh columns, the",
+  "  eight joke levels with the noted conversions",
+  "  (half-damage 50 percent, quarter-per-turn 25",
+  "  percent, Armor Class -4 pinned as 4), the",
+  "  wisdom-based spell chance; Cline's dexterity",
+  "  grid 12 bands x 6 columns with the printed N",
+  "  CONVERTED to 0, the four percent-band rows",
+  "  riding AS SCANNED as garbles. LESSON (R899, two",
+  "  legs): (1) the generator emitted the Jester XP",
+  "  grid 10-WIDE - a spurious all-zero column",
+  "  wedged after XP shifted every value one column",
+  "  right and died at the Termux C++ preflight with",
+  "  excess-elements errors, and the census 0 was",
+  "  pure knock-on of the dead build; the fix was",
+  "  9-wide AS SCANNED with the 14 examples and the",
+  "  column prose regenerated from the corrected",
+  "  data - rverify CANNOT catch a row-width vs",
+  "  declared-cols mismatch, only the C++ preflight",
+  "  can, so re-check every table's row lengths",
+  "  against its cols count before publishing; (2)",
+  "  the re-land then aborted with 'the EMITTED",
+  "  header fails its own audit mirror (87 bad)'",
+  "  because the failed first land left the Termux",
+  "  tree FULLY APPLIED (the R895 lesson, Termux",
+  "  side) - the repair rode with its unwind: git",
+  "  checkout the three tracked files, rm the two",
+  "  new headers, one ./rn. VERIFIED: engine double-",
+  "  run GREEN applied 6 / already 6; rverify",
+  "  against pristine c113aa3: 491 mutants 0 missed;",
+  "  the raw JSON round-trip byte-exact. Spec",
+  "  tools/spec_r899.json, 86,544 bytes, 2,710",
+  "  lines, md5 6df0920aef36f66cea68c2fcea7ac0d4",
+  "  (authored-plus-newline). GAP REPORT: the",
+  "  character box flipped in",
+  "  tools/dragon_gap_report_003.md -> issue-3",
+  "  report 4 closed / 1 open, the adjudicated",
+  "  issue-3 walk closed; the comedy box itself",
+  "  flips at the next Dragon round per the pre-flip",
+  "  rule. NEXT: Curtiss's adjudication - the",
+  "  issue-4 opener or the comedy box's closing",
+  "  round. WAIT FOR GO."
+ ],
+ "header_sections": {
+  "the Mihalli (folios 18-19)": [
+   {
+    "kind": "const",
+    "name": "cfeMihalliNaMin"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliNaMax"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliAc"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliMove"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliHd"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliLairMin"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliLairMax"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliF"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliI"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliRedEyesPct"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliBonusSpellsMin"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliBonusSpellsHigh"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliEyeChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliBallLadderCount"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliBallPurple"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliBallSilver"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliBallGold"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliBallBlue"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliUseLevelMin"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliFriendlyPct"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliOfferItemPct"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliAvgHp"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliXp"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "cfeMihalliXpValue"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeMihalliShapeChanger"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeMihalliHumanoid"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeMihalliHermaphroditic"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeMihalliSeeDark"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeMihalliGasSparingShenSsu"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeMihalliBallXivUpOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeMihalliScrambleBelowXiv"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeMihalliDefendsIfAttacked"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeMihalliRandomRollEachTurn"
+   }
+  ],
+  "the Vriyagga (folios 19, 21)": [
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaNaMin"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaNaMax"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaAc"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaLairPct"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaCityMin"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaCityMax"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaTentaclesMin"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaTentacleAc"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaAvgHp"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaXp"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaXpValue"
+   },
+   {
+    "kind": "const",
+    "name": "cfeVriyaggaSizesCount"
+   },
+   {
+    "kind": "table",
+    "name": "cfeVriyaggaSizes"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeVriyaggaNilTreasure"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeVriyaggaNilTreasureInLair"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeVriyaggaSensesHeat"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeVriyaggaCannotSpeak"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeVriyaggaAmbushThinker"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeVriyaggaNoStairs"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeVriyaggaSeeDark"
+   }
+  ],
+  "the Qu'uni (folio 21)": [
+   {
+    "kind": "const",
+    "name": "cfeQuuniHd"
+   },
+   {
+    "kind": "const",
+    "name": "cfeQuuniMove"
+   },
+   {
+    "kind": "const",
+    "name": "cfeQuuniNaMin"
+   },
+   {
+    "kind": "const",
+    "name": "cfeQuuniNaMax"
+   },
+   {
+    "kind": "const",
+    "name": "cfeQuuniAc"
+   },
+   {
+    "kind": "const",
+    "name": "cfeQuuniAvgHp"
+   },
+   {
+    "kind": "const",
+    "name": "cfeQuuniXp"
+   },
+   {
+    "kind": "const",
+    "name": "cfeQuuniXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "cfeQuuniXpValue"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeQuuniAttacksWaterSeekers"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeQuuniSeaGrottoTreasure"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeQuuniNoTreasure"
+   },
+   {
+    "kind": "bool",
+    "name": "cfeQuuniShrimpLike"
+   }
+  ],
+  "the registry walk": [
+   {
+    "kind": "const",
+    "name": "cfeRegistryAfter"
+   }
+  ]
+ },
+ "consts": [
+  {
+   "name": "cfeMihalliNaMin",
+   "value": 1,
+   "comment": "the number appearing minimum - NA 1-20 (folio 18); the print's 'l-20' glyph pins as 1, the OCR-of-font artifact noted"
+  },
+  {
+   "name": "cfeMihalliNaMax",
+   "value": 20,
+   "comment": "the number appearing maximum - NA 1-20 (folio 18)"
+  },
+  {
+   "name": "cfeMihalliAc",
+   "value": 1,
+   "comment": "the armor class - AC 1 (folio 18)"
+  },
+  {
+   "name": "cfeMihalliMove",
+   "value": 15,
+   "comment": "the movement rate - M 15 inches per turn (folio 18)"
+  },
+  {
+   "name": "cfeMihalliHd",
+   "value": 3,
+   "comment": "the hit dice - HD 3 (folio 18)"
+  },
+  {
+   "name": "cfeMihalliLairPct",
+   "value": 40,
+   "comment": "the chance of treasure in lair - L 40 percent (folio 18)"
+  },
+  {
+   "name": "cfeMihalliLairMin",
+   "value": 80,
+   "comment": "the lair gold minimum - 80-800 only near own territory (folio 18)"
+  },
+  {
+   "name": "cfeMihalliLairMax",
+   "value": 800,
+   "comment": "the lair gold maximum - 80-800 only near own territory (folio 18)"
+  },
+  {
+   "name": "cfeMihalliF",
+   "value": 50,
+   "comment": "the print stat line F: 50 - the glyph garbles in both the PDF layer and the OCR (folio 18); pinned AS SCANNED, semantics unpinned"
+  },
+  {
+   "name": "cfeMihalliI",
+   "value": 50,
+   "comment": "the print stat line I: 50 - the glyph garbles in both the PDF layer and the OCR (folio 18); pinned AS SCANNED, semantics unpinned"
+  },
+  {
+   "name": "cfeMihalliRedEyesPct",
+   "value": 20,
+   "comment": "the glowing red eyes reveal the Mihalli 20 percent of the turns they are looked at (folio 18)"
+  },
+  {
+   "name": "cfeMihalliBonusSpellsMin",
+   "value": 2,
+   "comment": "the minimum two bonus spells of the higher Mihalli (folios 18-19)"
+  },
+  {
+   "name": "cfeMihalliBonusSpellsHigh",
+   "value": 3,
+   "comment": "the three-plus bonus spells at levels IV and up (folios 18-19)"
+  },
+  {
+   "name": "cfeMihalliEyeChancePct",
+   "value": 40,
+   "comment": "the 40 percent chance of Eyes, amulets or scrolls (folios 18-19)"
+  },
+  {
+   "name": "cfeMihalliBallLadderCount",
+   "value": 4,
+   "comment": "the Ball of Immediate Eventuation climbs a four-step colour ladder (folio 19)"
+  },
+  {
+   "name": "cfeMihalliBallPurple",
+   "value": 1,
+   "comment": "the ball ladder step 1 - light purple (folio 19)"
+  },
+  {
+   "name": "cfeMihalliBallSilver",
+   "value": 2,
+   "comment": "the ball ladder step 2 - bright silver (folio 19)"
+  },
+  {
+   "name": "cfeMihalliBallGold",
+   "value": 3,
+   "comment": "the ball ladder step 3 - bright gold (folio 19)"
+  },
+  {
+   "name": "cfeMihalliBallBlue",
+   "value": 4,
+   "comment": "the ball ladder step 4 - lambent translucent blue (folio 19)"
+  },
+  {
+   "name": "cfeMihalliUseLevelMin",
+   "value": 14,
+   "comment": "the ball is usable only by magic users and priests of the fourteenth level and up - below that it scrambles brains (folio 19)"
+  },
+  {
+   "name": "cfeMihalliFriendlyPct",
+   "value": 5,
+   "comment": "the 5 percent chance a Mihalli is friendly - rolled each turn (folio 19)"
+  },
+  {
+   "name": "cfeMihalliOfferItemPct",
+   "value": 1,
+   "comment": "the 1 percent chance a friendly Mihalli offers a magical item (folio 19)"
+  },
+  {
+   "name": "cfeMihalliAvgHp",
+   "value": 13,
+   "comment": "the average hit points - 3 dice at the 4.5-per-die d8 convention, floored; the conversion noted, never silent"
+  },
+  {
+   "name": "cfeMihalliXp",
+   "value": 115,
+   "comment": "the base XP - DMG p.85 formula: 35 base + 25 one special + 55 one exceptional (folios 18-19); the conversion noted"
+  },
+  {
+   "name": "cfeMihalliXpPerHp",
+   "value": 3,
+   "comment": "the XP per hit point - the DMG p.85 per-hit-die value at 3 dice (folios 18-19)"
+  },
+  {
+   "name": "cfeMihalliXpValue",
+   "value": 154,
+   "comment": "the XP value - 115 + 3 x 13, the DMG p.85 additive formula (folios 18-19)"
+  },
+  {
+   "name": "cfeVriyaggaNaMin",
+   "value": 1,
+   "comment": "the number appearing minimum - NA 1-10 (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaNaMax",
+   "value": 10,
+   "comment": "the number appearing maximum - NA 1-10 (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaAc",
+   "value": 1,
+   "comment": "the armor class - AC 1 (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaLairPct",
+   "value": 40,
+   "comment": "the L 40 percent stat line (folio 19) - the treasure itself is nil, the nil-in-lair bool carries the print"
+  },
+  {
+   "name": "cfeVriyaggaCityMin",
+   "value": 20,
+   "comment": "the in-own-city number minimum - 20-200 (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaCityMax",
+   "value": 200,
+   "comment": "the in-own-city number maximum - 20-200 (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaTentaclesMin",
+   "value": 4,
+   "comment": "the minimum four tentacles, more in the larger forms (folio 21)"
+  },
+  {
+   "name": "cfeVriyaggaTentacleAc",
+   "value": 2,
+   "comment": "it takes armor class 2 to sever a tentacle (folio 21)"
+  },
+  {
+   "name": "cfeVriyaggaAvgHp",
+   "value": 67,
+   "comment": "the average hit points - the 15-dice middle size at the 4.5-per-die d8 convention, floored; the conversion noted, never silent"
+  },
+  {
+   "name": "cfeVriyaggaXp",
+   "value": 5250,
+   "comment": "the base XP - the DMG p.85 formula at the 15-dice middle size: 2400 + 1250 + 1600 (folio 19); the conversion noted"
+  },
+  {
+   "name": "cfeVriyaggaXpPerHp",
+   "value": 20,
+   "comment": "the XP per hit point - the DMG p.85 per-hit-die value at 15 dice (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaXpValue",
+   "value": 6590,
+   "comment": "the XP value - 5250 + 20 x 67, the DMG p.85 additive formula (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaSizesCount",
+   "value": 3,
+   "comment": "the cfeVriyaggaSizes table runs 3 rows (folios 19, 21)"
+  },
+  {
+   "name": "cfeQuuniHd",
+   "value": 2,
+   "comment": "the hit dice - 2 (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeQuuniMove",
+   "value": 10,
+   "comment": "the movement rate - 10 inches per turn (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeQuuniNaMin",
+   "value": 50,
+   "comment": "the number appearing minimum - 50-100 (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeQuuniNaMax",
+   "value": 100,
+   "comment": "the number appearing maximum - 50-100 (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeQuuniAc",
+   "value": 3,
+   "comment": "the armor class - AC 3 (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeQuuniAvgHp",
+   "value": 9,
+   "comment": "the average hit points - 2 dice at the 4.5-per-die d8 convention, floored; the conversion noted, never silent"
+  },
+  {
+   "name": "cfeQuuniXp",
+   "value": 20,
+   "comment": "the base XP - the DMG p.85 formula at 2 dice, no specials (folio 21 sidebar); the conversion noted"
+  },
+  {
+   "name": "cfeQuuniXpPerHp",
+   "value": 2,
+   "comment": "the XP per hit point - the DMG p.85 per-hit-die value at 2 dice (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeQuuniXpValue",
+   "value": 38,
+   "comment": "the XP value - 20 + 2 x 9, the DMG p.85 additive formula (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeRegistryAfter",
+   "value": 1311,
+   "comment": "the live lua def census after the three promotions - the 1308 loaded base defs plus the Mihalli, the Vriyagga and the Qu'uni; the 1333 base lua files include 25 long-standing load-error defs (broken text lines) that never enter the registry, a pre-R900 print-fidelity state this round does not touch (the Termux battery line 'loaded 1311, errors 25' is the ground truth)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cfeMihalliShapeChanger",
+   "value": true,
+   "comment": "the Mihalli are shape-changers (folio 19)"
+  },
+  {
+   "name": "cfeMihalliHumanoid",
+   "value": true,
+   "comment": "the Mihalli are humanoid (folio 19)"
+  },
+  {
+   "name": "cfeMihalliHermaphroditic",
+   "value": true,
+   "comment": "the Mihalli are hermaphroditic (folio 19)"
+  },
+  {
+   "name": "cfeMihalliSeeDark",
+   "value": true,
+   "comment": "the Mihalli see in the dark (folio 19)"
+  },
+  {
+   "name": "cfeMihalliGasSparingShenSsu",
+   "value": true,
+   "comment": "the Mihalli gas spares the Shen and the Ssu (folio 19)"
+  },
+  {
+   "name": "cfeMihalliBallXivUpOnly",
+   "value": true,
+   "comment": "the Ball of Immediate Eventuation is usable only by magic users and priests XIV-up (folio 19)"
+  },
+  {
+   "name": "cfeMihalliScrambleBelowXiv",
+   "value": true,
+   "comment": "below the fourteenth level the ball scrambles brains (folio 19)"
+  },
+  {
+   "name": "cfeMihalliDefendsIfAttacked",
+   "value": true,
+   "comment": "the Mihalli defends itself if attacked (folio 19)"
+  },
+  {
+   "name": "cfeMihalliRandomRollEachTurn",
+   "value": true,
+   "comment": "the reaction is rolled at random each turn (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaNilTreasure",
+   "value": true,
+   "comment": "the treasure is nil (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaNilTreasureInLair",
+   "value": true,
+   "comment": "the treasure is nil in lair too - T in L nil (folio 19)"
+  },
+  {
+   "name": "cfeVriyaggaSensesHeat",
+   "value": true,
+   "comment": "the Vriyagga senses heat (folio 21)"
+  },
+  {
+   "name": "cfeVriyaggaCannotSpeak",
+   "value": true,
+   "comment": "the Vriyagga cannot speak (folio 21)"
+  },
+  {
+   "name": "cfeVriyaggaAmbushThinker",
+   "value": true,
+   "comment": "the Vriyagga thinks, organizes and lays ambushes (folio 21)"
+  },
+  {
+   "name": "cfeVriyaggaNoStairs",
+   "value": true,
+   "comment": "the Vriyagga cannot climb stairs (folio 21)"
+  },
+  {
+   "name": "cfeVriyaggaSeeDark",
+   "value": true,
+   "comment": "the black-opal eyes see in the dark (folio 21)"
+  },
+  {
+   "name": "cfeQuuniAttacksWaterSeekers",
+   "value": true,
+   "comment": "the Qu'uni automatically attack human parties seeking water (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeQuuniSeaGrottoTreasure",
+   "value": true,
+   "comment": "no treasure except under the water in its sea-grotto home (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeQuuniNoTreasure",
+   "value": true,
+   "comment": "the Qu'uni carry no treasure (folio 21 sidebar)"
+  },
+  {
+   "name": "cfeQuuniShrimpLike",
+   "value": true,
+   "comment": "the Qu'uni are pallid, semi-transparent, shrimp-like creatures (folio 21 sidebar)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "cfeVriyaggaSizes",
+   "tag": "VriSz",
+   "count": "cfeVriyaggaSizesCount",
+   "sentinel": 30,
+   "cols": [
+    "cfeVriSizeMove",
+    "cfeVriSizeHd",
+    "cfeVriSizeDice"
+   ],
+   "col_comments": [
+    "the movement rate by size - 12, 10 and 8 inches per turn (folios 19, 21)",
+    "the hit dice by size - 10, 15 and 25 (folios 19, 21)",
+    "the tentacle damage dice per turn by size - 2, 4 and 6, assumed d6 (folios 19, 21)"
+   ],
+   "data": [
+    [
+     12,
+     10,
+     2
+    ],
+    [
+     10,
+     15,
+     4
+    ],
+    [
+     8,
+     25,
+     6
+    ]
+   ],
+   "audit_comment": "the Vriyagga size ladder - the small, middle and large forms: move 12/10/8 inches, hit dice 10/15/25, tentacle damage 2/4/6 dice per turn (folios 19, 21)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['cfeVriSizeMove'](0) != 12 or m['cfeVriSizeHd'](0) != 10 or m['cfeVriSizeDice'](0) != 2 or m['cfeVriyaggaSizesCount']() != 3",
+   "note": "the Vriyagga size ladder, row 0 of 3 - the move, hit dice and tentacle damage dice by size (folios 19, 21)"
+  },
+  {
+   "expr": "m['cfeVriSizeMove'](1) != 10 or m['cfeVriSizeHd'](1) != 15 or m['cfeVriSizeDice'](1) != 4",
+   "note": "the Vriyagga size ladder, row 1 of 3 - the move, hit dice and tentacle damage dice by size (folios 19, 21)"
+  },
+  {
+   "expr": "m['cfeVriSizeMove'](2) != 8 or m['cfeVriSizeHd'](2) != 25 or m['cfeVriSizeDice'](2) != 6",
+   "note": "the Vriyagga size ladder, row 2 of 3 - the move, hit dice and tentacle damage dice by size (folios 19, 21)"
+  },
+  {
+   "expr": "m['cfeMihalliNaMin']() != 1 or m['cfeMihalliNaMax']() != 20 or m['cfeMihalliAc']() != 1 or m['cfeMihalliMove']() != 15 or m['cfeMihalliHd']() != 3",
+   "note": "the Mihalli stat block - number appearing 1-20, armor class 1, move 15 inches, 3 hit dice (folio 18)"
+  },
+  {
+   "expr": "m['cfeMihalliLairPct']() != 40 or m['cfeMihalliLairMin']() != 80 or m['cfeMihalliLairMax']() != 800",
+   "note": "the Mihalli lair - 40 percent, 80-800 gold near own territory (folio 18)"
+  },
+  {
+   "expr": "m['cfeMihalliF']() != 50 or m['cfeMihalliI']() != 50",
+   "note": "the Mihalli stat-line garbles - F: 50 and I: 50 pinned AS SCANNED, the glyph semantics unpinned (folio 18)"
+  },
+  {
+   "expr": "m['cfeMihalliRedEyesPct']() != 20 or m['cfeMihalliBonusSpellsMin']() != 2 or m['cfeMihalliBonusSpellsHigh']() != 3 or m['cfeMihalliEyeChancePct']() != 40",
+   "note": "the Mihalli eyes - the 20 percent reveal, the two-to-three-plus bonus spells and the 40 percent Eyes/amulets/scrolls chance (folios 18-19)"
+  },
+  {
+   "expr": "m['cfeMihalliBallLadderCount']() != 4 or m['cfeMihalliBallPurple']() != 1 or m['cfeMihalliBallSilver']() != 2 or m['cfeMihalliBallGold']() != 3 or m['cfeMihalliBallBlue']() != 4",
+   "note": "the Ball of Immediate Eventuation - the four-step colour ladder light purple, bright silver, bright gold, lambent translucent blue (folio 19)"
+  },
+  {
+   "expr": "m['cfeMihalliUseLevelMin']() != 14 or m['cfeMihalliFriendlyPct']() != 5 or m['cfeMihalliOfferItemPct']() != 1",
+   "note": "the ball reserved to the fourteenth level and up, and the 5 percent friendly / 1 percent offer chances (folio 19)"
+  },
+  {
+   "expr": "m['cfeMihalliAvgHp']() != 13 or m['cfeMihalliXp']() != 115 or m['cfeMihalliXpPerHp']() != 3 or m['cfeMihalliXpValue']() != 154",
+   "note": "the Mihalli XP conversion - 13 average hp, base 115, 3 per hp, value 154, the DMG p.85 formula, noted never silent (folios 18-19)"
+  },
+  {
+   "expr": "m['cfeMihalliShapeChanger']() != 1 or m['cfeMihalliHumanoid']() != 1 or m['cfeMihalliHermaphroditic']() != 1 or m['cfeMihalliSeeDark']() != 1",
+   "note": "the Mihalli nature - shape-changers, humanoid, hermaphroditic, seeing in the dark (folio 19)"
+  },
+  {
+   "expr": "m['cfeMihalliGasSparingShenSsu']() != 1 or m['cfeMihalliBallXivUpOnly']() != 1 or m['cfeMihalliScrambleBelowXiv']() != 1",
+   "note": "the gas sparing the Shen and the Ssu, and the ball XIV-up-only scrambling brains below (folio 19)"
+  },
+  {
+   "expr": "m['cfeMihalliDefendsIfAttacked']() != 1 or m['cfeMihalliRandomRollEachTurn']() != 1",
+   "note": "the Mihalli defends if attacked, with the reaction rolled each turn (folio 19)"
+  },
+  {
+   "expr": "m['cfeVriyaggaNaMin']() != 1 or m['cfeVriyaggaNaMax']() != 10 or m['cfeVriyaggaAc']() != 1 or m['cfeVriyaggaLairPct']() != 40",
+   "note": "the Vriyagga stat block - number appearing 1-10, armor class 1, the L 40 line (folio 19)"
+  },
+  {
+   "expr": "m['cfeVriyaggaCityMin']() != 20 or m['cfeVriyaggaCityMax']() != 200",
+   "note": "the Vriyagga in its own city - 20-200 appearing (folio 19)"
+  },
+  {
+   "expr": "m['cfeVriyaggaTentaclesMin']() != 4 or m['cfeVriyaggaTentacleAc']() != 2",
+   "note": "the Vriyagga tentacles - four or more, armor class 2 to sever (folio 21)"
+  },
+  {
+   "expr": "m['cfeVriyaggaAvgHp']() != 67 or m['cfeVriyaggaXp']() != 5250 or m['cfeVriyaggaXpPerHp']() != 20 or m['cfeVriyaggaXpValue']() != 6590",
+   "note": "the Vriyagga XP conversion at the 15-dice middle size - 67 average hp, base 5250, 20 per hp, value 6590, the DMG p.85 formula, noted never silent (folio 19)"
+  },
+  {
+   "expr": "m['cfeVriyaggaNilTreasure']() != 1 or m['cfeVriyaggaNilTreasureInLair']() != 1 or m['cfeVriyaggaSensesHeat']() != 1",
+   "note": "the Vriyagga nil treasure even in lair, and its heat sense (folios 19, 21)"
+  },
+  {
+   "expr": "m['cfeVriyaggaCannotSpeak']() != 1 or m['cfeVriyaggaAmbushThinker']() != 1 or m['cfeVriyaggaNoStairs']() != 1 or m['cfeVriyaggaSeeDark']() != 1",
+   "note": "the Vriyagga mind - cannot speak, thinks and lays ambushes, cannot climb stairs, black-opal eyes in the dark (folio 21)"
+  },
+  {
+   "expr": "m['cfeQuuniHd']() != 2 or m['cfeQuuniMove']() != 10 or m['cfeQuuniNaMin']() != 50 or m['cfeQuuniNaMax']() != 100 or m['cfeQuuniAc']() != 3",
+   "note": "the Qu'uni stat block - 2 hit dice, move 10, 50-100 appearing, armor class 3 (folio 21 sidebar)"
+  },
+  {
+   "expr": "m['cfeQuuniAvgHp']() != 9 or m['cfeQuuniXp']() != 20 or m['cfeQuuniXpPerHp']() != 2 or m['cfeQuuniXpValue']() != 38",
+   "note": "the Qu'uni XP conversion - 9 average hp, base 20, 2 per hp, value 38, the DMG p.85 formula, noted never silent (folio 21 sidebar)"
+  },
+  {
+   "expr": "m['cfeQuuniAttacksWaterSeekers']() != 1 or m['cfeQuuniSeaGrottoTreasure']() != 1 or m['cfeQuuniNoTreasure']() != 1 or m['cfeQuuniShrimpLike']() != 1",
+   "note": "the Qu'uni nature - automatically attacking water-seekers, no treasure save the sea grotto, pallid semi-transparent shrimp-like (folio 21 sidebar)"
+  },
+  {
+   "expr": "m['cfeRegistryAfter']() != 1311",
+   "note": "the live registry census floor - the 1308 loaded base defs plus the three Creature Features promotions = 1311 (the 25 long-broken base text lines stay out of the load, a pre-R900 state not touched)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "file_patches": [
+  {
+   "file": "regtest.cpp",
+   "note": "the R73 xpSource whitelist gains dragon_print - the Creature Features defs carry the new print source",
+   "from": "                d.xpSource != \"mm2_print\" &&\n                d.xpSource != \"ff_print\") bad = true;",
+   "to": "                d.xpSource != \"mm2_print\" &&\n                d.xpSource != \"ff_print\" &&\n                d.xpSource != \"dragon_print\") bad = true;"
+  },
+  {
+   "file": "regtest.cpp",
+   "note": "the R900 Creature Features live def walk rides beside the MM2 walks - the three promoted defs cross-checked against the pin-header numbers, the dragon_print source and the live registry census floor 1308 loaded base defs + 3 = 1311",
+   "from": "    #include \"rules/audits/r816_mm2_dungeon_encounter_gr.h\"  // R833: migrated",
+   "to": "    // ---- R900: the Dragon issue-4 Creature Features live def walk\n    // (no census marker) ----\n    // The three promoted Creature Features defs (the Mihalli, the\n    // Vriyagga, the Qu'uni) cross-checked live against the numbers\n    // the cfe pin header carries: the dragon_print xp source, the\n    // XP formula, the hit dice, the armor classes, the lair\n    // percents, the moves, and the registry census floor: 1308 loaded\n    // base defs + the three promotions = 1311 live (the 1333 base\n    // files include 25 long-standing load-error defs that never\n    // enter the registry, a pre-R900 state not touched by this\n    // round). (The walk pins the registry side with literals -\n    // the audit header holds the cfe-side mirror, so the regtest\n    // source stays free of the round prefix per the R411 gate.)\n    {\n        using namespace rules;\n        int bad = 0;\n        const auto* mi = reg.find(\"mihalli\");\n        const auto* vr = reg.find(\"vriyagga\");\n        const auto* qu = reg.find(\"qu_uni\");\n        if (!mi) ++bad;\n        if (mi) {\n            if (mi->xpSource != \"dragon_print\") ++bad;\n            if (mi->armorClass != 1) ++bad;\n            if (mi->hitDiceNum != 3) ++bad;\n            if (mi->avgHp != 13) ++bad;\n            if (mi->xpBase != 115) ++bad;\n            if (mi->xpPerHp != 3) ++bad;\n            if (mi->xpValue != 154) ++bad;\n            if (mi->lairPct != 40) ++bad;\n            if (mi->moveRate != 15) ++bad;\n        }\n        if (!vr) ++bad;\n        if (vr) {\n            if (vr->xpSource != \"dragon_print\") ++bad;\n            if (vr->armorClass != 1) ++bad;\n            if (vr->hitDiceNum != 15) ++bad;\n            if (vr->avgHp != 67) ++bad;\n            if (vr->xpBase != 5250) ++bad;\n            if (vr->xpPerHp != 20) ++bad;\n            if (vr->xpValue != 6590) ++bad;\n            if (vr->lairPct != 40) ++bad;\n            if (vr->moveRate != 12) ++bad;\n        }\n        if (!qu) ++bad;\n        if (qu) {\n            if (qu->xpSource != \"dragon_print\") ++bad;\n            if (qu->armorClass != 3) ++bad;\n            if (qu->hitDiceNum != 2) ++bad;\n            if (qu->avgHp != 9) ++bad;\n            if (qu->xpBase != 20) ++bad;\n            if (qu->xpPerHp != 2) ++bad;\n            if (qu->xpValue != 38) ++bad;\n            if (qu->moveRate != 10) ++bad;\n        }\n        if ((int)reg.all().size()\n            < 1311)\n            ++bad;\n        printf(\"R900 Dragon Creature Features live defs: bad %d\\n\",\n               bad);\n        if (bad) return 1;\n    }\n    #include \"rules/audits/r816_mm2_dungeon_encounter_gr.h\"  // R833: migrated"
+  },
+  {
+   "file": "tools/normalize_registry.py",
+   "note": "the R879 normalizer's book_of gains the Dragon magazine source - the three Creature Features defs carry source 'The Dragon #4' and the census bucket DRG, so the standing registry tooling keeps running over the new def provenance instead of crashing",
+   "from": "def book_of(fields):\n    m = re.fullmatch(\n        r'\"(MM1|MM2|FF|OA|WSG|MOP|DDG)\"',\n        fields.get('source', ''))\n    if not m:\n        raise ValueError('unknown source: %r'\n                         % fields.get('source'))\n    return m.group(1)\n",
+   "to": "def book_of(fields):\n    m = re.fullmatch(\n        r'\"(MM1|MM2|FF|OA|WSG|MOP|DDG|The Dragon #[0-9]+)\"',\n        fields.get('source', ''))\n    if not m:\n        raise ValueError('unknown source: %r'\n                         % fields.get('source'))\n    b = m.group(1)\n    if b.startswith('The Dragon'):\n        b = 'DRG'\n    return b\n"
+  }
+ ],
+ "data_files": [
+  {
+   "path": "monsters/monsters/m/mihalli.lua",
+   "content": "-- Mihalli: promoted by the R900 Dragon issue-4 Creature Features round\n-- (The Dragon Vol. 1 No. 4, December 1976, folios 18-19; spec\n-- tools/spec_r900.json); DO NOT hand-edit; the pin headers stay the\n-- print-fidelity record.\nreturn {\n  name = \"Mihalli\",\n  page = \"18-19\",\n  source = \"The Dragon #4\",\n  hitDice = \"3\",\n  hitDiceNum = 3,\n  hitDiceBonus = 0,\n  avgHp = 13,\n  armorClass = 1,\n  numAttacks = 1,\n  damage = \"special\",\n  xp = 115,\n  xpPerHp = 3,\n  xpValue = 154,\n  xpSource = \"dragon_print\",\n  frequency = \"not printed\",\n  noAppearing = \"1-20\",\n  lairPct = 40,\n  treasure = \"40% Eyes, amulets or scrolls\",\n  move = \"15\\\"\",\n  size = \"not printed\",\n  intelligence = \"not printed\",\n  alignment = \"not printed\",\n  specialAttacks = \"poison gas (spares the Shen and the Ssu)\",\n  specialDefenses = \"shape-changer\",\n  magicResistance = \"Standard\",\n  psionic = \"0\",\n  text = \"The Mihalli are humanoid, hermaphroditic shape-changers whose skins run from dull green in the lower forms to coppery brown in the higher; they see in the dark. They appear 1-20 near their own territory; 40 percent of the time their lair (80-800 gold) holds Eyes, amulets or scrolls. There is a 20 percent chance each turn they are looked at that their glowing red eyes reveal them. The higher Mihalli command at least two bonus spells, three-plus at levels IV and up. A friendly party is treated well - 5 percent per turn, rolled randomly, with a 1 percent chance of an offered magical item - and the Mihalli defends itself if attacked. The Ball of Immediate Eventuation climbs a four-step colour ladder from light purple through bright silver and bright gold to lambent translucent blue; its use is reserved to magic users and priests of the fourteenth level and up, and below that it scrambles brains. The print stat lines F: 50 and I: 50 garble in both the PDF layer and the OCR and ride pinned AS SCANNED; promoted from The Dragon Vol. 1 No. 4 (December 1976), folios 18-19, as a variant-layer def, the DMG p.85 XP conversion and the 4.5-per-die d8 average noted, never silent.\"\n}\n"
+  },
+  {
+   "path": "monsters/monsters/v/vriyagga.lua",
+   "content": "-- Vriyagga: promoted by the R900 Dragon issue-4 Creature Features round\n-- (The Dragon Vol. 1 No. 4, December 1976, folios 19 and 21; spec\n-- tools/spec_r900.json); DO NOT hand-edit; the pin headers stay the\n-- print-fidelity record.\nreturn {\n  name = \"Vriyagga\",\n  page = \"19, 21\",\n  source = \"The Dragon #4\",\n  hitDice = \"10/15/25\",\n  hitDiceNum = 15,\n  hitDiceBonus = 0,\n  avgHp = 67,\n  armorClass = 1,\n  numAttacks = 4,\n  damage = \"2-4-6 dice by size\",\n  xp = 5250,\n  xpPerHp = 20,\n  xpValue = 6590,\n  xpSource = \"dragon_print\",\n  frequency = \"not printed\",\n  noAppearing = \"1-10\",\n  lairPct = 40,\n  treasure = \"nil\",\n  move = \"12/10/8\",\n  size = \"not printed\",\n  intelligence = \"not printed\",\n  alignment = \"not printed\",\n  specialAttacks = \"tentacles, 2/4/6 dice damage per turn by size\",\n  specialDefenses = \"See description\",\n  magicResistance = \"Standard\",\n  psionic = \"0\",\n  text = \"The Vriyagga is a tentacled creature of the cities, 1-10 appearing, 20-200 in its own city, armor class 1, moving 12, 10 or 8 inches per turn by size with 10, 15 or 25 hit dice. It carries four or more tentacles, more in the larger forms; it takes armor class 2 to sever one, and a tentacle does 2, 4 or 6 dice of damage per turn by size. It senses heat, cannot speak, but thinks, organizes and lays ambushes; it cannot climb stairs. Its black-opal eyes see in the dark. Treasure is nil, even in lair. The def pins the 15-dice middle size for the XP formula; promoted from The Dragon Vol. 1 No. 4 (December 1976), folios 19 and 21, as a variant-layer def, the DMG p.85 XP conversion and the 4.5-per-die d8 average noted, never silent.\"\n}\n"
+  },
+  {
+   "path": "monsters/monsters/q/qu_uni.lua",
+   "content": "-- Qu'uni: promoted by the R900 Dragon issue-4 Creature Features round\n-- (The Dragon Vol. 1 No. 4, December 1976, folio 21 sidebar; spec\n-- tools/spec_r900.json); DO NOT hand-edit; the pin headers stay the\n-- print-fidelity record.\nreturn {\n  name = \"Qu'uni\",\n  page = \"21\",\n  source = \"The Dragon #4\",\n  hitDice = \"2\",\n  hitDiceNum = 2,\n  hitDiceBonus = 0,\n  avgHp = 9,\n  armorClass = 3,\n  numAttacks = 1,\n  damage = \"1-3\",\n  xp = 20,\n  xpPerHp = 2,\n  xpValue = 38,\n  xpSource = \"dragon_print\",\n  frequency = \"not printed\",\n  noAppearing = \"50-100\",\n  lairPct = 0,\n  treasure = \"nil except the sea grotto\",\n  move = \"10\\\"\",\n  size = \"S\",\n  intelligence = \"not printed\",\n  alignment = \"not printed\",\n  specialAttacks = \"automatically attacks parties seeking water\",\n  specialDefenses = \"See description\",\n  magicResistance = \"Standard\",\n  psionic = \"0\",\n  text = \"The Qu'uni is a pallid, semi-transparent, shrimp-like creature of the sea grottos, 2 hit dice, moving at 10 inches per turn, 50-100 appearing, armor class 3. It automatically attacks human parties seeking water. It carries no treasure - except under the water in its sea-grotto home. Promoted from The Dragon Vol. 1 No. 4 (December 1976), folio 21 sidebar, as a variant-layer def, the DMG p.85 XP conversion and the 4.5-per-die d8 average noted, never silent.\"\n}\n"
+  },
+  {
+   "path": "tools/dragon_gap_report_004.md",
+   "content": "# Dragon gap report - THE DRAGON, Vol. 1 No. 4 (December 1976)\n\nThe Dragon Magazine walk, issue #4. Primary ink:\nextract/dragon/004/pNNN_full.txt, NNN = page index; PRINT FOLIO =\nPDF PAGE (the issue-3 convention; the Creature Features chain sits at\nfolios 18-19 and 21). The voice is the chat-side DjVu OCR transcript\nof the archive.org scan, cross-checked against the archive.org PDF\ntext layer for the stat blocks; the article CHAIN is the ink unit,\nnot the folio.\n\nDoctrine (Curtiss, 2026-10-29): the pin IS the conversion - OD&D-era\nink adjudicated to 1e terms, the conversion noted, never silent;\nDragon pins ride a VARIANT layer with provenance, never core canon.\n\nAdjudication (Curtiss, 2026-10-29): use - the Creature Features\nchain as NEW variant-layer registry monsters (the Mihalli, the\nVriyagga, the Qu'uni - no 1e defs exist, so the Remorhaz\nlore-against-def precedent does not apply); drop - the EPT campaign\nchains, the Metamorphosis Alpha androids, the Jaquet Oddball parody\nand the Wizards Defined memo, the fiction, Finieous Fingers,\nWargaming World, the Temple pictorial, Mapping the Dungeons, the\nads and the preview.\n\n## Boxes\n\n- [ ] **The Creature Features chain: the Mihalli, the Vriyagga and\n  the Qu'uni** (folios 18-19, 21) - the issue-4 opener round\n\n1 box, 0 closed, 1 open at the R900 authoring. The R900 round ships\nthis report pre-flip (a report cannot flip in the round that creates\nit); the Creature Features box closes at the next round's flip.\n\n## Scoped out of the engine\n\nThe EPT campaign chains (the Dispatches 4-8, the Chanis battle\n12-17, the Jakalla encounters 11, the Eye matrix 31); the\nMetamorphosis Alpha androids (10-11); the Jaquet Oddball parody and\nthe Wizards Defined memo (21-22, 26); the fiction (23-25); the\nFinieous Fingers comic (30); Wargaming World, the Temple pictorial,\nMapping the Dungeons and the ads throughout; the issue preview (32).\n"
+  },
+  {
+   "path": "extract/dragon/004/p001_full.txt",
+   "content": "th\nye\nA\nk\nfe\ni .\nal\nD SVEN a\n- fap\nhe * |\nii\nSteed Gas nS iat!\na \u201cetek me aut ah\n, _ \" : = : = : = ' , ea F Ee\niFa oat es es tery.\n: Ld 1 Lu > my i s\n"
+  },
+  {
+   "path": "extract/dragon/004/p002_full.txt",
+   "content": "WILLIAM MURRAY, IN CO-OPERATION WITH TSR HOBBIES, PRESENTS,\nedions of Petal Throne\nDesigned by Professor M.A.R. Baker and sculpted by Bill Murray, these 25 mm\nWargame figures are visual proof of the splendor of the EMPIRE OF THE PETAL\nTHRONE\u00ae and bring the entire world of Tekumel into vivid life. Possibly the finest\n25 mm figures ever made, you have to see them to believe that figures this size can\nhave such detail. Only a professional miniature figure sculptor such as Bill Murray\ncould give you figures like these - and at reasonable prices! |\nYan Koval\nGeneral Y1\nTsolyani General T-1\nLegion of Red Devastation Shen NH1 pilus : Hr\u2019ry\n\u2018T-4 :\nThese superb miniature figures are indicative of the fantastic world of adventure\nbuilt around the planet Tekumel, the growing line includes EMPIRE OF THE PETAL\nTHRONE\u00ae, WAR OF WIZARDS\u00ae, and LEGIONS OF THE PETAL THRONE\u00ae- fiqures,\npainting guides* and rules*.\n* soon to be released \u00a91975/1976 TSR HOBBIES, INC.\nTSR HOBBIES, INC. \u2014_Jegions \u00a3 Petar Throne THE OLDISIGUARD\nol\na ange and associated products are Dept. TD-4\n\u2018hi PR A2e available at better hobby, 33 North Main St.\ni Lake Geneva, WI 53147 New Hope, PA 18938\ngame, and book stores or direct.\n414-248-3625 215-862-5332\nFOR YOUR ILLUSTRATED LISTING SEND TWO 13\u00a2 STAMPS.\nDEALER INQUIRIES MOST WELCOME! WRITE ON YOUR LETTERHEAD.\n"
+  },
+  {
+   "path": "extract/dragon/004/p003_full.txt",
+   "content": "Vol. I. No. 4 December \u00b076\n?\nea!\na\nYer E\nThe Dragon\nWhen dealing with a game as special as EMPIRE OF THE PETAL THRONE, it is really difficult to choose a good place to begin, and\neven harder to limit the discussion to our normal 32 pages, and not neglect everything else this issue. Therefore, as you may have noticed, we\nfelt that it was justifiable to add an extra four pages for this issue. Next time, we\u2019ll revert to the old size.\nEPT is the culmination of a life time of working on what started out as a childhood invention. In the course of evaluating the world of\nTekumel, certain comparisons are inescapable. For one thing, it is the ultimate in terms of a D&D campaign; the entire mechanism is D&D\nContents\nDispatches to the Petal Throne .................22000+ 4\nAndroids on board the WARDEN.. .................. 10\nJakalla Encounters ............ccceeeccccccccceeee 10\nThe Battle of the Temple of Chanis ...............-... 12\nDouble Creature Feature ..........ceeeeeccccceee 18-19\nMisc. Oddball D&D Stuff ................ eee eeeeee Dl\nRoad from Jakalla \u2014 Fiction.................e000 023\nMapping the Dungeons ...............eecceeeeeeees 26\nWizards Defined ...6.. cc cssccacsscciccvccvscecss 26\nWargaming: \u201cWorld i205: et owe ne ea ata sarees 28\nFantasy/S&S Reading List ............ 0. ce cee ee ee 00 29\nEPT \u201cEye\u201d Matrix: (o.s-s- 850 ve 806 oe \u00a5ais hoes eee eee\nTemple of Vimuhla \u2014 pictorial. ...............-++-- 32\nAbout this issue. . .\nThis issue turned out to be a monster, even turning on its\ncreator in the end. What seemed like a good idea back in Sept.\nhas turned into something much bigger than usual. Because of\nthis, and the topicality of this issue, The Gnome Cache, Dirt\nand Out On a Limb, were bumped at the last minute due to\nspace considerations. Both features will be resumed in #5, and\nI apologize for any inconvenience or annoyance this has\ncaused. \u2014 Editor.\nEditor \u2014 Timothy J. Kask\nStaff Artist \u2014 Dave Sutherland\nCover by\nProf. M. A. R. Barker\ninspired, as the author notes in his introduction. By mechanism, I mean\nthe mechanics of play: experience points, hit dice, combat resolution,\nmagic system, etc.\nOnce EPT has been studied, another comparison is inevitable; bet-\nween it and Tolkein\u2019s Middle Earth. Now I\u2019m not comparing EPT to his\nnovels, but rather to the mythos and world he created in them. An in-\nteresting note is that both authors are scholars of linguistics, and both\ncreated their own languages, alphabets, grammar and so on. Prof.\nBarker is, at this very moment, working on small handbooks, drawn\nfrom the complete rules developed for a couple of his languages. Right\nnow, Tolkein\u2019s Elvish has acquired a cult-like following of linguists, and\nit is reasonable to assume that someday the same will be true of the EPT\nlanguages.\nIn terms of development of detail, I think EPT has it over Middle\nEarth in the matters that most concern gamers. This is attributable to\nthe fact that EPT was developed by a wargamer, and M-E was not.\nBoth creations are intensely personal, in terms of devotion by the\nauthor and personal feelings of how things \u201cought to be.\u201d\nBoth mythos\u2019 are the end result of a lifetime of work. Prof. Barker\nhas been working on Tekumel since the age of ten: I\u2019ve seen his armies of\nhand-carved wooden figures. (Those days are now past for all of us, as\nthere is now a line of EPT figures available, reviewed elsewhere in this\nissue.)\nWhat EPT is is the most detailed fantasy game available; a genuine\nphenomenon. It is destined to become both a classic and a milestone in\nfantasy role-playing gaming, and deservedly so.\nalta\nEditor\nCover: Land grant to the Shipali Family of the Protectorate of Kerunan.\nPablisher\u2019s Statement\nTHE DRAGON is published bi-monthly by TSR Periodicals, a division of TSR Hobbies, Inc., POB 756, Lake Geneva, WI 53147.\nIt is available at better hobby shops and bookstores, or by subscription. Subscription rate is $9.00 per 6 issues (one year). Single copy and back issue price is $1.50, but availability of back issues is not guaranteed.\nSubscriptions outside the U.S. and Canada are $20.00, and are air-mailed overseas. (Payment must be made in US currency or by international money order.) All material published herein becomes the exclusive\nproperty of the publisher unless special arrangements to the contrary are made. Subscription expiration is coded onto the mailing list. The number to the right of the name, prefixed by \u201cLW\u201d or \u201cTD\u201d is the last issue\nof the subscription. Notices will not be sent.\nChange of address must be filed 30 days prior to mailing date (first of Feb., Apr., June, Aug., Oct., Dec.)\nUnsolicited material cannot be returned unless accompanied by a stamped return envelope, and no responsibility for such material can be assumed by the publisher in any event. All rights on the entire contents\nof this publication are reserved, and nothing may be reprinted in whole or in part without written permission of the publisher. Copyright 1976 by TSR HOBBIES, INC.\nApplication to mail as second-class postage rates is pending at Lake Geneva, WI 53147 and additional entry points.\n3\n"
+  },
+  {
+   "path": "extract/dragon/004/p004_full.txt",
+   "content": "Reports Submitted to the Petal Throne\nIntroduction and Translation by M.A.R. Barker\nIn the final issue of \u201cThe Strategic Review\u201d (Vol. II, no. 2) an ar-\nticle was published which provided news about doings on Tekumel, the\nworld of the Petal Throne. This created enough interest on the part of\nreferees and players to call for a second installment, and a number of\nreferees have sent in reports of doings in their own campaigns with\nrequests to include these in further submissions to the Imperium.\nBefore proceeding to honour these requests, however, there are\nsome fundamental problems to be overcome. If these various campaigns\nare to be centralized and coordinated, then some means must be found\nto keep developments both consistent and under control. As an example,\na very fine and well-written article appeared in the \u201cSpace Gamer,\u201d (no.\n6, June-July, 1976) in which Robert L. Large Jr. began with the premise\nthat our beloved Emperor is already dead, and he went on to describe the\nsubsequent battle between the various heirs for the Petal Throne. In his\nversion, the Emperor\u2019s single Aridani daughter, Princess Ma\u2019in Krythai\n(the first word is her personal name, and the second is her Imperial\nthrone name, the title by which she will be known after her accession;\n/krythai/ is really a childhood nickname, and it literally denotes\n\u201celegant\u201d or \u201csensitivity beautiful\u2019) won the battle and is now Empress.\nAt last report, however, the Glorious Sixth-First Seal Emperor, Hirkane\nTlakotani, is still alive and well in Avanthar, although a trifle slowed by\nhis seventy years! We thus have an immediate and serious case of\n\u201cparallel universe\u201d development!\nA central headquarters and clearing house for Petal Throne in-\nformation could be set up, of course, but this does not solve all of the\nproblems. For example, two referees might grant the same fief to dif-\nferent players; one referee might initiate an Empire-wide rebellion;\nanother might begin the Yan Koryani invasion; and still another might\njust allow the dreaded Black Ssu to run every human off the planet!\nEven at a relatively simple level, differences would arise. Some\nreferees are more \u201cgentle\u201d than others and allow players to attain high\nlevels quickly. This produces an instant surplus of Supreme High\nPriests, Glorious Generals of the Empire, and Great Counts of the Seal.\nOthers (and this humble servant is amongst them) are more strict (some\nsay \u201cfiendish\u201d), and in my own campaigns no player has yet risen\nbeyond eighth level. This apparent severity (which creates no end of\npouting and altercation) is based upon the philosophy that it is really a\nlot more fun to remain relatively small, while not completely powerless.\nHigh office brings great responsibility and limits freedom of action. It is\nmuch more enjoyable to be able to pack up and set out for far parts\nthan to be tied down to one\u2019s paperwork in a temple or military head-\nquarters. One theory which no historian has ever advanced \u2014 but which\nought to be thought of in the light of our modern experience \u2014 might be\nthat the Divine Alexander did not die of illness in 323 B.C., but rather of\ndespair when he contemplated the mountains of paperwork which con-\nfronted him in running his vast empire!\nBe all this as may be, the problems of running a centralized cam-\npaign information centre are severe, and the easiest solution would be to\ndeclare all campaigns as equally valid \u201cparallel universes.\u201d It would\nthen be interesting to publish reports on developments in several of these\ncampaigns. It would be fascinating to compare various referees\u2019 and\nplayers\u2019 handling of the problems and issues described in the first sec-\ntions of the Empire of the Petal Throne rulebook. This game really\nbelongs to the referees and the players; it can be played at levels ranging\nfrom simple adventuring all the way up to involved socio-economic-\nmilitary intrigues. Our learned Editor of \u201cThe Dragon\u201d has kindly of-\nfered to publish reasonably literate accounts of doings in Petal Throne\ncampaigns, perhaps as a regular feature, if enough material can be\nfound, and this seems to be the best solution for now. If demand\nwarrants it, it might be possible to publish a brief newsletter of some\nother centralized information sheet later, of course.\nAt the moment the main thrust is in the direction of providing more\nmaterials on the world of Tekumel. A novel is \u201cin the works,\u201d although I\nam most definitely NOT another Tolkien or even a passable novel-writer\nof the \u201chack\u201d variety. A grammar of Tsolyani is being produced, in\nresponse to many requests. With various colleagues, I am working on\nminiatures rules, strategic level rules, and other game extensions. The\nbest news of all is that by the time you read this, it is hoped that some\ninitial Petal Throne 25 mm figures will be out, produced by \u201cThe Old\nGuard.\u201d The prototypes I have seen are among the best 25 mm figures I\nhave EVER seen. These will be accompanied by a painting guide and or-\nders of battle for all of the five major empires (and also some remarks on\nthe organizations of the nonhumans). A supplement of further materials\non history and culture is contemplated, and I would also be happy to\nreply to specific questions about aspects of Tekumel \u2014 perhaps in a\nquestion-and-answer column or some such format?\nEnough for now on these topics. We can now turn to some of the\nmore recent dispatches submitted to the Petal Throne. As was said in the\n\u201cStrategic Review\u201d article, dispatches from all over the Empire are\ngathered each month into another volume of the \u201cKorunkoi hiGar-\ndasisayal Koluman_ hiTirikeludalidalisa\u201d (The Book of Mighty Imperial\nDeeds of the Great and Glorious Petal Throne). Inscribed on leaves of\ngold, this record is maintained in the Hall of Blue Illumination in the\nChancery at Avanthar, and persons of noble rank may see all but the\nmost secret portions of it upon application to the Provost, Lord\nChaymira hiSsanmirin. Naturally, not all items are of interest to those\nlearning about Tsolyanu, since the Book contains many types of in-\nformation: tax records, priestly reports, trade and commerce analyses,\nand much local news \u2014 all neatly collated and indexed by the Chancery.\nWhat follows, thus, is a culling of topics from here and there. Much of\nthis is from the public record, but Lord Chaymira has graciously allowed\nthe publication of some items taken from the Secret Book submitted\ndirectly to the Emperor.\nEach item begins with a complex formula of praise and respect for\nthe Emperor which need not be repeated here. Readers with more\ndelicate sensibilities will forgive this absence of proper protocol.\n\u201c. . . Know ye, O Sun Who Rises and IIlumines the Lands, that the\nspread of the iniquitous drug Zu\u2019ur has increased in spite of attempts to\ncheck it. The centre of this traffic is one Tsauhl, a Livyani courtesan of\ngreat beauty, who has gained access into many circles across the Empire\nand even into Imperial society in Bey Sy. Dressed always in black, with\nlips and nails also black-enamelled, and tattooed as are all Livyani of\nstatus, she is immediately recognizable; yet is now clear that she either\nhas great powers of disguise or is herself some type of shape-changer, for\nshe and her agents are reported first here and then there in many cities\nof the Imperium. A connection of this woman with the evil Hlyss is now\nproved: a ship of the Hlyss was intercepted at Dzuruna Bay near\nNgeshtu Head [hex 2805; Translator], and this contained many chests of\nZu\u2019ur, much gold, and some weapons of note. Three documents were\nalso seized, and once their code was broken, they showed that the Hlyss\nobtain this drug from some ancient subterranean supply dump of the an-\ncients. The Hlyss, for motives of their own, have somehow contracted\nwith the Baron of Yan Kor to supply this mind-destroying narcotic to the\nEmpire, and there is also evidence that the Mihalli, the ancient\nnonhuman race once thought extinct beneath the volcanic plains of\nnorthern Jannu [off the present map to the northeast; Translator], have\njoined in this plot. Guidance is earnestly prayed.\u201d [This is followed by\nthe glyph denoting \u201cact as follows,\u201d and an Imperial edict is appended\nwhich reads in part: \u201cPossessors of this drug Zu-ur are henceforth\ndeclared clanless and are to be impaled; their goods are to be con-\nfiscated and returned to their clans for distribution to law-abiding clan\nmembers. Those selling Zu\u2019ur are to be seized and brought before the\nhighest tribunals for interrogation. Mind Bars of the Twelfth, Eighteen-\nth, and Twenty-Second Levels are to be used as needed, and no shred of\nsecrecy shall remain to any such prisoner. If such a culprit then live, he\nor she is to be confined within The Ultimate Labyrinth beneath the\nTolek Kana Pits, from whence they may be brought forth again from\ntime to time for further interrogation and punishments. Further: all\nmilitary authorities on the coasts are to be alerted to destroy Hlyss ship-\nping and to search all vessels of other nationalities within the waters of\nthe Empire. Further: overland parties are to be searched similarly,\nwatches are to be doubled on the Sakbe Roads, and within every city in-\nformers are to be set to seeking out these trading in Zu\u2019ur. Further: a\nparty of the bravest adventurers is to be formed and provided with\n"
+  },
+  {
+   "path": "extract/dragon/004/p005_full.txt",
+   "content": "ARCHIVE MINIATURES\nSHOWCA\nThe IMPERIAL\nDRAGON\nSPECIFICATIONS:\nHeight: Tha\"\nLength: 12\"\nWingspan: 1144\"\nWeight: 5 Liss,\n(approximate)\nPrice: $35.00,\npost paid\n(Unassembled)\nList of Figures available ARCHIVE MISTATURES\nfor sending a self-addressed, P.O. Box 93\nstamped envelope. Burlingame, CA.\nWhilesale Inquiries Invited. 94010\n"
+  },
+  {
+   "path": "extract/dragon/004/p006_full.txt",
+   "content": "The Dragon\nweapons and devices; this party is then to land secretly upon the island\nof the Hlyss and seek to destroy the source of this drug. Offer whatever\npay is asked and promise the greatest honours the Imperium can offer to\nthose taking part in this expedition. Require the Princeps of the Om-\nnipotent Azure Legion, Lord Quoruma hiRi'inyussa to appoint a leader\nof this force and to see to its success.\u201d This is sealed with the Great Seal\nof the Imperium. From the Secret Book the following words are added:\n\u201cInterrogate privately those known to be closest to the coutesan Tsauhl;\napprehend her. Arrange another, secret expedition to be sent to the\nwaste of Jannu to seek out any living Mihalli and cause them to cease\ncooperation in this matter by any means available. Arrange also for the\ntransport of confiscated supplies of Zu'ur into Yan Kor and its\ndistribution to notables and persons of rank in Yan Koryani society.\u201d\nThis is signed by the Emporer himself.]\nThe Charge of the N\u2019lyss\n. Know ye, O Transcendental Eye of Viewing the Night and the\nDay, that complaints have been received regarding the recruitment prac-\ntices of the Legion of Ketl, the traditional guards of the Tolek Kana Pits\nin Bey Sy. They still pursue their ancient custom of tricking and drug-\nging young persons and then kidnapping them to serve as Pit Guards far\nbeneath the earth. It is clear, O Master of Myriad Slaves, that this\npractice has sanction: it was condoned by the Seventeenth Seal Emperor,\nwho gave the Legion of Ketl a charter permitting this means of recruit-\nment into what otherwise had become a most unpopular unit. Of late,\nhowever, complaints from clans of high status have been received, and\nseveral young men and Aridani women have disappeared. Lord Arkhane\nhiPurushge, the hereditary Master of the Pits, claims innocence from\nwrongdoing and quotes the charter. A search was initiated, but this was\nnot successful. A prayer for guidance is offered.\u201d [The glyph \u201cmake fur-\nther observations\u201d follows. The following words are added in the secret\nportion of the Book: \u201cKnow ye further, O Arrow of Inimitable Striking,\nthat it is reported that the Royal Son, Prince Dhich\u2019une, is the patron of\nthe Legion of Ketl. He holds curious ceremonies and orgiastic practices\nin the labyrinths beneath the Pits, these being devoted to Great Sarku,\nLord of Worms. It is his hand which stays the agents of the Imperium.\nAs is known to the Petal Throne, the disappearance of the foreign priest\nof Vimuhla, Daonar, was reported by Her Highness, the Princess Ma\u2019in\nKrythai; she had formed a liking for this personage and instigated a\nsearch for him in secret. This led no further than the recruiting halls in\nVol. I No. 4 December \u201976\nthe Palace of Ever-Glorius War, where this Daonar had gone to recruit\nmen for a Cohort of the Legion of the Lord of Red Devastation, mighty\nVimuhla. God of Fire. It is then stated that this Daonar was last seen in\nthe company of an officer of the Legion of Ketl \u2014 who has also since\ndisappeared \u2014 but the hand of Prince Dhich\u2019une checks any further in-\nvestigation. A command is sought.\u201d The secret record then has this\nstatement: \u201cPrince Dhich\u2019une\u2019s allegiance to Lord Sarku is known and\nis a source of sorrow unto the Divine Emperor, who ever serves Almighty\nHnalla, Lord of Good. Prince Dhich\u2019une is to be informed privately by\nthe highest available officer of the Omnipotent Azure Legion that the\nLegion of Ketl is to cease the abduction of persosn of high clan status or\nof honoured foreigners. A search is to be made, and unwilling recruits of\nthis sort are to be released forthwith. The charter granted by the Ever-\nLiving Ancestor, the Seventeenth Seal Emperor, is to be amended to\nread: \u2018persons of lower clans and ranks only are to be so recruited, and\neven these must be given an opportunity to raise a ransom fixed by the\nGovernor of Bey Sy in consultation with the clan heads and the Om-\nnipotent Azure Legion. If this is paid, they, too, shall go free. Further:\nthe priest Daonar shall be produced at once; it is not fitting that one who\nwas so recently vouchsafed the Gold of Glory in reward for bravery in a\nQadarni battle should so shamefully disappear from view.\u201d Translator.]\nKnow ye, O Upholder of the Thrones of the Gods, that the\nweenie priest Tu\u2019ingashte, High Princeps of the Temple of Thumis,\nhas at last peacefully passed forth from the gates of this life and has\nsought refuge in the Halls of the Blessed of Belkhanu. The High Council\nof the Temple of Thumis seeks permission to appoint a certain Gamalu,\na native of the island of Ganga, to this post. His qualifications are ap-\npended. [A sheaf of documents and reports is attached. Translator.] A\ncommand is sought. [This is followed by a report in the Secret Book:\n\u201cAlthough this person is young and of relatively lower level, the High\nCouncil of the Temple of Thumis has selected him in spite of the exist-\nence of several older and more senior candidates. Factionalism within\nthe High Council had created great jealousy and hostility, and no faction\nwas willing to agree to the others\u2019 nominees. Hence, a relative outsider\nwas chosen. This person appears competent, but he must walk a most\ndelicate line and anger no one, since favouritism of one group or another\nwill inevitably lead to enmity and possibly to violence. If he succeeds,\nthen well and good; if his feet falter, he will be sacrificed to the interests\nof temple unity. The High Princeps of Bey Sy, Lord Durugen\nhiNashomai, the Lord Adept of the High Council, Count Rirutlu\nhiVrazhimy, and the Senior High Priest of Jakalla, Lord Kashonu\nhiSsaivra, head the three major factions within the Temple of Thumis,\nand their differences are both political and theological. This Gamalu\nmust dance a delicate step between the doctrines of the Imminence of the\nEye, the Transcendentalism of the Eye, and the Phenomenal\nManifestation of the Eye, to name but three theological positions under\ncurrent dispute, and he must also balance clan and region and noble\nfamily more surely than any juggler. Guidance is earnestly prayed!\u201d\n[The public record contains the simple glyph signifying \u201cpetition grant-\ned.\u201d The Secret Book, however, goes on: \u201cFriction within the Temple of\nThumis is to be avoided at all costs. Give this Gamalu a fief worthy of his\nstatus \u2014 Paya Gupa, perferably, since this is now vacant. He will require\nwealth with which to prosecute his policies and pacify his enemies.\nShould his steps falter, see that he is not harmed by any of the factions\nwithin the Temple, but rather arrange for his demise or removal by some\naccidental means so that none may suspect. In this way conflict within\nthe Temple will be avoided.\u201d Translator.]\ni Know ye, O Refulgent Orb of All-Encompassing Radiance,\nthat one Lord Chegalla, a person who has made a considerable fortune\nin forest products in the Gilraya region, wishes to organize an expedition\nto seek the fabled lost city of Bayarsha. Our agents in Livyanu have\nreported rumours of jungle tribesmen bringing in curious objects to\ntrade in the markets of Kakarsh. Although these jungles have long been\ndeemed impassable, it is clear that some corridor exists and that mighty\nBayarsha may again be found. What is the Imperial Will?\u201d [The\nfollowing report is appended in the Secret Book: \u201cA report comes from\nanother source regarding this Bayarsha: the Priest Dutlor has informed\nhis superiors in the Temple of Dlamelish that he has learned through\nmagical sources that the city of Bayarsha can hardly ever be reached\nthrough the jungles \u2014 these forests are filled with inimical plant and\nanimal life of the most alien and horrific sorts, and the vegetation is so\nthick that it may take a man a week to hack out a yard of progress, only\n"
+  },
+  {
+   "path": "extract/dragon/004/p007_full.txt",
+   "content": "Vol. I No. 4 December \u00b076\nto find that the jungle has grown back behind him \u2014 but indeed there is\na magical egg device in the labyrinths below Bey Sy which may take a\nsmall party thither. The problem, according to this Dutlor, is that every\ninhabitant of Bayarsha knows every other one, and it is thus impossible\nto move openly through its streets. The Bayarshans do take slaves, but\nonly women and children, who are then worked to death or slain. Even\nwere one to find the egg-like device mentioned by this priest, it must be\nstated that it is not a certain journey, for the thing is ensorcelled and\ntakes the unwary traveller to many unknown and fearsome destinations.\nIt is not known how the Bayarshans work their telepathic recognition of\none another, but it is evident that this is a dangerous and even foolhardy\nattempt. Speak, O Mighty Fount of Victory!\u201d The following passage is\nadded in the Secret Book: \u201cDiscourage this Chegalla from making the\nattempt by land; either the Livyani secret police, the Vru\u2019uneb, would\ncomplete his sojourn in this life, or else the jungles would see to it. Give\nhim instead whatever guidance he requires and let him seek out this egg-\nlike transport device. If he can then solve the matter of the Bayarshans\u2019\ninstant recognition of aliens in their midst, then let him attempt the\njourney. Before he deaprts, an account of his estate and records of his\ntaxes and tithes should be obtained, so that if he were not to return, his\nheirs would not suffer.\u201d The public Book has simply the glyph for\n\u201cpetition granted.\u201d Translator. A few pages later in the Secret Book\nthere is another document which bears upon the same matter:]\n\u201c.. . Know ye, O Coruscating Scintillation of Splendour, that a\nminor rebellion has arisen in the east. The Governor of Fasiltum reports\nthat the young foreigner who had been made fiefholder of Ferinara pur-\nchased many slaves and hired freemen of low and dubious character, his\nintention being to train these persons for military service in the armies of\nthe Imperium. Because this was an experiment, the Governor of Fasil-\ntum made no objection. Not since the reign of the Fifth Seal Emperor\nhad anyone armed slaves thus, and \u2014 as happened in that far-off age too\n\u2014 certain of these slaves became maddened with the winde of \u201cfree-\ndom.\u201d Under the leadership of a foreign slave, variously named Shipeto-\ntek or Shipetl Torek by our sources, some hundreds of these persons re-\nbelled during the absence of the lord of Ferinara. Slaying guards, looting\nstorehouses, and raiding villages, they then fled into the wilds of north-\nern Kerunan and the Chaigari Protectorate. With his mate, a low-caste\ndancing girl named Kalaryal, the aforementioned slave tried to establish\nhimself and his crew amongst the loyal villagers of Chaigari. Certain\ntribes did indeed give him shelter and food \u2014 more from fear of his rude\nslave \u201ctroops\u201d than from any desire to abandon the hand of Imperial\nprotection. Upon receiving information, the fiefholder of Ferinara left\nBey Sy, where he had been in attendance at the court of your illustrious\ndaughter, the Princess Ma\u2019in Krythai, and journeyed to Fasiltum where\nhe begged for troops to put down this uprising. The Governor had few to\ngive him, however, since most troops are now needed along the northern\nfrontiers. Our intelligence is that many of the followers of this slave\nleader have scattered: 129 were retaken by the authorities in Kerunan,\n30 were seized in the hinterlands around Hekellu, and the Salarvyani are\nrumoured to have captured the slave leader himself and also his mate.\nThis last is not yet verified, but an urgent mission has been sent to the\nHall of the Dome in Tsatsayagga. A Hlaka trading mission also reported\ntaking ten or twenty starving slaves within their lands; they were offered\ngold for their return, but, as is typical of Hlaka humor, they chose in-\nstead to fly these captives southwards and release them within the\nterritory of the Ssu! There is thus no present danger of further uprising.\nEven if this slave leader be at large, he can do little more than loot an oc-\ncasional village. Inspire your slaves, O Lord, with your Divine Will!\n[There follows the glyph denoting \u201cact as follows,\u201d and the following\nedict is appended: \u201cSend agents into Kerunan and the Chaigari Protec-\ntorate; determine the fate of the slave leader and capture him alive if\npossible; send him to Avanthar since the Glorious Presence desires you\nlook upon the face of one foolish enough to flout the might of the\nEverlasting Empire. See to the capture and death of all of his followers;\npursue them forever until this is done. Punish those tribes who aided the\nthe rebels: impress all of them \u2014 men, women, children, animals, etc. \u2014\ninto Imperial service and transport them across the land to Penom,\nwhere they are to be resettled in villages and given the task of clearing\nthe swamps. See also that the fiefholder of Ferinara is apprised of Im-\nperial displeasure. In view of his courage in defeating the forces of the\nBaron of Yan Kor in the recent Quadarni battle, he is to receive no\npunishment, but if he cannot cope with the administration of his fief,\n7\nThe Dragon\nthen he must be transferred to some post of lesser responsibility. Fur-\nther: none within the Empire is to arm a slave or attempt to raise\nmilitary forces from amongst slaves or the lower classes of freemen. No\nfurther raising of unsupervised cohorts will be permitted, and in no case\nshall a foreigner be allowed to raise and arm a body of more than twenty\nmen without specific guidance and permission from the Imperium.\u201d\nTranslator.)\n\u201cse\n. . . Know ye, O Sufficiency of Ornament, that reports have come\ndescribing an attempt by the younger hotheads of the Temple of Hry\u2019y to\nsend forth an expedition to seek the lost city of Bayarsha. Their spies\nhave come to know of Lord Chegalla\u2019s plans to go thither, and they thus\nplot to reach the goal first. Their methods are not known, although it is\nclear that they also have been told of the priest Dutlor\u2019s information\nabout the place. Moreover, to complicate the issue further, the secret\nNdalu Society of the Temple of Ksarul, a group of fanatics of great\npower and dubious loyalty, has also proposed an expedition to seek\nBayarsha. Spies and counterspies abound in the councils of the temples,\nand hence the goal of one may soon become the objective of all. The\nmore learned priests of the Society, moreover, have access to partial\nmaps of the labyrinths beneath Bey Sy (though not the dreaded Ultimate\nLabyrinth), and they plan to abduct this Dutlor and drain him of\nknowledge, hoping to reach the magical transport device first. What is\nthe command?\u201d [The Secret Book contains the following reply: \u201cSee\nthat the Incandescent Blaze Society of the Temple of Vimuhla also\ncomes to know of these plans; let them all send forth expeditions and\nhopefully frustrate one another. Nothing must upset the balance of\npower within the Imperium at this juncture. Dissuade Lord Chegalla\u2019s\nparty \u2014 it is clear that they must await a better time, for should they\nmake the attempt now, they will be caught between the man factions of\nthe evil temples and ground as one grinds herbs in a mortar. See that\nthis Lord Chegalla is transferred to a better fief: the recent death of Lord\nVretlan hiGiridra, master of the fief Firusanra [hex 3308; Translator],\nhas left a vacancy, and upon no account should it be passed on to his\nfoolish son, Lord Breshti. Perhaps Lord Chegalla will be able to control\nthe roving bands of Pachi Lei bandits in the forests and swamps near his\nregion.\u201d [The public record contains none of these reports, Translator.\nThe Secret Book contains one more document relating to this matter:]\n\u201c. . . Know ye, O Redolent Incense upon the Altars of the Most\nHigh Gods, that the Aridani Lady Chia, sister of Lord Breshti, these\ndays is in Bey Sy at the court of the radiantly sublime Princess Ma\u2019in.\nShe has come to know of the possibility of Lord Chegalla\u2019s being ap-\npointed to Firusanra, and she was overheard to make the following\nremark: \u2018Either I shall marry this Chegalla, or I shall bury him \u2014 or\nperhaps both .. .\u201d Further: the priesthood of the temple of Ksarul did in-\ndeed send a mission into the labyrinths below Bey Sy; it dod not return.\nThe priests of the Ndalu Society are closemouthed, but it is evident that\nthere was some sort of confrontation underground between their party\nand some other \u2014 as yet unknown. What is the Imperial Command?\u201d\n[The secret Book contains the following glyphs: \u201ccontinue to observe and\nreport.\u201d Translator.]\n: . Know ye, O High-Thrust Buttress of Imperial Might and\nPower, that the priest of Ketengku who previously made report of a\ncurious Sakbe Road upon certain maps which is shown to lead nowhere\n[hex 3123; Translator] did organize an expedition to travel upon this\n\u201croad.\u201d When his party did not return, the Governor of Urmish, the\nGlorious Lord Ge\u2019eltigane hiBeshmylu, did send forth an expedition to\nseek him. After three days this returned in fear and disorder, reporting\nthat the Sakbe Road was indeed just that for much of their journey: a\nruined, disused, uncompleted Sakbe Road. On the second night of their\ntrip, however, the sky seemed to become like lead, clouds darkened the\ntwo moons, and they felt strange forces moving within the earth. They\nhad camped off the road to one side, and when they gazed upon the\nroad, lo! it had become a mighty Sakbe Road of ebon stone, high and\nperfect, and somehow malignant. Even as they watched, they saw many\ntiny lights of glowing fire-hue leaping along it, and they heard a sound\nlike unto ghostly hallooing in the wind. They would have stood and\nlooked further, but they reported that certain of these lights halted on\nthe road near unto them. They then turned and fled in disorder. As yet,\nno trace of the priest of Ketengku has been found. What is the Ever-\nPerfect Oracle?\u201d [This is followed by glyphs denoting \u201creport the matter\nto the senior priests of Ketengku and Thumis; should they wish to raise\nan expedition to study the matter, let them do so.\u201d Translator.]\n"
+  },
+  {
+   "path": "extract/dragon/004/p008_full.txt",
+   "content": "The Dragon\n[The following passage is taken from the Secret Book only:] \u201c. . .\nKnow ye, Most Mighty God-King of Omnipresent Justice, that, as is\nknown, last year the Omnipotent Azure Legion was instructed to confine\ncertain members of the ancient Vriddi clan because of the possibility of\npolitical unrest in Fasiltuyn, the City of the Chiming Skulls. Being of un-\nmixed descent from the last kings of the Bednalljan Dynasty, and having\nsome support from the older families of Fasiltum, the heiress to the\nVraddi lands, Elara Ferriya hiVriddi, did hold some thought, perhaps,\nof rebellion or at least of attempts to gain further control and autonomy\nfor her clan and for Fasiltum. She was thus apprehended, together with\nher half-brother, Lord Qarras hiVriddi, and her cousin, Lord\nChekkutane hiVriddi, and the three were secretly taken and cast into the\nTolek Kana Pits. It is then reported that the Royal Prince, Lord\nDhich\u2019une, learned of these prisoners and desired to enjoy their discom-\nfort during one of his private \u201cceremonies.\u201d Somehow \u2014 and it is not\nknown how \u2014 matters became confused during the orgy, and a lowly\nprison guard and another person, whose identity as het baffles all of our\nagents, managed to make off with Qarras hiVriddi. At first it was\nthought that the Lady Elara and Lord Chekkutane had also been thus\nsimilarly set at liberty, but afterward Lord Arkhane hiPurushge, the\nMaster of the Pits, told an even stranger tale of putting a shape-\nchanging spell upon a courtesan and a gladiator, who were also\nprisoners therein, and making these two into the likenesses of the Lady\nElara and Lord Chekkutane. The two abductors gave credence to this\ndisguise and took the two away, believing them to be the aforesaid noble\ncaptives. These latter are thus still in custody, but it seems that Lord\nQarras, the two disguised prisoners, and the two abductors then fled into\nthe Ultimate Labyrinth, from which they did not ever re-emerge. What is\nthe Omniscent Resolve?\u201d [The following passage appears in the Secret\nBook only: \u201cDissuade Lord Dhich\u2019une from the holding of further such\nceremonies, at least with prisoners of rank and importance. Cause an in-\nvestigation, obtain their exact likenesses through magical spells, and\ndiscover their precise words similarly. Cause the Lady Elar Ferriya\nhiVriddi and her cousin, Lord Chekkutane hiVriddi, to be frozen with\nthe Excellent Ruby Eye, seal them into blocks of adamantine cement,\nand transport them to the Lower Catacomb of Silent Waiting beneath\nOur palace of Avanthar. Observe the activities of other members of the\nVriddi clan in Fasiltum with greatest care; Lord Tlaquru Verekka\nhiVriddi, the current governor of Fasiltum, is known to be totally loyal to\nthe Imperium, as are many of his faction within the Vriddi clan. Those\nopposed to Lord Tlaquru and somewhat in favour of local autonomy and\nmore power for the Vriddis are mostly young, proud of their noble\nlineage, and rather impetuous. Do nothing to antagonize these persons,\nbut observe them closely. Do all possible to increase the popularity of the\nImperium in Fasiltum. Recruit those Vriddis who are suitable into the\nImperial forces and see that they are transferred to distant posts. Do\nnothing to pursue the abductors and the escaped prisoners; they have\nentered the Ultimate Labyrinth, and nothing further can be done to\nrecapture them. One can only commend their spirits unto Belkhanu, the\nLord of the Excellent Dead, for reward or punishment, as they may merit\n...\u201d Translator. ]\n[Note: the pages of this magazine have been impregnated with a power-\nful Mind-Bar. Referees are instructed, therefore, to ignore any player\ncharacter who attempts to impart in any way the information given\nabove to any non-player character or other player character during a\ncampaign. ]\nGAMES\nWORKSHOP\nPRESENTS\nHeW=- WA\nat FULHAM TOWN HALL,\nHARWOOD ROAD, LONDON SW 6\non Saturday, March 12, 1977\nDETAILS: from Games Workshop, 97 Uxbridge Road, London W12\nVol. I No. 4 December \u00b076\nDUNGEONMASTERS, JOIN THE\nJudges Guild i,\nA Service Especially for Fantasy Game Judges\nUpon Joining, You Get The Initial Guildmember\nPackage-\nHUGE CITY PLAN 34x44\"-riverfront, palace, courts,\nshops and more. And room for your ideas- ten square\nfeet of \u2018above ground dungeon level\u2019!\n135 DUNGEON TAC CARDS- handy reference for\nChainmail, Greyhawk and ACS. Adjustable to your\nrocedures with pertinent data like- To Hit Scores,\nDamades: Weapon Lengths, Cost & encumberances.\nAction cards have move rate, parrying, grappling etc.\nErr -\nuk Ex ~\n\u201caw \u00ae\n-A Cards shown half actual size.\n| Part of one section shown reduced 1 3 actual size,\nUNIFIED READY-REF SHEETS- player sheet has\ncombat matrix, saving throws, Clerics vs. Undead and\nDamages. Judge's sheet has Monster Attacking matrix\n(with minus armor classes} & complete Greyhawk Dam-\nages/Strikes. Also, a sheet for Chainmail Man to Man\nmelee system.\nBACKGROUND MATERIAL- handy booklet with\npages of shop keepers, Non-player characters, unusual!\nguilds and more. Also, rules \u2018extrapolations\u2019 for step-\nby-step Advertising, combined Sociai Level/City En-\ncounter charts and Crimes, Trials & various Punishments.\nFive dungeon levels.\nA total of 25 pages of material, charts & rules, 135 cards\nand 1 34x44\u2019 map wil! be sent to you upon joining!\nThen, for five bimonthly installments- each installment\nincludes: 1 11x17\u201d with village, castle etc. printed on\nboth sides, 20 pages of new material including- new dun-\ngeon levels, ready-ref sheets, optional rules, background\nand newsletter. All for $12 per year!\nOr:\nLaunch yourself into fantastic worlds unknown, with our\ncombination offer: SPECIAL STARTER PACKAGE-\nyou get our above Guild Membership and Dungeons &\nDragons (3 volumes- boxed), all for $20. For many, many\ngames of fantasy filled fun!\ny JUDGES GUILD\n8\nP. O. Box 773\nDecatur, Il, 62525\nJudges Guild material is designed as players\u2019\naids for Dungeons & Dragons c TSR, charts\natc, used with permission.\nGS\n"
+  },
+  {
+   "path": "extract/dragon/004/p009_full.txt",
+   "content": "RY EARTH - MALBURIAN PERIOD - NAPOLEONIC ARMIES -30 YEARS WAR - WARS OF THE to\nAX\nAX\nAX\nAX\nAX\nAX\nAXC\nAXC\nAXC\nAXC\nAXC\nAXC\nAXC\ni -MACEDONIAN & PUNIC WARS - ENGLISH CIVIL WAR - SCIENCE FICTION - 7 YEARS WAR - My\n\u00bb\u00bb When MINIFIGS first released its AX Range inspired by the\nfamous Russian film, ALEXANDER NEVSKY, we had no idea what a\nphenomena among wargamers it would become. After all, this series\nof Teutonic and Russian knights belonged to a rather obscure part\nof 13th Century Eastern European history. We didn't anticipate\nThat fantasy wargamers would decide that these\nknights were perfect for their fantasy battles. If there are no\nAX knights in your fantasy armies, take a look at them. We think\nyou'll agree with the thousands of fantasy players who have made\nour AX Range a best-selling fantasy range.\nRussian Infantry\nION EW DN EF\nQuestion:\nAnswer:\nwhat would happen.\nTeutonic Infantry\nFoot Knight, Sword\nMan-at-Arms, Spear\nFoot Knight, Club\nMan-at-Arms, Sword\nArcher\nCross bowman\nMan-at-Arms, Sword\nFoot Knight, Standard\nMan-at-Arms, Spear\nFoot Knight, Axe\nFoot Knight, \"praying\"\nBishop (Cleric)\nPriest,\nKnight,\nKnight,\nKnight,\nKnight,\nKnight,\nKnight,\n\u00bb tandard\nTeutonic Cavalry\nLance\nLance\nLance\nLance\nsword\nstandard\nClub\nILLUSTRATED CATALOG: $2.00\nWhen is a best-selling Medieval Range also a\nbest-selling FANTASY Range?\nWhen it's Minifigs' ALEXANDER NEVSKY 25mm Range:\nAX\nAX\nAX\nAX\nAX\nAX\nAX\nAX\nAX\nAX\nAX\nRus\nSian Cavalry\nAXC\nAXC\nAXC\nAXC\nAXC\nAXC\nAXC\n30 Man-at-Arms, Spear\n31 Man-at-Arms, Spear\n32 Man-at-Arms, Sword\n33 Peasant, Spear\n34 Man-at-Arms, Crossbow\n35 Peasant, Mace\n36 Peasant, Sword\n37 Man-at-Arms, Axe\n38 Peasant Bowman\n39 Foot Knight, Two-Handed Axe\n40 Man-at-Arms, Standard\n30 Knight, Lance\n31 Knight, Lance\n32 Knight, Lance\n33 Cossack, Lance\n34 Knight, Lance\n35 Knight, Winged Helmet, Sword\n36 Knight, Mace\nPemican CIVIL WAR: AMERICAN WAR OF INDEPENDENCE: 100 YEARS WAR - RENAISSANCE pews\nMINIATURE FIGURINES LTD\nBOX P\n, PINE PLAINS, N.Y. 12567\nLESS\nS\n- INSAIN \u2014 : SUVA SNIVId NVIGNI - 3INOY TVINIdINI 40 S3IININI 8 SIINUY |\nM\nTEL. 518-398-5166\n"
+  },
+  {
+   "path": "extract/dragon/004/p010_full.txt",
+   "content": "Che Dragon\nDesigner\u2019s Forum: Metamorphosis Alpha\nNotes on the Androids on\nThe Starship W arden\nby James M. Ward\nIn the far future, there exists a colonization starship called Warden.\nThe ship now roams the universe, uncontrolled by human hands, only its\nmain ships computer stops it from running into any large planetary\nbodies. The ship is randomly infested with radiation, which has caused\nthe life within to mutate in many ways. The medical section of the ship\nwas given over in part to the formulation of synthetic life, in the form of\nhumanoid androids. When the radiation cloud that affected the ship\nkilled the crew, it also destroyed the controlling link the main ships com-\nputer had with the formulation vats.\nA set of androids was produced with programmed medical\nknowledge, but no programmed instructions. The radiation in the\nmedical area affected the fibrous brain cells of the androids and\nprovided the creatures with a sort of animal cunning. These androids\nwith medical knowledge made others, and soon a colony of them existed\nin the medical section of the ship. They were able to make themselves\nresistant to all forms of radiation, and plans were soon launched to con-\nsolidate the whole ship section they were on. Two factors stopped this\nscheme. The androids had a built-in obsolescence factor that killed them\noff in two years, and nothing they could do changed this. The other fac-\ntor was the existence of mutations that continually invaded the area and\nwere fearless, even when slaughtered to the last being.\nThese variables led the chemical creations to change their entire set-\nup on the ship. The medical area that dealt with the creation of androids\nwas blocked off from the rest of the level and all the efforts of these\ncreatures went into the exploration and classification of all life on the\nship and the study of increasing the life span of the race of androids as a\nwhole. The exploration studies spanned many human lifetimes and cost\nuntold numbers of androids but developed a rather complete picture of\nthe ship. The study revealed many pockets of human habitation, and\nthese pockets were infiltrated by human-appearing androids. While it\nwas necessary to replace them every two years, exact doubles were easily\nformed because they were simply grown from vats. Quite soon, androids,\nwith their superior knowledge and unhuman physical powers, started\nassuming positions of command, in the form of tribal leaders or more of-\nten as shamans.\nThese androids usually sought to place their human tribes in con-\nflict with the many mutated species on the ship. This constant war stop-\nped all beings from becoming too powerful and left the androids alone to\ncontinue their efforts in increasing their life span \u2014 a study that has got-\nten them nothing but if completed would allow them to take over the\nship, their world!\nTheir plans did not always go smoothly, however. Mutations of\nseveral different types were able to sense the unhuman nature of the an-\ndroid. Sometimes an android died and revealed to other human\ntribesmen that their leader was alien. Animals that were domesticated\nby many human tribes often refused to be near androids, forcing the\nchemical men to be very careful around them. Lastly, the androids all\nfeared that sometime, somewhere a mutation would be created that had\npowers unstoppable by human and android alike. Then, when an an-\ndroid was in every human tribe and most were in positions of power,\ntheir worst fears were realized in the form of a little pink ball-like\ncreature called the \u201cfuzzy.\u201d\nThis small, almost helpless, mutation required only affection to\nthrive and multiply. It was quickly adopted and used by a race of lizard\nmen, who discovered the fuzzies weren\u2019t so helpless after all. It seemed\nthe little mutation could transmit any emotion the holder of the creature\nwished. It also attacked androids on sight and in many cases was able to\nhasten the chemical obsolescence process. Attacks were made on this\nrace by the human group on that level, but were negated by the strange\npower of the fuzzy and the android leaders of that group were killed. The\nlizard men, while terrible in battle, were essentially pacifisticin nature.\nThis factor and their fuzzies allowed them to make peace with the\nVol. I No. 4 December \u00b076\nhuman tribe, which in turn made the whole level dangerous for the an-\ndroids. The search by the chemical men then went on for a mutation to\ncombat the fuzzy menace. None was found during the course of the first\nlong year thereafter \u2014 half an android lifetime.\nThe above is from the journal of Emaj the fat mutant philosopher, as\ntranslated by Yra, the Wise.\n_Jakalla Encounters\nby Steve Klein\nSince the Foreigners\u2019 Quarter of Jakalla tends to be a run-down and\nneglected part of the city (except for the Resthouses for Visitors of Up-\nper-Middle and Upper Status, whose grounds are patrolled by private\nguards), new players are likely to encounter petty criminals and riffraff\nthere during their search for legitimate employment. When rolling a six-\nsided die per section 1110 a 1 indicates that such an encounter has taken\nplace. Roll percentile dice against the following table:\n1-25 1-12 drunks; may be belligerent (roll against Nonplayer Character\nReaction Table).\n26-50 Beggar; may occasionally (at referee\u2019s option) be noble or god in\ndisguise.\n51-60 Pimp; will attempt to hire or buy any player with comeliness 81 or\nmore. If refused, may summon 2-12 armed thugs to attack; will\nalmost certainly do this if refused a player with comeliness 96-100.\nCarries 50-200 K.\n61-70 Street gang, 3-18 members, armed with stones, daggers and clubs.\nLeader is level 2 and carries a mace. Will attack only if they out-\nnumber party. City patrols arrive after 7-12 combat rounds to\nbreak up fight.\n71-85 Pickpocket; attempts to steal weapon and 1-20 Kaitars from ran-\ndomly chosen player. 25% chance of catching him in the act: if\ncaught, 50% chance that he has lifted player\u2019s weapon and will use\nit to defend. If not caught, players have 75% chance of spotting\nhim running away (30-70 ft. range).\n86-95 2-8 muggers attacking 1-4 women. Muggers each have 35%\nchance of being level 2, 15% chance of level 3. All are armed with\ndaggers and clubs. They carry 10-100 K among them.\n96-100 1-6 priests of the ancient Goddess of the Pale Bone, plus 2-12\nfollowers. Priest are level 2-4 (and may carry Eyes and bonus\nspells). All are unarmed except for ropes and nets, with which they\nattempt to seize torture victims for their rites. Captured players\nwill be dragged to the sect\u2019s underworld sanctuary beneath\nJakalla.\nThe Articles of War\n2525 Delaware Ave., Buffalo, NY\nM-F: 6-9 SAT: 10-? SUN: 1-?\nGAMES, FIGURES, RULES, MODELS\nDUNGEON OPEN EVERY FRIDAY\n"
+  },
+  {
+   "path": "extract/dragon/004/p011_full.txt",
+   "content": "Vol. I No. 4 December \u00b076 The Dragon\nSAGAN a ce iiare Par TATA\nc . Ger\naioe\n\u2018ee\n\u00a9 , 19 7\n* Yar of i\nFi . f A .\n/ : j /\naniteg! er\nea] Pe\n\u00bb \u2018 ,!\nWe a \u201cAe\nUf! My |\nGh jt oo f/|\nNW\n\u2014\nee ae TT ee ee ag geen ET ern ts omen\n\u2014 3, =\natl Saree, \u2014\n\u2014\u2014 Rae\nSn Speen as ase\na a a 0 emcee = c\naah ane\ncen ee eee eee\n\u2014\u2014~\nen\nee\nAEE:\nA hoggya out fishing one Sunday morning.\nby Neil Healey\n11\n"
+  },
+  {
+   "path": "extract/dragon/004/p012_full.txt",
+   "content": "The Dragon\nVol. I No. 4 December \u201976\nThe Battle of the Temple of Chanis: 2020 A.S.\nBy M.A.R. Barker\nPlayers of \u201cThe Empire of the Petal Throne\u201d have indicated a\nstrong interest in fighting some of Tekumel\u2019s battles in miniature. The\nnecessary figures are now being produced by The Old Guard (and\njudging from the prototypes thus far seen, they will be SPLENDID in-\ndeed), and tactical battle rules are also nearly ready. Without an idea of\nthe nature of warfare on Tekumel, however, it would be difficult to\nsimulate \u201crealistic\u201d Tekumelani warfare on the miniatures wargaming\ntable.\nAll of the major nations of Tekumel maintain standing armies; the\nplanet is rich enough to allow for economic provision for specialists and\nthe development of complex social and military structures. Tradition\nand custom are strong, of course, and during periods of peace these\ntroops engage in maneuvers, mock battles (often for large wagers be-\ntween Legions), and in the ritualistic Qadarni (\u201cLittle War\u2019) Battles\nwith forces of neighboring lands. The last may be described as formal\nchallenge \u201cduel\u201d battles: a small force (often only a few hundred men) is\nselected to advance just beyond their borders to make challenge. The in-\nvaded nation then sends out a matches force (so far as possible, de-\npending upon the nearness and availability of troops.) There is much\nceremony and pomp, challenge and counter-challenge, individual duels\nbetween \u201cheroes,\u201d and finally a melee in which the objective is to cap-\nture prisoners for ransom and/or sacrifice. Great quantities of weapons,\nwealth, etc. are wagered by both sides. Strategy in these Qadarni battles\nis quite minimal, and casualties are usually light. When one side in-\ndicates that it has had enough, it is permitted to withdraw with no pur-\nsuit.\nMajor warfare on Tekumel, on the other hand, involves the fighting\nof Qadardali (\u201cGreat Wars\u2019), involving as many or as few troops as are\navailable and thought necessary, much as warfare was fought on Earth\nduring ancient times. Strategy, elaborate tactics, ruses, ambushes, etc.\netc. are all utilized. There is still ritual, and there are unwritten codes of\nchivalry, of course, but \u2014 as in warfare on this planet \u2014 the goal is to\nwin the battle and gain one\u2019s objectives with as few losses as possible! All\nof the nations of Tekumel have access to the many dozens of treatises on\ntactics and warfare written over the past thousands of years, and troops\non Tekumel (being trained standing armies) are usually better equipped,\norganized, and trained than their ancient earthly counterparts.\nManeuvers are often complex, and morale is usually high. To serve as a\nsoldier is an honourable and desirable occupation, and hence young men\nof intelligence and station are attracted to the profession of arms.\nAlthough it is hard to generalize, the developments of a Qadardali\nbattle may be described as follows: (a) the High Command determines\nthe overall grand strategy and objectives for the war and its events and\nassigns elements of whatever forces are available; (b) the High Com-\nmand chooses the \u201cForce Commander\u201d (the Kerdu), and he consults\nwith his fellow Legion commanders, staff officers, and quartermasters;\n(c) routes are chosen, plans and likely battlefields are discussed, supplies\nand forage are arranged, and alternatives are selected; (d) scouts and\nspies are sent out, usually with a chain of telepathic communication to\nprovide instant response; (e) troops are ordered to the chosen area and\nmoved out, each unit under the command of one of the Kerdu\u2019s sub-\nsidiary generals or a Dritlan (roughly translatable as \u201cCohort Com-\nmander\u2019\u201d\u2019); (f) when contact is made, there is much maneuvering to bring\nabout a battle on favourable terrain; (g) when both sides have committed\ntheir forces, final tactical positions are chosen, and troops brought to the\nfield; (h) there are then challenges and counter-challenges, as for a\nQadarni battle, and individual duels of champions take place; (i) the\nKerdu and his staff take up a position in the rear, preferably upon an\neminence, with actual field command done by the various Dritlan and\nMolkar officer grades; (j) assigned contingents of priests and magic\nusers set up their paraphernalia on the same or another nearby well-\nguarded eminence; (k) after the completion of the various rituals and in-\ndividual duels (usually some eight to ten), the great war drums (the\nKorangkoreng) are beaten, and the general raises his standard (the\nKaing) to signal assigned units to advance or to shift quickly into ne\nother planned formation; (1) melee is then joined, and the battle com-\nmences in earnest; (m) when a winner has been determined, the losers\nrout or withdraw, and these are usually pursued to be enslaved,\nsacrificed, or killed outright; (n) further signals are given to permit the\nlooting of enemy baggage, the recall of pursuing troops, and the\nregrouping of units. This, then is the idealized format of a Qadardali\nbattle; what really happens is often quite different due to the in-\nnumerable unforeseen factors which have plagued commanders from the\ndawn of history down to the present!\nPerhaps the best way to portray one of these great battles is to\ndescribe one of the crucial engagements of the Great War of 2,020 A\\S.\nbetween the Tsolyani and their western neighbours, the Mu\u2019ugalavyani:\nthe Battle of Chanis.\nThis battle took place near a ruined shrine, the Temple of Chanis,\non the banks of a shallow stream called the Koshtla River (although\n\u201criver\u201d is too dignified a name for this trickle of muddy water). The\nseason was early winter, the month of Lesdrim, and the region was thus\ncrisscrossed with ploughing, winter seeding was in progress, and the\nvegetation was only sparsely leaved. The Koshtla River runs at a\ndiagonal, northwest to southwest, between two low ranges of hills at this\npoint, with the ruins of the village of Firshtelu (burned by the advancing\nMu\u2019ugalavyani) in the north, the ruined shrine of Chanis near the banks\nof the river in the centre, and sparsely forested low hills in the north, the\nsoutheast, and along the western edge of the chosen field. (N.B. This\ndetail is not given on the large hex maps supplied with the game, \u201cEm-\npire of the Petal Throne,\u201d since the scale is too small. For those who are\ninterested, this battle occurred in hex 3312.)\nThe objective of the Mu-ugalavyani High Commander, General\nBuruchenish, was to prevent the Tsolyani from moving north to cut off\nMu\u2019ugalavyani supply lines needed by forces besieging the capital, Bey\nSy. His army was numerically larger than that of his opponent, the\nTsolyani general Tukolen hiMirkitani, and the Mu\u2019ugalavyani were thus\nnot averse to battle, knowing that if they won, the way to the south would\nlie open and almost undefended to them.\nThe Tsolyani, on the other hand, knew that they must break\nthrough the Mu\u2019ugalavyani cordon and cut the supply lines moving\nalong the Sakbe Road from captured Katalal to the besiegers around\nBey Sy. The Tsolyani knew that another friendly force was moving south\nfrom the city of Sarku, but Mu\u2019ugalavyani forces in that area were\nstrong, and the salvation of the capital lay primarily in the hands of\nGeneral Tukolen\u2019s motley army.\nForces used in the battle by each army are listed on the ac-\ncompanying map.\nIt will be useful now to turn from a historian\u2019s description of the\nbattle to the memoirs of one who took part in it and allow him to tell it in\nhis own words as he saw it. Chaeyan Tikkumeshmra was at that time a\nyoung Kasi (\u201cCaptain\u201d) in the Legion of Mirkitani, Hero of Victories,\n7th Imperial Heavy Infantry, and he has left his account of this battle in\nhis autobiography, \u201cKorunkoi hiChanyel hituplanGardasaisayal\u2019\u201d (\u2018The\nBook of a Life of Beloved, Glorious Deeds\u201d). Such autobiographies are\ncustomarily sent by elder statesmen to the Imperial Archives at Avan-\nthar, and a copy is also entombed with the writer. Chaeyan later went on\nto become General of the Legion of Mirkitani, Prefect of the Armies of\nthe West at Tumissa, and finally Lord Chamberlain of the Chancery at\nAvanthar. He died at an advanced age in 2,078 A.S. Let us now turn to\nChaeyan\u2019s description on the morning of the battle:\n. and upon that morning were all the Gods amongst us, as men\nrose to pray to their Deities, mighty and powerful of victories. The day\nhad dawned cloudy and overcast, which was an omen of wonder for the\nmonth of Lesdrim, and my comrade, Dirullel, said that in his native Pur-\ndimal this was the sign of a good event to gladden the hearts of all of\nthose who wrought death for the Emperor. I allowed my men to overhear\nhim, and they were much cheered, for Dirullel had gained the reputation\nof a man of true omens. . .\n\u201cWhen the sun was not yet one hand above the horizon I was sum-\nmoned by my commander, the Dritlan Firussu hiDeggarshu, to do\nobeisance and learn of our dispositions. My heart was joyed to find that\n"
+  },
+  {
+   "path": "extract/dragon/004/p013_full.txt",
+   "content": "Vol. I. No. 4 December \u201976\nour Legion was to stand in the centre of our line and face the red-helmets\nas Hrugga once faced the Giant Nirusama (A mythological reference;\nTranslator). In our front were to be a rabble of light archers and\njavelinmen, local fellows all, fighting not only for the Imperium but also\nfor their ruined fields and homes which the Mu-ugalavyani had laid\nwaste. To our left were some 2,000 men of the Legion of Red\nDevastation, devoted fanatics of the God Vimuhla, who fight with great\ntwo-handed swords and care not for their persons once battle is joined.\nTo our right and behind us the Lord Tukolen had emplaced 1,000 great,\nblack-scaled Shen mercenaries, who had kissed the coin of the Emperor.\nDirectly behind us and upon a small hill, our beloved Tukolen had set\nsome twenty great bolt-throwers, and his reserves to either side, and his\nown position (and that of his priests) there also. Thus did Firussu inform\nall of us captains. We rejoiced much at his saying, for our Legion would\ngain victory upon this day, and our names would be written in the Book\nof Deeds at Avanthar!\n\u201cThen he did tell us of our own plan: at first we were to form into\nthe \u201cStone Mountain\u201d formation described and favoured by the tac-\ntician Sa\u2019alur: a mighty phalanx 200 men in width and 10 men deep.\nUpon a trumpet from the rear, however, we were to open into the \u201cGar-\nment of Idessa\u201d formation (a checkerboard pattern \u2014 Translator) and\nallow our light troops to run back through between our units. When we\nreached the wretched little river, we were to do as our Dritlan himself\ncommanded and regroup into the \u201cStone Mountain\u201d or continue on in\nthe \u201cGarment of Idessa\u201d formation. To each of us were signals and\nplacements given, and we each bowed our heads and swore to do the bid-\nding of our superiors, for this is the way of a military person of honour\nand status.\n\u201cIn my own unit I put Dirullel beside me, for we were as clan-\nbrothers, and I saluted each of my men by name and clan and station.\nThen were we prepared. Since we were short of rations and had nothing\nbetter than peasant bread of coarse Dna grain, we were not long in\nbreakfasting, and then we were ready to move forward. Yet the com-\nmand did not come until the sun was three hands above the horizon, for\nthere were many tasks and many men, and these matters took up the\nmorning.\n\u201cAt length Ko\u2019on, the Vrayani messenger favoured by Firussu,\ncame unto us and gave each of us the signal. We moved forward, form-\ning into ranks and files as we moved, and after some paces we fell\nnaturally into march-step. Dirullel then took up our Legion chant of\n\u201cJoy to Qon\u201d (for we were most of us worshippers of Qon in that\nLegion), and some said that they saw the mask of Mighty Qon looking\nupon us from the sky \u2014 although I think that this was but imagining.\nWe moved forward some three Tsan through the cloudy day, and a great\nsight we made indeed, with our long pikes and our blue-lacquered\nshields, and our red-crested helmets of blue lacquered Chlen-hide. I\nmyself had the fortune of a steel helmet and a shield banded with steel,\nand these I had polished until they gleamed like the Crown of the King\nof the Gods.\n\u201cWhen we at last stood in our place and formation, we saw the\ndisposition of our friends. We could not see the enemy for the lines of\nlight troops in front, but to our left we were gladdened by the flame-\ncrested helmets and glittering swords of the Legion of Red Devastation,\nwho stood coldly like images of their fiery God, silent, communing with\ntheir priests who sacrificed before them. Now we saw that to our left and\nin front of us there were archers of the Legion of Girikteshmu. This was\na good sign, for we knew that the Mu\u2019ugalavyani would employ many\nmissilemen. To the rear of the Legion of Red Devastation we saw a group\nof great brown Ahoggya take up position. These were like mighty\nbehemoths of evil, furred aspect, mumbling and crooning in their un-\nspeakable tongue, clutching javelins heavy enough for two men and\nrough shields of metal and wood. Although I was placed on our leftmost\nside, still I could smell the sharp, bitter stench of the Shen moving now\ninto position to our right rear. I looked about and saw the ballista crews\nheaving their ungainly engines into position behind us, and now there\nwas a flurry upon the little hillock there, and then a roar went up from\nour troops, for Lord Tukolen did appear himself with the Kaing of all\nthe Legions with him. His staff of officers glittered like the moons, and\nhis helmet was resplendent as the bright sun of midday; his right hand\nbore the Kaing of honour granted of old by the 20th Emperor to his\nfamily, to which I have the honour also to belong, though distantly.\nPriests of all the Gods there were with him, and men of many stations. . .\nes\nChe Dragon\n\u201cNow we heard the coming of the enemy; their war whistles shrilled,\nand their great drums thundered. Distantly I saw a cloud of dust to the\nnorth, and for a few moments I saw glimpses of red-lacquered armour\nthrough a gap in our light troops\u2019 line. Our own men sent up war cries,\nand our trumpets blared, and the din was like unto the Judgment Hall of\nBelktanu, Lord of the Goodly Dead. Slowly our own war chant dies, and\nour troops took up instead the song of \u201cVictory to the Emperor,\u201d as is\nprescribed by custom. Even the ugly Ahoggya and the cold-eyed Shen\ntook it up, so moved were we all. Beside me Dirullel began to sway and\nmove up and down as the ecstasy took him, and all around men began to\nmove and shout in unison. The Legion of Red Devastation began to sway\nalso, and their deepthroated chant of \u201cVimuhla, Lord of Flame\u2019 arose\nand grew ever greater. It was a sight few men can see without a stirring\nin the breast.\n\u201cLord Tukolen then raised his Kaing, and slowly man by man, unit\nby unit, we fell silent there. Now the priests set up a shrill din of chanting\nand calling upon the Gods, and the smoke of sacrifices rose to the over-\ncast skies. From somewhere a few Mu\u2019ugalavyani prisoners had been ob-\ntained, and these were speedily dispatched in sacrifice to the Gods. Now\nour Kerdu held out the Kaing horizontally before him, and all fell silent\nas men attired in herald\u2019s robes made their way down from the little hill\nand past us, through our light troops\u2019 ranks, to parley with the enemy.\nNone of this could I hear or see, being placed as I was, although men\ntold me later of the brave speeches they made and the powerful\nchallenges, delivered in verse and in scholarly manner as prescribed by\ntradition. When our leader again raised his Kaing, we looked full upon\none another and knew that the hand of the Gods would pick out some\namongst us for combat. This is the way of the Gods, and sure enough. we\nsaw the face of one comrade and then another go pale and blank, and\nthese men shuffled forward from our lines and stood looking upon what\nvisions we knew not. I was not fortunate to be amongst them, but Ga\u2019en-\ntu, a soldier from my home city in my cohort, was one, and I saw him\nfrom close by. He was a mighty fellow, heavy-set and tall, armoured in\nChlen-hide and carrying a great barbed pike. Our Dritlan looked down\nour ranks and saw those who had stepped out. In a moment he had in-\ndicated two or three, of whom Ga-entu was one, and these trotted slowly\nforward to the place where the tall plumes of the heralds could distantly\nbe seen amongst our light troops. I cursed because I could not see what\ntranspired, but I heard indeed a thunder of shouts from beyond our\nlines: one of our men had been defeated in single combat. Our priests\nagain set up a din of chanting and blaring trumpets, and the next shout\nof victory came from our front line troops, spreading back amongst all of\nus, aS we saw a young soldier triumphantly dragging a red-armoured\nMu\u2019ugalavyani trooper back through our lines well nigh senselelss and\nbleeding from a terrible wound on the temple. Again and again there\nwere shouts, some from us and some from our unseen enemy, and I think\nthat all but our heralds and our leaders lost count of who was victorious\nand who was taken for sacrifice. I recall only a cacophony of shouting\nand crying and cheering amidst the rising dust, the sight of plumes and\narmour, and the stench of sweat and leather and badly cured Chlen-\nhide. I know not what transpired from moment to moment. I only know\nthat I did not see brave Ga-entu again.\n\u201cAt last Tukolen raised his great plumed Kaing once more, and a\npang as of ice and a nausea went through me as I realized what must\nnow come. I found myself amazed to see my feet moving forward, my\nhelmet visor down (though I do not recall lowering it), my great pike slip-\npery as bloody meat in my hands, my light shield grown suddenly heavy\nupon my arm. To my front the din changed now to a deeper, more\nstrident cry, and mixed in were the high-pitched screams of men. I could\nsee nothing because of the dust, and I then realized that our light troops\nhad been given orders to raise \u201cthe Curtain of Unseeing,\u201d a strategem of\nthe great tactician Ssamiren, stamping their feet in the rough ploughed\nearth and concealing our numbers and our dispositions from the enemy\nas long as possible.\n\u201cSomething crackled and shieked over our heads; there was a flash\nlike unto a bolt of lightning, and a harsh snapping sound like a great\ntree broken in twain. Dazed, I looked about me, but my comrades ap-\npeared unharmed. I realized then that we had been fired upon by some\nenemy sorcery, but our own priestly contingent had set up a defense and\nthus saved us all. All of us were silent now, pale about the lips, and grim-\neyed. Here and there a soldier whispered a word of comfort to a younger\ncomrade, and one youth looked wildly this way and that as does an\n"
+  },
+  {
+   "path": "extract/dragon/004/p014_full.txt",
+   "content": "The Dragon\nanimal suddenly realizing that it goes in to the place of slaughter. The\nboy was in my cohort, and without breaking stride I found my lips com-\nmanding the man nearest him to strike him not too roughly and speak\nwords to bring him to his senses. After a moment the youth bit his lip to\nkeep it from trembling and got back into step once again. Not for\nnothing was all our training, I thought.\n\u201cSomewhere a trumpet shrieked in a series of quick notes. Of them-\nselves my feet moved in the patterns of our training, as sure as the step-\nping of a high-spirited dancing girl of the Temple of Avanthe, and on my\nright hand our neighbouring unit seemed to draw away from us; the\ncheckered pattern of the \u201cGarment of Idessa\u201d was forming. Dust\ncovered all, and grime filled my mouth and eyes. Now there was a\nstrange pattering, and I looked up wondering if it would dare to rain in\nthe month of Lesdrim. Yet it was not rain but red-feathered arrows\nwhich fell amongst us. In the second rank behind me a man fell, yelled\nsomething, and struggled while his comrades pushed past him. His long\npike dropped squarely upon my shield, and I thought it would be torn\nfrom my arm. In a moment, however, I managed to free it, and we con-\ntinued on as before. Somehow now there were faces in front of us, men\ncoming towards us. The enemy! No, these were our light troops filtering\nback through our checkered pattern, some wounded, some dying, some\nfierce-eyed and glaring through red-rimmed dusty lids like demons out\nof the hells of Wuru. All were emptyhanded, their javelins gone. Now we\nwould see the enemy; this I knew for certainty.\n\u201cAgain there was a hissing crack as a clay pot breaks in a potter\u2019s\nkiln, and somewhere to my left there was much screaming. I could not\ntell whether it came from our ranks or the enemy\u2019s, although later I\nlearned that the priests had deflected another enemy bolt and in return\nhad delivered a counterspell which had raised several score of the scar-\nlet-clad Mu\u2019ugalavyani archers into the air like a veritable fountain of\nblood. Even so, the rain of arrows amongst our ranks did not cease, and\nmore men died. Two of these missiles struck my own shield, and I pulled\nit up higher upon my shoulder and ducked my head without conscious\nvolition. The God Belkhanu strode amongst us that day, accompanied\nby His five Pale Attendants (the five faces of Death, according to Tsol-\nyani mythology \u2014 Translator).\n\u201cThen it seemed as though every man of us turned white and then\nblack, and our arms and armour glowed with a pale lambency. The pat-\ntering of arrows was still to be heard, but these no longer reaped death in\nour ranks. Our noble priests had cast a great spell of defense over us in\nthe front, and it was enough to deflect these missiles. Nor could our\nenemy see us \u2014 and we could not see him \u2014 through the clouds of dust.\nSuch fire is ineffective at best, and we took great heart from our safety.\nWe changed our chant then to the cry \u201cMissum, missum!\u201d (\u201cDeath!\nDeath!\u201d Translator), which is what our Legion calls as it advances to do\nbattle.\n\u201cNow I discerned a great, looming bulk through the dust to my\nright; this was the fallen Temple of Chanis, its broken columns emerging\nthrough the murk like pillars of fire in the sunlight. Men eddied to and\nfro around its base. Ahead of us the field dropped off gently, and there\nthe waters of the Koshtla gleamed dully like a curved sword of grey steel.\nBeyond it, on the far side, I glimpsed then the mighty line of the foe: red-\ndened armour, pot helmets, glittering pikes, and blazoned shields, all\nawaiting us upon the other bank.\n\u201cStill our archers fired in swift unison to our left, and gaps ap-\npeared here and there in the enemy array. Straggling groups of our light\ntroops splashed back towards us through the little river, some bloodied\nand some with enemy hands or heads upon their light spears. Our trum-\npet, whose note we had come to recognize as a babe knows its own\nmother\u2019s voice, blared thrice, and we halted to regroup into the \u201cStone\nMountain\u201d formation. Yet it did not sound the single long note which\nwould command us to charge. Instead, there was a flurry of deeper\ntones, and on our left the Legion of Red Devastation slung their little\ntarges upon shoulder or back and broke into a trot. After them came the\nleaping, hooting horde of Ahoggya brandishing their thick spears in two\nhands and a little shield in a third hand. Again there came trumpet calls,\nthis time from our right, and distantly I perceived the measured cohorts\nof the great Shen advancing to the right of our phalanx. Something like a\nmighty ball of flame went over our heads and fell into the ranks of the\nfoe; our artillery was firing from behind us. Further great bolts could\nthen be seen from both left and right, and I realized that great Tukolen\nhad emplaced two more units of bolt throwers there upon our flanks.\n14\nVol. I No. 4 December \u00b076\nOur strategem became clear to us: we would hold in the centre while the\ndevoted Legion of Red Devastation and the Ahoggya closed from the\nleft, and the terrible Shen did the same from the right! The \u201cClaw of the\nKrua\u201d tactic, proposed by Ssamiren and advocated by all of the learned\ntacticians of history since!\n\u201cYet the enemy were also scholars of the military arts. Dimly\nthrough the dust we saw a ragged horde of great beings advancing to our\nleft, and after a moment we knew them to be N\u2019lyss, great barbarian\ntribesmen from the northern reaches of Mu\u2019ugalavya. These, too, had\ntwo-handed swords, and they swung these and shook their heads as they\ncame so that their long, greased braids whirled about them like a dan-\ncer\u2019s skirts. They roared as they ran, leaping joyously to meet Death as a\nchild runs to its clan-mother\u2019s arms. I could not see what transpired\nupon our right, but I learned later that the Mu\u2019ugalavyani had set there\na force of armoured Pe Choi to block our Shen, with another, larger\nforce behind these to provide a second shock. Still farther back behind\nthese a force of enemy Shen in wait.\n\u201cFrom where we waited we saw clearly the charge of the Legion of\nRed Devastation against the barbarians from N\u2019lyssa. When they met\nthere was a sound like a great stone falling upon the earth, and then a\nfierce clashing, clattering, and clanging. Dust rose to hide the sight, and\nmingled in were screams and yells and the ululations of the barbarians.\nArtillery bolts from our left took out swathes of foemen just before they\nstruck, and the droning roar of our troops took on a fiercer, victorious\nnote as they swayed together. The Ahoggya did not join in this fray but\ninstead turned to our far left and disappeared in the murk. At the same\ntime I saw a group of men in light blue armour run out from the trees on\nour extreme left flank, and I knew them to be slingers of the Legion of\nthe Joyful Clan of Noble Vrayani. These advanced at an angle to the fray,\nand I knew that many N\u2019lyss in the rearmost ranks would not live to see\ntheir cold mountains again.\n\u201cAgain we felt a tingling, and sparks jumped from the steel of my\nhelm to that of my shield. For a moment I tasted such bitter dregs of fear\nthat I knew my bowels would loosen, and I would grovel or run shrieking\nfrom the place. In the next moment, however, I felt a calm and a courage\nlike unto the great Hrugga himself (Hrugga: the great mythological hero\nof the Tsolyana; Translator). I knew that once more the priests of the\nenemy had attempted a great spell upon us, and out own sorcerers had\nrepulsed this with magics of their own.\n\u201cNow from the ranks of the enemy across the stream we heard the\n\u201ctik-tikka-tuum tik-tikka-TUUM\u201d of their wardrums, and their centre\nline rolled forward as the waves of the sea rush forward to meet the sands\nof the shore. From our midst the trumpet of Dritlan Firussu blared, and\nonce more we shifted, this time into the \u201cTeeth of Kra\u201d formation (a\nseries of wedges or triangles in front with a second row of solid\nsquares \u2014 Translator). From what I could see, our enemy had adopted\nthe \u201cStone Mountain\u201d formation for themselves, with a large force ex-\ntending out beyond us on our left. Little did we know that not only did\nthis enemy phalanx outnumber us badly, but that another of only\nslightly smaller size awaited us behind it!\n\u201cOur Dritlan, experienced soldier that he was, waited then until the\nforemost ranks of our foe were in the water of the river, which came to\nthe tops of their greaves, and then he signaled our advance. Some of our\ncohorts had bows, and these let off flights of arrows while their comrades\nto the rear held their pikes. No answering fire came from those facing us,\nand we were joyed to see men in their front fall, while others behind\nstumbled and shouted in their harsh, staccato language.\n\u201cMy pike was slippery in my hands. I recall worrying about my\nshield, now hanging from its strap from my left shoulder, and I have a\nrecollection of fearing briefly for my footing as we came down the little\nslope to the river. Then we hit them, and they us. A sharp, barbed pike\ncame towards me, glanced from my shield, and passed to my left. My\nown point struck something with a great shock, and for a moment I\nthought I had killed my foe; then my weapon\u2019s shaft seemed to rise of it-\nself into the air, and I knew that it had been deflected from my op-\nponent\u2019s shield. In the next moment I found my shield locked against\nthat of my enemy. There was a mighty press upon me from both front\nand back, and I glared eye to eye with my foe. The scarlet cookpot\nhelmet hid much of his face, but I saw his mouth open and the gleam of\nteeth. Then a glittering point came from behind me and grazed his face;\nhis head skrewed to the side, and I reached with my mailed fist to deal\nhim a blow upon the cheek. So tightly pressed were we that I feared I\n"
+  },
+  {
+   "path": "extract/dragon/004/p015_full.txt",
+   "content": "Vol. I No. 4 December \u00b076\ncould not reach my sword; yet somehow it was in my hand, and with this\nI deflected a pike-point aimed at my own face. The I twisted and pushed\nthe spiky point of my sword into my opponent\u2019s eye. There was a gout of\nblood, and I saw him slump. My own pike was lost to me in the press:\nnow we fought face to face and man to man with swords, the bosses of\nshields and our mailed hands. I recall little in detail but have only\nmemories like a parti-coloured robe of faces, weapons, arms, the clatter\nand shrieking and roar of combat. More than this I cannot tell.\n\u201cSuddenly I found myself in an open space. Men fought and\nstruggle to both sides of me and also in front of me. Yet I stood alone.\nI looked about for Dirrullel or for any known comrade, and there before\nme I saw my friend\u2019s familiar back, straining as he fought with an ar-\nmoured enemy. I let my legs carry me forward, and in a trice I had\nslashed low to cut into the thigh of Dirullel\u2019s opponent. The man fell\naway, and Dirullel flashed me a grimace of thanks. Then we were once\nagain in the press, and I recall no more for awhile.\n\u201cIt was not until a furry, flapping body plummeted down just to my\nleft that I knew that the Hlaka were also in the fray. These little winged\nflying beings are not courageous, and they are used mainly to hurl\njavelins and other missiles down upon enemy troops. Yet this one had a\nsmall javelin protruding from his breast. Thus I realized that the\nMu\u2019ugalavyani had Hlaka with them, too, and these fought above us\ndesperately for control of the skies. Further magics were being worked\nas well, and there was a constant flashing and muttering as of thunders,\nand the light changed from the dusty murk of battle to brilliant\nluminance, then back to bloody gloom. Time after time we heard the\ncrack of energy bolts or horrid Doomkill spells, sometimes nearby and\nmore often farther away. Feelings as of cold or of fear washed over us,\nyet our bloodlust was now so strong that these did not affect us. Men\nshouted, and men died, and weapons clashed, and the din took away our\nsenses and our reason. Yet we did not cease.\n\u201cIt was not until we found ourselves all standing alone in the field\nthat we knew that our foe lay vanquished before us. To our left, the\nbrave troops of the Legion of Red Devastation were not to be seen\nthrough the dust and murk; no doubt they pursued the remnants of the\nN\u2019lyss. To our right, however, there was still the din of battle, and we\nlooked upon the backs of red-clad soldiers advancing there across the\nstream to do battle with what I later learned were our Pe Choi reserves.\nThere was no sign of our Shen. I shouted above the uproar and rallied\nmy men to me, as I saw others were doing. Our good Dritlan Firussu\ncame to me, a great slash in his battle armour and a thin trickle of red\nover the blue upon his breast.\n\u201cLet us go there,\u2019 I cried, \u2018and aid our comrades! Should we take\nthem in the flank, we shall hold the field!\u2019\n\u201c\u201cNot so,\u2019 he replied. \u2018Do you look there.\u2019 And he pointed ahead of\nus. I was horrified to see a mighty phalanx of red-armoured troops ad-\nvancing inexorably towards us. It was as though all of our slain foemen\nwere alive again, like the corpses of legend, and once again we must\nrelive those terrible moments of shock and battle. This enemy was fresh,\nand their armour glittered and clattered in the sun like the carapaces of\na myriad Pe Choi.\n\u201cWe did as we were trained to do. Swiftly we regrouped as best we\ncould. I was saddened to see many gaps in our once-proud line, and our\nmen were weakened and gasping like dogs in the heat. Yet somehow we\nformed up and waited while the thuttering of enemy drums and the\nmeasured tramp of booted feet grew ever closer. Some men wept, and\nsome trembled uncontrollably; yet we stood.\n\u201cThis enemy had no pikes but rather carried longish scalloped\nswords and great axes. They bore oval shields and wore armour from\nhead to foot. Our men scrambled to find our discarded pikes, at least\nenough for our front ranks, and those who had bows and arrows drew\nand fired repeatedly into the enemy ranks but with little effect. In reply,\narrows came beating down upon us like the rains of the month of\nShapru. Men fell here and there. Yet we held our pikes and waited.\n\u201cA flight of Hlaka darkened the sky, and we watched nervously.\nThese were ours, however, and javelins, stones, tree branches, and rocks\nfell amongst the foe then. We cheered them on. Magic flickered over\nthem, and for some time missiles seemed to deflect away from the foe,\nthen they fell again into their midst. A scorching ray of light leaped into\nthe sky from the Mu\u2019ugalavyani rear, and a dozen little charred bodies\nfell amongst them as well,. Our own sorcerers countered, and for minutes\nmy eyes were dazzled by the interplay of flare and glitter there above us.\nHe)\nThe Dragon\n\u201cNow our foe was upon us, and once again we withstood the in-\ndescribable shock of charge and counter-charge. Our pikes outreached\nthe weapons of the enemy, and we reaped a terrible toll before they\nforced their way through to us. Then there was again a cacophony of\nnoise, the sight of faces and weapons and shields, and I found myself\nhemmed about by men grinning like mad Feshenga, two-handed axes\nwhirling about their heads. One struck me a glancing blow upon the\narm, and I felt a shock like a great hammer there, but no pain came.\nThis blow threw me away from another foeman, and his long sword\ncleaved the space in which I had been. Dirullel came, then, and repaid\nhis debt to me by striking down my first opponent from the side while I\nrecovered my stance. Then I reached past the other man\u2019s awkward\nguard and felt my sword grate through the ornamental metal bars of his\nhelmet. Suddenly the fear came upon me that I could not pull my\nweapon free in time, and I jerked and heaved like a wild beast. It came\naway and I met the slash of another Mu\u2019ugalavyani just in time to deflect\nit and send his axe sliding away from me. Again I tried for a helmet\nthrust, but my sword clattered against his upthrust armoured shoulder,\nand he backed away to swing again. My little shield would be useless if\nhe caught me full upon it, and I also tried to pull back to my right, only\nto feel my feet slip away from me upon the body of some fallen comrade\n\u2014 or dead foe. I raised my sword and shield, got to one knee, and wat-\nched the axe silhouetted against the sky as it fell. Then there was a\nterrible crack like all of the thunders of the Gods, a flash of intolerable\nlight, and I fell senseless and knew no more for a time.\n\u201cIT never expected to wake again save in Belkhanu\u2019s lofty halls. Yet\nmy eyes came open of themselves, and I found myself lying sprawled in\nblood and dirt upon the field. I felt my limbs and realized that but little\nof this blood was mine, although my shoulder pained me much. Near me\na familiar form lay supine upon the body of a scarlet-armoured enemy. I\nfeared to see it, but my hands went of themselves to turn over that\nwarrior and look upon his face. As I knew it must be, I saw there the face\nof my friend and comrade, good Dirullel, blackened and bloodied and\nstill in the final rictus of death. I wept then, though we are enjoined not\nto weep since we are soldiers; yet tears flowed down my cheeks without\ncontrol. All I thought was of blood and chaos, intermingled with vows to\nfind some priest who could make him live again. Yet I knew that this\ncould not be, for such mighty spells are reserved for those of great status\nin our land. Then I bethought me of the building of a great and\nbeauteous tomb. I know not what I thought or what I did, nor how long I\nlay there. After a time, then, I looked up to see a soldier picking his way\ntowards me through the wrack of battle. This man wore a helmet crested\nwith flames, and I recognized him as an acquaintance in the Legion of\nRed Devastation.\n\u201cAre you not Chaeyan of the Legion of Mirkitani?\u201d he asked.\n\u201cWhat course has the battle taken \u2014 do you know?\u201d\nI replied that I did not and rose to look about me. Nearby all was\nblackened and burned like the sacrificial altars of Vimuhla himself \u2014 a\ngreat Doomkill had struck there, and this it was which had thrown me\ndown and slain my erstwhile opponent. It was this spell, too, which had\nkilled poor Dirullel. When I regained my composure, I asked the man\nfor his news, and he replied that for all he knew, the left flank was cer-\ntainly ours: his comrades had routed the fearsome N\u2019lyss and caused\nthem to fall back upon the Mu\u2019ugalavyani reserves, a Legion of medium\ntroops held in the rear of their lines. The Ahoggya had swung about to\ncharge the flank of the legion of two-handed axemen and swordsmen\nwho had meleed us, and it was this more than the Doomkill spell which\nhad led to their defeat. The Vrayani slingers had done their work well\nalso, slaying many of the N\u2019lyss and then advancing to kill others of the\nenemy\u2019s medium reserves. Of the right flank, however, neither of us\nknew anything, and together we stumbled like drunken men through the\nmingled piles of bodies to the edge of the little stream, now run reddish\nbrown with blood and mire. There we discerned upon the walls of the\nfallen Temple of Chanis a sight which made us forget our pain and our\ngrief for the moment: upon a high wall stood a party of blue-clad men,\nand in their midst floated the proud plumes of the Kaing of General\nTukolen!\nAs we learned then, our right flank had also won the day, although\nthe heroic Shen had been slain to the last one. Our Pe Choi reserves had\nbeen brought up on the right to engage the remnants of the enemy Pe\nChoi legion. The Shen mercenaries of the Mu\u2019ugalavyani had in turn\ncharged these, but by this time my own units (with the help of the\n"
+  },
+  {
+   "path": "extract/dragon/004/p016_full.txt",
+   "content": "Che Dragon\nAhoggya) had broken through in the centre. The enemy general and his\npriests were fled away, although some were seized by our most advanced\nunits, and these lay now in bonds before General Tukolen. The ar-\ntillerymen were dismantling their engines, and as we stood there, two\ncame forward bearing a mighty ballista bolt upon which two\nMu\u2019ugalavyani officers hung spitted like Hmellu (A common meat\nanimal, about the size of a sheep \u2014 Translator). To these men General\nTukolen gave bracelets from his own wrists.\nAt length I saw our commander, Firussu, returning across the\nfield, hung about like a merchant\u2019s pole with strings of Mu\u2019ugalavyani\nhands. When he saw me, he came to me and kissed me upon the brow\nand took me straight to the General. He praised me much and made me\nashamed for having fallen senseless upon the field, but the General took\nno notice of that but instead rewarded me with an amulet which hung\nabout his neck. This I have before me unto this day. Afterwards I\nreceived promotion to the rank of Molkar, and I joined in the rallying of\nour troops, the\u2019 pursuit of the enemy, and the joyous sacrifices of victory.\nAll of these things I did upon the field at the Temple of Chanis.\u201d\n\u201cof LOM Py Payee Tan AY.\n\\ re aE\nSubst ge abe\n\u201c| nites he\nFes!\n=f\nVol. I No. 4 December \u00b076\nHere ends that section of Chaeyan\u2019s memoirs dealing with this\nfamous engagement. The Tsolyani subsequently went on to disrupt the\nMu\u2019ugalavyani supply lines between Katalal and Bey Sy, and the siege\nwas broken off. The Mu\u2019ugalavyani retreated in good order through the\ncentre of Tsolyanu, losing one more great battle at a place near Tumissa.\nThis victory gave the Tsolyani the Protectorates of Pan Chaka and Do\nChaka, which they still administer, much to the bitter jealousy of\nMu\u2019ugalavya. Chaeyan himself took little further part in the war, having\nfallen ill from his wound at the Battle of the Temple of Chanis, and spent\nmuch of the following year marshalling troops and supplies for his\nLegion from Katalal. He did see further action as a senior officer at the\nChaka Uprisings of 2,045, however, where he again distinguished him-\nself.\nIt appears that the cause of the Mu\u2019ugalavyani loss at the Temple\nof Chanis was mainly their poor choice of a field which was too narrow to\nallow them to use their superior numbers properly. Missile fire on both\nsides was more or less neutralized by magic, and the Hlaka aerial battle\nreally did little to help the military victory, although it certainly did raise\nSm > 7a\nei PPatvas\nce at 7 Che\nyj\" Ont. \u00a5\n.\n*\n"
+  },
+  {
+   "path": "extract/dragon/004/p017_full.txt",
+   "content": "Vol. I No. 4 December \u201976\nthe Tsolyani morale. Magic also helped the Tsolyani but could easily\nhave gone either way, since both sides had fairly equal numbers and\nlevels of magic-users. Had General Buruchenish ordered things dif-\nferently and faced the Legion of Red Devastation and the Ahoggya with\ntrue heavy infantry instead of the valorous but poorly disciplined N'lyss,\nthe results might have been different. Neither Tsolyani flank could be\nturned, due to the presence of rough terrain and open forest, but the\nMu'ugalavyani made rather mediocre use of their large number of\narchers and their heavy infantry. But, to quote a Shen proverb, \u201cAn egg\nunhatched is nota Shen ...\u201d\nKey to the Map of the\nBattle of the Temple of Chanis\nTo the North: The Forces of Mu\u2019ugalavya:\nA. Command post of General Hekku\u2019u Buruchenish, together with\nhis staff, priests, and sorcerers.\nB. 500 Hlaka of the XVth Legion of the First Palace: \u201cSlay on High.\u201d\nArmed with light javelins. This Legion is now no longer active.\nC. 500 Shen of Legion IX of the Third Palace: \u201cIridescent Egg.\u201d\nHeavy Shen infantry armed with swords, shields, poleaxes, and a\nfew light Shen crossbows.\nD. 1,000 Pe Choi of Legion XII of the First Palace: \u201c\u201cMandibles of\nIron.\u201d Medium infantry armed in half-plate, long swords, slender\njavelins.\nE. 500 Pe Choi of the same Legion as D. These fought throughout as\na separate sub-unit.\nF. 3,000 heavy infantry of Legion I of the Second Palace: \u201cDestroy in\nGlory.\u201d About half armoured in steel, the rest in Chlen-hide.\nHeavy plate armour, long swords or two-handed axes, large oval\nshields, some composite bows.\nG. 5,000 heavy infantry of Legion I of the First Palace: \u201cVictorious in\nVimuhla.\u201d Armed all in steel, with \u201ccookpot\u201d helmets, small\ntarges strapped to the arm, long barbed pikes, and slender\nstraight swords.\nH. 2,500 light archers of Legion VIII of the First Palace: \u201cLong\nArrow.\u201d Leather tunics with Chlen-hide skullcaps, longbows, and\nclubs.\nI. 1,000 medium infantry of Legion IV of the First Palace: \u201cStrike!\u201d\nArmoured in light Chlen-hide, \u201ccookpot\u201d helmets, medium-sized\nround shields, short stabbing spears, curved or straight swords.\nJ. 1,000 light infantry of Legion XIII of the First Palace: \u201cThe Band\nof Hlkeksh\u201d (now called \u201cthe Band of Grdra\u2019\u2019). N\u2019lyss barbarians,\nwith little or no armour, large shields, and great two-handed\nswords.\nTo the South: the Army of Imperial Tsolyanu:\n1. Command post of General Tukolen hiMirkitani, together with his\nstaff, priests, and sorcerers.\n2. 900 heavy infantry of the Legion of Hnalla, Master of Light. Ar-\nmoured in a mixture of steel and Chlen-hide, halberds, swords,\nand oblong shields. This is now the 4th Imperial Heavy Infantry\nLegion.\n3. 1,000 Pe Choi of the Legion of Tik-nekw-ket, First Imperial Pe\nChoi Auxuliary Legion. Classed as medium infantry, half-\narmoured, bearing long slender spears, swords, small composite\nbows, light to medium shields.\n4. 900 Hlaka of the Legion of Aerial Joy, 9th Imperial Hlaka\nAuxiliary Squadron. Light infantry flyers armed only with javelins\nand light swords.\n5. Squadron of medium ballistae of the Legion of Mengano the\nJakallan (in those days called after Mengano\u2019s illustrious ancestor.\nKrshumu), 12th Imperial Artillery. Records show about 30\nengines in this sub-unit. The crews wear light armour and carry\nmedium-length chopping swords, and some carry medium shields\nto deflect missiles.\n6. 600 Ahoggya of the Legion of Guruggma, 3rd Imperial Ahoggya\nAuxiliary Legion. These are extra-heavy infantry, armed with\nseveral thick spears,. small shields. (Since the Reorganization of\n2,133 A.S. this Legion has carried large shields and two large\nswords, as well as their traditional javelins.)\n7. 1,000 Shen of the Legion of the Splendour of Shenyu, 4th Imperial\nShen Auxiliary Legion. These are heavy infantry armed with\ntypical Shen chopping swords, large shields, and some heavy\ni?\nThe Dragon\nhalberds. Some also carry the little Shen crossbow.\n8. Squadron of medium ballistae; cf. (5) above. There were about 20\nmachines in this group.\n9. 2,000 heavy infantry of the Legion of Mirkitani, Hero of Victories,\n7th Imperial Heavy Infantry. These are fully armoured troops,\nand they bear long pikes, swords, small shields, and some cohorts\nalso carry small composite bows. This is the Legion to which\nChaeyan Tikkumeshmra belonged.\nSquadron of light and medium ballistae; cf. (5) above. There were\nsome 20 light engines and 25 larger ones in this group.\n2,000 medium infantry of the Legion of the Lord of Red\nDevastation, Lord Vimuhla, God of Fire, 18th Medium Infantry.\nThese troops are classed as fanatics. They wear half-armour and\ncarry two-handed swords and small shields (which are discarded\nwhen melee is joined).\n400 light archers of the Legion of Girikteshmu, 23rd Imperial\nArchers. These troops have only light armour and carry composite\nbows, small shields, and short battleaxes.\n1,000 light slingers of the Legion of the Joyful Clan of Noble\nVrayani, 3rd Imperial Slingers. These men have slings, small\ntarge shields, maces or short swords, and some wear light Chlen-\nhide or leather armour in the style of the islanders of Vra.\nA rabble of approximately 3,000 light troops drawn from the\npeasant villages of the south and of the adjacent regions. Chaeyan\nand some of his colleagues later estimated about 6,000 of these\nlight troops, but this figure seems exaggerated. General Tukolen\u2019s\nbattle report to Avanthar gives 3,000, and this is the figure chosen\nhere. These men had little or no armour and carried only scythes,\nrakes, sharpened sticks, and a few swords.\n. The village of Firshtelu.\nThe Koshtla River. A destroyed wooden footbridge is marked just\nto the northwest of the Temple of Chanis.\nThe ruins of the Temple of Chanis, a shrine once devoted to Sarku\nbut later abandoned during the Time of Troubles after the decline\nof the Engsvan hla Ganga Empire.\nAs a final note it may be stated that the Tsolyani priestly and\nmagical contingent consisted of 237 persons, under the supreme leader-\nship of Lord High Prelate Chiguresha, High Priest of Ksarul at Jakalla.\nSome 54 of these were slain by enemy magic or sheer exhaustion during\nthe battle. The records of the Mu\u2019ugalavyani show that their priestly and\nmagical force was composed of nearly 300 persons, led by the Exalted\nPreceptor Hu\u2019umaynish Dilsha of Ssa\u2019atis, Chief Priest of Lord Hrsh\nthere. Although the Mu\u2019ugalavyani contingent outnumbered that of the\nTsolyani, these two groups were roughly equal in rank and level status.\nAfter the battle the Tsolyani counted 136 slain Mu\u2019ugalavyani priests\nand sorcerers, and 22 were taken captive and later sacrificed.\nHu\u2019umaynish himself escaped and lived to an advanced age after the war\nin Ssa\u2019atis.\n10.\nit.\n12;\n13.\n14.\n<\nay\nS\n=\n\u2014\n=\n:\nHEY !1!7?\n"
+  },
+  {
+   "path": "extract/dragon/004/p018_full.txt",
+   "content": "CREATURE\nFEATURES\nTHE MIHALLT:\nNA 1-20\nAC 1\nM. 135\u201d\nHD 3\nF:\n40:\nI:\n50\n80-800 (near own territory)\n50\nThe Mihalli are an ancient nonhuman race which came with\nhumanity to Tekumel \u2014 but not with humanity\u2019s knowledge or\nblessings! When the planet was cut off from interstellar humanspace,\nthe Mihalli, who had set up a small spy post beneath the planet\u2019s sur-\nface, were cut off as well and could not return to their original world. As\nhuman technology declined, the Mihalli increased and developed their\npowers. At last there was a final armageddon between the much more\nnumerous human forces and the Mihalli, and this ended with the\ndestruction of the latter\u2019s home areas with nuclear fission bombs. With\nmost of the Mihalli area a mass of glass-like slag, the race was assumed\nto be dead. Humanity continued down along the road to barbarism, and\nonly a few final automatic safeguards against Mihalli resurgence were\nleft. These have lasted through the long, slow decay of human technology\n"
+  },
+  {
+   "path": "extract/dragon/004/p019_full.txt",
+   "content": "until the present. Now, however, a very few Mihalli have appeared, the\nmost prominent being the chief minister of Yan Kor, the devious Lord\nFu Hsi \u2014 who may or may not be an actual Mihalli. More have been\nseen in connection with the iniquitous ring of Zu\u2019ur drug smugglers,\npossibly in alliance with Yan Kor or possibly working with the terrible\nHlyss. It is thus possible to meet one or more small Mihalli parties in the\ndeeper underworld labyrinths, where they seek useful bits of ancient\ntechnology, or in remote deserted cities, etc. Their original homeland lies\noff the maps to the northeast of Tsolyanu, east of the strange little\nhuman principality of Chayakku. It is still almost entirely composed of\nslagged ruins, uninhabitable by man, without food or drinkable water\nand hence very hard to penetrate (except possibly by certain of the un-\nderground subways \u2014 which might take the players into a veritable nest\nof them!).\nThe Mihalli are humanoid in form, hermaphroditic, able to see in\nthe dark. Their skins range from dull green to a rich coppery brown \u2014\nlower class Mihalli being of the former colour and higher level Mihalli of\nthe latter. They are shape-changers and can adopt the form of any\nhuman they wish. The only drawback to this is that their opalescent red\neyes can at times (20% each turn looked at) be seen even through their\ndisguises. They are marvellous magic users: each one will have a\nminimum of two bonus spells, and the higher levels ([V-up) will have 3 or\nmore. They each also have a 40% chance of one or more Eyes, amulets,\nor scrolls. Their favourite magical weapon is the Ball of Immediate\nEventuation, which can fire like an energy bolt, build up a defense shield\nagainst all nonmagical projectiles, cause them to become invisible, or\ncreate a cloud of gas poisonous to all human and nonhuman species ex-\ncept the Shen and the Ssu. This weapon comes in various strengths,\nrepresented by its colour: the weakest one is light purple, then bright\nsilver, then bright gold, then lambent, translucent blue.\nThe main problem with the Mihalli is really not their magic or their\npowers, but rather the fact that their motives and attitudes are totally in-\ncomprehensible to mankind. They behave in ways which can only appear\nrandom to humans, since the Mihalli seems to function simultaneously\nin this dimension and in others as well. They may appear neutral (only\nrarely \u2014 5% chance \u2014 friendly) on one turn and become the opposite\nthe next. Their objectives hardly ever seem the same twice. Their Balls of\nImmediate Eventuation are usable only by magic users or priests of\nLevels XIV-up, and will instantly scramble the brains of anyone below\nthese levels trying to use them. They will always defend if attacked, and\nwill only rarely (1% chance) offer a magical item to a human party. A\nrandom dice roll is thus necessary each turn to determine what the\nMihalli will do.\nTHE VRIYAGGA:\nNA 1-10 T nil\nAC 1 L 40: 20-200 (in own city)\nM 12/10/8 TinL nil\nHD. 10/15/25\nIn the oldest extant book, the Chronicles of Llyan of Tsamra, there\nis mention of a semi-legendary race which dwells in a city on an island in\nthe \u201cfarthest reaches of the sea\u201d; this race is described as being giant\nGhar who ride upon vehicles, and it is called the Vriyagga. Probably the\nauthor was referring to the terrible inhabitants of the City of the Red-\nTiled Roofs, the original name of which is lost in the mists of history.\nThe City of the Red-Tiled Roofs can only be reached through the\nsubterranean transport system which still exists under many parts of\nTekumel. It is a city of great, empty buildings, vasty halls, and intricate\narchitecture, all empty of any life and also lacking in any signs of the\nreasons for its desertion long ago. Ewers and utensils still sit on the\ncrumbled tables, furniture long rotted away to fragile dust still lines the\nhallways, chests of incomprehensible objects are still stored in its\nwealthy storerooms \u2014 and there are no signs of any inhabitants. Only\nthe Vriyagga now patrol its marble streets.\nThe Vriyagga is a creature to strike terror into the most heroic\nbreast: a huge pair of wheel-like appendages revolve around central axes\nlike the treads of a tank, powered by gnarled and knotted cores of\nmuscle-fiber. A great central braincase hangs between these, and from\nthe lower part of the parody of a face there depend four (or more in\nlarger specimens) great tentacles covered with powerful suckers. The\nmouth is lined with poison-dripping purple feelers, which can also serve\nto kill and ingest its victims. The ebon eyes are like great black opals,\ndrinking in all available light and allowing the Vriyagga to see in the\ndark. This terrible creature has considerable intelligence and can think,\norganize, call up its fellows, and lay ambushes, although it cannot speak.\nIt is limited, of course, in that it can only reach into areas where its great\ntreaded wheels will carry it. Thus, it cannot climb stairs or do more than\nreach into smaller rooms (even this is dangerous, since it senses heat and\ncan thus grope about until it catches someone. Its tentacles are very\ntough (armor class 2 to sever), and they do 2/4/6 dice of damage per turn\nto a victim caught in their toils, depending upon the size of the Vriyagga.\nThe larger specimens move slower than the younger and smaller ones, of\nContinued on Page 21\n19\n"
+  },
+  {
+   "path": "extract/dragon/004/p020_full.txt",
+   "content": "HLIFEE\nNOW\nAT YOUR DEALER\nRELEASES\nIN\nRussian and Prassaan\nNapokeonics, American\nRevolution artillery,\nFantasy Fantastics and\nTHE ALL NEW JOHN CARTER\nMARTLAN SERIES.\nManutactured By:\nHERITAGE MODELS, INC.\n2916 BLYSTONE LANE\nDALLAS, TEXAS 75220\n(214) 351-3708\nComplete Listing 5 .50\nNEW! Fully Ulustrated\nHinchliffe Catalogue and\nHandbook $3.95\nDave Millward Rules : Shs nes Heritage Model Publications\nTable Top Games HERITAGE MODEL PUBLICATIONS Wargames Research Group\nHeritage Wargamer Guides Many titles available with new releases monthly Leicester Micromedels LTD-\nDEALERS: ORDER DIRECT OR FROM ONE OF OUR PINE DISTRIBUTORS...\nCOULTER-BENNETT LTD. MILITARY MODEL DESTAIGUTORS DELAWARE VALLEY HOBBY DIST\n12188 Hamdin Street 61 Eset Ten Mile oad AN Aaneenc\nNorth Hollywood, Calif. 91606 Warren, Mich, 49051 Folcrott, Pann. 18023\nWE DON'T MAKE THE MOST.........WE MAKE THE BEST!\n"
+  },
+  {
+   "path": "extract/dragon/004/p021_full.txt",
+   "content": "Vol. I. No. 4 December \u201976\nMISCELLANEOUS TREASURE, MAGIC,\nWEAPONS, ARTIFACTS AND MONSTERS\nADDITIONS,\nDELETIONS,\nOMISSIONS, CORRECTIONS, CHANGES,\nVARIATIONS\nAND OTHERWISE\nCONFUSING ALTERATIONS (with special\nthanks to\nWesley D. Ives initial\nfor\ninvestigation and information \u2014 Strategic\nReview, Vol. 1, No. 3, p. 3)\nMONSTERS:\nCreeping Crud\nDice Lice\nPOTIONS:\nC2H50H\nRINGS:\nRing of Wedding\nSPELLS:\nQst level\u2014\nDetect BS\n2nd level\u2014\nSpell of\n(expletive\ndeleted)\nAmnesia\nEgomania\nby Gary Jaquet\nFound in all D&D playing areas. Resembles\ncigarette butts, crushed Fritos, spilled Dr. Pepper,\nsweat from players\u2019 foreheads and referee\u2019s dice\nrolling arm, pencil shavings and old character\ncards. Can cause extensive damage as a result of\nwrath incurred from janitors, mothers and wives.\nMinute lice which breed in and inhabit dice pips.\nThe added weight of the dice lice in the pips of the\ndice will cause seemingly impossible dice rolls\n(usually in referee\u2019s favor).\nThis potion, known by a variety of names, such as\nWild Turkey, Seagram\u2019s and even Pabst Blue\nRibbon, is a valuable item (in some cases, up to\n$10.00/fifth). Caution must be exercised when\nimbibing in these potions as over-indulgence will\ncause them to become potions of delusion. Over-\nindulgence will require administration of a 6th\nlevel \u201chair of the dog that bit you\u201d spell from a\nmagic user or a \u201ccure hangover\u201d spell from a\ncleric.\nReferred to in ancient texts as the \u201cBand of\nGold,\u201d the ring of wedding is found on the third\nfinger of the left hand of weregamers. Forged only\nin matching pairs, the ring of wedding creates a\nbond of telepathy between the pair wearing them.\nThus sharing a potion of \u201cWild Turkey\u201d with a\nweregamer who wields a ring of wedding will have\na 90% chance of being known by the wearer of the\nmatching ring. It is advisable for the ring-wearing\nmale weregamer who practices such a ceremony\nwith a female weregamer to make friends with a\ncleric who has a \u201ccure heavy wounds\u201d spell.\nMay (and should) be used at all times. Makes little\ndifference, though, as all weregamers will BS at all\ntimes anyway.\nUsed by Umpyrs in extreme circumstances to\nquell repartees between Drolls, Hobnoblins,\nGrifferees and themselves. Use causes red faces,\nand if continued, shock.\nApplied to self, this spell conveniently allows the\nuser to forget such minor details as: having\nalready used a spell, accumulated hit point\ndamage, and the like. Used only in desperation\ncircumstances or simply to aggravate the referee.\nAutomatically applied to self after several\nsuccessful, but lucky triumphs against high odds.\nLeads to lack of caution, delusions of grandeur\nand a trip to the river in a cement overcoat.\n21\nThe Dragon\n3rd level \u2014\nKill with Kindness Used by referees: \u201cI don\u2019t see what you\u2019re\n7th level \u2014 complaining about \u2014 it\u2019s only a 97 point balrog.\u201d\nMagic Missile\n(Mark I) Smith and Wesson .357 Magnum\n8th level \u2014\nMagic Missile\n(Mark ID) U.S. Army regulation M-16\n9th level \u2014\nMagic Missile\n(Mark ITI) Government surplus Nike-Zeus missile\n10th level \u2014\nArmageddon A blast of pure energy delivering tor\"\n(1,000,000,000,000,000,000,000) points of\ndamage. Destroys the world. No saving throw.\nGame over.\nWEAPONS:\nBreath of Used by weregamers who persist in eating polish\nDeath sausage and sauerkraut on garlic bread\nsandwiches while playing D&D. No saving throw\n(other than out the window).\nBi-labial Look it up. (Hint: sometimes employed instead of\nFricative Breath of Death, but transcends several Geneva\nConvention rules pertaining to gas warfare.)\nVRIYAGGA , .. from page 19\ncourse, but the former are more intelligent and have tentacles sometimes\ncapable of snaking their way up into a second storey room!\nThe origins of the Vriyagga are uncertain. There are no records,\nand thus it can only be theorized that these creatures were brought as\nzoological specimens from some distant world during the early period of\nhumanity\u2019s technological greatness. They appear to live on the Qu\u2019uni \u2014\nanother species found on the shores of the island upon which this ancient\nand mysterious city is located. These are pallid, semi-transparent\nshrimp-like creatures who automatically attack human parties trying to\nobtain water (the water supply system of the old city has become useless,\nand there are no visible wells). The Vriyagga prefer juicier humans to the\nrather tasteless blandness of a Zu\u2019uni, however, and once discovered, a\nhuman party had best plan to remain high up in the crumbling, ruined\nbuildings, out of the long tentacles\u2019 reach! [The Qu\u2019uni are 2 HD\ncreatures, moving at 10\u201d per turn, 50-100 appearing; armour class 3,\nwith no treasure \u2014 except under the water in their sea-grotto homes.]\n"
+  },
+  {
+   "path": "extract/dragon/004/p022_full.txt",
+   "content": "Che Dragon\nVol. I No. 4 December \u201976\nZar I me\nSee\n\u2014- GUL Sa\nPe-AWOHiny\nSTARWEB 1s a multi-player, hidden movement, play\nby mail, strategic space game. You capture planets,\nbuild space fleets, collect ancient artifacts,\nnegotiate with other players, and attempt to\nbuild a space empire. There are 225 star systems\njn the game, and you start with knowledge of only\none. You don't even know how many other players\nare in the game until you meet them! Once every\ntwo weeks, you mat] your instructions for the\nturn to us. We run the turns through our computer,\nand mail you a printout describing what happened\nto your empire that turn. We have been running\nplay by mail games since 1970, and currently have\nwell over 800 opponents around the world. For a\ncopy of the rules, and more details, send $1. If\nif you would like to join a game right away, send us\nXy $10 ($3 is the set-up fee, $2 is a deposit which\nis refunded at the end of the game, and $5 is for\nthe first five turns). The game fee is $1 per turn\n(that's only $2 a month).\ngn. nee\n,.,\nLe\nWp L Mh:\noS\n.\n2\nyz\nre\n\u2018ih\nSe\n=e\u201d\nSend to:\nFlying Buffalo Inc ___Enclosed is $1. Please rush me the rules.\nPQ Box 1467\nScottsdale, AZ 85252 __ Enclosed is $10. Please start me in a game right away!\nname ___Please charge the $10 to my MasterCharge/BankAmericard\n\u2014\u2014 Ss Card Number Ex. Date\nAddress\nSignature:\n"
+  },
+  {
+   "path": "extract/dragon/004/p023_full.txt",
+   "content": "Vol. I No. 4 December \u00b076\nRoads from Jakalla\nby Jerry Westergaard\nAs the setting sun glistened on the rooftops and towers of the\nancient city of Jaka\u2019lla, the clamor of argument could be heard\nfrom a tavern in the foreigner\u2019s quarter.\n\u201cT tell you we should not get involved with politics,\u201d a short\nman wearing the robes of the god Kete\u2019ngku said, \u201cat least until\nwe\u2019ve heard someone else\u2019s offer.\u201d\n\u201cThat is the best offer we are going to get anytime soon,\nLo\u2019ghau, and besides, I am running short on cash, \u201csaid Nge\u2019z an\nacolyte in the service of the god Thu\u2019mis. \u201cWe might as well go\nwith him and find out what he wants.\u201d\n\u201cB-But what if it is a trap,\u201d\nremembering the ceremonial\nTLOKIRIQALULAL, the \u2018five evil gods.\u2019\n\u201cBoth I and Haidhioy will be able to take care of anything\nthat comes in our way,\u201d Ishuhlais said, slapping his fellow\nwarrior on the back. Haidhioy simply grinned sheepishly and said\nnothing. He was recalling the facts and events that brought the\nfive to this tavern: the coming ashore at Jakalla, the meeting of a\nmysterious officer of the army, and his offer to return with him to\nhis home with the promise of great rewards.\nAt just that moment, a man dressed in decorative armor of\nazure blue, stepped up and introduced himself as Obu, cohort\ncommander of the legion of Serqu, Sword of the Empire.\n\u201cTI take it you have been considering my offer, gentlemen?\u201d\nhe inquired.\nNgez said, \u201cDue to our present lack of funds, we are forced\nto take you up on your proposition.\u201d\n\u201cGood, you will receive supplies and arms from my legion\u2019s\narmory tomorrow and leave the day after,\u2019 Obu added. \u201cSpeak to\nno one about either our bargain or even of my visit. Un-\nderstand?\u201d\n\u201cC-Clearly,\u201d said Uche, cringing from the icy stare from\nLoghau. As the officer left the smoke filled tavern, Uche asked,\n\u201cWhy did you look at me like that?\u201d\n\u201cBecause you talk too much,\u201d Loghau snapped. \u201cHe was\nstarting to have second thoughts about choosing us for the job.\u201d\n\u201cAnd you have too short a temper, Loghau,\u201d Ishuhlais said.\n\u201cNow let us have another ale before we sleep.\u201d\nEarly the next morning, a soldier clad in blue appeared and\nsaid, \u201cMy name is Quual. I am here to escort you around the city,\nand to outfit you with weapons and food for your trip.\u201d And with\nsaying that proceeded to show them the temples and shops of\nJakalla.\n\u2018Suddenly, another man clad in blue, ran up and gave Quual\na message. His face looked grim as he said, \u201cSirs, we must hurry\nand ready ourselves for the trip before it discovers us and our pur-\npose.\u201d And after saying that, made ready to leave Jakalla.\nAfter the six men were a mile or two out of Jakalla, they met\nObu, who had been waiting at a roadside tavern for them with the\nother fifteen men of his bodyguard.\n\u201cGood work Quall,\u2019 the cohort commander said, admiring\nthe men\u2019s disguises. \u201cThe warriors look like men of my\nbodyguard, and the priest and magicians look like traveling com-\npanions. We will leave now. The enemy still believes us to be in\nJakalla, but will soon realize we are not there.\u201d\n\u201cShall we take the north road, sir?\u201d Quual asked.\n\u201cNo, the road to Bey Sy will be too closely watched,\u2019 Obu\nsaid. \u201cWe will take the road to the east.\u201d\nThey then left the tavern and started on the SAKBE road\nheading east. As they walked along the highway Ishuhlais asked,\n\u201cQuual, where are we going to?\u201d\nthe magician U\u2019che said,\nsacrifices of the\n23\nThe Dragon\n99\n\u201cTo Fasiltum,\u201d he replied. \u201cThe enemy believes us to be\ngoing to Bey Sy, the center of our power. But instead we go to\nFasiltum, their own stronghold.\u201d\nNgez, overhearing the conversation, said, \u201cIf that be the\ncase, then we must indeed be careful. The Priestly Party is very\npowerful.\u201d\n\u201cThe P-P-Priestly Party!\u201d Uche exclaimed, panic stricken,\n\u201cW-We are all going to be k-killed. I-It\u2019s a t-t-trap.\u201d\n\u201cQuiet, SHATUN,\u201d Quual snapped at the frightened\nmagician. \u201cThe enemy is strong, but we are stronger. Smarter\ntoo, if they do not suspect us going to Fasiltum. So fear not, our\nonly purpose is to protect you.\u201d\n\u201cBesides, Halidoy and I are available as a last resort for your\nprotection,\u2019 Ishuhlais boasted.\n\u201cVery last resort,\u2019 Quual said wryly.\nAnd with that, they walked on, day after day, mile after mile.\nGradually, after a period of many miles and several weeks, the\nroad slowly curved northward. Off to the west, the travelers could\nsee desert dunes being whipped about by dry, powerful winds.\n\u201cThere you see The Desert of Eyagi,\u201d Obu said to Loghau.\n\u201cA lifeless stretch of land, with nothing but sand and wind. The\nbones of many foolish travelers lie in that dust.\u201d\n\u201cMust we travel through that to reach Fasiltum?\u201d Loghau\nasked.\nThe cohort commander replied, \u201cYes, but the SAKBE road\nmakes the crossing of little consequence,\u2019 he added, \u201cif one stays\non the road.\u201d\nImmediately the road curved to the west, leading them\ndirectly into the desert. The towering SAKBE road now became a\nlifesaver, protecting them from the high winds and abrasive dust.\nAfter several days of travel, Obu ordered the group to stop.\n\u201cThis is the city of Fasiltum,\u201d he said. It was beautiful, with\nsplendid towers piercing the sky. \u201cThat one is the tower of the\ntemple of Vimhula,\u201d he said, pointing to the largest; a giant red\ntower stretching almost five hundred feet into the air.\nAs they entered the city, the blue-clad officer led the group to\nwhat he called the Governor\u2019s Palace. Onward, through richly\nadorned halls, and tapestried rooms they followed the com-\nmander. He continued until they reached a pair of massive doors,\nintricately carved, at the sides of which stood two guards.\nWhile the giant doors were being pushed open, the group\ncould see a bearded man, very old, sitting on a throne in the mid-\ndle of the room. They walked in slowly and the foreigners bowed\nto the figure when they saw the soldiers doing likewise.\n\u201cI have completed my mission, lord,\u2019 Obu said, pointing to\nthe five strangers. \u201cHere are the men you requested me to return\nwith.\u201d\n\u201cGood work, Obu. You will be amply rewarded,*: the old\nman said, \u201cYou may leave now; I wish to be alone with the\nstrangers.\u201d\nAfter the soldiers marched out, the old man said, \u201cHello, my\nname is Dhoiro. I am the governor of Fasiltum. The reason you\nwere brought here is both secret and dangerous,\u201d his voice\nlowering as he spoke. \u201cMy spies have discovered that the Priestly\nParty is trying, by way of intrigue, to have the Emperor kill Ket-\ntukal. Kettukal is the greatest general in the history of the Empire\nof Tsolyanu, and the Priestly Party is jealous of his high esteem\nwith both the Emporor and the common people.\u201d\n\u201cWhat would you have us do?\u201d asked Loghau.\n\u201cWe want in our possession a book of magical properties.\nMy party wants you, along with twenty men as guards, to carry\nthis book to Avanthar, the residence of the Emperor, to present it\nto him as a gift from Kettukal.\u201d He added, \u201cBut the book was...\nborrowed, sort of, from the temple of Vimhula, located in this\ncity. That is another reason the Priestly Party wants to stop us at\nall costs.\u201d\n"
+  },
+  {
+   "path": "extract/dragon/004/p024_full.txt",
+   "content": "The Dragon\n\u201cT-It sounds very dangerous. W-What will h-happen if w-w-\nwe r-r-refuse?\u201d\n\u201cIf you decide not to go,\u201d Dhioro said, \u201cYou will be used as\narchery targets by my legion. Then you will be impaled, as is\ncustomary.\u201d Uche turned a shade of ashen grey.\n\u201cSince we seem to have little choice, how much is our fee?\nAfter all, a job like this is not cheap,\u201d Ngez asked.\n\u201cYou will be paid five hundred gold KATARS each in ad-\nvance, with one thousand upon return,\u201d the governor said.\nThe five men went into a huddle in a corner of the room.\n\u201cWe have decided, \u201cIshuhlais said, \u201cto accept your proposition.\nIt will be an honor serving you.\u201d\n\u201cVery well, you will be able to rest for several days at my\nhome here before setting out, \u201cDhoiro said, \u201cthen you will leave\nwith an escort of twenty men, bound for Avanthar.\u201d\nThe next few days were quite uneventful. Ngezthe priest\nprayed and worshipped at the shrine erected to the god Thumis.\nThe two magic-users, Loghau and Uche, studied and practiced\nthe few spells they knew. Ishuhlais, on the other hand, took\nHaidhoy to visit all the bars and taverns in Fasiltum. In the midst\nof their drinking, a blue uniformed soldier walked up.\n\u201cT have been looking for both of you,\u201d he said. They turned\naround and saw Quual. He continued, \u201cI was sent to locate you\nand bring you back to the Governor\u2019s Palace. Due to the suc-\ncessful mission I was promoted to Captain, and command of\ntwenty men. I volunteered to be your escort and guide.\u201d He then\nled the half-drunken warriors back to the palace.\nThe waking sun had just risen when the party set out from\nFasiltum. Quual decided the SAKBE roads were too dangerous to\nuse for fear of spies. So he led them directly through the Desert of\nEyagi.\n\u201cIs not traveling through the desert dangerous?\" asked\nLoghau, remembering the facts cohort commander Obu told him\nabout it.\n\u201cYes, but it is only a three day walk through this side of the\ndesert, and we have two months of food and drink,\u201d the new Cap-\ntain said.\nAnd so they went on. Several days later, after getting lost\nmany times, the group of twenty-six did leave the desert behind\nthem. As they walked on towards Avanthar, a mood of anxiety\ngrew around them. At first it was hardly perceptible, but slowly it\ngrew; until it seemed that it could be felt in the air.\nThen it happened. The party had been walking in the\ngrasslands skirting the Bey Trantis Mountains about two hun-\ndred miles from Avanthar when tragedy struck. A rustle of wings\nbeating on air was heard. They turned and were surprised by\ntwenty of the dreaded Gerednya swooping down upon them.\n\u201cGerednya!\u201d Quual shouted, fear in his eyes. The creatures\nwere greenish-grey, from eight to thirteen feet in length, had large\nbatlike wings and a stinger in each of their tails. Their name\nstruck fear in all who heard it.\nThey were upon the men in an instant; biting with their razor\nsharp mandibles and jabbing with their tails. The men had no\nchance to escape the onslaught.\nThe soldiers fought bravely; but slowly, one by one, they fell\nand were killed by the wretched creatures. After several minutes\nof melee, Quual shouted the order to retreat and then died him-\nself, as a result of numerous wounds.\nThree figures could be seen running away from the battle,\ntowards the mountains. Once safely there, Uche, Ishuhlais, and\nNgez rested themselves under a great tree. There they lay for\nthree days, doing nothing but eating, sleeping, and healing their\nwounds.\nThe warrior, priest, and magician had to make an important\ndecision: whether to go onward or to return.\n24\nVol. I No. 4 December \u201976\nThey decided to vote. Ishuhlais voted to continue. Uche\nmanaged to stutter a vote to return.\nNgez, the wisest of three, said, \u201cOur present situation is\nthus: without a bodyguard or guide our chances of reaching are\nalmost nil, On the other hand, if we are able to return and give\nthe book back to Dhoiro, who can guarantee that we will not be\nmade into archery targets? After all, we did lose twenty of\nFasiltum\u2019s best troops.\n\u201cWe also have a third choice. We could go neither to Avan-\nthar nor Fasiltum but instead to the Priestly Party and return the\nbook to them. That would earn us the undying devotion of the\npriests, and the undying hatred of the Military Party.\n\u201cT have therefore decided to bring the book back with me to\nFasiltum and return it to the governor of the city. It is the lesser of\nthe three evils.\u201d\nAnd so the remaining three started back for the city of the\nRed Tower. While they were again crossing the Desert of Eyagi.\nUche the magician spied two dark figures lying in the sand. As\nthey approached, the shapes were identified as insect-like, about\nseven feet in length, with fan shaped appendages on either side of\nthe head. They were lying unconscious in the burning sand.\nNgez bent down and gave both the creatures a drink from his\nwater flask. Slowly but surely each returned to consciousness. Af-\nter about half an hour one of the being was able to speak.\n\u201cWho are you? it asked in a muted whisper.\n\u201cMy name is Ngez. These are my companions Ishuhlais,\u201d he\nsaid, pointing to the warrior. \u201cAnd Uche,\u201d he said, pointing to\nthe trembling magician.\n\u201cT am of a race of beings humans call Pei Choi. My title is\nunpronounceable by humans,\" the creature said, \u201cbut it has an\napproximate translation of \u201cGreenbough\u2019. My friend\u2019s name is\n\u2018Bluesky\u2019. We were making a pilgrimage from our home in Do\nChaka to Fasiltum, but we were waylaid by a group of bandits\nand narrowly escaped with out lives. We then lost sight of the\nroad, and wandered aimlessly for two sunrises. With our strength\nat last gone, we laid here to die. Then you arrived and aided us.\nWe are in your debt.\"\nAfter the two Pei Choi were recuperated enough to join the\ntrio, the party set out once more for Fasiltum. Two days later they\narrived at the city, and proceeded to the Governor\u2019s Palace to tell\nDhoiro the news of their failure. Once inside, they were quickly\nescorted to the throne room.\nDhoiro looked grim as Ngez completed the tale of the attack\nof the Gerednya and their return. When the tale ended, the old\nman said, \u201cYesterday, news reached me that our plan to present\nthe Emperor with the book had been discovered by the Priestly\nParty. I had at first thought that it was you who gave the in-\nformation. But now I find that was not the case. For your diligent\nefforts I am paying you five hundred KATARS each, and bid you\nbe on your way to Jakalla with the wish that should you ever pass\nagain into Fasiltum needing help, then I am at your disposal.\u201d\nThe three men and two Pei Choi were then escorted to their\nquarters in the palace. Once inside, Ishuhlais said to Ngez, \u201cI\nbelieve we made a good decision to return. We were indeed\nlucky.\u201d\nNgez replied, \u201cLuck had nothing to do with it. It was the will\nof the gods.\u201d\nGreenbough interrupted, \u201cI believe it was a slight amount of\nboth. For both Bluesky and myself have decided to accompany\nyou back to Jakalla. We feel it is small payment for the saving of\nour lives.\u201d\nBright and early the next morning the party set out from\nFasiltum. They took as their return route the road they had first\ncome to the city of the Red Tower on.\nAfter several days on the road, the five beings met four\ndoughy creatures that had eight limbs. As they approached,\n"
+  },
+  {
+   "path": "extract/dragon/004/p025_full.txt",
+   "content": "Vol. I No. 4 December \u00b076\nGreenbough identified them as Pachi Lei, who normally dwell in\nhe forests west of the Empire.\nBluesky, who knew the protocol of the race, greeted the\nPachi Lei, and told them the tale of their journey. The Pachi Lei\nwere unusually moved, and gave the party each a gem of great\nThe Dragon\nTraveling onward, the party spent the next several weeks en-\ncountering people of both the interesting and uninteresting\nvarieties; two priests of Ksarul, a slaver, a friendly tax collector (a\nrare type in the Empire), a troop of Imperial soldiers, and many\npeasants traveling to and from the market.\nvalue.\nAfter the proper farewells each party went its separate way,\n\u2018the humans and Pei Choi ending far richer than they started.\nIAT...\nALL READY FoR\nWINTER FANTASY 1, OMAR?\nAnd so they at last arrived back in the ancient city of Jakalla,\nboth wiser and richer for the experience.\nHer BAO \u2014\nWRAT Was 177\nHEtecT Magic \u2014\nWHAT\u2018D You THINK?\nYean, Just\nWORKING ON MY\nO\u00a2D CHARACTER.\nSAME 4YQrH\nLEVEL WIZARD?\n43'\" YEAH. JUST\nFLASHY !\nI'VE Got Anotueg\nONE \u2014 9\" LeveL\nMETEOR Swann...\nABovT READY To TAY ANT To Sag 7?\nANOTHER SPELL.\nMERE GOS...\nTHINK THE\nSTRIP IS\nBI\u00a7 ENOUGH\nTHE PAST,\nTHROUGH TOMOARCEHH\n\u00abIn Fantasy & Science Fiction Games, Books, and Records\u00bb\n*, 2. 2%, 2% oP, oe, oe.\nowe ee F\nWE HAVE SEEN THE FUTURE, AND IT'S FASCINATING!\nCome explore the future (and the mythical past)\nwith NOVA. In over 1,500 books, 50 conflict\nsimulation games, and 2~dozen record albums, a\nwhole new universe awaits! We are one of the\nlargest sellers of Fantasy and Science Fiction\nmaterial anywhere, and we'd like to show you\nwhat we have to offer. And as a service to our\ncustomers, you can save up to 15% on the entire\ncontents of our catalog. That's right, -up to\n15% off! Want a copy? Then just enclose 25\u00a2\nalong with your name and address, and send it\nto us. We think you'il find what you are look-\ning for. For those who like to read/listen/play\namong the galaxies, the future (and the past)\ne-4_--e 2h arerntran |\nSEND TODAY FOR OUR CATALOG OF\nFESF MATERIAL, FEATURING ONE OF\nTHE LARGEST SELECTIONS OF BOOKS,\nGAMES, AND RECORDS ANYWHERE, ANDO\nDISCOUNTS OF UP TO 15%!\nP.O. Box 149\nParkville Station\nBrooklyn, NY 11204\n(212) 871-0646\nEnterprises i\n2D\n"
+  },
+  {
+   "path": "extract/dragon/004/p026_full.txt",
+   "content": "The Dragon\ninter-player instructional memo\nto: all D&D participants\nfrom: department of definition\nsubject: magic-user character definement\n(supercedes all previous directives)\n22nd Level Wizard:\nLeaps tall buildings in a single bound.\nIs more powerful than a speeding locomotive\nIs faster than a speeding bullet.\nWalks on water.\nGives policy to God\n14th Level Wizard:\nLeaps short buildings in a single bound\nIs more powerful than a switch locomotive\nIs just as fast as a speeding bullet\nWalks on water if the sea is calm\nTalks with God\nWizard:\nLeaps short buildings with a running start and good winds\nIs almost as powerful as a switch locomotive\nIs faster than a speeding BB\nWalks on water in an indoor swimming pool\nTalks with God if special request is approved\nSorcerer:\nRarely clears a Quonset hut\nLoses tug of war with a locomotive\nCan fire a speeding bullet\nSwims well\nIs occasionally addressed by God\nEnchanter:\nMakes high marks on walls when trying to leap buildings\nIs run over by locomotives\nCan sometimes handle gun without inflicting self injury\nDog paddles\nTalks to animals\nConjurer:\nRuns into buildings\nRecognizes locomotives two out of three times\nIs not issued ammunition\nCan stay afloat with a life jacket\nTalks to walls\nMedium:\nFalls over doorstep when trying to enter buildings\nSays, \u201cLook at the choo-choo.\u201d\nWets himself with waterpistol\nPlays in mud puddles\nMumbles to himself\nThe Referee:\nLifts buildings and walks under them\nKicks locomotives off the track\nCatches bullets in his teeth and eats them\nFreezes water with a single glance\nHe is God\nWhat: Southeast Wargaming Convention\n~~ Where: Jacksonville, Florida\nWhen: Feb. 19 & 20, 1977\n5333 Santa Monica Blvd.\nJacksonville, FL 32207\nVol. I No. 4 December \u201976\nMAPPING THE DUNGEONS\nThis column is provided as a service to D & D and EPT players and\nDM\u2019s everywhere. To be listed as a DM, all you have to do is send a card\nto this column, care of the magazine, with your pertinent data on it. Only\none name to a card, no letters will get entered (it\u2019s hard enough keeping\nthis up as it is \u2014 Ed.). Be sure to specify D & D or EPT or both.\nCANADA\nAlec Drysdale, 42 Summerhayes Cres., Brantford, Ontario N3R 5J3\nCecil Nurse, Apt. 903,60 Pavane Linkway, Don Mills, Ontario M3C 1A2\nGERMANY (Giessen)\nFantasy Wargamers Club, c/o SP4 D A Aragon B3/79 FA APO NY 09169\nD&D\nLt. C.J. Campbell, 2055 Westview, Abilene, TX 79603\nDennis Cook, 1406 Linda Vista Dr., Birmingham, AL 35226\nJames O\u2019Dowd, Sunset Terr., Rochester, MI 48063\nJim Gilbert, 501 Barnes Rd., St. Louis, MO 65201\nAllen Hammack, 4220 Antietam Dr., Birmingham, Al 35213\nE. Al Hattlestad, Jr., Lot 27 Big Coppitt Tr. Pk., Key West, FL 33040\nDonald Harting, 2373 Richland Av., San Jose, CA 95125\nPaul W. Hickey, 3957 30th Av., S. Mpls, MN 55406\nB. Howell 8016 Mullet St., New Orleans, LA 70126\nWalter Huntsucker, 509 Pennant St., Columbia, MO 65201\nRay Lonsdale, 813% Ashland Av., Niagara Falls, NY 14301\nScott Macaulay, 5981 Searl Terrace, Bethesda, MD 20016\nKevin McFadden, 807 N. Williams St., Columbia, MO 65201\nDavid G. Mcniel, 609 N. 8th St., Columbia, MO 65201\nPaul Michand, Michigan State Univ., East Lansing, MI 48063\nHoward Miller, 4749 Overwood Cir., Birmingham, AL 35222\nPeter Quinlan, 4913 Beard Av. S., Mpls, MN 44510\nBud Robertson, 805 7th Av. N., Great Falls, Mt\nLt. Jay Sanks, 326 14th Av. S. #5, Great Falls, MT\nMike Smith 4332 W. Denger, Midland, TX 79701\nGlenn Weeks, Box 111, Coeur D\u2019 Alene, ID 83814\nTerry Wehling, 57 Paddock Meadows, Columbia, MO 65201\nFrank & Lauri Whitesides, 609 N. 8th St., Columbia, MO 65201\nPaul & William Wood, 807 N. Williams St., Columbia, MO 65201\nSTARSHIP & EMPIRE\nTHE NEWEST SPACE WARGAME!\n* Novel 3-D Movement System\n\u00ab 4 Geomorphic Star Charts 15\u201d x 15\u00b0\n\u00ab Over 400 Die Cut Unit Counters\n\u00a2 Tactical Map \u2014 35\" x 24\u201d\n* {ndividua!l Ship Combat\n\u00a2 Complete 15-page Rule Book\ne 7 Scenarios\n$8.00 plus .75 postage.\nSCENARIOS FOR MINIATURE WARGAMING\nTHE WAR for AMERICAN INDEPENDENCE\n60-page !Ilustrated Booklet with 6 Maps\nDetailed Orders of Battle and Victory Conditions\nPlus historical commentary featuring Trenton, Hubbardton\nFreeman's Farm, Cowpens, Guilford Courthouse and Eutaw\nSprings: $4.50 plus .50.\nCONTINENTAL WARGAME RULES\nfor\nTHE AMERICAN REVOLUTION\n1775 to 1783\n$4.50 plus .50 postage\nThree more quality products from:\nR? GAMES, P.O. BOX 8314\nSALT LAKE CITY, UTAH 84108\n"
+  },
+  {
+   "path": "extract/dragon/004/p027_full.txt",
+   "content": "Wizzar 252 Wario\nad | by Grewadier\nz |\n@m.OR THE FINEST IN FANTASY\nCQ ETHER YOU NEED TO FILENDISHLY STOCK\nYOUR FAVORITE DUNGEON OR RAISE YOUR\nOWN HEROIC LEGIONS AGAINST THE ARMIES\nOF THE DARK POWERS. YOU CANNOT CON/URE\nUP BETTER THAN WIZZARDS & WARRIORS.\nsets ee DICE SETS\u201d FOR OUR FANTASY CATALOG OF\nMAGIC USERS TREASURE RULE BOOKS OVER 100 FANTASY FIGURES AND \u2014\nFIGHTING MEN BARDS WEAPONS GAMES RELATED ITEMS SEND 50\u00a2 QR FOR\nPECIALISTS THIEVES CHARIOTS TSR PRODUCTS 4) FULL CATALOG OF ALI. GRENADIER\nORCS MAMMOTHS 2M PRESS ON PRODUCTS SEND $100 TO:\nGOBLINS FURNITURE: FLAGS & SHIELDS 3\nLVES GHOULS gary TASY GAMES GRENADIER\nHOBGOBLINS OGRES - wa NLIMITED PO BOX 305\nWERECREATURES AND -MORE EALER : 6\nINQUIRIES SPRING. ee ce 064\nINVITED\n"
+  },
+  {
+   "path": "extract/dragon/004/p028_full.txt",
+   "content": "The Dragon Vol. I No. 4 December \u00b076\nThe biggest news for fantasy fanciers has to be the release,\nWARGAMIN G WORLD and impending release, of the EPT and D&D feature lines, respec-\ntively.\nLEGIONS OF THE PETAL THRONE, as the EPT line is\ntitled, is produced by Bill Murray of OLD GUARD. He\u2019s done a\nbeautiful job on them, as the samples on the facing page show.\nThere are 17 packs available now, with many more forthcoming\nbefore the line is completed. EPT enthusiasts are sure to take in-\nterest in them, and when the rules for EPT miniatures are done,\nmore battles such as the one in this issue (The Temple of Chanis)\nwill be possible. TSR has long range plans for painting guides to\ncomplement the rules.\nThe D&D figure line promises to be even bigger than that for\nEPT. Beautifully sculpted by David Hutchins of England, from\ndrawings by Mimi Roach and Dave Sutherland, the range is a fan-\ntasy gamer\u2019s dreams come true.\nThey are just now going into production in this country, and a\nrelease date should be forthcoming very soon. (Watch these pages\nfor it.) In the first batch released there will be approximately 90\ndifferent figures. They will be packed in sets of 5, with no figures\nduplicated in any set. (Command sets will be in 4\u2019s.)\nAs can be seen on these two hobgoblins, each figure is\nslightly different from any other; either in bits of uniform,\nweaponry or pose.\nThese kobolds paint up easily and nicely, making it easy\nand inexpensive to amass a horde.\nThis orc illustrates the casting\ntechnique used throught this line,\nwhere possible.\nThese are only four of the many orcs that will fill out the D&D line.\nWeaponry and positioning differences lend themselves well to realistic-\nlooking mobs of orcs.\nWhat dwarf-lover could resist these fierce-looking dwarves. Again, large numbers of different dwarves (there\nare more to come not shown) make for realistic, complete armies. Khazad-dum was never like this.\n28\n"
+  },
+  {
+   "path": "extract/dragon/004/p029_full.txt",
+   "content": "Vol. I. No. 4 December \u00b076\nWe have seen about 50 of the figures so far, and without ex-\nception, they are excellent. The trick of casting the shield separate\nfrom the body (shown below) lends these figures to conversions\nquite well, as well as facilitating painting. The high quality of the\nmetal assures the durability of them, while lending itself to ben-\nding easily.\nCustom Cast has announced that all of the FANTASTIQUE\n(phasw 1) line will be completed by Christmas. The personality set\nfor the Hobbit (set 1058?) is out, as well as the second set of\nDUNGEON! playing pieces. All of the CHIVALRY line that was\nstarred in the catalog is now complete; the same on the THER-\nMOPOLYTE range. Truly \u2018tis the season to be jolly. . .\nY-4\nYanKoryani\nMdm. Inf. (Dhau)\nT-6\nTsolyani Mdm. Inf. Tsolyani\n(Sokatis) Heavy Archer\n\u00a5\ne : \\\nTsolyani Mdm.\nT-4 Inf. x\nYanKoryani\nLegion of Red\nHeavy Archer\nDevastation\nY-2\nYan Koryani\nHeavy Inf.\nChe Dragon\nT-1\nTsolyani General\nYan Koryani Gen.\nFANTASY/SWORDS & SORCERY:\nRECOMMENDED READING\nFrom Gary Gygax\nSPECIFIC WORK\nThree Hearts and Three Lions\nAUTHORS\nAnderson, Poul\nBlackwood, Algernon\nBrackett, Leigh\nBurroughs, E.R.\nCarter, Lin\ndeCamp & Pratt\nFarmer, P.J.\nFox, G.F.\nHoward, R.E.\nLanier, Sterling\nLeiber, Fritz\nLovecraft, H.P.\nMerritt, A.\nMoorcock, Michael\nSaberhagen, Fred\nSt. Clair, Margaret\nTolkien, J.R.R.\nVance, Jack\nWeinbaum, Stanley\nWellman, M. W.\nZelazny, Roger\nJohn Carter of Mars (etal)\nWarrior of the Worlds End\nIncomplete Enchanter\nCastle of Iron (etal)\nGates of Creation (etal)\nKother the Barbarian (etal)\nConan the Conqueror (etal)\nHiero\u2019s Journey\nSwords of Lankhmar (etal)\nCreep Shadow, Creep\nMoon Pool\nFace in the Abyss\nDwellers in the Mirage (etal)\nStealer of Souls\nStormbringer\nChangling Earth\nThe Hobbit\nLord of the Rings (Trilogy)\nEyes of Overworld\nThe Dying Earth\nJack of Shadows (etal)\nLord of Light\nNine Princes of Amber series\n"
+  },
+  {
+   "path": "extract/dragon/004/p030_full.txt",
+   "content": "The Nrago n Vol. I No. 4 December \u00b076\nThe Continuing Adventures of Finieous Fingers\nMinus Fred and Charly\n{ --.C RAPS\n| BETWEEN\n| KNOB AND\n| YOUGUYS...\nNN\nFN wh\nwor X\n(bs AS\n\u201cyy . Ap, . : -\nUMPH... QUICK, \\\nRUN FINIEOUS... a>\n.. UHG... CANT ~\nHOLD HiM |\n. HU CH LONG 7\n| Gao\n: 4\n)\nOy\nONE OF THE GREAT THINGS ABOU\nBEING A THIEF 19 MY ABILITY TO\nCLIMB SHEER WALLS\nee Bs,\n4 4 \u201cA|\nSSE 4,\n|\nyr a\nae\nSe Il!\npn liy\nWN\nsd KC w ees v\nvu SANA\nsa i\nA ala ~ alle sf |\n/ wd of f a8 y Q\nwe YIPE; ) me a ee (@\n\u2014 os witst (= oY\nPoor Fh ZAD bs\nSal\nc({ lee\n}\n[Mong |\nI!\nwant\n=\nSs\nWily\n"
+  },
+  {
+   "path": "extract/dragon/004/p031_full.txt",
+   "content": "Vol. I No. 4 December \u00b076\nPercentile Roll to Obtain an \u201cEye\u201d\nChe Dragon\nAs Treasure in the Empire of the Petal Throne\n% Dice Per\nRoll Eye\n1. THE ABOMINABLE EYE OF DETESTATION 1-3 3\n2. THE EXCELLENT RUBY EYE 4-8 p)\n3. THE EYE OF ADVANCING THROUGH PORTALS 9-11 3\n4. THE EYE OF AERIAL EXCELLENCE 12-14 3\n). THE EYE OF ALLSEEING WONDER\n6. THE EYE OF BEING AN UNIMPEACHABLE SHIELD\nAGAINST FOES 19-21 3\n7. THE EYE OF BESTOWING LIFE 22 l\n8. THE EYE OF CALLING FORTH AN _ UN-\nCONQUERABLE ARMY 23 l\n9, THE EYE OF THE CREEPING FOG OF DOOM 24-25 2\n10. THE EYE OF DEPARTING IN SAFETY 26-28 3\nll. THE EYE OF EXQUISITE POWER OVER MAIDENS 29-32 4\n1. THE EYE OF FRIGID BREATH 33-35 3\n3. THE EYE OF HASTENING DESTINY 36-37 2\n4. THE EYE OF ILLUMINATING GLORY 38-42 5\nli, THE EYE OF INCOMPARABLE UNDERSTANDING 43-46 4\nlo. THE EYE OF INDEFINABLE APPREHENSION 47-48 2\nll. THE EYE OF INSUBSTANTIAL VISIONING 49-52 4\n18 THE EYE OF JOYFUL SITTING AMONGST FRIENDS 93-56 4\n19. THE EYE OF MADNESS\n20. THE EYE OF NON-SEEING\n21. THE EYE OF OPENING THE WAY\n22. THE EYE OF RAISING AN INFERNAL BARRIER\n15-18 4 23. THE EYE OF REGENERATION\nTHE EYE OF RETAINING ALL THINGS\n. THE EYE OF RETARDING DESTINY\n. THE EYE OF RETURNING UNTO DARKNESS\n. THE EYE OF RISING ABOVE ALL\n. THE EYE OF RULING AS A KING IN GLORY\n. THE EYE OF STRENGTHENING THE MAJESTY OF\nWEAPONS\n. THE EYE OF TRANSFORMATION\n31. THE EYE OF TRIUMPHANT PASSAGE THROUGH IN-\nFERNOS\n32. THE INCOMPARABLE EYE OF COMMAND\n33. THE INELUCTABLE EYE OF HEALING\nTHE SPLENDID EYE OF KRA\u2019 THE MIGHTY\nTHE TERRIBLE EYE OF RAGING POWER\nTHE THOROUGHLY USEFUL EYE\nNEW RELEASES\nFANTASY LINE\nES-18 Adventuress\nES-20 Mummy\nES-21 EI!f Princess\n1200 AD LINE\n1121 English Bowman\n1156 French Knight\n1205 Heavy Mongol Cav\nES-16\nBEOWULF\nE\nANGEL OF DEATH\n~19\nFor catalog or complete line of figures send 25\u00a2 in coin or stamp to:\nRAL PARTHA ENTERPRISES\n3642 Hyde Park Avenue -\nCincinnati, Ohio 45208 - Phone 1-513-871-5315\n%\n% Dice Per\nRoll Eye\n97-59\n60-61\n62-64\n65-67\n68-69\n70-72\n73-75\n76-79\n80-81\n82-83\n84-85\n86-89\n90-91\n92-93\n94-95\n96-97\n98-99\n100/plus re-roll\n50+\nAbD NONAPWWNHWWHND W\nyy\n2\n2\n2\n2\n1\n"
+  },
+  {
+   "path": "extract/dragon/004/p032_full.txt",
+   "content": "The Temple of Vimnihla\nAround the 20th of June, Prof. Barker got together with three of his\nTwin Cities EPT players, and they decided to build a precise replica of\nthe Temple of Vimuhla, Lord of Fire.\nOver 1000 man-hours later, just in time for GenCon IX, it was\nfinished. They brought it down to GenCon, and put it on display at the\nLegion Hall, where most of the adventures were held. The day that it was\nset up., the word got round to all the GenCon locales that there was this\nfantastic temple, complete with doors, secret doors, pitfalls, and all the\nother good things, and people thronged to see it. As these pictures attest,\nit was worth the seeing.\na Background: this is a replica of the inner core portion of the Temple\nof Katalal. It was begun by the 13th Seal Emperor in 1223 AS. It is\ndevoted to Vimuhla, Lord of Fire, one of the Tlokiriqaluyal (Evil Gods).\nHis symbol, a stylised flame, is prominent throughout. The script of the\ninscriptions on the walls is Classic Tsolyani, now archaic.\nTHE DRAGON is indebted to Dr. S. Tymeson, of Hawaii, who took\nthese pictures and supplied them to us: we\u2019re glad to share them with\nyou.\nThe proud builders - \u2018from 1. to r.: Gary Rydolph, Jim Bodine,\nM.A.R. Barker, Craig Smith.\nSYNTHECAST IT f\nThe ease and accuracy of reproduction with Syn-\nthecast makes it the ideal solution to many of the\nproblems faced by todays serious hobbiest. Almost\nanything from miniature figures to diorama scenery\ncan be quickly and economically reproduced, Syn-\nthecast items sand, work and paint like plastic.\nEach regular size kit contains enough materials to\nproduce dozens of 54mm parts.\n0-34 Minutes mix mold\nand add part.\nNOTE: The reproduction of an object without the written\nstele ae ah piste can a unlawful. Be certain to\n. F check the legality before reproducing any item.\n34-5 Minutes mix and\npour resin.\n$5.95\nplus .75 postage\n\u2014_\u2014_\u2014 \u2014 \u2014_\u2014 o_o = == ae\nK. C. I, PLASTIC AND ENGINEERING INC.\nP.O. Box 493. TD\n5.814 Minutes remove Woodstock, Illinois 60098\ncompleted part. Cast a\nnew part every 4 minutes. | Ay\u00bb\u00a2\nAddress\nCity\n32\n"
+  },
+  {
+   "path": "extract/dragon/004/p033_full.txt",
+   "content": "This overview shows the maze-like Rear of gate and gate towers, with Rich wall decorations abound\nlayout of the first level. Portcullis down. throughout the temple.\nThese views of different rooms are the most convincing proof of the meticulous care shown throughout the temple.\nCutaway view gives further proof that The workshop of one of the resident One of the more sanguine aspects:\nno detailing was overlooked. magic users. the Temple dungeon.\n.\nces lL Bier ee |\na first two are views of the statue of the 13th Seal Emperor \u2014 founder of the temple. The remaining two are bas-reliefs decorating two\nstairwells.\na3\n"
+  },
+  {
+   "path": "extract/dragon/004/p034_full.txt",
+   "content": "g Chivalry,\nFantastiques |.\nae ey\naes\nat =i\n|\nCUSTOM CAST, INC. LOOK FOR earl RELEASES!\nplepoeaet is eile 1092 Eagle 1074GoodlyMenCommand 1085 Men of Mark\nBates Ohi desea on 1086 Balgor 1058 The Hobb (personality set) by 12/15\n2 \u00a713-435- haa 1087 Ringwraith on Winged Beast 1101 2nd \u2018\u201c\u2018Dungeon\u201d\u2019 Set\nhone: 3255 1007-8-9 Great Orcs 1081 White Horse Archers\nMINIFLEET | Pirates of the Caribbean\n7\n=\ndV e\n"
+  },
+  {
+   "path": "extract/dragon/004/p035_full.txt",
+   "content": "SCIENCE FICTION BUFFS! FANTASY FANS! DUNGEONS &\nDRAGONS ENTHUSIASTS! TSR NOW BRINGS YOU...\nMETAMORPHOSIS ALPHA\nSCIENCE FICTION ROLE-PLAYING GAME\nHave you ever encountered a moose with quills? Or a\nteleporting woodpecker with a double brain and a poison\nbeak? How about a nearly invincible jaguar, complete\nwith the ability to change its body density and emit a\nsonic shriek, but which fears birds? These are but a small\nsampling of the mutations which could inhabit the many\nworlds of METAMORPHOSIS ALPHA.\nA vast starship, a virtual world in itself, carrying col-\nonists, livestock, and the flora and fauna of Terra is struck\nby a cloud of an unknown form of radiation while enroute\nto a distant star. Chaos reigns when the radiation kills\nmost of the crew, and in the ensuing madness the know-\nledge of what the ship is and where its destination lies is\nlost to the survivors -- and there are many survivors. Intel-\nligent mutated animals and plants now populate the vessel,\nand these compete or perhaps cooperate with the humans\naboard.\nIn METAMORPHOSIS ALPHA, you are aboard the\nstricken starship and struggling to survive, trying to gain\nknowledge of the strange devices and mechanical appar-\natus of the vessel, attempting to learn the secrets of the\nstrange \"world\" you inhabit. As a player, you may be a\nhuman or mutant -- human or otherwise. Your course is up\nto your skill and imagination.\nMETAMORPHOSIS ALPHA IS A ROLE-PLAYING GAME IN THE GRAND TRADITION OF\nDUNGEONS & DRAGONS. IF YOU ENJOY THE WORLDS OF MEDIEVAL SWORDS AND SORCERY,\nYOU WILL LOVE WHAT YOU FIND IN THE FANTASTIC AND FASCINATING WORLDS OF SCIENCE\nFICTION,\nAvailable at better hobby and book stores everywhere, or order direct\n$ 5 .00 postpaid\nTSR HOBBIES, INC.\nP.O.B. 756, Room A\nLake Geneva, WI 53147\nSend check or\nmoney order to:\nAlso available are polyhedra dice for unique\nrandom number generation and usable with MET- Fi] METAMORPHOSIS ALPHA $5.00\nAMORPHOSIS ALPHA! Science Fiction Role-Playing Game\nSet of two 20-sided dice for generating \u00e9\nnumbers 01 through 00 (100) at only $1.50 [|] POLYHEDRA DICE \u2018Set of Five $2.50\nSet of five dice: one each 4-, 6-, 8-, 12-,\nand 20-sided for all random numbers $2.50 ei PERCENTILE DICE \u2018Set of Two $1.50\nAnd to find out the latest on fantasy games & THE DRAGON $9.00\nsubscribe to THE DRAGON - the magazine of Six issues of the magazine of fantasy,\nFantasy, Swords & Sorcery and Science Fiction Swords & Sorcery, and Science Fiction\nGaming and Fiction. This bi-monthly publication Gaming and Fiction.\nis printed on glossy paper, with exterior and in-\nterior color. THE DRAGON contains the best in Bi COMPLETE CATALOG $2.00\narticles and stories by top-name gaming and lit-\nerary authors.\nP. O. BOX 756\nLAKE GENEVA, WI 53147\nTSR HOBBIES, INC.\nGames, rules, miniature figures and\naccessories for wargaming. Price re-\nfundable with first order for $10.00 or\nmore of miniature figures.\nName\nAddress\nCity State\nZip\nOverseas: Write for address of local distributor.\n"
+  },
+  {
+   "path": "extract/dragon/004/p036_full.txt",
+   "content": "Conclusion of METAMORPHOSIS ALPHA\nTHE GREAT RETREAT expansions & options\nNew Gardner Fox Story \u2014\nMoregan\u2019s Rifle Corps\n24 ifl P \u201cBeyond the Wizard Fog\u201d\nArtillery during the | Return of the\nAmerican Revolution \u201cGnome Cache\u201d\u2019\nWITCHCRAFT:\nDanish Army of 1789 Covens and D & D\nLPTES \u201cSDAA WAANAO S4\u00a5]\na) 8Od\nseg pe Cape PEM pe VE BN TES Daa sD oy pe ype ay soit Bese SeOo-PUTses oe FEU Oy Opell yy\n"
+  }
+ ],
+ "gap_report": "tools/dragon_gap_report_003.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Idiot, the Jester and the dexterity mods** (folios 28-30) -\n  the comedy and small-variants round",
+   "to": "- [x] **The Idiot, the Jester and the dexterity mods** (folios 28-30) -\n  the comedy and small-variants round",
+   "note": "the comedy and small-variants box - the issue-3 report fifth flip, 5 closed / 0 open, closing the issue-3 walk"
+  }
+ ],
+ "gap_census": {
+  "closed": 5,
+  "open": 0
+ },
+ "banner": {
+  "title": "The Dragon issue-4 opener - the Creature Features chain: the Mihalli (folios 18-19), the Vriyagga (folios 19, 21) and the Qu'uni (folio 21), pinned as new variant-layer registry monsters",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 4 (December 1976), the archive.org scan: folios 18-19, the Mihalli - the humanoid hermaphroditic shape-changers with the 20 percent red-eye reveal, the two-to-three-plus bonus spells, the 40 percent Eyes/amulets/scrolls lair chance and the four-step Ball of Immediate Eventuation colour ladder reserved to the fourteenth level and up; folios 19 and 21, the Vriyagga - the tentacled city creature with the 12/10/8 move, the 10/15/25 hit-dice ladder, the four-plus armor-class-2 tentacles and the 2/4/6 dice per turn; folio 21, the Qu'uni sidebar - the pallid semi-transparent shrimp-like water-grotto swarm. The voice rides extract/dragon/004/ (all 36 issue pages, the chat-side DjVu OCR transcript cross-checked against the archive.org PDF text layer); the issue-4 gap report ships pre-flip. The editor's standing caution rides: none of this is official.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon, and with no 1e defs existing the Creature Features chain pins as NEW registry monsters - the Remorhaz lore-against-def precedent does not apply. The XP conversions ride the DMG p.85 additive formula (the Mihalli 115 base + 3 per hp at 13 average, the Vriyagga 5250 + 20 per hp at 67, the Qu'uni 20 + 2 per hp at 9), the averages at the 4.5-per-die d8 convention floored, every conversion noted, never silent; the print's 'l-20' glyph pins as 1, the garbled F: 50 and I: 50 stat lines ride AS SCANNED with the semantics unpinned, the tentacle damage dice assume d6 noted, and the Vriyagga XP pins the 15-dice middle size with the full size ladder in the pin header; the three lua defs carry the new dragon_print xp source, whitelisted at the R73 audit."
+ },
+ "audit_comment": "THE DRAGON ISSUE-4 OPENER ROUND - the Creature Features chain, adjudicated as new variant-layer registry monsters (no 1e defs exist; the Remorhaz lore-against-def precedent does not apply). The Mihalli: number appearing 1-20 (the print's 'l-20' glyph pinned as 1, the OCR-of-font artifact noted), armor class 1, move 15 inches, 3 hit dice, the L 40 lair line with 80-800 gold near own territory, the garbled F: 50 and I: 50 stat lines pinned AS SCANNED with the semantics unpinned, the 20 percent red-eye reveal, the two-to-three-plus bonus spells at levels IV-up, the 40 percent Eyes/amulets/scrolls chance, the four-step Ball of Immediate Eventuation ladder (light purple, bright silver, bright gold, lambent translucent blue) reserved to magic users and priests XIV-up with the brain-scramble below, the 5 percent friendly and 1 percent item-offer chances rolled each turn, the defense if attacked, and the nature doctrines (shape-changer, humanoid, hermaphroditic, seeing in the dark, the gas sparing the Shen and the Ssu). The Vriyagga: number appearing 1-10 (20-200 in its own city), armor class 1, the nil treasure even in lair, the size ladder as a three-row table (move 12/10/8 inches, hit dice 10/15/25, tentacle damage 2/4/6 dice per turn, the dice assumed d6 noted), the four-plus tentacles at armor class 2 to sever, the heat sense, the speechless ambush-thinking mind, the stair-climbing bar and the black-opal dark sight. The Qu'uni: the folio 21 sidebar - 2 hit dice, move 10, 50-100 appearing, armor class 3, the automatic attack on water-seeking parties, the no-treasure save the sea grotto, and the pallid semi-transparent shrimp-like nature. THE REGISTRY WORK: three new lua defs (mihalli, vriyagga, qu_uni) carrying the new dragon_print xp source, whitelisted at the R73 audit, the R879 normalizer's book_of extended with the DRG Dragon magazine bucket, cross-checked by the R900 live def walk against the live registry census - 1308 loaded base defs + 3 = 1311 (the 1333 base lua files include 25 long-standing load-error defs with broken text lines that never enter the registry, a pre-R900 print-fidelity state this round does not touch; the Termux battery line 'loaded 1311, errors 25' is the ground truth). CONVERSIONS, ALL NOTED: the DMG p.85 additive XP formula (the Mihalli 35 + 25 + 55 = 115 base, the Vriyagga 2400 + 1250 + 1600 = 5250 at the 15-dice middle size, the Qu'uni 20 flat at 2 dice), the 4.5-per-die d8 average hit points floored (13, 67, 9), the XP values 154, 6590 and 38. GAP REPORT: the comedy box flipped in tools/dragon_gap_report_003.md -> the issue-3 report 5 closed / 0 open, the walk complete; the issue-4 report ships pre-flip with the Creature Features box open."
+}

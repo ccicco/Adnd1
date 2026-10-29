@@ -1,0 +1,26 @@
+CREATURE
+FEATURES
+THE MIHALLT:
+NA 1-20
+AC 1
+M. 135”
+HD 3
+F:
+40:
+I:
+50
+80-800 (near own territory)
+50
+The Mihalli are an ancient nonhuman race which came with
+humanity to Tekumel — but not with humanity’s knowledge or
+blessings! When the planet was cut off from interstellar humanspace,
+the Mihalli, who had set up a small spy post beneath the planet’s sur-
+face, were cut off as well and could not return to their original world. As
+human technology declined, the Mihalli increased and developed their
+powers. At last there was a final armageddon between the much more
+numerous human forces and the Mihalli, and this ended with the
+destruction of the latter’s home areas with nuclear fission bombs. With
+most of the Mihalli area a mass of glass-like slag, the race was assumed
+to be dead. Humanity continued down along the road to barbarism, and
+only a few final automatic safeguards against Mihalli resurgence were
+left. These have lasted through the long, slow decay of human technology
