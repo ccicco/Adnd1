@@ -26693,6 +26693,56 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Scribe), with the Women & Magic box flip ->
   issue-3 report 1 closed / 4 open. WAIT FOR
   GO.
+  - R896 LANDED 2026-10-29: commit
+  e48c3edb74f7cf2869506dd66a0ff8f8f4d21197 (base
+  b72d42d, census 818 -> 819), the specialists
+  round: Hettlestad's Healer (folios 22-23) +
+  Mumper's Scribe (folios 23, 25), from Dragon
+  #3. THE SHAPE: prefix spr (regtest-scan clean),
+  header rules/spr.h (57 inline: 33 consts + 7
+  bools + 3 tables / 17 columns), audit "R896
+  specialists audit" at
+  rules/audits/r896_batch.h, 31 examples, 2
+  header_sections, include after wmn.h,
+  prev_seed_key the R895 record. THE PINS: the
+  Healer ladder sprHealLadder 25 rows x 10 cols -
+  Xp, hit base and bonus SPLIT from the printed
+  "10+N" notation (base 1-10 then flat 10, bonus
+  0 then 1-15), spell counts Sp1-Sp7 with the
+  grid dashes CONVERTED to 0; the Scribe ladder
+  sprScribeLadder 6 rows x 4 cols (SpellMax
+  3/5/6/7/8/9, MistakeNormal 25/15/10/5/2/1,
+  MistakeAbove 75/45/30/15/6/3, InsanityAbove
+  35/25/20/15/10/5, as scanned); the alignment
+  block sprScribeAlign 2 rows x 3 cols (magical
+  [70,90,100], clerical [80,9,100]) - the
+  clerical row has NO neutral band, pinned AS
+  SCANNED with sentinel 9; sprHealBooksOnlyHurt
+  unified across BOOLS + header_sections after a
+  name-mismatch abort. HONEST BOUNDARIES: the
+  scribe alignment block and the mistake-table
+  pairs ride AS SCANNED (no figure pixels in the
+  OCR artifact to check); the hit-dice 10+N split
+  and the spell-grid dash-to-0 conversions are
+  the round's stated transforms. GAP REPORT: the
+  Women & Magic box flipped in
+  tools/dragon_gap_report_003.md -> issue-3
+  report 1 closed / 4 open. LESSON APPLIED
+  (R895): the fresh-unpack-after-abort ritual -
+  both aborts this round (a bool name mismatch,
+  then a stale patched tree) were cleared by rm-
+  rf + re-untar from /tmp/repo.tgz + re-copy the
+  spec + re-run the engine before any verify.
+  VERIFIED: engine double-run GREEN applied 6 /
+  already 6; rverify against pristine b72d42d:
+  320 mutants 0 missed; the raw JSON round-trip
+  byte-exact. Spec tools/spec_r896.json, 29,788
+  bytes, 1,042 lines, md5
+  3bf8de7a39a090da3fac2a41b7934c8a (authored-
+  plus-newline). NEXT: R897 - the fighting sub-
+  classes round (Samurai folio 25 + Berserker
+  folio 27), flipping the specialists box ->
+  issue-3 report 2 closed / 3 open. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

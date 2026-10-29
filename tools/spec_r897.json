@@ -1,0 +1,1696 @@
+{
+ "round": 897,
+ "title": "The fighting sub-classes: the Samurai and the Berserker",
+ "prefix": "fsc",
+ "census_before": 819,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R896 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R896 LANDED 2026-10-29: commit",
+  "  e48c3edb74f7cf2869506dd66a0ff8f8f4d21197 (base",
+  "  b72d42d, census 818 -> 819), the specialists",
+  "  round: Hettlestad's Healer (folios 22-23) +",
+  "  Mumper's Scribe (folios 23, 25), from Dragon",
+  "  #3. THE SHAPE: prefix spr (regtest-scan clean),",
+  "  header rules/spr.h (57 inline: 33 consts + 7",
+  "  bools + 3 tables / 17 columns), audit \"R896",
+  "  specialists audit\" at",
+  "  rules/audits/r896_batch.h, 31 examples, 2",
+  "  header_sections, include after wmn.h,",
+  "  prev_seed_key the R895 record. THE PINS: the",
+  "  Healer ladder sprHealLadder 25 rows x 10 cols -",
+  "  Xp, hit base and bonus SPLIT from the printed",
+  "  \"10+N\" notation (base 1-10 then flat 10, bonus",
+  "  0 then 1-15), spell counts Sp1-Sp7 with the",
+  "  grid dashes CONVERTED to 0; the Scribe ladder",
+  "  sprScribeLadder 6 rows x 4 cols (SpellMax",
+  "  3/5/6/7/8/9, MistakeNormal 25/15/10/5/2/1,",
+  "  MistakeAbove 75/45/30/15/6/3, InsanityAbove",
+  "  35/25/20/15/10/5, as scanned); the alignment",
+  "  block sprScribeAlign 2 rows x 3 cols (magical",
+  "  [70,90,100], clerical [80,9,100]) - the",
+  "  clerical row has NO neutral band, pinned AS",
+  "  SCANNED with sentinel 9; sprHealBooksOnlyHurt",
+  "  unified across BOOLS + header_sections after a",
+  "  name-mismatch abort. HONEST BOUNDARIES: the",
+  "  scribe alignment block and the mistake-table",
+  "  pairs ride AS SCANNED (no figure pixels in the",
+  "  OCR artifact to check); the hit-dice 10+N split",
+  "  and the spell-grid dash-to-0 conversions are",
+  "  the round's stated transforms. GAP REPORT: the",
+  "  Women & Magic box flipped in",
+  "  tools/dragon_gap_report_003.md -> issue-3",
+  "  report 1 closed / 4 open. LESSON APPLIED",
+  "  (R895): the fresh-unpack-after-abort ritual -",
+  "  both aborts this round (a bool name mismatch,",
+  "  then a stale patched tree) were cleared by rm-",
+  "  rf + re-untar from /tmp/repo.tgz + re-copy the",
+  "  spec + re-run the engine before any verify.",
+  "  VERIFIED: engine double-run GREEN applied 6 /",
+  "  already 6; rverify against pristine b72d42d:",
+  "  320 mutants 0 missed; the raw JSON round-trip",
+  "  byte-exact. Spec tools/spec_r896.json, 29,788",
+  "  bytes, 1,042 lines, md5",
+  "  3bf8de7a39a090da3fac2a41b7934c8a (authored-",
+  "  plus-newline). NEXT: R897 - the fighting sub-",
+  "  classes round (Samurai folio 25 + Berserker",
+  "  folio 27), flipping the specialists box ->",
+  "  issue-3 report 2 closed / 3 open. WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/spr.h\"  // R896: the Healer and Scribe specialists round",
+ "include_comment": "the Samurai and Berserker fighting sub-classes round",
+ "header_file": "rules/fsc.h",
+ "audit_file": "rules/audits/r897_batch.h",
+ "audit_label": "R897 fighting sub-classes audit",
+ "audit_anchor": "#include \"rules/audits/r896_batch.h\"  // R896: R896 specialists audit",
+ "gap_report": "tools/dragon_gap_report_003.md",
+ "gap_census": {
+  "closed": 2,
+  "open": 3
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Healer and the Scribe** (folios 22-23, 25) - the\n  specialists round",
+   "to": "- [x] **The Healer and the Scribe** (folios 22-23, 25) - the\n  specialists round",
+   "note": "the specialists box - the issue-3 report's second flip, 2 closed / 3 open"
+  }
+ ],
+ "banner": {
+  "title": "The fighting sub-classes round - Childers and Kay's Samurai (folio 25) and Pickens' Berserker (folio 27)",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 3 (October 1976): folio 25, Mike Childers' Samurai as modified by Jeff Kay - the Fighting Man sub-class with the dexterity-above-15 gate, the daisho and the yumi, the four-grade katana and wakizashi critical-hit tables, the three-band critical blow on the percentage dice, the five-point dexterity ladder, the five-grade Japanese armor run and the judo rules with their 4-level damage and 6-level subdue steps; folio 27, John Pickens' Berserker - the highly experimental human NEUTRAL with Strength and Constitution above 9 and Intelligence below 9, the five lycanthropic clans with their Clanmasters, the wereshape at 6th through 10th, the level abilities, the 2-12 Followers with their three percentile rolls, and the berserking chance with its cumulative adders. The editor's caution rides: the class is highly experimental, be warned.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. The 'greater than 15' and 'exceed 9' gates CONVERT to 16 and 10 minimums and 'below 9' to an 8 maximum, every conversion noted, never silent; the '00' percentile convention CONVERTS to 100; the wakizashi's 1 and 3/4 pounds pins as seven quarter-pounds; the blade critical bands pin as their low roll with the top always 20; the OCR's duplicate Magic-User Follower row and the garbled yumi armor-class grid ride AS SCANNED - the grid's stacked modifier tokens carry no figure pixels to check and pin nothing, noted; the Samurai and Berserker ride the variant layer against the engine's canon class frame, never a rewrite."
+ },
+ "consts": [
+  {
+   "name": "fscSamDexMin",
+   "value": 16,
+   "comment": "the Samurai requires a dexterity greater than 15 - pinned as 16 minimum, the 'greater than' conversion noted (folio 25)"
+  },
+  {
+   "name": "fscSamIdBladeIntMin",
+   "value": 9,
+   "comment": "a Samurai of average intelligence or greater - 9+ - can identify blades of Japanese type manufacture (folio 25)"
+  },
+  {
+   "name": "fscSamIdExactIntMin",
+   "value": 13,
+   "comment": "a Samurai of higher than average intelligence - 13+ - can tell the exact type and character of a Japanese blade by examination (folio 25)"
+  },
+  {
+   "name": "fscSamBladeGrades",
+   "value": 4,
+   "comment": "four quality grades of Japanese blade - plain through +3 (folio 25)"
+  },
+  {
+   "name": "fscSamKatanaBladeInches",
+   "value": 30,
+   "comment": "the katana blade runs approximately 30 inches (folio 25)"
+  },
+  {
+   "name": "fscSamKatanaWeightLb",
+   "value": 3,
+   "comment": "the katana weighs approximately 3 pounds (folio 25)"
+  },
+  {
+   "name": "fscSamWakizashiBladeInches",
+   "value": 24,
+   "comment": "the wakizashi blade runs approximately 24 inches (folio 25)"
+  },
+  {
+   "name": "fscSamWakizashiWeightQuarterLb",
+   "value": 7,
+   "comment": "the wakizashi weighs approximately 1 and 3/4 pounds - pinned as seven quarter-pounds, the conversion noted (folio 25)"
+  },
+  {
+   "name": "fscSamNonSamuraiStepLoss",
+   "value": 1,
+   "comment": "all the Japanese blades lose one step in the hands of a non-Samurai (folio 25)"
+  },
+  {
+   "name": "fscSamModFloor",
+   "value": 0,
+   "comment": "the hit and damage modifiers may not be less than zero - the step-loss floor (folio 25)"
+  },
+  {
+   "name": "fscSamSingleHandedStepLoss",
+   "value": 1,
+   "comment": "the swords lose one step when used single-handed, with the same zero minimum (folio 25)"
+  },
+  {
+   "name": "fscSamCritBands",
+   "value": 3,
+   "comment": "the critical-blow percentile table runs three bands - 01-80, 81-95, 96-00 (folio 25)"
+  },
+  {
+   "name": "fscSamDexBonusLevels",
+   "value": 5,
+   "comment": "the Samurai adds one dexterity point at five experience points - 8,000 through 616,000 (folio 25)"
+  },
+  {
+   "name": "fscSamDexXp1",
+   "value": 8000,
+   "comment": "the first dexterity bonus experience point - 8,000 (folio 25)"
+  },
+  {
+   "name": "fscSamDexXp2",
+   "value": 64000,
+   "comment": "the second dexterity bonus experience point - 64,000 (folio 25)"
+  },
+  {
+   "name": "fscSamDexXp3",
+   "value": 184000,
+   "comment": "the third dexterity bonus experience point - 184,000 (folio 25)"
+  },
+  {
+   "name": "fscSamDexXp4",
+   "value": 368000,
+   "comment": "the fourth dexterity bonus experience point - 368,000 (folio 25)"
+  },
+  {
+   "name": "fscSamDexXp5",
+   "value": 616000,
+   "comment": "the fifth dexterity bonus experience point - 616,000 (folio 25)"
+  },
+  {
+   "name": "fscSamArmorMaxWeightLb",
+   "value": 45,
+   "comment": "the Japanese style armor is closely related to European plate in protection but lighter - 45 pounds maximum (folio 25)"
+  },
+  {
+   "name": "fscSamArmorGradeCount",
+   "value": 5,
+   "comment": "five cost-related armor grades - E through A (folio 25)"
+  },
+  {
+   "name": "fscSamJudoRecoverMinTurns",
+   "value": 1,
+   "comment": "a thrown opponent takes 1 or 2 melee turns to recover his feet - the minimum (folio 25)"
+  },
+  {
+   "name": "fscSamJudoRecoverMaxTurns",
+   "value": 2,
+   "comment": "a thrown opponent takes 1 or 2 melee turns to recover his feet - the maximum (folio 25)"
+  },
+  {
+   "name": "fscSamJudoDamageMin",
+   "value": 1,
+   "comment": "the judo damage die runs 1-4 - the minimum (folio 25)"
+  },
+  {
+   "name": "fscSamJudoDamageMax",
+   "value": 4,
+   "comment": "the judo damage die runs 1-4 - the maximum (folio 25)"
+  },
+  {
+   "name": "fscSamJudoDamageRollMin",
+   "value": 19,
+   "comment": "a roll of 19 or 20 lets the Samurai choose to score 1-4 points of damage - a 4th level does it on 18-20, an 8th on 17-20 (folio 25)"
+  },
+  {
+   "name": "fscSamJudoDamageLevelsPerStep",
+   "value": 4,
+   "comment": "for every 4 levels advanced the judo damage probability increases by 5 percent (folio 25)"
+  },
+  {
+   "name": "fscSamJudoDamagePctPerStep",
+   "value": 5,
+   "comment": "the judo damage probability step - 5 percent per 4 levels (folio 25)"
+  },
+  {
+   "name": "fscSamJudoSubdueRollMin",
+   "value": 20,
+   "comment": "on a roll of 20 a Samurai may elect to subdue his opponent (folio 25)"
+  },
+  {
+   "name": "fscSamJudoSubdueLevelsPerStep",
+   "value": 6,
+   "comment": "for every 6 levels advanced the subdue probability increases by 5 percent in the same manner as inflicting damage (folio 25)"
+  },
+  {
+   "name": "fscSamJudoSubduePctPerStep",
+   "value": 5,
+   "comment": "the subdue probability step - 5 percent per 6 levels (folio 25)"
+  },
+  {
+   "name": "fscYumiCostGold",
+   "value": 75,
+   "comment": "the yumi costs 75 gold pieces (folio 25)"
+  },
+  {
+   "name": "fscYumiEncumbranceGold",
+   "value": 50,
+   "comment": "the yumi's encumbrance is 50 (folio 25)"
+  },
+  {
+   "name": "fscYumiArrowsPerBundle",
+   "value": 20,
+   "comment": "twenty arrows to a bundle (folio 25)"
+  },
+  {
+   "name": "fscYumiArrowBundleCostGold",
+   "value": 5,
+   "comment": "a bundle of 20 arrows costs 5 gold pieces (folio 25)"
+  },
+  {
+   "name": "fscYumiQuiverCostGold",
+   "value": 5,
+   "comment": "the Japanese quiver costs 5 gold pieces (folio 25)"
+  },
+  {
+   "name": "fscYumiQuiverEncumbranceGold",
+   "value": 75,
+   "comment": "the Japanese quiver's encumbrance is 75 (folio 25)"
+  },
+  {
+   "name": "fscBerserkerStrMin",
+   "value": 10,
+   "comment": "the Berserker's Strength must exceed 9 - pinned as 10 minimum, the 'exceed' conversion noted (folio 27)"
+  },
+  {
+   "name": "fscBerserkerConMin",
+   "value": 10,
+   "comment": "the Berserker's Constitution must exceed 9 - pinned as 10 minimum, the 'exceed' conversion noted (folio 27)"
+  },
+  {
+   "name": "fscBerserkerIntMax",
+   "value": 8,
+   "comment": "the Berserker's Intelligence must be below 9 - pinned as 8 maximum, the 'below' conversion noted (folio 27)"
+  },
+  {
+   "name": "fscBerserkerMaxAcLevelOne",
+   "value": 6,
+   "comment": "at level 1 the Berserker's maximum allowed armor class is 6 (folio 27)"
+  },
+  {
+   "name": "fscBerserkerClanCount",
+   "value": 5,
+   "comment": "five lycanthropic clans - Wererat, Werewolf, Wereboar, Weretiger, Werebear (folio 27)"
+  },
+  {
+   "name": "fscBerserkerHorseReactionMod",
+   "value": 2,
+   "comment": "at wereshape level horses check reaction at -2 whenever the Berserker approaches (folio 27)"
+  },
+  {
+   "name": "fscBerserkerAcPerTwoLevels",
+   "value": 1,
+   "comment": "for every two levels achieved the Berserker's armor class is increased by 1 (folio 27)"
+  },
+  {
+   "name": "fscBerserkerSurpriseLevel",
+   "value": 4,
+   "comment": "at level 4 the Berserker's chance of being surprised is reduced (folio 27)"
+  },
+  {
+   "name": "fscBerserkerSurpriseStep",
+   "value": 1,
+   "comment": "the level-4 surprise reduction - 1 (folio 27)"
+  },
+  {
+   "name": "fscBerserkerDetectLevel",
+   "value": 6,
+   "comment": "at level 6 the Berserker can detect hidden and invisible enemies (folio 27)"
+  },
+  {
+   "name": "fscBerserkerCompanionLevel",
+   "value": 4,
+   "comment": "at level 6 the Berserker gains a 4th level Companion who may be any Neutral Fighter type or Bard (folio 27)"
+  },
+  {
+   "name": "fscBerserkerHireLevel",
+   "value": 10,
+   "comment": "at level 10 the Berserker may hire others (folio 27)"
+  },
+  {
+   "name": "fscBerserkerHireLoyaltyPenalty",
+   "value": 2,
+   "comment": "the Berserker's hirelings are -2 on loyalty (folio 27)"
+  },
+  {
+   "name": "fscBerserkerHireLoyaltyMax",
+   "value": 15,
+   "comment": "the Berserker's hirelings may never have a loyalty rating higher than 15 (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFollowerMin",
+   "value": 2,
+   "comment": "the Berserker is joined by 2-12 Followers at the appropriate level - the minimum (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFollowerMax",
+   "value": 12,
+   "comment": "the Berserker is joined by 2-12 Followers at the appropriate level - the maximum (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFollowerLoyaltyMin",
+   "value": 16,
+   "comment": "the Followers arrive with a loyalty of 16-plus (folio 27)"
+  },
+  {
+   "name": "fscBerserkerBardFollowerMinLevel",
+   "value": 3,
+   "comment": "one Follower must be a Bard of level 3-6 - the minimum (folio 27)"
+  },
+  {
+   "name": "fscBerserkerBardFollowerMaxLevel",
+   "value": 6,
+   "comment": "one Follower must be a Bard of level 3-6 - the maximum (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFollowerTypeBands",
+   "value": 6,
+   "comment": "six Follower type rows on the percentile dice, the OCR's duplicate Magic-User row pinned as scanned (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFollowerLevelBands",
+   "value": 6,
+   "comment": "six Follower level bands on the percentile dice (folio 27)"
+  },
+  {
+   "name": "fscBerserkerExtraordinaryBands",
+   "value": 8,
+   "comment": "eight Extraordinary rows on the percentile dice (folio 27)"
+  },
+  {
+   "name": "fscBerserkBasePct",
+   "value": 10,
+   "comment": "the basic chance to go berserk is 10 percent, and a berserk attack may only be triggered once per melee (folio 27)"
+  },
+  {
+   "name": "fscBerserkShieldBitePct",
+   "value": 20,
+   "comment": "add 20 percent if the Berserker bites his shield - voluntary (folio 27)"
+  },
+  {
+   "name": "fscBerserkRoundPct",
+   "value": 10,
+   "comment": "add 10 percent per round of melee, cumulative (folio 27)"
+  },
+  {
+   "name": "fscBerserkWitnessDeathPct",
+   "value": 10,
+   "comment": "add 10 percent per Follower or shieldbrother the Berserker sees die (folio 27)"
+  },
+  {
+   "name": "fscBerserkAttackBonus",
+   "value": 2,
+   "comment": "while berserking all attacks are at +2 in addition to any strength bonuses (folio 27)"
+  },
+  {
+   "name": "fscBerserkMagicSwordCheckBonus",
+   "value": 6,
+   "comment": "while berserking the Berserker adds 6 to level or key check if wielding a magic sword (folio 27)"
+  },
+  {
+   "name": "fscBerserkTurnOnFriendsPct",
+   "value": 10,
+   "comment": "if still berserk at the end of the melee the Berserker has a 10 percent chance of turning on his friends (folio 27)"
+  },
+  {
+   "name": "fscBerserkTurnOnPerLevelPct",
+   "value": 1,
+   "comment": "the turn-on-friends chance deducts 1 percent per level (folio 27)"
+  },
+  {
+   "name": "fscBerserkTurnOnMinPct",
+   "value": 1,
+   "comment": "the turn-on-friends chance deducts to a minimum of 1 percent (folio 27)"
+  },
+  {
+   "name": "fscBerserkClanmasterTurnOnPct",
+   "value": 0,
+   "comment": "a Clanmaster's turn-on-friends chance is 0 percent (folio 27)"
+  },
+  {
+   "name": "fscBerserkerRestTurns",
+   "value": 1,
+   "comment": "the Berserker must rest a complete turn after each berserk fit (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFootnoteWereratPct",
+   "value": 5,
+   "comment": "the footnote adjustment - Wererat 5 percent (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFootnoteWerewolfPct",
+   "value": 0,
+   "comment": "the footnote adjustment - Werewolf 0 percent (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFootnoteWereboarPct",
+   "value": 0,
+   "comment": "the footnote adjustment - Wereboar 0 percent (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFootnoteWeretigerPct",
+   "value": 5,
+   "comment": "the footnote adjustment - Weretiger +5 percent (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFootnoteWerebearPct",
+   "value": 10,
+   "comment": "the footnote adjustment - Werebear +10 percent (folio 27)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "fscSamAnyAlignment",
+   "value": true,
+   "comment": "the Samurai may be of any alignment but tends generally to be neutral (folio 25)"
+  },
+  {
+   "name": "fscSamPrefersDaisho",
+   "value": true,
+   "comment": "the Samurai preferentially carries the traditional daisho sword pair and the Japanese composite longbow (folio 25)"
+  },
+  {
+   "name": "fscSamKatanaLossVendetta",
+   "value": true,
+   "comment": "a Samurai whose katana is taken will pursue a vendetta against the thief or his employers, or commit seppeku - the exact action mutually agreeable between player and gamemaster (folio 25)"
+  },
+  {
+   "name": "fscSamBladesNonMagical",
+   "value": true,
+   "comment": "the Japanese-style blades are special though non-magical (folio 25)"
+  },
+  {
+   "name": "fscSamTwoWeaponsAtOnce",
+   "value": true,
+   "comment": "the Samurai may employ katana and wakizashi at the same time, one in each hand, against the same or different targets (folio 25)"
+  },
+  {
+   "name": "fscSamSeldomShield",
+   "value": true,
+   "comment": "a Samurai very seldom used a shield (folio 25)"
+  },
+  {
+   "name": "fscSamJudoUnarmedOnly",
+   "value": true,
+   "comment": "judo may be used by a Samurai only if he has no weapon in his hands (folio 25)"
+  },
+  {
+   "name": "fscSamJudoVsUnarmedPreferred",
+   "value": true,
+   "comment": "the judo techniques were generally reserved for use against unarmed opponents unless necessity dictated otherwise (folio 25)"
+  },
+  {
+   "name": "fscSamYumiAnyPosture",
+   "value": true,
+   "comment": "the Japanese composite longbow - the yumi - may be fired standing, kneeling or on horseback (folio 25)"
+  },
+  {
+   "name": "fscBerserkerExperimental",
+   "value": true,
+   "comment": "the class is highly experimental - only the boys in the 16-plus club are likely to do well at this, be warned (folio 27)"
+  },
+  {
+   "name": "fscBerserkerHumanOnly",
+   "value": true,
+   "comment": "the Berserker is a Fighting Man sub-class of humans (folio 27)"
+  },
+  {
+   "name": "fscBerserkerNeutralOnly",
+   "value": true,
+   "comment": "the Berserker must be NEUTRAL (folio 27)"
+  },
+  {
+   "name": "fscBerserkerNoMagicArmorShield",
+   "value": true,
+   "comment": "the Berserker may use any magical items available to Fighters with the exception of armor and shields (folio 27)"
+  },
+  {
+   "name": "fscBerserkerDoubleKillPoints",
+   "value": true,
+   "comment": "in addition to any strength experience bonuses the Berserker receives double points for kills until he earns his wereshape (folio 27)"
+  },
+  {
+   "name": "fscBerserkerNeverPsionic",
+   "value": true,
+   "comment": "the Berserker may never develop psionic powers (folio 27)"
+  },
+  {
+   "name": "fscBerserkerWereshapeBonuses",
+   "value": true,
+   "comment": "the Berserker takes his clan's wereshape when berserk, receiving all hit and damage bonuses (folio 27)"
+  },
+  {
+   "name": "fscBerserkerNoLycanthropePowers",
+   "value": true,
+   "comment": "the Berserker does not receive any of the special characteristics of lycanthropes (folio 27)"
+  },
+  {
+   "name": "fscBerserkerWereshapeMeleeMagicOnly",
+   "value": true,
+   "comment": "while in wereshape the Berserker may melee creatures vulnerable only to magical weaponry (folio 27)"
+  },
+  {
+   "name": "fscBerserkerInsanityIsWereshape",
+   "value": true,
+   "comment": "insanity will always involve reversion to wereshape (folio 27)"
+  },
+  {
+   "name": "fscBerserkerSpeaksLycanthropic",
+   "value": true,
+   "comment": "at wereshape the Berserker gains the lycanthropic language in human form and empathic command over normal animals of his clan type (folio 27)"
+  },
+  {
+   "name": "fscBerserkerShieldbrothersFriendly",
+   "value": true,
+   "comment": "shieldbrothers will always be friendly and help each other when possible - failure means outlawry and open season on the outcast (folio 27)"
+  },
+  {
+   "name": "fscBerserkerFollowersNeverReplaced",
+   "value": true,
+   "comment": "if killed, the Berserker's Followers may never be replaced (folio 27)"
+  },
+  {
+   "name": "fscBerserkCompanionDeathAuto",
+   "value": true,
+   "comment": "the death of the Companion causes an automatic berserk (folio 27)"
+  },
+  {
+   "name": "fscBerserkerCannotWithdrawBerserk",
+   "value": true,
+   "comment": "a Berserker may not withdraw from melee while berserk (folio 27)"
+  },
+  {
+   "name": "fscBerserkerNeverCauseLycanthropy",
+   "value": true,
+   "comment": "Berserkers never cause lycanthropy (folio 27)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "fscKatanaBlades",
+   "tag": "FscKat",
+   "count": "fscSamBladeGrades",
+   "sentinel": 9,
+   "cols": [
+    "fscKatHitMod",
+    "fscKatToHitAbove",
+    "fscKatCritMinRoll",
+    "fscKatEncumbrance",
+    "fscKatValueGold"
+   ],
+   "col_comments": [
+    "the hit and damage modifier grade - 0 through +3 (folio 25)",
+    "the 'above to hit' number - 8+ down to 5+ (folio 25)",
+    "the automatic critical roll band's low roll - 20, then 19-20, 19-20, then 18-20; the band top always 20 (folio 25)",
+    "the encumbrance - 50 down to 40 (folio 25)",
+    "the value in gold pieces - 18 through 960 (folio 25)"
+   ],
+   "data": [
+    [
+     0,
+     8,
+     20,
+     50,
+     18
+    ],
+    [
+     1,
+     7,
+     19,
+     45,
+     240
+    ],
+    [
+     2,
+     6,
+     19,
+     40,
+     480
+    ],
+    [
+     3,
+     5,
+     18,
+     40,
+     960
+    ]
+   ],
+   "audit_comment": "the katana grades - the chance of critical hit table for the Japanese long sword, blades approximately 30 inches and 3 pounds (folio 25)"
+  },
+  {
+   "name": "fscWakizashiBlades",
+   "tag": "FscWak",
+   "count": "fscSamBladeGrades",
+   "sentinel": 9,
+   "cols": [
+    "fscWakHitMod",
+    "fscWakToHitAbove",
+    "fscWakCritMinRoll",
+    "fscWakEncumbrance",
+    "fscWakValueGold"
+   ],
+   "col_comments": [
+    "the hit and damage modifier grade - 0 through +3 (folio 25)",
+    "the 'above to hit' number - 8+, 8+, then 7+, 7+ (folio 25)",
+    "the automatic critical roll band's low roll - 20, 20, then 19-20, 19-20; the band top always 20 (folio 25)",
+    "the encumbrance - 28 down to 23 (folio 25)",
+    "the value in gold pieces - 16 through 800 (folio 25)"
+   ],
+   "data": [
+    [
+     0,
+     8,
+     20,
+     28,
+     16
+    ],
+    [
+     1,
+     8,
+     20,
+     25,
+     200
+    ],
+    [
+     2,
+     7,
+     19,
+     23,
+     400
+    ],
+    [
+     3,
+     7,
+     19,
+     23,
+     800
+    ]
+   ],
+   "audit_comment": "the wakizashi grades - the chance of critical hit table for the Japanese short sword, blades approximately 24 inches and 1 and 3/4 pounds (folio 25)"
+  },
+  {
+   "name": "fscSamCritTable",
+   "tag": "FscCri",
+   "count": "fscSamCritBands",
+   "sentinel": 9,
+   "cols": [
+    "fscCritLoPct",
+    "fscCritHiPct",
+    "fscCritPctMaxHp",
+    "fscCritMinHp",
+    "fscCritLimbRoll"
+   ],
+   "col_comments": [
+    "the percentile band's low roll - 01, 81, 96 (folio 25)",
+    "the percentile band's high roll - 80, 95, 00 pinned as 100, the '00' conversion noted (folio 25)",
+    "the percent of maximum hit points dealt - 25, 50, 100 (folio 25)",
+    "the flat hit-point minimum where greater - 6, 12, then 0 for the instant kill, the 'whichever is greater' pairing noted (folio 25)",
+    "the limb-loss code - 1 rolls a 1-4 limb (right arm, left arm, right leg, left leg); 0 is no additional loss, the decapitation noted (folio 25)"
+   ],
+   "data": [
+    [
+     1,
+     80,
+     25,
+     6,
+     1
+    ],
+    [
+     81,
+     95,
+     50,
+     12,
+     0
+    ],
+    [
+     96,
+     100,
+     100,
+     0,
+     0
+    ]
+   ],
+   "audit_comment": "the critical blow table on the percentage dice - 01-80 a quarter of maximum hit points or 6 with a 1-4 limb roll, 81-95 half or 12 with a major body hit, 96-00 decapitation or other instant kill (folio 25)"
+  },
+  {
+   "name": "fscSamArmorGrades",
+   "tag": "FscArm",
+   "count": "fscSamArmorGradeCount",
+   "sentinel": 9,
+   "cols": [
+    "fscArmorGradeRank",
+    "fscArmorAc",
+    "fscArmorEncumbranceGold",
+    "fscArmorValueGold"
+   ],
+   "col_comments": [
+    "the grade rank - 1 through 5 for E, D, C, B, A, the letters carried in the audit comment (folio 25)",
+    "the armor class - 6 down to 3, with B and A both 3 (folio 25)",
+    "the encumbrance - 400, 400, 575, 675, 625 (folio 25)",
+    "the value in gold pieces - 40 through 600 (folio 25)"
+   ],
+   "data": [
+    [
+     1,
+     6,
+     400,
+     40
+    ],
+    [
+     2,
+     5,
+     400,
+     75
+    ],
+    [
+     3,
+     4,
+     575,
+     150
+    ],
+    [
+     4,
+     3,
+     675,
+     300
+    ],
+    [
+     5,
+     3,
+     625,
+     600
+    ]
+   ],
+   "audit_comment": "the Japanese armor grades E, D, C, B, A - European plate's protection at 45 pounds maximum, protection sacrificed for speed where necessary; B is heavier than A at 675 against 625 (folio 25)"
+  },
+  {
+   "name": "fscBerserkerClans",
+   "tag": "FscClan",
+   "count": "fscBerserkerClanCount",
+   "sentinel": 9,
+   "cols": [
+    "fscClanIndex",
+    "fscClanAdvanceCode",
+    "fscClanWereshapeLevel",
+    "fscClanFollowerLevel",
+    "fscClanMaxDice",
+    "fscClanmasterLevel"
+   ],
+   "col_comments": [
+    "the clan rank - 1 through 5 for Wererat, Werewolf, Wereboar, Weretiger, Werebear (folio 27)",
+    "the advance-as code - 1 Cleric, 2 Druid, 3 Fighter, the words carried in the audit comment (folio 27)",
+    "the level the clan earns its wereshape - 6th through 10th (folio 27)",
+    "the level the clan gains its Followers - 8th through 12th (folio 27)",
+    "the clan's maximum hit dice - 9 through 12 (folio 27)",
+    "the Clanmaster's level - 11th through 15th (folio 27)"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     6,
+     8,
+     9,
+     11
+    ],
+    [
+     2,
+     2,
+     7,
+     9,
+     10,
+     12
+    ],
+    [
+     3,
+     2,
+     8,
+     10,
+     10,
+     13
+    ],
+    [
+     4,
+     3,
+     9,
+     11,
+     11,
+     14
+    ],
+    [
+     5,
+     3,
+     10,
+     12,
+     12,
+     15
+    ]
+   ],
+   "audit_comment": "the five clans - Wererat advances as Cleric, Werewolf and Wereboar as Druid, Weretiger and Werebear as Fighter; each has one Clanmaster, combat for the top spot being detailed under Monks and Druids in the supplements (folio 27)"
+  },
+  {
+   "name": "fscFollowerTypes",
+   "tag": "FscFty",
+   "count": "fscBerserkerFollowerTypeBands",
+   "sentinel": 9,
+   "cols": [
+    "fscFtyLo",
+    "fscFtyHi",
+    "fscFtyCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll - the '01' and '00' conventions pinned as 1 and 100 (folio 27)",
+    "the percentile band's high roll (folio 27)",
+    "the type code - 1 Fighter, 2 Magic User, 3 Elf, 4 Dwarf, 5 Extraordinary (folio 27)"
+   ],
+   "data": [
+    [
+     1,
+     60,
+     1
+    ],
+    [
+     61,
+     70,
+     2
+    ],
+    [
+     61,
+     70,
+     2
+    ],
+    [
+     71,
+     80,
+     3
+    ],
+    [
+     81,
+     90,
+     4
+    ],
+    [
+     91,
+     100,
+     5
+    ]
+   ],
+   "audit_comment": "the Follower type roll - 01-60 Fighter, 61-70 Magic User, 71-80 Elf, 81-90 Dwarf, 91-00 Extraordinary; the OCR's duplicate Magic-User row pins AS SCANNED with both rows at 61-70 (folio 27)"
+  },
+  {
+   "name": "fscFollowerLevels",
+   "tag": "FscFle",
+   "count": "fscBerserkerFollowerLevelBands",
+   "sentinel": 9,
+   "cols": [
+    "fscFleLo",
+    "fscFleHi",
+    "fscFleLevel"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 27)",
+    "the percentile band's high roll (folio 27)",
+    "the Follower's level - 2nd through 7th (folio 27)"
+   ],
+   "data": [
+    [
+     1,
+     50,
+     2
+    ],
+    [
+     51,
+     65,
+     3
+    ],
+    [
+     66,
+     80,
+     4
+    ],
+    [
+     81,
+     90,
+     5
+    ],
+    [
+     91,
+     99,
+     6
+    ],
+    [
+     100,
+     100,
+     7
+    ]
+   ],
+   "audit_comment": "the Follower level roll - 01-50 2nd, 51-65 3rd, 66-80 4th, 81-90 5th, 91-99 6th, 00 7th pinned as 100 (folio 27)"
+  },
+  {
+   "name": "fscExtraordinary",
+   "tag": "FscExt",
+   "count": "fscBerserkerExtraordinaryBands",
+   "sentinel": 9,
+   "cols": [
+    "fscExtLo",
+    "fscExtHi",
+    "fscExtCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 27)",
+    "the percentile band's high roll (folio 27)",
+    "the extraordinary code - 1 Berserker shieldbrother, 2 Lycanthrope weretype, 3 Druid level 3-7, 4 Bard, 5 Ranger, 6 Hill Giant, 7 Stone Giant, 8 two rolls ignoring 00 (folio 27)"
+   ],
+   "data": [
+    [
+     1,
+     40,
+     1
+    ],
+    [
+     41,
+     65,
+     2
+    ],
+    [
+     66,
+     75,
+     3
+    ],
+    [
+     76,
+     85,
+     4
+    ],
+    [
+     86,
+     90,
+     5
+    ],
+    [
+     91,
+     95,
+     6
+    ],
+    [
+     96,
+     99,
+     7
+    ],
+    [
+     100,
+     100,
+     8
+    ]
+   ],
+   "audit_comment": "the Extraordinary Follower roll - 01-40 Berserker shieldbrother, 41-65 Lycanthrope weretype, 66-75 Druid level 3-7, 76-85 Bard, 86-90 Ranger, 91-95 Hill Giant, 96-99 Stone Giant, 00 two rolls ignoring 00 pinned as 100 (folio 27)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['fscSamAnyAlignment']() != 1 or m['fscSamPrefersDaisho']() != 1 or m['fscSamDexMin']() != 16 or m['fscSamKatanaLossVendetta']() != 1",
+   "note": "the Samurai frame - any alignment tending neutral, the daisho and yumi preference, dexterity above 15 pinned as 16, the vendetta or seppeku on katana loss (folio 25)"
+  },
+  {
+   "expr": "m['fscSamBladesNonMagical']() != 1 or m['fscSamIdBladeIntMin']() != 9 or m['fscSamIdExactIntMin']() != 13 or m['fscSamBladeGrades']() != 4",
+   "note": "the blade lore - special though non-magical, 9+ identifies Japanese manufacture, 13+ tells the exact type, four grades (folio 25)"
+  },
+  {
+   "expr": "m['fscSamKatanaBladeInches']() != 30 or m['fscSamKatanaWeightLb']() != 3 or m['fscSamWakizashiBladeInches']() != 24 or m['fscSamWakizashiWeightQuarterLb']() != 7",
+   "note": "the blade physicals - the 30-inch 3-pound katana, the 24-inch 1 and 3/4-pound wakizashi pinned as seven quarter-pounds (folio 25)"
+  },
+  {
+   "expr": "m['fscSamNonSamuraiStepLoss']() != 1 or m['fscSamModFloor']() != 0 or m['fscSamSingleHandedStepLoss']() != 1 or m['fscSamTwoWeaponsAtOnce']() != 1",
+   "note": "the step-loss rules - one step down in non-Samurai hands or single-handed, never below zero, both swords at once permitted (folio 25)"
+  },
+  {
+   "expr": "m['fscSamDexXp1']() != 8000 or m['fscSamDexXp2']() != 64000 or m['fscSamDexXp3']() != 184000 or m['fscSamDexXp4']() != 368000 or m['fscSamDexXp5']() != 616000 or m['fscSamDexBonusLevels']() != 5",
+   "note": "the dexterity ladder - one point each at 8,000, 64,000, 184,000, 368,000 and 616,000 (folio 25)"
+  },
+  {
+   "expr": "m['fscSamArmorMaxWeightLb']() != 45 or m['fscSamArmorGradeCount']() != 5 or m['fscSamSeldomShield']() != 1",
+   "note": "the Japanese armor - plate's protection at 45 pounds maximum, five cost-related grades, the shield very seldom (folio 25)"
+  },
+  {
+   "expr": "m['fscSamJudoUnarmedOnly']() != 1 or m['fscSamJudoVsUnarmedPreferred']() != 1 or m['fscSamJudoRecoverMinTurns']() != 1 or m['fscSamJudoRecoverMaxTurns']() != 2",
+   "note": "the judo frame - only with empty hands, generally versus the unarmed, a throw costing 1 or 2 melee turns to recover (folio 25)"
+  },
+  {
+   "expr": "m['fscSamJudoDamageMin']() != 1 or m['fscSamJudoDamageMax']() != 4 or m['fscSamJudoDamageRollMin']() != 19 or m['fscSamJudoDamageLevelsPerStep']() != 4 or m['fscSamJudoDamagePctPerStep']() != 5",
+   "note": "the judo damage - 1-4 on a 19 or 20, +5 percent per 4 levels, the 4th-level 18-20 and 8th-level 17-20 example (folio 25)"
+  },
+  {
+   "expr": "m['fscSamJudoSubdueRollMin']() != 20 or m['fscSamJudoSubdueLevelsPerStep']() != 6 or m['fscSamJudoSubduePctPerStep']() != 5",
+   "note": "the judo subdue - on a 20 the Samurai may elect to subdue, +5 percent per 6 levels (folio 25)"
+  },
+  {
+   "expr": "m['fscSamYumiAnyPosture']() != 1 or m['fscYumiCostGold']() != 75 or m['fscYumiEncumbranceGold']() != 50 or m['fscYumiArrowsPerBundle']() != 20 or m['fscYumiArrowBundleCostGold']() != 5 or m['fscYumiQuiverCostGold']() != 5 or m['fscYumiQuiverEncumbranceGold']() != 75",
+   "note": "the yumi - fired standing, kneeling or on horseback, 75 gp at 50 encumbrance, 20 arrows for 5 gp, the 5 gp quiver at 75 encumbrance (folio 25)"
+  },
+  {
+   "expr": "m['fscBerserkerExperimental']() != 1 or m['fscBerserkerHumanOnly']() != 1 or m['fscBerserkerNeutralOnly']() != 1 or m['fscBerserkerStrMin']() != 10 or m['fscBerserkerConMin']() != 10 or m['fscBerserkerIntMax']() != 8 or m['fscBerserkerMaxAcLevelOne']() != 6",
+   "note": "the Berserker prerequisites - highly experimental, human and NEUTRAL, Strength and Constitution exceeding 9 pinned as 10, Intelligence below 9 pinned as 8, armor class no better than 6 at level 1 (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkerNoMagicArmorShield']() != 1 or m['fscBerserkerDoubleKillPoints']() != 1 or m['fscBerserkerNeverPsionic']() != 1 or m['fscBerserkerAcPerTwoLevels']() != 1",
+   "note": "the Berserker frame - no magical armor or shields, double kill points until the wereshape, never psionic, +1 armor class per two levels (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkerClanCount']() != 5 or m['fscBerserkerWereshapeBonuses']() != 1 or m['fscBerserkerNoLycanthropePowers']() != 1 or m['fscBerserkerWereshapeMeleeMagicOnly']() != 1 or m['fscBerserkerInsanityIsWereshape']() != 1",
+   "note": "the wereshape - five clans, all hit and damage bonuses in wereshape, none of the lycanthrope characteristics, melee against magic-only creatures, insanity always a reversion (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkerSpeaksLycanthropic']() != 1 or m['fscBerserkerHorseReactionMod']() != 2 or m['fscBerserkerShieldbrothersFriendly']() != 1",
+   "note": "the clan ties - the lycanthropic tongue and empathic command in human form, horses at -2, shieldbrothers always friendly under pain of outlawry (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkerSurpriseLevel']() != 4 or m['fscBerserkerSurpriseStep']() != 1 or m['fscBerserkerDetectLevel']() != 6 or m['fscBerserkerCompanionLevel']() != 4",
+   "note": "the level abilities - surprise reduced by 1 at 4th, hidden and invisible enemies detected and the 4th level Companion at 6th (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkerHireLevel']() != 10 or m['fscBerserkerHireLoyaltyPenalty']() != 2 or m['fscBerserkerHireLoyaltyMax']() != 15",
+   "note": "the level-10 hiring - hirelings at -2 loyalty, never above 15 (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkerFollowerMin']() != 2 or m['fscBerserkerFollowerMax']() != 12 or m['fscBerserkerFollowerLoyaltyMin']() != 16 or m['fscBerserkerBardFollowerMinLevel']() != 3 or m['fscBerserkerBardFollowerMaxLevel']() != 6 or m['fscBerserkerFollowersNeverReplaced']() != 1 or m['fscBerserkerFollowerTypeBands']() != 6 or m['fscBerserkerFollowerLevelBands']() != 6 or m['fscBerserkerExtraordinaryBands']() != 8",
+   "note": "the Followers - 2-12 at loyalty 16-plus, one Bard of level 3-6, never replaced; the three percentile rolls in six, six and eight rows (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkBasePct']() != 10 or m['fscBerserkShieldBitePct']() != 20 or m['fscBerserkRoundPct']() != 10 or m['fscBerserkWitnessDeathPct']() != 10 or m['fscBerserkCompanionDeathAuto']() != 1",
+   "note": "the berserking chance - a 10 percent base once per melee, +20 for the bitten shield, +10 per round cumulative, +10 per witnessed death, the Companion's death automatic (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkAttackBonus']() != 2 or m['fscBerserkMagicSwordCheckBonus']() != 6 or m['fscBerserkerCannotWithdrawBerserk']() != 1",
+   "note": "the berserk edges and the lock - attacks at +2 over strength bonuses, +6 to level or key check with a magic sword, no withdrawal from melee (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkTurnOnFriendsPct']() != 10 or m['fscBerserkTurnOnPerLevelPct']() != 1 or m['fscBerserkTurnOnMinPct']() != 1 or m['fscBerserkClanmasterTurnOnPct']() != 0 or m['fscBerserkerRestTurns']() != 1 or m['fscBerserkerNeverCauseLycanthropy']() != 1",
+   "note": "the fit's end - 10 percent chance of turning on friends less 1 percent per level to a 1 percent minimum, 0 for a Clanmaster, a full turn of rest after, and never causing lycanthropy (folio 27)"
+  },
+  {
+   "expr": "m['fscBerserkerFootnoteWereratPct']() != 5 or m['fscBerserkerFootnoteWerewolfPct']() != 0 or m['fscBerserkerFootnoteWereboarPct']() != 0 or m['fscBerserkerFootnoteWeretigerPct']() != 5 or m['fscBerserkerFootnoteWerebearPct']() != 10",
+   "note": "the footnote adjustments by clan - Wererat 5, Werewolf and Wereboar 0, Weretiger +5, Werebear +10 percent (folio 27)"
+  },
+  {
+   "expr": "m['fscKatHitMod'](0) != 0 or m['fscKatToHitAbove'](0) != 8 or m['fscKatCritMinRoll'](0) != 20 or m['fscKatEncumbrance'](0) != 50 or m['fscKatValueGold'](0) != 18",
+   "note": "the plain katana - 8+, automatic on 20, encumbrance 50, 18 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscKatHitMod'](1) != 1 or m['fscKatToHitAbove'](1) != 7 or m['fscKatCritMinRoll'](1) != 19 or m['fscKatEncumbrance'](1) != 45 or m['fscKatValueGold'](1) != 240",
+   "note": "the +1 katana - 7+, automatic on 19-20, encumbrance 45, 240 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscKatHitMod'](2) != 2 or m['fscKatToHitAbove'](2) != 6 or m['fscKatCritMinRoll'](2) != 19 or m['fscKatEncumbrance'](2) != 40 or m['fscKatValueGold'](2) != 480",
+   "note": "the +2 katana - 6+, automatic on 19-20, encumbrance 40, 480 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscKatHitMod'](3) != 3 or m['fscKatToHitAbove'](3) != 5 or m['fscKatCritMinRoll'](3) != 18 or m['fscKatEncumbrance'](3) != 40 or m['fscKatValueGold'](3) != 960",
+   "note": "the +3 katana - 5+, automatic on 18-20, encumbrance 40, 960 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscWakHitMod'](0) != 0 or m['fscWakToHitAbove'](0) != 8 or m['fscWakCritMinRoll'](0) != 20 or m['fscWakEncumbrance'](0) != 28 or m['fscWakValueGold'](0) != 16",
+   "note": "the plain wakizashi - 8+, automatic on 20, encumbrance 28, 16 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscWakHitMod'](1) != 1 or m['fscWakToHitAbove'](1) != 8 or m['fscWakCritMinRoll'](1) != 20 or m['fscWakEncumbrance'](1) != 25 or m['fscWakValueGold'](1) != 200",
+   "note": "the +1 wakizashi - 8+, automatic on 20, encumbrance 25, 200 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscWakHitMod'](2) != 2 or m['fscWakToHitAbove'](2) != 7 or m['fscWakCritMinRoll'](2) != 19 or m['fscWakEncumbrance'](2) != 23 or m['fscWakValueGold'](2) != 400",
+   "note": "the +2 wakizashi - 7+, automatic on 19-20, encumbrance 23, 400 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscWakHitMod'](3) != 3 or m['fscWakToHitAbove'](3) != 7 or m['fscWakCritMinRoll'](3) != 19 or m['fscWakEncumbrance'](3) != 23 or m['fscWakValueGold'](3) != 800",
+   "note": "the +3 wakizashi - 7+, automatic on 19-20, encumbrance 23, 800 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscCritLoPct'](0) != 1 or m['fscCritHiPct'](0) != 80 or m['fscCritPctMaxHp'](0) != 25 or m['fscCritMinHp'](0) != 6 or m['fscCritLimbRoll'](0) != 1 or m['fscSamCritBands']() != 3",
+   "note": "the 01-80 critical band - 25 percent of maximum hit points or 6, whichever greater, plus the 1-4 limb roll (folio 25); the three percentile bands (folio 25)"
+  },
+  {
+   "expr": "m['fscCritLoPct'](1) != 81 or m['fscCritHiPct'](1) != 95 or m['fscCritPctMaxHp'](1) != 50 or m['fscCritMinHp'](1) != 12 or m['fscCritLimbRoll'](1) != 0",
+   "note": "the 81-95 critical band - 50 percent of maximum hit points or 12, whichever greater, a major body hit (folio 25)"
+  },
+  {
+   "expr": "m['fscCritLoPct'](2) != 96 or m['fscCritHiPct'](2) != 100 or m['fscCritPctMaxHp'](2) != 100 or m['fscCritMinHp'](2) != 0 or m['fscCritLimbRoll'](2) != 0",
+   "note": "the 96-00 critical band - 100 percent of maximum hit points, decapitation or other instant kill (folio 25)"
+  },
+  {
+   "expr": "m['fscArmorGradeRank'](0) != 1 or m['fscArmorAc'](0) != 6 or m['fscArmorEncumbranceGold'](0) != 400 or m['fscArmorValueGold'](0) != 40",
+   "note": "the E grade armor - armor class 6, encumbrance 400, 40 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscArmorGradeRank'](1) != 2 or m['fscArmorAc'](1) != 5 or m['fscArmorEncumbranceGold'](1) != 400 or m['fscArmorValueGold'](1) != 75",
+   "note": "the D grade armor - armor class 5, encumbrance 400, 75 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscArmorGradeRank'](2) != 3 or m['fscArmorAc'](2) != 4 or m['fscArmorEncumbranceGold'](2) != 575 or m['fscArmorValueGold'](2) != 150",
+   "note": "the C grade armor - armor class 4, encumbrance 575, 150 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscArmorGradeRank'](3) != 4 or m['fscArmorAc'](3) != 3 or m['fscArmorEncumbranceGold'](3) != 675 or m['fscArmorValueGold'](3) != 300",
+   "note": "the B grade armor - armor class 3, encumbrance 675, 300 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscArmorGradeRank'](4) != 5 or m['fscArmorAc'](4) != 3 or m['fscArmorEncumbranceGold'](4) != 625 or m['fscArmorValueGold'](4) != 600",
+   "note": "the A grade armor - armor class 3, encumbrance 625, 600 gp (folio 25)"
+  },
+  {
+   "expr": "m['fscClanIndex'](0) != 1 or m['fscClanAdvanceCode'](0) != 1 or m['fscClanWereshapeLevel'](0) != 6 or m['fscClanFollowerLevel'](0) != 8 or m['fscClanMaxDice'](0) != 9 or m['fscClanmasterLevel'](0) != 11",
+   "note": "the Wererat clan - advances as Cleric, wereshape at 6th, Followers at 8th, 9 hit dice max, Clanmaster 11th (folio 27)"
+  },
+  {
+   "expr": "m['fscClanIndex'](1) != 2 or m['fscClanAdvanceCode'](1) != 2 or m['fscClanWereshapeLevel'](1) != 7 or m['fscClanFollowerLevel'](1) != 9 or m['fscClanMaxDice'](1) != 10 or m['fscClanmasterLevel'](1) != 12",
+   "note": "the Werewolf clan - advances as Druid, wereshape at 7th, Followers at 9th, 10 hit dice max, Clanmaster 12th (folio 27)"
+  },
+  {
+   "expr": "m['fscClanIndex'](2) != 3 or m['fscClanAdvanceCode'](2) != 2 or m['fscClanWereshapeLevel'](2) != 8 or m['fscClanFollowerLevel'](2) != 10 or m['fscClanMaxDice'](2) != 10 or m['fscClanmasterLevel'](2) != 13",
+   "note": "the Wereboar clan - advances as Druid, wereshape at 8th, Followers at 10th, 10 hit dice max, Clanmaster 13th (folio 27)"
+  },
+  {
+   "expr": "m['fscClanIndex'](3) != 4 or m['fscClanAdvanceCode'](3) != 3 or m['fscClanWereshapeLevel'](3) != 9 or m['fscClanFollowerLevel'](3) != 11 or m['fscClanMaxDice'](3) != 11 or m['fscClanmasterLevel'](3) != 14",
+   "note": "the Weretiger clan - advances as Fighter, wereshape at 9th, Followers at 11th, 11 hit dice max, Clanmaster 14th (folio 27)"
+  },
+  {
+   "expr": "m['fscClanIndex'](4) != 5 or m['fscClanAdvanceCode'](4) != 3 or m['fscClanWereshapeLevel'](4) != 10 or m['fscClanFollowerLevel'](4) != 12 or m['fscClanMaxDice'](4) != 12 or m['fscClanmasterLevel'](4) != 15",
+   "note": "the Werebear clan - advances as Fighter, wereshape at 10th, Followers at 12th, 12 hit dice max, Clanmaster 15th (folio 27)"
+  },
+  {
+   "expr": "m['fscFtyLo'](0) != 1 or m['fscFtyHi'](0) != 60 or m['fscFtyCode'](0) != 1",
+   "note": "the 01-60 Fighter row (folio 27)"
+  },
+  {
+   "expr": "m['fscFtyLo'](1) != 61 or m['fscFtyHi'](1) != 70 or m['fscFtyCode'](1) != 2",
+   "note": "the 61-70 Magic User row (folio 27)"
+  },
+  {
+   "expr": "m['fscFtyLo'](2) != 61 or m['fscFtyHi'](2) != 70 or m['fscFtyCode'](2) != 2",
+   "note": "the OCR duplicate 61-70 Magic User row - pinned as scanned (folio 27)"
+  },
+  {
+   "expr": "m['fscFtyLo'](3) != 71 or m['fscFtyHi'](3) != 80 or m['fscFtyCode'](3) != 3",
+   "note": "the 71-80 Elf row (folio 27)"
+  },
+  {
+   "expr": "m['fscFtyLo'](4) != 81 or m['fscFtyHi'](4) != 90 or m['fscFtyCode'](4) != 4",
+   "note": "the 81-90 Dwarf row (folio 27)"
+  },
+  {
+   "expr": "m['fscFtyLo'](5) != 91 or m['fscFtyHi'](5) != 100 or m['fscFtyCode'](5) != 5",
+   "note": "the 91-00 Extraordinary row, the '00' pinned as 100 (folio 27)"
+  },
+  {
+   "expr": "m['fscFleLo'](0) != 1 or m['fscFleHi'](0) != 50 or m['fscFleLevel'](0) != 2",
+   "note": "the 01-50 band - a 2nd level Follower (folio 27)"
+  },
+  {
+   "expr": "m['fscFleLo'](1) != 51 or m['fscFleHi'](1) != 65 or m['fscFleLevel'](1) != 3",
+   "note": "the 51-65 band - a 3rd level Follower (folio 27)"
+  },
+  {
+   "expr": "m['fscFleLo'](2) != 66 or m['fscFleHi'](2) != 80 or m['fscFleLevel'](2) != 4",
+   "note": "the 66-80 band - a 4th level Follower (folio 27)"
+  },
+  {
+   "expr": "m['fscFleLo'](3) != 81 or m['fscFleHi'](3) != 90 or m['fscFleLevel'](3) != 5",
+   "note": "the 81-90 band - a 5th level Follower (folio 27)"
+  },
+  {
+   "expr": "m['fscFleLo'](4) != 91 or m['fscFleHi'](4) != 99 or m['fscFleLevel'](4) != 6",
+   "note": "the 91-99 band - a 6th level Follower (folio 27)"
+  },
+  {
+   "expr": "m['fscFleLo'](5) != 100 or m['fscFleHi'](5) != 100 or m['fscFleLevel'](5) != 7",
+   "note": "the 00 band pinned as 100 - a 7th level Follower (folio 27)"
+  },
+  {
+   "expr": "m['fscExtLo'](0) != 1 or m['fscExtHi'](0) != 40 or m['fscExtCode'](0) != 1",
+   "note": "the 01-40 Berserker shieldbrother row (folio 27)"
+  },
+  {
+   "expr": "m['fscExtLo'](1) != 41 or m['fscExtHi'](1) != 65 or m['fscExtCode'](1) != 2",
+   "note": "the 41-65 Lycanthrope weretype row (folio 27)"
+  },
+  {
+   "expr": "m['fscExtLo'](2) != 66 or m['fscExtHi'](2) != 75 or m['fscExtCode'](2) != 3",
+   "note": "the 66-75 Druid level 3-7 row (folio 27)"
+  },
+  {
+   "expr": "m['fscExtLo'](3) != 76 or m['fscExtHi'](3) != 85 or m['fscExtCode'](3) != 4",
+   "note": "the 76-85 Bard row (folio 27)"
+  },
+  {
+   "expr": "m['fscExtLo'](4) != 86 or m['fscExtHi'](4) != 90 or m['fscExtCode'](4) != 5",
+   "note": "the 86-90 Ranger row (folio 27)"
+  },
+  {
+   "expr": "m['fscExtLo'](5) != 91 or m['fscExtHi'](5) != 95 or m['fscExtCode'](5) != 6",
+   "note": "the 91-95 Hill Giant row (folio 27)"
+  },
+  {
+   "expr": "m['fscExtLo'](6) != 96 or m['fscExtHi'](6) != 99 or m['fscExtCode'](6) != 7",
+   "note": "the 96-99 Stone Giant row (folio 27)"
+  },
+  {
+   "expr": "m['fscExtLo'](7) != 100 or m['fscExtHi'](7) != 100 or m['fscExtCode'](7) != 8",
+   "note": "the 00 row pinned as 100 - two rolls, ignoring 00 (folio 27)"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 133,
+ "header_sections": {
+  "the Samurai (folio 25)": [
+   {
+    "kind": "const",
+    "name": "fscSamDexMin"
+   },
+   {
+    "kind": "bool",
+    "name": "fscSamAnyAlignment"
+   },
+   {
+    "kind": "bool",
+    "name": "fscSamPrefersDaisho"
+   },
+   {
+    "kind": "bool",
+    "name": "fscSamKatanaLossVendetta"
+   },
+   {
+    "kind": "bool",
+    "name": "fscSamBladesNonMagical"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamIdBladeIntMin"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamIdExactIntMin"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamBladeGrades"
+   },
+   {
+    "kind": "table",
+    "name": "fscKatanaBlades"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamKatanaBladeInches"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamKatanaWeightLb"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamWakizashiBladeInches"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamWakizashiWeightQuarterLb"
+   },
+   {
+    "kind": "table",
+    "name": "fscWakizashiBlades"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamNonSamuraiStepLoss"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamModFloor"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamSingleHandedStepLoss"
+   },
+   {
+    "kind": "bool",
+    "name": "fscSamTwoWeaponsAtOnce"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamCritBands"
+   },
+   {
+    "kind": "table",
+    "name": "fscSamCritTable"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamDexBonusLevels"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamDexXp1"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamDexXp2"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamDexXp3"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamDexXp4"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamDexXp5"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamArmorMaxWeightLb"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamArmorGradeCount"
+   },
+   {
+    "kind": "table",
+    "name": "fscSamArmorGrades"
+   },
+   {
+    "kind": "bool",
+    "name": "fscSamSeldomShield"
+   },
+   {
+    "kind": "bool",
+    "name": "fscSamJudoUnarmedOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "fscSamJudoVsUnarmedPreferred"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoRecoverMinTurns"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoRecoverMaxTurns"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoDamageRollMin"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoDamageLevelsPerStep"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoDamagePctPerStep"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoSubdueRollMin"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoSubdueLevelsPerStep"
+   },
+   {
+    "kind": "const",
+    "name": "fscSamJudoSubduePctPerStep"
+   },
+   {
+    "kind": "bool",
+    "name": "fscSamYumiAnyPosture"
+   },
+   {
+    "kind": "const",
+    "name": "fscYumiCostGold"
+   },
+   {
+    "kind": "const",
+    "name": "fscYumiEncumbranceGold"
+   },
+   {
+    "kind": "const",
+    "name": "fscYumiArrowsPerBundle"
+   },
+   {
+    "kind": "const",
+    "name": "fscYumiArrowBundleCostGold"
+   },
+   {
+    "kind": "const",
+    "name": "fscYumiQuiverCostGold"
+   },
+   {
+    "kind": "const",
+    "name": "fscYumiQuiverEncumbranceGold"
+   }
+  ],
+  "the Berserker (folio 27)": [
+   {
+    "kind": "bool",
+    "name": "fscBerserkerExperimental"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerHumanOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerNeutralOnly"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerStrMin"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerConMin"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerIntMax"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerMaxAcLevelOne"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerNoMagicArmorShield"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerDoubleKillPoints"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerNeverPsionic"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerClanCount"
+   },
+   {
+    "kind": "table",
+    "name": "fscBerserkerClans"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerWereshapeBonuses"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerNoLycanthropePowers"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerWereshapeMeleeMagicOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerInsanityIsWereshape"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerSpeaksLycanthropic"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerHorseReactionMod"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerShieldbrothersFriendly"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerAcPerTwoLevels"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerSurpriseLevel"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerSurpriseStep"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerDetectLevel"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerCompanionLevel"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerHireLevel"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerHireLoyaltyPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerHireLoyaltyMax"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFollowerMin"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFollowerMax"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFollowerLoyaltyMin"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerBardFollowerMinLevel"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerBardFollowerMaxLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerFollowersNeverReplaced"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFollowerTypeBands"
+   },
+   {
+    "kind": "table",
+    "name": "fscFollowerTypes"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFollowerLevelBands"
+   },
+   {
+    "kind": "table",
+    "name": "fscFollowerLevels"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerExtraordinaryBands"
+   },
+   {
+    "kind": "table",
+    "name": "fscExtraordinary"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkShieldBitePct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkRoundPct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkWitnessDeathPct"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkCompanionDeathAuto"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkAttackBonus"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkMagicSwordCheckBonus"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerCannotWithdrawBerserk"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkTurnOnFriendsPct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkTurnOnPerLevelPct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkTurnOnMinPct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkClanmasterTurnOnPct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerRestTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "fscBerserkerNeverCauseLycanthropy"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFootnoteWereratPct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFootnoteWerewolfPct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFootnoteWereboarPct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFootnoteWeretigerPct"
+   },
+   {
+    "kind": "const",
+    "name": "fscBerserkerFootnoteWerebearPct"
+   }
+  ]
+ },
+ "audit_comment": "THE FIGHTING SUB-CLASSES ROUND - round C of the issue-3 walk. Childers/Kay's Samurai: the dexterity-above-15 gate pinned as 16, any alignment tending neutral, the daisho and yumi preference, the vendetta-or-seppeku on katana loss, the special-but-non-magical Japanese blades with 9+ identification and 13+ exact reading, the katana and wakizashi critical-hit tables (the 'above to hit' numbers 8+ to 5+, the automatic critical bands pinned as their low rolls, encumbrances and values), the one-step loss in non-Samurai or single-handed hands with the zero floor, the two-weapon permission, the three-band critical blow table (25 percent or 6 with the 1-4 limb roll, 50 percent or 12, the decapitation), the five-point dexterity ladder at 8,000 through 616,000, the five-grade Japanese armor run E through A at 45 pounds maximum with the shield seldom, the judo rules (empty hands only, the 1-2 turn recovery, 1-4 damage on 19-20 at +5 percent per 4 levels, the subdue on 20 at +5 percent per 6 levels), and the yumi costs. Pickens' Berserker: the highly experimental human NEUTRAL, Strength and Constitution above 9 pinned as 10, Intelligence below 9 pinned as 8, armor class no better than 6 at first level, no magical armor or shields, double kill points until the wereshape, never psionic, the five clans with their advance-as codes, wereshape levels, follower levels, maximum dice and Clanmaster levels, +1 armor class per two levels, the level abilities (surprise at 4th, detection and the 4th-level Companion at 6th, hiring at 10th at -2 loyalty capped 15), the 2-12 Followers at 16-plus loyalty with the Bard of level 3-6 never replaced, the three percentile follower rolls, the berserking chance (10 base, +20 shield bite, +10 per round cumulative, +10 per witnessed death, the Companion's death automatic), the berserk edges (+2 attacks, +6 with a magic sword, psionic immunity) and locks (no withdrawal), the fit's end (10 percent turn-on less 1 percent per level to a 1 percent minimum, 0 for a Clanmaster, the full turn of rest), never causing lycanthropy, and the footnote adjustments by clan. HONEST BOUNDARIES: the OCR's duplicate Magic-User follower row pins as scanned; the yumi armor-class modifier grid garbles beyond numeric pinning - the OCR stacked two modifier rows into single tokens, no figure pixels to check - and pins nothing, the yumi costs and encumbrances pinned instead; both sub-classes ride the variant layer, the Berserker experimental per its author's caution."
+}

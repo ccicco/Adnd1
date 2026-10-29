@@ -24,7 +24,7 @@ deltas.
 
 - [x] **The Lakofka women: Notes on Women & Magic** (folios 7-10) - the
   opener round
-- [ ] **The Healer and the Scribe** (folios 22-23, 25) - the
+- [x] **The Healer and the Scribe** (folios 22-23, 25) - the
   specialists round
 - [ ] **The Samurai and the Berserker** (folios 25, 27) - the fighting
   sub-classes round
