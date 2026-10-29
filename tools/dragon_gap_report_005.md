@@ -48,6 +48,7 @@ Was Only a Fifth Level Magic-User" (27); the letters columns (3,
 Archive Miniatures, Little Wars, Diplomacy World and Dungeon Hobby
 Shop ads (2, 6, 15, 17, 19, 25, 28, 31); the coming next-issue
 preview (32). The witchcraft wilderness encounter table's dense
-OCR garble (folio 4, the interleaved terrain rows) is scoped out of
-the pin set - the clean scalars ride, the garbled grid does not,
-per the OCR-table caution.
+OCR garble (folio 4, the interleaved terrain rows) was resolved at
+R904: the chat-side upload cross-check made the grid legible and
+it pins in the R904 round - no longer scoped out; the garble
+caution itself stands for any other grid it may apply to.

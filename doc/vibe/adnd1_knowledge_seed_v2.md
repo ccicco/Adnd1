@@ -27213,6 +27213,39 @@ landing time, never quote a pre-reset one.
 NEXT: the issue-5 box's closing round (a pure
 flip, R901 precedent) or the next adjudication.
 WAIT FOR GO.
+  - R903 LANDED 2026-10-29: commit
+f751304aeee3c7e2acdc9b0a0ef17164b2cca5aa (base
+47aacae, census 825 -> 826), the Dragon issue-5
+box closing round: the pure flip, no new ink -
+the R901 precedent shape. THE SHAPE: prefix cwx
+(regtest-scan clean), header rules/cwx.h (9
+inline: 6 consts + 3 bools, no tables), audit
+"R903 Dragon issue-5 closure audit" at
+rules/audits/r903_batch.h, 3 examples, 2
+header_sections, ZERO file_patches and ZERO
+data_files, 1 gap flip. THE FLIP: the issue-5
+box in tools/dragon_gap_report_005.md went [x]
+-> 1 closed / 0 open, THE ISSUE-5 WALK COMPLETE
+- the three chains (the Witchcraft Supplement
+variant layer, the Anhkheg lore-against-def
+pin, the Wizard Research Rules) were the only
+engine-relevant ink in issue #5. The
+bookkeeping pins: the single box and its three
+chains, the issue-4 report complete at 1/0
+since R901, the registry ground truth carried
+forward (1311 live / 1333 base lua files / 25
+never-load errors, the battery line the only
+ground truth), and the variant-layer doctrine
+riding the closure. The R902 record (67 lines)
+seated in the seed via prev_record. VERIFIED:
+engine double-run GREEN applied 6 / already 6;
+rverify against pristine 47aacae: 9 mutants 0
+missed; the raw JSON round-trip byte-exact.
+Spec tools/spec_r903.json, 10,519 bytes, 215
+lines, md5 0ba6fa9a88473043bc75170bea94e4bf.
+NEXT: the issue-6 opener (the next Dragon walk
+round) or Curtiss's next adjudication. WAIT FOR
+GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
