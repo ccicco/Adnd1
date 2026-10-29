@@ -1,0 +1,233 @@
+{
+ "round": 909,
+ "title": "The Dragon issue-7 box closing round: the thin walk complete",
+ "prefix": "cpx",
+ "census_before": 831,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R908 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R908 LANDED 2026-10-29: commit",
+  "  02adfcb9523191e0d1bcbb1381d6ffc96160f219 (base",
+  "  96e4651, census 830 -> 831), the Dragon issue-7",
+  "  opener: the THIN SINGLE-CHAIN HARVEST - the",
+  "  Prowler (folio 24) was the only engine-relevant",
+  "  ink in issue #7. THE SHAPE: prefix pwl",
+  "  (regtest-scan clean), header rules/pwl.h (25",
+  "  inline: 18 consts + 7 bools, no tables), audit",
+  "  \"R908 Prowler opener audit\" at",
+  "  rules/audits/r908_batch.h, 5 examples, 1",
+  "  header_section, 34 data_files (the prowler.lua",
+  "  dragon_print def, gap report 007 pre-flip, 32",
+  "  issue-7 transcripts), ZERO file_patches, gap",
+  "  report 006 verified no-op (1 closed / 0 open).",
+  "  THE PIN: the Prowler stat line - 14 HD, AC 1,",
+  "  move 12, NA 1, Evil and highly intelligent, 50",
+  "  percent magic resistant, constriction 4-48",
+  "  hp/turn, bite 1-8; the lifecycle - the mind-",
+  "  blank gaze (save vs. magic, zombei control),",
+  "  the tentacle egg-injection 1-8 damage, the 2-8",
+  "  day hatch, the hatched brood's first meal, the",
+  "  exceptional hatcheries in caves or underground,",
+  "  the three Patriarchs' simultaneous dispel evil",
+  "  restoration; lua at",
+  "  monsters/monsters/p/prowler.lua with the DMG",
+  "  p.85 conversion at the 13-14+ category: 1800",
+  "  base + 3 x 950 specials (the gaze, the",
+  "  constriction, the magic resistance) + 1 x 1200",
+  "  exceptional (the hatchery lifecycle), +18/hp at",
+  "  the 63 average, xpValue 6984 - the",
+  "  special/exceptional count a noted judgment. THE",
+  "  DMG p.85 TABLE now VERIFIED against the web",
+  "  (1eonline.info): base/XP-per-hp/SAXPB/EAXPA by",
+  "  HD category - 3HD row 2+1-3 is 35/3/15/55, 7HD",
+  "  row 6+1-7 is 225/8/175/275, 13-14+ is",
+  "  1800/18/950/1200, 15-16+ is 2400/20/1250/1600 -",
+  "  the R906 Death Angel and R900 Vriyagga numbers",
+  "  match the verified table. AS SCANNED: the",
+  "  print's zombei spelling; no treasure or size",
+  "  line printed, riding 'not printed' in the lua,",
+  "  never invented. NOT USABLE per the issue-7",
+  "  walk: the Gygax Designers Forum origins history",
+  "  and the dungeon-mapping registry (7, lore not",
+  "  mechanics), the Strategists Club Awards ballot",
+  "  (4), the diceless-play humor piece with its",
+  "  Fight in the Skies 2d6 table (5-6, another",
+  "  game's table), Mystery Hill (8-9, non-gaming),",
+  "  the Morno fiction (12-15), the Space Marines",
+  "  feature (13), the Barker EPT military",
+  "  formations (16-22), the figure painting (23),",
+  "  the Fineous Fingers comic sharing folio 24",
+  "  (comic ink per the standing precedent), the",
+  "  Gnome Cache Ch.7 (28-29, IDEAS USABLE), the",
+  "  Editor's Library (26), the editorial (3), the",
+  "  ads (2, 10-11, 25, 27, 30-32). SOURCE NOTE:",
+  "  issue-7's DjVu XML lives in the archive.org",
+  "  item accessory-dragon-magazine-012 (holds",
+  "  issues 7-14), not -007; PRINT FOLIO = PDF PAGE",
+  "  verified at footers 12, 16, 28. VERIFIED:",
+  "  engine double-run GREEN applied 39 / already",
+  "  39; rverify against pristine 96e4651: 25",
+  "  mutants 0 missed; the raw JSON round-trip byte-",
+  "  exact. Spec tools/spec_r908.json, 159,385",
+  "  bytes, md5 9965b316fde6652c573c65cf7c14cf4e.",
+  "  NEXT: the issue-7 flip (report 007, 1 box to",
+  "  close), then the issue-8 opener (source already",
+  "  in the -012 item). WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/pwl.h\"  // R908: the Dragon issue-7 opener, the Prowler, the thin single-chain harvest",
+ "include_comment": "the Dragon issue-7 box closing round, the thin walk complete",
+ "header_file": "rules/cpx.h",
+ "audit_file": "rules/audits/r909_batch.h",
+ "audit_label": "R909 Dragon issue-7 closure audit",
+ "audit_anchor": "#include \"rules/audits/r908_batch.h\"  // R908: R908 Prowler opener audit",
+ "gap_report": "tools/dragon_gap_report_007.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Prowler** (folio 24) - the issue-7 opener round",
+   "to": "- [x] **The Prowler** (folio 24) - the issue-7 opener round",
+   "note": "the issue-7 box - the thin single-chain opener round first flip, 1 closed / 0 open, the issue-7 walk complete"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-7 box closing round - the thin walk complete: the pure bookkeeping round, the flip and the registry ground truth",
+  "provenance": "The pure box-closing round, no new ink: the issue-7 box in tools/dragon_gap_report_007.md flips closed (1 / 0), completing the issue-7 walk exactly as adjudicated at R908 - the Prowler having been the only engine-relevant ink in issue #7 (the Gygax origins history, the awards ballot, the diceless-play piece, Mystery Hill, the fiction, the Space Marines feature, the EPT military formations, the figure painting, the comic, the Gnome Cache as ideas-usable, the Editor's Library, the editorial, the ads and the mapping registry all scoped out). The bookkeeping pins: the single box and its single chain, the issue-6 report complete at 1 / 0 since R907, the issue-5 report complete at 1 / 0 since R903, and the registry ground truth carried forward (the 1311 live census, the 1333 base lua files, the 25 never-load errors - the battery line the only ground truth, a pre-R900 print-fidelity state untouched).",
+  "sentinel": "The variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the pin IS the conversion, and the R908 judgments (the DMG p.85 special/exceptional count, the AS-SCANNED zombei spelling, the not-printed treasure and size lines) stay noted in the opener round, never silent."
+ },
+ "consts": [
+  {
+   "name": "cpxReportBoxes",
+   "value": 1,
+   "comment": "the issue-7 gap report carries one box (report 007)"
+  },
+  {
+   "name": "cpxIssue7Chains",
+   "value": 1,
+   "comment": "the issue-7 opener pinned one chain - the Prowler, the thin single-chain harvest (R908)"
+  },
+  {
+   "name": "cpxIssue6Closed",
+   "value": 1,
+   "comment": "the issue-6 report has sat complete at 1 closed / 0 open since R907"
+  },
+  {
+   "name": "cpxIssue5Closed",
+   "value": 1,
+   "comment": "the issue-5 report has sat complete at 1 closed / 0 open since R903"
+  },
+  {
+   "name": "cpxLiveRegistry",
+   "value": 1311,
+   "comment": "the live registry census floor, carried forward from R900"
+  },
+  {
+   "name": "cpxBaseLuaFiles",
+   "value": 1333,
+   "comment": "the base lua file count the R900 promotion measured against"
+  },
+  {
+   "name": "cpxRegistryLoadErrors",
+   "value": 25,
+   "comment": "the base never-load errors - the battery line is the only ground truth"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cpxIssue5WalkComplete",
+   "value": true,
+   "comment": "the issue-5 walk completed at R903"
+  },
+  {
+   "name": "cpxIssue6WalkComplete",
+   "value": true,
+   "comment": "the issue-6 walk completed at R907"
+  },
+  {
+   "name": "cpxIssue7WalkComplete",
+   "value": true,
+   "comment": "the issue-7 walk completes with this round - the Prowler was the only engine-relevant ink in issue #7"
+  },
+  {
+   "name": "cpxVariantLayerDoctrine",
+   "value": true,
+   "comment": "the variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the conversions noted, never silent"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['cpxReportBoxes']() != 1 or m['cpxIssue7Chains']() != 1 or m['cpxIssue6Closed']() != 1 or m['cpxIssue5Closed']() != 1",
+   "note": "the walk bookkeeping - the single issue-7 box and its single chain, the issue-6 and issue-5 reports complete at 1 / 0"
+  },
+  {
+   "expr": "m['cpxLiveRegistry']() != 1311 or m['cpxBaseLuaFiles']() != 1333 or m['cpxRegistryLoadErrors']() != 25",
+   "note": "the registry ground truth carried forward - the 1311 live census, the 1333 base lua files, the 25 never-load errors, the battery line the only ground truth"
+  },
+  {
+   "expr": "m['cpxIssue5WalkComplete']() != 1 or m['cpxIssue6WalkComplete']() != 1 or m['cpxIssue7WalkComplete']() != 1 or m['cpxVariantLayerDoctrine']() != 1",
+   "note": "the three walks complete - issue 5 at R903, issue 6 at R907, issue 7 at this round - and the variant-layer doctrine riding the closure"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 11,
+ "header_sections": {
+  "the walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "cpxReportBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "cpxIssue7Chains"
+   },
+   {
+    "kind": "const",
+    "name": "cpxIssue6Closed"
+   },
+   {
+    "kind": "const",
+    "name": "cpxIssue5Closed"
+   },
+   {
+    "kind": "bool",
+    "name": "cpxIssue5WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "cpxIssue6WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "cpxIssue7WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "cpxVariantLayerDoctrine"
+   }
+  ],
+  "the registry ground truth": [
+   {
+    "kind": "const",
+    "name": "cpxLiveRegistry"
+   },
+   {
+    "kind": "const",
+    "name": "cpxBaseLuaFiles"
+   },
+   {
+    "kind": "const",
+    "name": "cpxRegistryLoadErrors"
+   }
+  ]
+ },
+ "audit_comment": "THE DRAGON ISSUE-7 BOX CLOSING ROUND - the pure bookkeeping round, no new print ink. The flip: the issue-7 box in tools/dragon_gap_report_007.md goes [x] - 1 closed / 0 open, the issue-7 walk complete, the Prowler (folio 24) having been the only engine-relevant ink in issue #7. The bookkeeping pins: the single box and its single chain, the issue-6 report complete at 1 / 0 since R907, the issue-5 report complete at 1 / 0 since R903, the registry ground truth carried forward (the 1311 live census against the 1333 base lua files with the 25 never-load errors, a pre-R900 print-fidelity state untouched), and the variant-layer doctrine riding the closure. The R908 record seats in the seed via prev_record."
+}

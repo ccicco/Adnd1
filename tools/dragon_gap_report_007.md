@@ -31,7 +31,7 @@ Editor's Library (26), the editorial (3), the ads (2, 10-11, 25,
 
 ## Boxes
 
-- [ ] **The Prowler** (folio 24) - the issue-7 opener round
+- [x] **The Prowler** (folio 24) - the issue-7 opener round
 
 1 box, 0 closed, 1 open at the R908 authoring. The R908 round ships
 this report pre-flip (a report cannot flip in the round that

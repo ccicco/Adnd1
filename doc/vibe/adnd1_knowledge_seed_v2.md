@@ -27433,6 +27433,73 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   issue-7 opener (the Dragon Magazine walk
   continues; no issue-7 source pulled yet). WAIT
   FOR GO.
+  - R908 LANDED 2026-10-29: commit
+  02adfcb9523191e0d1bcbb1381d6ffc96160f219 (base
+  96e4651, census 830 -> 831), the Dragon issue-7
+  opener: the THIN SINGLE-CHAIN HARVEST - the
+  Prowler (folio 24) was the only engine-relevant
+  ink in issue #7. THE SHAPE: prefix pwl
+  (regtest-scan clean), header rules/pwl.h (25
+  inline: 18 consts + 7 bools, no tables), audit
+  "R908 Prowler opener audit" at
+  rules/audits/r908_batch.h, 5 examples, 1
+  header_section, 34 data_files (the prowler.lua
+  dragon_print def, gap report 007 pre-flip, 32
+  issue-7 transcripts), ZERO file_patches, gap
+  report 006 verified no-op (1 closed / 0 open).
+  THE PIN: the Prowler stat line - 14 HD, AC 1,
+  move 12, NA 1, Evil and highly intelligent, 50
+  percent magic resistant, constriction 4-48
+  hp/turn, bite 1-8; the lifecycle - the mind-
+  blank gaze (save vs. magic, zombei control),
+  the tentacle egg-injection 1-8 damage, the 2-8
+  day hatch, the hatched brood's first meal, the
+  exceptional hatcheries in caves or underground,
+  the three Patriarchs' simultaneous dispel evil
+  restoration; lua at
+  monsters/monsters/p/prowler.lua with the DMG
+  p.85 conversion at the 13-14+ category: 1800
+  base + 3 x 950 specials (the gaze, the
+  constriction, the magic resistance) + 1 x 1200
+  exceptional (the hatchery lifecycle), +18/hp at
+  the 63 average, xpValue 6984 - the
+  special/exceptional count a noted judgment. THE
+  DMG p.85 TABLE now VERIFIED against the web
+  (1eonline.info): base/XP-per-hp/SAXPB/EAXPA by
+  HD category - 3HD row 2+1-3 is 35/3/15/55, 7HD
+  row 6+1-7 is 225/8/175/275, 13-14+ is
+  1800/18/950/1200, 15-16+ is 2400/20/1250/1600 -
+  the R906 Death Angel and R900 Vriyagga numbers
+  match the verified table. AS SCANNED: the
+  print's zombei spelling; no treasure or size
+  line printed, riding 'not printed' in the lua,
+  never invented. NOT USABLE per the issue-7
+  walk: the Gygax Designers Forum origins history
+  and the dungeon-mapping registry (7, lore not
+  mechanics), the Strategists Club Awards ballot
+  (4), the diceless-play humor piece with its
+  Fight in the Skies 2d6 table (5-6, another
+  game's table), Mystery Hill (8-9, non-gaming),
+  the Morno fiction (12-15), the Space Marines
+  feature (13), the Barker EPT military
+  formations (16-22), the figure painting (23),
+  the Fineous Fingers comic sharing folio 24
+  (comic ink per the standing precedent), the
+  Gnome Cache Ch.7 (28-29, IDEAS USABLE), the
+  Editor's Library (26), the editorial (3), the
+  ads (2, 10-11, 25, 27, 30-32). SOURCE NOTE:
+  issue-7's DjVu XML lives in the archive.org
+  item accessory-dragon-magazine-012 (holds
+  issues 7-14), not -007; PRINT FOLIO = PDF PAGE
+  verified at footers 12, 16, 28. VERIFIED:
+  engine double-run GREEN applied 39 / already
+  39; rverify against pristine 96e4651: 25
+  mutants 0 missed; the raw JSON round-trip byte-
+  exact. Spec tools/spec_r908.json, 159,385
+  bytes, md5 9965b316fde6652c573c65cf7c14cf4e.
+  NEXT: the issue-7 flip (report 007, 1 box to
+  close), then the issue-8 opener (source already
+  in the -012 item). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
