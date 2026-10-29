@@ -21,7 +21,7 @@ material.
 - [x] **The Alchemist, complete** (folios 28-30) - the class round
 - [x] **The Fischer Hints magic items** (folios 12-13, 26) - the
   items round
-- [ ] **The systems: Weapon Damage expertise, Monkish promotion
+- [x] **The systems: Weapon Damage expertise, Monkish promotion
   combat** (folios 4-5, 30) - the systems round
 
 4 boxes, 0 closed, 4 open at the R890 authoring. The R890 round ships

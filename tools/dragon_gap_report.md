@@ -18,8 +18,10 @@ Dragon pins ride a VARIANT layer with provenance, never core canon.
   (30), the Bulette lore pin (19)** - the combined round
 - [x] **Aronson: mighty magic miscellany, the illusionist deltas**
   (folios 23-25) - the deltas round
+- [ ] **The Ward Artificer devices** (folios 8-10) - the
+  un-parked items sweep round
 
-3 boxes, 0 closed, 3 open at the R887 authoring. The R887 round ships
+4 boxes, 0 closed, 3 open at the R887 authoring. The R887 round ships
 this report pre-flip (a report cannot flip in the round that creates
 it); the Ives box closes at the next Dragon round's flip.
 
@@ -33,5 +35,6 @@ reviews, ads and convention matter.
 
 ## Parked
 
-Ward's Artificer devices (8-10) - codifiable as items, parked for a
-possible later items sweep.
+None. Ward's Artificer devices (8-10) were un-parked at R894
+(Curtiss's call) - the box above ships pre-flip and closes at the
+next Dragon round's flip per the R796 rule.

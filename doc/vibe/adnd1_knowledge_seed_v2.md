@@ -26526,6 +26526,50 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   the systems box closes at the NEXT
   Dragon round per the R796 pre-flip rule.
   WAIT FOR GO.
+  - R893 LANDED 2026-10-29: commit
+  2378b3b6e9ecef083c285491aad9c9a8399a6349
+  (pushed 249b953..2378b3b, census 815 -> 816),
+  THE SYSTEMS ROUND - round D of issue 2
+  (Pickens' Weapon Damage expertise, folio 30;
+  Seaton's Monkish promotion combat, folios
+  4-5). THE SHAPE: prefix sys (regtest-scan
+  clean), header rules/sys.h (66 inline: 29
+  consts + 14 bools + 2 tables), audit "R893
+  systems audit" at rules/audits/r893_batch.h,
+  32 examples, 3 header_sections, include after
+  fch.h, gap flip of the Fischer box (issue-2
+  report 3 closed / 1 open). THE INK:
+  sysWeaponGrid 17 rows x 5 cols
+  (normalMin/Max, expertMin/Max, spaceFeet from
+  folio 30); sysMnkMatrix 8 rows x 18 cols -
+  the folio-5 strike/block/kick matrix
+  CONVERTED to ints (0 normal, 1 blocked, 2
+  double, 3 triple, 4 sweep, 5 grab, 6 n/a,
+  sentinel 9), the conversion noted in the
+  banner and audit; DPT = strength x
+  constitution + 10 x level, DPG = strength +
+  dexterity + 1/2 intelligence, the
+  set-and-unit frame, the recovery doctrine.
+  LESSON (R893): when the engine aborts at
+  "EMITTED header fails its own audit mirror (N
+  bad)" an example cell disagrees with the
+  table data - re-check EACH example against
+  the folio line (the Stamp vs Rest cell is 3
+  triple damage, not n/a); and a debug parse
+  must replicate the engine EXACTLY - it
+  rewrites return true; -> return 1; before
+  parsing, miss that and every bool reads as a
+  false bad. VERIFIED: engine double-run GREEN
+  applied 6 / already 6; rverify against
+  pristine 249b953: 272 mutants 0 missed; the
+  raw JSON round-trip byte-exact. Spec
+  tools/spec_r893.json, 27,252 bytes, 988
+  lines, md5 d843d902360ad7a2d42ec5d2be8878e5
+  (authored-plus-newline). NEXT: R894 - the
+  Ward Artificer devices sweep (Dragon #1
+  folios 8-10, un-parked at Curtiss's call),
+  with the systems box flip closing issue 2 at
+  4 closed / 0 open. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

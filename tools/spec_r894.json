@@ -1,0 +1,556 @@
+{
+ "round": 894,
+ "title": "The Artificer devices: Ward's magic and science items sweep",
+ "prefix": "art",
+ "census_before": 816,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R893 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R893 LANDED 2026-10-29: commit",
+  "  2378b3b6e9ecef083c285491aad9c9a8399a6349",
+  "  (pushed 249b953..2378b3b, census 815 -> 816),",
+  "  THE SYSTEMS ROUND - round D of issue 2",
+  "  (Pickens' Weapon Damage expertise, folio 30;",
+  "  Seaton's Monkish promotion combat, folios",
+  "  4-5). THE SHAPE: prefix sys (regtest-scan",
+  "  clean), header rules/sys.h (66 inline: 29",
+  "  consts + 14 bools + 2 tables), audit \"R893",
+  "  systems audit\" at rules/audits/r893_batch.h,",
+  "  32 examples, 3 header_sections, include after",
+  "  fch.h, gap flip of the Fischer box (issue-2",
+  "  report 3 closed / 1 open). THE INK:",
+  "  sysWeaponGrid 17 rows x 5 cols",
+  "  (normalMin/Max, expertMin/Max, spaceFeet from",
+  "  folio 30); sysMnkMatrix 8 rows x 18 cols -",
+  "  the folio-5 strike/block/kick matrix",
+  "  CONVERTED to ints (0 normal, 1 blocked, 2",
+  "  double, 3 triple, 4 sweep, 5 grab, 6 n/a,",
+  "  sentinel 9), the conversion noted in the",
+  "  banner and audit; DPT = strength x",
+  "  constitution + 10 x level, DPG = strength +",
+  "  dexterity + 1/2 intelligence, the",
+  "  set-and-unit frame, the recovery doctrine.",
+  "  LESSON (R893): when the engine aborts at",
+  "  \"EMITTED header fails its own audit mirror (N",
+  "  bad)\" an example cell disagrees with the",
+  "  table data - re-check EACH example against",
+  "  the folio line (the Stamp vs Rest cell is 3",
+  "  triple damage, not n/a); and a debug parse",
+  "  must replicate the engine EXACTLY - it",
+  "  rewrites return true; -> return 1; before",
+  "  parsing, miss that and every bool reads as a",
+  "  false bad. VERIFIED: engine double-run GREEN",
+  "  applied 6 / already 6; rverify against",
+  "  pristine 249b953: 272 mutants 0 missed; the",
+  "  raw JSON round-trip byte-exact. Spec",
+  "  tools/spec_r893.json, 27,252 bytes, 988",
+  "  lines, md5 d843d902360ad7a2d42ec5d2be8878e5",
+  "  (authored-plus-newline). NEXT: R894 - the",
+  "  Ward Artificer devices sweep (Dragon #1",
+  "  folios 8-10, un-parked at Curtiss's call),",
+  "  with the systems box flip closing issue 2 at",
+  "  4 closed / 0 open. WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/sys.h\"  // R893: the systems round",
+ "include_comment": "the Ward Artificer devices items sweep",
+ "header_file": "rules/art.h",
+ "audit_file": "rules/audits/r894_batch.h",
+ "audit_label": "R894 Artificer audit",
+ "audit_anchor": "#include \"rules/audits/r893_batch.h\"  // R893: R893 systems audit",
+ "gap_report": "tools/dragon_gap_report_002.md",
+ "gap_census": {
+  "closed": 4,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The systems: Weapon Damage expertise, Monkish promotion\n  combat** (folios 4-5, 30) - the systems round",
+   "to": "- [x] **The systems: Weapon Damage expertise, Monkish promotion\n  combat** (folios 4-5, 30) - the systems round",
+   "note": "the systems box - the issue-2 report's final flip, 4 closed / 0 open"
+  }
+ ],
+ "banner": {
+  "title": "The Artificer devices round - Ward's Magic and Science: Are They Compatible in D&D? (folios 8, 10)",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 1 (June 1976): folios 8 and 10, James M. Ward's Magic and Science article (the chain runs 8 -> 10 past Gold's Languages on 9) - the Artificer pistol and its six color-coded spheres, the three blue-sphere rank badges with their two beams and ray suites, and the anologic computer with its heat core and its logic weakness. The Parked box was un-parked at Curtiss's call: the items sweep.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. These are science-magic devices presented against too-powerful players, pinned as scanned; the sphere effect codes are CONVERTED integers - 1 melting heat, 2 disintegration, 3 nullification, 4 the illusion maze, 5 the death circle, 6 the crystal wall - the legend pinned beside the grid, the conversion noted, never silent. The silver wall and the smallest sphere's healing-void carry scanned zeros, noted in the column comments. OD&D-era ink converted per the walk doctrine: the pin IS the conversion, noted, never silent."
+ },
+ "consts": [
+  {
+   "name": "artPistolRangeYards",
+   "value": 50,
+   "comment": "the Artificer pistol shoots a two-inch sphere to a MAXIMUM range of fifty yards (folio 8)"
+  },
+  {
+   "name": "artSphereDiameterInches",
+   "value": 2,
+   "comment": "the pistol sphere is two inches across - the stored power emits only on contact after release (folio 8)"
+  },
+  {
+   "name": "artSphereTypeCount",
+   "value": 6,
+   "comment": "six pistol sphere types, all color coded for easy identification (folio 8)"
+  },
+  {
+   "name": "artSilverWallHeightFeet",
+   "value": 60,
+   "comment": "the silver sphere's crystal wall runs to a maximum height of sixty feet (folio 8)"
+  },
+  {
+   "name": "artSilverWallLengthFeet",
+   "value": 120,
+   "comment": "the wall runs one hundred twenty feet long (folio 8)"
+  },
+  {
+   "name": "artSilverWallThicknessFeet",
+   "value": 10,
+   "comment": "the wall is ten feet thick (folio 8)"
+  },
+  {
+   "name": "artRestorationWindowHours",
+   "value": 1,
+   "comment": "the restoration ray completely regenerates any being dead or dying, and always works if applied within one hour of death (folio 8)"
+  },
+  {
+   "name": "artBlueSphereHitPoints",
+   "value": 25,
+   "comment": "the blue sphere takes twenty-five points of damage before being destroyed (folio 8)"
+  },
+  {
+   "name": "artBlueSphereBeamCount",
+   "value": 2,
+   "comment": "a blue sphere floats beside its master and is able to shoot two beams (folio 8)"
+  },
+  {
+   "name": "artBlueSphereSizes",
+   "value": 3,
+   "comment": "the blue sphere comes in three sizes - largest, middle, smallest (folio 8)"
+  },
+  {
+   "name": "artComputerSpellAnalysis",
+   "value": 100,
+   "comment": "the anologic computer is able to analyze up to one hundred spells sent at it (folios 8, 10)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "artRedMeltsEverything",
+   "value": true,
+   "comment": "the red sphere emits a circle of heat so intense it melts everything and anything in the area - no magic saving throw applicable (folio 8)"
+  },
+  {
+   "name": "artClearNullifiesForever",
+   "value": true,
+   "comment": "the clear sphere's nullifying energy destroys the usefulness of any magic item forever - no magic saving throw applicable (folio 8)"
+  },
+  {
+   "name": "artBrownMazeTravel",
+   "value": true,
+   "comment": "the brown sphere's maze is an illusion those in the circle must travel through to free themselves of the effects - no save (folio 8)"
+  },
+  {
+   "name": "artSilverFillsSpace",
+   "value": true,
+   "comment": "the silver sphere's wall will always fill any passage or space to the fullest possible extent (folio 8)"
+  },
+  {
+   "name": "artSilverDiamondHard",
+   "value": true,
+   "comment": "the wall is synthetic crystal with the resistance of a diamond to physical forces (folio 8)"
+  },
+  {
+   "name": "artSmallestIsMostPowerful",
+   "value": true,
+   "comment": "the smallest blue sphere is the most powerful - the spheres are badges of rank, only the highest ranking leaders use them (folio 8)"
+  },
+  {
+   "name": "artAntiMagicKillsSphere",
+   "value": true,
+   "comment": "the best way to negate a blue sphere is an anti-magic shell cutting its energy supply - the sphere becomes useless forever (folio 8)"
+  },
+  {
+   "name": "artDisplacerRayAsCloak",
+   "value": true,
+   "comment": "the displacer ray works as the powers of the magical cloak (folio 8)"
+  },
+  {
+   "name": "artComputerHeatCore",
+   "value": true,
+   "comment": "the computer has a heat core power source (folio 10)"
+  },
+  {
+   "name": "artComputerDoubleHeatRay",
+   "value": true,
+   "comment": "the computer's primary attack is to analyze the hit points of its enemies and emit a double amount heat ray (folio 10)"
+  },
+  {
+   "name": "artComputerLogicBlind",
+   "value": true,
+   "comment": "the computer's greatest weakness is its strict following of its program - more intelligent beings can use logic to get around it (folio 10)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "artSphereGrid",
+   "tag": "ArtSph",
+   "count": "artSphereTypeCount",
+   "sentinel": 9,
+   "cols": [
+    "artSphEffectCode",
+    "artSphBurstRadiusFeet",
+    "artSphSaveApplicable"
+   ],
+   "col_comments": [
+    "the CONVERTED effect code - 1 the red circle of melting heat, 2 the black disintegrating circle, 3 the clear nullifying circle, 4 the brown illusion maze, 5 the purple circle of death, 6 the silver crystal wall - the legend pinned beside the grid, the conversion noted, never silent (folio 8)",
+    "the burst circle radius from the point of contact - fifteen feet for the five effect spheres; the silver sphere emits a wall, not a burst, pinned as scanned zero (folio 8)",
+    "the magic saving throw gate - ONLY the black disintegrating and the purple death spheres carry the save; red, clear and brown are expressly no-save, the silver wall states none (folio 8)"
+   ],
+   "data": [
+    [
+     1,
+     15,
+     0
+    ],
+    [
+     2,
+     15,
+     1
+    ],
+    [
+     3,
+     15,
+     0
+    ],
+    [
+     4,
+     15,
+     0
+    ],
+    [
+     5,
+     15,
+     1
+    ],
+    [
+     6,
+     0,
+     0
+    ]
+   ],
+   "audit_comment": "the six-sphere pistol grid, rows Red, Black, Clear, Brown, Purple, Silver in the folio order - each emits its circle from the point of contact upon release from the pistol (folio 8)"
+  },
+  {
+   "name": "artBlueSphereGrid",
+   "tag": "ArtBlu",
+   "count": "artBlueSphereSizes",
+   "sentinel": 9,
+   "cols": [
+    "artDiameterFeet",
+    "artDamageAbsorber",
+    "artHeatRayDice",
+    "artHealingPerRound",
+    "artDisplacer",
+    "artDamageShield",
+    "artAntiMagicShell",
+    "artFearRay",
+    "artAntiSphereRay",
+    "artCharmMonsterRay",
+    "artRestorationRay"
+   ],
+   "col_comments": [
+    "the badge diameter - three feet largest, two feet middle, one foot smallest, and the smallest is the most powerful (folio 8)",
+    "the damage absorber cap per melee turn - ten, fifteen, twenty points as the sphere shrinks (folio 8)",
+    "the heat ray dice - three, five, seven dice (folio 8)",
+    "the healing ray per melee round - three and five points of the cure-light-wounds ray; the smallest carries the restoration ray instead, pinned as scanned zero (folio 8)",
+    "the displacer ray - all three sizes carry it, as the powers of the magical cloak (folio 8)",
+    "the damage shield cap - twenty, thirty, forty points; only the damage over the given amount affects the sphere (folio 8)",
+    "the anti-magic shell - as the spell, carried by the middle and smallest spheres (folio 8)",
+    "the fear ray - a sonic blast as the spell, magic saving throw applicable, carried by the middle and smallest spheres (folio 8)",
+    "the anti-sphere ray - negates any pistol sphere or blue sphere effect, carried ONLY by the smallest (folio 8)",
+    "the charm monster ray - as the spell, magic saving throw applicable, carried ONLY by the smallest (folio 8)",
+    "the restoration ray - completely regenerates any being dead or dying, always works within one hour of death, carried ONLY by the smallest (folio 8)"
+   ],
+   "data": [
+    [
+     3,
+     10,
+     3,
+     3,
+     1,
+     20,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     15,
+     5,
+     5,
+     1,
+     30,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     20,
+     7,
+     0,
+     1,
+     40,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   ],
+   "audit_comment": "the blue-sphere badge grid, rows largest, middle, smallest in the folio order - two beams each, floating beside the master (folio 8)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['artPistolRangeYards']() != 50 or m['artSphereDiameterInches']() != 2 or m['artSphereTypeCount']() != 6",
+   "note": "the pistol frame - a two-inch sphere to fifty yards maximum, six color-coded types (folio 8)"
+  },
+  {
+   "expr": "m['artSphEffectCode'](0) != 1 or m['artSphBurstRadiusFeet'](0) != 15 or m['artSphSaveApplicable'](0) != 0",
+   "note": "the red sphere - code one melting heat, a fifteen-foot circle, no magic saving throw (folio 8)"
+  },
+  {
+   "expr": "m['artSphEffectCode'](1) != 2 or m['artSphBurstRadiusFeet'](1) != 15 or m['artSphSaveApplicable'](1) != 1",
+   "note": "the black sphere - code two disintegrating damage as the spell, a fifteen-foot circle, the save applies (folio 8)"
+  },
+  {
+   "expr": "m['artSphEffectCode'](2) != 3 or m['artSphBurstRadiusFeet'](2) != 15 or m['artSphSaveApplicable'](2) != 0",
+   "note": "the clear sphere - code three nullifying energy, magic items destroyed forever, no save (folio 8)"
+  },
+  {
+   "expr": "m['artSphEffectCode'](3) != 4 or m['artSphBurstRadiusFeet'](3) != 15 or m['artSphSaveApplicable'](3) != 0",
+   "note": "the brown sphere - code four the illusion maze, traveled to free oneself, no save (folio 8)"
+  },
+  {
+   "expr": "m['artSphEffectCode'](4) != 5 or m['artSphBurstRadiusFeet'](4) != 15 or m['artSphSaveApplicable'](4) != 1",
+   "note": "the purple sphere - code five the circle of death as the spell, the save applies (folio 8)"
+  },
+  {
+   "expr": "m['artSphEffectCode'](5) != 6 or m['artSphBurstRadiusFeet'](5) != 0 or m['artSphSaveApplicable'](5) != 0",
+   "note": "the silver sphere - code six the crystal wall, a wall not a burst, no save stated (folio 8)"
+  },
+  {
+   "expr": "m['artRedMeltsEverything']() != 1 or m['artClearNullifiesForever']() != 1 or m['artBrownMazeTravel']() != 1",
+   "note": "the three no-save effect doctrines - the melt, the forever nullification, the maze travel (folio 8)"
+  },
+  {
+   "expr": "m['artSilverWallHeightFeet']() != 60 or m['artSilverWallLengthFeet']() != 120 or m['artSilverWallThicknessFeet']() != 10",
+   "note": "the crystal wall dimensions - sixty feet high, one hundred twenty long, ten thick (folio 8)"
+  },
+  {
+   "expr": "m['artSilverFillsSpace']() != 1 or m['artSilverDiamondHard']() != 1",
+   "note": "the wall always fills any passage to the fullest extent, diamond-resistant synthetic crystal (folio 8)"
+  },
+  {
+   "expr": "m['artBlueSphereHitPoints']() != 25 or m['artBlueSphereBeamCount']() != 2 or m['artBlueSphereSizes']() != 3",
+   "note": "the blue-sphere chassis - twenty-five points to destroy, two beams, three sizes (folio 8)"
+  },
+  {
+   "expr": "m['artSmallestIsMostPowerful']() != 1 or m['artAntiMagicKillsSphere']() != 1 or m['artDisplacerRayAsCloak']() != 1",
+   "note": "the rank badge inverted to size, the anti-magic kill, the displacer provenance (folio 8)"
+  },
+  {
+   "expr": "m['artDiameterFeet'](0) != 3 or m['artDamageAbsorber'](0) != 10 or m['artHeatRayDice'](0) != 3",
+   "note": "the LARGEST sphere - three feet, a ten-point absorber, three heat dice (folio 8)"
+  },
+  {
+   "expr": "m['artDiameterFeet'](1) != 2 or m['artDamageAbsorber'](1) != 15 or m['artHeatRayDice'](1) != 5",
+   "note": "the MIDDLE sphere - two feet, a fifteen-point absorber, five heat dice (folio 8)"
+  },
+  {
+   "expr": "m['artDiameterFeet'](2) != 1 or m['artDamageAbsorber'](2) != 20 or m['artHeatRayDice'](2) != 7",
+   "note": "the SMALLEST sphere - one foot, a twenty-point absorber, seven heat dice (folio 8)"
+  },
+  {
+   "expr": "m['artHealingPerRound'](0) != 3 or m['artHealingPerRound'](1) != 5 or m['artHealingPerRound'](2) != 0",
+   "note": "the healing ray - three and five points per melee round, restoration instead on the smallest (folio 8)"
+  },
+  {
+   "expr": "m['artDamageShield'](0) != 20 or m['artDamageShield'](1) != 30 or m['artDamageShield'](2) != 40",
+   "note": "the damage shield caps - twenty, thirty, forty points (folio 8)"
+  },
+  {
+   "expr": "m['artDisplacer'](0) != 1 or m['artDisplacer'](1) != 1 or m['artDisplacer'](2) != 1",
+   "note": "the displacer ray rides all three sizes (folio 8)"
+  },
+  {
+   "expr": "m['artAntiMagicShell'](0) != 0 or m['artAntiMagicShell'](1) != 1 or m['artAntiMagicShell'](2) != 1",
+   "note": "the anti-magic shell - middle and smallest only (folio 8)"
+  },
+  {
+   "expr": "m['artFearRay'](0) != 0 or m['artFearRay'](1) != 1 or m['artFearRay'](2) != 1",
+   "note": "the fear ray - middle and smallest only (folio 8)"
+  },
+  {
+   "expr": "m['artAntiSphereRay'](0) != 0 or m['artAntiSphereRay'](1) != 0 or m['artAntiSphereRay'](2) != 1",
+   "note": "the anti-sphere ray - the smallest alone negates pistol and blue spheres (folio 8)"
+  },
+  {
+   "expr": "m['artCharmMonsterRay'](0) != 0 or m['artCharmMonsterRay'](1) != 0 or m['artCharmMonsterRay'](2) != 1",
+   "note": "the charm monster ray - the smallest alone (folio 8)"
+  },
+  {
+   "expr": "m['artRestorationRay'](0) != 0 or m['artRestorationRay'](1) != 0 or m['artRestorationRay'](2) != 1",
+   "note": "the restoration ray - the smallest alone (folio 8)"
+  },
+  {
+   "expr": "m['artRestorationWindowHours']() != 1",
+   "note": "the restoration ray always works within one hour of death (folio 8)"
+  },
+  {
+   "expr": "m['artComputerSpellAnalysis']() != 100 or m['artComputerHeatCore']() != 1",
+   "note": "the anologic computer - one hundred spells analyzed, a heat core power source (folios 8, 10)"
+  },
+  {
+   "expr": "m['artComputerDoubleHeatRay']() != 1 or m['artComputerLogicBlind']() != 1",
+   "note": "the computer analyzes enemy hit points for a double heat ray, and its program strictness is its weakness (folio 10)"
+  },
+  {
+   "expr": "m['artSphSaveApplicable'](0) != 0 or m['artSphSaveApplicable'](2) != 0 or m['artSphSaveApplicable'](3) != 0",
+   "note": "the no-save trio confirmed - red, clear, brown (folio 8)"
+  },
+  {
+   "expr": "m['artHeatRayDice'](2) != 7 or m['artDamageShield'](2) != 40 or m['artDamageAbsorber'](2) != 20",
+   "note": "the smallest tops every cap - seven dice, forty shield, twenty absorber (folio 8)"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [
+  {
+   "file": "tools/dragon_gap_report.md",
+   "from": "- [x] **Aronson: mighty magic miscellany, the illusionist deltas**\n  (folios 23-25) - the deltas round\n\n3 boxes",
+   "to": "- [x] **Aronson: mighty magic miscellany, the illusionist deltas**\n  (folios 23-25) - the deltas round\n- [ ] **The Ward Artificer devices** (folios 8-10) - the\n  un-parked items sweep round\n\n4 boxes",
+   "note": "the issue-1 report gains the un-parked Ward box"
+  },
+  {
+   "file": "tools/dragon_gap_report.md",
+   "from": "## Parked\n\nWard's Artificer devices (8-10) - codifiable as items, parked for a\npossible later items sweep.",
+   "to": "## Parked\n\nNone. Ward's Artificer devices (8-10) were un-parked at R894\n(Curtiss's call) - the box above ships pre-flip and closes at the\nnext Dragon round's flip per the R796 rule.",
+   "note": "the Parked section empties - the un-park is recorded"
+  }
+ ],
+ "data_files": [],
+ "inline_count": 36,
+ "header_sections": {
+  "the pistol and its spheres (folio 8)": [
+   {
+    "kind": "const",
+    "name": "artPistolRangeYards"
+   },
+   {
+    "kind": "const",
+    "name": "artSphereDiameterInches"
+   },
+   {
+    "kind": "const",
+    "name": "artSphereTypeCount"
+   },
+   {
+    "kind": "table",
+    "name": "artSphereGrid"
+   },
+   {
+    "kind": "bool",
+    "name": "artRedMeltsEverything"
+   },
+   {
+    "kind": "bool",
+    "name": "artClearNullifiesForever"
+   },
+   {
+    "kind": "bool",
+    "name": "artBrownMazeTravel"
+   },
+   {
+    "kind": "const",
+    "name": "artSilverWallHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "artSilverWallLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "artSilverWallThicknessFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "artSilverFillsSpace"
+   },
+   {
+    "kind": "bool",
+    "name": "artSilverDiamondHard"
+   }
+  ],
+  "the blue spheres (folio 8)": [
+   {
+    "kind": "const",
+    "name": "artBlueSphereSizes"
+   },
+   {
+    "kind": "table",
+    "name": "artBlueSphereGrid"
+   },
+   {
+    "kind": "const",
+    "name": "artBlueSphereHitPoints"
+   },
+   {
+    "kind": "const",
+    "name": "artBlueSphereBeamCount"
+   },
+   {
+    "kind": "const",
+    "name": "artRestorationWindowHours"
+   },
+   {
+    "kind": "bool",
+    "name": "artSmallestIsMostPowerful"
+   },
+   {
+    "kind": "bool",
+    "name": "artAntiMagicKillsSphere"
+   },
+   {
+    "kind": "bool",
+    "name": "artDisplacerRayAsCloak"
+   }
+  ],
+  "the anologic computer (folios 8, 10)": [
+   {
+    "kind": "const",
+    "name": "artComputerSpellAnalysis"
+   },
+   {
+    "kind": "bool",
+    "name": "artComputerHeatCore"
+   },
+   {
+    "kind": "bool",
+    "name": "artComputerDoubleHeatRay"
+   },
+   {
+    "kind": "bool",
+    "name": "artComputerLogicBlind"
+   }
+  ]
+ },
+ "audit_comment": "THE ARTIFICER DEVICES ROUND - the un-parked items sweep of issue 1's Parked list (Curtiss's call, 2026-10-29). Ward's magic-and-science devices pinned as variant-layer items: the pistol frame (two-inch sphere, fifty yards, six color-coded types), the six-sphere grid with the CONVERTED effect codes and the save gates (only black disintegration and purple death carry the save - red, clear, brown expressly do not), the silver crystal wall (60 x 120 x 10, fills any passage, diamond resistance), the blue-sphere badge grid (three sizes, two beams each, the ray suites inverted to size, the smallest most powerful), the chassis doctrines (25 hit points, the anti-magic kill, the displacer provenance), and the computer (heat core, 100 spells analyzed, the double heat ray off enemy hit points, the logic weakness). The chain runs folio 8 -> 10 past Gold's Languages; the effect-code conversion and the scanned zeros are noted, never silent."
+}
