@@ -1,0 +1,192 @@
+The Dragon
+
+Vol. I No. 3 October '76
+
+VII *ADVENTURERS
+
+|  Commoner | Merchant  |
+| --- | --- |
+|  01-50 1st level | 01-40 1st level  |
+|  51-70 2nd level | 41-65 2nd level  |
+|  71-95 3rd level | 66-75 3rd level  |
+|  96-00 4th level | 76-85 4th level  |
+|   | 86-95 5th level  |
+|   | 96-00 6th level  |
+
+|  1-5 fighter | 1-4 fighter  |
+| --- | --- |
+|  6-8 thief | 5 thief  |
+|   | 6-7 cleric  |
+|   | 8 magic-user  |
+
+|  Gentleman | Noble  |
+| --- | --- |
+|  01-35 1st level | 01-30 1st level  |
+|  36-50 2nd level | 31-45 2nd level  |
+|  51-65 3rd level | 46-60 3rd level  |
+|  66-80 4th level | 61-75 4th level  |
+|  81-90 5th level | 76-85 5th level  |
+|  91-95 6th level | 86-90 6th level  |
+|  96-98 7th level | 91-94 7th level  |
+|  99-00 8th level | 95-98 8th level  |
+|   | 99-00 9th level  |
+
+|  1-3 fighter | 1-3 fighter  |
+| --- | --- |
+|  4 thief | 4 thief  |
+|  5-6 cleric | 5 cleric  |
+|  7-8 magic-user | 6-8 magic-user  |
+
+### VIII RACE
+
+A player may roll a random race under Table 1 OR roll his characteristics first, and then hope to fulfill the requirements under Table 2.
+
+Table 1
+
+|  Commoner |   | Merchant  |   |
+| --- | --- | --- | --- |
+|  2 | Half-goblin | 2 | Hobbit  |
+|  3 | Half-orc | 3 | Half-elf  |
+|  4-10 | Human | 4-11 | Human  |
+|  11 | Half -elf or Dwarf | 12 | Dwarf  |
+|  12 | Hobbit |  |   |
+
+Gentleman or Noble
+
+|  2 | Hobbit  |
+| --- | --- |
+|  3-4 | Half-elf  |
+|  5-8 | Human  |
+|  9-10 | Dwarf  |
+|  11-12 | Elf  |
+
+|  Race: | # of dice rolled  |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- |
+|  Half-goblin/Half-orc | 3 | 2 | 3 | 3 | 2 | 2  |
+|  Elf | 3 | 3 | 4 | 3 | 4 | 4  |
+|  Dwarf | 4 | 3 | 3 | 4 | 3 | 3  |
+|  Half -elf | 3 | 3 | 3 | 3 | 3 | 4  |
+|  Hobbit | 2 | 3 | 3 | 4 | 4 | 3  |
+|  Human | 3 | 3 | 3 | 3 | 3 | 3  |
+|   | S | I | W | C | D | Ch  |
+
+Table 2
+
+|  Elf | Dwarf  |
+| --- | --- |
+|  S — any | S — 9-18  |
+|  I — any | I — any  |
+|  W — 9-18 | W — any  |
+|  C — 9-18 | C — 13-18  |
+|  D — 9-18 | D — any  |
+|  Ch — 13-18 | Ch — any  |
+|  Hobbit | Half -elf  |
+|  S — 3-12 | S — any  |
+|  I — any | I — any  |
+|  W — any | W — 9-18  |
+|  C — 13-18 | C — any  |
+|  D — 13-18 | D — any  |
+|  Ch — any | Ch — 13-18  |
+
+|  Half-goblin/orc | Human  |
+| --- | --- |
+|  S — any | S — any  |
+|  I — 3-12 | I — any  |
+|  W — any | W — any  |
+|  C — any | C — any  |
+|  D — 3-12 | D — any  |
+|  Ch — 3-15 | Ch — any  |
+
+### IX CHOOSE CHARACTER CLASS
+
+### X PREVIOUS EXPERIENCE (multiply by % dice)
+
+|  Commoner | Merchant  |
+| --- | --- |
+|  01-85 nil | 01-70 nil  |
+|  86-96 x20 | 71-90 x20  |
+|  97-99 x30 | 91-96 x30  |
+|  00 x50 | 97-99 x50  |
+|   | 00 x70  |
+
+|  Gentleman | Noble  |
+| --- | --- |
+|  01-60 nil | 01-50 nil  |
+|  61-80 x20 | 51-70 x20  |
+|  81-93 x30 | 71-85 x30  |
+|  94-97 x50 | 86-92 x50  |
+|  98-99 x70 | 93-97 x70  |
+|  00 x100 | 98-99 x100  |
+|   | 00 x130  |
+
+The tables themselves should be self-explanatory; simply go straight through them, ignoring anything that isn't appropriate.
+
+I adjust nobility to the race. I know that in our campaigns the world is dominated by the humans. Therefore, a non-human cannot be higher than Earl.
+
+Either or both tables under RACE can be used. We both use Table 2. Table 1 has been used in the past. A variation of Table 2 can be used by substituting 9-18 wherever 13-18 appears, thereby making it easier to become a non-human. Also, when Table 2 (not a variant) is used, it may be possible to remove some of the restrictions pertaining to the various races. Rather than letting any player be an elf and then limit his advancement, simply limit the number of people who can be elves. This is done by placing the requirements on various features. (Anyway, whoever heard of an ugly elf?)
+
+To those who worry about letting a player start at higher than first level: It is a great help in keeping the low level parties alive. Anyway, if players don't deserve it, for some odd reason, they don't tend to keep themselves alive. A player who can never get himself past 1st level, is still going to get himself killed if he starts at 2nd; it will just take him longer.
+
+Now to run an imaginary player through the tables: His roll under I is a 97 = Noble. Under II, he rolls a 7 = Bastard. He rolls to see if his father is alive: 5 = yes, he is.
+
+Under III, he rolls a 95 = Well-to-do. Therefore his initial gold is 250 (-10% for bastard) with an allowance of 31. His skill class is E.
+
+Under IV, he finds that his father's occupation is to be rolled under Table 3: 42 = Interpreter. This is automatically one of the player's skills. He may now choose 3 from Group 1, 2 from Group 2 and 1 more from Group 3.
+
+Under VI, Table 1, he rolls a 92 = his father is a Duke. Table 2 is ignored. Table 3: he rolls a 52; looking under Duke he finds that his father is a courtier. He rolls to see if his father is an Adventurer (15% chance): 9 = yes.
+
+Under VII, he rolls a 63 and a 7. Looking under Noble, he finds that his father is a 4th level magic-user.
+
+He now goes to VIII and decides to use Table 2. He rolls his characteristics and, fit for nothing else, chooses to be a human.
+
+He now chooses his character class — cleric.
+
+Under X, he rolls an 89. Looking under Noble, he finds that his multiplier is 50. He again rolls the percentile dice, getting a 41. 41 X 50 = 2050. He starts the game as a second level cleric.
+
+These tables should take care of most aspects of a character. However, more tables can be added. Some may be wondering why each table is used, so we will give you a few reasons.
+
+In a human oriented society, it is very important to know in which social class the character belongs. It determines how the character should be treated (i.e., nobles are more honorable with nobles). Sibling rank is important; it dictates treatment from the character's parents.
+
+Instead of every character starting with 3 dice of gold, we feel that this amount should be determined by the wealth of the family; in a campaign there is always a minute chance of being an influential person (high noble or adventurer.) Of course, these tables are just suggestions and can be modified to fit each of your campaigns.
+
+### ADVANCE NOTICE
+
+### Metro Detroit Gamers proudly presents WINTERCON V GAMFEST
+
+continuing the largest amateur convention in the midwest, Detroit's 9th major con with special guests
+
+### GARY GYGAX, BRIAN BLUME and ROB KUNTZ of TSR HOBBIES Inc.
+
+### presenting
+
+A 100+ man D & D, a Boot Hill and a Lankhmar Tournament plus a question and answer D & D Seminar!
+
+|  The time: | December 3,4,5,1976  |
+| --- | --- |
+|  Admission: | Friday 5pm-11pm $1.00 Saturday 10am-11pm $2.00 Sunday 10am-9pm $2.00 All three days $4.00  |
+|  The place: | Oakland University, Rochester, Michigan  |
+|  The site: | Oakland Center Building at I-95 and Univ. Dr.  |
+
+General Features: Tournaments, Demonstration games, Open Gaming and others, Seminars, Gaming Items Auction, Opponent Locator Service, Game and Miniature Dealers, Food Available on the Premisis, Lodging Available on Campus, Door Prizes, (many) and Tournament Prizes: plaques and games.
+
+Lodging: $6.00 per person per night with double occupancy. You must register for lodging by Nov. 25, 1976.
+
+### Tournaments and Events:
+
+- 7 multi player board games
+- 3 two player board games
+- 7 role playing games
+- 4 adult games
+- 10 miniatures games and plus many more lot of spontaneous events
+
+Featuring: Dungeons and Dragons, 100 man and others, Empire of the Petal Throne, Boot Hill, Lankhmar, Kingmaker and Gladiators, Russian Civil War, World War Two Quadrigames, Monopoly and Risk, 1/285 Micro Armor, WWII Naval mini's, Diplomacy and War at Sea, Afrika Korps and Richtoffens War, CLS Napoleonic and JEB Civil War, Knights of the Round Table, Tolkien Fantasy and Starguard.
+
+### For further info contact:
+
+Bill Somers, 1654 Chandler, Lincoln Park, MI 48146.
+
+To reserve lodging write to:
+
+Dennis Daughtetee, 22608, West Rd., #204, Woodhaven, MI 48183.
+
+16

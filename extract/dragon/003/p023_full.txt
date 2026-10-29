@@ -1,0 +1,158 @@
+Vol. I No. 3 October '76
+
+The Dragon
+
+**1st Level**
+
+1. Detect Magic Neutralize Poison
+2. Detect Evil Cure Disease
+3. Detect Poison Purify food & water
+4. Detect Disease Slow
+5. Detect Invisible Haste
+6. Detect Phase Invisibility
+
+**4th Level**
+
+1. Stone-Flesh Raise Dead Fully
+2. Mind Blank Cure Insanity
+3. Energy Cure Paralysis
+4. Cure Lycanthropy Longevity
+5. Wake Spell Teleport
+6. Fly Size Control
+
+**2nd Level**
+
+Neutralize Poison
+Cure Disease
+Purify food & water
+Slow
+Haste
+Invisibility
+
+**5th Level**
+
+Raise Dead Fully
+Cure Insanity
+Cure Paralysis
+Longevity
+Teleport
+Size Control
+
+**7th Level**
+
+1. Sterilize
+2. Neutralize Gas
+3. Blade Barrier
+4. Remove Curse
+5. Remove Charm
+6. Cure Deafness
+
+**1st Level Healer Spells:**
+
+1. **Detect Magic:** same as magic-user spell of same name
+2. **Detect Evil:** same as magic-user spell of same name
+3. **Detect Poison:** A spell that allows user to determine if poison is being used within a 30' radius, and where. It will also tell what type poison.
+4. **Detect Disease:** This spell will tell user what disease is present (within 30' range)
+5. **Detect Invisible:** same as magic-user spell of same name
+6. **Detect Phase:** A spell to find secreted treasure hidden by out-of-phase equipment (spells); and to find creatures that are out of phase, duration 6 turns
+
+**2nd Level Healer Spells:**
+
+1. **Neutralize Poison:** same as clerical spell of same name
+2. **Cure Disease:** same as clerical spell of same name
+3. **Purify Food & Water:** same as clerical spell of same name
+4. **Slow:** same as magic-user spell of same name
+5. **Haste:** same as magic-user spell of same name
+6. **Invisibility:** same as magic-user spell of same name
+
+**3rd Level Healer Spells:**
+
+1. **Raise Dead:** same as clerical spell of same name
+2. **Cure Serious Wounds:** same as clerical spell of same name
+3. **Cure Blindness:** This spell will cure blindness incurred by any characters due to any cause (including curse)
+4. **ESP:** same as magic-user spell of same name
+5. **Animate Dead:** same as magic-user spell of same name
+6. **Strength:** same as magic-user spell of same name
+
+**4th Level Healer Spells:**
+
+1. **Stone-Flesh:** same as magic-user spell of same name
+2. **Mind Blank:** same as magic-user spell of same name
+3. **Energy:** use of this spell will restore one life level to a character who has lost one to a wraith or similar happenstance.
+4. **Cure Lycanthropy:** This spell allows user to remove the stigma of lycanthropy from anyone so afflicted.
+5. **Wake Spell:** This spell will waken anyone put to sleep through various means.
+6. **Fly:** same as magic-user spell of same name
+
+**3rd Level**
+
+Raise Dead
+Cure Serious Wounds
+Cure Blindness
+ESP
+Animate Dead
+Strength
+
+**6th Level**
+
+Imp. Cure Serious Wounds
+Clone
+Water Breathing
+Talks to Plants
+Speak with Animals
+Speak with Monsters
+
+**5th Level Healer Spells:**
+
+1. **Raise Dead Fully:** same as clerical spell of same name
+2. **Cure Insanity:** allows user of this spell to cure anyone of insanity
+3. **Cure Paralysis:** allows user of the spell to cure paralysis, or negate it in any effect.
+4. **Longevity:** Reduces 10 game-years from the game-age of the character this spell is used upon (note — this will counter the effect of aging caused by a staff of withering, ghost attack, etc.).
+5. **Teleport:** same as magic-user spell of same name
+6. **Size Control:** this spell will neutralize the effect of growth and shrinking potions or similar devices.
+
+**6th Level Healer Spells:**
+
+1. **Improved Cure Serious Wounds:** this spell will cure four 6-sided die worth of damage, with an addition of one per die (i.e., 8 to 24 pts.)
+2. **Clone:** same as magic-user spell of same name
+3. **Water Breathing:** same as magic-user spell of same name
+4. **Talk to Plants:** this allows user of this spell to talk to any plant
+5. **Speak with Animals:** this allows user of this spell to speak with any animal (up to the animal to decide to respond tho)
+6. **Speak with Monsters:** same as clerical spell of same name
+
+**7th Level Healer Spells:**
+
+1. **Sterilize:** this spell will cleanse any room of any infection, mold, slime, or nasty creatures, up to 5 hit die.
+2. **Neutralize Gas:** this spell will neutralize poisonous gases, tear or any other gases.
+3. **Blade Barrier:** same as clerical spell of same name
+4. **Remove Curse:** same as magic-user spell of same name
+5. **Remove Charm:** this spell remove and or negate a charm placed upon a character, once this spell is used upon him. Range 3"
+6. **Cure deafness:** this spell will cure deafness caused by any cause.
+
+## SCRIBES: NEW SPECIALIST DESCRIBED
+
+by David Mumper
+
+There hath been a new type of Specialist shown to exist. These are known as Scribes, and indeed have been hired for work by the Theurgist Merlin of Avalon who is called the Chicken Magician.
+
+Scribes are rather rare and expensive Specialists who have the ability to read and copy magical writing from Scrolls and Books of Spells into the Spell Books of Magic-Users and Clerics. Only Scribes may do this, for there exists a curse upon all magical writing which causes any but Scribes, who know the counter-spell, to go permanently and incurably insane (Remove Curse not-withstanding). Scribes may belong to any of two vocations; either they transcribe magical spells or clerical spells.
+
+Scribes are free-lance, which is to say they must be sought like any other Specialist. The cost for this is the same as for any other Specialist (100-600 gold pieces/week). The chance of finding a Scribe is 10%/week (cumulative), adjustments to be made by the referee based on generosity of offer, etc. When one is located, % dice are rolled by the referee to determine his alignment and abilities to be kept in a secret record.
+
+Magical: 01-70 = lawful
+71-90 = neutral
+91-00 = chaotic
+01-80 = lawful
+Clerical: 81-00 = chaotic
+
+|  Die Roll | Abilities | % Mistake | % Insanity  |
+| --- | --- | --- | --- |
+|  01-25 | 1-3 level spells | 25/75* | 35*  |
+|  26-50 | 1-5 level spells | 15/45* | 25*  |
+|  51-75 | 1-6 level spells | 10/30* | 20*  |
+|  76-85 | 1-7 level spells | 5/15* | 15*  |
+|  86-95 | 1-8 level spells | 2/6* | 10*  |
+|  96-00 | 1-9 level spells | 1/3* | 5*  |
+
+*when attempting veils above his abilities
+
+23

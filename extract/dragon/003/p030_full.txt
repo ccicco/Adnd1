@@ -1,0 +1,111 @@
+The Dragon
+
+Vol. I No. 3 October '76
+
+# **6TH LEVEL**
+
+**Extension III** — Same as other Extensions, but lowers resistance by 3.  
+ **Die Laughing** — (1 or 2) — Takes 3 turns to tell. Kills all under 8 hit dice. Others take ½ damage of total hit points. Takes victim 2 turns to die, or 2 turns in which he takes ¼ damage per turn (if he makes his saving throw). Range: 2”.
+
+**Uncontrollable Laughter** — (1 or 2) — Causes incapacitation for 10 turns. Affects 1 10th level type, 2 9ths, etc. NO saving throw. Range: 2”
+
+# **7TH LEVEL**
+
+**Killer** — (1 or 2) — Kills all under 12 Hit Dice. Takes 3 turns to utter. Those who make Saving Throws take ½ damage. Victim takes 2 turns to die, or takes ¼ damage per turn if saving throw is made. Range: 3”.
+
+**Ballbuster** — (1 or 2) — Takes 3 turns to utter. Renders victim incapacitated for 1-10 turns. Affects any thinking creature, no matter what level. NO Saving Throw. Range: 3”.
+
+# **8TH LEVEL**
+
+**Voice Projector** — Doubles range of any joke uttered. Duration: 4 turns.
+
+Jesters have the same chance as a Magic User to get a spell except you use their wisdom score as a base instead of their intelligence.
+
+## GenCon IX’s D&D Elimination Tournament
+
+by Bob Blake
+
+Several questions have been raised regarding why the tournament was designed the way it was.
+
+1) “Why were there no intelligent encounters?” Our goal was to have each group DMed the same, and I’m sure most would agree that 10 DM’s would run an encounter with the same Theurgist 10 different ways. There was no way to take into account all variables, hence no way to be sure each party faced the same circumstances. I therefore chose to delete intelligent encounters in this tournament.
+
+2) “Why were ‘useless’ spells such as Sleep and Charm Person included on the Spell Lists?” The Spell Lists were made up using percentage rolls for intelligence per **Greyhawk**. Not all the spells a Mage takes on **any** adventure are “useful” if he fails to encounter anything to use them on. Also, we were looking for how well the Magic Users prepared themselves by looking at the total spell mix they selected.
+
+3) “Choosing languages was useless, as nothing would talk. All monsters attacked on sight.” Again, this was done to maintain consistency among DM’s, and keep things as simple as possible.
+
+4) “Why only 100 entrants? You could easily have had 200!” Indeed true, but there were two limiting factors. One was physical space to put everybody. The other was the number of DM’s we had — 10. One favorable comment we had was that the size of each group was limited to five, one DM per group. This meant that our limit was 50 entrants per session, and we had time for but two sessions on Saturday. It would have been high impossible to hold sessions on Friday, as the DM’s had to be briefed to be sure all understood how situations were to be handled.
+
+5) “Why an individual rather than a team event?” At the outset of the design phase, we decided on an elimination event by individuals rather than teams because we wanted to gauge how well strangers could adapt to D&Ding together. A team event is not out of the question, of course, and plans for another tournament are now being made around a team concept.
+
+I would like to take this opportunity to thank all my DM’s, especially Dave Griggs, Bill Gammel, and Dave Emigh, who answered my plea for help in SR #7. Gentlemen, you were all superb.
+
+Also, thanks to Bob Kuntz, Dave Meggary, and Mike Carr of TSR Hobbies for their help, and especial thanks to Gary Gygax, who suggested we hold the tournament on the lawn behind Legion Hall instead of in Horticultural Hall, thereby getting us the space we needed.
+
+Plans are proceeding apace for a tournament for GenCon X in 1977. Check forthcoming issues of **The Dragon** for details.
+
+Anyone wishing a copy of the tournament run at Gen Con IX may write me. The preliminary round and the final round are $2.50 each, a copy of both is $5.00. You’ll get everything you need to spring this on your own D&D group! Send requests to: Bob Blake, R1 Box 47, Valparaiso, IN 46383.
+
+Finally, accolades to the winners. They were:
+
+Champion Fighter . . . . . Eric Ortega  
+ Champion Mage . . . . . Allen Hammack  
+ Champion Cleric . . . . . Stan Wood  
+ Champion Elf . . . . . Tony Svarenka III  
+ Champion Dwarf . . . . . Jeff Boyce
+
+CONGRATULATIONS!!
+
+### GenCon IX Final Update and Stategists Club Awards
+
+This years SC awards for “Creativity in Gaming” for 1975 were awarded as follows:
+
+**Best New Game** — **Empire of the Petal Throne** by **M.A.R. Barker**
+
+**Outstanding Designer** — **Prof. M.A.R. Barker**
+
+**Outstanding Writer** — **E. Gary Gygax**
+
+**Best Miniature Figure Release (Series)** — **McEwan “Heroes & Wizards”**
+
+**Fantasy Line**
+
+**Outstanding Wargame Publication: The Strategic Review**
+
+Miss Teenage Wisconsin, Jennifer Johnson, was on hand to add a touch of class to the ceremonies and presented all of the plaques.
+
+The Con itself went very well. We had more space and tournaments than ever, but also more people. Sad to say, lots of people were disappointed when they couldn’t play what they wanted. We had figured on more people than the previous year, but not nearly as many more as we had. Paid attendance was in the vicinity of 1300, with crowds of over 1000 on both Friday and Saturday.
+
+This year’s auction set all time records for goods sold. I “lucked” into the role of auctioneer and enjoyed myself immensely, at the cost of my voice and vocal cords for two days after.
+
+The organizers of GenCon wish to thank every person that attended; for the mob scenes that occurred, only one or two gamers lost their cool in all three days. On the debit side, this years crowd set new records for dirt and litter, necessitating a massive cleanup that lasted two days.
+
+We thought it was worth it; we’re proud of our “oldest and the best” reputation. GenCon X will be better yet: “See you in ’77!”
+
+## Combat Modifications for Dexterity
+
+by Steve Cline
+
+|  Dex. | Hit | Missile | Damage | Defense  |
+| --- | --- | --- | --- | --- |
+|  3-4 | -1 | -2 | -1 | -1  |
+|  5-8 | N | -1 | N | N  |
+|  9-12 | N | N | N | N  |
+|  13-14 | N | +1 | N | N  |
+|  15 | N | +1 | N | +1  |
+|  16 | +1 | +1 | N | +2  |
+|  17 | +1 | +2 | -1 | +3  |
+|  18 | +1 | +2 | +1 | +4  |
+|  51-75% | +2 | +3 | +2 | +4  |
+|  76-90 | +2 | +3 | +2 | +4  |
+|  91-99 | +2 | +4 | +2 | +5  |
+|  00 | +3 | +5 | +3 | +6  |
+
+Hit = to hit with hand held weapon
+
+## Don’t Miss TD #4
+
+### Empire of the Petal Throne
+
+battle reports, royal dispatches short story & more
+
+30

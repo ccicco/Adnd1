@@ -596,6 +596,7 @@
 #include "rules/fch.h"  // R892: the Fischer Hints magic items
 #include "rules/sys.h"  // R893: the systems round
 #include "rules/art.h"  // R894: the Ward Artificer devices items sweep
+#include "rules/wmn.h"  // R895: the Lakofka women round
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4643,6 +4644,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r895_batch.h"  // R895: R895 women magic audit
 #include "rules/audits/r894_batch.h"  // R894: R894 Artificer audit
 #include "rules/audits/r893_batch.h"  // R893: R893 systems audit
 #include "rules/audits/r892_batch.h"  // R892: R892 Fischer items audit

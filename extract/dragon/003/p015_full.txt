@@ -1,0 +1,237 @@
+Vol. I No. 3 October '76
+
+The Dragon
+
+# III SOCIAL RANK
+
+|  COMMONER | Initial | Allow. | Inher. | Skills  |
+| --- | --- | --- | --- | --- |
+|  01-25 Peasant | 10 | - | - | A  |
+|  26-40 Average | 30 | 1 | 15 | A  |
+|  41-70 Well-to-do | 60 | 5 | 50 | A  |
+|  71-00 Wealthy | 100 | 10 | 100 | A  |
+
+# MERCHANT
+
+|  01-25 Small | 50 | 5 | 100 | B  |
+| --- | --- | --- | --- | --- |
+|  26-60 Average | 100 | 10 | 150 | B  |
+|  61-80 Well-to-do | 120 | 15 | 200 | B  |
+|  81-95 Wealthy | 170 | 20 | 250 | B  |
+|  96-00 Very |  |  |  |   |
+|  Wealthy | 200 | 30 | 4 0 0 | C  |
+
+# GENTLEMAN
+
+|  01-20 Impoverished | 70 | - | 75 | B  |
+| --- | --- | --- | --- | --- |
+|  21-65 Average | 100 | 5 | 150 | C  |
+|  66-90 Well-to-do | 150 | 15 | 250 | C  |
+|  91-95 Wealthy | 200 | 20 | 350 | C  |
+|  96-00 Very |  |  | 600 |   |
+|  Wealthy | 250 | 35 |  | D  |
+
+# NOBLE
+
+|  01-20 Impoverished | 80 | - | 100 | D  |
+| --- | --- | --- | --- | --- |
+|  21-40 Poor | 120 | 10 | 150 | D  |
+|  41-85 Average | 200 | 25 | 300 | E  |
+|  86-95 Well-to-do | 250 | 35 | 450 | E  |
+|  96-97 Wealthy | 300 | 45 | 700 | F  |
+|  98-00 Very |  |  | 1000 |   |
+|  Wealthy | 400 | 60 |  | F  |
+
+"Initial" is the amount of money a player receives at start. It is multiplied by the player's level.
+
+"Allowance" is the sum of money a player's family sends each month for the first year or until the player reaches 3rd level, whichever comes first.
+
+"Skills" — The letter determines how many skills may be chosen.
+
+- A — one from Group 1
+- B — one from Group 1 and Group 2
+- C — one from each group
+- D — two from Groups 1 and 2 and one from Group 3
+- E — three from Group 1, two from Groups 2 and 3
+- F — four from Group 1, three from Groups 2 and 3
+
+# IV FATHER'S OCCUPATION
+
+|  If: | Roll on this table  |
+| --- | --- |
+|  Commoner 1 |   |
+|  Merchant 2 |   |
+|  Gentleman 3 |   |
+|  Noble 3 |   |
+
+The number obtained indicates which table under SKILLS should be used to roll father's occupation.
+
+# V SKILLS
+
+Percentage numbers are ignored when choosing a player's skills. One of a player's skills must be his father's occupation (unless prohibited.)
+
+Group 1
+01-10 Vagabond
+11-55 Farmer/Serf
+
+- 56-60 Tinker
+- 61-65 Miner
+- 66-70 Woodsman
+- 71-75 Sailor
+- 76-85 Fisherman
+- 86-95 Craftsman
+- 96-99 Soldier
+- 00 Adventurer*
+
+# Group 2
+
+- 01-35 Normal Merchant
+- 36-60 Ind. Craftsman
+- 61-65 Scribe
+- 66-70 Seaman
+- 71-75 Slaver
+- 76-80 Animal Trainer
+- 81-85 Shipwright
+- 86-90 Master Merchant
+- 91-95 Bird Trainer
+- 96-00 Adventurer*
+
+# Group 3
+
+- 01-02 Assassin/Spytracker
+- 03-05 Sheriff
+- 06-08 Magistrate
+- 09-11 Sage
+- 12-15 Alchemist
+- 16-20 Physician
+- 21-25 Artist/Sculpter/Musician
+- 26-30 Engineer
+- 31-40 Soldier
+- 41-45 Interpreter
+- 46-50 Writer
+- 51-55 Astronomer
+- 56-60 Don Juan
+- 61-65 Orator/Actor
+- 66-70 Dream Interpreter
+- 71-75 Biologist
+- 76-80 Seaman
+- 81-85 Gambler
+- 86-90 Astrologer
+- 91-00 Adventurer*
+
+# Crafts
+
+- 1 -Tailor
+- 2-Smith
+- 3-Fletcher
+- 4-Cobbler
+- 5-Horseman
+- 6-Weaver
+- 7-Carpenter
+- 8-Armorer
+- 9-Bowyer
+- 10-Mason
+- 11 -Cartographer
+- 12-Jeweler
+
+# Notes
+
+Group 1 — Peasant may not roll above 70; Well-to-do may not roll below 31; Wealthy may not roll below 52, with 52-55 equalling Adventurer.
+
+Group 3 — A player may not choose the first 5 skills: they are prohibited.
+
+Adventurers — No player may be an Adventurer. This possibility is taken care of under PREVIOUS EXPERIENCE. For fathers, roll on Table VII.
+
+Craftsman — Roll under Crafts for a father.
+
+Ind. Craftsman — Independent Craftsman: A craftsman who owns his own shop. A player would not own a shop, but would know a craft. Roll under Crafts for a father.
+
+Soldier — Player receives +1 on hit probability until he reaches 4th level.
+
+Interpreter — Character may know languages as if his intelligence was 3 higher.
+
+Orator/Actor — +1 when rolling random reaction of monsters.
+
+# VI NOBILITY
+
+# Table 1: Father's Title
+
+- 01-30 Knight
+- 31-60 Baron
+- 61-80 Count (Earl)
+- 81-90 Marquis
+- 91-95 Duke
+- 96-00 Royalty
+(Go to Table 2)
+
+Proceed to Table 3 (unless Royalty)
+
+(If a player is a 1st son and his father is dead, he receives his father's title, but not his position. Knighthood cannot be inherited.)
+
+# Table 2: Royalty minimum wealth
+
+- 01-30 Distant
+- 31-60 3rd Cousin
+- 61-80 2nd Cousin
+- 81-99 1st Cousin
+- Average
+- Well-to-do
+- Wealthy
+- Very Wealthy
+
+00 Immediate Family Initial: 1000, Allow: 100
+
+All of the above are traced from the Royal Family to the player.
+
+A child in the immediate family is never an orphan.
+
+If a player's Social Rank does not conform to the minimum wealth, it is immediately raised to that level.
+
+After rolling on Table 2, all but those in the immediate family return to Table 1 and reroll, ignoring 96-00. Immediately raise father's title one notch (Knight = Baron; Duke = Duke.)
+
+# Table 3: Father's Position
+
+|  Knight | Baron  |
+| --- | --- |
+|  01-40 1 | 01-40 1  |
+|  41-50 2 | 41-50 2  |
+|  51-90 3 | 51-80 3  |
+|  91-95 4 | 81-90 4  |
+|  96-00 5 | 91-95 5  |
+|   | 96-00 6  |
+|  30% A | 25% A  |
+
+|  Count (Earl) | Marquis  |
+| --- | --- |
+|  01-35 1 | 01-30 1  |
+|  36-45 2 | 31-35 2  |
+|  46-65 3 | 36-50 3  |
+|  66-80 4 | 51-80 4  |
+|  81-90 5 | 81-90 5  |
+|  91-00 6 | 91-99 6  |
+|   | 00 7  |
+
+|  20% A | 15% A  |
+| --- | --- |
+|   | Duke  |
+|   | 01-20 1  |
+|   | 21-25 2  |
+|   | 26-40 3  |
+|   | 41-72 4  |
+|   | 73-82 5  |
+|   | 83-95 6  |
+|   | 96-00 7  |
+|   | 15% A  |
+
+# Key:
+
+- 1 — Land Holder Only
+- 2 — Orator
+- 3 — In Army
+- 4 — Courtier
+- 5 — Sheriff
+- 6 — Magistrate
+- 7 — Advisor to the King
+- A — Adventurer*(this is a separate roll.)
+
+15

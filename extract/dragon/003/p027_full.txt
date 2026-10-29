@@ -1,0 +1,105 @@
+Vol. I No. 3 October '76
+
+The Dragon
+
+consider getting on a horse. And only then at great need.
+
+# **Dwarves Reactions to Others**
+
+To reflect their caution or moods in treating with others, roll their reactions with the following modifications:
+
+- Auto Attack — Goblins and Orcs
+- -2 to die roll — Sindar, Silvan Elves, and all men
+- -1 to die roll — All others, except those listed below
+- +0 to die roll — Hobbits and Noldor Elves
+- +1 to die roll — Dwarves of different Folks
+- +2 to die roll — Dwarves of the same Folk (note: they will never attack their own Folk)
+
+# **About Dwarves**
+
+Dwarves range in size from around four and a half to five feet in height. They are broad shouldered, quite strong and deemed very hardy. They reach maturity around the age of 50 and live to be about 250 years old. There is nothing more a Dwarf likes than gold, jewels, and treasure. Except, of course, a cavern of great beauty. Then nothing could compare. They will go out of their way to find these things, and will fight to keep them. They have a great hate for Orcs and Goblins and dislike Elves to a great extent. Insulting Elves is a hobby to them, as is chopping the heads off of Orcs and Goblins. They have their own rough system of honor and when an oath is given, it is never broken.
+
+# NEW D & D CHARACTER SUBCLASS: THE BERSERKER
+
+by John Pickens
+
+*(This new class is highly experimental. Although the requirements appear low, only the boys in the 16-plus club are likely to do well at this. Be Warned.)*
+
+Berserkers are a sub-class of the class Fighting Man who are human and NEUTRAL. Both their Strength and Constitution must exceed 9, while their Intelligence must be below 9. At level 1, their maximum allowed armor class is 6. They may use any magical items available to Fighters with the exception of armor and shields. In addition to any experience bonuses for strength, berserkers receive double points for kills until they earn their wereshape (see below). Berserkers may **never** develop psionic powers.
+
+Each berserker must become a shieldbrother in one of the following clans: Wererat, Werewolf, Wereboar, Weretiger, and Werebear. When the berserker earns his wereshape he will take that form when berserk, receiving all hit and damage bonuses. He does NOT receive any of the special characteristics of lycanthropes, though while in wereshape he may melee creatures vulnerable to magical weaponry. Insanity will always involve reversion to wereshape.
+
+Each clan has one Clanmaster, combat for this top spot being detailed under Monks and Druids in the various supplements. Shieldbrothers will always be friendly and help each other when possible. Failure to do so results in outlawry and open season on the outcast. Neutral lycanthropes of the clan type will not attack, though they may refuse aid. When the berserker earns his wereshape, he gains the ability to speak the lycanthropic language while in human form and communicate well enough empathetically with normal animals of his clan type to give simple commands which will be followed. At this level, horses will check reaction at -2 whenever he approaches.
+
+|  Clan | Advance as | Gain Wereshape | Gain Followers | Max Dice | Clanmaster  |
+| --- | --- | --- | --- | --- | --- |
+|  Wererat | Cleric | 6th Level | 8th Level | 9 | 11th Level  |
+|  Werewolf | Druid | 7th Level | 9th Level | 10 | 12th Level  |
+|  Wereboar | Druid | 8th Level | 10th Level | 10 | 13th Level  |
+|  Weretiger | Fighter | 9th Level | 11th Level | 11 | 14th Level  |
+|  Werebear | Fighter | 10th Level | 12th Level | 12 | 15th Level  |
+
+Since a berserker is careless of his person in battle, he relies on his gods to protect him from the fatal blow. Since the gods approve of brave deeds (we hope!), the more of them the berserker performs, the more protection he will receive. Therefore, for every two levels the berserker achieves, his armor class is increased by 1.
+
+# **SPECIAL ABILITIES AND RESTRICTIONS**
+
+- Level 1: Not allowed to hire anyone for anything. Ability to recognize alignment and clan of lycanthropes and berserkers on sight.
+- Level 4: Reduce chance of being surprised by 1.
+- Level 6: Ability to detect hidden and invisible enemies. Gains a 4th Level Companion who may be any Neutral Fighter type or Bard
+- Level 10: The berserker may hire others, but such hirelings are -2 on loyalty and may never have a rating higher than 15.
+
+At the appropriate level, the berserker will be joined by 2-12 Followers with a loyalty of 16-plus, one of whom must be a Bard of level 3-6. If killed, these followers may never be replaced. Use these tables:
+
+|  FOLLOWERS | LEVELS* | EXTRAORDINARY  |
+| --- | --- | --- |
+|  01-60 Fighter | 01-50 2nd Level | 01-40 Berserker (Shieldbrother)  |
+|  61-70 Magic User | 51-65 3rd Level | 41-65 Lycanthrope (Weretype)  |
+|  61-70 Magic User |  |   |
+|  71-80 Elf | 66-80 4th Level | 66-75 Druid, Level 3-7  |
+|  81-90 Dwarf | 81-90 5th Level | 76-85 Bard  |
+|  91-00 Extraordinary | 91-99 6th Level | 86-90 Ranger  |
+|   | 00 7th Level | 91-95 Hill Giant  |
+|   |  | 96-99 Stone Giant  |
+|   |  | 00 Two rolls, ignoring 00  |
+
+*Wererats 5%
+Werewolves/
+Wereboars 0%
+Were tigers +5%
+Werebears +10%
+
+# **BERSERKING**
+
+There is only a chance of a character berserking when the referee deems the conditions are suitable for the arousal of battle lust. The basic chance is 10% for a character to go berserk. A berserk attack may only be triggered once per melee.
+
+Add 20% if the berserker bites his shield (voluntary).
+
+Add 10% per round of melee (cumulative).
+
+Add 10% per Follower or shieldbrother he sees die.
+
+The death of the Companion causes an automatic berserk.
+
+# **Advantages while berserking**
+
+Intelligent opponents must check morale, if applicable (eg: A Balrog doesn't).
+
+All attacks are at +2 in addition to any strength bonuses.
+
+The berserker is immune to psionic attack.
+
+The berserker adds 6 to level or key check if wielding a magic sword.
+
+# **Disadvantages of berserking**
+
+A berserker may not withdraw from melee while berserk.
+
+A berserker remains berserk for as many melee rounds as he has constitution points, but the attacks at -2/-2 for the rest of the melee. If in wereshape, he will maintain it for the duration of the melee.
+
+If still berserk at the end of the melee, he has a 10% chance of turning on his friends until killed or the fit wears off. Deduct 1% per level to a minimum of 1% (0% for Clanmasters).
+
+The berserker must rest a complete turn after each fit.
+
+**EXAMPLE:** A Werebear berserker of Level 10 with a Strength of 16 and a Constitution of 10 will drop his weapons and attack as a Werebear when berserk. Hit probability is +3, damage is 2-4/claw and 3-9/bite (3-17/bug), and armor class is 2 (7-5). After ten rounds, he fights at -2, each claw doing 1 and biting at 1-6 (hug 1-14). Berserkers never cause lycanthropy.
+
+27

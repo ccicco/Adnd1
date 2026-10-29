@@ -1,0 +1,94 @@
+Vol. I No. 3 October '76
+
+The Dragon
+
+If the Scribe goes insane (detectable only by ESP, etc) the % mistake goes to 100%. Also, if the alignment of the Scribe differs from that of the employer, % mistake doubles in a lawful-chaotic/neutral relationship, and triples in a lawful/chaotic.
+
+For every 5 spells transcribed, the Scribe's ability rises by 2. When a mistake is made, the result when the employer first attempts the spell is at the discretion of the referee (i.e. a blind Wizard Eye), and mistakes may not be corrected.
+
+The fee for the Scribe is 1000-5000 gold pieces/month, but being free souls there is a 5% chance (cumulative) that the Scribe will leave each month, thus necessitating a new search. This chance is doubled in the event of an alignment difference.
+
+## Samurai
+
+by Mike Childers
+as modified by Jeff Kay
+
+A subclass of fighters, these characters may be of any alignment but tend generally to be neutral. For a character to be a Samurai he must have a dexterity greater than 15. He will preferentially carry the traditional pair of Japanese swords (daisho) and the Japanese composite longbow. Further, his armor will always be such that it will optimize speed and protection, with protection being sacrificed for speed if necessary. If a samurai's Katana (long sword) is taken from him, he will either pursue a vendetta against the thief (or the thief's employers) or commit seppeku. The exact actions are very dependent upon the situation and should be mutually agreeable between the player and gamemaster.
+
+Swords made in the manner of the Japanese blades are special, though non-magical. A samurai of average intelligence or greater (9+) will be able to identify blades of Japanese type manufacture. With a higher than average intelligence (13+) a samurai can tell the exact type and character of a Japanese type blade by examination. The different quality blades are listed below:
+
+KATANA (long sword): Blade approx. 30", weight approx. 3 lb.
+
+# CHANCE OF CRITICAL HIT
+
+|  HIT MODIFIERS & DAMAGE | ABOVE "TO HIT" NUMBER | AUTO - MATIC ON ROLL OF | ENCUM BRANCE | VALUE IN GP  |
+| --- | --- | --- | --- | --- |
+|  0 | 8+ | 20 | 50 | 18  |
+|  +1 | 7+ | 19 & 20 | 45 | 240  |
+|  +2 | 6+ | 19 & 20 | 40 | 480  |
+|  +3 | 5+ | 18, 19 & 20 | 40 | 960  |
+
+WAKIZASHI (short sword): Blade approx. 24", weight approx. 1¾ lb.
+
+|  0 | 8+ | 20 | 28 | 16  |
+| --- | --- | --- | --- | --- |
+|  +1 | 8+ | 20 | 25 | 200  |
+|  +2 | 7+ | 19 & 20 | 23 | 400  |
+|  +3 | 7+ | 19 & 20 | 23 | 800  |
+
+All of these lose one step in the hands of a non-samurai, except that the hit and damage modifiers may not be less than zero. The swords may be used two-handed or one-handed but lose one step when used single-handed (with the same minimum as in the hands of a non-samurai). Both may be employed at the same time, one in each hand, by the samurai as he has the required dexterity above 15. They may be employed against the same or different targets.
+
+Whenever the samurai scores the necessary number above his "to hit" number he has struck a critical blow. He then rolls a pair of percentage dice and consults the following table:
+
+- 01-80 25% of Max Hit Points or 6 hit points (whichever is greater) and the loss of a limb (1 = right arm, 2 = left arm, 3 = right leg & 4 = left leg).
+- 81-95 50% of Max Hit Points or 12 hit points (whichever is greater) and a major body hit (no additional damage other than hit points).
+- 96-00 100% of Max Hit Points due to decapitation or other instant kill.
+
+A samurai adds one point to his dexterity at each of the following experience levels: 8,000 - 64,000 - 184,000 - 368,000 - 616,000.
+
+Japanese style armor is closely related to European plate in protective value, but is lighter (45 pounds max) and less restrictive. The trunk, upper arms, and hips are covered by a series of small overlapping plates laced together. The lower arms, lower legs and feet are covered by a mixture of chainmail and plate. The neck, armpits and inside thighs have less protection than with European chainmail. There are also several grades of armor which are cost-related. The following table provides specifics for Dungeons and Dragons:
+
+|  GRADE | ARMOR CLASS | ENCUMBRANCE | VALUE IN GP  |
+| --- | --- | --- | --- |
+|  E | 6 | 400 | 40  |
+|  D | 5 | 400 | 75  |
+|  C | 4 | 575 | 150  |
+|  B | 3 | 675 | 300  |
+|  A | 3 | 625 | 600  |
+
+A samurai very seldom used a shield.
+
+A further ability of the samurai is unarmed combat. The present sport of judo closely resembles the knowledge and techniques that these fighters had at their disposal. The judo techniques were generally reserved for use against unarmed opponents unless necessity dictated otherwise. Judo may be used by a samurai only if he has no weapon in his hands. When using judo, a hit indicates that the opponent has been thrown and it will take the opponents 1 or 2 melee turns to recover his feet. (NOTE: This assumes 10 second melee turns, adjust accordingly). If a roll of 19 or 20 is made the samurai may choose to score 1 to 4 points of damage on the opponent. For every 4 levels advanced the probability of causing damage increases by 5% (eg — a 4th level samurai does 1-4 points of damage on a 18, 19 or 20; a 8th level does the damage on a 17, 18, 19 or 20; etc.). On a roll of 20 a samurai may elect to subdue his opponent. For every 6 levels advanced the probability also increases by 5% in the same manner as inflicting damage.
+
+The Japanese style composite or longbow (Yumi) may be fired standing, kneeling or on horseback. The weapon modifiers are as follows:
+
+# DEFENDER'S ARMOR CLASS
+
+|  Yumi(21) | 2 | 3 | 5 | 6 | 7 & 8 | 9  |
+| --- | --- | --- | --- | --- | --- | --- |
+|   | -1-2-4 | 0-1-4 | +2 | +10 | +3 | +20  |
+|   |  |  |  |  | +4+2+1 | +4+3+2  |
+
+Cost 75GP
+
+Encumbrance 50 GP
+
+20 Arrows cost 5GP
+
+Japanese quiver costs 5GP Encumbrance 75
+
+## THE DRAGON Needs Authors and Artists!!
+
+We'll pay at 1 cent/word, minimum, for any articles or stories published; more for top quality. Art fees can be discussed with potential artists. Need some spare cash? All manuscripts must be typed, double-spaced, and accompanied by SASE if return desired. We assume no liability for unsolicited material in any event. It is recommended that if art originals are sent, they be registered or sent via UPS. Pen and ink are desired, though washes and color are used when appropriate, by commission. Artwork can be commissioned in advance for specific articles or covers.
+
+## The Articles of War
+
+2525 Delaware Ave., Buffalo
+
+M-F: 6-9 SAT: 10-? SUN: 1-?
+
+GAMES, FIGURES, RULES; MODELS
+
+DUNGEON OPEN EVERY FRIDAY
+
+25

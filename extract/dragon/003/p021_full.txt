@@ -1,0 +1,59 @@
+Vol. I No. 3 October '76
+
+The Dragon
+
+from a gaming viewpoint, no matter how good (or bad) it is.
+
+The game reviews could be more complete. For example, WHITE BEAR, RED MOON has a very unusual combat system which promotes the go-for-broke battle. The entire game can, and often does, depend on the result of a single die roll in a battle involving literally dozens of units. The "Gyp Factor" in the game is very high. But none of this is mentioned in the review. Again, there are no zones of control in CITADEL. A unit must enter the square in which an upside-down counter is placed in order to "discover" it, and the rules specify that every upside-down counter must be accessible to the heroes without the necessity of checking any other counter. Using the same amount of space, the reviewer could be more accurate.
+
+I respect Wes Ives' work and his GMing, but I wonder if his system puts too much stress on die rolls and not enough on the players controlling the characters involved. My philosophy has been to avoid luck factors whenever possible, and while his system reduces the judgment load on the referee, it increases the amount of luck present in the game. Players are handicapped enough by their ability rolls as it is.
+
+Finally, I cannot understand how Smith's "Three Kindreds of the Eldar" got past the editors. Obviously it is intended to be based on Tolkien's work, but it shows considerable confusion and inaccuracy. It seems pretty bad for the game, too, largely in the 50% increase in abilities of a Noldorin magic-user. The necessary information is available in *Lord of the Rings* and *Guide to Middle Earth*, and one must wonder what Smith was using. There are two basic types of elves, Silvan or east-elves who may never leave Middle Earth, and the Eldar or west (high)-elves. The Eldar divided into two groups, the Sindar, who stayed in Middle Earth, and the Eldar proper, who journeyed over sea to Valinor early in the First Age. The only difference between the two is that some stayed and some went; all have the right to go over sea when they wish. Of the three kindreds of the Eldar, only the Noldor are named. Most of the elves who returned to Middle Earth to attack Morgoth were of the Noldorin kindred, but there may have been other kindreds involved, and other Noldor may have remained in Middle Earth throughout the Age — in other words, some Noldor were Sindar, and others Eldar proper. After Morgoth was overthrown, all the Eldar proper in Middle Earth, including the Noldor, were permitted to return to Valinor. Galadriel was the only exception. Some chose to tarry in Middle Earth a while, and at the same time many Sindar went over sea. Some of the Eldar proper withstood the call of Valinor for two more ages, even after having been there once. Those Eldar who remained in Middle Earth after the First Age, including Sindar and Eldar proper, often ruled over Silvan elves. It is possible to justify a difference between Eldar proper and Sindar because the former have lived in Valinor and the latter have not (yet), there is no evidence for this. The provision for Silvan elves going over sea is ridiculous — they never did. The chances given by Smith for other elves to go over sea are much too high. The Eldar proper always yearned for Valinor, but some remained in Middle Earth thousands of years. The Sindar, once they saw the sea, also yearned for the West; but Legolas, our example, withstood the call for 120 years, essentially forever in a D & D campaign. The requirement that Noldor (meaning Eldar proper, I guess) must do a great deed is also ridiculous. Only Galadriel was exiled after Morgoth fell, and no other elf. Before the end of the War of the Great Jewels, it was the Eldar proper as a group who must do a great deed in order to redeem themselves, not as individuals, and not Noldor only. Galadriel may have faced a similar requirement later, but she was a unique individual. Finally, the 1.5 range and effects advantage of
+
+Noldorin magic-users in Smith's system is much too large and unbalances the game, with no justification from the source. The system below follows Tolkien more closely and fits better with a balanced campaign.
+
+There are no ability requirements for Silvan elves. These have all powers listed in D & D and, in addition, are immune to disease and to aging effects, such as a Staff of Withering, because they are naturally immortal. Silvan elves may advance to 8th level fighter (9th with 18 strength) and 4th level magic-user (5th with 18 intelligence). They may be Lawful or Neutral and are never evil.
+
+A character must have at least average abilities in all six categories, and a total of at least 63, in order to be one of the Sindar, and in addition, a minimum 13 wisdom and a total of 67 in order to be one of the Eldar proper. (The addition is intended, to reflect gains acquired in Valinor — one might say the Eldar proper are closer to purity than the Sindar, but the difference is added to make the game more interesting and is not "realistic.") A Sindarin elf may advance to 8th level magic-user (9th with 18 intelligence) and 4th level fighter (5th with 17 strength, 6th with 18 strength). One of the Eldar proper may advance to either 11th level magic-user (maximum regardless of intelligence) or 11th level fighter (maximum regardless of strength), but not both. The player must choose one path or the other when he becomes one of the Eldar proper.
+
+In addition to Silvan elf powers, the Eldar (Eldar proper and Sindar) have these additional powers: 1) they may learn one language per intelligence point, but do not begin with knowledge of orc, gnoll, hobgoblin; 2) they can calm/control their own animals, and can communicate simply with small birds and other innocuous creatures (no monsters); 3) they may speak mind-to-mind with each other, range 2½ per level of the more experienced; 4) they have keen eyesight (treat as two power binoculars or microscope); 5) they have True Sight: +1 per level vs. phantasmal forces, see through illusions 5% per level, see the true shape of a polymorphed or shape-changed being 3% and 1% per level respectively (and optionally, see hidden (but not invisible) enemies 1% per level (shadows, Blending, Beguiling). When they see through an illusion or see a true shape, they will be unaware that the illusion or false shape exists. For example, an Eldarin elf of the 5th level would have a 15% chance of seeing a polymorphed ogre mage as an ogre mage rather than as a human, but if he succeeds, he would not even know that the ogre was polymorphed.
+
+All Eldar and Half-elves are Lawful and good in this world. Half-elves have the same requirements and powers as Eldar proper, but advance as specified in GREYHAWK.
+
+For convenience, one can refer to Eldar proper as Noldor, but this is not accurate. A realistic chance for going over sea is one in one thousand per year for Eldar proper, and one in one hundred per year for Sindar once they have seen the western ocean, but one in ten thousand before then. Do not roll at all until the elf has reached his maximum level.
+
+Lewis Pulsipher
+
+*After receiving and reading this letter, I felt it only fair to let Larry answer the technical side of this letter. I know Larry to be well versed in Tolkien lore, and would use him as a source anytime. I'll respond to some of the charges/complaints after Larry. — Ed.*
+
+"Beyond the Wizard Fog"
+
+Tim,
+
+Here it is:
+
+As to Lew's criticism of my 'simple' system of dealing with D & D elves, I must disagree with him on several points. First, a 50% increase in the Noldor's abilities is not too much in the light of only a 10% chance of being a Noldor. Second, my sources were Lott and GME. Then also, it does not state in either source that the Silvan elves were not allowed across the sea, but that many did not wish to go. They do however, leave you with the feeling that some did cross. In Lew's favor I will say that the Silvan elves are not Eldar, but were placed on the chart as a ratio factor in comparison with the Sindar and Noldor elves.
+
+Now, it's Lew's turn to be confused. The Eldar are divided into three groups, these are: Noldor — High Elves, Deep Elves, the Exiles (all the same); Sindar — Grey Elves; — Sea Elves (listed in Guide to Middle Earth).
+
+And, of course, then there are the Silvan Elves (listed as Wood and East Elves). All are separate, no Noldor are Sindar Elves.
+
+After Morgoth was overthrown, not all of the Eldar were permitted to return (read Appendix B), you will find Gil-galad listed as the King of the Noldor in Exile.
+
+The reasons for making the chances of crossing so high is (1) Characters have a tendency of not playing Elves like elves, (2) It fits inside the D & D scope of play to allow a chance of them leaving, if you use Lewis % chance of leaving, you might as well not bother as it is too small. Overall, if you want to know about Elves, read all sections referring to them in Guide to Middle Earth for the proper view of things. I simplified things, Lew comes right out and confuses the matter even more by giving statements about the Eldar that are false. I wonder what sources HE was using.
+
+As to his way of running the different elves in D & D, it is another way, and I will leave it up to the players as to which one to use. One note however, is that I like additional powers given to the Eldar and would advise that they be used no matter what system you use.
+
+Happy Dungeoning, Larry Smith
+
+*Without ads, there would be no DRAGON: without art, it would be dull and lifeless. THE DRAGON is neither an APA-zine nor a fanzine; we are a pro-zine. Ads pay the freight. To judge from the first letter, some people really like the ads. Numerous surveys have verified this.*
+
+*In regard to fiction, please read this issue's DRAGON RUMBLES.*
+
+*In regard to reviews, I suggest you read Intelligence Report in LITTLE WARS, Vol. I, #2. The PRESS RELEASE column is syndicated, and provided as a service. As this magazine completes its "shakedown," we plan to do more extensive reviews by staff personnel.*
+
+*Isn't it amazing how two people can use the same data and yet draw such widely differing conclusions? — Ed.*
+
+[Extracted image: /home/user/tool-results/ocr/bd9ac972-6d04-4fa2-9f6d-36d91460468a/images/021-001-img-23.jpeg]
+
+21

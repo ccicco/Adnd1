@@ -18,7 +18,7 @@ Dragon pins ride a VARIANT layer with provenance, never core canon.
   (30), the Bulette lore pin (19)** - the combined round
 - [x] **Aronson: mighty magic miscellany, the illusionist deltas**
   (folios 23-25) - the deltas round
-- [ ] **The Ward Artificer devices** (folios 8-10) - the
+- [x] **The Ward Artificer devices** (folios 8-10) - the
   un-parked items sweep round
 
 4 boxes, 0 closed, 3 open at the R887 authoring. The R887 round ships

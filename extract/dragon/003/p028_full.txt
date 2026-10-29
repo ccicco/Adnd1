@@ -1,0 +1,113 @@
+The Dragon
+
+Vol. I No. 3 October '76
+
+## Two Penultimate Sub-Classes
+
+by Gordon Davidson
+
+An Idiot is obtained by paying 160 gold pieces at the beginning of the game or at a city, if one is present (50% chance). The player also has the opportunity to buy a midget for 200 gold pieces. The midget adds 5% to all base chances.
+
+The Idiot's purpose is to confuse the enemy so that it will run away, attack a wall, commit Hari Kari, eat all its treasure or some related act, just so it will not attack the troop (confusion lasts 3 melee turns). There is a 15% chance that the confused monster will attack anyhow.
+
+### Chances of Confusing
+
+|  Monster level | chance of confusing (at first level)  |
+| --- | --- |
+|  1 | 65%  |
+|  2 | 55%  |
+|  3 | 45%  |
+|  4 | 35%  |
+|  5 | 20%  |
+|  6 | 10%  |
+|  7 | 05%  |
+
+Idiots raise levels and become more effective with higher level monsters but less effective with the lower level monsters. This can be attributed to the more refined idiocy that is accompanied by the more experience.
+
+Chart comparing the Idiot level to chances of confusing —
+
+#### Idiot Level
+
+|   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  M1 | 1 |  |  |  |  |  |  |  |  |  |  |   |
+|  o e | 2 | 55% | 57% | 53% | 51% | 49% | 47% | 45% | 43% | 41% | 39% | 36%  |
+|  n v | 3 |  |  |  |  |  |  |  |  |  |  |   |
+|  s e | 4 | 35% | 37% | 39% | 41% | 43% | 45% | 47% | 45% | 43% | 41% | 40%  |
+|  t l | 5 |  |  |  |  |  |  |  |  |  |  |   |
+|  e | 6 | 10% | 12% | 14% | 16% | 18% | 20% | 22% | 24% | 26% | 28% | 30%  |
+|  r | 7 |  |  |  |  |  |  |  |  |  |  |   |
+
+An Idiot's prime requisite is constitution (so he can stay goofy). Can trade 3 for 1 with Wisdom 4 for 1 with Intelligence
+
+An Idiot can take his Wisdom and Intelligence down to 6. For each constitution point above 12 add 1 point on chances to confuse.
+
+There is only one Idiot per expedition. He can wear full armor but for each level above level 9 he loses 5% effectiveness. The opposite occurs with cursed armor. The Idiot may not employ any Weapons though he may carry any articles. He may play with fire
+
+After each confusion attempt (Tantrum) the Idiot must rest 2 days and be paid 10 gold pieces on the spot to Play with; otherwise he will hold his breath until he turns blue and won't play. A wounded Idiot confuses at ½% and must wait a week before trying again.
+
+The Idiot melees as a man -2 and delivers at best 1 point damage.
+
+### Exceptionally BAD Abilities
+
+Idiots are not known for their deftness but rather for their clumsiness. I take this into account.
+
+When rolling for dexterity:
+
+an above average score on the dice = an Idiot of average dexterity
+
+an average score on the dice = an Idiot of below average dexterity
+
+a below average score on the dice = a roll on the Exceptionally BAD Abilities chart.
+
+Dexterity of an Idiot means his ability to hold things, walk without falling, dropping off cliffs, tie knots, untie knots, and the like. The chance number shows his chances of falling, etc.
+
+01-50% = 3 out of 10 chance  
+51-75% = 5 out of 10 chance  
+76-90% = 7 out of 10 chance  
+91-00% = 10 out of 10 chance,
+
+meaning that every 100 feet the Idiot will trip and fall, dropping everything that he's carrying with a 1 out of 6 chance that they'll break. For each fall there is also a 2 out of 6 chance that the Idiot will get a bloody nose and a 1 out of 10 chance that he'll break an arm.
+
+Normal chances for falling =  
+Average dexterity = 1 out of 10 chance  
+below average = 2 out of 10 chance
+
+### LEVELS
+
+|  Dummy = | 0  |
+| --- | --- |
+|  Dope = | 1001  |
+|  Dolt = | 2623  |
+|  Dullard = | 6157  |
+|  Cluck = | 9738  |
+|  Klutz = | 11,432  |
+|  Cretin = | 19,832  |
+|  Weirdo + | 30,876  |
+|  Nut = | 61,423  |
+|  Fool = | 88,749  |
+|  Imbecile = | 120,456  |
+|  Idiot = | 200,101  |
+
++200,001 additional points for each level above Idiot.
+
+## THE NEW CATEGORY: JESTERS!
+
+by Charles Carner, William Cannon & Pete Simon
+
+Jesters are amusing little fellows who attempt to defeat their enemies by making them laugh (usually). It is a difficult and specialized category to qualify for, since there are three prime requisites: INTELLIGENCE (15 or better), DEXTERITY (15 or better), and CHARISMA (6 or less). Jesters are always neutral or chaotic. Dwarves, because of their stunted height, make the best jesters. They can progress infinitely in the category. Hobbits are limited to 10th level advancement; Elves can go only to 6th level (Village Idiot). Men can reach only 5th level (Fool), and other types can reach but 4th level (Comic). Jesters are not allowed to wear any armour, but they can be thieves as well as funnymen. They use a 4-sided hit die, with a maximum of 10 dice. After that, add +1 per level. Due to their specialized status, they are limited to the following weapons:
+
+All weapons with an * are magical, all weapons except the dagger can only be used by a Jester.
+
+### WEAPON
+
+*Smelly sock (can be swung or thrown  
+Dagger  
+Acid-squirting flower
+
+### EFFECT
+
+stuns 1-4 turns Save vs poison  
+1-6 pts., Range 3'
+
+28

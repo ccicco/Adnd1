@@ -1,0 +1,73 @@
+Vol. I No. 3 October '76
+
+The Dragon
+
+|  Woman's Race | Male's Race |   | Orcs | Hobbits | Dwarves  |
+| --- | --- | --- | --- | --- | --- |
+|   |  Men | Elves  |   |   |   |
+|  Elf | 10 | 11 | 10 | 10 | 10  |
+|  Woman | 11 | 12 | 11 | 12 | 12  |
+|  Hobbit | 12 | 14 | 13 | 11 | 12  |
+|  Orc | 15 | 20 | 11 | 14 | 17  |
+|  Dwarf | 13 | 15 | 14 | 13 | 11  |
+
+Women with a lower beauty score than given in the chart can not seduce the given man of the other race.
+
+For Thieves add 2 to each score. For Fighters add 4 to each score.
+
+Note that Female orc thieves can not seduce an elf nor can a fighter. The spell enchants the victim. He will remove his armor and lay down his weapon(s) (only talismans & Rings will not be laid aside) and attempt an encounter with the lady. While so enchanted he will defend as with no armor-1, will attack at 3 levels lower (use subtractions if he is a level 1, 2 or 3 figure). If weapon characteristics are used (per GREYHAWK) also subtract -5 from his die roll. He is at this lower rate of ability for two full turns if a first level seduction succeeds. On the turn after the seduction spell wears off he may try to escape and retrieve his weapon (but not his armor save for shield or magic helm). Cast a 20 sided die: 1-10 is locked in melee (this is with ANY foe who attacks while charmed unless he drives off/kills the attacker(s)), 11-15 obtain weapon but attack at 1 level below normal for next two turns, 16-20 obtain weapon (and shield/helm) and fight at full ability. Only if unmeleeed may he don his armor again! He is attackable by ANYONE while under the spell of seduction — range 6' — 1 figure at a time (please!)
+
+Duration of a Seduction spell:
+
+|  Level of Magic User | Seduction lasts  |
+| --- | --- |
+|  1 or 2 | 2 turns  |
+|  3 or 4 | 1+ (1-2) turns  |
+|  5 or 6 | 1+ (1-3) turns  |
+|  7 or 8 | 2+ (1-3) turns  |
+|  9 or 10 | 3+ (1-4) turns  |
+|  11 or 12 | 3+ (1-6) turns  |
+|  13 or 14 | 4+ (1-6) turns  |
+|  15 or 16 | 4+ (1-8) turns  |
+|  17 or 18 | 5+ (1-8) turns  |
+
+**Saving Throws** against seduction. The Saving Throw is based upon **seduction level** (spell # — not level of seductress). **Beauty score**, **Wisdom** of person being seduced, and **type** of figure being seduced.
+
+Sum seduction level and beauty scores.
+
+Subtract the Wisdom of the Target Figure and add that product to a 20 sided die roll.
+
+A Fighter needs a score of 13 or higher to be saved (That is NOT laid — is that being saved??)
+
+A Thief needs a score of 12 or better to be saved
+
+A Paladin needs a score of 10 or better to be saved
+
+A Magic User needs a 9 or better to be saved
+
+A Cleric needs an 8 or higher to stay celibate.
+
+### Charm men
+
+Charm men is used versus hirelings and low level fighters. Thieves and Magic Users (it is ineffective on clerics). The men affected are those with 3 or fewer hit dice for Charm Men I, 4 or lower for Charm Men II and 5 or lower for Charm Men III. The Charmed Men will either 1) attack men with more hit dice if those men are within 12' or 2) become catatonic for:
+
+|  Charm Men I | 3+ 1-4 turns | 4 + (1-4) affected  |
+| --- | --- | --- |
+|  Charm Men II | 4+ 1-6 turns | 6+ (1-6) affected  |
+|  Charm Men III | 5+ 1-8 turns | 8 + (1-8) affected  |
+
+Catatonia occurs if no figure with more hit dice (or unaffected men with fewer hit dice — weakest figures are always affected first) is within
+
+12' of the charmed man (men). The Spell's range is 16'. Men so charmed, if and only if hirelings, may be taken over by the Charmer after 2 turns of catatonia. A figure with more Hit Dice (The captain of the Hirelings, their Boss, etc.) may attempt to prevent the Charm through the use of his Charisma. his Charisma score must be equal or greater than the Charmer's Beauty Score. Cast an 8 sided die and add the difference (if any) between Charisma and Beauty scores. A 6 or higher will dispel the Charm. Note: The stronger figure(s) must be with the weaker figures at the time the charm is cast. His Charisma can not break the Charm once it is in effect but the saving throw can prevent the Charmer from taking over the men. If she does not take them over they will stay in a state of catatonia for the full number of turns. Magic Users require a Beauty Score of 11 to Charm Men, Thieves 13 and Fighters a 16.
+
+### Charm Humanoid Monster
+
+This spell may be used on the following male monsters: Hobgoblins, Ogres, Trolls, Giants, Mummies, Vampires, Gargoyles, WereWolves (either shape), Werebear (man only), Lizard Men and Centaurs. The Charmer must have a beauty score of 11 or higher for Magic Users and a 13 or higher for Thieves or Fighters.
+
+The effect of the Charm is to prevent battle. The monster will disarm his victim but not try to harm/kill her. If the Charmer tries to use her weapon(s) and does not proffer it she may break the spell and he will try to kill her. The Charmed male monster either 1) Will become catatonic for 1-4 turns only if not attacked by anyone. Any attack may break the spell, 70% of breaking it. 2) Disarm and carry off the woman to his lair. The spell will last indefinitely. If she tries to fight an 8 or higher on a 20 sided die will mean that he'll try to kill her or if a 9+ he will try to grapple her and may harm her (50% chance).
+
+Sum Beauty and Spell level, subtract his level and add to a 20 sided die roll. A 12-16 he will carry her off. 17+ is catatonia. Note: Vampires,
+
+[Extracted image: /home/user/tool-results/ocr/bd9ac972-6d04-4fa2-9f6d-36d91460468a/images/009-001-img-9.jpeg]
+
+9

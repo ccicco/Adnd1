@@ -1,0 +1,120 @@
+Vol. I No. 3 October '76
+
+The Dragon
+
+Weapon
+
+Effect
+
+|  Pillow (swung only) | bursts on 1-2 (6-sided) blinds 1" diameter for 3 turns. If no burst, stuns 1 turn as Morningstar  |
+| --- | --- |
+|  Jester stick | as Morningstar  |
+|  Laughing gas balls (thrown) | Range 30' uncontrollable laughter 3 turns save vs. Gas  |
+|  Pies (thrown) | Range 20' blinds 1-4 turns  |
+|  *Dirty underwear (thrown or swung) | Range 10' stuns 1-6 turns; Save vs. poison  |
+|  Tomatoes or rotten fruit (thrown) | Range 30' blinds 1 turn  |
+
+INTELLIGENCE is what the jesters are dealing with when they battle the defender, so a new "Saving Throw" chart is needed for combat with them. The level of the man battling with the jester is inconsequential when rolling saving throws; intelligence is the only factor.
+
+TABLE #1 (For Jokes aimed at high intellects)
+
+|  INTELLIGENCE | SAVING THROW |   |
+| --- | --- | --- |
+|  1-3 | 4 |   |
+|  4-6 | 6 |   |
+|  7-9 | 8 | Failure to make total or above indicates attack having full effect.  |
+|  10-12 | 10 |   |
+|  13-15 | 14 |   |
+|  16-17 | 16 |   |
+|  18 | 18 |   |
+
+TABLE #2 (For jokes aimed at those with low intelligence)
+
+|  INTELLIGENCE | SAVING THROW  |
+| --- | --- |
+|  1-3 | 19  |
+|  4-6 | 16  |
+|  7-9 | 14  |
+|  10-12 | 11  |
+|  13-15 | 9  |
+|  16-17 | 7  |
+|  18 | 5  |
+
+EXP
+PTS LEVEL TITLE
+
+|   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  2000 | 2 | 1 |  |  |  |  |  |   |
+|  4000 | 3 | 2 |  |  |  |  |  |   |
+|  8000 | 4 | 3 | 1 |  |  |  |  |   |
+|  16000 | 5 | 4 | 2 |  |  |  |  |   |
+|  32000 | 6 | 4 | 2 | 1 |  |  |  |   |
+|  64000 | 7 | 4 | 3 | 2 |  |  |  |   |
+|  128000 | 8 | 5 | 4 | 3 | 1 |  |  |   |
+|  228000 | 9 | 5 | 4 | 4 | 2 |  |  |   |
+|  328000 | 10 | 5 | 5 | 4 | 3 | 1 |  |   |
+|  428000 | 11 | 6 | 5 | 5 | 4 | 2 | 1 |   |
+|  528000 | 12 | 6 | 5 | 5 | 5 | 3 | 1 |   |
+|  628000 | 13 | 6 | 6 | 5 | 5 | 4 | 2 | 1  |
+|  728000 | 14 | 7 | 6 | 6 | 5 | 4 | 3 | 2  |
+|  828000 | 15 | 7 | 6 | 6 | 6 | 5 | 4 | 2  |
+
+JOKES
+1ST LEVEL
+
+Giggle Spell — (1 or 2) — Affects thinking creatures of less than 3 hit dice. Causes laughter for 1 turn. Victims are -4 to hit others on attacks while laughing. Range: 2".
+
+Pun — (1) — Causes attacker to pause and say "Wha-a?" Lasts for 1 turn. Victims may not attack in that turn. Range: 2".
+
+Funny Face I — (2) — Affects 10 1st level types, 5 2nd, or 1 3rd. Causes laughter for 1 turn. No attack possible (by victim) in that turn. Range: 2".
+
+Body Contortion I — An odd contortion of the body in which the tumbling jester avoids attack and becomes Armour Class 0. Duration: 1 turn.
+
+2ND LEVEL
+
+Pause — (1 or 2) — Utterance of this joke causes victims to stop and pause for 2 melee turns. Range: 2".
+
+Joke — (1 or 2) — Causes laughter for 2 turns, affecting creatures 6 Hit Dice or less. Victims are -4 to hit on his attacks while affected by a joke. Range: 2".
+
+Funny Face II — (2) — Same as Funny Face I except it affects 3 3rds, 2 4ths, 15th level type.
+
+Body Contortion II — Same as Body Contortion I except user becomes Armour Class -4.
+
+3RD LEVEL
+
+Wonder — (1 or 2) — Causes victims to pause for 4 turns, if followed by an extended joke. If not, same as Pause. Range: 2".
+
+Ventriloquism — (1 or 2) — Same as Magic User, but range: 3".
+
+Thighslapper — (1 or 2) — Joke which takes 2 turns to utter. Causes laughter for 8 turns. Affects 10 1st level types, 9 2nd level types, 8 3rd, and so on. Range: 3".
+
+Funny Face III — (2) — Affects 18th level type, 2 7th level types, etc. for 1 turn. Range: 2".
+
+Obscenity — (2) — Renders lawful and neutral Clerics ineffective for 3 turns due to embarrassment. Affects other types as Joke spell.
+
+4TH LEVEL
+
+Boring Joke — (1 or 2) — This acts as Sleep spell. Takes 4 turns to utter. Puts a 10th level type to sleep for 2 turns, 9th level for 4 turns, and so on. Range: 2".
+
+Decrepitating — (2) — This is a fart, literally. The higher level the jester, the funnier the fart. Thus a 7th level jester would incapacitate his target for 2 turns, an 8th level for 4 turns, etc. A maximum of 3 per game hour can be used by any one jester. Range: 3".
+
+Bellyacher — (1 or 2) — Takes 2 turns to utter. Causes victim to laugh for 8 turns, plus level of jester.
+
+Extension I — If done while subject or subjects is already laughing, this effort will lower the victim's resistance by 1, on the next roll for Saving Throw.
+
+Strange Actions — Combines Joke and Body Contortion I.
+
+5TH LEVEL
+
+Extension II — Same as Extension I except lowers resistance by 2.
+
+Pity — (1 or 2) — Acts as Charm Person, with limitations up to befriending the jester (referee's discretion).
+
+Gutbuster — (1 or 2) — Same as Bellyacher, except that it also does 1-4 pts damage while victim is laughing.
+
+Insult — (1 or 2) — This is a tricky joke. When uttered, there is a 50% chance that the target will flee (1-3 on a six-sided die), crushed with embarrassment. There is also a 50% chance that victim will become enraged and immediately attack. Affects any character for 1-20 turns (roll 20 sided die).
+
+Quick Puns — (1) — An additional pun per the level of the jester above 8th. NO saving throw. Range: 3".
+
+29

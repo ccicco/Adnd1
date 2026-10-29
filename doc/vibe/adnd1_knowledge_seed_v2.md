@@ -26570,6 +26570,58 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   folios 8-10, un-parked at Curtiss's call),
   with the systems box flip closing issue 2 at
   4 closed / 0 open. WAIT FOR GO.
+  - R894 LANDED 2026-10-29: commit
+  bb0e2f6205cb5dfa6b4be027fa112b65b610aca1
+  (pushed 2378b3b..bb0e2f6, census 816 -> 817),
+  THE WARD ARTIFICER DEVICES - the un-parked
+  items sweep of issue 1's Parked list
+  (Curtiss's call via the naming question). THE
+  INK: James M. Ward's Magic and Science: Are
+  They Compatible in D&D? (The Dragon Vol. 1
+  No. 1, folios 8 and 10 - the chain runs 8 ->
+  10 past Gold's Languages on 9). THE SHAPE:
+  prefix art (regtest-scan clean), header
+  rules/art.h (36 inline: 11 consts + 11 bools
+  + 2 tables / 14 columns), audit "R894
+  Artificer audit" at
+  rules/audits/r894_batch.h, 28 examples, 3
+  header_sections, include after sys.h. THE
+  PINS: the pistol frame (2-inch sphere, 50
+  yards max, six color-coded types),
+  artSphereGrid 6 rows x 3 cols (CONVERTED
+  effect codes: 1 melting heat, 2
+  disintegration, 3 nullification, 4 illusion
+  maze, 5 death, 6 crystal wall; only black and
+  purple carry the save; the silver wall
+  60x120x10 fills any passage, diamond-hard),
+  artBlueSphereGrid 3 rows x 11 cols (the ray
+  suites inverted to size, smallest most
+  powerful, the scanned zero for the smallest
+  missing healing ray), the chassis doctrines
+  (25 HP, anti-magic kills it forever, the
+  displacer provenance, the restoration 1-hour
+  window), the computer (heat core, 100 spells,
+  double heat ray off enemy HP, the logic
+  weakness). THE TWO REPORTS: issue-2 report
+  flipped its last box -> 4 closed / 0 open,
+  ISSUE 2 FULLY CLOSED; issue-1 report GAINED
+  the un-parked Ward box pre-flip (4 boxes,
+  flips at the next Dragon round per R796) via
+  file_patches, the Parked section emptied with
+  the un-park recorded. VERIFIED: engine
+  double-run GREEN applied 8 / already 8;
+  rverify against pristine 2378b3b: 73 mutants
+  0 missed; the raw JSON round-trip byte-exact.
+  Spec tools/spec_r894.json, 21,724 bytes, 556
+  lines, md5 87533d0204ffe6825a438072bbd0fde5
+  (authored-plus-newline). NEXT: R895 - the
+  issue-3 opener (Dragon #3 uploaded, OCR read,
+  folio = page verified, all ten chains
+  adjudicated IN): the 32 voice pages, gap
+  report 003 pre-flip, the Ward box flip
+  closing issue 1 at 4 closed / 0 open, and the
+  Lakofka Women & Magic chain as the opener
+  ink. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

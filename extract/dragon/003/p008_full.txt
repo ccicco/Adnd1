@@ -1,0 +1,105 @@
+The Dragon
+
+Vol. I No. 3 October '76
+
+|   | Hit Dice | Fight as | Spells  |   |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 |   |
+|  **CLERICS** |  |  |  |  |  |  |  |  |  |   |
+|  Novice | 1 | man-1 | - |  |  |  |  |  |  |   |
+|  Initiate | 2 | man | 1 |  |  |  |  |  |  |   |
+|  Postulant | 3 | man+1 | 2 |  |  |  |  |  |  |   |
+|  Apostolate | 3+1 | 2 men | 2 | 1 |  |  |  |  |  |   |
+|  Sister | 4 | 3 men | 3 | 1 | 1 |  |  |  |  |   |
+|  Deaconess | 4+1 | 3 men+1 | 3 | 2 | 1 |  |  |  |  |   |
+|  Canoness | 5 | hero-1 | 3 | 2 | 2 | 1 |  |  |  |   |
+|  Priors | 6 | hero | 3 | 3 | 2 | 1 |  |  |  |   |
+|  Superioress | 6+2 | Hero+1 | 3 | 3 | 3 | 2 | 1 |  |  |   |
+|  Matriarch level 10 | 7+2 | Hero+2 | 3 | 3 | 3 | 3 | 1 |  |  |   |
+|  Matriarch level 11 | 8+2 | Hero+3 | 3 | 3 | 3 | 3 | 2 |  |  |   |
+|  Matriarch level 12 | 9+2 | superhero | 3 | 3 | 3 | 3 | 3 | 1 |  |   |
+|  **THIEVES** |  |  |  |  |  |  |  |  |  |   |
+|  Wench | 1 | man-1 | - |  |  |  |  |  |  |   |
+|  Hag | 2 | man | - |  |  |  |  |  |  |   |
+|  Jade | 3 | man+2 | - |  |  |  |  |  |  |   |
+|  Succubus | 4 | 2 men | 1 | limited and special |  |  |  |  |  |   |
+|  Succubus | 4 | 2 men | 1 | limited and special |  |  |  |  |  |   |
+|  Adventures | 4+1 | 2 men+1 | 2 | limited and special |  |  |  |  |  |   |
+|  Soothsayer | 4+2 | 3 men | 2 | 1 limited and special |  |  |  |  |  |   |
+|  Gypsy | 5 | 3 men+1 | 2 | 2 limited and special |  |  |  |  |  |   |
+|  Sibyl | 5+2 | hero-1 | 2 | 2 limited and special |  |  |  |  |  |   |
+|  **MAGIC USERS** |  |  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8  |
+|  Medium | 1 | man-2 | 1 |  |  |  |  |  |  |   |
+|  Seer | 1+1 | Man-1 | 2 |  |  |  |  |  |  |   |
+|  Sage | 2 | Man | 2 | 1 |  |  |  |  |  |   |
+|  Mystic | 2+1 | Man+1 | 3 | 2 |  |  |  |  |  |   |
+|  Oracle | 3 | 2 Men | 3 | 2 | 1 |  |  |  |  |   |
+|  Enchantress | 3+1 | 2 Men+1 | 3 | 3 | 2 |  |  |  |  |   |
+|  Illusionist | 4 | 3 Men | 3 | 3 | 2 | 1 |  |  |  |   |
+|  Sorceress | 5 | 3 Men+? | 3 | 3 | 3 | 2 | 1 |  |  |   |
+|  Witch | 6 | Hero | 4 | 3 | 3 | 3 | 2 |  |  |   |
+|  Witch 10th level | 7 | hero+1 | 4 | 3 | 3 | 3 | 3 |  |  |   |
+|  Witch 11th level | 8 | Wizard | 5 | 4 | 3 | 3 | 3 | 1 |  |   |
+|  Witch 12th level | 8+1 | Wizard | 5 | 5 | 4 | 3 | 3 | 2 |  |   |
+|  Witch 13th level | 8+2 | Wizard+1 | 5 | 5 | 5 | 4 | 4 | 3 | 1 |   |
+|  Witch 14th level | 9+2 | Wizard+1 | 5 | 5 | 5 | 5 | 5 | 3 | 2 |   |
+|  Witch 15th level | 9+3 | Wizard+1 | 5 | 5 | 5 | 5 | 5 | 3 | 3 | 1  |
+|  Witch 16th level | 10+2 | Wizard+1 | 5 | 5 | 5 | 5 | 5 | 4 | 4 | 1  |
+|  Witch 17th level | 10+3 | Wizard+1 | 6 | 6 | 5 | 5 | 5 | 5 | 4 | 2  |
+|  Witch 18th level | 10+4 | Wizard+2 | 6 | 6 | 6 | 6 | 6 | 5 | 5 | 2  |
+|  Witch 19th level | 11+3 | Wizard+3 | 7 | 7 | 7 | 6 | 6 | 6 | 5 | 3  |
+|  Witch 20th level | 11+4 | Wizard+2 | 7 | 7 | 7 | 7 | 7 | 6 | 6 | 4  |
+|  Witch 21st level | 11+5 | Wizard+2 | 7 | 7 | 7 | 7 | 7 | 7 | 7 | 5  |
+|  Witch 22nd level | 11+7 | Wizard+3 | 8 | 8 | 8 | 7 | 7 | 7 | 7 | 3  |
+
+# **THIEVES — Women Statistics — see BLACKMOOR**
+
+Female thieves same as male except that higher level female thieves can learn some limited magic, and Beautiful thieves are capable of the spells of seduction and Charm Men. On page 11 of Blackmoor are additional statistics regarding thieves. Copy the 6 classes of female thieves down next to Apprentice through Master Pilferer. Dwarf, Elven and Hobbit Women may act as thieves.
+
+Spells. To cast spells the Thief's intelligence score must be 12 or higher for all spells except Seduction, Charm Men and Charm Humanoid Monster where intelligence need only be 9. To cast Seduction, Charm Men or Charm Humanoid monster (I) the thief must have a Beauty score of 13 or better (plus intelligence of 9+).
+
+Spells thieves may cast by level.
+
+|  1st level | 2nd level | 3rd level  |
+| --- | --- | --- |
+|  Charm Man I | Seduction I | Charm Men II  |
+|  Light | Sleep + | Seduction II  |
+|  Read Languages | Mirror Image | Charm Humanoid Monster I  |
+|  Tarot Reading | Detect Magic + | ESP +  |
+|   |  | Knock +  |
+
+Note that some spells are at different levels for thieves than for regular magic users. These are marked with a +.
+
+Charm men, Seduction and Charm Humanoid Monster will be explained in the magic user section.
+
+**Tarot Reading.** The Tarot (78 cards) may be asked simple yes/no question ONLY. More complex divinings are beyond the highest level of thief given here. If you wish to have higher level thieves you might consider complex "Cross & Staff" readings also.
+
+Yes/no questions must be precise and exact. They must relate to the very immediate future (1 day at most) of the present. Every question must be answerable by a yes or a no — there will be no embellishment. (Sibyl level 9 and beyond can tell something from the three cards used in answering yes/no questions but Sibyl level 8 and below can not.) The card replies will be Yes, Probably Yes, Probably No and No. The judge will cast a 12 sided die. He must weigh the most correct answer of those 4 choices with the numbers 1-6. 7-10 must be assigned to the remaining affirmative/negative and 11-12 to the remaining "probably" opposite.
+
+# **Fighting Women**
+
+Fighting Women (warriors) may incorporate the spells of Seduction, Charm Men or Charm Humanoid Monster depending on their level and beauty scores (see spells of seduction, et al). Women's strength scores range from 2-14. Thus some weaponry and types of armor are too difficult for them to wield/bear without undue fatigue. Women are allowed 1000 points of encumbrance plus 50 times Strength rating at no movement loss. Anything over that weight reduces figure to half speed. Maximum load is 1.8 times encumbrance score. Women of ST 10 or lower wield Flail Battle Axes, Morning Stars at -1; Pole Arms, Halberd, Pike and Two Handed Sword at -2. Women of ST 12 or lower wield only the latter group at -1. Plate armor has a 20% greater fatigue rating in women of ST 10 or lower 10% in ST 11 or 12. Chainmail has a 10% greater fatigue factor in women of ST 11 or lower. ALL WOMEN wield a dagger at an additional +1.
+
+# **MAGIC USERS**
+
+There is no limit to the levels to which a female may go in magic. Experience points above 13th level are comparable to male magic users and powers are nearly equal. You may make them equal, in fact, with no problem, beginning with Witch Level 13 = Wizard Level 13.
+
+The spells of female magic users are the same as with male magic users with these additions. ("*" spells are for women only. "+" spells can be used by men or women.)
+
+|  Level 1 | Level 2 | Level 3 | Level 4 | Level 5  |
+| --- | --- | --- | --- | --- |
+|  Charm Man I* | Charm Man II* | Charm Humanoid Monster I* | Charm Humanoid Monster II* |   |
+|  Seduction I* | Seduction II* | Seduction III* | Seduction IV* | Seduction V*  |
+
+|  Level 6 | Level 7 | Level 8  |
+| --- | --- | --- |
+|  Seduction VI* | Seduction VII* | Seduction VIII*  |
+|  Charm Humanoid Monster III* | Magic Mount+ | Charm Men III*  |
+
+|   | Mind Meld + | Charm Humanoid Monster IV*  |
+| --- | --- | --- |
+|  Poison + | Spirit + | Horrid Beauty*  |
+
+Seduction I-VIII. This spell may be used on living humanoid unharmed males only by women with the proper beauty score.
+
+8
