@@ -27667,6 +27667,37 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   bytes), prefix scan clean, seed grep 1. Likely
   next: the issue-10 opener (source in accessory-
   dragon-magazine-012). WAIT FOR GO.
+  - R914 LANDED 2026-10-29: commit
+  e1dcd30942ca36ce230806119a6c8299afebdfe4 (base
+  17dbf8c, census 836 -> 837), the Dragon
+  issue-10 opener PART ONE: THREE CHAINS, prefix
+  dtn, header rules/dtn.h, audit
+  rules/audits/r914_batch.h ("R914 issue-10
+  opener audit"), 75 inline (33 consts + 20 bools
+  + 18 chains + 4 table cols), 8 examples + 4
+  table_checks, 3 header_sections, 3 tables, ZERO
+  file_patches, 35 data_files (gap report 010
+  pre-flip TWO boxes + 34 issue-10 transcripts),
+  gap report 009 verified no-op (1 / 0). Chains:
+  the Pickens Orgies Inc. article (folios 5-6,
+  the treasure-sink variant layer, XP only as
+  spent with the psionic appendix), the Clifton
+  wilderness article (folio 7, the battlefield-
+  terrain variant layer, five terrain bands with
+  grades and roll-again tables), the Crabaugh
+  Random Monsters article (folios 9-10, the
+  monster-generation variant layer). Issue 10
+  splits across two opener rounds: part two (the
+  Gilbert dungeon method article, the Weights &
+  Measures article, the Holsinger level-ritual
+  article, folios 11-13, 19-21) rides report 010
+  box 2, and the part-two round flips box 1.
+  rverify GREEN (153 mutants / 0 missed), double-
+  run applied 40 / already 40, spec round-trip
+  byte-exact (154041 bytes), prefix scan clean,
+  seed grep 1. Likely next: the issue-10 opener
+  part two (box 1 flips, part-two chains pin).
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

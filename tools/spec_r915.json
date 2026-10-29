@@ -1,0 +1,1167 @@
+{
+ "round": 915,
+ "title": "The Dragon issue-10 opener part two: the Gilbert dungeon method article, the Weights & Measures article and the Holsinger level ritual article",
+ "prefix": "dte",
+ "census_before": 837,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R914 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R914 LANDED 2026-10-29: commit",
+  "  e1dcd30942ca36ce230806119a6c8299afebdfe4 (base",
+  "  17dbf8c, census 836 -> 837), the Dragon",
+  "  issue-10 opener PART ONE: THREE CHAINS, prefix",
+  "  dtn, header rules/dtn.h, audit",
+  "  rules/audits/r914_batch.h (\"R914 issue-10",
+  "  opener audit\"), 75 inline (33 consts + 20 bools",
+  "  + 18 chains + 4 table cols), 8 examples + 4",
+  "  table_checks, 3 header_sections, 3 tables, ZERO",
+  "  file_patches, 35 data_files (gap report 010",
+  "  pre-flip TWO boxes + 34 issue-10 transcripts),",
+  "  gap report 009 verified no-op (1 / 0). Chains:",
+  "  the Pickens Orgies Inc. article (folios 5-6,",
+  "  the treasure-sink variant layer, XP only as",
+  "  spent with the psionic appendix), the Clifton",
+  "  wilderness article (folio 7, the battlefield-",
+  "  terrain variant layer, five terrain bands with",
+  "  grades and roll-again tables), the Crabaugh",
+  "  Random Monsters article (folios 9-10, the",
+  "  monster-generation variant layer). Issue 10",
+  "  splits across two opener rounds: part two (the",
+  "  Gilbert dungeon method article, the Weights &",
+  "  Measures article, the Holsinger level-ritual",
+  "  article, folios 11-13, 19-21) rides report 010",
+  "  box 2, and the part-two round flips box 1.",
+  "  rverify GREEN (153 mutants / 0 missed), double-",
+  "  run applied 40 / already 40, spec round-trip",
+  "  byte-exact (154041 bytes), prefix scan clean,",
+  "  seed grep 1. Likely next: the issue-10 opener",
+  "  part two (box 1 flips, part-two chains pin).",
+  "  WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/dtn.h\"  // R914: the Dragon issue-10 opener part one, the Orgies Inc. article, the Clifton wilderness article and the Random Monsters article",
+ "include_comment": "the Dragon issue-10 opener part two, the Gilbert dungeon method article, the Weights & Measures article and the Holsinger level ritual article",
+ "header_file": "rules/dte.h",
+ "audit_file": "rules/audits/r915_batch.h",
+ "audit_label": "R915 issue-10 opener audit",
+ "audit_anchor": "#include \"rules/audits/r914_batch.h\"  // R914: R914 issue-10 opener audit",
+ "audit_comment": "THE DRAGON ISSUE-10 OPENER ROUND, PART TWO - three adjudicated chains and the part-one flip. The Gilbert Let There Be A Method To Your Madness article (folios 11-14): the builders-mindset doctrine with the organized-origins rule, the misread-rooms doctrine, the builder-traits decree, the storage-room rule, the two-views drawing scale at 200 feet to the inch, the keep-it-simple doctrine, the rich-builder doctrine and the Nappo example - 120 years of life, 275 years dead, three facets generating fifteen levels. The Crabaugh Weights & Measures article (folios 19-20): the 3d6 Size and d6 Build with the hit-per-die bonuses at 16 and penalties at 5, the pound at 10 GP, the armor fractions at 15, 30 and 60 percent of body mass, the female +2 Constitution and +1 Dexterity, the carrying-capacity grid in tenths with the elf column mirroring the human, the speed ladder at 3, 6, 9 and 12, the male and female height-and-weight grids across the sixteen Size rows, and the appearance bands - eyes, hair, skin, voice, handedness, expression and hair length, males at 30% bearded. The Holsinger Gaining a New Experience Level article (folios 20-21): the four-part ritual, the sacrifice total at double the new level with each creature at least half, the conscious-sacrifice rule, the 50/50 and 60/40 notice chances with the 50% temple-rite kill, the mistletoe and tree sacrifices at 10 and 1 hit dice, the drunken-stupor emissaries, the demihuman liquor toughness, the 7th-level militia ejection and the guild halls, and the spell learning and forgetting rules. The part-one box in report 010 flips closed (1 closed / 1 open).",
+ "gap_report": "tools/dragon_gap_report_010.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 1
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Orgies Inc. article, the Clifton wilderness\n  encounters article and the Random Monsters article**\n  (folios 5-6, 7, 9-10) - the issue-10 opener round, part one",
+   "to": "- [x] **The Orgies Inc. article, the Clifton wilderness\n  encounters article and the Random Monsters article**\n  (folios 5-6, 7, 9-10) - the issue-10 opener round, part one",
+   "note": "the issue-10 part-one box - the three-chain opener round flip, 1 closed / 1 open, the part-two box to close at the next round flip"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-10 opener, part two - the Gilbert dungeon method article (folios 11-14), the Weights & Measures article (folios 19-20) and the Holsinger level ritual article (folios 20-21): three adjudicated chains and the part-one flip",
+  "provenance": "Pinned from The Dragon Vol. 2 No. 4 (October 1977), the archive.org scan voice (single-voice; the source lives in the archive.org item accessory-dragon-magazine-012). The folios: 11-14, the Gilbert Design Forum dungeon-method article - think like the builders and allow every necessary function, the organized society that dug the dungeon out of solid rock and then abandoned it, the rooms no longer used for their intention and read like antedated storefronts, the builder occupation, standing, alignment and personality decreeing the levels, the storage-room rule, the two views - vertical cutaway and horizontal overlay at 200 feet to the inch - keep it simple and stick to a plan, the rich-builder doctrine, and the Nappo dig: 120 years of life, 275 years dead, three facets and fifteen levels, the report 010 box label reading 11-13 against the article tail riding folio 14 beside the Archive ad; 19-20, the Crabaugh Weights & Measures article - Size on 3d6 and Build on d6, +1 hit per die at Size 16 and up, -1 at 5 and down, one pound at 10 GP, armor at 15, 30 and 60 percent of body mass, females +2 Constitution and +1 Dexterity with the lighter carrying capacity, the musculature-versus-force doctrine, the carrying grid - human 1.0 to 3.0, dwarf 1.5 to 3.5, hobbit 2.0 to 4.0 in tenths of body weight, the elf column mirroring the human, the speed ladder at 3, 6, 9 and 12, the male height-and-weight grid from 5-1 and 120 pounds to 6-4 and 215, the female grid from 4-10 and 100 to 6-1 and 185, and the appearance bands - eyes, hair, skin, voice, handedness, expression, hair length, males at 30 percent bearded; 20-21, the Holsinger Gaining a New Experience Level article - the four-part ritual of qualification, attention, intercession and exhaustion, the good fasting and prayer or the sacrifice at double the new level with each creature at least half and conscious, the 50/50 neutral notice and the 50/50 evil nothing, the 60/40 sacrilege chances and the 50% temple-rite kill, the druid tree at 1 hit die and mistletoe at 10, the neutral mistletoe tree rite with its free cure, the Great Pink Elephants in the drunken stupor, the demihuman liquor toughness behind the level limits, the 7th-level militia ejection and the guild halls, and the spell learning by the Greyhawk columns with one forgettable spell per level. The part-one box in report 010 flips closed this round, 1 closed / 1 open. PRINT FOLIO = PDF PAGE, verified at the printed 10, 19 and 21 footers.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon, and the Holsinger level ritual and the Crabaugh Size system - though both echo later print - pin as a variant layer with provenance, never core canon. The print quirks ride AS SCANNED, noted, never silent: the male medium-weight Size-4 cell reading 185 as scanned against the 135 column pattern; the female Size-15 height cell garbled and riding sentinel -1; the carrying grid elf column mirroring the human with its two garbled cells riding the transcript, the dwarf Strength-16 cell garbled and riding sentinel; the speed-12 fraction garbled in the OCR, the speed pinning and the fraction riding; the facial-features d6-minus-2 rule and the limb tables riding prose; the Snits game and the Stellar Conquest article scoped out as other systems. The editor's standing caution rides: none of this is official."
+ },
+ "switches": [],
+ "consts": [
+  {
+   "name": "dtnGilNappoLevels",
+   "value": 15,
+   "comment": "the Nappo dig example - three personality facets generated fifteen levels, the builder assumed celibate and a recluse (folios 12-14)"
+  },
+  {
+   "name": "dtnGilNappoFacets",
+   "value": 3,
+   "comment": "the Nappo example facets - an MU, fond of animal experimentation, needing space for his orcs (folios 12-14)"
+  },
+  {
+   "name": "dtnGilScaleFtPerInch",
+   "value": 200,
+   "comment": "the two-views drawing scale - 200 feet to the inch, or whatever fits one sheet (folio 13)"
+  },
+  {
+   "name": "dtnGilNappoLifespanYears",
+   "value": 120,
+   "comment": "Nappo, assisted by magic, lived on the site for 120 years (folio 12)"
+  },
+  {
+   "name": "dtnGilNappoDeadYears",
+   "value": 275,
+   "comment": "the 275 years since Nappo died, his orcs continuing to inhabit the place (folio 12)"
+  },
+  {
+   "name": "dtnWmPoundGp",
+   "value": 10,
+   "comment": "one pound is presumed to equal 10 GP (folio 19)"
+  },
+  {
+   "name": "dtnWmLeatherPct",
+   "value": 15,
+   "comment": "armor weight as a fraction of body mass - leather armor 15% (folio 19)"
+  },
+  {
+   "name": "dtnWmChainPct",
+   "value": 30,
+   "comment": "chain mail weighs 30% of body mass (folio 19)"
+  },
+  {
+   "name": "dtnWmPlatePct",
+   "value": 60,
+   "comment": "plate mail weighs 60% of body mass (folio 19)"
+  },
+  {
+   "name": "dtnWmFemaleConBonus",
+   "value": 2,
+   "comment": "females add 2 to their Constitution score (folio 19)"
+  },
+  {
+   "name": "dtnWmFemaleDexBonus",
+   "value": 1,
+   "comment": "females add 1 to their Dexterity score (folio 19)"
+  },
+  {
+   "name": "dtnWmSizeBonusMin",
+   "value": 16,
+   "comment": "a Size of 16 or greater adds 1 hit per die (folio 19)"
+  },
+  {
+   "name": "dtnWmSizePenaltyMax",
+   "value": 5,
+   "comment": "a Size of 5 or less subtracts 1 hit per die (folio 19)"
+  },
+  {
+   "name": "dtnWmSizeHpMod",
+   "value": 1,
+   "comment": "the Size hit-per-die modification (folio 19)"
+  },
+  {
+   "name": "dtnWmSpeedFull",
+   "value": 3,
+   "comment": "at maximum carrying capacity the character staggers along at speed 3 (folio 20)"
+  },
+  {
+   "name": "dtnWmSpeedTwoThirds",
+   "value": 6,
+   "comment": "at two-thirds maximum the character moves at speed 6 (folio 20)"
+  },
+  {
+   "name": "dtnWmSpeedOneThird",
+   "value": 9,
+   "comment": "at one-third maximum the character moves at speed 9 (folio 20)"
+  },
+  {
+   "name": "dtnWmSpeedLightest",
+   "value": 12,
+   "comment": "at the lightest fraction the character moves at speed 12 - the printed fraction garbled in the OCR and riding the transcript (folio 20)"
+  },
+  {
+   "name": "dtnWmMaleBeardPct",
+   "value": 30,
+   "comment": "males have a 30% chance of having a beard (folio 20)"
+  },
+  {
+   "name": "dtnWmSizeBands",
+   "value": 16,
+   "comment": "the Size range - 3 through 18 on 3d6, sixteen rows per height and weight table (folio 19)"
+  },
+  {
+   "name": "dtnWmCarryBands",
+   "value": 16,
+   "comment": "the carrying-capacity Strength range - 3 through 18, sixteen rows (folio 20)"
+  },
+  {
+   "name": "dtnHolsSacrificeTotalFactor",
+   "value": 2,
+   "comment": "the sacrifice total - hit dice double the number of the new experience level (folio 20)"
+  },
+  {
+   "name": "dtnHolsSacrificeEachMinHalf",
+   "value": 2,
+   "comment": "each individual creature must have at least half as many hit dice as the new level (folio 20)"
+  },
+  {
+   "name": "dtnHolsNeutralSacrificePct",
+   "value": 50,
+   "comment": "a neutral sacrifice without a cleric - 50/50 the good gods or the evil gods notice (folio 20)"
+  },
+  {
+   "name": "dtnHolsEvilSacrificeNothingPct",
+   "value": 50,
+   "comment": "an evil sacrifice without a good cleric - 50/50 that nothing happens (folio 20)"
+  },
+  {
+   "name": "dtnHolsGoodSacrilegeRightPct",
+   "value": 60,
+   "comment": "sacrilege against the good gods without clerics - a 60% chance the right gods notice (folio 21)"
+  },
+  {
+   "name": "dtnHolsWrongGodsPct",
+   "value": 40,
+   "comment": "a 40% chance the wrong gods notice at sacrilege against the good gods (folio 21)"
+  },
+  {
+   "name": "dtnHolsTempleRiteKillPct",
+   "value": 50,
+   "comment": "a rite of a different alignment in an outraged temple - a 50% chance the gods show up immediately and kill, no chance for revival (folio 21)"
+  },
+  {
+   "name": "dtnHolsCastleLevel",
+   "value": 7,
+   "comment": "characters usually build their own castle in the wilderness at the 7th experience level (folio 21)"
+  },
+  {
+   "name": "dtnHolsTreeHD",
+   "value": 1,
+   "comment": "the druid-appeased sacrifice of a tree counts as a one-hit-die neutral creature (folio 21)"
+  },
+  {
+   "name": "dtnHolsMistletoeHD",
+   "value": 10,
+   "comment": "mistletoe counts as ten hit dice (folio 21)"
+  },
+  {
+   "name": "dtnHolsTreeMinFt",
+   "value": 10,
+   "comment": "the sacrificed tree must be at least ten feet tall and alive - potted - when sacrificed in a temple (folio 21)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dtnGilBuildersMindset",
+   "value": true,
+   "comment": "the designer must think like the builders and allow for all the necessary functions of the dungeon (folio 11)"
+  },
+  {
+   "name": "dtnGilOrganizedOrigins",
+   "value": true,
+   "comment": "dungeons are abandoned by the organized society it required to build them - digging one out of solid rock is a tremendous task (folio 11)"
+  },
+  {
+   "name": "dtnGilRoomsMisread",
+   "value": true,
+   "comment": "the rooms are no longer used for what they were intended - players read them like antedated storefronts by torchlight and never guess (folios 12-13)"
+  },
+  {
+   "name": "dtnGilBuilderTraitsDecree",
+   "value": true,
+   "comment": "the builder occupation, social standing, alignment and personality decree a great number of levels for his own personal use (folios 11-12)"
+  },
+  {
+   "name": "dtnGilStorageRoomsRule",
+   "value": true,
+   "comment": "always allow for storage rooms in the levels - it was a long hike to the surface (folio 12)"
+  },
+  {
+   "name": "dtnGilTwoViewsRule",
+   "value": true,
+   "comment": "draw two views of the dungeon as a whole - a vertical cutaway and a horizontal overlay, both to scale, the levels as rectangles with their purpose written in (folio 13)"
+  },
+  {
+   "name": "dtnGilKeepItSimple",
+   "value": true,
+   "comment": "keep it simple and stick to a plan - what looks obvious on paper is the deepest of forbidden mysteries to the players (folio 12)"
+  },
+  {
+   "name": "dtnGilRichBuilderRichDungeon",
+   "value": true,
+   "comment": "the more a builder is developed, the more rich and varied his dungeons - each trait of character finds expression in additional levels (folios 13-14)"
+  },
+  {
+   "name": "dtnWmSizeThreeDice",
+   "value": true,
+   "comment": "Size is an additional characteristic rolled on 3 six-sided dice (folio 19)"
+  },
+  {
+   "name": "dtnWmBuildFunctionalHumans",
+   "value": true,
+   "comment": "Build rolls on one six-sided die - 1 light, 2-5 normal, 6 heavy - functional only for humans but rolled for non-humans anyway (folio 19)"
+  },
+  {
+   "name": "dtnWmElfMirrorsHuman",
+   "value": true,
+   "comment": "the carrying-capacity elf column mirrors the human column by the print own arithmetic - the strength-5 and strength-16 cells garbled in the OCR and riding the transcript (folio 20)"
+  },
+  {
+   "name": "dtnWmFemaleLighterCapacity",
+   "value": true,
+   "comment": "females sit at a carrying-capacity disadvantage through body mass, with no Strength penalty (folio 20)"
+  },
+  {
+   "name": "dtnWmMusculatureVsForce",
+   "value": true,
+   "comment": "two kinds of strength - how well muscled, reflected in the Strength characteristic, and physical force, reflected in carrying capacity as a multiple of body weight (folio 20)"
+  },
+  {
+   "name": "dtnWmAppearanceHumanOnly",
+   "value": true,
+   "comment": "the appearance tables are intended for humans and work poorly to not at all for non-humans (folio 20)"
+  },
+  {
+   "name": "dtnHolsFourPartRitual",
+   "value": true,
+   "comment": "the four parts of gaining a level - qualifying experience, attracting the gods, a cleric intercession, complete exhaustion (folio 20)"
+  },
+  {
+   "name": "dtnHolsGoodFastingPrayer",
+   "value": true,
+   "comment": "the good attract the gods by fasting and prayer in a temple - no danger from other gods, but a substantial free-will offering required (folio 20)"
+  },
+  {
+   "name": "dtnHolsSacrificeConsciousRule",
+   "value": true,
+   "comment": "sacrifices must be conscious and not under the influence of magic (folio 20)"
+  },
+  {
+   "name": "dtnHolsGoodNoNeutralHumans",
+   "value": true,
+   "comment": "good may not sacrifice neutral humans though they may sacrifice evil humans - evil may sacrifice both (folio 21)"
+  },
+  {
+   "name": "dtnHolsNeutralMistletoeRite",
+   "value": true,
+   "comment": "the neutral rite - getting laid while perched in a mistletoe tree, the druids paid, a free cure light wounds for the stickers (folio 21)"
+  },
+  {
+   "name": "dtnHolsClericIntercession",
+   "value": true,
+   "comment": "a cleric of the character own alignment must intercede so only the gods of that alignment show up (folio 20)"
+  },
+  {
+   "name": "dtnHolsClericsExpectPay",
+   "value": true,
+   "comment": "clerics expect to be paid for their services throughout the ritual (folio 20)"
+  },
+  {
+   "name": "dtnHolsExhaustionStuporRule",
+   "value": true,
+   "comment": "the only reliable attitude is complete exhaustion - thoroughly inebriated following great physical activity, whereupon the Emissaries of the Gods, the Great Pink Elephants, lay on the new abilities (folio 21)"
+  },
+  {
+   "name": "dtnHolsDemiHumanLiquorToughness",
+   "value": true,
+   "comment": "dwarves, elves and hobbits are tougher to get bombed - this is why there are limits on the experience levels they may reach (folio 21)"
+  },
+  {
+   "name": "dtnHolsMilitiaEjects7th",
+   "value": true,
+   "comment": "the local militia heaves passed-out characters over the town walls at the 7th level, whence the wilderness castle (folio 21)"
+  },
+  {
+   "name": "dtnHolsGuildHalls",
+   "value": true,
+   "comment": "cities contain guild halls for each profession where members carouse in safety, even mass affairs promoting dozens at once (folio 21)"
+  },
+  {
+   "name": "dtnHolsSpellLearningRitual",
+   "value": true,
+   "comment": "new spell levels are learned from the Great Pink Elephants by the Greyhawk minimum-per-level column with percentile rolls against the chance to know any given spell (folio 21)"
+  },
+  {
+   "name": "dtnHolsForgettingSpells",
+   "value": true,
+   "comment": "each new level a character may choose to forget one spell of each level previously known, to make room for others (folio 21)"
+  }
+ ],
+ "chains": [
+  {
+   "name": "dtnWmBuildBand",
+   "limits": [
+    1,
+    5
+   ],
+   "tail": 2,
+   "comment": "the Build band - 1 light, 2-5 normal, 6 heavy (folio 19)"
+  },
+  {
+   "name": "dtnWmEyesBand",
+   "limits": [
+    7,
+    13,
+    17,
+    19
+   ],
+   "tail": 4,
+   "comment": "the eye color band - brown 1-7, blue 8-13, green 14-17, steel-gray 18-19, golden 20 (folio 20)"
+  },
+  {
+   "name": "dtnWmHairBand",
+   "limits": [
+    8,
+    10,
+    16,
+    17,
+    19
+   ],
+   "tail": 5,
+   "comment": "the hair color band - brown 1-8, black 9-10, blonde 11-16, white 17, gray 18-19, red 20 (folio 20)"
+  },
+  {
+   "name": "dtnWmSkinBand",
+   "limits": [
+    3,
+    6,
+    11,
+    14,
+    16,
+    18
+   ],
+   "tail": 6,
+   "comment": "the complexion band - pale 1-3, fair 4-6, normal 7-11, tanned 12-14, dark 15-16, black 17-18, oriental 19-20 (folio 20)"
+  },
+  {
+   "name": "dtnWmVoiceBand",
+   "limits": [
+    1,
+    3
+   ],
+   "tail": 2,
+   "comment": "the voice pitch band - high 1, medium 2-3, low 4 on the four-sided (folio 21)"
+  },
+  {
+   "name": "dtnWmHandednessBand",
+   "limits": [
+    2,
+    4
+   ],
+   "tail": 2,
+   "comment": "the handedness band on two six-sided - ambidextrous 2, left 3-4, right 5-12 (folio 21)"
+  },
+  {
+   "name": "dtnWmExpressionBand",
+   "limits": [
+    2,
+    3,
+    6,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    18,
+    19
+   ],
+   "tail": 13,
+   "comment": "the habitual expression band - carefree 1-2 through amused 20 (folio 21)"
+  },
+  {
+   "name": "dtnWmHairLengthMaleBand",
+   "limits": [
+    5,
+    9
+   ],
+   "tail": 2,
+   "comment": "the male hair length band - short 4 inches 1-5, medium 8 inches 6-9, long 10 (folio 20)"
+  },
+  {
+   "name": "dtnWmHairLengthFemaleBand",
+   "limits": [
+    2,
+    7
+   ],
+   "tail": 2,
+   "comment": "the female hair length band - short 1-2, medium 3-7, long 8-10 (folio 20)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "dtnWmMaleTable",
+   "tag": "Wm",
+   "count": "dtnWmSizeBands",
+   "sentinel": -1,
+   "cols": [
+    "dtnWmMaleHeightIn",
+    "dtnWmMaleLightLb",
+    "dtnWmMaleMedLb",
+    "dtnWmMaleHvyLb"
+   ],
+   "col_comments": [
+    "the male human height in inches per Size, 5-1 at 3 through 6-4 at 18 (folio 19)",
+    "the male light-build weight in pounds per Size (folio 19)",
+    "the male medium-build weight in pounds - the Size-4 row reading 185 as scanned against a 135 column pattern, noted never silent (folio 19)",
+    "the male heavy-build weight in pounds per Size (folio 19)"
+   ],
+   "data": [
+    [
+     61,
+     120,
+     135,
+     145
+    ],
+    [
+     62,
+     120,
+     185,
+     150
+    ],
+    [
+     63,
+     125,
+     140,
+     155
+    ],
+    [
+     64,
+     130,
+     145,
+     155
+    ],
+    [
+     65,
+     130,
+     145,
+     160
+    ],
+    [
+     66,
+     135,
+     150,
+     165
+    ],
+    [
+     67,
+     140,
+     155,
+     170
+    ],
+    [
+     68,
+     140,
+     160,
+     175
+    ],
+    [
+     69,
+     145,
+     160,
+     180
+    ],
+    [
+     70,
+     150,
+     165,
+     185
+    ],
+    [
+     71,
+     155,
+     170,
+     190
+    ],
+    [
+     72,
+     160,
+     175,
+     195
+    ],
+    [
+     73,
+     160,
+     180,
+     200
+    ],
+    [
+     74,
+     165,
+     185,
+     205
+    ],
+    [
+     75,
+     170,
+     190,
+     210
+    ],
+    [
+     76,
+     175,
+     195,
+     215
+    ]
+   ],
+   "audit_comment": "the male human height and weight grid - sixteen Size rows, height 5-1 to 6-4, light 120 to 175, medium 135 to 195 with the Size-4 row as scanned at 185, heavy 145 to 215 (folio 19)"
+  },
+  {
+   "name": "dtnWmFemaleTable",
+   "tag": "Wf",
+   "count": "dtnWmSizeBands",
+   "sentinel": -1,
+   "sentinel_census": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "cols": [
+    "dtnWmFemaleHeightIn",
+    "dtnWmFemaleLightLb",
+    "dtnWmFemaleMedLb",
+    "dtnWmFemaleHvyLb"
+   ],
+   "col_comments": [
+    "the female human height in inches per Size - the Size-15 cell garbled in the OCR, sentinel -1, riding the transcript (folio 19)",
+    "the female light-build weight in pounds per Size (folio 19)",
+    "the female medium-build weight in pounds per Size (folio 19)",
+    "the female heavy-build weight in pounds per Size (folio 19)"
+   ],
+   "data": [
+    [
+     58,
+     100,
+     110,
+     120
+    ],
+    [
+     59,
+     105,
+     115,
+     125
+    ],
+    [
+     60,
+     105,
+     115,
+     130
+    ],
+    [
+     61,
+     110,
+     120,
+     130
+    ],
+    [
+     62,
+     110,
+     125,
+     135
+    ],
+    [
+     63,
+     115,
+     125,
+     140
+    ],
+    [
+     64,
+     115,
+     130,
+     140
+    ],
+    [
+     65,
+     120,
+     130,
+     145
+    ],
+    [
+     66,
+     120,
+     135,
+     150
+    ],
+    [
+     67,
+     125,
+     140,
+     155
+    ],
+    [
+     68,
+     130,
+     145,
+     155
+    ],
+    [
+     69,
+     130,
+     145,
+     160
+    ],
+    [
+     -1,
+     135,
+     150,
+     165
+    ],
+    [
+     71,
+     140,
+     155,
+     170
+    ],
+    [
+     72,
+     145,
+     160,
+     175
+    ],
+    [
+     73,
+     150,
+     165,
+     185
+    ]
+   ],
+   "audit_comment": "the female human height and weight grid - sixteen Size rows, height 4-10 to 6-1 with the Size-15 cell riding sentinel, light 100 to 150, medium 110 to 165, heavy 120 to 185 (folio 19)"
+  },
+  {
+   "name": "dtnWmCarryTable",
+   "tag": "Wc",
+   "count": "dtnWmCarryBands",
+   "sentinel": -1,
+   "sentinel_census": [
+    0,
+    1,
+    0
+   ],
+   "cols": [
+    "dtnWmCarryHuman",
+    "dtnWmCarryDwarf",
+    "dtnWmCarryHobbit"
+   ],
+   "col_comments": [
+    "the human carrying multiple in tenths of body weight per Strength, 1.0 at 3 to 3.0 at 18 - the elf column mirrors this by the print arithmetic (folio 20)",
+    "the dwarf carrying multiple in tenths - 1.5 at 3 to 3.5 at 18, the Strength-16 cell garbled in the OCR, sentinel -1 (folio 20)",
+    "the hobbit carrying multiple in tenths - 2.0 at 3 to 4.0 at 18 (folio 20)"
+   ],
+   "data": [
+    [
+     10,
+     15,
+     20
+    ],
+    [
+     12,
+     17,
+     22
+    ],
+    [
+     13,
+     18,
+     23
+    ],
+    [
+     14,
+     19,
+     24
+    ],
+    [
+     16,
+     20,
+     26
+    ],
+    [
+     17,
+     22,
+     27
+    ],
+    [
+     18,
+     23,
+     28
+    ],
+    [
+     20,
+     25,
+     30
+    ],
+    [
+     20,
+     25,
+     30
+    ],
+    [
+     22,
+     27,
+     32
+    ],
+    [
+     23,
+     28,
+     33
+    ],
+    [
+     24,
+     29,
+     34
+    ],
+    [
+     26,
+     31,
+     36
+    ],
+    [
+     27,
+     -1,
+     37
+    ],
+    [
+     28,
+     33,
+     38
+    ],
+    [
+     30,
+     35,
+     40
+    ]
+   ],
+   "audit_comment": "the carrying-capacity grid - sixteen Strength rows, the human 1.0 to 3.0, the dwarf 1.5 to 3.5 with the Strength-16 cell riding sentinel, the hobbit 2.0 to 4.0, all in tenths of body weight, the elf mirroring the human (folio 20)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dtnWmPoundGp']() != 10 or m['dtnWmLeatherPct']() != 15 or m['dtnWmChainPct']() != 30 or m['dtnWmPlatePct']() != 60",
+   "note": "the weights and measures - the pound at 10 GP, leather 15, chain 30, plate 60 percent of body mass (folio 19)"
+  },
+  {
+   "expr": "m['dtnWmSizeBonusMin']() != 16 or m['dtnWmSizePenaltyMax']() != 5 or m['dtnWmSizeHpMod']() != 1 or m['dtnWmFemaleConBonus']() != 2 or m['dtnWmFemaleDexBonus']() != 1",
+   "note": "the Size bonuses at 16 and up, the penalties at 5 and down, the female +2 Con and +1 Dex (folio 19)"
+  },
+  {
+   "expr": "m['dtnWmSpeedFull']() != 3 or m['dtnWmSpeedTwoThirds']() != 6 or m['dtnWmSpeedOneThird']() != 9 or m['dtnWmSpeedLightest']() != 12",
+   "note": "the carrying speed ladder - 3 at maximum, 6 at two-thirds, 9 at one-third, 12 at the lightest fraction (folio 20)"
+  },
+  {
+   "expr": "m['dtnWmBuildBand'](1) != 0 or m['dtnWmBuildBand'](2) != 1 or m['dtnWmBuildBand'](6) != 2 or m['dtnWmHandednessBand'](2) != 0 or m['dtnWmHandednessBand'](5) != 2",
+   "note": "the Build band - light at 1, normal 2-5, heavy at 6 - and the handedness band - ambidextrous at 2, right at 5-12 (folios 19, 21)"
+  },
+  {
+   "expr": "m['dtnWmEyesBand'](7) != 0 or m['dtnWmEyesBand'](8) != 1 or m['dtnWmEyesBand'](20) != 4 or m['dtnWmSkinBand'](19) != 6 or m['dtnWmExpressionBand'](20) != 13",
+   "note": "the appearance bands - blue eyes from 8, golden at 20, oriental complexion at 19-20, amused at 20 (folios 20-21)"
+  },
+  {
+   "expr": "m['dtnHolsSacrificeTotalFactor']() != 2 or m['dtnHolsNeutralSacrificePct']() != 50 or m['dtnHolsGoodSacrilegeRightPct']() != 60 or m['dtnHolsWrongGodsPct']() != 40 or m['dtnHolsTempleRiteKillPct']() != 50",
+   "note": "the Holsinger chances - the double-level sacrifice total, the 50/50 neutral notice, the 60/40 sacrilege split and the 50% temple-rite kill (folios 20-21)"
+  },
+  {
+   "expr": "m['dtnHolsCastleLevel']() != 7 or m['dtnHolsTreeHD']() != 1 or m['dtnHolsMistletoeHD']() != 10 or m['dtnHolsTreeMinFt']() != 10",
+   "note": "the ritual pins - the castle at the 7th level, the tree at 1 hit die, the mistletoe at 10, the tree at ten feet (folios 20-21)"
+  },
+  {
+   "expr": "m['dtnGilNappoLevels']() != 15 or m['dtnGilNappoFacets']() != 3 or m['dtnGilScaleFtPerInch']() != 200 or m['dtnGilNappoLifespanYears']() != 120 or m['dtnGilNappoDeadYears']() != 275",
+   "note": "the Nappo dig - three facets and fifteen levels, the 200-feet-to-the-inch scale, 120 years of life, 275 years dead (folios 12-14)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['dtnWmMaleHeightIn'](0) != 61 or m['dtnWmMaleHeightIn'](15) != 76 or m['dtnWmMaleMedLb'](1) != 185 or m['dtnWmMaleHvyLb'](15) != 215",
+   "note": "the male grid - 5-1 at Size 3 to 6-4 at 18, the Size-4 medium cell as scanned at 185, the heavy at 215 (folio 19)"
+  },
+  {
+   "expr": "m['dtnWmFemaleHeightIn'](0) != 58 or m['dtnWmFemaleHeightIn'](12) != -1 or m['dtnWmFemaleMedLb'](15) != 165 or m['dtnWmFemaleHvyLb'](15) != 185",
+   "note": "the female grid - 4-10 at Size 3 to 6-1 at 18, the Size-15 height riding sentinel, the heavy at 185 (folio 19)"
+  },
+  {
+   "expr": "m['dtnWmCarryHuman'](0) != 10 or m['dtnWmCarryHuman'](15) != 30 or m['dtnWmCarryDwarf'](0) != 15 or m['dtnWmCarryDwarf'](13) != -1 or m['dtnWmCarryHobbit'](15) != 40",
+   "note": "the carrying grid - human 1.0 to 3.0, dwarf 1.5 at Strength 3, the Strength-16 dwarf cell riding sentinel, hobbit 4.0 at 18, all in tenths (folio 20)"
+  },
+  {
+   "expr": "m['dtnWmSizeBands']() != 16 or m['dtnWmCarryBands']() != 16",
+   "note": "the band census - sixteen Size rows per grid, sixteen carrying Strength rows (folios 19-20)"
+  },
+  {
+   "expr": "m['dtnWmHairBand'](17) != 3 or m['dtnWmHairBand'](18) != 4 or m['dtnWmVoiceBand'](4) != 2 or m['dtnWmHairLengthMaleBand'](10) != 2",
+   "note": "the appearance pins - white hair at 17, gray at 18-19, the low voice at 4, the long male hair at 10 (folios 20-21)"
+  }
+ ],
+ "header_sections": {
+  "the Gilbert dungeon method article (folios 11-14)": [
+   {
+    "kind": "const",
+    "name": "dtnGilNappoLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dtnGilNappoFacets"
+   },
+   {
+    "kind": "const",
+    "name": "dtnGilScaleFtPerInch"
+   },
+   {
+    "kind": "const",
+    "name": "dtnGilNappoLifespanYears"
+   },
+   {
+    "kind": "const",
+    "name": "dtnGilNappoDeadYears"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnGilBuildersMindset"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnGilOrganizedOrigins"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnGilRoomsMisread"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnGilBuilderTraitsDecree"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnGilStorageRoomsRule"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnGilTwoViewsRule"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnGilKeepItSimple"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnGilRichBuilderRichDungeon"
+   }
+  ],
+  "the Weights & Measures article (folios 19-20)": [
+   {
+    "kind": "const",
+    "name": "dtnWmPoundGp"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmLeatherPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmChainPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmPlatePct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmFemaleConBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmFemaleDexBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmSizeBonusMin"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmSizePenaltyMax"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmSizeHpMod"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmSpeedFull"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmSpeedTwoThirds"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmSpeedOneThird"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmSpeedLightest"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmMaleBeardPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmSizeBands"
+   },
+   {
+    "kind": "const",
+    "name": "dtnWmCarryBands"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnWmSizeThreeDice"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnWmBuildFunctionalHumans"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnWmElfMirrorsHuman"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnWmFemaleLighterCapacity"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnWmMusculatureVsForce"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnWmAppearanceHumanOnly"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWmBuildBand"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWmEyesBand"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWmHairBand"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWmSkinBand"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWmVoiceBand"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWmHandednessBand"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWmExpressionBand"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWmHairLengthMaleBand"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWmHairLengthFemaleBand"
+   },
+   {
+    "kind": "table",
+    "name": "dtnWmMaleTable"
+   },
+   {
+    "kind": "table",
+    "name": "dtnWmFemaleTable"
+   },
+   {
+    "kind": "table",
+    "name": "dtnWmCarryTable"
+   }
+  ],
+  "the Holsinger level ritual article (folios 20-21)": [
+   {
+    "kind": "const",
+    "name": "dtnHolsSacrificeTotalFactor"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsSacrificeEachMinHalf"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsNeutralSacrificePct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsEvilSacrificeNothingPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsGoodSacrilegeRightPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsWrongGodsPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsTempleRiteKillPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsCastleLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsTreeHD"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsMistletoeHD"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHolsTreeMinFt"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsFourPartRitual"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsGoodFastingPrayer"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsSacrificeConsciousRule"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsGoodNoNeutralHumans"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsNeutralMistletoeRite"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsClericIntercession"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsClericsExpectPay"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsExhaustionStuporRule"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsDemiHumanLiquorToughness"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsMilitiaEjects7th"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsGuildHalls"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsSpellLearningRitual"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHolsForgettingSpells"
+   }
+  ]
+ },
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 79
+}
