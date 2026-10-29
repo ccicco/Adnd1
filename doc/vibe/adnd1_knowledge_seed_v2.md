@@ -27807,6 +27807,44 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   issue-12 opener (source in the same archive
   item; the Name That Monster winners may
   harvest). WAIT FOR GO.
+  - R918 LANDED 2026-10-29: commit
+  fed66a6d5cbee164589e4397dea43c95a3c53ada (base
+  9641e88, census 840 -> 841), the Dragon
+  issue-11 box CLOSING round: the pure flip, no
+  new ink - the R903/R907/R911/R913/R916
+  precedent shape. THE SHAPE: prefix bfx
+  (regtest-scan clean), header rules/bfx.h (17
+  inline: 10 consts + 7 bools, no tables), audit
+  "R918 Dragon issue-11 closure audit" at
+  rules/audits/r918_batch.h, 3 examples, 2
+  header_sections (walk bookkeeping + registry
+  ground truth 1311/1333/25), ZERO file_patches
+  and data_files, 1 gap flip. THE FLIP: the
+  issue-11 box in tools/dragon_gap_report_011.md
+  went [x] -> 1 closed / 0 open, THE ISSUE-11
+  WALK COMPLETE - the two chains (the Kuntz
+  brawling article and the Ward quarterstaff
+  article, folios 7 and 26-27) were the only
+  engine-relevant ink in issue #11. The
+  bookkeeping pins: the single box and its two
+  chains, the issue-10 report complete at 2/0
+  since R916, the issue-9 report 1/0 since R913,
+  the issue-8 report 1/0 since R911, the issue-7
+  report 1/0 since R909, the issue-6 report 1/0
+  since R907, the registry ground truth carried
+  forward, and the variant-layer doctrine riding
+  the closure. The R917 record (65 lines) seated
+  in the seed via prev_record. VERIFIED: engine
+  double-run GREEN applied 6 / already 6; rverify
+  against pristine 9641e88: 17 mutants 0 missed;
+  the raw JSON round-trip byte-exact (10242
+  bytes, md5 b998c24a1b6630c12a853d6309abdce1);
+  prefix scan clean, seed grep 1. NEXT: the
+  issue-12 opener (source in the same archive.org
+  item accessory-dragon-magazine-012; the Name
+  That Monster winners may harvest, and the
+  brawling long-term-effects teaser promised in
+  the Sorcerer's Scroll). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

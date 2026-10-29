@@ -1,0 +1,200 @@
+The Dragon
+D&amp;D Variant
+A New Look at Illusionists
+by Rafael Ovalle
+Illusionists are magic users who have specialized in those spells
+pertaining to illusion, deception, the mind, sensory distortion, and
+visual and sonic effects. Spells in this region are usually lower level than
+comparable magic user spells because specialization decreases the
+amount of magical focus involved in casting.
+In fact, due to their long association with the art of illusionary
+magic, illusionists have an innate ability to discriminate between those
+spells thrown by an illusionist and the same spells thrown by a magic
+user or a Cleric, i.e. an illusionist can recognize the handiwork of a col-
+league. Magic users don’t have the experience to recognize such subtle-
+ties.
+It is more difficult to discern illusions used by other creatures such
+as Rakshasa, succubi, and leprechauns or to recognize a polymorphed
+object. Illusionists have a 7% chance per level of recognizing such dis-
+guised creatures or objects upon seeing them, though what caused the
+disguise will still be a mystery.
+But illusionists do have limitations. Because of their specializa-
+tion, illusionists cannot use fireballs or lightning; not that they need to.
+For that matter, magic users cannot research spells similar to the hyp-
+notic pattern except at very high levels. In short, offensive spells cannot
+be traded without great penalty.
+On the other hand, defensive spells can be traded with less penalty,
+i.e. shield is a fourth-level illusionist spell and improved invisibility is a
+fifth-level magic-user spell. Spells which are informational, like detect
+magic, contact higher plane, or legend lore are freely tradeable and re-
+main at the same level. Vision as an exception can never be researched.
+When it comes to fighting, illusionists have one advantage over all
+other classes: the ability to attack astral and ethereal monsters. The as-
+tral, ethereal, and real planes, though physically out of phase with one
+U.S. POSTAL SERVICE
+STATEMENT OF OWNERSHIP, MANAGEMENT AND CIRCULATION
+(Required by 39 U.S.C, 3685)
+1, TITLE OF PUBLICATION ©
+2. DATE OF FILING
+0 Sen
+3 Pavauengy gr is ISSUE JA. NO. OF ISSUES PUBLISHED] B. ANNUAL BSCRIPTION
+imes Yearly ANNUALLY Eight PRICE $9. per six
+SSUES.
+4. LOCATION OF KNOWN OFFICE OF PUBLICATION (Strest, City, County, State and ZIP Code) (Not printers)
+3. Cocarion OF THE HEADQUARTERS reer SUSINESS OFFICES OF THE PUBLISHERS (Not printers)
+223 Wi 5 5 a3
+6, &quot;___NAMES AND COMPLETE ADDRESSES OF PUBLISHER, EDITOR, AND MANAGING EDITOR
+PUBLISHER (Name and Address)
+E. Gary Gygax Rt. 5 Box 445 Lake Geneva Wi 53147
+EDITOR (Name ond Address)
+Timothy J Kask 402 Herman St. Delavan WE 53115
+MANAGING EOITOR (Name and Address)
+Timothy J Kask 402 iri St., Delavan Wi 53115
+7, OWNER (If owned by a corporation, its name and address must be stated and alto immediately thereunder the names and addresses of stoch-
+holders owning or holding 1 percent or more of total amount of stock. If not owned by a corporation, the names end addresses of the Individual ,
+owners must be given. If owned by a partnership or other unincorporated firm, ite name and oddress, as well as that of each individual must
+be given}
+NAME I Ess
+R Hobbies INC. | POB 756 Lake Geneve Wr 53147
+|
+See addendum A
+8. KNOWN BONDHOLDERS, MORTGAGEES, AND OTHER SECURITY HOLDERS OWNING OR HOLDING 1 PERCENT OR MORE OF
+TOTAL AMOUNT OF BONDS, MORTGAGES OR OTHER SECURITIES [if there are none, #0 state)
+ADDRESS
+Lake Geneva WI 53147
+NAME
+st Nat 1 Bank of Lake Geneva
+9. FOR COMPLETION SY NONPROFIT ORGANIZATIONS AUTHORIZED TO MAIL AT SPECIAL RATES (Section 132.122, PSM)
+The purpose, function, and nonprofit status of this organization and the exempt status for Federal income tax purposes (Check one)
+AVE NOT CHANGED Gunny HAVE CHANGED DURING Of changed, publisher must submit explanation of change
+FREckDING &amp; MONTH PRECEDING 12 MONTHS with this statement.)
+TAVERAGE NO. COPIES EACH | ACTUAL NO. COPIES OF oe
+». EXTENT ANO NATURE OF CIRCULATION ISSUE beg ed FOESED ING ISSUE eptrerters ae ST
+A, TOTAL NO, COPIES PRINTED (Net Press Run) 6000 7500
+nnn |
+B. PAID CIRCULATION
+|) SALES THROUGH DEALERS
+VENDORD AND COUNTER SALES sna STREET 4779 6217
+2. MAIL SUBSCRIPTIONS 2 4115 1164
+©. TOTAL PAID CIRCULATION (Sum of 10B1 and 10B2) 5894 7381
+D, FREE DISTRIBUTION BY MAIL, CARRIER OR OTHER MEANS
+SAMPLES, COMPLIMENTARY, AND OTHER FREE COPIES 31 65
+——
+E, TOTAL DISTRIBUTION (Sum of C and D) 5925 hb
+*, COPIES NOT DisTRIBU |
+1, OFFICE USE, LErT OVER, UNACCOUNTED, SPO!LED 5 54
+AFTER PRINTING
+a:
+2. RETURNS FROM NEWS AGENTS
+G. TOTAL (Sum of E, Fi and 2—should equal net press run shown =
+A)
+‘ ~ SIGNATURE ANO TITLE OF EDITZR,
+11. Tcertify that the statements made by me MANAGER, OR OWNE!
+3 above are correct and complete. y |
+a or
+39 U, S. ©, 3626 provides in pertinent part: “Ni
+shalt mall such matter at the:
+to malt matter at such rates.
+oO person who would have been entived to mell matter under former section 4369 of this title
+fates provided under this subsection unless he files ennually with the Postel Service a written request for permission
+in accordance with the provisions of this statute, | hereby request permission to mall the publication nemed In item 1 at the phased postage
+rétes presently authorized by 39 U. S. C. 3626,
+ei 1976 3526 (Page i) (Sce instructions on reverse)
+Vol. 2, No. 6
+another, have light in common. Astral and ethereal monsters can
+usually see everything in their own plane and in the real plane. As they
+can be stoned by basilisks, so are they also affected by those spells of a
+purely visual nature. Hypnosis, hypnotic pattern, gaze reflection, vam-
+pire and umber hulk gaze, eyes of charming, symbols, etc. all have their
+appropriate effects when looked at. An ethereal party can safely walk
+over a symbol on the real plane but will suffer the consequences if
+caught looking.
+Finally, when the class illusionist was constructed few provisions
+were made for those magic items which they could use. Illusionists, in
+correction, can use those items designated for all or magic users with
+the exception of those items which duplicate non-illusionist magic-user
+type spells.
+Specifically the illusionist can use Rods of Rulership, Cancellation
+and Beguilement; all Wands of Detection; Wands of Illusion, Fear,
+Polymorph and Negation; Staffs of Command and Striking; Crystal
+Balls, Talismans of the Sphere and the Wizard’s Robe for hypnosis and
+polymorph. Illusionists cannot use any other magic-user items, even the
+cursed ones.
+To play an illusionist is very difficult and treacherous but there is
+more room for creativity. With these additions the risks are worth it.
+Illusionist Spell Tables
+2nd level
+Protection/Evil*
+Continual Light/MU*
+Illusionary Script**
+1st level
+Read Magic*
+Read Language*
+Mirror Image*
+Pyrotechnics* Blindness**
+Ventriloquism* Misdetect**
+Phantasmal Force* Hypnotic Patterns**
+Color Spray** Deafness**
+Light* Rope Trick*
+Detect Magic* Blur**
+Gaze Reflection***
+Detect Invisible*
+Wall of Fog***
+Displacement***
+Hypnotism/Suggestion***
+Dispel Illusion***
+Locate Object*
+Displacement 10’R***
+Continual Darkness (MU)*
+Personal Silence***
+Magic Mouth*
+Invisibility*
+3rd level 4th level
+Continual Light (Clerical)* Feeblemind***
+Invisibility 10’ R*
+Imp. Displacement***
+Project image*
+Protection/Evil 10’*
+Confusion* Shield*
+Fear** Imp. Invisibility**
+Paralysis** Massmorph*
+Continual Dark (Clerical)* Shadow Monster**
+Polymorph*** Shadow Magic***
+Sensory Deprivation*** Minor Creation**
+Nondetect** Emotions**
+Gaze of Umber Hulk***
+Extension I*
+Hallucinatory Terrain**
+Phantasmal Killer**
+Dispel Exhaustion**
+Silence 15’ R*
+Multiple Hypnosis/Suggestion***
+Discord***
+Hypnotize Monster***
+5th level 6th level
+Summon Shadow** Legend Lore*
+Major Creation** Polymorph Object*
+Chaos** Symbol***
+Power Word Blind*
+Power Word Stun*
+Basilisk Gaze****
+Second Level Spells***
+Demi Shadow Monsters**
+Demi Shadow Magic***
+Create Spectres***
+Geas*
+Simulacrum*
+Beguilement***
+Contact Higher Plane*
+First Level Spells***
+7th level
+Gate*
+Astral Spell*
+Prismatic Wall***
+Prismatic Spray**
+Maze**
+Vision**
+Alter Reality***
+Anti Magic Shell*
+***Normal
+*MU equivalent ***New spell interpretation
