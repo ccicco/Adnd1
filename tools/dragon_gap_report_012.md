@@ -59,7 +59,7 @@ harvestable there.
 - [x] **The Ovalle illusionist article and the Endersby and
   Carroll ship cargo article** (folios 6-7, 12) - the
   issue-12 opener round, part one
-- [ ] **The Persian Mythos and the Lovecraftian Mythos**
+- [x] **The Persian Mythos and the Lovecraftian Mythos**
   (folios 8-11, 18-21) - the issue-12 opener round, part two
 
 2 boxes, 0 closed, 2 open at the R919 authoring. The R919 round

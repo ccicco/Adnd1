@@ -27863,6 +27863,27 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   myt/prm to verify free, gap report 012 box 1
   flips [x], box 2 stays open), then R921 pure
   flip closing both boxes. WAIT FOR GO.
+  - R920 LANDED (75aad7b, issue-12 opener part two,
+  prefix myt, 120 inline: the Arkenberg Persian
+  Mythos folios 8-11 + the Kuntz/Holmes
+  Lovecraftian Mythos folios 18-21, four tables
+  PS/PH/GO/MR; census 842->843; the Atar bar
+  garbles, Vayu 187/36 move, the five hero
+  strength fraction garbles
+  185/189/1859/18;;/18,5, the unlimited and see-
+  below and resistant text cells all riding
+  sentinels, the Yig split AC as head-3/chest-5
+  consts; the report 012 part-one box flipped
+  [x], 1 closed 1 open, R921 pure flip to close
+  both; rverify GREEN 300 mutants 0 missed,
+  round-trip 44318 bytes md5
+  9693d2ed9c11fb096a00d61113175224. Next: R921
+  the issue-12 closing round (pure flip, report
+  012 box 2 [x], 2 closed 0 open, issue-12 walk
+  complete), then issue-13 opener in the same
+  archive.org item (Name That Monster winners +
+  brawling long-term-effects sequel may harvest).
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
