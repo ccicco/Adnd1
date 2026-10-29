@@ -27018,6 +27018,93 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   rule. NEXT: Curtiss's adjudication - the
   issue-4 opener or the comedy box's closing
   round. WAIT FOR GO.
+  - R900 LANDED 2026-10-29: commit
+  17b9d7060ca5add9ecaf6659023cd0bbaa15510c (base
+  8cd97c8, census 822 -> 823), the Dragon issue-4
+  opener: the Creature Features chain as NEW
+  variant-layer registry monsters (no 1e defs
+  exist; the Remorhaz lore-against-def precedent
+  does not apply), from Dragon #4 (the
+  archive.org scan). THE SHAPE: prefix cfe
+  (regtest-scan clean), header rules/cfe.h (72
+  inline: 49 consts + 20 bools + 1 table / 3
+  columns), audit "R900 Dragon Creature Features
+  audit" at rules/audits/r900_batch.h, 23
+  examples, 4 header_sections, 3 file_patches
+  (the R73 whitelist gaining dragon_print; the
+  live def walk beside the MM2 walks; the R879
+  normalizer book_of gaining the DRG Dragon
+  magazine bucket), 40 data_files (the 3 lua defs
+  mihalli/vriyagga/qu_uni, the gap report 004
+  pre-flip, 36 issue-4 transcripts under
+  extract/dragon/004/). THE PINS: the Mihalli -
+  NA 1-20 (the print's 'l-20' glyph as 1), AC 1,
+  M 15, HD 3, L 40 (80-800), F: 50 and I: 50 AS
+  SCANNED garbles, the 20 percent red-eye reveal,
+  the 2/3-plus bonus spells at IV-up, the 40
+  percent Eyes/amulets/scrolls, the four-step
+  Ball of Immediate Eventuation ladder (purple,
+  silver, gold, lambent blue) at XIV-up with the
+  brain-scramble below, 5 percent friendly / 1
+  percent offer, the gas sparing the Shen and
+  Ssu; the Vriyagga - NA 1-10 (20-200 in-city),
+  AC 1, nil treasure even in lair, the size
+  ladder table (move 12/10/8, HD 10/15/25,
+  tentacle dice 2/4/6 assumed d6), the 4-plus
+  tentacles at AC 2 to sever, the heat sense, the
+  speechless ambush-thinker, no stairs, the
+  black-opal dark sight; the Qu'uni - the folio
+  21 sidebar, HD 2, M 10, 50-100, AC 3, auto-
+  attacks water-seekers, no treasure save the sea
+  grotto. THE XP (DMG p.85, all noted): Mihalli
+  115 base (35+25+55) + 3 per hp at 13 avg = 154;
+  Vriyagga 5250 (2400+1250+1600) + 20 per hp at
+  67 avg = 6590 at the 15-dice middle size;
+  Qu'uni 20 + 2 per hp at 9 avg = 38; the
+  averages at the 4.5-per-die d8 convention
+  floored. LESSON (R900, three legs): (1) the
+  live registry census is NOT the lua file count
+  - the first land failed the walk's floor with
+  'bad 1' (pinned 1336) because the Termux
+  battery prints 'loaded 1311, errors 25': 25
+  long-broken MM2/FF text lines have NEVER loaded
+  (unfinished-string lua errors at their text
+  field), so the live census is 1308 base + 3 =
+  1311; no standing audit checks the live count
+  (the 1333 figure was a find file count), so
+  ALWAYS pin registry floors to the battery's
+  'loaded N, errors M' ground truth, and pull the
+  'loaded' line plus any ERR lines from the
+  battery output first when a walk fails; (2) the
+  R411 prefix gate forbids cfe accessors inside
+  regtest.cpp - modern audit headers keep the
+  already-applied marker out of regtest, so a
+  live def walk living in regtest must pin
+  literals, not pin-header calls (the first
+  engine double-run aborted on the second pass
+  until the walk went literal); (3) a failed
+  land's tree must be FULLY unwound before the
+  re-land (the R420 mixed applied/already guard
+  aborts) - the unwind rides with the repair: git
+  checkout the touched tracked files
+  (regtest.cpp, the gap report 003, the seed, the
+  normalizer), rm the new headers, the 3 lua
+  defs, the gap report 004, the spec and
+  extract/dragon/004/. VERIFIED: engine double-
+  run GREEN applied 49 / already 49; rverify
+  against pristine 8cd97c8: 78 mutants 0 missed;
+  the raw JSON round-trip byte-exact. Spec
+  tools/spec_r900.json, 197,126 bytes, 1,064
+  lines, md5 30cfec4efdf37e52c97c8025a9c9ea02.
+  GAP REPORT: the comedy box flipped in
+  tools/dragon_gap_report_003.md -> the issue-3
+  report 5 closed / 0 open, the adjudicated
+  issue-3 walk COMPLETE; the issue-4 report 004
+  ships pre-flip with the Creature Features box
+  open (flips at the next round per the pre-flip
+  rule). NEXT: the issue-4 Creature Features
+  box's closing round or the next adjudication.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

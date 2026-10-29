@@ -23,7 +23,7 @@ ads and the preview.
 
 ## Boxes
 
-- [ ] **The Creature Features chain: the Mihalli, the Vriyagga and
+- [x] **The Creature Features chain: the Mihalli, the Vriyagga and
   the Qu'uni** (folios 18-19, 21) - the issue-4 opener round
 
 1 box, 0 closed, 1 open at the R900 authoring. The R900 round ships

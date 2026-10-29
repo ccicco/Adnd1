@@ -1,0 +1,244 @@
+{
+ "round": 901,
+ "title": "The Creature Features box closing round: the issue-4 walk complete",
+ "regtest": "regtest.cpp",
+ "census_before": 823,
+ "prefix": "cfc",
+ "header_file": "rules/cfc.h",
+ "inline_count": 10,
+ "audit_file": "rules/audits/r901_batch.h",
+ "audit_label": "R901 Creature Features closure audit",
+ "include_after": "#include \"rules/cfe.h\"  // R900: the Dragon issue-4 opener, the Creature Features monsters",
+ "include_comment": "the Creature Features box closing round",
+ "audit_anchor": "#include \"rules/audits/r900_batch.h\"  // R900: R900 Dragon Creature Features audit",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R900 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R900 LANDED 2026-10-29: commit",
+  "  17b9d7060ca5add9ecaf6659023cd0bbaa15510c (base",
+  "  8cd97c8, census 822 -> 823), the Dragon issue-4",
+  "  opener: the Creature Features chain as NEW",
+  "  variant-layer registry monsters (no 1e defs",
+  "  exist; the Remorhaz lore-against-def precedent",
+  "  does not apply), from Dragon #4 (the",
+  "  archive.org scan). THE SHAPE: prefix cfe",
+  "  (regtest-scan clean), header rules/cfe.h (72",
+  "  inline: 49 consts + 20 bools + 1 table / 3",
+  "  columns), audit \"R900 Dragon Creature Features",
+  "  audit\" at rules/audits/r900_batch.h, 23",
+  "  examples, 4 header_sections, 3 file_patches",
+  "  (the R73 whitelist gaining dragon_print; the",
+  "  live def walk beside the MM2 walks; the R879",
+  "  normalizer book_of gaining the DRG Dragon",
+  "  magazine bucket), 40 data_files (the 3 lua defs",
+  "  mihalli/vriyagga/qu_uni, the gap report 004",
+  "  pre-flip, 36 issue-4 transcripts under",
+  "  extract/dragon/004/). THE PINS: the Mihalli -",
+  "  NA 1-20 (the print's 'l-20' glyph as 1), AC 1,",
+  "  M 15, HD 3, L 40 (80-800), F: 50 and I: 50 AS",
+  "  SCANNED garbles, the 20 percent red-eye reveal,",
+  "  the 2/3-plus bonus spells at IV-up, the 40",
+  "  percent Eyes/amulets/scrolls, the four-step",
+  "  Ball of Immediate Eventuation ladder (purple,",
+  "  silver, gold, lambent blue) at XIV-up with the",
+  "  brain-scramble below, 5 percent friendly / 1",
+  "  percent offer, the gas sparing the Shen and",
+  "  Ssu; the Vriyagga - NA 1-10 (20-200 in-city),",
+  "  AC 1, nil treasure even in lair, the size",
+  "  ladder table (move 12/10/8, HD 10/15/25,",
+  "  tentacle dice 2/4/6 assumed d6), the 4-plus",
+  "  tentacles at AC 2 to sever, the heat sense, the",
+  "  speechless ambush-thinker, no stairs, the",
+  "  black-opal dark sight; the Qu'uni - the folio",
+  "  21 sidebar, HD 2, M 10, 50-100, AC 3, auto-",
+  "  attacks water-seekers, no treasure save the sea",
+  "  grotto. THE XP (DMG p.85, all noted): Mihalli",
+  "  115 base (35+25+55) + 3 per hp at 13 avg = 154;",
+  "  Vriyagga 5250 (2400+1250+1600) + 20 per hp at",
+  "  67 avg = 6590 at the 15-dice middle size;",
+  "  Qu'uni 20 + 2 per hp at 9 avg = 38; the",
+  "  averages at the 4.5-per-die d8 convention",
+  "  floored. LESSON (R900, three legs): (1) the",
+  "  live registry census is NOT the lua file count",
+  "  - the first land failed the walk's floor with",
+  "  'bad 1' (pinned 1336) because the Termux",
+  "  battery prints 'loaded 1311, errors 25': 25",
+  "  long-broken MM2/FF text lines have NEVER loaded",
+  "  (unfinished-string lua errors at their text",
+  "  field), so the live census is 1308 base + 3 =",
+  "  1311; no standing audit checks the live count",
+  "  (the 1333 figure was a find file count), so",
+  "  ALWAYS pin registry floors to the battery's",
+  "  'loaded N, errors M' ground truth, and pull the",
+  "  'loaded' line plus any ERR lines from the",
+  "  battery output first when a walk fails; (2) the",
+  "  R411 prefix gate forbids cfe accessors inside",
+  "  regtest.cpp - modern audit headers keep the",
+  "  already-applied marker out of regtest, so a",
+  "  live def walk living in regtest must pin",
+  "  literals, not pin-header calls (the first",
+  "  engine double-run aborted on the second pass",
+  "  until the walk went literal); (3) a failed",
+  "  land's tree must be FULLY unwound before the",
+  "  re-land (the R420 mixed applied/already guard",
+  "  aborts) - the unwind rides with the repair: git",
+  "  checkout the touched tracked files",
+  "  (regtest.cpp, the gap report 003, the seed, the",
+  "  normalizer), rm the new headers, the 3 lua",
+  "  defs, the gap report 004, the spec and",
+  "  extract/dragon/004/. VERIFIED: engine double-",
+  "  run GREEN applied 49 / already 49; rverify",
+  "  against pristine 8cd97c8: 78 mutants 0 missed;",
+  "  the raw JSON round-trip byte-exact. Spec",
+  "  tools/spec_r900.json, 197,126 bytes, 1,064",
+  "  lines, md5 30cfec4efdf37e52c97c8025a9c9ea02.",
+  "  GAP REPORT: the comedy box flipped in",
+  "  tools/dragon_gap_report_003.md -> the issue-3",
+  "  report 5 closed / 0 open, the adjudicated",
+  "  issue-3 walk COMPLETE; the issue-4 report 004",
+  "  ships pre-flip with the Creature Features box",
+  "  open (flips at the next round per the pre-flip",
+  "  rule). NEXT: the issue-4 Creature Features",
+  "  box's closing round or the next adjudication.",
+  "  WAIT FOR GO."
+ ],
+ "header_sections": {
+  "the walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "cfcReportBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "cfcCreatureFeaturesDefs"
+   },
+   {
+    "kind": "const",
+    "name": "cfcIssue3Closed"
+   },
+   {
+    "kind": "bool",
+    "name": "cfcIssue3WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "cfcIssue4WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "cfcVariantLayerDoctrine"
+   }
+  ],
+  "the registry ground truth": [
+   {
+    "kind": "const",
+    "name": "cfcLiveRegistry"
+   },
+   {
+    "kind": "const",
+    "name": "cfcBaseLuaFiles"
+   },
+   {
+    "kind": "const",
+    "name": "cfcRegistryLoadErrors"
+   },
+   {
+    "kind": "bool",
+    "name": "cfcPreR900LoadErrorState"
+   }
+  ]
+ },
+ "consts": [
+  {
+   "name": "cfcReportBoxes",
+   "value": 1,
+   "comment": "the issue-4 report carries a single box - the Creature Features chain at folios 18-19, 21 (tools/dragon_gap_report_004.md); this round flips it closed, 1 closed / 0 open, the walk complete"
+  },
+  {
+   "name": "cfcCreatureFeaturesDefs",
+   "value": 3,
+   "comment": "the three Creature Features lua defs riding the box - the Mihalli, the Vriyagga and the Qu'uni, promoted at R900 (folios 18-19, 21)"
+  },
+  {
+   "name": "cfcIssue3Closed",
+   "value": 5,
+   "comment": "the issue-3 report closed 5 / 0 at the R900 flip - the adjudicated issue-3 walk complete (tools/dragon_gap_report_003.md)"
+  },
+  {
+   "name": "cfcLiveRegistry",
+   "value": 1311,
+   "comment": "the live lua def census the Termux battery prints - 'loaded 1311, errors 25' is the ground truth after the three promotions (the R900 lesson: registry floors pin to the battery line, never to the file count)"
+  },
+  {
+   "name": "cfcBaseLuaFiles",
+   "value": 1333,
+   "comment": "the base lua FILE count under monsters/monsters/ - never the loaded count; 25 files never enter the registry (the R900 lesson)"
+  },
+  {
+   "name": "cfcRegistryLoadErrors",
+   "value": 25,
+   "comment": "the long-broken base defs that never load - unfinished-string lua errors at their text lines, a pre-R900 print-fidelity state this round does not touch"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cfcIssue3WalkComplete",
+   "value": true,
+   "comment": "the issue-3 walk is complete - 5 boxes closed / 0 open at the R900 flip (tools/dragon_gap_report_003.md)"
+  },
+  {
+   "name": "cfcIssue4WalkComplete",
+   "value": true,
+   "comment": "the issue-4 walk is complete at this round's flip - the Creature Features box closed, 1 / 0 (tools/dragon_gap_report_004.md)"
+  },
+  {
+   "name": "cfcVariantLayerDoctrine",
+   "value": true,
+   "comment": "the standing doctrine rides the closure: the pin IS the conversion, Dragon ink rides a VARIANT layer with provenance, never core 1e canon (the report 004 doctrine line)"
+  },
+  {
+   "name": "cfcPreR900LoadErrorState",
+   "value": true,
+   "comment": "the 25 load errors pre-date R900 entirely - MM2/FF-era text lines, untouched by the walk rounds and left as-is per the print-fidelity doctrine"
+  }
+ ],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['cfcReportBoxes']() != 1 or m['cfcCreatureFeaturesDefs']() != 3 or m['cfcIssue3Closed']() != 5",
+   "note": "the walk bookkeeping - the issue-4 single box closing over its three defs, and the issue-3 report complete at 5 / 0 (gap reports 003 and 004)"
+  },
+  {
+   "expr": "m['cfcLiveRegistry']() != 1311 or m['cfcBaseLuaFiles']() != 1333 or m['cfcRegistryLoadErrors']() != 25",
+   "note": "the registry ground truth - 1311 loaded live, 1333 files on disk, 25 never-load errors: the battery line is the ground truth, never the file count (the R900 lesson)"
+  },
+  {
+   "expr": "m['cfcIssue3WalkComplete']() != 1 or m['cfcIssue4WalkComplete']() != 1 or m['cfcVariantLayerDoctrine']() != 1 or m['cfcPreR900LoadErrorState']() != 1",
+   "note": "the closure doctrines - issue 3 complete, issue 4 complete at this flip, the variant layer standing, the 25 errors a pre-R900 state"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "gap_report": "tools/dragon_gap_report_004.md",
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Creature Features chain: the Mihalli, the Vriyagga and\n  the Qu'uni** (folios 18-19, 21) - the issue-4 opener round",
+   "to": "- [x] **The Creature Features chain: the Mihalli, the Vriyagga and\n  the Qu'uni** (folios 18-19, 21) - the issue-4 opener round",
+   "note": "the Creature Features box - the issue-4 report first flip, 1 closed / 0 open, the issue-4 walk complete"
+  }
+ ],
+ "gap_census": {
+  "closed": 1,
+  "open": 0
+ },
+ "banner": {
+  "title": "The Creature Features box closing round - the issue-4 walk complete: the pure bookkeeping round, the flip and the registry ground truth",
+  "provenance": "The pure box-closing round, no new ink: the Creature Features box in tools/dragon_gap_report_004.md flips closed (1 / 0), completing the issue-4 walk exactly as adjudicated at R900 - the Creature Features chain was the only engine-relevant chain in The Dragon Vol. 1 No. 4 (December 1976); everything else was scoped out (the EPT campaign chains, the Metamorphosis Alpha androids, the Jaquet Oddball parody, the fiction, Finieous Fingers, Wargaming World, the Temple pictorial, Mapping the Dungeons, the ads and the preview). The R900 record seats in the seed this round.",
+  "sentinel": "The pure-round doctrine: a closing round carries no new print ink - only the flip and the walk bookkeeping, every number cited to its standing record; the registry ground truth pins as the R900 lesson taught: 1311 loaded live against 1333 files with 25 never-load errors, the battery line 'loaded N, errors M' the only ground truth for registry floors, never the file count; the 25 broken MM2/FF text lines stay untouched, a pre-R900 print-fidelity state; the variant-layer doctrine holds at the closure - Dragon ink is never core 1e canon."
+ },
+ "audit_comment": "THE CREATURE FEATURES BOX CLOSING ROUND - the pure bookkeeping round, no new print ink. The flip: the Creature Features box in tools/dragon_gap_report_004.md goes [x] - 1 closed / 0 open, the issue-4 walk complete, the chain (the Mihalli, the Vriyagga, the Qu'uni at folios 18-19, 21) having been the only engine-relevant ink in issue #4. The bookkeeping pins: the single box and its three defs, the issue-3 report complete at 5 / 0, and the registry ground truth from the R900 lesson - the live census 1311 against the 1333 base lua files with the 25 never-load errors, the battery line 'loaded 1311, errors 25' the only ground truth for registry floors; the 25 long-broken MM2/FF text lines are a pre-R900 print-fidelity state, untouched. The R900 record seats in the seed via this round's prev_record. No file patches, no data files, no tables - the census rides 823 -> 824."
+}
