@@ -1,0 +1,301 @@
+{
+ "round": 888,
+ "title": "The Dragon small variants: languages, Eldar, the Bulette",
+ "prefix": "drg",
+ "census_before": 810,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R887 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R887 LANDED 2026-10-29: commit",
+  "  2229ebae071fde0ab19309c5a44cc781657c3699",
+  "  (pushed b626d1e..2229eba, census 809 -> 810),",
+  "  THE IVES ATTRIBUTE TABLES - THE DRAGON",
+  "  MAGAZINE WALK OPENS (issue #1, folio 7,",
+  "  the Wesley D. Ives non-prime-requisite",
+  "  adjudication system, the arc's first",
+  "  VARIANT-layer pin). THE SHAPE: prefix ivs",
+  "  (full-repo scan clean), header rules/ivs.h",
+  "  (92 opener-only), the die-band chain (the",
+  "  d100-plus-score total picks the d4-d12",
+  "  band), the exceptional-strength ladder",
+  "  (18/01-18/00 reads 18-27, the ink",
+  "  18-super-90 glyph pinned as scanned with",
+  "  the erratum noted), the 6x6 use grid, 3",
+  "  consts + 3 bools + 2 chains + 2 switches,",
+  "  11 examples (both Grod cases), inline 16;",
+  "  audit \"R887 Ives attribute audit\" rode",
+  "  rules/audits/r887_batch.h. THE VOICE: all",
+  "  32 issue pages at extract/dragon/001/",
+  "  pNNN_full.txt (the chat-side OCR",
+  "  transcripts, folio = PDF page) PLUS the",
+  "  pre-flip tools/dragon_gap_report.md (3",
+  "  boxes, 0 closed) shipped as spec data",
+  "  files - the Ives box flips at the NEXT",
+  "  Dragon round (a report cannot flip in the",
+  "  round that creates it, the R796 pre-flip",
+  "  rule held); the gap field rode the ddg",
+  "  report (24/0, untouched no-op). The R886",
+  "  record seated into the v2 seed ledger",
+  "  (66 lines). DOCTRINE SEATS (user-set",
+  "  2026-10-29): the Dragon walk (article-",
+  "  chain ink units), the conversion doctrine",
+  "  (the pin IS the conversion, noted, never",
+  "  silent), the variant-layer seating, the",
+  "  issue-1 mining adjudication (use: Ives,",
+  "  Languages, Eldar, Bulette lore, Aronson",
+  "  deltas; parked: the Artificers; dropped:",
+  "  Lakofka, Mapping, BotFA, fiction, ads),",
+  "  and BASE64 IS NOT A GOTO OPTION - the raw",
+  "  JSON canvas body is the standing delivery",
+  "  channel, base64 only as a last resort.",
+  "  VERIFIED: engine double-run GREEN applied",
+  "  38 / already 38; rverify against pristine",
+  "  b626d1e: 54 mutants 0 missed; the raw JSON",
+  "  round-trip gated byte-exact. Spec",
+  "  tools/spec_r887.json, 159,464 bytes, md5",
+  "  a0224f8cdc0b465404213e008d712457",
+  "  (authored-plus-newline; the pre-reset",
+  "  build cf58bc... is obsolete - the rebuild",
+  "  is the verified artifact). NEXT: Round B",
+  "  - the combined small-variant round (Gold",
+  "  languages 9-10, Smith Eldar 30, the",
+  "  Bulette lore pin vs monsters/monsters/b/",
+  "  bulette.lua) with the Ives box flip.",
+  "  WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/ivs.h\"  // R887: the Ives attribute tables, the Dragon opener",
+ "include_comment": "the Dragon small-variant set",
+ "header_file": "rules/drg.h",
+ "audit_file": "rules/audits/r888_batch.h",
+ "audit_label": "R888 Dragon small variants audit",
+ "audit_anchor": "#include \"rules/audits/r887_batch.h\"  // R887: R887 Ives attribute audit",
+ "gap_report": "tools/dragon_gap_report.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 2
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Ives attribute tables** (folio 7) - the opener round",
+   "to": "- [x] **The Ives attribute tables** (folio 7) - the opener round",
+   "note": "the Ives box - the dragon report's first flip"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon small variants - the combined issue-1 round: Gold's Languages doctrine (folios 9-10), Smith's Eldar variants (folio 30), and the Bulette lore pin (folio 19)",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 1 (June 1976): folios 9-10, Lee Gold's Languages; folio 30, Larry Smith's The Three Kindreds of the Eldar; folio 19, Creature Features - the Bulette, the original Landshark appearance, pinned as LORE against the existing MM2 def monsters/monsters/b/bulette.lua, never a competing def. The voice rides extract/dragon/001/. OD&D-era ink converted per the walk doctrine: the pin IS the conversion, noted, never silent.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. The Bulette pins are lore/provenance only - the MM2 def itself is untouched and holds the stem; the Eldar multipliers ride as the 150-percent 1e conversion of x1.5; the language doctrine is Gold's prose with its one printed number and its anecdote-grade example."
+ },
+ "consts": [
+  {
+   "name": "drgCommonPct",
+   "value": 20,
+   "comment": "the Gold Common tongue doctrine - most humans know Common, and some (20 percent) other creatures and monsters know it (folios 9-10)"
+  },
+  {
+   "name": "drgMutualPctExample",
+   "value": 60,
+   "comment": "the mutual-comprehensibility example - the Caveman Cleric's Cavish read 60 percent mutually comprehensible with the Morlochs (folio 10)"
+  },
+  {
+   "name": "drgNoldorRangePct",
+   "value": 150,
+   "comment": "the Noldor elf spell-range multiplier - all ranges x1.5, converted to the 150-percent 1e form (folio 30)"
+  },
+  {
+   "name": "drgNoldorEffectPct",
+   "value": 150,
+   "comment": "the Noldor elf spell-effect multiplier - all effects x1.5, the 150-percent conversion (folio 30)"
+  },
+  {
+   "name": "drgBulWeakSpots",
+   "value": 2,
+   "comment": "the Bulette's semi-vulnerable spots - only two: the eyes and the underside of the hinged back portion (folio 19)"
+  },
+  {
+   "name": "drgBulEyeAc",
+   "value": 4,
+   "comment": "the Bulette eyes armor class - very small against the overall bulk (folio 19)"
+  },
+  {
+   "name": "drgBulUndersideAc",
+   "value": 6,
+   "comment": "the Bulette underside armor class - exposed only when the crest is raised, about a foot and a half square (folio 19)"
+  },
+  {
+   "name": "drgBulSmallestDice",
+   "value": 6,
+   "comment": "the smallest Bulettes ever seen are of the six-die variety; no young have ever been sighted (folio 19)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "drgHumansPersonalTongue",
+   "value": true,
+   "comment": "most humans also speak a personal native tongue alongside Common - a current, sub-species, legendary or geographic tongue (folio 10)"
+  },
+  {
+   "name": "drgPersonalTongueThinking",
+   "value": true,
+   "comment": "dungeon-dwelling humans are apt to think in their personal tongues rather than in Common - the telepathic-eavesdropper point (folio 10)"
+  },
+  {
+   "name": "drgMutualByPct",
+   "value": true,
+   "comment": "mutual intelligibility between related tongues is adjudicated by percentage - the Cavish/Morloch precedent (folio 10)"
+  },
+  {
+   "name": "drgNoldorNoLevelCap",
+   "value": true,
+   "comment": "the Noldor elf has no level restriction - a variant against the 1e elf level caps (folio 30)"
+  },
+  {
+   "name": "drgElfDiseaseImmune",
+   "value": true,
+   "comment": "due to Blackmoor, all elves are to be considered immune to any and all sickness and disease (folio 30)"
+  },
+  {
+   "name": "drgBulNeverUnderground",
+   "value": true,
+   "comment": "the Bulette is NEVER found underground (folio 19)"
+  },
+  {
+   "name": "drgBulScalesAsShields",
+   "value": true,
+   "comment": "the scales behind the Bulette's head are highly prized as shields; the teeth are said to be extremely valuable (folio 19)"
+  },
+  {
+   "name": "drgBulPairsTerritorial",
+   "value": true,
+   "comment": "the Bulette is very rare; only mated pairs, if such exist, share the same territory (folio 19)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['drgCommonPct']() != 20",
+   "note": "the Rules' 20 percent - some other creatures and monsters know Common (Gold, folio 9)"
+  },
+  {
+   "expr": "m['drgMutualPctExample']() != 60",
+   "note": "the Morloch encounter - the Cavish read 60 percent mutually comprehensible, enough to learn they were Neutrals and pay the wine tribute (folio 10)"
+  },
+  {
+   "expr": "m['drgHumansPersonalTongue']() != 1 or m['drgPersonalTongueThinking']() != 1",
+   "note": "the personal-tongue doctrine - humans carry one and think in it, the telepathy point (folio 10)"
+  },
+  {
+   "expr": "m['drgMutualByPct']() != 1",
+   "note": "mutual comprehensibility goes by percentage - the Gold precedent (folio 10)"
+  },
+  {
+   "expr": "m['drgNoldorRangePct']() != 150 or m['drgNoldorEffectPct']() != 150",
+   "note": "the Noldor elf - all spell ranges and effects at x1.5, the 150-percent conversion (folio 30)"
+  },
+  {
+   "expr": "6 * m['drgNoldorRangePct']() / 100 != 9",
+   "note": "a 6-inch spell range reads 9 under the Noldor multiplier - the conversion example"
+  },
+  {
+   "expr": "m['drgNoldorNoLevelCap']() != 1 or m['drgElfDiseaseImmune']() != 1",
+   "note": "the Eldar variants - no level restriction, and the Blackmoor-borne disease immunity for all elves (folio 30)"
+  },
+  {
+   "expr": "m['drgBulWeakSpots']() != 2 or m['drgBulEyeAc']() != 4 or m['drgBulUndersideAc']() != 6",
+   "note": "the Bulette's two semi-vulnerable spots - the eyes AC 4, the raised-crest underside AC 6 (folio 19)"
+  },
+  {
+   "expr": "m['drgBulNeverUnderground']() != 1",
+   "note": "NEVER found underground - the Dragon lore doctrine rides against the untouched MM2 def (folio 19)"
+  },
+  {
+   "expr": "m['drgBulSmallestDice']() != 6",
+   "note": "the smallest ever seen are of the six-die variety; no young have ever been sighted (folio 19)"
+  },
+  {
+   "expr": "m['drgBulScalesAsShields']() != 1 or m['drgBulPairsTerritorial']() != 1",
+   "note": "the Bulette provenance - scales prized as shields, teeth valuable, only mated pairs share territory (folio 19)"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 16,
+ "header_sections": {
+  "the language doctrine (Gold, folios 9-10)": [
+   {
+    "kind": "const",
+    "name": "drgCommonPct"
+   },
+   {
+    "kind": "bool",
+    "name": "drgHumansPersonalTongue"
+   },
+   {
+    "kind": "bool",
+    "name": "drgPersonalTongueThinking"
+   },
+   {
+    "kind": "bool",
+    "name": "drgMutualByPct"
+   },
+   {
+    "kind": "const",
+    "name": "drgMutualPctExample"
+   }
+  ],
+  "the Eldar variants (Smith, folio 30)": [
+   {
+    "kind": "bool",
+    "name": "drgNoldorNoLevelCap"
+   },
+   {
+    "kind": "const",
+    "name": "drgNoldorRangePct"
+   },
+   {
+    "kind": "const",
+    "name": "drgNoldorEffectPct"
+   },
+   {
+    "kind": "bool",
+    "name": "drgElfDiseaseImmune"
+   }
+  ],
+  "the Bulette lore (folio 19)": [
+   {
+    "kind": "const",
+    "name": "drgBulWeakSpots"
+   },
+   {
+    "kind": "const",
+    "name": "drgBulEyeAc"
+   },
+   {
+    "kind": "const",
+    "name": "drgBulUndersideAc"
+   },
+   {
+    "kind": "bool",
+    "name": "drgBulNeverUnderground"
+   },
+   {
+    "kind": "const",
+    "name": "drgBulSmallestDice"
+   },
+   {
+    "kind": "bool",
+    "name": "drgBulScalesAsShields"
+   },
+   {
+    "kind": "bool",
+    "name": "drgBulPairsTerritorial"
+   }
+  ]
+ },
+ "audit_comment": "THE DRAGON SMALL VARIANTS - the combined issue-1 round, three chains on the variant layer. LANGUAGES (Gold, folios 9-10): the 20-percent Common doctrine, the personal-tongue rules (a native tongue beside Common, thinking in it), and mutual comprehensibility by percentage - the Cavish/Morloch 60-percent encounter is the anecdote-grade example. ELDER (Smith, folio 30): the Noldor elf rides no level restriction, all spell ranges and effects at x1.5 (pinned as the 150-percent 1e conversion), and the Blackmoor-borne doctrine that all elves are immune to any and all sickness and disease - variants against the engine's 1e elf canon (races.h, elf.lua), never core rewrites. THE BULETTE (folio 19): the original Landshark appearance, pinned as LORE and PROVENANCE against the existing MM2 def monsters/monsters/b/bulette.lua - the def is untouched, the stem holds, no competing def ever: the two semi-vulnerable spots (the eyes AC 4, the raised-crest underside AC 6), the never-underground doctrine, the six-die smallest, the scales-as-shields and pairs-territorial lore. HONEST BOUNDARIES: all three chains are OD&D-era variant ink, converted, noted, never silent; Gold's doctrine is prose with one printed number; the Eldar multipliers are the only numeric conversions; the Bulette pins never touch the def's own fields. The Ives gap box flips this round - the dragon report's first flip."
+}

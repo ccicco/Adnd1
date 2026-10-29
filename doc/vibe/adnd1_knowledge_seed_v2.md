@@ -26211,6 +26211,62 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   already 48). NEXT: the per-book
   normalization rounds (MM1 408, MM2 332, FF
   185, OA 47, WSG+MOP 23). WAIT FOR GO.
+  - R887 LANDED 2026-10-29: commit
+  2229ebae071fde0ab19309c5a44cc781657c3699
+  (pushed b626d1e..2229eba, census 809 -> 810),
+  THE IVES ATTRIBUTE TABLES - THE DRAGON
+  MAGAZINE WALK OPENS (issue #1, folio 7,
+  the Wesley D. Ives non-prime-requisite
+  adjudication system, the arc's first
+  VARIANT-layer pin). THE SHAPE: prefix ivs
+  (full-repo scan clean), header rules/ivs.h
+  (92 opener-only), the die-band chain (the
+  d100-plus-score total picks the d4-d12
+  band), the exceptional-strength ladder
+  (18/01-18/00 reads 18-27, the ink
+  18-super-90 glyph pinned as scanned with
+  the erratum noted), the 6x6 use grid, 3
+  consts + 3 bools + 2 chains + 2 switches,
+  11 examples (both Grod cases), inline 16;
+  audit "R887 Ives attribute audit" rode
+  rules/audits/r887_batch.h. THE VOICE: all
+  32 issue pages at extract/dragon/001/
+  pNNN_full.txt (the chat-side OCR
+  transcripts, folio = PDF page) PLUS the
+  pre-flip tools/dragon_gap_report.md (3
+  boxes, 0 closed) shipped as spec data
+  files - the Ives box flips at the NEXT
+  Dragon round (a report cannot flip in the
+  round that creates it, the R796 pre-flip
+  rule held); the gap field rode the ddg
+  report (24/0, untouched no-op). The R886
+  record seated into the v2 seed ledger
+  (66 lines). DOCTRINE SEATS (user-set
+  2026-10-29): the Dragon walk (article-
+  chain ink units), the conversion doctrine
+  (the pin IS the conversion, noted, never
+  silent), the variant-layer seating, the
+  issue-1 mining adjudication (use: Ives,
+  Languages, Eldar, Bulette lore, Aronson
+  deltas; parked: the Artificers; dropped:
+  Lakofka, Mapping, BotFA, fiction, ads),
+  and BASE64 IS NOT A GOTO OPTION - the raw
+  JSON canvas body is the standing delivery
+  channel, base64 only as a last resort.
+  VERIFIED: engine double-run GREEN applied
+  38 / already 38; rverify against pristine
+  b626d1e: 54 mutants 0 missed; the raw JSON
+  round-trip gated byte-exact. Spec
+  tools/spec_r887.json, 159,464 bytes, md5
+  a0224f8cdc0b465404213e008d712457
+  (authored-plus-newline; the pre-reset
+  build cf58bc... is obsolete - the rebuild
+  is the verified artifact). NEXT: Round B
+  - the combined small-variant round (Gold
+  languages 9-10, Smith Eldar 30, the
+  Bulette lore pin vs monsters/monsters/b/
+  bulette.lua) with the Ives box flip.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

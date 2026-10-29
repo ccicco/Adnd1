@@ -13,7 +13,7 @@ Dragon pins ride a VARIANT layer with provenance, never core canon.
 
 ## Boxes
 
-- [ ] **The Ives attribute tables** (folio 7) - the opener round
+- [x] **The Ives attribute tables** (folio 7) - the opener round
 - [ ] **The small-variant set: Gold languages (9-10), Smith Eldar
   (30), the Bulette lore pin (19)** - the combined round
 - [ ] **Aronson: mighty magic miscellany, the illusionist deltas**

@@ -589,6 +589,7 @@
 #include "rules/dpy.h"  // R885: the DDG lua promotion, batch six
 #include "rules/dpz.h"  // R886: the DDG lua promotion, batch seven
 #include "rules/ivs.h"  // R887: the Ives attribute tables, the Dragon opener
+#include "rules/drg.h"  // R888: the Dragon small-variant set
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4636,6 +4637,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r888_batch.h"  // R888: R888 Dragon small variants audit
 #include "rules/audits/r887_batch.h"  // R887: R887 Ives attribute audit
 #include "rules/audits/r886_batch.h"  // R886: R886 DDG promotion audit
 #include "rules/audits/r885_batch.h"  // R885: R885 DDG promotion audit
