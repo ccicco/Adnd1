@@ -27609,6 +27609,24 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   5451c1615d13e37e9d593d659af18f66. NEXT: the
   issue-8 flip (report 008, 1 box to close), then
   the issue-9 opener. WAIT FOR GO.
+  - R911 LANDED 2026-10-29: commit
+  4081a693829d9f205b7fe824d7b7abfe845a0624 (base
+  7b77edc, census 833 -> 834), the Dragon issue-8
+  closure/flip round: prefix cgx, header
+  rules/cgx.h, audit rules/audits/r911_batch.h
+  ("R911 Dragon issue-8 closure audit"), 11
+  inline (7 consts + 4 bools), 3 examples, 2
+  header_sections, ZERO file_patches/data_files,
+  ONE gap flip: gap report 008 box -> [x] (the
+  Gygax Planes article, the Watson towns article
+  and the Kuntz gems re-evaluation), gap_census 1
+  closed / 0 open, the three-chain issue-8 walk
+  complete. rverify GREEN (11 mutants / 0
+  missed), double-run applied 6 / already 6, spec
+  round-trip byte-exact (11067 bytes), prefix
+  scan clean, seed grep 1. Likely next: the
+  issue-9 opener (source in accessory-dragon-
+  magazine-012). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
