@@ -35,7 +35,7 @@ Manor ad (31).
 
 ## Boxes
 
-- [ ] **The Gygax Planes article, the Watson towns article and the
+- [x] **The Gygax Planes article, the Watson towns article and the
   Kuntz gems re-evaluation** (folios 4-5, 5-7, 22-23) - the
   issue-8 opener round
 

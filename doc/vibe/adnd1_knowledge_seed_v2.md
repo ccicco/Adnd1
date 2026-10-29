@@ -27532,6 +27532,83 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   issue-8 opener (the source lives in the same
   archive.org item accessory-dragon-
   magazine-012). WAIT FOR GO.
+  - R910 LANDED 2026-10-29: commit
+  7b77edc22aafb2639065acaee614291e6a2b6dca (base
+  86956d0, census 832 -> 833), the Dragon issue-8
+  opener: THREE CHAINS, prefix dgo, header
+  rules/dgo.h, 66 inline (41 consts + 15 bools +
+  10 table cols), 9 examples + 7 table_checks, 3
+  header_sections, 33 data_files (gap report 008
+  pre-flip + 32 issue-8 transcripts), ZERO
+  file_patches, gap report 007 verified no-op (1
+  closed / 0 open). CHAIN 1, the Gygax Planes
+  article (Designers Forum, folios 4-5): 7 inner
+  / 16 outer planes, Seven Heavens 7 levels, Nine
+  Hells 9 layers, Abyss 666 layers; the ethereal-
+  to-inner / astral-to-outer split, astral from
+  Prime Material only and never from the inner
+  planes, astral reaches the first outer level
+  only, walking one plane to either side; the
+  planar-existence law - special-metal creatures
+  dual-planar in Positive/Negative Material,
+  +1-only creatures in two planes, +2 in three,
+  weapons removed one plane per plus (sharpness
+  and vorpal special-cased, life-draining swords
+  Negative-planar), magic weapons attack into
+  Astral/Ethereal, weapons beyond their plane
+  limit go mundane. Pinned as a VARIANT LAYER
+  with provenance even though it prefigures the
+  later print - never core canon. CHAIN 2, the
+  Watson Development of Towns in D&D article
+  (folios 5-7): pawnshop 1-in-6 defective, market
+  1-in-4 foreign merchants, thieves' quarter
+  1-in-8 per turn, cartographer maps 100-600 gp,
+  barber 1 gp, stable 2-3 gp/week, soothsayer 20
+  gp, magician 50 gp per spell level, brothel
+  20/35 gp with 10-100 gp info bribes and 1-6
+  patrons, surgeon 25 gp for 1-6 wound points at
+  50 percent and 35 gp poison cure at 1-in-6 (one
+  attempt/day, one success/week, paid
+  regardless), library 100 gp base, Falgrave's
+  3-18 patrons two-thirds non-human with 1-4
+  wayfarers, the three-floor limit, the shared
+  dungeon scale, border walls and the keep. CHAIN
+  3, the Kuntz A Re-evaluation of Gems and
+  Jewelry article (folios 22-23): the five
+  numeric substitution tables - carat (11 rows),
+  basic values (10 rows at 10-200 gp), jewelry
+  metals (10 rows, bronze 10-40 through
+  mithril+platinum 2,000-5,000), gem counts (7
+  rows with carat caps, the no-limit row at 0)
+  and jewelry types (15 bands, names in the audit
+  comment). AS SCANNED, NOTED NEVER SILENT: the
+  worked example's table labels read swapped
+  against the printed tables' own bands (55 gives
+  75 gp/carat, 77 gives 5 carats - the 75 x 5 x 3
+  = 1,125 arithmetic is the anchor); the carat
+  table's starred rows overlap by the print's own
+  arithmetic (91-95 at 20-50 vs 96-98 at 20-70)
+  with the re-roll footnote; Table C's gem-type
+  lists garble in the OCR and ride the
+  transcript, never guessed. NOT USABLE per the
+  issue-8 walk: the Fischer Finzer Family fiction
+  (8-20), the Gamma World sneak preview (21), the
+  Featured Creature CONTEST announcement (25 - a
+  contest, no stats; the future creature may
+  harvest when the winner prints), the Still More
+  Additions to MA forum (26) and Mutated Animals
+  (28), the From the Fantasy Forge figure reviews
+  (24), the editorial (3), the ads (2, 13, 17-18,
+  27, 30-32) and the Fenn Manor ad (31). PRINT
+  FOLIO = PDF PAGE verified at footers 3, 12, 21,
+  22, 23, 24. VERIFIED: engine double-run GREEN
+  applied 38 / already 38; rverify against
+  pristine 86956d0: 159 mutants 0 missed; the raw
+  JSON round-trip byte-exact. Spec
+  tools/spec_r910.json, 217,617 bytes, md5
+  5451c1615d13e37e9d593d659af18f66. NEXT: the
+  issue-8 flip (report 008, 1 box to close), then
+  the issue-9 opener. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

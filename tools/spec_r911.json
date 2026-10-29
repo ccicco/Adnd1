@@ -1,0 +1,243 @@
+{
+ "round": 911,
+ "title": "The Dragon issue-8 box closing round: the three-chain walk complete",
+ "prefix": "cgx",
+ "census_before": 833,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R910 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R910 LANDED 2026-10-29: commit",
+  "  7b77edc22aafb2639065acaee614291e6a2b6dca (base",
+  "  86956d0, census 832 -> 833), the Dragon issue-8",
+  "  opener: THREE CHAINS, prefix dgo, header",
+  "  rules/dgo.h, 66 inline (41 consts + 15 bools +",
+  "  10 table cols), 9 examples + 7 table_checks, 3",
+  "  header_sections, 33 data_files (gap report 008",
+  "  pre-flip + 32 issue-8 transcripts), ZERO",
+  "  file_patches, gap report 007 verified no-op (1",
+  "  closed / 0 open). CHAIN 1, the Gygax Planes",
+  "  article (Designers Forum, folios 4-5): 7 inner",
+  "  / 16 outer planes, Seven Heavens 7 levels, Nine",
+  "  Hells 9 layers, Abyss 666 layers; the ethereal-",
+  "  to-inner / astral-to-outer split, astral from",
+  "  Prime Material only and never from the inner",
+  "  planes, astral reaches the first outer level",
+  "  only, walking one plane to either side; the",
+  "  planar-existence law - special-metal creatures",
+  "  dual-planar in Positive/Negative Material,",
+  "  +1-only creatures in two planes, +2 in three,",
+  "  weapons removed one plane per plus (sharpness",
+  "  and vorpal special-cased, life-draining swords",
+  "  Negative-planar), magic weapons attack into",
+  "  Astral/Ethereal, weapons beyond their plane",
+  "  limit go mundane. Pinned as a VARIANT LAYER",
+  "  with provenance even though it prefigures the",
+  "  later print - never core canon. CHAIN 2, the",
+  "  Watson Development of Towns in D&D article",
+  "  (folios 5-7): pawnshop 1-in-6 defective, market",
+  "  1-in-4 foreign merchants, thieves' quarter",
+  "  1-in-8 per turn, cartographer maps 100-600 gp,",
+  "  barber 1 gp, stable 2-3 gp/week, soothsayer 20",
+  "  gp, magician 50 gp per spell level, brothel",
+  "  20/35 gp with 10-100 gp info bribes and 1-6",
+  "  patrons, surgeon 25 gp for 1-6 wound points at",
+  "  50 percent and 35 gp poison cure at 1-in-6 (one",
+  "  attempt/day, one success/week, paid",
+  "  regardless), library 100 gp base, Falgrave's",
+  "  3-18 patrons two-thirds non-human with 1-4",
+  "  wayfarers, the three-floor limit, the shared",
+  "  dungeon scale, border walls and the keep. CHAIN",
+  "  3, the Kuntz A Re-evaluation of Gems and",
+  "  Jewelry article (folios 22-23): the five",
+  "  numeric substitution tables - carat (11 rows),",
+  "  basic values (10 rows at 10-200 gp), jewelry",
+  "  metals (10 rows, bronze 10-40 through",
+  "  mithril+platinum 2,000-5,000), gem counts (7",
+  "  rows with carat caps, the no-limit row at 0)",
+  "  and jewelry types (15 bands, names in the audit",
+  "  comment). AS SCANNED, NOTED NEVER SILENT: the",
+  "  worked example's table labels read swapped",
+  "  against the printed tables' own bands (55 gives",
+  "  75 gp/carat, 77 gives 5 carats - the 75 x 5 x 3",
+  "  = 1,125 arithmetic is the anchor); the carat",
+  "  table's starred rows overlap by the print's own",
+  "  arithmetic (91-95 at 20-50 vs 96-98 at 20-70)",
+  "  with the re-roll footnote; Table C's gem-type",
+  "  lists garble in the OCR and ride the",
+  "  transcript, never guessed. NOT USABLE per the",
+  "  issue-8 walk: the Fischer Finzer Family fiction",
+  "  (8-20), the Gamma World sneak preview (21), the",
+  "  Featured Creature CONTEST announcement (25 - a",
+  "  contest, no stats; the future creature may",
+  "  harvest when the winner prints), the Still More",
+  "  Additions to MA forum (26) and Mutated Animals",
+  "  (28), the From the Fantasy Forge figure reviews",
+  "  (24), the editorial (3), the ads (2, 13, 17-18,",
+  "  27, 30-32) and the Fenn Manor ad (31). PRINT",
+  "  FOLIO = PDF PAGE verified at footers 3, 12, 21,",
+  "  22, 23, 24. VERIFIED: engine double-run GREEN",
+  "  applied 38 / already 38; rverify against",
+  "  pristine 86956d0: 159 mutants 0 missed; the raw",
+  "  JSON round-trip byte-exact. Spec",
+  "  tools/spec_r910.json, 217,617 bytes, md5",
+  "  5451c1615d13e37e9d593d659af18f66. NEXT: the",
+  "  issue-8 flip (report 008, 1 box to close), then",
+  "  the issue-9 opener. WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/dgo.h\"  // R910: the Dragon issue-8 opener, the Gygax Planes article, the Watson towns article and the Kuntz gems re-evaluation",
+ "include_comment": "the Dragon issue-8 box closing round, the three-chain walk complete",
+ "header_file": "rules/cgx.h",
+ "audit_file": "rules/audits/r911_batch.h",
+ "audit_label": "R911 Dragon issue-8 closure audit",
+ "audit_anchor": "#include \"rules/audits/r910_batch.h\"  // R910: R910 issue-8 opener audit",
+ "gap_report": "tools/dragon_gap_report_008.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Gygax Planes article, the Watson towns article and the\n  Kuntz gems re-evaluation** (folios 4-5, 5-7, 22-23) - the\n  issue-8 opener round",
+   "to": "- [x] **The Gygax Planes article, the Watson towns article and the\n  Kuntz gems re-evaluation** (folios 4-5, 5-7, 22-23) - the\n  issue-8 opener round",
+   "note": "the issue-8 box - the three-chain opener round first flip, 1 closed / 0 open, the issue-8 walk complete"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-8 box closing round - the three-chain walk complete: the pure bookkeeping round, the flip and the registry ground truth",
+  "provenance": "The pure box-closing round, no new ink: the issue-8 box in tools/dragon_gap_report_008.md flips closed (1 / 0), completing the issue-8 walk exactly as adjudicated at R910 - the Gygax Planes article, the Watson towns article and the Kuntz gems re-evaluation having been the only engine-relevant ink in issue #8 (the Finzer Family fiction, the Gamma World preview, the Featured Creature contest, the MA chains, the figure reviews, the editorial, the ads and the Fenn Manor ad all scoped out). The bookkeeping pins: the single box and its three chains, the issue-7 report complete at 1 / 0 since R909, the issue-6 report complete at 1 / 0 since R907, and the registry ground truth carried forward (the 1311 live census, the 1333 base lua files, the 25 never-load errors - the battery line the only ground truth, a pre-R900 print-fidelity state untouched).",
+  "sentinel": "The variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the pin IS the conversion, and the R910 AS-SCANNED garbles (the swapped worked-example labels, the starred carat rows, the Table C lists riding the transcript) stay noted in the opener round, never silent."
+ },
+ "consts": [
+  {
+   "name": "cgxReportBoxes",
+   "value": 1,
+   "comment": "the issue-8 gap report carries one box (report 008)"
+  },
+  {
+   "name": "cgxIssue8Chains",
+   "value": 3,
+   "comment": "the issue-8 opener pinned three chains - the Gygax Planes article, the Watson towns article, the Kuntz gems re-evaluation (R910)"
+  },
+  {
+   "name": "cgxIssue7Closed",
+   "value": 1,
+   "comment": "the issue-7 report has sat complete at 1 closed / 0 open since R909"
+  },
+  {
+   "name": "cgxIssue6Closed",
+   "value": 1,
+   "comment": "the issue-6 report has sat complete at 1 closed / 0 open since R907"
+  },
+  {
+   "name": "cgxLiveRegistry",
+   "value": 1311,
+   "comment": "the live registry census floor, carried forward from R900"
+  },
+  {
+   "name": "cgxBaseLuaFiles",
+   "value": 1333,
+   "comment": "the base lua file count the R900 promotion measured against"
+  },
+  {
+   "name": "cgxRegistryLoadErrors",
+   "value": 25,
+   "comment": "the base never-load errors - the battery line is the only ground truth"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cgxIssue6WalkComplete",
+   "value": true,
+   "comment": "the issue-6 walk completed at R907"
+  },
+  {
+   "name": "cgxIssue7WalkComplete",
+   "value": true,
+   "comment": "the issue-7 walk completed at R909"
+  },
+  {
+   "name": "cgxIssue8WalkComplete",
+   "value": true,
+   "comment": "the issue-8 walk completes with this round - the Planes, towns and gems chains were the only engine-relevant ink in issue #8"
+  },
+  {
+   "name": "cgxVariantLayerDoctrine",
+   "value": true,
+   "comment": "the variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the conversions noted, never silent"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['cgxReportBoxes']() != 1 or m['cgxIssue8Chains']() != 3 or m['cgxIssue7Closed']() != 1 or m['cgxIssue6Closed']() != 1",
+   "note": "the walk bookkeeping - the single issue-8 box and its three chains, the issue-7 and issue-6 reports complete at 1 / 0"
+  },
+  {
+   "expr": "m['cgxLiveRegistry']() != 1311 or m['cgxBaseLuaFiles']() != 1333 or m['cgxRegistryLoadErrors']() != 25",
+   "note": "the registry ground truth carried forward - the 1311 live census, the 1333 base lua files, the 25 never-load errors, the battery line the only ground truth"
+  },
+  {
+   "expr": "m['cgxIssue6WalkComplete']() != 1 or m['cgxIssue7WalkComplete']() != 1 or m['cgxIssue8WalkComplete']() != 1 or m['cgxVariantLayerDoctrine']() != 1",
+   "note": "the three walks complete - issue 6 at R907, issue 7 at R909, issue 8 at this round - and the variant-layer doctrine riding the closure"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 11,
+ "header_sections": {
+  "the walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "cgxReportBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "cgxIssue8Chains"
+   },
+   {
+    "kind": "const",
+    "name": "cgxIssue7Closed"
+   },
+   {
+    "kind": "const",
+    "name": "cgxIssue6Closed"
+   },
+   {
+    "kind": "bool",
+    "name": "cgxIssue6WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "cgxIssue7WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "cgxIssue8WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "cgxVariantLayerDoctrine"
+   }
+  ],
+  "the registry ground truth": [
+   {
+    "kind": "const",
+    "name": "cgxLiveRegistry"
+   },
+   {
+    "kind": "const",
+    "name": "cgxBaseLuaFiles"
+   },
+   {
+    "kind": "const",
+    "name": "cgxRegistryLoadErrors"
+   }
+  ]
+ },
+ "audit_comment": "THE DRAGON ISSUE-8 BOX CLOSING ROUND - the pure bookkeeping round, no new print ink. The flip: the issue-8 box in tools/dragon_gap_report_008.md goes [x] - 1 closed / 0 open, the issue-8 walk complete, the three chains (the Gygax Planes article, the Watson towns article, the Kuntz gems re-evaluation at folios 4-5, 5-7, 22-23) having been the only engine-relevant ink in issue #8. The bookkeeping pins: the single box and its three chains, the issue-7 report complete at 1 / 0 since R909, the issue-6 report complete at 1 / 0 since R907, the registry ground truth carried forward (the 1311 live census against the 1333 base lua files with the 25 never-load errors, a pre-R900 print-fidelity state untouched), and the variant-layer doctrine riding the closure. The R910 record seats in the seed via prev_record."
+}
