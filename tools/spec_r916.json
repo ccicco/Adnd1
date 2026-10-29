@@ -1,0 +1,233 @@
+{
+ "round": 916,
+ "title": "The Dragon issue-10 box closing round: the six-chain walk complete",
+ "prefix": "dfp",
+ "census_before": 838,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R915 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R915 LANDED 2026-10-29: commit",
+  "  9cc793ba9f4721f507349d6fb80ed714e8900e72 (base",
+  "  e1dcd30, census 837 -> 838), the Dragon",
+  "  issue-10 opener PART TWO: THREE CHAINS + the",
+  "  part-one flip, prefix dte, header rules/dte.h,",
+  "  audit rules/audits/r915_batch.h (\"R915 issue-10",
+  "  opener audit\"), 79 inline (32 consts + 27 bools",
+  "  + 9 chains + 11 table cols), 8 examples + 5",
+  "  table_checks, 3 header_sections, 3 tables, ZERO",
+  "  file_patches, ZERO data_files, ONE gap flip:",
+  "  report 010 box 1 -> [x] (1 closed / 1 open, box",
+  "  2 to close at the next round flip). Chains: the",
+  "  Gilbert dungeon method article (folios 11-14,",
+  "  the Nappo dig pins and the builders-mindset",
+  "  doctrine), the Crabaugh Weights & Measures",
+  "  article (folios 19-20, the Size and Build",
+  "  system, the height-weight and carrying grids,",
+  "  the appearance bands), the Holsinger level",
+  "  ritual article (folios 20-21, the four-part",
+  "  ritual and the sacrifice chances). AS-SCANNED",
+  "  notes: the male Size-4 medium cell 185 as",
+  "  scanned, the female Size-15 height and dwarf",
+  "  Strength-16 cells riding sentinel, the elf",
+  "  carry column mirroring human, the speed-12",
+  "  fraction riding. rverify GREEN (273 mutants / 0",
+  "  missed), double-run applied 6 / already 6, spec",
+  "  round-trip byte-exact (34936 bytes), prefix",
+  "  scan clean, seed grep 1. Likely next: the",
+  "  issue-10 part-two flip (report 010 box 2",
+  "  closing, the six-chain walk complete). WAIT FOR",
+  "  GO."
+ ],
+ "include_after": "#include \"rules/dte.h\"  // R915: the Dragon issue-10 opener part two, the Gilbert dungeon method article, the Weights & Measures article and the Holsinger level ritual article",
+ "include_comment": "the Dragon issue-10 box closing round, the six-chain walk complete",
+ "header_file": "rules/dfp.h",
+ "audit_file": "rules/audits/r916_batch.h",
+ "audit_label": "R916 Dragon issue-10 closure audit",
+ "audit_anchor": "#include \"rules/audits/r915_batch.h\"  // R915: R915 issue-10 opener audit",
+ "audit_comment": "THE DRAGON ISSUE-10 CLOSURE ROUND - the pure flip. The issue-10 part-two box (the Gilbert dungeon method article, the Weights & Measures article and the Holsinger level ritual article, folios 11-14, 19-21) closes 2 closed / 0 open in tools/dragon_gap_report_010.md; the six-chain walk completes exactly as adjudicated at R914 and R915. The bookkeeping pins: the two boxes and their six chains, the issue-9 report complete at 1 / 0 since R913, the issue-8 report complete at 1 / 0 since R911, the issue-7 report complete at 1 / 0 since R909, the issue-6 report complete at 1 / 0 since R907, and the registry ground truth carried forward.",
+ "gap_report": "tools/dragon_gap_report_010.md",
+ "gap_census": {
+  "closed": 2,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Gilbert dungeon method article, the Weights &\n  Measures article and the Gaining a New Experience Level\n  article** (folios 11-13, 19-21) - the issue-10 opener round,\n  part two",
+   "to": "- [x] **The Gilbert dungeon method article, the Weights &\n  Measures article and the Gaining a New Experience Level\n  article** (folios 11-13, 19-21) - the issue-10 opener round,\n  part two",
+   "note": "the issue-10 part-two box - the three-chain part-two round flip, 2 closed / 0 open, the six-chain issue-10 walk complete"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-10 box closing round - the six-chain walk complete: the pure bookkeeping round, the flip and the registry ground truth",
+  "provenance": "The pure box-closing round, no new ink: the issue-10 part-two box in tools/dragon_gap_report_010.md flips closed (2 / 0), completing the issue-10 walk exactly as adjudicated at R914 and R915 - the Orgies Inc. article, the Clifton wilderness article, the Random Monsters article, the Gilbert dungeon method article, the Weights & Measures article and the Holsinger level ritual article having been the only engine-relevant ink in issue #10 (the editorial, the GenCon X report, the Snits game, the Stellar Conquest diplomacy article, the poem, the comics and the ads all scoped out). The bookkeeping pins: the two boxes and their six chains across the two opener rounds, the issue-9 report complete at 1 / 0 since R913, the issue-8 report complete at 1 / 0 since R911, the issue-7 report complete at 1 / 0 since R909, the issue-6 report complete at 1 / 0 since R907, and the registry ground truth carried forward (the 1311 live census, the 1333 base lua files, the 25 never-load errors - the battery line the only ground truth, a pre-R900 print-fidelity state untouched).",
+  "sentinel": "The variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the pin IS the conversion, and the R914 and R915 AS-SCANNED quirks (the Random Monsters garbles, the Clifton band arithmetic, the Weights & Measures sentinel cells and the 185 medium cell, the speed-12 fraction) stay noted in the opener rounds, never silent."
+ },
+ "switches": [],
+ "consts": [
+  {
+   "name": "dfpReportBoxes",
+   "value": 2,
+   "comment": "the issue-10 gap report carries two boxes, one per opener round (report 010)"
+  },
+  {
+   "name": "dfpIssue10Chains",
+   "value": 6,
+   "comment": "the issue-10 walk pinned six chains across two rounds - the Orgies Inc., Clifton wilderness, Random Monsters, Gilbert dungeon method, Weights & Measures and Holsinger level ritual articles (R914, R915)"
+  },
+  {
+   "name": "dfpIssue9Closed",
+   "value": 1,
+   "comment": "the issue-9 report has sat complete at 1 closed / 0 open since R913"
+  },
+  {
+   "name": "dfpIssue8Closed",
+   "value": 1,
+   "comment": "the issue-8 report has sat complete at 1 closed / 0 open since R911"
+  },
+  {
+   "name": "dfpIssue7Closed",
+   "value": 1,
+   "comment": "the issue-7 report has sat complete at 1 closed / 0 open since R909"
+  },
+  {
+   "name": "dfpIssue6Closed",
+   "value": 1,
+   "comment": "the issue-6 report has sat complete at 1 closed / 0 open since R907"
+  },
+  {
+   "name": "dfpLiveRegistry",
+   "value": 1311,
+   "comment": "the live registry census floor, carried forward from R900"
+  },
+  {
+   "name": "dfpBaseLuaFiles",
+   "value": 1333,
+   "comment": "the base lua file count the R900 promotion measured against"
+  },
+  {
+   "name": "dfpRegistryLoadErrors",
+   "value": 25,
+   "comment": "the base never-load errors - the battery line is the only ground truth"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dfpIssue6WalkComplete",
+   "value": true,
+   "comment": "the issue-6 walk completed at R907"
+  },
+  {
+   "name": "dfpIssue7WalkComplete",
+   "value": true,
+   "comment": "the issue-7 walk completed at R909"
+  },
+  {
+   "name": "dfpIssue8WalkComplete",
+   "value": true,
+   "comment": "the issue-8 walk completed at R911"
+  },
+  {
+   "name": "dfpIssue9WalkComplete",
+   "value": true,
+   "comment": "the issue-9 walk completed at R913"
+  },
+  {
+   "name": "dfpIssue10WalkComplete",
+   "value": true,
+   "comment": "the issue-10 walk completes with this round - the six chains across two opener rounds were the only engine-relevant ink in issue #10"
+  },
+  {
+   "name": "dfpVariantLayerDoctrine",
+   "value": true,
+   "comment": "the variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the conversions noted, never silent"
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['dfpReportBoxes']() != 2 or m['dfpIssue10Chains']() != 6 or m['dfpIssue9Closed']() != 1 or m['dfpIssue8Closed']() != 1 or m['dfpIssue7Closed']() != 1 or m['dfpIssue6Closed']() != 1",
+   "note": "the walk bookkeeping - the two issue-10 boxes and their six chains, the issue-9, issue-8, issue-7 and issue-6 reports complete at 1 / 0"
+  },
+  {
+   "expr": "m['dfpLiveRegistry']() != 1311 or m['dfpBaseLuaFiles']() != 1333 or m['dfpRegistryLoadErrors']() != 25",
+   "note": "the registry ground truth carried forward - the 1311 live census, the 1333 base lua files, the 25 never-load errors, the battery line the only ground truth"
+  },
+  {
+   "expr": "m['dfpIssue6WalkComplete']() != 1 or m['dfpIssue7WalkComplete']() != 1 or m['dfpIssue8WalkComplete']() != 1 or m['dfpIssue9WalkComplete']() != 1 or m['dfpIssue10WalkComplete']() != 1 or m['dfpVariantLayerDoctrine']() != 1",
+   "note": "the five walks complete - issue 6 at R907, issue 7 at R909, issue 8 at R911, issue 9 at R913, issue 10 at this round - and the variant-layer doctrine riding the closure"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "dfpReportBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "dfpIssue10Chains"
+   },
+   {
+    "kind": "const",
+    "name": "dfpIssue9Closed"
+   },
+   {
+    "kind": "const",
+    "name": "dfpIssue8Closed"
+   },
+   {
+    "kind": "const",
+    "name": "dfpIssue7Closed"
+   },
+   {
+    "kind": "const",
+    "name": "dfpIssue6Closed"
+   },
+   {
+    "kind": "bool",
+    "name": "dfpIssue6WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dfpIssue7WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dfpIssue8WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dfpIssue9WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dfpIssue10WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dfpVariantLayerDoctrine"
+   }
+  ],
+  "the registry ground truth": [
+   {
+    "kind": "const",
+    "name": "dfpLiveRegistry"
+   },
+   {
+    "kind": "const",
+    "name": "dfpBaseLuaFiles"
+   },
+   {
+    "kind": "const",
+    "name": "dfpRegistryLoadErrors"
+   }
+  ]
+ },
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 15
+}

@@ -50,7 +50,7 @@ the ads (2-3, 8, 11, 14, 22, 26-27, 30-34) and the blank page
   encounters article and the Random Monsters article**
   (folios 5-6, 7, 9-10) - the issue-10 opener round, part one
 
-- [ ] **The Gilbert dungeon method article, the Weights &
+- [x] **The Gilbert dungeon method article, the Weights &
   Measures article and the Gaining a New Experience Level
   article** (folios 11-13, 19-21) - the issue-10 opener round,
   part two

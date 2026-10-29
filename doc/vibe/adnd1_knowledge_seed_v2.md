@@ -27698,6 +27698,37 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   seed grep 1. Likely next: the issue-10 opener
   part two (box 1 flips, part-two chains pin).
   WAIT FOR GO.
+  - R915 LANDED 2026-10-29: commit
+  9cc793ba9f4721f507349d6fb80ed714e8900e72 (base
+  e1dcd30, census 837 -> 838), the Dragon
+  issue-10 opener PART TWO: THREE CHAINS + the
+  part-one flip, prefix dte, header rules/dte.h,
+  audit rules/audits/r915_batch.h ("R915 issue-10
+  opener audit"), 79 inline (32 consts + 27 bools
+  + 9 chains + 11 table cols), 8 examples + 5
+  table_checks, 3 header_sections, 3 tables, ZERO
+  file_patches, ZERO data_files, ONE gap flip:
+  report 010 box 1 -> [x] (1 closed / 1 open, box
+  2 to close at the next round flip). Chains: the
+  Gilbert dungeon method article (folios 11-14,
+  the Nappo dig pins and the builders-mindset
+  doctrine), the Crabaugh Weights & Measures
+  article (folios 19-20, the Size and Build
+  system, the height-weight and carrying grids,
+  the appearance bands), the Holsinger level
+  ritual article (folios 20-21, the four-part
+  ritual and the sacrifice chances). AS-SCANNED
+  notes: the male Size-4 medium cell 185 as
+  scanned, the female Size-15 height and dwarf
+  Strength-16 cells riding sentinel, the elf
+  carry column mirroring human, the speed-12
+  fraction riding. rverify GREEN (273 mutants / 0
+  missed), double-run applied 6 / already 6, spec
+  round-trip byte-exact (34936 bytes), prefix
+  scan clean, seed grep 1. Likely next: the
+  issue-10 part-two flip (report 010 box 2
+  closing, the six-chain walk complete). WAIT FOR
+  GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
