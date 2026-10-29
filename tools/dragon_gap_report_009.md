@@ -42,7 +42,7 @@ near-blank filler page (11).
 
 ## Boxes
 
-- [ ] **The Gygax alignment article and the Ward Tombs & Crypts
+- [x] **The Gygax alignment article and the Ward Tombs & Crypts
   article** (folios 5-6, 25) - the issue-9 opener round
 
 1 box, 0 closed, 1 open at the R912 authoring. The R912 round

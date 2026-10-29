@@ -1,0 +1,207 @@
+{
+ "round": 913,
+ "title": "The Dragon issue-9 box closing round: the two-chain walk complete",
+ "prefix": "dnp",
+ "census_before": 835,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R912 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R912 LANDED 2026-10-29: commit",
+  "  b78fe961c138f54d7259a77f3f33b2d8910b3091 (base",
+  "  4081a69, census 834 -> 835), the Dragon issue-9",
+  "  opener: TWO CHAINS, prefix dgn, header",
+  "  rules/dgn.h, audit rules/audits/r912_batch.h",
+  "  (\"R912 issue-9 opener audit\"), 51 inline (13",
+  "  consts + 21 bools + 4 chains + 13 table cols),",
+  "  4 examples + 5 table_checks, 2 header_sections,",
+  "  5 tables, ZERO file_patches, 33 data_files (gap",
+  "  report 009 pre-flip + 32 issue-9 transcripts),",
+  "  gap report 008 verified no-op (1 / 0). Chains:",
+  "  the Gygax alignment article (folios 5-6, the",
+  "  alignment-variation variant layer) and the Ward",
+  "  Tombs & Crypts article (folio 25, the tomb-",
+  "  generation variant layer); scoped out: the",
+  "  Finzer fiction, the Barker EPT column and the",
+  "  Blume Boot Hill ratings (the other-system",
+  "  precedent), the comics, the ads, the editorial.",
+  "  rverify GREEN (132 mutants / 0 missed), double-",
+  "  run applied 38 / already 38, spec round-trip",
+  "  byte-exact (187037 bytes), prefix scan clean,",
+  "  seed grep 1. Likely next: the issue-9 flip",
+  "  (report 009 box closing). WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/dgn.h\"  // R912: the Dragon issue-9 opener, the Gygax alignment article and the Ward Tombs & Crypts article",
+ "include_comment": "the Dragon issue-9 box closing round, the two-chain walk complete",
+ "header_file": "rules/dnp.h",
+ "audit_file": "rules/audits/r913_batch.h",
+ "audit_label": "R913 Dragon issue-9 closure audit",
+ "audit_anchor": "#include \"rules/audits/r912_batch.h\"  // R912: R912 issue-9 opener audit",
+ "audit_comment": "THE DRAGON ISSUE-9 CLOSURE ROUND - the pure flip. The issue-9 box (the Gygax alignment article and the Ward Tombs & Crypts article, folios 5-6 and 25) closes 1 / 0 in tools/dragon_gap_report_009.md; the two-chain walk completes exactly as adjudicated at R912. The bookkeeping pins: the single box and its two chains, the issue-8 report complete at 1 / 0 since R911, the issue-7 report complete at 1 / 0 since R909, the issue-6 report complete at 1 / 0 since R907, and the registry ground truth carried forward.",
+ "gap_report": "tools/dragon_gap_report_009.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Gygax alignment article and the Ward Tombs & Crypts\n  article** (folios 5-6, 25) - the issue-9 opener round",
+   "to": "- [x] **The Gygax alignment article and the Ward Tombs & Crypts\n  article** (folios 5-6, 25) - the issue-9 opener round",
+   "note": "the issue-9 box - the two-chain opener round first flip, 1 closed / 0 open, the issue-9 walk complete"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-9 box closing round - the two-chain walk complete: the pure bookkeeping round, the flip and the registry ground truth",
+  "provenance": "The pure box-closing round, no new ink: the issue-9 box in tools/dragon_gap_report_009.md flips closed (1 / 0), completing the issue-9 walk exactly as adjudicated at R912 - the Gygax alignment article and the Ward Tombs & Crypts article having been the only engine-relevant ink in issue #9 (the Finzer Family fiction, the Barker EPT column, the Blume Boot Hill ratings, the comics, the ads and the editorial all scoped out). The bookkeeping pins: the single box and its two chains, the issue-8 report complete at 1 / 0 since R911, the issue-7 report complete at 1 / 0 since R909, the issue-6 report complete at 1 / 0 since R907, and the registry ground truth carried forward (the 1311 live census, the 1333 base lua files, the 25 never-load errors - the battery line the only ground truth, a pre-R900 print-fidelity state untouched).",
+  "sentinel": "The variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the pin IS the conversion, and the R912 AS-SCANNED quirks (the gold-piece x2 row and the garbled 100 row, the garbled guardian tail, the modifier grid riding the transcript) stay noted in the opener round, never silent."
+ },
+ "switches": [],
+ "consts": [
+  {
+   "name": "dnpReportBoxes",
+   "value": 1,
+   "comment": "the issue-9 gap report carries one box (report 009)"
+  },
+  {
+   "name": "dnpIssue9Chains",
+   "value": 2,
+   "comment": "the issue-9 opener pinned two chains - the Gygax alignment article and the Ward Tombs & Crypts article (R912)"
+  },
+  {
+   "name": "dnpIssue8Closed",
+   "value": 1,
+   "comment": "the issue-8 report has sat complete at 1 closed / 0 open since R911"
+  },
+  {
+   "name": "dnpIssue7Closed",
+   "value": 1,
+   "comment": "the issue-7 report has sat complete at 1 closed / 0 open since R909"
+  },
+  {
+   "name": "dnpIssue6Closed",
+   "value": 1,
+   "comment": "the issue-6 report has sat complete at 1 closed / 0 open since R907"
+  },
+  {
+   "name": "dnpLiveRegistry",
+   "value": 1311,
+   "comment": "the live registry census floor, carried forward from R900"
+  },
+  {
+   "name": "dnpBaseLuaFiles",
+   "value": 1333,
+   "comment": "the base lua file count the R900 promotion measured against"
+  },
+  {
+   "name": "dnpRegistryLoadErrors",
+   "value": 25,
+   "comment": "the base never-load errors - the battery line is the only ground truth"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dnpIssue6WalkComplete",
+   "value": true,
+   "comment": "the issue-6 walk completed at R907"
+  },
+  {
+   "name": "dnpIssue7WalkComplete",
+   "value": true,
+   "comment": "the issue-7 walk completed at R909"
+  },
+  {
+   "name": "dnpIssue8WalkComplete",
+   "value": true,
+   "comment": "the issue-8 walk completed at R911"
+  },
+  {
+   "name": "dnpIssue9WalkComplete",
+   "value": true,
+   "comment": "the issue-9 walk completes with this round - the Gygax alignment and Ward tomb chains were the only engine-relevant ink in issue #9"
+  },
+  {
+   "name": "dnpVariantLayerDoctrine",
+   "value": true,
+   "comment": "the variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the conversions noted, never silent"
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['dnpReportBoxes']() != 1 or m['dnpIssue9Chains']() != 2 or m['dnpIssue8Closed']() != 1 or m['dnpIssue7Closed']() != 1 or m['dnpIssue6Closed']() != 1",
+   "note": "the walk bookkeeping - the single issue-9 box and its two chains, the issue-8, issue-7 and issue-6 reports complete at 1 / 0"
+  },
+  {
+   "expr": "m['dnpLiveRegistry']() != 1311 or m['dnpBaseLuaFiles']() != 1333 or m['dnpRegistryLoadErrors']() != 25",
+   "note": "the registry ground truth carried forward - the 1311 live census, the 1333 base lua files, the 25 never-load errors, the battery line the only ground truth"
+  },
+  {
+   "expr": "m['dnpIssue6WalkComplete']() != 1 or m['dnpIssue7WalkComplete']() != 1 or m['dnpIssue8WalkComplete']() != 1 or m['dnpIssue9WalkComplete']() != 1 or m['dnpVariantLayerDoctrine']() != 1",
+   "note": "the four walks complete - issue 6 at R907, issue 7 at R909, issue 8 at R911, issue 9 at this round - and the variant-layer doctrine riding the closure"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "dnpReportBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "dnpIssue9Chains"
+   },
+   {
+    "kind": "const",
+    "name": "dnpIssue8Closed"
+   },
+   {
+    "kind": "const",
+    "name": "dnpIssue7Closed"
+   },
+   {
+    "kind": "const",
+    "name": "dnpIssue6Closed"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpIssue6WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpIssue7WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpIssue8WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpIssue9WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "dnpVariantLayerDoctrine"
+   }
+  ],
+  "the registry ground truth": [
+   {
+    "kind": "const",
+    "name": "dnpLiveRegistry"
+   },
+   {
+    "kind": "const",
+    "name": "dnpBaseLuaFiles"
+   },
+   {
+    "kind": "const",
+    "name": "dnpRegistryLoadErrors"
+   }
+  ]
+ },
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 13
+}

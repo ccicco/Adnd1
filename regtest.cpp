@@ -614,6 +614,7 @@
 #include "rules/dgo.h"  // R910: the Dragon issue-8 opener, the Gygax Planes article, the Watson towns article and the Kuntz gems re-evaluation
 #include "rules/cgx.h"  // R911: the Dragon issue-8 box closing round, the three-chain walk complete
 #include "rules/dgn.h"  // R912: the Dragon issue-9 opener, the Gygax alignment article and the Ward Tombs & Crypts article
+#include "rules/dnp.h"  // R913: the Dragon issue-9 box closing round, the two-chain walk complete
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4723,6 +4724,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r913_batch.h"  // R913: R913 Dragon issue-9 closure audit
 #include "rules/audits/r912_batch.h"  // R912: R912 issue-9 opener audit
 #include "rules/audits/r911_batch.h"  // R911: R911 Dragon issue-8 closure audit
 #include "rules/audits/r910_batch.h"  // R910: R910 issue-8 opener audit

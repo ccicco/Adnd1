@@ -27627,6 +27627,29 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   scan clean, seed grep 1. Likely next: the
   issue-9 opener (source in accessory-dragon-
   magazine-012). WAIT FOR GO.
+  - R912 LANDED 2026-10-29: commit
+  b78fe961c138f54d7259a77f3f33b2d8910b3091 (base
+  4081a69, census 834 -> 835), the Dragon issue-9
+  opener: TWO CHAINS, prefix dgn, header
+  rules/dgn.h, audit rules/audits/r912_batch.h
+  ("R912 issue-9 opener audit"), 51 inline (13
+  consts + 21 bools + 4 chains + 13 table cols),
+  4 examples + 5 table_checks, 2 header_sections,
+  5 tables, ZERO file_patches, 33 data_files (gap
+  report 009 pre-flip + 32 issue-9 transcripts),
+  gap report 008 verified no-op (1 / 0). Chains:
+  the Gygax alignment article (folios 5-6, the
+  alignment-variation variant layer) and the Ward
+  Tombs & Crypts article (folio 25, the tomb-
+  generation variant layer); scoped out: the
+  Finzer fiction, the Barker EPT column and the
+  Blume Boot Hill ratings (the other-system
+  precedent), the comics, the ads, the editorial.
+  rverify GREEN (132 mutants / 0 missed), double-
+  run applied 38 / already 38, spec round-trip
+  byte-exact (187037 bytes), prefix scan clean,
+  seed grep 1. Likely next: the issue-9 flip
+  (report 009 box closing). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
