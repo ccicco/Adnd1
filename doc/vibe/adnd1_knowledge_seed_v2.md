@@ -26145,6 +26145,72 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   spec identical; engine idempotent applied 55 /
   already 55). NEXT: the promotion tail - Norse,
   then Sumerian. WAIT FOR GO.
+  - R886 LANDED 2026-10-27: commit
+  69d4b93424c55ac1ad9dd82f95c3ff566157cecd
+  (pushed a187f50..69d4b93, census 808 -> 809),
+  THE DDG LUA PROMOTION, BATCH SEVEN - 42
+  full-field defs (the Norse mythos 35, the
+  Sumerian mythos 7), the floor 1291 -> 1333,
+  DDG 338 - THE PROMOTION COMPLETE (55+68+
+  60+31+33+49+42 = 338, every DDG row
+  promoted). THE SHAPE: generated ONLY from
+  the adjudicated nrs/smr pin headers, prefix
+  dpz (full-repo scan clean); def emission
+  rides the grid orders (Odin through the
+  Valkyries, then Enlil through Utu). Monster
+  rows 11 (the pin const against the ten
+  rank-5 grid rows - the pin-internal flag),
+  hit-dice rows 1 (the Fossergrim 5 HD
+  print), PinnedDamage 32 (nrs 27, smr 5). NO
+  RENAMES (all 42 stems free - no
+  Behemoth-class collisions). The paladins
+  ride the F tokens per the Surya convention
+  (Tyr F25, Enki F13, Ki F10); the four
+  no-rank rows (Fjalar, Skirnir, the Norns,
+  the Valkyries) print no rank line and emit
+  the n/a divine rank - the cross-pin
+  rank-code collision with the nhw wizard 4.
+  HONEST BOUNDARIES: the Thor bare 4 AC
+  (L&L -4), the Hel +38 garble 8, the Aegir
+  and Freya ACs by print, the Thrym 300
+  occluded cell, the half-foot garbles )4
+  and % reading 6 1/2 and 5 1/2 (Odin, Hel,
+  Tyr, the Valkyries, Enlil), the Hugin 1/48
+  and VI/815 glyphs, the Frey II pipe, the
+  Fossergrim by-weapon print against its
+  DmgFixed 1 and the Nin-hursag 2-20 against
+  its 0 (pin-internal, n/a, with the
+  27-vs-28 and 11-vs-10 flags), the Modi
+  2 (or 4) and 25 or 50 (the first non-dice
+  damage), the Thor 2(3) glove, the Frigga
+  As-per-shape 0, the Jormungandr See-below
+  move and 25,000-mile size (MR 99 vs the
+  L&L 95; the L&L 1 ~ 7 attacks reading),
+  the Garm 26,200 vs the L&L 26,000, the
+  goats X/+ merged glyph 14,100, the literal
+  99s (the Fjalar and Skirnir hit points,
+  the Fenris and Jormungandr magic
+  resistances), the Loki Pandemonium-or-
+  Gladsheim alt, the Enlil 127/36" garble 12
+  and D:23 CH:24 cells, the Utu 32 -> 3/2,
+  the Ki 15/36//36 triple slash, the
+  Fossergrim 9/ /36 double slash, the Inanna
+  pipe I (L&L II) and warriors-and-lovers
+  odd line, the Enki 10th-level bard (L&L
+  13th), the Utu 15th in-each MU pair, the
+  uniform -2 Sumerian AC; worshippers,
+  symbol, areaOfControl n/a all. Spec
+  tools/spec_r886.json, md5
+  38babbb3c8e39637fb3b1ed0122fa232 (92,746
+  bytes); the canvas spec-r886 gated
+  byte-exact; rverify 144 mutants 0 missed;
+  the land verified byte-exact against the
+  fresh-tarball rebuild (1333 defs, dpz.h,
+  audit, census, seed, regtest, spec
+  identical; engine idempotent applied 48 /
+  already 48). NEXT: the per-book
+  normalization rounds (MM1 408, MM2 332, FF
+  185, OA 47, WSG+MOP 23). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

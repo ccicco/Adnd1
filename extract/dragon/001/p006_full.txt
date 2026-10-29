@@ -1,0 +1,79 @@
+# THE BATTLE OF FIVE ARMIES IN MINIATURE
+
+by Larry Smith
+
+This is an article on how to convert the BotFA game into a miniature wargame. The rules used for this battle are modified from the Chainmail rules by Gary Gygax. The modifications will be listed at the end of this article.
+
+Converting the Board
+
+The board is converted onto the playing area on a scale of one hex equals six inches. Since the river is listed only as a line on the mapsheet, it should be placed as a two inch wide stream. On the playing area, the Gate should only be shown as a six inch front along the mountain side with no opening along the top. The areas of the mapsheet that are listed as 'no movement allowed' stays the same. The slope areas have the same effect as a hill for terrain purposes. The ruined city of Dale is treated as rough terrain.
+
+Order of Battle
+
+The OB is listed as the Chainmail scale of 1:20 for the figures for the heros are on a 1:1 scale.
+
+|  Goblins: | Fights as a: | Defends as:  |
+| --- | --- | --- |
+|  Bolg | 4 Hv. Ft. | 4 Arm. Ft.  |
+|  1 Bodyguard | 2 Hv. Ft. | 2 Arm. Ft.  |
+|  375 Goblins | 1 Hv. Ft. | 1 Lt. Ft.  |
+|  100 Wargs | 1 Hv. Ft. | 1 Hv. Ft.  |
+|  Dwarves: |  |   |
+|  Thorin w/magic Sw. | 4 Hv. Ft. | 4 Arm. Ft.  |
+|  1 Company | 1 Hv. Ft. | 1 Arm. Ft.  |
+|  Dain | 4 Hv. Ft. | 4 Hv. Ft.  |
+|  1 Bodyguard | 1 Hv. Ft. | 1 Hv. Ft.  |
+|  25 Dwarves | 1 Hv. Ft. | 1 Lt. Ft.  |
+|  Elves: |  |   |
+|  Elyenking | 4 Hv. Ft. | 4 Hv. Ft.  |
+|  70 Elves | 1 Hv. Ft. | 1 Hv. Ft.  |
+|  10 Elves w/bows | 1 Hv. Ft. | 1 Hv. Ft.  |
+|  Men: |  |   |
+|  Bard w/bow | 4 Hv. Ft. | 4 Hv. Ft.  |
+|  1 Bodyguard w/bow | 1 Hv. Ft. | 1 Hv. Ft.  |
+|  25 Men | 1 Hv. Ft. | 1 Lt. Ft.  |
+
+Others:
+
+|  Gandalf w/magic Sw. | 2 Arm. Ft. | 2 Arm. Ft.  |
+| --- | --- | --- |
+|  Beorn | 1st 2 turns 4 Arm. Ft. | 4 Hv. Ft.  |
+|   | Changes to 8 Arm. Ft. | 8 Hv. Ft.  |
+|  5 Eagles | 4 Lt. Horse | 4 Hv. Horse  |
+|   |  | 1 Arm. Ft.*  |
+|  Bilbo w/ring & Sting | 1 Lt. Ft.* |   |
+
+*Only while he is visible may he attack. While he is inv. he may not be attacked.
+
+Unit Set Up
+
+The set up is the same as per the BotFA rule book. Keep in mind while setting up, that 1 counter of Goblins in the game are equal to 5 figures.
+
+Reinforcements
+
+The reinforcement rate and time is the same.
+
+Game Time
+
+The game time (turns) is the same. An exception to this is, that there is no end of game turn. The fight will continue until, one side or the other wins.
+
+Victory Conditions
+
+The victory conditions of the game are the same.
+
+Chainmail Modifications
+
+These are modifications and additions to the Chainmail rules.
+
+1. Due to the power of the ring, Bilbo can become invisible.
+2. After the 10th turn, Gandalf may fire one fireball only. He has no other magic that he can use.
+3. Goblins may ride Wargs on a 1:1 basis. In doing so, they minus 3 inches off their movement rate.
+
+Continued on page 13
+
+dirt by jake
+
+
+
+
+6

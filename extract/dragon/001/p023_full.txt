@@ -1,0 +1,92 @@
+# MIGHTY MAGIC MISCELLANY
+
+by Peter Aronson
+
+## Illusionist Additions
+
+|  Level | Experience Points | Number of Spells and Levels  |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   |   |  1 | 2 | 3 | 4 | 5 | 6 | 7  |
+|  Illusionist, 11th | 525000 | 5 | 5 | 4 | 4 | 3 | 1 | —  |
+|  Illusionist, 12th | 700000 | 5 | 5 | 5 | 4 | 4 | 2 | —  |
+|  Illusionist, 13th | 875000 | 5 | 5 | 5 | 5 | 5 | 2 | 1  |
+|  Illusionist, 14th | 1050000 | 6 | 6 | 5 | 5 | 5 | 3 | 2  |
+
+## Additional Spells
+
+|  1st Level | 2nd Level | 3rd Level  |
+| --- | --- | --- |
+|  9. Ventriloquism | 9. Magic Mouth | 9. Suggestion  |
+|  10. Mirror Image | 10. Rope Trick | 10. Phantasmal Killer  |
+|  11. Detect Illusion | 11. Dispel Illusion | 11. Illusionary Script  |
+|  12. Color Spray | 12. Blur | 12. Dispel Exhaustion  |
+
+## 6th Level
+
+|  1. Mass Suggestion | 1. Astral Spell  |
+| --- | --- |
+|  2. Permanent/Illusion | 2. Prismatic Wall  |
+|  3. Shadow/Monsters III | 3. Maze  |
+|  4. Programmed/Illusion | 4. Vision  |
+|  5. Conjure Animals | 5. Alter Reality  |
+|  6. True Sight | 6. Prismatic Spray  |
+
+## Spell Explanations
+
+### 1st Level
+
+**Ventriloquism:** As MU spell of name, but Range 9', Duration 5 Turns
+
+**Mirror Image:** As MU spell of same name.
+
+**Detect Illusion:** Detects any illusion for what it is. Range 6', Duration 3 Turns
+
+**Color Spray:** A sheet of bright conflicting colors. They affect 1-6 levels of creatures, rendering them unconscious through confusion. (Note: for every 5 levels above Trickster the caster has obtained, add one to the die roll for amount of levels, the number never to exceed 6.) The distribution of the effect if there are more target levels than spell levels is semi-random, first one creature is fully affected, then another, till all the levels are assigned, there being no more than one partially affected creature. There is no saving throw vs this spell if the creature is fully affected, if all but one level is affected, it gets a normal saving throw, for every level unaffected beyond the first, it gets an additional +2 on its saving throw, in any case, it will not affect any creature above the 6th level. Range 24'.
+
+## 2nd Level
+
+**Magic Mouth:** As MU spell of same name.
+
+**Rope Trick:** As with MU spell of same name.
+
+**Dispel Illusion:** This spell will automatically dispel any illusion caused by a non-Illusionist. Vs. those caused by Illusionists, it functions like Dispel Magic. Range 12'.
+
+**Blur:** The caster's appearance is highly blurred, making -2 on being hit, and +2 on saves vs wand and staves. Duration 4 + The roll of a 4-sided die.
+
+## 3rd Level
+
+**Suggestion:** Like the MU spell of the same name.
+
+**Phantasmal Killer:** A spell that causes an illusionary horrible beast (formed from the subject's own fears) from whom any cut causes death. The beast is visible only to the Illusionist and its subject, it is immune from all attacks and barriers, as it exists only in its subject's mind. The subject may try to disbelieve it, to do so he must roll his intelligence or less on three 6-sided dice. If the victim has faced this kind of attack before, add +5 to his intelligence for purposes of seeing if it is disbelieved, if the subject is an Illusionist add +1 to his intelligence for purposes of determining if he disbelieves it, and if the subject is wearing a Helm of Telepathy, add +3 to his Int., and if he disbelieves it, he may turn the Killer on the Illusionist. If the subject is not expecting an attack, he is -1 on Int., if he is totally surprised, he is -3. Range 6'.
+
+**Illusionary Script:** A special form of writing that can only be read by the whom the Illusionist set it to be read by (like Magic Mouth), any others who attempt to read it must save vs magic or be confused for 1-6 turns. One spell is suitable for a full page.
+
+**Dispel Exhaustion:** This spell temporarily gives its recipient the illusion of being well rested and healthy. It allows action without rest, however, after the spell ends, one must rest twice as much as has been missed. It also allows recently raised and badly wounded men to move about normally, but they take an additional 1-6 points of damage. Duration 4 Hours.
+
+## 6th Level
+
+**Mass Suggestion:** A broad area version of the suggestion spell, affecting 1-8 creatures or 1 creature at -4 saving throw. The same suggestion must be made to all on whom it is cast.
+
+**Permanent Illusion:** As with spectral forces, but lasts until dispelled.
+
+**Shadow Monsters III:** Like Demishadow Monsters, but 3/5 of the hit dice, and AC 7, and twice the Illusionist level in hit dice can be raised.
+
+**Programmed Illusion:** A Form of Spectral Forces. It will perform pre-set instruction without the Illusionists directing it. Ex., A manticore appears, circles the camp for 3 turns, screams, then flies off while the Illusionist escapes. Duration 12 Turns.
+
+**Conjure Animals:** Same as clerical spell of same name.
+
+**True Sight:** A polymorphed creature or object looked at with this spell will appear as it really is, superimposed with its present form. Also when looking at a person one may tell his alignment, class, level, and intentions. With it one may also see invisible, displaced, and astral objects. Duration level — 10 + roll of 6-sided die.
+
+## 7th Level
+
+**Astral Spell:** Same as MU spell of same name.
+
+**Prismatic Wall:** Same as MU spell of same name.
+
+**Maze:** Same as MU spell of same name.
+
+**Vision:** When an Illusionist wishes guidance from those above, he formulates his question, then casts this spell. Random reaction dice are rolled, and +2 are added to the result. If a negative result is rolled, the Illusionist is quested to do some task, if a neutral result is rolled, then he gets information of use to him, but not what he asked for, if a positive result is achieved, he is told the answer in great detail.
+
+**Alter Reality:** Like a limited wish, but it must be used in conjunction with an Illusion; an Illusion is first cast of what is wished to happen, then the spell.
+
+23

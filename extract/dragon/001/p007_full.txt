@@ -1,0 +1,71 @@
+# HOW TO USE NON-PRIME-REQUISITE CHARACTER ATTRIBUTES
+
+by Wesley D. Ives
+
+Whenever a player performs a non-ordinary task, or attempts to do so, the referee is usually in a quandary — how to determine fairly whether the character can perform the attempted action? Normally, the referee gives consideration to the player's attributes and then more or less 'wings it,' attempting to be fair — usually giving the player a percentage chance of success.
+
+A more standardized system is needed and the following guidelines should help considerably.
+
+WHENEVER A PLAYER ATTEMPTS SOME ACTION WHICH WOULD TAX HIS ABILITY IN ANY ATTRIBUTE:
+
+1) Generate a number from 1-100, and consult the table below
+
+DIE ROLL TYPE OF DIE FOR DETERMINATION
+
+|  01-20 | (always add | Four-sided  |
+| --- | --- | --- |
+|  21-40 | the | Six-sided  |
+|  41-60 | score | Eight-sided  |
+|  61-80 | in question | Ten-sided  |
+|  81-100 | to the | Twelve-sided  |
+|   | 1-100 |   |
+|   | number |   |
+|   | achieved) |   |
+
+2) Using the type die called for, generate a number, and multiply this number by the amount of the attribute being tested. THIS NUMBER IS THE PERCENT CHANCE OF SUCCESS.
+
+EXAMPLE.: Consider Grod the fighter. His scores are STR-17; INT-9; WIS-5; CON-14; DEX-14; CHAR-12
+
+Grod's party has been attacked by a pair of bugbears. Grod wants three of his minions to hold off the Bugbears while Grod rolls away the boulder blocking the exit to the dungeon. So — will the minions fight?
+
+DIE ROLL — 42 added to Grod's Charisma (12) = 54. So Grod rolls an eight-sided die, scoring a seven. Therefore, there is a 7 x 12 (the score times Grod's Charisma) or 84% chance that the minions will fight.
+
+How about this boulder?
+
+DIE ROLL — 66 added to Grod's Strength (17) = 83. Grod rolls a twelve-sided die as called for on the table, but this time, his roll is a three.
+
+So there is a 3 x 17 (score times Grod's strength) or 51% chance that he will be able to move the boulder away this turn.
+
+SPECIAL FOR FIGHTERS — Fighters with extraordinary strength use the following table in order to make their scores compatible —
+
+18⁰¹ - 18²⁰ = 18; 18²¹ - 18⁴⁰ = 19; 18⁴¹ - 18⁶⁰ = 20; 18⁶¹ - 18⁷⁰ = 21; 18⁷¹ - 18⁸⁰ = 22; 18⁸¹ - 18⁹⁰ = 23; 18⁹¹ - 18⁹⁵ = 24; 18⁹⁶ - 18⁹⁹ = 25; and 18⁹⁰ = 27.
+
+So if Grod had had a strength score of 18⁸⁷, he would have used 23 as his strength when determining his success with the boulder.
+
+USES FOR ATTRIBUTES:
+
+STRENGTH — Any extraordinary physical exertion.
+
+INTELLIGENCE — Discovering proper method of operating all mechanical devices, including all magical devices; Discerning patterns; deducing cause & effect; recognizing types of lairs; learning new languages and skills; etc.
+
+WISDOM — divining "correct path" of action; recognizing function of devices; etc.
+
+CONSTITUTION — all questions of stamina — swimming, running, staying awake, going hungry, etc.
+
+DEXTERITY — manual manipulation of devices (he may know what it does, and how to make it work, and still fumble when the time comes to use it); balance and climbing; tying/untying knots; etc.
+
+CHARISMA — believability; persuasiveness; morale of followers; etc.
+
+MODIFIERS (Optional)
+
+PER LEVEL — add the increase in hit probability to their attribute score. Using this rule, Grod, being a Myrmidon, would have added four to his Charisma and Strength before multiplying them by the die number.
+
+PER CHARACTER TYPE — everyone should have the chance, for instance, of picking a lock — but since only thieves are specialists, then all others should have only their dexterity as the percent chance of success. Grod's chances would then be 14% (if using the level modifier — 18%). For activities further from the character-type's bailiwick, begin dividing the required number, and multiplying the chance of backfire. For instance, Grod attempts to operate a Censor of Air Elementals, normally usable only by magic-users. There is a normal chance that Grod would know what it is, but to use it, he would need to roll a 02% (Grod's intelligence divided by four), and there would be likewise only a 2% chance of maintaining control over the elemental once it was called out. (Using the level modifiers, Grod's chances would be increased to 03% — still not a very healthy set of odds.) If the character is attempting to learn a spell, first subtract the level of the spell from his percentage chance — that percentage is also the chance of not going insane upon failure.
+
+LUCKSTONES, BLESSINGS, LOADSTONES
+
+AND PRAYER — Luckstones and a clerical Bless add 1 to all die rolled; whereas loadstones subtract 1 from all rolls. Prayer is a loadstone to the other side, and there exist curses which do nothing but subtract 1-6 from every subsequent roll or the determination die.
+
+EVERYTHING ELSE — you get the idea.
+
+7

@@ -1,0 +1,41 @@
+## Example of a Roster
+
+|  Quantity | Morale | Type | Strength | Hit Dice | Armor | to kill | Movement  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  1 | 5 | Wyvern | 5 | 2 | 6 | 6 dum | 16 Fly  |
+|  30 | 12 | Orcs | 3 | 1 | 4 | 1 | 7 Walk 12 Run  |
+|  5 | 6 | Trolls W Hammers | 6 | 2 | 7 | 2 Sim | 12"  |
+|  3 | 6 | Trolls W Battle Axe | 7 | 3 | 7 | 2 Sim | 12"  |
+|  1 | 8 | Nyderek the Nasty | 5 | 1 | 5 | 5 Cum | 8W 14 Run  |
+
+### Range &
+
+|  Reloads | Special  |
+| --- | --- |
+|  4" 30 hit 2 ST4 | morale sk on ST4 or lower  |
+|  14" 10 | --- morale ck on ST 3 or lower morale CK on ST4 or lower Charmer & Enchanter  |
+
+### Forces of Good
+
+|  9 | 8 | Elf Archers | 4 | 2 | 5 | 3 Cum | 8W, 14R  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  16 | 8 | Elf Spear/Sword | 4 | 2 | 5 | 3 Cum | 8W, 14R  |
+|  18 | 10 | Dwarfs | 3 | 1 | 4 | 2 Cum | 7W, 12R  |
+|  3 | 3 | Elf Lords Spear/Sword Spear hits with 2 hit dice at ST 6 | 6 | 3 | 8 | 2 Sim | 8W, 14R  |
+|  1 | 4 | Hero of Gondor | 8 | 4 | 7 | 3 Sim | 8W, 14R  |
+|  1 | 6 | Magician | 5 | 1 | 6 | 6 Cum | 8W, 14R  |
+|  1 | 9 | Enchanter | 4 | 1 | 5 | 4 Cum | 8W, 14R  |
+|  1 | 9 | Conjurer | 4 | 1 | 4 | 3 Cum | 8W, 14R  |
+
+|  24" 12 7" | ---  |
+| --- | --- |
+|  20" 10 | secret doors 10+  |
+|  8" | Heal Wounds  |
+|  auto | Open portal  |
+|  return if | ata+7  |
+|  kill or | +2 vs  |
+|  miss | water beast  |
+|  8" | Treat Wound  |
+|  +1 Acc. | 5 or lower Ck morale Illusionist Fire User Charmer. Enchanter  |
+
+18

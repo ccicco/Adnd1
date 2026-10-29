@@ -1,0 +1,59 @@
+|  Title | Insanity | Loss of Control | Success  |
+| --- | --- | --- | --- |
+|  Read a foreign language (not magic) | 1-6 | 7-9 will give a false reading. 10-12 failure | 13+  |
+|  Read Magic | 1-7 | 8-11 will give a false reading. 12-14 Failure | 15+  |
+|  Detect Magic (automatic) (roll at start of game) (optional) | 1-8 | 9-12 will give false readings 13-15 no ability | 16-19 within 2" 20-23 within 4" 24-29 within 6" 30+ within 8"  |
+|  Treat wounds | 1-6 | 7-9 will become serious 10-12 failure | 13+ wound will get no worse  |
+|  Heal wounds | 1-9 | 10-12 will kill patient 13-15 no effect | 16-24 will heal in 3 turns 25+ will heal in 1 turn  |
+
+If Insanity is rolled on the die; Cast another die subtracting the SC's ST. 19-15 SC dies; 14-12 Turns against his own side. The judge will have him cast spells against his own side — he can NOT be cured. 11-9 SC becomes catatonic (If he is moved he will; die 1-7, turn against his own side 8-12, will follow 13-20). 8-5 All storage & bonuses are removed and drops three strength levels but lives and may cast spells in two turns. 4 or lower the Insanity is temporary. Cast an 8 sided die to see on which turn he will recover. In such a state he may defend his person at ST-2 and Armor-2.
+
+Fantasy Rule Additions
+(C) 1975 LWL — any may use in their games but reproduction in any form with permission only.
+
+Here follows a list of Spells that follow the idea that a spell may or may not work and if it is successful it will have varying degrees of success. A Spell Caster (hereinafter SC) casting a spell in his own area of specialty gains a +3 on a 20 sided die. A SC casting a spell in another area of specialty loses a -3 on a 20 sided die. To determine the result, if any, of a spell algebraically add Specialty to Strength (strength range for SC is from 1-12) to a 20 sided die roll.
+
+|  Title | Type of SC gaining +3 | Insanity | Loss of Control | Success  |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  Fire Ball | Fire User | 1-4 | 5-9 Any in 5" takes a hit at strength of SC (includes SC) 10-12 | throw range 13-14 15-17 18-20 21-23 24-26 27-30 31-33 34+ | hit dice 12" 16" 20" 24" 28" 32" 36" 40" | strength SC-2 SC-1 SC SC+1 SC+2 SC+2 SC+3 SC+3 |   |
+
+Fire Balls (true and illusion) Control; The SC can control the course of his FB while it travels. He may cause the Ball to change course, however the following rules must be observed. Each turn can be made only after a 3" straight segment and only at a maximum turn of 45°. The SC may thus track any individual target of his FB. Targets are considered to NOT be so agile as to duck the FB in the last 3" of flight. Fleeing targets or evading targets are restricted to as near a straight line flight as possible. The judge will rule on all disputes. Note: One does not evade toward the SC, ALWAYS away. FB diameter in a 25mm battle is 1¾", 40mm 2½", and 54mm 3½". FB dissipate when a target is hit. An illusionary FB has the same effect on morale as a real FB. FB increase to their full size after 4" of travel but can be seen as soon as they leave the SC hand.
+
+|  Fire Fountain | Fire User | 1-3 | 4-6 | throw | range | hit dice | strength  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  the fire fountain is a defensive spell that forms a single or concentric circles of fire about the SC. |   |  | SC himself takes 1 hit at his own strength 7-9 failure | 10-14 15-18 19-22 23-26 27-30 31+ | 2" 2" 2" & 4" 2" & 4" 2", 4" & 6" 2", 4" & 6" | 1 2 2 2 3 3 | SC-2 SC-1 SC SC+1 SC+1 SC+1 SC+2  |
+
+Fire Fountains take shape at the ¾ way point in the turn. Any and all figures passing into the circle(s) of fire takes the hit(s) listed in the table. If the SC is reeled by a figure getting through the circle(s) the circles dissipate from outer to inner in quarter turn intervals. Any figure getting a kill because of a fire circle takes a morale check at once.
+
+|  Burn Wood | Fire User | 1-3 | 4-8 SC own garments will flame at ST 6 with 2 hit dice. Staff and/or wand will be consumed! 9-11 Failure | Throw 12-16 17-24 25-31 32+ | Range Physical contact 6" range 12" range 16" range | Effect Wooden shafted weapons including arrows will flame at once and be of no value. as above as above as above  |
+| --- | --- | --- | --- | --- | --- | --- |
+
+The Burn Wood spell, if directed against a SC with a wand or a staff will be fought off even if the SC does not try to dispel the spell. A saving spell is used. 16-SC ST is the # needed for a save on a 20-sided die. If a dispel magic spell is tried and fails the Saving throw IS still taken. The Burn Wood spell may be tried to light torches, burn faggots, or burn doors. Doors sealed by magic will fight off the attempt at 16 — the ST of the closing spell. If the attempt to burn the door fails the SC's own wand and/or staff will burst into flame with NO saving throw!
+
+E.G. if a SC (strength 5) locks a door, then 16-5 or 11 must be cast (or a higher #) to burn the door. If a 10 or lower is cast the wand/staff of the SC casting the burn wood spell will burst asunder.
+
+|  Light | Fire User | 1-3 | 4-6 SC takes a hit at own ST 7-10 Failure | Throw 11-16 17-21 22-28 29+ | 12" 12" 18" 24" | Effect diameter Circle of light diameter circle of light that will blind opponents in circle of ST 4 or lower for 3 turns. circle of light blinding ST 5 or lower for 3 turns circle of light blinding ST 6 or lower for 3 turns  |
+| --- | --- | --- | --- | --- | --- | --- |
+
+|  Pillar of Fire | Fire User | 1-3 | 4-7 will attack SC at ST 6 with 2 hit dice for 2 turns | throw 11-15 16-19 20-24 25-29 30+ | move 9" 12" 15" 18" 24" | strength 6 6 7 8 8 | hit dice 3 3 3 3 | kill 2sim. 2sim. 2sim. 2sim. | to armor 6 7 8 8 9  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  Black Fire | SC must control pillar while it exists. If he does not it dissipates | 1-7 | 8-11 Take hit on self and all in 6" with 2 HD at ST+1 12-14 Failure | 15-18 19-22 23-26 27-30 31+ | 6"dia. 8"dia. 10"dia. 12"dia. 14"dia. | 12"/turn 3HT at ST of SC 15"/turn 3HT at ST+1 of SC 18"/turn 4HT at ST+1 23"/turn 4HT at ST+2 24"/turn 5HT at ST+2 |  |  |   |
+
+|  Black Fire | Fire User | 1-7 | 8-11 Take hit on self and all in 6" with 2 HD at ST+1 12-14 Failure | 15-18 19-22 23-26 27-30 31+ | 6"dia. 8"dia. 10"dia. 12"dia. 14"dia. | 12"/turn 3HT at ST of SC 15"/turn 3HT at ST+1 of SC 18"/turn 4HT at ST+1 23"/turn 4HT at ST+2 24"/turn 5HT at ST+2  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  Black Fire | Black fire is a plasma of variable diameter and Variable speed that hovers at 2" until commanded to descend |  |  |  |  |   |
+
+|  Lightning | Fire User | 1-5 | 6-10 Any in 6" will take two hits at ST of SC (incl. SC) 11-13 Failure | 14-17 18-22 23-26 27-29 31+ | 18" 24" 30" 36" 48" | 3 hit dice ST=SC 3 hit dice ST=SC+1 3 hit dice ST=SC+2 4 hit dice ST=SC+3 5 hit dice ST=SC+4  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  Both | LB are 1" wide and 9" long When first figure is hit LB will then extend 9 more inches. Thus range limits are 18+9 to 48 + 9! |  |  |  |  |   |
+
+# Spells of the Elements
+
+|  Title | Type of SC gaining +3 | Insanity | Loss of Control | Success |   | Type Eff. | Range  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  Cold Wind | Elementalist | 1-3 | 4-6 will 'freeze' SC for 2 turns 7-9 Failure | throw # Eff. | Duration | ST3 or lower | 8"  |
+|   | 'Frozen' figures have no hit dice but the TO KILL & ARMOR rating both go up +1 while frozen. |  |  | 10-15 16-20 21-25 26-30 31+ | 1-6 1-8 1-12 1-20 1-20 | 2 turns 3 turns 3 turns 4 turns 4 turns | ST4 or lower 12" ST5 or lower 16" ST6 or lower 20" ST7 or lower 24"  |
+|  Water Beast | Elementalist | 1-3 | 4-6 Beast attacks SC at ST 6 with 2 hit dice for 2 turns. 7-9 Failure | throw range 10-14 15-19 20-24 25-29 30+ | move 9" from H20 12" 15" 18" 24" | strength 6 9" 12" 15" 15" 15" | hit to armor dice kill 2 sin. 8 2 sin. 7 2 sim. 8 2 sim. 8 2 sim. 9  |
+|   | SC must be within 6" of a body of water that is 6 square in. in surface area or larger. Beast may battle in water as well as out. SC must control while in existence. |  |  |  |  |  |   |
+
+15

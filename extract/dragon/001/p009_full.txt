@@ -1,0 +1,34 @@
+# LANGUAGES
+
+or,
+
+**Could you repeat that in Auld Wormish?**
+
+by Lee Gold
+
+*Editor of ALARUMS AND EXCURSIONS, the D & D amateur press association.*
+
+The Rules lay down that each species has its own language, except for humans, most of whom can speak "common" (as can 20% of the non-humans . . . as an extra tongue). In addition, each alignment has its own language, known to all its members and recognizable as such by all non-members. Creatures may speak several languages, either by virtue of their natural intelligence or by magic. Thus an elf with an Intelligence of 18 speaks six native languages (Orc, Hobgoblin, Gnoll, Elf, Common and his alignment) plus eight acquired ones (one for each intelligence point over 10), while a human with an Intelligence of 3 can speak only Common and his alignment language — and probably has a low vocabulary in both.
+
+Magic is useful in extending one's language ability. A Cleric can acquire the ability to speak the language of any animal, and a first level spell has been proposed that would allow a third level Thief or any Magic-User taking it to speak any language in which he had found an inscription that he could read. (The Thief has an 80% ability to read languages; the Magic-User would have to carry the "Read Languages" spell in order to succeed.)
+
+Extra languages may also be acquired as a divine or magical favor. There's one San Francisco area mule who now speaks Japanese as a favor from a Monkey God, so that he could communicate with his 9 Intelligence, Japanese-speaking master. And one of my own dumb Clerics was given the ability to speak Were St. Bernard as a gift from a rather eccentric Wizard. (He hasn't found anyone else who speaks it yet, let alone Were St. Bernard, but he's still looking.)
+
+
+So much for what the Rules provide for. What are the implications of all this for D & D play?
+
+To begin with, let us take up the question of alignment languages. Some groups have allowed characters to take an alien alignment language as a tongue learned by virtue of high intelligence. I myself feel that the world-view of each alignment is so different from the others that speaking an alien alignment would be impossible to do perfectly and difficult to do well. In my dungeons, Lawfuls or Chaotics have only a 30% chance of understanding anything in the opposing tongue and a 60% chance of understanding anything in Neutral. They can speak the opposing tongue 40% understandably and Neutral 70%. Neutrals have a 60% chance of understanding either Law or Chaos and a 70% chance of speaking it understandably.
+
+How far does language ability go? One can talk to animals. One can talk to plants. Can one talk to bugs (insects smaller than a grasshopper, say)? Can one talk to bacteria? Stones? I have encountered one character who took "Wall" as a language and attempted to interrogate dungeon walls as to what lay behind them. In my dungeon, the walls drunkenly replied, "I don't know; I'm plastered." I feel that anything for which a command potion/ring/staff/wand/rod does not exist should not be able to carry on a conversation.
+
+To what extent are there meta-languages, the non-human equivalent of "common"? Can a Mule understand a Horse? Can a Unicorn? I use an Equine tongue, 70% understandable and speakable by Horses, 70% by Mules (to whom it sounds very aristocratic), 50% by Unicorns. Similarly there is Auld Wormish spoken by 50% of all middle-aged or older dragons who are up to speaking any language, and the Great Tongue, spoken by 50% of all giants well enough established in the community to have a lair to live in. I also play that Lyranthropes have an 80% chance of understanding Common (though they cannot speak it in were-form) and a 40% chance of understanding the language of the species they resemble in were-form (though they cannot speak it in human form). Thus there is a 40% chance a Were-wolf would speak Wolf, and if he does so, a 70% chance he would also speak Canine.
+
+Can one change a language taken as an IQ ability fringe benefit? Many groups rule not; some, however, allow an individual to learn one new language and forget one old acquired one each time he goes up a level. This seems reasonable. A first level character has more need to speak Goblin than Red Dragon; a seventh level one, the reverse.
+
+Languages can sometimes be used for other reasons than communication. I once encountered a fighter who had taken Balrog as a language . . . for the purpose of swearing in it when annoyed. I also met two characters who used to exchange what appeared to be snide comments on the rest of the party in Minotaur, a language none of the rest of us spoke.
+
+The usual use of language, though, is to communicate. This is an especially vital skill to the spellcaster. A potion or device of commanding apparently carries the language ability to speak to the class of entities to be put under control, but the standard spells do not. Little use can be made of a Charmed or Held enemy if there's no way to give him orders or interrogate him save through sign language. And mute phantasmal beings are always less convincing than vocal ones. The ability to speak to the party's mule or to a character's own mount may also be a valuable one at times. It's far easier to calm such an animal if you speak its language. Learning "Mule" can be a far cheaper way of inspiring a pack animal not to run away the first time it meets undead, than having to spend 250 GP for training it or 150 GP for buying barding for it, so it won't feel so vulnerable.
+
+*Continued on Overleaf*
+
+9

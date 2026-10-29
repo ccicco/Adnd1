@@ -1,0 +1,155 @@
+Combat tables for fantasy miniatures —
+
+|  Armor Class | Attacker Strength Level  |   |   |   |   |   |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12  |
+|  Warriors, Spell Casters | 1&2 | 3&4 | 5&6 | 7&8 | 9&10 | 11 | 12 |  |  |  |  |   |
+|  Clerics | 1&2 | 3 | 4&5 | 6 | 7&8 | 9 | 10 | 11 | 12 |  |  |   |
+|  10 | 18 | 17 | 16 | 15 | 14 | 13 | 12 | 10 | 8 | 6 | 5 | 4  |
+|  9 | 17 | 16 | 15 | 14 | 13 | 12 | 11 | 9 | 7 | 5 | 4 | 3  |
+|  8 | 16 | 15 | 14 | 13 | 12 | 11 | 10 | 8 | 6 | 4 | 3 | 2  |
+|  7 | 15 | 14 | 13 | 12 | 11 | 10 | 9 | 7 | 5 | 3 | 2 | 1  |
+|  6 | 14 | 13 | 12 | 11 | 10 | 9 | 8 | 6 | 4 | 2 | 1 | 0  |
+|  5 | 12 | 12 | 11 | 10 | 9 | 8 | 7 | 5 | 3 | 1 | 0 | 0  |
+|  4 | 12 | 11 | 10 | 9 | 8 | 7 | 6 | 4 | 2 | 0 | 0 | 0  |
+|  3 | 11 | 10 | 9 | 8 | 7 | 6 | 5 | 3 | 1 | 0 | 0 | 0  |
+|  2 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 2 | 0 | 0 | 0 | 0  |
+|  1 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 1 | 0 | 0 | 0 | 0  |
+
+Note: Armor class for types 8-1 can be made equal to Plate & Shield, Plate, Chainmail & Shield, Chainmail, Leather & Shield, Leather, Shield only, and No Armor if you wish. Armor types 9 & 10 can be assigned and used for humanoids and monsters etc. We recommend that some armor class higher than one be given to higher classes of Spell Casters.
+
+If the above number is generated consult table one below
+
+If the above number plus one is generated consult table two below
+
+If the above number plus two is generated score a kill against the figure
+
+If the above number is not generated there is no effect.
+
+Table
+
+one;
+
+1-15 Defender back 6 inches in good order, if no retreat count as a flesh wound
+
+16-18 Defender receives flesh wound and retreats 8" in good order, if no retreat count as a serious wound. Wound must be treated within 4 turns or it will become serious. While wounded operate at two strength levels lower and one armor level lower. Wound may be treated by any spell caster or cleric or any commander of strength 5 or higher. Healing can only be achieved by a figure having a 'heal wounds' spell. If treated strength level goes up one and armor level goes back to normal after 2 turns. Moves at ½ speed.
+
+19-20 Defender Seriously wounded and falls. Wound must be treated within 2 turns or the figure loses a kill from the 'to kill' column which can not be recovered. Thereafter the figure loses a kill every turn until dead. (Figures that only require one kill are dead outright, of course.) A seriously wounded figure may only defend himself if attacked. He may use one die only regardless of hit dice. He operates at 4 strength levels lower and 2 armor levels lower. (if such a strength reduction is below 1 treat figure as unconscious) Any Spell Caster, cleric or fighter of strength 5 (or higher) may treat a wound. The treatment prevents deterioration but only a spell of healing will cure the wound in three turns.
+
+The undead, the unifying and monsters can not be wounded in many cases except by special weapons. Monsters that can be wounded will only take a subtraction from their to kill column and a strength level reduction of one.
+
+Table
+
+two;
+
+1-6 Defender back 6" in good order as above
+
+7-14 Defender receives flesh wound and retreats 8" as above
+
+15-20 Defender seriously wounded and falls, as above.
+
+Note: This treatment obviously implies simultaneous kills instead of cumulative kills in most cases. The two systems can be mixed with favorable results too!
+
+# Arrows and spears and axes
+
+|  Range designation | ARROWS |   |   | SPEARS  |   |   |
+| --- | --- | --- | --- | --- | --- | --- |
+|   |  24" max | 20" max | 18" max | 15" max | 10" max | 8" max  |
+|  Point Blank | 1-5 | 1-4 | 1-4 | 1-3 | 1-2 | 1  |
+|  Short | 6-10 | 5-8 | 5-8 | 4-6 | 3-4 | 2-3  |
+|  Medium | 11-15 | 9-12 | 9-12 | 7-9 | 5-6 | 4-5  |
+|  Long | 16-20 | 13-16 | 13-15 | 10-12 | 7-8 | 6-7  |
+|  Extreme | 21-24 | 17-20 | 16-18 | 13-15 | 9-10 | 8  |
+
+6" max 7" max 5" max 3" max
+
+# AXES
+
+|  1 | 1-2 | 1 | -  |
+| --- | --- | --- | --- |
+|  2-3 | 3-4 | 2 | 1  |
+|  4 | 5 | 3 | 2  |
+|  5 | 6 | 4 | 3  |
+|  6 | 7 | 5 | -  |
+
+Point blank, short and medium range fire of any time is straight line of sight shorts.
+
+Long and extreme range shots of any type may be made over the heads of troops 4" from both the firing unit and the target. There must still be a line of sight.
+
+The strength of the hit missiles is as follows:
+
+1. The missile hits with one less hit die than the firing figure has
+
+2. The Strength of the hit is determined by the range
+
+Point Blank hits are at ST +1
+
+Short range hits are at ST
+
+Medium range hits are at ST-1
+
+Long range hits are at ST-2
+
+Extreme range hits are at ST-3
+
+Missiles fly their full distance in 1/3 of a turn.
+
+Archers may fire two arrows per turn, one at the start of the turn, one at the ½ way point.
+
+Spear and Ax throwers may redeem their weapons from dead bodies and from misses. If a weapon automatically returns to the fire it may be cast again next turn. If the fire is meled by the time the weapon returns the weapon will attack the attacker!
+
+A figure that is in 6" of being meled will drop his bow and draw a sword or other weapon.
+
+# Hit Probability
+
+Sum these points:
+
+1. For range: Point Blank +3, Short +2, Medium +1, Long 0, Extreme -2
+2. For figures firing at the same target simultaneously +1 for 3rd and each subsequent.
+3. For enemy cover: none 0.25% -2.50% -4.75% -6.100% -9 (hard cover can't be hit)
+4. For Enemy movement: Stationary +2, walking 0, running -3 (a shield is 25% cover)
+Cast a 20 sided die adding the algebraic total of the above. A 10 or higher is a hit.
+
+# Morale:
+
+Every figure has a morale rating of from 1 (best) to 12 (worst). If the morale # is cast (or higher) the figure will NOT run. If he falls that number then he will do the following:
+
+Miss by 1 back 6" in good order, may defend if attacked at full strength
+
+Miss by 2 or 3 back 6" armor down 1 and strength down by 1 for 1 full turn
+
+Miss by 4 to 6 back 9" in disarray. Loves all hit dice for three turns, armor down 2.
+
+Miss by 7 or more Rout off the board with no recourse.
+
+Cast 2 8-sided die.
+
+For a spell to come to COMPLETION the Spell Caster must be stationary for a full turn AND be unaffected by attack. (thus if a spell is cast against him unsuccessfully his spell is not damaged.)
+
+In simultaneous movement (both players writing orders) spells may be cast at the start of the turn. No effect of the spell is seen until the ½ way point of the turn. If a SC is stationary or only walking he may also cast a spell at the ½ way point of the turn in reaction to enemy action. Some spells cast at the ½ way point of the turn will take effect at the end of the turn.
+
+Examples: A SC is stationary in simultaneous movement when 6 orcs appear from cover and move to attack him. Let's say he tries a fire ball against them. He begins his incantation at the ½ way point in the turn. If the orcs fall short of reaching him the fire ball (if successful) will leave his hand at the start of the NEXT turn and burn out at the turn's ½ way point. The orcs will see the ball at the start of the turn, will take a morale check if required, and may continue of the morale check is good. If they run or choose to run then calculate the SPEDD of the fire ball in inches relative to their speed in inches in a half turn to see if it catches them. If they run they must run away from the fire ball. Remember that the SC CONTROLS the flight of the Fire ball and may have it follow them as long as they are in his line of sight. The orcs may scatter if they VOLUNTARILY run, if they fail a morale check they run in a pack! If the SC is meled during the turn the FB is in motion the Ball will burn out at a range proportional to the fraction of the turn used. E.g., orcs can run at the rate of 12"/turn. Thus ½ of a turn is 6" of orc movement. Let's say the FB (due to a die roll) is to travel 18". The SC is meled after 4" of orc movement. So for 4/6 of the ½ turn the ball moves or 4/6 of 18" which is 12" and then the ball burns out.
+
+If a SC is meled during an incantation the spell is void and his strength level and armor level drop by 2 for the melee. E.G.: a SC tries a quicksand spell at the start of a turn and during the turn is attacked by orcs from the front and side. They are 9" away at the start of the turn and will not reach him until ¾ of the turn is over. At the ½ way point in the turn a die roll gives a 10" x 10" square of quick sand into which any figure will sink ¼"/turn and be reduced to walk speed minus 2"/½" of sand sunk into. The orcs attacking frontally are caught by the sand and reduced to their walking rate of 6"/turn minus 2". ½ of the turn is over so they may now move ½ of 6" minus 2" or only 1 more inch. The orcs then hit from the side and dispell the quick sand before the 3 turn duration comes into play. (Note: spells that have a duration phase DO NOT have to be maintained by the SC for the turns of the spell with the exception of the Pillar of Fire, the Water Beast and the Earth Monster. Thus Quicksand with a duration of 3 turns will stay 3 full turns even if the SC is meled, killed, or begins a new spell on the next turn after the QS is successfully cast.) The orcs in the mire must still dig out of the dry sand into which they have sunk ¼ of an inch. The SC is down by 2 in strength and armor level against the orcs who attacked him from the side.
+
+SC can 'sense' a spell being cast AT them the moment the incantation begins. They do not KNOW what the spell is until ½ of the turn is over however. If they choose to DISPEL MAGIC it may be cast at the moment of realization, the moment of knowledge of what the spell is, or 1 full turn after realization. Any spell in progress at the time of realization may be abandoned in favor of the Dispel Magic attempt but at a -3. Spell just begun at the moment of realization may be abandoned in favor of a Dispel Magic spell with no loss. If two SC attempt to cast spells against each other at the same time and both abandon them in favor of dispelling the other's spell then they have both wasted their turns.
+
+Spells that do not deal with physical things or illusions of physical things will not show a result until ¾ of the turn is over.
+
+Every time a spell is cast successfully the SC gains a +1 if he ever casts THAT spell again. You may require that a SC hold a wand, ring, staff or talismans to 'record' this success and gain the bonus. If 10 spells are cast in the same foreign area the SC may cast any spell in that area with no subtraction.
+
+A spell caster may gain up to a +4 on any single spell in his own area of specialty, and a +3 on any single spell in another area. The Dispel Magic spell may gain a maximum +4 and does not count against any promotion to another level or bonus in the non-area of specialty. PROMOTION is based upon the accumulation of a +10 in bonuses from the successful casting of spells in a SC own area of specialty. The optional rule that bonuses may only be accumulated by storage in wands, staffs, rings and/or talismans is up to the players and judge. The -3 for spells not in a SC of specialty will be erased on all spells in that one new area of specialty if a +10 can be gained on spells within that area. (It has been suggested that 'failure' and 'insanity' be exchanged in position when casting a spell. This option may be used but it will produce a large number of insane Spell Casters!)
+
+Staffs store spells of one type only, of any strength.
+
+Rings will store ANY spell of high difficulty (Insanity 1-5 or worse)
+
+Wands will store ANY spell of low difficulty (Insanity 1-4 or lower)
+
+Talismans will store the spells of the elements OR the spells of Illusion
+
+"Wizard hats" will store the spells of Charming and Enchanting.
+
+Intrinsic spells of ALL SC cast a 20 sided die, add SC strength plus a bonus of +2.
+
+14
