@@ -1,0 +1,2710 @@
+{
+ "round": 899,
+ "title": "The comedy and small-variants round: the Idiot, the Jester and the dexterity mods",
+ "prefix": "cmv",
+ "census_before": 821,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R898 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R898 LANDED 2026-10-29: commit",
+  "  c113aa3af0afee2c879d60189ac1753d10b89e9f (base",
+  "  7217195, census 820 -> 821), the character",
+  "  round: Smith's new-view Dwarves (folios 26-27)",
+  "  + Stock & Lane's birth tables (folios 14-16) +",
+  "  the Pulsipher Eldar deltas (folios 20-21)",
+  "  against the R888 Smith pin, from Dragon #3. THE",
+  "  SHAPE: prefix chr (regtest-scan clean), header",
+  "  rules/chr.h (294 inline: 112 consts + 46 bools",
+  "  + 36 tables / 136 columns - the biggest inline",
+  "  count since the v3 fresh start), audit \"R898",
+  "  character round audit\" at",
+  "  rules/audits/r898_batch.h, 244 examples, 3",
+  "  header_sections, include after fsc.h,",
+  "  prev_seed_key the R897 record. THE PINS: the",
+  "  Dwarves - the nine-level Fighting Man ladder",
+  "  (Dwarf 1+2 fighting as Man+2 through Dwarf King",
+  "  10+1 at 320,000, the dice-plus forms split to",
+  "  base and bonus), the 17/18 Strength gates with",
+  "  the 12-Int 12-Wis footnote pinned as scanned,",
+  "  the seven families with Durin on the d8's 7-8",
+  "  and the kingship rules, the Greyhawk cleric",
+  "  option (Wis 15, 7th at 17, 8th at 18, points on",
+  "  a d8), the thief's d6, the forbidden class",
+  "  list, the fourteen abilities (the +4 save",
+  "  bonus, the +3 War Hammer, the 1-4-of-a-d6",
+  "  detection, the Goblin-Orc-Hobgoblin tongues",
+  "  with Gnome and Kobold spoken, the Giant Class",
+  "  +1/-1, the Smith 9/9 Armorer 12/9 Engineer 15",
+  "  gates, the bow rule, the six regular weapons",
+  "  with others at -1, the 17-Dex swim against the",
+  "  water fear, the 12-Int horse reluctance across",
+  "  the folio break), the reaction table (the",
+  "  Goblins-and-Orcs AUTO ATTACK pinned as sentinel",
+  "  9, -2 Sindar/Silvan/men, -1 others, 0",
+  "  Hobbits/Noldor, +1 different Folk, +2 same Folk",
+  "  never attacking own), and the folk wisdom",
+  "  (maturity 50, life 250, the hates, the unbroken",
+  "  oath); the birth tables - the full ten-table",
+  "  Stock & Lane system (social class, sibling rank",
+  "  on a d8 with the orphan check and the first-son",
+  "  +10 / bastard -10 percents, the four wealth",
+  "  ladders through the Noble 400/60/1000 Very",
+  "  Wealthy, the father's occupation routing, the",
+  "  three skills groups with the Group 1 banding",
+  "  notes and the first-five prohibition, the",
+  "  Interpreter +3 / Soldier +1-to-4th / Orator +1",
+  "  edges, the twelve crafts, the nobility rolls",
+  "  (title, the royalty kinship with the immediate",
+  "  1000/100, never-orphan, raise-to-wealth, the",
+  "  reroll ignoring 96-00, the one-notch raise, the",
+  "  five position tables with the 30/25/20/15/15",
+  "  adventurer percents), the adventurer fathers",
+  "  (levels and classes by social class), the race",
+  "  rolls (Table 1 by class on a d12, the six-race",
+  "  dice grid, the Table 2 requirement bands), and",
+  "  the previous-experience multipliers through the",
+  "  Noble x130); the Eldar deltas - Pulsipher's",
+  "  Silvan (no requirements, all D&D powers,",
+  "  disease AND aging immunity, 8th/9th fighter,",
+  "  4th/5th magic-user, Lawful or Neutral never",
+  "  evil), Sindar (average abilities and 63 total,",
+  "  8th/9th magic-user, 4th/5th/6th fighter), Eldar",
+  "  proper (13 Wis, 67 total, the 11th ONE-PATH",
+  "  choice), the Eldar powers (a language per Int",
+  "  point without the orcish tongues, calmed",
+  "  animals, bird speech, the mind-to-mind 2.5-per-",
+  "  level pinned as five half-units, keen eyes, the",
+  "  True Sight +1/level vs phantasmal, 5",
+  "  percent/level illusions, 3 percent/level",
+  "  polymorph with the 5th-level 15 percent",
+  "  example, 1 percent/level shape-change, the",
+  "  optional hidden chance, the unawareness on",
+  "  success), the over-sea doctrine (1/1000 Eldar",
+  "  proper, 1/100 Sindar having seen the western",
+  "  ocean, 1/10000 before, no roll until max level,",
+  "  the Silvan never), and the half-elf rule.",
+  "  DELTAS VS THE R888 SMITH PIN, NEVER SILENT:",
+  "  Smith's Noldor carry no level cap where",
+  "  Pulsipher caps the one path at 11th, the",
+  "  150-percent ranges-and-effects advantage",
+  "  rejected as unbalancing, the disease immunity",
+  "  extended to aging, the over-sea chances",
+  "  replaced. CONVERSIONS, ALL NOTED: the '00'",
+  "  percentile convention to 100 throughout the",
+  "  birth tables, the 'nil' bands to 0, the race",
+  "  grid's 'any' to the 3-18 range, the ladder's",
+  "  dice-plus forms to base and bonus. HONEST",
+  "  BOUNDARIES: the OCR's split Very-Wealthy rows",
+  "  and column shifts in the wealth tables ride AS",
+  "  SCANNED; the royalty table's interleaved wealth",
+  "  labels pin nothing beyond the bands; the",
+  "  garbled sibling note 'No one receives",
+  "  Allowance' pins nothing; the crafts pin as a",
+  "  count with the names in the audit comment; the",
+  "  Smith rebuttal rode beside the Pulsipher",
+  "  letter, both systems standing on the variant",
+  "  layer. GAP REPORT: the fighting sub-classes box",
+  "  flipped in tools/dragon_gap_report_003.md ->",
+  "  issue-3 report 3 closed / 2 open. VERIFIED:",
+  "  engine double-run GREEN applied 6 / already 6 -",
+  "  NO ABORTS, the second clean pass in a row;",
+  "  rverify against pristine 7217195: 985 mutants 0",
+  "  missed - the biggest battery since the v3 fresh",
+  "  start; the raw JSON round-trip byte-exact. Spec",
+  "  tools/spec_r898.json, 137,214 bytes, 4,694",
+  "  lines, md5 a9fc3af7d8c8c774a0a30bebbd4a6c28",
+  "  (authored-plus-newline). NEXT: R899 - the",
+  "  comedy and small-variants round (the Idiot",
+  "  folio 28, the Jester folios 28-29, the Cline",
+  "  dexterity mods folio 30), flipping the",
+  "  character box -> issue-3 report 4 closed / 1",
+  "  open, closing the issue-3 walk. WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/chr.h\"  // R898: the Dwarves, birth tables and Eldar deltas character round",
+ "include_comment": "the Idiot, Jester and dexterity mods comedy round",
+ "header_file": "rules/cmv.h",
+ "audit_file": "rules/audits/r899_batch.h",
+ "audit_label": "R899 comedy and small-variants audit",
+ "audit_anchor": "#include \"rules/audits/r898_batch.h\"  // R898: R898 character round audit",
+ "gap_report": "tools/dragon_gap_report_003.md",
+ "gap_census": {
+  "closed": 4,
+  "open": 1
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The new-view Dwarves, the birth tables and the Eldar deltas**\n  (folios 14-16, 26-27, 20-21) - the character round",
+   "to": "- [x] **The new-view Dwarves, the birth tables and the Eldar deltas**\n  (folios 14-16, 26-27, 20-21) - the character round",
+   "note": "the character round box - the issue-3 report's fourth flip, 4 closed / 1 open"
+  }
+ ],
+ "banner": {
+  "title": "The comedy and small-variants round - Davidson's Idiot (folio 28), Carner, Cannon and Simon's Jester (folios 28-29) and Cline's dexterity combat mods (folio 30)",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 3 (October 1976): folio 28, Gordon Davidson's Two Penultimate Sub-Classes, the Idiot - the 160-gold hireling bought to confuse the enemy into running away, attacking walls, committing Hari Kari or eating its treasure, with the midget add-on, the confusion grids, the Exceptionally BAD Abilities chart, the twelve-level ladder from Dummy to Idiot, and the constitution prime requisite; folios 28-29, the new category Jesters by Charles Carner, William Cannon and Pete Simon - the 15/15/6 requisites, the racial caps with the Dwarves' infinite jestership, the joke weapons from the smelly sock to the dirty underwear, the two intelligence-based saving-throw tables, the fourteen-row experience grid, and the eight levels of jokes from Giggle Spell through Voice Projector; folio 30, Steve Cline's Combat Modifications for Dexterity - the twelve-band hand-held/missile/damage/defense grid. The editor's standing caution rides: none of this is official.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. The printed 'N' entries in Cline's grid CONVERT to 0, the '05%' to 5 and the '00' convention to 100, the half-percent wound penalty pins as five tenths and the half-damage spells as 50 percent with the quarter-turn damage as 25 percent, every conversion noted, never silent; the Armor Class -4 of Body Contortion II pins as 4 with the sign in the comment; the Idiot confusion grid's odd monster rows, its truncated 12th column, the Jester experience grid's unlabeled column semantics and Cline's four percent-band rows ride AS SCANNED, garbles and all, no figure pixels to check; the comedy round rides the variant layer against the engine's canon class frame, never a rewrite."
+ },
+ "consts": [
+  {
+   "name": "cmvIdiotCostGold",
+   "value": 160,
+   "comment": "an Idiot is obtained by paying 160 gold pieces at the beginning of the game or at a city, if one is present (folio 28)"
+  },
+  {
+   "name": "cmvIdiotCityFindPct",
+   "value": 50,
+   "comment": "the 50 percent chance a city has an Idiot for hire (folio 28)"
+  },
+  {
+   "name": "cmvMidgetCostGold",
+   "value": 200,
+   "comment": "the player also has the opportunity to buy a midget for 200 gold pieces (folio 28)"
+  },
+  {
+   "name": "cmvMidgetBonusPct",
+   "value": 5,
+   "comment": "the midget adds 5 percent to all base chances (folio 28)"
+  },
+  {
+   "name": "cmvIdiotConfuseTurns",
+   "value": 3,
+   "comment": "the confusion lasts 3 melee turns (folio 28)"
+  },
+  {
+   "name": "cmvIdiotAttackAnyhowPct",
+   "value": 15,
+   "comment": "there is a 15 percent chance that the confused monster will attack anyhow (folio 28)"
+  },
+  {
+   "name": "cmvIdiotConThreshold",
+   "value": 12,
+   "comment": "the constitution threshold for the confusion bonus - 12 (folio 28)"
+  },
+  {
+   "name": "cmvIdiotConBonusPerPoint",
+   "value": 1,
+   "comment": "for each constitution point above 12 add 1 point on chances to confuse (folio 28)"
+  },
+  {
+   "name": "cmvIdiotWisIntFloor",
+   "value": 6,
+   "comment": "an Idiot can take his Wisdom and Intelligence down to 6 (folio 28)"
+  },
+  {
+   "name": "cmvIdiotTradeWisRatio",
+   "value": 3,
+   "comment": "the Idiot trades 3 Wisdom for 1 Constitution (folio 28)"
+  },
+  {
+   "name": "cmvIdiotTradeIntRatio",
+   "value": 4,
+   "comment": "the Idiot trades 4 Intelligence for 1 Constitution (folio 28)"
+  },
+  {
+   "name": "cmvIdiotLevelThreshold",
+   "value": 9,
+   "comment": "the armor-effectiveness threshold level - above 9 (folio 28)"
+  },
+  {
+   "name": "cmvIdiotArmorLosePctPerLevel",
+   "value": 5,
+   "comment": "for each level above 9 the Idiot loses 5 percent effectiveness in armor (folio 28)"
+  },
+  {
+   "name": "cmvIdiotRestDays",
+   "value": 2,
+   "comment": "after each confusion attempt - a Tantrum - the Idiot must rest 2 days (folio 28)"
+  },
+  {
+   "name": "cmvIdiotPayGold",
+   "value": 10,
+   "comment": "the Idiot must be paid 10 gold pieces on the spot to play, otherwise he will hold his breath until he turns blue and won't play (folio 28)"
+  },
+  {
+   "name": "cmvIdiotWoundedTenthPct",
+   "value": 5,
+   "comment": "a wounded Idiot confuses at a half percent - pinned as five tenths of a percent, the conversion noted (folio 28)"
+  },
+  {
+   "name": "cmvIdiotWoundedWaitWeeks",
+   "value": 1,
+   "comment": "a wounded Idiot must wait a week before trying again (folio 28)"
+  },
+  {
+   "name": "cmvIdiotMeleeAsManMod",
+   "value": 2,
+   "comment": "the Idiot melees as a man -2 - pinned as 2, the sign carried in the comment (folio 28)"
+  },
+  {
+   "name": "cmvIdiotMaxDamage",
+   "value": 1,
+   "comment": "the Idiot delivers at best 1 point of damage (folio 28)"
+  },
+  {
+   "name": "cmvIdiotFirstLevelCount",
+   "value": 7,
+   "comment": "the cmvIdiotFirstLevel table runs 7 rows (folio 28)"
+  },
+  {
+   "name": "cmvIdiotConfuseGridCount",
+   "value": 3,
+   "comment": "the cmvIdiotConfuseGrid table runs 3 rows (folio 28)"
+  },
+  {
+   "name": "cmvIdiotBadDexCount",
+   "value": 4,
+   "comment": "the cmvIdiotBadDex table runs 4 rows (folio 28)"
+  },
+  {
+   "name": "cmvIdiotFallDistanceFeet",
+   "value": 100,
+   "comment": "every 100 feet the Idiot will trip and fall, dropping everything he is carrying (folio 28)"
+  },
+  {
+   "name": "cmvIdiotBreakDie",
+   "value": 6,
+   "comment": "dropped items break on a 1 out of 6 (folio 28)"
+  },
+  {
+   "name": "cmvIdiotBreakChance",
+   "value": 1,
+   "comment": "the 1-in-6 chance the dropped articles break (folio 28)"
+  },
+  {
+   "name": "cmvIdiotNoseDie",
+   "value": 6,
+   "comment": "the bloody-nose roll is 2 out of 6 per fall (folio 28)"
+  },
+  {
+   "name": "cmvIdiotNoseChance",
+   "value": 2,
+   "comment": "the 2-out-of-6 chance of a bloody nose (folio 28)"
+  },
+  {
+   "name": "cmvIdiotArmPct",
+   "value": 10,
+   "comment": "the 1-in-10 chance per fall that the Idiot breaks an arm - pinned as 10 percent, the conversion noted (folio 28)"
+  },
+  {
+   "name": "cmvIdiotAvgFallOutOf10",
+   "value": 1,
+   "comment": "normal falling chance at average dexterity - 1 out of 10 (folio 28)"
+  },
+  {
+   "name": "cmvIdiotBelowFallOutOf10",
+   "value": 2,
+   "comment": "normal falling chance at below-average dexterity - 2 out of 10 (folio 28)"
+  },
+  {
+   "name": "cmvIdiotLadderCount",
+   "value": 12,
+   "comment": "the cmvIdiotLadder table runs 12 rows (folio 28)"
+  },
+  {
+   "name": "cmvIdiotAboveStepXp",
+   "value": 200001,
+   "comment": "200,001 additional points for each level above Idiot (folio 28)"
+  },
+  {
+   "name": "cmvJesterIntMin",
+   "value": 15,
+   "comment": "the Jester's Intelligence prime requisite - 15 or better (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterDexMin",
+   "value": 15,
+   "comment": "the Jester's Dexterity prime requisite - 15 or better (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterChaMax",
+   "value": 6,
+   "comment": "the Jester's Charisma prime requisite - 6 or less, pinned as 6 maximum, the conversion noted (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterHobbitMax",
+   "value": 10,
+   "comment": "Hobbits are limited to 10th level advancement (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterElfMax",
+   "value": 6,
+   "comment": "Elves can go only to 6th level - the Village Idiot (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterMenMax",
+   "value": 5,
+   "comment": "Men can reach only 5th level - the Fool (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterOtherMax",
+   "value": 4,
+   "comment": "Other types can reach but 4th level - the Comic (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterHitDieSides",
+   "value": 4,
+   "comment": "Jesters use a 4-sided hit die (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterHitDiceMax",
+   "value": 10,
+   "comment": "a maximum of 10 dice (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterHitDieAfterBonus",
+   "value": 1,
+   "comment": "after 10 dice add +1 per level (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterWeaponCount",
+   "value": 9,
+   "comment": "nine joke weapons - the smelly sock, dagger, acid-squirting flower, pillow, jester stick, laughing gas balls, pies, dirty underwear, and tomatoes or rotten fruit, the list carried in the audit comment (folios 28-29)"
+  },
+  {
+   "name": "cmvJesSockStunMin",
+   "value": 1,
+   "comment": "the smelly sock stuns 1-4 turns, save versus poison - the minimum (folios 28-29)"
+  },
+  {
+   "name": "cmvJesSockStunMax",
+   "value": 4,
+   "comment": "the smelly sock stuns 1-4 turns - the maximum (folios 28-29)"
+  },
+  {
+   "name": "cmvJesDaggerMaxDamage",
+   "value": 6,
+   "comment": "the dagger does 1-6 points - the maximum (folios 28-29)"
+  },
+  {
+   "name": "cmvJesDaggerRangeFeet",
+   "value": 3,
+   "comment": "the dagger's range - 3 feet (folios 28-29)"
+  },
+  {
+   "name": "cmvJesPillowBurstDie",
+   "value": 6,
+   "comment": "the pillow bursts on 1-2 of a six-sided die (folio 29)"
+  },
+  {
+   "name": "cmvJesPillowBurstMax",
+   "value": 2,
+   "comment": "the pillow's burst roll - 1-2 (folio 29)"
+  },
+  {
+   "name": "cmvJesPillowBlindDiameter",
+   "value": 1,
+   "comment": "the burst pillow blinds a 1-inch diameter for 3 turns (folio 29)"
+  },
+  {
+   "name": "cmvJesPillowBlindTurns",
+   "value": 3,
+   "comment": "the pillow burst blinds for 3 turns; if no burst, stuns 1 turn as a Morningstar (folio 29)"
+  },
+  {
+   "name": "cmvJesPillowStunTurns",
+   "value": 1,
+   "comment": "the non-bursting pillow stuns 1 turn as a Morningstar, the jester stick likewise (folio 29)"
+  },
+  {
+   "name": "cmvJesGasRangeFeet",
+   "value": 30,
+   "comment": "the laughing gas balls' range - 30 feet (folio 29)"
+  },
+  {
+   "name": "cmvJesGasLaughterTurns",
+   "value": 3,
+   "comment": "the laughing gas causes uncontrollable laughter for 3 turns, save versus gas (folio 29)"
+  },
+  {
+   "name": "cmvJesPiesRangeFeet",
+   "value": 20,
+   "comment": "the pies' range - 20 feet (folio 29)"
+  },
+  {
+   "name": "cmvJesPiesBlindMin",
+   "value": 1,
+   "comment": "the pies blind 1-4 turns - the minimum (folio 29)"
+  },
+  {
+   "name": "cmvJesPiesBlindMax",
+   "value": 4,
+   "comment": "the pies blind 1-4 turns - the maximum (folio 29)"
+  },
+  {
+   "name": "cmvJesUnderwearRangeFeet",
+   "value": 10,
+   "comment": "the dirty underwear's range - 10 feet (folio 29)"
+  },
+  {
+   "name": "cmvJesUnderwearStunMin",
+   "value": 1,
+   "comment": "the dirty underwear stuns 1-6 turns, save versus poison - the minimum (folio 29)"
+  },
+  {
+   "name": "cmvJesUnderwearStunMax",
+   "value": 6,
+   "comment": "the dirty underwear stuns 1-6 turns - the maximum (folio 29)"
+  },
+  {
+   "name": "cmvJesTomatoRangeFeet",
+   "value": 30,
+   "comment": "the tomatoes or rotten fruit's range - 30 feet (folio 29)"
+  },
+  {
+   "name": "cmvJesTomatoBlindTurns",
+   "value": 1,
+   "comment": "the tomatoes blind 1 turn (folio 29)"
+  },
+  {
+   "name": "cmvJesterSavesHighCount",
+   "value": 7,
+   "comment": "the cmvJesterSavesHigh table runs 7 rows (folio 29)"
+  },
+  {
+   "name": "cmvJesterSavesLowCount",
+   "value": 7,
+   "comment": "the cmvJesterSavesLow table runs 7 rows (folio 29)"
+  },
+  {
+   "name": "cmvJesterXpGridCount",
+   "value": 14,
+   "comment": "the cmvJesterXpGrid table runs 14 rows (folio 29)"
+  },
+  {
+   "name": "cmvJesGiggleHdMax",
+   "value": 3,
+   "comment": "Giggle Spell affects thinking creatures of less than 3 hit dice (folio 29)"
+  },
+  {
+   "name": "cmvJesGiggleTurns",
+   "value": 1,
+   "comment": "Giggle Spell causes laughter for 1 turn (folio 29)"
+  },
+  {
+   "name": "cmvJesLaughHitMod",
+   "value": 4,
+   "comment": "victims are -4 to hit others while laughing - pinned as 4, the sign carried in the comment (folios 29-30)"
+  },
+  {
+   "name": "cmvJesGiggleRangeInches",
+   "value": 2,
+   "comment": "Giggle Spell's range - 2 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesPunTurns",
+   "value": 1,
+   "comment": "the Pun causes the attacker to pause and say Wha-a - lasts 1 turn, no attack possible that turn (folio 29)"
+  },
+  {
+   "name": "cmvJesPunRangeInches",
+   "value": 2,
+   "comment": "the Pun's range - 2 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesFF1First",
+   "value": 10,
+   "comment": "Funny Face I affects 10 1st level types, 5 2nd, or 1 3rd - the 1st-level count (folio 29)"
+  },
+  {
+   "name": "cmvJesFF1Second",
+   "value": 5,
+   "comment": "Funny Face I affects 5 2nd level types - the 2nd-level count (folio 29)"
+  },
+  {
+   "name": "cmvJesFF1Third",
+   "value": 1,
+   "comment": "Funny Face I affects 1 3rd level type - the 3rd-level count (folio 29)"
+  },
+  {
+   "name": "cmvJesFF1Turns",
+   "value": 1,
+   "comment": "Funny Face I causes laughter for 1 turn, no victim attack possible that turn (folio 29)"
+  },
+  {
+   "name": "cmvJesFF1RangeInches",
+   "value": 2,
+   "comment": "Funny Face I's range - 2 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesBC1Ac",
+   "value": 0,
+   "comment": "Body Contortion I - the tumbling jester becomes Armor Class 0 for 1 turn (folio 29)"
+  },
+  {
+   "name": "cmvJesBC1Turns",
+   "value": 1,
+   "comment": "Body Contortion I's duration - 1 turn (folio 29)"
+  },
+  {
+   "name": "cmvJesPauseTurns",
+   "value": 2,
+   "comment": "Pause stops victims for 2 melee turns (folio 29)"
+  },
+  {
+   "name": "cmvJesPauseRangeInches",
+   "value": 2,
+   "comment": "Pause's range - 2 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesJokeTurns",
+   "value": 2,
+   "comment": "Joke causes laughter for 2 turns (folio 29)"
+  },
+  {
+   "name": "cmvJesJokeHdMax",
+   "value": 6,
+   "comment": "Joke affects creatures of 6 hit dice or less (folio 29)"
+  },
+  {
+   "name": "cmvJesJokeRangeInches",
+   "value": 2,
+   "comment": "Joke's range - 2 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesFF2Third",
+   "value": 3,
+   "comment": "Funny Face II affects 3 3rds, 2 4ths, 1 5th level type - the 3rd-level count (folio 29)"
+  },
+  {
+   "name": "cmvJesFF2Fourth",
+   "value": 2,
+   "comment": "Funny Face II's 4th-level count (folio 29)"
+  },
+  {
+   "name": "cmvJesFF2Fifth",
+   "value": 1,
+   "comment": "Funny Face II's 5th-level count (folio 29)"
+  },
+  {
+   "name": "cmvJesBC2Ac",
+   "value": 4,
+   "comment": "Body Contortion II makes the user Armor Class -4 - pinned as 4, the sign carried in the comment (folio 29)"
+  },
+  {
+   "name": "cmvJesWonderTurns",
+   "value": 4,
+   "comment": "Wonder pauses victims for 4 turns if followed by an extended joke, else same as Pause (folio 29)"
+  },
+  {
+   "name": "cmvJesWonderRangeInches",
+   "value": 2,
+   "comment": "Wonder's range - 2 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesVentriloquismRangeInches",
+   "value": 3,
+   "comment": "Ventriloquism - same as Magic User but range 3 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesThighTurnsToUtter",
+   "value": 2,
+   "comment": "Thighslapper takes 2 turns to utter (folio 29)"
+  },
+  {
+   "name": "cmvJesThighLaughterTurns",
+   "value": 8,
+   "comment": "Thighslapper causes laughter for 8 turns, affecting 10 1st, 9 2nd, 8 3rd level types and so on (folio 29)"
+  },
+  {
+   "name": "cmvJesThighFirst",
+   "value": 10,
+   "comment": "Thighslapper's 1st-level count - 10 (folio 29)"
+  },
+  {
+   "name": "cmvJesThighSecond",
+   "value": 9,
+   "comment": "Thighslapper's 2nd-level count - 9 (folio 29)"
+  },
+  {
+   "name": "cmvJesThighThird",
+   "value": 8,
+   "comment": "Thighslapper's 3rd-level count - 8 (folio 29)"
+  },
+  {
+   "name": "cmvJesThighRangeInches",
+   "value": 3,
+   "comment": "Thighslapper's range - 3 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesFF3Level",
+   "value": 18,
+   "comment": "Funny Face III affects 1 18th level type, 2 7th level types, etc. for 1 turn (folio 29)"
+  },
+  {
+   "name": "cmvJesFF3Seventh",
+   "value": 2,
+   "comment": "Funny Face III's 7th-level count - 2 (folio 29)"
+  },
+  {
+   "name": "cmvJesFF3RangeInches",
+   "value": 2,
+   "comment": "Funny Face III's range - 2 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesObscenityTurns",
+   "value": 3,
+   "comment": "Obscenity renders lawful and neutral Clerics ineffective for 3 turns due to embarrassment, affecting other types as the Joke spell (folio 29)"
+  },
+  {
+   "name": "cmvJesBoringTurnsToUtter",
+   "value": 4,
+   "comment": "Boring Joke takes 4 turns to utter (folio 29)"
+  },
+  {
+   "name": "cmvJesBoringTenthTurns",
+   "value": 2,
+   "comment": "Boring Joke acts as Sleep - puts a 10th level type to sleep for 2 turns (folio 29)"
+  },
+  {
+   "name": "cmvJesBoringNinthTurns",
+   "value": 4,
+   "comment": "Boring Joke's 9th level sleep - 4 turns, and so on down (folio 29)"
+  },
+  {
+   "name": "cmvJesBoringRangeInches",
+   "value": 2,
+   "comment": "Boring Joke's range - 2 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesDecrepSeventhTurns",
+   "value": 2,
+   "comment": "Decrepitating - a 7th level jester incapacitates his target for 2 turns (folio 29)"
+  },
+  {
+   "name": "cmvJesDecrepEighthTurns",
+   "value": 4,
+   "comment": "Decrepitating - an 8th level jester incapacitates for 4 turns, and so on up (folio 29)"
+  },
+  {
+   "name": "cmvJesDecrepPerHourMax",
+   "value": 3,
+   "comment": "a maximum of 3 Decrepitatings per game hour by any one jester (folio 29)"
+  },
+  {
+   "name": "cmvJesDecrepRangeInches",
+   "value": 3,
+   "comment": "Decrepitating's range - 3 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesBellyTurnsToUtter",
+   "value": 2,
+   "comment": "Bellyacher takes 2 turns to utter (folio 29)"
+  },
+  {
+   "name": "cmvJesBellyLaughterTurns",
+   "value": 8,
+   "comment": "Bellyacher causes the victim to laugh 8 turns plus the level of the jester (folio 29)"
+  },
+  {
+   "name": "cmvJesExt1Resistance",
+   "value": 1,
+   "comment": "Extension I, done while the subject is already laughing, lowers the victim's resistance by 1 on the next saving throw (folio 29)"
+  },
+  {
+   "name": "cmvJesExt2Resistance",
+   "value": 2,
+   "comment": "Extension II lowers the resistance by 2 (folio 29)"
+  },
+  {
+   "name": "cmvJesGutbusterMinDamage",
+   "value": 1,
+   "comment": "Gutbuster is the same as Bellyacher but also does 1-4 points while the victim is laughing - the minimum (folio 29)"
+  },
+  {
+   "name": "cmvJesGutbusterMaxDamage",
+   "value": 4,
+   "comment": "Gutbuster's damage maximum - 4 (folio 29)"
+  },
+  {
+   "name": "cmvJesInsultFleePct",
+   "value": 50,
+   "comment": "Insult - a 50 percent chance the target flees, crushed with embarrassment (folio 29)"
+  },
+  {
+   "name": "cmvJesInsultFleeDie",
+   "value": 6,
+   "comment": "Insult's flee chance reads 1-3 on a six-sided die (folio 29)"
+  },
+  {
+   "name": "cmvJesInsultFleeDieMax",
+   "value": 3,
+   "comment": "Insult's flee roll - 1-3 of the d6 (folio 29)"
+  },
+  {
+   "name": "cmvJesInsultEnragePct",
+   "value": 50,
+   "comment": "Insult - a 50 percent chance the victim becomes enraged and immediately attacks (folio 29)"
+  },
+  {
+   "name": "cmvJesInsultDieSides",
+   "value": 20,
+   "comment": "Insult affects any character for 1-20 turns on a 20-sided die (folio 29)"
+  },
+  {
+   "name": "cmvJesInsultTurnsMin",
+   "value": 1,
+   "comment": "Insult's duration minimum - 1 turn (folio 29)"
+  },
+  {
+   "name": "cmvJesInsultTurnsMax",
+   "value": 20,
+   "comment": "Insult's duration maximum - 20 turns (folio 29)"
+  },
+  {
+   "name": "cmvJesQuickPunsLevelBase",
+   "value": 8,
+   "comment": "Quick Puns - one additional pun per level of the jester above 8th, no saving throw (folio 29)"
+  },
+  {
+   "name": "cmvJesQuickPunsRangeInches",
+   "value": 3,
+   "comment": "Quick Puns' range - 3 inches (folio 29)"
+  },
+  {
+   "name": "cmvJesExt3Resistance",
+   "value": 3,
+   "comment": "Extension III lowers the resistance by 3 (folio 30)"
+  },
+  {
+   "name": "cmvJesDieLaughTurnsToTell",
+   "value": 3,
+   "comment": "Die Laughing takes 3 turns to tell (folio 30)"
+  },
+  {
+   "name": "cmvJesDieLaughHdMax",
+   "value": 8,
+   "comment": "Die Laughing kills all under 8 hit dice; others take half damage of total hit points (folio 30)"
+  },
+  {
+   "name": "cmvJesDieLaughSavePctMaxHp",
+   "value": 50,
+   "comment": "Die Laughing's survivors take half of total hit points - pinned as 50 percent, the conversion noted (folio 30)"
+  },
+  {
+   "name": "cmvJesDieLaughDieTurns",
+   "value": 2,
+   "comment": "Die Laughing takes the victim 2 turns to die (folio 30)"
+  },
+  {
+   "name": "cmvJesDieLaughPerTurnPct",
+   "value": 25,
+   "comment": "Die Laughing - 2 turns of a quarter damage per turn if the saving throw is made, the quarter pinned as 25 percent (folio 30)"
+  },
+  {
+   "name": "cmvJesDieLaughRangeInches",
+   "value": 2,
+   "comment": "Die Laughing's range - 2 inches (folio 30)"
+  },
+  {
+   "name": "cmvJesUnctrlTurns",
+   "value": 10,
+   "comment": "Uncontrollable Laughter causes incapacitation for 10 turns, no saving throw (folio 30)"
+  },
+  {
+   "name": "cmvJesUnctrlTenth",
+   "value": 1,
+   "comment": "Uncontrollable Laughter affects 1 10th level type (folio 30)"
+  },
+  {
+   "name": "cmvJesUnctrlNinth",
+   "value": 2,
+   "comment": "Uncontrollable Laughter affects 2 9th level types, etc. (folio 30)"
+  },
+  {
+   "name": "cmvJesUnctrlRangeInches",
+   "value": 2,
+   "comment": "Uncontrollable Laughter's range - 2 inches (folio 30)"
+  },
+  {
+   "name": "cmvJesKillerHdMax",
+   "value": 12,
+   "comment": "Killer kills all under 12 hit dice (folio 30)"
+  },
+  {
+   "name": "cmvJesKillerTurnsToUtter",
+   "value": 3,
+   "comment": "Killer takes 3 turns to utter (folio 30)"
+  },
+  {
+   "name": "cmvJesKillerSavePctMaxHp",
+   "value": 50,
+   "comment": "Killer - those who make their saving throws take half damage, pinned as 50 percent (folio 30)"
+  },
+  {
+   "name": "cmvJesKillerDieTurns",
+   "value": 2,
+   "comment": "Killer's victim takes 2 turns to die, or a quarter damage per turn if the save is made (folio 30)"
+  },
+  {
+   "name": "cmvJesKillerPerTurnPct",
+   "value": 25,
+   "comment": "Killer's quarter-damage-per-turn on a made save, pinned as 25 percent (folio 30)"
+  },
+  {
+   "name": "cmvJesKillerRangeInches",
+   "value": 3,
+   "comment": "Killer's range - 3 inches (folio 30)"
+  },
+  {
+   "name": "cmvJesBallbustTurnsToUtter",
+   "value": 3,
+   "comment": "Ballbuster takes 3 turns to utter (folio 30)"
+  },
+  {
+   "name": "cmvJesBallbustMinTurns",
+   "value": 1,
+   "comment": "Ballbuster renders the victim incapacitated for 1-10 turns - the minimum (folio 30)"
+  },
+  {
+   "name": "cmvJesBallbustMaxTurns",
+   "value": 10,
+   "comment": "Ballbuster's incapacitation maximum - 10 turns, affecting any thinking creature no matter the level, no saving throw (folio 30)"
+  },
+  {
+   "name": "cmvJesBallbustRangeInches",
+   "value": 3,
+   "comment": "Ballbuster's range - 3 inches (folio 30)"
+  },
+  {
+   "name": "cmvJesVoiceRangeMult",
+   "value": 2,
+   "comment": "Voice Projector doubles the range of any joke uttered (folio 30)"
+  },
+  {
+   "name": "cmvJesVoiceTurns",
+   "value": 4,
+   "comment": "Voice Projector's duration - 4 turns (folio 30)"
+  },
+  {
+   "name": "cmvClineDexCount",
+   "value": 12,
+   "comment": "the cmvClineDex table runs 12 rows (folio 30)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cmvIdiotConfusePurpose",
+   "value": true,
+   "comment": "the Idiot's purpose is to confuse the enemy so that it will run away, attack a wall, commit Hari Kari, eat all its treasure or some related act, just so it will not attack the troop (folio 28)"
+  },
+  {
+   "name": "cmvIdiotConIsPrime",
+   "value": true,
+   "comment": "the Idiot's prime requisite is constitution - so he can stay goofy (folio 28)"
+  },
+  {
+   "name": "cmvIdiotOnePerExpedition",
+   "value": true,
+   "comment": "there is only one Idiot per expedition (folio 28)"
+  },
+  {
+   "name": "cmvIdiotFullArmor",
+   "value": true,
+   "comment": "the Idiot can wear full armor (folio 28)"
+  },
+  {
+   "name": "cmvIdiotCursedArmorOpposite",
+   "value": true,
+   "comment": "the opposite occurs with cursed armor - the effectiveness penalty flips to a bonus (folio 28)"
+  },
+  {
+   "name": "cmvIdiotNoWeapons",
+   "value": true,
+   "comment": "the Idiot may not employ any weapons, though he may carry any articles and play with fire (folio 28)"
+  },
+  {
+   "name": "cmvIdiotDexShifting",
+   "value": true,
+   "comment": "the Idiot's dexterity rolls SHIFT a band - an above-average dice score gives average dexterity, an average score below average, and a below-average score a roll on the Exceptionally BAD Abilities chart (folio 28)"
+  },
+  {
+   "name": "cmvJesterNeutralOrChaotic",
+   "value": true,
+   "comment": "Jesters are always neutral or chaotic (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterDwarfInfinite",
+   "value": true,
+   "comment": "Dwarves, because of their stunted height, make the best Jesters - they can progress infinitely in the category (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterNoArmor",
+   "value": true,
+   "comment": "Jesters are not allowed to wear any armor (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterThiefAlso",
+   "value": true,
+   "comment": "Jesters can be thieves as well as funnymen (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterWeaponExclusive",
+   "value": true,
+   "comment": "limited to the joke weapons - all weapons with an asterisk are magical, and all weapons except the dagger can only be used by a Jester (folios 28-29)"
+  },
+  {
+   "name": "cmvJesterIntOnlySaves",
+   "value": true,
+   "comment": "the level of the man battling the Jester is inconsequential when rolling saving throws - intelligence is the only factor (folio 29)"
+  },
+  {
+   "name": "cmvJesSaveTotalOrAbove",
+   "value": true,
+   "comment": "failure to make the saving throw total or above indicates the attack having full effect (folio 29)"
+  },
+  {
+   "name": "cmvJesSpellsByWisdom",
+   "value": true,
+   "comment": "Jesters have the same chance as a Magic User to get a spell, except their wisdom score is the base instead of their intelligence (folio 30)"
+  },
+  {
+   "name": "cmvJesStrangeActions",
+   "value": true,
+   "comment": "Strange Actions combines the Joke and Body Contortion I (folio 29)"
+  },
+  {
+   "name": "cmvJesPityBefriending",
+   "value": true,
+   "comment": "Pity acts as Charm Person, with limitations up to befriending the jester at the referee's discretion (folio 29)"
+  },
+  {
+   "name": "cmvClineHitHandHeld",
+   "value": true,
+   "comment": "the Hit column means to hit with a hand-held weapon (folio 30)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "cmvIdiotFirstLevel",
+   "tag": "CrIdF",
+   "count": "cmvIdiotFirstLevelCount",
+   "sentinel": 9,
+   "cols": [
+    "cmvIdFirstMonLevel",
+    "cmvIdFirstPct"
+   ],
+   "col_comments": [
+    "the monster's level - 1 through 7 (folio 28)",
+    "the chance of confusing at the Idiot's first level - 65 down to 5 percent (folio 28)"
+   ],
+   "data": [
+    [
+     1,
+     65
+    ],
+    [
+     2,
+     55
+    ],
+    [
+     3,
+     45
+    ],
+    [
+     4,
+     35
+    ],
+    [
+     5,
+     20
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     5
+    ]
+   ],
+   "audit_comment": "the chances of confusing at first level - 65, 55, 45, 35, 20, 10, 05 percent by monster level 1 through 7 (folio 28)"
+  },
+  {
+   "name": "cmvIdiotConfuseGrid",
+   "tag": "CrIdG",
+   "count": "cmvIdiotConfuseGridCount",
+   "sentinel": 9,
+   "cols": [
+    "cmvIdGridMonLevel",
+    "cmvIdGridIgL1",
+    "cmvIdGridIgL2",
+    "cmvIdGridIgL3",
+    "cmvIdGridIgL4",
+    "cmvIdGridIgL5",
+    "cmvIdGridIgL6",
+    "cmvIdGridIgL7",
+    "cmvIdGridIgL8",
+    "cmvIdGridIgL9",
+    "cmvIdGridIgL10",
+    "cmvIdGridIgL11"
+   ],
+   "col_comments": [
+    "the monster level - the even rows 2, 4 and 6 pin as scanned; the odd rows garble in the OCR's interleaved label column and ride unpinned, noted (folio 28)",
+    "the chance of confusing at Idiot level 1, by percent (folio 28)",
+    "the chance at Idiot level 2 (folio 28)",
+    "the chance at Idiot level 3 (folio 28)",
+    "the chance at Idiot level 4 (folio 28)",
+    "the chance at Idiot level 5 (folio 28)",
+    "the chance at Idiot level 6 (folio 28)",
+    "the chance at Idiot level 7 (folio 28)",
+    "the chance at Idiot level 8 (folio 28)",
+    "the chance at Idiot level 9 (folio 28)",
+    "the chance at Idiot level 10 (folio 28)",
+    "the chance at Idiot level 11 - the printed 12th column truncates in the OCR and rides unpinned, noted (folio 28)"
+   ],
+   "data": [
+    [
+     2,
+     55,
+     57,
+     53,
+     51,
+     49,
+     47,
+     45,
+     43,
+     41,
+     39,
+     36
+    ],
+    [
+     4,
+     35,
+     37,
+     39,
+     41,
+     43,
+     45,
+     47,
+     45,
+     43,
+     41,
+     40
+    ],
+    [
+     6,
+     10,
+     12,
+     14,
+     16,
+     18,
+     20,
+     22,
+     24,
+     26,
+     28,
+     30
+    ]
+   ],
+   "audit_comment": "the Idiot-level versus monster-level confusion grid, AS SCANNED - Idiots raise levels and become more effective with higher level monsters but less effective with the lower ones, the more refined idiocy that accompanies experience; the OCR interleaves the odd monster rows into the label column and truncates the 12th Idiot-level column, both noted, no figure pixels to check (folio 28)"
+  },
+  {
+   "name": "cmvIdiotBadDex",
+   "tag": "CrIdB",
+   "count": "cmvIdiotBadDexCount",
+   "sentinel": 9,
+   "cols": [
+    "cmvIdBadLo",
+    "cmvIdBadHi",
+    "cmvIdBadOutOf10"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 28)",
+    "the percentile band's high roll, the 00 convention pinned as 100 (folio 28)",
+    "the chance of falling out of 10 (folio 28)"
+   ],
+   "data": [
+    [
+     1,
+     50,
+     3
+    ],
+    [
+     51,
+     75,
+     5
+    ],
+    [
+     76,
+     90,
+     7
+    ],
+    [
+     91,
+     100,
+     10
+    ]
+   ],
+   "audit_comment": "the Exceptionally BAD Abilities chart on the percentile dice - 01-50 a 3 out of 10 chance, 51-75 a 5, 76-90 a 7, 91-00 a 10 out of 10 (folio 28)"
+  },
+  {
+   "name": "cmvIdiotLadder",
+   "tag": "CrIdL",
+   "count": "cmvIdiotLadderCount",
+   "sentinel": 9,
+   "cols": [
+    "cmvIdLvlIndex",
+    "cmvIdLvlXp"
+   ],
+   "col_comments": [
+    "the level index - 1 through 12 (folio 28)",
+    "the experience points - Dummy at 0 through Idiot at 200,101 (folio 28)"
+   ],
+   "data": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     1001
+    ],
+    [
+     3,
+     2623
+    ],
+    [
+     4,
+     6157
+    ],
+    [
+     5,
+     9738
+    ],
+    [
+     6,
+     11432
+    ],
+    [
+     7,
+     19832
+    ],
+    [
+     8,
+     30876
+    ],
+    [
+     9,
+     61423
+    ],
+    [
+     10,
+     88749
+    ],
+    [
+     11,
+     120456
+    ],
+    [
+     12,
+     200101
+    ]
+   ],
+   "audit_comment": "the Idiot's level ladder - 1 Dummy, 2 Dope, 3 Dolt, 4 Dullard, 5 Cluck, 6 Klutz, 7 Cretin, 8 Weirdo, 9 Nut, 10 Fool, 11 Imbecile, 12 Idiot (folio 28)"
+  },
+  {
+   "name": "cmvJesterSavesHigh",
+   "tag": "CrJs1",
+   "count": "cmvJesterSavesHighCount",
+   "sentinel": 9,
+   "cols": [
+    "cmvJs1Lo",
+    "cmvJs1Hi",
+    "cmvJs1Save"
+   ],
+   "col_comments": [
+    "the Intelligence band's low score (folio 29)",
+    "the Intelligence band's high score (folio 29)",
+    "the saving throw for jokes aimed at high intellects (folio 29)"
+   ],
+   "data": [
+    [
+     1,
+     3,
+     4
+    ],
+    [
+     4,
+     6,
+     6
+    ],
+    [
+     7,
+     9,
+     8
+    ],
+    [
+     10,
+     12,
+     10
+    ],
+    [
+     13,
+     15,
+     14
+    ],
+    [
+     16,
+     17,
+     16
+    ],
+    [
+     18,
+     18,
+     18
+    ]
+   ],
+   "audit_comment": "Table 1, saving throws for jokes aimed at high intellects - the smarter they are, the harder they laugh: 4 through 18 (folio 29)"
+  },
+  {
+   "name": "cmvJesterSavesLow",
+   "tag": "CrJs2",
+   "count": "cmvJesterSavesLowCount",
+   "sentinel": 9,
+   "cols": [
+    "cmvJs2Lo",
+    "cmvJs2Hi",
+    "cmvJs2Save"
+   ],
+   "col_comments": [
+    "the Intelligence band's low score (folio 29)",
+    "the Intelligence band's high score (folio 29)",
+    "the saving throw for jokes aimed at those with low intelligence (folio 29)"
+   ],
+   "data": [
+    [
+     1,
+     3,
+     19
+    ],
+    [
+     4,
+     6,
+     16
+    ],
+    [
+     7,
+     9,
+     14
+    ],
+    [
+     10,
+     12,
+     11
+    ],
+    [
+     13,
+     15,
+     9
+    ],
+    [
+     16,
+     17,
+     7
+    ],
+    [
+     18,
+     18,
+     5
+    ]
+   ],
+   "audit_comment": "Table 2, saving throws for jokes aimed at those with low intelligence - the dumb ones laugh hardest: 19 down to 5 (folio 29)"
+  },
+  {
+   "name": "cmvJesterXpGrid",
+   "tag": "CrJsX",
+   "count": "cmvJesterXpGridCount",
+   "sentinel": 9,
+   "cols": [
+    "cmvJxXp",
+    "cmvJxC1",
+    "cmvJxC2",
+    "cmvJxC3",
+    "cmvJxC4",
+    "cmvJxC5",
+    "cmvJxC6",
+    "cmvJxC7",
+    "cmvJxC8"
+   ],
+   "col_comments": [
+    "the experience points, 2,000 through 828,000 (folio 29)",
+    "the first progression column - the staircase cells ride AS SCANNED with the column semantics garbling in the OCR, capping at 15 - the Dwarf infinite track (folio 29)",
+    "the second progression column, capping at 7 (folio 29)",
+    "the third progression column, capping at 6 (folio 29)",
+    "the fourth progression column, capping at 6 (folio 29)",
+    "the fifth progression column, capping at 6 (folio 29)",
+    "the sixth progression column, capping at 5 - the Men/Fool track (folio 29)",
+    "the seventh progression column, capping at 4 - the Comic track (folio 29)",
+    "the eighth progression column, capping at 2 (folio 29)"
+   ],
+   "data": [
+    [
+     2000,
+     2,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     4000,
+     3,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     8000,
+     4,
+     3,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     16000,
+     5,
+     4,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     32000,
+     6,
+     4,
+     2,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     64000,
+     7,
+     4,
+     3,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     128000,
+     8,
+     5,
+     4,
+     3,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     228000,
+     9,
+     5,
+     4,
+     4,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     328000,
+     10,
+     5,
+     5,
+     4,
+     3,
+     1,
+     0,
+     0
+    ],
+    [
+     428000,
+     11,
+     6,
+     5,
+     5,
+     4,
+     2,
+     1,
+     0
+    ],
+    [
+     528000,
+     12,
+     6,
+     5,
+     5,
+     5,
+     3,
+     1,
+     0
+    ],
+    [
+     628000,
+     13,
+     6,
+     6,
+     5,
+     5,
+     4,
+     2,
+     1
+    ],
+    [
+     728000,
+     14,
+     7,
+     6,
+     6,
+     5,
+     4,
+     3,
+     2
+    ],
+    [
+     828000,
+     15,
+     7,
+     6,
+     6,
+     6,
+     5,
+     4,
+     2
+    ]
+   ],
+   "audit_comment": "the Jester experience grid AS SCANNED - the OCR prints eight unlabeled progression columns; the first caps at 15 (the Dwarf-infinite track), the sixth at 5 (the Men/Fool track) and the seventh at 4 (the Comic track) matching the printed racial caps, and the rest ride as scanned with the column semantics garbled, the staircase blanks CONVERTED to 0 (folio 29)"
+  },
+  {
+   "name": "cmvClineDex",
+   "tag": "CrCl",
+   "count": "cmvClineDexCount",
+   "sentinel": 9,
+   "cols": [
+    "cmvClDexLo",
+    "cmvClDexHi",
+    "cmvClHit",
+    "cmvClMissile",
+    "cmvClDamage",
+    "cmvClDefense"
+   ],
+   "col_comments": [
+    "the band's low score - the dex 3-18 rows and the OCR's four percent-band rows ride together AS SCANNED, the 51-00 rows noted (folio 30)",
+    "the band's high score, the printed 'N' pinned as 0 where it appears, the 00 convention pinned as 100 (folio 30)",
+    "the hand-held weapon hit modifier, sign carried in this comment (folio 30)",
+    "the missile modifier (folio 30)",
+    "the damage modifier (folio 30)",
+    "the defense modifier (folio 30)"
+   ],
+   "data": [
+    [
+     3,
+     4,
+     -1,
+     -2,
+     -1,
+     -1
+    ],
+    [
+     5,
+     8,
+     0,
+     -1,
+     0,
+     0
+    ],
+    [
+     9,
+     12,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     13,
+     14,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     15,
+     15,
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     16,
+     16,
+     1,
+     1,
+     0,
+     2
+    ],
+    [
+     17,
+     17,
+     1,
+     2,
+     -1,
+     3
+    ],
+    [
+     18,
+     18,
+     1,
+     2,
+     1,
+     4
+    ],
+    [
+     51,
+     75,
+     2,
+     3,
+     2,
+     4
+    ],
+    [
+     76,
+     90,
+     2,
+     3,
+     2,
+     4
+    ],
+    [
+     91,
+     99,
+     2,
+     4,
+     2,
+     5
+    ],
+    [
+     100,
+     100,
+     3,
+     5,
+     3,
+     6
+    ]
+   ],
+   "audit_comment": "Cline's combat modifications for dexterity - the printed 'N' entries CONVERT to 0 and the signs ride as printed; the four percent-band rows (51-75, 76-90, 91-99, 00 pinned as 100) garble against the 3-18 dex scale and ride AS SCANNED, no figure pixels to check (folio 30)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['cmvIdiotCostGold']() != 160 or m['cmvIdiotCityFindPct']() != 50 or m['cmvMidgetCostGold']() != 200 or m['cmvMidgetBonusPct']() != 5",
+   "note": "the Idiot's hire - 160 gold pieces, a 50 percent city chance, and the 200-gold midget adding 5 percent to all base chances (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdiotConfusePurpose']() != 1 or m['cmvIdiotConfuseTurns']() != 3 or m['cmvIdiotAttackAnyhowPct']() != 15",
+   "note": "the Idiot's purpose - the confused enemy runs away, attacks a wall, commits Hari Kari or eats its treasure for 3 melee turns, with a 15 percent chance it attacks anyhow (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdiotConIsPrime']() != 1 or m['cmvIdiotConThreshold']() != 12 or m['cmvIdiotConBonusPerPoint']() != 1 or m['cmvIdiotWisIntFloor']() != 6 or m['cmvIdiotTradeWisRatio']() != 3 or m['cmvIdiotTradeIntRatio']() != 4",
+   "note": "the Idiot's prime requisite - constitution so he can stay goofy, +1 confuse per point above 12, Wisdom and Intelligence floored at 6 with the 3-for-1 and 4-for-1 trades (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdiotOnePerExpedition']() != 1 or m['cmvIdiotFullArmor']() != 1 or m['cmvIdiotLevelThreshold']() != 9 or m['cmvIdiotArmorLosePctPerLevel']() != 5 or m['cmvIdiotCursedArmorOpposite']() != 1 or m['cmvIdiotNoWeapons']() != 1",
+   "note": "the Idiot's gear - one per expedition, full armor worn but 5 percent lost per level above 9, cursed armor the opposite, and no weapons employed though any articles carried (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdiotRestDays']() != 2 or m['cmvIdiotPayGold']() != 10 or m['cmvIdiotWoundedTenthPct']() != 5 or m['cmvIdiotWoundedWaitWeeks']() != 1 or m['cmvIdiotMeleeAsManMod']() != 2 or m['cmvIdiotMaxDamage']() != 1",
+   "note": "the Tantrum's price - 2 days of rest and 10 gold on the spot or the held breath, the wounded Idiot confusing at a half percent pinned as five tenths with a week's wait, melees as a man -2 with 1 point at best (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdiotFallDistanceFeet']() != 100 or m['cmvIdiotBreakDie']() != 6 or m['cmvIdiotBreakChance']() != 1 or m['cmvIdiotNoseDie']() != 6 or m['cmvIdiotNoseChance']() != 2 or m['cmvIdiotArmPct']() != 10",
+   "note": "the Idiot's falls - every 100 feet a trip and a drop, carried articles breaking 1 in 6, a bloody nose 2 in 6, a broken arm 1 in 10 pinned as 10 percent (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdiotAvgFallOutOf10']() != 1 or m['cmvIdiotBelowFallOutOf10']() != 2 or m['cmvIdiotDexShifting']() != 1 or m['cmvIdiotAboveStepXp']() != 200001",
+   "note": "the normal falls and the shifting - 1 out of 10 at average dexterity, 2 out of 10 below, the dexterity bands shifting down on the dice, and 200,001 points per level above Idiot (folio 28)"
+  },
+  {
+   "expr": "m['cmvJesterIntMin']() != 15 or m['cmvJesterDexMin']() != 15 or m['cmvJesterChaMax']() != 6 or m['cmvJesterNeutralOrChaotic']() != 1",
+   "note": "the Jester's gates - Intelligence 15 or better, Dexterity 15 or better, Charisma 6 or less, always neutral or chaotic (folios 28-29)"
+  },
+  {
+   "expr": "m['cmvJesterDwarfInfinite']() != 1 or m['cmvJesterHobbitMax']() != 10 or m['cmvJesterElfMax']() != 6 or m['cmvJesterMenMax']() != 5 or m['cmvJesterOtherMax']() != 4",
+   "note": "the Jester's advancement caps - Dwarves infinite as the best jesters, Hobbits 10th, Elves 6th as the Village Idiot, Men 5th as the Fool, others 4th as the Comic (folios 28-29)"
+  },
+  {
+   "expr": "m['cmvJesterNoArmor']() != 1 or m['cmvJesterThiefAlso']() != 1 or m['cmvJesterHitDieSides']() != 4 or m['cmvJesterHitDiceMax']() != 10 or m['cmvJesterHitDieAfterBonus']() != 1",
+   "note": "the Jester's frame - no armor, thieves allowed as well as funnymen, a 4-sided hit die with 10 dice maximum then +1 per level (folios 28-29)"
+  },
+  {
+   "expr": "m['cmvJesterWeaponExclusive']() != 1 or m['cmvJesterWeaponCount']() != 9 or m['cmvJesSockStunMin']() != 1 or m['cmvJesSockStunMax']() != 4 or m['cmvJesDaggerMaxDamage']() != 6 or m['cmvJesDaggerRangeFeet']() != 3",
+   "note": "the joke weapons - nine of them, all but the dagger Jester-only, the smelly sock stunning 1-4 turns with a poison save, the dagger 1-6 at 3 feet (folios 28-29)"
+  },
+  {
+   "expr": "m['cmvJesPillowBurstDie']() != 6 or m['cmvJesPillowBurstMax']() != 2 or m['cmvJesPillowBlindDiameter']() != 1 or m['cmvJesPillowBlindTurns']() != 3 or m['cmvJesPillowStunTurns']() != 1 or m['cmvJesGasRangeFeet']() != 30 or m['cmvJesGasLaughterTurns']() != 3",
+   "note": "the pillow and the gas - bursting on 1-2 of a d6 to blind a 1-inch diameter for 3 turns, else a 1-turn Morningstar stun; the laughing gas at 30 feet with 3 turns of uncontrollable laughter (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesPiesRangeFeet']() != 20 or m['cmvJesPiesBlindMin']() != 1 or m['cmvJesPiesBlindMax']() != 4 or m['cmvJesUnderwearRangeFeet']() != 10 or m['cmvJesUnderwearStunMin']() != 1 or m['cmvJesUnderwearStunMax']() != 6 or m['cmvJesTomatoRangeFeet']() != 30 or m['cmvJesTomatoBlindTurns']() != 1",
+   "note": "the pies, the underwear, the tomatoes - pies blinding 1-4 turns at 20 feet, the dirty underwear stunning 1-6 with a poison save at 10 feet, the tomatoes blinding 1 turn at 30 feet (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesterIntOnlySaves']() != 1 or m['cmvJesSaveTotalOrAbove']() != 1",
+   "note": "the saving-throw doctrine - the battler's level is inconsequential, intelligence the only factor, and failure to make the total or above means full effect (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesGiggleHdMax']() != 3 or m['cmvJesGiggleTurns']() != 1 or m['cmvJesLaughHitMod']() != 4 or m['cmvJesGiggleRangeInches']() != 2 or m['cmvJesPunTurns']() != 1 or m['cmvJesPunRangeInches']() != 2",
+   "note": "the 1st-level jokes - Giggle (under 3 hit dice, 1 turn of laughter, -4 to hit, range 2) and the Pun (the Wha-a pause for 1 turn, range 2) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesFF1First']() != 10 or m['cmvJesFF1Second']() != 5 or m['cmvJesFF1Third']() != 1 or m['cmvJesFF1Turns']() != 1 or m['cmvJesFF1RangeInches']() != 2 or m['cmvJesBC1Ac']() != 0 or m['cmvJesBC1Turns']() != 1",
+   "note": "more 1st level - Funny Face I (10 1st, 5 2nd or 1 3rd level types, 1 turn, range 2) and Body Contortion I (Armor Class 0 for 1 turn) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesPauseTurns']() != 2 or m['cmvJesPauseRangeInches']() != 2 or m['cmvJesJokeTurns']() != 2 or m['cmvJesJokeHdMax']() != 6 or m['cmvJesJokeRangeInches']() != 2 or m['cmvJesFF2Third']() != 3 or m['cmvJesFF2Fourth']() != 2 or m['cmvJesFF2Fifth']() != 1 or m['cmvJesBC2Ac']() != 4",
+   "note": "the 2nd level - Pause (2 melee turns, range 2), Joke (2 turns, 6 hit dice, range 2), Funny Face II (3 3rds, 2 4ths, 1 5th) and Body Contortion II (Armor Class -4 pinned as 4) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesWonderTurns']() != 4 or m['cmvJesWonderRangeInches']() != 2 or m['cmvJesVentriloquismRangeInches']() != 3 or m['cmvJesThighTurnsToUtter']() != 2 or m['cmvJesThighLaughterTurns']() != 8 or m['cmvJesThighFirst']() != 10 or m['cmvJesThighSecond']() != 9 or m['cmvJesThighThird']() != 8 or m['cmvJesThighRangeInches']() != 3",
+   "note": "the 3rd level - Wonder (4 turns, range 2), Ventriloquism (range 3), Thighslapper (2 turns to utter, 8 of laughter, 10-9-8 and so on, range 3) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesFF3Level']() != 18 or m['cmvJesFF3Seventh']() != 2 or m['cmvJesFF3RangeInches']() != 2 or m['cmvJesObscenityTurns']() != 3",
+   "note": "more 3rd level - Funny Face III (1 18th level type, 2 7ths, 1 turn, range 2) and Obscenity (the Clerics ineffective for 3 turns) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesBoringTurnsToUtter']() != 4 or m['cmvJesBoringTenthTurns']() != 2 or m['cmvJesBoringNinthTurns']() != 4 or m['cmvJesBoringRangeInches']() != 2 or m['cmvJesDecrepSeventhTurns']() != 2 or m['cmvJesDecrepEighthTurns']() != 4 or m['cmvJesDecrepPerHourMax']() != 3 or m['cmvJesDecrepRangeInches']() != 3",
+   "note": "the 4th level - Boring Joke (4 turns to utter, the Sleep with 2 turns at 10th and 4 at 9th, range 2) and Decrepitating (2 turns at 7th, 4 at 8th, 3 per game hour, range 3) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesBellyTurnsToUtter']() != 2 or m['cmvJesBellyLaughterTurns']() != 8 or m['cmvJesExt1Resistance']() != 1 or m['cmvJesStrangeActions']() != 1",
+   "note": "more 4th level - Bellyacher (2 turns to utter, 8 turns plus level), Extension I (resistance lowered by 1) and Strange Actions (the Joke with Body Contortion I) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesExt2Resistance']() != 2 or m['cmvJesPityBefriending']() != 1 or m['cmvJesGutbusterMinDamage']() != 1 or m['cmvJesGutbusterMaxDamage']() != 4",
+   "note": "the 5th level - Extension II (resistance lowered by 2), Pity (the Charm Person to befriending) and Gutbuster (Bellyacher plus 1-4 damage) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesInsultFleePct']() != 50 or m['cmvJesInsultFleeDie']() != 6 or m['cmvJesInsultFleeDieMax']() != 3 or m['cmvJesInsultEnragePct']() != 50 or m['cmvJesInsultDieSides']() != 20 or m['cmvJesInsultTurnsMin']() != 1 or m['cmvJesInsultTurnsMax']() != 20 or m['cmvJesQuickPunsLevelBase']() != 8 or m['cmvJesQuickPunsRangeInches']() != 3",
+   "note": "more 5th level - Insult (50 percent flee on 1-3 of a d6, 50 percent enrage, 1-20 turns on a d20) and Quick Puns (one per level above 8th, no save, range 3) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJesExt3Resistance']() != 3 or m['cmvJesDieLaughTurnsToTell']() != 3 or m['cmvJesDieLaughHdMax']() != 8 or m['cmvJesDieLaughSavePctMaxHp']() != 50 or m['cmvJesDieLaughDieTurns']() != 2 or m['cmvJesDieLaughPerTurnPct']() != 25 or m['cmvJesDieLaughRangeInches']() != 2",
+   "note": "the 6th level - Extension III (resistance by 3) and Die Laughing (3 turns to tell, kills under 8 hit dice, others half total hit points pinned as 50 percent, 2 turns to die or 25 percent per turn on a save, range 2) (folio 30)"
+  },
+  {
+   "expr": "m['cmvJesUnctrlTurns']() != 10 or m['cmvJesUnctrlTenth']() != 1 or m['cmvJesUnctrlNinth']() != 2 or m['cmvJesUnctrlRangeInches']() != 2",
+   "note": "more 6th level - Uncontrollable Laughter (10 turns of incapacitation, 1 10th or 2 9ths and so on, no save, range 2) (folio 30)"
+  },
+  {
+   "expr": "m['cmvJesKillerHdMax']() != 12 or m['cmvJesKillerTurnsToUtter']() != 3 or m['cmvJesKillerSavePctMaxHp']() != 50 or m['cmvJesKillerDieTurns']() != 2 or m['cmvJesKillerPerTurnPct']() != 25 or m['cmvJesKillerRangeInches']() != 3",
+   "note": "the 7th level - Killer (kills under 12 hit dice, 3 turns to utter, half damage pinned as 50 percent on a save, 2 turns to die or 25 percent per turn, range 3) (folio 30)"
+  },
+  {
+   "expr": "m['cmvJesBallbustTurnsToUtter']() != 3 or m['cmvJesBallbustMinTurns']() != 1 or m['cmvJesBallbustMaxTurns']() != 10 or m['cmvJesBallbustRangeInches']() != 3",
+   "note": "more 7th level - Ballbuster (3 turns to utter, 1-10 turns of incapacity, any thinking creature, no save, range 3) (folio 30)"
+  },
+  {
+   "expr": "m['cmvJesVoiceRangeMult']() != 2 or m['cmvJesVoiceTurns']() != 4 or m['cmvJesSpellsByWisdom']() != 1",
+   "note": "the 8th level and the spell chance - Voice Projector doubling any joke's range for 4 turns, and the Magic User's chance with wisdom as the base (folio 30)"
+  },
+  {
+   "expr": "m['cmvClineHitHandHeld']() != 1",
+   "note": "Cline's frame - the Hit column means to hit with a hand-held weapon (folio 30)"
+  },
+  {
+   "expr": "m['cmvIdFirstMonLevel'](0) != 1 or m['cmvIdFirstPct'](0) != 65 or m['cmvIdiotFirstLevelCount']() != 7",
+   "note": "the 1st-level monster row - 65 percent (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdFirstMonLevel'](1) != 2 or m['cmvIdFirstPct'](1) != 55",
+   "note": "the 2nd-level monster row - 55 percent (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdFirstMonLevel'](2) != 3 or m['cmvIdFirstPct'](2) != 45",
+   "note": "the 3rd-level monster row - 45 percent (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdFirstMonLevel'](3) != 4 or m['cmvIdFirstPct'](3) != 35",
+   "note": "the 4th-level monster row - 35 percent (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdFirstMonLevel'](4) != 5 or m['cmvIdFirstPct'](4) != 20",
+   "note": "the 5th-level monster row - 20 percent (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdFirstMonLevel'](5) != 6 or m['cmvIdFirstPct'](5) != 10",
+   "note": "the 6th-level monster row - 10 percent (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdFirstMonLevel'](6) != 7 or m['cmvIdFirstPct'](6) != 5",
+   "note": "the 7th-level monster row - 05 percent, pinned as 5 (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdGridMonLevel'](0) != 2 or m['cmvIdGridIgL1'](0) != 55 or m['cmvIdGridIgL2'](0) != 57 or m['cmvIdGridIgL3'](0) != 53 or m['cmvIdGridIgL4'](0) != 51 or m['cmvIdGridIgL5'](0) != 49 or m['cmvIdGridIgL6'](0) != 47 or m['cmvIdGridIgL7'](0) != 45 or m['cmvIdGridIgL8'](0) != 43 or m['cmvIdGridIgL9'](0) != 41 or m['cmvIdGridIgL10'](0) != 39 or m['cmvIdGridIgL11'](0) != 36 or m['cmvIdiotConfuseGridCount']() != 3",
+   "note": "the monster-level-2 row - 55 up to 57 then down to 36 across Idiot levels 1-11, as scanned (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdGridMonLevel'](1) != 4 or m['cmvIdGridIgL1'](1) != 35 or m['cmvIdGridIgL2'](1) != 37 or m['cmvIdGridIgL3'](1) != 39 or m['cmvIdGridIgL4'](1) != 41 or m['cmvIdGridIgL5'](1) != 43 or m['cmvIdGridIgL6'](1) != 45 or m['cmvIdGridIgL7'](1) != 47 or m['cmvIdGridIgL8'](1) != 45 or m['cmvIdGridIgL9'](1) != 43 or m['cmvIdGridIgL10'](1) != 41 or m['cmvIdGridIgL11'](1) != 40",
+   "note": "the monster-level-4 row - 35 up through 47 at level 7 then back to 40, as scanned (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdGridMonLevel'](2) != 6 or m['cmvIdGridIgL1'](2) != 10 or m['cmvIdGridIgL2'](2) != 12 or m['cmvIdGridIgL3'](2) != 14 or m['cmvIdGridIgL4'](2) != 16 or m['cmvIdGridIgL5'](2) != 18 or m['cmvIdGridIgL6'](2) != 20 or m['cmvIdGridIgL7'](2) != 22 or m['cmvIdGridIgL8'](2) != 24 or m['cmvIdGridIgL9'](2) != 26 or m['cmvIdGridIgL10'](2) != 28 or m['cmvIdGridIgL11'](2) != 30",
+   "note": "the monster-level-6 row - 10 up to 30 in even steps, as scanned (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdBadLo'](0) != 1 or m['cmvIdBadHi'](0) != 50 or m['cmvIdBadOutOf10'](0) != 3 or m['cmvIdiotBadDexCount']() != 4",
+   "note": "the 01-50 band - a 3 out of 10 chance of falling (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdBadLo'](1) != 51 or m['cmvIdBadHi'](1) != 75 or m['cmvIdBadOutOf10'](1) != 5",
+   "note": "the 51-75 band - a 5 out of 10 chance (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdBadLo'](2) != 76 or m['cmvIdBadHi'](2) != 90 or m['cmvIdBadOutOf10'](2) != 7",
+   "note": "the 76-90 band - a 7 out of 10 chance (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdBadLo'](3) != 91 or m['cmvIdBadHi'](3) != 100 or m['cmvIdBadOutOf10'](3) != 10",
+   "note": "the 91-00 band pinned as 100 - a 10 out of 10 chance (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](0) != 1 or m['cmvIdLvlXp'](0) != 0 or m['cmvIdiotLadderCount']() != 12",
+   "note": "the 1st level Dummy - 0 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](1) != 2 or m['cmvIdLvlXp'](1) != 1001",
+   "note": "the 2nd level Dope - 1,001 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](2) != 3 or m['cmvIdLvlXp'](2) != 2623",
+   "note": "the 3rd level Dolt - 2,623 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](3) != 4 or m['cmvIdLvlXp'](3) != 6157",
+   "note": "the 4th level Dullard - 6,157 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](4) != 5 or m['cmvIdLvlXp'](4) != 9738",
+   "note": "the 5th level Cluck - 9,738 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](5) != 6 or m['cmvIdLvlXp'](5) != 11432",
+   "note": "the 6th level Klutz - 11,432 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](6) != 7 or m['cmvIdLvlXp'](6) != 19832",
+   "note": "the 7th level Cretin - 19,832 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](7) != 8 or m['cmvIdLvlXp'](7) != 30876",
+   "note": "the 8th level Weirdo - 30,876 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](8) != 9 or m['cmvIdLvlXp'](8) != 61423",
+   "note": "the 9th level Nut - 61,423 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](9) != 10 or m['cmvIdLvlXp'](9) != 88749",
+   "note": "the 10th level Fool - 88,749 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](10) != 11 or m['cmvIdLvlXp'](10) != 120456",
+   "note": "the 11th level Imbecile - 120,456 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvIdLvlIndex'](11) != 12 or m['cmvIdLvlXp'](11) != 200101",
+   "note": "the 12th level Idiot - 200,101 experience points (folio 28) (folio 28)"
+  },
+  {
+   "expr": "m['cmvJs1Lo'](0) != 1 or m['cmvJs1Hi'](0) != 3 or m['cmvJs1Save'](0) != 4 or m['cmvJesterSavesHighCount']() != 7",
+   "note": "the Intelligence 1-3 row - saving throw 4 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs1Lo'](1) != 4 or m['cmvJs1Hi'](1) != 6 or m['cmvJs1Save'](1) != 6",
+   "note": "the Intelligence 4-6 row - saving throw 6 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs1Lo'](2) != 7 or m['cmvJs1Hi'](2) != 9 or m['cmvJs1Save'](2) != 8",
+   "note": "the Intelligence 7-9 row - saving throw 8 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs1Lo'](3) != 10 or m['cmvJs1Hi'](3) != 12 or m['cmvJs1Save'](3) != 10",
+   "note": "the Intelligence 10-12 row - saving throw 10 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs1Lo'](4) != 13 or m['cmvJs1Hi'](4) != 15 or m['cmvJs1Save'](4) != 14",
+   "note": "the Intelligence 13-15 row - saving throw 14 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs1Lo'](5) != 16 or m['cmvJs1Hi'](5) != 17 or m['cmvJs1Save'](5) != 16",
+   "note": "the Intelligence 16-17 row - saving throw 16 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs1Lo'](6) != 18 or m['cmvJs1Hi'](6) != 18 or m['cmvJs1Save'](6) != 18",
+   "note": "the Intelligence 18 row - saving throw 18 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs2Lo'](0) != 1 or m['cmvJs2Hi'](0) != 3 or m['cmvJs2Save'](0) != 19 or m['cmvJesterSavesLowCount']() != 7",
+   "note": "the Intelligence 1-3 row - saving throw 19 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs2Lo'](1) != 4 or m['cmvJs2Hi'](1) != 6 or m['cmvJs2Save'](1) != 16",
+   "note": "the Intelligence 4-6 row - saving throw 16 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs2Lo'](2) != 7 or m['cmvJs2Hi'](2) != 9 or m['cmvJs2Save'](2) != 14",
+   "note": "the Intelligence 7-9 row - saving throw 14 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs2Lo'](3) != 10 or m['cmvJs2Hi'](3) != 12 or m['cmvJs2Save'](3) != 11",
+   "note": "the Intelligence 10-12 row - saving throw 11 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs2Lo'](4) != 13 or m['cmvJs2Hi'](4) != 15 or m['cmvJs2Save'](4) != 9",
+   "note": "the Intelligence 13-15 row - saving throw 9 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs2Lo'](5) != 16 or m['cmvJs2Hi'](5) != 17 or m['cmvJs2Save'](5) != 7",
+   "note": "the Intelligence 16-17 row - saving throw 7 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJs2Lo'](6) != 18 or m['cmvJs2Hi'](6) != 18 or m['cmvJs2Save'](6) != 5",
+   "note": "the Intelligence 18 row - saving throw 5 (folio 29) (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](0) != 2000 or m['cmvJxC1'](0) != 2 or m['cmvJxC2'](0) != 1 or m['cmvJxC3'](0) != 0 or m['cmvJxC4'](0) != 0 or m['cmvJxC5'](0) != 0 or m['cmvJxC6'](0) != 0 or m['cmvJxC7'](0) != 0 or m['cmvJxC8'](0) != 0 or m['cmvJesterXpGridCount']() != 14",
+   "note": "the 2,000 xp row - column 1 at 2, column 2 at 1 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](1) != 4000 or m['cmvJxC1'](1) != 3 or m['cmvJxC2'](1) != 2 or m['cmvJxC3'](1) != 0 or m['cmvJxC4'](1) != 0 or m['cmvJxC5'](1) != 0 or m['cmvJxC6'](1) != 0 or m['cmvJxC7'](1) != 0 or m['cmvJxC8'](1) != 0",
+   "note": "the 4,000 xp row - column 1 at 3, column 2 at 2 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](2) != 8000 or m['cmvJxC1'](2) != 4 or m['cmvJxC2'](2) != 3 or m['cmvJxC3'](2) != 1 or m['cmvJxC4'](2) != 0 or m['cmvJxC5'](2) != 0 or m['cmvJxC6'](2) != 0 or m['cmvJxC7'](2) != 0 or m['cmvJxC8'](2) != 0",
+   "note": "the 8,000 xp row - column 1 at 4, column 2 at 3, column 3 at 1 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](3) != 16000 or m['cmvJxC1'](3) != 5 or m['cmvJxC2'](3) != 4 or m['cmvJxC3'](3) != 2 or m['cmvJxC4'](3) != 0 or m['cmvJxC5'](3) != 0 or m['cmvJxC6'](3) != 0 or m['cmvJxC7'](3) != 0 or m['cmvJxC8'](3) != 0",
+   "note": "the 16,000 xp row - column 1 at 5, column 2 at 4, column 3 at 2 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](4) != 32000 or m['cmvJxC1'](4) != 6 or m['cmvJxC2'](4) != 4 or m['cmvJxC3'](4) != 2 or m['cmvJxC4'](4) != 1 or m['cmvJxC5'](4) != 0 or m['cmvJxC6'](4) != 0 or m['cmvJxC7'](4) != 0 or m['cmvJxC8'](4) != 0",
+   "note": "the 32,000 xp row - column 1 at 6, column 2 at 4, column 3 at 2, column 4 at 1 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](5) != 64000 or m['cmvJxC1'](5) != 7 or m['cmvJxC2'](5) != 4 or m['cmvJxC3'](5) != 3 or m['cmvJxC4'](5) != 2 or m['cmvJxC5'](5) != 0 or m['cmvJxC6'](5) != 0 or m['cmvJxC7'](5) != 0 or m['cmvJxC8'](5) != 0",
+   "note": "the 64,000 xp row - column 1 at 7, column 2 at 4, column 3 at 3, column 4 at 2 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](6) != 128000 or m['cmvJxC1'](6) != 8 or m['cmvJxC2'](6) != 5 or m['cmvJxC3'](6) != 4 or m['cmvJxC4'](6) != 3 or m['cmvJxC5'](6) != 1 or m['cmvJxC6'](6) != 0 or m['cmvJxC7'](6) != 0 or m['cmvJxC8'](6) != 0",
+   "note": "the 128,000 xp row - column 1 at 8, column 2 at 5, column 3 at 4, column 4 at 3, column 5 at 1 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](7) != 228000 or m['cmvJxC1'](7) != 9 or m['cmvJxC2'](7) != 5 or m['cmvJxC3'](7) != 4 or m['cmvJxC4'](7) != 4 or m['cmvJxC5'](7) != 2 or m['cmvJxC6'](7) != 0 or m['cmvJxC7'](7) != 0 or m['cmvJxC8'](7) != 0",
+   "note": "the 228,000 xp row - column 1 at 9, column 2 at 5, column 3 at 4, column 4 at 4, column 5 at 2 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](8) != 328000 or m['cmvJxC1'](8) != 10 or m['cmvJxC2'](8) != 5 or m['cmvJxC3'](8) != 5 or m['cmvJxC4'](8) != 4 or m['cmvJxC5'](8) != 3 or m['cmvJxC6'](8) != 1 or m['cmvJxC7'](8) != 0 or m['cmvJxC8'](8) != 0",
+   "note": "the 328,000 xp row - column 1 at 10, column 2 at 5, column 3 at 5, column 4 at 4, column 5 at 3, column 6 at 1 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](9) != 428000 or m['cmvJxC1'](9) != 11 or m['cmvJxC2'](9) != 6 or m['cmvJxC3'](9) != 5 or m['cmvJxC4'](9) != 5 or m['cmvJxC5'](9) != 4 or m['cmvJxC6'](9) != 2 or m['cmvJxC7'](9) != 1 or m['cmvJxC8'](9) != 0",
+   "note": "the 428,000 xp row - column 1 at 11, column 2 at 6, column 3 at 5, column 4 at 5, column 5 at 4, column 6 at 2, column 7 at 1 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](10) != 528000 or m['cmvJxC1'](10) != 12 or m['cmvJxC2'](10) != 6 or m['cmvJxC3'](10) != 5 or m['cmvJxC4'](10) != 5 or m['cmvJxC5'](10) != 5 or m['cmvJxC6'](10) != 3 or m['cmvJxC7'](10) != 1 or m['cmvJxC8'](10) != 0",
+   "note": "the 528,000 xp row - column 1 at 12, column 2 at 6, column 3 at 5, column 4 at 5, column 5 at 5, column 6 at 3, column 7 at 1 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](11) != 628000 or m['cmvJxC1'](11) != 13 or m['cmvJxC2'](11) != 6 or m['cmvJxC3'](11) != 6 or m['cmvJxC4'](11) != 5 or m['cmvJxC5'](11) != 5 or m['cmvJxC6'](11) != 4 or m['cmvJxC7'](11) != 2 or m['cmvJxC8'](11) != 1",
+   "note": "the 628,000 xp row - column 1 at 13, column 2 at 6, column 3 at 6, column 4 at 5, column 5 at 5, column 6 at 4, column 7 at 2, column 8 at 1 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](12) != 728000 or m['cmvJxC1'](12) != 14 or m['cmvJxC2'](12) != 7 or m['cmvJxC3'](12) != 6 or m['cmvJxC4'](12) != 6 or m['cmvJxC5'](12) != 5 or m['cmvJxC6'](12) != 4 or m['cmvJxC7'](12) != 3 or m['cmvJxC8'](12) != 2",
+   "note": "the 728,000 xp row - column 1 at 14, column 2 at 7, column 3 at 6, column 4 at 6, column 5 at 5, column 6 at 4, column 7 at 3, column 8 at 2 (folio 29)"
+  },
+  {
+   "expr": "m['cmvJxXp'](13) != 828000 or m['cmvJxC1'](13) != 15 or m['cmvJxC2'](13) != 7 or m['cmvJxC3'](13) != 6 or m['cmvJxC4'](13) != 6 or m['cmvJxC5'](13) != 6 or m['cmvJxC6'](13) != 5 or m['cmvJxC7'](13) != 4 or m['cmvJxC8'](13) != 2",
+   "note": "the 828,000 xp row - column 1 at 15, column 2 at 7, column 3 at 6, column 4 at 6, column 5 at 6, column 6 at 5, column 7 at 4, column 8 at 2 (folio 29)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](0) != 3 or m['cmvClDexHi'](0) != 4 or m['cmvClHit'](0) != -1 or m['cmvClMissile'](0) != -2 or m['cmvClDamage'](0) != -1 or m['cmvClDefense'](0) != -1 or m['cmvClineDexCount']() != 12",
+   "note": "the dex 3-4 row - hit -1, missile -2, damage -1, defense -1 (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](1) != 5 or m['cmvClDexHi'](1) != 8 or m['cmvClHit'](1) != 0 or m['cmvClMissile'](1) != -1 or m['cmvClDamage'](1) != 0 or m['cmvClDefense'](1) != 0",
+   "note": "the dex 5-8 row - missile -1 only (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](2) != 9 or m['cmvClDexHi'](2) != 12 or m['cmvClHit'](2) != 0 or m['cmvClMissile'](2) != 0 or m['cmvClDamage'](2) != 0 or m['cmvClDefense'](2) != 0",
+   "note": "the dex 9-12 row - all nil (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](3) != 13 or m['cmvClDexHi'](3) != 14 or m['cmvClHit'](3) != 0 or m['cmvClMissile'](3) != 1 or m['cmvClDamage'](3) != 0 or m['cmvClDefense'](3) != 0",
+   "note": "the dex 13-14 row - missile +1 (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](4) != 15 or m['cmvClDexHi'](4) != 15 or m['cmvClHit'](4) != 0 or m['cmvClMissile'](4) != 1 or m['cmvClDamage'](4) != 0 or m['cmvClDefense'](4) != 1",
+   "note": "the dex 15 row - missile +1, defense +1 (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](5) != 16 or m['cmvClDexHi'](5) != 16 or m['cmvClHit'](5) != 1 or m['cmvClMissile'](5) != 1 or m['cmvClDamage'](5) != 0 or m['cmvClDefense'](5) != 2",
+   "note": "the dex 16 row - hit +1, missile +1, defense +2 (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](6) != 17 or m['cmvClDexHi'](6) != 17 or m['cmvClHit'](6) != 1 or m['cmvClMissile'](6) != 2 or m['cmvClDamage'](6) != -1 or m['cmvClDefense'](6) != 3",
+   "note": "the dex 17 row - hit +1, missile +2, damage -1, defense +3 (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](7) != 18 or m['cmvClDexHi'](7) != 18 or m['cmvClHit'](7) != 1 or m['cmvClMissile'](7) != 2 or m['cmvClDamage'](7) != 1 or m['cmvClDefense'](7) != 4",
+   "note": "the dex 18 row - hit +1, missile +2, damage +1, defense +4 (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](8) != 51 or m['cmvClDexHi'](8) != 75 or m['cmvClHit'](8) != 2 or m['cmvClMissile'](8) != 3 or m['cmvClDamage'](8) != 2 or m['cmvClDefense'](8) != 4",
+   "note": "the 51-75 percent row - hit +2, missile +3, damage +2, defense +4, as scanned (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](9) != 76 or m['cmvClDexHi'](9) != 90 or m['cmvClHit'](9) != 2 or m['cmvClMissile'](9) != 3 or m['cmvClDamage'](9) != 2 or m['cmvClDefense'](9) != 4",
+   "note": "the 76-90 row - hit +2, missile +3, damage +2, defense +4, as scanned (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](10) != 91 or m['cmvClDexHi'](10) != 99 or m['cmvClHit'](10) != 2 or m['cmvClMissile'](10) != 4 or m['cmvClDamage'](10) != 2 or m['cmvClDefense'](10) != 5",
+   "note": "the 91-99 row - hit +2, missile +4, damage +2, defense +5, as scanned (folio 30) (folio 30)"
+  },
+  {
+   "expr": "m['cmvClDexLo'](11) != 100 or m['cmvClDexHi'](11) != 100 or m['cmvClHit'](11) != 3 or m['cmvClMissile'](11) != 5 or m['cmvClDamage'](11) != 3 or m['cmvClDefense'](11) != 6",
+   "note": "the 00 row pinned as 100 - hit +3, missile +5, damage +3, defense +6, as scanned (folio 30) (folio 30)"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 205,
+ "header_sections": {
+  "the Idiot (folio 28)": [
+   {
+    "kind": "const",
+    "name": "cmvIdiotCostGold"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotCityFindPct"
+   },
+   {
+    "kind": "const",
+    "name": "cmvMidgetCostGold"
+   },
+   {
+    "kind": "const",
+    "name": "cmvMidgetBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotConfuseTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotAttackAnyhowPct"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotConThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotConBonusPerPoint"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotWisIntFloor"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotTradeWisRatio"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotTradeIntRatio"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotLevelThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotArmorLosePctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotRestDays"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotPayGold"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotWoundedTenthPct"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotWoundedWaitWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotMeleeAsManMod"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotMaxDamage"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotFirstLevelCount"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotConfuseGridCount"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotBadDexCount"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotFallDistanceFeet"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotBreakDie"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotBreakChance"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotNoseDie"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotNoseChance"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotArmPct"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotAvgFallOutOf10"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotBelowFallOutOf10"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotLadderCount"
+   },
+   {
+    "kind": "const",
+    "name": "cmvIdiotAboveStepXp"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvIdiotConfusePurpose"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvIdiotConIsPrime"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvIdiotOnePerExpedition"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvIdiotFullArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvIdiotCursedArmorOpposite"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvIdiotNoWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvIdiotDexShifting"
+   },
+   {
+    "kind": "table",
+    "name": "cmvIdiotFirstLevel"
+   },
+   {
+    "kind": "table",
+    "name": "cmvIdiotConfuseGrid"
+   },
+   {
+    "kind": "table",
+    "name": "cmvIdiotBadDex"
+   },
+   {
+    "kind": "table",
+    "name": "cmvIdiotLadder"
+   }
+  ],
+  "the Jester (folios 28-29)": [
+   {
+    "kind": "const",
+    "name": "cmvJesterIntMin"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterDexMin"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterChaMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterHobbitMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterElfMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterMenMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterOtherMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterHitDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterHitDiceMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterHitDieAfterBonus"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterWeaponCount"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesSockStunMin"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesSockStunMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDaggerMaxDamage"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDaggerRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPillowBurstDie"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPillowBurstMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPillowBlindDiameter"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPillowBlindTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPillowStunTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesGasRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesGasLaughterTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPiesRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPiesBlindMin"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPiesBlindMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesUnderwearRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesUnderwearStunMin"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesUnderwearStunMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesTomatoRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesTomatoBlindTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterSavesHighCount"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterSavesLowCount"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesterXpGridCount"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesGiggleHdMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesGiggleTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesLaughHitMod"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesGiggleRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPunTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPunRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF1First"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF1Second"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF1Third"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF1Turns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF1RangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBC1Ac"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBC1Turns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPauseTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesPauseRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesJokeTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesJokeHdMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesJokeRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF2Third"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF2Fourth"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF2Fifth"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBC2Ac"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesWonderTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesWonderRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesVentriloquismRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesThighTurnsToUtter"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesThighLaughterTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesThighFirst"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesThighSecond"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesThighThird"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesThighRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF3Level"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF3Seventh"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesFF3RangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesObscenityTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBoringTurnsToUtter"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBoringTenthTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBoringNinthTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBoringRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDecrepSeventhTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDecrepEighthTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDecrepPerHourMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDecrepRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBellyTurnsToUtter"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBellyLaughterTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesExt1Resistance"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesExt2Resistance"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesGutbusterMinDamage"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesGutbusterMaxDamage"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesInsultFleePct"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesInsultFleeDie"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesInsultFleeDieMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesInsultEnragePct"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesInsultDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesInsultTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesInsultTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesQuickPunsLevelBase"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesQuickPunsRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesExt3Resistance"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDieLaughTurnsToTell"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDieLaughHdMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDieLaughSavePctMaxHp"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDieLaughDieTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDieLaughPerTurnPct"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesDieLaughRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesUnctrlTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesUnctrlTenth"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesUnctrlNinth"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesUnctrlRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesKillerHdMax"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesKillerTurnsToUtter"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesKillerSavePctMaxHp"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesKillerDieTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesKillerPerTurnPct"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesKillerRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBallbustTurnsToUtter"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBallbustMinTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBallbustMaxTurns"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesBallbustRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesVoiceRangeMult"
+   },
+   {
+    "kind": "const",
+    "name": "cmvJesVoiceTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesterNeutralOrChaotic"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesterDwarfInfinite"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesterNoArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesterThiefAlso"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesterWeaponExclusive"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesterIntOnlySaves"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesSaveTotalOrAbove"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesSpellsByWisdom"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesStrangeActions"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvJesPityBefriending"
+   },
+   {
+    "kind": "table",
+    "name": "cmvJesterSavesHigh"
+   },
+   {
+    "kind": "table",
+    "name": "cmvJesterSavesLow"
+   },
+   {
+    "kind": "table",
+    "name": "cmvJesterXpGrid"
+   }
+  ],
+  "the Cline dexterity mods (folio 30)": [
+   {
+    "kind": "const",
+    "name": "cmvClineDexCount"
+   },
+   {
+    "kind": "bool",
+    "name": "cmvClineHitHandHeld"
+   },
+   {
+    "kind": "table",
+    "name": "cmvClineDex"
+   }
+  ]
+ },
+ "audit_comment": "THE COMEDY AND SMALL-VARIANTS ROUND - round E of the issue-3 walk, closing the adjudicated chain. Davidson's Idiot: the 160-gold hireling with the 50 percent city chance and the 200-gold midget adding 5 percent, the confusion purpose with its 3 melee turns and the 15 percent attack-anyhow chance, the seven-row first-level confusion chart (65 down to 5 percent), the Idiot-level confusion grid pinned as scanned (the even monster rows 2, 4 and 6 across eleven Idiot levels, the odd rows and the 12th column garbling in the OCR's interleaved label column and riding unpinned), the constitution prime requisite with the above-12 bonus and the 6 floor on Wisdom and Intelligence with the 3-for-1 and 4-for-1 trades, the one-per-expedition rule, the full armor with the above-9th 5 percent penalties flipping under cursed armor, the no-weapons rule, the Tantrum price (2 rest days, 10 gold on the spot, the wounded half-percent pinned as five tenths with the week's wait), the man-minus-2 melee with 1 point at best, the Exceptionally BAD Abilities chart (3, 5, 7 and 10 out of 10 with the shifting dexterity bands), the fall consequences (the 100-foot trip, the 1-in-6 breakage, the 2-in-6 bloody nose, the 1-in-10 arm pinned as 10 percent, the 1 and 2 out of 10 normal chances), and the twelve-level ladder from Dummy at 0 through Idiot at 200,101 with the 200,001 step. The Jester: the 15 Intelligence, 15 Dexterity and 6-or-less Charisma requisites, neutral or chaotic only, the Dwarves infinite with the Hobbits 10th, Elves 6th (Village Idiot), Men 5th (Fool) and others 4th (Comic), no armor, thieves allowed, the 4-sided hit die with 10 dice then +1 per level, the nine joke weapons (the smelly sock 1-4 turn stun with poison save, the dagger 1-6 at 3 feet, the acid-squirting flower, the bursting pillow with its 1-inch blind, the jester stick, the laughing gas at 30 feet, the pies at 20, the dirty underwear at 10, the tomatoes at 30), the intelligence-only saving-throw doctrine with Table 1 (4 through 18) and Table 2 (19 down to 5), the fourteen-row experience grid pinned as scanned with the caps noted (the 15 of the Dwarf-infinite track, the 5 of the Fool track, the 4 of the Comic track), the eight joke levels (Giggle, Pun, Funny Face I-III, Body Contortion I-II at Armor Class 0 and -4, Pause, Joke, Wonder, Ventriloquism, Thighslapper, Obscenity, Boring Joke, Decrepitating, Bellyacher, the Extensions I-III, Pity, Gutbuster, Insult, Quick Puns, Die Laughing, Uncontrollable Laughter, Killer, Ballbuster, Voice Projector) with their ranges, durations and damage pins, and the wisdom-based spell chance. Cline's dexterity mods: the twelve-band grid - dex 3-4 at -1/-2/-1/-1 through 18 at +1/+2/+1/+4, the printed N converted to 0, with the four percent-band rows riding as scanned. HONEST BOUNDARIES: the confusion grid's odd rows and 12th column, the Jester experience grid's column semantics and Cline's percent rows are OCR garbles that ride as scanned, pinned or noted honestly, no figure pixels to check; all three clusters ride the variant layer, comedy never canon."
+}

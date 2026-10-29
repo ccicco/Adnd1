@@ -26832,6 +26832,119 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Smith pin), flipping the fighting sub-classes
   box -> issue-3 report 3 closed / 2 open. WAIT
   FOR GO.
+  - R898 LANDED 2026-10-29: commit
+  c113aa3af0afee2c879d60189ac1753d10b89e9f (base
+  7217195, census 820 -> 821), the character
+  round: Smith's new-view Dwarves (folios 26-27)
+  + Stock & Lane's birth tables (folios 14-16) +
+  the Pulsipher Eldar deltas (folios 20-21)
+  against the R888 Smith pin, from Dragon #3. THE
+  SHAPE: prefix chr (regtest-scan clean), header
+  rules/chr.h (294 inline: 112 consts + 46 bools
+  + 36 tables / 136 columns - the biggest inline
+  count since the v3 fresh start), audit "R898
+  character round audit" at
+  rules/audits/r898_batch.h, 244 examples, 3
+  header_sections, include after fsc.h,
+  prev_seed_key the R897 record. THE PINS: the
+  Dwarves - the nine-level Fighting Man ladder
+  (Dwarf 1+2 fighting as Man+2 through Dwarf King
+  10+1 at 320,000, the dice-plus forms split to
+  base and bonus), the 17/18 Strength gates with
+  the 12-Int 12-Wis footnote pinned as scanned,
+  the seven families with Durin on the d8's 7-8
+  and the kingship rules, the Greyhawk cleric
+  option (Wis 15, 7th at 17, 8th at 18, points on
+  a d8), the thief's d6, the forbidden class
+  list, the fourteen abilities (the +4 save
+  bonus, the +3 War Hammer, the 1-4-of-a-d6
+  detection, the Goblin-Orc-Hobgoblin tongues
+  with Gnome and Kobold spoken, the Giant Class
+  +1/-1, the Smith 9/9 Armorer 12/9 Engineer 15
+  gates, the bow rule, the six regular weapons
+  with others at -1, the 17-Dex swim against the
+  water fear, the 12-Int horse reluctance across
+  the folio break), the reaction table (the
+  Goblins-and-Orcs AUTO ATTACK pinned as sentinel
+  9, -2 Sindar/Silvan/men, -1 others, 0
+  Hobbits/Noldor, +1 different Folk, +2 same Folk
+  never attacking own), and the folk wisdom
+  (maturity 50, life 250, the hates, the unbroken
+  oath); the birth tables - the full ten-table
+  Stock & Lane system (social class, sibling rank
+  on a d8 with the orphan check and the first-son
+  +10 / bastard -10 percents, the four wealth
+  ladders through the Noble 400/60/1000 Very
+  Wealthy, the father's occupation routing, the
+  three skills groups with the Group 1 banding
+  notes and the first-five prohibition, the
+  Interpreter +3 / Soldier +1-to-4th / Orator +1
+  edges, the twelve crafts, the nobility rolls
+  (title, the royalty kinship with the immediate
+  1000/100, never-orphan, raise-to-wealth, the
+  reroll ignoring 96-00, the one-notch raise, the
+  five position tables with the 30/25/20/15/15
+  adventurer percents), the adventurer fathers
+  (levels and classes by social class), the race
+  rolls (Table 1 by class on a d12, the six-race
+  dice grid, the Table 2 requirement bands), and
+  the previous-experience multipliers through the
+  Noble x130); the Eldar deltas - Pulsipher's
+  Silvan (no requirements, all D&D powers,
+  disease AND aging immunity, 8th/9th fighter,
+  4th/5th magic-user, Lawful or Neutral never
+  evil), Sindar (average abilities and 63 total,
+  8th/9th magic-user, 4th/5th/6th fighter), Eldar
+  proper (13 Wis, 67 total, the 11th ONE-PATH
+  choice), the Eldar powers (a language per Int
+  point without the orcish tongues, calmed
+  animals, bird speech, the mind-to-mind 2.5-per-
+  level pinned as five half-units, keen eyes, the
+  True Sight +1/level vs phantasmal, 5
+  percent/level illusions, 3 percent/level
+  polymorph with the 5th-level 15 percent
+  example, 1 percent/level shape-change, the
+  optional hidden chance, the unawareness on
+  success), the over-sea doctrine (1/1000 Eldar
+  proper, 1/100 Sindar having seen the western
+  ocean, 1/10000 before, no roll until max level,
+  the Silvan never), and the half-elf rule.
+  DELTAS VS THE R888 SMITH PIN, NEVER SILENT:
+  Smith's Noldor carry no level cap where
+  Pulsipher caps the one path at 11th, the
+  150-percent ranges-and-effects advantage
+  rejected as unbalancing, the disease immunity
+  extended to aging, the over-sea chances
+  replaced. CONVERSIONS, ALL NOTED: the '00'
+  percentile convention to 100 throughout the
+  birth tables, the 'nil' bands to 0, the race
+  grid's 'any' to the 3-18 range, the ladder's
+  dice-plus forms to base and bonus. HONEST
+  BOUNDARIES: the OCR's split Very-Wealthy rows
+  and column shifts in the wealth tables ride AS
+  SCANNED; the royalty table's interleaved wealth
+  labels pin nothing beyond the bands; the
+  garbled sibling note 'No one receives
+  Allowance' pins nothing; the crafts pin as a
+  count with the names in the audit comment; the
+  Smith rebuttal rode beside the Pulsipher
+  letter, both systems standing on the variant
+  layer. GAP REPORT: the fighting sub-classes box
+  flipped in tools/dragon_gap_report_003.md ->
+  issue-3 report 3 closed / 2 open. VERIFIED:
+  engine double-run GREEN applied 6 / already 6 -
+  NO ABORTS, the second clean pass in a row;
+  rverify against pristine 7217195: 985 mutants 0
+  missed - the biggest battery since the v3 fresh
+  start; the raw JSON round-trip byte-exact. Spec
+  tools/spec_r898.json, 137,214 bytes, 4,694
+  lines, md5 a9fc3af7d8c8c774a0a30bebbd4a6c28
+  (authored-plus-newline). NEXT: R899 - the
+  comedy and small-variants round (the Idiot
+  folio 28, the Jester folios 28-29, the Cline
+  dexterity mods folio 30), flipping the
+  character box -> issue-3 report 4 closed / 1
+  open, closing the issue-3 walk. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
