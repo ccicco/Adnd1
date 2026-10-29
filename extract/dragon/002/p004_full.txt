@@ -1,0 +1,62 @@
+# MONKISH COMBAT in the ARENA of PROMOTION
+
+by John M. Seaton
+
+*Playtested by the Missouri Mercenary Group, a division of the McHenry Mercenary Group*
+
+Since the conception of the Monk as a D&D character, I wondered about the promotional combat system for them. As I am a novice in the martial arts (Neisi GoJu Ryu) I figured that the Monkish advancement system would be something like the advancement system used today. Assuming that the only thing that Monks with appropriate points needed to advance had yet to do would be exhibit their prowess over the current "master," I devised a very simple combat system which is based on the "En Guard" rules. Some of the things in the system may seem strange or wrong to experienced karatakas but for a game system this is simple enough for everyone.
+
+To "enter the arena" for combat, multiply strength and constitution then add 10 times your level to get Damage Points Taken (DPT). This is the number of damage points you can take.
+
+Next, add strength, dexterity, and ½ intelligence to get Damage Points Given (DPG). This is the amount of damage you inflict with a "normal" blow. When you have DPT and DPG then you are ready to approach the mat for combat.
+
+The combat itself takes place in the ceremonial arena, under the supervision of the next highest "master." The contestants approach the sands from the opposite sides of the arena and bow twice, once to the past masters and once to their "sensi," or teacher. Then they advance to the center and stand about four feet away from each other. They bow to their opponents, assume their combat stance and, on signal, attack.
+
+The combat consists of as many turns that it takes for one combatant to concede — or die. Each turn is 10 sets long, and each set is 6 units long. This represents the combinations that a monk would use in his initial attack. Thereafter, each stop period represents new plots and plans that are formed by each player after each combat.
+
+Both players write 6 units of combat, then they execute. Then write and fight . . . etc. If, after a set it is found that a combatant is below ¾ DPT all his succeeding blows are at ½ strength. At any time between blows a combatant may concede the battle. Combat immediately stops and the victor is then recognized as the new-or current "Master." Sometimes scrolls are given by the gamemaster.
+
+After the battle, it takes some little time to recover. For each 10 DPT lost a player must cure for light wounds; for each 50 DPT a player must cure for serious wounds; for every 150 DPT lost a player must be wished to health. If the unfortunate one is unavailing of magic, he must spend DPT lost times 0.5 to determine the days needed for recovery. Monks will not make an advancement challenge to another while the challenge is recovering.
+
+Combat is as follows:
+
+If a player wishes to change an order after a unit has been read, he must make a ⅝ roll of dexterity to do so. After a good roll, for example, you could change a kick or strike to a block.
+
+Kicks will not work within arms length, and obviously a strike can not connect outside of arms length. All matches start at
+
+kicking distance so a player must jump forward to strike at the beginning. The gamemaster must keep track of the distances between the combatants.
+
+After the initial set, at least one rest must be used in each remaining set.
+
+Up to three of the same type kicks may be used in a row. When kicking, hands are used in 1 or 2 blocks. Note that the "X" blocks are two-handed. When striking, both feet are grounded. Except when employing an "X"-block, hands may both attack, or one may attack and one defend.
+
+To find which player has "first strike," determine which has the highest DPT at the time. He who does strikes first. If the second player dies as the result of a "first-strike," he gets a return blow only if he beats his last DPT score on a ⅝-ile roll.
+
+The Actions:
+
+To simplify things, I divided the body into three main areas and assigned strikes, blocks and kicks to cover those areas, although some strikes and kicks are used other places, also. First, the blocks:
+
+1) High Block (HB): covers shoulders and head.
+2) Middle Block (MB): covers shoulders to beltline.
+3) Low Block (LB): covers beltline to knees.
+4) X-Block, High (XBH): covers to head, user may try to grab attacker.
+5) X-Block, Low (XBL): covers chest to thighs, and as above.
+6) Knee Block (KB): covers beltline to knee.
+
+The Strikes:
+
+1) Reverse Punch (RP): strike to chest or face.
+2) Back Fist (BF): strike to head or chest.
+3) Knife Hand (KF): strike to side/abdomen or head.
+
+The Kicks:
+
+1) Front Kick (FK): to chest or abdomen.
+2) Head Kick (HK): obvious.
+3) Side Kick (SK): to abdomen or chest.
+4) Sweep (SW): this is to trip an opponent. If it succeeds, the opponent cannot strike for three units — he gets up. However any blows struck do only "normal" damage.
+5) Stamp (ST): this can be used after a successful sweep only, and has no effect otherwise.
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/004-001-img-3.jpeg]
+
+4

@@ -1,0 +1,115 @@
+Drugs: As poisons, but double cost. Saving throw vs. Poison at -2. If failed, the victim is unconscious for 4 hours minimum. A successful constitution/resurrection throw is required to wake up (check each hour).
+
+Potions: These require 200GP and 1 week per level to produce (see list). Research costs are the same as MUs for Spells, but having a sample allows 9th Level Alchemists to produce the potion even if the potion has not been developed. A sample allows an Alchemist able to research a potion add 40% to his chances of success. (Option: Raise production costs to 250GP and don't allow MUs potion production)
+
+Acids: These are produced by the gallon and do 1 six-sided die damage per level strength. These cost 100GP and 1 day per level strength. Maximum strength equals Alchemist level. From the 3rd level the Alchemist has a 15% chance of neutralizing half acid damage, providing the victim survives. This chance increases 5% for each additional level.
+
+### ALCHEMIST POTIONS
+
+#### LEVEL 1
+
+1. Heroism
+2. Giant Strength
+3. Animal Control
+4. Water Breathing
+5. Healing
+6. Purification Powder (10)
+7. Flash Pellets (5)
+8. Dust of Sneezing (10)
+9. Oil of Slipperiness
+10. Tanglefoot Pills (2)
+
+#### LEVEL 2
+
+1. Speed
+2. Levitation
+3. Growth
+4. Diminution
+5. Human Control
+6. Plant Control
+7. Dust of Appearance (10)
+8. Dust of Paralyzation (10)
+
+#### LEVEL 3
+
+1. Superheroism
+2. Polymorph**
+3. Fire Resistance
+4. Extra-Healing
+5. Fly
+6. Clairvoyance
+7. Clairaudience
+8. Dust of Sneezing and Choking (15)
+
+#### LEVEL 4
+
+1. Invulnerability
+2. Undead Control
+3. Giant Control**
+4. Immunization from Lycanthropes
+5. Invisibility
+6. Homunculi Creation
+
+#### LEVEL 5
+
+1. Dragon Control**
+2. Gaseous Form
+3. Treasure Finding
+4. Dust of Disappearance (20)
+5. Oil of Etherealness
+6. Cloning Culture
+
+#### LEVEL 6
+
+1. Longevity
+2. Cure Disease
+3. Regeneration
+4. Mind Damp
+
+( ) Number of units produced
+**The exact type of creature turned into or controlled is specified when the potion is started.
+
+### EXPLANATIONS OF NEW POTIONS
+
+#### LEVEL 1
+
+Dust of Sneezing — Non-fatal variant of Dust of Sneezing and Choking. Saving Throws are at -2. Dust causes a coughing spell lasting 2-8 melee rounds. Makes 10 packets of dust.
+
+Flash Pellets — A small pellet which explodes on hard contact with an unyielding substance. If not expecting it, the victims
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/029-001-img-31.jpeg]
+
+have a 90% chance of being blinded for 2-8 melee rounds. Don't fall into a pit. Makes 5 pellets.
+
+Purification Powder — When sprinkled on bad food or water makes them fit to consume. Will NOT neutralize poison or drugs. Serves 10.
+
+Tanglefoot — Small synthetic fungoid which rapidly expands to fill a 10' X 10' area with rubbery tentacles. Men require 3 turns to force their way through, a giant takes one. The tendrils dissipate harmlessly in one hour. Makes 2.
+
+#### LEVEL 2
+
+Dust of Paralyzation — Similar to the Dust of Sneezing and Choking, but the effects of missing the saving throw are paralyzation for 1 hour. Makes 10.
+
+#### LEVEL 4
+
+Immunization from Lycanthropes — Protects user from contracting Lycanthropy for a period of one month. There is a 1% chance of contracting the disease from the serum.
+
+#### LEVEL 6
+
+Cure Disease — Act as the Clerical spell
+
+Regeneration — Acts as a Ring of Regeneration with a duration of one day, with revitalization ability if the body is fresh (up to three days, with a constitution check needed after the first). If applied over an extended period (at least two weeks) to an inactive character, it can be used to regenerate a lost member of the body.
+
+Mind Damp — This potion renders the user immune to psionic location or attack (including Crystal Ball, ESPing, etc.) for a period of one week. The user may not employ psionic powers during this period. It renders psionic devices inoperative for that period also (ESP Medallion, Amulet of Inescapable Locating).
+
+Other ideas for activities for high level Alchemists:
+
+Greek Fire Flesh Golems Transmutation
+Gunpowder Poison Cloaks Hallucinogens
+
+Alchemic Magical Items include:
+
+Any device save Wands or Staves which can summon elementals.
+
+Alchemists can control which liquids emerge from the Jug of
+
+29

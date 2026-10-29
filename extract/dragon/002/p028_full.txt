@@ -1,0 +1,70 @@
+# A NEW D & D CHARACTER CLASS: THE ALCHEMIST
+
+by Jon Pickens
+
+The prime requisite for the Alchemist is Wisdom, but both Wisdom and Intelligence scores must exceed 12. Their alignment is NEUTRAL. Since fighting is not their normal vocation, their maximum armor class is 5, they may use only one-handed weapons (excluding magical swords), and their attack levels advance as Clerics. They have the saving throws of Fighters with a bonus of plus 2 against poison and non-magical paralyzation. They may use any potion, but only those magical items employable by all classes (see exceptions below). Psionic ability is as Fighters, with Body Weaponry replaced by Molecular Agitation. The Alchemist rolls six-sided hit dice up to Level 9, gaining 1 point per level after that. Alchemists must be human.
+
+# EXPLANATION OF ABILITIES:
+
+Detect Poison: Allows the Alchemist to tell by explanation whether or not an item or creature is poisonous, or whether a character has been poisoned.
+
+Neutralization Poison: This will eliminate the effects of poison up to twice the Alchemist's own level. This may only be used once per character per time poisoned and will not revive a character killed by poison.
+
+Neutralize Paralyzation: This cancels the effects of paralyzation caused by creatures up to twice the Alchemist's level. It will not work against paralyzation caused by devices (wands, staves, swords, or spells).
+
+Identify Potion: This allows the Alchemist to correctly identify a potion. If a Potion of Delusion is not identified, check again to see if it is identified incorrectly. This may also be used to test for acids or similar compounds.
+
+As the Alchemist advances, he gains the following special abilities:
+
+LEVEL 1: Ability to Read Languages (80% chance, one attempt per week per item); Ability to prepare poisons and drugs; and Ability to prepare a Potion of Delusion
+
+LEVEL 3: Ability to prepare potions and acids
+
+LEVEL 5: Ability to prepare Blade Venom
+
+LEVEL 7: Ability to Read Magic (and hence Scrolls) as
+
+|  Name | Ex. Pts. | Detect Poison | Neut Pois. | Neut. Para. | Iden. Potion | Potions  |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   |   |   |   |   |   |  1 | 2 | 3 | 4 | 5 | 6  |
+|  Student | 0 | 20% | 10% | 15% | 5% | - | - | - | - | - | -  |
+|  Cleric | 1500 | 25% | 15% | 20% | 10% | - | - | - | - | - | -  |
+|  Scribe | 3000 | 30% | 20% | 25% | 20% | 1 | - | - | - | - | -  |
+|  Pedant | 6000 | 35% | 25% | 35% | 25% | 2 | - | - | - | - | -  |
+|  Savant | 12000 | 45% | 35% | 40% | 35% | 2 | 1 | - | - | - | -  |
+|  Scholar | 25000 | 55% | 45% | 45% | 45% | 2 | 2 | - | - | - | -  |
+|  Philosopher | 50000 | 60% | 50% | 55% | 50% | 3 | 2 | 1 | - | - | -  |
+|  Magnus | 100000 | 65% | 55% | 65% | 60% | 4 | 2 | 2 | - | - | -  |
+|  Alchemist | 150000 | 75% | 65% | 75% | 70% | 4 | 3 | 2 | 1 | - | -  |
+|  Mstr. Alchem. | 300000 | 85% | 75% | 85% | 80% | 5 | 3 | 3 | 2 | - | -  |
+|  Mstr. Alchem., 2nd | 450000 | 95% | 85% | 95% | 85% | 5 | 4 | 3 | 2 | 1 | -  |
+|  Mstr. Alchem., 3rd | 600000 | 100% | 90% | 100% | 95% | 6 | 4 | 4 | 2 | 2 | -  |
+|  Mstr. Alchem., 4th | 750000 |  | 95% |  | 100% | 6 | 5 | 4 | 3 | 2 | 1  |
+|  Mstr. Alchem., 5th | 900000 |  | 100% |  |  | 7 | 5 | 5 | 3 | 3 | 1  |
+|  Mstr. Alchem., 6th | 1050000 |  |  |  |  | 7 | 6 | 5 | 4 | 3 | 2  |
+|  Mstr. Alchem., 7th | 1200000 |  |  |  |  | 8 | 6 | 6 | 4 | 4 | 2  |
+|  Mstr. Alchem., 8th | 1350000 |  |  |  |  | 8 | 7 | 6 | 5 | 4 | 3  |
+|  Mstr. Alchem., 9th | 1500000 |  |  |  |  |  |  |  |  |  |   |
+|   |  |  |  |  |  | 9 | 7 | 7 | 5 | 5 | 3  |
+|  Mstr. Alchem., 10th | 1650000 |  |  |  |  | 9 | 8 | 7 | 6 | 5 | 4  |
+|  Mstr. Alchem., 11th | 1800000 |  |  |  |  | 10 | 8 | 8 | 6 | 6 | 4  |
+
+Thieves
+
+LEVEL 9: Ability to prepare potions from samples
+
+# EXPLANATION OF SPECIAL ABILITIES:
+
+Poisons: Alchemists may brew potions of a strength level equal to their own experience levels. Each strength level costs 50GP and one day.
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/028-001-img-27.jpeg]
+
+by joke
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/028-002-img-28.jpeg]
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/028-003-img-29.jpeg]
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/028-004-img-30.jpeg]
+
+28

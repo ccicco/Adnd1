@@ -1,0 +1,50 @@
+Others;
+
+1) Rest(R): must be used once each set after the first.
+2) Jump Back (JB): moves user 1 leg length back. Can kick after it if opponent hasn't moved and they were arm's length before jumping.
+3) Jump Forward (JF): moves user 1 leg length forward. Can only strike if this brings opponents within arms length.
+
+4) Duck (D): brings body mostly below high and middle strikes and kicks.
+
+Remember, the advancement combat is not designed to kill, but it can. Most combats are finally settled by concession.
+
+Summary — you can kick and block once or twice, block 1, 2, or 3 times, one strike & one block, or use two strikes.
+
+|   | HB | MB | LB | XBH | XBL | KB | R | JB | JF | D | RP | BF | KH | FK | HK | SK | SW | ST  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  RP | 2 | x | x | 2 | x | n | x | x | 2 | x | n | 2 | x | x | x | x | x | x  |
+|  BF | x | n | 2 | * | 2 | n | x | x | 2 | x | 2 | n | n | x | x | x | x | x  |
+|  KH | n | x | 2 | * | 2 | n | n | x | 3 | n | x | n | n | x | x | x | x | x  |
+|  FK | 2 | x | n | 2 | * | x | n | x | x | 2 | x | x | x | x | x | 3 | n | n  |
+|  HK | * | n | 3 | * | 2 | 2 | * | x | x | x | x | x | x | 2 | x | 3 | x | x  |
+|  SK | 2 | * | n | 3 | x | x | n | x | x | x | x | x | x | 2 | 2 | x | 2 | x  |
+|  SW | o | x | x | o | x | o | x | x | o | o | x | x | x | x | o | x | x | x  |
+|  ST | n | n | 2 | * | * | n | 3 | - | - | - | n | n | n | n | n | n | 2 | n  |
+
+*The attack is blocked, and the defender may attempt a grab. Use monk dexterity score and roll %-ile dice, or, if at ½ strength, beat DPT score with %-ile roll.
+
+x: blocked, no effect.
+
+n: normal damage, DPG.
+
+2: double DPG.
+
+3: triple DPG.
+
+o: sweep succeeds, opponent is on ground
+
+-: not applicable.
+
+*: grab (see*). Your next three units of blows all tell at normal value, opponent cannot count strikes until the third unit. These blows may be blocked.
+
+The Blocks;
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/005-001-img-4.jpeg]
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/005-002-img-5.jpeg]
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/005-003-img-6.jpeg]
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/005-004-img-7.jpeg]
+
+5

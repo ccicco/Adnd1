@@ -26310,6 +26310,52 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   +4 save vs illusion/light, Prismatic Spray
   8=two-colors) with the Round B gap box flip
   -> 2 closed / 1 open. WAIT FOR GO.
+  - R889 LANDED 2026-10-29: commit
+  b35131708b9830851c43c9778264bf3720ae0046
+  (pushed fd01593..b351317, census 811 -> 812),
+  THE ARONSON ILLUSIONIST DELTAS - ROUND C
+  of the Dragon Magazine walk, issue #1
+  (folios 23-25, DELTAS ONLY). THE SHAPE:
+  prefix arn (full-repo scan clean), header
+  rules/arn.h (14 inline), audit "R889
+  Aronson deltas audit" at
+  rules/audits/r889_batch.h, 9 consts + 5
+  bools, 12 examples, 3 header_sections, no
+  chains/switches/tables; the Round B gap
+  box FLIPPED (the dragon report's second
+  flip, gap census 2 closed / 1 open - the
+  Aronson box closes at the NEXT Dragon
+  round per the R796 pre-flip rule). THE INK:
+  his 11th-14th XP ladder (525,000 /
+  700,000 / 875,000 / 1,050,000, the flat
+  175,000 step, diverging from the 1e PHB
+  ladder the engine canonizes at r183/r229);
+  the manufacture thresholds (minor items
+  9th, scrolls/wands 10th); the +4 save vs
+  illusions/light; Dispel Exhaustion (the
+  non-canon 3rd-level spell, twice the rest
+  owed after, the raised-and-wounded 1-6
+  damage clause); the borrowed-MU doctrine
+  (eight MU spells, Ventriloquism altered to
+  range 9 / duration 5 turns); his Prismatic
+  Spray (d8, 8 = two colors rerolled twice
+  ignoring 8s, seated 6th where the PHB
+  canon seats it 7th - the divergence
+  noted, never silent). THE R888 RECORD
+  seated byte-exact into the v2 seed ledger.
+  VERIFIED: engine double-run GREEN applied
+  6 / already 6; rverify against pristine
+  fd01593: 14 mutants 0 missed; the raw JSON
+  round-trip byte-exact. Spec
+  tools/spec_r889.json, 11,464 bytes, 274
+  lines, md5
+  dfd3787127283ba1a0aa2960f3c47499
+  (authored-plus-newline). NEXT: issue #1's
+  adjudicated ink is CLOSED - the walk's
+  next stop is The Dragon issue #2 whenever
+  Curtiss opens it; the Aronson gap box
+  flips at the next Dragon round's spec.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

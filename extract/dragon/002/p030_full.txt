@@ -1,0 +1,83 @@
+**Alchemy** and the **Beaker of Plentiful Potions**. For other types, these items disgorge their contents randomly when poured.
+
+The Alchemist is able to use the **Manual of Golems**.
+
+The **Grimoire of Archaic Alchemy** adds one experience level to Alchemists and 10,000 experience points to MUs. Clerics take 7000 experience points and 5-30 points losses. Other types lose 2-20 points.
+
+For other books, the Alchemist takes damage as a Cleric, except the **Book of Infinite Spells** which does 5-20 points to him.
+
+The **Philosopher's Stone** looks exactly like the Luckstone and Loadstone, but is valuable only in the hands of an Alchemist. The stone contains 2-8 charges. One charge may be used to add 20% to a research roll or to transmute 10,000 wt points of lead into gold or silver (50% chance of each). In addition, while the stone has any charges left, the Alchemist may use it to "Cure Disease" once per day, **free**. The Alchemist may not contact a disease while he carries the stone on his person. As the stone is immune to heat (even dragon breath) it may be tested by throwing into a vat of molten lead (which would of course destroy a Luckstone). The stone disintegrates when the last charge is used.
+
+## ON POISONS
+
+Animal poison is usually one level strength per die. Trap poison is variable.
+
+If the level of the poison is equal to or greater than the number of dice the victim has, the victim must save vs. poison or die in 3 melee rounds.
+
+If the poison level is less than this but half the number of the victim's dice or more, the victim must save vs. poison or suffer the effects of the "slow" Spell (the effects last until a constitution/resurrection check is successful, rolling once each hour). hour).
+
+If the poison level is less than that, there is no effect, but the poison accumulates. Note: this penalty might have been removed without reducing the poison level in the body by the FTR making his Constitution check at the beginning of the next or subsequent hours.
+
+EXAMPLE: A Level 7 FTR is bitten several times by a 3-die poisonous spider.
+
+Assume two bites and one missed saving throw. The FTR is moving at "slow" speed (4½ out of 7). If he is bitten again and misses his saving throw he is dead; but in any case the fourth bite will kill him.
+
+Assume a Level 1 Alchemist attempts to neutralize the poison after the FTR kills the spider. Since the maximum level a 1st level Alchemist can remove is two, and since one bite cannot be broken down, the Alchemist can only attempt to neutralize 1½ levels of poison. If he misses, he may not try again. A successful attempt removes the "slow" penalty from the FTR.
+
+Blade Venom: This special poison for application to cutting weapons costs 200GP and 1 week to prepare. The victim struck must save vs. poison or die in 3 rounds. The venom is kept in vials which contain enough for three hits with a blade or three arrows. It loses potency rapidly, becoming useless 24 hours after the vial is opened. A batch yields one vial.
+
+Belladona: Treat this as a ½ level strength poison.
+
+A large dose of most poisons is easily detectable, reduce the chance of ingestion by 20% for each dose over the basic one. (A rat will usually, 90%, gulp down a ration with level one poison, but only has a 70% chance of eating a ration with a double dose of Belladona).
+
+For natural elimination of poison, add 1 day to recuperation
+
+time per ½ level poisoned, or require a daily roll vs. constitution to remove a level of poison. This is in addition to any time spent recovering from wounds.
+
+Optionally, a cleric may be allowed to remove only as many levels of poison as levels of experience he has achieved. Unlike the Alchemist, these are subtracted immediately from the accumulated levels of poison in the body of the recipient.
+
+## D & D OPTION: WEAPON DAMAGE
+
+by Jon Pickens
+
+The following rules are designed to replace the damage system introduced in Greyhawk:
+
+For every three levels a Fighter advances, or every four levels a Thief advances, he may master one additional weapon and score the increased damage shown on the Expert column. Thieves are limited to expertise in sword, dagger, a combination of these, or the sling.
+
+Instead of increasing expertise in one weapon, a Fighter or Thief with a dexterity of 13 or better may take a combination of two one-handed weapons. Each combination is unique and must be clearly recorded. In melee the wielder may strike once with each weapon or once with either weapon and count as shielded. No expertise bonus is given when employing this option, even though the wielder may normally have it for either weapon.
+
+Sword and Sword, or Flail & Morning Star combinations require a dexterity of 16, as these are especially difficult to master. Only one Morning Star and/or Flail may be used in a combination.
+
+|  Weapon | Normal | Expert  |
+| --- | --- | --- |
+|  Dagger | 1-4 points | 2-5 points  |
+|  Hand Axe, Mace | 1-4 points | 1-6 points  |
+|  Dwarf Hammer, Military Pick* | 1-6 points | 1-6 points  |
+|  Battle Axe* | 1-8 points | 1-12 points  |
+|  Sword | 1-8 points | 1-10 points  |
+|  Flail*** | 1-8 points | 1-10 points  |
+|  Morning Star** | 1-6 points | 1-8 points  |
+|  Spear, Thrown/Thrust | 1-6 points | 2-8 points  |
+|  Spear, Thrust vs. Charge | 1-8 points | 2-12 points  |
+|  Spear, Set vs. Charge | 1-10 points | 2-16 points  |
+|  Pole Arms*** | 1-12 points | 1-12 points  |
+|  Halberd*** | 1-10 points | 2-12 points  |
+|  2-Handed Sword*** | 2-12 points | 3-18 points  |
+|  Mounted Lance | 2-12 points | 2-24 points  |
+|  Pike*** | 1-12 points | 1-12 points  |
+|  Arrow or Quarrel | 1-6 points | 1-6 points  |
+|  Sling Stone | 1-4 points | 1-6 points  |
+
+* Weapon requires not less than 4' of space on each side of the user
+
+** Weapon requires not less than 5' of space on each side of the user
+
+*** Weapon requires not less than 6' of space on each side of the user
+
+*** Weapon not useable in dungeons as a general rule due to length
+
+The 2-Handed sword requires a Strength of 16 and a dexterity of 9.
+
+The Military Pick or the Battle Axe may be wielded in one hand if Strength is 16 and Dexterity is 9.
+
+30

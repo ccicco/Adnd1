@@ -591,6 +591,7 @@
 #include "rules/ivs.h"  // R887: the Ives attribute tables, the Dragon opener
 #include "rules/drg.h"  // R888: the Dragon small-variant set
 #include "rules/arn.h"  // R889: the Aronson illusionist deltas
+#include "rules/rmz.h"  // R890: the Remorhaz lore, the issue-2 opener
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4638,6 +4639,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r890_batch.h"  // R890: R890 Remorhaz lore audit
 #include "rules/audits/r889_batch.h"  // R889: R889 Aronson deltas audit
 #include "rules/audits/r888_batch.h"  // R888: R888 Dragon small variants audit
 #include "rules/audits/r887_batch.h"  // R887: R887 Ives attribute audit

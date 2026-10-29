@@ -1,0 +1,42 @@
+# Hints for D & D Judges
+
+## Part 3: The Dungeons
+
+by Joe Fischer
+
+For once it is the author, not the judges, having trouble getting started. For, when it comes to ideas for improving the dungeons, the possibilities are endless. So, in order, I will try to deal with the following areas: Entrances, Traps, Treasures, Mapping, and Monsters. Again I hope this article will help your judging improve; good castles are always in demand.
+
+When judges of D & D, new and old alike, think of an entrance to the dungeons, the greater percentage think of an old ruined castle somewhere outside their town. And many of this same group have the mistaken impression that there is only one entrance to every dungeon. Both these ideas are wrong. True, the famous game of Gary Gygax and Rob Kuntz is built around and under Greyhawk Castle, but this is far from being the only entrance. Besides the castle, I have discovered an entrance through an old dry cistern and another entrance that is under a pool of quicksand, and even an entrance in a simple hole in the ground.
+
+In other games I have discovered the dungeons were under the town, or under the town guards' barracks, and even under one of the peasant's hovels. So as far as entrances go, it makes no difference where you put it or how you disguise it, as long as the dungeons are good. But the entrances can make the castle even more interesting.
+
+The most fun involved in planning a new level is laying out "friendly" little traps for the players to find. These should be evenly spread out in the dungeons, (if concentrated in one area, the players will eventually ignore that part of the dungeons, and good traps will go to waste) and not used too often: players tend to stop adventuring in games that have more traps than treasure.
+
+Traps don't always have to be harmful. Sometimes it's possible for a trap to also be a treasure, depending on a die roll. A good example of this is a party, upon entering a room in the dungeons, finds a pile of bones in one corner. Discovering nothing else of interest, the leader decides to take the time to reconstruct the skeleton. Once put together, the skeleton can do one of four things; attack, serve the party until destroyed, lead to the nearest unguarded treasure, or lead to his master, who happens to be a high level magic-user. Or the skeleton can do nothing, except take up a lot of time, in which the judge can roll dice for more wandering monsters.
+
+One of the most popular types of traps is where the treasure, or the chest it is in, is the trap. Various traps can be placed on the treasure so that when touched or removed from its chest the party can be transported, with or without the treasure, or take so many dice of damage (the number of dice depending on the amount of gold pieces, or the rarity of the magic) or have the item explode. Or the magic that is in the treasure can be intelligent so that it keeps on trying to get back to its real owner. And when it comes to treasure chests, the author uses the following table . . .
+
+|  0-50 | A normal chest  |
+| --- | --- |
+|  51-00 | Trap on the chest, go to the following table  |
+|  0-30 | 1-4 spring loaded daggers fire when chest is opened  |
+|  31-50 | Same as above, but the daggers are poisoned  |
+|  51-65 | Poisoned gas released when chest is opened  |
+|  66-75 | When chest is opened, it acts as a Mirror of Life Trapping  |
+
+[Extracted image: /home/user/tool-results/ocr/be2966ff-d4fa-48d6-8f96-ac110b5462df/images/012-001-img-15.jpeg]
+
+|  76-85 | Exploding chest, if opened the chest explodes doing 2-7 dice  |
+| --- | --- |
+|  86-90 | When chest is opened, an enraged spectre comes out  |
+|  91-95 | All members within 5' lose one level of experience  |
+|  96-98 | All members within 5' lose one magic item  |
+|  99-00 | Intelligent chest, act as if chest is a 2nd-9th level magic-user, including spells  |
+
+16a
+
+Other traps can be intelligent gold pieces; they have the nasty habit of screaming when taken from the room they were found in, which draws all sorts of monsters, or throwing themselves en masse at whoever makes the mistake of opening the chest they are in. The damage caused by the gold can vary. Or even more discouraging is finding out that after fighting a red dragon and losing half the party they have won 60,000 chocolate centered gold pieces; real value being about a copper piece each.
+
+James Erdman of the S.L.W.G.A. came up with a very interesting trap. How would you like to be in a basically lawful party intent on doing some adventuring under the ruins of a castle only to find it guarded by a kingdom of dwarves? And when the leader of the party tries to parlay with the dwarvish leader he discovers that this dwarf kingdom happens to be chaotic, and willing to kill the whole party at the drop of a copper piece. In many castles you can find creatures that just don't seem to be of the right alignment. This makes for highly interesting playing, for it causes the player to be much more careful than they normally would have to be.
+
+12
