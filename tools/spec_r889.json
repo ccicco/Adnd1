@@ -1,0 +1,274 @@
+{
+ "round": 889,
+ "title": "The Aronson illusionist deltas: the mighty magic miscellany",
+ "prefix": "arn",
+ "census_before": 811,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R888 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R888 LANDED 2026-10-29: commit",
+  "  fd015938d28572e58c209c0fd55922e961945acc",
+  "  (pushed c468ba6..fd01593, census 810 -> 811),",
+  "  THE DRAGON SMALL VARIANTS - ROUND B of the",
+  "  Dragon Magazine walk (issue #1, folios 9-10,",
+  "  30, 19). THE SHAPE: prefix drg (full-repo",
+  "  scan clean - dgn was TAKEN by rules/oayakuza.h,",
+  "  the R856 catch held), header rules/drg.h",
+  "  (16 inline), audit \"R888 Dragon small",
+  "  variants audit\" at rules/audits/r888_batch.h,",
+  "  8 consts + 8 bools, 11 examples, 3",
+  "  header_sections, no chains/switches/tables;",
+  "  the Ives gap box FLIPPED (the dragon",
+  "  report's first flip, gap census 1 closed /",
+  "  2 open). THE INK: Gold's Languages doctrine",
+  "  (20-percent Common, personal tongues,",
+  "  mutual comprehensibility by percentage -",
+  "  the Cavish/Morloch 60-percent anecdote);",
+  "  Smith's Eldar variants (Noldor no level cap,",
+  "  ranges/effects x1.5 pinned as the 150-percent",
+  "  conversion, elf disease immunity); the",
+  "  Bulette lore pin (folio 19) against the",
+  "  UNTOUCHED MM2 def monsters/monsters/b/",
+  "  bulette.lua - lore/provenance only, never a",
+  "  competing def. LESSON: the cond-syntax gate",
+  "  rejects Python 'not'/'||' in examples (the",
+  "  R431 class) - bool checks ride the R887",
+  "  idiom m['x']() != 1, valid for both the",
+  "  Python eval and the C++ token stream.",
+  "  VERIFIED: engine double-run GREEN applied",
+  "  6 / already 6; rverify against pristine",
+  "  c468ba6: 16 mutants 0 missed; the R887",
+  "  record seated byte-exact into the v2 seed",
+  "  ledger. Spec tools/spec_r888.json, 12,421",
+  "  bytes, 301 lines, md5",
+  "  39bda0051e2f40b61307ba4a2a7f1271",
+  "  (authored-plus-newline). NEXT: Round C -",
+  "  the Aronson illusionist deltas (folios",
+  "  23-25, deltas only: 11th-14th XP progression,",
+  "  non-canon spells, item-manufacture thresholds,",
+  "  +4 save vs illusion/light, Prismatic Spray",
+  "  8=two-colors) with the Round B gap box flip",
+  "  -> 2 closed / 1 open. WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/drg.h\"  // R888: the Dragon small-variant set",
+ "include_comment": "the Aronson illusionist deltas",
+ "header_file": "rules/arn.h",
+ "audit_file": "rules/audits/r889_batch.h",
+ "audit_label": "R889 Aronson deltas audit",
+ "audit_anchor": "#include \"rules/audits/r888_batch.h\"  // R888: R888 Dragon small variants audit",
+ "gap_report": "tools/dragon_gap_report.md",
+ "gap_census": {
+  "closed": 2,
+  "open": 1
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The small-variant set: Gold languages (9-10), Smith Eldar\n  (30), the Bulette lore pin (19)** - the combined round",
+   "to": "- [x] **The small-variant set: Gold languages (9-10), Smith Eldar\n  (30), the Bulette lore pin (19)** - the combined round",
+   "note": "the Round B box - the small-variant flip"
+  }
+ ],
+ "banner": {
+  "title": "The Aronson illusionist deltas - mighty magic miscellany (folios 23-25): the 11th-14th XP progression, the manufacture thresholds, the +4 illusion save, and the Prismatic Spray two-color mechanic",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 1 (June 1976): folio 23, Peter Aronson's Mighty Magic Miscellany - the Illusionist Additions; folio 25, the Prismatic Spray explanation and the two manufacture/save notes. The voice rides extract/dragon/001/. DELTAS ONLY per the issue-1 adjudication: most of Aronson's list was later canonized into the 1e PHB illusionist (the r183/r229 layers already pin the canon); this round pins only the divergences. OD&D-era ink converted per the walk doctrine: the pin IS the conversion, noted, never silent.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. Aronson's deltas ride against the engine's 1e illusionist canon, never rewrites: his 11th-14th progression diverges from the PHB ladder, Dispel Exhaustion is non-canon, the manufacture thresholds (minor 9th, scrolls/wands 10th) and the +4 illusion/light save are his doctrine, and his Prismatic Spray rolls a d8 where 8 means two colors - roll again twice, ignoring 8s - and rides seated at the 6th level where the PHB canon seats it 7th."
+ },
+ "consts": [
+  {
+   "name": "arnXp11",
+   "value": 525000,
+   "comment": "the 11th-level illusionist at 525,000 XP - Aronson's progression, diverging from the 1e PHB ladder (folio 23)"
+  },
+  {
+   "name": "arnXp12",
+   "value": 700000,
+   "comment": "the 12th level at 700,000 XP - the 175,000-point step above 11th (folio 23)"
+  },
+  {
+   "name": "arnXp13",
+   "value": 875000,
+   "comment": "the 13th level at 875,000 XP - the same 175,000-point step again (folio 23)"
+  },
+  {
+   "name": "arnXp14",
+   "value": 1050000,
+   "comment": "the 14th level at 1,050,000 XP - the top of his printed table (folio 23)"
+  },
+  {
+   "name": "arnMinorItemLevel",
+   "value": 9,
+   "comment": "from the 9th level an illusionist may manufacture minor items - talking puppets, toys, etc. (folio 25 note)"
+  },
+  {
+   "name": "arnScrollWandLevel",
+   "value": 10,
+   "comment": "from the 10th level - illusionist scrolls, illusion wands etc. (folio 25 note)"
+  },
+  {
+   "name": "arnIllusionSaveBonus",
+   "value": 4,
+   "comment": "illusionists are +4 on saving throws vs things involving illusions or light (folio 25 note)"
+  },
+  {
+   "name": "arnSprayDie",
+   "value": 8,
+   "comment": "his Prismatic Spray rolls an 8-sided die - 1-7 as the corresponding prismatic wall layer (folio 25)"
+  },
+  {
+   "name": "arnRaisedExtraDamage",
+   "value": 6,
+   "comment": "Dispel Exhaustion lets the recently raised and badly wounded move normally, at an additional 1-6 points of damage (folio 23)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "arnDispelExhaustion",
+   "value": true,
+   "comment": "the non-canon 3rd-level spell - the illusion of being well rested and healthy (folio 23)"
+  },
+  {
+   "name": "arnRestDebtDoubled",
+   "value": true,
+   "comment": "after Dispel Exhaustion ends the recipient must rest twice as much as was missed - the price of the illusion (folio 23)"
+  },
+  {
+   "name": "arnBorrowedMuSpells",
+   "value": true,
+   "comment": "MU spells borrowed into the illusionist list, altered or as-is: Ventriloquism (range 9, duration 5 turns), Magic Mouth, Rope Trick, Suggestion, Conjure Animals, Astral Spell, Prismatic Wall, Maze (folios 23, 25)"
+  },
+  {
+   "name": "arnSprayTwoColorOnEight",
+   "value": true,
+   "comment": "a Prismatic Spray roll of 8 means the target is hit by two colors - roll again twice, ignoring 8s (folio 25)"
+  },
+  {
+   "name": "arnSpraySeatedSixth",
+   "value": true,
+   "comment": "his Prismatic Spray rides seated at the 6th level in the borrowed-MU column - the 1e PHB canon seats it 7th; the divergence is noted, never silent (folio 23)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['arnXp11']() != 525000",
+   "note": "the 11th-level entry - his table opener (folio 23)"
+  },
+  {
+   "expr": "m['arnXp12']() != 700000",
+   "note": "the 12th-level entry (folio 23)"
+  },
+  {
+   "expr": "m['arnXp13']() != 875000 or m['arnXp14']() != 1050000",
+   "note": "the 13th- and 14th-level entries - the top of his printed table (folio 23)"
+  },
+  {
+   "expr": "m['arnXp12']() - m['arnXp11']() != 175000",
+   "note": "the ladder arithmetic - a flat 175,000-point step from 11th to 12th"
+  },
+  {
+   "expr": "m['arnXp13']() - m['arnXp12']() != 175000 or m['arnXp14']() - m['arnXp13']() != 175000",
+   "note": "the step holds all the way up - 12th to 13th and 13th to 14th"
+  },
+  {
+   "expr": "m['arnMinorItemLevel']() != 9 or m['arnScrollWandLevel']() != 10",
+   "note": "the manufacture thresholds - minor items at 9th, scrolls and wands at 10th (folio 25 note)"
+  },
+  {
+   "expr": "m['arnIllusionSaveBonus']() != 4",
+   "note": "the +4 save vs things involving illusions or light (folio 25 note)"
+  },
+  {
+   "expr": "m['arnSprayDie']() != 8 or m['arnSprayTwoColorOnEight']() != 1",
+   "note": "the spray mechanic - the d8 and the 8-means-two-colors read (folio 25)"
+  },
+  {
+   "expr": "m['arnSpraySeatedSixth']() != 1",
+   "note": "his 6th-level seating of Prismatic Spray - the divergence from the PHB 7th, noted, never silent (folio 23)"
+  },
+  {
+   "expr": "m['arnDispelExhaustion']() != 1 or m['arnRestDebtDoubled']() != 1",
+   "note": "the non-canon spell and its price - the illusion of rest, twice the rest owed after (folio 23)"
+  },
+  {
+   "expr": "m['arnBorrowedMuSpells']() != 1",
+   "note": "the borrowed-MU doctrine - eight MU spells ride the illusionist list (folios 23, 25)"
+  },
+  {
+   "expr": "m['arnRaisedExtraDamage']() != 6",
+   "note": "the raised-and-wounded clause - move normally, 1-6 extra points of damage (folio 23)"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 14,
+ "header_sections": {
+  "the XP progression (Aronson, folio 23)": [
+   {
+    "kind": "const",
+    "name": "arnXp11"
+   },
+   {
+    "kind": "const",
+    "name": "arnXp12"
+   },
+   {
+    "kind": "const",
+    "name": "arnXp13"
+   },
+   {
+    "kind": "const",
+    "name": "arnXp14"
+   }
+  ],
+  "the manufacture and save deltas (folios 23-25)": [
+   {
+    "kind": "const",
+    "name": "arnMinorItemLevel"
+   },
+   {
+    "kind": "const",
+    "name": "arnScrollWandLevel"
+   },
+   {
+    "kind": "const",
+    "name": "arnIllusionSaveBonus"
+   }
+  ],
+  "the spell deltas (folios 23, 25)": [
+   {
+    "kind": "const",
+    "name": "arnSprayDie"
+   },
+   {
+    "kind": "const",
+    "name": "arnRaisedExtraDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "arnDispelExhaustion"
+   },
+   {
+    "kind": "bool",
+    "name": "arnRestDebtDoubled"
+   },
+   {
+    "kind": "bool",
+    "name": "arnBorrowedMuSpells"
+   },
+   {
+    "kind": "bool",
+    "name": "arnSprayTwoColorOnEight"
+   },
+   {
+    "kind": "bool",
+    "name": "arnSpraySeatedSixth"
+   }
+  ]
+ },
+ "audit_comment": "THE ARONSON ILLUSIONIST DELTAS - Round C of the Dragon walk, deltas only on the variant layer. THE XP PROGRESSION (folio 23): his 11th-14th illusionist ladder - 525,000 / 700,000 / 875,000 / 1,050,000, a flat 175,000-point step, diverging from the 1e PHB ladder the engine already canonizes (r183/r229). THE MANUFACTURE AND SAVE NOTES (folio 25): minor items (talking puppets, toys) from the 9th level, illusionist scrolls and illusion wands from the 10th, and illusionists +4 on saves vs things involving illusions or light. THE SPELL DELTAS (folios 23, 25): Dispel Exhaustion - the non-canon 3rd-level spell, the illusion of being rested with twice the rest owed after, the raised-and-wounded clause at 1-6 extra damage; the borrowed-MU doctrine (eight MU spells ride his list, Ventriloquism altered to range 9 and duration 5 turns); and his Prismatic Spray - a d8 where 8 means two colors, roll again twice ignoring 8s, seated at the 6th level where the PHB canon seats it 7th. HONEST BOUNDARIES: deltas only per the issue-1 adjudication - the spells Aronson listed that 1e later canonized ride the existing canon layers untouched, never re-pinned here; all ink is OD&D-era variant, converted, noted, never silent. The Round B gap box flips this round - the dragon report's second flip."
+}

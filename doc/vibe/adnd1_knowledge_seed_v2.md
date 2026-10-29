@@ -26267,6 +26267,49 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Bulette lore pin vs monsters/monsters/b/
   bulette.lua) with the Ives box flip.
   WAIT FOR GO.
+  - R888 LANDED 2026-10-29: commit
+  fd015938d28572e58c209c0fd55922e961945acc
+  (pushed c468ba6..fd01593, census 810 -> 811),
+  THE DRAGON SMALL VARIANTS - ROUND B of the
+  Dragon Magazine walk (issue #1, folios 9-10,
+  30, 19). THE SHAPE: prefix drg (full-repo
+  scan clean - dgn was TAKEN by rules/oayakuza.h,
+  the R856 catch held), header rules/drg.h
+  (16 inline), audit "R888 Dragon small
+  variants audit" at rules/audits/r888_batch.h,
+  8 consts + 8 bools, 11 examples, 3
+  header_sections, no chains/switches/tables;
+  the Ives gap box FLIPPED (the dragon
+  report's first flip, gap census 1 closed /
+  2 open). THE INK: Gold's Languages doctrine
+  (20-percent Common, personal tongues,
+  mutual comprehensibility by percentage -
+  the Cavish/Morloch 60-percent anecdote);
+  Smith's Eldar variants (Noldor no level cap,
+  ranges/effects x1.5 pinned as the 150-percent
+  conversion, elf disease immunity); the
+  Bulette lore pin (folio 19) against the
+  UNTOUCHED MM2 def monsters/monsters/b/
+  bulette.lua - lore/provenance only, never a
+  competing def. LESSON: the cond-syntax gate
+  rejects Python 'not'/'||' in examples (the
+  R431 class) - bool checks ride the R887
+  idiom m['x']() != 1, valid for both the
+  Python eval and the C++ token stream.
+  VERIFIED: engine double-run GREEN applied
+  6 / already 6; rverify against pristine
+  c468ba6: 16 mutants 0 missed; the R887
+  record seated byte-exact into the v2 seed
+  ledger. Spec tools/spec_r888.json, 12,421
+  bytes, 301 lines, md5
+  39bda0051e2f40b61307ba4a2a7f1271
+  (authored-plus-newline). NEXT: Round C -
+  the Aronson illusionist deltas (folios
+  23-25, deltas only: 11th-14th XP progression,
+  non-canon spells, item-manufacture thresholds,
+  +4 save vs illusion/light, Prismatic Spray
+  8=two-colors) with the Round B gap box flip
+  -> 2 closed / 1 open. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
