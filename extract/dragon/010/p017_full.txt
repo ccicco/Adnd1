@@ -1,0 +1,53 @@
+October, 1977 Th e Dra gon
+SNIT ABILITIES
+All Snits have two factors important for play of the game: LIFE FORCE,
+and SPEED. As each Snit is created and named, its Life Force and Speed are
+determined and recorded on the Snit Record Sheet. Life Force is a measure
+of how long the Snit will live. Roll a single die for each Snit to deter-
+mine its Life Force. SPEED indicates the maximum number of hexes that a
+Snit may move in a single bound while running to and from the Snandergrab.
+A Snit’s speed is always % of its parent’s speed + a six sided die roll.
+Life Force and Speed factors will change during the course of play.
+A Player’s initial Parent Snit begins the game with a Life Force of 4
+and a Speed of 4.
+PLAY OF THE GAME
+i Both players create their starting Snits (Parent & 3 offspring).
+2. Roll die to determine who will play Snits first. Snit player sets up
+his Snits on any blue (Sea) hex(es). There is no stacking limit. Any
+number of Snits may occupy the same hex.
+oe The Bolotomus player places the Snandergrab anywhere on the board.
+The Snandergrab must always be completely within the field of play.
+4, Both players now secretly write their moves for the first bound.
+The Snit player writes a destination (letter and number code for the hex)
+for each Snit. Snits may move in any direction or combination of dir-
+ections as long as they do not move more hexes than their Speed Factor
+in a single bound. The Bolotomus player decides whether to smash Snits
+or move the Snandergrab (a nasty ploy). A smash can be indicated by
+writing the number and letter code for the hex. To move the Snandergrab,
+the code should be preceeded by the letters MS (Move Snandergrab). If
+the Bolotomus moves the Snandergrab, it may not attempt to smash in that
+bound.
+Once moves are written, both players exchange record sheets. The
+Snits are moved first and then the Bolotomus either relocates the Snander-
+grab or marks the center of its smash. The “Smash" of a Bolotomus consists
+of the hex indicated and the six hexes immediatly surrounding that hex.
+Any Snits thereunder are quite dead and removed from play. A smash may
+overlap the Snandergrab, but Snits under the Snandergrab are immune to
+smashing. Any Snit which ends a bound under the Snandergrab is home free
+and set aside for reproduction.
+This phase of the game is called the RUN IN and continues for up to
+nine bounds, or until all Snits are either smashed or are safely under the
+Snandergrab. Movement stops after nine bounds and any surviving Snits that
+haven’t made it under the Snandergrab lose one extra factor of Life Force
+(exhaustion) and are (sportingly) allowed to plant their snotches and re-
+produce. This completes the RUN IN.
+oe The Snit player now brings on the three offspring of each Snit that
+planted a Snotch in the Snandergrab. All Snits that reproduce must subtract
+one (permanently) from their Life Force. A Snit with a Life Force of l
+would plant its snotch, reproduce, and then die, When the Life Force of a
+Snit reaches zero, the Snit is dead and is removed from play. Any Snit that
+successfully plants its Snotch gains one point of Speed (experience). All
+new Snits are named, given a Life Force and Speed (see Snit Abilities), and
+then set up on top of the Snandergrab in preparation for the RUN TO THE SEA.
+(the Bolotomus trys to get them coming and going)
+17

@@ -1,0 +1,1130 @@
+{
+ "round": 914,
+ "title": "The Dragon issue-10 opener part one: the Orgies Inc. article, the Clifton wilderness article and the Random Monsters article",
+ "prefix": "dtn",
+ "census_before": 836,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R913 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R913 LANDED 2026-10-29: commit",
+  "  17dbf8c0ef6ffe8985358d24040ac69dc2b61008 (base",
+  "  b78fe96, census 835 -> 836), the Dragon issue-9",
+  "  flip: prefix dnp, header rules/dnp.h, audit",
+  "  rules/audits/r913_batch.h (\"R913 Dragon issue-9",
+  "  closure audit\"), 13 inline (8 consts + 5",
+  "  bools), 3 examples, 2 header_sections, ZERO",
+  "  file_patches/data_files, ONE gap flip: gap",
+  "  report 009 box -> [x] (the Gygax alignment",
+  "  article and the Ward Tombs & Crypts article),",
+  "  gap_census 1 closed / 0 open, the two-chain",
+  "  issue-9 walk complete. rverify GREEN (13",
+  "  mutants / 0 missed), double-run applied 6 /",
+  "  already 6, spec round-trip byte-exact (8334",
+  "  bytes), prefix scan clean, seed grep 1. Likely",
+  "  next: the issue-10 opener (source in accessory-",
+  "  dragon-magazine-012). WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/dnp.h\"  // R913: the Dragon issue-9 box closing round, the two-chain walk complete",
+ "include_comment": "the Dragon issue-10 opener part one, the Orgies Inc. article, the Clifton wilderness article and the Random Monsters article",
+ "header_file": "rules/dtn.h",
+ "audit_file": "rules/audits/r914_batch.h",
+ "audit_label": "R914 issue-10 opener audit",
+ "audit_anchor": "#include \"rules/audits/r913_batch.h\"  // R913: R913 Dragon issue-9 closure audit",
+ "audit_comment": "THE DRAGON ISSUE-10 OPENER ROUND, PART ONE - three adjudicated chains. The Pickens Orgies Inc. article (folios 5-6): the experience-only-as-spent doctrine with the level divisor capped at the class hit dice, the five expenditure classes - the weekly sacrifice with its 100-GP-per-level favor option, the lawful-only philanthropy, the 250-GP-per-level-day research, the no-withdrawal clan hoards and the 500-GP-per-level-night orgy with its constitution-days cycle - the hireling halving, the fief and mill economics, the 60-40 house edge with the halved winnings, and the psionic appendix at 20 GP per point and 100 GP per ability roll. The Clifton wilderness article (folio 7): the four-foot-square convention, the river and ford at 10% each, the swimmer and road doctrines, the 75% slope turn, the five terrain feature bands with their grades and roll-again tables, the run courses and slope facings, the dense-woods doubled surprise at 20-120 feet, the light-woods 20-100 yard sighting, the halved surprise at maximum sighting, the opposite-corner placement and the grade heights. The Crabaugh Random Monsters article (folios 9-10): the 20-level dungeon basis, the type and intelligence bands, the hit-dice modifier and AC tables, the level-offset column, the undead turning at HD/2 with the vampire threshold at 17, and the weapon-or-bite damage doctrine.",
+ "gap_report": "tools/dragon_gap_report_009.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 0
+ },
+ "gap_flips": [],
+ "banner": {
+  "title": "The Dragon issue-10 opener, part one - the Orgies Inc. article (folios 5-6), the Clifton wilderness article (folio 7) and the Random Monsters article (folios 9-10): three adjudicated chains in one round, the issue-10 part-two chains to follow",
+  "provenance": "Pinned from The Dragon Vol. 2 No. 4 (October 1977), the archive.org scan voice (single-voice: no chat-side upload cross-check exists for issue 10; the source lives in the archive.org item accessory-dragon-magazine-012). The folios: 5-6, the Pickens D&D Option: ORGIES, INC. article - experience only as treasure is spent, the GP expenditure divided by level capped at the class hit-dice allowance, the divisor riding treasure experience only, the sacrifice class with its weekly window, tithes and the 100-GP-per-level wish or favor option, the lawful-only philanthropy, the MU and alchemist research at 250 GP per level per day, the clan-hoard class with no withdrawals, the orgy class at 500 GP per level per night halved to 250 recuperating under 50% with the constitution-days cycle, the halved hireling experience, no experience for upkeep, salaries, equipment, luxuries or investments, the level-10 fief example at 3400 of 240,000, the specialist divisor of 10 for fiefholders, the 500-GP mill returning 100-600 annually per 100 people, the 60-40 house edge with the halved En Garde winnings, and the psionic appendix - 20 GP per psionic point, 100 GP per 10% cumulative ability-loss roll, an ability back per 100 psionic points regained; 7, the Clifton Designing For Unique Wilderness Encounters article - the four-foot-square battlefield, the river across the field at 10% with the ford at a further 10%, the swimmer forcing the river onto the field, the road bridge or ford, the initial run in four directions with the clockwise, straight and counterclockwise courses, the slope facing toward or away from the high ground, the 75% slope turn at a watercourse, the clear, rough, mountainous, wooded and marshy feature bands with their grades - gentle at one level, steep at three - and their roll-again tables, the doubled surprise and 20-120 foot sighting in dense woods, the 20-100 yard sighting in light woods, the halved surprise at maximum sighting in clear featureless corners, the opposite-corner placement and the proportionate thinning of slopes and streams at larger areas; 9-10, the Crabaugh Random Monsters article - the 20-level dungeon basis, the d8 type band across mammal, reptile and undead, the intelligence band, the hit-dice modifier bands from +2 to -1, the hit-dice AC table for mammal and reptile, the level-offset column from +3 at die 1 to -2 at die 12 with the dungeon-level meaning, the undead turning as undead of level HD/2 with the vampire threshold at 17 and the (1-8)+1 undead AC, and the weapon-or-bite damage doctrine by intelligence. The transcripts ride extract/dragon/010/ (all 34 issue pages); the issue-10 gap report ships pre-flip with its two part boxes. PRINT FOLIO = PDF PAGE, verified at the printed 10, 19 and 21 footers.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon, and the Orgies Inc. experience-as-spent option - though it echoes the later training-cost doctrine - pins as a variant layer with provenance, never core canon. The print quirks ride AS SCANNED, noted, never silent: the Random Monsters speed table garbled (the '47' band), the special-characteristics grid without its d% axis, the damage grid's '=' artifacts, the size table's missing small cells and the limbs and exterior tables all ride the transcript whole, never guessed; the hit-dice AC table's row-12 reptile cell garbled - the band pins, the cell rides sentinel; the Clifton '46-600' band reads 46-60 by the print's own band arithmetic and the displaced Clear tail rows sit by contiguity; the Snits game and the Stellar Conquest diplomacy article scoped out as other systems. The editor's standing caution rides: none of this is official."
+ },
+ "switches": [],
+ "consts": [
+  {
+   "name": "dtnOrgyMaxGpPerLevel",
+   "value": 500,
+   "comment": "the orgy expenditure maximum, 500 GP per level per night (folio 5)"
+  },
+  {
+   "name": "dtnOrgyRecuperatingMaxGp",
+   "value": 250,
+   "comment": "the orgy maximum halved to 250 GP when recuperating and under 50% (folio 5)"
+  },
+  {
+   "name": "dtnResearchGpPerLevelDay",
+   "value": 250,
+   "comment": "the research expenditure rate, up to 250 GP per level per day for the MU or alchemist in his chambers (folio 5)"
+  },
+  {
+   "name": "dtnSacrificeFavorGpPerLevel",
+   "value": 100,
+   "comment": "the referee option - a sacrifice of at least 100 GP per level of the giver earns a wish or favor (folio 5)"
+  },
+  {
+   "name": "dtnSpecialistFiefDivisor",
+   "value": 10,
+   "comment": "the fiefholder specialist cost reduced by a factor of 10, excepting assassins and spies (folio 6)"
+  },
+  {
+   "name": "dtnFiefExampleXp",
+   "value": 3400,
+   "comment": "the fief income example - a level 10 lord with eight villages of 400 picks up 3400 experience points (folio 6)"
+  },
+  {
+   "name": "dtnFiefExampleNeed",
+   "value": 240000,
+   "comment": "the fief income example total needed for the next level, 240,000 (folio 6)"
+  },
+  {
+   "name": "dtnMillCostGp",
+   "value": 500,
+   "comment": "the fixed investment example - a water-powered mill costing 500 GP (folio 6)"
+  },
+  {
+   "name": "dtnMillAnnualMinGp",
+   "value": 100,
+   "comment": "the mill returns 100-600 GP annually per 100 people within a day march (folio 6)"
+  },
+  {
+   "name": "dtnMillAnnualMaxGp",
+   "value": 600,
+   "comment": "the mill annual return maximum (folio 6)"
+  },
+  {
+   "name": "dtnMillPeoplePer",
+   "value": 100,
+   "comment": "the mill return denominator - per 100 people within a day march (folio 6)"
+  },
+  {
+   "name": "dtnHouseMinEdgePct",
+   "value": 60,
+   "comment": "the gambling house rule - the odds at least 60-40 in favor of the House (folio 6)"
+  },
+  {
+   "name": "dtnPsionicGpPerPoint",
+   "value": 20,
+   "comment": "the appendix II psionic rule - each 20 GP spent on an orgy reduces psionic point level by one (folio 6)"
+  },
+  {
+   "name": "dtnPsionicGpPerAbilityRoll",
+   "value": 100,
+   "comment": "every 100 GP spent carries a 10% cumulative chance of eliminating one special ability (folio 6)"
+  },
+  {
+   "name": "dtnPsionicAbilityLossPct",
+   "value": 10,
+   "comment": "the cumulative special-ability loss chance per 100 GP (folio 6)"
+  },
+  {
+   "name": "dtnPsionicAbilityRegenPoints",
+   "value": 100,
+   "comment": "a special ability returns with each 100 psionic points regained, or all lost points regenerate, whichever is least (folio 6)"
+  },
+  {
+   "name": "dtnRiverAcrossFieldPct",
+   "value": 10,
+   "comment": "a river flowing through the hex has a 10% chance to flow across the field (folio 7)"
+  },
+  {
+   "name": "dtnRiverFordChancePct",
+   "value": 10,
+   "comment": "an additional 10% chance the river has a ford (folio 7)"
+  },
+  {
+   "name": "dtnSlopeTurnsToWaterPct",
+   "value": 75,
+   "comment": "a slope crossing a river or stream has a 75% chance to turn, face the watercourse and run parallel off the field (folio 7)"
+  },
+  {
+   "name": "dtnDenseWoodsSightingMinFt",
+   "value": 20,
+   "comment": "dense woods - normal sighting distance between 20 and 120 feet (folio 7)"
+  },
+  {
+   "name": "dtnDenseWoodsSightingMaxFt",
+   "value": 120,
+   "comment": "the dense woods sighting maximum in feet (folio 7)"
+  },
+  {
+   "name": "dtnLightWoodsSightingMinYds",
+   "value": 20,
+   "comment": "light woods - normal sighting distance between 20 and 100 yards (folio 7)"
+  },
+  {
+   "name": "dtnLightWoodsSightingMaxYds",
+   "value": 100,
+   "comment": "the light woods sighting maximum in yards (folio 7)"
+  },
+  {
+   "name": "dtnGentleGradeLevels",
+   "value": 1,
+   "comment": "the grade indicates height - a gentle slope is one level (folio 7)"
+  },
+  {
+   "name": "dtnSteepGradeLevels",
+   "value": 3,
+   "comment": "a steep slope is three levels (folio 7)"
+  },
+  {
+   "name": "dtnRiverRunDirections",
+   "value": 4,
+   "comment": "the initial run of rivers, streams and slopes - four courses, north-south, northeast-southwest, east-west, northwest-southeast (folio 7)"
+  },
+  {
+   "name": "dtnRMDungeonLevels",
+   "value": 20,
+   "comment": "the tables geared to a 20-level dungeon, each level populated by monsters of the same level (folio 9)"
+  },
+  {
+   "name": "dtnRMUndeadTurnDivisor",
+   "value": 2,
+   "comment": "undead are turned by clerics as if they were undead of level HD/2 - a 2HD undead saves as a zombie (folio 9)"
+  },
+  {
+   "name": "dtnRMVampireAtLevel",
+   "value": 17,
+   "comment": "undead of level 17+ are treated as vampires (folio 9)"
+  },
+  {
+   "name": "dtnRMUndeadACBonus",
+   "value": 1,
+   "comment": "the undead AC roll - (1-8) + 1 (folio 9)"
+  },
+  {
+   "name": "dtnRMHDBands",
+   "value": 4,
+   "comment": "the hit-dice modifier bands - four d6 bands (folio 9)"
+  },
+  {
+   "name": "dtnRMACBands",
+   "value": 6,
+   "comment": "the hit-dice AC bands - six d12 bands, the row-12 reptile cell garbled in the OCR and riding the transcript (folio 9)"
+  },
+  {
+   "name": "dtnRMLevelBands",
+   "value": 6,
+   "comment": "the level-offset bands - six d12 bands from die 1 at +3 to die 12 at -2 (folio 9)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dtnLawfulGoodEquivalence",
+   "value": true,
+   "comment": "the author's frame - in this article Lawful equals Good and Chaotic equals Evil (folio 5)"
+  },
+  {
+   "name": "dtnXpOnlyAsSpent",
+   "value": true,
+   "comment": "the core option - players receive experience only as the treasure is spent, not as it is gained (folio 5)"
+  },
+  {
+   "name": "dtnXpDivisorIsLevelCappedAtHD",
+   "value": true,
+   "comment": "the expenditure in GP is divided by the level of the character, the divisor limited to the hit dice allowed for the class (folio 5)"
+  },
+  {
+   "name": "dtnDivisorTreasureXpOnly",
+   "value": true,
+   "comment": "the divisor is used only for treasure experience - monster kills and miscellaneous awards are untouched (folio 5)"
+  },
+  {
+   "name": "dtnSacrificeWeeklyWindow",
+   "value": true,
+   "comment": "the sacrifice offering may be made once per week and within one week of acquisition, tithes counting; payment or bribe never counts (folio 5)"
+  },
+  {
+   "name": "dtnPhilanthropyLawfulOnly",
+   "value": true,
+   "comment": "the philanthropy class - lawfuls only, aid to the poor or any NPC not a hireling, a real need required, or the local lawful church (folio 5)"
+  },
+  {
+   "name": "dtnResearchMuAlchemistOnly",
+   "value": true,
+   "comment": "the research class - magic users and alchemists only, spell research counting, production not, never simultaneous (folio 5)"
+  },
+  {
+   "name": "dtnClanHoardsClannishOnly",
+   "value": true,
+   "comment": "the clan-hoard class - dwarves and clannish folk, members only, no withdrawals ever (folio 5)"
+  },
+  {
+   "name": "dtnOrgyClassesOnly",
+   "value": true,
+   "comment": "the orgy class - fighting men excluding rangers and paladins, bards, thieves and all chaotics excluding monks (folio 5)"
+  },
+  {
+   "name": "dtnOrgyConstitutionDays",
+   "value": true,
+   "comment": "a player may orgy as many days as he has constitution points, then must rest as many days as he orgied (folio 5)"
+  },
+  {
+   "name": "dtnHirelingXpHalved",
+   "value": true,
+   "comment": "hirelings may buy experience with their pay, halved for non-player characters (folio 5)"
+  },
+  {
+   "name": "dtnNoXpForUpkeep",
+   "value": true,
+   "comment": "general maintenance, upkeep, advertisement, salaries, equipment, luxuries and investments yield no experience, investment income may (folio 5)"
+  },
+  {
+   "name": "dtnFourFootSquareEncounter",
+   "value": true,
+   "comment": "the encounter field - a four foot square area with terrain determined to each corner section of four square feet (folio 7)"
+  },
+  {
+   "name": "dtnSwimmerForcesRiver",
+   "value": true,
+   "comment": "if an encounter with a swimmer is indicated the river is always on the field (folio 7)"
+  },
+  {
+   "name": "dtnRoadBridgesRiver",
+   "value": true,
+   "comment": "a party travelling on a road finds an appropriate bridge or ford at the river (folio 7)"
+  },
+  {
+   "name": "dtnDenseWoodsDoubleSurprise",
+   "value": true,
+   "comment": "if either side is located in dense woods, chances of surprise are doubled (folio 7)"
+  },
+  {
+   "name": "dtnClearHalveSurprise",
+   "value": true,
+   "comment": "if both are in featureless areas with clear lines of sight, chances of surprise are halved and sighting distance is always maximum (folio 7)"
+  },
+  {
+   "name": "dtnOppositeCorners",
+   "value": true,
+   "comment": "monsters and party are placed in opposite corner sections (folio 7)"
+  },
+  {
+   "name": "dtnLargerAreaFewerFeatures",
+   "value": true,
+   "comment": "mapping larger areas decreases the possibility of slopes and streams in proportion to the increase in area (folio 7)"
+  },
+  {
+   "name": "dtnRMIntelligentWeaponDamage",
+   "value": true,
+   "comment": "intelligent monsters do damage by weapon type, unintelligent by bite, semi-intelligent 50% chance of each (folio 10)"
+  }
+ ],
+ "chains": [
+  {
+   "name": "dtnClearFeature",
+   "limits": [
+    70,
+    77,
+    82,
+    84,
+    88,
+    93,
+    97
+   ],
+   "tail": 7,
+   "comment": "the clear terrain feature bands - featureless, hill, rough ground, marsh, slope, light woods, stream, pond (folio 7)"
+  },
+  {
+   "name": "dtnRoughFeature",
+   "limits": [
+    25,
+    45,
+    60,
+    70,
+    77,
+    85,
+    89,
+    91,
+    95
+   ],
+   "tail": 9,
+   "comment": "the rough terrain feature bands - featureless, hill, rough ground, slope, dense brush, light woods, dense woods, marsh, stream, pond, the 46-600 OCR band reading 46-60 by the print arithmetic (folio 7)"
+  },
+  {
+   "name": "dtnMountainFeature",
+   "limits": [
+    15,
+    55,
+    60,
+    70,
+    75,
+    87,
+    95
+   ],
+   "tail": 7,
+   "comment": "the mountainous terrain feature bands - featureless, slope, hill, rough ground, dense brush, light woods, dense woods, stream (folio 7)"
+  },
+  {
+   "name": "dtnWoodedFeature",
+   "limits": [
+    5,
+    40,
+    60,
+    65,
+    68,
+    75,
+    89,
+    91,
+    95
+   ],
+   "tail": 9,
+   "comment": "the wooded terrain feature bands - featureless, dense woods, light woods, dense brush, rough ground, slope, hill, marsh, stream, pond (folio 7)"
+  },
+  {
+   "name": "dtnMarshyFeature",
+   "limits": [
+    5,
+    25,
+    55,
+    65,
+    80,
+    85,
+    93,
+    98
+   ],
+   "tail": 8,
+   "comment": "the marshy terrain feature bands - featureless, marsh, pond, stream, dense brush, rough ground, dense woods, light woods, gentle hill (folio 7)"
+  },
+  {
+   "name": "dtnClearGrade",
+   "limits": [
+    60,
+    90,
+    98
+   ],
+   "tail": 3,
+   "comment": "the clear grade bands - gentle 1-60, average 61-90, steep 91-98, sheer 99-00 (folio 7)"
+  },
+  {
+   "name": "dtnRoughGrade",
+   "limits": [
+    35,
+    75,
+    95
+   ],
+   "tail": 3,
+   "comment": "the rough grade bands - gentle 1-35, average 36-75, steep 76-95, sheer 96-00 (folio 7)"
+  },
+  {
+   "name": "dtnMountainGrade",
+   "limits": [
+    5,
+    30,
+    85
+   ],
+   "tail": 3,
+   "comment": "the mountainous grade bands - gentle 1-5, average 6-30, steep 31-85, sheer 86-00 (folio 7)"
+  },
+  {
+   "name": "dtnWoodedGrade",
+   "limits": [
+    50,
+    85,
+    96
+   ],
+   "tail": 3,
+   "comment": "the wooded grade bands - gentle 1-50, average 51-85, steep 86-96, sheer 97-00 (folio 7)"
+  },
+  {
+   "name": "dtnClearExtra",
+   "limits": [
+    90,
+    95
+   ],
+   "tail": 2,
+   "comment": "the clear roll-again bands - no additional features 1-90, additional light woods 91-95, additional rough ground 96-00 (folio 7)"
+  },
+  {
+   "name": "dtnRoughExtra",
+   "limits": [
+    60,
+    75,
+    81,
+    94
+   ],
+   "tail": 4,
+   "comment": "the rough roll-again bands - none, rough ground, dense brush, light woods, dense woods (folio 7)"
+  },
+  {
+   "name": "dtnMountainExtra",
+   "limits": [
+    60,
+    70,
+    77,
+    91
+   ],
+   "tail": 4,
+   "comment": "the mountainous roll-again bands - none, rough ground, dense brush, light woods, dense woods (folio 7)"
+  },
+  {
+   "name": "dtnWoodedExtra",
+   "limits": [
+    15,
+    60,
+    90,
+    94
+   ],
+   "tail": 4,
+   "comment": "the wooded roll-again bands - none, dense woods, light woods, rough ground, dense brush (folio 7)"
+  },
+  {
+   "name": "dtnMarshyExtra",
+   "limits": [
+    5,
+    50,
+    70,
+    80,
+    93
+   ],
+   "tail": 5,
+   "comment": "the marshy roll-again bands - none, marsh (none if hill), dense brush, rough ground, dense woods, light woods (folio 7)"
+  },
+  {
+   "name": "dtnRiverCourse",
+   "limits": [
+    2,
+    4
+   ],
+   "tail": 2,
+   "comment": "the course of runs - 1-2 turns clockwise, 3-4 goes straight, 5-6 turns counterclockwise (folio 7)"
+  },
+  {
+   "name": "dtnSlopeFacing",
+   "limits": [
+    2
+   ],
+   "tail": 1,
+   "comment": "the facing of slopes - 1-2 faces the high ground, 3-6 faces away (folio 7)"
+  },
+  {
+   "name": "dtnRMTypeBand",
+   "limits": [
+    4,
+    7
+   ],
+   "tail": 2,
+   "comment": "the type band - 1-4 mammal, 5-7 reptile, 8 undead (folio 9)"
+  },
+  {
+   "name": "dtnRMIntelligenceBand",
+   "limits": [
+    3,
+    5
+   ],
+   "tail": 2,
+   "comment": "the intelligence band - 1-3 highly intelligent, 4-5 semi-intelligent, 6 unintelligent (folio 9)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "dtnRMHDModifier",
+   "tag": "Rh",
+   "count": "dtnRMHDBands",
+   "sentinel": -1,
+   "cols": [
+    "dtnRMHDMod"
+   ],
+   "col_comments": [
+    "the hit-dice modifier per d6 band - 1 at +2, 2-3 at +1, 4-5 at 0, 6 at -1 (folio 9)"
+   ],
+   "data": [
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     -1
+    ]
+   ],
+   "audit_comment": "the Ward hit-dice modifier bands, four d6 bands from +2 to -1 (folio 9)"
+  },
+  {
+   "name": "dtnRMAC",
+   "tag": "Ra",
+   "count": "dtnRMACBands",
+   "sentinel": -1,
+   "sentinel_census": [
+    0,
+    1
+   ],
+   "cols": [
+    "dtnRMACMammal",
+    "dtnRMACReptile"
+   ],
+   "col_comments": [
+    "the mammal AC per hit-dice d12 band - die 1 at AC 3 through die 12 at AC 8 (folio 9)",
+    "the reptile AC per band - die 1 at AC 2 through die 10-11 at AC 6, the die-12 cell garbled in the OCR and riding the transcript (folio 9)"
+   ],
+   "data": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     8,
+     -1
+    ]
+   ],
+   "audit_comment": "the Crabaugh hit-dice AC table - six d12 bands, mammal AC 3 to 8, reptile AC 2 to 6 with the row-12 reptile cell garbled, sentinel -1 (folio 9)"
+  },
+  {
+   "name": "dtnRMLevelOffset",
+   "tag": "Rl",
+   "count": "dtnRMLevelBands",
+   "sentinel": -1,
+   "cols": [
+    "dtnRMLevelOffset"
+   ],
+   "col_comments": [
+    "the level offset per hit-dice d12 band - die 1 at level +3, 2-3 at +2, 4-5 at +1, 6-9 at level, 10-11 at -1, 12 at -2, level meaning the dungeon level on this table only, non-positive results treated per the print (folio 9)"
+   ],
+   "data": [
+    [
+     3
+    ],
+    [
+     2
+    ],
+    [
+     1
+    ],
+    [
+     0
+    ],
+    [
+     -1
+    ],
+    [
+     -2
+    ]
+   ],
+   "audit_comment": "the level-offset column - six d12 bands from +3 at die 1 to -2 at die 12 (folio 9)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dtnOrgyMaxGpPerLevel']() != 500 or m['dtnResearchGpPerLevelDay']() != 250 or m['dtnSacrificeFavorGpPerLevel']() != 100 or m['dtnOrgyRecuperatingMaxGp']() != 250",
+   "note": "the expenditure rates - the orgy at 500 GP per level per night, 250 recuperating, the research at 250 GP per level per day, the sacrifice favor at 100 GP per level (folios 5-6)"
+  },
+  {
+   "expr": "m['dtnPsionicGpPerPoint']() != 20 or m['dtnPsionicGpPerAbilityRoll']() != 100 or m['dtnPsionicAbilityLossPct']() != 10 or m['dtnPsionicAbilityRegenPoints']() != 100",
+   "note": "the appendix II psionic rules - 20 GP per point, 100 GP per 10% ability-loss roll, an ability back per 100 points regained (folio 6)"
+  },
+  {
+   "expr": "m['dtnMillCostGp']() != 500 or m['dtnMillAnnualMinGp']() != 100 or m['dtnMillAnnualMaxGp']() != 600 or m['dtnHouseMinEdgePct']() != 60 or m['dtnSpecialistFiefDivisor']() != 10",
+   "note": "the fief economics - the 500-GP mill at 100-600 per 100 people, the 60-40 house edge, the specialist divisor of 10 (folio 6)"
+  },
+  {
+   "expr": "m['dtnRiverAcrossFieldPct']() != 10 or m['dtnRiverFordChancePct']() != 10 or m['dtnSlopeTurnsToWaterPct']() != 75 or m['dtnDenseWoodsSightingMaxFt']() != 120 or m['dtnLightWoodsSightingMaxYds']() != 100",
+   "note": "the river at 10% with the ford at 10% more, the 75% slope turn, the 20-120 foot dense-woods sighting and the 20-100 yard light-woods sighting (folio 7)"
+  },
+  {
+   "expr": "m['dtnClearFeature'](70) != 0 or m['dtnClearFeature'](71) != 1 or m['dtnRoughFeature'](60) != 2 or m['dtnMarshyFeature'](98) != 7 or m['dtnWoodedFeature'](40) != 1",
+   "note": "the terrain feature band boundaries - the clear 71-77 hill band, the rough 46-60 rough-ground band, the marshy 94-98 light-woods band, the wooded 6-40 dense-woods band (folio 7)"
+  },
+  {
+   "expr": "m['dtnClearGrade'](60) != 0 or m['dtnClearGrade'](61) != 1 or m['dtnMountainGrade'](5) != 0 or m['dtnMountainGrade'](86) != 3",
+   "note": "the grade bands - the clear gentle 1-60, the mountainous sheer 86-00 (folio 7)"
+  },
+  {
+   "expr": "m['dtnRMDungeonLevels']() != 20 or m['dtnRMUndeadTurnDivisor']() != 2 or m['dtnRMVampireAtLevel']() != 17 or m['dtnRMUndeadACBonus']() != 1",
+   "note": "the Random Monsters basis - the 20-level dungeon, the undead turning at HD/2, the vampire threshold at 17, the undead AC at (1-8)+1 (folios 9-10)"
+  },
+  {
+   "expr": "m['dtnRMTypeBand'](4) != 0 or m['dtnRMTypeBand'](5) != 1 or m['dtnRMTypeBand'](8) != 2 or m['dtnRMIntelligenceBand'](3) != 0 or m['dtnRMIntelligenceBand'](6) != 2",
+   "note": "the type band - mammal 1-4, reptile 5-7, undead 8 - and the intelligence band, highly 1-3 through unintelligent 6 (folio 9)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['dtnRMHDMod'](0) != 2 or m['dtnRMHDMod'](1) != 1 or m['dtnRMHDMod'](2) != 0 or m['dtnRMHDMod'](3) != -1",
+   "note": "the hit-dice modifier bands - +2 at 1, +1 at 2-3, 0 at 4-5, -1 at 6 (folio 9)"
+  },
+  {
+   "expr": "m['dtnRMACMammal'](0) != 3 or m['dtnRMACMammal'](5) != 8 or m['dtnRMACReptile'](4) != 6 or m['dtnRMACReptile'](5) != -1",
+   "note": "the hit-dice AC table - mammal AC 3 at die 1 to 8 at die 12, reptile AC 6 at die 10-11, the row-12 reptile cell riding sentinel (folio 9)"
+  },
+  {
+   "expr": "m['dtnRMLevelOffset'](0) != 3 or m['dtnRMLevelOffset'](3) != 0 or m['dtnRMLevelOffset'](5) != -2",
+   "note": "the level-offset column - +3 at die 1, level at 6-9, -2 at die 12 (folio 9)"
+  },
+  {
+   "expr": "m['dtnRMHDBands']() != 4 or m['dtnRMACBands']() != 6 or m['dtnRMLevelBands']() != 6",
+   "note": "the band census - four hit-dice modifier bands, six AC bands, six level-offset bands (folio 9)"
+  }
+ ],
+ "header_sections": {
+  "the Orgies Inc. article (folios 5-6)": [
+   {
+    "kind": "const",
+    "name": "dtnOrgyMaxGpPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dtnOrgyRecuperatingMaxGp"
+   },
+   {
+    "kind": "const",
+    "name": "dtnResearchGpPerLevelDay"
+   },
+   {
+    "kind": "const",
+    "name": "dtnSacrificeFavorGpPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dtnSpecialistFiefDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "dtnFiefExampleXp"
+   },
+   {
+    "kind": "const",
+    "name": "dtnFiefExampleNeed"
+   },
+   {
+    "kind": "const",
+    "name": "dtnMillCostGp"
+   },
+   {
+    "kind": "const",
+    "name": "dtnMillAnnualMinGp"
+   },
+   {
+    "kind": "const",
+    "name": "dtnMillAnnualMaxGp"
+   },
+   {
+    "kind": "const",
+    "name": "dtnMillPeoplePer"
+   },
+   {
+    "kind": "const",
+    "name": "dtnHouseMinEdgePct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnPsionicGpPerPoint"
+   },
+   {
+    "kind": "const",
+    "name": "dtnPsionicGpPerAbilityRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dtnPsionicAbilityLossPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnPsionicAbilityRegenPoints"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnLawfulGoodEquivalence"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnXpOnlyAsSpent"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnXpDivisorIsLevelCappedAtHD"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnDivisorTreasureXpOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnSacrificeWeeklyWindow"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnPhilanthropyLawfulOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnResearchMuAlchemistOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnClanHoardsClannishOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnOrgyClassesOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnOrgyConstitutionDays"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnHirelingXpHalved"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnNoXpForUpkeep"
+   }
+  ],
+  "the Clifton wilderness article (folio 7)": [
+   {
+    "kind": "const",
+    "name": "dtnRiverAcrossFieldPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnRiverFordChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnSlopeTurnsToWaterPct"
+   },
+   {
+    "kind": "const",
+    "name": "dtnDenseWoodsSightingMinFt"
+   },
+   {
+    "kind": "const",
+    "name": "dtnDenseWoodsSightingMaxFt"
+   },
+   {
+    "kind": "const",
+    "name": "dtnLightWoodsSightingMinYds"
+   },
+   {
+    "kind": "const",
+    "name": "dtnLightWoodsSightingMaxYds"
+   },
+   {
+    "kind": "const",
+    "name": "dtnGentleGradeLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dtnSteepGradeLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dtnRiverRunDirections"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnFourFootSquareEncounter"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnSwimmerForcesRiver"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnRoadBridgesRiver"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnDenseWoodsDoubleSurprise"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnClearHalveSurprise"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnOppositeCorners"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnLargerAreaFewerFeatures"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnClearFeature"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnRoughFeature"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnMountainFeature"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWoodedFeature"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnMarshyFeature"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnClearGrade"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnRoughGrade"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnMountainGrade"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWoodedGrade"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnClearExtra"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnRoughExtra"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnMountainExtra"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnWoodedExtra"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnMarshyExtra"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnRiverCourse"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnSlopeFacing"
+   }
+  ],
+  "the Random Monsters article (folios 9-10)": [
+   {
+    "kind": "const",
+    "name": "dtnRMDungeonLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dtnRMUndeadTurnDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "dtnRMVampireAtLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dtnRMUndeadACBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dtnRMHDBands"
+   },
+   {
+    "kind": "const",
+    "name": "dtnRMACBands"
+   },
+   {
+    "kind": "const",
+    "name": "dtnRMLevelBands"
+   },
+   {
+    "kind": "bool",
+    "name": "dtnRMIntelligentWeaponDamage"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnRMTypeBand"
+   },
+   {
+    "kind": "chain",
+    "name": "dtnRMIntelligenceBand"
+   },
+   {
+    "kind": "table",
+    "name": "dtnRMHDModifier"
+   },
+   {
+    "kind": "table",
+    "name": "dtnRMAC"
+   },
+   {
+    "kind": "table",
+    "name": "dtnRMLevelOffset"
+   }
+  ]
+ },
+ "file_patches": [],
+ "data_files": [
+  {
+   "path": "tools/dragon_gap_report_010.md",
+   "content": "# Dragon gap report - THE DRAGON, Vol. 2 No. 4 (October 1977)\n\nThe Dragon Magazine walk, issue #10. Primary ink:\nextract/dragon/010/pNNN_full.txt, NNN = page index; PRINT FOLIO =\nPDF PAGE (verified: the printed 10, 19 and 21 footers sit on the\nPDF pages 10, 19 and 21). The voice is the chat-side DjVu OCR\ntranscript of the archive.org scan (the issue-10 source lives in\nthe archive.org item accessory-dragon-magazine-012, which holds\nissues 7-14); the article CHAIN is the ink unit, not the folio.\n\nDoctrine (Curtiss, 2026-10-29): the pin IS the conversion -\nOD&D-era ink adjudicated to 1e terms, the conversion noted,\nnever silent; Dragon pins ride a VARIANT layer with provenance,\nnever core canon.\n\nAdjudication (Curtiss, 2026-10-29): the issue-10 ink is double\nthe issue-8 density and splits across two opener rounds. Part\none (R914), three chains: the D&D Option: ORGIES, INC. article\nby Jon Pickens (folios 5-6) as the treasure-sink variant layer -\nexperience only as treasure is spent, the expenditure divided by\nlevel capped at the class hit dice, the sacrifice, philanthropy,\nresearch, clan-hoard and orgy expenditure classes with the\nhireling halving, the fief and mill economics, the gambling\nhouse rules and the psionic appendix; the Designing For Unique\nWilderness Encounters article by Daniel Clifton (folio 7) as the\nbattlefield-terrain variant layer - the four-foot-square\nconvention, the river, slope and grade systems, the five terrain\nfeature bands with their grades and roll-again tables, the\nsighting and surprise doctrines; the Random Monsters article by\nP.M. Crabaugh (folios 9-10) as the monster-generation variant\nlayer - the type and intelligence bands, the hit-dice modifier\nand AC tables, the level-offset column, the undead turning\ndoctrine. Part two (the next round), three chains: the Let There\nBe A Method To Your Madness article by Richard Gilbert (folios\n11-13, the dungeon-design doctrine), the Weights & Measures,\nPhysical Appearance article by P.M. Crabaugh (folios 19-20, the\nSize and Build system with the height, weight, carrying-capacity\nand appearance tables), and the Gaining a New Experience Level\narticle by Tom Holsinger (folios 20-21, the level-ritual\nvariant); drop - the editorial (4), the GenCon X final report\n(6), the Snits game (15-18), the Stellar Conquest diplomacy\narticle (23-25), the poem and the comics (28-29), the\nconvention schedule (7), the Game Reviewers Wanted notice (21),\nthe ads (2-3, 8, 11, 14, 22, 26-27, 30-34) and the blank page\n(33).\n\n## Boxes\n\n- [ ] **The Orgies Inc. article, the Clifton wilderness\n  encounters article and the Random Monsters article**\n  (folios 5-6, 7, 9-10) - the issue-10 opener round, part one\n\n- [ ] **The Gilbert dungeon method article, the Weights &\n  Measures article and the Gaining a New Experience Level\n  article** (folios 11-13, 19-21) - the issue-10 opener round,\n  part two\n\n2 boxes, 0 closed, 2 open at the R914 authoring. A box never\nflips in the round that creates it: part one closes at the next\nround's flip, part two at the round after its own opener.\n\n## Scoped out of the engine\n\nThe editorial (4); the GenCon X final report (6); the Snits\ngame (15-18); the Stellar Conquest diplomacy article (23-25);\nthe poem and the comics (28-29); the convention schedule (7);\nthe Game Reviewers Wanted notice (21); the ads (2-3, 8, 11,\n14, 22, 26-27, 30-34); the blank page (33). The print quirks\nride the transcript, noted never silent: the Random Monsters\nspeed table's garbled band (\"47\"), the special-characteristics\ngrid having lost its d% axis in the OCR, the damage grid's\n\"=\" artifacts, the size table's missing small-column cells and\nthe limbs and exterior tables ride the transcript whole, never\nguessed; the Clifton Rough table's \"46-600\" band reads 46-60 by\nthe print's own band arithmetic (61-70 follows) and the\ndisplaced Clear tail rows (89-93, 94-97, 98-00) sit by the same\ncontiguity; the Orgies appendix II regeneration example rides\nprose.\n"
+  },
+  {
+   "path": "extract/dragon/010/p001_full.txt",
+   "content": "\n"
+  },
+  {
+   "path": "extract/dragon/010/p002_full.txt",
+   "content": "JANUARY 7-8, 1978\nIN my, Se\nMY, SM 2\nLAKE GENEVA, WISCONSIN lings &\nff\nWis yf\nAT THE AMERICAN LEGION HALL f :\n735 HENRY STREET I Qe\u2019\n8:00 A.M. - 12:00 P.M. Saturday a 2 \\\n8:00 A.M. - 6:00 P.M. Sunday eo Se\niy Wh zz),\n|\nA non-commercial gaming get-together!\nPLANNED EVENTS:\nWE HAVE D & D, MA, AND EPT GAMES ALL SET. A\nMAH JONGG TOURNEY TOO! BUT... WE NEED\nYOUR HELP! CONTACT MARY GYGAX RIGHT AWAY\nIF YOU WOULD ENJOY JUDGING A GAME OR\nTOURNAMENT. THANKS!\nPre-registration will be taken; $3.00 for both days. At-the-door registrations will cost $2.00 each\nday - $4.00 total for both days. So pre-register!! Please !!\nGames will not be pre-registered. Due to the flexibility of the events planned a pre-convention\nschedule wil! not be printed. A schedule of events will be posted at the door. For further informatian\ncontact:\nTSR Hobbies, Inc.\nP.O.B. 756,\nLake Geneva, W1 53147\nPhone 414-248-3625\n"
+  },
+  {
+   "path": "extract/dragon/010/p003_full.txt",
+   "content": "ELRIC\nAt last, the world famous epic of\nElric of Melnibon\u00e9 is available as a\nboardgame for the enjoyment of both gamers\nand fantasy fans. ELRIC is based upon the\ncreations of world reknowned Michael Moor-\ncock, who has authorized and endorsed this\ngame. Unique systems of area movement,\nleadership capabilities, magic, and\nally-mustering combine with the Chaos-\nlum artistry to create a fast mov-\ning and colorful game. A427)\nGame includes a dazzling full color eee.\nmap of the Young Kingdoms, two sets EOS\nof playing pieces, a beautifully\nillustrated deck of magic AX\ncards, eight sheets of indi- \\\nvidually drawn Battalia \"\nsheets, and a illustrated ,\nrulebook with scenarios for\ntwo or more players. Avail-\nable for $12.50 from:\nTHE CHAOSIUM\nPO BOX 6302\nALBANY, CA 94706\nCalifornia residents must add\nappropriate 6 or 6%4 sales tax. ~~ \u00a2psl\u201d\nPostpaid in the US and Canada.\nAllow 4-6 weeks for delivery.\nALL THE\nWORLDS\u2019 MONSTERS\nAn illustrated guide to OVER 350 MONSTERS! This contains all speci-\nfics necessary to adapt them to almost any role-playing game. This\nbook comes on loose-leaf pages for easy insertion into your DM note-\nbooks, and to facilitate the addition of the supplements planned for\nfuture release. Monsters are listed alphabetically, and also indexed\nby Dungeon Level and by Type. Also included: a random Monster Creation\nTable. Artwork is provided by five artists, including a superb cover\nby professional George Barr.\n,a*\nA\nTHE CHAGSTIUM\nEdited by P.O,.Box 6302\nSteve Perrin $ 7.95 Albany, CAL.\nand Jeff Pimper 94706\n"
+  },
+  {
+   "path": "extract/dragon/010/p004_full.txt",
+   "content": "The Dragon\nVol. 2 No. 4\nQue 7?\nGenCon X is history now, and we around here are still recuperating. Elsewhere in this issue, you can find a more detailed analysis of the\nfour record-setting days we just had. GenCon X was the biggest wargame convention that has EVER been held, by anyone, anywhere.\nThis issue contains 36 pages, which is up four from the old size. The extra four this issue were used for the SNITS board.\nThis issue is different from those preceding it in a couple of rather significant respects. Look on this page at the TOC, and you will see a\nnew sense and system of organization evidenced by the new listings. This comes partially as a result of the problem we\u2019 ve had to deal with in\nThe Dragon Vol. II No. 4\nTable Of Contents\nFeatures\nGen on X- RO POLO eatin: sia a sess cus wie sha ae ds peta: aie 6\nSnit Smashing \u2014 a weird game.............. 16\nThe Diplomatic Stellar Conquest Player .......... 23\nFinal Exam \u2014 Wargame Design 202 \u2014\nyou think this job is easy, \u20acN?.......ccccceeeee 25\nFantasy Forge \u2014 phigure photos............. 26-21\nD&D \u2014 Variations on the theme\nOrgies, Inc. \u2014 burning up excess loot............. 5\nRandom Monsters \u2014\ndefeating the encyclopedic PCs............006. 9\nWeights, Measures, Physical Appearance, etc. ..... 19\nGaining a New Experience Level ............+6- . 20\nDesign/Designer\u2019s Forum\nUnique Wilderness Encounters ..........-+-.2005 wh\nRational Dungeon Design ............222+-+6. a 8 |\nDragonmirth\nWestfinster Wargamers .......---eeeeeeeeccees 8\nFloating in Timeless Space ............-22eeeeee 15\nWOE 33905 \u00abbein Ges Pe aay eh G Gwe .. 28\noe ere ere ee ee ee ae29\nregard to what is \u2018official\u2019 and what isn\u2019t. Variants are now marked as\nsuch. When a designer talks about his game, you\u2019ll find it under DE-\nSIGNER\u2019S FORUM. Pieces pertaining to game structure that are not\nat variance with existing rules will be found under DESIGN FORUM.\nThe GOOD NEWS is that this issue came to you by Second Class\nmail, as did the last. Our permits have finally been approved, which\nshould mean that your issues should start arriving in about 1/3 the time\nit used to take and around the same time that dealers copies get to the\nshelves. Subscription hassles over the next two months should signifi-\ncantly decrease, freeing us to utilize our time to much better result. Per-\nhaps we will be able to stay more current with our mail, which is still\nbacked up in mountainous heaps.\nThe inclusion of SNIT SMASHING should not mislead anyone.\nThis does not mean that TD is going to become a board magazine, nor\ndoes it mean that we will publish games on a regular basis. In fact, after\nSNITS we have one more fantasy/satire game that we hope to include\nin the next issue. After that, the only similar project we have on hand is\nDIRT, which seems playable at the present by only the Editor and\nAssoc. Ed.\nSee you next issue, along with Fafhrd and the Mouser . . .\nalta\nTimothy J Kask\nEditor\nEditor Timothy J. Kask\nAssoc. Ed. Gary Jaquet\nStaff Artists Dave Sutherland\nTom Wham\nDave Trampier\nCover by John Sullivan\nIf your mailing label says TD 10 \u2014 this is your last issue\nPublisher\u2019s Statement\nTHE DRAGON is published by TSR Periodicals, a division of TSR Hobbies, Inc., P.O. Box 756, Lake Geneva, WI 53147\nIt is available at better hobby shops and bookstores, or by subscription. Subscription rate is $9.00 per 6 issues. Single copy and back issue price is $1.50, but availability of back issues is not guaranteed. Sub-\nscriptions outside the U.S. and Canada are $20.00, and are air-mailed overseas. (Payment must be made in U.S. currency or by international money order.) All material published herein becomes the exclusive\nproperty of the publisher unless special arrangements to the contrary are made. Subscription expiration is coded onto the mailing list. The number to the right of the name, prefixed by \u201cLW\u201d or \u201cTD\u201d is the last\nissue of the subscription. Notices will not be sent.\nChange of address must be filed 30 days prior to mailing date.\nUnsolicited material cannot be returned unless accompanied by a stamped return envelope, and no responsibility for such material can be assumed by the publisher in any event. All rights on the entire con-\ntents of this publication are reserved, and nothing may be reprinted in whole or in part without written permission of the publisher. Copyright 1977 by TSR HOBBIES, INC.\nApplication to mail as second-class postage rates is pending at Lake Geneva, WI 53147 and additional entry points.\n4\n"
+  },
+  {
+   "path": "extract/dragon/010/p005_full.txt",
+   "content": "October, 1977\nHAD Variant\nToo much loot in your campaign?\nD&D OPTION: ORGIES, INC.\nby Jon Pickens\n(Author\u2019s Note: To avoid confusion later, in this article Lawful equals\nGood and Chaotic equals Evil and you can make your own extrapola-\ntions from there.)\nThis article suggests one answer to a vexing problem that appeared\nin local play: too much treasure in the scenario. After the players\namassed a few thousand GP equipment costs became irrelevant, though\nthe players had nowhere near enough money for luxuries like private\ntowers or galleys. But there was far too much cash for the players to\nsimply leave in their rooms at the local inn. This couldn\u2019t be right;\nFafhrd and the Grey Mouser never had it so good! And the poor har-\nried ref had to continually devise sneaky ways to divest his players of\ntheir ill-gotten gains.\nThe best solution would have been a simple method for removing\nlarge quantities of treasure from the game; releasing the referee to\nspend more time developing and managing the scenario. The solution is\nsimple:\n\u201cInstead of receiving experience for gaining\ntreasure, players would receive experience\nonly as the treasure is spent.\u201d\nThe expenditure in GP is divided by the level of the character to\ndetermine experience. The divisor is limited to the number of hit dice\nallowed for the character class. The divisor is used only for experience\nfrom treasure and has nothing to do with experience for monster kills\nor miscellaneous experience awarded by the referee.\nOnly special expenditures reflecting the characteristics of a charac-\nter class count toward experience (see partial list below). Funds spent\nfor general maintenance, upkeep, advertisement, hireling salaries, and\nequipment yield NO experience. Neither do luxuries (fine accommoda-\ntions, castles, etc.) or investments, though income from the latter may\nbe used to increase experience. Hirelings may use their pay to gain ex-\nperience, but such experience is halved for non-player characters.\nAmong expenditures used to increase experience are the following:\n1) Sacrifices. AN Classes. This is treasure offered directly to a god\nor demon, or to his representatives. The offering may be made once per\nweek, and must be made within one week after the treasure has been ac-\nquired (though special dispensation for long wilderness journeys should\nbe granted). The offering may not be a payment for services rendered\nor a bribe, though it may have been the object of a Geas or Quest.\nTithes count as sacrifices also. Referee Option: If the sacrifice was at\nleast 100 GP per level of the giver, the recipient will grant a wish or fav-\nThe Dragon\n2) Philanthropy. Lawfuls only. This includes aid to the downtrod-\nden poor or to any non-player character not a hireling of a player char-\nacter. A real need must exist and as above, the treasure may not be giv-\nen in payment or as a bribe. If no visible need exists, the treasure may\nbe given to a local Lawful church or temple for distribution. Referee\nOption: Reaction roll for favor if substantial aid has been rendered.\n3) Research. Magic Users and Alchemists. Up to 250 GP per level\nper day may be expended on \u201cgeneral research\u201d each day the MU/AI-\nchemist spends in his chambers. Treasure spent for spell research as in\nBook I also counts. Expenditures for the production of magical items,\npotions, or poisons do not count toward experience. Production and re-\nsearch may not be carried on simultaneously.\n4) Clan Hoards. Dwarves and other Clannish Folk (probably Neu-\ntrals). Experience is given to clan members only for contributions to the\npublic hoard. Such a hoard is heavily guarded, and under no circum-\nstances is a private individual allowed to make a withdrawal (the trea-\nsure is, in effect, out of the campaign). A player desiring to contribute\nto his clan hoard must journey to the hoard or to its keepers, of course.\n5) Orgies. Fighting Men (excluding Rangers and Paladins), Bards,\nThieves, and all Chaotics (excluding Monks). Lusty indulgence in wine,\nwomen, and song. Maximum expenditure is 500 GP per level per night\n(250 GP if recuperating and under 50%). A player may orgy con-\ntinuously as many days as he has constitution points, but then must rest\nfor as many days as he orgied. (For effects on Psionic Powers, see Ap-\npendix II.)\nMany referees will be able to come up with similar ideas for expen-\nditures. Potential problems with this system are minor. Unearned trea-\nsure giving \u201cfreebie\u201d levels is not really a factor due to the divisor,\nsince a Level 10 Lord with eight villages of 400 people each (the maxi-\nmum holding) will only pick up 3400 experience points out of 240,000\nhe needs for the next level; this is provided he only spends his income\nfor experience.\nAs a matter of fact, I like to beef up fief income by reducing the\ncost of speialists by a factor of 10 for fiefholders (with the exception of\nAssassins and Spies). This brings their pay more into line with the\naverage man-at-arms. I also allow fixed investments along the follow-\nings lines: A water-powered mill costing 500 GP might return 100-600\nGP annually per 100 people within a day\u2019s march of the mill. (A list of\nsimilar investments can easily be drawn up.)\nIncome from gambling should not be a factor either. See Appendix\nI for some general guidelines and ideas. However, a factor that may\ncause trouble is the increased importance of monster kills. At the high-\nest levels, fighters may tend to do better and thieves may tend to do\nworse than currently. Some fine adjustments may be needed, but these\nare left up to the individual referee.\nThe advantages of the system are substantial. It not only achieves\nrapid and easy elimination of large quantities of treasure from the cam-\nPee) ee a\n-\nal\nTe\nWi\n"
+  },
+  {
+   "path": "extract/dragon/010/p006_full.txt",
+   "content": "The Dragon\npaign, it leaves the player the choice of whether to buy that much-de-\nsired item or whether to get a little closer to that next level. In addition,\nit gives the players some existence outside the dungeon or wilderness\nareas. Compare the option with the alternatives.\nEstablish a Bank. While this gets rid of the irregularity of inn\nrooms piled with gold, it doesn\u2019t really solve the problem of too much\nmoney in the campaign. Besides, it gives the players 100% security, and\nwe don\u2019t want that, do we?\nThe Robber Band. Forcing players to hand over their hard-won\ntreasure at sword\u2019s point is easy, but leads to low mutterings among the\nnatives and a positively Chaotic dropout rate. It is just too heavy hand-\ned to be much fun.\nPay As You Go. Every request for information or a service is ac-\ncompanied by a liberal \u201cdonation\u201d and the Wheel of Fate must fre-\nquently be greased with gold. It\u2019s better, but it takes a while to wipe out\na fortune of several thousand a few hundred at a time. All the book-\nwork tends to turn the players into a bunch of calculating money grub-\nbers.\nDevious Means. Bilking and fleecing operations are fun on occa-\nsion, but many are a strain on the stamina of the referee. He must fi-\ngure out new and unique methods of getting the treasure back after he\nhas spent hours figuring out new and unique methods to hide it and de-\nveloping new and unique monsters and traps to guard it. Also, frequent\ntrickery tends to reinforce an adversary relationship between the play-\ners and the referee, not healthy if the ref wants total control over his\nscenario too.\nIn conclusion, it seems reasonable that the most efficient way to\nget treasure out of the campaign is to make the players want to give it\nup. The foregoing option does this in a way that is both stimulating and\nfun. I hope you all enjoy it.\nAPPENDIX I: GAMBLING\nAlthough any agreeable system can be used to resolve gambling sit-\nuations, the referee should make sure the odds are at least 60-40 in fav-\nor of the House. En Garde has an excellent system that may be adapted\nto D&D by halving the winnings (allowing full winnings with this sys-\ntem makes gambling too important as a source of experience).\nRegardless of the system used, the following controls may be used\nto prevent things from getting out of hand:\n1) Limit the amount of treasure in a single wager.\n2) Limit the number of bets allowed per week.\n3) Require gambling with tokens that cannot be converted back\ninto cash (or can be at reduced value), but may be exchange for equip-\nment or magical items, or kept on account.\n4) Charge heavy progressive taxes on winnings.\n5) Arrange occasional raids by the authorities or rivals.\n6) Establish a secret \u201chouse limit\u201d that when exceeded will cause\nthe House to send out high level Thieves/Assassins after the lucky win-\nner (!) to recoup their losses.\nVol. 2 No. 4\nGENCON X, 18-21 AUGUST 1977\nFINAL REPORT\nWe are very happy to state that this year\u2019s Tenth Annual Conven-\ntion was the most successful ever! Total attendance for the four days\nwas in excess of 6,000 with 2,300 paid conventioneers, and over 2,600\ndifferent people.\nThere were almost 140 persons at the Third Annual Strategists\nClub Awards Banquet to see the following awards presented: Best\nGame, KINGMAKER, Avalon Hill Company; Best Game Design,\nRichard Berg, TERRIBLE SWIFT SWORD, Simulations Publications\nInc.; Best Miniature Figures Release, WIZARDS & WARRIORS,\nGrenadier; Best Professional Gaming Magazine, THE DRAGON, TSR\nPublications; elections to the Fantasy Authors Gaming Hall of Fame;\na Lewis (posthumous), Fritz Leiber, Andre Norton, and Roger\nelazny.\nThere were 62 scheduled games and tournaments with over $750 in\ngift certificates and 11 trophies awarded to contestants. There were also\n18 seminars and other events, making a total of 80 scheduled events.\nThere were 24 exhibitors, most of whom indicated that GenCon X\nwas the most financially successful convention they had ever attended.\nSeveral stated that they had double the sales they had made at previous\nmajor conventions earlier this year, and one reported that business this\nyear was 250% of that done last year at GenCon.\nThe special \u201cDealers Only Day\u201d was an unqualified success. Ad-\nvance advertising and publicity brought scores of etl and book deal-\ners, along with several important wholesale buyers to the exhibit hall to\nview the new items being featured by GenCon exhibitors, discuss which\nwere selling best and how best to display games and figures for maxi-\nmum sales, and place orders. All parties concerned agreed that the new\narrangement was most beneficial and should remain an integral part of\nthe convention.\nMedia coverage included pre-convention stories in a trade maga-\nzine and several Milwaukee and Chicago newspapers, as well as news-\npaper features in smaller local journals, and on site coverage by TV,\nradio, trade and hobby magazines, newspaper reporters, and two inde-\npendent writers. We sincerely thank the news media for their interest in\nthe fastest-growing and most unusual hobby, gaming!\nNext year the convention will be held at the Parkside Campus of\nthe University of Wisconsin, located near Racine-Kenosha, on I 94 be-\ntween Milwaukee and Chicago. Arrangements for GenCon XI are well\nunderway, and we forecast an even larger turnout and greater exhibitor\nand dealer participation. Facilities at Parkside are such as to guarantee\na still better convention in 1978. We hope to see you there next August.\nPaid for by GenCon X\nAPPENDIX II:\nEFFECTS OF AN ORGY ON PSIONIC POWERS\nEach 20 GP spent on an orgy will reduce psionic point level by one.\nEvery 100 GP spent will have a 10% cumulative change of elim-\ninating one special ability secretly determined by the referee. The\npsionic points are regenerated normally, while a special ability is\nreturned with each 100 psionic points regained (or all lost points are re-\ngenerated, whichever is least).\nEXAMPLE: A 4th Level could spend 2000 GP in one day, gaining\n500 experience points and losing 100 psi points and two special abilities.\nFor convenience, start regeneration the next day at 6:00 AM. Assuming\nonly one day was spent orgying, the character must spend the next day\nresting quietly. With a regeneration rate of 12/hour, the character will\nbe completely recovered psionically in just under nine hours, though his\nhangover won\u2019t disappear completely until the next morning.\n"
+  },
+  {
+   "path": "extract/dragon/010/p007_full.txt",
+   "content": "October, 1977\nDesign Forum\nThe Dragon\nDesigning For Unique Wilderness Encounters\nby Daniel Clifton\nBy use of the following tables, a dungeon master may quickly de-\ntermine the terrain in which any encounter occurs according to the type\nof hex the party is travelling through. The tables may also be used to\ncreate maps of the area surrounding special sights such as castles, cities,\nand dungeons. Additionally, the tables are ideal for resolving the shape\nof battlefields for D + D as well as any other wargame.\nFor encounters, consider a four foot square area and determine\nterrain to each corner section of four square feet. If a river flows\nthrough the hex in question, then allow a 10% chance that it will flow\nacross the field with an additional 10% chance that it will have a ford\n(if an encounter with a swimmer is indicated, then the river will always\nbe on the field; and if the party is travelling upon a road, then an ap-\npropriate bridge or ford will be located at the river.) To determine the\ncourse of the river, first randomly locate it in one of the areas, find the\ninitial direction of flow in chart 6-A, and then plot its course according\nto chart 6-B from one four-square-foot area to the next until both ends\nare plotted off the field. Roll on the appropriate chart for each area,\nplotting the flow of streams as with rivers immediately upon rolling the\nproper number. Next, find the grade of slopes and hills by rolling on\nthe matching \u2018A\u2019 chart (grade also indicates height, ie. gentle = one lev-\nel, steep = three levels, etc.). Finally, the run of slopes is determined as\nwith rivers using table 6-C to find the facing of the slopes if it can be de-\ncided that some sort of high ground such as a mountain peak exists off\nthe field. Chart 6-C is also used when one slope is indicated to cross an-\nother that has already been plotted in which case the new slope will turn\nto run parallel to the original one, either facing in the same direction\n(slope faces away from high ground) or the opposite direction (slope\nfaces high ground). If a slope is indicated to cross a river or a stream,\nthere is a 75% chance that it will turn to face the watercourse and run\nparallel to it off the field. Once the general features are determined, the\ndungeon master may blend them together at his discretion, shrinking or\nenlarging any features to fit the area.\nMonsters and party will be placed in opposite corner sections. If ei-\nther is located in dense woods, double chances of surprise and find nor-\nmal sighting distance between 20 and 120 feet. If either is located in\nlight woods, find normal sighting distance between 20 and 100 yards. If\nboth monsters and party are located in featureless areas with clear lines\nof sight, halve chances of surprise and normal sighting distance will al-\nways be at a maximum.\nIf this method is used to map larger areas, decrease the possibility\nof slopes and streams in proportion to the increase in area.\nTable #1 \u2014 Clear Table #2 \u2014 Rough\nDie Feature Die Feature\n1-70 Featureless 1-25 Featureless\n71-77 Hill* 26-45 \u2014 Hill*\n78-82 Rough Ground 46-600 Rough Ground\n83-84 Marsh 61-70 \u2014Slope*\n85-88 Slope* 71-77. Dense Brush\nTable #3 \u2014 Mountainous\nDie Feature\n1-15 Featureless\n16-55 Slope*\n56-60 Hill *\n61-70 Rough Ground\n71-75 Dense Brush\n76-87 Light Woods\n88-95 | Dense Woods\n96-00 Stream*\nTable #3A \u2014 Grades\nDie Grade\n1-5 Gentle\n6-30 Average\n31-85 Steep\n86-00 Sheer\n*Roll Again:\nAdditional\nDie Feature\n1-60 None\n61-70 Rough Ground\n71-77. Dense Brush\n78-91 Light Woods\n92-00 Dense Woods\nTable #4 \u2014 Wooded\nDie Feature\n1-5 Featureless\n6-40 Dense Woods\n41-60 Light Woods\n61-65 Dense Brush\n66-68 Rough Ground\n69-75 Slope*\n76-89 \u2014 Hill*\n90-91 Marsh\n92-95 Stream*\n96-00 Pond*\nTable #4A \u2014 Grades\nDie Grade\n1-50 Gentle\n51-85 Average\n86-96 Steep\n97-00 Sheer\n*Roll Again:\nAdditional\nDie Feature\n1-15 None\n16-60 Dense Woods\n61-90 Light Woods\n91-94 Rough Ground\n95-00 Dense Brush\nTable #5 \u2014 Marshy\nDie Feature\n1-5 Featureless\n6-25 Marsh\n26-55 Pond*\n56-65 Stream*\n66-80 Dense Brush\n81-85 Rough Ground\n86-93 Dense Woods\n94-98 Light Woods\n99-00 Gentle Hill*\n*Roll Again;\nAdditional\nDie Feature\n1-5 None\n6-50 Marsh\n(None if Hill)\n51-70 Dense Brush\n71-80 Rough Ground\n81-93 Dense Woods\n94-00 Light Woods\nTable #6A \u2014 Initial Run\nof Rivers, Streams,\nand Slopes\nDie Course\n1 North - South\n2 Northeast - Southwest\n3 East - West\n4 Northwest - Southeast\nTable #6B \u2014 Course of Runs\nDie Course\n1-2 Course turns clockwise\n3-4 Course goes straight\n5-6 Course turns counterclockwise\nTable #6C \u2014 Facing of Slopes\nDie Facing\n1-2 Slope faces high ground\n3-6 Slope faces away from high ground\n89-93 Light Woods\n94-97 Stream*\n98-00 Pond*\nTable #1A \u2014 Grades\nDie Grade\n1-60 Gentle\n61-90 Average\n91-98 Steep\n99-00 Sheer\n*Roll Again:\nDie Feature\n1-90 No Additional\nFeatures\n91-95 Additional\nLight Woods\n96-00 Additional\nRough Ground\n78-85 Light Woods\n86-89 | Dense Woods\n90-91 Marsh\n92-95 Stream*\n96-00 Pond*\nTable #2A \u2014 Grades\nDie Grade\n1-35 Gentle\n36-75 Average\n76-95 Steep\n96-00 Sheer\n*Roll Again:\nAdditional\nDie Feature\n1-60 None\n61-75 Rough Ground\n76-81 Dense Brush\n82-94 Light Woods\n95-00 Dense Woods\nConvention Schedule 77-78\nGreat Lakes Convention \u2014 Sheraton-Lockport Inn, 515 South Transit Street,\nLockport, New York 14094, September 17-18. Tentative schedule of events \u00ab\nOpening ceremonies by local re-enactment group \u00ab Boardgaming competition \u00ab\nMiniature competition \u00ab Seminars & slide show presentation \u00ab Modeling contest\n\u00ab Awards banquet. For more info: Richard J. D\u2019Angelo, 395 South Shore Blvd.,\nLackawanna, New York 14218.\nThe Return of ORCCON \u2014 Jan. 13-15, \u201878, Cal. State Univ., Fullerton. D&D,\nminiatures & boardgames. $2 for pre-registration, $3 at door. For more info,\nwrite James J. Meyers, 13718 Norbeck Dr., La Mirada, CA 90638\nWarCon IV \u2014 Jan. 27-29, \u201878. Texas A&M Univ. No details available. Contact\nJerry Ruhland, 6303 Reiger, Dallas, TX 75214.\nGenCon South \u2014 Feb. 9, 10 & 11, 1978, Robert Meyer Hotel, Jacksonville, FL.\nEndorsed by TSR. Contact: Cowford Dragoons, 5333-Santa Monica Blvd., N.\nJacksonville, FL 32207\n"
+  },
+  {
+   "path": "extract/dragon/010/p008_full.txt",
+   "content": "The Dragon Vol. 2 No. 4\nDUNGEONS & DRAGONS\n2D mm Fautadrsy Figures\n\u2018sid JINVSSIVNIG- UVM SHV3A OOL-JINJONIdIONI JO YVM NVOIUIANY- YM TIAID NVI,\nMINIFIGS is proud to announce the release of its brand new range of figures - THE ONLY\nOFFICIAL DUNGEONS & DRAGONS FANTASY FIGURES! All of these beautifully\nsculpted figures are just the way the creators of D&D want them to look. Our designers\nworked directly from artwork supplied by TSR Hobbies, Inc., and we hope you enjoy . . .\nSet #1 -5 DIFFERENT DWARVES $2.09\nSet #2 -5 DIFFERENT DWARVES $2.09\nSet #3 - 4 DWARF COMMAND $2.09\nSet #4-5 HIGH ELVES $2.09\nSet #5 -5 WOOD ELVES $2.09\nSet #6 - 4 ELF COMMAND $2.09\nSet #7 - 5 DIFFERENT GOBLINS $2.09\nSet #8 -5 HOBGOBLINS with POLEARMS $2.09\nSet #9 - 5 DIFFERENT HOBGOBLINS $2.29\nSet #10 - 4 HOBGOBLIN COMMAND $2.29\nSet #11 -5 ORCS with POLEARMS $2.29\nSet #12-5 DIFFERENT ORCS $2.29\nSet #13 - 4 ORC COMMAND $2.29\nSet #14 - 4 DIFFERENT GNOLLS $2.29\nSet #15 - 4 DIFFERENT GNOLLS $2.29\nSet #16 - 10 KOBOLDS $2.49\nSet #17 - 10 GNOMES $2.49\nSet #18 - 10 HOBBITS $2.49\nAND WATCH FOR THE MANY NEW SETS TO COME!\nDUNGEONS & DRAGONS 25... Pautasy Figures\nAvailable at better hobby shops and book stores everywhere or direct from:\nminiature\nfidurires Ita\nBOX P, PINE PLAINS, N.Y. 12567 Send SASE for a\nPLANT & OFFICES \u2014E. CHURCH ST. complete listing\nSATISFACTION\nGUARANTEED!\nUVM SUVIA \u00a3- NOIL9IY JINIIIS - HWM TIAI HSIT9NG - SHYM SINNd 3 NVINOOI9VW\nARMIES & ENEMIES OF IMPERIAL ROME - INDIAN PLAINS WARS - ALEXANDER NEVSKI - My\n; DEALER INQUIRIES INVITED!\n4% Please use your business letterhead when contacting us.\nS\n=\n\u201c=\ny wy\nJH 40 SHVM ; UVM SUV3A OE: SJIWUY SINOITOdYN - COIMId NYIUNGTVIN - HHS Ww \u2018\n8\n"
+  },
+  {
+   "path": "extract/dragon/010/p009_full.txt",
+   "content": "October, 1977\nThe Dragon\nRANDOM MONSTERS\nby Paul Montgomery Crabaugh\nNo, I don\u2019t mean wandering monsters \u2014 I mean random mon-\nsters.\nOne of the problems with D&D is that the players always know too\nmuch. This is news? \u201cYou obtain surprise over three Clickclicks.\u201d\n\u201cClickclicks? Oh, yeah, they\u2019re in Supplement Three. Hand it to\nme. And where\u2019s Greyhawk? It had a note about them.\u201d A pause. \u201cWe\nshout out \u2018November\u2019.\u201d\n\u201cThat\u2019s right, the Clickclicks fall over dead.\u201d\nSound familiar?\nThe answer is to occasionally throw a monster at the party that\nkeeps them on their toes, one that they have never seen before because\nit is unique. No rules cover it, so they have to find out the hard way\nwhat it\u2019s like.\nAnd how do you do that? By taking the following tables and rolling\ndice. Just work your way through the tables one by one, and you will\nend up with a guaranteed original, unknown, random monster.\nThis table is suited for the local group\u2019s dungeons, and I should\nwarn you that we around here fall somewhere between Lake Geneva\nand CalTech in philosophy. These tables are therefore geared to a 20-\nlevel dungeon, with each level being typically populated by monsters of\nthe same level. (Goblins on first level, Gnolls on second, and so forth.)\nObviously, if you are running a five-level dungeon and the first mon-\nster your parties find is a very old Green Dragon, you\u2019ll have to com-\npress the tables somewhat. If you\u2019re running a 60-level dungeon \u2014 I\ndon\u2019t want to know about it.\nNow that that\u2019s over, here come the tables. Just take them in or-\nder.\nINTELLIGENCE ALIGNMENT\nDie Intelligence Die Alignment\n1-3. Highly intelligent | Law Undead are\n45 Semi-intelligent 2-3. Neutrality always Chaotic.\n6 Unintelligent 4-8 Chaos\nSPEED\nTYPE Die Speed\nDie Type 1-3 6\n1-4 Mammal 47 9\n5-7 Reptile 8-10 12\n8 Undead 11-12 15\nHIT DICE\nDie AC/M AC/R | Level +3\nl 3 2 2-3. Level +2\n2-3 4 3 4-5 Level +1\n4-6 5 4 6-9 Level\n7-9 6 5 10-11 Level-1*\n10-11 7 6 12 Level-2*\n12 8 i \u201cLevel\u201d is the level of the dun-\nM = Mammal geon, on this table only.\nR = Reptile *If result is non-positive, treat\nUndead AC = (1-8)+ 1\nHIT DICE MODIFIERS\nDie Modification\nl +2\n2-3 +1\n4-5 0\n6 -|\nUNDEAD\nUndead are turned by Clerics as if they were Undead of level HD/2;\ni.e., a 2HD Undead saves as a Zombie. Undead of level 17+ are treated\nas Vampires.\nSPECIAL CHARACTERISTICS\n0-2 30 2 3\n90 00\n3-5 50 80 95\n6-8 40 75 90\n9-12 30 60 80\n13-16 20 50 75\n17-20 10 40 60\npA 01 30 50\nThe number shown is the % score needed to have that # of Special\nCharacteristics.\nDAMAGE DONE Level of Monster\nDie 1-4 5-8 9-12 13-16 17-20 2\n1 1-3 1-6 1-8 1-10 2-16 2-20\n2 1-4 1-8 1-10 2-12 2-24 2-24\n3 16 = 1-8 2-12 2-16 2-24 3-30\n4 1-6 = 1-10 2-12 2-16 3-30 4-40\n5 1-8 = 2-12 2-16 2-24 3-30 5-50\n6 1-8 = 2-12 2-16 2-24 5-50 1-100\nDamage done by intelligent monsters is by weapon type; by unintelli-\ngent monsters is by bite; and by semi-intelligent monsters is 50%\nchance of each.\nSPECIAL CHARACTERISTICS II\nThe Special Characteristics are organized by type (mammal, reptile,\nundead). If a given number has several characteristics grouped thusly:\nn/m/o/p/q/r, it means that the exact characteristic is determined by\nthe level of the monster: 1-4/5-8/9-12/13-16/17-20/21+.\nMAMMALS\n1 Hostile to Dwarves\n2, Hostile to Elves\n3 Hostile to Hobbits\n4 Hostile to Magic Users\n5 Hostile to Clerics\n6\nHostile to Paladins (Cont. overleaf)\n"
+  },
+  {
+   "path": "extract/dragon/010/p010_full.txt",
+   "content": "The Dragon\nMAMMALS (Cont.)\n7 Regenerates 1-3/1-4/1-6/1-8/1-10/1-12 _ hits/turn.\nDoes double damage\n9 Only silver/magic weapons effective\nco\n10 Silver/magic weapons do double damage\nUl Has poison whip, does 1-4/1-8/1-12/1-20/death/death\n12 Flier, speed 24\n13 Bite is poisonous, does 1-3/1-6/1-8/1-12/1-20/death\n14 Bite causes disease, fatal in 1-20 days\n15 Gaze causes Stun 1-4/Stun 1 -8/Stun 1-12/paralysis/stone/stone\n16 Web\n17 Monster has horn, does 1-6\n18 Claws do 1-4 each\n19 Missiles ineffective\n20 Silent movement\n21 Proboscis does blood drain, 1-4/turn\n22 Has Charm Person spell\n23 Has nothing/Magic Missile/3-dice FBM-dice FB/5-dice FB/6-dice FB\n24 Has antimagic shell\nREPTILES\n1 Paralysis touch/Paralysis gaze/Stone touch/Stone breath/Stone gaze/\nDisintegrate touch\n2 Poison bite, does 1-4/1-6/1-10/1-12/1-20/kill\n3 Sting in tail, does 1-6/1-8/1-10/1-12/paralysis/kill\n4 Breathes cold, does 1-3 hits/every four levels\n5 Breathes lightning, does 1-6 hits/four levels, kills at 17 +\n6 Breathes fire, does 1-8 hits/four levels\n7 Increase AC by 1 (i.e., from AC6 to ACS)\n8 Increase AC by 2\n9 Add 1 HD\n10 Add 2 HD\nll Movement -3\n12 Flier, speed 18\n13 Flings 1-4 tail spikes/four levels\n14 Regenerates 1-3 hits/four levels\n15 Commands snakes: 1-6/2-12/3-18/1-6 Giant/2-12 Giant/3-18 Giant\n16 Does double damage\n17 Legless, speed + 3\n18 Bite causes disease, fatal in 1-10 days\n19 Magic/Silver weapons do double damage\n20 Fangs do 1-4/bite extra\n21 Gaze causes confusion\n22 Slow spell has double effect\n23 Claws do 1-4 each\n24 Tongue is whip, does 1-4\nUNDEAD\n1 Missiles ineffective\n2 Only magic weapons effective\n3 Only magic/silver weapons effective\n4 Only magic/silver weapons effective and at /2 damage\n5 Destroyed by fire\n6 Destroyed by sunlight\n7 Destroyed by running water\n8 Destroyed by holy water\n9 Destroyed by cold\n10 Turned by cross\nI] Turned by mirror\n12 Tumed by garlic\n13 Turned by wolvesbane\n14 If human killed by undead, becomes undead\n15 Undead is Lawful (and not affected by Clerics)\n16 Turns/dispels Clerics*\n17 Charms Person\n18 Touch does nothing/paralysis/rotting disease, 1-12 turns/ drains 1 level/\ndrains 2 levels/drains 3 levels\n19 Commands Rats: 1-20/1-100/1-4 Giant/1-8 Giant/1-12 Giant/1-20 Giant\n20 Commands Wolves: 1-4/ 1-6/ 1-8/1-8 Dire/ 1-10 Dire/1-20 Dire\n21 Flier, speed 18\n22 Gaze does nothing/confusion/confusion/paralysis/paralyis/stone\n23 Destroyed only by fire\n24 Invisible\n*This Undead is not affected by Clerics; instead, Clerics are af-\nfected by the Undead. Divide the level of the Undead by 2 and treat this\nas the level of Cleric the Undead corresponds to on the Undead table.\nDivide the level of the Cleric by two and treat this as the type-level of\nUndead on the Undead table to which the Cleric corresponds. Use the\ntable normally to find out if the Cleric is turned or dispelled, (Turna-\nbout is fair play.)\n10\nVol. 2 No. 4\nOTHER CHARACTERISTICS\nRoll % dice: a score of 01-70 means no more characteristics; 71-85\nmeans one other characteristic; 86-95 is two; and 96-00 is 3.\nDie\nReOwwu\nco HON\nOther Characteristic\nNo head\n3 eyes\n4 eyes\nStalk eyes\nUnusually long fangs\nUnusually long claws\nAntennae\n3-segment body\nPHYSICAL DESCRIPTION\nYou should also know what the monster looks like. Undead do not\nhave a physical description (assume a figure under a cloak if you wish).\nFor everything else, start rolling on these tables.\nSIZE\nHD Small Medium Large\n1-4 1-4 5-11 12 Roll on a 12-sided\n5-8 1-2 3-9 10-12 Small = 0-3 feet (approx)\n9-12 | 2-8 9-12 Medium = 3-12 feet (approx)\nLarge = 12 + feet (approx)\nHD Small Medium Large\n13-16 I 2-7 8-12\n17-20 | 2-6 7-12\n21+ | 2-5 6-12\nLIMBS EXTERIOR COVER\nDie # legs Die # arms Die Mammals Reptiles\n| 1 | | 1-4 Hair Scales\n25 2 2-4 2 5-7. Skin Skin\n6-7 3 5-7 2 tentacles 8 Feathers Hair\n8 4 8\nCOLORING\nDie Mammals Reptiles\n1-6 gray green\n7-10 white gray\n11-12 black gray-green\n13 brown blue\n14 green red\n15 blue black\n16 red yellow\n17-18 striped striped\n19-20 spotted spotted\nFor stripes or spots, roll the die again twice. Ignore further stripe or\nspot results, unless a stripe result gets another stripe, in which case you\nhave a triple-stripe scheme. For spots, the first color rolled is the back-\nground; the second is the color of the spots.\nAAD oF\nMONTY:S acd | Aor\nOrauerasies Sey ons anon\ni Minsatures\nE Gots\nGames\nTALL\n723\nWILLIAMS *\u00a9\nLAKE (geneva\nOPEN EVER\nDAY BUT\na MONDAYs \u00a7\nr Poly -3 7 27\ny PeRlenT \u2014 899\nDUNGEONS\n\u20ac DRAGONS\n"
+  },
+  {
+   "path": "extract/dragon/010/p011_full.txt",
+   "content": "October, 1977\nServing Fantasy Game Judges\nsudges Guild\u00ae\nOur Famed Guildmember Subscription is sti!l available.\nYou get our initial package which incfudes: 34x44\"\nCity Map, 135 Dungeon Tac Cards, Ready Ref Sheets\n(with matrixes like to-hit scores & saving throws), Book-\nlet of NPCs, shops, Social Level, Ads etc. and five Dun-\ngeon Levels. Then, for five bimonthly installments,\neach instaliment with two 11x17\u201d castles/villages and\n20 pages of new material- NPCs, rules, Jegends and news-\nletter, A one year Guildmember Subscription is $12.\n=\n6\nThe City State of the Invincible Overlord\nOur Deluxe Fantasy Package will give any starting ref\u2019\na big boost. You get the above City State Playing Aid,\nDungeons & Dragons and a Polyhedra Dice Set! Many,\nmany games of fantasy filled fun for $19.95.\nReady Ref Sheet Package is now available. Twenty\ncopies of seven different charts (originally published\nvia the Guildmember Subscription)- enuff for the\nplayers and judges. Charts on Men Attacking, Saving\nThrows, Chainmail, Monsters Attacking, Encounters,\nPhantasmal Forces, Building Casts, \u2018Wizard\u2019s Guide\u2019\nto Enchanting & Pations, and Alignment Scale. All\nfor $2.99.\nDungeon Tac Cards are a handy reference for Grey-\nhawk, Chainmail, ACS. Pertinent data like- \u2018to hit\u2019\nscores, damages, lengths etc. Action cards have\nmove rate, parrying, grappling, climbing etc. You\nget 135 cards for $3.95.\nWe also sell Polyhedra dice- $2.50, Percentile Dice-\n$1.50, ail D&D Supplements and Metamaphosis Alpha\neach $5.00. Sent First Class postage free! Foreign\norders- add $3.00 for air mail orders: foreign sub-\nscriptions- $23.00 (Canada- $14.00).\nJudges Guild\nP.O. Box 773H\nDecatur, Il. 62525\nJudges Guild material is designed as players\u2019\naids for Dungeons & Dragons \u00a2c TSR, charts\netc, used with permission.\nThe Dragon\nDesign Forum\nLet There Be A Method To Your Madness\nby Richard Gilbert\nWHEN DESIGNING A DUNGEON; before you begin madly\nscattering chutes, monsters, and secret doors, take a moment to figure\nout what it\u2019s all for. If you are postulating a world with any sort of\n\u201crealizm\u201d at all, you must appreciate that a dungeon doesn\u2019t just come\ninto being for the hell of it. To the peoples of your world, digging a\ndungeon out of solid rock is a tremendous task, one not to be undertak-\nen lightly.\nWith some rare exceptions, the dungeons which a player\nencounters have been abandoned by organized society. However, it\nrequired an organized society to build them in the first place. You, as\nthe designer, must think like the builders when you design a dungeon,\nand allow for all of the necessary functions of the dungeon.\nDon\u2019t be concerned that the players entering your organized\ndungeon will have too few difficulties in traversing it. Any D&D player\nquickly develops the suspicious mind and almost paranoiac attitude\nnecessary for survival. His fears, coupled with his general lack of infor-\nmation about your dungeon, will make your dungeon far more\nmysterious than you would ever believe.\nIf organization and detail seem like too much extra work for you,\nthen relax. It won\u2019t take you any longer to create a dungeon this way,\nand in fact it will probably be faster, due to the benefits of being\norganized, knowing exactly what each area is for and why it is there.\nThe time you spend in initial planning is cancelled out when you set up\nthe individual levels, because you don\u2019t spend ten or fifteen idle\nmoments wondering what to do with the next level. You already know!\nUsing the basic ideas I\u2019m about to describe, I have created a ten level\ncave-dungeon complex, complete with maps, monsters, treasures, and\nlegends in only seven hours time.\nBefore you do anything with a dungeon, you should have specified\nwhere it will be located, what the surface area looks like, and what, in\ncapsule form, its history is. The two chief items of the history are its\nage and who built it. Age is important, expecially time elapsed since it\nwas last in regular use, because it determines the condition of any\nperishable items found within, and for some worlds, what sort of arti-\nfacts could be present. The builder, that is, the being who caused the\ncastle dungeon to be built, is the single most important factor to devel-\nop before actually working on the dungeons.\nThe builder\u2019s occupation, social standing, alignment, and person-\nality will decree a great number of levels just for his own personal use.\nThese are levels with specific functions which are unique to his type of\ncharacter. Give the builder\u2019s character a few personal tendencies, such\n"
+  },
+  {
+   "path": "extract/dragon/010/p012_full.txt",
+   "content": "The Dragon\nas being sneaky, grandiose, austere, or a hater of straight lines, and you\nhave a blueprint of what to put in your levels and, better still, a pattern\non how they should look.\nAgain I say relax! Players entering your dungeon will not soon, if\never, perceive this pattern. First of all, players usually are prone to not\nseeing the forest for the trees, and secondly the rooms are no longer\nused for what they were intended. Here\u2019s an example of what I mean:\ntake a walk down a street which still has a number of store buildings\nstanding which antedate 1910. Look at them closely. Then without ask-\ning anyone or looking it up somewhere, figure out what each of them\nwas for. How many did you get right? Now try it in pitch darkness by\ntorchlight, with monsters around, and without any little tell-tale signs\nlike railroad tracks, truck sized doors,or distinctive shape on something\nfour centuries old instead of a mere three generations . . . They\u2019ll\nnever guess, either.\nOn a smaller scale, hero Dancing Bear and his motley crew come\nacross a rotting wood door reposing on the floor in front of an empty\ndoorway. Through the doorway they see a 10\u2019 x 10\u2019 room with small\nbits of rotting wood, intermixed with glass and metal, on the floor to\nthe left, a rusted iron ring on the back wall, and a larger pile of rotting\nwood on the floor to the right. In the far right corner is a dark stain on\nwalls and floor, except for a lighter patch on part of the floor. Much\ndust and small skeletons. What was this room used for? You don\u2019t\nknow!!! (Heh, heh)\nYou, as the builder, know perfectly well. The ring on the wall is a\ndoorhandle, leading to several cells beyond. The junk to the left is the\nremains of a few flails of the cat-of-nine-tails variety, which had wood\nhandles and leather flail straps, in which were imbedded jagged bits of\nmetal and broken glass. The metal and glass remain, the wood is rot-\nting away, the leather straps were gnawed away by rodents, and the\ncloth bags tacked on the wall which held them are long since dust. The\ndebris on the right was once the desk and chair of grizzled old Sergeant\nLumbago, the warden of this cell block, whose habit of spitting tobac-\nco juice at his battered and long lost cuspidor (it was buried with him as\nan act of sanitation) has forever marked the corner where it sat, now\nmarked only by a lighter area amid the constant storm of his expectora-\ntion. Either you or old Lumbago could have told the esteemed Dancing\nBear that there was nothing behind the semi-secret door but skeletons\nand perhaps the undead, but he will just have to find out for himself.\nKeep it simple and stick to a plan! They won\u2019t know what you\u2019 ve\ndone! What looks so obvious to you on paper is the deepest of forbid-\nden mysteries to everyone else. Dungeons take time enough to create,\nso don\u2019t overdo them. Make it easy on yourself.\nNow let us consider the planning of the actual dungeon. I am\npostulating a castle on a small hill, deep within a forest. About a\nthousand years ago, a local tribe erected crude stone fortifications here\nfor their women and children. The site was in use for a few centuries\nand then abandoned. About four hundred years ago, a young, energetic\nwizard named Nappo claimed the site. He brought in a few hundred\norcs and built the present castle on the old foundations, expanding out-\nward and downward. The orcs were put to work creating a dungeon\ncomplex, which project continued of and on until Nappo\u2019s death.\nAssisted by magic, Nappo lived there for 120 years. In the 275 years\nsince Nappo died, his orcs have continued to inhabit the place, greatly\nEARL RRB EBALIESIEISTTERE\n4\nVol.2No.4\nhindered by the various monsters on which Nappo loved to experiment.\nTheir numbers are much reduced, and the castle is now a backwater\narea.\nNow for the drawing board, The builder, Nappo, was a wizard, so\nat least one level is needed for labs, libraries, and storage of related\nequipment. Nappo experimented on monsters, so space is needed for\nfurther laboratories, cages of all sizes, food storage for the beasts, and\nall relevant sundry items. (Always allow for storage rooms in your\nlevels, it was a long hike to the surface!)\nThe upper levels should have living space for several hundred orcs,\nwith attendant storage, kitchens, perhaps temple space, and maybe\neven sewers or some system for waste removal. Rotten food and excre-\nment might have been simply heaved down some convenient under-\nground crevasse, which some unlucky player might fall into. These\nlevels would be connected by fairly wide ramps, as defense dictates that\nthe orc soldiers must be able to reach the surface quickly.\nHere also would be the main armory, with its own guardroom or\nother security precautions, plus fairly easy access to drinking water.\nBelow these levels would lie cells, torture chambers, and anything\nelse intended mainly for the orcs use, such as possibly an arena for\npractice and entertainment.\nLeading off in a separate series of levels would be Nappo\u2019s part of\nthe dungeons. First, a number of levels devoted to guardrooms, mazes,\nand traps to snare intruders. Then would come Nappo\u2019s underground\nquarters, from which one would gain access to labs, animal or monster\npens, and Nappo\u2019s treasury. This entire series would be interconnected\nby narrow stairways, as it is unlikely that anything bulky would ever be\ncarried in here. Remember that dungeon excavation is very laborious,\nand where it was unnecessary it was not done.\nThe entire dungeon complex would probably not have more than\nfifteen separate levels, plus a few stray corridors leading nowhere, in-\ntended for further levels which were not completed due to Nappo\u2019s\ndeath. None of the levels would be more than eight levels below the sur-\nface.\nSo, now we have a general purpose for each and every level and we\nhaven\u2019t marked up a single sheet of graph paper! All this was ac-com-\nplished with only a few basic assumptions carried to their most basic\nconclusions. We are now ready to do some sketching.\nThe next step is to draw up two views of the dungeons as a whole,\none a vertical cutaway and the other a horizontal overlay. This gives\nyou the continuity between levels, and with a little simple geometry you\ncan even measure the length of a sloping passage with precision. The in-\ndifidual levels on these drawings should be represented by rectangles\nshowing their extreme boundaries, and both drawings must, of course,\nbe to scale. I would recommend 200 feet to the inch, or whatever scale\nallows you to fit everything on one sheet of paper. Now fill in all of\nyour connecting halls, stairs, and so forth, and finish up these two\ndrawings by writing in the main purpose of theme of each level within\nthe corresponding rectangle. Viola! Instant dungeon!\nYou have now completed all the necessary preforations for\ncreating your dungeon. You have already determined the size of each\nlevel, the general contents of each level, and the location of all exits and\nentrances to every one. Now all you have to do is find room for every-\nthing that needs to be in each particular level and just fill in the dots, as\n\u2018a thes S$\nP\nens *) \u2014\n"
+  },
+  {
+   "path": "extract/dragon/010/p013_full.txt",
+   "content": "October, 1977\ndeviously, as you wish!\nSo much for the basics. Nappo\u2019s dig was rather elementary, as it\nwas merely an illustration. He was only given three personality facets;\nbeing an MU, being fond of animal experimentation, and needing\nspace for his orcs. These alone generated fifteen levels, and assumed\nhim to be both celibate and a recluse. The more a builder is developed,\nthe more rich and varied his dungeons.\nMany traits of character can find expression in additional dungeon\nlevels. Did he have frequent visitors? Add guest rooms with corridors,\nplus secret passages for the builder to spy on them. Also add another\nwater source. Did his visitors travel alone? Not likely, unless the visitor\nwas Gandalf. You'll need space for their retinues.\nWas the builder a temporal ruler? Add throne room, conference\nrooms, guard rooms, more secret passages, and perhaps a regalia room\nwhere Count von Bombast donned his robes of state. Also rooms for\nvisiting dignitaries and their retinues, secret passages for von Bom-\nbast\u2019s spies and assassins, secret rooms in which von Bombast confer-\nred with his spies, and a chamber or two for the dignitaries to cool their\nheels in, while von Bombast gets settled in his gilded chair.\nA gourmet requires extensive kitchens and pantries, along with a\nhost of attendant small rooms. Kitchens are fun. They can possess any\nnumber of mysterious sights, sounds, and smells, not to mention\nhungry beasts. For one thing, ovens must be vented to the surface to\navoide baking the cooks. The vents can let in water, light, and above\nall, air. The vents will act like an empty pop bottle does when you blow\nacross the top. Depending on the wind outside, the vents will produce\nan all-pervading sound from a low hum that will make your bones\nvibrate to a continuous piercing shriek that numbs mind and ears.\nSpilled spices may smell like the burning of priestly incense, while\nsimultaneously the wind noice from the vent may resemble a Gregorian\nchant. Your poor, misquided adventurer may think he is on the verge\nof disturbing the summoning of Demogorgon, when in fact someone\nthrew a lit torch down the vent where it landed in a sack or oregano,\nwhile on the surface a moderate breeze has sprung up. How prosaic,\nbut how utterly terrifying to the few swordsmen underground, alone\nwith their fears.\nOne of the more common traits among people of power has always\nbeen a predilection for a varied sex life. In European history, ruling\nmen created comfortable nests for their lovers, which were as lavish as\nThe Mragon\nthe men pleased or could afford. European women, such as Catherine\nthe Great or Lucretia Borgia, did not have the same options, but they\ncould appoint their lovers to their personal guard. The lovers would\nthus gain enough money and prestige to make themselves quite comfor-\ntable. Doubtless Cleopatra had other means at her disposal, but infor-\nmation is regrettably scarce. Use your imagination. A D&D world does\nnot have to be similar to Europe, as Dr. Barker has shown us so well.\nAs a final thought, if you want a really well-fleshed dungeon,\nthrow in the religious element. In the entire history of mankind, only\nshelter has caused more construction than religion. Also, religious\norganizations tend to be well-heeled enough to build with impunity.\nA main temple can easily be a level by itself. You can have separate\nrooms for rituals, artifacts, treasuries, vestments, confessionals, sacri-\nfices, meditation, scrivening, instruction, administration, punishment,\nsmaller chapels, and chapels for the worship of each god in a whole\npantheon. There can be special rooms for memorials, christenings,\nburials, marriages, exorcism, penitence, fasting, and so on ad\ninfinitum. Libraries full of scrolls! Secure rooms for summoning! Just\nthe living quarters can be endless!\nThese are just a few ideas to help you put together a dungeon, and\nthey are intended to take out some of the more fatiguing side effects of\ndesign. I know that creating dungeons had become a tedious task for\nme until I hit upon this systematic approach. I am certainly not saying\nthat every dungeon should be full planned out. A builder might be com-\npletely mad or might delight in total disorganization, in which case a\nsystematic approach is inappropriate. The idea is that it should be fun\nto design a dungeon, not a chore. Try a more organized approach, and\nenjoy yourself!\nLyle\u2019s Hobby & Craft Center\nLarge Selection of Wargames\n38 North Cass Ave.\n852-8085 Westmont, Ill. 60559\n\u00a2 Cosmic Encounter is a new experi-\nence each time you play it.\nWhen you play Cosmic Encounter\nyou become one of 15 aliens \u2014 chal-\nlenged to think like an alien and\nrespond to other aliens \u2014 each with\nJa unique power different from your\nown.\nCosmic Encounter challenges you with:\n\u00a2 Conflict & Compromise\n* Alliance & Treachery\n\u00b0 Strategy & Speculation\n\u00a2 Humor & Outrage\nCosmic Encounter brings you:\n15 Aliens illustrated in full color with his-\n| tories and unique power descriptions:\nAMOEBA: CLONE: CHRONOS - EMPATH\nLASER-MACRON-MIND: MUTANT: ORACLE\nTRADER: PHILANTHROPIST: VIRUS -VOID\nVULCH-ZOMBIE\nA Quantum Jump in Games!\nCOSMIC\nENCOUNTER\nYou are the replicating CLONE caught in a cosmic\nstruggle for universal dominance. Will your ability\nto copy the best of your race give you the strength\nto repel the multiplying VIRUS which threatens you?\nCan you conquer your fear of the oozing AMOEBA,\nand accept it as an ally; or will you forego its help\nand risk a VIRUS-AMOEBA counter alliance?\nAMOEBA\n\u00a2 Cosmic Encounter took 5 years to\ndevelop, but you\u2019ll play it for the\nnext 50. \u2014\nCosmic Encounter features:\n* Potential for group wins\n* Playing time 45 minutes\n\u00a2 2,3, or 4 players\nCosmic Encounter contains:\ne 15 Aliens\n* Classic deep space setting\n\u00a2 Aplanet systems\n* Tokens & hyper-space cone\n\u00a2 Rules & strategy hints\n* Attack, Compromise, & Edict deck\nBaauan\nH Send check or money order for $10 to:\n= Eon Products, Inc. Dept. 06\n5 96 Stockton St., Dorchester, Mass. 02124\nMass. residents add 5% sales tax\n"
+  },
+  {
+   "path": "extract/dragon/010/p014_full.txt",
+   "content": "ARCHIVE MINIATURES\nP.O. BOX 93 * BURLINGAME, CALIFORNIA 94010\nNEW RELEASES\nCOMING SOONER THAN\nYOU THINK!\nSTILL MORE GREAT FANTASY:\nORIENTAL FANTASY (SAMURAI)!\nDARK AGES, 15mm!\nMICHAEL MOORCOCK\u2019S\nELRIC!\nAND MUCH MUCH MORE!\nSend S.A.S.E. for catalog * Wholesale Inquiries Invited\n"
+  },
+  {
+   "path": "extract/dragon/010/p015_full.txt",
+   "content": "October, 1977 The Dragon\nONIT SMASHING\nA Bolotomus waits by the side of the Sea. A Snit scurrys out of the\nsurf, squeaking a lusty \u201cGO! GO!\" as it rushes towards a Snandergrab.\nA desperate run... the Snit makes it and plants his Snotch... POW!!\nMore Snits... New Snits swarm from under the Snandergrab and plunge into\nthe Sea. Since they are the only creatures in the sea, they frolic peace-\nfully under water... until the awful moment when they get the URGE. The\nhapless Snits, driven from the water by a force they don\u2019t understand,\nonce again rush out onto the beach seeking a Snandergrab for their hot\nlittle Snotches.\nThe Bolotomi are aware of the needs of the Snit. Bolotomi go to\ngreat lengths to push or carry Snandergrabs down from the mountains to the\nseashore for the Snits. If there were no Snits, what would the Bolotomi\nsmash? Smash? Did we say smash? Indeed yes! A Bolotomus that could not\nsmash Snits would most certainly waste away for lack of anything better to\ndo. Snit Smashing is a game about the never ending struggle of the little\nSnit to survive in a world full of bored Bolotomi.\nPREPARE FOR PLAY\nCarefully remove the game from the center of your copy of the Dragon.\nCut the mapsheet away from the playing pieces. For best results, glue the\nSnit counters-to cardstock before cutting them out. The counters provided\nare not meant to be a limit on the number of Snits allowed. If you need\nmore, make more... they\u2019re fun to draw. Some are named, to give you the\nidea. You name the rest as you go. You will also need a couple pencils,\na six sided die, and, if you are unable to photocopy the Snit Record Sheet,\nsome lined paper to record your Snits and their moves.\nGENERAL DESCRIPTION OF THE GAME\nSnit Smashing is played in turns. Players alternately assume the role\nof the Bolotomus and the Snits. A complete turn consists of two runs for\nthe Snandergrab... one by each player, running his or her own Snits.\nPlay continues an unspecified number of turns until one player punches the\nother or wins the game by achieving victory conditions.\nTHE VIRGIN BIRTH OF SNITS (this game is rated PG)\nThe game begins on the assumption that the first Snit, the Parent, has\nsuccessfully made it to the Snandergrab and planted its Snotch. Each time a\nSnit sticks its Snotch in a Snandergrab, three new Snits are created. Thus\neach player begins the game with a Parent Snit and three offspring.\n15\n"
+  },
+  {
+   "path": "extract/dragon/010/p016_full.txt",
+   "content": "The Dragon Vol. 2 No. 4\n6, Both players again secretly write their moves for the next bound. Play\nproceeds as in the RUN IN for nine bounds or until all Snits are either\nsmashed or have reached the safety of the Sea. Snits may not hide under the\nSnandergrab during the RUN TO THE SEA. Snits which do note make it back to\nthe Sea in nine bounds dry up and die and are removed from play.\nie Players now reverse roles and repeat steps one through six. After both\nplayers have had a chance to run their Snits, a turn is complete. If niether\nplayer has won the game, proceed to the next turn, using the Snits which\nsurvived from the previous turn.\nHOW TO WIN\nThere are two ways for a player to win the game:\nSnit Victory - occurs when a player's Snits have multiplied so rapidly\nthat the other player's Bolotomus is overwhelmed by sheer numbers of Snits.\nFor purposes of the game, this number is set at 18 Snits. (you may raise\nor lower this number to suit your taste for Snit blood) At the end of any\ncomplete turn, a player with 18 or more Snits safely at sea has acheived a\nShit: ViCtLOry:\nBolotomus Victory - Occurs when the Bolotomus has exterminated all of\nthe opponant's Snits.\nVictory is determined at the end of each complete turn. If both players\nhave achieved a victory, the game is a draw. If one player achieves both a\nSnit and a Bolotomus victory, he or she wins a Double Victory and is allowed\nto gloat incessantly until the next game.\nMULTI-PLAYER SNIT SMASHING\nAll of the rules for two player Snit Smashing apply, with the following\nchanges and-additions:\nAll players set up their Snits in the Sea. Snits of opposing players\nmay occupy the same hex. Each player runs Snits and, at the same time,\nwrites secret orders for a Bolotomus.\nAfter setting up the game, all players roll the die to establish a\nBolotomi Seniority System (pecking order). In any case where two or more\nBolotomi reach to move the Snandergrab, the Most Senior Bolotomus has the\nhonors and makes his move. Other Bolotomi reaching for the Snandergrab in\nthat bound just lose their turn. When two or more Bolotomi smash the same\nSnit, credit for the kill goes to the most Senior Bolotomus. After each\ncomplete turn, Bolotomi Seniority rotates clockwise around the table.\nBolotomi are not allowed to discuss and coordinate their smashes.\nA Snit may be ordered to follow another player's Snit. A Snit thus\nordered is simply placed in the same hex as the Snit it is following, after\nthat snit moves. If the Snit that a Snit is following moves faster than\nthe follower, move the follower as far as possible in the direction of the\nSnit it was following. If two Snits are ordered to follow each other,\nniether Snit moves.\nBolotomus Victory in the multi-player game is determined by keeping\ntrack of smashed snits. The first Bolotomus. to smash 18 or more Snits\nachieves a Bolotomus Victory. You may smash your own Snits if you wish,\nbut they do not count towards the Bolotomus Victory.\n16\n"
+  },
+  {
+   "path": "extract/dragon/010/p017_full.txt",
+   "content": "October, 1977 Th e Dra gon\nSNIT ABILITIES\nAll Snits have two factors important for play of the game: LIFE FORCE,\nand SPEED. As each Snit is created and named, its Life Force and Speed are\ndetermined and recorded on the Snit Record Sheet. Life Force is a measure\nof how long the Snit will live. Roll a single die for each Snit to deter-\nmine its Life Force. SPEED indicates the maximum number of hexes that a\nSnit may move in a single bound while running to and from the Snandergrab.\nA Snit\u2019s speed is always % of its parent\u2019s speed + a six sided die roll.\nLife Force and Speed factors will change during the course of play.\nA Player\u2019s initial Parent Snit begins the game with a Life Force of 4\nand a Speed of 4.\nPLAY OF THE GAME\ni Both players create their starting Snits (Parent & 3 offspring).\n2. Roll die to determine who will play Snits first. Snit player sets up\nhis Snits on any blue (Sea) hex(es). There is no stacking limit. Any\nnumber of Snits may occupy the same hex.\noe The Bolotomus player places the Snandergrab anywhere on the board.\nThe Snandergrab must always be completely within the field of play.\n4, Both players now secretly write their moves for the first bound.\nThe Snit player writes a destination (letter and number code for the hex)\nfor each Snit. Snits may move in any direction or combination of dir-\nections as long as they do not move more hexes than their Speed Factor\nin a single bound. The Bolotomus player decides whether to smash Snits\nor move the Snandergrab (a nasty ploy). A smash can be indicated by\nwriting the number and letter code for the hex. To move the Snandergrab,\nthe code should be preceeded by the letters MS (Move Snandergrab). If\nthe Bolotomus moves the Snandergrab, it may not attempt to smash in that\nbound.\nOnce moves are written, both players exchange record sheets. The\nSnits are moved first and then the Bolotomus either relocates the Snander-\ngrab or marks the center of its smash. The \u201cSmash\" of a Bolotomus consists\nof the hex indicated and the six hexes immediatly surrounding that hex.\nAny Snits thereunder are quite dead and removed from play. A smash may\noverlap the Snandergrab, but Snits under the Snandergrab are immune to\nsmashing. Any Snit which ends a bound under the Snandergrab is home free\nand set aside for reproduction.\nThis phase of the game is called the RUN IN and continues for up to\nnine bounds, or until all Snits are either smashed or are safely under the\nSnandergrab. Movement stops after nine bounds and any surviving Snits that\nhaven\u2019t made it under the Snandergrab lose one extra factor of Life Force\n(exhaustion) and are (sportingly) allowed to plant their snotches and re-\nproduce. This completes the RUN IN.\noe The Snit player now brings on the three offspring of each Snit that\nplanted a Snotch in the Snandergrab. All Snits that reproduce must subtract\none (permanently) from their Life Force. A Snit with a Life Force of l\nwould plant its snotch, reproduce, and then die, When the Life Force of a\nSnit reaches zero, the Snit is dead and is removed from play. Any Snit that\nsuccessfully plants its Snotch gains one point of Speed (experience). All\nnew Snits are named, given a Life Force and Speed (see Snit Abilities), and\nthen set up on top of the Snandergrab in preparation for the RUN TO THE SEA.\n(the Bolotomus trys to get them coming and going)\n17\n"
+  },
+  {
+   "path": "extract/dragon/010/p018_full.txt",
+   "content": "The Dragon\nSNIT RECORD SHEET\nBOUND BOUND \u2018BounD BouND BOUND \u2018BOUND Bound \u201cBound\n77) 1 ar. Ke) +\nst 2 6 7 8,\nie ae eee ees eee eee\nae\ni Se eee Se ee ee Soa ae eee\npf} } 4} fF}\n4} +4 \u2014\n\u2014\u2014 Be a en ee\na ae aes\na re) es ac ees\neo an7 Goal eee Eee\nae Gee Ee eae\ncee wo |\npanes as es eee\n\u2014 ee es Se eee\neae eae es\nSS ees ee ee\n\u2014_ oe a cee eee\n| S| FR] B\nVol. 2 No. 4\nBounD\n9\n"
+  },
+  {
+   "path": "extract/dragon/010/p019_full.txt",
+   "content": "October,\n1977\nWeights & Measures,\nPhysical Appearance and Why\nMales are Stronger than Females;\nin D&D\nby P.M. Crabaugh\nNothing too ambitious. In one article, I hope to\nprovide a new way of handling encumberance, a way\nof describing the physical appearance of your char-\nacters, and \u2014 hopefully! \u2014 provide an equitable\nand reasonable method ofhandling sexual differen-\ntiation. Should space allow it, I will also give you\nworking blueprints for a warp drive and a one-page\nsynopsis of the Mind of God. Oh, well.\nPll start off by saying that I borrowed some of\nthis from the Warlock rules printed in the Spartan,\n#9 \u2014 the idea of a Size characteristic, at least. But\nthe concept is here heavily modified and made more\nrational. (I hope.)\nSize is an additional characteristic rolled on 3 six-\nsided dice. In addition, all characters should also\nroll Build on one six-sided, with a 1 indicating a\nLight Build, a 2-5 meaning a normal build, and a 6\nindicating a heavy build. Build is functional only for\nhuman beings, but roll it up for non-humans any-\nway. (I'll get to that.)\nNow that you have your Size and Build, and have\npresumably chosen the sex of the character, you con-\nsult the following tables for your height and weight.\nWeight is given in pounds; one pound is presumed to\nequal 10 GP.\nHUMANS (male)\nWeight Weight Weight\nSize Height (It) (mdm) (hvy)\n3 5-1 120 135 145\n4 5-2 120 185 150\n5 5-3 125 140 155\n6 5-4 130 145 155\n7 5-5 130 145 160\n8 5-6 135 150 165\n9 5-7 140 155 170\n10 5-8 140 160 175\nl 5-9 145 160 180\n2 5-10 150 165 185\n3 5-11 155 170 190\n14 6-0 160 175 195\n5 6-1 160 180 200\n16 6-2 165 185 205\n17 6-3 170 190 210\n18 6-4 175 195 215\nHUMANS (female)\nWeight Weight Weight\nSize Height (It) (mdm) (hvy)\n3 4-10 100 110 120\n4 4-11 105 115 125\n5 5-0 105 115 130\n6 5-1 110 120 130\n7 5-2 110 125 135\n8 5-3 115 125 140\n9 5-4 115 130 140\n10 5-5 120 130 145\n11 5-6 120 135 150\n12 5-7 125 140 155\n13 5-8 130 145 155\n14 5-9 130 145 160\n5 5-1 135 150 165\n6 5-11 140 155 170\n7 6-0 145 160 175\n8 6-1 150 165 185\nELVES HOBBITS\nMales Females Males\nSize Height Weight Height Weight Height Weight\n3 5-0 105 4-11 95 2-6 35\n4 5-1 110 5-0 95 2-7 35\n5 5-2 110 5-1 100 2-8 35\n6 5-3 115 5-2 100 2-9 40\n7 5-4 120 5-3 105 2-10 40\n8 5-5 120 5-4 05 2-11 45\n9 5-6 125 5-5 110 3-0 45\n10 5-7 130 5-6 110 3-1 50\n1 5-8 30 5-7 115 3-2 50\n2 5-9 35 5-8 120 3-3 55\n13 5-10 40 5-9 120 3-4 55\n4 5-11 45 5-10 125 3-5 60\n1 6-0 150 5-11 130 3-6 60\n16 6-1 150 6-0 185 3-7 65\n17 6-2 155 6-1 140 3-8 65\n1 6-3 60 6-2 145 3-9 70\nHOBBITS DWARVES\nSize Height Weight Height Weight Height Weight\n3 2-4 30 4-0 85 4-0 80\n4 2-5 30 4-1 90 4-1 85\n5 2-6 30 4-2 95 4-2 90\n6 2-7 35 4-3 100 4-3 95\n7 2-8 35 4-4 105 4-4 100\n8 2-9 35 4-5 110 4-5 105\n9 2-10 40 4-6 115 4-6 110\n10 2-11 40 4-7 120 4-7 115\n11 3-0 45 4-8 125 4-8 120\n12 3-1 45 4-9 130 4-9 125\n13 3-2 50 4-10 35 4-10 130\n14 3-3 50 4-11 40 4-11 135\n15 3-4 55 5-0 145 5-0 140\n16 8-5 BB 5-1 150 Bed 145\n17 3-6 ~\u2014-60 5-2 \u00ab155s iis\n18 3-7 60 5-3 \u00ab1605-88\nBonuses and Penalties: If a character has a Size\ngreater than or equal to 16, he may add 1 hit per die.\nIf it is less than or equal to 5, he may subtract 1 hit\nper die. It is highly recommended that you calculate\narmor weight as a fraction of body mass. Specifical-\nly, leather armor weighs 15% of the body mass;\nchain mail 30%; and plate mail 60%. The only other\nmods are for being female: Females add 2 to their\nConstitution score and 1 to their Dexterity score.\nThat and body mass are the only differences be-\ntween male and female. Before somebody throws a\nrock, let me explain. As Jacob Bronowski pointed\nout, as well as, no doubt, many others, there is re-\nmarkably little difference between male and female\nhumans (the term is here extended to include the\nKindred Races), compared to the rest of the animal\nkingdom. There is little physiological difference, no\npsychological difference (Think about it. Consider\nthat human societies have been both matriarchies\nand patriarchies. Don\u2019t let your own experience\nblind you to history.), and so forth. (For example,\nwe are one of a ridiculously tiny number of species\nthat mate face-to-face, accenting the lack of dif-\nference.) (Most of us, anyway.)\nTherefore, rolling female strength with a six-sided\nplus and eight-sided, or any other method that\ncauses gross differences to occur, must be rejected as\nincorrect (Although you are free to include what you\nwant in your own fantasies, as the Kindly Editor has\npointed out.) Why have any differences at all?\nWell...\nAt last count, the Constitution bonus should be\nthere because it happens to be true. The last reports I\nsaw showed that females are more resistant to Dis-\nease, are better-suited to endurance events, and so\nforth, than males \u2014 strongly suggesting a higher\nConstitution. The Dexterity bonus is because I as-\nsume that a somewhat lighter build overall, with as-\nsociated somewhat more slender fingers, would\nmake females more suited to picking locks and such\nthan us thick-fingered clods with facial hair.\n19\nChe Dragon\nWhy not have every character female? Beca\na moment, I\u2019m going to define carrying capac\nterms of body mass, putting females at a di\ntage. It seems to me that there are really two ki\nstrength: How well muscled a person is, in the\nof how developed the musculature is, and\nphysical force, which is largely dependent on\nThe former seems to be to be reflected ir\nStrength characteristic, and females have no\npenalty there; the latter should be reflected\nCarrying Capacity. (I myself am in terrible shay\nbut I weigh more than anyone else I know, a\nand somewhere in that mass there are enoug\ncles, however poorly developed, to cause me\nthe one used as a pack mule by my friends.)\nTo get on with it, to determine maximum cai\ncapacity, check your strength against the fol\ntable and find your multiple, by race. This m\nis applied against your body weight to get your maxi-\nmum carrying capacity.\nRace\nStrength Human Elf Dwarf Hobbit\n3 1.0 1.0 15 2.0\n4 1.2 1.2 L7 2.2\n5 1.3 1.8 1.8 2.3\n6 1.4 1.4 1.9 2.4\n7 1.6 1.6 2a. 2.6\n8 17 L7 2.2 2.7\n9 1.8 1.8 2.3 2.8\n0 2.0 2.0 2.5 3.0\nRace\nStrength Human Elf Dwarf Hobbit\n1 2.0 2.0 2.5 3.0\n2 2.2 2.2 2.7 3.2\n3 2.3 2.3 2.8 3.3\n14 2.4 2.4 2.9 3.4\n5 2.6 2.6 3.1 3.6\n1 2.7 21. Oe: 3.7\n7 2.8 2.8 3.3 3.8\n8 3.0 3.0 3.5 4.0\nAfter you get through multiplying, you have the\nmaximum amount the character can carry and still\nstagger along at speed 3. He can carry 2 the maxi-\nmum and move at speed 6; 1/3 at speed 9; and % at\nspeed 12.\nThat takes care of the functional distinctions.\nNow, if you want to get a mental image of your\ncharacter, start rolling on the following tables. If an\nimage clicks before you reach the end, go ahead and\nstop rolling \u2014 although I suggest that you write\ndown the rest of the categories. This can help your\nidentification with the character in question enor-\nmously, I\u2019ve found. Note that these tables are in-\ntended for humans, and work poorly to not at all for\nnon-humans. I\u2019m sorry, but I simply haven\u2019t seen\nenough elves to be aware of the range of physical ap-\npearance they have.\nThe first thing is Build \u2014 which you already\nrolled. This does not only affect body mass, it can\naffect appearance. A Light Build generally means\nsomeone who whould be described as \u201cslender\u201d. A\nHeavy Build, well, for a Heavily Built male, think of\nConan. For a Heavily Built female, think of Wonder\nWoman.\nThe rest is located on these tables:\nEyes (20-sided) Hair (20-sided)\nDie Color Die Color\n1-7 Brown 1-8 Brown\n8-138 Blue 9-10 Black\n14-17 Green 11-16 Blonde\n18-19 Steel-Gray 17 White\n20 Golden 18-19 Gray\n20 Red\nHair Length (10-sided) Skin (20-sided)\nMale Female Length Die Complexion\n1-5 1-2 Short (4\u201d) 1-3 Pale\n6-9 3-7 Medium (8\u201c) 4-6 Fair\n10 8-10 Long 7-11 Normal\n12-14 Tanned\n"
+  },
+  {
+   "path": "extract/dragon/010/p020_full.txt",
+   "content": "The Dragon\nSkin (0-20)\nDie Complexion\nMales have a 30% chance of 15-16 Dark\nhaving a beard. 17-18 Black\n19-20 Oriental\nFacial Features (6-sided, 20-sided)\nRoll a six-sided and subtract two. If the result is positive,\nthe character has that many non-average facial features;\nroll them up with the 20-sided. If two possibilities are given,\neach has a 50% chance of occurring.\nVol. 2 No. 4\nPut the rocks down again, if you read the Com-\nplexion table. The reason that 16 out of 20 possibili-\nties are variations on caucasian is not that I think\nthat that represents the actual population-distribu-\nVoice (4-sided) Handedness (2 6-sided) Die Feature\nDie _\u2018 Pitch Die \u2014 Handedness 1 Large/Small Eyes\n1 High 2 Ambidextrous Sharp/Soft Features\n: 3 Round/Narrow Face\n2-3 Medium 3-4 Left :\n; 4 High Forehead\n4 Low 5-12 Right 5 Hish Cheekbones\nHabitual Expression (20-sided) Die Feature\nDie \u2014_ Expression Die _\u2014_ Expression 6 Large/Small Nose\n1-2 Carefree 12 Preoccupied a Large/Small Jaw\n3 Cynical 13 Aloof 8 Large/Small Teeth\n4-6 Neutral 14 ~\u2014 Puzzled 9 Full/Thin Lips\n7-8 Serious 15-16 Frowning\n9 Cold 17-18 Smiling 10 Epicanthic Fold\n10 Gentle 19 Aristocratic\nll Angry 20 Amused\nD&D Variant\nGaining a New Experience Level\nby Tom Holsinger\nExisting rules for D&D/EPT are very unclear concerning the\nmechanics of how a character gains the new abilities, hit points and\nwhatnot upon reaching a new experience level. \u201cAt the end of an\nadventure\u201d is about all they say. Well, some characters go on lengthy\nadventures and others get lost and stay away from home longer than they\nhad intended. Others simply transfer their domicile, sometimes without\nknowing in advance where they\u2019re going to settle down. The vague\nexisting rules do not cover this kind of thing.\nWhat is needed is some sort of definite ritual that characters may\nundergo at any time once their total experience points qualify them for a\nhigher experience level. This ritual should be dangerous enough to make\nit desirable to undergo it in a relatively secure location (as opposed to the\nboondocks) without being so dangerous as to make it lethal outside\npopulated areas. The importance of ruined temples in wilderness areas\nimmediately comes to mind as a means to this end. They can serve a\npurpose beyond repositories of loot and monsters.\nI break this whole procedure down into four parts. Referees may\nomit the middle two if they desire. The first requirement is of course\nacquiring the necessary experience points. Second, a character must\nattract the attention of the gods as only they may grant the abilities of a\nnew experience level. Basically, a character is lighting a signal fire,\n\u201cHey, \u2019'm ready now!\u201d Third, a cleric of the character\u2019s own alignment\nmust intercede with the gods so that only the gods of the character\u2019s\nalignment show up and not some other, possibly hostile, gods. Finally, a\ncharacter must become so weakened physically and psychically that the\nemissaries of the gods may get by his subconscious defenses and lay the\nnew abilities on him.\nry. * \u2018ep. -\n;\nwe .\nis ,\n.\ntion; it is because the literature of swords & sorcery\nDie Feature is primarily (but not entirely) concerned with cauca-\nLarge/Small Ears sians. You will note that some strange combinations\n12 Facial Scar can turn up in appearance \u2014 e.g., blue eyes, white\n13 Freckles\nhair, black skin, epicanthic folds. If you don\u2019t like\nthem, rule them invalid. Personally, I like the vari-\nety. Carbon-copy people are dull.\nProbably the best way to use this stuff is in com-\nbination with the Birth Tables in The Dragon #3.\nNot only do you get a large amount of data on which\nto build your character\u2019s character, so to speak, you\n14 Curly Hair\n15 Upturned Eyebrows\nFeature\n16 Pointed Ears\n17 Wide/Thin Nose\n18 Overbite\n19 Round/Narrow\nEyes also get a kind of mini-game, spending hours just\n20 Eyes Set Far rolling up new characters . . .\nApart/Close\nTogether\nBecause of the important role of clerics in this process, when this\narticle refers to alignment it means Good/Evil/Neutral, not\nLaw/Chaos/Neutral. Clerics are not Lawful and Chaotic, they are Good\nand Evil, in my scheme.\nGood guys may attract the attention of the good gods by entering a\ntemple of the good gods and engaging in fasting and prayer for a certain\nperiod. The utmost degree of concentration is required. There is no\ndanger from the gods of other alignments in this event (they have a low\nopinion of piety) and so the good clergy need not be paid off to protect\nthe fasting good guy from other gods. This reduces their income so a\nsubstantial free-will offering must be made or the temple\u2019s organs will be\ntuned during the supplicant\u2019s prayers.\nAn alternative to this is for the good guy to sacrifice some relatively\npowerful Evil or Neutral creature in a Good Temple. The creatures must\nhave a total hit dice of double the number of the new experience level,\nand each individual creature must have at least half as many hit dice as\nthe number of the experience level. Example: to reach the fourth\nexperience level, a total of eight hit dice in monsters must be sacrificed\nand the monsters must have at least two hit dice apiece. The sacrifices\nmust be conscious and not under the influence of magic.\nGood guys may not sacrifice neutral humans though they may\nsacrifice evil humans. Sacrifices to attract the attention of the gods\nrequire the participation of a cleric to alert the particular gods desired\nthat this is for them. There is a 50/50 chance that when neutral creatures\nare sacrificed that Good gods will notice and 50/50 that Evil gods will\nnotice, when a cleric is not involved in the sacrifice. When Evil creatures\nare sacrificed without the involvement of a Good cleric, there is a 50/50\nchance that nothing will happen. Naturally, clerics expect to be paid for\ntheir services.\nBad guys may attract the attention of the Gods by sacrificing Good\nand Neutral creatures using the same sacrifice rules as for good guys.\nHowever, they ma sacrifice Neutral humans as well as good ones.\n: < SE ra\n\u00ab -\nbei a4 3! Aon i a 2, ge\nPd ees \u201c4\n"
+  },
+  {
+   "path": "extract/dragon/010/p021_full.txt",
+   "content": "October, 1977\nNotes: The sacrifice of humans is generally forbidden in a\npopulated area because too many people get upset. Necktie parties and\nthe like. The hard feelings Druids have towards those destructive of trees\nallows the ritual sacrifice of a tree to count as a sacrifice of a one hit die\nNeutral creature. Mistletoe counts as ten hit dice. The tree must be at\nleast ten feet tall and alive (i.e., potted) when sacrificed in a temple. It is\na lot of work to rip a large tree out of the earth & cart it alive into a\ntemple without being seen by a Druid.\nBad guys may also attract the attention of the gods by committing\nsacrilege against the gods of other alignments. Sacrilege by Evil\ncharacters usually takes the form of violence and the various ways to\ncommit it will be discussed later. There is a correlation between the\ndegree of sacrilege and the desired experience level. Evil clerics must be\npaid to protect bad guys against the possibility of neutral gods showing\nup when sacrilege against the good gods is committed. The services of\nevil clerics are not required when sacrilege against neutral gods is\ncommitted. This doesn\u2019t bother evil clerics because they wish to avoid\nthe honor of a position on the Druids\u2019 shit list.\nNeutral characters may attract the attention of their gods by getting\nlaid while perched in a mistletoe tree (now you know where that tradition\ncame from). Druids must be paid for this privilege with their precious\nmistletoe trees, though they will throw in a free Cure Light wounds spell\nto remove the stickers afterwards.\nIn the absence of a large mistletoe tree (or if it\u2019s booked up too far\nin advance), neutral characters may attract the gods by committing\nsacrilege against good and evil. Sacrilege by neutral characters takes the\nform of practical jokes. The services of a Druid must be engaged to\nensure that evil gods don\u2019t show up when sacrilege is committed against\ngood, and to deter any vengeance from evil clerics should be their gods\nbe outraged.\nSacrilege by neutral characters against the good gods usually takes\nthe form of assaults upon the dignity of good clerics and expressions of\ngreat disrespect towards their temples (the best are revealed only during\nservices). Sacrilege against the evil gods usually consists of arranging for\nevil clerics to get the credit for some honorable and good deed.\nSacrilege by bad guys against clerics and druids usually takes the\nform of physical attack. Sacrilege against temples takes the form of theft\nand vandalism. Starting a forest fire is sacrilege against Druids.\nBreaking up a sacrifice of some other alignment is sacrilege usable\nby any alignment against any other alignment, as is holding religious\nrites of an alignment (not necessarily one\u2019s own) in a church of another\nalignment. The latter usually gets the gods hopping mad and a cleric of\none\u2019s own alignment is absolutely essential to ensure that the friendly\ngods arrive first. Conning a character of a different alignment into\ncommitting sacrilege against his own alignment counts as committing\nsacrilege yourself and is a lot safer. However, a cleric of your alignment\nhas to be notified and paid in advance to make certain that you get the\ncredit for it. Beings under the influence of magic don\u2019t count, it must be\na true con.\nWhen clerics are not involved, there is a basic 60% chance that the\nright gods will notice when sacrilege is committed against the good gods.\nThere is a 40% chance that the wrong gods (Evil if you are Neutral,\nNeutral if you are Evil) will notice. There is a basic 50% chance that the\ngods whose temple was outraged by the performance of a ritual of a\ndifferent alignment within it will show up immediately and kill (no\nchance for revival) those responsible.\nWhen the wrong gods notice, use your imagination as to the\nconsequences. The evil gods will be likely to harm good guys and vice\nversa, while merely changing the alignment of neutral characters to their\nown. Neutral gods will be more likely to assign a quest to good and bad\nguys, to the benefit of the nearest temple or some deserving neutral\ncharacter (you will be his bodyguard for a year at half normal pay with\nno share in any treasure).\nIf you don\u2019t want to use the above rules concerning attracting the\ngods\u2019 attention, you don\u2019t have to. But clerics should be involved\nsomehow, say simply paying them to pray to the gods of their alignment\nthat here is some deserving character who has served valiantly and well\nin their service (to the tune of a donation of . . . gold pieces) and should\nbe granted the new abilities of a higher experience level.\nOnce the attention of the appropriate gods has been gotten, it is\nnecessary to assume the proper physical and psychic attitude, i.e.,\ncomplete exhaustion. The only reliable means of achieving this state is to\nbecome thoroughly inebriated following great physical activity. Then the\n21\nThe Dragon\nEmissaries of the Gods, commonly known as the Great Pink Elephants,\nwill come to a character while he lies in a drunken stupor and give him\nthe new abilities. Characters are weak and vulnerable while they are\ngetting drunk, drunk, and hung-over, which is why it is dangerous to go\nthrough this ritual in the wilderness.\nDwarves, elves and hobbits are tougher than men and so have a\nmore difficult time getting bombed. This is why there are limits on the\nexperience levels they may reach.\nThis is also why characters usually build their own castle in the\nwilderness when they reach the 7th experience level. As characters rise in\nexperience levels, they get more hit points and are generally tougher and\nbetter able to hold their liquor. They also have to do wilder things to\nattract the attention of the gods.\nTownsfolk object to the commotion caused by characters trying to\nget the gods\u2019 attention, and to having it ripped up by drunken characters\npicking fights (so as to become physically exhausted). After all, there are\nhazards in dealing with a loaded magic-user looking for a fight.\nTherefore, when characters reach the 7th experience level, a large\ndelegation of the local militia will heave them over the town walls after\nthey pass out. Then the character has to move into the boonies to set up\nhis own castle and defy anyone to say that his parties cause too much\nnoise.\nCities contain Guild Halls for each profession (Thieves\u2019 Guild,\nWarrior\u2019s Guild, etc.) in which members of that profession may carouse\nin safety and comfort. There are even mass affairs in which dozens of\ncharacters all the same experience level get promoted. \u201cYou are hereby\ninvited to the party at which Exlax the magician becomes a Wizard.\u201d\nMagic-users, illusionists and bards may memorize and cast only\nthose spells which they know. They learn spells upon gaining a new\nexperience level and by paying a Wizard to teach them the spells. When\na new experience level is reached and the new abilities include being able\nto use a new spell level, spells of that level are learned from the Great\nPink Elephants in the following fashion.\nMake a list of the ID# of the spells of that level in the order in which\nyou desire to learn them. Your intelligence determines how many and\nwhich particular spells you learn, using the table on page 8 of Greyhawk.\nYou learn a total number of spells equal to the \u201cMinimum # per Level\u201d\ncolumn when the Great Pink Elephants lay all the new abilities on you.\nThen go down your list, rolling percentile dice for each spell. If you roll a\nnumber equal to or less than the number given in the \u201c% Chance to\nKnow any Given Spell\u201d column, you learn that spell. Continue down the\nlist (and start over if necessary) until you have learned the \u201cMinimum #\nper Level\u201d of spells. You might not learn the spells you want.\nYou build up to \u201cMaximum # of Spells Knowable Per Level\u201d by\nacquiring more experience levels or paying a Wizard to teach them to\nyou. The number of additional spells you learn, for each spell level you\nalready know some of, is equal to the number of spells of that level you\ncan memorize, based on your new experience level.\nExample: a magic-user reaches the 5th experience level. His\nintelligence is 14 so he is guaranteed to learn five spells of the 3rd spell\nlevel. When he reaches the 6th experience level, he may memorize a total\nof two 3rd level spells so he automatically learns two additional 3rd level\nspells. He would automatically learn only one 3rd level spell when he\nreaches the 7th experience level because with an intelligence of 14, he\ncan know only eight different spells of the 3rd spell level.\nEach time a character reaches a new experience level, he may\nchoose to forget one spell of each level that he previously knew in order\nto make room for other spells of that level.\nGame Reviewers Wanted\nTSR Periodicals is looking for a number of qualified game re-\nviewers, to review games in either The Dragon or Little Wars. Do\nnot send reviews alone. Reviewers will be paid standard rates.\nSend sample review of recent game release \u2014 any type of game\n(fantasy, swords & sorcery, science fiction, role-playing, histori-\ncal, even abstract), plus resume of qualifications and experience.\nOnly experienced, knowledgeable gamers with better than aver-\nage writing ability need apply. TSR Periodicals cannot supply the\ngames.\n"
+  },
+  {
+   "path": "extract/dragon/010/p022_full.txt",
+   "content": "Wizzarp oz, Warrior\n\u201cy ms : by Grewadior\nz\n@m.OR THE FINEST IN FANTASY\nQOH ETHER YOU NEED TO FIENDISHLY STOCK\nYOUR FAVORITE DUNGEON. OR RAISE YOUR\nOWN HEROIC LEGIONS AGAINST THE ARMIES\nOF THE DARK POWERS, YOU CANNOT CON/URE\nUP BETTER THAN WIZZARDS & WARRIORS,\nHOBBITS MONSTERS. SIEGE WEAPONS DICE SETS\n| FOR OUR FANTASY CATALOG OF\nC\nee , oe es Pepe: = RULE BOOKS OVER 100 FANTASY FIGURES AND\nFIGHTING MEN BARDS WEAPONS GAMES RELATED ITEMS SEND $1.00 OR\nSPECIALISTS THIEVES - CHART OTS TSR PRODUCTS |) FOR FULL CATALOG OF ALL\nORCS MAMMOTHS ZM PRESS ON GRENADIER PRODUCTS SEND\nGOBLINS FURNITURE - ie : ie $2.00 TO:\nNT. MES\nHOBCOBLINS ORES. ase ee ED aren\nWERECREATURES AND MORE ass NOUIRIES SPRINGFIELD, PA, 19064\nINVITED DEPT. 2\nae\n"
+  },
+  {
+   "path": "extract/dragon/010/p023_full.txt",
+   "content": "October, 1977\nTHE TACTICS OF DIPLOMACY\nThe Dragon\nIN\nSTELLAR CONQUEST\nBY Edward C. Cooper\nWondering how Diplomacy effects Stellar Conquest since com-\nmunication for negotiation purposes is forbidden by rule? Diploma-\ncy! \u2014 In a Stellar Conquest game??? \u201cImpossible!\u201d comes the\ncry...\n...But is it?\nDiplomacy is the \u201cX\u201d factor in any wargame, the crucial but un-\npredictable, ellusive factor capable of upsetting the most stable civiliza-\ntions. Nations have fallen, empires crumbled away to dust \u2014 not of\nweakness; they lacked a proper understanding of the implications of di-\nplomacy as a weapon of warfare. The mightiest of domains can be\nbrought to its knees in the face of overwhelming unity by a score of\nlesser nations. Institutions conceived and created by man can be de-\nstroyed by the same power of imagination.\nIn Stellar Conquest, because there is no verbal communication\npermitted, diplomacy can be an awesome weapon if implemented cor-\nrectly.\nIt can kill you if applied wrong.\nThe old cliche\u2019 \u201cActions speak louder than words .. .\u201d takes on\nadded meaning in SC. You CAN achieve an active alliance and never\nsay a word. LET MOVES SPEAK FOR YOU. To move any way you\nchoose is certainly not against the rules.\nIn theory, diplomacy is a non-aggressive way to settle differences.\nBut there are many dangers inherent to the whole human conception of\ndiplomatic negotiations and the intricate socio-economic patterns\ngoverning the conduct of warfare. With a multitude of factors to be\ncalculated precisely and so many individuals needing to know accurate\nresults before the wheels of decision turn, the danger of miscalculation\non the part of the individual grows systematically. And all it takes in\npush button warfare is one man.\nDiplomacy is one of war\u2019s triggering mechanisms. You can fool\nwith the structure of things, change \u2014 modify, replace this \u2014 add that;\nyet underneath the surface tension, the threat of instituting too much\nchange at one instant in time to a point where the entire structure can-\nnot absorb the patterns of stress, increases alarmingly in direct propor-\ntion to the complexity of the negotiation. There are and always will be\n\u201cX\u201d factors associated with human action. The more complex the ac-\ntion, the bigger degree of deviation by \u201cX\u201d.\nMiscalculations in SC are usually a player\u2019s last. (Beginners es-\npecially: diplomacy is a good way to make up for the disadvantage of\nnot having an overview of the game from play experience. It should en-\nable you to hang right in there with the better players as long as you\ndon\u2019t commit yourself. This will mean conservative play, but the longer\nin, the more learned.)\nLimited intelligence, a main feature in Stellar Conquest, requires\nplayers to ferret out knowledge blindly, by themselves. Gaining more\nknowledge than the next player is essential to a winning strategy \u2014 and\nto effective diplomacy.\nFor this reason, a pre-planned exploration program cannot be\noveremphasized. Before the game has started, plan at least 8 turns (2\nproduction years) ahead. And keep this \u201csafety margin\u201d at all times.\nToo many players worry about exploration moves from turn to turn.\nThis wastes precious mobility (by having to retrace movement) and can\njeopardize the player\u2019s own position in the game by failing to achieve\nmaximum expansion. Knowledge from exploration results is an impor-\ntant cornerstone to diplomatic policy in SC. The best diplomat is the\none who is best informed.\nReconnaissance tactics are the method of implementation for this\ndiplomatic policy. They can delay a player\u2019s expansion if not limit it\ntotally and still avoid a war that can shoot the hell out of a carefully\nbuilt up economy.\nLet\u2019s go back a minute. \u201cGaining more knowledge is essential to\na winning strategy and to effective diplomacy.\u201d Reviewing this and ty-\ning it in with the above implies that a player must take an active hand in\nlimiting another player\u2019s success while promoting his own. What is Di-\nplomacy???\nFor SC, the Law of Diplomacy shall be defined as, \u201cThose actions\n23\nleading to the acquisition of reliable, vital information by friendly\nforces while limiting outside knowledge of this information through\nmethods not likely to precipitate a war.\u201d\nAny movement a player makes in SC may have heavy diplomatic\novertones. This may help some to understand why they are always be-\ning attacked and cannot figure out why. What may seem an innocent\nmove by you may take on deadlier meaning to another rival if he is bet-\nter informed on the area you are moving through than you are. Intelli-\ngence, Diplomacy, Movement, all combine together in Stellar Con-\nquest.\nIn border areas, moves must be of a clear cut nature, with no\nguesswork needed on the part of the player who\u2019s border you are scout-\ning, unless, of course, you are going to war, and then just the opposite\nis mandatory. Make sure that player knows you are only scouting.\nHaving few counters on a border is one way to relax suspicions. If you\nsend a SCT into enemy territory while a mass of counters are lying on\nthe border, regardless of whether they are warships or not, for all he\nknows that SCT is a squadron of ESC\u2019s looking for a target to soften\nup for the main invasion force lying in wait.\nAlways stop and consider what another player may make of your\nmove if you were in his shoes. Master the technique, it\u2019s not hard to be\nunderstood. All it takes is a little serious effort and patience. (Like not\nreacting violently if one of your warships is destroyed on the border or\nin neutral space.) Your new success will make the effort worth it. You\nyou\u2019re attack prone, people will suddenly cease to attack you any more.\nA player cannot fight a major war in SC and expect to win. It\u2019s possi-\nble, but not probable.\n"
+  },
+  {
+   "path": "extract/dragon/010/p024_full.txt",
+   "content": "The Dragon\nFor example, heavy activity has recently been noticed around a\nsomewhat inconspicuous red star near the fringe of one of the adjoin-\ning borders. Heavy activity is highly unlikely for the particular star\ntype. Is this a massive \u201cdig in\u201d maneuver, an elaborate buff to distract\nyou from real intentions; is he trying to make you think this very thing,\nor, just possibly, by making all the fuss is he trying to tell you he is in-\nterested in the planet and wants you to know he has no hidden inten-\ntions? Possession in SC is nine-tenths of the \u201cLaw\u201d.\nNot only must a player know how to use diplomacy, he must know\nhow to receive it as well... and many times when dealing with less ex-\nperienced players it\u2019s hard to spot.\nThe player may be trying to get you to investigate. As the mission\nis purely an informational one (and you don\u2019t want to seem to be react-\ning hostile by sending warships) you send a SCT. The rival may fire on\nyour SCT or he may not, it depends on his intentions. (Note: in the\nBasic SC game combat is mandatory at the meeting of two warships;\nrealistically, combat should never be mandatory \u2014 there is always the\noption, even if the races are so different as to lack understanding of the\nother. Being sophisticated enough to have inter-galactic travel, they\nshould realize the need for caution. In SC, the races are bound to be\nrelatively humanoid since the cluster is attractive to Sol type inhabi-\ntants. Most tournament level versions of SC give players the option of\ncombat.) If the SCT is fired upon, obviously, you must assume he\ndoesn\u2019t want you around at all and his activities are less than friendly.\nIn this case, it is your time to react. What is an appropriate re-\nsponse, what is adequate to get your point across without unnecessary\nantagonism? The appropriate response can make or break a game.\nSince we will assume war is undesirable, and you wish to show con-\ncern without provoking conflict of great magnitude, one, two, or even\nthree (if more than one capital warship is at the target star) ESC are\nsent with orders to initiate one fire turn in response to the destroyed\nSCT, (since the SCT was destroyed) then withdraw.\nYour point has been made fairly clear. You don\u2019t necessarily like\nit, but it\u2019s tolerable so long as no further aggressive indications are\nmade.\nOn the other hand, it may be to the advantage of your opponent to\nnot fire on the SCT at all. By this diplomacy, goodwill is indicated (and\no shirks the responsibility of any violent acts.) Even though hi\nDETROIT\nVol. 2 No. 4\nforce is now known by you, it must be you who attacks if you wish him\nremoved, and all the other players will only see you attacking him.\nThus, a reaction of hostility is less likely, even though he\u2019s nestled on\nyour border. A few ships will have to be dispatched to patrol the area,\nbut there is no gain by having a major conflict breaking out if he only\nexerts rights to one planet. In fact, if you\u2019re smart, you may interpet\nthe gesture as a friendly one on his part. He could have destroyed the\nscout and still achieved the same result as in the previous example, but\nby not destroying it, his planet can exist in relative safety for years to\ncome.\nThis is a typical interchange between two players that speaks for it-\nself. You don\u2019t have to go to war to win in Stellar Conquest. In fact,\nfrom the standpoint of the rules on conquered colonies and game win-\nning, it really is not feasible to-enter a major conflict-unless something\ndrastic has happened to your colony early in the game and the produc-\ntion, regardless of the drawbacks, is desperately needed.\nIt is entirely possible to play SC, never into a war of any kind, and\nscore a major victory. (I guess too many players go to war for some ac-\ntion???) SC deals with cultural influence: this does not mean open con-\nflict. Many times, the threat of retaliation alone is a deterrent to war.\nShips are costly and any loss makes itself felt, production-wise, and in\nterms of planets you have to garrison with forces.\nIt is not practical to try and totally eliminate an opponent in SC.\nTherefore, since most opponents are still going to be in the game at the\nend, (in some strength or other) it\u2019s to your advantage to learn how to\nlive with them!\nRecon missions for diplomatic use and exploration deal basically\nwith three fundamentals: 1) being unpredictable 2) using information\nto deduce another players future moves 3) scouting the other players ef-\nfectively. The question is not one of why, but how.\nThe answer is to use two weapons systems in an effort to gain the\ndiversity needed to remain unpredictable. They must be fairly cheap\nsystems (expendable if necessary) yet reliable to get specific job criteria\ndone. Use of the ESC in a combined combat-reconnaissance role in\nconjunction with SCTs has proven most effective. Combining mission\nobjectives into one is a necessity in order to get the most out of perfor-\nmance and still insure the survivability of your delivery system. You\ncannot afford to lose IU_by too many losses of SCTs and lone ESCs.\n*PRELIMINARY ANNOUNCEMENT*\nMetro Detroit Gamers\u2019 Eleventh Major Gaming Convention\nMDG WINTERCON VI GAMEFEST\nContinuing MDG\u2019s Popular MichiCon/WinterCon Game Convention Series\nDECEMBER 2,3,4, 1977\nSPECIAL GUESTS \u2014 FROM SPI \u2014\nJAMES F. DUNNIGAN, HOWARD BARASCH, RICHARD BERG\nOakland Center, Oakland University,\nRochester, Michigan (North of Detroit)\nA Gaming Extravaganza of Wargames, Miniatures\nAdult/Family/Sports Games,\nFantasy Games, Role-Playing Games\n$2.75 per day, $5.00 all weekend\n\u00a2 Over 50 specially-prepared tournaments including SPI\nGMed tournaments, 100-person D&D, over 25 miniatures\nevents :\nMany, many informal & spontaneous events\nSeminars by SPI guests plus many others\nPlenty.of open-gaming\nAuction of game-related materials\nFood available on premises\nLodging available on campus\nTournament prizes and door prizes\nSpacious, convenient facilities\nFOR MORE INFORMATION OR\nA FOUR-PAGE FULL-INFORMATION FLIER\nSEND A SASE TO: Al Slisinger, 19941 Joan, Detroit, MI 48205\n"
+  },
+  {
+   "path": "extract/dragon/010/p025_full.txt",
+   "content": "October, 1977\nMany players find that economics play a bigger role in Stellar Con-\nquest than they thought, especially after they have had the chance to be-\ncome involved in their first interstellar war. As an experiment, try it\nsometime. Watch the other two players in the game take advantage of\nthe situation.\nThe best way to probe the enemies line of defense (influence) is to\nuse the SCT-ESC in a random pattern set up to keep the opponents off\nbalance.\nOne way of keeping another player from tracking your ships after\nthey have been discovered is to withdraw to the nearest star hex and\nmerge the ship with another ship(s) and then move??? out of that hex.\nThis will throw a foe\u2019s intelligence into a frenzy, maybe lead him to the\nwrong conclusions \u2014 advantageous to you. You'll also avoid having\nhim second guessing you (and guessing right), pouncing on the lone\nESC or SCT and slowly nibbling at your pocketbook.\nWith the capability of purchasing 3 SCTs for one ESC, the three\nSCTs can appear as three different presences on the game board.\nThink, are you invading? Another player does not know for sure. The\nBIG factor in your favor is, if he has a suspicious activity going on\nwhere he has capital invested, HE CAN\u2019T TAKE THE CHANCE\nYOU AREN\u2019T. Capital at stake requires he play it safe, restricting any\nfurther advance until his lines and supplies catch up and ships for sup-\nport are available. Also, by bluffing in one direction, you may get him\nto withdraw forces from another area in support of his attempt to crush\nyour \u201cInvasion.\"! Simply hit him where he withdrew the forces from!\nWhile he is recovering from this blow, you are out exploring the dense\narea of planets. By the time he arrives, you\u2019ll be waiting for him. His\nculture is boxed in with no place to go; he has lost the game.\nLearn how to block an opponent\u2019s attempts to gain knowledge\nabout your quadrant without creating a war.\nTry and pick off his SCTs! There is no better way to delay his ex-\npansion than this. And it doesn\u2019t cost anything except a little more time\nplanning the turn. Try and shift forces so they are constantly ending up\nin star hexes. Don\u2019t leave a star open just because it had nothing there.\nMake your foe find out for himself! It is pretty obvious if it\u2019s right on\nthe front line and you don\u2019t guard it you consider it unimportant.\nIf you are successful in picking them off, there is no way a player\ncan expand until he gets more \u2014 which is the next production year, plus\nthe time to move them to the front. The player who over uses his SCTs\nfaces the danger of serious losses. He is forced to use ESCs to investi-\ngate and he may lose 8 IU if it blunders into something.\nThe last point of emphasis is the game end. Rule 10.1.3 is in effect\nat the end of the game when planet points are totalled up. One of the\nSCHENECTADY WARCAMNERS ASSOCIATION\nOCTOBER\n8~10, 1977\n$2.50 per day\n$6.00 fur all 3\nThe Council of the Five Nations\n~2nd annual wargaming convention\nSeabur ing:\nTSRss &. Gary Gygax Fantasy games\nBosae Gane Tourmanesrs\nMimtaure Waarane on SWA'S Giant San lane\nFront coe vee. Ses. ~ Fanrasy Display\nMintatornes \u00a2 Dorana Comperinions\nREFRESHMENTS \u2014 DOOR PRIZES \u2014 AUCTION \u2014 AWARDS\nTn New York State's capitol district\nAL the STUDIO of BRIDGE and GAMES,\n\u2014 1639 Eastern Portsway, Schenectady, M.Y., 11309 ; (518) 46-37TS\nThe Dragon\nstandard debates about the tactics of diplomacy is whether they can be\nadvantageous to you at game end, or hurt you if someone is using them\nagainst you. The answer to both questions is yes, they can.\nBy the closing turns, a few DNs and quite a few ATKs will be pre-\nsent. The less expensive, less powerful ESC is ideal to guard back lines,\nreserving capital ships for last minute defense and attack.\nIf a SCT alone penetrated the front lines, it would only lose any\nbattle. But by using the ESC-SCT system it is possible some ESCs\nmight slip through and gain you a planet or cause you to lose one if you\nare someone else\u2019s victim. One point in the defender\u2019s favor: an oppo-\nnent has to guard his own planets from last minute aggression and any\nforce he sends is unlikely to be large. He would probably be out for one\nand only one planet.\nThe SCT itself is not a major factor. Rather, it is the release\nmechanism of a game strategy designed to get a minimum of points\nwith the game end coming before the attacked player can retaliate.\nFace it, if you\u2019ve played badly all along this strategy is not going to\nup and win the game; but if you\u2019ve played well, avoided major conflicts\nand the game is close, (and how do you know it\u2019s close \u2014 by recon tac-\ntics!) it may just get you the one or three points you need to avoid the\n80% margin.\nIf you\u2019re the daring kind as far as diplomacy and movement tactics\ngo, or if you feel you just have to take the chance to win; toward the\nlatter production years of the game, slip two or three SCTs into your\nback lines. Players may think a SCT sitting on one of your planets is an\nATK or squadron of ESCs. Assuring one player next to you of your\nfriendship by the use of diplomatic moves (moving ships up to the\nborder and back again a few turns prior to game end) quickly move up\nreserves to make a last minute grab fest at one or two planets of another\nplayer. This may encourage the player assured of peace to participate\nwith you, which is all the better for you. You can win the game, or lose\nit if an opponent finds an unguarded planet held by a SCT. Neverthe-\nless the object of the game is to win. Second, third, fourth; are all last\nplace finishers in the game of race survival.\nWhat is the best defense against diplomacy? More diplomacy???\nThat is why it is so effective. There is no definite solution to an \u201cX\u201d\nfactor governed by so many variables.\nFINAL EXAM \u2014 WARGAME DESIGN 202\n25\nINSTRUCTIONS: Read each question carefully, then answer each\nquestion in order. This test covers all of the elements necessary for a\ncomplete understanding of the principals of wargame design. Time lim-\nit: 3 hours. Begin now.\nHISTORY: Trace the history of Egypt from its beginnings to\nthrough the Arab-Israeli Wars. Concentrate on, but do not limit your\ndiscussion to its military, economic, social, political and religious im-\npact on the Near East, Europe, Asia and Africa. Be specific and con-\ncise.\nCOMMUNICATION: In 15 minutes, 500 crazed Ugandans led by\nIdi Amin will charge into this classroom. Calm them.\nPSYCHOLOGY: Based on your knowledge of their careers and\nworks, evaluate the emotional stability, repressed aggressions, and\nemotional adjustment of Alexander the Great, Napoleon, Adolph Hit-\nler and Genghis Khan. Support your own evaluation with quotations\nfrom their works, using appropriate references. Translation is not nec-\nessary.\nSOCIOLOGY: Estimate the social implications which would ac-\ncompany World War I-II. Set up an experiment to test your hypothesis.\nBASIC MILITARY TACTICS: Underneath your desk, you will\nfind a .45 calibre automatic pistol and a combat knife. Outside the\nclassroom you will find a foxhole. Demonstrate the tactics to be cor-\nrectly used to defend the foxhole from the 500 Ugandans who will at-\ntack the foxhole when you are in it.\nWEAPONS ENGINEERING: A disassembled AK-47 has been\nplaced on the desk beside you. With it is an instruction booklet printed\nin Russian. In 5 minutes, a hungry tiger will be let loose in the class-\nroom. Handle the situation as you see fit. Be prepared to justify your\nactions.\nPOLITICAL SCIENCE: Take a position for or against the use of\ntruth as a political tool in peacetime. Prove your position.\nPHILOSOPHY: Discuss the development of human thought.\nCompare it with the development of thought of other species.\n"
+  },
+  {
+   "path": "extract/dragon/010/p026_full.txt",
+   "content": "Clockwise from Above\n1\nRal Partha 25 mm fantasy\n3642-Hyde Park Ave.\nCincinnati, OH 45208\n2\nArchive Miniatures \u2014 25mm fantasy\nPOB 93\nBurlingame, CA 94010\n3\nGrenadier Miniatures \u2014 25mm (except\nbottom strip which is 15mm) fantasy\nPOB 305\nSpringfield, PA 19064\n4\nMini Figs Ltd. 25mm Carolignians,\nFranks & Moors\nBox P\nPine Plains, NY 12567\n"
+  },
+  {
+   "path": "extract/dragon/010/p027_full.txt",
+   "content": "; DIPLOMACY WORLD is a quarterly\nmagazine on Diplomacy which is edited\nby Walter Buchanan, R, R. #3, Box 32h,\nLebanon, IN 46052 and subsidized by the\nAvalon Hill Game Company. The purpose\nof each 40-page offset issue is to pre-\nsent a broad overview of the postal Di-\nPplomacy hobby by printing articles on\ngood play, zine news, listing rating\nsystems, game openings, and printing a\ncomplete variant game and map with each\nissue, Subs are $4.00 ($4.50 foreign)\nwith single copies $1.25 each (payable\nto Walter Buchanan),\nDiplomacy is a registered trade-\nmark for a game copyright by the Avalon\nHill Game Co., 4517 Harford Rd., Balti-\nmore, MD 21214, The set is available\nfrom them for $11.00 plus postage,\n"
+  },
+  {
+   "path": "extract/dragon/010/p028_full.txt",
+   "content": "The Dragon Vol. 2 No. 4\nW/ FAR O'ER \u201cTHE MYSTIC MOUNTAINS TALL\nTHE DRAGON SKULKETH IN HIS HALL, |\ny WE'LL HAVE HIS TAIL IF HE PoTH FAIL\n9 TO FORKETH O\u20acR OUR BOWLING BALLS!\nIT'STIME TO\nSHOW THEM\nWHO'S BOSS,\nA.\nJ Ss)\nNOT ABAD IDEA,\nBUITAC\n, s | DRAGON ALWAYS\n7OU GONNA STUMPS THE CHUMPS\nSTUMP &M WITH A RIDDLE.\nINTA DA DoIT? -\n| | Pin ay |\n\u00e9\u00ab ie\n26\n"
+  },
+  {
+   "path": "extract/dragon/010/p029_full.txt",
+   "content": "October, 1977 The Dragon\nFinieous Fingers, Fred and Charly in: Hobbits Gre Definitely Bad\nCompany, Or, 002-1/2, in: You Only Get Jt Once \u2014\nLATE ONE NIGHT... QuicH 1! NOW SAVT THE DOOR?\nSURE FIN,\nOKAY \u00a7..\nFRED/, CHARLY,\nOPEN UP II\n\\ QUICK! ===\nA Ses y || Bea\n< OD Sums\nANGT SMa\n. Al got st\nTUST A SECOND! \u2014_ mee\na\nRe my ES.\noY\n= om\nfae mm } Ar?2 oon \\ FE\noo we, \u2018 pt) Tr\n\u2014\u2014 lhe y | \\\nil | | | \u2018 tw OL\n(NO TIME FOR TALK\nFY CHARLY! /LL EXPLA\nLATER f/...\nCITY GUARD AGAIN FINIEOUS ?1\n122 SO YOU SEE, NOT ONLY ARE .\nTHESE GUYS SNEAKY, BUT THEY RE\nEXPERTS WITH Bows AND SLINGS\nNOPE! HOBBITS, A WHOLE GuiLD\nFULL OF EM, AND THEYRE Our TO\nWIPE ME AND TANE THE TOWN..,\niy\nim\nsR\nLTE\naye\nAND DONT FORGET, !\nWERE ALSO MASTERS [\nOF DBiseuisE AND WE\nLOVE To PoISow\nDRINK s TOO, HEH!\nif y\nmaT\nqT)\nBETTER Fill\nVS IN ON IT.--\n== a\nWit\nAG a\nFLORIDA\u2019S LARGEST *\nFantasy and military wargame shop. Airfix \u00b0 Archive \u00a2 A-H \u00a9 Battleline * Cin C\n\u00a2 Garrison \u00ab GDW \u00ab GHQ \u00ab Genadier \u00ab Heritage * Mcewan \u00ab Metagaming\nMinifig Ral Partha \u00ab SPI \u00ab Superior \u00bb TSR * WRG \u00b0\u00ab and others. Quantity dis-\ncounts. Catalog 50c-refundable first order. 2222 SOUTH AVENUE\nYOUNGSTOWN, OHIO 44502\nMODELERS MART \u2014 DeptbD (216) 749-9456\n760 N. Indian Rocks Road\nBelleair Bluffs, Fl 33540 (St. Petersburg Area) SPECIALTY SHOP FOR MINIATURE FIGURES\nBOOKS / WAR GAMES\nSee you at Winter Fantasy 2. Feb. 9, 10 & 11, 1978\nRobert Meyer Hotel\ni ille, FL.\nIs This Your Last Issue . . .? Jacksonville,\n- Endorsed by TSR.\nIf your mailing label code number matches the number of Cont.\nthis issue, your subscription has run out. The paltry sum of $9.00 :\nCowford Dragoons\nwill guarantee you the next six issues via 2nd Class Mail.\n\u00a7333-Santa Monica Blvd.\nN. Jacksonville, FL. 32207\nAttention\nWestern Canada/Northern U.S. Gamers!\nAnyone interested in a convention next summer \u2014 late\nJuly/early. August \u2014 in Calgary, Alberta, contact Terry Touts\n13263 Lake Lucerne Rd., SE, Calgary, Alta., CANADA\n"
+  },
+  {
+   "path": "extract/dragon/010/p030_full.txt",
+   "content": "RAL PARTHA\nNEW RELEASES\nFANTASY LINE\nES 22 ELF LORD\nES 23 SHIELD MAIDEN\nES 24 \"FOREGUM\" SUPER HERO\n(BARE-CHESTED)\ngee ES 25 SUPER HERO IN PLATE ARMOR mae\nMOUNTED VALLOR ON ARMORED SUPER HEAVY VALLOR CAPTIAN\nWAR HORSE ,\nES 26 ADVENTURESS RIDING HORSE\nES 27 RANGER OF THE NORTH RIDING\nHORSE\n1200 AD LINE\nFRENCH CROSSBOWMAN\nMONGOL MEDIUM CAVALRY\nMONGOL INFANTRY\nSUNG HEAVY CAVALRY\nES18\nADVENTURESS\nFor catalog or complete line of Fantasy, Medieval, and 15mm Napoleonics write:\nRAL PARTHA ENTERPRISES\n3642 Hyde Park Avenue \u00a2 Cincinnati, Ohio 45208 \u00ab Phone 1-513-271-2083\nDealer Inquiries Welcome\n"
+  },
+  {
+   "path": "extract/dragon/010/p031_full.txt",
+   "content": "esions ih. \u201cPetal Throne\nFantasy Miniatures Wargame Rules For The World Of Tekumel\n= 2\na Gf fl Jus\npi aes a a\u00ae i of - a\nW264 i\nee\nre,\noe eet re Oe com\nkg . Ae\nThe fantastic and multi-faceted nature of warfare on the world of Tekumel comes alive through\nTSR\u2019s LEGIONS OF THE PETAL THRONE!\nDesigned as a companion volume to M.A.R. Barker\u2019s remarkable game EMPIRE OF THE PETAL\nTHRONE, this 44-page booklet contains all the necessary details to create mass battles with miniature\nfigures featuring the myriad human and nonhuman forces of Tekumel.\nLEGIONS OF THE PETAL THRONE includes a wealth of material for the ever-increasing number\nof gamers who have discovered the unique fascination of this strange world. In addition to a set of\nbasic rules, there is a large section on magic, with the bulk of the booklet detailing the advanced rules\nfor the Qadardali or Great War. And in two extensive appendices by M.A.R. Barker, additional\nvaluable information is included on the armies of the various empires of Tekumel and the details of\ntheir many unit and army formations. Quite simply, a must for anyone interested in the fantastic\nworld of the Petal Throne...\nct\n\u201d TSR Hobbies, Inc.\nP.O. Box 756\nNOW AVAILABLE!\n$5.00\n3t\n"
+  },
+  {
+   "path": "extract/dragon/010/p032_full.txt",
+   "content": "You are missing out if pou don\u2019t read\nf\n(uccle WARS The Journal for the Historical Battle Game Enthusiast\nDo you know...\n... the status of the Russian Army in 1941?\n... the significance of the Battle of Leiberkolwitz, 1813?\n. how to design an historical WWI naval scenario?\n. what the Viking \u2018Blood Eagle\u201d was?\n. how to simulate surprise in miniatures?\n. the TOF of the Danish Army of 1801?\n_ the role of artillery in the Amer. Revolution?\n*\n_ the organization of the Mongol army?\nIf you answered NO to any of the above,\nyou should read Little Wars.\nLittle Wars deals with every historical period, from Ancients to Moderns. All approaches to\nthe war game are covered, with an emphasis on miniatures. Contents include; historical ar-\nticles, orders at battle, color uniform data and plates, battle reports, weapons data, re-\nviews, letters, variants and rules modifications\nComing in LW6, (avail. late July)\ne An analysis of the Napoleonic Battle of Eylau\ne The Elephant\u2019s Graveyard \u2014 an expose\u2019 of the negligence\nof the Aberdeen AFV Museum\ne A battle report using the new Cordite & Stee!\nrules for dreadnought era naval actions\nComing in LW7...\nA complete boardgame . . . & more of the features you'd expect from the fastest growing\nmagazine of its kind.\n\u00a2\n: Auccte WAKs is published Quarterly, with a minimum of 40 pages\nLITTLE WARS P.O. Box 756, Lake Geneva, Wisconsin 53147\nSingle Issue \u2014- 1.50 All Subs mailed\n6 Issue Sub 9.00 2nd Class to No. America and Hawaii\nNo. America including Hawaii, Overseas 20.00 Air Mail Overseas\nLeI\u20acS \u201cSIM \u201cVAANAD AVI -\n9S FOd\n*spurod A1jua [BUOTIPpe Pue L PIES PAA *eaauat) 34G'] Je Sulpuad si sajes 33e)sod ssejd-puosas se [eu oO) UOHBTIddy\n"
+  },
+  {
+   "path": "extract/dragon/010/p033_full.txt",
+   "content": "\n"
+  },
+  {
+   "path": "extract/dragon/010/p034_full.txt",
+   "content": "fp a eS eee eee os 7 ee Se oS ee eee\nZoe ire J | [ay i,\nEAS Se eee FRPP | See\nRAARRARX\nae\nSA RAB SS\n"
+  }
+ ],
+ "inline_count": 75
+}

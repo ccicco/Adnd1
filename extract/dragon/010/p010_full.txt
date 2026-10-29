@@ -1,0 +1,149 @@
+The Dragon
+MAMMALS (Cont.)
+7 Regenerates 1-3/1-4/1-6/1-8/1-10/1-12 _ hits/turn.
+Does double damage
+9 Only silver/magic weapons effective
+co
+10 Silver/magic weapons do double damage
+Ul Has poison whip, does 1-4/1-8/1-12/1-20/death/death
+12 Flier, speed 24
+13 Bite is poisonous, does 1-3/1-6/1-8/1-12/1-20/death
+14 Bite causes disease, fatal in 1-20 days
+15 Gaze causes Stun 1-4/Stun 1 -8/Stun 1-12/paralysis/stone/stone
+16 Web
+17 Monster has horn, does 1-6
+18 Claws do 1-4 each
+19 Missiles ineffective
+20 Silent movement
+21 Proboscis does blood drain, 1-4/turn
+22 Has Charm Person spell
+23 Has nothing/Magic Missile/3-dice FBM-dice FB/5-dice FB/6-dice FB
+24 Has antimagic shell
+REPTILES
+1 Paralysis touch/Paralysis gaze/Stone touch/Stone breath/Stone gaze/
+Disintegrate touch
+2 Poison bite, does 1-4/1-6/1-10/1-12/1-20/kill
+3 Sting in tail, does 1-6/1-8/1-10/1-12/paralysis/kill
+4 Breathes cold, does 1-3 hits/every four levels
+5 Breathes lightning, does 1-6 hits/four levels, kills at 17 +
+6 Breathes fire, does 1-8 hits/four levels
+7 Increase AC by 1 (i.e., from AC6 to ACS)
+8 Increase AC by 2
+9 Add 1 HD
+10 Add 2 HD
+ll Movement -3
+12 Flier, speed 18
+13 Flings 1-4 tail spikes/four levels
+14 Regenerates 1-3 hits/four levels
+15 Commands snakes: 1-6/2-12/3-18/1-6 Giant/2-12 Giant/3-18 Giant
+16 Does double damage
+17 Legless, speed + 3
+18 Bite causes disease, fatal in 1-10 days
+19 Magic/Silver weapons do double damage
+20 Fangs do 1-4/bite extra
+21 Gaze causes confusion
+22 Slow spell has double effect
+23 Claws do 1-4 each
+24 Tongue is whip, does 1-4
+UNDEAD
+1 Missiles ineffective
+2 Only magic weapons effective
+3 Only magic/silver weapons effective
+4 Only magic/silver weapons effective and at /2 damage
+5 Destroyed by fire
+6 Destroyed by sunlight
+7 Destroyed by running water
+8 Destroyed by holy water
+9 Destroyed by cold
+10 Turned by cross
+I] Turned by mirror
+12 Tumed by garlic
+13 Turned by wolvesbane
+14 If human killed by undead, becomes undead
+15 Undead is Lawful (and not affected by Clerics)
+16 Turns/dispels Clerics*
+17 Charms Person
+18 Touch does nothing/paralysis/rotting disease, 1-12 turns/ drains 1 level/
+drains 2 levels/drains 3 levels
+19 Commands Rats: 1-20/1-100/1-4 Giant/1-8 Giant/1-12 Giant/1-20 Giant
+20 Commands Wolves: 1-4/ 1-6/ 1-8/1-8 Dire/ 1-10 Dire/1-20 Dire
+21 Flier, speed 18
+22 Gaze does nothing/confusion/confusion/paralysis/paralyis/stone
+23 Destroyed only by fire
+24 Invisible
+*This Undead is not affected by Clerics; instead, Clerics are af-
+fected by the Undead. Divide the level of the Undead by 2 and treat this
+as the level of Cleric the Undead corresponds to on the Undead table.
+Divide the level of the Cleric by two and treat this as the type-level of
+Undead on the Undead table to which the Cleric corresponds. Use the
+table normally to find out if the Cleric is turned or dispelled, (Turna-
+bout is fair play.)
+10
+Vol. 2 No. 4
+OTHER CHARACTERISTICS
+Roll % dice: a score of 01-70 means no more characteristics; 71-85
+means one other characteristic; 86-95 is two; and 96-00 is 3.
+Die
+ReOwwu
+co HON
+Other Characteristic
+No head
+3 eyes
+4 eyes
+Stalk eyes
+Unusually long fangs
+Unusually long claws
+Antennae
+3-segment body
+PHYSICAL DESCRIPTION
+You should also know what the monster looks like. Undead do not
+have a physical description (assume a figure under a cloak if you wish).
+For everything else, start rolling on these tables.
+SIZE
+HD Small Medium Large
+1-4 1-4 5-11 12 Roll on a 12-sided
+5-8 1-2 3-9 10-12 Small = 0-3 feet (approx)
+9-12 | 2-8 9-12 Medium = 3-12 feet (approx)
+Large = 12 + feet (approx)
+HD Small Medium Large
+13-16 I 2-7 8-12
+17-20 | 2-6 7-12
+21+ | 2-5 6-12
+LIMBS EXTERIOR COVER
+Die # legs Die # arms Die Mammals Reptiles
+| 1 | | 1-4 Hair Scales
+25 2 2-4 2 5-7. Skin Skin
+6-7 3 5-7 2 tentacles 8 Feathers Hair
+8 4 8
+COLORING
+Die Mammals Reptiles
+1-6 gray green
+7-10 white gray
+11-12 black gray-green
+13 brown blue
+14 green red
+15 blue black
+16 red yellow
+17-18 striped striped
+19-20 spotted spotted
+For stripes or spots, roll the die again twice. Ignore further stripe or
+spot results, unless a stripe result gets another stripe, in which case you
+have a triple-stripe scheme. For spots, the first color rolled is the back-
+ground; the second is the color of the spots.
+AAD oF
+MONTY:S acd | Aor
+Orauerasies Sey ons anon
+i Minsatures
+E Gots
+Games
+TALL
+723
+WILLIAMS *©
+LAKE (geneva
+OPEN EVER
+DAY BUT
+a MONDAYs §
+r Poly -3 7 27
+y PeRlenT — 899
+DUNGEONS
+€ DRAGONS

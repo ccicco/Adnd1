@@ -27650,6 +27650,23 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   byte-exact (187037 bytes), prefix scan clean,
   seed grep 1. Likely next: the issue-9 flip
   (report 009 box closing). WAIT FOR GO.
+  - R913 LANDED 2026-10-29: commit
+  17dbf8c0ef6ffe8985358d24040ac69dc2b61008 (base
+  b78fe96, census 835 -> 836), the Dragon issue-9
+  flip: prefix dnp, header rules/dnp.h, audit
+  rules/audits/r913_batch.h ("R913 Dragon issue-9
+  closure audit"), 13 inline (8 consts + 5
+  bools), 3 examples, 2 header_sections, ZERO
+  file_patches/data_files, ONE gap flip: gap
+  report 009 box -> [x] (the Gygax alignment
+  article and the Ward Tombs & Crypts article),
+  gap_census 1 closed / 0 open, the two-chain
+  issue-9 walk complete. rverify GREEN (13
+  mutants / 0 missed), double-run applied 6 /
+  already 6, spec round-trip byte-exact (8334
+  bytes), prefix scan clean, seed grep 1. Likely
+  next: the issue-10 opener (source in accessory-
+  dragon-magazine-012). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

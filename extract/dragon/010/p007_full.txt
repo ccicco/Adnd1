@@ -1,0 +1,192 @@
+October, 1977
+Design Forum
+The Dragon
+Designing For Unique Wilderness Encounters
+by Daniel Clifton
+By use of the following tables, a dungeon master may quickly de-
+termine the terrain in which any encounter occurs according to the type
+of hex the party is travelling through. The tables may also be used to
+create maps of the area surrounding special sights such as castles, cities,
+and dungeons. Additionally, the tables are ideal for resolving the shape
+of battlefields for D + D as well as any other wargame.
+For encounters, consider a four foot square area and determine
+terrain to each corner section of four square feet. If a river flows
+through the hex in question, then allow a 10% chance that it will flow
+across the field with an additional 10% chance that it will have a ford
+(if an encounter with a swimmer is indicated, then the river will always
+be on the field; and if the party is travelling upon a road, then an ap-
+propriate bridge or ford will be located at the river.) To determine the
+course of the river, first randomly locate it in one of the areas, find the
+initial direction of flow in chart 6-A, and then plot its course according
+to chart 6-B from one four-square-foot area to the next until both ends
+are plotted off the field. Roll on the appropriate chart for each area,
+plotting the flow of streams as with rivers immediately upon rolling the
+proper number. Next, find the grade of slopes and hills by rolling on
+the matching ‘A’ chart (grade also indicates height, ie. gentle = one lev-
+el, steep = three levels, etc.). Finally, the run of slopes is determined as
+with rivers using table 6-C to find the facing of the slopes if it can be de-
+cided that some sort of high ground such as a mountain peak exists off
+the field. Chart 6-C is also used when one slope is indicated to cross an-
+other that has already been plotted in which case the new slope will turn
+to run parallel to the original one, either facing in the same direction
+(slope faces away from high ground) or the opposite direction (slope
+faces high ground). If a slope is indicated to cross a river or a stream,
+there is a 75% chance that it will turn to face the watercourse and run
+parallel to it off the field. Once the general features are determined, the
+dungeon master may blend them together at his discretion, shrinking or
+enlarging any features to fit the area.
+Monsters and party will be placed in opposite corner sections. If ei-
+ther is located in dense woods, double chances of surprise and find nor-
+mal sighting distance between 20 and 120 feet. If either is located in
+light woods, find normal sighting distance between 20 and 100 yards. If
+both monsters and party are located in featureless areas with clear lines
+of sight, halve chances of surprise and normal sighting distance will al-
+ways be at a maximum.
+If this method is used to map larger areas, decrease the possibility
+of slopes and streams in proportion to the increase in area.
+Table #1 — Clear Table #2 — Rough
+Die Feature Die Feature
+1-70 Featureless 1-25 Featureless
+71-77 Hill* 26-45 — Hill*
+78-82 Rough Ground 46-600 Rough Ground
+83-84 Marsh 61-70 —Slope*
+85-88 Slope* 71-77. Dense Brush
+Table #3 — Mountainous
+Die Feature
+1-15 Featureless
+16-55 Slope*
+56-60 Hill *
+61-70 Rough Ground
+71-75 Dense Brush
+76-87 Light Woods
+88-95 | Dense Woods
+96-00 Stream*
+Table #3A — Grades
+Die Grade
+1-5 Gentle
+6-30 Average
+31-85 Steep
+86-00 Sheer
+*Roll Again:
+Additional
+Die Feature
+1-60 None
+61-70 Rough Ground
+71-77. Dense Brush
+78-91 Light Woods
+92-00 Dense Woods
+Table #4 — Wooded
+Die Feature
+1-5 Featureless
+6-40 Dense Woods
+41-60 Light Woods
+61-65 Dense Brush
+66-68 Rough Ground
+69-75 Slope*
+76-89 — Hill*
+90-91 Marsh
+92-95 Stream*
+96-00 Pond*
+Table #4A — Grades
+Die Grade
+1-50 Gentle
+51-85 Average
+86-96 Steep
+97-00 Sheer
+*Roll Again:
+Additional
+Die Feature
+1-15 None
+16-60 Dense Woods
+61-90 Light Woods
+91-94 Rough Ground
+95-00 Dense Brush
+Table #5 — Marshy
+Die Feature
+1-5 Featureless
+6-25 Marsh
+26-55 Pond*
+56-65 Stream*
+66-80 Dense Brush
+81-85 Rough Ground
+86-93 Dense Woods
+94-98 Light Woods
+99-00 Gentle Hill*
+*Roll Again;
+Additional
+Die Feature
+1-5 None
+6-50 Marsh
+(None if Hill)
+51-70 Dense Brush
+71-80 Rough Ground
+81-93 Dense Woods
+94-00 Light Woods
+Table #6A — Initial Run
+of Rivers, Streams,
+and Slopes
+Die Course
+1 North - South
+2 Northeast - Southwest
+3 East - West
+4 Northwest - Southeast
+Table #6B — Course of Runs
+Die Course
+1-2 Course turns clockwise
+3-4 Course goes straight
+5-6 Course turns counterclockwise
+Table #6C — Facing of Slopes
+Die Facing
+1-2 Slope faces high ground
+3-6 Slope faces away from high ground
+89-93 Light Woods
+94-97 Stream*
+98-00 Pond*
+Table #1A — Grades
+Die Grade
+1-60 Gentle
+61-90 Average
+91-98 Steep
+99-00 Sheer
+*Roll Again:
+Die Feature
+1-90 No Additional
+Features
+91-95 Additional
+Light Woods
+96-00 Additional
+Rough Ground
+78-85 Light Woods
+86-89 | Dense Woods
+90-91 Marsh
+92-95 Stream*
+96-00 Pond*
+Table #2A — Grades
+Die Grade
+1-35 Gentle
+36-75 Average
+76-95 Steep
+96-00 Sheer
+*Roll Again:
+Additional
+Die Feature
+1-60 None
+61-75 Rough Ground
+76-81 Dense Brush
+82-94 Light Woods
+95-00 Dense Woods
+Convention Schedule 77-78
+Great Lakes Convention — Sheraton-Lockport Inn, 515 South Transit Street,
+Lockport, New York 14094, September 17-18. Tentative schedule of events «
+Opening ceremonies by local re-enactment group « Boardgaming competition «
+Miniature competition « Seminars & slide show presentation « Modeling contest
+« Awards banquet. For more info: Richard J. D’Angelo, 395 South Shore Blvd.,
+Lackawanna, New York 14218.
+The Return of ORCCON — Jan. 13-15, ‘78, Cal. State Univ., Fullerton. D&D,
+miniatures & boardgames. $2 for pre-registration, $3 at door. For more info,
+write James J. Meyers, 13718 Norbeck Dr., La Mirada, CA 90638
+WarCon IV — Jan. 27-29, ‘78. Texas A&M Univ. No details available. Contact
+Jerry Ruhland, 6303 Reiger, Dallas, TX 75214.
+GenCon South — Feb. 9, 10 & 11, 1978, Robert Meyer Hotel, Jacksonville, FL.
+Endorsed by TSR. Contact: Cowford Dragoons, 5333-Santa Monica Blvd., N.
+Jacksonville, FL 32207

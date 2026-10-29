@@ -1,0 +1,229 @@
+October,
+1977
+Weights & Measures,
+Physical Appearance and Why
+Males are Stronger than Females;
+in D&D
+by P.M. Crabaugh
+Nothing too ambitious. In one article, I hope to
+provide a new way of handling encumberance, a way
+of describing the physical appearance of your char-
+acters, and — hopefully! — provide an equitable
+and reasonable method ofhandling sexual differen-
+tiation. Should space allow it, I will also give you
+working blueprints for a warp drive and a one-page
+synopsis of the Mind of God. Oh, well.
+Pll start off by saying that I borrowed some of
+this from the Warlock rules printed in the Spartan,
+#9 — the idea of a Size characteristic, at least. But
+the concept is here heavily modified and made more
+rational. (I hope.)
+Size is an additional characteristic rolled on 3 six-
+sided dice. In addition, all characters should also
+roll Build on one six-sided, with a 1 indicating a
+Light Build, a 2-5 meaning a normal build, and a 6
+indicating a heavy build. Build is functional only for
+human beings, but roll it up for non-humans any-
+way. (I'll get to that.)
+Now that you have your Size and Build, and have
+presumably chosen the sex of the character, you con-
+sult the following tables for your height and weight.
+Weight is given in pounds; one pound is presumed to
+equal 10 GP.
+HUMANS (male)
+Weight Weight Weight
+Size Height (It) (mdm) (hvy)
+3 5-1 120 135 145
+4 5-2 120 185 150
+5 5-3 125 140 155
+6 5-4 130 145 155
+7 5-5 130 145 160
+8 5-6 135 150 165
+9 5-7 140 155 170
+10 5-8 140 160 175
+l 5-9 145 160 180
+2 5-10 150 165 185
+3 5-11 155 170 190
+14 6-0 160 175 195
+5 6-1 160 180 200
+16 6-2 165 185 205
+17 6-3 170 190 210
+18 6-4 175 195 215
+HUMANS (female)
+Weight Weight Weight
+Size Height (It) (mdm) (hvy)
+3 4-10 100 110 120
+4 4-11 105 115 125
+5 5-0 105 115 130
+6 5-1 110 120 130
+7 5-2 110 125 135
+8 5-3 115 125 140
+9 5-4 115 130 140
+10 5-5 120 130 145
+11 5-6 120 135 150
+12 5-7 125 140 155
+13 5-8 130 145 155
+14 5-9 130 145 160
+5 5-1 135 150 165
+6 5-11 140 155 170
+7 6-0 145 160 175
+8 6-1 150 165 185
+ELVES HOBBITS
+Males Females Males
+Size Height Weight Height Weight Height Weight
+3 5-0 105 4-11 95 2-6 35
+4 5-1 110 5-0 95 2-7 35
+5 5-2 110 5-1 100 2-8 35
+6 5-3 115 5-2 100 2-9 40
+7 5-4 120 5-3 105 2-10 40
+8 5-5 120 5-4 05 2-11 45
+9 5-6 125 5-5 110 3-0 45
+10 5-7 130 5-6 110 3-1 50
+1 5-8 30 5-7 115 3-2 50
+2 5-9 35 5-8 120 3-3 55
+13 5-10 40 5-9 120 3-4 55
+4 5-11 45 5-10 125 3-5 60
+1 6-0 150 5-11 130 3-6 60
+16 6-1 150 6-0 185 3-7 65
+17 6-2 155 6-1 140 3-8 65
+1 6-3 60 6-2 145 3-9 70
+HOBBITS DWARVES
+Size Height Weight Height Weight Height Weight
+3 2-4 30 4-0 85 4-0 80
+4 2-5 30 4-1 90 4-1 85
+5 2-6 30 4-2 95 4-2 90
+6 2-7 35 4-3 100 4-3 95
+7 2-8 35 4-4 105 4-4 100
+8 2-9 35 4-5 110 4-5 105
+9 2-10 40 4-6 115 4-6 110
+10 2-11 40 4-7 120 4-7 115
+11 3-0 45 4-8 125 4-8 120
+12 3-1 45 4-9 130 4-9 125
+13 3-2 50 4-10 35 4-10 130
+14 3-3 50 4-11 40 4-11 135
+15 3-4 55 5-0 145 5-0 140
+16 8-5 BB 5-1 150 Bed 145
+17 3-6 ~—-60 5-2 «155s iis
+18 3-7 60 5-3 «1605-88
+Bonuses and Penalties: If a character has a Size
+greater than or equal to 16, he may add 1 hit per die.
+If it is less than or equal to 5, he may subtract 1 hit
+per die. It is highly recommended that you calculate
+armor weight as a fraction of body mass. Specifical-
+ly, leather armor weighs 15% of the body mass;
+chain mail 30%; and plate mail 60%. The only other
+mods are for being female: Females add 2 to their
+Constitution score and 1 to their Dexterity score.
+That and body mass are the only differences be-
+tween male and female. Before somebody throws a
+rock, let me explain. As Jacob Bronowski pointed
+out, as well as, no doubt, many others, there is re-
+markably little difference between male and female
+humans (the term is here extended to include the
+Kindred Races), compared to the rest of the animal
+kingdom. There is little physiological difference, no
+psychological difference (Think about it. Consider
+that human societies have been both matriarchies
+and patriarchies. Don’t let your own experience
+blind you to history.), and so forth. (For example,
+we are one of a ridiculously tiny number of species
+that mate face-to-face, accenting the lack of dif-
+ference.) (Most of us, anyway.)
+Therefore, rolling female strength with a six-sided
+plus and eight-sided, or any other method that
+causes gross differences to occur, must be rejected as
+incorrect (Although you are free to include what you
+want in your own fantasies, as the Kindly Editor has
+pointed out.) Why have any differences at all?
+Well...
+At last count, the Constitution bonus should be
+there because it happens to be true. The last reports I
+saw showed that females are more resistant to Dis-
+ease, are better-suited to endurance events, and so
+forth, than males — strongly suggesting a higher
+Constitution. The Dexterity bonus is because I as-
+sume that a somewhat lighter build overall, with as-
+sociated somewhat more slender fingers, would
+make females more suited to picking locks and such
+than us thick-fingered clods with facial hair.
+19
+Che Dragon
+Why not have every character female? Beca
+a moment, I’m going to define carrying capac
+terms of body mass, putting females at a di
+tage. It seems to me that there are really two ki
+strength: How well muscled a person is, in the
+of how developed the musculature is, and
+physical force, which is largely dependent on
+The former seems to be to be reflected ir
+Strength characteristic, and females have no
+penalty there; the latter should be reflected
+Carrying Capacity. (I myself am in terrible shay
+but I weigh more than anyone else I know, a
+and somewhere in that mass there are enoug
+cles, however poorly developed, to cause me
+the one used as a pack mule by my friends.)
+To get on with it, to determine maximum cai
+capacity, check your strength against the fol
+table and find your multiple, by race. This m
+is applied against your body weight to get your maxi-
+mum carrying capacity.
+Race
+Strength Human Elf Dwarf Hobbit
+3 1.0 1.0 15 2.0
+4 1.2 1.2 L7 2.2
+5 1.3 1.8 1.8 2.3
+6 1.4 1.4 1.9 2.4
+7 1.6 1.6 2a. 2.6
+8 17 L7 2.2 2.7
+9 1.8 1.8 2.3 2.8
+0 2.0 2.0 2.5 3.0
+Race
+Strength Human Elf Dwarf Hobbit
+1 2.0 2.0 2.5 3.0
+2 2.2 2.2 2.7 3.2
+3 2.3 2.3 2.8 3.3
+14 2.4 2.4 2.9 3.4
+5 2.6 2.6 3.1 3.6
+1 2.7 21. Oe: 3.7
+7 2.8 2.8 3.3 3.8
+8 3.0 3.0 3.5 4.0
+After you get through multiplying, you have the
+maximum amount the character can carry and still
+stagger along at speed 3. He can carry 2 the maxi-
+mum and move at speed 6; 1/3 at speed 9; and % at
+speed 12.
+That takes care of the functional distinctions.
+Now, if you want to get a mental image of your
+character, start rolling on the following tables. If an
+image clicks before you reach the end, go ahead and
+stop rolling — although I suggest that you write
+down the rest of the categories. This can help your
+identification with the character in question enor-
+mously, I’ve found. Note that these tables are in-
+tended for humans, and work poorly to not at all for
+non-humans. I’m sorry, but I simply haven’t seen
+enough elves to be aware of the range of physical ap-
+pearance they have.
+The first thing is Build — which you already
+rolled. This does not only affect body mass, it can
+affect appearance. A Light Build generally means
+someone who whould be described as “slender”. A
+Heavy Build, well, for a Heavily Built male, think of
+Conan. For a Heavily Built female, think of Wonder
+Woman.
+The rest is located on these tables:
+Eyes (20-sided) Hair (20-sided)
+Die Color Die Color
+1-7 Brown 1-8 Brown
+8-138 Blue 9-10 Black
+14-17 Green 11-16 Blonde
+18-19 Steel-Gray 17 White
+20 Golden 18-19 Gray
+20 Red
+Hair Length (10-sided) Skin (20-sided)
+Male Female Length Die Complexion
+1-5 1-2 Short (4”) 1-3 Pale
+6-9 3-7 Medium (8“) 4-6 Fair
+10 8-10 Long 7-11 Normal
+12-14 Tanned

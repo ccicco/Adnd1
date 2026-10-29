@@ -1,0 +1,98 @@
+October, 1977
+The Dragon
+RANDOM MONSTERS
+by Paul Montgomery Crabaugh
+No, I don’t mean wandering monsters — I mean random mon-
+sters.
+One of the problems with D&D is that the players always know too
+much. This is news? “You obtain surprise over three Clickclicks.”
+“Clickclicks? Oh, yeah, they’re in Supplement Three. Hand it to
+me. And where’s Greyhawk? It had a note about them.” A pause. “We
+shout out ‘November’.”
+“That’s right, the Clickclicks fall over dead.”
+Sound familiar?
+The answer is to occasionally throw a monster at the party that
+keeps them on their toes, one that they have never seen before because
+it is unique. No rules cover it, so they have to find out the hard way
+what it’s like.
+And how do you do that? By taking the following tables and rolling
+dice. Just work your way through the tables one by one, and you will
+end up with a guaranteed original, unknown, random monster.
+This table is suited for the local group’s dungeons, and I should
+warn you that we around here fall somewhere between Lake Geneva
+and CalTech in philosophy. These tables are therefore geared to a 20-
+level dungeon, with each level being typically populated by monsters of
+the same level. (Goblins on first level, Gnolls on second, and so forth.)
+Obviously, if you are running a five-level dungeon and the first mon-
+ster your parties find is a very old Green Dragon, you’ll have to com-
+press the tables somewhat. If you’re running a 60-level dungeon — I
+don’t want to know about it.
+Now that that’s over, here come the tables. Just take them in or-
+der.
+INTELLIGENCE ALIGNMENT
+Die Intelligence Die Alignment
+1-3. Highly intelligent | Law Undead are
+45 Semi-intelligent 2-3. Neutrality always Chaotic.
+6 Unintelligent 4-8 Chaos
+SPEED
+TYPE Die Speed
+Die Type 1-3 6
+1-4 Mammal 47 9
+5-7 Reptile 8-10 12
+8 Undead 11-12 15
+HIT DICE
+Die AC/M AC/R | Level +3
+l 3 2 2-3. Level +2
+2-3 4 3 4-5 Level +1
+4-6 5 4 6-9 Level
+7-9 6 5 10-11 Level-1*
+10-11 7 6 12 Level-2*
+12 8 i “Level” is the level of the dun-
+M = Mammal geon, on this table only.
+R = Reptile *If result is non-positive, treat
+Undead AC = (1-8)+ 1
+HIT DICE MODIFIERS
+Die Modification
+l +2
+2-3 +1
+4-5 0
+6 -|
+UNDEAD
+Undead are turned by Clerics as if they were Undead of level HD/2;
+i.e., a 2HD Undead saves as a Zombie. Undead of level 17+ are treated
+as Vampires.
+SPECIAL CHARACTERISTICS
+0-2 30 2 3
+90 00
+3-5 50 80 95
+6-8 40 75 90
+9-12 30 60 80
+13-16 20 50 75
+17-20 10 40 60
+pA 01 30 50
+The number shown is the % score needed to have that # of Special
+Characteristics.
+DAMAGE DONE Level of Monster
+Die 1-4 5-8 9-12 13-16 17-20 2
+1 1-3 1-6 1-8 1-10 2-16 2-20
+2 1-4 1-8 1-10 2-12 2-24 2-24
+3 16 = 1-8 2-12 2-16 2-24 3-30
+4 1-6 = 1-10 2-12 2-16 3-30 4-40
+5 1-8 = 2-12 2-16 2-24 3-30 5-50
+6 1-8 = 2-12 2-16 2-24 5-50 1-100
+Damage done by intelligent monsters is by weapon type; by unintelli-
+gent monsters is by bite; and by semi-intelligent monsters is 50%
+chance of each.
+SPECIAL CHARACTERISTICS II
+The Special Characteristics are organized by type (mammal, reptile,
+undead). If a given number has several characteristics grouped thusly:
+n/m/o/p/q/r, it means that the exact characteristic is determined by
+the level of the monster: 1-4/5-8/9-12/13-16/17-20/21+.
+MAMMALS
+1 Hostile to Dwarves
+2, Hostile to Elves
+3 Hostile to Hobbits
+4 Hostile to Magic Users
+5 Hostile to Clerics
+6
+Hostile to Paladins (Cont. overleaf)
