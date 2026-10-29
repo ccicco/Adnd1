@@ -35,7 +35,7 @@ Wizard vs Warrior comic (7), the editorial (3), the ads (2, 16-21,
 
 ## Boxes
 
-- [ ] **The Sea Trade system, the psionic option, the morale
+- [x] **The Sea Trade system, the psionic option, the morale
   system and the Death Angel** (folios 6, 25, 26-27, 29) - the
   issue-6 opener round
 

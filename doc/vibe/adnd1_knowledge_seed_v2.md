@@ -27326,6 +27326,74 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   mostly Little Wars-type wargaming, one MA
   chain, one EPT chain - thin engine harvest
   likely). WAIT FOR GO.
+  - R906 LANDED 2026-10-29: commit
+  1a6baa30d990b0ea779d9545fcd94c7fc917b9a1 (base
+  60fbce7, census 828 -> 829), the Dragon issue-6
+  opener: prefix dso, header rules/dso.h, 105
+  inline (60 consts + 28 bools + 17 table cols),
+  19 examples + 6 table_checks, 4
+  header_sections, 34 data_files (the
+  death_angel.lua dragon_print def, gap report
+  006 pre-flip, 32 issue-6 transcripts), zero
+  file_patches, gap report 005 verified no-op (1
+  closed / 0 open). FOUR CHAINS: the Sea Trade
+  system (Spencer, folio 6) - cargo caps
+  10,000/50,000 GP, pilot fees 500/2,500, 5
+  percent import tax, nine ports, 2,500-mile
+  route, 50-mile coastal limit, 1-4 week delays,
+  3-8 week loss notice, the 16-band x 7-column
+  profit/loss grid with the ship-lost X as the 0
+  sentinel (census 1/1/2/3/4/5/6 by column); the
+  psionic determination option (Miller, folio 25)
+  - human 91 / half-human 95 gates, 37 abilities,
+  1 week/level basic, the garbled '1%' read as 1
+  1/2 pinned as 15 tenths, 9 weeks per
+  attack/defense mode; the morale system (Hayes
+  and Gilbert, folios 26-27) - the 3d6
+  bravery/charisma/loyalty ladder (-4 to +5),
+  level adds +1/+2/+3 at 3-4/5-6/7-8, post-melee
+  adjustments (comrade -1, MU/cleric -2, leader
+  -4, enemy mirrored +1/+2/+4, surprise -1),
+  F-fights 10 percent berserk per round, the
+  11-chart x d10 outcome grid B/H/S/F coded 0-3;
+  the Death Angel (Sullivan, folio 29) - a NEW
+  variant-layer registry monster on the R900
+  precedent, 7d8 HD, AC 4, move 12/20, scythe
+  1-12 save vs Death -3 with constitution loss,
+  3-day rise, 95 percent magic resistance, one
+  per master, lua at
+  monsters/monsters/d/death_angel.lua with the
+  DMG p.85 conversion 225 base + 2x175 specials +
+  275 exceptional, +8/hp at the floored 31
+  average, xpValue 1098. PRINT QUIRKS PINNED AS
+  SCANNED, NOTED NEVER SILENT: the profit/loss
+  grid's 16-20 row prints 10 in the five-bypassed
+  column where the arithmetic reads about 70; the
+  print's worked example (dice 62, 115 percent
+  'at one port bypassed') matches the zero-
+  bypassed cell while the one-bypassed cell
+  prints 125 - the grid is the pin, the
+  discrepancy noted. NOT USABLE per the issue-6
+  walk: the MA chains (Clone Bank Alpha 4-5,
+  Ward's clarifications 15, the 30 errata
+  riders), the EPT painting guide (8-11), the
+  fiction (12-14, The Forest of Flame), the
+  Wizard vs Warrior comic (7), the editorial (3),
+  the ads (2, 16-21, 31), the convention schedule
+  (30), the next-issue preview (32); the Gnome
+  Cache Ch.6 (22-24) rides IDEAS USABLE, never
+  engine ink. Engine catches this round: the
+  count-const must reach the consts pool before
+  the sections build (the R902/R905 lesson
+  restated), prev_record rides as a LIST of lines
+  (a single string reads as one 2,000-col line
+  and trips the R427 gate), and a mirror-fail
+  after writes leaves the tree mixed - restore at
+  HEAD and re-run (the R420 lesson). Spec md5
+  ed1f159c9e4aabb949ad49f5c8ddd430, 181,461
+  bytes. NEXT: the issue-6 flip (report 006, 1
+  box to close) or the issue-6 remainder review.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

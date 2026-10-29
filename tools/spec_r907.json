@@ -1,0 +1,234 @@
+{
+ "round": 907,
+ "title": "The Dragon issue-6 box closing round: the four-chain walk complete",
+ "prefix": "csx",
+ "census_before": 829,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R906 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R906 LANDED 2026-10-29: commit",
+  "  1a6baa30d990b0ea779d9545fcd94c7fc917b9a1 (base",
+  "  60fbce7, census 828 -> 829), the Dragon issue-6",
+  "  opener: prefix dso, header rules/dso.h, 105",
+  "  inline (60 consts + 28 bools + 17 table cols),",
+  "  19 examples + 6 table_checks, 4",
+  "  header_sections, 34 data_files (the",
+  "  death_angel.lua dragon_print def, gap report",
+  "  006 pre-flip, 32 issue-6 transcripts), zero",
+  "  file_patches, gap report 005 verified no-op (1",
+  "  closed / 0 open). FOUR CHAINS: the Sea Trade",
+  "  system (Spencer, folio 6) - cargo caps",
+  "  10,000/50,000 GP, pilot fees 500/2,500, 5",
+  "  percent import tax, nine ports, 2,500-mile",
+  "  route, 50-mile coastal limit, 1-4 week delays,",
+  "  3-8 week loss notice, the 16-band x 7-column",
+  "  profit/loss grid with the ship-lost X as the 0",
+  "  sentinel (census 1/1/2/3/4/5/6 by column); the",
+  "  psionic determination option (Miller, folio 25)",
+  "  - human 91 / half-human 95 gates, 37 abilities,",
+  "  1 week/level basic, the garbled '1%' read as 1",
+  "  1/2 pinned as 15 tenths, 9 weeks per",
+  "  attack/defense mode; the morale system (Hayes",
+  "  and Gilbert, folios 26-27) - the 3d6",
+  "  bravery/charisma/loyalty ladder (-4 to +5),",
+  "  level adds +1/+2/+3 at 3-4/5-6/7-8, post-melee",
+  "  adjustments (comrade -1, MU/cleric -2, leader",
+  "  -4, enemy mirrored +1/+2/+4, surprise -1),",
+  "  F-fights 10 percent berserk per round, the",
+  "  11-chart x d10 outcome grid B/H/S/F coded 0-3;",
+  "  the Death Angel (Sullivan, folio 29) - a NEW",
+  "  variant-layer registry monster on the R900",
+  "  precedent, 7d8 HD, AC 4, move 12/20, scythe",
+  "  1-12 save vs Death -3 with constitution loss,",
+  "  3-day rise, 95 percent magic resistance, one",
+  "  per master, lua at",
+  "  monsters/monsters/d/death_angel.lua with the",
+  "  DMG p.85 conversion 225 base + 2x175 specials +",
+  "  275 exceptional, +8/hp at the floored 31",
+  "  average, xpValue 1098. PRINT QUIRKS PINNED AS",
+  "  SCANNED, NOTED NEVER SILENT: the profit/loss",
+  "  grid's 16-20 row prints 10 in the five-bypassed",
+  "  column where the arithmetic reads about 70; the",
+  "  print's worked example (dice 62, 115 percent",
+  "  'at one port bypassed') matches the zero-",
+  "  bypassed cell while the one-bypassed cell",
+  "  prints 125 - the grid is the pin, the",
+  "  discrepancy noted. NOT USABLE per the issue-6",
+  "  walk: the MA chains (Clone Bank Alpha 4-5,",
+  "  Ward's clarifications 15, the 30 errata",
+  "  riders), the EPT painting guide (8-11), the",
+  "  fiction (12-14, The Forest of Flame), the",
+  "  Wizard vs Warrior comic (7), the editorial (3),",
+  "  the ads (2, 16-21, 31), the convention schedule",
+  "  (30), the next-issue preview (32); the Gnome",
+  "  Cache Ch.6 (22-24) rides IDEAS USABLE, never",
+  "  engine ink. Engine catches this round: the",
+  "  count-const must reach the consts pool before",
+  "  the sections build (the R902/R905 lesson",
+  "  restated), prev_record rides as a LIST of lines",
+  "  (a single string reads as one 2,000-col line",
+  "  and trips the R427 gate), and a mirror-fail",
+  "  after writes leaves the tree mixed - restore at",
+  "  HEAD and re-run (the R420 lesson). Spec md5",
+  "  ed1f159c9e4aabb949ad49f5c8ddd430, 181,461",
+  "  bytes. NEXT: the issue-6 flip (report 006, 1",
+  "  box to close) or the issue-6 remainder review.",
+  "  WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/dso.h\"  // R906: the Dragon issue-6 opener, the Sea Trade system, the psionic option, the morale system and the Death Angel",
+ "include_comment": "the Dragon issue-6 box closing round, the four-chain walk complete",
+ "header_file": "rules/csx.h",
+ "audit_file": "rules/audits/r907_batch.h",
+ "audit_label": "R907 Dragon issue-6 closure audit",
+ "audit_anchor": "#include \"rules/audits/r906_batch.h\"  // R906: R906 issue-6 opener audit",
+ "gap_report": "tools/dragon_gap_report_006.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Sea Trade system, the psionic option, the morale\n  system and the Death Angel** (folios 6, 25, 26-27, 29) - the\n  issue-6 opener round",
+   "to": "- [x] **The Sea Trade system, the psionic option, the morale\n  system and the Death Angel** (folios 6, 25, 26-27, 29) - the\n  issue-6 opener round",
+   "note": "the issue-6 box - the four-chain opener round first flip, 1 closed / 0 open, the issue-6 walk complete"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-6 box closing round - the four-chain walk complete: the pure bookkeeping round, the flip and the registry ground truth",
+  "provenance": "The pure box-closing round, no new ink: the issue-6 box in tools/dragon_gap_report_006.md flips closed (1 / 0), completing the issue-6 walk exactly as adjudicated at R906 - the Sea Trade system, the psionic determination option, the morale system and the Death Angel having been the only engine-relevant ink in issue #6 (the Metamorphosis Alpha chains, the EPT painting guide, the fiction, the Gnome Cache as ideas-usable, the comic, the editorial, the ads, the convention schedule and the preview all scoped out). The bookkeeping pins: the single box and its four chains, the issue-5 report complete at 1 / 0 since R903, the issue-4 report complete at 1 / 0 since R901, and the registry ground truth carried forward (the 1311 live census, the 1333 base lua files, the 25 never-load errors - the battery line the only ground truth, a pre-R900 print-fidelity state untouched).",
+  "sentinel": "The variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the pin IS the conversion, and the R906 print quirks (the profit/loss grid's AS-SCANNED 10 cell, the worked-example discrepancy, the folio-25 15-tenths read) stay noted in the opener round, never silent."
+ },
+ "consts": [
+  {
+   "name": "csxReportBoxes",
+   "value": 1,
+   "comment": "the issue-6 gap report carries one box (report 006)"
+  },
+  {
+   "name": "csxIssue6Chains",
+   "value": 4,
+   "comment": "the issue-6 opener pinned four chains - the Sea Trade system, the psionic option, the morale system, the Death Angel (R906)"
+  },
+  {
+   "name": "csxIssue5Closed",
+   "value": 1,
+   "comment": "the issue-5 report has sat complete at 1 closed / 0 open since R903"
+  },
+  {
+   "name": "csxIssue4Closed",
+   "value": 1,
+   "comment": "the issue-4 report has sat complete at 1 closed / 0 open since R901"
+  },
+  {
+   "name": "csxLiveRegistry",
+   "value": 1311,
+   "comment": "the live registry census floor, carried forward from R900"
+  },
+  {
+   "name": "csxBaseLuaFiles",
+   "value": 1333,
+   "comment": "the base lua file count the R900 promotion measured against"
+  },
+  {
+   "name": "csxRegistryLoadErrors",
+   "value": 25,
+   "comment": "the base never-load errors - the battery line is the only ground truth"
+  }
+ ],
+ "bools": [
+  {
+   "name": "csxIssue4WalkComplete",
+   "value": true,
+   "comment": "the issue-4 walk completed at R901"
+  },
+  {
+   "name": "csxIssue5WalkComplete",
+   "value": true,
+   "comment": "the issue-5 walk completed at R903"
+  },
+  {
+   "name": "csxIssue6WalkComplete",
+   "value": true,
+   "comment": "the issue-6 walk completes with this round - the four-chain opener was the only engine-relevant ink in issue #6"
+  },
+  {
+   "name": "csxVariantLayerDoctrine",
+   "value": true,
+   "comment": "the variant-layer doctrine rides the closure: Dragon ink is never core 1e canon, the conversions noted, never silent"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['csxReportBoxes']() != 1 or m['csxIssue6Chains']() != 4 or m['csxIssue5Closed']() != 1 or m['csxIssue4Closed']() != 1",
+   "note": "the walk bookkeeping - the single issue-6 box and its four chains, the issue-4 and issue-5 reports complete at 1 / 0"
+  },
+  {
+   "expr": "m['csxLiveRegistry']() != 1311 or m['csxBaseLuaFiles']() != 1333 or m['csxRegistryLoadErrors']() != 25",
+   "note": "the registry ground truth carried forward - the 1311 live census, the 1333 base lua files, the 25 never-load errors, the battery line the only ground truth"
+  },
+  {
+   "expr": "m['csxIssue4WalkComplete']() != 1 or m['csxIssue5WalkComplete']() != 1 or m['csxIssue6WalkComplete']() != 1 or m['csxVariantLayerDoctrine']() != 1",
+   "note": "the three walks complete - issue 4 at R901, issue 5 at R903, issue 6 at this round - and the variant-layer doctrine riding the closure"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 11,
+ "header_sections": {
+  "the walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "csxReportBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "csxIssue6Chains"
+   },
+   {
+    "kind": "const",
+    "name": "csxIssue5Closed"
+   },
+   {
+    "kind": "const",
+    "name": "csxIssue4Closed"
+   },
+   {
+    "kind": "bool",
+    "name": "csxIssue4WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "csxIssue5WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "csxIssue6WalkComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "csxVariantLayerDoctrine"
+   }
+  ],
+  "the registry ground truth": [
+   {
+    "kind": "const",
+    "name": "csxLiveRegistry"
+   },
+   {
+    "kind": "const",
+    "name": "csxBaseLuaFiles"
+   },
+   {
+    "kind": "const",
+    "name": "csxRegistryLoadErrors"
+   }
+  ]
+ },
+ "audit_comment": "THE DRAGON ISSUE-6 BOX CLOSING ROUND - the pure bookkeeping round, no new print ink. The flip: the issue-6 box in tools/dragon_gap_report_006.md goes [x] - 1 closed / 0 open, the issue-6 walk complete, the four chains (the Sea Trade system, the psionic option, the morale system, the Death Angel at folios 6, 25, 26-27, 29) having been the only engine-relevant ink in issue #6. The bookkeeping pins: the single box and its four chains, the issue-5 report complete at 1 / 0 since R903, the issue-4 report complete at 1 / 0 since R901, the registry ground truth carried forward (the 1311 live census against the 1333 base lua files with the 25 never-load errors, a pre-R900 print-fidelity state untouched), and the variant-layer doctrine riding the closure. The R906 record seats in the seed via prev_record."
+}
