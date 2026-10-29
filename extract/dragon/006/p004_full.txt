@@ -1,0 +1,84 @@
+The Dragon
+053 8 AE-EST RELISH SHIPLINK
+“STATUS INTERFACE -
+055 SCAN PROGRAM COMPLETE
+O5r = =6C ALL SEGUENCE ALPHR-
+059 WITVATE PROGRAM -
+CODE NAME ‘CLONE BANA ALPHA’
+06) AUN SEGUENCE ALPHA
+065 ACTWATE...
+AN ALTERNATE BEGINNING
+SEQUENCE FOR
+METAMORPHOSIS: ALPHA
+by Guy W. McLimore, Jr.
+In a special hidden section of the lost starship Warden, an engi-
+neering robot discovers a minor cable break. Drawing a small torch
+from its built-in tool kit, the necessary repair is soon made. This cir-
+cuitry interruption — which has remained undiscovered and untend-
+ed for many, many years — is now closed, and a special computer
+signal sent long ago finally reaches its destination. Relays close, and
+a special computer unit is activated, setting into motion a special
+genetic laboratory.
+Immediately, micro-miniature manipulators withdraw samples
+of human tissue from a freezer storage compartment. Unnoticed by
+the electronic controlling device is a cracked and damaged radioac-
+tive power capsule nearby which contaminates some of the with-
+drawn tissue cultures. The quick-frozen cells are moved to tanks of a
+special growth medium and are electrically stimulated. The cells be-
+gin to multiply, rapidly...
+Weeks later, the tanks hold full-grown adult human bodies. Some
+appear normal, others have strange deformities and mutations induced
+by the unexpected dose of radiation. All are limp, unmoving, devoid of
+intelligence and identity.
+Once again, micromanipulators move in, this time to attach wires
+and sensor strips to the foreheads of the newly-grown clones. In a mat-
+ter of days, computer tapes full of general human knowledge and spe-
+cific ship-related skills are played directly into the clones’ brain synaps-
+es. But again old computer malfunctions and worn-out circuitry com-
+bine to leave large gaps in the intended programming of the new poten-
+tial crew members. There will be unfortunate—perhaps eventually tra-
+gic — lapses in their “memories” of the ship and its Nincnone,
+Vol. 1, No. 6
+Thankfully, the all important final tape does play into the heads of
+the clones, explaining their mission. That mission is of the utmost im-
+portance to the hundreds of thousands of people in the ship.
+“Program codenamed Clone Bank Alpha is activated only in case
+of extreme danger or damage to the ship, causing breakdown of chain
+of command. Upon activation, tissue samples are processed into clones
+of ship’s personnel, who are then programmed with the technical and
+general data necessary for operation of the ship. The clone bank com-
+puter terminals are to provide equipment and authorization to the
+clones, allowing them to reestablish chain of command and prevent di-
+saster.””
+YOU are one of these clones — charged with the task of rescuing
+the starship from disaster. But computer malfunctions have left you
+without the special equipment and weapons you need to master the sit-
+uation. What equipment you carry you must manufacture yourself
+from materials available in the clone bank complex. Some of your team
+are not even totally human, possessing strange mutant abilities and de-
+fects. Worst of all, there are large holes in your memories. The ship’s
+equipment seems strange to you, and you are not sure how to operate.
+You remember almost nothing of the structure of the ship itself — not
+even where the clone bank you are in is located or how to find the im-
+portant areas of the ship. The aged and broken-down computers in the
+clone bank complex yield no information of value.
+Still, you and your party have a job to do. You must leave the
+clone bank, and wander the ship, gathering information, and putting
+what skills you have to work. But it may already be too late. The disas-
+ter that caused the loss of command in the ship was long ago, and what
+remains is strange, and savage, and often deadly. You are entering an
+unknown land. . .
+This alternate scenario for beginning a game of Metamorphosis:
+Alpha has certain advantages over the idea of beginning as a barbarian
+from a shipboard tribe. Most notably, it eliminates the problem of so-
+called barbarians who own a copy of the rule book and know decidedly
+too much to be mere tribesmen.
+CLONE BANK: DETERMINATION OF
+MUTATION STATUS
+% Die Roll Mutation Status
+01-15: MUTANT -1 mutation
+16-25: MUTANT -2 mutations & 1 defect
+26-30: MUTANT -3 mutations & | defect
+31-35: MUTANT -4 mutations & 2 defects
+36-50: LATENT MUTANT STOCK
+51-00: HUMAN

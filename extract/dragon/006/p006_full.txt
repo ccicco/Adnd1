@@ -1,0 +1,122 @@
+The Dragon
+SEA TRADE
+IN D&D CAMPAIGNS
+by Ronald C. Spencer, Jr.
+The “Bardukian Campaign” currently being played by several
+members of the crew of the USS Benjamin Franklin (SSBN 640) has
+produced some interesting developments due to the varied areas of in-
+terest of the participants. What follows is a description of one of these
+developments and suggestions for incorporating them into your own
+campaign.
+The question of sea trade is only touched upon lightly in Dungeons
+and Dragons and when one of the players in the Bardukian Campaign
+approached the dungeonmaster on the subject the immediate reaction
+was, “Good grief!” The whole thing seemed too complex to handle,
+since the player was interested in having a trading business running on
+the side, while he (a fighting man) trooped about the countryside slay-
+ing dragons.
+After hashing over several possibilities, including setting up an en-
+tire economic grid for imports and exports, it was felt that this was go-
+ing to produce too much paperwork for the D/M and too little sense of
+risk on the part of the player/merchant. What finally evolved was a
+compromise between the realism of an entire definition of the economic
+structure of three coastal countries and the playability of a more ab-
+stract system that reproduces the “feel” of the risky business of sea
+trade.
+A brief description of the trade routes is in order here. Note that
+while the trading system was designed to fit the costal trade of the Bar-
+dukian Campaign, it is not difficult to adapt to any campaign that has
+a coast and coastal cities.
+In the Bardukian Campaign there are three countries bordering the
+Western Sea, Dromir, Barduk and Chu’unar. Dromir is the northern-
+most, with its ports sometimes ice-bound in the winter; Barduk lies in a
+more temperate zone and finally, Chu’unar to the south. All trading
+and sailing is coastal in nature, with ships rarely venturing more than
+fifty miles from land. There are nine ports along the coast, the distance
+between the northernmost and southernmost being about 2500 miles.
+The main trade route extends in a line from the northernmost port to
+the southernmost port, linking all ports between.
+The trading system below gives the player/merchant the oppor-
+tunity to take risks in hope of greater reward and also recreates the feel-
+ing of insecurity present at seeing your heavily-laden large merchant
+sail away, not knowing just how long it will be gone, or if it will return
+at all. When a player/merchant decides to accompany the vesel on its
+voyage the “Wilderness Adventure” rules of Dungeons & Dragons are
+used. The rules presented below are intended to cover a trade business
+carried on in the absence of the player/merchant under whatever orders
+he gives to his ship captain.
+SEA TRADE
+1. Assumptions — No specific cargo is required; rather, it is assumed
+that a cargo can be purchased in any port and that it will be saleable in
+any other port. The maximum cargo capacity of a small merchant is
+10,000 G.P. in value; that of a large merchant, 50,000 G.P. It is not
+necessary that the maximum be carried if the player/merchant decides
+otherwise.
+2. Fees and Taxes — There is a pilot fee for all ports except the mer-
+chant’s home port. This fee is 500 G.P. for a small merchant and 2500
+G.P. for a large merchant. All countries have a 5% import tax, based
+on the sale value of the cargo-in the receiving port.
+3. Profit/Loss — the amount of profit or loss taken on the trip is de-
+termined by the number of ports bypassed and a die roll. The more
+ports bypassed, the greater the possible profit (or loss!) and the greater
+the chance of the vessel being lost due to storms, pirates, sea monsters,
+etc.
+4. Procedure — The player/merchant “purchases” a cargo with his on-
+hand funds and writes a set of sailing orders for the captain. These
+should specify what ports to stop at, what profit margin to accept, how
+much cargo to buy, and possibly a maximum time to be gone. All this is
+delivered to the D/M who will then determine the actual results of the
+6
+Vol. 1, No. 6
+journey according to the “sailing orders” given him. Note that the
+player/merchant will have no knowledge of the results until the ship re-
+turns or word Beaches him of its loss. One important item is that the
+player/merchant is not required to sell a cargo at a loss. If he so states
+in his sailing orders, a port where a loss would be incurred can be de-
+parted and sale attempted at another port. Note that if this option is
+chosen, the port departed counts as a port bypassed. If no specific di-
+rections are given to the captain, the cargo will be sold at whatever pro-
+fit/loss determined from the Profit/Loss Table.
+5. Profit/Loss Determination — Given the sailing orders, the D/M
+then rolls the percentile dice, cross-references with the appropriate
+“Ports Bypassed” column, and determines the amount of the sale. Ap-
+propriate deductions are made for the pilot fee, taxes, and possibly cost
+of a new cargo, and the profit/loss for the port call determined. The
+D/M then rolls for the amount of delay there will be before getting un-
+derway (due to repairs, liberty, haggling over prices, etc.) and continue
+the trip to the next port as specified by the sailing orders. This proce-
+dure continues until the ship returns to its home port or is lost at sea. If
+lost at sea, the delay in reporting it to the player/merchant is rolled for.
+If the ship returns to its home port, it is simply a matter of notifying the
+player/merchant when he and the ship arrive at the same point in game-
+time.
+This system has worked very well so far in the Bardukian Cam-
+paign and has added a little extra dimension to the game for those who
+are so inclined. The only difficulty that has been encountered has been
+the demand for a similar system to cover land trade . . . more on that
+at a later date.
+PROFIT/LOSS TABLE
+Percentages expressed as percent of cargo value.
+% DICE PORTS BYPASSED
+0 l 2 3 4 5 6+
+01-05 85% 80% 70% 60% 50% 40% 30%
+06-10 90% 85% 80% 70% 60% 50% 40%
+11-15 95% 90% 85% 80% 70% 60% 50%
+16-20 100% 95% 90% 85% 80% 10% 60%
+21-25 105% 100% 95% 90% 90% 85% 80%
+26-30 105% 105% 110% 115% 115% 120% 120%
+31-35 110% 110% 115% 120% 125% 140% 150%
+36-40 110% 115% 120% 130% 135% 160% 200%
+41-60 110% 120% 130% 140% 150% 200% 300%
+61-65 115% 125% 150% 160% 200% 300% 500%
+66-70 120% 130% 160% 180% 250% 400% X
+11-75. 125% 135% 180% 200% 350% X xX
+76-80 130% 140% 200% 300% X X Xx
+81-85 140 %150% 250% X xX X xX
+86-90 150% 200% X xX x x xX
+ls Xx pp a Xx X Xx
+X = ship lost, owner notified 3-8 weeks later.
+A ship will be delayed 1-4 weeks at each port (other than its home port).
+Example of Table: A ship carrying a 10000 G.P. cargo bypasses one
+port and the dice are 62. Sale value is 11500 G-P., less 5% tax and the
+pilot fee.

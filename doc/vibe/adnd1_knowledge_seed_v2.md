@@ -27288,6 +27288,44 @@ The R903 record seated in the seed via
 prev_record. NEXT: the might-be-usable micro-
 round (the witch remainders + the Friedman elf
 d20 table) or the issue-6 opener. WAIT FOR GO.
+  - R905 LANDED 2026-10-29: commit
+  60fbce733bb6fb96738aec414cf1ef62eeeeb19c
+  (census 828). The might-be-usable micro-round:
+  prefix wrm, header rules/wrm.h, 80 inline (49
+  consts + 29 bools + 1 table/2 cols), 19
+  examples, 4 header_sections, zero
+  file_patches/data_files, gap report 005
+  verified no-op (1 closed / 0 open), census 827
+  to 828. Pins: witch familiar d6 (1,2 basilisk;
+  3 wyvern; 4 warlock ring+wand; 5,6 undead no
+  vampires); unpinned items (Assassin's Eyes,
+  Leech Dust, Mountain Seeds, Witch Wand ESP 30'
+  + lycanthrope shield, three-wand canon, Ivy
+  Bracelet, Locket of Satan, Snake Belt, Skull
+  Finger/Animate Dead, Luck Charm remainder,
+  Potion Cauldron blood-pledge); spell-effect
+  details (elemental 12 HD, Wither 50', Weight
+  1-10 x3, Volcanic 4'/turn 10' line 10 dice,
+  Reflections, Solidify, Undead Control, Curse
+  75% silver, Poison Touch, Curtain Wall, Fire
+  Box, Diminish, Blindness 25%); Friedman elf
+  sub-race d20 table (Silvan 1-16, Sindar 17-19,
+  Noldor 20) with editor-endorsement bool and
+  Tolkien-names-boundary bool. Build fix: the elf
+  table entry was missing from its
+  header_sections list, aborting the engine at
+  inline 78 vs 80; adding the
+  {'kind':'table','name':'wrmElfSubrace'} entry
+  to the section fixed the count. Lesson
+  (R902/R905): a table's auto-created count const
+  AND its table entry must both be listed in
+  header_sections or the emitted header inline
+  count mismatches. Spec md5
+  607e8989a80edfdf55ce851b0067bc38, 36,529 bytes.
+  NEXT: the issue-6 opener (walk intelligence:
+  mostly Little Wars-type wargaming, one MA
+  chain, one EPT chain - thin engine harvest
+  likely). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

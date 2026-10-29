@@ -1,0 +1,95 @@
+The Dragon
+MORALE IN D & D
+by Jim Hayes and Bill Gilbert
+The great appeal of Dungeons and Dragons role-playing lies in the
+uncertainty of any action taken. It is the anticipation of standing before
+a sturdy oaken door in a corridor dimly lit by flickering torches, pre-
+paring to force it open. It is the uneasiness of finding an artifact of un-
+known purpose and attempting to discover its powers. It is leaping into
+combat with a foeman of unknown skill and ability. And yet the allure
+of the game can tarnish in time through the dullness that can come
+from too much familiarity. Thus, in nearly every publication devoted
+to D&D, one can find new monsters, new classes of characters, or new
+magical items, all intended to add to the uncertainty of play.
+As the players advance their characters through levels which reflect
+increasing experience, gaining various magical items to aid them along
+the way, they tend to begin taking the monsters they meet for granted.
+The DM is required to arrange encounters with more and more power-
+ful creatures to keep alive the uncertainty of events. It soon becomes an
+escalating cycle of matching the strength of the creature met with the
+increasing strength of the player-characters. In seeking to maintain the
+sense of uncertainty, I have come to rely on the alternative of a system
+of morale checks in any combat which occurs during an expedition.
+The fact that personal bravery affects ones performance in combat
+is utilized in the Boot Hill rules from TSR, and it can be a useful
+addition to D&D play. It adds a further individuality to the character
+created and will greatly affect his actions during moments of stress.
+Personal bravery may be found in the same manner as the standard
+characteristics, by rolling three six-sided dice. Another factor to con-
+sider is the effect that coming face to face with various creatures will
+have on a character. A man may face another man or a wild animal
+without flinching, but would run, screaming, from one of the Undead.
+This will entail rating each monster for their effect on morale.
+The following system of morale checks is based on several factors
+which are considered before arriving at a final state during an encount-
+er. The first is the personal bravery of the character, then the personal
+loyalty to the leader and the leader’s charisma, also the presence of ex-
+tranormal individuals in the party. This is weighed against the Monster
+Morale Effect (or Fright Factor) to determine whether the character
+will stand and fight, hesitate, or run. It restores the element of uncer-
+tainty to adventuring, for one is never sure of the bravery of his com-
+panions (or himself) until they are tested.
+oe
+THE DISENCHANTED FOREST
+26
+Vol. 1, No. 6
+MORALE TABLE
+DIE ROLL 1 2 3 4 5 6 7 8 9 0
+Chart #
+-5 or less B B B b B B B H H H
+-4 B B B B B B H H H H
+-3 B B B B B H H H H S
+~2 B B B B B H H S S S
+-1 B B B H H H S S S S
+0 B B H H S S S S S F
++1 B H S S S S S S F F
++2 H 8S S S S S S F F F
++3 S 5§ S S S F F F F F
++4 Ss Ss S S F F F F F F
++Sormore SS S F F F F F F F
+Definitions: B = Break and Run. Roll Dex. to see if he takes one
+round damage.
+H = Hesitates. Does not fight . . . check again next me-
+lee round,.
+S = Stands and Fights. Check again if morale chart #
+changes.
+F = Fights! No further morale check. 10% per round
+will berserk.
+Personal Bravery Charisma Loyalty (As rolled and adjusted
+for charisma and other
+Dice Roll + Dice Roll + incentives offered)
+3 -4 3 -4 3 or less -4 Morale
+4 3 4 34 -3 Morale
+5-6 -2 5-6 -2 5-6 -2 Morale
+7-8 -1 7-8 -1 7-8 -1 Morale
+9-12 0 9-12 0 9-12 0 Morale
+13-14 + 1 13-14 + 1 13-14 + 1 Morale
+15-16 +2 15-16 +2 15-16 + 2 Morale
+17 +3 17 +3 17 + 3 Morale
+18 +4 18 +4 18 + 4 Morale
+19 or more +5 Morale
+Procedure:
+Step #1: Add Bravery + to Leader’s Charisma + to Loyalty +
+Step #2: Subtract Monster Morale Effect (Fright Factor) +
+Step #3: Add + 1 each MU or Cleric in the party.
+Step #4: Add + 1 for each Ftr., MU, Cleric of L3 or L4; Add + 2 for
+each of L5, L6; Add + 3 for each of L7 or L8.
+Step #5: Subtract for each of above on enemy side.
+Step #6: Use resulting number for the Chart # and roll 10-side die.
+**Note: Each side surprised gives -1 Morale
+Moral check after 1st Melee Round (if situation changes as follows).
+Add or subtract to or from previous result.
+-| Each comrade that breaks, is disabled or killed.
+-2 Each MU or Cleric that breaks, is disabled or killed.
+-4 If leader breaks, is disabled, or killed.
+- SY ARTHUR J. BREAR

@@ -607,6 +607,7 @@
 #include "rules/cwx.h"  // R903: the Dragon issue-5 box closing round
 #include "rules/wwt.h"  // R904: the witchcraft wilderness encounter table round, the upload cross-check resolution
 #include "rules/wrm.h"  // R905: the witch remainders and the Friedman elf sub-race table, the might-be-usable micro-round
+#include "rules/dso.h"  // R906: the Dragon issue-6 opener, the Sea Trade system, the psionic option, the morale system and the Death Angel
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4716,6 +4717,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r906_batch.h"  // R906: R906 issue-6 opener audit
 #include "rules/audits/r905_batch.h"  // R905: R905 witch remainders audit
 #include "rules/audits/r904_batch.h"  // R904: R904 wilderness encounter table audit
 #include "rules/audits/r903_batch.h"  // R903: R903 Dragon issue-5 closure audit

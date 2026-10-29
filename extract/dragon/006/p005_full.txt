@@ -1,0 +1,143 @@
+April ‘77
+Physical mutations are numbered | through 30. Renumber mental mu-
+tations 31 through 67. Roll percentile dice for each indicated mutation
+on the table above. A roll of 68 through 00 is ignored. Physical defects
+are renumbered | through 12, and mental defects are renumbered 13
+through 20. Roll a 20-sided die for determination of defects.
+LATENT MUTANT STOCK
+These are humans who have latent mutant abilities that may be brought
+out by radiation. Keep track of how many levels of radiation CUMU-
+LATIVE have been absorbed by any one latent mutant. This is the per-
+centage chance that the accumulated radiation effect will bring out the
+latent mutations. Roll each time the character is affected by radiation
+and lives. If the latent mutations are brought out, roll on the following
+table:
+% Die Roll Effects
+01-50: 1 mutation
+51-75: 2 mutations & 1 defect
+76-90: 3 mutations & 2 defects
+91-00: DEATH (lethal mutation)
+PROGRAMMED SHIP SKILLS
+% Die Roll Number of skills
+01-50: 1 minor skill
+51-60: 1 major & 1 minor skill
+61-75: 1 major & 2 minor skills
+76-85: 2 major skills
+86-90: 2 major & | minor skill
+91-95: 2 major & 2 minor skills
+96-99: 2 major & 3 minor skills
+00: ROLL SPECIAL SKILL (humans only)
+MAJOR SKILLS (player’s choice)
+Ecology Maintenance Technician
+Astrogator
+Computer Technician
+Weapons Officer
+Roboticist
+Medical Officer
+Power Room Technician
+Engine Maintenance Technician
+Radiation Technician
+Band Unit Maintenance
+Technician
+MINOR SKILLS (player’s choice)
+Food Service Technician
+Shuttlecraft Pilot
+Transport Technician
+Geneticist/Chemlife Technician
+Small Unit Repair Technician
+Recreation & Athletics Officer
+Survival Training Specialist
+Ship Superstructure Technician
+SPECIAL SKILLS
+01-15: Psionic Healer
+16-30: Machine Talent
+31-45: Immortal
+46-60: Probability Shifter
+61-75: Resurrection Talent
+76-90: Mental Battery
+91-00: Ability Duplicator
+EXPLANATIONS OF SKILLS
+WEAPONS OFFICER: + 1 on rolls to hit with ship’s weaponry
+MEDICAL OFFICER: Can heal 1 point of damage per man per
+day with minimum equipment
+RADIATION TECHNICIAN: Can identify radiation areas from
+condition of local plants, effects on animals
+and players, etc.
+BAND UNIT MAINTENANCE TECHNICIAN: Expert. with color
+band circuitry. Has possibility of bypassing
+The Bragon
+bandlocks (at referee’s option)
+FOOD SERVICE TECHNICIAN: 25 per cent change to identify
+harmful substances
+SHUTTLECRAFT PILOT: Able to fly ship’s shuttle vehicles
+TRANSPORT TECHNICIAN: Familiar with road systems, subshut-
+tle tubes, anti-grav sled repair, etc.
+GENETICIST/CHEMLIFE TECHNICIAN: Conversant with both
+human genetics and android construction
+SMALL UNIT REPAIR TECHNICIAN: Able to repair minor dam-
+age to ship’s equipment depending on com-
+lexity (referee’s option)
+SURVIVAL TRAINING SPECIALIST: + 1 to hit with all weapons.
+1-6 pts. damage hand-to-hand combat with
+humans and humanoids (Only one per party)
+SHIP SUPERSTRUCTURE TECHNICIAN: Familiar with hull con-
+struction, including methods of working
+with duralloy
+Can heal 1-6 points of damage per person
+per day, or twice that (taking 1-6 pts. him-
+self in the latter case)
+MACHINE TALENT: Possesses instinctive affinity with all ma-
+chines.
+Totally immune to poison, radiation, and
+disease. Regenerates 5 hit points per day.
+Transfusion of blood into a non-immortal
+cures 2-40 hit points, and can be done once
+a month.
+PROBABILITY SHIFTER: Can influence a die roll by investing hit
+points (1 hit point = 1 percentage point; 5 hit
+points = 1 20-sided die point; 10 hit
+points= 1 6-sided die point). Use of this
+power, and direction and magnitude of in-
+fluence, must be declared before rolling.
+This power can be used whenever the char-
+acter affected by the roll is within 25 ft. of
+the person with the power.
+RESURRECTION TALENT: Can restore life by pouring own hit
+points into another’s body. The amount of
+points invested becomes the maximum hit
+points for the resurrected person. This can
+be no more than the original number of hit
+points the dead character had. Each full day
+dead adds 10 percent to the number of
+points that must be invested. (Example: A
+man three days dead must have 39 points in-
+vested to gain 30.) Persons with bodies not
+intact or not recoverable cannot be resur-
+rected, nor can persons already once resur-
+rected by this method.
+MENTAL BATTERY: Can power any item within 20 feet with
+mental energy, with 5 percent chance (cumu-
+lative) of “burnout” each melee round.
+Powering an item takes no real concentra-
+tion, but power ends if person with battery
+power is knocked unconscious or moved out
+of range.
+BURNOUT CHART
+01-50: Unable to use power for one day
+51-75: Unconscious 1-20 min. plus | -day wait
+to use power again
+76-85: Unconscious 1-6 hours plus 2-day wait
+to use power again
+86-90: As 76-85 plus take 1-20 pts. damage
+91-99: As 86-90 plus take additional 1-20 pts.
+damage
+00: Death from energy burnout
+ABILITY DUPLICATOR: May duplicate any one single mutant
+ability (mental or physical) or one single hu-
+man attribute (strength, constitution, dex-
+terity, etc.) of any being within 100 yards.
+Roll for burnout as above each melee round
+but with 10 percent non-cumulative chance
+of burnout.
+PSIONIC HEALER:
+IMMORTAL:

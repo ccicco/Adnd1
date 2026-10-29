@@ -1,0 +1,1476 @@
+{
+ "round": 906,
+ "title": "The Dragon issue-6 opener: the Sea Trade system, the psionic option, the morale system and the Death Angel",
+ "prefix": "dso",
+ "census_before": 828,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R905 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R905 LANDED 2026-10-29: commit",
+  "  60fbce733bb6fb96738aec414cf1ef62eeeeb19c",
+  "  (census 828). The might-be-usable micro-round:",
+  "  prefix wrm, header rules/wrm.h, 80 inline (49",
+  "  consts + 29 bools + 1 table/2 cols), 19",
+  "  examples, 4 header_sections, zero",
+  "  file_patches/data_files, gap report 005",
+  "  verified no-op (1 closed / 0 open), census 827",
+  "  to 828. Pins: witch familiar d6 (1,2 basilisk;",
+  "  3 wyvern; 4 warlock ring+wand; 5,6 undead no",
+  "  vampires); unpinned items (Assassin's Eyes,",
+  "  Leech Dust, Mountain Seeds, Witch Wand ESP 30'",
+  "  + lycanthrope shield, three-wand canon, Ivy",
+  "  Bracelet, Locket of Satan, Snake Belt, Skull",
+  "  Finger/Animate Dead, Luck Charm remainder,",
+  "  Potion Cauldron blood-pledge); spell-effect",
+  "  details (elemental 12 HD, Wither 50', Weight",
+  "  1-10 x3, Volcanic 4'/turn 10' line 10 dice,",
+  "  Reflections, Solidify, Undead Control, Curse",
+  "  75% silver, Poison Touch, Curtain Wall, Fire",
+  "  Box, Diminish, Blindness 25%); Friedman elf",
+  "  sub-race d20 table (Silvan 1-16, Sindar 17-19,",
+  "  Noldor 20) with editor-endorsement bool and",
+  "  Tolkien-names-boundary bool. Build fix: the elf",
+  "  table entry was missing from its",
+  "  header_sections list, aborting the engine at",
+  "  inline 78 vs 80; adding the",
+  "  {'kind':'table','name':'wrmElfSubrace'} entry",
+  "  to the section fixed the count. Lesson",
+  "  (R902/R905): a table's auto-created count const",
+  "  AND its table entry must both be listed in",
+  "  header_sections or the emitted header inline",
+  "  count mismatches. Spec md5",
+  "  607e8989a80edfdf55ce851b0067bc38, 36,529 bytes.",
+  "  NEXT: the issue-6 opener (walk intelligence:",
+  "  mostly Little Wars-type wargaming, one MA",
+  "  chain, one EPT chain - thin engine harvest",
+  "  likely). WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/wrm.h\"  // R905: the witch remainders and the Friedman elf sub-race table, the might-be-usable micro-round",
+ "include_comment": "the Dragon issue-6 opener, the Sea Trade system, the psionic option, the morale system and the Death Angel",
+ "header_file": "rules/dso.h",
+ "audit_file": "rules/audits/r906_batch.h",
+ "audit_label": "R906 issue-6 opener audit",
+ "audit_anchor": "#include \"rules/audits/r905_batch.h\"  // R905: R905 witch remainders audit",
+ "gap_report": "tools/dragon_gap_report_005.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 0
+ },
+ "gap_flips": [],
+ "banner": {
+  "title": "The Dragon issue-6 opener - the Sea Trade system (folio 6), the psionic determination option (folio 25), the morale system (folios 26-27) and the Death Angel (folio 29): four adjudicated engine-relevant chains in one round",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 6 (April 1977), the archive.org scan voice (single-voice: no chat-side upload cross-check exists for issue 6). The folios: 6, the Sea Trade in D&D Campaigns by Ronald C. Spencer, Jr. - the Bardukian coastal trade, the cargo capacities and pilot fees, the 5 percent import tax and the sixteen-band profit/loss grid with the ship-lost X sentinel; 25, the D&D Option: Determination of Psionic Abilities by David W. Miller - the human 91 and half-human 95 percentile gates, the thirty-seven abilities and the three learning ladders against the Eldritch Wizardry base; 26-27, the Morale in D&D system by Jim Hayes and Bill Gilbert - the 3d6 bravery/charisma/loyalty modifier ladder, the level and loss adjustments and the eleven-chart by ten-die outcome grid; 29, the Featured Creature: Death Angel by John Sullivan - the oracle of death on a single-victim mission. The transcripts ride extract/dragon/006/ (all 32 issue pages); the issue-6 gap report ships pre-flip. PRINT FOLIO = PDF PAGE, verified at the printed 6, 26 and 29 footers.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. The sea trade, psionic and morale systems pin as variant layers with provenance; the Death Angel, with no 1e def existing, pins as a NEW registry monster with the R900 Creature Features precedent and carries the dragon_print xp source in its lua. The XP conversion rides the DMG p.85 additive formula - 225 base + 2 x 175 specials + 275 exceptional at the 6+1 to 7 dice category, plus 8 per hit point at the floored 31 average - noted, never silent. The profit/loss grid's garbled 10 cell rides AS SCANNED, and the folio-25 '1%' weeks per level reads as 1 1/2, pinned as 15 tenths - both garbles noted, never silent. The editor's standing caution rides: none of this is official."
+ },
+ "consts": [
+  {
+   "name": "dsoSeaCargoSmallGp",
+   "value": 10000,
+   "comment": "the small merchant cargo capacity in gold - 10,000 G.P. (folio 6)"
+  },
+  {
+   "name": "dsoSeaCargoLargeGp",
+   "value": 50000,
+   "comment": "the large merchant cargo capacity in gold - 50,000 G.P. (folio 6)"
+  },
+  {
+   "name": "dsoSeaPilotFeeSmall",
+   "value": 500,
+   "comment": "the pilot fee at every port but the home port, the small merchant - 500 G.P. (folio 6)"
+  },
+  {
+   "name": "dsoSeaPilotFeeLarge",
+   "value": 2500,
+   "comment": "the pilot fee at every port but the home port, the large merchant - 2,500 G.P. (folio 6)"
+  },
+  {
+   "name": "dsoSeaImportTaxPct",
+   "value": 5,
+   "comment": "the import tax every country levies on the sale value in the receiving port - 5 percent (folio 6)"
+  },
+  {
+   "name": "dsoSeaPortsOnCoast",
+   "value": 9,
+   "comment": "the ports along the Bardukian coast - nine (folio 6)"
+  },
+  {
+   "name": "dsoSeaRouteMiles",
+   "value": 2500,
+   "comment": "the distance between the northernmost and southernmost port - about 2,500 miles (folio 6)"
+  },
+  {
+   "name": "dsoSeaCoastalMilesMax",
+   "value": 50,
+   "comment": "the coastal-trade limit - ships rarely venture more than fifty miles from land (folio 6)"
+  },
+  {
+   "name": "dsoSeaDelayWeeksMin",
+   "value": 1,
+   "comment": "the delay at each port other than home - 1-4 weeks, the minimum (folio 6)"
+  },
+  {
+   "name": "dsoSeaDelayWeeksMax",
+   "value": 4,
+   "comment": "the delay at each port other than home - 1-4 weeks, the maximum (folio 6)"
+  },
+  {
+   "name": "dsoSeaLossNoticeWeeksMin",
+   "value": 3,
+   "comment": "the owner learns of a lost ship 3-8 weeks later - the minimum (folio 6)"
+  },
+  {
+   "name": "dsoSeaLossNoticeWeeksMax",
+   "value": 8,
+   "comment": "the owner learns of a lost ship 3-8 weeks later - the maximum (folio 6)"
+  },
+  {
+   "name": "dsoSeaProfitLossCount",
+   "value": 16,
+   "comment": "the dsoSeaProfitLoss table runs 16 rows - the percentile bands of the profit/loss table (folio 6)"
+  },
+  {
+   "name": "dsoPsiHumanRollMin",
+   "value": 91,
+   "comment": "humans require a percentile roll of 91 or better for psionic potential (folio 25)"
+  },
+  {
+   "name": "dsoPsiHalfHumanRollMin",
+   "value": 95,
+   "comment": "half-humans require a percentile roll of 95 or better for psionic potential (folio 25)"
+  },
+  {
+   "name": "dsoPsiAbilitiesCount",
+   "value": 37,
+   "comment": "any character can have any of the thirty-seven known psionic abilities (folio 25)"
+  },
+  {
+   "name": "dsoPsiBasicWeeksPerLevel",
+   "value": 1,
+   "comment": "learning a new basic ability takes one week per level of difficulty (folio 25)"
+  },
+  {
+   "name": "dsoPsiSuperiorWeeksTenths",
+   "value": 15,
+   "comment": "the superior abilities take the print's garbled '1%' weeks per level - read as 1 1/2, pinned as 15 tenths, the garble noted (folio 25)"
+  },
+  {
+   "name": "dsoPsiAttackDefenseWeeks",
+   "value": 9,
+   "comment": "the attack and defense modes take nine weeks each to learn (folio 25)"
+  },
+  {
+   "name": "dsoMorBrave3",
+   "value": -4,
+   "comment": "the personal bravery modifier at a 3 on 3d6 (folio 27)"
+  },
+  {
+   "name": "dsoMorBrave4",
+   "value": -3,
+   "comment": "the personal bravery modifier at a 4 on 3d6 (folio 27)"
+  },
+  {
+   "name": "dsoMorBrave56",
+   "value": -2,
+   "comment": "the personal bravery modifier at a 5 or 6 on 3d6 (folio 27)"
+  },
+  {
+   "name": "dsoMorBrave78",
+   "value": -1,
+   "comment": "the personal bravery modifier at a 7 or 8 on 3d6 (folio 27)"
+  },
+  {
+   "name": "dsoMorBrave912",
+   "value": 0,
+   "comment": "the personal bravery modifier at a 9-12 on 3d6 (folio 27)"
+  },
+  {
+   "name": "dsoMorBrave1314",
+   "value": 1,
+   "comment": "the personal bravery modifier at a 13 or 14 on 3d6 (folio 27)"
+  },
+  {
+   "name": "dsoMorBrave1516",
+   "value": 2,
+   "comment": "the personal bravery modifier at a 15 or 16 on 3d6 (folio 27)"
+  },
+  {
+   "name": "dsoMorBrave17",
+   "value": 3,
+   "comment": "the personal bravery modifier at a 17 on 3d6 (folio 27)"
+  },
+  {
+   "name": "dsoMorBrave18",
+   "value": 4,
+   "comment": "the personal bravery modifier at an 18 on 3d6 (folio 27)"
+  },
+  {
+   "name": "dsoMorBrave19",
+   "value": 5,
+   "comment": "the bravery-table modifier at a 19 or more - the print's exceptional tail (folio 27)"
+  },
+  {
+   "name": "dsoMorLvl34",
+   "value": 1,
+   "comment": "each fighter, MU or cleric of level 3-4 adds +1 to the chart number (folio 27)"
+  },
+  {
+   "name": "dsoMorLvl56",
+   "value": 2,
+   "comment": "each fighter, MU or cleric of level 5-6 adds +2 to the chart number (folio 27)"
+  },
+  {
+   "name": "dsoMorLvl78",
+   "value": 3,
+   "comment": "each fighter, MU or cleric of level 7-8 adds +3 to the chart number (folio 27)"
+  },
+  {
+   "name": "dsoMorAdjComradeBreaks",
+   "value": -1,
+   "comment": "each comrade that breaks, is disabled or killed adjusts the recheck by -1 (folio 27)"
+  },
+  {
+   "name": "dsoMorAdjMuClericBreaks",
+   "value": -2,
+   "comment": "each MU or cleric that breaks, is disabled or killed adjusts the recheck by -2 (folio 27)"
+  },
+  {
+   "name": "dsoMorAdjLeaderBreaks",
+   "value": -4,
+   "comment": "if the leader breaks, is disabled or killed the recheck adjusts by -4 (folio 27)"
+  },
+  {
+   "name": "dsoMorAdjEnemyLeader",
+   "value": 4,
+   "comment": "if an enemy leader breaks, is disabled or killed the recheck adjusts by +4 (folio 27)"
+  },
+  {
+   "name": "dsoMorAdjEnemyMuCleric",
+   "value": 2,
+   "comment": "each enemy MU or cleric that breaks, is disabled or killed adjusts the recheck by +2 (folio 27)"
+  },
+  {
+   "name": "dsoMorAdjEnemyFighter",
+   "value": 1,
+   "comment": "every enemy fighter that breaks, is disabled or killed adjusts the recheck by +1 (folio 27)"
+  },
+  {
+   "name": "dsoMorSurpriseMod",
+   "value": -1,
+   "comment": "each side surprised takes -1 to morale (folio 27)"
+  },
+  {
+   "name": "dsoMorBerserkPctPerRound",
+   "value": 10,
+   "comment": "F - fights! No further morale check; 10 percent per round will berserk (folio 27)"
+  },
+  {
+   "name": "dsoMorOutcomeCount",
+   "value": 11,
+   "comment": "the dsoMorOutcome table runs 11 rows - the chart numbers -5 or less through +5 or more (folios 26-27)"
+  },
+  {
+   "name": "dsoDaHd",
+   "value": 7,
+   "comment": "the Death Angel hit dice - 7 (folio 29)"
+  },
+  {
+   "name": "dsoDaHdSides",
+   "value": 8,
+   "comment": "the Death Angel hit-die sides - eight-sided (folio 29)"
+  },
+  {
+   "name": "dsoDaAc",
+   "value": 4,
+   "comment": "the Death Angel armor class - 4 (folio 29)"
+  },
+  {
+   "name": "dsoDaMove",
+   "value": 12,
+   "comment": "the Death Angel movement - 12 (folio 29)"
+  },
+  {
+   "name": "dsoDaMoveFly",
+   "value": 20,
+   "comment": "the Death Angel flying movement - 20, the golden wings (folio 29)"
+  },
+  {
+   "name": "dsoDaNumAppearing",
+   "value": 1,
+   "comment": "the Death Angel number appearing - 1 (folio 29)"
+  },
+  {
+   "name": "dsoDaScytheMin",
+   "value": 1,
+   "comment": "the Death Scythe damage minimum - 1 (folio 29)"
+  },
+  {
+   "name": "dsoDaScytheMax",
+   "value": 12,
+   "comment": "the Death Scythe damage maximum - 12 (folio 29)"
+  },
+  {
+   "name": "dsoDaSavePenalty",
+   "value": 3,
+   "comment": "every scythe hit forces a save vs. Death at -3 (folio 29)"
+  },
+  {
+   "name": "dsoDaConLostPerSave",
+   "value": 1,
+   "comment": "a successful save still costs one point of constitution, restored only by clerical Restoration or a Healer Energy spell (folio 29)"
+  },
+  {
+   "name": "dsoDaRiseDays",
+   "value": 3,
+   "comment": "those killed by a Death Angel rise as Death Angels after three days unless raised (folio 29)"
+  },
+  {
+   "name": "dsoDaMagicResistPct",
+   "value": 95,
+   "comment": "the Death Angel resistance to all magic including clerical - 95 percent (folio 29)"
+  },
+  {
+   "name": "dsoDaRaiseConAsIf",
+   "value": 3,
+   "comment": "the percent chance for raising rolls as if the victim's constitution were 3 (folio 29)"
+  },
+  {
+   "name": "dsoDaKillsIrreversible",
+   "value": 3,
+   "comment": "a being killed three times by a Death Angel is gone - not even a Wish brings it back (folio 29)"
+  },
+  {
+   "name": "dsoDaMasterPriestLevelMin",
+   "value": 20,
+   "comment": "the Death Angel's very few evil priest masters are of 20th level or higher (folio 29)"
+  },
+  {
+   "name": "dsoDaAvgHp",
+   "value": 31,
+   "comment": "the average hit points - 7 eight-sided dice at 4.5 per die, floored (folio 29)"
+  },
+  {
+   "name": "dsoDaXp",
+   "value": 850,
+   "comment": "the base XP - the DMG p.85 formula at 7 dice: 225 base + 2 specials x 175 + 1 exceptional x 275; the conversion noted (folio 29)"
+  },
+  {
+   "name": "dsoDaXpPerHp",
+   "value": 8,
+   "comment": "the XP per hit point - the DMG p.85 per-hit-die value at the 6+1 to 7 dice category (folio 29)"
+  },
+  {
+   "name": "dsoDaXpValue",
+   "value": 1098,
+   "comment": "the XP value - 850 + 8 x 31, the DMG p.85 additive formula (folio 29)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dsoSeaCoastalTradeOnly",
+   "value": true,
+   "comment": "all trading and sailing is coastal in nature (folio 6)"
+  },
+  {
+   "name": "dsoSeaNoForcedLossSale",
+   "value": true,
+   "comment": "the player/merchant is not required to sell a cargo at a loss - a loss port can be departed (folio 6)"
+  },
+  {
+   "name": "dsoSeaDepartedPortCountsBypassed",
+   "value": true,
+   "comment": "a port departed without sale counts as a port bypassed (folio 6)"
+  },
+  {
+   "name": "dsoSeaWildernessRulesWhenAboard",
+   "value": true,
+   "comment": "when the merchant accompanies the vessel the Wilderness Adventure rules govern - this layer covers the absent owner (folio 6)"
+  },
+  {
+   "name": "dsoPsiAnyClass",
+   "value": true,
+   "comment": "it does not matter what class the character may choose - humanity is the basis of psionic potential (folio 25)"
+  },
+  {
+   "name": "dsoPsiNoAcquisitionPenalty",
+   "value": true,
+   "comment": "the character does not incur a penalty for acquiring additional abilities (folio 25)"
+  },
+  {
+   "name": "dsoPsiLearnByEspAndProjection",
+   "value": true,
+   "comment": "learning from a teacher requires the learner to have ESP (or an ESP Medallion) and the teacher Telepathic Projection (or a Helm of Telepathy) (folio 25)"
+  },
+  {
+   "name": "dsoPsiSpontaneousAtNextLevel",
+   "value": true,
+   "comment": "spontaneous development as stated in Eldritch Wizardry - the percentile roll is made as the next level is attained (folio 25)"
+  },
+  {
+   "name": "dsoPsiMagicalAcquisition",
+   "value": true,
+   "comment": "any character can acquire a psionic ability magically, but without becoming psionic except through magic (folio 25)"
+  },
+  {
+   "name": "dsoPsiLowIntelligenceLimits",
+   "value": true,
+   "comment": "a low intelligence limits the number of abilities learnable and extends the learning time (folio 25)"
+  },
+  {
+   "name": "dsoMorCharismaSameTable",
+   "value": true,
+   "comment": "the leader's charisma uses the same 3d6 modifier table as personal bravery (folio 27)"
+  },
+  {
+   "name": "dsoMorLoyaltySameTable",
+   "value": true,
+   "comment": "loyalty as rolled and adjusted for charisma and other incentives uses the same modifier table (folio 27)"
+  },
+  {
+   "name": "dsoMorBreakDexDamageRoll",
+   "value": true,
+   "comment": "B - break and run: roll Dexterity to see if the runner takes one round of damage (folio 27)"
+  },
+  {
+   "name": "dsoMorHesitateRecheckNextRound",
+   "value": true,
+   "comment": "H - hesitates: does not fight, check again next melee round (folio 27)"
+  },
+  {
+   "name": "dsoMorRecheckOnChartChange",
+   "value": true,
+   "comment": "S - stands and fights: check again if the morale chart number changes (folio 27)"
+  },
+  {
+   "name": "dsoDaNeutral",
+   "value": true,
+   "comment": "the Death Angel alignment - Neutral (folio 29)"
+  },
+  {
+   "name": "dsoDaVanishesWhenSlain",
+   "value": true,
+   "comment": "when killed the Death Angel vanishes entirely, leaving no remains (folio 29)"
+  },
+  {
+   "name": "dsoDaTeleportNoFail",
+   "value": true,
+   "comment": "the Death Angel teleport has no chance of failure (folio 29)"
+  },
+  {
+   "name": "dsoDaNoTeleportFromMelee",
+   "value": true,
+   "comment": "the Death Angel cannot teleport out of melee (folio 29)"
+  },
+  {
+   "name": "dsoDaTurnedLikeVampire",
+   "value": true,
+   "comment": "the Death Angel can be turned like a Vampire by a Cleric (folio 29)"
+  },
+  {
+   "name": "dsoDaReturnsNextDay",
+   "value": true,
+   "comment": "a turned Death Angel returns the next day (or night) - the mission of death must be fulfilled (folio 29)"
+  },
+  {
+   "name": "dsoDaVictimsRiseAsAngels",
+   "value": true,
+   "comment": "those successfully killed by a Death Angel become Death Angels after three days unless raised (folio 29)"
+  },
+  {
+   "name": "dsoDaRaiseDeadFullyOnly",
+   "value": true,
+   "comment": "a normal Raise Dead will not work on a Death Angel victim - only Raise Dead Fully, and even then it raises like a regular Raise Dead (folio 29)"
+  },
+  {
+   "name": "dsoDaWishRaisesAutomatically",
+   "value": true,
+   "comment": "a Wish works automatically to raise a Death Angel victim (folio 29)"
+  },
+  {
+   "name": "dsoDaOnlyAttacksVictim",
+   "value": true,
+   "comment": "the Death Angel only attacks its intended victim, ignoring all others, and leaves after the kill (folio 29)"
+  },
+  {
+   "name": "dsoDaRemoveCurseGrantsPeace",
+   "value": true,
+   "comment": "a remove curse thrown upon a slain Death Angel grants it eternal peace - the only permanent dispelling (folio 29)"
+  },
+  {
+   "name": "dsoDaOnePerMaster",
+   "value": true,
+   "comment": "there can be no more than one Death Angel serving any one master (folio 29)"
+  },
+  {
+   "name": "dsoDaTelepathicAllLanguages",
+   "value": true,
+   "comment": "the Death Angel is highly intelligent and speaks all languages telepathically (folio 29)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "dsoSeaProfitLoss",
+   "tag": "StP",
+   "count": "dsoSeaProfitLossCount",
+   "sentinel": 0,
+   "cols": [
+    "dsoSeaSaleCol0",
+    "dsoSeaSaleCol1",
+    "dsoSeaSaleCol2",
+    "dsoSeaSaleCol3",
+    "dsoSeaSaleCol4",
+    "dsoSeaSaleCol5",
+    "dsoSeaSaleCol6"
+   ],
+   "col_comments": [
+    "the sale percentage of cargo value at 0 port bypassed - the profit/loss table rows run the percentile bands 01-05 through 91-00 (folio 6)",
+    "the sale percentage of cargo value at 1 ports bypassed - the profit/loss table rows run the percentile bands 01-05 through 91-00 (folio 6)",
+    "the sale percentage of cargo value at 2 ports bypassed - the profit/loss table rows run the percentile bands 01-05 through 91-00 (folio 6)",
+    "the sale percentage of cargo value at 3 ports bypassed - the profit/loss table rows run the percentile bands 01-05 through 91-00 (folio 6)",
+    "the sale percentage of cargo value at 4 ports bypassed - the profit/loss table rows run the percentile bands 01-05 through 91-00 (folio 6)",
+    "the sale percentage at 5 ports bypassed - the folio's 16-20 row prints 10 in this column where the arithmetic of its neighbours reads about 70; the cell rides AS SCANNED, the garble noted (folio 6)",
+    "the sale percentage of cargo value at 6 ports bypassed - the profit/loss table rows run the percentile bands 01-05 through 91-00 (folio 6)"
+   ],
+   "data": [
+    [
+     85,
+     80,
+     70,
+     60,
+     50,
+     40,
+     30
+    ],
+    [
+     90,
+     85,
+     80,
+     70,
+     60,
+     50,
+     40
+    ],
+    [
+     95,
+     90,
+     85,
+     80,
+     70,
+     60,
+     50
+    ],
+    [
+     100,
+     95,
+     90,
+     85,
+     80,
+     10,
+     60
+    ],
+    [
+     105,
+     100,
+     95,
+     90,
+     90,
+     85,
+     80
+    ],
+    [
+     105,
+     105,
+     110,
+     115,
+     115,
+     120,
+     120
+    ],
+    [
+     110,
+     110,
+     115,
+     120,
+     125,
+     140,
+     150
+    ],
+    [
+     110,
+     115,
+     120,
+     130,
+     135,
+     160,
+     200
+    ],
+    [
+     110,
+     120,
+     130,
+     140,
+     150,
+     200,
+     300
+    ],
+    [
+     115,
+     125,
+     150,
+     160,
+     200,
+     300,
+     500
+    ],
+    [
+     120,
+     130,
+     160,
+     180,
+     250,
+     400,
+     0
+    ],
+    [
+     125,
+     135,
+     180,
+     200,
+     350,
+     0,
+     0
+    ],
+    [
+     130,
+     140,
+     200,
+     300,
+     0,
+     0,
+     0
+    ],
+    [
+     140,
+     150,
+     250,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     150,
+     200,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "sentinel_census": [
+    1,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "audit_comment": "the Spencer profit/loss grid - percentages of cargo value by percentile band and ports bypassed 0 through 6+; the X cells (ship lost, owner notified 3-8 weeks later) ride as the 0 sentinel (folio 6)"
+  },
+  {
+   "name": "dsoMorOutcome",
+   "tag": "StM",
+   "count": "dsoMorOutcomeCount",
+   "sentinel": 0,
+   "col_default": 0,
+   "cols": [
+    "dsoMorCol1",
+    "dsoMorCol2",
+    "dsoMorCol3",
+    "dsoMorCol4",
+    "dsoMorCol5",
+    "dsoMorCol6",
+    "dsoMorCol7",
+    "dsoMorCol8",
+    "dsoMorCol9",
+    "dsoMorCol10"
+   ],
+   "col_comments": [
+    "the morale outcome on the d10 roll of 1 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)",
+    "the morale outcome on the d10 roll of 2 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)",
+    "the morale outcome on the d10 roll of 3 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)",
+    "the morale outcome on the d10 roll of 4 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)",
+    "the morale outcome on the d10 roll of 5 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)",
+    "the morale outcome on the d10 roll of 6 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)",
+    "the morale outcome on the d10 roll of 7 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)",
+    "the morale outcome on the d10 roll of 8 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)",
+    "the morale outcome on the d10 roll of 9 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)",
+    "the morale outcome on the d10 roll of 10 (0 reads as 10) across the chart numbers -5 or less through +5 or more: B = 0 break and run, H = 1 hesitates, S = 2 stands and fights, F = 3 fights (folios 26-27)"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     2
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     2,
+     2,
+     2
+    ],
+    [
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2
+    ],
+    [
+     0,
+     0,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     3
+    ],
+    [
+     0,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     3,
+     3
+    ],
+    [
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     3,
+     3,
+     3
+    ],
+    [
+     2,
+     2,
+     2,
+     2,
+     2,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    [
+     2,
+     2,
+     2,
+     2,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    [
+     2,
+     2,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ]
+   ],
+   "audit_comment": "the Hayes-Gilbert morale grid - chart number -5 or less to +5 or more against the ten-sided die; the B/H/S/F letters ride coded 0/1/2/3 (folios 26-27)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dsoSeaCargoSmallGp']() != 10000 or m['dsoSeaCargoLargeGp']() != 50000 or m['dsoSeaPilotFeeSmall']() != 500 or m['dsoSeaPilotFeeLarge']() != 2500",
+   "note": "the cargo capacities and the pilot fees (folio 6)"
+  },
+  {
+   "expr": "m['dsoSeaImportTaxPct']() != 5 or m['dsoSeaPortsOnCoast']() != 9 or m['dsoSeaRouteMiles']() != 2500 or m['dsoSeaCoastalMilesMax']() != 50",
+   "note": "the 5 percent import tax, the nine ports, the 2,500-mile route and the fifty-mile coastal limit (folio 6)"
+  },
+  {
+   "expr": "m['dsoSeaDelayWeeksMin']() != 1 or m['dsoSeaDelayWeeksMax']() != 4 or m['dsoSeaLossNoticeWeeksMin']() != 3 or m['dsoSeaLossNoticeWeeksMax']() != 8",
+   "note": "the 1-4 week port delay and the 3-8 week loss notice (folio 6)"
+  },
+  {
+   "expr": "m['dsoSeaCoastalTradeOnly']() != 1 or m['dsoSeaNoForcedLossSale']() != 1 or m['dsoSeaDepartedPortCountsBypassed']() != 1 or m['dsoSeaWildernessRulesWhenAboard']() != 1",
+   "note": "the sea-trade doctrines - coastal only, no forced loss sale, a departed port counts bypassed, the Wilderness rules when aboard (folio 6)"
+  },
+  {
+   "expr": "m['dsoSeaSaleCol1'](9) != 125 or m['dsoSeaSaleCol0'](9) != 115",
+   "note": "the print's worked example - 10,000 G.P. cargo, dice 62, sale 11,500 G.P. - matches the 61-65 row at ZERO ports bypassed (115), while the one-bypassed cell prints 125; the grid is the pin, the worked example's discrepancy noted (folio 6)"
+  },
+  {
+   "expr": "m['dsoPsiHumanRollMin']() != 91 or m['dsoPsiHalfHumanRollMin']() != 95 or m['dsoPsiAbilitiesCount']() != 37",
+   "note": "the psionic gates - humans 91, half-humans 95, thirty-seven abilities (folio 25)"
+  },
+  {
+   "expr": "m['dsoPsiBasicWeeksPerLevel']() != 1 or m['dsoPsiSuperiorWeeksTenths']() != 15 or m['dsoPsiAttackDefenseWeeks']() != 9",
+   "note": "the learning ladder - one week per level basic, the garbled 1 1/2 read as 15 tenths superior, nine weeks per attack or defense mode (folio 25)"
+  },
+  {
+   "expr": "m['dsoPsiAnyClass']() != 1 or m['dsoPsiNoAcquisitionPenalty']() != 1 or m['dsoPsiLearnByEspAndProjection']() != 1 or m['dsoPsiSpontaneousAtNextLevel']() != 1 or m['dsoPsiMagicalAcquisition']() != 1 or m['dsoPsiLowIntelligenceLimits']() != 1",
+   "note": "the psionic doctrines - any class, no acquisition penalty, the ESP/Projection learning gate, spontaneous development, magical acquisition, low intelligence limits (folio 25)"
+  },
+  {
+   "expr": "m['dsoMorBrave3']() != -4 or m['dsoMorBrave4']() != -3 or m['dsoMorBrave56']() != -2 or m['dsoMorBrave78']() != -1 or m['dsoMorBrave912']() != 0 or m['dsoMorBrave1314']() != 1 or m['dsoMorBrave1516']() != 2 or m['dsoMorBrave17']() != 3 or m['dsoMorBrave18']() != 4 or m['dsoMorBrave19']() != 5",
+   "note": "the bravery modifier ladder on 3d6, 3 through 19 or more (folio 27)"
+  },
+  {
+   "expr": "m['dsoMorLvl34']() != 1 or m['dsoMorLvl56']() != 2 or m['dsoMorLvl78']() != 3",
+   "note": "the level additions to the chart number - +1 at 3-4, +2 at 5-6, +3 at 7-8 (folio 27)"
+  },
+  {
+   "expr": "m['dsoMorAdjComradeBreaks']() != -1 or m['dsoMorAdjMuClericBreaks']() != -2 or m['dsoMorAdjLeaderBreaks']() != -4 or m['dsoMorAdjEnemyLeader']() != 4 or m['dsoMorAdjEnemyMuCleric']() != 2 or m['dsoMorAdjEnemyFighter']() != 1",
+   "note": "the post-melee recheck adjustments - own losses subtract, enemy losses add (folio 27)"
+  },
+  {
+   "expr": "m['dsoMorSurpriseMod']() != -1 or m['dsoMorBerserkPctPerRound']() != 10",
+   "note": "the surprised-side -1 and the F-fights 10 percent berserk per round (folio 27)"
+  },
+  {
+   "expr": "m['dsoMorCharismaSameTable']() != 1 or m['dsoMorLoyaltySameTable']() != 1 or m['dsoMorBreakDexDamageRoll']() != 1 or m['dsoMorHesitateRecheckNextRound']() != 1 or m['dsoMorRecheckOnChartChange']() != 1",
+   "note": "the morale doctrines - charisma and loyalty on the same table, the Dex roll on a break, the hesitate recheck, the chart-change recheck (folios 26-27)"
+  },
+  {
+   "expr": "m['dsoDaHd']() != 7 or m['dsoDaHdSides']() != 8 or m['dsoDaAc']() != 4 or m['dsoDaMove']() != 12 or m['dsoDaMoveFly']() != 20 or m['dsoDaNumAppearing']() != 1",
+   "note": "the Death Angel stat line - 7 eight-sided dice, AC 4, move 12/20, number appearing 1 (folio 29)"
+  },
+  {
+   "expr": "m['dsoDaScytheMin']() != 1 or m['dsoDaScytheMax']() != 12 or m['dsoDaSavePenalty']() != 3 or m['dsoDaConLostPerSave']() != 1",
+   "note": "the Death Scythe - 1-12 with a save vs. Death at -3, one constitution point lost on a successful save (folio 29)"
+  },
+  {
+   "expr": "m['dsoDaRiseDays']() != 3 or m['dsoDaMagicResistPct']() != 95 or m['dsoDaRaiseConAsIf']() != 3 or m['dsoDaKillsIrreversible']() != 3 or m['dsoDaMasterPriestLevelMin']() != 20",
+   "note": "the Death Angel numerics - the three-day rise, the 95 percent resistance, the raise-as-con-3, the third-kill irreversibility, the 20th-level priest masters (folio 29)"
+  },
+  {
+   "expr": "m['dsoDaAvgHp']() != 31 or m['dsoDaXp']() != 850 or m['dsoDaXpPerHp']() != 8 or m['dsoDaXpValue']() != 1098",
+   "note": "the Death Angel XP conversion - the DMG p.85 additive formula: 225 base + 2 x 175 + 275, plus 8 per hit point at the floored 31 average; the conversion noted, never silent (folio 29)"
+  },
+  {
+   "expr": "m['dsoDaNeutral']() != 1 or m['dsoDaVanishesWhenSlain']() != 1 or m['dsoDaTeleportNoFail']() != 1 or m['dsoDaNoTeleportFromMelee']() != 1 or m['dsoDaTurnedLikeVampire']() != 1 or m['dsoDaReturnsNextDay']() != 1",
+   "note": "the Death Angel doctrines - Neutral, vanishes when slain, the no-fail teleport that cannot leave melee, turned like a Vampire yet returns next day (folio 29)"
+  },
+  {
+   "expr": "m['dsoDaVictimsRiseAsAngels']() != 1 or m['dsoDaRaiseDeadFullyOnly']() != 1 or m['dsoDaWishRaisesAutomatically']() != 1 or m['dsoDaOnlyAttacksVictim']() != 1 or m['dsoDaRemoveCurseGrantsPeace']() != 1 or m['dsoDaOnePerMaster']() != 1 or m['dsoDaTelepathicAllLanguages']() != 1",
+   "note": "the Death Angel mission doctrines - the victim's rise, the Raise Dead Fully limit, the automatic Wish, the single victim, the remove-curse peace, one per master, telepathic speech (folio 29)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['dsoSeaSaleCol0'](0) != 85 or m['dsoSeaSaleCol6'](0) != 30 or m['dsoSeaProfitLossCount']() != 16",
+   "note": "the profit/loss grid's 01-05 row runs 85 down to 30 across the seven ports-bypassed columns (folio 6)"
+  },
+  {
+   "expr": "m['dsoSeaSaleCol6'](9) != 500 or m['dsoSeaSaleCol0'](9) != 115",
+   "note": "the 61-65 row - 115 percent at zero bypassed, 500 at six-plus (folio 6)"
+  },
+  {
+   "expr": "m['dsoSeaSaleCol0'](15) != 0 or m['dsoSeaSaleCol3'](15) != 0 or m['dsoSeaSaleCol6'](15) != 0 or m['dsoSeaSaleCol6'](10) != 0 or m['dsoSeaSaleCol5'](11) != 0",
+   "note": "the X band - ship lost, owner notified 3-8 weeks later: the sentinel 0 cells count 1/1/2/3/4/5/6 by column (folio 6)"
+  },
+  {
+   "expr": "m['dsoSeaSaleCol5'](3) != 10",
+   "note": "the folio's garbled cell - the 16-20 row's five-bypassed column prints 10; it rides AS SCANNED, the arithmetic of the neighbours reads about 70 (folio 6)"
+  },
+  {
+   "expr": "m['dsoMorCol1'](0) != 0 or m['dsoMorCol10'](0) != 1 or m['dsoMorCol1'](5) != 0 or m['dsoMorCol10'](5) != 3",
+   "note": "the morale grid ends - chart -5 opens on B and tops at H; chart 0 opens on B and tops at F (folios 26-27)"
+  },
+  {
+   "expr": "m['dsoMorCol1'](10) != 2 or m['dsoMorCol10'](10) != 3 or m['dsoMorCol3'](8) != 2 or m['dsoMorCol6'](8) != 3 or m['dsoMorOutcomeCount']() != 11",
+   "note": "the morale grid's upper charts - +5 opens on S and tops at F; +3 crosses from S to F at the sixth die (folios 26-27)"
+  }
+ ],
+ "file_patches": [],
+ "data_files": [
+  {
+   "path": "monsters/monsters/d/death_angel.lua",
+   "content": "-- Death Angel: promoted by the R906 Dragon issue-6 Featured Creature round\n-- (The Dragon Vol. 1 No. 6, April 1977, folio 29; spec\n-- tools/spec_r906.json); DO NOT hand-edit; the pin headers stay the\n-- print-fidelity record.\nreturn {\n  name = \"Death Angel\",\n  page = \"29\",\n  source = \"The Dragon #6\",\n  hitDice = \"7\",\n  hitDiceNum = 7,\n  hitDiceBonus = 0,\n  avgHp = 31,\n  armorClass = 4,\n  numAttacks = 1,\n  damage = \"1-12\",\n  xp = 850,\n  xpPerHp = 8,\n  xpValue = 1098,\n  xpSource = \"dragon_print\",\n  frequency = \"not printed\",\n  noAppearing = \"1\",\n  lairPct = 0,\n  treasure = \"nil\",\n  move = \"12/20\",\n  size = \"not printed\",\n  intelligence = \"highly intelligent, speaks all languages telepathically\",\n  alignment = \"Neutral\",\n  specialAttacks = \"Death Scythe 1-12, save vs. Death at -3, one point of constitution lost on a successful save (Restoration or Healer Energy only)\",\n  specialDefenses = \"95% resistant to all magic; turned like a Vampire but returns the next day; teleport without failure (never out of melee); flight; vanishes entirely when slain\",\n  magicResistance = \"95%\",\n  psionic = \"0\",\n  text = \"The Death Angel is a finger of Fate utilised by very powerful entities - gods, demi-gods, some liches and very few evil high priests of 20th level or higher. It acts as an Oracle warning of death or represents Death itself on a mission to kill one particular being; it attacks only its intended victim and leaves once the kill is made. Those successfully killed rise as Death Angels after three days unless raised - only Raise Dead Fully works (and then as a regular Raise Dead), the percent chance rolls as if constitution were 3, and a Wish works automatically; a being killed three times is gone forever. The only permanent dispelling is a remove curse thrown on a slain Death Angel battling its intended victim, granting eternal peace; there can be no more than one Death Angel serving any one master. The XP conversion rides the DMG p.85 additive formula - 225 base + 2 specials x 175 + 1 exceptional x 275, plus 8 per hit point at the floored 31 average (7 dice at 4.5 per die) - noted, never silent; promoted from The Dragon Vol. 1 No. 6 (April 1977), folio 29, as a variant-layer def.\"\n}\n"
+  },
+  {
+   "path": "tools/dragon_gap_report_006.md",
+   "content": "# Dragon gap report - THE DRAGON, Vol. 1 No. 6 (April 1977)\n\nThe Dragon Magazine walk, issue #6. Primary ink:\nextract/dragon/006/pNNN_full.txt, NNN = page index; PRINT FOLIO =\nPDF PAGE (verified both ends: the printed 6, 26 and 29 footers sit\non the PDF pages 6, 26 and 29). The voice is the chat-side DjVu OCR\ntranscript of the archive.org scan; the article CHAIN is the ink\nunit, not the folio.\n\nDoctrine (Curtiss, 2026-10-29): the pin IS the conversion - OD&D-era\nink adjudicated to 1e terms, the conversion noted, never silent;\nDragon pins ride a VARIANT layer with provenance, never core canon.\n\nAdjudication (Curtiss, 2026-10-29): use - four engine-relevant\nchains: the Sea Trade in D&D Campaigns system by Ronald C. Spencer,\nJr. (folio 6) as the absent-merchant coastal trade variant layer -\nthe cargo capacities, the fees and taxes, the sixteen-band\nprofit/loss grid with the ship-lost sentinel; the D&D Option:\nDetermination of Psionic Abilities by David W. Miller (folio 25) as\nthe psionics variant layer against the Eldritch Wizardry base - the\npercentile gates, the thirty-seven abilities, the learning ladders;\nthe Morale in D&D system by Jim Hayes and Bill Gilbert (folios\n26-27) as the morale-check variant layer - the bravery, charisma and\nloyalty modifiers, the level and loss adjustments, the eleven-chart\noutcome grid; the Featured Creature: Death Angel by John Sullivan\n(folio 29) as a new variant-layer registry monster, no 1e def\nexisting; drop - the Metamorphosis Alpha chains (the Clone Bank\nAlpha alternate beginning 4-5, James M. Ward's clarifications 15 and\nthe MA errata riders on 30), the EPT Legions of the Petal Throne\npainting guide (8-11), the fiction (12-14), the Gnome Cache Chapter\n6 (22-24, ideas-usable per the doctrine, never engine ink), the\nWizard vs Warrior comic (7), the editorial (3), the ads (2, 16-21,\n31), the convention schedule (30) and the coming next-issue preview\n(32).\n\n## Boxes\n\n- [ ] **The Sea Trade system, the psionic option, the morale\n  system and the Death Angel** (folios 6, 25, 26-27, 29) - the\n  issue-6 opener round\n\n1 box, 0 closed, 1 open at the R906 authoring. The R906 round ships\nthis report pre-flip (a report cannot flip in the round that\ncreates it); the issue-6 box closes at the next round's flip.\n\n## Scoped out of the engine\n\nThe Metamorphosis Alpha chains (4-5, 15 and the 30 riders); the EPT\npainting guide (8-11); the fiction (12-14); the Gnome Cache Chapter\n6 (22-24); the Wizard vs Warrior comic (7); the editorial (3); the\nHinchliffe, Minifigs, Judges Guild, Archive Miniatures, Space\nGamer, Fantasy Forge and Dungeon Hobby Shop ads (2, 16-21, 31); the\nconvention schedule (30); the coming next-issue preview (32). The\nprofit/loss grid's 16-20 row prints 10 in the five-ports-bypassed\ncolumn where the arithmetic of its neighbours reads about 70 - the\ncell rides AS SCANNED, the garble noted; the folio-25 '1%' weeks\nper level reads as 1 1/2, pinned as 15 tenths, the garble noted.\n"
+  },
+  {
+   "path": "extract/dragon/006/p001_full.txt",
+   "content": "Fags as The magazine of. Faptasy,\nHJ) Swords & Sorce ya\n|) Science Fiction Gar\nri\n{\nhi\na\n"
+  },
+  {
+   "path": "extract/dragon/006/p002_full.txt",
+   "content": "The Dragon Vol. 1, No.6 |\nHINCHLIFFE ANCIENTS\nNEW RELEASES!\n_. LATE BYZANTINES \\ ee Aa < With hundreds of pictures plus\n3309 Seana 7 oer. 2; Sse eS + RRITAGE Roget faints\non Det \u2018Kelegspeilers nike\ne\nHeritage Models, Inc.\nManufacturers of Hinchliffe and Der Kriegspielers\n9840 Monroe Drive, Bldg. 106\nDallas, Texas 7522\n214-351-3708\n"
+  },
+  {
+   "path": "extract/dragon/006/p003_full.txt",
+   "content": "April \u00b077\nThe Dragon\nIt is a distinct pleasure to be writing this, the sixth installment of this column, to a readership that has grown fourfold in the past year.\nWhen we started this venture, there was no guarantee on this issue. The past year has seen us increase our publishing rate from bi-monthly\nto eight times yearly, and it need not stay at that rate forever.\nThese first six issues have been centered around two games, primarily, with a growing trend to get into other areas that will see in-\ncreased growth in the next Volume. THE DRAGON owes its very existence to the revolutionary success of D&D, and all of the entire field\nClone Bank Alpha\u2014\nALTER. BACKGROUND FOR M.A.............4\nSea Trade in D&D ......ccsecesccccccecccescsese 6\nLegions of the Petal Throne Painting Guide..........8\nThe Forest of Flame \u2014\nAN ILLUSTRATED FANTASY TALE......... .12\nDesigner\u2019s Forum \u2014\nMA ADDITIONS AND CLARIFICATIONS ......15\nFrom the Fantasy Forge \u2014FIGURES REVIEWED .18-19\nGnome Cache \u2014 CH.6......... 00. c eee eee eee ode\nOptional Psionic Determination in D&D............25\nMorale: in D&D... 0s cons wnrrreat ese daacteesonn- 20\nFeatured Creature \u2014 DEATH ANGEL.........28 & 29\nEditor \u2014 Timothy J. Kask\nStaff Artist \u2014 Dave Sutherland\nAssoc. Fantasy Editor \u2014 Gary Jaquet\nCover by \u2014 Morno\nPablisher\u2019s Statement\nthat it opened up. EMPIRE OF THE PETAL THRONE is the most\nnoteworthy of the \u201cD&D-type/inspired\u201d games that have followed,\nbut the last year has seen a number of other good fantasy games come\non the market. The next year will see more attention to the rest of our\nfield, without giving up any of what we\u2019ve provided in the past. The\nlast DRAGON RUMBLES (Vol. 1, No. 5) outlined the new policies\nyou can expect.\nKKK K KKK KKK KKK KKK KKK KK KKK KEKE KKK KKK KKK KKK KKK HE\nAs readers of THE DRAGON, you are now being invited to deter-\nmine the winners of the Strategist\u2019s Club \u201cCreativity in Wargaming\u201d\nAwards for 1976.\nThe format of the awards has been changed, to enable them to\nmore accurately reflect the opinion of the hobby. To this end, the\nawards nominations have been determined by the TSR staff and mem-\nbers of the Strategist\u2019s Club. The highest rated nominees will be placed\non a ballot, ballot positions determined at random, and that ballot will\nbe printed in the next TD. You are invited to vote, ON POSTCARDS,\nfor the nominees of your choice. The directions must be followed to the\nletter, or the ballot will hit the old round file. The awards will be pre-\nsented at the Annual Strategist\u2019s Club Dinner. Watch for it next is-\nsue...\nKKK KKK KKK KKK KEKE KKK KKK KKK KKK KKK KKK KKK KKK KEK KK\nAlso something to watch for in the next issue, or possibly the next\none after that, is an art contest we will hold with all sorts of goodies for\nwinners, not to mention fame and fortune.\nYet another possibility for an impending issue is a game designed\nby that reknowned designing team of Omar and Irving, guaranteed to\nbe exotic and involved, but rumored to give strange abilities of precog-\nnition to the players.\nIn any event, the next publishing year looks to be even better than\nour first. Hope you\u2019re here to see what I have in store. . .\n| nt\nTimothy J. Kask\nEditor\nTHE DRAGON is published monthly, except during the months of Feb., May, Aug., & Nov., by TSR Periodicals, a division of TSR Hobbies, Inc., POB 756, Lake Geneva, WI 53147.\nIt is available at better hobby shops and bookstores, or by subscription. Subscription rate is $9.00 per 6 issues. Single copy and back issue price is $1.50, but availability of back issues is not guaranteed. Sub-\nscriptions outside the U.S. and Canada are $20.00, and are air-mailed overseas. (Payment must be made in US currency or by international money order.) All material published herein becomes the exclusive\nproperty of the publisher unless special arrangements to the contrary are made. Subscription expiration is coded onto the mailing list. The number to the right of the name, prefixed by \u201cLW\u201d or \u201cTD\u201d is the last\nissue of the subscription. Notices will not be sent.\nChange of address must be filed 30 days prior to mailing date (first of Feb., Apr., June, Aug., Oct., Dec.)\nUnsolicited material cannot be returned unless accompanied by a stamped return envelope, and no responsibility for such material can be assumed by the publisher in any event. All rights on the entire con-\ntents of this publication are reserved, and nothing may be reprinted in whole or in part without written permission of the publisher. Copyright 1976 by TSR HOBBIES, INC.\nApplication to mail as second class postage rates is pending at Lake Geneva, WI 53147 and additional entry points.\n"
+  },
+  {
+   "path": "extract/dragon/006/p004_full.txt",
+   "content": "The Dragon\n053 8 AE-EST RELISH SHIPLINK\n\u201cSTATUS INTERFACE -\n055 SCAN PROGRAM COMPLETE\nO5r = =6C ALL SEGUENCE ALPHR-\n059 WITVATE PROGRAM -\nCODE NAME \u2018CLONE BANA ALPHA\u2019\n06) AUN SEGUENCE ALPHA\n065 ACTWATE...\nAN ALTERNATE BEGINNING\nSEQUENCE FOR\nMETAMORPHOSIS: ALPHA\nby Guy W. McLimore, Jr.\nIn a special hidden section of the lost starship Warden, an engi-\nneering robot discovers a minor cable break. Drawing a small torch\nfrom its built-in tool kit, the necessary repair is soon made. This cir-\ncuitry interruption \u2014 which has remained undiscovered and untend-\ned for many, many years \u2014 is now closed, and a special computer\nsignal sent long ago finally reaches its destination. Relays close, and\na special computer unit is activated, setting into motion a special\ngenetic laboratory.\nImmediately, micro-miniature manipulators withdraw samples\nof human tissue from a freezer storage compartment. Unnoticed by\nthe electronic controlling device is a cracked and damaged radioac-\ntive power capsule nearby which contaminates some of the with-\ndrawn tissue cultures. The quick-frozen cells are moved to tanks of a\nspecial growth medium and are electrically stimulated. The cells be-\ngin to multiply, rapidly...\nWeeks later, the tanks hold full-grown adult human bodies. Some\nappear normal, others have strange deformities and mutations induced\nby the unexpected dose of radiation. All are limp, unmoving, devoid of\nintelligence and identity.\nOnce again, micromanipulators move in, this time to attach wires\nand sensor strips to the foreheads of the newly-grown clones. In a mat-\nter of days, computer tapes full of general human knowledge and spe-\ncific ship-related skills are played directly into the clones\u2019 brain synaps-\nes. But again old computer malfunctions and worn-out circuitry com-\nbine to leave large gaps in the intended programming of the new poten-\ntial crew members. There will be unfortunate\u2014perhaps eventually tra-\ngic \u2014 lapses in their \u201cmemories\u201d of the ship and its Nincnone,\nVol. 1, No. 6\nThankfully, the all important final tape does play into the heads of\nthe clones, explaining their mission. That mission is of the utmost im-\nportance to the hundreds of thousands of people in the ship.\n\u201cProgram codenamed Clone Bank Alpha is activated only in case\nof extreme danger or damage to the ship, causing breakdown of chain\nof command. Upon activation, tissue samples are processed into clones\nof ship\u2019s personnel, who are then programmed with the technical and\ngeneral data necessary for operation of the ship. The clone bank com-\nputer terminals are to provide equipment and authorization to the\nclones, allowing them to reestablish chain of command and prevent di-\nsaster.\u201d\u201d\nYOU are one of these clones \u2014 charged with the task of rescuing\nthe starship from disaster. But computer malfunctions have left you\nwithout the special equipment and weapons you need to master the sit-\nuation. What equipment you carry you must manufacture yourself\nfrom materials available in the clone bank complex. Some of your team\nare not even totally human, possessing strange mutant abilities and de-\nfects. Worst of all, there are large holes in your memories. The ship\u2019s\nequipment seems strange to you, and you are not sure how to operate.\nYou remember almost nothing of the structure of the ship itself \u2014 not\neven where the clone bank you are in is located or how to find the im-\nportant areas of the ship. The aged and broken-down computers in the\nclone bank complex yield no information of value.\nStill, you and your party have a job to do. You must leave the\nclone bank, and wander the ship, gathering information, and putting\nwhat skills you have to work. But it may already be too late. The disas-\nter that caused the loss of command in the ship was long ago, and what\nremains is strange, and savage, and often deadly. You are entering an\nunknown land. . .\nThis alternate scenario for beginning a game of Metamorphosis:\nAlpha has certain advantages over the idea of beginning as a barbarian\nfrom a shipboard tribe. Most notably, it eliminates the problem of so-\ncalled barbarians who own a copy of the rule book and know decidedly\ntoo much to be mere tribesmen.\nCLONE BANK: DETERMINATION OF\nMUTATION STATUS\n% Die Roll Mutation Status\n01-15: MUTANT -1 mutation\n16-25: MUTANT -2 mutations & 1 defect\n26-30: MUTANT -3 mutations & | defect\n31-35: MUTANT -4 mutations & 2 defects\n36-50: LATENT MUTANT STOCK\n51-00: HUMAN\n"
+  },
+  {
+   "path": "extract/dragon/006/p005_full.txt",
+   "content": "April \u201877\nPhysical mutations are numbered | through 30. Renumber mental mu-\ntations 31 through 67. Roll percentile dice for each indicated mutation\non the table above. A roll of 68 through 00 is ignored. Physical defects\nare renumbered | through 12, and mental defects are renumbered 13\nthrough 20. Roll a 20-sided die for determination of defects.\nLATENT MUTANT STOCK\nThese are humans who have latent mutant abilities that may be brought\nout by radiation. Keep track of how many levels of radiation CUMU-\nLATIVE have been absorbed by any one latent mutant. This is the per-\ncentage chance that the accumulated radiation effect will bring out the\nlatent mutations. Roll each time the character is affected by radiation\nand lives. If the latent mutations are brought out, roll on the following\ntable:\n% Die Roll Effects\n01-50: 1 mutation\n51-75: 2 mutations & 1 defect\n76-90: 3 mutations & 2 defects\n91-00: DEATH (lethal mutation)\nPROGRAMMED SHIP SKILLS\n% Die Roll Number of skills\n01-50: 1 minor skill\n51-60: 1 major & 1 minor skill\n61-75: 1 major & 2 minor skills\n76-85: 2 major skills\n86-90: 2 major & | minor skill\n91-95: 2 major & 2 minor skills\n96-99: 2 major & 3 minor skills\n00: ROLL SPECIAL SKILL (humans only)\nMAJOR SKILLS (player\u2019s choice)\nEcology Maintenance Technician\nAstrogator\nComputer Technician\nWeapons Officer\nRoboticist\nMedical Officer\nPower Room Technician\nEngine Maintenance Technician\nRadiation Technician\nBand Unit Maintenance\nTechnician\nMINOR SKILLS (player\u2019s choice)\nFood Service Technician\nShuttlecraft Pilot\nTransport Technician\nGeneticist/Chemlife Technician\nSmall Unit Repair Technician\nRecreation & Athletics Officer\nSurvival Training Specialist\nShip Superstructure Technician\nSPECIAL SKILLS\n01-15: Psionic Healer\n16-30: Machine Talent\n31-45: Immortal\n46-60: Probability Shifter\n61-75: Resurrection Talent\n76-90: Mental Battery\n91-00: Ability Duplicator\nEXPLANATIONS OF SKILLS\nWEAPONS OFFICER: + 1 on rolls to hit with ship\u2019s weaponry\nMEDICAL OFFICER: Can heal 1 point of damage per man per\nday with minimum equipment\nRADIATION TECHNICIAN: Can identify radiation areas from\ncondition of local plants, effects on animals\nand players, etc.\nBAND UNIT MAINTENANCE TECHNICIAN: Expert. with color\nband circuitry. Has possibility of bypassing\nThe Bragon\nbandlocks (at referee\u2019s option)\nFOOD SERVICE TECHNICIAN: 25 per cent change to identify\nharmful substances\nSHUTTLECRAFT PILOT: Able to fly ship\u2019s shuttle vehicles\nTRANSPORT TECHNICIAN: Familiar with road systems, subshut-\ntle tubes, anti-grav sled repair, etc.\nGENETICIST/CHEMLIFE TECHNICIAN: Conversant with both\nhuman genetics and android construction\nSMALL UNIT REPAIR TECHNICIAN: Able to repair minor dam-\nage to ship\u2019s equipment depending on com-\nlexity (referee\u2019s option)\nSURVIVAL TRAINING SPECIALIST: + 1 to hit with all weapons.\n1-6 pts. damage hand-to-hand combat with\nhumans and humanoids (Only one per party)\nSHIP SUPERSTRUCTURE TECHNICIAN: Familiar with hull con-\nstruction, including methods of working\nwith duralloy\nCan heal 1-6 points of damage per person\nper day, or twice that (taking 1-6 pts. him-\nself in the latter case)\nMACHINE TALENT: Possesses instinctive affinity with all ma-\nchines.\nTotally immune to poison, radiation, and\ndisease. Regenerates 5 hit points per day.\nTransfusion of blood into a non-immortal\ncures 2-40 hit points, and can be done once\na month.\nPROBABILITY SHIFTER: Can influence a die roll by investing hit\npoints (1 hit point = 1 percentage point; 5 hit\npoints = 1 20-sided die point; 10 hit\npoints= 1 6-sided die point). Use of this\npower, and direction and magnitude of in-\nfluence, must be declared before rolling.\nThis power can be used whenever the char-\nacter affected by the roll is within 25 ft. of\nthe person with the power.\nRESURRECTION TALENT: Can restore life by pouring own hit\npoints into another\u2019s body. The amount of\npoints invested becomes the maximum hit\npoints for the resurrected person. This can\nbe no more than the original number of hit\npoints the dead character had. Each full day\ndead adds 10 percent to the number of\npoints that must be invested. (Example: A\nman three days dead must have 39 points in-\nvested to gain 30.) Persons with bodies not\nintact or not recoverable cannot be resur-\nrected, nor can persons already once resur-\nrected by this method.\nMENTAL BATTERY: Can power any item within 20 feet with\nmental energy, with 5 percent chance (cumu-\nlative) of \u201cburnout\u201d each melee round.\nPowering an item takes no real concentra-\ntion, but power ends if person with battery\npower is knocked unconscious or moved out\nof range.\nBURNOUT CHART\n01-50: Unable to use power for one day\n51-75: Unconscious 1-20 min. plus | -day wait\nto use power again\n76-85: Unconscious 1-6 hours plus 2-day wait\nto use power again\n86-90: As 76-85 plus take 1-20 pts. damage\n91-99: As 86-90 plus take additional 1-20 pts.\ndamage\n00: Death from energy burnout\nABILITY DUPLICATOR: May duplicate any one single mutant\nability (mental or physical) or one single hu-\nman attribute (strength, constitution, dex-\nterity, etc.) of any being within 100 yards.\nRoll for burnout as above each melee round\nbut with 10 percent non-cumulative chance\nof burnout.\nPSIONIC HEALER:\nIMMORTAL:\n"
+  },
+  {
+   "path": "extract/dragon/006/p006_full.txt",
+   "content": "The Dragon\nSEA TRADE\nIN D&D CAMPAIGNS\nby Ronald C. Spencer, Jr.\nThe \u201cBardukian Campaign\u201d currently being played by several\nmembers of the crew of the USS Benjamin Franklin (SSBN 640) has\nproduced some interesting developments due to the varied areas of in-\nterest of the participants. What follows is a description of one of these\ndevelopments and suggestions for incorporating them into your own\ncampaign.\nThe question of sea trade is only touched upon lightly in Dungeons\nand Dragons and when one of the players in the Bardukian Campaign\napproached the dungeonmaster on the subject the immediate reaction\nwas, \u201cGood grief!\u201d The whole thing seemed too complex to handle,\nsince the player was interested in having a trading business running on\nthe side, while he (a fighting man) trooped about the countryside slay-\ning dragons.\nAfter hashing over several possibilities, including setting up an en-\ntire economic grid for imports and exports, it was felt that this was go-\ning to produce too much paperwork for the D/M and too little sense of\nrisk on the part of the player/merchant. What finally evolved was a\ncompromise between the realism of an entire definition of the economic\nstructure of three coastal countries and the playability of a more ab-\nstract system that reproduces the \u201cfeel\u201d of the risky business of sea\ntrade.\nA brief description of the trade routes is in order here. Note that\nwhile the trading system was designed to fit the costal trade of the Bar-\ndukian Campaign, it is not difficult to adapt to any campaign that has\na coast and coastal cities.\nIn the Bardukian Campaign there are three countries bordering the\nWestern Sea, Dromir, Barduk and Chu\u2019unar. Dromir is the northern-\nmost, with its ports sometimes ice-bound in the winter; Barduk lies in a\nmore temperate zone and finally, Chu\u2019unar to the south. All trading\nand sailing is coastal in nature, with ships rarely venturing more than\nfifty miles from land. There are nine ports along the coast, the distance\nbetween the northernmost and southernmost being about 2500 miles.\nThe main trade route extends in a line from the northernmost port to\nthe southernmost port, linking all ports between.\nThe trading system below gives the player/merchant the oppor-\ntunity to take risks in hope of greater reward and also recreates the feel-\ning of insecurity present at seeing your heavily-laden large merchant\nsail away, not knowing just how long it will be gone, or if it will return\nat all. When a player/merchant decides to accompany the vesel on its\nvoyage the \u201cWilderness Adventure\u201d rules of Dungeons & Dragons are\nused. The rules presented below are intended to cover a trade business\ncarried on in the absence of the player/merchant under whatever orders\nhe gives to his ship captain.\nSEA TRADE\n1. Assumptions \u2014 No specific cargo is required; rather, it is assumed\nthat a cargo can be purchased in any port and that it will be saleable in\nany other port. The maximum cargo capacity of a small merchant is\n10,000 G.P. in value; that of a large merchant, 50,000 G.P. It is not\nnecessary that the maximum be carried if the player/merchant decides\notherwise.\n2. Fees and Taxes \u2014 There is a pilot fee for all ports except the mer-\nchant\u2019s home port. This fee is 500 G.P. for a small merchant and 2500\nG.P. for a large merchant. All countries have a 5% import tax, based\non the sale value of the cargo-in the receiving port.\n3. Profit/Loss \u2014 the amount of profit or loss taken on the trip is de-\ntermined by the number of ports bypassed and a die roll. The more\nports bypassed, the greater the possible profit (or loss!) and the greater\nthe chance of the vessel being lost due to storms, pirates, sea monsters,\netc.\n4. Procedure \u2014 The player/merchant \u201cpurchases\u201d a cargo with his on-\nhand funds and writes a set of sailing orders for the captain. These\nshould specify what ports to stop at, what profit margin to accept, how\nmuch cargo to buy, and possibly a maximum time to be gone. All this is\ndelivered to the D/M who will then determine the actual results of the\n6\nVol. 1, No. 6\njourney according to the \u201csailing orders\u201d given him. Note that the\nplayer/merchant will have no knowledge of the results until the ship re-\nturns or word Beaches him of its loss. One important item is that the\nplayer/merchant is not required to sell a cargo at a loss. If he so states\nin his sailing orders, a port where a loss would be incurred can be de-\nparted and sale attempted at another port. Note that if this option is\nchosen, the port departed counts as a port bypassed. If no specific di-\nrections are given to the captain, the cargo will be sold at whatever pro-\nfit/loss determined from the Profit/Loss Table.\n5. Profit/Loss Determination \u2014 Given the sailing orders, the D/M\nthen rolls the percentile dice, cross-references with the appropriate\n\u201cPorts Bypassed\u201d column, and determines the amount of the sale. Ap-\npropriate deductions are made for the pilot fee, taxes, and possibly cost\nof a new cargo, and the profit/loss for the port call determined. The\nD/M then rolls for the amount of delay there will be before getting un-\nderway (due to repairs, liberty, haggling over prices, etc.) and continue\nthe trip to the next port as specified by the sailing orders. This proce-\ndure continues until the ship returns to its home port or is lost at sea. If\nlost at sea, the delay in reporting it to the player/merchant is rolled for.\nIf the ship returns to its home port, it is simply a matter of notifying the\nplayer/merchant when he and the ship arrive at the same point in game-\ntime.\nThis system has worked very well so far in the Bardukian Cam-\npaign and has added a little extra dimension to the game for those who\nare so inclined. The only difficulty that has been encountered has been\nthe demand for a similar system to cover land trade . . . more on that\nat a later date.\nPROFIT/LOSS TABLE\nPercentages expressed as percent of cargo value.\n% DICE PORTS BYPASSED\n0 l 2 3 4 5 6+\n01-05 85% 80% 70% 60% 50% 40% 30%\n06-10 90% 85% 80% 70% 60% 50% 40%\n11-15 95% 90% 85% 80% 70% 60% 50%\n16-20 100% 95% 90% 85% 80% 10% 60%\n21-25 105% 100% 95% 90% 90% 85% 80%\n26-30 105% 105% 110% 115% 115% 120% 120%\n31-35 110% 110% 115% 120% 125% 140% 150%\n36-40 110% 115% 120% 130% 135% 160% 200%\n41-60 110% 120% 130% 140% 150% 200% 300%\n61-65 115% 125% 150% 160% 200% 300% 500%\n66-70 120% 130% 160% 180% 250% 400% X\n11-75. 125% 135% 180% 200% 350% X xX\n76-80 130% 140% 200% 300% X X Xx\n81-85 140 %150% 250% X xX X xX\n86-90 150% 200% X xX x x xX\nls Xx pp a Xx X Xx\nX = ship lost, owner notified 3-8 weeks later.\nA ship will be delayed 1-4 weeks at each port (other than its home port).\nExample of Table: A ship carrying a 10000 G.P. cargo bypasses one\nport and the dice are 62. Sale value is 11500 G-P., less 5% tax and the\npilot fee.\n"
+  },
+  {
+   "path": "extract/dragon/006/p007_full.txt",
+   "content": "April \u201877 The Dragon\nWizzarp D5z Warrior\n3 \u201coa . by Gremdicr\n@m.OR THE FINEST IN FANTASY\nQQHETHER YOU NEED TO FIENDISHLY STOCK\nYOUR FAVORITE DUNGEON OR RAISE YOUR\n| OWN HEROIC LEGIONS AGAINST THE ARMIES\nOF THE DARK POWERS. YOU CANNOT CON/URE\nUP BETTER THAN WIZZARDS & WARRIORS. \u2014 7\nmUARFS. MONSTERS Accessoetes, | DICE SETS | FOR OUR FANTASY CATALOG OF\nMEN MAGIC USERS TREASURE ROLE BOOKS OVER 100 FANTASY FIGURES AND\nFIGHTING MEN BARDS. WEAPONS GAMES RELATED ITEMS SEND $1.00 OR\nSPECIALISTS THIEVES - CHARIOTS TSR PRODUCTS | FOR FULL CATALOG OF ALL\nORCS _ MAMMOTHS ZM PRESS ON GRENADIER PRODUCTS SEND\nGOBLINS FURNITURE - FLAGS & SHIELDS 4 $2.00 TO:\nELVES GHOULS : FANTASY GAMES NADIER\nHOBGOBLINS OGRES UNLIMITED ee ae Bs :\nWERE CHENTURTS ANYMORE EN SPRINGFIELD, PA. 19064\nINQUIRIES\n: INVITED DEPT. 2\n7\n"
+  },
+  {
+   "path": "extract/dragon/006/p008_full.txt",
+   "content": "The Dragon\nLegions of the\nPetal Throne\nPAINTING GUIDE\nVol. 1, No. 6\nlight grey, rust colour, etc. Metal greaves and\nvambrances are silvery or steel-coloured. Also\nmetal groin-guard tabard, although this is\nhighly engraved and inlaid in wealthier Le-\ngions. Shield is basically blue with gold inlaid\ndesign, white or other colour trim. Helmet\nplume is usually white or other shade of blue.\nShoes are leather with metal plates. Helmet\ndecoration is gold on blue. Pike has wooden\nshaft and a metalled or lacquered Chl\u00e9n-hide\nhead, although richer Legions may have iron\npoints. Bow-case leather, with decorated lac-\nquerwork. Bow is a light brownish wood. Ar-\nrows have blue feathers. Considerable freedom\nby M.A.R. Barker\non trim and cloth colours \u2014 but no large areas\nof \u201cenemy\u201d colours, or course!\nThe following remarks are organised according to\nthe original priority list. Each figure is identified\nwith its Group number and its number within that\nGroup, plus its name.\nSome basic remarks:\nTsolyani flesh colour is generally a rich, cop-\npery tan, lighter and more golden for women,\nand darker and browner for men. Skin should\nnot be totally \u201cflat,\u201d of course, but rather\nslightly glossy to represent the natural oils.\nThe Yan Koryani are a little lighter: a creamy\nAnd now to the figures:\ngolden tan for women and a darker, redder tan T-l The Tsoly\u00e9ni General\nfor men. Helmet, shoulder epaulettes, breastplate are all\nThe other human races are: the Salarvydni are azure blue (semi-glossy because these parts are\na darker, heavier bearded people, tending to seeder) Hele est Als sole aries\nsallowness; the Mu\u2019 ugalavyani are roughly the purplish blue, plus some white. Helmet plumes\nsame as the Tsolydni but traditionally ruddier are white, another shade of blue, gold or vari-\nin hue; the Livy\u00e9ni are more golden and tawny; ous other choices depending upon the Legion\nthe S\u00e9a Allagiy\u00e9ni are mountaineers and hence and the wearer\u2019s choice. The vambraces are\nbrowner and rougher looking. There are NO probably gold or steel. The shoulder sleeves\nblonds or light-skinned peoples on those por- and kilt are white with blue and gold woven de-\ntions of T\u00e9kumel now included in the game, signs. The chainmail is steel, the general being T-2-3\n\u201cEmpire of the Petal Throne.\u201d wealthy. The greaves are again lacquered blue.\n; . \u2018 : The cape is a darker blue, although it may also\nee ae as te ra: Perna tea be a brocaded many-coloured iridescent cape T-3 Tsolydni Armoured Heavy Infantry with Bow:\nracer of feathers. Shoes are red leather, with metal : :\nBie i Sevens Law iy amit aey, Sowa ball Colour, plates on top. The \u201ckd\u00e9ing\u201d (the great pole-axe ie ae pean genes ee\nand a tiny percentage of albinos also exists Pp ea pee : wae te Perma vy ues, imilar inlai\nalthough these people are greatly despised and Me ie ba aarti es eee plaques in various colours, a white or pastel tu-\nsuperstitiously feared. Eye colour tends to be Se eaci ike peices pant be pach ra nic (sleeves show) and kilt, an over-kilt of heav-\nays: DIGOT salted. DeO wiate salto neha Tey the figure with a delicate pen and acetate inks ie oe ee ee ps Cane Ualuaae heey tes\n\u201csports\u201d do have hazel or golden coloured (available at any art sapply store). Reds, inaciae Sreice atin for ee ee as\neyes. Blue-eyed slaves are prized as curiosities. greens, blacks, yellows, white, etc. etc. can be ee eat. 5 rae S. - a\nIt is thus totally incorrect to use the present used. = ees D Sra eth eae wid -\n\u201cflesh colour\u201d paints available on the market F white, gold, another shade of blue, or trimmed\n? The Tsolyani Standard-Bearer: in other colours. The sword is Chl\u00e9n-hide: me\nAnother important point is the use of the hide Similar to the General: white kilt and sleeves: tallic blue or silvered. The quiver is light brown\nOF the Chien Beast tor most <amniour anid \u201cweap: blue helmet, breastplate, and shoulder-epau- basketry with darker leather straps. Arrows art\noe as a and pone tom tepe etuie lettes; vambraces and greaves also blue or met- light brown, feathered in blue, with bow being\nis very light in wei : 2\niron, ne softer ea steel. It is very an . ee as rae ae sae ae Cord eae\nleable when soft, but it can be given treatments Ries Sapna eee hienchide ae Hea. Tacs\nwhich make it solid and yet still slightly flexi- quered in metallic colours: metallic blue, sil-\nble. It has a feel something like that of chitin or very, etc. Great standard has ornate plumes of\na hard and slightly flexible plastic. In its natu- bite. white: vations anetals.c with: a blue hate\nral state it is greenish or greyish. Thicker sheets and possible red (etc.) trim. The sphere is\nof it tend to be darker, verging towards black- bright gold. Shoes are leather but have metal\nish green-grey. Chl\u00e9n-hide is usually lacquered, plates on top.\nhowever, and this thus makes it rather uncom- _\nmon in its native undecorated form. Richer The Tsolyani Trumpeter:\npeople do obtain some iron and steel, of Armour as for the above, in shades of blue; kilt\ncourse, as well as gold, brass, copper, silver, and sleeves in white; armlets of gold; vam-\nbronze, etc. braces and greaves of metal or blue lacquered\nBasic national colours are a common feature Chl\u00e9n-hide. Helmet crest can have same colour\non T\u00e9kumel: the Tsolyd4ni use a handsome scheme as above. Trumpet is brass or gilded.\nazure blue; the Mu\u2019 ugalavydni lacquer their Trim can be in other colours. Velvet over-kilt is\ntroops a bright red; the Salarvy\u00e9ni favour a darker blue than armour.\nblack; the Livy\u00e9ni use many bright colours; the T-2 Tsolyani Heavy Infantry:\nYan Koryani use blue-green, turquoise, etc.;\nthe Sada Allaqiyani prefer a flame-orange; the\nlittle nation of Pijj\u00e9na uses a reddish purple;\nthe Ghatdni like yellow; the various clans of\nthe disordered nation of Milumanaya use vari-\nous standards and have no national colour.\nThis troop-type, has a long pike. Blue-lac-\nquered breastplate, but if this is a crack unit it\nmay have metal shoulder-epaulettes. Sleeves\nand kilt are white, unbleached linen colour,\n"
+  },
+  {
+   "path": "extract/dragon/006/p009_full.txt",
+   "content": "April \u201977\nT-4 Two-Handed Swordsman, the Legion of Red\nDevastation:\nThis figure has the flame-red helmet crest of\nthe God Vimthla; his helmet is blue, however,\nexcept for front and side gold or silver trim. He\nhas a mail aventail of small steel links; highly\ndecorated inlaid metal or Chl\u00e9n-hide epaulettes\nwith basic blue colour and other colours or\nmetals as trim; blue Chl\u00e9n-hide muscled cui-\nrass; steel-link chain mail half-sleeves with gold\nor blue Chl\u00e9n-hide or metal banding; metallic\nblue Chl\u00e9n-hide vambraces; belt of inlaid metal\nplaques; over-kilt of soft white or light blue\ncloth; under-kilt of mail sewn on leather; sil-\nvered or blued Chl\u00e9n-hide greaves; soft red\nleather shoes with metallic plates sewn on tops;\ncape is usually white or light blue with red,\nblack, or dark blue striping horizontally or ver-\ntically. Often the cape will have a central em-\nbroidered ornament on back. Great two-\nhanded sword is of steel, gold hilt, leather\nwrapped handle.\noe\nT-5 The Priest of Vimuhla:\nThis figure has the flame-orange crest of the\ndeity Vimuhla, Lord of Fire. The visor-rim of\nhis helmet is of gold, and the face-visor itself is\npainted either black or dark red. The aventail\nof the helmet is dull red cloth, and the two\nscarves which hang from the earpieces are\nagain flame red. His epaulettes are gold and\nred, with designs worked upon them in blue to\nshow that he is a Tsolyani and not a Mu\u2019-\nugalavyani priest. His collar is made of gold\nplaques set with rubies, and his breast pectoral\nis a darker, richer, ruby red with a gold edge.\nHe has a muscled cuirass of metallic red lac-\nquered Chl\u00e9n-hide. His sleeves are steel mail\nbanded with gold. His vambraces are likewise\nof steel but may be lacquered red or gilded. He\nwears the elaborate plaque belt with hanging\nplaques of red and gold Chl\u00e9n-hide armour.\nHis underkilt is a darker red. His cape is flame-\norange, as are the two long scarves which hang\ndown from his shoulder epaulettes. His greaves\nare of polished gold plates sewn on black or\ndark red-brown leather boots. His boots have\nmetal plaques similarly over the insteps and\ntoes. His cape may have the stylised flame sym-\nbol worked in gold and black on the back. He\ncarries a gilded Chl\u00e9n-hide mace with steel or\ncopper spikes, and at his side he may have the\nsacrificial dagger of copper used by this sect.\nT-6 Medium Infantry from Sokatis:\nThis man wears a Chl\u00e9n-hide blue-dyed helmet\nwith a metallic crest. He has shoulder epau-\nlettes of Chl\u00e9n-hide and a leather siege coat to\nprotect him from light missiles, etc. He has a\nkilt of white cloth, greaves of blue-dyed and\ndecorated Chl\u00e9n-hide, with sandals of leather.\nHis halberd is of Chl\u00e9n-hide, with a wooden\nhandle and a light Chl\u00e9n-hide head dyed metal-\nlic blue, silvered, or coloured. On his back he\ncarries a Chl\u00e9n-hide shield with a demon face\non it; this is highly coloured in blue, metals,\nwhite, red, etc. etc. The people of Sokatis often\nuse black as a trim colour, more so than other\nTsolyani.\nY-1 The Yan Korydni General:\nThis man has a turquoise green lacquered hel-\nmet, with gold trim, plumes of various shades\nof green, white, and even yellow or red. Metal\nshoulder epaulettes are silvered, gilded, or\nelaborately lacquered in shades of green. Cen-\ntral breast plaque is gilded and covered with\ngeometric inlay in various colours. Belt of met-\nal plaques has emeralds and blue topazes set in\nit. Kilt and sleeves are usually white, but may\nbe unbleached linen, light grey, or elaborately\nparti-coloured brocade in darker colours.\nChainmail or scale leggings are steel; leg guards\nare Chl\u00e9n-hide with polished metal plates at\nfront. Metal plated boots of black leather.\nVambraces are metal \u2014 the same as his breast\nplaque, usually. Under central breastplate, he\nwears an under-cuirass of metal or of green-\ndyed Chl\u00e9n-hide. Sword is steel or silvered,\n9\nY-2\nThe Dragon\nwith gilt handle, leather-wrapped hilt. Hanging\nfrom ear-pieces of helmet are leather flaps,\nsometimes dyed in a \u201ctrim\u201d colour: red, yel-\nlow, etc.\nYan Koryani Standard-bearer:\nThis man wears the typical \u201cregular\u201d Yan\nKorya\u00e9ni helmet with vertical thin metal plaques\nlacquered alternately turquoise or green and\nwhite, with gold trim. The central crest is gold\nor a brilliant metallic emerald green. Ear-pieces\nare metal, and aventail is made of small metal\nplaques sewn on soft leather. Epaulettes are\ngreen-lacquered metal or Chl\u00e9n-hide, with gilt\nor silver trim, some red tracing also possible.\nScale cuirass of metal sewn on dull fabric tu-\nnic. Belt is elaborately engraved metal on leath-\ner. Over-kilt is made of large horizontal strips\nof soft dun-coloured leather; underkilt is dark\ngreen or other colour cloth. Metal greaves and\nbanded vambraces; leather shoes with metal\nplates on top. Steel or Chl\u00e9n-hide sword in\nmetallic silver, gilt hilt. Standard is a gilded\nshaft, turquoise, gold, and white large feathers\nat base, then highly coloured and gilded \u201cdrag-\non\u201d head above, with \u201ctail\u201d of long green and\nwhite plumes. Other colours are sometimes\nused, depending on the Legion; black and\ngreen, red and green, turquoise and gold, etc.\nHelmet plume matches this.\nem\nfens\nGong Beater:\nThis man has armour similar to the preceding\nexcept that the wears a dark green cloth kilt\nsewn over with vertical strips of Chl\u00e9n-hide\nwith gold or silver inlaid plaques set in the\nstrips. He has a silver-handled mallet with a\nsoft-leather-wrapped ball on the end \u2014 this is\nreally a wooden mallet, but the leather is there\nto protect the gong surface. The gong is\nbronze, hung from a highly decorated wooden\nstand, done in green, gilt, red, blue, etc. The\nplumes on the gong are, of course, the Legion\u2019s\ncolours, in which green or turquoise predomi-\nnates. The gong hangs from a leather sling.\nHeavy Infantry:\nHe is almost identical in armour to the Stand-\nard-bearer above, but he carries a long wood-\nen-handled pike with a steel head. This is\nmarked \u201chalberd head\u201d on the drawing, and\nindeed, this type of trooper can carry a halberd\nor a pike. At his belt of plaques he has a short\ndagger in a sheath, and at his other hip he has a\n"
+  },
+  {
+   "path": "extract/dragon/006/p010_full.txt",
+   "content": "The Dragon\nsword in a dark brown or black leather scab-\nbard, and also a bow in a lighter-coloured\nleather case covered with inlaid green and white\ndesigns. His long oblong shield is of Chl\u00e9n-hide\non wood \u2014 richer units may carry a similar\nshield of light metal \u2014 and this is decorated in\ngeometric designs in white, gold, and red on a\ngreen or turquoise base. This man has theverti-\ncal-striped kilt of fabric, which may have\nChl\u00e9n-hide strips sewn on, as for the Gong-\nbeater.\nHeavy Infantry with Composite Bow or Cross-\nbow:\nThis figure should be painted similarly to Y-2.\nY-4, Yan Koryani Regional Infantry: Medium In-\nY-5 fantry from Dharu:\nThis man has a steel cap helmet with a green\ncentral Chl\u00e9n-hide crest, red-bordered ear-\npieces with green centres, and a mail aventail of\niron links. He has an epaulette-collar of steel-\ncoloured Chl\u00e9n-hide, and he wears a muscled\ncuirass of thin Chl\u00e9n-hide. Under this he has a\ngreen tunic, the sleeves of which show. His\nvambraces are steel-coloured Chl\u00e9n-hide (or\nactually iron for wealthier men) with copper\nspikes. He has a studded belt of small Chl\u00e9n-\nhide plaques set with copper, and below this he\nwears green-dyed mail breeks. To these are fas-\ntened large Chl\u00e9n-hide leg guards. These are\nred or copper coloured, with a central steel-col-\noured or silver circle containing a red protec-\ntive symbol. The borders are also steel-col-\noured. He wears full-length hose of thin green\ncloth, the same shade as his tunic. His shoes are\nof leather (red or brown) with steel instep and\ntoe guard plates. He carries a small dagger or\nsword at his side and wields the great two-\nhanded halberd-axe of his region. This has a\ndark wood handle with a gold knob on the\nbase, and an iron head of some size. Poorer\ntroops carry an axe of similar design but made\nof Chl\u00e9n-hide. His shield is not shown on the\nfigure, but every other man of this group car-\nries a medium shield and uses a short sword,\nprotecting his halberd-wielding comrade. This\nshield is of wood, covered with green-dyed\nChl\u00e9n-hide, and has a central design of copper\nand copper studs at the edges. If he has a scab-\nbard, this will be darker leather colour, with\ncopper and green trim. Note that his Chl\u00e9n-\nhide thigh guards are of stiff but not inflexible\nmaterial; as is shown in the smaller picture,\nthey are worn over his mail breeks and are\nstrapped on from the rear as well as fastened to\nhis breeks in front. They are thus rather like\nheavy cowboy\u2019s chaps.\nf\nMeany\nKA\n\u201du\nThe Priest of Hry'y:\nThis figure wears robes of purple: his over-robe\nis a deep, rich purple, and his velvet head-scarf\nis of a slightly lighter shade of purple. His\nsleeves have red edging and cuff-designs. He\nwears a two-part tabard which hangs just be-\nlow his throat. This is of rather stiffish Chl\u00e9n-\nhide. It is dull red with black inscriptions in\nAncient Tsolyani outlined in gold. At the bot-\ntom it has two white skull pendants. His shoes\nare soft black-leather. Both Priests and Priest-\nesses of this evil deity go masked. The type of\nmask differs from person to person, rank to\nrank, and place to place, with mythological de-\nmon masks predominating. These are always\nof velvety-surfaced cloth over thin Chl\u00e9n-hide.\nThey are painted according to the mythological\nparticulars, and the more horrible the better.\nThere are thus black, deep red, gold, blue, etc.\netc. masks, with varying trim colours. In his\nhand he carries the Staff of Power of the\nTemple Commandant of Jakalla (other cities\nhave slightly different standards). This is a\nblack-hafted circle of gold with a central purple\ncircle and a diagonal red slash. The beast head\nat the top is of gold, and the plumes are reddish\npurple and black. Priests of Hry\u2019y are some-\ntimes fighters, and if so, a special figure with\nthe proper helmet can be adapted from the\nPriest of Vimuhla figure \u2014 but the helmet con-\nversion may require tones head or consider-\ngh\nLE HIN\nable modelling skill, Priestesses of Hry\u2019y rare-\nly fight, but if one is needed, the female war-\nrior figure can be adapted to fit the case.\nNH-1 Sh\u00e9n:\nThe Sh\u00e9n have gleaming black scales, although\ntheir third sex (the egg-layer \u2014 the other two\nbeing the \u201cmale\u201d or egg-creator and the egg-\nfertiliser) tends to be smaller and more of aI\nblue-black-grey. There are other sub-species,\ntoo, who come in other colors, but it is mostly\nthe \u201cmale\u201d and sometimes the \u201cegg-fertiliser\u201d\nwho join in military expeditions. The Sh\u00e9n is\nthus basically a gleaming black, with lighter |\ngrey areas around his reddish eyes, on his un-\nderbelly under his tail, etc. His claws are some-\ntimes silver-covered \u2014 a traditional fighting\nweapon of this martial race.\nThe Sh\u00e9n figure may be given small reddish\neyes with vertical black pupils, a reddish open\nmouth and tongue, and a wash of silver over\nhis black scales to add a slightly metallic touch\nto the unrelieved black of his body.\nNH-2 Sst Warrior:\nThe figure is shown without any of the elabor-\nate armour which characterises the leader. His\ngreyish skin is difficult to show, since it must\nbe tattered and peeling, rather looking like a\nhandful of torn and soggy wet newspaper from\na distance. His eyes are a pupilless, milky\nwhite, the mouth is a black hole. No ears or\n\\ ra\n"
+  },
+  {
+   "path": "extract/dragon/006/p011_full.txt",
+   "content": "April \u00b077\nnostrils show through the peeling, rotting skin.\nHe wears a black leather belt with copper\nstuds, with the dagger and pouches hanging at\nhis \u201cwaist.\u201d His body shades to black under-\nneath, at the backs of his legs, and on the feet.\nThe sword is again steel, with a silver, copper,\netc. hilt.\nHis shield is of a curious shape, black wood\nfronted with raised metal discs, highly emboss-\ned. The shield is black, and the discs are cop-\nper.\nNH-3 The Hlaka:\nThis small flying humanoid ranges from five\nfeet to about six feet in height. The Hlaka is a\nleathery greyish-brown, shading to lighter\ngreys mixed with tan on the wing membranes,\nand with darker brown areas along the spine, at\nthe joints, and on the slender hands and feet.\nAlong the top of the head and down the upper\nback there is a curly greyish ruff of what ap-\npears to be somewhat of a cross between fur\nand feathers; this conceals the Hl\u00e9ka\u2019s hearing\norgans. The muzzle is light brownish grey, with\nblack nostrils, and blackish areas around the\nthree deep-set eyes. These eyes are a curious\ntranslucent blue-green in colour on most\nHlaka, although individuals may have black or\nreddish pupils. The teeth are an ivory white,\nand the lips shade from brown to black. Al-\nthough the Hlaka are an ancient cultured race,\nand their abilities and intellects are as high or\nhigher than their human comrades, they tend\nto disdain armour and rely instead upon their\nspeed and flying skill. At most, therefore, they\nwear a light belt of Chl\u00e9n-hide with a golden\nbuckle and a sheathed short dagger of Chl\u00e9n-\nhide in a brown leather sheath. The Hla4ka may\ncarry a light javelin of wood with a Chl\u00e9n-hide\npoint, or a sheaf of smaller throwing darts (us-\nually three to a bundle). Occasionally a slender\nstabbing sword (almost like a rapier) is used.\nThe Hlaka\u2019s tail is a long greyish-white stab-\nbing rapier as well, being composed of a bony,\nflexible cartilage. Some Hlaka decorate this tail\nwith rings or ornaments of gold and may put a\ndelicate needle point of steel on it as well.\nHlaka weapons are usually poisoned with a\ndull blue-green substance brewed by them from\ncertain local plants. The Hlaka usually wears\nno other clothing, nor does he carry a shield.\nOccasionally a strip of coloured cloth may be\nworn.\nNH-4 Ahoggya:\nThese are several sexes (as much as one can\nmake out). The \u201cmales\u201d are brownish, ranging\nfrom a light yellowish brown or tan on upper\nsurfaces to a dark brown on the body and un-\nder the limbs. There are also slate-grey Ahog-\ngya and a bluish-grey one, but the \u201csex\u201d of\nthese is not clear. There are even occasional\nrare greenish grey ones, but these do not\nemerge to fight in human wars. The Ahoggya\nhas a knobbly, rough light brown carapace on\ntop, arms of a darker colour shading into the\ndarker browns of the body. They are bristly\nand rough, with smaller bristles on their bony\narms and elgs, longer hair on their bodies.\nThey wear little clothing: usually just armlets\nof steel or copper, an elaborate belt hung with\nweapons and pouches, and occasionally inlaid\ndecorations on their thick upper carapaces.\nThe purpose of these is not known. The Ahog-\ngya has yellowish eyes, set in brownish or\ngreenish-brown skin just under his carapace.\nHis mouth has reddish-brown \u201clips\u201d around it\nand yellowish teeth. On all four sides of his\nbody he has eyes, but there is only one mouth;\nthe other three sides have sexual, auditory, and\nolfactory organs under the eyes. These are best\npictured as small amorphous lumps, painted a\nslightly lighter tone of brown or yellow-tan.\nThe claws and nails of the Ahoggya are black.\nHe carries simple, crude weapons of several\nvarieties. He prefers steel but also uses Chl\u00e9n-\nhide. His swords are thus . . . steel-coloured,\nwith leather-wrapped handles, a bit of gold on\nthe hilts, etc. His maces are Chl\u00e9n-hide or\nwood with metal spikes. He may also carry a\nround dish-shaped shield, always lacquered\nblack and deep red, dark purple and dark\ngreen, etc. While the Sh\u00e9n may wear a helmet\ncrest of the colour of the human country for\nwhich they are fighting, the Ahoggya never do,\nand thus sometimes only they can tell which\nT-2 Y-2\nThe Dragon\nside they are serving in a battle \u2014 they never\nbecome confused, although their human em-\nployers do! The Ahoggy\u00e9 may also wear tubu-\nlar body armour, which fits rather like a stove-\npipe just under their eyes, leaving their mouth\nfree. An armoured covering for their upper\ncarapace is also seen, although the thickness of\nthe latter really renders this strictly unneces-\nsary.\nNH-5 The Sro:\nThese great beasts have two basic colours, de-\npending upon the sex: males have a dark green\nbody and black wings, with lighter green\naround the mouth. Their three horns tend to be\ngreenish white. Their eyes are red spheres with\nnictitating black membranes and a central\nround pupil. Their teeth are whitish, their\nforked tongue bright red, shading to brown\nand black in the corners of the mouth. Their\nhuge wings are black, with dull green ribbing\nand claws. The male Sr6 is lighter underneath,\nranging to a dull medium green. His claws are\ngleaming black. The female Sr\u00e9d, on the other\nhand, is more bluish-green, speckled with sil-\nver, and shading to lighter, brighter blues in the\nareas mentioned above. Very old Sr6 tend to\nbecome darker and more blackish, though re-\ntaining their sex-differentiated colours. A faint\nwash of silver can be used to highlight the\nscales of the Sr\u00e9 and give the slight sheen and\niridescence to the scales which are required.\nThe huge sword is always bright silver with a\nbronze or gold hilt.\nFor figures T-2 and Y-2 the spears should be glued to the figure in an\nupright fashion so the figures can be ranked in a unit.\nI]\n"
+  },
+  {
+   "path": "extract/dragon/006/p012_full.txt",
+   "content": "The Dragon\nVol. 1. No. 6\nThe day began as any other in the woods of Pharnioth; but as\nthe sun lifted its haze-dimmed face to awaken the birds of song, and\nnight\u2019s hunters sought the cool places of their shadowed lairs, they\nbeheld the seeming second sunrise of a fire in the forest which cast a\nglow over the far-flung trees. Though the double dawn had no\nmeaning for the wild creatures, Visaque of Northumber knew too\nwell the probable doom it portended. For him it was a morning of\nnightmare.\nThrough the last traces of dawn-fog he wearily stumbled. His\nyoung face, mustached and fair, twisted itself fear and anger as he\nrealized his race was hopeless: he had run two nights and days with\nHorror on his heels, was nearly spent and had far yet to go. Hand\npoised on a tree, he panted and eyed the distant peaks below the ris-\ning sun. There \u2014 if it be true \u2014 awaited salvation. But robbed of\nhope and short of breath, the stripling wysard nourished little surety\nof ever reaching them. Round and about him, as they smelled the\noncoming blaze, the beasts of Pharnioth fled to the East, as flames\nmounted behind. The cloak-wrapped youth followed them with what\nspeed still remained to him.\nA bestial howl echoed from trunk to trunk. Knowing the throat\nthat voiced it, Visaque whirled with staff held at quarter. Uncon-\nciously he bared his teeth in an atavistic snarl.\nCrimson: the daemon exuded it, a constant figure molded of all-\nconsuming flame. Each spot where it set down a crackling foot ig-\nnited, each branch and leaf it touched exploded into fire. Behind, the\nflames roared and trees toppled as insignificant torches while the\ndaemon laughed.\nDesperately and in fury Visaque cast out one outstretched hand\nand cried out a wordless Call. Golden light limned the hand; a golden\naura grew around the wysardling. He hurled his spell at the upstart\nelemental while voice and visage trembled: \u201cBeing of fire, be stayed\nby Earth and Air!\u201d\nAs the creature crashed between two trees, the ground at its un-\nholy feet reared up and clasped stony manacles about its ankles.\nTendrils of silvery smoke gave birth to an airy web across the path,\nbeyond which web the elemental could not pass. As it shrieked and\nthrashed in its confines, the net wrapped tighter and anchored itself\non the trunks of the two tress.\nVisaque revelled not upon his handiwork, nor pasued in his\nflight. The spell would be short-lived. The young wysard had long\nyet to go before he reached, among the eastern peaks, the Keep of\nArestel.\nAnd time, he knew, was all too quickly waning.\nTime sped as Visaque ran wildly. To his left he saw several deer\npause in consternation as they perceived their peril; they took to\nflight and soon vanished far ahead. Hearing the elemental\u2019s distant\nhowl as it sundered its magical bonds, the youth stumbled and _ land-\ned face-down in a patch of hemp. He collected his wits and belong-\nings and ran on while chewing one of the long leaves for calm.\nHe saw with the eye of memory: before him, the bearded face\nof the merchant from Alfanar, bearing the iron-bound volume that\neven now swung bulkily at Visaque\u2019s side; heard again with the inner\near the praises that trader had spoken of that ancient book; felt\nagain the weight of long-saved silver released from his hand when he\n12\npaid out the price. (So low, at that! Small wonder, the youth almost\nsmiled. Would that the daemon\u2019s price be so low!)\nSome obsure glory, had thought Visaque, must belong to one\nwho unlocked the musty secrets of the tome; the dream was even\nnow fresh on him. Weeks, then months of spare hours were spent in\nthe attempt of understanding the mysterious text. By the time its\ncrabbed script was half-deciphered the task became somewhat simp-\nler, and often he read in the small hours its forgotten tales by can-\ndlelight. He read of the Elder Days and the Days To Come: of he-\nroes, mages, and of strange devices . . . of Crowyn the Worme\u2019s\nBane and of his star-crossed blade; Of the strange curse of Vyckar\nthe Grim; Akor the Valkrian, Nokra Negreth, the Red Branch he-\nroes ... all the warriors and their impeccable deeds. And then, the\nmages: Bran-Herla whose soul was lost by the wide waters; Vergil\nMagus; Garanyr the Heart-Misled; of Myrddin, of Verbius, Therion,\nand the loremaster Isaac Decapole D\u2019alsace . . . and in an indefinite\nreference on a faded page, was inscribed the name of Vishre Vish-\nran. When Visaque first read that name it struck an eerie chord\nwithin him, as if of a misplaced memory. Even now the name was\nuncomfortably close to an identity. Yet for contemplation there was,\ntoday, no time. That the mage was called an Ipsissimus, he knew,\nbut knew not the rank so named. For all his study (so unclear in the\n"
+  },
+  {
+   "path": "extract/dragon/006/p013_full.txt",
+   "content": "April \u201977\nremembering . . .) all Visaque had learned was that Vishran dwelt in\nthe Castle Arestel, atop the mountains eastward. (Arestel . . .)\nVisaque was jolted from his revery by an animal\u2019s unbelieving\ncry from the fiery west of the wood. By the sounds, the elemental\nhad again begun to close the distance between them. The youth\npushed himself to utmost exertion, nearly flying in his desperation,\nas the peaks ahead seemed but to recede. He lost sight of them as he\ncrashed through a wiry thicket.\nWhy did the name of the Ipsissimus bode well? Vague at best,\nthe Book\u2019s cryptic reference awoke feelings of a certain peace in Vis-\naque for no conscious reason. It seemed, he recalled as thorns tore\nhis tattered cloak, a promise of peace to come: that which he desired\nnow above all else.\nNow the bushes parted and the youth again beheld the peaks.\nWere they closer? Behind him vibrated the sounds of toppling trees\nbecrowned with flame; the very earth shook beneath his booted feet.\nThe bellows of the elemental he had summoned sounded much too\nnear.\nVisaque, in his wysardly training, had tired of endless repeti-\ntions, of learning yellowed tables of correspondences and _ intentions;\nof obstacles to what he deemed his Will. He craved knowledge, aye,\nbut stripped of drudgery \u2014 magick, but magick without tears. His\nmaster-mage, Ioseph, (Why did that face not haunt him?) met such\nthoughts most sternly. He forbade the youth to dream on easier\npathways: thus the wysardling, more steadfast than his teacher knew,\nsought one such path.\nHe launched into the iron-bound volume\u2019s translation with vi-\ngour renewed, and each dim-write passage was less difficult than the\nlast. Finally the mageling determined his course. He would perform\nthe Invocation of Parabolas, that cosmic begetter of magery. Not\nrealizing the extent of his folly \u2014 for instant magick is less than a\nmyth \u2014 Visaque attempted to master the Rite of an Adept, and\nfailed. Most disastrously, failed.\nSince Visaque had not the keys to the ritual\u2019s understanding not\none word of the invocation reached the ears of many-armed Parabolos.\nThe fully initiated mage, however, is aware of the many forces in atten-\nThe Dragon\ndance at such a ritual, where the aethyrs are eddied and form flows be-\ntween the planes; forces benign or hostile, ineffectual or baneful. But\nthe mageling knew none of this. Seeing no response to his Call, hearing\nnot the silver lurs of Parabolos\u2019 heralds, he was depressed and gave up\nwithout completing the rite of banishment. He closed the book, blew\nout the taper, and sheathed his athame.\nBeyond the Circle, an elemental, created by the force of Visaque\u2019s\nabortive conjuration, observed as its potential master prepared to leave\nthe Circle. Would the man-god be so foolish? Could he see nothing?\nThis being, newborn but ageless, was a salamander, a Fire spirit of\ngreat, if soulless, might. It watched and waited, intangible; Visaque\npouched his grimoire .. .\nNow this Being hounded its maker, bestial and freed.\nTime had left Visaque no change at sorrow when Ioseph was rent\nby those demonic fangs; caught unawares, the old magus screamed\nwhen he saw what followed his apprentice. Screamed once and was\nconsumed. Visaque, however, fled in too personal a terror to yet feel\nremorse, or guilt at not feeling it.\nHalf-delirious the lad ran on in earch of Arestel, the Ancient One\nof Lore, and spells to destroy this beast of his own making.\nHe heard another flaming tree fall, and the inanimate scream of\none in its path. The creatures of Pharnioth were all in flight.\n\u2019Twas yet hours short of noon when Visaque failed at runecasting,\nfailed a spell which had no excuse for failure.\nHe knelt in a small clearing as smoke obscured the skies, and drew\nout his mottled athame.\n\u201cBlade of steel, I conjure thee\nattract all things as named by me.\nAs my will, so mote it be!\u201d\nHe incised a wide circle in the earth and consecrated it. Such Shel-\nter would guard him forever from the pursuing creature . . . if he chose\nto starve within it. That would be better, he decided, than the death\nIoseph had faced . . . Visaque filed the thought away as he continued.\nThe wysardling invoked the Keepers of the Four Watchtowers, and\n13\n"
+  },
+  {
+   "path": "extract/dragon/006/p014_full.txt",
+   "content": "The Dragon\nZeudes, then Redbeard Thor: summoning to his aid all the ancient\nspirits of thunder, torrent, and storm. His wysard blade began to hum\nand slow sparks flitted along its well-honed edge; legend had it that it\nwas a shard of the star-stone hurled at the Earth by the bored godling\nTuball Cain, ere the rise of Alfanar. Finally he closed the rite and set-\ntled down to wait. He waited...\nIn a half hour the murky but still-blue sky looked down at what\nseemed a single devouring flame gorging itself upon Pharnioth. Run-\nning again before that flame was a youth upon whom the rain had fal-\nlen only in spirit, not in body. No storm was summoned by his Call.\nVisaque wept as he again fled.\nThe elemental had gained perceptibly. Behind him Visaque could\nfeel the heat of the forest\u2019s consummation - another, subtler murder on\nhis already bloody hands. The daemon was nearly in sight.\nAt last he could stand it no more. Composing himself for the death\nhe was sure was on him, he cried out \u201cNo! Let not my folly be the cause\nof this destruction!\u201d\nHe raised his arms to the filthied sky, clean yet in the East but lep-\nrous and fouled where Visaque now faced.\n\u201cT will not have it so. Daemon, I summon Thee! Cease your tor-\nments, come! For here I am, and I\u2019m done with fleeing. Come! I com-\nmand you!\u201d The smoky clouds wavered, then sped with the swiftness\nof a hurricane towards the young mage.\n\u201cCome! I am not affrighted, creature, for I am Visaque, the |\nNorthumbrian. And I created thee, fiend!\u201d\nAgain, as if startled, the clouds seemed to falter. But as before that\nseeming confusion lasted only a moment. And now the mageling wav-\nered as well, uncertain. He crooked his neck and beheld \u2014 not so dis-\ntant now \u2014 the hills of his seeking. Close enough?\nThe smoke, and so the daemon, neared. How long . . .?\nNearer still.\n\u201cNay! Never shall I flee your ilk again\nNever again shall you have the chance, worldling.\n\u201cT will not . . . I defy thee!\u201d\nSo? Turn and meet Death the hunter.\nAnd the spirit was upon him.\n\u201cHalt, brazen one: cringe before me; I am your maker.\u201d\nThe thing laughed out a puff of sulphrous steam. In a resounding\ntone it thundered, \u201cThen die, that I may be wholly free!\u201d\nSmoke arose behind it, eerie tentacles enfolding the burning mad-\nness of its flesh. Utter desolation it had left behind it, and destruction\nbefore. Why, Visaque almost asked, must this forest die to satisfy your\nhate? The answer, he knew, would be another maniacal laugh. He said\nnothing. Smiling, the daemon approached.\nJust as Visaque would have dodged, a quiet coolness of peace\ncame upon his mind. Fear not, advised an alien voice within that mind,\nlam with you.\nThe elemental looked confused as Visaque smiled, beholding \u2014\nseeing \u2014 it. The thing roared, then virtually bellowed.\n\u201cWhy do you not flee?\u201d Its voice was thick with a strange accent.\n\u201cT have told you: I am done with fleeing.\u201d\n\u201cBut cower! Fear! Am I not terrible?\u2019\n\u201cNot so to me: I know whence you came, and see myself reflected\nin that place. I pity you.\u201d\nGood, good, the Voice crooned in Visaque\u2019s skull. You are Master\nhere. Subdue it, then exile it. But be wary, for it has power.\nThe daemon faltered, wondering. It vacillated, and it seemed that\nthe wasteland behind it vacillated also. The starving flames flickered,\nand the smoke thinned. Visaque, arms folded across his breast, locked\nhis gaze with that of the once-fearful daemon.\n\u201cUpstart creature, do me homage or be destroyed, for I am the\ntotality of you. I am all your fury and more than you are able to com-\nprehend. Down! Down before me, Visaque\u2019s shadow!\u201d\nSlowly, resisting with a rocking shudder, the daemon knelt at its\nmaster\u2019s feet. Somehow the wysard began to see tall, majestic, foetal\ntrees rising above the waste of fire.\n\u201cNow begone.\u201d\nIt wailed, it grasped his ankles; it screamed curses and hymns to\nhim; it clawed the very earth it had scarred. Then it was, quite suddenly\ngone.\nExcellent. Now is the time for your return. On ward to Arestel!\n\u201cNo, Master. First . . .\u201d\n7\n14\nVol. 1, No. 6\nVisaque made a Sign and spoke a Word. With the woods now\nblooming again, the spectral trees restored, he began to walk. His pace\nwas slow, his eyes content. \u201cI come, Master. I am coming.\u201d\nGood. It has been... long...\nDusk.\nVisaque came up to the worn stone steps as the sun sank, mounted\nthem, and climbed to the Citadel\u2019s gate. The vast structure was in\nplaces crumbled, but still \u2014 here the wysard smiled \u2014 still grandly\nbeautiful. He approached Arestel\u2019s doorstep and reached for the\nbronze knocker. The huge old portal swung open, and Visaque stared\ninto the face of Visaque.\nSomething shook Visaque\u2019s shoulder. He raised his numbed eye-\nlids, gazing into the face of Master Ioseph. Sudden shock racked him as\nhe beheld the face of the perished mage; then he re-oriented himself and\nsaw around him the cluttered paraphernalia of his teacher\u2019s workroom.\n\u201cYou have returned transformed,\u201d quoth Ioseph as he swept sev-\neral shrunken brown objects (each with its crown of fine white hairs) in-\nto a leathern pouch. \u201cNo longer my apprentice, Visaque: now my\nbrother in knowledge.\u201d\nThe new wysard, still somewhat bemused, reflected on his initia-\ntion. He no longer needed to ask, was it real?\nFor now, he knew.\n| _ Lyle\u2019s Hobby & Craft Center\nLarge Selection of Wargames\n38 North Cass Ave.\nWestmont, Ill. 60559\n852-8085\n"
+  },
+  {
+   "path": "extract/dragon/006/p015_full.txt",
+   "content": "April \u00b077 The Dragon\nARCHIVE | Designer\u2019s Forum\nMINIATURES FURTHER RULES,\nMODIFICATIONS AND\nQuality that speaks for itself. \u2014 CLARIFICATIONS FOR\nMETAMORPHOSIS ALPHA\nby James M. Ward\nThere are several mutations and concepts that need more detailing,\nincluding things like physical and mental mutations, the poison factor,\nthe use of the alternate missile chart, and the need for a new weapon\nclass concerning the vibro devices.\nDealing with the physical chart the following additions should\nclear up some of the less logical parts of the rules:\nTALLER: In deciding how tall to make any given mutation simply roll\na die for a 1-20 score and translate the number in terms of feet, adding\nfive feet to the total. For every four feet or over its normal height, a\nmutant adds one die of striking damage, and for every eight feet sub-\ntract one point of striking potential.\nSHORTER: In deciding how short to make any given mutation simply\n803 Wind Child roll a die for a 1-20 score and translate the number in terms of inches\nand subtract from the normal height of the player or animal.\nNEW BODY PARTS: These parts might also include a human head\nfor a plant, a poison resistance gland (giving the mutation a resistance\nof 18), or suction pads on the arms of any given creature.\nWINGS: This mutation will not work for any being weighing over 125\nIbs. Concerning the mental chart the following should help those long\nsuffering judges.\nMENTAL PARALYSIS: This mutation has a range of 100 feet and the\nbeing affected gets a saving throw every melee turn until death.\nPRECOGNITION: When mutants foresee their death, the shock to\n720 Dracula & Vampire Woman\nSend us a legal-sized their nervous system is so great that the mutant instantly takes six hit\nself-addressed stamped envelope points of damage. If only injury is seen, the mutant takes | hit point of\nd .\nfor our free catalog. ae | eee ,\nWholesale inquiries invited TELEKINESIS: There is a range limitation of 50 feet for this power.\nPost Office Box 93 REPULSION FIELD GENERATION: When creating the sphere, mu-\n: tants can mentally lift objects within; up to and including any weight\nBurlingame, CA. 94010 they could normally lift by hand. These spheres of force can also be\nplaced around the creator or be used to block openings.\nContinued on Page 30\n15\n"
+  },
+  {
+   "path": "extract/dragon/006/p016_full.txt",
+   "content": "\u201cChe Dragon\nVol. 1, No. 6\nHERE COME THE MONSTERS, ME\nDUNGEOI\n& DRAGON\n\u00ae Registered trademipr\nMINIFIGS is proud to announce the release-of its brand new DUNGEONS & DRAGONS \u2018\nand the creators of D&D. All finished figures Were approved and authorized by TSR. So Ye\nRange with all figures just the way the creators of D&D say they ought to be. There are nc\nmonths many new D&D figures and sets will be designed. We hope you enjoy them.\nSet #1 DWARVES $2.09\nDwarf charging with ox-tongued partizan\nDwarf swinging one-handed pick\nDwarf firing light crossbow\nDwarf parrying with hand-axe\nDwarf swinging two-handed single-bladed\naxe\nSet #2 DWARVES $2.09\nDwarf advancing with spear\nDwarf attacking with flanged mace\nDwarf swinging military (two-handed) pick\nDwarf firing heavy stirruped crossbow\nDwarf attacking with two-handed double-\nbladed axe\nSet #3 DWARF COMMAND $2.09\nDwarf King with Staff\nDwarf blowing war horn\nDwarf Noble with war hammer\nDwarf Guardsman with bec-de-corbin\nSet #4 HIGH ELVES $2.09\nHigh Elf advancing with long spear\nHigh Elf thrusting with long spear\nHigh Elf firing bow\nHigh Elf attacking with sword\nHigh Eff attacking with two-handed sword\nSet #5 WOOD ELVES $2.09\nWood Elf advancing with bow\nWood Elf firing bow\nWood Elf attacking with sword and dagger\nWood Elf attacking with sword. and buckler\nWoad Elf jabbing with short spear\nSATISFACTION\nGUARANTEED!\nSet #6 ELF COMMAND $2.09\nHigh Elf King LOOK F O R\nWood Elf King\nHigh Elf Noble\nHigh Elf Guardsman\nSet #7 GOBLINS $2.09\nGoblin whirling sling\nGoblin thrusting with pointed voulge-type\nspear\nGoblin stabbing with short spear\nGoblin swinging morning star\nsoouln attacking with one-handed military\npic\nSet #8 HOBGOBLINS with POLEARMS j\nmcs Bi Wore ees ALL-METAL CAS\nHobgoblin Sergeant-charging with military\nfork\nHobgoblin attacking with partizan\nHobgoblin thrusting with spetum\nHobgoblin advancing with glaive-guisarme\nHobgoblin receiving with spiked-tipped\nguisarme\nPRODUCES\nDIFFERENT\nMILITARY\nAND SCIEN\nFIGL\nSet #9 HOBGOBLINS $2.29 SEND FOR Y(\nHobgoblin hurling spear\nHobgoblin firfng horn bow\nHobgoblin sergeant slashing with barbed\nwhip\nHobgoblin attacking with scimitar\nHobgoblin advancing with spiked mace\n\u201d\nx\nll\n=\n<\nie)\n3\n<q\n=\nAND WATCH FOR THE MA\nDUNGEONS & DRAGONS\nAvailable at better hobby shops and b\nminiature\nfigarires Ita\nBOx P, PINE PLAINS, N.Y. 12567\nPLANT & OFFICES \u2014E. CHURCH ST.\n"
+  },
+  {
+   "path": "extract/dragon/006/p017_full.txt",
+   "content": "April \u00b077\n1, AND ARMIES! ANNOUNCING\n2D mm Fautarsy Figures\n, TSR Hobbies,\u2018 Inc.\nThe Dragon\nmm Fantasy Range. All figures were designed with artwork supplied by TSR Hobbies, Inc.\n2itis..\nduplicates in any set. All figures are different.\nTHIS PACK\nSCALE: 25mm (1:72)\nTM Reg. Apol. for\nGEONS\nRAGONS\nASY FIGURES\nINIFIGS\nC COMMAND $2.29\nSUPER DETAIL\nVER 3000\nSTORICAL,\n\u2018ANTASY\nE FICTION\niES\nIR CATALOG\ne SYHOLIDATION\n) FIGURES\nSet #10 HOBGOBLIN COMMAND $2.29\nHobgoblin Standard Bearer\nHobgoblin Chieftain with mace\nHobgoblin Sub-chief with kris-bladed\nsword\nHobgoblin Guardsman with bardische\nSet #11 ORCS with POLEARMS\nOrc charging with guisarme\nOrc attacking with fauchard\n$2.29\nOrc thrusting with kris-headed spear \u2018\nOre attacking with halberd\nOrc receiving with serrated crescent\nSet #12 ORCS $2.29\nOrc hurling spear\nOre firing bow\nOrc advancing with crossbow\nOrc attacking with tulwar\nOrc advancing with piercing axe\nSet #13 ORC COMMAND\nOrc Chieftain with spiked flail\nOrc Sub-chief with piercing axe\nOrc Sub-chief with broad-bladed spear\nOrc with severed-head standard\n$2.29\nNY NEW SETS TO COME!\n25mm Fantasy Figures\nyok stores everywhere or direct from:\nTSR HOBBIES, INC.\nP.O.BOX 756\n| LAKE GENEVA. WI 53147\n. the first installment of the official DUNGEONS & DRAGONS 25 mm Fantasy\nAnd this is just the beginning. In coming\n/ Set #14 GNOLLS $2.29 |\nGnoll Chieftain with great broad-axe\nGnoll Guard with two-handed sword\nGnoll receiving with BleWVe nena?)\nGnoll firing great bow\nSet #15 GNOLLS\nGnoll charging with bill-guisarme\nGnoll advancing with barrel-headed mor-\nning star\nGnoll attacking with guisarme-voulge\nGnoll lunging with sword and broadaxe\n. $2:29\nSet #16 KOBOLDS\nTwo Kobolds with short javelins\nTwo Kobolds with spiked wooden maces\n* Two Kobolds with axes\n~ Two Kobolds with chopping swords |\nTwo Kobolds with glaive-headed spears\n$2,49\nSet #17 GNOMES\nTwo Gnomes with swords\nTwo Gnomes firing bows\nTwo Gnomes with slings and targets\nTwo Gnomes-with broad-biaded spears\nTwo Gnomes with clubs \u00e9\n$2.49\nSet #18 HOBBITS\nTwo Hobbits with slings \u00a9\nTwo Hobbits with bows\nTwo Hobbits with swords\nTwo Hobbits with spears ~\u201c\nTwo Hobbits with hand axes\n$2.49\nDEALER INQUIRIES INVITED !\nPlease use your business letter -\nhead when contacting us.\n17\n"
+  },
+  {
+   "path": "extract/dragon/006/p018_full.txt",
+   "content": "The Dragon\nGY\nSudges Guild\nOur Famed Guildmember Subscription is stil! available.\nYou get our initial package which includes: 34x44\u201d\nCity Map, 135 Dungeon Tac Cards, Ready Ref Sheets\n(with matrixes like to-hit scores & saving throws), Book-\nlet of NPCs, shops, Social Level, Ads etc. and five Dun-\ngeon Levels. Then, for five bimonthly installments,\neach installment with two 11x17\u201d castles/villages and\n20 pages of new material- NPCs, rules, legends and news-\nletter. A one year Guildmember Subscription is $12.\nThe City State of the Invincible Overlord Playing Aid,\na complete package, is now available. You get our\nfamed City Map 34x44\", 17x22\u201d Players\u2019 Map, 11x17\u201d\nThunderhold & Sunstone Caverns, Guide to the City\nState (40 pages of NPCs, shops, background etc.), two\nBooklets of rules, rumors & renegades (28 pages), and\nnine Dungeon Levels. !f your local hobby store is out\nsend $9.00 today. Dealer inquiries welcome.\nuge\nReferee's Aid for\n\u2018antasy Games\n\\ fi\nA= \u00a7\n$f MX a M Thunderbold, 1 ae Kise ls\nne cy ie og eS _\u2014\n:\nOur Deluxe Fantasy Package will give any starting ref\u2019\na big boost. You get the above City State Playing Aid,\nDungeons & Dragons and a Polyhedra Dice Set! Many,\nmany games of fantasy filled fun for $19.95.\nReady Ref Sheet Package is now available. Twenty\ncopies of seven different charts (originally published\nvia the Guildmember Subscription)- enuff for the\nplayers and judges. Charts on Men Attacking, Saving\nThrows, Chainmail, Monsters Attacking, Encounters,\nPhantasmal Forces, Building Costs, \u2018Wizard\u2019s Guide\u2019\nto Enchanting & Potions, and Alignment Scale. All\nfor $2.99,\nDungeon Tac Cards are a handy reference for Grey-\nhawk, Chainmail, ACS. Pertinent data like- \u2018to hit\u2019\nscores, damages, lengths etc. Action cards have\nmove rate, parrying, grappling, climbing etc. You\nget 135 cards for $3.95.\nWe also sell Polyhedra dice- $2.50, Percentile Dice-\n$1.50, all D&D Supplements and Metamophosis Alpha\neach $5.00. Sent First Class postage free! \u2018Foreign\norders- add $3.00 for air mail orders; foreign sub-\nscriptions- $23.00 (Canada- $14.00).\nJudges Guild\nP.O. Box 773\nDecatur, II. 62525\nJudges Guild material is designed as players\u2019\naids for Dungeons & Dragons@)TSR, charts\netc. used with permission.\nServing Fantasy Game Judges |\n18\nVol. 1, No. 6\nFrom the Fantasy Forge\n>\nThe large group shot is the majority of the MiniFig D&D Elf se-\nries, lacking only 3 or 4 figures. The line includes Woods/Silvan Elves,\nas well as High Elves (whichever branch designation you prefer) and an\nElven Noble. The High Elves all have separate shields, when they have\nany at all, and the whole series is uniformly well sculpted and ani-\nmated. from / to r; EF 14, EF 5, EF 3, EF 1, EF 7, EF 11, EF 10, EF 6,\nEF 13, EF 2 and EF 4. They range from 25mm to 28 mm tall \u2014 soles to\nscalp.\nTwo of the more unusual creatures from the 25mm LEGIONS OF\nTHE PETAL THRONE line by The Old Guard. The figure on the left\nis the dreaded S\u2019su, standing 27mm tall, from soles to the top of the\nhead. The figure on the right is the awesome Ahoggya, standing 31mm\ntall, from carapace to feet. Available from Old Guard. Both figures are\nwell detailed and well cast, assembling easily.\nThese little critters are the kobolds of the D&D line. They are\ncast two to a strip, and offer a surprising amount of detail, being an\naverage of only 18mm tall. From | to r they are: KL 5, KL 4, KL 2 and\nKL 3.\nThese are four of the D&D goblins. Averaging only about 21 or\n22mm in height, these are some of the most animated figures to be\nfound in any line. The two figures on the right seem to be frozen in time\nby a very fast shutter. from I. to r. GOB 5, GOB 4, GOB 3 and GOB 2.\nAll shields are cast separately.\nThese three nasties are part of Archive Miniatures \u201cDungeon Nas-\nties\u201d series. Pictured, from left to right, are two Winkdogs, a Rust\nMaker and an Owlbear. All three castings are well done and detailed,\nand would make good additions to anyone\u2019s monster stable. Dimen-\nsions are: Owlbear, 24mm tall and 47mm long; Rust Maker, 18mm tall\nand 22mm from nose to tail; Winkdog, 13 mm tall and 37mm from tail\nto nose. Archive Miniatures.\nThree Gnolls from MiniFig\u2019s new DUNGEONS & DRAGONS\n25mm fantasy line, to be released sometime in late March, as this goes\nto print. They are, from /. to r., GNL 3, | and 2. The gnolls average 31-\n32 mm in height, and feature especially fine detailing, and separate\nshields.\nFour rather warlike hobbits, all in a row. Running about 17mm in\nheight, they capture the hobbits of late J.R.R.T., though these would\nhave to qualify as Tooks or Brandybucks, judging from their warlike\nposes. from /. to r. HOB 1, HOB 4, HOB 5, and HOB 3. Part of the\nMiniFigs D&D line.\nFour more MiniFig dwarves, beyond those shown in TD 4. The\nwide range of figures in the dwarven portion of the D&D line makes\nthe heart of any true dwarfophile beat harder. By far the nicest collec-\ntion of one type of figure in ANY figure line available. from / to r;\nDWE 13, DWF 1, DWF 3 and DWF 7.\nThe little fellows with the W.C. Fields-type noses are the MiniFigs\nD&D Gnomes. Without a doubt the most amusing series in the line,\nthey are nonetheless doughty-looking figures that will go well in any-\none\u2019s army. from /. to r.; GNM 2, GNM 3, GNM 4, GNM | and GNM\n5. They run from 17mm to 19mm tall.\nThis unique creature is a product of Grehadier Miniatures. It is\nknown as Small Dragon in their listings, and stretches the tape at 36mm\ntall and over 85mm long from tip to tip. Available from Grenadier\nMiniatures. Assembly is easy as all the parts are well detailed and cast.\nTwo more of MiniFigs\u2019Gnolls, and a Hobgoblin. They are, from /.\nto r, GNL 4, HBG 2 and GNL 8. All three feature the shields cast\nseparately, which lends itself well to extra-detailed painting, as well as a\nhigh degree of animation. The hobgoblin is 25mm tall, soles to crown\n(of head).\nFrom top, counterclockwise:\nArchive Miniatures\nPOB 93\nBurlingame, CA 94010\nThe Old Guard\n33 N. Main\nNew Hope, PA 18938\nMini Figs Ltd.\nBox P\nPine Plains, NY 12567\n"
+  },
+  {
+   "path": "extract/dragon/006/p019_full.txt",
+   "content": "April \u00b077 The Dragon\nFROM ThE FANTASY YORRGE:\n19\n"
+  },
+  {
+   "path": "extract/dragon/006/p020_full.txt",
+   "content": "Vol. 1, No. 6\n\u201800'6$ \u2018(sansst\n\u201csydaouoD BulureseyeW \u20189167 \u00a9 w8Adoo SA[DMI} SIBIA OM) {O0'S$ SI\n(SaNsst xIs) Tedd WW \u2018ATY WOU\n\u201cIq sivadde sawn aaeds\nar 'OS'S$ \u2014 2511d JUNOSSIP\nT9L8z SBxaT \u2018uNsnYy\nOS- speci xog \u201caMoY YOO) $1289} 4e)d aq} sauIEs ayy, e 198 sawn asnds ayy aulz\nFe -B8RUI INO 07 SIaqiosqns\nSIWIBHOIINJA, \u00a7, SUIMICSBIIIA oa : PT itt\n$1d39U0) SUNWBSULIU 9 - Re Oa od ae oe pa\nWoyMery pup emdses, \u201cuty :dn Surtu0z i AN a 3 4 ' . : _~ * s1axonoee, eae tae\n\u201csauiny) azndy ays 01 s1aquIdsqns 10} OS'7$\n\"LOLelossy\nSSIZBID) PUR SzsIF0OyoAsg\nuBdaUy 31 Aq salauap\n-Ud)} JeRostue 3203 1a7)No\n1219009 sainy \u00ae ay = * FM, : _ - : ue se poaoliddy jsvatsuop\nS4I{UNOD [UN 16 @ OO, sa : . ow a issaisuoW kn) \u2014 Butured\nb ww y _\u2014. = fy Imo UT ISIM\ndou awv3 ,.91 X,.6@ , . d ; rm ' a f 4 } SIM] MOU B YNd OS\nlapnyjouy stuauodutoD ae ye Mrs rong\n. 7 7 oo, oe d Fy uaa) fsuodpay pur 'yogwol\nfp ta Pauuouy \u201cigwoy jonsnuy \u2018sHoy\nSwag 'aqgol wourDay \u2018tInuaUZ\n: Fo 'pawanda:\n\u2018yONJisap-j[as.puy \u2018saurur \u2018afuwz 1osuss papal \u2018sztun pspeasuos ; print pcb, Baca beet) :\napnpour sanz evondg \u2018sapis yyog Lo sO YK \u2014 UoNoe : \u2019 Adjg fo aruanbeg\nJaAETA-NINW JO ITeJOS JO} MOTTE SoLwUaIs pPoouRApY : 2 \u2019 : Hutto aquarsadry\n\u201cyore waa . : WOHDss> 187204104\na : nies pur Surasnpy aor\nUk S$.) \u201cAIO Ue $1 INQ'yUN awe AjUO sey shed Iso S \u2018 : inaannaney\ndU L \u2018puajap Jsnw ay sod purwusod & puke *iowse pue A1]UesUI me 7 \u2018apnjau tuanDes sainy\nJO 2010} B IJaAE[d BuO SoAIT FADO Jo UOIsJ9A seq SUL\n\u2018a28Q ayy partes yue) SHawseqho \u2018omvaApe EHNUT Ue\n\u2018jueid au) $1] soUuRpINe uewny Ou spadu [Te Jo \u2014 paresy ; dn Burjes ut asn 071 J91sew\nWOU 9Y1 ING \u201cssDIAAp FwOPONU PBdNde) YIIA INO II Fny]s AlBJuL : * ,\npaisaiod pug \u2018syuey \u2018172299A0F] \u2018wee Jou0 TeINOBId Sap>tyaA sUeD 9} JOJ afew Inoj 318\nJOUE PPEW SEY AZOjOUYSs? spssnuNUE \u2018CY SROT UL \u2018AINIUVD i 34 Pepn[sul OsTy \u201cIea0d 10,05\nJxOU OY} UL 13S ss TEquiOD punol\u00ae feonoR] & SF WOO : \u201cTNs S,YMosued WA yoo\neats ty aur yy Aq yg \u2018eBed-7\u00a2\nBSI (SaoISUOP jSdofsuojfy\n' {94D ay) dows nos ue : A ee \u201cSUIAISAS B[NI SUIsNJuOS Aq\n\u201cROA |IP4 0} Suto \u00a7,41 Puy i P ~.. PSISNeYXs sisted pasuatied\n\u2018UUHI & SY jIBWS $B 8.17 \u2018JOULE 2 \u2018 ; \u201cM8 JO} Joijel 8 3q pynoys\n\u2018sapissTm \u2018sind sey 3] \u2018AoE Slajau iA, } : ; pur \u2014 sjjng Asejuey mau\nJ 1\nO\u20ac 8,3] *3]}Qn02) WI at,nod monK\nTOA pus \u2014 Awme Sid}aWO]Iy Udy 10] SUBS 1UdT]O9X9 UP St SIE\ndn af yoId sywsumasur ANOA PA \u201cJEWIOY paziuesio Aynjores\n\u201c\"T# SMUIBOH OIA mp tars e &q paploak aie surays\u00e9s\names iyo onder yey)\nSUOIIPBIIUOD pue stuols\n\u201csto Jofey \u201cwalsks apni\najejduos \u2018'resyd @ aptaoid\nThe Dragon\n\u2018AQuoUl ssaf 10J Avid avous Burq108 dn pula Wu isn NO, \"saMIeHOISI 3y} JNO yosyo\n\u2018INOY YOUN] M9y} UO syadxe IO} JO \u2014 SadtAOU JOJ WIT SI SIU AA \u201cINOY UB INEge Jo sUIT}\nSurdxld & pue \u2018syavoduos aANoBI}e \u2018sa[NI JO JOS PaZUes10-[[aM \u2018IBI[d B 193 [},.NOA\n\u201cSIOQLIDSQNS vatuDyH aoodg ay fz 10} OS'7$\nIlo \u2014 \u00a266\u00b07\u00a2 \u2018Iodeays puy \u20181ayomnd \u201cs1a]]Bws ysnl 31,Ady] \u201cPuls ][,NOA AUB Se Pood se ae\nSoules osay.], \u2018No s1e s8nq ay} ans oyeul 0} Suyjso ded yYsNous pue \u2014 ss1dalun a}eusay]e\nONSIBAI B IOJ S3[MI ay} NOA 3AIB 0} UONBUISeUI puke SulUUEld [Njored Ysnoug \u201cauT]\nSUILUVZEIIJA] 9] JO 1891 BY} puyY ysanduo|D szpjalg se soured Ayyenb-ysiy sures 94} WesUT\n[[IM S9LIOS DUIFHOIDIA IUL \u201cJINIS pl 1,UsrTe osayL \u201c|BIAL] UPS 2,USSOp yoINb Ing\n\u2018aseyoud oy1 uado nod J31Je MOY UB UIQ BurdEyd 9q [NOX \u201cVOTE\nyoinb puv \u2018dryjas yomb \u2018Surpuvisispun yomb 10j pausisap 18 ssUIPHOISIP Mou INO\n*\u2018IQMSUB 3}\nsey Sumuesejayw \u2018suoissas And Aep-|[e 1OJ sun ay) SAey ],UOp slates AUPUI OO] \u201cNod\nJOJ SI StU} \u2018YSTULJ O} 103 IaAdU NOA SauTeZ UO AQUOUI YSN OO] BuIpuads us9q 3A,NOA J]\nEAINOINO S67 \u00a5 LAOIY MOH\n\u00a2 O} 3PBU sem wWo}yo Arosa\n\u201csanbuop soyeig \u2014 \u2018oured\n\u2018 snotasid imo yum sy\nOW is \"yye1s Burues\n-BI9JA 94) JO UOS\u00a5DEL 34315\n4q pape pur \u2018yvojueq\nzvT Aq payeasnyyt AyYystary\n\u2018sIpuy \u2018IG Uey Aq poudisap\nSBM {S4aIsUOPY jSsdzSUORY\n\"UBS IT, NOK sjulod aouatiodxs aJOUI Sy] \u2018ale NOA saffiAa ay], \u201cDOABY YBAIM PU \u2014 UMO}\nOju! 4[eIs \u2014 sucesunp sy} WIJ dn suIOD \u2014 Ia]DBIBYD Jajsuoi B aUIODAq NOK \u2018jsuazsuOpy\nisdasuOP UT \u2018Se0iay ANB-poo# s1oul ON \u2018\u201csidaouod Surmesejay wos sures Surdeid-ajos\nASEJUBJ M3U BU) ST /SsajsUOJ jS4ajsuOP *KTUOA \u2018eoX \u00a3SANS peq ay} Joj sured Aseyury\n\"NA LLOW GNV \u2018NVAW \u201cTIAA\n"
+  },
+  {
+   "path": "extract/dragon/006/p021_full.txt",
+   "content": "\u201cSPACE GAITIER\nthe science fiction and fantasy game magazine\nScience fiction and fantasy are coming into their own. Wargaming is increasing in popularity.\nAnd more and more people are combining the two. Science fiction and fantasy gaming \u2014 in\nperson, by mail, or via computer \u2014 is a rapidly-growing hobby for the intelligent and imaginative.\nAnd The Space Gamer puts you right in the middle.\n\" SPACE GRINER\n\u201cSPACE GAMER\nArticles on gaming...\n\u2018\u2018 Stellar Conquest, unlike most \u2018\u2018hard\u2019\u2019 SF games where\nthe accent is placed on tactical turn-to-turn situations,\ndeals with strategic concepts expanded over a period of\nyears, and players should learn to plan their game on this.\nlevel... Most SF games in the past have been of a tactical |\nnature. Players have gradually begun to think instinctively\nalong the same lines. They seek the immediate returns...\u201d\u2019\n\u2014 Allocation of Bonus Industrial Output Units:\nWhich Way Is Best?, from TSG 5\n\u201cStellar Conquest and Starforce approach the idea of a\nfar-flung stellar society from quite different viewpoints.\nThe differences lie not only in game mechanics but also in\nthe underlying philosophical assumptions, without which\nthe games would be nothing more than pieces of\ncardboard...\u201d\u2019\n\u2014Two Views of the Future:\nStellar Conquest and Starforce, TSG 3\nGame-oriented fiction... :\nand stories based on actual game situations...\n\u2018Eldon almost felt mud and fear ooze from the holo-\nsraph. The Game\u2019s computer had really brewed a nasty.\nNo empires, armies, and such to direct this time \u2014 only an\nindividual role to play. The message plug briefing had said\n\u2018*Special Scenario\u2019\u2019 and meant it. The rules of role playing\ngames gave an individual no information. You learned\neverything watching the holograph and causing actions in\nthe projected simulacrum. You even used your own voice\nfor the simulacrum\u2019s speech to other projected entities.\nWhen (not if) your projected character was killed, another\nwas started fresh for you all over again. Eleven other play-\ners were caught in this scenario with him, and he had no\nway of knowing who they were when his character met\nthem, unless his fellow-players admitted their identities.\nEven if a projection admitted to being another player, how-\never, it might just be the computer making its own charac-\nters lie.\u201d\u2019\n\u2014 Eldon Tannish, TSG 4\nReviews of new games...\n\u2018\u2018T was very impressed when I first opened the box cover\non my new 4,000 A. D. space-war game from House of\nGames. In fact, I was close to amazed at the evident\nquality of the physical components:~Unfortunately, my\nmood of happy contentment was foredoomed to collide\nwith the realities of poor design...\u201d\n\u2014I Have Seen The Future\nAnd It Doesn\u2019t Play Well, TSG 4\nLetters...\n\u201cI purchased a subscription to The Space Gamer because\nTSG 2 intrigued me. It was sort of a novelty. However, had\nI seen TSG 3 first, I would have subscribed because I was\nimpressed...\nEd Cooper\u2019s \u2018\u2018The Escort Illusion,\u2019\u2019 Neil Shapiro\u2019s\n\u2018*\u2018Two Views of the Future,\u201d? and Scott Rusch\u2019s \u2018\u2018What\u2019s\nWrong With An H-Bomb?\u201d\u2019 are\u2019by far the best articles on\nSF gaming I have read so far. Keep up the good work...\u2019\u2019\nas well as:\nReader-voted game ratings\nNews and new products section \u00ab\nOriginal art - oe\nAnd more every issue...\nThe Space Gamer is bi-monthly. A. six-issue subscription\nis $5.00; twelve issues, $9.00. Subscribers on/y are entitled\nto special discounts on Metagaming (and many other)\nproducts. Back issues are $1.00 each, as available. Sub-\nscriptions begin with the current issue.\nMETAGAMING CONCEPTS\nBox 15346 -~S@\nAustin, Texas 78761\n"
+  },
+  {
+   "path": "extract/dragon/006/p022_full.txt",
+   "content": "The Dragon\nGnome Cache\nChapter 6\nSummary:\nUnable to resist the wanderlust any longer, Dun-\nstan has robbed his father\u2019s strongbox and set forth\non his quest for adventure and glory.\nIn his naivete, Dunstan casts his lot in with a band\nof scurrilous cutthroats, believing them to be adven-\nturers sharing his noble pursuits.\nOur hero learns the true nature of his erstwhile\ncompanions, and his pockets are the poorer for it.\nDunstan parts company from the band, narrowly es-\ncaping apprehension by the Warders. In the confu-\nsion, he \u2018liberates\u2019 a horse, and sets off for Huddle-\nfoot, there to spend the night in the stables.\nOur would-be knight acquires a would-be squire,\nand strikes a bargain with Evan to travel with his\ncaravan to Rheyton and Nehron. This arranged, he\ntakes care of the incriminating horse, spinning a tall\ntale of being on official business. This done, they\nawait departure .. .\nThe caravan consisted of a score of mules, several\ncarts, a half-dozen packers, and a like number of\noutriders. There were then, counting Trader Evan,\nDunstan, and Mellerd, fifteen souls in the party\nwhich crossed the Aarn River a week later and\nentered into the walled town of Rheyton. At that\nplace they stayed only a day while various matters of\nimportance to the expedition were transacted.\nDunstan found the town too much like his former\nhome to be attractive, but to Mellerd it was a place of\nwonders. Despite warnings, he wandered off and\nbecame lost but found his way back before too many\nhours. Mellerd was full of exciting experiences, nearly\nbursting to relate them, but his master would have\nnone of it, so he eventually went off to tend their\nhorses and sulk in silence. They departed when the\ngates were opened at dawn, and the boy managed to\nunburden himself upon the unwilling ears of Dunstan\nduring the better part of the day until threats of the\nrod again stopped his tales, although by then he was\nclose to talked-out anyway.\nThe composition of the train had changed at\nRheyton. Gone were the clumsy carts; the roads to\nthe frontier and beyond being little more than rough\ntracks. In their place more pack animals were added,\nwith a corresponding increase in men to manage\nthem. A number of tough mercenaries were also\nintroduced, led by a hard-bitten captain. They were\nmostly small, wiery men from the distant western\nplains, although their chief and one or two others\nwere evidently Thallites like himself, and four were\nbroad and burly northerners \u2014 men from Kimbry\nor Nehron. All were well armed, although Dunstan\ncarefully noted that there were important differences.\nThe westerners were attired in mail coif topped by a\nbroad-brimmed leather hat; body armor consisted of\na jack similar to his own, except with the addition of\nmetal epaulettes, metal arm bands, and greaves.\nThey bore no shields, for the bow was their weapon,\nand its play required both hands. In addition to their\nbows these warriors had very long sabers and the\nusual daggers in their wide belts. All were exceedingly\ndrab, dressing in brown or faded green where cloth\nwas to be viewed.\nTheir comrades from the north were quite\ndifferent. Their headgear was more elaborate,\nconsisting of a steel helmet with a heavy nasal and\nsurmounted with a spine of metal spikes. Horn plated\nbrigandines protected them from wrist to waist,\nwhere a broad girdle bound a kilt of bearskin about\ntheir waists. Studded gambades protected their lower\nextremities, a circular shield (like \u2018Dunstan\u2019s) or one\nof trapezoidal form (borne by the two from Kimbry)\ngraced the left arm, and the forearm and hand on the\nright were protected by steel gauntlets. Great capes of\nbearskin or like savage carnivora\u2019s served to both\nadorn and protect their backs. Their arms were\nmassive flails and battleaxes, suited well to their\nstrength. Brightly hued devices were painted upon\ntheir shields, but the northerners knew no heraldric\nlaws, rather beasts or weird symbols were limned at\nthe owner\u2019s fancy.\nThe Thallites were clad from head to toe in\nchainmail, and the captain had in addition suitable\nreinforcements of plate mail at shoulder, elbow, knee\nand leg. Visored helms topped the mail, and the\ntypical oval shield with cut-out section on the upper\nright edge was carried. The three men bore lances,\nswords, and poniards. Their gambesons were of\nvarying colors, and their shields were covered by cloth\nof red, the color of their helmet plumes and surcoats.\nDunstan wondered if beneath the coverings were\npainted the devices of any of the noble houses of\nThalland \u2014 flower or insect of the two great divisions\n\u2014 but he dared not inquire.\nThe stolid guards who had been with the train\nwhen the pair first joined were excluded from the\nmercenary band but seemed to care not a whit and\nwent about their routines as usual. Of course, the\nplainsmen now served as outriders, but that made no\ndifference to them, having the preferred positions in\nthe caravan\u2019s center, both less dangerous and less\nstrenuous. But while these men-at-arms avoided the\nnew guards, Dunstan sought them out, for here were\nreal warriors \u2014 particularly the Thallite captain and\nhis pair of lieutenants.\nAt the first opportunity Dunstan spurred his\nmount to the head of the column of plodding mules\nwhere the mercenary leaders rode. The young man\nbade them greeting, but Captain Rufus, as he was\ncalled, took one look at him with his odd assortment\nof arms, and dismissed the would-be knight with a\ncontemptuous wave. Such treatment was unbearable!\n\u201cKnow you that an honorable gentleman cannot be\nso treated! You shall give me satisfaction, sirrah!\u201d\nAnd Dunstan rode closer to the man in order to make\ngood his challenge with a blow. Before he could\napproach, one of the lieutenants grabbed his right\narm.\n\u201cDon\u2019t be stupid, boy. The Captain could kill you\nwithout even working up a sweat in the process.\nWe\u2019re mercenaries and have no time for noble\ncombats on the field of honor \u2014 we kill for a living\nand fight naught for sport.\u201d\nRage made Dunstan unafraid, and he continued to\ntry to get at the man who had besmirched his honor:\n\u201cAm I to accept insults, then, like some baseborn\nclod? Never! Come, free me so we can set to!\u201d\nRufus now spoke: \u201cCalm yourself, sir. Where was\nthe dishonor? Cannot I, in the course of performing\nmy duty, avoid distractions \u2014 such as this,\u201d he added\nwith a wry smile, for the commotion had brought the\ntrain to a halt, and the members of the party were\nhurrying ahead to learn the reason. The veteran\nglanced around and then turned back to Dunstan:\n\u201cLet us settle the matter now. If I gave thee offense in\nany way, prithee accept my pardon.\u201d\n\u201cYou go too far for this callow babe, Sir Ruf\u2014\u201d\ninterjected the warrior at Dunstan\u2019s arm, but the\ncaptain cut him short.\n\u201cLeave off, Baldwin. As long as I am your captain I\nshall decide what is meet,\u201d then turning to Dunstan:\n\u201cBe mollified, but leave us alone, for you cause\ntrouble. You are an outsider, and there is no place for\nyou in our company.\u201d\nThere was nothing else left for Dunstan but to\nwheel about and return. Hot anger had been replaced\nby cold realization \u2014 he had come close to facing\ndeath, for the man who had given the insult was\nundoubtedly a knight of the land as well as a\nseasoned warrior. He would not forgive the slight, nor\nthe shabby treatment, but he would press the matter\nno further. To add to the shame of the affair, Trader\n22\nVol. 1, No. 6\nEvan warned him to avoid bothering the leader or the\nmen of the hired company: \u201cNo doubt, master, you\ncan do well enough with that sword of yours, but\nthese men are of a different caliber. Their duty is to\ninsure the safety of my goods, and I'll have no man\nhinder them in this.\u201d The deepest wound, however,\nwas the knowledge that Rufus had pitied him, getting\nDunstan off the hook so to speak, by an easy word.\nSurprisingly, although the young man carefully\navoided the mercenaries, one of them sought him out\nand befriended him. This was Vardobothet, a Kimbri\nlittle older than Dunstan. The entire company jested\nabout the outsider\u2019s embarrassment, save the leader\nand the dour northerners. The latter found little\nmirth in the humiliation of any warrior, and\nVardobothet expressed this belief to the gratitude of\nDunstan. During the succeeding days of travel the\ntwo became fast friends. The mercenary treated\nDunstan as an equal in war and deferred to him\notherwise as a gentleman. Such a combination was\nirresistible to the errant who returned this treatment\nwith respect at least equal to that shown to him. In\nthe evenings Vardobothet told of his early adventures\nin the mountains beyond the Kimbry Vale and his\nfew battle experiences since joining Rufus\u2019 band, but\nonly at Dunstan\u2019s urging. The Kimbri would have\nrather listened to the stories of Dunstan\u2019s raking in\nEndstad. While Mellerd continued to serve his\nmaster faithfully he liked the young mercenary from\nthe first, and within a few days he virtually worshiped\nhim, for the kindness and understanding of the black\nhaired northerner towards the waif were entirely new\nto the boy\u2019s experience. Besides, he would hover near\nwhen the two young men talked, hanging on every\nword, so a part was a sort of hero-worship which\nextended towards Dunstan even, though to a lesser\ndegree.\nSo the journey continued thus for many days, the\nbeasts plodding along at no great speed due to their\nheavy loads, but what was the value of speed\ncompared with more freight? The land was sparsely\nsettled, but much to Evan\u2019s relief they reached the\nborder keep of Blackmoor unmolested by robbers.\nThe trader railed at the tallage levied upon his\ncaravan by the marcher lord, but there was no help\nfor it. Dunstan suspected he was secretly so pleased at\nthe ease with which the passage was made that he\nwould have paid twice the duty. As they departed\nfrom the village of Blackmoor, the grim walls of the\nguardian castle frowned down upon their left, a\nreminder that the land was held by force of arms. The\nsoldiers Dunstan saw were as grim as their fortress,\nand the young man mused that the peace here was\ndue mainly to strong warriors. From the looks cast at\nthem by the Nehron peasants who inhabited the\nsettlement and the surrounding farms, this border\nnoble bore down heavily upon his unwilling subjects.\nA twist in the lane soon removed the castle from\nsight, and the whole matter passed from\nconsideration.\nA few leagues journey brought them to the\nbeginning of the great evergreen forests, and they\nentered into the heart of a foreign land. Each day\u2019s\ntravel brought them closer to the town of Weal, which\nEvan said was naught but a rude hamlet grown fat on\nthe trade which he and others of his ilk pursued at\nsuch great cost. Here the goods packed upon the\nmules would be exchanged for pelts \u2014 after long\nbargaining \u2014 and then the caravan would return\nfrom whence it came, bearing a new, more precious\ncargo. Dunstan was at a loss as to what he would do\nwhen they reached Weal, for his estimation of his\nability to find honorable employment with a noble\nmarcher had been shaken first by his treatment at the\nhands of Rufus and his henchmen and then by the\nmere sight of the men-at-arms from Blackmoor\nCastle. This sudden loss of faith in himself was most\ntraumatic. Was he nothing more than a boy with a\nmotley collection of cast off arms trying to play at\n"
+  },
+  {
+   "path": "extract/dragon/006/p023_full.txt",
+   "content": "April \u00b077\nbeing a warrior? No! His former experiences in\nEndstad, as a Captain of the city watch and in\npersonal duels, spoke against such thinking. Why,\nthen, was he plagued with such doubts? Certainly,\nthe company of a band of mercenaries was\nundesirable anyway. And he had liked nothing about\nthe castle and dwellings of Blackmoor. Dunstan\nchided himself for becoming disheartened by such\ntrifling setbacks. When the caravan turned back he\nwould linger a few days at the trading center, and\nwhen assured that Evan\u2019s train was a safe distance\nahead quietly return that way also. By avoiding the\nborder fortress he could head westwards towards\nKimbry. If by some chance the Overking\u2019s Warders\never managed to track him as far as Weal, they would\nlose the scent there, for beyond that place Nehron\nbecame a wilderness of forest and hills. Warders\nwould never venture to search for him among the\nhostile barbarians dwelling there, of this he was\ncertain.\nOn the positive side, the land of the Kimbri was\nbound to be more appealing than Nehronland was, so\nservice there would likewise be more attractive.\nResolved, Dunstan began to imagine his esquirehood\nunder a magnificent noble, but the reverie was cut\nshort by the sudden appearance of the westerner\nserving as the advance of the caravan. Reining his\nhorse abruptly to a halt nearby, Dunstan overheard\nhim report to Evan that the path ahead was closed by\na road block, closely held by a strong party of\nNehronlanders clad for war.\nImmediately the train became a hive of activity.\nRufus came from somewhere, and in a moment the\nmercenary company was formed and ready. The\npackers drove their mules together, preparing for any\ndifficulty by lashing the beasts together and then\ngrasping metal shod staves to defend their charges.\nDuring this flurry, Evan\u2019s guardsmen had armed\nthemselves fully but stayed near the center of the\ngathering, so to be ready wherever their charges were\ncompleted part. Cast a\nnew part every 4 minutes.\nthreatened. The Trader glanced over these\npreparations and then bravely rode with the\nmercenaries to learn what purpose the Nehronlanders\nhad.\nDunstan had not stood by idly watching these\nwarlike preparations. Without hesitation he had\ncalled Mellerd to him, and the lad was quick to help\nhim don the coat of cuir bouille, helmet, shield and\nlance. As he turned his mount towards the front, he\nwas surprised to see that the boy had drawn a heavy-\nbladed knife from somewhere in his pack and\nthought to join his master: \u201cStay here, you fool!\u201d\nDunstan shouted, \u201cif I am regarded as a fledgling,\nwhat use will you serve ahead?\u201d Mellerd paused a\nmoment, but when Dunstan set spurs to the stallion\nthe boy followed close behind. Dunstan gave no more\nthought to the matter, dismissing his servant as a\nhopeless churl bound on self-destruction.\nTheir arrival went unnoticed, for Evan and Rufus,\nbacked by the latter\u2019s two lieutenants, were close to\nthe obstruction and beginning a parley with the men\nbehind it. A large tree had been felled so as to\ncompletely bar the road where it passed between two\nvery steep hills. The dense growth of trees on either\nhand made by-passing the track next to impossible,\nand any such attempt was totally discouraged by the\nsavage warriors visible around the block.\nDunstan stayed well to the rear of the mercenary\ncompany, but even at that distance he could see and\nhear everything that was going on. As he watched\nwhat went on ahead Vardobothet joined them and\nthe trio observed a heavily armed man and several\nretainers emerge from behind the fallen tree.\n\u201cWhy do you hinder the passage of my train?\u201d\ndemanded the trader, \u201cI have done business with you\nNehronlanders these many years, and you grow richer\nevery day because of it!\u201d\nThe spokesman grinned broadly at these words, his\nbearded face beneath his iron helmet all the more\n0-3% Minutes mix mold\nand add part.\n3%-5 Minutes mix and\npour resin,\n5-8% Minutes remove\nSYNTHECAST IT \u00a2\nThe ease and accuracy of reproduction with Syn-\nthecast makes it the ideal solution to many of the\nproblems faced by todays serious hobbiest. Almost\nanything from miniature figures to diorama scenery\ncan be quickly and economically reproduced, Syn-\nthecast items sand, work and paint like plastic.\nEach regular size kit contains enough materials to\nproduce dozens of 54mm _ parts,\nNOTE: The reproduction of an object without the written\nconsent of its originator can be unlawful. Be certain to\ncheck the legality\nK. C. I. PLASTIC AND ENGINEERING INC.\nP.O. Box 493 TD\nWoodstock, Illinois 60098\nThe Dragon\nfierce for it: \u201cTrue, you traders know no nation,\nprofitting from all alike . . . know then that this the\nroad is blocked here due to certain \u2014 ah, events \u2014\ntaking place to the south. I have orders to halt you in\norder to receive payment of a slight tax before you\npass on to Weal.\u201d\n\u201cWhat is all this talk of tax?\u201d Evan fairly shouted,\n\u201cand what is taking place behind that we should be\nstopped?\u201d\nWhen the Nehronlander smugly related that the\nbands had risen around Blackmoor and thrown off\nthe yolk of the Overking\u2019s border lord, the trader\ndemanded and received a few moments to talk the\nmatter over with his men: \u201cIt'll make no difference,\nfor one way or another you\u2019ll give over what we need.\u201d\nWith that the warrior returned to his men, and Evan\nand his party moved back towards the caravan.\nThe trader\u2019s expression was stoney as he motioned\nthe mercenary captain to him for conference: \u201cThis\nbodes no good, no good at all for us. That fellow\nmeans to have the better part of my goods, if not all of\nthem, and that\u2019s certain. Tell me, good Rufus, what\nyou make of his talk about an uprising on the\nborder?\u201d\nThe mercenary considered for a time before\nanswering: \u201cIt is hard to say for certain how much\ntruth is in the man\u2019s words. If there was a major\noperation against Blackmoor I believe that I\u2019'd have\nseen signs of it on the way, yet I noticed nothing.\nAgain, the castle is far too strong to be taken without\na long siege; even supposing these Nehron could\nmanage that, relief would reach Blackmoor in plenty\nof time and put the attackers to rout.\u201d Evan grunted\nhis agreement with these words. Rufus now spoke\nwith conviction: \u201cI judge the man a liar, master\nEvan. He seeks only to rob you under the guise of\nthese other fancies. Why else would he waylay us here\ninstead of simply awaiting the train at Weal?\u201d\n\u201cMy thoughts exactly, sir, but I am right glad that\nyou\u2019ve confirmed them. There is still a problem, and\nbefore reproducing any item.\n$5.95\nplus .75 postage\n"
+  },
+  {
+   "path": "extract/dragon/006/p024_full.txt",
+   "content": "The Dragon\nthat is whether to try to force our way past these\nThey watched the trader earnestly talking with the\nknaves or retreat and seek help from the Lord Nehronlander again, gesturing towards the pack\nMarcher \u2014 what say you?\u201d\n\u201cIT counted most carefully, and there were but a\nscore of rogues behind the barricade. They are well\naccoutered, but they are no match for the stout\nfellows who serve me. What you do, master Evan, is\nyour decision, but I tell you that my men can scatter\nthose bandits like chaff before the wind.\u201d\n\u201cDone!\u201d the trader answered. \u201cI would save time\nas well as fine goods. When I go forward, prepare you\nyour warriors to fall upon the enemy. I'll tell their\nleader that we'll bring the mules ahead in order to\nmeet his demands. Perhaps he\u2019ll then bring his men\nfrom behind their cover, thinking all is safe, and you\ncan strike. If they stay behind their screen, give me a\nmoment to start back to the caravan, and as you\npretend to follow turn and charge.\u201d Rufus agreed that\nthe plan was sound, and Evan went forth alone to\ncarry out his part.\nThe Kimbri saw the members of his company who\nhaled from this land sadly shaking their heads at\nwhat had transpired. Vardobothet then turned to\nDunstan and Mellerd: \u201cStick close by me once the\nfray is joined, young sir. You, Mellerd, should have\nno part in this, but as I know what is in your head\nyou'll follow anyway. Just stay behind your master,\nand stay low in your saddle,\u201d and then he said to his\nfriends in a low voice: \u201cThe Nehrons of our company\nknow something they are not saying \u2014 and they like\nthis naught. I fear that there will be bloody work\nhere, and Captain Rufus may not have so easy a time\nas he supposes. Watch me, and if I give a signal,\nbreak from the melee and fly. These trees could be\nhiding a thousand warriors.\u201d Dunstan and Mellerd\nsilently agreed, although the former dismissed\nsummarily any idea connected with flight. Battle was\nhis new calling and retreat a disgrace to even a would-\nbe knight.\nES-16\nBEOWULF\nanimals to emphasize what he was proposing. He\nturned and slowly rode southwards again, with a half-\ndozen men emerging from the woods and following a\nfew paces behind. So far things were going quite well;\nalthough more than two-thirds of the enemy were still\nbehind the road block, those in the open were already\ndead men. A warning shout went up from the trees,\nbut it was too late. There was a twanging of bows, and\nthe six warriors fell feathered by twice that number of\narrows. Rufus led his men into the midst of the\nNehronlanders, spears lowered or flails swinging,\nwith a straggle of bowmen behind. Despite his\nfriend\u2019s admonition, Dunstan held back a moment\nspell-bound by the sight. The mercenaries were in\namong the trees beside the barricade now, and Rufus\nhad already broken free to the road beyond and was\nsmiting all about him with his sword. The woodland\nallowed scant archery, so most of the westerners had\nput by their bows in order to ply their sabres, but two\nor three stayed on the caravan\u2019s side of the barrier,\nfiring over it at half-hidden targets. All transpired in\nan instant. Dunstan looked round for an opponent\nand spied a giant of a warrior stealing through the\ntrees towards the rear of the horsemen.\n\u201cAt them, Mellerd!\u201d he cried, and couching his\nlance firmly beneath his arm, Dunstan charged the\nhuge figure. The thunder of his stallion\u2019s hooves\nbrought the man\u2019s head about with a jerk, but ere he\ncould do more than look surprised the broad iron\npoint took him full in the chest. Luckily the young\nman\u2019s feet were well-braced in the stirrups, for\notherwise the force of the impact \u2014 evan at less than\na full gallop \u2014 would have knocked him ass over tea\nkettle. As it was, he reeled back, partially lifting the\nimpaled warrior as the horse continued ahead. The\nlance then struck a tree and splintered in Dunstan\u2019s\nhand. Dazed, the newfound champion stared\nunbelieving, first at the grisly trophy pinned to the\nRAL PARTHA\nNEW RELEASES\nFANTASY LINE\nES-18 Adventuress\n~~ ES-20 Mummy\n-ES-21 Elf Princess\n1200 AD LINE\n1121 English Bowman\n1156 French Knight\n1205 Heavy Mongol Cav\nFor catalog or complete line of figures send 25\u00a2 in: coin or stamp to:\nRAL PARTHA ENTERPRISES | |\n3642 Hyde Park Avenue.\u00bb Cincinnati, Ohio 45208 .\u00ab Phorier \u00a5-513-871-5315\n\u201c8\nVol. 1, No. 6\ntree trunk, then at the useless stick of ash remaining\nin his hand. Mellerd came up beside him and shouted\nsomething,. but Dunstan couldn\u2019t understand it. He\nbegan to roar with laughter, and throwing aside the\nlance butt yanked his sword from the balderic at his\nleft and started to urge his mount towards the melee\nahead. Before reaching the press, however, chilling\nscreams and howls like wild animals rent the air\naround them. Out of the fringe of pines poured at\nleast a hundred raging men, and Dunstan\u2019s battle-\nrage left him in a trice.\nNow the knot of conquering horsemen became a\nsmall island in a sea of warriors bent upon their\ndestruction, and saddles were emptied right and left.\nThere was no sign of Vardobothet and no hope of\nsaving him in that circle of foemen. Dunstan reared\nhis horse around in frantic haste, grabbed the bridle\nof Mellerd\u2019s palfry, and headed back towards the\ncaravan. There were more Nehron fighting men\nemerging from the trees beside the road. Fighting\nhad already broken out in the midst of the mules, and\nbefore his eyes Dunstan saw Evan fall beneath a\ngreat, double-bitted axe. As the two riders dashed\npast one of the enemy jumped at them, trying to grab\nthe reins. Without conscious effort the sword in\nDunstan\u2019s hand rose and fell, the Nehronlander\nshrieked, and fell back dead. The train was past.\nThere was still a great din behind them, and more\nhowls from the woods proved that more of the enemy\nwere atriving still! The horse responded gallantly to\nthe spurs, and the reins of Mellerd\u2019s steed were jerked\nfrom his grasp. Turning, he saw that the smaller\nhorse was still running close behind, for it had little\nweight to carry. The boy was clinging to the beast in\nterror, hands locked around great clumps of its\nmane.\n\u201cYou must keep pace!\u201d he shouted back to his\nservant and then paid no more attention to him. In\ncases like this it was every man for himself.\nES-19\n- ANGEL OF DEATH\n"
+  },
+  {
+   "path": "extract/dragon/006/p025_full.txt",
+   "content": "April \u00b077\nD & D OPTION:\nDETERMINATION OF PSIONIC\nABILITIES\nby David W. Miller\nFor human and half-human player characters. Humans require a\npercentile die roll of 91, while half-humans require a roll of 95. These\nrolls do not take into consideration any of the players\u2019 other character-\nistics; however, a low intelligence would limit the number of abilities\nthe character could learn to use, as well as extending the time necessary\nto learn to use additional abilities. Further, any character can have any\nof the thirty-seven known psionic abilities. It does not matter what class\nthe character may choose, the fact of his humanity is the basis for his\npotential for psionic abilities. For this reason the character does not in-\ncur a penality for acquiring additional abilities. After all being psionic\nthey are subject to attack by psionic monsters and individuals.\nFor player characters with psionic potential there are three ways to\nlearn how to use those abilities:\n1. Spontaneously as stated in Eldritch Wizardry. In this regard the\nability develops on its own. (The percentile roll is made as the next level\nis attained.)\n2. Characters with psionic potential may learn to use other abilities\nfrom other characters. To do this requires the learner to have ESP (or\nhave an ESP Medallion) and the teacher must have Telepathic Projec-\ntion (or a Helm of Telepathy). The learning of attack and defense\nmodes is performed in the same fashion.\nWhen learning a new basic ability it would take one week per level\nof difficulty. The superior abilities taking 1% weeks per level; while,\nthe attack and defense modes take nine weeks each.\n3. Lastly, any character can acquire a psionic ability magically, but\nthis does not enable a non-psionic character to learn other psionic abili-\nties except through magic. Unless the character is made magically\npsionic.\nThe abilities are divided into six categories: perceptions, control of\nown body, control of others, health & healing, control of mass & ener-\ngy, and travel. Each section being progressively more difficult.\nunusual game. The 17th Century, with musketeers, and sword-\nfights in the streets, comes alive as the 40 pages of rules, charts,\n\u2019 and tables unfold. In EN GARDE! each player finds himself a person,\nborn and bred for the swashbuckling life of a gentleman adventurer.\nStatus is pursued above all else, even above money. Social elimbing is a\nway of life. The world is inhabited by the likes of Scaramouche, Cyrano\nand Roxanne, Errol Flynn, Porthos, Athos, Aramis, Rhonda Fleming,\nFrancois Villon, and, of course, D\u2019Artegnan. There are people to be\nused, lackies to be abused, the Cardinal\u2019s Guard to be trounced, friends\nto be cultivated, enemies to be humiliated, the hearts of fair ladies to be\nwon, the ear of the King to be gained!\nAll you need to play EN GARDE! is a pencil, paper, a six-sided die,\nthe EN GARDE! rule booklet, an adventurous imogination, and some\nfriends. .. Rules cover a complete 17th Century society in some hypo-\nthetical country, (oh, call it France, if you like). Specific rules include a\ncomplete fencing system (to settle those disputes you may have), char-\nacter generation, social climbing, money, carousing, mistresses, gam-\nbling, influence, the military, advancement, everything you need to live\na full life, and enjoy every minute of it.\nCome with us to those bawdy, rowdy days of yore. .\nblade. ... Sharpen your wits... Take care not to insult a small man\nwith a large nose... All for one and one forall... Good luck, friend,\nand may your swash never buckle!\nENGARDE! .... 0.00.00. 00 eee vada t oae te, x8 $4.00 ppd.\nI y GARDE! is Game Designers\u2019 Workshop\u2019s newest, and most\n. Sharpen your\nGAME DESIGNERS\u2019 WORKSHOP\nDepartment W :\n203 North Street, Normal, Illinois, 61761\nThe Dragon\nPSIONIC ABILITIES TABLE\n(Numbers in parenthesis are the page numbers on which the ability is\nexplained in Eldritch Wizardry.)\nBASIC ABILITIES\nDetection of Evil/Good (18)\nDetection of Magic (18)\nClairvoyance (16)\nClairaudience (16)*\nESP (18)\nEmpathy (20)\nBody Weaponry (16)\nMind over Body (15)\nSuspend Animation (15)\nBody Equilibrium (16)\nReduction (14)\nExpansion (14)\nLevitation (15)\nInvisibility (15)\nDomination (15)\nSUPERIOR ABILITIES\nPrecognition (15)\nBody Control (18)\nShape Alteration (20)\nMind Bar (18)\nMass Domination (21)\nHypnosis (18) Telempathic Projection (21)\nAnimal Telepathy (21) Telepathic Projection (19)\nCell Adjustment (20) Aura Alteration (21)\nMolecular Agitation (19) Telekinesis (17)\nMolecular Rearrangement (17)\nMolecular Manipulation (18)\nEnergy Control (16)\nDimension Walking (17)\nAstral Projectin (17)\nDimension Door (19)\nTeleportation (20)\nEtherealness (20)\nProbability Travel (21)\n*The range of Clairaudience progresses the same as Clairvoyance.\nOther than the abilities themselves the referee should consider\nsome treasure items that are usable only by characters with psionic po-\ntential. Some of these could be natural, such as a mineral crystal which\nworks like a crystal ball. Or perhaps, a crystal that will give off light\nwhen used by a psionic character.\nORIGINS 77\nThe National Wargaming Expo\n22,23, and 24 July 1977 -\nat Wagner College, Staten Island, New York City\nThe national exposition for wargamers sponsored by the major firms in the\nhobby. Features boardgaming, miniatures, fantasy gaming, seminars,\nworkshops, exhibits, and tournaments. Expanding on the successes of\nOrigins | and 1, Origins 77 promises to be even bigger and better.\n60 Trade Show Booths e Competition Prizes e \u201cCharlie\u201d\nAwards e Demonstrations e Game Auction e Dormitory\nand Dining Facilities on Site e Informal Gaming Areas e\nDesigners and Artists from All Major Companies\nSend for pre-registration forms now (there\u2019s a 25% savings if you\npre-register rather than buying tickets at the door).\nSend a stamped, self-addressed envelope to:\nORIGINS 77, c/o SPI, 44 East 23rd Street, New York, N.Y. 10010\n"
+  },
+  {
+   "path": "extract/dragon/006/p026_full.txt",
+   "content": "The Dragon\nMORALE IN D & D\nby Jim Hayes and Bill Gilbert\nThe great appeal of Dungeons and Dragons role-playing lies in the\nuncertainty of any action taken. It is the anticipation of standing before\na sturdy oaken door in a corridor dimly lit by flickering torches, pre-\nparing to force it open. It is the uneasiness of finding an artifact of un-\nknown purpose and attempting to discover its powers. It is leaping into\ncombat with a foeman of unknown skill and ability. And yet the allure\nof the game can tarnish in time through the dullness that can come\nfrom too much familiarity. Thus, in nearly every publication devoted\nto D&D, one can find new monsters, new classes of characters, or new\nmagical items, all intended to add to the uncertainty of play.\nAs the players advance their characters through levels which reflect\nincreasing experience, gaining various magical items to aid them along\nthe way, they tend to begin taking the monsters they meet for granted.\nThe DM is required to arrange encounters with more and more power-\nful creatures to keep alive the uncertainty of events. It soon becomes an\nescalating cycle of matching the strength of the creature met with the\nincreasing strength of the player-characters. In seeking to maintain the\nsense of uncertainty, I have come to rely on the alternative of a system\nof morale checks in any combat which occurs during an expedition.\nThe fact that personal bravery affects ones performance in combat\nis utilized in the Boot Hill rules from TSR, and it can be a useful\naddition to D&D play. It adds a further individuality to the character\ncreated and will greatly affect his actions during moments of stress.\nPersonal bravery may be found in the same manner as the standard\ncharacteristics, by rolling three six-sided dice. Another factor to con-\nsider is the effect that coming face to face with various creatures will\nhave on a character. A man may face another man or a wild animal\nwithout flinching, but would run, screaming, from one of the Undead.\nThis will entail rating each monster for their effect on morale.\nThe following system of morale checks is based on several factors\nwhich are considered before arriving at a final state during an encount-\ner. The first is the personal bravery of the character, then the personal\nloyalty to the leader and the leader\u2019s charisma, also the presence of ex-\ntranormal individuals in the party. This is weighed against the Monster\nMorale Effect (or Fright Factor) to determine whether the character\nwill stand and fight, hesitate, or run. It restores the element of uncer-\ntainty to adventuring, for one is never sure of the bravery of his com-\npanions (or himself) until they are tested.\noe\nTHE DISENCHANTED FOREST\n26\nVol. 1, No. 6\nMORALE TABLE\nDIE ROLL 1 2 3 4 5 6 7 8 9 0\nChart #\n-5 or less B B B b B B B H H H\n-4 B B B B B B H H H H\n-3 B B B B B H H H H S\n~2 B B B B B H H S S S\n-1 B B B H H H S S S S\n0 B B H H S S S S S F\n+1 B H S S S S S S F F\n+2 H 8S S S S S S F F F\n+3 S 5\u00a7 S S S F F F F F\n+4 Ss Ss S S F F F F F F\n+Sormore SS S F F F F F F F\nDefinitions: B = Break and Run. Roll Dex. to see if he takes one\nround damage.\nH = Hesitates. Does not fight . . . check again next me-\nlee round,.\nS = Stands and Fights. Check again if morale chart #\nchanges.\nF = Fights! No further morale check. 10% per round\nwill berserk.\nPersonal Bravery Charisma Loyalty (As rolled and adjusted\nfor charisma and other\nDice Roll + Dice Roll + incentives offered)\n3 -4 3 -4 3 or less -4 Morale\n4 3 4 34 -3 Morale\n5-6 -2 5-6 -2 5-6 -2 Morale\n7-8 -1 7-8 -1 7-8 -1 Morale\n9-12 0 9-12 0 9-12 0 Morale\n13-14 + 1 13-14 + 1 13-14 + 1 Morale\n15-16 +2 15-16 +2 15-16 + 2 Morale\n17 +3 17 +3 17 + 3 Morale\n18 +4 18 +4 18 + 4 Morale\n19 or more +5 Morale\nProcedure:\nStep #1: Add Bravery + to Leader\u2019s Charisma + to Loyalty +\nStep #2: Subtract Monster Morale Effect (Fright Factor) +\nStep #3: Add + 1 each MU or Cleric in the party.\nStep #4: Add + 1 for each Ftr., MU, Cleric of L3 or L4; Add + 2 for\neach of L5, L6; Add + 3 for each of L7 or L8.\nStep #5: Subtract for each of above on enemy side.\nStep #6: Use resulting number for the Chart # and roll 10-side die.\n**Note: Each side surprised gives -1 Morale\nMoral check after 1st Melee Round (if situation changes as follows).\nAdd or subtract to or from previous result.\n-| Each comrade that breaks, is disabled or killed.\n-2 Each MU or Cleric that breaks, is disabled or killed.\n-4 If leader breaks, is disabled, or killed.\n- SY ARTHUR J. BREAR\n"
+  },
+  {
+   "path": "extract/dragon/006/p027_full.txt",
+   "content": "April \u00b077\n+4 If enemy leader breaks, is disabled, or killed.\n+2 Each enemy MU or Cleric that breaks, is disabled, or killed.\n+1 Every enemy fighter that breaks, is disabled, or killed.\n+] Each comrade that berserks.\n-I Each enemy that berserks.\nIn my play-by-mail campaign of Fantorgn, Humans make up the\npredominate percentage of the population. The other, more exotic\nraces, are viewed with some suspicion and distrust, and this is reflected\nin the effect of these other races on the morale of a party.\nEach Elf in the party lowers Morale -2\nEach Dwarf lowers Morale -1\nEach 1/2 Elf lowers Morale -5\nEach Orc lowers Morale -3\nEach known Chaotic lowers Morale -4\nRepresentative Rating List of the Monster Morale Effect\nType of Monster Rating Type of Monster Rating\nMan 0 Minotaur -4\nGoblin/Kobald +2 Giant -4\nOre +1 Ogre -2\nGhoul -2 Beholder -6\nSpectral Undead -6 Hell Hound -5\nVampire -8 Dragon -6\nManticora -3 Elemental -8\nLycanthrope -4 Balrog -8\nThe Dragon\nThese figures may be altered according to the tastes of the DM. The ef-\nfects are meant to represent the general effect the monster will have on\nmen who are aware of their powers and appearance through legend and\ntales. Experience may modify these effects downward.\nEXAMPLE: Klabath Durhn is in a party led by Maygreth the\nFierce (Charisma of 15), including two 6th level fighters and three 4th\nlevel fighters, also a 5th level Mage and his three 2nd level assistants.\nThere are also three Village Priests from the local Temple. Klabath also\nhas a 1/2 elf guide and two elf hirelings as company. His loyalty to\nMaygreth is 10 (as determined by the adjusted die roll). The party runs\ninto a pack of ogres, six in all, and they attack the party. Klabath is\nnear the front. How will he react?\nKlabath has a Bravery of 14. This gives a bonus of + 1 which is\nadded to Maygreth\u2019s Charisma Bonus (+2) and to the Loyalty Bonus\n(0), giving a result of + 3. The Monster Morale Effect (6 Ogres at -2\neach = -12) is figured. Maygreth is L7, so this is added to the pluses of\nthe other higher level fighters, clerics and mages, giving a total of + 19.\nThese factors are added (+ 3 -12 + 19 = + 10) The negative effect of\nthe elves is subtracted (-5 for the 1/2 elf and -4 for the other two =\n-9). This leaves him at a net of + 1. Rolling against the chart, we get a\nresult of 5 on the 10-sided die. Cross-referencing the + 1 and the roll of\n5, we find that Klabath will stand and fight. As the melee progresses,\nthe chart will be consulted when any new + \u2019s or -\u2019s occur.\nThe Quickly Snding Gdventures of Finieous Fingers\nWAITS YOU CANT EAT ME!\nIVE GOT A WIFE AND TWINS\npiu\nPa\n\\ Rada) }\nil tt\ni ay\nf Y\\\ntall ly\neel\nins Za sbixtoeeh tridee\nINA LITTLE CREEP, TRYING TO BRIBE\nFro hint era fh Me! AN HONEST HARDW ORKING BEAST.\npao\nq\n> Wy\n} a r if\nys\n= 9\". }) j\nGWM AGE\nFIN/EOUS, YouRe ALIVE!\nI THOUGHT WE'D\nBouG#T (71 FOR SUPE\nifn\n= rr\neee\nWW\n\u00a2\nOK, OK! SO ITS\nAUNT MINNI@ AND\nMy TWO COUSINS \u00ab++\n5\nBur Look! ive GoT |\nGOLD!IL LOTS, ++ |\nENOVGH FOR... UH\nMAYBE YOULL TAKE\nMy HosT\u20acss ...\nTwin igy??. UH, NICE\nMONSTER, SIT!\n\u201c1 HEEL Roy 2...\n= (\nA NY\nFREEZE! Iw BORED=\nFLAW, THE Bo_r LOBBER,\nMIGHTY WIZARD,\nAND 1 SELDOM\nMiss AT |\n{- YEA, WHO WAS THAT\nGEE, WE DIDN'p) \\ MASKED MAN ANY WAY ?\nEVEN GET To\nPONS | DON'T KNOW Bur\nHE LEFT THIS...\nA,,,A SILVER LADYFINGER...\n"
+  },
+  {
+   "path": "extract/dragon/006/p028_full.txt",
+   "content": "\n"
+  },
+  {
+   "path": "extract/dragon/006/p029_full.txt",
+   "content": "April \u00b077\nFeatured Creature\nDEATH ANGEL\nby John Sullivan\nAttacks: 1 attack with Death\nScythe 1-12. Save\nvs. Death at a -3.\nAlignment: Neutral.\nHit Dice: 7 eight sided.\nNumber Appearing: 1.\nMovement: 12/20\nArmor class: 4.\nTreasure: nil.\nDEATH ANGELS are highly intelligent and speak all languages\ntelepathically. They act either as Oracles, warning a being or party of\ndeath; or they represent Death itself, being under a mission to kill a\nparticular person or creature.\nWhen killed, DEATH ANGELS vanish entirely, leaving no re-\nmains whatsoever.\nDEATH ANGELS have the abilities of teleportation, as well as\nflying with their golden wings. Their teleport has no chance of failure,\nbut they can not teleport out of melee.\nEverytime a DEATH ANGEL hits with its scythe, their opponent\nmust save vs. Death with a -3 on their saving throw. Should the individ-\nual save, they lose one point of constitution, which can only be given\nback by a clerical \u2018Restoration\u2019 or a Healer \u2018Energy\u2019 spell.\nDEATH ANGELS do not dispel per se, but they can be turned\nlike Vampires by a Cleric, but will return the next day, (or night), for\nthey must fulfill their mission of death.\nThose successfully killed by DEATH ANGELS, become DEATH\nANGELS after three days, unless a raise dead attempt is made. A nor-\nmal Raise Dead will not work, only a Raise Dead Fully will, and even\nthen, it will only raise the victim like a regular Raise Dead. Also, when\nrolling for % chance for raising, roll as if the victim\u2019s constitution were\n3. A Wish will work automatically to raise them. If a being is killed\nthree times by a DEATH ANGEL, nothing, not even a wish will bring\nhim back.\nDEATH ANGELS are fingers of Fate, and thus utilized by very\npowerful entities, such as Gods, Demi-Gods, and some Liches and very\nfew Evil High Priests of 20th level or higher. DEATH ANGELS are\n95% resistant to all magic (including Clerical Magic), and they will only\nattack their intended victim, ignoring all others, and they will leave af-\nter killing them, either teleporting away, or flying away after they have\nfulfilled their mission of Death.\nIn as much as DEATH ANGELS will return again and again to\nkill their intended victim, the only way to permanently dispel DEATH\nANGELS is to throw a remove curse upon them if they are slain bat-\ntling their intended victim. This will allow them to go to eternal peace,\nwhich they only find by killing a victim, and having it replace them, for\neven if a body is burned, a victim of a DEATH ANGEL will always\nrise up three days later as a DEATH ANGEL, and therefore, there can\nbe no more than one DEATH ANGEL serving any one master.\nThe Articles of War\n2525 Delaware AV Buffalo, NY 14126\nM-F:6-9 . Sat: 10-2? Sun: 1-?\nGames, Figures, Rules, Models\nDungeon open every Friday\n29\nARCHIVE\nMINIATURES\nINTRODUCES\nsta! aaa \u2014\n: \"is ~ = ~ ae a\nVisit Arun AND\n*CoNJURE THE SPELL OF THE SINGING\nWINDS;\n*FIGHT A REAL TAVERN BRAWL:\n*Be A VAMPIRE, A TRADER, OR A\nCouURTESAN?\n*MEET over 95 NEW UGLIES. WHO WILL\nTERRIFY AND DELIGHT YOU:\n*ToUR THE 21 PLANES OF. HELL.\n*AND MUCH MUCH MORE!\u2018 \u2018\nA NEW WORLD UNTO ITSELF OR\nA COMPLEMENT TO YOUR OWN\nFANTASY ADVENTURE WORLD.\nYOU WOULD HAVE TO PAY OVER $20 ANY-\nWHERE ELSE FOR THE INFORMATION\nIN THESE 100 JAM- PACKED PAGES, BUT\nThe Arouin Grimoire\nIs Yours FOR yusT $10 PosTPAID, |\nSUPPLY IS LIMITED, so DONT DELAY,\nORDER your copy TODAY From:\nARCHIVE MINIATURES\nP.O. Box 93, Dept. A\nBURLINGAME, Ca, 94010\n"
+  },
+  {
+   "path": "extract/dragon/006/p030_full.txt",
+   "content": "The Dragon\nMENTAL BLAST: These blasts have a maximum range of 100 feet.\nLIFE LEECH: When points are leeched away and the leeching mutant\ntakes damage, the hit points are first subtracted from those leeched\nfirst. While the mutant only gets to keep leeched points for 24 hours,\nthese points never return to their owners. *** (Note this Brian and stop\ntrying to kill my poor gorilla?)\nDIPLOMACY WORLD is\na quarterly\nMagazine on Diplomacy which is edited\nby Walter Buchanan, R, R. #3, Box 324,\nLebanon, IN 46052 and subsidized by the\nAvalon Hill Game Company, The purpose\u2019\nof each 40-page offset issue is to pre-\nsent a broad overview of the postal Di-\nplomacy hobby by printing articles on\ngood play, zine news, listing rating\nsystems, game openings, and printing a\ncomplete variant game and map with each\nissue, Subs are $4,00 ($4.50 foreign)\nWith single copies $1.25 each (payable\nto Walter Buchanan),\nDiplomacy is a registered trade-\nmark for a game copyright by the Avalon\nHill Game Co., 4517 Harford Rd,, Balti-\nmore, MD 21214, The set is available\nfrom them for $11.00 plus postage,\nVol. 1, No. 6\nDENSITY CONTROL (others): This power has a range of 100 feet.\nMOLECULAR DISRUPTION: This mutation has a range of 100 feet.\nDE-EVOLUTION: This mutation has a range of 100 feet.\nDUAL BRAIN: This mutation allows two mental saving throws to be\nused for every mental attack, but triple the number of attacks is needed\nto raise a mutant\u2019s mental resistance by a factor of one.\nPLANT MOBILITY: For deciding how fast any given plant creature\nmoves, roll a die for a score of 1-12 and translate the number into yards\nper melee turn.\nPLANT SYMBIOTIC ATTACHMENT: As animal mutation number\n44; not like it is written.\nFor any given poison it is only logical to assume that large concen-\ntrations in the body will disturb the system, no matter what the inten-\nsity, and/or the poison resistance. For the purposes of the game, as-\nsume that the second and further applications of any poison within one\nhour will reduce the being\u2019s poison resistance by a factor of two for\neight hours or until neutralized.\nIn using the alternate missile chart, the numbers represent targets\nhaving an armor class of seven and referees should add one number for\nevery armored target above seven in each range.\nThe Vibro weapons should have a weapon class of their own and it\nreads as follows:\nARMOR CLASS WEAPON CLASS 9\nVB tea a1 AG, Bah Bea eels, Sk uh whe 10\nDeve wes viods igs oe ecto seagais eave i,\nBsa ah We Go Sephre whoas aden Beg Gags Sg 8\nA shies SPRAY He ye RD AS eS i\nDie ation ney nae aie WEE tans nates a ee 6\nGs hah doa ot acaue ty neaa ata g ear aents 6\n(Sere ee ee eee ere ee Te ee 4\nGila als, uanbrp etme Ran rey ate wate ey 3\nMore information will certainly come from me and many others that\nplay \u201cMA\u201d in the nature of rules clarifications and additions to in-\nease the judging and playing pleasure of everyone.\nEPT figures\n-EPT figures The DUNGEON Hobby Shop\nTHE MIDWEST'S NEWEST AND MOST COMPLETE WARGAME SHOP\nFANTASY CROSSROADS, OF THE WORLD\nTELEPHONE\n414-248-3625\n723 WILLIAMS STREET\nLAKE. GENEVA, WI 53147\nConvention Schedule \u201977\nMinnesota Campaign \u2014 June 4 & 5 Olmsted Co. Fairground, Rochester, MN.\nMany tourneys, from WWII to fantasy. Guest Speaker - dealer exhibits.\n$2.00/day, $3.00/weekend. Contact Brian Houston, POB 6603, Rochester, MN\n55901\nGEASC IE \u2014 June 17-19 CSU Northridge campus. Boards, minia., D&D; deal-\ners and publishers will be present. $3.00. Contact ji im Blancher, 19536 Minneha-\nha St., Northridge, CA 91326 \u201c\nPhil Con \u2014 June 24-26 Widener College, Chester, PA. 204 tourneys - Giant\nD&D & WRG Ancients Events, Demos, Seminars, Auction, Figure painting\ncompetitions. Many manufacturer\u2019s reps. $2.00/day, $5.00/weekend. Contact.\nJoy Hadley, 918 Harry St., Conshohocken, PA 19428\nCan Con \u2014 July 1-3 #11-2415 South Vale, Ottawa, ONT K1B 4T9. Tournaments\nbesides D&D, Gladiator & Western Gunfight not set at press time. Downtown\nOttawa. Costs vary. Contact Can Con at above address.\nOrigins ITI \u2014 July 22-24 Wagner College, Staten Ist., NYC. Boards, some minia.\nand fantasy, seminars, workshops, tourneys & exhibits. The East Coast Con,\nsecond in splendor only to Gen Con. Reservations, Origins \u201977, c/o SPI, 44-E.\n23rd St., NYC 10010\nGen Con X \u2014 August 18-21 Playboy Resort, Lake Geneva, WI. Hosting 10th\nAnnual Diplomacy Con. Tourneys, open gaming, miniatures, boards, role-play-\ning & more. Special guests include Gardner Fox, Fritzleiber & Harry Fischer.\nSeminars, demos & discussions. America\u2019s Premier wargaming con, now in 10th\nconsecutive year. Address inquiries to Gen Con X, POB 756, Lake Geneva, WI\n53147\n"
+  },
+  {
+   "path": "extract/dragon/006/p031_full.txt",
+   "content": "April 77 The Dragon\nDungeon Construction Made Easy!\nAGREERE PEO She EzRS Lt] | it | A\n\u2018i. ae SEGQGGGoe \\ Gee? on\nLe oO) Lae LW)\nBRE EERE NS. 8 7 Ae 4\nTE LA\nHEE EE ag\nERR RR eee\nSURES GUA WERAIEGES\npape aes\n: rH AN Pe ee\nsi\n|\naN\nLT\na N\nZEN\neo\nLY > NN\nEV C4URN\nPY YT NA\nPTT TTT ee\nped todd | pet ff\n| |\nel\n- BEES, PNN Sea See\nx\nfeet EB | LL\nCe ee ld\nPTT TET Pp\nBee Bee aw\nNow you can make dozens of completely different dungeon levels of all\nshapes and sizes - in the time it used to take to do two or three! How?\nWith a set of DUNGEONS & DRAGONS geomorphic dungeon level\npieces. Each set of DUNGEON GEOMORPHS contains 15 ee\npieces: 10 square pieces of 54\" by 54\" and 5 rectangular pieces of 25\"\n105\". You mix and match, turning them for completely different ieee:\nand thousands of different poeible combinations are easily accomplished.\nRecord the combinations which form each level, and you have a complete\ndungeon ready for stocking with monsters and treasures.\nNOW AVAILABLE: SET ONE, BASIC DUNGEON |\nSET TWO, CAVES AND CAVERNS\nA MUST FOR DUNGEONS & DRAGONS BUFFS\nEach set comes with complete instructions for only $2.49\n#\u20ac\\ TSR HOBBIES, INC.\nWe P.O.B. 756\n"
+  },
+  {
+   "path": "extract/dragon/006/p032_full.txt",
+   "content": "The Mongol Army \u2014 | Mystery Hill \u2014\nA Disciplined Horde America\u2019s Stonehenge?\nPt I of Reminiscences\nof a Solo Wargamer Military Formations on Tekumel\nPtll of AMR | What to do when\nArtillery Evaluation the dog eats your dice\nA Viking-Saxon The Journey Most Alone \u2014\nDemi-Campaign sequel to FOREST OF FLAME\nAPIEE \u2018SiA4 \u201cWASNA Av TO\ngo. Bod\nUp MS |e PU PLES Lak Baas) Oey pe Typed oy capes apd Seep pusoes oe eM oy UMypEDpdy\n"
+  }
+ ],
+ "inline_count": 105,
+ "header_sections": {
+  "the Sea Trade system (folio 6)": [
+   {
+    "kind": "const",
+    "name": "dsoSeaCargoSmallGp"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaCargoLargeGp"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaPilotFeeSmall"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaPilotFeeLarge"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaImportTaxPct"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaPortsOnCoast"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaRouteMiles"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaCoastalMilesMax"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaDelayWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaDelayWeeksMax"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaLossNoticeWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaLossNoticeWeeksMax"
+   },
+   {
+    "kind": "const",
+    "name": "dsoSeaProfitLossCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoSeaCoastalTradeOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoSeaNoForcedLossSale"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoSeaDepartedPortCountsBypassed"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoSeaWildernessRulesWhenAboard"
+   },
+   {
+    "kind": "table",
+    "name": "dsoSeaProfitLoss"
+   }
+  ],
+  "the psionic determination option (folio 25)": [
+   {
+    "kind": "const",
+    "name": "dsoPsiHumanRollMin"
+   },
+   {
+    "kind": "const",
+    "name": "dsoPsiHalfHumanRollMin"
+   },
+   {
+    "kind": "const",
+    "name": "dsoPsiAbilitiesCount"
+   },
+   {
+    "kind": "const",
+    "name": "dsoPsiBasicWeeksPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dsoPsiSuperiorWeeksTenths"
+   },
+   {
+    "kind": "const",
+    "name": "dsoPsiAttackDefenseWeeks"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoPsiAnyClass"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoPsiNoAcquisitionPenalty"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoPsiLearnByEspAndProjection"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoPsiSpontaneousAtNextLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoPsiMagicalAcquisition"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoPsiLowIntelligenceLimits"
+   }
+  ],
+  "the morale system (folios 26-27)": [
+   {
+    "kind": "const",
+    "name": "dsoMorBrave3"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBrave4"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBrave56"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBrave78"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBrave912"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBrave1314"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBrave1516"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBrave17"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBrave18"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBrave19"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorLvl34"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorLvl56"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorLvl78"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorAdjComradeBreaks"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorAdjMuClericBreaks"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorAdjLeaderBreaks"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorAdjEnemyLeader"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorAdjEnemyMuCleric"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorAdjEnemyFighter"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorSurpriseMod"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorBerserkPctPerRound"
+   },
+   {
+    "kind": "const",
+    "name": "dsoMorOutcomeCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoMorCharismaSameTable"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoMorLoyaltySameTable"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoMorBreakDexDamageRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoMorHesitateRecheckNextRound"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoMorRecheckOnChartChange"
+   },
+   {
+    "kind": "table",
+    "name": "dsoMorOutcome"
+   }
+  ],
+  "the Death Angel (folio 29)": [
+   {
+    "kind": "const",
+    "name": "dsoDaHd"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaHdSides"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaAc"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaMove"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaMoveFly"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaNumAppearing"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaScytheMin"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaScytheMax"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaConLostPerSave"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaRiseDays"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaMagicResistPct"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaRaiseConAsIf"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaKillsIrreversible"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaMasterPriestLevelMin"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaAvgHp"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaXp"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaXpPerHp"
+   },
+   {
+    "kind": "const",
+    "name": "dsoDaXpValue"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaVanishesWhenSlain"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaTeleportNoFail"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaNoTeleportFromMelee"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaTurnedLikeVampire"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaReturnsNextDay"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaVictimsRiseAsAngels"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaRaiseDeadFullyOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaWishRaisesAutomatically"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaOnlyAttacksVictim"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaRemoveCurseGrantsPeace"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaOnePerMaster"
+   },
+   {
+    "kind": "bool",
+    "name": "dsoDaTelepathicAllLanguages"
+   }
+  ]
+ },
+ "audit_comment": "THE DRAGON ISSUE-6 OPENER ROUND - four adjudicated chains. The Sea Trade system (folio 6, Spencer): the cargo and fee pins, the coastal doctrines and the sixteen-band profit/loss grid with the ship-lost sentinel. The psionic option (folio 25, Miller): the percentile gates, the thirty-seven abilities and the learning ladders. The morale system (folios 26-27, Hayes and Gilbert): the modifier ladders, the recheck adjustments and the eleven-chart outcome grid with B/H/S/F coded 0-3. The Death Angel (folio 29, Sullivan): the stat pin, the mission doctrines and the DMG p.85 XP conversion."
+}
