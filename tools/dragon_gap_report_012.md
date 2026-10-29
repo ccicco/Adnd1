@@ -56,7 +56,7 @@ harvestable there.
 
 ## Boxes
 
-- [ ] **The Ovalle illusionist article and the Endersby and
+- [x] **The Ovalle illusionist article and the Endersby and
   Carroll ship cargo article** (folios 6-7, 12) - the
   issue-12 opener round, part one
 - [ ] **The Persian Mythos and the Lovecraftian Mythos**

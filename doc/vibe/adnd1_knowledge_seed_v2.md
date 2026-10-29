@@ -27845,6 +27845,24 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   That Monster winners may harvest, and the
   brawling long-term-effects teaser promised in
   the Sorcerer's Scroll). WAIT FOR GO.
+  - R919 LANDED (314945a, issue-12 opener part one,
+  prefix ilv, 62 inline: Ovalle illusionist
+  folios 6-7 + Endersby and Carroll ship cargo
+  folio 12; census 841->842; visual pre-apply
+  check confirmed the five garble pins: folio 12
+  Spice and Ivory value cells print blank and
+  Foreign slaves prints 20-60 people (all -1
+  sentinel, sentinel_census 3, per full-res scan
+  + djvu word geometry); folio 7 5th-level header
+  and Cause Serious Wounds 1 point confirmed;
+  handoff R919: The Dragon issue-12 opener part
+  one: the Ovalle illusionist article and the
+  Endersby and Carroll ship cargo article (census
+  842). Next: R920 issue-12 opener part two
+  (Persian Mythos + Lovecraftian Mythos, prefix
+  myt/prm to verify free, gap report 012 box 1
+  flips [x], box 2 stays open), then R921 pure
+  flip closing both boxes. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
