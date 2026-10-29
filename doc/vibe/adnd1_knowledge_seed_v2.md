@@ -27500,6 +27500,38 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   NEXT: the issue-7 flip (report 007, 1 box to
   close), then the issue-8 opener (source already
   in the -012 item). WAIT FOR GO.
+  - R909 LANDED 2026-10-29: commit
+  86956d00e0011439706cce5056fa0aef01dc190f (base
+  02adfcb, census 831 -> 832), the Dragon issue-7
+  box closing round: the pure flip, no new ink -
+  the R903/R907 precedent shape. THE SHAPE:
+  prefix cpx (regtest-scan clean), header
+  rules/cpx.h (11 inline: 7 consts + 4 bools, no
+  tables), audit "R909 Dragon issue-7 closure
+  audit" at rules/audits/r909_batch.h, 3
+  examples, 2 header_sections, ZERO file_patches
+  and data_files, 1 gap flip. THE FLIP: the
+  issue-7 box in tools/dragon_gap_report_007.md
+  went [x] -> 1 closed / 0 open, THE ISSUE-7 WALK
+  COMPLETE - the Prowler was the only engine-
+  relevant ink in issue #7. The bookkeeping pins:
+  the single box and its single chain, the
+  issue-6 report complete at 1/0 since R907, the
+  issue-5 report complete at 1/0 since R903, the
+  registry ground truth carried forward (1311
+  live / 1333 base lua files / 25 never-load
+  errors, the battery line the only ground
+  truth), and the variant-layer doctrine riding
+  the closure. The R908 record (67 lines) seated
+  in the seed via prev_record. VERIFIED: engine
+  double-run GREEN applied 6 / already 6; rverify
+  against pristine 02adfcb: 11 mutants 0 missed;
+  the raw JSON round-trip byte-exact. Spec
+  tools/spec_r909.json, 10,142 bytes, md5
+  1508b8214926ea63c39598765ec9f58b. NEXT: the
+  issue-8 opener (the source lives in the same
+  archive.org item accessory-dragon-
+  magazine-012). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

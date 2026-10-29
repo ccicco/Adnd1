@@ -611,6 +611,7 @@
 #include "rules/csx.h"  // R907: the Dragon issue-6 box closing round, the four-chain walk complete
 #include "rules/pwl.h"  // R908: the Dragon issue-7 opener, the Prowler, the thin single-chain harvest
 #include "rules/cpx.h"  // R909: the Dragon issue-7 box closing round, the thin walk complete
+#include "rules/dgo.h"  // R910: the Dragon issue-8 opener, the Gygax Planes article, the Watson towns article and the Kuntz gems re-evaluation
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4720,6 +4721,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r910_batch.h"  // R910: R910 issue-8 opener audit
 #include "rules/audits/r909_batch.h"  // R909: R909 Dragon issue-7 closure audit
 #include "rules/audits/r908_batch.h"  // R908: R908 Prowler opener audit
 #include "rules/audits/r907_batch.h"  // R907: R907 Dragon issue-6 closure audit

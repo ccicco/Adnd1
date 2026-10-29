@@ -1,0 +1,141 @@
+July, 1977
+No town or village would be complete without a full complement
+of taverns and inns. These are the heart of the town and where the nu-
+clei of adventurers meet and discuss their plans.
+It is reasonable to assume that each tavern would have its own par-
+ticular clientele. For example, in my town, one inn is the only place in
+town to put up elves, dwarves and hobbits, so that visiting characters of
+this type would most likely be found there. The exact composition of
+patrons at a given moment can be obtained in a system such as the fol-
+lowing:
+Falgrave’s — where non-humans frequent and stay when in
+town. Falgrave is a dwarf himself and up on non-human gossip.
+3-18 patrons, 2/3 of which shall be non-human and ¥2 will be war-
+riors; the rest will be townspeople, nonhumans of other classes.
+1-4 will be non-human wayfarers or merchants.
+Another inn could be frequented by visiting human merchants so
+half of its patrons would be men of such class. Another tavern might be
+the meeting place of local warriors and thus a good place to swap tales
+and find the non-players to round out an adventure (persons also
+known as monster fodder . . .).
+Other establishments might cater only to clerics or the wealthier
+classes. The possibilities are limited only by the town size and the DM’s
+imagination.
+To round out the town I'll throw in a couple of ideas best catego-
+rized as miscellaneous.
+Surgeon — for a fee of 25 gps the doctor will attempt to cure 1-6
+wound points (50% chance of success); for 35 gps he will attempt
+to cure poison (a one in six chance for success). Maximum of one
+attempt per day and one successful healing or cure per week.
+Money paid despite the success or lack thereof, of the attempt.
+Library — a number of scholars will seek out knowledge among
+the many tomes and volumes for a fee. The base value of general
+information is about 100gps with specific facts increasingly more
+expensive. (Types of knowledge might include legends concern-
+ing a certain area or dungeon, or DM created monster, Scribes
+available to identify and write in languages.)
+As the DM develops his town he should keep a town directory,
+listing the address of the establishment as well as its function. A few
+phrases describing the interior adds to the color. This should be follow-
+ed by pertinent info on the proprietor, types of patrons or visitors and
+their number (as in the above, Falgrave’s example). Then as players en-
+ter a shop or market the DM can give them a brief idea of the place and
+make it come alive for them.
+Part II. The Town Population:
+Once you’ve got the physical aspects of your town laid out, you’re
+going to need someone to populate it. These non-player characters will
+provide the needed bodies to serve as shopkeepers, merchants, tavern
+owners and patrons, warriors and magic users your players will run in-
+to. They will truly serve to flesh out the skeletal structure your previous
+work has provided you.
+It is probably best to roll up a large amount of character first and
+then assign them jobs and positions in the town as seems appropriate. It
+is not likely that the village smith would be the possessor of a mere 3 or
+4 strength, or that a man with an 18 intelligence would serve as a cook’s
+apprentice. If you can’t find the certain person you need from the pool
+you’ve rolled up, Fake it! Just supply the needed attributes you want
+for those particular non-players. You certainly have license as DM to
+literally create the right man for the job.
+The easiest way to keep track of these non-players is to get a small
+note book and devote it to that purpose. As to the segregation of types,
+Ive found that the headings, “warriors”, “magic-users’, “clerics”,
+“townspeople” and “specialists” (the latter referring to the myriad of
+new character types that have lately appeared) suit admirably. Be sure
+to leave room as you will probably wish to on your initial population
+base later.
+All standard attributes should be rolled for in the usual manner. If
+you wish to reflect the fact that the adventuring types are more likely to
+be the cream of humanity, throw 3 four-sided dice for townspeople.
+Additionally, women, for strength and constitution only (forgive me,
+any liberated women reading this), and children, for all attributes, can
+Che Bragon
+use two standard dice. Other considerations can be determined on the
+following chart. Roll once for EACH category.
+Die Roll Alignment Age Personality Loyalty
+| Law young Very cooper- High
+ative, friendly
+2 Law young Cooperative, Loyal
+friendly
+3 Law oun Friendly Average
+4 Neutral iddle Age Non-commital Average
+5 Neutral old Unfriendly Disloyal
+6 Chaos Very Old Hateful Low
+Die Roll _ Initiative Level
+I High Special
+2 Average 3
+3 Average 2
+4 Average I
+5 Average |
+6 Low |
+Chart Key:
+Level — straight forward, simply the experience level of that char-
+acter. For “special” roll an eight-sided die and number rolled equals
+the level of the character.
+Alignment — Again, just as it appears. I’ve reasoned that a town is
+a lawful place just by its nature of structure and emphasis on order in
+its design. Hence, only a small chance for chaotic alignment.
+Age — more informational than functional. I only wanted to pro-
+vide a characteristic to help tell people apart. Add one to roll for each
+whole group of two levels above 2nd level the character has gained.
+Add one always, for magic-users.
+Personality — The hardest, and the one the DM will have to add to
+the most. This will give a basic idea of how a particular person is going
+to act when players interact with him. A die roll of 1 here would affect
+subsequent random reaction die rolls with a +2 when the character is
+asked to do something, go on an expedition, etc. A die roll of 2 would
+be a+ | while rolls of 5 and 6 would be -1 and -2 respectively.
+Loyalty — In a manner similar to personality, this category would
+affect any rolls for desertion or other tests of loyalty. Low loyalty cou-
+pled with a chaotic alignment might result in the character betraying the
+party to an evil high priest, etc.
+Initiative — This is to help the DM mainly. Average initiative will
+mean a character won’t be particularly bright or innovative, while high
+initiative might mean a strong character who could be a leader if the
+players are botching the show. Low initiative characters have to be told
+to do everything.
+After you have rolled up a bunch of people, enter them in your
+notebook. In addition to the above material, it’s a good idea to list a
+place or two where the character might be found. To real flesh them
+out, add a few bits of information about them personally. For example:
+Blatherson of Hillock
+Strength 12 — Constitution 9 — Intelligence 13 — Charisma 15 — Dex-
+terity 8 — Wisdom 7 — Align: Law — Age: Old — Pers: Coop/Frnd —
+Loy: Loyal — Int: Aver — Level: 4 Found in Golden Goblet tavern,
+likes to tell war stories of his heroics in Goblin Wars (over-emphasizes
+his own importance), loves a good mug of meade.
+More now than just monster fodder, Blatherson is a real, if some-
+what Falstaffian, character. By adding these little bits your die roll gen-
+erated population will take on a little semblance of real people and be-
+come more than bodies attributed with certain mathematical character-
+istics. Your players will actually be able to make friends with certain
+townspeople, as well as cross others. With the inclusion of personified
+townspeople your town will literally come alive.
+The development of a town can be a truly rewarding experience for
+both the DM and the players. Approached in the right manner (and the
+ideas presented here are only offered as suggestions) can be a place of
+interest in and of itself, and certainly worthy of one afternoon’s adven-
+turing.
+Lyle’s Hobby & Craft Center -
+Large Selection of Wargames —
+38 North Cass Ave.
+852-8085 Westmont, Ill. 60559

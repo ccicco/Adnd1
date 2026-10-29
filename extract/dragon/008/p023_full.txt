@@ -1,0 +1,117 @@
+July, 1977
+Table D — Jewelry Composition (metal):
+01-20 Bronze (10-40 G.P. Value)
+21-30 Copper (20-80 G.P. Value)
+31-40 Silver (100-400 G.P. Value)
+41-50 Gold (500 G.P. - 1,000 G.P. Value)
+51-60 Gold + Silver Filigree (500 - 1,500 Value)
+61-70 Electrum (1,000 - 2,000 Value)
+71-80 Platinum (1,000 - 3,000 Value)
+81-85 Platinum + Electrum Filigree (1,000 -
+4,000 Value)
+86-95 Mithril (1,500 - 4,500 Value)
+96-00 Mithril + Platinum filigree (2,000 - 5,000
+Value)
+Table E — Jewelry Composition (# of gems):
+01-25 2-12 gems (may not go over 5 carats)
+26-50 3-18 gems (may not over 10 carats)
+51-75 3-36 gems (may not go over 20 carats)
+76-90 2-20 gems (no limitations)
+91-95 3-24 gems (at least 5 carats)
+96-99 3-30 gems (at least 10 carats)
+00 10-40 gems (at least 20 carats)
+Table F — Jewelry Types:
+01-10 Rings
+11-20 Bracers
+21-25 Bracelets
+26-30  Chalices
+31-35. cups
+36-40 Tankards
+41-50 — Earrings
+51-60 Necklaces
+61-70 Tableware
+71-75 Candelabra
+76-80 Anklets
+81-85 | Neckbands
+86-90 Mirrors
+91-95 Snuff Boxes
+96-00  Statuettes
+UNIVERSAL SOLDIER
+MINIATURE RULES
+TH
+j. laing c. mcclefland p. sharpe
+A comprehensive set of rules for miniature wargames
+covering all periods of warfare from ancient times to
+1650 A.D.!
+Available at GENCON X or by mail from RAFM,
+Post Office Box 62, Paris, Ontario, Canada, N3L
+3E5
+The Dragon
+Example of Determining Gems and Jewelry:
+Gems — 3 gems are found. The judge decides whether he will roll
+for them as a group or separately. He decides for rolling them as a
+group. He rolls the percentile dice and consults table A. A 55% was
+rolled indicating that the gems are of 75 gold piece value per carat. The
+judge rolls the dice again consulting table B. The roll is 77% indicating
+that each of the gems are of 5 carats each. Elementary math solves the
+rest for 75 G.P. x 5 (carats) x 3 (gems) = 1,125 gold piece value for all
+three gems. If one wishes to add extra realism he could then proceed to
+table C and see what type of gems he has acquired by rolling on the 50
+G.P. - 75 G.P. table.
+Jewelry — 3 pieces of jewelry are found and the judge again de-
+cides to roll them as a group. He rolls a 63% and consults table D. This
+indicates that he has electrum (base) jewelry. He then throws the dice
+again to see how many gems are set in each piece of jewelry. Rolling for
+them as a group he throws a 20% on table E indicating each piece of
+jewelry has 2-12 gems each of no more than 5 carats per gem (though
+this number could be less it cannot go over five carats.) The judge then
+refers back to tables A & B for basic values and carat determination of
+the gems on each piece of jewelry. One might then go to table F for de-
+termining the type of jewelry found.
+One might say that this could get a bit involved if one ran into a
+horde of dragon treasure containing 42 gems and 34 jewelry. This con-
+tention I agree with and these tables are primarily aimed at the smaller
+finds of gems and jewelry, not at those that would have you rolling all
+day. As for myself, just to roll up special jewelry or gems once in
+awhile is a treat!
+So, You Want Realism in D&D?
+by Brian Blume
+We at TSR have heard several people express a desire for a system
+which gives more realism and variety to the method for determining the
+natural abilities of player characters in D&D. After minutes of exhaus-
+tive research, we have come up with an optional system which is de-
+signed to replace the old method of rolling three dice for each of a play-
+er’s abilities. This system is guaranteed to make a player character con-
+form more to the abilities of the actual person owning them and will
+provide a great variety in these abilities from person to person.
+STRENGTH — To determine strength, go to a gym and military press
+as much weight as you possibly can. Divide the number of pounds
+you lifted by ten; the result is your strength rating.
+ing.
+INTELLIGENCE — To determine your intelligence, look up the re-
+sults of the most recent IQ test you have taken and divide the result
+by ten. This number is your intelligence rating.
+WISDOM — To determine your wisdom, calculate the average number
+of hours you spend playing D&D or working on your D&D Cam-
+paign in an average week. Subtract the resulting number from twen-
+ty and this is your wisdom.
+DEXTERITY — To determine your dexterity, go down to the track at
+the local High School and run 440 yards. Subtract your time in se-
+conds from eighty, and the result is your dexterity rating.
+CONSTITUTION — To determine your constitution, figure out the
+number of consecutive number of months you have gone without
+missing a day of school or work due to illness. The number of
+months is equal to your constitution rating.
+CHARISMA — To determine charisma, count up the number of times
+you have appeared on TV or have had your picture printed in the
+newspaper. Multiply this number by two, and the result is your cha-
+risma rating.
+In order to try out this system, I tested it by figuring my own rat-
+ings. The results are interesting (I think?).
+STRENGTH - 8
+INTELLIGENCE - 12
+WISDOM - 19
+DEXTERITY- 4
+CONSTITUTION - 9
+CHARISMA - 14
+23
