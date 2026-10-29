@@ -1,0 +1,132 @@
+The Dragon
+By M.A.R. Barker
+In this edition I shall carry on with the answering of questions
+put by players via the mails. If anyone has other queries about “Em-
+pire of the Petal Throne,” “War of Wizards” (which fits into the
+game scheme as a one-on-one duel between two wizards), or TSR’s
+new set of miniature rules, “Legions of the Petal Throne,” please do
+send them in, and I shall try to reply.
+(1) One sentence was left incomplete by the typist in the rule-
+book for “Empire of the Petal Throne”: p. 52, in reference to the
+Shin’s tail. How many hit dice does the tail do, is a saving throw
+against poison (etc.) needed, and is it possible for a Shin to coordin-
+ate his combat, allowing him to use both his tail and some other
+weapon in the same combat round? [Paraphrased from a letter from
+Mr. Dale Dunn of Palm Bay, Pa. ]
+The Shén tail ends in a mace-like horny elongated ball, rather
+similar in texture to a pineapple. It is hard and is swung with great
+force, but it is not very heavy. Therefore, if a tail hits, I let it do one
+four-sided die of damage (no damage plusses on this). The Shén tend
+to lash their tails in battle-rage and cannot thus consciously coordin-
+ate both the tail and their other weapons in a fight. Indeed, if the
+Shén has a low dexterity, I would roll each round to see if he acci-
+dentally hits one of his companions — probably not doing much
+damage but knocking the comrade’s aim off, disconcerting him, etc.
+To check this (and other dexterity problems), roll percentile dice,
+and if the score is less than the being’s dexterity score, then he has
+no difficulty; if it exceeds his dexterity, then — he has accidentally
+struck a companion, failed in what he was attempting, etc. No sav-
+ing throw is needed for a Shen tail blow since the thing is hard and
+mace-like and thus not poisoned. To see if it hits, use the table for
+nonhumans, etc. in Sec. 720. I allow no hit plusses or damage
+plusses for this sort of involuntary tail-lashing, but referees may
+modify this if they wish.
+(2) On page 28, paragraph five under Sec. 710, you say that
+&quot;nonhumans having a basic potential of two dice are thus intrinsical-
+ly twice as strong and resistant to wounds, and they rise in levels ac-
+cordingly.” Does this mean that “point-wise” for every level a Hlyss
+rose, a human would have risen two? [Also from Mr. Dunn’s letter]
+No, I never considered that nonhumans would rise at a different
+rate than men; only that they could go up in levels like men, and
+when they achieved a new level they would have more. hit-dice than
+men. Thus, when a Shén reaches 2,001 experience points, he will be
+Level II, and if he is a warrior, he will have four dice of hit-points
+to a man’s two. My use of the word “accordingly” is admittedly a
+source of confusion here. The problem is that “monsters” do not go
+up levels or attain experience, while intelligent nonhuman races
+should certainly do so.
+(3) Is it not too difficult for players to attain really high levels
+in the game? Reduced experience points make it next to impossible
+for one to climb from Level X to Level XI, for example. [From an
+unknown questioner at GenCon]
+The answer is that I more or less deliberately tried to keep play-
+ers (and nonplayer allies and henchmen) from rising far too fast for
+the game. I have played in D-and-D campaigns in which we all shot
+right up to 27th level wizards or whatever, and — in my opinion —
+the fun was lost. As a result, I may have made it TOO hard for
+players to get up into the rarified atmosphere of the Imperial court.
+On the other hand, looking at it more realistically, a foreigner who
+12
+Vol. 2 No. 5
+has just got off the boat a few months ago could hardly rise to be
+president of Standard Oil, be elected to the U.S. Senate, and be or-
+dained a bishop of the Catholic Church all within a year could he?
+The higher levels should only be achieved by those who stay in a
+campaign, play intelligently and use all of the possibilities, and who
+gradually become known in the Empire for their abilities. — It is
+also true that it is more entertaining to remain at a comparatively
+lower level where one has more freedom of action and can move
+around. Not so low, however, that any passing critter can do the
+player in, but still below that point in one’s career where the temple
+authorities lay a pile of parchments upon one’s desk and say, “Your
+daily administrative tasks, m’lord.” There is a fine balance between
+making the game too easy and too hard: if one is permitted to rise
+too quickly, the court intrigues and Imperial bureaucracy can be
+deadly, and if it is made too difficult then one’s players all die too
+easily and become discouraged. To solve the latter problem, it is wise
+to search for helpful nonplayer characters who will accompany a
+party of low-level people, loan them magical devices (in return for
+some goal, of course), or who will provide them with troops and
+flunkies to take the brunt of the action. Some of our most enjoyable
+adventures have been in the company of aspiring nobles, greedy
+tomb-robbers, devious scholars, and Imperial officials on some sort
+of mission. The only limitations are those of the referee’s skill in de-
+veloping a “scenario.”
+(4) Who — or what — are the &quot;Demons&quot; you mention here
+and there? Are they allied with the gods and cohorts?
+I have no complete list of Demons; I only know of about a hun-
+dred of them thus far, and there are others I do not want to know
+about! Some of these creatures are only “monsters”: i.e. single en-
+tities of a purely physical sort which inhabit areas of one or another
+of the ancient labyrinths, a particular remote outdoor area, etc.
+Others are minor beings of the same interdimensional sort as the
+gods and cohorts — but of far less power and usually of limited po-
+tentiality of appearance. A number of these beings are under the
+control of the inner circles of one temple or another, set as guar-
+dians of treasure or secret shrines, etc. They are invariably hostile to
+man, and the wizards and high level priests who control them run
+terrible risks. Of course, there are also “purely legendary” beasties
+which are simply fictional and play. a part only in the epics and the
+mythology of the five empires. The development and placement of
+these “Saturday Night Specials” should be the job of the referee —
+who will hopefully take pity upon his unfortunate players by making
+each such demon somehow vulnerable or amenable to neutrality.
+(5) How are the Sst organized, where are their cities, etc. ?
+Ssu cities are mainly underground — they go on for miles. The
+Sst live in large nest-groups, and not much is known about their
+social organization. Since they are basically inimical to man, their
+deities and other such matters are unknown. I have had players who
+wanted to start the game as Ssu, but this is difficult in that no Sst can
+ever cooperate with a human, or vice-versa. If one is fighting a minia-
+tures battle (with The Old Guard’s excellent figure of a Sst — and the
+armoured Ssu may be coming soon as well), then their military organi-
+zation becomes relevant: they usually carry the weapons shown in the
+book, but they may have halberds, maces, long spears, and even pikes.
+They also use missile weapons (shortbows and composite bows, light
+and medium crossbows), and in their burrows they have light bolt
+throwers (ballistae) with which to defend their tunnels. “Legions of the
+Petal Throne” provides a rough percentage breakdown of these forces.
+Sst society, so far as is known, is divided into workers and
+fighters; the latter category is subdivided into warriors and magic-
+users, with administrators being chosen from the latter group. Their
+means of reproduction is oviparous, their young being born in leath-
+ery sac-like eggs. Current theory has it that there are only two Sst
+sexes, plus the neuter workers, but this is not proved so far as I
+know.
+Ssti cities exist under the rocky wasteland of hexes 2931, 3032
+3133, 2934, and a few off the map to the east. Not much shows or
+the surface - a tunnel mouth here, a few rounded, alien-looking
+surface structures there — except at the place humans call just
+“Ssu” in hex 2932. There, I am told, there are crumbling black obe-
+lisks and monolithic tumbled ruins. The ruins of Ssuganar, now in
+human-occupied Pechano (hex 2831) are of this same type. They are

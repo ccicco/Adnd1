@@ -1,0 +1,105 @@
+The Dragon
+QUARTERSTAFF FIGHTING
+RULES
+by JAMES M. WARD
+In medieval England the art of staff fighting was taken to its high-
+est form. This set of rules is an attempt to reflect some of the skill and
+art of this bruising sport.
+Strength, dexterity, and constitution are all functions of the game.
+These factors are determined by rolling three six sided dice for each. A
+person with a large strength roll (18-17) naturally does more damage
+when he hits, over and above what a player with average or less
+strength does. Players with high dexterity scores (18-17-16) not only hit
+with greater precision, but they are able to defend themselves far better
+than the average staffer. Players with strong constitutions (18-17) are
+so much hardier that they can absorb punishment with little or no af-
+fect. All of these factors are reflected in charts that are to follow.
+Experience in the art of staffing and natural talent are reflected in
+the three stages of the art with stage one the least talented and stage
+three the most. These stages are given plusses for hitting purposes. In-
+creased experience in the use of the quarterstaff naturally causes a raise
+in ability for any given player. 50 matches with a person or persons
+equal to or better than any given player where the player wins 30 of the
+50 matches raises a first stage player to the second stage. Double the
+above situation allows a second stage staffer to advance to the third
+stage.
+: In any melee situation either fighter has three choices: they may at-
+tack twice (written as A-A), attack and defend (written as A-D), or de-
+fend twice (written as D-D).
+These two choices are carried out in the same melee turn by both
+staffers. Attacking is merely a matter of rolling a 20 sided die and
+noting the number. The first stage of staff proficiency allows the player
+to hit on a roll of 12 or more. The second stage player needs a roll of 11
+and the third stage player needs a roll of 9. When a hit is scored the suc-
+Vol. 2 No. 5
+cessful player rolls a six sided die for the amount of damage done to the
+other player and adds any strength bonuses. An unmodified hit of 20
+adds one point of damage to the six sided die.
+If a player attacks twice in the melee turn, he rolls the 20 sider
+twice. Two hits would result in two six siders being thrown for damage
+on the other player. In this double attack option, since players do not
+use their staff for defense, they must take an extra three points of dam-
+age if they are hit in that melee turn. Note that they do not take an extra
+three points per hit as a result of the other player also attacking twice
+and hitting twice. Usually a staffer will attack and defend in any given
+melee turn. The defending process is merely a matter of rolling a six
+sided die and subtracting it from any damage done by the opponent in
+that melee turn. This defending roll is only used in that melee turn. The
+third option of defending twice has the defender rolling two six sided
+dice for a total score used against any damage done to him that turn.
+If in any given melee turn that a staffer strikes twice and does more
+than four points of damage to his opponent, that opponent is forced to
+defend twice in the next melee turn.
+When a staffer defends twice in his melee turn to negate all the
+damage done to him, he hits with a plus one on his first strike in the
+next melee turn.
+The total amount of damage taken by any player is represented by
+the players constitution and strength scores added together (referred to
+as the Combat Index). This score is used when damage points are sub-
+tracted. A player may fight until he is down to one point; at this point
+he is considered out cold.
+Staffers usually wore little or no armor (except in some cases, a
+helmet of stout leather or steel), but for those who wish it, the use of
+chainmail absorbs four points of damage every time a player is hit. The
+use of platemail absorbs six points every time the player is hit. How-
+ever, a player wearing chainmail must add 3 to his roll; plate adds 5.
+In any given melee the player with the highest Combat Index states
+what option he is using and then the other player states theirs and they
+both roll the dice. All combat is simultaneous regardless of any first hit
+on either side. A suggested option to this battle method is to secretly
+write down every melee turn what each player plans on doing.
+CHANCE OF HITTING USING A 20-SIDED DIE:
+First stage staffer needs a 12 to hit.
+Second stage staffer needs an 11 to hit.
+Third stage staffer needs a 9 to hit.
+STRENGTH BONUSES:
+18 strength — plus 2 on damage
+17 strength — plus 1 on damage
+CONSTITUTION BONUSES:
+18 constitution — absorbs 2 points of damage every melee turn
+17 constitution — absorbs 1 point of damage every melee turn
+DEXTERITY BONUSES:
+18 dexterity — plus 3 on hitting and plus 2 points absorbed in damage
+17 dexterity — plus 2 on hitting and plus 1 point absorbed in damage
+16 dexterity — plus 1 on hitting and no pluses absorbed in the melee
+turn
+EXAMPLE OF STAFF BATTLE:
+Little John and Will Scarlet of Robin Hood’s band decided to have
+a friendly match with staves.
+Little John
+Strength — 18
+Dexterity — 18
+Constitution — 18
+Third Stage of
+proficiency
+Combat Index — 36
+He hits on a roll of 7 or more.
+He absorbs 4 points of damage every melee turn.
+He does 2 extra points of damage every time he hits.
+Will Scarlet
+Strength — 17
+Dexterity — 18
+Constitution — 17
+Third Stage of
+proficiency
+Combat Index — 34

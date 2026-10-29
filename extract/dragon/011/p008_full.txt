@@ -1,0 +1,136 @@
+The Dragon
+How Do You Stop That Thing?
+or
+Defending Against the Ogre
+by Tony Watson
+Trying to halt the armored monstrosity called, and not affection-
+ately, the Ogre, is not easy and seldom learned quickly. Defending
+players must sit and bear the hoots and jeers of their opponents as the
+Ogre rambles on, smashing defenders right and left, on its inexorable
+route to the Command Post.
+The defending player must sullenly endure, doling out units like
+one throws crackers to a bear.
+But there is a difference: a bear can only eat so many crackers; an
+Ogre never gets full.
+The nice thing about OGRE is that after you’ve played a game
+there’s usually time for one more. Thus, you can rectify percieved flaws
+in your defense or experiment with a new mix or set-up immediately,
+while the new ideas are still fresh in your mind. Such experimentation is
+always interesting, and certainly the best way to learn good play.
+Playing the defense is always a challenge. The lucky Ogre can do
+what comes natural: maim, crush, kill, destroy and other friendly activ-
+ities, but playing the defense takes a little practice.
+Below you'll find my perceptions on defending units and strategy.
+You may have discovered some very different ones and I certainly
+won’t portend for a moment that my offerings are somehow sacro-
+sanct. I still lose to the Ogre with great regularity. It is just that I have
+found my play definitely improving after using these ideas and I believe
+you will too.
+I. Units
+To defend well and make a wise choice in the initial mix of defend-
+ing units, you must understand the types of units and their strengths
+and weaknesses. The fact that each type of unit is a little different from
+the others is readily apparent; capitalizing on these differences and re-
+cognizing the use of each type is very often the key to winning.
+Units come in two basic types: armor and infantry. Pll deal with
+the former first.
+While on the surface, heavy tanks are the most powerful unit due
+to their high attack value and good defense, they are in actuality, very
+vulnerable. Heavies are the only armored unit that must get within, and
+stay in, the Ogre’s gunfire and ramming range. GEVs can slip in and
+out, missile tanks can hang on the periphery, but the heavies have to go
+toe to toe with Ogres.
+They need those large factors!
+The tank’s defensive value of three equals the firepower of an Ogre
+secondary battery, so it will cost the Ogre in fire allotments to blow the
+tank away. But the tank’s worst fear is of being rammed. A ram fol-
+lowed up by a secondary or two (if needed) will usually dispatch the
+poor tank.
+Another factor against tanks is their high cost. You can select two
+GEVs for the same price.
+But heavies do have their place. They are the only single mobile
+unit that can take on the Ogre’s main battery at one. to one odds, and
+they have the less positive value of requiring more fire to be allocated
+against them to insure destruction.
+The slow speed and short range dictate that heavy tanks are best
+used when the Ogre has already been softened up and slowed down.
+Having the longest range of any mobile armor unit, missile tanks
+make excellent snipers. Their fire factor of three allows them to attack
+missiles and secondaries even on, while more than one can team to-
+gether to up the odds.
+It is important for these units to stay out of the Ogre’s range, and
+move behind or alongside the advancing Ogre. That way, if the cyber-
+tank wants them badly enough, he’ll have to divert course from the CP
+to get within battery range, and that will gain you a turn or two.
+While fire factor and range are the missile tank’s best features, its
+speed and defense are its liabilities. Two secondaries or a missile guar-
+antees a result of some kind against them, with a 66% chance of de-
+struction. While useful singly, they’re best in fire groups of two or
+three or as additional attack factors to beef up the attacks of other
+Vol. 2 No. 5
+units. If using them in groups, try and keep them dispersed; that way, if
+the Ogre turns on them, he won’t get shots at all of them.
+GEVS are the mosquitoes of the game; one is just a nuisance, but a
+group can be a major problem.
+The GEV has two advantages, and they must be recognized as
+linked to be useful: its high movement factor and its move/shoot/move
+turn sequence. It is the only unit in the game that benefits from this spe-
+cial rule, and it makes it pretty obvious what they should be used for.
+These unique qualities should be exploited to form an elastic de-
+fense, with groups of GEVs rushing up to the Ogre, firing their guns
+and then scurrying away before the cybertank tank can reply. Remem-
+ber, GEVs are the only vehicles that are faster than an undamaged
+Ogre. Once the Ogre’s main battery and missiles are gone, the GEVs
+are just about home free unless the Ogre can corner them in constricted
+terrain. If GEVs fire from a range of two and retreat their full move-
+ment factor away from the Ogre in the second movement phase, the
+smart-tank is never going to get closer than three hexes, out of the
+range of the numerous secondaries.
+On attack, remember that two GEVs together can go one to one on
+the Ogre’s main battery; three can form two to ones on missiles and se-
+condaries. They’re also useful for picking away at movement points or
+providing the needed couple of factors to raise an attack an odds
+column.
+It is vitally important to keep the GEVS out of the Ogre’s range
+with hit and run tactics, if you want them to last any length of time.
+Remember, the word with GEVs is “move/shoot/scoot/&quot;.
+Howitzers are the only non-mobile defensive units in the game (not
+counting the CP). They are units of opposites: superior fire and range
+coupled with poor defense and no mobility. Howitzers can be very use-
+ful in the later portions of the game, when the Ogre is slowed and will
+have to spend a number of turns in the field of fire of a well placed gun,
+But you'll have to get in your licks while the getting is good because the
+poor defense of the gun makes it very vulnerable. One missile is assured
+to destroy it and a single gun is guaranteed to get a result against it.
+Offensively, howitzers are excellent against secondaries and mis-
+siles, achieving two to one odds by themselves, and if you are rolling 5’s
+and 6’s, very instrumental in slowing down the Ogre.
+Placement is all with howitzers, for once you set them up there
+they’ll stay ‘til death do they part. They should be set up in a position
+where they will have a wide field of fire, and be able to cover the ap-
+proaches to the CP. Don’t, however, place them so close to the CP that
+they wind up smack in the middle of the Ogre’s path of advance. Place
+them such that if the Ogre wants them, he’ll have to make a side trip.
+One important point against the inclusion of howitzers in the ini-
+tial mix is their high cost. One is expensive enough and two or three are
+prohibitive, especially in Mark III scenarios.
+Infantry is a somewhat limited unit, but not as limtied as might
+first appear. When stacked to the maximum of three units it has a for-
+midable attack and defense of three, and its movement value of two is
+as good as any of the tank-type units.
+Its biggest shortcoming is its range, which severely limits its de-
+ployments and use in the game. For the most part, the Ogre can choose
+when and where he will engage infantry and when he does, he has the
+powerful advantages of overrun and anti-personnel weapons. And of
+course, the complement of regular guns and missiles can be brought to
+bear. The infantry is forced to get so close that the Ogre has to be in
+range for the next turn and can bring a lot of firepower to bear on the
+brave boys in the powered armor.
+Yet mass infantry attacks can be useful; full strength counters can
+be used against secondaries and movement treads, and, if the points
+can be spared, against anti-personnel, making the going a little easier
+for future turns.
+| Lyle’s Hobby &amp; Craft Center |
+Large Selection of Wargames
+38 North Cass Ave. [i
+852-8085 ‘ Westmont, Ill. 60559 ff

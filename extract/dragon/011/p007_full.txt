@@ -1,0 +1,122 @@
+December, 1977
+D&amp;D Variant
+BRAWLING:
+THE EASY WAY &quot;OUT&quot; IN D&amp;D
+by Robert J. Kuntz
+Brawling in Dungeons and Dragons has always been left up to the
+respective referee to determine. Though I’m sure that players and refer-
+ees’ alike have been distressed over this fact for some time no one had
+complained too bitterly about this lack of such an important function
+in D&amp;D. If one is to go about resolving all conflicts with spells and
+swords in place of a good punch or kick how does anyone expect to em-
+mulate our forerunners like Conan who prided himself on a good
+brawl! Though this is in no way an overly explicit offer towards that
+end goal it will serve as a starting point for you ‘Rope a Dopes’.
+The only requirements for brawling is each player’s Strength, Dex-
+terity and Constitution. Each of these categories effects the end result
+either with each other or separately. What is needed besides these char-
+acteristics is two six-sided dice.
+First Move
+Compare the two opponents dexterities. The player with a dexter-
+itv +2 or more comparatively gets to move first. If dexterity scores are
+WUD Hy
+Sy = iy
+[
+i » Wy
+Yh ia LAS
+‘ n \
+2 AN
+ig |
+—
+a
+\
+ANY *\l
+eastt
+1. Grapple
+(Combine dexterity and strength of both players. Average them and
+compare the difference on table A. Roll 2 six sided dice and note the
+score. This is the number of points subtracted from the players’ consti-
+tution. If he reaches zero constitution points he drops unconscious.)
+Example:
+A fighter getting first move elects to grapple. His dexterity is 14,
+his strength 13. Combined, averaged and rounded-down his total grap-
+pling score is 13. He faces an opponent which has a 15 strength but a
+10 dexterity. Combined, averaged and rounded down his score reads
+12. The difference is + 1 in the attackers favor. He then consults the
+Grappling Table under the proper plus category. Finding the + | table
+he throws the dice. A three is rolled meaning that he has successfully
+grappled and inflicted 2 points damage to his opponent. The defender
+marks 2 points off from his constitution score. The defender may then
+grapple only or attempt to break the grapple. He elects to break the
+grapple and consults the 0 or below table since the difference between
+his score and his attackers is -1. He must roll a G2 (grapple 2) to break
+free or else he is held and does no damage. He fails to break free. His
+attacker elects to continue the grapple next turn. An 11 is rolled which
+indicates he has failed to hold his grapple. The defender may then
+choose to punch or grapple and play continues as normal, alternating
+between attacker and defender.
+The Dragon
+2. Punch:
+If punches are thrown the one moving first (the one with the higher
+dexterity) must see if his dexterity in comparison to his opponents
+doubles or trebles it, etc. If it does he gets that many more punches (al-
+though at -1 to the die roll). Experimentally, a person with an 18 dex-
+terity fighting one with a dexterity of 3 would get | strike at no penal-
+ties and 5 additional strikes, all at -1 per die roll!!
+One must roll a 2-7 to hit, any score above that indicating a miss.
+Those taking second punches (or more) need a 2-6 to hit. After a hit is
+rolled compare the strength of the person striking to the constitution of
+the defender and note the difference on table B. That score is the
+number of constitution points taken away from the total score.
+Note: Constitution scores change as damage is accrued and re-
+comparisons must be made during the next round of fighting if the
+damage accrued lessened an opponents constitution score. Thus a per-
+son who easily sustained damage when he had an 18 constitution is
+handicapped by the 2 points of damage he received since that lowers his
+score to 16.
+TABLE A: Grappling
+Die Roll + 4 or higher +3 +2 +1 0 or lower
+2 G4 G3 G3 G2 G2
+3 G3 G3 G3 G2 G2
+4 G3 G3 G2 G2 G2
+5 G3 G3 G2 G2 G2
+6 G2 G2 Gl Gl Gl
+7 G2 G2 Gl Gl Gl
+8 G2 G2 Gl Gl NG
+9 Gl Gl Gl Gl NG
+10 Gl Gl Gl NG NG
+ll Gl Gl NG NG NG
+ie Gl NG NG NG NG
+G1-G4 = Grappled for that many points of damage. A G2 or higher is
+needed to break a grapple or a NG on the attackers part if he attempts
+to continue his hold.
+NG = No grapple
+TABLE B: Damage Accrued From Punches
+Strength - Constitution Difference
+Die Roll + 4 or higher +3 +2 +1 0 or less
+2 “3 -4* -3* -2* -|*
+) -3 -3 -2 -2 -1
+4 -3 -3 -2 -| -|
+5 -3 -2 -2 -| -]
+6 -2 -2 -2 -| -]
+7 -2 -2 -| -| -|
+8 -2 -| -| -| 0
+9 -2 -| -| 0 0
+10 -2 -| 0 0 0
+ll -| -| 0 0 0
+12 -| 0 0 0 0
+0 = missed punch, no effect
+0 = missed punch, no effect
+-1 = light punch
+-2 = medium punch
+-3 = heavy punch
+-4 = solid punch
+-5 = “Haymaker”
+*A roll of snake eyes is a possible automatic knockout roll. Compare
+the score that you inflicted when punching; if you were on table +3
+you have a 40% chance of automatically knocking your opponent out,
+that is the score netted (-4) times 10%, or 40%. A person striking suc-
+cessfully with snake eyes on the 0 or less table would have a 10% chance
+of knocking out his opponent.
+Next Issue: Long-term effects of having your clock cleaned in
+Sorcerers Scroll.

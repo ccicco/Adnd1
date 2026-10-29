@@ -27729,6 +27729,19 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   issue-10 part-two flip (report 010 box 2
   closing, the six-chain walk complete). WAIT FOR
   GO.
+  - R916 LANDED 2026-10-29: commit
+  30a102e7622482e94cf84e63854973af318602cf (base
+  9cc793b, census 838 -> 839), the Dragon
+  issue-10 box CLOSING round, prefix dfp, header
+  rules/dfp.h, audit rules/audits/r916_batch.h
+  ("R916 Dragon issue-10 closure audit"), 15
+  inline (9 consts + 6 bools), 3 examples, 2
+  header_sections (walk bookkeeping + registry
+  ground truth 1311/1333/25), ZERO file_patches,
+  ZERO data_files, ONE gap flip: report 010 box 2
+  -> [x] (2 closed / 0 open, the six-chain walk
+  complete). rverify GREEN, 15 mutants 0 missed;
+  inline_count was 15 not 16 (consts+bools).
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

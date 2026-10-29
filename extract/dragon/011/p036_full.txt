@@ -1,0 +1,101 @@
+EXPLOSIVE SPLOPS
+When a Snit kicks the Snot out of a Snorg with a
+Splop, instead of instant death, the Snit in question
+rolls a 12 sided die and subtracts that many points
+from its Life Force and/or Speed factors. A Snit must
+have at least one point of each to remain in play.
+A Snit with no Life Force is dead. A Snit with no
+speed factors cannot move or kick.
+PUPUS
+You may have wondered what happens to the remains
+of a Snit/Runnungitm after a successful CHOMP. The
+gorged Runnungitm sort of melts into an amorphous blob
+called (for ecological reasons) a PuPu. Simply flip
+over the dead Snit to represent the PuPu on the play-
+ing board. PuPus must be expelled from the Bolotomus
+as quickly as possible.
+PuPu_ Flow
+PuPus tend to flow naturally out of the Bolotomus
+in the direction of the nearest way out. Before each
+Bolotomus player turn, the Bolotomus rolls a 6 sided
+die for each PuPu that could possibly flow (some get
+stuck). Only one may flow through a canal, or two
+through a channel in a single turn. A result of 4, 5,
+or 6 passes a PuPu thrua Canal. &lt;A result of 3, 4, 5,
+or 6 passes a PuPu thru a Channel. In cases where a
+PuPu is an equal number of organs away from more than
+one orifice, the Bolotomus player may decide which way
+PuPuS flow.
+A PuPu which fails to get the result necessary to
+flow through a passageway, lodges in that passageway,
+and blocks all movement there until it is dislodged by
+the efforts of Snits, Snorgs, Makums, or Runnungitms.
+During the Snit Kicking phase of the Snit player’s
+turn, any or all Snits in an organ, may attempt to kick
+a lodged PuPu on through to the next organ. A suc-
+cessful kick of 1 or 2 on the die, dislodges the PuPu,
+and forces it into the adjacent organ (or out, if the
+PuPu was stuck in an orifice).
+During the CHOMPING phase of the Bolotomus player
+turn, any Snorg or Makum, and any Runnungitm that is
+not CHOMPING at a Snit may attempt to push lodged PuPus
+on through to the next organ. One die roll is allowed
+per thingie. A result of 1, 2, or 3 frees the PuPu.
+No creature is ever required to push or kick at PuPus.
+Only the Flow is mandatory.
+Tactical Use of PuPus
+All creatures, during their Kick or CHOMP phase,
+may attempt to Kick or push free-floating PuPus (ones
+that are waiting to flow and are not lodged) through
+passageways to adjacent organs, or out. On a roll of
+1 or 2, Snits can kick free-floating PuPus through
+passageways. On rolls of 1, 2, or 3, Bolotomus thing-
+ies may push free-floating PuPus through Passageways.
+However, for each free-floating PuPu traveling through
+a passageway, an additional die must be rolled to see
+if it lodges, just as though the PuPu were Flowing
+through the passageway.
+The Bolotomus can use this rule to try to lodge
+PuPus in the way of oncoming Snits. For the Snits,
+the reverse is true. It can be very handy to have
+PuPus blocking the way of Runnungitms now and then.
+MULTI-PLAYER SNIT'S REVENGE
+Using either the Advanced or the Basic rules,
+several bands of snits may attack one Bolotomus. One
+player assumes the role of the Bolotomus. All other
+players are separate bands, or tribes, of Snits. YOU
+will need to make extra Snits.
+Play is the same as two player, with the follow-
+ing changes and additions:
+1. Every Snit player turn is preceeded with dice rolls
+to determine the order of movement for the various
+bands of Snits. High roll moves first each turn. No
+kicking is allowed until after all Snit players have
+had a chance to move. Movement restrictions apply to
+the Snit players as a whole. Once one player’s Snits
+have used a passageway, no other Snits may use it until
+the next complete turn (two different players could
+share a channel).
+2. Smit kicking occurs in the same order as did moves.
+3. The Bolotomus wins if it lives. All bands of Snits
+are totalled to figure how many organs are needed to
+kill the Bolotomus by System Shock.
+4. A Snit player wins by being the first to escape the
+body of the Bolotomus with the Spark of life.
+5. When the Bolotomus dies, remove all thingies, leaving
+only the Snits, the Spark, and the PuPus (which no longer
+flow). Each Snit band now has its own turn to move and
+then attack. Snits are now allowed to kick at each other
+using the same kicks and saving throws as before. No
+pack attacks by Snits against Snits are allowed. Kill-
+ing the Snit with the Spark gives possesion of the Spark
+to the killer.
+CREDITS
+Nobody wanted to take the credit for this... the follow-
+ing people were not involved:
+Design &amp; Art: Tom Wham
+Development, playtesting, and other venerable aid:
+Rob Kuntz, Tim Kask, Brian Blume, Skip Williams, Ernie
+Gygax, Dave Sutherland, and Mike Carr.
+Representing the Polish National Front on the East
+Inspirations: EGG
