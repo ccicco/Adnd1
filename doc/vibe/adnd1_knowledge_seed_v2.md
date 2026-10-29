@@ -26470,6 +26470,62 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Pipe + five pipeweeds, the rings, bag,
   helm), with the Alchemist box flip ->
   2 closed / 2 open. WAIT FOR GO.
+  - R892 LANDED 2026-10-29: commit
+  249b95354a7d68a42852cbc0c0df8f9a66c1f597
+  (pushed 2e3b6ac..249b953, census 814 -> 815),
+  THE FISCHER HINTS MAGIC ITEMS - ROUND C of
+  issue 2 (Joe Fischer, folios 12-13, 26,
+  the judge toybox). THE SHAPE: prefix fch
+  (regtest-scan clean), header rules/fch.h
+  (56 inline), audit "R892 Fischer items
+  audit" at rules/audits/r892_batch.h, 44
+  consts + 12 bools, 26 examples, 4
+  header_sections, no
+  chains/switches/tables. THE INK: the
+  folio-12 chest-trap table (the d100
+  split 0-50 innocent, all nine trap
+  bands: 1-4 daggers / poisoned daggers /
+  gas / the Mirror chest / the 2-7-dice
+  explosion / the spectre / level loss at
+  91-95 / item loss at 96-98 / the
+  intelligent 2nd-9th-MU chest at 99-00,
+  plus the screaming gold), Monster Gems
+  (500 GP, kobold-to-red-dragon on command,
+  a week of service, monster and gem
+  dying together), the Room of Gems (3
+  turns, half turns orc), the Pool of
+  Endless Ogres (one ogre a turn), the
+  Hobbits' Pipe + five pipeweeds (four
+  rings a turn at 4 inches, 1-6 turns, 3
+  uses a day; Tranquillity / Stoning at 25
+  percent backfire cut to 10 in the pipe /
+  Illusion / Acapulco), the Ring of Magic
+  Missiles (10 charges, 2 a volley, 2
+  spells per recharge), the Bag of
+  Infinite Wealth (100 GP a day), the Helm
+  of Forgetfulness (the Int save ladder -1
+  / -2), the Ring of Infravision. HONEST
+  BOUNDARY: the folio-26
+  wandering-monster sub-tables and maze
+  guidance are judge-craft prose, noted in
+  the audit, never pinned. The Alchemist
+  box FLIPPED (issue-2 report 2 closed /
+  2 open); the R891 record seated into the
+  v2 seed. VERIFIED: engine double-run
+  GREEN applied 6 / already 6; rverify
+  against pristine 2e3b6ac: 56 mutants 0
+  missed; the raw JSON round-trip
+  byte-exact. Spec tools/spec_r892.json,
+  23,080 bytes, 724 lines, md5
+  342e3047bfaca713dd3f68171a331f25
+  (authored-plus-newline). NEXT: R893 - the
+  systems round (Pickens' Weapon Damage
+  expertise + Seaton's Monkish promotion
+  combat, folios 4-5, 30), with the
+  Fischer box flip -> 3 closed / 1 open;
+  the systems box closes at the NEXT
+  Dragon round per the R796 pre-flip rule.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

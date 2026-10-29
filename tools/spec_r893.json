@@ -1,0 +1,988 @@
+{
+ "round": 893,
+ "title": "The systems: Weapon Damage expertise, Monkish promotion combat",
+ "prefix": "sys",
+ "census_before": 815,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R892 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R892 LANDED 2026-10-29: commit",
+  "  249b95354a7d68a42852cbc0c0df8f9a66c1f597",
+  "  (pushed 2e3b6ac..249b953, census 814 -> 815),",
+  "  THE FISCHER HINTS MAGIC ITEMS - ROUND C of",
+  "  issue 2 (Joe Fischer, folios 12-13, 26,",
+  "  the judge toybox). THE SHAPE: prefix fch",
+  "  (regtest-scan clean), header rules/fch.h",
+  "  (56 inline), audit \"R892 Fischer items",
+  "  audit\" at rules/audits/r892_batch.h, 44",
+  "  consts + 12 bools, 26 examples, 4",
+  "  header_sections, no",
+  "  chains/switches/tables. THE INK: the",
+  "  folio-12 chest-trap table (the d100",
+  "  split 0-50 innocent, all nine trap",
+  "  bands: 1-4 daggers / poisoned daggers /",
+  "  gas / the Mirror chest / the 2-7-dice",
+  "  explosion / the spectre / level loss at",
+  "  91-95 / item loss at 96-98 / the",
+  "  intelligent 2nd-9th-MU chest at 99-00,",
+  "  plus the screaming gold), Monster Gems",
+  "  (500 GP, kobold-to-red-dragon on command,",
+  "  a week of service, monster and gem",
+  "  dying together), the Room of Gems (3",
+  "  turns, half turns orc), the Pool of",
+  "  Endless Ogres (one ogre a turn), the",
+  "  Hobbits' Pipe + five pipeweeds (four",
+  "  rings a turn at 4 inches, 1-6 turns, 3",
+  "  uses a day; Tranquillity / Stoning at 25",
+  "  percent backfire cut to 10 in the pipe /",
+  "  Illusion / Acapulco), the Ring of Magic",
+  "  Missiles (10 charges, 2 a volley, 2",
+  "  spells per recharge), the Bag of",
+  "  Infinite Wealth (100 GP a day), the Helm",
+  "  of Forgetfulness (the Int save ladder -1",
+  "  / -2), the Ring of Infravision. HONEST",
+  "  BOUNDARY: the folio-26",
+  "  wandering-monster sub-tables and maze",
+  "  guidance are judge-craft prose, noted in",
+  "  the audit, never pinned. The Alchemist",
+  "  box FLIPPED (issue-2 report 2 closed /",
+  "  2 open); the R891 record seated into the",
+  "  v2 seed. VERIFIED: engine double-run",
+  "  GREEN applied 6 / already 6; rverify",
+  "  against pristine 2e3b6ac: 56 mutants 0",
+  "  missed; the raw JSON round-trip",
+  "  byte-exact. Spec tools/spec_r892.json,",
+  "  23,080 bytes, 724 lines, md5",
+  "  342e3047bfaca713dd3f68171a331f25",
+  "  (authored-plus-newline). NEXT: R893 - the",
+  "  systems round (Pickens' Weapon Damage",
+  "  expertise + Seaton's Monkish promotion",
+  "  combat, folios 4-5, 30), with the",
+  "  Fischer box flip -> 3 closed / 1 open;",
+  "  the systems box closes at the NEXT",
+  "  Dragon round per the R796 pre-flip rule.",
+  "  WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/fch.h\"  // R892: the Fischer Hints magic items",
+ "include_comment": "the systems round",
+ "header_file": "rules/sys.h",
+ "audit_file": "rules/audits/r893_batch.h",
+ "audit_label": "R893 systems audit",
+ "audit_anchor": "#include \"rules/audits/r892_batch.h\"  // R892: R892 Fischer items audit",
+ "gap_report": "tools/dragon_gap_report_002.md",
+ "gap_census": {
+  "closed": 3,
+  "open": 1
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Fischer Hints magic items** (folios 12-13, 26) - the\n  items round",
+   "to": "- [x] **The Fischer Hints magic items** (folios 12-13, 26) - the\n  items round",
+   "note": "the Fischer box - the issue-2 report's third flip"
+  }
+ ],
+ "banner": {
+  "title": "The systems round - Pickens' D&D Option: Weapon Damage (folio 30) and Seaton's Monkish Combat in the Arena of Promotion (folios 4-5)",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 2 (August 1976): folio 30, Jon Pickens' Weapon Damage option - the expertise system replacing the Greyhawk damage tables, the seventeen-weapon Normal/Expert grid with the space requirements; folios 4-5, John M. Seaton's Monkish promotion combat - the DPT/DPG frame, the set-and-unit structure, the recovery doctrine, and the strike-block-kick matrix, playtested by the Missouri Mercenary Group. OD&D-era ink converted per the walk doctrine: the pin IS the conversion, noted, never silent.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. The Weapon Damage option rides against the engine's canon damage tables as a noted variant, never a rewrite; the monk matrix codes are CONVERTED to integers for the grid - 0 normal DPG, 1 blocked, 2 double DPG, 3 triple DPG, 4 sweep succeeds, 5 grab, 6 not applicable - the legend pinned beside the grid, the conversion noted, never silent; the five-eighths roll of dexterity is pinned as scanned."
+ },
+ "consts": [
+  {
+   "name": "sysFighterLevelsPerWeapon",
+   "value": 3,
+   "comment": "for every THREE levels a Fighter advances he masters one additional weapon, scoring the Expert damage (folio 30)"
+  },
+  {
+   "name": "sysThiefLevelsPerWeapon",
+   "value": 4,
+   "comment": "the Thief masters one weapon per FOUR levels, and only sword, dagger, a combination of these, or the sling (folio 30)"
+  },
+  {
+   "name": "sysThiefWeaponCount",
+   "value": 4,
+   "comment": "the Thief's expertise list runs four: sword, dagger, the combination, the sling (folio 30)"
+  },
+  {
+   "name": "sysTwoWeaponDexMin",
+   "value": 13,
+   "comment": "a Fighter or Thief with dexterity 13 or better may take a two one-handed weapon combination instead of a single expertise (folio 30)"
+  },
+  {
+   "name": "sysHardComboDexMin",
+   "value": 16,
+   "comment": "Sword and Sword, or Flail and Morning Star, require dexterity 16 - especially difficult to master; only one Morning Star and/or Flail per combination (folio 30)"
+  },
+  {
+   "name": "sysTwoHandedStrMin",
+   "value": 16,
+   "comment": "the 2-Handed Sword requires Strength 16 (folio 30)"
+  },
+  {
+   "name": "sysTwoHandedDexMin",
+   "value": 9,
+   "comment": "the 2-Handed Sword also requires dexterity 9 (folio 30)"
+  },
+  {
+   "name": "sysOneHandStrMin",
+   "value": 16,
+   "comment": "the Military Pick or Battle Axe may be wielded one-handed at Strength 16 and dexterity 9 (folio 30)"
+  },
+  {
+   "name": "sysOneHandDexMin",
+   "value": 9,
+   "comment": "the one-handed pick or axe dexterity floor - 9 (folio 30)"
+  },
+  {
+   "name": "sysWeaponRows",
+   "value": 17,
+   "comment": "the weapon grid runs seventeen rows, Dagger through Sling Stone (folio 30)"
+  },
+  {
+   "name": "sysDptLevelMult",
+   "value": 10,
+   "comment": "Damage Points Taken = strength x constitution, plus 10 times the monk's level (folio 4)"
+  },
+  {
+   "name": "sysDpgIntDiv",
+   "value": 2,
+   "comment": "Damage Points Given = strength + dexterity + half intelligence (folio 4)"
+  },
+  {
+   "name": "sysSetsPerTurn",
+   "value": 10,
+   "comment": "each combat turn runs 10 sets (folio 4)"
+  },
+  {
+   "name": "sysUnitsPerSet",
+   "value": 6,
+   "comment": "each set runs 6 written units of combat (folio 4)"
+  },
+  {
+   "name": "sysHalfStrengthPct",
+   "value": 75,
+   "comment": "below three-quarters of his DPT, all the combatant's succeeding blows land at half strength (folio 4)"
+  },
+  {
+   "name": "sysHalfStrengthDiv",
+   "value": 2,
+   "comment": "the half-strength divisor (folio 4)"
+  },
+  {
+   "name": "sysChangeRollNum",
+   "value": 5,
+   "comment": "changing an order after a unit is read takes a five-eighths roll of dexterity, pinned as scanned (folio 4)"
+  },
+  {
+   "name": "sysChangeRollDen",
+   "value": 8,
+   "comment": "the roll's denominator - eighths (folio 4)"
+  },
+  {
+   "name": "sysKickRowMax",
+   "value": 3,
+   "comment": "up to three of the same type kicks may be used in a row (folio 4)"
+  },
+  {
+   "name": "sysKickHandBlocksMax",
+   "value": 2,
+   "comment": "when kicking, the hands are used in one or two blocks (folio 4)"
+  },
+  {
+   "name": "sysJumpLegs",
+   "value": 1,
+   "comment": "Jump Back and Jump Forward each move one leg length (folio 5)"
+  },
+  {
+   "name": "sysSweepDownUnits",
+   "value": 3,
+   "comment": "a successful sweep puts the opponent down for three units - he gets up and cannot strike; blows struck while down do normal damage (folio 4)"
+  },
+  {
+   "name": "sysStampAfterSweep",
+   "value": 0,
+   "comment": "the Stamp can be used only after a successful sweep and has no effect otherwise (folio 4) - pinned as the no-effect zero"
+  },
+  {
+   "name": "sysGrabUnits",
+   "value": 3,
+   "comment": "the grab: the attacker's next three units all tell at normal value, the opponent unable to count strikes until the third unit; the blows may be blocked (folio 5)"
+  },
+  {
+   "name": "sysLightWoundDpt",
+   "value": 10,
+   "comment": "recovery - for each 10 DPT lost, cure light wounds (folio 4)"
+  },
+  {
+   "name": "sysSeriousWoundDpt",
+   "value": 50,
+   "comment": "for each 50 DPT lost, cure serious wounds (folio 4)"
+  },
+  {
+   "name": "sysWishDpt",
+   "value": 150,
+   "comment": "for every 150 DPT lost, the combatant must be wished to health (folio 4)"
+  },
+  {
+   "name": "sysNaturalRecoveryDiv",
+   "value": 2,
+   "comment": "without magic, days of recovery = DPT lost times one half (folio 4)"
+  },
+  {
+   "name": "sysMatrixRows",
+   "value": 8,
+   "comment": "the matrix runs eight attack rows - Reverse Punch, Back Fist, Knife Hand, Front Kick, Head Kick, Side Kick, Sweep, Stamp (folio 5)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "sysTwoWeaponShielded",
+   "value": true,
+   "comment": "the two-weapon wielder strikes once with each weapon, or once with either and counts as shielded (folio 30)"
+  },
+  {
+   "name": "sysNoExpertiseInCombo",
+   "value": true,
+   "comment": "no expertise bonus while employing the two-weapon option, even if the wielder has it for either weapon (folio 30)"
+  },
+  {
+   "name": "sysOneFlailMorningStar",
+   "value": true,
+   "comment": "only one Morning Star and/or Flail may be used in a combination (folio 30)"
+  },
+  {
+   "name": "sysKickArmLength",
+   "value": true,
+   "comment": "kicks will not work within arm's length (folio 4)"
+  },
+  {
+   "name": "sysStrikeArmLength",
+   "value": true,
+   "comment": "a strike cannot connect outside arm's length - matches start at kicking distance (folio 4)"
+  },
+  {
+   "name": "sysXBlockTwoHanded",
+   "value": true,
+   "comment": "the X-Blocks are two-handed (folio 4)"
+  },
+  {
+   "name": "sysStrikeFeetGrounded",
+   "value": true,
+   "comment": "when striking, both feet are grounded (folio 4)"
+  },
+  {
+   "name": "sysHandsSplit",
+   "value": true,
+   "comment": "except for the X-Block, both hands may attack, or one attack and one defend (folio 4)"
+  },
+  {
+   "name": "sysRestEachSet",
+   "value": true,
+   "comment": "after the initial set, at least one Rest must appear in each remaining set (folios 4-5)"
+  },
+  {
+   "name": "sysFirstStrikeHighDpt",
+   "value": true,
+   "comment": "first strike goes to the combatant with the higher DPT at the time (folio 4)"
+  },
+  {
+   "name": "sysReturnBlowRoll",
+   "value": true,
+   "comment": "a combatant killed by a first strike gets a return blow only if he beats his last DPT score on the five-eighths roll (folio 4)"
+  },
+  {
+   "name": "sysConcedeStops",
+   "value": true,
+   "comment": "a combatant may concede between blows at any time - combat stops and the victor is recognized; the advancement challenge is not to kill, though it can (folio 4)"
+  },
+  {
+   "name": "sysDuckHighMiddle",
+   "value": true,
+   "comment": "the Duck brings the body mostly below high and middle strikes and kicks (folio 5)"
+  },
+  {
+   "name": "sysNoChallengeWhileRecovering",
+   "value": true,
+   "comment": "monks will not make an advancement challenge to another while that one is recovering (folio 4)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "sysWeaponGrid",
+   "tag": "SysWpn",
+   "count": "sysWeaponRows",
+   "sentinel": 0,
+   "cols": [
+    "sysWpnNormMin",
+    "sysWpnNormMax",
+    "sysWpnExpMin",
+    "sysWpnExpMax",
+    "sysWpnSpace"
+   ],
+   "col_comments": [
+    "the Normal damage floor per weapon - Dagger 1 through Pike 1",
+    "the Normal damage ceiling - Dagger 4 through the 2-Handed Sword and Mounted Lance 12",
+    "the Expert damage floor - most stay at 1, the spears and 2-Handed Sword rise to 2 and 3",
+    "the Expert damage ceiling - Dagger 5 through the Mounted Lance 24",
+    "the space the weapon needs on each side of the user - 0 for none, 4 or 5 feet for the starred, 6 feet for the triple-starred"
+   ],
+   "data": [
+    [
+     1,
+     4,
+     2,
+     5,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     6,
+     0
+    ],
+    [
+     1,
+     6,
+     1,
+     6,
+     4
+    ],
+    [
+     1,
+     8,
+     1,
+     12,
+     4
+    ],
+    [
+     1,
+     8,
+     1,
+     10,
+     0
+    ],
+    [
+     1,
+     8,
+     1,
+     10,
+     6
+    ],
+    [
+     1,
+     6,
+     1,
+     8,
+     5
+    ],
+    [
+     1,
+     6,
+     2,
+     8,
+     0
+    ],
+    [
+     1,
+     8,
+     2,
+     12,
+     0
+    ],
+    [
+     1,
+     10,
+     2,
+     16,
+     0
+    ],
+    [
+     1,
+     12,
+     1,
+     12,
+     6
+    ],
+    [
+     1,
+     10,
+     2,
+     12,
+     6
+    ],
+    [
+     2,
+     12,
+     3,
+     18,
+     6
+    ],
+    [
+     2,
+     12,
+     2,
+     24,
+     0
+    ],
+    [
+     1,
+     12,
+     1,
+     12,
+     6
+    ],
+    [
+     1,
+     6,
+     1,
+     6,
+     0
+    ],
+    [
+     1,
+     4,
+     1,
+     6,
+     0
+    ]
+   ],
+   "audit_comment": "the seventeen-weapon grid, Normal vs Expert with the space requirements - the footnotes ride the space column, the not-useable-in-dungeons length rule noted in the audit prose (folio 30)"
+  },
+  {
+   "name": "sysMnkMatrix",
+   "tag": "SysMx",
+   "count": "sysMatrixRows",
+   "sentinel": 9,
+   "cols": [
+    "sysVsHB",
+    "sysVsMB",
+    "sysVsLB",
+    "sysVsXBH",
+    "sysVsXBL",
+    "sysVsKB",
+    "sysVsR",
+    "sysVsJB",
+    "sysVsJF",
+    "sysVsD",
+    "sysVsRP",
+    "sysVsBF",
+    "sysVsKH",
+    "sysVsFK",
+    "sysVsHK",
+    "sysVsSK",
+    "sysVsSW",
+    "sysVsST"
+   ],
+   "col_comments": [
+    "vs the High Block - shoulders and head",
+    "vs the Middle Block - shoulders to beltline",
+    "vs the Low Block - beltline to knees",
+    "vs the X-Block High - two-handed, the grab column",
+    "vs the X-Block Low - chest to thighs, the grab column",
+    "vs the Knee Block - beltline to knee",
+    "vs Rest",
+    "vs Jump Back",
+    "vs Jump Forward",
+    "vs the Duck",
+    "vs the Reverse Punch - chest or face",
+    "vs the Back Fist - head or chest",
+    "vs the Knife Hand - side, abdomen or head",
+    "vs the Front Kick - chest or abdomen",
+    "vs the Head Kick",
+    "vs the Side Kick - abdomen or chest",
+    "vs the Sweep - the trip",
+    "vs the Stamp - only after a successful sweep"
+   ],
+   "data": [
+    [
+     2,
+     1,
+     1,
+     2,
+     1,
+     0,
+     1,
+     1,
+     2,
+     1,
+     0,
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     2,
+     5,
+     2,
+     0,
+     1,
+     1,
+     2,
+     1,
+     2,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     2,
+     5,
+     2,
+     0,
+     0,
+     1,
+     3,
+     0,
+     1,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     0,
+     2,
+     5,
+     0,
+     0,
+     1,
+     1,
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     0,
+     0
+    ],
+    [
+     5,
+     0,
+     3,
+     5,
+     2,
+     2,
+     5,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     1,
+     3,
+     1,
+     1
+    ],
+    [
+     2,
+     5,
+     0,
+     3,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     1,
+     2,
+     1
+    ],
+    [
+     4,
+     1,
+     1,
+     4,
+     1,
+     4,
+     1,
+     1,
+     4,
+     4,
+     1,
+     1,
+     1,
+     1,
+     4,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     2,
+     5,
+     5,
+     0,
+     3,
+     6,
+     6,
+     6,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     2,
+     0
+    ]
+   ],
+   "audit_comment": "the strike-block-kick matrix as printed on folio 5, CONVERTED to integers - 0 normal DPG, 1 blocked no effect, 2 double DPG, 3 triple DPG, 4 sweep succeeds, 5 grab, 6 not applicable; the grab rows read: the next three units all tell at normal value while the opponent cannot count strikes until the third unit, the blows blockable; the sweep rows read: the opponent is on the ground"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['sysFighterLevelsPerWeapon']() != 3 or m['sysThiefLevelsPerWeapon']() != 4",
+   "note": "the mastery cadence - a weapon per 3 Fighter levels, per 4 Thief levels (folio 30)"
+  },
+  {
+   "expr": "m['sysThiefWeaponCount']() != 4",
+   "note": "the Thief's four expertise choices (folio 30)"
+  },
+  {
+   "expr": "m['sysTwoWeaponDexMin']() != 13 or m['sysHardComboDexMin']() != 16",
+   "note": "the combination gates - dex 13 for two weapons, 16 for the hard pairs (folio 30)"
+  },
+  {
+   "expr": "m['sysTwoHandedStrMin']() != 16 or m['sysTwoHandedDexMin']() != 9 or m['sysOneHandStrMin']() != 16",
+   "note": "the 2-Handed Sword's Strength 16 / dex 9, and the one-handed pick or axe (folio 30)"
+  },
+  {
+   "expr": "m['sysWpnNormMax'](0) != 4 or m['sysWpnExpMax'](0) != 5",
+   "note": "the Dagger - 1-4 Normal, 2-5 Expert (folio 30)"
+  },
+  {
+   "expr": "m['sysWpnExpMax'](4) != 10 or m['sysWpnExpMin'](4) != 1",
+   "note": "the Sword - 1-8 Normal, 1-10 Expert (folio 30)"
+  },
+  {
+   "expr": "m['sysWpnNormMax'](12) != 12 or m['sysWpnExpMin'](12) != 3 or m['sysWpnExpMax'](12) != 18",
+   "note": "the 2-Handed Sword - 2-12 Normal, 3-18 Expert (folio 30)"
+  },
+  {
+   "expr": "m['sysWpnExpMax'](13) != 24",
+   "note": "the Mounted Lance tops the grid - Expert 2-24 (folio 30)"
+  },
+  {
+   "expr": "m['sysWpnSpace'](12) != 6 or m['sysWpnSpace'](6) != 5 or m['sysWpnSpace'](2) != 4",
+   "note": "the space column - 6 feet for the 2-Handed Sword, 5 the Morning Star, 4 the Dwarf Hammer and Pick (folio 30)"
+  },
+  {
+   "expr": "m['sysWpnNormMax'](9) != 10 or m['sysWpnExpMax'](9) != 16",
+   "note": "the Spear Set vs Charge - 1-10 Normal, 2-16 Expert (folio 30)"
+  },
+  {
+   "expr": "m['sysWpnSpace'](0) != 0 or m['sysWpnSpace'](16) != 0",
+   "note": "the Dagger and Sling Stone need no space (folio 30)"
+  },
+  {
+   "expr": "m['sysDptLevelMult']() != 10 or m['sysDpgIntDiv']() != 2",
+   "note": "the frame - DPT = STR x CON + 10 x level, DPG = STR + DEX + half INT (folio 4)"
+  },
+  {
+   "expr": "m['sysSetsPerTurn']() != 10 or m['sysUnitsPerSet']() != 6",
+   "note": "the structure - 10 sets a turn, 6 units a set (folio 4)"
+  },
+  {
+   "expr": "m['sysHalfStrengthPct']() != 75 or m['sysHalfStrengthDiv']() != 2",
+   "note": "below three-quarters DPT the blows land at half strength (folio 4)"
+  },
+  {
+   "expr": "m['sysChangeRollNum']() != 5 or m['sysChangeRollDen']() != 8",
+   "note": "the order change takes the five-eighths roll of dexterity, pinned as scanned (folio 4)"
+  },
+  {
+   "expr": "m['sysKickRowMax']() != 3 or m['sysKickHandBlocksMax']() != 2 or m['sysJumpLegs']() != 1",
+   "note": "the kick rules - three in a row, one or two hand blocks, the one-leg-length jumps (folios 4-5)"
+  },
+  {
+   "expr": "m['sysSweepDownUnits']() != 3 or m['sysGrabUnits']() != 3",
+   "note": "the sweep downs for three units, the grab tells for three units (folios 4-5)"
+  },
+  {
+   "expr": "m['sysStampAfterSweep']() != 0",
+   "note": "the Stamp has no effect except after a successful sweep (folio 4)"
+  },
+  {
+   "expr": "m['sysLightWoundDpt']() != 10 or m['sysSeriousWoundDpt']() != 50 or m['sysWishDpt']() != 150",
+   "note": "the recovery ladder - light at 10 DPT, serious at 50, the wish at 150 (folio 4)"
+  },
+  {
+   "expr": "m['sysNaturalRecoveryDiv']() != 2",
+   "note": "without magic, days equal DPT lost times one half (folio 4)"
+  },
+  {
+   "expr": "m['sysVsLB'](0) != 1 or m['sysVsKB'](2) != 0",
+   "note": "the matrix opens - the Reverse Punch blocked low, the Knife Hand normal against the Knee Block (folio 5)"
+  },
+  {
+   "expr": "m['sysVsD'](2) != 0 or m['sysVsD'](4) != 1",
+   "note": "the Knife Hand beats the Duck at normal, the Head Kick does not (folio 5)"
+  },
+  {
+   "expr": "m['sysVsXBH'](4) != 5 or m['sysVsXBH'](0) != 2",
+   "note": "the grab column - the Head Kick grabbed by the X-Block High, the Reverse Punch doubled past it (folio 5)"
+  },
+  {
+   "expr": "m['sysVsKB'](7) != 0 or m['sysVsST'](6) != 1 or m['sysVsSW'](6) != 1",
+   "note": "the Stamp row - normal against the Knee Block, the Sweep row blocked by the Stamp and its own column (folio 5)"
+  },
+  {
+   "expr": "m['sysVsR'](6) != 1 or m['sysVsJB'](6) != 1 or m['sysVsJF'](6) != 4 or m['sysVsD'](6) != 4",
+   "note": "the Sweep row - blocked by Rest and Jump Back, sweeping through Jump Forward and the Duck (folio 5)"
+  },
+  {
+   "expr": "m['sysVsST'](7) != 0 or m['sysVsJB'](7) != 6 or m['sysVsR'](7) != 3",
+   "note": "the Stamp against itself reads normal, not applicable against the Jump Back, and triple damage against the Rest (folio 5)"
+  },
+  {
+   "expr": "m['sysVsMB'](4) != 0 or m['sysVsHK'](4) != 1",
+   "note": "the Head Kick reads normal past the Middle Block, blocked by its own column (folio 5)"
+  },
+  {
+   "expr": "m['sysVsFK'](3) != 1 or m['sysVsSK'](3) != 3",
+   "note": "the Front Kick blocked by its own column, tripled past the Side Kick (folio 5)"
+  },
+  {
+   "expr": "m['sysTwoWeaponShielded']() != 1 or m['sysNoExpertiseInCombo']() != 1 or m['sysOneFlailMorningStar']() != 1",
+   "note": "the two-weapon doctrine - shielded, no expertise, one Flail or Morning Star (folio 30)"
+  },
+  {
+   "expr": "m['sysKickArmLength']() != 1 or m['sysStrikeArmLength']() != 1 or m['sysXBlockTwoHanded']() != 1 or m['sysStrikeFeetGrounded']() != 1",
+   "note": "the geometry - the arm's-length pair, the two-handed X, the grounded strike (folio 4)"
+  },
+  {
+   "expr": "m['sysFirstStrikeHighDpt']() != 1 or m['sysReturnBlowRoll']() != 1 or m['sysConcedeStops']() != 1",
+   "note": "the flow - the higher DPT strikes first, the return blow roll, the concession (folio 4)"
+  },
+  {
+   "expr": "m['sysRestEachSet']() != 1 or m['sysDuckHighMiddle']() != 1 or m['sysNoChallengeWhileRecovering']() != 1",
+   "note": "the discipline - the mandatory rest, the Duck, no challenges to a recovering monk (folios 4-5)"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 66,
+ "header_sections": {
+  "the Weapon Damage option (folio 30)": [
+   {
+    "kind": "const",
+    "name": "sysFighterLevelsPerWeapon"
+   },
+   {
+    "kind": "const",
+    "name": "sysThiefLevelsPerWeapon"
+   },
+   {
+    "kind": "const",
+    "name": "sysThiefWeaponCount"
+   },
+   {
+    "kind": "const",
+    "name": "sysTwoWeaponDexMin"
+   },
+   {
+    "kind": "const",
+    "name": "sysHardComboDexMin"
+   },
+   {
+    "kind": "const",
+    "name": "sysTwoHandedStrMin"
+   },
+   {
+    "kind": "const",
+    "name": "sysTwoHandedDexMin"
+   },
+   {
+    "kind": "const",
+    "name": "sysOneHandStrMin"
+   },
+   {
+    "kind": "const",
+    "name": "sysOneHandDexMin"
+   },
+   {
+    "kind": "const",
+    "name": "sysWeaponRows"
+   },
+   {
+    "kind": "bool",
+    "name": "sysTwoWeaponShielded"
+   },
+   {
+    "kind": "bool",
+    "name": "sysNoExpertiseInCombo"
+   },
+   {
+    "kind": "bool",
+    "name": "sysOneFlailMorningStar"
+   },
+   {
+    "kind": "table",
+    "name": "sysWeaponGrid"
+   }
+  ],
+  "the promotion arena frame (folios 4-5)": [
+   {
+    "kind": "const",
+    "name": "sysDptLevelMult"
+   },
+   {
+    "kind": "const",
+    "name": "sysDpgIntDiv"
+   },
+   {
+    "kind": "const",
+    "name": "sysSetsPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "sysUnitsPerSet"
+   },
+   {
+    "kind": "const",
+    "name": "sysHalfStrengthPct"
+   },
+   {
+    "kind": "const",
+    "name": "sysHalfStrengthDiv"
+   },
+   {
+    "kind": "const",
+    "name": "sysChangeRollNum"
+   },
+   {
+    "kind": "const",
+    "name": "sysChangeRollDen"
+   },
+   {
+    "kind": "const",
+    "name": "sysKickRowMax"
+   },
+   {
+    "kind": "const",
+    "name": "sysKickHandBlocksMax"
+   },
+   {
+    "kind": "const",
+    "name": "sysJumpLegs"
+   },
+   {
+    "kind": "const",
+    "name": "sysSweepDownUnits"
+   },
+   {
+    "kind": "const",
+    "name": "sysStampAfterSweep"
+   },
+   {
+    "kind": "const",
+    "name": "sysGrabUnits"
+   },
+   {
+    "kind": "const",
+    "name": "sysLightWoundDpt"
+   },
+   {
+    "kind": "const",
+    "name": "sysSeriousWoundDpt"
+   },
+   {
+    "kind": "const",
+    "name": "sysWishDpt"
+   },
+   {
+    "kind": "const",
+    "name": "sysNaturalRecoveryDiv"
+   },
+   {
+    "kind": "bool",
+    "name": "sysKickArmLength"
+   },
+   {
+    "kind": "bool",
+    "name": "sysStrikeArmLength"
+   },
+   {
+    "kind": "bool",
+    "name": "sysXBlockTwoHanded"
+   },
+   {
+    "kind": "bool",
+    "name": "sysStrikeFeetGrounded"
+   },
+   {
+    "kind": "bool",
+    "name": "sysHandsSplit"
+   },
+   {
+    "kind": "bool",
+    "name": "sysRestEachSet"
+   },
+   {
+    "kind": "bool",
+    "name": "sysFirstStrikeHighDpt"
+   },
+   {
+    "kind": "bool",
+    "name": "sysReturnBlowRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "sysConcedeStops"
+   },
+   {
+    "kind": "bool",
+    "name": "sysDuckHighMiddle"
+   },
+   {
+    "kind": "bool",
+    "name": "sysNoChallengeWhileRecovering"
+   }
+  ],
+  "the strike-block-kick matrix (folio 5)": [
+   {
+    "kind": "const",
+    "name": "sysMatrixRows"
+   },
+   {
+    "kind": "table",
+    "name": "sysMnkMatrix"
+   }
+  ]
+ },
+ "audit_comment": "THE SYSTEMS ROUND - Round D of issue 2, two systems on the variant layer. THE WEAPON DAMAGE OPTION (Pickens, folio 30): the expertise cadence - a weapon per 3 Fighter levels or 4 Thief levels, the Thief limited to sword, dagger, their combination, or the sling; the two-weapon combination at dex 13, shielded, no expertise bonus, one Flail or Morning Star at most, the hard pairs at dex 16; the 2-Handed Sword at Strength 16 and dex 9, the one-handed Pick or Battle Axe; and the seventeen-weapon grid, Dagger 1-4 / 2-5 through the Mounted Lance 2-12 / 2-24, with the space column carrying the footnotes - 4, 5 and 6 feet for the starred, the not-useable-in-dungeons length rule noted here in prose. THE MONKISH PROMOTION COMBAT (Seaton, folios 4-5): the DPT frame - strength x constitution + 10 x level; the DPG - strength + dexterity + half intelligence; the 10-set turn, the 6-unit set; the three-quarters DPT half-strength line; the five-eighths roll of dexterity for order changes and the return blow, pinned as scanned; the kick rules, the sweep that downs for three units at normal damage, the grab that tells for three units; the recovery ladder - light at 10 DPT, serious at 50, the wish at 150, natural days at half the DPT lost; no challenge to a recovering monk. THE MATRIX (folio 5): the full strike-block-kick grid as printed, CONVERTED to integers - 0 normal, 1 blocked, 2 double, 3 triple, 4 sweep, 5 grab, 6 not applicable - the legend pinned beside the grid, the conversion noted, never silent. HONEST BOUNDARIES: the option replaces the Greyhawk damage system only as a noted variant - the engine's canon damage tables are untouched; the arena is a written-orders minisystem for monk advancement, never core canon; the ceremonial prose (the bows, the arena) rides the provenance. The Fischer box flips this round - the issue-2 report's third flip, 3 closed / 1 open, the systems box closing at the NEXT Dragon round per the R796 pre-flip rule."
+}
