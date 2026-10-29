@@ -27105,6 +27105,47 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   rule). NEXT: the issue-4 Creature Features
   box's closing round or the next adjudication.
   WAIT FOR GO.
+  - R901 LANDED 2026-10-29: commit
+  f6cc64439416e801f2d6fc75296d1907cb2eeabc (base
+  17b9d70, census 823 -> 824), the Creature
+  Features box closing round: Curtiss's
+  adjudication - a PURE box-closing round, no new
+  print ink. THE SHAPE: prefix cfc (regtest-scan
+  clean), header rules/cfc.h (10 inline: 6 consts
+  + 4 bools, no tables), audit "R901 Creature
+  Features closure audit" at
+  rules/audits/r901_batch.h, 3 examples, 2
+  header_sections, ZERO file_patches and ZERO
+  data_files (the first round with both empty -
+  the engine and rn handle it), 1 gap flip. THE
+  PINS, all cited: the issue-4 single box over
+  its three defs
+  (tools/dragon_gap_report_004.md), the issue-3
+  report complete at 5/0, the registry ground
+  truth from the R900 lesson (live census 1311 vs
+  the 1333 base lua files with the 25 never-load
+  errors - the battery line 'loaded N, errors M'
+  the only ground truth for registry floors), the
+  25 broken MM2/FF text lines a pre-R900 print-
+  fidelity state untouched, the variant-layer
+  doctrine riding the closure, and the walk-
+  complete bools (issue 3 and issue 4). THE FLIP:
+  the Creature Features box went [x] -> the
+  issue-4 report 1 closed / 0 open, THE ISSUE-4
+  WALK COMPLETE (the Creature Features chain was
+  the only engine-relevant ink in issue #4; the
+  EPT chains, the androids, the Jaquet parody,
+  the fiction, Finieous, the wargaming and the
+  ads all scoped out). The R900 record (87 lines)
+  seated in the seed via this round's
+  prev_record. VERIFIED: engine double-run GREEN
+  applied 6 / already 6; rverify against pristine
+  17b9d70: 10 mutants 0 missed; the raw JSON
+  round-trip byte-exact. Spec
+  tools/spec_r901.json, 11,980 bytes, 244 lines,
+  md5 1828d31c13c37a2459fea522c6f9f849. NEXT: the
+  issue-5 opener (the next Dragon walk round) or
+  Curtiss's next adjudication. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

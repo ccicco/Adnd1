@@ -603,6 +603,7 @@
 #include "rules/cmv.h"  // R899: the Idiot, Jester and dexterity mods comedy round
 #include "rules/cfe.h"  // R900: the Dragon issue-4 opener, the Creature Features monsters
 #include "rules/cfc.h"  // R901: the Creature Features box closing round
+#include "rules/wch.h"  // R902: the Dragon issue-5 opener, the Witchcraft Supplement, the Anhkheg and the Wizard Research Rules
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4712,6 +4713,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r902_batch.h"  // R902: R902 Dragon issue-5 audit
 #include "rules/audits/r901_batch.h"  // R901: R901 Creature Features closure audit
 #include "rules/audits/r900_batch.h"  // R900: R900 Dragon Creature Features audit
 #include "rules/audits/r899_batch.h"  // R899: R899 comedy and small-variants audit
