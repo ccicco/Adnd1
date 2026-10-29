@@ -1,0 +1,128 @@
+The Dragon
+MILITARY FORMATIONS OF
+THE NATIONS OF THE
+UNIVERSE
+By M.A.R. Barker
+The following material is translated and adapted from the works
+of two of the great ancient strategists of Tekumel, Ssamiren of Kheiris,
+and Sa’alur of Jakalla. Both of these men lived during the First Imper-
+ium, the Dynasty of the Bednalljan Kings, and their strategic and tacti-
+cal manuals have become standard among all of the nations of Teku-
+mel. Time, unfortunately, does not permit the inclusion of material
+from the other two major battle manuals, those of Liyurain of Tsamra,
+and Hirkkulmeshmru the Dwarf.
+Both Ssamiren and Sa’alur divide their works into discussions of
+(a) the army as a whole, and (b) units within an army. Under the former
+heading they include the functions and limitations of each section of a
+military “task force” (e.g. the establishment of chains of command,
+the roles played by various officers, signalling and trumpet calls, mes-
+sengers, the use of magic as a weapon of attack and defense, the vari-
+ous troop types, the nature and optimal employment of the nonhuman
+races, etc. etc.). In this section also, both authors provide a longish list
+(Ssamiren gives 112, Sa’alur 123) of “basic battle formations.” These
+are battle plans tested by one or more commanders throughout the long
+centuries of Tekumel’s history. Ssamiren describes each formation in
+detail and discusses its general qualities; Sa’alur, however, goes further
+and suggests counter formations for each, together with descriptions of
+battles in which each was used and the factors accounting (in his view)
+for each win or loss.
+Under “unit formations,” both authors discuss various types of
+organisation, the nature of sub-units, the use of officers, procedures
+for marching and countermarching, etc. They also provide descriptions
+of “basic tactical formations” in which units can be deployed upon the
+battlefield. Both manuals then go on to analyse matters of supply, the
+provision and maintenance of arms, the merits of various types of
+weapons and armour, entrenchments, fortifications, use of terrain,
+scouting and many other military factors. It must suffice here, how-
+ever, to describe some of these authors’ “army formations” and give
+the more useful of their “unit formations.”
+Ssamiren divided every battlefield army into “sword units” and
+“shield units”: the former are those meant to attack, to break through
+enemy ranks, and to be the centre of strength; the latter are those units
+ordered to hold the enemy, to keep him from breaking through, to har-
+ass him and prevent him from committing valuable troops elsewhere.
+Every battlefield army must have one major “sword unit,” and all oth-
+ers then function as “shield units.” Very large armies, Ssamiren con-
+tinues, may have more than one “sword,” major and minor “swords.”
+(He is here speaking of open field battles, rather than of defensive posi-
+tions, sieges, special units charged with particular missions, etc.)
+The positioning of one’s “sword unit(s)” occupies much of Ssami-
+ren’s chapter on field tactics. Should this striking force be placed upon
+one’s flank, upon both flanks, or in one’s centre? Should it consist of
+one heavy unit (e.g. a phalanx), or should it be divided into smaller
+units? What are the optimal attack formations for these units? Where
+should secondary “sword” units be emplaced, and what are their logi-
+cal objectives? What formations are useful for “shield units?” Ssami-
+ren proceeds to answer these questions by describing the multiplicity of
+formations used by his predecessors and contemporaries. Borrowing
+terms from the fencing masters of his time, he discusses these in terms
+of “‘attack flank, shield centre” or “‘attack centre, shield flank.” The
+former denotes a powerful striking force placed on one or both flanks
+and a weak centre ordered to hold. The latter signifies a strong centre
+planned to carry the main attack, with weaker holding forces on the
+flanks.
+Sa’alur, who wrote some five hundred years after Ssamiren, ac-
+cepts his predecessor’s basic definitions and arguments but goes on to
+elaborate upon these, discussing special hidden “sword” units, com-
+plex formations which changed to some other formation after their ar-
+rival on the field, the use of extremely fast bands of missile troops as
+skirmishers, the deployment of the flying Hlaka scouts as additional
+harassment, and many other such features. Sa’alur also wrote exten-
+16
+Vol. I No. 7
+sively of defensive field formations, entrenchments, abattis, and other
+holding tactics.
+Both authors divide each army’s side of a battlefield into ten sub-
+sections and go on to indicate the sorts of units which should be placed
+in each, depending upon available troops and the terrain. These sub-
+areas are:
+pi jf 2 | 3 |
+4/5 |] 6 [7 [a
+_ 8 |
+1. Left Arrow; 2. Centre Arrow; 3. Right Arrow; 4.
+Left Gauntlet; 5. Left Arm; 6. Central Helm; 7. Right
+Arm, 8. Right Gauntlet; 9. Left Greave; _— 10. Right Greave.
+Numbers 1-3 are far forward areas, to be filled with light skirmish-
+ers, missile troops, and other harassing units; nos. 4 and 8 are the far
+flanks, to be occupied (depending upon the availability of troops and
+the basic battle plan) with further light units, heavier missile troops, ar-
+tillery set up on high terrain, or special “sword” units; nos. 5 and 7 are
+the inner flanks, to be occupied by heavier units, “sword” units, or
+good holding units, depending upon the formation used; no. 6 is the
+main centre, filled with troops appropriate to the formation chosen;
+nos. 9 and 10 are the rear flanks and reserve areas, held by one’s re-
+maining forces and troops planned to enter the battle later.
+Sa’alur added two more rear areas to this scheme: the baggage
+camp, with its protecting troops, and the general’s command post.
+Most tacticians emphasize that the proper place for the Kerdu (the sen-
+ior general) and his staff is upon some eminence behind his troops,
+from which he can see and direct the engagement. His army’s magic-us-
+ing forces are usually deployed with him, partly to provide cover for
+him from enemy sorcery or long-range artillery, and partly to give them
+a vantage point from which they can direct their spells against the ene-
+my or to protect their own men. Since the exact positioning of the bag-
+gage camp and the command post depends largely upon terrain and
+other factors, most later tacticians have ignored Sa’alur’s precise in-
+structions for the placing of these units.
+It is now useful to take Ssamiren’s basic formations and deal with
+the more important ones, adding details from Sa’alur wherever feasi-
+ble, and also commenting upon the modern employment of these by the
+various nations of Tekumel. The following are just a few of his “attack
+flank, shield centre” battle plans.
+N.B. ee
+rm
+><)
+= light skirmishers/missile troops
+regular medium or heavy troops not further
+distinguished and dependent upon availabil-
+ity and other factors)
+= special units (to be described below). Since
+these formations have been much simplified
+heavy missle troops, artillery, etc. have not
+been separately indicated.
+1. The Invincible Glory of Hnau Tektis:
+pitsseteny
+ies
+This ancient formation is named after a semi-legendary general of
+the Three States of the Triangle. It consists of two heavy units (pha-
+lanxes, squares, etc.) and a weak centre designed only to hold. Light

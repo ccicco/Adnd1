@@ -27394,6 +27394,45 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   bytes. NEXT: the issue-6 flip (report 006, 1
   box to close) or the issue-6 remainder review.
   WAIT FOR GO.
+  - R907 LANDED 2026-10-29: commit
+  96e4651b218eaa2916af90de68978dc8d75b5e9f (base
+  1a6baa3, census 829 -> 830), the Dragon issue-6
+  box closing round: the pure flip, no new ink -
+  the R903 precedent shape. THE SHAPE: prefix csx
+  (regtest-scan clean), header rules/csx.h (11
+  inline: 7 consts + 4 bools, no tables), audit
+  "R907 Dragon issue-6 closure audit" at
+  rules/audits/r907_batch.h, 3 examples, 2
+  header_sections, ZERO file_patches and
+  data_files, 1 gap flip. THE FLIP: the issue-6
+  box in tools/dragon_gap_report_006.md went [x]
+  -> 1 closed / 0 open, THE ISSUE-6 WALK COMPLETE
+  - the four chains (the Sea Trade system, the
+  psionic determination option, the morale
+  system, the Death Angel at folios 6, 25, 26-27,
+  29) were the only engine-relevant ink in issue
+  #6. The bookkeeping pins: the single box and
+  its four chains, the issue-5 report complete at
+  1/0 since R903, the issue-4 report complete at
+  1/0 since R901, the registry ground truth
+  carried forward (1311 live / 1333 base lua
+  files / 25 never-load errors, the battery line
+  the only ground truth), and the variant-layer
+  doctrine riding the closure. The R906 record
+  (68 lines) seated in the seed via prev_record -
+  NOTE: the record contains a wrapped line
+  beginning '  - human 91' which breaks the ^  -
+  record-boundary regex; the R906 record is the
+  file's last record, so extract to EOF, not to
+  the next '  - ' line. VERIFIED: engine double-
+  run GREEN applied 6 / already 6; rverify
+  against pristine 1a6baa3: 11 mutants 0 missed;
+  the raw JSON round-trip byte-exact. Spec
+  tools/spec_r907.json, 10,483 bytes, md5
+  62741700d17cf3cdf38f0ad1df8329e8. NEXT: the
+  issue-7 opener (the Dragon Magazine walk
+  continues; no issue-7 source pulled yet). WAIT
+  FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
