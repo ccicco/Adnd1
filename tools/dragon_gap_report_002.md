@@ -17,7 +17,7 @@ material.
 
 ## Boxes
 
-- [ ] **The Remorhaz lore pin** (folio 21) - the opener round
+- [x] **The Remorhaz lore pin** (folio 21) - the opener round
 - [ ] **The Alchemist, complete** (folios 28-30) - the class round
 - [ ] **The Fischer Hints magic items** (folios 12-13, 26) - the
   items round

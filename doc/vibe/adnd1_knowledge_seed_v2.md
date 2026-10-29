@@ -26356,6 +26356,63 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Curtiss opens it; the Aronson gap box
   flips at the next Dragon round's spec.
   WAIT FOR GO.
+  - R890 LANDED 2026-10-29: commit
+  5e65526fe4854a0b72cca58ce628763a803aa496
+  (pushed b351317..5e65526, census 812 -> 813),
+  THE REMORHAZ LORE PIN - THE ISSUE-2 OPENER
+  (Round A of issue 2, The Dragon Vol. 1 No.
+  2, August 1976, folio 21). THE SHAPE:
+  prefix rmz (full-repo scan clean), header
+  rules/rmz.h (21 inline), audit "R890
+  Remorhaz lore audit" at
+  rules/audits/r890_batch.h, 18 consts + 3
+  bools, 12 examples, 3 header_sections, no
+  chains/switches/tables. THE INK: the
+  original 1976 Creature Features appearance
+  - three sizes on d8 hit dice (6/10/14 at
+  40/35/25 on the d100), the frame (30 feet,
+  move 12, 20 percent in lair, MR 75, AC
+  underside 4 / back 0 plus special / head
+  2), the bite 3-36, the fire breath at
+  3/5/7 dice, wings-and-breath, the
+  heated back that melts non-magical
+  weapons, the cold-dwelling doctrine
+  (Silver Dragon matrix seat) - pinned as
+  LORE against the UNTOUCHED MM1 def
+  monsters/monsters/r/remorhaz.lua, the
+  Bulette pattern, divergences noted
+  (bite 3-36 vs 6-36, bands 6/10/14 vs
+  7-14, fire breath vs the polar worm's
+  wing-beat, low vs animal intelligence,
+  30 feet vs 21-42). THE VOICE: all 32
+  issue-2 pages at extract/dragon/002/
+  plus the pre-flip
+  tools/dragon_gap_report_002.md (4 boxes,
+  0 closed - Remorhaz, Alchemist, Fischer
+  items, the systems round) shipped as spec
+  data files; the Aronson box FLIPPED - the
+  issue-1 report closes out 3 closed /
+  0 open. ISSUE-2 ADJUDICATION (user-set
+  2026-10-29): use - the Remorhaz lore
+  pin, the Alchemist COMPLETE (class +
+  potions + poisons, no cherry-picking),
+  the Fischer Hints magic items (own
+  round), and both systems articles
+  (Weapon Damage expertise + Monkish
+  promotion combat); drop - all fiction,
+  the Ringbearer ad, editorials, GenCon and
+  press material. VERIFIED: engine
+  double-run GREEN applied 39 / already
+  39; rverify against pristine b351317:
+  21 mutants 0 missed; the R889 record
+  seated into the v2 seed ledger. Spec
+  tools/spec_r890.json, 162,227 bytes, 473
+  lines, md5
+  39a0fcbe356a5a66a941293ec8979f45
+  (authored-plus-newline). NEXT: R891 - the
+  Alchemist, complete (folios 28-30), with
+  the Remorhaz box flip -> issue-2 report
+  1 closed / 3 open. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

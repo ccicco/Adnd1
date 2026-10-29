@@ -1,0 +1,1452 @@
+{
+ "round": 891,
+ "title": "The Alchemist, complete: a new D&D character class",
+ "prefix": "alc",
+ "census_before": 813,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R890 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R890 LANDED 2026-10-29: commit",
+  "  5e65526fe4854a0b72cca58ce628763a803aa496",
+  "  (pushed b351317..5e65526, census 812 -> 813),",
+  "  THE REMORHAZ LORE PIN - THE ISSUE-2 OPENER",
+  "  (Round A of issue 2, The Dragon Vol. 1 No.",
+  "  2, August 1976, folio 21). THE SHAPE:",
+  "  prefix rmz (full-repo scan clean), header",
+  "  rules/rmz.h (21 inline), audit \"R890",
+  "  Remorhaz lore audit\" at",
+  "  rules/audits/r890_batch.h, 18 consts + 3",
+  "  bools, 12 examples, 3 header_sections, no",
+  "  chains/switches/tables. THE INK: the",
+  "  original 1976 Creature Features appearance",
+  "  - three sizes on d8 hit dice (6/10/14 at",
+  "  40/35/25 on the d100), the frame (30 feet,",
+  "  move 12, 20 percent in lair, MR 75, AC",
+  "  underside 4 / back 0 plus special / head",
+  "  2), the bite 3-36, the fire breath at",
+  "  3/5/7 dice, wings-and-breath, the",
+  "  heated back that melts non-magical",
+  "  weapons, the cold-dwelling doctrine",
+  "  (Silver Dragon matrix seat) - pinned as",
+  "  LORE against the UNTOUCHED MM1 def",
+  "  monsters/monsters/r/remorhaz.lua, the",
+  "  Bulette pattern, divergences noted",
+  "  (bite 3-36 vs 6-36, bands 6/10/14 vs",
+  "  7-14, fire breath vs the polar worm's",
+  "  wing-beat, low vs animal intelligence,",
+  "  30 feet vs 21-42). THE VOICE: all 32",
+  "  issue-2 pages at extract/dragon/002/",
+  "  plus the pre-flip",
+  "  tools/dragon_gap_report_002.md (4 boxes,",
+  "  0 closed - Remorhaz, Alchemist, Fischer",
+  "  items, the systems round) shipped as spec",
+  "  data files; the Aronson box FLIPPED - the",
+  "  issue-1 report closes out 3 closed /",
+  "  0 open. ISSUE-2 ADJUDICATION (user-set",
+  "  2026-10-29): use - the Remorhaz lore",
+  "  pin, the Alchemist COMPLETE (class +",
+  "  potions + poisons, no cherry-picking),",
+  "  the Fischer Hints magic items (own",
+  "  round), and both systems articles",
+  "  (Weapon Damage expertise + Monkish",
+  "  promotion combat); drop - all fiction,",
+  "  the Ringbearer ad, editorials, GenCon and",
+  "  press material. VERIFIED: engine",
+  "  double-run GREEN applied 39 / already",
+  "  39; rverify against pristine b351317:",
+  "  21 mutants 0 missed; the R889 record",
+  "  seated into the v2 seed ledger. Spec",
+  "  tools/spec_r890.json, 162,227 bytes, 473",
+  "  lines, md5",
+  "  39a0fcbe356a5a66a941293ec8979f45",
+  "  (authored-plus-newline). NEXT: R891 - the",
+  "  Alchemist, complete (folios 28-30), with",
+  "  the Remorhaz box flip -> issue-2 report",
+  "  1 closed / 3 open. WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/rmz.h\"  // R890: the Remorhaz lore, the issue-2 opener",
+ "include_comment": "the Alchemist class",
+ "header_file": "rules/alc.h",
+ "audit_file": "rules/audits/r891_batch.h",
+ "audit_label": "R891 Alchemist class audit",
+ "audit_anchor": "#include \"rules/audits/r890_batch.h\"  // R890: R890 Remorhaz lore audit",
+ "gap_report": "tools/dragon_gap_report_002.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 3
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Remorhaz lore pin** (folio 21) - the opener round",
+   "to": "- [x] **The Remorhaz lore pin** (folio 21) - the opener round",
+   "note": "the Remorhaz box - the issue-2 report's first flip"
+  }
+ ],
+ "banner": {
+  "title": "The Alchemist, complete - Jon Pickens' new D&D character class (folios 28-30): the class frame, the twenty-stage advancement ladder, the four ability percentages, the six-level potions grid, the level-gated abilities, the On Poisons doctrine, and the laboratory",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 2 (August 1976): folios 28-30, Jon Pickens' A New D&D Character Class: The Alchemist - the class core and ability table (folio 28), the potions list, acids, drugs, production costs and the new-potion explanations (folio 29), and the magic-item interactions, the On Poisons doctrine, and the weapon damage option (folio 30, the option rides a later round). COMPLETE per the user's mandate - class, progression, potions and poisons, no cherry-picking. OD&D-era ink converted per the walk doctrine: the pin IS the conversion, noted, never silent.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. The Alchemist rides as a full variant class - the engine's canon classes are untouched; the two printed grids (the four ability percentages, the potions per level) and the twenty-stage XP ladder are pinned as printed, with the ink's blank ceiling cells read as the 100-percent cap and so noted; the level-gated abilities, the poison level-strength system, the acids, drugs and blade venom, the production costs, and the item interactions (Grimoire of Archaic Alchemy, Book of Infinite Spells, the Philosopher's Stone) all ride noted, never silent."
+ },
+ "consts": [
+  {
+   "name": "alcWisIntFloor",
+   "value": 13,
+   "comment": "the prime requisite is Wisdom, and BOTH Wisdom and Intelligence must exceed 12 - the converted floor reads 13 or better (folio 28)"
+  },
+  {
+   "name": "alcMaxAc",
+   "value": 5,
+   "comment": "fighting is not their vocation - the best armor class they can reach is 5 (folio 28)"
+  },
+  {
+   "name": "alcHitDieSides",
+   "value": 6,
+   "comment": "six-sided hit dice (folio 28)"
+  },
+  {
+   "name": "alcHitDiceTop",
+   "value": 9,
+   "comment": "the d6 runs to level 9, one point per level after (folio 28)"
+  },
+  {
+   "name": "alcSaveBonusPoison",
+   "value": 2,
+   "comment": "saving throws as Fighters, plus 2 against poison and non-magical paralyzation (folio 28)"
+  },
+  {
+   "name": "alcNeutralizeMult",
+   "value": 2,
+   "comment": "Neutralize Poison works up to TWICE the Alchemist's own level, once per character per poisoning, and never revives the dead (folio 28)"
+  },
+  {
+   "name": "alcParalyzeMult",
+   "value": 2,
+   "comment": "Neutralize Paralyzation cancels creature-caused paralyzation up to twice his level, never device-caused (folio 28)"
+  },
+  {
+   "name": "alcPctRows",
+   "value": 20,
+   "comment": "the ability grid runs the full twenty stages - Student through Master Alchemist the 11th (folio 28)"
+  },
+  {
+   "name": "alcPotionRows",
+   "value": 20,
+   "comment": "the potions grid runs the same twenty stages (folio 28)"
+  },
+  {
+   "name": "alcReadLangPct",
+   "value": 80,
+   "comment": "Read Languages at 80 percent, one attempt per week per item (folio 28)"
+  },
+  {
+   "name": "alcReadLangLevel",
+   "value": 1,
+   "comment": "the 1st-level gates: Read Languages, prepare poisons and drugs, prepare a Potion of Delusion (folio 28)"
+  },
+  {
+   "name": "alcPoisonDrugLevel",
+   "value": 1,
+   "comment": "poisons and drugs from the first level (folio 28)"
+  },
+  {
+   "name": "alcDelusionLevel",
+   "value": 1,
+   "comment": "the Potion of Delusion brewable from the first level (folio 28)"
+  },
+  {
+   "name": "alcPotionAcidLevel",
+   "value": 3,
+   "comment": "the 3rd-level gate: prepare potions and acids (folio 28)"
+  },
+  {
+   "name": "alcBladeVenomLevel",
+   "value": 5,
+   "comment": "the 5th-level gate: prepare Blade Venom (folio 28)"
+  },
+  {
+   "name": "alcReadMagicLevel",
+   "value": 7,
+   "comment": "the 7th-level gate: Read Magic and hence scrolls, as Thieves (folio 28)"
+  },
+  {
+   "name": "alcSampleLevel",
+   "value": 9,
+   "comment": "the 9th-level gate: prepare potions from samples, even unresearched ones (folios 28-29)"
+  },
+  {
+   "name": "alcPoisonCostGp",
+   "value": 50,
+   "comment": "poisons: each strength level costs 50 gold pieces and one day to brew (folio 28)"
+  },
+  {
+   "name": "alcPoisonCostDays",
+   "value": 1,
+   "comment": "one day per strength level of poison (folio 28)"
+  },
+  {
+   "name": "alcPoisonDieRounds",
+   "value": 3,
+   "comment": "a poison at or above the victim's dice count kills in 3 melee rounds on a failed save (folio 30)"
+  },
+  {
+   "name": "alcSlowDivisor",
+   "value": 2,
+   "comment": "a poison at half the victim's dice or more (but under the full count) slows him until an hourly constitution/resurrection check succeeds (folio 30)"
+  },
+  {
+   "name": "alcDoseIngestPenaltyPct",
+   "value": 20,
+   "comment": "large doses are detectable - minus 20 percent ingestion chance per dose over the basic one (folio 30)"
+  },
+  {
+   "name": "alcBelladonnaDiv",
+   "value": 2,
+   "comment": "Belladonna reads as a half-level-strength poison (folio 30)"
+  },
+  {
+   "name": "alcBladeVenomCostGp",
+   "value": 200,
+   "comment": "Blade Venom costs 200 gold pieces and one week to prepare (folio 30)"
+  },
+  {
+   "name": "alcBladeVenomWeeks",
+   "value": 1,
+   "comment": "one week of preparation per batch of Blade Venom, one vial per batch (folio 30)"
+  },
+  {
+   "name": "alcBladeVenomDoses",
+   "value": 3,
+   "comment": "a Blade Venom vial coats three hits with a blade or three arrows (folio 30)"
+  },
+  {
+   "name": "alcBladeVenomHours",
+   "value": 24,
+   "comment": "Blade Venom loses potency 24 hours after the vial is opened (folio 30)"
+  },
+  {
+   "name": "alcAcidCostGp",
+   "value": 100,
+   "comment": "acids by the gallon: 100 gold pieces and one day per level strength (folio 29)"
+  },
+  {
+   "name": "alcAcidDieSides",
+   "value": 6,
+   "comment": "acid damage - one six-sided die per level strength, maximum strength equal to the Alchemist's level (folio 29)"
+  },
+  {
+   "name": "alcAcidNeutralizeLevel",
+   "value": 3,
+   "comment": "from the 3rd level the Alchemist has a chance to neutralize half the acid damage, if the victim survives (folio 29)"
+  },
+  {
+   "name": "alcAcidNeutralizeBasePct",
+   "value": 15,
+   "comment": "the base acid-neutralization chance is 15 percent (folio 29)"
+  },
+  {
+   "name": "alcAcidNeutralizeStepPct",
+   "value": 5,
+   "comment": "the acid-neutralization chance rises 5 percent per level above the 3rd (folio 29)"
+  },
+  {
+   "name": "alcDrugCostMult",
+   "value": 2,
+   "comment": "drugs cost double the poison price (folio 29)"
+  },
+  {
+   "name": "alcDrugSavePenalty",
+   "value": 2,
+   "comment": "the drug save rides at minus 2 vs poison; failure means unconsciousness (folio 29)"
+  },
+  {
+   "name": "alcDrugUnconsciousHours",
+   "value": 4,
+   "comment": "the drugged victim sleeps 4 hours minimum, waking on an hourly constitution/resurrection check (folio 29)"
+  },
+  {
+   "name": "alcPotionCostGp",
+   "value": 200,
+   "comment": "potions cost 200 gold pieces and one week per level to produce; research costs as MU spells (folio 29)"
+  },
+  {
+   "name": "alcPotionWeeksPerLevel",
+   "value": 1,
+   "comment": "one week of production per potion level (folio 29)"
+  },
+  {
+   "name": "alcSampleBonusPct",
+   "value": 40,
+   "comment": "a sample adds 40 percent to the research chance for an Alchemist able to research the potion (folio 29)"
+  },
+  {
+   "name": "alcPotionOptionCostGp",
+   "value": 250,
+   "comment": "the option: raise potion production costs to 250 gold pieces and bar MU potion production (folio 29)"
+  },
+  {
+   "name": "alcPotionsL1",
+   "value": 10,
+   "comment": "the level-1 potion list runs ten: Heroism to Tanglefoot Pills (folio 29)"
+  },
+  {
+   "name": "alcPotionsL2",
+   "value": 8,
+   "comment": "the level-2 list runs eight: Speed to Dust of Paralyzation (folio 29)"
+  },
+  {
+   "name": "alcPotionsL3",
+   "value": 8,
+   "comment": "the level-3 list runs eight: Superheroism to Dust of Sneezing and Choking (folio 29)"
+  },
+  {
+   "name": "alcPotionsL4",
+   "value": 6,
+   "comment": "the level-4 list runs six: Invulnerability to Homunculi Creation (folio 29)"
+  },
+  {
+   "name": "alcPotionsL5",
+   "value": 6,
+   "comment": "the level-5 list runs six: Dragon Control to Cloning Culture (folio 29)"
+  },
+  {
+   "name": "alcPotionsL6",
+   "value": 4,
+   "comment": "the level-6 list runs four: Longevity, Cure Disease, Regeneration, Mind Damp (folio 29)"
+  },
+  {
+   "name": "alcSerumRiskPct",
+   "value": 1,
+   "comment": "the Lycanthropy Immunization serum protects for one month, with a 1 percent chance of catching the disease from the serum itself (folio 29)"
+  },
+  {
+   "name": "alcLycImmunityMonths",
+   "value": 1,
+   "comment": "one month of lycanthropy immunity per dose of serum (folio 29)"
+  },
+  {
+   "name": "alcSneezeCoughMin",
+   "value": 2,
+   "comment": "Dust of Sneezing: saves at minus 2, a coughing spell for 2-8 melee rounds, makes 10 packets (folio 29)"
+  },
+  {
+   "name": "alcSneezeCoughMax",
+   "value": 8,
+   "comment": "the coughing spell's top end - 8 melee rounds (folio 29)"
+  },
+  {
+   "name": "alcFlashBlindPct",
+   "value": 90,
+   "comment": "Flash Pellets: an unexpected victim has a 90 percent chance of blindness for 2-8 melee rounds; makes 5 pellets (folio 29)"
+  },
+  {
+   "name": "alcFlashPellets",
+   "value": 5,
+   "comment": "five Flash Pellets per batch (folio 29)"
+  },
+  {
+   "name": "alcPurifyServings",
+   "value": 10,
+   "comment": "Purification Powder serves 10 - makes bad food and water fit, never neutralizing poison or drugs (folio 29)"
+  },
+  {
+   "name": "alcTangleSideFeet",
+   "value": 10,
+   "comment": "Tanglefoot expands to fill a 10 x 10 area with rubbery tentacles; makes 2 (folio 29)"
+  },
+  {
+   "name": "alcTangleMenTurns",
+   "value": 3,
+   "comment": "a man needs 3 turns to force through the Tanglefoot; a giant takes one (folio 29)"
+  },
+  {
+   "name": "alcTangleHours",
+   "value": 1,
+   "comment": "the Tanglefoot tendrils dissipate harmlessly in one hour (folio 29)"
+  },
+  {
+   "name": "alcDustParalyzPackets",
+   "value": 10,
+   "comment": "Dust of Paralyzation: a missed save paralyzes for 1 hour; makes 10 packets (folio 29)"
+  },
+  {
+   "name": "alcParalyzHours",
+   "value": 1,
+   "comment": "one hour of paralyzation from the Dust (folio 29)"
+  },
+  {
+   "name": "alcMindDampWeeks",
+   "value": 1,
+   "comment": "Mind Damp: one week of immunity to psionic location or attack, the user psionically silent, psionic devices inoperative (folio 29)"
+  },
+  {
+   "name": "alcRegenRingDays",
+   "value": 1,
+   "comment": "the Regeneration potion acts as a Ring of Regeneration for one day (folio 29)"
+  },
+  {
+   "name": "alcRegenFreshDays",
+   "value": 3,
+   "comment": "revitalization holds up to three days on a fresh body, a constitution check needed after the first (folio 29)"
+  },
+  {
+   "name": "alcRegenWeeks",
+   "value": 2,
+   "comment": "applied over at least two weeks to an inactive character, it can regenerate a lost body member (folio 29)"
+  },
+  {
+   "name": "alcGrimoireAlcBonus",
+   "value": 1,
+   "comment": "the Grimoire of Archaic Alchemy adds one experience level to Alchemists (folio 30)"
+  },
+  {
+   "name": "alcGrimoireMuXp",
+   "value": 10000,
+   "comment": "the Grimoire gives MUs 10,000 experience points (folio 30)"
+  },
+  {
+   "name": "alcGrimoireClericXp",
+   "value": 7000,
+   "comment": "Clerics take 7,000 experience points from the Grimoire and lose 5-30 (folio 30)"
+  },
+  {
+   "name": "alcGrimoireClericLossMin",
+   "value": 5,
+   "comment": "the Grimoire's Cleric loss floor - 5 points (folio 30)"
+  },
+  {
+   "name": "alcGrimoireClericLossMax",
+   "value": 30,
+   "comment": "the Grimoire's Cleric loss ceiling - 30 points (folio 30)"
+  },
+  {
+   "name": "alcGrimoireOtherLossMin",
+   "value": 2,
+   "comment": "other types lose 2-20 points to the Grimoire (folio 30)"
+  },
+  {
+   "name": "alcGrimoireOtherLossMax",
+   "value": 20,
+   "comment": "the Grimoire's other-class loss ceiling - 20 points (folio 30)"
+  },
+  {
+   "name": "alcBookInfMin",
+   "value": 5,
+   "comment": "the Book of Infinite Spells does 5-20 points to an Alchemist, where he otherwise takes book damage as a Cleric (folio 30)"
+  },
+  {
+   "name": "alcBookInfMax",
+   "value": 20,
+   "comment": "the Book of Infinite Spells damage ceiling - 20 points (folio 30)"
+  },
+  {
+   "name": "alcPstoneChargesMin",
+   "value": 2,
+   "comment": "the Philosopher's Stone carries 2-8 charges (folio 30)"
+  },
+  {
+   "name": "alcPstoneChargesMax",
+   "value": 8,
+   "comment": "the Philosopher's Stone charge ceiling - 8 (folio 30)"
+  },
+  {
+   "name": "alcPstoneResearchPct",
+   "value": 20,
+   "comment": "one charge adds 20 percent to a research roll (folio 30)"
+  },
+  {
+   "name": "alcPstoneTransmuteWt",
+   "value": 10000,
+   "comment": "one charge transmutes 10,000 weight points of lead into gold or silver (folio 30)"
+  },
+  {
+   "name": "alcPstoneGoldPct",
+   "value": 50,
+   "comment": "the transmutation is 50 percent gold, 50 percent silver (folio 30)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "alcHumanOnly",
+   "value": true,
+   "comment": "Alchemists must be human (folio 28)"
+  },
+  {
+   "name": "alcNeutralRequired",
+   "value": true,
+   "comment": "their alignment is NEUTRAL (folio 28)"
+  },
+  {
+   "name": "alcAttackAsCleric",
+   "value": true,
+   "comment": "attack levels advance as Clerics; one-handed weapons only, no magical swords (folio 28)"
+  },
+  {
+   "name": "alcSavesAsFighter",
+   "value": true,
+   "comment": "the saving-throw frame rides the Fighter tables, plus 2 vs poison and non-magical paralyzation (folio 28)"
+  },
+  {
+   "name": "alcPsionicSwap",
+   "value": true,
+   "comment": "psionic ability as Fighters, with Body Weaponry replaced by Molecular Agitation (folio 28)"
+  },
+  {
+   "name": "alcUseAnyPotion",
+   "value": true,
+   "comment": "the Alchemist may use any potion, and the magical items employable by all classes (folio 28)"
+  },
+  {
+   "name": "alcUseManualOfGolems",
+   "value": true,
+   "comment": "the Alchemist is able to use the Manual of Golems (folio 30)"
+  },
+  {
+   "name": "alcNoElementalWands",
+   "value": true,
+   "comment": "alchemic magical items include any device save wands or staves which can summon elementals (folio 29)"
+  },
+  {
+   "name": "alcJugControl",
+   "value": true,
+   "comment": "the Alchemist can control which liquids emerge from the Jug of Plentiful Potions; other types pour randomly (folio 30)"
+  },
+  {
+   "name": "alcDelusionRecheck",
+   "value": true,
+   "comment": "Identify Potion: if a Potion of Delusion is not identified, check again - it may be identified incorrectly; also tests for acids (folio 28)"
+  },
+  {
+   "name": "alcPoisonAccumulates",
+   "value": true,
+   "comment": "poison below the slow threshold has no effect but accumulates in the body (folio 30)"
+  },
+  {
+   "name": "alcClericNeutralizeOption",
+   "value": true,
+   "comment": "the option: a cleric may remove as many poison levels as his own experience levels, subtracted immediately (folio 30)"
+  },
+  {
+   "name": "alcPotionOptionNoMu",
+   "value": true,
+   "comment": "the production option's other half - bar MU potion production entirely (folio 29)"
+  },
+  {
+   "name": "alcPstoneCureDisease",
+   "value": true,
+   "comment": "while the Philosopher's Stone holds charges it Cures Disease once per day, free (folio 30)"
+  },
+  {
+   "name": "alcPstoneDiseaseImmune",
+   "value": true,
+   "comment": "the Alchemist cannot contact a disease while carrying the stone (folio 30)"
+  },
+  {
+   "name": "alcPstoneHeatImmune",
+   "value": true,
+   "comment": "the stone is immune to heat, even dragon breath - the molten-lead test; it disintegrates when the last charge is used (folio 30)"
+  }
+ ],
+ "chains": [],
+ "switches": [
+  {
+   "name": "alcXpStage",
+   "values": [
+    0,
+    1500,
+    3000,
+    6000,
+    12000,
+    25000,
+    50000,
+    100000,
+    150000,
+    300000,
+    450000,
+    600000,
+    750000,
+    900000,
+    1050000,
+    1200000,
+    1350000,
+    1500000,
+    1650000,
+    1800000
+   ],
+   "default": 1800000,
+   "comment": "the advancement ladder - stage 0 Student at 0 XP through stage 19 Master Alchemist the 11th at 1,800,000: 0 / 1,500 / 3,000 / 6,000 / 12,000 / 25,000 / 50,000 / 100,000 / 150,000 / 300,000 / 450,000 / 600,000 / 750,000 / 900,000 / 1,050,000 / 1,200,000 / 1,350,000 / 1,500,000 / 1,650,000 / 1,800,000 XP (folio 28)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "alcPctGrid",
+   "tag": "AlcPct",
+   "count": "alcPctRows",
+   "sentinel": 0,
+   "cols": [
+    "alcDetPct",
+    "alcNeutPoisPct",
+    "alcNeutParaPct",
+    "alcIdenPct"
+   ],
+   "col_comments": [
+    "Detect Poison percent by stage - Student 20 through the 95 at Mstr Alchem 2nd, capped at 100 from Mstr 3rd",
+    "Neutralize Poison percent by stage - 10 at Student to the printed 95 at Mstr 4th, 100 from Mstr 5th",
+    "Neutralize Paralyzation percent by stage - 15 at Student, capped at 100 from Mstr 3rd",
+    "Identify Potion percent by stage - 5 at Student, capped at 100 at Mstr 4th"
+   ],
+   "data": [
+    [
+     20,
+     10,
+     15,
+     5
+    ],
+    [
+     25,
+     15,
+     20,
+     10
+    ],
+    [
+     30,
+     20,
+     25,
+     20
+    ],
+    [
+     35,
+     25,
+     35,
+     25
+    ],
+    [
+     45,
+     35,
+     40,
+     35
+    ],
+    [
+     55,
+     45,
+     45,
+     45
+    ],
+    [
+     60,
+     50,
+     55,
+     50
+    ],
+    [
+     65,
+     55,
+     65,
+     60
+    ],
+    [
+     75,
+     65,
+     75,
+     70
+    ],
+    [
+     85,
+     75,
+     85,
+     80
+    ],
+    [
+     95,
+     85,
+     95,
+     85
+    ],
+    [
+     100,
+     90,
+     100,
+     95
+    ],
+    [
+     100,
+     95,
+     100,
+     100
+    ],
+    [
+     100,
+     100,
+     100,
+     100
+    ],
+    [
+     100,
+     100,
+     100,
+     100
+    ],
+    [
+     100,
+     100,
+     100,
+     100
+    ],
+    [
+     100,
+     100,
+     100,
+     100
+    ],
+    [
+     100,
+     100,
+     100,
+     100
+    ],
+    [
+     100,
+     100,
+     100,
+     100
+    ],
+    [
+     100,
+     100,
+     100,
+     100
+    ]
+   ],
+   "audit_comment": "the four ability percentages across the twenty stages - the ink's blank cells past the printed 95s read as the 100-percent ceiling, so noted, never silent (folio 28)"
+  },
+  {
+   "name": "alcPotionGrid",
+   "tag": "AlcPot",
+   "count": "alcPotionRows",
+   "sentinel": 0,
+   "cols": [
+    "alcPots1",
+    "alcPots2",
+    "alcPots3",
+    "alcPots4",
+    "alcPots5",
+    "alcPots6"
+   ],
+   "col_comments": [
+    "first-level potions per stage - none through Cleric, 2 from Scribe, 10 at Mstr Alchem 11th",
+    "second-level potions per stage - from Savant's 1 to the terminal 8",
+    "third-level potions per stage - from Philosopher's 1 to the terminal 8",
+    "fourth-level potions per stage - from Alchemist's 1 to the terminal 6",
+    "fifth-level potions per stage - from Mstr Alchem 2nd's 1 to the terminal 6",
+    "sixth-level potions per stage - from Mstr Alchem 4th's 1 to the terminal 4"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     2,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     4,
+     3,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     3,
+     3,
+     2,
+     0,
+     0
+    ],
+    [
+     5,
+     4,
+     3,
+     2,
+     1,
+     0
+    ],
+    [
+     6,
+     4,
+     4,
+     2,
+     2,
+     0
+    ],
+    [
+     6,
+     5,
+     4,
+     3,
+     2,
+     1
+    ],
+    [
+     7,
+     5,
+     5,
+     3,
+     3,
+     1
+    ],
+    [
+     7,
+     6,
+     5,
+     4,
+     3,
+     2
+    ],
+    [
+     8,
+     6,
+     6,
+     4,
+     4,
+     2
+    ],
+    [
+     8,
+     7,
+     6,
+     5,
+     4,
+     3
+    ],
+    [
+     9,
+     7,
+     7,
+     5,
+     5,
+     3
+    ],
+    [
+     9,
+     8,
+     7,
+     6,
+     5,
+     4
+    ],
+    [
+     10,
+     8,
+     8,
+     6,
+     6,
+     4
+    ]
+   ],
+   "audit_comment": "the six-level potions grid across the twenty stages - Student and Cleric brew none, the columns open one by one as printed (folio 28)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['alcWisIntFloor']() != 13 or m['alcMaxAc']() != 5",
+   "note": "the frame - both scores over 12, the best AC 5 (folio 28)"
+  },
+  {
+   "expr": "m['alcHitDieSides']() != 6 or m['alcHitDiceTop']() != 9",
+   "note": "the d6 hit dice to level 9, one point per level after (folio 28)"
+  },
+  {
+   "expr": "m['alcSaveBonusPoison']() != 2 or m['alcNeutralizeMult']() != 2 or m['alcParalyzeMult']() != 2",
+   "note": "the +2 saves and the twice-his-level neutralization caps (folio 28)"
+  },
+  {
+   "expr": "m['alcXpStage'](0) != 0 or m['alcXpStage'](1) != 1500",
+   "note": "the ladder opens - Student at 0, Cleric at 1,500 (folio 28)"
+  },
+  {
+   "expr": "m['alcXpStage'](9) != 300000",
+   "note": "Master Alchemist the 1st at 300,000 (folio 28)"
+  },
+  {
+   "expr": "m['alcXpStage'](19) != 1800000",
+   "note": "the ladder tops - Master Alchemist the 11th at 1,800,000 (folio 28)"
+  },
+  {
+   "expr": "m['alcXpStage'](11) - m['alcXpStage'](10) != 150000",
+   "note": "the Master ladder steps 150,000 per stage - Mstr 3rd over Mstr 2nd"
+  },
+  {
+   "expr": "m['alcDetPct'](0) != 20 or m['alcIdenPct'](0) != 5",
+   "note": "the Student row - Detect 20, Identify 5 (folio 28)"
+  },
+  {
+   "expr": "m['alcDetPct'](4) != 45 or m['alcNeutParaPct'](4) != 40",
+   "note": "the Savant row - Detect 45, Paralyzation 40 (folio 28)"
+  },
+  {
+   "expr": "m['alcDetPct'](10) != 95 or m['alcNeutPoisPct'](10) != 85",
+   "note": "Mstr 2nd - Detect 95, Neutralize 85 (folio 28)"
+  },
+  {
+   "expr": "m['alcNeutPoisPct'](11) != 90 or m['alcNeutPoisPct'](12) != 95 or m['alcNeutPoisPct'](13) != 100",
+   "note": "Neutralize Poison's printed tail - 90, 95, then the 100 ceiling at Mstr 5th (folio 28)"
+  },
+  {
+   "expr": "m['alcDetPct'](19) != 100 or m['alcIdenPct'](19) != 100",
+   "note": "past the printed rows the ceiling holds - the ink's blank cells read as 100, so noted (folio 28)"
+  },
+  {
+   "expr": "m['alcPots1'](2) != 2 or m['alcPots1'](19) != 10",
+   "note": "first-level potions - 2 from Scribe, 10 at the top stage (folio 28)"
+  },
+  {
+   "expr": "m['alcPots2'](4) != 1 or m['alcPots2'](19) != 8",
+   "note": "second-level potions - 1 from Savant, 8 at the top (folio 28)"
+  },
+  {
+   "expr": "m['alcPots3'](6) != 1 or m['alcPots4'](8) != 1 or m['alcPots5'](10) != 1 or m['alcPots6'](12) != 1",
+   "note": "each column opens exactly where printed - Philosopher, Alchemist, Mstr 2nd, Mstr 4th (folio 28)"
+  },
+  {
+   "expr": "m['alcPots1'](7) != 4 or m['alcPots2'](7) != 2 or m['alcPots3'](7) != 2",
+   "note": "the Magnus row - 4, 2, 2 and nothing higher (folio 28)"
+  },
+  {
+   "expr": "m['alcPots6'](11) != 0 or m['alcPots6'](12) != 1",
+   "note": "sixth-level potions open at Mstr 4th, not before (folio 28)"
+  },
+  {
+   "expr": "m['alcReadLangLevel']() != 1 or m['alcPotionAcidLevel']() != 3 or m['alcBladeVenomLevel']() != 5 or m['alcReadMagicLevel']() != 7 or m['alcSampleLevel']() != 9",
+   "note": "the level gates - Read Languages 1st, potions and acids 3rd, Blade Venom 5th, Read Magic 7th, samples 9th (folio 28)"
+  },
+  {
+   "expr": "m['alcPoisonCostGp']() != 50 or m['alcPoisonCostDays']() != 1",
+   "note": "poison brewing - 50 gold pieces and a day per strength level (folio 28)"
+  },
+  {
+   "expr": "m['alcPoisonDieRounds']() != 3 or m['alcSlowDivisor']() != 2",
+   "note": "the poison doctrine - death in 3 rounds at or above the dice count, the slow at half (folio 30)"
+  },
+  {
+   "expr": "m['alcDoseIngestPenaltyPct']() != 20 or m['alcBelladonnaDiv']() != 2",
+   "note": "large doses minus 20 percent ingestion per dose, Belladonna at half strength (folio 30)"
+  },
+  {
+   "expr": "m['alcBladeVenomCostGp']() != 200 or m['alcBladeVenomDoses']() != 3 or m['alcBladeVenomHours']() != 24",
+   "note": "Blade Venom - 200 gold, three coats per vial, dead 24 hours after opening (folio 30)"
+  },
+  {
+   "expr": "m['alcAcidCostGp']() != 100 or m['alcAcidDieSides']() != 6 or m['alcAcidNeutralizeBasePct']() != 15 or m['alcAcidNeutralizeStepPct']() != 5",
+   "note": "acids - 100 gold a gallon-strength, a d6 a level, neutralization 15 percent from 3rd rising 5 (folio 29)"
+  },
+  {
+   "expr": "m['alcDrugCostMult']() != 2 or m['alcDrugSavePenalty']() != 2 or m['alcDrugUnconsciousHours']() != 4",
+   "note": "drugs - double cost, saves at minus 2, 4 hours of unconsciousness (folio 29)"
+  },
+  {
+   "expr": "m['alcPotionCostGp']() != 200 or m['alcSampleBonusPct']() != 40 or m['alcPotionOptionCostGp']() != 250",
+   "note": "potion production - 200 gold a level, samples plus 40 percent, the option at 250 (folio 29)"
+  },
+  {
+   "expr": "m['alcPotionsL1']() + m['alcPotionsL2']() + m['alcPotionsL3']() + m['alcPotionsL4']() + m['alcPotionsL5']() + m['alcPotionsL6']() != 42",
+   "note": "the potion lists tile 10 + 8 + 8 + 6 + 6 + 4 - forty-two potions across six levels (folio 29)"
+  },
+  {
+   "expr": "m['alcSerumRiskPct']() != 1 or m['alcLycImmunityMonths']() != 1",
+   "note": "the lycanthropy serum - one month of immunity at a 1 percent risk (folio 29)"
+  },
+  {
+   "expr": "m['alcSneezeCoughMin']() != 2 or m['alcSneezeCoughMax']() != 8 or m['alcFlashBlindPct']() != 90",
+   "note": "the new-potion flavor - the sneezing cough 2-8 rounds, the flash 90 percent blind (folio 29)"
+  },
+  {
+   "expr": "m['alcTangleSideFeet']() != 10 or m['alcTangleMenTurns']() != 3 or m['alcTangleHours']() != 1",
+   "note": "Tanglefoot - the 10 x 10 area, 3 turns to force, gone in an hour (folio 29)"
+  },
+  {
+   "expr": "m['alcGrimoireAlcBonus']() != 1 or m['alcGrimoireMuXp']() != 10000 or m['alcGrimoireClericXp']() != 7000",
+   "note": "the Grimoire - plus a level for Alchemists, 10,000 XP for MUs, 7,000 for Clerics (folio 30)"
+  },
+  {
+   "expr": "m['alcGrimoireClericLossMin']() != 5 or m['alcGrimoireClericLossMax']() != 30 or m['alcGrimoireOtherLossMin']() != 2 or m['alcGrimoireOtherLossMax']() != 20",
+   "note": "the Grimoire's price - Clerics lose 5-30, others 2-20 (folio 30)"
+  },
+  {
+   "expr": "m['alcPstoneChargesMin']() != 2 or m['alcPstoneChargesMax']() != 8 or m['alcPstoneResearchPct']() != 20 or m['alcPstoneTransmuteWt']() != 10000",
+   "note": "the Philosopher's Stone - 2-8 charges, plus 20 percent research, 10,000 weight transmuted (folio 30)"
+  },
+  {
+   "expr": "m['alcHumanOnly']() != 1 or m['alcNeutralRequired']() != 1 or m['alcAttackAsCleric']() != 1 or m['alcSavesAsFighter']() != 1",
+   "note": "the class frame - human, neutral, attacks as Cleric, saves as Fighter (folio 28)"
+  },
+  {
+   "expr": "m['alcPsionicSwap']() != 1 or m['alcUseAnyPotion']() != 1 or m['alcUseManualOfGolems']() != 1 or m['alcJugControl']() != 1",
+   "note": "the psionic swap, any potion, the Manual of Golems, the Jug control (folios 28, 30)"
+  },
+  {
+   "expr": "m['alcDelusionRecheck']() != 1 or m['alcPoisonAccumulates']() != 1 or m['alcClericNeutralizeOption']() != 1",
+   "note": "the Delusion recheck, the accumulation doctrine, the cleric option (folios 28, 30)"
+  },
+  {
+   "expr": "m['alcPstoneCureDisease']() != 1 or m['alcPstoneDiseaseImmune']() != 1 or m['alcPstoneHeatImmune']() != 1",
+   "note": "the stone's three graces - Cure Disease free, disease immunity, heat immunity (folio 30)"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 102,
+ "header_sections": {
+  "the class frame (folios 28, 30)": [
+   {
+    "kind": "const",
+    "name": "alcWisIntFloor"
+   },
+   {
+    "kind": "const",
+    "name": "alcMaxAc"
+   },
+   {
+    "kind": "const",
+    "name": "alcHitDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "alcHitDiceTop"
+   },
+   {
+    "kind": "const",
+    "name": "alcSaveBonusPoison"
+   },
+   {
+    "kind": "const",
+    "name": "alcNeutralizeMult"
+   },
+   {
+    "kind": "const",
+    "name": "alcParalyzeMult"
+   },
+   {
+    "kind": "bool",
+    "name": "alcHumanOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "alcNeutralRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "alcAttackAsCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "alcSavesAsFighter"
+   },
+   {
+    "kind": "bool",
+    "name": "alcPsionicSwap"
+   },
+   {
+    "kind": "bool",
+    "name": "alcUseAnyPotion"
+   },
+   {
+    "kind": "bool",
+    "name": "alcUseManualOfGolems"
+   },
+   {
+    "kind": "bool",
+    "name": "alcNoElementalWands"
+   },
+   {
+    "kind": "bool",
+    "name": "alcJugControl"
+   }
+  ],
+  "the advancement ladder (folio 28)": [
+   {
+    "kind": "switch",
+    "name": "alcXpStage"
+   },
+   {
+    "kind": "const",
+    "name": "alcPctRows"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionRows"
+   }
+  ],
+  "the ability grid (folio 28)": [
+   {
+    "kind": "table",
+    "name": "alcPctGrid"
+   }
+  ],
+  "the potions grid (folio 28)": [
+   {
+    "kind": "table",
+    "name": "alcPotionGrid"
+   }
+  ],
+  "the level gates (folio 28)": [
+   {
+    "kind": "const",
+    "name": "alcReadLangLevel"
+   },
+   {
+    "kind": "const",
+    "name": "alcReadLangPct"
+   },
+   {
+    "kind": "const",
+    "name": "alcPoisonDrugLevel"
+   },
+   {
+    "kind": "const",
+    "name": "alcDelusionLevel"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionAcidLevel"
+   },
+   {
+    "kind": "const",
+    "name": "alcBladeVenomLevel"
+   },
+   {
+    "kind": "const",
+    "name": "alcReadMagicLevel"
+   },
+   {
+    "kind": "const",
+    "name": "alcSampleLevel"
+   }
+  ],
+  "the poisons doctrine (folio 30)": [
+   {
+    "kind": "const",
+    "name": "alcPoisonCostGp"
+   },
+   {
+    "kind": "const",
+    "name": "alcPoisonCostDays"
+   },
+   {
+    "kind": "const",
+    "name": "alcPoisonDieRounds"
+   },
+   {
+    "kind": "const",
+    "name": "alcSlowDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "alcDoseIngestPenaltyPct"
+   },
+   {
+    "kind": "const",
+    "name": "alcBelladonnaDiv"
+   },
+   {
+    "kind": "const",
+    "name": "alcBladeVenomCostGp"
+   },
+   {
+    "kind": "const",
+    "name": "alcBladeVenomWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "alcBladeVenomDoses"
+   },
+   {
+    "kind": "const",
+    "name": "alcBladeVenomHours"
+   },
+   {
+    "kind": "bool",
+    "name": "alcDelusionRecheck"
+   },
+   {
+    "kind": "bool",
+    "name": "alcPoisonAccumulates"
+   },
+   {
+    "kind": "bool",
+    "name": "alcClericNeutralizeOption"
+   }
+  ],
+  "the laboratory (folios 29-30)": [
+   {
+    "kind": "const",
+    "name": "alcAcidCostGp"
+   },
+   {
+    "kind": "const",
+    "name": "alcAcidDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "alcAcidNeutralizeLevel"
+   },
+   {
+    "kind": "const",
+    "name": "alcAcidNeutralizeBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "alcAcidNeutralizeStepPct"
+   },
+   {
+    "kind": "const",
+    "name": "alcDrugCostMult"
+   },
+   {
+    "kind": "const",
+    "name": "alcDrugSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "alcDrugUnconsciousHours"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionCostGp"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionWeeksPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "alcSampleBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionOptionCostGp"
+   },
+   {
+    "kind": "bool",
+    "name": "alcPotionOptionNoMu"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionsL1"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionsL2"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionsL3"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionsL4"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionsL5"
+   },
+   {
+    "kind": "const",
+    "name": "alcPotionsL6"
+   },
+   {
+    "kind": "const",
+    "name": "alcSerumRiskPct"
+   },
+   {
+    "kind": "const",
+    "name": "alcLycImmunityMonths"
+   },
+   {
+    "kind": "const",
+    "name": "alcSneezeCoughMin"
+   },
+   {
+    "kind": "const",
+    "name": "alcSneezeCoughMax"
+   },
+   {
+    "kind": "const",
+    "name": "alcFlashBlindPct"
+   },
+   {
+    "kind": "const",
+    "name": "alcFlashPellets"
+   },
+   {
+    "kind": "const",
+    "name": "alcPurifyServings"
+   },
+   {
+    "kind": "const",
+    "name": "alcTangleSideFeet"
+   },
+   {
+    "kind": "const",
+    "name": "alcTangleMenTurns"
+   },
+   {
+    "kind": "const",
+    "name": "alcTangleHours"
+   },
+   {
+    "kind": "const",
+    "name": "alcDustParalyzPackets"
+   },
+   {
+    "kind": "const",
+    "name": "alcParalyzHours"
+   },
+   {
+    "kind": "const",
+    "name": "alcMindDampWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "alcRegenRingDays"
+   },
+   {
+    "kind": "const",
+    "name": "alcRegenFreshDays"
+   },
+   {
+    "kind": "const",
+    "name": "alcRegenWeeks"
+   },
+   {
+    "kind": "const",
+    "name": "alcGrimoireAlcBonus"
+   },
+   {
+    "kind": "const",
+    "name": "alcGrimoireMuXp"
+   },
+   {
+    "kind": "const",
+    "name": "alcGrimoireClericXp"
+   },
+   {
+    "kind": "const",
+    "name": "alcGrimoireClericLossMin"
+   },
+   {
+    "kind": "const",
+    "name": "alcGrimoireClericLossMax"
+   },
+   {
+    "kind": "const",
+    "name": "alcGrimoireOtherLossMin"
+   },
+   {
+    "kind": "const",
+    "name": "alcGrimoireOtherLossMax"
+   },
+   {
+    "kind": "const",
+    "name": "alcBookInfMin"
+   },
+   {
+    "kind": "const",
+    "name": "alcBookInfMax"
+   },
+   {
+    "kind": "const",
+    "name": "alcPstoneChargesMin"
+   },
+   {
+    "kind": "const",
+    "name": "alcPstoneChargesMax"
+   },
+   {
+    "kind": "const",
+    "name": "alcPstoneResearchPct"
+   },
+   {
+    "kind": "const",
+    "name": "alcPstoneTransmuteWt"
+   },
+   {
+    "kind": "const",
+    "name": "alcPstoneGoldPct"
+   },
+   {
+    "kind": "bool",
+    "name": "alcPstoneCureDisease"
+   },
+   {
+    "kind": "bool",
+    "name": "alcPstoneDiseaseImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "alcPstoneHeatImmune"
+   }
+  ]
+ },
+ "audit_comment": "THE ALCHEMIST, COMPLETE - Round B of issue 2 (folios 28-30, Jon Pickens), the full variant class on the variant layer. THE CLASS FRAME (folio 28): human, neutral, both Wisdom and Intelligence over 12 (converted to the 13 floor, noted), best armor class 5, d6 hit dice to level 9 then one point a level, attacks as Clerics with one-handed weapons, saves as Fighters plus 2 vs poison and non-magical paralyzation, psionics as Fighters with Molecular Agitation for Body Weaponry, any potion, the Manual of Golems, the Jug of Plentiful Potions control. THE LADDER (folio 28): twenty stages Student 0 XP through Master Alchemist the 11th at 1,800,000. THE GRIDS (folio 28): the four ability percentages (Detect Poison, Neutralize Poison, Neutralize Paralyzation, Identify Potion) - 20/10/15/5 at Student to the printed 95s and the 100-percent ceiling where the ink's cells go blank, so noted, never silent; the six-level potions grid - none through Cleric, the columns opening 2 from Scribe, 1 from Savant, 1 from Philosopher, 1 from Alchemist, 1 from Mstr 2nd, 1 from Mstr 4th, to 10/8/8/6/6/4 at the top. THE LEVEL GATES (folio 28): Read Languages 80 percent and poisons and Delusion at 1st, potions and acids at 3rd, Blade Venom at 5th, Read Magic as Thieves at 7th, potions from samples at 9th. THE POISONS DOCTRINE (folios 28, 30): brew at 50 gold a strength level a day; poison at or above the victim's dice kills in 3 rounds on a failed save, at half or more it slows until an hourly constitution check, below that it accumulates; large doses minus 20 percent ingestion per dose, Belladonna half strength, the cleric neutralization option; Blade Venom at 200 gold a week a vial, three coats, dead 24 hours after opening. THE LABORATORY (folios 29-30): acids at 100 gold and a d6 a level with the 15-plus-5-a-level neutralization from 3rd; drugs double cost, saves minus 2, 4 hours down; potions at 200 gold a level with samples plus 40 percent and the 250-gold no-MU option; the forty-two-potion list across six levels with the new-potion explanations; the item interactions - the Grimoire (plus a level, 10,000 MU XP, Clerics 7,000 XP and 5-30 lost, others 2-20), the Book of Infinite Spells 5-20, the Philosopher's Stone (2-8 charges, 20 percent research, 10,000 weight transmuted at 50-50 gold-silver, Cure Disease free, disease and heat immunity, disintegration at the last charge). HONEST BOUNDARIES: a variant class, never core 1e canon - the engine's canon classes are untouched; the blank ceiling cells and the option clauses ride noted, never silent. The Remorhaz box flips this round - the issue-2 report's first flip, 1 closed / 3 open."
+}
