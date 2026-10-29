@@ -1,0 +1,285 @@
+{
+ "round": 918,
+ "title": "The Dragon issue-11 box closing round: the two-chain walk complete",
+ "prefix": "bfx",
+ "census_before": 840,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R917 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R917 LANDED 2026-10-29: commit",
+  "  9641e8887391618aafcec087ddbef8160598d902 (base",
+  "  30a102e, census 839 -> 840), the Dragon",
+  "  issue-11 opener: TWO CHAINS, prefix brw, header",
+  "  rules/brw.h, audit rules/audits/r917_batch.h",
+  "  (\"R917 issue-11 opener audit\"), 66 inline (33",
+  "  consts + 16 bools + 1 chain + 16 table cols),",
+  "  11 examples + 3 table_checks, 2",
+  "  header_sections, 39 data_files (gap report 011",
+  "  pre-flip + 38 issue-11 transcripts at",
+  "  extract/dragon/011), ZERO file_patches, gap",
+  "  report 010 verified no-op (2 closed / 0 open).",
+  "  CHAIN 1, the Kuntz Brawling article (folio 7):",
+  "  the first-move dex +2 gap, the averaged grapple",
+  "  score rounded down, the 11-row 2d6 grappling",
+  "  grid G1-G4/NG with the G2 break minimum, the",
+  "  11-row punch damage grid with the snake-eyes",
+  "  knockout at the netted score x 10 percent, the",
+  "  constitution damage pool with re-comparison",
+  "  each round, the dex-multiple extra punches at",
+  "  -1 per die. CHAIN 2, the Ward Quarterstaff",
+  "  Fighting Rules (folios 26-27): the three stages",
+  "  at 12/11/9, the A-A/A-D/D-D options with",
+  "  simultaneous resolution, the",
+  "  strength/constitution/dexterity ladders,",
+  "  chainmail 4/+3 and plate 6/+5, the Combat Index",
+  "  down to the out-cold 1 point, the",
+  "  50-match/30-win stage ladder, the nine merry",
+  "  men statted for historical sims. AS SCANNED,",
+  "  NOTED NEVER SILENT: the punch grid's row-2",
+  "  plus-four-or-higher cell garbles in the DjVu",
+  "  OCR (a quoted 3) and rides the -9 sentinel with",
+  "  its one-cell census - the four clean row-2",
+  "  cells anchor to the print's own snake-eyes note",
+  "  (the -4 for 40 percent, the -1 for 10); the -5",
+  "  haymaker of the legend never prints clean in",
+  "  the grid; the quarterstaff worked example's",
+  "  7-or-more hit floor reads against the rules",
+  "  text's 9 less the dex-18 plus-3 = 6, the rules",
+  "  text the pin. SOURCE NOTE: issue-11 single-",
+  "  voice (archive.org item accessory-dragon-",
+  "  magazine-012, no chat-side upload cross-check);",
+  "  PRINT FOLIO = PDF PAGE verified at the TOC",
+  "  alignments (5, 7, 16, 17, 26, 29), no printed",
+  "  footer digits survive the scan. NOT USABLE per",
+  "  the issue-11 walk: the Gygax guest editorial",
+  "  (5), the Watson OGRE defense article (8-10,",
+  "  Metagaming), the Barker EPT column (12-14), the",
+  "  Sorcerer's Scroll news column (16, lore - the",
+  "  brawling long-term-effects teaser harvests at",
+  "  issue 12 if it prints), the Snit pieces (15,",
+  "  33-36), the Leiber Sea Magic fiction (17-22),",
+  "  the shopper guide (22), the figures review",
+  "  (23-25), the Hobbit review and comics (27-30),",
+  "  the ads. VERIFIED: engine double-run GREEN",
+  "  applied 44 / already 44; rverify against",
+  "  pristine 30a102e: 205 mutants 0 missed; the raw",
+  "  JSON round-trip byte-exact (208754 bytes, md5",
+  "  fece45b4a3bb6c6a4abcdd41052a5615); transcripts",
+  "  byte-identical to the XML parse 38/38; prefix",
+  "  scan clean, seed grep 1. NEXT: the issue-11",
+  "  flip (report 011, 1 box to close), then the",
+  "  issue-12 opener (source in the same archive",
+  "  item; the Name That Monster winners may",
+  "  harvest). WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/brw.h\"  // R917: the Dragon issue-11 opener, the Kuntz brawling article and the Ward quarterstaff article",
+ "include_comment": "the Dragon issue-11 box closing round, the two-chain walk complete",
+ "header_file": "rules/bfx.h",
+ "audit_file": "rules/audits/r918_batch.h",
+ "audit_label": "R918 Dragon issue-11 closure audit",
+ "audit_anchor": "#include \"rules/audits/r917_batch.h\"  // R917: R917 issue-11 opener audit",
+ "audit_comment": "THE DRAGON ISSUE-11 CLOSURE ROUND - the pure flip, no new ink. The issue-11 box (the Kuntz brawling article and the Ward quarterstaff article, folios 7 and 26-27) closes 1 closed / 0 open in tools/dragon_gap_report_011.md; the two-chain walk completes exactly as adjudicated at R917. The bookkeeping pins: the single box and its two chains, the issue-10 report complete at 2 / 0 since R916, the issue-9 report complete at 1 / 0 since R913, the issue-8 report complete at 1 / 0 since R911, the issue-7 report complete at 1 / 0 since R909, the issue-6 report complete at 1 / 0 since R907, and the registry ground truth carried forward.",
+ "gap_report": "tools/dragon_gap_report_011.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Kuntz brawling article and the Ward quarterstaff\n  article** (folios 7, 26-27) - the issue-11 opener round",
+   "to": "- [x] **The Kuntz brawling article and the Ward quarterstaff\n  article** (folios 7, 26-27) - the issue-11 opener round",
+   "note": "the issue-11 box"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-11 box closing round - the two-chain walk complete, the pure flip",
+  "provenance": "Bookkeeping only, no new ink pinned. The issue-11 walk (R917 opener, this flip) covered The Dragon Vol. II No. 5 (December 1977), the archive.org scan voice, single-voice - no chat-side upload cross-check exists for issue 11; the source lives in the archive.org item accessory-dragon-magazine-012.",
+  "sentinel": "The brawling punch-grid sentinel cell and the quarterstaff worked-example discrepancy were pinned at R917 and ride unchanged - this round touches no ink."
+ },
+ "switches": [],
+ "consts": [
+  {
+   "name": "bfxIssueElevenBoxes",
+   "value": 1,
+   "comment": "the issue-11 gap report carries a single box (report 011)"
+  },
+  {
+   "name": "bfxIssueElevenChains",
+   "value": 2,
+   "comment": "the issue-11 walk pinned two chains - the Kuntz brawling article and the Ward quarterstaff article"
+  },
+  {
+   "name": "bfxIssueTenClosed",
+   "value": 1,
+   "comment": "the issue-10 report complete at 2 closed / 0 open since R916"
+  },
+  {
+   "name": "bfxIssueNineClosed",
+   "value": 1,
+   "comment": "the issue-9 report complete at 1 closed / 0 open since R913"
+  },
+  {
+   "name": "bfxIssueEightClosed",
+   "value": 1,
+   "comment": "the issue-8 report complete at 1 closed / 0 open since R911"
+  },
+  {
+   "name": "bfxIssueSevenClosed",
+   "value": 1,
+   "comment": "the issue-7 report complete at 1 closed / 0 open since R909"
+  },
+  {
+   "name": "bfxIssueSixClosed",
+   "value": 1,
+   "comment": "the issue-6 report complete at 1 closed / 0 open since R907"
+  },
+  {
+   "name": "bfxRegistryLive",
+   "value": 1311,
+   "comment": "the registry ground truth - live lua files, the battery line the only ground truth"
+  },
+  {
+   "name": "bfxRegistryBaseLua",
+   "value": 1333,
+   "comment": "the registry ground truth - base lua files"
+  },
+  {
+   "name": "bfxRegistryNeverLoad",
+   "value": 25,
+   "comment": "the registry ground truth - never-load errors"
+  }
+ ],
+ "bools": [
+  {
+   "name": "bfxWalkSixComplete",
+   "value": true,
+   "comment": "the Dragon issue-6 walk complete since R907"
+  },
+  {
+   "name": "bfxWalkSevenComplete",
+   "value": true,
+   "comment": "the Dragon issue-7 walk complete since R909"
+  },
+  {
+   "name": "bfxWalkEightComplete",
+   "value": true,
+   "comment": "the Dragon issue-8 walk complete since R911"
+  },
+  {
+   "name": "bfxWalkNineComplete",
+   "value": true,
+   "comment": "the Dragon issue-9 walk complete since R913"
+  },
+  {
+   "name": "bfxWalkTenComplete",
+   "value": true,
+   "comment": "the Dragon issue-10 walk complete since R916"
+  },
+  {
+   "name": "bfxWalkElevenComplete",
+   "value": true,
+   "comment": "the Dragon issue-11 walk complete at this flip - the brawling and quarterstaff chains were the only engine-relevant ink"
+  },
+  {
+   "name": "bfxVariantLayerDoctrine",
+   "value": true,
+   "comment": "Dragon pins ride a VARIANT layer with provenance, never core canon"
+  }
+ ],
+ "chains": [],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['bfxIssueElevenBoxes']() != 1 or m['bfxIssueElevenChains']() != 2 or m['bfxIssueTenClosed']() != 1 or m['bfxIssueNineClosed']() != 1",
+   "note": "the walk census - one issue-11 box, two chains, the issue-10 and issue-9 reports complete"
+  },
+  {
+   "expr": "m['bfxIssueEightClosed']() != 1 or m['bfxIssueSevenClosed']() != 1 or m['bfxIssueSixClosed']() != 1",
+   "note": "the earlier reports complete at one closed box each since R911, R909 and R907"
+  },
+  {
+   "expr": "m['bfxRegistryLive']() != 1311 or m['bfxRegistryBaseLua']() != 1333 or m['bfxRegistryNeverLoad']() != 25",
+   "note": "the registry ground truth carried forward - 1311 live / 1333 base / 25 never-load, the battery line the only ground truth"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the issue-11 walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "bfxIssueElevenBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "bfxIssueElevenChains"
+   },
+   {
+    "kind": "const",
+    "name": "bfxIssueTenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "bfxIssueNineClosed"
+   },
+   {
+    "kind": "const",
+    "name": "bfxIssueEightClosed"
+   },
+   {
+    "kind": "const",
+    "name": "bfxIssueSevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "bfxIssueSixClosed"
+   },
+   {
+    "kind": "bool",
+    "name": "bfxWalkSixComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "bfxWalkSevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "bfxWalkEightComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "bfxWalkNineComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "bfxWalkTenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "bfxWalkElevenComplete"
+   }
+  ],
+  "the registry ground truth": [
+   {
+    "kind": "const",
+    "name": "bfxRegistryLive"
+   },
+   {
+    "kind": "const",
+    "name": "bfxRegistryBaseLua"
+   },
+   {
+    "kind": "const",
+    "name": "bfxRegistryNeverLoad"
+   },
+   {
+    "kind": "bool",
+    "name": "bfxVariantLayerDoctrine"
+   }
+  ]
+ },
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 17
+}

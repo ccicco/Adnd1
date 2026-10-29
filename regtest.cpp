@@ -619,6 +619,7 @@
 #include "rules/dte.h"  // R915: the Dragon issue-10 opener part two, the Gilbert dungeon method article, the Weights & Measures article and the Holsinger level ritual article
 #include "rules/dfp.h"  // R916: the Dragon issue-10 box closing round, the six-chain walk complete
 #include "rules/brw.h"  // R917: the Dragon issue-11 opener, the Kuntz brawling article and the Ward quarterstaff article
+#include "rules/bfx.h"  // R918: the Dragon issue-11 box closing round, the two-chain walk complete
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4728,6 +4729,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r918_batch.h"  // R918: R918 Dragon issue-11 closure audit
 #include "rules/audits/r917_batch.h"  // R917: R917 issue-11 opener audit
 #include "rules/audits/r916_batch.h"  // R916: R916 Dragon issue-10 closure audit
 #include "rules/audits/r915_batch.h"  // R915: R915 issue-10 opener audit

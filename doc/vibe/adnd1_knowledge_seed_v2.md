@@ -27742,6 +27742,71 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   -> [x] (2 closed / 0 open, the six-chain walk
   complete). rverify GREEN, 15 mutants 0 missed;
   inline_count was 15 not 16 (consts+bools).
+  - R917 LANDED 2026-10-29: commit
+  9641e8887391618aafcec087ddbef8160598d902 (base
+  30a102e, census 839 -> 840), the Dragon
+  issue-11 opener: TWO CHAINS, prefix brw, header
+  rules/brw.h, audit rules/audits/r917_batch.h
+  ("R917 issue-11 opener audit"), 66 inline (33
+  consts + 16 bools + 1 chain + 16 table cols),
+  11 examples + 3 table_checks, 2
+  header_sections, 39 data_files (gap report 011
+  pre-flip + 38 issue-11 transcripts at
+  extract/dragon/011), ZERO file_patches, gap
+  report 010 verified no-op (2 closed / 0 open).
+  CHAIN 1, the Kuntz Brawling article (folio 7):
+  the first-move dex +2 gap, the averaged grapple
+  score rounded down, the 11-row 2d6 grappling
+  grid G1-G4/NG with the G2 break minimum, the
+  11-row punch damage grid with the snake-eyes
+  knockout at the netted score x 10 percent, the
+  constitution damage pool with re-comparison
+  each round, the dex-multiple extra punches at
+  -1 per die. CHAIN 2, the Ward Quarterstaff
+  Fighting Rules (folios 26-27): the three stages
+  at 12/11/9, the A-A/A-D/D-D options with
+  simultaneous resolution, the
+  strength/constitution/dexterity ladders,
+  chainmail 4/+3 and plate 6/+5, the Combat Index
+  down to the out-cold 1 point, the
+  50-match/30-win stage ladder, the nine merry
+  men statted for historical sims. AS SCANNED,
+  NOTED NEVER SILENT: the punch grid's row-2
+  plus-four-or-higher cell garbles in the DjVu
+  OCR (a quoted 3) and rides the -9 sentinel with
+  its one-cell census - the four clean row-2
+  cells anchor to the print's own snake-eyes note
+  (the -4 for 40 percent, the -1 for 10); the -5
+  haymaker of the legend never prints clean in
+  the grid; the quarterstaff worked example's
+  7-or-more hit floor reads against the rules
+  text's 9 less the dex-18 plus-3 = 6, the rules
+  text the pin. SOURCE NOTE: issue-11 single-
+  voice (archive.org item accessory-dragon-
+  magazine-012, no chat-side upload cross-check);
+  PRINT FOLIO = PDF PAGE verified at the TOC
+  alignments (5, 7, 16, 17, 26, 29), no printed
+  footer digits survive the scan. NOT USABLE per
+  the issue-11 walk: the Gygax guest editorial
+  (5), the Watson OGRE defense article (8-10,
+  Metagaming), the Barker EPT column (12-14), the
+  Sorcerer's Scroll news column (16, lore - the
+  brawling long-term-effects teaser harvests at
+  issue 12 if it prints), the Snit pieces (15,
+  33-36), the Leiber Sea Magic fiction (17-22),
+  the shopper guide (22), the figures review
+  (23-25), the Hobbit review and comics (27-30),
+  the ads. VERIFIED: engine double-run GREEN
+  applied 44 / already 44; rverify against
+  pristine 30a102e: 205 mutants 0 missed; the raw
+  JSON round-trip byte-exact (208754 bytes, md5
+  fece45b4a3bb6c6a4abcdd41052a5615); transcripts
+  byte-identical to the XML parse 38/38; prefix
+  scan clean, seed grep 1. NEXT: the issue-11
+  flip (report 011, 1 box to close), then the
+  issue-12 opener (source in the same archive
+  item; the Name That Monster winners may
+  harvest). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

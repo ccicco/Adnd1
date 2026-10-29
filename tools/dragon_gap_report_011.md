@@ -52,7 +52,7 @@ the Cosmic Encounter ad (26-27) and the ads (1-3, 28, 32,
 
 ## Boxes
 
-- [ ] **The Kuntz brawling article and the Ward quarterstaff
+- [x] **The Kuntz brawling article and the Ward quarterstaff
   article** (folios 7, 26-27) - the issue-11 opener round
 
 1 box, 0 closed, 1 open at the R917 authoring. The R917 round
