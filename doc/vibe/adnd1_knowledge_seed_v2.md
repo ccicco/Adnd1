@@ -27246,6 +27246,48 @@ lines, md5 0ba6fa9a88473043bc75170bea94e4bf.
 NEXT: the issue-6 opener (the next Dragon walk
 round) or Curtiss's next adjudication. WAIT FOR
 GO.
+  - R904 LANDED 2026-10-29: commit
+29c316f5f8ffb4f90c70aa5121c944513e9ee3b5 (base
+f751304, census 826 -> 827), the witchcraft
+wilderness encounter table round: Curtiss's
+adjudication of the issue-5 cross-check fallout
+- the folio-4 grid the DjVu OCR garbled, made
+legible by the chat-side upload cross-check
+(Dragon_Magazine_005.pdf). THE SHAPE: prefix
+wwt (regtest-scan clean), header rules/wwt.h
+(13 inline: 10 consts + 3 bools + 1 table / 2
+cols), audit "R904 wilderness encounter table
+audit" at rules/audits/r904_batch.h, 7
+examples, 1 header_section, ZERO data_files, 1
+file_patch (the scoped-out sentence in
+tools/dragon_gap_report_005.md updated to
+record the resolution - never silent), no gap
+flips (report 005 verified 1 closed / 0 open).
+THE PINS, all folio 4: AC 8, move 9 on foot /
+24 on broom, hit dice 4-7, Lawful Witch 30% /
+Chaotic Witch 45% in lair, the 4-row number-
+appearing terrain table (Mts/Desert none at the
+0 sentinel, Riv/Swamps 2-4, Clear 1-3,
+Towns/Woods 2-13), the terrain-factor and lair-
+device doctrines - no duplicate ink of the R902
+Secret-Order exception. The cross-check rides
+the provenance: every pages-1-5 R902 pin
+confirmed against the upload; the Comfort quirk
+settled in the banner (the upload reads 'D = 3b
+(6 hours)', the archive.org scan 36, and 6
+hours at 10 minutes per turn is 36 turns - the
+pin stands); pages 6-32 noted as still single-
+voice archive.org (the upload extraction capped
+at page 5 on the snapshot limit). VERIFIED:
+engine double-run GREEN applied 6 / already 6;
+rverify against pristine f751304: 19 mutants 0
+missed; the raw JSON round-trip byte-exact.
+Spec tools/spec_r904.json, 11,663 bytes, 252
+lines, md5 48a9e9766abf90b0b46b2ecda2948763.
+The R903 record seated in the seed via
+prev_record. NEXT: the might-be-usable micro-
+round (the witch remainders + the Friedman elf
+d20 table) or the issue-6 opener. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
