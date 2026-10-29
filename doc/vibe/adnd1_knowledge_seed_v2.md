@@ -26413,6 +26413,63 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   Alchemist, complete (folios 28-30), with
   the Remorhaz box flip -> issue-2 report
   1 closed / 3 open. WAIT FOR GO.
+  - R891 LANDED 2026-10-29: commit
+  2e3b6ac600b3e4e8566475ce9b57f232a7f715ac
+  (pushed 5e65526..2e3b6ac, census 813 -> 814),
+  THE ALCHEMIST, COMPLETE - ROUND B of
+  issue 2 (Jon Pickens, folios 28-30, the
+  user's COMPLETE mandate held - class,
+  progression, potions, poisons, no
+  cherry-picking). THE SHAPE: prefix alc
+  (regtest-scan clean), header rules/alc.h
+  (102 inline - the LESSON: the inline-count
+  gate counts the switch and table-column
+  emitters too, consts+bools+switch+10
+  grid columns), audit "R891 Alchemist
+  class audit" at rules/audits/r891_batch.h,
+  75 consts + 16 bools + 1 switch
+  (alcXpStage, the 20-stage ladder Student
+  0 -> Mstr Alchem 11th 1,800,000) + 2
+  TABLES (alcPctGrid - the four ability
+  percentages to the 100-percent ceiling
+  where the ink's cells go blank, noted;
+  alcPotionGrid - the six-level potions
+  grid), 36 examples, 7 header_sections.
+  THE INK: the full variant class frame
+  (human, neutral, Wis/Int over 12 pinned
+  as the converted 13 floor, AC 5 cap, d6
+  to 9th, attacks as Cleric, Fighter
+  saves +2, the psionic swap, any potion,
+  Manual of Golems, Jug control), the
+  level gates (1st/3rd/5th/7th/9th), the
+  On Poisons doctrine (level-strength vs
+  dice, 3-round death, half-dice slow,
+  accumulation, -20 percent per extra
+  dose, Belladonna half, Blade Venom 200
+  GP / 3 coats / 24-hour potency), the
+  laboratory (acids 100 GP + d6/level +
+  15+5 neutralization, drugs double / -2 /
+  4 hours, potions 200 GP a level +
+  sample +40 + the 250-GP no-MU option,
+  the 42-potion list, Grimoire / Book of
+  Infinite Spells / Philosopher's Stone
+  interactions). The Remorhaz box FLIPPED
+  (issue-2 report 1 closed / 3 open); the
+  R890 record seated into the v2 seed.
+  VERIFIED: engine double-run GREEN
+  applied 6 / already 6; rverify against
+  pristine 5e65526: 291 mutants 0 missed
+  (the grids earn their keep); the raw
+  JSON round-trip byte-exact. Spec
+  tools/spec_r891.json, 40,098 bytes,
+  1,452 lines, md5
+  11ddfdf0e97166e94150f630112d4077
+  (authored-plus-newline). NEXT: R892 -
+  the Fischer Hints magic items (folios
+  12-13, 26: Monster Gems, the Hobbits
+  Pipe + five pipeweeds, the rings, bag,
+  helm), with the Alchemist box flip ->
+  2 closed / 2 open. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
