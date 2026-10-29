@@ -1,0 +1,1042 @@
+{
+ "round": 896,
+ "title": "The specialists: the Healer and the Scribe",
+ "prefix": "spr",
+ "census_before": 818,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R895 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R895 LANDED 2026-10-29: commit",
+  "  b72d42deb8aab3b86ea9bf362b26d1b0489ec1b6",
+  "  (pushed bb0e2f6..b72d42d, census 817 -> 818),",
+  "  THE ISSUE-3 OPENER - the Dragon #3 walk opens",
+  "  (The Dragon Vol. 1 No. 3, October 1976).",
+  "  ADJUDICATION (Curtiss, 2026-10-29): all ten",
+  "  engine-relevant chains IN - the Lakofka women",
+  "  (7-10), the Healer (22-23) and the Scribe",
+  "  (23, 25), the Samurai (25) and the Berserker",
+  "  (27), the new-view Dwarves (26-27) with the",
+  "  birth tables (14-16) and the Pulsipher Eldar",
+  "  deltas (20-21, at my discretion, re-pinned",
+  "  against the R888 Smith pin), the Idiot and",
+  "  Jester (28-29) with the Cline dexterity mods",
+  "  (30); drop - War of the Empires wargame",
+  "  history (4-5), Gnome Cache fiction (11-12,",
+  "  14), the comic, GenCon/awards matter, ads,",
+  "  reviews, letters save the Eldar deltas. FOLIO",
+  "  = PDF PAGE verified (3, 7, 14, 22, 30). THE",
+  "  SHAPE: prefix wmn (regtest-scan clean),",
+  "  header rules/wmn.h (128 inline: 87 consts +",
+  "  10 bools + 8 tables / 31 columns), audit",
+  "  \"R895 women magic audit\" at",
+  "  rules/audits/r895_batch.h, 48 examples, 4",
+  "  header_sections, include after art.h. THE",
+  "  PINS: the 32 voice pages committed as",
+  "  extract/dragon/003/pNNN_full.txt (the page",
+  "  transform verified byte-exact against the",
+  "  issue-2 convention on all 32 of that issue",
+  "  pages); gap report 003 ships PRE-FLIP with",
+  "  five round boxes, flips starting R896; the",
+  "  WARD BOX FLIPPED closing the issue-1 report",
+  "  at 4 closed / 0 open - the Dragon #1 walk",
+  "  COMPLETE; the Lakofka women: Beauty (2d20 as",
+  "  1-10s, 2-20), strength 1d8+1d6 (2-14, the OCR",
+  "  \"18 sided die\" garble pinned as 1d8 per the",
+  "  folio-8 range, noted), the four ladders (War",
+  "  Lady 10th / Matriarch 12th / Sibyl / Witch",
+  "  22nd, hit-dice X+Y CONVERTED to",
+  "  base-plus-bonus columns), the seduction",
+  "  family (the five-race beauty matrix with",
+  "  thief +2 / fighter +4 adders, nine duration",
+  "  bands, the Charm Men grades, the humanoid",
+  "  charm gates with the 70 percent break and the",
+  "  12-16 carry-off), the witch additions (five",
+  "  Horrid Beauty tiers, Poison counter-spell",
+  "  percentages, Magic Mount, Mind Meld insanity",
+  "  chances, Spirit, chaotic cleric Worship).",
+  "  HONEST BOUNDARIES: the beauty matrix, the",
+  "  Witch-grid odd hit-dice cells (10+4, 11+7)",
+  "  and the ugly-tier flee sign ride AS SCANNED",
+  "  (no figure pixels in the OCR artifact to",
+  "  check); the OCR duplicate Succubus row pins",
+  "  eight thief titles. LESSON (R895): an aborted",
+  "  engine run leaves a FULLY-PATCHED tree (the",
+  "  audit mirror gate fires AFTER the writes), so",
+  "  a fixed-example rebuild must be applied to a",
+  "  FRESH UNPACK - the stale audit otherwise",
+  "  survives the idempotent re-run (marker-based",
+  "  \"already\") and would fail the Termux C++",
+  "  preflight. VERIFIED: engine double-run GREEN",
+  "  applied 39 / already 39; rverify against",
+  "  pristine bb0e2f6: 346 mutants 0 missed; the",
+  "  raw JSON round-trip byte-exact. Spec",
+  "  tools/spec_r895.json, 216,944 bytes, 1,905",
+  "  lines, md5 8c4284b6562187e118af0e5044e2705e",
+  "  (authored-plus-newline). NEXT: R896 - the",
+  "  specialists round (Hettlestad Healer + Mumper",
+  "  Scribe), with the Women & Magic box flip ->",
+  "  issue-3 report 1 closed / 4 open. WAIT FOR",
+  "  GO."
+ ],
+ "include_after": "#include \"rules/wmn.h\"  // R895: the Lakofka women round",
+ "include_comment": "the Healer and Scribe specialists round",
+ "header_file": "rules/spr.h",
+ "audit_file": "rules/audits/r896_batch.h",
+ "audit_label": "R896 specialists audit",
+ "audit_anchor": "#include \"rules/audits/r895_batch.h\"  // R895: R895 women magic audit",
+ "gap_report": "tools/dragon_gap_report_003.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 4
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Lakofka women: Notes on Women & Magic** (folios 7-10) - the\n  opener round",
+   "to": "- [x] **The Lakofka women: Notes on Women & Magic** (folios 7-10) - the\n  opener round",
+   "note": "the Women & Magic box - the issue-3 report's first flip, 1 closed / 4 open"
+  }
+ ],
+ "banner": {
+  "title": "The specialists round - Hettlestad's Healers (folios 22-23) and Mumper's Scribes (folios 23, 25)",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 3 (October 1976): folios 22-23, C. Hettlestad's Healers - the rapid-repair class with its 15-each prerequisites, the 8-sided hit dice, the level-unlock abilities at 4th, 8th, 12th, 16th and 20th, and the twenty-five-level ladder with its spell-progression grid; folios 23 and 25, David Mumper's Scribes - the rare and expensive specialists who alone may transcribe magical writing, with the find and leave chances, the hire rates, the six-grade ability ladder with its mistake and insanity percents, and the alignment bands by vocation. The editor's caution rides: none of this is official, and the alchemist precedent holds - specialists are non-player-character recommended.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. The Healer's printed hit-dice forms 10+N are CONVERTED to base-plus-bonus columns and the spell-grid dashes CONVERTED to zeros, both conversions noted, never silent; the Scribe alignment block garbles in OCR and pins AS SCANNED with the clerical vocation's missing neutral band carried as the sentinel 9; the mistake percent pairs read as within-abilities over above-abilities and pin as scanned. The Healer and Scribe ride the variant layer against the engine's canon class frame, never a rewrite."
+ },
+ "consts": [
+  {
+   "name": "sprHealerLevels",
+   "value": 25,
+   "comment": "the Healer ladder runs twenty-five levels, Apprentice through Doctor 25th (folios 22-23)"
+  },
+  {
+   "name": "sprHealStatMin",
+   "value": 15,
+   "comment": "the Healer prerequisites are high - a minimum score of 15 EACH in intelligence, wisdom and dexterity (folio 22)"
+  },
+  {
+   "name": "sprHealHitDieSides",
+   "value": 8,
+   "comment": "the Healer rolls 8-sided hit dice (folio 22)"
+  },
+  {
+   "name": "sprHealDwarfMaxLevel",
+   "value": 10,
+   "comment": "the Medic at 10th level is the highest level for a Dwarf Healer (folio 22)"
+  },
+  {
+   "name": "sprHealDemiHumanMaxLevel",
+   "value": 14,
+   "comment": "the Doctor at 14th level is the highest for a Hobbit, Half-Elf or Elf Healer (folio 22)"
+  },
+  {
+   "name": "sprHealDetectRangeFeet",
+   "value": 40,
+   "comment": "at 4th level the Healer can detect molds, slimes, etc. at 40 feet (folio 22)"
+  },
+  {
+   "name": "sprHealDetectPoisonRangeFeet",
+   "value": 30,
+   "comment": "the Detect Poison spell allows determining poison use within a 30-foot radius, and its type (folio 23)"
+  },
+  {
+   "name": "sprHealDetectDiseaseRangeFeet",
+   "value": 30,
+   "comment": "Detect Disease tells what disease is present within a 30-foot range (folio 23)"
+  },
+  {
+   "name": "sprHealDetectPhaseTurns",
+   "value": 6,
+   "comment": "Detect Phase finds out-of-phase treasure and creatures, duration 6 turns (folio 23)"
+  },
+  {
+   "name": "sprHealMuSpellCount",
+   "value": 4,
+   "comment": "at 16th level the Healer can use 4 first-level magic-user spells, at 20th 4 second-level ones (folio 22)"
+  },
+  {
+   "name": "sprHealMuSpellLevelOne",
+   "value": 1,
+   "comment": "the 16th-level unlock is the first magic-user spell level (folio 22)"
+  },
+  {
+   "name": "sprHealMuSpellLevelTwo",
+   "value": 2,
+   "comment": "the 20th-level unlock is the second (folio 22)"
+  },
+  {
+   "name": "sprHealRemoveCharmRangeInches",
+   "value": 3,
+   "comment": "the Remove Charm spell carries a range of 3 inches (folio 23)"
+  },
+  {
+   "name": "sprHealLongevityYears",
+   "value": 10,
+   "comment": "the Longevity spell reduces 10 game-years of game-age, countering a staff of withering or ghost attack (folio 23)"
+  },
+  {
+   "name": "sprHealSterilizeHdCap",
+   "value": 5,
+   "comment": "the Sterilize spell cleanses a room of infection, mold, slime or nasty creatures up to 5 hit die (folio 23)"
+  },
+  {
+   "name": "sprHealIcswDice",
+   "value": 4,
+   "comment": "the Improved Cure Serious Wounds spell cures four 6-sided dice worth of damage (folio 23)"
+  },
+  {
+   "name": "sprHealIcswDieSides",
+   "value": 6,
+   "comment": "each die is a 6-sider (folio 23)"
+  },
+  {
+   "name": "sprHealIcswBonusPerDie",
+   "value": 1,
+   "comment": "with an addition of 1 per die (folio 23)"
+  },
+  {
+   "name": "sprHealIcswMinDamage",
+   "value": 8,
+   "comment": "so the range runs 8 hit points at the floor (folio 23)"
+  },
+  {
+   "name": "sprHealIcswMaxDamage",
+   "value": 24,
+   "comment": "to 24 at the ceiling (folio 23)"
+  },
+  {
+   "name": "sprScribeVocations",
+   "value": 2,
+   "comment": "the Scribe belongs to either of two vocations - transcribing magical spells or clerical spells (folio 23)"
+  },
+  {
+   "name": "sprScribeGrades",
+   "value": 6,
+   "comment": "the Scribe ability ladder runs six grades on the percentile dice (folio 23)"
+  },
+  {
+   "name": "sprScribeFindPct",
+   "value": 10,
+   "comment": "the chance of finding a Scribe is 10 percent per week, cumulative (folio 23)"
+  },
+  {
+   "name": "sprScribeLeavePct",
+   "value": 5,
+   "comment": "being free souls there is a 5 percent chance, cumulative, that the Scribe leaves each month (folio 25)"
+  },
+  {
+   "name": "sprScribeCostMinGold",
+   "value": 100,
+   "comment": "the cost of hiring a Scribe runs the specialist rate - from 100 gold pieces a week (folio 23)"
+  },
+  {
+   "name": "sprScribeCostMaxGold",
+   "value": 600,
+   "comment": "to 600 gold pieces a week (folio 23)"
+  },
+  {
+   "name": "sprScribeFeeMinGold",
+   "value": 1000,
+   "comment": "the Scribe's fee runs from 1000 gold pieces a month (folio 25)"
+  },
+  {
+   "name": "sprScribeFeeMaxGold",
+   "value": 5000,
+   "comment": "to 5000 gold pieces a month (folio 25)"
+  },
+  {
+   "name": "sprScribeInsanityMistakePct",
+   "value": 100,
+   "comment": "if the Scribe goes insane the percent mistake goes to 100 (folio 25)"
+  },
+  {
+   "name": "sprScribeAlignmentDouble",
+   "value": 2,
+   "comment": "if the Scribe's alignment differs from the employer the mistake percent doubles in a lawful-chaotic/neutral relationship (folio 25)"
+  },
+  {
+   "name": "sprScribeAlignmentTriple",
+   "value": 3,
+   "comment": "and TRIPLES in a lawful/chaotic one (folio 25)"
+  },
+  {
+   "name": "sprScribeGrowthSpells",
+   "value": 5,
+   "comment": "for every 5 spells transcribed (folio 25)"
+  },
+  {
+   "name": "sprScribeGrowthPoints",
+   "value": 2,
+   "comment": "the Scribe's ability rises by 2 (folio 25)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "sprHealerLawfulNeutralOnly",
+   "value": true,
+   "comment": "the Healer can only be lawful or neutral - a chaotic healer is not allowed and would become a mere fighter if forced to change alignment (folio 22)"
+  },
+  {
+   "name": "sprHealerNoArmorShield",
+   "value": true,
+   "comment": "Healers may not wear any armor or shield, but may use any weapons and/or magical items (folio 22)"
+  },
+  {
+   "name": "sprHealBooksOnlyHurt",
+   "value": true,
+   "comment": "the various books to be found will not aid the healer in any way and can only hurt (folio 22)"
+  },
+  {
+   "name": "sprScribeCurseOnWriting",
+   "value": true,
+   "comment": "there exists a curse upon all magical writing which causes any but Scribes, who know the counter-spell, to go permanently and incurably insane - Remove Curse notwithstanding (folio 23)"
+  },
+  {
+   "name": "sprScribeInsanityEspOnly",
+   "value": true,
+   "comment": "Scribe insanity is detectable only by ESP and the like (folio 25)"
+  },
+  {
+   "name": "sprScribeMistakesUncorrectable",
+   "value": true,
+   "comment": "when a mistake is made the result is at the discretion of the referee, and mistakes may not be corrected (folio 25)"
+  },
+  {
+   "name": "sprScribeFreelanceSearch",
+   "value": true,
+   "comment": "Scribes are free-lance and must be sought like any other Specialist (folio 23)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "sprHealLadder",
+   "tag": "SprHea",
+   "count": "sprHealerLevels",
+   "sentinel": 9,
+   "cols": [
+    "sprHealXp",
+    "sprHealHitBase",
+    "sprHealHitBonus",
+    "sprHealSp1",
+    "sprHealSp2",
+    "sprHealSp3",
+    "sprHealSp4",
+    "sprHealSp5",
+    "sprHealSp6",
+    "sprHealSp7"
+   ],
+   "col_comments": [
+    "the experience ladder - Apprentice 0 through Doctor 25th at 1,900,000 (folio 22)",
+    "the hit-dice base split from the printed \"10+N\" forms, the conversion noted - 1 through 10 by level, then 10 flat (folio 22)",
+    "the hit-dice bonus - flat from 10+1 at 11th level to 10+15 at 25th (folio 22)",
+    "the first-level spell count per level, the printed dashes CONVERTED to zeros, the conversion noted (folio 22)",
+    "the second-level spell count (folio 22)",
+    "the third-level spell count (folio 22)",
+    "the fourth-level spell count (folio 22)",
+    "the fifth-level spell count (folio 22)",
+    "the sixth-level spell count (folio 22)",
+    "the seventh-level spell count (folio 22)"
+   ],
+   "data": [
+    [
+     0,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     5000,
+     2,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     10000,
+     3,
+     0,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     15000,
+     4,
+     0,
+     2,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     25000,
+     5,
+     0,
+     2,
+     2,
+     1,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     50000,
+     6,
+     0,
+     2,
+     2,
+     2,
+     1,
+     1,
+     1,
+     0
+    ],
+    [
+     100000,
+     7,
+     0,
+     3,
+     2,
+     2,
+     2,
+     1,
+     1,
+     1
+    ],
+    [
+     200000,
+     8,
+     0,
+     3,
+     3,
+     2,
+     2,
+     2,
+     1,
+     1
+    ],
+    [
+     300000,
+     9,
+     0,
+     3,
+     3,
+     3,
+     2,
+     2,
+     2,
+     1
+    ],
+    [
+     400000,
+     10,
+     0,
+     4,
+     3,
+     3,
+     3,
+     2,
+     2,
+     2
+    ],
+    [
+     500000,
+     10,
+     1,
+     4,
+     4,
+     3,
+     3,
+     3,
+     2,
+     2
+    ],
+    [
+     600000,
+     10,
+     2,
+     4,
+     4,
+     4,
+     3,
+     3,
+     3,
+     2
+    ],
+    [
+     700000,
+     10,
+     3,
+     5,
+     4,
+     4,
+     4,
+     3,
+     3,
+     3
+    ],
+    [
+     800000,
+     10,
+     4,
+     5,
+     5,
+     4,
+     4,
+     4,
+     3,
+     3
+    ],
+    [
+     900000,
+     10,
+     5,
+     5,
+     5,
+     5,
+     4,
+     4,
+     4,
+     3
+    ],
+    [
+     1000000,
+     10,
+     6,
+     6,
+     5,
+     5,
+     5,
+     4,
+     4,
+     4
+    ],
+    [
+     1100000,
+     10,
+     7,
+     6,
+     6,
+     5,
+     5,
+     5,
+     4,
+     4
+    ],
+    [
+     1200000,
+     10,
+     8,
+     6,
+     6,
+     6,
+     5,
+     5,
+     5,
+     4
+    ],
+    [
+     1300000,
+     10,
+     9,
+     7,
+     6,
+     6,
+     6,
+     5,
+     5,
+     5
+    ],
+    [
+     1400000,
+     10,
+     10,
+     7,
+     7,
+     6,
+     6,
+     6,
+     5,
+     5
+    ],
+    [
+     1500000,
+     10,
+     11,
+     7,
+     7,
+     7,
+     6,
+     6,
+     6,
+     5
+    ],
+    [
+     1600000,
+     10,
+     12,
+     8,
+     7,
+     7,
+     7,
+     6,
+     6,
+     6
+    ],
+    [
+     1700000,
+     10,
+     13,
+     8,
+     8,
+     7,
+     7,
+     7,
+     6,
+     6
+    ],
+    [
+     1800000,
+     10,
+     14,
+     8,
+     8,
+     8,
+     7,
+     7,
+     7,
+     6
+    ],
+    [
+     1900000,
+     10,
+     15,
+     9,
+     8,
+     8,
+     8,
+     7,
+     7,
+     7
+    ]
+   ],
+   "audit_comment": "the Healer ladder - Apprentice, Frosh, Sophomore, Junior, Senior, Intern, Resident, Senior Resident, Practitioner, Medic, then Doctor 11th through Doctor 25th, with the spell-progression grid (folios 22-23)"
+  },
+  {
+   "name": "sprScribeLadder",
+   "tag": "SprScr",
+   "count": "sprScribeGrades",
+   "sentinel": 9,
+   "cols": [
+    "sprScrSpellMax",
+    "sprScrMistakeNormal",
+    "sprScrMistakeAbove",
+    "sprScrInsanityAbove"
+   ],
+   "col_comments": [
+    "the highest spell level transcribed at this grade - 1-3 through 1-9 (folio 23)",
+    "the percent mistake within his abilities, as scanned - 25 down to 1 by grade (folio 23)",
+    "the percent mistake when attempting spells ABOVE his abilities, as scanned - 75 down to 3 (folio 23)",
+    "the percent insanity when attempting spells above his abilities - 35 down to 5 (folio 23)"
+   ],
+   "data": [
+    [
+     3,
+     25,
+     75,
+     35
+    ],
+    [
+     5,
+     15,
+     45,
+     25
+    ],
+    [
+     6,
+     10,
+     30,
+     20
+    ],
+    [
+     7,
+     5,
+     15,
+     15
+    ],
+    [
+     8,
+     2,
+     6,
+     10
+    ],
+    [
+     9,
+     1,
+     3,
+     5
+    ]
+   ],
+   "audit_comment": "the Scribe ability ladder on the percentile dice - 01-25, 26-50, 51-75, 76-85, 86-95, 96-00; the mistake pair reads as within-abilities over above-abilities, pinned as scanned (folio 23)"
+  },
+  {
+   "name": "sprScribeAlign",
+   "tag": "SprAlg",
+   "count": "sprScribeVocations",
+   "sentinel": 9,
+   "cols": [
+    "sprScrLawfulMax",
+    "sprScrNeutralMax",
+    "sprScrChaoticMax"
+   ],
+   "col_comments": [
+    "the percentile ceiling of the lawful band for this vocation - magical 01-70, clerical 01-80 (folio 23)",
+    "the neutral band ceiling - magical 71-90; the clerical vocation carries NO neutral band, pinned as the sentinel 9, as scanned (folio 23)",
+    "the chaotic band closes at 00 - magical 91-00, clerical 81-00 (folio 23)"
+   ],
+   "data": [
+    [
+     70,
+     90,
+     100
+    ],
+    [
+     80,
+     9,
+     100
+    ]
+   ],
+   "audit_comment": "the Scribe alignment bands by vocation - Magical and Clerical; the alignment block garbles in OCR, pinned as scanned with the sentinel marking the clerical missing neutral band (folio 23)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['sprHealStatMin']() != 15 or m['sprHealerLawfulNeutralOnly']() != 1 or m['sprHealerNoArmorShield']() != 1",
+   "note": "the Healer prerequisites - 15 in each of three stats, lawful or neutral only, no armor or shield (folio 22)"
+  },
+  {
+   "expr": "m['sprHealXp'](0) != 0 or m['sprHealXp'](9) != 400000 or m['sprHealXp'](24) != 1900000",
+   "note": "the ladder bookends - Apprentice 0, Medic 400000, Doctor 25th 1900000 (folio 22)"
+  },
+  {
+   "expr": "m['sprHealHitBase'](0) != 1 or m['sprHealHitBonus'](10) != 1 or m['sprHealHitBonus'](24) != 15",
+   "note": "the hit-dice split - 1 at Apprentice, 10+1 at Doctor 11th, 10+15 at 25th (folio 22)"
+  },
+  {
+   "expr": "m['sprHealHitDieSides']() != 8 or m['sprHealHitBase'](9) != 10",
+   "note": "the 8-sided hit dice, base 10 flat from Medic on (folio 22)"
+  },
+  {
+   "expr": "m['sprHealSp1'](0) != 1 or m['sprHealSp1'](19) != 7 or m['sprHealSp1'](24) != 9",
+   "note": "the first-level spell column - 1 at Apprentice, 7 at Doctor 20th, 9 at 25th (folio 22)"
+  },
+  {
+   "expr": "m['sprHealSp7'](6) != 1 or m['sprHealSp7'](12) != 3 or m['sprHealSp7'](24) != 7",
+   "note": "the seventh-level spell column - 1 at Resident, 3 at Doctor 13th, 7 at 25th (folio 22)"
+  },
+  {
+   "expr": "m['sprHealSp3'](2) != 1 or m['sprHealSp4'](4) != 1 or m['sprHealSp5'](5) != 1",
+   "note": "the third at Sophomore, the fourth at Senior, the fifth at Intern - each opens with 1 (folio 22)"
+  },
+  {
+   "expr": "m['sprHealSp2'](13) != 5 or m['sprHealSp6'](20) != 6 or m['sprHealSp4'](21) != 7",
+   "note": "the grid midpoints - Doctor 14th five second-level, Doctor 21st six sixth-level and seven fourth-level (folio 22)"
+  },
+  {
+   "expr": "m['sprHealSp1'](6) != 3 or m['sprHealSp2'](6) != 2 or m['sprHealSp3'](6) != 2 or m['sprHealSp4'](6) != 2",
+   "note": "the Resident row - 3,2,2,2,1,1,1 (folio 22)"
+  },
+  {
+   "expr": "m['sprHealDwarfMaxLevel']() != 10 or m['sprHealDemiHumanMaxLevel']() != 14",
+   "note": "the racial caps - Medic 10th for the Dwarf, Doctor 14th for Hobbit, Half-Elf or Elf (folio 22)"
+  },
+  {
+   "expr": "m['sprHealDetectRangeFeet']() != 40 or m['sprHealBooksOnlyHurt']() != 1",
+   "note": "the 4th-level mold and slime detection at 40 feet; the books only hurt (folio 22)"
+  },
+  {
+   "expr": "m['sprHealDetectPoisonRangeFeet']() != 30 or m['sprHealDetectDiseaseRangeFeet']() != 30 or m['sprHealDetectPhaseTurns']() != 6",
+   "note": "the detection spells - poison and disease at 30 feet, phase for 6 turns (folio 23)"
+  },
+  {
+   "expr": "m['sprHealMuSpellCount']() != 4 or m['sprHealMuSpellLevelOne']() != 1 or m['sprHealMuSpellLevelTwo']() != 2",
+   "note": "the 16th-level unlock - four 1st-level MU spells, then four 2nd at 20th (folio 22)"
+  },
+  {
+   "expr": "m['sprHealIcswDice']() != 4 or m['sprHealIcswDieSides']() != 6 or m['sprHealIcswBonusPerDie']() != 1",
+   "note": "the Improved Cure Serious Wounds - four 6-siders plus 1 per die (folio 23)"
+  },
+  {
+   "expr": "m['sprHealIcswMinDamage']() != 8 or m['sprHealIcswMaxDamage']() != 24",
+   "note": "the healing range - 8 to 24 hit points (folio 23)"
+  },
+  {
+   "expr": "m['sprHealLongevityYears']() != 10 or m['sprHealSterilizeHdCap']() != 5 or m['sprHealRemoveCharmRangeInches']() != 3",
+   "note": "Longevity takes 10 game-years, Sterilize caps at 5 hit die, Remove Charm at 3 inches (folio 23)"
+  },
+  {
+   "expr": "m['sprScribeVocations']() != 2 or m['sprScribeFreelanceSearch']() != 1 or m['sprScribeFindPct']() != 10",
+   "note": "the two vocations, the free-lance search at 10 percent a week, cumulative (folio 23)"
+  },
+  {
+   "expr": "m['sprScribeCurseOnWriting']() != 1 or m['sprScribeInsanityEspOnly']() != 1",
+   "note": "the curse on magical writing and the ESP-only insanity detection (folios 23, 25)"
+  },
+  {
+   "expr": "m['sprScrSpellMax'](0) != 3 or m['sprScrSpellMax'](2) != 6 or m['sprScrSpellMax'](5) != 9",
+   "note": "the grade ceilings - 1-3 spells, 1-6 at 51-75, 1-9 at 96-00 (folio 23)"
+  },
+  {
+   "expr": "m['sprScrMistakeNormal'](0) != 25 or m['sprScrMistakeNormal'](5) != 1",
+   "note": "the within-abilities mistake percent - 25 at the bottom grade, 1 at the top (folio 23)"
+  },
+  {
+   "expr": "m['sprScrMistakeAbove'](0) != 75 or m['sprScrMistakeAbove'](3) != 15 or m['sprScrMistakeAbove'](5) != 3",
+   "note": "the above-abilities mistake percent - 75 down to 3 (folio 23)"
+  },
+  {
+   "expr": "m['sprScrInsanityAbove'](0) != 35 or m['sprScrInsanityAbove'](4) != 10 or m['sprScrInsanityAbove'](5) != 5",
+   "note": "the above-abilities insanity percent - 35 down to 5 (folio 23)"
+  },
+  {
+   "expr": "m['sprScrLawfulMax'](0) != 70 or m['sprScrNeutralMax'](0) != 90 or m['sprScrChaoticMax'](0) != 100",
+   "note": "the magical vocation bands - lawful 01-70, neutral 71-90, chaotic 91-00 (folio 23)"
+  },
+  {
+   "expr": "m['sprScrLawfulMax'](1) != 80 or m['sprScrChaoticMax'](1) != 100 or m['sprScrNeutralMax'](1) != 9",
+   "note": "the clerical vocation - lawful 01-80, chaotic 81-00, no neutral band pinned as the sentinel (folio 23)"
+  },
+  {
+   "expr": "m['sprScribeInsanityMistakePct']() != 100 or m['sprScribeMistakesUncorrectable']() != 1",
+   "note": "the insane Scribe mistakes 100 percent of the time, and mistakes may not be corrected (folio 25)"
+  },
+  {
+   "expr": "m['sprScribeAlignmentDouble']() != 2 or m['sprScribeAlignmentTriple']() != 3",
+   "note": "the alignment mismatch multipliers - doubles lawful-chaotic/neutral, triples lawful/chaotic (folio 25)"
+  },
+  {
+   "expr": "m['sprScribeGrowthSpells']() != 5 or m['sprScribeGrowthPoints']() != 2",
+   "note": "every 5 spells transcribed raises the ability by 2 (folio 25)"
+  },
+  {
+   "expr": "m['sprScribeLeavePct']() != 5",
+   "note": "the 5 percent cumulative monthly chance the Scribe leaves (folio 25)"
+  },
+  {
+   "expr": "m['sprScribeCostMinGold']() != 100 or m['sprScribeCostMaxGold']() != 600",
+   "note": "the specialist hire rate - 100 to 600 gold pieces a week (folio 23)"
+  },
+  {
+   "expr": "m['sprScribeFeeMinGold']() != 1000 or m['sprScribeFeeMaxGold']() != 5000",
+   "note": "the Scribe fee - 1000 to 5000 gold pieces a month (folio 25)"
+  },
+  {
+   "expr": "m['sprHealSp5'](24) != 7 or m['sprHealSp6'](23) != 7 or m['sprHealSp2'](22) != 8",
+   "note": "the grid deep end - Doctor 25th seven fifth-level, Doctor 24th seven sixth-level, Doctor 23rd eight second-level (folio 22)"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 57,
+ "header_sections": {
+  "the Healer (folios 22-23)": [
+   {
+    "kind": "const",
+    "name": "sprHealerLevels"
+   },
+   {
+    "kind": "table",
+    "name": "sprHealLadder"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealStatMin"
+   },
+   {
+    "kind": "bool",
+    "name": "sprHealerLawfulNeutralOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "sprHealerNoArmorShield"
+   },
+   {
+    "kind": "bool",
+    "name": "sprHealBooksOnlyHurt"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealHitDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealDwarfMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealDemiHumanMaxLevel"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealDetectRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealDetectPoisonRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealDetectDiseaseRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealDetectPhaseTurns"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealMuSpellCount"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealMuSpellLevelOne"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealMuSpellLevelTwo"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealRemoveCharmRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealLongevityYears"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealSterilizeHdCap"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealIcswDice"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealIcswDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealIcswBonusPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealIcswMinDamage"
+   },
+   {
+    "kind": "const",
+    "name": "sprHealIcswMaxDamage"
+   }
+  ],
+  "the Scribe (folios 23, 25)": [
+   {
+    "kind": "const",
+    "name": "sprScribeVocations"
+   },
+   {
+    "kind": "table",
+    "name": "sprScribeAlign"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeGrades"
+   },
+   {
+    "kind": "table",
+    "name": "sprScribeLadder"
+   },
+   {
+    "kind": "bool",
+    "name": "sprScribeCurseOnWriting"
+   },
+   {
+    "kind": "bool",
+    "name": "sprScribeFreelanceSearch"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeFindPct"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeCostMinGold"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeCostMaxGold"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeFeeMinGold"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeFeeMaxGold"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeLeavePct"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeInsanityMistakePct"
+   },
+   {
+    "kind": "bool",
+    "name": "sprScribeInsanityEspOnly"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeAlignmentDouble"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeAlignmentTriple"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeGrowthSpells"
+   },
+   {
+    "kind": "const",
+    "name": "sprScribeGrowthPoints"
+   },
+   {
+    "kind": "bool",
+    "name": "sprScribeMistakesUncorrectable"
+   }
+  ]
+ },
+ "audit_comment": "THE SPECIALISTS ROUND - round B of the issue-3 walk. Hettlestad's Healer: the prerequisites (15 each in intelligence, wisdom and dexterity, lawful or neutral only, a chaotic becoming a mere fighter), no armor or shield, any weapons and magical items, the books that only hurt; the level-unlock abilities - detect molds and slimes at 40 feet at 4th, determine potions at 8th, read magical and clerical scrolls at 12th, four 1st-level magic-user spells at 16th, four 2nd-level at 20th; the twenty-five-level ladder (Apprentice through Doctor 25th) with the 8-sided hit dice split from the printed 10+N forms and the seven-column spell-progression grid, the dashes converted to zeros; the racial caps - Medic 10th for Dwarves, Doctor 14th for Hobbit, Half-Elf and Elf; the spell list deltas - Detect Poison and Disease at 30 feet, Detect Phase for 6 turns, Cure Blindness and Lycanthropy, Energy, Wake Spell, Cure Insanity and Paralysis, Longevity at 10 game-years, Teleport and Size Control, Sterilize to 5 hit die, Neutralize Gas, Remove Charm at 3 inches, Cure Deafness, Improved Cure Serious Wounds at 4d6+1 per die for 8 to 24, Talk to Plants, Speak with Animals and Monsters. Mumper's Scribe: the curse on magical writing (permanent, incurable insanity for any but the counter-spell-knowing Scribe, Remove Curse notwithstanding), the two vocations, the 10-percent-a-week cumulative find chance, the specialist hire rate of 100-600 gold a week and the 1000-5000 gold a month fee, the six-grade ability ladder with the mistake percents within and above abilities and the above-abilities insanity, the alignment bands by vocation pinned as scanned with the sentinel for the clerical missing neutral band, the 100-percent mistake of the insane Scribe detectable only by ESP, the alignment mismatch multipliers of two and three, the 5-spells-by-2-points growth, the 5-percent cumulative monthly leave chance, and the uncorrectable mistakes at referee discretion. HONEST BOUNDARIES: the alignment block and the mistake pairs ride as scanned, no figure pixels to check; both specialists ride the variant layer, NPC-recommended per the editor's caution."
+}

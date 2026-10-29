@@ -26622,6 +26622,77 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   closing issue 1 at 4 closed / 0 open, and the
   Lakofka Women & Magic chain as the opener
   ink. WAIT FOR GO.
+  - R895 LANDED 2026-10-29: commit
+  b72d42deb8aab3b86ea9bf362b26d1b0489ec1b6
+  (pushed bb0e2f6..b72d42d, census 817 -> 818),
+  THE ISSUE-3 OPENER - the Dragon #3 walk opens
+  (The Dragon Vol. 1 No. 3, October 1976).
+  ADJUDICATION (Curtiss, 2026-10-29): all ten
+  engine-relevant chains IN - the Lakofka women
+  (7-10), the Healer (22-23) and the Scribe
+  (23, 25), the Samurai (25) and the Berserker
+  (27), the new-view Dwarves (26-27) with the
+  birth tables (14-16) and the Pulsipher Eldar
+  deltas (20-21, at my discretion, re-pinned
+  against the R888 Smith pin), the Idiot and
+  Jester (28-29) with the Cline dexterity mods
+  (30); drop - War of the Empires wargame
+  history (4-5), Gnome Cache fiction (11-12,
+  14), the comic, GenCon/awards matter, ads,
+  reviews, letters save the Eldar deltas. FOLIO
+  = PDF PAGE verified (3, 7, 14, 22, 30). THE
+  SHAPE: prefix wmn (regtest-scan clean),
+  header rules/wmn.h (128 inline: 87 consts +
+  10 bools + 8 tables / 31 columns), audit
+  "R895 women magic audit" at
+  rules/audits/r895_batch.h, 48 examples, 4
+  header_sections, include after art.h. THE
+  PINS: the 32 voice pages committed as
+  extract/dragon/003/pNNN_full.txt (the page
+  transform verified byte-exact against the
+  issue-2 convention on all 32 of that issue
+  pages); gap report 003 ships PRE-FLIP with
+  five round boxes, flips starting R896; the
+  WARD BOX FLIPPED closing the issue-1 report
+  at 4 closed / 0 open - the Dragon #1 walk
+  COMPLETE; the Lakofka women: Beauty (2d20 as
+  1-10s, 2-20), strength 1d8+1d6 (2-14, the OCR
+  "18 sided die" garble pinned as 1d8 per the
+  folio-8 range, noted), the four ladders (War
+  Lady 10th / Matriarch 12th / Sibyl / Witch
+  22nd, hit-dice X+Y CONVERTED to
+  base-plus-bonus columns), the seduction
+  family (the five-race beauty matrix with
+  thief +2 / fighter +4 adders, nine duration
+  bands, the Charm Men grades, the humanoid
+  charm gates with the 70 percent break and the
+  12-16 carry-off), the witch additions (five
+  Horrid Beauty tiers, Poison counter-spell
+  percentages, Magic Mount, Mind Meld insanity
+  chances, Spirit, chaotic cleric Worship).
+  HONEST BOUNDARIES: the beauty matrix, the
+  Witch-grid odd hit-dice cells (10+4, 11+7)
+  and the ugly-tier flee sign ride AS SCANNED
+  (no figure pixels in the OCR artifact to
+  check); the OCR duplicate Succubus row pins
+  eight thief titles. LESSON (R895): an aborted
+  engine run leaves a FULLY-PATCHED tree (the
+  audit mirror gate fires AFTER the writes), so
+  a fixed-example rebuild must be applied to a
+  FRESH UNPACK - the stale audit otherwise
+  survives the idempotent re-run (marker-based
+  "already") and would fail the Termux C++
+  preflight. VERIFIED: engine double-run GREEN
+  applied 39 / already 39; rverify against
+  pristine bb0e2f6: 346 mutants 0 missed; the
+  raw JSON round-trip byte-exact. Spec
+  tools/spec_r895.json, 216,944 bytes, 1,905
+  lines, md5 8c4284b6562187e118af0e5044e2705e
+  (authored-plus-newline). NEXT: R896 - the
+  specialists round (Hettlestad Healer + Mumper
+  Scribe), with the Women & Magic box flip ->
+  issue-3 report 1 closed / 4 open. WAIT FOR
+  GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
