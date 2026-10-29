@@ -1,0 +1,4694 @@
+{
+ "round": 898,
+ "title": "The character round: the new-view Dwarves, the birth tables and the Eldar deltas",
+ "prefix": "chr",
+ "census_before": 820,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R897 LANDED 2026-10-29: commit",
+ "prev_record": [
+  "  - R897 LANDED 2026-10-29: commit",
+  "  7217195efaaec3445f6ef39cf10bc1f3ea6dc6e3 (base",
+  "  e48c3ed, census 819 -> 820), the fighting sub-",
+  "  classes round: Childers/Kay's Samurai (folio",
+  "  25) + Pickens' Berserker (folio 27), from",
+  "  Dragon #3. THE SHAPE: prefix fsc (regtest-scan",
+  "  clean), header rules/fsc.h (133 inline: 74",
+  "  consts + 25 bools + 8 tables / 34 columns),",
+  "  audit \"R897 fighting sub-classes audit\" at",
+  "  rules/audits/r897_batch.h, 62 examples, 2",
+  "  header_sections, include after spr.h,",
+  "  prev_seed_key the R896 record. THE PINS: the",
+  "  Samurai - dexterity-above-15 pinned as 16, any",
+  "  alignment tending neutral, the daisho/yumi",
+  "  preference, vendetta-or-seppeku on katana loss,",
+  "  the special-but-non-magical blades with 9+",
+  "  identification and 13+ exact reading, the",
+  "  katana and wakizashi four-grade critical-hit",
+  "  tables (the automatic-critical bands pinned as",
+  "  their LOW rolls, the band top always 20), the",
+  "  one-step loss in non-Samurai or single-handed",
+  "  hands with the zero floor, the two-weapon",
+  "  permission, the three-band critical blow table",
+  "  (25 percent or 6 with the 1-4 limb roll, 50",
+  "  percent or 12, the 96-00 decapitation), the",
+  "  five-point dexterity ladder at 8,000 through",
+  "  616,000, the five-grade armor run E through A",
+  "  at 45 pounds max, the judo rules (empty hands",
+  "  only, 1-2 turn recovery, 1-4 damage on 19-20 at",
+  "  +5 percent per 4 levels, subdue on 20 at +5",
+  "  percent per 6 levels), the yumi costs (75 gp /",
+  "  50 enc, 20 arrows 5 gp, quiver 5 gp / 75 enc);",
+  "  the Berserker - the highly experimental human",
+  "  NEUTRAL, Strength and Constitution above 9",
+  "  pinned as 10, Intelligence below 9 pinned as 8,",
+  "  armor class no better than 6 at first level, no",
+  "  magical armor or shields, double kill points",
+  "  until the wereshape, never psionic, the five",
+  "  clans (Wererat Cleric through Werebear Fighter,",
+  "  wereshape 6th-10th, Followers 8th-12th, max",
+  "  dice 9-12, Clanmaster 11th-15th, the advance-as",
+  "  words carried as codes 1 Cleric / 2 Druid / 3",
+  "  Fighter), +1 armor class per two levels, the",
+  "  level abilities (surprise -1 at 4th, detection",
+  "  + the 4th-level Companion at 6th, hiring at",
+  "  10th at -2 loyalty capped 15), the 2-12",
+  "  Followers at 16-plus with the Bard 3-6 never",
+  "  replaced, the three percentile follower rolls",
+  "  (types, levels, extraordinary), the berserking",
+  "  chance (10 base once per melee, +20 shield",
+  "  bite, +10 per round cumulative, +10 per",
+  "  witnessed death, the Companion's death",
+  "  automatic), the berserk edges (+2 attacks, +6",
+  "  with a magic sword) and the no-withdrawal lock,",
+  "  the fit's end (10 percent turn-on less 1",
+  "  percent per level to a 1 minimum, 0 for a",
+  "  Clanmaster, a full turn of rest), never causing",
+  "  lycanthropy, the footnote adjustments by clan",
+  "  (5 / 0 / 0 / 5 / 10). CONVERSIONS, ALL NOTED:",
+  "  the exceed/below gates to 10/8 minimums, the",
+  "  '00' percentile convention to 100, the",
+  "  wakizashi's 1 and 3/4 pounds to seven quarter-",
+  "  pounds. HONEST BOUNDARIES: the OCR's duplicate",
+  "  Magic-User follower row pins AS SCANNED with",
+  "  both rows at 61-70; the yumi armor-class",
+  "  modifier grid garbles beyond numeric pinning",
+  "  (the OCR stacked two modifier rows into single",
+  "  tokens, no figure pixels to check) and pins",
+  "  NOTHING - the yumi costs and encumbrances",
+  "  pinned instead, noted; both sub-classes ride",
+  "  the variant layer, the Berserker experimental",
+  "  per its author's caution. GAP REPORT: the",
+  "  specialists box flipped in",
+  "  tools/dragon_gap_report_003.md -> issue-3",
+  "  report 2 closed / 3 open. VERIFIED: engine",
+  "  double-run GREEN applied 6 / already 6 - NO",
+  "  ABORTS THIS ROUND, the first clean pass since",
+  "  the fresh-unpack lesson; rverify against",
+  "  pristine e48c3ed: 264 mutants 0 missed; the raw",
+  "  JSON round-trip byte-exact. Spec",
+  "  tools/spec_r897.json, 57,040 bytes, 1,696",
+  "  lines, md5 e0c9825205d72f252c96dd9dd0906a76",
+  "  (authored-plus-newline). NEXT: R898 - the",
+  "  character round (the new-view Dwarves folios",
+  "  26-27 + the birth tables folios 14-16 + the",
+  "  Pulsipher Eldar deltas folios 20-21 vs the R888",
+  "  Smith pin), flipping the fighting sub-classes",
+  "  box -> issue-3 report 3 closed / 2 open. WAIT",
+  "  FOR GO."
+ ],
+ "include_after": "#include \"rules/fsc.h\"  // R897: the Samurai and Berserker fighting sub-classes round",
+ "include_comment": "the Dwarves, birth tables and Eldar deltas character round",
+ "header_file": "rules/chr.h",
+ "audit_file": "rules/audits/r898_batch.h",
+ "audit_label": "R898 character round audit",
+ "audit_anchor": "#include \"rules/audits/r897_batch.h\"  // R897: R897 fighting sub-classes audit",
+ "gap_report": "tools/dragon_gap_report_003.md",
+ "gap_census": {
+  "closed": 3,
+  "open": 2
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Samurai and the Berserker** (folios 25, 27) - the fighting\n  sub-classes round",
+   "to": "- [x] **The Samurai and the Berserker** (folios 25, 27) - the fighting\n  sub-classes round",
+   "note": "the fighting sub-classes box - the issue-3 report's third flip, 3 closed / 2 open"
+  }
+ ],
+ "banner": {
+  "title": "The character round - Smith's new-view Dwarves (folios 26-27), Stock and Lane's birth tables (folios 14-16) and the Pulsipher Eldar deltas (folios 20-21)",
+  "provenance": "Pinned from The Dragon Vol. 1 No. 3 (October 1976): folios 26-27, Larry Smith's A New View of Dwarves - the nine-level Fighting Man ladder with the dice-plus forms split to base and bonus, the kingship of the seven families with Durin on the 7-8 of a d8, the Greyhawk cleric and thief options with their swapped dice, the fourteen abilities, the reaction modifiers with the Goblins-and-Orcs auto attack, and the folk wisdom; folios 14-16, Brad Stock and Brian Lane's Birth Tables for D&D - the ten-table character generation system from social class through sibling rank, social rank wealth, the three skills groups, the nobility rolls with the royalty rules, the adventurer fathers, the race rolls with the dice grid and requirement bands, and the previous-experience multipliers; folios 20-21, Lewis Pulsipher's letter - the Silvan, Sindar and Eldar-proper system with the True Sight powers and the over-sea doctrine, as deltas against the R888 Smith Eldar pin. The editors ran the Smith rebuttal beside the letter; both systems stand, the deltas noted, never silent.",
+  "sentinel": "The variant-layer doctrine holds: Dragon ink is never core 1e canon. The '00' percentile convention CONVERTS to 100 throughout the birth tables and the 'nil' bands pin as 0, every conversion noted, never silent; the race requirement grid's printed 'any' CONVERTS to the 3-18 range; the ladder's dice-plus forms split to base and bonus; the auto-attack reaction row pins AS SCANNED as the sentinel 9; the OCR's split Very-Wealthy rows and column shifts in the social-rank tables, the garbled ladder footnote, the royalty table's interleaved wealth labels and the sibling note 'No one receives Allowance' ride AS SCANNED, unpinned or noted, no figure pixels to check; the crafts list pins as a count with the names in the audit comment; the Pulsipher system rides as DELTAS against the R888 Smith pin, both authored systems standing side by side on the variant layer, never a rewrite."
+ },
+ "consts": [
+  {
+   "name": "chrDwarfLadderLevels",
+   "value": 9,
+   "comment": "the chrDwarfLadder table runs 9 rows (folio 26)"
+  },
+  {
+   "name": "chrDwfStrFor7th",
+   "value": 17,
+   "comment": "17-plus Strength is needed for 7th level, pinned as 17 (folio 26)"
+  },
+  {
+   "name": "chrDwfStrFor8th",
+   "value": 18,
+   "comment": "18 Strength is needed for 8th level (folio 26)"
+  },
+  {
+   "name": "chrDwfKingIntMin",
+   "value": 12,
+   "comment": "the ladder footnote's 12-plus Intelligence requirement, pinned as 12 - the OCR line garbles across the table edge, pinned as scanned (folio 26)"
+  },
+  {
+   "name": "chrDwfKingWisMin",
+   "value": 12,
+   "comment": "the ladder footnote's 12-plus Wisdom requirement, pinned as 12 - the OCR line garbles across the table edge, pinned as scanned (folio 26)"
+  },
+  {
+   "name": "chrDwarfFamilies",
+   "value": 7,
+   "comment": "there are only 7 families of Dwarves, so only 7 Dwarf Kings (folio 26)"
+  },
+  {
+   "name": "chrDwarfTribeDieSides",
+   "value": 8,
+   "comment": "tribe and line are decided on an eight-sided die (folio 26)"
+  },
+  {
+   "name": "chrDwarfTribeDurinLo",
+   "value": 7,
+   "comment": "rolls of 7 and 8 are the tribe of Durin - the minimum (folio 26)"
+  },
+  {
+   "name": "chrDwarfClericWisMin",
+   "value": 15,
+   "comment": "a Wisdom of 15 or better lets a Dwarf opt to be a cleric (folio 26)"
+  },
+  {
+   "name": "chrDwarfCleric7thWis",
+   "value": 17,
+   "comment": "a 17 Wisdom allows the Dwarf cleric to reach 7th level (folio 26)"
+  },
+  {
+   "name": "chrDwarfCleric8thWis",
+   "value": 18,
+   "comment": "an 18 Wisdom allows the Dwarf cleric to reach 8th level (folio 26)"
+  },
+  {
+   "name": "chrDwarfClericHitDie",
+   "value": 8,
+   "comment": "Dwarf clerics roll an eight-sided die for points (folio 26)"
+  },
+  {
+   "name": "chrDwarfThiefHitDie",
+   "value": 6,
+   "comment": "Dwarf thieves roll a six-sided die for points (folio 26)"
+  },
+  {
+   "name": "chrDwarfSaveBonusLevels",
+   "value": 4,
+   "comment": "high magic resistance - Dwarves add 4 levels when rolling their saving throws (folio 26)"
+  },
+  {
+   "name": "chrDwarfWarHammerBonus",
+   "value": 3,
+   "comment": "Dwarves may fully employ the +3 War Hammer (folio 26)"
+  },
+  {
+   "name": "chrDwarfSlantDieSides",
+   "value": 6,
+   "comment": "the slant-passage detection roll is on a six-sided die (folio 26)"
+  },
+  {
+   "name": "chrDwarfSlantRollMax",
+   "value": 4,
+   "comment": "Dwarves note slanting passages, traps, shifting walls and rooms on a die roll of 1-4 (folio 26)"
+  },
+  {
+   "name": "chrDwarfGiantClassHitMod",
+   "value": 1,
+   "comment": "fighting the Giant Class, Dwarves add +1 to hit probabilities (folio 26)"
+  },
+  {
+   "name": "chrDwarfGiantClassAcMod",
+   "value": 1,
+   "comment": "fighting the Giant Class, Dwarves subtract 1 from chances to be hit - pinned as an armor-class bonus of 1, the printed double-negative noted (folio 26)"
+  },
+  {
+   "name": "chrDwarfSmithIntMin",
+   "value": 9,
+   "comment": "Smiths work requires an Intelligence of 9 or better (folio 26)"
+  },
+  {
+   "name": "chrDwarfSmithStrMin",
+   "value": 9,
+   "comment": "Smiths work requires a Strength of 9 or better (folio 26)"
+  },
+  {
+   "name": "chrDwarfArmorerIntMin",
+   "value": 12,
+   "comment": "Armorers work requires an Intelligence of 12 or better (folio 26)"
+  },
+  {
+   "name": "chrDwarfArmorerStrMin",
+   "value": 9,
+   "comment": "Armorers work requires a Strength of 9 or better (folio 26)"
+  },
+  {
+   "name": "chrDwarfEngineerIntMin",
+   "value": 15,
+   "comment": "Engineers work requires an Intelligence of 15 or better (folio 26)"
+  },
+  {
+   "name": "chrDwarfOtherWeaponHitMod",
+   "value": 1,
+   "comment": "all other weapons are used at minus 1 to hit - pinned as 1, the sign carried in the comment (folio 26)"
+  },
+  {
+   "name": "chrDwarfSwimDexMin",
+   "value": 17,
+   "comment": "Dwarves with a Dexterity of 17 or greater can swim naturally; all others must learn (folio 26)"
+  },
+  {
+   "name": "chrDwarfHorseIntMin",
+   "value": 12,
+   "comment": "only Dwarves with an Intelligence of 12 or better will even consider getting on a horse - and only then at great need, the folio-27 continuation of the folio-26 sentence (folios 26-27)"
+  },
+  {
+   "name": "chrDwarfMaturityAge",
+   "value": 50,
+   "comment": "Dwarves reach maturity around the age of 50 (folio 27)"
+  },
+  {
+   "name": "chrDwarfLifespanYears",
+   "value": 250,
+   "comment": "Dwarves live to be about 250 years old (folio 27)"
+  },
+  {
+   "name": "chrDwarfReactionCount",
+   "value": 6,
+   "comment": "the chrDwarfReactions table runs 6 rows (folio 27)"
+  },
+  {
+   "name": "chrBirthSkillsGroups",
+   "value": 3,
+   "comment": "the skills divide into three groups, plus the crafts list (folio 15)"
+  },
+  {
+   "name": "chrBirthAllowanceMonths",
+   "value": 12,
+   "comment": "the allowance arrives each month for the first year (folio 15)"
+  },
+  {
+   "name": "chrBirthAllowanceLevelCap",
+   "value": 3,
+   "comment": "the allowance runs until the player reaches 3rd level, whichever comes first (folio 15)"
+  },
+  {
+   "name": "chrBirthClassCount",
+   "value": 4,
+   "comment": "the chrBirthClass table runs 4 rows (folio 14)"
+  },
+  {
+   "name": "chrSiblingBandCount",
+   "value": 5,
+   "comment": "the chrSiblingRank table runs 5 rows (folio 14)"
+  },
+  {
+   "name": "chrSiblingDieSides",
+   "value": 8,
+   "comment": "the sibling rank roll is on an eight-sided die (folio 14)"
+  },
+  {
+   "name": "chrOrphanDieSides",
+   "value": 6,
+   "comment": "the orphan check is on a six-sided die (folio 14)"
+  },
+  {
+   "name": "chrOrphanRoll",
+   "value": 1,
+   "comment": "a roll of 1 on the six-sided die orphans the player (folio 14)"
+  },
+  {
+   "name": "chrBirthFirstSonPct",
+   "value": 10,
+   "comment": "the 1st son receives 10 percent more Initial and Allowance (folio 14)"
+  },
+  {
+   "name": "chrBirthBastardPct",
+   "value": 10,
+   "comment": "the bastard receives 10 percent less - pinned as 10, the 'less' carried in the comment (folio 14)"
+  },
+  {
+   "name": "chrRankCommonerCount",
+   "value": 4,
+   "comment": "the chrRankCommoner table runs 4 rows (folio 15)"
+  },
+  {
+   "name": "chrRankMerchantCount",
+   "value": 5,
+   "comment": "the chrRankMerchant table runs 5 rows (folio 15)"
+  },
+  {
+   "name": "chrRankGentlemanCount",
+   "value": 5,
+   "comment": "the chrRankGentleman table runs 5 rows (folio 15)"
+  },
+  {
+   "name": "chrRankNobleCount",
+   "value": 6,
+   "comment": "the chrRankNoble table runs 6 rows (folio 15)"
+  },
+  {
+   "name": "chrFatherOccCount",
+   "value": 4,
+   "comment": "the chrFatherOcc table runs 4 rows (folio 15)"
+  },
+  {
+   "name": "chrSkillGroup1Count",
+   "value": 10,
+   "comment": "the chrSkillGroup1 table runs 10 rows (folio 15)"
+  },
+  {
+   "name": "chrSkillsPeasantMax",
+   "value": 70,
+   "comment": "Group 1 note - a Peasant may not roll above 70 (folio 15)"
+  },
+  {
+   "name": "chrSkillsWellToDoMin",
+   "value": 31,
+   "comment": "Group 1 note - a Well-to-do may not roll below 31 (folio 15)"
+  },
+  {
+   "name": "chrSkillsWealthyMin",
+   "value": 52,
+   "comment": "Group 1 note - a Wealthy may not roll below 52, with 52-55 equalling Adventurer (folio 15)"
+  },
+  {
+   "name": "chrSkillGroup2Count",
+   "value": 10,
+   "comment": "the chrSkillGroup2 table runs 10 rows (folio 15)"
+  },
+  {
+   "name": "chrSkillGroup3Count",
+   "value": 20,
+   "comment": "the chrSkillGroup3 table runs 20 rows (folio 15)"
+  },
+  {
+   "name": "chrSkillsInterpreterIntBonus",
+   "value": 3,
+   "comment": "the Interpreter knows languages as if his intelligence were 3 higher (folio 15)"
+  },
+  {
+   "name": "chrSkillsSoldierHitBonus",
+   "value": 1,
+   "comment": "the Soldier receives +1 on hit probability until he reaches 4th level (folio 15)"
+  },
+  {
+   "name": "chrSkillsSoldierLevelCap",
+   "value": 4,
+   "comment": "the Soldier's hit bonus runs until 4th level (folio 15)"
+  },
+  {
+   "name": "chrSkillsOratorReactionBonus",
+   "value": 1,
+   "comment": "the Orator/Actor receives +1 when rolling random reactions of monsters (folio 15)"
+  },
+  {
+   "name": "chrCraftsCount",
+   "value": 12,
+   "comment": "the crafts list runs twelve trades - Tailor, Smith, Fletcher, Cobbler, Horseman, Weaver, Carpenter, Armorer, Bowyer, Mason, Cartographer, Jeweler, the names carried in the audit comment (folio 15)"
+  },
+  {
+   "name": "chrSkillsDieSides",
+   "value": 100,
+   "comment": "the skills rolls are on the percentile dice, the numbers ignored when choosing a player's skills (folio 15)"
+  },
+  {
+   "name": "chrNobleTitleCount",
+   "value": 6,
+   "comment": "the chrNobleTitle table runs 6 rows (folio 15)"
+  },
+  {
+   "name": "chrRoyaltyKinCount",
+   "value": 5,
+   "comment": "the chrRoyaltyKin table runs 5 rows (folio 15)"
+  },
+  {
+   "name": "chrRoyaltyImmediateInitial",
+   "value": 1000,
+   "comment": "the immediate royal family's initial gold - 1000 (folio 15)"
+  },
+  {
+   "name": "chrRoyaltyImmediateAllow",
+   "value": 100,
+   "comment": "the immediate royal family's allowance - 100 (folio 15)"
+  },
+  {
+   "name": "chrPosKnightCount",
+   "value": 5,
+   "comment": "the chrPosKnight table runs 5 rows (folio 15)"
+  },
+  {
+   "name": "chrKnightAdventurerPct",
+   "value": 30,
+   "comment": "a Knight father has a 30 percent chance of being an Adventurer (folio 15)"
+  },
+  {
+   "name": "chrPosBaronCount",
+   "value": 6,
+   "comment": "the chrPosBaron table runs 6 rows (folio 15)"
+  },
+  {
+   "name": "chrBaronAdventurerPct",
+   "value": 25,
+   "comment": "a Baron father has a 25 percent chance of being an Adventurer (folio 15)"
+  },
+  {
+   "name": "chrPosCountCount",
+   "value": 6,
+   "comment": "the chrPosCount table runs 6 rows (folio 15)"
+  },
+  {
+   "name": "chrCountAdventurerPct",
+   "value": 20,
+   "comment": "a Count father has a 20 percent chance of being an Adventurer (folio 15)"
+  },
+  {
+   "name": "chrPosMarquisCount",
+   "value": 7,
+   "comment": "the chrPosMarquis table runs 7 rows (folio 15)"
+  },
+  {
+   "name": "chrMarquisAdventurerPct",
+   "value": 15,
+   "comment": "a Marquis father has a 15 percent chance of being an Adventurer (folio 15)"
+  },
+  {
+   "name": "chrPosDukeCount",
+   "value": 7,
+   "comment": "the chrPosDuke table runs 7 rows (folio 15)"
+  },
+  {
+   "name": "chrDukeAdventurerPct",
+   "value": 15,
+   "comment": "a Duke father has a 15 percent chance of being an Adventurer (folio 15)"
+  },
+  {
+   "name": "chrAdvComLevelsCount",
+   "value": 4,
+   "comment": "the chrAdvComLevels table runs 4 rows (folio 16)"
+  },
+  {
+   "name": "chrAdvMerLevelsCount",
+   "value": 6,
+   "comment": "the chrAdvMerLevels table runs 6 rows (folio 16)"
+  },
+  {
+   "name": "chrAdvGenLevelsCount",
+   "value": 8,
+   "comment": "the chrAdvGenLevels table runs 8 rows (folio 16)"
+  },
+  {
+   "name": "chrAdvNobLevelsCount",
+   "value": 9,
+   "comment": "the chrAdvNobLevels table runs 9 rows (folio 16)"
+  },
+  {
+   "name": "chrAdvComClassCount",
+   "value": 2,
+   "comment": "the chrAdvComClass table runs 2 rows (folio 16)"
+  },
+  {
+   "name": "chrAdvMerClassCount",
+   "value": 4,
+   "comment": "the chrAdvMerClass table runs 4 rows (folio 16)"
+  },
+  {
+   "name": "chrAdvGenClassCount",
+   "value": 4,
+   "comment": "the chrAdvGenClass table runs 4 rows (folio 16)"
+  },
+  {
+   "name": "chrAdvNobClassCount",
+   "value": 4,
+   "comment": "the chrAdvNobClass table runs 4 rows (folio 16)"
+  },
+  {
+   "name": "chrRaceCommonerCount",
+   "value": 5,
+   "comment": "the chrRaceCommoner table runs 5 rows (folio 16)"
+  },
+  {
+   "name": "chrRaceMerchantCount",
+   "value": 4,
+   "comment": "the chrRaceMerchant table runs 4 rows (folio 16)"
+  },
+  {
+   "name": "chrRaceGentleNobleCount",
+   "value": 5,
+   "comment": "the chrRaceGentleNoble table runs 5 rows (folio 16)"
+  },
+  {
+   "name": "chrRaceTable1DieSides",
+   "value": 12,
+   "comment": "the race rolls are on a twelve-sided die (folio 16)"
+  },
+  {
+   "name": "chrRaceDiceCount",
+   "value": 6,
+   "comment": "the chrRaceDice table runs 6 rows (folio 16)"
+  },
+  {
+   "name": "chrRaceReqCount",
+   "value": 6,
+   "comment": "the chrRaceReq table runs 6 rows (folio 16)"
+  },
+  {
+   "name": "chrPrevComCount",
+   "value": 4,
+   "comment": "the chrPrevCom table runs 4 rows (folio 16)"
+  },
+  {
+   "name": "chrPrevMerCount",
+   "value": 5,
+   "comment": "the chrPrevMer table runs 5 rows (folio 16)"
+  },
+  {
+   "name": "chrPrevGenCount",
+   "value": 6,
+   "comment": "the chrPrevGen table runs 6 rows (folio 16)"
+  },
+  {
+   "name": "chrPrevNobCount",
+   "value": 7,
+   "comment": "the chrPrevNob table runs 7 rows (folio 16)"
+  },
+  {
+   "name": "chrSilvanFighterMax",
+   "value": 8,
+   "comment": "the Silvan elf advances to 8th level fighter (folio 21)"
+  },
+  {
+   "name": "chrSilvanFighterMaxStr18",
+   "value": 9,
+   "comment": "a Silvan elf with 18 strength advances to 9th level fighter (folio 21)"
+  },
+  {
+   "name": "chrSilvanMuMax",
+   "value": 4,
+   "comment": "the Silvan elf advances to 4th level magic-user (folio 21)"
+  },
+  {
+   "name": "chrSilvanMuMaxInt18",
+   "value": 5,
+   "comment": "a Silvan elf with 18 intelligence advances to 5th level magic-user (folio 21)"
+  },
+  {
+   "name": "chrSindarStatMin",
+   "value": 9,
+   "comment": "the Sindar must have at least average abilities in all six categories - average pinned as 9 (folio 21)"
+  },
+  {
+   "name": "chrSindarTotalMin",
+   "value": 63,
+   "comment": "the Sindar must total at least 63 across the six categories (folio 21)"
+  },
+  {
+   "name": "chrSindarMuMax",
+   "value": 8,
+   "comment": "the Sindarin elf advances to 8th level magic-user (folio 21)"
+  },
+  {
+   "name": "chrSindarMuMaxInt18",
+   "value": 9,
+   "comment": "a Sindarin elf with 18 intelligence advances to 9th level magic-user (folio 21)"
+  },
+  {
+   "name": "chrSindarFighterMax",
+   "value": 4,
+   "comment": "the Sindarin elf advances to 4th level fighter (folio 21)"
+  },
+  {
+   "name": "chrSindarFighterMaxStr17",
+   "value": 5,
+   "comment": "a Sindarin elf with 17 strength advances to 5th level fighter (folio 21)"
+  },
+  {
+   "name": "chrSindarFighterMaxStr18",
+   "value": 6,
+   "comment": "a Sindarin elf with 18 strength advances to 6th level fighter (folio 21)"
+  },
+  {
+   "name": "chrEldarWisMin",
+   "value": 13,
+   "comment": "the Eldar proper require a minimum 13 wisdom, on top of the Sindar requirements (folio 21)"
+  },
+  {
+   "name": "chrEldarTotalMin",
+   "value": 67,
+   "comment": "the Eldar proper must total at least 67 - the addition reflects gains acquired in Valinor, a game-balance addition Pulsipher calls not realistic (folio 21)"
+  },
+  {
+   "name": "chrEldarMuMax",
+   "value": 11,
+   "comment": "an Eldar proper may advance to 11th level magic-user, maximum regardless of intelligence (folio 21)"
+  },
+  {
+   "name": "chrEldarFighterMax",
+   "value": 11,
+   "comment": "an Eldar proper may advance to 11th level fighter, maximum regardless of strength (folio 21)"
+  },
+  {
+   "name": "chrEldarMindRangePerLevel",
+   "value": 5,
+   "comment": "the Eldar speak mind-to-mind with each other at a range of 2 and a half per level of the more experienced - pinned as five half-units, the conversion noted (folio 21)"
+  },
+  {
+   "name": "chrEldarPhantasmalPerLevel",
+   "value": 1,
+   "comment": "the Eldar's True Sight adds +1 per level versus phantasmal forces (folio 21)"
+  },
+  {
+   "name": "chrEldarIllusionPctPerLevel",
+   "value": 5,
+   "comment": "the Eldar see through illusions at 5 percent per level (folio 21)"
+  },
+  {
+   "name": "chrEldarPolymorphPctPerLevel",
+   "value": 3,
+   "comment": "the Eldar see the true shape of a polymorphed being at 3 percent per level - the worked example reads a 5th level at 15 percent (folio 21)"
+  },
+  {
+   "name": "chrEldarShapeChangePctPerLevel",
+   "value": 1,
+   "comment": "the Eldar see the true shape of a shape-changed being at 1 percent per level (folio 21)"
+  },
+  {
+   "name": "chrSeaEldarDenominator",
+   "value": 1000,
+   "comment": "a realistic chance of going over sea is one in one thousand per year for the Eldar proper (folio 21)"
+  },
+  {
+   "name": "chrSeaSindarSeenDenominator",
+   "value": 100,
+   "comment": "the Sindar's over-sea chance is one in one hundred per year once they have seen the western ocean (folio 21)"
+  },
+  {
+   "name": "chrSeaSindarUnseenDenominator",
+   "value": 10000,
+   "comment": "the Sindar's over-sea chance is one in ten thousand per year before they have seen the western ocean (folio 21)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "chrDwarfKingshipFirst",
+   "value": true,
+   "comment": "the Kingship of each line is open - the first dwarf to obtain it becomes that tribe's King and holds it until death (folio 26)"
+  },
+  {
+   "name": "chrDwarfKingBlocksLevel",
+   "value": true,
+   "comment": "when a Dwarf King is made for a tribe, no other dwarf of that tribe may become 9th level until he dies (folio 26)"
+  },
+  {
+   "name": "chrDwarfClericsAllowed",
+   "value": true,
+   "comment": "since according to Greyhawk there can be Dwarf clerics, players should be allowed the option - with all the benefits and restrictions of both cleric and dwarf (folio 26)"
+  },
+  {
+   "name": "chrDwarfThievesGreyhawk",
+   "value": true,
+   "comment": "Dwarf thieves are as listed in Greyhawk with the exception of the hit dice (folio 26)"
+  },
+  {
+   "name": "chrDwarfForbiddenClasses",
+   "value": true,
+   "comment": "Dwarves may not be Magicians, Assassins, Monks, Paladins, Illusionists, Rangers or Sages (folio 26)"
+  },
+  {
+   "name": "chrDwarfNewConstructionAuto",
+   "value": true,
+   "comment": "noting new construction is done automatically (folio 26)"
+  },
+  {
+   "name": "chrDwarfUnderstandsGobOrcHob",
+   "value": true,
+   "comment": "Dwarves are able to understand the languages of Goblins, Orcs and Hobgoblins (folio 26)"
+  },
+  {
+   "name": "chrDwarfSpeaksGnomeKobold",
+   "value": true,
+   "comment": "Dwarves can speak Gnome and Kobold - the OCR's 'Kolbold' garble noted - in addition to their regular tongues (folio 26)"
+  },
+  {
+   "name": "chrDwarfJudgesGems",
+   "value": true,
+   "comment": "Dwarves may judge properly the full value of gems and jewels (folio 26)"
+  },
+  {
+   "name": "chrDwarfFeelsMagic",
+   "value": true,
+   "comment": "Dwarves can feel, when handling armor or weapons, whether it is magical in nature (folio 26)"
+  },
+  {
+   "name": "chrDwarfBowsOnly",
+   "value": true,
+   "comment": "crossbows and short bows are the Dwarves' only bow-type weapons (folio 26)"
+  },
+  {
+   "name": "chrDwarfRegularWeapons",
+   "value": true,
+   "comment": "the regular weapons - Dagger, Hand Axe, Sword, Battle Axe, War Hammer and Spear (folio 26)"
+  },
+  {
+   "name": "chrDwarfWaterFear",
+   "value": true,
+   "comment": "Dwarves have a fear of traveling on water, so it will be very hard to convince them of the need to learn to swim (folio 26)"
+  },
+  {
+   "name": "chrDwarfHatesOrcsGoblins",
+   "value": true,
+   "comment": "Dwarves have a great hate for Orcs and Goblins and dislike Elves to a great extent - insulting Elves is a hobby, as is chopping the heads off Orcs and Goblins (folio 27)"
+  },
+  {
+   "name": "chrDwarfOathsNeverBroken",
+   "value": true,
+   "comment": "Dwarves have their own rough system of honor, and when an oath is given it is never broken (folio 27)"
+  },
+  {
+   "name": "chrDwarfNeverAttackOwnFolk",
+   "value": true,
+   "comment": "Dwarves of the same Folk will never attack their own Folk (folio 27)"
+  },
+  {
+   "name": "chrBirthFirstSonInherits",
+   "value": true,
+   "comment": "the 1st son receives the inheritance (folio 14)"
+  },
+  {
+   "name": "chrSkillsFatherOccupation",
+   "value": true,
+   "comment": "one of a player's skills must be his father's occupation, unless prohibited (folio 15)"
+  },
+  {
+   "name": "chrSkillsGroup3FirstFiveProhibited",
+   "value": true,
+   "comment": "a player may not choose the first 5 Group 3 skills - they are prohibited (folio 15)"
+  },
+  {
+   "name": "chrSkillsNoPlayerAdventurer",
+   "value": true,
+   "comment": "no player may be an Adventurer - the possibility is taken care of under previous experience, and fathers roll on the adventurers table (folio 15)"
+  },
+  {
+   "name": "chrRoyaltyNeverOrphan",
+   "value": true,
+   "comment": "a child in the immediate royal family is never an orphan (folio 15)"
+  },
+  {
+   "name": "chrRoyaltyRaiseRank",
+   "value": true,
+   "comment": "if a player's social rank does not conform to the minimum wealth, it is immediately raised to that level (folio 15)"
+  },
+  {
+   "name": "chrRoyaltyRerollIgnore",
+   "value": true,
+   "comment": "after the Table 2 roll, all but the immediate family return to Table 1 and reroll, ignoring 96-00 (folio 15)"
+  },
+  {
+   "name": "chrRoyaltyTitleOneNotch",
+   "value": true,
+   "comment": "the father's title is immediately raised one notch - Knight to Baron, Duke to Duke (folio 15)"
+  },
+  {
+   "name": "chrNobilityNonHumanEarlCap",
+   "value": true,
+   "comment": "the authors' campaign ruling - the world is dominated by humans, so a non-human cannot be higher than Earl (folio 16)"
+  },
+  {
+   "name": "chrRaceTable2Preferred",
+   "value": true,
+   "comment": "either or both race tables can be used; the authors both use Table 2, and Table 1 has been used in the past (folio 16)"
+  },
+  {
+   "name": "chrRaceVariant9To18",
+   "value": true,
+   "comment": "a variation of Table 2 substitutes 9-18 wherever 13-18 appears, making it easier to become a non-human (folio 16)"
+  },
+  {
+   "name": "chrRaceLimitByRequirements",
+   "value": true,
+   "comment": "rather than letting any player be an elf and then limiting advancement, limit the number who can be elves by placing the requirements on the features - whoever heard of an ugly elf (folio 16)"
+  },
+  {
+   "name": "chrSilvanNoReqs",
+   "value": true,
+   "comment": "there are no ability requirements for Silvan elves (folio 21)"
+  },
+  {
+   "name": "chrSilvanDdPowers",
+   "value": true,
+   "comment": "the Silvan elves have all powers listed in D&D (folio 21)"
+  },
+  {
+   "name": "chrSilvanDiseaseImmune",
+   "value": true,
+   "comment": "the Silvan elves are immune to disease (folio 21)"
+  },
+  {
+   "name": "chrSilvanAgingImmune",
+   "value": true,
+   "comment": "the Silvan elves are immune to aging effects, such as a Staff of Withering, because they are naturally immortal (folio 21)"
+  },
+  {
+   "name": "chrSilvanLawfulOrNeutral",
+   "value": true,
+   "comment": "the Silvan elves may be Lawful or Neutral and are never evil (folio 21)"
+  },
+  {
+   "name": "chrEldarOnePathOnly",
+   "value": true,
+   "comment": "an Eldar proper may take 11th level magic-user or 11th level fighter, but not both - the player chooses one path when he becomes Eldar proper (folio 21)"
+  },
+  {
+   "name": "chrEldarLangPerIntPoint",
+   "value": true,
+   "comment": "the Eldar may learn one language per intelligence point, but do not begin with knowledge of orc, gnoll or hobgoblin (folio 21)"
+  },
+  {
+   "name": "chrEldarCalmAnimals",
+   "value": true,
+   "comment": "the Eldar can calm and control their own animals (folio 21)"
+  },
+  {
+   "name": "chrEldarBirdSpeech",
+   "value": true,
+   "comment": "the Eldar can communicate simply with small birds and other innocuous creatures - no monsters (folio 21)"
+  },
+  {
+   "name": "chrEldarKeenEyes",
+   "value": true,
+   "comment": "the Eldar have keen eyesight, treated as two-power binoculars or a microscope (folio 21)"
+  },
+  {
+   "name": "chrEldarHiddenOptional",
+   "value": true,
+   "comment": "optionally the Eldar see hidden - but not invisible - enemies at 1 percent per level: shadows, Blending, Beguiling (folio 21)"
+  },
+  {
+   "name": "chrEldarUnawareOnSuccess",
+   "value": true,
+   "comment": "when an Eldar sees through an illusion or a true shape, he is unaware that the illusion or false shape exists (folio 21)"
+  },
+  {
+   "name": "chrSeaWaitUntilMaxLevel",
+   "value": true,
+   "comment": "do not roll the over-sea chance at all until the elf has reached his maximum level (folio 21)"
+  },
+  {
+   "name": "chrSilvanNeverCrossSea",
+   "value": true,
+   "comment": "the Silvan elves never went over sea - Pulsipher calls Smith's provision for it ridiculous (folio 21)"
+  },
+  {
+   "name": "chrHalfElfSameAsEldar",
+   "value": true,
+   "comment": "half-elves have the same requirements and powers as Eldar proper, but advance as specified in Greyhawk (folio 21)"
+  },
+  {
+   "name": "chrEldarAllLawfulGood",
+   "value": true,
+   "comment": "all Eldar and half-elves are Lawful and good in this world (folio 21)"
+  },
+  {
+   "name": "chrEldarNoldorShorthand",
+   "value": true,
+   "comment": "for convenience one can refer to Eldar proper as Noldor, but this is not accurate (folio 21)"
+  },
+  {
+   "name": "chrEldarRejectsSmithDelta",
+   "value": true,
+   "comment": "the deltas against the R888 Smith pin, never silent: Smith's Noldor carry no level cap where Pulsipher caps the one path at 11th, Smith's 150-percent ranges-and-effects advantage is rejected as too large and unbalancing with no source justification, the disease immunity extends to aging effects, and Smith's high over-sea chances are replaced by the one-in-a-thousand doctrine (folios 20-21)"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [
+  {
+   "name": "chrDwarfLadder",
+   "tag": "CrDwfL",
+   "count": "chrDwarfLadderLevels",
+   "sentinel": 9,
+   "cols": [
+    "chrDwfLvlLevel",
+    "chrDwfLvlNameCode",
+    "chrDwfLvlHitBase",
+    "chrDwfLvlHitBonus",
+    "chrDwfLvlXp",
+    "chrDwfLvlFightsAs",
+    "chrDwfLvlFightsAsBonus"
+   ],
+   "col_comments": [
+    "the level - 1 through 9 (folio 26)",
+    "the title code - 1 Dwarf, 2 Warrior, 3 Spearman, 4 Dwarf Hero, 5 Swordbearer, 6 Axewielder, 7 Champion, 8 Dwarf Lord, 9 Dwarf King (folio 26)",
+    "the hit-dice base - 1 through 8, then 10 for the King, the printed dice-plus forms split to base and bonus (folio 26)",
+    "the hit-dice bonus - the +2 of the 1st-level Dwarf, +1 of the 2nd, then flat, then the Champion and Lord extras, +1 for the King (folio 26)",
+    "the experience points - 0 through 320,000 (folio 26)",
+    "the fights-as-a-man level - 1 through 10 (folio 26)",
+    "the fights-as modifier - +2, +1, then flat Men, then +1, +2, +1 (folio 26)"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     1,
+     2,
+     0,
+     1,
+     2
+    ],
+    [
+     2,
+     2,
+     2,
+     1,
+     2500,
+     2,
+     1
+    ],
+    [
+     3,
+     3,
+     3,
+     0,
+     5000,
+     3,
+     0
+    ],
+    [
+     4,
+     4,
+     4,
+     0,
+     10000,
+     4,
+     0
+    ],
+    [
+     5,
+     5,
+     5,
+     0,
+     20000,
+     5,
+     0
+    ],
+    [
+     6,
+     6,
+     6,
+     0,
+     40000,
+     6,
+     0
+    ],
+    [
+     7,
+     7,
+     7,
+     1,
+     80000,
+     7,
+     1
+    ],
+    [
+     8,
+     8,
+     8,
+     2,
+     160000,
+     8,
+     2
+    ],
+    [
+     9,
+     9,
+     10,
+     1,
+     320000,
+     10,
+     1
+    ]
+   ],
+   "audit_comment": "the Dwarf Fighting Man ladder - Dwarves are not the poor fighters many claim: 1st level 1+2 fighting as Man+2 through Dwarf King at 10+1 and 320,000 (folio 26)"
+  },
+  {
+   "name": "chrDwarfReactions",
+   "tag": "CrDwfR",
+   "count": "chrDwarfReactionCount",
+   "sentinel": 9,
+   "cols": [
+    "chrDwfReactCode",
+    "chrDwfReactMod"
+   ],
+   "col_comments": [
+    "the reaction row code - 1 Goblins and Orcs, 2 Sindar, Silvan Elves and all men, 3 all others except those listed, 4 Hobbits and Noldor Elves, 5 Dwarves of different Folks, 6 Dwarves of the same Folk (folio 27)",
+    "the reaction die modifier - the auto-attack row pinned as the sentinel 9, the sign of the minus rows carried in this comment (folio 27)"
+   ],
+   "data": [
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     3,
+     -1
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     2
+    ]
+   ],
+   "audit_comment": "the Dwarf reaction modifiers - Goblins and Orcs are an AUTO ATTACK pinned as the sentinel 9; minus 2 for Sindar, Silvan Elves and all men; minus 1 for all others except those listed; plus 0 for Hobbits and Noldor Elves; plus 1 for Dwarves of a different Folk; plus 2 for the same Folk (folio 27)"
+  },
+  {
+   "name": "chrBirthClass",
+   "tag": "CrBC",
+   "count": "chrBirthClassCount",
+   "sentinel": 9,
+   "cols": [
+    "chrBCLo",
+    "chrBCHi",
+    "chrBCCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 14)",
+    "the percentile band's high roll, the 00 convention pinned as 100 (folio 14)",
+    "the social class code - 1 Commoner, 2 Merchant, 3 Gentleman, 4 Noble (folio 14)"
+   ],
+   "data": [
+    [
+     1,
+     30,
+     1
+    ],
+    [
+     31,
+     85,
+     2
+    ],
+    [
+     86,
+     95,
+     3
+    ],
+    [
+     96,
+     100,
+     4
+    ]
+   ],
+   "audit_comment": "the social class roll - 01-30 Commoner, 31-85 Merchant, 86-95 Gentleman, 96-00 Noble (folio 14)"
+  },
+  {
+   "name": "chrSiblingRank",
+   "tag": "CrSib",
+   "count": "chrSiblingBandCount",
+   "sentinel": 9,
+   "cols": [
+    "chrSibLo",
+    "chrSibHi",
+    "chrSibCode"
+   ],
+   "col_comments": [
+    "the eight-sided roll's low face (folio 14)",
+    "the eight-sided roll's high face (folio 14)",
+    "the rank code - 1 first son, 2 second son, 3 third son, 4 fourth son, 5 bastard (folio 14)"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     3,
+     4,
+     2
+    ],
+    [
+     5,
+     5,
+     3
+    ],
+    [
+     6,
+     6,
+     4
+    ],
+    [
+     7,
+     8,
+     5
+    ]
+   ],
+   "audit_comment": "the sibling rank on a d8 - 1 or 2 a 1st, 3 or 4 a 2nd, 5 a 3rd, 6 a 4th, 7 or 8 a bastard (folio 14)"
+  },
+  {
+   "name": "chrRankCommoner",
+   "tag": "CrCom",
+   "count": "chrRankCommonerCount",
+   "sentinel": 9,
+   "cols": [
+    "chrComLo",
+    "chrComHi",
+    "chrComInitial",
+    "chrComAllow",
+    "chrComInherit",
+    "chrComSkills"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the initial gold, multiplied by the player's level (folio 15)",
+    "the monthly allowance (folio 15)",
+    "the inheritance (folio 15)",
+    "the skills code, 1 for A - one skill from Group 1 (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     25,
+     10,
+     0,
+     0,
+     1
+    ],
+    [
+     26,
+     40,
+     30,
+     1,
+     15,
+     1
+    ],
+    [
+     41,
+     70,
+     60,
+     5,
+     50,
+     1
+    ],
+    [
+     71,
+     100,
+     100,
+     10,
+     100,
+     1
+    ]
+   ],
+   "audit_comment": "the Commoner social rank - Peasant, Average, Well-to-do, Wealthy; every Commoner skill letter is A (folio 15)"
+  },
+  {
+   "name": "chrRankMerchant",
+   "tag": "CrMer",
+   "count": "chrRankMerchantCount",
+   "sentinel": 9,
+   "cols": [
+    "chrMerLo",
+    "chrMerHi",
+    "chrMerInitial",
+    "chrMerAllow",
+    "chrMerInherit",
+    "chrMerSkills"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the initial gold (folio 15)",
+    "the monthly allowance (folio 15)",
+    "the inheritance - the Very Wealthy 400 rides the OCR's split '4 0 0' token, pinned as scanned (folio 15)",
+    "the skills code, 2 for B on the first four rows and 3 for C on Very Wealthy (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     25,
+     50,
+     5,
+     100,
+     2
+    ],
+    [
+     26,
+     60,
+     100,
+     10,
+     150,
+     2
+    ],
+    [
+     61,
+     80,
+     120,
+     15,
+     200,
+     2
+    ],
+    [
+     81,
+     95,
+     170,
+     20,
+     250,
+     2
+    ],
+    [
+     96,
+     100,
+     200,
+     30,
+     400,
+     3
+    ]
+   ],
+   "audit_comment": "the Merchant social rank - Small, Average, Well-to-do, Wealthy, Very Wealthy; the Very Wealthy row split across two OCR lines rides as scanned (folio 15)"
+  },
+  {
+   "name": "chrRankGentleman",
+   "tag": "CrGen",
+   "count": "chrRankGentlemanCount",
+   "sentinel": 9,
+   "cols": [
+    "chrGenLo",
+    "chrGenHi",
+    "chrGenInitial",
+    "chrGenAllow",
+    "chrGenInherit",
+    "chrGenSkills"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the initial gold (folio 15)",
+    "the monthly allowance (folio 15)",
+    "the inheritance - the Very Wealthy 600 rides the OCR's shifted columns, pinned as scanned (folio 15)",
+    "the skills code - B then C, with the Very Wealthy row's letter riding the OCR column shift as scanned (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     20,
+     70,
+     0,
+     75,
+     2
+    ],
+    [
+     21,
+     65,
+     100,
+     5,
+     150,
+     3
+    ],
+    [
+     66,
+     90,
+     150,
+     15,
+     250,
+     3
+    ],
+    [
+     91,
+     95,
+     200,
+     20,
+     350,
+     3
+    ],
+    [
+     96,
+     100,
+     250,
+     35,
+     600,
+     4
+    ]
+   ],
+   "audit_comment": "the Gentleman social rank - Impoverished, Average, Well-to-do, Wealthy, Very Wealthy; the Very Wealthy row's OCR column shift rides as scanned with the D letter (folio 15)"
+  },
+  {
+   "name": "chrRankNoble",
+   "tag": "CrNob",
+   "count": "chrRankNobleCount",
+   "sentinel": 9,
+   "cols": [
+    "chrNobLo",
+    "chrNobHi",
+    "chrNobInitial",
+    "chrNobAllow",
+    "chrNobInherit",
+    "chrNobSkills"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the initial gold (folio 15)",
+    "the monthly allowance (folio 15)",
+    "the inheritance - the Very Wealthy 1000 rides the OCR's shifted columns, pinned as scanned (folio 15)",
+    "the skills code - D, D, E, E, F, F (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     20,
+     80,
+     0,
+     100,
+     4
+    ],
+    [
+     21,
+     40,
+     120,
+     10,
+     150,
+     4
+    ],
+    [
+     41,
+     85,
+     200,
+     25,
+     300,
+     5
+    ],
+    [
+     86,
+     95,
+     250,
+     35,
+     450,
+     5
+    ],
+    [
+     96,
+     97,
+     300,
+     45,
+     700,
+     6
+    ],
+    [
+     98,
+     100,
+     400,
+     60,
+     1000,
+     6
+    ]
+   ],
+   "audit_comment": "the Noble social rank - Impoverished, Poor, Average, Well-to-do, Wealthy at 96-97, Very Wealthy at 98-00; the Very Wealthy inheritance's OCR column shift rides as scanned (folio 15)"
+  },
+  {
+   "name": "chrFatherOcc",
+   "tag": "CrFth",
+   "count": "chrFatherOccCount",
+   "sentinel": 9,
+   "cols": [
+    "chrFthClassCode",
+    "chrFthOccGroup"
+   ],
+   "col_comments": [
+    "the social class code - 1 Commoner, 2 Merchant, 3 Gentleman, 4 Noble (folio 15)",
+    "the skills group the father's occupation is rolled under (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "audit_comment": "the father's occupation table - Commoner 1, Merchant 2, Gentleman 3, Noble 3; the number obtained indicates which skills table to use (folio 15)"
+  },
+  {
+   "name": "chrSkillGroup1",
+   "tag": "CrSk1",
+   "count": "chrSkillGroup1Count",
+   "sentinel": 9,
+   "cols": [
+    "chrSk1Lo",
+    "chrSk1Hi",
+    "chrSk1Code"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the skill code - 1 Vagabond, 2 Farmer/Serf, 3 Tinker, 4 Miner, 5 Woodsman, 6 Sailor, 7 Fisherman, 8 Craftsman, 9 Soldier, 10 Adventurer (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     10,
+     1
+    ],
+    [
+     11,
+     55,
+     2
+    ],
+    [
+     56,
+     60,
+     3
+    ],
+    [
+     61,
+     65,
+     4
+    ],
+    [
+     66,
+     70,
+     5
+    ],
+    [
+     71,
+     75,
+     6
+    ],
+    [
+     76,
+     85,
+     7
+    ],
+    [
+     86,
+     95,
+     8
+    ],
+    [
+     96,
+     99,
+     9
+    ],
+    [
+     100,
+     100,
+     10
+    ]
+   ],
+   "audit_comment": "the Group 1 skills - Vagabond, Farmer/Serf, Tinker, Miner, Woodsman, Sailor, Fisherman, Craftsman, Soldier, Adventurer; the Peasant may not roll above 70, the Well-to-do not below 31, the Wealthy not below 52 with 52-55 equalling Adventurer (folio 15)"
+  },
+  {
+   "name": "chrSkillGroup2",
+   "tag": "CrSk2",
+   "count": "chrSkillGroup2Count",
+   "sentinel": 9,
+   "cols": [
+    "chrSk2Lo",
+    "chrSk2Hi",
+    "chrSk2Code"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the skill code - 1 Normal Merchant, 2 Ind. Craftsman, 3 Scribe, 4 Seaman, 5 Slaver, 6 Animal Trainer, 7 Shipwright, 8 Master Merchant, 9 Bird Trainer, 10 Adventurer (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     35,
+     1
+    ],
+    [
+     36,
+     60,
+     2
+    ],
+    [
+     61,
+     65,
+     3
+    ],
+    [
+     66,
+     70,
+     4
+    ],
+    [
+     71,
+     75,
+     5
+    ],
+    [
+     76,
+     80,
+     6
+    ],
+    [
+     81,
+     85,
+     7
+    ],
+    [
+     86,
+     90,
+     8
+    ],
+    [
+     91,
+     95,
+     9
+    ],
+    [
+     96,
+     100,
+     10
+    ]
+   ],
+   "audit_comment": "the Group 2 skills - Normal Merchant, Ind. Craftsman, Scribe, Seaman, Slaver, Animal Trainer, Shipwright, Master Merchant, Bird Trainer, Adventurer; the Independent Craftsman owns his own shop, a player would know a craft, and the father rolls under Crafts (folio 15)"
+  },
+  {
+   "name": "chrSkillGroup3",
+   "tag": "CrSk3",
+   "count": "chrSkillGroup3Count",
+   "sentinel": 9,
+   "cols": [
+    "chrSk3Lo",
+    "chrSk3Hi",
+    "chrSk3Code"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the skill code - 1 Assassin/Spytracker, 2 Sheriff, 3 Magistrate, 4 Sage, 5 Alchemist, 6 Physician, 7 Artist/Sculptor/Musician, 8 Engineer, 9 Soldier, 10 Interpreter, 11 Writer, 12 Astronomer, 13 Don Juan, 14 Orator/Actor, 15 Dream Interpreter, 16 Biologist, 17 Seaman, 18 Gambler, 19 Astrologer, 20 Adventurer (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     3,
+     5,
+     2
+    ],
+    [
+     6,
+     8,
+     3
+    ],
+    [
+     9,
+     11,
+     4
+    ],
+    [
+     12,
+     15,
+     5
+    ],
+    [
+     16,
+     20,
+     6
+    ],
+    [
+     21,
+     25,
+     7
+    ],
+    [
+     26,
+     30,
+     8
+    ],
+    [
+     31,
+     40,
+     9
+    ],
+    [
+     41,
+     45,
+     10
+    ],
+    [
+     46,
+     50,
+     11
+    ],
+    [
+     51,
+     55,
+     12
+    ],
+    [
+     56,
+     60,
+     13
+    ],
+    [
+     61,
+     65,
+     14
+    ],
+    [
+     66,
+     70,
+     15
+    ],
+    [
+     71,
+     75,
+     16
+    ],
+    [
+     76,
+     80,
+     17
+    ],
+    [
+     81,
+     85,
+     18
+    ],
+    [
+     86,
+     90,
+     19
+    ],
+    [
+     91,
+     100,
+     20
+    ]
+   ],
+   "audit_comment": "the Group 3 skills - Assassin/Spytracker, Sheriff, Magistrate, Sage, Alchemist, Physician, Artist/Sculptor/Musician, Engineer, Soldier, Interpreter, Writer, Astronomer, Don Juan, Orator/Actor, Dream Interpreter, Biologist, Seaman, Gambler, Astrologer, Adventurer; a player may not choose the first 5 skills - they are prohibited (folio 15)"
+  },
+  {
+   "name": "chrNobleTitle",
+   "tag": "CrTtl",
+   "count": "chrNobleTitleCount",
+   "sentinel": 9,
+   "cols": [
+    "chrTtlLo",
+    "chrTtlHi",
+    "chrTtlCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the title code - 1 Knight, 2 Baron, 3 Count (Earl), 4 Marquis, 5 Duke, 6 Royalty (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     30,
+     1
+    ],
+    [
+     31,
+     60,
+     2
+    ],
+    [
+     61,
+     80,
+     3
+    ],
+    [
+     81,
+     90,
+     4
+    ],
+    [
+     91,
+     95,
+     5
+    ],
+    [
+     96,
+     100,
+     6
+    ]
+   ],
+   "audit_comment": "the father's title - 01-30 Knight, 31-60 Baron, 61-80 Count (Earl), 81-90 Marquis, 91-95 Duke, 96-00 Royalty going to Table 2; knighthood cannot be inherited (folio 15)"
+  },
+  {
+   "name": "chrRoyaltyKin",
+   "tag": "CrRoy",
+   "count": "chrRoyaltyKinCount",
+   "sentinel": 9,
+   "cols": [
+    "chrRoyLo",
+    "chrRoyHi",
+    "chrRoyCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the kin code - 1 Distant, 2 3rd Cousin, 3 2nd Cousin, 4 1st Cousin, 5 Immediate Family (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     30,
+     1
+    ],
+    [
+     31,
+     60,
+     2
+    ],
+    [
+     61,
+     80,
+     3
+    ],
+    [
+     81,
+     99,
+     4
+    ],
+    [
+     100,
+     100,
+     5
+    ]
+   ],
+   "audit_comment": "the royalty minimum-wealth roll - Distant, 3rd Cousin, 2nd Cousin, 1st Cousin, then 00 Immediate Family with 1000 initial and 100 allowance; all traced from the Royal Family to the player, and the OCR's interleaved wealth labels ride unpinned as scanned (folio 15)"
+  },
+  {
+   "name": "chrPosKnight",
+   "tag": "CrPoK",
+   "count": "chrPosKnightCount",
+   "sentinel": 9,
+   "cols": [
+    "chrPoKLo",
+    "chrPoKHi",
+    "chrPoKCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the position code - 1 Land Holder Only, 2 Orator, 3 In Army, 4 Courtier, 5 Sheriff, 6 Magistrate, 7 Advisor to the King, with the Adventurer a separate roll (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     40,
+     1
+    ],
+    [
+     41,
+     50,
+     2
+    ],
+    [
+     51,
+     90,
+     3
+    ],
+    [
+     91,
+     95,
+     4
+    ],
+    [
+     96,
+     100,
+     5
+    ]
+   ],
+   "audit_comment": "the Knight's position - Land Holder, Orator, In Army, Courtier, Sheriff, with a 30 percent chance the father is an Adventurer (folio 15)"
+  },
+  {
+   "name": "chrPosBaron",
+   "tag": "CrPoB",
+   "count": "chrPosBaronCount",
+   "sentinel": 9,
+   "cols": [
+    "chrPoBLo",
+    "chrPoBHi",
+    "chrPoBCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the position code as in the Knight table (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     40,
+     1
+    ],
+    [
+     41,
+     50,
+     2
+    ],
+    [
+     51,
+     80,
+     3
+    ],
+    [
+     81,
+     90,
+     4
+    ],
+    [
+     91,
+     95,
+     5
+    ],
+    [
+     96,
+     100,
+     6
+    ]
+   ],
+   "audit_comment": "the Baron's position - the Knight's five plus Magistrate, with a 25 percent Adventurer chance (folio 15)"
+  },
+  {
+   "name": "chrPosCount",
+   "tag": "CrPoC",
+   "count": "chrPosCountCount",
+   "sentinel": 9,
+   "cols": [
+    "chrPoCLo",
+    "chrPoCHi",
+    "chrPoCCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the position code as in the Knight table (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     35,
+     1
+    ],
+    [
+     36,
+     45,
+     2
+    ],
+    [
+     46,
+     65,
+     3
+    ],
+    [
+     66,
+     80,
+     4
+    ],
+    [
+     81,
+     90,
+     5
+    ],
+    [
+     91,
+     100,
+     6
+    ]
+   ],
+   "audit_comment": "the Count's (Earl's) position - with a 20 percent Adventurer chance (folio 15)"
+  },
+  {
+   "name": "chrPosMarquis",
+   "tag": "CrPoM",
+   "count": "chrPosMarquisCount",
+   "sentinel": 9,
+   "cols": [
+    "chrPoMLo",
+    "chrPoMHi",
+    "chrPoMCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the position code - the six plus 7 Advisor to the King (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     30,
+     1
+    ],
+    [
+     31,
+     35,
+     2
+    ],
+    [
+     36,
+     50,
+     3
+    ],
+    [
+     51,
+     80,
+     4
+    ],
+    [
+     81,
+     90,
+     5
+    ],
+    [
+     91,
+     99,
+     6
+    ],
+    [
+     100,
+     100,
+     7
+    ]
+   ],
+   "audit_comment": "the Marquis's position - seven bands including the Advisor, with a 15 percent Adventurer chance (folio 15)"
+  },
+  {
+   "name": "chrPosDuke",
+   "tag": "CrPoD",
+   "count": "chrPosDukeCount",
+   "sentinel": 9,
+   "cols": [
+    "chrPoDLo",
+    "chrPoDHi",
+    "chrPoDCode"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 15)",
+    "the percentile band's high roll (folio 15)",
+    "the position code - the seven-band Advisor set (folio 15)"
+   ],
+   "data": [
+    [
+     1,
+     20,
+     1
+    ],
+    [
+     21,
+     25,
+     2
+    ],
+    [
+     26,
+     40,
+     3
+    ],
+    [
+     41,
+     72,
+     4
+    ],
+    [
+     73,
+     82,
+     5
+    ],
+    [
+     83,
+     95,
+     6
+    ],
+    [
+     96,
+     100,
+     7
+    ]
+   ],
+   "audit_comment": "the Duke's position - seven bands, with a 15 percent Adventurer chance; the worked example reads a Duke father as a courtier on a 52 (folios 15-16)"
+  },
+  {
+   "name": "chrAdvComLevels",
+   "tag": "CrAC",
+   "count": "chrAdvComLevelsCount",
+   "sentinel": 9,
+   "cols": [
+    "chrACLo",
+    "chrACHi",
+    "chrACLevel"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 16)",
+    "the percentile band's high roll (folio 16)",
+    "the Commoner father's adventurer level (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     50,
+     1
+    ],
+    [
+     51,
+     70,
+     2
+    ],
+    [
+     71,
+     95,
+     3
+    ],
+    [
+     96,
+     100,
+     4
+    ]
+   ],
+   "audit_comment": "the Commoner father's adventurer level roll (folio 16)"
+  },
+  {
+   "name": "chrAdvMerLevels",
+   "tag": "CrAM",
+   "count": "chrAdvMerLevelsCount",
+   "sentinel": 9,
+   "cols": [
+    "chrAMLo",
+    "chrAMHi",
+    "chrAMLevel"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 16)",
+    "the percentile band's high roll (folio 16)",
+    "the Merchant father's adventurer level (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     40,
+     1
+    ],
+    [
+     41,
+     65,
+     2
+    ],
+    [
+     66,
+     75,
+     3
+    ],
+    [
+     76,
+     85,
+     4
+    ],
+    [
+     86,
+     95,
+     5
+    ],
+    [
+     96,
+     100,
+     6
+    ]
+   ],
+   "audit_comment": "the Merchant father's adventurer level roll (folio 16)"
+  },
+  {
+   "name": "chrAdvGenLevels",
+   "tag": "CrAG",
+   "count": "chrAdvGenLevelsCount",
+   "sentinel": 9,
+   "cols": [
+    "chrAGLo",
+    "chrAGHi",
+    "chrAGLevel"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 16)",
+    "the percentile band's high roll (folio 16)",
+    "the Gentleman father's adventurer level (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     35,
+     1
+    ],
+    [
+     36,
+     50,
+     2
+    ],
+    [
+     51,
+     65,
+     3
+    ],
+    [
+     66,
+     80,
+     4
+    ],
+    [
+     81,
+     90,
+     5
+    ],
+    [
+     91,
+     95,
+     6
+    ],
+    [
+     96,
+     98,
+     7
+    ],
+    [
+     99,
+     100,
+     8
+    ]
+   ],
+   "audit_comment": "the Gentleman father's adventurer level roll (folio 16)"
+  },
+  {
+   "name": "chrAdvNobLevels",
+   "tag": "CrAN",
+   "count": "chrAdvNobLevelsCount",
+   "sentinel": 9,
+   "cols": [
+    "chrANLo",
+    "chrANHi",
+    "chrANLevel"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 16)",
+    "the percentile band's high roll (folio 16)",
+    "the Noble father's adventurer level (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     30,
+     1
+    ],
+    [
+     31,
+     45,
+     2
+    ],
+    [
+     46,
+     60,
+     3
+    ],
+    [
+     61,
+     75,
+     4
+    ],
+    [
+     76,
+     85,
+     5
+    ],
+    [
+     86,
+     90,
+     6
+    ],
+    [
+     91,
+     94,
+     7
+    ],
+    [
+     95,
+     98,
+     8
+    ],
+    [
+     99,
+     100,
+     9
+    ]
+   ],
+   "audit_comment": "the Noble father's adventurer level roll (folio 16)"
+  },
+  {
+   "name": "chrAdvComClass",
+   "tag": "CrCC",
+   "count": "chrAdvComClassCount",
+   "sentinel": 9,
+   "cols": [
+    "chrCCLo",
+    "chrCCHi",
+    "chrCCCode"
+   ],
+   "col_comments": [
+    "the eight-sided roll's low face (folio 16)",
+    "the eight-sided roll's high face (folio 16)",
+    "the class code - 1 fighter, 2 thief, 3 cleric, 4 magic-user (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     5,
+     1
+    ],
+    [
+     6,
+     8,
+     2
+    ]
+   ],
+   "audit_comment": "the Commoner father's class on a d8 - 1-5 fighter, 6-8 thief (folio 16)"
+  },
+  {
+   "name": "chrAdvMerClass",
+   "tag": "CrCM",
+   "count": "chrAdvMerClassCount",
+   "sentinel": 9,
+   "cols": [
+    "chrCMLo",
+    "chrCMHi",
+    "chrCMCode"
+   ],
+   "col_comments": [
+    "the eight-sided roll's low face (folio 16)",
+    "the eight-sided roll's high face (folio 16)",
+    "the class code as in the Commoner table (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     4,
+     1
+    ],
+    [
+     5,
+     5,
+     2
+    ],
+    [
+     6,
+     7,
+     3
+    ],
+    [
+     8,
+     8,
+     4
+    ]
+   ],
+   "audit_comment": "the Merchant father's class on a d8 - 1-4 fighter, 5 thief, 6-7 cleric, 8 magic-user (folio 16)"
+  },
+  {
+   "name": "chrAdvGenClass",
+   "tag": "CrCG",
+   "count": "chrAdvGenClassCount",
+   "sentinel": 9,
+   "cols": [
+    "chrCGLo",
+    "chrCGHi",
+    "chrCGCode"
+   ],
+   "col_comments": [
+    "the eight-sided roll's low face (folio 16)",
+    "the eight-sided roll's high face (folio 16)",
+    "the class code as in the Commoner table (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     3,
+     1
+    ],
+    [
+     4,
+     4,
+     2
+    ],
+    [
+     5,
+     6,
+     3
+    ],
+    [
+     7,
+     8,
+     4
+    ]
+   ],
+   "audit_comment": "the Gentleman father's class on a d8 - 1-3 fighter, 4 thief, 5-6 cleric, 7-8 magic-user (folio 16)"
+  },
+  {
+   "name": "chrAdvNobClass",
+   "tag": "CrCN",
+   "count": "chrAdvNobClassCount",
+   "sentinel": 9,
+   "cols": [
+    "chrCNLo",
+    "chrCNHi",
+    "chrCNCode"
+   ],
+   "col_comments": [
+    "the eight-sided roll's low face (folio 16)",
+    "the eight-sided roll's high face (folio 16)",
+    "the class code as in the Commoner table (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     3,
+     1
+    ],
+    [
+     4,
+     4,
+     2
+    ],
+    [
+     5,
+     5,
+     3
+    ],
+    [
+     6,
+     8,
+     4
+    ]
+   ],
+   "audit_comment": "the Noble father's class on a d8 - 1-3 fighter, 4 thief, 5 cleric, 6-8 magic-user; the worked example reads a Noble father as a 4th level magic-user on 63 and 7 (folio 16)"
+  },
+  {
+   "name": "chrRaceCommoner",
+   "tag": "CrR1C",
+   "count": "chrRaceCommonerCount",
+   "sentinel": 9,
+   "cols": [
+    "chrR1CLo",
+    "chrR1CHi",
+    "chrR1CCode"
+   ],
+   "col_comments": [
+    "the twelve-sided roll's low face (folio 16)",
+    "the twelve-sided roll's high face (folio 16)",
+    "the race code - 1 Half-goblin, 2 Half-orc, 3 Human, 4 Half-elf or Dwarf, 5 Hobbit (folio 16)"
+   ],
+   "data": [
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     3,
+     3,
+     2
+    ],
+    [
+     4,
+     10,
+     3
+    ],
+    [
+     11,
+     11,
+     4
+    ],
+    [
+     12,
+     12,
+     5
+    ]
+   ],
+   "audit_comment": "the Commoner race roll on a d12 - 2 Half-goblin, 3 Half-orc, 4-10 Human, 11 Half-elf or Dwarf, 12 Hobbit (folio 16)"
+  },
+  {
+   "name": "chrRaceMerchant",
+   "tag": "CrR1M",
+   "count": "chrRaceMerchantCount",
+   "sentinel": 9,
+   "cols": [
+    "chrR1MLo",
+    "chrR1MHi",
+    "chrR1MCode"
+   ],
+   "col_comments": [
+    "the twelve-sided roll's low face (folio 16)",
+    "the twelve-sided roll's high face (folio 16)",
+    "the race code - 1 Hobbit, 2 Half-elf, 3 Human, 4 Dwarf (folio 16)"
+   ],
+   "data": [
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     3,
+     3,
+     2
+    ],
+    [
+     4,
+     11,
+     3
+    ],
+    [
+     12,
+     12,
+     4
+    ]
+   ],
+   "audit_comment": "the Merchant race roll on a d12 - 2 Hobbit, 3 Half-elf, 4-11 Human, 12 Dwarf (folio 16)"
+  },
+  {
+   "name": "chrRaceGentleNoble",
+   "tag": "CrR1G",
+   "count": "chrRaceGentleNobleCount",
+   "sentinel": 9,
+   "cols": [
+    "chrR1GLo",
+    "chrR1GHi",
+    "chrR1GCode"
+   ],
+   "col_comments": [
+    "the twelve-sided roll's low face (folio 16)",
+    "the twelve-sided roll's high face (folio 16)",
+    "the race code - 1 Hobbit, 2 Half-elf, 3 Human, 4 Dwarf, 5 Elf (folio 16)"
+   ],
+   "data": [
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     3,
+     4,
+     2
+    ],
+    [
+     5,
+     8,
+     3
+    ],
+    [
+     9,
+     10,
+     4
+    ],
+    [
+     11,
+     12,
+     5
+    ]
+   ],
+   "audit_comment": "the Gentleman-or-Noble race roll on a d12 - 2 Hobbit, 3-4 Half-elf, 5-8 Human, 9-10 Dwarf, 11-12 Elf (folio 16)"
+  },
+  {
+   "name": "chrRaceDice",
+   "tag": "CrDice",
+   "count": "chrRaceDiceCount",
+   "sentinel": 9,
+   "cols": [
+    "chrDiceRaceCode",
+    "chrDiceStr",
+    "chrDiceInt",
+    "chrDiceWis",
+    "chrDiceCon",
+    "chrDiceDex",
+    "chrDiceCha"
+   ],
+   "col_comments": [
+    "the race code - 1 Half-goblin/Half-orc, 2 Elf, 3 Dwarf, 4 Half-elf, 5 Hobbit, 6 Human (folio 16)",
+    "the number of Strength dice rolled (folio 16)",
+    "the number of Intelligence dice rolled (folio 16)",
+    "the number of Wisdom dice rolled (folio 16)",
+    "the number of Constitution dice rolled (folio 16)",
+    "the number of Dexterity dice rolled (folio 16)",
+    "the number of Charisma dice rolled (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     3,
+     2,
+     3,
+     3,
+     2,
+     2
+    ],
+    [
+     2,
+     3,
+     3,
+     4,
+     3,
+     4,
+     4
+    ],
+    [
+     3,
+     4,
+     3,
+     3,
+     4,
+     3,
+     3
+    ],
+    [
+     4,
+     3,
+     3,
+     3,
+     3,
+     3,
+     4
+    ],
+    [
+     5,
+     2,
+     3,
+     3,
+     4,
+     4,
+     3
+    ],
+    [
+     6,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ]
+   ],
+   "audit_comment": "the race dice-count grid - the six races by the six characteristics S I W C D Ch, as scanned (folio 16)"
+  },
+  {
+   "name": "chrRaceReq",
+   "tag": "CrReq",
+   "count": "chrRaceReqCount",
+   "sentinel": 9,
+   "cols": [
+    "chrReqRaceCode",
+    "chrReqStrMin",
+    "chrReqStrMax",
+    "chrReqIntMin",
+    "chrReqIntMax",
+    "chrReqWisMin",
+    "chrReqWisMax",
+    "chrReqConMin",
+    "chrReqConMax",
+    "chrReqDexMin",
+    "chrReqDexMax",
+    "chrReqChaMin",
+    "chrReqChaMax"
+   ],
+   "col_comments": [
+    "the race code - 1 Half-goblin/orc, 2 Elf, 3 Dwarf, 4 Half-elf, 5 Hobbit, 6 Human (folio 16)",
+    "the Strength requirement's minimum - the printed 'any' pinned as 3 (folio 16)",
+    "the Strength requirement's maximum - the printed 'any' pinned as 18 (folio 16)",
+    "the Intelligence requirement's minimum (folio 16)",
+    "the Intelligence requirement's maximum (folio 16)",
+    "the Wisdom requirement's minimum (folio 16)",
+    "the Wisdom requirement's maximum (folio 16)",
+    "the Constitution requirement's minimum (folio 16)",
+    "the Constitution requirement's maximum (folio 16)",
+    "the Dexterity requirement's minimum (folio 16)",
+    "the Dexterity requirement's maximum (folio 16)",
+    "the Charisma requirement's minimum (folio 16)",
+    "the Charisma requirement's maximum (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     3,
+     18,
+     3,
+     12,
+     3,
+     18,
+     3,
+     18,
+     3,
+     12,
+     3,
+     15
+    ],
+    [
+     2,
+     3,
+     18,
+     3,
+     18,
+     9,
+     18,
+     9,
+     18,
+     9,
+     18,
+     13,
+     18
+    ],
+    [
+     3,
+     9,
+     18,
+     3,
+     18,
+     3,
+     18,
+     13,
+     18,
+     3,
+     18,
+     3,
+     18
+    ],
+    [
+     4,
+     3,
+     18,
+     3,
+     18,
+     9,
+     18,
+     3,
+     18,
+     3,
+     18,
+     13,
+     18
+    ],
+    [
+     5,
+     3,
+     12,
+     3,
+     18,
+     3,
+     18,
+     13,
+     18,
+     13,
+     18,
+     3,
+     18
+    ],
+    [
+     6,
+     3,
+     18,
+     3,
+     18,
+     3,
+     18,
+     3,
+     18,
+     3,
+     18,
+     3,
+     18
+    ]
+   ],
+   "audit_comment": "the Table 2 race requirements - the printed 'any' CONVERTED to the 3-18 range and '9-18'/'13-18' carried as printed: the Elf needs 9+ Wisdom, Constitution and Dexterity with 13+ Charisma, the Dwarf 9+ Strength and 13+ Constitution, the Hobbit Strength and Dexterity at 3-12 and 13+ Constitution, the Half-elf 9+ Wisdom and 13+ Charisma, the Half-goblin/orc Intelligence and Dexterity at 3-12 with Charisma 3-15 (folio 16)"
+  },
+  {
+   "name": "chrPrevCom",
+   "tag": "CrPC",
+   "count": "chrPrevComCount",
+   "sentinel": 9,
+   "cols": [
+    "chrPCLo",
+    "chrPCHi",
+    "chrPCMult"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 16)",
+    "the percentile band's high roll (folio 16)",
+    "the experience multiplier - 0 pins the 'nil' band (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     85,
+     0
+    ],
+    [
+     86,
+     96,
+     20
+    ],
+    [
+     97,
+     99,
+     30
+    ],
+    [
+     100,
+     100,
+     50
+    ]
+   ],
+   "audit_comment": "the Commoner previous-experience roll - nil through x50, the result multiplied by the percent dice (folio 16)"
+  },
+  {
+   "name": "chrPrevMer",
+   "tag": "CrPM",
+   "count": "chrPrevMerCount",
+   "sentinel": 9,
+   "cols": [
+    "chrPMLo",
+    "chrPMHi",
+    "chrPMMult"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 16)",
+    "the percentile band's high roll (folio 16)",
+    "the experience multiplier (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     70,
+     0
+    ],
+    [
+     71,
+     90,
+     20
+    ],
+    [
+     91,
+     96,
+     30
+    ],
+    [
+     97,
+     99,
+     50
+    ],
+    [
+     100,
+     100,
+     70
+    ]
+   ],
+   "audit_comment": "the Merchant previous-experience roll - nil through x70 (folio 16)"
+  },
+  {
+   "name": "chrPrevGen",
+   "tag": "CrPG",
+   "count": "chrPrevGenCount",
+   "sentinel": 9,
+   "cols": [
+    "chrPGLo",
+    "chrPGHi",
+    "chrPGMult"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 16)",
+    "the percentile band's high roll (folio 16)",
+    "the experience multiplier (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     60,
+     0
+    ],
+    [
+     61,
+     80,
+     20
+    ],
+    [
+     81,
+     93,
+     30
+    ],
+    [
+     94,
+     97,
+     50
+    ],
+    [
+     98,
+     99,
+     70
+    ],
+    [
+     100,
+     100,
+     100
+    ]
+   ],
+   "audit_comment": "the Gentleman previous-experience roll - nil through x100 (folio 16)"
+  },
+  {
+   "name": "chrPrevNob",
+   "tag": "CrPN",
+   "count": "chrPrevNobCount",
+   "sentinel": 9,
+   "cols": [
+    "chrPNLo",
+    "chrPNHi",
+    "chrPNMult"
+   ],
+   "col_comments": [
+    "the percentile band's low roll (folio 16)",
+    "the percentile band's high roll (folio 16)",
+    "the experience multiplier (folio 16)"
+   ],
+   "data": [
+    [
+     1,
+     50,
+     0
+    ],
+    [
+     51,
+     70,
+     20
+    ],
+    [
+     71,
+     85,
+     30
+    ],
+    [
+     86,
+     92,
+     50
+    ],
+    [
+     93,
+     97,
+     70
+    ],
+    [
+     98,
+     99,
+     100
+    ],
+    [
+     100,
+     100,
+     130
+    ]
+   ],
+   "audit_comment": "the Noble previous-experience roll - nil through x130; the worked example reads a Noble 89 as x50, times a 41 on the percent dice for 2050 and a 2nd level start (folio 16)"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['chrDwarfLadderLevels']() != 9 or m['chrDwfStrFor7th']() != 17 or m['chrDwfStrFor8th']() != 18 or m['chrDwfKingIntMin']() != 12 or m['chrDwfKingWisMin']() != 12",
+   "note": "the ladder's shape and gates - nine levels, 17-plus Strength for the 7th, 18 for the 8th, the 12-plus Intelligence and Wisdom footnote pinned as scanned (folio 26)"
+  },
+  {
+   "expr": "m['chrDwarfFamilies']() != 7 or m['chrDwarfTribeDieSides']() != 8 or m['chrDwarfTribeDurinLo']() != 7 or m['chrDwarfKingshipFirst']() != 1 or m['chrDwarfKingBlocksLevel']() != 1",
+   "note": "the kingship - only 7 families so only 7 Dwarf Kings, the tribe rolled on a d8 with 7-8 the tribe of Durin, the first to obtain it holds it until death, and no other dwarf of that tribe reaches 9th until he dies (folio 26)"
+  },
+  {
+   "expr": "m['chrDwarfClericsAllowed']() != 1 or m['chrDwarfClericWisMin']() != 15 or m['chrDwarfCleric7thWis']() != 17 or m['chrDwarfCleric8thWis']() != 18 or m['chrDwarfClericHitDie']() != 8",
+   "note": "the Dwarf clerics - a 15 Wisdom opts in, 17 reaches 7th, 18 reaches 8th, points on a d8 (folio 26)"
+  },
+  {
+   "expr": "m['chrDwarfThievesGreyhawk']() != 1 or m['chrDwarfThiefHitDie']() != 6 or m['chrDwarfForbiddenClasses']() != 1",
+   "note": "the Dwarf thieves and the forbidden list - Greyhawk as listed with a d6 for points, and no Magicians, Assassins, Monks, Paladins, Illusionists, Rangers or Sages (folio 26)"
+  },
+  {
+   "expr": "m['chrDwarfSaveBonusLevels']() != 4 or m['chrDwarfWarHammerBonus']() != 3 or m['chrDwarfSlantDieSides']() != 6 or m['chrDwarfSlantRollMax']() != 4 or m['chrDwarfNewConstructionAuto']() != 1",
+   "note": "the Dwarf resistances and senses - +4 levels on saving throws, the +3 War Hammer fully employed, slants and traps noted on 1-4 of a d6, new construction automatic (folio 26)"
+  },
+  {
+   "expr": "m['chrDwarfUnderstandsGobOrcHob']() != 1 or m['chrDwarfSpeaksGnomeKobold']() != 1 or m['chrDwarfGiantClassHitMod']() != 1 or m['chrDwarfGiantClassAcMod']() != 1",
+   "note": "the Dwarf tongues and the Giant Class edge - Goblin, Orc and Hobgoblin understood, Gnome and Kobold spoken, +1 to hit and -1 to be hit (folio 26)"
+  },
+  {
+   "expr": "m['chrDwarfJudgesGems']() != 1 or m['chrDwarfFeelsMagic']() != 1 or m['chrDwarfSmithIntMin']() != 9 or m['chrDwarfSmithStrMin']() != 9 or m['chrDwarfArmorerIntMin']() != 12 or m['chrDwarfArmorerStrMin']() != 9 or m['chrDwarfEngineerIntMin']() != 15",
+   "note": "the Dwarf trades - gems judged by feel, magic felt in armor and weapons, Smiths at 9/9, Armorers at 12/9, Engineers at 15 (folio 26)"
+  },
+  {
+   "expr": "m['chrDwarfBowsOnly']() != 1 or m['chrDwarfRegularWeapons']() != 1 or m['chrDwarfOtherWeaponHitMod']() != 1 or m['chrDwarfSwimDexMin']() != 17 or m['chrDwarfWaterFear']() != 1 or m['chrDwarfHorseIntMin']() != 12",
+   "note": "the Dwarf gear and fears - crossbows and short bows only, the six regular weapons, all others at -1, swimming natural at 17 Dexterity despite the water fear, and horses only for the 12-Intelligence at great need (folios 26-27)"
+  },
+  {
+   "expr": "m['chrDwarfMaturityAge']() != 50 or m['chrDwarfLifespanYears']() != 250 or m['chrDwarfHatesOrcsGoblins']() != 1 or m['chrDwarfOathsNeverBroken']() != 1 or m['chrDwarfNeverAttackOwnFolk']() != 1",
+   "note": "the Dwarf frame - maturity around 50, about 250 years of life, the hate for Orcs and Goblins, the never-broken oath, and never attacking one's own Folk (folio 27)"
+  },
+  {
+   "expr": "m['chrBirthSkillsGroups']() != 3 or m['chrBirthAllowanceMonths']() != 12 or m['chrBirthAllowanceLevelCap']() != 3 or m['chrSkillsDieSides']() != 100",
+   "note": "the birth-table frame - three skill groups, the allowance monthly for the first year or until 3rd level, the skills rolled on percentile dice (folios 14-15)"
+  },
+  {
+   "expr": "m['chrSiblingDieSides']() != 8 or m['chrOrphanDieSides']() != 6 or m['chrOrphanRoll']() != 1 or m['chrBirthFirstSonInherits']() != 1 or m['chrBirthFirstSonPct']() != 10 or m['chrBirthBastardPct']() != 10",
+   "note": "the sibling rules - rank on a d8, orphaned on a 1 of a d6, the 1st son inherits with 10 percent more, the bastard 10 percent less (folio 14)"
+  },
+  {
+   "expr": "m['chrSkillsFatherOccupation']() != 1 or m['chrSkillsGroup3FirstFiveProhibited']() != 1 or m['chrSkillsNoPlayerAdventurer']() != 1",
+   "note": "the skills doctrine - the father's occupation must be among the player's skills, the first 5 Group 3 skills prohibited, no player Adventurer (folio 15)"
+  },
+  {
+   "expr": "m['chrSkillsPeasantMax']() != 70 or m['chrSkillsWellToDoMin']() != 31 or m['chrSkillsWealthyMin']() != 52",
+   "note": "the Group 1 banding notes - the Peasant capped at 70, the Well-to-do floored at 31, the Wealthy at 52 with 52-55 equalling Adventurer (folio 15)"
+  },
+  {
+   "expr": "m['chrSkillsInterpreterIntBonus']() != 3 or m['chrSkillsSoldierHitBonus']() != 1 or m['chrSkillsSoldierLevelCap']() != 4 or m['chrSkillsOratorReactionBonus']() != 1 or m['chrCraftsCount']() != 12",
+   "note": "the skill edges and the crafts - the Interpreter's +3 languages, the Soldier's +1 hit until 4th, the Orator's +1 reaction, twelve crafts (folio 15)"
+  },
+  {
+   "expr": "m['chrRoyaltyImmediateInitial']() != 1000 or m['chrRoyaltyImmediateAllow']() != 100 or m['chrRoyaltyNeverOrphan']() != 1 or m['chrRoyaltyRaiseRank']() != 1 or m['chrRoyaltyRerollIgnore']() != 1 or m['chrRoyaltyTitleOneNotch']() != 1",
+   "note": "the royalty rules - the immediate family's 1000 initial and 100 allowance, never an orphan, the social rank raised to the minimum wealth, the reroll ignoring 96-00, the title one notch (folio 15)"
+  },
+  {
+   "expr": "m['chrKnightAdventurerPct']() != 30 or m['chrBaronAdventurerPct']() != 25 or m['chrCountAdventurerPct']() != 20 or m['chrMarquisAdventurerPct']() != 15 or m['chrDukeAdventurerPct']() != 15",
+   "note": "the father-Adventurer chances by title - 30, 25, 20, 15, 15 percent (folio 15)"
+  },
+  {
+   "expr": "m['chrNobilityNonHumanEarlCap']() != 1 or m['chrRaceTable1DieSides']() != 12 or m['chrRaceTable2Preferred']() != 1 or m['chrRaceVariant9To18']() != 1 or m['chrRaceLimitByRequirements']() != 1",
+   "note": "the authors' rulings - a non-human no higher than Earl, the race rolls on a d12, Table 2 preferred, the 9-18 variant, and limiting elves by requirements rather than advancement (folio 16)"
+  },
+  {
+   "expr": "m['chrSilvanNoReqs']() != 1 or m['chrSilvanDdPowers']() != 1 or m['chrSilvanDiseaseImmune']() != 1 or m['chrSilvanAgingImmune']() != 1 or m['chrSilvanLawfulOrNeutral']() != 1",
+   "note": "the Silvan frame - no requirements, all D&D powers, immune to disease and aging as the naturally immortal, Lawful or Neutral never evil (folio 21)"
+  },
+  {
+   "expr": "m['chrSilvanFighterMax']() != 8 or m['chrSilvanFighterMaxStr18']() != 9 or m['chrSilvanMuMax']() != 4 or m['chrSilvanMuMaxInt18']() != 5",
+   "note": "the Silvan advancement - 8th fighter, 9th with 18 strength, 4th magic-user, 5th with 18 intelligence (folio 21)"
+  },
+  {
+   "expr": "m['chrSindarStatMin']() != 9 or m['chrSindarTotalMin']() != 63 or m['chrSindarMuMax']() != 8 or m['chrSindarMuMaxInt18']() != 9 or m['chrSindarFighterMax']() != 4 or m['chrSindarFighterMaxStr17']() != 5 or m['chrSindarFighterMaxStr18']() != 6",
+   "note": "the Sindar requirements and advancement - average abilities and a total of 63, 8th magic-user (9th at 18 intelligence), 4th fighter (5th at 17, 6th at 18 strength) (folio 21)"
+  },
+  {
+   "expr": "m['chrEldarWisMin']() != 13 or m['chrEldarTotalMin']() != 67 or m['chrEldarMuMax']() != 11 or m['chrEldarFighterMax']() != 11 or m['chrEldarOnePathOnly']() != 1",
+   "note": "the Eldar proper - the 13 Wisdom and 67 total over the Sindar's, then 11th magic-user or 11th fighter, one path chosen, never both (folio 21)"
+  },
+  {
+   "expr": "m['chrEldarLangPerIntPoint']() != 1 or m['chrEldarCalmAnimals']() != 1 or m['chrEldarBirdSpeech']() != 1 or m['chrEldarMindRangePerLevel']() != 5 or m['chrEldarKeenEyes']() != 1",
+   "note": "the Eldar powers - a language per intelligence point without the orcish tongues, the calmed animals, the small-bird speech, the mind-to-mind range of 2 and a half per level pinned as five half-units, the binocular eyesight (folio 21)"
+  },
+  {
+   "expr": "m['chrEldarPhantasmalPerLevel']() != 1 or m['chrEldarIllusionPctPerLevel']() != 5 or m['chrEldarPolymorphPctPerLevel']() != 3 or m['chrEldarShapeChangePctPerLevel']() != 1 or m['chrEldarHiddenOptional']() != 1 or m['chrEldarUnawareOnSuccess']() != 1",
+   "note": "the True Sight - +1 per level versus phantasmal forces, illusions seen through at 5 percent per level, the polymorphed true shape at 3 percent per level (the 5th-level 15 percent example), the shape-changed at 1 percent, the optional hidden-enemies chance, and the unawareness on success (folio 21)"
+  },
+  {
+   "expr": "m['chrSeaEldarDenominator']() != 1000 or m['chrSeaSindarSeenDenominator']() != 100 or m['chrSeaSindarUnseenDenominator']() != 10000 or m['chrSeaWaitUntilMaxLevel']() != 1 or m['chrSilvanNeverCrossSea']() != 1",
+   "note": "the over-sea doctrine - one in a thousand per year for the Eldar proper, one in a hundred for the Sindar once they have seen the western ocean and one in ten thousand before, no roll until maximum level, and the Silvan never (folio 21)"
+  },
+  {
+   "expr": "m['chrHalfElfSameAsEldar']() != 1 or m['chrEldarAllLawfulGood']() != 1 or m['chrEldarNoldorShorthand']() != 1 or m['chrEldarRejectsSmithDelta']() != 1",
+   "note": "the Eldar frame - half-elves as Eldar proper but advancing per Greyhawk, all Eldar and half-elves Lawful and good, the Noldor shorthand noted inaccurate, and the deltas against the R888 Smith pin never silent (folio 21)"
+  },
+  {
+   "expr": "m['chrDwfLvlLevel'](0) != 1 or m['chrDwfLvlNameCode'](0) != 1 or m['chrDwfLvlHitBase'](0) != 1 or m['chrDwfLvlHitBonus'](0) != 2 or m['chrDwfLvlXp'](0) != 0 or m['chrDwfLvlFightsAs'](0) != 1 or m['chrDwfLvlFightsAsBonus'](0) != 2 or m['chrDwarfLadderLevels']() != 9",
+   "note": "the 1st level Dwarf - 1+2 hit dice, 0 xp, fights as Man+2 (folio 26) (folio 26)"
+  },
+  {
+   "expr": "m['chrDwfLvlLevel'](1) != 2 or m['chrDwfLvlNameCode'](1) != 2 or m['chrDwfLvlHitBase'](1) != 2 or m['chrDwfLvlHitBonus'](1) != 1 or m['chrDwfLvlXp'](1) != 2500 or m['chrDwfLvlFightsAs'](1) != 2 or m['chrDwfLvlFightsAsBonus'](1) != 1",
+   "note": "the 2nd level Warrior - 2+1 hit dice, 2,500 xp, fights as Men+1 (folio 26) (folio 26)"
+  },
+  {
+   "expr": "m['chrDwfLvlLevel'](2) != 3 or m['chrDwfLvlNameCode'](2) != 3 or m['chrDwfLvlHitBase'](2) != 3 or m['chrDwfLvlHitBonus'](2) != 0 or m['chrDwfLvlXp'](2) != 5000 or m['chrDwfLvlFightsAs'](2) != 3 or m['chrDwfLvlFightsAsBonus'](2) != 0",
+   "note": "the 3rd level Spearman - 3 hit dice, 5,000 xp, fights as Men (folio 26) (folio 26)"
+  },
+  {
+   "expr": "m['chrDwfLvlLevel'](3) != 4 or m['chrDwfLvlNameCode'](3) != 4 or m['chrDwfLvlHitBase'](3) != 4 or m['chrDwfLvlHitBonus'](3) != 0 or m['chrDwfLvlXp'](3) != 10000 or m['chrDwfLvlFightsAs'](3) != 4 or m['chrDwfLvlFightsAsBonus'](3) != 0",
+   "note": "the 4th level Dwarf Hero - 4 hit dice, 10,000 xp, fights as Men (folio 26) (folio 26)"
+  },
+  {
+   "expr": "m['chrDwfLvlLevel'](4) != 5 or m['chrDwfLvlNameCode'](4) != 5 or m['chrDwfLvlHitBase'](4) != 5 or m['chrDwfLvlHitBonus'](4) != 0 or m['chrDwfLvlXp'](4) != 20000 or m['chrDwfLvlFightsAs'](4) != 5 or m['chrDwfLvlFightsAsBonus'](4) != 0",
+   "note": "the 5th level Swordbearer - 5 hit dice, 20,000 xp, fights as Men (folio 26) (folio 26)"
+  },
+  {
+   "expr": "m['chrDwfLvlLevel'](5) != 6 or m['chrDwfLvlNameCode'](5) != 6 or m['chrDwfLvlHitBase'](5) != 6 or m['chrDwfLvlHitBonus'](5) != 0 or m['chrDwfLvlXp'](5) != 40000 or m['chrDwfLvlFightsAs'](5) != 6 or m['chrDwfLvlFightsAsBonus'](5) != 0",
+   "note": "the 6th level Axewielder - 6 hit dice, 40,000 xp, fights as Men (folio 26) (folio 26)"
+  },
+  {
+   "expr": "m['chrDwfLvlLevel'](6) != 7 or m['chrDwfLvlNameCode'](6) != 7 or m['chrDwfLvlHitBase'](6) != 7 or m['chrDwfLvlHitBonus'](6) != 1 or m['chrDwfLvlXp'](6) != 80000 or m['chrDwfLvlFightsAs'](6) != 7 or m['chrDwfLvlFightsAsBonus'](6) != 1",
+   "note": "the 7th level Champion - 7+1 hit dice, 80,000 xp, fights as Men+1 (folio 26) (folio 26)"
+  },
+  {
+   "expr": "m['chrDwfLvlLevel'](7) != 8 or m['chrDwfLvlNameCode'](7) != 8 or m['chrDwfLvlHitBase'](7) != 8 or m['chrDwfLvlHitBonus'](7) != 2 or m['chrDwfLvlXp'](7) != 160000 or m['chrDwfLvlFightsAs'](7) != 8 or m['chrDwfLvlFightsAsBonus'](7) != 2",
+   "note": "the 8th level Dwarf Lord - 8+2 hit dice, 160,000 xp, fights as Men+2 (folio 26) (folio 26)"
+  },
+  {
+   "expr": "m['chrDwfLvlLevel'](8) != 9 or m['chrDwfLvlNameCode'](8) != 9 or m['chrDwfLvlHitBase'](8) != 10 or m['chrDwfLvlHitBonus'](8) != 1 or m['chrDwfLvlXp'](8) != 320000 or m['chrDwfLvlFightsAs'](8) != 10 or m['chrDwfLvlFightsAsBonus'](8) != 1",
+   "note": "the 9th level Dwarf King - 10+1 hit dice, 320,000 xp, fights as Men+1 (folio 26) (folio 26)"
+  },
+  {
+   "expr": "m['chrDwfReactCode'](0) != 1 or m['chrDwfReactMod'](0) != 9 or m['chrDwarfReactionCount']() != 6",
+   "note": "the Goblins and Orcs row - AUTO ATTACK, pinned as sentinel 9 (folio 27) (folio 27)"
+  },
+  {
+   "expr": "m['chrDwfReactCode'](1) != 2 or m['chrDwfReactMod'](1) != -2",
+   "note": "the Sindar, Silvan Elves and all men row - minus 2 (folio 27) (folio 27)"
+  },
+  {
+   "expr": "m['chrDwfReactCode'](2) != 3 or m['chrDwfReactMod'](2) != -1",
+   "note": "the all-others row - minus 1 (folio 27) (folio 27)"
+  },
+  {
+   "expr": "m['chrDwfReactCode'](3) != 4 or m['chrDwfReactMod'](3) != 0",
+   "note": "the Hobbits and Noldor Elves row - plus 0 (folio 27) (folio 27)"
+  },
+  {
+   "expr": "m['chrDwfReactCode'](4) != 5 or m['chrDwfReactMod'](4) != 1",
+   "note": "the different-Folk row - plus 1 (folio 27) (folio 27)"
+  },
+  {
+   "expr": "m['chrDwfReactCode'](5) != 6 or m['chrDwfReactMod'](5) != 2",
+   "note": "the same-Folk row - plus 2 (folio 27) (folio 27)"
+  },
+  {
+   "expr": "m['chrBCLo'](0) != 1 or m['chrBCHi'](0) != 30 or m['chrBCCode'](0) != 1 or m['chrBirthClassCount']() != 4",
+   "note": "the 01-30 Commoner row (folio 14) (folio 14)"
+  },
+  {
+   "expr": "m['chrBCLo'](1) != 31 or m['chrBCHi'](1) != 85 or m['chrBCCode'](1) != 2",
+   "note": "the 31-85 Merchant row (folio 14) (folio 14)"
+  },
+  {
+   "expr": "m['chrBCLo'](2) != 86 or m['chrBCHi'](2) != 95 or m['chrBCCode'](2) != 3",
+   "note": "the 86-95 Gentleman row (folio 14) (folio 14)"
+  },
+  {
+   "expr": "m['chrBCLo'](3) != 96 or m['chrBCHi'](3) != 100 or m['chrBCCode'](3) != 4",
+   "note": "the 96-00 Noble row, the 00 pinned as 100 (folio 14) (folio 14)"
+  },
+  {
+   "expr": "m['chrSibLo'](0) != 1 or m['chrSibHi'](0) != 2 or m['chrSibCode'](0) != 1 or m['chrSiblingBandCount']() != 5",
+   "note": "the 1-2 first-son band (folio 14) (folio 14)"
+  },
+  {
+   "expr": "m['chrSibLo'](1) != 3 or m['chrSibHi'](1) != 4 or m['chrSibCode'](1) != 2",
+   "note": "the 3-4 second-son band (folio 14) (folio 14)"
+  },
+  {
+   "expr": "m['chrSibLo'](2) != 5 or m['chrSibHi'](2) != 5 or m['chrSibCode'](2) != 3",
+   "note": "the 5 third-son band (folio 14) (folio 14)"
+  },
+  {
+   "expr": "m['chrSibLo'](3) != 6 or m['chrSibHi'](3) != 6 or m['chrSibCode'](3) != 4",
+   "note": "the 6 fourth-son band (folio 14) (folio 14)"
+  },
+  {
+   "expr": "m['chrSibLo'](4) != 7 or m['chrSibHi'](4) != 8 or m['chrSibCode'](4) != 5",
+   "note": "the 7-8 bastard band (folio 14) (folio 14)"
+  },
+  {
+   "expr": "m['chrComLo'](0) != 1 or m['chrComHi'](0) != 25 or m['chrComInitial'](0) != 10 or m['chrComAllow'](0) != 0 or m['chrComInherit'](0) != 0 or m['chrComSkills'](0) != 1 or m['chrRankCommonerCount']() != 4",
+   "note": "the 01-25 Peasant row - 10 initial, no allowance, no inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrComLo'](1) != 26 or m['chrComHi'](1) != 40 or m['chrComInitial'](1) != 30 or m['chrComAllow'](1) != 1 or m['chrComInherit'](1) != 15 or m['chrComSkills'](1) != 1",
+   "note": "the 26-40 Average row - 30 initial, 1 allowance, 15 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrComLo'](2) != 41 or m['chrComHi'](2) != 70 or m['chrComInitial'](2) != 60 or m['chrComAllow'](2) != 5 or m['chrComInherit'](2) != 50 or m['chrComSkills'](2) != 1",
+   "note": "the 41-70 Well-to-do row - 60 initial, 5 allowance, 50 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrComLo'](3) != 71 or m['chrComHi'](3) != 100 or m['chrComInitial'](3) != 100 or m['chrComAllow'](3) != 10 or m['chrComInherit'](3) != 100 or m['chrComSkills'](3) != 1",
+   "note": "the 71-00 Wealthy row - 100 initial, 10 allowance, 100 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrMerLo'](0) != 1 or m['chrMerHi'](0) != 25 or m['chrMerInitial'](0) != 50 or m['chrMerAllow'](0) != 5 or m['chrMerInherit'](0) != 100 or m['chrMerSkills'](0) != 2 or m['chrRankMerchantCount']() != 5",
+   "note": "the 01-25 Small row - 50 initial, 5 allowance, 100 inheritance, skills B (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrMerLo'](1) != 26 or m['chrMerHi'](1) != 60 or m['chrMerInitial'](1) != 100 or m['chrMerAllow'](1) != 10 or m['chrMerInherit'](1) != 150 or m['chrMerSkills'](1) != 2",
+   "note": "the 26-60 Average row - 100 initial, 10 allowance, 150 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrMerLo'](2) != 61 or m['chrMerHi'](2) != 80 or m['chrMerInitial'](2) != 120 or m['chrMerAllow'](2) != 15 or m['chrMerInherit'](2) != 200 or m['chrMerSkills'](2) != 2",
+   "note": "the 61-80 Well-to-do row - 120 initial, 15 allowance, 200 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrMerLo'](3) != 81 or m['chrMerHi'](3) != 95 or m['chrMerInitial'](3) != 170 or m['chrMerAllow'](3) != 20 or m['chrMerInherit'](3) != 250 or m['chrMerSkills'](3) != 2",
+   "note": "the 81-95 Wealthy row - 170 initial, 20 allowance, 250 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrMerLo'](4) != 96 or m['chrMerHi'](4) != 100 or m['chrMerInitial'](4) != 200 or m['chrMerAllow'](4) != 30 or m['chrMerInherit'](4) != 400 or m['chrMerSkills'](4) != 3",
+   "note": "the 96-00 Very Wealthy row - 200 initial, 30 allowance, 400 inheritance, skills C, the OCR-split row pinned as scanned (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrGenLo'](0) != 1 or m['chrGenHi'](0) != 20 or m['chrGenInitial'](0) != 70 or m['chrGenAllow'](0) != 0 or m['chrGenInherit'](0) != 75 or m['chrGenSkills'](0) != 2 or m['chrRankGentlemanCount']() != 5",
+   "note": "the 01-20 Impoverished row - 70 initial, no allowance, 75 inheritance, skills B (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrGenLo'](1) != 21 or m['chrGenHi'](1) != 65 or m['chrGenInitial'](1) != 100 or m['chrGenAllow'](1) != 5 or m['chrGenInherit'](1) != 150 or m['chrGenSkills'](1) != 3",
+   "note": "the 21-65 Average row - 100 initial, 5 allowance, 150 inheritance, skills C (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrGenLo'](2) != 66 or m['chrGenHi'](2) != 90 or m['chrGenInitial'](2) != 150 or m['chrGenAllow'](2) != 15 or m['chrGenInherit'](2) != 250 or m['chrGenSkills'](2) != 3",
+   "note": "the 66-90 Well-to-do row - 150 initial, 15 allowance, 250 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrGenLo'](3) != 91 or m['chrGenHi'](3) != 95 or m['chrGenInitial'](3) != 200 or m['chrGenAllow'](3) != 20 or m['chrGenInherit'](3) != 350 or m['chrGenSkills'](3) != 3",
+   "note": "the 91-95 Wealthy row - 200 initial, 20 allowance, 350 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrGenLo'](4) != 96 or m['chrGenHi'](4) != 100 or m['chrGenInitial'](4) != 250 or m['chrGenAllow'](4) != 35 or m['chrGenInherit'](4) != 600 or m['chrGenSkills'](4) != 4",
+   "note": "the 96-00 Very Wealthy row - 250 initial, 35 allowance, 600 inheritance, skills D, the column shift pinned as scanned (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrNobLo'](0) != 1 or m['chrNobHi'](0) != 20 or m['chrNobInitial'](0) != 80 or m['chrNobAllow'](0) != 0 or m['chrNobInherit'](0) != 100 or m['chrNobSkills'](0) != 4 or m['chrRankNobleCount']() != 6",
+   "note": "the 01-20 Impoverished row - 80 initial, no allowance, 100 inheritance, skills D (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrNobLo'](1) != 21 or m['chrNobHi'](1) != 40 or m['chrNobInitial'](1) != 120 or m['chrNobAllow'](1) != 10 or m['chrNobInherit'](1) != 150 or m['chrNobSkills'](1) != 4",
+   "note": "the 21-40 Poor row - 120 initial, 10 allowance, 150 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrNobLo'](2) != 41 or m['chrNobHi'](2) != 85 or m['chrNobInitial'](2) != 200 or m['chrNobAllow'](2) != 25 or m['chrNobInherit'](2) != 300 or m['chrNobSkills'](2) != 5",
+   "note": "the 41-85 Average row - 200 initial, 25 allowance, 300 inheritance, skills E (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrNobLo'](3) != 86 or m['chrNobHi'](3) != 95 or m['chrNobInitial'](3) != 250 or m['chrNobAllow'](3) != 35 or m['chrNobInherit'](3) != 450 or m['chrNobSkills'](3) != 5",
+   "note": "the 86-95 Well-to-do row - 250 initial, 35 allowance, 450 inheritance (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrNobLo'](4) != 96 or m['chrNobHi'](4) != 97 or m['chrNobInitial'](4) != 300 or m['chrNobAllow'](4) != 45 or m['chrNobInherit'](4) != 700 or m['chrNobSkills'](4) != 6",
+   "note": "the 96-97 Wealthy row - 300 initial, 45 allowance, 700 inheritance, skills F (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrNobLo'](5) != 98 or m['chrNobHi'](5) != 100 or m['chrNobInitial'](5) != 400 or m['chrNobAllow'](5) != 60 or m['chrNobInherit'](5) != 1000 or m['chrNobSkills'](5) != 6",
+   "note": "the 98-00 Very Wealthy row - 400 initial, 60 allowance, 1000 inheritance, the column shift pinned as scanned (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrFthClassCode'](0) != 1 or m['chrFthOccGroup'](0) != 1 or m['chrFatherOccCount']() != 4",
+   "note": "the Commoner row - roll under Group 1 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrFthClassCode'](1) != 2 or m['chrFthOccGroup'](1) != 2",
+   "note": "the Merchant row - roll under Group 2 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrFthClassCode'](2) != 3 or m['chrFthOccGroup'](2) != 3",
+   "note": "the Gentleman row - roll under Group 3 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrFthClassCode'](3) != 4 or m['chrFthOccGroup'](3) != 3",
+   "note": "the Noble row - roll under Group 3 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](0) != 1 or m['chrSk1Hi'](0) != 10 or m['chrSk1Code'](0) != 1 or m['chrSkillGroup1Count']() != 10",
+   "note": "the 01-10 Vagabond band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](1) != 11 or m['chrSk1Hi'](1) != 55 or m['chrSk1Code'](1) != 2",
+   "note": "the 11-55 Farmer/Serf band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](2) != 56 or m['chrSk1Hi'](2) != 60 or m['chrSk1Code'](2) != 3",
+   "note": "the 56-60 Tinker band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](3) != 61 or m['chrSk1Hi'](3) != 65 or m['chrSk1Code'](3) != 4",
+   "note": "the 61-65 Miner band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](4) != 66 or m['chrSk1Hi'](4) != 70 or m['chrSk1Code'](4) != 5",
+   "note": "the 66-70 Woodsman band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](5) != 71 or m['chrSk1Hi'](5) != 75 or m['chrSk1Code'](5) != 6",
+   "note": "the 71-75 Sailor band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](6) != 76 or m['chrSk1Hi'](6) != 85 or m['chrSk1Code'](6) != 7",
+   "note": "the 76-85 Fisherman band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](7) != 86 or m['chrSk1Hi'](7) != 95 or m['chrSk1Code'](7) != 8",
+   "note": "the 86-95 Craftsman band - roll under Crafts for a father (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](8) != 96 or m['chrSk1Hi'](8) != 99 or m['chrSk1Code'](8) != 9",
+   "note": "the 96-99 Soldier band - the player receives +1 on hit probability until 4th level (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk1Lo'](9) != 100 or m['chrSk1Hi'](9) != 100 or m['chrSk1Code'](9) != 10",
+   "note": "the 00 band pinned as 100 - Adventurer, no player may take it, the possibility handled under previous experience (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](0) != 1 or m['chrSk2Hi'](0) != 35 or m['chrSk2Code'](0) != 1 or m['chrSkillGroup2Count']() != 10",
+   "note": "the 01-35 Normal Merchant band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](1) != 36 or m['chrSk2Hi'](1) != 60 or m['chrSk2Code'](1) != 2",
+   "note": "the 36-60 Ind. Craftsman band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](2) != 61 or m['chrSk2Hi'](2) != 65 or m['chrSk2Code'](2) != 3",
+   "note": "the 61-65 Scribe band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](3) != 66 or m['chrSk2Hi'](3) != 70 or m['chrSk2Code'](3) != 4",
+   "note": "the 66-70 Seaman band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](4) != 71 or m['chrSk2Hi'](4) != 75 or m['chrSk2Code'](4) != 5",
+   "note": "the 71-75 Slaver band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](5) != 76 or m['chrSk2Hi'](5) != 80 or m['chrSk2Code'](5) != 6",
+   "note": "the 76-80 Animal Trainer band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](6) != 81 or m['chrSk2Hi'](6) != 85 or m['chrSk2Code'](6) != 7",
+   "note": "the 81-85 Shipwright band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](7) != 86 or m['chrSk2Hi'](7) != 90 or m['chrSk2Code'](7) != 8",
+   "note": "the 86-90 Master Merchant band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](8) != 91 or m['chrSk2Hi'](8) != 95 or m['chrSk2Code'](8) != 9",
+   "note": "the 91-95 Bird Trainer band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk2Lo'](9) != 96 or m['chrSk2Hi'](9) != 100 or m['chrSk2Code'](9) != 10",
+   "note": "the 96-00 Adventurer band, the 00 pinned as 100 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](0) != 1 or m['chrSk3Hi'](0) != 2 or m['chrSk3Code'](0) != 1 or m['chrSkillGroup3Count']() != 20",
+   "note": "the 01-02 Assassin/Spytracker band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](1) != 3 or m['chrSk3Hi'](1) != 5 or m['chrSk3Code'](1) != 2",
+   "note": "the 03-05 Sheriff band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](2) != 6 or m['chrSk3Hi'](2) != 8 or m['chrSk3Code'](2) != 3",
+   "note": "the 06-08 Magistrate band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](3) != 9 or m['chrSk3Hi'](3) != 11 or m['chrSk3Code'](3) != 4",
+   "note": "the 09-11 Sage band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](4) != 12 or m['chrSk3Hi'](4) != 15 or m['chrSk3Code'](4) != 5",
+   "note": "the 12-15 Alchemist band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](5) != 16 or m['chrSk3Hi'](5) != 20 or m['chrSk3Code'](5) != 6",
+   "note": "the 16-20 Physician band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](6) != 21 or m['chrSk3Hi'](6) != 25 or m['chrSk3Code'](6) != 7",
+   "note": "the 21-25 Artist/Sculptor/Musician band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](7) != 26 or m['chrSk3Hi'](7) != 30 or m['chrSk3Code'](7) != 8",
+   "note": "the 26-30 Engineer band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](8) != 31 or m['chrSk3Hi'](8) != 40 or m['chrSk3Code'](8) != 9",
+   "note": "the 31-40 Soldier band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](9) != 41 or m['chrSk3Hi'](9) != 45 or m['chrSk3Code'](9) != 10",
+   "note": "the 41-45 Interpreter band - languages as if intelligence were 3 higher (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](10) != 46 or m['chrSk3Hi'](10) != 50 or m['chrSk3Code'](10) != 11",
+   "note": "the 46-50 Writer band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](11) != 51 or m['chrSk3Hi'](11) != 55 or m['chrSk3Code'](11) != 12",
+   "note": "the 51-55 Astronomer band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](12) != 56 or m['chrSk3Hi'](12) != 60 or m['chrSk3Code'](12) != 13",
+   "note": "the 56-60 Don Juan band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](13) != 61 or m['chrSk3Hi'](13) != 65 or m['chrSk3Code'](13) != 14",
+   "note": "the 61-65 Orator/Actor band - +1 on random monster reaction rolls (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](14) != 66 or m['chrSk3Hi'](14) != 70 or m['chrSk3Code'](14) != 15",
+   "note": "the 66-70 Dream Interpreter band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](15) != 71 or m['chrSk3Hi'](15) != 75 or m['chrSk3Code'](15) != 16",
+   "note": "the 71-75 Biologist band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](16) != 76 or m['chrSk3Hi'](16) != 80 or m['chrSk3Code'](16) != 17",
+   "note": "the 76-80 Seaman band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](17) != 81 or m['chrSk3Hi'](17) != 85 or m['chrSk3Code'](17) != 18",
+   "note": "the 81-85 Gambler band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](18) != 86 or m['chrSk3Hi'](18) != 90 or m['chrSk3Code'](18) != 19",
+   "note": "the 86-90 Astrologer band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrSk3Lo'](19) != 91 or m['chrSk3Hi'](19) != 100 or m['chrSk3Code'](19) != 20",
+   "note": "the 91-00 Adventurer band, the 00 pinned as 100 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrTtlLo'](0) != 1 or m['chrTtlHi'](0) != 30 or m['chrTtlCode'](0) != 1 or m['chrNobleTitleCount']() != 6",
+   "note": "the 01-30 Knight row (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrTtlLo'](1) != 31 or m['chrTtlHi'](1) != 60 or m['chrTtlCode'](1) != 2",
+   "note": "the 31-60 Baron row (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrTtlLo'](2) != 61 or m['chrTtlHi'](2) != 80 or m['chrTtlCode'](2) != 3",
+   "note": "the 61-80 Count (Earl) row (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrTtlLo'](3) != 81 or m['chrTtlHi'](3) != 90 or m['chrTtlCode'](3) != 4",
+   "note": "the 81-90 Marquis row (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrTtlLo'](4) != 91 or m['chrTtlHi'](4) != 95 or m['chrTtlCode'](4) != 5",
+   "note": "the 91-95 Duke row (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrTtlLo'](5) != 96 or m['chrTtlHi'](5) != 100 or m['chrTtlCode'](5) != 6",
+   "note": "the 96-00 Royalty row, the 00 pinned as 100, then Table 2 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrRoyLo'](0) != 1 or m['chrRoyHi'](0) != 30 or m['chrRoyCode'](0) != 1 or m['chrRoyaltyKinCount']() != 5",
+   "note": "the 01-30 Distant row (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrRoyLo'](1) != 31 or m['chrRoyHi'](1) != 60 or m['chrRoyCode'](1) != 2",
+   "note": "the 31-60 3rd Cousin row (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrRoyLo'](2) != 61 or m['chrRoyHi'](2) != 80 or m['chrRoyCode'](2) != 3",
+   "note": "the 61-80 2nd Cousin row (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrRoyLo'](3) != 81 or m['chrRoyHi'](3) != 99 or m['chrRoyCode'](3) != 4",
+   "note": "the 81-99 1st Cousin row (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrRoyLo'](4) != 100 or m['chrRoyHi'](4) != 100 or m['chrRoyCode'](4) != 5",
+   "note": "the 00 row pinned as 100 - Immediate Family, 1000 initial, 100 allowance, never an orphan (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoKLo'](0) != 1 or m['chrPoKHi'](0) != 40 or m['chrPoKCode'](0) != 1 or m['chrPosKnightCount']() != 5",
+   "note": "the Knight 01-40 Land Holder band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoKLo'](1) != 41 or m['chrPoKHi'](1) != 50 or m['chrPoKCode'](1) != 2",
+   "note": "the Knight 41-50 Orator band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoKLo'](2) != 51 or m['chrPoKHi'](2) != 90 or m['chrPoKCode'](2) != 3",
+   "note": "the Knight 51-90 In Army band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoKLo'](3) != 91 or m['chrPoKHi'](3) != 95 or m['chrPoKCode'](3) != 4",
+   "note": "the Knight 91-95 Courtier band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoKLo'](4) != 96 or m['chrPoKHi'](4) != 100 or m['chrPoKCode'](4) != 5",
+   "note": "the Knight 96-00 Sheriff band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoBLo'](0) != 1 or m['chrPoBHi'](0) != 40 or m['chrPoBCode'](0) != 1 or m['chrPosBaronCount']() != 6",
+   "note": "the Baron 01-40 Land Holder band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoBLo'](1) != 41 or m['chrPoBHi'](1) != 50 or m['chrPoBCode'](1) != 2",
+   "note": "the Baron 41-50 Orator band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoBLo'](2) != 51 or m['chrPoBHi'](2) != 80 or m['chrPoBCode'](2) != 3",
+   "note": "the Baron 51-80 In Army band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoBLo'](3) != 81 or m['chrPoBHi'](3) != 90 or m['chrPoBCode'](3) != 4",
+   "note": "the Baron 81-90 Courtier band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoBLo'](4) != 91 or m['chrPoBHi'](4) != 95 or m['chrPoBCode'](4) != 5",
+   "note": "the Baron 91-95 Sheriff band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoBLo'](5) != 96 or m['chrPoBHi'](5) != 100 or m['chrPoBCode'](5) != 6",
+   "note": "the Baron 96-00 Magistrate band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoCLo'](0) != 1 or m['chrPoCHi'](0) != 35 or m['chrPoCCode'](0) != 1 or m['chrPosCountCount']() != 6",
+   "note": "the Count 01-35 Land Holder band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoCLo'](1) != 36 or m['chrPoCHi'](1) != 45 or m['chrPoCCode'](1) != 2",
+   "note": "the Count 36-45 Orator band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoCLo'](2) != 46 or m['chrPoCHi'](2) != 65 or m['chrPoCCode'](2) != 3",
+   "note": "the Count 46-65 In Army band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoCLo'](3) != 66 or m['chrPoCHi'](3) != 80 or m['chrPoCCode'](3) != 4",
+   "note": "the Count 66-80 Courtier band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoCLo'](4) != 81 or m['chrPoCHi'](4) != 90 or m['chrPoCCode'](4) != 5",
+   "note": "the Count 81-90 Sheriff band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoCLo'](5) != 91 or m['chrPoCHi'](5) != 100 or m['chrPoCCode'](5) != 6",
+   "note": "the Count 91-00 Magistrate band, the 00 pinned as 100 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoMLo'](0) != 1 or m['chrPoMHi'](0) != 30 or m['chrPoMCode'](0) != 1 or m['chrPosMarquisCount']() != 7",
+   "note": "the Marquis 01-30 Land Holder band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoMLo'](1) != 31 or m['chrPoMHi'](1) != 35 or m['chrPoMCode'](1) != 2",
+   "note": "the Marquis 31-35 Orator band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoMLo'](2) != 36 or m['chrPoMHi'](2) != 50 or m['chrPoMCode'](2) != 3",
+   "note": "the Marquis 36-50 In Army band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoMLo'](3) != 51 or m['chrPoMHi'](3) != 80 or m['chrPoMCode'](3) != 4",
+   "note": "the Marquis 51-80 Courtier band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoMLo'](4) != 81 or m['chrPoMHi'](4) != 90 or m['chrPoMCode'](4) != 5",
+   "note": "the Marquis 81-90 Sheriff band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoMLo'](5) != 91 or m['chrPoMHi'](5) != 99 or m['chrPoMCode'](5) != 6",
+   "note": "the Marquis 91-99 Magistrate band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoMLo'](6) != 100 or m['chrPoMHi'](6) != 100 or m['chrPoMCode'](6) != 7",
+   "note": "the Marquis 00 band pinned as 100 - Advisor to the King (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoDLo'](0) != 1 or m['chrPoDHi'](0) != 20 or m['chrPoDCode'](0) != 1 or m['chrPosDukeCount']() != 7",
+   "note": "the Duke 01-20 Land Holder band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoDLo'](1) != 21 or m['chrPoDHi'](1) != 25 or m['chrPoDCode'](1) != 2",
+   "note": "the Duke 21-25 Orator band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoDLo'](2) != 26 or m['chrPoDHi'](2) != 40 or m['chrPoDCode'](2) != 3",
+   "note": "the Duke 26-40 In Army band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoDLo'](3) != 41 or m['chrPoDHi'](3) != 72 or m['chrPoDCode'](3) != 4",
+   "note": "the Duke 41-72 Courtier band - the worked example's 52 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoDLo'](4) != 73 or m['chrPoDHi'](4) != 82 or m['chrPoDCode'](4) != 5",
+   "note": "the Duke 73-82 Sheriff band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoDLo'](5) != 83 or m['chrPoDHi'](5) != 95 or m['chrPoDCode'](5) != 6",
+   "note": "the Duke 83-95 Magistrate band (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrPoDLo'](6) != 96 or m['chrPoDHi'](6) != 100 or m['chrPoDCode'](6) != 7",
+   "note": "the Duke 96-00 Advisor band, the 00 pinned as 100 (folio 15) (folio 15)"
+  },
+  {
+   "expr": "m['chrACLo'](0) != 1 or m['chrACHi'](0) != 50 or m['chrACLevel'](0) != 1 or m['chrAdvComLevelsCount']() != 4",
+   "note": "the Commoner 01-50 1st level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrACLo'](1) != 51 or m['chrACHi'](1) != 70 or m['chrACLevel'](1) != 2",
+   "note": "the Commoner 51-70 2nd level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrACLo'](2) != 71 or m['chrACHi'](2) != 95 or m['chrACLevel'](2) != 3",
+   "note": "the Commoner 71-95 3rd level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrACLo'](3) != 96 or m['chrACHi'](3) != 100 or m['chrACLevel'](3) != 4",
+   "note": "the Commoner 96-00 4th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAMLo'](0) != 1 or m['chrAMHi'](0) != 40 or m['chrAMLevel'](0) != 1 or m['chrAdvMerLevelsCount']() != 6",
+   "note": "the Merchant 01-40 1st level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAMLo'](1) != 41 or m['chrAMHi'](1) != 65 or m['chrAMLevel'](1) != 2",
+   "note": "the Merchant 41-65 2nd level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAMLo'](2) != 66 or m['chrAMHi'](2) != 75 or m['chrAMLevel'](2) != 3",
+   "note": "the Merchant 66-75 3rd level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAMLo'](3) != 76 or m['chrAMHi'](3) != 85 or m['chrAMLevel'](3) != 4",
+   "note": "the Merchant 76-85 4th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAMLo'](4) != 86 or m['chrAMHi'](4) != 95 or m['chrAMLevel'](4) != 5",
+   "note": "the Merchant 86-95 5th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAMLo'](5) != 96 or m['chrAMHi'](5) != 100 or m['chrAMLevel'](5) != 6",
+   "note": "the Merchant 96-00 6th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAGLo'](0) != 1 or m['chrAGHi'](0) != 35 or m['chrAGLevel'](0) != 1 or m['chrAdvGenLevelsCount']() != 8",
+   "note": "the Gentleman 01-35 1st level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAGLo'](1) != 36 or m['chrAGHi'](1) != 50 or m['chrAGLevel'](1) != 2",
+   "note": "the Gentleman 36-50 2nd level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAGLo'](2) != 51 or m['chrAGHi'](2) != 65 or m['chrAGLevel'](2) != 3",
+   "note": "the Gentleman 51-65 3rd level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAGLo'](3) != 66 or m['chrAGHi'](3) != 80 or m['chrAGLevel'](3) != 4",
+   "note": "the Gentleman 66-80 4th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAGLo'](4) != 81 or m['chrAGHi'](4) != 90 or m['chrAGLevel'](4) != 5",
+   "note": "the Gentleman 81-90 5th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAGLo'](5) != 91 or m['chrAGHi'](5) != 95 or m['chrAGLevel'](5) != 6",
+   "note": "the Gentleman 91-95 6th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAGLo'](6) != 96 or m['chrAGHi'](6) != 98 or m['chrAGLevel'](6) != 7",
+   "note": "the Gentleman 96-98 7th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrAGLo'](7) != 99 or m['chrAGHi'](7) != 100 or m['chrAGLevel'](7) != 8",
+   "note": "the Gentleman 99-00 8th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrANLo'](0) != 1 or m['chrANHi'](0) != 30 or m['chrANLevel'](0) != 1 or m['chrAdvNobLevelsCount']() != 9",
+   "note": "the Noble 01-30 1st level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrANLo'](1) != 31 or m['chrANHi'](1) != 45 or m['chrANLevel'](1) != 2",
+   "note": "the Noble 31-45 2nd level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrANLo'](2) != 46 or m['chrANHi'](2) != 60 or m['chrANLevel'](2) != 3",
+   "note": "the Noble 46-60 3rd level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrANLo'](3) != 61 or m['chrANHi'](3) != 75 or m['chrANLevel'](3) != 4",
+   "note": "the Noble 61-75 4th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrANLo'](4) != 76 or m['chrANHi'](4) != 85 or m['chrANLevel'](4) != 5",
+   "note": "the Noble 76-85 5th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrANLo'](5) != 86 or m['chrANHi'](5) != 90 or m['chrANLevel'](5) != 6",
+   "note": "the Noble 86-90 6th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrANLo'](6) != 91 or m['chrANHi'](6) != 94 or m['chrANLevel'](6) != 7",
+   "note": "the Noble 91-94 7th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrANLo'](7) != 95 or m['chrANHi'](7) != 98 or m['chrANLevel'](7) != 8",
+   "note": "the Noble 95-98 8th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrANLo'](8) != 99 or m['chrANHi'](8) != 100 or m['chrANLevel'](8) != 9",
+   "note": "the Noble 99-00 9th level band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCCLo'](0) != 1 or m['chrCCHi'](0) != 5 or m['chrCCCode'](0) != 1 or m['chrAdvComClassCount']() != 2",
+   "note": "the Commoner 1-5 fighter band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCCLo'](1) != 6 or m['chrCCHi'](1) != 8 or m['chrCCCode'](1) != 2",
+   "note": "the Commoner 6-8 thief band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCMLo'](0) != 1 or m['chrCMHi'](0) != 4 or m['chrCMCode'](0) != 1 or m['chrAdvMerClassCount']() != 4",
+   "note": "the Merchant 1-4 fighter band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCMLo'](1) != 5 or m['chrCMHi'](1) != 5 or m['chrCMCode'](1) != 2",
+   "note": "the Merchant 5 thief band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCMLo'](2) != 6 or m['chrCMHi'](2) != 7 or m['chrCMCode'](2) != 3",
+   "note": "the Merchant 6-7 cleric band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCMLo'](3) != 8 or m['chrCMHi'](3) != 8 or m['chrCMCode'](3) != 4",
+   "note": "the Merchant 8 magic-user band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCGLo'](0) != 1 or m['chrCGHi'](0) != 3 or m['chrCGCode'](0) != 1 or m['chrAdvGenClassCount']() != 4",
+   "note": "the Gentleman 1-3 fighter band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCGLo'](1) != 4 or m['chrCGHi'](1) != 4 or m['chrCGCode'](1) != 2",
+   "note": "the Gentleman 4 thief band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCGLo'](2) != 5 or m['chrCGHi'](2) != 6 or m['chrCGCode'](2) != 3",
+   "note": "the Gentleman 5-6 cleric band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCGLo'](3) != 7 or m['chrCGHi'](3) != 8 or m['chrCGCode'](3) != 4",
+   "note": "the Gentleman 7-8 magic-user band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCNLo'](0) != 1 or m['chrCNHi'](0) != 3 or m['chrCNCode'](0) != 1 or m['chrAdvNobClassCount']() != 4",
+   "note": "the Noble 1-3 fighter band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCNLo'](1) != 4 or m['chrCNHi'](1) != 4 or m['chrCNCode'](1) != 2",
+   "note": "the Noble 4 thief band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCNLo'](2) != 5 or m['chrCNHi'](2) != 5 or m['chrCNCode'](2) != 3",
+   "note": "the Noble 5 cleric band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrCNLo'](3) != 6 or m['chrCNHi'](3) != 8 or m['chrCNCode'](3) != 4",
+   "note": "the Noble 6-8 magic-user band - the worked example (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1CLo'](0) != 2 or m['chrR1CHi'](0) != 2 or m['chrR1CCode'](0) != 1 or m['chrRaceCommonerCount']() != 5",
+   "note": "the Commoner 2 Half-goblin band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1CLo'](1) != 3 or m['chrR1CHi'](1) != 3 or m['chrR1CCode'](1) != 2",
+   "note": "the Commoner 3 Half-orc band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1CLo'](2) != 4 or m['chrR1CHi'](2) != 10 or m['chrR1CCode'](2) != 3",
+   "note": "the Commoner 4-10 Human band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1CLo'](3) != 11 or m['chrR1CHi'](3) != 11 or m['chrR1CCode'](3) != 4",
+   "note": "the Commoner 11 Half-elf or Dwarf band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1CLo'](4) != 12 or m['chrR1CHi'](4) != 12 or m['chrR1CCode'](4) != 5",
+   "note": "the Commoner 12 Hobbit band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1MLo'](0) != 2 or m['chrR1MHi'](0) != 2 or m['chrR1MCode'](0) != 1 or m['chrRaceMerchantCount']() != 4",
+   "note": "the Merchant 2 Hobbit band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1MLo'](1) != 3 or m['chrR1MHi'](1) != 3 or m['chrR1MCode'](1) != 2",
+   "note": "the Merchant 3 Half-elf band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1MLo'](2) != 4 or m['chrR1MHi'](2) != 11 or m['chrR1MCode'](2) != 3",
+   "note": "the Merchant 4-11 Human band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1MLo'](3) != 12 or m['chrR1MHi'](3) != 12 or m['chrR1MCode'](3) != 4",
+   "note": "the Merchant 12 Dwarf band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1GLo'](0) != 2 or m['chrR1GHi'](0) != 2 or m['chrR1GCode'](0) != 1 or m['chrRaceGentleNobleCount']() != 5",
+   "note": "the Gentleman/Noble 2 Hobbit band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1GLo'](1) != 3 or m['chrR1GHi'](1) != 4 or m['chrR1GCode'](1) != 2",
+   "note": "the Gentleman/Noble 3-4 Half-elf band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1GLo'](2) != 5 or m['chrR1GHi'](2) != 8 or m['chrR1GCode'](2) != 3",
+   "note": "the Gentleman/Noble 5-8 Human band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1GLo'](3) != 9 or m['chrR1GHi'](3) != 10 or m['chrR1GCode'](3) != 4",
+   "note": "the Gentleman/Noble 9-10 Dwarf band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrR1GLo'](4) != 11 or m['chrR1GHi'](4) != 12 or m['chrR1GCode'](4) != 5",
+   "note": "the Gentleman/Noble 11-12 Elf band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrDiceRaceCode'](0) != 1 or m['chrDiceStr'](0) != 3 or m['chrDiceInt'](0) != 2 or m['chrDiceWis'](0) != 3 or m['chrDiceCon'](0) != 3 or m['chrDiceDex'](0) != 2 or m['chrDiceCha'](0) != 2 or m['chrRaceDiceCount']() != 6",
+   "note": "the Half-goblin/Half-orc row - 3, 2, 3, 3, 2, 2 dice (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrDiceRaceCode'](1) != 2 or m['chrDiceStr'](1) != 3 or m['chrDiceInt'](1) != 3 or m['chrDiceWis'](1) != 4 or m['chrDiceCon'](1) != 3 or m['chrDiceDex'](1) != 4 or m['chrDiceCha'](1) != 4",
+   "note": "the Elf row - 3, 3, 4, 3, 4, 4 dice (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrDiceRaceCode'](2) != 3 or m['chrDiceStr'](2) != 4 or m['chrDiceInt'](2) != 3 or m['chrDiceWis'](2) != 3 or m['chrDiceCon'](2) != 4 or m['chrDiceDex'](2) != 3 or m['chrDiceCha'](2) != 3",
+   "note": "the Dwarf row - 4, 3, 3, 4, 3, 3 dice (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrDiceRaceCode'](3) != 4 or m['chrDiceStr'](3) != 3 or m['chrDiceInt'](3) != 3 or m['chrDiceWis'](3) != 3 or m['chrDiceCon'](3) != 3 or m['chrDiceDex'](3) != 3 or m['chrDiceCha'](3) != 4",
+   "note": "the Half-elf row - 3, 3, 3, 3, 3, 4 dice (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrDiceRaceCode'](4) != 5 or m['chrDiceStr'](4) != 2 or m['chrDiceInt'](4) != 3 or m['chrDiceWis'](4) != 3 or m['chrDiceCon'](4) != 4 or m['chrDiceDex'](4) != 4 or m['chrDiceCha'](4) != 3",
+   "note": "the Hobbit row - 2, 3, 3, 4, 4, 3 dice (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrDiceRaceCode'](5) != 6 or m['chrDiceStr'](5) != 3 or m['chrDiceInt'](5) != 3 or m['chrDiceWis'](5) != 3 or m['chrDiceCon'](5) != 3 or m['chrDiceDex'](5) != 3 or m['chrDiceCha'](5) != 3",
+   "note": "the Human row - 3, 3, 3, 3, 3, 3 dice (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrReqRaceCode'](0) != 1 or m['chrReqStrMin'](0) != 3 or m['chrReqStrMax'](0) != 18 or m['chrReqIntMin'](0) != 3 or m['chrReqIntMax'](0) != 12 or m['chrReqWisMin'](0) != 3 or m['chrReqWisMax'](0) != 18 or m['chrReqConMin'](0) != 3 or m['chrReqConMax'](0) != 18 or m['chrReqDexMin'](0) != 3 or m['chrReqDexMax'](0) != 12 or m['chrReqChaMin'](0) != 3 or m['chrReqChaMax'](0) != 15 or m['chrRaceReqCount']() != 6",
+   "note": "the Half-goblin/orc row - Strength any, Intelligence 3-12, Wisdom any, Constitution any, Dexterity 3-12, Charisma 3-15 (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrReqRaceCode'](1) != 2 or m['chrReqStrMin'](1) != 3 or m['chrReqStrMax'](1) != 18 or m['chrReqIntMin'](1) != 3 or m['chrReqIntMax'](1) != 18 or m['chrReqWisMin'](1) != 9 or m['chrReqWisMax'](1) != 18 or m['chrReqConMin'](1) != 9 or m['chrReqConMax'](1) != 18 or m['chrReqDexMin'](1) != 9 or m['chrReqDexMax'](1) != 18 or m['chrReqChaMin'](1) != 13 or m['chrReqChaMax'](1) != 18",
+   "note": "the Elf row - Strength any, Intelligence any, Wisdom 9-18, Constitution 9-18, Dexterity 9-18, Charisma 13-18 (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrReqRaceCode'](2) != 3 or m['chrReqStrMin'](2) != 9 or m['chrReqStrMax'](2) != 18 or m['chrReqIntMin'](2) != 3 or m['chrReqIntMax'](2) != 18 or m['chrReqWisMin'](2) != 3 or m['chrReqWisMax'](2) != 18 or m['chrReqConMin'](2) != 13 or m['chrReqConMax'](2) != 18 or m['chrReqDexMin'](2) != 3 or m['chrReqDexMax'](2) != 18 or m['chrReqChaMin'](2) != 3 or m['chrReqChaMax'](2) != 18",
+   "note": "the Dwarf row - Strength 9-18, Intelligence any, Wisdom any, Constitution 13-18, Dexterity any, Charisma any (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrReqRaceCode'](3) != 4 or m['chrReqStrMin'](3) != 3 or m['chrReqStrMax'](3) != 18 or m['chrReqIntMin'](3) != 3 or m['chrReqIntMax'](3) != 18 or m['chrReqWisMin'](3) != 9 or m['chrReqWisMax'](3) != 18 or m['chrReqConMin'](3) != 3 or m['chrReqConMax'](3) != 18 or m['chrReqDexMin'](3) != 3 or m['chrReqDexMax'](3) != 18 or m['chrReqChaMin'](3) != 13 or m['chrReqChaMax'](3) != 18",
+   "note": "the Half-elf row - Strength any, Intelligence any, Wisdom 9-18, Constitution any, Dexterity any, Charisma 13-18 (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrReqRaceCode'](4) != 5 or m['chrReqStrMin'](4) != 3 or m['chrReqStrMax'](4) != 12 or m['chrReqIntMin'](4) != 3 or m['chrReqIntMax'](4) != 18 or m['chrReqWisMin'](4) != 3 or m['chrReqWisMax'](4) != 18 or m['chrReqConMin'](4) != 13 or m['chrReqConMax'](4) != 18 or m['chrReqDexMin'](4) != 13 or m['chrReqDexMax'](4) != 18 or m['chrReqChaMin'](4) != 3 or m['chrReqChaMax'](4) != 18",
+   "note": "the Hobbit row - Strength 3-12, Intelligence any, Wisdom any, Constitution 13-18, Dexterity 13-18, Charisma any (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrReqRaceCode'](5) != 6 or m['chrReqStrMin'](5) != 3 or m['chrReqStrMax'](5) != 18 or m['chrReqIntMin'](5) != 3 or m['chrReqIntMax'](5) != 18 or m['chrReqWisMin'](5) != 3 or m['chrReqWisMax'](5) != 18 or m['chrReqConMin'](5) != 3 or m['chrReqConMax'](5) != 18 or m['chrReqDexMin'](5) != 3 or m['chrReqDexMax'](5) != 18 or m['chrReqChaMin'](5) != 3 or m['chrReqChaMax'](5) != 18",
+   "note": "the Human row - any in all six (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPCLo'](0) != 1 or m['chrPCHi'](0) != 85 or m['chrPCMult'](0) != 0 or m['chrPrevComCount']() != 4",
+   "note": "the Commoner 01-85 nil band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPCLo'](1) != 86 or m['chrPCHi'](1) != 96 or m['chrPCMult'](1) != 20",
+   "note": "the Commoner 86-96 x20 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPCLo'](2) != 97 or m['chrPCHi'](2) != 99 or m['chrPCMult'](2) != 30",
+   "note": "the Commoner 97-99 x30 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPCLo'](3) != 100 or m['chrPCHi'](3) != 100 or m['chrPCMult'](3) != 50",
+   "note": "the Commoner 00 x50 band, the 00 pinned as 100 (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPMLo'](0) != 1 or m['chrPMHi'](0) != 70 or m['chrPMMult'](0) != 0 or m['chrPrevMerCount']() != 5",
+   "note": "the Merchant 01-70 nil band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPMLo'](1) != 71 or m['chrPMHi'](1) != 90 or m['chrPMMult'](1) != 20",
+   "note": "the Merchant 71-90 x20 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPMLo'](2) != 91 or m['chrPMHi'](2) != 96 or m['chrPMMult'](2) != 30",
+   "note": "the Merchant 91-96 x30 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPMLo'](3) != 97 or m['chrPMHi'](3) != 99 or m['chrPMMult'](3) != 50",
+   "note": "the Merchant 97-99 x50 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPMLo'](4) != 100 or m['chrPMHi'](4) != 100 or m['chrPMMult'](4) != 70",
+   "note": "the Merchant 00 x70 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPGLo'](0) != 1 or m['chrPGHi'](0) != 60 or m['chrPGMult'](0) != 0 or m['chrPrevGenCount']() != 6",
+   "note": "the Gentleman 01-60 nil band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPGLo'](1) != 61 or m['chrPGHi'](1) != 80 or m['chrPGMult'](1) != 20",
+   "note": "the Gentleman 61-80 x20 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPGLo'](2) != 81 or m['chrPGHi'](2) != 93 or m['chrPGMult'](2) != 30",
+   "note": "the Gentleman 81-93 x30 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPGLo'](3) != 94 or m['chrPGHi'](3) != 97 or m['chrPGMult'](3) != 50",
+   "note": "the Gentleman 94-97 x50 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPGLo'](4) != 98 or m['chrPGHi'](4) != 99 or m['chrPGMult'](4) != 70",
+   "note": "the Gentleman 98-99 x70 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPGLo'](5) != 100 or m['chrPGHi'](5) != 100 or m['chrPGMult'](5) != 100",
+   "note": "the Gentleman 00 x100 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPNLo'](0) != 1 or m['chrPNHi'](0) != 50 or m['chrPNMult'](0) != 0 or m['chrPrevNobCount']() != 7",
+   "note": "the Noble 01-50 nil band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPNLo'](1) != 51 or m['chrPNHi'](1) != 70 or m['chrPNMult'](1) != 20",
+   "note": "the Noble 51-70 x20 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPNLo'](2) != 71 or m['chrPNHi'](2) != 85 or m['chrPNMult'](2) != 30",
+   "note": "the Noble 71-85 x30 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPNLo'](3) != 86 or m['chrPNHi'](3) != 92 or m['chrPNMult'](3) != 50",
+   "note": "the Noble 86-92 x50 band - the worked example's 89 (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPNLo'](4) != 93 or m['chrPNHi'](4) != 97 or m['chrPNMult'](4) != 70",
+   "note": "the Noble 93-97 x70 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPNLo'](5) != 98 or m['chrPNHi'](5) != 99 or m['chrPNMult'](5) != 100",
+   "note": "the Noble 98-99 x100 band (folio 16) (folio 16)"
+  },
+  {
+   "expr": "m['chrPNLo'](6) != 100 or m['chrPNHi'](6) != 100 or m['chrPNMult'](6) != 130",
+   "note": "the Noble 00 x130 band (folio 16) (folio 16)"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 294,
+ "header_sections": {
+  "the new-view Dwarves (folios 26-27)": [
+   {
+    "kind": "const",
+    "name": "chrDwarfLadderLevels"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwfStrFor7th"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwfStrFor8th"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwfKingIntMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwfKingWisMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfFamilies"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfTribeDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfTribeDurinLo"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfClericWisMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfCleric7thWis"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfCleric8thWis"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfClericHitDie"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfThiefHitDie"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfSaveBonusLevels"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfWarHammerBonus"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfSlantDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfSlantRollMax"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfGiantClassHitMod"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfGiantClassAcMod"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfSmithIntMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfSmithStrMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfArmorerIntMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfArmorerStrMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfEngineerIntMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfOtherWeaponHitMod"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfSwimDexMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfHorseIntMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfMaturityAge"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfLifespanYears"
+   },
+   {
+    "kind": "const",
+    "name": "chrDwarfReactionCount"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfKingshipFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfKingBlocksLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfClericsAllowed"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfThievesGreyhawk"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfForbiddenClasses"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfNewConstructionAuto"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfUnderstandsGobOrcHob"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfSpeaksGnomeKobold"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfJudgesGems"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfFeelsMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfBowsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfRegularWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfWaterFear"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfHatesOrcsGoblins"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfOathsNeverBroken"
+   },
+   {
+    "kind": "bool",
+    "name": "chrDwarfNeverAttackOwnFolk"
+   },
+   {
+    "kind": "table",
+    "name": "chrDwarfLadder"
+   },
+   {
+    "kind": "table",
+    "name": "chrDwarfReactions"
+   }
+  ],
+  "the birth tables (folios 14-16)": [
+   {
+    "kind": "const",
+    "name": "chrBirthSkillsGroups"
+   },
+   {
+    "kind": "const",
+    "name": "chrBirthAllowanceMonths"
+   },
+   {
+    "kind": "const",
+    "name": "chrBirthAllowanceLevelCap"
+   },
+   {
+    "kind": "const",
+    "name": "chrBirthClassCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrSiblingBandCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrSiblingDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "chrOrphanDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "chrOrphanRoll"
+   },
+   {
+    "kind": "const",
+    "name": "chrBirthFirstSonPct"
+   },
+   {
+    "kind": "const",
+    "name": "chrBirthBastardPct"
+   },
+   {
+    "kind": "const",
+    "name": "chrRankCommonerCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRankMerchantCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRankGentlemanCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRankNobleCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrFatherOccCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillGroup1Count"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillsPeasantMax"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillsWellToDoMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillsWealthyMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillGroup2Count"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillGroup3Count"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillsInterpreterIntBonus"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillsSoldierHitBonus"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillsSoldierLevelCap"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillsOratorReactionBonus"
+   },
+   {
+    "kind": "const",
+    "name": "chrCraftsCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrSkillsDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "chrNobleTitleCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRoyaltyKinCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRoyaltyImmediateInitial"
+   },
+   {
+    "kind": "const",
+    "name": "chrRoyaltyImmediateAllow"
+   },
+   {
+    "kind": "const",
+    "name": "chrPosKnightCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrKnightAdventurerPct"
+   },
+   {
+    "kind": "const",
+    "name": "chrPosBaronCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrBaronAdventurerPct"
+   },
+   {
+    "kind": "const",
+    "name": "chrPosCountCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrCountAdventurerPct"
+   },
+   {
+    "kind": "const",
+    "name": "chrPosMarquisCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrMarquisAdventurerPct"
+   },
+   {
+    "kind": "const",
+    "name": "chrPosDukeCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrDukeAdventurerPct"
+   },
+   {
+    "kind": "const",
+    "name": "chrAdvComLevelsCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrAdvMerLevelsCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrAdvGenLevelsCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrAdvNobLevelsCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrAdvComClassCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrAdvMerClassCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrAdvGenClassCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrAdvNobClassCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRaceCommonerCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRaceMerchantCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRaceGentleNobleCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRaceTable1DieSides"
+   },
+   {
+    "kind": "const",
+    "name": "chrRaceDiceCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrRaceReqCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrPrevComCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrPrevMerCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrPrevGenCount"
+   },
+   {
+    "kind": "const",
+    "name": "chrPrevNobCount"
+   },
+   {
+    "kind": "bool",
+    "name": "chrBirthFirstSonInherits"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSkillsFatherOccupation"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSkillsGroup3FirstFiveProhibited"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSkillsNoPlayerAdventurer"
+   },
+   {
+    "kind": "bool",
+    "name": "chrRoyaltyNeverOrphan"
+   },
+   {
+    "kind": "bool",
+    "name": "chrRoyaltyRaiseRank"
+   },
+   {
+    "kind": "bool",
+    "name": "chrRoyaltyRerollIgnore"
+   },
+   {
+    "kind": "bool",
+    "name": "chrRoyaltyTitleOneNotch"
+   },
+   {
+    "kind": "bool",
+    "name": "chrNobilityNonHumanEarlCap"
+   },
+   {
+    "kind": "bool",
+    "name": "chrRaceTable2Preferred"
+   },
+   {
+    "kind": "bool",
+    "name": "chrRaceVariant9To18"
+   },
+   {
+    "kind": "bool",
+    "name": "chrRaceLimitByRequirements"
+   },
+   {
+    "kind": "table",
+    "name": "chrBirthClass"
+   },
+   {
+    "kind": "table",
+    "name": "chrSiblingRank"
+   },
+   {
+    "kind": "table",
+    "name": "chrRankCommoner"
+   },
+   {
+    "kind": "table",
+    "name": "chrRankMerchant"
+   },
+   {
+    "kind": "table",
+    "name": "chrRankGentleman"
+   },
+   {
+    "kind": "table",
+    "name": "chrRankNoble"
+   },
+   {
+    "kind": "table",
+    "name": "chrFatherOcc"
+   },
+   {
+    "kind": "table",
+    "name": "chrSkillGroup1"
+   },
+   {
+    "kind": "table",
+    "name": "chrSkillGroup2"
+   },
+   {
+    "kind": "table",
+    "name": "chrSkillGroup3"
+   },
+   {
+    "kind": "table",
+    "name": "chrNobleTitle"
+   },
+   {
+    "kind": "table",
+    "name": "chrRoyaltyKin"
+   },
+   {
+    "kind": "table",
+    "name": "chrPosKnight"
+   },
+   {
+    "kind": "table",
+    "name": "chrPosBaron"
+   },
+   {
+    "kind": "table",
+    "name": "chrPosCount"
+   },
+   {
+    "kind": "table",
+    "name": "chrPosMarquis"
+   },
+   {
+    "kind": "table",
+    "name": "chrPosDuke"
+   },
+   {
+    "kind": "table",
+    "name": "chrAdvComLevels"
+   },
+   {
+    "kind": "table",
+    "name": "chrAdvMerLevels"
+   },
+   {
+    "kind": "table",
+    "name": "chrAdvGenLevels"
+   },
+   {
+    "kind": "table",
+    "name": "chrAdvNobLevels"
+   },
+   {
+    "kind": "table",
+    "name": "chrAdvComClass"
+   },
+   {
+    "kind": "table",
+    "name": "chrAdvMerClass"
+   },
+   {
+    "kind": "table",
+    "name": "chrAdvGenClass"
+   },
+   {
+    "kind": "table",
+    "name": "chrAdvNobClass"
+   },
+   {
+    "kind": "table",
+    "name": "chrRaceCommoner"
+   },
+   {
+    "kind": "table",
+    "name": "chrRaceMerchant"
+   },
+   {
+    "kind": "table",
+    "name": "chrRaceGentleNoble"
+   },
+   {
+    "kind": "table",
+    "name": "chrRaceDice"
+   },
+   {
+    "kind": "table",
+    "name": "chrRaceReq"
+   },
+   {
+    "kind": "table",
+    "name": "chrPrevCom"
+   },
+   {
+    "kind": "table",
+    "name": "chrPrevMer"
+   },
+   {
+    "kind": "table",
+    "name": "chrPrevGen"
+   },
+   {
+    "kind": "table",
+    "name": "chrPrevNob"
+   }
+  ],
+  "the Pulsipher Eldar deltas (folios 20-21)": [
+   {
+    "kind": "const",
+    "name": "chrSilvanFighterMax"
+   },
+   {
+    "kind": "const",
+    "name": "chrSilvanFighterMaxStr18"
+   },
+   {
+    "kind": "const",
+    "name": "chrSilvanMuMax"
+   },
+   {
+    "kind": "const",
+    "name": "chrSilvanMuMaxInt18"
+   },
+   {
+    "kind": "const",
+    "name": "chrSindarStatMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrSindarTotalMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrSindarMuMax"
+   },
+   {
+    "kind": "const",
+    "name": "chrSindarMuMaxInt18"
+   },
+   {
+    "kind": "const",
+    "name": "chrSindarFighterMax"
+   },
+   {
+    "kind": "const",
+    "name": "chrSindarFighterMaxStr17"
+   },
+   {
+    "kind": "const",
+    "name": "chrSindarFighterMaxStr18"
+   },
+   {
+    "kind": "const",
+    "name": "chrEldarWisMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrEldarTotalMin"
+   },
+   {
+    "kind": "const",
+    "name": "chrEldarMuMax"
+   },
+   {
+    "kind": "const",
+    "name": "chrEldarFighterMax"
+   },
+   {
+    "kind": "const",
+    "name": "chrEldarMindRangePerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "chrEldarPhantasmalPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "chrEldarIllusionPctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "chrEldarPolymorphPctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "chrEldarShapeChangePctPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "chrSeaEldarDenominator"
+   },
+   {
+    "kind": "const",
+    "name": "chrSeaSindarSeenDenominator"
+   },
+   {
+    "kind": "const",
+    "name": "chrSeaSindarUnseenDenominator"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSilvanNoReqs"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSilvanDdPowers"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSilvanDiseaseImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSilvanAgingImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSilvanLawfulOrNeutral"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarOnePathOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarLangPerIntPoint"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarCalmAnimals"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarBirdSpeech"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarKeenEyes"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarHiddenOptional"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarUnawareOnSuccess"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSeaWaitUntilMaxLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "chrSilvanNeverCrossSea"
+   },
+   {
+    "kind": "bool",
+    "name": "chrHalfElfSameAsEldar"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarAllLawfulGood"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarNoldorShorthand"
+   },
+   {
+    "kind": "bool",
+    "name": "chrEldarRejectsSmithDelta"
+   }
+  ]
+ },
+ "audit_comment": "THE CHARACTER ROUND - round D of the issue-3 walk. Smith's new-view Dwarves: the nine-level Fighting Man ladder (Dwarf through Dwarf King at 10+1 and 320,000, the printed dice-plus forms split to base and bonus, fighting as Man+2 down to Men and back), the 17-Strength 7th and 18-Strength 8th gates with the 12-Intelligence 12-Wisdom footnote pinned as scanned, the seven families and the Durin 7-8 of the d8, the kingship rules, the Greyhawk cleric option (15 Wisdom, 7th at 17, 8th at 18, points on a d8), the thief's d6, the forbidden class list, the fourteen abilities (the 4-level saving-throw bonus, the +3 War Hammer, the 1-4 of a d6 detection with new construction automatic, the Goblin-Orc-Hobgoblin tongues with Gnome and Kobold spoken, the Giant Class +1/-1, the gem judging and the magic feeling, the Smith 9/9, Armorer 12/9 and Engineer 15 trade gates, the crossbow-and-shortbow rule, the six regular weapons with others at -1, the 17-Dexterity swim against the water fear, and the 12-Intelligence horse reluctance across the folio break), the reaction modifiers (the Goblins-and-Orcs auto attack pinned as the sentinel 9, the Sindar-Silvan-Elves-and-men -2, the others -1, the Hobbits-and-Noldor 0, the different Folk +1, the same Folk +2 and never attacking one's own), and the folk wisdom (maturity around 50, about 250 years, the hates, the unbroken oath). Stock and Lane's birth tables: social class, sibling rank with the orphan check and the first-son and bastard percents, the four wealth ladders (with the OCR's split Very-Wealthy rows pinned as scanned), the father's occupation routing, the three skills groups with the Group 1 banding notes, the first-five prohibition and the no-player-Adventurer rule, the Interpreter, Soldier and Orator edges, the twelve crafts, the nobility rolls (father's title, the royalty kinship with the immediate family's 1000 and 100, the never-orphan, raise-to-wealth, the reroll ignoring 96-00 and the one-notch title raise, the five position tables with their adventurer percents), the adventurer fathers (levels and classes by social class), the race rolls (Table 1 by class, the dice grid, the Table 2 requirement bands with 'any' converted to 3-18), and the previous-experience multipliers through the Noble x130. Pulsipher's Eldar deltas: the Silvan frame (no requirements, all D&D powers, disease and aging immunity, 8th/9th fighter and 4th/5th magic-user, Lawful or Neutral never evil), the Sindar (average abilities and 63 total, the 8th/9th magic-user, the 4th/5th/6th fighter), the Eldar proper (13 Wisdom, 67 total, the 11th one-path choice), the Eldar powers (the language per intelligence point, the calmed animals, the bird speech, the mind-to-mind range, the keen eyes, the True Sight with its per-level percents and the unawareness), the over-sea doctrine (one in a thousand, one in a hundred, one in ten thousand, no roll until maximum level, the Silvan never), the half-elf rule, and the deltas against the R888 Smith pin never silent. HONEST BOUNDARIES: the OCR's split and column-shifted rows ride as scanned; the royalty table's interleaved wealth labels pin nothing beyond the bands; the sibling note 'No one receives Allowance' garbles and pins nothing; the crafts pin as a count; all three clusters ride the variant layer."
+}

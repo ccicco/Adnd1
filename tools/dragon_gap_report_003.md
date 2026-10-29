@@ -26,7 +26,7 @@ deltas.
   opener round
 - [x] **The Healer and the Scribe** (folios 22-23, 25) - the
   specialists round
-- [ ] **The Samurai and the Berserker** (folios 25, 27) - the fighting
+- [x] **The Samurai and the Berserker** (folios 25, 27) - the fighting
   sub-classes round
 - [ ] **The new-view Dwarves, the birth tables and the Eldar deltas**
   (folios 14-16, 26-27, 20-21) - the character round

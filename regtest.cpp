@@ -599,6 +599,7 @@
 #include "rules/wmn.h"  // R895: the Lakofka women round
 #include "rules/spr.h"  // R896: the Healer and Scribe specialists round
 #include "rules/fsc.h"  // R897: the Samurai and Berserker fighting sub-classes round
+#include "rules/chr.h"  // R898: the Dwarves, birth tables and Eldar deltas character round
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4646,6 +4647,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r898_batch.h"  // R898: R898 character round audit
 #include "rules/audits/r897_batch.h"  // R897: R897 fighting sub-classes audit
 #include "rules/audits/r896_batch.h"  // R896: R896 specialists audit
 #include "rules/audits/r895_batch.h"  // R895: R895 women magic audit

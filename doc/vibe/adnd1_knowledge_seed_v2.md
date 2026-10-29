@@ -26743,6 +26743,95 @@ parked App 3 gap flip - Curtiss's call - WAIT FOR GO.
   classes round (Samurai folio 25 + Berserker
   folio 27), flipping the specialists box ->
   issue-3 report 2 closed / 3 open. WAIT FOR GO.
+  - R897 LANDED 2026-10-29: commit
+  7217195efaaec3445f6ef39cf10bc1f3ea6dc6e3 (base
+  e48c3ed, census 819 -> 820), the fighting sub-
+  classes round: Childers/Kay's Samurai (folio
+  25) + Pickens' Berserker (folio 27), from
+  Dragon #3. THE SHAPE: prefix fsc (regtest-scan
+  clean), header rules/fsc.h (133 inline: 74
+  consts + 25 bools + 8 tables / 34 columns),
+  audit "R897 fighting sub-classes audit" at
+  rules/audits/r897_batch.h, 62 examples, 2
+  header_sections, include after spr.h,
+  prev_seed_key the R896 record. THE PINS: the
+  Samurai - dexterity-above-15 pinned as 16, any
+  alignment tending neutral, the daisho/yumi
+  preference, vendetta-or-seppeku on katana loss,
+  the special-but-non-magical blades with 9+
+  identification and 13+ exact reading, the
+  katana and wakizashi four-grade critical-hit
+  tables (the automatic-critical bands pinned as
+  their LOW rolls, the band top always 20), the
+  one-step loss in non-Samurai or single-handed
+  hands with the zero floor, the two-weapon
+  permission, the three-band critical blow table
+  (25 percent or 6 with the 1-4 limb roll, 50
+  percent or 12, the 96-00 decapitation), the
+  five-point dexterity ladder at 8,000 through
+  616,000, the five-grade armor run E through A
+  at 45 pounds max, the judo rules (empty hands
+  only, 1-2 turn recovery, 1-4 damage on 19-20 at
+  +5 percent per 4 levels, subdue on 20 at +5
+  percent per 6 levels), the yumi costs (75 gp /
+  50 enc, 20 arrows 5 gp, quiver 5 gp / 75 enc);
+  the Berserker - the highly experimental human
+  NEUTRAL, Strength and Constitution above 9
+  pinned as 10, Intelligence below 9 pinned as 8,
+  armor class no better than 6 at first level, no
+  magical armor or shields, double kill points
+  until the wereshape, never psionic, the five
+  clans (Wererat Cleric through Werebear Fighter,
+  wereshape 6th-10th, Followers 8th-12th, max
+  dice 9-12, Clanmaster 11th-15th, the advance-as
+  words carried as codes 1 Cleric / 2 Druid / 3
+  Fighter), +1 armor class per two levels, the
+  level abilities (surprise -1 at 4th, detection
+  + the 4th-level Companion at 6th, hiring at
+  10th at -2 loyalty capped 15), the 2-12
+  Followers at 16-plus with the Bard 3-6 never
+  replaced, the three percentile follower rolls
+  (types, levels, extraordinary), the berserking
+  chance (10 base once per melee, +20 shield
+  bite, +10 per round cumulative, +10 per
+  witnessed death, the Companion's death
+  automatic), the berserk edges (+2 attacks, +6
+  with a magic sword) and the no-withdrawal lock,
+  the fit's end (10 percent turn-on less 1
+  percent per level to a 1 minimum, 0 for a
+  Clanmaster, a full turn of rest), never causing
+  lycanthropy, the footnote adjustments by clan
+  (5 / 0 / 0 / 5 / 10). CONVERSIONS, ALL NOTED:
+  the exceed/below gates to 10/8 minimums, the
+  '00' percentile convention to 100, the
+  wakizashi's 1 and 3/4 pounds to seven quarter-
+  pounds. HONEST BOUNDARIES: the OCR's duplicate
+  Magic-User follower row pins AS SCANNED with
+  both rows at 61-70; the yumi armor-class
+  modifier grid garbles beyond numeric pinning
+  (the OCR stacked two modifier rows into single
+  tokens, no figure pixels to check) and pins
+  NOTHING - the yumi costs and encumbrances
+  pinned instead, noted; both sub-classes ride
+  the variant layer, the Berserker experimental
+  per its author's caution. GAP REPORT: the
+  specialists box flipped in
+  tools/dragon_gap_report_003.md -> issue-3
+  report 2 closed / 3 open. VERIFIED: engine
+  double-run GREEN applied 6 / already 6 - NO
+  ABORTS THIS ROUND, the first clean pass since
+  the fresh-unpack lesson; rverify against
+  pristine e48c3ed: 264 mutants 0 missed; the raw
+  JSON round-trip byte-exact. Spec
+  tools/spec_r897.json, 57,040 bytes, 1,696
+  lines, md5 e0c9825205d72f252c96dd9dd0906a76
+  (authored-plus-newline). NEXT: R898 - the
+  character round (the new-view Dwarves folios
+  26-27 + the birth tables folios 14-16 + the
+  Pulsipher Eldar deltas folios 20-21 vs the R888
+  Smith pin), flipping the fighting sub-classes
+  box -> issue-3 report 3 closed / 2 open. WAIT
+  FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
