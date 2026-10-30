@@ -1,0 +1,311 @@
+{
+ "round": 926,
+ "title": "The Dragon issue-14 box closing round: the two-chain walk complete",
+ "prefix": "f14",
+ "census_before": 848,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R925 LANDED (be09d6d, issue-14 opener, prefix",
+ "prev_record": [
+  "  - R925 LANDED (be09d6d, issue-14 opener, prefix",
+  "  lyc, 88 inline, two chains in one round, the",
+  "  issue-11 walk pattern): the Name That Monster",
+  "  Contest #1 winners folio 3 - the slipped-13",
+  "  harvest in full, Jarnkung (HD cell =) bar",
+  "  garble resolved at full-res to 5), Cursed",
+  "  Crimson Crawler (HD prose 3d8+1d4 = 3 1/2, the",
+  "  fraction garbled to 3% in OCR, pinned as dice +",
+  "  7-halves), Ulik (clean, hypnotic eyes 90/50,",
+  "  tail mace 10-40 blows, regrow 6-8 months) -",
+  "  plus the Rihn lycanthropy variant folios 29-32",
+  "  (PDF 31, 33-34): 50% bite catch, 30-60 day",
+  "  onset, 95% first-change panic, 10% subjugation,",
+  "  5% sleep revert, 2500 XP will-revert, the 10x8",
+  "  experience grid (row-4 XP prints 1000 vs the",
+  "  worked example 10000 - as-scanned, dropped zero",
+  "  noted; predominance DECREASING 10-01 with",
+  "  leading zeros; change-time in halves),",
+  "  wereshape limits, class rulings, cures. KEY",
+  "  FOLIO FACT: print folio = PDF page MINUS TWO in",
+  "  issue 14 (verified at five TOC alignments: Rust",
+  "  Monster 14=16, Monty Haul 21=23, Total Person",
+  "  24=26, Wormy 26=28, Finieous 27=29). Report 014",
+  "  authored pre-flip (2 boxes open, both close at",
+  "  the flip); 36 transcripts landed at",
+  "  extract/dragon/014. IDEAS USABLE noted: the",
+  "  Rust Monster polymorphed-NPC 05% rule. Brawling",
+  "  sequel STILL not printing (watch TD 15); TD-15",
+  "  teaser: the Green Magician, Dragon Magic.",
+  "  Census 847->848; rverify GREEN 160 mutants 0",
+  "  missed; round-trip 217660 bytes md5",
+  "  54c6df4d31fa17a361d45d2fac872b70. Next: R926",
+  "  pure flip closing both boxes (2 closed 0 open,",
+  "  the two-chain walk complete). WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/lyc.h\"  // R925: the Dragon issue-14 opener, the Name That Monster Contest #1 winners and the Rihn lycanthropy variant",
+ "include_comment": "the Dragon issue-14 box closing round, the two-chain walk complete",
+ "header_file": "rules/f14.h",
+ "audit_file": "rules/audits/r926_batch.h",
+ "audit_label": "R926 Dragon issue-14 closure audit",
+ "audit_anchor": "#include \"rules/audits/r925_batch.h\"  // R925: R925 issue-14 opener audit",
+ "audit_comment": "THE DRAGON ISSUE-14 CLOSURE ROUND - the pure flip, no new ink. BOTH report-014 boxes close at this single flip - the Name That Monster Contest #1 winners (folio 3) and the Gregory Rihn lycanthropy variant (folios 29-32) - 2 closed / 0 open in tools/dragon_gap_report_014.md; the two-chain walk completes in two rounds (R925 opener carrying both chains, this flip), the issue-11 two-round pattern. The bookkeeping pins: the two boxes and their two chains, the issue-13 report complete at 2 / 0 since R924, the issue-12 report at 2 / 0 since R921, the issue-11 report at 1 / 0 since R918, the issue-10 report at 2 / 0 since R916, the issue-9 report at 1 / 0 since R913, the issue-8 report at 1 / 0 since R911, the issue-7 report at 1 / 0 since R909, the issue-6 report at 1 / 0 since R907, and the registry ground truth carried forward unchanged from the R924 re-measure - 1313 defs loaded, 1338 base lua files, 25 never-load errors, the battery line the only ground truth. Per the go-ahead adjudication the scoped-out ink stays scoped - the SPACE MARINES article, the M-A Variant and the Total Person charts (other systems), the reviews, the Rust Monster interview (humor, the polymorphed-NPC rule IDEAS USABLE), the Monty Haul satire, the editorial, the comics and the ads. The slipped brawling sequel still has not printed - the watch continues at TD 15, which teases the Green Magician and Dragon Magic.",
+ "gap_report": "tools/dragon_gap_report_014.md",
+ "gap_census": {
+  "closed": 2,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Name That Monster Contest #1\n  winners** (folio 3) - the issue-14 opener round,\n  chain one",
+   "to": "- [x] **The Name That Monster Contest #1\n  winners** (folio 3) - the issue-14 opener round,\n  chain one",
+   "note": "the issue-14 chain-one box"
+  },
+  {
+   "from": "- [ ] **The Gregory Rihn lycanthropy variant**\n  (folios 29-32) - the issue-14 opener round,\n  chain two",
+   "to": "- [x] **The Gregory Rihn lycanthropy variant**\n  (folios 29-32) - the issue-14 opener round,\n  chain two",
+   "note": "the issue-14 chain-two box"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-14 box closing round - the two-chain walk complete, the pure flip",
+  "provenance": "Bookkeeping only, no new ink pinned. The issue-14 walk (the R925 opener carrying both chains, this flip) covered The Dragon Vol. II No. 8 (May 1978), the archive.org scan voice, single-voice - no chat-side upload cross-check exists for issue 14; the source lives in the archive.org item accessory-dragon-magazine-012, which holds issues 7-14. The transcripts ride extract/dragon/014/p001 through p036, landed at R925; print folio = PDF page minus two in this issue.",
+  "sentinel": "The R925 sentinel pins ride unchanged - the Jarnkung hit-dice bar garble resolved at the full-res scan to 5, the Crawler 3 1/2 prose pinned as the dice and the 7-halves total, the experience-grid row-4 cell pinned as-scanned at 1000 with the dropped zero noted, the change-time in halves and the predominance ladder with its printed leading zeros all ride as pinned, noted never silent. The registry ground truth carried forward unchanged from the R924 re-measure: 1313 loaded / 1338 base / 25 never-load."
+ },
+ "switches": [],
+ "chains": [],
+ "file_patches": [],
+ "data_files": [],
+ "consts": [
+  {
+   "name": "f14IssueFourteenBoxes",
+   "value": 2,
+   "comment": "the issue-14 gap report carries two boxes (report 014)"
+  },
+  {
+   "name": "f14IssueFourteenChains",
+   "value": 2,
+   "comment": "the issue-14 walk pinned two chains - the Name That Monster Contest #1 winners and the Rihn lycanthropy variant, both in the R925 opener"
+  },
+  {
+   "name": "f14IssueFourteenRounds",
+   "value": 2,
+   "comment": "the issue-14 walk ran two rounds - the R925 opener carrying both chains and this R926 flip, the issue-11 two-round pattern"
+  },
+  {
+   "name": "f14IssueThirteenClosed",
+   "value": 1,
+   "comment": "the issue-13 report complete at 2 closed / 0 open since R924"
+  },
+  {
+   "name": "f14IssueTwelveClosed",
+   "value": 1,
+   "comment": "the issue-12 report complete at 2 closed / 0 open since R921"
+  },
+  {
+   "name": "f14IssueElevenClosed",
+   "value": 1,
+   "comment": "the issue-11 report complete at 1 closed / 0 open since R918"
+  },
+  {
+   "name": "f14IssueTenClosed",
+   "value": 1,
+   "comment": "the issue-10 report complete at 2 closed / 0 open since R916"
+  },
+  {
+   "name": "f14IssueNineClosed",
+   "value": 1,
+   "comment": "the issue-9 report complete at 1 closed / 0 open since R913"
+  },
+  {
+   "name": "f14IssueEightClosed",
+   "value": 1,
+   "comment": "the issue-8 report complete at 1 closed / 0 open since R911"
+  },
+  {
+   "name": "f14IssueSevenClosed",
+   "value": 1,
+   "comment": "the issue-7 report complete at 1 closed / 0 open since R909"
+  },
+  {
+   "name": "f14IssueSixClosed",
+   "value": 1,
+   "comment": "the issue-6 report complete at 1 closed / 0 open since R907"
+  },
+  {
+   "name": "f14RegistryLoaded",
+   "value": 1313,
+   "comment": "the registry ground truth re-measured at the R922 battery line - 1313 defs loaded - carried forward unchanged, the battery line the only ground truth"
+  },
+  {
+   "name": "f14RegistryBaseLua",
+   "value": 1338,
+   "comment": "the registry ground truth - 1338 base lua files, carried forward unchanged since the R924 re-measure"
+  },
+  {
+   "name": "f14RegistryNeverLoad",
+   "value": 25,
+   "comment": "the registry ground truth - 25 long-standing never-load errors (1313 loaded + 25 never-load = 1338 base)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "f14WalkSixComplete",
+   "value": true,
+   "comment": "the Dragon issue-6 walk complete since R907"
+  },
+  {
+   "name": "f14WalkSevenComplete",
+   "value": true,
+   "comment": "the Dragon issue-7 walk complete since R909"
+  },
+  {
+   "name": "f14WalkEightComplete",
+   "value": true,
+   "comment": "the Dragon issue-8 walk complete since R911"
+  },
+  {
+   "name": "f14WalkNineComplete",
+   "value": true,
+   "comment": "the Dragon issue-9 walk complete since R913"
+  },
+  {
+   "name": "f14WalkTenComplete",
+   "value": true,
+   "comment": "the Dragon issue-10 walk complete since R916"
+  },
+  {
+   "name": "f14WalkElevenComplete",
+   "value": true,
+   "comment": "the Dragon issue-11 walk complete since R918"
+  },
+  {
+   "name": "f14WalkTwelveComplete",
+   "value": true,
+   "comment": "the Dragon issue-12 walk complete since R921"
+  },
+  {
+   "name": "f14WalkThirteenComplete",
+   "value": true,
+   "comment": "the Dragon issue-13 walk complete since R924"
+  },
+  {
+   "name": "f14WalkFourteenComplete",
+   "value": true,
+   "comment": "the Dragon issue-14 walk complete at this flip - the contest winners and the lycanthropy variant chains were the engine-relevant ink, the SPACE MARINES article, the M-A Variant, the Total Person charts, the reviews, the Rust Monster interview, the Monty Haul satire, the editorial, the comics and the ads scoped out per the go-ahead adjudication"
+  }
+ ],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['f14IssueFourteenBoxes']() != 2 or m['f14IssueFourteenChains']() != 2 or m['f14IssueFourteenRounds']() != 2 or m['f14IssueThirteenClosed']() != 1 or m['f14IssueTwelveClosed']() != 1",
+   "note": "the walk census - two issue-14 boxes, two chains across two rounds, the issue-13 and issue-12 reports complete"
+  },
+  {
+   "expr": "m['f14IssueElevenClosed']() != 1 or m['f14IssueTenClosed']() != 1 or m['f14IssueNineClosed']() != 1 or m['f14IssueEightClosed']() != 1 or m['f14IssueSevenClosed']() != 1 or m['f14IssueSixClosed']() != 1 or m['f14WalkFourteenComplete']() != 1 or m['f14WalkThirteenComplete']() != 1",
+   "note": "the earlier reports complete since R918, R916, R913, R911, R909 and R907, the issue-14 and issue-13 walks complete"
+  },
+  {
+   "expr": "m['f14RegistryLoaded']() != 1313 or m['f14RegistryBaseLua']() != 1338 or m['f14RegistryNeverLoad']() != 25 or m['f14WalkSixComplete']() != 1 or m['f14WalkElevenComplete']() != 1",
+   "note": "the registry ground truth carried forward - 1313 loaded / 1338 base / 25 never-load, the issue-6 and issue-11 walks complete"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the issue-14 walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "f14IssueFourteenBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueFourteenChains"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueFourteenRounds"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueThirteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueTwelveClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueElevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueTenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueNineClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueEightClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueSevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f14IssueSixClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f14RegistryLoaded"
+   },
+   {
+    "kind": "const",
+    "name": "f14RegistryBaseLua"
+   },
+   {
+    "kind": "const",
+    "name": "f14RegistryNeverLoad"
+   },
+   {
+    "kind": "bool",
+    "name": "f14WalkSixComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f14WalkSevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f14WalkEightComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f14WalkNineComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f14WalkTenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f14WalkElevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f14WalkTwelveComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f14WalkThirteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f14WalkFourteenComplete"
+   }
+  ]
+ },
+ "inline_count": 23
+}

@@ -27978,6 +27978,40 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   accessory-dragon-magazine-012 holds issues
   7-14. Standing by for the next direction. WAIT
   FOR GO.
+  - R925 LANDED (be09d6d, issue-14 opener, prefix
+  lyc, 88 inline, two chains in one round, the
+  issue-11 walk pattern): the Name That Monster
+  Contest #1 winners folio 3 - the slipped-13
+  harvest in full, Jarnkung (HD cell =) bar
+  garble resolved at full-res to 5), Cursed
+  Crimson Crawler (HD prose 3d8+1d4 = 3 1/2, the
+  fraction garbled to 3% in OCR, pinned as dice +
+  7-halves), Ulik (clean, hypnotic eyes 90/50,
+  tail mace 10-40 blows, regrow 6-8 months) -
+  plus the Rihn lycanthropy variant folios 29-32
+  (PDF 31, 33-34): 50% bite catch, 30-60 day
+  onset, 95% first-change panic, 10% subjugation,
+  5% sleep revert, 2500 XP will-revert, the 10x8
+  experience grid (row-4 XP prints 1000 vs the
+  worked example 10000 - as-scanned, dropped zero
+  noted; predominance DECREASING 10-01 with
+  leading zeros; change-time in halves),
+  wereshape limits, class rulings, cures. KEY
+  FOLIO FACT: print folio = PDF page MINUS TWO in
+  issue 14 (verified at five TOC alignments: Rust
+  Monster 14=16, Monty Haul 21=23, Total Person
+  24=26, Wormy 26=28, Finieous 27=29). Report 014
+  authored pre-flip (2 boxes open, both close at
+  the flip); 36 transcripts landed at
+  extract/dragon/014. IDEAS USABLE noted: the
+  Rust Monster polymorphed-NPC 05% rule. Brawling
+  sequel STILL not printing (watch TD 15); TD-15
+  teaser: the Green Magician, Dragon Magic.
+  Census 847->848; rverify GREEN 160 mutants 0
+  missed; round-trip 217660 bytes md5
+  54c6df4d31fa17a361d45d2fac872b70. Next: R926
+  pure flip closing both boxes (2 closed 0 open,
+  the two-chain walk complete). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

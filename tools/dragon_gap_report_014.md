@@ -57,10 +57,10 @@ Magic.
 
 ## Boxes
 
-- [ ] **The Name That Monster Contest #1
+- [x] **The Name That Monster Contest #1
   winners** (folio 3) - the issue-14 opener round,
   chain one
-- [ ] **The Gregory Rihn lycanthropy variant**
+- [x] **The Gregory Rihn lycanthropy variant**
   (folios 29-32) - the issue-14 opener round,
   chain two
 
