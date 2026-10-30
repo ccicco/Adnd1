@@ -27897,6 +27897,31 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   brawling long-term-effects sequel stay
   unharvested. Standing by for the next
   direction. WAIT FOR GO.
+  - R922 LANDED (7b7ae36, issue-13 opener part one,
+  prefix dgm, 62 inline): the Shlump da Orc giant
+  physics article folios 5-7 (size grid 26 rows
+  in quarter-ton units, pounds ladder anchored by
+  the 30-foot 23,660 worked example, torso inches
+  consistent with the .2647 factor, chest feet
+  sub-column riding transcript) + the Jon Pickens
+  demon generation folio 9 (power grid levels
+  I-VI over ability levels 1-6, dashes as zero,
+  prince 19th-level caps, 50-percent artifact);
+  materials density grid in tenths with the djvu
+  geometry reconstruction and vision provenance
+  notes, the caught Quartz 165-165 and Rubber
+  740/690 corrections; data 33 files = report 013
+  (2 boxes pre-flip, full scoped-out prose) + 32
+  transcripts byte-identical; census 844->845;
+  rverify GREEN 343 mutants 0 missed, round-trip
+  190369 bytes md5
+  cddc92b2b910c432ea30c2f2dec61714. Next: R923
+  part two the Japanese Mythos by Jerome
+  Arkenberg folios 11-15
+  (gods/heroes/creatures/treasures data
+  extracted, garble handling same as R920, flips
+  report 013 box 1), then R924 pure flip closing
+  box 2. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

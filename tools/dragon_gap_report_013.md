@@ -56,7 +56,7 @@ the Ulik) with the full stats and loot deferred to TD
 
 ## Boxes
 
-- [ ] **The Shlump da Orc giant physics article and the
+- [x] **The Shlump da Orc giant physics article and the
   Jon Pickens demon generation article** (folios 5-7,
   9) - the issue-13 opener round, part one
 - [ ] **The Japanese Mythos** (folios 11-15) - the

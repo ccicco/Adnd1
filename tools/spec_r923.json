@@ -1,0 +1,1148 @@
+{
+ "round": 923,
+ "title": "The Dragon issue-13 opener part two: The Japanese Mythos by Jerome Arkenberg",
+ "prefix": "kmy",
+ "census_before": 845,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R922 LANDED (7b7ae36, issue-13 opener part one,",
+ "prev_record": [
+  "  - R922 LANDED (7b7ae36, issue-13 opener part one,",
+  "  prefix dgm, 62 inline): the Shlump da Orc giant",
+  "  physics article folios 5-7 (size grid 26 rows",
+  "  in quarter-ton units, pounds ladder anchored by",
+  "  the 30-foot 23,660 worked example, torso inches",
+  "  consistent with the .2647 factor, chest feet",
+  "  sub-column riding transcript) + the Jon Pickens",
+  "  demon generation folio 9 (power grid levels",
+  "  I-VI over ability levels 1-6, dashes as zero,",
+  "  prince 19th-level caps, 50-percent artifact);",
+  "  materials density grid in tenths with the djvu",
+  "  geometry reconstruction and vision provenance",
+  "  notes, the caught Quartz 165-165 and Rubber",
+  "  740/690 corrections; data 33 files = report 013",
+  "  (2 boxes pre-flip, full scoped-out prose) + 32",
+  "  transcripts byte-identical; census 844->845;",
+  "  rverify GREEN 343 mutants 0 missed, round-trip",
+  "  190369 bytes md5",
+  "  cddc92b2b910c432ea30c2f2dec61714. Next: R923",
+  "  part two the Japanese Mythos by Jerome",
+  "  Arkenberg folios 11-15",
+  "  (gods/heroes/creatures/treasures data",
+  "  extracted, garble handling same as R920, flips",
+  "  report 013 box 1), then R924 pure flip closing",
+  "  box 2. WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/dgm.h\"  // R922: the Dragon issue-13 opener part one, the Shlump da Orc giant physics article and the Jon Pickens demon generation article",
+ "include_comment": "the Dragon issue-13 opener part two, The Japanese Mythos by Jerome Arkenberg",
+ "header_file": "rules/kmy.h",
+ "audit_file": "rules/audits/r923_batch.h",
+ "audit_label": "R923 issue-13 opener part two audit",
+ "audit_anchor": "#include \"rules/audits/r922_batch.h\"  // R922: R922 issue-13 opener audit",
+ "audit_comment": "THE DRAGON ISSUE-13 OPENER ROUND, PART TWO - The Japanese Mythos by Jerome Arkenberg (folios 11-15), the direct sibling of the R920 Persian Mythos chain, a GD&H-compatible D&D-statted mythos. THE GODS: the nine Shinto gods (Amaterasu, Tsukiyomi, Susano, Izanagi and Izanami, Ryujin, Hachiman, Inari, Kwannon, Suka-Na-Biko or Momotaro), the Seven Gods of Luck on their common 150-hit-point 7th-level block with Bishamon the Lord 10th exception, and the eleven Buddhist deities on the Patriarch ladder - sixteen see-below magic cells ride the -1 sentinel with the census, the Aizen-Myoo armor class prints the bar garble riding the sentinel, and the Ryujin armor class minus 1 pins as a const with the grid cell riding the sentinel, the genuine clean value colliding with the sentinel mark (the Yig-split precedent of R920), and the Shaka-Nyorai fighter cell prints the Sth garble (the 5 of 5th lost to the print), pinned 5 noted as scanned, never silent; the eleven prose-only Other Shinto Gods ride the transcript. THE CREATURES: the Kappa with the head-water, promise and single-combat rules, the Tengu colony with its king, the Oni, and the Yuki-Onna with the see-below magic cell on the sentinel. THE HEROES: fourteen heroes on the common warrior block and the four holy men - the seven strength cells print fraction garbles (1899, 1850, 1865, 1860, 1875, 1880, 1845, all 18-slash) riding the sentinel with the census, the Kiyomori 18 and the Light-of-Fire and Shade-of-Fire 17 pinning clean, the Light-of-Fire armor class printing the bar garble on the sentinel, the Kobo Daishi fighter cell printing the Sth garble pinned 5 noted, and the Nil magic and psionic cells pinning zero; the Hachiman +3 sword at 24-48 and the never-missing 7-12 arrows, the Benkei hundred-men strength, the Yoshi-Iye +2 and Tametomo +4 arrows. THE TREASURES: the six pieces with the Imperial Sword a Dancing Sword lost at Dannoura and the Sakaki branches required. THE FLIP: the part-one box in tools/dragon_gap_report_013.md went [x] - 1 closed, 1 open, the closing round to follow.",
+ "gap_report": "tools/dragon_gap_report_013.md",
+ "gap_census": {
+  "closed": 1,
+  "open": 1
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The Shlump da Orc giant physics article and the\n  Jon Pickens demon generation article** (folios 5-7,\n  9) - the issue-13 opener round, part one",
+   "to": "- [x] **The Shlump da Orc giant physics article and the\n  Jon Pickens demon generation article** (folios 5-7,\n  9) - the issue-13 opener round, part one",
+   "note": "the issue-13 part-one box"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-13 opener part two - The Japanese Mythos by Jerome Arkenberg (folios 11-15): the direct sibling of the R920 Persian Mythos chain, GD&H-compatible",
+  "provenance": "Pinned from The Dragon Vol. II No. 7 (April 1978), the archive.org scan voice (single-voice: no chat-side upload cross-check exists for issue 13; the source lives in the archive.org item accessory-dragon-magazine-012, file Accessory - Dragon Magazine #013_djvu.xml). PRINT FOLIO = PDF PAGE, verified at the TOC alignments (the Japanese Mythos at 11, the silly songs at 16-17). The transcripts ride extract/dragon/013/p011 through p015, landed at R922; the article CHAIN is the ink unit, not the folio.",
+  "sentinel": "Print quirks pinned AS SCANNED, noted never silent: the sixteen see-below magic cells of the Shinto and Luck gods and the Yuki-Onna ride the -1 sentinel with the census; the Aizen-Myoo and Light-of-Fire and Shade-of-Fire armor-class cells print bar garbles and ride the sentinel, and the Ryujin armor class minus 1 pins as the kmyRyujinAc const with the grid cell riding the sentinel, the genuine clean value colliding with the sentinel mark; the hero strength cells print fraction garbles - Kintaro 1899 (18/99), Raiko 1850 (18/50), Tawara Toda 1865 (18/65), Benkei 1860 (18/60), Yoshitsune 1875 (18/75), Yoshi-Iye 1880 (18/80), Tametomo 1845 (18/45) - all riding the sentinel with the census, the clean stats pinning clean; the Shaka-Nyorai and Kobo Daishi fighter cells print the Sth garble (the 5 of 5th lost to the print), pinned 5 noted as scanned; the Nil magic and psionic cells pin zero; the Kannon-Bosatsu move prints 14 without the inch mark, noted as scanned; the Wizard-versus-Patriarch magic split rides the column comments; the eleven prose-only Other Shinto Gods ride the transcript. The one-visual-check precedent of R919 (the full-res scan plus the djvu word geometry) stands for any future cell dispute."
+ },
+ "switches": [],
+ "chains": [],
+ "file_patches": [],
+ "data_files": [],
+ "consts": [
+  {
+   "name": "kmyGodRows",
+   "value": 27,
+   "comment": "the Japanese Mythos god grid - twenty-seven rows: the nine Shinto gods, the Seven Gods of Luck and the eleven Buddhist deities (folios 11-12)"
+  },
+  {
+   "name": "kmyShintoGods",
+   "value": 9,
+   "comment": "the nine Shinto gods with stat blocks - Amaterasu, Tsukiyomi, Susano, Izanagi and Izanami, Ryujin, Hachiman, Inari, Kwannon and Suka-Na-Biko or Momotaro (folios 11)"
+  },
+  {
+   "name": "kmySevenGodsOfLuck",
+   "value": 7,
+   "comment": "the Seven Gods of Luck - Hotei, Jurojin, Fukurokujo, Bishamon, Daikoku, Ebisu and Benten, six of them on the common 7th-level block with Bishamon the Lord 10th exception (folios 11-12)"
+  },
+  {
+   "name": "kmyBuddhistGods",
+   "value": 11,
+   "comment": "the eleven Buddhist deities - Shaka-Nyorai, Yakushi-Nyorai, Amida-Nyorai, Dainichi-Nyorai, Miroku-Bosatsu, Kannon-Bosatsu, Monju-Bosatsu, Fugen-Bosatsu, Jizo-Bosatsu, Fudo-Myoo and Aizen-Myoo (folio 12)"
+  },
+  {
+   "name": "kmyOtherShintoGods",
+   "value": 11,
+   "comment": "the eleven prose-only Other Shinto Gods - Fujin, Kosensei, Oh-Kuni-Nushi, Raiden, Shi-Tenno, Shoki, Tenjin, Uke-Mochi, Umi-Bozo, Uzume and Yama-Uba, riding the transcript, never stat blocks (folios 12-13)"
+  },
+  {
+   "name": "kmyCreatureRows",
+   "value": 4,
+   "comment": "the creature grid - four rows: the Kappa, the Tengu, the Oni and Yuki-Onna (folio 13)"
+  },
+  {
+   "name": "kmyHeroRows",
+   "value": 14,
+   "comment": "the hero grid - fourteen rows: Issun Boshi, Kintaro, Raiko, Tawara Toda, Benkei, Yoshitsune, Light-of-Fire and Shade-of-Fire, Yoshi-Iye, Kiyomori, Tametomo, Shotoku Daishi, En No Shokaku, Kobo Daishi and Nichiren (folios 13-15)"
+  },
+  {
+   "name": "kmySusanoJewels",
+   "value": 2,
+   "comment": "Susano the Storm God carries two jewels, one producing hail and the other lightning (folio 11)"
+  },
+  {
+   "name": "kmyHachimanSwordPlus",
+   "value": 3,
+   "comment": "Hachiman's sword is +3 to hit (folio 11)"
+  },
+  {
+   "name": "kmyHachimanSwordDamageMin",
+   "value": 24,
+   "comment": "the Hachiman sword does 24-48 points of damage, the floor (folio 11)"
+  },
+  {
+   "name": "kmyHachimanSwordDamageMax",
+   "value": 48,
+   "comment": "the Hachiman sword damage ceiling, 24-48 (folio 11)"
+  },
+  {
+   "name": "kmyHachimanArrowDamageMin",
+   "value": 7,
+   "comment": "the Hachiman magical arrows do 7-12 points of damage, the floor (folio 11)"
+  },
+  {
+   "name": "kmyHachimanArrowDamageMax",
+   "value": 12,
+   "comment": "the Hachiman arrow damage ceiling, 7-12 (folio 11)"
+  },
+  {
+   "name": "kmyOniEyes",
+   "value": 3,
+   "comment": "the Oni have three eyes, three toes and three fingers (folio 13)"
+  },
+  {
+   "name": "kmyBenkeiHeightFeet",
+   "value": 10,
+   "comment": "Benkei is 10 feet tall (folio 14)"
+  },
+  {
+   "name": "kmyBenkeiStrengthOfMen",
+   "value": 100,
+   "comment": "Benkei has the strength of a hundred men (folio 14)"
+  },
+  {
+   "name": "kmyYoshiiyeArrowPlus",
+   "value": 2,
+   "comment": "the Yoshi-Iye arrows are +2 to hit (folio 15)"
+  },
+  {
+   "name": "kmyTametomoArrowPlus",
+   "value": 4,
+   "comment": "the Tametomo arrows are +4 to hit (folio 15)"
+  },
+  {
+   "name": "kmyRyujinAc",
+   "value": -1,
+   "comment": "the Ryujin armor class minus 1 pins as a const with the grid cell riding the sentinel, the genuine clean value colliding with the -1 sentinel mark, the Yig-split precedent of R920 (folio 11)"
+  },
+  {
+   "name": "kmyTreasures",
+   "value": 6,
+   "comment": "the six treasures - the Tide Flowing and Tide Ebbing Jewels, the Jewels of Hail and Lightning, the Imperial Jewels, the Imperial Mirror, the Imperial Sword and the Sakaki tree (folio 15)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "kmyShintoBuddhistMixture",
+   "value": true,
+   "comment": "Japanese mythology is a mixture of Buddhism and Shinto, the pantheons partly integrated since the late 6th Century (folio 11)"
+  },
+  {
+   "name": "kmyKamiInAllThings",
+   "value": true,
+   "comment": "Shinto holds that everything mineral, animal and vegetable has its own kami or spirit (folio 11)"
+  },
+  {
+   "name": "kmySusanoJewelsOfHailAndLightning",
+   "value": true,
+   "comment": "the two Susano jewels produce hail and lightning (folio 11)"
+  },
+  {
+   "name": "kmyHachimanArrowsNeverMiss",
+   "value": true,
+   "comment": "Hachiman's magical arrows never miss (folio 11)"
+  },
+  {
+   "name": "kmyInariFoxMessenger",
+   "value": true,
+   "comment": "the fox is the messenger of Inari, who appears as a woman and a fox as well as a bearded man (folio 11)"
+  },
+  {
+   "name": "kmyKappaPowersNeedHeadWater",
+   "value": true,
+   "comment": "the Kappa lose all their powers if the water in the head indentation is spilled (folio 13)"
+  },
+  {
+   "name": "kmyKappaAlwaysKeepsPromise",
+   "value": true,
+   "comment": "the Kappa always keep a promise and are extremely polite, often bowing and thereby spilling the head water (folio 13)"
+  },
+  {
+   "name": "kmyKappaChallengeMustBeAccepted",
+   "value": true,
+   "comment": "a human challenged to single combat with a Kappa must accept (folio 13)"
+  },
+  {
+   "name": "kmyOniFlyButSeldomDo",
+   "value": true,
+   "comment": "the Oni can fly but seldom do (folio 13)"
+  },
+  {
+   "name": "kmyTenguColonyWithKing",
+   "value": true,
+   "comment": "the Tengu live in colonies with a King Tengu and a messenger Tengu, good swordsmen and mischievous (folio 13)"
+  },
+  {
+   "name": "kmyYukiOnnaLullsToSleepDeath",
+   "value": true,
+   "comment": "the Yuki-Onna appears in snowstorms to lull men to sleep and thus death (folio 13)"
+  },
+  {
+   "name": "kmyBenkeiStrengthOfHundredMen",
+   "value": true,
+   "comment": "Benkei has the strength of a hundred men and runs as fast as the wind (folio 14)"
+  },
+  {
+   "name": "kmyYoshitsuneOnlyToDefeatBenkei",
+   "value": true,
+   "comment": "Yoshitsune was the only swordsman to defeat Benkei (folio 14)"
+  },
+  {
+   "name": "kmyKiyomoriTairaRivalOfMinamoto",
+   "value": true,
+   "comment": "Kiyomori was the head of the Taira clan, the arch-rivals of the Minamoto Clan (folio 15)"
+  },
+  {
+   "name": "kmyTideJewelsPriceless",
+   "value": true,
+   "comment": "the Tide Flowing and Tide Ebbing Jewels, both priceless, control the ebbing and flowing of the tide (folio 15)"
+  },
+  {
+   "name": "kmyImperialSwordIsDancing",
+   "value": true,
+   "comment": "the Imperial Sword found in the tail of a Dragon by Susano is a Dancing Sword (folio 15)"
+  },
+  {
+   "name": "kmyImperialSwordLostAtDannoura",
+   "value": true,
+   "comment": "the Imperial Sword fell into the Sea during the Battle of Dannoura and has never been found (folio 15)"
+  },
+  {
+   "name": "kmySakakiBranchesRequired",
+   "value": true,
+   "comment": "the Sakaki tree is sacred to Shinto, its branches required when calling upon the heroes of Japan (folio 15)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "kmyGodStat",
+   "tag": "JG",
+   "count": "kmyGodRows",
+   "sentinel": -1,
+   "sentinel_census": [
+    2,
+    0,
+    0,
+    16,
+    0,
+    0
+   ],
+   "audit_comment": "the Japanese Mythos god grid - the sixteen see-below magic cells of the Shinto and Luck gods ride the -1 sentinel with the census and the Aizen-Myoo armor class prints the bar garble riding the sentinel; the Ryujin armor class minus 1 pins as a const with the grid cell riding the sentinel, the genuine clean value colliding with the sentinel mark, the Yig-split precedent of R920; the Shaka-Nyorai fighter cell prints the Sth garble (the 5 of 5th lost to the print) and pins 5 noted as scanned, never silent (folios 11-12)",
+   "cols": [
+    "kmyGodAc",
+    "kmyGodMove",
+    "kmyGodHp",
+    "kmyGodMagicLvl",
+    "kmyGodFightLvl",
+    "kmyGodPsiClass"
+   ],
+   "col_comments": [
+    "the armor class - Amaterasu, Tsukiyomi and Susano minus 2, Ryujin minus 1, Izanagi and Izanami, Hachiman and the Luck gods 2, Kwannon 0, Suka-Na-Biko 3, the Buddhist deities 0 through 4; the Aizen-Myoo cell prints the bar garble and rides the sentinel, and the Ryujin cell rides the sentinel with the genuine minus 1 pinning as the kmyRyujinAc const, the collision noted (folios 11-12)",
+    "the move in inches - the Shinto trio 18, Izanagi and Izanami, Hachiman, Monju, Fugen and Jizo 12, Ryujin, Inari and the Luck gods 15, Kwannon 16, Suka-Na-Biko 10, the Buddhist deities 14 except Monju, Fugen and Jizo 12; the Kannon-Bosatsu cell prints 14 without the inch mark, noted as scanned (folios 11-12)",
+    "the hit points - Amaterasu 300, Tsukiyomi 275, Susano 290, Izanagi and Izanami 200, Ryujin 250, Hachiman 200, Inari and Kwannon 175, Suka-Na-Biko 175, the Luck gods 150, the Buddhist deities 275 through 200 with Dainichi 300 (folios 11-12)",
+    "the magic level - the sixteen Shinto and Luck god cells print See Below and ride the sentinel; the Buddhist deities print Patriarch levels pinning clean - Shaka 20th, Yakushi 15th, Amida 17th, Dainichi 23rd, Miroku and Kannon 10th, Monju, Fugen and Jizo 9th, Fudo 13th, Aizen-Myoo 14th (folios 11-12)",
+    "the fighter level - the Shinto trio Lord 15th, Izanagi and Izanami, Inari and Bishamon Lord 10th, Hachiman Lord 15th, Kwannon and the Luck gods 7th except Bishamon, Suka-Na-Biko Lord 12th, the Buddhist deities 4th through 12th; the Shaka-Nyorai cell prints the Sth garble (the 5 of 5th lost to the print) and pins 5 noted as scanned (folios 11-12)",
+    "the psionic class - the Shinto and Luck gods Class 6, Shaka and Amida Class 1, Yakushi Class 2, Dainichi Class 6, Miroku, Kannon, Monju, Fugen and Jizo Class 4, Fudo Class 5, Aizen-Myoo Class 2 (folios 11-12)"
+   ],
+   "data": [
+    [
+     -2,
+     18,
+     300,
+     -1,
+     15,
+     6
+    ],
+    [
+     -2,
+     18,
+     275,
+     -1,
+     15,
+     6
+    ],
+    [
+     -2,
+     18,
+     290,
+     -1,
+     15,
+     6
+    ],
+    [
+     2,
+     12,
+     200,
+     -1,
+     10,
+     6
+    ],
+    [
+     -1,
+     15,
+     250,
+     -1,
+     15,
+     6
+    ],
+    [
+     2,
+     12,
+     200,
+     -1,
+     15,
+     6
+    ],
+    [
+     2,
+     15,
+     175,
+     -1,
+     10,
+     6
+    ],
+    [
+     0,
+     16,
+     175,
+     -1,
+     7,
+     6
+    ],
+    [
+     3,
+     10,
+     175,
+     -1,
+     12,
+     6
+    ],
+    [
+     2,
+     15,
+     150,
+     -1,
+     7,
+     6
+    ],
+    [
+     2,
+     15,
+     150,
+     -1,
+     7,
+     6
+    ],
+    [
+     2,
+     15,
+     150,
+     -1,
+     7,
+     6
+    ],
+    [
+     2,
+     15,
+     150,
+     -1,
+     10,
+     6
+    ],
+    [
+     2,
+     15,
+     150,
+     -1,
+     7,
+     6
+    ],
+    [
+     2,
+     15,
+     150,
+     -1,
+     7,
+     6
+    ],
+    [
+     2,
+     15,
+     150,
+     -1,
+     7,
+     6
+    ],
+    [
+     2,
+     14,
+     275,
+     20,
+     5,
+     1
+    ],
+    [
+     2,
+     14,
+     275,
+     15,
+     5,
+     2
+    ],
+    [
+     2,
+     14,
+     275,
+     17,
+     5,
+     1
+    ],
+    [
+     0,
+     14,
+     300,
+     23,
+     6,
+     6
+    ],
+    [
+     4,
+     14,
+     275,
+     10,
+     5,
+     4
+    ],
+    [
+     4,
+     14,
+     225,
+     10,
+     4,
+     4
+    ],
+    [
+     4,
+     12,
+     225,
+     9,
+     4,
+     4
+    ],
+    [
+     4,
+     12,
+     225,
+     9,
+     4,
+     4
+    ],
+    [
+     4,
+     12,
+     225,
+     9,
+     4,
+     4
+    ],
+    [
+     2,
+     14,
+     225,
+     13,
+     12,
+     5
+    ],
+    [
+     -1,
+     14,
+     200,
+     14,
+     7,
+     2
+    ]
+   ]
+  },
+  {
+   "name": "kmyCreatureStat",
+   "tag": "JC",
+   "count": "kmyCreatureRows",
+   "sentinel": -1,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "audit_comment": "the creature grid - the Kappa, Tengu and Oni print Wizard magic levels pinning clean and the Yuki-Onna magic cell prints See Below riding the -1 sentinel with the census, noted never silent (folio 13)",
+   "cols": [
+    "kmyCreatureAc",
+    "kmyCreatureMove",
+    "kmyCreatureHp",
+    "kmyCreatureMagicLvl",
+    "kmyCreatureFightLvl",
+    "kmyCreaturePsiClass"
+   ],
+   "col_comments": [
+    "the armor class - the Kappa, Tengu and Oni 3, the Yuki-Onna 2 (folio 13)",
+    "the move in inches - the Kappa 10, the Tengu 14, the Oni 10, the Yuki-Onna 15 (folio 13)",
+    "the hit points - the Kappa, Tengu and Oni 100, the Yuki-Onna 175 (folio 13)",
+    "the magic level - the Kappa Wizard 14th, the Tengu and Oni Wizard 16th; the Yuki-Onna cell prints See Below and rides the sentinel (folio 13)",
+    "the fighter level - the Kappa, Tengu and Oni Lord 10th, the Yuki-Onna 7th (folio 13)",
+    "the psionic class - all four creatures Class 6 (folio 13)"
+   ],
+   "data": [
+    [
+     3,
+     10,
+     100,
+     14,
+     10,
+     6
+    ],
+    [
+     3,
+     14,
+     100,
+     16,
+     10,
+     6
+    ],
+    [
+     3,
+     10,
+     100,
+     16,
+     10,
+     6
+    ],
+    [
+     2,
+     15,
+     175,
+     -1,
+     7,
+     6
+    ]
+   ]
+  },
+  {
+   "name": "kmyHeroStat",
+   "tag": "JH",
+   "count": "kmyHeroRows",
+   "sentinel": -1,
+   "sentinel_census": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "audit_comment": "the hero grid - the Nil magic and psionic cells pin zero and the Light-of-Fire and Shade-of-Fire armor class prints the bar garble riding the -1 sentinel with the census; the Kobo Daishi fighter cell prints the Sth garble (the 5 of 5th lost to the print) and pins 5 noted as scanned, never silent (folios 13-15)",
+   "cols": [
+    "kmyHeroAc",
+    "kmyHeroMove",
+    "kmyHeroHp",
+    "kmyHeroMagicLvl",
+    "kmyHeroFightLvl",
+    "kmyHeroPsiClass"
+   ],
+   "col_comments": [
+    "the armor class - Issun Boshi minus 2, the warrior heroes 2, the four holy men 9; the Light-of-Fire and Shade-of-Fire cell prints the bar garble and rides the sentinel (folios 13-15)",
+    "the move in inches - Issun Boshi 5, Benkei 14, the rest 12 (folios 13-15)",
+    "the hit points - Issun Boshi 50, Kintaro through Tametomo 80 except Benkei 100 and Yoshitsune 90, Shotoku Daishi 50, En No Shokaku 60, Kobo Daishi and Nichiren 70 (folios 13-15)",
+    "the magic level - the warrior heroes Nil as zero; Shotoku Daishi Patriarch 10th, En No Shokaku Wizard 12th, Kobo Daishi and Nichiren Patriarch 14th, the Wizard-versus-Patriarch split riding this comment (folios 14-15)",
+    "the fighter level - Issun Boshi 7th, the warrior heroes 10th except Benkei 12th, Yoshitsune 11th and Yamamoto Date 11th, the holy men 4th except Kobo Daishi and Nichiren 5th; the Kobo Daishi cell prints the Sth garble (the 5 of 5th lost to the print) and pins 5 noted as scanned (folios 13-15)",
+    "the psionic class - every hero Nil as zero (folios 13-15)"
+   ],
+   "data": [
+    [
+     -2,
+     5,
+     50,
+     0,
+     7,
+     0
+    ],
+    [
+     2,
+     12,
+     80,
+     0,
+     10,
+     0
+    ],
+    [
+     2,
+     12,
+     80,
+     0,
+     10,
+     0
+    ],
+    [
+     2,
+     12,
+     80,
+     0,
+     10,
+     0
+    ],
+    [
+     2,
+     14,
+     100,
+     0,
+     12,
+     0
+    ],
+    [
+     2,
+     12,
+     90,
+     0,
+     11,
+     0
+    ],
+    [
+     -1,
+     12,
+     80,
+     0,
+     10,
+     0
+    ],
+    [
+     2,
+     12,
+     80,
+     0,
+     10,
+     0
+    ],
+    [
+     2,
+     12,
+     80,
+     0,
+     10,
+     0
+    ],
+    [
+     2,
+     12,
+     80,
+     0,
+     10,
+     0
+    ],
+    [
+     9,
+     12,
+     50,
+     10,
+     4,
+     0
+    ],
+    [
+     9,
+     12,
+     60,
+     12,
+     4,
+     0
+    ],
+    [
+     9,
+     12,
+     70,
+     14,
+     5,
+     0
+    ],
+    [
+     9,
+     12,
+     70,
+     14,
+     5,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "kmyHeroAbility",
+   "tag": "JA",
+   "count": "kmyHeroRows",
+   "sentinel": -1,
+   "sentinel_census": [
+    7,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "audit_comment": "the hero ability lines - the seven strength cells print fraction garbles (1899, 1850, 1865, 1860, 1875, 1880, 1845, all 18-slash) and ride the -1 sentinel with the census, the Kiyomori strength 18 and the Light-of-Fire and Shade-of-Fire strength 17 pinning clean, noted as scanned never silent (folios 13-15)",
+   "cols": [
+    "kmyHeroStr",
+    "kmyHeroInt",
+    "kmyHeroWis",
+    "kmyHeroCon",
+    "kmyHeroDex",
+    "kmyHeroCha"
+   ],
+   "col_comments": [
+    "the strength - Issun Boshi 12, Light-of-Fire and Shade-of-Fire 17, Kiyomori 18, Shotoku Daishi 8, En No Shokaku 7, Kobo Daishi 10, Nichiren 7; Kintaro prints 1899 (18/99), Raiko 1850 (18/50), Tawara Toda 1865 (18/65), Benkei 1860 (18/60), Yoshitsune 1875 (18/75), Yoshi-Iye 1880 (18/80) and Tametomo 1845 (18/45), all fraction garbles riding the sentinel as-scanned (folios 13-15)",
+    "the intelligence - Issun Boshi 14, Kintaro 12, Raiko 17, Tawara Toda 14, Benkei 13, Yoshitsune 15, Light-of-Fire and Shade-of-Fire 14, Yoshi-Iye 12, Kiyomori 14, Tametomo 15, Shotoku Daishi 18, En No Shokaku 18, Kobo Daishi 17, Nichiren 15 (folios 13-15)",
+    "the wisdom - Issun Boshi 13, Kintaro 17, Raiko 13, Tawara Toda 12, Benkei 10, Yoshitsune 12, Light-of-Fire and Shade-of-Fire 14, Yoshi-Iye 12, Kiyomori 10, Tametomo 15, Shotoku Daishi 18, En No Shokaku 12, Kobo Daishi 18, Nichiren 18 (folios 13-15)",
+    "the constitution - Issun Boshi 18, Kintaro 15, Raiko 16, Tawara Toda 15, Benkei 17, Yoshitsune 17, Light-of-Fire and Shade-of-Fire 15, Yoshi-Iye 16, Kiyomori 15, Tametomo 16, Shotoku Daishi 14, En No Shokaku 14, Kobo Daishi 15, Nichiren 15 (folios 13-15)",
+    "the dexterity - Issun Boshi 18, Kintaro 16, Raiko 17, Tawara Toda 17, Benkei 17, Yoshitsune 18, Light-of-Fire and Shade-of-Fire 17, Yoshi-Iye 17, Kiyomori 17, Tametomo 18, Shotoku Daishi 10, En No Shokaku 17, Kobo Daishi 16, Nichiren 16 (folios 13-15)",
+    "the charisma - Issun Boshi 14, Kintaro 17, Raiko 15, Tawara Toda 15, Benkei 16, Yoshitsune 16, Light-of-Fire and Shade-of-Fire 17, Yoshi-Iye 15, Kiyomori 17, Tametomo 15, Shotoku Daishi 13, En No Shokaku 12, Kobo Daishi 16, Nichiren 12 (folios 13-15)"
+   ],
+   "data": [
+    [
+     12,
+     14,
+     13,
+     18,
+     18,
+     14
+    ],
+    [
+     -1,
+     12,
+     17,
+     15,
+     16,
+     17
+    ],
+    [
+     -1,
+     17,
+     13,
+     16,
+     17,
+     15
+    ],
+    [
+     -1,
+     14,
+     12,
+     15,
+     17,
+     15
+    ],
+    [
+     -1,
+     13,
+     10,
+     17,
+     17,
+     16
+    ],
+    [
+     -1,
+     15,
+     12,
+     17,
+     18,
+     16
+    ],
+    [
+     17,
+     14,
+     14,
+     15,
+     17,
+     17
+    ],
+    [
+     -1,
+     12,
+     12,
+     16,
+     17,
+     15
+    ],
+    [
+     18,
+     14,
+     10,
+     15,
+     17,
+     17
+    ],
+    [
+     -1,
+     15,
+     15,
+     16,
+     18,
+     15
+    ],
+    [
+     8,
+     18,
+     18,
+     14,
+     10,
+     13
+    ],
+    [
+     7,
+     18,
+     12,
+     14,
+     17,
+     12
+    ],
+    [
+     10,
+     17,
+     18,
+     15,
+     16,
+     16
+    ],
+    [
+     7,
+     15,
+     18,
+     15,
+     16,
+     12
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['kmyGodAc'](0) != -2 or m['kmyGodMove'](0) != 18 or m['kmyGodHp'](0) != 300 or m['kmyGodMagicLvl'](0) != -1 or m['kmyGodFightLvl'](0) != 15 or m['kmyGodPsiClass'](0) != 6",
+   "note": "the Amaterasu row - armor class minus 2, move 18, 300 hit points, Lord 15th, Class 6, the see-below magic cell riding the sentinel (folio 11)"
+  },
+  {
+   "expr": "m['kmyGodAc'](2) != -2 or m['kmyGodHp'](2) != 290 or m['kmySusanoJewels']() != 2 or m['kmySusanoJewelsOfHailAndLightning']() != 1",
+   "note": "the Susano row - armor class minus 2, 290 hit points, the two hail-and-lightning jewels (folio 11)"
+  },
+  {
+   "expr": "m['kmyGodAc'](5) != 2 or m['kmyGodHp'](5) != 200 or m['kmyGodFightLvl'](5) != 15 or m['kmyHachimanSwordPlus']() != 3 or m['kmyHachimanSwordDamageMin']() != 24 or m['kmyHachimanSwordDamageMax']() != 48 or m['kmyHachimanArrowDamageMin']() != 7 or m['kmyHachimanArrowDamageMax']() != 12 or m['kmyHachimanArrowsNeverMiss']() != 1",
+   "note": "the Hachiman row - armor class 2, 200 hit points, Lord 15th, the +3 sword at 24-48, the never-missing arrows at 7-12 (folio 11)"
+  },
+  {
+   "expr": "m['kmySevenGodsOfLuck']() != 7 or m['kmyGodHp'](9) != 150 or m['kmyGodHp'](14) != 150 or m['kmyGodHp'](15) != 150 or m['kmyGodFightLvl'](12) != 10 or m['kmyGodFightLvl'](15) != 7",
+   "note": "the Seven Gods of Luck - 150 hit points across the common 7th-level block, Bishamon the Lord 10th exception, Benten 7th (folios 11-12)"
+  },
+  {
+   "expr": "m['kmyGodAc'](4) != -1 or m['kmyGodHp'](4) != 250 or m['kmyGodFightLvl'](4) != 15 or m['kmyRyujinAc']() != -1",
+   "note": "the Ryujin row - 250 hit points, Lord 15th, the armor class minus 1 pinning as the const with the grid cell riding the sentinel, the collision noted (folio 11)"
+  },
+  {
+   "expr": "m['kmyGodAc'](3) != 2 or m['kmyGodHp'](3) != 200 or m['kmyGodFightLvl'](3) != 10 or m['kmyShintoBuddhistMixture']() != 1 or m['kmyKamiInAllThings']() != 1",
+   "note": "the Izanagi and Izanami row - armor class 2, 200 hit points, Lord 10th, the mixture and the kami-in-all-things doctrine (folio 11)"
+  },
+  {
+   "expr": "m['kmyGodAc'](16) != 2 or m['kmyGodHp'](16) != 275 or m['kmyGodMagicLvl'](16) != 20 or m['kmyGodFightLvl'](16) != 5 or m['kmyGodPsiClass'](16) != 1",
+   "note": "the Shaka-Nyorai row - Patriarch 20th, Class 1, the fighter cell printing the Sth garble (the 5 of 5th lost to the print), pinned 5 noted as scanned (folio 12)"
+  },
+  {
+   "expr": "m['kmyGodAc'](26) != -1 or m['kmyGodHp'](26) != 200 or m['kmyGodMagicLvl'](26) != 14 or m['kmyGodFightLvl'](26) != 7 or m['kmyGodPsiClass'](26) != 2",
+   "note": "the Aizen-Myoo row - the armor-class cell printing the bar garble riding the sentinel, 200 hit points, Patriarch 14th, 7th, Class 2 (folio 12)"
+  },
+  {
+   "expr": "m['kmyGodAc'](19) != 0 or m['kmyGodHp'](19) != 300 or m['kmyGodMagicLvl'](19) != 23 or m['kmyGodFightLvl'](19) != 6",
+   "note": "the Dainichi-Nyorai row - armor class 0, 300 hit points, Patriarch 23rd, 6th level (folio 12)"
+  },
+  {
+   "expr": "m['kmyCreatureAc'](0) != 3 or m['kmyCreatureMove'](0) != 10 or m['kmyCreatureHp'](0) != 100 or m['kmyCreatureMagicLvl'](0) != 14 or m['kmyCreatureFightLvl'](0) != 10 or m['kmyKappaPowersNeedHeadWater']() != 1 or m['kmyKappaAlwaysKeepsPromise']() != 1 or m['kmyKappaChallengeMustBeAccepted']() != 1",
+   "note": "the Kappa row - armor class 3, move 10, 100 hit points, Wizard 14th, Lord 10th, the head-water, promise and single-combat rules (folio 13)"
+  },
+  {
+   "expr": "m['kmyCreatureAc'](3) != 2 or m['kmyCreatureHp'](3) != 175 or m['kmyCreatureMagicLvl'](3) != -1 or m['kmyCreatureFightLvl'](3) != 7 or m['kmyYukiOnnaLullsToSleepDeath']() != 1",
+   "note": "the Yuki-Onna row - armor class 2, 175 hit points, 7th, the see-below magic cell riding the sentinel, the snowstorm lull (folio 13)"
+  },
+  {
+   "expr": "m['kmyHeroAc'](0) != -2 or m['kmyHeroMove'](0) != 5 or m['kmyHeroHp'](0) != 50 or m['kmyHeroMagicLvl'](0) != 0 or m['kmyHeroFightLvl'](0) != 7 or m['kmyHeroPsiClass'](0) != 0 or m['kmyHeroStr'](0) != 12 or m['kmyHeroCon'](0) != 18 or m['kmyHeroDex'](0) != 18",
+   "note": "the Issun Boshi row - armor class minus 2, move 5, 50 hit points, 7th with Nil magic and psionics as zero, the 12/14/13/18/18/14 stat line (folios 13-14)"
+  },
+  {
+   "expr": "m['kmyHeroHp'](4) != 100 or m['kmyHeroFightLvl'](4) != 12 or m['kmyBenkeiHeightFeet']() != 10 or m['kmyBenkeiStrengthOfMen']() != 100 or m['kmyBenkeiStrengthOfHundredMen']() != 1",
+   "note": "the Benkei row - 100 hit points, 12th level, the 10-foot height and the hundred-men strength (folio 14)"
+  },
+  {
+   "expr": "m['kmyHeroAc'](6) != -1 or m['kmyHeroStr'](6) != 17 or m['kmyHeroInt'](6) != 14 or m['kmyHeroCha'](6) != 17",
+   "note": "the Light-of-Fire and Shade-of-Fire row - the armor-class cell printing the bar garble riding the sentinel, the 17/14/14/15/17/17 stat line pinning clean (folio 14)"
+  },
+  {
+   "expr": "m['kmyHeroAc'](12) != 9 or m['kmyHeroHp'](12) != 70 or m['kmyHeroMagicLvl'](12) != 14 or m['kmyHeroFightLvl'](12) != 5 or m['kmyHeroInt'](12) != 17",
+   "note": "the Kobo Daishi row - armor class 9, 70 hit points, Patriarch 14th, the fighter cell printing the Sth garble (the 5 of 5th lost to the print), pinned 5 noted as scanned (folio 15)"
+  },
+  {
+   "expr": "m['kmyYoshiiyeArrowPlus']() != 2 or m['kmyTametomoArrowPlus']() != 4 or m['kmyHeroFightLvl'](9) != 10 or m['kmyHeroDex'](9) != 18",
+   "note": "the archer heroes - the Yoshi-Iye arrows +2, the Tametomo arrows +4 (folio 15)"
+  },
+  {
+   "expr": "m['kmyTreasures']() != 6 or m['kmyImperialSwordIsDancing']() != 1 or m['kmyImperialSwordLostAtDannoura']() != 1 or m['kmyTideJewelsPriceless']() != 1 or m['kmySakakiBranchesRequired']() != 1",
+   "note": "the treasures - the six pieces, the Imperial Sword a Dancing Sword lost at Dannoura, the Tide Jewels priceless, the Sakaki branches required (folio 15)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['kmyGodMagicLvl'](0) != -1 or m['kmyGodMagicLvl'](4) != -1 or m['kmyGodMagicLvl'](8) != -1 or m['kmyGodMagicLvl'](9) != -1 or m['kmyGodMagicLvl'](15) != -1",
+   "note": "the sixteen see-below magic cells - the nine Shinto gods and the Seven Gods of Luck all ride the sentinel as-scanned, never silent (folios 11-12)"
+  },
+  {
+   "expr": "m['kmyGodMagicLvl'](17) != 15 or m['kmyGodMagicLvl'](18) != 17 or m['kmyGodMagicLvl'](20) != 10 or m['kmyGodMagicLvl'](21) != 10 or m['kmyGodMagicLvl'](22) != 9 or m['kmyGodMagicLvl'](23) != 9 or m['kmyGodMagicLvl'](24) != 9 or m['kmyGodMagicLvl'](25) != 13",
+   "note": "the Patriarch ladder - Yakushi 15th, Amida 17th, Miroku and Kannon 10th, Monju, Fugen and Jizo 9th, Fudo 13th (folio 12)"
+  },
+  {
+   "expr": "m['kmyGodAc'](7) != 0 or m['kmyGodMove'](7) != 16 or m['kmyGodHp'](7) != 175 or m['kmyGodFightLvl'](7) != 7 or m['kmyInariFoxMessenger']() != 1",
+   "note": "the Kwannon row - armor class 0, move 16, 175 hit points, 7th, the Inari fox messenger (folio 11)"
+  },
+  {
+   "expr": "m['kmyHeroStr'](1) != -1 or m['kmyHeroStr'](2) != -1 or m['kmyHeroStr'](3) != -1 or m['kmyHeroStr'](4) != -1 or m['kmyHeroStr'](5) != -1 or m['kmyHeroStr'](7) != -1 or m['kmyHeroStr'](9) != -1",
+   "note": "the seven hero strength garbles - 1899, 1850, 1865, 1860, 1875, 1880 and 1845, all 18-slash fraction garbles riding the sentinel as-scanned, never silent (folios 13-15)"
+  },
+  {
+   "expr": "m['kmyHeroStr'](6) != 17 or m['kmyHeroStr'](8) != 18 or m['kmyHeroStr'](10) != 8 or m['kmyHeroStr'](13) != 7",
+   "note": "the clean hero strength cells - Light-of-Fire and Shade-of-Fire 17, Kiyomori 18, Shotoku Daishi 8, Nichiren 7 (folios 14-15)"
+  },
+  {
+   "expr": "m['kmyHeroHp'](1) != 80 or m['kmyHeroHp'](5) != 90 or m['kmyHeroHp'](10) != 50 or m['kmyHeroHp'](11) != 60 or m['kmyHeroHp'](13) != 70 or m['kmyHeroMove'](0) != 5 or m['kmyHeroMove'](4) != 14",
+   "note": "the hero hit-point ladder - the 80s across the warrior block with Yoshitsune 90 and Benkei 100, the holy men 50 through 70 (folios 13-15)"
+  },
+  {
+   "expr": "m['kmyHeroAc'](10) != 9 or m['kmyHeroAc'](11) != 9 or m['kmyHeroAc'](13) != 9 or m['kmyHeroMagicLvl'](10) != 10 or m['kmyHeroMagicLvl'](11) != 12 or m['kmyHeroMagicLvl'](13) != 14 or m['kmyHeroPsiClass'](13) != 0",
+   "note": "the holy men - armor class 9, Shotoku Daishi Patriarch 10th, En No Shokaku Wizard 12th, Nichiren Patriarch 14th, the Nil psionics pinning zero (folios 14-15)"
+  },
+  {
+   "expr": "m['kmyCreatureAc'](1) != 3 or m['kmyCreatureMagicLvl'](1) != 16 or m['kmyCreatureMagicLvl'](2) != 16 or m['kmyCreatureMove'](1) != 14 or m['kmyCreatureMove'](2) != 10 or m['kmyOniEyes']() != 3 or m['kmyOniFlyButSeldomDo']() != 1 or m['kmyTenguColonyWithKing']() != 1",
+   "note": "the Tengu and Oni rows - Wizard 16th both, the Tengu move 14 and the Oni 10, the three eyes and the fly-but-seldom rule, the Tengu colony king (folio 13)"
+  }
+ ],
+ "header_sections": {
+  "the gods and goddesses (folios 11-12)": [
+   {
+    "kind": "const",
+    "name": "kmyGodRows"
+   },
+   {
+    "kind": "const",
+    "name": "kmyShintoGods"
+   },
+   {
+    "kind": "const",
+    "name": "kmySevenGodsOfLuck"
+   },
+   {
+    "kind": "const",
+    "name": "kmyBuddhistGods"
+   },
+   {
+    "kind": "const",
+    "name": "kmyOtherShintoGods"
+   },
+   {
+    "kind": "const",
+    "name": "kmyRyujinAc"
+   },
+   {
+    "kind": "const",
+    "name": "kmySusanoJewels"
+   },
+   {
+    "kind": "const",
+    "name": "kmyHachimanSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "kmyHachimanSwordDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "kmyHachimanSwordDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "kmyHachimanArrowDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "kmyHachimanArrowDamageMax"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyShintoBuddhistMixture"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyKamiInAllThings"
+   },
+   {
+    "kind": "bool",
+    "name": "kmySusanoJewelsOfHailAndLightning"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyHachimanArrowsNeverMiss"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyInariFoxMessenger"
+   },
+   {
+    "kind": "table",
+    "name": "kmyGodStat"
+   }
+  ],
+  "the creatures (folio 13)": [
+   {
+    "kind": "const",
+    "name": "kmyCreatureRows"
+   },
+   {
+    "kind": "const",
+    "name": "kmyOniEyes"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyKappaPowersNeedHeadWater"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyKappaAlwaysKeepsPromise"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyKappaChallengeMustBeAccepted"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyOniFlyButSeldomDo"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyTenguColonyWithKing"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyYukiOnnaLullsToSleepDeath"
+   },
+   {
+    "kind": "table",
+    "name": "kmyCreatureStat"
+   }
+  ],
+  "the heroes (folios 13-15)": [
+   {
+    "kind": "const",
+    "name": "kmyHeroRows"
+   },
+   {
+    "kind": "const",
+    "name": "kmyBenkeiHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "kmyBenkeiStrengthOfMen"
+   },
+   {
+    "kind": "const",
+    "name": "kmyYoshiiyeArrowPlus"
+   },
+   {
+    "kind": "const",
+    "name": "kmyTametomoArrowPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyBenkeiStrengthOfHundredMen"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyYoshitsuneOnlyToDefeatBenkei"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyKiyomoriTairaRivalOfMinamoto"
+   },
+   {
+    "kind": "table",
+    "name": "kmyHeroStat"
+   },
+   {
+    "kind": "table",
+    "name": "kmyHeroAbility"
+   }
+  ],
+  "the treasures (folio 15)": [
+   {
+    "kind": "const",
+    "name": "kmyTreasures"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyTideJewelsPriceless"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyImperialSwordIsDancing"
+   },
+   {
+    "kind": "bool",
+    "name": "kmyImperialSwordLostAtDannoura"
+   },
+   {
+    "kind": "bool",
+    "name": "kmySakakiBranchesRequired"
+   }
+  ]
+ },
+ "inline_count": 62
+}
