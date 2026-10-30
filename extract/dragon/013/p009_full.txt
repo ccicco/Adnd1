@@ -1,0 +1,123 @@
+DED Variant
+D&amp;D OPTION: DEMON GENERATION
+by Jon Pickens
+There is no reason why demons in D&amp;D must be limited to the
+types described in Eldritch Wizardry. If those nasties only whetted your
+appetite for more, the following guidelines can be used to generate an
+unlimited variety of new demons to plague your players.
+All demons have the following properties:
+a) Hit dice and Gate Ability appropriate to their level.
+b) Vunerability to normal weapons at Level III or less, but magi-
+cal weapons only at higher levels.
+c) Magic Resistance of 50% at Level I, which increases by 5%
+for each additional level of the demon.
+d) Special abilities as determined on the tables below. Note that
+no demon may have both fire and ice powers.
+Abilities L223 An SG
+Level I De ee Hie He EE
+Level II etme tie As oe
+Level II 3.22 - - -
+Level IV 3.3 2 1 - -
+Level V So 2. G2? al! 22
+Level VI ee as wee |
+Prince 1-6 powers of each level, but never less in any
+category than a Level VI demon, nor more
+powers of a higher level than a lesser. Also has
+a 50% chance of an Artifact.
+Level 1 Level 2 Level 3
+1 Detect Hidden and Invisible 1 Fear 1 Illusion
+Enemies Levitate 2 Polymorph Self
+2 Darkness 5’ radius 3 Darkness 10’ rad. 3 Slow I/day
+3 Poison Bite or Sting 4 Read Language 4 Haste I/da
+4 Detect Magic 5 Web 1-3/day 5 nee 1-3/day
+5 Fly at will 6 Blink as Blink Dog 6 ESP 1-3/day
+6 [-3 Magic Missile/day 7 Speak with dead* 7 Growth of plants
+7 Mirror Image 1-3/day 8 Dimension Door 8 Growth of Animals
+8 Charm (if gaze met) 9 Snake Charm* 9 Sticks to Snakes*
+10 Read Magic 10_Hypnotise .
+11 Mind Blank 1 /day 11 Dispell Magic*
+12 Produce Flame 12 Regenerate 1-3 pts/
+9 Speak with animals
+10 Ventriloquism
+11 Pyrotechnics
+12 Telekinesis as per Level (as Druid) round
+(see EW)
+Level 4 _ Level 5 Level 6
+| Suggestion 1-3/day 1 Drain 1 energy level 1 Power Word
+2 Projected Image 2 Shape Change wo. Symbols
+3 One Non-Fatal Symbol 3 Telepath 3 Rotting Disease
+4 Magic Jar 1-3/day 4 Fireball (Cold Cone)* Touch (see EW)
+5 Wall of Fire (Ice) 5 rane Bolt* 4 Feeblemind
+: 6 Cloudkill 5 Mass Charm
+6 One Time Stop/day
+8 Animate Objects* 7 Control Weather
+9 Animate Dead* 8 Death Spell _
+10 Grant Limited Wish 9 Polymorph Object
+(Liday} ay
+10 Once Ice Storm 11 Elemental Form** 10 Grant Wish 1/day
+(Fire Storm)/day 12 +10% magic 11 Conjure Animal
+11 Maze 1-3/day resistance I
+12 +5% magic resistance
+a
+6 Clairvoy. ‘with Clairaud. 7 Passwall
+3 times/day
+7 Create Food
+8 Repulsion 1-3/day
+9 Gaseous Form
+/day
+12 Aging Touch 10-40
+yrs.
+*Multiply Demon’s level by 2 (1-3) or 3 (4-6) to determine the
+equivalent MU/Cleric level of capability. Princes always have the capa-
+bilities of 19th Level MUs or clerics.
+**Flemental form allows the demon to take on the form of a speci-
+fied elemental with appropriate augmentation of its fighting abilities.
+For example, a demon with Fire Elemental form would immolate as a
+Balrog, while one with an Air Elemental form could turn into a Whirl-
+wind at will. Only one form is gained for each time the ability is indi-
+cated.
+In order to determine exactly what the demon looks like, roll two
+dice on the dungeon encounter table of the proper level. Mix the results
+The Dragon
+anyway you like to come up with the most hideous appearance possible.
+If the creatures have any special abilities, the demon gains these too
+(abilities of men, like additional MU spells, Thief abilities, Fighter
+strength bonuses, etc will NOT be gained). Level V and VI demons
+must have one roll considered “human” (no special-abilities) or Basic
+Animal (outdoor encounter table), as giving them a chance for the spe-
+cial abilities of two monsters types makes them too powerful. ((One
+playtest demon was a Vampire with a Beholder head — NO WAY!))
+EXAMPLE: Putting it all together, I shall now create Nasthrapur,
+a 6th level demon. Assume the following rolls: LI 2,6,6; LII 1,1,10;
+LIV 10,12,12; LIV 10,12; LV 4,10; LVI 5. Since a roll for MU level
+came up “3”, the demon has the MU capabilities of a 12th Level
+MU/Cleric.
+LEVEL I: Darkness 5’ radius.
+Magic Missiles (from 2-6 per day possible. Assume
+Fear, twice the normal range (of wand). -2 on sav-
+ing throws. Read magic.
+Hypnotise as Illusionist.
+Regenerate (2-6 pts per melee round. Assume 5
+points)
+Firestorm, I/day. (Since whether the demon has
+fire or ice powers has not been determined, this was
+decided randomly.)
+Magic Resistance raised to 80%.
+Fireball of 12 dice.
+Magic Resistance raised to 90%.
+LEVEL VI: Mass Charm
+In addition, he receives the normal benefits of being a 6th Level
+demon: eight 10-sided hit dice, a 70% chance of gating in a Level 3 or 4
+demon, and can be hit by magic weapons only.
+Assume his appearance is a cross between a Red Dragon and Wild
+Cattle. Such a creature might have a bull’s head and hooves, but a scaly
+body and leathery wings. A dragon’s taloned forelegs take the place of
+arms. This combination will give the demon the following special abili-
+LEVEL IL:
+LEVEL II:
+LEVEL IV:
+LEVEL V:
+ties: bite/butt/claw attacks, flight, and a breath weapon of fire usable
+three times per day that does 24 points of damage (assuming the dragon
+maturity roll was a 2).
+All in all, someone you don’t want to meet in a back alley!

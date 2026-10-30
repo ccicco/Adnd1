@@ -1,0 +1,139 @@
+The Dragon
+The weight formula is, 2
+3.12x (Chest Size) x Torso Length aa
+6.28
+35
+1728
+Now doesn’t that make a lot of sense?! AHHHHHHHHH ....
+I hope you have a calculator! !
+1. Divide the chest size by 6.28,
+2. Square that answer, (multiply it by itself, 2x2 = 4)
+3. Multiply that by 3.12,
+4. Multiply that by the torso length,
+5. Divide that by .35,
+6. Divide that by 1728,
+7. Multiply that by 47 (lbs. per cubic foot)
+The answer is the giant’s weight in pounds.
+Example: The 30’ giant.
+30’ 360” 360”
+x12” x.5588 x.2647
+360” 2880 2520
+2880 1440
+1800 2160
+1800 720
+201.1680” chest size
+. 201.16 (chest) divided by 6.28 = 32.0
+. 32.0 times 32.0 = 1024.0
+1024. times 3.12 = 3194.88
+. 3194.88 times 95.29 (torso) = 304,440.1
+. 304,440.1 divided by .35 = 869,828.88
+. 869,828.88 divided by 1728 = 503.373
+. 503.373 times 47 = 23,658.539 or (23,660 pounds).
+95.2920 &quot; torso length
+IANRWNE
+How much can a giant pick up?
+We make the assumption that a giant can proportionally pick up as
+much as a man can. This means that like our 160 lb. man, who can car-
+ry on his back another 160 Ib. man (fireman carry, or 200 yd. man car-
+ry army style) a giant should be able to carry a weight equal to his own
+weight on his back.
+Now don’t get carried away with the weights an Olympic weight
+lifter can pick up. Those weights are balanced, symmetrical and de-
+signed to be picked up. There aren’t too many 50,000 Ib. dumbbells ly-
+ing around for titans to practice on.
+An average giant (like an average man) would be able to:
+Carry his full weight on his back.
+1) Hold in his arms 3/4 of his weight as easily as an average man could
+carry a 100 lb. box of books (ugh); this would be dead weight and
+balanceable.
+2) Fairly easily pick up in two arms //2 his body weight of dead
+weight.
+3) With difficulty pick up //2 his body weight a struggling animal (like
+an average man picking up a struggling German Shepard).
+4) With mild difficulty pick up //4 his body weight a struggling animal
+two handed (like a average man picking up a struggling poodle).
+5) Fairly easily pick up //4 his body weight in one hand of dead
+weight, balanced and somewhat symmetrical (large tree limb, pillar,
+spherical rock etc.)
+Again let me say, this is an average giant and this is roughly what
+he can pick up. A 30’ tall titan who has taken weight lifting classes
+should be able to “press” 47,300-71,000 Ibs. (2-3 times his weight) if he
+had the proper equipment.
+Non-flesh Giants
+Now then, if you want to know the weight of a non-flesh and
+blood monster (of human proportions) only one thing needs to be
+changed in the formula. Step 7 is the pounds per cubic foot. For flesh
+and blood giants the number 47 is used, but to find the weight of a
+stone Golem or a bronze Talos, this number must be changed to reflect
+the weight difference of the new body material (stone or bronze). The
+table at the end of this article will give the weights per cubic/foot of
+various materials. i.e., Bronze weighs 550 lbs. per cu./ft.
+Vol. 2, No. 7
+Example: A 60 foot tall Bronze giant named Talos.
+60 ft. tall = 720 inches tall.
+Chest size, 720” times .5588 = 402.33”
+Torso length, 720” times .2647 = 190.58&quot;.
+The following are the steps for the weight formula;
+402.33 divided by 6.28 = 64.06
+64.06 times 64.06 = 4104.02
+4104.02 times 3.12 = 12,804.54
+12,804.54 times 190.58 = 2,440,290.9
+2,440,290.9 divided by .35 = 6,972,259.7
+6,972,259.7 divided by 1728 = 4,034.87
+4,034.87 times 550 (wt. of Bronze cu./ft.) = 2,219,17.85
+Roughly 2,220,000 Ibs. or 1,110 tons of solid Bronze.
+If the insides of the giant are molten metal the weight would possibly be
+less because heat expands metals and the volume is the constant factor
+here. Roughly then, he could weigh 1,000 tons.
+ADNR WH —
+Giant Footsteps
+A note for those of you who would like to know how deep this
+giants foot steps are. His foot size is 71/2 feet by 3 feet (appx.) or 6480
+sq./inches of area total for both feet. If he weighed 1,000 tons there
+would be 340 Ibs. per sq./inch of pressure on the ground. Proportion-
+ally this is similar to a human walking through 2-4 inches of mud or
+through fine dry sand on a beach. With every step the giant takes he
+would sink into the ground 3-6 feet. It is conceivable though, for Talos
+to sink into soft loam until he was supported by bed rock.
+An 8 foot tall Clay Golem weighs 1,435 Ibs.
+A 91/2 foot tall Stone Golem (Granite) weighs 2,640 Ibs.
+A 12 foot tall Cast Iron Golem weighs 14,155 lbs./apprx. 7 tons.
+Substance Pounds per Cubic Foot
+Aluminum 170
+Brass
+Red 545
+Yellow 530
+Forging 525
+Bronze 550
+Copper 560
+Gold 1,205
+Tron
+Pure Ingots 490
+Wrought 480
+Cast (Gray) 445
+Malleable 450
+Lead 710
+Magnesium 110
+Mercury 845
+Nickel BBN)
+Platinum 1,340
+Silver 655
+Silver, Sterling 645
+Steel
+Cold Rolled 500
+Carbon 485
+Tungsten 505
+Stainless 500
+Tin
+Pure 455
+Soft Solder 525
+White Metal 454
+Pewter 454
+Tin Babbitt 470
+Titanium 280
+Tungsten 1,205
+Zinc 445
+Substance Pounds per Cubic Foot
+Agate 156-168 Semi-precious stone
+Alabaster 168-173 fine pottery
+Amber 66-69 used in jewelry

@@ -1,0 +1,95 @@
+HOW HEAVY IS MY GIANT?
+SHLUMP DA ORC
+Have you ever wanted to know how heavy a giant is or how much a
+giant can pick up? (loud refrain — “Anything he wants to”) Well, the
+little Kobolds at TSR spent many hours of brain work and reams of
+paper-work to come up with an answer. Unfortunately they didn’t
+come up with one answer, they came up with many answers. (De-
+mocracy at its finest.) None of the Kobolds could remember how to do
+the scientific law about doubling the size and cubing the mass. So we
+couldn’t use that one to help us.
+Of all the answers we came up with we used the one that appeared
+most reasonable. We used the formula that was created by our smartest
+Kobold, mainly because none of the rest of us could understand it!!
+Apparently what he did was base the weight on the increased volume of
+the torso. As a giant gets taller his torso lengthens too.
+Einshtein, our smartest Kobold, based his formula on an average
+human male, 5'8” tall with a 38” chest size, an 18” torso length and
+who weighs 180 Ibs. Then he figured that this portion of the body
+amounts to 35% of the whole body. Through diabolical methods he
+discovered that a cubic foot of a human body weighs 47 Ibs. Using all
+of this information he created a formula and calculated the following
+weights, chest sizes and torso lengths.
+Height Weight Chest size Torso Length
+in Feet |Pounds Tons Inches Feet Inches Feet
+5'8&quot; 38&quot;
+6' 40&quot;
+7! 47&quot;
+8' 54&quot;
+9' 1/4 ton 60&quot;
+10’ 1/4 ton 67&quot;
+11’ 1/2 ton 74&quot;
+12’ 3/4 ton 80&quot;
+13’ | ton 87&quot;
+14 11/4 ton 94&quot;
+15’ | 1/2 ton 100”
+16’ 1 3/4 ton 107”
+17’ 2 1/4 ton 114”
+18° 2 1/2 ton 120”
+19’ 3 ton 127”
+20' 3 1/2 ton 134&quot; 11°2”
+21' 4 ton 141&quot; 11°9”
+22) 4 1/2 ton 148&quot; 12°4”
+23' 5 1/4 ton 154&quot; 12°10’
+24' 6 ton 161&quot; 13’5”
+25' 6 3/4 ton 168&quot;
+26' 7 3/4 ton 174&quot;
+27' 8 1/2 ton 181&quot;
+28' 9 1/2 ton 188&quot;
+29' 10 3/4 ton 194&quot;
+30' 11 3/44 ton |} 201&quot;
+The Dragon
+20 LENGTH
+j
+Te bee ry nar
+ies Jones ste _:
+| Taq
+a
+The weight, chest size and torso length columns have two units of
+measurement to help you visualize how large these giants really are.
+An important note: These weights and sizes are based on the propor-
+tions of an average human male. This means that from 6’ to 30’ the
+measurements given are proportionally the same as the 5'8” man. The
+30’ giant will look exactly like the 5'8” human only taller. These mea-
+surements then, being based on an average human will give you an
+average giant as long as the giant retains the same proportions as the
+human.
+The normal human we’ve used has a shoulder length of 18” (the
+same as his torso length); this is average. If that human had a shoulder
+length of 2 1/2 feet, that would change his weight and chest size. The
+same is true for giants. Not everybody’s giants look the same. Some are
+squat and thick, others broad shouldered and narrow hipped. Unfor-
+tunately the formula only works for the average, proportionally
+human-like giants. Those of you with different shaped giants must
+make your own compensations. All of the information derived so far is
+based on the assumption that the physical, chemical and biological
+make up of the giants are identical to normal human standards. Some
+Dungeon Masters might want their giants to have hollow bones or three
+hearts, etc. Any change from the human norm may possibly affect the
+giants weight.
+Over and Under weight giants. Again based on the 5'8’ man his
+average weight is 160 lbs. but if he were 130 Ibs. he would be 20%
+lighter than normal. A 30’ tall giant weighing 20% less than average
+would weigh 18,836 lbs. A 5'8” man who weighs 200 Ibs. is 25% more
+than average. A 30’ tall giant who is 25% heavier than average weighs
+29,587 Ibs. (almost 15 tons). If you need a lighter or heavier giant base
+it on the 5'8” man. Find the percent of increase or decrease. ie., 16( to
+130 = -20%, 160 to 200 = +25% etc. Multiply the giants normal
+weight by the percent and add or subtract the result with the average
+weight. (Don’t forget the percents’ decimal point)
+The Refined Formula: For those of you who wish to find out the
+weight and sizes of a larger giant (perhaps a Talos sized giant) this is the
+formula we used.
+First multiply the height of the giant (in inches) by .5588, this re-
+veals the chest size (circumference) in inches. Then multiply the height
+in inches by .2647 this gives the torso length (in inches) of the giant.

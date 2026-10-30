@@ -27884,6 +27884,19 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   archive.org item (Name That Monster winners +
   brawling long-term-effects sequel may harvest).
   WAIT FOR GO.
+  - R921 LANDED (1e37f6d, issue-12 box closing
+  round, prefix fcl, 20 inline bookkeeping only,
+  no new ink): report 012 box 2 flipped [x], 2
+  closed 0 open, the issue-12 walk COMPLETE in
+  three rounds (R919/R920/R921) covering the four
+  chains; census 843->844; rverify GREEN 20
+  mutants 0 missed, round-trip 9446 bytes md5
+  b38d4c2904b98e7472e67fcb2ac22f0f. CURTISS CALL:
+  no issue-13 opener follows - the walk ends at
+  issue 12; the Name That Monster winners and the
+  brawling long-term-effects sequel stay
+  unharvested. Standing by for the next
+  direction. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

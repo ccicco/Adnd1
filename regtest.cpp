@@ -623,6 +623,7 @@
 #include "rules/ilv.h"  // R919: the Dragon issue-12 opener part one, the Ovalle illusionist article and the Endersby and Carroll ship cargo article
 #include "rules/myt.h"  // R920: the Dragon issue-12 opener part two, the Persian Mythos and the Lovecraftian Mythos
 #include "rules/fcl.h"  // R921: the Dragon issue-12 box closing round, the four-chain walk complete
+#include "rules/dgm.h"  // R922: the Dragon issue-13 opener part one, the Shlump da Orc giant physics article and the Jon Pickens demon generation article
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4732,6 +4733,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r922_batch.h"  // R922: R922 issue-13 opener audit
 #include "rules/audits/r921_batch.h"  // R921: R921 Dragon issue-12 closure audit
 #include "rules/audits/r920_batch.h"  // R920: R920 issue-12 opener part two audit
 #include "rules/audits/r919_batch.h"  // R919: R919 issue-12 opener audit

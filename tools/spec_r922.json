@@ -1,0 +1,1300 @@
+{
+ "round": 922,
+ "title": "The Dragon issue-13 opener part one: the Shlump da Orc giant physics article and the Jon Pickens demon generation article",
+ "prefix": "dgm",
+ "census_before": 844,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R921 LANDED (1e37f6d, issue-12 box closing",
+ "prev_record": [
+  "  - R921 LANDED (1e37f6d, issue-12 box closing",
+  "  round, prefix fcl, 20 inline bookkeeping only,",
+  "  no new ink): report 012 box 2 flipped [x], 2",
+  "  closed 0 open, the issue-12 walk COMPLETE in",
+  "  three rounds (R919/R920/R921) covering the four",
+  "  chains; census 843->844; rverify GREEN 20",
+  "  mutants 0 missed, round-trip 9446 bytes md5",
+  "  b38d4c2904b98e7472e67fcb2ac22f0f. CURTISS CALL:",
+  "  no issue-13 opener follows - the walk ends at",
+  "  issue 12; the Name That Monster winners and the",
+  "  brawling long-term-effects sequel stay",
+  "  unharvested. Standing by for the next",
+  "  direction. WAIT FOR GO."
+ ],
+ "include_after": "#include \"rules/fcl.h\"  // R921: the Dragon issue-12 box closing round, the four-chain walk complete",
+ "include_comment": "the Dragon issue-13 opener part one, the Shlump da Orc giant physics article and the Jon Pickens demon generation article",
+ "header_file": "rules/dgm.h",
+ "audit_file": "rules/audits/r922_batch.h",
+ "audit_label": "R922 issue-13 opener audit",
+ "audit_anchor": "#include \"rules/audits/r921_batch.h\"  // R921: R921 Dragon issue-12 closure audit",
+ "audit_comment": "THE DRAGON ISSUE-13 OPENER ROUND, PART ONE - the all-usable adjudication, every engine-relevant chain of the issue. The How Heavy Is My Giant article by Shlump da Orc (folios 5-7): the 180-pound 5-foot-8 base man of the formula, the 35-percent torso share, the 47-pounds-per-cubic-foot flesh density, the formula scalars (6.28, 3.12, .5588, .2647, 1728), the 26-row size grid from 5-foot-8 through 30 feet with its pounds column (invisible to the OCR, visually confirmed and anchored by the article 23,660 worked example), the tons column pinned in quarter-ton units with the 5-foot-8 through 8-foot cells blank on the sentinel, the chest and torso columns, the six-step lift ladder, the over-under base-weight rule on the 160-pound reference man, the 47,300 to 71,000 titan press, and the 64-row materials density grid pinned in tenths - the Ice 57.2, Lignum Vitae 73-83 and Mahogany 41 cells resolved at the full-res scan, provenance noted. The Demon Generation article by Jon Pickens (folio 9): the six demon levels, the 50-percent magic resistance plus 5 per level, the power-count grid (visually confirmed against the djvu fragments) with the dash cells pinned as zero, the 12-entry ability slots, the 2-and-3 caster multipliers, the no-fire-and-ice rule, the weapon-vulnerability tiers, the Prince rules (19th-level casters, the 50-percent artifact) and the Level-VI worked constants (8 ten-sided hit dice, the 70-percent Level 3-4 gate). The issue-13 report rides pre-flip; the Japanese Mythos box closes at the part-two round.",
+ "gap_report": "tools/dragon_gap_report_012.md",
+ "gap_census": {
+  "closed": 2,
+  "open": 0
+ },
+ "gap_flips": [],
+ "banner": {
+  "title": "The Dragon issue-13 opener part one - the Shlump da Orc giant physics article (folios 5-7) and the Jon Pickens demon generation article (folio 9): the all-usable adjudication, the Japanese Mythos to follow",
+  "provenance": "Pinned from The Dragon Vol. II No. 7 (April 1978), the archive.org scan voice (single-voice: no chat-side upload cross-check exists for issue 13; the source lives in the archive.org item accessory-dragon-magazine-012, file Accessory - Dragon Magazine #013_djvu.xml). PRINT FOLIO = PDF PAGE, verified at the TOC alignments (5, 8, 9, 11, 16-17, 19, 21, 22, 28-30). The transcripts ride extract/dragon/013/p001 through p032; the article CHAIN is the ink unit, not the folio.",
+  "sentinel": "Print quirks pinned AS SCANNED, noted never silent: the giant grid pounds column is invisible to the djvu OCR - the R919 visual-check precedent (the full-res scan plus the geometry plus a text anchor) resolved it, the 23,660 pounds of the 30-foot row matching the article own worked example; the tons column pins in quarter-ton units (a noted conversion) with the 5-foot-8 through 8-foot cells blank on the -1 sentinel; the torso column rides the same visual read, 17-of-17 rows formula-consistent with the .2647 factor; the materials grid pins in tenths (a noted conversion), the Ice 57.2, Lignum Vitae 73-83 and Mahogany 41 cells vision-resolved with provenance noted, the vision Quartz and Rubber misreads caught and corrected against the geometry; the demon power-count grid garbles in the OCR and resolved at the full-res scan, cross-validated against the djvu Level-IV fragment, the dash cells pinning as zero; the chest-in-feet sub-column rides the transcript, a unit restatement of the chest inches."
+ },
+ "switches": [],
+ "chains": [],
+ "file_patches": [],
+ "consts": [
+  {
+   "name": "dgmBaseManWeightLbs",
+   "value": 180,
+   "comment": "the formula base man - 180 pounds (folio 5)"
+  },
+  {
+   "name": "dgmBaseManHeightInches",
+   "value": 68,
+   "comment": "the formula base man - 5 foot 8 tall, pinned in inches (folio 5)"
+  },
+  {
+   "name": "dgmBaseManChestInches",
+   "value": 38,
+   "comment": "the formula base man - 38-inch chest (folio 5)"
+  },
+  {
+   "name": "dgmBaseManTorsoInches",
+   "value": 18,
+   "comment": "the formula base man - 18-inch torso (folio 5)"
+  },
+  {
+   "name": "dgmTorsoSharePercent",
+   "value": 35,
+   "comment": "the torso amounts to 35 percent of the whole body (folio 5)"
+  },
+  {
+   "name": "dgmBodyLbsPerCubicFoot",
+   "value": 47,
+   "comment": "a cubic foot of human body weighs 47 pounds (folio 5)"
+  },
+  {
+   "name": "dgmChestDivisorHundredths",
+   "value": 628,
+   "comment": "formula step 1 - divide the chest by 6.28, pinned in hundredths (folio 6)"
+  },
+  {
+   "name": "dgmPiFactorHundredths",
+   "value": 312,
+   "comment": "formula step 3 - multiply by 3.12, pinned in hundredths (folio 6)"
+  },
+  {
+   "name": "dgmChestFactorTenThousandths",
+   "value": 5588,
+   "comment": "the chest-size factor - height inches times .5588, pinned in ten-thousandths (folio 6)"
+  },
+  {
+   "name": "dgmTorsoFactorTenThousandths",
+   "value": 2647,
+   "comment": "the torso-length factor - height inches times .2647, pinned in ten-thousandths (folio 6)"
+  },
+  {
+   "name": "dgmCubicInchesPerCubicFoot",
+   "value": 1728,
+   "comment": "formula step 6 - divide by the 1728 cubic inches per cubic foot (folio 6)"
+  },
+  {
+   "name": "dgmGiantRows",
+   "value": 26,
+   "comment": "the giant size grid - 26 rows from 5-foot-8 through 30 feet (folio 5)"
+  },
+  {
+   "name": "dgmLiftReferenceManLbs",
+   "value": 160,
+   "comment": "the lift ladder reference man of 160 pounds, the 5-foot-8 row of the grid (folios 5-6)"
+  },
+  {
+   "name": "dgmExampleWeightLbs",
+   "value": 23660,
+   "comment": "the 30-foot giant worked example - 23,658.539 printed as 23,660 pounds, the anchor of the pounds column (folio 6)"
+  },
+  {
+   "name": "dgmTitanPressMinLbs",
+   "value": 47300,
+   "comment": "a weight-trained titan presses 47,300-71,000 pounds, the floor (folio 6)"
+  },
+  {
+   "name": "dgmTitanPressMaxLbs",
+   "value": 71000,
+   "comment": "the titan press ceiling, 2-3 times body weight (folio 6)"
+  },
+  {
+   "name": "dgmBronzeLbsPerCubicFoot",
+   "value": 550,
+   "comment": "bronze weighs 550 pounds per cubic foot - the non-flesh giant swaps the flesh density for the material density (folio 6)"
+  },
+  {
+   "name": "dgmTalosHeightFeet",
+   "value": 60,
+   "comment": "the worked non-flesh example - a 60-foot bronze giant named Talos (folio 6)"
+  },
+  {
+   "name": "dgmMaterialRows",
+   "value": 64,
+   "comment": "the materials density grid - 64 rows across the two print columns, the seasoned woods included (folio 7)"
+  },
+  {
+   "name": "dgmDemonLevels",
+   "value": 6,
+   "comment": "six demon levels plus the Prince tier (folio 9)"
+  },
+  {
+   "name": "dgmDemonMrBasePercent",
+   "value": 50,
+   "comment": "magic resistance of 50 percent at Level I (folio 9)"
+  },
+  {
+   "name": "dgmDemonMrPerLevelPercent",
+   "value": 5,
+   "comment": "magic resistance increases 5 percent for each additional demon level (folio 9)"
+  },
+  {
+   "name": "dgmDemonAbilitySlots",
+   "value": 12,
+   "comment": "each ability-level column runs twelve numbered entries (folio 9)"
+  },
+  {
+   "name": "dgmDemonCasterMultiplierLow",
+   "value": 2,
+   "comment": "level 1-3 abilities work at twice the demon level - the equivalent caster multiplier (folio 9)"
+  },
+  {
+   "name": "dgmDemonCasterMultiplierHigh",
+   "value": 3,
+   "comment": "level 4-6 abilities work at thrice the demon level (folio 9)"
+  },
+  {
+   "name": "dgmPrinceCasterLevel",
+   "value": 19,
+   "comment": "princes always have the capabilities of 19th-level magic users or clerics (folio 9)"
+  },
+  {
+   "name": "dgmPrinceArtifactChancePercent",
+   "value": 50,
+   "comment": "a prince has a 50 percent chance of an artifact (folio 9)"
+  },
+  {
+   "name": "dgmL6HitDice",
+   "value": 8,
+   "comment": "the Level-VI demon - eight hit dice (folio 9)"
+  },
+  {
+   "name": "dgmL6HitDieSides",
+   "value": 10,
+   "comment": "the Level-VI demon - ten-sided hit dice (folio 9)"
+  },
+  {
+   "name": "dgmL6GatePercent",
+   "value": 70,
+   "comment": "the Level-VI demon gates at 70 percent (folio 9)"
+  },
+  {
+   "name": "dgmL6GateLevelMin",
+   "value": 3,
+   "comment": "the Level-VI demon gates in a Level 3-4 demon, the floor (folio 9)"
+  },
+  {
+   "name": "dgmL6GateLevelMax",
+   "value": 4,
+   "comment": "the Level-VI gate ceiling, Level 3-4 (folio 9)"
+  },
+  {
+   "name": "dgmExampleL6MrPercent",
+   "value": 80,
+   "comment": "the worked Nasthrapur example - magic resistance raised to 80 percent (folio 9)"
+  },
+  {
+   "name": "dgmPowerGridRows",
+   "value": 6,
+   "comment": "the demon power-count grid - six demon-level rows over six ability-level columns (folio 9)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dgmCarryOwnWeightOnBack",
+   "value": true,
+   "comment": "a giant carries his full weight on his back, the fireman carry (folio 6)"
+  },
+  {
+   "name": "dgmArmsThreeQuartersWeight",
+   "value": true,
+   "comment": "a giant holds three-quarters of his weight in his arms as dead balanced weight (folio 6)"
+  },
+  {
+   "name": "dgmTwoArmsHalfDeadWeight",
+   "value": true,
+   "comment": "a giant fairly easily picks up half his body weight of dead weight in two arms (folio 6)"
+  },
+  {
+   "name": "dgmHalfWeightStrugglingAnimal",
+   "value": true,
+   "comment": "a giant with difficulty picks up half his body weight of a struggling animal (folio 6)"
+  },
+  {
+   "name": "dgmQuarterWeightStrugglingTwoHanded",
+   "value": true,
+   "comment": "a giant with mild difficulty picks up a quarter of his body weight, a struggling animal two-handed (folio 6)"
+  },
+  {
+   "name": "dgmQuarterWeightOneHanded",
+   "value": true,
+   "comment": "a giant fairly easily picks up a quarter of his body weight one-handed of balanced dead weight (folio 6)"
+  },
+  {
+   "name": "dgmOverUnderBaseWeightRule",
+   "value": true,
+   "comment": "over- and under-weight giants scale by the percent the base man differs from the 160-pound reference (folio 5)"
+  },
+  {
+   "name": "dgmNoFireAndIcePowers",
+   "value": true,
+   "comment": "no demon may have both fire and ice powers (folio 9)"
+  },
+  {
+   "name": "dgmLowLevelsNormalWeaponsVulnerable",
+   "value": true,
+   "comment": "demons of Level III or less are vulnerable to normal weapons (folio 9)"
+  },
+  {
+   "name": "dgmHighLevelsMagicWeaponsOnly",
+   "value": true,
+   "comment": "demons above Level III can be hit by magic weapons only (folio 9)"
+  },
+  {
+   "name": "dgmPrincesNeverBelowLevelSix",
+   "value": true,
+   "comment": "a prince has 1-6 powers of each level but never less in any category than a Level-VI demon (folio 9)"
+  },
+  {
+   "name": "dgmPrincesAlwaysNineteenth",
+   "value": true,
+   "comment": "princes always have the capabilities of 19th-level magic users or clerics (folio 9)"
+  },
+  {
+   "name": "dgmPrincesNeverMoreHighThanLesser",
+   "value": true,
+   "comment": "a prince never has more powers of a higher level than a lesser demon (folio 9)"
+  },
+  {
+   "name": "dgmMenAbilitiesNotGained",
+   "value": true,
+   "comment": "demon appearance-crossing gains the monster abilities but never the abilities of men - no extra magic-user spells, thief abilities or fighter strength bonuses (folio 9)"
+  },
+  {
+   "name": "dgmHighDemonsHumanOrAnimalRoll",
+   "value": true,
+   "comment": "Level V and VI demons must have one appearance roll considered human or basic animal (folio 9)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "dgmGiantSize",
+   "tag": "GS",
+   "count": "dgmGiantRows",
+   "sentinel": -1,
+   "sentinel_census": [
+    0,
+    0,
+    4,
+    0,
+    0
+   ],
+   "audit_comment": "the giant size grid - the pounds and torso columns are invisible to the djvu OCR and resolved at the full-res scan (the R919 visual-check precedent), the pounds anchored by the article 23,660 worked example and the torso by the .2647 factor row by row; the tons pin in quarter-ton units with the four blank short rows on the sentinel, noted never silent (folio 5)",
+   "cols": [
+    "dgmGiantHeightInches",
+    "dgmGiantWeightPounds",
+    "dgmGiantWeightTonsQuarter",
+    "dgmGiantChestInches",
+    "dgmGiantTorsoInches"
+   ],
+   "col_comments": [
+    "the height in inches - 5 foot 8 through 30 feet, the mixed print units pinned uniformly in inches, a noted conversion (folio 5)",
+    "the weight in pounds - 160 at 5 foot 8 through 23,660 at 30 feet; the column is invisible to the djvu OCR, resolved at the full-res scan and anchored by the article 23,660 worked example (folios 5-6)",
+    "the weight in tons - the fraction print (1/4 through 11 3/4) pinned in quarter-ton units, a noted conversion; the 5-foot-8 through 8-foot cells print blank and ride the -1 sentinel (folio 5)",
+    "the chest size in inches - 38 at 5 foot 8 through 201 at 30 feet (folio 5)",
+    "the torso length in inches - 18 at 5 foot 8 through 96 at 30 feet; the column is invisible to the djvu OCR, resolved at the full-res scan, every row consistent with the .2647 torso factor (folio 5)"
+   ],
+   "data": [
+    [
+     68,
+     160,
+     -1,
+     38,
+     18
+    ],
+    [
+     72,
+     185,
+     -1,
+     40,
+     19
+    ],
+    [
+     84,
+     300,
+     -1,
+     47,
+     22
+    ],
+    [
+     96,
+     450,
+     -1,
+     54,
+     25
+    ],
+    [
+     108,
+     630,
+     1,
+     60,
+     29
+    ],
+    [
+     120,
+     875,
+     1,
+     67,
+     32
+    ],
+    [
+     132,
+     1175,
+     2,
+     74,
+     35
+    ],
+    [
+     144,
+     1510,
+     3,
+     80,
+     38
+    ],
+    [
+     156,
+     1930,
+     4,
+     87,
+     41
+    ],
+    [
+     168,
+     2240,
+     5,
+     94,
+     45
+    ],
+    [
+     180,
+     2950,
+     6,
+     100,
+     48
+    ],
+    [
+     192,
+     3600,
+     7,
+     107,
+     51
+    ],
+    [
+     204,
+     4340,
+     9,
+     114,
+     54
+    ],
+    [
+     216,
+     5120,
+     10,
+     120,
+     57
+    ],
+    [
+     228,
+     6050,
+     12,
+     127,
+     60
+    ],
+    [
+     240,
+     7010,
+     14,
+     134,
+     64
+    ],
+    [
+     252,
+     8140,
+     16,
+     141,
+     67
+    ],
+    [
+     264,
+     9075,
+     18,
+     148,
+     70
+    ],
+    [
+     276,
+     10675,
+     21,
+     154,
+     73
+    ],
+    [
+     288,
+     12130,
+     24,
+     161,
+     76
+    ],
+    [
+     300,
+     13700,
+     27,
+     168,
+     79
+    ],
+    [
+     312,
+     15425,
+     31,
+     174,
+     83
+    ],
+    [
+     324,
+     17275,
+     34,
+     181,
+     86
+    ],
+    [
+     336,
+     19250,
+     38,
+     188,
+     89
+    ],
+    [
+     348,
+     21400,
+     43,
+     194,
+     92
+    ],
+    [
+     360,
+     23660,
+     47,
+     201,
+     96
+    ]
+   ]
+  },
+  {
+   "name": "dgmMaterialDensity",
+   "tag": "MD",
+   "count": "dgmMaterialRows",
+   "sentinel": -1,
+   "sentinel_census": [
+    0,
+    0
+   ],
+   "audit_comment": "the 64-row materials density grid for non-flesh giants - the print is two columns with ranges and singles, pinned in tenths (a noted conversion); the Ice 57.2, Lignum Vitae 73-83 and Mahogany 41 cells resolve only at the full-res scan with provenance noted, the vision Quartz and Rubber misreads caught against the geometry (folio 7)",
+   "cols": [
+    "dgmMaterialLbsMinTenths",
+    "dgmMaterialLbsMaxTenths"
+   ],
+   "col_comments": [
+    "the material density floor in pounds per cubic foot, pinned in tenths - a uniform noted conversion of the print (folio 7)",
+    "the material density ceiling in pounds per cubic foot, pinned in tenths; single-value prints pin floor-equals-ceiling (folio 7)"
+   ],
+   "data": [
+    [
+     1250,
+     1750
+    ],
+    [
+     600,
+     610
+    ],
+    [
+     1680,
+     1690
+    ],
+    [
+     1700,
+     1900
+    ],
+    [
+     1060,
+     1250
+    ],
+    [
+     870,
+     1370
+    ],
+    [
+     530,
+     540
+    ],
+    [
+     2550,
+     2800
+    ],
+    [
+     620,
+     620
+    ],
+    [
+     1700,
+     1900
+    ],
+    [
+     1180,
+     1750
+    ],
+    [
+     350,
+     350
+    ],
+    [
+     5070,
+     5070
+    ],
+    [
+     1120,
+     1620
+    ],
+    [
+     870,
+     1120
+    ],
+    [
+     620,
+     1050
+    ],
+    [
+     140,
+     160
+    ],
+    [
+     1880,
+     2200
+    ],
+    [
+     1770,
+     1770
+    ],
+    [
+     1590,
+     1720
+    ],
+    [
+     1640,
+     1640
+    ],
+    [
+     4600,
+     4700
+    ],
+    [
+     1970,
+     2680
+    ],
+    [
+     1500,
+     1750
+    ],
+    [
+     1650,
+     1720
+    ],
+    [
+     810,
+     870
+    ],
+    [
+     3060,
+     3300
+    ],
+    [
+     572,
+     572
+    ],
+    [
+     1140,
+     1200
+    ],
+    [
+     540,
+     540
+    ],
+    [
+     3060,
+     3240
+    ],
+    [
+     2310,
+     2560
+    ],
+    [
+     1600,
+     1770
+    ],
+    [
+     2180,
+     2180
+    ],
+    [
+     1370,
+     1370
+    ],
+    [
+     440,
+     720
+    ],
+    [
+     540,
+     570
+    ],
+    [
+     670,
+     670
+    ],
+    [
+     1430,
+     1560
+    ],
+    [
+     3090,
+     3180
+    ],
+    [
+     1650,
+     1650
+    ],
+    [
+     1360,
+     1360
+    ],
+    [
+     740,
+     740
+    ],
+    [
+     690,
+     690
+    ],
+    [
+     1340,
+     1470
+    ],
+    [
+     1620,
+     1750
+    ],
+    [
+     990,
+     990
+    ],
+    [
+     2190,
+     2230
+    ],
+    [
+     1120,
+     1120
+    ],
+    [
+     410,
+     520
+    ],
+    [
+     400,
+     530
+    ],
+    [
+     70,
+     90
+    ],
+    [
+     190,
+     250
+    ],
+    [
+     300,
+     350
+    ],
+    [
+     690,
+     830
+    ],
+    [
+     730,
+     830
+    ],
+    [
+     410,
+     410
+    ],
+    [
+     370,
+     560
+    ],
+    [
+     220,
+     310
+    ],
+    [
+     230,
+     370
+    ],
+    [
+     240,
+     370
+    ],
+    [
+     410,
+     550
+    ],
+    [
+     610,
+     610
+    ],
+    [
+     240,
+     370
+    ]
+   ]
+  },
+  {
+   "name": "dgmDemonPowerGrid",
+   "tag": "DP",
+   "count": "dgmPowerGridRows",
+   "sentinel": -1,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "audit_comment": "the demon power-count grid - the OCR garbles it whole (L223 An SG); the full-res scan resolved it and the djvu Level-IV fragment (3, 3, 2, 1) cross-validates; the not-applicable dash cells pin as zero, noted never silent (folio 9)",
+   "cols": [
+    "dgmPowersOfLevel1",
+    "dgmPowersOfLevel2",
+    "dgmPowersOfLevel3",
+    "dgmPowersOfLevel4",
+    "dgmPowersOfLevel5",
+    "dgmPowersOfLevel6"
+   ],
+   "col_comments": [
+    "the count of level-1 abilities by demon level - the I through VI rows print 2, 3, 3, 3, 3, 3 (folio 9)",
+    "the count of level-2 abilities - the rows print blank, 2, 2, 3, 3, 3 (folio 9)",
+    "the count of level-3 abilities - the rows print blank, blank, 2, 2, 2, 3 (folio 9)",
+    "the count of level-4 abilities - the rows print blank, blank, blank, 1, 2, 2 (folio 9)",
+    "the count of level-5 abilities - the rows print blank, blank, blank, blank, 1, 2 (folio 9)",
+    "the count of level-6 abilities - the rows print blank, blank, blank, blank, blank, 1; the dash cells pin as zero, the grid resolved at the full-res scan cross-validated against the djvu Level-IV fragment (folio 9)"
+   ],
+   "data": [
+    [
+     2,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     2,
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     3,
+     3,
+     2,
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     3,
+     2,
+     2,
+     1,
+     0
+    ],
+    [
+     3,
+     3,
+     3,
+     2,
+     2,
+     1
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['dgmBaseManWeightLbs']() != 180 or m['dgmBaseManHeightInches']() != 68 or m['dgmBaseManChestInches']() != 38 or m['dgmBaseManTorsoInches']() != 18 or m['dgmLiftReferenceManLbs']() != 160",
+   "note": "the base man block - 180 pounds, 5 foot 8, a 38-inch chest, an 18-inch torso, the lift ladder referenced to the 160-pound man (folio 5)"
+  },
+  {
+   "expr": "m['dgmChestDivisorHundredths']() != 628 or m['dgmPiFactorHundredths']() != 312 or m['dgmChestFactorTenThousandths']() != 5588 or m['dgmTorsoFactorTenThousandths']() != 2647 or m['dgmCubicInchesPerCubicFoot']() != 1728 or m['dgmBodyLbsPerCubicFoot']() != 47 or m['dgmTorsoSharePercent']() != 35",
+   "note": "the formula scalars - 6.28, 3.12, .5588, .2647, 1728, 47 pounds per cubic foot and the 35-percent torso share, pinned scaled as printed-decimal conversions (folios 5-6)"
+  },
+  {
+   "expr": "m['dgmGiantHeightInches'](25) != 360 or m['dgmGiantWeightPounds'](25) != 23660 or m['dgmGiantWeightTonsQuarter'](25) != 47 or m['dgmGiantChestInches'](25) != 201 or m['dgmGiantTorsoInches'](25) != 96 or m['dgmExampleWeightLbs']() != 23660",
+   "note": "the 30-foot row - 360 inches, 23,660 pounds (the article worked example), 11 3/4 tons as 47 quarter-tons, a 201-inch chest and a 96-inch torso (folio 5)"
+  },
+  {
+   "expr": "m['dgmGiantHeightInches'](0) != 68 or m['dgmGiantWeightPounds'](0) != 160 or m['dgmGiantWeightTonsQuarter'](0) != -1 or m['dgmGiantChestInches'](0) != 38 or m['dgmGiantTorsoInches'](0) != 18",
+   "note": "the 5-foot-8 row - 160 pounds on the blank tons sentinel, the base-man measurements (folio 5)"
+  },
+  {
+   "expr": "m['dgmTitanPressMinLbs']() != 47300 or m['dgmTitanPressMaxLbs']() != 71000 or m['dgmBronzeLbsPerCubicFoot']() != 550 or m['dgmTalosHeightFeet']() != 60",
+   "note": "the titan press and the non-flesh example - 47,300-71,000 pressed, bronze at 550 pounds per cubic foot, the 60-foot Talos (folio 6)"
+  },
+  {
+   "expr": "m['dgmCarryOwnWeightOnBack']() != 1 or m['dgmArmsThreeQuartersWeight']() != 1 or m['dgmTwoArmsHalfDeadWeight']() != 1 or m['dgmHalfWeightStrugglingAnimal']() != 1 or m['dgmQuarterWeightStrugglingTwoHanded']() != 1 or m['dgmQuarterWeightOneHanded']() != 1 or m['dgmOverUnderBaseWeightRule']() != 1",
+   "note": "the six-step lift ladder and the over-under base-weight rule (folios 5-6)"
+  },
+  {
+   "expr": "m['dgmDemonLevels']() != 6 or m['dgmDemonMrBasePercent']() != 50 or m['dgmDemonMrPerLevelPercent']() != 5 or m['dgmExampleL6MrPercent']() != 80",
+   "note": "the demon magic resistance - 50 percent at Level I plus 5 per level, the worked example raised to 80 (folio 9)"
+  },
+  {
+   "expr": "m['dgmL6HitDice']() != 8 or m['dgmL6HitDieSides']() != 10 or m['dgmL6GatePercent']() != 70 or m['dgmL6GateLevelMin']() != 3 or m['dgmL6GateLevelMax']() != 4",
+   "note": "the Level-VI worked constants - eight ten-sided hit dice, the 70-percent Level 3-4 gate (folio 9)"
+  },
+  {
+   "expr": "m['dgmPrinceCasterLevel']() != 19 or m['dgmPrinceArtifactChancePercent']() != 50 or m['dgmPrincesNeverBelowLevelSix']() != 1 or m['dgmPrincesAlwaysNineteenth']() != 1",
+   "note": "the Prince tier - 19th-level caster capability, the 50-percent artifact, never below a Level-VI demon (folio 9)"
+  },
+  {
+   "expr": "m['dgmDemonCasterMultiplierLow']() != 2 or m['dgmDemonCasterMultiplierHigh']() != 3 or m['dgmDemonAbilitySlots']() != 12",
+   "note": "the caster multipliers and the twelve-entry ability slots (folio 9)"
+  },
+  {
+   "expr": "m['dgmNoFireAndIcePowers']() != 1 or m['dgmLowLevelsNormalWeaponsVulnerable']() != 1 or m['dgmHighLevelsMagicWeaponsOnly']() != 1 or m['dgmMenAbilitiesNotGained']() != 1 or m['dgmHighDemonsHumanOrAnimalRoll']() != 1",
+   "note": "the demon restrictions - no fire-and-ice, the weapon tiers, no men abilities gained, the human or animal roll (folio 9)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['dgmGiantWeightPounds'](4) != 630 or m['dgmGiantWeightTonsQuarter'](4) != 1 or m['dgmGiantChestInches'](4) != 60 or m['dgmGiantTorsoInches'](4) != 29 or m['dgmGiantWeightPounds'](10) != 2950 or m['dgmGiantWeightPounds'](16) != 8140 or m['dgmGiantWeightPounds'](21) != 15425",
+   "note": "the pounds ladder - 630 at 9 feet, 2,950 at 15, 8,140 at 21 and 15,425 at 26, the OCR-invisible column (folio 5)"
+  },
+  {
+   "expr": "m['dgmGiantWeightTonsQuarter'](8) != 4 or m['dgmGiantWeightTonsQuarter'](15) != 14 or m['dgmGiantWeightTonsQuarter'](19) != 24 or m['dgmGiantWeightTonsQuarter'](24) != 43 or m['dgmGiantWeightTonsQuarter'](1) != -1 or m['dgmGiantWeightTonsQuarter'](2) != -1 or m['dgmGiantWeightTonsQuarter'](3) != -1",
+   "note": "the quarter-ton tonnage - 1 ton at 13 feet, 3 1/2 at 20, 6 at 24, 10 3/4 at 29, the four short rows blank on the sentinel (folio 5)"
+  },
+  {
+   "expr": "m['dgmGiantChestInches'](15) != 134 or m['dgmGiantChestInches'](19) != 161 or m['dgmGiantChestInches'](22) != 181 or m['dgmGiantTorsoInches'](15) != 64 or m['dgmGiantTorsoInches'](21) != 83 or m['dgmGiantTorsoInches'](24) != 92",
+   "note": "the chest and torso ladders - 134/64 at 20 feet, 161 at 24, 181 at 27, the torso 83 at 26 feet and 92 at 29 (folio 5)"
+  },
+  {
+   "expr": "m['dgmPowersOfLevel1'](0) != 2 or m['dgmPowersOfLevel1'](5) != 3 or m['dgmPowersOfLevel2'](1) != 2 or m['dgmPowersOfLevel2'](3) != 3 or m['dgmPowersOfLevel3'](2) != 2 or m['dgmPowersOfLevel3'](5) != 3",
+   "note": "the power-count low columns - a Level-I demon gets 2 level-1 abilities, the grid running 2, 3, 3, 3, 3, 3 down and the level-2 and level-3 stairs (folio 9)"
+  },
+  {
+   "expr": "m['dgmPowersOfLevel4'](3) != 1 or m['dgmPowersOfLevel4'](5) != 2 or m['dgmPowersOfLevel5'](4) != 1 or m['dgmPowersOfLevel5'](5) != 2 or m['dgmPowersOfLevel6'](5) != 1 or m['dgmPowersOfLevel6'](0) != 0",
+   "note": "the power-count high columns - the level-4, 5 and 6 stairs to the Level-VI demon 3, 3, 3, 2, 2, 1 row, the dashes as zero (folio 9)"
+  },
+  {
+   "expr": "m['dgmMaterialLbsMinTenths'](17) != 1880 or m['dgmMaterialLbsMaxTenths'](17) != 2200 or m['dgmMaterialLbsMinTenths'](21) != 4600 or m['dgmMaterialLbsMaxTenths'](21) != 4700",
+   "note": "the dense materials - diamond 1880-2200 and galena 4600-4700 pounds per cubic foot, in tenths (folio 7)"
+  },
+  {
+   "expr": "m['dgmMaterialLbsMinTenths'](27) != 572 or m['dgmMaterialLbsMaxTenths'](27) != 572 or m['dgmMaterialLbsMinTenths'](55) != 730 or m['dgmMaterialLbsMaxTenths'](55) != 830 or m['dgmMaterialLbsMinTenths'](56) != 410 or m['dgmMaterialLbsMaxTenths'](56) != 410",
+   "note": "the vision-resolved cells - ice 57.2, lignum vitae 73-83 and mahogany 41, pinned in tenths with the visual provenance noted (folio 7)"
+  },
+  {
+   "expr": "m['dgmMaterialLbsMinTenths'](42) != 740 or m['dgmMaterialLbsMaxTenths'](42) != 740 or m['dgmMaterialLbsMinTenths'](43) != 690 or m['dgmMaterialLbsMaxTenths'](43) != 690 or m['dgmMaterialLbsMinTenths'](11) != 350 or m['dgmMaterialLbsMaxTenths'](11) != 350 or m['dgmMaterialLbsMinTenths'](20) != 1640",
+   "note": "the singles - hard rubber 74, soft rubber 69, charcoal 35 and flint 164, the vision misreads corrected against the geometry (folio 7)"
+  },
+  {
+   "expr": "m['dgmMaterialLbsMinTenths'](57) != 370 or m['dgmMaterialLbsMaxTenths'](57) != 560 or m['dgmMaterialLbsMinTenths'](51) != 70 or m['dgmMaterialLbsMaxTenths'](51) != 90 or m['dgmMaterialLbsMinTenths'](62) != 610 or m['dgmMaterialLbsMaxTenths'](62) != 610",
+   "note": "the seasoned woods - oak 370-560, balsa 70-90, African teak 61 (folio 7)"
+  }
+ ],
+ "header_sections": {
+  "the Shlump da Orc giant physics article (folios 5-7)": [
+   {
+    "kind": "const",
+    "name": "dgmBaseManWeightLbs"
+   },
+   {
+    "kind": "const",
+    "name": "dgmBaseManHeightInches"
+   },
+   {
+    "kind": "const",
+    "name": "dgmBaseManChestInches"
+   },
+   {
+    "kind": "const",
+    "name": "dgmBaseManTorsoInches"
+   },
+   {
+    "kind": "const",
+    "name": "dgmTorsoSharePercent"
+   },
+   {
+    "kind": "const",
+    "name": "dgmBodyLbsPerCubicFoot"
+   },
+   {
+    "kind": "const",
+    "name": "dgmChestDivisorHundredths"
+   },
+   {
+    "kind": "const",
+    "name": "dgmPiFactorHundredths"
+   },
+   {
+    "kind": "const",
+    "name": "dgmChestFactorTenThousandths"
+   },
+   {
+    "kind": "const",
+    "name": "dgmTorsoFactorTenThousandths"
+   },
+   {
+    "kind": "const",
+    "name": "dgmCubicInchesPerCubicFoot"
+   },
+   {
+    "kind": "const",
+    "name": "dgmGiantRows"
+   },
+   {
+    "kind": "const",
+    "name": "dgmLiftReferenceManLbs"
+   },
+   {
+    "kind": "const",
+    "name": "dgmExampleWeightLbs"
+   },
+   {
+    "kind": "const",
+    "name": "dgmTitanPressMinLbs"
+   },
+   {
+    "kind": "const",
+    "name": "dgmTitanPressMaxLbs"
+   },
+   {
+    "kind": "const",
+    "name": "dgmBronzeLbsPerCubicFoot"
+   },
+   {
+    "kind": "const",
+    "name": "dgmTalosHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "dgmMaterialRows"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmCarryOwnWeightOnBack"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmArmsThreeQuartersWeight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmTwoArmsHalfDeadWeight"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmHalfWeightStrugglingAnimal"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmQuarterWeightStrugglingTwoHanded"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmQuarterWeightOneHanded"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmOverUnderBaseWeightRule"
+   },
+   {
+    "kind": "table",
+    "name": "dgmGiantSize"
+   },
+   {
+    "kind": "table",
+    "name": "dgmMaterialDensity"
+   }
+  ],
+  "the Jon Pickens demon generation article (folio 9)": [
+   {
+    "kind": "const",
+    "name": "dgmDemonLevels"
+   },
+   {
+    "kind": "const",
+    "name": "dgmDemonMrBasePercent"
+   },
+   {
+    "kind": "const",
+    "name": "dgmDemonMrPerLevelPercent"
+   },
+   {
+    "kind": "const",
+    "name": "dgmDemonAbilitySlots"
+   },
+   {
+    "kind": "const",
+    "name": "dgmDemonCasterMultiplierLow"
+   },
+   {
+    "kind": "const",
+    "name": "dgmDemonCasterMultiplierHigh"
+   },
+   {
+    "kind": "const",
+    "name": "dgmPrinceCasterLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dgmPrinceArtifactChancePercent"
+   },
+   {
+    "kind": "const",
+    "name": "dgmL6HitDice"
+   },
+   {
+    "kind": "const",
+    "name": "dgmL6HitDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "dgmL6GatePercent"
+   },
+   {
+    "kind": "const",
+    "name": "dgmL6GateLevelMin"
+   },
+   {
+    "kind": "const",
+    "name": "dgmL6GateLevelMax"
+   },
+   {
+    "kind": "const",
+    "name": "dgmExampleL6MrPercent"
+   },
+   {
+    "kind": "const",
+    "name": "dgmPowerGridRows"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmNoFireAndIcePowers"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmLowLevelsNormalWeaponsVulnerable"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmHighLevelsMagicWeaponsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmPrincesNeverBelowLevelSix"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmPrincesNeverMoreHighThanLesser"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmMenAbilitiesNotGained"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmHighDemonsHumanOrAnimalRoll"
+   },
+   {
+    "kind": "bool",
+    "name": "dgmPrincesAlwaysNineteenth"
+   },
+   {
+    "kind": "table",
+    "name": "dgmDemonPowerGrid"
+   }
+  ]
+ },
+ "inline_count": 62,
+ "data_files": [
+  {
+   "path": "tools/dragon_gap_report_013.md",
+   "content": "# Dragon gap report - THE DRAGON, Vol. II No. 7 (April 1978)\n\nThe Dragon Magazine walk, issue #13. Primary ink:\nextract/dragon/013/pNNN_full.txt, NNN = page index;\nPRINT FOLIO = PDF PAGE (verified at the TOC alignments:\nthe giant physics piece at 5, the Sorcerer's Scroll and\nthe Bionic Supplement at 8, the demon generation article\nat 9, the Japanese Mythos at 11, the silly songs at\n16-17, the WARLORD piece at 19, the paint-that-monster\ncontest at 21, the Gardner Fox fiction at 22 and the\ncomics at 28-29). The voice is the chat-side DjVu OCR\ntranscript of the archive.org scan (the issue-13 source\nlives in the archive.org item accessory-dragon-magazine-\n012, which holds issues 7-14); the article CHAIN is the\nink unit, not the folio.\n\nDoctrine (Curtiss, 2026-10-29): the pin IS the conversion\n- OD&D-era ink adjudicated to 1e terms, the conversion\nnoted, never silent; Dragon pins ride a VARIANT layer\nwith provenance, never core canon.\n\nAdjudication (Curtiss, 2026-10-29, the ALL-USABLE call):\nuse - every engine-relevant chain of the issue, split\nacross two opener rounds: part one - the How Heavy Is My\nGiant article by Shlump da Orc (folios 5-7, D&D\ncommon-sense physics) as the giant-size variant layer -\nthe base-man formula constants, the 26-row size grid,\nthe six-step lift ladder and the 64-row materials\ndensity grid; the Demon Generation article by Jon\nPickens (folio 9, D&D Option) as the demon variant\nlayer - the six-level power-count grid, the magic\nresistance ladder, the weapon-vulnerability tiers and\nthe Prince rules; part two - The Japanese Mythos by\nJerome Arkenberg (folios 11-15, D&D Variant) as the\nmythos variant layer, the direct sibling of the R920\nPersian Mythos chain; drop - the Tolkien-in-D&D\nSorcerer's Scroll (folio 8, Kuntz design commentary\napplying the designers-know-best position, no new ink\nper the Ward-essay precedent), the Bionic Supplement\n(folio 8, a Metamorphosis Alpha variant by Brian Blume -\nanother system per the R904/R906/R907 precedent), the\nWARLORD corrections (folios 19-20, the Warlord Game by\nRobert Williams - another-system wargame), the April\nFool's silly songs (16-17), the Stolen Sacrifice fiction\n(22, 23-28), the Finieous Fingers and Wormy comics\n(28-29), the Creature Feature Contest #2 rules (21),\nthe Notes from a Semi-Successful D&D Player (30, IDEAS\nUSABLE per the Gnome Cache doctrine, never engine ink),\nand the ads. Two slipped teasers stay slipped: the\nbrawling long-term-effects sequel promised in issue 11\ndoes NOT print here (the Scroll ran the Tolkien piece\ninstead), and the Creature Contest #1 winners print as\nNAMES ONLY (the Jarnkung, the Cursed Crimson Crawler,\nthe Ulik) with the full stats and loot deferred to TD\n14 - the contest ink harvests at issue 14.\n\n## Boxes\n\n- [ ] **The Shlump da Orc giant physics article and the\n  Jon Pickens demon generation article** (folios 5-7,\n  9) - the issue-13 opener round, part one\n- [ ] **The Japanese Mythos** (folios 11-15) - the\n  issue-13 opener round, part two\n\n2 boxes, 0 closed, 2 open at the R922 authoring. The\nR922 round ships this report pre-flip (a report cannot\nflip in the round that creates it); the part-one box\ncloses at the part-two round's flip, the part-two box at\nthe closing round's flip.\n\n## Scoped out of the engine\n\nThe Tolkien Sorcerer's Scroll (8, commentary per the\nWard precedent); the Bionic Supplement (8, Metamorphosis\nAlpha - another system); the WARLORD corrections (19-20,\nanother-system wargame); the silly songs (16-17); the\nStolen Sacrifice fiction (22, 23-28); the comics (28-29);\nthe contest rules (21); the winners list (30, names\nonly - the ink harvests at issue 14); the Notes column\n(30, IDEAS USABLE); the ads. Print quirks pinned AS\nSCANNED, noted never silent: the giant grid's pounds and\ntorso columns are invisible to the djvu OCR - both\nresolved at the full-res scan per the R919 visual-check\nprecedent, the pounds anchored by the article's own\n23,660 worked example and the torso consistent row by\nrow with the .2647 factor; the tons column pins in\nquarter-ton units with the four short rows blank on the\nsentinel; the materials grid pins in tenths with the\nice, lignum vitae and mahogany cells vision-resolved;\nthe demon power-count grid garbled whole in the OCR and\nresolved at the full-res scan cross-validated against\nthe djvu Level-IV fragment, the dash cells pinning as\nzero.\n"
+  },
+  {
+   "path": "extract/dragon/013/p001_full.txt",
+   "content": "Vol. IT No. 7 Apr. 78 1.50\nThe Premier\nmagazine of Fantasy,\nSwords &amp; Sorcery and\nScience Fiction Gaming\n\u201d The Stolen Sacrifice\nby Gardner Fox\nInside...\nTD Salutes April Fool's Day \u2014\nToklein in DAD\nThe Japanese Mythos\nWinners at Creature Contest #1\nCreature Feature Contest #2\n"
+  },
+  {
+   "path": "extract/dragon/013/p002_full.txt",
+   "content": "RAL PARTHA\u2019S |g Sado, GALACTIC\nme, \u201c2 || GRENADIERS\nrye i mR: : | DESIG ,\nGALACTIC | Ak . a | Shae Fon Tou 2oeches\nGRENADIERS Ae Ae So! |\nSPACE PATROL\nHAVE LANDED \u00a9 7 ay in yep = STRIKE FORCE ALPHA\nGALACTIC GRENADIERS - 25 MM\nGG-01 INFANTRY ADVANCING W/SEMIPORTABLE LASER\nGG-03 INFANTRY PRONE W/SEMIPORTABLE LASER\nGG-05 INFANTRY W/AUTOMATIC GRENADE LAUNCHER\nGG-07 INFANTRY STANDING W/SMALL MISSILE LAUNCHER\nGG-10 POWER ARMOR INFANTRY, STANDING W/STUN GUN\nGG-11 POWER ARMOR INFANTRY, PRONE W/STUN GUN\nGG-15 CREWMAN, STANDING W/LASER PISTOL\nGG-20 MERCENARY, STANDING W/ASSAULT RIFLE\nGG-23 MERCENARY, ADVANCING W/GRENADE LAUNCHER\nGG-30 SHOANTHRA (HUMANOID ALIEN) STANDING\nW/NEEDLEGUN\nGG-40 T\u2019RANA (REPTILIAN ALIEN) ADVANCING\nGG-50 ALIEN, STANDING W/HAND WEAPON\nFOR COMPLETE CATALOG, SEND 25C IN STAMP OR COIN TO\nRAL PARTHA ENTERPRISES\n3642 Hyde Park Avenue - Cincinnati, Ohio 45208 - Phone 1-513-871-5315\nMAKERS OF NEW!\n*WIZARDS, WARRIORS &amp; WARLOCKS\n*PERSONALITIES AND THINGS THAT GO 'BUMP' IN THE NIGHT * edions et\n*LEGIONS OF THE PETAL THRONE ye\n&quot;THE HOPLITES&quot; 25 MM ANCIE =\n*1200 A.D. \u2014 THE ARMIES OF C. 1200 NQUIRES Petal ile\n*15 MM NAPOLEONICS ee ae\n*15 MM AMERICAN CIVIL WAR - 3 WELCOME See Ad in this issue on\n*15 MM WORLD WAR I! \u2014 NORTH AFRICA page 25\n*GALACTIC GRENDIERS \u2014 25 MM SPACE FIGURES\n"
+  },
+  {
+   "path": "extract/dragon/013/p003_full.txt",
+   "content": "Sorin:\nal Lake Geneva, Wisconsin\nAT THE AMERICAN LEGION HALL\n735 Henry Street\n8:00 A.M. - 12:00 P.M. SATURDAY\n8:00 A.M. - 6:00 P.M. SUNDAY\n$3.00 for both days or $2.00 per day\n: NO PRE-REGISTRATION |\nA schedule of events will be posted at the door\nIn the Spring a young man\u2019s thoughts turn to .\nD &amp; D &amp; Snits\nAfrican Campaign\nCONTACT:\nTSR Hobbies, Inc.\nP.O.B. 756\nLake Geneva, WI 53147\nPhone 414 - 248-3625\n"
+  },
+  {
+   "path": "extract/dragon/013/p004_full.txt",
+   "content": "Che Dragon\nThe Dragon Vol. 2 No. 7\nContents\nFeatures\nHow Heavy Is My Giant \u2014 Common-sense physics for D&amp;D...... 5\nTHE DRAGON\u2019s Observance of April Fool\u2019s Day \u2014\nSilly Songs for D&amp;D \u2019ers alaMAD.................2045. 16-17\nCreature Feature Contest #2 \u2014 Paint that Monster.............. 21\nThe Stolen Sacrifice \u2014 S&amp;S by Gardner Fox... .......0.06..0004. 22\nVariants\nThe Bionic Supplement \u2014 cyborgs in MA ................0005 8\nDemon Generation \u2014\nfooling players who\u2019ve memorized G,D-G &amp; H.............. 9\nThe Japanese Mythos for D&amp;D ............ 0.0.00 0. eee 11\nDesign/\nSorcerers Scroll \u2014 reg. column tackles Tolkeinin D&amp;D.......... 8\nDesigner\u2019s Forum\nWARLORD \u2014 correcting a few flaws ....... 0000 c cee 19\nNotes from a Semi-Successful D&amp;D Player \u2014 tips on plays....... 30\nDragon Mirth\nFinieous Fingers .............0 2000.0 eee ee ee eee 28\nWOE MIDY ssc oc eters Sasaki eh ast ACS Genes Java lyases hdd thacaarat ar inca bastegshab ater enctarhcnnch 29\nSTAR Periodica\nadivisiow af TRA Hobbies, Jac,\nfit\nPublisher \u2014 EE. Gary Gygax\nManaging Ed. \u2014_T. J. Kask\nTD Editor\u2014 T.J. Kask\nLW Editor \u2014 Joe Orlowski\nArt Dept.\u2014 Dave Sutherland\nDave Trampier\nTom Wham\nCirculation Mgr.\u2014 Joe Orlowski\nCover \u2014 by Tom Canty\nIf your mailing label says \u201cTD 13\u201d \u2014 this is your last issue . . . resubscribe\nVol. 2, No. 7\nThis is the first of our monthly issues. It also marks the third story\nby Gardner Fox published by THE DRAGON.\nIn honor of April Fool\u2019s Day, we have included in this issue a fea-\nture on silly songs to sing, ala-MAD Magazine, while adventuring. We\nwould be most interested in seeing more like these, but only is they are\nfit to print. In honor of one of my own characters, a number of the\nplayers here composed a bawdy ditty entitled \u201cTim, The Lusty Druid\u201d\nthat is definitely NOT suitable for reprinting. We don\u2019t need any more\nof that nature, nor will we publish them, unfortunately. There are\nsimply too many readers of TD that are too young for a \u201cdirty D&amp;D\nsongbook,\u201d and we certainly don\u2019t need any nasty letters from any\nmommy-monsters.\nYou are all invited to attend our SPRING REVEL here in pic-\nturesque Lake Geneva on April Fool\u2019s Day Weekend. See the ad on\nthe preceding page for more details. These small cons are quite dif-\nferent in tone from GenCon, being far less commercially oriented and\nmore playing oriented. For one thing, we on the staff get lots more time\nto play and judge than we would normally at GenCon.\nSpeaking of GenCon, this year\u2019s edition is being held a little way\naway from Lake Geneva for the first time in many years. The reasons\nfor the shift are many and varied; we did not make the decision lightly.\nAs anyone that attended last year can tell you, GenCon X was a smash-\ning success at the Playboy Resort. However, even their fine facilities\nwere strained to the utmost with the sheer volume of last year\u2019s shindig.\nThis year\u2019s location is the campus of Univ. of Wis-Parkside, in\nKenosha, WI. More on that as the date draws nearer.\nTSR (Periodicals included) hopes to be moving into new quarters\nin May. It remains to be seen what effect the move will have on us here,\nbut if planning ahead is any guarantee, we should make the transition\nwithout your noticing it. We are planning to move into a building sig-\nnificantly larger than the one we presently occupy.\nOn page 5 of this issue, you will find a curious color ad. The story\nbehind the story makes for fascinating telling in itself. The Harold Shea\nadventures remain some of the most highly recommended material that\na DM could possibly hope to read, dealing as they do with parallel uni-\nverses and mythology. THE GREEN MAGICIAN is the last of the\nHarold Shea stories, and has been out of print and unavailable for well\nover 20 years. It is our deep pleasure to announce that this lost classic\nwill be reprinted in TD in two parts (its nearly thirty-thousand words\nlong) beginning in TD #15, inaugurating our third year of publishing.\niN if\n4 \u2018 wate H ake\nTinian I, Relish\nEdigaic\nPublisher\u2019s Statement\nTHE DRAGON is published monthly by TSR Periodicals, a division of TSR Hobbies, Inc., POB 110, Lake Geneva, WI 53147\nIt is available at better hobby shops and bookstores, or by subscription. Subscription rate is $9.00 per 6 issues, $18.00 per year. Single copy and back issue price is $1.50, but availability of back issues is not\nguaranteed. Subscriptions outside the U.S. and Canada are $20.00 per 6 issues, and are air-mailed overseas. (Payment must be made in U.S. currency or by international money order.) All material published\nherein becomes the exclusive property of the publisher unless special arrangements to the contrary are made. Subscription expiration is coded onto the mailing list. The number to the right of the name, prefixed\nby \u201cLW\u201d or \u201cTD\u201d is the last issue of the subscription. Notices will not be sent.\nChange of address must be filed 30 days prior to mailing date.\nUnsolicited material cannot be returned unless accompanied by a stamped return envelope, and no responsibility for such material can be assumed by the publisher in any event. All rights on the entire con-\ntents of this publication are reserved, and nothing may be reprinted in whole or in part without written permission of the publisher. Copyright 1978 by TSR HOBBIES, INC.\nSecond-Class Postage paid at Lake Geneva, WI 53147.\n"
+  },
+  {
+   "path": "extract/dragon/013/p005_full.txt",
+   "content": "HOW HEAVY IS MY GIANT?\nSHLUMP DA ORC\nHave you ever wanted to know how heavy a giant is or how much a\ngiant can pick up? (loud refrain \u2014 \u201cAnything he wants to\u201d) Well, the\nlittle Kobolds at TSR spent many hours of brain work and reams of\npaper-work to come up with an answer. Unfortunately they didn\u2019t\ncome up with one answer, they came up with many answers. (De-\nmocracy at its finest.) None of the Kobolds could remember how to do\nthe scientific law about doubling the size and cubing the mass. So we\ncouldn\u2019t use that one to help us.\nOf all the answers we came up with we used the one that appeared\nmost reasonable. We used the formula that was created by our smartest\nKobold, mainly because none of the rest of us could understand it!!\nApparently what he did was base the weight on the increased volume of\nthe torso. As a giant gets taller his torso lengthens too.\nEinshtein, our smartest Kobold, based his formula on an average\nhuman male, 5'8\u201d tall with a 38\u201d chest size, an 18\u201d torso length and\nwho weighs 180 Ibs. Then he figured that this portion of the body\namounts to 35% of the whole body. Through diabolical methods he\ndiscovered that a cubic foot of a human body weighs 47 Ibs. Using all\nof this information he created a formula and calculated the following\nweights, chest sizes and torso lengths.\nHeight Weight Chest size Torso Length\nin Feet |Pounds Tons Inches Feet Inches Feet\n5'8&quot; 38&quot;\n6' 40&quot;\n7! 47&quot;\n8' 54&quot;\n9' 1/4 ton 60&quot;\n10\u2019 1/4 ton 67&quot;\n11\u2019 1/2 ton 74&quot;\n12\u2019 3/4 ton 80&quot;\n13\u2019 | ton 87&quot;\n14 11/4 ton 94&quot;\n15\u2019 | 1/2 ton 100\u201d\n16\u2019 1 3/4 ton 107\u201d\n17\u2019 2 1/4 ton 114\u201d\n18\u00b0 2 1/2 ton 120\u201d\n19\u2019 3 ton 127\u201d\n20' 3 1/2 ton 134&quot; 11\u00b02\u201d\n21' 4 ton 141&quot; 11\u00b09\u201d\n22) 4 1/2 ton 148&quot; 12\u00b04\u201d\n23' 5 1/4 ton 154&quot; 12\u00b010\u2019\n24' 6 ton 161&quot; 13\u20195\u201d\n25' 6 3/4 ton 168&quot;\n26' 7 3/4 ton 174&quot;\n27' 8 1/2 ton 181&quot;\n28' 9 1/2 ton 188&quot;\n29' 10 3/4 ton 194&quot;\n30' 11 3/44 ton |} 201&quot;\nThe Dragon\n20 LENGTH\nj\nTe bee ry nar\nies Jones ste _:\n| Taq\na\nThe weight, chest size and torso length columns have two units of\nmeasurement to help you visualize how large these giants really are.\nAn important note: These weights and sizes are based on the propor-\ntions of an average human male. This means that from 6\u2019 to 30\u2019 the\nmeasurements given are proportionally the same as the 5'8\u201d man. The\n30\u2019 giant will look exactly like the 5'8\u201d human only taller. These mea-\nsurements then, being based on an average human will give you an\naverage giant as long as the giant retains the same proportions as the\nhuman.\nThe normal human we\u2019ve used has a shoulder length of 18\u201d (the\nsame as his torso length); this is average. If that human had a shoulder\nlength of 2 1/2 feet, that would change his weight and chest size. The\nsame is true for giants. Not everybody\u2019s giants look the same. Some are\nsquat and thick, others broad shouldered and narrow hipped. Unfor-\ntunately the formula only works for the average, proportionally\nhuman-like giants. Those of you with different shaped giants must\nmake your own compensations. All of the information derived so far is\nbased on the assumption that the physical, chemical and biological\nmake up of the giants are identical to normal human standards. Some\nDungeon Masters might want their giants to have hollow bones or three\nhearts, etc. Any change from the human norm may possibly affect the\ngiants weight.\nOver and Under weight giants. Again based on the 5'8\u2019 man his\naverage weight is 160 lbs. but if he were 130 Ibs. he would be 20%\nlighter than normal. A 30\u2019 tall giant weighing 20% less than average\nwould weigh 18,836 lbs. A 5'8\u201d man who weighs 200 Ibs. is 25% more\nthan average. A 30\u2019 tall giant who is 25% heavier than average weighs\n29,587 Ibs. (almost 15 tons). If you need a lighter or heavier giant base\nit on the 5'8\u201d man. Find the percent of increase or decrease. ie., 16( to\n130 = -20%, 160 to 200 = +25% etc. Multiply the giants normal\nweight by the percent and add or subtract the result with the average\nweight. (Don\u2019t forget the percents\u2019 decimal point)\nThe Refined Formula: For those of you who wish to find out the\nweight and sizes of a larger giant (perhaps a Talos sized giant) this is the\nformula we used.\nFirst multiply the height of the giant (in inches) by .5588, this re-\nveals the chest size (circumference) in inches. Then multiply the height\nin inches by .2647 this gives the torso length (in inches) of the giant.\n"
+  },
+  {
+   "path": "extract/dragon/013/p006_full.txt",
+   "content": "The Dragon\nThe weight formula is, 2\n3.12x (Chest Size) x Torso Length aa\n6.28\n35\n1728\nNow doesn\u2019t that make a lot of sense?! AHHHHHHHHH ....\nI hope you have a calculator! !\n1. Divide the chest size by 6.28,\n2. Square that answer, (multiply it by itself, 2x2 = 4)\n3. Multiply that by 3.12,\n4. Multiply that by the torso length,\n5. Divide that by .35,\n6. Divide that by 1728,\n7. Multiply that by 47 (lbs. per cubic foot)\nThe answer is the giant\u2019s weight in pounds.\nExample: The 30\u2019 giant.\n30\u2019 360\u201d 360\u201d\nx12\u201d x.5588 x.2647\n360\u201d 2880 2520\n2880 1440\n1800 2160\n1800 720\n201.1680\u201d chest size\n. 201.16 (chest) divided by 6.28 = 32.0\n. 32.0 times 32.0 = 1024.0\n1024. times 3.12 = 3194.88\n. 3194.88 times 95.29 (torso) = 304,440.1\n. 304,440.1 divided by .35 = 869,828.88\n. 869,828.88 divided by 1728 = 503.373\n. 503.373 times 47 = 23,658.539 or (23,660 pounds).\n95.2920 &quot; torso length\nIANRWNE\nHow much can a giant pick up?\nWe make the assumption that a giant can proportionally pick up as\nmuch as a man can. This means that like our 160 lb. man, who can car-\nry on his back another 160 Ib. man (fireman carry, or 200 yd. man car-\nry army style) a giant should be able to carry a weight equal to his own\nweight on his back.\nNow don\u2019t get carried away with the weights an Olympic weight\nlifter can pick up. Those weights are balanced, symmetrical and de-\nsigned to be picked up. There aren\u2019t too many 50,000 Ib. dumbbells ly-\ning around for titans to practice on.\nAn average giant (like an average man) would be able to:\nCarry his full weight on his back.\n1) Hold in his arms 3/4 of his weight as easily as an average man could\ncarry a 100 lb. box of books (ugh); this would be dead weight and\nbalanceable.\n2) Fairly easily pick up in two arms //2 his body weight of dead\nweight.\n3) With difficulty pick up //2 his body weight a struggling animal (like\nan average man picking up a struggling German Shepard).\n4) With mild difficulty pick up //4 his body weight a struggling animal\ntwo handed (like a average man picking up a struggling poodle).\n5) Fairly easily pick up //4 his body weight in one hand of dead\nweight, balanced and somewhat symmetrical (large tree limb, pillar,\nspherical rock etc.)\nAgain let me say, this is an average giant and this is roughly what\nhe can pick up. A 30\u2019 tall titan who has taken weight lifting classes\nshould be able to \u201cpress\u201d 47,300-71,000 Ibs. (2-3 times his weight) if he\nhad the proper equipment.\nNon-flesh Giants\nNow then, if you want to know the weight of a non-flesh and\nblood monster (of human proportions) only one thing needs to be\nchanged in the formula. Step 7 is the pounds per cubic foot. For flesh\nand blood giants the number 47 is used, but to find the weight of a\nstone Golem or a bronze Talos, this number must be changed to reflect\nthe weight difference of the new body material (stone or bronze). The\ntable at the end of this article will give the weights per cubic/foot of\nvarious materials. i.e., Bronze weighs 550 lbs. per cu./ft.\nVol. 2, No. 7\nExample: A 60 foot tall Bronze giant named Talos.\n60 ft. tall = 720 inches tall.\nChest size, 720\u201d times .5588 = 402.33\u201d\nTorso length, 720\u201d times .2647 = 190.58&quot;.\nThe following are the steps for the weight formula;\n402.33 divided by 6.28 = 64.06\n64.06 times 64.06 = 4104.02\n4104.02 times 3.12 = 12,804.54\n12,804.54 times 190.58 = 2,440,290.9\n2,440,290.9 divided by .35 = 6,972,259.7\n6,972,259.7 divided by 1728 = 4,034.87\n4,034.87 times 550 (wt. of Bronze cu./ft.) = 2,219,17.85\nRoughly 2,220,000 Ibs. or 1,110 tons of solid Bronze.\nIf the insides of the giant are molten metal the weight would possibly be\nless because heat expands metals and the volume is the constant factor\nhere. Roughly then, he could weigh 1,000 tons.\nADNR WH \u2014\nGiant Footsteps\nA note for those of you who would like to know how deep this\ngiants foot steps are. His foot size is 71/2 feet by 3 feet (appx.) or 6480\nsq./inches of area total for both feet. If he weighed 1,000 tons there\nwould be 340 Ibs. per sq./inch of pressure on the ground. Proportion-\nally this is similar to a human walking through 2-4 inches of mud or\nthrough fine dry sand on a beach. With every step the giant takes he\nwould sink into the ground 3-6 feet. It is conceivable though, for Talos\nto sink into soft loam until he was supported by bed rock.\nAn 8 foot tall Clay Golem weighs 1,435 Ibs.\nA 91/2 foot tall Stone Golem (Granite) weighs 2,640 Ibs.\nA 12 foot tall Cast Iron Golem weighs 14,155 lbs./apprx. 7 tons.\nSubstance Pounds per Cubic Foot\nAluminum 170\nBrass\nRed 545\nYellow 530\nForging 525\nBronze 550\nCopper 560\nGold 1,205\nTron\nPure Ingots 490\nWrought 480\nCast (Gray) 445\nMalleable 450\nLead 710\nMagnesium 110\nMercury 845\nNickel BBN)\nPlatinum 1,340\nSilver 655\nSilver, Sterling 645\nSteel\nCold Rolled 500\nCarbon 485\nTungsten 505\nStainless 500\nTin\nPure 455\nSoft Solder 525\nWhite Metal 454\nPewter 454\nTin Babbitt 470\nTitanium 280\nTungsten 1,205\nZinc 445\nSubstance Pounds per Cubic Foot\nAgate 156-168 Semi-precious stone\nAlabaster 168-173 fine pottery\nAmber 66-69 used in jewelry\n"
+  },
+  {
+   "path": "extract/dragon/013/p007_full.txt",
+   "content": "Asbestos\nBeeswax\nBeryl\nBiotite\nBone\nBrick\nButter\nCalamine\nCamphor\nCement\nChalk\nCharcoal\nCinnabar\nClay\nCoal\nCoke\nCork\nDiamond\nDolomite\nFeldspar\nFlint\nGalena\nGarnet\nGlass\nGranite\nGum Arabic\nHematite\nIce\nIvory\nLeather (Dry)\nMagnetite\nMalachite\nSeay\nThe Dragon\n125-175 Marble 160-177\n60-61 Ochre 218 A red/yellow pigment\n168-169 Semi-precious gem Opal 137 Semi-precious stone\n170-190 contains iron ore Paper 44-72\n106-125 Paraffin 54-57\n87-137 Pitch 67\n53-54 Porcelain 143-156\n255-280 ore containing zinc Pyrite 309-318 \u201cFools Gold\u201d Can contain Gold deposits\n62 aspirin variant Quartz 165 Can contain Gold deposits\n170-190 set-hardened Rocksalt 136\n118-175 Rubber\n35 Hard 74\n507 ore containing mercury, useful for poisons Soft 69\nand red dye. Sandstone 134-147\n112-162 Soapstone 162-175\n87-112 Sugar 99\n62-105 Topaz 219-223\n14-16 Wax 112\n188-220 Wood (Seasoned)\n177 ore containing magnesium Apple 41-52\n159- 172 ore containing aluminum ASh 40-53\n164 Balsa 7-9\n460-470 ore containing lead and coal Bamboo 19-25\n197-268 semi-precious stone Cedar 30-35\n150-175 Ebony 69-83\n165-172 Lignum Vitae\n81-87 a plant derivative used in adhesives, 73-83 NS 4.\nconfectionery and pharmacy. Mahogany 4] (t Ga\n306-330 ore containing iron Oak 37-56 oN\nS12\n114-120\n54\n306-324 ore containing iron\n231-256 Semi-precious stone, also ore containing\ncopper.\nHN\n|\nlh\n| ere RTT\nrea\nDesigned and Written by\nBruce Loren Miller\nPRICE $5.00\nFantasy &amp; Hobby Sales &amp; Mfg.\nP.O. Box 4052\nMuskegon Hts., Michigan 49444\nPine, White 22-31\nYellow 23-37\nSycamore 24-37\nTeak, Indian 41-55\nTeak, African 61 ISSURANSS \u00a7\nWillow 24-37 Cc\nA New Concept In Starship Combat\nWhere you design and command your own ships in interstellar con-\nflict. These rules cover the design and development of your own\nships with 49 subsystems (Ex sick bays. computers) and 22 weapon\nsystems (Ex blasters, missiles)\nSimple but complete combat rules that allow fleet action battles but\nare detailed enough for individual starship combat.\n45 pages plus quick reference sheet\n$5.00 POSTPAID Dealers Inquiries Invited\nWe also have discount prices on the following:\nGAMES BY:\nAH, Lou Zocchi, Fantasy Games, GDW, FanTac. Judges Guild,\nExcalibre, SPI, Chaosium, TSR. Metagaming .\nMINIATURES BY:\nMcEwan, Stan Johnson, Rai Partha, Grenadier. Dragon Tooth,\nGarrison, Mini-Figs, Heritage. Hinchliffe, Armoury Minot, Scruby,\nLeicester &amp; GHQ Micro Armour, Panzerschiffes,\nSuperior Task Force 24, Valiant sailing &amp; star ships\nWE ALSO CARRY THE \u201cWHITE DWARF\u201d MAGAZINE.\n"
+  },
+  {
+   "path": "extract/dragon/013/p008_full.txt",
+   "content": "The Dragon\nby Rob Kuntz\nTolkein i in Dungeons &amp; Dragons\nMany people who play and enjoy D &amp; D still have their complaints\nto offer TSR in one form or the other. One which crops up persistently\nis the comparison issue between Dungeons and Dragons and that of\nJ.R.R. Tolkien\u2019s works. Some people get to the crux of the matter by\nstating the obvious disagreements between Tolkien\u2019s conceptions and\nfictional characters as compared to their representation within the D &amp;\nD game format. In some cases I believe they (those who send in pro-\nTolkien letters) are trying to impress the creators of D &amp; D as to the\nworthiness of their Tolkien quoted statements. I will attempt to explain\nour position on D &amp; D in conjunction with other worlds of fantasy\nwhich influenced its conception and specifically to clear up the fal-\nlacious beliefs regarding Tolkien\u2019s fantasy as the only fantasy which in-\nspired D &amp; D. But first, parts of a letter from a concerned player in the\nsame line...\n\u201cT was influenced greatly by the writings of Tolkien and was led\ninto the world of fantasy by the inhabitants of the Shire. For this\nreason I prefer as player characters elves and dwarves. I feel that the\n\u2018roll three dice method\u2019 of determining the prime requisites of the play-\ners 1s fair and equitable for humans but is ultimately unfair to the non-\nhumans.\u201d . . .\u201cI feel it is only fair to these non-human beings to make\na concession as follows: For elves roll three dice but put a limit of no\nless than 12 for strength and 15 for intelligence as minimums so if less 1s\nrolled the minimum automatically applies. The dwarves as a people are\na race of miners and smiths, therefore a strength of less than 14 would\nbe almost unheard of.\u201d . . . \u201cIn Tolkien the elves made some of the\nmost powerful offensive weapons . . . I realize that the many varied en-\nchanted blades could not be forged by mere warlocks but feel that one\ncould be enchanted to a mere +1 by six months of hard work.\u201d\nOne might say that I am knit-picking without reason in presenting\nthis letter. I for one believe that this may be a minor problem in the D &amp;\nD field but it, along with other disorganized ideas about the actual way\n(or the right way) of playing D &amp; D create a noticeable dividing line be-\ntween the way we at TSR play the game and the way we intended it to\nbe played. Individualism within the game itself is stressed and we do\nnot actively go out of our way to remonstrate people for exercising their\nimagination within their campaign. We also hope that those people will\nrespect the way we play for we think the designers know best.\nThe game was designed stressing the human aspect of play,\nhumans being ultimately the strongest and predominant race on any\nearth. With a few exceptions most worlds of Fantasy and Swords &amp;\nSorcery writers are predominantly inhabited by humans. Elves,\ndwarves and hobbits were the minority races on Middle-Earth and were\nnever in the spotlight for long time periods. Furthermore, D &amp; D was\nnot written to recreate or in any collective way simulate Professor Tol-\nkien\u2019s world or beings. A few were included such as Balrogs, Orcs etc.\nfor it was recognized that Tolkien made some impressions upon the\nFantasy literary world which were worth including in D &amp; D, but not to\nthe extent of basing the game system around them. That is left up to se-\nparate judges \u2014 but in doing so they excommunicate themselves from\nthe actual D &amp; D system. As I stated earlier we support creative imagin-\nation but we also support the premise of D &amp; D. Those who base their\ngames around a single work such as LOT are playing a campaign based\naround Middle-Earth and since D &amp; D was not written to create a basis\nfor one world, it is thus not strict D &amp; D. Players must remember also\nthat elves, dwarves and similar creatures were around before Tolkien\ntook to the field and determinations of advancement etc. are left to the\nseparate authors or judges as the case may arise. Tolkien\u2019s elves may\nhave been on the average better than a human of his world but in D &amp; D\nit can be quite the opposite. On the other side of the coin, though elves\nand dwarves are limited to the level they may attain they gain early ad-\nVol. 2, No. 7\nvantage (noticing secret doors, sloping passages etc.) which partially\nmakes up for their lower levels later on.\nOne must also remember that this system works with the worlds of\nR.E. Howard, Fritz Leiber and L.S. de Camp and Fletcher Pratt much\nbetter than that of Tolkien. If one is to branch away from the D &amp; D\nsystem, let\u2019s say towards Tolkien\u2019s world, he will be disappointed to\nfind that most spells, characters etc. do not function well within the\nepic world of Tolkien\u2019s design. The Professor was concerned with pre-\nsenting a well-told tale of sheer magnitude and greatness culminating\nwith the end of the story, end of the characters, end of the world for all\nit was worth, for what more was there actually to do? There was not a\ncontinuing story line possible, for the story itself was in fact based\naround the destruction of the Ring and all those events which were\nspawned from it. As we would say at TSR \u201cEND OF ADVENTURE\u201d.\nWhat I am saying is that for a role-playing, continuous adventur-\ning world, Tolkien\u2019s does not fit well within the D &amp; D game style.\nThus, difficulties will always be found when one attempts to combine D\n&amp; D and Tolkien\u2019s Middle-Earth into one. One last piece of informa-\ntion which might help those people out there who are confused about\nwhich \u201clight? Dungeons &amp; Dragons should be taken in or how the\ngame was inspired; I suggest you read the following. This is an excerpt\ntaken from the foreword to Dungeons and Dragons, written by Gary\nGygax.\n\u201cThese rules are strictly fantasy. Those wargamers who lack ima-\ngination, those who don\u2019t care for Burroughs\u2019 Martian adventures\nwhere John Carter is groping through black pits, who feel no thrill\nupon reading Howards\u2019 Conan saga, who do not enjoy the de Camp &amp;\nPratt fantasies or Fritz Leiber\u2019s Fafhrd and the Gray Mouser pitting\ntheir swords against evil sorceries will not be likely to find Dungeons\nand Dragons to their taste.\u201d\nMay you never be caught in a dead end by an iron golem!\nMA Variant\nTHE BIONIC SUPPLEMENT\nWhy Is It So Small, Mommy?\nShhh. \u2018Cause it\u2019s transistorized.\nby Brian Blume\nBionics seem to have cluttered up everything nowadays, especially\ntelevision. If you would like bionics to clutter up your games, try add-\ning the following to your METAMORPHOSIS ALPHA campaign.\nPlayers discovering medical laboratories may request that the ro-\nbots there replace one or more of their organs with bionic replace-\nments. The player may not choose what is to be replaced, however, the\nrobots will randomly determine what is to be replaced. For each re-\nplacement a player desires, the referee will roll once (1-20) on the fol-\nlowing table. Obviously, a player cannot receive two bionic hearts, etc.\nDie Roll Replacement Hit Points Effect\n1-3 One Arm 10 Increases strength. +1 die of\ndamage\n4-6 One Leg 10 Increases strength. -1 for op-\nponent to hit. Double speed if both\nlegs.\n7-8 One Eye 5 iii Red &amp; Ultra Violet vision. As\nHeigh. vision if both eyes.\n9-10 One Ear 5 May hear above &amp; below normal\nranges. As Heigh. hearing if both\nears.\nI] Nose 5 As Heigh. smell.\n12 Heart 5 Reduces fatigue.\n13 Lungs 5 May extract oxygen from water.\n14 Digestion 5 May live on rocks, sand, etc.\n15-17 Brain 10 50% chance to forget any given\nfact or item\u2019s operation each oc-\ncasion (defect).\n18-20 Torso 30 -2 to hit for both player and his\nopponents.\nAny bionic area has no sensory nerve endings. Bionic areas sus-\ntaining damage may only be repaired by maintenance robots. For each\nbionic area deduct 5 Hit Points, and add the Hit Points listed for the\nbionic parts.\n"
+  },
+  {
+   "path": "extract/dragon/013/p009_full.txt",
+   "content": "DED Variant\nD&amp;D OPTION: DEMON GENERATION\nby Jon Pickens\nThere is no reason why demons in D&amp;D must be limited to the\ntypes described in Eldritch Wizardry. If those nasties only whetted your\nappetite for more, the following guidelines can be used to generate an\nunlimited variety of new demons to plague your players.\nAll demons have the following properties:\na) Hit dice and Gate Ability appropriate to their level.\nb) Vunerability to normal weapons at Level III or less, but magi-\ncal weapons only at higher levels.\nc) Magic Resistance of 50% at Level I, which increases by 5%\nfor each additional level of the demon.\nd) Special abilities as determined on the tables below. Note that\nno demon may have both fire and ice powers.\nAbilities L223 An SG\nLevel I De ee Hie He EE\nLevel II etme tie As oe\nLevel II 3.22 - - -\nLevel IV 3.3 2 1 - -\nLevel V So 2. G2? al! 22\nLevel VI ee as wee |\nPrince 1-6 powers of each level, but never less in any\ncategory than a Level VI demon, nor more\npowers of a higher level than a lesser. Also has\na 50% chance of an Artifact.\nLevel 1 Level 2 Level 3\n1 Detect Hidden and Invisible 1 Fear 1 Illusion\nEnemies Levitate 2 Polymorph Self\n2 Darkness 5\u2019 radius 3 Darkness 10\u2019 rad. 3 Slow I/day\n3 Poison Bite or Sting 4 Read Language 4 Haste I/da\n4 Detect Magic 5 Web 1-3/day 5 nee 1-3/day\n5 Fly at will 6 Blink as Blink Dog 6 ESP 1-3/day\n6 [-3 Magic Missile/day 7 Speak with dead* 7 Growth of plants\n7 Mirror Image 1-3/day 8 Dimension Door 8 Growth of Animals\n8 Charm (if gaze met) 9 Snake Charm* 9 Sticks to Snakes*\n10 Read Magic 10_Hypnotise .\n11 Mind Blank 1 /day 11 Dispell Magic*\n12 Produce Flame 12 Regenerate 1-3 pts/\n9 Speak with animals\n10 Ventriloquism\n11 Pyrotechnics\n12 Telekinesis as per Level (as Druid) round\n(see EW)\nLevel 4 _ Level 5 Level 6\n| Suggestion 1-3/day 1 Drain 1 energy level 1 Power Word\n2 Projected Image 2 Shape Change wo. Symbols\n3 One Non-Fatal Symbol 3 Telepath 3 Rotting Disease\n4 Magic Jar 1-3/day 4 Fireball (Cold Cone)* Touch (see EW)\n5 Wall of Fire (Ice) 5 rane Bolt* 4 Feeblemind\n: 6 Cloudkill 5 Mass Charm\n6 One Time Stop/day\n8 Animate Objects* 7 Control Weather\n9 Animate Dead* 8 Death Spell _\n10 Grant Limited Wish 9 Polymorph Object\n(Liday} ay\n10 Once Ice Storm 11 Elemental Form** 10 Grant Wish 1/day\n(Fire Storm)/day 12 +10% magic 11 Conjure Animal\n11 Maze 1-3/day resistance I\n12 +5% magic resistance\na\n6 Clairvoy. \u2018with Clairaud. 7 Passwall\n3 times/day\n7 Create Food\n8 Repulsion 1-3/day\n9 Gaseous Form\n/day\n12 Aging Touch 10-40\nyrs.\n*Multiply Demon\u2019s level by 2 (1-3) or 3 (4-6) to determine the\nequivalent MU/Cleric level of capability. Princes always have the capa-\nbilities of 19th Level MUs or clerics.\n**Flemental form allows the demon to take on the form of a speci-\nfied elemental with appropriate augmentation of its fighting abilities.\nFor example, a demon with Fire Elemental form would immolate as a\nBalrog, while one with an Air Elemental form could turn into a Whirl-\nwind at will. Only one form is gained for each time the ability is indi-\ncated.\nIn order to determine exactly what the demon looks like, roll two\ndice on the dungeon encounter table of the proper level. Mix the results\nThe Dragon\nanyway you like to come up with the most hideous appearance possible.\nIf the creatures have any special abilities, the demon gains these too\n(abilities of men, like additional MU spells, Thief abilities, Fighter\nstrength bonuses, etc will NOT be gained). Level V and VI demons\nmust have one roll considered \u201chuman\u201d (no special-abilities) or Basic\nAnimal (outdoor encounter table), as giving them a chance for the spe-\ncial abilities of two monsters types makes them too powerful. ((One\nplaytest demon was a Vampire with a Beholder head \u2014 NO WAY!))\nEXAMPLE: Putting it all together, I shall now create Nasthrapur,\na 6th level demon. Assume the following rolls: LI 2,6,6; LII 1,1,10;\nLIV 10,12,12; LIV 10,12; LV 4,10; LVI 5. Since a roll for MU level\ncame up \u201c3\u201d, the demon has the MU capabilities of a 12th Level\nMU/Cleric.\nLEVEL I: Darkness 5\u2019 radius.\nMagic Missiles (from 2-6 per day possible. Assume\nFear, twice the normal range (of wand). -2 on sav-\ning throws. Read magic.\nHypnotise as Illusionist.\nRegenerate (2-6 pts per melee round. Assume 5\npoints)\nFirestorm, I/day. (Since whether the demon has\nfire or ice powers has not been determined, this was\ndecided randomly.)\nMagic Resistance raised to 80%.\nFireball of 12 dice.\nMagic Resistance raised to 90%.\nLEVEL VI: Mass Charm\nIn addition, he receives the normal benefits of being a 6th Level\ndemon: eight 10-sided hit dice, a 70% chance of gating in a Level 3 or 4\ndemon, and can be hit by magic weapons only.\nAssume his appearance is a cross between a Red Dragon and Wild\nCattle. Such a creature might have a bull\u2019s head and hooves, but a scaly\nbody and leathery wings. A dragon\u2019s taloned forelegs take the place of\narms. This combination will give the demon the following special abili-\nLEVEL IL:\nLEVEL II:\nLEVEL IV:\nLEVEL V:\nties: bite/butt/claw attacks, flight, and a breath weapon of fire usable\nthree times per day that does 24 points of damage (assuming the dragon\nmaturity roll was a 2).\nAll in all, someone you don\u2019t want to meet in a back alley!\n"
+  },
+  {
+   "path": "extract/dragon/013/p010_full.txt",
+   "content": "Heritage Models, Inc.\nNou... THE EXCLUSIVE MARKETING AGENT\nFOR THESE TWO FINE PRODUCTS!\nSPANISH MAIN\nFight the exciting\nbattles of the Spanish\nMain with these new\n1/1200 scale Men of War\nfrom the age of Drake\nand Hawkins. Cast\nValiant\u2019s collectors figures represent\nthe finest in design and execution.\nFrom the beginner to the mast dis-\ncreminating collector, the crisply\nFIGHTING SAIL\nTrafalgar, the Battle of the Nile\ncan be fought with these\n1/2000 scale Men of War.\nCamplete line fram 10Q gun\nships of the line to Bomb\nSTARDATE: 3000\nGalactic War\u2014the Allied Com-\nmand against the Aliens!\nValiant presents a complete\ntine of detailed starships, heavy\nbattlecruisers, destroyers, es-\ndetailed metal castings satisfy all\nKetches. Cast metal sails and cort cruisers, troopships, pur-\ntastes. masts and metal sails masts included. suit ships, and orbital stations.\n\u2018 included. Can be used with Battleline\u2019s\n: Alpha Omega.\nre\n. e/ \u2018*.\n= r ly\n\u2014 XN ye\nrac\nNew\u2014Flat Top: World War II\nCarrier battles in the South\nPacific\nNew\u2014Alpha Omega; A future\nWrite for our catalogs: The new 4-color catalogs of Valiant and Battle Line Games __\nat $.50 each. Still available are the Hinchliffe catalog at $4.95 and the Heritage/Der \u201c\nKriegspieler Model catalog at $2.00.\nNew\u2014 Objective: Atlanta; a game of the\n1864 Atlanta campaign.\ntactical instellar warfare game.\nBATTLELINE GAMES\nA RSame pf the Civil txt Ciepaign fer Aitaeia\n= t\n\u00bb. 4\nA Game of ice Spanish Civil War - 1936-1939\nTe\nA\nNew\u2014Viva Espana; The brutal campaigns\nof the Spanish Civil War.\nOther Battleline Boxed Games\n@ Shenadndoah @Custer\u2019s Last Stand\n@ Air Force @\u00aeFury in the West\ne Dauntless\nDealers: Call collect for complete details, ask for\nDuke Seifried; Director of Sales\n214-351-3708\nHeritage Models, Inc.\nManufacturers of Hinchliffe and Der Kricgspiclers\n9840 Monroe Drive. Bldy. 106\nDallas, Texas 75220\n214 - 351 - 3708\n"
+  },
+  {
+   "path": "extract/dragon/013/p011_full.txt",
+   "content": "D&amp;D Variant\nTHE JAPANESE MYTHOS\nby Jerome Arkenberg\nJapanese mythology is a mixture of Buddism and Shinto. The\nmain concern of Shinto is with Amaterasu, the Sun Goddess, and her\nrelations and descendants. The beliefs of Shinto also includes the belief\nthat everything (mineral, animal, and vegetable) has its own kami or\nspirit. When Buddism was introduced to Japan in the late 6th Century\nA.D., Shinto gods and goddesses, to a certain degree, became inte-\ngrated with the Buddhist pantheon, and vice versa.\nTHE GODS AND GODDESSES\nAMERTERASU \u2014 The Sun Goddess\nArmor Class: -2 Magic Ability: See Below\nMove: 18\u201d Fighter Ability: Lord \u2014 15th\nHit Points: 300 Psionic Ability: Class 6\nAmeterasu is the deity from which the Japanese Imperial family is\ndescended. She appears as a beautiful, young woman. She can Fly,\nTeleport, and use Continual Light, Darkness, Clairvoyance, Clairau-\ndience, and ESP spells.\nTSUKIYOMI-NO-MIKOTO \u2014 The Moon God\nArmor Class: -2 Magic Aiblity: See Below\nMove: 18\u201d Fighter Ability: Lord \u2014 15th\nHit Points: 275 Psionic Ability: Class 6\nThe Moon God is the brother of Ameterasu. Though he is her\nbrother, he does not play a large part in the myths of Japan. Thus he is\nnot well known by name. He can Fly, Teleport, and use Light and\nDarkness spells.\nSUSANO \u2014 The Storm God\nArmor Class: -2 Magic Ability: See Below\nMove: 18&quot; Fighter Ability: Lord \u2014 15th\nHit Points: 290 Psionic Ability: Class 6\nSusano is also associated with Forests, as well as with storms. He is\nheavily bearded and a middle-aged man in appearance. He is very cour-\nageous and very cunning. He has two jewels, one of which is used in\nproducing hail, the other in producing lightning. He can Teleport,\nShapechange, Control Weather, and produce Lightning Bolts, and Ice\nStorms.\nIZANAGI &amp; IZANAMI \u2014 The Creators\nArmor Class: 2 Magic Ability: See Below\nMove: 12\u201d Fighter Ability: Lord \u2014 10th\nHit Points: 200 Psionic Ability: Class 6\nThis couple gave birth to the gods and goddesses, the mountains,\nthe land, and all the diverse Kamis. They can clone, Transmute Rock-\nMud, Lower and Part water, Move Earth, and use Permanent Spells.\nRYUJIN \u2014 The Dragon King of the Sea\nArmor Class: -1 Magic Ability: See Below\nMove: 15&quot; Fighter Ability: Lord \u2014 15th\nHit Points: 250 Psionic Ability: Class 6\nThe Dragon King of the Sea is a manlike creature that wears a\ncrown in the shape of a serpent. He has the aspect of an old man with\nlong whiskers. His palace is at the bottom of the Sea. He is known to\nhave rewarded mortals that have done him a service with supernatural\ngifts, such as a bag of rice which replenishes whatever is taken from it.\nHe can Lower and Part Water, Shapechange, Teleport, Polymorph any\nobject, Massmorph, Create Water, and Water-Breath.\nHACHIMAN \u2014 God of War\nArmor Class: 2 Magic Ability: See Below\nMove: 12\u201d Fighter Ability: Lord \u2014 15th\nHit Points: 200 Psionic Ability: Class 6\nHachiman looks like a man of 35, wearing a loose robe, mounted\non a horse.. His sword is +3 to hit doing 24-48 points of damage. He\nalso has a set of magical arrows which never miss. They do 7-12 points\nof damage. He can Teleport, and use Strength, Shield, and Magic Mis-\nsile spells.\nINARI \u2014 Rice God\nArmor Class: 2\nMove: 15&quot;\nHit Points: 175\nMagic Ability: See Below\nFighter Ability: Lord \u2014 10th\nPsionic Ability: Class 6\n11\nThe Dragon\nInari is a bearded man, but he also appears as a woman and a fox.\nThe fox, indeed, is the messenger of Inari. He is the patron of sword-\nsmiths and traders also. He can Shapechange, Teleport, Growth/Plant,\nCharm Plant, Polymorph any object, Create Food.\nKWANNON \u2014 Goddess of Mercy\nArmor Class: 0 Magic Ability: See Below\nMove: 16\u201d Fighter Ability: 7th\nHit Points: 175 Psionic Ability: Class 6\nKwannon is a matronly deity. She will never deny mercy to those\nthat call on her. If necessary, she herself will suffer whatever the suppli-\ncant was to suffer, though usually she will merely try to prevent it from\nhappening. She can Shapechange, Teleport, Polymorth others, Stun,\nAnti-magic Shell, Protection/Evil, Protection/Missiles, Invisibility,\nand Stone-to-Flesh.\nSUKA-NA-BIKO or MOMOTARO \u2014 \u201cSmall Renown Man\u201d\nArmor Class: 3 Magic Ability: See Below\nMove: 10\u201d Fighter Ability: Lord \u2014 12th\nHit Points: 175 Psionic Ability: Class 6\nMomotaro is dwarvish in size, and wears moth wings and tiny\nfeathers. He can cure diseases, for he is versed in medical lore. He of-\nten appears to lead people to hot springs. He can also cure Light\nWounds and Serious Wounds, and Purify Food and Water.\nTHE SEVEN GODS OF LUCK\nHOTEI \u2014 God of Luck\nArmor Class: 2 Magic Ability: See Below\nMove: 15\u201d Fighter Ability: 7th\nHit Points: 150 Psionic Ability: Class 6\nHotei has a huge stomach, below which his garments sag. He is\nvery good-natured. He can use Wish, Polymorph any object, Mass\nCharm, Charm Plants, Charm Person, Telekinesis, and Protect-\ntion/Evil spells.\nJUROJIN \u2014 God of Luck &amp; Longevity\nArmor Class: 2 Magic Ability: See Below\nMove: 15\u201d Fighter Ability: 7th\nHit Points: 150 Psionic Ability: Class 6\nJurojin is always in the company of a crane, tortoise, or stag. He\nhas a white beard and carries a shaku (a sacred staff on which is\nfastened a scroll containing the wisdom of the world). He also enjoys\nsake in moderation. He can counter the effects of a Staff of Withering.\nHe can also use Wish, Time Stop, Charm Person, Charm Plants, Mass\ncharm and Protection from Evil spells.\nFUKUROKUJO \u2014 God of Luck\nArmor Class: 2 Magic Ability: See Below\nMove: 15\u201d Fighter Ability: 7th\nHit Points: 150 Psionic Ability: Class 6\nFukurokujo has a very long and narrow head and a very short\nbody (actually his head was longer than his legs). He can use Wish,\nCharm Person, Polymorph and Object, Charm Plants, and Protection\nfrom Evil spells.\nBISHAMON \u2014 God of Luck (illus. on pg. 12)\nArmor Class: 2 Magic Ability: See Below\nMove: 15&quot; Fighter Ability: Lord \u2014 10th\nHit Points: 150 Psionic Ability: Class 6\nBishamon is alwasy dressed in full armor, carrying a spear in one\nhand, and a miniature pagoda in the other. He can use Wish, Charm\nPerson, Strength, Magic Missile, Shield, Polymorph any Object, and\nProtection from Evil spells.\nDAIKOKU \u2014 God of Luck &amp; Wealth\nArmor Class: 2 Magic Ability: See Below\nMove: 15\u201d Fighter Ability: 7th\nHit Points: 150 Psionic Ability: Class 6\nDaikoku is also the guardian of farmers and is a cheerful god. He\ncarries a mallet which can grant wishes. He is usually sitting on rice-\nbales, with his treasure hung over his shoulder in a sack. He can use\nCharm Person, Wish, Polymorph any object, and Protection from Evil\nspells.\nEBISU \u2014 God of Luck\nArmor Class: 2\nMove: 15&quot;\nHit Points: 150\nMagic Ability: See Below\nFighter Ability: 7th\nPsionic Ability: Class 6\n"
+  },
+  {
+   "path": "extract/dragon/013/p012_full.txt",
+   "content": "The Dragon\nBISHAMON TRAMPLING A DEMON\nEbisu is a hard worker. He is the patron of tradesmen and fisher-\nmen. He usually carries a fishing rod and a sea bream. He can Wish,\nCharm Person, Polymorph any object, and use Protection from Evil\nspells.\nBENTEN \u2014 Goddess of Luck and Goddess of the Sea\nArmor Class: 2 Magic Ability: See Below\nMove: 15&quot; Fighter Ability: 7th\nHit Points: 150 Psionic Ability: Class 6\nBenten is many things. She is the patroness of Literature and\nmusic, and a giver of wealth and romantic happiness. The Sea is her\nhome, and her father is the Dragon King of the Sea. Benten has eight\narms, two of which are always folded in prayer. She is usually either\nriding or accompanied by a dragon. She uses a White Serpent for her\nmessenger. She can use Charm Person, Water Breathing, Lower and\nPart Water, Teleport, Shapechange, Wish, Polymorph any object, and\nProtection from Evil spells.\nSHAKA-NYORAI \u2014 The Buddha Sakyamuni\nArmor Class: 2 Magic Ability: Patriarch \u2014 20th\nMove: 14\u201d Fighter Ability: Sth\nHit Points: 275 Psionic Class: Class 1\nShaka-Nyorai is the Indian Sakyamuni, the Buddha, the founder\nof Buddhism. He is a mature man, wearing a simple robe, and is either\nsitting or standing, contemplating.\nYAKUSHI-NYORAI \u2014 The Buddha Bhaisajy aguru\nArmor Class: 2 Magic Ability: Patriarch \u2014 15th\nMove: 14\u201d Fighter Ability: 5th\nHit Points: 275 Psionic Ability: Class 2\nYakuski-Nyorai is the \u201cMaster with remedies\u2019. He is also a ma-\nture man, wears a simple robe, and holds a medicine jar in his left\nhand. He can cure anything.\nAMIDA-NYORAI \u2014 The Buddha Amitabha\nArmor Class: 2 Magic Ability: Patriarch \u2014 17th\nMove: 14&quot; Fighter Ability: 5th\nHit Points: 275 Psionic Ability: Class 1\nAmida-Nyorai is the \u201cBuddha of Infinite Light\u2019, whose help is\nspiritual, and is called upon in the hour of death. He is a nature man,\nand is either seated in concentration with his thumbs bent, or standing,\nmaking a welcoming gesture.\n12\nVol. 2, No. 7\nDAINICHI-NYORAI \u2014 The Buddha Mahavairocana\nArmor Class: 0 Magic Ability: Patriarch \u2014 23rd\nMove: 14\u201d Fighter Ability: 6th\nHit Points: 300 Psionic Ability: Class 6\nDainichi-Nyorai is \u201cthe personification of the Absolute in the\nform of the supreme, omnipresent buddha.\u201d He is draped in finery and\nwears a diadem.\nMIROKU-BOSATSU \u2014 The Buddha of the Future\nArmor Class: 4 Magic Ability: Patriarch \u2014 10th\nMove: 14\u201d Fighter Ability: 5th\nHit Points: 275 Psionic Ability: Class 4\nMiroku-Bosatsu is the Buddha of the Future, who will appear 5000\nyears after the entrance of Ahaka-Nyorai into Nirvana. He appears in\nthe \u201cpensive\u201d attitude, holding a stupa.\nKANNON-BOSATSU \u2014 The \u201cGreat Compassionate One\u201d\nArmor Class: 4 Magic Ability: Patriarch \u2014 10th\nMove: 14 Fighter Ability: 4th\nHit Points: 225 Psionic Ability: Class 4\nKannon-Bosatsu is the one to call on during times of affliction. He\nwears the finery and jewels of a prince.\nMONJU-BOSATSU \u2014 \u201cGuide of all Buddhas\u201d\nArmor Class: 4 Magic Ability: Patriarch \u2014 9th\nMove: 12\u201d Fighter Ability: 4th\nHit Points: 225 Psionic Ability: Class 4\nMonju-Bosatsu is supreme wisdom. He is usually seated on a lion,\nholding a scroll in one hand, a sword in the other.\nFUGEN-BOSATSU \u2014 \u201cHe whose goodness is omnipresent\u201d\nArmor Class: 4 Magic Ability: Patriarch \u2014 9th\nMove: 12\u201d Fighter Ability: 4th\nHit Points: 225 Psionic Ability: Class 4\nFugen-Bosatsu represents innate reason. He is seated on a white\nelephant with six tusks, with his hands joined.\nJIZO-BOSATSU \u2014 Protector of the Dead\nArmor Class: 4 Magic Ability: Patriarch \u2014 9th\nMove: 12&quot; Fighter Ability: 4th\nHit Points: 225 Psionic Ability: Class 4\nJizo-Bosatsu is the protector of the dead in the after-world, repre-\nsenting them before the judges of the dead. He appears as a monk with\nshaven head, \u201cdressed in a long robe and holding a stick with tinkling\nrings on one end, which put the powers of darkness to flight.\nFUDO-MYOO \u2014 The \u201cImmovable\u201d (illus.\nArmor Class: 2\n\u2014&gt;)\nMagic Ability: Patriarch \u2014 13th\nMove: 14\u201d Fighter Ability: 12th\nHit Points: 225 Psionic Ability: Class 5\nFudo-Myoo is the chief of the \u2018Five Great Kings of Science\u2019 and\nputs evil demons to flight. His body is blue-black, and of a stocky\nshape. His teeth protrude from his mouth, one eye is dilated, the other\ncontracted. He carries a sword in one hand, and a rope in the other. He\nis either standing or sitting on a diamond-hard rock. surrounded by\nflames. He is a support \u201cin all enterprises requiring strength of pur-\npose.\u201d\nAIZEN-MYOO \u2014 God of Love\nArmor Class: | Magic Ability: Patriarch \u2014 14th\nMove: 14\u201d Fighter Ability: 7th\nHit Points: 200 Psionic Ability: Class 2\nAizen-Myoo, though popularly worshipped as the God of Love, ac-\ntually he represents sexual passion changed into desire for enlighten-\nment. He has a red body with eight arms, three eyes, bristling hair, with\na lion in that hair, and seated on a lotus.\nOTHER SHINTO GODS\nFUJIN \u2014 God of the Winds. He holds a bag containing the winds\nacross his shoulders. His skin is green, and his face has a hideous ap-\npearance.\nKOSENSEI \u2014 The Sage with a Toad. This sage lived a long life, and\ncould turn himself into a reptile. He is completely hairless with warts\non his skin.\nOH-KUNI-NUSHI \u2014 The Son-in-law of Susano. He rules the Izumo\npeninsula, and has Susano\u2019s sword, bow, and arrows, and koto (harp).\nRAIDEN \u2014 God of Thunder. He is, in appearance, a demon.\nSHI-TENNO \u2014 The Four Guardians who keep the world safe from the\nattacks of demons.\n"
+  },
+  {
+   "path": "extract/dragon/013/p013_full.txt",
+   "content": "SHOKI \u2014 The Demon Queller\nTENJIN \u2014 God of Calligraphy. He was a great scholar, a man of great\nphysical courage, and he appreciated plant life.\nUKE-MOCHI \u2014 God of Food, This God produces all kinds of foods\n(cooked and uncooked, prepared, and unprepared) by opening her\nmouth and letting the food spew out of it.\nUMI-BOZO \u2014 A giant, ghostly, \u201cSea Priest\u201d, who rises from the\ndepths of the Sea to frighten travellers on the Ocean.\nUZUME \u2014 Goddess of Mirth\nYAMA-UBA \u2014 Female Mountain Spirits\nTHE CREATURE\nTHE KAPPA\nArmor Class: 3 Magic Ability: Wizard \u2014 14th\nMove: 10\u201d Fighter Ability: Lord \u2014 10th\nHit Points: 100 Psionic Ability: Class 6\nThe Kappa resemble monkeys without fur. Sometimes they have\nfish scales or tortoise shells instead of skin. They are the size of a 10\nyear old child, yellowish-green in color, and an indentation in the top\nof their head, filled with water. If this water is spilled, the Kappa lose\nall their powers. They live in rivers, pond, or lakes, and are vampiric,\nfeeding upon their prey through the anus (truth!!). They also frequent-\nly rape women (whenever they can). They also love cucumbers. They al-\nways keep a promise, and they are extremely polite (often bowing to\ntheir intended victim, thereby spilling the water in their head). If a hu-\nman is challenged to single combat with a Kappa, that person must ac-\ncept.\nTENGU\nArmor Class: 3 Magic Ability: Wizard \u2014 16th\nMove: 14\u201d Fighter Ability: Lord \u2014 10th\nHit Points: 100 Psionic Ability: Class 6\nTengu inhabit pine trees in mountainous areas, and they live in col-\nonies with a King Tengu and a messenger Tengu. They have wings and\na long beak. They are red in color and often wear cloaks and small\nblack hats. They are good swordsmen and very mischievous. They love\nto play tricks on others, but don\u2019t like tricks played on them, and us-\nually retaliate if the latter occurs.\nONI\nArmor Class: 3 Magic Ability: Wizard \u2014 16th\nMove: 10\u201d Fighter Ability: Lord \u2014 10th\nHit Points: 100 Psionic Ability: Class 6\nOni are devils. They can be pink, red, blue, or gray in color. They\nhave horns and three eyes, three toes, and three fingers. They can fly,\nbut seldom do. They are cruel, malicious and lecherous and are not in-\ntelligent. They carry a mallet or iron-spiked rod and wear a tiger-skin\nloincloth. They delight in the human female and often carry away\nyoung women to rape them.\nYUKI-ONNA \u2014 The Snow Woman\nArmor Class: 2 Magic Ability: See Below\nMove: 15\u201d Fighter Ability: 7th\nHit Points: 175 Psionic Ability: Class 6\nThe Snow Woman is a ghastly, ghostly white spirit. She appears in\nsnowstorms to lull men to sleep and thus death. She is young with a\nvery beautiful body and seemingly gentle disposition. She can use\nCharm Person, Sleep, Invisibility, Shapechange, Teleport, and Ice\nStorms spells.\nTHE HEROES\nISSUN BOSHI \u2014 \u201cLittle One Inch\u201d\n13\nThe Dragon\nCREATORS OF GAME AIDS\nAPPROVED FOR USE WITH\nDUNGEONS &amp; DRAGONS\nSony\nFORTRESS BADABAS ROR,\nTHIEVES OF BADABASKOR, the latest issue of the\nGuildmember subscription, is a 24 nuge 84x11\u201d book-\nlet. Therein is detailed the sordid history of fortress\nBadabaskor and the adjoining dungeon, $3.00\nWILDERLANDS OF HIGH FANTASY includes five\n17x22\u201d Wilderness Campaign Maps of the lands around\nand beyond the City State. Drawn from issues K,M &amp;\nN of the Guildmember Sub, also included is 32 pages\nof description on the villages, castles, ruins and many\ncampaign guidelines, $8.50.\nCAMPAIGN HEXAGON SYSTEM is an 8%x 11\u201d book-\nlet of 60 light hex grids. The hexes are numbered and\nenclosed by a large five mile campaign hex outline,\nmaking each small hex .2 mile wide (approx 360 yards)\nand .3\u201d in size. Handy for many other mapping uses\nalso, $2.50.\nCITY STATE OF THE INVINCIBLE OVERLORD\nPLAY AID includes a huge, detailed map of the City\nState and a players\u2019 map. Hundreds of NPCs, shops,\nrumors and guidelines ure listed. Also included is\nThunderhold, the Dwarven Castle and Sunstone Cav-\nerns. Rules include crimes &amp; trials, social level, ads,\nbeggars, poison, witicisms and much more, $9.00.\nSUBSCRIPTIONS\nJUDGES GUILD JOURNAL SUBSCRIPTION, the newsletter\nincluded in every Guildmember sub below, is available separate-\nly for 4.50/next six issues (sent bimonthly). Recently expand-\ned to 16 large (11x17&quot;) pages, the journal includes much gener-\nal fantasy material and news. Single py 80 cents.\nGUILDMEMBER SUBSCRIPTIONS:\nOur subscriptions include the number of issues stated, sent bi-\nmonthly (subs cannot be backdated). Please order by sub type\nletter code &amp; mail class.\nA, ASSOCIATE GUILDMEMBER SUB gives you 6 bimenthily\nissues. Plus a Judges Shield, sent upon ordering, $72.00.\nB. SEVEN ISSUE SUB gives you 7 bimonthly issues, $72.00.\nC. CATCH UP SUB gives you six bimonthly issues. Plus the\nlast four issues, just published, sent upon ordering, $22.00\nD. CITY STATE CATCH UP SUB gives you 6 bimonthly issues.\nPlus the City State Play Aid (listed above) and the last 4 issues,\njust published, sent upon ordering, $30.00.\nE. ADVANCED GUILE DMEMBER SUB gives you 6 bimonthly .\nissues. Plus the City State Play Aid, $19.00.\nMAIL CLASS SURCHARGES - ee er\nUS/APO CANADA OVERSEAS\n1. Ist Class +$3,5Q0 Ist Class +$4.50 Air Mail +$ 14.00\n2. 3rd Class+ .00 3rdClasst 3.80  SeaMail+ 5.20\nJUDGES GUILD\nP.O. Box 773 Dept. D13\nDecatur, IL 62525\n"
+  },
+  {
+   "path": "extract/dragon/013/p014_full.txt",
+   "content": "The Dragon\nArmor Class: -2 Magic Ability: Nil\nMove: 5\u201d Fighter Ability: 7th\nHit Points: 50 Psionic Ability: Nil\nSTR: 12; INT: 14; WIS: 13; CON: 18; DEX: 18; CHA: 14\nThis hero is only a few inches tall. His sword is a needle stuck in a\nscabbard of straw. In spite of his size, he is able to slay monsters and\nonis and such by poking their eyes out, and so forth.\nKINTARO \u2014 The Golden Boy\nArmor Class: 2 Magic Ability: Nil\nMove: 12\u201d Fighter Ability: 10th\nHit Points: 80 Psionic Ability: Nil\nSTR: 1899; INT: 12; WIS: 17; CON: 15; DEX: 16; CHA: 17\nKintaro has marvelous golden skin. He is known for his tremen-\ndous strength, loyalty. Eventually he became a warrior for Yorimitsu.\nRAIKO or YORIMITSU\nArmor Class: 2 Magic Ability; Nil\nMove: 12\u201d Fighter Ability: 10th\nHit Points: 80 Psionic Ability: Nil\nSTR: 1850; INT: 17; WIS: 13; CON: 16; DEX: 17; CHA: 15\nRaiko was a leader of the Minamoto clan and was served by four\nlieutenants. He often fought Oni and rescued women.\nTAWARA TODA or HIDESATO\nArmor Class: 2 Magic Ability: Nil\nMove: 12\u201d Fighter Ability: 10th\nHit Points: 80 Psionic Ability: Nil\nSTR: 1865; INT: 14; WIS: 12; CON: 15; DEX: 17; CHA: 15\nTawara Toda was a man of bravery and honor. He once killed a gi-\ngantic magical centipede with an arrow for Ryujin. From him he re-\nceived three gifts: a bag of rice which was self-replenishing; a roll of\nself-replenishing silk cloth; and a cooking pot which heats without the\nuse of fire.\nBENKEI\nArmor Class: 2 Magic Ability: Nil\nMove: 14\u201d Fighter Ability: 12th\nHit Points: 100 Psionic Ability: Nil\nVol. 2, No. 7\nSTR: 1860; INT: 13; WIS: 10; CON: 17; DEX: 17; CHA: 16\nBenkei is 10 feet tall, with the strength of a hundred men, and able\nto run as fast as the wind. Benkei is very vain and likes to challenge\nother swordsmen to show off his skill in swordsmanship. He later be-\ncame inseparable from Yoshitsune.\nYOSHITSUNE\nArmor Class: 2 Magic Ability: Nil\nMove: 12\u201d Fighter Ability: 11th\nHit Points: 90 Psionic Ability: Nil\nSTR: 1875; INT: 15; WIS: 12; CON: 17; DEX: 18; CHA: 16\nYoshitsune is another hero of the Minamoto Clan. Yoshitsune was\nalso the only swordsman to defeat Benkei.\nLIGHT-OF-FIRE &amp; SHADE-OF-FIRE\nArmor Class: | Magic Ability: Nil\nMove: 12\u201d Fighter Ability: 10th\nHit Points: 80 Psionic Ability: Nil\nSTR: 17; INT: 14; WIS: 14; CON: 15; DEX: 17; CHA: 17\nThese two mythical princes were brothers. Light-of-Fire was an ex-\ncellent fisherman, Shade-of-Fire an excellent hunter. Shade-of-Fire\nlater married the Sea King\u2019s daughter and she gave him the Tide Flow-\ning and Tide Ebbing Jewels.\nYAMAMOTO DATE\nArmor Class: 2 Magic Ability: Nil\nMove: 12\u201d Fighter Ability: 11th\nHit Points: 90 Psionic Ability: Nil\nSTR: 1850; INT: 17; WIS: 16; CON: 15; DEX: 17; CHA: 17\nYamamoto Date was the son of the Emperor Keiko and the father\nof the Emperor Chuai, though he himself never became Emperor.\nHowever, he was a mighty fighter and patriot.\nSHOTOKU DAISHI\nArmor Class: 9 Magic Ability: Patriarch \u2014 10th\nMove: 12\u201d Fighter Ability: 4th\nHit Points: 50 Psionic Ability: Nil\nSTR: 8; INT: 18; WIS: 18; CON: 14; DEX: 10; CHA: 13\nShotoku Daishi introduced Buddhism to Japan. He was a law\nALL THE WORLDS\u2019 MONSTERS\nLe, vol 2\nEdited by\nSteve Perrin and\nJeff Pimper\n\u201cConverting ATWM to Tunnels\nand Trolls Monsters,\u201d by Ken St.\nAndre, is also included in this\nvolume.\nTim Kirk Covert!\n20 other illos!!\nThe Overwhelming response to the first edition simply demanded the immediate release of this second\nvolume. Here are 250 more monsters with statistics to fit them into role-playing, submitted by more than 30\nreferees to give a wide variety of creatures to terrorize your campaign.\nONLY $7.95 WHEN ORDERED DIRECTLY FROM\nPOSTPAID IN US &amp; CANADA\nCAL. RESIDENTS ADD APPROPRIATE\n6% OR 612% SALES TAX\nCumulative Index\nto both vol 1 &amp; 2\n_THE CHAOSIUM\nP.O. Box 6302\nALBANY, CA.\n94706 .\nBe sure to specify VOL 2 when ordering!\n"
+  },
+  {
+   "path": "extract/dragon/013/p015_full.txt",
+   "content": "Vol. 2, No. 7\ngiver, a social reformer, and a devout Buddhist, considered a saint by\nJapanese Buddhists.\nYOSHI-IYE\nArmor Class: 2 Magic Ability: Nil\nMove: 12\u201d Fighter Ability: 10th\nHit Points: 80 Psionic Ability: Nil\nSTR: 1880; INT: 12; WIS: 12; CON: 16; DEX: 17; CHA: 15\nYoski-Iye was an early Minamoto hero. He was a powerful Bow-\nman (once having pierced a rock with a bowshot and causing water to\ngush forth). These arrows are +2 to hit.\nKTYOMORI\nArmor Class: 2 Magic Ability: Nil\nMove: 12\u201d Fighter Ability: 10th\nHit Points: 80 Psionic Ability: Nil\nSTR: 18; INT: 14; WIS: 10; CON: 15; DEX: 17; CHA: 17\nKiyomori was the head of the Taira clan, the arch-rivals of the\nMinamoto Clan. He was a great fighter and a very lustful man.\nTAMETOMO\nArmor Class: 2 Magic Ability: Nil\nMove: 12\u201d Fighter Ability: 10th\nHit Points: 80 Psionic Ability: Nil\nSTR: 1845; INT: 15; WIS: 15; CON: 16; DEX: 18; CHA: 15\nTametomo was the uncle of Yoshitsune. He was a great Archer\n(once having sunk a ship with a single bowshot!). His arrow are +4 to\nhit.\nEN NO SHOKAKU\nArmor Class: 9 Magic Ability: Wizard \u2014 12th\nMove: 12\u201d Fighter Ability: 4th\nHit Points: 60 Psionic Ability: Nil\nSTR: 7; INT: 18; WIS: 12; CON: 14; DEX: 17; CHA: 12\nEn No Shokaku was condemned to death as a magician. But by\n\u201cmystic signs\u201d he caused the Executioner\u2019s sword to shatter, and then\nhe flew away, never to return.\nKOBO_ DAISHI\nArmor Class: 9 Magic Ability: Patriarch \u2014 14th\nMove: 12\u201d Fighter Ability: Sth\nHit Points: 70 Psionic Ability: Nil\nSTR: 10; INT: 17; WIS: 18; CON: 15; DEX: 16; CHA: 16\nKobo Daiski is known as a sculptor, traveller, preacher, and mir-\nacle worker. Disguised as a beggar, he often rewarded the generous and\npunished the greedy.\nNICHIREN\nArmor Class: 9 Magic Ability: Patriarch \u2014 14th\nMove: 12\u201d Fighter Ability: 5th\nHit Points: 70 Psionic Ability: Nil\nSTR: 7; INT: 15; WIS: 18; CON: 15; DEX: 16; CHA: 12\nLike En No Shokaku, when Nichiren was condemned to death, he\ncould not be decapitated. He was a very holy man.\nTHE TREASURES\nTHE TIDE FLOWING &amp; TIDE EBBING JEWELS\nThese Jewels are about the size of Bowling Balls. They are used to\ncontrol the ebbing and flowing of the tide. Both are priceless.\nJEWELS OF HAIL &amp; LIGHTNING\nThese jewels are used by Susano, the Storm God, to produce hail\nand lightning, respectively. They are both priceless.\nIMPERIAL JEWELS\nThese jewels were given to the Imperial family by Amaterasu, the\nSun Goddess.\nIMPERIAL MIRROR\nThis mirror was given by Ameterasu, the Sun Goddess, to the Im-\nperial family. Mirrors are important to the Japanese. \u201cWhen the mir-\nror is dim, the soul in unclean.\u201d\nIMPERIAL SWORD\nThis sword was found in the tail of a Dragon by Susano, the Storm\nGod. It fell into the Sea during the Battle of Dannoura, and has never\nbeen found. It is a Dancing Sword.\nTHE SAKAKI TREE\nThe Sakaki tree is sacred to Shinto. Its branches must be used\nwhen calling upon the heroes of Japan.\n15\nThe Dragon\nARCHIVE |\nMINTATURES\nQuality that speaks for itself.\n803 Wind Child\n805 &amp; 804 Dragonewts\n720 Dracula &amp; Vampire Woman |\nSend us a legal-sized\nself-addressed stamped envelope\nfor our free catalog.\nWholesale inquiries invited.\nPost Office Box 93\n"
+  },
+  {
+   "path": "extract/dragon/013/p016_full.txt",
+   "content": "The Bragon\nQuartet For Troll, Giant, Orc, and Kobold\nby Stone\n(tune of By the Light of the Silvery Moon)\nCell of mine\nIt\u2019s a lov-a-ly home\nI will not roam\nBut stay here in my do-\nmain and guard\nAll the gold\nIn the marvelous chest\nIts worth is more than Croesus\u2019 store\nOr the glories of Rome, in my lov-a-ly home\nSlimey walls\nAnd seventeen stalls\nFor one who calls\nAnd my mason who drawls\nto me\nVincent Price, and E.A. Poe\nWould be at home, with the mortar and loam\nAnd my sixteen small stalls, in my slimey old walls\nLovely gold\nSo shiny and cold\nA hero bold\nTried to steal it, took hold\nOf the box\nNow he\u2019s stiff as an oaken board\nHis magic glaive no more he\u2019ll wave\nAnd he\u2019s covered with mold, near my lovely old gold\nD&amp;D Monsters\u2019 Drinking Song #1\nby Stone\n(tune of Rosin the Bow)\nThere once was a dragon named Sophie\nA young lass of sweet eighty-two\nKnew nothing of the pleasures of Sin, boys\nAs pure as the sweet morning dew\nAs pure as the sweet morning dew, my lads\nAs pure as the sweet morning dew\nKnew nothing of the pleasures of sin, and\nNothing of what she should do.\nThen came to the dungeon a wizard\nA young lad both handsome and proud\nHe charmed our pure Sophie so cruel\nShe thought she was up on a cloud\nShe thought she was up on a cloud\nShe thought she was up on a cloud\nHe charmed our pure Sophie so cruel, a\nCrime that the D M allowed\nShe surrendered herself to the wizard\nWhose lusts were both horrid and vile\nShe believed in his sweet honied words, and\nHer poor body he did defile\nHer poor body he did defile\nHer poor body he did defile\nShe believed in his sweet honied words, she\nDallied with him for a while\nThe wizard then jilted our Sophie\nHer heart it swelled up and did break\nHer tears they drowned out thirteen levels\nAnd the wizard she cursed for a rake\nThe wizard she cursed for a rake\nThe wizard she cursed for a rake\nHer tears they drowned out thirteen levels, she\nSwore that her life she would take\nA white dragon was our poor Sophie\nWhose heart was washed up on a rock\nShe held her sad breath and turned blue, and\nDied of a massive class shock\nDied of a massive class shock\nDied of a massive class shock\nShe held her sad breath and turned blue, her\nLife it soared out like a hawk\nThis story has come to an ending\nA warning to each sweet young lass\nTrust not ye the handsome young wizards, girls\nThey\u2019re cruel and they\u2019re vile and they\u2019re crass\nThey\u2019re cruel and they\u2019re vile and they\u2019re crass\nThey\u2019re cruel and they\u2019re vile and they\u2019re crass\nTrust not ye the handsome young wizards, they\u2019re\nOnly out after your heart\n16\nVol. 2, No. 7\nTrashers\u2019 Drinking Song\nby Stone\n(tune of Good Night Irene)\nchorus\nDown in the dungeon, down in the pit\nThe magic is broken, the dragon's dead\nThe walls are falling in\nLast night we went trashing a dungeon\nWe took some equipment so neat\nA magic sledge hammer, a twelfth level slammer\nThe walls they went down in defeat\nchorus\nThe oak doors they split all asunder\nThe wandering monsters did quail\nWe grabbed an old dragon whose\neyelids were flaggin\u2019\nAnd jumped up and down on his tail\nchorus\nThe walls they were broken like china\nAs we smashed things we grinned and had fun\nAnd the whole world could see by our\nactions that we\nTook lessons from Attila the Hun.\n"
+  },
+  {
+   "path": "extract/dragon/013/p017_full.txt",
+   "content": "Forward Kobolds to Final\nVictory Over the Rapacious\nJnvasionistic Brigands\nby Stone\n(tune of March to Pretoria)\nchorus\nWe are marching through the dungeon\nThe dungeon\nThe dungeon\nWe are marching through the dungeon\nAnd we\u2019ll march right over you\nI\u2019m a kobold, you\u2019re a kobold\nAnd we will march together\nAnd we will march together\nAnd we will march together\nI\u2019m a kobold, you\u2019re a kobold\nAnd we will march together\nIn victory through the depths\nchorus\nSlay the hero, zap the wizard\nProtect the_ buried homeland\nProtect the buried homeland\nProtect the buried homeland\nSlay the hero, zap the wizard\nProtect the buried homeland\nVictory is our cry\nchorus\nHacking the hobbits is quite nifty\nFor we are brave and bold\nFor we are brave and bold\nFor we are brave and bold\nHacking hobbits is quite nifty\nFor we are brave and bold\nAnd two hundred strong to boot\nchorus\nMagic swords deter us not\nFor we are fearless kobolds\nFor we are fearless kobolds\nFor we are fearless kobolds\nMagic swords deter us not\nFor we are fearless kobolds\nAnd we sneak up from behind\nSe\n(Aer By Dis \u00bb\u00bb Dat\nD&amp;D Monsters\u2019 Drinking Song #2\nby Stone\n(to tune of Long Way to Tipperary)\nThere was a hero in the dungeon\nAnd his name was Will Gold\nHe\u2019d a sword arm like no other\nHe was handsome, he was bold\nHe\u2019d led a group down for adventure\nAnd they\u2019d found it all about\nThen they ran into a balrog nest and\nWill began to shout\nchorus\nDon\u2019t slay the Momma balrog\nDon\u2019t cut into her hide\nRemember your own dear mother\nAnd eschew all matricide\nDon\u2019t molest her, don\u2019t annoy her\nHave respect for motherhood\nAnd remember while we\u2019re in this dungeon\nThat we\u2019re lawful, we\u2019re good\nThe balrogs fought the party\nAnd the balrogs fought best\nThe D M checked the morale\nAnd the party left the nest\nWillie drew his great sword\nAnd he stopped the shameful rout\nThe party rushed back in, and\nWill once more did shout\nchorus\nThe balrogs slew them all then\nAll except the brave Will\nOf his forty-two hit points, he\nHad but seven still\nWith the balrogs all about, he\nKnew he\u2019d soon be dead\nHe swung his magic sword, and\nWith his last breath, he said\nchorus\nSLAY THAT MOTHER BALROG\nCUT APART HER HIDE\nFORGET ABOUT YOUR MOTHER\nUP WITH MATRICIDE\nThe Dragon\nD &amp; D Monsters\u2019 Drinking Song #3\nby Stone\n(tune of Farmer in the Dell)\nchorus\nThe heros we run through\nthe elves and wizards too\nBingh khiad di viliack\nAnd may they all turn blue\nThe cleric\u2019s name was Paul\nHe thought he\u2019d seen it all\nBingh khlad di viliack\nWe hit him with a wall\nchorus\nThe hobbit tried to sneak\nJust to take a peek\nBingh khlad di viliack\nWhen you squeeze the kid he\u2019ll shriek\nchorus\nThe fighter had a sword\nNamed Mon Coeur du Nord\nBingh khlad di viliack\nSo we strangled him with cord\nchorus\nThe wizard\u2019s name was Jones\nHe had some magic bones\nBingh khlad di viliack\nWe ate him with our scones\nchorus\nmake up verses as you go along\n- DO YOU THINK YOU VE GOT SOME\nGOOD VERSES. wE'D LiKE TO SEE EM.\n"
+  },
+  {
+   "path": "extract/dragon/013/p018_full.txt",
+   "content": "The Dragon Vol. 2, No. 7\nIZZARDS &amp; Warrior\nwh by Grewadier\n\u2018 . NE, : Vaso, as ie \u2018 ; go  S\nGe.OR THE FINEST IN FANTASY\nQQueieR YOU NEED TO FIENDISULY STOCK\nYOUR FAVORITE DUNGEON OR RAISE. YOUR:\nOWN HEROIC LEGIONS AGAINST THE ARMBES\nOF THE DARK POWERS. YOU CANNOT CONJURE\nUP BETTER THAN WIZZARDS &amp; WARRIORS\n\u00abtoe\nHOBBITS NONSTERS SIEGE WEAPONS POopice SETS :\nDWARFS SORCERORS  ACCESSORTES kere HOORS FOR OUR FANTASY CATALOG OF\nMEN MAGIC. USERS \u201cTREASURE Bs eels , OVER 100 FANTASY FIGURES AND\nFIGHTING MEN BARDS WEAPONS _ GAMES RELATED ITEMS SEND $1.00 OR\nSPECIALISTS THIEVES CHARIOTS | ISR PRODUCTS | FOR FULL CATALOG OF ALL\nORCS st IMMOTHS ZM_&gt; PRESS ON GRENADIER PRODUCTS SEND\nGOBLINS - soe FURNITURE ee . Pert $2.00 TO:\n-y/ \u201cGHOULS ANTASY GAMES in\nHOBGOBLINS OGRES LEMME _GRENADIER\nWERE CREATURES AND MORE \u2014 ae SPRINGFIELD, PA, 19064\nINVITED DEPT. 2\n18\n"
+  },
+  {
+   "path": "extract/dragon/013/p019_full.txt",
+   "content": "The Dragon\nWARLORD: Correcting a Few Flaws\nWarlord, (properly known as The Warlord\nGame\u00ae 1977 by Robert Williams) came out\nthis summer past, and has failed to receive\nmuch recognition or comment. This game de-\nserves better than to fade into obscurity\nthrough lack of attention. Granted there are a\nfew problems, but none of these are insur-\nmountable, as can be seen in this article.\nThe designer has stated that Warlord was\ndesigned to be a medieval battle game incor-\nporating religion, fate and traditional combat.\nIt is better suited for play by four or more\nplayers than just two or three, with the best\ngames containing five or six players. To play a\ngame to conclusion is no mean feat, to be\nknocked off in a single sitting. But once the se-\nquence of play has been mastered by all play-\ners, the game can proceed at a very rapid pace,\nwith completion times of six hours a reason-\nable expectation.\nWarlord has a number of interesting fea-\ntures, the most unique being the terrain and\nconstruction counters, used when roads or\nbridges are built, etc.\nThe beautiful colored counters provided are\na joy to the eye. Each of the six players\u2019 units\nare a different color, and the monetary count-\ners (gold, silver, cows, pigs, and sacks of\nwheat) are also color coded. In light of the\ncounters\u2019 splendor, however, the board is drab\nand disappointing, being done in shades of\ngreen with blue water and black roads and\nfief-borders. There is a deck of yellow cards\nprinted in black, 34 in all, listing each fief and\nit\u2019s value, with one blank to spare. The die\ncutting is good, but the die was not straight,\ncutting some of the counters off center. The\nfirst games sold contained an eight page rules\nbooklet. More recent copies have also con-\ntained a four page errata sheet that is more\nclarification than true errata, and more charts\nthan both of those. (These errata can be ob-\ntained by those of you who purchased the first\nedition by sending a S.A.S.E. to : Robert Wil-\nliams Games, P.O. Box 22592, MPLS., MN\n55422.\nThe counter mix is quite adequate for the\ngame. The 99 counters are grouped as follows:\n15 mounted knights (6-6), eight foot knights\n(5-4), 45 foot soldiers- Yeomanry (2-4), three\narchers-longbow (5-4), four archers-shortbow\n(4-4), four archers-crossbow (4-4), 12 foot\nsoldiers-heavy infantry (4-4) two catapults (2-\nfour Dukes (8-6), one King (10-6) and one\nEmperor (12-6). Most additional units are\ngained throughout the game as fiefs are won.\nHowever any player may purchase additional\ntroops in the spring turn of each year. (Sug-\ngested Rules Clarification: Allow no troops to\nbe purchased during the first year.) The costs\nof such troops are dear particularly in the case\nof mounted units. Mounted units cost twice as\nmuch as foot figures, and come in much larger\ndenominations, making their purchase a very\nexpensive business. Never-the-less, the extra\ntwo movement points are often the difference\nin reaching a strategic position first and in\nview of the three unit stacking limit, knights\nby T. Kask\nare powerful pieces. Due to cost effectiveness,\nnever allow yourself to be placed in the posi-\ntion of losing a mounted piece in order to\nmatch foot pieces in an exchange.\nA quick study of the odds table shows a\nnumber of interesting facts about fighting a\nmedieval battle. A breakdown of possible re-\nsults is as follows:\n1:1 2:1/1:2\nDE 7 1-E 9\nD-R2 4 1-R2 8\nEXCH 9 EXCH 7\nAE 8 2-E 6\nA-R2 6 2-R2 2\nA-R1 | 2-R1 4\n3:1/1:3 4:1/1:4\n1-E 12 1-E 13\n1-R3 4 1-RT 5\n1-R2 8 1-R3 3\nEXCH 8 1-R2 5\n3-E 2 EXCH 8\n3-R1 2 4-R] 2\n22\n1-RT 3\n1-R3 |\n1-R2 |\nEXCH 7\n5-R1 2\nAs you can see, attacking at 1:1 odds or\nworse is a losing proposition. The odd don\u2019t\njustify an attack until you achieve 3:1, and all\nodds ratios have a high number of exchange\npossibilities. Medieval warfare was a sanguine\nendeavor for both parties involved.\nAttack by isolation is another alternative.\nAny unit isolated for an entire year must die.\nThe danger to the attacking force is minimal,\nprovided that all the attacker\u2019s enemies are in-\nside the circle.\nDefensive strategy is simple, and amply\ndocumented in medieval history: build walled\ncities and castles whenever and wherever pos-\nsible. With the cumulative terrain effects of\nthis game, castles in woods or on mountains\nare very defensible. Suggested Rule Change:\nBuilding a castle or walled town in a woods\nhex is prohibited. Hex must be cleared as per\nclearing forest rules, or add one additional 2-4\nunit to hex for one turn (spring), or add one\nturn to completion time. Building a castle or a\nwalled city on a mountain hex requires an ex-\ntra 2-4 unit for two seasons (not winter) or add\ntwo turns to completion time.\nSuggested Rule Clarification: Castles\nshould be built within a four hex radius of a\ntown, village or city within that fief.\nThe biggest weakness in the Warlord game\nis the beginning of play. Within the 33 fiefs in\nthe game, we find a range of from 248 gold\npieces to 68 gold pieces value. As you might\nimagine, this disparity can greatly affect the\nbeginning of the game, at the very outset, The\nhave-nots are at a distinct disadvantage. To\nremedy this, we have come up with a couple of\nsuggested changes in which only certain fiefs\nare available as starting fiefs, and some rec-\nommendations on what to do with the richer\niy\nfiefs.\nSuggested Rules Change: Designate the fiefs\nor Lippstadt, Hereford, Rheida, Lingen, and\nAnholt as church property at the outset. These\nare the five most valuable fiefs, since in med-\nieval Europe and England the church held the\nchoicest properties. It is an inducement to\nknavery, but that rule will be dealt with later.\nAs they are rich, they are worth contesting,\nand the central location of Hereford and Lipp-\nstadt makes for a nice warring ground. The re-\nmaining three fiefs are selected from those left\nover (all unclaimed fiefs) after the players\nhave drawn.\nAnother problem that the present starting\nmethod causes is also result of the blind draw\nfor players\u2019 starting fiefs. All too often, two\nor three players start out right next door to\neach other and instead of being able to expand\na bit before warring with each other they must\nwar right away, while the other players ex-\npand. Suggested Rules Change: Players\nshould draw their beginning fief from among\nthe following selections; Techlenburg, Osna-\nbruck, Emmerich, Unna, Gohfeld Rees, Ben-\ntheim, Gemen, Steinfurt, Duisburg, Essen and\nMunster.\nAdoption of this rule goes a long way to\neliminate the possibilities of too many players\nstarting off too close together, and greatly re-\nduces the range of starting fief values. The\naforementioned fiefs range in value from 82 to\n110 monetary units, also cutting down the dis-\nparity between the haves and the have-nots.\n(Refer to diagram.)\nSuggested Rule Clarification-Rivers: /nter-\npret the defense value of defending behind a\nriver to mean that if the attacker is on a river\nhex, then the defender is doubled, all other as-\npects being equal. The mapboard is poorly de-\nsigned in this respect, and the rivers are not at\nall consistent in the placement within the hex.\nThis rule should clear up most ambiguous pos-\nsibilities/combats.\nOne of the unique rules that makes War-\nlords interesting is the Knavery rule. As any\nstudent of medieval history can tell you, the\npower wielded by the Church was pervasive\nand absolute. Through the threat or imple-\nmentation of Sanction, Ostracism, and Ex-\ncommunication, the Church was the true\npower prior to the rise of the monarchy. In\nWarlord the author hasn\u2019t gone far enough in\ndefining and penalizing Knavery. Any player\nsacking a monastery becomes a knave until\nsuch time as he makes restitution, Under the\npresent rules the only penalty is an extra roll\non Fate Chart (which might not be a penalty\nafter all), and a penalty of 100 marks to the\nbank. Particularly in view of the fact that the\nearlier suggested rule change concerning\nchurch fiefs makes them more valuable, this\npenalty is not sufficient inducement to atone\nfor knavery and restore your \u201cgood name\u201d.\nSuggested Rule Change: A player becom-\ning, or being, a knave will get no new knights\nwhen gaining fiefs (6-6 mtd or 5-4 foot) until\nhe has atoned for his knavery and re-estab-\n"
+  },
+  {
+   "path": "extract/dragon/013/p020_full.txt",
+   "content": "The Dragon\nlished his good name. Further, all knights pre-\nsently in service to the knave must check mor-\nale to see if they wish to stay in his service.\nMorale is checked as follows; when the/act is\ncommitted, rolled one six-sided die for each\nknight or noble. One a roll of \u201c6\u201d roll again;\n1-2 can be bribed to remain (10 for foot, 20\nper mtd); 3-4 leave service; 5-6 will join near-\nest enemy and immediately moves to join\nnearest concentration of enemy forces at\ndouble movement for first turn. Each Knight\nmust be checked only once; once a Knight has\ntolerated a knavish act, he will tolerate others.\nIf a player commits knavery twice, only those\nknights gained since the last time need check.\nThe rules provide for challenging another\nplayer to a personal duel, and if the challenged\nplayer refuses, he may be called a knave for\none turn. This is a good rule for dealing with\nbroken promises, treaties, etc. The danger lies\nin wanton challenges that are unfounded or\nunjust. Suggested Rule Change: When one\nplayer challenges another, and the other re-\nfuses, the rest of the player characters must\nserve as a Council of Peers and determine if\nthe original challenge is justified. If it is de-\ncided by the rest of the players to be just, then\nthe refusing player is indeed a knave. If the\nplayers determine however, that the original\nchallenge is unjust, then the falsely accusing\nknight is named a knave for one turn for his\ndeceit.\nThe game has only one other oversight in\nit's worthy of note. The concept of\ncommand has been completely ignored. Dur-\ning the medieval period, powerful dukes and\nsuch did not send out armies under the com-\nmand of others as a rule. Normally, due to the\nfuedal dues system, the person commanding\nallegience had to be present. Similarly, mis-\ntrust and the rapacious nature of social and\npolitcal manuevering made it unsound to put\nones' troop under someone else's command.\nDoing so might cost you your holdings\nand/even your very life. This is most true in\nthe case of smaller lords. Only after your\npowerbase is large and secure can you as a\npowerful medieval baron or duke entrust\nothers, faithful and proven Leigemen, to com-\nmand your troops. This idea is only briefly\nconsidered in the design of the game; when\nseriously wounded at a tournament you are\nprevented from being involved in combat for\ntwo turns. Under the present rules, this means\nyou just leave your counter in your castle or\nwalled city while you recuperate.\nSuggested Rules Change: Command Con-\ntrol Radius. To reflect the state of medieval\nwarfare the following rules are suggested: 1)\nNo group of units may attack unless in the\npresence of the commander or a sub comman-\nder, 2) \u201c\u2018Presence\u201d is defined as a hex-radius,\nnumber of hexes determined by rank as fol-\nlows: Ft. Knt (5-4)-One hex radius; Mtd. Knit.\n(6-6)-Two hex radius; Duke (8-6)-Three hex\nradius; King (10-6)-Four hex radius. 3) Sub-\ncommanders are gained as follows; at the fol-\nlowing ranks: Duke, IFt. Knt. (5-4); Sth Fief,\nadd one Mtd. Knt. (6-6); King, add one Duke\n(8-6); 16th Fief add one Mtd. Knt. (6-6).\nTherefore, a 16 fief King would have a maxi-\nTwo Mtd. Knts. and one Duke. 4) Mercenary\nSub-Commanders are prohibited. 5) When en-\ngaged in combat, not within control range, but\nrather in actual combat, any commander or\nsub-commander unit adds \u201c1\u201d to it\u2019s combat\nvalue (i.e. a Mtd Knt. would be worth 7 if it\nwas a sub-commander.) This addition affects\nonly the stack in which the commander is lo-\ncated, NOT all those attacks within range. It\nhas no effect during tournaments.\nIf a sub-commander is killed in combat or in\na tournament, a replacement can be named\nduring the next campaign turn.\nIt is also suggested that when sending some-\none other than yourself to fight in a full tour-\nnament, a sub-commander be selected to re-\npresent you as your champion.\nAdoption of these rules is sure to alter the\ncompletion of the game, but we feel that War-\nlord will be a better game for it.\nVol. 2, No. 7\ne Attention Gaming Groups\nBids are now being accepted\nto host Origins \u201879. If your\ngroup is interested, contact Don\nGreenwood, c/o Avalon Hill,\n4517 Hartford Road, Baltimore\nMD 21214. Only serious parties\nneed apply. This is an unparal-\nleled opportunity for your organ-\nization.\nThe following Warlord game.map has been altered to indicate the five\nchurch fiefs (white areas with ) and the twelve recommended start-\ning fiefs (cross hatched areas).\n"
+  },
+  {
+   "path": "extract/dragon/013/p021_full.txt",
+   "content": "THE DRAGON\nCreature Feature Contest #2\n\u2018Paint That Monster\u201d\nThis contest is for all of the artists out there reading this magazine.\nThe description quoted at the end of this piece is excerpted from\nSWORDS AGAINST DEATH by Fritz Leiber, THE BLEAK SHORE,\n@1970, by permission of the author.\nYour mission, should you choose to accept it, is to draw the beastie\ndescribed in the excerpt. Finished drawings must be no larger than 12 x\n14, and no smaller than 3 x 5. Any medium THAT WILL REPRO-\nDUCE well is acceptable. Keep in mind that charcoals are extremely\ndifficult to reproduce, as are pencil drawings. Full color is permissible.\nAll drawings, or paintings, must be fixed if the medium requires fixing.\nAll oils must be reasonably dry, or we cannot be responsible for\ndamage.\nAll entries must be postmarked prior to July 1, 1978. All entries be-\ncome the property of TSR Periodicals and will not be returned. The\nwinner, as well as many of the also-rans as will fit, will be printed in a\nfuture issue, probably in September. Total prizes are not yet deter-\nmined but the total will be at least as large as Contest #1. Good\nLuck...\nfrom THE BLEAK SHOREO Fritz Leiber\n. For the flat landscape that spread out before them was with-\nout sign of life. In front of them the basalt dipped down to form a large\nhollow of black sand \u2014 tiny particles of iron ore. In the sand were half\nembedded more than two score of what seemed to the Gray Mouser to\nbe inky-black, oval boulders of various sizes. But they were too per-\nfectly rounded, too regular in form to be boulders, and slowly it was\nborne in on the Mouser\u2019s consciousness that they were not boulders,\nbut monstrous black eggs, a few small, some so large that a man could\nnot have clasped his arms around them, one big as a tent...\n. Then he saw that what lay before him was not utterly lifeless.\nIeiniatare figurines Ita\nBOX P\nPINE PLAINS, N. Y. 12567\u201d\nTel.: (914) 398-5166 ,\nPlant &amp; Offices: E. Church St.\nLARGEST\nWARGAME\nMANUFACTURER\nO\nThe Dragon\nMovement of a sort had come to the Bleak Shore. A crack had ap-\npeared in one of the great black eggs, and then in another, and the\ncracks were branching, widening as bits of shell fell to the black, sandy\nfloor...\n... The first hint of their nature came in the form of a long,\nswordlike claw which struck out through a crack, widening it farther.\n. The two creatures which emerged in the gathering dusk held\nenormity even for the Mouser\u2019s drugged mind. Shambling things, erect\nlike men but taller, with reptilian heads boned and crested like helmets,\nfeet clawed like a lizard\u2019s, shoulders topped with bony spikes, fore-\nlimbs each terminating in a single yard-long claw. In the semidarkness\nthey seemed like hideous caricatures of fighting men, armored and\nbearing swords. Dusk did not hide the yellow of their blinking eyes .. .\n. \u201cFor warriors, a watrior\u2019s doom.\u201d\n. then he saw the new-hatched creatures racing toward them, a\nshrill, eager screeching issuing from their long muzzles... .\n. Counter-thrusts glanced off impenetrable bony armor . . .\n... The beasts seemed tireless, creatures of bone and metal rather\nthan flesh... .\nSend entries to\nFEATURED CREATURE CONTEST #2\nc/o THE DRAGON\nPOB 110\nLake Geneva, WI 53147\nALL ENTRIES MUST BE TYPED AND DOU-\nBLE SPACED. HANDWRITTEN ENTRIES\nVOID.\nWinners of Creature Feature #1 are on pg. 30\nThe winner and both runners-up\nwill be printed in full next issue.\nFIGURES\nthe\nWOR LD\nWHOLESALE |\nFully\nIllustrated Catalog\nRETAIL\n$ 2.00.\n\u00ab\n"
+  },
+  {
+   "path": "extract/dragon/013/p022_full.txt",
+   "content": "The Dragon\nTHE STOLEN SACRIFICE\nby\nGardner F. Fox\u00a9\n1\nThe man moved silently through the shadows,\nkeeping always to the darkest places. He moved as\nan animal might, his body poised for instant action,\na big hand on the hilt of the longsword by his side.\nHis eyes darted from a doorway to the far corner,\nwhere the wind blew a length of scarlet silk hanging\nfrom the wall. Caution was in his great body, for he\nknew that should he be seen this night, death would\nbe his reward.\nNiall of the Far Travels was not afraid, though he\nknew that he would be killed, and in no pleasant\nway, should anyone discover him, or guess where he\nwent \u2014 and why.\nFor fair Amyrilla of the golden hair had been con-\ndemned to die by order of Thyra, queen in Urgrik\nwhere Lurlyr Manakor was king. Amyrilla was the\nfavorite concubine of Lurlyr Manakor, and Thyra\nwas jealous of her barbaric beauty. And so Thyra\nhad prevailed upon Lurlyr Manakor to offer her up\nto the grim god Korvassor in his splendid temple in\nUrgrik.\nAmyrilla was not yet dead. Her death would come\nin hours, when the priests of Korvassor gathered in\nthe temple to summon up their god. There would be\nno eyes to see that death, other than those of the\npriests of Korvassor. Amyrilla would be dragged\nscreaming into the maw of the grim god, to be de-\nvoured, and only Lurlyr Manakor wo _ grieve for\nher.\nWell, that was not quite true. Niall would grieve as\nwell, for in the weeks that he had been here in Ur-\ngrik, serving under Lurlyr Manakor, Niall had come\nto know pretty Amyrilla, and had loved her for her\ngentle ways. Yet now she was to die, abandoned by\nall save Niall himself.\nHis huge hand tightened on his swordhilt. Ahead\nof him, he could see the temple. Its tall towers rose\nupward almost to the low-hanging clouds, and\nwhere the moon shone with silver. The great oaken\ndoors of the temple were locked and bolted; it would\nbe no easy task to win through those doors, to re-\nlease Amyrilla from the golden clasps that held her\nand then take her out of the temple, and even out of\nUrgrik.\nSweat touched the brow of the giant youth. It was\nnot a warm night, the breezes sweeping the streets\ncarried in their touch the hint of coming winter. Yet\nthe sweat stood out on his forehead, for he knew the\nprice he must pay were he to be discovered.\nHis fur-edged warboots made no sound as he ran\nfrom one dark shadow to the next, nor did the\nchains that held his scabbard jingle. Nearer he came\nto the temple, ever nearer, and from time to time he\npaused to stand motionless listening.\nNo man save himself walked these deserted\nstreets, due to the edict which Lurlyr Manakor had\nissued. This night of sacrifice must be a silent one.\nAll Urgrik must weep as Lurlyr Manakor wept for\nthe loss of Amyrilla. No man must venture forth\nupon the streets; only the guards which patrolled\nthem, to make sure the edict was obeyed.\nSo far, Niall had seen no sign of the guards.\nYet they were here \u2014 somewhere.\nHe paused now at the wall which ran around the\nvast temple. One leap at that wall and he would be\nover it, into the temple grounds themselves. From\nthe ground to the temple would be a quick run. Ah,\nbut could he escape discovery in that brief time? Did\neyes watch the temple grounds for any rescue at-\ntempt?\nHe did not know. He cared only because he must\navoid discovery.\nNiall drew breath. It was now or not at all. He\nmust make the attempt, he must rush that wall and\ngo over it, and if he were seen, why then \u2014 he would\nhave to fight. And a fight meant he would never res-\ncue that girl with the long golden hair.\nHe ran. His hands went up to the coping of the\nwall and next moment he was outlined against the\nsky. Then he was over and dropping down into a bed\nof gorgeous pimalotus blooms. He dropped to his\nknees and waited, heart hammering.\nThese was no outcry, no rush of soldiers, of\nguards. He heard no weapons drawn. Slowly he rose\nand moved forward, and now he went with more\nconfidence, to the nearest temple doorway. His hand\ntouched the great iron handle, and he turned it. The\ndoor swung outward and he slipped inside.\nThere was ebon darkness in here. Only up there by\nthe altar was there any light. Pallid candleflames\nglowed there, surrounding an almost naked girl who\nhung in golden chains between two ivory posts.\nLong yellow hair covered her features, for her head\nhung low, as though she slept.\n22\nVol. 2, No. 7\nThis was Amyrilla.\nNiall sighed. Then he moved forward, his war-\nboots making no sound on the pavingstones. As he\nwalked through the darkness, his hand fumbled in\nthe leather pouch at his side, in which he had put the\npicklock that he had made earlier this day against\nthe moment of need.\nIn the last bit of darkness he paused, studying the\ntemple. It was not yet time for the priests to come\nwith their prayers and exhortations to Korvassor, to\nentice him out of the worlds wherein he dwelt, but\nthat time was soon. He would have to act swiftly,\nwithout thought to consequences.\nNiall sprang forward. In a bound he was before\nthe girl, was fumbling with the golden manacles\nabout her wrists. His touch roused her, she lifted her\nhead and stared at him through the golden strands of\nher long hair. Her blue eyes were wide with terror.\nYet that terror faded at sight of him.\n\u201cNiall,\u201d she breathed.\n\u201cBe quiet, girl,\u201d he growled.\nHe worked swiftly, thrusting in his picklock, turn-\ning it until he heard the metallic click that told him\nthe manacle was opening. With his left hand around\nAmyrilla, he held her even as he probed at the other\nmanacle with his right hand.\nIn moments, she was free.\nYet as she slumped against him, to be lifted\nagainst his chest, he heard the faint chanting of the\npriests. They were coming now, with their incense\nburners and their acolytes, to summon up Korvas-\nsor.\nNiall muttered under his breath as he lifted the girl\nand tossed her over a shoulder. His eyes went to left\nand right of the great altar where stood the gigantic\nstatue of dread Korvassor. For an instant, he seemed\nas though turned to stone.\nI cannot carry her out the way I came! We would\nbe seen, and herself recaptured when the guards\ncame to slay me. His thoughts ran in a circle, like\nmice chasing their tails.\nBehind the altar, Niall! And \u2014 quickly!\nThe voice sprang to life inside his head, but \u2014 he\nknew that voice. It was the sweet tones of, Lylthia,\nthat girl he had met in Angalore! But Lylthia was\nnot human. No! She was the flesh and blood mani-\nfestation of Emelkartha the Evil. Emelkartha, who\nhad taken a fancy to the big barbarian who had\naided him in the ruins that had been Kor Magnon,\nmonths _ before!\nHe leaped. Like a wild animal he leaped, and he\nran as runs the wild tiger, gracefully and with easy\nstrength. Straight for the altar he went and then he\ndodged around behind it.\nAmyrilla groaned. Niall grinned, for he knew\nwhat a jouncing she was taking, perched on his\nshoulder like a sack of meal. Well, he couldn\u2019t help\nthat. She had to ride where she was, if they were to\nget out of this alive.\nYet when they were in the darkness behind the\nhigh. altar, almost under the splayed feet of the sta-\ntue of Korvassor, he let her slide down his body so\nthat she stood before him.\n\u201cIf you want to live, girl, you'll be silent.\u201d\nHe felt her nod, even as she shuddered.\nThe floor, my love. The floor!\nHe dropped and felt the pavingstones with gentle\nfingers. Ah, here. His fingertips went over the faint\ncrack, then searched about until he discovered the\nsunken handle. He plucked at it, felt it rise up. Grip-\nping the handle, he yanked upward and a section of\nthe floor rose.\nNiall reached downward, felt a step. Then he\ncaught at Amyrilla, shoved her into that dark open-\ning. Sobbing to herself, she went down the stairs. In-\nstantly, Niall was after her, turning to bring the trap-\ndoor down behind him so that it fitted level to the\ntemple floor.\nAs he did, he heard a faint shuffling, far below.\n"
+  },
+  {
+   "path": "extract/dragon/013/p023_full.txt",
+   "content": "2.\nAmyrilla shrank back against him, whimpering.\nNiall growled low in his throat as he pushed past\nher, lifting his blade from its scabbard. Whatever\nwas down here in these underground lairs was some-\nthing not quite human. Oh, he had heard tales while\nhe drank with the other guards in the city taverns;\nthere had been whispers of the strange beasts which\nthe priests of Korvassor kept, to be fed with sacri-\nfices, with slaves who had displeased them in some\nway.\nHe had no idea what these beasts might be like.\nHe chuckled, thinking that it might be best if\nAmyrilla could not see them. If they were as hideous\nas was rumored, she might well scream and so alert\nthe priests as to their whereabouts.\nHe went down stone steps, half dragging the girl\nbehind him. Always, his sword was out in front,\nready to be used against whatever might hurl itself\nagainst them. Now that there was an enemy to face,\nNiall was calm, ready.\nHe heard nails scrape stone and then something ;\nflung itself at him. He could not see it, but neither\ncould it see him. If it had been kept in this darkness\nfor very long, its eyes might be weak. Ah, but its\nhearing would be fantastic.\nSomething struck the wall a foot away from him.\nNiall was aware of an awful stench, and then he was 7\nthrusting with his steel. Straight forward he ran his\nblade, felt it drive into flesh.\nSomething spurted out and splashed up on him.\nHe drew back his blade, slashed with it, felt its ;\nkeen edge going into meat. He had no idea of what\nthis beast was shaped like, yet it lived, it breathed.\nAnd it could die.\nTwice more he drove in with his sword, and each\ntime he struck home. Now he heard a faint dragging |\nsound, a hushed and labored breathing, and then the |\nsound as of a body falling. Niall reached behind |...\nhim, caught at the soft hand that lay against his ;\nshoulder, and moved down the stairs.\nThey came to the bottom of the stairs and moved ;-\nalong a stone floor in that utter darkness. To a far ;\nwall they went, and grouping along it, Niall dis- i&quot;\ncovered a closed door. Fumbling, he found the latch\nand lifted it.\noh\nFoal\n6 eh\nBrightness came in at them, from wall torches | --\u00bb\nhung here and there along a corridor. Niall urged the ;\ngirl through the door and closed it behind him.\n\u201cNow where?\u201d she whispered. \u201cWhere can we go |\nwhere there is any safety for such as us?\u201d\n\u201cNa, na. Don\u2019t despair. We'll find a way.\u201d\nHer eyes were big in her pale face. \u201cHow? The\nqueen hates me. She wants me dead. Do you know\nwhat they will do to you for trying to rescue me?\u201d\nHe grinned, showing his white teeth. \u201cWe aren\u2019t\ndead yet, girl. I just wish I knew a way out of these\ncatacombs.\u201d\nThen he shrugged. \u201cWe might as well go this way\nas any.\u201d His hand indicated a stretch of lighted cor-\nridor before him. \u201cCome along, now.\u201d\nThey went swiftly, with Amyrilla half running to\nstay even with him. Along one walkway and then\nanother they went until even Niall, with his barbaric\nsense of direction, confessed himself lost. He had\nnot the slightest idea of where they were, except only\nthat they must be somewhere within the temple\ngrounds.\nYet something told him that they had come too far\nfor that. Surely, they must have passed from under\nthe garden walls that surrounded the temple. And if\nthey had done that, if they could discover an exit,\nthey might find themselves in the city itself.\nIn time, they came to a tiny staircase that led up-\nwards. Niall mounted it with Amyrilla at his heels.\nTo a door they came, and here Niall paused, debat-\ning within himself whether to open it.\nWhat lay beyond this oaken barrier? More dan-\nger? Would there be an attack from the city guards?\nOr would the priests themselves be waiting for them?\nstepped out into the night air. High above, the\nbroken remnants of what had once been a moon\nshone down, the clouds since fled westward. The\nwind was cool on their faces, with a faint remnant of\nsalt in it.\nThe river lay not far away, then. And on that river\nwould be boats.\nNiall paused to scratch his head. His eyes slid side-\nways at the girl. He had come far these past few\nmonths; from distant Styrethia to Angelore, and\nthen on to Urgrik by way of the river Thalamar.\nNow he could scarcely stay in Urgrik any longer, cer-\ntainly not with Amyrilla.\nTherefore, he would risk the river.\n\u201cStay close beside me,\u201d he muttered. \u201cIt\u2019s death\nfor anyone to be caught out of doors this night.\u201d\nShe nodded understandingly and half-ran beside\nhim as he angled his long stride toward the river-\nfront. The smell of salt grew stronger the closer they\ncame to the docks, and now they began to hear the\ngurgle of waves against the pilings.\nAt his side, Amyrilla turned to stare back the way\nthey had come. And she gasped, her fingers tighten-\ning on Niall\u2019s arm. A whimper grew in her throat.\n\u201cWhat's amiss?\u201d he asked, swinging about.\n23\nThe Dragon\nTwo red eyes gleamed in the night sky, above the\ntemple to Korvassor. Unblinkingly they stared, and\nit seemed to Niall that they looked right down inside\nhim, those eyes, studying this man who had dared to\nsnatch away the sacrifice that belonged to the god of\nUrgrik.\nThere was no body to those red eyes, just the eyes\nthemselves, and bile rose up in Niall at the sight. The\npriests did not know where their sacrifice had gone,\nand so they had enlisted the aid of their god. To\ngood effect, too. Those red eyes had seen him, had\nglimpsed the girl also. Soon now, the priests would\nlearn where they went.\nNiall wasted no time on curses. Their only hope\nnow was the river and a fast boat to sail on it. He\nswung Amyrilla up in a brawny arm and began to\nrun. He went swiftly, as though he might outrun the\nstare of those unblinking eyes.\nAs he ran, his eyes slid across the boats anchored\nin the river, observing their shape, the set of their\nmasts. He wanted a small ship, a fast one, and he\nfound it with his stare, after a time. He angled his\nrun toward an old pier, half rotted, and carried the\ngirl with him out onto those boards.\nAn instant he paused, to ask, \u201cCan you swim?\u201d\n\u201cLike a darson,\u201d she panted. \u201cBut it\u2019s no use!\n"
+  },
+  {
+   "path": "extract/dragon/013/p024_full.txt",
+   "content": "The Dragon\nWe \u2014\u201d\nHe left the pier, plunging downward into the\nwater. As he did, he released Amyrilla. They went\ndeep, and when they came to the surface, they struck\nout toward the little ship Niall had marked for their\nown. Behind them, the city was silent. Too silent,\nNiall found himself thinking. Surely, the priests\nknew where they were, now. Korvassor would have\ntold them.\nWhy then, was there no pursuit? No alarm?\nHe clambered up onto the ship, reached down-\nward to help the girl, dragging her up onto the deck.\nFor an instant they stood together, dripping water\non the deckplanks, staring at those red eyes that\nwatched them.\nNiall ran for the sail, curled about the spar. He\nshook it free of its ropes, then caught at the ropes to\nraise it. A wind sprang up behind them, filling out\nthe sail.\n\u201cThe anchor,\u201d he growled, and the girl ran for-\nward to catch hold of the chain and lift it upward.\nThe boat began to move, slowly at first, then more\nrapidly as the sail filled out and her keel slid through\nthe water. With a hand on the tiller, Niall stared off\ntoward the temple.\nThe red eyes stared, unblinking.\nThe priests would be moving now. They would\ncome for their prey. There would be no escaping\nthem.\nThe wind blew even more strongly, and now the\nlittle craft skimmed across the water, heading north-\nward. Niall stood by the steering-post, his back buf-\nfeted by that wind which was intensifying almost to\nthe proportions of a gale. On the deck at his feet,\nAmyrilla crouched, quivering and moaning. Above\nand before them, the sail was being strained almost\nto the ripping point by that monstrous gust, while\nbeneath them the ship fled like a terrified thing.\nThey headed into darkness, where even the keen\neyes of Niall of the Far Travels were almost blind,\nfor without the pale light of the ring of matter that\nonce had been a moon, high above his world, the\nnight was an ebon blackness all about them. Yet the\nship sailed on, rushing through the water, as though\ndemon-borne.\nYonder, Niall! There where the light gleams soft\nand pale!\nAye, that was Emalkartha again, whispering in his\nmind. He stared through the darkness and saw at\nlast a tiny flicker of light, high up on what seemed to\nbe cliffs. For all his far travels, Niall had never been\nin this corner of his world before, he knew nothing\nof its shape. Yet those were cliffs, he felt certain,\nand he swung the rudder-pole.\nNow that wind abated, grew to a mere breeze, and\nwithin seconds his keel was grating on tiny stones.\nAbove him and at a distance, he saw that pale light\nbeckoning. His hand went downward, caught hold\nof the girl, raised her to her feet.\n\u201cUp there,\u2019 he growled. \u201cThere we can find\nsafety.\u201d\nHer head swung about so she could see where he\nwas looking, and the breath caught in her throat.\nShe shrank away from him, lips quivering.\n\u201cNot there \u2014 no!\u201d she whispered.\nHer fear made him glance down at her. \u201cAnd why\nnot, girl?\u201d\n\u201cThere are ruins there \u2014 old, old ruins. Men tell\ntales of those ruins, and always they speak in whis-\npers.\u201d\n\u201cTales to frighten little children. I tell you, we\u2019re\nsafe enough. It comes to me that our only means of\nescape from Korvassor is to go there, to hide.\u201d\nShe fought him, trying to escape the hand that\nheld her wrist. Fright looked out at him from her\neyes, a deadly terror that made him pause even as he\ntugged her toward the gunwale. Her face was con-\ntorted, her lips drawn back, her nostrils flaring\noutward.\n\u201cThey say \u2014 they say that Death waits for anyone\nwho enters that temple. Hideous death!\u201d\nNiall shrugged and nodded back the way they had\ncome. \u201cLook behind you, Amyrilla. Look!\u201d\nShe turned her head, saw the distant red eyes\nhanging above the temple. Far away they were, yet\nthey watched. The girl shuddered. And now she\ncould hear sounds behind her, the rasp and grate of\noars in their locks, the swish and swirl of water\nrushing past the prows of ships.\n\u201cMen come for us,\u201d growled Niall. \u201cWould you\nbe taken back to Korvassor, to be \u2014 eaten \u2014 by\nhim?\u201d\nShe whimpered, but she no longer fought the tug\nof his hand. She ran beside him to the gunwale, was\nlifted and tossed overside onto the pebbled beach. In\na moment Niall was beside her, catching her hand\nand leading her across the beach and toward the\ncliff.\nHe could make out a vague path carved out of the\nrock itself, leading upward to the top of the cliff. He\nwent up it slowly, his sword Blood-drinker in his\nhand, and with a prayer to Emalkartha on his lips.\nBehind him, Amyrilla came, reaching out to touch\nhim with soft fingertips, to make certain that she did\nnot lose him.\nNow as they went higher and yet higher, he could\nfeel a difference in the air about him. It was colder,\nand seemed filled with tiny motes of light, like fire-\nflies almost, that seemed to whisper about them as\nthey climbed. The girl began to whimper aloud now,\nand came even closer to his big body.\n\u201cThe realm of the evil spirits that dwell in the\nruined temple,\u201d she breathed.\nNiall scowled. He could not contradict her; for all\nhe knew, she might be right. Yet Emalkartha had bid\nhim come here, and to that place where the pale light\nglowed he was going. It seemed to him that he was\nmoving more swiftly, now that he was in among the\ntiny lights. They flared and surged, they seemed to\n\u2014 beckon \u2014 to urge him on in the very faintest of\nwhispers.\nHe could not understand those whispers, yet he\nsensed their friendliness. Once he looked back to-\nward the river, and saw three warships filled with\nsoldiers, moving toward his beached vessel. Three\nwarships! Whoever captained them was compli-\nmenting his fighting abilities. Not even with his\nsword Blood-drinker could he hope to withstand so\nmany warriors.\nBut perhaps he would not have to fight them. It\nmight be that in that ruin up above, he could\nsuccessfully hide from them. What was it Amyrilla\nhad said? That Death waited for anyone who went\ninto what was left of the temple up there? Well,\ndeath waited for them below, too. They couldn\u2019t es-\ncape it, apparently. Still, Emalkartha had brought\nthem here, and he trusted that goddess.\nThey came to the top of the cliff, and in the dark-\nness which was lighted by the tiny little glowings, he\nmade out a stretch of crumbled rock, of tiny stones.\nA dead place, surely! Yet ahead were white columns\nand broken bits of wall which once had been \u2014 long\nages ago! \u2014 the fane of some god.\nHe walked toward it, sword out and the girl half-\nrunning beside him. Behind him, the warriors of\nLurlyr Manakor and his queen were coming ashore,\ntheir weapons out to capture them. And always the\ntiny, elfin voices of those faint lights urged him on-\nward, bidding him hurry, hurry!\nThen he was at the rim of what had been a temple,\nlong ago.\nThe brightness he had seen from the river shone\neerily, here. Wisps and bits of those tiny lights in the\nair outside seemed almost to have coalesced inside\nthe temple, forming a brilliant nimbus of cold light.\nIt hung a few feet above the tessalated floor, shim-\nmering, incandescent, and it appeared to whisper as\n24\nVol.2,No.7\nthe tiny lights had whispered.\n\u201cWhat is this place?\u201d Amyrilla whispered.\n\u201cT thought you knew,\u201d he growled.\n\u201cI know only what the rumors say. That ages ago\nit was a temple to some god or goddess, that it had\nbeen abandoned. Yet \u2014 yet here Death waits for any\nwho enter, who dare to \u2014 profane it.\u201d\n\u201cAnd that light?\u201d\nThe girl shook her head. \u201cI never heard of that.\u201d\nNiall stared more closely at that strange, glowing\nglobe. There seemed to be a life to it \u2014 inside it \u2014 as\nsentient as he himself. He grew aware of a vast intel-\nligence, it appeared almost to whisper out at him,\nurging, commanding. There was an imperiousness to\nit that reached outward toward him.\nIt wanted him to do something.\nYes, he knew that, suddenly. But \u2014 what?\nHe heard faery laughter. Foolish one. Do you\nthink he can understand you, after so many eons in\nwhich you have lain sleeping? Na, na, Devolian!\nThere was an utter silence. Yet outside that silence\nthere was \u2014 danger! Something in Niall stirred to it,\nand a corner of his mind whispered to him that while\nhe stood here before this eerie light, armed men were\nclimbing cliffs for him.\nUnless Emalkartha aided him, he was doomed.\nAlone, he would never be able to drive away those\nwatriors who were even now coming for him and\nAmyrilla.\n\u201cWhat?\u201d he growled. \u201cGods! What do you want\nme to do?\u201d\nReach inside the light, Niall! Reach and \u2014 grasp!\nNiall was dubious. The light surged and waxed\neven brighter. It was not hot, but it was cold, numb-\ning. He could feel that cold, it made him shiver.\nBut if Emalkartha wanted it \u2014\nHe shifted his sword to his left hand and reached\nout into that brilliance with his right. He touched\nnothing, he felt only a paralysing coldness, an arctic\nchill that ran up his arm and into his very heart. He\nswayed, eyes half closed, knowing that in a moment,\nhe was going to collapse. No human flesh was ever\nmeant to stand such cold.\nAnd then \u2014\nHis fingers tightened on something hard.\nDraw it forth, Niall of the Far Travels. Draw it\nforth!\nHe yanked his arm free of that brightness.\nClutched in his big hand was a piece of what seemed\nto be crystal. It was shapeless, and yet \u2014\nNiall scowled. There was shape to this thing. In-\nside himself, he knew it. Yet it had been fashioned in\na world which was not of his. As his fingers went\nover it, as his eyes studied it, and he found himself\nremembering that in his early youth, just when he\nhad taken up his profession of sell-sword, he had\nseen something akin to this thing that he held in his\nfingers.\nIt had been in Styria, when he had ridden with the\nRed Guards of Falfarran. They had made a long ride\nacross a corner of the Lomarrian Desert, which was\nreputed to be what was left of a fertile land that had\nexisted a hundred thousand years before. There had\nbeen a ruined temple in that desert, a thing of\nbroken columns and shattered walls.\nIn a part of that ruined fane, he had come upon a\nshattered statue. Now if that statue had been whole\nand unbroken, it might look like this crystal thing.\nVery much like it.\n\u201cDevolian,\u201d he whispered.\nAnd in answer, or so it seemed, that crystal thing\ngrew warmer and comforting. It grew brighter,\nradiant, and from within it, he heard the faint music\nof a million bells thinly chiming .. .\n\u201cNiall!\u201d\nHe dragged his eyes from the crystal statue to\nstare at Amyrilla. She was looking behind him, at\nthe cliff\u2019s edge, and there was utter terror in her blue\neyes.\n"
+  },
+  {
+   "path": "extract/dragon/013/p025_full.txt",
+   "content": "RAL PARTHA\nProudly Announces That\nedions of Petal Throne MINIATURES\nFormerly manufactured by Old Guard\nare now being produced by RAL PARTHA\nWATCH FOR NEW RELEASES!\nT-1\nGENERAL\n&gt;.\nz\nx\nO..\nSOLYANU\nCOMMAND\nHEAVY INFANTRY PIKEMAN\n_ HEAVY INFANTRY ARCHER\nLEGION OF RED DEVASTATION\n1 COMMAND\n2\n3\n4\n5 WARRIOR PRIEST-OF FIRE\n6\n7\n8\nHEAVY INFANTRY PIKEMAN\n; HEAVY INFANTRY ARCHER\nDHARU MEDIUM INFANTRY\nMEDIUM INFANTRY\nLIGHT INFANTRY SKIRMISHER\nMAKHIS LIGHT INFANTRY\nARCHER\nHLIKKU DESERT WARRIORS\nSOKATIS MEDIUM INFANTRY\nARIDANI LIGHT INFANTRY GIRL _ T-1\nVRA LIGHT INFANTRY SLINGERS STANDARD\n+\nrT.\nT.\nT.\nT-\nT.\nr-\nT-\nrT\n&lt; &lt;&lt;&lt;&lt;x&lt;&lt;&lt;&lt;\nNO\u00ae OR GD =\n1\noO\nNON-HUMAN &amp; SPECIAL\nP-1 PRIEST OF HRY\u2019Y\nNH-1 SHEN WARRIOR\nNH-2 SSU,\nNH-3 HLAKA\nNH-4 AHOGGYA .\nNH-5 GREAT SRO\nNH-6 SHEN WARRIOR ;\n| \u2014 pH\nFOR COMPLETE CATALOG, SEND 25C IN STAMP OR COIN TO\nRAL PARTHA ENTERPRISES\n3642 Hyde Park Avenue - Cincinnati, Ohio 45208 - Phone 1-513-871-5315\nMAKERS OF . .\n* WIZARDS, WARRIORS &amp; WARLOCKS sa NEW\n* PERSONALITIES AND THINGS THAT GO 'BUMP_ IN THE N ke\n*LEGIONS OF THE PETAL THRONE GALACTIC GRENADIERS\n*A&quot;THE HOPLITES&quot; 25 MM ANCIENTS DEALER 25mm Space\n#1200 A.D. \u2014 THE ARMIES OF C. 1200 , /\n*15 MM NAPOLEONICS , INQUIRES See Ad in this issue on\n*15 MM AMERICAN CIVIL WAR a WELCOME inside front cover\n*15 MM WORLD WAR I! \u2014 NORTH AFRICA a\n-*GALACTIC GRENDIERS \u2014 25 MM SPACE FIGURES\n"
+  },
+  {
+   "path": "extract/dragon/013/p026_full.txt",
+   "content": "The Dragon\nNiall swung about.\nMoving toward him were several lines of swords-\nmen, their blades naked in their hands, their faces\nilly seen beneath their helmets. On their armor he\ncould make out the basilisk insignia of the kingdom\nof Urgrik. They came slowly but steadily, for their\nprey was here in the temple of the forgotten god,\nDevolian. There was nowhere for them to run, no\nplace to hide. All that was needed to do now was at-\ntack and subdue them.\nNiall grinned. Cold was his grin, and unpleasant.\nA few of the men in that front line who saw his gri-\nmace, shuddered and knew fear in their hearts. Aye!\nThey knew the way of Niall of the Far Travels with\nhis sword Blood-drinker. And they were not eager to\nbe the first ones to test his swordarm.\nYet they came on, urged by their officers and by\nthe weight of the men who came behind them.\nSweaty hands worked on swordhilts, getting a firmer\ngrip. Soon enough they would stand before Niall\nand that sword of his. Soon enough.\nNiall awaited their coming, his own sword ready.\nSlightly behind him was the girl. She was breathing\nharshly, yet she was no longer whimpering.\nNiall chuckled. \u201cA cleaner death, girl, than being\ntaken by Korvassor. A couple of slices from those\nblades, and we\u2019ll stand together before Father\nThimugor, waiting for his judgment on our lives.\u201d\n\u201cThey won\u2019t kill us,\u201d she whispered. \u201cThey want\nus \u2014 alive!\u201d\nHe thrust the crystal into his belt-pouch, closed\nthe hasp. Then he moved forward to the edge of the\nbroken pavement, sword in his hand. Behind him\ncame Amyrilla.\nThey came then, in a coordinated rush, pale light\nglimmering on their swordblades. These were vete-\nrans of the wars of Lurlyr Manakor, who had fought\nthe savages of the eastern frontiers, who had battled\nagainst the troops of Queen Thalmyra, who had\nstood off the hordes of Omar Khan.\nNiall went to meet them, sword swinging. Two\nmen went down before that first sweep of the blade,\nthen another, and now he stood surrounded, the\nringing clash of steel on steel drowning out the gasps\nof and curses of the fighting men. Niall was every-\nwhere, leaping, dodging, ducking a blow and thrust-\ning.\nHe fought carefully, without seeming plan. Yet\nalways he manoeuvered his path toward a great pil-\nlar, crumbling away under the weight of the eons,\nuntil at last he put his spine to it so that no man\ncould come at him from behind, and now he fought\nas does the wounded bear, snarling beneath his\nbreath and thinking only of killing as many of his\nadversaries as was possible.\nHis great, rolling muscles shifted under his tanned\nhide as he moved his sword one way and then\nanother, catching a man rushing in boldly or driving\nout to draw blood from another as that man was\nseeking to outflank him. He felt a tug at his belt and\nknew that Amyrilla was lifting out his dagger, using\nit to stab those who came within reach of that sharp\nOrravian steel.\nThe battle was hopeless, of course. Yet perhaps\nbecause of its very hopelessness, Niall fought as he\nmay never have fought before. No beginner, he, to\nthe clang and clash of weapons. All his life he had\nfought, it was a way of life for him. He took rash\nchances, sometimes leaping from the broken pillar\nto transfix two men before any could guess his in-\ntent, then leaping back to rest his giant frame against\nthe crumbled rock obelisk.\nYet he did not die. Swords cut into his flesh, but\nthese were minor wounds. Blood ran down his\nshoulder and sides, and his legs bled too, where\nsharp steel had sliced him. Yet he stood tall and\nfirm, and his swordarm seemed untiring. But there\nwas a growing weariness inside him, in his blood, in\nhis muscles. Not much longer could he stand here\nagainst a small army.\nThere were no arrows shot at him, no spears ap-\npeared, they wanted him alive, to offer him up to\nKorvassor. He and the girl, these were to be the\nsacrifices.\nDawn was in the air, a brightness to the east, when\nthey rushed him. Half a dozen lines of rested vet-\nerans came forward at the run, shields up. The men\nhe had been fighting drew back to give them room.\nNiall saw them coming, saw the tilted shields locked\ntogether. There would be no escape.\nHe smiled bitterly. \u201cIt ends, Emalkartha,\u201d he\nwhispered.\nHis sword came up and he struck with it, but he\nhit only those shields, knowing as he did so that\nthese veterans were using not swords but ropes\nagainst him \u2014 nets that would cling to him, that\nwould hamper his swordarm. He felt their touch, he\ntried to evade them, but could not.\nThey fell about him, faster and faster, as those\nveterans flung them. Entangled in those strands, his\nswordarm useless, nevertheless he battled on as best\nhe could until the haft of a dagger struck him be-\ntween the eyes.\nNiall dropped and lay motionless . . .\nHe opened his eyes to the movement of a boat\nthrough water. Amyrilla knelt beside him, his head\non her thigh, her head bent and her tears dropping\nslowly on his face. There were many men around\nthem, armed men. When they saw his eyes staring up\nat them, they grinned and moved closer.\n\u201cMan, you\u2019re a fool,\u201d one said.\n\u201cTo risk your life for a dancing girl!\u201d\n\u201cBut \u2014 gods! How you can fight!\u201d\nThere was no enmity in them, only a mild envy.\nAnd a grim sympathy. They knew how he would die,\nchained to those ivory posts, when Korvassor came\nto claim him. It would not be a nice death, absorbed\ninto the god-being.\n\u201cMore than a score of men dead, two score with\nwounds,\u201d one man was muttering, shaking his head.\n\u201cT thought no one man could ever cause such havoc\nagainst such fighters as we have in the Borstyrian\nGuard.\u201d\n\u201cIt\u2019s a waste of a good man,\u201d another murmured.\n\u201cYou\u2019ve angered Lurlyr Manakor,\u201d a captain\nnodded. \u201cBad enough to offend the queen, which\nyou did when you stole the girl. But the king \u2014 ah,\nthat was a true mistake.\u201d\nNiall growled, \u201cWhat difference does it make?\nI'll die. A man can die only once.\u201d\n\u201cBut you won\u2019t die. That is, not actually die.\nWhoever is absorbed into Korvassor becomes a part\nof him and \u2014 lives on.\u201d\nNiall shuddered.\n4,\nHe hung from golden chains between two ivory\nposts. Beside him, so that he could see her by turning\nhis head, he could make out the naked body of Amy-\nrilla, slumped down so that she would have fallen\nbut for the manacles clasped to her wrists.\nFrom the girl, his eyes went around the temple. It\nwas dark here, except for the few tapers that were\nlighted here and there on the altar. They were the\nonly ones in the temple. They were the sacrifices,\nthose who were to be offered up to Korvassor.\nSoon now would come the priests. And after\nthem, Lurlyr Manakor and his queen, Thyra of the\nMidnight Hair. The king and queen would come\nhere to see them taken by the god-being. They would\nwant to know that their vengeance was complete.\nNial rattled the golden chains that held him pris-\noner. The sound of their clashings was loud in the\nstillness of the temple. Sweat came out on his fore-\nhead but it was not the sweat of fear but rather that\nof fierce fury. He had never been so helpless. Never!\nFor a moment he thought of biting his wrists, of\nletting his blood run out of his body, so as to kill\n26\nVol.2,No.7\nhimself and cheat Lurlyr Manakor of his vengeance\nand Korvassor of his flesh. Yet the will to live\npounded strongly within Niall of the Far Travels, he\nwas not a man to yield himself so shamelessly.\nBut he did not want to die!\nNor shall you, Niall. Not with myself beside you.\nThe words were in his mind even as he saw a faint\nshimmering, as though faery lights were gathering\nbefore him. And then, shrined in that pale brilliance,\nhe saw \u2014 Emalkartha. No, not Emalkartha but \u2014\nLylthia!\nAye! The goddess stood before him in her human\nguise, as once she had appeared in Angalore to the\nsouth, clad only in that bit of rag she had worn\nthere, when he had rescued her and then, slept as she\nfled away to die \u2014 apparently \u2014 on the death-stone\nof the wicked mage, Maylock.\nShe stepped toward him, smiling. Her arms came\nup to go about his neck and her red lips were pressed\nagainst his own. For an instant, he knew utter bliss.\nHis senses leaped and quivered to the delight of her\ncaress.\nAnd then, smiling up at him teasingly, she stepped\nback, lifting a hand and shaking a finger at him in\nmock anger.\n\u201cDo you think I would let Korvassor take you?\nDo you, Niall? Na, na. Emalkartha is no wanton, to\ntoss her lover to the gods. There is a plan, Niall. And\nyou must play a part in it.\u201d\n\u201cWhat part?\u201d\n\u201cNay, now. This I cannot tell \u2014 lest you betray to\nKorvassor what I have in mind. Just be easy. Act as\nthough you knew me not. Is this agreed between\nus?\u201d\nNiall scowled. \u201cAgreed,\u201d he muttered.\nThe ways of a goddess were strange to mortal\nmen. He wondered what was in her mind. Yet he did\nnot wonder long, for she came forward, pressing\nherself against him and kissing him again, and once\nmore Niall knew that strange ecstacy which only\nLylthia \u2014 or \u2014Emalkartha \u2014 could bring to him.\nHe heard a distant sound.\nAt once, Lylthia drew away, laughed softly, and\nbegan to fade. But just before she disappeared, she\nraised pink fingers to her mouth and blew him a kiss.\nThe sound grew louder and now Niall knew it for\nthe strum of sistrums, the tinkle of bells, the musical\nclangor of cymbals. Voices too, he heard, raised in\nsong.\nThat chant grew louder and now he could make\nout, at the far end of the temple, the procession of\npriests who came toward them, served by acolytes.\nCandles swayed, lighting their way. Their chant\ngrew more solemn, raised in worship of the god.\nNiall stood firmly on his warbooted feet. He\nwould meet these priests as he met warriors: head\nup, with no fear in his heart. His eyes slid sideways,\ntoward Amyrilla. The girl was conscious now, rising\nto her full height. Yet her lips quivered, and he saw\ntears gathering in her eyes.\n\u201cTll save you,\u201d he muttered. \u201cSo stop worry-\ning.\u201d\nShe gasped, turning to eye him in stunned amaze-\nment. \u201cSave me? But how? You're chained just as I\nam.\u201d\nHe could not tell her of Lylthia, nor of her prom-\nise. And so he muttered, \u201cThere will be a way.\nJust trust me.\u201d\nAmyrilla sighed, but the color came back into her\ncheeks, and she stood more bravely than before. In-\ndeed, as Niall thought, they both seemed far more\ndefiant than the occasion warranted. The priests of\nKorvassor sensed this defiance, and on their pale\nfaces smiles sprang into being. Only the high priest,\nan old man with long white hair and a beard, gazed\nat them dubiously, as though he sensed that their de-\nfiance was based on something other than mere\nhuman courage.\nThe priests took up their places before the altar.\nIn low voices they chanted on, but still they waited.\n"
+  },
+  {
+   "path": "extract/dragon/013/p027_full.txt",
+   "content": "Now the great doors at the far end of the temple\nopened, and down the broad aisle came armed men,\nfanning out as they approached the altar. Behind\nthem, in gilded palanquins, came King Lurlyr Mana-\nkor and his queen, Thyra the Dark one. They were\nhere to witness the fit punishment of those who had\ntransgressed against them.\nLurlyr Manakor stepped from his palanquin when\nit came to a halt, and walked forward toward the al-\ntar. He was a big man lately run to fat, but the huge\nbody and the iron will, which had made him a con-\nqueror of nations, could still awe the onlookers.\nToward Niall he walked, though his eyes swung\nsideways toward the naked body of Amyrilla. In\nhappier days, she had been his favorite. But since he\nhad wedded Thyra of the Midnight Hair, he had\nbeen forced to put Amyrilla aside. Even to offer her\nup to Korvassor as a sacrifice.\nThe king sighed once, then twice, and then he\nlooked at Niall. There was no hate in his eyes, only\npity. In a low voice so that neither the priests nor the\nacolytes might hear him, he spoke to the Sellsword.\n\u201cT am sorry you failed. If it were up to me, neither\nof you would die. I would. set you free and pay you\ngood gold to see you on your way.\u201d He shook his\nhead. \u201cBut I no longer reign in Urgrik. The priests\nof Korvassor rule this city.\u201d\nNiall said nothing, yet felt pity for this man in his\nheart. He was a conqueror, a fighting man, yet in his\ncrown city, he was subject to the priests and to his\nwife, the Queen Thyra. Lurlyr Manakor eyed him a\nmoment, then turned away.\nNow the curtains of the second palanquin moved,\nfluttering. And out stepped Thyra, clad all in ebon\nrobes, with her long black hair bound with dia-\nmonds and pearls. She was a beautiful woman,\neveryone acknowledged that \u2014 yet Niall thought to\nread cruelty in her hard eyes, in her pale face. She\nstood a moment as slavegirls lifted off the jet robe in\nwhich she was swathed. Now she was revealed in a\nthin garment of purest black silk in which threads of\ngold were cunningly woven. Golden sandals were on\nher small feet.\nThyra moved across the flaggings, smiling almost\nto herself. Toward Amyrilla she walked, and at her\nevery step her cruelty became more manifest. Her\nlips were drawn back, her eyes became slitted.\nShe came to a halt. Her hand darted out, clapping\nhard against the face of the girl in the golden man-\nacles. Loud and sharp were the sounds of those\nslaps, and Amyrilla\u2019s head was knocked sideways by\ntheir force.\nThen Thyra turned toward Niall and now he could\nsee the hard eyes, the distorted lips. She came to-\nward him, and for a moment their eyes locked. Hers\nwere haughty, proud, and still cruel.\n\u201cYou dared?\u201d she breathed. \u201cYou dared to try\nand rescue her for whom I had decreed death. Well,\nyou shall pay the penalty along with her. Remember\nThyra wherever it is that Korvassor takes you.\u201d\nShe turned and moved away, and now the sis-\ntrums and the flutes began to wail again, very softly.\nIn was an eerie tune they played on their instru-\nments, and a cold chill went down Niall\u2019s spine.\nThey were summoning Korvassor. He had learned\nenough about Urgrik and its ways since he had ar-\nrived here to take service with Lurlyr Manakor to\nknow that much. In hushed whispers over goblets\nfilled with Kallarian wine, men had spoken of the\ntemple and that which came into it when the music\nplayed and the priests chanted.\nNow the priests were chanting in some long-for-\ngotten language. The sound of those words made\nNiall even colder. What they did here was obscene,\nfrightful. They were summoning up dread Korvas-\nsor, were offering to him the bodies of a man and a\nwoman.\nNiall rattled his chains as he stretched his big\nbody. Fury grew inside him, a raw heat that seemed\nalmost to lift him upward. It was not a human an-\nger, but rather a rage that seeped into him from out-\nside.\n\u201cI defy Korvassor!\u201d he bellowed. \u201cLet him come.\nI shall destroy this god you worship.\u201d\nThere was a silence after his outburst. Even the\nsistrtums and the flutes had stilled. The priests\nlooked at one another, then at the high priest who\nstood motionless, eyes hollowed in his head. Those\neyes burned at Niall, filled with fury and with \u2014\nwhat? Foreknowledge of some awesome doom?\nFear?\nQueen Thyra moved from where she had stationed\nherself beside Lurlyr Manakor. Her right hand came\nup, imperiously. \u201cThe man is half-dead with fright.\nWhy do you hesitate? Continue the ritual.\u201d\nThe sistrums woke to life, and with them the cym-\nbals. Loudly they sounded, as though they might\ndrown out the words of this giant who hung in the\ngolden manacles. Niall moved his eyes from the\nmusicians to the priests, to that high priest who re-\ngarded him so dubiously.\nThere was doubt in his eyes, and worry.\nLurlyr Manakor too, looked uncomfortable. Yet\nhis queen stood regally proud, her head held high,\nher eyes burning with the hate she had for Amyrilla\nand this barbarian who hung in the golden chains.\nHeat gathered on the altar. Niall felt it as he might\na hot fog, creeping over the tiles, seeping upward\nabout his legs and hips. To one side, Amyrilla\nmoaned, as she too felt that awful heat. Soon now,\nKorvassor would emerge from whatever worlds he\ninhabited and \u2014 take them.\nWords whispered in his mind, and in answer to\nthem, Niall stiffened his body, stood upright and\nshook the golden chains that held him.\n\u201cIT defy Korvassor,\u201d he bellowed. \u201cI defy the\nwicked one \u2014 in the name of Devolian himself!\u201d\nThe high priest gasped.\nAnd the heat fled back, away from Niall. It re-\ntreated, almost as though fearful of him. The sis-\ntrums strummed and the cymbals clanged, even\nlouder. The priests chanted with harsh voices.\nSlowly the hot mists crept back. Slowly, slowly.\nThey surged about his feet, ran up his legs to his hips\nand higher. It grew hard to breathe, for those mists\nwere strangling him, almost suffocating him. Niall\nshook himself, rattling the chains.\nNow he saw that those before him \u2014 the musi-\ncians, the acolytes, the priests themselves \u2014 were\ndrawing backward, away from the high altar. There\nwas fear in their. eyes as they stared at something be-\nhind Niall. Fear and awe and something of \u2014 hor-\nror. Only the high priest stood firm.\nNiall swung about, stared.\nSomething was forming behind the altar, in the\ncurved niche that reared high above the statue of\nKorvassor. Shapeless and formless it was, black and\nevil. Menacing! In the middle of that amorphous\nbulk, two red eyes shone forth, unblinkingly.\nA coldness settled in Niall.\nThis was Korvassor, summoned from his hells,\neager to devour that which was being offered to him.\nThis was the wicked god of Urgrik, he who came\nfrom beyond Time and Space. He-who-devours.\nFear not, Niall! I am with you!\nAh, that was Emalkartha, whispering again in his\nmind. Ha! Easy for her to say, not to be afraid. But\nby all the Gods! This thing was something out of\nnightmare, something which should never have been\nborn.\nWhat defense could anyone have against it?\nThe hot mists were all over him now, stifling him.\nYet it seemed to Niall that those mists did not sting\nhim as fiercely as they had done. It was almost as\nthough he had become immune to them, or that he\nwas \u2014 protected.\nKorvassor bulked huge now, filling the space be-\nhind the altar. He was beginning to flow forward,\nemerging onto the altar tiles themselves. Shapeless\nhe was, and of no certain outlines, yet the menace\n27\nThe Bragon\nthat emanated from that gross bulk was as palpable\nas the flagstones on which Niall stood.\nAh, now Korvassor was completely out of that\nfar-distant world he inhabited. His bulk was mov-\ning, sliding \u2014 oozing \u2014 across the tiles, straight for\nhis victims. The red eyes studied them hungrily. Al-\nmost, the hulk seemed to drool.\nFaster it flowed. Faster!\nA tentacle touched Niall, paralysing him. Agony\nstabbed inward from his skin, around which that\nblack tentacle was clasped. Yet Niall did not cry out.\nRather, he stood firm, almost defying this god-being\nwho had come for him.\nKorvassor felt that defiance and was puzzled.\nThe red eyes grew angry.\nMore and more of that black bulk flowed for-\nward. It hovered high above Niall, and paused, wait-\ning. In another moment, it would dart downward to\nsurround him, absorb him.\nSomething stirred, close to Niall. Stirred and \u2014\nwaited.\nKorvassor swooped downward. His tentacles\nfashioned arms that stretched out to gather him in.\nSwiftly he moved, blotting out all sight from the\nwaiting Sellsword. Then those dark arms closed on\nhim.\nNiall felt the pain, the agony. He opened his\nmouth to scream. No mere man could endure such\npain! His heart pounded, the sweat ran out of his\npores. And yet \u2014 and yet \u2014 he still stood. And now\n\u2014 that agony was receding.\nSomething was flowing out of Naill, something\nthat ran with the swiftness of water rippling over\nbrookstones. It went to meet Korvassor, went eager-\nly, almost singing as it flowed. Niall shuddered,\nknowing suddenly that this was Devolian \u2014 Devo-\nlian, whom he had brought here from that aban-\ndoned temple, in that crystal shape.\nI am here, black one! You of the red eyes, I am\ncome at last!\nKorvassor screamed.\nThere was agony in that scream, and despair.\nNiall felt those emotions as a distant part of himself,\nand he knew that just as Korvassor was experiencing\nthem, so he was himself, since he was a part of that\ngod-being.\nThen, abruptly, Korvassor spewed him forth.\nNiall crumpled on the tiles, staring. No longer\nwere the golden manacles on his wrists, they lay be-\nside him on the floor.\nHigh above, the blackness which was Korvassor\nwrestled with the thing that was Devolian. Fiercely\nthey fought. Fiercely! Korvassor sought to retire\ninto that curving space out of which he had come,\nyet always Devolian was there before him, to prevent\nit. And now, slowly, Korvassor was weakening. Less\nfurious were the rushes he made, not so brilliant\nwere his red eyes. And always, that which was Devo-\nlian closed in about him, surrounding him.\nNiall glanced back at the priests.\nThey stood as though under a spell, only their eyes\nbeing alive. The high priest was very pale, very\nfrightened. The fear in him was like a living thing.\nAnd to one side, Amyrilla lay unconscious in her\ngolden manacles.\nNow Korvassor merely writhed in the watery ten-\ntacles that gripped him, squeezing him. The red eyes\nwere dimmed, almost to extinction. In another mo-\nment, they would disappear.\nAnd then \u2014 suddenly \u2014 only Devolian stood\nupon the tiles.\nTransparent he was, a shimmering curtain of bril-\nliant lights. Niall heard those lights whispering joy-\nously, radiant with delight, with power. Forward\nmoved that curtain, quivering, sentient! It poised a\nmoment above Niall, almost as though contemplat-\ning him.\nDownward stretched an arm of those lights,\ntouched him.\nMy thanks, man of this world. But for you, I\n"
+  },
+  {
+   "path": "extract/dragon/013/p028_full.txt",
+   "content": "The Dragon\nshould never have been able to trap Korvassor, to\ndestroy him!\nNiall had never felt so energetic. The power of\nDevolian swam through his flesh, his veins. He\nstraightened, all the agony and its memory gone\nfrom him. He put a hand on his sword, half-lifted it\nfrom the scabbard.\n\u201cT have enemies too, Devolian. Let me \u2014\nNay, now. These are my enemies as well.\nForward swept that living curtain, toward the\npriests and the acolytes of Korvassor, and when it\ntouched them, they became shimmering motes of\nbrightness that faded into nothingness. The high\npriest screamed and whirled to flee but Devolian\nswept forward, rushed over him \u2014 and the high\npriest no longer existed.\nThe curtain poised, moved forward.\nThyra the Dark screamed once, a high shrilling\nthat reverberated from wall to wall of the temple.\nShe turned as had the high priest, but the curtain of\nlights surged forward, touched and enveloped her.\nNiall heard a faint, distant keening. Then \u2014 si-\nlence.\nSlowly now, the curtain faded, and where it had\nstood was emptiness.\nNiall growled and moved toward Amyrilla. But he\nwas too slow. Lurlyr Manakor raced forward, his\n\u201d\nhand getting a key out of his pouch. It was his hand\nthat inserted the key, his arms that caught the girl as\nshe stirred and looked up at him.\n\u201cCan you forgive me? It was not I but Thyra and\nthe high priest who condemned you. They wor-\nshipped Korvassor, it was they who insisted on re-\nstoring the old worship, the giving of sacrifices.\u201d\nAmyrilla smiled faintly. \u201cThere is nothing to for-\ngive, Lurlyr. Yet there is thanks to be said \u2014 to\nNiall.\u201d\nLurlyr Manakor flushed and glanced sideways.\n\u201cThere is that, of course. And you know how deeply\nI am indebted to you, Niall. Ask what you will of\nme. Except Amyrilla. Her I mean to marry, to make\nmy queen.\u201d\nNiall shrugged, remembering that he had acted be-\ncause of Emalkartha. \u201cNo thanks are needed. I did\nwhat \u2014 I had to.\u201d\n\u201cYou shall be given half my kingdom.\u201d\nNiall only shook his head. \u201cI\u2019m no ruler. I\u2019m only\na warrior.\u201d\n\u201cThen you shall be made general of my armies. I\nshall build you a fine castle, I shall fill your chests\nwith gold and jewels. Come now, walk with us out\nof this temple which is no longer a temple. Come,\nNiall.\u201d\n\u201cIn a moment.\u201d\nFinieous \u201cFingers, Fred &amp; Charly in: \u201cGnder Fire\u201d\nOr How Not to Gnier an Spil Wizard\u2019 5 Castle\nWELL,HERE WEARE BoY\u00a5s,\nNOGre rae TrPieag Skul\nSHAFED GATE, TES AnD\nUPoow THE (fae\nTHE AE coe\n(P5085 THE TYPICAL\nMiori.y ArsoRr MEAT\nor cAsTLe SUARGS,\n| WAANTE B HERE...\nfess mors?\nVol. 2, No. 7\nHe watched them move down the aisle, arm in\narm. Aye, they were going to be married, to rule to-\ngether in Urgrik. But he? He who had helped bring\nthis all about? What was there for him that he\nwanted?\nIt was a whisper in the air, no more. Yet every part\nof his body quivered to the sound of that voice.\n\u201cWhere are you?\u201d he asked hoarsely.\n\u201cSoon I shall come to you, Niall. Soon, now. Be\npatient.\u201d\nShe came out of the shadows, almost naked, still\nwearing those bits of rag which she had worn in An-\ngalore. She was smiling, she was holding out her\narms. And Niall stepped into them.\nHe held her for a long time, kissing her. Oh, he\nknew she would never stay here with him in this\nworld where he lived. But to have her like this, sweet\nand warm and scented, her soft mouth under his,\nwas reward enough for him who was a sellsword.\nEven when she went away from him, blowing him\nthose kisses, he did not despair. Some day she would\ncome to him again. For that he lived, for that he\nwould wait in patience.\n\u2014 the end \u2014\nby JD\nSOMEHOW | GET\nTHE (A PR Sa1oN\nTear WE ARENT\naR\n| Ay MeRessioN Ss\n| 486 A'reHT..-\nOMAY, 50! FJHOULD HAVE\nAXOwal Vit WhZAA DS\nARge AT FRIENDLY...\nAv? BA WwITh THE a\nCHIVALRY PRICK I oo\nfey eae ae HEAD\nHU AT! 0.0 Bata\nOER \u00a9 THE cHALLcAle\n"
+  },
+  {
+   "path": "extract/dragon/013/p029_full.txt",
+   "content": "WAIT A MINUTE.\nYEAH?\nPM 7. 5\ni\nase\nSS\nyt\nWELL, |\nTRYIN To\nSTOMP \u2018im\nAIN'T MUCH\nSPURTINGER!\nfe) SNIFF-SVIFFS aes\na By pags :\nSe et :\n= 4 - tei\n\u2014= i r F\nnin Petal\n5 ee =&quot; Pas = sd 7 d\nCats.\nWHAT ARE You }\nARFIN' ABOUT?\nTHEY'LL ALREADY\nLT HAUGH! You \\:\nEVER. TRIER\nTHAT DEPENDS ON How \\\nMANY WORMY STARTED WITH.\n\u2019\u2019 | HE WAS DOIN\u2019 ENOUGH DANCIN\u2019\nit AROUND UP\nTHERE To HAVE\n| SQUARSHEP A SQUAD oF\nTHEM LITTLE MuNCHEING.\nel oa ee ae\nI TELL YA 1 SMELL\n/\n| Dwarves! ...SNIFEFS |\nHMIMt1... WORMY MUSTA\nMe Fev\n"
+  },
+  {
+   "path": "extract/dragon/013/p030_full.txt",
+   "content": "The Dragon\nWinners of\nCreature Feature Contest #1\nThis month, due to last minute space limitations, we can only list the\nwinners. Next month, the winner and two runners-up will be printed in\ntheir entirety, and the loot detailed. For now, we can only say congratu-\nlations and give the value of the prizes. Those that received honorable\nmention can have an extra copy of TD 14 by writing and asking for it.\nWinner ($69 worth of prizes):\nConrad Froehlich \u2014 Wyoming, OH \u2014 The Jarnkung\n1st Runner Up ($35 worth of prizes):\nThomas &amp; Edward McCloud \u2014 Hayward, CV \u2014 Cursed Crimson\nCrawler\n2nd Runner Up ($25 worth of prizes):\nAnn Conlon, Eugene OR \u2014 The Ulik\nLyle\u2019s Hobby &amp; Craft Center\nLarge Selection of Wargames\n38 North Cass Ave:\nWestmont, Ill. 60559\n852-8085\nTD Goes Monthly in April!!\nFLORIDA'S LARGEST . :\nFantasy and military wargame shop. Airfix \u00ab Archive * A-H \u00a2 Battleline * C inC\n\u00a2 Garrison * GDW \u00a2 GHQ e Genadier \u00ab Heritage * Mcewan \u00a9 Metagaming \u00ab\nMinifig Ral Partha \u00a2 SPI \u00ab Superior * TSR \u00ab\u00a9 WRG \u00ab and others. Quantity dis-\ncounts. Catalog 50c-refundable first order. :\nMODELERS MART \u2014 bept D\n760 N. Indian Rocks Road -\nBelleair Bluffs, Ft 33540 (St. Petersburg Area)\naa\nTD: Still $9 for 6 issue sub: $18/12 issue sub.\n\u00bb BQOKS\nMODELS\nWARGAMES\nMINATURES\nThe Toy Soldier\n102 Front Street\nBath, Maine 04530\nTel. (207) 443-3711\nMart Order Catalog\nPETER L. RICE. $2.00\nFICTIGNEERS\n\u201dANTASTIC Si-Fl WARRIGRS\nSEND $1.00 FOR COMPLETE CATALOG.OF:&quot;\n30MM SAMURAI, 25MM SI-FI, 20MM MODERNS\nRg: 20MM VIKINGS &amp; NORMANS\n4249 EAST 177 ST.\nBronx, N.Y. 10465\nVol. 2, No. 7\nNOTES FROM A\nSEMI-SUCCESSFUL\nD&amp;D PLAYER\nby James Ward\nI have been traveling around dungeons for a considerable period of time now,\nand in that time I have thought up and copied many little tricks that have gotten\nme out of some tight spots. I am setting them down in the hope that some will\nprofit by them. It also wouldn\u2019t hurt if others sent their little tricks in, remem-\nbering that sometimes we need all the help we can get.\nThe first is the creation of a continual light wand. This small baton will give a\nheatless light in a 24 foot area. It is much better than a torch because you can\nthrow them in an unknown room and they don\u2019t go out. It is only a second level\nspell so it is easy to make. The baton can be kept in a leather holding pouch if\ndarkness is desired. To carry the concept one step further, you could put the spell\non arrows and when they hit those monsters used to the darkness the effect\nwould be near blindness.\nThe second idea needs the fourth level growth/plant spell and a plant control\npotion. When I have the potion, I carry around a small potted rose plant, in the\ndungeon. If the situation arises where I am trapped in one of those (ever popular)\ndead ends and the monster is bearing down on me, the rose bush gets enlarged\ninto a wall and I order it to attack the monster! It is truly gratifying to see the ef-\nfect of those thorns on the hide of the monster.\nEveryone knows of the usefulness of the ten foot pole in many tight places.\nThe use of a five foot steel rod is even more useful in those tight places. You can\nhang from it and it will not break like the wooden version. It is great for the stop-\nping of those sliding walls. Last, but certainly not least, is its use as a lever of\ngreat power.\nWhile we are on the subject of steel, the use of steel potion bottles almost com-\npletely ends the chance of breaking them when you fall into a pit or get hit. I say\nsteel, because if you make them out of iron, you could get poisoned. They might\nbe expensive to make but so is your potion.\nEveryone knows that vampires cannot stand the smell of garlic. While this is\ntrue vampires can stand off in the distance and summon those wolves and bats\nthat are not bothered a bit by the smell. What I do, is carry around small vials of\ngarlic juice that I have squeezed from the buds. If you think the smell of the bud\nis strong, you should smell the juice. These vials are then thrown at the vampire\nor just in front of it. I usually get them to turn into dust or gaseous form with\nthis sort of attack. The vials are kept in small steel pouches on my belt of course.\nThe polymorph spell can be one of the best double attack spells known, if you\nuse it right. For instance, if a cockatrice attacks and you succeed in turning it\ninto a snail you should capture the snail. Then, in the next battle, the snail is\nthrown in first with a dispell magic following it. The snail becomes a cockatrice\nand if it survives the transformation it fights your battle for you. If you do not\nwant to bother with the keeping of your polymorphed creatures, I suggest you\nturn them into a gold fish so at least they die right away. We do not want those\ncreatures coming around again later for revenge.\nThen there is the poison on the dagger trick, which every judge is always trying\nto stop. I have been told that poisons evaporate, poisons exposed to the air lose\ntheir effectiveness, or the most used of all, in your area there is no poison strong\nenough to kill the things you want. I suggest to all you players and especially the\nmagic users that can use only daggers, that any amount of money and effort\nspent in the procuring of a really effective poison is worth it. I spent over 90,000\ngold and haven\u2019t regretted a copper piece of it.\nAll you magic users out there should devote some time and effort to the crea-\ntion of new spells. It requires money and time, but when you have succeeded you\nhave a sellable item, in the form of a spell only you have. I made a fourth level\ncold ray that really works great against all creatures and especially those fire\ntypes. I particularly like what it does to red dragons. The list of possible spells to\nbe made is endless, with the only limitation being your imagination.\nWhile we are dealing with magic, a set of extra spell books for the magic user is\na must. Those things are too easy to destroy, steal, or lose. I know the cost is\nextreme, but considering their need for you to simply exist as a magic user, they\nare a must.\nMy last bit of advice deals with the 8th level permanent spell. This spell, usual-\nly only gotten with a scroll, has got to be the best spell there is and every bit as\ngood as a wish. I placed a fly spell on myself and made it permanent. Now gorges\nand chasms are ignored, I can grab those floating treasures, and sometimes I es-\ncape the monsters grasp by simply going up. Friends of mine, like infravision,\nand protection from evil in combination. The haste spell would be nice, but I\nhave been told that it can cause heart failure, since the body is not made to stand\nthe strain. Sometimes the magic user is lucky enough to charm an extra strong\ncreature and making the charm spell permanent works out great.\nHope some of this helps, those ever suffering players, in the dungeons where\nthe judge is a real sadist!\n"
+  },
+  {
+   "path": "extract/dragon/013/p031_full.txt",
+   "content": "[Nonsters, flonsters, and lore /l\\onsters !\n_ Here is a compendium of monsters, spirits, and minions that no serious DUNGEONS &amp;\nDRAGONS enthusiast should be without!\nThe MONSTER MANUAL for AD-\nVANCED DUNGEONS &amp; DRAGONS .\nis an encyclopedic listing of over 350\nmonsters for use with D &amp; D, giving a\nbackground outline of each, a run-\ndown of applicable specifications for\ngame purposes (all in advanced\nformat), and - - in many cases - - an\nillustration. This vast collection takes\nin a wide variety of listings, all in\n\u2018alphabetical order - - men of various\nClasses, elves, dwarves, halflings,\ndevils and demons, and a horde of\nfearsome creatures. This massive\ncompilation embraces the listings of\nthe DUNGEONS &amp; DRAGONS game\n\u2018itself, the several supplemental book-\nlets published previously, the num-\nerous \u201c\u2018creature features\u2019\u2019 appearing\nin back issues of THE STRATEGIC\nREVIEW and THE DRAGON maga-\nzines, plus a considerable number of\nnew and fascinating creations.\nTo illustrate the completeness of the\nmaterial in the MONSTER MANUAL, here\nis a sample listing of a single monster:\nCARRION CRAWLER\nFREQUENCY: Uncommon\nNO APPEARING: 1-6\nARMOR CLASS: 3 7\nMOVE. 1?\nHIT DICE: 3 +. }\nTy tN LAIR: 50%\nTRFASURE TYPE: B\nNO OF ATTACKS: 8\nDAMAGE \u201cATTACK: Puralysis\nSPECIAL AITACKS: As above\nSPECIAL DEFENSES: Nil\nMAGIC RESISTANCE. Startctard\nINTELLIGENCE: Non\nALIGNMENT: Neutrat\nSIZE. \u00a319 tong:\nPSIONIC ABILITY. Nuf\nAtlack Defense Modes\u2019 Nil\nCarrion crawlers strangly resemble a cross between a giant green cutworm\nand a huge cephalopod They are usually found only in subterranean\nareas The carrion crawler is, as its nome implies, a scavenger, but this\ndoes not preclude aggressive attacks upon living creatures, for that insures\na constant supply of corpses upon which to feed or for deposit of eggs. The\nhead of the monster is well pratected, but its body 1s anly armor class 7. A\ncarrion crawler moves quite rapidly on its multiple legs despite its bulk,\nand a wall or ceiling 1s as easily traveled aso floor, for each of the beast's\nfeet ore equipped with shorp claws which hold it fast. The head is\nequipped with B tentacles which flail at prey; each 2\u2019 long tentacle exudes\na gummy secretion which when fresh, will paralyze opponents (save\nversus paralyzation or i! takes effect) As there are so many tentacles with\nwhich to hit, and thus multiple chonces of being paralyzed, these monsiers\nare greatly feared.\nThe MONSTER MANUAL features the original artwork of no less than 3 illustrators - -\nDavid C. Sutherland III, D.A. Trampier, and Tom Wham. Their work is showcased in\nover 200 drawings appearing throughout the book, in addition to a full color cover.\nAll in all, the MONSTER MANUAL runs to well over 100 pages of material, in 8% x 11\u201d\u2019\nformat. And this volume sets new standards for quality, durability, and value as a game\nreference work, since it is hard bound. This makes the MANUAL useful! and valuable for\nyears to come. If you play D &amp; D, you won\u2019t want to be without a copy!\nAvailable at better hobby or book stores or direct from:\nMONSTER MANUAL\n$ 9.95\nTSR HOBBIES, INC.\nP.O. Box 756\nLake Geneva,WI 53147\n(Please add $1.00 handling charge for all mai! orders.)\nail\n"
+  },
+  {
+   "path": "extract/dragon/013/p032_full.txt",
+   "content": "THE SPACE GANER Magazine can\nintroduce you to a new and wonderful world.\nScience fiction and fantasy gaming is the most rapidly\ncrowing of all hobbies. The Space Gamer Magazine puts you\nin the middle of this exciting pastime \u2014 and keeps you there.\nYou'll get game design articles * science speculations *\ngame reviews * fiction * game variants * computer games *\nletters * readers\u2019 game ratings * news and new products *\nart * and much more in every issue. Subscribe today...\nand get a free MicroGame (or two) as a bonus.\n32 pages of fascinating reading every two months \u2014\n83\u00b0? x 11&quot; size, with full-color cover. And 7SG subscribers\nget special discounts on all Metagaming products.\nQUE VOOR. we eee eee $8 (Vou eet one free MicroGame). Total retail value - $11.95.\nTWO VOONS wee eee eee aes $15 (Vou get (we free Microlhames). Total retail value - $23.90.\nBox 15346-S5E\nAustin, Texas 78761\neRe ee ere eee eee eee eee ee\nft PR PRP eee ee eee eee eee eae\nPlease enter my\nsubscription\nfor ...... Years,\nand send me the\nMicro(s) checked\nhelow. Enclosed\nis my check or\nmoney order for\nCame Choice:\nork es ... Rivets\n"
+  }
+ ]
+}
