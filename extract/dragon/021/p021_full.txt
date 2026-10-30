@@ -1,0 +1,217 @@
+# **LOUISVILLE & NASHVILLE (L&N)**
+
+**EV: 112%**
+
+|  Atlanta | 2.6 | ACL, SAL, SOU (3)  |
+| --- | --- | --- |
+|  Birmingham | 1.0 | ACL, SAL, SOU, SLSF (4)  |
+|  Chattanooga | .5 | SOU  |
+|  Cincinnati | 1.5 | B&O, C&O, NYC, N&W, PA (5)  |
+|  Knoxville | 1.0 | SOU (1)  |
+|  Louisville | 1.3 | C&O, IC, PA (3)  |
+|  Memphis | 1.3 | CRI&P, IC, MP, SOU (4)  |
+|  Mobile | 1.0 | GM&O (1)  |
+|  Nashville | 1.3 | ——— (LOCK)  |
+|  New Orleans | 1.7 | IC, SOU, SP, T&P (4)  |
+
+# **NORTHERN PACIFIC (NP)**
+
+**EV: 104%**
+
+|  Billings | .8 | CB&Q (1)  |
+| --- | --- | --- |
+|  Butte | .8 | CMSTP&P, GN, UP (3)  |
+|  Fargo | .4 | GN (1)  |
+|  Minneapolis/ St. Paul | 2.0 | CMSTP&P, C&NW, CRI&P, GN (4)  |
+|  Portland, Or. | 2.6 | GN, SP, UP (3)  |
+|  Seattle | 2.8 | CMSTP&P, GN (2)  |
+|  Spokane | .8 | CMSTP&P, GN (2)  |
+
+# **NORFOLK & WESTERN (N&W)**
+
+**EV: 46%**
+
+|  Cincinnati | 1.5 | B&O, C&O, L&N, NYC, PA (5)  |
+| --- | --- | --- |
+|  Columbus | 1.1 | C&O, PA (2)  |
+|  Norfolk | 1.3 | ——— (LOCK)  |
+
+# **NEW YORK CENTRAL (NYC)**
+
+**EV: 95%**
+
+|  Albany | 1.3 | B&M (1)  |
+| --- | --- | --- |
+|  Buffalo | 1.7 | C&O, PA (2)  |
+|  Chicago | 3.4 | AT&SF, B&O, CB&Q, CMSTP&P, C&NW, C&O, CRI&P, GM&O, IC, PA (10)  |
+|  Cincinnati | 1.5 | B&O, C&O, L&N, N&W, PA (5)  |
+|  Cleveland | 2.0 | PA (1)  |
+|  Detroit | 2.3 | C&O (1)  |
+|  Indianapolis | 1.1 | PA (1)  |
+|  New York | 4.2 | NYNH&H, PA (2)  |
+|  St. Louis | 2.0 | B&O, CB&Q, GM&O, IC, MP, PA, SLSF (7)  |
+
+# **NEW YORK, NEW HAVEN & HARTFORD (NYNH&H)**
+
+**EV: 136%**
+
+|  Boston | 2.9 | B&M (1)  |
+| --- | --- | --- |
+|  New York | 4.2 | NYC, PA (2)  |
+
+# **PENNSYLVANIA (PA)**
+
+**EV: 130%**
+
+|  Baltimore | 2.7 | B&O (1)  |
+| --- | --- | --- |
+|  Buffalo | 1.7 | C&O, NYC (2)  |
+|  Chicago | 3.4 | AT&SF, B&O, CB&Q, CMSTP&P, C&NW, C&O, CRI&P, GM&O, IC, NYC (10)  |
+|  Cincinnati | 1.5 | B&O, C&O, L&N, NYC, N&W (5)  |
+|  Cleveland | 2.0 | NYC (1)  |
+|  Columbus | 1.1 | C&O, N&W, (2)  |
+|  Indianapolis | 1.1 | NYC  |
+|  Louisville | 1.3 | C&O, IC, L&N (3)  |
+|  New York | 4.2 | NYC, NYNH&H (2)  |
+|  Philadelphia | 2.9 | B&O (1)  |
+|  Pittsburgh | 2.1 | B&O (1)  |
+|  St. Louis | 2.0 | B&O, CB&Q, GM&O, IC, MP, NYC, SLSF (7)  |
+|  Washington | 2.3 | C&O, RF&P, SOU (3)  |
+
+# **RICHMOND, FREDERICKSBURG & POTOMAC (RF&P)**
+
+**EV: 81%**
+
+|  Richmond | .9 | ACL, C&O, SAL (3)  |
+| --- | --- | --- |
+|  Washington | 2.3 | B&O, PA, SOU (3)  |
+
+# **SEABOARD AIR LINE (SAL)**
+
+**EV: 129%**
+
+|  Atlanta | 2.6 | ACL, L&N, SOU (3)  |
+| --- | --- | --- |
+|  Birmingham | 1.0 | ACL, L&N, SLSF, SOU (4)  |
+|  Charleston | .7 | ACL (1)  |
+|  Charlotte | .5 | SOU (1)  |
+|  Jacksonville | 1.0 | ACL (1)  |
+|  Miami | 1.8 | ——— (LOCK)  |
+|  Richmond | .9 | ACL, C&O, RF&P (3)  |
+|  Tampa | 1.2 | ACL (1)  |
+
+# **SAINT LOUIS-SAN FRANCISCO (SLSF)**
+
+**EV: 77%**
+
+|  Birmingham | 1.0 | ACL, L&N, SAL, SOU (4)  |
+| --- | --- | --- |
+|  Dallas | 1.4 | T&P (1)  |
+|  Ft. Worth | 1.0 | AT&SF, CB&Q, CRI&P, T&P (4)  |
+|  Kansas City | 2.8 | AT&SF, CB&Q, CRI&P, GM&O, MP, UP(6)  |
+|  Memphis | 1.3 | CRI&P, IC, L&N, MP, SOU (5)  |
+|  Oklahoma City | 1.2 | AT&SF, CRI&P (2)  |
+|  St. Louis | 2.0 | B&O, CB&Q, GM&O, IC, MP, NYC, PA (7)  |
+
+# **SOUTHERN (SOU)**
+
+**EV: 82%**
+
+|  Atlanta | 2.6 | ACL, L&N, SAL (3)  |
+| --- | --- | --- |
+|  Birmingham | 1.0 | ACL, L&N, SAL, SLSF (4)  |
+|  Charlotte | .5 | SAL (1)  |
+|  Chattanooga | .5 | L&N (1)  |
+|  Knoxville | 1.0 | L&N (1)  |
+|  Memphis | 1.3 | CRI&P, IC, L&N, MP, SLSF (5)  |
+|  New Orleans | 1.7 | IC, L&N, SP, T&P (4)  |
+|  Washington | 2.3 | B&O, C&O, PA, RF&P (4)  |
+
+# **SOUTHERN PACIFIC (SP)**
+
+**EV: 102%**
+
+|  El Paso | .9 | AT&SF, T&P (2)  |
+| --- | --- | --- |
+|  Houston | 1.6 | AT&SF, MP (2)  |
+|  Los Angeles | 3.9 | AT&SF, UP (2)  |
+|  New Orleans | 1.7 | IC, L&N, SOU, T&P (4)  |
+|  Oakland/ San Fran. | 4.4 | AT&SF, WP (2)  |
+|  Phoenix | 1.8 | AT&SF (1)  |
+|  Portland, Or. | 2.6 | GN, NP, UP (3)  |
+|  Reno | .7 | WP (1)  |
+|  Sacramento | 1.2 | WP (1)  |
+|  San Antonio | 1.0 | MP (1)  |
+|  Shreveport | .5 | IC, T&P (2)  |
+|  Tucumcari | .7 | CRI&P (1)  |
+
+# **TEXAS & PACIFIC (T&P)**
+
+**EV: 70%**
+
+|  Dallas | 1.4 | SLSF (1)  |
+| --- | --- | --- |
+|  El Paso | .9 | AT&SF, SP (2)  |
+|  Ft. Worth | 1.0 | AT&SF, CB&Q, CRI&P, SLSF (4)  |
+|  New Orleans | 1.7 | IC, L&N, SOU, SP (4)  |
+|  Shreveport | .5 | IC, SP (2)  |
+
+# **UNION PACIFIC (UP)**
+
+**EV: 86%**
+
+|  Butte | .8 | CMSTP&P, GN, NP (3)  |
+| --- | --- | --- |
+|  Denver | 1.9 | CB&Q, D&RGW (2)  |
+|  Kansas City | 2.8 | AT&SF, CB&Q, CRI&P, GM&O, MP, SLSF (6)  |
+|  Las Vegas | 1.4 | ——— (LOCK)  |
+|  Los Angeles | 3.9 | AT&SF, SP (2)  |
+|  Omaha | 1.1 | CB&Q, C&NW, CRI&P (3)  |
+|  Pocatello | .6 | ——— (LOCK)  |
+|  Portland, Or. | 2.6 | GN, NP, SP (3)  |
+|  Salt Lake City | 1.4 | D&RGW, WP (2)  |
+
+# **WESTERN PACIFIC (WP)**
+
+**EV: 109%**
+
+|  Oakland/ San Fran. | 4.4 | AT&SF, SP (2)  |
+| --- | --- | --- |
+|  Reno | .7 | SP (1)  |
+|  Sacramento | 1.2 | SP (1)  |
+|  Salt Lake City | 1.4 | D&RGW, SP (2)  |
+
+A recapitulation of the railroads by EFFECTIVE VALUE, with the total number of stops (dots and cities) and cities shows the following:
+
+|  Rank | Line | EV% | Stops/Cities  |
+| --- | --- | --- | --- |
+|  1. | B&M | 138 | 5/3  |
+|  2. | NYNH&H | 136 | 4/2  |
+|  3. | PA | 130 | 27/13  |
+|  4. | SAL | 129 | 33/8  |
+|  5. | AT&SF | 128 | 59/11  |
+|  6. | L&N | 112 | 31/10  |
+|  7. | WP | 109 | 13/4  |
+|  8. | NP | 104 | 27/7  |
+|  9. | SP | 102 | 53/12  |
+|  10. | CRI&P | 102 | 48/10  |
+|  11. | B&O | 102 | 23/7  |
+|  12. | CB&Q | 100 | 45/8  |
+|  13. | C&NW | 96 | 30/6  |
+|  14. | NYC | 95 | 21/9  |
+|  15. | C&O | 94 | 24/8  |
+|  16. | GM&O | 93 | 18/4  |
+|  17. | IC | 90 | 24/6  |
+|  18. | UP | 86 | 44/9  |
+|  19. | CMSTP&P | 85 | 27/6  |
+|  20. | GN | 84 | 34/6  |
+|  21. | ACL | 83 | 25/6  |
+|  22. | SOU | 82 | 31/8  |
+|  23. | MP | 81 | 34/7  |
+|  24. | RF&P | 81 | 3/2  |
+|  25. | SLSF | 77 | 24/7  |
+|  26. | D&RGW | 77 | 13/3  |
+|  27. | T&P | 70 | 17/5  |
+|  28. | N&W | 46 | 14/3  |
+
+19

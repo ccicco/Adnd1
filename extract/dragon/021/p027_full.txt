@@ -1,0 +1,108 @@
+CLT. When wearing this armor, use the following instead of the normal CLT:
+
+|  7,11 | Retreat 1 space, drop 1 prize  |
+| --- | --- |
+|  6,8 | Retreat 1 space, drop 1 prize, lose 1 turn  |
+|  4,5,9,10 | Seriously Wounded  |
+|  2,3,12 | Killed !  |
+
+### Fifth Level Prizes:
+
+HOLY SWORD (SILVER COFFER): This special +2 Magic Sword is useable only by the Paladin. When the Paladin uses it all spell attacks against the space he is in are negated. (Note: Breath weapons and "Remove Curse" are not spell attacks.)
+
+MAGIC ARMOR (Gold Cup): When rolling on the PLT add +1 on rolls of 2-6, -1 on rolls of 8-10 and 12, and rolls of 7 or 11 are not affected. The armor has an additional value of 1500 Gold Pieces.
+
+### Sixth Level Prizes:
+
+SCROLL OF SPELLS (Magic Sword): This prize is usable by the Thief and Wizard only. The one who has this prize gets one each Fireball, Lightning Bolt, Transference, and "Sleep" spells. Each spell may be used only once. The "Sleep" spell puts any being (monster or player) to sleep for one turn — allowing any treasure the being possesses to be stolen with or without slaying it. When the Thief uses a spell, he rolls one die. A 1 or 2 on the die indicates that the spell backfires and affects the Thief (he misread the scroll).
+
+WIZARDS STAFF (Jade Idol): Only the Wizard may employ this powerful prize. When he gets it, the player rolls one die; this indicates how many Lightning Bolt spells the staff contains. He may only use this many from the staff, and when he throws a Bolt he must indicate whether it comes from his spell cards or from the staff. Each time the staff is used, he rolls one die; a 6 indicates that the staff explodes, dealing the Wizard a Serious Wound. All Bolts still in the staff are lost.
+
+### NEW MONSTERS
+
+In addition, the following changes were also made:
+All dragons have breath weapons, with unlimited use:
+
+- Red Dragons — as Fireball spell
+- Blue or White Dragons — as Lightning Bolt spell
+- Witches, Evil Wizards, and Evil Priests have one spell each;
+- Witches — Lightning Bolt
+
+Evil Wizard — Fireball
+
+Evil Priest — "Curse", use the numbers for a Fireball on the Spell Combat Table; a successful result means the player is transported to the nearest chamber on the same level, without his prizes!
+
+When one of the above is encountered, the player rolls one die, player to his right rolls another die for the monster. Roll over on a tie. If the monster rolls higher, the player is attacked by the breath weapon or spell before he attacks (the player on his right rolls on the Spell Combat Table for the monster), otherwise he attacks normally and the monster does not get its special attack that turn (or ever, if it dies).
+
+Simply amend existing monsters ad indicated below. The numbers following the name of the new monster correspond to the numbers shown on the card for Lightning, Fire Ball, Wizard, Superhero, Hero and Elf.
+
+First Level —
+
+- On Skeleton card: Zombie 3,3,7,4,5,6.
+- On Hobgoblin card: Orcs 5,2,6,4,6,4.
+- On Giant Lizard card: Anti-Magic Trap! "All magic and spells gone!"
+
+Second Level —
+
+- On Hobgoblin card: Gnolls 4,4,7,5,8,6.
+- On Hobgoblin card: Harpy 3,3,5,6,7,7.
+- On Giant Spider card: Owl Bear 4,4,9,4,6,7.
+
+Third-Level —
+
+- On Ogre card: FIREBALL TRAP! "Roll on PLT, 7=8, 11=10. Prizes lost are destroyed!"
+- On Werewolf card: Evil Priest 7,7,8,6,7,8.
+- On Mummy card: Wight 10,5,7,6,8,9.
+
+Fourth Level —
+
+- On Evil Superhero card: Manticore 6,6,11,9,10,11.
+- On Troll card: Wyvern 8,8,9,8,10,10.
+- On Mummy card: Wraith 6,6,8,8,9,10.
+
+Fourth Level —
+
+- On Green Slime card: Fire mental 5, —, 12,9,10,12.
+- On Troll card: White Dragon 0,5,12,9,11,12.
+- On Giant card: Spectre 8,8,9,7,9,11.
+
+Sixth Level —
+
+- On Vampire card: Demon 9, —, 11, 10,12,—.
+- On Purple Worm card: Basilisk 10,8,12,10,12,12.
+- On Blue Dragon card: Earth Elemental —,6,—,9,11,—.
+
+## THE SILMARILLON:
+A Review
+
+"There was Eru, the One, who in Arda is called Iluvar, and he made first the Ainur, the Holy Ones, that were the offspring of his thought, and they were with him before aught else was made . . ." (from Ainulindale, The Silmarillon, pg 15).
+
+Does the above passage read like a tract out of Genesis? The style and subject matter is certainly reminiscent of the Bible, and perhaps appropriately so. The Silmarillon, the last book by J.R.R. Tolkien, could aptly be construed as the bible of Middle Earth. The Silmarillon (alternately known as "the Tolkien book with the hard-to-pronounce name") is written in a thick narrative style. That is, action is merely related to the reader, actual scenes based on dialogue and action in a pure form are very rare. The King James English adds to the feel of a grand myth being retold by a knowledgeable bard. The style is quite different from Lord of the Rings or The Hobbit and some will no doubt not enjoy it nearly as well.
+
+The Silmarillon parallels the Bible, the Old Testament more specifically, in other ways that just literary style. There is the creation of a group of higher beings, the Valar, similar to angels, and one of these, Melkor, with a lust for power, rebels. His fall from grace and the consequent battles against him are quite similar to the rebellion of Lucifer and his casting from heaven. Melkor then becomes the source of all evil in Middle Earth.
+
+The major part of the book the Quenta Silmarillion, deals with the Elves and their conflicts with Milkor (later called Morgoth). The Elves are the chosen people, and like the chosen people of the Bible, they
+
+have the differences with their higher lords, the Valar. This part of the book tells about the two magic trees that held the light of the world, the building of the home of the Elves in the west (and a subsequent explanation of why they are slowly returning there in LOTR) and, of course, the creation of the Simarils by Feanor and their theft by Melkor. This provides the main action of the book as the Elves battle to regain their treasure. My personal favorite vignette was the story of Beren and Luthien and their quest. Beren was a man who fell in love with Luthien, the Elves daughter of King Thingol. In order to have her, Beren is to steal one of the Simarils from the crown that Melkor hasset them in. The story of their love, the battle before Melkor's hold and the fate of the two lovers makes for fascinating reading.
+
+The two remaining sections of the book are the Akallabeth which deals with Sauron, the fall of Numenor, and the battles of Elendil against Sauron, and Of the Rings of Power and the Third Age, events and themes that should be familiar to any reader of the Lord of the Rings.
+
+The Silmarillon is a fascinating work, despite its "thickness" and the difficulty of keeping the characters straight at times (they often have three or four names). It is a book that need not be read straight through for maximum enjoyment. It can be picked up and read at any time, the reader picking up the action of a one subplot of a major work and following it through to a conclusion. The richness of the work allows a reader to refer back to a particular chapter or two whenever he feels in the mood for some Tolkien but unwilling to tackle one of the larger works in more detail. Serious students of LOTR, the type who want to have their facts straight, will rejoice in the huge wealth of love that
+
+In the Lord of the Rings, J.R.R. Tolkien created a fascinating world; in The Silmarillon he gives us the legends and mythos of that world. It's another triumph.
+
+The Silmarillon is 365 pages long plus a pull out map, is published by Houghton Mifflin Company and runs about $10^50.
+
+T. Watson
+
+### Dragonlords from page 7
+
+or siege), or "Strategic" (hiring, weather and speed spells), which determines how frequently they may be used.
+
+Unit counters provided represent various kinds of infantry (human, elf, dwarf and goblin), missile troops (human, elf, goblin), cavalry (human, elf) and flying units (Hawk Knights, People-of-the-sky, Dragons), and special types (giants, trolls, ents). Leaders are also provided: Wizards, Dukes, Earls and Barons for land units; DragonLords for Dragons; Captains, Tribunes and Hawklords for Hawk Knights; Packleaders, Commanders and Chieftains for People-of-the-sky. There are also bookkeeping markers, ship markers for sea travel, and garrison units for minor country castles.
+
+Play proceeds in game turns. Both players hire and place new troops, then the players alternately move and resolve combat. After this, both players calculate revenue from their holdings. Movement is normal hex-by-hex, with terrain and weather considerations. Combat is between opposing units in adjacent hexes, but there are no zones of control and combat is not mandatory. Combat proceeds in round of air to air melee, missile fire and ground melee until
+
+continued on page 27
+
+25

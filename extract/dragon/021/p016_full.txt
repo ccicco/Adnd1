@@ -1,0 +1,67 @@
+# THE HALL OF MYSTERY
+
+A section deep in the Greenlands Dungeon
+
+Don Turnbull - Cambridge, England
+
+The entrance to the main hall (see diagram) is by means of a vertical ladder set into the wall which foots on a small landing. A short flight of steps leads down to a curtain beyond which lies the Hall proper.
+
+The hall is permanently illuminated from an unseen source above; the ceiling is quite high - say 45' and bare. The floor and walls of the hall are in black marble veined with red, while the side passages and rooms are in rough stone. White curtains conceal all openings off the hall and white marble pillars rise from floor to ceiling. The dotted lines across each entrance, except the main entrance to the hall, are steel panels which initially seal off the passages.
+
+Normally the main hall is guarded; in Greenlands the Guardians were two Umber Hulks.
+
+There are five large mirrors, each 10' square, around the hall, supported on the walls so that their bottom edges are only a few inches from the floor. All are initially draped with a sheet of white muslin attached along the top edges, and no magical powers of the mirrors can operate until the muslin is drawn aside. Mirrors b, d and e are ordinary, with no unusual properties (though they are placed in useful positions in relation to some of the passages). Mirror a is a Mirror of Opposition. Mirror c has a small section of Life Trapping at the centre of an ordinary mirror; the section is circular, about 6' in diameter and covered by apiece of red material which adheres to its surface but can easily be removed. The section contains one Life — a Succubus in my version.
+
+In the centre of the hall stands a rock cylinder, smooth, 5' high and domed on the top. The surface is absolutely smooth and no opening or crack can be seen in the dome.
+
+Near the east wall stands an ornate wooden roll-top desk which can be opened without danger. The desk has pigeon-holes and drawers — treasure can (and in my case, was) hidden in some of them, but only one thing must be there. This is a rolled piece of parchment which reads as follows, in Lawful:
+
+Midway twixt place of literary toil and frame
+Which image in one part will not reveal
+But elsewhere shows the face of him before
+A rampant pillar hides the road to fame
+Ann all who it observe must stand in awe
+Remembering lake lady's gift of steel.
+
+For wisdom low will not on it prevail
+The name of mighty sword must spoken be
+By one who covers hair and head in shame
+Of sin who lest evil Demon Woman wail
+And kiss the fool with hungry kiss profane
+That name repeated twice yields access free.
+
+The punctuation has, of course, been omitted in the interests of obscurity, but the message itself is quite simple to grasp. The place of Literary toil etc. is the writing desk; the frame which in one part will not show an image is mirror c; so the rampant pillar is the rock cylinder (pretty obvious even if the other things are not identified). The lake lady's gift of steel was the sword Excalibur of the King Arthur legend. The second verse says that the sword's name must be spoken (later it says repeated twice, so it must be spoken three times) to reveal the road to fame; it also contains an oblique warning about the Succubus and some completely irrelevant instruction about low wisdom and wearing a hat.
+
+When 'Excalibur' is spoken three times, two cracks appear at right angles across the domed top of the stone cylinder and the four sectors formed hinge slowly back to reveal the horizontal top surface of the cylinder. On it is inscribed a dial with nine positions — marked o, i, ii etc. in Roman numerals, picked out in gold paint. Just inside each mark is a slot in the stone. Pivoted at the centre of the surface is a heavy metal pointer firmly fixed at the centre but free to rotate clockwise. Under the pointer end is a spring-loaded steel bar which fits any of the slots near the dial markings. To move the pointer requires manual operation in order to manipulate the spring properly.
+
+The markings refer to the surrounding rooms, which are marked in three starting from the north-east (the markings are not in the rooms themselves, of course). Initially, the pointer is set in the neutral 'o' position. When the pointer is moved and comes to rest, with the sprung bar correctly in place, at one of the positions i-viii there is a violent but harmless display of pyrotechnics during which the person operating the pointer is teleported to the point x in the appropriate room. The device then ceases to operate until the pointer has been moved back to rest at the neutral position; after this, it will operate again, for the same position or a different one, as before.
+
+Teleportation to any one room is limited to a maximum of three people; if a fourth attempts to teleport to a given room he will be displaced one room clockwise (or two etc. if the first is already 'full').
+
+The surrounding rooms are paired and share a number of common features. Each access corridor is initially blocked by the steel panels, which slide noiselessly up into the ceiling at the same time as the rock cylinder panels hinge apart. The long corridor of each pair contains a monster -in my case I used Magic Absorbers, an interesting creation of Nicolai Shapero which first saw the light of day in issue 12 of Alarums & Excursions. Stronger Magic Absorbers tended to associate with weaker monsters in the rooms beyond, since the rooms gained via the long corridors had two monster guards each, those via the short corridors only one each.
+
+Each of the rooms contained an additional monster at point G, white curtains in the positions shown and treasure at point T. I devised a table of probabilities to determine whether monster-guardians were alerted to the arrival, behind them, of a teleporting character. If so, it burst through the curtain and attacked.
+
+Obviously, all the monsters and treasure can be varied according to the degree of toughness required and/ or the whim of the DM. In my case I was generous with treasure and rather fierce with monsters, which included a Mind Flayer, a Flesh Golem and a Shambling Mound, plus some other curious creations culled from the pages of other magazines. Remember, in populating this sort of arrangement, that single monsters, rather than packs of them, are the order of the day — they have been specifically chosen to guard treasure.
+
+Adventurers in the Greenlands dungeon found this an absorbing section to explore and left a number of their friends behind when they finally decided to move out. Nor was the adventure without its amusing side — one day I might be allowed to tell you how it was that an 11th level Paladin came to be standing on one leg with a sack over his head, singing the British National Anthem in Hebrew. Trouble is — no-one will believe it! Don Turnbull.
+
+## THE HALL OF MYSTERY - Monsters Used
+
+Main Hall — two Umber Hulks
+In Mirror of Life Trapping — one Succubus
+Room i — one Night Hag
+Room ii — one Intellect Devourer
+Room iii — one Otyugl (7hd)
+Room iv — one Mind Flayer
+Room v — one Ettin
+
+Room vi — one Manticore
+Room vii — one Shambling Mound
+Room viii — one Flesh Golem,
+Corridor to room i — Trapper
+Corridor to room iii — Trapper
+Corridor to room v — Trapper
+Corridor to room vii — Trapper
+
+14

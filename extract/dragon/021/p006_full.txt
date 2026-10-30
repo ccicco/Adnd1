@@ -1,0 +1,67 @@
+NATIVES: AMBUSH Hey you caught us here! We edited out the line that stated "Natives deciding to attack an expedition which is following policy number 2 will only be able to catch it if they take it by surprise". The effect of this rule is to make it nearly impossible for the natives to catch the explorer if he runs for it at first sight.
+
+NATIVES: REACTION to EXPLORER POLICY You add together the following factors:
+
+EXPLORER POLICY NUMBER
+
+BONUSES FOR GUIDES BEING UNARMED, etc.
+
+DISTANCE FROM COAST
+
+TRIBAL ATTITUDE (initially zero)
+
+And compare the sum to the roll of three dice. The natives are hostile if the sum is less than the die roll. Therefore, an increase in the ATTITUDE LEVEL will make it more likely that the tribe is friendly, as we said.
+
+MAXIMUM NUMBER OF NATIVE WARRIORS PER HEX The system given in the rules to generate size of tribe can give anywhere from 1 to 216 warriors—however, with the adjustment for distance from the nearest port of entry (slave trade) the maximum and average number of warriors is significantly reduced. Since minimum and maximum sized tribes (rolling triple ones or sixes respectively) are quite uncommon, the average number of warriors per tribe is the most significant factor:
+
+|  2 hexes from PoE | average 16 | max 72  |
+| --- | --- | --- |
+|  3 | 23 | 108  |
+|  4 | 31 | 144  |
+|  5 | 38 | 180  |
+|  6 or more | 43 | 216  |
+
+This produces fewer warriors than the system you propose. Actually neither our system nor yours comes close to reality (the Zulus were largely confined to one hex of our map but they could easily field 6000 warriors). However, the typical native nation was not so centrally organized and the explorer would have only had to deal with it one village at a time. If we did this "realistically" with one-day turns and ten-kilometer hexes. . . So what we are doing is giving the explorer bout one encounter per week with a typical village of the tribe in the hex and letting this take the place of a lot of dull, repetitious, encounters with every village in the hex.
+
+Although we have generally played that one can wipeout a tribe (remove it's marker) by capturing or killing all of it's warriors, this is really not a reasonable result. No explorer is going to have enough Askaris to wipe out the kind of populations we are talking about. Victory over the inhabitants of one village isn't going to dent the total population in the hex. Therefore, what we should be doing is interpreting the "number of warriors" as the number in an average village in the hex (as a result of kinds of crops raised, local geography and militaristic tendencies or lack thereof). This number can change temporarily during combat, but only because only one village is being fought. Explorers moving into/remaining in the hex on subsequent turns will find that the defeated village has been brought back up to strength by immigration from other villages, or, to put it another way, they will have to take on a different village every turn.
+
+Looting and trading will be limited by the size of the village (since one must waste a lot of time traveling from one to another we limit this to one village per hex per turn). However, no amount of repeated looting will eliminate all the natives from the hex—one just keeps looting different villages. By the way, for those who have not played the game, I want to state that the games does not endorse this kind of policy towards the natives. Although it is an available activity one can engage in, we have tried to discourage morally reprehensible conduct.
+
+NATIVES: TRADING I like your proposed modifications to the limits on looting and trading. We do need to add something like this to control the "buy your way across Africa" strategy that can be overwhelming late in the game.
+
+NATIVES: POISONING EXPLORER Good point. Probably should be a break for Zoologists here too, since they are liable to notice that their mushrooms are different from everyone else's at the dinner. . .
+
+NATIVES: ATTITUDE LEVELS As previously stated the adjustments are NOT reversed.
+
+EXPLORER SPECIALTIES: I would incline to lump the Botanist advantages you cite into the Zoologist specialty. Zoologists and Geologists were generally not popular with our playtesters who hated to waste time "rock-knocking" or "pickin'-posies". As remarked earlier, the specialist is supposed to be a dedicated professional who is going to do heroic (i.e. stupid) things for his calling be it science, medicine or religion.
+
+MEDICINE: On a roll of three, after telling the natives how great he is,
+
+the good doctor fails to hold an epidemic. The natives are (understandably) disappointed by this phony, and the tribal attitude (which influences his chances of escape, if he is a prisoner and of friendly relations, in any case) goes down one point.
+
+The second part of the question arises from a confusion between SCORING POINTS for medical success and ADJUSTING ATTITUDE LEVELS. In short it says that the doctor gets 1 or 2 points for every disease he can report a cure for (when he gets back to Europe) but that he doesn't lose SCORE just because he failed to cure somebody* and made the natives unhappy**. He also can sit at one tribe and keep treating them rather than having to find new tribes after every success, the way a missionary does.
+
+*(a comment on 19th-Century Medicine's success rate).
+
+**(and/or racial attitudes).
+
+PRESERVATION OF RATIONS: Playtesting revealed that the game is surprisingly sensitive to changes in the food supply. Allowing players to save some or all of the food they shot made it too easy to live off the land. However, if this was coupled with a requirement to sit still for 1 turn while the meat was being smoked and cured, maybe it wouldn't get out of hand.
+
+# Naming Tribes
+
+I am really taken with your native tribe facts sheet and your TRIBAL NAME GENERATOR. We thought about using real tribal names on our countersheet, but abandoned it as too expensive and/or confusing to the players and just used numbers. Ideally, one could give a chart showing what tribe was in each hex in 1821. However, your table serves admirably to dress up the game. Being attacked by the 19's or trading with the chief of the 37's just doesn't hold a candle to encountering twelve heavily armed Ru'ug at an oasis or preaching to the YoGowauku deep in the heart of darkest Africa!
+
+# SEE YOU at Winter Fantasy III . . . !
+
+# IMPERIUM
+
+
+NETHERWORLD
+
+Three-dimensional, geomorphic underworld construction kit!
+$6.95
+
+IMPERIUM PUBLISHING COMPANY
+BOX 9854, MINNEAPOLIS, MN 55440
+
+4

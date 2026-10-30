@@ -1,0 +1,43 @@
+# RAIL BARON
+
+## A SHORT COURSE FOR EMPIRE BUILDERS
+
+
+by Gary Gygax
+
+### Introduction
+
+RAIL BARON from Avalon Hill is an excellent board game — although it is neither a wargame, a role playing game, nor fantasy/science fiction — it is exciting, fun, and requires strategy and planning; therefore, it is a great game for the hobbyist and deserves attention in the journals normally reserved for details of ancient armies, panzers, or spells and monsters. TSR found the game so good that they awarded it a special Strategists Club Award, the DONALD R. KAYE AWARD, naming RAIL BARON a "Future Classic". When a recent issue of the AH GENERAL (July-August 1978) carried an article on the game, after Don Greenwood had told me he doubted the magazine could allow a non-wargame within its sacrosanct pages, I was very pleased and quite surprised, and I asked your Kindly Editor if he would publish something on the game — especially if I opened up and revealed all of my theories on RAIL BARON and the methods I used to arrive at them. After comparing notes awhile, he gave me the green light, and you are now reading the results, so please continue!
+
+RAIL BARON is for three to six players. Most three-player games tend to be very even, and the same is true of four-player games if the participants are skillful. Five- and six-player games tend to speedily weed out the indifferent and the luckless players. What follows can be applied to any of these numbers. To play a game well, one must keep in mind the object of the game. The player must understand the game rules and the mechanics of play. He or she needs then to acquire an accurate knowledge of which properties are the most desirable — be they the center of the board as in chess, defense lines in a boardgame, properties in MONOPOLY, or rail lines in RAIL BARON.
+
+The object of the game is to accumulate at least $200,000 in cash and return to your home city before any of your competitors can do so, meanwhile moving about the board on whatever rail lines are chosen to travel from destination to destination, paying low usage fees for personally owned or unowned roads, very high ones for railways owned by other players. Because of the excessive cost of moving on opponent's lines, it is imperative to acquire railroads in a network which gives you the optimum chance of paying low usage charges regardless of the destination you must travel to. Upon arrival at such a point, a certain payoff is collected — as little as $1,000 or as much as $35,000, with the typical sum of $15,000 being the expected. From these payoffs the player must purchase rail lines, as well as pay usage charges and possibly improve train service. As destinations are determined randomly by dice roll, and then movement from start to each new destination is accomplished in the same manner, knowledge of probabilities of the dice is important. Likewise, methods of improving the odds are desirable, not to say that destination probabilities can be altered, but movement from point to point can be. This, and the probabilities of competing players having to pay for the use of your roads, are also important considerations in play of RAIL BARON.
+
+### MOVEMENT
+
+Before an analysis of destination and railroad effectiveness is undertaken, let us consider briefly the movement factors in the game, for RAIL BARON is a game of movement. The normal move is the number of spots shown on two six-sided dice (2d6), with a bonus of 1d6 on a roll of 12, for an average movement of 7.1 dots or cities — stops. As the average distance between destinations is something over 20 stops, say 21 to 25 (and this will be dealt with in a moment), it will take three turns to arrive
+
+and receive a payoff. If an EXPRESS is purchased for a payment of $4,000, the average move is increased to 7.6 spaces (2d6 + 1/6 x 3.5) — worthwhile insurance if you can not or do not desire to make a rail line purchase on any payoff turn, for it additionally gives you the "free die out" on turns you arrive at a destination by moving only as many, or fewer, spots as are shown on doubles on the dice. If a SUPERCHIEF is purchased at $40,000 (or an average of $34,000 if the optional rule is used) the average move is increased to 10.5 stops per turn; more important, it allows frequent use of the "free die out", and that too needs further discussion. In a game with two or three opponents, it is not bad strategy to purchase a SUPER CHIEF immediately if your first destination is a high payoff city, i.e. distant from your home city. The rapidity of completion of runs between destinations SUPER CHIEF gives will quickly allow you to gain parity with early purchases, then forge ahead near the period when the lines are all owned. The SUPER CHIEF, at $5,000 +/- per .5 of additional movement, is not as good a bargain as the EXPRESS, at $4,000 per .5, until the "free die out" is considered, at which time it becomes more cost efficient.
+
+### Free die out
+
+While it is nice to get to a destination city, purchase or not as desired, and then get a new destination city and move 1 to 6 stops all in the same turn, this "free die out" is very important when arrival and departure must be via an avenue owned by an opponent where usage fee can be $5,000 or $10,000 per turn. The "free die out" often allows you to pay only one use charge!
+
+### "Where Am I Going?"
+
+The percentage figures of the likelihood of any regional destination are also misleading because a rule of RAIL BARON allows the player to choose any region he or she desires if the region indicated by the die roll is the same as the one he or she is currently in — a 14.3 % probability each time a new destination is rolled for.
+
+This also makes average distances between destinations impossible to determine exactly, for the smart player selects close or distant regions according to his or her aims and situation almost one time in six. Similarly, it makes the overall average chance of going to any given city destination something less than absolute, although chances for a city within a region are not affected. The selection rule also allows players to use average dice roll probabilities to work in his or her favor by choosing a region which has the most likely destination city at an optimum distance for the dice being rolled -regular, EXPRESS, or SUPER CHIEF.
+
+There are seven regions on the RAIL BARON mapboard, and the base probability of each being generated is:
+
+|  NORTHEAST | 20.83%  |
+| --- | --- |
+|  SOUTHWEST | 16.66%  |
+|  NORTH CENTRAL | 15.15%  |
+|  SOUTH CENTRAL, SOUTHEAST | 12.59%  |
+|  NORTHWEST, PLAINS | 11.10%  |
+
+The destination cities in each region are given below, with percentage probabilities shown regionally and overall. Thus New York is 19.4% likely within the Northeast, 4.2% likely overall as the destination likely to be rolled on any given determination.
+
+16

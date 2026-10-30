@@ -1,0 +1,58 @@
+**B&D Variant**
+
+# THAT "OTHER" DUNGEON
+
+by Timothy Jones
+
+The following optional rules were used at the official *Dungeon!* tournament at Gen Con XI. In the tournament, only the four new characters — halfling, dwarf, cleric, and thief—were used. The prizes were added in the second round, and the monsters were added in the third and final round. Some additional material (which is given below enclosed in pairs of double asterisks ** . . . **) was not used in the tournament, but was later playtested at several rounds of open gaming sponsored by the tournament judges. Judges were Timothy Jones, Tom Christensen, Andy Holshan, and Bryan McVeigh.
+
+Persons responsible for the material included below are: Gary Gygax and Timothy Kask, for the material on the four character classes (which originally appeared in *Strategic Review* #6, February 1976) and two of the prizes and all of the new monsters; the judges for all of the other material; and players in the tournament and open gaming for some additions and revisions to their ideas.
+
+## NEW CHARACTERS
+
+Note that the first two, the halfling and the dwarf, are of approximately the same strength as the elf and hero of the standard game. Similarly, the cleric can compete with the superhero, and the thief and paladin can compete with the wizard. This should be kept in mind if all are not used, i.e. do not use both relatively weak pieces or both relatively strong pieces if only two new pieces are used, rather include one of each. It is suggested that the ideal *Dungeon!* game is seven to nine players, each taking a different piece, so that no two players have the same abilities with regard to their playing piece. The new pieces are:
+
+**THE HALFLING:** The Halfling piece moves only four spaces per turn. The Halfling lights as either a Hero or an Elf, whichever has the higher score to beat the particular monster (fights as the worse of the two), and when rolling on the PLT a score of 11 is treated as a 6 or 8 score. **When attacked by another character or a spell or breath weapon, the Halfling defends as the better of the Hero or the elf. When attacked by giants, trolls, or ogres, the Halfling defends as though wearing magic armor (see NEW PRICE CARDS below).** The Halfling is able to arm himself with seven missiles. Halfling missiles are treated as spells with regard to combat, viz. there is no PLT roll if the Halfling fails to kill the monster. The missile adds +2 to the Halfling's dice score. As with a spell, he must indicate he is using a missile (any unused spell card will suffice), and missiles may be regained in the same manner as are spells, one per turn at the "Start" space. Halflings are able to open Secret Doors on a die roll of 1-3. They ignore all traps as does a dwarf. The Halfling needs at least 10,000 Gold Pieces in Prizes to win.
+
+**THE DWARF:** The Dwarf fights as an Elf, so simply use that score on each monster card which applies to the Elf when combating monsters. **The Dwarf defends against giants, trolls, and ogres as does the Halfling, see above.** Although the Dwarf does not open Secret Doors any better than a Hero (a roll of 1 or 2), he does detect and remove Traps easily. Therefore, whenever a Dwarf enters a space containing a Trap he simply puts it in the discard pile, ignoring the results of the Trap, and freely picking up any Prize Card thereunder. The Dwarf needs 10,000 Gold Pieces to win.
+
+**THE CLERIC:** It will be necessary to add three types of spells for clerical use: "Hold"—this spell causes the monster (or player, if ambush rules are used) it is thrown upon to defend at -2 (add +2 to the dice roll of the Cleric), and in addition the monster does not get a dice roll (there is no PLT roll) in the event that the Cleric fails to kill the monster when he combats it; "Remove Curse" acts to automatically remove a cursed item (see below), and only one of these may be taken at a time; "Transference"—simply used the Wizard spell of this type unless there are several playing in the game, in which case additional cards will have to be made up. The Cleric fights as a Hero except against undead (skeletons, ghouls, mummies, wights, wraiths, demons and vampires) and evil heroes, evil superheroes, witches, evil priests and evil wizards. In the latter case he fights as a Superhero. Also, although the Cleric cannot ambush others, he may be ambushed, but if he is ambushed he fights as a Superhero. The Cleric may take a maximum of four spells at any time, in any combination of Hold, Remove Curse, and/or Transference. He may replenish spells just as a Wizard does. **Of all the magic weaponry, the cleric may only use the Sacred Mace (see NEW
+
+PRIZE CARDS below).** When rolling on the PLT the Cleric treats "Seriously Wounded" results as a retreat of 1 space and a prize loss, and he does lose a turn. In all other cases he cannot be wounded or lose a turn but he can be killed or lose prizes. The Cleric needs 20,000 Gold Pieces to win.
+
+**THE THIEF:** The Thief piece is able to move six spaces per turn. He fights as a Hero, but on all attacks which are nonsequential upon the same monster or character the Thief adds +1 to his dice roll score (due to stealth and surprise), and if he fails to kill the monster the Thief ignores all PLT dice scores except 2 (he hides in the shadows to escape the monster or climbs out of reach). If he ever attacks the same opponent twice in one turn or in two consecutive turns he loses all of the above benefits and fights exactly as if he were a Hero. On any attack score of 12 or more it is assumed the Thief has stolen the prize without combating the monster, and he may then take a bonus move of up to 3 spaces, but he may not engage in another combat. The Thief opens Secret Doors on a die roll of 1 or 2. All Traps, except those which transport him to a Chamber one level lower, are ignored by the Thief. The Thief needs 30,000 Gold Pieces to win.
+
+**The Thief may be affected by spells and breath weapons normally (his defensive bonuses do not apply). He may not use Magic Armor (see NEW PRIZE CARDS below) though he may carry it, which reduces his movement to 5.**
+
+**THE PALADIN:** The Paladin fights as a Superhero, except against undead (see CLERIC) whom he fights as a Superhero +1 (add +1 to the attack die roll). He treats a "Serious Wounds" result on the PLT as retreat 1 space, drop 1 price, lose 1 turn. "all other results affect him normally. The Paladin may not initiate ambush, but if ambushed he fights as a Superhero x1. Only the Paladin may use the Holy Sword. The Paladin needs 30,000 Gold Pieces to win.**
+
+Extensive play at the convention convinced us that these characters are all roughly equal in winning potential — the major deciding factor is the skill and luck of the player, not his piece's abilities. **The following changes to existing pieces were also made:**
+
+- ELVES: Elves get 3 arrows (missile/weapons as the Halfling).
+- WIZARDS: Wizards cannot use Magic Armor (though they may carry it at a movement of 4 spaces per turn) or magic weapons (they may carry these at no penalty); they must use the Spell Option.**
+
+## NEW PRIZES
+
+If the new characters are used, the following new prizes should be used as well. The new item is listed first; in parentheses is the original prize card which should be changed, followed by an explanation of the prize.
+
+**Special Note on Cursed Items:** All cursed prizes are immediately picked up and used, regardless of the player's wishes to the contrary (even the Thief and Wizard will wear the Armor of Vulnerability!). Cursed items may be removed on a roll of 1 or 2 on one die (1-3 for the Cleric or Paladin). The player may not move or do anything else on the turn he is trying to remove a cursed item. A Cleric may cast a Remove Curse spell on himself or another player and remove the cursed item automatically. The item may be retained to be given up when a loss of a prize is called for by the PLT. The "Good Fairy" at the Entrance will also remove the Curse.
+
+### Second Level Prizes:
+
+**MAGIC WARHAMMER** (Sack of Gold, 1000 Gold Pieces): Treat as a Magic Sword, with the possibility of it being +2, but only the Dwarf may use it.
+
+**BAG OF DUNG** (Sack of Gold, 500 Gold Pieces): This "booby prize" is worth only 1 Gold Piece, but he player may trade it with the first level Orcs Monster Card for its Prize Card. The Orc Monster Card remains on the board.
+
+### Third Level Prizes:
+
+**BOOTS OF SPEED** (Silver Ring): These increase the movement of any player by 1 space per turn.
+
+**ANTI-ESP MEDALLION** (Sack of Gold, 750 Gold Pieces): This cursed item gives a minus 1 on all attacks until removed.
+
+**SACRED MACE** (Silver Cup): As Magic Warhammer; only the Cleric may use it.
+
+### Fourth Level Prizes:
+
+**ARMOR OF VULNERABILITY** (Silver Cup): This cursed item increases a player's chance of taking damage if he is forced to roll on the
+
+24

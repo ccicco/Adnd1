@@ -1,0 +1,92 @@
+**D&D Variant**
+
+# SENSIBLE SORCERY
+
+by Ronald Pehr
+
+One of the joys of being a Magic User in *D&D@* is the chance to invent new spells appropriate to the types of situations the player encounters. Magical research is conducted at the inn or castle or guild hall, in between quests, and is a good way to use up the copious amounts of treasure that sometimes come a player's way. However, too often players select spells as if out of a vending machine. They "put in" gold pieces, wait the requisite time period, and out comes anything they want. Too often, DMs let players get away with this — forgetting that just because research was conducted doesn't mean:
+
+- a) The spell is a particular level just because that was declared.
+- b) The spell is appropriate to the Magic User just because he wants it.
+- c) The character researching the spell can, in fact, do a spell of that level.
+
+Naturally, players want the most powerful spells at the cheapest cost. A good guide for what would be an appropriate spell level is the current list in the *D&D@* rules. There seems to be a basic assumption among players that if a spell is in *Grayhawk* or the new, revised *D&D@* rules, that the spell is common knowledge in the profession. This gives standard to measure proposed research. An example of an appropriate spell appeared in Paul Suliin's article in the September 1978 issue of *The Dragon*. "Moon Runes" are a written version of the Magic Mouth Spell. As a first level spell they would have been too cheap — as they can accomplish far more than a Ventriliquism Spell — and at third level they would have not been worth having, as the written spell Explosive Rune is a third level spell which can cause damage.
+
+Another example from that article is "Magic Missile II" as the obvious second level equivalent of the standard Magic Missile. (When a Wizard of my acquaintance researched it a couple of years ago, we called it "Magic Javelin").
+
+Some of Mr Suliin's level choices for researched spells allow a player too much too soon. "Wall of Water" blocks creatures under 5 hit dice and does 6 dice of damage to fiery creatures. The already extant fourth level spells, Wall of Fire and Wall of Ice, block creatures under 4 hit dice and Wall of Ice does only 1 die of damage to fiery creatures. Furthermore, both of these spells require concentration while "Wall of Water" does not. Another example of an overly powerful spell for fourth level is "Shatterray" which does 5-30 pts. of damage, can be used against inanimate objects, can be aimed, and increases in power with the level of the caster. The *Grayhawk* spell, Ice Storm, is fourth level and does 3-30 pts. of damage but has none of the other advantages of "Shatterray."
+
+This brings up Rule One of Research: No researched spell may cause more damage, gain more information, summon more powerful beings, or give more control over mind and matter than an already existing spell of the same or lower level. The exception to this rule is if the researcher is of a
+
+profession more suited to the spell. For instance; if a DM allows "specialist" Magic Users, a "Fire-Mage" might get "Firebolts" or "Firebeams" doing equivalent to Fireballs at second level.
+
+Rule Two of Research: A character cannot learn a spell that is the province of another profession. This is highly subjective and utmost DM discretion is called upon. There is some overlap already — Magic Users can do some Illusionist spells (but of course, Illusionists are a profession which did not exist until those spells had already been given to Magic Users) such as Hallucinatory Terrain, and both Magic Users and Clerics can do Light Spell — but in general there should be a dividing line between professions. Clerics do not manipulate natural/ supernatural forces to attack — Web, Magic Missile, Fireball — and Magic Users don't get divine guidance and intervention — Detect Traps, Speak With Dead, Resurrection. Sharply delineated character classes, each with special powers and weaknesses, increases game enjoyment immeasurable.
+
+Rule Three of research should be self-evident: A character cannot research a level spell of a level he cannot yet learn. Forcefield-type spells might be researched at any level (E.g. Shield is a first level spell) but if the third level spell Protection From Normal Missiles is not available to a character then certainly he can't research any sort of magical weapon protection. If a character can't do Wall of Ice he certainly can't research "Vortex" or "Wall of Dust."
+
+DMs should apply these rules strictly, so that when the day comes that a Novice Magic User has fewer Sleep Spells than the DM has orcs, the DM won't be confronted with "But don't you remember? I researched a first level spell of 'Sneeze to Repel All Orcs' just last week!"
+
+## BOOT HILL ENCOUNTER CHART
+
+### Of, What To Do Between Bank Jobs
+
+by Robert Wagner
+
+*This chart is modeled after the fact that most towns specify the characteristics or weapons of each encounter so the referee may suit each one to fit into his game. The referee may also decide when there should be a chance for an encounter (1 every hour, half-hour, etc.)*
+
+Town till 8 p.m. (1 out of 6 chances)
+
+- 1 Pickpocket
+- 2 Stealing job offer*
+- 3 Mugged by 1 person
+- 4 Questioned by deputy
+- 5 Irate merchant after you
+- 6 Shot at by 1 person
+- 7 Jumped by 1 person
+- 8 Small posse after you (unarmed)
+- 9 Harm person job offer*
+- 10 Drunk wants to fight you
+- 11 Deputy shoots at you
+- 12 Arson job offer*
+- 13 Undercover deputy
+- 14 Mugged by 2 people
+- 15 See mugging
+- 16 Gunfighter wants to gunfight you
+- 17 Murder job offer*
+- 18 Falsely arrested
+- 19 Shot at by 2 people
+- 20 2 deputies after you
+
+Town after 8 p.m. (2 out of 6 chances)
+
+- 1 Lady of the evening
+- 2 Murder job offer*
+- 3 Mugged by 2 people
+- 4 Small posse after you(armed)
+- 5 Vigelantes ambush you
+- 6 Shot at by 2 people
+- 7 See bank being robbed
+- 8 Jealous husband
+- 9 Escaped prisoner
+- 10 Insane gunfighter
+- 11 Shot at by 3 people
+- 12 Challenged to a gunfight
+- 13 Mistaken for a murderer
+- 14 3 deputies try to arrest you
+- 15 Lynch mob after you
+- 16 Large brawl in street
+- 17 Wanted man with a price on his head
+- 18 Hidden sniper
+- 19 Large posse after you (armed)
+- 20 U.S. Marshal tries to arrest you
+
+*Most job offers are made by merchants wanting their competition eliminated.
+
+
+|   | **Lyle's Hobby & Craft Center**  |
+| --- | --- |
+|   | **Large Selection of Wargames**  |
+|   | 352-8085  |
+|   | 38 North Cass Ave. Westmont, Ill. 60559  |
+
+10

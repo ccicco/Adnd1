@@ -1,0 +1,49 @@
+# Search for the Nile Revisited:
+
+Designer's Notes, Addenda, Clarifications & Response
+
+by David Wesely
+
+**ED. NOTE:** As soon as he had finished his article on *Search for the Nile*, (Published in *TD* last month) Gary Gygax mailed a photocopy to Dave. Because of press-time, the inherent delays in using the U.S. Mails, etc., Mr. Wesely's reply was not in time for the last issue, and it came in the form of a letter. However, it makes an excellent follow-up article and provides some fascinating ideas and insights. Having been infected with "SftN Fever" by my publisher, I am now among the ranks of admirers of this fascinating game.
+
+## Length
+
+As we say on page 2 of the rule book exploring the whole of Africa at one sitting is a marathon task. Our playtesters found it to take about 8½ hours. Of course fans of *Drag Nach Osten* will find this to be nothing - but for people with more moderate gaming tastes, we recommend a 20-turn limit. That is, each player is given 20 turns to get organized, get into Africa, make some significant discoveries and (if he survives) to publish them. (Knowing when to quit is the most important skill in the game. The greatest killer of expeditions is STUPIDITY. In a 20-turn game one is forced to pick an objective that can be accomplished in a reasonable time - e.g. finding the source of the Benue, not the Nile.) A 20-turn game, with a full six players (120 turns in all) can be played in about 2 hours, once the players are used to the rules. While some turns can be much longer-with mapping, discovery of natives, negotiations, battles, more negotiations, trading, and hunting all happening in a single turn - the average player turn will run about 1 minute in length.
+
+I wish we had been more specific in our recommendation as to time-limit games. In the rules we left limits to players' discretion; this has evidently left a number of players with the impression that you have to try to explore the whole map in each game.
+
+After playing a 20-turn game, we recommend that the players leave its results on the map, and treat the uncrased, published hexes from the first game as preprinted, known territory in the next. If effect, while the map as printed shows Africa as known in 1821, and the players first game will start in 1821, the next game will start at some later date, say 1831. As a result, starting with the first 20-turn game, every player's mapboard will develop its own unique history which will be passed on from game to game, and the exploration of Africa becomes a "campaign" rather than a "monster game".
+
+## Survival
+
+It is important to note that *players*, not *explorers*, score points, while *explorers*, not *players*, die.
+
+Of course the explorer must survive each expedition to score points for his player but the death of an explorer will only prevent the player from scoring points for the expedition in progress; he will not lose points already scored for previous expeditions.
+
+Thus the players are immortal; you can think of them as being newspaper editors or heads of scientific societies sending out expeditions while they stay safe at home, or you can assume that each player is "reincarnated" as the heir of the deceased explorer, ready to pursue the family tradition of African exploration. Rationalization aside, we found that "bang, you're dead and out of the game" rules discouraged vigorous play and made sheer cowardice the best strategy. Thus, players are encouraged both to stick their necks out and to "retire" dud explorers in favor of new ones as the game goes on.
+
+## Organization of Rules
+
+We debated the layout of the rules, being familiar with the *Strategy & Tactics/Moves* discussions of narrative versus outline versus order of play versus grouped by subject, etc., formats. After six drafts of the rules we settled on the present set as being the most acceptable to playtesters who had previously not seen the game.
+
+In so far as possible the rules are written in a "main sequence" format. That is, everything a player could conceivably do in one hex in one turn is covered in the order it would occur. Alternate activities that would branch off of this pattern are listed after the main sequence and the reader is directed to them by title. Within each major activity, i.e., *Natives*: a similar pattern is employed. We deleted a graphic "decision tree" representation of these relationships along with a "flow chart" for determining the presence
+
+& direction of rivers when it became obvious that the only playtesters who wanted us to include these diagrams were the computer-trained ones who could read them!
+
+The "main sequence" format breaks down when there are topics that must be referred to from several other rules, e.g., NATIVES: POISONING EXPLORER could follow NATIVES: NEGOTIATION, EXPLORER SPECIALTIES: EVANGELISM or EXPLORER SPECIALTIES: MEDICINE. To handle this the rules do have a TABLE OF CONTENTS which gives the location of any rule to which one is referred.
+
+## Completeness of Rules
+
+As you remark, the rules are reminiscent of the original D&D@. In part this is because both attempt to leave room for imagination and creativity on the part of the player. This similarity also arises from the fact that both sets of rules had to be cut down to be published, with the hope of releasing further material as supplements. Our first supplement, called "Tributary" is being prepared for release around December 1, '78 and will answer a good many questions that other people have asked us.
+
+## Clarifications
+
+DISASTERS: O.K. I'm game. Although I prefer to make retribution for being too stingy to hire a guide more certain, your suggestion is more realistic.
+
+EXPLORING: MOVEMENT. As you point out, through a combination of rules, *Jungle Swamp* hexes are impossible. They were intended to be impassible. However, there are two exceptions. First, canoes can follow the coast thru a jungle-swamp hex (or any other kind of hex, for that matter). Secondly, where guides can be hired in a jungle swamp hex, they know ways through the hex that may be used by either canoes, men or horses.
+
+A related question is what happens if an expedition moves into an unknown hex and finds terrain it cannot enter (i.e., an expedition on camels finds jungle or one with no canoes finds a lake). Basically the expedition either reorganizes to eliminate the conflict (e.g., abandons/cells/shoots its camels) or goes back to the hex it came from. Even if the latter choice is made, however, the expedition will poke around on the border of the new hex for the rest of the turn - long enough to "explore" it, i.e. map it, find natives, etc. For hunting purposes, the expedition gets to hunt in the better of the two hexes. If natives are found, the expedition may succeed in negotiating with them, hiring guides and/or canoes, camels, etc., needed to enter the hex and thus overcome the obstacle. If the expedition is attacked and takes prisoners, it cannot find the native village if it cannot enter the hex. If the explorer is taken prisoner by the natives, however, and eventually escapes, he will know the paths through the hex.
+
+EXPLORER SPECIALTIES: We developed each of the explorer specialties as branches off of the basic explorer stock. Each would have its advantages in terms of enhanced opportunities to score points (e.g., the Zoologist or Geologist who can score points by doing research in any unpublished hex. He does not have to take chances with *Unexplored* hexes; he can just slide into nice safe (well, less dangerous, as least) hexes with lots of rocks or bugs and flowers that someone else has mapped and rack up point). Each would have its disadvantages in the terms of demanding a certain devotion to one's calling (the Geologist has to risk death by thirst to stop and look at rocks in the desert. Knowing this, his player had better have him take plenty of water to avoid possible desert hexes. "Neither rain, nor sleet, nor Waziri's on the warpath will keep us from knockin' rocks"). Thus the basic explorer has quite a few advantages over his specialized competitors in the simple matter of STAYING ALIVE. You propose several "bennies" for non-specialist explorers, explorer-explorers, etc., but I would be a little afraid that these (especially in combination) would make the other specialties unattractive Most playtesters settled in non-specialists as it was (of course, most D&D@ players would rather be Conan than Gandalf, too, so this may have more to do with the Macho image than with one's chances of winning with a given character type).
+
+3

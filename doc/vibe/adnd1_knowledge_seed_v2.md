@@ -28759,6 +28759,29 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   re-run applied 0 already 5). Next: R942 the issue-20 box closing round, the
   pure flip closing both report-020 boxes (the opener part one and part two
   boxes) in one round, then issues 2-20 ALL CLOSED. WAIT FOR GO.
+  - R942 LANDED (ee361d0, d2c, 33 inline, pure flip, no new ink): The Dragon
+  issue-20 box closing round, the five-chain walk complete. BOTH report-020
+  boxes flipped in ONE round (gap_census 2 closed 0 open): the issue-20 opener
+  chains part one (the R940 Polynesian pantheon, the witch class ladder, the
+  demonology grids) and part two (the R941 600-death campaign census, the
+  demonic possession and exorcism doctrine). 33 inline bookkeeping only (19
+  consts + 14 bools mirroring the f17/f18/d19 closers: d2cIssueTwentyBoxes=2,
+  chains=5, rounds=3 - the fourth three-round issue shape; issue-closed consts
+  7 through 19, registry 1313/1338/25, walk-complete bools 7 through 20), no
+  tables, no data files; header rules/d2c.h (prefix d2c verified free at
+  e164043 full-repo scan - d20, t20 and dst are TAKEN), audit
+  rules/audits/r942_batch.h R942 Dragon issue-20 closure audit, 3 examples.
+  ISSUES 2-20 ALL CLOSED. Registry ground truth unchanged: 1313 loaded / 1338
+  base lua / 25 never-load (R924 re-measure). Census 864->865; rverify GREEN
+  33 mutants 0 missed; round-trip 13316 bytes md5
+  af9256e67351ab3dd50ead9ef69ccbf9, byte-exact at ee361d0 (fresh tarball
+  re-run applied 0 already 7; landed spec plus the user-save trailing newline
+  13317 bytes md5 3b3ebccb0f49de430693ec16792fde81). No new print catches at
+  the flip - all issue-20 quirks rode the two opener records. Watch: the
+  Sullin New Spells levels 7-9 and the brawling long-term-effects sequel STILL
+  print nowhere - both watches ride to TD 21. Next: the Dragon Magazine walk
+  continues with Curtiss call - the next scan upload (issue 21 or another
+  issue) opens the next issue round the same intake. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
