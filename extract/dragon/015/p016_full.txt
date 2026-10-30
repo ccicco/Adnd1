@@ -1,0 +1,93 @@
+The Dragon
+
+Vol. III No. 1
+
+D&D Variant
+
+# WEATHER IN THE WILDERNESS
+
+By David Tillery
+
+The two fighters huddled against the cliff face, their breath steamy in the cold air. They were numb from cold and in a foul mood. The snow had been falling for six days, and on the second day their aides had told them where to stick their helms, and left. Now, half dead from cold, they heard a sound from behind. Turning toward the sound, they saw two bulky shapes coming out of the mark. Screaming in terror and cursing an entire Parthenon of gods, they drew their swords and staggered out to attack. It was a very short battle; the two invaders had just come from a warm lair, and soon the white snow was stained red with the fighters' blood.
+
+If the above story was your idea of a good wilderness adventure, then the following tables are for you. They are for the fiendish referee; the one who not only likes to keep the players busy with monsters, but uses strange terrain, and irate gods to bother the hapless players. The tables keep the game from being played in a park-like atmosphere. The tables can add realism to a game that has evolved into a "roll for wandering monsters, and see if we're lost" game (after all what good are 10 +2 daggers when the temperature is 20 below, and the character has no coat).
+
+First, roll a six sided die; this is either the number of days or number of weeks (your choice) the following weather pattern will occur. Next, select the terrain that the characters are in, and roll an eight sided die; this will determine what type of weather you will be having. If you prefer to have realistic weather (no four week snowstorms in the desert) then use discretion with the results. If you don't like the result, then roll again for another weather pattern.
+
+While shelter prevents many of the following weather situations to occur, they can open the door for other problems. If the weather would act upon the shelter and its inhabitants, then let it take its toll.
+
+Terrain
+
+|  Die Roll | Clear | Woods | River | Swamp | Mountains | Desert | City  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  1 | Clear | Clear | Clear | Clear | Clear | Clear | Clear  |
+|  2 | Clear | Clear | Clear | Clear | Clear | Clear | Clear  |
+|  3 | Clear | Clear | Clear | Clear | Clear | Clear | Clear  |
+|  4 | Unusual | Clear | Clear | Clear | Unusual | Clear | Clear  |
+|  5 | Cloudy | Cloudy | Cloudy | Cloudy | Cloudy | Unusual | Cloudy  |
+|  6 | Cloudy | Cloudy | Cloudy | Unusual | Cloudy | Stormy | Stormy  |
+|  7 | Stormy | Stormy | Stormy | Stormy | Stormy | Winds | Unusual  |
+|  8 | Winds | Stormy | Stormy | Stormy | Stormy | Winds | Unusual  |
+
+Weather Type
+
+|  Die Roll | Clear | Cloudy | Stormy | Winds | Unusual  |
+| --- | --- | --- | --- | --- | --- |
+|  1 | Cold | Dense Fog | Snow | High | Cold/Snow  |
+|  2 | Cool | Light Fog | Heavy Rain | Medium | Dense Fog/Heavy Rain  |
+|  3 | Cool | Low Clouds | Medium Rain | High | Light Fog/Warm  |
+|  4 | Cool | Medium Clouds | Light Rain | Medium | Medium Rain/Cold  |
+|  5 | Fair | High Clouds | Thunderstorm | Light | Thunderstorm  |
+|  6 | Fair | Stormy | Cloudy | Light | Thunderstorm  |
+|  7 | Warm | High Clouds | Light Rain | Medium | Cold/High Wind  |
+|  8 | Warm | Low Clouds | Medium Rain | Light | Light Rain/Cool  |
+|  9 | Warm | Light Fog | Heavy Rain | Medium | Thunderstorm  |
+|  10 | Hot | Dense Fog | Snow | High | Hot/High Winds  |
+
+Sorcerer's Scroll fr pg 13
+
+scale! If ground scale is changed, movement distances must be adjusted. If time scales are changed, both movement and missile fire/spell casting must be altered. Furthermore, if 30 mm or 25 mm figures and scale buildings and terrain are not used, then the area of effect must be adjusted proportionately. I ask your collective pardon for this neglect, and I trust that the foregoing will now make the matter clear. There are distortions of scales in D&D and ADVANCED DUNGEONS & DRAGONS as well. Despite distortions, each meshes with the other to make the game an enjoyable one.
+
+In BLACKMOOR weather related diseases were covered lightly, the following diseases are the only ones concerned with these tables.
+
+|  Disease | Chance of Immunity | Dur. Days | Days Inc. | Chance of Communic. | Recovery Weeks | % Fatal  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  Pneumonia | %5 | 10-100 | 1-6 | 10% | 6 | 20%  |
+|  Heat Stroke | — | 1-2 | 1 | — | 1 | 7%*  |
+|  Hypothermia | %5 | 1 | 0 | — | 2 | 15%**  |
+|  Irritation | %2 | 2-20 | 1-4 | — | 1 | 1%  |
+|  Flu | %10 | 2-20 | 1-8 | 20% | 2 | 15%  |
+|  Cold | %15 | 1-10 | 2 | 25% | 1 | 2%  |
+
+*The victim must rest or fatality increases to 25%.
+
+**Fatality is 75% unless the victim is warmed, and rested.
+
+### Seasonal Weather
+
+As a suggestion for the referee who wishes to plan an entire season's weather, that spans many types of terrain (thus making an excellent campaign addition), the following table should help:
+
+|  Winter Season: | Spring Season: | Summer Season: | Fall Season:  |
+| --- | --- | --- | --- |
+|  (Weather lasts 1-4 weeks) | (Weather lasts 1-2 weeks) | (Weather lasts 1-6 weeks) | (Weather lasts 1-2 weeks)  |
+|  Clear: Use 1-4 | Clear: Use 2-9 | Clear: Use 5-10 | Clear: Use 1-10  |
+|  Cloudy: Use 1-10 | Cloudy: Use 1-10 | Cloudy: Use 1-10 | Cloudy: Use 1-10  |
+|  Stormy: Use 1-10 | Stormy: Use 2-9 | Stormy: Use 2-9 | Stormy: Use 1-10  |
+|  Winds: Use 1-10 | Winds: Use 1-10 | Winds: Use 1-10 | Winds: Use 1-10  |
+|  Unusual: 1,2,4-9 | Unusual: 2,3,5,6,8,9 | Unusual: 2,3,5,6,9,10 | Unusual: 1-10  |
+
+### Weather Descriptions
+
+Cold: The temperature is below freezing. The party must wear warm clothing or, there is a 15% chance of Hypothermia. If the party does not stay warm (clothing, shelter, fires, etc.) then for every week in the cold there is a 10% chance of contracting pneumonia, 15% chance of getting the Flu, and a 50% chance of catching a cold. If they stay warm, the chances are 2%, 5%, and 25% respectively. If the party travels in this weather, then there is a 25% chance per week of 1-6 points of frostbite. Any combat in this weather is at -1, and all moral is also at -1. Any reptiles (Dragons, Lizard Men, etc.) cannot move at all in this weather as it is too cold.
+
+Cool: The temperature is above freezing, but below 60°. The chances for catching a cold in this weather is 20% for every three weeks exposed to it. The Chance for the Flu is only 2% for the same period of time. If the party has shunned warm clothing, then these are checked every week at 25% and 10% respectively. As it is still cold for a reptile, they move at 1/2 speed.
+
+Fair: A beautiful day. There are no checks for diseases, and any party has moral of +2, and fights with a +1. Reptiles move normally.
+
+Warm: The temperature is between 70 and 90 degrees. Check for irritation every week; unless no method of protection is being used against it (baby powder, talc, baths, etc.), then it is checked every 4 days. Both of these checks are made at 10% chance of contraction. As the weather is still nice, any party's moral is at +1. However if plate armor is worn in this weather, the wearer will have a movement penalty of 1/4 (he moves at 3/4 speed).
+
+Hot: Above 90 degrees. Check for irritation daily at 15% chance of catching. The party must be checked for heat exhaustion every day, at 15% chance of succumbing to it. Double the party's consumption of water; but, if they are conserving the water then double the chance of heat exhaustion. Reptiles become overheated in this weather, and they move at 1/2 speed. As it is oppressively hot, moral and combat are both at -2, and combat cannot last beyond 15 melee turns.
+
+Dense Fog: Thick ground fog, with a visibility of only 30 feet. Due to the spooky conditions, the hirelings' moral is at -1. Flying is totally impossible; and all movement is halved. Surprise affects the party thusly: On a roll of 1-3 they surprise the enemy, and on a 4-6 the enemy surprises them. Missile weapons are ineffective in fog, and fire at -3.
+
+14

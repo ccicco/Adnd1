@@ -628,6 +628,7 @@
 #include "rules/icl.h"  // R924: the Dragon issue-13 box closing round, the three-chain walk complete
 #include "rules/lyc.h"  // R925: the Dragon issue-14 opener, the Name That Monster Contest #1 winners and the Rihn lycanthropy variant
 #include "rules/f14.h"  // R926: the Dragon issue-14 box closing round, the two-chain walk complete
+#include "rules/drm.h"  // R927: the Dragon issue-15 opener, Dragon Magic and the four rider chains
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4737,6 +4738,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r927_batch.h"  // R927: R927 issue-15 opener audit
 #include "rules/audits/r926_batch.h"  // R926: R926 Dragon issue-14 closure audit
 #include "rules/audits/r925_batch.h"  // R925: R925 issue-14 opener audit
 #include "rules/audits/r924_batch.h"  // R924: R924 Dragon issue-13 closure audit

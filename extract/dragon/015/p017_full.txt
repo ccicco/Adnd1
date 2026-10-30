@@ -1,0 +1,69 @@
+June, 1978
+
+The Dragon
+
+**Light Fog:** The visibility is only 180 feet. The penalties are the same as those in Dense Fog, except that surprise returns to normal odds.
+
+**Low Clouds:** No penalties, except that there cannot be any long-distance flying in this weather. The visibility is about 2 miles.
+
+**High Clouds:** No penalties, and the visibility is over 20 miles.
+
+**Medium Clouds:** No penalties, except that there cannot be any long distance high altitude flying. The visibility is 6 miles.
+
+**Thunderstorm:** In this dangerous weather there is a 2% chance daily of being hit by lightning. If the party removes it armor, then the chances are reduced to 1% daily. If the party is massively exposed (open land, or mountaintop) then the above odds are doubled. Lightning strikes cause from 10-100 points of damage, and will stun a victim for 2 days. The weather is a mixture of Low Clouds, and Medium Rain (add up their effects on the party (remember that everything is cumulative).
+
+**Snow:** A Cold situation along with a light fog situation (add them up). The following adjustments are made to the final results: Increase the chances of a disease by 5%, and increase the damage that frostbite does, to 1-12 points of damage.
+
+**Heavy Rain:** There is a movement penalty of ½ of the total movement ability; unless the subject is wearing plate armor, then the subject moves at ¼ speed. In this weather there is 5% chance of catching the Flu, and a 15% chance of getting a Cold. The party's morale is at -2.
+
+**Medium Rain:** There is a movement penalty of ¼, unless the subject is wearing plate armor, then the penalty is ½. There is a 10% chance of catching a cold in the rain, and a 1% chance of getting the flu. Morale is at -1.
+
+**Light Rain:** There is no movement penalty, except for wearers of plate armor, who have a penalty of ¼. There is no morale change, and only 5% chance of contracting a cold.
+
+**High Wind:** This exactly like the Heavy Rain situation, except that there is no chance of catching the Flu. If the party is in the Desert, then there is a 25% chance they are in a Sandstorm, in which there is a 15% chance of suffocation.
+
+**Medium Wind:** This like the Medium Rain situation, except that there is no chance of catching the flu.
+
+**Light Wind:** No penalties, but gives excellent sailing weather.
+
+**Unusual Weather:** On the combinations involved (Cold/Snow, Dense Fog/Heavy Rain, Light Fog/Warm, Medium Rain/Cold, Cold/High Wind, Light Rain/Cool, Hot/High Winds) simply add up the weather effects for the two types of weather and apply the result (remember that everything is cumulative). For example: A Cold/Snow situation gives the following results — 35% chance of Hypothermia, 35% chance of the Flu, 25% chance of Pneumonia, 100% chance of getting a Cold, Frostbite damage is at 55% chance of getting it with 2-18 points of damage/attack, Morale is at -2, Combat is at -2, visibility is 180 feet, and missile fire is at -3. If this seems extreme, remember that a Cold situation is below freezing, and a Snow condition is also below freezing; so the temperature in this situation is somewhere in the area of 25 degrees below zero.
+
+cont. from pg. 2
+
+ing. It will be better than in the past. **ORIGINS** is in Michigan, which makes it considerably closer this year, and less of a chore in simply getting there. While I will be busy again this year, what with working on the massive (at least 250 will be able to enter) D&D tourney and running a **FIGHT IN THE SKIES** game one day, I find myself looking forward to it, strangely enough.
+
+I'm really anticipating **GenCon** this year. First, we have even better facilities this year than last: an air conditioned campus in a beautiful setting, in Kenosha, WI. This is only about 35 miles from Lake Geneva, and offers far better facilities and convenience than any previous site of any major convention. We have been assured of better motel availability than Lake Geneva can offer, and they have an excellent cafeteria on campus, with really reasonable prices.
+
+**GenCon** will also have a massive **D&D** tourney (probably even bigger than **ORIGINS**) as well as **BIG MONEY DUNGEON!** tourney, in addition to all of the regular games and tourneys. If you are interested in judging and/or running a tourney, please direct your attention to the small box elsewhere in this issue pertaining to this subject. Judges get in free . . .
+
+The other major spring project, in addition to the cons, is the
+
+Dragon Magic fr pg 4
+
+**Extend Breath** Allows the dragon to either make an additional breath of any type normally available to it, or expend the equivalent of 3 breaths in a single breath of double effect and size. If the Queen of the Chaotic Dragons uses this spell, as she is fond of doing, she may only use it upon one of her heads.
+
+**Improved Sticks to Snakes** From 2-16 3 hit die snakes are created by this spell. All are poisonous, and can spit their venom twice for 3-18 points of damage with a 6" range. These snakes can only be hit by magic weaponry. Duration: 1 day maximum.
+
+**Negate Enchantment II** As the third level spell, except with permanent effects.
+
+**Precognition** As the psionic ability found in humans. The caster has an 80, 60, or 50 percent chance respectively to make an accurate low, medium, or high difficulty prediction.
+
+**Programmed Illusion** *Same as Illusionists Spell*. The illusion will continue to perform as instructed for 6 turns after concentration is lost.
+
+**Servant Summoning II** Similar to the third level spell, except 4-32 creatures will appear and serve for a period of 24 hours or less. Possession of a *summoning stone* is necessary. Only **EVIL** dragons will use this spell, except in the greatest peril.
+
+**Sunwall** The creation of a wall so bright as to blind the viewer for 5-20 turns, unless a saving throw vs. magic is made. No heat is generated from the wall, but those attempting to pass through it must save vs. poison or are permanently and violently insane. Dimensions and Duration: As a wall of fire.
+
+**Time Reversal** The spell cannot be cast on any person or creature, living or dead. The *object* struck by this spell will revert back to the state it was at when the dragon was born. For example, a suit of mail might revert back to iron ore, or a ruined artifact made to work again. Items in the possession of another intelligent creature are allowed saving throws. Range: 3". Duration: Until Dispelled.
+
+### Higher Level Magic
+
+With rare exception, only gold and the platinum dragons can use spells higher than 5th level. Little is known of these spells, except that they are often more powerful versions of the above spells. In addition, some (50%) of red and bronze dragons, and all silver and gold dragons will also be aware of "human" magic spells and may employ these spells as well. The Chromatic and Platinum Dragons may select from either list at will. The dragon spells have seldom been written on scrolls. They will be found only in dragon lairs, and then only 10% of the time.
+
+**STRATEGIST CLUB AWARDS** for "Creativity in Wargaming". Even as I write this, I am awaiting the last nomination ballots. This year, the nominating procedure has been considerably altered. The SC Nominating Committee is composed of the Life Subbers and about fifty other people within the industry. Virtually every significant company in the business is represented on the Committee. I feel that our Nomination Committee is the closest thing to a committee of experts one may achieve, which certainly goes some distance in lending credibility to the procedure. The ballots will be run in *TD, LW, F&M, MOVES, CAMPAIGN, The Space Gamer* and *The Judge's Guild's* newsletter. This wide dissemination of ballots will make this award that more prestigious and meaningful.
+
+Things are looking up for printing a "Best of" edition of all the best material from the first volume of *TD* (#'s 1-6, all out of print), and SR(all but two of them are out of print — those two will be gone before June). We hope to have it available for GenCon. See you at the cons. Support our hobby by attending one of the "big 3": GenCon (the nation's oldest), PennCon(formerly PhilCon — "the" event this year in the East) or **ORIGINS**, the hobby's traveling roadshow.
+
+Timothy J. Kask
+
+15

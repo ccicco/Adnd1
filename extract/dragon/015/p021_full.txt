@@ -1,0 +1,43 @@
+June, 1978
+
+The Dragon
+
+# STELLAR CONQUEST: EXAMINING MOVEMENT TACTICS
+
+By Edward C. Cooper
+
+Effective synchronization of the ship movement systems in *Stellar Conquest* may possibly be the most intellectually demanding, exuberant, and disquieting phase of player decision to be found in any war-game.
+
+Ship movement in SC is actually the implementation of a player's technological level, since movement strategies are directly linked with the current level of technology. Two fundamentals, quick Reaction Time and adequate Star "Coverage" must be accomplished each turn by considering, and by deductive predicting, how another player will react to stimuli caused by your own ships' movements.
+
+Players of SC will never have enough ships or concentrated firepower to protect all their holdings at the same time. The natural progression of the game forces a player to expand at a rate the society's technology never quite catches up to. Efficiency of movement thus becomes of extreme importance as the game lengthens and conflict become inevitable. It is therefore of key concern that a player's forces are kept moving, shifting positions, avoiding detection. In this manner, a ruler now has the ability and *potential* firepower to meet any sudden thrust head on, often deflecting it viciously back into the owner's heart. Effective ship movement is a life or death situation: always make sure of a back up plan in any major operation and leave your options OPEN. More than once, this simple procedure will save a throne.
+
+Avoiding detection and achieving high mobility will be gone into with more detail later. First it is instructive to consider the three main rules governing ship mobility *without* additional technological achievements: movement factor, communications, and ship range.
+
+Also known as the Basic Ship Attributes, these rules purposely limit a players mobility at gamestart. This stimulation of the common "buildup-expand" theory, though common, is a logical necessity. It forces players to expand slowly, as they would if the game were reality and they were living their respective parts. It also attempts to compensate for the known position of all ship counters (which is not realistic considering the basic technological level the game is started with) by not letting players go steam-shoveling off to attack the nearest player immediately. And immediate attack is tempting, since at the beginning of the game it is very easy to tell which counters are warships and those that are not.
+
+An example perhaps best illustrates the position. YOU have just entered the unknown galactic cluster with a small portion of your home empire's civilization. Objective: growth and exploitation of the cluster's favorable living conditions and mineral wealth. No living ruler — correction, *SANE* living ruler is going to send all his warships light years away from a chosen home planet before he has those forces — and meager they are — scour the entire known volume of space around the planet chosen as home for signs of life, signs of possible enemies and possible friends. Relating the game to reality, you would not be able to "see" there were three other races entering the cluster at approximately the same time. Every world would have to be considered hostile until your forces had explored them and proven otherwise. With only 35 million people, perhaps one fifth fully qualified for the task — not to mention the big task of colonizing the home planet, this would take a *long* time. The close density of stars only makes the situation worse. A probable course of action would be to sit tight "quietly" for a number of years until such a time as the colony was well established with trained personnel and resources that could be sacrificed in such an undertaking.
+
+The Basic Ship Attributes place severe restrictions on the players at gamestart. Yet, at the same time they look so inconspicuous. For, looked at through another light, they are a beginning: a small, feeble, beginning that challenges a player's creative ability and imagination to shape them into something better. Meanwhile they go relatively unnoticed until they are no longer applicable.
+
+The effect on the ship movement systems is noticeable. Every player starts the game in absolute equality. The diversity needed to create the "cultures in conflict" theme actually arises from the diversity of the
+
+players themselves and how they best see fit to handle the goals of their society as it moves to take on the stars. In SC, what happens is exactly what you do, even when considering the drawing of star cards. (Everyone has the same chance to pick up a TR planet but because of probabilities not everyone does). The Strategy? Success in one system improves your chance in another. Work to get an advantage in one of the technical sequences. Don't waste IU's by investing thinly in all three.
+
+Ship Mobility is the first of the ship movement systems available to players through research and development. Unlike its counterparts, Ship Communications and Ship Range, Ship Movement is a research sequence devoted entirely to advances in speed and maneuverability. Increases in Ship Range and Ship Communications rely more on what a player does on the strategic level.
+
+Mobility is more of a tactical device, and perhaps the key factor in determining the outcome of many battle series. As a player does not have the forces to protect all holdings, as was mentioned earlier, "WAR" in *Stellar Conquest* usually consists of many series of running battles darting from system to system as players try to outmaneuver each other and also bring other forces to bear. The advantages of high mobility in reducing reaction time for a defense posture and strengthening surprise in an offensive mode can now be seen.
+
+Until Unlimited Ship Communications is researched, if ever, since players do not usually have the resources to research a relatively peaceful device such as USC and still prepare to defend themselves against possible aggression, players having the highest mobility can out maneuver most opponents with hit-and-run tactics, crippling the victim's economy. This player must use new expenditures to replace losses and remain defensible. He never does have the chance to gain the offensive.
+
+[Extracted image: /home/user/tool-results/ocr/fe829021-5f56-402d-bc59-39ac78a46e8a/images/021-001-img-33.jpeg]
+
+There are disadvantages to mobility however. Because of investment requirements to obtain a high movement factor, a player possessing high mobility will probably not have numerical superiority. An attack in force, even if slow in coming could likely mean defeat. The player must press the offensive as a defensive measure. The trick in SC is to keep your opponents off balance while not provoking all out war. For the aggressive minded player, mobility is a definite plus.
+
+Ship Communication is the first strategic level factor influencing the ship movement systems. It limits a player's direction of ships to when they occupy or pass through a star hex. For the beginning level, eight hexes or one light year typifies a realistic estimate of limited range function and supply, with ships found operating beyond this limit automatically being destroyed.
+
+The importance of ship communication as a weapon of war must not be underestimated. Veteran players often take advantage of the less experienced here. When the time to attack has come, the old pro waits until his opponent has most of his forces in route to star systems — then strikes quickly, deep into enemy territory hoping to secure the objective before the player has time to react. The less experienced player may have more firepower (they usually do) but it is neutralized most effectively. The ships in transit must continue on to their assigned destinations before they can receive a message ordering them back.
+
+Beginning players always seem to head for destinations that take two or three turns transit time. Don't do it! Picture it yourself: fleets expanding outward, spreading forces thinly, conquering in the name of the glorious empire; then a sudden concentrated thrust inward from an unknown enemy. That player has a three turn movement advantage on
+
+19

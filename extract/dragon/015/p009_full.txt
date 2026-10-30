@@ -1,0 +1,51 @@
+June, 1978
+
+The Dragon
+
+[Extracted image: /home/user/tool-results/ocr/fe829021-5f56-402d-bc59-39ac78a46e8a/images/009-001-img-14.jpeg]
+
+# THE WANDERING MONSTER
+
+by James Ward
+
+Forum
+
+In dealing with the concept wandering monster the judge is the first and last word. Also, because any given DM is very individualistic the manner in which those ever present monsters are handled varies from judge to judge. What the wargaming scene really needs is some consistency in the method DM's throw those creatures at us poor players.
+
+First, it is logical to divide all the possible wandering monsters into two categories: the intelligent monsters (and thus aligned) and the unintelligent ones that are just out for the food potential of the player. The nonthinking monsters are easy to judge, they just attack and kill whenever they get the chance. There are only 39 of these out of a possible 95 deadly creatures running around every dungeon. The thinking ones are the beings that give everyone the most trouble.
+
+When dealing with any given being of intelligence, the first thing a DM must do is roll for alignment, unless the being is an EHP type or a Paladin type. When the alignment is known, the actions of the wandering being are much easier to decide. When lawful it is supposed by the nature of the alignment that the wandering being will talk first and not rush into battle, or at least (as in the old tradition of the gun fighters) wait for you to make the first aggressive move. The neutral being can go either way, with the supposition that they always move in their own best interests. The last alignment is the one that everyone knows is going to get you if they get the chance!
+
+Logic and sound judgement must also enter into the wandering monsters actions. If the player is a wizard and he has a Balrog buddy walking with him those low level dwarves, theurgists, sharpeners, and lycanthropes just are not going to take the terrible pair, (regardless of the duty of law to kill evil, or the hate dwarves have for those balrogs). There is also a very real chance that those giants and lords will ignore the low level player as well. Make sure, all you DM's out there, that the wandering being will have some chance against those players in your game. Why should those leather armored footpads take on the chain-mailed fighters? The answer is that they wouldn't even think of it, (unless the judge makes them).
+
+There are many methods a DM can use to make the use of wandering monsters simpler. Many judges when using magic users from the lists will roll for their spells and give them things like ventriliquism and light spells and a bunch of magic mouth spells. The judge now has a poor little magic user that doesn't stand a chance against an irritated hobbit! To alleviate this problem, the DM should make a list of all his possible wandering monster magic users and give them the most useful aggressive spells.
+
+Now that you are making lists for the magic users you should carry the concept another step and do the same for all the wandering monsters. I would suggest prerolling for hit points, giving magic users and priests men at arms for support, listing and damaging abilities of each monster, the armor class of the being, and finally the weapons the being carries if any. The resulting list for the fourth level creatures could look like the following:
+
+## FOURTH LEVEL WANDERING MONSTERS
+
+1. DOPPLEGANGERS: 1-2 of them appearing, sleep or charm spells have no affect, will change into any other creature instantly, does 1-12 points of damage in battle, takes 17 hit points, has an armor class of 5, moves 90 feet in a turn in the Dungeon, Chaotic.
+2. WRAITHS: 1-4 of them appearing, sleep spells have no affect, silver arrows do ½ damage and magic arrows only do one die of
+
+damage, the wraith when it hits drains one energy level, it takes 9 hit points, has an armor class of 3, moves 120 feet in a turn in the Dungeon, Chaotic.
+
+3. GARGOYLES: 1-2 of them appearing, requires a magic weapon to strike, 2 claws/do 1-4, bite/does 1-6, horn/does 1-10, takes 12 hit points, has an armor class of 5, moves 90 on ground/150 feet through the air in the Dungeon, Chaotic
+4. OGRES: 1-4 of them appearing, they use swords, takes 22 hit points, has an armor class of 5 with a 50% chance that any given ogre has on chainmail, moves 90 feet in the Dungeon, Chaotic.
+5. EVIL PRIEST CURATE AND 1-6 MEN AT ARMS: curate has 2 light wound spells and 2 hold person spells, the men and the priest are in chainmail and shield, the curate takes 20 hit points, the men take 5 points each, they move as men, all are chaotic, all use maces.
+6. MYRMIDONS: 1-4 of them appearing, all are in chainmail and using swords, each takes 23 hit points, moves as men, roll for alignment.
+7. ENCHANTER & 1-4 HEROS: enchanter has 2 sleep-2 charm person-2 web-1 phantasmal force-1 hold person-1 haste-1 wall of fire, the men are wearing leather and shield, the enchanter takes 10 hit points, the men at arms take 15 each, they move as men, roll for alignment.
+8. PILFERERS: 1-4 of them appearing, all are in leather and have daggers only, each takes 17 hit points, move as men, there is a 60% chance to pickpockets/ a 50% chance to hide in shadows, can either be neutral or chaotic.
+9. SHADOWS: 1-4 of them appearing, requires a magic weapon to strike, one touch loses 1 strength point for 8 full turns, not affected by sleep or charm person spells, takes 9 hit points, has an armor class of 7, moves 90 feet in a turn in the Dungeon, Chaotic.
+10. GIANT BEETLES: 1-2 of them appearing, bites for 4 dice of damage, takes 15 hit points, has an armor class of 3, moves 60 feet a turn in the Dungeon, nonintelligent.
+11. GIANT SCORPION: 1-4 of them appearing, bites for 3 dice of damage/sting is poisonous, takes 20 hit points, has an armor class of 3, moves 90 feet a turn in the Dungeon, nonintelligent.
+12. LYCANTHROPE: roll a die to see which kind; 1-weretiger 2-werewolf 3-wereboar 4-werebear, all claws do 1-8/ all bites do 2-12, double that for the bear, has an armor class of 4, tiger takes 13 hit points, wolf takes 11, boar takes 21, bear takes 14 hit points, only silver or magic weapons affect them, bite gives lycanthropes sickness, moves different per beast, first three are neutral or chaotic, the bear is neutral or lawful.
+13. CARNIVOROUS APES: 1-6 of them appearing, 2 claws/do 2-12, bite/does 3-18, each takes 22 hit points, has an armor class of 4, moves 90 feet a turn in the Dungeon, nonintelligent.
+14. OWL BEAR: 1-4 of them appearing, 2 claws/do 1-6, bite/does 1-12, takes 15 hit points, has an armor class of 5, moves 120 feet a turn in the Dungeon, nonintelligent.
+15. DISPLACER BEASTS: 2-6 of them appearing, 2 tenticles/do 2-24, can displace like the cloak, takes 22 hit points, has an armor class of 4, moves 150 feet a turn in the Dungeon, partially intelligent (chaotic).
+16. BLINK DOGS: 4-16 of them appearing, bite/does 1-8, can use a limited teleport to move 60 feet, has 13 hit points, has an armor class of 5, moves 120 feet a turn in the Dungeon, partially intelligent (lawful).
+17. PHASE SPIDER: bite/1-6 and poison, can phase into ethereal form when not attacking, takes 24 hit points, has an armor class of 5, moves 150 feet in the Dungeon, nonintelligent.
+18. GIANT TICK: 3-12 of them appearing, bite/does 1-4 plus it drains your blood and weakens you, takes 8 hit points, has an armor class of 4, moves 30 feet a turn in the Dungeon, nonintelligent.
+19. WILL O' WISP: 2-12 electrical bolt, can become blinding or vanish, has 33 hit points, an armor class of -8, moves 180 feet a turn in the Dungeon, Chaotic.
+20. RUST MONSTER: rusts metal on a touch, can sense iron in 100 yards from any direction with the wind going the wrong way, takes 19 hit points, has an armor class of 2, moves 120 feet a turn in the Dungeon, nonintelligent.
+
+7

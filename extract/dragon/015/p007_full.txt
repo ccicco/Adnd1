@@ -1,0 +1,166 @@
+June, 1978
+
+The Dragon
+
+D&D Variant
+
+# PITS
+
+By Merferger the 11&3/4 Lord of Mecic
+Alias Richard Morenoff
+
+These are a set of charts to help the dungeon master when player characters or monsters fall into a pit. I made these to use in Dungeons and Dragons but you can use them wherever you think. You can also change them to your liking. Before you use them, make sure you read the notes below.
+
+# 1 PITS
+
+01-60 = empty pit
+
+61-95 = occupied pit
+
+96-98 = teleporting pit
+
+99-00 = bottomless pit
+
+# 3 Animal/Insect
+
+01-35 = snakes*
+
+36-45 = lizards*
+
+46-55 = giant tick
+
+56-70 = giant serpent*
+
+71-85 = giant weasels
+
+86-00 = giant centipedes-always poisonous, no other damage
+
+# 5 Special
+
+01-40 = tied or chained down citizen
+
+41-80 = tied or chained down specialist
+
+81-00 = tied or chained down monster — if freed: 50% friend, 50% attack roll on monster matrix
+
+# 6 Citizen
+
+1 pipeweed grower
+
+2 shipbuilder
+
+3 hatmaker
+
+4 beer merchant
+
+5 sculptor
+
+6 fisherman
+
+# 7 Specialist
+
+01-15 = magic-user
+
+16-50 = fighter
+
+51-60 = cleric
+
+61-70 = thief
+
+71-75 = alchemist
+
+# 2 Occupied Pits
+
+01-35 = spikes*
+
+35-65 = animal/insect
+
+66-70 = teleporting pit
+
+71-90 = monster
+
+91-00 = special
+
+# 4 Monster
+
+01-50 = a jelly, ooze, mold, or pudding etc.
+
+51-00 = roll on D&D monster matrix
+
+7 locksmith
+
+8 tool merchant
+
+9 weapon merchant
+
+10 teacher
+
+11 loan shark
+
+12 trapper
+
+76-80 = druid
+
+81-85 = monk
+
+86-90 = assassin
+
+91-85 = ranger
+
+96-00 = scribe
+
+# NOTES
+
+1 Wherever there is an asterisk(*), there is a 40% chance that it is poisonous.
+
+2 If there is a monster, it can have treasure. Some monsters (like the giant class types) might have a huge bowl of boiling water waiting for victims.
+
+3 Pits can open wide at the bottom so it could be a monster's chamber, but without any other ways out!
+
+4 Specials (TABLE 5) will usually be totally stripped of their valuables.
+
+5 Under Table 5 (Special) 81-00 = monster; roll on monster matrix to determine it. Then roll a 6-sided die: 1 = enthusiastically grateful and will help rescuer for a 2-20 days 2) = same as #1 but won't show it until the people get him out of the pit. 3)&4) undecided about rescuers; if taken out of pit 1-4 = loyal, 5-6 = will run away; if no sigh of rescuers taking him out of pit, it will attack.
+
+5 Won't show reaction until taken out; 1-4=attack, 5-6=run. 6)attack as soon as freed. On all of these, if it looks like rescuers won't take monster out it will attack. If they don't even untie it, it will remember their faces and if ever freed will hunt them down.
+
+D&D Variant
+
+# RANDOM EVENTS TABLE FOR SETTLEMENTS AND/OR SETTLED AREAS
+
+by N. Robin Crossby
+Australia
+
+Even though social animals, such as man, band together for mutual protection, they still suffer collectively from misfortune. Such events are, however, lessened both in frequency and impact.
+
+This Random Events table should be used only as guide for the referee. Players may learn of the events perhaps months after they have been resolved, or not at all, or the events may occur right on their doorstep and force their involvement. An event such as a monster terrorizing an outlying village can offer an interesting opportunity for adventure. An invasion from the evil kingdom to the north may cause a player to emigrate or join the army.
+
+When I use the table I roll once each month for every province/fief in each kingdom. It could, however, be used at either the village/town/city or kingdom/Empire level. It could even be used once per game week, although this could get a little bit "exciting".
+
+There are of course several possibilities that will require referee discretion, such as border raids on a province surrounded by friendly provinces, or Political Oppression in an extremely lawful/good kingdom/province/city etc. . . . In such cases, referees should either translate the event into something similar but more likely, or simply re-roll.
+
+Referees should roll at the beginning of each month (or at the beginning of each period they have decided on). Then, by cross-indexing the season with the Event/Percentile dice roll, an event (or no event) can be easily extracted.
+
+I hope that this will bring more depth to your campaign, as it has to mine.
+
+RANDOM EVENTS TABLE FOR SETTLEMENTS OR SETTLED AREAS
+
+|  EVENT/S | SEASON SPRING | SUMMER | AUTUMN | WINTER  |
+| --- | --- | --- | --- | --- |
+|  No unusual events | 01-83 | 01-79 | 01-79 | 01-80  |
+|  Heatwave/Drought | 84 | 80-81 | 80 | —  |
+|  Snowstorms/Blizzards | — | — | 81 | 81-85  |
+|  Heavy Rains/Floods | 85-86 | 82 | 82 | 86-87  |
+|  Storms etc./Earthquakes etc. | 87 | 83 | 83 | 88-89  |
+|  Poor Harvest/Famine/Food Riots | — | — | 84-85 | —  |
+|  Rich Harvest/Economic Disruption | — | — | 86-87 | —  |
+|  Recession/Depression/Inflation/Exploitation | 88 | 84 | 88 | 90  |
+|  Oppression/Inquisition/Witch hunts | 89 | 85 | 89 | 91  |
+|  Uprisings/Revolts/Riots/Coups | 90 | 86 | 90 | 92  |
+|  Assassination attempts(s)/Intrigue/Change of Ruler etc. | 91 | 87 | 91 | 93  |
+|  Border Raids | 92-94 | 88-90 | 92 | 94  |
+|  Invasion/Crime wave/War | 95-96 | 91-92 | 93 | 95  |
+|  Plague/Epidemic | 97 | 93-95 | 94-95 | 96  |
+|  Terrorization (of outlying village by monster/s etc.) | 98-99 | 96-98 | 96-98 | 97-98  |
+|  More than one event | 00 | 99-00 | 99-00 | 99-00  |
+
+5

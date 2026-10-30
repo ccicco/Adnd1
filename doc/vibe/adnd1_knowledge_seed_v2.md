@@ -28012,6 +28012,30 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   54c6df4d31fa17a361d45d2fac872b70. Next: R926
   pure flip closing both boxes (2 closed 0 open,
   the two-chain walk complete). WAIT FOR GO.
+  - R926 LANDED (b7271e0, f14, pure flip): The
+  Dragon issue-14 box closing round, the two-
+  chain walk complete. Both report-014 boxes
+  flipped in ONE round (gap_census 2 closed 0
+  open): box 1 the Name That Monster Contest #1
+  winners (folio 3, PDF 5) - Jarnkung, the Cursed
+  Crimson Crawler (dice consts + 7-halves), Ulik;
+  box 2 the Gregory Rihn lycanthropy variant
+  (folios 29-32 = PDF 31, 33-34) - bite catch
+  50%, onset 30-60 days, first-change panic 95%,
+  subjugation 10%, sleep revert 5%, will-revert
+  2500 XP, the 10x8 grid (row-4 1000 vs example
+  10000, as-scanned), predominance 10-01, change-
+  time halves. 23 inline (14 consts + 9 bools),
+  no tables, no data files; header rules/f14.h,
+  audit rules/audits/r926_batch.h, 3 examples.
+  Census 848->849; rverify GREEN 23 mutants 0
+  missed; round-trip 12314 bytes md5
+  e91c68cdbf2c441a4e8f2fcd18149fba. Issues 2-14
+  ALL CLOSED. Registry ground truth unchanged:
+  1313 loaded / 1338 base lua / 25 never-load
+  (R924 re-measure). Watch: TD 15 brawling sequel
+  still not printing.
+
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

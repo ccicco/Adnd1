@@ -1,0 +1,135 @@
+June, 1978
+
+The Dragon
+
+D&D Variant
+
+# DRAGON MAGIC
+
+by Michael Benveniste
+
+D&D provides for limited magic use by dragons. It is assumed, however, that the magic of dragons is the same as that of humans and elves. I contend that this is only partially true.
+
+The magic used by dragons is tempered by their nature. Dragons are creatures of rock and wind, having little use for plants and water. They feel little need for offensive spells, believing that their own body and deadly breath fulfill this need.
+
+In spite of this, driven by their desires for gold, immortality, and power, dragons learned the secrets of magic untold centuries ago. In time, many spells evolved enabling dragons to more effectively deal with the humanoids they have been forced to share their world with.
+
+All dragons have a name which they keep a great secret. No known power can force even a subdued or enchanted dragon to yield this secret, nor will communes or similar spells be effective. A Full Wish or Legend Lore would give strong clues, but a Limited Wish would only reveal the veracity of a previous clue. If a dragon's name is spoken, all works of that dragon's magic are dispelled, and the speaker has the power to demand one, and only one, service from the dragon.
+
+Below is the list of known dragon spells. Other, perhaps greater spells are rumoured, but no one has returned alive to tell of such spells.
+
+SPELL LIST
+
+Level 1
+
+1. Breath Charm
+2. Charm Avians
+3. Charm Person
+4. Detect Alignment
+5. Detect Magic
+6. Evaluate Item
+7. Locate Lair
+8. Magic Pointer
+9. Phantasmal Forces
+10. See Invisible
+11. Werelight
+
+Level 3
+
+1. Binding Spell
+2. Control Winds
+3. Find Traps
+4. Hallucinatory Terrain
+5. Hold Mammal
+6. Mesh
+7. Negate Enchantment I
+8. Protection/Normal Missiles
+9. Revelation
+10. Servant Summoning I
+11. Sticks to Snakes
+12. Water to Wine
+13. Wood to Sand
+
+Level 2
+
+1. Alarm
+2. ESP
+3. Heat Metal
+4. Illusion
+5. Invisibility
+6. Mirror Image
+7. Neutralize Poison
+8. See Other Planes
+9. Wall of Gloom
+10. Wall of Wind
+11. Weave Barrier
+12. Weight Control
+
+Level 4
+
+1. Attack Other Planes
+2. Call Lightning
+3. Charm Monster
+4. Curse
+5. Extension I
+6. Haste
+7. Non-Detection
+8. Polymorph Self
+9. Polymorph Others
+10. Rock to Sand
+11. Seek
+12. Turn Magic
+13. Work Weather
+
+Level 5
+
+1. Animate Dead
+2. Conjure Elemental
+3. Extend Breath
+4. Improved Sticks to Snakes
+5. Negate Enchantment II
+6. Precognition
+7. Programmed Illusion
+8. Servant Summoning II
+9. Sunwall
+10. Time Reversal
+
+[Extracted image: /home/user/tool-results/ocr/fe829021-5f56-402d-bc59-39ac78a46e8a/images/005-001-img-11.jpeg]
+
+SPELL DESCRIPTIONS
+
+Level 1
+
+Breath Charm Any pebble, coin, or small mineral object becomes a charm vs. dragon breath by use of this spell. Any one object or person touching the charm is not affected by dragon's breath. The charm is destroyed by this breath. Duration: Until used or dispelled. Range: Physical Contact is necessary.
+
+Charm Avians From 2-8 small (1' or less), 1-3 medium (1'-3'), or 1 man sized (3'-8') birds may be forced to serve a dragon by this spell. A saving throw is allowed if the creature has a greater than animal intelligence. Range: 12". Duration: 1 day.
+
+Charm Person Same as Magic-Users Spell
+
+Detect Alignment Allows the Dragon to determine the alignment of any one person, creature, or object. Range: 12".
+
+Detect Magic Same as Magic-Users Spell
+
+Evaluate Item This incantation will reveal the gold value of any item. exclusive of magic properties. For example, chimes of opening have a value of 30,000 gold and this spell would indicate this, but not the magic properties.
+
+Locate Lair The dragon employing this spell will learn the exact direction of its lair, regardless of distance.
+
+Magic Pointer When faced by opposition, this spell will point out the highest level opponent. The spell is not foolproof, however, and has an equal chance of indicating anyone of equal level, a 30% chance of pointing out an opponent one level or hit die lower, and a 10% chance of indicating a random adversary.
+
+Phantasmal Forces All dragons capable of using magic can use this spell in lieu of any first level spell. The cunning of dragonkind makes dragons masters of illusion.
+
+See Invisible Allows the caster to dimly see (rather than just sense) invisible objects within a 6" radius. Duration: Age class of the dragon in turns.
+
+Werelight A spell which causes any object to glow with a soft, heatless, light. Any living creature within 3" of this light that is not hidden from it will begin to glow with this same light, as will any creature within 3" of this new source, etc. Moving out of range of this light will not extinguish it. This light may be created within 12" of the caster. Range: 3-18 melee rounds, or 1 full turn.
+
+Level 2
+
+Alarm This spell creates a silvery rune that no human tongue can pronounce. If passed over or looked at, it will vanish and alert (or wake) the dragon telepathically. Duration: 1 week. Range of telepathic link: 24".
+
+ESP Same as Magic-Users Spell.
+
+Heat Metal Same as Druid spell. It affects a maximum of 1500 gold pieces in weight. Range: 3".
+
+Illusion This is the spell contained in a Wand of Illusion. The caster may move, but may not attack without dispelling the illusion.
+
+[Extracted image: /home/user/tool-results/ocr/fe829021-5f56-402d-bc59-39ac78a46e8a/images/005-002-img-12.jpeg]

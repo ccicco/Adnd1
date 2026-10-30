@@ -1,0 +1,89 @@
+The Dragon
+
+Vol. III No. 1
+
+Invisibility, Mirror Image Same as Magic-Users Spells.
+
+See Other Planes Allows the Dragon to peer into any one plane that it wishes. While it is looking into another plane, the dragon is blind to its surroundings, but can sense by smell, touch and sound. Duration: 3 turns.
+
+Wall of Gloom Creates an opaque wall of darkness with the same dimensions as a wall of fire. Passing through this will reduce morale by 2. All light sources, including magical ones, are extinguished when passing through this wall. Duration: 3-8 turns.
+
+Wall of Wind Creates a wall with the same dimensions as a wall of fire. Arrows or quarrels passing through this wall will be blown away, as will man-sized or smaller flyers unless a saving throw is made. The wall is transparent unless placed over sand, smoke, etc. The wall will disperse gas. Duration: 3-8 turns.
+
+Weave Barrier A seemingly solid barrier can be woven over any lattice with man-sized or smaller holes. As examples, thatch laid over a pit, a spider's web, etc. may be used as this lattice. The barrier can appear as anything the dragon desires, or can be blended into the landscape. If touched in disbelief, it is dispelled, but otherwise lasts until the light of a full moon falls upon it. An area roughly the size of the dragon may be covered.
+
+Weight Control Any non-living object may be doubled or halved in weight by this conjuration. Range: 12". Duration: 3-8 turns.
+
+# Level 3
+
+Binding Spell This spell freezes any object made of metal into one immobile piece. Magical items are allowed two saving throws. Anything from a flail to a coat of plates to a war machine will be affected by this spell. Duration: 1-4 turns.
+
+Control Winds The caster of this spell may change the speed by ± 15 mph, and change the direction by 45°. Duration: 6 turns. Range: 24" radius.
+
+Find Traps As clerical spell. Only traps dangerous to the dragon will be detected.
+
+Hallucinatory Terrain Same as Magic-Users spell. However, water may not be made to appear as land, and vice versa.
+
+Hold Mammal From 1-4 mammals (including men and all humanoids) can be held with this spell. A saving throw is allowed. Range: 12". Duration: 6 turns.
+
+Mesh Similar to a Web, a Mesh created by this spell is roughly twice as strong, and non-inflammable. If used with the Weave Barrier spell, the barrier will last until the Mesh vanishes. Range: 3". Duration: 8 hours.
+
+Negate Enchantment I Any magic item/device may be temporarily rendered useless by this spell. The item must be named, and only one item may be so negated per day. Duration: 2-12 melee rounds. Range: 6".
+
+Protection from Normal Missiles As Magic-Users Spell. A dragon may elect to throw this spell on any combination of creatures that total less than the caster in hit points.
+
+Revelation This spell acts to Dispel Illusions, and allows the user to "You will become irresistible to the opposite sex, but your first born child will murder you."
+
+A curse may be lifted for 8 hours via a bless spell, and indefinite-anything else while using this spell. Range: 12". Roll after each melee round to see if spell has taken effect.
+
+Sticks to Snakes As clerical spell.
+
+Servant Summoning I A dragon has a 10% chance per age level of possessing a summoning stone, allowing the use of this spell. Only EVIL dragons will use this spell except in the greatest peril. From 4-16 of these creatures will appear for 2-12 melee rounds.
+
+Description: These creatures appear as clumsy birds with wings too large for their body. They are jet black, armor class 5, and move 4"/48", with 2-12 hits each. They attack with 2 talons for 1-2 points each, as well as their beak for 1-6 points of damage. These creatures are driven off by strong light, and will not cross water under any circumstances.
+
+Water to Wine A dragon loves good wine. This spell allows the dragon to convert any water (including salt or tainted) to wine valued even by Elves. Amount: 20 gallons per age class.
+
+Wood to Sand 1 cubic foot of wood per age class of the caster may be permanently changed to sand. Living trees and Ents are allowed extra saving throws. Range: 12".
+
+# Level 4
+
+Attack Other Planes When used in conjunction with a See Other Planes spell, this conjuration causes a dragon's breath and spell attacks to affect the plane the dragon is looking into. Range: as applicable by spell or breath attack. Duration: 2 turns.
+
+Call Lightning Same as Druid Spell. The actual bolt is 10 8-sided dice. Frequency: 1 bolt/10 minutes.
+
+Charm Monster Same as Magic Users Spell. Dragons will never use this spell upon each other.
+
+Curse A dragon able to use this spell will typically curse its slayer as its dying act, or its subduer after escape. A dragon can curse any being within sight or memory. The curse will-always come true, but the time at which this will occur can not be specified. No saving throw is allowed the victim. Most curse are designed to first torment, and eventually kill the victim. A typical curse might be, "You will become irresistible to the opposite sex, but your first born child will murder you."
+
+A curse may be lifted for 8 hours via a bless spell, and indefinitely if combined with a permanent spell. One may Wish (Limited included) that the dragon would lift the curse, but this will work only if the dragon is still alive. Two Full Wishes will dispel the curse, as will saying the dragon's name. No other means will negate the curse.
+
+Extension I Same as Magic Users Spell.
+
+Haste Same as Magic Users Spell, except either an area or an individual can be affected.
+
+Non-Detection Same as Illusionists Spell. This spell is not powerful enough to thwart a Seek spell (below), but will double the amount of inaccuracy inherent in that spell. Duration: 8 hours.
+
+Polymorph Self A dragon must be very careful when using this spell, lest it lose its wisdom and name, and be forever trapped in the polymorphed form. If a dragon takes the same shape repeatedly or for long periods of time, there is a 2% chance, per day or fraction, cumulative, that it will be trapped. Silver, Gold, and the Platinum Dragon dragon are not subject to this danger.
+
+Polymorph Others A similar danger exists in the use of this spell upon a dragon. Because of the greater change involved, the chance of entrapment increases to 5% per day or fraction, again cumulative.
+
+Rock to Sand This spell will turn rock into fine sand, weakening and possibly destroying any object struck by it. 1 cubic foot of stone per age level of dragon may so be changed. Range: 12".
+
+Seek Those dragons able to use this spell are among the most feared of all! It allows the dragon to find the direction (within ± 20°) and the distance (within 20%) of any object that the dragon has ever seen or can name. Nothing short of a mind blank or similarly powerful spell will interfere with the functioning of this spell. It may be used repeatedly on the same object to provide better accuracy.
+
+Turn Magic Any pebble, coin, or small mineral object becomes a charm of spell turning via use of this spell. This charm works but once for one creature or object touching it. It acts as a ring of spell turning for this one use. Duration: Until Used, or 1 week maximum. Range: Physical Contact.
+
+Work Weather A limited form of Control Weather, causing one or two of the following to occur at the caster's will:
+
+1) Call any storm within sight to move in any direction at a speed of 30".
+2) Cause gale force winds from any direction.
+3) Turn aside foul weather from the dragon during flight.
+
+# Level 5
+
+Animate Dead Similar to the Magic-Users Spell, but dragon skeletons or that of any mammal can be animated, as well as those of men. Such monsters will have 1/2 of the hit dice of the original creature, and will attack for 1/2 damage. A dragon can animate skeletons from 2-16 hit dice of creatures (1-8 hit dice of skeletons). Range: 6".
+
+Conjure Elemental Same as Magic Users Spell. Elemental strength is 16 dice. Only an air or earth elemental may be summoned, although an air elemental will not turn on the dragon if control is lost. cont. on pg 15
+
+4
