@@ -28431,6 +28431,61 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   PDF 15, Monkish Weapons PDF 25-26,
   Poison PDF 26), then R936 the pure flip.
   WAIT FOR GO.
+  - R935 LANDED (143d91d, mkn, 193 inline,
+  part two of the issue-18 three-round shape):
+  The Dragon issue-18 opener part two, the
+  three-chain round. Three sections: the
+  Sullin New Spells (print 13, PDF 15) -
+  nineteen spells levels 1-6, counts
+  1/2/4/4/2/6, Nature Call through Rust
+  Monster Touch with the editor doctrine;
+  the Eckert Monkish Weapons and the kedo
+  matrix (print 23-24, PDF 25-26); the
+  Coburn Effective Use of Poison (print
+  24, PDF 26). 193 inline (117 consts +
+  59 bools + 17 table cols), 2 tables
+  (mknKedo 9x9 tag Kd - the codes
+  blocked 0, cut 1, dla 2, dra 3, ara 4,
+  ala 5 and the odd dar 6; mknPois 3x8
+  tag Pz sentinel -99, sentinel_census
+  [0,0,0,0,0,1,1,1] for the never-printed
+  poison A unconscious cells), 9
+  examples, 3 table_checks; header
+  rules/mkn.h (prefix mkn verified free
+  at 73145ba - psn is TAKEN, the
+  r410_splice.py identifiers), audit
+  rules/audits/r935_batch.h "R935
+  issue-18 opener part two audit". No
+  data files; the gap 018 check rode
+  0 closed 2 open, the pre-flip shape.
+  Print catches pinned as scanned, noted
+  never silent: the kedo attack list
+  prints 2-8 while claiming eight
+  attacks (attack 1 never prints, the
+  migi-do row appears only in the
+  matrix), the lone dar is a
+  transposition of dra absent from the
+  notes key, the SIX diagonal breaks
+  (only shomen, hidari-men and the
+  front block hold their own defense)
+  with the migi-do and gyaku-do blocked
+  cells crossed, the doubled bowbow at
+  the G.M./North Wind rank, the poison
+  units as scanned (A and B death in
+  turns, C in days, the A stricken week
+  pinned as 7 days, the C one-hour
+  delay pinned as 60 minutes). Census
+  857->858; rverify GREEN 281 mutants 0
+  missed; round-trip 61108 bytes md5
+  341198cc0a1992333358717b6dc97c81,
+  byte-exact at 143d91d. Watch: Sullin
+  New Spells ends level 6 with "cont pg
+  21" but levels 7-9 NEVER printed in
+  TD18 - watch TD 19; the brawling
+  long-term-effects sequel STILL not
+  printing - watch TD 19. Next: R936
+  the pure flip closing BOTH report-018
+  boxes, issue 18 complete. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

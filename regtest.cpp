@@ -637,6 +637,7 @@
 #include "rules/f17.h"  // R933: the Dragon issue-17 box closing round, the eight-chain walk complete
 #include "rules/psy.h"  // R934: the Dragon issue-18 opener part one, the four-chain round
 #include "rules/mkn.h"  // R935: the Dragon issue-18 opener part two, the three-chain round
+#include "rules/f18.h"  // R936: the Dragon issue-18 box closing round, the seven-chain walk complete
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4746,6 +4747,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r936_batch.h"  // R936: R936 Dragon issue-18 closure audit
 #include "rules/audits/r935_batch.h"  // R935: R935 issue-18 opener part two audit
 #include "rules/audits/r934_batch.h"  // R934: R934 issue-18 opener part one audit
 #include "rules/audits/r933_batch.h"  // R933: R933 Dragon issue-17 closure audit

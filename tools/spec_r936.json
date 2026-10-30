@@ -1,0 +1,386 @@
+{
+ "round": 936,
+ "prefix": "f18",
+ "census_before": 858,
+ "title": "The Dragon issue-18 box closing round: the seven-chain walk complete (census 859)",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R935 LANDED (143d91d, mkn, 193 inline,",
+ "prev_record": [
+  "  - R935 LANDED (143d91d, mkn, 193 inline,",
+  "  part two of the issue-18 three-round shape):",
+  "  The Dragon issue-18 opener part two, the",
+  "  three-chain round. Three sections: the",
+  "  Sullin New Spells (print 13, PDF 15) -",
+  "  nineteen spells levels 1-6, counts",
+  "  1/2/4/4/2/6, Nature Call through Rust",
+  "  Monster Touch with the editor doctrine;",
+  "  the Eckert Monkish Weapons and the kedo",
+  "  matrix (print 23-24, PDF 25-26); the",
+  "  Coburn Effective Use of Poison (print",
+  "  24, PDF 26). 193 inline (117 consts +",
+  "  59 bools + 17 table cols), 2 tables",
+  "  (mknKedo 9x9 tag Kd - the codes",
+  "  blocked 0, cut 1, dla 2, dra 3, ara 4,",
+  "  ala 5 and the odd dar 6; mknPois 3x8",
+  "  tag Pz sentinel -99, sentinel_census",
+  "  [0,0,0,0,0,1,1,1] for the never-printed",
+  "  poison A unconscious cells), 9",
+  "  examples, 3 table_checks; header",
+  "  rules/mkn.h (prefix mkn verified free",
+  "  at 73145ba - psn is TAKEN, the",
+  "  r410_splice.py identifiers), audit",
+  "  rules/audits/r935_batch.h \"R935",
+  "  issue-18 opener part two audit\". No",
+  "  data files; the gap 018 check rode",
+  "  0 closed 2 open, the pre-flip shape.",
+  "  Print catches pinned as scanned, noted",
+  "  never silent: the kedo attack list",
+  "  prints 2-8 while claiming eight",
+  "  attacks (attack 1 never prints, the",
+  "  migi-do row appears only in the",
+  "  matrix), the lone dar is a",
+  "  transposition of dra absent from the",
+  "  notes key, the SIX diagonal breaks",
+  "  (only shomen, hidari-men and the",
+  "  front block hold their own defense)",
+  "  with the migi-do and gyaku-do blocked",
+  "  cells crossed, the doubled bowbow at",
+  "  the G.M./North Wind rank, the poison",
+  "  units as scanned (A and B death in",
+  "  turns, C in days, the A stricken week",
+  "  pinned as 7 days, the C one-hour",
+  "  delay pinned as 60 minutes). Census",
+  "  857->858; rverify GREEN 281 mutants 0",
+  "  missed; round-trip 61108 bytes md5",
+  "  341198cc0a1992333358717b6dc97c81,",
+  "  byte-exact at 143d91d. Watch: Sullin",
+  "  New Spells ends level 6 with \"cont pg",
+  "  21\" but levels 7-9 NEVER printed in",
+  "  TD18 - watch TD 19; the brawling",
+  "  long-term-effects sequel STILL not",
+  "  printing - watch TD 19. Next: R936",
+  "  the pure flip closing BOTH report-018",
+  "  boxes, issue 18 complete. WAIT FOR GO."
+ ],
+ "header_file": "rules/f18.h",
+ "include_after": "#include \"rules/mkn.h\"  // R935: the Dragon issue-18 opener part two, the three-chain round",
+ "include_comment": "the Dragon issue-18 box closing round, the seven-chain walk complete",
+ "audit_file": "rules/audits/r936_batch.h",
+ "audit_anchor": "#include \"rules/audits/r935_batch.h\"  // R935: R935 issue-18 opener part two audit",
+ "audit_label": "R936 Dragon issue-18 closure audit",
+ "audit_comment": "THE DRAGON ISSUE-18 CLOSURE ROUND - the pure flip, no new ink. BOTH report-018 boxes close at this single flip - the issue-18 opener chains part one (print 9, 14+19, 19, 31-32: the R934 part one - the Thompson insanity chart and doctrine, the McCloud laws of magic and the Kemble contest, the McAllister chamber of the godgame, the NPC pride, greed and work-quality tables) and the issue-18 opener chains part two (print 13, 23-24, 24: the R935 part two - the Sullin new spells levels one to six, the Eckert monkish weapons and the kedo combat matrix, the Coburn effective use of poison) - 2 closed / 0 open in tools/dragon_gap_report_018.md; the seven-chain walk completes in three rounds (the R934 opener part one carrying four chains, the R935 opener part two carrying three chains, this flip), the second three-round issue shape after issue 17. ISSUES 2-18 ALL CLOSED. Registry ground truth unchanged: 1313 loaded / 1338 base lua / 25 never-load (the R924 re-measure). Watch: the Sullin article ends its level 6 with a cont pg 21 promise but the levels 7-9 continuation NEVER PRINTS in TD18 - the watch rides to TD 19; the brawling long-term-effects sequel promised in issue 11 STILL does not print - watch TD 19.",
+ "gap_report": "tools/dragon_gap_report_018.md",
+ "gap_census": {
+  "closed": 2,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The issue-18 opener chains part one** (print 9,",
+   "to": "- [x] **The issue-18 opener chains part one** (print 9,",
+   "note": "the issue-18 part-one box"
+  },
+  {
+   "from": "- [ ] **The issue-18 opener chains part two** (print 13,",
+   "to": "- [x] **The issue-18 opener chains part two** (print 13,",
+   "note": "the issue-18 part-two box"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-18 box closing round - the seven-chain walk complete, the pure flip",
+  "provenance": "Bookkeeping only, no new ink pinned. The issue-18 walk (the R934 opener part one carrying the four chains - insanity, the laws of magic, the godgame, the NPC tables; the R935 opener part two carrying the three chains - the new spells, the monkish weapons and kedo, the poison; this flip) covered The Dragon Vol. III No. 4 (September 1978), the Curtiss-provided scan voice, single-voice - the mistral transcript of the uploaded Dm18.pdf; no archive.org djvu cross-check exists for issue 18. PRINT FOLIO = PDF PAGE MINUS TWO, verified at the R934 page feet (folios 3, 9, 13, 14, 19, 21, 24 and 31 print at the PDF pages 5, 11, 15, 16, 21, 23, 26 and 33). Registry ground truth unchanged: 1313 loaded / 1338 base lua / 25 never-load (the R924 re-measure). Watch: the Sullin New Spells levels 7-9 (the cont pg 21 promise) NEVER printed in TD18 - watch TD 19; the brawling long-term-effects sequel STILL does not print - watch TD 19.",
+  "sentinel": "No print quirks ride this flip - the as-scanned garbles of the openers (the kedo attack list printing 2-8 with attack 1 never printed and the migi-do row matrix-only, the lone dar transposition, the six kedo diagonal breaks with the crossed migi-do and gyaku-do blocks, the doubled bowbow, the work-quality 03-20 band that never prints, the greed compound bands, the pride 00 percentile cell, the insanity odd 12, the poison A week and C hour conversions) stay pinned in the opener headers where they landed, noted never silent."
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "f18IssueEighteenBoxes",
+   "value": 2,
+   "comment": "both report-018 boxes close at this single flip - the part-one and part-two opener chains (report 018)"
+  },
+  {
+   "name": "f18IssueEighteenChains",
+   "value": 7,
+   "comment": "the issue-18 chain count - four part-one chains (insanity, magic laws, godgame, NPC characteristics) plus three part-two chains (new spells, monkish weapons and kedo, poison) walked across three rounds"
+  },
+  {
+   "name": "f18IssueEighteenRounds",
+   "value": 3,
+   "comment": "the issue-18 round shape - the R934 opener part one, the R935 opener part two, this R936 closing flip, the second three-round issue after issue 17"
+  },
+  {
+   "name": "f18IssueSeventeenClosed",
+   "value": 1,
+   "comment": "issue 17 stands closed since R933"
+  },
+  {
+   "name": "f18IssueSixteenClosed",
+   "value": 1,
+   "comment": "issue 16 stands closed"
+  },
+  {
+   "name": "f18IssueFifteenClosed",
+   "value": 1,
+   "comment": "issue 15 stands closed"
+  },
+  {
+   "name": "f18IssueFourteenClosed",
+   "value": 1,
+   "comment": "issue 14 stands closed"
+  },
+  {
+   "name": "f18IssueThirteenClosed",
+   "value": 1,
+   "comment": "issue 13 stands closed"
+  },
+  {
+   "name": "f18IssueTwelveClosed",
+   "value": 1,
+   "comment": "issue 12 stands closed"
+  },
+  {
+   "name": "f18IssueElevenClosed",
+   "value": 1,
+   "comment": "issue 11 stands closed"
+  },
+  {
+   "name": "f18IssueTenClosed",
+   "value": 1,
+   "comment": "issue 10 stands closed"
+  },
+  {
+   "name": "f18IssueNineClosed",
+   "value": 1,
+   "comment": "issue 9 stands closed"
+  },
+  {
+   "name": "f18IssueEightClosed",
+   "value": 1,
+   "comment": "issue 8 stands closed"
+  },
+  {
+   "name": "f18IssueSevenClosed",
+   "value": 1,
+   "comment": "issue 7 stands closed"
+  },
+  {
+   "name": "f18RegistryLoaded",
+   "value": 1313,
+   "comment": "the registry ground truth - 1313 loaded defs, unchanged from the R924 re-measure"
+  },
+  {
+   "name": "f18RegistryBaseLua",
+   "value": 1338,
+   "comment": "the registry base lua count, 1338, unchanged"
+  },
+  {
+   "name": "f18RegistryNeverLoad",
+   "value": 25,
+   "comment": "the registry never-load count, 25, unchanged"
+  }
+ ],
+ "bools": [
+  {
+   "name": "f18WalkSevenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 7 complete"
+  },
+  {
+   "name": "f18WalkEightComplete",
+   "value": true,
+   "comment": "issue 8 complete"
+  },
+  {
+   "name": "f18WalkNineComplete",
+   "value": true,
+   "comment": "issue 9 complete"
+  },
+  {
+   "name": "f18WalkTenComplete",
+   "value": true,
+   "comment": "issue 10 complete"
+  },
+  {
+   "name": "f18WalkElevenComplete",
+   "value": true,
+   "comment": "issue 11 complete"
+  },
+  {
+   "name": "f18WalkTwelveComplete",
+   "value": true,
+   "comment": "issue 12 complete"
+  },
+  {
+   "name": "f18WalkThirteenComplete",
+   "value": true,
+   "comment": "issue 13 complete"
+  },
+  {
+   "name": "f18WalkFourteenComplete",
+   "value": true,
+   "comment": "issue 14 complete"
+  },
+  {
+   "name": "f18WalkFifteenComplete",
+   "value": true,
+   "comment": "issue 15 complete"
+  },
+  {
+   "name": "f18WalkSixteenComplete",
+   "value": true,
+   "comment": "issue 16 complete"
+  },
+  {
+   "name": "f18WalkSeventeenComplete",
+   "value": true,
+   "comment": "issue 17 complete"
+  },
+  {
+   "name": "f18WalkEighteenComplete",
+   "value": true,
+   "comment": "ISSUE 18 COMPLETE AT THIS FLIP - the walk now holds issues 2 through 18 closed"
+  }
+ ],
+ "tables": [],
+ "header_sections": {
+  "the issue-18 walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "f18IssueEighteenBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueEighteenChains"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueEighteenRounds"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueSeventeenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueSixteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueFifteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueFourteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueThirteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueTwelveClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueElevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueTenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueNineClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueEightClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18IssueSevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f18RegistryLoaded"
+   },
+   {
+    "kind": "const",
+    "name": "f18RegistryBaseLua"
+   },
+   {
+    "kind": "const",
+    "name": "f18RegistryNeverLoad"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkSevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkEightComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkNineComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkTenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkElevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkTwelveComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkThirteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkFourteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkFifteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkSixteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkSeventeenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f18WalkEighteenComplete"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['f18IssueEighteenBoxes']() != 2 or m['f18IssueEighteenChains']() != 7 or m['f18IssueEighteenRounds']() != 3 or m['f18IssueSeventeenClosed']() != 1 or m['f18IssueSevenClosed']() != 1",
+   "note": "the walk census - two issue-18 boxes, seven chains across three rounds, the issue-closed ladder from 17 down to 7 all standing"
+  },
+  {
+   "expr": "m['f18IssueSixteenClosed']() != 1 or m['f18IssueFifteenClosed']() != 1 or m['f18IssueFourteenClosed']() != 1 or m['f18IssueThirteenClosed']() != 1 or m['f18IssueTwelveClosed']() != 1 or m['f18IssueElevenClosed']() != 1 or m['f18IssueTenClosed']() != 1 or m['f18IssueNineClosed']() != 1 or m['f18IssueEightClosed']() != 1",
+   "note": "the earlier reports complete since their own flips, issues 8 through 16 all closed"
+  },
+  {
+   "expr": "m['f18RegistryLoaded']() != 1313 or m['f18RegistryBaseLua']() != 1338 or m['f18RegistryNeverLoad']() != 25 or m['f18WalkEighteenComplete']() != 1 or m['f18WalkSevenComplete']() != 1",
+   "note": "the registry ground truth unchanged from the R924 re-measure - 1313 loaded, 1338 base lua, 25 never-load - and the walk bookends: issue 18 complete at this flip, issue 7 standing complete"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 29
+}

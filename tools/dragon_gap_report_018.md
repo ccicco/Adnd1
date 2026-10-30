@@ -65,11 +65,11 @@ sequel promised in issue 11 STILL does not print
 
 ## Boxes
 
-- [ ] **The issue-18 opener chains part one** (print 9,
+- [x] **The issue-18 opener chains part one** (print 9,
   14+19, 19, 31-32) - the insanity chart and doctrine,
   the six laws of magic, the godgame hazard, the NPC
   pride, greed and work-quality tables
-- [ ] **The issue-18 opener chains part two** (print 13,
+- [x] **The issue-18 opener chains part two** (print 13,
   23-24, 24) - the Sullin new-spell variants, the monkish
   weapons and kedo combat matrix, the poison grid
 
