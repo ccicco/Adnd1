@@ -1,0 +1,405 @@
+{
+ "round": 939,
+ "prefix": "d19",
+ "census_before": 861,
+ "title": "The Dragon issue-19 box closing round: the six-chain walk complete, issues 2-19 all closed (census 862)",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R938 LANDED (9c618bb, sdm, 131 inline,",
+ "prev_record": [
+  "  - R938 LANDED (9c618bb, sdm, 131 inline,",
+  "  part two of the issue-19 three-round",
+  "  shape): The Dragon issue-19 opener",
+  "  part two, the three-chain round. Three",
+  "  sections: the Origins 78 tournament",
+  "  synopsis (Bullinger, print 3-4, PDF",
+  "  5-6) - the Battle for Snurre Hall walk",
+  "  with the triangular, Obmi, the haste",
+  "  turning point and the king only",
+  "  pretending, plus the Blake competitive",
+  "  D&D scoring (print 6, PDF 8) - the",
+  "  (G=R=C) x S = VP victory-point formula",
+  "  as printed, the GenCon X/XI stories and",
+  "  the DM consistency doctrine; the",
+  "  treasure chains - Schroeder Planning",
+  "  Creative Treasures (print 13, PDF 15)",
+  "  and Guritzky Charts for Determining the",
+  "  Location of Treasure (print 25, PDF 27)",
+  "  with the sdmLoc, sdmTrap and sdmGas",
+  "  grids; the Miller Spell Determination",
+  "  for Hostile Magic Users (print 24-25,",
+  "  PDF 26-27) - the die-for-level method",
+  "  and the nine contiguous percentile",
+  "  grids sdmDet1-9, 75 rows. 131 inline",
+  "  (61 consts + 46 bools + 24 table",
+  "  cols), 12 tables all sentinel 0 (no",
+  "  sentinel census - the grids are pure",
+  "  band rows), 10 examples, 5",
+  "  table_checks; header rules/sdm.h",
+  "  (prefix sdm verified free at 9a5a2c5",
+  "  full-repo scan), audit rules/audits/",
+  "  r938_batch.h \"R938 issue-19 opener",
+  "  part two audit\". No data files; the",
+  "  gap 019 check rode 0 closed 2 open,",
+  "  the pre-flip shape. Print catches",
+  "  pinned as scanned, noted never",
+  "  silent: the Smurre-with-an-S",
+  "  continuation stamp inside the Ettins",
+  "  article, the Kuo-Tao/Kuo-Toa spelling",
+  "  cross, the location chart 13-13 pot",
+  "  with the d20 bands 14-15 NEVER",
+  "  assigned, the assassin plus +2 dagger",
+  "  doubled plus, the enchanter list",
+  "  trailing ellipsis, the -01-05 leading",
+  "  dash on the second-level table, the",
+  "  Hold Portal and Time Stop",
+  "  dungeons-only asterisks. Census",
+  "  860->861; rverify GREEN 331 mutants 0",
+  "  missed; round-trip 52109 bytes md5",
+  "  c8760558cd65bab4808bf7919c34dea1,",
+  "  byte-exact at 9c618bb (fresh tarball",
+  "  re-run applied 0 already 5). Next:",
+  "  R939 the pure flip closing BOTH",
+  "  report-019 boxes, issue 19 complete",
+  "  in the third three-round shape.",
+  "  WAIT FOR GO."
+ ],
+ "header_file": "rules/d19.h",
+ "include_after": "#include \"rules/sdm.h\"  // R938: the Dragon issue-19 opener part two, the three-chain round",
+ "include_comment": "the Dragon issue-19 box closing round, the six-chain walk complete",
+ "audit_file": "rules/audits/r939_batch.h",
+ "audit_anchor": "#include \"rules/audits/r938_batch.h\"  // R938: R938 issue-19 opener part two audit",
+ "audit_label": "R939 Dragon issue-19 closure audit",
+ "audit_comment": "THE DRAGON ISSUE-19 BOX CLOSING ROUND - the pure flip, no new ink. Both report-019 boxes flip at this single round: the issue-19 opener chains part one (the R937 wish-spell doctrine, the mythos of Australia pantheon, the systematic magic fields) and part two (the R938 Origins 78 tourney and victory-point scoring, the creative treasures and location/trap/gas charts, the hostile magic-user spell determination grids). Six chains across three rounds, the third three-round issue shape after 17 and 18. The bookkeeping mirrors the f17 and f18 closers: the boxes, chains and rounds consts, the issue-closed consts 7 through 18, the walk-complete bools and the unchanged registry ground truth.",
+ "gap_report": "tools/dragon_gap_report_019.md",
+ "gap_census": {
+  "closed": 2,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The issue-19 opener chains part one** (print 12-13,",
+   "to": "- [x] **The issue-19 opener chains part one** (print 12-13,",
+   "note": "the issue-19 part-one box"
+  },
+  {
+   "from": "- [ ] **The issue-19 opener chains part two** (print 3+6, 13,",
+   "to": "- [x] **The issue-19 opener chains part two** (print 3+6, 13,",
+   "note": "the issue-19 part-two box"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-19 box closing round - the six-chain walk complete, issues 2 through 19 all closed",
+  "provenance": "The pure flip of the issue-19 three-round shape - no new ink pinned, both report-019 boxes closed. The issue-19 openers stand at R937 (dws: the wish-spell doctrine, the mythos of Australia, the systematic magic fields) and R938 (sdm: the Origins 78 tourney and scoring, the treasure chains, the spell determination grids), all pinned from The Dragon Vol. III No. 5 (October 1978), the Curtiss-provided Dm19.pdf scan voice.",
+  "sentinel": "No new print catches at this flip - the issue-19 print quirks all rode the two opener records: the doubled Gate, the Champion 7th Wawalag line, the Mimi armor class 8, the Smurre continuation stamp, the Kuo-Tao spelling cross, the unassigned 14-15 location bands, the -01-05 leading dash and the dungeons-only asterisks. Both inherited watches - the Sullin levels 7-9 and the brawling sequel - stayed empty through issue 19 and ride to TD 20."
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "d19IssueNineteenBoxes",
+   "value": 2,
+   "comment": "both report-019 boxes close at this single flip - the part-one and part-two opener boxes"
+  },
+  {
+   "name": "d19IssueNineteenChains",
+   "value": 6,
+   "comment": "the issue-19 chain count - three part-one chains (wishes, mythos of Australia, systematic magic) and three part-two chains (the Origins 78 tourney and scoring, the treasure chains, the hostile MU spell determination)"
+  },
+  {
+   "name": "d19IssueNineteenRounds",
+   "value": 3,
+   "comment": "the issue-19 round shape - the R937 opener part one, the R938 opener part two and this R939 pure flip, the third three-round issue shape"
+  },
+  {
+   "name": "d19IssueSevenClosed",
+   "value": 1,
+   "comment": "issue 7 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueEightClosed",
+   "value": 1,
+   "comment": "issue 8 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueNineClosed",
+   "value": 1,
+   "comment": "issue 9 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueTenClosed",
+   "value": 1,
+   "comment": "issue 10 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueElevenClosed",
+   "value": 1,
+   "comment": "issue 11 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueTwelveClosed",
+   "value": 1,
+   "comment": "issue 12 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueThirteenClosed",
+   "value": 1,
+   "comment": "issue 13 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueFourteenClosed",
+   "value": 1,
+   "comment": "issue 14 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueFifteenClosed",
+   "value": 1,
+   "comment": "issue 15 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueSixteenClosed",
+   "value": 1,
+   "comment": "issue 16 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueSeventeenClosed",
+   "value": 1,
+   "comment": "issue 17 stands closed since its own flip"
+  },
+  {
+   "name": "d19IssueEighteenClosed",
+   "value": 1,
+   "comment": "issue 18 stands closed since its own flip"
+  },
+  {
+   "name": "d19RegistryLoaded",
+   "value": 1313,
+   "comment": "the registry ground truth - 1313 loaded defs, unchanged from the R924 re-measure"
+  },
+  {
+   "name": "d19RegistryBaseLua",
+   "value": 1338,
+   "comment": "the registry base lua count, 1338, unchanged"
+  },
+  {
+   "name": "d19RegistryNeverLoad",
+   "value": 25,
+   "comment": "the registry never-load count, 25, unchanged"
+  }
+ ],
+ "bools": [
+  {
+   "name": "d19WalkSevenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 7 complete"
+  },
+  {
+   "name": "d19WalkEightComplete",
+   "value": true,
+   "comment": "issue 8 complete"
+  },
+  {
+   "name": "d19WalkNineComplete",
+   "value": true,
+   "comment": "issue 9 complete"
+  },
+  {
+   "name": "d19WalkTenComplete",
+   "value": true,
+   "comment": "issue 10 complete"
+  },
+  {
+   "name": "d19WalkElevenComplete",
+   "value": true,
+   "comment": "issue 11 complete"
+  },
+  {
+   "name": "d19WalkTwelveComplete",
+   "value": true,
+   "comment": "issue 12 complete"
+  },
+  {
+   "name": "d19WalkThirteenComplete",
+   "value": true,
+   "comment": "issue 13 complete"
+  },
+  {
+   "name": "d19WalkFourteenComplete",
+   "value": true,
+   "comment": "issue 14 complete"
+  },
+  {
+   "name": "d19WalkFifteenComplete",
+   "value": true,
+   "comment": "issue 15 complete"
+  },
+  {
+   "name": "d19WalkSixteenComplete",
+   "value": true,
+   "comment": "issue 16 complete"
+  },
+  {
+   "name": "d19WalkSeventeenComplete",
+   "value": true,
+   "comment": "issue 17 complete"
+  },
+  {
+   "name": "d19WalkEighteenComplete",
+   "value": true,
+   "comment": "issue 18 complete"
+  },
+  {
+   "name": "d19WalkNineteenComplete",
+   "value": true,
+   "comment": "ISSUE 19 COMPLETE AT THIS FLIP - the walk now holds issues 2 through 19"
+  }
+ ],
+ "tables": [],
+ "header_sections": {
+  "the issue-19 closure bookkeeping": [
+   {
+    "kind": "const",
+    "name": "d19IssueNineteenBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueNineteenChains"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueNineteenRounds"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueSevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueEightClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueNineClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueTenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueElevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueTwelveClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueThirteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueFourteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueFifteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueSixteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueSeventeenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19IssueEighteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d19RegistryLoaded"
+   },
+   {
+    "kind": "const",
+    "name": "d19RegistryBaseLua"
+   },
+   {
+    "kind": "const",
+    "name": "d19RegistryNeverLoad"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkSevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkEightComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkNineComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkTenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkElevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkTwelveComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkThirteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkFourteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkFifteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkSixteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkSeventeenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkEighteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d19WalkNineteenComplete"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['d19IssueNineteenBoxes']() != 2 or m['d19IssueNineteenChains']() != 6 or m['d19IssueNineteenRounds']() != 3 or m['d19IssueEighteenClosed']() != 1 or m['d19IssueSeventeenClosed']() != 1 or m['d19IssueSevenClosed']() != 1",
+   "note": "the issue-19 census - two boxes, six chains, three rounds, the third three-round shape, issues 7 through 18 standing closed"
+  },
+  {
+   "expr": "m['d19IssueSixteenClosed']() != 1 or m['d19IssueFifteenClosed']() != 1 or m['d19IssueFourteenClosed']() != 1 or m['d19IssueThirteenClosed']() != 1 or m['d19IssueTwelveClosed']() != 1 or m['d19IssueElevenClosed']() != 1 or m['d19IssueTenClosed']() != 1 or m['d19IssueNineClosed']() != 1 or m['d19IssueEightClosed']() != 1",
+   "note": "the mid-walk closed set - issues 8 through 16 all stand closed at this flip"
+  },
+  {
+   "expr": "m['d19RegistryLoaded']() != 1313 or m['d19RegistryBaseLua']() != 1338 or m['d19RegistryNeverLoad']() != 25 or m['d19WalkNineteenComplete']() != 1 or m['d19WalkSevenComplete']() != 1 or m['d19WalkEighteenComplete']() != 1",
+   "note": "the registry ground truth unchanged 1313/1338/25 and the walk complete through issue 19, issues 2 through 7 and 18 included"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 31
+}

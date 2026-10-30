@@ -53,10 +53,10 @@ in TD19 - both watches ride to TD 20.
 
 ## Boxes
 
-- [ ] **The issue-19 opener chains part one** (print 12-13,
+- [x] **The issue-19 opener chains part one** (print 12-13,
   14-15+26, 18-19) - the wish-spell doctrine, the mythos
   of Australia pantheon, the systematic magic fields
-- [ ] **The issue-19 opener chains part two** (print 3+6, 13,
+- [x] **The issue-19 opener chains part two** (print 3+6, 13,
   24-25, 25) - the Origins 78 tourney and victory-point
   scoring, the creative treasures and location charts,
   the hostile magic-user spell determination tables

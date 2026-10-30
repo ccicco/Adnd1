@@ -28592,6 +28592,62 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   print 25, Spell Determination print
   24-25), then R939 the pure flip.
   WAIT FOR GO.
+  - R938 LANDED (9c618bb, sdm, 131 inline,
+  part two of the issue-19 three-round
+  shape): The Dragon issue-19 opener
+  part two, the three-chain round. Three
+  sections: the Origins 78 tournament
+  synopsis (Bullinger, print 3-4, PDF
+  5-6) - the Battle for Snurre Hall walk
+  with the triangular, Obmi, the haste
+  turning point and the king only
+  pretending, plus the Blake competitive
+  D&D scoring (print 6, PDF 8) - the
+  (G=R=C) x S = VP victory-point formula
+  as printed, the GenCon X/XI stories and
+  the DM consistency doctrine; the
+  treasure chains - Schroeder Planning
+  Creative Treasures (print 13, PDF 15)
+  and Guritzky Charts for Determining the
+  Location of Treasure (print 25, PDF 27)
+  with the sdmLoc, sdmTrap and sdmGas
+  grids; the Miller Spell Determination
+  for Hostile Magic Users (print 24-25,
+  PDF 26-27) - the die-for-level method
+  and the nine contiguous percentile
+  grids sdmDet1-9, 75 rows. 131 inline
+  (61 consts + 46 bools + 24 table
+  cols), 12 tables all sentinel 0 (no
+  sentinel census - the grids are pure
+  band rows), 10 examples, 5
+  table_checks; header rules/sdm.h
+  (prefix sdm verified free at 9a5a2c5
+  full-repo scan), audit rules/audits/
+  r938_batch.h "R938 issue-19 opener
+  part two audit". No data files; the
+  gap 019 check rode 0 closed 2 open,
+  the pre-flip shape. Print catches
+  pinned as scanned, noted never
+  silent: the Smurre-with-an-S
+  continuation stamp inside the Ettins
+  article, the Kuo-Tao/Kuo-Toa spelling
+  cross, the location chart 13-13 pot
+  with the d20 bands 14-15 NEVER
+  assigned, the assassin plus +2 dagger
+  doubled plus, the enchanter list
+  trailing ellipsis, the -01-05 leading
+  dash on the second-level table, the
+  Hold Portal and Time Stop
+  dungeons-only asterisks. Census
+  860->861; rverify GREEN 331 mutants 0
+  missed; round-trip 52109 bytes md5
+  c8760558cd65bab4808bf7919c34dea1,
+  byte-exact at 9c618bb (fresh tarball
+  re-run applied 0 already 5). Next:
+  R939 the pure flip closing BOTH
+  report-019 boxes, issue 19 complete
+  in the third three-round shape.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
