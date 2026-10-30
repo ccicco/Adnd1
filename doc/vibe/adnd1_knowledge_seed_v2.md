@@ -27922,6 +27922,38 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   extracted, garble handling same as R920, flips
   report 013 box 1), then R924 pure flip closing
   box 2. WAIT FOR GO.
+  - R923 LANDED (bb30045, issue-13 opener part two,
+  prefix kmy, 62 inline): The Japanese Mythos by
+  Jerome Arkenberg folios 11-15, the direct
+  sibling of the R920 Persian chain - the 27-row
+  god grid (9 Shinto + 7 Luck + 11 Buddhist,
+  sixteen see-below magic cells on the -1
+  sentinel), the 4-row creature grid (Yuki-Onna
+  see-below magic on sentinel), the 14-row hero
+  grid plus the 14-row ability table (seven STR
+  fraction garbles
+  1899/1850/1865/1860/1875/1880/1845 riding
+  sentinel, Kiyomori 18 and Light/Shade 17 clean;
+  the two Sth garbles pinned 5 noted; Light/Shade
+  and Aizen bar-garble AC cells on sentinel), 6
+  treasures, 11 prose-only Other Shinto gods
+  riding transcript. NEW PRECEDENT: the jpn
+  prefix was TAKEN (rules/jpn.h at R861) - the
+  free-prefix scan had been wrong; kmy re-
+  verified free and used. Ryujin AC -1 collides
+  with the -1 sentinel - pinned as kmyRyujinAc
+  const with the grid cell riding sentinel, the
+  R920 Yig-split precedent, noted. Mid-run
+  hiccups: prev_record must be a LIST of lines
+  (engine reads str as one line); Curtiss first
+  ran the typo'd ./rn 922 handoff (no-op,
+  preflight correctly refused, nothing landed).
+  Census 845->846; rverify GREEN 392 mutants 0
+  missed; round-trip 37230 bytes md5
+  85fee7134dbd88656a2a0c1582f4c0f3. Report 013
+  box 1 flipped [x], 1 closed 1 open. Next: R924
+  pure flip closing box 2 (2 closed 0 open,
+  issue-13 walk complete). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
