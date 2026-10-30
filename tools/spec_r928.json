@@ -1,0 +1,371 @@
+{
+ "round": 928,
+ "title": "The Dragon issue-15 box closing round: the five-chain walk complete",
+ "prefix": "f15",
+ "census_before": 850,
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R927 LANDED (de62f3e, drm, 222 inline, 9",
+ "prev_record": [
+  "  - R927 LANDED (de62f3e, drm, 222 inline, 9",
+  "  tables, the issue-15 opener): all five usable",
+  "  chains of The Dragon Vol. III No. 1 (June 1978)",
+  "  in ONE round - chain one Dragon Magic",
+  "  (Benveniste, folio 3 cont. 13): five dragon",
+  "  spell lists 11/12/13/13/10 (59 total), the",
+  "  secret-name rule (one service demand, all works",
+  "  dispelled), the polymorph entrapment 2%/5% per",
+  "  day cumulative with the metallic dragons",
+  "  immune, the Seek 20 degrees/20 percent, the",
+  "  summoning-stone birds (AC 5, MV 4/48, hp 2-12,",
+  "  talons 1-2, beak 1-6, strong light, never cross",
+  "  water, evil only); chain two the Wandering",
+  "  Monster (Ward, folio 7): the 20-entry pre-",
+  "  rolled fourth-level list, appearing/hp/AC/move",
+  "  pinned in the table, damage lines riding the",
+  "  transcript, the will o wisp AC -8 genuine",
+  "  print; chain three Weather in the Wilderness",
+  "  (Tillery, folios 14-15): terrain matrix",
+  "  (category conversion 1-5 noted), the",
+  "  description percentages, the six-disease table,",
+  "  the seasonal planner; chain four the Pits",
+  "  tables (Morenoff, folio 5): four band tables,",
+  "  the 40% poison asterisk rule, the freed-monster",
+  "  reactions; chain five the Settlements Random",
+  "  Events (Crossby, folio 5): 16 events by season,",
+  "  the 00 pinned as 100. No full-res visual check",
+  "  exists for this issue (the Curtiss-provided",
+  "  scan is a text-side mistral transcript, no page",
+  "  renders) so garbled cells pin SENTINEL never",
+  "  guessed: the occupied-pit animal lower bound",
+  "  (the shared-35 print), the ranger upper bound",
+  "  (the 91-85 print), the winter/spring/summer",
+  "  unusual seasonal faces (non-contiguous, riding",
+  "  the transcript); the disease-immunity percent-",
+  "  position garble (%5) has clean digits and pins",
+  "  5. Report 015 authored pre-flip, 5 boxes 0",
+  "  closed 5 open (all flip at R928); 36",
+  "  transcripts landed at extract/dragon/015. KEY",
+  "  FOLIO FACT: print folio = PDF page MINUS TWO",
+  "  again (verified at the page feet plus TOC",
+  "  alignments); the TOC prints two SWAPPED folios",
+  "  (Monty Haul listed 7 sits at 6, the Wandering",
+  "  Monster listed 6 sits at 7). Scoped out: the",
+  "  Green Magician (fiction, concludes in TD 16),",
+  "  Stellar Conquest tactics and Boot Hill events",
+  "  (another-system), the Sorcerer's Scroll scale",
+  "  essay (prose, IDEAS USABLE: outdoor scale",
+  "  serves range only, never area of effect), Benwa",
+  "  and Monty satire, editorial, Fantasy Forge,",
+  "  comics, centerfold, ads (IDEAS USABLE: the",
+  "  first print announcements of GAMMA WORLD at",
+  "  Origins 78 and the AD&D PH at Gen Con XI; the",
+  "  Quag Keep plug). The brawling sequel STILL not",
+  "  printing (watch TD 16). Census 849->850;",
+  "  rverify GREEN 604 mutants 0 missed; round-trip",
+  "  256228 bytes md5",
+  "  490ab1c7333034521f843f5de5ea2a71. Next: R928",
+  "  pure flip closing all five report-015 boxes.",
+  "  WAIT FOR GO.",
+  ""
+ ],
+ "include_after": "#include \"rules/drm.h\"  // R927: the Dragon issue-15 opener, Dragon Magic and the four rider chains",
+ "include_comment": "the Dragon issue-15 box closing round, the five-chain walk complete",
+ "header_file": "rules/f15.h",
+ "audit_file": "rules/audits/r928_batch.h",
+ "audit_label": "R928 Dragon issue-15 closure audit",
+ "audit_anchor": "#include \"rules/audits/r927_batch.h\"  // R927: R927 issue-15 opener audit",
+ "audit_comment": "THE DRAGON ISSUE-15 CLOSURE ROUND - the pure flip, no new ink. ALL FIVE report-015 boxes close at this single flip - Dragon Magic (print 3, cont. 13), the Wandering Monster fourth-level list (print 7), Weather in the Wilderness (print 14-15), the Pits tables (print 5) and the Random Events Table for Settlements (print 5) - 5 closed / 0 open in tools/dragon_gap_report_015.md; the five-chain walk completes in two rounds (the R927 opener carrying all five chains, this flip), the issue-14 two-round pattern. Issues 2-15 all closed.",
+ "gap_report": "tools/dragon_gap_report_015.md",
+ "gap_census": {
+  "closed": 5,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **Dragon Magic, the Benveniste dragon spell\n  system** (print 3, cont. 13) - the issue-15 opener\n  round, chain one",
+   "to": "- [x] **Dragon Magic, the Benveniste dragon spell\n  system** (print 3, cont. 13) - the issue-15 opener\n  round, chain one",
+   "note": "the issue-15 chain-one box"
+  },
+  {
+   "from": "- [ ] **The Wandering Monster fourth-level list**\n  (print 7) - the issue-15 opener round, chain two",
+   "to": "- [x] **The Wandering Monster fourth-level list**\n  (print 7) - the issue-15 opener round, chain two",
+   "note": "the issue-15 chain-two box"
+  },
+  {
+   "from": "- [ ] **Weather in the Wilderness** (print 14-15) -\n  the issue-15 opener round, chain three",
+   "to": "- [x] **Weather in the Wilderness** (print 14-15) -\n  the issue-15 opener round, chain three",
+   "note": "the issue-15 chain-three box"
+  },
+  {
+   "from": "- [ ] **The Pits tables** (print 5) - the issue-15\n  opener round, chain four",
+   "to": "- [x] **The Pits tables** (print 5) - the issue-15\n  opener round, chain four",
+   "note": "the issue-15 chain-four box"
+  },
+  {
+   "from": "- [ ] **The Random Events Table for Settlements**\n  (print 5) - the issue-15 opener round, chain five",
+   "to": "- [x] **The Random Events Table for Settlements**\n  (print 5) - the issue-15 opener round, chain five",
+   "note": "the issue-15 chain-five box"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-15 box closing round - the five-chain walk complete, the pure flip",
+  "provenance": "Bookkeeping only, no new ink pinned. The issue-15 walk (the R927 opener carrying all five chains, this flip) covered The Dragon Vol. III No. 1 (June 1978), the Curtiss-provided scan voice, single-voice - the mistral transcript of the uploaded Dm15.pdf; no archive.org djvu cross-check exists for issue 15, the accessory items end at issue 14. Print folio = PDF page minus two, verified at the R927 page feet; the TOC prints two swapped folios. Registry ground truth unchanged: 1313 loaded / 1338 base lua / 25 never-load (the R924 re-measure). Watch: the brawling long-term-effects sequel STILL does not print (watch TD 16).",
+  "sentinel": "No print quirks ride this flip - the garbled cells of the opener (the shared-35 occupied-pit bound, the ranger 91-85 upper bound, the non-contiguous seasonal unusual faces) pin sentinel in the R927 layer and ride the transcript, noted never silent; this round flips the five report boxes and touches no ink."
+ },
+ "switches": [],
+ "chains": [],
+ "file_patches": [],
+ "data_files": [],
+ "consts": [
+  {
+   "name": "f15IssueFifteenBoxes",
+   "value": 5,
+   "comment": "the issue-15 gap report - five boxes, all closed at this single flip"
+  },
+  {
+   "name": "f15IssueFifteenChains",
+   "value": 5,
+   "comment": "the issue-15 walk - five engine chains in one opener round"
+  },
+  {
+   "name": "f15IssueFifteenRounds",
+   "value": 2,
+   "comment": "the issue-15 walk completes in two rounds - the R927 opener, this flip"
+  },
+  {
+   "name": "f15IssueFourteenClosed",
+   "value": 1,
+   "comment": "the issue-14 report closed at R926"
+  },
+  {
+   "name": "f15IssueThirteenClosed",
+   "value": 1,
+   "comment": "the issue-13 report closed at R924"
+  },
+  {
+   "name": "f15IssueTwelveClosed",
+   "value": 1,
+   "comment": "the issue-12 report closed at R922"
+  },
+  {
+   "name": "f15IssueElevenClosed",
+   "value": 1,
+   "comment": "the issue-11 report closed at R920"
+  },
+  {
+   "name": "f15IssueTenClosed",
+   "value": 1,
+   "comment": "the issue-10 report closed at R918"
+  },
+  {
+   "name": "f15IssueNineClosed",
+   "value": 1,
+   "comment": "the issue-9 report closed at R916"
+  },
+  {
+   "name": "f15IssueEightClosed",
+   "value": 1,
+   "comment": "the issue-8 report closed at R913"
+  },
+  {
+   "name": "f15IssueSevenClosed",
+   "value": 1,
+   "comment": "the issue-7 report closed at R911"
+  },
+  {
+   "name": "f15IssueSixClosed",
+   "value": 1,
+   "comment": "the issue-6 report closed at R909"
+  },
+  {
+   "name": "f15RegistryLoaded",
+   "value": 1313,
+   "comment": "the registry ground truth carried from the R924 re-measure - 1313 loaded"
+  },
+  {
+   "name": "f15RegistryBaseLua",
+   "value": 1338,
+   "comment": "the registry ground truth - 1338 base lua"
+  },
+  {
+   "name": "f15RegistryNeverLoad",
+   "value": 25,
+   "comment": "the registry ground truth - 25 never-load"
+  }
+ ],
+ "bools": [
+  {
+   "name": "f15WalkSixComplete",
+   "value": true,
+   "comment": "the issue-6 walk complete"
+  },
+  {
+   "name": "f15WalkSevenComplete",
+   "value": true,
+   "comment": "the issue-7 walk complete"
+  },
+  {
+   "name": "f15WalkEightComplete",
+   "value": true,
+   "comment": "the issue-8 walk complete"
+  },
+  {
+   "name": "f15WalkNineComplete",
+   "value": true,
+   "comment": "the issue-9 walk complete"
+  },
+  {
+   "name": "f15WalkTenComplete",
+   "value": true,
+   "comment": "the issue-10 walk complete"
+  },
+  {
+   "name": "f15WalkElevenComplete",
+   "value": true,
+   "comment": "the issue-11 walk complete"
+  },
+  {
+   "name": "f15WalkTwelveComplete",
+   "value": true,
+   "comment": "the issue-12 walk complete"
+  },
+  {
+   "name": "f15WalkThirteenComplete",
+   "value": true,
+   "comment": "the issue-13 walk complete"
+  },
+  {
+   "name": "f15WalkFourteenComplete",
+   "value": true,
+   "comment": "the issue-14 walk complete"
+  },
+  {
+   "name": "f15WalkFifteenComplete",
+   "value": true,
+   "comment": "the issue-15 walk complete at this flip"
+  }
+ ],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['f15IssueFifteenBoxes']() != 5 or m['f15IssueFifteenChains']() != 5 or m['f15IssueFifteenRounds']() != 2 or m['f15IssueFourteenClosed']() != 1 or m['f15IssueThirteenClosed']() != 1",
+   "note": "the walk census - five issue-15 boxes, five chains across two rounds, the issue-14 and issue-13 reports complete"
+  },
+  {
+   "expr": "m['f15IssueTwelveClosed']() != 1 or m['f15IssueElevenClosed']() != 1 or m['f15IssueTenClosed']() != 1 or m['f15IssueNineClosed']() != 1 or m['f15IssueEightClosed']() != 1 or m['f15IssueSevenClosed']() != 1 or m['f15IssueSixClosed']() != 1 or m['f15WalkFifteenComplete']() != 1 or m['f15WalkFourteenComplete']() != 1",
+   "note": "the earlier reports complete since R918, R916, R913, R911 and R909, the issue-15 and issue-14 walks complete"
+  },
+  {
+   "expr": "m['f15RegistryLoaded']() != 1313 or m['f15RegistryBaseLua']() != 1338 or m['f15RegistryNeverLoad']() != 25 or m['f15WalkSixComplete']() != 1 or m['f15WalkTenComplete']() != 1 or m['f15WalkThirteenComplete']() != 1",
+   "note": "the registry ground truth unchanged from the R924 re-measure - 1313 loaded, 1338 base lua, 25 never-load"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the issue-15 walk bookkeeping": [
+   {
+    "kind": "const",
+    "name": "f15IssueFifteenBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueFifteenChains"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueFifteenRounds"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueFourteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueThirteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueTwelveClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueElevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueTenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueNineClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueEightClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueSevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f15IssueSixClosed"
+   },
+   {
+    "kind": "const",
+    "name": "f15RegistryLoaded"
+   },
+   {
+    "kind": "const",
+    "name": "f15RegistryBaseLua"
+   },
+   {
+    "kind": "const",
+    "name": "f15RegistryNeverLoad"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkSixComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkSevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkEightComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkNineComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkTenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkElevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkTwelveComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkThirteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkFourteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "f15WalkFifteenComplete"
+   }
+  ]
+ },
+ "inline_count": 25
+}

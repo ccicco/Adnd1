@@ -65,16 +65,16 @@ Magician concludes.
 
 ## Boxes
 
-- [ ] **Dragon Magic, the Benveniste dragon spell
+- [x] **Dragon Magic, the Benveniste dragon spell
   system** (print 3, cont. 13) - the issue-15 opener
   round, chain one
-- [ ] **The Wandering Monster fourth-level list**
+- [x] **The Wandering Monster fourth-level list**
   (print 7) - the issue-15 opener round, chain two
-- [ ] **Weather in the Wilderness** (print 14-15) -
+- [x] **Weather in the Wilderness** (print 14-15) -
   the issue-15 opener round, chain three
-- [ ] **The Pits tables** (print 5) - the issue-15
+- [x] **The Pits tables** (print 5) - the issue-15
   opener round, chain four
-- [ ] **The Random Events Table for Settlements**
+- [x] **The Random Events Table for Settlements**
   (print 5) - the issue-15 opener round, chain five
 
 5 boxes, 0 closed, 5 open at the R927 authoring.

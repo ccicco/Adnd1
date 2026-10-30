@@ -28036,6 +28036,67 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   (R924 re-measure). Watch: TD 15 brawling sequel
   still not printing.
 
+  - R927 LANDED (de62f3e, drm, 222 inline, 9
+  tables, the issue-15 opener): all five usable
+  chains of The Dragon Vol. III No. 1 (June 1978)
+  in ONE round - chain one Dragon Magic
+  (Benveniste, folio 3 cont. 13): five dragon
+  spell lists 11/12/13/13/10 (59 total), the
+  secret-name rule (one service demand, all works
+  dispelled), the polymorph entrapment 2%/5% per
+  day cumulative with the metallic dragons
+  immune, the Seek 20 degrees/20 percent, the
+  summoning-stone birds (AC 5, MV 4/48, hp 2-12,
+  talons 1-2, beak 1-6, strong light, never cross
+  water, evil only); chain two the Wandering
+  Monster (Ward, folio 7): the 20-entry pre-
+  rolled fourth-level list, appearing/hp/AC/move
+  pinned in the table, damage lines riding the
+  transcript, the will o wisp AC -8 genuine
+  print; chain three Weather in the Wilderness
+  (Tillery, folios 14-15): terrain matrix
+  (category conversion 1-5 noted), the
+  description percentages, the six-disease table,
+  the seasonal planner; chain four the Pits
+  tables (Morenoff, folio 5): four band tables,
+  the 40% poison asterisk rule, the freed-monster
+  reactions; chain five the Settlements Random
+  Events (Crossby, folio 5): 16 events by season,
+  the 00 pinned as 100. No full-res visual check
+  exists for this issue (the Curtiss-provided
+  scan is a text-side mistral transcript, no page
+  renders) so garbled cells pin SENTINEL never
+  guessed: the occupied-pit animal lower bound
+  (the shared-35 print), the ranger upper bound
+  (the 91-85 print), the winter/spring/summer
+  unusual seasonal faces (non-contiguous, riding
+  the transcript); the disease-immunity percent-
+  position garble (%5) has clean digits and pins
+  5. Report 015 authored pre-flip, 5 boxes 0
+  closed 5 open (all flip at R928); 36
+  transcripts landed at extract/dragon/015. KEY
+  FOLIO FACT: print folio = PDF page MINUS TWO
+  again (verified at the page feet plus TOC
+  alignments); the TOC prints two SWAPPED folios
+  (Monty Haul listed 7 sits at 6, the Wandering
+  Monster listed 6 sits at 7). Scoped out: the
+  Green Magician (fiction, concludes in TD 16),
+  Stellar Conquest tactics and Boot Hill events
+  (another-system), the Sorcerer's Scroll scale
+  essay (prose, IDEAS USABLE: outdoor scale
+  serves range only, never area of effect), Benwa
+  and Monty satire, editorial, Fantasy Forge,
+  comics, centerfold, ads (IDEAS USABLE: the
+  first print announcements of GAMMA WORLD at
+  Origins 78 and the AD&D PH at Gen Con XI; the
+  Quag Keep plug). The brawling sequel STILL not
+  printing (watch TD 16). Census 849->850;
+  rverify GREEN 604 mutants 0 missed; round-trip
+  256228 bytes md5
+  490ab1c7333034521f843f5de5ea2a71. Next: R928
+  pure flip closing all five report-015 boxes.
+  WAIT FOR GO.
+
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
