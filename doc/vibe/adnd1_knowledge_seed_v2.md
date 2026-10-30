@@ -28123,6 +28123,47 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   Magician concludes. Next: the TD 16 section
   breakdown. WAIT FOR GO.
 
+  - R929 LANDED (cc6503b, nin, 184 inline, 8
+  tables): The Dragon issue-16 opener round, the
+  two-chain walk opened. Both engine-relevant
+  chains in ONE round: chain one the Near Eastern
+  Mythos (print 4-6, PDF 6-8) - the Arkenberg
+  pantheon (16 gods), the 8 hero/king stat and
+  ability grids (Gilgamesh, Enkidu, Lugulbanda,
+  Ziusudra, Krt, Dn'il, 'Aqht, the Maiden),
+  Humbaba and the scorpion men, the five
+  artifacts, 20 other deities; chain two The
+  Ultimate NPC: Ninja (print 7-10, PDF 9-12) -
+  the Price class: strict neutrality with the 20
+  percent same-alignment chance rolled once,
+  languages Int-6, night vision 30/60, the level
+  cap 16, the six-type poison system, the 17-row
+  progression grid (save bands 15/12/8/3 +
+  W/D/T/E draws), the race bonus table, the 17x7
+  thieving grid, the 17x12 assassination
+  probability and hiring grid (costs in half-K
+  units), the special-device gear. 184 inline
+  (101 consts + 30 bools + 53 table cols).
+  Garbles pinned AS SCANNED: Enkidu Str 1895 and
+  Aqht Str 1875 (18-slash-percentile class) pin
+  sentinel; as-a-normal-man ACs pin sentinel;
+  assassination costs 1006/1518/2012 K vs the
+  1-to-512 doubling pattern as scanned; the
+  assassination grid header prints 11 victim
+  bands but rows print 10 values - columns pinned
+  in printed order, alignment rides the
+  transcript; thieving hide 70/60 at L4/L5 vs the
+  +5 drift as scanned. Gap report 016 authored
+  with 2 boxes open; 40 transcripts at
+  extract/dragon/016/pNNN_full.txt; watch: the
+  brawling long-term-effects sequel STILL not
+  printing (watch TD 17); NO TD-17 teaser on the
+  back cover. Census 851->852; rverify GREEN 756
+  mutants 0 missed; round-trip 280184 bytes md5
+  619721a6ca1882fd283995c44057b7e6. Next: the
+  R930 f16 flip (both report-016 boxes). WAIT FOR
+  GO.
+
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

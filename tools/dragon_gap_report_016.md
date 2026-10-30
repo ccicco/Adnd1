@@ -53,9 +53,9 @@ cover (the MicroGames Olympica ad).
 
 ## Boxes
 
-- [ ] **The Near Eastern Mythos** (print 4-6) - the
+- [x] **The Near Eastern Mythos** (print 4-6) - the
   issue-16 opener round, chain one
-- [ ] **The Ultimate NPC: Ninja** (print 7-10) - the
+- [x] **The Ultimate NPC: Ninja** (print 7-10) - the
   issue-16 opener round, chain two
 
 2 boxes, 0 closed, 2 open at the R929 authoring.
