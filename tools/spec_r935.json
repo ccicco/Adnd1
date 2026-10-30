@@ -1,0 +1,1945 @@
+{
+ "round": 935,
+ "prefix": "mkn",
+ "census_before": 857,
+ "title": "The Dragon issue-18 opener part two - the Sullin new spells, the monkish weapons and kedo combat, the effective use of poison: the three-chain round",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R934 LANDED (73145ba, psy, 126 inline,",
+ "prev_record": [
+  "  - R934 LANDED (73145ba, psy, 126 inline,",
+  "  part one of the issue-18 three-round",
+  "  shape): The Dragon issue-18 opener part",
+  "  one, the four-chain round. TD18 = Vol.",
+  "  III No. 4, Sept 1978, 36 PDF pages;",
+  "  PRINT FOLIO = PDF MINUS TWO verified at",
+  "  eight feet. Scope per Curtiss (2026-10-30):",
+  "  Magic Laws AND Godgame both IN, Campaign",
+  "  Mixing DROPPED. Four sections (print 9,",
+  "  14 + 19, 19, 31-32): the insanity chart",
+  "  and doctrine (d20 save + level vs the",
+  "  d12 chart, 9 wisdom x 6 intelligence",
+  "  bands, the odd 12 at Wis 9-12 x Int",
+  "  9-12 pinned as printed, schizoid revert,",
+  "  suicide attempt), the laws of magic and",
+  "  the contest, the chamber of the godgame",
+  "  (print 19 shared with Rumbles and",
+  "  Magic-Theory), the NPC pride, greed and",
+  "  work quality. 126 inline (50 consts +",
+  "  61 bools + 15 table cols), 3 tables",
+  "  (psySave 9x6 tag Ps, psyPride 9x6 tag",
+  "  Pp, psyGreed 11x3 tag Pg, sentinel",
+  "  -99), 8 examples, 3 table_checks; header",
+  "  rules/psy.h (prefix psy verified free",
+  "  at 528873f - npc taken, 15 cpp hits),",
+  "  audit rules/audits/r934_batch.h \"R934",
+  "  issue-18 opener part one audit\".",
+  "  data_files 37: the pre-flip gap report",
+  "  018 (2 boxes open, 0 closed; the",
+  "  gap_report field rode the existing 017",
+  "  as the R931-class no-op check, 2 closed",
+  "  0 open) plus all 36 issue-18",
+  "  transcripts at extract/dragon/018/.",
+  "  Print catches pinned as scanned, noted",
+  "  never silent: the work-quality table",
+  "  jumps 01-02 to 21-99 (03-20 never",
+  "  prints), the greed compound bands",
+  "  (96-00+4 etc.), pride 00 = percentile",
+  "  100, the kedo attack list printed 2-8",
+  "  (attack 1 missing). Census 856->857;",
+  "  rverify GREEN 252 mutants 0 missed;",
+  "  round-trip 222947 bytes md5",
+  "  cf95ea29ebc41aef46e508f8967eb5b0,",
+  "  byte-exact at 73145ba. Watch: Sullin",
+  "  New Spells ends level 6 with \"cont pg",
+  "  21\" but levels 7-9 NEVER printed in",
+  "  TD18 - watch TD 19; the brawling",
+  "  long-term-effects sequel STILL not",
+  "  printing - watch TD 19. Next: R935 the",
+  "  issue-18 opener part two (New Spells",
+  "  PDF 15, Monkish Weapons PDF 25-26,",
+  "  Poison PDF 26), then R936 the pure flip.",
+  "  WAIT FOR GO."
+ ],
+ "header_file": "rules/mkn.h",
+ "include_after": "#include \"rules/psy.h\"  // R934: the Dragon issue-18 opener part one, the four-chain round",
+ "include_comment": "the Dragon issue-18 opener part two, the three-chain round",
+ "audit_file": "rules/audits/r935_batch.h",
+ "audit_anchor": "#include \"rules/audits/r934_batch.h\"  // R934: R934 issue-18 opener part one audit",
+ "audit_label": "R935 issue-18 opener part two audit",
+ "audit_comment": "THE DRAGON ISSUE-18 OPENER PART TWO - the three variant chains. CHAIN ONE, New Spells in D&D by Paul Sullin (print 13, PDF 15): nineteen researched spells across levels one to six, the per-level counts 1/2/4/4/2/6 - Nature Call (the 1-10 summons, the minus-two hit die, the eagle messenger, the 1-4 turn arrival, no underground), Magic Missile II (one +2 or two +1 arrows per five levels beyond third), Moon Runes (the one-year shine and fade), Flamebolt (3-24 living, 3-30 undead, the 5-foot ignition, the level plus 1-3 fires), Mystic Rope (100 feet, one point per four feet, the one-foot regeneration), Pit of Flame (the 20x20x5 pit, half level rounded up, the 3-dice fifth-level example, the interrogation float), Word of Warding (usable while meled, one melee turn, the third-level ceiling after immediate use), Force Field (the ten-foot sphere that will not block magic), the Extend family (levels 3/4/5 at 50 percent, Extend III doubling the range), Shatterray (5-30, 20 structure points, the 12-dice and 60-point caps), Wall of Water (50x20, the five-hit-dice floor), Beam of Blasting (one per Gold Piece to 50, doubling at twelfth level, no living matter), Conjure Djinn/Efreet (the 24-hour service, the efreet banish-or-attack), Density Control (gas to steel, armor class one, hands as swords), Combine I (seven spell levels or three spells), Call Spirit (two questions, 25 percent floor, night only, 20 feet), Rust Monster Touch - plus the editor doctrine (the careful approval, the every-spell-needs-a-loophole rule). The list ends level 6 with cont pg 21 - levels 7-9 NEVER printed in TD18, the watch riding to TD 19. CHAIN TWO, Monkish Weapons and Monk vs Monk Combat by Garry Eckert (print 23-24, PDF 25-26): the kedo combat matrix - nine attacker moves down, nine defender moves across, the outcome codes blocked 0, cut 1, dla 2, dra 3, ara 4, ala 5 and the odd dar 6 - with the print catches pinned as scanned: the numbered attack list prints 2-8 while claiming eight attacks (attack 1 never prints, presumably the migi-do that appears only in the matrix), the dar at the migi-men vs hidari-men crossing is a transposition of dra absent from the printed notes key, and the migi-men, migi-do, gyaku-do, kote, hidari-kote and tsuki rows cut against their own defense (the six diagonal breaks) while the migi-do and gyaku-do blocked cells print crossed; the weapon doctrine - the live blade, shimia and bokutois swords, the seven-foot kyudo bow at 40-50 pounds with the 90-pound expert draw and 39-inch arrows fired standing, crouching or on horseback, the naginata and its three cuts, the seven-to-nine-foot yari, the six-foot rokushakubo, the kama sickle, the ton-fa or tui-fa in pairs, the silk-or-chain nunchaku, the sai - and the seven-rank progression from the four-weapon Novice to the 90-pound North Wind bow. CHAIN THREE, Effective Use of Poison by Bill Coburn (print 24, PDF 26): the A/B/C grid - the A potion (arsenic, hemlock, 80 percent death in 2-8 turns, stricken one week), the B gas and darts (neurotoxic, 50 percent in 4-16 turns, stricken 1-3 days, unconscious in 30 minutes for 1-4 days), the C creatures (hemotoxic, 10 percent in 1-4 days, stricken 1-10 days, unconscious in one hour for 2-8 days), the stricken halves (Strength, Dexterity, Constitution, Movement), the armor saving-throw ladder +2/+1/0/-2 with the no-internal-effect rule, and the Neutralize Poison cancellation. The pin IS the conversion noted never silent; the as-scanned quirks ride the comments and the transcripts.",
+ "gap_report": "tools/dragon_gap_report_018.md",
+ "gap_census": {
+  "closed": 0,
+  "open": 2
+ },
+ "gap_flips": [],
+ "banner": {
+  "title": "The Dragon issue-18 opener part two - the Sullin new spells, the monkish weapons and kedo combat, and the effective use of poison: the three-chain round",
+  "provenance": "Pinned from The Dragon Vol. III No. 4 (September 1978), the Curtiss-provided scan voice (single voice: the issue-18 source is the uploaded Dm18.pdf with its mistral-ocr transcript; no archive.org djvu cross-check exists for issue 18). PRINT FOLIO = PDF PAGE MINUS TWO, verified at the page feet in the R934 intake (folios 3, 9, 13, 14, 19, 21, 24 and 31 print at the PDF pages 5, 11, 15, 16, 21, 23, 26 and 33); this round pins print 13 (PDF 15), print 23-24 (PDF 25-26) and print 24 (PDF 26).",
+  "sentinel": "Print quirks pinned AS SCANNED, noted never silent: the kedo attack list prints 2-8 while claiming eight attacks - attack 1 never prints, and the migi-do row appears only in the matrix (presumably the missing attack 1); the kedo notes key prints dla, dra, ara, ala, x and the dash but the matrix carries one dar - a transposition of dra at the migi-men vs hidari-men crossing, pinned as printed; the migi-men, migi-do, gyaku-do, kote, hidari-kote and tsuki diagonal cells print as cuts (six diagonal breaks, pinned as printed) and the migi-do and gyaku-do blocked cells print crossed against each other; the G.M./North Wind rank prints the doubled word bowbow; the poison units print as scanned - the A and B death in turns, the C death in days, the A stricken week pinned as 7 days and the C one-hour delay pinned as 60 minutes; the Sullin spell list ends level 6 with cont pg 21 but the levels 7-9 NEVER printed in TD18 - the watch rides to TD 19; no numeric cell garbles beyond that, so the only sentinel cells are the three never-printed poison A unconscious entries."
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "mknSullinSpells",
+   "value": 19,
+   "comment": "the total Sullin new-spell count - nineteen spells across levels one to six (print 13, PDF 15)"
+  },
+  {
+   "name": "mknSpellsLvl1",
+   "value": 1,
+   "comment": "the level-one spell count - Nature Call alone (print 13, PDF 15)"
+  },
+  {
+   "name": "mknSpellsLvl2",
+   "value": 2,
+   "comment": "the level-two spell count - Magic Missile II and Moon Runes (print 13, PDF 15)"
+  },
+  {
+   "name": "mknSpellsLvl3",
+   "value": 4,
+   "comment": "the level-three spell count - Flamebolt, Mystic Rope, Pit of Flame, Word of Warding (print 13, PDF 15)"
+  },
+  {
+   "name": "mknSpellsLvl4",
+   "value": 4,
+   "comment": "the level-four spell count - Force Field, Extend I, Shatterray, Wall of Water (print 13, PDF 15)"
+  },
+  {
+   "name": "mknSpellsLvl5",
+   "value": 2,
+   "comment": "the level-five spell count - Extend II and Beam of Blasting (print 13, PDF 15)"
+  },
+  {
+   "name": "mknSpellsLvl6",
+   "value": 6,
+   "comment": "the level-six spell count - Conjure Djinn/Efreet, Density Control, Extend III, Combine I, Call Spirit, Rust Monster Touch (print 13, PDF 15)"
+  },
+  {
+   "name": "mknNcrSummonMin",
+   "value": 1,
+   "comment": "Nature Call summons small mammals and birds - the minimum of the 1-10 (print 13, PDF 15)"
+  },
+  {
+   "name": "mknNcrSummonMax",
+   "value": 10,
+   "comment": "Nature Call summon maximum - 1-10 small mammals and/or birds up to squirrels or small hawks (print 13, PDF 15)"
+  },
+  {
+   "name": "mknNcrHitDiePenalty",
+   "value": 2,
+   "comment": "Nature Call subtracts two from the hit die of more intelligent creatures (print 13, PDF 15)"
+  },
+  {
+   "name": "mknNcrMessengerDays",
+   "value": 3,
+   "comment": "Nature Call messenger - one eagle-sized creature carries to any point within three days travel (print 13, PDF 15)"
+  },
+  {
+   "name": "mknNcrArrivalTurnsMin",
+   "value": 1,
+   "comment": "Nature Call arrival - the summoned creatures take 1-4 melee turns to arrive, the minimum (print 13, PDF 15)"
+  },
+  {
+   "name": "mknNcrArrivalTurnsMax",
+   "value": 4,
+   "comment": "Nature Call arrival maximum - 1-4 melee turns (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMmiPlusTwoArrows",
+   "value": 1,
+   "comment": "Magic Missile II fires one +2 arrow (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMmiPlusOneArrows",
+   "value": 2,
+   "comment": "Magic Missile II fires two +1 arrows (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMmiBonusEveryLevels",
+   "value": 5,
+   "comment": "Magic Missile II adds a like amount for every fifth level advanced beyond third (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMmiBeyondLevel",
+   "value": 3,
+   "comment": "Magic Missile II progression base - the beyond-third level (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMreMaxDurationYears",
+   "value": 1,
+   "comment": "Moon Runes duration - one year maximum (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFlbLivingDice",
+   "value": 3,
+   "comment": "Flamebolt damage to living beings - 3-24 points, the dice count (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFlbLivingDieSides",
+   "value": 8,
+   "comment": "Flamebolt living damage - 3-24, the d8 sides (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFlbUndeadDice",
+   "value": 3,
+   "comment": "Flamebolt damage to undead - 3-30 points, the dice count (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFlbUndeadDieSides",
+   "value": 10,
+   "comment": "Flamebolt undead damage - 3-30, the d10 sides (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFlbIgniteRadiusFeet",
+   "value": 5,
+   "comment": "Flamebolt ignites flammables within five feet of the impact point (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFlbRangeFeet",
+   "value": 240,
+   "comment": "Flamebolt range - 240 feet (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFlbFiresBonusMin",
+   "value": 1,
+   "comment": "Flamebolt fires the level of the caster plus 1-3 times - the bonus minimum (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFlbFiresBonusMax",
+   "value": 3,
+   "comment": "Flamebolt fires the level plus 1-3 times - the bonus maximum (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMroLengthFeet",
+   "value": 100,
+   "comment": "Mystic Rope - a magical rope up to 100 feet long (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMroHpPerFeet",
+   "value": 4,
+   "comment": "Mystic Rope takes one point per four feet of length (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMroRegenFeetPerTurn",
+   "value": 1,
+   "comment": "Mystic Rope regenerates one foot per melee turn (print 13, PDF 15)"
+  },
+  {
+   "name": "mknPofWidthFeet",
+   "value": 20,
+   "comment": "Pit of Flame - the conjured pit is 20 x 20 x 5 feet, the width (print 13, PDF 15)"
+  },
+  {
+   "name": "mknPofLengthFeet",
+   "value": 20,
+   "comment": "Pit of Flame - the pit length, 20 feet (print 13, PDF 15)"
+  },
+  {
+   "name": "mknPofDepthFeet",
+   "value": 5,
+   "comment": "Pit of Flame - the pit depth, five feet (print 13, PDF 15)"
+  },
+  {
+   "name": "mknPofDurationTurns",
+   "value": 3,
+   "comment": "Pit of Flame duration - three turns (print 13, PDF 15)"
+  },
+  {
+   "name": "mknPofFifthLevelDice",
+   "value": 3,
+   "comment": "Pit of Flame - a fifth level pit does 3 dice per melee turn, the half-level rounded up example (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWowDurationMeleeTurns",
+   "value": 1,
+   "comment": "Word of Warding duration - one melee turn (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWowImmediateMaxSpellLevel",
+   "value": 3,
+   "comment": "Word of Warding used off-initiative - the speaker may use no spells higher than third level when his initiative comes again (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFfdDiameterFeet",
+   "value": 10,
+   "comment": "Force Field - a spherical field ten feet across (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFfdRangeFeet",
+   "value": 60,
+   "comment": "Force Field range - 60 feet (print 13, PDF 15)"
+  },
+  {
+   "name": "mknExtOneMaxSpellLevel",
+   "value": 3,
+   "comment": "Extend I extends the range of 1st-3rd level spells by 50 percent (print 13, PDF 15)"
+  },
+  {
+   "name": "mknExtOneRangePct",
+   "value": 50,
+   "comment": "Extend I range extension - 50 percent (print 13, PDF 15)"
+  },
+  {
+   "name": "mknShdDamageDice",
+   "value": 5,
+   "comment": "Shatterray damage - 5-30 points of impact, the dice count (print 13, PDF 15)"
+  },
+  {
+   "name": "mknShdDamageDieSides",
+   "value": 6,
+   "comment": "Shatterray damage - 5-30, the d6 sides (print 13, PDF 15)"
+  },
+  {
+   "name": "mknShdStructurePoints",
+   "value": 20,
+   "comment": "Shatterray - structures such as walls and buildings suffer 20 structure points as per Chainmail (print 13, PDF 15)"
+  },
+  {
+   "name": "mknShdBonusBeyondLevel",
+   "value": 7,
+   "comment": "Shatterray adds one damage die for every level the caster progresses beyond seventh (print 13, PDF 15)"
+  },
+  {
+   "name": "mknShdMaxDamageDice",
+   "value": 12,
+   "comment": "Shatterray damage caps at a maximum of 12 dice (print 13, PDF 15)"
+  },
+  {
+   "name": "mknShdStructBonusPerLevel",
+   "value": 5,
+   "comment": "Shatterray adds five structural damage points per level beyond seventh (print 13, PDF 15)"
+  },
+  {
+   "name": "mknShdMaxStructPoints",
+   "value": 60,
+   "comment": "Shatterray structural damage caps at 60 points (print 13, PDF 15)"
+  },
+  {
+   "name": "mknShdRangeFeet",
+   "value": 120,
+   "comment": "Shatterray range - 120 feet (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWwdLengthFeet",
+   "value": 50,
+   "comment": "Wall of Water - a wall up to 50 x 20 feet, the length (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWwdHeightFeet",
+   "value": 20,
+   "comment": "Wall of Water - the wall height, 20 feet (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWwdBreakDice",
+   "value": 5,
+   "comment": "Wall of Water - flaming creatures take 5-30 points when breaking through, the dice count (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWwdBreakDieSides",
+   "value": 6,
+   "comment": "Wall of Water break-through damage - 5-30, the d6 sides (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWwdBlocksBelowHd",
+   "value": 5,
+   "comment": "Wall of Water prevents creatures with fewer than five hit dice from passing through (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWwdRangeFeet",
+   "value": 30,
+   "comment": "Wall of Water range - 30 feet (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWwdDurationHours",
+   "value": 1,
+   "comment": "Wall of Water duration - one hour (print 13, PDF 15)"
+  },
+  {
+   "name": "mknExtTwoMaxSpellLevel",
+   "value": 4,
+   "comment": "Extend II - as Extend I but applies to fourth level spells as well (print 13, PDF 15)"
+  },
+  {
+   "name": "mknBbbBlastDiameterFeet",
+   "value": 30,
+   "comment": "Beam of Blasting - the blast area is 30 feet across (print 13, PDF 15)"
+  },
+  {
+   "name": "mknBbbDmgPerGp",
+   "value": 1,
+   "comment": "Beam of Blasting does one point of damage per Gold Piece weight of matter transmuted (print 13, PDF 15)"
+  },
+  {
+   "name": "mknBbbMaxDamage",
+   "value": 50,
+   "comment": "Beam of Blasting damage caps at 50 points maximum (print 13, PDF 15)"
+  },
+  {
+   "name": "mknBbbBonusEveryLevels",
+   "value": 3,
+   "comment": "Beam of Blasting adds a like amount for every three levels the magic-user progresses beyond ninth (print 13, PDF 15)"
+  },
+  {
+   "name": "mknBbbBeyondLevel",
+   "value": 9,
+   "comment": "Beam of Blasting progression base - the beyond-ninth level (print 13, PDF 15)"
+  },
+  {
+   "name": "mknBbbTwelfthDmgPerGp",
+   "value": 2,
+   "comment": "Beam of Blasting - a twelfth level caster does 2 points per Gold Piece (print 13, PDF 15)"
+  },
+  {
+   "name": "mknBbbRangeFeet",
+   "value": 200,
+   "comment": "Beam of Blasting range - 200 feet (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCdeServiceHours",
+   "value": 24,
+   "comment": "Conjure Djinn/Efreet - the conjured djinn or efreet serves for 24 hours (print 13, PDF 15)"
+  },
+  {
+   "name": "mknDcoDurationTurns",
+   "value": 3,
+   "comment": "Density Control duration - three turns (print 13, PDF 15)"
+  },
+  {
+   "name": "mknDcoMaxDensityAc",
+   "value": 1,
+   "comment": "Density Control - at maximum density the caster is armor class one and his hands strike as swords (print 13, PDF 15)"
+  },
+  {
+   "name": "mknExtThreeMaxSpellLevel",
+   "value": 5,
+   "comment": "Extend III - as Extend II but applies to fifth level spells (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCmbMaxSpellLevels",
+   "value": 7,
+   "comment": "Combine I - spells combine in any combination not exceeding seven spell levels (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCmbMaxSpells",
+   "value": 3,
+   "comment": "Combine I - three spells maximum (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCspQuestions",
+   "value": 2,
+   "comment": "Call Spirit - the shade of a deceased person may be asked two questions (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCspMinChancePct",
+   "value": 25,
+   "comment": "Call Spirit - the chance of the ghost knowing an answer should never be less than 25 percent (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCspRemainsWithinFeet",
+   "value": 20,
+   "comment": "Call Spirit - the body, bones or other remains must be within 20 feet (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMonkRanks",
+   "value": 7,
+   "comment": "the monk rank progression count - Novice, Initiate, Disciple, Immaculate, Master, Grand Master, G.M./North Wind (print 23-24, PDF 25-26)"
+  },
+  {
+   "name": "mknMonkWeapons",
+   "value": 11,
+   "comment": "the distinct monkish weapons described - the live blade, shimia, bokutois, the kyudo bow, naginata, yari, rokushakubo, kama, ton-fa/tui-fa, nunchaku, sai (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKedoMoves",
+   "value": 9,
+   "comment": "the kedo combat matrix rows - nine attacker moves from shomen to the front block (print 24, PDF 26)"
+  },
+  {
+   "name": "mknKedoDefenses",
+   "value": 9,
+   "comment": "the kedo matrix columns - the nine defender moves sh, h.m., m.m., m.d., g.d., k, h.k., t, b (print 24, PDF 26)"
+  },
+  {
+   "name": "mknKedoAttacksClaimed",
+   "value": 8,
+   "comment": "the article claims eight different attacks are used in kedo (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKedoAttacksPrinted",
+   "value": 7,
+   "comment": "the numbered attack list prints 2-8 - seven entries, attack 1 never prints, pinned as scanned (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKedoCodeBlocked",
+   "value": 0,
+   "comment": "the kedo matrix code 0 - the cut is blocked, printed as a dash (print 24, PDF 26)"
+  },
+  {
+   "name": "mknKedoCodeCut",
+   "value": 1,
+   "comment": "the kedo matrix code 1 - x, the cut is made (print 24, PDF 26)"
+  },
+  {
+   "name": "mknKedoCodeDla",
+   "value": 2,
+   "comment": "the kedo matrix code 2 - dla, the defender left arm is cut (print 24, PDF 26)"
+  },
+  {
+   "name": "mknKedoCodeDra",
+   "value": 3,
+   "comment": "the kedo matrix code 3 - dra, the defender right arm is cut (print 24, PDF 26)"
+  },
+  {
+   "name": "mknKedoCodeAra",
+   "value": 4,
+   "comment": "the kedo matrix code 4 - ara, the attacker right arm is cut (print 24, PDF 26)"
+  },
+  {
+   "name": "mknKedoCodeAla",
+   "value": 5,
+   "comment": "the kedo matrix code 5 - ala, the attacker left arm is cut (print 24, PDF 26)"
+  },
+  {
+   "name": "mknKedoCodeDar",
+   "value": 6,
+   "comment": "the kedo matrix code 6 - the odd dar at the migi-men vs hidari-men crossing, a print transposition of dra, pinned as printed and noted never silent; dar appears in the grid but NOT in the printed notes key (print 24, PDF 26)"
+  },
+  {
+   "name": "mknKyudoBowFeet",
+   "value": 7,
+   "comment": "the Japanese bow was about seven feet long, the art known as Kyudo (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKyudoThickMinInches",
+   "value": 1,
+   "comment": "the kyudo bow is between one and two inches thick, the minimum (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKyudoThickMaxInches",
+   "value": 2,
+   "comment": "the kyudo bow thickness maximum, two inches (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKyudoDrawLbMin",
+   "value": 40,
+   "comment": "the kyudo draw was a 40 to 50-pound pull, the minimum (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKyudoDrawLbMax",
+   "value": 50,
+   "comment": "the kyudo draw maximum, the 50-pound pull (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKyudoExpertDrawLb",
+   "value": 90,
+   "comment": "an expert can draw up to a 90-pound pull - the G.M./North Wind bow (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKyudoArrowInches",
+   "value": 39,
+   "comment": "the kyudo arrows are 39 inches in length (print 23, PDF 25)"
+  },
+  {
+   "name": "mknNaginataBasicCuts",
+   "value": 3,
+   "comment": "the naginata curved-bladed spear - the three basic cuts, waterwheel, windmill and butterfly (print 23, PDF 25)"
+  },
+  {
+   "name": "mknYariMinFeet",
+   "value": 7,
+   "comment": "the yari straight-bladed spear is between seven and nine feet, the minimum (print 23, PDF 25)"
+  },
+  {
+   "name": "mknYariMaxFeet",
+   "value": 9,
+   "comment": "the yari length maximum, nine feet (print 23, PDF 25)"
+  },
+  {
+   "name": "mknRokFeet",
+   "value": 6,
+   "comment": "the rokushakubo - the six-foot staff (print 23, PDF 25)"
+  },
+  {
+   "name": "mknRokDiameterMinInches",
+   "value": 1,
+   "comment": "the rokushakubo diameter is one to two inches, the minimum (print 23, PDF 25)"
+  },
+  {
+   "name": "mknRokDiameterMaxInches",
+   "value": 2,
+   "comment": "the rokushakubo diameter maximum, two inches (print 23, PDF 25)"
+  },
+  {
+   "name": "mknTonfaMinInches",
+   "value": 15,
+   "comment": "the ton-fa or tui-fa is a tapered hardwood billet between 15 and 20 inches, the minimum (print 23, PDF 25)"
+  },
+  {
+   "name": "mknTonfaMaxInches",
+   "value": 20,
+   "comment": "the ton-fa length maximum, 20 inches (print 23, PDF 25)"
+  },
+  {
+   "name": "mknTonfaHandleInches",
+   "value": 6,
+   "comment": "the ton-fa side-handle is set at a right angle about six inches down from the thicker end (print 23, PDF 25)"
+  },
+  {
+   "name": "mknSaiMinInches",
+   "value": 15,
+   "comment": "the sai short sword is about 15 to 20 inches in length, the minimum (print 23, PDF 25)"
+  },
+  {
+   "name": "mknSaiMaxInches",
+   "value": 20,
+   "comment": "the sai length maximum, 20 inches (print 23, PDF 25)"
+  },
+  {
+   "name": "mknRankNoviceWeapons",
+   "value": 4,
+   "comment": "the Novice can use the naginata, yari, kama and the sai - four weapons (print 23-24, PDF 25-26)"
+  },
+  {
+   "name": "mknRankInitiateWeapons",
+   "value": 2,
+   "comment": "the Initiate can use the shimia and the bokutois - two weapons (print 23-24, PDF 25-26)"
+  },
+  {
+   "name": "mknRankDiscipleWeapons",
+   "value": 1,
+   "comment": "the Disciple can use the live blade - one weapon (print 24, PDF 26)"
+  },
+  {
+   "name": "mknRankImmaculateWeapons",
+   "value": 2,
+   "comment": "the Immaculate can use the rokushakubo and the ton-fa or tui-fa - two weapons (print 24, PDF 26)"
+  },
+  {
+   "name": "mknRankMasterWeapons",
+   "value": 1,
+   "comment": "the Master can use the nunchaku - one weapon (print 24, PDF 26)"
+  },
+  {
+   "name": "mknRankGrandMasterWeapons",
+   "value": 1,
+   "comment": "the Grand Master can use the 7-foot bow with the 40-50 lb pull - one weapon (print 24, PDF 26)"
+  },
+  {
+   "name": "mknRankNorthWindWeapons",
+   "value": 1,
+   "comment": "the G.M./North Wind can use the 90 lb pull bow - one weapon, printed as the doubled bowbow, pinned as scanned (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisCodes",
+   "value": 3,
+   "comment": "the poison code count - A, B and C (print 24, PDF 26)"
+  },
+  {
+   "name": "mknStrickenStats",
+   "value": 4,
+   "comment": "the stricken stat count - Strength, Dexterity, Constitution and Movement (print 24, PDF 26)"
+  },
+  {
+   "name": "mknStrickenDivisor",
+   "value": 2,
+   "comment": "a stricken player has Strength, Dexterity, Constitution and Movement at one half (print 24, PDF 26)"
+  },
+  {
+   "name": "mknArmorPlate",
+   "value": 2,
+   "comment": "the armor saving-throw adjustment - plate plus 2 (print 24, PDF 26)"
+  },
+  {
+   "name": "mknArmorChain",
+   "value": 1,
+   "comment": "the armor saving-throw adjustment - chainmail plus 1 (print 24, PDF 26)"
+  },
+  {
+   "name": "mknArmorLeather",
+   "value": 0,
+   "comment": "the armor saving-throw adjustment - leather 0 (print 24, PDF 26)"
+  },
+  {
+   "name": "mknArmorNone",
+   "value": -2,
+   "comment": "the armor saving-throw adjustment - no armor minus 2 (print 24, PDF 26)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "mknNcrConfusesStupidMonsters",
+   "value": true,
+   "comment": "Nature Call - the feinting rushes confuse stupid monsters (print 13, PDF 15)"
+  },
+  {
+   "name": "mknNcrRefusesFearedFoes",
+   "value": true,
+   "comment": "Nature Call - the creatures may not be forced into attacks on monsters they would normally flee, the undead, demons and the like (print 13, PDF 15)"
+  },
+  {
+   "name": "mknNcrEagleMessenger",
+   "value": true,
+   "comment": "Nature Call - one creature as large as an eagle may carry an object or message (print 13, PDF 15)"
+  },
+  {
+   "name": "mknNcrNoUnderground",
+   "value": true,
+   "comment": "Nature Call - the spell may not be used underground (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMreSetToShineOrFade",
+   "value": true,
+   "comment": "Moon Runes - the letters may be set to shine or fade under certain conditions or after a preset time (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMroImmuneNonMagical",
+   "value": true,
+   "comment": "Mystic Rope - immune to all non-magical forces (print 13, PDF 15)"
+  },
+  {
+   "name": "mknMroUntyingOnlyByConjurer",
+   "value": true,
+   "comment": "Mystic Rope - the independent movement makes untying impossible for anyone but the conjurer (print 13, PDF 15)"
+  },
+  {
+   "name": "mknPofInterrogationFloats",
+   "value": true,
+   "comment": "Pit of Flame - the interrogation use floats the person just above the surface until he tells an untruth (print 13, PDF 15)"
+  },
+  {
+   "name": "mknPofDamageHalfLevelRoundedUp",
+   "value": true,
+   "comment": "Pit of Flame - the damage is half the caster level rounded up (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWowUsableWhileMeled",
+   "value": true,
+   "comment": "Word of Warding - one of the only spells usable while the speaker is meled (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWowDeflectsOneWeapon",
+   "value": true,
+   "comment": "Word of Warding - deflects any one weapon from its intended course toward the speaker (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFfdBlocksMagic",
+   "value": false,
+   "comment": "Force Field - similar to a cube of force EXCEPT that it will not block magic, the pin IS the conversion noted never silent (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFfdMovesOnlyWithCasterInside",
+   "value": true,
+   "comment": "Force Field - cast around any object but it will not move unless the caster is inside it (print 13, PDF 15)"
+  },
+  {
+   "name": "mknFfdDurationPerLevelTurns",
+   "value": true,
+   "comment": "Force Field - duration is the level of the caster in turns (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWwdBlocksNormalFire",
+   "value": true,
+   "comment": "Wall of Water - normal fire cannot pass through the wall (print 13, PDF 15)"
+  },
+  {
+   "name": "mknWwdBlocksMissileFire",
+   "value": true,
+   "comment": "Wall of Water - the swirling currents block missile fire (print 13, PDF 15)"
+  },
+  {
+   "name": "mknBbbNoLivingMatter",
+   "value": true,
+   "comment": "Beam of Blasting - will not transmute living matter (print 13, PDF 15)"
+  },
+  {
+   "name": "mknBbbHeldOrWornNoSave",
+   "value": true,
+   "comment": "Beam of Blasting - if the object transmuted is held or worn there is no save for the holder, otherwise the save halves the damage (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCdeDjinnVanishAtEnd",
+   "value": true,
+   "comment": "Conjure Djinn/Efreet - at the end of the 24 hours the djinn vanish (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCdeEfreetBanishOrAttack",
+   "value": true,
+   "comment": "Conjure Djinn/Efreet - efreets must be forcibly banished by the reversal of the spell or attack the summoner (print 13, PDF 15)"
+  },
+  {
+   "name": "mknDcoGasToSteel",
+   "value": true,
+   "comment": "Density Control - the body density alters within a range extending from gas to steel (print 13, PDF 15)"
+  },
+  {
+   "name": "mknDcoHandsStrikeAsSwords",
+   "value": true,
+   "comment": "Density Control - at maximum density the hands strike as swords (print 13, PDF 15)"
+  },
+  {
+   "name": "mknDcoItemsInContactChange",
+   "value": true,
+   "comment": "Density Control - any items in contact with the body change also (print 13, PDF 15)"
+  },
+  {
+   "name": "mknDcoNoSolidWeaponAtMinDensity",
+   "value": true,
+   "comment": "Density Control - at minimum density no solid weapon can affect him (print 13, PDF 15)"
+  },
+  {
+   "name": "mknExtThreeDoublesRange",
+   "value": true,
+   "comment": "Extend III - as Extend II but doubles the range (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCmbDurationAsShortest",
+   "value": true,
+   "comment": "Combine I - duration is that of the shortest spell combined (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCspNightOnly",
+   "value": true,
+   "comment": "Call Spirit - may only be performed at night, the spirits dispelled by sunlight (print 13, PDF 15)"
+  },
+  {
+   "name": "mknCspNameMustBeKnown",
+   "value": true,
+   "comment": "Call Spirit - the name of the deceased must be known (print 13, PDF 15)"
+  },
+  {
+   "name": "mknRmtAsRustMonster",
+   "value": true,
+   "comment": "Rust Monster Touch - affects all ferrous metal touched by the caster as if touched by a rust monster (print 13, PDF 15)"
+  },
+  {
+   "name": "mknSullinEditorApprovalRequired",
+   "value": true,
+   "comment": "the editor note - a DM must carefully consider each new spell before approval, they are NOT recommended for general absorption willy-nilly (print 13, PDF 15)"
+  },
+  {
+   "name": "mknSullinEverySpellNeedsLoophole",
+   "value": true,
+   "comment": "the editor note - every spell should have a loophole, some other spell or power that will negate it (print 13, PDF 15)"
+  },
+  {
+   "name": "mknSullinResearchAnyLevel",
+   "value": true,
+   "comment": "the author introduction - any level may research, even a low-level type (print 13, PDF 15)"
+  },
+  {
+   "name": "mknKedoAttackOneMissing",
+   "value": true,
+   "comment": "the attack list prints 2-8 while claiming eight attacks - attack 1 never prints, the gap flagged as scanned (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKedoMigiDoMatrixOnly",
+   "value": true,
+   "comment": "the migi-do row appears in the kedo matrix but never in the numbered attack list - presumably the missing attack 1, noted never silent (print 23-24, PDF 25-26)"
+  },
+  {
+   "name": "mknKedoGyakuDoRarelyUsed",
+   "value": true,
+   "comment": "the gyaku-do is the downwards cut at the left side of the breast plate, rarely used (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKedoHidariKoteShoulderHeight",
+   "value": true,
+   "comment": "the hidari-kote is valid only if the arm is raised to shoulder height or higher (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKedoTsukiThroat",
+   "value": true,
+   "comment": "the tsuki is a thrust at the throat to strike the beard of the man (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKyudoFiredHorseback",
+   "value": true,
+   "comment": "the Japanese bow can be fired while standing, crouching, or on horseback (print 23, PDF 25)"
+  },
+  {
+   "name": "mknNaginataMaimsHorseFirst",
+   "value": true,
+   "comment": "the naginata is used to maim the enemy horse before dealing with the fallen rider (print 23, PDF 25)"
+  },
+  {
+   "name": "mknYariHorsebackUse",
+   "value": true,
+   "comment": "the yari primary use is for tsuki thrusting or use from horseback, the targets the groin/stomach and chest/throat regions (print 23, PDF 25)"
+  },
+  {
+   "name": "mknLiveBladeMetal",
+   "value": true,
+   "comment": "the metal swords are called live blade (print 23, PDF 25)"
+  },
+  {
+   "name": "mknShimiaBamboo",
+   "value": true,
+   "comment": "the bamboo swords are called shimia (print 23, PDF 25)"
+  },
+  {
+   "name": "mknBokutoisWooden",
+   "value": true,
+   "comment": "the wooden swords are called bokutois (print 23, PDF 25)"
+  },
+  {
+   "name": "mknTonfaUsedInPairs",
+   "value": true,
+   "comment": "the ton-fa or tui-fa can be used in pairs (print 23, PDF 25)"
+  },
+  {
+   "name": "mknNunchakuSpecialSkill",
+   "value": true,
+   "comment": "some of these weapons need special skills to use them, i.e. the nunchaku (print 23, PDF 25)"
+  },
+  {
+   "name": "mknNunchakuSilkOrChain",
+   "value": true,
+   "comment": "the nunchaku is two equal lengths of hardwood hinged by a short piece of silk or chain, used for blocks, smashing blows, and thrusts into vulnerable areas (print 23, PDF 25)"
+  },
+  {
+   "name": "mknKamaRiceSickle",
+   "value": true,
+   "comment": "the kama is a rice-harvesting hand sickle - slash, rake, hook, chip, deflect or block (print 23, PDF 25)"
+  },
+  {
+   "name": "mknPoisAFoundPotion",
+   "value": true,
+   "comment": "poison A is found as a potion (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisAArsenicEtc",
+   "value": true,
+   "comment": "poison A description - arsenic, hemlock, etc. (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisBFoundGasDarts",
+   "value": true,
+   "comment": "poison B is found as gas, darts, cobras, needles (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisBNeurotoxic",
+   "value": true,
+   "comment": "poison B description - neurotoxic (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisCFoundCreatures",
+   "value": true,
+   "comment": "poison C is found with spiders, scorpions, P. worms, other snakes, wyverns, etc. (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisCHemotoxic",
+   "value": true,
+   "comment": "poison C description - hemotoxic (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisSaveFailIsPoisoned",
+   "value": true,
+   "comment": "if a player does not make the saving throw it shall be considered poisoned (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisSurvivorStricken",
+   "value": true,
+   "comment": "if that player does not die it is considered stricken (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisStrickenOnConsciousness",
+   "value": true,
+   "comment": "in the case of unconsciousness the stricken state takes effect upon regaining consciousness (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisNeutralizeCancelsAll",
+   "value": true,
+   "comment": "Neutralize Poison, if successful, will cancel all deleterious manifestations (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisArmorNoEffectInternal",
+   "value": true,
+   "comment": "armor has no effect on the poisons that have been taken internally (print 24, PDF 26)"
+  },
+  {
+   "name": "mknPoisEachPortionOwnSave",
+   "value": true,
+   "comment": "if a portion of a potion is drunk, each individual portion has its own saving throw (print 24, PDF 26)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "mknKedo",
+   "tag": "Kd",
+   "count": "mknKedoMoves",
+   "sentinel": -99,
+   "audit_comment": "the kedo combat matrix - nine attacker moves down, nine defender moves across, the outcome codes: blocked 0, cut 1, dla 2, dra 3, ara 4, ala 5 and the odd dar 6; the six diagonal breaks (migi-men, migi-do, gyaku-do, kote, hidari-kote and tsuki cut against their own defense) and the crossed migi-do/gyaku-do blocked cells pin as printed, noted never silent (print 24, PDF 26)",
+   "cols": [
+    "mknKedoVsShomen",
+    "mknKedoVsHidariMen",
+    "mknKedoVsMigiMen",
+    "mknKedoVsMigiDo",
+    "mknKedoVsGyakuDo",
+    "mknKedoVsKote",
+    "mknKedoVsHidariKote",
+    "mknKedoVsTsuki",
+    "mknKedoVsBlock"
+   ],
+   "col_comments": [
+    "the defender shomen column - blocked 0, dla 2, dra 3, cut 1, cut 1, dra 3, cut 1, cut 1, blocked 0 down the nine attacker moves (print 24, PDF 26)",
+    "the defender hidari-men column - the attacker left arm 5, blocked 0, the odd dar 6, dra 3, cut 1, dra 3, cut 1, cut 1, cut 1 (print 24, PDF 26)",
+    "the defender migi-men column - ara 4, ara 4, cut 1, ara 4, dra 3, cut 1, cut 1, cut 1, cut 1 - the migi-men row crossing is a cut, one of the six diagonal breaks pinned as printed (print 24, PDF 26)",
+    "the defender migi-do column - cut 1, dra 3, dra 3, cut 1, blocked 0, dra 3, dra 3, cut 1, cut 1 - the migi-do row crossing is a cut, one of the six diagonal breaks, and its blocked cell prints crossed into the gyaku-do column (print 24, PDF 26)",
+    "the defender gyaku-do column - cut 1, cut 1, ara 4, blocked 0, cut 1, dra 3, dra 3, cut 1, cut 1 - the gyaku-do row crossing is a cut, one of the six diagonal breaks pinned as printed (print 24, PDF 26)",
+    "the defender kote column - ara 4, ara 4, cut 1, ara 4, ara 4, cut 1, cut 1, cut 1, blocked 0 - the kote row crossing is a cut, one of the six diagonal breaks pinned as printed (print 24, PDF 26)",
+    "the defender hidari-kote column - cut 1, cut 1, cut 1, ara 4, ara 4, cut 1, cut 1, blocked 0, blocked 0 (print 24, PDF 26)",
+    "the defender tsuki column - cut 1, cut 1, cut 1, cut 1, cut 1, cut 1, blocked 0, blocked 0, blocked 0 (print 24, PDF 26)",
+    "the defender front-block column - blocked 0, cut 1, cut 1, cut 1, cut 1, cut 1, blocked 0, blocked 0, blocked 0 (print 24, PDF 26)"
+   ],
+   "data": [
+    [
+     0,
+     5,
+     4,
+     1,
+     1,
+     4,
+     1,
+     1,
+     0
+    ],
+    [
+     2,
+     0,
+     4,
+     3,
+     1,
+     4,
+     1,
+     1,
+     1
+    ],
+    [
+     3,
+     6,
+     1,
+     3,
+     4,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     3,
+     4,
+     1,
+     0,
+     4,
+     4,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     3,
+     0,
+     1,
+     4,
+     4,
+     1,
+     1
+    ],
+    [
+     3,
+     3,
+     1,
+     3,
+     3,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     3,
+     3,
+     1,
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "mknPois",
+   "tag": "Pz",
+   "count": "mknPoisCodes",
+   "sentinel": -99,
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "audit_comment": "the effective-use-of-poison grid - the A potion, B gas/darts and C creature rows with the death percent, the death timing (A and B in turns, C in days, pinned as printed), the stricken span (the A week pinned as 7 days) and the unconscious delay and duration (the A row rides the sentinel, the C one-hour delay pinned as 60 minutes) (print 24, PDF 26)",
+   "cols": [
+    "mknPoisDeathPct",
+    "mknPoisDeathMin",
+    "mknPoisDeathMax",
+    "mknPoisStrickenMin",
+    "mknPoisStrickenMax",
+    "mknPoisUnconcDelay",
+    "mknPoisUnconcDurMin",
+    "mknPoisUnconcDurMax"
+   ],
+   "col_comments": [
+    "the death percentage - 80, 50 and 10 down the A, B, C rows (print 24, PDF 26)",
+    "the death timing minimum - A and B in turns (2 and 4), C in days (1), the units pinned as printed (print 24, PDF 26)",
+    "the death timing maximum - A and B in turns (8 and 16), C in days (4) (print 24, PDF 26)",
+    "the stricken minimum - A one week pinned as 7 days noted never silent, B and C one day (print 24, PDF 26)",
+    "the stricken maximum - A 7 days, B 3 days, C 10 days (print 24, PDF 26)",
+    "the unconscious delay in minutes - A never prints an unconscious time and rides the sentinel, B 30 minutes, C one hour pinned as 60 minutes (print 24, PDF 26)",
+    "the unconscious duration minimum in days - A rides the sentinel, B 1, C 2 (print 24, PDF 26)",
+    "the unconscious duration maximum in days - A rides the sentinel, B 4, C 8 (print 24, PDF 26)"
+   ],
+   "data": [
+    [
+     80,
+     2,
+     8,
+     7,
+     7,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     50,
+     4,
+     16,
+     1,
+     3,
+     30,
+     1,
+     4
+    ],
+    [
+     10,
+     1,
+     4,
+     1,
+     10,
+     60,
+     2,
+     8
+    ]
+   ]
+  }
+ ],
+ "header_sections": {
+  "the Sullin new spells, levels 1-6 (print 13)": [
+   {
+    "kind": "const",
+    "name": "mknSullinSpells"
+   },
+   {
+    "kind": "const",
+    "name": "mknSpellsLvl1"
+   },
+   {
+    "kind": "const",
+    "name": "mknSpellsLvl2"
+   },
+   {
+    "kind": "const",
+    "name": "mknSpellsLvl3"
+   },
+   {
+    "kind": "const",
+    "name": "mknSpellsLvl4"
+   },
+   {
+    "kind": "const",
+    "name": "mknSpellsLvl5"
+   },
+   {
+    "kind": "const",
+    "name": "mknSpellsLvl6"
+   },
+   {
+    "kind": "const",
+    "name": "mknNcrSummonMin"
+   },
+   {
+    "kind": "const",
+    "name": "mknNcrSummonMax"
+   },
+   {
+    "kind": "const",
+    "name": "mknNcrHitDiePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "mknNcrMessengerDays"
+   },
+   {
+    "kind": "const",
+    "name": "mknNcrArrivalTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "mknNcrArrivalTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "mknMmiPlusTwoArrows"
+   },
+   {
+    "kind": "const",
+    "name": "mknMmiPlusOneArrows"
+   },
+   {
+    "kind": "const",
+    "name": "mknMmiBonusEveryLevels"
+   },
+   {
+    "kind": "const",
+    "name": "mknMmiBeyondLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mknMreMaxDurationYears"
+   },
+   {
+    "kind": "const",
+    "name": "mknFlbLivingDice"
+   },
+   {
+    "kind": "const",
+    "name": "mknFlbLivingDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "mknFlbUndeadDice"
+   },
+   {
+    "kind": "const",
+    "name": "mknFlbUndeadDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "mknFlbIgniteRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknFlbRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknFlbFiresBonusMin"
+   },
+   {
+    "kind": "const",
+    "name": "mknFlbFiresBonusMax"
+   },
+   {
+    "kind": "const",
+    "name": "mknMroLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknMroHpPerFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknMroRegenFeetPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "mknPofWidthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknPofLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknPofDepthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknPofDurationTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mknPofFifthLevelDice"
+   },
+   {
+    "kind": "const",
+    "name": "mknWowDurationMeleeTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mknWowImmediateMaxSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mknFfdDiameterFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknFfdRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknExtOneMaxSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mknExtOneRangePct"
+   },
+   {
+    "kind": "const",
+    "name": "mknShdDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "mknShdDamageDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "mknShdStructurePoints"
+   },
+   {
+    "kind": "const",
+    "name": "mknShdBonusBeyondLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mknShdMaxDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "mknShdStructBonusPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mknShdMaxStructPoints"
+   },
+   {
+    "kind": "const",
+    "name": "mknShdRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknWwdLengthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknWwdHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknWwdBreakDice"
+   },
+   {
+    "kind": "const",
+    "name": "mknWwdBreakDieSides"
+   },
+   {
+    "kind": "const",
+    "name": "mknWwdBlocksBelowHd"
+   },
+   {
+    "kind": "const",
+    "name": "mknWwdRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknWwdDurationHours"
+   },
+   {
+    "kind": "const",
+    "name": "mknExtTwoMaxSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mknBbbBlastDiameterFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknBbbDmgPerGp"
+   },
+   {
+    "kind": "const",
+    "name": "mknBbbMaxDamage"
+   },
+   {
+    "kind": "const",
+    "name": "mknBbbBonusEveryLevels"
+   },
+   {
+    "kind": "const",
+    "name": "mknBbbBeyondLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mknBbbTwelfthDmgPerGp"
+   },
+   {
+    "kind": "const",
+    "name": "mknBbbRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknCdeServiceHours"
+   },
+   {
+    "kind": "const",
+    "name": "mknDcoDurationTurns"
+   },
+   {
+    "kind": "const",
+    "name": "mknDcoMaxDensityAc"
+   },
+   {
+    "kind": "const",
+    "name": "mknExtThreeMaxSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "mknCmbMaxSpellLevels"
+   },
+   {
+    "kind": "const",
+    "name": "mknCmbMaxSpells"
+   },
+   {
+    "kind": "const",
+    "name": "mknCspQuestions"
+   },
+   {
+    "kind": "const",
+    "name": "mknCspMinChancePct"
+   },
+   {
+    "kind": "const",
+    "name": "mknCspRemainsWithinFeet"
+   },
+   {
+    "kind": "bool",
+    "name": "mknNcrConfusesStupidMonsters"
+   },
+   {
+    "kind": "bool",
+    "name": "mknNcrRefusesFearedFoes"
+   },
+   {
+    "kind": "bool",
+    "name": "mknNcrEagleMessenger"
+   },
+   {
+    "kind": "bool",
+    "name": "mknNcrNoUnderground"
+   },
+   {
+    "kind": "bool",
+    "name": "mknMreSetToShineOrFade"
+   },
+   {
+    "kind": "bool",
+    "name": "mknMroImmuneNonMagical"
+   },
+   {
+    "kind": "bool",
+    "name": "mknMroUntyingOnlyByConjurer"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPofInterrogationFloats"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPofDamageHalfLevelRoundedUp"
+   },
+   {
+    "kind": "bool",
+    "name": "mknWowUsableWhileMeled"
+   },
+   {
+    "kind": "bool",
+    "name": "mknWowDeflectsOneWeapon"
+   },
+   {
+    "kind": "bool",
+    "name": "mknFfdBlocksMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "mknFfdMovesOnlyWithCasterInside"
+   },
+   {
+    "kind": "bool",
+    "name": "mknFfdDurationPerLevelTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "mknWwdBlocksNormalFire"
+   },
+   {
+    "kind": "bool",
+    "name": "mknWwdBlocksMissileFire"
+   },
+   {
+    "kind": "bool",
+    "name": "mknBbbNoLivingMatter"
+   },
+   {
+    "kind": "bool",
+    "name": "mknBbbHeldOrWornNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "mknCdeDjinnVanishAtEnd"
+   },
+   {
+    "kind": "bool",
+    "name": "mknCdeEfreetBanishOrAttack"
+   },
+   {
+    "kind": "bool",
+    "name": "mknDcoGasToSteel"
+   },
+   {
+    "kind": "bool",
+    "name": "mknDcoHandsStrikeAsSwords"
+   },
+   {
+    "kind": "bool",
+    "name": "mknDcoItemsInContactChange"
+   },
+   {
+    "kind": "bool",
+    "name": "mknDcoNoSolidWeaponAtMinDensity"
+   },
+   {
+    "kind": "bool",
+    "name": "mknExtThreeDoublesRange"
+   },
+   {
+    "kind": "bool",
+    "name": "mknCmbDurationAsShortest"
+   },
+   {
+    "kind": "bool",
+    "name": "mknCspNightOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "mknCspNameMustBeKnown"
+   },
+   {
+    "kind": "bool",
+    "name": "mknRmtAsRustMonster"
+   },
+   {
+    "kind": "bool",
+    "name": "mknSullinEditorApprovalRequired"
+   },
+   {
+    "kind": "bool",
+    "name": "mknSullinEverySpellNeedsLoophole"
+   },
+   {
+    "kind": "bool",
+    "name": "mknSullinResearchAnyLevel"
+   }
+  ],
+  "the monkish weapons and the kedo combat matrix (print 23-24)": [
+   {
+    "kind": "const",
+    "name": "mknMonkRanks"
+   },
+   {
+    "kind": "const",
+    "name": "mknMonkWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoMoves"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoDefenses"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoAttacksClaimed"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoAttacksPrinted"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoCodeBlocked"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoCodeCut"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoCodeDla"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoCodeDra"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoCodeAra"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoCodeAla"
+   },
+   {
+    "kind": "const",
+    "name": "mknKedoCodeDar"
+   },
+   {
+    "kind": "const",
+    "name": "mknKyudoBowFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknKyudoThickMinInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknKyudoThickMaxInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknKyudoDrawLbMin"
+   },
+   {
+    "kind": "const",
+    "name": "mknKyudoDrawLbMax"
+   },
+   {
+    "kind": "const",
+    "name": "mknKyudoExpertDrawLb"
+   },
+   {
+    "kind": "const",
+    "name": "mknKyudoArrowInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknNaginataBasicCuts"
+   },
+   {
+    "kind": "const",
+    "name": "mknYariMinFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknYariMaxFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknRokFeet"
+   },
+   {
+    "kind": "const",
+    "name": "mknRokDiameterMinInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknRokDiameterMaxInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknTonfaMinInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknTonfaMaxInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknTonfaHandleInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknSaiMinInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknSaiMaxInches"
+   },
+   {
+    "kind": "const",
+    "name": "mknRankNoviceWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "mknRankInitiateWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "mknRankDiscipleWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "mknRankImmaculateWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "mknRankMasterWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "mknRankGrandMasterWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "mknRankNorthWindWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "mknKedoAttackOneMissing"
+   },
+   {
+    "kind": "bool",
+    "name": "mknKedoMigiDoMatrixOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "mknKedoGyakuDoRarelyUsed"
+   },
+   {
+    "kind": "bool",
+    "name": "mknKedoHidariKoteShoulderHeight"
+   },
+   {
+    "kind": "bool",
+    "name": "mknKedoTsukiThroat"
+   },
+   {
+    "kind": "bool",
+    "name": "mknKyudoFiredHorseback"
+   },
+   {
+    "kind": "bool",
+    "name": "mknNaginataMaimsHorseFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "mknYariHorsebackUse"
+   },
+   {
+    "kind": "bool",
+    "name": "mknLiveBladeMetal"
+   },
+   {
+    "kind": "bool",
+    "name": "mknShimiaBamboo"
+   },
+   {
+    "kind": "bool",
+    "name": "mknBokutoisWooden"
+   },
+   {
+    "kind": "bool",
+    "name": "mknTonfaUsedInPairs"
+   },
+   {
+    "kind": "bool",
+    "name": "mknNunchakuSpecialSkill"
+   },
+   {
+    "kind": "bool",
+    "name": "mknNunchakuSilkOrChain"
+   },
+   {
+    "kind": "bool",
+    "name": "mknKamaRiceSickle"
+   },
+   {
+    "kind": "table",
+    "name": "mknKedo"
+   }
+  ],
+  "the effective use of poison (print 24)": [
+   {
+    "kind": "const",
+    "name": "mknPoisCodes"
+   },
+   {
+    "kind": "const",
+    "name": "mknStrickenStats"
+   },
+   {
+    "kind": "const",
+    "name": "mknStrickenDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "mknArmorPlate"
+   },
+   {
+    "kind": "const",
+    "name": "mknArmorChain"
+   },
+   {
+    "kind": "const",
+    "name": "mknArmorLeather"
+   },
+   {
+    "kind": "const",
+    "name": "mknArmorNone"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisAFoundPotion"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisAArsenicEtc"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisBFoundGasDarts"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisBNeurotoxic"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisCFoundCreatures"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisCHemotoxic"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisSaveFailIsPoisoned"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisSurvivorStricken"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisStrickenOnConsciousness"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisNeutralizeCancelsAll"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisArmorNoEffectInternal"
+   },
+   {
+    "kind": "bool",
+    "name": "mknPoisEachPortionOwnSave"
+   },
+   {
+    "kind": "table",
+    "name": "mknPois"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['mknSullinSpells']() != 19 or m['mknSpellsLvl1']() != 1 or m['mknSpellsLvl3']() != 4 or m['mknSpellsLvl4']() != 4 or m['mknSpellsLvl6']() != 6 or m['mknNcrSummonMin']() != 1 or m['mknNcrSummonMax']() != 10 or m['mknNcrHitDiePenalty']() != 2 or m['mknNcrMessengerDays']() != 3 or m['mknNcrArrivalTurnsMax']() != 4",
+   "note": "the spell census - nineteen spells, the per-level counts 1/2/4/4/2/6, and the Nature Call summon range, hit-die penalty, messenger days and arrival span (print 13, PDF 15)"
+  },
+  {
+   "expr": "m['mknMmiPlusTwoArrows']() != 1 or m['mknMmiPlusOneArrows']() != 2 or m['mknMmiBonusEveryLevels']() != 5 or m['mknMmiBeyondLevel']() != 3 or m['mknExtOneMaxSpellLevel']() != 3 or m['mknExtOneRangePct']() != 50 or m['mknExtTwoMaxSpellLevel']() != 4 or m['mknExtThreeMaxSpellLevel']() != 5",
+   "note": "Magic Missile II - one +2 arrow or two +1 arrows per five levels beyond third - and the Extend family - levels 3/4/5 at 50 percent, Extend III doubling the range (print 13, PDF 15)"
+  },
+  {
+   "expr": "m['mknFlbLivingDice']() != 3 or m['mknFlbLivingDieSides']() != 8 or m['mknFlbUndeadDieSides']() != 10 or m['mknFlbIgniteRadiusFeet']() != 5 or m['mknFlbRangeFeet']() != 240 or m['mknFlbFiresBonusMax']() != 3 or m['mknMroLengthFeet']() != 100 or m['mknMroHpPerFeet']() != 4 or m['mknMroRegenFeetPerTurn']() != 1",
+   "note": "Flamebolt - 3-24 to the living, 3-30 to the undead, 5-foot ignition, 240-foot range, level plus 1-3 fires - and Mystic Rope - 100 feet, one point per four feet, one foot regenerated per melee turn (print 13, PDF 15)"
+  },
+  {
+   "expr": "m['mknPofWidthFeet']() != 20 or m['mknPofDepthFeet']() != 5 or m['mknPofDurationTurns']() != 3 or m['mknPofFifthLevelDice']() != 3 or m['mknWowDurationMeleeTurns']() != 1 or m['mknWowImmediateMaxSpellLevel']() != 3 or m['mknFfdDiameterFeet']() != 10 or m['mknFfdRangeFeet']() != 60",
+   "note": "the 20x20x5 Pit of Flame with its 3-turn duration and the 3-dice fifth-level example, Word of Warding one melee turn with the third-level ceiling after immediate use, the ten-foot Force Field at 60 feet (print 13, PDF 15)"
+  },
+  {
+   "expr": "m['mknShdDamageDice']() != 5 or m['mknShdDamageDieSides']() != 6 or m['mknShdStructurePoints']() != 20 or m['mknShdBonusBeyondLevel']() != 7 or m['mknShdMaxDamageDice']() != 12 or m['mknShdStructBonusPerLevel']() != 5 or m['mknShdMaxStructPoints']() != 60 or m['mknShdRangeFeet']() != 120",
+   "note": "Shatterray - 5-30 damage, 20 structure points, one die per level beyond seventh to the 12-dice cap, five structural points per level to the 60 cap, 120-foot range (print 13, PDF 15)"
+  },
+  {
+   "expr": "m['mknWwdLengthFeet']() != 50 or m['mknWwdHeightFeet']() != 20 or m['mknWwdBreakDice']() != 5 or m['mknWwdBreakDieSides']() != 6 or m['mknWwdBlocksBelowHd']() != 5 or m['mknWwdDurationHours']() != 1 or m['mknBbbBlastDiameterFeet']() != 30 or m['mknBbbMaxDamage']() != 50 or m['mknBbbRangeFeet']() != 200",
+   "note": "the 50x20 Wall of Water - 5-30 to flame breaking through, the five-hit-dice floor, one hour - and the Beam of Blasting 30-foot blast, 50-point cap, 200-foot range (print 13, PDF 15)"
+  },
+  {
+   "expr": "m['mknBbbDmgPerGp']() != 1 or m['mknBbbBonusEveryLevels']() != 3 or m['mknBbbBeyondLevel']() != 9 or m['mknBbbTwelfthDmgPerGp']() != 2 or m['mknCdeServiceHours']() != 24 or m['mknDcoDurationTurns']() != 3 or m['mknDcoMaxDensityAc']() != 1 or m['mknCmbMaxSpellLevels']() != 7 or m['mknCmbMaxSpells']() != 3 or m['mknCspQuestions']() != 2 or m['mknCspMinChancePct']() != 25 or m['mknCspRemainsWithinFeet']() != 20",
+   "note": "Beam of Blasting 1 per Gold Piece doubling at twelfth level, the 24-hour djinn/efreet service, Density Control 3 turns at armor class one, Combine I at 7 levels or 3 spells, Call Spirit two questions at 25 percent within 20 feet (print 13, PDF 15)"
+  },
+  {
+   "expr": "m['mknKedoMoves']() != 9 or m['mknKedoDefenses']() != 9 or m['mknKedoAttacksClaimed']() != 8 or m['mknKedoAttacksPrinted']() != 7 or m['mknKyudoBowFeet']() != 7 or m['mknKyudoDrawLbMin']() != 40 or m['mknKyudoExpertDrawLb']() != 90 or m['mknKyudoArrowInches']() != 39 or m['mknMonkRanks']() != 7 or m['mknRankNoviceWeapons']() != 4",
+   "note": "the monkish census - the 9x9 kedo matrix shape, eight attacks claimed but seven printed, the seven-foot bow at 40-50 with the 90-pound expert draw and 39-inch arrows, seven ranks with the Novice four weapons (print 23-24, PDF 25-26)"
+  },
+  {
+   "expr": "m['mknPoisCodes']() != 3 or m['mknStrickenStats']() != 4 or m['mknStrickenDivisor']() != 2 or m['mknArmorPlate']() != 2 or m['mknArmorChain']() != 1 or m['mknArmorLeather']() != 0 or m['mknArmorNone']() != -2",
+   "note": "the poison frame - the three codes, the four stricken stats halved, the armor saving-throw ladder +2/+1/0/-2 (print 24, PDF 26)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['mknKedoVsShomen'](0) != 0 or m['mknKedoVsBlock'](0) != 0 or m['mknKedoVsShomen'](8) != 0 or m['mknKedoVsBlock'](8) != 0 or m['mknKedoVsHidariMen'](1) != 0 or m['mknKedoVsGyakuDo'](3) != 0 or m['mknKedoVsMigiDo'](4) != 0 or m['mknKedoVsHidariKote'](8) != 0 or m['mknKedoVsTsuki'](8) != 0",
+   "note": "the kedo matrix blocked cells - the shomen and hidari-men diagonals, the crossed migi-do and gyaku-do blocks, the front-block row blocked at shomen and both hidari-kote and tsuki blocked only by the front block (print 24, PDF 26)"
+  },
+  {
+   "expr": "m['mknKedoVsHidariMen'](2) != 6 or m['mknKedoVsHidariMen'](0) != 5 or m['mknKedoVsShomen'](1) != 2 or m['mknKedoVsKote'](0) != 4 or m['mknKedoVsMigiMen'](2) != 1 or m['mknKedoVsMigiDo'](3) != 1 or m['mknKedoVsGyakuDo'](4) != 1 or m['mknKedoVsKote'](5) != 1 or m['mknKedoVsHidariKote'](6) != 1 or m['mknKedoVsTsuki'](7) != 1 or m['mknKedoVsShomen'](8) != 0",
+   "note": "the kedo odd cells - the dar 6 at migi-men vs hidari-men, the ala 5 and dla 2 and ara 4 arm codes, the six diagonal breaks migi-men, migi-do, gyaku-do, kote, hidari-kote and tsuki, the front-block row blocked 0 (print 24, PDF 26)"
+  },
+  {
+   "expr": "m['mknPoisDeathPct'](0) != 80 or m['mknPoisDeathPct'](1) != 50 or m['mknPoisDeathPct'](2) != 10 or m['mknPoisDeathMax'](1) != 16 or m['mknPoisStrickenMax'](0) != 7 or m['mknPoisStrickenMax'](2) != 10 or m['mknPoisUnconcDelay'](1) != 30 or m['mknPoisUnconcDelay'](2) != 60 or m['mknPoisUnconcDurMax'](2) != 8 or m['mknPoisUnconcDelay'](0) != -99",
+   "note": "the poison grid - 80/50/10 death percentages, the 16-turn B death maximum, the A week pinned as 7 days, the 30-minute and 60-minute unconscious delays, the 8-day C duration, the A unconscious cells riding the sentinel (print 24, PDF 26)"
+  }
+ ],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 193
+}

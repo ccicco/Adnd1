@@ -28378,6 +28378,59 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   Curtiss's call - the next scan upload
   opens the next issue the same intake.
   WAIT FOR GO.
+  - R934 LANDED (73145ba, psy, 126 inline,
+  part one of the issue-18 three-round
+  shape): The Dragon issue-18 opener part
+  one, the four-chain round. TD18 = Vol.
+  III No. 4, Sept 1978, 36 PDF pages;
+  PRINT FOLIO = PDF MINUS TWO verified at
+  eight feet. Scope per Curtiss (2026-10-30):
+  Magic Laws AND Godgame both IN, Campaign
+  Mixing DROPPED. Four sections (print 9,
+  14 + 19, 19, 31-32): the insanity chart
+  and doctrine (d20 save + level vs the
+  d12 chart, 9 wisdom x 6 intelligence
+  bands, the odd 12 at Wis 9-12 x Int
+  9-12 pinned as printed, schizoid revert,
+  suicide attempt), the laws of magic and
+  the contest, the chamber of the godgame
+  (print 19 shared with Rumbles and
+  Magic-Theory), the NPC pride, greed and
+  work quality. 126 inline (50 consts +
+  61 bools + 15 table cols), 3 tables
+  (psySave 9x6 tag Ps, psyPride 9x6 tag
+  Pp, psyGreed 11x3 tag Pg, sentinel
+  -99), 8 examples, 3 table_checks; header
+  rules/psy.h (prefix psy verified free
+  at 528873f - npc taken, 15 cpp hits),
+  audit rules/audits/r934_batch.h "R934
+  issue-18 opener part one audit".
+  data_files 37: the pre-flip gap report
+  018 (2 boxes open, 0 closed; the
+  gap_report field rode the existing 017
+  as the R931-class no-op check, 2 closed
+  0 open) plus all 36 issue-18
+  transcripts at extract/dragon/018/.
+  Print catches pinned as scanned, noted
+  never silent: the work-quality table
+  jumps 01-02 to 21-99 (03-20 never
+  prints), the greed compound bands
+  (96-00+4 etc.), pride 00 = percentile
+  100, the kedo attack list printed 2-8
+  (attack 1 missing). Census 856->857;
+  rverify GREEN 252 mutants 0 missed;
+  round-trip 222947 bytes md5
+  cf95ea29ebc41aef46e508f8967eb5b0,
+  byte-exact at 73145ba. Watch: Sullin
+  New Spells ends level 6 with "cont pg
+  21" but levels 7-9 NEVER printed in
+  TD18 - watch TD 19; the brawling
+  long-term-effects sequel STILL not
+  printing - watch TD 19. Next: R935 the
+  issue-18 opener part two (New Spells
+  PDF 15, Monkish Weapons PDF 25-26,
+  Poison PDF 26), then R936 the pure flip.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
