@@ -69,12 +69,12 @@ review and the Gamma World preview.
 
 ## Boxes
 
-- [ ] **The issue-17 opener chains** (print 3-4, 15-17,
+- [x] **The issue-17 opener chains** (print 3-4, 15-17,
   20+22, 31-33) - the part-one round: Jousting in D&D,
   Vampires in the Dungeon, Sights and Sounds in D&D, the
   Magic Munchkin, the Scholar and the Crs'tchen, the
   Tesseracts, A Short History of Adamanite, the Angels
-- [ ] **A Wizard With A Difference** (print 10-13) - the
+- [x] **A Wizard With A Difference** (print 10-13) - the
   issue-17 opener part two, the Ward eight specialized
   wizard variants
 

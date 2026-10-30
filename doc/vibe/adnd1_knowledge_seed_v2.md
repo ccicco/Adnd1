@@ -28283,6 +28283,64 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   sequel STILL not printing (watch TD 18).
   Next: R932 the wizard part-two round when
   Curtiss calls it. WAIT FOR GO.
+  - R932 LANDED (c0ef298, wzd, 178 inline, 2
+  tables): The Dragon issue-17 opener round part
+  two (TD walk), A WIZARD WITH A DIFFERENCE by
+  James M. Ward, print 10-13 (PDF 12-15) with the
+  Movement explanations riding print 15 (PDF 17,
+  the cont. overleaf footer at print 13 resolving
+  there - the article shares folio 15 with the
+  R931-pinned Sights and Sounds, its list pages
+  broken by the Strategists Club ballot at print
+  12). THE SHAPE: the 8-row chance-of-making
+  grid (First through Eighth Level: 100, 85, 75,
+  50, 40, 30, 20, 10, tag Wc), the 8x8 spell-offer
+  count grid (the eight wizard types in article
+  order x the eight level bands, tag Wo: 206
+  spells offered, 22 changed with the one star
+  and 54 new with the two stars, the Movement
+  fifth-level row never printing - the cell pins
+  0, the unlabeled Control overflow row of Gate,
+  Monster Summoning VI, Astral Spell and Charm
+  Golems pinning wzdCtlOverflowCount=3), 98
+  consts + 70 bools (the +5 pct per level over
+  first, the two spells per level pick, the
+  worked fifth-level heat-ray example +20 base 30
+  roll 1-50 fail 51, and the explanation doctrines
+  of all eight types: the aggression missile/
+  hold/spear/sword/melt mechanics, the defense
+  shield-AC-2 and the protection family, the
+  rustic 20-die thinking elemental and the
+  summons, the control sleep draws and the
+  14th-level golem save, the tenaciousness
+  60-yard holds and the 40x30 openings, the
+  detection transport and the 24-hour spells, the
+  fire +1-per-die ball and the 10-die wall, the
+  movement negates and the 20-being mass
+  teleport), 11 examples, 5 table_checks; header
+  rules/wzd.h (prefix wzd verified free at
+  c6446ee, full-repo scan), audit
+  rules/audits/r932_batch.h "R932 issue-17
+  wizard article part two audit". data_files 1:
+  doc/data/dragon017_wizard_spell_lists.txt, the
+  as-scanned rosters with the garbles preserved
+  (Dispel! Magic, Pall-wall, Extention,
+  Telekenisis, Ventriliquism, Animate Deat, the
+  Etherfulness/Etherialness/Etheriainess
+  spread, Replusion Field, the twice-printed End
+  All Barriers explanation with both texts
+  pinned, the lowercase Fire immunity, Hold
+  Staffs vs Hold Staff). NO sentinel cells -
+  the chance grid and the roster counts pin
+  clean, no numeric garble in the article.
+  ZERO registry defs touched. Census 854->855;
+  rverify GREEN 248 mutants 0 missed; round-trip
+  66627 bytes md5 0fdaf8e21b2b538f51efa9c0a3c
+  a15ef, byte-exact at c0ef298. The R931 record
+  rode this spec into the seed. Next: R933 the
+  issue-17 box-closing flip (both report-017
+  boxes, the f16 two-round pattern). WAIT FOR
+  GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
