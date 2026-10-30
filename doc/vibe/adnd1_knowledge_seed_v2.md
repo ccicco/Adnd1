@@ -28191,6 +28191,98 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   section breakdown when the scan lands. WAIT FOR
   GO.
 
+  - R931 LANDED (c6446ee, jou, 233 inline, 6
+  tables): The Dragon issue-17 opener round
+  part one (TD walk), the SEVEN-CHAIN round,
+  the split decision Curtiss-set (the Ward
+  wizard article rides its own part-two round
+  R932, prefix wzd reserved free; R933 the
+  pure flip). CHAIN ONE, Jousting in D&D
+  (Pickens, print 4, PDF 6): the 8x6 joust
+  matrix (HELM/DC/CP/SC/DF/FP/SF/BASE over
+  the six rider positions, tag Jm), the 8x6
+  attacker-allowed grid (0/1 flags, tag Ja),
+  the 4x7 results table across the knight
+  level bands (tag Jr), the 6x2 injury
+  percentiles to the 00 kill (tag Ji), the
+  jouLevelBand chain (limits -12/-8/-4/3/7/11,
+  tail 6), the 10 pct unhorsed injury with 20
+  added on the helm knock-off, the
+  no-Strength/Dexterity-bonus doctrine.
+  CHAIN TWO, Vampires in the Dungeon (Miner,
+  print 3): the prose tactics doctrine - the
+  charm-many-then-banquet, the rat spy
+  network, the 50 mph gaseous offensive, the
+  stake at four strokes maximum hawthorn or
+  blackthorn, the century crumble, the coffin
+  booby traps, the 8:69 strength garble at
+  the sentinel. CHAIN THREE, Sights and
+  Sounds (Dushay/Weisberg, print 15): the 25
+  pct noise chance every 30 minutes, the
+  21-row sounds table AS SCANNED (the joke
+  row 21 kept), the 20-row sights table, the
+  apparitions that vanish after the party
+  leaves. CHAIN FOUR, the joke monsters
+  (print 16-17) pinned AS PRINTED: the Magic
+  Munchkin (clans 3-12, caster level 18, one
+  in ten per 25, the 5 pct weekly cumulative
+  leave, the Munchkin Slaying auto-kill),
+  the Scholar (AC 9, HD 1-3, lair 30, 5 cp,
+  the three ranks, the 3-18 Academic Dust,
+  the Tenure cardiac arrest), the Crs'tchen
+  (NA 1-12, AC 12 - the EPT-style descending
+  print, the pin IS the conversion, noted;
+  HD 1/2, move 15, the 33 pct alignment
+  change, the 30-30-30-5-5 transfix table,
+  the 100-600 K beg, burn within three
+  turns, Eyes 1/16/19). CHAIN FIVE, the
+  Tesseracts (Jordan, print 20 + 22): eight
+  rooms, four central doors, the
+  all-doors-closed activation, the U/L
+  upside-down anomaly, the dispel collapse.
+  CHAIN SIX, Adamanite (print 31-32): the
+  ten-row price grid plate 20000 to arrow
+  points 400@ (nil weight sentinel, census
+  [0,1], tag Jd), the charm costs 8000 per
+  level plate and 4000 sword or shield beyond
+  the +2, the 20-40 and 25-60 market
+  multipliers, the Snog 8th-level goblin tale
+  with the 50-25-25 tribute split, the
+  diamond test. CHAIN SEVEN, Angels in D&D
+  (Dorneman, print 32-33): the 4x7 stat grid
+  (tag Jg; Wrath AC 0, 10d8, MR 65, 12/24;
+  Healing AC 9, 6 dice, MR 75; Mercy AC -1,
+  12 dice, MR 85, 15/30; Seraphim AC -3, 16
+  dice, MR 95, 24/48), the weapon floors
+  1/0/2/3, the teleport-no-error /
+  Patriarch-turn / psionic-and-Finger-of-
+  Death-immunity doctrine, the 1 pct per
+  cleric level prayer response, the Wrath +5
+  Holy Sword and double-strength walls, the
+  Seraphim triple wall, Holy Word and Symbol
+  once a day, the double-strength Meteor
+  Swarm, the summons 2-16/1-4/1-6;
+  sentinel_census [1,0,3,0,0,1,0] - the
+  Mercy AC -1 is genuine ink sharing the
+  sentinel value, the census of 1 locks it.
+  233 inline (113 consts + 89 bools + 30
+  table cols + the chain), 6 examples, 6
+  table_checks; header rules/jou.h, audit
+  rules/audits/r931_batch.h "R931 issue-17
+  opener part one audit". data_files 41: the
+  pre-flip gap report 017 (2 boxes open, 0
+  flips, folio = PDF - 2 verified at ten
+  footers) plus all 40 issue-17 transcripts
+  at extract/dragon/017/. ZERO registry defs
+  touched (the jou hits in monsters/ are
+  English prose only). Census 853->854;
+  rverify GREEN 392 mutants 0 missed; round-
+  trip 267256 bytes md5 973fc9f233fb9ea00e1
+  436337a65554d, byte-exact at c6446ee.
+  Watch: the brawling long-term-effects
+  sequel STILL not printing (watch TD 18).
+  Next: R932 the wizard part-two round when
+  Curtiss calls it. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

@@ -1,0 +1,122 @@
+# The Dragon #17 - A Wizard With A Difference (James M. Ward)
+# The as-scanned spell rosters, print 10-13 (PDF 12-15),
+# the Movement explanations riding print 15 (PDF 17).
+# PRINT FOLIO = PDF PAGE MINUS TWO in this issue.
+# Garbles preserved as scanned: Dispel! Magic, Pall-wall,
+# Extention, Telekenisis, Ventriliquism, Animate Deat,
+# Etherfulness, Etheriainess, Replusion Field, Hold
+# Staffs vs Hold Staff, the lowercase Fire immunity, the
+# twice-printed End All Barriers explanation. The printed
+# legend: * = changed for the area, ** = new.
+
+CHANCE OF MAKING ANY SPELL PER LEVEL (print 10):
+First 100 percent, Second 85, Third 75, Fourth 50,
+Fifth 40, Sixth 30, Seventh 20, Eighth 10.
+
+WIZARD OF AGGRESSION (print 10):
+1: Charm Person, Sleep, Magic Missile*
+2: Phantasmal Force, Web
+3: Hold Person*, Fire Ball, Lightning Bolt, Slow Spell
+4: Polymorph Others, Confusion, Charm Monster, Fear, Magic Spear**
+5: Death Spell, Disintegrate
+6: Delayed Blast Fire Ball, Power Word Stun
+7: Power Word Blind, Symbol, Dancing Magic Sword**
+8: Power Word Kill, Meteor Swarm, Melt**
+
+WIZARD OF DEFENSE (print 10):
+1: Shield*, Protection from Evil*
+2: Invisibility, Darkness, Mirror Image
+3: Dispel! Magic, Protection from Evil 10' Radius*,
+   Invisibility 10' Radius, Infravision, Haste,
+   Protection from Normal Missiles, Rope Trick
+4: Remove Curse, Dimension Door
+5: Teleport, Pass-wall, Protection from Swords**
+6: Projected Image, Anti-Magic Shell,
+   Protection from Edged Weapons**
+7: Phase Door, Mass Invisibility, Repulsion Field**
+8: Mind Blank, Prismatic Wall, Maze, Etherfulness**,
+   No Punctures**, Protection from All Weapons**
+
+WIZARD OF TENACIOUSNESS (print 10):
+1: Hold Portal*
+2: Wizard Lock*, Knock*
+3: Hold Person, Hold Swords**, Hold Crossbows**
+4: Extention I, Hold Staffs**, Hold a Cube of
+   Force**, Hold Rings**
+5: Hold Wands**, Hold Monster**, Telekenisis,
+   Transmute Rock to Mud, Extension II, Stop
+   Magic**, Hold Groups**
+6: Repulsion, Extension III, Hold Openings**
+7: Reverse Gravity, Permanent Spell
+8: Time Stop, Wizard Lock Openings**, End Arcane
+   Walls**
+
+WIZARD OF DETECTION (print 11):
+1: Detect Magic, Read Magic, Read Languages
+2: Detect Invisible, Locate Object, Detect Evil, ESP
+3: Clairvoyance, Clairaudience, Find Traps*,
+   Infravision
+4: Wizard Eye, Contact Higher Plane, Find Secret
+   Doors*
+5: Legend Lore, End Surprise**
+6: Find the Path*, Reveal the Way**
+7: Divine Any Object**
+8: Transport to the Spot**
+
+WIZARD OF FIRE (print 11):
+1: Fire Ball*, Phantasmal Force Fire Illusions*
+2: Pyrotechnics, Explosive Runes
+3: Wall of Fire*, Fire Negation**
+4: Delayed Blast Fire Ball, Control of Fire**
+5: Conjure Fire Elemental*, Body of Fire**
+6: Fire Resistance*, Heat Ray**
+7: Fire Immunity**, Melt**
+8: Combustion of All Things**, Fire Vision**
+
+WIZARD OF MOVEMENT (print 11):
+1: Levitate, Knock, Fly
+2: Slow, Haste, Water Breathing, Polymorph Self
+3: Water Travel**, Dimension Door
+4: Negate the Ability to Fly**, Negate the Ability
+   to Move on or in the Water**, Negate the Ability
+   to Run from a Fight**, Teleport, Pall-wall
+(no Fifth Level row prints)
+6: Lower Water, Part Water, Move Earth, Phase Door
+7: Reverse Gravity, Time Stop, Mass Teleport **
+8: Etherialness*, End All Barriers**, Safe Teleport*
+
+WIZARD OF ALL THINGS RUSTIC (print 11-12):
+1: Light*, Strength, Continual Light
+2: Wall of Ice, Growth/Plant, Massmorph,
+   Hallucinatory Terrain
+3: Communicate with Mammals**, Communicate with
+   Plants**, Communicate with Reptiles**,
+   Communicate with Insects**, Communicate with
+   Avians**, Communicate with Monsters**, Ice
+   Storm, Command as the Staff**
+4: Charm Insect**, Charm Snake*, Charm Mammal**,
+   Insect Plague, Growth/Animal
+5: Conjure Earth Elemental*, Transmute Rock to Mud,
+   Wall of Stone, Wall of Iron, Animate Deat,
+   Summon Felines**, Summon Canines**, Summon
+   Avians**
+6: Lower Water, Part Water, Reincarnation, Move
+   Earth, Control Weather
+7: Limited Wish, Charm Plant, Reverse Gravity
+8: Clone, Shapechange, Wish
+
+WIZARD OF CONTROL (print 12):
+1: Charm Person, Sleep*, Ventriliquism
+2: Levitate, ESP, Magic Mouth
+3: Fly, Infravision, Water Breathing
+4: Suggestion, Monster Summoning I
+5: Polymorph Self, Charm Monster, Monster
+   Summoning II
+6: Conjure Elemental, Animate Dead, Magic Jar,
+   Monster Summoning III
+7: Stone to Flesh, Invisible Stalker, Geas, Control
+   Weather, Monster Summoning IV
+8: Simulacrum, Monster Summoning V, Control as the
+   Staff**, Mass Charm, Polymorph Any Object
+(unlabeled overflow row): Gate, Monster
+   Summoning VI, Astral Spell, Charm Golems**

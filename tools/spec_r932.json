@@ -1,0 +1,1906 @@
+{
+ "round": 932,
+ "prefix": "wzd",
+ "census_before": 854,
+ "title": "The Dragon issue-17 opener part two: A Wizard With A Difference, the Ward eight area-wizard variants with the chance-of-making grid, the spell-list roster and the explanation doctrines (census 855)",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R931 LANDED (c6446ee, jou, 233 inline, 6",
+ "prev_record": [
+  "  - R931 LANDED (c6446ee, jou, 233 inline, 6",
+  "  tables): The Dragon issue-17 opener round",
+  "  part one (TD walk), the SEVEN-CHAIN round,",
+  "  the split decision Curtiss-set (the Ward",
+  "  wizard article rides its own part-two round",
+  "  R932, prefix wzd reserved free; R933 the",
+  "  pure flip). CHAIN ONE, Jousting in D&D",
+  "  (Pickens, print 4, PDF 6): the 8x6 joust",
+  "  matrix (HELM/DC/CP/SC/DF/FP/SF/BASE over",
+  "  the six rider positions, tag Jm), the 8x6",
+  "  attacker-allowed grid (0/1 flags, tag Ja),",
+  "  the 4x7 results table across the knight",
+  "  level bands (tag Jr), the 6x2 injury",
+  "  percentiles to the 00 kill (tag Ji), the",
+  "  jouLevelBand chain (limits -12/-8/-4/3/7/11,",
+  "  tail 6), the 10 pct unhorsed injury with 20",
+  "  added on the helm knock-off, the",
+  "  no-Strength/Dexterity-bonus doctrine.",
+  "  CHAIN TWO, Vampires in the Dungeon (Miner,",
+  "  print 3): the prose tactics doctrine - the",
+  "  charm-many-then-banquet, the rat spy",
+  "  network, the 50 mph gaseous offensive, the",
+  "  stake at four strokes maximum hawthorn or",
+  "  blackthorn, the century crumble, the coffin",
+  "  booby traps, the 8:69 strength garble at",
+  "  the sentinel. CHAIN THREE, Sights and",
+  "  Sounds (Dushay/Weisberg, print 15): the 25",
+  "  pct noise chance every 30 minutes, the",
+  "  21-row sounds table AS SCANNED (the joke",
+  "  row 21 kept), the 20-row sights table, the",
+  "  apparitions that vanish after the party",
+  "  leaves. CHAIN FOUR, the joke monsters",
+  "  (print 16-17) pinned AS PRINTED: the Magic",
+  "  Munchkin (clans 3-12, caster level 18, one",
+  "  in ten per 25, the 5 pct weekly cumulative",
+  "  leave, the Munchkin Slaying auto-kill),",
+  "  the Scholar (AC 9, HD 1-3, lair 30, 5 cp,",
+  "  the three ranks, the 3-18 Academic Dust,",
+  "  the Tenure cardiac arrest), the Crs'tchen",
+  "  (NA 1-12, AC 12 - the EPT-style descending",
+  "  print, the pin IS the conversion, noted;",
+  "  HD 1/2, move 15, the 33 pct alignment",
+  "  change, the 30-30-30-5-5 transfix table,",
+  "  the 100-600 K beg, burn within three",
+  "  turns, Eyes 1/16/19). CHAIN FIVE, the",
+  "  Tesseracts (Jordan, print 20 + 22): eight",
+  "  rooms, four central doors, the",
+  "  all-doors-closed activation, the U/L",
+  "  upside-down anomaly, the dispel collapse.",
+  "  CHAIN SIX, Adamanite (print 31-32): the",
+  "  ten-row price grid plate 20000 to arrow",
+  "  points 400@ (nil weight sentinel, census",
+  "  [0,1], tag Jd), the charm costs 8000 per",
+  "  level plate and 4000 sword or shield beyond",
+  "  the +2, the 20-40 and 25-60 market",
+  "  multipliers, the Snog 8th-level goblin tale",
+  "  with the 50-25-25 tribute split, the",
+  "  diamond test. CHAIN SEVEN, Angels in D&D",
+  "  (Dorneman, print 32-33): the 4x7 stat grid",
+  "  (tag Jg; Wrath AC 0, 10d8, MR 65, 12/24;",
+  "  Healing AC 9, 6 dice, MR 75; Mercy AC -1,",
+  "  12 dice, MR 85, 15/30; Seraphim AC -3, 16",
+  "  dice, MR 95, 24/48), the weapon floors",
+  "  1/0/2/3, the teleport-no-error /",
+  "  Patriarch-turn / psionic-and-Finger-of-",
+  "  Death-immunity doctrine, the 1 pct per",
+  "  cleric level prayer response, the Wrath +5",
+  "  Holy Sword and double-strength walls, the",
+  "  Seraphim triple wall, Holy Word and Symbol",
+  "  once a day, the double-strength Meteor",
+  "  Swarm, the summons 2-16/1-4/1-6;",
+  "  sentinel_census [1,0,3,0,0,1,0] - the",
+  "  Mercy AC -1 is genuine ink sharing the",
+  "  sentinel value, the census of 1 locks it.",
+  "  233 inline (113 consts + 89 bools + 30",
+  "  table cols + the chain), 6 examples, 6",
+  "  table_checks; header rules/jou.h, audit",
+  "  rules/audits/r931_batch.h \"R931 issue-17",
+  "  opener part one audit\". data_files 41: the",
+  "  pre-flip gap report 017 (2 boxes open, 0",
+  "  flips, folio = PDF - 2 verified at ten",
+  "  footers) plus all 40 issue-17 transcripts",
+  "  at extract/dragon/017/. ZERO registry defs",
+  "  touched (the jou hits in monsters/ are",
+  "  English prose only). Census 853->854;",
+  "  rverify GREEN 392 mutants 0 missed; round-",
+  "  trip 267256 bytes md5 973fc9f233fb9ea00e1",
+  "  436337a65554d, byte-exact at c6446ee.",
+  "  Watch: the brawling long-term-effects",
+  "  sequel STILL not printing (watch TD 18).",
+  "  Next: R932 the wizard part-two round when",
+  "  Curtiss calls it. WAIT FOR GO."
+ ],
+ "header_file": "rules/wzd.h",
+ "include_after": "#include \"rules/jou.h\"  // R931: the Dragon issue-17 opener part one, the seven-chain round",
+ "include_comment": "the Dragon issue-17 opener part two, the Ward wizard variants round",
+ "audit_file": "rules/audits/r932_batch.h",
+ "audit_anchor": "#include \"rules/audits/r931_batch.h\"  // R931: R931 issue-17 opener part one audit",
+ "audit_label": "R932 issue-17 wizard article part two audit",
+ "audit_comment": "THE DRAGON ISSUE-17 OPENER PART TWO - A Wizard With A Difference by James M. Ward (print 10-13, PDF 12-15, the Movement explanations riding print 15, PDF 17), the eight specialized wizard variants: the chance-of-making grid (100, 85, 75, 50, 40, 30, 20, 10 at First through Eighth Level, plus 5 percent per caster level over the first, two spells picked per level, the worked fifth-level heat-ray example with its +20 and the 1-50 roll), the spell-offer count grid (the eight types by the eight level bands, 206 spells offered, the Movement fifth-level row never printing, the unlabeled three-spell Control overflow row, 22 changed spells and 54 new spells under the printed one-star and two-star legend), and the explanation doctrines: the wizard of aggression (the Magic Missile extra arrow per level, the Hold Person 1-6 over 1-4, the Magic Spear three-plus-one per four levels, the Dancing Magic Sword plus 1 for four turns, the Melt red-hot-in-one-turn melt-the-next with the plate-mail mass limit), the wizard of defense (Shield AC 2 for five turns plus level, the chaotic minus-one Protection from Evil for six turns, the sword and edged-weapon and all-weapons protections with the save-to-hit doctrine, the Repulsion Field, the Etherialness, the No Punctures with its instant unfelt healing), the wizard of all things rustic (the ten-turn communicates, the 20-die thinking earth elemental that vanishes rather than turns on a lapsing caster, the feline, canine and avian summons with the Roc excluded and the one-full-turn vanish), the wizard of control (the Sleep draws of two beings at five dice and one at six, the staff-of-commanding once, the Charm Golems cutting golem protection down to the 14th-level save), the wizard of tenaciousness (the two-dispel wizard lock, the 60-yard sword and crossbow holds at 2-20, the 3-30 staffs and rings, the 1-10 monster hold stopping regeneration and breath, the 30-yard six-turn Stop Magic, the 12-being group hold, the 40-by-30 foot openings lasting 24 hours with the caster free to leave, the one-hour dispel-only locked openings, the End Arcane Walls), the wizard of detection (the 1-4-plus-level Find Traps, the 1-6-plus-level End Surprise, the 24-hour Reveal the Way and Divine Any Object, the Transport to the Spot carrying 1-6 beings within 20 feet after the over-six-hour study), the wizard of fire (the +1 per die fire ball that never touches its caster but does his equipment, the 10-die wall persisting 1-4, the 20-die thinking elemental, Fire Resistance 1-10, the 10-dice Heat Ray striking even fire types, the 10-yard 1-10 Fire Immunity, the five-dice-per-turn Combustion, the 5-50 Fire Vision), and the wizard of movement (the Water Travel five full turns, the Negate Fly 1-5, the Negate Water 1-6, the run-toward-the-fled Negate, the 20-being Mass Teleport, the three-plus-level Etherialness, the twice-printed End All Barriers with both its 1-10 vanish and its giant-disintegrate readings pinned, the Safe Teleport that never comes high or low). The pin IS the conversion: OD&D-era ink adjudicated to 1e terms, noted never silent; the as-scanned garbles ride the data file and the comments.",
+ "gap_report": "tools/dragon_gap_report_017.md",
+ "gap_census": {
+  "closed": 0,
+  "open": 2
+ },
+ "gap_flips": [],
+ "banner": {
+  "title": "The Dragon issue-17 opener part two - A Wizard With A Difference: the eight Ward area-wizard variants, the chance-of-making grid, the spell-list roster and the explanation doctrines",
+  "provenance": "Pinned from The Dragon Vol. III No. 3 (August 1978), the Curtiss-provided scan voice (single voice: the issue-17 source is the uploaded Dm17.pdf with its mistral-ocr transcript; no archive.org djvu cross-check exists for issue 17). PRINT FOLIO = PDF PAGE MINUS TWO, verified at the page feet. The article prints at folios 10-13 (PDF 12-15), its list pages broken by the Strategists Club ballot at folio 12 and its Movement explanations riding folio 15 (PDF 17) alongside the R931-pinned Sights and Sounds; the cont. overleaf footer at folio 13 closes there. The pin IS the conversion: OD&D-era ink adjudicated to 1e terms, the conversion noted, never silent; Dragon pins ride a VARIANT layer with provenance, never core canon.",
+  "sentinel": "Print quirks pinned AS SCANNED, noted never silent: the single-voice transcript garbles ride the data file and the comments, never silently normalized - Dispel! Magic (the Defense third-level row), Pall-wall (the Movement fourth-level Pass-wall), Extention, Telekenisis, Ventriliquism, Animate Deat, the Defense-list Etherfulness against the explanation-head Etherialness, the Movement explanation-head Etheriainess, Replusion Field, Hold Staffs in the list against Hold Staff in the explanation, the lowercase Fire immunity, the Movement list skipping its Fifth Level row and printing no ordinal for it, the Control overflow row printing without its level label, and the End All Barriers explanation printing twice with two different texts - both pinned, the dupe noted as scanned. No printed grid in this article carries a garbled numeric cell: the chance grid and the roster counts pin clean, so no table cell rides a sentinel this round."
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "wzdChanceLevels",
+   "value": 8,
+   "comment": "the chance-of-making table runs First through Eighth Level (print 10, PDF 12)"
+  },
+  {
+   "name": "wzdChanceRows",
+   "value": 8,
+   "comment": "the chance table row count, one row per spell level band (print 10)"
+  },
+  {
+   "name": "wzdNormalSpellLevels",
+   "value": 9,
+   "comment": "the normal D&D magic user carries nine spell levels - the Ward prose frame (print 10)"
+  },
+  {
+   "name": "wzdWizardTypes",
+   "value": 8,
+   "comment": "the eight area wizard types: Aggression, Defense, All Things Rustic, Control, Tenaciousness, Detection, Fire, Movement (print 10)"
+  },
+  {
+   "name": "wzdSpellsPerLevel",
+   "value": 2,
+   "comment": "the area wizard picks two spells per experience level from any spell level on his list (print 10)"
+  },
+  {
+   "name": "wzdChanceBonusPerLevel",
+   "value": 5,
+   "comment": "the working chance increases by 5 percent for every level over the first (print 10)"
+  },
+  {
+   "name": "wzdChangedSpellMarkStars",
+   "value": 1,
+   "comment": "the printed legend: one star marks a spell changed to fit the area (print 10)"
+  },
+  {
+   "name": "wzdNewSpellMarkStars",
+   "value": 2,
+   "comment": "the printed legend: two stars mark a new spell (print 10)"
+  },
+  {
+   "name": "wzdExampleWizardLevel",
+   "value": 5,
+   "comment": "the Ward worked example: a fifth-level wizard of fire (print 10)"
+  },
+  {
+   "name": "wzdExampleSpellLevel",
+   "value": 6,
+   "comment": "the example casts a sixth-level spell, heat ray (print 10)"
+  },
+  {
+   "name": "wzdExampleBonusPercent",
+   "value": 20,
+   "comment": "the fifth level over the first gives a +20 percent chance in the example - four bands at 5 percent (print 10)"
+  },
+  {
+   "name": "wzdExampleBasePercent",
+   "value": 30,
+   "comment": "the sixth-level spell carries a 30 percent base chance in the example (print 10)"
+  },
+  {
+   "name": "wzdExampleRollMax",
+   "value": 50,
+   "comment": "the example roll needs 1-50 percent for the spell to work (print 10)"
+  },
+  {
+   "name": "wzdExampleFailMin",
+   "value": 51,
+   "comment": "the example fail floor - a 51 roll and the spell does not work (print 10)"
+  },
+  {
+   "name": "wzdOfferRows",
+   "value": 8,
+   "comment": "the spell-offer count grid rows - one per wizard type in article order: Aggression, Defense, Tenaciousness, Detection, Fire, Movement, All Things Rustic, Control (print 10-15)"
+  },
+  {
+   "name": "wzdTotalSpellsOffered",
+   "value": 206,
+   "comment": "the total spells offered across the eight lists, every level row counted (print 10-15)"
+  },
+  {
+   "name": "wzdCtlOverflowCount",
+   "value": 3,
+   "comment": "the Control list prints an unlabeled overflow row after the Eighth Level - Gate, Monster Summoning VI, Astral Spell, Charm Golems - three spells, the level ordinal never printing (print 12, PDF 14)"
+  },
+  {
+   "name": "wzdMarkedChanged",
+   "value": 22,
+   "comment": "the total changed spells carrying the single star (print 10-15)"
+  },
+  {
+   "name": "wzdMarkedNew",
+   "value": 54,
+   "comment": "the total new spells carrying the double star (print 10-15)"
+  },
+  {
+   "name": "wzdAggMagicMissileArrowsPerLevel",
+   "value": 1,
+   "comment": "the changed Magic Missile: one more arrow per level of the magic user than the old spell (print 12, PDF 14)"
+  },
+  {
+   "name": "wzdAggHoldPersonMax",
+   "value": 6,
+   "comment": "the changed Hold Person: affects 1-6 persons instead of 1-4 (print 12)"
+  },
+  {
+   "name": "wzdAggHoldPersonOldMax",
+   "value": 4,
+   "comment": "the old Hold Person ceiling, 1-4 (print 12)"
+  },
+  {
+   "name": "wzdAggMagicSpearBase",
+   "value": 3,
+   "comment": "the new Magic Spear: three spears base (print 12)"
+  },
+  {
+   "name": "wzdAggMagicSpearPerBand",
+   "value": 1,
+   "comment": "the Magic Spear adds one spear per four-level band (print 12)"
+  },
+  {
+   "name": "wzdAggMagicSpearLevelsPerBand",
+   "value": 4,
+   "comment": "the Magic Spear band width: per every four levels of the caster (print 12)"
+  },
+  {
+   "name": "wzdAggDancingSwordPlus",
+   "value": 1,
+   "comment": "the new Dancing Magic Sword: a plus 1 sword (print 12)"
+  },
+  {
+   "name": "wzdAggDancingSwordTurns",
+   "value": 4,
+   "comment": "the Dancing Magic Sword fights as a hero for four melee turns at the caster command (print 12)"
+  },
+  {
+   "name": "wzdAggMeltHotTurn",
+   "value": 1,
+   "comment": "the new Melt: the metal turns red hot in one melee turn (print 12)"
+  },
+  {
+   "name": "wzdAggMeltMeltTurn",
+   "value": 2,
+   "comment": "the Melt melts the metal on the next melee turn - the second turn from casting (print 12)"
+  },
+  {
+   "name": "wzdDefShieldArmorClass",
+   "value": 2,
+   "comment": "the changed Shield: armor class 2 for the caster (print 12, PDF 14)"
+  },
+  {
+   "name": "wzdDefShieldTurns",
+   "value": 5,
+   "comment": "the changed Shield lasts five melee turns plus the level of the magic user (print 12)"
+  },
+  {
+   "name": "wzdDefProtEvilToHitPenalty",
+   "value": 1,
+   "comment": "the changed Protection from Evil: any chaotic being takes minus one on all attempts to hit the caster (print 12)"
+  },
+  {
+   "name": "wzdDefProtEvilTurns",
+   "value": 6,
+   "comment": "the changed Protection from Evil lasts six melee turns (print 12)"
+  },
+  {
+   "name": "wzdDefProtSwordsTurns",
+   "value": 4,
+   "comment": "the new Protection from Swords lasts four melee turns plus the caster level (print 12)"
+  },
+  {
+   "name": "wzdDefRepulsionTurns",
+   "value": 2,
+   "comment": "the new Repulsion Field lasts two melee turns plus the caster level (print 12)"
+  },
+  {
+   "name": "wzdDefEtherialnessTurns",
+   "value": 3,
+   "comment": "the new Etherialness works as the potion for three melee turns plus the caster level (print 12)"
+  },
+  {
+   "name": "wzdDefNoPuncturesTurns",
+   "value": 3,
+   "comment": "the new No Punctures lasts three melee turns (print 12)"
+  },
+  {
+   "name": "wzdRusCommuneTurns",
+   "value": 10,
+   "comment": "the new Communicate spells - Mammals, Plants, Reptiles, Insects, Avians, Monsters - each allow speech for ten melee turns (print 12-13)"
+  },
+  {
+   "name": "wzdRusEarthElementalDice",
+   "value": 20,
+   "comment": "the changed Conjure Earth Elemental summons a 20 die elemental in the first melee turn (print 13)"
+  },
+  {
+   "name": "wzdRusSummonVanishTurns",
+   "value": 1,
+   "comment": "the new Summon Felines, Canines, Avians: the summoned animals vanish after one full turn or death (print 13)"
+  },
+  {
+   "name": "wzdRusCommandStaffUses",
+   "value": 1,
+   "comment": "the new Command as the Staff: the caster commands like a staff of commanding once (print 13)"
+  },
+  {
+   "name": "wzdCtlSleepTwoBeings",
+   "value": 2,
+   "comment": "the changed Sleep affects two beings with five dice (print 12, PDF 14)"
+  },
+  {
+   "name": "wzdCtlSleepFiveDice",
+   "value": 5,
+   "comment": "the five-dice Sleep share for two beings (print 12)"
+  },
+  {
+   "name": "wzdCtlSleepOneBeing",
+   "value": 1,
+   "comment": "the changed Sleep affects one being with six dice (print 12)"
+  },
+  {
+   "name": "wzdCtlSleepSixDice",
+   "value": 6,
+   "comment": "the six-dice Sleep draw for one being (print 12)"
+  },
+  {
+   "name": "wzdCtlGolemSaveLevel",
+   "value": 14,
+   "comment": "the new Charm Golems gives any golem the saving throw of a 14th level wizard (print 12)"
+  },
+  {
+   "name": "wzdCtlStaffUses",
+   "value": 1,
+   "comment": "the new Control as the Staff: the caster commands like a staff of commanding once (print 12)"
+  },
+  {
+   "name": "wzdTenWizardLockDispels",
+   "value": 2,
+   "comment": "the changed Wizard Lock: only 2 dispel magics break its power (print 13, PDF 15)"
+  },
+  {
+   "name": "wzdTenHoldRadiusYards",
+   "value": 60,
+   "comment": "the Hold Swords and Hold Crossbows radius: 60 yards around the caster (print 13)"
+  },
+  {
+   "name": "wzdTenHoldSwordsTurnsMin",
+   "value": 2,
+   "comment": "the Hold Swords duration floor, 2-20 melee turns (print 13)"
+  },
+  {
+   "name": "wzdTenHoldSwordsTurnsMax",
+   "value": 20,
+   "comment": "the Hold Swords duration ceiling, 2-20 melee turns (print 13)"
+  },
+  {
+   "name": "wzdTenHoldStaffTurnsMin",
+   "value": 3,
+   "comment": "the Hold Staff duration floor, 3-30 melee turns (print 13)"
+  },
+  {
+   "name": "wzdTenHoldStaffTurnsMax",
+   "value": 30,
+   "comment": "the Hold Staff duration ceiling, 3-30 melee turns (print 13)"
+  },
+  {
+   "name": "wzdTenHoldMonsterTurnsMin",
+   "value": 1,
+   "comment": "the Hold Monster duration floor, 1-10 melee turns (print 13)"
+  },
+  {
+   "name": "wzdTenHoldMonsterTurnsMax",
+   "value": 10,
+   "comment": "the Hold Monster duration ceiling, 1-10 melee turns (print 13)"
+  },
+  {
+   "name": "wzdTenStopMagicRadiusYards",
+   "value": 30,
+   "comment": "the Stop Magic radius: 30 yards around the caster (print 13)"
+  },
+  {
+   "name": "wzdTenStopMagicTurns",
+   "value": 6,
+   "comment": "the Stop Magic lasts 6 melee turns (print 13)"
+  },
+  {
+   "name": "wzdTenHoldGroupsMaxBeings",
+   "value": 12,
+   "comment": "the Hold Groups holds any enemy group of less than 12 beings (print 13)"
+  },
+  {
+   "name": "wzdTenOpeningsHeightFeet",
+   "value": 40,
+   "comment": "the Hold Openings area: less than 40 feet tall (print 13)"
+  },
+  {
+   "name": "wzdTenOpeningsWidthFeet",
+   "value": 30,
+   "comment": "the Hold Openings area: 30 feet wide (print 13)"
+  },
+  {
+   "name": "wzdTenOpeningsHours",
+   "value": 24,
+   "comment": "the Hold Openings force field lasts 24 hours (print 13)"
+  },
+  {
+   "name": "wzdTenLockOpeningsHours",
+   "value": 1,
+   "comment": "the Wizard Lock Openings covers the same area but lasts only one hour (print 13)"
+  },
+  {
+   "name": "wzdDetFindTrapsTurnsMin",
+   "value": 1,
+   "comment": "the changed Find Traps lasts 1-4 melee turns plus the caster level, as the wand of the same name (print 13, PDF 15)"
+  },
+  {
+   "name": "wzdDetFindTrapsTurnsMax",
+   "value": 4,
+   "comment": "the Find Traps duration ceiling, 1-4 melee turns (print 13)"
+  },
+  {
+   "name": "wzdDetEndSurpriseTurnsMin",
+   "value": 1,
+   "comment": "the new End Surprise warns for 1-6 melee turns plus the caster level (print 13)"
+  },
+  {
+   "name": "wzdDetEndSurpriseTurnsMax",
+   "value": 6,
+   "comment": "the End Surprise duration ceiling, 1-6 melee turns (print 13)"
+  },
+  {
+   "name": "wzdDetRevealHours",
+   "value": 24,
+   "comment": "the new Reveal the Way lasts 24 hours (print 13)"
+  },
+  {
+   "name": "wzdDetDivineHours",
+   "value": 24,
+   "comment": "the new Divine Any Object lasts 24 hours with no range limitation (print 13)"
+  },
+  {
+   "name": "wzdDetTransportBeingsMin",
+   "value": 1,
+   "comment": "the new Transport to the Spot carries the caster and 1-6 other beings (print 13)"
+  },
+  {
+   "name": "wzdDetTransportBeingsMax",
+   "value": 6,
+   "comment": "the Transport to the Spot beings ceiling, 1-6 (print 13)"
+  },
+  {
+   "name": "wzdDetTransportRangeFeet",
+   "value": 20,
+   "comment": "the transported beings must be within 20 feet of the caster (print 13)"
+  },
+  {
+   "name": "wzdDetStudyHours",
+   "value": 6,
+   "comment": "the caster must have studied the target thing for over 6 hours (print 13)"
+  },
+  {
+   "name": "wzdFireBallBonusPerDie",
+   "value": 1,
+   "comment": "the changed Fire Ball adds plus 1 point to every die (print 13, PDF 15)"
+  },
+  {
+   "name": "wzdFireWallDice",
+   "value": 10,
+   "comment": "the changed Wall of Fire is a 10 die wall (print 13)"
+  },
+  {
+   "name": "wzdFireWallTurnsMin",
+   "value": 1,
+   "comment": "the Wall of Fire stays 1-4 melee turns after the caster stops thinking (print 13)"
+  },
+  {
+   "name": "wzdFireWallTurnsMax",
+   "value": 4,
+   "comment": "the Wall of Fire persistence ceiling, 1-4 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireElementalDice",
+   "value": 20,
+   "comment": "the changed Conjure Fire Elemental summons a 20 die elemental in the first melee turn (print 13)"
+  },
+  {
+   "name": "wzdFireResistTurnsMin",
+   "value": 1,
+   "comment": "the changed Fire Resistance grants immunity to all fire damage for 1-10 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireResistTurnsMax",
+   "value": 10,
+   "comment": "the Fire Resistance duration ceiling, 1-10 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireHeatRayDice",
+   "value": 10,
+   "comment": "the new Heat Ray causes 10 dice of heat damage (print 13)"
+  },
+  {
+   "name": "wzdFireHeatRayTurns",
+   "value": 1,
+   "comment": "the Heat Ray delivers its damage in 1 melee turn (print 13)"
+  },
+  {
+   "name": "wzdFireImmunityRadiusYards",
+   "value": 10,
+   "comment": "the new Fire Immunity covers all beings in a 10 yard radius about the caster (print 13)"
+  },
+  {
+   "name": "wzdFireImmunityTurnsMin",
+   "value": 1,
+   "comment": "the Fire Immunity lasts 1-10 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireImmunityTurnsMax",
+   "value": 10,
+   "comment": "the Fire Immunity duration ceiling, 1-10 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireCombustTurnsMin",
+   "value": 1,
+   "comment": "the new Combustion of All Things burns for 1-6 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireCombustTurnsMax",
+   "value": 6,
+   "comment": "the Combustion duration ceiling, 1-6 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireCombustDicePerTurn",
+   "value": 5,
+   "comment": "the Combustion does 5 dice of damage every turn (print 13)"
+  },
+  {
+   "name": "wzdFireVisionTurnsMin",
+   "value": 5,
+   "comment": "the new Fire Vision lasts 5-50 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireVisionTurnsMax",
+   "value": 50,
+   "comment": "the Fire Vision duration ceiling, 5-50 melee turns (print 13)"
+  },
+  {
+   "name": "wzdMovWaterTravelTurns",
+   "value": 5,
+   "comment": "the new Water Travel: walk on water for up to 5 full turns (print 15, PDF 17)"
+  },
+  {
+   "name": "wzdMovNegateFlyTurnsMin",
+   "value": 1,
+   "comment": "the new Negate the Ability to Fly: the fly muscles paralyzed 1-5 melee turns (print 15)"
+  },
+  {
+   "name": "wzdMovNegateFlyTurnsMax",
+   "value": 5,
+   "comment": "the Negate Fly ceiling, 1-5 melee turns (print 15)"
+  },
+  {
+   "name": "wzdMovNegateWaterTurnsMin",
+   "value": 1,
+   "comment": "the new Negate the Ability to Move on or in the Water lasts 1-6 melee turns (print 15)"
+  },
+  {
+   "name": "wzdMovNegateWaterTurnsMax",
+   "value": 6,
+   "comment": "the Negate Water ceiling, 1-6 melee turns (print 15)"
+  },
+  {
+   "name": "wzdMovMassTeleportBeings",
+   "value": 20,
+   "comment": "the new Mass Teleport transports a maximum of 20 beings plus the caster (print 15)"
+  },
+  {
+   "name": "wzdMovEtherialnessTurns",
+   "value": 3,
+   "comment": "the changed Etherialness works as the potion for three melee turns plus the caster level (print 15)"
+  },
+  {
+   "name": "wzdMovEndBarrierTurnsMin",
+   "value": 1,
+   "comment": "the new End All Barriers makes a single barrier vanish for 1-10 melee turns (print 15)"
+  },
+  {
+   "name": "wzdMovEndBarrierTurnsMax",
+   "value": 10,
+   "comment": "the End All Barriers ceiling, 1-10 melee turns (print 15)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "wzdSameLevelProgression",
+   "value": true,
+   "comment": "the area wizards raise levels of experience in the same manner as the D&D wizard (print 10)"
+  },
+  {
+   "name": "wzdFasterSpellUse",
+   "value": true,
+   "comment": "an area wizard studies nothing but his area and is faster in spell use than the normal magic user (print 10)"
+  },
+  {
+   "name": "wzdBetterSpellLowerChance",
+   "value": true,
+   "comment": "the better the spell, the less chance a first-level area magic user has of performing it (print 10)"
+  },
+  {
+   "name": "wzdExampleSpellLostOnFail",
+   "value": true,
+   "comment": "a failed chance roll costs the memorized spell unless more than one was taken (print 10)"
+  },
+  {
+   "name": "wzdEdNoteNpcBedevilment",
+   "value": true,
+   "comment": "the ED note recommends the variants as a source of NPC bedevilment (print 10)"
+  },
+  {
+   "name": "wzdCtlOverflowRowUnlabeled",
+   "value": true,
+   "comment": "the Control overflow row prints without its level label - the ninth-row ordinal never prints, noted as scanned (print 12)"
+  },
+  {
+   "name": "wzdMovFifthLevelRowAbsent",
+   "value": true,
+   "comment": "the Movement list prints no Fifth Level row - the grid cell pins 0, the row itself never printing (print 10, PDF 12)"
+  },
+  {
+   "name": "wzdAggMeltMagicSaveApplicable",
+   "value": true,
+   "comment": "the Melt allows the magic saving throw (print 12)"
+  },
+  {
+   "name": "wzdAggMeltPlateMailMassLimit",
+   "value": true,
+   "comment": "the Melt affects masses of metal no greater than a set of plate mail (print 12)"
+  },
+  {
+   "name": "wzdDefShieldPlusLevel",
+   "value": true,
+   "comment": "the Shield duration adds the caster level (print 12)"
+  },
+  {
+   "name": "wzdDefProtEvilChaoticOnly",
+   "value": true,
+   "comment": "the Protection from Evil penalty binds chaotic beings only (print 12)"
+  },
+  {
+   "name": "wzdDefProtEvilRadiusSameAsBase",
+   "value": true,
+   "comment": "the Protection from Evil 10 foot Radius does the same as the base spell, affecting the circle area around the caster (print 12)"
+  },
+  {
+   "name": "wzdDefProtSwordsSaveToHit",
+   "value": true,
+   "comment": "the Protection from Swords forces the attacker to make the magic saving throw to hit with a sword (print 12)"
+  },
+  {
+   "name": "wzdDefProtSwordsPlusLevel",
+   "value": true,
+   "comment": "the Protection from Swords duration adds the caster level (print 12)"
+  },
+  {
+   "name": "wzdDefProtEdgedAsSwordSpell",
+   "value": true,
+   "comment": "the new Protection from Edged Weapons matches the sword spell for all edged weapons, same duration (print 12)"
+  },
+  {
+   "name": "wzdDefRepulsionPlusLevel",
+   "value": true,
+   "comment": "the Repulsion Field duration adds the caster level (print 12)"
+  },
+  {
+   "name": "wzdDefRepulsionStopsPhysical",
+   "value": true,
+   "comment": "the Repulsion Field stops anything of physical matter from touching the caster (print 12)"
+  },
+  {
+   "name": "wzdDefEtherialnessPlusLevel",
+   "value": true,
+   "comment": "the Etherialness duration adds the caster level (print 12)"
+  },
+  {
+   "name": "wzdDefEtherialnessAsPotion",
+   "value": true,
+   "comment": "the Etherialness works as the potion of the same name (print 12)"
+  },
+  {
+   "name": "wzdDefNoPuncturesHealsInstantly",
+   "value": true,
+   "comment": "the No Punctures stops any skin-breaking attack - all such wounds heal instantly and are not felt (print 12)"
+  },
+  {
+   "name": "wzdDefProtAllWeaponsAsSwordSpell",
+   "value": true,
+   "comment": "the new Protection from All Weapons matches the sword spell, applying to all weapons (print 12)"
+  },
+  {
+   "name": "wzdRusLightFullDay",
+   "value": true,
+   "comment": "the changed Light gives the light of full day (print 12)"
+  },
+  {
+   "name": "wzdRusCommuneReptilesAsMammals",
+   "value": true,
+   "comment": "the Reptiles, Insects, Avians and Monsters Communicate spells match the Mammal spell (print 13)"
+  },
+  {
+   "name": "wzdRusConjureElementalThinks",
+   "value": true,
+   "comment": "the conjured earth elemental thinks for itself and will not attack the caster on lost concentration - it simply vanishes (print 13)"
+  },
+  {
+   "name": "wzdRusSummonSeenTypesOnly",
+   "value": true,
+   "comment": "the Summon Felines conjures any type of cat the caster has seen, doing whatever the caster dictates (print 13)"
+  },
+  {
+   "name": "wzdRusSummonCaninesAsFelines",
+   "value": true,
+   "comment": "the Summon Canines matches the feline spell for any type of dog (print 13)"
+  },
+  {
+   "name": "wzdRusSummonAviansRocExcluded",
+   "value": true,
+   "comment": "the Summon Avians matches the feline spell for any type of bird except the magical Roc (print 13)"
+  },
+  {
+   "name": "wzdRusCharmInsectAnyTypeSize",
+   "value": true,
+   "comment": "the new Charm Insect works on any type or size of insect (print 13)"
+  },
+  {
+   "name": "wzdRusCharmSnakeMammalAsInsect",
+   "value": true,
+   "comment": "the Charm Snake and Charm Mammal match the charm insect spell for snakes and mammals (print 13)"
+  },
+  {
+   "name": "wzdRusInsectPlagueAsCleric",
+   "value": true,
+   "comment": "the Insect Plague in the list works as the cleric spell (print 13)"
+  },
+  {
+   "name": "wzdCtlGolemCutsProtection",
+   "value": true,
+   "comment": "the Charm Golems cuts through the magic protection of any given golem and allows a control attempt (print 12)"
+  },
+  {
+   "name": "wzdCtlSleepNormalOtherwise",
+   "value": true,
+   "comment": "the changed Sleep is the normal spell otherwise, adding only the two-beings-five-dice and one-being-six-dice draws (print 12)"
+  },
+  {
+   "name": "wzdTenHoldPortalAsWizardLock",
+   "value": true,
+   "comment": "the changed Hold Portal works like a wizard lock for this wizard (print 13)"
+  },
+  {
+   "name": "wzdTenWizardLockKnockWorks",
+   "value": true,
+   "comment": "the changed Wizard Lock falls to the normal knock spell but needs both dispel magics (print 13)"
+  },
+  {
+   "name": "wzdTenKnockOpensBlocked",
+   "value": true,
+   "comment": "the changed Knock opens any locked, fastened or blocked thing - a passage filled with rubble and the like (print 13)"
+  },
+  {
+   "name": "wzdTenHoldSwordsUndrawnOnly",
+   "value": true,
+   "comment": "the Hold Swords holds any sword in its scabbard that has not been drawn at the casting (print 13)"
+  },
+  {
+   "name": "wzdTenHoldCrossbowsWhileConcentrating",
+   "value": true,
+   "comment": "the Hold Crossbows blocks the shaft only as long as the caster concentrates (print 13)"
+  },
+  {
+   "name": "wzdTenHoldMonsterSaveStops",
+   "value": true,
+   "comment": "the Hold Monster works unless the monster makes its magic saving throw - it stops special powers like troll regeneration and dragon breath (print 13)"
+  },
+  {
+   "name": "wzdTenStopMagicSaveStops",
+   "value": true,
+   "comment": "the Stop Magic binds only enemies failing the magic saving throw (print 13)"
+  },
+  {
+   "name": "wzdTenHoldGroupsMixed",
+   "value": true,
+   "comment": "the Hold Groups holds even when creatures and humans are intermixed, each being saving individually (print 13)"
+  },
+  {
+   "name": "wzdTenOpeningsCasterMayLeave",
+   "value": true,
+   "comment": "the Hold Openings needs no concentration once up - the caster may leave the area (print 13)"
+  },
+  {
+   "name": "wzdTenOpeningsTakesDamage",
+   "value": true,
+   "comment": "the Hold Openings field takes damage like a human with the caster hit point count (print 13)"
+  },
+  {
+   "name": "wzdTenLockOpeningsDispelOnly",
+   "value": true,
+   "comment": "the Wizard Lock Openings falls only to a dispel magic - nothing else gets through it or hurts it (print 13)"
+  },
+  {
+   "name": "wzdTenEndArcaneAllMagicalWalls",
+   "value": true,
+   "comment": "the End Arcane Walls dissolves all magically created walls - stone, fire, ice and the like (print 13)"
+  },
+  {
+   "name": "wzdTenHoldCubeRingsWandsDurations",
+   "value": true,
+   "comment": "the Hold a Cube of Force and Hold Wands run 2-20 melee turns, the Hold Rings 3-30 - the two duration families of the list (print 13)"
+  },
+  {
+   "name": "wzdDetFindTrapsPlusLevel",
+   "value": true,
+   "comment": "the Find Traps duration adds the caster level (print 13)"
+  },
+  {
+   "name": "wzdDetFindSecretDoorsAsTraps",
+   "value": true,
+   "comment": "the changed Find Secret Doors matches the trap spell for secret doors (print 13)"
+  },
+  {
+   "name": "wzdDetEndSurprisePlusLevel",
+   "value": true,
+   "comment": "the End Surprise duration adds the caster level (print 13)"
+  },
+  {
+   "name": "wzdDetFindPathAsCleric",
+   "value": true,
+   "comment": "the changed Find the Path works as the cleric spell (print 13)"
+  },
+  {
+   "name": "wzdDetRevealFootstepsGlow",
+   "value": true,
+   "comment": "the Reveal the Way makes the actual footsteps or claw steps of the fleeing being glow before the caster (print 13)"
+  },
+  {
+   "name": "wzdDetRevealFlightPathGlow",
+   "value": true,
+   "comment": "the Reveal the Way glows the flight path when the quarry flew away (print 13)"
+  },
+  {
+   "name": "wzdDetDivineWillowWand",
+   "value": true,
+   "comment": "the Divine Any Object uses a willow wand to feel the way to the known object or being (print 13)"
+  },
+  {
+   "name": "wzdDetTransportMustStudy",
+   "value": true,
+   "comment": "the Transport to the Spot needs the caster to know exactly what is transported near - studied, mentally projected, transported safely (print 13)"
+  },
+  {
+   "name": "wzdFireBallNeverAffectsCaster",
+   "value": true,
+   "comment": "the fire wizard is never affected by his own fire ball (print 13)"
+  },
+  {
+   "name": "wzdFireBallEquipmentNotProtected",
+   "value": true,
+   "comment": "the fire wizard equipment is however affected by his own fire ball (print 13)"
+  },
+  {
+   "name": "wzdFireIllusionsFireOnly",
+   "value": true,
+   "comment": "the changed Phantasmal Force Fire Illusions makes only illusions dealing with fire (print 13)"
+  },
+  {
+   "name": "wzdFireNegationDestroysContactedFire",
+   "value": true,
+   "comment": "the new Fire Negation destroys any fire the caster comes in contact with, lasting 2-20 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireControlRedirectOnSave",
+   "value": true,
+   "comment": "the new Control of Fire throws directed fire spells back at the thrower when the caster makes the magic saving throw, lasting 2-20 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireConjureElementalThinks",
+   "value": true,
+   "comment": "the conjured fire elemental thinks for itself and vanishes on lost concentration rather than attacking the caster (print 13)"
+  },
+  {
+   "name": "wzdFireBodyInfernoCasterDice",
+   "value": true,
+   "comment": "the new Body of Fire turns the caster into an inferno for the number of dice or hit points he has, lasting 2-20 melee turns (print 13)"
+  },
+  {
+   "name": "wzdFireHeatRayHitsFireTypes",
+   "value": true,
+   "comment": "the Heat Ray damages any creature, even a fire type creature (print 13)"
+  },
+  {
+   "name": "wzdFireImmunityAllBeingsInRadius",
+   "value": true,
+   "comment": "the Fire Immunity covers all beings in the radius, not the caster alone (print 13)"
+  },
+  {
+   "name": "wzdFireVisionNeedsLitFire",
+   "value": true,
+   "comment": "the Fire Vision sees into any area with a lit fire (print 13)"
+  },
+  {
+   "name": "wzdMovNegateRunTowardFled",
+   "value": true,
+   "comment": "the new Negate the Ability to Run from a Fight forces the fleeing being, on a failed magic save, to run toward the very creature it sought to flee (print 15)"
+  },
+  {
+   "name": "wzdMovMassTeleportAsTeleport",
+   "value": true,
+   "comment": "the Mass Teleport acts in all other respects as the teleport spell, to the area the caster mentally envisions (print 15)"
+  },
+  {
+   "name": "wzdMovEtherialnessPlusLevel",
+   "value": true,
+   "comment": "the Movement Etherialness duration adds the caster level (print 15)"
+  },
+  {
+   "name": "wzdMovEndBarrierPrintedTwice",
+   "value": true,
+   "comment": "the End All Barriers explanation prints TWICE with two different texts - the vanish-for-1-10 reading and the giant-disintegrate reading, both pinned, the dupe noted as scanned (print 15)"
+  },
+  {
+   "name": "wzdMovEndBarrierGiantDisintegrate",
+   "value": true,
+   "comment": "the second End All Barriers text reads as a giant disintegrate that unblocks anything stopping the wizard of movement (print 15)"
+  },
+  {
+   "name": "wzdMovSafeTeleportNoHighLow",
+   "value": true,
+   "comment": "the changed Safe Teleport matches the normal teleport except the caster never comes high or low on the target (print 15)"
+  },
+  {
+   "name": "wzdMovWaterTravelCastOnOthers",
+   "value": true,
+   "comment": "the Water Travel allows the user or the being the caster casts it on to walk on water (print 15)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "wzdChance",
+   "tag": "Wc",
+   "count": "wzdChanceRows",
+   "sentinel": -1,
+   "audit_comment": "the chance-of-making-per-level grid - one row per spell level band, First through Eighth, the percent chance a first-level area wizard has of working a spell of that level: 100, 85, 75, 50, 40, 30, 20, 10 (print 10, PDF 12)",
+   "cols": [
+    "wzdChanceLevel",
+    "wzdChancePercent"
+   ],
+   "col_comments": [
+    "the spell level ordinal, 1-8 (print 10)",
+    "the working percent at first caster level - the better the spell the less the chance (print 10)"
+   ],
+   "data": [
+    [
+     1,
+     100
+    ],
+    [
+     2,
+     85
+    ],
+    [
+     3,
+     75
+    ],
+    [
+     4,
+     50
+    ],
+    [
+     5,
+     40
+    ],
+    [
+     6,
+     30
+    ],
+    [
+     7,
+     20
+    ],
+    [
+     8,
+     10
+    ]
+   ]
+  },
+  {
+   "name": "wzdOffer",
+   "tag": "Wo",
+   "count": "wzdOfferRows",
+   "sentinel": -1,
+   "audit_comment": "the spell-offer count grid - one row per wizard type in article order (Aggression, Defense, Tenaciousness, Detection, Fire, Movement, All Things Rustic, Control), one column per spell level band, the count of spells offered at that level; the Movement fifth-level cell pins 0 - its row never prints; the Control overflow row rides wzdCtlOverflowCount; the totals pin 206 offered, 22 changed, 54 new (print 10-15)",
+   "cols": [
+    "wzdOfferL1",
+    "wzdOfferL2",
+    "wzdOfferL3",
+    "wzdOfferL4",
+    "wzdOfferL5",
+    "wzdOfferL6",
+    "wzdOfferL7",
+    "wzdOfferL8"
+   ],
+   "col_comments": [
+    "the spells offered at First Level (print 10-12)",
+    "the spells offered at Second Level (print 10-12)",
+    "the spells offered at Third Level (print 10-12)",
+    "the spells offered at Fourth Level (print 10-12)",
+    "the spells offered at Fifth Level - the Movement row pins 0, no row prints (print 10-12)",
+    "the spells offered at Sixth Level (print 10-12)",
+    "the spells offered at Seventh Level (print 10-12)",
+    "the spells offered at Eighth Level (print 10-12)"
+   ],
+   "data": [
+    [
+     3,
+     2,
+     4,
+     5,
+     2,
+     2,
+     4,
+     3
+    ],
+    [
+     2,
+     3,
+     7,
+     2,
+     3,
+     3,
+     3,
+     6
+    ],
+    [
+     1,
+     2,
+     3,
+     4,
+     7,
+     3,
+     2,
+     3
+    ],
+    [
+     3,
+     4,
+     4,
+     3,
+     2,
+     2,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    [
+     3,
+     4,
+     2,
+     5,
+     0,
+     4,
+     3,
+     3
+    ],
+    [
+     3,
+     4,
+     8,
+     5,
+     8,
+     5,
+     3,
+     3
+    ],
+    [
+     3,
+     3,
+     3,
+     2,
+     3,
+     4,
+     5,
+     5
+    ]
+   ]
+  }
+ ],
+ "header_sections": {
+  "the chance-of-making doctrine (print 10)": [
+   {
+    "kind": "const",
+    "name": "wzdChanceLevels"
+   },
+   {
+    "kind": "const",
+    "name": "wzdChanceRows"
+   },
+   {
+    "kind": "const",
+    "name": "wzdNormalSpellLevels"
+   },
+   {
+    "kind": "const",
+    "name": "wzdWizardTypes"
+   },
+   {
+    "kind": "const",
+    "name": "wzdSpellsPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wzdChanceBonusPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wzdChangedSpellMarkStars"
+   },
+   {
+    "kind": "const",
+    "name": "wzdNewSpellMarkStars"
+   },
+   {
+    "kind": "const",
+    "name": "wzdExampleWizardLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wzdExampleSpellLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wzdExampleBonusPercent"
+   },
+   {
+    "kind": "const",
+    "name": "wzdExampleBasePercent"
+   },
+   {
+    "kind": "const",
+    "name": "wzdExampleRollMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdExampleFailMin"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdSameLevelProgression"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFasterSpellUse"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdBetterSpellLowerChance"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdExampleSpellLostOnFail"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdEdNoteNpcBedevilment"
+   },
+   {
+    "kind": "table",
+    "name": "wzdChance"
+   }
+  ],
+  "the roster grid and mark census (print 10-15)": [
+   {
+    "kind": "const",
+    "name": "wzdOfferRows"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTotalSpellsOffered"
+   },
+   {
+    "kind": "const",
+    "name": "wzdCtlOverflowCount"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMarkedChanged"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMarkedNew"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdCtlOverflowRowUnlabeled"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdMovFifthLevelRowAbsent"
+   },
+   {
+    "kind": "table",
+    "name": "wzdOffer"
+   }
+  ],
+  "the wizard of aggression (print 10-12)": [
+   {
+    "kind": "const",
+    "name": "wzdAggMagicMissileArrowsPerLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wzdAggHoldPersonMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdAggHoldPersonOldMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdAggMagicSpearBase"
+   },
+   {
+    "kind": "const",
+    "name": "wzdAggMagicSpearPerBand"
+   },
+   {
+    "kind": "const",
+    "name": "wzdAggMagicSpearLevelsPerBand"
+   },
+   {
+    "kind": "const",
+    "name": "wzdAggDancingSwordPlus"
+   },
+   {
+    "kind": "const",
+    "name": "wzdAggDancingSwordTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdAggMeltHotTurn"
+   },
+   {
+    "kind": "const",
+    "name": "wzdAggMeltMeltTurn"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdAggMeltMagicSaveApplicable"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdAggMeltPlateMailMassLimit"
+   }
+  ],
+  "the wizard of defense (print 10-13)": [
+   {
+    "kind": "const",
+    "name": "wzdDefShieldArmorClass"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDefShieldTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDefProtEvilToHitPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDefProtEvilTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDefProtSwordsTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDefRepulsionTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDefEtherialnessTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDefNoPuncturesTurns"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefShieldPlusLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefProtEvilChaoticOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefProtEvilRadiusSameAsBase"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefProtSwordsSaveToHit"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefProtSwordsPlusLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefProtEdgedAsSwordSpell"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefRepulsionPlusLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefRepulsionStopsPhysical"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefEtherialnessPlusLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefEtherialnessAsPotion"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefNoPuncturesHealsInstantly"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDefProtAllWeaponsAsSwordSpell"
+   }
+  ],
+  "the wizard of all things rustic (print 10-13)": [
+   {
+    "kind": "const",
+    "name": "wzdRusCommuneTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdRusEarthElementalDice"
+   },
+   {
+    "kind": "const",
+    "name": "wzdRusSummonVanishTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdRusCommandStaffUses"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdRusLightFullDay"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdRusCommuneReptilesAsMammals"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdRusConjureElementalThinks"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdRusSummonSeenTypesOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdRusSummonCaninesAsFelines"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdRusSummonAviansRocExcluded"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdRusCharmInsectAnyTypeSize"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdRusCharmSnakeMammalAsInsect"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdRusInsectPlagueAsCleric"
+   }
+  ],
+  "the wizard of control (print 10-12)": [
+   {
+    "kind": "const",
+    "name": "wzdCtlSleepTwoBeings"
+   },
+   {
+    "kind": "const",
+    "name": "wzdCtlSleepFiveDice"
+   },
+   {
+    "kind": "const",
+    "name": "wzdCtlSleepOneBeing"
+   },
+   {
+    "kind": "const",
+    "name": "wzdCtlSleepSixDice"
+   },
+   {
+    "kind": "const",
+    "name": "wzdCtlGolemSaveLevel"
+   },
+   {
+    "kind": "const",
+    "name": "wzdCtlStaffUses"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdCtlGolemCutsProtection"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdCtlSleepNormalOtherwise"
+   }
+  ],
+  "the wizard of tenaciousness (print 10-13)": [
+   {
+    "kind": "const",
+    "name": "wzdTenWizardLockDispels"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenHoldRadiusYards"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenHoldSwordsTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenHoldSwordsTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenHoldStaffTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenHoldStaffTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenHoldMonsterTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenHoldMonsterTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenStopMagicRadiusYards"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenStopMagicTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenHoldGroupsMaxBeings"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenOpeningsHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenOpeningsWidthFeet"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenOpeningsHours"
+   },
+   {
+    "kind": "const",
+    "name": "wzdTenLockOpeningsHours"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenHoldPortalAsWizardLock"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenWizardLockKnockWorks"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenKnockOpensBlocked"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenHoldSwordsUndrawnOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenHoldCrossbowsWhileConcentrating"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenHoldMonsterSaveStops"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenStopMagicSaveStops"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenHoldGroupsMixed"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenOpeningsCasterMayLeave"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenOpeningsTakesDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenLockOpeningsDispelOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenEndArcaneAllMagicalWalls"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdTenHoldCubeRingsWandsDurations"
+   }
+  ],
+  "the wizard of detection (print 10-13)": [
+   {
+    "kind": "const",
+    "name": "wzdDetFindTrapsTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDetFindTrapsTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDetEndSurpriseTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDetEndSurpriseTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDetRevealHours"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDetDivineHours"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDetTransportBeingsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDetTransportBeingsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDetTransportRangeFeet"
+   },
+   {
+    "kind": "const",
+    "name": "wzdDetStudyHours"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDetFindTrapsPlusLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDetFindSecretDoorsAsTraps"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDetEndSurprisePlusLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDetFindPathAsCleric"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDetRevealFootstepsGlow"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDetRevealFlightPathGlow"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDetDivineWillowWand"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdDetTransportMustStudy"
+   }
+  ],
+  "the wizard of fire (print 10-13)": [
+   {
+    "kind": "const",
+    "name": "wzdFireBallBonusPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireWallDice"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireWallTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireWallTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireElementalDice"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireResistTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireResistTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireHeatRayDice"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireHeatRayTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireImmunityRadiusYards"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireImmunityTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireImmunityTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireCombustTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireCombustTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireCombustDicePerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireVisionTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdFireVisionTurnsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireBallNeverAffectsCaster"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireBallEquipmentNotProtected"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireIllusionsFireOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireNegationDestroysContactedFire"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireControlRedirectOnSave"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireConjureElementalThinks"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireBodyInfernoCasterDice"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireHeatRayHitsFireTypes"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireImmunityAllBeingsInRadius"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdFireVisionNeedsLitFire"
+   }
+  ],
+  "the wizard of movement (print 10-15)": [
+   {
+    "kind": "const",
+    "name": "wzdMovWaterTravelTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMovNegateFlyTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMovNegateFlyTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMovNegateWaterTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMovNegateWaterTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMovMassTeleportBeings"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMovEtherialnessTurns"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMovEndBarrierTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "wzdMovEndBarrierTurnsMax"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdMovNegateRunTowardFled"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdMovMassTeleportAsTeleport"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdMovEtherialnessPlusLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdMovEndBarrierPrintedTwice"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdMovEndBarrierGiantDisintegrate"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdMovSafeTeleportNoHighLow"
+   },
+   {
+    "kind": "bool",
+    "name": "wzdMovWaterTravelCastOnOthers"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['wzdChanceLevel'](0) != 1 or m['wzdChancePercent'](0) != 100 or m['wzdChancePercent'](1) != 85 or m['wzdChancePercent'](2) != 75 or m['wzdChancePercent'](3) != 50 or m['wzdChancePercent'](4) != 40 or m['wzdChancePercent'](5) != 30 or m['wzdChancePercent'](6) != 20 or m['wzdChancePercent'](7) != 10 or m['wzdChanceLevels']() != 8",
+   "note": "the chance grid - 100 at first, 85, 75, 50, 40, 30, 20 down to 10 at eighth (print 10)"
+  },
+  {
+   "expr": "m['wzdExampleWizardLevel']() != 5 or m['wzdExampleSpellLevel']() != 6 or m['wzdExampleBonusPercent']() != 20 or m['wzdExampleBasePercent']() != 30 or m['wzdExampleRollMax']() != 50 or m['wzdExampleFailMin']() != 51 or m['wzdChanceBonusPerLevel']() != 5 or m['wzdSpellsPerLevel']() != 2",
+   "note": "the Ward worked example - a fifth-level fire wizard casting a sixth-level heat ray: +20 percent, base 30, the 1-50 roll, 51 fails, the +5 per level over first and the two-spells-per-level pick (print 10)"
+  },
+  {
+   "expr": "m['wzdOfferL1'](0) != 3 or m['wzdOfferL8'](0) != 3 or m['wzdOfferL8'](1) != 6 or m['wzdOfferL3'](2) != 3 or m['wzdOfferL5'](5) != 0 or m['wzdOfferL3'](6) != 8 or m['wzdOfferL5'](7) != 3 or m['wzdOfferL4'](5) != 5",
+   "note": "the offer grid edges - aggression three at first and three at eighth, defense six at eighth, tenaciousness three at third, the movement fifth-level zero and its five at fourth, rustic eight at third, control three at fifth (print 10-12)"
+  },
+  {
+   "expr": "m['wzdTotalSpellsOffered']() != 206 or m['wzdCtlOverflowCount']() != 3 or m['wzdMarkedChanged']() != 22 or m['wzdMarkedNew']() != 54 or m['wzdWizardTypes']() != 8 or m['wzdChangedSpellMarkStars']() != 1 or m['wzdNewSpellMarkStars']() != 2",
+   "note": "the roster census - 206 spells offered across the eight lists, the unlabeled three-spell Control overflow row, 22 changed with the single star, 54 new with the double star (print 10-15)"
+  },
+  {
+   "expr": "m['wzdAggMagicMissileArrowsPerLevel']() != 1 or m['wzdAggHoldPersonMax']() != 6 or m['wzdAggHoldPersonOldMax']() != 4 or m['wzdAggMagicSpearBase']() != 3 or m['wzdAggMagicSpearPerBand']() != 1 or m['wzdAggMagicSpearLevelsPerBand']() != 4 or m['wzdAggDancingSwordPlus']() != 1 or m['wzdAggDancingSwordTurns']() != 4 or m['wzdAggMeltHotTurn']() != 1 or m['wzdAggMeltMeltTurn']() != 2",
+   "note": "the aggression explanations - the extra missile arrow per level, Hold Person 1-6 over the old 1-4, the Magic Spear three-plus-one per four levels, the Dancing Magic Sword plus 1 for four turns, the Melt red-hot in one turn melting the next (print 12)"
+  },
+  {
+   "expr": "m['wzdDefShieldArmorClass']() != 2 or m['wzdDefShieldTurns']() != 5 or m['wzdDefProtEvilToHitPenalty']() != 1 or m['wzdDefProtEvilTurns']() != 6 or m['wzdDefProtSwordsTurns']() != 4 or m['wzdDefRepulsionTurns']() != 2 or m['wzdDefEtherialnessTurns']() != 3 or m['wzdDefNoPuncturesTurns']() != 3",
+   "note": "the defense explanations - Shield AC 2 for five turns plus level, Protection from Evil minus one to hit for six turns, Protection from Swords four turns plus level, Repulsion Field two plus level, Etherialness three plus level, No Punctures three (print 12)"
+  },
+  {
+   "expr": "m['wzdCtlSleepTwoBeings']() != 2 or m['wzdCtlSleepFiveDice']() != 5 or m['wzdCtlSleepOneBeing']() != 1 or m['wzdCtlSleepSixDice']() != 6 or m['wzdCtlGolemSaveLevel']() != 14 or m['wzdCtlStaffUses']() != 1 or m['wzdRusEarthElementalDice']() != 20 or m['wzdRusCommuneTurns']() != 10 or m['wzdRusSummonVanishTurns']() != 1 or m['wzdRusCommandStaffUses']() != 1",
+   "note": "the control and rustic explanations - the Sleep draws two beings at five dice and one at six, the golem saving as a 14th level wizard, the staff commands once, the 20 die earth elemental, the ten-turn communicates, the summons vanishing after one full turn (print 13)"
+  },
+  {
+   "expr": "m['wzdTenWizardLockDispels']() != 2 or m['wzdTenHoldRadiusYards']() != 60 or m['wzdTenHoldSwordsTurnsMin']() != 2 or m['wzdTenHoldSwordsTurnsMax']() != 20 or m['wzdTenHoldStaffTurnsMin']() != 3 or m['wzdTenHoldStaffTurnsMax']() != 30 or m['wzdTenHoldMonsterTurnsMin']() != 1 or m['wzdTenHoldMonsterTurnsMax']() != 10 or m['wzdTenStopMagicRadiusYards']() != 30 or m['wzdTenStopMagicTurns']() != 6 or m['wzdTenHoldGroupsMaxBeings']() != 12 or m['wzdTenOpeningsHeightFeet']() != 40 or m['wzdTenOpeningsWidthFeet']() != 30 or m['wzdTenOpeningsHours']() != 24 or m['wzdTenLockOpeningsHours']() != 1",
+   "note": "the tenaciousness explanations - two dispels on the wizard lock, the 60 yard holds at 2-20, the 3-30 staff and rings, the 1-10 monster hold, Stop Magic at 30 yards for six turns, the 12-being group hold, the 40 by 30 foot openings for 24 hours, the locked openings one hour (print 13)"
+  },
+  {
+   "expr": "m['wzdDetFindTrapsTurnsMin']() != 1 or m['wzdDetFindTrapsTurnsMax']() != 4 or m['wzdDetEndSurpriseTurnsMin']() != 1 or m['wzdDetEndSurpriseTurnsMax']() != 6 or m['wzdDetRevealHours']() != 24 or m['wzdDetDivineHours']() != 24 or m['wzdDetTransportBeingsMin']() != 1 or m['wzdDetTransportBeingsMax']() != 6 or m['wzdDetTransportRangeFeet']() != 20 or m['wzdDetStudyHours']() != 6",
+   "note": "the detection explanations - Find Traps 1-4 plus level, End Surprise 1-6 plus level, the 24-hour Reveal and Divine, the Transport carrying 1-6 beings within 20 feet, the over-6-hours study (print 13)"
+  },
+  {
+   "expr": "m['wzdFireBallBonusPerDie']() != 1 or m['wzdFireWallDice']() != 10 or m['wzdFireWallTurnsMin']() != 1 or m['wzdFireWallTurnsMax']() != 4 or m['wzdFireElementalDice']() != 20 or m['wzdFireResistTurnsMin']() != 1 or m['wzdFireResistTurnsMax']() != 10 or m['wzdFireHeatRayDice']() != 10 or m['wzdFireHeatRayTurns']() != 1 or m['wzdFireImmunityRadiusYards']() != 10 or m['wzdFireCombustDicePerTurn']() != 5 or m['wzdFireVisionTurnsMin']() != 5 or m['wzdFireVisionTurnsMax']() != 50",
+   "note": "the fire explanations - the +1 per die fire ball, the 10 die wall persisting 1-4, the 20 die elemental, Fire Resistance 1-10, the 10-dice Heat Ray in one turn, Immunity over 10 yards for 1-10, the five dice per turn Combustion, the 5-50 Fire Vision (print 13)"
+  },
+  {
+   "expr": "m['wzdMovWaterTravelTurns']() != 5 or m['wzdMovNegateFlyTurnsMin']() != 1 or m['wzdMovNegateFlyTurnsMax']() != 5 or m['wzdMovNegateWaterTurnsMin']() != 1 or m['wzdMovNegateWaterTurnsMax']() != 6 or m['wzdMovMassTeleportBeings']() != 20 or m['wzdMovEtherialnessTurns']() != 3 or m['wzdMovEndBarrierTurnsMin']() != 1 or m['wzdMovEndBarrierTurnsMax']() != 10",
+   "note": "the movement explanations - Water Travel five full turns, Negate Fly 1-5, Negate Water 1-6, the 20-being Mass Teleport, Etherialness three plus level, End All Barriers 1-10 (print 15)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['wzdOfferL1'](0) != 3 or m['wzdOfferL2'](0) != 2 or m['wzdOfferL3'](0) != 4 or m['wzdOfferL4'](0) != 5 or m['wzdOfferL5'](0) != 2 or m['wzdOfferL6'](0) != 2 or m['wzdOfferL7'](0) != 4 or m['wzdOfferL8'](0) != 3",
+   "note": "the aggression row - 3, 2, 4, 5, 2, 2, 4, 3 across the eight bands (print 10-12)"
+  },
+  {
+   "expr": "m['wzdOfferL1'](1) != 2 or m['wzdOfferL2'](1) != 3 or m['wzdOfferL3'](1) != 7 or m['wzdOfferL4'](1) != 2 or m['wzdOfferL5'](1) != 3 or m['wzdOfferL6'](1) != 3 or m['wzdOfferL7'](1) != 3 or m['wzdOfferL8'](1) != 6",
+   "note": "the defense row - 2, 3, 7, 2, 3, 3, 3, 6, the seven-spell third band and the six-spell eighth (print 10-12)"
+  },
+  {
+   "expr": "m['wzdOfferL1'](4) != 2 or m['wzdOfferL2'](4) != 2 or m['wzdOfferL3'](4) != 2 or m['wzdOfferL4'](4) != 2 or m['wzdOfferL5'](4) != 2 or m['wzdOfferL6'](4) != 2 or m['wzdOfferL7'](4) != 2 or m['wzdOfferL8'](4) != 2",
+   "note": "the fire row - two spells at every band, the flat roster (print 10-12)"
+  },
+  {
+   "expr": "m['wzdOfferL1'](6) != 3 or m['wzdOfferL2'](6) != 4 or m['wzdOfferL3'](6) != 8 or m['wzdOfferL4'](6) != 5 or m['wzdOfferL5'](6) != 8 or m['wzdOfferL6'](6) != 5 or m['wzdOfferL7'](6) != 3 or m['wzdOfferL8'](6) != 3",
+   "note": "the rustic row - 3, 4, 8, 5, 8, 5, 3, 3, the heaviest list (print 10-12)"
+  },
+  {
+   "expr": "m['wzdOfferL1'](7) != 3 or m['wzdOfferL2'](7) != 3 or m['wzdOfferL3'](7) != 3 or m['wzdOfferL4'](7) != 2 or m['wzdOfferL5'](7) != 3 or m['wzdOfferL6'](7) != 4 or m['wzdOfferL7'](7) != 5 or m['wzdOfferL8'](7) != 5",
+   "note": "the control row - 3, 3, 3, 2, 3, 4, 5, 5 plus the three-spell unlabeled overflow row (print 10-14)"
+  }
+ ],
+ "file_patches": [],
+ "data_files": [
+  {
+   "path": "doc/data/dragon017_wizard_spell_lists.txt",
+   "content": "# The Dragon #17 - A Wizard With A Difference (James M. Ward)\n# The as-scanned spell rosters, print 10-13 (PDF 12-15),\n# the Movement explanations riding print 15 (PDF 17).\n# PRINT FOLIO = PDF PAGE MINUS TWO in this issue.\n# Garbles preserved as scanned: Dispel! Magic, Pall-wall,\n# Extention, Telekenisis, Ventriliquism, Animate Deat,\n# Etherfulness, Etheriainess, Replusion Field, Hold\n# Staffs vs Hold Staff, the lowercase Fire immunity, the\n# twice-printed End All Barriers explanation. The printed\n# legend: * = changed for the area, ** = new.\n\nCHANCE OF MAKING ANY SPELL PER LEVEL (print 10):\nFirst 100 percent, Second 85, Third 75, Fourth 50,\nFifth 40, Sixth 30, Seventh 20, Eighth 10.\n\nWIZARD OF AGGRESSION (print 10):\n1: Charm Person, Sleep, Magic Missile*\n2: Phantasmal Force, Web\n3: Hold Person*, Fire Ball, Lightning Bolt, Slow Spell\n4: Polymorph Others, Confusion, Charm Monster, Fear, Magic Spear**\n5: Death Spell, Disintegrate\n6: Delayed Blast Fire Ball, Power Word Stun\n7: Power Word Blind, Symbol, Dancing Magic Sword**\n8: Power Word Kill, Meteor Swarm, Melt**\n\nWIZARD OF DEFENSE (print 10):\n1: Shield*, Protection from Evil*\n2: Invisibility, Darkness, Mirror Image\n3: Dispel! Magic, Protection from Evil 10' Radius*,\n   Invisibility 10' Radius, Infravision, Haste,\n   Protection from Normal Missiles, Rope Trick\n4: Remove Curse, Dimension Door\n5: Teleport, Pass-wall, Protection from Swords**\n6: Projected Image, Anti-Magic Shell,\n   Protection from Edged Weapons**\n7: Phase Door, Mass Invisibility, Repulsion Field**\n8: Mind Blank, Prismatic Wall, Maze, Etherfulness**,\n   No Punctures**, Protection from All Weapons**\n\nWIZARD OF TENACIOUSNESS (print 10):\n1: Hold Portal*\n2: Wizard Lock*, Knock*\n3: Hold Person, Hold Swords**, Hold Crossbows**\n4: Extention I, Hold Staffs**, Hold a Cube of\n   Force**, Hold Rings**\n5: Hold Wands**, Hold Monster**, Telekenisis,\n   Transmute Rock to Mud, Extension II, Stop\n   Magic**, Hold Groups**\n6: Repulsion, Extension III, Hold Openings**\n7: Reverse Gravity, Permanent Spell\n8: Time Stop, Wizard Lock Openings**, End Arcane\n   Walls**\n\nWIZARD OF DETECTION (print 11):\n1: Detect Magic, Read Magic, Read Languages\n2: Detect Invisible, Locate Object, Detect Evil, ESP\n3: Clairvoyance, Clairaudience, Find Traps*,\n   Infravision\n4: Wizard Eye, Contact Higher Plane, Find Secret\n   Doors*\n5: Legend Lore, End Surprise**\n6: Find the Path*, Reveal the Way**\n7: Divine Any Object**\n8: Transport to the Spot**\n\nWIZARD OF FIRE (print 11):\n1: Fire Ball*, Phantasmal Force Fire Illusions*\n2: Pyrotechnics, Explosive Runes\n3: Wall of Fire*, Fire Negation**\n4: Delayed Blast Fire Ball, Control of Fire**\n5: Conjure Fire Elemental*, Body of Fire**\n6: Fire Resistance*, Heat Ray**\n7: Fire Immunity**, Melt**\n8: Combustion of All Things**, Fire Vision**\n\nWIZARD OF MOVEMENT (print 11):\n1: Levitate, Knock, Fly\n2: Slow, Haste, Water Breathing, Polymorph Self\n3: Water Travel**, Dimension Door\n4: Negate the Ability to Fly**, Negate the Ability\n   to Move on or in the Water**, Negate the Ability\n   to Run from a Fight**, Teleport, Pall-wall\n(no Fifth Level row prints)\n6: Lower Water, Part Water, Move Earth, Phase Door\n7: Reverse Gravity, Time Stop, Mass Teleport **\n8: Etherialness*, End All Barriers**, Safe Teleport*\n\nWIZARD OF ALL THINGS RUSTIC (print 11-12):\n1: Light*, Strength, Continual Light\n2: Wall of Ice, Growth/Plant, Massmorph,\n   Hallucinatory Terrain\n3: Communicate with Mammals**, Communicate with\n   Plants**, Communicate with Reptiles**,\n   Communicate with Insects**, Communicate with\n   Avians**, Communicate with Monsters**, Ice\n   Storm, Command as the Staff**\n4: Charm Insect**, Charm Snake*, Charm Mammal**,\n   Insect Plague, Growth/Animal\n5: Conjure Earth Elemental*, Transmute Rock to Mud,\n   Wall of Stone, Wall of Iron, Animate Deat,\n   Summon Felines**, Summon Canines**, Summon\n   Avians**\n6: Lower Water, Part Water, Reincarnation, Move\n   Earth, Control Weather\n7: Limited Wish, Charm Plant, Reverse Gravity\n8: Clone, Shapechange, Wish\n\nWIZARD OF CONTROL (print 12):\n1: Charm Person, Sleep*, Ventriliquism\n2: Levitate, ESP, Magic Mouth\n3: Fly, Infravision, Water Breathing\n4: Suggestion, Monster Summoning I\n5: Polymorph Self, Charm Monster, Monster\n   Summoning II\n6: Conjure Elemental, Animate Dead, Magic Jar,\n   Monster Summoning III\n7: Stone to Flesh, Invisible Stalker, Geas, Control\n   Weather, Monster Summoning IV\n8: Simulacrum, Monster Summoning V, Control as the\n   Staff**, Mass Charm, Polymorph Any Object\n(unlabeled overflow row): Gate, Monster\n   Summoning VI, Astral Spell, Charm Golems**\n"
+  }
+ ],
+ "inline_count": 178
+}
