@@ -1,0 +1,55 @@
+The Dragon
+
+Vol. III No. 3
+
+Game Review
+
+# WARP WAR
+
+by Tony Watson
+
+*The Mosulian warpship popped into the Ninevah system and almost immediately its tracking system picked up the enemy warpship. It was of a strange design, a type not yet encountered by the Mosulians. But the Mosul captain was too eager for victory to ponder this much; he dropped his system ship and began to close on the enemy. After some perfunctory beam fire the Ninevah ship began to flee. Well, what ever type it was, the Mosul captain reasoned, it didn't have the stomach for a fight. With a smile of delight he ordered pursuit. His elation was short-lived however, for the enemy vessel swung around and the unfortunate Mosul commander found himself on an unalterable collision course with two Tech III missiles...*
+
+Sound interesting? It's just a dramatization of what could, and often does occur in a game of *WARP WAR*.
+
+*WARP WAR* is the fourth in the ubiquitous line of Micro-games from the people at Metagaming. As with the previous games in the series, fast and simple play coupled with a low initial cost, is emphasized.
+
+The low cost of the games ($2.95) means that, of necessity, physical quality is somewhat limited. In *WARP WAR*'s case it can be said that the physical components are the best of the "Micros" so far.
+
+Rules are contained in a small (about 7' x 4') booklet of eighteen pages. The cover is in full color (a very impressive touch) and features an imaginative combat scene by Winchell Chung. Mr. Chung's artistry graces numerous pages of the rule book, as well as appearing silhouettes on the counters. The depictions are very good and add considerably to the visual appeal of the game.
+
+As mentioned, the counters are the best of the Micro-Game line graphically and while they are thin board and not diecut, they are laminated. They come in two colors: blue on white and white on blue. Each bears a crisp ID code and a ship silhouette. A number of different types of ships are included so that players may appropriately reflect the relative size and power of their ships if they so desire.
+
+The map is small (14' x 8'), and of heavy blue paper. It is not particularly colorful or exceptional. It depicts a number of stars, represented by asterisks. Each is connected to at least one other by a black line termed a "warpline". No charts or other playing aids are printed on the map; they are all included within the rules themselves.
+
+*WARP WAR* is a game of technology and tactics, and the first has a strong bearing on the second. The game is actually two-fold. There are aspects of strategic games in that battles are fought for control of star systems, paralleling victory conditions for most strategic space games. As well, construction of ships is an important part of the game. In most tactical games, the types and numbers of forces are pre-determined for the players. In *WARP WAR*, the construction of battle craft will often determine a player's battle tactics (and as he becomes more proficient at the game, vice versa). A player may opt for a fleet of small size warpships that depend on numbers to split the enemy fleet and force it to defend at many places at once, or he may choose to launch just one or two lumbering behemoths that have a tendency to chew up most of their opposition. The choice is entirely in the hands of the player.
+
+Two types of ships are available: the warpship, the only capable of movement between stars via its warp generator, and the system ship, unable to move on the map under its own power. The expensive warp engine is the only difference between the two. Movement on the map is very quick if the warplines are used, since these lines function something like a railroad net in that movement between two connected stars costs only one movement point, irrespective of the actual hex distance. Non warp line movement is at a standard rate of one per hex.
+
+System ships are a different case. Any ship without a warp generator is by definition a system ship and unable to move on the map unless it is carried by a warpship equipped with special carrying racks.
+
+Players begin the game by building a fleet with the available number of build points at the game's onset. They are free to construct ships as they see fit up to the economic barrier imposed by the build point total. There are a number of items. Warp generators are the
+
+single most expensive, costing five build points each. Other attributes (at one build point per) include: system ship racks, beams, screens, tubes, power/drive and missiles (which are three for one build point). The power/drive rating is probably the single most important for it determines strategic movement and in combat situations, one unit of PD is used to power each factor of screen or beam used as well as activating tubes and powering tactical movement. Beam and screen rating will determine the maximum factor usable in a turn; the amount of PD applied will give the actual strength. Beams are the primary ship weapon, while screens are the only defense. Tubes are used for firing missiles at the rate of one per tube per turn. The drawback to missiles is that they are not reusable as are the beam weapons, though they are more tactically flexible.
+
+Each of the scenarios begins with a certain number of build points: forty in the *learning*; fifty in the *basic* and twenty in the *advanced*; In the *advanced* however, players receive an additional ten points per turn. Build points are not as plentiful as they might seem at first, as even a medium size warpship might cost upwards of twenty points.
+
+A final aspect of ship construction is technology, applicable only to the advanced scenario. Every four turns the tech level increases one. Each ship constructed after technology has advanced receives an additional combat bonus; it may add its tech level to any damage caused by beams, to each missile hit, and to its screen value. This rule allows a smaller but more technically advanced ship to defeat a larger opponent.
+
+Once opposing ships are in the same star hex the real action of the game begins. Building ships may be fun, but the real interest lies in tactical engagements. The combat matrix is the heart of the game, as well as its most interesting feature.
+
+Each round of tactical combat, players must determine the actions of each of their vessels involved. These orders are written for each ship. This is perhaps the game's only drawback as writing orders can become tedious and cause the game to play a little longer than most of the Micro-Games. But given the design of the game it is necessary and most players will find a little order writing worthwhile.
+
+Power/drive factors are allocated to the various weapon systems, screens and tactical movement on a one for one basis. That is, each allocated factor powers one screen, beam or moves the ship one speed higher. If tubes are used, screens and beams may not be; if a system ship is to be dropped movement and screens are restricted. Players also record their current speed for each ship and the target vessel for any fire. In addition a combat tactic is chosen from either Attack, Dodge or Retreat. Orders are simultaneously revealed for all ships involved. To resolve a given fire, the combat tactic of the attacker is compared to that of the defender and then the difference in speed is determined. The result will either read miss, hit (sometimes with bonus adds) or in the case of one ship choosing Retreat, escape.
+
+The matrix is *not* a guessing game and a shrewd player may be able to analyze his opponent's situation and take advantage if it. Missiles are especially flexible as their speed is set independent of the firing ship. The right pick of the matrix might allow a weaker ship to wear down and even defeat a much more superior craft by simply *outfighting*. A nice touch and damned intriguing!
+
+Damage is resolved as follows: the total of all beam factors that hit the target are added to their respective tech levels; missiles (basic damage of two plus any tech bonus) are added to the beam total. The final number of hits is compared to the current screen value of the target. Any damage unblocked by screens is applied to any ships systems as the defender sees fit. The ship then fights at the new level. Damaged ships may be repaired up to their original specifications by expending the needed build points while at a friendly star.
+
+*WARP WAR* is a very interesting game, full of fascinating ideas and concepts. The play doesn't become stereotyped as the forces involved and tactics used always change. Players are allowed to come up with their own ideas of sound ship design and enjoy the satisfaction of outwitting their opponents on the combat matrix. Those that constantly complain about getting the short end of the die rolling will have no recourse after losing this game!
+
+*WARP WAR*, designed by Howard Thompson, art work by Winchell Chung is available from Metagaming for $2.95.
+
+**WRITE FOR THE DRAGON!**
+
+36

@@ -1,0 +1,101 @@
+The Dragon
+
+Vol. III No. 3
+
+D&D Variant
+
+# CHAINMAIL Revisited: JOUSTING IN D&D
+
+by Jon Pickens
+
+The peaceful slumber of the glen was shuttered by the sound of thundering hooves as two men clad in mail careened toward each other. A shock, a splintering crush, and a dull thud resounded as one of the contestants measured his length upon the turf. Lord Alturic rose gingerly and limped to his charger. "Again, Varlet," he growled. The scene was repeated again, and again . . . and again.
+
+Wait one minute, thought Alturic, as he gazed upward from his position of recline. I'm a Lord, and he's a lowly Level 1. IT ISN'T FAIR!
+
+Thus was born the option you are about to read . . .
+
+The jousting system used in the adventure above was the one in TSR's Chainmail booklet. Although the system is adequate for normal tournaments, D&D adds the factors of experience levels and magical equipment which the original system was not designed for. Hence the need for this option, which builds these factors into the original Chainmail system.
+
+DEXTER (D) PALE (P) SINISTER (S)
+
+
+The figure above is a representation of a shield, showing the possible aiming points for an attacking knight. The other common aiming point is the opponent's HELM.
+
+The jousting matrix below summarizes the aiming points, the defensive positions, and which defensive positions may be taken by an attacker aiming at a specific target.
+
+JOUST MATRIX
+
+|  Defensive Position | 1 | 2 | 3 | 4 | 5 | 6 | Attacker's Position  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  Aiming Point | Lower Helm | Lean Right | Lean Left | Steady Seat | Shield High | Shield Low | Considering AP  |
+|  HELM | 0 | 0 | 0 | 0* | 12 | 0 | 4-6  |
+|  DC | 12 | 4 | 0 | 4 | 4 | 0 | 3-6  |
+|  CP | 9 | 12 | 2 | 4 | 9 | 12 | Any  |
+|  SC | 2 | 0 | 4 | 2 | 2 | 12 | 2,4-6  |
+|  DF | 4 | 9 | 0 | 4 | 0 | 4 | 4-6  |
+|  FP | 9 | 2 | 4 | 9 | 9 | 4 | Any  |
+|  SF | 2 | 0 | 9 | 2 | 2 | 2 | 4-6  |
+|  BASE | 4 | 2 | 12 | 4 | 9 | 4 | 1,4-6  |
+
+Note: The numbers on this matrix we added to the roll of a twenty-sided die and the result found on the Joust Results Table.
+
+* — see, Joust Results
+
+To resolve a jousting pass, or "ride", take the following steps in order:
+
+1. Knight A and Knight B both secretly select an aiming point and a defensive position from the Joust Matrix.
+2. Knight A's pass is resolved. Knight A compares his aiming point with B's defensive position on the Joust Matrix to find his base number.
+3. Magical weaponry adjustment:
+   a. Add the "to Hit" bonus for A's lance.
+   b. Subtract the bonus for B's shield. Note that if A aims at B's HELM, B receives the shield bonus only if he played position #5, Shield High.
+
+4. Subtract B's experience level from A's to find which column to use on the Joust Results Table.
+
+5. Knight A rolls a twenty-sided die, adds his adjusted base, and reads off the result.
+
+6. Repeat steps #2-5, reversing the roles of A and B. This completes one "ride". Continue rides until one knight is unhorsed.
+
+JOUST RESULTS TABLE
+
+Knight Level Comparison
+
+|  Result | -12 or more | -11 to -8 | -7 to -4 | -3 to 3 | 4-7 | 8-11 | 12-up  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  U | 25 | 23 | 21 | 20 | 19 | 17 | 15  |
+|  U B | 23 | 21 | 19 | 18 | 17 | 15 | 13  |
+|  B | 21 | 19 | 17 | 16 | 15 | 13 | 11  |
+|  G | 17 | 15 | 13 | 12 | 11 | 9 | 7  |
+
+Notes:
+
+1. Numbers listed are the minimum adjusted score necessary for the listed result.
+
+2. Note that there are no bonuses for exceptional strength or dexterity.
+
+EXPLANATION OF JOUST RESULTS
+
+U Unhorsed. Opponent is unhorsed with 10% chance of injury (see Injury Table*)
+
+U/B Same as above, but attacker's lance is broken if non-magical. Magical lances are broken only if the defender's shield is rated higher than the lance.
+
+B Attacker's lance is broken as above, but defender is not unhorsed.
+
+G Glancing blow. This is effectively a miss, unless a hit is scored on the opponent's HELM (an "*" on the JOUST MATRIX).
+
+* — HELM is hit and knocked off, shattering if non-protective. If knight is unhorsed, injury is automatic with 20% added to the percentile roll. If knight is helmetless, he will take maximum lance damage in addition to other injury.
+
+INJURIES
+
+Any injured knight must pass a constitution check vs Ressurrection or be rendered temporarily unconscious. Roll percentile dice for hit points lost:
+
+01-60 Knight loses 10% of total hit points
+61-75 Knight loses 25%
+76-85 Knight loses 33%
+86-95 Knight loses 50%
+96-99 Knight loses 80%
+00 Knight is killed
+
+
+4
+
+FIRST 3 WAS GIANT. WE ASELS-THEN GIANT BEETLES. GIANT OFFERS. GIANT BEAVERS. GIANT FORCUPINES! CROWN WHERE WILL IT ALL END?

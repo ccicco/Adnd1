@@ -28164,6 +28164,33 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   R930 f16 flip (both report-016 boxes). WAIT FOR
   GO.
 
+  - R930 LANDED (8e699d1, f16, pure flip, no new
+  ink): The Dragon issue-16 box closing round,
+  the two-chain walk complete. BOTH report-016
+  boxes flipped in ONE round (gap_census 2 closed
+  0 open): the Near Eastern Mythos (print 4-6),
+  The Ultimate NPC: Ninja (print 7-10). 27 inline
+  bookkeeping only (16 consts + 11 bools
+  mirroring the f14/f15 closers:
+  f16IssueSixteenBoxes=2, chains=2, rounds=2,
+  issue-closed consts 15..6, registry
+  1313/1338/25, walk-complete bools 6..16), no
+  tables, no data files; header rules/f16.h,
+  audit rules/audits/r930_batch.h, 3 examples.
+  Issues 2-16 ALL CLOSED. The issue-16 walk
+  completes in TWO rounds (R929 opener carrying
+  both chains + this flip), the issue-14/15 two-
+  round pattern. Registry ground truth unchanged:
+  1313 loaded / 1338 base lua / 25 never-load
+  (R924 re-measure). Census 852->853; rverify
+  GREEN 27 mutants 0 missed; round-trip 11361
+  bytes md5 79c752f1cd37f54583610107096520b7.
+  Watch: the brawling long-term-effects sequel
+  STILL not printing (watch TD 17); NO TD-17
+  teaser on the back cover. Next: the TD 17
+  section breakdown when the scan lands. WAIT FOR
+  GO.
+
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

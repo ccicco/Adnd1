@@ -1,0 +1,80 @@
+August, 1978
+
+The Dragon
+
+response to prayer (with a base 1% per cleric's level chance of response), if summoned by various holy artifacts, as guards for certain holy shrines or relics, or at the whim of the gods.
+
+Although the classical celestial hierarchy has nine members, the Chronicle of Bishop Matthews in Rudigore records the appearance on Earth of only four types of angels. All the types seem to be physically weaker than their demonic counterparts, though each is endowed with a number of magical abilities, many especial to a particular type. Abilities common to all the angels are:
+
+Teleportation (no chance of error), Continual Light (of varying degree), Bless, Fear and Detect Evil. All angels can speak any human tongue as well as Speak With Dead. The very presence of an angel turns undead as a Patriarch. Angels are immune to psionic attack and to the Finger of Death.
+
+Each of the four types of angels has a general purpose, with special abilities commensurate with that purpose. The four types are:
+
+**Type I: The Angel of Wrath.** This angel appears as a white-winged, haloed, male warrior in golden armor and shield. They often appear on the side of Law in fateful battlefield conflicts with Chaos, to rally warriors for a holy cause, and as holy guardians. The Angel of Wrath wields a +5 Holy Sword in battle (the sword, along with the golden armor and shield, disappears if the angel is vanquished). Aside from those abilities common to all angels, the Angel of Wrath can at will cast a Continual Light, 5' radius equal to full daylight, Cure Serious Wounds, Quest, create a double-strength Wall of Fire three times/day and pronounce a Holy Word once/day. Without the Holy Sword, magic resistance is 65%. Armor class O, can only be hit by magic weapons, moves 12/24", and has ten (eight-sided) hit dice.
+
+**Type II: The Angel of Healing.** This beautiful winged woman in white robes often appears miraculously in response to the prayers of the sick, the wounded, and the dying. She has the power to, at will, Cure Serious Wounds, Cure Disease, Cure Blindness, Insanity and Paralyzation, Neutralize Poison, Remove Curse, Raise Dead Fully, Create Food and Water, Dispel Evil, Dispel Exhaustion (as the Illusionist spell), Cast Continual Light, 10' r., and Strength (as the Magic-User spell). Her touch has the ability of Regeneration. If necessary, she fights with a Flaming Sword. Magic resistance is 75%. Armor class 9, moves 15/24 ¼, six dice.
+
+**Type III: The Archangel of Mercy.** Appearing as a winged old man in silver robes, this angel is most often found as a guide to those who walk in darkness, a protector of the weak, and a last-minute deliverer from the jaws of evil and death. At will this angel can Cure Serious Wounds, Cure Disease, Remove Curse, Part Water, Find the Path, create a Wall of Fire, Ice, Stone, Iron or Fog, Blade Barrier, Wind Walk, Mass Teleport (up to 10' radius), and Continual Light, 15'r. The Archangel of Mercy is not affected by a Time Stop, and can only be hit by +2 magic weapons or better. He fights with a Sword of Sharpness. Magic resistance without the sword is 85%. Armor class -1, moves 15/30", twelve dice.
+
+**Type IV: The Seraphim.** The Seraphim acts as the right hand of God, and so appearances on the Earth by this angel are truly rare and momentous occasions. Appearing as a ten foot tall extremely beautiful winged humanoid of indeterminate age and sex, a Seraphim can, at will, Cure Serious Wounds, Cure Disease, Remove Curse, Restoration, Raise Dead fully, Dispel Evil, Quest, generate a triple-strength Wall of Fire, Blade Barrier, Earthquake, Insect Plague, cast Continual Light, 20'r. of varying intensity (from Faerie Fire to Binding), Improved Invisibility (as the Illusionist spell), use a Holy Word once/day, use any Symbol once/day, and once a day can call down the Wrath of God (a double-strength Meteor Swarm). A Seraphim cannot be Time Stopped, Charmed, Held, or rendered stunned or unconscious by any means. A Seraphim can call to its aid 2-16 Type I, 1-4 Type II and 1-6 Type III angels. He/she fights with a Vorpal Blade, and has a base 95% resistance to magic. Armor class -3, can only be hit by +3 magic weapons, moves 24/48", 16 dice.
+
+The appearance of angles should be a rare event, usually brought about in some way by the players themselves (though not as often as they might like!). Angels have no earthly lair or treasure unless guarding some Holy Relic. Although there should be no random encounters with angels, remember that these are manifestations of a god's purpose on Earth, and gods move in mysterious ways.
+
+# Game Variant
+
+## Natural Armor for Monsters in *Monsters, Monsters*
+
+By Doug Miller
+
+In *Monsters, Monsters*, armor is worn by man-like monsters. However, some monsters, like dragons, have their own natural armor. This armor is due to very thick skin or hard bodies which protects the monsters. Some monsters are more affected by blunt weapons than edged weapons and vice versa because of its type of natural armor. Note: like armor, natural armor doesn't protect against magic and unlike armor it cannot be strengthened magically.
+
+Note that positive numbers are the amount of damage taken off and negative numbers are the additional amount of damage.
+
+|  Protection against |   |   | Protection against  |   |   |
+| --- | --- | --- | --- | --- | --- |
+|  Monster type | edged | blunt | Monster type | edged | blunt  |
+|  Dragon | 12 | 9 | Half-Orc | 1 | 1  |
+|  Goblin | 0 | 0 | Vampire | 3 | 3  |
+|  Ogre | 1 | 1 | Dwarf | 1 | 1  |
+|  Shadowjack | 0 | 0 | Gremlin | 0 | 0  |
+|  Orc | 0 | 0 | Lamia | 0 | 0  |
+|  Troll | 2 | 2 | Living Statue | 10 | 5  |
+|  Witch | 0 | 0 | Ghoul | 0 | 0  |
+|  Giant | 0 | 0 | Gorgon | 0 | 0  |
+|  Werewolf | 0 | 0 | Harpy | 0 | 0  |
+|  (Human form) | 0 | 0 | Snollygoster | 2 | 2  |
+|  Werewolf |  |  | Mummy | 0 | 0  |
+|  (Wolf form) | 3 | 3 | Teti | 1 | 1  |
+|  Hobbit | 0 | 0 | Sphinx | 0 | 0  |
+|  Demon | 2 | 2 | Warg | 1 | 1  |
+|  Zombi | -1 | 0 | Unicorn | 1 | 1  |
+|  Slime Mutant | 3 | 5 | Wyvern | 6 | 3  |
+|  Minotaur | 0 | 0 | Giant Spider | 0 | 0  |
+|  Balrog | 4 | 4 | Hydra | 4 | 3  |
+|  Ghost | 0 | 0 | Giffin | 1 | 1  |
+|  Centaur | 0 | 0 | Earth Elemental | 2 | 1  |
+|  Living Skeleton | 0 | 0 | Air Elemental | 0 | 0  |
+|  Merperson | 0 | 0 | Fire Elemental | 0 | 0  |
+|  Night Gaunt | 0 | 0 | Water Elemental | 1 | 2  |
+|  Giant Slug | 1 | 3 | Elf | 0 | 0  |
+|  Shoggoth | 3 | 3 | Chinese Fox | 0 | 0  |
+|  Worm | 8 | 5 | Rock Person | 8 | 4  |
+|  Sneak | — | — | Tsathogua | 0 | 0  |
+|  Chimera | 1 | 1 | Human | 0 | 0  |
+|  Basilisk | 2 | 1 |  |  |   |
+|  Gorilla | 1 | 1 |  |  |   |
+
+1. Zombies are already dead and, in my opinion, decaying, which would weaken the skin and make edged weapons more effective.
+
+2. This number for ghosts is for only when the ghost is struck with magical weapons or weapons with spell on them.
+
+3. The protection ability depends on what the snark is imitating at the time.
+
+If you think that this table is a little bit generous to some monsters and not to others, remember that this has worked the best for our group. Of course, if you don't agree with something, change it.
+
+I hope this adds more to your *Monsters, Monsters* campaign. May your victims be many and your treasure grow large.
+
+
+**MY LATEST RESEARCHED SPELL: I CALL IT "FEUDAL-MIND". IF A FIGHTER FAILS TO SAVE HE RIDES OVER HIS OWN CROSSBOWMEN AND BLINDLY CHARGES THE NEAREST ENEMY UNIT.**
+
+33

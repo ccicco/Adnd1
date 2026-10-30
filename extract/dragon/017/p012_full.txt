@@ -1,0 +1,75 @@
+The Dragon
+
+Vol. III No. 3
+
+D&D Variant
+
+# A WIZARD WITH A DIFFERENCE
+
+by James M. Ward
+
+ED. Note: The following is recommended as a source of bedevilment to be used by DM on their NPC's. Some of the possibilities here will drive the average group of PC's wild when trying to deal with running NPC's.
+
+The magic user class in D&D has been tested by time and found tried and true for many of the players that love to become them (myself included). The nine spell levels and the ability to use magical items all make the magic user a very fine character to be. What I want to suggest is an alternate system in which magic users select areas to work and study in, instead of being the normal D&D type magic user.
+
+The player character can be one of the following types: "Wizard of Aggression", "Wizard of Defense", "Wizard of All Things Rustic", "Wizard of Control", "Wizard of Tenaciousness", "Wizard of Detection", "Wizard of Fire", or a "Wizard of Movement".
+
+Any of these wizards raises in levels of experience in the same manner as the D&D wizard. These new wizards pick spells from any spell level on their lists at the rate of two spells per experience level. The "area" magic user has a given percent chance of working any spell from his list, with that chance increasing by 5% for every level over the first that the magic user attains. Naturally the better the spell the less chance a first level "area" magic user has of performing it. The making of these "area" wizards created some new spells and some of the old ones became modified, but essentially the system is the same, in that a magic user still throws his or her spells and hopes for the best. When using these magic users since they study nothing else but their areas they are faster in their use of spells over the normal D&D magic user. The following is an example of their use in a game: a wizard of fire casts a "heat ray" spell at a creature. The wizard is of the fifth level and therefore has a + 20% chance of using the spell and the spell is a sixth level one so there is a 30% chance of it working. The magic user rolls the percentile dice needing a 1-50% for it to work and he rolls a 51% the spell does not work and he no longer has a "heat ray" spell memorized, (unless he took more than one).
+
+While some players might think that these wizards are too restricted for play, some judges might think that wizards of this type are perfect for nonplayer characters (and they would be right!). Imagine the surprise of a "mighty" fighter when he slashes a wizard of defense and the wound heals instantly because the wizard has the spell of "no punctures" on himself. The same goes for the master thief that has just made a daring robbery in the castle of a rich low level wizard of detection and goes to safety in the local robbers den only to find the magic user and four hefty fighters appearing beside him when the wizard uses a "transport to the spot" spell. The possibilities for these magic users are endless and it gives players a different sort of magic user to be.
+
+In the following pages * signifies that the spell has been changed in a manner that logically fits the area of the magic user. Two ** signifies that the spell is new.
+
+# CHANCE OF MAKING ANY SPELL PER LEVEL
+
+|  First Level: | 100%  |
+| --- | --- |
+|  Second Level: | 85%  |
+|  Third Level: | 75%  |
+|  Fourth Level: | 50%  |
+|  Fifth Level: | 40%  |
+|  Sixth Level: | 30%  |
+|  Seventh Level: | 20%  |
+|  Eighth Level: | 10%  |
+
+# WIZARD OF AGGRESSION
+
+# Spells
+
+|  First Level | Charm Person Sleep Magic Missile*  |
+| --- | --- |
+|  Second Level | Phantasmal Force Web  |
+
+|  Third Level | Hold Person* Fire Ball Lightning Bolt Slow Spell  |
+| --- | --- |
+|  Fourth Level | Polymorph Others Confusion Charm Monster Fear Magic Spear**  |
+|  Fifth Level | Death Spell Disintegrate  |
+|  Sixth Level | Delayed Blast Fire Ball Power Word Stun  |
+|  Seventh Level | Power Word Blind Symbol Dancing Magic Sword**  |
+|  Eighth Level | Power Word Kill Meteor Swarm Melt**  |
+
+# WIZARD OF DEFENSE
+
+# SPELLS
+
+|  First Level | Shield* Protection from Evil*  |
+| --- | --- |
+|  Second Level | Invisibility Darkness Mirror Image  |
+|  Third Level | Dispel! Magic Protection from Evil 10' Radius* Invisibility 10' Radius Infravision Haste Protection from Normal Missiles Rope Trick  |
+|  Fourth Level | Remove Curse Dimension Door  |
+|  Fifth Level | Teleport Pass-wall Protection from Swords**  |
+|  Sixth Level | Projected Image Anti-Magic Shell Protection from Edged Weapons**  |
+|  Seventh Level | Phase Door Mass Invisibility Repulsion Field**  |
+|  Eighth Level | Mind Blank Prismatic Wall Maze Etherfulness** No Punctures** Protection from All Weapons**  |
+
+# WIZARD OF TENACIOUSNESS
+
+# SPELLS
+
+|  First Level | Hold Portal*  |
+| --- | --- |
+|  Second Level | Wizard Lock* Knock*  |
+|  Third Level | Hold Person Hold Swords** Hold Crossbows**  |
+|  Fourth Level | Extention I Hold Staffs** Hold a Cube of Force** Hold Rings**  |
+
+10

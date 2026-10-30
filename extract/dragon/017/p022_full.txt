@@ -1,0 +1,44 @@
+The Dragon
+
+Vol. III No. 3
+
+# TESSERACTS
+
+Or
+
+## Making Meticulous Mapmakers Mad
+
+by Gary Jordan
+
+A tesseract, as everyone (or at least readers of Robert A. Heinlein) knows, is a four dimensional cube or "hypercube". Which means a cube extended in a direction simultaneously perpendicular to all three of its axes so that each cube of a tesseract shares a common side and four common edges with each cube adjacent to it and with each cube immediately adjacent to the adjacent cube.
+
+Confused? Wondering what in the name of Anubis this has to do with D&D and mapmaking? All will be made clear, at least as clear as is necessary to make use of the idea — most Americans can't completely explain the internal combustion engine but we keep right on driving cars anyway.
+
+The tesseract is a mathematical abstraction whose math escapes my high school algebra but whose properties are known and easily applied and adaptable to D&D. Look at figure 1. Bear in mind that each
+
+
+FIG. 1
+
+of the shapes shown is in fact a perfect square, which is meant to represent a floor plan of a cubical room. Therefore we have a central room (C), an eastern room (E), a southern room (S), a western room (W), a northern room (N), and another room we'll call the frame room (F). Not shown are the upper room (U) and lower room (L) which border the top and bottom of the central room.
+
+Rereading the first paragraph, we can see (that since E is adjacent to C, it must share a wall with N and a wall with S. As represented, each room does the same thing with adjacent rooms. Now for the real mind-boggler: room F. F is adjacent to E; the rooms immediately adjacent to E are N and S; therefore F shares a wall with N and a wall with S. But sharing a wall makes the rooms adjacent, and W is adjacent to both N and S, so F must share its fourth and final wall with W, which means that room F is the room outside the square formed by the outer walls of E, N, W, and S. . .
+
+Never mind. For the purposes of the DM, all he need do is make some such notation as exhibited in figure 2 and keep a separate map
+
+
+FIG. 2
+
+
+FIG. 3
+
+such as figure 3, which gives him the basic floor plan of his tesseract. The arrows show the relationships of the walls well enough and still allow the DM to furnish the rooms in the proper dimensions. This floor plan also shows the rooms directly above and below the central room, to which some access should be planned. These two rooms present some interesting problems I'll elaborate later. For now, let's look at our basic plan. Suppose a party meanders down one of the corridors shown in figure 2. After checking for traps, listening at the door, etc. the party enters room C. (Room C is always the room which occupies the square shown in figure 2.) So long as any door remains open, the tesseract is not activated! ! ! Opening a second door will allow the party to pass through room C as though the others didn't exist. If, however, all four doors are allowed to be closed at the same time, no matter how briefly . . . thereafter all doors will lead to the next room of the tesseract.
+
+Of course, some method should be provided for eventual escape — a magical item, such as a ring or bracelet which will allow the wearer and those around him to pass through one of the doors of room C into the dungeon beyond. Such a device would be usable only in this tesseract, naturally. The crueller DM's amongst us would no doubt leave out such frills, forcing the hapless party to rely on teleport spells, wishes, knock spells (if anyone would ever conceive of using one on a door which opens easily — to another room that is), or even divine intervention. Note that a dispell magic spell would cause every room except C to instantly disappear, along with anyone in them.
+
+As previously mentioned, rooms U and L present peculiar problems. Looking at figure 4, a side view of your tesseract with 'w' meaning walls, 'c' for ceiling and 'f' for floors, an anomaly may become apparent; if one enters F by climbing through the ceiling of U, one finds oneself climbing through the ceiling of F upside down! And of course the corollary holds true for room L.
+
+Unless you're the type of DM who delights in having people fall on their heads, it is highly recommended that you not bother to design in an access between L or U and F. (Nor between L or U and any other
+
+cont. on pg 22
+
+20

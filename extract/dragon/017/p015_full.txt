@@ -1,0 +1,118 @@
+August, 1978
+
+The Dragon
+
+Communicate with Plants: This spell allows the magic user to speak with plants for ten melee turns.
+
+Communicate with Reptiles: Same as the Mammal spell with Reptiles.
+
+Communicate with Insects: Same as the Mammal spell with Insects.
+
+Communicate with Avians: Same as the Mammal spell with Avians.
+
+Communicate with Monsters: Same as the Mammal spell with Monsters.
+
+Command as the Staff: This spell allows the magic user to command like a staff of commanding once.
+
+Charm Insect: A charm spell that works on any type (or size) insect.
+
+Charm Snake: A spell like the charm insect spell for snakes.
+Charm Mammal: A spell like the charm insect spell for mammals.
+
+Insect Plague: As the cleric spell.
+Conjure Earth Elemental: This spell will summon a 20 die earth elemental in the first melee turn, that has the power to think for itself and will not attack the magic user if he or she loses concentration. The earth elemental will simply vanish.
+
+Summon Felines: Similar to the monster summoning spell, this allows the magic user to summon any type of cat that he or she has seen. These cats will do whatever the magic user dictates, but vanish after one full turn or death.
+
+Summon Canines: As the feline spell for any type of dog.
+Summon Avians: As the feline spell for any type of bird except the magical Roc.
+
+# EXPLANATION OF THE SPELLS FOR THE WIZARD OF CONTROL:
+
+Sleep: As the normal spell with the addition that it affects two beings with five dice and one being with six dice.
+
+Control as the Staff: This spell allows the magic user to command like a staff of commanding once.
+
+Charm Golems: This spell cuts through the magic protection of any given golem (giving it the saving throw of a 14th level wizard) and allows the magic user to try and control it.
+
+# EXPLANATION OF THE SPELLS FOR THE WIZARD OF TENACIOUSNESS:
+
+Hold Portal: This spell will work like a wizard lock for this magic user.
+
+Wizard Lock: This spell becomes stronger in that only 2 dispell magics will break its power, the normal knock spell will work.
+
+Knock: This spell will open any locked, fastened, or blocked thing (defined as a passage filled with rubble, etc.)
+
+Hold Swords: This spell will hold any sword in its scabbard that hasn't been drawn at the casting of the spell in a 60 yard radius. The spell lasts for 2-20 melee turns.
+
+Hold Crossbows: This spell will not allow any crossbow to fire its shaft in a 60 yard radius of the magic user as long as he or she concentrates on the spell. The spell lasts for 2-20 melee turns.
+
+Hold Staff: This spell will contain the magic of any given staff within itself for 3-30 melee turns.
+
+Hold Cube of Force: This spell will not allow a cube of force to function for 2-20 melee turns.
+
+Hold Rings: This spell will not let a ring function in its normal magical manner for 3-30 melee turns.
+
+Hold Wands: This spell will stop a wand from working for 2-20 melee turns.
+
+Hold Monster: This spell stops a monster from using any special power for 1-10 melee turns if the monster does not make its magic saving throw, (it affects things like troll regeneration, dragon breath, etc.)
+
+Stop Magic: This spell stops any enemy from using any magic of any type in a 30 yard radius of the caster if they do not make their magic saving throw. The spell lasts for 6 melee turns.
+
+Hold Groups: This spell will hold any enemy group of less than 12 beings even if creatures and humans are intermixed when each being does not make their magic saving throw.
+
+Hold Openings: This spell creates a field of force that stops beings from going through any given area less than 40 feet tall by 30 feet
+
+wide. It will last for 24 hours and takes damage like a human having the same number of hit points as the caster. Once the spell is up the magic user may leave the area and not concentrate on it.
+
+Wizard Lock Openings: This spell covers the same area as the above spell but lasts for only one hour. It takes a dispell magic to destroy it and nothing can get through it or hurt it but the mentioned spell.
+
+End Arcane Walls: This spell dissolves all (walls of stone, walls of fire, walls of ice, etc.) that have been created by magical means.
+
+# EXPLANATION OF THE SPELLS FOR THE WIZARD OF DETECTION:
+
+Find Traps: This spell is as the wand of the same name and lasts for 1-4 melee turns plus the level of the magic user.
+
+Find Secret Doors: As the above trap spell, for secret doors.
+
+End Surprise: This spell will warn the magic user of attack or other types of surprise for 1-6 melee turns plus the level of the magic user.
+
+Find the Path: As the cleric spell.
+
+Reveal the Way: When chasing a creature that the magic user has encountered or chasing something that has been carried away the actual footsteps (or claw steps) of the being running will glow in front of the magic user, if the thing flew away the flight path will glow. The spell lasts for 24 hours.
+
+Divine Any Object: This is the process of using a willow wand to actually feel the way to a certain known object or being and there is no range limitation. The spell lasts for 24 hours.
+
+Transport to the Spot: This spell transports the magic user and 1 - 6 other beings of the magic users choice (that are within 20 feet of him) to the area mentally projected by the magic user safely. The magic user must know exactly what thing he or she is transporting near by having studied it for over 6 hours.
+
+# EXPLANATION OF THE SPELLS FOR THE WIZARD OF FIRE:
+
+Fire Balls: This spell for a fire wizard adds a plus 1 point to every die of the fire ball and the fire wizard is never affected by his own fire ball, (his or her equipment is however).
+
+Phantasmal Force Fire Illusions: The fire wizard can only make illusions dealing with fire.
+
+Wall of Fire: This is a 10 die wall of fire that will stay up for 1-4 melee turns after the wizard stops thinking about it if the wizard so desires.
+
+Fire Negation: This spell creates an area around the magic user that will destroy any fire that the magic user comes in contact with. The spell lasts for 2-20 melee turns.
+
+Control of Fire: This spell allows the fire wizard to directed fire types spells thrown at him or her back at the thrower if the fire wizard makes his or her saving throw against magic. The spell lasts for 2-20 melee turns.
+
+Conjure Fire Elemental: This spell will summon a 20 die fire elemental in the first melee turn, that has the power to think for itself and will not attack the magic user if he or she loses concentration. The elemental in that case will vanish.
+
+Body of Fire: This spell allows the magic user to turn his or her body into a raging inferno of flame for the number of dice (or hit points) that the magic user has. The spell lasts for 2-20 melee turns.
+
+Fire Resistance: This spell allows the caster to be immune to all fire damage for 1-10 melee turns.
+
+Heat Ray: This spell causes 10 dice of heat damage in 1 melee turn to any creature, (even a fire type creature).
+
+Fire immunity: This spell makes all beings in a 10 yard radius about the magic user, immune to the effects of fire, for 1-10 melee turns.
+
+Melt: This spell acts on all metal of any person it is used on so that the metal turns red hot in one melee turn and melts the metal on the next melee turn (magic saving throw applicable). The spell affects masses of metal no greater than a set of plate mail.
+
+Combustion of All Things: This spell will cause the burning of anything for 1-6 melee turns doing 5 dice of damage every turn.
+
+Fire Vision: This spell allows the magic user to see into any area with a lit fire for 5-50 melee turns.
+
+cont. overleaf
+
+13
