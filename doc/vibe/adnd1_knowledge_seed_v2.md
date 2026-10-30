@@ -28884,6 +28884,45 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   nowhere through issue 21 - both ride to TD 22. Next: the Dragon Magazine
   walk continues with Curtiss call - the next scan upload (issue 22 or
   another issue) opens the next issue round the same intake. WAIT FOR GO.
+  - R946 LANDED (7cfc392, t22, 93 inline, opener part one): The Dragon
+  issue-22 opener part one, the military-history triptych - three of the
+  nine chains of Curtiss's TD-22 call in the approved four-round three-box
+  shape. Combined TD22+LW13 experiment issue (no January 1979 issue, Kask
+  surgery editorial); PRINT FOLIO = PDF PAGE this issue (verified at feet
+  3-12, 15-42, 44-54). Chain one the First Assassins print 5-7 (23 consts
+  + 8 bools: the Alamut rock and its bloodless 3000-dinar takeover, the
+  Hasan timeline Ray 1050 to the 1124 succession, the fildai seven levels
+  recruited at 12, the Guide to Famous Assassinations 1127-1192, Hattin
+  WITH Saladin, sixty thousand followers, three million Aga Khans). Chain
+  two the Irresistible Force print 8-11 (33 consts + 12 bools + TABLE
+  t22SwissComp tag Sc six troop types, halberd 20-60 through cavalry 0-5,
+  sentinel -99: Morgarten through the dozen battles 1386-1499, the
+  echelon, the Kiel wedge, the dismounted lances, the Grandson-Morat-Nancy
+  crush, the 600-man hedgehog, the Chainmail rec). Chain three Armies of
+  the Renaissance Part I print 12 (8 consts + 7 bools: the 1453-1703
+  span, the 12-21-foot pike, Franklin longbow, Hussite laager, the
+  stardio, the Swiss-next-time preview). 93 inline (64 consts + 27 bools
+  + 2 table cols), 14 examples + 1 table_check, 57 data files (report
+  022 + 56 transcripts at extract/dragon/022); gap report 021 no-op 2
+  closed 0 open; report 022 seats THREE boxes for the R947/R948 opener
+  parts and the R949 pure flip. Print catches pinned as scanned: contents
+  Brunner vs byline Bruner; titantic; seige; duplicated
+  acknowledge-the-Sultan phrase; Vol.. double period; foreward twice;
+  Giarnico vs Giornico; Courtai vs Courtrai; Perrer for Perren; St Jacob
+  table 30000 vs text 15000 both pinned; Ziska for Zizka; stardio for
+  stradiot. WATCHES STILL EMPTY: the Sullin levels 7-9 and the brawling
+  sequel print nowhere in TD22 - both ride to TD 23; the sneak preview
+  prints Freet Giant Jari for the G2 Frost Giant Jarl - rides at R947.
+  Census 868->869; rverify GREEN 103 mutants 0 missed; round-trip 334859
+  bytes md5 9203a2df5aa831f1ba62f711cca04313, byte-exact at 7cfc392
+  (fresh tarball re-run applied 0 already 62; the builder wrote the
+  trailing newline itself, so the landed spec is byte-identical to the
+  canvas body at the same 334859 bytes, no user-save +1, as at
+  R944/R945). Next: R947 the AD&D Sneak Preview of the DMG, the
+  single-chain table round (print 33-38 + 41-43: the Amulet of the
+  Planes 1-24 d% table, the Ring of Elemental Command, the attack matrix
+  I.D.1, the psionic IV.B-IV.D, three saving-throw matrices,
+  grenade-like missiles). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

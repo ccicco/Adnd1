@@ -1,0 +1,3953 @@
+{
+ "round": 947,
+ "prefix": "s22",
+ "census_before": 869,
+ "title": "The Dragon issue-22 opener part two: the AD&D Sneak Preview of the Dungeon Masters Guide (census 870)",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R946 LANDED (7cfc392, t22, 93 inline,",
+ "prev_record": [
+  "  - R946 LANDED (7cfc392, t22, 93 inline, opener part one): The Dragon",
+  "  issue-22 opener part one, the military-history triptych - three of the",
+  "  nine chains of Curtiss's TD-22 call in the approved four-round three-box",
+  "  shape. Combined TD22+LW13 experiment issue (no January 1979 issue, Kask",
+  "  surgery editorial); PRINT FOLIO = PDF PAGE this issue (verified at feet",
+  "  3-12, 15-42, 44-54). Chain one the First Assassins print 5-7 (23 consts",
+  "  + 8 bools: the Alamut rock and its bloodless 3000-dinar takeover, the",
+  "  Hasan timeline Ray 1050 to the 1124 succession, the fildai seven levels",
+  "  recruited at 12, the Guide to Famous Assassinations 1127-1192, Hattin",
+  "  WITH Saladin, sixty thousand followers, three million Aga Khans). Chain",
+  "  two the Irresistible Force print 8-11 (33 consts + 12 bools + TABLE",
+  "  t22SwissComp tag Sc six troop types, halberd 20-60 through cavalry 0-5,",
+  "  sentinel -99: Morgarten through the dozen battles 1386-1499, the",
+  "  echelon, the Kiel wedge, the dismounted lances, the Grandson-Morat-Nancy",
+  "  crush, the 600-man hedgehog, the Chainmail rec). Chain three Armies of",
+  "  the Renaissance Part I print 12 (8 consts + 7 bools: the 1453-1703",
+  "  span, the 12-21-foot pike, Franklin longbow, Hussite laager, the",
+  "  stardio, the Swiss-next-time preview). 93 inline (64 consts + 27 bools",
+  "  + 2 table cols), 14 examples + 1 table_check, 57 data files (report",
+  "  022 + 56 transcripts at extract/dragon/022); gap report 021 no-op 2",
+  "  closed 0 open; report 022 seats THREE boxes for the R947/R948 opener",
+  "  parts and the R949 pure flip. Print catches pinned as scanned: contents",
+  "  Brunner vs byline Bruner; titantic; seige; duplicated",
+  "  acknowledge-the-Sultan phrase; Vol.. double period; foreward twice;",
+  "  Giarnico vs Giornico; Courtai vs Courtrai; Perrer for Perren; St Jacob",
+  "  table 30000 vs text 15000 both pinned; Ziska for Zizka; stardio for",
+  "  stradiot. WATCHES STILL EMPTY: the Sullin levels 7-9 and the brawling",
+  "  sequel print nowhere in TD22 - both ride to TD 23; the sneak preview",
+  "  prints Freet Giant Jari for the G2 Frost Giant Jarl - rides at R947.",
+  "  Census 868->869; rverify GREEN 103 mutants 0 missed; round-trip 334859",
+  "  bytes md5 9203a2df5aa831f1ba62f711cca04313, byte-exact at 7cfc392",
+  "  (fresh tarball re-run applied 0 already 62; the builder wrote the",
+  "  trailing newline itself, so the landed spec is byte-identical to the",
+  "  canvas body at the same 334859 bytes, no user-save +1, as at",
+  "  R944/R945). Next: R947 the AD&D Sneak Preview of the DMG, the",
+  "  single-chain table round (print 33-38 + 41-43: the Amulet of the",
+  "  Planes 1-24 d% table, the Ring of Elemental Command, the attack matrix",
+  "  I.D.1, the psionic IV.B-IV.D, three saving-throw matrices,",
+  "  grenade-like missiles). WAIT FOR GO."
+ ],
+ "header_file": "rules/s22.h",
+ "include_after": "#include \"rules/t22.h\"  // R946: the Dragon issue-22 opener part one, the three-chain round",
+ "include_comment": "the Dragon issue-22 opener part two, the DMG sneak preview table round",
+ "audit_file": "rules/audits/r947_batch.h",
+ "audit_anchor": "#include \"rules/audits/r946_batch.h\"  // R946: R946 issue-22 opener part one audit",
+ "audit_label": "R947 issue-22 sneak preview audit",
+ "audit_comment": "THE DRAGON ISSUE-22 OPENER PART TWO - the AD&D sneak preview of the Dungeon Masters Guide, the single-chain table round of the four-round shape. Pinned: the magic items of the six modules (the amulet of the planes and its seventeen plane bands, the hammer of thunderbolts, the helm of underwater action, the Nolzur pigments, the pearl of wisdom, the periapt chart, the two philters, the water breathing potion), the four elemental command rings with their power counts and save penalties, the eight protection scrolls with their reading times and hit-dice caps, the creatures-struck-only-by-magic-weapons grades, the grenade-like missile rules, the attack matrix I.D point one for thieves assassins and monks, the cleric-undead matrix with the T D and dash symbols converted ninety-seven ninety-eight ninety-nine and zero, the psionic IV.B crush percentages IV.C blast saves and IV.D ranges, and the three saving throw matrices - the characters, the monster rules and the items. The print catches pinned as scanned: Freet Giant Jari, con penetrate, jackolwere, wralths, the Ghost row printed twice for the Ghast, Petrifaction, the farce and an die footnote, the missing I.D footnote e, the I.B armor class three eleven and the dropped armor class ten cell, the five I.C bands over four columns with the dangling Opponent, and the overlapping IV.B defender band.",
+ "gap_report": "tools/dragon_gap_report_022.md",
+ "gap_census": {
+  "closed": 0,
+  "open": 3
+ },
+ "gap_flips": [],
+ "banner": {
+  "title": "The Dragon issue-22 opener part two - the AD&D Sneak Preview of the Dungeon Masters Guide",
+  "provenance": "The part-two round of the issue-22 four-round shape - the single chain of the DMG sneak preview, the table round of the walk. Pinned from The Dragon Vol. III No. 8 (February 1979) print 33 through 38 and 41 through 43, the Curtiss-provided Dm22.pdf scan voice, print folio the PDF page this issue. The preview prints the not-yet-released DMG combat and saving throw material ahead of the GenCon XII release - the magic items of the six modules, the amulet of the planes, the elemental command rings, the protection scrolls, the attack matrices, the cleric-undead matrix, the psionic tables and the three saving throw matrices.",
+  "sentinel": "Conversions noted, never silent: the cleric-undead matrix pins the T symbol as ninety-seven, the D as ninety-eight, the starred destroy as ninety-nine and the printed dash as zero; the psychic crush range pins its printed dashes as zero; the parchment fireball save prints twenty-five and the fighter nine-to-ten row prints its breath and spell cells nine and eleven - all pinned as scanned. No watches moved: the Sullin levels 7-9 and the brawling sequel still print nowhere and ride to TD 23."
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "s22GenConYear",
+   "value": 1979,
+   "comment": "the DMG release year - GenCon XII August 1979 at the University of Wisconsin-Parkside in Kenosha the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GenConNumber",
+   "value": 12,
+   "comment": "the GenCon number of the release - the twelfth the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PreviewModules",
+   "value": 6,
+   "comment": "the six modules whose new magic items ride the preview - G1 G2 G3 D1 D2 D3, the module-text items not repeated the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AmuletCount",
+   "value": 17,
+   "comment": "the amulet band count - seventeen plane bands on the one table the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AmuletAdd12From",
+   "value": 4,
+   "comment": "the add-twelve rule - a d6 of one to three does not add twelve, four to six adds it to the d12 roll the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AmuletResults",
+   "value": 24,
+   "comment": "the random results - one through twenty-four on the combined roll the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AmuletAltEthereal",
+   "value": 22,
+   "comment": "the alternate result at twenty-two - the Ethereal Plane the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AmuletAltAstral",
+   "value": 23,
+   "comment": "the alternate result at twenty-three - the Astral Plane the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AmuletAltPrime",
+   "value": 24,
+   "comment": "the alternate result at twenty-four - the Prime but an alternate earth the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerStrengthMin",
+   "value": 1801,
+   "comment": "the minimum strength to wield it - eighteen oh-one or better the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerHeightFeet",
+   "value": 6,
+   "comment": "the minimum height to wield it - over six feet the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerBasePlus",
+   "value": 3,
+   "comment": "the basic weapon plus - a plus-three with double damage dice on any hit the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerTrueNamePlus",
+   "value": 5,
+   "comment": "the true-name plus - a plus-five with the girdle and the gauntlets worn the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerStunRadiusInches",
+   "value": 3,
+   "comment": "the thunderclap radius - all creatures within three inches stunned the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerStunRounds",
+   "value": 1,
+   "comment": "the thunderclap stun - one round the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerThrowsPerTwoTurns",
+   "value": 5,
+   "comment": "the throw limit - five throws within any two-turn period the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerRestTurns",
+   "value": 1,
+   "comment": "the rest after the limit - one turn the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerThorFactor",
+   "value": 2,
+   "comment": "the Thor note - about double the listed ranges the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HelmVisionFactor",
+   "value": 5,
+   "comment": "the underwater vision factor - five times farther than the water and light allow the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PigmentCubicFeet",
+   "value": 1000,
+   "comment": "the pigment volume - one pot creates a thousand-cubic-foot object the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PigmentSurfaceFeet",
+   "value": 100,
+   "comment": "the depiction surface - one hundred square feet painted in two dimensions the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PigmentPotsMin",
+   "value": 1,
+   "comment": "the pots floor - from one to four containers the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PigmentPotsMax",
+   "value": 4,
+   "comment": "the pots ceiling - the same one to four the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PigmentDepictTurns",
+   "value": 1,
+   "comment": "the depiction time - one turn per object the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PearlMonths",
+   "value": 1,
+   "comment": "the retention period - one month the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PearlDays",
+   "value": 30,
+   "comment": "the gain day - the increase at the expiration of thirty days the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PearlCursedPct",
+   "value": 5,
+   "comment": "the cursed share - one in twenty works in reverse the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PeriaptCount",
+   "value": 4,
+   "comment": "the periapt band count - four plus bands on the chart the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PeriaptNoSavePct",
+   "value": 10,
+   "comment": "the emergency save - a ten percent saving throw against poisons which normally disallow one the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PhilterLoveBaseTurns",
+   "value": 4,
+   "comment": "the charm duration floor - four turns plus the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PhilterLoveExtraMin",
+   "value": 1,
+   "comment": "the charm extra - one to four further turns the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PhilterLoveExtraMax",
+   "value": 4,
+   "comment": "the charm extra ceiling - the same one to four the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PhilterPersuasionPct",
+   "value": 25,
+   "comment": "the persuasiveness bonus - twenty-five percent on reaction dice the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PhilterSuggestRangeInches",
+   "value": 3,
+   "comment": "the suggest range - once per turn within three inches the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PotionTwoDosePct",
+   "value": 75,
+   "comment": "the two-dose likelihood - seventy-five percent the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PotionDosesMin",
+   "value": 2,
+   "comment": "the doses floor - two or four in the container the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PotionDosesMax",
+   "value": 4,
+   "comment": "the doses ceiling - the same two or four the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PotionHoursPerDose",
+   "value": 1,
+   "comment": "the duration - one full hour per dose the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PotionExtraRoundsMin",
+   "value": 1,
+   "comment": "the variable extra - one to ten further rounds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PotionExtraRoundsMax",
+   "value": 10,
+   "comment": "the variable extra ceiling - the same one to ten the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingTypes",
+   "value": 4,
+   "comment": "the elemental command ring types - four, air earth fire water the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingKeepFeet",
+   "value": 5,
+   "comment": "the attuned-keep distance - the elemental cannot approach within five feet the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingCharmSaveMinus",
+   "value": 2,
+   "comment": "the charm attempt save - at minus two on the die the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingFoeHitMinus",
+   "value": 1,
+   "comment": "the plane-creature attack penalty - minus one on their to-hit dice the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingSavePlus",
+   "value": 2,
+   "comment": "the wearer save bonus - plus two against the creature attacks the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingHitPlus",
+   "value": 4,
+   "comment": "the wearer hit bonus - plus four to hit the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingDamagePlus",
+   "value": 6,
+   "comment": "the wearer damage bonus - plus six total not per die the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingOperateLevel",
+   "value": 10,
+   "comment": "the operation level - tenth, or the minimum the spell needs if greater the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingPowerSegments",
+   "value": 5,
+   "comment": "the additional-power bring-forth - five segments the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingElementalSaveMinus",
+   "value": 2,
+   "comment": "the owner save penalty - minus two versus the element of the ring the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingAirPowers",
+   "value": 5,
+   "comment": "the air powers - gust of wind, fly, wall of force, control winds, invisibility the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingEarthPowers",
+   "value": 6,
+   "comment": "the earth powers - stone tell, passwall, wall of stone, stone to flesh, move earth, feather fall the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingFirePowers",
+   "value": 5,
+   "comment": "the fire powers - burning hands, pyrotechnics, wall of fire, flame strike, fire resistance the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingWaterPowers",
+   "value": 8,
+   "comment": "the water powers - purify water, create water, water breathing, wall of ice, airy water, lower water, part water, water walking the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollKinds",
+   "value": 8,
+   "comment": "the protection scroll kinds - demons, devils, elementals, lycanthropes, magic, petrifaction, possession, undead the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollMagicSegments",
+   "value": 8,
+   "comment": "the anti-magic reading time - eight segments the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollMagicRadiusFeet",
+   "value": 5,
+   "comment": "the anti-magic radius - five feet the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollMagicDrainPct",
+   "value": 50,
+   "comment": "the item drain likelihood - fifty percent on contact with the globe the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollMagicSaveFloor",
+   "value": 11,
+   "comment": "the drain save - eleven or better on the d20 the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollMagicRoundsMin",
+   "value": 5,
+   "comment": "the anti-magic duration floor - five to thirty rounds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollMagicRoundsMax",
+   "value": 30,
+   "comment": "the anti-magic duration ceiling - the same five to thirty the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPetrifactionSegments",
+   "value": 5,
+   "comment": "the petrifaction reading time - five segments the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPetrifactionRoundsMin",
+   "value": 5,
+   "comment": "the petrifaction duration floor - five to twenty rounds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPetrifactionRoundsMax",
+   "value": 20,
+   "comment": "the petrifaction duration ceiling - the same five to twenty the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPossessionRounds",
+   "value": 1,
+   "comment": "the possession reading time - one full round the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPossessionRoundsMin",
+   "value": 10,
+   "comment": "the possession duration floor - ten to sixty rounds in ninety percent of the scrolls the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPossessionRoundsMax",
+   "value": 60,
+   "comment": "the possession duration ceiling - the same ten to sixty the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPossessionTurnsMin",
+   "value": 10,
+   "comment": "the stationary duration floor - ten to sixty turns in the other ten percent the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPossessionTurnsMax",
+   "value": 60,
+   "comment": "the stationary duration ceiling - the same ten to sixty turns the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPossessionStationaryPct",
+   "value": 10,
+   "comment": "the stationary share - ten percent of the scrolls protect longer but do not move the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollUndeadSegments",
+   "value": 4,
+   "comment": "the undead reading time - four segments the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollUndeadRadiusFeet",
+   "value": 5,
+   "comment": "the undead radius - five feet, the physical attacks only the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollUndeadRoundsMin",
+   "value": 10,
+   "comment": "the undead duration floor - ten to eighty rounds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollUndeadRoundsMax",
+   "value": 80,
+   "comment": "the undead duration ceiling - the same ten to eighty the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollUndeadHdCap",
+   "value": 35,
+   "comment": "the undead restraint - thirty-five hit dice or levels the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollDemonLordRounds",
+   "value": 1,
+   "comment": "the demon scroll read - one full round for the demon lords and princes only the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollDemonMidSegments",
+   "value": 7,
+   "comment": "the demon scroll read - seven segments for the type four through six and the succubi the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollDemonLesserSegments",
+   "value": 3,
+   "comment": "the demon scroll read - three segments for the type one through three and the manes the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollDemonPauseSegments",
+   "value": 1,
+   "comment": "the pause that kills - any one-segment pause in reading destroys the scroll the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollDemonRoundsMin",
+   "value": 5,
+   "comment": "the demon duration floor - five to twenty rounds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollDemonRoundsMax",
+   "value": 20,
+   "comment": "the demon duration ceiling - the same five to twenty the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollDevilArchRounds",
+   "value": 1,
+   "comment": "the devil scroll read - one round for the arch-devils only the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollDevilGreaterSegments",
+   "value": 7,
+   "comment": "the devil scroll read - seven segments for the greater devils the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollDevilLesserSegments",
+   "value": 3,
+   "comment": "the devil scroll read - three segments for the lesser devils and the lemures the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollElementalSegments",
+   "value": 6,
+   "comment": "the elemental reading time - six segments the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollElementalRoundsMin",
+   "value": 5,
+   "comment": "the elemental duration floor - five to forty rounds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollElementalRoundsMax",
+   "value": 40,
+   "comment": "the elemental duration ceiling - the same five to forty the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollElementalSpecificHd",
+   "value": 24,
+   "comment": "the specific-elemental restraint - twenty-four hit dice the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollElementalAllHd",
+   "value": 16,
+   "comment": "the all-elemental restraint - sixteen hit dice the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollLycanSegments",
+   "value": 4,
+   "comment": "the lycanthrope reading time - four segments the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollLycanRoundsMin",
+   "value": 5,
+   "comment": "the lycanthrope duration floor - five to thirty rounds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollLycanRoundsMax",
+   "value": 30,
+   "comment": "the lycanthrope duration ceiling - the same five to thirty the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollLycanHdCap",
+   "value": 49,
+   "comment": "the lycanthrope restraint - forty-nine hit dice the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollLycanPlusThreshold",
+   "value": 2,
+   "comment": "the rounding rule - hit point plusses round down unless they exceed two the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ElemScrollCount",
+   "value": 5,
+   "comment": "the elemental scroll rows - the five elemental planes protection scrolls the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22LycanScrollCount",
+   "value": 7,
+   "comment": "the lycanthrope scroll rows - seven from werewolf through wereshark the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HitOnlyCount",
+   "value": 4,
+   "comment": "the hit-only rows - the four plus grades one through four the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22UndeadCount",
+   "value": 13,
+   "comment": "the undead matrix rows - thirteen types from the skeleton through the special the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22UndeadFootnotes",
+   "value": 6,
+   "comment": "the paladin footnotes - six, the first and second level paladin through the eleventh and higher the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnAffectedMin",
+   "value": 1,
+   "comment": "the turning count floor - one to twelve affected the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnAffectedMax",
+   "value": 12,
+   "comment": "the turning count ceiling - the same one to twelve the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnStarMin",
+   "value": 7,
+   "comment": "the starred destroy count - seven to twelve rather than one to twelve the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnFleeRoundsMin",
+   "value": 3,
+   "comment": "the turned flee floor - not less than three rounds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnFleeRoundsMax",
+   "value": 12,
+   "comment": "the turned flee ceiling - not more than twelve rounds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnSpecialMin",
+   "value": 1,
+   "comment": "the special floor - one to two of the lower-plane creatures the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnSpecialMax",
+   "value": 2,
+   "comment": "the special ceiling - the same one to two the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnSpecialAc",
+   "value": -5,
+   "comment": "the special rule of thumb - armor class minus five or better unaffected the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnSpecialHd",
+   "value": 11,
+   "comment": "the special rule of thumb - eleven or more hit dice unaffected the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnSpecialMrPct",
+   "value": 66,
+   "comment": "the special rule of thumb - sixty-six percent or greater magic resistance unaffected the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22BlastCost",
+   "value": 20,
+   "comment": "the psionic blast cost - twenty attack points the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MindThrustCost",
+   "value": 4,
+   "comment": "the mind thrust cost - four the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22EgoWhipCost",
+   "value": 7,
+   "comment": "the ego whip cost - seven the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22IdInsinuationCost",
+   "value": 10,
+   "comment": "the id insinuation cost - ten the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsychicCrushCost",
+   "value": 14,
+   "comment": "the psychic crush cost - fourteen the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MindBlankCost",
+   "value": 1,
+   "comment": "the mind blank cost - one defense point the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ThoughtShieldCost",
+   "value": 2,
+   "comment": "the thought shield cost - two the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MentalBarrierCost",
+   "value": 3,
+   "comment": "the mental barrier cost - three the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22IntellectFortressCost",
+   "value": 8,
+   "comment": "the intellect fortress cost - eight the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TowerIronWillCost",
+   "value": 10,
+   "comment": "the tower of iron will cost - ten the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiCrushCount",
+   "value": 6,
+   "comment": "the crush table rows - six attack strength bands the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiConfusedRoundsMin",
+   "value": 2,
+   "comment": "the confused floor - two to eight rounds, no psionic activity the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiConfusedRoundsMax",
+   "value": 8,
+   "comment": "the confused ceiling - the same two to eight the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiDazedTurnsMin",
+   "value": 1,
+   "comment": "the dazed floor - one to four turns, no psionic or other activity the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiDazedTurnsMax",
+   "value": 4,
+   "comment": "the dazed ceiling - the same one to four the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiComaWeeksMin",
+   "value": 1,
+   "comment": "the coma floor - one to four weeks the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiComaWeeksMax",
+   "value": 4,
+   "comment": "the coma ceiling - the same one to four the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiRobotWeeksMin",
+   "value": 2,
+   "comment": "the robot floor - two to eight weeks until released or the save the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiRobotWeeksMax",
+   "value": 8,
+   "comment": "the robot ceiling - the same two to eight the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiWoundedWeeksMin",
+   "value": 2,
+   "comment": "the wounded floor - one mode or discipline unusable for two to eight weeks the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiWoundedWeeksMax",
+   "value": 8,
+   "comment": "the wounded ceiling - the same two to eight the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiCatatonicPct",
+   "value": 99,
+   "comment": "the catatonic mistake likelihood - ninety-nine percent taken for death the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiMindBarPoints",
+   "value": 40,
+   "comment": "the mind bar rule - letter results read as minus forty points until zero the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiBlastCount",
+   "value": 11,
+   "comment": "the blast table rows - eleven intelligence and wisdom bands the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiFeebleCap",
+   "value": 5,
+   "comment": "the feebleminded score - a combined intelligence and wisdom of zero to five the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiRangeCount",
+   "value": 5,
+   "comment": "the range table rows - the five attack modes A through E the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiSeriesBonusPct",
+   "value": 50,
+   "comment": "the series range bonus - fifty percent per linked psionic, two at double the range the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiMediumDamageCutPct",
+   "value": 20,
+   "comment": "the medium-range damage cut - twenty percent, fractions rounded up the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiLongCategoryCut",
+   "value": 25,
+   "comment": "the long-range strength cut - one category, twenty-five points the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiLongDamageCutPct",
+   "value": 20,
+   "comment": "the long-range damage cut - twenty percent, fractions rounded up the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiLongLowBandCutPct",
+   "value": 50,
+   "comment": "the lowest-band long cut - fifty percent, fractions dropped the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SaveMatrices",
+   "value": 3,
+   "comment": "the saving throw matrices - three, the characters, the monsters, the items the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SaveAutoFail",
+   "value": 1,
+   "comment": "the automatic failure - a roll of one always fails regardless of protections the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SaveCharCount",
+   "value": 28,
+   "comment": "the character save rows - seven cleric, ten fighter, five magic-user, six thief bands the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SaveClericBands",
+   "value": 7,
+   "comment": "the cleric bands - one through three up to nineteen and up the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SaveFighterBands",
+   "value": 10,
+   "comment": "the fighter bands - zero level up to seventeen and up the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SaveMuBands",
+   "value": 5,
+   "comment": "the magic-user bands - one through five up to twenty-one and up the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SaveThiefBands",
+   "value": 6,
+   "comment": "the thief bands - one through four up to twenty-one and up the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MonsterPlusCap",
+   "value": 3,
+   "comment": "the monster hit-die plus cap - any plus above three equals another hit die the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22NonIntDivisor",
+   "value": 2,
+   "comment": "the non-intelligent divisor - one-half the hit dice rounded upwards the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemRowCount",
+   "value": 14,
+   "comment": "the item rows - fourteen from bone or ivory through wood or rope thick the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemAttackForms",
+   "value": 11,
+   "comment": "the item attack forms - acid through electrical discharge the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemMagicBonus",
+   "value": 2,
+   "comment": "the magic item save bonus - plus two on all rolls the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemPlusBonus",
+   "value": 1,
+   "comment": "the magic plus bonus - plus one for each plus above the first the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemOwnModeBonus",
+   "value": 5,
+   "comment": "the own-mode bonus - plus five versus the attack in the item own mode the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemFallBaseFeet",
+   "value": 5,
+   "comment": "the fall base - about five feet onto a hard surface the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemFallSoftBonus",
+   "value": 1,
+   "comment": "the wood-like fall bonus - plus one on the save the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemFallFleshyBonus",
+   "value": 5,
+   "comment": "the fleshy-soft fall bonus - plus five on the save the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemFallPenaltyFeet",
+   "value": 5,
+   "comment": "the extra-fall penalty - minus one per further five feet the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemColdSavePenalty",
+   "value": 10,
+   "comment": "the cold-strike penalty - minus ten on the die after extreme cold the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemPaperRounds",
+   "value": 1,
+   "comment": "the paper exposure - one melee round of normal fire the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemClothRounds",
+   "value": 2,
+   "comment": "the cloth exposure - two the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemBoneRounds",
+   "value": 3,
+   "comment": "the bone or ivory exposure - three the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadeRangeInches",
+   "value": 3,
+   "comment": "the grenade range - three inches for every container missile the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadeMediumFrom",
+   "value": 1,
+   "comment": "the medium band - beyond one inch the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadeLongFrom",
+   "value": 2,
+   "comment": "the long band - beyond two inches the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadeMediumMinus",
+   "value": 2,
+   "comment": "the medium to-hit penalty - minus two the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadeLongMinus",
+   "value": 5,
+   "comment": "the long to-hit penalty - minus five the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadeSplashFeet",
+   "value": 3,
+   "comment": "the splash radius - all creatures within three feet of the break the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GiantBoulderFeet",
+   "value": 1,
+   "comment": "the giant boulder - one foot in diameter the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SiegeBoulderFeet",
+   "value": 2,
+   "comment": "the siege boulder - two feet the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AcidOunces",
+   "value": 8,
+   "comment": "the acid container - one half pint, eight ounces the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HolyOunces",
+   "value": 4,
+   "comment": "the holy water container - one quarter pint, four ounces the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilOunces",
+   "value": 16,
+   "comment": "the oil container - one pint, sixteen ounces the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PoisonOunces",
+   "value": 4,
+   "comment": "the poison container - one quarter pint, four ounces the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AcidSplashHp",
+   "value": 1,
+   "comment": "the acid splash - one hit point the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AcidDirectMin",
+   "value": 2,
+   "comment": "the acid direct floor - two to eight hit points the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AcidDirectMax",
+   "value": 8,
+   "comment": "the acid direct ceiling - the same two to eight the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HolySplashHp",
+   "value": 2,
+   "comment": "the holy water splash - two hit points the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HolyDirectMin",
+   "value": 2,
+   "comment": "the holy water direct floor - two to seven hit points the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HolyDirectMax",
+   "value": 7,
+   "comment": "the holy water direct ceiling - the same two to seven the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilDiameterFeet",
+   "value": 3,
+   "comment": "the burning oil area - three feet diameter the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilBurnSegmentsMin",
+   "value": 1,
+   "comment": "the oil burn floor - one to three segments the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilBurnSegmentsMax",
+   "value": 3,
+   "comment": "the oil burn ceiling - the same one to three the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilDirectFirstMin",
+   "value": 2,
+   "comment": "the flaming oil direct floor - two to twelve the first round the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilDirectFirstMax",
+   "value": 12,
+   "comment": "the flaming oil direct ceiling - the same two to twelve the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilDirectSecondMin",
+   "value": 1,
+   "comment": "the flaming oil second floor - one to six the second round, then out the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilDirectSecondMax",
+   "value": 6,
+   "comment": "the flaming oil second ceiling - the same one to six the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilWalkDamageMin",
+   "value": 1,
+   "comment": "the walk-through floor - one to four hit points per melee round the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22OilWalkDamageMax",
+   "value": 4,
+   "comment": "the walk-through ceiling - the same one to four the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadeMissDistanceDie",
+   "value": 6,
+   "comment": "the miss distance die - the d6 in feet the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadeMissDirectionDie",
+   "value": 8,
+   "comment": "the miss direction die - the d8, long right through long over the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22LanternAreaFeet",
+   "value": 2,
+   "comment": "the lantern area - a two-foot diameter flaming oil area the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ThievesCount",
+   "value": 21,
+   "comment": "the thieves matrix rows - armor class minus ten through ten the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MissileLongMinus",
+   "value": 5,
+   "comment": "the missile long penalty - minus five at long range the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MissileMediumMinus",
+   "value": 2,
+   "comment": "the missile medium penalty - minus two at medium range the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AcFloor",
+   "value": 10,
+   "comment": "the armor class floor - below ten not possible the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AcProjectionRepeats",
+   "value": 6,
+   "comment": "the off-chart projection - repeat twenty six times before continuing with twenty-one the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MonsterMatrixCols",
+   "value": 12,
+   "comment": "the monster matrix columns - up to one minus one through sixteen and up the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22BackstabMin",
+   "value": 2,
+   "comment": "the surprise backstab floor - double damage the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22BackstabMax",
+   "value": 5,
+   "comment": "the surprise backstab ceiling - quintuple at the thirteenth through sixteenth band the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AssassinationRows",
+   "value": 15,
+   "comment": "the assassination table rows - assassin levels one through fifteen the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22FighterAc3Prints",
+   "value": 11,
+   "comment": "the I.B print catch - the armor class three row prints eleven where the step wants thirteen the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MuHeaderBands",
+   "value": 5,
+   "comment": "the I.C header - five level bands printed the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MuDataCols",
+   "value": 4,
+   "comment": "the I.C data - four columns under the five bands, the count mismatch pinned as scanned the AD&D DMG sneak preview (print 33-38, 41-43)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "s22ModuleItemsNotRepeated",
+   "value": true,
+   "comment": "the preview doctrine - magic items explained in the text of the modules are not repeated the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22NewItemDoctrine",
+   "value": true,
+   "comment": "the creation doctrine - assign the properties of one magic item to a different ordinary item, the bracers sandals and earrings of invisibility, the fire elemental gem from the ring of fire the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22AmuletSafeTravel",
+   "value": true,
+   "comment": "the amulet - the travel is absolutely safe, random until the device is learned the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerGiantSlain",
+   "value": true,
+   "comment": "the hammer - with the girdle and the gauntlets and the true name it strikes dead any giant it hits the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HammerEveryOtherRound",
+   "value": true,
+   "comment": "the hammer - only one throw every other round, it is too difficult to hurl the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HelmCommandGlobe",
+   "value": true,
+   "comment": "the helm - the globe of air on the command word, maintained until it is spoken again the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PigmentInanimateOnly",
+   "value": true,
+   "comment": "the pigments - only normal inanimate things, never monsters people or golems the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PigmentValuablesFalse",
+   "value": true,
+   "comment": "the pigments - depicted valuables appear valuable but are tin lead paste gems brass and bone the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PearlRetainOrLose",
+   "value": true,
+   "comment": "the pearl - keep it on the person or the wisdom gain is lost the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PeriaptPermanentPlus",
+   "value": true,
+   "comment": "the periapt - roll once when found, the result is the permanent plus of the item the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PhilterDispelEnds",
+   "value": true,
+   "comment": "the philter of love - the enamouring lasts until a dispel magic is cast the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingCharmGamble",
+   "value": true,
+   "comment": "the ring - forego the protection to attempt the charm at minus two, a failure loses the protection for good the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingAnyWeaponHits",
+   "value": true,
+   "comment": "the ring - any weapon the wearer uses hits the attuned elementals even if it is not magical the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22RingRespectDoctrine",
+   "value": true,
+   "comment": "the ring - the elementals recognize it, respect if the wearer is strong, hatred and the desire to slay if weak the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollsCumulative",
+   "value": true,
+   "comment": "the special note - all protection scrolls are cumulative in effect but not in duration the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollMagicDrainCancels",
+   "value": true,
+   "comment": "the anti-magic globe - a drained item cancels the spell and the protection ceases the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollMagicArtifactsImmune",
+   "value": true,
+   "comment": "the anti-magic globe - artifacts and relics do not suffer its relatively weak magic the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollPossessionDeadBodies",
+   "value": true,
+   "comment": "the possession scroll - it protects even dead bodies within the circle the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ScrollLycanShapechangers",
+   "value": true,
+   "comment": "the shape-changer scroll - it covers the doppelgangers and the jackolweres as well as the actual lycanthropes the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HitOnlyCharactersExempt",
+   "value": true,
+   "comment": "the hit-only table - the hit-dice alternative does not apply to characters of any sort the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadeOilAlightOnly",
+   "value": true,
+   "comment": "the grenades - oil must be alight to cause damage, the rag or the torch the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GrenadePoisonSwallowed",
+   "value": true,
+   "comment": "the grenades - an unstoppered container hurled into the mouth needs no breakage the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22HolyWaterNonmaterialImmune",
+   "value": true,
+   "comment": "the holy water - a non-material ghost or a gaseous vampire cannot be harmed by it the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnNoRetry",
+   "value": true,
+   "comment": "the turning - a failure means no further attempt against those undead the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22TurnNeutralIgnore",
+   "value": true,
+   "comment": "the evil cleric - the neutral undead ignore the party, the friendly ones follow the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiSimultaneous",
+   "value": true,
+   "comment": "the psionic combat - all attacks and defenses are simultaneous, the points taken at the end of the segment the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiCrushThoughtShieldOnly",
+   "value": true,
+   "comment": "the psychic crush - the user may use only the G thought shield defense the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiMindBarLetters",
+   "value": true,
+   "comment": "the mind bar - the letter results read as minus forty points until the psionic strength is gone the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiIdiocyHealable",
+   "value": true,
+   "comment": "the idiocy - the psionic ability is lost forever but the idiocy is curable by a heal spell the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiRobotSaveVsMagic",
+   "value": true,
+   "comment": "the robot - the control holds until released or two to eight weeks and a saving throw versus magic the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SaveMultiClassBest",
+   "value": true,
+   "comment": "the multi-class rule - check the matrix for each class and use the most favorable result the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MonsterPlusBump",
+   "value": true,
+   "comment": "the monster saves - a plus in hit points moves the creature upwards by one hit die the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22NonIntRoundedUp",
+   "value": true,
+   "comment": "the non-intelligent save - one-half the hit dice, rounded upwards the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22NonIntPoisonException",
+   "value": true,
+   "comment": "the non-intelligent save - the halving never applies to poison or death magic the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemInterpolated",
+   "value": true,
+   "comment": "the items - non-conforming items interpolate, the exposure actually lands on the item the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ItemOwnModeBoth",
+   "value": true,
+   "comment": "the items - the own-mode plus five holds for magical and non-magical alike the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22SaveSpellExclusions",
+   "value": true,
+   "comment": "the save footnotes - the polymorph wand, the petrifying breath and the self-saved spells excluded from their columns the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22FreetJariPrintCatch",
+   "value": true,
+   "comment": "the print catch - the preview prints Glacial Rift of the Freet Giant Jari for the G2 Frost Giant Jarl the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ConPenetratePrintCatch",
+   "value": true,
+   "comment": "the print catch - the demon scroll prints con penetrate for cannot penetrate the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22JackolwerePrintCatch",
+   "value": true,
+   "comment": "the print catch - the lycanthrope scroll prints jackolwere for the jackalwere the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22WralthsPrintCatch",
+   "value": true,
+   "comment": "the print catch - the undead scroll prints wralths for the wraiths the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22GhastPrintsGhost",
+   "value": true,
+   "comment": "the print catch - the undead matrix prints Ghost twice, the second row for the Ghast the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PetrifactionPrint",
+   "value": true,
+   "comment": "the print - the scroll heading prints Petrifaction for petrification, pinned as scanned the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22FarceAnDiePrintCatch",
+   "value": true,
+   "comment": "the print catch - the items cold footnote prints farce for force and an die for on the die the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22ThievesFootnotePrintCatch",
+   "value": true,
+   "comment": "the print catch - the I.D point one header points the seventeen-to-twenty band at a footnote e that never prints, reusing the d footnote at twenty-one and up the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22FighterAc3PrintCatch",
+   "value": true,
+   "comment": "the print catch - the I.B armor class three row prints eleven where the column step wants thirteen the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22FighterAc10GapPrintCatch",
+   "value": true,
+   "comment": "the print catch - the I.B armor class ten row drops its three-to-four level cell the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MuBandsPrintCatch",
+   "value": true,
+   "comment": "the print catch - the I.C header prints five level bands over four data columns the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22MuOpponentDangling",
+   "value": true,
+   "comment": "the print catch - the I.C heading carries a dangling Opponent at its end the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "name": "s22PsiBandPrintCatch",
+   "value": true,
+   "comment": "the print catch - the IV.B defender bands print two hundred ten through two hundred sixty-nine against the two hundred sixty through three hundred nine band the AD&D DMG sneak preview (print 33-38, 41-43)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "s22Amulet",
+   "tag": "Am",
+   "count": "s22AmuletCount",
+   "sentinel": -99,
+   "audit_comment": "the amulet of the planes grid - seventeen bands one through twenty-four, the d6 add-twelve rule, the plane code pinned by band order",
+   "cols": [
+    "s22AmuletLo",
+    "s22AmuletHi",
+    "s22AmuletPlane"
+   ],
+   "col_comments": [
+    "the band floor of the amulet roll - the combined d6 plus d12, one and two the Seven Heavens, three the Twin Paradises, four Elysium, five the Happy Hunting Grounds, six and seven Olympus, eight Gladsheim, nine Limbo, ten Pandemonium, eleven and twelve the Abyss",
+    "the band ceiling of the same seventeen plane bands through twenty-one to twenty-four the Prime Material Plane",
+    "the plane code by band order, one the Seven Heavens through seventeen the Prime, the alternate results twenty-two the Ethereal twenty-three the Astral and twenty-four the alternate earth pinned as consts"
+   ],
+   "data": [
+    [
+     1,
+     2,
+     1
+    ],
+    [
+     3,
+     3,
+     2
+    ],
+    [
+     4,
+     4,
+     3
+    ],
+    [
+     5,
+     5,
+     4
+    ],
+    [
+     6,
+     7,
+     5
+    ],
+    [
+     8,
+     8,
+     6
+    ],
+    [
+     9,
+     9,
+     7
+    ],
+    [
+     10,
+     10,
+     8
+    ],
+    [
+     11,
+     12,
+     9
+    ],
+    [
+     13,
+     13,
+     10
+    ],
+    [
+     14,
+     14,
+     11
+    ],
+    [
+     15,
+     15,
+     12
+    ],
+    [
+     16,
+     17,
+     13
+    ],
+    [
+     18,
+     18,
+     14
+    ],
+    [
+     19,
+     19,
+     15
+    ],
+    [
+     20,
+     20,
+     16
+    ],
+    [
+     21,
+     24,
+     17
+    ]
+   ]
+  },
+  {
+   "name": "s22Periapt",
+   "tag": "Pp",
+   "count": "s22PeriaptCount",
+   "sentinel": -99,
+   "audit_comment": "the periapt of proof against poison grid - the four plus bands rolled once when found",
+   "cols": [
+    "s22PeriaptLo",
+    "s22PeriaptHi",
+    "s22PeriaptPlus"
+   ],
+   "col_comments": [
+    "the die floor of the periapt chart - one through eight the plus one",
+    "the die ceiling through nineteen and twenty the plus four",
+    "the permanent plus of the periapt by band, one through four"
+   ],
+   "data": [
+    [
+     1,
+     8,
+     1
+    ],
+    [
+     9,
+     14,
+     2
+    ],
+    [
+     15,
+     18,
+     3
+    ],
+    [
+     19,
+     20,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "s22HitOnly",
+   "tag": "Mw",
+   "count": "s22HitOnlyCount",
+   "sentinel": -99,
+   "audit_comment": "the creatures-struck-only-by-magic-weapons grid - the four grades, the weapon alternative and the hit-dice alternative",
+   "cols": [
+    "s22HitOnlyPlus",
+    "s22HitOnlyAttacker",
+    "s22HitOnlyHdBase",
+    "s22HitOnlyHdPlus"
+   ],
+   "col_comments": [
+    "the defender weapon grade - hit only by plus one through plus four",
+    "the attacker weapon grade that hits it, the same plus one through four",
+    "the monster hit-dice floor of the alternative - four, six, eight, ten",
+    "the hit-dice plus of the alternative - one through four, characters of any sort exempt"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     4,
+     1
+    ],
+    [
+     2,
+     2,
+     6,
+     2
+    ],
+    [
+     3,
+     3,
+     8,
+     3
+    ],
+    [
+     4,
+     4,
+     10,
+     4
+    ]
+   ]
+  },
+  {
+   "name": "s22Thieves",
+   "tag": "Id",
+   "count": "s22ThievesCount",
+   "sentinel": -99,
+   "audit_comment": "the attack matrix I.D point one for thieves assassins and monks - the twenty-one armor class rows by the six level bands, the backstab multipliers riding the footnote lines",
+   "cols": [
+    "s22ThievesAc",
+    "s22ThievesL1",
+    "s22ThievesL2",
+    "s22ThievesL3",
+    "s22ThievesL4",
+    "s22ThievesL5",
+    "s22ThievesL6"
+   ],
+   "col_comments": [
+    "the opponent armor class of the I.D point one matrix, minus ten through ten",
+    "the to-hit score of the one-to-four band, the surprise backstab double damage",
+    "the five-to-eight band, the triple damage backstab",
+    "the nine-to-twelve band, the quadruple damage backstab",
+    "the thirteen-to-sixteen band, the quintuple damage backstab",
+    "the seventeen-to-twenty band, its footnote e missing from the print",
+    "the twenty-one-and-up band, the d footnote reused in the print"
+   ],
+   "data": [
+    [
+     -10,
+     26,
+     24,
+     21,
+     20,
+     20,
+     20
+    ],
+    [
+     -9,
+     25,
+     23,
+     20,
+     20,
+     20,
+     19
+    ],
+    [
+     -8,
+     24,
+     22,
+     20,
+     20,
+     20,
+     18
+    ],
+    [
+     -7,
+     23,
+     21,
+     20,
+     20,
+     19,
+     17
+    ],
+    [
+     -6,
+     22,
+     20,
+     20,
+     20,
+     18,
+     16
+    ],
+    [
+     -5,
+     21,
+     20,
+     20,
+     19,
+     17,
+     15
+    ],
+    [
+     -4,
+     20,
+     20,
+     20,
+     18,
+     16,
+     14
+    ],
+    [
+     -3,
+     20,
+     20,
+     19,
+     17,
+     15,
+     13
+    ],
+    [
+     -2,
+     20,
+     20,
+     18,
+     16,
+     14,
+     12
+    ],
+    [
+     -1,
+     20,
+     20,
+     17,
+     15,
+     13,
+     11
+    ],
+    [
+     0,
+     20,
+     19,
+     16,
+     14,
+     12,
+     10
+    ],
+    [
+     1,
+     20,
+     18,
+     15,
+     13,
+     11,
+     9
+    ],
+    [
+     2,
+     19,
+     17,
+     14,
+     12,
+     10,
+     8
+    ],
+    [
+     3,
+     18,
+     16,
+     13,
+     11,
+     9,
+     7
+    ],
+    [
+     4,
+     17,
+     15,
+     12,
+     10,
+     8,
+     6
+    ],
+    [
+     5,
+     16,
+     14,
+     11,
+     9,
+     7,
+     5
+    ],
+    [
+     6,
+     15,
+     13,
+     10,
+     8,
+     6,
+     4
+    ],
+    [
+     7,
+     14,
+     12,
+     9,
+     7,
+     5,
+     3
+    ],
+    [
+     8,
+     13,
+     11,
+     8,
+     6,
+     4,
+     2
+    ],
+    [
+     9,
+     12,
+     10,
+     7,
+     5,
+     3,
+     1
+    ],
+    [
+     10,
+     11,
+     9,
+     6,
+     4,
+     2,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "s22ElemScroll",
+   "tag": "Es",
+   "count": "s22ElemScrollCount",
+   "sentinel": -99,
+   "audit_comment": "the protection from elementals grid - the five varieties, twenty-four hit dice specific and sixteen against all",
+   "cols": [
+    "s22ElemScrollLo",
+    "s22ElemScrollHi",
+    "s22ElemScrollKind"
+   ],
+   "col_comments": [
+    "the percentile floor of the elemental scroll varieties - one through fifteen the air",
+    "the percentile ceiling through sixty-one to one hundred the all",
+    "the variety code by row order - air, earth, fire, water, all"
+   ],
+   "data": [
+    [
+     1,
+     15,
+     1
+    ],
+    [
+     16,
+     30,
+     2
+    ],
+    [
+     31,
+     45,
+     3
+    ],
+    [
+     46,
+     60,
+     4
+    ],
+    [
+     61,
+     100,
+     5
+    ]
+   ]
+  },
+  {
+   "name": "s22LycanScroll",
+   "tag": "Ly",
+   "count": "s22LycanScrollCount",
+   "sentinel": -99,
+   "audit_comment": "the protection from lycanthropes grid - the seven varieties, the forty-nine hit dice and the rounding rule",
+   "cols": [
+    "s22LycanScrollLo",
+    "s22LycanScrollHi",
+    "s22LycanScrollKind"
+   ],
+   "col_comments": [
+    "the percentile floor of the lycanthrope scroll varieties - one through five the werebears, six through ten the wereboars, eleven through twenty the wererats, twenty-one through twenty-five the weretigers, twenty-six through forty the werewolves",
+    "the percentile ceiling through ninety-nine to one hundred the shape-changers",
+    "the variety code by row order - the five types through the all at forty-one through ninety-eight, the shape-changers last"
+   ],
+   "data": [
+    [
+     1,
+     5,
+     1
+    ],
+    [
+     6,
+     10,
+     2
+    ],
+    [
+     11,
+     20,
+     3
+    ],
+    [
+     21,
+     25,
+     4
+    ],
+    [
+     26,
+     40,
+     5
+    ],
+    [
+     41,
+     98,
+     6
+    ],
+    [
+     99,
+     100,
+     7
+    ]
+   ]
+  },
+  {
+   "name": "s22PsiCrush",
+   "tag": "Pc",
+   "count": "s22PsiCrushCount",
+   "sentinel": -99,
+   "audit_comment": "the IV.B psychic crush grid - the instant-kill percentages of the defenseless-psionic attack, six strength bands by seven defender bands",
+   "cols": [
+    "s22PsiCrushBand",
+    "s22PsiCrushC1",
+    "s22PsiCrushC2",
+    "s22PsiCrushC3",
+    "s22PsiCrushC4",
+    "s22PsiCrushC5",
+    "s22PsiCrushC6",
+    "s22PsiCrushC7"
+   ],
+   "col_comments": [
+    "the attack strength band floor - one, twenty-six, fifty-one, seventy-six, one hundred one, one hundred twenty-six and up",
+    "the crush percent against the ten-to-fifty-nine defender band",
+    "the crush percent against the sixty-to-one-hundred-nine band",
+    "the crush percent against the hundred-ten-to-one-hundred-fifty-nine band",
+    "the crush percent against the hundred-sixty-to-two-hundred-nine band",
+    "the crush percent against the two-hundred-ten defender band - the printed overlap pinned as scanned",
+    "the crush percent against the two-hundred-sixty-to-three-hundred-nine band",
+    "the crush percent against the three-hundred-ten-and-up band"
+   ],
+   "data": [
+    [
+     1,
+     72,
+     60,
+     50,
+     40,
+     30,
+     20,
+     10
+    ],
+    [
+     26,
+     75,
+     62,
+     52,
+     42,
+     32,
+     22,
+     12
+    ],
+    [
+     51,
+     79,
+     65,
+     55,
+     45,
+     35,
+     25,
+     15
+    ],
+    [
+     76,
+     84,
+     69,
+     59,
+     49,
+     39,
+     29,
+     19
+    ],
+    [
+     101,
+     90,
+     74,
+     64,
+     54,
+     44,
+     34,
+     24
+    ],
+    [
+     126,
+     97,
+     80,
+     70,
+     60,
+     50,
+     40,
+     30
+    ]
+   ]
+  },
+  {
+   "name": "s22PsiBlast",
+   "tag": "Np",
+   "count": "s22PsiBlastCount",
+   "sentinel": -99,
+   "audit_comment": "the IV.C psionic blast upon the non-psionic grid - the eleven int-wis bands by the three ranges, the failure results riding the consts",
+   "cols": [
+    "s22PsiBlastIntLo",
+    "s22PsiBlastShort",
+    "s22PsiBlastMedium",
+    "s22PsiBlastLong"
+   ],
+   "col_comments": [
+    "the intelligence and wisdom band floor - zero through five up to thirty-eight and up, eleven bands",
+    "the saving throw at short range - twenty down to zero",
+    "the saving throw at medium range - nineteen down to minus one",
+    "the saving throw at long range - eighteen down to minus two, death through the two insanities"
+   ],
+   "data": [
+    [
+     0,
+     20,
+     19,
+     18
+    ],
+    [
+     6,
+     18,
+     17,
+     16
+    ],
+    [
+     10,
+     16,
+     15,
+     14
+    ],
+    [
+     14,
+     14,
+     13,
+     12
+    ],
+    [
+     18,
+     12,
+     11,
+     10
+    ],
+    [
+     22,
+     10,
+     9,
+     8
+    ],
+    [
+     26,
+     8,
+     7,
+     6
+    ],
+    [
+     30,
+     6,
+     5,
+     4
+    ],
+    [
+     34,
+     4,
+     3,
+     2
+    ],
+    [
+     36,
+     2,
+     1,
+     0
+    ],
+    [
+     38,
+     0,
+     -1,
+     -2
+    ]
+   ]
+  },
+  {
+   "name": "s22PsiRange",
+   "tag": "Rg",
+   "count": "s22PsiRangeCount",
+   "sentinel": -99,
+   "audit_comment": "the IV.D psionic attack range grid - the five modes, the crush dashes pinned zero with the conversion noted",
+   "cols": [
+    "s22PsiRangeShort",
+    "s22PsiRangeMedium",
+    "s22PsiRangeLong"
+   ],
+   "col_comments": [
+    "the short range in inches - the blast two, the thrust three, the whip four, the id six, the crush five",
+    "the medium range - four through twelve, the crush prints no medium, pinned zero with the conversion noted",
+    "the long range - six through eighteen, the crush prints no long, pinned zero with the conversion noted"
+   ],
+   "data": [
+    [
+     2,
+     4,
+     6
+    ],
+    [
+     3,
+     6,
+     9
+    ],
+    [
+     4,
+     8,
+     12
+    ],
+    [
+     6,
+     12,
+     18
+    ],
+    [
+     5,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "s22UndeadTurn",
+   "tag": "Cu",
+   "count": "s22UndeadCount",
+   "sentinel": -99,
+   "audit_comment": "the III cleric-undead matrix - thirteen types by ten cleric bands, the T D and dash symbols pinned ninety-seven ninety-eight ninety-nine and zero with the conversion noted, the Ghast row printing Ghost",
+   "cols": [
+    "s22TurnLev1",
+    "s22TurnLev2",
+    "s22TurnLev3",
+    "s22TurnLev4",
+    "s22TurnLev5",
+    "s22TurnLev6",
+    "s22TurnLev7",
+    "s22TurnLev8",
+    "s22TurnLev9",
+    "s22TurnLev14"
+   ],
+   "col_comments": [
+    "the die score the level one cleric needs - skeleton ten, zombie thirteen, ghoul sixteen, shadow nineteen, wight twenty, the printed dash pinned zero with the conversion noted",
+    "the level two band - ghost twenty, wraith twenty, the mummy through special dashed",
+    "the level three band - wraith twenty, the mummy and beyond dashed",
+    "the level four band - mummy twenty, the spectre and beyond dashed",
+    "the level five band - spectre twenty, the vampire and beyond dashed",
+    "the level six band - vampire twenty, the ghast row dashed",
+    "the level seven band - ghast twenty, the lich and special dashed",
+    "the level eight band - lich nineteen, special twenty",
+    "the nine-to-thirteen band, the T symbol pinned ninety-seven and the D ninety-eight with the conversion noted",
+    "the fourteen-and-up band, the starred destroy pinned ninety-nine with the conversion noted"
+   ],
+   "data": [
+    [
+     10,
+     7,
+     4,
+     97,
+     97,
+     98,
+     98,
+     99,
+     99,
+     99
+    ],
+    [
+     13,
+     10,
+     7,
+     97,
+     97,
+     98,
+     98,
+     98,
+     99,
+     99
+    ],
+    [
+     16,
+     13,
+     10,
+     4,
+     97,
+     97,
+     98,
+     98,
+     98,
+     99
+    ],
+    [
+     19,
+     16,
+     13,
+     7,
+     4,
+     97,
+     97,
+     98,
+     98,
+     99
+    ],
+    [
+     20,
+     19,
+     16,
+     10,
+     7,
+     4,
+     97,
+     97,
+     98,
+     98
+    ],
+    [
+     0,
+     20,
+     19,
+     13,
+     10,
+     7,
+     4,
+     97,
+     97,
+     98
+    ],
+    [
+     0,
+     0,
+     20,
+     16,
+     13,
+     10,
+     7,
+     4,
+     97,
+     98
+    ],
+    [
+     0,
+     0,
+     0,
+     20,
+     16,
+     13,
+     10,
+     7,
+     4,
+     97
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     20,
+     16,
+     13,
+     10,
+     7,
+     97
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     20,
+     16,
+     13,
+     10,
+     4
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     20,
+     16,
+     13,
+     7
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     19,
+     16,
+     10
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     20,
+     19,
+     13
+    ]
+   ]
+  },
+  {
+   "name": "s22CharSave",
+   "tag": "Sv",
+   "count": "s22SaveCharCount",
+   "sentinel": -99,
+   "audit_comment": "the saving throw matrix I for characters and human types - the four class blocks by the five attack forms, the druid paladin ranger illusionist assassin and monk inclusions riding the footnotes",
+   "cols": [
+    "s22SaveClass",
+    "s22SaveLevel",
+    "s22SavePoison",
+    "s22SavePetrify",
+    "s22SaveRod",
+    "s22SaveBreath",
+    "s22SaveSpell"
+   ],
+   "col_comments": [
+    "the class code - one cleric, two fighter, three magic-user, four thief",
+    "the level band floor - one through three, zero level, one through five, one through four",
+    "the poison or death magic score",
+    "the petrifaction or polymorph score",
+    "the rod staff or wand score",
+    "the breath weapon score - the fighter nine-to-ten row prints nine where the eleven would sit, pinned as scanned",
+    "the spell score - the same row prints eleven, pinned as scanned"
+   ],
+   "data": [
+    [
+     1,
+     1,
+     10,
+     13,
+     14,
+     16,
+     15
+    ],
+    [
+     1,
+     4,
+     9,
+     12,
+     13,
+     15,
+     14
+    ],
+    [
+     1,
+     7,
+     7,
+     10,
+     11,
+     13,
+     12
+    ],
+    [
+     1,
+     10,
+     6,
+     9,
+     10,
+     12,
+     11
+    ],
+    [
+     1,
+     13,
+     5,
+     8,
+     9,
+     11,
+     10
+    ],
+    [
+     1,
+     16,
+     4,
+     7,
+     8,
+     10,
+     9
+    ],
+    [
+     1,
+     19,
+     2,
+     5,
+     6,
+     8,
+     7
+    ],
+    [
+     2,
+     0,
+     16,
+     17,
+     18,
+     20,
+     19
+    ],
+    [
+     2,
+     1,
+     14,
+     15,
+     16,
+     17,
+     17
+    ],
+    [
+     2,
+     3,
+     13,
+     14,
+     15,
+     16,
+     16
+    ],
+    [
+     2,
+     5,
+     11,
+     12,
+     13,
+     13,
+     14
+    ],
+    [
+     2,
+     7,
+     10,
+     11,
+     12,
+     12,
+     13
+    ],
+    [
+     2,
+     9,
+     8,
+     9,
+     10,
+     9,
+     11
+    ],
+    [
+     2,
+     11,
+     7,
+     8,
+     9,
+     8,
+     10
+    ],
+    [
+     2,
+     13,
+     5,
+     6,
+     7,
+     5,
+     8
+    ],
+    [
+     2,
+     15,
+     4,
+     5,
+     6,
+     4,
+     7
+    ],
+    [
+     2,
+     17,
+     3,
+     4,
+     5,
+     4,
+     6
+    ],
+    [
+     3,
+     1,
+     14,
+     13,
+     11,
+     15,
+     12
+    ],
+    [
+     3,
+     6,
+     13,
+     11,
+     9,
+     13,
+     10
+    ],
+    [
+     3,
+     11,
+     11,
+     9,
+     7,
+     11,
+     8
+    ],
+    [
+     3,
+     16,
+     10,
+     7,
+     5,
+     9,
+     6
+    ],
+    [
+     3,
+     21,
+     8,
+     5,
+     3,
+     7,
+     4
+    ],
+    [
+     4,
+     1,
+     13,
+     12,
+     14,
+     16,
+     15
+    ],
+    [
+     4,
+     5,
+     12,
+     11,
+     12,
+     15,
+     13
+    ],
+    [
+     4,
+     9,
+     11,
+     10,
+     10,
+     14,
+     11
+    ],
+    [
+     4,
+     13,
+     10,
+     9,
+     8,
+     13,
+     9
+    ],
+    [
+     4,
+     17,
+     9,
+     8,
+     6,
+     12,
+     7
+    ],
+    [
+     4,
+     21,
+     8,
+     7,
+     4,
+     11,
+     5
+    ]
+   ]
+  },
+  {
+   "name": "s22ItemSave",
+   "tag": "Is",
+   "count": "s22ItemRowCount",
+   "sentinel": -99,
+   "audit_comment": "the saving throw matrix III for magical and non-magical items - the fourteen items by the eleven attack forms, the liquid mirror and jewelry footnotes riding the consts",
+   "cols": [
+    "s22ItemAcid",
+    "s22ItemCrush",
+    "s22ItemBlow",
+    "s22ItemDisint",
+    "s22ItemFall",
+    "s22ItemFireball",
+    "s22ItemFireMag",
+    "s22ItemFireNorm",
+    "s22ItemFrost",
+    "s22ItemBolt",
+    "s22ItemElec"
+   ],
+   "col_comments": [
+    "the acid save - bone or ivory eleven through the parchment sixteen",
+    "the crushing blow save - the hurled flask against the hard surface",
+    "the normal blow save - against the tough but slightly yielding surface",
+    "the disintegration save - the magical effect",
+    "the fall save - parchment prints zero, pinned as scanned",
+    "the fireball save - the parchment prints twenty-five, pinned as scanned",
+    "the magical fire save",
+    "the normal fire save - the oil and the wood fire",
+    "the frost save - the white dragon breath and the cone of cold",
+    "the lightning bolt save - the blue dragon breath",
+    "the electrical discharge save - the eel the trap the item"
+   ],
+   "data": [
+    [
+     11,
+     16,
+     10,
+     20,
+     6,
+     17,
+     9,
+     3,
+     2,
+     8,
+     1
+    ],
+    [
+     4,
+     18,
+     12,
+     19,
+     11,
+     5,
+     3,
+     2,
+     4,
+     2,
+     1
+    ],
+    [
+     12,
+     6,
+     3,
+     20,
+     2,
+     20,
+     16,
+     13,
+     1,
+     18,
+     1
+    ],
+    [
+     6,
+     19,
+     14,
+     20,
+     13,
+     10,
+     6,
+     3,
+     7,
+     15,
+     5
+    ],
+    [
+     5,
+     20,
+     15,
+     20,
+     14,
+     11,
+     7,
+     4,
+     6,
+     17,
+     1
+    ],
+    [
+     10,
+     4,
+     2,
+     20,
+     1,
+     13,
+     6,
+     4,
+     3,
+     13,
+     1
+    ],
+    [
+     15,
+     0,
+     0,
+     20,
+     0,
+     15,
+     14,
+     13,
+     12,
+     18,
+     15
+    ],
+    [
+     7,
+     6,
+     2,
+     17,
+     2,
+     6,
+     2,
+     1,
+     1,
+     11,
+     1
+    ],
+    [
+     13,
+     14,
+     9,
+     19,
+     4,
+     18,
+     13,
+     5,
+     1,
+     16,
+     1
+    ],
+    [
+     12,
+     20,
+     15,
+     20,
+     13,
+     14,
+     9,
+     5,
+     6,
+     18,
+     1
+    ],
+    [
+     16,
+     11,
+     6,
+     20,
+     0,
+     25,
+     21,
+     18,
+     2,
+     20,
+     1
+    ],
+    [
+     3,
+     17,
+     7,
+     18,
+     4,
+     7,
+     3,
+     2,
+     1,
+     14,
+     2
+    ],
+    [
+     9,
+     13,
+     6,
+     20,
+     2,
+     15,
+     11,
+     9,
+     1,
+     10,
+     1
+    ],
+    [
+     8,
+     10,
+     3,
+     19,
+     1,
+     11,
+     7,
+     5,
+     1,
+     12,
+     1
+    ]
+   ]
+  }
+ ],
+ "header_sections": {
+  "the AD&D DMG sneak preview (print 33-38, 41-43)": [
+   {
+    "kind": "const",
+    "name": "s22GenConYear"
+   },
+   {
+    "kind": "const",
+    "name": "s22GenConNumber"
+   },
+   {
+    "kind": "const",
+    "name": "s22PreviewModules"
+   },
+   {
+    "kind": "const",
+    "name": "s22AmuletCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22AmuletAdd12From"
+   },
+   {
+    "kind": "const",
+    "name": "s22AmuletResults"
+   },
+   {
+    "kind": "const",
+    "name": "s22AmuletAltEthereal"
+   },
+   {
+    "kind": "const",
+    "name": "s22AmuletAltAstral"
+   },
+   {
+    "kind": "const",
+    "name": "s22AmuletAltPrime"
+   },
+   {
+    "kind": "const",
+    "name": "s22HammerStrengthMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22HammerHeightFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22HammerBasePlus"
+   },
+   {
+    "kind": "const",
+    "name": "s22HammerTrueNamePlus"
+   },
+   {
+    "kind": "const",
+    "name": "s22HammerStunRadiusInches"
+   },
+   {
+    "kind": "const",
+    "name": "s22HammerStunRounds"
+   },
+   {
+    "kind": "const",
+    "name": "s22HammerThrowsPerTwoTurns"
+   },
+   {
+    "kind": "const",
+    "name": "s22HammerRestTurns"
+   },
+   {
+    "kind": "const",
+    "name": "s22HammerThorFactor"
+   },
+   {
+    "kind": "const",
+    "name": "s22HelmVisionFactor"
+   },
+   {
+    "kind": "const",
+    "name": "s22PigmentCubicFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22PigmentSurfaceFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22PigmentPotsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22PigmentPotsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22PigmentDepictTurns"
+   },
+   {
+    "kind": "const",
+    "name": "s22PearlMonths"
+   },
+   {
+    "kind": "const",
+    "name": "s22PearlDays"
+   },
+   {
+    "kind": "const",
+    "name": "s22PearlCursedPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22PeriaptCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22PeriaptNoSavePct"
+   },
+   {
+    "kind": "const",
+    "name": "s22PhilterLoveBaseTurns"
+   },
+   {
+    "kind": "const",
+    "name": "s22PhilterLoveExtraMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22PhilterLoveExtraMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22PhilterPersuasionPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22PhilterSuggestRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "s22PotionTwoDosePct"
+   },
+   {
+    "kind": "const",
+    "name": "s22PotionDosesMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22PotionDosesMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22PotionHoursPerDose"
+   },
+   {
+    "kind": "const",
+    "name": "s22PotionExtraRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22PotionExtraRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingTypes"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingKeepFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingCharmSaveMinus"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingFoeHitMinus"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingSavePlus"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingHitPlus"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingDamagePlus"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingOperateLevel"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingPowerSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingElementalSaveMinus"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingAirPowers"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingEarthPowers"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingFirePowers"
+   },
+   {
+    "kind": "const",
+    "name": "s22RingWaterPowers"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollKinds"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollMagicSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollMagicRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollMagicDrainPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollMagicSaveFloor"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollMagicRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollMagicRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollPetrifactionSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollPetrifactionRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollPetrifactionRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollPossessionRounds"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollPossessionRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollPossessionRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollPossessionTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollPossessionTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollPossessionStationaryPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollUndeadSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollUndeadRadiusFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollUndeadRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollUndeadRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollUndeadHdCap"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollDemonLordRounds"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollDemonMidSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollDemonLesserSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollDemonPauseSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollDemonRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollDemonRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollDevilArchRounds"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollDevilGreaterSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollDevilLesserSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollElementalSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollElementalRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollElementalRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollElementalSpecificHd"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollElementalAllHd"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollLycanSegments"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollLycanRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollLycanRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollLycanHdCap"
+   },
+   {
+    "kind": "const",
+    "name": "s22ScrollLycanPlusThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "s22ElemScrollCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22LycanScrollCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22HitOnlyCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22UndeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22UndeadFootnotes"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnAffectedMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnAffectedMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnStarMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnFleeRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnFleeRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnSpecialMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnSpecialMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnSpecialAc"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnSpecialHd"
+   },
+   {
+    "kind": "const",
+    "name": "s22TurnSpecialMrPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22BlastCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22MindThrustCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22EgoWhipCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22IdInsinuationCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsychicCrushCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22MindBlankCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22ThoughtShieldCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22MentalBarrierCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22IntellectFortressCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22TowerIronWillCost"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiCrushCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiConfusedRoundsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiConfusedRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiDazedTurnsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiDazedTurnsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiComaWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiComaWeeksMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiRobotWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiRobotWeeksMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiWoundedWeeksMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiWoundedWeeksMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiCatatonicPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiMindBarPoints"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiBlastCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiFeebleCap"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiRangeCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiSeriesBonusPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiMediumDamageCutPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiLongCategoryCut"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiLongDamageCutPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22PsiLongLowBandCutPct"
+   },
+   {
+    "kind": "const",
+    "name": "s22SaveMatrices"
+   },
+   {
+    "kind": "const",
+    "name": "s22SaveAutoFail"
+   },
+   {
+    "kind": "const",
+    "name": "s22SaveCharCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22SaveClericBands"
+   },
+   {
+    "kind": "const",
+    "name": "s22SaveFighterBands"
+   },
+   {
+    "kind": "const",
+    "name": "s22SaveMuBands"
+   },
+   {
+    "kind": "const",
+    "name": "s22SaveThiefBands"
+   },
+   {
+    "kind": "const",
+    "name": "s22MonsterPlusCap"
+   },
+   {
+    "kind": "const",
+    "name": "s22NonIntDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemRowCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemAttackForms"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemMagicBonus"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemPlusBonus"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemOwnModeBonus"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemFallBaseFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemFallSoftBonus"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemFallFleshyBonus"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemFallPenaltyFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemColdSavePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemPaperRounds"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemClothRounds"
+   },
+   {
+    "kind": "const",
+    "name": "s22ItemBoneRounds"
+   },
+   {
+    "kind": "const",
+    "name": "s22GrenadeRangeInches"
+   },
+   {
+    "kind": "const",
+    "name": "s22GrenadeMediumFrom"
+   },
+   {
+    "kind": "const",
+    "name": "s22GrenadeLongFrom"
+   },
+   {
+    "kind": "const",
+    "name": "s22GrenadeMediumMinus"
+   },
+   {
+    "kind": "const",
+    "name": "s22GrenadeLongMinus"
+   },
+   {
+    "kind": "const",
+    "name": "s22GrenadeSplashFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22GiantBoulderFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22SiegeBoulderFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22AcidOunces"
+   },
+   {
+    "kind": "const",
+    "name": "s22HolyOunces"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilOunces"
+   },
+   {
+    "kind": "const",
+    "name": "s22PoisonOunces"
+   },
+   {
+    "kind": "const",
+    "name": "s22AcidSplashHp"
+   },
+   {
+    "kind": "const",
+    "name": "s22AcidDirectMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22AcidDirectMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22HolySplashHp"
+   },
+   {
+    "kind": "const",
+    "name": "s22HolyDirectMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22HolyDirectMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilDiameterFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilBurnSegmentsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilBurnSegmentsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilDirectFirstMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilDirectFirstMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilDirectSecondMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilDirectSecondMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilWalkDamageMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22OilWalkDamageMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22GrenadeMissDistanceDie"
+   },
+   {
+    "kind": "const",
+    "name": "s22GrenadeMissDirectionDie"
+   },
+   {
+    "kind": "const",
+    "name": "s22LanternAreaFeet"
+   },
+   {
+    "kind": "const",
+    "name": "s22ThievesCount"
+   },
+   {
+    "kind": "const",
+    "name": "s22MissileLongMinus"
+   },
+   {
+    "kind": "const",
+    "name": "s22MissileMediumMinus"
+   },
+   {
+    "kind": "const",
+    "name": "s22AcFloor"
+   },
+   {
+    "kind": "const",
+    "name": "s22AcProjectionRepeats"
+   },
+   {
+    "kind": "const",
+    "name": "s22MonsterMatrixCols"
+   },
+   {
+    "kind": "const",
+    "name": "s22BackstabMin"
+   },
+   {
+    "kind": "const",
+    "name": "s22BackstabMax"
+   },
+   {
+    "kind": "const",
+    "name": "s22AssassinationRows"
+   },
+   {
+    "kind": "const",
+    "name": "s22FighterAc3Prints"
+   },
+   {
+    "kind": "const",
+    "name": "s22MuHeaderBands"
+   },
+   {
+    "kind": "const",
+    "name": "s22MuDataCols"
+   },
+   {
+    "kind": "table",
+    "name": "s22Amulet"
+   },
+   {
+    "kind": "table",
+    "name": "s22Periapt"
+   },
+   {
+    "kind": "table",
+    "name": "s22HitOnly"
+   },
+   {
+    "kind": "table",
+    "name": "s22Thieves"
+   },
+   {
+    "kind": "table",
+    "name": "s22ElemScroll"
+   },
+   {
+    "kind": "table",
+    "name": "s22LycanScroll"
+   },
+   {
+    "kind": "table",
+    "name": "s22PsiCrush"
+   },
+   {
+    "kind": "table",
+    "name": "s22PsiBlast"
+   },
+   {
+    "kind": "table",
+    "name": "s22PsiRange"
+   },
+   {
+    "kind": "table",
+    "name": "s22UndeadTurn"
+   },
+   {
+    "kind": "table",
+    "name": "s22CharSave"
+   },
+   {
+    "kind": "table",
+    "name": "s22ItemSave"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ModuleItemsNotRepeated"
+   },
+   {
+    "kind": "bool",
+    "name": "s22NewItemDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "s22AmuletSafeTravel"
+   },
+   {
+    "kind": "bool",
+    "name": "s22HammerGiantSlain"
+   },
+   {
+    "kind": "bool",
+    "name": "s22HammerEveryOtherRound"
+   },
+   {
+    "kind": "bool",
+    "name": "s22HelmCommandGlobe"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PigmentInanimateOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PigmentValuablesFalse"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PearlRetainOrLose"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PeriaptPermanentPlus"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PhilterDispelEnds"
+   },
+   {
+    "kind": "bool",
+    "name": "s22RingCharmGamble"
+   },
+   {
+    "kind": "bool",
+    "name": "s22RingAnyWeaponHits"
+   },
+   {
+    "kind": "bool",
+    "name": "s22RingRespectDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ScrollsCumulative"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ScrollMagicDrainCancels"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ScrollMagicArtifactsImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ScrollPossessionDeadBodies"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ScrollLycanShapechangers"
+   },
+   {
+    "kind": "bool",
+    "name": "s22HitOnlyCharactersExempt"
+   },
+   {
+    "kind": "bool",
+    "name": "s22GrenadeOilAlightOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "s22GrenadePoisonSwallowed"
+   },
+   {
+    "kind": "bool",
+    "name": "s22HolyWaterNonmaterialImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "s22TurnNoRetry"
+   },
+   {
+    "kind": "bool",
+    "name": "s22TurnNeutralIgnore"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PsiSimultaneous"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PsiCrushThoughtShieldOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PsiMindBarLetters"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PsiIdiocyHealable"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PsiRobotSaveVsMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "s22SaveMultiClassBest"
+   },
+   {
+    "kind": "bool",
+    "name": "s22MonsterPlusBump"
+   },
+   {
+    "kind": "bool",
+    "name": "s22NonIntRoundedUp"
+   },
+   {
+    "kind": "bool",
+    "name": "s22NonIntPoisonException"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ItemInterpolated"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ItemOwnModeBoth"
+   },
+   {
+    "kind": "bool",
+    "name": "s22SaveSpellExclusions"
+   },
+   {
+    "kind": "bool",
+    "name": "s22FreetJariPrintCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ConPenetratePrintCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s22JackolwerePrintCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s22WralthsPrintCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s22GhastPrintsGhost"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PetrifactionPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "s22FarceAnDiePrintCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s22ThievesFootnotePrintCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s22FighterAc3PrintCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s22FighterAc10GapPrintCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s22MuBandsPrintCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s22MuOpponentDangling"
+   },
+   {
+    "kind": "bool",
+    "name": "s22PsiBandPrintCatch"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['s22GenConYear']() != 1979 or m['s22GenConNumber']() != 12 or m['s22PreviewModules']() != 6",
+   "note": "the preview frame - the GenCon XII release and the six modules whose items ride the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22AmuletResults']() != 24 or m['s22AmuletAdd12From']() != 4 or m['s22AmuletCount']() != 17 or m['s22AmuletAltEthereal']() != 22 or m['s22AmuletAltAstral']() != 23 or m['s22AmuletAltPrime']() != 24",
+   "note": "the amulet frame - the twenty-four results, the add-twelve rule and the three alternates the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22HammerStrengthMin']() != 1801 or m['s22HammerHeightFeet']() != 6 or m['s22HammerBasePlus']() != 3 or m['s22HammerTrueNamePlus']() != 5 or m['s22HammerStunRadiusInches']() != 3 or m['s22HammerStunRounds']() != 1 or m['s22HammerThrowsPerTwoTurns']() != 5 or m['s22HammerRestTurns']() != 1 or m['s22HammerThorFactor']() != 2",
+   "note": "the hammer of thunderbolts - the strength and height gates, the pluses, the stun and the throw economy the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22HelmVisionFactor']() != 5 or m['s22PigmentCubicFeet']() != 1000 or m['s22PigmentSurfaceFeet']() != 100 or m['s22PigmentPotsMin']() != 1 or m['s22PigmentPotsMax']() != 4 or m['s22PigmentDepictTurns']() != 1 or m['s22PearlMonths']() != 1 or m['s22PearlDays']() != 30 or m['s22PearlCursedPct']() != 5",
+   "note": "the helm the pigments and the pearl - the vision factor, the thousand cubic feet, the pots and the cursed share the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22PhilterLoveBaseTurns']() != 4 or m['s22PhilterLoveExtraMin']() != 1 or m['s22PhilterLoveExtraMax']() != 4 or m['s22PhilterPersuasionPct']() != 25 or m['s22PhilterSuggestRangeInches']() != 3 or m['s22PotionTwoDosePct']() != 75 or m['s22PotionDosesMin']() != 2 or m['s22PotionDosesMax']() != 4 or m['s22PotionHoursPerDose']() != 1 or m['s22PotionExtraRoundsMin']() != 1 or m['s22PotionExtraRoundsMax']() != 10",
+   "note": "the philters and the potion - the charm turns, the reaction bonus and the dose economy the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22RingTypes']() != 4 or m['s22RingKeepFeet']() != 5 or m['s22RingCharmSaveMinus']() != 2 or m['s22RingFoeHitMinus']() != 1 or m['s22RingSavePlus']() != 2 or m['s22RingHitPlus']() != 4 or m['s22RingDamagePlus']() != 6 or m['s22RingOperateLevel']() != 10 or m['s22RingPowerSegments']() != 5 or m['s22RingElementalSaveMinus']() != 2 or m['s22RingAirPowers']() != 5 or m['s22RingEarthPowers']() != 6 or m['s22RingFirePowers']() != 5 or m['s22RingWaterPowers']() != 8",
+   "note": "the ring of elemental command - the four types, the protection and charm numbers, the combat pluses and the power counts the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22ScrollMagicSegments']() != 8 or m['s22ScrollMagicRadiusFeet']() != 5 or m['s22ScrollMagicDrainPct']() != 50 or m['s22ScrollMagicSaveFloor']() != 11 or m['s22ScrollMagicRoundsMin']() != 5 or m['s22ScrollMagicRoundsMax']() != 30 or m['s22ScrollPetrifactionSegments']() != 5 or m['s22ScrollPetrifactionRoundsMin']() != 5 or m['s22ScrollPetrifactionRoundsMax']() != 20",
+   "note": "the anti-magic and petrifaction scrolls - the reading times, the globe and the drain save the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22ScrollPossessionRounds']() != 1 or m['s22ScrollPossessionRoundsMin']() != 10 or m['s22ScrollPossessionRoundsMax']() != 60 or m['s22ScrollPossessionTurnsMin']() != 10 or m['s22ScrollPossessionTurnsMax']() != 60 or m['s22ScrollPossessionStationaryPct']() != 10 or m['s22ScrollUndeadSegments']() != 4 or m['s22ScrollUndeadRadiusFeet']() != 5 or m['s22ScrollUndeadRoundsMin']() != 10 or m['s22ScrollUndeadRoundsMax']() != 80 or m['s22ScrollUndeadHdCap']() != 35",
+   "note": "the possession and undead scrolls - the ninety-ten duration split, the five-foot circle and the thirty-five hit dice the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22ScrollDemonLordRounds']() != 1 or m['s22ScrollDemonMidSegments']() != 7 or m['s22ScrollDemonLesserSegments']() != 3 or m['s22ScrollDemonPauseSegments']() != 1 or m['s22ScrollDemonRoundsMin']() != 5 or m['s22ScrollDemonRoundsMax']() != 20 or m['s22ScrollDevilArchRounds']() != 1 or m['s22ScrollDevilGreaterSegments']() != 7 or m['s22ScrollDevilLesserSegments']() != 3",
+   "note": "the demon and devil scrolls - the three reading tiers each, the one-segment pause that destroys the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22ScrollElementalSegments']() != 6 or m['s22ScrollElementalRoundsMin']() != 5 or m['s22ScrollElementalRoundsMax']() != 40 or m['s22ScrollElementalSpecificHd']() != 24 or m['s22ScrollElementalAllHd']() != 16 or m['s22ScrollLycanSegments']() != 4 or m['s22ScrollLycanRoundsMin']() != 5 or m['s22ScrollLycanRoundsMax']() != 30 or m['s22ScrollLycanHdCap']() != 49 or m['s22ScrollLycanPlusThreshold']() != 2 or m['s22ScrollKinds']() != 8",
+   "note": "the elemental and lycanthrope scrolls - the hit-dice caps and the rounding threshold, the eight scroll kinds the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22TurnAffectedMin']() != 1 or m['s22TurnAffectedMax']() != 12 or m['s22TurnStarMin']() != 7 or m['s22TurnFleeRoundsMin']() != 3 or m['s22TurnFleeRoundsMax']() != 12 or m['s22TurnSpecialMin']() != 1 or m['s22TurnSpecialMax']() != 2 or m['s22TurnSpecialAc']() != -5 or m['s22TurnSpecialHd']() != 11 or m['s22TurnSpecialMrPct']() != 66 or m['s22UndeadFootnotes']() != 6",
+   "note": "the turning procedure - the one-to-twelve count, the starred seven-to-twelve, the flee rounds and the special rule of thumb the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22BlastCost']() != 20 or m['s22MindThrustCost']() != 4 or m['s22EgoWhipCost']() != 7 or m['s22IdInsinuationCost']() != 10 or m['s22PsychicCrushCost']() != 14 or m['s22MindBlankCost']() != 1 or m['s22ThoughtShieldCost']() != 2 or m['s22MentalBarrierCost']() != 3 or m['s22IntellectFortressCost']() != 8 or m['s22TowerIronWillCost']() != 10",
+   "note": "the psionic costs - the five attack modes and the five defense modes, the points of each the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22PsiConfusedRoundsMin']() != 2 or m['s22PsiConfusedRoundsMax']() != 8 or m['s22PsiDazedTurnsMin']() != 1 or m['s22PsiDazedTurnsMax']() != 4 or m['s22PsiComaWeeksMin']() != 1 or m['s22PsiComaWeeksMax']() != 4 or m['s22PsiRobotWeeksMin']() != 2 or m['s22PsiRobotWeeksMax']() != 8 or m['s22PsiWoundedWeeksMin']() != 2 or m['s22PsiWoundedWeeksMax']() != 8 or m['s22PsiCatatonicPct']() != 99 or m['s22PsiMindBarPoints']() != 40 or m['s22PsiFeebleCap']() != 5",
+   "note": "the psionic letter durations - confused dazed comatose robot and wounded, the mind bar rule and the feeble cap the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22PsiSeriesBonusPct']() != 50 or m['s22PsiMediumDamageCutPct']() != 20 or m['s22PsiLongCategoryCut']() != 25 or m['s22PsiLongDamageCutPct']() != 20 or m['s22PsiLongLowBandCutPct']() != 50",
+   "note": "the IV.D adjustments - the series range bonus and the medium and long damage cuts the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22SaveMatrices']() != 3 or m['s22SaveAutoFail']() != 1 or m['s22SaveClericBands']() != 7 or m['s22SaveFighterBands']() != 10 or m['s22SaveMuBands']() != 5 or m['s22SaveThiefBands']() != 6 or m['s22MonsterPlusCap']() != 3 or m['s22NonIntDivisor']() != 2",
+   "note": "the saving throw frame - the three matrices, the natural one, the class bands and the monster rules the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22ItemMagicBonus']() != 2 or m['s22ItemPlusBonus']() != 1 or m['s22ItemOwnModeBonus']() != 5 or m['s22ItemFallBaseFeet']() != 5 or m['s22ItemFallSoftBonus']() != 1 or m['s22ItemFallFleshyBonus']() != 5 or m['s22ItemFallPenaltyFeet']() != 5 or m['s22ItemColdSavePenalty']() != 10 or m['s22ItemPaperRounds']() != 1 or m['s22ItemClothRounds']() != 2 or m['s22ItemBoneRounds']() != 3",
+   "note": "the item saves - the magic bonuses, the own-mode five, the fall ladder and the cold-strike ten the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22GrenadeRangeInches']() != 3 or m['s22GrenadeMediumFrom']() != 1 or m['s22GrenadeLongFrom']() != 2 or m['s22GrenadeMediumMinus']() != 2 or m['s22GrenadeLongMinus']() != 5 or m['s22GrenadeSplashFeet']() != 3 or m['s22GiantBoulderFeet']() != 1 or m['s22SiegeBoulderFeet']() != 2",
+   "note": "the grenade frame - the three-inch range, the bands and penalties, the splash and the boulders the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22AcidOunces']() != 8 or m['s22HolyOunces']() != 4 or m['s22OilOunces']() != 16 or m['s22PoisonOunces']() != 4 or m['s22AcidSplashHp']() != 1 or m['s22AcidDirectMin']() != 2 or m['s22AcidDirectMax']() != 8 or m['s22HolySplashHp']() != 2 or m['s22HolyDirectMin']() != 2 or m['s22HolyDirectMax']() != 7 or m['s22OilDiameterFeet']() != 3 or m['s22OilBurnSegmentsMin']() != 1 or m['s22OilBurnSegmentsMax']() != 3 or m['s22OilDirectFirstMin']() != 2 or m['s22OilDirectFirstMax']() != 12 or m['s22OilDirectSecondMin']() != 1 or m['s22OilDirectSecondMax']() != 6 or m['s22OilWalkDamageMin']() != 1 or m['s22OilWalkDamageMax']() != 4 or m['s22GrenadeMissDistanceDie']() != 6 or m['s22GrenadeMissDirectionDie']() != 8 or m['s22LanternAreaFeet']() != 2",
+   "note": "the grenade contents - the four containers, the acid holy water and oil damage ladders, the miss dice and the lantern the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22ThievesCount']() != 21 or m['s22MissileLongMinus']() != 5 or m['s22MissileMediumMinus']() != 2 or m['s22AcFloor']() != 10 or m['s22AcProjectionRepeats']() != 6 or m['s22MonsterMatrixCols']() != 12 or m['s22BackstabMin']() != 2 or m['s22BackstabMax']() != 5 or m['s22AssassinationRows']() != 15 or m['s22FighterAc3Prints']() != 11 or m['s22MuHeaderBands']() != 5 or m['s22MuDataCols']() != 4",
+   "note": "the combat envelope - the matrix shapes, the missile penalties, the backstab multipliers and the two print catches the AD&D DMG sneak preview (print 33-38, 41-43)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['s22AmuletLo'](0) != 1 or m['s22AmuletHi'](0) != 2 or m['s22AmuletPlane'](0) != 1 or m['s22AmuletLo'](9) != 13 or m['s22AmuletHi'](16) != 24 or m['s22AmuletPlane'](16) != 17",
+   "note": "the amulet spot check - the Seven Heavens band, the Hades and the Prime ceiling the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22PeriaptLo'](0) != 1 or m['s22PeriaptHi'](0) != 8 or m['s22PeriaptPlus'](0) != 1 or m['s22PeriaptPlus'](3) != 4 or m['s22PeriaptHi'](3) != 20",
+   "note": "the periapt spot check - the plus-one floor band and the plus-four ceiling the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22HitOnlyPlus'](0) != 1 or m['s22HitOnlyHdBase'](3) != 10 or m['s22HitOnlyHdPlus'](2) != 3 or m['s22HitOnlyPlus'](3) != 4",
+   "note": "the hit-only spot check - the first grade and the ten-plus-four ceiling the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22ThievesAc'](0) != -10 or m['s22ThievesL1'](0) != 26 or m['s22ThievesL6'](20) != 0 or m['s22ThievesL1'](20) != 11 or m['s22ThievesL3'](10) != 16",
+   "note": "the thieves matrix spot check - the minus-ten row, the twenty-one band floor and the armor class ten row the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22ElemScrollLo'](0) != 1 or m['s22ElemScrollHi'](0) != 15 or m['s22ElemScrollKind'](4) != 5 or m['s22ElemScrollLo'](4) != 61 or m['s22ElemScrollHi'](4) != 100",
+   "note": "the elemental scroll spot check - the air band and the sixty-one-to-one-hundred all band the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22LycanScrollLo'](0) != 1 or m['s22LycanScrollHi'](0) != 5 or m['s22LycanScrollKind'](5) != 6 or m['s22LycanScrollHi'](5) != 98 or m['s22LycanScrollKind'](6) != 7",
+   "note": "the lycanthrope scroll spot check - the werebear band and the shape-changer ceiling the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22PsiCrushBand'](0) != 1 or m['s22PsiCrushC1'](0) != 72 or m['s22PsiCrushC7'](0) != 10 or m['s22PsiCrushBand'](5) != 126 or m['s22PsiCrushC1'](5) != 97 or m['s22PsiCrushC7'](5) != 30",
+   "note": "the psychic crush spot check - the lowest band and the one-hundred-twenty-six-and-up row the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22PsiBlastIntLo'](0) != 0 or m['s22PsiBlastShort'](0) != 20 or m['s22PsiBlastLong'](10) != -2 or m['s22PsiBlastIntLo'](10) != 38 or m['s22PsiBlastMedium'](8) != 3",
+   "note": "the psionic blast spot check - the zero-to-five band and the thirty-eight-and-up row the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22PsiRangeShort'](0) != 2 or m['s22PsiRangeLong'](0) != 6 or m['s22PsiRangeMedium'](3) != 12 or m['s22PsiRangeShort'](4) != 5 or m['s22PsiRangeMedium'](4) != 0 or m['s22PsiRangeLong'](4) != 0",
+   "note": "the psionic range spot check - the blast cone and the crush with its dashes pinned zero the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22TurnLev1'](0) != 10 or m['s22TurnLev8'](12) != 20 or m['s22TurnLev14'](5) != 98 or m['s22TurnLev8'](10) != 16 or m['s22TurnLev9'](12) != 19 or m['s22TurnLev1'](11) != 0",
+   "note": "the cleric-undead spot check - the skeleton row, the ghost destroy, the vampire and the special the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22SaveClass'](0) != 1 or m['s22SavePoison'](0) != 10 or m['s22SaveClass'](7) != 2 or m['s22SaveLevel'](7) != 0 or m['s22SaveBreath'](7) != 20 or m['s22SaveSpell'](27) != 5 or m['s22SaveBreath'](27) != 11",
+   "note": "the character save spot check - the first cleric band, the zero-level fighter and the thief ceiling the AD&D DMG sneak preview (print 33-38, 41-43)"
+  },
+  {
+   "expr": "m['s22ItemAcid'](0) != 11 or m['s22ItemFall'](10) != 0 or m['s22ItemFireball'](10) != 25 or m['s22ItemCrush'](5) != 4 or m['s22ItemElec'](13) != 1 or m['s22ItemFrost'](10) != 2",
+   "note": "the item save spot check - the bone acid, the parchment fall and its twenty-five fireball, the thick wood the AD&D DMG sneak preview (print 33-38, 41-43)"
+  }
+ ],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 320
+}
