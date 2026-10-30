@@ -1,0 +1,79 @@
+Design Variant
+
+# WHY MAGIC USERS & CLERICS CANNOT USE SWORDS
+
+by Charles Sagui
+
+Dunegeons & Dragons is a game of fantasy. It is, however, based on fact and logic (Even though these may not be factual or logical in our present world). I'm sure that every DM has encountered a situation something like the one that follows. It usually occurs after a Magic User uses his last spell to subdue a room full of monsters and finds that the treasure consists of a few silver pieces and a + 2 mace. The principle players are the DM and three players whom we shall call Whiner, Cleric, and Reader.
+
+*Whiner: Why can't my wizard carry a mace?*
+
+*DM: He can carry anything he wants but he cannot use any weapon but a dagger.*
+
+*Whiner: That's not fair: clerics can use weapons and spells too.*
+
+*DM: They have a different set of rules. Even they can't use edged weapons.*
+
+*Cleric: I've been meaning to talk to you about that.*
+
+*DM: One problem at a time.*
+
+*Reader:* (Usually he has just finished The Hobbit for the first time and considers himself an expert on fantastic literature): *Gandalf had Glamstring.*
+
+*DM: D&D was written by Gary Gygax and Dave Arneson with Robert Kuntz and Brian Blume adding to the supplements. No place does it list Professor Tolkien as a writer of the game. (If I desired to I could adjust the rules to fit my mythos but I feel that the prohibitions are needed for balance of play.)*
+
+*Reader: Elric was a sorcerer and he had a sword.*
+
+At this point you begin to wonder if you could find a real Magic User and just how much he would charge to polymorph them into something useful like a set of polyhedra dice that glow in the dark for blackouts.
+
+In fact, *Gandalf did* carry the Foe Hammer, but he also had one of the three Elvish Rings of Power and other weapons most *D&D* MUs do not have. But this argument did get me thinking (I'm sure that many players feel this is a dangerous habit for a DM to get into). I could not see a 14th level Wizard hit an arc with a club and suddenly melt away. This is the System I worked out.
+
+## MAGIC USERS
+
+In the distant past of my world warriors often learned spells and magic. Much as the fabled Prince Elric of Melibone, they would use their spells to counter a MU's magic and then finish them off with more conventional weapons.
+
+A group of adepts met to decide what could be done to halt the wholesale slaughter of young students of magic (These part-time MUs seldom took on Warlocks or above). It was decided that a curse would be laid on all desiring to learn sorcery.
+
+These are the terms set down in the curse. For each hit point of damage done by a Magic User with a weapon other than a dagger he loses one hit point and one spell of the highest level he has yet to use. If all or a part of the spells are used up and the Magic User survives the spells that are owed for the transgressions are subtracted at the start of the next game. The loss of hit points will be for the duration of the current adventure (Until the spells would normally be renewed). If at any time in an adventure this loss of hit points occurs and later the character is killed and by some means is revived (Revival is not possible if over half of the hit points have been lost in the above method) his experience points drop to zero, as this experience destroys them.
+
+Many times in the past Magic Users have made attempts to overcome the powers that keep them unarmed. Remove Curse and Limited Wish have been moderately successful (Lasting four rounds) in relieving the problem with a Full Wish more so (Lasting eight rounds). If a MU has this high a spell left he will probably not find mortal weapons necessary. I tell my players that a 64th level wizard developed
+
+a spell which allowed him the use of weapons, but it entailed the loss of Fifty Five levels. So I tell them that when they reach level 56 they may use the spell themselves by becoming First level again. (Unfortunately when my characters reach level Twenty they have a bad habit of going totally and permanently ethereal. Of course, the players get to roll a new character and get the heartfelt sympathy of the DM "Gosh, I'm going to miss him. I was really getting to enjoy the way in two melee rounds he spoiled traps it took me two hours to think up.")
+
+Another problem for Magic Users using hand weapons is that this necessitates participation in melee and with armor class 9, it not being possible for a man to use spells from inside armor (Don't ask me how Elves do it, Whiner, or so help me I will have a NPC cleric hit you five times in the head with a Staff of Withering), they tend not to survive many melee rounds.
+
+## Example
+
+An Enchanter (7th level) who has used none of his spells and not been hit takes on a two hit die zombie.
+
+## Statistics
+
+Enchanter — 16 HTK (If Max. is rolled) spells 4321 AC 9
+
+Zombie — 16 HTK (If Max. is rolled) AC 8
+
+All Magic Users fight as First Level. The Enchanter swings with a mace rolls a 12 and hits doing 5 points of damage the Zombie strikes rolls a 10 and hits doing 4 points damage. After the first melee round the Enchanter has only 7 hit points and four First Level and one Second Level spells. If he continues to fight with the mace he will probably not survive another round.
+
+## CLERICS
+
+In the days long past, there lived a cleric who believed that his was the one true religion (The worship of certain mushrooms that thrive in cow dung in damp moderate climes). He was in all ways like the present day Palidan except that he could use all cleric spells. He possessed a + 5 Holy Sword and a + 5 Armor and Shield. His favorite hobby was looting the Temples and Holy places of followers of what he termed false religions. At that time a short-lived alliance of all clerics regardless of alignment to remove this threat to the common survival. At this time a curse was laid on this scourge of all Holy Men. He could have no friends or followers; if any man befriend him he would surely kill them. Some say that he lives yet seeking revenge on all men of the cloth.
+
+In order to prevent a recurrence of this sort of thing the council prohibited the use of edged weapons by clerics. Most of the religious orders signed a charter similar to the curse of the Magic Users. Because of the difference in nature between Magical and Clerical Spells it was possible for them to use armor. One group of clerics refused to even consider signing the pact and so they were denied both armor and spells they became the Monks of Martial Arts.
+
+Because of the separate nature of clerics and their allowance to use other weapons any cleric using an edged weapon would have to do so deliberately and for this reason the penalty in hitpoints was doubled. The spell reduction, however, is reduced to ½ a spell per hit point inflicted with edged weapons. If half a spell is lost it is not usable. Death and revival are the same as with MUs as are ways of dispersal. Clerics fight as Level One until Patriarch (Level 8) when they fight as Level Two.
+
+## Example
+
+A Lama (7th level) who has used one First Level and one Second Level Spell takes on a 4 + 1 hit die Ogre.
+
+## Statistics
+
+Lama — 36 HTK (If max. is rolled) spells 11211 AC3
+
+Ogre — 33 HTK (If max. is rolled) AC5
+
+The ogre somewhat larger than human size strikes first rolling a 9, the cleric wearing a suit of plate mail so with a four hit die monster he is not hit. The cleric swings a two handed sword and rolls a 15 and so hits. Because the DM decided the creature was larger than human, three dice were rolled for damage. An 18 was rolled so the Ogre was badly damaged but because of the double hit penalty the cleric lost 36 HP he staggers and falls dead. If he had survived he would owe three high level spells next time out; as it was, he was unrevivable because all of the points were drained away.
+
+This is the system I have worked out; I hope it will help to answer the players who always want a little more than they are allowed in the rules.
+
+18

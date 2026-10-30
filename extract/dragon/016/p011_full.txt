@@ -1,0 +1,146 @@
+July, 1978
+
+The Dragon
+
+Ninja are close mouthed about ninja secrets. They have been conditioned so that they will usually die before revealing ninja secrets, even when charmed. The ninja may of course attempt to lie when questioned. Extraordinary means are required to gain such information even when the questioner is a close friend of the ninja. Ninja do not talk in their sleep.
+
+Ninja are as a rule secretive. This means that they will not usually tell people that they are ninja. This means that ninja weapons, tools, and equipment are not as a rule available for purchase. When these items are they are considered to be curios, possibly valuable ones. Non-ninja will not be able to easily recognize them or use them properly in a fight (-3 on attack rolls, -2 on damage rolls). This penalty applies no matter how much time is spent in an attempt at mastery.
+
+A ninja must therefore make his own gear or modify available items. A ninja has this skill to make any ninja item that he has mastered.
+
+The basic kit of a ninja consists of the following items: the ninja-to (his sword), sageo (a belt used in wearing the saya, also used as a rope and garrote), saya (his scabbard), the tetsu-bishi (calthrops), the tool osaku (a lockpick), one choice of disguise, and one choice of equipment.
+
+Ninja skills at thievery: A ninja acts as a thief three levels below him. This is tabulated below including some special bonuses.
+
+|  Character type | Pick lock | Remove trap | Pick-pocket | Move silent | Hide in shadows | Hear Noise  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  human | 0 | 0 | 0 | 0 | 0 | 0  |
+|  elf | 0 | 0 | 5 | 10 | 15 | 0  |
+|  dwarf | 5 | 15 | 0 | 5 | 5 | 0  |
+|  hobbit | 10 | 5 | 5 | 10 | 10 | 15  |
+|  female | 5 | 5 | 5 | 5 | 5 | 5  |
+
+These bonuses are all additive.
+
+Percent chance of success with skill
+
+|  Ninja Level | Pick lock | Remove-trap | Move pocket | Move silent | Hide in shadows | Hear Noise | Fall off walls  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  0 | -5 | -10 | 0 | 20 | 30 | 20 | 15  |
+|  1 | 0 | -5 | 5 | 40 | 40 | 50 | 14  |
+|  2 | 5 | 0 | 10 | 45 | 45 | 58 | 13  |
+|  3 | 10 | 5 | 15 | 50 | 50 | 67 | 12  |
+|  4 | 15 | 10 | 20 | 55 | 70 | 70 | 11  |
+|  5 | 20 | 15 | 25 | 60 | 60 | 73 | 10  |
+|  6 | 25 | 20 | 30 | 65 | 65 | 77 | 9  |
+|  7 | 35 | 30 | 35 | 70 | 70 | 80 | 8  |
+|  8 | 40 | 35 | 45 | 75 | 75 | 83 | 7  |
+|  9 | 45 | 40 | 55 | 80 | 80 | 88 | 6  |
+|  10 | 55 | 50 | 60 | 90 | 90 | 94 | 5  |
+|  11 | 65 | 60 | 65 | 95 | 95 | 100 | 4  |
+|  12 | 75 | 70 | 75 | 100 | 100 | 104 | 3  |
+|  13 | 85 | 80 | 85 | 105 | 105 | 108 | 2  |
+|  14 | 95 | 90 | 95 | 110 | 110 | 112 | 1  |
+|  15 | 100 | 95 | 100 | 115 | 115 | 117 | 0  |
+|  16 | 105 | 100 | 105 | 120 | 120 | 121 | -1  |
+
+The table is used as follows. Generate a number 1-100 and compare the number generated to the table entry below.
+
+|  Table entry | Number generated | Result  |
+| --- | --- | --- |
+|  1-100 | Less than entry | attempt is successful.  |
+|  1-100 | Greater than or equal to entry | attempt fails and may not be repeated  |
+|  100+ | 1-99 | attempt is successful  |
+|  100+ | 100 or greater | subtract 100 from the entry and repeat procedure  |
+
+A ninja falls from walls as a monk. He is able to climb the sheerest of walls with his tools.
+
+A ninja scores the multiple damage of a thief one level higher than he is.
+
+Assassination: A ninja operates as an assassin two levels higher than his own.
+
+The probability of a ninja succeeding at an assassination is listed in the table below along with the cost of hiring a ninja. The units of price used is "K" which equals 1000 gold pieces.
+
+A ninja pays 15% of his fee to the jonin of his family. As a chigo does not have a family he does not have to divide his fee. A ninja earns experience for an assassination as an assassin.
+
+Special Ninja Devices: A ninja gains the ability to manufacture the tools of his trade when he masters their use. All ninja devices are as a general rule concealable. They will not in general be recognized as the professional tools they are to non-ninja. The prices listed in parentheses are suggested costs of manufacture for the ninja in their manufacture.
+
+# Assassination Probability
+
+Percent chance of Success Level of Victim
+
+|  level | cost | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9-11 | 12-14 | 15+  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  0 | 1 | K | 50 | 45 | 40 | 30 | 20 | 5 | • | 1 | 1 | •  |
+|  1 | 1.5 | K | 85 | 80 | 75 | 65 | 55 | 40 | 25 | 10 | 1 | •  |
+|  2 | 2 | K | 90 | 85 | 80 | 70 | 60 | 45 | 30 | 15 | 1 | •  |
+|  3 | 2.5 | K | 95 | 90 | 85 | 75 | 65 | 50 | 35 | 20 | 5 | •  |
+|  4 | 3 | K | 100 | 95 | 90 | 80 | 70 | 55 | 40 | 25 | 10 | 1  |
+|  5 | 3.5 | K | 100 | 100 | 95 | 85 | 75 | 60 | 45 | 30 | 15 | 1  |
+|  6 | 4 | K | 105 | 100 | 100 | 90 | 80 | 65 | 50 | 35 | 20 | 5  |
+|  7 | 8 | K | 105 | 105 | 100 | 95 | 85 | 70 | 55 | 45 | 25 | 10  |
+|  8 | 16 | K | 105 | 105 | 105 | 100 | 90 | 75 | 60 | 45 | 30 | 15  |
+|  9 | 32 | K | 110 | 105 | 105 | 100 | 95 | 80 | 65 | 50 | 35 | 20  |
+|  10 | 64 | K | 110 | 110 | 105 | 105 | 100 | 85 | 70 | 55 | 40 | 25  |
+|  11 | 128 | K | 110 | 110 | 110 | 105 | 100 | 90 | 75 | 60 | 45 | 30  |
+|  12 | 256 | K | 115 | 110 | 110 | 105 | 105 | 99 | 95 | 80 | 65 | 50  |
+|  13 | 512 | K | 115 | 115 | 110 | 110 | 105 | 110 | 100 | 90 | 75 | 60  |
+|  14 | 1006 | K | 115 | 115 | 115 | 110 | 105 | 100 | 100 | 95 | 85 | 80  |
+|  15 | 1518 | K | 120 | 115 | 115 | 110 | 110 | 100 | 100 | 99 | 95 | 85  |
+|  16 | 2012 | K | 120 | 120 | 115 | 115 | 110 | 105 | 105 | 100 | 100 | 90  |
+
+# Ninja weapons (costs in gold)
+
+1) Bo staff (0)
+
+This is the basic quarterstaff. The selection of this weapon gives mastery in a fight over all staves.
+
+2) Ninja-to (10: cost of basic short sword)
+
+This is the ninja's short sword. It is not a particularly fine sword and should be treated as an ordinary sword.
+
+3) Sageo (1)
+
+This is the belt or cord used to wear the sword's scabbard. It was a long cord that is also used as a rope or garrote.
+
+4) Nage teppo (20 gold and one week to make 2-8)
+
+These are small grenades made by filling empty eggshells. Treat these as an alchemist's flash pellets.
+
+5) Sode tsutsu (50 gold and one week)
+
+This is a crude one shot shotgun. It fires a triangular shaped cone of projectiles up to 30 feet away and 10 feet across at the base. Treat it as an arquebus for hitting. It causes 3-24 in damage when it hits. Allow a saving throw versus death for half damage.
+
+6) Kakae ozutsu (50 gold and one week)
+
+This is a crude large barreled one shot high trajectory mortar made from wood and paper. It has a minimum range of 30 feet and a maximum range of 90 feet. Treat it as a long bow for purposes of hitting. If it misses the gamesmaster should determine where the projectile went. The projectile will burst in a 10 foot blast radius. All within the blast radius take 1-20 in damage. Allow a saving throw versus death for half damage.
+
+7) Uzume-bi (20 gold and 3 days to make one)
+
+This is a land mine that bursts when stepped upon. It has a 5 foot blast radius. The blast causes 1-10 in damage. Allow a saving throw as for the sode tsutsu and kakae ozutsu to see if half damage results.
+
+8) Hankyu (30 gold and one week)
+
+This is a special bow that fires arrows, fire bombs, and/or other incendiaries. Treat it as a short bow for hitting. It has a maximum range of 150 feet.
+
+9) Metsubushi (5 gold and 2 weeks, 5 gold and one week to make 5 darts)
+
+This is a blowpipe. It fires poison darts called fukiya silently at a rate of one every other melee round. The darts cause 1-2 in damage and deliver poison. The maximum range is 30 feet.
+
+10) Tetsu-bishi (15 gold and 4 days to make 2)
+
+These are calthrops. They may be poisoned. They were commonly left on the ground in a pattern the ninja knew over his route of retreat. These may be sold in shops.
+
+11) Kusarigama (7 gold, 1 week)
+
+This weapon looks like a scythe with a chain attached to the base of the weapon. The chain is used as a flail. The weapon may be used in four different attack modes.
+
+scythe: This is used one handed using the scythe blade.
+
+flail: This is used one handed as a flail.
+
+combo: The weapon is held two handed and gives two attacks each melee round without penalty. One attack as a scythe and one attack as a flail.
+
+special: The chain may be used to entangle the enemy's weapon. This attack has a penalty of -4 on the flail attack.
+
+9

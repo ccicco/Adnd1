@@ -28097,6 +28097,32 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   pure flip closing all five report-015 boxes.
   WAIT FOR GO.
 
+  - R928 LANDED (5c2ec96, f15, pure flip, no new
+  ink): The Dragon issue-15 box closing round,
+  the five-chain walk complete. ALL FIVE
+  report-015 boxes flipped in ONE round
+  (gap_census 5 closed 0 open): Dragon Magic
+  (print 3, cont. 13), the Wandering Monster
+  fourth-level list (print 7), Weather in the
+  Wilderness (print 14-15), the Pits tables
+  (print 5), the Random Events Table for
+  Settlements (print 5). 25 inline bookkeeping
+  only (15 consts + 10 bools), no tables, no data
+  files; header rules/f15.h, audit
+  rules/audits/r928_batch.h, 3 examples. Issues
+  2-15 ALL CLOSED. The issue-15 walk completes in
+  TWO rounds (R927 opener carrying all five
+  chains + this flip), the issue-14 two-round
+  pattern. Registry ground truth unchanged: 1313
+  loaded / 1338 base lua / 25 never-load (R924
+  re-measure). Census 850->851; rverify GREEN 25
+  mutants 0 missed; round-trip 12886 bytes md5
+  e9fc27eaa10909970b5a141f76b15b04. Watch: the
+  brawling long-term-effects sequel STILL not
+  printing (watch TD 16); TD-16 teaser: the Green
+  Magician concludes. Next: the TD 16 section
+  breakdown. WAIT FOR GO.
+
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

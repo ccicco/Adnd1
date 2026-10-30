@@ -1,0 +1,140 @@
+The Dragon
+
+VOL. III No. 2
+
+12) Kyoketsu shoge (4 gold, one week)
+
+This is a one handed weapon that looks like the kusarigama with the chain replaced by a piece of rope. It may be used as a scythe. It may be thrown as a hand axe. The rope may be used to entangle the enemy's hands (it uses speed and the enemy's reflexes against him). When he was entangled he could be pulled helplessly to short range and finished off.
+
+13) Shinobi zue (6 gold and 4 days)
+
+This is a staff with a concealed flail. It is used with two attack modes. One attack as a staff and one attack as a flail. The flail attack does not have to be used if the ninja wishes to keep the flail secret. Both attacks may be used in one melee round with no penalties.
+
+14) Fukumi-bari (1 silver, no time)
+
+Some ninja were able to spit poisoned needles called fukumi-bari out of their mouths at their enemies. They could even do this without injuring themselves. A ninja may spit two needles a melee round up to 15 feet. A maximum of five needles may be held in the mouth at one time. If a needle hits there is a 50% chance that it poisoned the target, else no effect.
+
+15) Shuriken (3 gold, 3 days for one)
+
+The shuriken is the ninja's main throwing weapon. Normally nine of these are carried for nine is considered to be a lucky number. Shuriken are often stuck into the ground with the blades up to deter pursuit. Placed in the ground this way they are very hard to see.
+
+There are three basic kinds of shuriken. Each kind counts as a separate choice of ninja weapon. These three kinds are denoted as dart, star and whistler shuriken.
+
+One shuriken may be thrown each melee round for every two levels the ninja has attained. This multiple throw may be made without penalty. Shuriken are easily concealed under robes and by clothing. Concealed shuriken may, however, be reached as easily as unconcealed shuriken and used without penalty.
+
+Shuriken have an extra penalty of -1 on attack when they face shields.
+
+Shuriken have a maximum range of 30 feet.
+
+a. Dart Shuriken
+
+These shuriken resemble long nails. They attack as a + 2 dagger. When they are used against chain the chain is considered to give protection equal to leather. The shuriken slips between the links of the chain and is slowed only by the padding underneath which is set equal to leather. The shuriken does a basic 1-6 against a man-sized target.
+
+# EFFECTS OF NINJA WEAPONS
+
+|  Weapon | Man-sized | Expert | Larger than man-sized | Expert  |
+| --- | --- | --- | --- | --- |
+|  Bo staff | 1-8 | 1-10 | 1-6 | 1-8  |
+|  Ninja-to | 1-8 | 1-10 | 1-12 | (1-8)+(1-6)  |
+|  Sageo | 1-6/round | 1-8/round | 1-6/round | 1-8/round  |
+|  Kusarigama |  |  |  |   |
+|  scythe | 1-6 | 1-8 | 1-10 | 1-12  |
+|  chain | 1-8 | 1-10 | 1-8 | 1-10  |
+|  special |  |  | entangle the enemy's weapon |   |
+|  Kyoketsu shoge |  |  |  |   |
+|  scythe | 1-6 | 1-8 | 1-10 | 1-12  |
+|  rope |  |  | entangle the enemies hands |   |
+|  Shinobe zue |  |  |  |   |
+|  staff | 1-6 | 1-8 | 1-6 | 1-8  |
+|  f l a i l | 1-8 | 1-10 | 1-8 | 1-10  |
+|  Nekade | 2-5 | 1-6 | 0-3 | 1-4  |
+|  Sode tsutsu | 3-24 | 3-24 | 3-24 | 3-24 save vs damage  |
+|  Kakae ozitsu | 1-20 | 1-20 | 1-20 | 1-20 save vs damage  |
+|  Uzume-bi | 1-10 | 1-10 | 1-10 | 1-10 save vs damage  |
+|  Tetsu-bishi | 1-4 | 1-4 | 1-6 | 1-6  |
+|  Hankyu | 1-6 | 1-6 | 1-6 | 1-6  |
+|  Metsubushi | 1-2 | 1-2 | 1-2 | 1-2 plus poison  |
+|  Kyoketsu shoge | 1-6 | 1-8 | 1-4 | 1-6  |
+|  Fukumi-bari |  |  | 50% to poison |   |
+|  Dart-shuriken | 1-6 | 2-7 | 1-4 | 2-5  |
+|  Star shuriken | 1-4 | 2-5 | 1-3 | 2-4  |
+|  Whistler shuriken |  |  |  |   |
+
+The entries of save vs damage mean to make a saving throw versus death or poison. If the saving throw is successful half damage results.
+
+b. Star Shuriken
+
+These are the standard star shaped shuriken of legend. The many blades on the shuriken gives a much greater chance to hit than a dagger. The attack modifiers are listed below. The shuriken does a basic 1-4 against man-sized targets, the same as a dagger.
+
+c. Whistler Shuriken
+
+These shuriken are a further modification of the star shuriken. They are shaped as a star shuriken with a hole in the center. The hole in the center causes a terrifying sound when it is hauled. For this all in the target area save versus fear with +2 on their die roll. Do not give the + 2 if they are surprised or did not expect the noise. For combat purposes for damage and attack odds treat these the same as star shuriken. The hole changes the weight of the shuriken enough to make mastery count as a separate weapon. The hole was also useful as a nail puller.
+
+|   | NINJA HAND WEAPONS  |   |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   | Armor Class  |   |   |   |   |   |   |   |
+|   | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9  |
+|  Weapon |  |  |  |  |  |  |  |   |
+|  Bo staff | -3 | -3 | -2 | 0 | 0 | 3 | 1 | 2  |
+|  Ninja-to | -2 | -1 | 0 | 0 | 0 | 0 | 0 | 1  |
+|  Sageo | -3 | -3 | -2 | -2 | -1 | -1 | 0 | 0  |
+|  Kusarigama |  |  |  |  |  |  |  |   |
+|  scythe | -1 | 0 | 1 | 1 | 1 | 1 | 1 | 2  |
+|  chain | 2 | 2 | 1 | 2 | 1 | 1 | 1 | 1  |
+|  special | -2 | -2 | -3 | -2 | -3 | -3 | -3 | -3  |
+|  Kyoketsu shoge |  |  |  |  |  |  |  |   |
+|  scythe | -1 | 0 | 1 | 1 | 1 | 1 | 1 | 2  |
+|  rope | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
+|  Shinobe zue |  |  |  |  |  |  |  |   |
+|  staff | -3 | -3 | -1 | 0 | 0 | 2 | 1 |   |
+|  flail | 2 | 2 | 1 | 2 | 1 | 1 | 1 |   |
+|  Nekade | -3 | -2 | -2 | -1 | 0 | 1 | 0 |   |
+|   | NINJA MISSLE WEAPONS  |   |   |   |   |   |   |   |
+|   | Armor Class  |   |   |   |   |   |   |   |
+|   | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9  |
+|  Weapon |  |  |  |  |  |  |  |   |
+|  Sode | 0 | 1 | 2 | 2 | 3 | 3 | 3 | 3  |
+|  tsutsu | -1 | 0 | 0 | 1 | 2 | 2 | 2 | 2  |
+|  (30 ft) | -3 | -1 | 0 | 0 | 0 | 0 | 0 | 0  |
+|  Kakae |  |  |  |  |  |  |  |   |
+|  ozitsu | -3 | -2 | 0 | 1 | 2 | 2 | 2 | 2  |
+|  (90 ft) | -5 | -4 | -1 | 0 | 1 | 1 | 1 | 1  |
+|  Hankyu |  |  |  |  |  |  |  |   |
+|  (150 ft) | -3 | -2 | 0 | 0 | 1 | 2 | 2 | 2  |
+|   | -5 | -3 | -1 | 0 | 0 | 1 | 1 | 1  |
+|   | -7 | -5 | -2 | -1 | 0 | 0 | 0 | 0  |
+|  Metsubushi |  |  |  |  |  |  |  |   |
+|  (30 ft) | -3 | -2 | 0 | 0 | 1 | 2 | 1 | 3  |
+|   | -5 | -3 | -1 | -1 | 0 | 1 | 1 | 2  |
+|   | -7 | -5 | -4 | -3 | 0 | 0 | 0 | 0  |
+|  Kyoketsu |  |  |  |  |  |  |  |   |
+|  shoge | -4 | -3 | -2 | -2 | -1 | -1 | 0 | 0  |
+|  (45 ft) | -5 | -4 | -3 | -3 | -2 | -2 | -1 | -1  |
+|   | -6 | -5 | -4 | -4 | -3 | -3 | -2 | -2  |
+|  Fukumi-bari |  |  |  |  |  |  |  |   |
+|  (15 ft) | -1 | 0 | 2 | 3 | 2 | 3 | 3 | 5  |
+|   | -2 | -1 | 1 | 2 | 1 | 2 | 2 | 4  |
+|   | -3 | -2 | 0 | 1 | 0 | 1 | 1 | 3  |
+|  Dart |  |  |  |  |  |  |  |   |
+|  shuriken | -1 | -1 | 1 | 1 | 2 | 2 | 3 | 4  |
+|  (30 ft) | -2 | -2 | 0 | 0 | 1 | 1 | 2 | 3  |
+|   | -3 | -3 | -1 | -1 | 0 | 0 | 1 | 2  |
+|  Star, Whistler |  |  |  |  |  |  |  |   |
+|  shuriken | -2 | -1 | 3 | 3 | 5 | 5 | 6 | 6  |
+|  (30 ft) | -3 | -2 | 2 | 2 | 4 | 4 | 5 | 5  |
+|   | -4 | -3 | 1 | 1 | 3 | 3 | 4 | 4  |
+
+The shuriken have special modifications against certain types of armor.
+
+|   | Dart shuriken | Star and Whistler shuriken  |
+| --- | --- | --- |
+|  Armor type |  |   |
+|  Shield only | 2/1/0 | 5/4/3  |
+|  Leather and shield | 1/0/-1 | 4/3/2  |
+|  Chain | 4/3/2 | 3/2/1  |
+|  Chain and shield | 3/2/1 | 2/1/0  |
+|  Plate and shield | -2/-3/-4 | -3/-4/-5  |
+
+10
+
+cont. on 34

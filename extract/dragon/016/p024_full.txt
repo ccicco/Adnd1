@@ -1,0 +1,84 @@
+The Dragon
+
+VOL. III No. 2
+
+MA Variant
+
+# METAMORPHOSIS ALPHA MODIFICATIONS
+
+by A. Mark Ratner
+
+While Metamorphosis Alpha (MA) is an excellent game certain problems arise for players choosing to play mutants (and for their ref's!) One common problem is how to evaluate a mutant's attempt to figure out how to use (or what is the use of) a device, weapon, etc. Humans use the rules on pp21-22, cross indexing their leadership potential and the item's complexity level, but mutants have no leadership potential, so a new ability for mutants is needed, their mechanical (or technical) aptitude. This ability is a regular three dice roll, and is used wherever humans would use leadership potential on the device learning table on page 22.
+
+A more serious problem arises with mutations of animals other than human. Since in the unmutated form they have intelligence less than the human norm, and do not have hands or other manipulative members (with a few exceptions) the ref should require that they use Mental Mutation (MM) 1, and Physical Mutation (PM) 4, to gain human level intelligence and manipulative paws or whatever. This ruling means that a mutated animal has two less useful mutations than a mutated human, so why should anyone pick an animal mutation?
+
+The answer here is that animals have certain advantages over men, and the ref must allow his mutants to use them. Animals' senses are generally better than men's, they are often stronger than men, they have natural weapons, and many have special abilities that in a human would be a mutation, for example wings, natural camouflage (equal)
+
+to PM11 in their natural surroundings), tough hides and outstanding dexterity and balance.
+
+The table given here is not intended to be an all encompassing list, but rather a guideline for ref's to use. Referees should expand the chart as needed in their games. Indeed, since MA is a free-form game system the ref should not hesitate to modify the chart as he feels appropriate.
+
+It is assumed that all player characters playing mutated animals use MM 1 to increase their intelligence to human level. To increase it beyond human norm use MM34 as well.
+
+Players do not have to use manipulative members. If their creature does not have them (either naturally or mutated) they cannot use tools, devices, etc. Anything you can use with your hand in a mitten with the thumb taped down an animal could use, but few items fall into this category.
+
+Players with animals are incapable of human speech without PM4, but would still be able to understand human speech and work out a system of communication. Alternately they can use MM 5, telepathy. If PM 4 is used once it can alter both the paws and vocal cords to allow both manual dexterity and human speech.
+
+## CHART NOTES
+
+*This is not the number of hit dice, rather it is the number of dice rolled to obtain the number of hit dice, i.e. if a 3 appears in this column the animal has from 3 to 18 hit dice. Note that players and important nonplayer characters (NPC) have twice the hit dice of normal animals or men. Therefore a herd of horses will have only half the number of hit dice shown on this table, since the table is designed for player characters. Similarly the table on page 17 of MA is designed for normal NPCs, if a player becomes a creature from that table he (or she) would have twice the hit dice shown.
+
+**Strength is not used with damage from natural weapons (unless PM25 is used) because the strength of the animal is designed into the table. The strength is used when the mutant uses a club, sword or other weapon.
+
+1) PM 4 giving hands or manipulative paws decreases speed by 33%.
+2) Cold blooded animal, will die of heat or cold quickly if not protected.
+3) Good swimmer.
+4) Natural camouflage.
+5) Can go for long time without eating (several weeks).
+6) Has fair manipulative organs without mutation.
+7) Good climber.
+8) Constriction damage varies with size, approx. 1 dice per 6' of snake.
+9) Has tongue that can extend to catch insects, etc.
+10) Dexterity halved if not coiled.
+11) Has heat sensing organ, detects warm blooded animals at 10'
+12) Keen eyesight, equal to PM 22 except cannot see infra-red or ultra-violet.
+13) Can see infra-red.
+14) Can Fly.
+15) Balance equal to PM 27.
+16) Light bones and body structure, effect of PM 42 when struck with sword, axe, club, etc. Arrows, darts, spears, poison, and energy attacks do only normal damage.
+17) Nocturnal, good night vision, vision may not be as good in bright light.
+18) Has horns or antlers.
+19) Can jump high obstacles and broad ditches.
+20) Needs PM 4 to become an amphibian.
+21) Smell equal to PM 19 upwind, 1/3 as good without wind, 1/10 as good downwind.
+22) Hearing equivalent to PM 20 with 1/2 range. Can be surprised by something that is very quiet, base chance 1/12.
+23) If PM 4 is used to gain manipulative members the animal becomes 6 limbed, with its hands above the forelegs (similar to a centaur.)
+24) Poor vision.
+25) Can hold breath for a long time (15 min. or more.)
+26) Color blind.
+W = water speed
+F = Flying speed
+
+
+
+## GenCon Update & Preview
+
+Of the many events scheduled as a part of GenCon this year, some are worthy of special mention and attention. Here are the daily highlights:
+
+THURSDAY, AUGUST 17
+
+Thursday at GenCon is reserved primarily for open gaming, with fewer scheduled events than the other three days to follow.
+
+In the morning, Will Niebling presides over the first round of the LANKHMAR tournament, an event which last year featured 32 players on 8 gameboards. The second round will be held in the afternoon.
+
+RUSSIAN CAMPAIGN players (16 in all) will begin their tournament's first round in the afternoon, with Guest of Honor John Edwards presiding as judge.
+
+Avalon Hill's new release, MAGIC REALM, will be featured on Thursday evening as Rich Hamblen oversees the action in this event sponsored by AH.
+
+Amateur detectives have their day starting at 1:00 PM as Tim Kask moderates a series of games of SUSPICION, with the contestants trying to determine who don't.
+
+In the evening, the highlight of the day will be the Strategist's Club Banquet at 8:00 PM.
+
+The first showings of movies at GenCon will be on Thursday evening, beginning at 7:30 PM.
+
+22
