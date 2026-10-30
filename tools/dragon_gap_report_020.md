@@ -50,10 +50,10 @@ TD 21.
 
 ## Boxes
 
-- [ ] **The issue-20 opener chains part one** (print 8-9 +
+- [x] **The issue-20 opener chains part one** (print 8-9 +
   27, 11-12 + 19, 13-15) - the Polynesian pantheon, the
   witch class ladder, the demonology grids
-- [ ] **The issue-20 opener chains part two** (print 26,
+- [x] **The issue-20 opener chains part two** (print 26,
   32) - the 600-death campaign census, the demonic
   possession and exorcism doctrine
 

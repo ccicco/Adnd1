@@ -1,0 +1,399 @@
+{
+ "round": 942,
+ "prefix": "d2c",
+ "census_before": 864,
+ "title": "The Dragon issue-20 box closing round: the five-chain walk complete, issues 2-20 all closed (census 865)",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R941 LANDED (e164043, dst, 68 inline,",
+ "prev_record": [
+  "  - R941 LANDED (e164043, dst, 68 inline, part two of the issue-20 three-round",
+  "  shape): The Dragon issue-20 opener part two, the two-chain round. Two",
+  "  sections: the Fitzgerald It Is A Good Day To Die (print 26, PDF 28) - the",
+  "  600-death Saskatoon wilderness-campaign census, thirty-one causes with the",
+  "  percentage column pinned in tenths, the men-types 20-25 percent band, the",
+  "  300-400 goblin band, the four deadly encounter factors and the misc-cause",
+  "  tiers; the Sagui Demonic Possession in the Dungeon (print 32, PDF 34) - the",
+  "  type-IV-or-greater two-plane possession doctrine, the one-mile amulet rules,",
+  "  the possession saves (paladin-cleric plus one, princes minus two), the",
+  "  host-death and repossession ladders (20 percent killer repossession,",
+  "  35-35-30 post-death outcomes, 10 percent raised-victim repossession), the",
+  "  exorcism ritual (2 prep rounds, every 5 rounds, 1-6 cleric hit points,",
+  "  wraith and spectre turning mirrors) and the 55-25-20 victim ladder with the",
+  "  remove-cure and wish save levels (13th and 9th, princes plus two). 68 inline",
+  "  (39 consts + 27 bools + 2 table cols), 1 table (dstDeaths 31x2 tag De",
+  "  sentinel -99), 10 examples, 1 table_check; header rules/dst.h (prefix dst",
+  "  verified free at be49d0a full-repo scan), audit rules/audits/r941_batch.h",
+  "  R941 issue-20 opener part two audit. No data files this round - the 36 TD-20",
+  "  transcripts and gap report 020 rode R940; the gap-020 check rode 0 closed 2",
+  "  open, both boxes flip at R942. Print catches pinned as scanned, noted never",
+  "  silent: the death percentage column sums to 100.1 percent not 100 (pinned",
+  "  1001 tenths, the conversion noted), the possession victim-freed line prints",
+  "  55 percent with a dangling dash and a singular point of damage, the freed",
+  "  band prints 1 - 10 spaced. Both inherited watches - the Sullin levels 7-9",
+  "  and the brawling sequel - print nowhere in TD20 and ride to TD 21. Census",
+  "  863->864; rverify GREEN 128 mutants 0 missed at be49d0a; round-trip 31617",
+  "  bytes md5 30b5d75ace8c583a11b7b8d726a851c1 (the landed spec plus the",
+  "  user-save trailing newline, 31618 bytes md5",
+  "  bccdc8d63c572984983c28ac1be0ee3d); byte-exact at e164043 (fresh tarball",
+  "  re-run applied 0 already 5). Next: R942 the issue-20 box closing round, the",
+  "  pure flip closing both report-020 boxes (the opener part one and part two",
+  "  boxes) in one round, then issues 2-20 ALL CLOSED. WAIT FOR GO."
+ ],
+ "header_file": "rules/d2c.h",
+ "include_after": "#include \"rules/dst.h\"  // R941: the Dragon issue-20 opener part two, the two-chain round",
+ "include_comment": "the Dragon issue-20 box closing round, the five-chain walk complete",
+ "audit_file": "rules/audits/r942_batch.h",
+ "audit_anchor": "#include \"rules/audits/r941_batch.h\"  // R941: R941 issue-20 opener part two audit",
+ "audit_label": "R942 Dragon issue-20 closure audit",
+ "audit_comment": "THE DRAGON ISSUE-20 BOX CLOSING ROUND - the pure flip, no new ink. Both report-020 boxes flip at this single round: the issue-20 opener chains part one (the R940 Polynesian pantheon, the witch class ladder, the demonology grids) and part two (the R941 600-death campaign census, the demonic possession and exorcism doctrine). Five chains across three rounds, the fourth three-round issue shape after 17, 18 and 19. The bookkeeping mirrors the f17, f18 and d19 closers: the boxes, chains and rounds consts, the issue-closed consts 7 through 19, the walk-complete bools and the unchanged registry ground truth. ISSUES 2-20 ALL CLOSED.",
+ "gap_report": "tools/dragon_gap_report_020.md",
+ "gap_census": {
+  "closed": 2,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The issue-20 opener chains part one** (print 8-9 +",
+   "to": "- [x] **The issue-20 opener chains part one** (print 8-9 +",
+   "note": "the issue-20 part-one box"
+  },
+  {
+   "from": "- [ ] **The issue-20 opener chains part two** (print 26,",
+   "to": "- [x] **The issue-20 opener chains part two** (print 26,",
+   "note": "the issue-20 part-two box"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-20 box closing round - the five-chain walk complete, issues 2 through 20 all closed",
+  "provenance": "The pure flip of the issue-20 three-round shape - no new ink pinned, both report-020 boxes closed. The issue-20 openers stand at R940 (t20: the Polynesian pantheon, the witch class ladder, the demonology grids) and R941 (dst: the 600-death campaign census, the demonic possession and exorcism doctrine), all pinned from The Dragon Vol. III No. 6 (November 1978), the Curtiss-provided Dm20.pdf scan voice.",
+  "sentinel": "No new print catches at this flip - the issue-20 print quirks all rode the two opener records: the contents page Vol. III No. 5 stamp, the Kampua-a markless 150 move, the Demonette 3 1 ladder cell, the 155 love potion, the B and D Variant header, the type I 85 double-assignment, the type V both-VI flanks, the 100.1 percent death column and the dangling-dash 55 percent victim-freed line. Both inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in TD20 and ride to TD 21."
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "d2cIssueTwentyBoxes",
+   "value": 2,
+   "comment": "both report-020 boxes close at this single flip - the part-one and part-two opener boxes"
+  },
+  {
+   "name": "d2cIssueTwentyChains",
+   "value": 5,
+   "comment": "the issue-20 chain count - three part-one chains (the Polynesian pantheon, the witch class ladder, the demonology grids) and two part-two chains (the 600-death campaign census, the demonic possession doctrine), all five chains IN the Curtiss call"
+  },
+  {
+   "name": "d2cIssueTwentyRounds",
+   "value": 3,
+   "comment": "the issue-20 round shape - the R940 opener part one, the R941 opener part two and this R942 pure flip, the fourth three-round issue shape"
+  },
+  {
+   "name": "d2cIssueSevenClosed",
+   "value": 1,
+   "comment": "issue 7 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueEightClosed",
+   "value": 1,
+   "comment": "issue 8 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueNineClosed",
+   "value": 1,
+   "comment": "issue 9 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueTenClosed",
+   "value": 1,
+   "comment": "issue 10 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueElevenClosed",
+   "value": 1,
+   "comment": "issue 11 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueTwelveClosed",
+   "value": 1,
+   "comment": "issue 12 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueThirteenClosed",
+   "value": 1,
+   "comment": "issue 13 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueFourteenClosed",
+   "value": 1,
+   "comment": "issue 14 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueFifteenClosed",
+   "value": 1,
+   "comment": "issue 15 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueSixteenClosed",
+   "value": 1,
+   "comment": "issue 16 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueSeventeenClosed",
+   "value": 1,
+   "comment": "issue 17 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueEighteenClosed",
+   "value": 1,
+   "comment": "issue 18 stands closed since its own flip"
+  },
+  {
+   "name": "d2cIssueNineteenClosed",
+   "value": 1,
+   "comment": "issue 19 stands closed since its own flip"
+  },
+  {
+   "name": "d2cRegistryLoaded",
+   "value": 1313,
+   "comment": "the registry ground truth - 1313 loaded defs, unchanged from the R924 re-measure"
+  },
+  {
+   "name": "d2cRegistryBaseLua",
+   "value": 1338,
+   "comment": "the registry base lua count, 1338, unchanged"
+  },
+  {
+   "name": "d2cRegistryNeverLoad",
+   "value": 25,
+   "comment": "the registry never-load count, 25, unchanged"
+  }
+ ],
+ "bools": [
+  {
+   "name": "d2cWalkSevenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 7 complete"
+  },
+  {
+   "name": "d2cWalkEightComplete",
+   "value": true,
+   "comment": "issue 8 complete"
+  },
+  {
+   "name": "d2cWalkNineComplete",
+   "value": true,
+   "comment": "issue 9 complete"
+  },
+  {
+   "name": "d2cWalkTenComplete",
+   "value": true,
+   "comment": "issue 10 complete"
+  },
+  {
+   "name": "d2cWalkElevenComplete",
+   "value": true,
+   "comment": "issue 11 complete"
+  },
+  {
+   "name": "d2cWalkTwelveComplete",
+   "value": true,
+   "comment": "issue 12 complete"
+  },
+  {
+   "name": "d2cWalkThirteenComplete",
+   "value": true,
+   "comment": "issue 13 complete"
+  },
+  {
+   "name": "d2cWalkFourteenComplete",
+   "value": true,
+   "comment": "issue 14 complete"
+  },
+  {
+   "name": "d2cWalkFifteenComplete",
+   "value": true,
+   "comment": "issue 15 complete"
+  },
+  {
+   "name": "d2cWalkSixteenComplete",
+   "value": true,
+   "comment": "issue 16 complete"
+  },
+  {
+   "name": "d2cWalkSeventeenComplete",
+   "value": true,
+   "comment": "issue 17 complete"
+  },
+  {
+   "name": "d2cWalkEighteenComplete",
+   "value": true,
+   "comment": "issue 18 complete"
+  },
+  {
+   "name": "d2cWalkNineteenComplete",
+   "value": true,
+   "comment": "issue 19 complete"
+  },
+  {
+   "name": "d2cWalkTwentyComplete",
+   "value": true,
+   "comment": "ISSUE 20 COMPLETE AT THIS FLIP - the walk now holds issues 2 through 20"
+  }
+ ],
+ "tables": [],
+ "header_sections": {
+  "the issue-20 closure bookkeeping": [
+   {
+    "kind": "const",
+    "name": "d2cIssueTwentyBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueTwentyChains"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueTwentyRounds"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueSevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueEightClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueNineClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueTenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueElevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueTwelveClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueThirteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueFourteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueFifteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueSixteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueSeventeenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueEighteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cIssueNineteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d2cRegistryLoaded"
+   },
+   {
+    "kind": "const",
+    "name": "d2cRegistryBaseLua"
+   },
+   {
+    "kind": "const",
+    "name": "d2cRegistryNeverLoad"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkSevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkEightComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkNineComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkTenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkElevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkTwelveComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkThirteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkFourteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkFifteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkSixteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkSeventeenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkEighteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkNineteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d2cWalkTwentyComplete"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['d2cIssueTwentyBoxes']() != 2 or m['d2cIssueTwentyChains']() != 5 or m['d2cIssueTwentyRounds']() != 3 or m['d2cIssueNineteenClosed']() != 1 or m['d2cIssueEighteenClosed']() != 1 or m['d2cIssueSevenClosed']() != 1",
+   "note": "the issue-20 census - two boxes, five chains, three rounds, the fourth three-round issue shape"
+  },
+  {
+   "expr": "m['d2cIssueSeventeenClosed']() != 1 or m['d2cIssueSixteenClosed']() != 1 or m['d2cIssueFifteenClosed']() != 1 or m['d2cIssueFourteenClosed']() != 1 or m['d2cIssueThirteenClosed']() != 1 or m['d2cIssueTwelveClosed']() != 1 or m['d2cIssueElevenClosed']() != 1 or m['d2cIssueTenClosed']() != 1 or m['d2cIssueNineClosed']() != 1 or m['d2cIssueEightClosed']() != 1",
+   "note": "the mid-walk closed set - issues 8 through 17 all stand closed at this flip"
+  },
+  {
+   "expr": "m['d2cRegistryLoaded']() != 1313 or m['d2cRegistryBaseLua']() != 1338 or m['d2cRegistryNeverLoad']() != 25 or m['d2cWalkTwentyComplete']() != 1 or m['d2cWalkSevenComplete']() != 1 or m['d2cWalkNineteenComplete']() != 1",
+   "note": "the registry ground truth unchanged 1313/1338/25 and the walk complete through issue 20 - ISSUES 2-20 ALL CLOSED"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 33
+}

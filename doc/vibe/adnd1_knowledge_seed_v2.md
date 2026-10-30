@@ -28727,6 +28727,38 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   Fitzgerald death stats print 26 and the Sagui demonic possession print 32,
   the two-chain round), then R942 the pure flip closing both report-020 boxes.
   WAIT FOR GO.
+  - R941 LANDED (e164043, dst, 68 inline, part two of the issue-20 three-round
+  shape): The Dragon issue-20 opener part two, the two-chain round. Two
+  sections: the Fitzgerald It Is A Good Day To Die (print 26, PDF 28) - the
+  600-death Saskatoon wilderness-campaign census, thirty-one causes with the
+  percentage column pinned in tenths, the men-types 20-25 percent band, the
+  300-400 goblin band, the four deadly encounter factors and the misc-cause
+  tiers; the Sagui Demonic Possession in the Dungeon (print 32, PDF 34) - the
+  type-IV-or-greater two-plane possession doctrine, the one-mile amulet rules,
+  the possession saves (paladin-cleric plus one, princes minus two), the
+  host-death and repossession ladders (20 percent killer repossession,
+  35-35-30 post-death outcomes, 10 percent raised-victim repossession), the
+  exorcism ritual (2 prep rounds, every 5 rounds, 1-6 cleric hit points,
+  wraith and spectre turning mirrors) and the 55-25-20 victim ladder with the
+  remove-cure and wish save levels (13th and 9th, princes plus two). 68 inline
+  (39 consts + 27 bools + 2 table cols), 1 table (dstDeaths 31x2 tag De
+  sentinel -99), 10 examples, 1 table_check; header rules/dst.h (prefix dst
+  verified free at be49d0a full-repo scan), audit rules/audits/r941_batch.h
+  R941 issue-20 opener part two audit. No data files this round - the 36 TD-20
+  transcripts and gap report 020 rode R940; the gap-020 check rode 0 closed 2
+  open, both boxes flip at R942. Print catches pinned as scanned, noted never
+  silent: the death percentage column sums to 100.1 percent not 100 (pinned
+  1001 tenths, the conversion noted), the possession victim-freed line prints
+  55 percent with a dangling dash and a singular point of damage, the freed
+  band prints 1 - 10 spaced. Both inherited watches - the Sullin levels 7-9
+  and the brawling sequel - print nowhere in TD20 and ride to TD 21. Census
+  863->864; rverify GREEN 128 mutants 0 missed at be49d0a; round-trip 31617
+  bytes md5 30b5d75ace8c583a11b7b8d726a851c1 (the landed spec plus the
+  user-save trailing newline, 31618 bytes md5
+  bccdc8d63c572984983c28ac1be0ee3d); byte-exact at e164043 (fresh tarball
+  re-run applied 0 already 5). Next: R942 the issue-20 box closing round, the
+  pure flip closing both report-020 boxes (the opener part one and part two
+  boxes) in one round, then issues 2-20 ALL CLOSED. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
