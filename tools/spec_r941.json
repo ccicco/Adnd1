@@ -1,0 +1,869 @@
+{
+ "round": 941,
+ "prefix": "dst",
+ "census_before": 863,
+ "title": "The Dragon issue-20 opener part two: the 600-death campaign census and the demonic possession doctrine (census 864)",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R940 LANDED (be49d0a, t20, 118 inline,",
+ "prev_record": [
+  "  - R940 LANDED (be49d0a, t20, 118 inline, part one of the issue-20",
+  "  three-round shape, all five chains IN the Curtiss call): The Dragon issue-20",
+  "  opener part one, the three-chain round. Three sections: the Arkenberg Mythos",
+  "  of Polynesia (print 8-9 + 27, PDF 10-11 + 29) - the GDH-format pantheon,",
+  "  seventeen gods and goddesses, ten hero six-stat lines, the two statted",
+  "  monsters and the two artifacts; the Pehr Another Look at Witches and",
+  "  Witchcraft (print 11-12 + 19, PDF 13-14 + 21) - the eighteen-title ladder,",
+  "  the eight spell lists (76 spells, 44 starred), the candle magic, the Voice",
+  "  and the hit-point transfer ladder; the Rihn Demonology Made Easy (print",
+  "  13-15, PDF 15-17) - the name-research levels, the level-achieved percentile",
+  "  grid and the failure bands. 118 inline (57 consts + 26 bools + 35 table",
+  "  cols), 7 tables (t20Myth 29x7 tag My, t20Heroes 10x7 tag He with the Kariki",
+  "  -99 no-roll sentinel, t20WitchLevels 18x9 tag Wl, t20WitchSpells 8x2 tag Ws,",
+  "  t20DemonNames 9x1 tag Dn, t20DemonAchieved 7x6 tag Da, t20DemonFailure 6x3",
+  "  tag Df, all sentinel -99), 11 examples, 7 table_checks; header rules/t20.h",
+  "  (prefix t20 verified free at 7354593 full-repo scan - d20 is TAKEN, 9",
+  "  files), audit rules/audits/r940_batch.h R940 issue-20 opener part one audit.",
+  "  38 data files rode the round: gap report 020 authored pre-flip (2 boxes 0",
+  "  closed) plus all 36 TD-20 transcripts at extract/dragon/020; the gap-019",
+  "  check rode 2 closed 0 open, the no-op. Print catches pinned as scanned,",
+  "  noted never silent: the contents page prints Vol. III No. 5 for issue 20,",
+  "  the Kampua-a move prints 150 markless, the Demonette ladder cell runs 3 1",
+  "  together, the love potion prints 155 chance per day read 15 percent, the",
+  "  demonology header prints B and D Variant, the achieved type I row",
+  "  double-assigns the 85, the type V row flanks both bands with type VI, the",
+  "  Normal Man AC adjudicated to 10 and the percentile 00 to 100. Both inherited",
+  "  watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in",
+  "  TD20 and ride to TD 21. Census 862->863; rverify GREEN 603 mutants 0 missed",
+  "  at 7354593; round-trip 234122 bytes md5 26abe25ef8897c43ba1dbb919e04f143",
+  "  (the landed spec plus the user-save trailing newline, 234123 bytes md5",
+  "  57a03edb2394a35cac8b115838fb68ec); byte-exact at be49d0a (fresh tarball",
+  "  re-run applied 0 already 42). Next: R941 issue-20 opener part two (the",
+  "  Fitzgerald death stats print 26 and the Sagui demonic possession print 32,",
+  "  the two-chain round), then R942 the pure flip closing both report-020 boxes.",
+  "  WAIT FOR GO."
+ ],
+ "header_file": "rules/dst.h",
+ "include_after": "#include \"rules/t20.h\"  // R940: the Dragon issue-20 opener part one, the three-chain round",
+ "include_comment": "the Dragon issue-20 opener part two, the two-chain round",
+ "audit_file": "rules/audits/r941_batch.h",
+ "audit_anchor": "#include \"rules/audits/r940_batch.h\"  // R940: R940 issue-20 opener part one audit",
+ "audit_label": "R941 issue-20 opener part two audit",
+ "audit_comment": "THE DRAGON ISSUE-20 OPENER PART TWO - the two-chain round of the issue-20 three-round shape. Two chains pinned from the Curtiss-provided Dm20.pdf scan: the Fitzgerald It Is A Good Day To Die - the 600-death Saskatoon wilderness-campaign census, thirty-one causes with the percentage column in tenths; the Sagui Demonic Possession in the Dungeon - the type-IV-or-greater possession doctrine, the amulet rules, the host-death and repossession ladders, the exorcism ritual with the wraith and spectre turning mirrors and the victim outcomes. The closing flip rides R942, closing both report-020 boxes.",
+ "gap_report": "tools/dragon_gap_report_020.md",
+ "gap_census": {
+  "closed": 0,
+  "open": 2
+ },
+ "gap_flips": [],
+ "banner": {
+  "title": "The Dragon issue-20 opener part two - the 600-death campaign census and the demonic possession doctrine",
+  "provenance": "The part-two round of the issue-20 three-round shape - the remaining two of the five Curtiss-called chains pinned, after the R940 Polynesian pantheon, witch ladder and demonology grids. All pinned from The Dragon Vol. III No. 6 (November 1978), the Curtiss-provided Dm20.pdf scan voice, print folio the PDF page minus two.",
+  "sentinel": "The part-two print catches pinned as scanned: the death-census percentage column sums to 100.1 percent not 100 (pinned in tenths, 1001, the conversion noted), the possession victim-freed line prints 55 percent with a dangling dash and a singular point of damage, and the 1-10 freed band prints 1 - 10 spaced. Both inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in TD20 and ride to TD 21."
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "dstDeathRows",
+   "value": 31,
+   "comment": "the death-cause row count - thirty-one printed causes from the goblin races through the miscellaneous band the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathTotal",
+   "value": 600,
+   "comment": "the compiled death census - 600 deaths of playing characters and their advanceable hirelings the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathPctSumTenths",
+   "value": 1001,
+   "comment": "the percentage column sums to 1001 tenths - 100.1 percent, a print catch pinned as scanned the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathCampaignYears",
+   "value": 4,
+   "comment": "the Saskatoon campaign has run 4 years the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathCompileMinYears",
+   "value": 2,
+   "comment": "the statistics compile window - 2 to 3 years, the floor the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathCompileMaxYears",
+   "value": 3,
+   "comment": "the statistics compile window - 2 to 3 years, the ceiling the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathEstimate",
+   "value": 1000,
+   "comment": "the all-time death estimate - about a thousand player and hireling deaths in the 4 years the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstMenTypesMinPct",
+   "value": 20,
+   "comment": "the men-types band floor - assassination, pirates, spells, war and the rest, 20 to 25 percent of all deaths the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstMenTypesMaxPct",
+   "value": 25,
+   "comment": "the men-types band ceiling - 25 percent, the biggest killers as a class the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstGoblinBandMin",
+   "value": 300,
+   "comment": "the goblin-types encounter band floor - up to 300 or 400 orcs or goblins the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstGoblinBandMax",
+   "value": 400,
+   "comment": "the goblin-types encounter band ceiling - 400 of the 300-400 band the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathFiveCauses",
+   "value": 3,
+   "comment": "the five-death misc causes - liches, suicides and drowning the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathFourCauses",
+   "value": 3,
+   "comment": "the four-death misc causes - minotaurs, ochre-jelly blobs and stakes in hearts the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathThreeCauses",
+   "value": 8,
+   "comment": "the three-death misc causes - invisible stalkers, sea monsters, lizard men, harpies, tigers, rockslides, starvation and freezing the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstDeathFactors",
+   "value": 4,
+   "comment": "the four deadly encounter factors - the creature power, the number likely encountered, the willingness to attack and the meeting frequency the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstPossessMinType",
+   "value": 4,
+   "comment": "only demons of type IV or greater and the princes are capable of possessing bodies of adventurers the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstAmuletMileRange",
+   "value": 1,
+   "comment": "the amulet of the demon must remain on the same plane and world, within one mile of the place of possession the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstPossessPaladinBonus",
+   "value": 1,
+   "comment": "paladins and clerics get a plus one on the possession saving throw the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstPossessPrincePenalty",
+   "value": 2,
+   "comment": "princes cause a minus two on the possession saving throw the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstHostDeathRepossessPct",
+   "value": 20,
+   "comment": "at the death of the host body the demon has a 20 percent chance to possess the killer, unless a lawful cleric or paladin the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstPostDeathStaySpiritPct",
+   "value": 35,
+   "comment": "the post-death stay-as-spirit outcome - 35 percent, not attacking the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstPostDeathBodyPlanePct",
+   "value": 35,
+   "comment": "the post-death transport-to-body-plane outcome - 35 percent, staying there the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstPostDeathBodyFightPct",
+   "value": 30,
+   "comment": "the post-death body-to-the-room outcome - 30 percent, continuing the fight in earnest the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstRaisedRepossessPct",
+   "value": 10,
+   "comment": "if the victim is raised after the death there is a 10 percent chance of the demon repossessing the body after the save versus death ray the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstExorcismPrepRounds",
+   "value": 2,
+   "comment": "the exorcism needs two rounds of preparation with no fighting before the first attempt the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstExorcismEveryRounds",
+   "value": 5,
+   "comment": "the cleric may attempt an exorcism every five rounds after the preparation the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstExorcismClericHpMin",
+   "value": 1,
+   "comment": "each exorcism attempt costs the cleric 1-6 hit points - the floor the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstExorcismClericHpMax",
+   "value": 6,
+   "comment": "each exorcism attempt costs the cleric 1-6 hit points - the ceiling the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstVictimFreedPct",
+   "value": 55,
+   "comment": "the exorcised victim is freed 55 percent of the time - the dangling-dash print catch rides this line the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstVictimFreedDmgMin",
+   "value": 1,
+   "comment": "the freed victim takes 1-10 points of damage - the floor the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstVictimFreedDmgMax",
+   "value": 10,
+   "comment": "the freed victim takes 1-10 points of damage - the ceiling the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstVictimInsanePct",
+   "value": 25,
+   "comment": "the exorcised victim goes insane 25 percent of the time, treated in the usual ways the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstVictimDeadPct",
+   "value": 20,
+   "comment": "the exorcised victim drops dead 20 percent of the time, revival may be attempted the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstRemoveCurseDemonLevel",
+   "value": 13,
+   "comment": "against remove curse or limited wish the demon saves as a thirteenth level cleric versus death ray the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstFullWishDemonLevel",
+   "value": 9,
+   "comment": "against a full wish the demon saves as a ninth level cleric versus dragon breath the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstPrinceSaveBonus",
+   "value": 2,
+   "comment": "princes get a plus two on the remove curse, limited wish and full wish saves the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstSubdueStrFloor",
+   "value": 18,
+   "comment": "the possessed may be subdued only by two or more fighters of strength at least 18(01) - the strength floor the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstSubdueStrRoll",
+   "value": 1,
+   "comment": "the subdual strength roll floor - 18(01), the exceptional-strength 01 the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstSubdueFighterCount",
+   "value": 2,
+   "comment": "the subdual needs two or more qualifying fighters the demonic possession doctrine (print 32, PDF 34)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "dstWildernessCampaign",
+   "value": true,
+   "comment": "the campaign is primarily a wilderness one, as the statistics reflect, though huge dungeons exist the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstPlayersAndHirelingsOnly",
+   "value": true,
+   "comment": "the 600 deaths are playing characters and their advanceable hirelings, not mercenaries or other non-playing characters the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstPatriarchsNoDeaths",
+   "value": true,
+   "comment": "patriarchs caused no deaths - you meet them as often as evil high priests but they will not attack, the willingness factor the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstSurpriseWorstHazard",
+   "value": true,
+   "comment": "the worst thing is to be surprised, even by a minor creature - even badly outgunned you can usually escape with enough warning the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "name": "dstTwoPlaneRuleOfThumb",
+   "value": true,
+   "comment": "the rule of the thumb - only demons immune to all but magical weapons exist upon two planes at once and may possess, the body sent to another plane while the spiritual essence remains the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstRandomVictim",
+   "value": true,
+   "comment": "the demon should be placed by the DM but the victim must be at random - first in, last in, fourth or whatever - to preserve fair play the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstOnePerBody",
+   "value": true,
+   "comment": "only one demon will inhabit a body at one time and only one member will be possessed in one party at one time the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstKeepsVictimAc",
+   "value": true,
+   "comment": "the possessed member has the same armor class as the victim before possession the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstAnyWeaponExceptLawful",
+   "value": true,
+   "comment": "the possessed may use any weapon except those aligned Lawful, regardless of previous character class the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstAttacksAsDemonLevel",
+   "value": true,
+   "comment": "the possessed attack with those weapons as whatever level demon they are, not the level of the victim the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstKeepsPowersExceptGate",
+   "value": true,
+   "comment": "the demon retains all powers while possessing except the ability to gate the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstNoFlightWithoutWings",
+   "value": true,
+   "comment": "nothing precluded by the new shape - no physical flight without wings, no Balrog immolation the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstHostTakesDamage",
+   "value": true,
+   "comment": "all hits and damage are taken by the infested body rather than the demon itself the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstDetectEvilRegisters",
+   "value": true,
+   "comment": "the possessed registers on Detect Evil or reacts violently to Holy Water, paladins with their power to detect recognize possession immediately the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstDropsAlignedGear",
+   "value": true,
+   "comment": "one of the first give-away actions is divesting all aligned weapons or equipment the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstNoAlignmentShock",
+   "value": true,
+   "comment": "the victims lose no points to alignment shock but feel intense pain in the presence of aligned weapons the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstBreaksRopesLeather",
+   "value": true,
+   "comment": "restraint is almost impossible - the possessed break all rope and leather restraints and all but the strongest chains the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstPrincesNotSubdued",
+   "value": true,
+   "comment": "demon princes may not be subdued the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstNoChaosBlame",
+   "value": true,
+   "comment": "the actions of a person while possessed are controlled by the demon so no chaotic action will be held against them the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstDemonsTurnAsWraiths",
+   "value": true,
+   "comment": "the exorcism ability is in direct proportion to turning undead - regular demons are rolled for as wraiths the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstPrincesTurnAsSpectres",
+   "value": true,
+   "comment": "demon princes are rolled for as a spectre on the turning tables the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstExorcisedNoRepossession",
+   "value": true,
+   "comment": "if the demon is driven from the body by exorcism there can be no repossession the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstAmuletHolderImmune",
+   "value": true,
+   "comment": "demons cannot possess a person who is in control of his amulet the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstAmuletContactInstantDeath",
+   "value": true,
+   "comment": "if a once-possessed person comes in contact with the possessing demon amulet it causes instant death the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstAmuletCommandNoDamage",
+   "value": true,
+   "comment": "an exorcism by the found amulet, correctly phrased, orders the demon back to its body with no damage to the victim the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstNoTreasureInRoom",
+   "value": true,
+   "comment": "there is no treasure in the room in which the possession takes place - the wealth is deposited upon the plane with the corporeal body the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "name": "dstDanglingDashPrintCatch",
+   "value": true,
+   "comment": "the victim-freed line prints 55 percent with a dangling dash and a singular point of damage - pinned as scanned, the conversion noted the demonic possession doctrine (print 32, PDF 34)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "dstDeaths",
+   "tag": "De",
+   "count": "dstDeathRows",
+   "sentinel": -99,
+   "audit_comment": "the death-cause grid - thirty-one causes down, the death count and the printed percentage across; the percentage column is printed to one decimal and pinned in tenths, the conversion noted, and the column sums to 1001 tenths - 100.1 percent - a print catch the death statistics census (print 26, PDF 28)",
+   "cols": [
+    "dstDeathCount",
+    "dstDeathPct"
+   ],
+   "col_comments": [
+    "the death count column - the goblin races 61 and the misc band 85 around a 600-death total the death statistics census (print 26, PDF 28)",
+    "the percentage column - printed to one decimal, pinned in tenths: 10.1 as 101 through 14.6 as 146 the death statistics census (print 26, PDF 28)"
+   ],
+   "data": [
+    [
+     61,
+     101
+    ],
+    [
+     45,
+     75
+    ],
+    [
+     34,
+     57
+    ],
+    [
+     26,
+     43
+    ],
+    [
+     24,
+     40
+    ],
+    [
+     23,
+     38
+    ],
+    [
+     21,
+     35
+    ],
+    [
+     20,
+     33
+    ],
+    [
+     20,
+     33
+    ],
+    [
+     18,
+     30
+    ],
+    [
+     18,
+     30
+    ],
+    [
+     17,
+     28
+    ],
+    [
+     16,
+     27
+    ],
+    [
+     14,
+     23
+    ],
+    [
+     13,
+     22
+    ],
+    [
+     13,
+     22
+    ],
+    [
+     13,
+     22
+    ],
+    [
+     13,
+     22
+    ],
+    [
+     12,
+     20
+    ],
+    [
+     12,
+     20
+    ],
+    [
+     12,
+     20
+    ],
+    [
+     11,
+     18
+    ],
+    [
+     9,
+     14
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     8,
+     13
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     85,
+     146
+    ]
+   ]
+  }
+ ],
+ "header_sections": {
+  "the death statistics census (print 26)": [
+   {
+    "kind": "const",
+    "name": "dstDeathRows"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathTotal"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathPctSumTenths"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathCampaignYears"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathCompileMinYears"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathCompileMaxYears"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathEstimate"
+   },
+   {
+    "kind": "const",
+    "name": "dstMenTypesMinPct"
+   },
+   {
+    "kind": "const",
+    "name": "dstMenTypesMaxPct"
+   },
+   {
+    "kind": "const",
+    "name": "dstGoblinBandMin"
+   },
+   {
+    "kind": "const",
+    "name": "dstGoblinBandMax"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathFiveCauses"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathFourCauses"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathThreeCauses"
+   },
+   {
+    "kind": "const",
+    "name": "dstDeathFactors"
+   },
+   {
+    "kind": "bool",
+    "name": "dstWildernessCampaign"
+   },
+   {
+    "kind": "bool",
+    "name": "dstPlayersAndHirelingsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "dstPatriarchsNoDeaths"
+   },
+   {
+    "kind": "bool",
+    "name": "dstSurpriseWorstHazard"
+   },
+   {
+    "kind": "table",
+    "name": "dstDeaths"
+   }
+  ],
+  "the demonic possession doctrine (print 32)": [
+   {
+    "kind": "const",
+    "name": "dstPossessMinType"
+   },
+   {
+    "kind": "const",
+    "name": "dstAmuletMileRange"
+   },
+   {
+    "kind": "const",
+    "name": "dstPossessPaladinBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dstPossessPrincePenalty"
+   },
+   {
+    "kind": "const",
+    "name": "dstHostDeathRepossessPct"
+   },
+   {
+    "kind": "const",
+    "name": "dstPostDeathStaySpiritPct"
+   },
+   {
+    "kind": "const",
+    "name": "dstPostDeathBodyPlanePct"
+   },
+   {
+    "kind": "const",
+    "name": "dstPostDeathBodyFightPct"
+   },
+   {
+    "kind": "const",
+    "name": "dstRaisedRepossessPct"
+   },
+   {
+    "kind": "const",
+    "name": "dstExorcismPrepRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dstExorcismEveryRounds"
+   },
+   {
+    "kind": "const",
+    "name": "dstExorcismClericHpMin"
+   },
+   {
+    "kind": "const",
+    "name": "dstExorcismClericHpMax"
+   },
+   {
+    "kind": "const",
+    "name": "dstVictimFreedPct"
+   },
+   {
+    "kind": "const",
+    "name": "dstVictimFreedDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "dstVictimFreedDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "dstVictimInsanePct"
+   },
+   {
+    "kind": "const",
+    "name": "dstVictimDeadPct"
+   },
+   {
+    "kind": "const",
+    "name": "dstRemoveCurseDemonLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dstFullWishDemonLevel"
+   },
+   {
+    "kind": "const",
+    "name": "dstPrinceSaveBonus"
+   },
+   {
+    "kind": "const",
+    "name": "dstSubdueStrFloor"
+   },
+   {
+    "kind": "const",
+    "name": "dstSubdueStrRoll"
+   },
+   {
+    "kind": "const",
+    "name": "dstSubdueFighterCount"
+   },
+   {
+    "kind": "bool",
+    "name": "dstTwoPlaneRuleOfThumb"
+   },
+   {
+    "kind": "bool",
+    "name": "dstRandomVictim"
+   },
+   {
+    "kind": "bool",
+    "name": "dstOnePerBody"
+   },
+   {
+    "kind": "bool",
+    "name": "dstKeepsVictimAc"
+   },
+   {
+    "kind": "bool",
+    "name": "dstAnyWeaponExceptLawful"
+   },
+   {
+    "kind": "bool",
+    "name": "dstAttacksAsDemonLevel"
+   },
+   {
+    "kind": "bool",
+    "name": "dstKeepsPowersExceptGate"
+   },
+   {
+    "kind": "bool",
+    "name": "dstNoFlightWithoutWings"
+   },
+   {
+    "kind": "bool",
+    "name": "dstHostTakesDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dstDetectEvilRegisters"
+   },
+   {
+    "kind": "bool",
+    "name": "dstDropsAlignedGear"
+   },
+   {
+    "kind": "bool",
+    "name": "dstNoAlignmentShock"
+   },
+   {
+    "kind": "bool",
+    "name": "dstBreaksRopesLeather"
+   },
+   {
+    "kind": "bool",
+    "name": "dstPrincesNotSubdued"
+   },
+   {
+    "kind": "bool",
+    "name": "dstNoChaosBlame"
+   },
+   {
+    "kind": "bool",
+    "name": "dstDemonsTurnAsWraiths"
+   },
+   {
+    "kind": "bool",
+    "name": "dstPrincesTurnAsSpectres"
+   },
+   {
+    "kind": "bool",
+    "name": "dstExorcisedNoRepossession"
+   },
+   {
+    "kind": "bool",
+    "name": "dstAmuletHolderImmune"
+   },
+   {
+    "kind": "bool",
+    "name": "dstAmuletContactInstantDeath"
+   },
+   {
+    "kind": "bool",
+    "name": "dstAmuletCommandNoDamage"
+   },
+   {
+    "kind": "bool",
+    "name": "dstNoTreasureInRoom"
+   },
+   {
+    "kind": "bool",
+    "name": "dstDanglingDashPrintCatch"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['dstDeathRows']() != 31 or m['dstDeathTotal']() != 600 or m['dstDeathPctSumTenths']() != 1001 or m['dstDeathCampaignYears']() != 4 or m['dstDeathEstimate']() != 1000",
+   "note": "the death census - thirty-one causes, 600 compiled deaths against the thousand estimate, the percentage column summing to 1001 tenths, the 100.1 percent print catch the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "expr": "m['dstDeathCompileMinYears']() != 2 or m['dstDeathCompileMaxYears']() != 3 or m['dstMenTypesMinPct']() != 20 or m['dstMenTypesMaxPct']() != 25 or m['dstGoblinBandMin']() != 300 or m['dstGoblinBandMax']() != 400 or m['dstDeathFactors']() != 4",
+   "note": "the compile window and bands - 2 to 3 years of statistics, the 20-25 percent men-types band, the 300-400 goblin encounter band and the four deadly factors the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "expr": "m['dstDeathFiveCauses']() != 3 or m['dstDeathFourCauses']() != 3 or m['dstDeathThreeCauses']() != 8 or m['dstWildernessCampaign']() != 1 or m['dstPlayersAndHirelingsOnly']() != 1 or m['dstPatriarchsNoDeaths']() != 1 or m['dstSurpriseWorstHazard']() != 1",
+   "note": "the misc bands and doctrine - three five-death, three four-death and eight three-death causes, the wilderness campaign, the players-and-hirelings census, the no-patriarch-deaths and the surprise doctrine the death statistics census (print 26, PDF 28)"
+  },
+  {
+   "expr": "m['dstPossessMinType']() != 4 or m['dstAmuletMileRange']() != 1 or m['dstPossessPaladinBonus']() != 1 or m['dstPossessPrincePenalty']() != 2 or m['dstTwoPlaneRuleOfThumb']() != 1 or m['dstRandomVictim']() != 1 or m['dstOnePerBody']() != 1",
+   "note": "the possession doctrine - type IV or greater only, the one-mile amulet, the plus one paladin-cleric and minus two prince saves, the two-plane rule, the random victim and the one-per-body rule the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "expr": "m['dstKeepsVictimAc']() != 1 or m['dstAnyWeaponExceptLawful']() != 1 or m['dstAttacksAsDemonLevel']() != 1 or m['dstKeepsPowersExceptGate']() != 1 or m['dstNoFlightWithoutWings']() != 1 or m['dstHostTakesDamage']() != 1",
+   "note": "the possessed state - the victim armor class kept, any weapon but the Lawful, attacks at demon level, all powers but the gate, the shape preclusions and the host taking the damage the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "expr": "m['dstHostDeathRepossessPct']() != 20 or m['dstPostDeathStaySpiritPct']() != 35 or m['dstPostDeathBodyPlanePct']() != 35 or m['dstPostDeathBodyFightPct']() != 30 or m['dstRaisedRepossessPct']() != 10",
+   "note": "the host-death and repossession ladder - the 20 percent killer repossession, the 35-35-30 post-death outcomes and the 10 percent raised-victim repossession the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "expr": "m['dstExorcismPrepRounds']() != 2 or m['dstExorcismEveryRounds']() != 5 or m['dstExorcismClericHpMin']() != 1 or m['dstExorcismClericHpMax']() != 6 or m['dstDemonsTurnAsWraiths']() != 1 or m['dstPrincesTurnAsSpectres']() != 1 or m['dstExorcisedNoRepossession']() != 1",
+   "note": "the exorcism ritual - 2 rounds of preparation, every 5 rounds, the 1-6 cleric hit-point cost, the wraith and spectre turning mirrors and the no-repossession ban the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "expr": "m['dstVictimFreedPct']() != 55 or m['dstVictimFreedDmgMin']() != 1 or m['dstVictimFreedDmgMax']() != 10 or m['dstVictimInsanePct']() != 25 or m['dstVictimDeadPct']() != 20 or m['dstDanglingDashPrintCatch']() != 1",
+   "note": "the exorcism victim ladder - freed 55 percent taking 1-10, insane 25 percent, dead 20 percent, the dangling-dash print catch riding the freed line the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "expr": "m['dstRemoveCurseDemonLevel']() != 13 or m['dstFullWishDemonLevel']() != 9 or m['dstPrinceSaveBonus']() != 2 or m['dstSubdueStrFloor']() != 18 or m['dstSubdueStrRoll']() != 1 or m['dstSubdueFighterCount']() != 2 or m['dstPrincesNotSubdued']() != 1",
+   "note": "the spell-save and subdual doctrine - the 13th-level remove curse save, the 9th-level full wish save, the plus two princes, the two 18(01) fighters and the unsubduable princes the demonic possession doctrine (print 32, PDF 34)"
+  },
+  {
+   "expr": "m['dstDetectEvilRegisters']() != 1 or m['dstDropsAlignedGear']() != 1 or m['dstNoAlignmentShock']() != 1 or m['dstBreaksRopesLeather']() != 1 or m['dstNoChaosBlame']() != 1 or m['dstAmuletHolderImmune']() != 1 or m['dstAmuletContactInstantDeath']() != 1 or m['dstAmuletCommandNoDamage']() != 1 or m['dstNoTreasureInRoom']() != 1",
+   "note": "the detection and amulet doctrine - Detect Evil and Holy Water, the aligned-gear drop, no alignment shock, the broken restraints, no chaos blame, the holder immunity, instant death, the no-damage command and the treasureless room the demonic possession doctrine (print 32, PDF 34)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['dstDeathCount'](0) != 61 or m['dstDeathPct'](0) != 101 or m['dstDeathCount'](30) != 85 or m['dstDeathPct'](30) != 146 or m['dstDeathCount'](12) != 16 or m['dstDeathPct'](12) != 27 or m['dstDeathCount'](27) != 6 or m['dstDeathPct'](27) != 10",
+   "note": "the death grid corners - the goblin races 61 and 10.1 percent, the misc band 85 and 14.6 percent, the trolls 16 and the 1.0 percent band the death statistics census (print 26, PDF 28)"
+  }
+ ],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 68
+}

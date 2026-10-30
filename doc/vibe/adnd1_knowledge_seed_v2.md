@@ -28692,6 +28692,41 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   (issue 20 or another issue) opens the
   next issue round the same intake.
   WAIT FOR GO.
+  - R940 LANDED (be49d0a, t20, 118 inline, part one of the issue-20
+  three-round shape, all five chains IN the Curtiss call): The Dragon issue-20
+  opener part one, the three-chain round. Three sections: the Arkenberg Mythos
+  of Polynesia (print 8-9 + 27, PDF 10-11 + 29) - the GDH-format pantheon,
+  seventeen gods and goddesses, ten hero six-stat lines, the two statted
+  monsters and the two artifacts; the Pehr Another Look at Witches and
+  Witchcraft (print 11-12 + 19, PDF 13-14 + 21) - the eighteen-title ladder,
+  the eight spell lists (76 spells, 44 starred), the candle magic, the Voice
+  and the hit-point transfer ladder; the Rihn Demonology Made Easy (print
+  13-15, PDF 15-17) - the name-research levels, the level-achieved percentile
+  grid and the failure bands. 118 inline (57 consts + 26 bools + 35 table
+  cols), 7 tables (t20Myth 29x7 tag My, t20Heroes 10x7 tag He with the Kariki
+  -99 no-roll sentinel, t20WitchLevels 18x9 tag Wl, t20WitchSpells 8x2 tag Ws,
+  t20DemonNames 9x1 tag Dn, t20DemonAchieved 7x6 tag Da, t20DemonFailure 6x3
+  tag Df, all sentinel -99), 11 examples, 7 table_checks; header rules/t20.h
+  (prefix t20 verified free at 7354593 full-repo scan - d20 is TAKEN, 9
+  files), audit rules/audits/r940_batch.h R940 issue-20 opener part one audit.
+  38 data files rode the round: gap report 020 authored pre-flip (2 boxes 0
+  closed) plus all 36 TD-20 transcripts at extract/dragon/020; the gap-019
+  check rode 2 closed 0 open, the no-op. Print catches pinned as scanned,
+  noted never silent: the contents page prints Vol. III No. 5 for issue 20,
+  the Kampua-a move prints 150 markless, the Demonette ladder cell runs 3 1
+  together, the love potion prints 155 chance per day read 15 percent, the
+  demonology header prints B and D Variant, the achieved type I row
+  double-assigns the 85, the type V row flanks both bands with type VI, the
+  Normal Man AC adjudicated to 10 and the percentile 00 to 100. Both inherited
+  watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in
+  TD20 and ride to TD 21. Census 862->863; rverify GREEN 603 mutants 0 missed
+  at 7354593; round-trip 234122 bytes md5 26abe25ef8897c43ba1dbb919e04f143
+  (the landed spec plus the user-save trailing newline, 234123 bytes md5
+  57a03edb2394a35cac8b115838fb68ec); byte-exact at be49d0a (fresh tarball
+  re-run applied 0 already 42). Next: R941 issue-20 opener part two (the
+  Fitzgerald death stats print 26 and the Sagui demonic possession print 32,
+  the two-chain round), then R942 the pure flip closing both report-020 boxes.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
