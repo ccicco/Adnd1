@@ -28528,6 +28528,70 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   (issue 19 or another issue) opens the
   next issue round the same intake.
   WAIT FOR GO.
+  - R937 LANDED (9a5a2c5, dws, 123 inline,
+  part one of the issue-19 three-round
+  shape, all six chains IN the Curtiss
+  call): The Dragon issue-19 opener part
+  one, the three-chain round. Three
+  sections: the Thompson Lowdown on
+  Wishes (print 12-13, PDF 14-15) - the
+  Class I-IV ladder with the level-5 MU
+  and level-4 cleric ceilings, the
+  alignment grant matrices, the
+  object-strength logic and the twisting
+  doctrine; the Arkenberg Mythos of
+  Australia (print 14-15 + 26, PDF 16-17 +
+  28) - the GDH-format pantheon, twenty
+  entities with eighteen statlines; the
+  Rhodes Systematic Magic (print 18-19,
+  PDF 20-21) - the thirteen-field
+  redivision with the prime requisite
+  codes. 123 inline (54 consts + 61
+  bools + 8 table cols), 2 tables (dwsMyth
+  18x6 tag My sentinel -99, sentinel_cens
+  [0,0,0,8,0,0] the eight See Below
+  spell-list gods; dwsFields 13x2 tag Mf
+  sentinel -99, sentinel_census [4,8] the
+  unprinted counts and requisites), 9
+  examples, 4 table_checks; header
+  rules/dws.h (prefix dws verified free
+  at 995b3db full-repo scan), audit
+  rules/audits/r937_batch.h "R937
+  issue-19 opener part one audit". 37
+  data files rode the round: gap report
+  019 authored pre-flip (2 boxes 0 closed)
+  plus all 36 TD-19 transcripts at
+  extract/dragon/019; the gap 018 check
+  rode 2 closed 0 open, the no-op.
+  Print catches pinned as scanned, noted
+  never silent: the Ngunung-Ngunnut spell
+  list prints Gate TWICE (Fly, Gate,
+  Polymorph any object, Gate - count 4
+  pins four printed lines), the Wawalag
+  Champion 7th not Lord with psionic Nil
+  pinned 0, the Mimi AC 8 the lone
+  positive, Wagtjadbulla and Tcabuinji
+  share one statline, Walangda spelled
+  Walangada in the prose, the doctrine
+  list prints Animation while the section
+  header prints Animate (25), the Mental
+  27 with NO requisite line, Summoning
+  Senses Illusion and Holy with no counts.
+  Census 859->860; rverify GREEN 249
+  mutants 0 missed; round-trip 232866
+  bytes md5 2fb23d08915a18ed116ecfbb7350
+  e097, byte-exact at 9a5a2c5 (fresh
+  tarball re-run applied 0 already 42).
+  Watch: BOTH inherited watches EMPTY in
+  TD19 - the Sullin levels 7-9 and the
+  brawling sequel both ride to TD 20.
+  Next: R938 the issue-19 opener part two
+  (Origins 78 Snurre Hall print 3 +
+  Ettins scoring print 6, Creative
+  Treasures print 13 + Treasure Locations
+  print 25, Spell Determination print
+  24-25), then R939 the pure flip.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
