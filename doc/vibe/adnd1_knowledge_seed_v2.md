@@ -28782,6 +28782,40 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   print nowhere - both watches ride to TD 21. Next: the Dragon Magazine walk
   continues with Curtiss call - the next scan upload (issue 21 or another
   issue) opens the next issue round the same intake. WAIT FOR GO.
+  - R943 LANDED (21c9900, t21, 64 inline, opener part one of the issue-21
+  three-round shape): The Dragon issue-21 opener part one, three chains IN
+  (Encounters with Personality, Sensible Sorcery, Prophet Proofing). The
+  twenty-NPC personality grid rides as the t21Npcs table (tag 'Np', 20 rows x
+  11 cols: level, hp, AC, the six stats, to-hit, to-damage; Blarg through
+  Dassol pinned from print 11 + 23 + 27, the Ave. bonus lines pinned 0 with
+  the conversion noted), the Rollo 9/24/9 prose statline with its
+  seven-number print catch (t21NpcRolloStatlineSeven=7, one more than the
+  six-stat grid). Sensible Sorcery (Pehr, print 10): the three Rules of
+  Research, the Moon Runes / Magic Missile II / Wall of Water family /
+  Shatterray vs. Ice Storm level-and-damage critiques, the specialist
+  Fire-Mage exception, the cleric-no-attack and MU-no-divine dividing lines,
+  the Suliin spelling print catch ('Paul Suliin', 'Ventriliquism'). Prophet
+  Proofing (Schroeder, print 9): the five foretelling spells, the Medivar
+  and harpy deterrents (Medivar spelling print catch), the 2-7-turn insanity
+  contagion, the 60-foot non-directional option, three inches of lead, the
+  33 percent voyeur Eye, the fifteen-dice Kobold fireball Helm trick, the
+  medallion blue-movies bool. 64 inline (30 consts + 23 bools + 11 col
+  accessors), header rules/t21.h (prefix t21 verified free at ee361d0
+  full-repo scan), audit rules/audits/r943_batch.h R943 issue-21 opener part
+  one audit, 10 examples + 1 table check. Numbering print catches pinned as
+  scanned, conversion noted: the masthead prints Vol. 111 for III, November
+  for December, No. 6 for 7 (RPGGeek-confirmed contents-page error, the cover
+  also prints No. 6). Data files: report 021 + 30 transcripts at
+  extract/dragon/021 (TD-21 intake: 30 PDF pages, PRINT FOLIO = PDF MINUS
+  2). Census 865->866; rverify GREEN 273 mutants 0 missed; round-trip 203910
+  bytes md5 b7a5ac553522610964288a890719ecfa, byte-exact at 21c9900 (fresh
+  tarball re-run applied 0 already 36; landed spec plus the user-save
+  trailing newline 203911 bytes md5 c2f6d80dc5fbf50b7054a270f5bb145c).
+  WATCHES STILL EMPTY: the Sullin levels 7-9 and the brawling sequel print
+  nowhere in TD21 either - both ride to TD 22. Next: R944 opener part two
+  (Inflation in D&D, Same-Old-Monster Blues, Hall of Mystery, What Do You
+  Call a 25th Level M-U), R945 the pure flip closing both report-021 boxes.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
