@@ -1,0 +1,63 @@
+February, 1979
+
+The Dragon
+
+# SNEAK PREVIEW
+AD&D DUNGEON MASTERS GUIDE
+
+ADVANCED DUNGEONS & DRAGONS®, ©1979, TSR GAMES
+
+Work on the third volume of the ADVANCED DUNGEONS & DRAGONS® series, the DUNGEON MASTERS GUIDE, is now in progress. As much as we deal with and in fantasy, the real-world limitations of time and space place limitations on the speed of our endeavors. Thus, it now appears that the DUNGEON MASTERS GUIDE will be released at GenCon XII (August 16 19,1979, at the University of Wisconsin-Parkside, Kenosha, Wisconsin). The extra time is necessary if you, the gamers, wish a product that is comparable in quality to the PLAYERS HANDBOOK.
+
+We do realize, however, the plight of the many gamers attempting to find a happy medium between old rules (as in Original D&D and Basic D&D) and the newer rules of ADVANCED D&D (as in the PLAYERS HANDBOOK) without the benefit of the full AD&D system being in print. We therefore present this "sneak preview" of the DUNGEON MASTERS GUIDE. Included are all combat and saving throw matrices and certain "newly discovered" magic items which have already appeared in print in one of the Dungeon Modules (G1, Steading of the Hill Giant Chief, G2, Glacial Rift of the Freet Giant Jari, G3, Hall of the Fire Giant King, D1, Descent into the Depths of the Earth, D2, Shrine of the Kuo-Toa, and D3, Vault of the Drow). Magic items which are explained in the text of the modules are not repeated here.
+
+It should be noted that one will not always find all magic items on the tables. New magic items can be created by simply assigning the magical properties of one magic item to a different type of ordinary item. Thus, the fire elemental gem is not and never will be on one of the tables of magic items, but its powers may be deduced from those of a ring of elemental command—fire. Similarly, no law requires invisibility be granted only by rings; there is nothing wrong with bracers of invisibility or sandals of invisibility or even earrings of invisibility. Use a little imaginative thinking to keep your players on their toes!
+
+## MAGIC ITEMS
+
+Amulet of the Planes: The Amulet of the Planes is a device which enables the individual possessing it to transport himself or herself instantly to any one of the upper levels of the Outer Planes. This travel is absolutely safe, but until the individual learns the device, transport will be random. Roll d6, 1-3= do not add 12,4-6= add 12, to a roll of d12, for 1-24 random results:
+
+|  1-2 | Seven Heavens | 13 | Tarterus  |
+| --- | --- | --- | --- |
+|  3 | Twin Paradises | 14 | Hades  |
+|  4 | Elysium | 15 | Gehenna  |
+|  5 | Happy Hunting Grounds | 16-17 | Nine Hells  |
+|  6-7 | Olympus | 18 | Acheron  |
+|  8 | Gladsheim | 19 | Nirvana  |
+|  9 | Limbo | 20 | Arcadia  |
+|  10 | Pandemonium | 21-24 | Prime Material Plane  |
+|  11-12 | Abyss |  |   |
+
+You may alternately have the following results:
+
+|  22 | Ethereal Plane  |
+| --- | --- |
+|  23 | Astral Plane  |
+|  24 | Prime, but alternate earth  |
+
+Hammer of Thunderbolts appears to be a regular hammer of largish size and extra weight. It will be too imbalanced, somehow, to wield properly in combat, unless the character has 18/01 or better strength and a height of over 6'. The hammer then functions as +3 and gains double damage dice on any hit. If the wielder wears any girdle of giant strength and gauntlets of ogre power in addition, he or she may properly wield the weapon if the hammer's true name is known. When swung or hurled it gains a +5, double damage dice, all girdle and gauntlets bonuses, and strikes dead any giant* upon which it scores a hit. When hurled and successfully hitting, a great noise as if a clap of thunder broke overhead will resound, stunning all creatures within 3" for 1 round. Throwing range is 1" + ½"/point of strength bonus for the gauntlet and girdle, i.e. 6 + 7 to 12 = 13 to 18 X ½" = 6½", 7", 7½", 8", 8½", 9". (Thor would throw the hammer about double the above ranges . . . ). The hammer of thunderbolts is very difficult to hurl, so only 1 throw every other round can be made, and after 5 throws within the space of any 2 turn period, the wielder must rest for 1 turn.
+
+- Depending on your campaign, you might wish to limit the effect to exclude storm giants and include ogres, ogre magi, trolls, ettins, and clay, flesh, and stone golems.
+
+Helm of Underwater Action: When this helm is viewed it is indistinguishable from a normal helmet, but detection will reveal it as magical, and the possessor will be able to both see and breathe under water. Visual properties of the helm are activated when small lenses are drawn across the device from compartments on either side of the helmet. They allow the wearer to see 5 times farther than normal water and light conditions allow for normal human vision. (Note weeds, obstructions will block vision in the usual manner.) If the command word is spoken, the helm of underwater action creates a globe of air around the wearer's head, and maintains it, until the command word is again spoken. Thus, the wearer can breathe freely.
+
+Nolzur's Marvelous Pigments: These magical emulsions enable their possessor to create actual objects simply by depicting their form in 2 dimensions. The varigated pigments are applied by a stick tipped with bristles, hair, or fur. The emulsion flows from the applicator to form the desired object as the wielder concentrates on the desired image. One pot of Nolzur's Marvelous Pigments is sufficient to create a, 1,000 cubic foot object by depicting it 2 dimensionally over a 100 square foot surface. Thus, a 10' X 10' X 10' pit, or a 10' X 10 X 10 room, or a large door with a passage behind it, etc. can be created by application of the pigments. Note that only normal, inanimate things can be so created — doors, pits, flowers, trees, cells, etc.; not monsters, people, golems, and the like. The pigments must be applied to a surface, i.e. a floor, wall, ceiling, door, etc. From 1-4 containers of pigments will be found, usually with a single instrument about 1' long with which to apply them. It takes 1 turn to depict an object with pigments. Objects of value depicted by pigments — precious metals, gems, jewelry, ivory, etc. — will appear valuable but will be tin, lead, paste gems, brass, bone, etc. Normal (non-magical) armor or weapons can, of course, be created.
+
+Pearl of Wisdom: Although it appears to be a normal pearl, a pearl of wisdom will cause a cleric to increase 1 point in wisdom if he or she retains the pearl for a 1 month period. The increase happens at the expiration of 30 days, but thereafter the pearl must be retained by the cleric and kept on his or her person, or the 1 point gain will be lost. Note that 1 in 20 of these magical pearls are cursed to work in reverse, but once the 1 point of wisdom is lost, the pearl turns to powder, and the loss is permanent barring some magical restoration means such as a wish or Tome of Understanding.
+
+Periapt of Proof Against Poison: The periapt of proof against poison is indistinguishable from any of the other periapts. The character who has one of these magical gems is allowed a 10% saving throw against poisons which normally disallow any such opportunity, a normal score for poisons which usually are at penalty, and a plus on all other saves:
+
+|  Die Roll | Plus of Periapt  |
+| --- | --- |
+|  1-8 | +1  |
+|  9-14 | +2  |
+|  15-18 | +3  |
+|  19-20 | +4  |
+
+Roll once on this chart; when the periapt is found. Record the result as it is the permanent plus of the item.
+
+Philter of love: This potion is such as to cause the individual drinking it to become charmed (cf. charm spells) with the first creature seen after consuming the draught, or actually become enamoured and charmed if the creature is of similar race and of the opposite sex. Charming effects wear off in 4 + 1-4 turns, but the enamouring effects last until a dispel magic spell is cast upon the individual.
+
+Philter of Persuasiveness: When this potion is imbibed the individual becomes more charismatic. Thus, he or she gains a bonus of 25% on reaction dice rolls. The individual is also able to suggest (cf. the magic-user suggestion spell) once per turn to as many creatures as are within a range of 3" of him or her.
+
+33

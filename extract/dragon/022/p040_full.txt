@@ -1,0 +1,101 @@
+The Dragon
+
+ADVANCED DUNGEONS & DRAGONS®, ©1979, TSR GAMES
+
+Vol. III, No. 8
+
+### III. MATRIX FOR CLERICS AFFECTING UNDEAD ETAL
+
+|  Type of Undead | Level of Cleric Attempting to Turn  |   |   |   |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9-13 | 14+  |
+|  Skeleton | 10 | 7 | 4 | T | T | D | D | D* | D* | D*  |
+|  Zombie | 13 | 10 | 7 | T | T | D | D | D | D* | D*  |
+|  Ghoul | 16 | 13 | 10 | 4 | T | T | D | D | D | D*  |
+|  Shadow | 19 | 16 | 13 | 7 | 4 | T | T | D | D | D*  |
+|  Wight | 20 | 19 | 16 | 10 | 7 | 4 | T | T | D | D  |
+|  Ghost | — | 20 | 19 | 13 | 10 | 7 | 4 | T | T | D  |
+|  Wraith | — | — | 20 | 16 | 13 | 10 | 7 | 4 | T | D  |
+|  Mummy^{a} | — | — | — | 20 | 16 | 13 | 10 | 7 | 4 | T  |
+|  Spectre^{b} | — | — | — | — | 20 | 16 | 13 | 10 | 7 | T  |
+|  Vampire^{c} | — | — | — | — | — | 20 | 16 | 13 | 10 | 4  |
+|  Ghost^{d} | — | — | — | — | — | — | 20 | 16 | 13 | 7  |
+|  Lich^{e} | — | — | — | — | — | — | — | 19 | 16 | 10  |
+|  Special**f | — | — | — | — | — | — | — | 20 | 19 | 13  |
+
+* Number affected is 7-12 rather than 1-12.
+
+** Evil creatures from lower planes such as barghests, minor demons, lesser devils, mezzodaemons, night hags, from 1-2 in number. (As a rule of thumb, any creature with armor class of -5 or better, 11 or more hit dice, or 66% or greater magic resistance will be unaffected.)
+
+$^{a}$ A paladin of 1st or 2nd level can be turned by an evil cleric.
+
+$^{b}$ A paladin of 3rd or 4th level can be turned by an evil cleric.
+
+$^{c}$ A paladin of 5th or 6th level can be turned by an evil cleric.
+
+$^{d}$ A paladin of 7th or 8th level can be turned by an evil cleric.
+
+$^{e}$ A paladin of 9th or 10th level can be turned by an evil cleric.
+
+$^{f}$ A paladin of 11th or higher level can be turned by an evil cleric.
+
+Procedure: A d20 is rolled, and if the number shown is matched or exceeded by the die roll the undead are turned. From 1-12 (or 7-12 or 1-2) undead (or evil creatures from lower planes) are affected:
+
+1. Evil clerics cause the creatures to take neutral or friendly attitude according to a reaction dice score. Neutral undead will ignore the cleric and his or her party; friendly ones will follow the cleric and join the adventure.
+2. Good clerics cause the creature to move directly away from his or her person, and stay as far away as possible for not less than 3 nor more than 12 rounds, moving at full speed for the duration if at all possible. The turned undead will be able to come back again, but they are subject to further turning by the cleric.
+
+Failure to score the number shown, or greater, means the turning was unsuccessful. No further attempt by the cleric can be made with respect to the particular undead, and they may proceed to attack or otherwise operate unconstrained.
+
+T: This symbol indicates automatic turning — whether to influence by an evil cleric or actual driving away by a good cleric.
+
+D: This symbol indicates the cleric has automatically brought the undead into friendly status (evil cleric) or destroyed or damned them (good cleric).
+
+—: No effect upon the undead is possible where a dash is shown.
+
+### IV.A. PSIONIC VS. PSIONIC IN MENTAL COMBAT
+
+|  Total Psionic Strength | Attack Mode | Mind Blank_{1} | Defense Mode  |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- |
+|   |   |   |  Thought Shield_{2} | Mental Barrier_{3} | Intellect Fortress_{8} | Tower of Iron Will_{10}  |
+|  01 | Psionic Blast_{20} | 3 | 7 | 4 | 1 | 0  |
+|   |  Mind Thrust_{4} | 12 | 4 | 0 | 0 | 1  |
+|  to | Ego Whip_{7} | 8 | 3 | 0 | 0 | 0  |
+|  25 | Id Insinuation_{10} | 1 | 6 | 8 | 1 | 1  |
+|   |  Psychic Crush_{14} | 2% | — | — | — | —  |
+|  26 | Psionic Blast_{20} | 6 | 9 | 6 | 2 | 0  |
+|   |  Mind Thrust_{4} | 15 | 6 | 1 | 0 | 2  |
+|  to | Ego Whip_{7} | 12 | 4 | 0 | 0 | 0  |
+|  50 | Id Insinuation_{10} | 2 | 8 | 10 | 3 | 3  |
+|   |  Psychic Crush_{14} | 5% | 2% | 1% | — | —  |
+|  51 | Psionic Blast_{20} | 10 | 12 | 9 | 4 | 1  |
+|   |  Mind Thrust_{4} | 18 | 9 | 2 | 2 | 3  |
+|  to | Ego Whip_{7} | 17 | 6 | 1 | 1 | 1  |
+|  75 | Id Insinuation_{10} | 4 | 11 | 13 | 7 | 6  |
+|   |  Psychic Crush_{14} | 9% | 4% | 2% | 1% | —  |
+|  76 | Psionic Blast_{20} | 15 | 16 | 13 | 7 | 2  |
+|   |  Mind Thrust_{4} | 22 | 13 | 5 | 4 | 5  |
+|  to | Ego Whip_{7} | 23 | 9 | 3 | 2 | 3  |
+|  100 | Id Insinuation_{10} | 7 | 15 | 17 | 12 | 10  |
+|   |  Psychic Crush_{14} | 14% | 7% | 5% | 3% | 2%  |
+|  101 | Psionic Blast_{20} | 21 | 21 | 18 | 11 | 4  |
+|   |  Mind Thrust_{4} | 26 | 18 | 9 | 7 | 8  |
+|  to | Ego Whip_{7} | 30 | 13 | 6 | 4 | 6  |
+|  125 | Id Insinuation_{10} | 11 | 20 | 22 | 18 | 15  |
+|   |  Psychic Crush_{14} | 20% | 11% | 9% | 6% | 4%  |
+|  126 | Psionic Blast_{20} | 28 | 27 | 24 | 16 | 7  |
+|   |  Mind Thrust_{4} | 30 | 24 | 16 | 11 | 12  |
+|  & up | Ego Whip_{7} | 38 | 18 | 10 | 7 | 10  |
+|   |  Id Insinuation_{10} | 16 | 26 | 28 | 25 | 21  |
+|   | Psychic Crush_{14} | 27% | 16% | 14% | 10% | 7%  |
+
+Total Psionic Strength is the attackers attack and defense point strength total prior to the subtraction of attack points for the current attack segment and defense points for the current defense mode for that same segment. (These points, along with losses, if any, are taken only at the end of the segment.) ALL ATTACKS AND DEFENSES ARE SIMULTANEOUS.
+
+The Attack Mode is compared to the Defense Mode, reading across, and a result is obtained.
+
+Numbers indicate the number of points of defense strength lost by the defender.
+
+Psychic Crush shows the percentage chance of instantly killing the opponent. Any score above that shown for the defensive mode used indicates no effect. A dash indicates no possible chance of causing instant death.
+
+40
+
+Notes Continued on Next Page.

@@ -28859,6 +28859,31 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   Sullin levels 7-9 and the brawling sequel print nowhere - both ride to
   TD 22. Next: R945 the pure flip closing both report-021 boxes, issues
   2-21 all closed at the flip. WAIT FOR GO.
+  - R945 LANDED (b6a476c, d21, 35 inline, pure flip, no new ink): The Dragon
+  issue-21 box closing round, the seven-chain walk complete. BOTH report-021
+  boxes flipped in ONE round (gap_census 2 closed 0 open): the issue-21
+  opener chains part one (the R943 twenty-NPC personality grid, the
+  spell-research doctrine, the foretelling-spell counters) and part two (the
+  R944 gold-piece inflation doctrine, the natural-history monster doctrine,
+  the Hall of Mystery, the M-U titles kit). ISSUES 2-21 ALL CLOSED - the
+  fifth three-round issue shape. 35 inline bookkeeping only (20 consts + 15
+  bools mirroring the R942 d2c closer: d21IssueTwentyOneBoxes=2, chains=7,
+  rounds=3; issue-closed consts 7 through 20, issue 20 marked closed since
+  the R942 d2c flip; registry 1313/1338/25 unchanged; walk-complete bools 7
+  through 21), no tables, no data files; header rules/d21.h (prefix d21
+  verified free at 631da4d full-repo scan), audit rules/audits/r945_batch.h
+  R945 Dragon issue-21 closure audit, 3 examples. No new print catches at
+  the flip - all issue-21 quirks rode the two opener records. Registry
+  ground truth unchanged: 1313 loaded / 1338 base lua / 25 never-load (R924
+  re-measure). Census 867->868; rverify GREEN 35 mutants 0 missed;
+  round-trip 15115 bytes md5 f4e30db03f44cc4b89b29d4a7d1af446, byte-exact at
+  b6a476c (fresh tarball re-run applied 0 already 7; the builder wrote the
+  trailing newline itself, so the landed spec is byte-identical to the
+  canvas body at the same 15115 bytes, no user-save +1, as at R944).
+  WATCHES STILL EMPTY: the Sullin levels 7-9 and the brawling sequel print
+  nowhere through issue 21 - both ride to TD 22. Next: the Dragon Magazine
+  walk continues with Curtiss call - the next scan upload (issue 22 or
+  another issue) opens the next issue round the same intake. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

@@ -1,0 +1,133 @@
+The Dragon
+
+Vol. III, No. 8
+
+ADVANCED DUNGEONS & DRAGONS®, ©1979, TSR GAMES
+
+# IV.C. PSIONIC BLAST ATTACK UPON NON-PSIONIC CREATURE
+
+|  Attacked Creature's Total Intelligence & Wisdom** | Saving Throw at Attack Range |   |   | Result if Saving Throw is not Successful  |
+| --- | --- | --- | --- | --- |
+|   |  Short | Medium | long  |   |
+|  0-5 | 20 | 19 | 18 | death  |
+|  6-9 | 18 | 17 | 16 | coma, 2-12 days  |
+|  10-13 | 16 | 15 | 14 | sleep, 5-20 turns  |
+|  14-17 | 14 | 13 | 12 | stun, 2-8 turns  |
+|  18-21 | 12 | 11 | 10 | confuse, 1-4 turns  |
+|  22-25 | 10 | 9 | 8 | enrage, 2-8 rounds  |
+|  26-29 | 8 | 7 | 6 | panic, 2-8 rounds  |
+|  30-33 | 6 | 5 | 4 | feeblemind  |
+|  34-35 | 4 | 3 | 2 | permanent insanity  |
+|  36-37 | 2 | 1 | 0 | Insanity, 2-12 weeks  |
+|  38 & up | 0 | -1 | -2 | Insanity, 1-4 weeks  |
+
+# Saving Throw Dice Adjustments
+
+|  Additions |   | Subtractions  |   |
+| --- | --- | --- | --- |
+|  magic-user | +1 | panicked | -1  |
+|  cleric | +2 | enraged | -1  |
+|  elf | +2 | confused | -2  |
+|  Intellect fortress in 10' | +2 | hopeless | -3  |
+|  mind blank spell | +2 | stunned | -3  |
+|  dwarf | +4 | using psionic related power* | -4  |
+|  halfling | +4 | using ESP device | -5  |
+|  helm of telepathy† | +4 | feebleminded | **  |
+|  tower of iron will in 3' | +6 | insane | ***  |
+|  mind bar | +6 |  |   |
+
+†The helm of telepathy will cause the attacker to be stunned for 1-4 rounds if the defender's saving throw is successful
+
+* These powers or spells are:
+
+|  astral projection/spell | feign death  |
+| --- | --- |
+|  augury | grow  |
+|  charm monster | Invisibility (any sort)  |
+|  charm person | know alignment  |
+|  clairaudience | levitation  |
+|  clairvoyance | locate object  |
+
+|  confusion | magic jar  |
+| --- | --- |
+|  detect evil/good | plane shift  |
+|  detect magic | polymorph self  |
+|  dimension door | quest  |
+|  divination | shape change  |
+|  empathy | suggestion  |
+|  enlarge | symbol  |
+|  ESP | telekinesis  |
+|  etherealness | telempathy  |
+|  feeblemind | teleportation  |
+|   | true seeing  |
+
+** A feebleminded person has a combined intelligence and wisdom score of 0-5.
+
+*** Insane creatures cannot be psionically attacked
+
+# IV.D. PSIONIC ATTACK RANGES AND DAMAGE ADJUSTMENT
+
+|  Attack Mode | Attack Range  |   |   |
+| --- | --- | --- | --- |
+|   |  Short | Medium | long  |
+|  A. Psionic Blast | 2" | 4" | 6"  |
+|  B. Mind Thrust | 3" | 6" | 9"  |
+|  C. Ego Whip | 4" | 8" | 12"  |
+|  D. Id Insinuation | 6" | 12" | 18"  |
+|  E. Psychic Crush | 5" | — | —  |
+
+Attacks in series add 50% to range for each psionic linked, i.e. 2=200% of range, 3=250% of range, etc. Expenditure of double or treble points by an individual will double or treble range of attack modes B, C, or D.
+
+|  Attack Mode | Area of Effect  |
+| --- | --- |
+|  A. Psionic Blast | ½" base, 6" length, 2" terminus cone  |
+|  B. Mind Thrust | 1 creature  |
+|  C. Ego Whip | 1 creature  |
+|  D. Id Insinuation | 2" x 2" area within range  |
+|  E. Psychic Crush* | 1 creature  |
+
+* User may use only defense mode G, Thought Shield.
+
+Medium range attacks reduce damage by 20%, fractions rounded up.
+
+Long range attacks reduce the attacker's effective total psionic strength by one category (25 points) and reduce damage by 20%, fractions rounded up. If the attacker is already in the 01-25 strength range, damage is reduced 50%, fractions being dropped.
+
+# I. SAVING THROW MATRIX FOR CHARACTERS AND HUMAN TYPES
+
+|  Attack to be Saved Against  |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- |
+|  Character Class and Experience Level | Poison or Death Magic | Petrifaction or Polymorph* | Rod, Staff or Wand | Breath Weapon** | Spell***  |
+|  Clerics^{a} |  |  |  |  |   |
+|  1-3 | 10 | 13 | 14 | 16 | 15  |
+|  4-6 | 9 | 12 | 13 | 15 | 14  |
+|  7-9 | 7 | 10 | 11 | 13 | 12  |
+|  10-12 | 6 | 9 | 10 | 12 | 11  |
+|  13-15 | 5 | 8 | 9 | 11 | 10  |
+|  16-18 | 4 | 7 | 8 | 10 | 9  |
+|  19+ | 2 | 5 | 6 | 8 | 7  |
+|  Fighters^{b} |  |  |  |  |   |
+|  0 | 16 | 17 | 18 | 20 | 19  |
+|  1-2 | 14 | 15 | 16 | 17 | 17  |
+|  3-4 | 13 | 14 | 15 | 16 | 16  |
+|  5-6 | 11 | 12 | 13 | 13 | 14  |
+|  7-8 | 10 | 11 | 12 | 12 | 13  |
+|  9-10 | 8 | 9 | 10 | 9 | 11  |
+|  11-12 | 7 | 8 | 9 | 8 | 10  |
+|  13-14 | 5 | 6 | 7 | 5 | 8  |
+|  15-16 | 4 | 5 | 6 | 4 | 7  |
+|  17+ | 3 | 4 | 5 | 4 | 6  |
+|  Magic-Users^{c} |  |  |  |  |   |
+|  1-5 | 14 | 13 | 11 | 15 | 12  |
+|  6-10 | 13 | 11 | 9 | 13 | 10  |
+|  11-15 | 11 | 9 | 7 | 11 | 8  |
+|  16-20 | 10 | 7 | 5 | 9 | 6  |
+|  21+ | 8 | 5 | 3 | 7 | 4  |
+|  Thieves^{d} |  |  |  |  |   |
+|  1-4 | 13 | 12 | 14 | 16 | 15  |
+|  5-8 | 12 | 11 | 12 | 15 | 13  |
+|  9-12 | 11 | 10 | 10 | 14 | 11  |
+|  13-16 | 10 | 9 | 8 | 13 | 9  |
+|  17-20 | 9 | 8 | 6 | 12 | 7  |
+|  21+ | 8 | 7 | 4 | 11 | 5  |
+
+42

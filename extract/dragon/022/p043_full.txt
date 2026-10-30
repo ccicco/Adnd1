@@ -1,0 +1,100 @@
+February, 1979
+
+The Dragon
+
+ADVANCED DUNGEONS & DRAGONS®, ©1979, TSR GAMES
+
+# SAVING THROW MATRICES
+
+I. Saving Throw Matrix for Characters and Human Types
+II. Saving Throw Matrix for Monsters
+III. Saving Throw Matrix for Magical and Non-Magical Items
+
+* Excluding polymorph wand attacks.
+
+**Excluding those which cause petrifaction or polymorph.
+
+***Excluding those for which another saving throw type is specified, such as death, petrifaction, polymorph, etc.
+
+a Includes Druids.
+b Includes Paladins, Rangers, and 0 level types.
+c Includes Illusionists.
+d Includes Assassins and Monks.
+
+N.B.: A roll of 1 is always failure, regardless of magical protections, spells, or any other reasons which indicate to the contrary.
+
+Multi-class characters, characters with two classes, and bards check the matrix for each class possessed, and use the most favorable result for the type of attack being defended against.
+
+# II. SAVING THROW MATRIX FOR MONSTERS
+
+# A. All monsters use the matrix for characters.
+
+B. Hit dice equate to Experience Level, with any plus in hit points moving the creature upwards by one hit die, so \(1 + 1\) becomes 2, \(2 + 1\) becomes 3, etc. (Exception: See D. below.)
+C. Most monsters save as fighters, except:
+
+1. Those with abilities of other character classes gain the benefit of the most favorable saving throw score, i.e. be it cleric or magic-user or thief.
+2. Those with no real offensive fighting capabilities save according to their area of ability-cleric, magic-user, thief, etc.
+
+D. Non-intelligent creatures save at an Experience Level equal to one-half their hit dice, rounded upwards, except with regard to poison or death magic.
+
+# III. SAVING THROW MATRIX FOR MAGICAL AND NON-MAGICAL ITEMS
+
+Attack Form & Number
+
+|  Item Description | a c i d | cr b l o w | nor b l o w | d i s | f a l l | f i r e b | mag f i r e | nor f i r e | f r o s t | l t n g | e l e c  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11  |
+|  Bone or Ivory | 11 | 16 | 10 | 20 | 6 | 17 | 9 | 3 | 2 | 8 | 1  |
+|  Ceramic | 4 | 18 | 12 | 19 | 11 | 5 | 3 | 2 | 4 | 2 | 1  |
+|  Cloth | 12 | 6 | 3 | 20 | 2 | 20 | 16 | 13 | 1 | 18 | 1  |
+|  Crystal or Vial | 6 | 19 | 14 | 20 | 13 | 10 | 6 | 3 | 7 | 15 | 5  |
+|  Glass | 5 | 20 | 15 | 20 | 14 | 11 | 7 | 4 | 6 | 17 | 1  |
+|  Leather or Book | 10 | 4 | 2 | 20 | 1 | 13 | 6 | 4 | 3 | 13 | 1  |
+|  Liquid* | 15 | 0 | 0 | 20 | 0 | 15 | 14 | 13 | 12 | 18 | 15  |
+|  Metal, hard | 7 | 6 | 2 | 17 | 2 | 6 | 2 | 1 | 1^{a} | 11 | 1  |
+|  Metal, soft or Jewelry** | 13 | 14 | 9 | 19 | 4 | 18 | 13 | 5 | 1 | 16 | 1  |
+|  Mirror*** | 12 | 20 | 15 | 20 | 13 | 14 | 9 | 5 | 6 | 18 | 1  |
+|  Parchment or Paper | 16 | 11 | 6 | 20 | 0 | 25 | 21 | 18 | 2 | 20 | 1  |
+|  Stone, small or Gem | 3 | 17 | 7 | 18 | 4 | 7 | 3 | 2 | 1 | 14 | 2  |
+|  Wood or Rope, thin | 9 | 13 | 6 | 20 | 2 | 15 | 11 | 9 | 1 | 10 | 1  |
+|  Wood or Rope, thick | 8 | 10 | 3 | 19 | 1 | 11 | 7 | 5 | 1 | 12 | 1  |
+
+*Potions, magical oils, poisons, acids while container remains intact.
+
+** Includes pearls of any sort.
+
+***Silvered glass. Treat silver mirror as "Metal, soft," steel as "Metal, hard."
+
+a If exposed to extreme cold then struck against a very hard surface with farce, saving throw is -10 an die!
+
+Magical items: Gain +2 on all rolls plus +1 for each plus they have above +1, i.e. +1 = +2 on saving throw, +2 = +3 on saving throw. Furthermore, the magic item gains +5 on saving throws against attack forms in its own mode, i.e. blow vs. shield, fire ball vs. ring of fire resistance or fire ball wand.
+
+Non-Magical Items: Those items which do not exactly conform to item descriptions above can be interpolated. It is assumed that the item in question is actually exposed to the form of attack, i.e. the blow falls on the item, the fall is such as to not cushion the item, the fire actually contacts the item, etc. As with magical items, non-magical items gain +5 versus attacks in their own mode.
+
+# Attack Forms
+
+1. Acid
+2. Blow, Crushing
+3. Blow, Normal
+4. Disintegration
+5. Fall
+6. Fireball (or breath)
+7. Fire, Magical
+8. Fire, Normal (oil)
+9. Frost, Magical
+10. Lightning Bolt
+11. Electrical Discharge/Current
+
+1. Acid: This assumes a considerable volume of strong acid (black dragon or giant slug spittle) or immersion for a period which would affect the item.
+2. Blow, Crushing: This assumes that the item is stuck by a weighty falling object or a blow from an age's or giant's weapon, for example. Another example would be a (ceramic) flask of oil or a (crystal or glass) vial of holy water hurled against a hard surface or dropped from a height. A piece of cloth can be ripped or torn by a crushing blow.
+3. Blow, Normal: This assumes an attack by a normal-strength opponent or only fairly heavy object which strikes the object. This also applies to a (ceramic) flask of oil or a (crystal or glass) vial of holy water hurled against a tough, but slightly yielding, surface.
+4. Disintegration: This is the magical effect.
+5. Fall: This assumes the item falls about 5' and comes into contact with a hard (stone-like) surface. A softer surface (wood-like) gives a +1 on the saving throw, and a fleshy-soft surface gives +5. For each 5' over the first 5' the item falls, subtract -1 from the die roll to save.
+6. Fireball: This is the magical fireball, meteor swarm, (red) dragon breath, etc.
+7. Fire, Magical: This is the magical wall of fire, fire storm, flame strike, etc.
+8. Fire, Normal: This assumes a hot fire such as produced by a blazing wood fire, flaming oil, and the like. The item in question would have to be exposed to the fire for an amount of time sufficient to have an effect, i.e. paper or parchment for but 1 melee round, cloth for 2, bone or ivory for 3, etc.
+9. Frost, Magical: This is the magical frost or cold such as a white-dragon breathes or spells such as cone of cold or ice storm.
+10. Lightning Bolt: This is magical attack from lightning called from the sky, blue dragon breath, etc.
+11. Electrical Discharge/Current: The "shock" of an electric eel, magical items, traps, etc.
+
+4 3

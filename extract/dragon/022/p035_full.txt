@@ -1,0 +1,129 @@
+February, 1979
+
+The Dragon
+
+ADVANCED DUNGEONS & DRAGONS®, ©1979, TSR GAMES
+
+Potion of Water Breathing: It is 75% likely that a water breathing potion will contain two doses, 25% probable that there will be four in the container. The elixir allows the character drinking it to breathe normally in liquids which contain oxygen suspended within them. This ability lasts for one full hour per dose of potion quaffed, with an additional 1-10 rounds (minutes) variable. Thus, a character who has consumed a water breathing potion could enter the depths of a river, lake, or even the ocean and not drown while the magical effects of the potion persisted.
+
+Ring of Elemental Command: The 4 types of elemental command rings are very powerful. Each appears to be nothing more than a lesser ring (detailed below), but each has certain other powers as well as the following common properties:
+
+1. Elementals of the plane to which the ring is attuned cannot approach within 5' of or attack the wearer; or, if the wearer desires, he or she may forego this protection and instead attempt to charm the elemental (saving throw applicable at -2 on the die). If the latter fails, however, total protection from that elemental is lost and no further attempt at charming it can be made, but the secondary properties given below will then function with respect to the elemental.
+2. Creatures, other than normal elementals, from the plane to which the ring is attuned attack at -1 on their "to hit" dice, the ring wearer takes damage at -1 on each hit die, makes applicable saving throws from the creature's attacks at +2, all attacks are made by the wearer of the ring at +4 "to hit" (or -4 on the elemental creature's saving throw), and the wearer does +6 damage (total, not per die) adjusted by any other applicable bonuses and/or penalties. Any weapon used by the ring wearer can hit elementals or elemental creatures of the plane to which the ring is attuned even if it is not magical.
+3. The wearer of the ring is able to converse with the elementals or elemental creatures of the plane to which the ring is attuned, and they will recognize that he or she wears the ring, so they are at least going to show a healthy respect to the wearer. If alignment is opposed, this respect will be fear if the wearer is strong, hatred and a desire to slay if the wearer is weak.
+
+—Air: The wearer can at will produce the following magical effects:
+
+gust of wind (once per round)
+
+fly
+
+wall of force (once per day)
+
+control winds (once per week)
+
+invisibility
+
+The ring will appear to be nothing other than an invisibility ring until a certain condition is met (such as having the ring blessed, slaying an air elemental, or whatever the DM determines as necessary to activate its full potential).
+
+—Earth: The wearer can at will produce the following magical effects:
+
+stone tell (once per day)
+
+passwall (twice per day)
+
+wall of stone (once per day)
+
+stone to flesh (twice per week)
+
+move earth (once per week)
+
+feather fall
+
+The ring will appear to be nothing other than a ring of feather falling until the condition you establish is met.
+
+—Fire: The wearer can at will produce the following magical effects:
+
+burning hands (once per turn)
+
+pyrotechnics (twice per day)
+
+wall of fire (once per day)
+
+flame strike (twice per week)
+
+fire resistance
+
+The ring will appear to be nothing other than a ring of fire resistance until the condition you establish is met.
+
+—Water: The wearer can at will produce the following magical effects:
+
+purify water
+
+create water (once per day)
+
+water breathing (5' radius)
+
+wall of ice (once per day)
+
+airy water
+
+lower water (twice per week)
+
+part water (twice per week)
+
+water walking
+
+The ring will appear to be nothing other than a ring of water walking until the condition you establish is met.
+
+Rings operate at 10th level of experience, or the minimum level needed to perform the equivalent magic spell, if greater, with respect to range, duration, or area of effect determinations which might apply. The additional powers take only 5 segments to bring forth.
+
+In addition, the possessor of a ring of elemental command will suffer a saving throw penalty, as follows:
+
+—Air: -2 vs. electrical/lightning attacks
+
+—Earth: -2 vs. petrification
+
+—Fire: -2 vs. cold attacks
+
+—Water: -2 vs. fire attacks
+
+Scrolls of Protection: Protection scrolls can be read by any class or race of character without using a read magic spell.
+
+Protection from Demons: This scroll requires 1 full round to read if it is to protect against demon lords and princes only, 7 segments to protect against Types IV-VI and Succubi only, and 3 segments to protect against Types I-III and Manes only. The reading must be continuous until the desired effect is achieved, and any 1 segment pause in reading destroys the scroll. Each of the three levels of effect is exclusive of the others. The circle of protection generated springs outwards from the scroll reader in a 10' radius. No demon protected against con penetrate the circle physically or magically in any way, though they may launch (non-magical) missile attacks, and the person(s) within can launch attacks, if otherwise possible, upon the demons. The protection moves with the reader of the scroll. Its effect lasts for 5-20 rounds.
+
+Protection from Devils: This scroll is nearly identical to the protection from demons scroll. It requires 1 round to read if it is to protect against arch-devils only, 7 segments to protect against greater devils only, and 3 segments to protect against lesser devils and Lemures only.
+
+Protection from Elementals: Reading time: 6 segments. There are 5 varieties of this scroll:
+
+01-15 Protection from Air Elementals
+
+16-30 Protection from Earth Elementals
+
+31-45 Protection from Fire Elementals
+
+46-60 Protection from Water Elementals
+
+61-00 Protection from All Elementals
+
+The magic protects the reader and all within 10' of him or her from the kind of elemental noted, as well as elemental creatures of the same, or all, planes. The circle of protection is effective against a maximum of 24 hit dice of elemental creatures if the scroll is of a specific elemental type. 16 hit dice if it is against all sorts of elementals. The spell lasts for 5-40 rounds. Attack out of the circle is possible, as is attack into it by any elemental creature with more hit dice than are protected against or by several elemental creatures — those in excess of the protected number of hit dice being able to enter and attack.
+
+Protection from Lycanthropes: Reading time: 4 segments. There are 7 types of this scroll:
+
+01-05 Protection from Werebears
+
+06-10 Protection from Wereboars
+
+11-20 Protection from Wererats
+
+21-25 Protection from Weretigers
+
+26-40 Protection from Werewolves
+
+41-98 Protection from all Lycanthropes
+
+99-00 Protection from Shape-Changers
+
+The magic circle from the reading of the scroll extends in a 10' radius. It moves with the person who read the scroll. Each scroll protects against 49 hit dice of lycanthropes, rounding all hit point plusses downwards unless they exceed +2. The protection is otherwise similar to that against elementals. The protection from shape-changers scroll protects against monsters able to change their form to that of man; i.e. doppelgangers and jackolwere as well as actual lycanthropes. The magic lasts for 5-30 rounds.
+
+35

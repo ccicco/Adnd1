@@ -1,0 +1,96 @@
+The Dragon
+
+Vol. III, No. 8
+
+ADVANCED DUNGEONS & DRAGONS®, ©1979, TSR GAMES
+
+I.D.1. ATTACK MATRIX FOR THIEVES, ASSASSINS, AND MONKS
+
+Missiles: -5 at long range, -2 at medium range.
+
+a Thieves and assassins double damage from a surprise back stab.
+b Thieves and assassins triple damage from surprise back stab.
+c Thieves and assassins quadruple damage from a surprise back stab.
+d Thieves and assassins quintuple damage from surprise back stab.
+
+|  Opponent Armor Class | 20-sided Die Score to Hit by Level of Attacker  |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- |
+|   |  1-4^{a} | 5-8^{b} | 9-12^{c} | 13-16^{d} | 17-20^{e} | 21+^{d}  |
+|  -10 | 26 | 24 | 21 | 20 | 20 | 20  |
+|  -9 | 25 | 23 | 20 | 20 | 20 | 19  |
+|  -8 | 24 | 22 | 20 | 20 | 20 | 18  |
+|  -7 | 23 | 21 | 20 | 20 | 19 | 17  |
+|  -6 | 22 | 20 | 20 | 20 | 18 | 16  |
+|  -5 | 21 | 20 | 20 | 19 | 17 | 15  |
+|  -4 | 20 | 20 | 20 | 18 | 16 | 14  |
+|  -3 | 20 | 20 | 19 | 17 | 15 | 13  |
+|  -2 | 20 | 20 | 18 | 16 | 14 | 12  |
+|  -1 | 20 | 20 | 17 | 15 | 13 | 11  |
+|  0 | 20 | 19 | 16 | 14 | 12 | 10  |
+|  1 | 20 | 18 | 15 | 13 | 11 | 9  |
+|  2 | 19 | 17 | 14 | 12 | 10 | 8  |
+|  3 | 18 | 16 | 13 | 11 | 9 | 7  |
+|  4 | 17 | 15 | 12 | 10 | 8 | 6  |
+|  5 | 16 | 14 | 11 | 9 | 7 | 5  |
+|  6 | 15 | 13 | 10 | 8 | 6 | 4  |
+|  7 | 14 | 12 | 9 | 7 | 5 | 3  |
+|  8 | 13 | 11 | 8 | 6 | 4 | 2  |
+|  9 | 12 | 10 | 7 | 5 | 3 | 1  |
+|  10 | 11 | 9 | 6 | 4 | 2 | 0  |
+
+I.D.2. ASSASSINS TABLE FOR ASSASSINATIONS*
+
+|  level of the Assassin | Level of the intended Victim  |   |   |   |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  0-1 | 2-3 | 4-5 | 6-7 | 8-9 | 10-11 | 12-13 | 14-15 | 16-17 | 18+  |
+|  1 | 50% | 45% | 35% | 25% | 10% | 1% | — | — | — | —  |
+|  2 | 55% | 50% | 40% | 30% | 15% | 2% | — | — | — | —  |
+|  3 | 60% | 55% | 45% | 35% | 20% | 5% | — | — | — | —  |
+|  4 | 65% | 60% | 50% | 40% | 25% | 10% | 1% | — | — | —  |
+|  5 | 70% | 65% | 55% | 45% | 30% | 15% | 5% | — | — | —  |
+|  6 | 75% | 70% | 60% | 50% | 35% | 20% | 10% | 1% | — | —  |
+|  7 | 80% | 75% | 65% | 55% | 40% | 25% | 15% | 5% | — | —  |
+|  8 | 85% | 80% | 70% | 60% | 45% | 30% | 20% | 10% | 2% | —  |
+|  9 | 95% | 90% | 80% | 70% | 55% | 40% | 30% | 20% | 5% | —  |
+|  10 | 99% | 95% | 85% | 75% | 60% | 45% | 35% | 25% | 10% | 1%  |
+|  11 | 100% | 99% | 90% | 80% | 65% | 50% | 40% | 30% | 15% | 5%  |
+|  12 | 100% | 100% | 95% | 85% | 70% | 55% | 45% | 35% | 20% | 10%  |
+|  13 | 100% | 100% | 99% | 95% | 80% | 65% | 50% | 40% | 25% | 15%  |
+|  14 | 100% | 100% | 100% | 99% | 90% | 75% | 60% | 50% | 35% | 25%  |
+|  15 | 100% | 100% | 100% | 100% | 99% | 85% | 70% | 60% | 40% | 30%  |
+
+The percentage shown is that for success under near optimum conditions. You may adjust slightly upwards for perfect conditions (absolute trust, asleep and unguarded, very drunk and unguarded, etc.). Similarly, you must deduct points if the intended victim is wary, takes precautions, and/or is guarded. If the assassination is being attempted by or in behalf of a player character a complete plan of how the deed is to be done should be prepared by the player involved, and the precautions, if any, of the target character should be compared against the plan. Weapon damage always occurs and may kill the victim even though "assassination" failed.
+*Or attacks on helpless opponents by any character class (see COMBAT section).
+
+II. ATTACK MATRIX FOR MONSTERS (Including Goblins, Hobgoblins, Kobolds, and Orcs)
+
+|  Opponent Armor Class | 20-sided Die Score to Hit by Monster's Hit Dice Number  |   |   |   |   |   |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  up to 1-1 | 1-1 | 1 | 1+ | 2-3+ | 4-5+ | 6-7+ | 8-9+ | 10-11+ | 12-13+ | 14-15+ | 16+  |
+|  -10 | 26 | 25 | 24 | 23 | 21 | 20 | 20 | 20 | 20 | 19 | 18 | 17  |
+|  -9 | 25 | 24 | 23 | 22 | 20 | 20 | 20 | 20 | 19 | 18 | 17 | 16  |
+|  -8 | 24 | 23 | 22 | 21 | 20 | 20 | 20 | 20 | 18 | 17 | 16 | 15  |
+|  -7 | 23 | 22 | 21 | 20 | 20 | 20 | 20 | 19 | 17 | 16 | 15 | 14  |
+|  -6 | 22 | 21 | 20 | 20 | 20 | 20 | 19 | 18 | 16 | 15 | 14 | 13  |
+|  -5 | 21 | 20 | 20 | 20 | 20 | 20 | 18 | 17 | 15 | 14 | 13 | 12  |
+|  -4 | 20 | 20 | 20 | 20 | 20 | 19 | 17 | 16 | 14 | 13 | 12 | 11  |
+|  -3 | 20 | 20 | 20 | 20 | 19 | 18 | 16 | 15 | 13 | 12 | 11 | 10  |
+|  -2 | 20 | 20 | 20 | 20 | 18 | 17 | 15 | 14 | 12 | 11 | 10 | 9  |
+|  -1 | 20 | 20 | 20 | 19 | 17 | 16 | 14 | 13 | 11 | 10 | 9 | 8  |
+|  0 | 20 | 20 | 19 | 18 | 16 | 15 | 13 | 12 | 10 | 9 | 8 | 7  |
+|  1 | 20 | 19 | 18 | 17 | 15 | 14 | 12 | 11 | 9 | 8 | 7 | 6  |
+|  2 | 19 | 18 | 17 | 16 | 14 | 13 | 11 | 10 | 8 | 7 | 6 | 5  |
+|  3 | 18 | 17 | 16 | 15 | 13 | 12 | 10 | 9 | 7 | 6 | 5 | 4  |
+|  4 | 17 | 16 | 15 | 14 | 12 | 11 | 9 | 8 | 6 | 5 | 4 | 3  |
+|  5 | 16 | 15 | 14 | 13 | 11 | 10 | 8 | 7 | 5 | 4 | 3 | 2  |
+|  6 | 15 | 14 | 13 | 12 | 10 | 9 | 7 | 6 | 4 | 3 | 2 | 1  |
+|  7 | 14 | 13 | 12 | 11 | 9 | 8 | 6 | 5 | 3 | 2 | 1 | 0  |
+|  8 | 13 | 12 | 11 | 10 | 8 | 7 | 5 | 4 | 2 | 1 | 0 | -1  |
+|  9 | 12 | 11 | 10 | 9 | 7 | 6 | 4 | 3 | 1 | 0 | -1 | -2  |
+|  10 | 11 | 10 | 9 | 8 | 6 | 5 | 3 | 2 | 0 | -1 | -2 | -3  |
+
+Note: Any plus above +3 equals another hit die, i.e. 6+6 equals 7 hit dice.
+
+Missiles: -5 at long range, -2 at medium range.
+
+38

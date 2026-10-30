@@ -1,0 +1,83 @@
+February, 1979
+
+ADVANCED DUNGEONS & DRAGONS®, ©1979, TSR GAMES
+
+The Dragon
+
+When both sides have attacked once and defended once the psionic combat segment is over. All points of strength expended in attacking and defending are totaled separately, points lost due to attack are added, and a new Total Psionic Strength is determined for each side. EXCEPTION: If a psychic crush succeeds, the defender is dead, and adjustments are made only for the victor's strength.
+
+Note: The subscripted numbers following the names of the attack and defense modes (as in Psionic Blast₂₀) are the costs, in attack or defense points respectively, of using the modes.
+
+# IV.B. PSIONIC ATTACK UPON DEFENSELESS PSIONIC
+
+|  Current Attack Strength & Attack Mode | Defender's Psionic Strength Total  |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  10-59 | 60-109 | 110-159 | 160-209 | 210-269 | 260-309 | 310+  |
+|  01-25 |  |  |  |  |  |  |   |
+|  Psionic Blast | D | C | C | 15 | 10 | 5 | 5  |
+|  Mind Thrust | W | W | 40 | 35 | 30 | 25 | 20  |
+|  Ego Whip | 30 | 25 | 20 | 15 | 10 | 5 | 5  |
+|  Id Insinuation | 40 | 35 | 30 | 25 | 20 | 15 | 10  |
+|  Psychic Crush | 72% | 60% | 50% | 40% | 30% | 20% | 10%  |
+|  26-50 |  |  |  |  |  |  |   |
+|  Psionic Blast | S | D | C | C | 15 | 10 | 5  |
+|  Mind Thrust | W | W | W | 40 | 35 | 30 | 25  |
+|  Ego Whip | 35 | 30 | 25 | 20 | 15 | 10 | 5  |
+|  Id Insinuation | R | 40 | 35 | 30 | 25 | 20 | 15  |
+|  Psychic Crush | 75% | 62% | 52% | 42% | 32% | 22% | 12%  |
+|  51-75 |  |  |  |  |  |  |   |
+|  Psionic Blast | W | S | D | C | C | 15 | 10  |
+|  Mind Thrust | P | W | W | W | 40 | 35 | 30  |
+|  Ego Whip | 40 | 35 | 30 | 25 | 20 | 15 | 10  |
+|  Id Insinuation | R | R | 40 | 35 | 30 | 25 | 20  |
+|  Psychic Crush | 79% | 65% | 55% | 45% | 35% | 25% | 15%  |
+|  76-100 |  |  |  |  |  |  |   |
+|  Psionic Blast | P | W | S | D | C | C | 15  |
+|  Mind Thrust | P | P | W | W | W | 40 | 35  |
+|  Ego Whip | P | 40 | 35 | 30 | 25 | 20 | 15  |
+|  Id Insinuation | R | R | R | 40 | 35 | 30 | 25  |
+|  Psychic Crush | 84% | 69% | 59% | 49% | 39% | 29% | 19%  |
+|  101-125 |  |  |  |  |  |  |   |
+|  Psionic Blast | K | P | W | S | D | C | C  |
+|  Mind Thrust | P | P | P | W | W | W | 40  |
+|  Ego Whip | I | P | 40 | 35 | 30 | 25 | 20  |
+|  Id Insinuation | R | R | R | R | 40 | 35 | 30  |
+|  Psychic Crush | 90% | 74% | 64% | 54% | 44% | 34% | 24%  |
+|  126 & up |  |  |  |  |  |  |   |
+|  Psionic Blast | K | K | P | W | S | D | C  |
+|  Mind Thrust | P | P | P | P | W | W | W  |
+|  Ego Whip | I | I | P | 40 | 35 | 30 | 25  |
+|  Id Insinuation | R | R | R | R | R | 40 | 35  |
+|  Psychic Crush | 97% | 80% | 70% | 60% | 50% | 40% | 30%  |
+
+Defender's Psionic Strength Total is the score prior to any reductions, even though the current total for the individual could be as low as 0.
+
+The attacker's Current Attack Strength & Attack Mode are compared with the Defender's Psionic Strength Total, reading across, and a result is obtained.
+
+Numbers indicate the number of the defender's psionic attack points lost.
+
+# letters:
+
+C = Confused for 2-8 rounds, no psionic activity possible
+
+D = Dazed for 1-4 turns, no psionic or other activity
+
+I = Idiocy, psionic ability lost forever, though idiocy is curable by a heal spell
+
+K = Killed, raising/resurrection is possible, but psionic ability is lost
+
+P = Permanent loss of one attack or defense mode or psionic discipline*, and dazed as above
+
+S = Sleeping in a coma for 1-4 weeks (catatonic state 99% likely to be mistaken for death)
+
+R = Robot — mind under control of victor until released or 2-8 weeks have elapsed and a saving throw versus magic is made
+
+W = Wounded psionically, one attack or defense mode or psionic discipline* unusable for 2-8 weeks
+
+*Choose randomly from among all attack and defense modes and psionic disciplines.
+
+Note: Psionic creatures with mind bar ability will take damage only after all psionic strength is lost, so treat letter results as -40 points until 0 is reached.
+
+Damage accruing beyond the point where 0 psionic attack points was reached results in physical damage (hit points) being taken by the defender on a point for point basis.
+
+41

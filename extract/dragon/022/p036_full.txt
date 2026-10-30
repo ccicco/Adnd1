@@ -1,0 +1,79 @@
+The Dragon
+
+Vol. III, No. 8
+
+ADVANCED DUNGEONS & DRAGONS®, ©1979, TSR GAMES
+
+Protection from Magic: Reading time: 8 segments. This scroll invokes a very powerful and invisible globe of anti-magic in a 5' radius from the reader. It prevents any form of magic from passing into or out of its confines, but normal things are not restricted by it. As with other protections, the globe of anti-magic moves with its invoker. Any magical item which touches the globe must be saved for with a 50% likelihood of the object being drained of all magic from the power of the globe, i.e. save equals 11 or better with d20. If the item is drained, the spell is cancelled and the protection ceases. The item still functions as a normal (non-magical) item (i.e., a sword is still a sword, even if it loses its +1). Items which are not drained are merely negated so long as they are within the globe of protection. Note; Artifacts and relics do not suffer from the relatively weak magic of this spell. The protection lasts for 5-30 rounds.
+
+Protection from Petrifaction: Reading time: 5 segments. A 10' radius circle of protection extends from, and moves with, the reader of this scroll. All within its confines are absolutely immune to any attack forms, magical or otherwise, which cause flesh to turn to stone. The protection lasts for 5-20 rounds.
+
+Protection from Possession: Reading time: 1 round. This scroll generates a magic circle of 10' radius which extends from, and moves with, the reader. All creatures within its confines are protected from possession by magical spell attacks such as magic jar; attack forms aimed at possession or mental control or psychic energy drain which are pisonically based or magically based; or demon, devil, night hag, or similar creature possession (obsession). This protects even dead bodies if they are within the magic circle. The protection lasts for from 10 to 60 rounds in 90% of these scrolls; 10% have power which lasts 10 to 60 turns, but the protection is stationary.
+
+Protection from Undead: Reading time: 4 segments. When this scroll is read a 5' radius circle of protection extends from, and moves with, the reader. It protects all within its circumference from all physical attacks from undead (ghasts, ghosts, ghouls, liches, shadows, skeletons, spectres, wights, wralths, vampires, zombies) but not magic spells or other attack forms. If a creature leaves the protected area it is then subject to physical attack as well. The protection will restrain up to 35 hit dice/levels of undead; excess hit dice/levels can pass through the circle. It remains in effect for 10-80 rounds.
+
+# Special Note:
+
+All protection scrolls are cumulative in effect but not in duration.
+
+# CREATURES STRUCK ONLY BY MAGIC WEAPONS
+
+Despite special defenses which protect certain creatures from attacks by non-magical weapons, these monsters can be effectively hit by attackers as follows:
+
+|  Defender Is Hit By Weapon | Attacker Must Have The Following  |   |
+| --- | --- | --- |
+|   |  Hit Only By | OR Hit Dice Of*  |
+|  + 1 or better | + 1 or better | 4 + 1 or more  |
+|  + 2 or better | + 2 or better | 6 + 2 or more  |
+|  + 3 or better | + 3 or better | 8 + 3 or more  |
+|  + 4 or better | + 4 or better | 10 + 4 or more  |
+
+*This does not apply to characters of any sort.
+
+This provides for magical properties and size of the attacking monster. Thus, massive hill giants can effectively attack most creatures, and all other types of giants can affect everything save a few gods.
+
+# GRENADE-LIKE MISSILES: CONTAINERS OF ACID, HOLY/UNHOLY WATER, OIL, POISON AND BOULDERS HURLED BY SUCH THINGS AS GIANTS AND SIEGE MACHINES.
+
+Hurling various containers of liquid is a common tactic in dungeon adventures. For game purposes it is necessary to make certain assumptions regarding all such missiles.
+
+|  Size: Acid — Holy/Unholy Water — Oil — Poison — | ½ pint (8 oz.)  |
+| --- | --- |
+|   |  ¼ pint (4 oz.)  |
+|   |  1 pint (16oz.)  |
+|   |  ¼ pint (4 oz.)  |
+
+Effect:
+
+|  LIQUID CONTENTS | AREA OF EFFECT | DAMAGE FROM A  |   |
+| --- | --- | --- | --- |
+|   |  | SPLASH | DIRECT HIT  |
+|  —acid | 1' diameter | 1 h.p. | 2-8 h.p.  |
+|  —holy/unholy water | 1' diameter | 2 h.p. | 2-7 h.p.  |
+|  —oil, alight | 3' diameter | 1-3 h.p.* | 2-12 h.p. + 1-6 h.p.**  |
+|  —poison | 1' diameter | special | special  |
+
+* Flaming oil splashed on a creature will burn for 1-3 segments, causing 1 hit point of damage per segment.
+
+** Direct hit with flaming oil causes 2-12 hit points of damage the first round, and 1-6 additional hit points of damage the second round, but then burns out.
+
+Range: The range of all such container missiles is 3". Beyond 1" is medium, and beyond 2" is long (~2 and -5 "to hit" respectively).
+
+Hits: When the die roll indicates the missile has hit, then it is necessary to roll again to see if the container shatters or not — use the BLOW, CRUSHING column on the ITEM SAVING THROW MATRIX — unless special procedures were taken to weaken the container, i.e. the container was specially scored, it is particularly fragile, etc. Damage occurs only if the container breaks, except with regard to oil which must be alight (flaming) to cause damage. Poison special is dependent upon whether or not the poison is a contact poison or if the container was hurled into the mouth of the target creature. In the latter case, breakage is not necessary if the container was unstoppered; if stoppered check saving throw for breakage using the BLOW, NORMAL column of the ITEM SAVING THROW MATRIX. If oil has been specially prepared by insertion of a rag into the opening of the container (or wrapped around the neck of the container) and set afire prior to hurling, it will burst into flame when the container breaks upon target impact; otherwise, a torch or other means of causing combustion must be brought into contact with the oil.
+
+Splash Hits: All creatures within three feet of the impact and breaking point of the container missile must save versus poison or be splashed with the contents of the shattered container.
+
+Boulders are considered, for game purposes, to be 1' in diameter for giants, 2' in diameter for siege engines. Range and damage of siege machines is given in the appropriate section. (See MONSTER MANUAL for giants' abilities.)
+
+Misses: If the "to hit" die roll indicates a miss, roll 1d6 and 1d8. The d6 indicates the distance in feet the missile was off target. (If the target was large, simply compute the distance from the appropriate portion of the target, i.e. the character aims at a section of the floor which is 1' square, and miss distance is measured from the appropriate edge as explained below.) The d8 indicates the direction in which the distance in feet of the miss is measured:
+
+|  1 = long right | 5 = short left  |
+| --- | --- |
+|  2 = right | 6 = left  |
+|  3 = short right | 7 = long left  |
+|  4 = short (before) | 8 = long (over)  |
+
+At short range you may optionally use d4 to determine distance off target, but then use d8 for long range distance determination. If the missile is hurled at a plane such as a wall, read long as high, short as low, measuring up the wall and then along the ceiling or down and then along the floor.
+
+lighting Oil: If a torch is used to attempt to light spilled oil, use above procedures for misses, as it still could land in the puddle of oil or oil covered area. A lantern should be handled similarly, but also allow it a 2' diameter flaming oil area.
+
+36

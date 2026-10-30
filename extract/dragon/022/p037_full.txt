@@ -1,0 +1,139 @@
+February, 1979
+
+ADVANCED DUNGEONS & DRAGONS®, ©1979, TSR GAMES
+
+The Dragon
+
+Crossing Flaming Oil: Leaping over a puddle of flaming oil will cause no damage, unless the creature so doing is highly in flammable. Creatures with garments of cloth must save versus FIRE, NORMAL on the ITEM SAVING THROW MATRIX or have their garments catch fire. Walking through or standing in flaming oil will cause the creature to take 1-4 hit points of damage per melee round.
+
+Holy/Unholy Water: All forms of undead, as well as creatures from the lower planes (demons, devils, night hags, night mares, nycadaemons, etc.) are affected by HOLY WATER. Paladins, lammasu, shedu, ki-rin, and similar creatures of good (or from the upper planes) are affected by UNHOLY WATER. The liquid causes the affected creature to suffer a burning as if struck by acid. Undead in non-material form cannot be harmed by holy water, i.e. until a ghost takes on material form, it is unaffected, and a vampire in gaseous form cannot be harmed by holy water.
+
+### ATTACK MATRICES FOR
+MISSILE AND MELEE COMBAT,
+CLERICS AFFECTING UNDEAD, PSIONIC COMBAT
+
+I. Attack Matrices for Dwarves, Elves, Gnomes, Half-Elves, Halflings, Half-Orcs, and Humans
+
+- A. Clerics and Druids
+- B. Fighters, Paladins, Rangers, Bards, and 0 Level Halflings and Humans
+- C. Magic-Users and Illusionists
+- D. 1. Thieves, Assassins, and Monks
+- 2. Assassins' Table for Assassinations
+
+II. Attack Matrix for Monsters
+
+III. Matrix for Clerics Affecting Undead
+
+IV. Matrices for Psionic Combat
+
+- A. Psionic vs. Psionic in Mental Combat
+- B. Psionic Attack upon Defenseless Psionic
+- C. Psionic Blast Attack upon Non-Psionic Creature
+- D. Psionic Attack Ranges and Damage Adjustment
+
+Opponent Armor Class Description (If Armor is Worn)
+
+|  Armor Class | Type of Armor  |
+| --- | --- |
+|  2 | Plate mail + shield  |
+|  3 | Splint or banded mail + shield/plate mail  |
+|  4 | Chain mail + shield/splint or banded mail  |
+|  5 | Scale mail + shield/chain mail  |
+|  6 | Studded leather or ring mail + shield/scale mail  |
+|  7 | Leather or padded armor + shield/studded leather or ring mail  |
+|  8 | Leather or padded armor  |
+|  9 | Shield only  |
+|  10 | None  |
+
+Armor class below 10 is not possible. Armor class above 2 is easily possible due to magical bonuses and dexterity bonuses. To determine a "to hit" number not on the charts, project upwards by 1's (5% increments), repeating 20 six times before continuing with 21 (cf. Matrix I.A.).
+
+I.A. ATTACK MATRIX FOR CLERICS AND DRUIDS
+
+|  Opponent Armor Class | 20-sided Die Score to Hit by level of Attacker  |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  1-3 | 4-6 | 7-9 | 10-12 | 13-15 | 16-18 | 19+  |
+|  -10 | 25 | 23 | 21 | 20 | 20 | 20 | 19  |
+|  -9 | 24 | 22 | 20 | 20 | 20 | 19 | 18  |
+|  -8 | 23 | 21 | 20 | 20 | 20 | 18 | 17  |
+|  -7 | 22 | 20 | 20 | 20 | 19 | 17 | 16  |
+|  -6 | 21 | 20 | 20 | 20 | 18 | 16 | 15  |
+|  -5 | 20 | 20 | 20 | 19 | 17 | 15 | 14  |
+|  -4 | 20 | 20 | 20 | 18 | 16 | 14 | 13  |
+|  -3 | 20 | 20 | 19 | 17 | 15 | 13 | 12  |
+|  -2 | 20 | 20 | 18 | 16 | 14 | 12 | 11  |
+|  -1 | 20 | 19 | 17 | 15 | 13 | 11 | 10  |
+|  0 | 20 | 18 | 16 | 14 | 12 | 10 | 9  |
+|  1 | 19 | 17 | 15 | 13 | 11 | 9 | 8  |
+|  2 | 18 | 16 | 14 | 12 | 10 | 8 | 7  |
+|  3 | 17 | 15 | 13 | 11 | 9 | 7 | 6  |
+|  4 | 16 | 14 | 12 | 10 | 8 | 6 | 5  |
+|  5 | 15 | 13 | 11 | 9 | 7 | 5 | 4  |
+|  6 | 14 | 12 | 10 | 8 | 6 | 4 | 3  |
+|  7 | 13 | 11 | 9 | 7 | 5 | 3 | 2  |
+|  8 | 12 | 10 | 8 | 6 | 4 | 2 | 1  |
+|  9 | 11 | 9 | 7 | 5 | 3 | 1 | 0  |
+|  10 | 10 | 8 | 6 | 4 | 2 | 0 | -1  |
+
+Missiles: -5 at long range, -2 at medium range.
+
+I.B. ATTACK MATRIX FOR FIGHTERS, PALADINS, RANGERS, BARDS, AND 0 LEVEL HALFLINGS AND HUMANS
+
+|  Opponent Armor Class | 20-sided Die Score to Hit by level of Attacker  |   |   |   |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  0 | 1-2 | 3-4 | 5-6 | 7-8 | 9-10 | 11-12 | 13-14 | 15-16 | 17+  |
+|  -10 | 26 | 25 | 23 | 21 | 20 | 20 | 20 | 18 | 16 | 14  |
+|  -9 | 25 | 24 | 22 | 20 | 20 | 20 | 19 | 17 | 15 | 13  |
+|  -8 | 24 | 23 | 21 | 20 | 20 | 20 | 18 | 16 | 14 | 12  |
+|  -7 | 23 | 22 | 20 | 20 | 20 | 19 | 17 | 15 | 13 | 11  |
+|  -6 | 22 | 21 | 20 | 20 | 20 | 18 | 16 | 14 | 12 | 10  |
+|  -5 | 21 | 20 | 20 | 20 | 19 | 17 | 15 | 13 | 11 | 9  |
+|  -4 | 20 | 20 | 20 | 20 | 18 | 16 | 14 | 12 | 10 | 8  |
+|  -3 | 20 | 20 | 20 | 19 | 17 | 15 | 13 | 11 | 9 | 7  |
+|  -2 | 20 | 20 | 20 | 18 | 16 | 14 | 12 | 10 | 8 | 6  |
+|  -1 | 20 | 20 | 19 | 17 | 15 | 13 | 11 | 9 | 7 | 5  |
+|  0 | 20 | 20 | 18 | 16 | 14 | 12 | 10 | 8 | 6 | 4  |
+|  1 | 20 | 19 | 17 | 15 | 13 | 11 | 9 | 7 | 5 | 3  |
+|  2 | 19 | 18 | 16 | 14 | 12 | 10 | 8 | 6 | 4 | 2  |
+|  3 | 18 | 17 | 15 | 11 | 9 | 7 | 5 | 3 | 1 |   |
+|  4 | 17 | 16 | 14 | 12 | 10 | 8 | 6 | 4 | 2 | 0  |
+|  5 | 16 | 15 | 13 | 11 | 9 | 7 | 5 | 3 | 1 | -1  |
+|  6 | 15 | 14 | 12 | 10 | 8 | 6 | 4 | 2 | 0 | -2  |
+|  7 | 14 | 13 | 11 | 9 | 7 | 5 | 3 | 1 | -1 | -3  |
+|  8 | 13 | 12 | 10 | 8 | 6 | 4 | 2 | 0 | -2 | -4  |
+|  9 | 12 | 11 | 9 | 7 | 5 | 3 | 1 | -1 | -3 | -5  |
+|  10 | 11 | 10 |  | 8 | 6 | 4 | 2 | 0 | -2 | -4  |
+
+Missiles: -5 at long range, -2 at medium range.
+
+I.C. ATTACK MATRIX FOR MAGIC-USERS AND ILLUSIONISTS Opponent
+
+| Armor Class | 20-sided Die Score to Hit by level of Attacker |
+| --- | --- |
+| 1-5 | 6-10 | 11-15 | 16-20 | 21+ |
+| -10 | 26 | 24 | 21 | 20 |
+| -9 | 25 | 23 | 20 | 20 |
+| -8 | 24 | 22 | 20 | 20 |
+| -7 | 23 | 21 | 20 | 20 |
+| -6 | 22 | 20 | 20 | 19 |
+| -5 | 21 | 20 | 20 | 18 |
+| -4 | 20 | 20 | 20 | 17 |
+| -3 | 20 | 20 | 19 | 16 |
+| -2 | 20 | 20 | 18 | 15 |
+| -1 | 20 | 20 | 17 | 14 |
+| 0 | 20 | 19 | 16 | 13 |
+| 1 | 20 | 18 | 15 | 12 |
+| 2 | 19 | 17 | 14 | 11 |
+| 3 | 18 | 16 | 13 | 10 |
+| 4 | 17 | 15 | 12 | 9 |
+| 5 | 16 | 14 | 11 | 8 |
+| 6 | 15 | 13 | 10 | 7 |
+| 7 | 14 | 12 | 9 | 6 |
+| 8 | 13 | 11 | 8 | 5 |
+| 9 | 12 | 10 | 7 | 4 |
+| 10 | 11 | 9 | 6 | 3 |
+
+Missiles:* -5 at long range, -2 at medium range.
+
+*Normal, not magical.
+
+37
