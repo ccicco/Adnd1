@@ -28486,6 +28486,48 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   printing - watch TD 19. Next: R936
   the pure flip closing BOTH report-018
   boxes, issue 18 complete. WAIT FOR GO.
+  - R936 LANDED (995b3db, f18, 29 inline,
+  pure flip, no new ink): The Dragon
+  issue-18 box closing round, the
+  seven-chain walk complete. BOTH
+  report-018 boxes flipped in ONE round
+  (gap_census 2 closed 0 open): the
+  issue-18 opener chains part one (the
+  R934 insanity chart and doctrine, the
+  laws of magic, the godgame hazard, the
+  NPC pride, greed and work-quality
+  tables) and part two (the R935 Sullin
+  new spells, the monkish weapons and
+  kedo matrix, the poison grid). 29
+  inline bookkeeping only (17 consts +
+  12 bools mirroring the f17 closer:
+  f18IssueEighteenBoxes=2, chains=7,
+  rounds=3 - the second three-round
+  issue shape; issue-closed consts 17
+  down to 7, registry 1313/1338/25,
+  walk-complete bools 7 through 18), no
+  tables, no data files; header
+  rules/f18.h (prefix f18 verified free
+  at 143d91d), audit rules/audits/
+  r936_batch.h "R936 Dragon issue-18
+  closure audit", 3 examples. ISSUES
+  2-18 ALL CLOSED. Registry ground
+  truth unchanged: 1313 loaded / 1338
+  base lua / 25 never-load (R924
+  re-measure). Census 858->859; rverify
+  GREEN 29 mutants 0 missed; round-trip
+  13338 bytes md5 d653e317fa49af94eeea
+  7713fbb561fc, byte-exact at 995b3db.
+  Watch: the Sullin New Spells levels
+  7-9 (cont pg 21) NEVER printed in
+  TD18 - watch TD 19; the brawling
+  long-term-effects sequel STILL not
+  printing - watch TD 19. Next: the
+  Dragon Magazine walk continues with
+  Curtiss's call - the next scan upload
+  (issue 19 or another issue) opens the
+  next issue round the same intake.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

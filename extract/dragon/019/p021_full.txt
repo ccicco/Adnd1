@@ -1,0 +1,85 @@
+|  Molecular Agitation | Magic Jar Pass Plant Pass Wall Teleport |   |
+| --- | --- | --- |
+|  5 Body Weaponry Chaos Molecular Manipu. Suspended Animation animation Telekinesis | 6 Extension III Teleport via Plants nature Word of Recall |   |
+|  6 Astral Projection Feeblemind senses Mind over Body Molecular Rearrange. Repulsion control | 7 Gate Limited Wish Phase Door Reverse Gravity nature |   |
+|  7 Astral Spell Mind Bland | 8 Permanent Spells Time Stop 9 Maze Wish |   |
+
+### PRIME REQUISITE: WISDOM
+
+#### ATTACK (20)
+
+|  1 Heat Metal Warp Wood | animate animate, nat. | 1 Darkness Detect Evil Detect Invisible Detect Magic Detect Pits/ Snares Gaze Reflection Light Ventriliquism | summoning knowledge knowledge knowledge knowledge  |
+| --- | --- | --- | --- |
+|  2 Magic Missile Web |  | 2 Blindness Continual Light Darkness 5' Deafness Detect Invisible E.S.P. Invisibility Misdetection Silence 15' | summoning summoning  |
+|  3 Fireball Lightning Bolt |  | 3 Clairadience Clairvoyance Continual Darkness Infravision Invisibility 10'r. Non-Detection | mental mental summoning knowledge  |
+|  4 Ice Storm Insect Plague | nature holy, summ. | 4 Invisibility 10' Imp. Wizard's Eye |   |
+|  5 Cloud Kill Finger of Death Turn Wood | nature | 5 Feeblemind Invisibility Mass | mental  |
+|  6 Death Spell Disintegrate Fireball, Delay Blast |  |  |   |
+|  7 Creeping Doom Firestorm Power Word: Stun | summoning summoning |  |   |
+|  8 Meteor Swarm Power Word: Blind |  |  |   |
+|  9 Power Word: Kill |  |  |   |
+
+### PRIME REQUISITE: STRENGTH
+
+#### ANIMATE (25)
+
+|  1 Heat Metal Rope Trick Warp Wood | attack | 1 Change Self Phantasmal Forces | transmuta.  |
+| --- | --- | --- | --- |
+|  2 Cure Light Wounds Magic Mouth | transmuta. | 2 Hypnotic Pattern Mirror Image Phantasman forces, Imp | control, men.  |
+|  3 Cure Disease Explosive Rune Haste Slowness Speak with Dead | holy transmuta. time/ space knowledge | 3 Hallucinatory Forest Hallucinatory Terrain Spectral Forces |   |
+|  4 Animate Dead Cure Serious Wounds |  | 4 Massmorph Minor Creation Shadow Magic Shadow Monsters | transmuta.  |
+|  5 Raise Dead Suspended Animation mental |  | 5 Create Spectres Demi-Shadow Magic Demi-Shadow Monst. |   |
+
+|  6 Animate Objects Move Earth Part Water Reincarnation Sticks to Snakes | nature holy, nature | Major Creation Projected Image Summon Shadow  |
+| --- | --- | --- |
+|  7 Animate Rock Raise Dead Fully Restoration Simulacrum Symbol |  | transmuta.  |
+|  8 Clone |  |   |
+
+### PRIME REQUISITE: DEXTERITY
+
+#### KNOWLEDGE (23)
+
+|  1 Detect Evil Detect Invisible Detect Magic Detect Pits/Snares Locate Animals Locate Object Read Languages Read Magic | senses senses senses senses  |
+| --- | --- |
+|  2 Find Traps Locate Plants Misdetection Speak with Animals | nature senses  |
+|  3 Non-Detection Speak with Dead Speak with Plants | senses animate nature  |
+|  4 Empathy Precognition | mental  |
+|  5 Commune Commune with Nature Contact Higher Plane | nature holy, time/space  |
+|  6 Find the Path Legend Lore Speak with Monsters |   |
+
+#### TRANSMUTATION (18)
+
+|  1 Change Self Purify Food/Water | illusion holy  |
+| --- | --- |
+|  2 Magic Mouth Strength | animate  |
+|  3 Explosive Rune Water Breathing | animate  |
+|  4 Neutralize Poison Plant Growth Polymorph Others Polymorph Self | holy nature  |
+|  5 Animal Growth Create Foor Rock to Mud | nature  |
+|  6 Sticks to Snakes Stone to Flash | animate  |
+|  7 Metal to Wood |   |
+|  8 Polymorph any Object |   |
+|  9 Shape Change |   |
+
+### PRIME REQUISITE: INTELLIGENCE
+
+#### DEFENCE (18)
+
+|  1 Protection/ Evil Shield Wall of Fog | holy  |
+| --- | --- |
+|  2 Fog Protection/ Fire | nature  |
+|  3 Dispell Magic Prot. / Norm. Missile |   |
+|  4 Protect. / Evil 10' Protect. / Lightning Wall of Fire Wall of Ice | holy  |
+|  5 Anit-Plant Shell Wall of Iron Wall of Stone |   |
+|  6 Anti-Animal Shell Anti-Magic Shell Blade Barrier |   |
+|  7 Prismatic Wall |   |
+
+#### NATURE (31)
+
+|  1 Predict Weather Warp Wood | attack, anim.  |
+| --- | --- |
+|  2 Fog Levitate Locate Plant Obscurement Produce Flame | defence time/ space knowledge senses summoning  |
+|  3 Call Lightning Fly Plant Growth Speak with Plants | summoning time/ space transmuta. knowledge  |
+|  4 Control Temp. 10' Ice Storm Plant Door Produce Fire | attack time/space  |
+|  5 Animal Growth Commune with Nat. Control Winds Pass Plant Turn Wood | transmuta. knowledge time/ space attack  |
+|  6 Control Weather Lower Water Move Earth Part Water Teleport via Plants Weather Summoning Word of Recall | control animate holy, ani. time/ space time/ space  |
+|  7 Earthquake Fire Storm |   |

@@ -1,0 +1,104 @@
+Reverse Gravity time/ space
+Wind Walk
+
+## PRIME REQUISITE: CONSTITUTION
+
+### HOLY (19)
+
+1 Protection/ Evil defence
+Purify Food/ Water
+2 Bless
+Prayer
+3 Cure Disease animate
+Protection/ Evil 10' defence
+Remove Curse
+4 Insect Plague attack, sum.
+Neutralize Poison transmuta.
+5 Commune
+Contact Higher Plane knowledge,
+time/ space
+Dispell Evil
+Quest control
+6 Geas control
+Lower Water
+Part Water nature, ani.
+Sticks to Snakes transmuta.
+7 Astral Projection
+Holy Word
+
+### PRIME REQUISITE: LAWFUL ALIGNMENT
+
+The rules necessary for employing this new system of magic have been kept as short and simple as possible but can be expanded to suit your own particular concepts of magic.
+
+#### INITIAL SPELLS
+
+A. Lawful characters begin with two 1st level Holy spells.
+B. Neutral characters have their choice of one 1st level spell from each field of magic determined by their highest prime requisite score.
+C. Neutral characters with two or more prime requisite scores that tie for the highest score, have the choice of which prime requisite score they will use to determine their fields of magic.
+D. A character may never possess more than two new spells at any one time.
+
+#### MISCAST SPELLS
+
+A. The percentage of miscasting a spell is determined by comparing the level of the spell to the appropriate prime requisite score of the caster. For example: A 3rd level spell, such as Dispell Magic, cast by a character with a dexterity score of 15 would have a 3/15 (one in five) or a 20% chance of miscasting the spell.
+B. The exact side effects of a miscast spell are determined by the Dungeon Master.
+
+#### FATIGUE FACTOR
+
+A. The attempt to cast a spell, regardless of it's success or effect, costs
+
+the caster one point of the effected prime requisite score for each level of the spell. The six prime requisite scores will therefore fluctuate to represent the current levels of strength.
+
+B. It is important to remember that the prime requisite scores will now be used to determine two factors:
+1. The ability to cast spells successfully.
+2. The character's actual physical strength (ability to force open doors), charisma (number of followers), etc.
+C. When a character uses part of a prime requisite score, such as constitution, to cast a spell, it will also effect the character's physical constitution. Until they are recovered, the missing points have the same effect as points lost due to melee or a magic spell/item used against the character.
+
+#### RECOVERY
+
+A. For every turn not spent in melee, one point is recovered and can be added to any one prime requisite score that is below it's starting level.
+B. If all prime requisite scores are at their starting levels, recovery points are lost because they can not be accumulated for future use.
+
+#### ADVANCEMENT
+
+A. Advancement in one field of magic is completely independent of the other fields.
+B. A new spell must be successfully cast once for each level of the spell before the character has the choice of another spell, on the same level.
+C. All the spells on a level must be mastered before the next level is opened for use, at which time a character has the choice of any one spell on the next level.
+D. To be considered a 'successful' spell, as far as advancement is concerned, the Dungeon Master should ensure that a spell was cast for a valid reason and not just to fulfill the advancement requirements.
+
+#### NEW FIELDS OF MAGIC
+
+A. Only two fields of magic can be studied at one time. However the ability to advance in one field of magic can be exchanged for the ability to study/advance in another field, when either of the two following conditions have been met:
+1. Possession of a magic item from a new field of magic, that has been successfully used once for each level of the spell.
+2. Successfully casting a spell that also belongs to a new field of magic, at least once for each level of the spell.
+B. When a character begins, for the first time, in a new field of magic he has his choice of any one 1st level spell from the new field.
+C. Once three or more fields of magic have been opened for study/advancement, a character may freely change from one field to another, at any time.
+
+#### PLAYING AID
+
+Because the prime requisite scores will fluctuate according to the use of spells and the replacement of the points used, it would be easier to keep track of their levels by using a graph similar to the one below. Covering this chart with plastic and using a marker to circle the current level of power for each category will give a quick reading of a character's abilities and limitations.
+
+|  STRENGTH | CONSTITUTION | INTELLIGENCE | WISDOM | DEXTERITY | CHARISMA  |
+| --- | --- | --- | --- | --- | --- |
+|  20 | 20 | 20 | 20 | 20 | 20  |
+|  19 | 19 | 19 | 19 | 19 | 19  |
+|  18 | 18 | 18 | 18 | 18 | 18  |
+|  17 | 17 | 17 | 17 | 17 | 17  |
+|  16 | 16 | 16 | 16 | 16 | 16  |
+|  15 | 15 | 15 | 15 | 15 | 15  |
+|  14 | 14 | 14 | 14 | 14 | 14  |
+|  13 | 13 | 13 | 13 | 13 | 13  |
+|  12 | 12 | 12 | 12 | 12 | 12  |
+|  11 | 11 | 11 | 11 | 11 | 11  |
+|  10 | 10 | 10 | 10 | 10 | 10  |
+|  9 | 9 | 9 | 9 | 9 | 9  |
+|  8 | 8 | 8 | 8 | 8 | 8  |
+|  7 | 7 | 7 | 7 | 7 | 7  |
+|  6 | 6 | 6 | 6 | 6 | 6  |
+|  5 | 5 | 5 | 5 | 5 | 5  |
+|  4 | 4 | 4 | 4 | 4 | 4  |
+|  3 | 3 | 3 | 3 | 3 | 3  |
+|  2 | 2 | 2 | 2 | 2 | 2  |
+|  1 | 1 | 1 | 1 | 1 | 1  |
+|  0 | 0 | 0 | 0 | 0 | 0  |
+
+20

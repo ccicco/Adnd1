@@ -1,0 +1,104 @@
+# SYSTEMATIC MAGIC
+## Revised Magic Tables
+
+by Robin W. Rhodes
+
+Wizards such as Gandalf and Merlin can not be assigned to specific levels of magic because they were complex individuals. Not only did they have physical strengths and weaknesses but magical powers and limitations. Like anyone else, magicians have preferences or specialties which they perform better than others. For example: Radagast the Brown had a strong preference for spells that dealt with nature, while Saruman preferred spells of control and therefore studied and searched for the 'One Ring of Power'. The system of magic that is currently in use does not reflect the wide varieties of magical fields which should logically exist. It is possible to study any particular field of magic, such as they did, because spells of different, unrelated characteristics are lumped together into the same group.
+
+It is easy to understand why the system of magic follows this illogical pattern if we remember the manner in which it was developed. Originally all spells were divided into two groups: Holy and Non-Holy spells. Any spell that was not a Holy spell, obviously belonging to the Clerics, was considered a Magician's spell. Because there was no reason to divide these spells into groups according to the properties of the spells themselves. Instead these spells were separated into different levels based only upon the power of the spell. Later supplements added whole new classes of characters, capable of using magic, along with entire collections of spells for their use. As the system grew inconsistencies developed and as the word implies, the supplements merely expanded the existing system, rather than revamping it or correcting the illogical division of spells which had occurred.
+
+The simplest solution to these discrepancies would be a redivision of the magic spells according to the characteristics of the spells themselves. This new system would not only provide a real sense of progression but would also allow a certain degree of specialization. All of the magic spells now in use fall into one or more of the following categories: Control, Summoning, Mental, Time/Space, Attack, Senses, Animation, Illusion, Knowledge, Transmutation, Defence, Nature and Holy.
+
+Let's examine the first and second level spells now available to a magician and determine the types of spells they are according to these new groupings:
+
+|  1st LEVEL SPELLS TYPE | 2nd LEVEL SPELLS TYPE  |
+| --- | --- |
+|  Hold Portal | Wizard Lock  |
+|  Charm Person | Knock  |
+|  Sleep | Locate Object  |
+|  Read Magic | Invisibility  |
+|  Read Languages | E.S.P.  |
+|  Protection/ Evil | Detect Invisible  |
+|  Shield | Detect Evil  |
+|  Ventriliquism | Senses  |
+|  Detect Magic | Continual Light  |
+|  Light | Darkness 5'  |
+|  Magic Missile | Pyrotechnics  |
+|  Forces | Web  |
+|  Mirror Image | Illusion  |
+|  Levitate | Nature,  |
+|   | Strength  |
+|   | Magic Mouth  |
+|   | Time/ Space Transmutation  |
+|   | Transmutation, Animation  |
+
+According to the original rules, a first level magician receives one initial 1st level spell, such as the Light spell (senses, summoning). His advancement to the second level is based upon experience points which are awarded for finding gold pieces and killing monsters. When he reaches the second level, regardless of his success with his initial spell, he receives another first level spell such as a Sleep spell (control). The two
+
+spells are usually from unrelated fields of magic and do not therefore provide any sense of progression from one spell to the next. It is difficult to explain how a magic user, who has these two dissimilar spells, can be accumulating enough gold pieces, suddenly develop the power of another unrelated spell such as Levitation (nature, time/space). It would be far more logical for a magic user to master the Rope Trick (time/space, animation), then Levitation (time/space, nature) and finally develop the ability to Fly (time/space). Also notice that the last five spells of the second level belong to the fields of magic that are not available on the first level. Therefore the old system of magic can not base the acquisition of these spells upon the prior use of related spells. The two Defense spells on the first level have no counterpart on the second level.
+
+Here are the magic spells of the Clerics, Druids, Illusionists, and Magic Users divided into the new fields of magic and rated by level. Some spells belong to more than one group, such as Reverse Gravity (nature time/space) and are cross-referenced.
+
+### CONTROL (26)
+
+|  1 Charm Person |  | 1 Darkness  |
+| --- | --- | --- |
+|  Hold Portal |  | Faerie Fire  |
+|  Hypnosis | mental | Light  |
+|  Sleep |  | senses  |
+|  2 Charm Snake |  | 2 Create Water  |
+|  Hypnotic Pattern | mental, illus. | Darkness 5'  |
+|  Knock |  | Obscurement  |
+|  Wizard Lock |  | Produce Flame  |
+|  3 Hold Animal |  | 3 Call Lightning  |
+|  Hold Person |  | Continual Darkness  |
+|  Paralyzation |  | Continual Light  |
+|  Suggestion |  | Monster Summoning I  |
+|   |  | Pyrotechnics  |
+|  4 Charm Monster |  | 4 Animal Summoning I  |
+|  Dominion |  | Insect Plague  |
+|  Empathy |  | Monster Summ. II  |
+|  Mind Bar |  | Produce Fire  |
+|  5 Hold Monster |  | 5 Animal Summ. II  |
+|  Hold Plant |  | Conjure Air Elemental  |
+|  Mind Blank |  | Monster Summ. III  |
+|  Quest | holy | Weather Summoning  |
+|  6 Control Weather |  | 6 Animal Summoning III  |
+|  Geas | holy | Conjure Animals  |
+|  Power Word: Stun | attack | Conjure Fire Elem.  |
+|  Repulsion | mental | Conjure Water Elem.  |
+|   |  | Monster Summ. IV  |
+|   |  | Move Earth  |
+|   |  | Summon Invis. Stalker  |
+|  7 Charm Mass |  | 7 Aerial Servant  |
+|  Charm Plants |  | Creeping Doom  |
+|   |  | Earthquake  |
+|   |  | Fire Strom  |
+|   |  | Monster Summ. V  |
+|   |  | 8 Conjure Earth Elem.  |
+|   |  | Monster Summ. VI  |
+|   |  | 9 Monster Summ. VII  |
+
+PRIME REQUISITE: CHARISMA
+
+### MENTAL (27)
+
+|  1 Aura Alteration |  | 1 Reduction  |
+| --- | --- | --- |
+|  Body Control |  | Rope Trick  |
+|  Hypnosis | control | animate  |
+|  2 Energy Control |  | 2 Expansion  |
+|  Hypnotic Pattern | control, illus. | Levitation  |
+|  Telepathic Projection |  | nature  |
+|  3 Clairudience | senses | 3 Fly  |
+|  Clairvoyance | senses | Haste  |
+|  Fear |  | Slowness  |
+|  4 Body Equilibrium |  | 4 Dimension Door  |
+|  Confusion |  | Extension I  |
+|  Emotions |  | Plant Door  |
+|  Empathy | knowledge | 5 Contact Higher Plane  |
+|  Mind Bar |  | Extension II  |
+|   |  | holy/ know.  |
+
+### TIME/SPACE (27)
+
+18

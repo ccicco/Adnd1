@@ -1,0 +1,76 @@
+# THE FASTEST GUNS THAT NEVER LIVED, Part III
+
+by Allen Hammack
+
+*This article was submitted by Allen before Part II of this series appeared in Little War. In order to make it compatible with the first two articles, I made some minor changes and this can be considered as "official material."*
+
+*THE FASTEST GUNS THAT NEVER LIVED are brief descriptions of some of the great cowboys and gunfighters of the movies and TV. The ratings are given in terms of Brian Blume TSR'S BOOT HILL rules for gunfighters with miniature figures.*
+
+*Bart, Bret and Beau Maverick* — Played by Jack Kelly, James Garner and Roger Moore in the TV series MAVERICK. They all have gambler ratings of 02 and always prefer to talk their way out of trouble to shooting.
+
+*Will and Jeff Sonnet* — Father and son were searching for another son, a missing gunslinger, in this short-lived TV series Will (Walter Brennen) claimed the prodigial son was the third fastest gun in the west. "He's good, but Jeff's better — and I'm better than both of 'em."
+
+*Eli Wallach* — Probably most noted for his role in "The Good, the Bad, and the Ugly." He was a scrappy, trouble-making gunfighter.
+
+*Charles Bronson* — Excellent in many movie westerns, including "The Magnificent Seven." He is always a tough hombre in a fight.
+
+*James Coburn* — In his best westerns, Coburn is always as "cool as ice." In "The Magnificent Seven", his favorite weapon was a stiletto throwing knife with which he had deadly accuracy and speed.
+
+*Robert Vaughn* — Also in "The Magnificent Seven", Vaughn portrayed a cowardly con man who overcame his cowardice at the end of the movie (where he was killed). Before play begins, roll percentile dice for his courage and a score of 75 or less indicates that the lower braver score be used.
+
+*Tim Straum and Kid Shelleen* — In the classic comedy "Cat Ballou" both roles were played by Lee Marvin. There is a 50% chance that Kid Shelleen will be drunk, in which case, use the lower set of ratings for him. Straum is easily identifiable by his silver nose (the real nose was bitten off in a fight!)
+
+*Jason McCord* — Portrayed by Chuck Connors in the TV series BRANDED. Every time McCord comes into a town, there is a 75% chance that someone will recognize him and will have had a close relative who was killed at Bitter Creek and will challenge McCord to a gunfight.
+
+Good shootin', and keep an eye on that fellow in black over by the bar . . .
+
+*Snurre's Hall from pg. 6*
+
+entrance where more giants and hell hounds are coming in, the 9th level MU casts *see invisible* to locate Obmi, while the dwarf, fighter, and 9th level cleric fight the gnolls.
+
+On the first part of the next melee turn, the MU yells to the ranger where Ombi is and she moves towards him. The 12th level cleric yells to the group which way is the fastest way out and the group slowly (comparatively) begins to move in that direction, slashing, hacking, and etc. When the ranger reaches Obmi, on the second half of the melee, she dusts him with *appearance dust*. The fighter then moves to join her and help subjue him. The rest of the group still slowly moves towards our escape route, slashing and hacking, while the 9th level MU resumes hitting those enemies entering the doorway.
+
+The next melee round has the fighter and ranger knocking out Obmi (who is not in haste) tying him up and forcing a *potion of invisibility* down his throat. This should take up both halves of our melee turn. The rest of the group continues fighting both halves. At the beginning of the next melee round the ranger takes Obmi, the fighter calls out to our thief and finds his position while we all fight. The second half has the fighter grabbing up the thief and all those fighting disengaging and preparing to run.
+
+On the next turn, all, including the 12th level MU, run for the exit. We figure that even if the elemental is not yet dead, he will have to fight his way through the remaining giants to follow us, and if that doesn't stop him for awhile, then he still cannot keep up with us in our hastened state. From this point on we all run. It will take us less than two melee turns to reach the exit. Because of our hastened state, all this action has taken only a few melee turns. This is fast enough to insure our avoiding those coming up from deeper in Snurre's halls. I should also point out that at the time the game was called, no one in the group was more than 30% damaged, and all had at least two extra healing potions each.
+
+*Very interesting. I'm not sure I would have allowed them to do all of that as fast as they did, but the basic plan seems sound, and, since their retreat was not yet completely cut off, they might just have made it. It was, in any case, a very enjoyable way to spend a July afternoon.*
+
+*While their proposed plan may sound a bit pretentious, I'd have to think that their odds of escape were pretty good. At the risk of giving them all swelled heads, I must attest that their second round, which I DM'ed was one of the best I've ever had the pleasure to DM. They were cohesive, which I think won it for them. They also thought very fast, and reacted quickly, with excellent coordination. I think that the coordination/teamwork aspect cannot be over emphasized; it was crucial. As it turned out, the winning GenCon team clearly won their tournament through exemplary cooperation — but that's another story. My congratulations to the winning Origins team, and my respect for a job well done.* **KE.**
+
+|   | SPEED | GUN ACCURACY | THROWING ACCURACY | BRAVERY | STRENGTH | EXPERIENCE | ABILITIES  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  Bret Maverick | 89 | 76 | 47 | 88 | 77 | 8 | E,G,K  |
+|  Bart Maverick | 78 | 80 | 42 | 75 | 77 | 9 | E  |
+|  Beau Maverick | 85 | 77 | 45 | 72 | 79 | 8 | E  |
+|  Will Sonnet | 90 | 99 | 72 | 92 | 58 | 11+ | A,E,H,K  |
+|  Jeff Sonnet | 86 | 88 | 76 | 89 | 84 | 5 | A,E,H  |
+|  Eli Wallach | 95 | 85 | 80 | 60 | 78 | 11+ | E,F  |
+|  Charles Bronson | 91 | 89 | 74 | 100 | 91 | 11+ | A,B,D,E,H  |
+|  James Co burn | 95 | 83 | 100 | 99 | 92 | 11+ | B,E,H  |
+|  Robert Vaughn | 88 | 92 | 68 | 15/99 | 85 | 11+ | E,H,K  |
+|  Tim Straum | 90 | 90 | 54 | 82 | 85 | 11+ | A,E,H  |
+|  Kid Shelleen | 91 | 92/15 | 58/33 | 95 | 85 | 11+ | E,K  |
+|  Jason McCord | 88 | 88 | 79 | 92 | 91 | 11+ | E,G,H,J  |
+
+## SPECIAL ABILITIES
+
+A — ½ penalty if shooting from horseback
+
+B — Never Surprised
+
+D — Shoulder arms considered as "fast"
+
+E — May "hipshoot" with no penalty
+
+F — No penalty for giving opponent first move
+
+G — Treat wounds as one type lower when shot. A "Mortal Wound" result becomes a "Serious Wound", etc.
+
+H — ½ penalty if firing at moving target
+
+J — Must use "Sharpshooting" rule, and must fire at "gun arm/hand" only
+
+K — No penalty for "wrong hand" shooting
+
+21
