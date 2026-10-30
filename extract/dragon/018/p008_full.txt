@@ -1,0 +1,84 @@
+The Dragon
+
+Vol III No. 4
+
+# REVIEWS
+
+# TRAVELLER
+
+Science fiction role-playing games have lagged behind fantasy RP games for a few years now. No real efforts were made to come up with a SF game to equal the scope and appeal of DUNGEONS & DRAGONS.
+
+Summer 1977 saw the release of TRAVELLER, the first complete major effort role-playing SF game and GDW's first science fiction game since TRIPLANETARY.
+
+The wait, for those of us who had finally tired of trolls and treasures, was well worth it. TRAVELLER is not D&D in space. It has its own unique flavor and style.
+
+Physically, TRAVELLER is first class, a tradition with Game Designer's Workshop. The box lid and covers of the three booklets are done in a simple but highly effective combination of red and white lettering on a black background. The interior layout and printing is also of the best quality; the printing is an entirely professional job. Some thought was given to the appropriate use of capitalization, bold face, and italics, points that will be appreciated by anyone who has been forced to disrupt a game for fifteen minutes to seek out some rule hidden in the morass. There are three to seven basic rules section in each booklet, further divided into subsections and finally, into specific rules. Main and subsections are listed in a table of contents found in the fore of each book.
+
+As is the case with most role-playing games, there is a plethora of charts and tables. All of these are found with the appropriate rules sections. It is unfortunate that GDW did not print some of the more common charts on a few fold out sheets (as in D&D and EPF); this certainly would save wear on the booklets themselves.
+
+Playing TRAVELLER requires a group of players, a referee (not absolutely necessary but helpful and more interesting), a lot of paper and pencils, some note cards and a strong measure of imagination. Using miniature spacecraft and figures is optional and certainly adds color.
+
+For a description of the game, I'll let the rules speak for themselves.
+
+Book 1, "Characters and Combat" contains an introduction, rules Character Generation, and Personal Combat. As in other role-playing games, players are rated for a variety of characteristics, in this case, endurance, strength, dexterity, intelligence, education and social standing. Ratings are determined by the roll of two dice. However, where most RP games are in a hurry to usher the newly created character out into adventures, TRAVELLER has some extensive rules dealing with fleshing out the character, making him more of a person and less of a mere "body".
+
+Most players will enlist in one of the services, for doing so offers the best opportunities to accumulate cash, skills and other benefits. Enlistment is not automatic; prerequisite die rolls are necessary, as modified for certain characteristics. The various services include: Navy, Army, Scouts, Marines and Merchants.
+
+During each term of service (four years) a number of die rolls are made for survival (failure here ends a character's career early) promotion and commission. Terms of service and promotions allow a player to roll on the Acquired Skills Table, selecting the desired column (such as Personal Development or Service Skills) under their particular service type. The different columns for each service reflect the
+
+fact that the knowledge gained in one is likely to be different than that gained in another. Marines, for example, are more likely to learn brawling gun combat, while naval personnel are more apt to increase intelligence and navigation skills. If a player should roll a certain skill a second time, the roll is not wasted, but provides improved skill in that category often resulting in increased die roll modifications (DMs) later in the game.
+
+When the long years of service are over, the final process of mustering out takes place. This will result in material benefits such as weapons or increased abilities and cash allowances with which to begin adventuring. This is followed by the more unpleasant experience of the aging table to see if players lose some of their physical abilities.
+
+This creation procedure may seem long (actually it only takes about twenty minutes per character) but it is vital and interesting to the game. The initial skills and abilities learned during this period may well determine the player's later employment, or even his survival in a combat situation.
+
+TRAVELLER's rules for individual combat are also fairly innovative. Once an encounter has been made for surprise and range, and possible escape and avoidance.
+
+Tactical movement is used only to determine relative range between combatants; maneuver and terrain do not come into play.
+
+Combat resolution is made by a two dice throw of eight or more to hit, subject to modification for range, expertise, movement and weapons. Strength primarily effects hand weapons (a variety of daggers, polearms and sword-types are offered) while endurance determines how many full strength blows may be struck. Dexterity effects the accuracy of fire weapons. These are primarily projectile guns, though both laser rifles and carbines are listed. Armor, from the futuristic equivalent to leather all the way to battle armor, affects hit due rolls.
+
+If a hit is obtained in the first combat round, the number of dice appropriate the weapon used are rolled and the resulting number applied to any one of strength, dexterity or endurance. If the wound reduces the characteristic to 0 the character is unconscious. Wounds in the second round or further may be distributed as the player sees fit, with reduction of any to 0 resulting in unconsciousness. If all go to 0, death is the result (combats tend to be short and sweet). Reductions during combat affect the conduct of that combat. However, if a player survives he may regenerate factors with medical attention or rest.
+
+The bulk of Book 2 covers Starships, their economics, construction, and use in combat.
+
+Players may purchase passage on starships. Luxurious high passage is available for the rich while the more frugal can opt for middle, or even low passage, a risky form of cold sleep.
+
+The section of starship construction is one of the most fascinating. Buying a starship can be very expensive, even with a long mortgage. First a hull size is selected and then the various components are chosen. These include jumpdrives for interstellar travel, and power plants and maneuver drives for interplanetary travel. Matching of drive and hull size will determine final speed.
+
+Elements of the main compartment include cargo holds and staterooms and most importantly, the bridge, which houses the ship's computer. Computer programs are required for all types of movement and combat. They often provide valuable DMs for fire and defense. The computer's capacity to store and process will largely determine what programs are selected; more advanced programs are more expensive and take up more computer capacity.
+
+If a ship is to have weapons these must be purchased and placed in turrets on hardpoints of the ship's hull. Turrets may be fitted with sandcasters, pulse lasers, beam lasers, or missile launchers.
+
+Crews are an important consideration. Often
+
+players as a group can fulfill some of these positions. Others must be hired at a stated salary per month. Crew positions include such jobs as navigator, pilot, steward, medic, gunner, and engineer.
+
+Spaceships that are non-jump capable may be purchased as well. Small ones, such as shuttles or life-boats, may be carried within larger craft.
+
+Combat between ships is for tabletop, using miniatures or suitable fascimiles.
+
+In combat, ships move using their maneuver drive, via vector. The system is easy to use with a little practice. Gravity may play an important role in altering vectors.
+
+Fire is by laser or missile. Laser fire is heavily influenced by both offensive and defensive computer programs. Programs may allow a pilot to use his expertise in that field for a defensive DM while another may allow a gunner to use his for fire. The judicious use of computer programs and character expertise allow players to affect combat substantially, rather than leaving it all up to just a die roll.
+
+Missiles are potent weapons; if and when they strike, they do considerable damage. For movement purposes they function as small, independent ships.
+
+In addition to evasive maneuvers, ships may cast a cloud of sand around themselves in order to obtain favorable DMs. Presumably, sand acts to diffuse the destructive power of laser weapons. Sand is the closest the game comes to any active defense; TRAVELLER ignores the nearly universal SF game concept of screen or energy shields.
+
+Other major sections of Book 2 are Drugs, a fairly self-explanatory section, and Experience. Unlike most role-playing games, the acquisition of "experience points" is not a prime consideration in TRAVELLER. It is refreshing to see that the adventures and color of the game's play is reward enough and the players are not channeling their energy into the rather silly chase of ethereal experience points. Too often, this chase becomes more important than actual play itself! In TRAVELLER, players may attempt to improve their skills and abilities through long years of training and study. Increases are neither large nor rapid.
+
+The final section of the book deals with Trade and Commerce, a section of interest to those players who are inclined to operate a trading ship. A large chart lists various types of cargo, base prices and quantity, and die roll modifications for both purchase and resale. These take into account, for example, the fact that items such as electronic parts can be had relatively cheaply on an industrial planet and go for a much higher price on a non-industrial world, while the converse would not be true.
+
+Book 3, "Worlds and Adventures" deals first with the creation of a star map, the strategic field on which the various planets adventurers will visit are laid out. The subsector hexgrid is ten hexes by eight. There is a 50% chance of a world appearing in a given hex. Further die rolls determine starpart type and whether jump routes (well-plyed spacelanes) exist between planets. A further series of die rolls is made for each world to determine size, atmosphere, hydrography, population, government type, law level and technology. These factors will often affect one another. Thus a large planet has a better chance for a thick atmosphere. Characteristics such as population, law level and government type help to provide some flavor to a given world, as well as saving the referee some set up time.
+
+I found this world creation process fascinating and highly enjoyable. The randomness of the charts and die rolls offered some very interesting planets. An interesting entry from my own subsector appears below:
+
+GRENDAL Human/Fire Trade (name and political affiliation)
+Starport A (best type)
+2000 mile diameter
+Atmosphere Trade (mostly due to small size)
+20% Liquid
+Population: 100
+
+6

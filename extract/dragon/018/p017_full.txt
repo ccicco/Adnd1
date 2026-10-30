@@ -1,0 +1,58 @@
+August, 1978
+
+The Dragon
+
+Design Forum
+
+## Let Your Town Have A Purpose, or, How To Design A Town In *Boot Hill*
+
+by Mike Crane
+
+One of the hardest things for a moderator to do in any role-playing game is to set up the town or towns in which the players will brawl in, buy equipment in, live in, etc. . . . and Boot Hill is certainly no exception. In practice it may be even harder to set up a town in Boot Hill than any other role-playing game if you know little about the Old West.
+
+The first problem confronting the moderator is what scale to use. I have found that the best cross between detail and space-saving is 20 feet per square on a sheet of graph paper. This gives adequate detail of the town without taking up a wall.
+
+Before grabbing a sheet of graph paper and feverishly drawing on it (or building on it depending on your point of view) stop and lay out a rational organization of your town and also establish it's reason for being there in the first place. If you hate the thought of organizing your town, relax; your town will probably be much easier, quicker, and fun if you take the time out.
+
+Before you even get out a sheet of graph paper you should have specified where it will be located, what the surrounding area looks like, and most importantly you should have written up a capsule history of the town. Some of the most important things that you should include in the history of the town are the original founders' nationality, race and purpose. These are very important because obviously a Spanish missionary's purpose is going to be much different than an American who is looking to exploit the surrounding area. The other main thing that should have been included in the history is if any other nationalities or races immigrated to that town, as this could create separate nationality quarters that would drastically alter the town. An example of this would be a town founded by a group of Spanish farmers who would build small houses made mainly from adobe bricks. Later this territory could be captured by the Americans who might be cattlemen and would probably try to run the Spanish off their farms, and would probably
+
+ship in lumber with which to build their houses, thus changing the area's original way of making a living and also changing the area's lifestyle.
+
+Another thing to keep in mind when mapping out your town is its reason for being there. Whatever the reason is it will greatly influence the contents of the town. An example of this would be a town that was founded because it was located in good cattle country. The town would then probably contain a multitude of cattle pens, livery stables, feed stores, blacksmiths, a vet, etc. . . . and there might even be a railroad running through the town to ship the cattle back to the east. If the town was founded because of gold deposits found in that area there will probably be at least one main mine, a multitude of claim stakes, and assorted general stores to rip off the miners hard-earned golddues.
+
+The location of the town is also very important. An example of this would be a town not on a river or stream — this town would either have to drill wells or if this did not work they would have to cart water into the town. A town on a railroad could have a large Chinese population consisting of Chinese who had once worked on building the railroad. If the town wasn't on the railroad then it probably has a Pony Express and/or a Wells-Fargo office. A town located near Indian territory or repeatedly attacked by Indians would probably have a fort and might even have a trading post. If the town is in a easily accessible area it could be the local seat of government and be the headquarters of the Marshal's Office or of the friendly hanging judge. Imagination is the only limit in this department.
+
+One of the last things to consider in mapping your town is the size. When determining the size of your town remember that most western towns consisted of a few shacks (not counting the buildings with the half moon cut into the door) and not thousands of people, and, few western towns had more than a few hundred people. I would suggest, however you design, at least one town with several hundred people as the center of action. Again, imagination is the only limit.
+
+Remember, you are not designing these towns to exactly portray an old western town, but to provide an enjoyable place for your players. Once you have perfected your designing techniques you will be able to quickly design old western towns containing sawmills, saloons, banks, "social centers", tinsmiths, lithograph studios, gunsmiths — well, you get the idea.
+
+
+Review
+
+### Alpha Omega
+
+*Alpha Omega* is Battelle's first foray into science fiction gaming and it's pure Buck Rogers . . . with some 70's updates. It reminds me of *Star Wars* more than any other SF game I've seen. That may or may not be an endorsement; I don't think so.
+
+*Alpha Omega* is billed as "A game of tactical combat in space," a claim supported by the rules. Units are individual spacecraft representing humankind, an alien race (the Rhys) and a robotic symposium called the Drove. The counters are shape-coded by type, an idea that doesn't work too well in play. The artwork on the counters using it is superb. On the whole, the counters are less successful than the fine counters in other Battelle games. Part of this is because the ship counters are photographic reproductions of Valiant miniatures, muddily done. The rest of the problem is that only white shows up well against dark purple backgrounds. Reading the black lettering on some counters will blind you. Overall, the counters are nice but not up to the standards of other Battelle games.
+
+The mapboard boxes are enormous, in more than one sense. They are physically about 1½" across and they represent 186,000 miles side to side; one light-second. Each turn is six seconds of real time. A
+
+strange scale for tactical combat; in a hex that big, how do you hit your target? How do you find it?
+
+All movement and combat in *Alpha Omega* is two-dimensional. Every action occurs in the plane of the map board. This may be disturbing to those who have played the ordinary run of tactical SF games, most of which are three-dimensional. In the case of *Alpha Omega*, three dimensions wouldn't add anything. There are no "terrain features" which are not represented by counters, the routes of transit are unimportant to most play, so it's not really necessary to add a third direction of movement. It would be a complication without benefit.
+
+An unfortunate flaw of this game is its two-dimensional nature, nevertheless. It is really little more than a naval game set on a sfaffled map. The rules for movement, facing and combat are more than a little reminiscent of *Submarine*, a fine game but a poor parent for this one.
+
+*Alpha Omega* lacks believability, an important quantity in a science fiction game. The weapons, from the Argonne Accumulator to the Dacre Shield, are just names. They are not only unexplained and unjustified, they are difficult to accept. While I am willing to believe in faster-than-light travel, which is a feature of this game, I am not willing to believe in weapons which arrive instantaneously, as the mechanics require these do.
+
+Anyone else with a scientific inclination may do as I did and check the energy expenditures represented
+
+in the movement of these ships. A few minutes with a pocket calculator and the formulae from high-school physics will show that these battlefleets are spending more energy on movement than all the nations of the earth used last year. Good only knows how much goes into firing the guns, or that faster-than-light movement. This is failure by extravagance. The same extravagance went into naming the alien ships. I have great difficulty accepting names like "Anopholies", "Siphonphera", "Akroid" and "Balushi". I hope you had fun naming them, guys, 'cause it sure didn't do anything for the game.
+
+NOTE: I thought most everyone caught the intended references of the latter two. Watch out for Coneheads; they're not from France. — Ed.
+
+In its favor, *Alpha Omega* does have some nice touches, but not enough to save it. The simultaneous movement and combat by plotting is well done. The pad for this purpose is excellent. Another plus is the dependence of combat on the programming of the battle computers aboard both the attacker and defender. The combat results are decrements of the energy available to a ship for fire and movement and this too is nice.
+
+To anyone with a background in SF gaming, *Alpha Omega* is a second choice; at best. For gamers just making the jump from conventional wargames, it's not bad; it just isn't very good. I hope Battelle's second effort is as good as this one might have been. — DM
+
+15

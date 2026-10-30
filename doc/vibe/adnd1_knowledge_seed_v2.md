@@ -28341,6 +28341,43 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   issue-17 box-closing flip (both report-017
   boxes, the f16 two-round pattern). WAIT FOR
   GO.
+  - R933 LANDED (528873f, f17, 29 inline,
+  pure flip, no new ink): The Dragon
+  issue-17 box closing round, the
+  eight-chain walk complete. BOTH report-017
+  boxes flipped in ONE round (gap_census 2
+  closed 0 open): the issue-17 opener chains
+  (the R931 part one - Jousting in D&D,
+  Vampires in the Dungeon, Sights and
+  Sounds in D&D, the Magic Munchkin, the
+  Scholar and the Crs'tchen, the Tesseracts,
+  A Short History of Adamanite, the Angels)
+  and A Wizard With A Difference (the R932
+  part two, the Ward eight specialized
+  wizard variants). 29 inline bookkeeping
+  only (17 consts + 12 bools mirroring the
+  f16 closer: f17IssueSeventeenBoxes=2,
+  chains=8, rounds=3 - the first three-
+  round issue shape, the Curtiss split;
+  issue-closed consts 16..6, registry
+  1313/1338/25, walk-complete bools
+  6..17), no tables, no data files; header
+  rules/f17.h (prefix f17 verified free at
+  c0ef298), audit rules/audits/r933_batch.h
+  "R933 Dragon issue-17 closure audit", 3
+  examples. ISSUES 2-17 ALL CLOSED. Registry
+  ground truth unchanged: 1313 loaded /
+  1338 base lua / 25 never-load (R924
+  re-measure). Census 855->856; rverify
+  GREEN 29 mutants 0 missed; round-trip
+  13858 bytes md5 30d268be40909673abecf311
+  8cddca25, byte-exact at 528873f. Watch:
+  the brawling long-term-effects sequel
+  STILL not printing (watch TD 18). Next:
+  the Dragon Magazine walk continues with
+  Curtiss's call - the next scan upload
+  opens the next issue the same intake.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

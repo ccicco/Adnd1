@@ -1,0 +1,109 @@
+September, 1978
+
+The Dragon
+
+D&D Variant
+
+# INSANITY, or Why Is My Character Eating Leaves?
+
+by Kevin Thompson
+
+Have you ever screamed, "OK, so he's insane! Now how do I handle it?"? If you have, then chances are you are a little bit bonkers yourself. Nonetheless, I herewith have the definitive answer to the musical question, "Just how crazy is he, Doc?".
+
+Here's how to find out.
+
+First, we must develop a saving throw for insanity. For the sake of ease, let me define intelligence as simply the ability to learn or understand an object or situation; and wisdom as the ability to think and act with judgment and clear reason. Therefore, the healthiest mind is one with a high wisdom and an equal amount of intelligence. In the case where intelligence is less than wisdom, there is lesser knowledge and understanding, and is therefore more vulnerability to insanity. On the other hand, if a character has a higher intelligence than wisdom, there is even a greater susceptibility due to an understanding of facts without the necessary judgment to put things in their proper perspective. (Ever hear of a "mad scientist"?)
+
+Now that you presumably understand my reasoning (if any), you are prepared to use it. When encountering something that would cause insanity, you must make your insanity saving throw. Refer to the INSANITY SAVING THROW CHART and cross-index your wisdom score (on the left side) with your intelligence score (along the top). This will give you your unadjusted saving throw number. Now, simply add your level (which is at least 1) to that number and roll a 20-sided die. If you roll that number or less, you have avoided insanity. If not, go on to the INSANITY CHART and roll a 12-sided die.
+
+You'll notice that there are many types of "odd behavior" listed on the INSANITY CHART, giving us an interesting spread of psychoses. Note: None of these psychoses will be evident immediately unless otherwise stated.
+
+1. Nutty: Slightly silly behavior. Generally becoming an odd person with odd ideas and plans. Eccentric.
+
+2. Kleptomaniac: Compulsive thief, with no thief abilities. Sneaks away small objects without real regard to value.
+
+3. Perverse: Takes pleasure in the gruesome or grotesque. Perhaps a little too bloodthirsty when dealing with enemies. Dismemberment is a casual result. Mad laughter in some cases.
+
+4. Psychotic hatred: Violent hatred and immediate, deadly actions when dealing with the type he has a Psychotic hatred of: choose — Magic users, warriors, clerics, thieves, monks or rangers of same or opposing alignment, men, women, elves, dwarves, hobbits, giants, royalty, police-type, witches, tall people, short people, bearded people, rich people, peasants, leaders, everyone of opposing alliance, etc. Choose one that best fits the tendencies of the character.
+
+5. Childlike Trusting: total gullibility. Believes ANYONE.
+
+6. Schizoid: Split Personality. Roll 10-sided die each turn. If a "1" is rolled, personality reverts to the other personality. One personality does not remember the other personality and will often not believe it when told. There are no physical changes, it is all in his mind and actions. Choose from: young man-old man; violent-gentle; arrogant-shy; confident-unsure; brave-coward; male-female; lawful-chaotic; good-evil; generous-greedy; trusting-paranoid; honest-secretive; trustworthy-untrustworthy, or any combination thereof.
+
+7. Severe Paranoia: Thinks everyone is after him. Does not trust anyone, even friends. If someone makes a sudden, possibly dangerous move near him, he may kill him "in self defense". Whenever anyone is whispering, they are talking about him!
+
+8. Acute Paranoia: Convinced that everyone wants to kill him immediately, and tries to escape from them, or kill them, obviously immediately.
+
+9. Gibbering: Just as it says. Victim can walk, eat and sleep. He is totally useless otherwise, and gibbers all day. Cannot look for his own food. Obvious immediately.
+
+10. Suicidal: Whenever the victim meets up with a harrowing or deadly problem, will attempt to kill himself on the roll of "1" on a 6-sided die.
+
+11. Violent: Tries to kill as many people as he can as quickly as he can. Not clever, just deadly. Obvious immediately.
+
+12. Catatonic: Just sits there doing nothing. Won't eat, talk or move. All thoughts are turned inward and ignores all outside stimuli, including pain. Obvious immediately.
+
+In the above cases, all magic or clerical abilities are functional except when gibbering or catatonic.
+
+The cause of insanity is usually up to the Dungeon Master, and is often caused by such things as chests, rings, horns, etc., but may also be caused by the strain of a failure of responsibility, meeting of particularly mindbending creatures such as a lich or demon, or many other interesting reasons.
+
+ENJOY!
+
+## INSANITY SAVING THROW CHART
+
+### INTELLIGENCE
+
+|   | Less than 3 | 3-8 | 9-12 | 13-15 | 16-18 | Over 18  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  Less than 3 | 7 | 5 | 3 | 1 | -2 | -5  |
+|  3-5 | 8 | 9 | 7 | 5 | 2 | -1  |
+|  6-8 | 9 | 10 | 8 | 6 | 3 | 0  |
+|  9-12 | 10 | 11 | 12 | 10 | 7 | 4  |
+|  13-14 | 11 | 12 | 13 | 14 | 11 | 8  |
+|  15-16 | 12 | 13 | 14 | 15 | 12 | 9  |
+|  17 | 13 | 14 | 15 | 16 | 17 | 14  |
+|  18 | 14 | 15 | 16 | 17 | 18 | 15  |
+|  Over 18 | 15 | 16 | 17 | 18 | 19 | 20  |
+
+Add character's level to number and roll 20-sided die.
+
+### INSANITY CHART
+
+|  1. Nutty | 7. Severe Paranoia  |
+| --- | --- |
+|  2. Kleptomaniac | 8. Acute Paranoia  |
+|  3. Perverse | 9. Gibbering  |
+|  4. Psychotic Hatred | 10. Suicidal  |
+|  5. Childlike Trusting | 11. Violent  |
+|  6. Schizoid | 12. Catatonic  |
+
+Traveller cont fr pg 4
+
+to service in the Reserves as well, keeping his contacts within Headquarters Central open, and still giving him time to attend to Sa'Lyn business.
+
+Mustering Out tests had showed his educational level up +2, intelligence up +2 on the Greely Scale, and the Traveller's Society had also honored him by extending an invitation to membership. He had of course cabled his acceptance right away.
+
+Ten thousand in pay was also outstanding to him due to his temporary promotion to Commander.
+
+Ivan glanced over his final characteristics sheet.
+
+|  Aptitude | Start | Final  |
+| --- | --- | --- |
+|  Strength | 7 | 7  |
+|  Endurance | 4 | 5  |
+|  Dexterity | 8 | 8  |
+|  Intelligence | 11 | 14  |
+|  Education | 6 | 8  |
+|  Social Level | 11 | 12  |
+|  Jack-O-Trades |  | +2  |
+|  Vacc-Suit |  | +1  |
+|  Ships Boat |  | +1  |
+
+*Member of Travellers Society
+
+It should speak well enough for him in Council. He had no doubt Baron Sa'Lyn would soon be Marquis Sa'Lyn, and after the Rites of Leadership, Duke. His command record would pull its weight also.
+
+Ivan boarded the chartered Liner Parathon without event. Four hours after Lift from Final Port, he met briefly with two men: Josh Wytland — ex-intelligence officer, now Educational Tutor and Personal Advisor, and Samuel "Sammy" Brice — Ex-Marine major, now Weapons and Training Instructor. Shortly after, Ivan drifted aft to say hello to the rest of the old crew who had gathered aboard one by one, inconspicuously, before takeoff.
+
+He also informed them he'd bribed the Captain to make a small detour by the Naval Yard on Meolin VI before continuing on to Arius . . .
+
+9

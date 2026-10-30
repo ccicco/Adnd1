@@ -1,0 +1,75 @@
+September, 1978
+
+The Dragon
+
+# D&D Variant
+
+# NEW SPELLS IN D&D!
+
+## Cure for an Ailing Campaign or Killer of A Healthy One?
+
+by Paul Sullin
+
+**Editor's Note:** The following is an example of how one group handles the research of new spells. They are NOT recommended for general absorption into existing campaigns willy-nilly. A DM must carefully consider each and every new spell he ok's; the side effects of a seemingly simple spell can be devastating to a carefully wrought campaign. A DM should carefully quiz the "inventor", before approval, about the reasoning behind a spell; its projected uses, applications, need, etc. If the DM can safely allow the spell: i.e., it won't ruin his campaign, he should then set the parameters of what he will allow the spell to do or not do. Every spell should have a "loophole"; some other spell or power that will negate it, or influence it in some way. The fastest way to ruin a campaign, and/or let the MU's "rule the world, is to bring in a "perfect" spell, one with no counter or "crock factor".
+
+### Author's Introduction:
+
+*One of the greatest and most useful abilities of the D&D Magic-user is the capability to research and create spells not on the standard lists. By the use of this ability, even a low-level type can greatly increase his strength and formidability, since any level may research. Since the clarification and extension of the research rules in THE DRAGON #5, many players have virtually made research a science, turning out some truly useful and ingenious spells. The list which follows has been play-tested extensively in the Druid World campaign in Malvern, Arkansas, and proven gameworthy.*
+
+### LEVEL 1
+
+**NATURE CALL:** Allows a form of communication between man and animal. The caster may summon 1-10 small mammals and/or birds, ranging up to squirrels or small hawks in size. These make quick, feinting rushes at the caster's opponent(s), confusing stupid monsters and subtracting two from the hit die of more intelligent creatures. They may not, however, be forced into attacks on monsters which they would normally flee (undead, demons, etc.).
+
+If he desires, the M-U may summon one creature, as large as an eagle, which will carry an object or message to any given point within three days travel. Creatures summoned by this spell take 1-4 melee turns to arrive, and the spell may not be used underground.
+
+### LEVEL 2
+
+**MAGIC MISSILE II:** As Magic Missile, but this spell allows the caster to fire one +2 arrow or two +1 arrows, with a like amount added for every fifth level advanced beyond third.
+
+**MOON RUNES:** These are silvery, shining letters, drawn with the finger on any reasonably solid surface. They may glow constantly, or be "set" to shine under certain conditions, such as the presence of a specific person, or a certain time of day. Likewise, they may also be set to fade under certain circumstances, or after a preset length of time. Duration: 1 year, maximum.
+
+### LEVEL 3
+
+**FLAMEBOLT:** This spell produces a bolt of light which does 3-24 points of damage to living beings (3-30 to undead) and ignites flammables within 5' of the impact point. One use of the spell allows the beam to be fired the level of the caster plus 1-3 times. Range: 240 feet. Duration: Until last charge is fired.
+
+**MYSTIC ROPE:** Creates a magical rope, up to 100' long, which moves about on command. The rope has sufficient independent movement to make untying it impossible for anyone but the conjurer, and it is immune to all non-magical forces. It takes 1 point per 4 feet, and regenerates 1 foot/melee turn.
+
+**PIT OF FLAME:** This spell conjures a pit, 20' x 20' x 5' filled with flames. Those falling in take damage equal to 1/2 the caster's level, rounded up, so that a fifth level pit does 3 dice/melee turn. In another way, the pit may be used as an interrogation device. When used in this fashion, a person placed in the pit floats just above the surface, taking
+
+no damage until he tells an untruth. A lie causes the person being questioned to fall into the pit, taking the damage given above. Duration: 3 turns.
+
+**WORD OF WARDING:** This is one of the only spells which may be used while the speaker is meled. Utterance of this word causes any one weapon, either a specific one, or merely the next one encountered, to be deflected from its intended course toward the speaker. Normally, this spell would be used during the Magic-user's initiative, to take effect after. However, if necessary, it may be used before or after his initiative, to take effect immediately. If it is used in this fashion the speaker may use no spells higher than third level during his initiative, when it comes again. Duration: 1 melee turn.
+
+### LEVEL 4
+
+**FORCE FIELD:** Projects a spherical field, 10' across, similar to a cube of force, except that it will not block magic. The field may be cast around any object, but it will not move unless the caster is inside it. Duration: Level of caster, in turns. Range: 60 ft.
+
+**EXTEND I:** This spell extends the range of 1st-3rd level spells by 50%. Duration: As spell extended.
+
+**SHATTERRAY:** The caster may generate a shimmering beam of force from his palm, which has roughly the properties of a high-powered battering ram. Creatures struck by the beam take 5-30 points of damage from the impact, and structures such as walls and buildings suffer 20 structure points, as per *Chainmail*. For every level the caster progresses beyond seventh, add one damage die, to a maximum of 12 dice total, for damage to living creatures, and 5 structural damage points, to a maximum of 60 points. Range: 120 feet.
+
+**WALL OF WATER:** Creates a wall of water up to 50' x 20'. Normal fire cannot pass through the wall, and flaming creatures take 5-30 points when breaking through. The wall's swirling currents block missile fire, and prevent creatures with fewer than 5 hit dice from passing through. Range: 30 feet. Duration: 1 hour.
+
+### LEVEL 5
+
+**EXTEND II:** As Extend I, but applies to fourth level spells as well.
+
+**BEAM OF BLASTING:** This spell produces a golden beam which transmutes any object struck into a fireball. The blast area is 30 feet across, and the fireball does 1 point of damage/Gold Piece weight of matter transmuted, up to 50 points, maximum. For every three levels the M-U progresses beyond ninth, a like amount is added, so that a twelfth level does 2 points/GP, etc. If the object transmuted is being held or worn, there is no save for the holder, otherwise making one's saving throw halves damage. Note: This spell will not transmute living matter. Range: 200 feet.
+
+### LEVEL 6
+
+**CONJURE DJINN/EFREET:** Uttering this spell conjures a djinn or efreet, which will serve the conjurer for 24 hours. At the end of this time, djinn will vanish, but efreets must be forcibly banished by the reversal of the spell, or attack the summoner.
+
+**DENSITY CONTROL:** Through the use of this spell, the M-U may alter his body density within a range extending from gas to steel. Such changes will also alter his natural armor class, so that at minimum density, no solid weapon can affect him, and at maximum, he is armor class one and his hands strike as swords. The caster may change density at any time during the duration of the spell, and any item(s) in contact with his body change also. Duration: 3 turns.
+
+**EXTEND III:** As Extend II, but applies to fifth level spells, and doubles range.
+
+**COMBINE I:** Allows the caster to combine spells in any combination not exceeding seven spell levels, or three spells, maximum. Duration: As shortest spell combined.
+
+**CALL SPIRIT:** With this spell the Magic-user may summon the shade of a deceased person and ask it two questions. The chance of the ghost knowing the answer(s) varies from case to case and must be individually determined by the DM, depending on the spirit's former level, occupation, time of death, etc., but it should never be less than 25%. The spell may only be performed at night, since the spirits are dispelled by sunlight. Also, the body, bones, or other remains must be within 20 feet, and the name of the deceased must be known.
+
+**RUST MONSTER TOUCH:** Affects all ferrous metal touched by the caster as if it had been touched by a rust monster.
+
+cont pg 21
+
+13

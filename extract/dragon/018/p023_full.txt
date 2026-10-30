@@ -1,0 +1,180 @@
+September, 1978
+
+The Dragon
+
+# Birth Tables — Boot Hill
+
+by Stephen Blair
+
+I Social Class
+
+01-10 — Law Related
+11-55 — Ranch Related
+56-85 — Merchant Related
+86-99 — Drifter
+00 — Historical Character
+
+IA. Professions of Fathers
+Law Related Professions
+
+1 — Lawyer
+2 — Judge
+3 — Cavalry Trooper*
+4 — Town Marshall
+5 — Deputy Sheriff
+6 — Sheriff
+7 — Stage Coach
+8 — Deputy US Marshall
+
+Ranch Related Professions
+
+01-50 Cowboy
+51-00 Homesteader
+
+Drifter Types
+
+1 — Gunfighter
+2 — Detective
+3 — Vagabond
+4 — Vagabond
+5 — Gambler
+6 — Gambler
+7 — Indian
+8 — Bounty Hunter
+
+*Roll for Rank
+
+01-65 EM
+66-85 NCO
+86-95 Lieutenant
+96-97 Captain
+98-99 Colonel
+00 — General
+
+Merchant Related — Roll for Craft
+
+1 — Blacksmith
+2 — Physician
+3 — Dentist
+4 — Leatherworker
+5 — Gunsmith
+6 — Tailor
+7 — Preacher
+8 — Buffalo Hunter
+9 — Telegrapher
+10 — Storekeeper
+11 — Bank Teller
+12 — Assayer
+13 — Government
+14 — Miner
+15 — Bartender
+16 — Undertaker
+17 — Clerk
+18 — Railroad
+19 — Stage Line
+20 — Muleskinner
+
+II Birth Order
+
+1 — 1st Born 5 — 3rd Born
+2 — 1st Born 6 — 4th Born
+3 — 2nd Born 7 — Bastard
+4 — 2nd Born 8 — Bastard
+
+Roll six-sided die to determine orphan status. A die roll of six indicates orphan.
+
+All fathers have one random skill. All Players have two random skills.
+
+III Skills
+
+1 — Reading/Writing
+2 — Horsemanship
+3 — Crafts*
+4 — Swimming
+5 — Tracking
+6 — Marksmanship — Gun
+7 — Marksmanship — Thrown
+8 — Gambling
+9 — 2nd Language
+10 — Facility with numbers
+
+IV Initial Purse*
+
+01-20 — $25
+21-40 — 75
+41-50 — 100
+51-70 — 125
+71-80 — 150
+81-90 — 200
+91-99 — 250
+00 — 500
+
+If Player is orphan — $0
+
+*Indicated amount for 2nd born on down
+Doubled for 1st Born plus 1/2 of any land that father owns.
+
+V Size of Spread
+
+1 — 640 Acres 6 — 3840
+2 — 1280 7 — 4480
+3 — 1920 8 — 5120
+4 — 2560 9 — 5760
+5 — 3200 10 — 6400
+
+Each 640 acres will contain 30-80% usable grazeland
+Each acre supports 1/2 Horse, 1/2 Longhorn, 1/4 Hereford,
+or 5 sheep. There is a 0-70% chance of potable surface
+water per 10 acres. Land value $0.50 — $2.50
+
+How to Use the Birth Tables:
+
+Simply roll the appropriate sided dice for a result on the appropriate table:
+
+I. Roll percentile dice for father's area of endeavor, then roll proper die on the indicated sub-table (IA). If 00 was rolled, player has choice of becoming one of the characters listed on p. 25 or 28 of the Boot Hill Rules or on p. 6 of v187 of the Strategic Review. Player may if he wishes, however, continue to use the birth tables in lieu of this option.
+II. Roll eight-sided die to determine sibling rank on table II, then roll six-sided die to determine orphan status.
+III. Now roll for father's skill. Players may choose this as one of their two skills and take one random skill or they may roll for two random skills.
+IV. Now roll for initial purse.
+V. If father is a homesteader, then roll to determine size of spread. Referee will determine types of animals on homestead and the amount of grazeland available, and the availability of water.
+
+The Skills
+
+Reading/Writing self-explanatory player may acquire this skill by finding an instructor and spending 6 months to 2 years learning.
+
+Horsemanship allows player to improve quality of horse by one step for each six weeks spent in training (Maximum 2 step increase)
+
+Crafts Roll on proper table in section IA.
+
+Swimming Only players who know how to swim may swim. This skill may be learned in 2 weeks if an instructor is available.
+
+Tracking Subtract 5 from all tracking die rolls.
+Marksmanship Add 10 to the original accuracy score. Players may add 1 to their original accuracy scores for each week and minimum of 250 rounds of ammunition used in practice. A maximum increase of 5 is allowed. If an instructor who must have an accuracy of 85 or greater is available, then these rates are doubled (2 per week Maximum of 10)
+Gambling Adjust all Gambling die rolls 10% in player's favor. 15% chance of being accused of cheating.
+
+2nd Language May speak (and read/write if player can read/write) 1 additional appropriate language.
+
+Facility with numbers can add and subtract, can detect fraud in bills and books.
+
+An Example:
+
+John W. Bitterrott's Father was (I-51) a Homesteader (IA-58). He owned 1280 acres of land (V-2) in Gamer's Territory. John was his second child (II-3) but not an orphan (II-5). Although John's father was a noted horseman (III-2), John was a gambler (III-8) and had learned Arapaho (III-9) from some of his Indian Scout friends. When John reached the age of 21, his father gave him $125 (IV-61) and kicked him out.
+
+New Scrolls fr pg 13
+
+LEVEL 7
+
+SUMMON: Speaking this spell summons a demon or other being which will perform one task for the summoner, much like an invisible stalker. The DM should prepare an individual list of creatures, such as Quaolnargn of the Elric of Melnibone series, in addition to the standard demons, which may be summoned. Their powers should vary: pre-cognition, level-draining, etc., but they should be no more powerful than common sense dictates (this is not a Gate spell!). In some cases, other rituals, such as sacrifices, should be necessary to call forth certain beings.
+
+APPORTATION: This is a sort of "reverse teleport": instead of bringing the caster to a prestated location, this spell allows the caster to teleport any given object to himself. Magical items get a saving throw vs. magic as a Magic-user of twice the items' "level". Thus a +1 sword saves as a second level Magic-user. Items on the Miscellaneous Magic tables take their "level" as the number of the table, and all other items have a saving throw of 12. Living targets get saving throws, but all those below fifth save at a -4, and those of sixth level or greater save at -3. Whether or not the spell works, the Magic-user must rest for 1-12 hours before more spells may be cast. Use of a crystal ball when casting this spell adds 10% to the chance of success.
+
+MASS POLYMORPH: This spell allows the caster to enchant up to 25 roughly mansized creatures, as Polymorph Others. The potency of this spell causes all those affected by it to save at a -3. If it is cast at two or fewer creatures, they save at a -4. Monsters appreciably larger or smaller than man-size alter maximum number affected accordingly. Range: 120 feet.
+
+COMBINE III: As Combine II, but allows combinations of up to nine spell levels, or four spells, total.
+
+LEVEL 9
+
+CANCELLATION: Speaking this spell causes the caster's touch to be treated as a Rod of Cancellation. Duration: 1 melee turn.
+
+As a final word, it should be noted that, although these spells have worked beautifully in my campaign, no two DMs run their worlds in exactly the same way. I therefore urge anyone who decides to use them to play test them thoroughly before adding them to their spell fits. May your treasures be plentiful, and may you always make your saving throw.
+
+21

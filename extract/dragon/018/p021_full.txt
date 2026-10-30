@@ -1,0 +1,62 @@
+September, 1978
+
+The Dragon
+
+# D&D Variant
+
+# The Chamber of the Godgame
+
+by Mick McAllister
+
+The five adventurers entered a sparsely furnished room deep in the dungeon of Hazard Keep. A table, a few chairs, diffused light without a source, no other exits. The door shuts behind them and locks, even though they had both spiked it and secured it with a formidable Hold spell.
+
+On the table is a scroll and a set of 4 DG. Kendrick the Wizard examines the scroll, then reads it aloud. The message, in common tongue, is simple, direct, unnerving:
+
+"You have entered the Chamber of the Godgame. Welcome.
+
+"There is only one way out, a test of courage and self-sacrifice. One among you must voluntarily risk his life to save the others.
+
+"Before you are four dice. If you break one, you will observe that it contains a cyanide syrup which kills painlessly and instantaneously. You must select a die and roll it. If you roll a "one," place the die in your mouth; when you bite down, death will come swiftly.
+
+"The door will open the moment the terms of the Hazard are fulfilled." Vainly the company attempted to escape. Kendrick employed his many resources — A Knock spell, a Dispell Magic, a Dimension Door, a Pass-Wall — without effect. Desperately, he tried to Teleport: nothing. Trembling with mental exhaustion, he tried Contact Higher Plane, but the only reply he heard was a bland voice which repeated, "There is only one way out." Giblet, a dwarf with the brains of a turkey but the muscles of a steroid-fed Mumakil, bashed himself insensible, meanwhile, trying to knock the door down. Nervously, the others discussed their plight, each reluctant to make the sacrifice. At last a cleric named Malcolm strode to the table, hesitated, then seized a die. The others watched as he rolled — a "one." Commending himself to his god, he placed the die in his mouth. An instant later, the door opened silently and Malcolm's body disappeared.
+
+Grieving for their gallant comrade, the three conscious adventurers dragged Giblet off down the halls, making their way out of the dungeon. Great was their grief, but encounters were few, and none of them suffered further injuries (except Kendrick, who sprained a wrist hauling Giblet for three turns). At the mouth of Hazard Keep they came upon Malcolm sitting on a rock, well and whole, his eyes touched with the calm power and reserve of one who has met death and returned.
+
+Some D&Ders will recognize "The Godgame" from a scene in John Fowles' grand metaphysical dungeon novel, The Magus. In D&D the game offers many variations, depending on the alignment of "The Godgame Master," a god or unchallengeable Wizard, and posited on the probability that the scroll contains one or more falsehoods.
+
+In The Magus, the dice are loaded, but not poisoned. The hero is rewarded for refusing to fulfill the terms of the game after he rolls a "one;" refusing, in effect, to throw away his life for an abstract principle of honor. This could be used in the dungeon, but the circumstances are tremendously altered if the lives of all the party are in the balance, or appear to be.
+
+The variations can range from benign, as in the example, to malicious. An evil magician would simply honor his agreement, accepting one life as ransom of the others. More evil yet, he might not require the voluntary agreement of the victim, but let the party "select" someone themselves. Be warned, through — a party agreeing to coerce a weaker member into submitting may be dealing with a benign or neutral Power who will punish them for their inhumanity.
+
+The benign variants require white lies. The simplest is the one in the example: put the volunteer in suspended animation and teleport him outside the dungeon to wait for his fellows. He should be rewarded for his self-sacrifice, of course, with both experience and treasure — since he believed when he bit the die that he had given up both. A suitable recompense would be a treasure equal to 2x a share of whatever the rest of the party brings out and experience points equal to 2 or 3x those accumulated by the others (for example, the four come out with 4,000 GP & 1,500 Ex. pts. Each of them gets 1,000 GP and 375 ep; and Malcolm is given 2,000 GP & 1,125 ep by the Godgame Master).
+
+There are other possibilities. Simply have the die not poisoned after all, for instance. Or a secret door might reveal a treasure to a worthy party. Or the shortest path to the surface might be cleared and lighted for them.
+
+My own preference is the Neutral Godgame Master, however. He might, like an evil GM, not specify that the tester must volunteer of his own free will, and then anyone coercing anyone else into taking the poison would die in the victim's place at the fulfillment of Hazard. Or, if the victim is no better than his fellows, as willing as they to force someone else to bite the die and only the goat because he is the weakest among them, the Neutral GM might slay them all or — worse, perhaps — set them all free (the die is not poisoned) to finish their adventure in mutual distrust.
+
+If a character ends up alone in the chamber, this variant can be used: there are four dice on the table, and a device which automatically crushes one to release the odor of bitter almonds. The scroll specifies that only one other die is poisoned and the adventurer must select one and eat it if he rolls a "one."
+
+If the loaded dice option is to be used, the DM can fake it by rolling secretly for the character, or an enterprising DM can simply buy loaded dice at a novelty shop.
+
+The variants can be selected by the DM as he creates the chamber (be sure to include an alternate scroll in case a solitary character wanders in) either according to his personal whim or by a series of die rolls.
+
+# Rumbles fr pg 12
+
+This issue contains a very special story — The Childhood and Youth of The Gray Mouser, by Harry Fischer. The introduction I wrote for it will give you its background; the introduction by Harry's life-long friend, Fritz Leiber, authenticates it. It varies with what Fritz wrote, and I have tried hard to meld the two into their proper place in the continuing saga of Fafnid and The Gray Mouser. My thanks to Fritz Leiber for permission to quote bits of the original tale. This story has never appeared in print before, and we are proud to bring it to you.
+
+# Magic Theory fr pg 14
+
+Other dungeon masters may use a "spell points" system, wherein the magic must have "spell points" of mana left in order to be able to cast magic spells, but in my dungeons I will be using a fatigue factor. This factor is subtracted from all characteristics, including intelligence. When a magic user tries to cast a spell, the player rolls a twenty-sided die. If the roll is higher than the magician's fatigue-adjusted intelligence, the spell was done wrong and may backfire.
+
+The Law of Similarity, the Law of Contagion, the Laws of Mana, Obscurity, and Harmony, the spell, the rite, and the condition of the performer — these can be used as the fundamentals of dungeon magic. It remains to be seen how they can be applied to produce the specific spells of "Sleep," "Levitate," "Invisibility," "Fire-Ball," and all the others, but I'm leaving that as an exercise for players in the magic contest on my birthday.
+
+Addendum: Specific Rules for the June 11 Contest in Magic to be held in the City of Kemble by the Magician's Guild of Meng.
+
+1. Players must give the dungeon master a written copy of the magic spell setting forth the exact words, and indicating the rite (gestures) to be used. Condition of the performer will be assumed. Apparatus needed may be brought, bought in Kemble, or borrowed from the Magicians' Guild.
+
+2. To be effective each spell must invoke at least one similarity.
+3. The intended effect and intended level of the spell must be specified. Flesh golems will be provided as lawful targets for combat magic. Volunteers must be found by the entrant for spells involving a target mind. No purely black magic will be allowed. Anyone killed will be resurrected if possible. All spectators view the proceedings at their own hazard.
+
+4. Scoring will be by points, 1-10 points being awarded by each of three judges. Top total score for a single spell in each category wins. Categories are 1. Implementation of Standard Spells, 2. Original Spells. Winner in the first will receive his choice of any item listed in Greyhawk. Winner in the second will receive his choice of any of the dungeon master's original magic items.
+
+19

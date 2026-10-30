@@ -1,0 +1,51 @@
+The Dragon
+
+Vol III No. 4
+
+Design Forum
+
+## Magic: Governed by Laws of Theory
+
+by Thomas A. McCloud
+
+In most dungeon adventures magic, or at least its detail, is treated rather casually. A player says: "My magic user casts sleep on those orcs." The dungeon master replies: "All right, six of them fell asleep, the other ten are still coming." But what words did the magician speak? What gestures were made? Why did it work?
+
+Of course for the vast majority of adventures the simple rules in use are quite enough. But for special occasions (such as the magic contest I will be hosting on my birthday) it is worth while to know more about the theory and practice of magic.
+
+Surprisingly it is not necessary to invent an imaginary theory of magic. A theory has been developed to explain the "logic" used in magic spells throughout the world. Descriptions of it may be found in such places as the article "MAGIC" in the 1960 *Encyclopedia Britannica*, and Sir James George Frazer's *The Golden Bough*. It is a system which has already been adopted by more than one author of fiction. Additions can of course be made to the theory, and the theory is incomplete without a discussion of the practice of magic, but the theory as outlined by Frazer is summarized in just two laws, the Law of Similarity and the Law of Contagion.
+
+The Law of Similarity may be stated as "An effect resembles its cause." The most classic example of applying this law is the use of a voodoo doll to inflict injuries. The evil magician makes a wax doll similar to his victim, and then sticks pins into it, whereupon the victim feels a corresponding pain. Another example of employing similarity is the use of grave dirt, dead mens' bones, and the like to induce sleep. Frazer discusses no fewer than ten such spells where the similarity of sleep to death is invoked. The most elaborate is the use of a candle made from the fat of a hanged man held in a Hand of Glory (which is the dried and pickled hand of another hanged man). Anyone presented with this grisly item of necromancy could no more move than could the dead.
+
+Frazer also gives examples of white magic which employ the Law of Similarity. A charm by which a banished king may regain his kingdom is to eat food cooked on a fire which was made from wood which grew out of the stump of a tree which had been cut down. Simply wearing a wine colored amethyst can keep a person sober. In the Kei Islands women anoint fruits and stones with oil and chant: "Oh lord sun, moon, let the bullets rebound from our husbands, brothers, betrothed, and other relations, just as raindrops rebound from these objects which are smeared with oil."
+
+The Law of Contagion may be stated as: "If things once joined are separated they will remember each other and remain effectively similar." The classic example here is the affinity presumed between a person and clippings of his hair or nails. Among other uses such clippings can be included in voodoo dolls to make them more effective, although it could be argued that this is more a matter of improving the similarity. A clearer example of the Law of Contagion is found in the practice of cooling a weapon to reduce the fever of a person injured by the weapon. Another is found in the widespread practice of spiking, stabbing, or putting sharp objects in footsteps to injure the feet which made them.
+
+A fictional use of the Law of Contagion occurs in Robert A. Heinlein's *Magic Inc.* wherein is described the practice of building a section of bleachers, cutting it to pieces, then expanding each of several pieces by magic to produce several copies of the original section.
+
+Besides the Laws of Similarity and Contagion formulated by Frazer, several other laws have been, or could be, propounded. Of these the most widely mentioned seems to be the Law of Mana: magic power is based on a mysterious supernatural force called *mana*. Unfortunately there is no consensus as to how mana works. In many books it is simply inherent in magic users; in Randall Garrett's Lord Darcy stories, mages have the "talent," others don't. In Larry Niven's Warlock stories mana is inherent in an area or territory, when it is used up, it is gone and no more magic will work in that place. At the same time, Niven does allow that there is mana in sacrifice, and also in meteorites. In the "spell points" systems used by some dungeon masters magicians
+
+have a fixed amount of mana per day, which is used up as spells are cast, but then renewed by rest.
+
+In my own dungeons I will be using the Law of Artistry: "Mana derives from art." By art I mean "the quality, production, expression, or realm of what is beautiful, or of more than ordinary significance." Note that art may be good or evil. In C.S. Lewis's *That Hideous Strength*, the use of art both sinister and bizarre is quite chillingly portrayed. In Niven's Warlock stories killings in war produce no mana, murders produce some, and ritual sacrifice produces the most. But art need not be evil. In deCamp and Pratt's *The Compleat Enchanter* it seems to be poetry which powers the spells, and the works of major poets produce more mana than those of minor poets. Nature is full of art, and much mana is sometimes derived from it, as in the star magic in Joy Chant's *Red Moon and Black Mountain*.
+
+Another closely related law is the Law of Obscurity: Potency is proportional to abstrusity. This is the theory presumed behind the strangeness of ingredients found in many magic formulas. For example in *The Golden Bough* Frazer quotes Bacon's description of a salve to be smeared on a weapon to cure the wound made by the weapon. The salve includes among other ingredients "... the moss upon the skull of a dead man unburied, and the fats of a boar and a bear killed in the act of generation." The Law of Obscurity is also presumably involved in the fact that magic spells are very often in obscure and arcane languages.
+
+Finally there is the Law of Harmony: The balance of the universe must be maintained. Basically this means that there is a price which must be paid for the use of magic. In John Brunner's story *Imprint of Chaos* it appears that one magician pays for his powers with feet that get painfully red hot when he walks, and another pays with impotence. In Joy Chant's *Red Moon and Black Mountain* those who wield the star magic pay by forsaking all warmth. The price to be paid for the powers of satanic witchcraft is too well known to mention.
+
+The Law of Harmond also requires that self sacrifice shall be rewarded, and undeserved bad luck shall lead to good. This is woven into more fairy tales and fantasies than I would care to count, from *Jack and the Beanstalk*, to J.R.R. Tolkien's *Leaf by Niggle*. But here we are edging out of magic into another realm entirely.
+
+Turning from theory to practice, the *Encyclopedia Britannica* notes that there are three parts to any act of magic. These are the spell, the rite, and the condition of the magician.
+
+Of these, by far the most important is the spell, the words recited to produce the desired effect. The rite may be entirely absent, the condition of the performer may be irrelevant, but the spoken word is always used. In the "real" magic attempted in the real world spells may seem crude, but they are dictated by tradition and must not be varied. But for my dungeons the extra laws noted above will apply — the spell should be poetic, use archaic language, and refer to the sources of mana to be used. However, these assist the spell, they are not absolutely necessary.
+
+In both "real" magic and magic in my dungeons the spell must above all describe the similarities invoked. The best magic in fiction, such as that in deCamp and Pratt's *The Compleat Enchanter*, does this. For example, in that book Shea lands his flying broom with: "... Like a dead leaf descending, So softly fall you!" to obtain a soft landing. (Unfortunately the broom also spins around like a falling leaf.)
+
+The second part of the act of magic is the rite, which consists of the actions taken and gestures made while the spell is cast. The main purpose of the rite is to give the magic direction. This is the basic idea behind the magic wand; it is a pointer. A specific example from the *Britannica* is the Maori dart throwing charm. The Maori spits on the dart and recites: "Fly forward, my dart, like a meteor in the heavens." From this example it can be seen that the rite need have little relevance to the spell. On the other hand the rite may be directly related to the spell, as in rain making spells which involve sprinkling water on the ground.
+
+The last part of the act of magic is the condition of the performer. Most of the concern of "real" magicians is to avoid breaking taboos. But for some spells emotions may be important, as in some types of death spells where the wizard may need to become as angry and excited as he would if actually stabbing his victim.
+
+But for dungeon purposes the most important condition for the use of magic is that the magician be a magic user of appropriate level.
+
+cont on pg 19
+
+14
