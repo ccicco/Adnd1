@@ -1,0 +1,136 @@
+The Dragon
+M-A Variant
+Vol. II No. 8
+On the lost star ship, “Warden”, there is a small compound lo-
+cated near a ruined city. The inhabitants of the compound are descend-
+ants of the radiation disaster that struck the ship. Their distant ances-
+tors had tried to restore sanity to the nearby city, but soon realized that
+the task was too great for them. They were forced into this decision be-
+cause of the increasing frequency of mutant attacks upon the com-
+pound. The ever-decreasing group was forced into building a small
+“safe” area from which they could venture out only at need. For years,
+in their self-imposed isolation, the group tried to learn about the much
+changed ship and its devices, for huge gaps existed in their knowledge.
+These gaps were created when their highly trained ancestors were killed
+before they could pass along their knowledge. Their lack of know-how
+worried them, for if they had advanced weapons, they could foil any
+mutant attack. Their need to find out more about the ship was demon-
+strated when a strange mutated humanoid got through their defense
+system, So, in an effort to find out what there was to discover about the
+mutations of the ship and the ship’s lost knowledge, they sent out
+scouts. They did not want to risk themselves for their fear of mutants
+was overwhelming. They were instead able to create self controlled ro-
+botic devices to do the job.
+The robots are equipped with the best equipment they have, but
+this is not very formidable compared to what they think their ancestors
+were capable of. They never want to be able to communicate with the
+device lest some unknown mutant was able to track the robot back to
+its source. To insure that this never happens the final program was very
+complete. It states that the robotic unit is to explore the mutant filled
+ship studying mutants and any discovered devices of the ancients. This
+information is to be sent back on a one-way radio circuit. The unit was
+programmed with the combined knowledge of the compound on techni-
+cal devices and a program block was given it so that it could never ap-
+proach the place of its creation. These units were sent off and while
+many of the units were quickly destroyed, some of them gave their cre-
+ators much valuable information.
+Because of the nature of this possible player character, it is recom-
+mended that only one player of any group play a robot. One big advan-
+tage to the Star Ship Master is that if a robot player is killed the SM can
+start another robot off in the same general direction with all the know-
+ledge of the old unit. The SM should give every robot player a small
+amount of technical knowledge, given in such a way that it forces the
+player to still experiment with many of the possible devices of the ship.
+These robots are not controlled by bands or other robots.
+To set up a player as a robot, you roll no dice. The player is given
+115 points for structural creation and 100 power points. The player cre-
+ates the kind of unit he or she wants with strengths and weakness that
+only they know about. The structural points are used for the movement
+factor, computor factor, physical devices, armor, sensory equipment,
+and weapons. The power points serve to beef up special sections.
+MOVEMENT UNITS:
+These units propel the robot and only one movement device is al-
+lowed per robot. The units lose speed when weight is added or damage
+is taken. The SM should determine what the effects are on movement.
+TYPE OF UNIT SPEED
+“Forest” Propulsion Unit
+Standard Propulsion Unit
+“Garden” Propulsion Unit
+s iailins toads eG a Ridattea oak oe 48 KPH (30 mph)
+40 KPH (25 mph)
+Low Propulsion Unit oi25 205-3 eet t eeeed Sees e eee 20 KPH( ~~ mph)
+Anu-stavityUMl.d c.e3 peewee eee cee etd he wee ieee te oe ots Height Only
+Tréads: (iiracks) viiiceie 4d. Bae a eee lea ak 8 a4 aoe ee 15 KPH( mph)
+COSTS &amp; WEIGHTS
+Unit Type cost
+“Forest”? PU....... 30 Structure Points ....... Operational Weight 500 Ib.
+Standard PU....... 25 Structure Points....... Operational Weight 400 Ib.
+“Garden” PU...... 20 Structure Points....... Operational Weight 350 lb.
+Low PU: p32 cane ces 15 Structure Points....... Operational Weight 500 Ib.
+Anti-Gravity U..... 30 Structure Points....... Operational Weight 900 Ib.
+Treads...........% 45 Structure Points...... Operational Weight 1,500 Ib.
+12
+For every five power points added to a propulsion unit there is an in-
+crease of five KPH and twenty pounds of operational weight. In the
+case of the Anti-Gravity unit, it can raise the robot up to 500 yards;
+with the addition of five power points it can raise it up to 1,500 yards.
+COMPUTER UNITS:
+There are basically four different types of electronic brains. Each
+one is responsible for the controlling of the power relays needed when
+using broadcast power, the use of the devices the robot is equipped
+with, and the logic systems needed for travel. The following is a detail-
+ing of what each unit does:
+Single Logic System: The system will work all the devices with a dex-
+terity of ten. It is able to use only two systems at the same time.
+Dual Dependent Logic System: These are two separated computers that
+must work together to control the entire system. In case of malfunction
+or damage, one computer can control any one system of the robot. This
+system is able to use any three systems on the robot at the same time. It
+gives the unit a dexterity of twelve at all times.
+Dual Independent Logic System: This is just two separate systems that
+are able to use any four systems of the robot at the same time (de-
+pendant on the power accumulation capacity). In case of damage it is
+able to control the robot as the single logic system. It gives the unit a
+dexterity of fifteen at all times.
+Triple Semi-independant Logic System: This is the most complex of all
+the robotic systems and allows the unit to use any six systems at the
+same time. If power is available it is usually able to repair itself and it
+gives the robot a dexterity of eighteen. This system greatly increases the
+ability of the robot to figure out ancient devices (judges option as to the
+total ability).
+For every fifteen power points added to the computer unit, it is able to
+use one extra built-in robotic system (over and above the norm for the
+unit). For every ten power points added to the computer unit, it is able
+to add one to the robot’s dexterity (up to eighteen).
+Computers
+TYPE OF UNIT COST
+Siglo LS yewtea wah po eye ad Meenas oer Se at 10 Structure Points
+Dual Dependent LS .60.5 eter cout se Soe ae Ase core 15 Structure Points
+Dual- Independent LS:.-3 sy. ck aie ove bee ee Svea eed 20 Structure Points
+Triple Semi-independent LS ................-2.00000- 25 Structure Points
+PHYSICAL DEVICES:
+All of these parts are located in the trunk of the robot.
+Lead Shielding: Robots have a base ten mental resistance and a base ten
+radiation resistance. One of these shields raises both scores by four
+points. Each shield weighs fifty pounds.
+Lights: These are two moveable lamps that can be used to dazzle
+enemies.
+Quills: These are six inch steel quills that can be located anywhere on
+the unit. There are fifty quills per set and five of them can be launched
+if ten extra structure points are spent. These spikes have a range of fifty
+yards and a weapon class of three.
+Boxes: A robot may have up to four of these eight cubic foot exterior
+boxes. Each comes filled with 100 computer power points and 100
+structure repair points. This is the only way a robot may get spare parts
+in its beginnings. Always keep track of how many points are left in each
+box.
+Radiation Detector: This device is effective up to loo meters and can
+determine intensity levels.
+Water Proofing: A robot is normally water-proofed to twenty feet of
+water; with ten extra structure points it is good for ten extra feet of
+water.
+Resistance to Heat &amp; Cold: A robot is normally resistant to tempera-
+tures of -40 degrees F to plus 120 degrees F. Every five points of struc-
+ture increases that resistance on either side up/down five degrees.
+Single Grasping Claw: Twelve meter (39 feet) extension, with a lifting
+capability of 100 kilograms (220 pounds).

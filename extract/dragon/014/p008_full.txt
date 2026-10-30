@@ -1,0 +1,147 @@
+The Dragon
+scatters 2-12&quot; long.
+Medium Range:
+Roll die for direction as above, if scatter is long distance is 1-6&quot;) other-
+wise 1-3&quot;.
+Long Range:
+Roll direction as above, distance 1-6&quot;
+Extreme Range:
+Roll a die (either a 6 or 8 sided) for direction, splitting up the directions
+possible equally. An 8 sided die is best, with 1 = N(North), 2=NE,
+3 = E, 4 =SE, 6 = SW, 7 = W, and 8 = NW. Then roll 2 six-sided dice,
+and take the larger of the two as the distance scattered in inches.
+Direct Fire Missiles scatter as if at medium range. Indirect Fire
+Weapons scatter the same as direct fire weapons at extreme range, ex-
+cept that the scatter distance for Rockets is the sum of the two dice (2-
+12) and for Missiles only ONE die is rolled for distance.
+Aircraft
+Aircraft (or more correctly flying machines) that attack while
+moving slowly using their weapons in a “normal” manner (like a
+ground vehicle might) scatter normally. Aircraft attacking by Bombing
+roll one die for scatter direction using the 1, 2 = short, 3, 4 = right or
+left, 5, 6 = long as in direct fire above. At low altitude distance is 1-6”
+from one die, at medium altitude it is 1-6” but is the larger of two dice,
+and at high altitude the distance is 2-12”. Rockets scatter like bombs,
+Missiles scatter like bombs at low altitude. “Smart bombs” behave like
+missiles, both for to hit purposes and for scatter.
+Speaking of aircraft, fire at anything flying (but not a things float-
+ing just over the ground like GEMS) that misses counts as a clear miss
+and goes off the board unless the shell, missile, etc. has a proximity
+fuse or equivalent. If so unguided projectiles that miss but come within
+3 of hitting (i.e., if the to hit number was 19 and a 16, 17 or 18 was
+rolled) scatter (in the air, no effect on the ground) such that they may
+be close enough to affect a target, but no other target will be affected
+unless the flyer is part of a swarm. If the shell was within 1 of hitting
+the scatter is 1-6”, roll 1 die. If within 2 of hitting, roll two dice and
+take the larger. If within three of hitting the scatter distance is 2-12”.
+Guided missiles that are not specially designed for use against aircraft
+count the same as these, but anti-aircraft missiles can explode nearby if
+they are within 6 of hitting. Within | or 2 roll one die; 3 or 4 roll two
+dice and take the larger; 5 or 6 roll two dice and take the sum. If ex-
+tended scale is used, all distances must be doubled. You can either
+simply double these values or use 12 sided dice instead of 6 sided.
+Aircraft Movements
+The aircraft (flitter and shuttle craft) section of the movement
+rules was done incorrectly. Unfortunately everyone who helped me
+playtest the rules made the same mistake I did. We had allowed a flit-
+ter, for example, to start from the ground, move 160”, and stop at the
+end of the turn. The acceleration rates were only used for attempts to
+increase the speed beyond normal. THIS IS WRONG. At Gencon some
+people started using the rules right, and the problem was noticed.
+In a standard atmosphere (like Earth’s) all of the aircraft can de-
+celerate at about 360”/turn squared by using the atmosphere as well as
+their engines to brake. In vacuum acceleration and deceleration are the
+same. In atmospheres thinner or thicker than standard adjustments
+must be made. Space prohibits a detailed explanation of this, but you
+should be able to work it out.
+In vacuum speeds are limited only by orbital speed (faster than
+that and you start to fly out into a higher orbit) and, at low altitude, the
+pilot’s ability to prevent a crash. Discounting the crash problem at very
+low altitude (it is already covered in the rules) speed in atmosphere is
+limited by air resistance, which is greater at low altitude than high. In a
+standard atmosphere the speed of sound (mach 1) is about 260”/turn in
+the regular game scale. At high altitude speeds of mach 4 to mach 6 are
+about right for these kind of vehicles. At low altitude shuttles can go
+just under mach | while flitters can reach a maximum speed of about
+mach 2. Again these speeds will vary in other atmospheres.
+The following table gives the maximum acceleration of various air-
+craft in vacuum and standard atmosphere and the maximum distance
+the aircraft can go in one turn if it both starts and ends the turn station-
+ary. If an aircraft starts stationary and accelerates at its maximum all
+turn it will move half its acceleration value in inches. (All of these
+values can be worked out from freshman physics given the acceleration
+and deceleration.)
+Vol. II No. 8
+Aircraft Acceleration &amp; Deceleration
+Aircraft Type Maximum Acceleration Max. Start to Stop Distance
+in in in in
+Vacuum Atmosphere Vacuum Atmosphere
+Fitter: Light 300 150 72 54
+Heavy 225 120 54 48
+Transport 225 100 54 40
+Shuttle Craft: Lt. 225 90 54 36
+Mdm. 150 75 36 32
+Hvy. 150 60 36 27
+As we have seen, air movement from place to place becomes com-
+plicated when you wish to land. For example, if you wish to move some
+troops 300” by transport flitter, on turn one the flitter can accelerate
+fully to a speed of 100, moving 50 in the process (We are in atmos-
+phere). On turn two the flitter can continue to accelerate from 100 to
+200 in speed, moving an additional 150” for a total movement in the
+two turns of 200”. In turn three the flitter decelerates at a rate of 200
+(its maximum is 360 so it is OK) moving 100” in the process and ending
+at rest.
+NEW RULES (optional)
+FORWARD OBSERVER (FO) RULE:
+Whenever a unit fires on something it cannot see (indirect fire, air-
+craft, etc.) it is depending on the Forward Observer (FO) who is direct-
+ing the fire. There is always a chance that the FO will make a mistake
+and give the wrong map coordinates, etc. If he does the Aiming Point
+will be wrong, and a die roll that “hits” means the point the FO speci-
+fied (the Aiming Point) is hit, but not the target. If the attack is a miss
+the scatter is from the AP also. If the FO makes a mistake, find the AP
+by rolling scatter like a missile in indirect fire. Check each turn to see if
+the FO corrects his mistake, until he does, no further roll is required
+until a new target is chosen. Fire at preplanned registration points is not
+subject to this rule.
+Note the object of military value may not be visible but the target
+may be. An example of this is an air unit attack on a weapon in a small
+building. The unit calling for the attack can see the weapon but the air-
+craft cannot. Still, as long as the aircraft can see the building the attack
+counts as “direct”. Similarly, any target on a readily identifiable map
+feature will not have the coordinates mistaken.
+Any time an indirect fire weapon’s crew can see the target they are
+acting as their own FO. They count as trained FOs.
+Fire missions planned from a map such as blind fire will always
+have the right coordinates, but this should not be allowed unless some
+form of hidden movement is used.
+The turn sequence on page 13 of SPACE MARINES has indirect
+fire plotted in phase 2. Unless the crew is acting as their own FO, or the
+fire is at a preplanned registration point the FO must have done the ob-
+serving in the previous turn. Fire at a registration point still needs an
+FO but he can do the observing as the first of his two functions that
+turn.
+For the FO to get the Aiming Point right he must roll an 8 or better
+on two six sided dice. A table of adjustments to the die roll follows.
+FO is/has:
+Specially trained FO +3
+NCO or officer (cannot also get bonus above) +1
+Moving -1
+Making long jump -2
+Moving on unstabilized vehicle (more than 2”) -2
+Moving on stabilized vehicle more than 60” -2
+Moving on unstabilized vehicle more than 60” -3
+Pinned by enemy fire -1
+Militia -I
+Veteran +1
+Union Guard, Irsol, or Metrun +1
+Ranai or Hiss -2
+Klackon -1
+Brain Bug (other Bugs cannot act as FO) +5
+Robot +2
+Android -3
+“Nth” turn at same target
+(if attacker is not aircraft) + 2/tum
+Sensor gear +2
+Inertial tracker (cannot also get sensor bonus) +1
+Wound other than light -1

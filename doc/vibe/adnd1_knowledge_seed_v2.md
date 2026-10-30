@@ -27954,6 +27954,30 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   box 1 flipped [x], 1 closed 1 open. Next: R924
   pure flip closing box 2 (2 closed 0 open,
   issue-13 walk complete). WAIT FOR GO.
+  - R924 LANDED (47844a2, issue-13 box closing
+  round, prefix icl, 21 inline bookkeeping only,
+  no new ink): report 013 box 2 flipped [x], 2
+  closed 0 open, the issue-13 walk COMPLETE in
+  three rounds (R922/R923/R924) covering the
+  three chains - giant physics, demon generation,
+  Japanese Mythos. NEW PRECEDENT: the registry
+  ground truth RE-MEASURED at the R922 battery
+  line - 1313 loaded / 1338 base lua / 25 never-
+  load - superseding the R900-era 1311/1333
+  snapshot that R921 carried forward (the five-
+  file growth noted; the R921 fcl pins stay as
+  landed, the historical snapshot they are;
+  Curtiss landed it with the re-measure in, no
+  objection). Census 846->847; rverify GREEN 21
+  mutants 0 missed; round-trip 11651 bytes md5
+  17bcac3e36df22d5ea4e23734a703c75. Next: issue
+  14 looms - the slipped teasers harvest there
+  (the Creature Contest #1 winner stats: the
+  Jarnkung, the Cursed Crimson Crawler, the Ulik,
+  names-only at issue 13), same archive.org item
+  accessory-dragon-magazine-012 holds issues
+  7-14. Standing by for the next direction. WAIT
+  FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

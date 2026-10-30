@@ -1,0 +1,144 @@
+The Dragon
+AIRCRAFT SPECIAL RULES:
+Aircraft as targets for ground fire must use the vehicle size die roll
+adjustments. Count light flitters as small vehicles, other flitters light
+shuttle craft and landing craft as medium vehicles, and medium shuttle
+craft as large vehicles. If anyone should bring a heavy shuttle craft in
+range of enemy weapons it should use an adjustment of +8 to the die
+roll.
+Aircraft fired on by missiles may be able to avoid the missiles by
+“Jinking” or taking extreme evasive action. If the crew has time to see
+the missile and react give light flitters a -4 on the dice, heavy flitters a
+-2, and transport flitters, light shuttle craft and landing craft -1.
+Medium and heavy shuttle craft are not maneuverable enough to bene-
+fit from this.
+Some judgement is required as to whether the crew has time to
+jink, but as a general rule, any aircraft at high altitude or at medium
+altitude and at least 5 feet from the missile launcher will have time.
+AIR TO AIR COMBAT
+Since aircraft move too fast to conduct air combat on the same size
+table as the ground combat a system of air to air combat using a simple
+set of die rolls is useful.
+Roll one normal die for each aircraft (be sure you can tell which
+die corresponds to which aircraft) and adjust rolls according to the fol-
+lowing table. Then when an aircraft gets an adjusted roll of 3 or more
+better than its enemy’s it has obtained an advantageous position and
+can fire its weapons with a 1/3 chance to hit (roll each weapon separate-
+ly). The enemy may return fire only if it has a turret with all-round
+traverse, and it has only a 1/6 chance to hit. Note that weapons are as-
+sumed to be automatic weapons (ROF = A) or explosive warheads with
+proximity fuses, other weapons have a negligible chance to hit an air-
+craft. If a non-automatic warhead weapon “hits” it means it explodes
+near the target, 1/2 chance target is in the KZ, 1/2 chance it is in the
+CZ. Automatic weapons score 1-6 hits, roll for penetration and results.
+If a roll of 4 or more better than the enemy’s is achieved, a missile
+may be fired instead of a regular attack (if missiles are carried) in which
+case there is no return fire.
+If the adjusted die rolls are equal the two sides may make a head-
+on attack, each side firing with a 1/6 chance to hit, but if either side
+wishes to avoid this it may at a cost of an extra -1 on its roll next turn.
+Aircraft that are performing some mission other than air to air
+combat can only fire in the head-on case or with turret weapons as the
+other side attacks (i.e. if they get the better roll no combat occurs) un-
+less they break off their mission.
+In multiple combat it is assumed aircraft will give priority to sav-
+ing friends over killing enemies, and thus will break off attacks to take
+an enemy off their wingman’s tail for example. Therefore compare the
+highest scoring adjusted die roll for each side, then the next highest,
+etc. The only races that may not abide by this are Bugs and Klackons.
+Referee judgement is required in that case.
+Effect of hits:
+All penetrating hits (screens and armor must both be penetrated if
+the craft has them) are rolled for effect using the vehicle tables on page
+34 of the rules, but the effects are slightly different since aircraft are
+built with more redundancy than ground vehicles (one of the reasons
+they cost more). A result of no effect or vehicle explodes seems self-ex-
+planatory, and is unchanged. A result of permanent damage from a
+warhead disables the aircraft, it will crash but the crew can eject. A
+permanent damage result from other weapons gives the aircraft a
+minus two to its subsequent combat rolls. A result of temporary dam-
+age from any weapon gives a minus one to the subsequent combat rolls.
+The effects are cumulative, and when minus eight is reached the craft
+is disabled. If the aircraft explodes all aboard are killed. Otherwise
+crew casualties are rolled normally for multiply crewed craft, but in
+craft with only one or two crewmen, each has only a 1/12 chance to be
+a casualty because the cockpit is specially protected.
+-Lyle’s Hobby &amp; Craft Center
+Large Selection of Wargames
+38 North Cass Ave.
+Westmont, Ill. 60559
+852-8085
+Vol. II No. 8
+AIR TO AIR COMBAT TABLES:
+Regular Air to Air adjustments
+Flitter — Light +4
+Heavy +2
+Transport +1
+Landing craft +1
+Shuttle craft — Light +0
+Medium -2
+Heavy -4
+Continuing mission (other than air to air) -4
+Light flitter not jettisoning load (except AA missiles) -2
+Heavy flitter not jettisoning load (except AA missiles)  -1
+Aircraft “jumped” -4
+Aircraft has altitude advantage (first round only) +1
+Aircraft Tech level — A +2
+e4srommoaw
+I
+AK
+Missiles:
+Missiles other than AA missiles use normal combat tables for di-
+rect fire. AA missiles use the following table. AA missiles mass as much
+as medium missiles (1/2 as much as heavy). Warhead counts as type D.
+AA missile table — Roll two six sided dice; if adjusted roll
+1S:
+7 or better a direct hit is scored,
+6 or better a near miss is scored,
+4 or better a periphery miss is scored.
+Adjustments:
+Missile type — A +2
+B +1
+C or less +0
+Target is Light Flitter -2
+Heavy Fitter -1
+Heavy Shuttle Craft +3
+Target not jinking +3
+(continuing any mission other than air to air. Target can
+start to jink after initial combat roll but before missile fire
+roll, i.e. the craft continues its mission until it sees the
+enemy missile fired but before it can see if the missile will
+hit or miss it starts to jink.)
+Target Tech Level higher than missile Tech Level
+(this accounts for ECM, etc.)
+Examples of lower tech levels:
+Level D — F15 = Lt. Flitter, F4 or MiG 25 = Hvy. Flitter, CSA = Hvy.
+Shuttle
+Level E— MiG 21 or F5 = Lt. Flitter, B58 = Transport Flitter, A4=
+Hvy. Flitter
+Level F — MiG 19 or F100 = Lt. Flitter, B47 = Medium Shuttle
+Level G — MiG 15 or F84 = Lt. Flitter, B57 = Lt. Shuttle Craft
+Level H - F80 or Me262 = Lt. Flitter, B36 = Mdm. Shuttle Craft
+Level I — Fw190, P51, etc. = Lt. Flitter
+Level J — Pre-WWII
+20th century missiles count as tech level C, D, or E, with type E or F
+warheads
+-/level difference
+Terrain
+Some people have asked for more exotic terrain and terrain ef-
+fects. Most cases of exotic terrain will be one time affairs, i.e. “On this
+planet the terrain is . . &quot;, which must be left to the referee. Battles will
+probably normally be fought either on Earth-type planets (or some-
+thing close to Earth-like) or on airless rocks, both of which are already
+covered. However, some guidelines for unusual terrain may be of in-
+terest.
+Free-Fall Combat
+Combat should take place in free-fall. The usual conception of
+how this might come about is men in spacesuits hopping from rock to
+rock in an asteriod belt. Unfortunately, this is absurd. If you were to
+stand on an asteroid in the asteroid belt you would probably be unable
+to see any other asteroid without instruments, and certainly couldn’t
+jump to one.
+A more realistic scenario is combat in and around a space station
+with its internal artificial gravity off, or a fight on a ship, say between
+“HAill-lifters” (hijackers, from a story by Gordon Dickson) and the

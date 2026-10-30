@@ -1,0 +1,141 @@
+May, 1978
+crew where the crew puts the ship in free fall to make use of their su-
+perior space experience.
+Combat now becomes three dimensional and Newtonian (i.e. if
+you have a speed it remains constant until you perform an action to
+change it). Flying Belts (not Jump Belts) give the wearer an acceleration
+and deceleration capability of 60, 80 and 100 inches/turn squared for
+types C, B, and A respectively.
+Humans (and any other species not specifically mentioned) can ac-
+celerate to a speed of 3”/turn by pushing off a wall, etc. (This is ef-
+fectively an instantaneous acceleration, so they move 3” that turn.)
+Similarly they can decelerate up to 4’/turn by “landing” on a wall or
+similar object in their way, although they may “bounce off’ if they
+misjudge the required force. For any deceleration over 1&quot;/turn roll a
+die, subtract one from the number rolled, and if the number is equal to
+or less than the deceleration the man has “bounced off’ in a random
+direction at a speed of up to 2”/turn. Personnel with extensive free-fall
+experience (vac-suit expertise in 7” TRAVELLER) increase these values to
+acceleration of 4, deceleration of 6, and no chance of “bounce off”
+under 2. Men can prevent “bounce off” if there is something they can
+grab onto. They can decelerate more than the values allowed here but
+may be injured by the impact. For each inch/turn over the maximum
+“Allowable” there is a 1/16 chance of injury. When the chance for in-
+jury reaches unity the injury should be considered disabling.
+Powered armor types A, B, and C can accelerate and decelerate at
+three, two and one half, and two times the value for a normal experi-
+enced man respectively. The maximum deceleration without “bounce
+off’ is unchanged.
+Reaction packs and pistols are common. The pistol allows a veloc-
+ity change of 1&quot;/turn, packs allow 2”/turn. The acceleration and de-
+celeration is gradual.
+Men may decelerate by using a lifeline, but the deceleration vector
+must be colinear with the line. A man can decelerate gradually up to
+6”’/turn without special gear. With the regular “lifeline” gear of a
+spacesuit, deceleration of up to 12”/turn gradually or 4’/turn instanta-
+neously is allowed. Any more than these values will lead to a “jerk” ef-
+fect which will accelerate the man back toward the line’s end. The
+“Yerk back acceleration” is equal to the amount of deceleration minus
+the “allowable deceleration”, and is applied gradually on the turn fol-
+lowing the deceleration. Note: a lifeline can only be used for decelera-
+tion if it is taut, and after a jerk it is slack.
+Irsol can only accelerate one and decelerate two without special
+gear. They will not “bounce off’ at speeds less than two. For free fall
+movement Irsol armor counts as type A. Naturally all Irsol are free fall
+experienced.
+Klackons and Bugs can only decelerate and accelerate at half as
+much as humans (by muscle power, equipment is the same) but all Bugs
+count as experienced. Brain Bugs are similar to the Irsol. Mertuns
+count as experienced. Mertun Tripods cannot move any better than
+regular Mertuns in free fall.
+Any weapon or devise with recoil affects the user. Slugthrowers,
+grenade launchers (except rocket grenades), hand scramblers, needle
+rifles, etc. all have recoil. It would take about twelve rounds from a
+slugthrower to give a man a velocity of 1&quot;/turn.
+Sonic weapons do not work in a vacuum, of course. Indirect fire is
+impossible in free fall. In melee the following values should be used in-
+stead of the ones on page 46 of the rules (anything not shown here is un-
+changed):
+Metrun 4 Klackon 9
+Irsol in powered armor 9 Whistlers 2
+Mertun tripod 6 Bugs 5
+Free fall experience +1
+Underwater Combat
+Combat under water or other liquid is different than combat on
+the surface. The liquid slows all motion and will stop anyone (or any-
+thing) that does not constantly apply force to keep moving. The combat
+is three dimensional (although some participants could be on the bot-
+tom if it is close enough). Note that Bugs and Whistlers can swim in
+suits, move 1/2” per turn. Powered armor also can swim at 1/2” per
+turn.
+Other races use the water value in the movement table. Klackons
+are particularly effective underwater (remember they’re amphibious).
+Flying vehicles equipped to operate underwater will have their maxi-
+mum speed cut to about one tenth normal, their acceleration to one
+The Dragon
+third, and their deceleration tripled. Jump belts cause the wearer to
+float but have no other effects.
+Radiant energy weapons have their range cut by a factor of ten
+under water, (by different factors for different liquids.) Sonic weapons
+have their range doubled.
+All weapons except sonics and HE have their penetration roll re-
+duced by one underwater. Flamers are useless underwater, as are slug-
+throwers. Gryojets and cone weapons work fine however. Scramblers
+and grenade launchers only work if specially designed, and have their
+range cut to a quarter normal. Dart rifles’ ranges are cut to a quarter
+and needle rifle ranges are halved.
+Most stunners are radiant energy weapons but some are sonic. HE
+burst diameters are unchanged for regular effects, but have a concus-
+sion effect at three times normal burst radius. This effect dazes all per-
+sonnel, and can cause injury, roll a 5 or a 6 on a normal die for injury,
+(no injury if the man is in powered armor.) Scramblers and stun bombs
+have normal effects. Other liquids will have different effects on this.
+Visibility is greatly reduced, but the amount is highly variable.
+Without special equipment visibility will rarely exceed 2”, except for
+Klackons who can “see” 12” underwater. (They are using a sense other
+than vision.)
+Below 50 meters deep artificial light is needed to see. Searchlights
+let men see 4’, visorscopes double visibility. Sensors work normally
+underwater. Again, other fluids will have different effects.
+Combat on a planet with no ground like Jupiter is a variant on the
+underwater case, exact effects depending on local conditions (in other
+words the referee’s problem!)
+Exotic atmospheres might have strange effects. One example is a
+chlorine atmosphere which would block out all sunlight from the sur-
+face, but which could be seen through almost normally with search-
+lights, etc. since thicknesses of several kilometers is needed to block
+light significantly.
+A planet with a sea of dust provides numerous problems. It is
+similar to the underwater case, but dust is COMPLETELY opaque.
+Special sensors are required. Sonics will not work in dust, all ranged
+weapons are almost useless. Gyrojets and other rockets will work but
+their path is totally eratic. Dust also insulates against concussion ef-
+fects, and reduces the effect of most warheads. Combat will probably
+degenerate to melee.
+Other interesting worlds might have winds so high aircraft are un-
+safe and men are blown away. Crawlers are required here, and the tank
+enthusiasts will have a field day. Of course if the planet were to have a
+frictionless surface as well, even they would have trouble!
+Possibly the strangest “terrain” would be a space station with
+some decks in free-fall, some in high gravity, others low gravity, all at
+differing angles.
+Other terrain types are up to the referee. If you have an interesting
+one why not drop me a line?
+THE INTERNATIONAL
+DM SEARCH IS ON!
+THE DRAGON is compiling a list of DM’s to be published
+sometime in the late fall.
+If you wish our list to include your name, simply send it to
+us on a postcard or 3X5 note card. Even if you have been listed
+sometime in the past, you must submit your name and address
+again to be listed in the rolls of DM’s. If you.wish to be listed for
+a game other than D&amp;D please specify. If no game is listed, it will
+be assumed that it is the one and only — D&amp;D.
+THE DRAGON hopes this list will be the biggest ever com-
+piled by anyone anywhere. What easier way to get fresh BLOOD
+in your campaign? It pays to advertise.
+Simply send your cards to: Mapping the Dungeons
+c/o THE DRAGON
+_POB110
+Lake Geneva, WI 53147
+USA

@@ -1,0 +1,147 @@
+May, 1978
+As long as I’m explaining the background a word on the weapons
+and devices is in order. I tried to make the technology consistent with
+the future history used, and didn’t really worry about how the device
+would work. I used names and concepts common to much SF, blasters,
+flamers, jump-belts, etc., or extrapolations on existing items, lasers,
+gyrojets, sensors, etc. I tried to avoid using items from any one story or
+series, but I didn’t always succeed. Giving belated credit, the cone rifle
+and dallyguns are from THE TACTICS OF MISTAKE by Gordon R.
+Dickson, and the tanglefoot generators are from THE STAR BEAST
+by Robert Heinlein.
+It is inevitable that errors will sneak by the proof-readers, and
+SPACE MARINES is no exception. A correction sheet for all errors in
+the first printing that were caught before the second printing is avail-
+able. If your book is from the first printing and you don’t have copy of
+the corrections, you can get one by writing to: FanTac Games, 464
+Lenox Ave., South Orange, NJ 07079; ask for “The SPACE
+MARINES Correction Sheet” and enclose a stamped, self-addressed
+envelope. All of these errors have been corrected in the second printing,
+but there are probably still more we haven’t found. If you come across
+any why don’t you drop me a line and tell me about it? You can reach
+me through FanTac Games.
+Rules Clarifications
+Despite all the sacrifices on the altar of the great god Clarity, some
+areas of the rules have turned out difficult to understand. To clear up a
+few of these:
+Rate of Fire
+If a man (or alien) fires in the Cover Fire phase, he may perform
+some other function in the later phases, such as reload, observe, etc. He
+can also fire again, if his weapon’s rate of fire is 1 or more and it is a re-
+peater. Thus a man with a needle rifle (ROF = 1) could fire once in the
+cover phase and then again in the regular fire phase, if he does nothing
+else that turn. A man with a type C blaster could fire twice in the cover
+fire phase and then twice again in the regular fire phase. (This is a
+change from the rule I used at Gencon, I was experimenting then.) A
+man with a weapon capable of automatic fire can fire in both the cover
+and regular fire phases, unless he needs to reload his weapon after auto-
+fire. Tripod blasters and heavier weapons can only fire as many times
+per turn as their rate of fire allows, 1.e. if a heavy weapon has
+ROF = 1/2 it can only fire every other turn. Dart rifles and heavy
+scramblers with ROF = 1/2 take two phases to reload.
+Sneak Suits
+Sneak suits make the wearer harder to see. Even if he is spotted he
+should get a target concealment adjustment on the attack dice. If other-
+wise in the open a sneak suit counts as “less than 1/2 concealed”.
+Ground Effect Machines
+Ground Effect Machines (GEM) only work on planets with an at-
+mosphere, although it does not have to be breatheable. This is one rea-
+son that AFV’s that move as GEM’s usually have tracks as a backup
+movement system.
+Optional Wound Rule
+If the optional wound rule is used, remember to roll to see if the
+casualty is killed, and only if he is not killed roll for wound type. Also
+note that a wound that is treated does not disappear. Treatment only
+prevents the wound from getting worse. At Gencon last year we had
+some people who thought that their man who was critically wounded
+was perfectly all right after having a med-kit applied. This is wrong, the
+med-kit keeps a man from dying, but he still is a stretcher case.
+Fudging on Interpretations
+A favorite tactic in many miniatures rules is to fire HE shell at a
+“point of ground” so that there are no penalties for target movement,
+(whoever heard of a point of ground moving?) concealment, etc. The
+problem with this is the “point of ground” chosen is the one the man or
+vehicle or whatever is standing on. If a man is running full speed it is
+ridiculous to allow this. Similarly if a man is firing from behind cover
+with only his head and one arm showing it is absurd to allow fire at
+“the top of the rock” he is behind without penalty. These are “rule
+beating” tactics. In the first case it may be true that the ground doesn’t
+move, but as the man moves which point of ground is the one he is
+standing on changes. The referee should not allow these “rule beating”
+attempts, but give them the same “‘to hit” adjustments as the real tar-
+get. Of course if a particular point is preregistered or zeroed in on, and
+an enemy runs up to it then that point can be fired on without penalty.
+3
+The Dragon
+Similarly, if a man is behind a rock near a tree so placed that an HE
+round (or other warhead) hitting the tree will have him in the KZ with-
+out the rock being in the way the tree can be fired at normally. When in
+doubt use common sense.
+Robots
+Another area of misunderstanding is the rules on robots. The re-
+quirement for orders written two turns in advance are only for major
+decisions, such as “switch objectives from hill 892 to hill 473.” Routine
+matters such as exact course while moving along a prestated general
+path to the objective, firing at enemy targets in sight, etc. are assumed
+to be part of the robot’s general orders (routine activities program).
+As a guide to the use of these rules, the robot should have general
+orders that state whether it will move from cover to cover at all times,
+by the most direct route, by the most direct route till fired upon and
+then from cover to cover, whether all robots in a group move at the
+same time or if some cover the others, etc. Then the written orders only
+have to say something like “proceed to hill 867 from hill 554 via hill 367
+and hill 958.” Until the robot reaches hill 867 it does not need new
+orders unless it wishes to make a radical change of route.
+Actually the written orders are one and one half turns in advance.
+Orders written at the start of turn 5 (phase two) are carried out in turn
+6.
+The robot’s general orders should specify if it fires whenever an
+enemy is visible, whenever an enemy is within N inches, whenever
+enemy vehicles are visible, etc. The priority of targets must be speci-
+fied, i.e. does the robot fire at the closest enemy first, the closest enemy
+firing at the robot, the closest vehicle, vehicles before troops, powered
+armor before light infantry, etc. Naturally any change to the general
+orders must be programmed in advance.
+REMEMBER, IF THERE IS ANY WAY TO MISUNDER-
+STAND AN ORDER A ROBOT WILL FIND IT.
+All of these rules on robots refer to robots without direct supervi-
+sion. Robots can be controlled similar to androids. The robots will al-
+ways obey their controller. All the rules above are used, but the con-
+troller can change a robot’s programing by writing the change at the
+start of the turn in which the change is to take effect (in phase 2). If the
+controller is knocked out the robot will not change its orders for at least
+6 turns, after which it will use the normal robot rules. A new controller
+can take over in less than 6 turns, but he needs the robot’s command
+code (which cannot be given out too readily or the enemy can use it) and
+has a one third chance of gaining control each turn. Each robot is rolled
+separately for control, but all which are under the same command code
+are rolled each turn. Naturally the man needs a robot control box or
+commo gear compatible with the robots’. Remember, if you use the
+command code over a normal communicator the enemy may hear it. If
+the enemy gets the command code they can try to take control like any
+other new controller.
+Rules Modifications
+There are two areas of the rules that require modification, and as
+long as we’re working on them we may as well add a few related topics.
+Scatter
+The first is the scatter rules. The ones published were designed for
+artillery. For some reason the problem this causes did not show up in
+playtesting, perhaps because the scatter rules were changed several
+times during playtesting.
+The problem is with small HE (and similar) weapons. A grenade
+launcher should not scatter as far as a howitzer. This problem became
+so acute at Gencon that the hand scrambler was dubbed “‘the scatter-
+gun’. The hand scrambler had been too effective in playtesting and
+was weakened in the final rules, but it seems we went too far.
+The ranges for a hand scrambler should be: short =4’,
+medium= 10”, long= 18”, and extreme = 36”. Also please note the
+difference between the type B and C versions is that the type B can fire
+in both the cover and regular fire phases as described previously, while
+the type C is a single shot weapon and cannot fire in both phases (you
+will recall I specified the weapon must be a “repeater’).
+The scatter rules should be replaced by the following:
+Hand Grenades scatter 1”
+Direct Fire Weapons (except missiles) scatter as follows:
+Close Range:
+1/2 chance of scatter 1&quot; in random direction, roll die — 1,2 = short of
+target, 3,4= right or left, 5,6=long (over target). Otherwise the shell
