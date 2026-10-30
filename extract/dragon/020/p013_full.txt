@@ -1,0 +1,147 @@
+**D&D Variant**
+
+# ANOTHER LOOK AT WITCHES AND WITCHCRAFT IN *D&D*®
+
+by Ronald Pehr
+
+*Editor's Note: This seems to be a well thought out class-variant. At the very least, it makes an excellent NPC or hireling/acquaintance. For those DM's bold enough to try it, it provides a very viable character for ladies; be they sisters, girlfriends, lady gamer or others. D&D was one of the first games to appeal to females, and I for one, find it a better game because of that fact.*
+
+Back in *Dragon* Vol. I #5, there was an article on witchcraft by players. Witches were grouped into three classes of power for evil witches; Low, High, and Secret, and into two classes for good; White and Priestess. These were well thought out, and could provide a challenge to those players encountering them. Witches are fascinating enough that they would make a dandy player-class. Here it is.
+
+Just as Magic-Users manipulate the other-worldly forces, whereas Clerics worship those forces as gods, obtaining "divine aid," so do Witches make sure of the forces of nature worshipped by Druids. Witches may be considered to bear the same relationship to Druids as a Magic-User towards a Cleric of his own alignment. The Witch uses her harmony with nature to increase her knowledge and power.
+
+Witches are Neutral, dedicated neither to good nor evil as humans know the terms; however, an individual Witch may be good or evil. Witches do not have a pact with Satan, or follow dark gods, that's bad press they've been receiving since the Middle Ages. It is true that a powerful Witch can call upon some supernatural entities, even as do Wizards, Patriarchs, and Druids.
+
+Historically, practitioners of witchery were (and are) both male and female. I limit the class to women, to balance the fact that women are less proficient in Fighter-type professions, but that is a matter of discretion for each DM. Witches need at least 13 in both Intelligence and Wisdom. The idea that Witches are ugly is more bad press; working in harmony with nature and exerting influence over people requires a Charisma of at least 9.
+
+At first glance, the Witch specifications will seem to be one more overly-powerful profession to unbalance the game. However, the inherent abilities of Witches and the power of some of their spells is compensated for by the large amount of experience points needed to rise in level and the need to be comparatively high level in order to learn a given level of spell. Witches receive hit dice/level as Magic-Users, have the same restrictions on weaponry and armour, and obtain the benefits and disadvantages of Magic-Users (E.g. saving throws, reading certain tomes) unless otherwise stated. Believing that game variants of *D & D* should mesh as closely as possible with the rules as published, I have given them many spells found in other classes because DM's will be familiar with those spells. Those spells not hitherto known, or treated differently, are *starred*. Further, I have omitted the duration of the spells, since I drastically limit effective time of spells as a matter of balance in the relatively short games I usually DM. Those wishing to employ the Witch can work out reasonable durations of spells by comparing them to similar known spells.
+
+| LEVEL | POINTS | No. of Spells/Level | Inherent Ability |
+| --- | --- | --- | --- |
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| Medium | 0 | 1 |  |  |  |  |  |  | Brew poisons, narcotics, hallucinogens |
+| Soothsayer | 3000 | 2 |  |  |  |  |  |  | Make a Bag of Holding |
+| Sibyl | 6000 | 2 | 1 |  |  |  |  |  | Brew Love Potions |
+| Mystic | 12000 | 2 | 2 |  |  |  |  |  | Dance of Seduction |
+| Oracle | 25000 | 3 | 2 |  |  |  |  |  | Add Plus 1 to Charisma |
+| Siren | 55000 | 3 | 3 | 1 |  |  |  |  | Brew Truth Drug |
+| Enchantress | 80000 | 3 | 3 | 2 |  |  |  |  | Read Magic, Druid, Illusion Scrolls |
+| Sorceress | 120000 | 3 | 3 | 3 |  |  |  |  | Candle Magic |
+| Witch | 200000 | 4 | 4 | 3 | 1 |  |  |  | Familiar |
+
+|  Amethyst W. | 300000 | 4 | 4 | 4 | 2 |  |  | Disguise  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  Topaz W. | 400000 | 4 | 4 | 4 | 4 |  |  | Manufacture Control Potions  |
+|  Sapphire W. | 525000 | 4 | 4 | 4 | 4 | 1 |  | Manufacture other Potions  |
+|  Ruby W. | 650000 | 5 | 5 | 4 | 4 | 2 |  | Manufacture Acids  |
+|  Emerald W. | 800000 | 5 | 5 | 5 | 4 | 3 | 1 | Voice  |
+|  Diamond W | 900000 | 5 | 5 | 5 | 5 | 4 | 2 | Add Plus 1 to Charisma  |
+|  Crystal W. | 1000000 | 6 | 5 | 5 | 5 | 5 | 2 | Transfer Hit Points  |
+|  Eternal W. | 1250000 | 6 | 6 | 6 | 5 | 5 | 3 | Enchant Items  |
+|  Demonette | 1500000 | 6 | 6 | 6 | 6 | 6 | 5 | 3 1  |
+
+**First Level Spells**
+
+- Faerie Fire
+- Give Wounds*
+- Cure Wounds
+- Control Vapor*
+- Detect Evil
+- Detect Poison*
+- Detect Disease*
+- Detect Illusion*
+- Detect Magic
+- Reflected Image*
+
+**Third Level Spells**
+
+- Dissipate Vapor*
+- Clairvoyance*
+- Phantom Light*
+- Charm*
+- Phantasmal Forces
+- Wind*
+- Cure Disease*
+- Create Lycanthrope*
+
+**Fifth Level Spells**
+
+- Produce Flame
+- Anti-Magic Shell
+- Protection v. Evil
+- Summon Elemental
+- Charm Animal*
+- Grow Plant
+- Oracle*
+- Weakness*
+- Create Undead*
+- Immunity*
+
+**Seventh Level Spells**
+
+- Firestorm
+- Earthquake
+- Polymorph Others
+- Control Dreams*
+- Poison*
+- Control Lycanthrope*
+- Control Undead*
+- Love*
+- Demonic Possession*
+- Astral Projection
+
+**Second Level Spells**
+
+- Read Languages
+- Speak in Tongues*
+- Locate Object
+- Bless
+- Pacify*
+- Detect Invisible
+- Detect Trap
+- ESP*
+- Purify Wine & Water
+
+**Fourth Level Spells**
+
+- Neutralize Poison
+- Remove Curse
+- Infravision
+- Sleep*
+- Polymorph Self
+- Hallucinatory Terrain
+- Cure Serious Wound*
+- Give Serious Wound*
+- Effigy Control*
+- Shock*
+- Control Fluid*
+
+**Sixth Level Spells**
+
+- Animate Dead
+- Worship*
+- Control Plant
+- Hypnosis
+- Destroy Life Level*
+- Control Weather
+- Wards of Defense*
+- Evaporate Fluids
+- Vision
+
+**Eighth Level Spells**
+
+- Curse*
+- Wither*
+- Youth*
+- Dispel Enchantment*
+- Circle of Disintegration*
+- Temporary Resurrection*
+- Summon Devil*
+- Reincarnation
+- Death*
+
+**EXPLANATION OF SPELLS**
+
+**Give Wounds/Cure Wounds:** The Witch must touch the other person. 1-6 pt.
+
+11

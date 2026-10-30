@@ -1,0 +1,121 @@
+**Control Vapor:** Range of 10'/ level of Witch. Gases are moved 60'/ turn. A gas with Intelligence, such as an Air Elemental Saves vs. Magic.
+
+**Detect Poison/Disease:** The Witch must touch the poison or diseased creature.
+
+**Detect Illusion:** The range is whatever distance can be seen.
+
+**Reflected Image:** The Witch may form a picture on any reflecting surface.
+
+**Speak in Tongues:** This must be an actual language of an intelligent entity.
+
+**Pacify:** At a range of 60' the Witch can make a hostile foe feel friendly, although he will in no way be charmed or subject to her will.
+
+**ESP:** The Witch must be touching the one whose mind she wants to read.
+
+**Dissipate Vapor:** This disperses any gas. Those will Intelligence, such as an Air Elemental, Save vs. Magic.
+
+**Clairvoyance:** This automatically includes **Clairaudience**.
+
+**Phantom Light:** A mobile Faerie Fire, following or leading up to 120'
+
+**Wind:** A Stiff breeze. Missiles fired against it are at -3.
+
+**Cure Disease:** The Witch must touch the victim.
+
+**Create Lycanthrope:** The victim must have lost at least half his hit points. This is not a permanent spell. The victim is not under control of the Witch but will not attack her.
+
+**Sleep:** The Witch must touch the victim, any level, Save vs. Magic.
+
+**Give/Cure Serious Wounds:** Gives/ cures 1- 12 pts.
+
+**Effigy Control:** Must have some part of the victim, works within eyesight range. Save vs. Magic for victim. (Severe discretion necessary by DM)
+
+**Shock:** A blast, similar to a Fireball, emanating from the Witch (her friends had better be well away), doing 4 dice of damage.
+
+**Control Fluids:** Range 2'/ level of Witch. As for **Control Vapors**, only the liquid moves 30'/ turn.
+
+**Charm Animal:** The Witch must touch the animal.
+
+**Oracle:** As a Clerical **Commune**, but only 1 /week and always in obscure words.
+
+**Weakness:** Must touch the victim, halving his Strength. Not permanent.
+
+**Immunity:** Must touch the beneficiary. For the duration of the spell he is immune to diseases, poisons, and regenerates as a Vampire.
+
+**Create Undead:** As the **Create Lycanthrope** Spell, but the victim must be dead. For the duration of spell he will be 1 hit dice of **Undead** for each 4 levels of experience of the Witch.
+
+**Worship:** At a range of 120' the Witch can put a single victim into a trance.
+
+**No Saving Throw.**
+
+**Destroy Life Level:** The Witch must touch the victim.
+
+**Wards of Defense:** A 20' radius "forcefield" preventing magic or physical attack. It is not moveable itself.
+
+**Evaporate Fluids:** As for **Dissipate Vapor**.
+
+**Vision:** The Witch can make any clear or reflecting object into a crystal ball for one **looking**.
+
+**Control Dreams:** The Witch must see the victim, including by crystal ball.
+
+**Poison:** The Witch must touch the victim, who must Save vs. Poison or die.
+
+**Control Lycanthrope:** Range of 120' — No Save.
+
+**Control Undead:** Range of 120' Save. vs. Magic.
+
+**Love:** This acts as a permanent **Love Potion** if the victim touched fails to Save.
+
+**Domonic Possession:** Anyone touched (Up to 3 dice of human-sized figures) fights as a Berserker for the duration of the spell.
+
+**Curse:** This has a range of 60'. Curses are permanent unless Removed.
+
+**Wither:** Anyone or thing touched ages 100 years. Intelligent entities get a Save vs. Magic.
+
+**Youth:** Anyone or thing touched becomes 10 years younger.
+
+**Dispel Enchantment:** Anyone touched has any magic spell he is under dispelled. Any magical item touched loses its power.
+
+**Circle of Disintegration:** A blast which disintegrates anyone/ thing within a 20' radius of the Witch. Intelligent entities Save vs. Magic.
+
+**Temporary Resurrection:** A dead character can be immediately brought back to life, with full potential; however, the effect is temporary only.
+
+**Conjure Devil:** Similar to a Conjure Elemental Spell, with the same chance of suffering attack if the Witch loses concentration. A Prot. ca. Evil Spell or appropriate candle must be burned before Conjuring. Arch-Devils cannot be conjured with this Spell. Furthermore, any intelligent
+
+devil who performs for the Witch may claim a service from her at any future time (Good opportunity to send players on quests)
+
+**Death:** Similar to the Wizard's **Death** Spell. It has a range of 240', automatically slaying 2-16 victims of less than 8 hit dice of any single victim of 8 or greater hit dice. In the latter case, the victim may Save vs. Magic.
+
+## EXPLANATION OF INHERENT ABILITIES
+
+**Brew poisons, narcotics, hallucinogens:** These cannot be used to coat weapons, the victim must imbibe them — perhaps mixed into his win. For each experience level, a Witch can brew a 1 die draught/day. Poisons do actual damage, a Save vs. Poison giving only half damage. Narcotics are sleep drugs. If the drug ratioed over victim's hit points is 1 or more, it acts as the Sleep Spell. If less than 1, it is the percentage effect on Dexterity and Movement. Save vs. Poison halves the duration and percentage effect. Hallucinogens cause Confusion, as the Confusion Spell. The percentage chance of Confusion each turn is the ratio of the drug over the victim's hit points. Save vs. Poison halves time of effect and percentage each turn.
+
+**Bag of Holding:** The Witch puts her essence into this, so there may be only one Bag of Holding per Witch in existence at any one time. It can be used by no other person and if lost or destroyed it takes a month to make another. Note that this is one of the few Miscellaneous Magic Items a Witch can ever make until she reaches 17th Level.
+
+**Love Potion:** For each experience level, the Witch can brew a 1 die draught/week. The victim is not actually Charmed, the potion acting similar to a Rod of Beguiling. If the ratio of points of brew to hit points of the victim is 1 or greater, the effect lasts one week with a 155 chance/day cumulative thereafter of wearing off. Lesser percentage is the chance each day it will wear off, never lasting more than a week in any event. Save vs. Poison negates the potion entirely.
+
+**Dance of Seduction:** By graceful, suggestive movements of her body, the Witch can hold a victim entranced. The Dance takes a full turn to perform, but the victim may not be aware it is taking place as the movements are subtle and pleasant to observe. All humanoids, excepting Undead, are vulnerable. The Witch has a 10% chance per experience level of performing the Dance successfully, subtracting 10% for each level of victim over 4th. Victims will stay entranced as long as the Witch is present, barring outright attack.
+
+**Brew Truth Drug:** For each level of experience the Witch can make a 1 die draught/ week. The ratio of drug to a victim's hit points is the percent that a question asked will be truthfully answered. The victim is in a stupor, as if under a narcotic, and will remain silent rather than tell a lie. The potion compells a number of answers equal to the level of the Witch, thereafter acting as a narcotic. Save vs. Poison halves percentage, duration, and number of answers.
+
+**Read Scrolls:** Druid scrolls may be read with no chance of failure. Magic or Illusion scrolls have a 10% chance of backfire. Clerical scrolls cannot be utilized, although the Witch *can* read them.
+
+**Candle Magic:** A Witch may manufacture 1 candle per month, at the rate of 3 days/ turn of burning duration. Each color is gained with subsequent levels, i.e., 8th = red, 9 = Blue, etc. Candles will burn for up to 10 turns, their magic taking effect as soon as the candle is snuffed or burnt up. Candles have the following powers:
+
+**Red:** Burnt in presence of victim, it affects him for 1 day per turn of candle burnt as a fully successful Love Potion. No Save.
+
+**Blue:** One turn of Protection v. Evil for each turn of burning.
+
+**Yellow:** One turn of Telepathy for each turn of burning.
+
+**Purple:** One question may be asked of dead being for each turn of burning.
+
+**Gold:** Cures 1-6 pts. of damage for each turn of burning in presence of victim.
+
+**Black:** One curse placed upon victim for each full candle burnt in his presence. Some curses are: Weakness (Str. = 3); Insanity (Int. & Wis.=3); Clumsiness (Dex.=3); Poverty (All treasure turns to clay), Loneliness (Char.=-3) Exhaustion (Con=3)
+
+**Familiar:** The Witch may designate a Familiar — which can be any animal of less than 1 hit die, such as a cat or bat — to act as a Magic-User's Homoculous. It has unlimited range, the Witch sees and hears what it
+
+cont. on page 19
+
+12

@@ -1,0 +1,46 @@
+was simply not big enough to show an entire interstellar empire of any great size. Instead, we put nearly all of the Imperium off the map edge (and drew up a separate map to show what it looked like).
+
+Now we were starting to have a good solid background for the game situation. By making the Imperial territory on the map a frontier, it became its own little microcosm, run by a provincial governor who was supreme ruler in his own right, but still answerable to the Emperor and his bureaucracy. That was certainly different from the opposing situation, where the Terran had effectively free reign on what he wanted to do. At this point, John Harshman pointed out the glory point rules in *Timbuktu*, and said any provincial governor for the Imperium is going to be concerned with status and glory rather than money or more worldly things. By using glory points we could easily note how well (or poorly) the Imperial effort was going: if the points got very high, the Emperor would be pleased, while if they declined, the Emperor would be displeased. Displeasing an Emperor can be fatal. In either case, glory points emerged as a sort of victory point and game length indicator. Playing a few games showed that the length of a war, however, was rather short (which isn't bad, its nice to finish a game in a reasonable length of time), and the war didn't result in much territory changing hands. And, everyone wanted to play again. In fact, they just started up where the old game left off, beginning a new war.
+
+Now, I will also admit that *Star Wars* came out just before Origins 77; I was in line at a Chicago opening the first week, and I saw it five times in three weeks. It puzzled me that the title was *Star Wars* — I saw part of one skirmish, certainly not several wars flashing across the screen. Now *Imperium* is several wars. Deliberately, the final form of *Imperium* includes the concept of a campaign consisting of several (Man, quite a few) wars, separated by periods of peace and retrenchment. Now that's a series
+
+
+of *star wars*. While I am on the subject of that movie, I would like to point out that the fighters in the game are not derived from the movie; they were part of the ship squadron types that were developed earlier. But once having seen the movie, I couldn't resist having one of the Imperial fighters color coded a sinister black.
+
+Science fiction stories also influenced the game as it was being developed. Our operation is rather informal, and everyone makes suggestions as they go along. The solitary red dwarf off in one corner of the map reminded someone of Smade's Star (from *The Star King*, by Jack Vance — Smade's Star is a single star off at the edge of civilization, orbited by Smade's Planet, covered by Smade's Ocean and Smade's Continent, etc, etc, and owned by Smade). It got named that. Quite a few stars were named as we thought they would be by Terran colonists.
+
+The rest of the stars also needed names, and using the stellar catalog numbers just didn't give enough flavor. After some discussion, we got David MacDonald (local ancient history professor) to give us a list of Sumerian words to serve as star names. They are scattered over the map board now for Imperial starts. I was surprised to see the same technique used by MetaGaming in *Warp War*; they also used Sumerian words for star names. Either one of us has a spy in the other's camp, or great minds follow similar lines.
+
+I think one of the really important aspects of *Imperium* is the inclusion of troop units in the game. With the planetary surface boxes making visualization of world surfaces much easier, the actual worlds start becoming important. In modern warfare, the Air Force keeps insisting that it is all powerful, but no matter how much bombing goes on, you still need the infantryman on the ground to occupy territory. In *Imperium*, the same rule applies; starships can fight and bombard, but troop units are still needed to hold the territory that is conquered. The properly planned invasion can't just be a gaggle of big ships; it also has to include troops (and perhaps jump troops), transports, strike cruisers to suppress planetary defenses, perhaps an outpost or two to help in holding the world. In all, a major undertaking.
+
+The troop units in *Imperium* also reflect our local preoccupation with details. The units have divisional numbers to add flavor. Frank suggested (quite rightly) that Imperial numbers would be quite high, the lower numbers being better and retained on station within the Imperium proper.
+
+Design Forum
+
+## Rules Clarifications and Addenda for Imperium
+
+by Marc Miller
+
+As people have started playing *Imperium*, they have, of course, come up with questions on what the rules actually mean and how they are to be implemented. Some of the questions come from faulty wording in the game, or from obscure placement of the relevant rule, or from just plain omission. In any case, the following items do need clarification, and should help make *Imperium* play even faster and better.
+
+### THE MAP
+
+The printed jump lanes are permanent, and are the only jump lanes allowed to be used. I have heard suggestions for variants which allow creation of new jump lanes, but I think that would really ruin the flavor of the game. Starships must begin their movement phase in a system hex in order to use hyperjumps. There is no secret use for Altair; because its a tertiary system, it cannot allow refueling, and because it is bypassed by Ziggisi and Apishal, it is effectively useless.
+
+Basically, the map is divided by the jump lanes into three areas (Sol, Lagash/Amarku, and the Sirius to Dingir region). The connections through Sirius and Nusku/ Kusham become quite important during the game. Unfortunately, the wording of Rule 14 is unclear about where forces may be placed at the beginning of the first war. The intention is that the Imperial player cannot place forces at Procyon or beyond Dirius, because he cannot "connect" them; he cannot initially place a tanker at Sirius.
+
+### THE COUNTERS
+
+Several people have asked me about counter mix restrictions in the game. I have always felt that if players could agree, before the game began, that new counters could be built outside of the counter mix (that is, more destroyers, or dreadnoughts, or whatever) that was perfectly all right. I do think that the game has to be started that way, or else everyone is restricted to the counters provided.
+
+cont. on page 28
+
+The Terran forces have numbers derived primarily from American divisions. Rich Banner (our art director) served in Korea with the 2nd Division, so it's there; I served in Vietnam with the 23rd Division, so its there, too. Elite units are marked with stars, five pointed stars except for one. The 7th Division (really intended to be a Brigade) was reminiscent of the Israeli 7th Brigade — its stars are six pointed Stars of David.
+
+Finally, if this article makes it seem that designing *Imperium* was easy, let me say that it wasn't. It slowly evolved over the course of several years. Not the least in importance is the fact that I spend much of that time designing other games on historical subjects, learning what goes into a realistic game that is also playable and enjoyable. Over the past few months I have been toying with a sequel to *Imperium*, using the map of the *Imperium* that I created for background. So far, my work has shown me how lucky I was with *Imperium*, because the sequel is going together only slowly. Things keep not working right, or needing changes. I have to keep going back and playing another war in *Imperium* to recapture the right feel, and incidentally, for a good fun break.
+
+*Ed. Note: A couple of days before this went to print, I spoke with the author about the oft-rumored sequel/companion to Imperium. Sad to relate, for the fans of this excellent game amongst which I count myself, the project has been shelved. The motives are laudable, as they don't want to cheapen an excellent product; I admire the integrity exercised in turning down potential sales. The designer made the decision based on his feeling that he couldn't duplicate the original without lessening it in some way. In this day of spin-off/spin-off of spinoff, in TV, movies, books, and, alas, gaming, it is worthy of note, and recognition, that not every company chooses that route.*
+
+*As the editor of a gaming magazine, I welcome the prospect of additional articles on this excellent game. Perhaps I'll someday get the designer to write about what he would have done if. . . or perhaps one of you reading this will do an outstanding variant . . .*
+
+4

@@ -1,0 +1,85 @@
+the number of warriors total determined by encounter has reached a number somewhere between the minimum and maximum figures shown. A record sheet for each tribe (shown hereafter) should be kept so this information is readily available to the players.
+
+If the explorer is an explorer only, without any other calling, he or she will kill *two* natives on the first round (unsurprised) of combat, and in successive rounds he or she will likewise kill two nations.
+
+**NATIVES: CONSEQUENCES OF DEFEAT:** If an explorer only (as opposed to the explorer-evangelizer, explorer-geologist, etc.) is taken prisoner by natives, he or she will not deduct 3 from the required dice roll each turn to determine escape of death, but a roll of 6 is treated as equal to a 2 (explorer held prisoner).
+
+**PRISONERS:** It is not necessary to take prisoners to find a native village. If the explorer rolls equal to or less than his or her *policy* with two dice, then the village is located. *All* of the natives will hide, or else *all* of the warriors will come out to do battle. (At this time, and at this time only, should the player-explorer determine the total warriors in the tribe — assuming this has not been heretofore determined.) Deserted villages can be looted normally. *If rations are found* assume that there are either 2 per warrior (die 1-3) or 3 per warrior (die 4-6). This will save much time and trouble. The same village may be looted repeatedly as long as the warriors are not all killed. Two lootings within any three successive turns will cause the village to be moved to an adjacent hex, and each hex will have to be explored to locate the tribe once again. *Camels* are found ONLY if the desert is contiguous with that shown on the northern part of the mapboard; they are never found in other desert hexes.
+
+**NATIVES: TRADING:** As just noted, camels (and horses as well) are available from tribes dwelling in desert hexes contiguous with the great northern desert region of Africa.
+
+The number of Askaris or bearers which can be hired from a single tribe is dependent upon the size of the tribe. The following formula is suggested:
+
+ASKARIS — 1 for every 2 warriors
+BEARERS — 1 for every warrior
+
+**NATIVES: POISONING EXPLORER:** A doctor is able to save himself or herself on a roll of 6 when poisoned (cf. p. 6). After being poisoned and recovering, a doctor also gets a + 1 on the die to save himself or herself if so unfortunate as to be poisoned (and die otherwise) a second or successive time.
+
+**NATIVES: ATTITUDE LEVELS:** As previously stated, the adjustments are reversed. Lower levels if the native tribe becomes more friendly, raise them if they become more hostile and warlike.
+
+**EXPLORER SPECIALTIES:** Optionally, an *explorer-botanist* may be added to the list. He or she operates exactly as does a zoologist, Disasters pertaining to plants are averted by explorer-botanists. They can survive without water on a desert hex on a roll of 4-6. (They find plants which yield water.)
+
+With the sole exception of evangelizers, any explorer NEED NOT stay in a hex to practice his or her specialty or specialties at the risk of the safety of the expedition, i.e. an explorer doctor need not try to treat the ills of a hostile tribe, an explorer-zoologist need not stay on a hex where hunting cannot possibly feed his expedition *provided rations are running low* and will not be sufficient to insure safe travel to the nearest ration source, etc.
+
+**EXPLORER SPECIALTIES: MEDICINE:** There seems to be a contradiction in the rules here. On a die roll of 3, the explorer-doctor is to lose 1 attitude point; that is, the attitude of the tribe goes up 1, and the natives become more hostile towards all explorers. In the last paragraph of the section (p. 16) is the following sentence: “They do not lose points when attitude levels drop on rolls of 3 (on the treatment table, above), but score 1 or 2 points on rolls of 5 or 6, respectively.” I have interpreted this to mean that the expedition led by the explorer-doctor is not considered in a more hostile manner by the tribe, but all other expeditions contacting the tribe will be.
+
+**HUNTING AND ADJUSTMENT OF RATIONS:** An explorer-explorer is able to fashion crude weapons and is thus never unarmed even if without a musket. He or she hunts with such weapons at -1 on the die roll. There is a chance that extra rations gained by an explorer-explorer *can* be preserved; on a roll of 1 or 2 the individual is able to preserve 1 or 2 rations, respectively.
+
+**STARVATION, SICKNESS, AND DESERTION (ALSO THIRST):** Neither a botanist nor a zoologist will starve automatically, even if they have no musket, for they can “hunt” for edible plants, roots, tubers, grubs, termites, etc. They use the normal hunting table and so are capable of
+
+providing double or treble rations in this manner.
+
+As previously stated, an explorer-botanist will not die of thirst on a desert hex without a water source if they roll a 4-6, as this indicates that a plant has been found which will yield water.
+
+The following *Native Tribe Facts Sheet* has proved to be a highly useful playing aid for *SOURCE OF THE NILE*. I hope the foregoing, along with it, will improve your enjoyment of the game. Similarly, I hope that neither Ross Maker nor Dave Wesely will take exception to what I have suggested, and they are quite welcome to make use of any of the material on a *gratis* basis. If anything said here is drastically wrong, either or both authors are hereby invited to set matters aright. Thanks to both of you for a most enjoyable game.
+
+#### NATIVE TRIBE FACTS SHEET
+
+ROLL FOR THE TRIBE NAME: 1-3 = 2 part; 4-5 = 3 part 6 = 4 part
+*Tribal Name Table of Syllables:*
+
+|  die 1-2 | die 3-4 | die 5-6 | die 1-2 | die 3-4 | die 5-6  |
+| --- | --- | --- | --- | --- | --- |
+|  1. ang(i) | ki(k) | (t)usi | 4. eb fa | ro ru | wa  |
+|  2. ha(n) | lo lu | ub ug | 5. gi go | (s) ai | ya yo  |
+|  3. bo bu | ma mu | uku | 6. ka ki | tang(i) | zi/ zu  |
+|  ( ) drop the letter if the name becomes cumbersome  |   |   |   |   |   |
+|  use either at your discretion or dice for which is present  |   |   |   |   |   |
+
+TRIBE NO. _______________ TRIBE NAME _______________
+
+#### NUMBER OF WARRIORS
+
+(subsequent casualties) _______________
+
+ATTITUDE _______________ NEGOTIATED _______________
+
+Victorious _______________ Explorers Killed _______________
+
+Defeated _______________ Prisoners Freed _______________
+
+Village discovered _______________ Looted _______________
+
+Evangelized _______________ Medically Treated _______________
+
+ORIGINAL DISCOVERER _______________
+
+Subsequent Contact By _______________
+
+OTHER INFORMATION CONCERNING TRIBE _______________
+
+#### *Witches from page 12*
+
+hears, and she takes 3-24 points of damage if it is killed. It takes a month to retrain a new one if it is killed.
+
+**Disguise:** As an Assassin.
+
+**Manufacture Acid:** For each experience level, the Witch can manufacture 1 die of acid per month. Types of acids — what they can and cannot dissolve are left to the DM. One suggestion is to have the acids be essence of Gray Ooze, Green Slime, etc.
+
+**Voice:** The Witch may shout out a command, no longer than 7 words (and no counting beforehand). Those failing to save vs. Magic will obey for the next melee round. A command to kill themselves will cause, victims to strike themselves with their weapons, at the usual hit probability armour class, doing half damage. The Voice cannot be used more often than once in 3 turns on the same listeners.
+
+**Transfer Hit Points:** A Witch may permanently transfer her own hit points to anyone else. If done within 1 turn of death, it will revive the victim giving them that many hit points. A curse can be lifted for the permanent transfer of 5 hit points with no rise in the hit points of the one saved. Prime attributes of another may be raised at a cost of 5 hit points up to 12, 7 hit points to raise it from 12 to 13, 8 to raise from 13 to 14, 10 to raise from 14 to 15 and 15 to 16, 20 to raise from 16 to 17, 25 from 17 to 18. As can be imagined, players will be wary about giving this favor to others, and NPCs will almost never do so. Transfer of hit points by a Witch does not lower her level, she just stays at that level with less hit points.
+
+**Enchant Item:** A Witch may permanently transfer hit points into an object for the purpose of enchanting it, at a cost of 1 hit point per 1000 gold pieces it would have cost. This is the only way they can manufacture magic items other than Potions.
+
+10

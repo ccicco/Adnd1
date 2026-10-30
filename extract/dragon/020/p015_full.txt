@@ -1,0 +1,63 @@
+**B&D Variant**
+
+# DEMONOLOGY MADE EASY; or, How To Deal With Orcus For Fun and Profit
+
+*by Gregory Rihn*
+
+**EDITOR'S NOTE:** The author may be familiar to you from the excellent piece on Lycanthropy that we published a few issues back. Publishing his second piece should be taken by the readers of *TD* for what it signifies: not that the author is necessarily an expert on *D & D*, but rather that the author possesses both a vivid imagination and a rational, logical approach to implementing it. The author does have an excellent grasp of *D & D*, to my mind, and I can't help but feel that his campaigns would be highly challenging and entertaining. It is the combination of imagination and logic, however "odd" that couple may seem, that marks the exciting games as different, a cut above the rest.
+
+In the Earth's past, real researchers into the arcane arts spent their time in attempting to rediscover the supposed secrets of the ancients. Among these were the philosopher's stone, which would transmute base metal to gold, and the elixir of life. The more daring attempted to replicate the experiments of Solomon the Wise, by summoning up the fallen angels and causing them to do the mage's bidding. It was thought that these beings would then impart knowledge to the operator, show him the location of hidden treasure, and employ their unearthly powers in his service — for a price.
+
+In *Dungeons & Dragons*®, magic users have other, more immediately rewarding enterprises to occupy their time, such as spell research and the manufacture of magic items, not to mention adventuring. However, the demonic heirarchies laid out in the *Advanced Dungeons & Dragons Monster Manual* make it attractive for *D & D* magic users to delve into the dubious science of demonology.
+
+In the interests of simplicity, I will generally refer to the summoned beings as "demons," though most of what is written might be applicable to demons, devils and such similar beings as night hags. (See *Advanced Dungeons & Dragons, Monster Manual*). Where differences should occur, they are noted.
+
+First, it is necessary to divine the name of the entity to be summoned. This magical name is one that is connected to the demon's very essence, and has great power over it. The names by which the great demons are commonly known, such as "Orcus" and "Demogorgon", are not those by which they are compelled to appear. Actual proper names change each seventy years, whereupon new names must be researched, and all pacts renewed. However, the great demons are jealously possessive of anything that has ever been theirs, including old names, and are still likely to appear if the name is "taken in vain", as described in *Eldritch Wizardry* and the *Monster Manual*.
+
+Though lesser demons do not have individual names as such, there are power works by which their appearance may be conjured which are researched in the same manner. As all low-level types are substantially the same, it does not matter which one you contact initially. If a pact is made, the operator may do the demon the favor of naming it, which increases the being's status in the underworlds. The same demon will then appear when called upon.
+
+The names that summon demons must be researched as though they were magical spells of the appropriate level. Use of the spell research rules that appeared in *The Dragon* #5 is recommended.
+
+|  Name of: | Equivalent Spell Level:  |
+| --- | --- |
+|  Demon prince, arch-devil | ninth  |
+|  type VI, pit fiend | eighth  |
+|  type V, ice devil, | seventh  |
+|  succubus | seventh  |
+|  type IV, horned devil | sixth  |
+|  night hag | sixth  |
+|  type III, bone devil | fifth  |
+|  type II, barbed devil | fourth  |
+|  type I, erinye, misc. | third  |
+
+## Expenses
+
+The spell level equivalents are given primarily as a guide to equivalent expense and time needed in research. Mere use of the divined name will not function as a spell without the proper ritual. In fact, if a
+
+name of this nature is spoken aloud without the ritual, the magical force of the name is such that it creates a bond between the speaker and the demon. The demon will know whether or not the operator is properly protected, and if he is not, there is a very good chance (50%+) that it will appear and snatch him back to its own plane — made possible by the bonding effect of the name.
+
+Before beginning research, the operator should declare what sort of creature he wishes to conjure. Chaotic types should prefer demons, and will have greatest success dealing with them. Lawful types should prefer devils. Neutral magic users may attempt to conjure any type with equal chance of success. Eventually, the operator will have succeeded in researching a name to conjure with. He should then determine exactly what sort of being he will be dealing with, for, as magic, is not really an exact science, there is a chance of results not being quite what the experimenter expected. *Legend lore* or some equivalent form of divination is quite suitable for this purpose.
+
+|  Level Attempted: | Level Achieved (% dice):  |
+| --- | --- |
+|  type I | misc 01-15; type I 16-85; type II 85-00  |
+|  type II | I, 01-20; II, 21-80; III, 81-00  |
+|  type III | II, 01-20; III, 21-80; IV, 81-00  |
+|  type IV | III, 01-30; IV, 31-85; V, 86-00  |
+|  type V | VI, 01-30; V, 31-90; VI 91-00  |
+|  type VI | V, 01-40; VI, 41-95; Pr. 96-00  |
+|  Prince | V, 01-50; VI, 51-75; Pr. 76-00  |
+
+Miscellaneous refers to sub-demons and similar or related creatures; manes, lemurs, ghasts, shadows, wraiths or spectres, and possibly even larvae, imps, or quasits. Obviously, some of these would not be of much use to the operator, but those are the breaks. On the other hand, a summoned spectre might be very useful. The dungeonmaster should determine what is called for by the discovered word if this alternative is rolled.
+
+NOTE: If desired, the demon generation charts from *TD* #13 can be very interesting when used with this process. For each level allow a small chance that the being whose name has been divined is a unique individual created from the generation chart. These will be primarily demons, rather than devils. Devils, being lawful and orderly in their fashion, tend to hate and loathe that which is different. Hence, the only unique devils that can long survive are those that are extremely powerful, like Asmodeus or Geryon. Unique devils would be far rarer than unique demons, and these would have to be beings that were under the protection of an arch-devil, perhaps his offspring or part of his personal staff.
+
+If the operator has researched the name that is beneath his notice, he must begin again. Unused names should by all means be recorded, since they may be sold to other experimenters if the operator does not wish to use them.
+
+The operator must then research the appropriate ritual for the summoning of the named demon. The ritual is of the same level of difficulty as the discovered name for purposes of research.
+
+When the operator has researched a name and a ritual of the desired potency, he begins preparations for the ritual, which includes obtaining implements and vestments, assistants, and the sacrifice. At the DM's option, the operator may also have to cast a horoscope to determine an auspicious hour for the ceremony.
+
+New implements and vestments must be obtained for each new ritual. Instruments will include a sword, daggers, wands, a brazier, the proper woods and herbs to burn, incense, a censer, holy water, chalk, inks, pens, parchments, goblets, and other tools of the Art. These must be new and preferably specially made. Each participant will need amulets, pentacles, and complete vestments. If the ritual fails, all must be discarded and new items purchased, as flaws in the equipment are one of the most often attributed causes of failure. If the experiment succeeds as planned, the equipment should be saved and used when it is desirable to repeat the ritual. In general, the operator should plan to invest from 1-4000 gold pieces per spell level of the ritual.
+
+13

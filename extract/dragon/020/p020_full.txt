@@ -1,0 +1,63 @@
+# SEE AFRICA AND DIE!
+
+OR,
+
+MR. STANLEY, MEET DR. LIVINGSTONE
+
+A Review, Complete With Some Suggested Rules Alterations and Additions, of SOURCE OF THE NILE
+
+By Gary Gygax
+
+Ross W. Maker and David A. Wesely have created an excellent game. SOURCE OF THE NILE is a semi-role playing game dealing with the exploration of the Dark Continent in the first part of the Nineteenth Century. It is very important to say from the outset that the game is a campaign type. A L-O-N-G time is required to explore all of Africa below the region of the Sahara (the part depicted on the mapboard), and it is highly doubtful — even with the most outrageous of luck that many of the earliest explorers will still be alive when the task has been accomplished. If you are not willing to devote extended periods of time to the play of a single game, then you have read far enough: forget this game.
+
+The rewards of playing SOURCE OF THE NILE are many, for it is both challenging and fun. It can be played solo, or as many as six players can have a go at exploring the interior. At the beginning of the campaign, each participant must decide if his or her explorer is to be just that or a combination explorer -evangelist, -geologist, -medical doctor, and or zoologist. There are advantages and disadvantages to each role, and the player must weigh them carefully against his or her game strategy when selecting the explorer's calling. Once that is taken care of, each player collects donations in money and free tickets to African port cities. As soon as a player is satisfied that he or she has sufficient funds, the departure for, Africa may be made, there to buy food, weapons, trinkets and trade goods, and canoes or camels or horses. Likewise, bearers, Askaris, and guides can be hired on for the proposed expedition. Then, after a brief trek through the territory shown on the map (board), the explorer plunges into the Heart of Darkest Africa possibly never to be seen or heard of again.
+
+Each turn after leaving the port city, each explorer must determine if some natural disaster has overtaken his or her expedition, and some of the disasters are absolutely horrendous! Surviving that, he or she must then determine if the party is lost, what sort of terrain they discover, if any tribe lives there (the natives are often very hostile and in sufficient force to totally wipe out a large expedition), and then hunt for game in order to extend the precious rations of food. Each explorer is anxious not only to cover as much terrain as possible (this brings extra donations when he or she manage to return to Europe and publish their discoveries (undoubtedly in newspapers, learned journals, and by lecture tours) but to have the honor of discovering the longest river system, the longest waterfall, the highest mountain, and the largest lake, for these bring extra points scored by explorers towards victory.
+
+Because it is quite probable that the first group of dauntless adventurers will not survive to see the final terra incognita spaces on the map go from blank white to color, the score of discoveries made by each explorer, the notable features (mountains over 15,000 feet, waterfalls over 400 feet, etc.) should be recorded. Pioneering explorers will probably not do as well as later ones, for they must venture into hexes with hostile tribes, while successive explorers will have the advantage of being able to contact friendly tribes to hire bearers and Askaris and trade for other items, while avoiding the hostile tribes, which information they can determine from the published material of their earlier colleagues. Strategies will shift as players bring in explorers with different callings, and new directions are tried.
+
+Discovery Games, the publisher of SOURCE OF THE NILE, is a new company, and like most other new firms they cannot afford fancy packaging. The box is adequate, and don't be thrown off by the plain cover. Inside there is plenty of excitement and many hours of entertainment, too! The mapboard is done on a plasticised substance, with only a narrow border of known terrain shown. The game comes with colored crayons so that terrain can be marked on as it is discovered and subsequently erased when explorers die without publishing their discoveries or a new game is begun. In addition, the game contains several hundred counters in six different colors, donation/ disaster cards, and six charts for organization
+
+of each player's party, so that the number of rations, gifts, bearers, etc. can be easily determined and adjusted.
+
+Be certain to read and KNOW the rules before you attempt to play. The rules are not well organized, nor are they very complete. In fact, in many ways they remind me of those originally written for D&D®. SOURCE OF THE NILE is a very fine game in its infancy. It needs further development, more illustrations and graphics, and better packaging. It is my sincere hope that the publisher will do well enough with it to eventually give it the treatment it deserves. Meanwhile, it is certainly worth buying in its current form, for it is a good game, and any future editions can make it a great game. I am offering a few suggestions here in order to pass on those developments we felt added to the game without significantly changing its internal systems. Only the authors can do anything official, so take the following for what it is worth.
+
+* * * * *
+
+STARTING THE GAME: Each participant should decide upon the role which his or her explorer-figure is to fill, and then each should do his or her best to act in the appropriate manner throughout the life of the explorer.
+
+DISASTERS: When a disaster calls for the death of a given figure (Askari, guide, or bearer), rather than inflicting it upon the explorer (who already has sufficient hazards imperiling his or her existence) dice amongst all persons in the party to see who is killed instead.
+
+EXPLORER: Explorers are able to fashion crude weapons for themselves and kill a Hacking beast on a roll of 6, just as if they had a musket.
+
+BOTANIST: Explorers avert sickness and fatalities which are related to plants.
+
+EXPLORING: MOVEMENT: While canoes cannot enter jungle swamp hexes, they can be carried by the usual number of bearers at the usual movement rate through such hexes. (Without this interpretation of the rules, it is possible to have a number of hexes which cannot be reached by any means whatsoever, for canoes are required to move through swamp hexes [rulebook, p. 7] but a literal interpretation of the rules makes it impossible to move canoes through jungle swamp hexes. We are then faced with the possibility of a jungle swamp ringing a swamp which encircles some other sort of terrain, and no expedition can every get beyond the barriers!)
+
+NATIVES: EXPLORER POLICY TOWARDS NATIVES: If the explorer opts for policy 2., an immediate withdrawal from the hex, the natives will not have opportunity to attack, and the party is back in the hex from whence they were coming.
+
+NATIVES: NATIVE REACTION TO EXPLORER POLICY: Freeing prisoners or negotiating successfully with natives raises the chance of successful negotiation by the appropriate explorer's party, but it lowers the attitude of the natives, not raises it. The higher the number of the attitude of the natives, the more beligerent they are, for there is less of a chance that the explorer's policy number and the distance to the nearest city (slaving effect for those who haven't yet played the game) will total a figure equaling or greater than the attitude level of the natives. Likewise, defeating attacked explorer parties will raise the attitude level of a tribe, thus making them harder to negotiate with.
+
+Maximum Number of Native Warriors in a Tribe: There is no stated maximum (or minimum) given in the rules, and nothing is said regarding fluctuation in the number of warriors from a tribe when it is encountered on successive entries into their home hex. I suggest a minimum and maximum number of warriors in a tribe based on proximity to port cities and game mechanics.
+
+Hexes to the
+
+Nearest Port
+
+Number of Tribal Warriors
+
+|  City | Minimum | Maximum  |
+| --- | --- | --- |
+|  2 | 15 | 30  |
+|  3 | 24 | 60  |
+|  4 | 36* | 90*  |
+|  5 | 60 | 150  |
+|  6 or more | 84 | none**  |
+
+*For any desert tribe, these are upper limits
+
+** Total warriors from five rolls of the dice.
+
+Warriors lost in battle are gone. When all of a tribe's warriors are dead, the tribe is extinct. Any number of warriors, up to the maximum, may be encountered, and the dice must be rolled to determine the number of warriors so encountered. However, battle casualties must be subtracted if
+
+18

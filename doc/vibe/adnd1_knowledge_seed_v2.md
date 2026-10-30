@@ -28648,6 +28648,50 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   report-019 boxes, issue 19 complete
   in the third three-round shape.
   WAIT FOR GO.
+  - R939 LANDED (7354593, d19, 31 inline,
+  pure flip, no new ink): The Dragon
+  issue-19 box closing round, the
+  six-chain walk complete. BOTH
+  report-019 boxes flipped in ONE round
+  (gap_census 2 closed 0 open): the
+  issue-19 opener chains part one (the
+  R937 wish-spell doctrine, the mythos
+  of Australia pantheon, the systematic
+  magic fields) and part two (the R938
+  Origins 78 tourney and victory-point
+  scoring, the treasure chains, the
+  hostile MU spell determination
+  grids). 31 inline bookkeeping only
+  (18 consts + 13 bools mirroring the
+  f17/f18 closers: d19IssueNineteenBoxe
+  s=2, chains=6, rounds=3 - the third
+  three-round issue shape; issue-closed
+  consts 7 through 18, registry
+  1313/1338/25, walk-complete bools 7
+  through 19), no tables, no data
+  files; header rules/d19.h (prefix d19
+  verified free at 9c618bb full-repo
+  scan - f19 is TAKEN, 4 files), audit
+  rules/audits/r939_batch.h "R939
+  Dragon issue-19 closure audit", 3
+  examples. ISSUES 2-19 ALL CLOSED.
+  Registry ground truth unchanged:
+  1313 loaded / 1338 base lua / 25
+  never-load (R924 re-measure). Census
+  861->862; rverify GREEN 31 mutants 0
+  missed; round-trip 12799 bytes md5
+  64fd9f6b37dd04e3e58f1fdc0a95e99e,
+  byte-exact at 7354593 (fresh tarball
+  re-run applied 0 already 7). Watch:
+  the Sullin New Spells levels 7-9 and
+  the brawling long-term-effects
+  sequel STILL print nowhere - both
+  watches ride to TD 20. Next: the
+  Dragon Magazine walk continues with
+  Curtiss's call - the next scan upload
+  (issue 20 or another issue) opens the
+  next issue round the same intake.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
