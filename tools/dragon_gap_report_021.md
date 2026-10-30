@@ -66,10 +66,10 @@ watches ride to TD 22.
 
 ## Boxes
 
-- [ ] **The issue-21 opener chains part one** (print 11 +
+- [x] **The issue-21 opener chains part one** (print 11 +
   23 + 27, 10, 9) - the twenty-NPC personality grid, the
   spell-research doctrine, the foretelling-spell counters
-- [ ] **The issue-21 opener chains part two** (print 9,
+- [x] **The issue-21 opener chains part two** (print 9,
   8, 14-15, 7) - the gold-piece economics, the
   natural-history monster doctrine, the Hall of Mystery
   module, the 25th-level title kit

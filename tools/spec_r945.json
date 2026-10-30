@@ -1,0 +1,428 @@
+{
+ "round": 945,
+ "prefix": "d21",
+ "census_before": 867,
+ "title": "The Dragon issue-21 box closing round: the seven-chain walk complete, issues 2-21 all closed (census 868)",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R944 LANDED (631da4d, g21, 66 inline,",
+ "prev_record": [
+  "  - R944 LANDED (631da4d, g21, 66 inline, opener part two of the issue-21",
+  "  three-round shape): The Dragon issue-21 opener part two, four chains IN",
+  "  (Inflation in D&D, Cure for the Same-Old-Monster Blues, The Hall of",
+  "  Mystery, What Do You Call a 25th Level M-U). The inflation economics of",
+  "  Willie Callison (print 9, PDF 11): the 1:1 gold-piece-dollar analogy with",
+  "  the 5-or-10 richer alternate, the 1-10-gp starting purse, the Strategic",
+  "  Review Vol. II No. 2 Gygax reference, the 1st-level purple dragon with its",
+  "  plus-5 sword and two plus-5 spears, the spend-for-XP critique, the",
+  "  silver-copper revival and the SMALL IS BEAUTIFUL close. The natural-history",
+  "  monster doctrine of Wm. Callison (print 8, PDF 10): the never-both snakes,",
+  "  the cold-blooded limit, the deaf-vibration senses, the coil initiative,",
+  "  the live-prey spider webs, the trap-door surprise, the solitary scorpions,",
+  "  the social ants, the AC 2-3 centipede correction and the Mother Nature",
+  "  source. The Hall of Mystery do-it-yourself module of Don Turnbull (print",
+  "  14-15, PDF 16-17): the five 10-foot mirrors (a the Opposition, c the 6-foot",
+  "  life trap holding the Succubus, b d e ordinary), the 45-foot ceiling, the",
+  "  5-foot cylinder, the nine-position Excalibur dial, Excalibur spoken three",
+  "  times, the three-person teleport limit with the clockwise displacement,",
+  "  the two Umber Hulks, the Magic Absorbers from Alarums and Excursions 12,",
+  "  and the eight-room monster census riding as the g21HallRooms table (tag",
+  "  Hm, 8 rows x 3 cols - the room iii Otyugl at its printed 7 hit dice, the",
+  "  unprinted rooms pinned 0 with the conversion noted). The Blume M-U titles",
+  "  kit (print 7, PDF 9): the ten-column chart against the seven-column prose",
+  "  walk (print catch), the 20th-level Rogor example and the delete-embellish",
+  "  doctrine. 66 inline (31 consts + 32 bools + 3 col switches), header",
+  "  rules/g21.h (prefix g21 verified free at 21c9900 full-repo scan), audit",
+  "  rules/audits/r944_batch.h R944 issue-21 opener part two audit, 12",
+  "  examples + 1 table check. Print catches pinned as scanned: the question",
+  "  header prints WIZARD for the M-U contents line; the kit spellings print",
+  "  Magnificance, Irrestible, Reknown, Belligerant, Contretious and Sourge;",
+  "  the inflation prints D-and-D mixed case and drops its letters twice (the",
+  "  wont, the can); the monster blues prints the envision and ol-Gandalf; the",
+  "  census prints Otyugl; the verse prints Ann-for-And and apiece for a",
+  "  piece. No data files this round (the 31 issue-21 intake files rode R943);",
+  "  gap report 021 no-oped at 2 open, both boxes awaiting the R945 flip.",
+  "  Census 866->867; rverify GREEN 87 mutants 0 missed; round-trip 31489",
+  "  bytes md5 1165a447b190cf9ef78362bd6dcf3e1c, byte-exact at 631da4d (fresh",
+  "  tarball re-run applied 0 already 5; the builder wrote the trailing newline",
+  "  itself, so the landed spec is byte-identical to the canvas body at the",
+  "  same 31489 bytes, no user-save +1 this round). WATCHES STILL EMPTY: the",
+  "  Sullin levels 7-9 and the brawling sequel print nowhere - both ride to",
+  "  TD 22. Next: R945 the pure flip closing both report-021 boxes, issues",
+  "  2-21 all closed at the flip. WAIT FOR GO."
+ ],
+ "header_file": "rules/d21.h",
+ "include_after": "#include \"rules/g21.h\"  // R944: the Dragon issue-21 opener part two, the four-chain round",
+ "include_comment": "the Dragon issue-21 box closing round, the seven-chain walk complete",
+ "audit_file": "rules/audits/r945_batch.h",
+ "audit_anchor": "#include \"rules/audits/r944_batch.h\"  // R944: R944 issue-21 opener part two audit",
+ "audit_label": "R945 Dragon issue-21 closure audit",
+ "audit_comment": "THE DRAGON ISSUE-21 BOX CLOSING ROUND - the pure flip, no new ink. Both report-021 boxes flip at this single round: the issue-21 opener chains part one (the R943 twenty-NPC personality grid, the spell-research doctrine, the foretelling-spell counters) and part two (the R944 gold-piece inflation doctrine, the natural-history monster doctrine, the Hall of Mystery, the M-U titles kit). Seven chains across three rounds, the fifth three-round issue shape. ISSUES 2-21 ALL CLOSED. Registry ground truth unchanged: 1313 loaded / 1338 base lua / 25 never-load (R924 re-measure).",
+ "gap_report": "tools/dragon_gap_report_021.md",
+ "gap_census": {
+  "closed": 2,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The issue-21 opener chains part one** (print 11 +",
+   "to": "- [x] **The issue-21 opener chains part one** (print 11 +",
+   "note": "the issue-21 part-one box"
+  },
+  {
+   "from": "- [ ] **The issue-21 opener chains part two** (print 9,",
+   "to": "- [x] **The issue-21 opener chains part two** (print 9,",
+   "note": "the issue-21 part-two box"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-21 box closing round - the seven-chain walk complete, issues 2 through 21 all closed",
+  "provenance": "The pure flip of the issue-21 three-round shape - no new ink pinned, both report-021 boxes closed. The issue-21 openers stand at R943 (t21: the twenty-NPC personality grid, the spell-research doctrine, the foretelling-spell counters) and R944 (g21: the gold-piece inflation doctrine, the natural-history monster doctrine, the Hall of Mystery, the M-U titles kit), all pinned from The Dragon Vol. III No. 6 (December 1978), the Curtiss-provided Dm21.pdf scan voice, print folio the PDF page minus two.",
+  "sentinel": "No new print catches at this flip - the issue-21 print quirks all rode the two opener records: the contents masthead Vol. 111 No. 6 November 1978 stamp, the Rollo seven-number prose statline, the Suliin and Ventriliquism spellings, the Medivar spelling, the ten-column chart against the seven-column prose walk, the WIZARD header for the M-U contents line, the Magnificance Irrestible Reknown Belligerant Contretious Sourge spellings, the envision and ol-Gandalf typos, the Otyugl census spelling and the Ann-for-And verse - all pinned as scanned, the conversion noted"
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "d21IssueTwentyOneBoxes",
+   "value": 2,
+   "comment": "both report-021 boxes close at this single flip - the part-one and part-two opener boxes"
+  },
+  {
+   "name": "d21IssueTwentyOneChains",
+   "value": 7,
+   "comment": "the issue-21 chain count - three part-one chains (the twenty-NPC personality grid, the spell-research doctrine, the foretelling-spell counters) and four part-two chains (the gold-piece inflation doctrine, the natural-history monster doctrine, the Hall of Mystery, the M-U titles kit)"
+  },
+  {
+   "name": "d21IssueTwentyOneRounds",
+   "value": 3,
+   "comment": "the issue-21 round shape - the R943 opener part one, the R944 opener part two and this R945 pure flip, the fifth three-round issue shape"
+  },
+  {
+   "name": "d21IssueSevenClosed",
+   "value": 1,
+   "comment": "issue 7 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueEightClosed",
+   "value": 1,
+   "comment": "issue 8 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueNineClosed",
+   "value": 1,
+   "comment": "issue 9 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueTenClosed",
+   "value": 1,
+   "comment": "issue 10 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueElevenClosed",
+   "value": 1,
+   "comment": "issue 11 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueTwelveClosed",
+   "value": 1,
+   "comment": "issue 12 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueThirteenClosed",
+   "value": 1,
+   "comment": "issue 13 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueFourteenClosed",
+   "value": 1,
+   "comment": "issue 14 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueFifteenClosed",
+   "value": 1,
+   "comment": "issue 15 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueSixteenClosed",
+   "value": 1,
+   "comment": "issue 16 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueSeventeenClosed",
+   "value": 1,
+   "comment": "issue 17 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueEighteenClosed",
+   "value": 1,
+   "comment": "issue 18 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueNineteenClosed",
+   "value": 1,
+   "comment": "issue 19 stands closed since its own flip"
+  },
+  {
+   "name": "d21IssueTwentyClosed",
+   "value": 1,
+   "comment": "issue 20 stands closed since the R942 d2c flip"
+  },
+  {
+   "name": "d21RegistryLoaded",
+   "value": 1313,
+   "comment": "the registry ground truth - loaded lua files per the R924 re-measure"
+  },
+  {
+   "name": "d21RegistryBaseLua",
+   "value": 1338,
+   "comment": "the registry base lua count per the R924 re-measure"
+  },
+  {
+   "name": "d21RegistryNeverLoad",
+   "value": 25,
+   "comment": "the registry never-load count per the R924 re-measure"
+  }
+ ],
+ "bools": [
+  {
+   "name": "d21WalkSevenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 7 complete"
+  },
+  {
+   "name": "d21WalkEightComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 8 complete"
+  },
+  {
+   "name": "d21WalkNineComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 9 complete"
+  },
+  {
+   "name": "d21WalkTenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 10 complete"
+  },
+  {
+   "name": "d21WalkElevenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 11 complete"
+  },
+  {
+   "name": "d21WalkTwelveComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 12 complete"
+  },
+  {
+   "name": "d21WalkThirteenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 13 complete"
+  },
+  {
+   "name": "d21WalkFourteenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 14 complete"
+  },
+  {
+   "name": "d21WalkFifteenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 15 complete"
+  },
+  {
+   "name": "d21WalkSixteenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 16 complete"
+  },
+  {
+   "name": "d21WalkSeventeenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 17 complete"
+  },
+  {
+   "name": "d21WalkEighteenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 18 complete"
+  },
+  {
+   "name": "d21WalkNineteenComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 19 complete"
+  },
+  {
+   "name": "d21WalkTwentyComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 20 complete"
+  },
+  {
+   "name": "d21WalkTwentyOneComplete",
+   "value": true,
+   "comment": "the Dragon walk holds issues 2 through 21 complete"
+  }
+ ],
+ "tables": [],
+ "header_sections": {
+  "the issue-21 closure bookkeeping": [
+   {
+    "kind": "const",
+    "name": "d21IssueTwentyOneBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueTwentyOneChains"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueTwentyOneRounds"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueSevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueEightClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueNineClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueTenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueElevenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueTwelveClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueThirteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueFourteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueFifteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueSixteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueSeventeenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueEighteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueNineteenClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21IssueTwentyClosed"
+   },
+   {
+    "kind": "const",
+    "name": "d21RegistryLoaded"
+   },
+   {
+    "kind": "const",
+    "name": "d21RegistryBaseLua"
+   },
+   {
+    "kind": "const",
+    "name": "d21RegistryNeverLoad"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkSevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkEightComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkNineComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkTenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkElevenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkTwelveComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkThirteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkFourteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkFifteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkSixteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkSeventeenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkEighteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkNineteenComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkTwentyComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "d21WalkTwentyOneComplete"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['d21IssueTwentyOneBoxes']() != 2 or m['d21IssueTwentyOneChains']() != 7 or m['d21IssueTwentyOneRounds']() != 3 or m['d21IssueTwentyClosed']() != 1 or m['d21IssueNineteenClosed']() != 1 or m['d21IssueSevenClosed']() != 1",
+   "note": "the issue-21 census - two boxes, seven chains, three rounds, the fifth three-round issue shape"
+  },
+  {
+   "expr": "m['d21IssueEighteenClosed']() != 1 or m['d21IssueSeventeenClosed']() != 1 or m['d21IssueSixteenClosed']() != 1 or m['d21IssueFifteenClosed']() != 1 or m['d21IssueFourteenClosed']() != 1 or m['d21IssueThirteenClosed']() != 1 or m['d21IssueTwelveClosed']() != 1 or m['d21IssueElevenClosed']() != 1 or m['d21IssueTenClosed']() != 1 or m['d21IssueNineClosed']() != 1 or m['d21IssueEightClosed']() != 1",
+   "note": "the mid-walk closed set - issues 8 through 18 all stand closed at this flip"
+  },
+  {
+   "expr": "m['d21RegistryLoaded']() != 1313 or m['d21RegistryBaseLua']() != 1338 or m['d21RegistryNeverLoad']() != 25 or m['d21WalkTwentyOneComplete']() != 1 or m['d21WalkSevenComplete']() != 1 or m['d21WalkTwentyComplete']() != 1",
+   "note": "the registry ground truth unchanged 1313/1338/25 and the walk complete through issue 21 - ISSUES 2-21 ALL CLOSED"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 35
+}

@@ -28816,6 +28816,49 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   (Inflation in D&D, Same-Old-Monster Blues, Hall of Mystery, What Do You
   Call a 25th Level M-U), R945 the pure flip closing both report-021 boxes.
   WAIT FOR GO.
+  - R944 LANDED (631da4d, g21, 66 inline, opener part two of the issue-21
+  three-round shape): The Dragon issue-21 opener part two, four chains IN
+  (Inflation in D&D, Cure for the Same-Old-Monster Blues, The Hall of
+  Mystery, What Do You Call a 25th Level M-U). The inflation economics of
+  Willie Callison (print 9, PDF 11): the 1:1 gold-piece-dollar analogy with
+  the 5-or-10 richer alternate, the 1-10-gp starting purse, the Strategic
+  Review Vol. II No. 2 Gygax reference, the 1st-level purple dragon with its
+  plus-5 sword and two plus-5 spears, the spend-for-XP critique, the
+  silver-copper revival and the SMALL IS BEAUTIFUL close. The natural-history
+  monster doctrine of Wm. Callison (print 8, PDF 10): the never-both snakes,
+  the cold-blooded limit, the deaf-vibration senses, the coil initiative,
+  the live-prey spider webs, the trap-door surprise, the solitary scorpions,
+  the social ants, the AC 2-3 centipede correction and the Mother Nature
+  source. The Hall of Mystery do-it-yourself module of Don Turnbull (print
+  14-15, PDF 16-17): the five 10-foot mirrors (a the Opposition, c the 6-foot
+  life trap holding the Succubus, b d e ordinary), the 45-foot ceiling, the
+  5-foot cylinder, the nine-position Excalibur dial, Excalibur spoken three
+  times, the three-person teleport limit with the clockwise displacement,
+  the two Umber Hulks, the Magic Absorbers from Alarums and Excursions 12,
+  and the eight-room monster census riding as the g21HallRooms table (tag
+  Hm, 8 rows x 3 cols - the room iii Otyugl at its printed 7 hit dice, the
+  unprinted rooms pinned 0 with the conversion noted). The Blume M-U titles
+  kit (print 7, PDF 9): the ten-column chart against the seven-column prose
+  walk (print catch), the 20th-level Rogor example and the delete-embellish
+  doctrine. 66 inline (31 consts + 32 bools + 3 col switches), header
+  rules/g21.h (prefix g21 verified free at 21c9900 full-repo scan), audit
+  rules/audits/r944_batch.h R944 issue-21 opener part two audit, 12
+  examples + 1 table check. Print catches pinned as scanned: the question
+  header prints WIZARD for the M-U contents line; the kit spellings print
+  Magnificance, Irrestible, Reknown, Belligerant, Contretious and Sourge;
+  the inflation prints D-and-D mixed case and drops its letters twice (the
+  wont, the can); the monster blues prints the envision and ol-Gandalf; the
+  census prints Otyugl; the verse prints Ann-for-And and apiece for a
+  piece. No data files this round (the 31 issue-21 intake files rode R943);
+  gap report 021 no-oped at 2 open, both boxes awaiting the R945 flip.
+  Census 866->867; rverify GREEN 87 mutants 0 missed; round-trip 31489
+  bytes md5 1165a447b190cf9ef78362bd6dcf3e1c, byte-exact at 631da4d (fresh
+  tarball re-run applied 0 already 5; the builder wrote the trailing newline
+  itself, so the landed spec is byte-identical to the canvas body at the
+  same 31489 bytes, no user-save +1 this round). WATCHES STILL EMPTY: the
+  Sullin levels 7-9 and the brawling sequel print nowhere - both ride to
+  TD 22. Next: R945 the pure flip closing both report-021 boxes, issues
+  2-21 all closed at the flip. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
