@@ -29547,6 +29547,35 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   23, the Deck of Fate 24-25, the Strength Comparison
   Table 38). The two watches ride to TD 27 (the Sullin
   levels 7-9, the brawling sequel). WAIT FOR GO.
+  - R963 LANDED (7d482ef, s26, 111 inline, the table round): The
+  Dragon issue-26 opener part two - the table round, four
+  of the thirteen Curtiss-called chains at print 20-21 +
+  23 + 24-25 + 38: the Chinese Undead roster (six undead
+  brackets, the lost soul replacement-kill and no-dissolve
+  laws, the vampire spectre brackets, the tiger skin
+  quest), the nine-point alignment chart (nine boxes
+  against seven conduct rows, the 2/1/0 encoding, the
+  fifteenth level lord), the Deck of Fate tarot artifact
+  (the seven-band wheel of fortune, the greater arcana
+  boons, the moon citing Dragon 18) and the strength
+  comparison ladder (twenty-one rows from collapse to the
+  storm giants, the ogre power revision, the Arduin
+  source). 111 inline = 52 consts + 40 bools + 19 table
+  cols, 13 examples, 4 table_checks, four grids -
+  s26UndeadGrid 6x7, s26AlignmentGrid 9x7, s26FateGrid
+  7x2, s26StrengthGrid 21x3, the overlapping 18/90
+  strength print pinned as scanned. Census 885->886;
+  rverify GREEN 274 mutants 0 missed at base c839b60;
+  round-trip 41806 bytes md5
+  7b61df254de143ecfe0b7bcb6f27fc44, byte-exact at
+  7d482ef (fresh tarball re-run applied 0 already 5).
+  The R962 record seated in the repo seed with its
+  house The-tail first line intact. Part two
+  of the TD 26 four-round shape complete; R964 k26 next,
+  the commentary set (Lich 36, Impromptu Adventuring
+  Groups 37 + 39, Barghest 44, The Thief 46). The two
+  watches ride to TD 27 (the Sullin levels 7-9, the
+  brawling sequel). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
