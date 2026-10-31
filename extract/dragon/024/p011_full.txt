@@ -1,0 +1,62 @@
+
+April, 1979
+
+The Dragon
+
+Note: To many people it may seem strange that a wolfs constitution would be better than that of say a bear, but remember that wolves often survive through incredible hardships such as hunger and cold, and I've yet to see a bear do as well. Also, it may seem odd that a bear would have as much intelligence as a wolf and more than any other animal (save the Were-Rat as explained in Greyhawk) — this is where fantasy (and this author's artistic license) comes in. I, as a Dungeon-Master, have always used Were-Bears (the only lycanthrope which is ever lawful/good) as somewhat magical, intelligent creatures in my campaigns, usually being the servants/companions of good Wizards and patriarchs. Since it is hard for a writer not to inject at least a bit of his experience into his work, I have listed them as such. Nevertheless, it must be remembered (and this has been explained over and over again in D&D) that the Dungeonmaster has the final word and can change these charts however he wants to fit his game as long as balance is maintained.
+
+Along with the basic attributes, the speed, hitpoints, and saving throw matrix for the player/creature will be slightly different from those of the normal player:
+
+|  Creature | Speed | Hit Points  |
+| --- | --- | --- |
+|  Bats | plus 10% |   |
+|  wolves | plus 40% | plus 2 points to each hit die  |
+|  Bears | plus 20% | plus 4 points to each hit die  |
+|  Tigers | plus 40% | plus 5 points to each hit die  |
+|   | plus 30% | plus 6 points to each hit die  |
+
+Note: After the player has reached his maximum level (i.e. Lord, Wizard, etc.), they gain only one third of the above hit point adds per level (rounding off to the next highest whole number if it is a fraction).
+
+|  Creature Type | Deathray or Poison | Saving Throw Matrix |   |   | staves & Spells (Magic)  |
+| --- | --- | --- | --- | --- | --- |
+|   |   |  Wands | Stone | Dragon Breath  |   |
+|  Bats | minus 1 | plus 1 | minus 1 | — | —  |
+|  Wolves | minus 3 | — | minus 2 | minus 2 | —  |
+|  Bears | minus 2 | plus 1 | minus 2 | minus 1 | plus 1  |
+|  Tigers | minus 2 | plus 1 | minus 2 | minus 2 | —  |
+|  Bears | minus 2 | — | minus 1 | minus 2 | minus 1  |
+
+Numbers — are added to or subtracted from the amount needed to save from each category, not the number the player rolls (i.e. if a player needed 12 to save from poison, but was in his were-wolf form, he would only need 9).
+
+### Other Changes
+
+Armour Class: will be the same as the lycanthrope's normal armour class as listed in the monster section of D&D. Note that players will have an odd sensation just before turning into a lycanthrope, so they will have time to take off any armour they have to keep it from getting wrecked (since a creature like a were-bear, for instance, is obviously bigger than a man). Optional: there is a 10% chance that if a player has a shield he may keep it when he turns to his lycanthrope form (providing the lycanthrope can use it, i.e. has front limbs which can hold it-only were-rats, were-bears, and type Glycanthropes fit this description). Thus, the player/creature's armour class would be one lower than usual, so a were-wolf with a shield would be armour class 4.
+
+Level & Experience: of the player/creature will be the same as that of the player. Also, the creature goes up in the same steps as the player (i.e. a magic-user/lycanthrope would go up in steps of 5 regarding saving throws, etc.).
+
+Supplies & Possessions: There is a base 65% chance that the lycanthrope will drop all supplies and possessions the player was carrying when it first changes (40% if type G and 0% if type C or F). Otherwise the player/creature will keep all of the player's supplies and possessions.
+
+Languages: The creature will automatically speak its own language (i.e. were-bear, were-rat, etc.) and any other languages (which its altered intelligence will permit) that the player wants.
+
+Closing Notes: players and Dungeonmasters are invited to make up their own rules regarding situations which have been left out due to lack of space and time, remembering that balance must be maintained at all times. As with D&D itself, these rules are only the basic skeleton of the possible situations and many more rules (and lycanthrope types) can no doubt be thought up.
+
+# Judges Guild
+
+WELCOMES YOU TO THE
+
+88 DARK TOWER by Paul Jaquays. Huge dungeon adventure described as "The best from Judges Guild to date." Many pages of background, descriptions, unique monsters, and dungeon levels. Approved for use with Advanced Dungeons & Dragons® . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $5.50
+78 THE TRAVELLER LOGBOOK by Dave Sering. A playing aid designed to assist referees and players in the generation of characters and the design of spaceships. Record keeping forms and tables provide backgrounds and personal characteristics for player and non-player characters. Includes financial operation tables for starships. Although designed and approved to mesh with the TRAVELLER GAME SYSTEM \( ^{®} \) , the material herein may be utilized with any science fiction role playing system. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $3.00
+87 CHARACTER CODEX Over 90 sheets of perforated character record sheets. Includes equipment cost. Approved for use with Advanced Dungeons & Dragons \( ^{®} \) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $4.50
+89 STARSHIPS & SPACECRAFTS by Dave Sering. Three huge 22" x 34" detailed plans in 3 colors of the standard ships approved for use with TRAVELLER. Includes all specs and room for designing your own. . . . . . . $5.50
+92 WILDERLANDS OF THE MAGIC REALM by Mark Holmer. Two 16-page booklets describe the villages, ruins and relics, castles and citadels, and the Isles. Includes four 17" x 22" maps (2 players and 2 judges) of "Ghinor", "Isle of the Blest", "Ebony Coast", and "Ament Tundra". Approved for use with Dungeons & Dragons® . . . . $8.50
+93 UNDER THE STORM GIANT'S CASTLE by Tim McCloud Six levels of dungeon beneath a "Castle in the Clouds". Unique monsters and descriptions. Approved for use with Advanced Dungeons & Dragons \( ^{®} \)  ... $3.00
+
+Judges Guild
+
+1165 N. University Ave. (N2)
+
+Decatur, IL, 62526
+
+(217) 422-1930
+
+11

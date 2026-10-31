@@ -1,0 +1,77 @@
+
+April, 1979
+
+The Dragon
+
+aid, he always carefully considers all the factors before deciding whether or not to help. Incautious supplicants may find him aiding their enemies! His aid often comes in the form of granting warriors Javelins of Lightning (20 points) or fireball stars (15 points): Magic-users or clerics may find wands or scrolls of similar value. Those whom he aids may never know who their benefactor was — Manturin prefers to work behind the scenes. Neutral Paladinhood is possible in his service to those sufficiently dedicated to the Balance. Such Paladins may find that Manturin is subtly directing their actions through omens, signs, etc., visible only to themselves.
+
+Neutrality: **NATURE**
+
+(Druids)
+
+Tenets: Man is a part of nature, and must be fully integrated with the ecology. The cycle of life is the closest thing to perfection on this plane: there is a place and a part to play for each creature. Man, in his arrogance, deems himself outside the Wheel of Nature, and thus causes disharmony within nature and within himself. Only in the give-and-take of the natural life can man find contentment. Those who ignore this truth and would upset the ecology even further must be prevented from doing so. Death, after all, is just one more turn of the wheel.
+
+Prime Deity: **RILLIFLOHAM**
+AC: -4 HP: 300 MOVE: 12"
+
+MAGIC: Standard plus all Druidical spells.
+
+Rillifloham appears as a 40-foot treant, bearing in his branches fruits and nuts of every kind, and with squirrels, birds and other small animals living in his leafy crown. He is slow to anger, but implacable once his anger has been stirred up. His friends have an easy time of it in the wilderness, as all the plants and animals seem to aid them. His enemies, however, find all the living things of the wild conspiring against them. Rillifloham can strike with his fists for 8-80 points damage, and can summon 3-18 treants (as well as any other wild creatures that are around) to his aid. Fire does only normal damage against him. He may (10% chance) reward meritorious actions on Nature's behalf with a wooden artifact of great power or the assistance of an animal as a familiar.
+
+Neutrality: **AMBITION**
+
+(Assassins)
+
+Tenets: Personal aggrandizement is the only goal of the followers of this alignment. Law and Chaos are irrelevant to the individual save as a means to an end. Total solipsism — self is all that matters. The fate of others, even as a consequence of one's own actions, is of no concern. They are but tools. A person should rely on his own strengths and skills.
+
+Prime Deity: **RASAN KORYA**
+AC: -3 HP: 300 MOVE: 12" MAGIC: Standard
+
+This god appears as a richly-apparelated man or woman. He fights, if he must, with a flaming sword that does 5-50 points damage and can
+
+shoot fireballs of 10-dice value. Worshippers who have contributed enough at his shrines may have a favor done for them (5% chance). Rasan Korya is whimsical at times, bored or indifferently cruel at others. A supplicant requesting aid in battle may receive the help of a Kobold or a cavalry brigade, depending on Rasan's mood. He really only looks with favor on those who can manage without his help. Why should he do anything for weaklings, who can do nothing for him?
+
+Rasan Korya lives in a huge stone hall where he presides over a continuous banquet. The guests there continually duel among each other for the honor of sitting closer to the head of the table. Mortals may be invited to this party as a reward for meritorious service. Rasan is always scheming to usurp the power of other gods, and several minor, forgotten deities have been his victims.
+
+Neutrality: **ESTHETICS**
+
+Tenets: Man's highest achievements are in the arts, for only there can be transcendent his mortality. The only worthwhile occupation is the creation and appreciation of beauty. Man can make himself an art form, and appreciation thereof begets Love, which refines the senses and further increases our appreciation of all that is beautiful. Anything that must be done may as well be done with style and flair. What you do is not nearly so important as how you do it.
+
+Prime Deity: **DEMYURITAS**
+AC: -2 HP: 300 MOVE: 24" MAGIC: Standard
+
+Demyuritas appears as a stunningly beautiful youth who can be either male or female. Beings who annoy him are merely teleported away 1-20 hexes in a random direction when he points his finger at them (once per round, no saving throw). Demyuritas can't stand vulgar types in his presence. He may be impressed by charismatic, stylish, smooth-talking types (though he may not trust them, he will enjoy their company). Extremely charismatic persons may even be taken as lovers for a night. Bards are always a favorite with Demyuritas. His gifts include musical instruments and artistic and magical implements of wondrous beauty and power.
+
+Neutrality: **THE FOUR ELEMENTS**
+
+Tenets: This is basically a primitive philosophy. The powers that rule the elements are propitiated in the hope that they will grant favors, or at least withhold their wrath.
+
+Prime Deities
+
+Earth: **GUNGGER**
+AC: -4 HP: 200 MOVE: 12" MAGIC: Standard plus all earth spells.
+
+Gungger is the Overlord of the earth elementals. He strikes with his fists for 10-100 points damage. He can summon 1-12 earth elementals to his aid, and can cross water without trouble. Gungger is primarily worshipped by the mining and subterranean peoples.
+
+Air: **HARA**
+AC: -2 HP: 200 MOVE: 72"
+
+MAGIC: Standard plus all air spells.
+
+Hara is the Queen of the air elementals. She can hit six times per round for 3-30 points damage each, and can summon 1-12 air elementals to her aid. Hara cannot be touched by projectiles launched into the air. Mariners and the flying races are her most common worshippers.
+
+Fire: **ZKRACL**
+AC: -2 HP: 200 MOVE: 36"
+
+MAGIC: Standard plus all fire spells.
+
+Zkracl is the Tyrant of the fire elementals. He hits for 5-50 points fire damage, and can throw a 20-dice fireball every round (save vs. spells, ½ damage). He can summon 1-12 fire elementals to his aid, and is not affected by water. It is said that he can spy through any fire. Many hearths and forges have shrines to Zkracl.
+
+Water: **SHALIROI**
+AC: -2 HP: 200 MOVE: 12"/36" (H₂O)
+
+MAGIC: Standard plus all water spells.
+
+Shaliroi is the King of the water elementals. He hits for 3-30 points damage, and once per round can envelop and instantly drown any creature that does not make its save vs. spells. He can summon 1-12 water elementals to his aid, and is not affected by heat. Mariners, fishermen and the aquatic races are his primary worshippers.
+
+37

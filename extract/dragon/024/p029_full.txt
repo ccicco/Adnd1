@@ -1,0 +1,111 @@
+
+April, 1979
+
+The Dragon
+
+and is entitled to another one immediately, that power should be either *Infravision* or *Reduction*. Greater Manifestations should only be assigned, when a character is due to acquire a power, on a ½ile roll of 91-100. Anti-Psi powers have a separate chance of acquisition. Roll for them in addition to the standard rolls for psychic powers. Once having obtained an Anti-Psi power, a character should not be checked for another oftener than every 5 levels.
+
+**RETROCOGNITION:** a sort of reverse fortune telling. *Retrocognition* allows a mental picture of how a place looked in the past. It gives 1 week back per level of mastery at a psychic strength cost of 2 per week seen. DMs intending to allow this power must have a "history" for parts of their dungeons or wilderness.
+
+**LOCATE OBJECT:** reveals exact location of a known object at a psychic strength cost of 1 per foot of distance. Each level of mastery allows an extra foot per psychic strength expended.
+
+**HYPERCOGNITION:** is a super-intuitive. It gives specific knowledge. There is a 10% chance per level of mastery of it working at a psychic strength cost of 1 for each 10% chance. Thus, a character at the 10th level of mastery would have 100% chance of knowing something about an entity at a cost of 10 psychic strength.
+
+**SPEAR LANGUAGES:** is just what it says. It can be used for actual speech or telepathy or sig language. For each level of mastery it lasts one turn at a cost of 10 psychic strength.
+
+**PSYCHE TRANSFER:** is the psionic equivalent of the *Magic Jar* spell. There is a 10% chance per level of mastery of taking over another mind at a cost of 5 psychic strength plus an additional 5 for each hit dice level the victim is above the psionic character. Those transferring into a non-humanoid body will be unfamiliar with its nervous system and be able to operate it at only 10% effectiveness per week cumulative.
+
+# **KINETIC POWERS**
+
+|  Lesser Manifestations | Greater Manifestations  |
+| --- | --- |
+|  Mind Over Body | Body Control  |
+|  Suspend Animation | Change Shape  |
+|  Body Equilibrium | Energy Control  |
+|  Infravision* | Molecular Disruption  |
+|  Cell Adjustment | Molecular Melding*  |
+|  Reduction | Molecular Shield*  |
+|  Expansion | Molecular Dart*  |
+|  Levitation | Telekinesis  |
+|  Light* | Molecular Alteration  |
+|  Molecular Agitation | Cold*  |
+|  Body Weaponry | Heat*  |
+|  Stun* | Magnetism*  |
+|  Neural Disruption* | Electricity*  |
+|  Spirit Form* | Gravity Control*  |
+|   | Dimension Door  |
+|   | Dimension Walk  |
+|   | Teleportation  |
+|   | Ethereal Travel  |
+
+# **Explanation of Starred (*) Powers**
+
+**INFRAVISION:** works just as the *Infravision* spell at a psychic strength cost of 5. It works one turn for each level of mastery.
+
+**LIGHT:** is a corona surrounding the possessor of the power, giving illumination about equal to a Druid *Faerie Fire* spell. It can be maintained at a psychic strength cost of 2 per turn. For each level of mastery, the Light radiates another 5 feet. At the 4th level it will thus be the equivalent of an ordinary torch, at 6th level it will be approximately equal to a good lantern, and at 10th level the user will radiate as if he possessed a Magic Light Spell.
+
+**STUN:** requires an actual touch against the opponent, allowing a 10' distance per level of mastery up to 100'. This power actually numbs the consciousness of the opponent — human, animal, or monster — at a cost of 1 psychic strength per victim's hit point; acting as a combination *Slow/Paralysis* if the victim has remaining points. For example, a 30 hit point foe exposed to a 10 point *Stun* will move at one-third speed. The effects last as long as a *Sleep* spell would.
+
+**NEURAL DISRUPTION:** actually prevents functioning of the nervous system. It reduces *all* of a foe's prime requisites at the same time, each down 1 for every 5 psychic strength employed. The effect lasts 1 turn per level of mastery.
+
+**SPIRIT FORM:** allows the user to vibrate his atoms such that he is insubstantial to solid matter, including magic weapons. The user is neither *Ethereal* nor *Astral*. He can be easily perceived, is vulnerable to magic or psionics, and cannot carry anything into the *Spirit Form* with him except ordinary cotton or woolen clothing. Psychic Strength cost is 10 per turn.
+
+**MOLECULAR MELDING:** works only on inanimate matter, mixing together the molecules of two objects to bond them together. For instance, a weapon could be bonded to the floor, or a door bonded into a doorframe to be held as if *Wizard Locked*. The *Meld* costs 5 psychic strength and lasts 1 turn per level of mastery.
+
+**MOLECULAR SHIELD:** This increases the density of the air or liquid between the user and an attacker. The result is an increase in the user's armor class 1 for two psychic strength for each melee round.
+
+**MOLECULAR DART:** turns the air into a *Magic Missile*. The Dart costs 5 psychic strength for each one "fired" and has a range of only 10' per level of mastery.
+
+# **D&D Variant**
+
+# **Disease**
+
+**Lenny Buettuer**
+
+These charts are designed to provide a method of determining how long it takes a disease to kill a person and what the symptoms are. This is mainly for use with curses and *Cause Disease* spells from anti-clerics where diseases of unknown characteristics are involved.
+
+|  Fatality | Interval | Number of Symptoms  |
+| --- | --- | --- |
+|  1 | Immediate | 1-3 1 symptom  |
+|  2 | 10 minutes | 4-5 2 symptoms  |
+|  3 | 20 minutes | 6-7 3 symptoms  |
+|  4 | 40 minutes | 8 4 symptoms  |
+|  5 | 1 hour |   |
+|  6 | 3 hours |   |
+|   |  | **Symptoms**  |
+|  7 | 6 hours | 1 Pain  |
+|  8 | 12 hours | 2 Shortness of Breath  |
+|  9 | 24 hours | 3 Paralysis  |
+|  10-15 | 2 days | 4 Sensory Loss  |
+|  16-20 | 3 days | 1-Sight  |
+|  21-25 | 4 days | 2-Hearing  |
+|  26-30 | 5 days | 3-General numbness  |
+|  31-40 | 6 days | 5 Fever  |
+|  41-50 | 7 days | 6 Chills  |
+|  51-60 | 8 days | 7 Skin sores  |
+|  61-70 | 12 days | 8 Nausea  |
+|  71-80 | 16 days | 9 Rash  |
+|  81-89 | 20 days | 10 Drowsiness  |
+|  90 | 24 days | 11 Insanity  |
+|  91 | 36 days | 12 Bleeding  |
+|  92 | 48 days | 13 Hyperactivity  |
+|  93 | 3 months | 14 Coughing/Sneezing  |
+|  94 | 4 months | 15 Chest Pains  |
+|  95 | 5 months | 16 Loss of Energy  |
+|  96 | 6 months | 17 Diarrhea  |
+|  97 | 7 months | 18 Tumors  |
+|  99 | 9 months | 19 Swelling  |
+|  00 | 10 months | 20 Hallucinations  |
+
+A saving throw may be given and if the person saves, he suffers the symptoms for the given period of time and then recovers.
+
+# **Lyle's Hobby & Craft Center**
+
+**Large Selection of Wargames**
+
+852-8085
+
+**38 North Cass Ave.**
+**Westmont, Ill. 60559**
+
+29

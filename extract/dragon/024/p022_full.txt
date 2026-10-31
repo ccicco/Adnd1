@@ -1,0 +1,78 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+Variant
+
+# DUNGEON — MORE VARIATIONS ON THE THEME
+
+George Laking
+
+After a tense, hard-fought session of *D&D*®, sitting down for an evening with a quick game of *DUNGEON!* can be a real pleasure for Dungeonmasters and players alike! Because of its basic game structure, the game is open to any number of variants and rules options.
+
+Members of the Mid-Columbia Wargaming Society of Richland, WA, have experimented with the following variants and found that they add new interest to an already enjoyable game. Try these the next time you play *DUNGEON!* and see if you don't agree.
+
+## Transference
+
+(1) A wizard using transference may move directly from any one chamber to any other chamber, irrespective of the different level(s) between them. Thus, for example, a wizard could move from the Main Galley to any one of the Sixth Level chambers in a single turn using one (1) Transference card.
+
+(A) As the above rule tends to make wizards extremely mobile, the following rule modification is added: increase the movement factor of all other character types — Superhero, Hero and Elf — to ten (10). Wizard movement remains unchanged: five (5).
+
+(2) Transference cards may be used offensively. Like Lightning Bolts and Fireballs, they must be thrown one (1) space away to take effect.
+
+(A) *Against Monsters:* the wizard must roll 8 + on two dice to be successful — all else is 'N/E.' If successful, the wizard may transfer that monster to the chamber of his choice provided no more than two monsters currently inhabit it. He may also transfer that monster to a chamber in which one or more players are located, the monster attacking immediately. He may NOT transfer a monster into a room or corridor, or into a chamber already filled to capacity (three monsters, players not counting toward chamber occupancy). A transferred monster does not take any prizes with him.
+
+(B) *Against Players:* The 'Spell Combat Table' is modified thusly:
+
+|  Spell | Elf | Hero | Superhero | Wizard  |
+| --- | --- | --- | --- | --- |
+|  Transference | 4+ | 5+ | 6+ | 7+  |
+
+A successful die roll allows the attacking wizard to transfer the defender to any chamber on the board, regardless of the monster population of that chamber. Any other roll is a 'n/e.' Players DO take their prizes with them when transferred.
+
+## Magical Monsters
+
+(1) Magical monsters (witches, evil wizards, vampires and those monsters whose defense against Lightning Bolts/Fireballs is greater than their defense against a wizard hand-to-hand) have the ability to reply in kind to an unsuccessful magical attack. Thus, for example, if a wizard threw a Fireball at a vampire and missed, the vampire may throw a Fireball back at the attacking wizard immediately! The outcome of such an attack is determined by rolling two dice and consulting the Combat Losing Table if the vampire's Fireball hits.
+
+## Beast Masters
+
+To use the Beast Master rules, the following modification must be made: Monsters are no longer killed outright but considered 'subdued' by the player who successfully defeats them and takes their prize. (They may be killed in this initial combat if the player rolls a '12,' in which case that monster is out of the game permanently). Based on the character type of the player who controls them, subdued monsters will serve their masters (more or less) until the end of the game.
+
+(1) Subdued monsters are removed from the board and replaced with a numbered counter indicating control of that monster by that player. The monster card, with a matching
+
+counter on top, should then be placed face-down to hide its nature from the other players. The Beast Master then moves only his own counter(s) in his turn, subject to the Movement Rules for monsters.
+
+## (A) Movement Rules For Monsters
+
+(i) All monsters move a basic movement allowance of five (5) spaces per turn.
+
+(ii) No 'friendly' monster may be within five movement spaces of another 'friendly' monster at the end of a player's turn. A 'friendly' monster is defined as a monster under the control of a particular Beast Master.
+
+(a) Option 1: It is allowed to have 'friendly' monsters in adjacent spaces, though not more than one per corridor/room space, three per chamber space.
+
+(b) Option 2: The number of monsters allowed in any space — corridor, room or chamber — is unlimited. However, a player need only fight and subdue the top monster in order to pass through that space.
+
+(c) Option 3: As the above rules tend to clog the corridors with monsters, increase the movement factor of all non-magical character types — Superhero, Hero and Elf — to ten (10). Wizard movement remains unchanged: five (5).
+
+(iii) Whenever a 'friendly' monster enters a chamber with a population of two or less monsters, it immediately loses its subdued status and takes up residence as 'top monster' of that chamber.
+
+(a) Option 1: A 'friendly' monster may pass through such chambers described above or remain in residence without any loss or lapse of control on the Beast Master's part.
+
+## (B) Combat Rules For Monsters
+
+(i) One player may pit his monster(s) against another player's monster(s) by bringing them together in the same space (corridor, room or chamber) and announcing an attack. Each Beast Master then rolls two dice for his monster in combat, adding that monster's level to the die roll number. A modified die roll of 8+ hits and the Combat Losing Table is consulted for results. If a monster is seriously wounded, it will retreat to the nearest chamber of its own level for healing.
+
+(ii) Whenever a 'friendly' monster meets and defeats a player — thereby winning a prize — that monster loses its subdued status immediately. The monster card is returned to the board with its prize and placed in the nearest empty room available.
+
+## (2) The Non-Wizard Beast Master
+
+All the above rules — and/or any other options desired — apply to the Non-Wizard Beast Master. In addition, one other rule applies to Non-Wizard Beast Masters who meet their own 'friendly' monsters face-to-face.
+
+(A) Whenever a player's own piece meets a 'friendly' monster in corridor, room or chamber, the player must fight and resubdue that monster again. (Control, in the case of the Non-Wizard Beast Master, is limited to movement and certain types of combat).
+
+## (3) The Wizard Beast Master
+
+All the above rules — and/or options desired — apply to the Wizard Beast Master with the exception of (2) above. The following rule modifications apply only to Wizard Beast Masters:
+
+22

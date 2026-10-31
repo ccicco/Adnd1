@@ -1,0 +1,88 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+D&D® Variant
+
+# PSIONICS REVISITED
+
+Ronald Pehr
+
+The use of psionic abilities in D&D adds a fascinating dimension to the game. Characters are less confident when confronting psionic foes, since saving throws against mind blast is not related to hit dice. The psionic combat trance demands cooperation by the psychic's companions, to protect him physically while he protects them psionically. The occasional psionic monster puts a little healthy fear into that arrogant Lord or Wizard who has been terrorizing your poor dungeon.
+
+Two drawbacks I have encountered in the use of psionic powers are the scarcity of characters with psychic potential and the relatively random assignment of powers to different character classes. Scarcity results in very little employment of psionics in most games; no one has the powers. It is probably necessary for game balance. Grafting psionics onto every character would soon make them all too powerful. Scarcity can be rationalized by the fact that, unlike magic which may be studied, psychic ability is an inborn trait. You must be born with it.
+
+The problem of random determination of powers is really an aesthetic one. characters seem more "real" if their psychic abilities reflect their professions. While it can be argued that any given psychic talent could exist in an individual regardless of the profession he practices, it is more likely that psychic powers would not fully manifest themselves until puberty. In a low-technology world that would be the time of choosing a future profession.
+
+It might be presumed that the latent psychic power subtly influences choice of profession, and vice versa. Therefore, the manifestations of psionic powers come to be more closely allied to player professions than is currently provided by the rules. For this purpose, psionic powers are divided into three basic types. There are the cognitive powers such as ESP, the kinetic type of powers typified by Telekinesis, and the Anti-Psi powers. These last are a type of defense. I am indebted for the idea to Bonewit's Authentic Thaumaturgy. The standard psionic attack forms and defense forms are independent of the three types of powers and are available as provided by the rules in Eldritch Wizardry, as they function just perfectly as they are.
+
+Analysis of the lists of powers in Eldritch Wizardry will show that the kinetic powers are more often assigned to Fighter or Thief types while the cognitive powers are more likely to occur in Clerics. Magicians seem to manifest both equally, probably because they have such a wide grasp of so many arcane forces. Because of their sensitive natures, Bards have cognitive powers, as do Illusionists and Sages. Although Druids are barred from psychic powers, an exception might be made by those DMs who run mostly dungeon adventures since so many Druid spells are useless underground.
+
+The following lists are divided into lesser and greater manifestations of each type, much as the rules already divide the lists of psionic powers:
+
+# COGNITIVE POWERS
+
+|  Lesser Manifestations | Greater Manifestations  |
+| --- | --- |
+|  Intuition* | Locate Object*  |
+|  Psychometry* | Hypercognition*  |
+|  Empathy | Precognition  |
+|  Subsentient Telepathy* | Telepathic Projection  |
+|  ESP | Aura Alteration  |
+|  Clairenses* | Speak Languages*  |
+|  Ectoplasm* | Telepathic Projection  |
+|  Retrocognition* | Psyche Transfer*  |
+|  Detect Evil | Mind Bar  |
+|  Detect Magic | Mass Domination  |
+|  Telepathy | Astral Projection  |
+|  Invisibility | Ethereal Travel  |
+|  Hypnosis | Probability Travel  |
+|  Domination |   |
+
+# Explanation of Starred (*) Powers:
+
+INTUITION: actually a low-grade of ESP. Intuition allows a 15%
+
+chance per level of mastery, up to 90% maximum, of obtaining a hunch about any living entity. when 90% is reached, there is a 15% chance per level of mastery thereafter of intuiting specific knowledge. Psychic strength cost is 1 per turn.
+
+PSYCHOMETRY: intuition concerning inanimate objects. Psychometry functions as does intuition. Alternately, it acts as a Read Languages spell at a psychic strength cost of 5 per reading.
+
+SUBSENTIENT TELEPATHY: a replacement for the power of speaking to animals or plants. Psychic strength cost is 1 for mammals, 2 for birds, 3 for reptiles, 4 for amphibians, 5 for fish or insects, 6 for plants, 7 for monstrous animals, and 8 for plants. This is the cost for one bit of information, say the equivalent of one sentence. With each of level of mastery the possessor of the power can get a like number of bits of information. Creatures can pass on any information they have perceived even if they don't know what they perceived. If DM allows, inanimate objects can be subject to this power at a psychic strength cost of 10. Inanimate objects have very limited perceptions.
+
+CLAIRSENSES: This is a combination of Clairvoyance and Clairaudience. Alternatively, the DM may decide you get one or the other, on a random basis, each time the power is activated. Fiendish DMs may decide you get a remote sense of touch, smell, or taste.
+
+ECTOPLASM: allows the user to formulate a spirit duplicate of himself. There is a 10% per level of mastery that the ectoplasmic replica will be mistaken for the real thing. It is immune to normal weapons but is AC9 to enchanted weapons, magic, or psionics. It has the psychic potential of the creator. It can be sent, at a speed of 12" per turn up to 48" away, acting as a Wizard Eye. The psychic strength cost is 5 per turn.
+
+COLD: freezes a 1' radius circle per level of mastery. It takes 1 turn to lower the temperature by 100 degrees F, at a psychic strength cost of 10, plus 10 for each turn it is maintained. Temperature can be decreased in one degree F increments per psychic strength after the initial 100 degree drop.
+
+HEAT: raises temperature at the same rate, range, and psychic strength cost as the psionic power of Cold decreases temperature.
+
+MAGNETISM: can either attract or repel. There is a 10% chance per level of mastery of affecting an iron or steel object which resists (E.g. a sword gripped by someone) and the power cannot move something more than three times as heavy as the psychic. The range is 5' per level of mastery. The psychic strength cost is 10 per use.
+
+ELECTRICITY: costs 1 psychic strength point for each hit point of damage. Ordinary armor and saving throws v. magic do not block electricity. After the 4th level of mastery, the electricity can be "fired" 1' per level of mastery thereafter.
+
+GRAVITY CONTROL: works in an area of 5' radius per level of mastery, at a cost of 15 psychics strength per turn. Objects can become totally weightless or be increased in weight five-fold.
+
+# ANTI-PSI
+
+|  Deflection* | Return*  |
+| --- | --- |
+|  Immunity* | Filter*  |
+|  Reversal* | Tuning*  |
+
+DEFLECTION: This sends the incoming psychic power rebounding in a random direction. It costs 5 psychic strength to use.
+
+IMMUNITY: This cancels a psychic power directed at the user or at another character or in an area touched by the user. It costs 10 psychic strength.
+
+REVERSAL: This changes the psychic power directed at the user into an opposite effect. Heat becomes Cold, Molecular Dart becomes Shield, etc. at a psychic strength cost of 15.
+
+RETURN: directs a power back at the caster (psionic only, not magic) at a psychic strength cost of 20.
+
+FILTER: This allows the user to absorb an incoming psionic power, at a cost of 25 psychic strength. The power may be employed, once, by the user of the filter, at no further cost, up to 1 day later per level of mastery.
+
+TUNING: alters an incoming power into any other power of the same category (Kinetic or Cognitive) at a cost of 25 psychic strength.
+
+Acquisition of psionic powers can be on a random basis for the first power, taking psychic potential into account. Thereafter, whenever a power is acquired immediately after acquisition of a first power — by rolling the character's psychic potential — it should be from an adjacent power on the list. Thus, if a character gets the power of Cell Adjustment,
+
+28

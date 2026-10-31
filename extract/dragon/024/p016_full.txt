@@ -1,0 +1,97 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+Viking Morale Base: 10
+
+Base Number Modifiers:
+
+Army Commander +3
+
+Sub-commanders + 1
+
+Shield Wall + 1
+
+Elite Force + 1
+
+Vikings will never surrender and do not need to check morale when encircled or faced with heavy losses. Vikings may use ferocity with no penalty the first time and with normal penalties if used twice. Arab subcommander affect only their original unit.
+
+# Melee
+
+Melee strength point modifiers:
+
+Vikings
+
+Disordered enemy + 1
+
+No minuses for melee rounds
+
+until sixth round.
+
+Arabs
+
+Loose order -1/2
+
+Attacking over-
+
+sized shields -1/4
+
+Movement: Vikings may discard shields at start of any movement phase and move two turns at loose order rate without penalty.
+
+Missiles: Arab archery hits are reduced by an additional 5% due to the size of the Viking shields. When the Vikings are in shield wall formation archery hits are reduced by an additional 10%. Vikings may throw spears once per game or more subject to CW rules.
+
+# Victory Conditions:
+
+Viking Decisive Victory: Destroy or drive all regular Arab troops off board or destroy one-third of regular Arab units and exit at least 50% of army off western edge of board before all regular Arab units can be evacuated off same board edge. Exited Viking units may be brought back into play in loose order on third movement phase following exit.
+
+Viking Marginal Victory: Deny Arab victory conditions.
+
+Arab Decisive Victory: Destroy entire Viking force or kill Viking commander and destroy one-third of the viking army forcing the remainder off the northern or southern board edge.
+
+Arab Marginal Victory: Destroy one-third of the Viking army maintaining at least a 3/2 kill ratio.
+
+# "Second Battle for Barda'a"
+
+Terrain: The ground is similar to that of the last battle. A river of the same dimensions and description runs half the length of the board near the southern edge. Its southern side is covered by sparse woods and heavy brush. The Arab encampment is located in the southwest corner of the board and the city of Barda'a is located in the extreme northeast corner. (A small number of buildings may be used to represent the outskirts of the city.) A caravan trail winds its way from the city past the Arab camp.
+
+Viking Order of Battle: Campaign game: All survivors of first battle plus one third of casualties. Separate engagement: 850 heavy infantry, 17 sub-commanders, Army Commander. Ten percent of the Viking army may be
+
+mounted on captured horses and move as medium cavalry, but may not attack while mounted. Vikings set up in Barda'a and move first.
+
+Arab Order of Battle: 50 Dailemite medium cavalry; 150 Kurdish light cavalry; 225 militia light cavalry; 100 Dailemite medium infantry; 300 Arab light infantry; 450 militia light infantry; 6 sub-commanders; 1 Army commander. Arab cavalry sets up in southeast corner at start of game. Arab infantry arrives in camp at start of fourth Arab movement phase.
+
+Morale: Same as in first battle. If Arab camp is captured or destroyed militia units desert and move off southern edge of board in loose order and the morale of Arab regular units suffers a -2 deduction.
+
+Melee: Same as in first battle. Vikings -1 if attacked while mounted.
+
+# Victory Conditions
+
+Viking Decisive Victory: Destroy one-third of Arab regular units and maintain control of the city or destroy and/or drive off board all regular Arab units.
+
+Viking Marginal Victory: Maintain control of the city.
+
+Arab Decisive Victory: Destroy one-third of the Viking army and drive the remainder off the board away from the city or destroy one-third of the Viking army and maintain 500 troop, 50% of which are regulars, in the city for five consecutive turns.
+
+Arab Marginal Victory: Destroy 50% of the Viking army.
+
+# "Sultan Marzuban vs. the Vikings"
+
+Terrain: The battlefield may be located anywhere to the west of Barda'a. (See map.)
+
+Viking Order of Battle: Campaign Game: All survivors from previous battle plus one third of casualties. Separate Engagement: 800 heavy infantry; 16 sub-commanders; Army commander. Vikings enter anywhere along eastern board edge and move first. They are in swine-array formation when they appear.
+
+Arab Order of Battle: 1000 Dailemite medium cavalry; 3000 Kurd and Su'luk light cavalry; 600 militia light cavalry; 1000 Dailemite medium infantry; 4000 Arab light infantry; 5000 militia light infantry; 5 sub-commanders; 100 elite bodyguard medium cavalry; Marzuban-Army commander. All units with the exception of the Dailemite, Kurd, and militia cavalry set up within twelve inches of the eastern board edge. All units are in loose order and facing west. Cavalry units arrive in northeast board edge at start of tenth Arab movement phase. Arab units set up first.
+
+Morale: Same as in previous battles. Treat Vikings as a feared force. Morale modifiers: Marzuban +3; Arab Elite + 1.
+
+Melee: Same as in previous battles.
+
+# Victory Conditions:
+
+Viking Decisive Victory: Kill Marzuban and destroy one quarter of the regular Arab units or drive Arab army off southern or western map edge. Viking Marginal victory: Deny Arab victory conditions.
+
+Arab Decisive Victory: Destroy the entire Viking army.
+
+Arab Marginal Victory: Kill the Viking commander and destroy 50% of the Viking army.
+

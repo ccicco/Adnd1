@@ -29150,6 +29150,33 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   l23 pure flip - all three report-023 boxes check at the single
   round, gap_flips on the three part lines, gap_census 3 closed 0
   open, prefix scan fresh at the then-HEAD. WAIT FOR GO.
+  - R953 LANDED (f8d76c8, l23, 29 inline, the pure flip): The
+  Dragon issue-23 box closing round - no new ink, all three
+  report-023 boxes flipped at the single round: the part-one
+  variant triptych (R950, t23), the part-two Lower Planes
+  generator (R951, s23) and the part-three commentary set
+  (R952, k23) all checked, gap_census 3 closed 0 open. 29
+  inline = 17 consts + 12 bools, 6 examples, no tables - the
+  exact R949 symmetry; the bookkeeping pins the shape itself -
+  3 boxes, 10 chains, 4 rounds (the second four-round shape),
+  the opener inline totals 82 + 178 + 145 = 405, the walk
+  census issues 2-23 all closed (twenty-two issues), the
+  numbering agreement (Vol. III No. 9, March 1979, number 23),
+  the folio-equals-PDF-page check, the single-voice transcript
+  pin (no archive.org djvu cross-check exists for issue 23),
+  the unchanged registry ground truth 1313/1338/25, and the
+  two watches riding to TD 24 (the Sullin levels 7-9, the
+  brawling sequel). Census 875->876; rverify GREEN 29
+  mutants 0 missed at base 004afd2; round-trip 15511 bytes
+  md5 f73d8a390db3f292c8a1759b7d5300c5, byte-exact at
+  f8d76c8 (fresh tarball re-run applied 0 already 8; the
+  flip round's eight patches carry the gap report in the
+  git add). THE ISSUE-23 FOUR-ROUND SHAPE IS COMPLETE: R950
+  t23 df703c4, R951 s23 af5a151, R952 k23 004afd2, R953 l23
+  f8d76c8. Next: TD 24 - the fresh intake (transcripts, the
+  folio-vs-page check, the chain call, the drop list, then
+  the round plan); the Sullin levels 7-9 and the brawling
+  long-term-effects watches come due there. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

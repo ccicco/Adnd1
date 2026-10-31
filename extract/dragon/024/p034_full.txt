@@ -1,0 +1,86 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+Design Forum/Variant
+
+## Choir Practice at the First Church of Lawful Evil (Orthodox): The Ramifications of Alignment
+
+Lawrence Schick
+
+### Introduction
+
+*The author and I had occasion to have a couple of long chats at Gen-Con XI, which I enjoyed. The author has already collaborated with Tom Moldvay on a series of pieces dealing with well-known fantasy characters and D&D, which may or may not have debuted by now. (As I write this, the piece is being edited and segmented for serialization. Whether or not it has begun by the time you are reading this is up to too many variables to stick my neck out.)*
+
+*We got to talking about the problems and ramifications of alignments, and he had some good points that I challenged him to elucidate in an article. I feel he has done well, and that this system offers much food for thought for all DM's.*
+
+In my experience, a large percentage of D&D® players have only a vague idea of what alignment is really all about. Most people simply equate Law with good and Chaos with evil, despite the advanced rules' explanation that morality and Law/Chaos are on separate, perpendicular axes. Even among those who have a fairly clear idea of what Law and Chaos are, you will generally find a pronounced prejudice in favor of Law. Chaotics are automatically regarded with suspicion. This is unfortunately aggravated by a subtle, perhaps unintentional favoritism in the rules, usually as an implied assumption that player characters will be Lawful or at least Neutral (and the explicitly 'evil' Chaos in Andre Norton's *Quag Keep* doesn't help either).
+
+The D&D mating of Moorcockian Law/Chaos with medieval Christianity has always caused a lot of problems for me. The 'new' nine alignments don't really resolve them, though they are a good attempt to make some sense and standardization out of the mess. I'm not entirely sure that Good and Evil as absolutes have any business being mixed up with Law and Chaos anyway. Have you ever tried to get a consensus out of half-a-dozen people on whether some action is good or evil, right or wrong? On inspection, *Good* or *Evil* usually boils down to *Nice* or *Nasty*. Are *Nice* characters allowed to do *Nasty* things without getting in serious alignment trouble? And if not, does that mean *Evil* characters can't do *Good* acts?
+
+And where does religion fit into this framework? I don't believe the nine alignments are supposed to be religions as such (I can't imagine a character saying, 'Yeah, I'm Lawful Evil. What're you?'). Most D&D groups at least pay lip service to politics, but ignore religion entirely, except for those *Chaotic Nasties* and their *Secret Death Cults*. The question of, say, an individual cleric's actual religious beliefs is rarely brought up, even though characters without religion are about as credible as characters that don't have to eat or sleep.
+
+Our personal solution to this problem has been to attempt to integrate the concept of Law/Chaos with that of believable religions, complete with actual, physical gods who take an active interest in the doings of humans. We've tried to look at Law, Chaos and Neutrality from the viewpoint of those who would have proof that such concepts are the basis of the physical universe. They would build belief systems based upon various ways of looking at the balance of the cosmic forces. Of course, since every religion thinks they're right and all have varying ideas of right and wrong, morality has to be regarded as flexible. (Christian-chauvinists won't like this much, but they can use another system.)
+
+We utilize the old idea that temporal gods are created and maintained by their believers' worship. There is a continual battle between religions (and sometimes even gods personally) for quantity and quality of worshippers. Each alignment represents some facet of Law, Chaos or Neutrality. With a little help from the ideas in earth's religious history, we've organized what we conceive to be the most important concepts into the prime alignments. Unfortunately, we ended up generating a few more prime alignments than just nine, but the whole set-up is more
+
+fluid than the original and allows for a lot of variation within an alignment. Non-orthodox and splinter alignments (with correspondingly weaker gods) are probably quite common. This, rather, deals the death to the idea of alignment tongues (except possibly in the cases of High Law, Chaos and Neutrality), but they always seemed a little too convenient to me anyway. I'm sure everybody will have their own ideas about what concepts we've chosen to use and how they're described, but using these guidelines anybody can create or alter the alignments to suit themselves. The explanation of each alignment gives a general outline of the beliefs of the average cleric or worshipper in that religion.
+
+### Gods' Abilities
+
+Unless stated otherwise, it is assumed that all gods have the ability to cast the following standard magical spells as often as they wish:
+
+|  Gate | ESP  |
+| --- | --- |
+|  Mind Blank | Reincarnation  |
+|  Wish | Curse and Remove Curse  |
+|  Permanency | All Healing and Resurrection spells  |
+|  Polymorph Any Object | Comprehend Languages  |
+|  Geas | Teleport Others  |
+|  Teleport | Change Characters' Abilities  |
+
+In battle, the prime gods always hit their targets unless they roll a one (d20). Of course, gods can't really be killed as long as they have sufficient worshippers. If they lose all of their hit points, they are merely temporarily banished from the physical plane.
+
+### The Prime Alignments
+
+#### LAW
+
+- (A) Absolute Order (High Law)
+- (B) Harmony/Goodness
+- (C) Justice/Vengeance
+- (D) Knowledge
+- (E) Evolution (Social Darwinism)
+- (F) War
+
+#### NEUTRALITY
+
+- (A) Preserve the Balance (High Neutrality)
+- (B) Ambition
+- (C) Nature
+- (D) Esthetics
+- (E) The Four Elements
+- (F) Battle Glory
+
+#### CHAOS:
+
+- (A) Absolute Randomness (High Chaos)
+- (B) Ambition
+- (C) Life/Fertility
+- (D) Evil/Death
+- (E) Devolution
+- (F) War
+
+Law: ABSOLUTE ORDER (High Law) (Monks, Paladins)
+
+Tenets: The only tolerable form of existence is one where everything is in order and in its place. It is necessary that uniformity be imposed upon the world to insure perfect control of all actions, thus eliminating all disruption and dissent.
+
+Prime Deity: MORILIROM
+
+AC: irrelevant HP: 300 MOVE: instantaneous
+
+MAGIC: all magical & clerical spells
+
+Morilirom appears as a huge, blindingly white cube, tetrahedron, octahedron or similar perfect geometrical object. He cannot be harmed
+
+34

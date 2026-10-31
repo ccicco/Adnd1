@@ -1,0 +1,40 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+Designers Forum
+
+## ROMAN MILITARY ORGANIZATION A CLASSIC WARFARE UPDATE
+
+Gary Gygax
+
+Ed. Note: Most readers associate the author of this article with fantasy gaming, but Gary has had a hand in writing numerous historical articles and writing/designing the following rules/games on historical subjects: ALEXANDER THE GREAT, BOOT HILL, CAVALIERS & ROUNDHEADS, CHAINMAIL, CLASSIC WARFARE, DON'T GIVE UP THE SHIP, DUNKIRK, LITTLE BIG HORN, and TRACTICS. In this article, CLASSIC WARFARE, Gary suggests some new material for his ancient rules, as well as discussing the Roman military in general.
+
+Finding two interesting articles in one month's stack of periodicals isn't too unusual for me, but to find a pair dealing with the Roman army was indeed beyond my fondest expectations. John Lundstrom was kind enough to pass along a copy of the Milwaukee Public Museum's LORE magazine which contained his excellent article, "A Roman Helmet from Iran: Legionaries in the Near East." As I finished that, I happened to pick up the Fall/1978 issue of COMBAT ILLUSTRATED and open it to, "De Art Bellica," subtitled: "How the Roman Army Conquered the World," and further subtitled: "Roman Tactics 200 B.C. to 100 A.D." by Bob Williams. This too I read with zest, mentally meshing the information with Lundstrom's work and my own ancient miniatures rules, CLASSIC WARFARE. An alarm bell went off somewhere in my head, and I hastily began highlighting sections of the articles with yellow marker, comparing the information with what was given in the sections of CLASSIC WARFARE pertaining to the Romans. Not too good . . .
+
+Most of my sources are in my own library, the local one had just sent me all six volumes of Polybius' THE HISTORIES, and I could speedily lay my hands on a copy of Livy's HISTORY OF ROME. After some hours of research, cross checking, and notes, I found that the following additions and changes are advised for those who own CLASSIC WARFARE:
+
+Livy describes an early (c. 350 B.C.) Manipular Legion form which is not included in the rules (p. 45). It consists of 900 hastati in 16 maniples of 60 men each (2x1 troop mounting), 900 principes formed in the same manner, and a third line of 15 ordines. Each ordo was subdivided into 3 vexilla — virtually the same strength as a maniple, 62 as opposed to 60 — triarii to the fore, rorarii in the middle, and accensi in the rear ranks. (Mount each vexilla 2 x 1, with BASIC MORALE POINTS at 9 for triarii, 7 for rorarii, and 3 for accensi.) Each ordo operates as a phalanx, although the vexilla may be separated. Note, however, that the morale of each unit (ordo or ordines) is that of the troops of its engaged face, so if the triarii are stripped the unit will have a 7 rating at best. If such a unit is attacked from the rear, its morale base will be 5, that of the untrained and inexperienced accensi. Note also that as casualties are sustained in the front ranks, morale base will drop. There are no
+
+velites in this form of legion, but there is an attached ala of 300 equites, just as indicated for the later form of Manipular Legion.
+
+(As an aside, it would be very interesting to have this legion form, supplemented with some allied legions and light auxiliaries face an Alexandrian army of comparable size.)
+
+An important change to note is that the troop mounting shown for the Manipular Legion is in error when it says 2 x 2 (p. 45). As the later Manipular Legions used 2 "centuries" of 60 men each to form a maniple of 120 men, a pair of 2 x 1 stands should be put together to form each maniple; 2 x 2 stands should not be used at all!
+
+The checkered array, where intervals were left in the front corresponding exactly to the frontage of the units of the second rank, whose intervals likewise corresponded to the frontage of the third rank of units, was certainly a development based on the second form of Manipular Legion. Mr. Williams' article pointed out that this formation was superior when opposed to the tight blocks of a typical Greek phalanx (Alexander's were not so rigid, by the way), but against masses of barbarians such as the Britons or Gauls, it was inferior, as the opponents would pour through the gaps and take the maniples in the flanks. CLASSIC WARFARE accurately reflects the power of the manipular acies triplex (checkered triple line), but mounting for masses does not accurately reflect their ability to move into the gaps in such a Roman formation. Therefore, if barbarian masses (such as a Gallic 8 x 5 mounted stand) opposes a Roman checkered formation, the barbarian player must be allowed to place stands of his light infantry flanking the Roman maniples on the second turn of melee. For each such stand placed, the barbarian mass must be marked to show that troops are in the intervals by removing figures from the rear ranks of the mass. Of course, if the flanking troops return to the mass, they are again counted as such, the light stands being removed, and rear rank figures of the mass replaced.
+
+In the "Notes on Arms and Armor" for the Manipular Legion, it is stated that the light pilum and the long sword were the principal arms. The Romans faced the Spanish during the Third Century B.C., however, so it is certainly likely that the late form of the Manipular Legion used the gladius rather than the old cutting sword. Similarly, the heavy pilum came into use prior to the time when the Manipular Legion was replaced by the Marian one, so Second Century Manipular Legions should be allowed a heavy and a light pila cast per figure of hastati and principes. It must also be noted that the velites carried javelins and were both missile and light infantry.
+
+Moving on to the Julian Legion, there is an error in the troop mounting for light infantry. These troops were formed into 60 man "centuries," so they should be mounted 2 x 1, not 3 x 1 as indicated for Marian Legion lights (who were in 100 man centuries). It was at this time that the practise of stiffening the unreliable mercenary (auxiliary) cavalry by mixing light infantry with their formations — even though at full gallop there was no hope of the two types of troops staying together (unless they were especially trained for such activity as were the national units of the Teutons). The Roman formations must be allowed, and the whole of a mixed light cavalry/light infantry unit of this type should be given a morale base of 7. This subsumes that morale 7 or better light cavalry will not be intermixed, but the more common Gallic, Numidian, and Spanish horse will be bolstered with morale base 7 auxiliary light infantry.
+
+If any reader has comments on Roman or any other ancient armies which apply to CLASSIC WARFARE, I would appreciate hearing them!
+
+EXXECUUUUSSSSE
+BUT I NEED A VACATION!!
+SEE YA NEXT MONTH.
+
+ED. Note: Finieous almost made it into this issue, but got to us a bit late. He will be back with us again next issue—sorry for the delay.
+
+12

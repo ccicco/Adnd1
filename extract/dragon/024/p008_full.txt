@@ -1,0 +1,35 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+# **Introduction**
+
+**General:** This article expands on the notes found in Gods, *Demi-Gods & Heroes* at p. 68. Some inconsistencies with the notes are caused by the latter's brief nature and conflicts in the sources.
+
+Each set of dragons encountered may be of any alignment and be colored white, red, yellow, blue, green, or black, but their powers vary solely with their type. There is a 60% chance of finding them in their lair, but they never sleep. Only Yu Lung can be subdued. Roll age and size as for a normal dragon. Where the article below indicates a multiplication by the age level of the dragon, that means times one for a Very Young dragon, times two for a Young one, etc.
+
+All Chinese dragons are Psionic Class 6, but have ESP at a radius of 5 X the age level of the dragon. All except Yu Lung can polymorph at will into human form and back at will and become visible or invisible at will, except that an invisible dragon will become visible when attacking.
+
+Certain types below have the Scaly Command power. No scaly creature who lives in the water (chiefly, fishes and reptiles) will ever willingly attack a dragon with the power. In addition, such a dragon can, once a day, command for a half-mile radius the number of scaly creatures who live in the water which is specified for each class. This command lasts 2-12 hours and cannot be dispelled. Creatures already under the Scaly Command power of one dragon cannot fall under the power of another, and all dragons are themselves immune to the power. Otherwise, there is no saving throw against it.
+
+Certain other types have the power of Water Fire. This unearthly stuff may be created by any dragon with the power whenever he is under or touching water, and may be dispelled by him at any time. *Water Fire* surrounds the body like the Flame of a demon and does damage, at the amount specified for each class, to anyone touching it.
+
+All Chinese dragons are themselves immune to Water Fire. Water Fire will disappear for 20-120 rounds after being contacted by real fire (as in, for example, a Fireball), and cannot be recreated until the end of that period.
+
+|  Type | Translation | Number Appearing | Hit Dice | AC | Walk Fly Swim | Treasure  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  Tien Lung | Celestial | 1 | 11-13 | -2 | 9/48/6 | HX2  |
+|  Shen Lung | Spirit | 1-4 | 9-11 | 1 | 12/12/9 | H  |
+|  Li Lung | Earth | 1-4 | 7-9 | 4 | 9/24/6 | H  |
+|  Pan Lung | Coiled | 1-4 | 6-8 | 2 | 12/12/9 | ½H  |
+|  Lung Wang | Sea | 1 | 11-13 | 0 | 3/No/9 | HX2  |
+|  Yu Lung | Carp | 1-4 | 5-7 | 3 | 6/No/18 | None  |
+
+# **Tien Lung**
+
+These are the Imperial Dragons mentioned in *Gods, Demi-gods, and Heroes*, but they do not live in and rule the seas — that is the province of Lung Wang. Instead, the typically yellow Tien Lung, who are wingless but can still fly, frequent the same type haunts as Silver Dragons.
+
+The ordinary attacks of the Tien Lung are 2 claws 1-6 and 1 bite 4-40. They breathe fire in a 9 x 3 cone six times per day, doing damage of their hit dice times the age level of the dragon. They may also throw Control Weather at 2 times the age level of the dragon number of times per day. Old and older Tien Lung each have a 50% chance of being accompanied by 1-6 Wind Walkers, Aerial Servants, or Spirits of the Air (*Gods, Demi-Gods and Heroes* at p. 63). These fanatically loyal servants cannot be charmed from their purpose and will do their utmost to
+
+8

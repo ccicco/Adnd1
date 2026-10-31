@@ -1,0 +1,46 @@
+
+The Dragon
+
+# LOST CIVILIZATIONS
+
+A Fantasy Supplement for Source of the Nile
+
+J. Eric Holmes
+
+Ross Maker and David Wesley's exciting *Source of the Nile* game has been the subject of several articles in *The Dragon*. Players send explorers, who may be missionaries, doctors, zoologists, geologists, or adventurers, into the great unknown of blank hexes on the map of Africa to earn points for discovery. The flavor of the game can be conveyed by recounting the adventures, of my zoologist-explorer, Lord Underdog, up the Zambezi river.
+
+Underdog had obtained a free ticket to Quilimane and managed to raise $700 for his expedition. He manned two canoes with bearers and askaris, hired a guide and set off with high hopes. Little did he know what he was getting into!
+
+The first turn found him in a known hex. He and his askaris were successful in shooting game to feed the expedition, but one askari accidentally shot another. The next hex was blank . . . unexplored. The river branched and the expedition, encountered a cataract. Unfortunately, it was not as high as some already known falls, so Underdog earned no points for finding it. (He named it after himself anyway.) While trying to portage the canoes around the cataract the explorer encountered a native tribe, the Balobo (Gygax variant), with seventy-five warriors! Underdog decided the safest thing to do was offer the chief most of his gifts. This worked, the tribe was friendly, and Underdog hired a guide. He spent the next turn trying to find new species of animals in the hex, without success. This was the beginning of a streak of bad luck for Lord Underdog, who never did discover a new species of anything. He began to suspect he had gone to the wrong graduate school and should have been a missionary. Entering the next hex he discovered a lake, but no native tribe. Finding no new species on the next turn, Lord Underdog went back down the river and into another unexplored hex. He had no luck finding animals but one of his canoes overturned and he lost four bearers and half his gear. He ventured on one more hex without making any interesting discoveries and finally turned back. Fortunately, he could drift downstream, for he lost another askari to a crocodile and ran out of rations. His men began to get sick and two died.
+
+On the next turn his last askaris became sick as did four more bearers, but nobody died. He was able to reach the coast with enough bearers to row back to civilization. He had earned a grand total of five points!
+
+The game gives a vivid feel for the danger and excitement of exploration in the nineteenth century. What it was missing, I thought, were the kind of encounters that Allan Quartermain or Lord Greystoke would have had under similar circumstances. So, for the fantasy fans, like myself, who enjoy the game but would like to have the kind of adventures one would find in the works of H. Rider Haggard or Edgar Rice Burroughs, and with all respect for maker and Wesley's fine game, I offer the Fantasy Supplement: Lost civilization in *Source of the Nile*. It all begins when an explorer enters an unexplored hex and finds no natives . . .
+
+1. *The Unexplored — Hex contains no native tribe:* Lost civilizations
+
+are usually hostile and native tribes avoid their territory. Roll two dice, a 2 or 3 indicates that a city has been discovered. If the hex is desert, the city is uninhabited and the explorer may elect to explore it or not, see below. If the hex is any other than desert, the city is inhabited by survivors of lost Atlantis. The people have bronze weapons and are all wearing ornaments of gold decorated with rubies and diamonds.
+
+2. *Organization of the lost civilization:* Roll one die. A 1, 2, or 3 indicates the ruler of the city is a warrior-king who is always a tyrant. Determine the number of warriors in his army by multiplying the roll of three dice and adding ten. If the initial die roll is 4, 5, or 6, the city is ruled by an evil high priest and a beautiful white goddess. The number of warriors is equal to the product of three dice plus five.
+
+3. *With this information at hand, the explorer must declare his attitude toward the lost civilization. He may:*
+
+1. Immediately retreat into the hex from which he came. He will lose all credit for exploring the hex. He may move to another hex if he has movement left.
+
+2. Approach the city with a show of force and attempt to negotiate.
+
+3. Approach the city in a friendly manner, communicate with signs, hoping to negotiate. He will discover, to his amazement, that some of the ruling class can speak ancient Greek. Having had a classical education himself, the explorer can speak some classical Greek.
+
+4. *Lost civilization's reaction to the expedition:* If the explorer has chosen attitude 2 or 3, add nine to this number. White goddesses are always interested in strangers. If there is a white goddess present, add one. If the expedition includes a guide from a neighboring hex, subtract one, for lost civilizations are usually at war with neighboring tribes.
+
+Now compare this number with the sum of three dice. If the number is equal or greater than the die roll, the expedition is accepted as Guests of the City. Go to that section on the next turn.
+
+If the number is less than the die roll, the warriors of the lost civilization will attack. Roll one die, if the result is equal to or less than, the explorers attitude number, the expedition is surprised and will not have a chance to shoot their muskets.
+
+If the expedition is *not* surprised, the askaris will shoot, killing one warrior and the explorer will kill two warriors (unless he is a missionary, in which case he only kills one; Modified Gygax rule).
+
+Roll one die, multiply by the number of warriors killed. If this number exceeds the number of warriors left alive, the explorer has won the battle and enters the city in triumph. Go to Guest of the City. If the warriors are not defeated by the musket fire they will close with the askaris and the battle will be too fierce for the muskets to be reloaded. The battle proceeds as if the expedition had been surprised.
+
+If surprised, the askaris and explorer do not have time to shoot; the warriors close with the expedition in hand to hand combat. Half the bearers will drop their loads and run. Divide the number of attacking
+
+5

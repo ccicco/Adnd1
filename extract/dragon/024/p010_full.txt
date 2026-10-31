@@ -1,0 +1,88 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+D&D Variant
+
+# Another Look at LYCANTHROPY
+
+Jon Mattson
+
+As described previously in D&D® and Blackmoor, any warm-blooded being who is seriously injured by a lycanthrope (say 50% or more of the possible damage they can take) stands a good chance of becoming one of the same type himself. There are, however, several varieties of lycanthropy which have not been covered and are listed below. Percentage dice are rolled when the person is first bitten to determine which type of lycanthrope he will become:
+
+Dice Roll:
+
+Lycanthrope Type:
+
+|  01 - 15 | A  |
+| --- | --- |
+|  16-20 | B  |
+|  21-25 | C  |
+|  26-50 | D  |
+|  51-60 | E  |
+|  61-70 | F  |
+|  71-00 | G  |
+
+Lycanthrope Types:
+
+A — The infected character will turn into the type of creature which hit him from now on, both mentally and physically, until cured; i.e. he will be a whole new character — even his alignment will change to that of the creature which bit him. This change will occur within one to eight days of being bitten and can only be cured with a Cure Disease or Remove Curse spell from a cleric at least one level above the creature that affected the player. The player will have all of the creature's regular abilities and limitations (i.e. if he changed to a were-rat he would be able to summon rats as usual) but none of his own from before he was affected as long as he is a lycanthrope.
+
+B — The infected character will stay in human form but will have the lycanthrope's mentality from now on until cured. This change will occur within three to thirty-six turns and can be cured by a Cure Disease or Remove Curse spell from any cleric. The player will keep all of his physical attributes (i.e. if he had strength of 14 this would not change) but will have the lycanthrope's mental attributes and lower intelligence (he will not be able to cast spells, for instance, but can talk to other lycanthropes). For more information on the lower intelligence, see the Determination of Attributes and Abilities section. Note that this type of lycanthropy is extremely rare and is also a type of insanity which can be used for curses, Scarabs of Insanity, etc.
+
+C — The infected character will keep his own mentality but will gain the physical characteristics of the lycanthrope which bit him. This change will occur within two to twenty-four turns of being infected and can only be cured by a Cure Disease or Remove Curse spell from a cleric of at least seventh level. The player will keep his mental attributes (his intelligence, wisdom, languages, and any spells which do not involve body gestures, etc.) but he will have the hit dice, armour class, strength, dexterity, and other physical attributes of the lycanthrope that bit him.
+
+D — This is the same as type A, but, beginning 1-12 turns after being infected, the player only changes to his lycanthrope form under a full moon or under great stress (see type G for types of stress).
+
+E — This is the same as type B, but, beginning 2-16 turns after being infected, the player only has the lycanthrope's mentality under a full moon or under great stress (see type G for types of stress).
+
+F — This is the same as type C, but, beginning 2-16 turns after being infected, the player only has the lycanthrope's physical form under a full moon or under great stress (see type G for types of stress).
+
+G — One of the most common, yet least understood, types of lycanthropy: under a full moon or in situations of great stress (beginning 1-10 turns after being bitten) the infected player may (95% chance under full moon, base 40% chance under stress-add or subtract to this
+
+according to type of stress) change to a sort of part man, part monster being. Note that stress could be any situation where the player is in great danger or extremely frustrated and angry. This could be anything from trying to pull his comrades out of a pit before they get eaten by a monster to fighting a seemingly invulnerable enemy or losing a battle. This may sound something like the "Incredible Hulk," but that is the general idea.
+
+In any case, this being will be (at least mentally) something like the player with the following variations:
+
+1. The creature's alignment may be different. Check in D&D to see what that type of lycanthrope's usual alignment is and compare it to the player's alignment on the chart below to see what the creature will end up being:
+
+|  Creature's | Player's | Player/Creature Will Be:  |   |   |
+| --- | --- | --- | --- | --- |
+|  Alignment: | Alignment | Lawful: | Neutral: | Chaotic:  |
+|  Lawful | Lawful | 100% | — | —  |
+|  Lawful | Neutral | 60% | 40% | —  |
+|  Lawful | Chaotic | 20% | 60% | 20%  |
+|  Neutral | Lawful | 45% | 55% | —  |
+|  Neutral | Neutral | — | 100% | —  |
+|  Neutral | Chaotic | — | 55% | 45%  |
+|  Chaotic | Lawful | 20% | 60% | 20%  |
+|  Chaotic | Neutral | — | 40% | 60%  |
+|  Chaotic | Chaotic | — | — | 100%  |
+
+Percentages — are the percent chance of the player/creature being that alignment.
+
+Example: A lawful character is infected by a chaotic Were-Rat. When he turns into the lycanthrope from the bite, there is a 20% chance it will be lawful, 20% chance it will be chaotic, and 60% chance it will be neutral. Thus, percentage dice are rolled to discover what alignment the player/creature will be.
+
+This must be discovered the first time the player changes to his lycanthrope form, and it will always remain the same unless the player changes his alignment (in which case a new roll is made). If the creature is lawful, it will be lawful/good. If it is chaotic, it will be chaotic/evil.
+
+2. The creature /player will have about one half of the player's abilities (spells, languages, etc. providing its lower intelligence will permit this) and about one half of the real lycanthrope's powers (so a Were-Rat of this type could summon 5-50 rats, not 10-100).
+
+Obviously, a separate character sheet will have to be made for the player when he takes on his lycanthrope form. For more information on this, see the Determination of Attributes and Abilities section.
+
+Players will probably realize that this type of lycanthropy is actually an advantage, as long as the creature's alignment is the same as the player's, since the creature is stronger and has more hitpoints. Nevertheless, if a player wishes to be cured of this condition, a Cure Disease or Remove Curse spell from a cleric of at least eighth level will do it.
+
+Note: For types D, E, F, & G: Each time the player turns to a lycanthrope he will stay in this form for 2-12 turns or until the source of stress (or the full moon) is gone (whichever comes last).
+
+Determination of Abilities and Attributes:
+
+As explained previously, a separate player/creature character sheet will have to be made and attached to the player's regular character sheet for use when he is in his lycanthrope form. The player's basic attributes will remain the same with the following exceptions:
+
+|  Creature Type: | Intelligence | Strength | Constitution | Wisdom | Charisma | Dexterity  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  Rat | — | — | plus 1 | — | minus 3 | plus 4  |
+|  Wolf | minus 1 | plus 2 | plus 5 | minus 2 | minus 3 | plus 3  |
+|  Boar | minus 4 | plus 4 | plus 3 | minus 4 | minus 5 | plus 1  |
+|  Tiger | minus 3 | plus 5 | plus 4 | minus 3 | minus 4 | plus 2  |
+|  Boar | minus 1 | plus 6 | plus 4 | minus 1 | minus 2 | —  |
+
+10

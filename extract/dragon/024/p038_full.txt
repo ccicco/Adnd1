@@ -1,0 +1,94 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+# **Neutrality: BATTLE GLORY**
+
+Tenets: A man's worth is best proved by his bravery and prowess in battle. Nothing surpasses the glory of honorable contention, and the best evidence for this is the fact that Man's highest achievements in magic and science are all related to the art of fighting. Those who refuse to fight when called upon are weaklings who will be culled out of the race by the inexorable forces of history.
+
+Prime Deity: HISK
+
+AC: -5 HP: 300 MOVE: 21' MAGIC: Standard
+
+Hisk appears as a big, burly bear of a man, dressed in a sabre-tooth tigerskin with the skull of same for a helmet. Any sort of weapon that he wants will instantly appear in his hands. Though there's nothing Hisk likes better than a good scrap, he rarely appears on the Prime Material plane, as he is too involved in the great battles and contests going on in Gallarna, his kingdom in the clouds. An occasional feat of great valor and prowess may (5%) catch his attention, especially if it was done in his name. Then, the lucky hero may be given a sign that he can hope to enter Gallarna upon his death (assuming he dies in battle). Those especially favored by Hisk may receive the gift of an automatic *bless* spell whenever they enter into battle.
+
+Chaos: ABSOLUTE RANDOMNESS (High Chaos)
+
+Tenets: Co-existence of all possibilities is the ideal. This will come about when the bonds of Law (and Time, which is a Lawful concept) are broken. The ultimate goal is a return to that natural condition of total randomness that existed before the imposition of Law.
+
+Prime Deity: KARNAWENN
+
+AC: -6 HP: 300 MOVE: instantaneous MAGIC: All spells
+
+A formless, sizeless, timeless mass. The sight of Karnawenn in his true form drives mortals instantly mad (no saving throw). Fortunately, it is possible for no more than one of his tentacles to appear on the prime material plane, and that must take some kind of a form (usually that of a human). This tentacle contains only 10% of Karnawenn's hit points, and its appearance is continually changing subtly. With this form, Karnawenn can throw any possible spell. More often he works through agents. He rewards those who aid him by subtly altering them to improve their abilities, and by absorbing them into his substance upon their deaths.
+
+Chaos: AMBITION
+
+(Assassins)
+
+Tenets: The destruction of Law offers the greatest opportunities for a clever person to take advantage of. Chaos holds the promise that anyone can be great and powerful under the right conditions. The rigid forms of Law offer no chance for the individual to get ahead. By fomenting disorder, an unscrupulous person can get an "in" to the personal power he desires.
+
+Prime Deity: BLESKUTA
+
+AC: -5 HP: 300 MOVE: 18'
+
+MAGIC: Standard plus Shape Change
+
+Bleskuta usually appears as a werebbar the size of a Frost Giant. He fights with a huge granite club that strikes for 6-60 points damage. He will aid supplicants only in return for large endowments of his temples or the blood-price of a Lawful bureaucrat. His aid usually comes in the form of a temporary doubling of the strength, level and/or hit points of the beneficiary. In extremity, he may send 1-6 werebbar or others of his servants to help (3% chance). Bleskuta is careful to appear stupider and much less cunning than he is. He has been known to walk the earth in many different guises, intriguing and fomenting discord. Generally, the more successful his worshippers are, the more he favors them.
+
+Chaos: LIFE/FERTILITY
+
+Tenets: Life in its infinite variety is the true finest expression of Chaos. Fertility and change are the watchwords. Law, as the imposition of order and stagnation, ultimately equals death. Such an end must be fought vigorously so that life will have a chance to explore all possible options.
+
+Prime Deity: TEMANAMAT
+
+AC: -1 HP: 300 MOVE: 12' MAGIC: Standard
+
+Temanamat appears as a full-breasted, wide-hipped woman carrying a cornucopia from which she can pull any form of life she desires, including creatures to fight for her (once per round). With a few spells
+
+she can cause the driest wasteland to become fruitful. Her clerics' healing spells are more effective than usual (10% more so per level of cleric). She usually uses Satyrs as her messengers and agents. Farmers, barren women and sterile men are her most common supplicants.
+
+Chaos: EVIL/DEATH
+
+Tenets: Random wickedness and cruelty is Chaos' greatest weapon against Law. Seemingly pointless violence and atrocities can create more confusion and disruption of the social order than any other cause. Ultimately, life must be completely eradicated: the only real difference between living and unliving matter is that living beings actively impose restrictions upon the world around them. Life is a product of Law, and Death is a returning of organized substance to disorganized Chaos.
+
+Prime Deity: GOLOD
+
+AC: -4 HP: 300 MOVE: 24'
+
+MAGIC: Standard plus all Death spells.
+
+Golod's huge squat body has four arms that end in taloned hands. His face is flat and apish, with tusks protruding from his mouth. Tattooed on his chest is the Yellow Sign. Golod can only be appeased by human sacrifice. He will look most favorably upon those who have sent him the most lives. He fights with his four clawed hands, which hit for 3-30 points each plus paralysis (save vs. spells). His servants include a Legion of the Undead, and he may send aid in that form if his followers are in dire need (5% chance). Those who serve him in life can expect to serve him afterwards as members of the undead. Golod may (5%) reward some particularly evil deed with the gift of some terrible artifact or weapon.
+
+Chaos: DEVOLUTION
+
+Tenets: It is possible to return down the ladder of evolution to the primal oneness of the beginnings of life. Great truths are hidden in the primordial ooze from which we sprang. We must devolve in order to understand these ancient cosmic secrets. Degeneration is first mental and then physical. The first step in this sacred task is the sloughing off of humanity for the bestial and depraved. It may actually take many generations before the Devolving Ones can fully grasp the meaning of the hidden knowledge.
+
+Prime Deity: SOG-MORTHOTH
+
+AC: -2 HP: 300 MOVE: 18'
+
+MAGIC: Standard plus Shape Change
+
+Sog-Morthoth appears as an amorphous creature about 40 feet in diameter, oozing greenish slime from its surface and sprouting thick tentacles and psuedopods apparently at random. It radiates a permanent *Fear* spell in a 100' radius, which must be saved against each round. If its worshippers call upon it for aid, it may (5% chance) help them by temporarily doubling their strength and/or the effectiveness of their spells (1-10 rounds duration). Those in Sog-Morthoth's service tend to gradually become less human and more bestial, and begin to prefer subterranean living to the surface world. They may actually develop infravision.
+
+Chaos: WAR
+
+Tenets: War is the most inherently chaotic action humans can undertake. Conflict is to be encouraged, not only against Law, but for its own sake. A good all-out civilization-topping war may disrupt things so much that Law may lose its grip on the world completely.
+
+Prime Deity: THAKTA TYLDEN
+
+AC: -6 HP: 300 MOVE: 24' MAGIC: Standard
+
+This god appears as a huge warrior in black armor with red trim. In his presence, all Chaotic warriors fight at +4, all Lawfuls at -4. He wields the Whip of Chaos, which can strike up to three opponents at once for 4-40 points damage each. It is extremely rare for Thakta Tylden to appear at anything less than Armageddon-sized battles. He prefers to send one or more of his sons to fight for him:
+
+LAKUNTH, a 15th-level Weretiger (AC: -1; HP: 75);
+
+PAKUNTH, a Stone Giant (AC: 4; HP: 45; 50% magic resistance);
+
+RAKUNTH, an Orcish demi-god (AC: -2; HP: 60; 3 attacks per round, +6 to hit, +8 damage);
+
+QUAKUNTH, a winged 10th-level Troll (AC: 2; HP: 45);
+
+38

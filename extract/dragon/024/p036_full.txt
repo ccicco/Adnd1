@@ -1,0 +1,78 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+by physical weaponry. All Chaotic creatures must flee his presence or be turned to stone (range: 200'). Moriliroom has little or no interest in dealing with individuals, but this indifference makes him utterly fair. He cannot be insulted or flattered. He will appear personally only in the event of a massive Chaotic incursion. He generally prefers to work by granting power to those who can aid his purposes, though this power may be revoked upon completion of the task. Talismans of protection vs. various Chaotic creatures are his usual rewards.
+
+(NOTE: In the case of the bi- or non-gendered deities, he has been used as a pronoun of convenience. No sexism is intended or should be implied.)
+
+Law: HARMONY/GOODNESS (Monks, Paladins)
+
+Tenets: Order can be achieved only by all living things working together in harmony and mutual respect. The prime goal is the greatest good of the greatest number. The Golden Rule should apply to all human interaction. Most creatures have some goodness in them and can eventually be brought into the great brotherhood. Regrettably, some are so unregenerately evil and quarrelsome that force must be used to prevent them from damaging others. They must be excised like tumors from society.
+
+Prime Deity: CYRULLIA
+AC: -4 HP: 300 MOVE: 18"
+
+MAGIC: Standard plus all clerical spells
+
+Cyrullia appears as a beautiful hermaphrodite dressed in flowering robes or golden ornamental armor. He rides the white gelded pegasus "Whickerwind" (HP: 40, MOVE: 56"), and often appears accompanied by half-a-dozen unicorns. Cyrullia is often called "The Physician" or "The Healer" (He is known to the Orcs as "The Leech"). One end of his white-ash staff heals all wounds instantly at a touch: the other end causes all wounds received during a lifetime to reopen and all diseases to instantly relapse. Cyrullia's Paladins can call upon him personally for aid once in their lifetimes. In extremity, there is a 5% chance that any of his priests above 7th level can call for a miracle. Usually he prefers to work more indirectly, granting aid and rewards on a smaller scale.
+
+Law: JUSTICE/VENGEANCE (Monks, Paladins, Assassins)
+
+Tenets: Good (Law) must be rewarded and Evil (Chaos) must be punished. All creatures are judged impartially by weighing their "good" and "evil" deeds. Transgressors will be punished according to the depth of their depravity. Criminals must be diligently pursued until brought to justice. (Examples of this alignment's enforcers might include Solomon Kane, The Shadow, Mr. A., and Javert.)
+
+Prime Deity: MARLY
+AC: -4 HP: 300 MOVE: 24"
+
+MAGIC: Standard plus See Past plus Detect Truth/Lie.
+
+Known as "The Inquisitor," Marly appears as a man with blazing eyes, wearing a black cowl and robes and wielding an ebony staff that delivers 4-40 points damage in magical shock at a touch. He is always accompanied by The Headsman, an eight-foot tall heavily-muscled man wearing only black trousers and cowl (AC: -2; HP: 150; 100% magical resistance). He is armed with a +5 two-handed vorpal axe. There is a 10% chance that Marly will reward some meritorious avenger with a talisman of protection, usually against reprisals. There is a 5% chance he will send material aid to anyone engaged on a righteous mission of vengeance (1% if non-Lawful). It is said that Marly's spies are everywhere, and that for everyone he has a list of good and evil deeds. He demands respect, and punishes those foolish enough to forget it.
+
+Law: KNOWLEDGE
+
+Tenets: Before true Law can be brought to the world, all things must be known and understood. The measurings and methods of science and magic are inherently opposed to the randomness of Chaos. Once the possible is known, the impossible is proscribed. Only through the gradual quantification and qualification of the world can Chaos be totally expunged.
+
+Prime Deity: SEDJIMA
+AC: 0 HP: 300 MOVE: 12"
+
+MAGIC: all magical and clerical spells.
+
+Sedjima appears as an old, white-haired sage. He can answer any question put to him (though he may choose not to). His priests' Augury
+
+and Divination spells will have a better chance of success than usual (1½% per level of cleric). Magic-users professing his alignment will have a 2% better chance per level with the Contact Other Plane spell, and Legend Lore is unusually effective for them. Sedjima's rewards and punishments are always in the form of information. Otherwise, his participation in human affairs is quite passive, consisting of encouragement and cryptic advice through oracles.
+
+Law: EVOLUTION (Social Darwinism) (Monks, Assassins)
+
+Tenets: Evolution is the law of life. All species slowly tend toward the perfect by weeding out the unfit. Those better equipped to survive, in the jungle or society, are the favored of the gods. Those with the ability to exceed and rule others are required by divine Law to do so. Those who are on top obviously deserve to be, or they would not be there. All must strive at the expense of their neighbors for the good of the species.
+
+Prime Deity: SLARSKEN OBEL
+AC: -5 HP: 300 MOVE: 36"
+
+MAGIC: Standard plus all magical spells.
+
+Slarsken Obel appears as a perfectly-formed man in the prime of life (in matriarchies he appears as a woman). He is strong, dextrous, cunning, inventive, charismatic, artistic, humorous and skilled in weaponry far beyond the abilities of any mortal. He is the total entrepreneur, taking advantage of any opportunity to advance his worship, even at the expense of the other Lawful alignments. Capitalists, imperialists and mercenaries are his primary worshippers. Somewhat to his mystification, he never seems to make much progress among the rank and file of humanity. Slarsken Obel goes into battle with any sort of weapon he chooses, striking four times per round for + 10 damage. His only reward to the faithful is praise and justification. He secretly covets Moriliroom's power.
+
+Law: WAR (Monks, Paladins)
+
+Tenets: Militant Law. The simplest and most efficient way to exterminate Chaos is by force of arms. Lawful existence will not be safe until Chaos is eradicated, and with order and discipline on their side the Lawful forces have an enormous advantage over Chaos. The spread of Law is much simplified by the direct method. Humanity's cardinal virtue and Law's strongest asset is discipline.
+
+Prime Deity: THOLTANOOMA
+AC: -6 HP: 300 MOVE: 24" MAGIC: Standard
+
+This god appears as a giant, bearded warlord in full armor of red dragon scales. He strikes once per round with the Hammer of Law for 10-100 points damage. In his presence, all Lawful warriors fight at +4, and all Chaotics at -4. Tholtanooma will only appear in a rare cataclysmic confrontation between Law and Chaos. He usually prefers to send one of his Paladin Bodyguard to aid those he deems worthy (AC: -2; 10th level; armed with Holy Swords). He expends his forces rarely and carefully, however: years may go by without seeing one of his bodyguard on earth. Tholtanooma will often send advice to lawful military commanders in the form of omens or messages only they can see. He may (5%) reward a mighty deed of Lawful valor with a powerful magical weapon or a potion of Temporary Near-Invulnerability. He may also (5%) instill courage in any Lawful warrior stricken with Fear.
+
+Neutrality: PRESERVE THE BALANCE (High Neutrality)
+
+(Paladins)
+
+Tenets: The perfect existence can only be achieved by carefully balancing Law and Chaos in equal parts. Living creatures need both the order of Law and the constant change of chaos. Through evolution, all things move toward perfection: Chaos insures that all possibilities will be tried, but Law insures that only the best will survive. Law and Chaos of themselves are dead ends. "Both light and shadow are needed to see."
+
+Prime Deity: MANTURIN
+AC: -5 HP: 300 MOVE: 24"
+
+MAGIC: Standard plus all clerical spells.
+
+Manturin appears as a mighty titan struggling under the weight of an immense balance which he wears as a yoke. From the right pan of the balance he can throw 15-dice lightning bolts, while from the left pan he can throw 8-pointed stars that explode into 10-dice fireballs. He can do either or both of these once per round. If Manturin is called upon for
+
+36

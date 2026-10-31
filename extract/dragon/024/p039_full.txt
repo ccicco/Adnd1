@@ -1,0 +1,112 @@
+
+April, 1979
+
+The Dragon
+
+Cont. from pg. 33
+
+knew nothing, working days or weeks later, with no memorandum, and subject to all sorts of interruptions, it would not be surprising if he made some mistakes.
+
+It was not quite the regular formula "A mac B." The friend had aimed at something more poetic. But the vital thing was the name, Conan and the epithet COLGAC "Swordsman." Whatever else, the stone-cutter must get those words right! So, blow by blow, he hacked out CONA. . . But in that day, around AD. 300, the final sound of "Conan" was not quite a simple N. Three or four centuries earlier, it had been /GN/, then this had been worn down to a sort of /N/, which might be pronounced either as /N/ or /yN/. The correct letter for that, the Druid had instructed him, was three "intercepts" like this:
+
+But what the poor stone-cutter put down, perhaps after much head-scratching, was three undercuts, like this:
+
+But those few people who came to the hilltop and could read Ogamscript would know perfectly well that it was the famous Conan Mac Moma of Connacht who was buried in that mound, so the grooves to them spelled out CONAGN. It remained for the literati of a far later time to point out the mistake. The stone-cutter's wife milked the cow, and her husband never had the "fluttering wisp" blown in his face.
+
+But what did the full inscription mean to say?
+
+FAN LI DAF ICA CONAGN COLGAC COS OBMDA
+Certainty here is impossible, but my guess is that the friend of Conan meant to have his inscription read;
+
+"Weak is our retinue (without you):
+
+Conan the Swordsman! Resting (imda) here (cos).
+
+That says a great deal in very few words.
+
+# SUGGESTED READING
+
+Standish Hayes O'Grady — SILVA GADELICA
+
+Thomas Rolleston — High Deeds of Finn.
+
+Eoin MacNeill — DUANAIRE FINN.
+
+Barry Fell — AMERICA B.C.
+
+George Vallancey — VINDICATION OF THE HISTORY OF IRELAND
+
+Thomas F. O'Rahilly — EARLY IRISH HISTORY AND LITERATURE
+
+# Judges/Events Wanted
+FOR GenCon XII
+
+Many of you complained that there were not enough miniature games, boardgames, role-playing games, computer games ectera etal at last year's GenCon. If you think GenCon needs more of Something, why don't you help make sure it's available in large quantities in GENCON XII.
+
+Small tourneys can be just as fun as large ones for the avid gaming crowd. Prizes can be arranged by us costing a potential judge little or nothing. So come on! Give your fellow gamers a break, and have a good time too! Contact us at:
+
+GenCon XII — Tourneys
+POB 110
+Lake Geneva, WI 53147
+
+Judges get FREE admission to GENCON on the days of their events. Run two events and see the entire convention for free! Recognized events only.
+
+and DAKUNTH, a 20th-level Type VI Demon (AC: 2; HP: 90; 85% magic resistance).
+
+Thakta Tylden may reward valuable service on his behalf with a mighty weapon or powerful destructive wand (10% chance). On the other hand, cowardly followers may be turned into Kobolds.
+
+EPT Variant
+
+# Naming People, Places
+and Things In Petal Throne
+
+G. Arthur Rahman
+
+When M.A.R. Barker created the world of PETAL THRONE he endowed it with languages quite unlike Western Indo-European speech. Tekumel's languages derive from Tamil, Arabic and Mayan sources and the modern tongues of the planet show their alien origins.
+
+But rare is the referee who can spew names like Hyahyu'u, Mnetukeng or Grikteshmu with the ease swift play demands. For this reason too many Mariuses, Borises and Igors walk the streets of Jakalla. This thwarts the intentions of Professor Barker whose game strives to escape the cliches of the Greco-Roman-Medieval fantasy world. Something is lost in play enjoyment too, for the authentic name has something of magic in it.
+
+Wrestling with the problem of coming up with a large number of authentic-sounding names quickly, I developed the "Petal Throne Name Generator." It consists of a table for generating random numbers from one to sixty-four. Following the table is a list of corresponding one and two-syllable name segments, derived from words in use on Tekumel. The language of Tsolyani provides most of the segments, but they represent no single language. Uniting them in various combinations produces thousands of Tekumel-style names for people, places and things.
+
+To use the Name Generator, decide the number of segments a name should contain. Two or three segments provide the most euphonic results. Then roll a pair of eight-sided dice to derive a numbered name segment. Once combined these segments will provide names like "Durritkoi," "Nalljatoranu" or "Khircholkar."
+
+Soldiers, magicians, forests and towns which previously have gone anonymous due to mental fatigue and other reasons can now be provided with names quickly and painlessly, with a corresponding increase in authenticity.
+
+Petal Throne Name Generator
+
+|   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  1 | 63 | 04 | 09 | 15 | 34 | 28 | 54 | 42  |
+|  2 | 30 | 25 | 64 | 33 | 48 | 52 | 27 | 01  |
+|  3 | 43 | 14 | 50 | 07 | 31 | 26 | 08 | 13  |
+|  4 | 23 | 56 | 10 | 29 | 62 | 05 | 35 | 02  |
+|  5 | 49 | 03 | 37 | 21 | 36 | 12 | 22 | 19  |
+|  6 | 55 | 11 | 53 | 17 | 61 | 40 | 20 | 47  |
+|  7 | 44 | 32 | 46 | 16 | 45 | 06 | 41 | 39  |
+|  8 | 18 | 59 | 24 | 57 | 60 | 58 | 51 | 38  |
+
+|  01. Jak | 23. Eth | 45. Durit  |
+| --- | --- | --- |
+|  02. Innga | 24. Eno | 46. Bush  |
+|  03. Thu | 25. Anu | 47. Yelu  |
+|  04. Alla | 26. Andar | 48. Kesh  |
+|  05. Imal | 27. Ruva | 49. Cho  |
+|  06. Dili | 28. Sak | 50. Fesh  |
+|  07. Wu | 29. Shed | 51. Kolel  |
+|  08. Qon | 30. Kar | 52. Galu  |
+|  09. Khir | 31. Be | 53. Ghar  |
+|  10. Ruku | 32. Do | 54. Aho  |
+|  11. Chol | 33. Ku | 55. Rodla  |
+|  12. Gari | 34. Bin | 56. Bozh  |
+|  13. Mru | 35. Lara | 57. Nallja  |
+|  14. Yuni | 36. Nay | 58. Huru  |
+|  15. Hru | 37. Rul | 59. Qol  |
+|  16. Tor | 38. N'ga | 60. Purch  |
+|  17. Thri | 39. Vim | 61. Yassu  |
+|  18. Za | 40. Revi | 62. Zal  |
+|  19. Tima | 41. Yan | 63. Koi  |
+|  20. Siri | 42. Hanu | 64. Jurru  |
+|  21. Hir | 43. Lish |   |
+|  22. Unal | 44. Mis |   |
+
+39

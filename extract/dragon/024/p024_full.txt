@@ -1,0 +1,96 @@
+
+The Dragon
+
+VOL. III, No. 10
+
+(A) Whenever a Wizard Beast Master meets one of his own "friendly" monsters, he does NOT have to fight and resubdue it. Control, in this case, is absolute unless the Wizard's status changes (he gets killed and re-enters the game as a Superhero).
+
+(B) If a "friendly" monster meets and defeats a player — thereby winning a prize — control does NOT lapse in the case of the Wizard Beast Master. He may direct that monster to bring the prize to him, enter an empty room and guard it or carry that prize about the board until further instructions are given.
+
+(a) Option 1: Using the Combat Rules for monsters, a Wizard Beast Master may, in his turn, direct his "friendly" monsters to attack and subdue any monster in any room, corridor or chamber whether or not they are controlled at that time by another player. If successful, he gains not only any prize guarded by that monster, but another "friendly" monster to add to his collection! He may then instruct his monsters per 3B, above. (Note that using this option will create both monster "armies" and very long turns as several combats will be occurring in each player's turn — his own plus those of his "friendly" monsters).
+
+Natural Occurrences,
+
+Whenever a player ends his turn in a corridor, he rolls two dice and consults the following "Natural Occurrence Chance Table:"
+
+|  2-10 | n/e  |
+| --- | --- |
+|  11 | Natural occurrence  |
+|  12 | monster  |
+
+If the player rolls 2-10, nothing happens and play passes to the next player on his right. If "12" is rolled, a monster appears and attacks. This attack must be resolved before play may be continued.
+
+## GENCON XII Status Report
+
+As the Spring Thaw becomes a reality, changing the Wisconsin Winter Wonderland into something resembling the Florida Everglades, one is reminded of the rapid passage of time and the need to kick preparations of GENCON XII into high gear. I can say at this point that if only half of our plans work out "Boy, 'Have we got a show for you!'" A long litany about our super facilities, and the fact that we will have more and bigger tournaments of all types, would be somewhat redundant at this point, so let me concentrate on the completely new features of GENCON XII.
+
+You may have wondered what you got for your convention registration fee besides one hell of a convention. Well this year you will receive a book of coupons, good at any dealer selling in the exhibit area, this book will be worth $5.00 and will consist of coupons good for $0.50 off any $10.00 purchase. In addition about 30 special door prizes will be handed out each day. These door prizes given out on the basis of a drawing of numbers corresponding to the registration number on convention paper badges. These will be posted one at a time at each different exhibitor booth. When you find your number at a booth the dealer will present you with a small door prize ($2.50 value).
+
+Of course there is an ulterior motive for the convention generosity! We want you to patronize the exhibitors who have travelled from all across the nation to show you their new releases. Please bring plenty of money in small denominations (Unmarked Bills Please!). Our exhibitors will do their part in having plenty of merchandise. I hope all parties will return to their homes satisfied.
+
+Next GENCON Status Report I will be releasing the motor inns where we will be block registering. Please do not make your registrations unless you know you will be attending. There will be a list of small motels in the area for those who need to make last minute reservations. We will arrange for shuttle buses to those motor main inns and some of the minor motels. Hopefully the buses will not be so packed as last time.
+
+JOSEPH G. ORLOWSKI
+GENCON XII Coordinator
+
+(1) When using the above rule, all monsters killed in combat are placed face-down in a DEAD pile with the latest kills on the bottom. When the Natural Occurrences Chance Table calls for the appearance of a monster, the player draws the top card from the DEAD pile and fights that monster. If that monster is killed, it is returned to the DEAD pile face-down and the bottom of the deck.
+
+(2) When using the BEAST MASTER options, only those monsters killed in action (die roll "12") are placed in a DEAD pile. Otherwise, the rules are the same as (1), above. If the player rolls an "11," he consults the "Natural Occurrences Table" below:
+
+|  2-4 | Bats (n/e)  |
+| --- | --- |
+|  5-6 | Flood  |
+|  7-8 | Poison Gas  |
+|  9-10 | Explosive Gas  |
+|  11-12 | Cave-in  |
+
+(1) Explanation of Results
+
+(A) Flood — The player must roll 6+ on two dice to avoid injury or drowning. If results are less than 6, consult the Combat Losing Table and apply results there. Note that, if a prize is lost, it is washed downstream into the nearest inhabited room (if the corridor ends in a room) or Chamber — "downstream" is defined in this case as AWAY from the Main Gallery and TOWARD the next lowest Dungeon level.
+
+(B) Poison Gas — The player must roll 6+ on two dice to avoid injury or death. If the results are less than 6, consult the Combat Losing Table. Any prizes lost are placed in the nearest inhabited room.
+
+(C) Explosive Gas — The player must roll 8+ on two dice to avoid injury or death. Otherwise, same as for Poison Gas, above.
+
+(D) Cave-In — The player rolls one die: 1-2 indicates cave-in behind player (in direction from which he came); 3-4 indicates cave-in on space occupied by player's piece; 5-6 indi-
+
+## TROOPS NEEDED
+
+25 mm Napoleonic Game, using Empire Rules
+
+Each player will command a large brigade to division of infantry, one regt. of light cavalry, and historic artillery. Game will be refereed by Mike McGrail, of Texas, veteran of many GenCons. His tournaments each year have proven very popular and enjoyable. This year, owing to the fact that he is in the midst of converting from plastics to metal, he is short a number of units necessary for this event. Below is a listing of units in the OB's. Which ones he has, and which he needs, we're not sure of at this time. If you can help, or are interested, contact Mr.
+
+|  McGrail immediately. | MG = Morale Grade | C = # of castings  |
+| --- | --- | --- |
+|  PRUSSIAN 1815 | RUSSIAN 1812 | BAVARIAN  |
+|  1 Gren. 12C MG8 | 2 Gren. 16C MG8 | 1 Gd. Gren. 12C MG7  |
+|  1 Shutzen 12C MG6 | 4 Jager 32C MG6 | 2 Light 24C MG5  |
+|  4 Line 48C MG5 | 7 Line 56C MG5 | 7 Line 84C MG4  |
+|  4 Silesian Landwehr 48C MG4 | 1 Regt. Lt. Cav | 1 Conv. Lt. 12C MG5  |
+|  1 Regt. Lt. Cav | 112# Foot | 1 Regt. Lt. Cav  |
+|  1 12# Foot | 1 6# Foot | 2 8# Foot (8 guns, no how.)  |
+|  16# Horse |  |   |
+|  AUSTRIAN 1809 | BRITISH 1810 |   |
+|  4 Line 72C MG5 | 1 Highlander 12C MG8 |   |
+|  1 Spec. Line 18C MG8 | 1 Rifle 9C MG8 |   |
+|  1 Jager 12C MG8 | 8 Line 72C MG6 |   |
+|  1 Regt. Lt. Cav | 1 Regt. Lt. Cav |   |
+|  1 12# Foot | 1 9# RHA |   |
+|  16# Brigade (8 guns) |  |   |
+|  16# Horse | FRENCH 1809 |   |
+|   | 1 Yng. Gd. 12C MG8 |   |
+|   | 6 Line 72C MG5 |   |
+|   | 2 Legere 24C MG6 |   |
+|   | 1 Regt. Lt. Cav |   |
+|   | 1 12# Foot |   |
+|   | 1 6# Horse |   |
+|  POLISH 1809 |  |   |
+|  1 Vistula legion 12C MG8 |  |   |
+|  7 Line 84C MG6 |  |   |
+|  1 Regt. Lt. Cav |  |   |
+|  28# Foot (6 guns, no how.) |  |   |
+
+IF YOU CAN HELP OUT, CONTACT MIKE AT 10001-Club Creek Dr.
+#326, Houston, TX 77036 or PHONE# 1-713-771-9716
+
+24
