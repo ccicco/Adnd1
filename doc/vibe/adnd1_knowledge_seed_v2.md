@@ -29962,6 +29962,43 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   byte-matched 23/23 on the
   landed records before the
   batch. WAIT FOR GO.
+  - R974 LANDED (41fb76c, dp6, 7
+  inline, the promotion batch
+  six): THE DRAGON PROMOTION
+  BATCH SIX - the arc round
+  nine, issues 11 through 12
+  complete: brw (the Kuntz
+  brawling opener, 54 items),
+  bfx (17), ilv (the Ovalle
+  illusions opener, 62), myt
+  (the Persian Mythos opener,
+  100), fcl (20) - 5 records,
+  253 model items, 76688 bytes
+  Lua, every record parsed
+  back equal. 4 consts + 3
+  bools: dp6BatchRecords=5,
+  dp6ModelItems=253,
+  dp6CumulativeRecords=35,
+  dp6SetRoundsRemaining=44,
+  dp6RecordsPromoted,
+  dp6DiffBackGreen,
+  dp6IssuesElevenTwelveComplete.
+  Census 896->897; no flips;
+  gap report 026 stays 3/0.
+  Double-run applied 10/
+  already 10, verify at
+  41fb76c already 10 with all
+  35 records on disk (769622
+  bytes Lua); rverify GREEN 7
+  mutants 0 missed at base
+  e2d6a6f; spec 87207 bytes
+  md5 684418528b60dcf974be892d
+  442c0711, canvas r974-spec.
+  The R973 record seated in the
+  repo seed. The lib rebuilt and
+  byte-matched 30/30 on the
+  landed records before the
+  batch. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
