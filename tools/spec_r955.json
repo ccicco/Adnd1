@@ -1,0 +1,1753 @@
+{
+ "round": 955,
+ "prefix": "s24",
+ "census_before": 877,
+ "title": "The Dragon issue-24 opener part two: the alignment pantheon (census 878)",
+ "banner": {
+  "title": "The Dragon issue-24 opener part two - the alignment pantheon",
+  "provenance": "The part-two round of the issue-24 four-round shape - the single chain of the Schick Design Forum alignment variant, the table round of the walk: choir practice at the First Church of Lawful Evil (Orthodox), The Ramifications of Alignment - the eighteen prime alignments across Law, Neutrality and Chaos, the twenty-one prime deities with the four elemental lords at two hundred hit points, the five sons of Thakta Tylden and the Headsman of Marly, the fourteen-spell standard god list, the gods created and maintained by their believers worship. Pinned from The Dragon Vol. III No. 10, April 1979, number 24, print 34 and 36 through 39 - print 35 is the In Search of the Unknown module advertisement."
+ },
+ "header_file": "rules/s24.h",
+ "audit_file": "rules/audits/r955_batch.h",
+ "audit_label": "R955 issue-24 alignment pantheon audit",
+ "audit_anchor": "#include \"rules/audits/r954_batch.h\"  // R954: R954 issue-24 variant triptych audit",
+ "audit_comment": "the alignment pantheon audit - the eighteen prime alignments, the twenty-one prime deities, the four elemental lords, the five sons of Thakta Tylden and the Headsman of Marly",
+ "gap_report": "tools/dragon_gap_report_023.md",
+ "gap_census": {
+  "closed": 3,
+  "open": 0
+ },
+ "gap_flips": [],
+ "include_after": "#include \"rules/t24.h\"  // R954: the Dragon issue-24 opener part one, the three-chain variant round",
+ "include_comment": "the Dragon issue-24 opener part two, the alignment pantheon table round",
+ "header_sections": {
+  "the alignment pantheon variant (print 34+36-39)": [
+   {
+    "kind": "const",
+    "name": "s24PrimeAlignments"
+   },
+   {
+    "kind": "const",
+    "name": "s24LawSlots"
+   },
+   {
+    "kind": "const",
+    "name": "s24NeutralSlots"
+   },
+   {
+    "kind": "const",
+    "name": "s24ChaosSlots"
+   },
+   {
+    "kind": "const",
+    "name": "s24PrimeDeities"
+   },
+   {
+    "kind": "const",
+    "name": "s24ElementalLords"
+   },
+   {
+    "kind": "const",
+    "name": "s24SonsOfThakta"
+   },
+   {
+    "kind": "const",
+    "name": "s24StandardSpellList"
+   },
+   {
+    "kind": "const",
+    "name": "s24GodHitMissRoll"
+   },
+   {
+    "kind": "const",
+    "name": "s24PantheonCount"
+   },
+   {
+    "kind": "const",
+    "name": "s24SonsCount"
+   },
+   {
+    "kind": "const",
+    "name": "s24AlignsCount"
+   },
+   {
+    "kind": "const",
+    "name": "s24GodBaseHp"
+   },
+   {
+    "kind": "const",
+    "name": "s24ElementalHp"
+   },
+   {
+    "kind": "const",
+    "name": "s24MoriliromTurnRange"
+   },
+   {
+    "kind": "const",
+    "name": "s24WhickerwindHp"
+   },
+   {
+    "kind": "const",
+    "name": "s24WhickerwindMove"
+   },
+   {
+    "kind": "const",
+    "name": "s24CyrulliaUnicorns"
+   },
+   {
+    "kind": "const",
+    "name": "s24CyrulliaMiraclePct"
+   },
+   {
+    "kind": "const",
+    "name": "s24CyrulliaMiracleLevel"
+   },
+   {
+    "kind": "const",
+    "name": "s24MarlyTalismanPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24MarlyAidPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24MarlyNonLawfulAidPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24HeadsmanHp"
+   },
+   {
+    "kind": "const",
+    "name": "s24HeadsmanAc"
+   },
+   {
+    "kind": "const",
+    "name": "s24HeadsmanMr"
+   },
+   {
+    "kind": "const",
+    "name": "s24HeadsmanAxeBonus"
+   },
+   {
+    "kind": "const",
+    "name": "s24HeadsmanHeight"
+   },
+   {
+    "kind": "const",
+    "name": "s24SedjimaAuguryHalfPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24SedjimaContactPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24SlarskenHits"
+   },
+   {
+    "kind": "const",
+    "name": "s24SlarskenDamageAdd"
+   },
+   {
+    "kind": "const",
+    "name": "s24TholtanoomaLawfulAdd"
+   },
+   {
+    "kind": "const",
+    "name": "s24TholtanoomaChaoticSub"
+   },
+   {
+    "kind": "const",
+    "name": "s24BodyguardAc"
+   },
+   {
+    "kind": "const",
+    "name": "s24BodyguardLevel"
+   },
+   {
+    "kind": "const",
+    "name": "s24TholtanoomaRewardPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24TholtanoomaCouragePct"
+   },
+   {
+    "kind": "const",
+    "name": "s24ManturinLightningDice"
+   },
+   {
+    "kind": "const",
+    "name": "s24ManturinStarPoints"
+   },
+   {
+    "kind": "const",
+    "name": "s24ManturinFireballDice"
+   },
+   {
+    "kind": "const",
+    "name": "s24ManturinJavelinPoints"
+   },
+   {
+    "kind": "const",
+    "name": "s24ManturinStarGrant"
+   },
+   {
+    "kind": "const",
+    "name": "s24RilliflohamHeight"
+   },
+   {
+    "kind": "const",
+    "name": "s24RilliflohamSummonLo"
+   },
+   {
+    "kind": "const",
+    "name": "s24RilliflohamSummonHi"
+   },
+   {
+    "kind": "const",
+    "name": "s24RilliflohamRewardPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24RasanFireballDice"
+   },
+   {
+    "kind": "const",
+    "name": "s24RasanFavorPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24DemyuritasTeleportLo"
+   },
+   {
+    "kind": "const",
+    "name": "s24DemyuritasTeleportHi"
+   },
+   {
+    "kind": "const",
+    "name": "s24ElementalSummonLo"
+   },
+   {
+    "kind": "const",
+    "name": "s24ElementalSummonHi"
+   },
+   {
+    "kind": "const",
+    "name": "s24HaraHits"
+   },
+   {
+    "kind": "const",
+    "name": "s24ZkraclFireballDice"
+   },
+   {
+    "kind": "const",
+    "name": "s24BleskutaServantsLo"
+   },
+   {
+    "kind": "const",
+    "name": "s24BleskutaServantsHi"
+   },
+   {
+    "kind": "const",
+    "name": "s24BleskutaServantsPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24TemanamatHealingPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24GolodClaws"
+   },
+   {
+    "kind": "const",
+    "name": "s24GolodUndeadPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24GolodRewardPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24SogDiameter"
+   },
+   {
+    "kind": "const",
+    "name": "s24SogFearRadius"
+   },
+   {
+    "kind": "const",
+    "name": "s24SogAidPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24SogAidLo"
+   },
+   {
+    "kind": "const",
+    "name": "s24SogAidHi"
+   },
+   {
+    "kind": "const",
+    "name": "s24KarnawennTentaclePct"
+   },
+   {
+    "kind": "const",
+    "name": "s24ThaktaWhipTargets"
+   },
+   {
+    "kind": "const",
+    "name": "s24ThaktaWeaponPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24HiskAttentionPct"
+   },
+   {
+    "kind": "const",
+    "name": "s24RakunthHitAdd"
+   },
+   {
+    "kind": "const",
+    "name": "s24RakunthDmgAdd"
+   },
+   {
+    "kind": "bool",
+    "name": "s24LawEquatedGood"
+   },
+   {
+    "kind": "bool",
+    "name": "s24PerpendicularAxes"
+   },
+   {
+    "kind": "bool",
+    "name": "s24RulesLawFavoritism"
+   },
+   {
+    "kind": "bool",
+    "name": "s24NineFail"
+   },
+   {
+    "kind": "bool",
+    "name": "s24NiceNasty"
+   },
+   {
+    "kind": "bool",
+    "name": "s24GodsWorshipMade"
+   },
+   {
+    "kind": "bool",
+    "name": "s24WorshipContest"
+   },
+   {
+    "kind": "bool",
+    "name": "s24MoralityFlexible"
+   },
+   {
+    "kind": "bool",
+    "name": "s24SplinterAlignments"
+   },
+   {
+    "kind": "bool",
+    "name": "s24NoAlignmentTongues"
+   },
+   {
+    "kind": "bool",
+    "name": "s24StandardSpellsAtWill"
+   },
+   {
+    "kind": "bool",
+    "name": "s24GodsAutoHit"
+   },
+   {
+    "kind": "bool",
+    "name": "s24GodsBanished"
+   },
+   {
+    "kind": "bool",
+    "name": "s24PronounNote"
+   },
+   {
+    "kind": "bool",
+    "name": "s24GenConChallenge"
+   },
+   {
+    "kind": "bool",
+    "name": "s24MoriliroomTwice"
+   },
+   {
+    "kind": "bool",
+    "name": "s24FeetMoveDrift"
+   },
+   {
+    "kind": "bool",
+    "name": "s24WhickerwindPrint"
+   },
+   {
+    "kind": "bool",
+    "name": "s24RichlyApparelated"
+   },
+   {
+    "kind": "bool",
+    "name": "s24WerebbarTwice"
+   },
+   {
+    "kind": "bool",
+    "name": "s24Psuedopods"
+   },
+   {
+    "kind": "bool",
+    "name": "s24CivilizationTopping"
+   },
+   {
+    "kind": "bool",
+    "name": "s24TholtanoomaHeader"
+   },
+   {
+    "kind": "bool",
+    "name": "s24MoriliromPhysicalProof"
+   },
+   {
+    "kind": "bool",
+    "name": "s24MoriliromBeyondFlattery"
+   },
+   {
+    "kind": "bool",
+    "name": "s24CyrulliaStaffDuality"
+   },
+   {
+    "kind": "bool",
+    "name": "s24CyrulliaOnceCall"
+   },
+   {
+    "kind": "bool",
+    "name": "s24MarlySpies"
+   },
+   {
+    "kind": "bool",
+    "name": "s24SedjimaPassive"
+   },
+   {
+    "kind": "bool",
+    "name": "s24SlarskenMatriarch"
+   },
+   {
+    "kind": "bool",
+    "name": "s24SlarskenCovets"
+   },
+   {
+    "kind": "bool",
+    "name": "s24TholtanoomaBodyguard"
+   },
+   {
+    "kind": "bool",
+    "name": "s24ManturinAidEnemies"
+   },
+   {
+    "kind": "bool",
+    "name": "s24ManturinNeutralPaladins"
+   },
+   {
+    "kind": "bool",
+    "name": "s24RilliflohamFireNormal"
+   },
+   {
+    "kind": "bool",
+    "name": "s24RilliflohamWildConspire"
+   },
+   {
+    "kind": "bool",
+    "name": "s24RasanUsurper"
+   },
+   {
+    "kind": "bool",
+    "name": "s24RasanWeaklings"
+   },
+   {
+    "kind": "bool",
+    "name": "s24DemyuritasBards"
+   },
+   {
+    "kind": "bool",
+    "name": "s24GunggerCrossesWater"
+   },
+   {
+    "kind": "bool",
+    "name": "s24HaraProjectileProof"
+   },
+   {
+    "kind": "bool",
+    "name": "s24ZkraclSpiesFires"
+   },
+   {
+    "kind": "bool",
+    "name": "s24ZkraclWaterProof"
+   },
+   {
+    "kind": "bool",
+    "name": "s24ShaliroiHeatProof"
+   },
+   {
+    "kind": "bool",
+    "name": "s24HiskWeaponsAppear"
+   },
+   {
+    "kind": "bool",
+    "name": "s24HiskGallarna"
+   },
+   {
+    "kind": "bool",
+    "name": "s24KarnawennMadness"
+   },
+   {
+    "kind": "bool",
+    "name": "s24KarnawennOneTentacle"
+   },
+   {
+    "kind": "bool",
+    "name": "s24BleskutaGuises"
+   },
+   {
+    "kind": "bool",
+    "name": "s24TemanamatSatyrs"
+   },
+   {
+    "kind": "bool",
+    "name": "s24GolodYellowSign"
+   },
+   {
+    "kind": "bool",
+    "name": "s24GolodSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "s24GolodUndeadService"
+   },
+   {
+    "kind": "bool",
+    "name": "s24SogBestialServants"
+   },
+   {
+    "kind": "bool",
+    "name": "s24ThaktaArmageddon"
+   },
+   {
+    "kind": "bool",
+    "name": "s24ThaktaCowardKobolds"
+   },
+   {
+    "kind": "bool",
+    "name": "s24HeadsmanAlways"
+   },
+   {
+    "kind": "bool",
+    "name": "s24AmbitionTwice"
+   },
+   {
+    "kind": "bool",
+    "name": "s24WarTwice"
+   },
+   {
+    "kind": "table",
+    "name": "s24Pantheon"
+   },
+   {
+    "kind": "table",
+    "name": "s24Sons"
+   },
+   {
+    "kind": "table",
+    "name": "s24Aligns"
+   }
+  ]
+ },
+ "consts": [
+  {
+   "name": "s24PrimeAlignments",
+   "value": 18,
+   "comment": "the eighteen prime alignments - six Law, six Neutrality and six Chaos, a few more than the nine the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24LawSlots",
+   "value": 6,
+   "comment": "the Law slots - Absolute Order, Harmony, Justice, Knowledge, Evolution and War the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24NeutralSlots",
+   "value": 6,
+   "comment": "the Neutrality slots - Preserve the Balance, Ambition, Nature, Esthetics, the Four Elements and Battle Glory the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ChaosSlots",
+   "value": 6,
+   "comment": "the Chaos slots - Absolute Randomness, Ambition, Life and Fertility, Evil and Death, Devolution and War the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24PrimeDeities",
+   "value": 21,
+   "comment": "the twenty-one prime deities - seventeen singles plus the four elemental lords the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ElementalLords",
+   "value": 4,
+   "comment": "the four elemental lords - Gungger the earth Overlord, Hara the air Queen, Zkracl the fire Tyrant, Shaliroi the water King the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SonsOfThakta",
+   "value": 5,
+   "comment": "the five sons of Thakta Tylden - Lakunth, Pakunth, Rakunth, Quakunth and Dakunth, the fifth printing on page 39 the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24StandardSpellList",
+   "value": 14,
+   "comment": "the standard god magic list - Gate, ESP, Mind Blank, Reincarnation, Wish, Curse and Remove Curse, Permanency, all Healing and Resurrection spells, Polymorph Any Object, Comprehend Languages, Geas, Teleport Others, Teleport and Change Characters Abilities the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GodHitMissRoll",
+   "value": 1,
+   "comment": "in battle the prime gods always hit their targets unless they roll a one on a d20 the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24PantheonCount",
+   "value": 21,
+   "comment": "the pantheon roster row count the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SonsCount",
+   "value": 5,
+   "comment": "the sons roster row count the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24AlignsCount",
+   "value": 18,
+   "comment": "the alignment roster row count the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GodBaseHp",
+   "value": 300,
+   "comment": "the prime deity hit points - three hundred for every prime god, Sedjima included the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ElementalHp",
+   "value": 200,
+   "comment": "the elemental lord hit points - two hundred each, the one departure from the prime three hundred the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24MoriliromTurnRange",
+   "value": 200,
+   "comment": "the Morilirom presence - all Chaotic creatures must flee or be turned to stone within two hundred feet the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24WhickerwindHp",
+   "value": 40,
+   "comment": "the white gelded pegasus Whickerwind hit points the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24WhickerwindMove",
+   "value": 56,
+   "comment": "the Whickerwind move, in flight the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24CyrulliaUnicorns",
+   "value": 6,
+   "comment": "Cyrullia often appears accompanied by half-a-dozen unicorns the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24CyrulliaMiraclePct",
+   "value": 5,
+   "comment": "in extremity the chance any Cyrullia priest above the level can call for a miracle the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24CyrulliaMiracleLevel",
+   "value": 7,
+   "comment": "the miracle call level - priests above seventh level the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24MarlyTalismanPct",
+   "value": 10,
+   "comment": "the chance Marly rewards a meritorious avenger with a talisman of protection, usually against reprisals the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24MarlyAidPct",
+   "value": 5,
+   "comment": "the chance Marly sends material aid to anyone engaged on a righteous mission of vengeance the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24MarlyNonLawfulAidPct",
+   "value": 1,
+   "comment": "the non-Lawful vengeance aid chance - one percent instead of five the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HeadsmanHp",
+   "value": 150,
+   "comment": "the Headsman hit points the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HeadsmanAc",
+   "value": -2,
+   "comment": "the Headsman armor class the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HeadsmanMr",
+   "value": 100,
+   "comment": "the Headsman magic resistance - one hundred percent the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HeadsmanAxeBonus",
+   "value": 5,
+   "comment": "the Headsman plus-five two-handed vorpal axe the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HeadsmanHeight",
+   "value": 8,
+   "comment": "the eight-foot tall heavily-muscled Headsman, in black trousers and cowl the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SedjimaAuguryHalfPct",
+   "value": 3,
+   "comment": "the Sedjima Augury and Divination bonus - one and a half percent per level of cleric, pinned in half-percent units the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SedjimaContactPct",
+   "value": 2,
+   "comment": "the Sedjima Contact Other Plane bonus - two percent better per level for his Magic-users the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SlarskenHits",
+   "value": 4,
+   "comment": "the Slarsken Obel battle attacks - striking four times per round the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SlarskenDamageAdd",
+   "value": 10,
+   "comment": "the Slarsken Obel damage bonus - plus ten with any weapon he chooses the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24TholtanoomaLawfulAdd",
+   "value": 4,
+   "comment": "in the presence of Tholtanooma all Lawful warriors fight at plus four the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24TholtanoomaChaoticSub",
+   "value": 4,
+   "comment": "in the presence of Tholtanooma all Chaotics fight at minus four the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24BodyguardAc",
+   "value": -2,
+   "comment": "the Tholtanooma Paladin Bodyguard armor class the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24BodyguardLevel",
+   "value": 10,
+   "comment": "the Tholtanooma Paladin Bodyguard level, armed with Holy Swords the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24TholtanoomaRewardPct",
+   "value": 5,
+   "comment": "the chance Tholtanooma rewards a mighty deed of Lawful valor with a powerful magical weapon or a potion of Temporary Near-Invulnerability the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24TholtanoomaCouragePct",
+   "value": 5,
+   "comment": "the chance Tholtanooma instills courage in any Lawful warrior stricken with Fear the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ManturinLightningDice",
+   "value": 15,
+   "comment": "from the right pan of the balance Manturin throws fifteen-dice lightning bolts the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ManturinStarPoints",
+   "value": 8,
+   "comment": "the left-pan stars are eight-pointed the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ManturinFireballDice",
+   "value": 10,
+   "comment": "the left-pan eight-pointed stars explode into ten-dice fireballs the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ManturinJavelinPoints",
+   "value": 20,
+   "comment": "the Manturin aid - Javelins of Lightning granting twenty points the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ManturinStarGrant",
+   "value": 15,
+   "comment": "the Manturin fireball stars grant fifteen points the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RilliflohamHeight",
+   "value": 40,
+   "comment": "Rillifloham appears as a forty-foot treant the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RilliflohamSummonLo",
+   "value": 3,
+   "comment": "the Rillifloham treant summon floor the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RilliflohamSummonHi",
+   "value": 18,
+   "comment": "the Rillifloham treant summon ceiling the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RilliflohamRewardPct",
+   "value": 10,
+   "comment": "the chance Rillifloham rewards meritorious actions on Nature behalf with a wooden artifact of great power or an animal familiar the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RasanFireballDice",
+   "value": 10,
+   "comment": "the Rasan Korya fireballs are of ten-dice value the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RasanFavorPct",
+   "value": 5,
+   "comment": "the chance a favor is done for worshippers who have contributed enough at the Rasan Korya shrines the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24DemyuritasTeleportLo",
+   "value": 1,
+   "comment": "the Demyuritas annoy-teleport floor - hexes in a random direction, once per round, no saving throw the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24DemyuritasTeleportHi",
+   "value": 20,
+   "comment": "the Demyuritas annoy-teleport ceiling in hexes the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ElementalSummonLo",
+   "value": 1,
+   "comment": "the elemental lord summon floor the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ElementalSummonHi",
+   "value": 12,
+   "comment": "the elemental lord summon ceiling - one to twelve elementals each the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HaraHits",
+   "value": 6,
+   "comment": "Hara hits six times per round the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ZkraclFireballDice",
+   "value": 20,
+   "comment": "the Zkracl fireball - twenty dice every round, save versus spells for half damage the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24BleskutaServantsLo",
+   "value": 1,
+   "comment": "the Bleskuta servant aid floor - werebbar or others of his servants the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24BleskutaServantsHi",
+   "value": 6,
+   "comment": "the Bleskuta servant aid ceiling the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24BleskutaServantsPct",
+   "value": 3,
+   "comment": "the chance Bleskuta sends his servants in extremity the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24TemanamatHealingPct",
+   "value": 10,
+   "comment": "the Temanamat clerics healing spells are ten percent more effective per level of cleric the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GolodClaws",
+   "value": 4,
+   "comment": "the Golod four clawed hands, hitting three to thirty each plus paralysis the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GolodUndeadPct",
+   "value": 5,
+   "comment": "the chance Golod sends his Legion of the Undead when his followers are in dire need the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GolodRewardPct",
+   "value": 5,
+   "comment": "the chance Golod rewards some particularly evil deed with the gift of some terrible artifact or weapon the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SogDiameter",
+   "value": 40,
+   "comment": "the Sog-Morthoth amorphous body is about forty feet in diameter, oozing greenish slime the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SogFearRadius",
+   "value": 100,
+   "comment": "the Sog-Morthoth permanent Fear radiates in a one-hundred-foot radius, saved against each round the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SogAidPct",
+   "value": 5,
+   "comment": "the chance Sog-Morthoth aids his worshippers by temporarily doubling their strength and or the effectiveness of their spells the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SogAidLo",
+   "value": 1,
+   "comment": "the Sog-Morthoth doubling duration floor in rounds the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SogAidHi",
+   "value": 10,
+   "comment": "the Sog-Morthoth doubling duration ceiling in rounds the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24KarnawennTentaclePct",
+   "value": 10,
+   "comment": "the single Karnawenn tentacle on the prime material plane contains ten percent of his hit points the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ThaktaWhipTargets",
+   "value": 3,
+   "comment": "the Whip of Chaos strikes up to three opponents at once the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ThaktaWeaponPct",
+   "value": 10,
+   "comment": "the chance Thakta Tylden rewards valuable service with a mighty weapon or powerful destructive wand the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HiskAttentionPct",
+   "value": 5,
+   "comment": "the chance an occasional feat of great valor and prowess catches the Hisk attention, especially in his name the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RakunthHitAdd",
+   "value": 6,
+   "comment": "the Rakunth attack to-hit bonus - three attacks per round at plus six the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RakunthDmgAdd",
+   "value": 8,
+   "comment": "the Rakunth attack damage bonus - plus eight the alignment pantheon variant (print 34+36-39)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "s24LawEquatedGood",
+   "value": true,
+   "comment": "a large percentage of players simply equate Law with good and Chaos with evil, despite the perpendicular axes the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24PerpendicularAxes",
+   "value": true,
+   "comment": "the advanced rules explain that morality and Law versus Chaos are on separate, perpendicular axes the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RulesLawFavoritism",
+   "value": true,
+   "comment": "a subtle, perhaps unintentional favoritism in the rules assumes player characters will be Lawful or at least Neutral the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24NineFail",
+   "value": true,
+   "comment": "the new nine alignments are a good attempt at standardization but do not really resolve the Law and Chaos problems the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24NiceNasty",
+   "value": true,
+   "comment": "on inspection Good or Evil usually boils down to Nice or Nasty the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GodsWorshipMade",
+   "value": true,
+   "comment": "the old idea - temporal gods are created and maintained by their believers worship the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24WorshipContest",
+   "value": true,
+   "comment": "a continual battle between religions for quantity and quality of worshippers the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24MoralityFlexible",
+   "value": true,
+   "comment": "since every religion thinks they are right, morality has to be regarded as flexible the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SplinterAlignments",
+   "value": true,
+   "comment": "non-orthodox and splinter alignments with correspondingly weaker gods are probably quite common the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24NoAlignmentTongues",
+   "value": true,
+   "comment": "the pantheon deals the death to the idea of alignment tongues, except possibly in the cases of High Law, Chaos and Neutrality the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24StandardSpellsAtWill",
+   "value": true,
+   "comment": "unless stated otherwise all gods can cast the standard magical spells as often as they wish the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GodsAutoHit",
+   "value": true,
+   "comment": "the prime gods always hit their targets in battle unless they roll a one the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GodsBanished",
+   "value": true,
+   "comment": "gods cannot really be killed while they have sufficient worshippers - losing all hit points merely banishes them temporarily from the physical plane the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24PronounNote",
+   "value": true,
+   "comment": "the article note - for the bi- or non-gendered deities he has been used as a pronoun of convenience, no sexism intended or implied the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GenConChallenge",
+   "value": true,
+   "comment": "the italic introduction - the author challenged at Gen-Con XI to elucidate the alignment problems the editor enjoyed the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24MoriliroomTwice",
+   "value": true,
+   "comment": "MORILIROM spelled Moriliroom twice in the running text - the High Law indifference paragraph and the Slarsken Obel covet the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24FeetMoveDrift",
+   "value": true,
+   "comment": "the move drift - Hisk, Bleskuta, Temanamat, Golod, Sog-Morthoth and Thakta Tylden print move in feet against the inch moves of the rest the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24WhickerwindPrint",
+   "value": true,
+   "comment": "the white gelded pegasus Whickerwind as printed - the Cyrullia steed the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RichlyApparelated",
+   "value": true,
+   "comment": "richly-apparelated for appareled at the Rasan Korya appearance the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24WerebbarTwice",
+   "value": true,
+   "comment": "werebbar for werebear twice - the Bleskuta Frost-Giant size and the servant aid band the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24Psuedopods",
+   "value": true,
+   "comment": "psuedopods for pseudopods at the Sog-Morthoth tentacles the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24CivilizationTopping",
+   "value": true,
+   "comment": "civilization-topping for toppling in the Chaos War tenets the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24TholtanoomaHeader",
+   "value": true,
+   "comment": "THOLTANOOMA in the stat header against Tholtanooma in the running text the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24MoriliromPhysicalProof",
+   "value": true,
+   "comment": "Morilirom cannot be harmed by physical weaponry the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24MoriliromBeyondFlattery",
+   "value": true,
+   "comment": "Morilirom cannot be insulted or flattered - the indifference makes him utterly fair the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24CyrulliaStaffDuality",
+   "value": true,
+   "comment": "the Cyrullia white-ash staff heals all wounds instantly at one end and reopens every wound of a lifetime with all diseases relapsing at the other the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24CyrulliaOnceCall",
+   "value": true,
+   "comment": "Cyrullia Paladins can call upon him personally for aid once in their lifetimes the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24MarlySpies",
+   "value": true,
+   "comment": "the Marly spies are everywhere, and for everyone he has a list of good and evil deeds the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SedjimaPassive",
+   "value": true,
+   "comment": "the Sedjima participation in human affairs is quite passive - encouragement and cryptic advice through oracles the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SlarskenMatriarch",
+   "value": true,
+   "comment": "Slarsken Obel appears as a woman in matriarchies the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SlarskenCovets",
+   "value": true,
+   "comment": "Slarsken Obel secretly covets the Moriliroom power the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24TholtanoomaBodyguard",
+   "value": true,
+   "comment": "Tholtanooma prefers to send one of his Paladin Bodyguard rather than appear himself the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ManturinAidEnemies",
+   "value": true,
+   "comment": "incautious supplicants may find Manturin aiding their enemies - he always carefully considers all the factors the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ManturinNeutralPaladins",
+   "value": true,
+   "comment": "Neutral Paladinhood is possible in the Manturin service to those sufficiently dedicated to the Balance the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RilliflohamFireNormal",
+   "value": true,
+   "comment": "fire does only normal damage against Rillifloham the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RilliflohamWildConspire",
+   "value": true,
+   "comment": "the Rillifloham enemies find all the living things of the wild conspiring against them the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RasanUsurper",
+   "value": true,
+   "comment": "Rasan Korya is always scheming to usurp the power of other gods - several minor, forgotten deities have been his victims the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24RasanWeaklings",
+   "value": true,
+   "comment": "Rasan Korya only looks with favor on those who can manage without his help the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24DemyuritasBards",
+   "value": true,
+   "comment": "Bards are always a favorite with Demyuritas the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GunggerCrossesWater",
+   "value": true,
+   "comment": "Gungger can cross water without trouble the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HaraProjectileProof",
+   "value": true,
+   "comment": "Hara cannot be touched by projectiles launched into the air the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ZkraclSpiesFires",
+   "value": true,
+   "comment": "it is said that Zkracl can spy through any fire - many hearths and forges have shrines to him the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ZkraclWaterProof",
+   "value": true,
+   "comment": "Zkracl is not affected by water the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ShaliroiHeatProof",
+   "value": true,
+   "comment": "Shaliroi is not affected by heat the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HiskWeaponsAppear",
+   "value": true,
+   "comment": "any sort of weapon Hisk wants will instantly appear in his hands the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HiskGallarna",
+   "value": true,
+   "comment": "Hisk rarely appears on the Prime Material plane - he is too involved in the great battles and contests of Gallarna, his kingdom in the clouds the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24KarnawennMadness",
+   "value": true,
+   "comment": "the sight of Karnawenn in his actual form drives mortals instantly mad, no saving throw the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24KarnawennOneTentacle",
+   "value": true,
+   "comment": "no more than one of the Karnawenn tentacles can appear on the prime material plane, and it must take some kind of a form, usually human the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24BleskutaGuises",
+   "value": true,
+   "comment": "Bleskuta is careful to appear stupider and much less cunning than he is, and has walked the earth in many different guises the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24TemanamatSatyrs",
+   "value": true,
+   "comment": "Temanamat usually uses Satyrs as her messengers and agents the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GolodYellowSign",
+   "value": true,
+   "comment": "tattooed on the Golod chest is the Yellow Sign the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GolodSacrifice",
+   "value": true,
+   "comment": "Golod can only be appeased by human sacrifice, and looks most favorably upon those who have sent him the most lives the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24GolodUndeadService",
+   "value": true,
+   "comment": "those who serve Golod in life can expect to serve him afterwards as members of the undead the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24SogBestialServants",
+   "value": true,
+   "comment": "those in the Sog-Morthoth service tend to gradually become less human and more bestial, prefer subterranean living and may actually develop infravision the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ThaktaArmageddon",
+   "value": true,
+   "comment": "it is extremely rare for Thakta Tylden to appear at anything less than Armageddon-sized battles the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24ThaktaCowardKobolds",
+   "value": true,
+   "comment": "the cowardly Thakta Tylden followers may be turned into Kobolds the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24HeadsmanAlways",
+   "value": true,
+   "comment": "Marly is always accompanied by The Headsman the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24AmbitionTwice",
+   "value": true,
+   "comment": "the Ambition alignment on both axes - the Neutrality of Rasan Korya and the Chaos of Bleskuta the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "name": "s24WarTwice",
+   "value": true,
+   "comment": "the War alignment on both axes - the Law of Tholtanooma and the Chaos of Thakta Tylden the alignment pantheon variant (print 34+36-39)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "s24Pantheon",
+   "tag": "Pa",
+   "count": "s24PantheonCount",
+   "sentinel": -99,
+   "audit_comment": "the pantheon grid - the twenty-one prime deities in roster order, six Law, five Neutrality singles plus the four elemental lords, six Chaos, with the printed armor class, hit points, move, second move and damage pair",
+   "cols": [
+    "s24GodAc",
+    "s24GodHp",
+    "s24GodMove",
+    "s24GodMove2",
+    "s24GodDmgLo",
+    "s24GodDmgHi"
+   ],
+   "col_comments": [
+    "the armor class - negative better, the Morilirom irrelevant armor class carried as the sentinel",
+    "the hit points - the prime three hundred, the elemental lords two hundred",
+    "the printed move - the Hisk, Bleskuta, Temanamat, Golod, Sog-Morthoth and Thakta Tylden feet marks against the inch moves of the rest, the Morilirom and Karnawenn instantaneous moves carried as the sentinel",
+    "the second printed move - the Shaliroi thirty-six in water, the sentinel otherwise",
+    "the damage low die - the Marly staff, the Tholtanooma hammer, the Rasan Korya sword, the Rillifloham fists, the Gungger fists, the Hara hands, the Zkracl hands, the Shaliroi hands, the Bleskuta club, the Golod claws and the Thakta Tylden whip, the sentinel where the article prints no damage pair",
+    "the damage high die - the same printed pairs, the sentinel where the article prints none"
+   ],
+   "sentinel_census": [
+    1,
+    0,
+    2,
+    20,
+    10,
+    10
+   ],
+   "data": [
+    [
+     -99,
+     300,
+     -99,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -4,
+     300,
+     18,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -4,
+     300,
+     24,
+     -99,
+     4,
+     40
+    ],
+    [
+     0,
+     300,
+     12,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -5,
+     300,
+     36,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -6,
+     300,
+     24,
+     -99,
+     10,
+     100
+    ],
+    [
+     -5,
+     300,
+     24,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -3,
+     300,
+     12,
+     -99,
+     5,
+     50
+    ],
+    [
+     -4,
+     300,
+     12,
+     -99,
+     8,
+     80
+    ],
+    [
+     -2,
+     300,
+     24,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -4,
+     200,
+     12,
+     -99,
+     10,
+     100
+    ],
+    [
+     -2,
+     200,
+     72,
+     -99,
+     3,
+     30
+    ],
+    [
+     -2,
+     200,
+     36,
+     -99,
+     5,
+     50
+    ],
+    [
+     -2,
+     200,
+     12,
+     36,
+     3,
+     30
+    ],
+    [
+     -5,
+     300,
+     21,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -6,
+     300,
+     -99,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -5,
+     300,
+     18,
+     -99,
+     6,
+     60
+    ],
+    [
+     -1,
+     300,
+     12,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -4,
+     300,
+     24,
+     -99,
+     3,
+     30
+    ],
+    [
+     -2,
+     300,
+     18,
+     -99,
+     -99,
+     -99
+    ],
+    [
+     -6,
+     300,
+     24,
+     -99,
+     4,
+     40
+    ]
+   ]
+  },
+  {
+   "name": "s24Sons",
+   "tag": "Sn",
+   "count": "s24SonsCount",
+   "sentinel": -99,
+   "audit_comment": "the sons grid - the five Thakta Tylden sons, the Lakunth Weretiger, the Pakunth Stone Giant, the Rakunth Orcish demi-god, the Quakunth winged Troll and the Dakunth Type VI Demon printing on page 39",
+   "cols": [
+    "s24SonAc",
+    "s24SonHp",
+    "s24SonMr",
+    "s24SonLevel",
+    "s24SonAttacks"
+   ],
+   "col_comments": [
+    "the son armor class - the Lakunth minus one through the Pakunth four",
+    "the son hit points - the seventy-five through the ninety",
+    "the son magic resistance - the Pakunth fifty and the Dakunth eighty-five printed, the sentinel for the three without a printed resistance",
+    "the son level - the Lakunth fifteenth, the Quakunth tenth and the Dakunth twentieth printed, the sentinel for the giant and the demi-god",
+    "the son attacks per round - only the Rakunth three printed, the sentinel for the rest"
+   ],
+   "sentinel_census": [
+    0,
+    0,
+    3,
+    2,
+    4
+   ],
+   "data": [
+    [
+     -1,
+     75,
+     -99,
+     15,
+     -99
+    ],
+    [
+     4,
+     45,
+     50,
+     -99,
+     -99
+    ],
+    [
+     -2,
+     60,
+     -99,
+     -99,
+     3
+    ],
+    [
+     2,
+     45,
+     -99,
+     10,
+     -99
+    ],
+    [
+     2,
+     90,
+     85,
+     20,
+     -99
+    ]
+   ]
+  },
+  {
+   "name": "s24Aligns",
+   "tag": "Al",
+   "count": "s24AlignsCount",
+   "sentinel": -99,
+   "audit_comment": "the alignment roster - the eighteen prime alignments in print order with the axis, the slot letter and the prime deity index into the pantheon grid, the Four Elements pointing at Gungger, the first of the four lords",
+   "cols": [
+    "s24AlignAxis",
+    "s24AlignSlot",
+    "s24AlignDeity"
+   ],
+   "col_comments": [
+    "the axis - Law zero, Neutrality one, Chaos two",
+    "the slot within the axis - A zero through F five",
+    "the prime deity index into the pantheon grid - the Four Elements pointing at the Gungger row, Battle Glory at the Hisk row"
+   ],
+   "data": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     2
+    ],
+    [
+     0,
+     3,
+     3
+    ],
+    [
+     0,
+     4,
+     4
+    ],
+    [
+     0,
+     5,
+     5
+    ],
+    [
+     1,
+     0,
+     6
+    ],
+    [
+     1,
+     1,
+     7
+    ],
+    [
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     3,
+     9
+    ],
+    [
+     1,
+     4,
+     10
+    ],
+    [
+     1,
+     5,
+     14
+    ],
+    [
+     2,
+     0,
+     15
+    ],
+    [
+     2,
+     1,
+     16
+    ],
+    [
+     2,
+     2,
+     17
+    ],
+    [
+     2,
+     3,
+     18
+    ],
+    [
+     2,
+     4,
+     19
+    ],
+    [
+     2,
+     5,
+     20
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['s24PrimeAlignments']() != 18 or m['s24LawSlots']() != 6 or m['s24NeutralSlots']() != 6 or m['s24ChaosSlots']() != 6 or m['s24PrimeDeities']() != 21 or m['s24ElementalLords']() != 4 or m['s24SonsOfThakta']() != 5 or m['s24StandardSpellList']() != 14",
+   "note": "the frame - eighteen alignments at six per axis, twenty-one prime deities, four elemental lords, five sons, the fourteen-spell standard list the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24GodBaseHp']() != 300 or m['s24ElementalHp']() != 200 or m['s24GodHitMissRoll']() != 1",
+   "note": "the deity frame - the three-hundred prime and two-hundred elemental hit points, the one-in-twenty miss the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24HeadsmanHp']() != 150 or m['s24HeadsmanAc']() != -2 or m['s24HeadsmanMr']() != 100 or m['s24HeadsmanAxeBonus']() != 5 or m['s24HeadsmanHeight']() != 8",
+   "note": "the Headsman of Marly - armor class minus two, one hundred fifty hit points, total magic resistance and the plus-five two-handed vorpal axe the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24MoriliromTurnRange']() != 200 or m['s24WhickerwindHp']() != 40 or m['s24WhickerwindMove']() != 56 or m['s24CyrulliaUnicorns']() != 6 or m['s24CyrulliaMiraclePct']() != 5 or m['s24CyrulliaMiracleLevel']() != 7",
+   "note": "the High Law and Harmony pins - the two-hundred-foot Chaotic turn range, the Whickerwind pegasus, the six unicorns, the five-percent seventh-level miracle the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24MarlyTalismanPct']() != 10 or m['s24MarlyAidPct']() != 5 or m['s24MarlyNonLawfulAidPct']() != 1",
+   "note": "the Inquisitor percentages - the ten-percent talisman, the five-percent material aid, the one percent for the non-Lawful the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24SedjimaAuguryHalfPct']() != 3 or m['s24SedjimaContactPct']() != 2",
+   "note": "the Knowledge god - the one-and-a-half-percent Augury bonus pinned as three half-percent units, the two-percent Contact Other Plane bonus the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24SlarskenHits']() != 4 or m['s24SlarskenDamageAdd']() != 10",
+   "note": "the Evolution god - four strikes per round for plus ten damage with any weapon the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24TholtanoomaLawfulAdd']() != 4 or m['s24TholtanoomaChaoticSub']() != 4 or m['s24BodyguardAc']() != -2 or m['s24BodyguardLevel']() != 10 or m['s24TholtanoomaRewardPct']() != 5 or m['s24TholtanoomaCouragePct']() != 5",
+   "note": "the War god of Law - the plus-four and minus-four presence, the tenth-level Paladin Bodyguard at minus two, the two five-percent rewards the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24ManturinLightningDice']() != 15 or m['s24ManturinStarPoints']() != 8 or m['s24ManturinFireballDice']() != 10 or m['s24ManturinJavelinPoints']() != 20 or m['s24ManturinStarGrant']() != 15",
+   "note": "the Balance titan - the right-pan fifteen-dice lightning, the left-pan eight-pointed stars into ten-dice fireballs, the twenty-point javelins and fifteen-point stars the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24RilliflohamHeight']() != 40 or m['s24RilliflohamSummonLo']() != 3 or m['s24RilliflohamSummonHi']() != 18 or m['s24RilliflohamRewardPct']() != 10 or m['s24RasanFireballDice']() != 10 or m['s24RasanFavorPct']() != 5 or m['s24DemyuritasTeleportLo']() != 1 or m['s24DemyuritasTeleportHi']() != 20",
+   "note": "the Nature, Ambition and Esthetics pins - the forty-foot treant with his three-to-eighteen summons and ten-percent reward, the ten-dice fireballs and five-percent favor, the one-to-twenty-hex teleport the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24ElementalSummonLo']() != 1 or m['s24ElementalSummonHi']() != 12 or m['s24HaraHits']() != 6 or m['s24ZkraclFireballDice']() != 20",
+   "note": "the elemental lords - the one-to-twelve summons, the six Hara hits, the twenty-dice Zkracl fireball at save for half the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24BleskutaServantsLo']() != 1 or m['s24BleskutaServantsHi']() != 6 or m['s24BleskutaServantsPct']() != 3 or m['s24TemanamatHealingPct']() != 10 or m['s24GolodClaws']() != 4 or m['s24GolodUndeadPct']() != 5 or m['s24GolodRewardPct']() != 5",
+   "note": "the Chaos middle - the Bleskuta one-to-six servants at three percent, the Temanamat ten-percent-per-level healing, the four Golod claws with the two five-percent rolls the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24SogDiameter']() != 40 or m['s24SogFearRadius']() != 100 or m['s24SogAidPct']() != 5 or m['s24SogAidLo']() != 1 or m['s24SogAidHi']() != 10 or m['s24KarnawennTentaclePct']() != 10",
+   "note": "the Devolution and High Chaos pins - the forty-foot body, the one-hundred-foot permanent Fear, the five-percent one-to-ten-round doubling, the ten-percent tentacle the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24ThaktaWhipTargets']() != 3 or m['s24ThaktaWeaponPct']() != 10 or m['s24RakunthHitAdd']() != 6 or m['s24RakunthDmgAdd']() != 8 or m['s24HiskAttentionPct']() != 5",
+   "note": "the Chaos War and Battle Glory pins - the three-target whip, the ten-percent weapon reward, the Rakunth plus six and plus eight, the five-percent Hisk attention the alignment pantheon variant (print 34+36-39)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['s24GodAc'](1) != -4 or m['s24GodHp'](1) != 300 or m['s24GodMove'](1) != 18 or m['s24GodAc'](0) != -99 or m['s24GodMove'](0) != -99 or m['s24GodMove'](15) != -99",
+   "note": "the Cyrullia row - armor class minus four, three hundred hit points, move eighteen - and the Morilirom irrelevant armor class with the two instantaneous-move sentinels of Morilirom and Karnawenn the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24GodAc'](11) != -2 or m['s24GodMove'](11) != 72 or m['s24GodMove2'](13) != 36 or m['s24GodMove2'](0) != -99 or m['s24GodDmgLo'](8) != 8 or m['s24GodDmgHi'](8) != 80 or m['s24GodDmgLo'](19) != -99 or m['s24GodDmgHi'](20) != 40",
+   "note": "the elemental and damage spot checks - the Hara seventy-two move, the Shaliroi thirty-six water move, the Rillifloham eight-to-eighty fists, the Sog-Morthoth damage sentinel and the Thakta Tylden whip four to forty the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24SonAc'](0) != -1 or m['s24SonHp'](0) != 75 or m['s24SonLevel'](0) != 15 or m['s24SonAc'](1) != 4 or m['s24SonHp'](1) != 45",
+   "note": "the Lakunth row - the fifteenth-level Weretiger at minus one and seventy-five - and the Pakunth Stone Giant at four and forty-five the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24SonAc'](4) != 2 or m['s24SonHp'](4) != 90 or m['s24SonMr'](4) != 85 or m['s24SonLevel'](4) != 20 or m['s24SonAttacks'](2) != 3 or m['s24SonMr'](1) != 50",
+   "note": "the Dakunth row - the twentieth-level Type VI Demon at ninety hit points and eighty-five percent resistance - with the Rakunth three attacks and the Pakunth fifty the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24AlignAxis'](0) != 0 or m['s24AlignAxis'](6) != 1 or m['s24AlignAxis'](12) != 2 or m['s24AlignDeity'](6) != 6 or m['s24AlignDeity'](11) != 14 or m['s24AlignDeity'](12) != 15",
+   "note": "the roster axes in order with the High Neutrality Manturin, the Battle Glory Hisk and the High Chaos Karnawenn indexes the alignment pantheon variant (print 34+36-39)"
+  },
+  {
+   "expr": "m['s24AlignSlot'](5) != 5 or m['s24AlignSlot'](17) != 5 or m['s24AlignDeity'](10) != 10 or m['s24AlignDeity'](17) != 20 or m['s24AlignSlot'](2) != 2",
+   "note": "the two War slots closing Law and Chaos at the Tholtanooma and Thakta Tylden rows, the Four Elements pointing at Gungger the alignment pantheon variant (print 34+36-39)"
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "file_patches": [],
+ "data_files": [],
+ "seed_anchor": "## Knowledge maintenance",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "prev_seed_key": "  - R954 LANDED (3a5152d, t24, 134 inline, opener part one): The",
+ "prev_record": [
+  "  - R954 LANDED (3a5152d, t24, 134 inline, opener part one): The",
+  "  Dragon issue-24 opener part one, the variant triptych - three of",
+  "  the fourteen chains: the lost civilizations Source of the Nile",
+  "  variant (print 5-6, the Holmes supplement - the marker system,",
+  "  the explorers attitude numbers, the gods attitudes, the natives",
+  "  reaction rolls), the Chinese dragons variant roster (print 8-9,",
+  "  the five Lung variants with the sentinel -99 for the flightless",
+  "  Lung Wang and Yu rows, the flight organ, the color omens), and",
+  "  the lycanthropy infection variant (print 10-11, the infection",
+  "  bands, the alignment table, the attribute deltas with the",
+  "  printed duplicate Boar row kept and the conversion noted).",
+  "  134 inline = 70 consts + 45 bools + 19 table cols, 17",
+  "  examples, 8 table_checks, 4 tables (t24DragonTypes 6 rows x 8,",
+  "  t24LycanBands 7 x 2, t24LycanAlign 9 x 3, t24LycanAttrs 5 x 6);",
+  "  the intake seats the report-024 gap report plus all",
+  "  forty-eight transcripts (49 data files, the transcripts at",
+  "  extract/dragon/024). Census 876->877; rverify GREEN 234",
+  "  mutants 0 missed at base f8d76c8; round-trip 334482 bytes md5",
+  "  3684bca9df7ea0cb708a877d0acbc8dc, byte-exact at 3a5152d",
+  "  (fresh tarball re-run applied 0 already 54). TWO LESSONS",
+  "  PINNED: the opener's gap_census must mirror the PREVIOUS",
+  "  landed report's state ({closed:3, open:0}), not the new",
+  "  report's all-open shape - the engine reads the report before",
+  "  patching and aborts \"the gap closed count is 3, want 0\"",
+  "  otherwise; and the prev_seed_key must be prev_record[0]",
+  "  verbatim - the R953 record line WRAPS at \": The\", so a",
+  "  handoff key carrying \": The Dragon\" never matches and breaks",
+  "  the double-run with the mixed applied/already abort. Print",
+  "  catches pinned as scanned: Ross Maker credited then \"maker\"",
+  "  lowercase at the second reference, the comma-spliced \"equal",
+  "  to or less than, the explorers attitude number\" with its",
+  "  missing apostrophe, deal of magic for duel, the page ending",
+  "  \"wild animals\" without its period, unextractable for the",
+  "  Shen Lung flight organ, the dangling \"look favorably upon",
+  "  any mortal giving them\", hearts desire without its apostrophe",
+  "  (Yu Lung), Gods Demi-Gods and Heroes at p. 63 vs the intro's",
+  "  p. 68, the duplicate Boar attribute row reading the bear line,",
+  "  the blank rat row in the speed table, lowercase wolves, Bears",
+  "  in the third and fifth saving-throw rows (the fifth reading",
+  "  the boar line), \"a wolfs constitution\", \"type Glycanthropes\"",
+  "  run together, the twice-cited Determination of Attributes",
+  "  and Abilities vs the printed Determination of Abilities and",
+  "  Attributes (inverted). Watches: the Sullin levels 7-9 and the",
+  "  brawling sequel still empty in TD 24 - both ride to TD 25; the",
+  "  letters column (Out on a Limb) debuts at print 21+31 and rides",
+  "  the drop list as reader mail. Next: R955 part two, the Schick",
+  "  Ramifications of Alignment pantheon table round (print 34-39);",
+  "  the gap_report stays report-023 (3 closed 0 open), the data",
+  "  files unchanged in kind; prefix scan fresh at the then-HEAD",
+  "  (s24 next). WAIT FOR GO."
+ ],
+ "regtest": "regtest.cpp",
+ "inline_count": 146
+}

@@ -29177,6 +29177,56 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   folio-vs-page check, the chain call, the drop list, then
   the round plan); the Sullin levels 7-9 and the brawling
   long-term-effects watches come due there. WAIT FOR GO.
+  - R954 LANDED (3a5152d, t24, 134 inline, opener part one): The
+  Dragon issue-24 opener part one, the variant triptych - three of
+  the fourteen chains: the lost civilizations Source of the Nile
+  variant (print 5-6, the Holmes supplement - the marker system,
+  the explorers attitude numbers, the gods attitudes, the natives
+  reaction rolls), the Chinese dragons variant roster (print 8-9,
+  the five Lung variants with the sentinel -99 for the flightless
+  Lung Wang and Yu rows, the flight organ, the color omens), and
+  the lycanthropy infection variant (print 10-11, the infection
+  bands, the alignment table, the attribute deltas with the
+  printed duplicate Boar row kept and the conversion noted).
+  134 inline = 70 consts + 45 bools + 19 table cols, 17
+  examples, 8 table_checks, 4 tables (t24DragonTypes 6 rows x 8,
+  t24LycanBands 7 x 2, t24LycanAlign 9 x 3, t24LycanAttrs 5 x 6);
+  the intake seats the report-024 gap report plus all
+  forty-eight transcripts (49 data files, the transcripts at
+  extract/dragon/024). Census 876->877; rverify GREEN 234
+  mutants 0 missed at base f8d76c8; round-trip 334482 bytes md5
+  3684bca9df7ea0cb708a877d0acbc8dc, byte-exact at 3a5152d
+  (fresh tarball re-run applied 0 already 54). TWO LESSONS
+  PINNED: the opener's gap_census must mirror the PREVIOUS
+  landed report's state ({closed:3, open:0}), not the new
+  report's all-open shape - the engine reads the report before
+  patching and aborts "the gap closed count is 3, want 0"
+  otherwise; and the prev_seed_key must be prev_record[0]
+  verbatim - the R953 record line WRAPS at ": The", so a
+  handoff key carrying ": The Dragon" never matches and breaks
+  the double-run with the mixed applied/already abort. Print
+  catches pinned as scanned: Ross Maker credited then "maker"
+  lowercase at the second reference, the comma-spliced "equal
+  to or less than, the explorers attitude number" with its
+  missing apostrophe, deal of magic for duel, the page ending
+  "wild animals" without its period, unextractable for the
+  Shen Lung flight organ, the dangling "look favorably upon
+  any mortal giving them", hearts desire without its apostrophe
+  (Yu Lung), Gods Demi-Gods and Heroes at p. 63 vs the intro's
+  p. 68, the duplicate Boar attribute row reading the bear line,
+  the blank rat row in the speed table, lowercase wolves, Bears
+  in the third and fifth saving-throw rows (the fifth reading
+  the boar line), "a wolfs constitution", "type Glycanthropes"
+  run together, the twice-cited Determination of Attributes
+  and Abilities vs the printed Determination of Abilities and
+  Attributes (inverted). Watches: the Sullin levels 7-9 and the
+  brawling sequel still empty in TD 24 - both ride to TD 25; the
+  letters column (Out on a Limb) debuts at print 21+31 and rides
+  the drop list as reader mail. Next: R955 part two, the Schick
+  Ramifications of Alignment pantheon table round (print 34-39);
+  the gap_report stays report-023 (3 closed 0 open), the data
+  files unchanged in kind; prefix scan fresh at the then-HEAD
+  (s24 next). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
