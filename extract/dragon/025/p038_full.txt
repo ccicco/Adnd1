@@ -1,0 +1,106 @@
+
+The Dragon
+
+VOL. III, No. 11
+
+All projectile firing units and priest units are armed with swords if they are engaged in hand-to-hand. The projectile units drop one in strength value when involved with hand-to-hand and priests are 1.
+
+3.4. The Mexicans had a form of quilted cotton armor known as Ichahujibili. Players may designate 25% of their forces as having this armor. Such units should halve the figures in Table 4 or shift the enemy's odds column one to the left in Table 8 for the appropriate combat situation.
+
+3.5. Each army should be broken down into 10 unit (200 man) divisions. Each unit in a division should be within 2" of another member of the unit, and so on until there can be traced a chain of such association linking all members of the division together. At least one member of each division must be within 24" of the leader unit. Any violations cost each member of the division one morale point.
+
+3.6. Any side having prior access may conceal five elite units in any area of rough or uneven terrain. The side does so by informing the referee which units will hide where. These units remain hidden throughout the battle until they move or an enemy unit passes within 2".
+
+4.0 weather. Every 15 turns the referee will roll a die and consult Table 2. This will determine the weather for the next 15 turns. The weather affects morale and projectile firing.
+
+|  Season: | Winter | Spring | Summer | Fall  |
+| --- | --- | --- | --- | --- |
+|  Die# |  |  |  |   |
+|  1 | Snow | Rain | Thunderstorm | Thunderstorm  |
+|  2 | Snow | Rain | Thunderstorm | Rain  |
+|  3 | Clear | Rain | Rain | Rain  |
+|  4 | Clear | Clear | Rain | Clear  |
+|  5 | Clear | Clear | Clear | Clear  |
+|  6 | Clear | Clear | Clear | Clear  |
+
+Clear: No effects
+
+Rain: All morale numbers down 1
+
+Snow: All morale numbers down 1, projectile ranges halved
+
+Thunderstorm: All morale numbers down 2, projectile ranges halved
+
+The effects last for the full 15 turns.
+
+4.1. Either side may sacrifice 60 enemy men in 3 consecutive turns and change the Weather to Clear for the rest of that 15 turn period. However these sacrifices may not contribute to morale raising (see Prisoners & Sacrifices).
+
+5.0 projectile firing and effect. There are three projectile firing weapons available. They are the bow and arrow, sling and stone, and the atl-atl (javelin). In order for a projectile firing unit to fire on an enemy it must be able to sight the enemy and it must be in range.
+
+5.1. In order to sight an enemy one must be able to hold a straight edge from the center of the firing unit to the target with no intervening objects five feet or taller (relative to the firing unit's height). Forests may be considered 20 feet tall relative to their own level. Units in hiding or in a forested area may not be sighted.
+
+5.2. To find the maximum ranges of the weapon consult Table 3. Don't forget possible halving due to weather.
+
+|  Weapon | Max Range | Rate of Fire | % Hits  |
+| --- | --- | --- | --- |
+|  Bow | 4" | 12/turn | 100% x (2"/R) x (s/6)  |
+|  Sling | 3.5" | 8/turn | 100% x (1"/R) x (s/6)  |
+|  Atl-atl | 2" | 4/turn | 100% x (1"/R) x (s/6)  |
+
+After an appropriate target has been selected the firing unit refers to Table 3. The number of men in the unit is multiplied by the rate of fire (all rounds in a turn must be shot at the same target). Next the % Hits is calculated by placing the range in inches in R and the firing unit's strength in s. Multiply % Hits with the total number of shots to give the number of hits (Note: % Hits may not exceed 100%, and 10% should be subtracted if the target will be moving this turn). Now multiply the number of hits by the appropriate % in Table 4 to get the number of fatalities (round off) and, in the case of the sling (in parenthesis), the number rendered unconscious. These remain unconscious until the beginning of next turn, and should the unit move before then they are lost to that unit. Such abandoned men may be claimed as prisoners by the enemy unit moving over the spot in this turn. If not, they are just lost from the game.
+
+|  Weapon | Normal Men | Elite  |
+| --- | --- | --- |
+|  Bow | 2% | 1%  |
+|  Sling | 1.5% (3%) | .75% (1.5%)  |
+|  Atl-atl | 5% | 2.5%  |
+
+(example: a 15 man, 3 strength unit fires sling at an elite unit 1.5" away. That is 15 man x 8/turn or 120 stones fired at 100% x 1"/1.5" x 3/6 or 33% hits which is 39 hits with .75% fatalities or 0 killed and 1.5% unconscious or 1 out.)
+
+5.4. To round off .5 or higher is 1. and .4999 or lower is 0.
+5.5. Units which fired in one turn may not move during that turn. However a unit may fire only half its rate and then move half its rate.
+
+5.6. Projectile firing units may fire at 1,2,3, or 4 targets per turn (at least one round of fire at each target). For multiple targets the % Hit should be halved, thirded, or quartered as appropriate.
+
+6.0 movement. The amount of movement allowed a unit is dependent on the terrain it is moving over (see Table 5).
+
+|  Clear | Uneven | Rough | Swampy | 180 degrees  |
+| --- | --- | --- | --- | --- |
+|  4" | 3.75" | 2.5" | 1.5" | .5"  |
+
+In order for a unit to turn 180 degrees around it must expend .5" of its movement.
+
+6.1. When a unit moves from one terrain to another the referee should calculate how many inches of movement are left to the unit (example: a unit moves from clear to swampy after moving 3". The inches left is equal to 1/4 times 1.5 which is .38").
+
+6.2. A unit may not move through an enemy unit, and if it passes within 1/2" of an enemy unit it must stop. If it passes within 2" of a concealed enemy the enemy is exposed but the unit may continue with its move.
+
+6.3. A unit moving up a hill expends 1". A unit moving down a hill gains an extra 1".
+
+7.0 hand-to-hand combat. At the end of the movement turn if any opposing units are within 1/2" of each other they may engage in hand-to-hand combat. The players then calculate the strength ratio between the two units starting with their units' strength and using the multipliers given below. The unit with the lower number is called the defender and is given three options: defend, aggressive, or disarm. If the option is defend the strength of the unit is doubled and the turn passes to the aggressor. If the option is one of the others then the appropriate CRT is consulted (see 7.4).
+
+When the aggressor's turn comes he may choose either aggressive or disarm and then consults the appropriate CRT.
+
+7.1. A facing multiplier is given to the attacker if its unit faces the back (hind 180 deg.) of the defender. In this state the attacker is given a 3/2 multiplier.
+
+7.2. If a unit was not engaged last turn or under fire, and this turn it traveled its full movement to engage a stationary enemy it is given a shock multiplier as follows:
+
+|  Ratio of strengths |   | Shock Multiplier  |
+| --- | --- | --- |
+|  less than 1:1 |  | x1  |
+|  1:1 |  | x4/3  |
+|  more than 1:1 |  | x5/3  |
+
+7.3. Multipliers are given due to differences in weaponry as given below
+
+|  Multiplier is given to player 1  |   |   |   |   |
+| --- | --- | --- | --- | --- |
+|  Player 1: | Sword | Lance | Club | War Club  |
+|  Player 2 |  |  |  |   |
+|  Sword | x1 | x5/3 | x1 | x4/3  |
+|  Lance | x1/3 | x1 | x1/3 | x2/3  |
+|  Club | x1 | x5/3 | x1 | x4/3  |
+|  War Club | x2/3 | x4/3 | x2/3 | x1  |
+
+7.4. When either the attacker or defender chooses the aggressive or disarm option they consult the appropriate section of Table 8 and look under the modified strength ratio for his weapon. A die is then rolled and if the attacking unit is an elite unit it subtracts 1 from the roll. The number given is the percent of men killed. Those given in parenthesis are the percent disarmed.
+
+38

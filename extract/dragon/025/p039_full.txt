@@ -1,0 +1,83 @@
+
+May, 1979
+
+The Dragon
+
+|  Table 8  |   |   |   |   |   |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  AGGRESSIVE  |   |   |   |   |   |   |   |   |   |   |   |
+|  Weapon | 1:4 | 1:3 | 1:2 | 1:1 | 2:1 | 3:1 | 4:1 | 5:1 | 6:1 | 7:1 | 8:1  |
+|  Sword | 1:5 | 1:4 | 1:3 | 1:2 | 1:1 | 2:1 | 3:1 | 4:1 | 5:1 | 6:1 | 7:1  |
+|  Club | 1:6 | 1:5 | 1:4 | 1:3 | 1:2 | 1:1 | 2:1 | 3:1 | 4:1 | 5:1 | 6:1  |
+|  War Club | 1:7 | 1:6 | 1:5 | 1:4 | 1:3 | 1:2 | 1:1 | 2:1 | 3:1 | 4:1 | 5:1  |
+|  Lance | — | — | 5% | 5% | 10% | 10% | 20% | 20% | 30% | 40% | 50%  |
+|  Die# | — | — | — | 5 | 5 | 10 | 10 | 20 | 20 | 30 | 40  |
+|  1 | — | — | — | — | 5 | 5 | 10 | 10 | 20 | 20 | 30  |
+|  2 | — | — | — | — | — | 5 | 5 | 10 | 10 | 20 | 20  |
+|  3 | — | — | — | — | — | — | 5 | 5 | 10 | 10 | 20  |
+|  4 | — | — | — | — | — | — | — | 5 | 5 | 10 | 10  |
+|  5 | — | — | — | — | — | — | — | 5 | 5 | 10 | 10  |
+|  6 | — | — | — | — | — | — | — | — | 5 | 5 | 10  |
+|  Weapon | 1:3 | 1:2 | 1:1 | 2:1 | 3:1 | 4:1 | 5:1 | 6:1 | 7:1 | 8:1 | 9:1  |
+|  Lance | 1:4 | 1:3 | 1:2 | 1:1 | 2:1 | 3:1 | 4:1 | 5:1 | 6:1 | 7:1 | 8:1  |
+|  Club | 1:5 | 1:4 | 1:3 | 1:2 | 1:1 | 2:1 | 3:1 | 4:1 | 5:1 | 6:1 | 7:1  |
+|  Sword | 1:6 | 1:5 | 1:4 | 1:3 | 1:2 | 1:1 | 2:1 | 3:1 | 4:1 | 5:1 | 6:1  |
+|  War Club | — | — | — | 5% | 5% | 10% | 10% | 20% | 20% | 30% | 40%  |
+|  Die # | — | — | — | (10) | (10) | (20) | (25) | (30) | (40) | (45) | (50)  |
+|  1 | — | — | — | — | 5 | 5 | 10 | 10 | 20 | 20 | 30  |
+|  2 | — | — | — | — | (10) | (10) | (20) | (25) | (30) | (40) | (45)  |
+|  3 | — | — | — | — | — | 5 | 5 | 10 | 10 | 20 | 20  |
+|  4 | — | — | — | — | — | (10) | (10) | (20) | (25) | (30) | (40)  |
+|  5 | — | — | — | — | — | — | 5 | 5 | 10 | 10 | 20  |
+|  6 | — | — | — | — | — | — | — | 5 | 5 | 10 | 10  |
+|   |  |  |  |  |  |  |  | (10) | (10) | (20) | (25)  |
+|   |  |  |  |  |  |  |  | — | 5 | 5 | 10  |
+|   |  |  |  |  |  |  |  | — | (10) | (10) | (20)  |
+|   |  |  |  |  |  |  |  | — | — | 5 | 5  |
+|   |  |  |  |  |  |  |  | — | — | (10) | (10)  |
+
+(example: a 15 man unit, strength 3, armed with war clubs meets face to face with a 10 man unit, strength 5, armed with clubs and no shock strength. The first unit's modified strength (due to weapon difference) is 4 and elects to fight aggressive against the other unit's strength of 5. The ratio of 1:2, war club, aggressive, and die roll of 2 gives 5% of 10 which rounded up is 1 man killed. The other unit elects to fight disarm and rolls a 1. A club ratio of 1:1, roll of 1 yields a blank and no men are killed or disarmed.)
+
+7.5. No more than six units may attack an enemy unit in one turn. A unit may not attack an enemy unit if it is being attacked by a different enemy unit. If more than one unit attacks an enemy unit each attack is calculated separately with damage being cumulative and the order of attacks at the aggressor's choice.
+
+**8.0 prisoners and sacrifices.** If at the end of the Hand-to-Hand phase two opposing units are within 1/2' of each other and one or both units have either unconscious or unarmed men then the opposing unit may claim these as prisoners provided they have the same number of active, armed men plus at least half the number of enemy active, armed men to act as a covering force.
+
+(example: Two units face each other, one has five unarmed men and ten armed men; the opposing force must have five plus five or ten active, armed men in order to take prisoners.) It is possible for two facing units to take prisoners from each other.
+
+8.1. Any unit that has taken prisoners in one turn must on the next movement turn retreat from combat and move to the nearest, friendly priest unit. Should there be none, then the unit must move off the edge of the field that it entered. It must wait 1 turn with the priest unit or 2 turns off the field in order to turn over its prisoners. After that it is free to move and fight again. The player must keep track of the number of prisoners taken.
+
+8.2. Sacrifices may be made to change the weather (see weather) or to improve morale. In order to do this a priest unit must sacrifice 20 of its prisoners in one turn (which is the maximum rate at which they may do this). For each turn in which a priest unit sacrifices 20 men all friendly units add 1 to their morale level. This effect ends at the end of the turn and is not cumulative. Prisoners taken off the field may not be sacrificed.
+
+8.3. Any unit that captures prisoners goes up 3 levels in Morale when it returns to combat. This effect lasts for 15 turns.
+
+**9.0 morale.** A unit will have its morale level checked if it either comes under fire, engages in hand-to-hand combat, or an enemy unit leaves concealment within 2' of it.
+
+9.1. The following formula is used to compute morale level: Previous level (0 at start) + # of friendly units within 2' - # of enemy units within 2' + (unit's strength - 3)/2 + (men left in unit -10)/5 + any appropriate additives
+
+The additives are:
+
+- 1, -2 weather
+- +1 sacrifices
+- -1 under fire
+- -1 enemy units out of hiding 2'
+- +3(-3) Enemy (Friendly) leader caught or killed
+- +2(-2) Retreating enemy (friendly) units in sight
+- +2 Friendly leader engaged in combat
+
+9.2. The resulting number is referred to Table 9.
+
+|  Morale level | Combat option | Controllability  |
+| --- | --- | --- |
+|  M4 | Must advance | No new orders  |
+|  M3 | Must advance 3' | No new orders  |
+|  M2 | May advance 2' | New Orders  |
+|  M1 | May advance 1' | New Orders  |
+|  M0 | Stand | New Orders  |
+|  M-1 | May retreat 1' | New Orders  |
+|  M-2 | May retreat 2' | New Orders  |
+|  M-3 | Must retreat 3' | No new orders  |
+|  M-4 | Must retreat | No new orders  |
+
+9.3. If the unit has engaged in hand-to-hand combat then it follows the combat option. For M4 it must advance (within movement restric-
+
+39

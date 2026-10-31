@@ -1,0 +1,81 @@
+
+The Dragon
+
+VOL. III, No. 11
+
+# GAMMA WORLD ARTIFACT USE CHART
+
+by Gay Jaquet
+
+One of the more frequent criticisms of *Gamma World* is the Artifact Use Chart—and the criticism is somewhat justified. It can be mildly interesting to watch one's progress towards successfully learning the workings of an artifact (only to see the final roll result in a skull and crossbones), but it serves little purpose. The chart could easily be pre-calculated and the possible pathways computed to single percentage rolls. Therefore, I offer a new system for determining the use of *Gamma World* artifacts.
+
+The new Artifact Use Chart appears on the opposite page — it is somewhat similar to the old chart, but it is used in a different manner. One still rolls dice and follows the indicated path, but there are also provisions for players to make actual decisions during the process.
+
+To use the chart, a player starts at one of the numbered squares, the larger numbers representing more complex devices. In terms of the "old" charts, square 1 is roughly equal to chart A, square 3 equals chart B, and square 5 equals chart C. Squares 2 and 4 are provided to allow for additional referee discretion in determining the complexity of artifacts. As with the old charts, the player rolls a single 10-sided die and follows the indicated path.
+
+As the player follows the pathways, squares represent "correct" steps taken towards operation of the artifact. Diamonds represent incorrect steps, short cuts, omissions, etc. Generally, there is a greater chance for a "failure" from a diamond than from a square. A circle represents a failure in the operation procedure. A failure can range from simply spoiling the previous step and forcing the player to start again, to causing extensive damage. Each circle is identified by a letter, and the type of failure is determined by rolling on the table indicated by the letter. Upon reaching the square containing the asterisk, the use and operation of the artifact has been successfully determined.
+
+As with the old charts, a player receives five dice rolls per hour of total concentration on the artifact, and each additional player concentrating adds one die roll per hour. Die rolls are modified with respect to intelligence and mutations as with the old charts.
+
+Thus far, even with the large number of possible pathways on the chart, successful operation of an artifact could still be determined by a simple percentage roll. But this is where player choice comes in. Each time a player attempts to determine the use of an artifact, he starts with a number of "artifact use points" equal to his intelligence. At the cost of some of these points, a player may choose the path he takes on the chart. Choosing a path out of a square costs four points, choosing a path out of a diamond costs two points. Points are not cumulative, replaceable, or transferable in any way. They exist only for a single attempt by a single player at determining the use and operation of an artifact. These choices may be made any time during the overall process of attempting to learn artifact operation, before the die roll for a given square of diamond. (As an option, referees may even allow choice of "failure" roll after entering a circle. Cost: six points)
+
+Whenever a player decides to choose the path taken on the chart, rather than roll the die, there is no time penalty. (The choice represents an intuitive decision or hunch, rather than study.) Thus a character can spend an hour concentrating on an artifact, roll the die the maximum allowed five times, and (assuming he has an intelligence of 16) choose paths through four more squares, all in the same hour. Of course, then he has used up all his artifact use points for this attempt, and if operation and use has still not been determined, he will be left to the mercy of the die rolls until he either discovers the operation of the device or quits.
+
+A glance at the chart will show there are several strategic points where judicious use of the artifact use points and selection of certain paths can be of great advantage towards learning the operation of an artifact. Of course, it is also nice to hold the points in reserve, in case a string of bad die rolls leads off the optimum path and towards an area of high failure risk.
+
+While admittedly this method of determining the use and operation of artifacts is somewhat abstract, it does give the players a chance to use some of their own logic, hunches, or daring in the process, but at the same time (through the artifact use points) ties the process to the "abilities" of his character.
+
+FAILURE TABLE
+
+|  die roll | a | b | c | d  |
+| --- | --- | --- | --- | --- |
+|  1 | NE | NE | NE | NE  |
+|  2 | NE | NE | NE | D  |
+|  3 | NE | NE | D | X 1d6  |
+|  4 | NE | D | D | X 2d6  |
+|  5 | NE | D | D | X 2d6  |
+|  6 | D | D | X 1d6 | X 3d6  |
+|  7 | D | X 1d6 | X 2d6 | X 3d6  |
+|  8 | D | X 1d6 | X 2d6 | X 4d6  |
+|  9 | D | X 1d6 | X 3d6 | X max  |
+|  10 | X 1d6 | X 2d6 | X 4d6 | X max  |
+
+## 20th CENTURY PRIMITIVE
+
+Perhaps one of the most difficult situations encountered when refereeing *Gamma World* is that of characters with a primitive technology discovering advanced technology devices. Players will often have a character with 13th century knowledge react in a 20th century manner to a 24th century device . . .
+
+Player: "OK, we beat down the door with the log and hold our spears ready as it falls in. What do we see?"
+
+Referee: "You see a low bench or table with a small box or chest on it. The box has a smooth, sort of clear front — it might remind you of looking into a pool of water. Beneath it is a smaller box with several bead-like objects set in even rows across it. The beads have strange markings on them — each one different."
+
+Player: "I get on-line and type 'CALL DUMP MEMORY.' Everyone else looks for laser pistols and control batons. By the way, is there anything around here that looks like this might be a military security check-point. . .?"
+
+Well, perhaps I've exaggerated a bit, but maintaining a perspective on the consistency of the knowledge of the players, especially at the beginning of a campaign, is a problem. Many referees simply start the player/characters at a 20th century knowledge level and avoid the hassle, but to me, that's placing an unfortunate limit on the scope of the game, and tends to turn it into an exercise in collecting exotic weapons of destruction.
+
+Forcing players to maintain a low technology base, at least at the beginning of the campaign, also forces them to deal with situations in a more challenging and creative manner than the old "bomb it, pave it, paint some lines on it and turn it into a parking lot" method.
+
+Primitive characters need not be stupid — indeed, in the game format, they are the elite of their culture: adventurous, skillful, intelligent, able to make logical decisions and learn quickly from their mistakes. All that is necessary is a little sincerity on the part of the players in playing their characters as they could realistically expect them to behave. The referee can help this process by taking the time to consider how the ruined world of the 24th century would appear to a primitive, and by describing it accordingly.
+
+High level technology, to primitives, is, for all practical purposes, magic. This does not imply a need for human sacrifices to the God of the Nightlight, just a lack of knowledge as to the power behind the function. One need not know the workings of a generator to turn on a light switch.
+
+What this boils down to, is, in the early stages of a *Gamma World* campaign, the referee (in addition to his simple descriptions) should allow his player/characters to witness various uses of the technological devices about themselves, and learn from experience. They may not know, initially, exactly what they are doing, but they will know the results to expect. Indeed, this concept must be used not only as primitive characters discover 20th century technology, but also as characters with 20th century knowledge discover 24th century technology.
+
+There is a sense of "reality" to be considered (if that term can be applied to a science fiction role-playing game) in conducting a *Gamma World* campaign. Question it. Would you, as an average 20th century man, walk into the control room at Hoover Dam and start throwing switches for no reason, other than to see what happens? How 'bout finding yourself in SAC headquarters? Would you start typing "CALL DUMP MEMORY" on a computer terminal?
+
+Not only does the use of a primitive technology level provide a logical starting point, it also can add a sense of "reality" to an admittedly unreal situation. It's all up to the referee.
+
+## FAILURE TABLE RESULTS
+
+NE No effect —
+
+Return to previously occupied space
+
+D Artifact damaged —
+
+Roll percentile dice to determine point of damage to artifact — character may resume trying to determine operation and use of artifact by returning to previously occupied space
+
+X Artifact malfunctions —
+
+Causes damage to all within applicable range in amount indicated, from 1d6 to the maximum amount of energy stored within the artifact.
+
+24

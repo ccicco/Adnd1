@@ -29336,6 +29336,36 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   lines, point the walk at report-024 (3 closed 0 open post-flip),
   the bookkeeping consts and bools; prefix scan fresh at the
   then-HEAD (l24 next). WAIT FOR GO.
+  - R957 LANDED (13e6bcf, l24, 29 inline, the pure flip): The
+  Dragon issue-24 box closing round - no new ink, all three
+  report-024 boxes flipped at the single round: the part-one
+  variant triptych (R954, t24), the part-two alignment pantheon
+  (R955, s24) and the part-three ten-chain commentary set
+  (R956, k24) all checked, gap_census 3 closed 0 open, report-024
+  joining mm2 and ddg in the closed state. 29 inline = 17 consts +
+  12 bools, 6 examples, no tables - the exact R949 and R953
+  symmetry; the bookkeeping pins the shape itself - 3 boxes, 14
+  chains, 4 rounds (the third four-round shape), the opener
+  totals 134 + 146 + 291 = 571, the walk census issues 2-24 all
+  closed (twenty-three issues), the numbering agreement (Vol. III
+  No. 10, April 1979, number 24), the folio-equals-PDF-page check,
+  the single-voice transcript pin (no archive.org djvu cross-check
+  exists for issue 24), the unchanged registry ground truth
+  1313/1338/25, the census pinned true at 879/880 matching the
+  engine gate (R953 flip consts sat one low at 874/875 against
+  the 875-to-876 gate - noted here, landed history not
+  rewritten), and the two watches riding to TD 25 (the Sullin
+  levels 7-9, the brawling sequel). Census 879->880; rverify
+  GREEN 29 mutants 0 missed at base 2fdfd2f; round-trip 18219
+  bytes md5 556d83b31ede857d6b9bbde2127ba432, byte-exact at
+  13e6bcf (fresh tarball re-run applied 0 already 8; the flip
+  round eight patches carry the gap report in the git add). THE
+  ISSUE-24 FOUR-ROUND SHAPE IS COMPLETE: R954 t24 3a5152d, R955
+  s24 d9edf2b, R956 k24 2fdfd2f, R957 l24 13e6bcf. Next: TD 25 -
+  the fresh intake (transcripts, the folio-vs-page check, the
+  chain call, the drop list, then the round plan); the Sullin
+  levels 7-9 and the brawling long-term-effects watches come due
+  there. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

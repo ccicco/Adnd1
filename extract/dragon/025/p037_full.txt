@@ -1,0 +1,74 @@
+
+May, 1979
+
+The Dragon
+
+Helmets depicting their namesakes were often worn and ceremonial costumes that copied their coloration were worn in ceremonies and into battle. These orders performed dances and participated in rituals at the Tlacochcalco. They also participated in the mock battles of sacrifice. These Knights received large shares of land when conquered territories were divided between the warriors. (This practice gave an occupation force a way to support itself.)
+
+A warrior who was slain in battle or sacrificed after a defeat was guaranteed entry into a special warrior's heaven. This was to be found in the East and a special heaven for women who died in childbirth was in the West (they were felt to have sacrificed themselves for a potential new warrior). To die in these ways was the greatest honor a defeated warrior could receive. (Non-warriors and cowards were sold into slavery.) To some it was the culmination rather than the ruin of the lives. There is recorded the story of Tlahuicol who was a Tlaxclan chief. Having been captured in battle he was given the honor of the mock-gladitorial sacrificial combat. This meant that he was chained to a large round stone representing the sun and given wooden weapons, (no obsidian points or edges), and attacked one at a time by members of the Knights of the Eagle. In single combat he managed to kill a few and wound several more. The combat was stopped and Tlahuicol was offered the choice of the generalship of the Tlaxclan army or to be the sacrifice in their highest ritual. He chose to be the sacrifice, viewing it probably as the greater honor.
+
+These sacrifices were viewed then not as a punishment (criminals were killed or enslaved, but never sacrificed), but as an opportunity to give their final great contribution to their communities. It was believed that the sacrifices were needed to prevent the wrath of the gods and bring anything needed such as the rain or spring. Perhaps the only close honor was to obtain a prisoner in battle.
+
+A typical Aztec battle consisted of both sides coming upon each other, quickly forming up to charge and then rushing at each other amid fierce cries. Quickly this would break down into many combats between individuals and small groups. Both sides would contend, until one seemed to be gaining an advantage. The other would then break and run, avoiding capture to minimize their enemy's victory. Often the defeat and capture of a major chief was enough to cause the morale of one side to break.
+
+Many stratagems were used. Feints and deception were common, especially in the battles between the major cities. It was a common maneuver for one side to take a route and then lead their pursuers past a second force in hiding. This force would then fall on the rear of their pursuers while the routing force rallied. A cunning war chief was considered as valuable as a courageous one. Whoever won, sacrifices were assured and the gods appeased.
+
+If there was no war occurring, then an artificial war was instituted to assure sacrifices and give the warriors an opportunity to prove their skills. This was incongruously named the "War of Flowers." Though it was an artificial war those participating in it fought a very real battle. Many died and many more were captured for sacrifice before one group would concede defeat.
+
+Invited to participate were the best Knights and warriors of two or more rival states. The best warriors contended to be able to participate. If he won, a warrior would gain in renown throughout the cities. If he was killed, the warrior was given the honor of cremation. Reserved only for warriors, cremation guaranteed entrance to the special warriors' heaven. Finally, if defeated and captured a warrior was given the supreme honor of being sacrificed. So popular were these Wars of Flowers that some were repeated annually for years.
+
+The institution of war among the Aztecs evolved into something quite different from that which we perceive. It was foremost a means by which an individual could serve the all important tribe or city. It was an inherently ritualized and mystic event of deep-meaning and necessity. It was the only means by which captives needed to appease their blood-thirsty gods (actually it was the hearts they tore out and offered still throbbing). In a truly collective, military society it was the one area where an individual could gain renown and prestige.
+
+Aztec Command Structure
+Tlacatecuhtli — War chief, C in C
+Tlaxcola — Phratry Commander (4)
+Tlochcautin — Clan Commander
+
+# XOCHIYAOYOTL
+
+# Rules for
+Pre-Hispanic
+Mexican Warfare
+
+Neal M. Dorst
+
+1.0 introduction. The following is a set of rules for conducting miniature battles of the Pre-Hispanic Mexican (300-1500 A.D.) era. This era saw the rise and fall of many Indian empires and kingdoms from the great to the petty. The Mesoamericans developed a method of warfare unique and totally independent of Western European influence. In some respects it is primitive and in others it is highly advanced.
+
+The game is played in a series of turns in which the opposing sides make simultaneous moves in an effort to capture or kill as many of the opposing army as possible. It is recommended that a referee be on hand to run the game, settle disputes, and so forth. Each turn follows the sequence of play:
+
+1) Weather determination
+2) Sacrifices
+3) Projectile Firing & Effect
+4) Movement
+5) Hand-to-Hand Combat
+6) Prisoner Declaration
+
+Each of these will be explained in their sections.
+
+2.0 scale. Each unit or figure represents 20 men, each man in the unit having the same weapon and strength. One turn equals two minutes. One inch of horizontal distance equals 25 yards and one inch of vertical distance equals five feet. The bases on each unit should be 1.5 x 1.5 cm except for Spanish Cavalry which should be 1.5 x 3.5 cm.
+
+3.0 set up. A playing field should be set up according to the above scale taken from either real sources or the reader's imagination. It should have the terrain divided into clear, uneven (including forest), rough (mountains), and swampy for purposes of movement.
+
+3.1. Each of the opposing sides has a value assigned called its Military Prowess number. This determines their units strength (see Table 1). The number ranges from 1 to 5.
+
+|   | Table 1  |   |   |   |   |
+| --- | --- | --- | --- | --- | --- |
+|  Military Prowess | 1 | 2 | 3 | 4 | 5  |
+|  # Ratio | 1 | .9 | .75 | .6 | .5  |
+|  Die # |  |  |  |  |   |
+|  1 | 1 | 2 | 2 | 3 | 3  |
+|  2 | 2 | 2 | 3 | 3 | 4  |
+|  3 | 2 | 3 | 3 | 4 | 4  |
+|  4 | 3 | 3 | 4 | 4 | 5  |
+|  5 | 3 | 4 | 4 | 5 | 5  |
+|  6 | 4 elite | 4 elite | 5 elite | 5 elite | 6 elite  |
+
+Determine the Military Prowess number for each side, either by chance or by agreement. The number of units available to each side is then determined by the ratio # of Table 1. (example: If one side of M.P. #1 has 500 men then a side of M.P. #5 would have 250 men.) For each 20-man unit the player rolls a die and consults Table 1 which gives the strength of that unit and whether or not it is elite. This should be recorded for reference later.
+
+Each side then chooses which side of the field to enter. They may also determine which side had access to the field prior to the battle.
+
+3.2. Each side should now choose the weapons for each unit. Each army should have a leader and a priest unit. The leader unit is always 6 elite and priest unit is 1 elite. Over half the combat units should be armed with hand-to-hand weapons and of these there should be a 1 to 2 ratio of club units to war club units. Of the projectile firing units over half should be armed with all-att.
+
+3.3. Leader units consist of 20 men armed with war clubs with a strength value the maximum for their Military Prowess. When attacked or shot at the leader is the last man caught or killed.
+
+37

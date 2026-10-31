@@ -1,0 +1,82 @@
+
+The Dragon
+
+VOL. III, No. 11
+
+# VARIETIES OF VAMPIRES
+
+by R.P. Smith
+
+After considerable research I have found several different types of vampires from classical legends around the world, and arranged them in D&D format. I have not included all known vampires, just the more interesting ones.
+
+Number appearing, armor class, hit dice, and treasure are the same for all vampires. Normal weapons will not hurt any vampire. All types of vampires will avoid mirrors, garlic, or crosses. With one exception, all vampires will go into gaseous form if they lose all their hit points by magic.
+
+One must also consider the question of origin. If people can only become vampires through the bite of a vampire, where did the first one come from? According to the legends, the means can range from a simple death-bed curse and excommunication, through ancestry (s.g. one type was to be an Albanian of Turkish origin, another was to have red hair), through witchcraft, to violent death. The latter one is the easiest method for D&D. Hence, any body left unguarded without a Bless spell from a cleric will become a vampire within seven days.
+
+|  Type | Movement | Usual location  |
+| --- | --- | --- |
+|  common | 12/18 | anywhere  |
+|  asanbosam | 12/0 | jungle, plains  |
+|  burcolakas | 12/18 | mountains  |
+|  catacano | 12/18 | mountains  |
+|  lobishumen | 15/0 | jungle  |
+|  ekimmu | 12/18 | desert  |
+|  blautsauger | 12/18 | mountains, forest  |
+|  mulo | 12/18 | mountains, forest  |
+|  alp | 0/24 | forest, plain  |
+|  anananngel | 0/24 | jungle  |
+|  krvopijac | 12/18 | mountains, forest  |
+|  ch'ing-shih | 12 | anywhere  |
+|  vlkodlak | 12/18 | mountains, forest  |
+|  bruxsa | 12/18 | anywhere  |
+|  nosferat | 12/18 | mountains, forest  |
+
+Asanbosam (Africa): Men (9 hit dice), women (8 hit dice), or children (7 hit dice) who look normal except for a pair of books instead of feet. They can charm at minus 3, (except against clerics, whom they avoid) and can throw a single sleep spell per night. They can call 3-18 leopards or 2-12 tigers. Only a cleric can kill the asanbosam.
+
+Burcolakas (Greece): It has a swollen, tense, hard skin. It can scream once per night which deafens all in hearing range for 24 hours, no saving throw. It can also kill, not only by draining life levels, but by naming its victim by name and commanding the victim into a fatal action. It can imitate any voice it hears, with as much of a chance of being detected as an assassin has of being discovered in disguise. It controls 10-100 rats, but no wolves. To defeat: cut off and burn its head.
+
+Catacano (Crete, Rhodes): Always grinning with very white teeth. When not sucking blood, the catacano is busy doing toothpaste commercials. It spits blood (see giant slug for chance of hitting) which causes horrible burns. It can charm at minus 2. To defeat: burn its nails, boil its head in vinegar, or submerge its body in salted water.
+
+Lobishumen (Brazil): It looks like a small, stumpy, hunch-backed monkey with a yellow face, bloodless lips, black teeth, bushy beard, and plush-covered feet. It can charm at minus 4 and makes its victims (all women) into nymphomaniacs, if they survive. Women killed by a lobishumen while under its charm become succubi. There is a 60% chance that any woman who doesn't die while charmed by a lobishumen will be a nymphomaniac permanently. To defeat: Get it drunk, crucify it to a tree, then stab it with a stake through the heart.
+
+Ekimmu (Assyria): Invisible even while it attacks, it can charm at minus 1. It can also magic jar its victim. To exorcise the vampire in this state, a clerical dispel evil is needed, with a 50% chance of success when the cleric is the same level as the ekimmu, plus or minus 5% per level difference. To defeat: Subdue it with magic weapons long enough for it to be killed with a wooden sword.
+
+Blautsauger (Bosnia-Herzegovina): Hairy, with no skeleton, large eyes, it can polymorph itself into a rat or a wolf. It can charm at minus 3. It can only turn its victims into vampires by forcing them to eat earth
+
+from its grave. Those who consume the earth will become vampires when they die, even if not killed by the blautsauger. Only a wish will prevent this. Those who die from the blautsauger without eating the earth become spectres. To defeat: Burn its body or stab it through the heart with a stake.
+
+Mulo (Serbia): Men, women, and children wearing white clothes. They love wine. They are active day and night. They can polymorph into either horses or sheep. A mulo kills its victims by charming them (minus 2), then putting them into a large pot of boiling water. Blood draining by mulos will put the victim in suspended animation, awaiting the pot. To defeat: Get them drunk and leave quickly, or a cleric must fight them to the death.
+
+Alp (Saxony): A butterfly that attacks day and night. It settles on the chest of a victim and suffocates him. Each alp can call 10-100 ordinary butterflies and can throw one sleep spell per 24 hour period. To defeat: Find the corpse acting as recipient for the butterfly and put a lemon in its mouth. Without the lemon, destroying the body will force the alp to find another body, but not kill it.
+
+Anananngel (Philippines): A flying head with entrails filled with blood after feeding. It charms at minus 2 and can throw a fear spell at minus 3. There is a 50% chance that it is not undead, but a living witch. As such, it will not be turned by a cleric. To defeat: Sever the entrails to starve it or find the body where it sleeps during the day and hammer a stake through its heart. If splattered with blood from this vampire, the victim will have sores and diseases that only a cure disease applied daily for two to seven days will cure. The victim will be incapacitated until then.
+
+Krvopijac (Bulgaria): Only one nostril, otherwise like a common vampire. To find its grave, send a virgin on a black foal through the suspected area. Where the foal refuses to go is where it is buried. To defeat: Chain it to its coffin with a rope of wildflowers (may eventually break), or have a magic-user, holding a cross, order the vampire's soul into a bottle of blood and then throw it into a fire.
+
+Ch'ing-Shih (China): Red, staring eyes, pointed nails like claws, long hair, greenish-white skin, a very beautiful woman or handsome man in spite of everything. It can call 3-18 foxes. To defeat: encircle with rice.
+
+Vlkodlak (Serbia): It has a congested face and blood-red skin. It can cause eclipses. Otherwise, it is like a common vampire. It is active day and night. To defeat: cut off its toes and thumbs, drive a spike into its neck, pierce its navel with a stake (not its heart), then burn it, starting the fire with holy candles.
+
+Bruxsa (Portugal): A woman by day, a bird at night, hence it is active even in sunlight. Otherwise, it is like a common vampire. To defeat: same as with common vampire.
+
+Nosferat (Rumania): It appears as a man or a beautiful woman, depending upon the sex of its victim. In can polymorph into a cat, a dog, a beetle, a butterfly, or straw. It can charm, as a butterfly or straw by touch, at minus 2. To defeat: walk around its grave smoking pipeweed.
+
+|  Type | Number of Attacks | Damage  |
+| --- | --- | --- |
+|  common | 1 | 1-10 plus 2 levels  |
+|  asanbosam | 1 bite, 2 claws | 1-6,1-8,1-10/bite plus 2 levels according to size, 1-4/claw  |
+|  burcolakas | 1 | 1-10 plus 2 levels  |
+|  catacano | 1 spit, 1 bite | 1-12/spit, 1-10 plus 2 levels/bite  |
+|  lobishumen | 1 | 1-10 plus 2 levels  |
+|  ekimmu | 1 | 1-10 plus 2 levels  |
+|  blautsauger | 1 | 1-10 plus 2 levels  |
+|  mulo | 1 | 1-6,1-8,1-10 plus 2 levels according to size  |
+|  alp | 1 | 2 life levels  |
+|  anananngel | 1 | 1-12 plus 2 levels  |
+|  krvopijac | 1 | 1-10 plus 2 levels  |
+|  ch'ing-shih | 1 bite, 2 claws | 1-10 plus 2 levels/bite, 1-8/claw  |
+|  vlkodlak | 1-10 plus 2 level | 1-10 plus 2 levels  |
+|  bruxsa | 1 | 1-10 plus 2 levels  |
+|  nosferat | 1 | 1-10 plus 2 levels  |
+
+42

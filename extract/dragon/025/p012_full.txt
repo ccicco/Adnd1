@@ -1,0 +1,50 @@
+
+The Dragon
+
+VOL. III, No. 11
+
+## THE PROPER PLACE OF CHARACTER SOCIAL CLASS IN D&D®
+
+©Gary Gygax
+
+Insertion of randomly determined social class is sometimes touted as an improvement or valuable addition to the existing game system. This sort of assertion seems valid on the face of it, for doesn't the game benefit from assigning social classes to player characters? Isn't a new dimension added when the rank of characters is known and considered? Before answering those questions, consider from whence the idea of social classes came. Professor M.A.R. Barker suggested social classes in his instruction manual for his monumental game, *EMPIRE OF THE PETAL THRONE*. The *EN GARDE* game by Game Designers Workshop contained a lengthy treatment of social class and birth tables. Those who saw these works and decided to insert them into *D&D* failed to recognize one important singularity common to each of the aforementioned games which is not possessed by *DUNGEONS & DRAGONS®/ADVANCED DUNGEONS & DRAGON®*. Both the world of Tekumel and that of the Three Musketeers *et al* have a complex and detailed social system already devised for them — one from the creativity of Professor Barker, the other drawn from the history and legends of the period of Cardinal Richelieu, the early Seventeenth Century. *D&D* has no such cultural and social background.
+
+Because *D&D* does not have a predetermined culture and social structure, it is totally foolish to plug in a system which assigns a class rating to characters, unless the social class determination is very basic and non-specific such as:
+
+- 01-75 character is of common background
+- 76-95 character is of aristocratic background
+- 96-00 character is of upper class background
+
+Note that this sort of determination is not particularly useful, but it does not preclude a social order, either. Use of a more specific method causes the Dungeon Master to automatically accept a social order he or she may well have no desire to include in the campaign, for lack of knowledge or personal preference or any other reason. All of the social distinction tables assume nobility or offices or professions which are not universal to all cultures. Use of such tables means that the DM has accepted the premise that his or her campaign, in fact, has such classes of nobles, professions, or offices.
+
+*D&D* is a fantastic medieval game system. This does not mean that it is medieval in the European sense, although a campaign milieu based loosely upon mythical feudal Europe is not precluded. However, it could as well be set in the Near or Far East, in a mythical place, in a mythos with an ancient-medieval atmosphere (such as Robert E. Howard's "Hyborean Age"), or just about any other desired milieu. The important factor is medieval technology, not necessarily feudalism with primogeniture, entail, and a Salic Law.
+
+So-called birth tables are likewise of highly questionable value to DMs. These tables dictate to the Dungeon Master the rank of a male player character's birth, i.e. first, second, third, etc. Again, the information is useful only when a culture which is basically feudal European (with primogeniture, entail, and Salic Laws regarding inheritance and titles) is considered. What if some other system is desired by the DM?
+
+Out the window with the birth tables, of course. Furthermore, even if a basically feudal society is presupposed in the campaign, what use are birth tables which indicate that a player character is a first-born son of a ruling monarch or major noble? How can one conceive of such a personage going out adventuring at the risk of life and limb? Has the individual abdicated his inheritance? Does he have amnesia? Where are his guards and retainers? Does his sire know what he is doing and where? And all of this when a compatible social order is considered. Now envision use of such systems in a milieu which is neither feudal nor male-oriented — a hierarchy based on matriarchal principles, for example. Inclusion of such tables simply is unthinkable. For these very reasons, *D&D* does not contain any systems of social classification, for the DM must first decide upon the culture and society of the campaign before any valid system can be designed, and there are far too many variables, so the task is strictly that of the DM. Any detailed system will impose its own order upon the campaign, as well as possibly forcing the DM to accept certain premises regarding player characters which do not fit into the schema of the milieu.
+
+For the sake of discussion, a number of government forms are given below. Several of these names were coined on the spot in order to describe types of governments which would be applicable in a *D&D* campaign milieu. The list is by no means exhaustive, and DMs should feel right in devising any sort of government which is reasonable within the parameters they have set for their particular "worlds". Government forms are:
+
+- ANARCHY — No formal government and no social classes
+- ARISTOCRACY — Government by a privileged class, this class so vested with power to rule being determined by virtually any circumstances of social or economic relevance
+- AUTOCRACY — Government which rests in self-derived, absolute power (an emperor or dictator is typically an autocrat, but the variations are many)
+- BUREAUCRACY — Government by department, rule being through the heads and chief administrators of the various departments of the system
+- CONFEDERACY — A league of possibly diverse governmental and social entities designed to promote the common weal of each
+- DEMOCRACY — Government by the people, i.e. the established body of citizens, whether direct or through elected representatives
+- FEODALITY — Feudal government where each authority derives authority and power from the one above and pledges fealty in like manner
+- GERIATOCRACY — Government by the very old
+- GYNARCHY — Government by females only
+- HIERARCHY — Typically religious government with a structure somewhat similar to a feodality
+- MACOCRACY — Government by professional magic-users
+- MATRIARCHY — Government by the eldest females of whatever social units exist
+- MILITOCRACY — Government by military leaders and the armed forces in general
+- MONARCHY — Government by a single sovereign, usually hereditary, whether absolute in power or limited (such as the English monarchs were by the Magna Carta)
+- OLIGARCHY — Government by a few, usually absolute, rulers who are co-equal
+- PEDOCRACY — Government by the learned and savants
+- PLUTOCRACY — Government by the wealthy
+- REPUBLIC — A government of representatives of an established electorate
+- THEOCRACY — God-rule, or rule by a god's direct representative
+
+Let us assume a campaign in which the DM desires to develop play around two diverse portions of the campaign area, in this instance a portion of a continental land mass. The western nation is an oligarchy, while the east is fragmented into numbers of small feudal states which the oligarchy keeps in constant turmoil and warfare through clever machination. If player characters begin in an eastern land — more likely a place for adventuring — the social order will tend to be feudal or
+
+12

@@ -1,0 +1,54 @@
+
+May, 1979
+
+|  1 Victoria | 39 Amarillo | 77 Baton Rouge | 115 Syracuse  |
+| --- | --- | --- | --- |
+|  2 Seattle | 40 Lubbock | 78 New Orleans | 116 Scranton  |
+|  3 Tacoma | 41 Monterrey | 79 Birmingham | 117 Harrisburg  |
+|  4 Shelton | 42 San Antonio | 80 Chattanooga | 118 Baltimore  |
+|  5 Portland | 43 Austin | 81 Lexington | 119 D.C.  |
+|  6 Eugene | 44 Abilene | 82 Cincinnati | 120 Alexandria  |
+|  7 Reno | 45 Pierre | 83 Dayton | 121 Richmond  |
+|  8 Carson City | 46 Bismark | 84 Columbus | 122 Raleigh  |
+|  9 Sacramento | 47 Winnipeg | 85 Ft. Wayne | 123 Savannah  |
+|  10 San Francisco | 48 Lincoln | 86 Kalamazoo | 124 Charleston  |
+|  11 San Jose | 49 Topeka | 87 Grand Rapids | 125 Norfolk  |
+|  12 Monterrey | 50 Ok. City | 88 Lansing | 126 Wilmington  |
+|  13 Fresno | 51 Ft. Worth | 89 Toledo | 127 Philadelphia  |
+|  14 Bakersfield | 52 Dallas | 90 Detroit | 128 Reading  |
+|  15 Los Angeles | 53 Houston | 91 London | 129 Utica  |
+|  16 Riverside | 54 Little Rock | 92 Windsor | 130 Montreal  |
+|  17 San Diego | 55 Kansas City | 93 Sandusky | 131 Quebec  |
+|  18 Mexicali | 56 Jefferson City | 94 Cleveland | 132 Montpelier  |
+|  19 Las Vegas | 57 Des Moines | 95 Akron | 133 Schenectady  |
+|  20 Boise | 58 Rochester | 96 Charleston | 134 Albany  |
+|  21 Spokane | 59 Minneapolis | 97 Atlanta | 135 NYC  |
+|  22 Phoenix | 60 St. Paul | 98 Tallahassee | 136 Bridgeport  |
+|  23 Butte | 61 Duluth | 99 Tampa | 137 New Haven  |
+|  24 Idaho Falls | 62 Wausau | 100 Miami | 138 Hartford  |
+|  25 Pocatello | 63 Green Bay | 101 Ft. Lauderdale | 139 New Bedford  |
+|  26 Ogden | 64 Milwaukee | 102 Orlando | 140 Fall River  |
+|  27 Salt Lake City | 65 Lake Geneva | 103 Daytona Beach | 141 Providence  |
+|  28 Torreon | 66 Madison | 104 Jacksonville | 142 Boston  |
+|  29 El Paso | 67 Chicago | 105 Augusta | 143 Manchester  |
+|  30 Albuquerque | 68 Gary | 106 Wheeling | 144 Portland  |
+|  31 Santa Fe | 69 S. Bend | 107 Pittsburgh | 145 Augusta  |
+|  32 Casper | 70 Dubuque | 108 Youngstown | 146 Bangor  |
+|  33 Billings | 71 Springfield | 109 Erie | 147 St. John  |
+|  34 Leadville | 72 St. Charles | 110 Hamilton |   |
+|  35 Cheyenne | 73 St. Louis | 111 Toronto |   |
+|  36 Denver | 74 Nashville | 112 Rochester |   |
+|  37 Colo. Springs | 75 Memphis | 113 Ottawa |   |
+|  38 Pueblo | 76 Jackson | 114 Jensen |   |
+
+|  B | = Brotherhood of Thought | F | = Ranks of the Fit  |
+| --- | --- | --- | --- |
+|  S | = Seekers | A | = Archivists  |
+|  E | = Friends of Entropy | R | = Radio activists  |
+|  I | = Iron Society | C | = Created  |
+|  Z | = Zoopremists |  |   |
+|  H | = Healers |  |   |
+|  R e | = Restorationists |  |   |
+|  V | = Followers of the Voice |  |   |
+
+27

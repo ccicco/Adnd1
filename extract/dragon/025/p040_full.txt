@@ -1,0 +1,142 @@
+
+The Dragon
+
+VOL. III, No. 11
+
+tions) towards the nearest enemy unit. For any positive morale it may either advance to the given distance or, excepting M3, retreat or stand (Note: this takes place during next movement phase after the morale check). For M-4 the unit must retreat to its side of the board. For negative values the unit may retreat up to the given value, or, excepting M-3, retreat or stand.
+
+9.4. If the unit is not engaged in hand-to-hand then it may be moved as the player pleases except when controllability says no new orders. Then the player must follow instructions given under Combat option.
+
+9.5. The morale level remains until conditions warrant another check. Morale should be checked after Projectile Firing, Movement, and Hand-to-hand Combat for those units affected.
+
+9.6. When a unit with M-4 retreats from the field it is lost. If it passes within 2" of the leader unit it may check its morale (should it still be M-4 it continues to retreat). Should a leader unit retreat from the field it counts as caught or killed for other units' morale checks.
+
+**10.0 ending and victory.** The battle ends when one or both sides retreat from the field, by mutual agreement, when a prior time limit is reached, or one side is completely captured or killed.
+
+10.1. Each side totals its points using the following scale:
+
+Enemy Leader captured + 5
+
+Enemy Leader killed + 3
+
+Enemy Elite captured + 4
+
+Enemy Elite killed + 2
+
+Enemy Man captured + 3
+
+Enemy Man killed + 1
+
+For each man sacrificed count as captured and subtract 1
+
+Subtract the smaller total from the larger and consult Table 10 for degree of victory.
+
+Table 10
+
+|  0-50 | Draw  |
+| --- | --- |
+|  51-100 | Minimal Victory  |
+|  101-150 | Victory  |
+|  151+ | Superlative Victory  |
+
+10.2. The players may elect to fight a Xochiyaoyotl (War of Flowers) in which the object is to take as many prisoners as possible. Leader units may *not* be attacked unless they attack first. Units are restricted to either the Disarm or Defend options in hand-to-hand. The point scale is as follows:
+
+Enemy leader captured + 10
+
+Enemy elite captured + 5
+
+Enemy man captured + 3
+
+All sacrifices count as captured
+
+Enemy man killed -1
+
+# **Spanish Optional Rules**
+
+**1.00 introduction.** These rules are to be used for battles with Spanish units and their allies. These take precedence over basic rules.
+
+**2.00 scale.** All cannon units have five cannons and 20 men. In firing only count number of cannons, and any cannon with one to four men manning it may fire.
+
+Spanish Morion
+
+**3.00 set-up.** All Spanish units are rated 6 elite. The Spanish ratio # is .25, but this does not include allied Meso-american units. (Example: one side has 500 M.P. #1 units so there are 125 Spanish and 375 allies of M.P. #3)
+
+3.01. Army setup: One leader on Horse. Over half force armed with hand-to-hand weapons, over half projectiles must be crossbow, and less than 10% of force may be either Horse or Cannon.
+
+3.02. All Spanish units have steel armor which acts just like Ichahupilli. However, Ichahupilli is *not* effective against either Arquebusier or Cannon units.
+
+**4.00 weather.** Both cannon and arquebusier units may *not* fire in Thunderstorm. All ranges halved as given.
+
+**5.00 projectile firing and effect.** For the Spanish units there are three projectile firing weapons: Crossbow, Musket, or Cannon (Falconette). Use the following as you use Table 3 and Table 4.
+
+|  Table 1A  |   |   |   |
+| --- | --- | --- | --- |
+|  Weapon | Max Range | Rate of Fire | % Hits  |
+|  Crossbow | 6" | 8/turn | 100% x (4"/R)  |
+|  Arquebusier | 3" | 2/turn | 100% x (1"/R)  |
+|  Cannon | 30" | 1/turn | 100% x (20"/R)  |
+
+|  Table 2A  |   |   |   |
+| --- | --- | --- | --- |
+|  Weapon | Normal Men | Elite Men |   |
+|  Crossbow | 3% | 1.5% |   |
+|  Arquebusier | 5% | 2.5% |   |
+|  Cannon | 100% | 50% |   |
+
+**6.00 movement.** The following Table is mounted and artillery units.
+
+|  Table 3A  |   |   |   |   |
+| --- | --- | --- | --- | --- |
+|  Unit | Clear | Uneven | Rough | Swamp  |
+|  Horse | 8" | 7" | 4" | 3"  |
+|  Cannon | 3" | 2.5" | 2" | —  |
+
+6.01. Cannon units may not travel through swampy areas.
+6.02. Spanish units must travel in column, i.e., one or two units abreast in line, facing the same way, and with less than 2" between each unit. Movement is as normal.
+
+**7:00 hand-to-hand combat.** Spanish units may fight in column or line. Line is a one-unit abreast column with units facing to the side instead of the front. Indian units have a 2/3 multiplier unless they have a canceling shock multiplier.
+
+7.01. All weapon multipliers are given to the Mexican units.
+
+|  Table 4A  |   |   |   |   |
+| --- | --- | --- | --- | --- |
+|   | Sword | Lance | War | Club  |
+|  Horse | x1/2 | x1 | x1/3 | x1/3  |
+|  Steel Sword | x 2/3 | x4/3 | x1 | x2/3  |
+|  Pike | x1/3 | x1 | x2/3 | x2/3  |
+
+7.02. Mexican units attacking a Spanish unit must use either the Disarm or Defend option. Spanish and their allies have the full set of options.
+
+7.03. For Steel Sword use the Sword odds in Table 8. For Pike use Lance, and for Horse Swordsmen use Club.
+
+**8.00 prisoners and sacrifices.** Spanish units and their allies may take prisoners, but they may *not* sacrifice them. Spanish units pass prisoners on to ally's priest for holding.
+
+8.01. Spanish prisoners must be sacrificed by their captors before any Indian allies. However, they may be mixed to make a unit of 20.
+
+**9.00 morale.** The following additives may be used:
+
++2 sacrifices with Spanish captives
+
+-2 under Spanish fire
+
+-1 engaged in Hand-to-hand with Horse unit
+
+-1 Spanish enemy within 2"
+
++ 1 Spanish friend within 2"
+
+**10.00 ending and victory.** Add the following points:
+
+Spanish Leader captured + 10
+
+Spanish Leader killed + 5
+
+Spanish man captured + 5
+
+Spanish man killed + 3
+
+Count sacrifice as capture minus 2
+
+10.01. Spanish do not participate in Xochiyaoyotl battles.
+
+40

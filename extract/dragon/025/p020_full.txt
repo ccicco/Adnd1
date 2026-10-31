@@ -1,0 +1,151 @@
+
+The Dragon
+
+VOL. III, No. 11
+
+# THE TRAVELLER NAVY WANTS TO JOIN YOU: New Service Opportunities for Navy Characters
+
+R.D. Stuart
+
+With the success of GDWs Mercenary supplement to their Traveller game system players generating Army and Marine personnel now have a wide range of skills and expertise areas from which to produce well-rounded characters. While Mercenary leaves the "ground pounders" in fair shape, other Traveller services can occasionally appear lack-lustre in comparison.
+
+Given the importance of any future naval institution capable of insuring security over interstellar distances, it seems only fitting that the naval arm in Traveller be given equal time. The following therefore is a proposed variant on the standard method used to generate naval personnel in Traveller, utilizing the same format as in Mercenary, with the following changes and additions.
+
+Any character choosing (or drafted into) the navy must choose a branch of that arm in which to serve: Ship's Complement Support Services, or Security. Skills are attained by completing yearly assignments with occasional throws for survival, commissioning, promotion, etc. Ranks for enlisted men and officers are given by the following tables. Note that two additional officer ranks between Captain and Admiral have been added.
+
+Skills acquired are identical to those presented in Booklet One, with the following additions specifically for naval personnel:
+
+Jump-Drive: Expertise in hyper-atomic physics and propulsion systems for space flight
+
+Fleet Tactics: Strategic & Tactical handling of fleet warships in combat conditions
+
+Wenching: Basic Carousing. Can also be used as a DM+ Level against Reaction Table when non-player character is of the opposite sex.
+
+Decorations are awarded to naval personnel as follows: on the exact die roll required, player is awarded the Naval Star of Bravery. On a DR of +1 required, player is awarded the Sunburst for Conspicuous Gallantry. If DR +2 is achieved the player is awarded the Naval Cluster for Heroism.
+
+In the course of their four-year terms of duty players will draw either routine fleet or special assignments. NOTE: The first assignment of any player consists of one-year basic training & advanced service training. Players must successfully throw against a survival roll, as per Mercenary, and receive a basic +1 Blade Combat as an addition to their N.O.T. roll an advanced skill.
+
+It is hoped that in utilizing this variant players and referee will now be able to generate characters able to compete with specialized army and marine personnel already on hand. And while naval starmen are not generally considered for Mercenary assignments, specialized characters can of course apply for deep-space exploration teams, colonizing efforts, and a host of other possibilities. Given skills and a little imagination on the players' behalf no doubt new and rewarding gaming opportunities will occur. And so, now, the Traveller navy is ready to join you!
+
+NAVAL OCCUPATION TABLE
+
+|  Die Roll | Ship's Complement | Support Services | Security  |
+| --- | --- | --- | --- |
+|  1 | Ship's Boat | Steward | Bld. Combat  |
+|  2 | Vac. Suit | F.O. | Gn. Combat  |
+|  3 | Gunnery | Medical | Gn. Combat  |
+|  4 | Mechanical | Engineering | Vac. Suit  |
+|  5 | Jack-O-Trades | Computer | Survival  |
+|  6 | Navigation | Electronics | Zero-G  |
+|  7 | Pilot | Jump Drive | Battle Dress  |
+
+DM (+1) If Tech Level of world is 12+
+
+## RANKS
+
+### Enlisted Men
+
+|  S1 Starman | 01 Ensign (Trav. Rank 1)  |
+| --- | --- |
+|  S2 Starman II class | 02 Lieutenant (Trav. Rank 2)  |
+|  S3 Starman I class | 03 Lt.-Commander (Trav. Rank 3)  |
+|  S4 Starman (Chief) | 04 Commander (Trav. Rank 4)  |
+
+S5 Starman (Gunnery Chief)
+
+S6 Starman (Ship's Chief)
+
+S7 Starman (Master Chief)
+
+S8 Starman (Fleet Chief)
+
+05 Captain (Trav. Rank 5)
+
+06 Commodore (Trav. Rank 5)
+
+07 Fleet Captain (Trav. Rank 6)
+
+08 Admiral (Trav. Rank 6)
+
+SKILL TABLES
+
+|  Die Roll | Navy Life | Chief Skills | Command Skills | Staff  |
+| --- | --- | --- | --- | --- |
+|  1 | +1 Str | Gn Cmbt. | Navigation | F.O.  |
+|  2 | +1 Dex | Navigation | Computer | Medical  |
+|  3 | +1 End | Jump Drive | Leadership | Fleet Tactics  |
+|  4 | +1 Hell | Instruction | Leadership | Mechanical  |
+|  5 | Gambling | Leadership | Fleet Tactics | Admin  |
+|  6 | Wenching | Gunnery | Pilot | Admin  |
+|  7 | Brawling | Admin | +1 Soc | +1 Soc  |
+|  8 | Bld. Cmbt | +1 Soc | +1 Soc | +1 Soc  |
+
+Navy Life: 01 +1, 02 +2, 03 Above +3
+
+Chief Skills: S4 + 1, S5 + 2, S6+3, S7+4, S8 +5
+
+Command/Staff Skills: Rank 3-4 + 1, Rank 5-6 +2
+
+Above modifiers are optional at player's discretion
+
+GENERAL ASSIGNMENT
+
+|  Die Roll | Ship's Complement | Support Services | Security  |
+| --- | --- | --- | --- |
+|  1 | Command | Command | Command  |
+|  2 | Command | Command | Command  |
+|  3 | Command | Staff | Staff  |
+|  4 | Command | Staff | Staff  |
+|  5 | Staff | Staff | Special  |
+|  6 | Special | Special | Special  |
+|  7 | Special | Special | Special  |
+
+AU except officers treat Command and Staff Rolls as Fleet assignments.
+
+DM (+) Education 9+ allowed
+
+Officers may choose DM (-1)
+
+FLEET ASSIGNMENT
+
+|  Die Roll | Ship's Complement | Support Services | Security  |
+| --- | --- | --- | --- |
+|  2 | Raid | Raid | Raid  |
+|  3 | Raid | Fleet Act. | Raid  |
+|  4 | Anti-Piracy | Planetary Support | Raid  |
+|  5 | Refit & Repair | Patrol | Fleet Action  |
+|  6 | Refit & Repair | Refit & Repair | Fleet Action  |
+|  7 | Refit & Repair | Refit & Repair | Patrol  |
+|  8 | Patrol | Patrol | Patrol  |
+|  9 | Patrol | Exploration | Patrol  |
+|  10 | Patrol | Planetary Support | Refit & Repair  |
+|  11 | Fleet Action | Planetary Support | Refit & Repair  |
+|  12 | Fleet Action | Patrol | Exploration  |
+
+## DEFINITIONS
+
+Raid Raid on planetary system in conjunction with other military support
+
+Anti-Piracy Ship assignment against commerce raiders
+
+Patrol Protection of planetary systems and normal space lanes
+
+Exploration Mapping expedition — survey of uncharted planet system
+
+Planetary Support.: Planetary Support to established colonies or naval installations.
+
+Refit & Repair Refitting, drydocking, repair of vessel, relaxation, rest leave for ship's crew
+
+SPECIAL ASSIGNMENT
+
+|  Die Roll | Enlisted Men & Chiefs | Officers  |
+| --- | --- | --- |
+|  1 | Recruiting | Recruiting  |
+|  2 | Cross Training | Naval Intelligence  |
+|  3 | Protected Forces | Fleet Command School  |
+|  4 | Specialist School | Staff School  |
+|  5 | Marine Attach. | Marine Attach.  |
+|  6 | O.C.S. | Military Aide/Attache  |
+|  7 | O.C.S. | Fighter Command  |
+
+20
