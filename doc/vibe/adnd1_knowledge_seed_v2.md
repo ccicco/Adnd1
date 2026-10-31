@@ -28923,6 +28923,43 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   Planes 1-24 d% table, the Ring of Elemental Command, the attack matrix
   I.D.1, the psionic IV.B-IV.D, three saving-throw matrices,
   grenade-like missiles). WAIT FOR GO.
+  - R947 LANDED (8c3b563, s22, 320 inline, opener part two): The Dragon
+  issue-22 opener part two, the AD&D Sneak Preview of the Dungeon Masters
+  Guide - the single-chain table round, print 33-38 + 41-43 (PRINT FOLIO
+  = PDF PAGE). Twelve tables: s22Amulet tag Am 17x3 the amulet of the
+  planes 1-24 d%, s22Periapt Pp 4x3, s22HitOnly Mw 4x4 the plus grades,
+  s22Thieves Id 21x7 the I.D.1 matrix, s22ElemScroll Es 5x3 the elemental
+  scrolls, s22LycanScroll Ly 7x3 the lycanthrope scrolls, s22PsiCrush Pc
+  6x8 the IV.B attack strengths, s22PsiBlast Np 11x4 the IV.C psionic
+  blast, s22PsiRange Rg 5x3 the IV.D attack modes, s22UndeadTurn Cu 13x10
+  the turning undead matrix, s22CharSave Sv 28x7 save matrix I, s22ItemSave
+  Is 14x11 save matrix III. 320 inline = 204 consts + 50 bools + 66 table
+  cols, 19 examples + 12 table_checks; gap report 022 no-op 0 closed 3
+  open; no data files (part-two round). Conversions noted never silent:
+  T/D/D*/dash 97/98/99/0 at the turning matrix, the IV.B crush dashes as
+  0. Print catches pinned as scanned: Freet Giant Jari for the G2 Frost
+  Giant Jarl; con penetrate; jackolwere; wralths; Ghost printed twice
+  for Ghast; Petrifaction; the farce/an die footnote; the missing I.D
+  footnote e; the I.B AC-3 row prints 11 and dropped the AC-10 cell;
+  five I.C bands over four columns plus the dangling Opponent; the
+  overlapping IV.B band 210-269; the parchment fireball save 25. WATCHES
+  STILL EMPTY: the Sullin levels 7-9 and the brawling sequel print
+  nowhere in TD22 - both ride to TD 23. Census 869->870; rverify GREEN
+  1103 mutants 0 missed; round-trip 106753 bytes md5
+  45481cf6b930b7a236fd43085822284b, byte-exact at 8c3b563 (fresh
+  tarball re-run applied 0 already 5). ENGINE GAP CAUGHT IN PREFLIGHT:
+  table count const existence is not Python-gated - s22ElemScrollCount
+  and s22LycanScrollCount were referenced by the audit loops but
+  undefined in the first spec, and only the C++ compile caught it; the
+  fix added both consts (inline 318->320), and the builder now asserts
+  every table count resolves to a const so the class is closed.
+  RECOVERY LESSON: after an aborted round, rm of the two new files alone
+  leaves the tracked patched files stale - the R420 mixed applied/already
+  abort fires; restore the tracked files to HEAD as well. Next: R948
+  issue-22 opener part three, five chains - What It Is and Where It Is
+  Going print 29-30, Nomenclature of Pole Arms print 50-54, SPI on AD&D
+  print 44, Stalemate at Kassala print 45-47, Mapping the Dungeons
+  catalog print 18-28. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
