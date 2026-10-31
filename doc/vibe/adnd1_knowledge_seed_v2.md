@@ -29514,6 +29514,39 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   chains, then the R965 l26 flip); the R962 spec
   data_files carry report-026 plus all fifty-two
   transcripts. WAIT FOR GO.
+  - R962 LANDED (c839b60, t26, 80 inline, the opener set): The
+  Dragon issue-26 opener part one - the opener set, five of
+  the thirteen Curtiss-called chains at print 13-14 +
+  26-30 + 39: the Giants in the Earth column debut (the
+  three heroes - Cugel the 14th level thief with the 85
+  percent luck and the lucounu spells, Kane the 30/20/14
+  triple-class with the 05 percent assassination pin,
+  Tros the 15th level paladin), the Sagui hireling pay
+  doctrine (the 72 GP two-year advance, the demihuman
+  and orc price ladders, the 65 percent hammer grab),
+  the Krebs SAGE microcomputer piece (the worked arc
+  hit-chart example, the repeating-room labyrinth), the
+  Crane moderator dark secrets (the pit escalation, the
+  jello decoys, the 15-character reward method) and the
+  Gygax D&D AD&D gaming history essay (the Bath
+  pre-CHAINMAIL priority, the 1973 manuscript, the
+  January 1974 publication, the new-game doctrine). 80
+  inline = 45 consts + 35 bools, 10 examples, no tables;
+  data files 53 - report-026 plus all 52 transcripts, the
+  report and the transcripts rebuilt from the durable OCR
+  before the build, the transcript total matching the
+  recorded 290148 bytes exactly. Census 884->885; rverify
+  GREEN 80 mutants 0 missed at base 49d1f41; round-trip
+  341544 bytes md5 895640c308667ee8a23d2eccd56ca67b,
+  byte-exact at c839b60 (fresh tarball re-run applied 0
+  already 58). The R961 record seated in the repo seed
+  with its house The-tail first line intact. Part one of
+  the TD 26 four-round shape complete - five of the
+  thirteen chains down; R963 s26 next, the table round
+  (Chinese Undead 20-21, the Nine-Point Alignment chart
+  23, the Deck of Fate 24-25, the Strength Comparison
+  Table 38). The two watches ride to TD 27 (the Sullin
+  levels 7-9, the brawling sequel). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
