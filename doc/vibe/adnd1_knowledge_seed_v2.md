@@ -29714,6 +29714,45 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   violates charter rule 11, plain-
   commit removal pending. WAIT FOR
   GO.
+  - R968 LANDED (58a63d7, rpf, 12
+  inline, the format round): THE
+  RULES RECORD FORMAT - the arc
+  round three, no book ink: the
+  content/rules/ record shape
+  pinned - one Lua record per pin
+  round (a bucket holds many
+  records, the file is the
+  adjudication - Curtiss's
+  2026-10-31 call over the
+  one-big-book-file), buckets by
+  source book, records as
+  mechanical translations of the
+  spec JSONs (the spec stays the
+  adjudicated record, never
+  hand-edited, the translation
+  back the proof), the battery
+  from records (rverify
+  semantics), the Dragon set
+  first. 6 consts + 6 bools; the
+  format doc landed as the data
+  file doc/rules_record_format.
+  md. No flips; census 890->891;
+  rverify GREEN 12 mutants 0
+  missed at base 5f11f29;
+  round-trip applied 0 already 6,
+  byte-exact at 58a63d7; spec
+  10064 bytes md5 117eacf4030dbf
+  c232d1eeb7e4a7757f. The R967
+  record seated in the repo seed.
+  KNOWN ISSUE found at R969 prep:
+  the rpfDragonSpecs 128 measure
+  was a grep over-match (WSG, OA,
+  DMO, MM2, DDG and FF specs and
+  self-references caught) - the
+  walked Dragon set is R887-R965,
+  79 rounds; the correction rides
+  R969 (the R632 measure-twice
+  class). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
