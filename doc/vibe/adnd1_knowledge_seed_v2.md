@@ -30072,6 +30072,46 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   byte-matched 40/40 on the
   landed records before the
   batch. WAIT FOR GO.
+  - R977 LANDED (4b50188, dp9, 7
+  inline, the promotion batch
+  nine): THE DRAGON PROMOTION
+  BATCH NINE - the arc round
+  twelve, issues 17 through 18
+  complete, THE HALFWAY MARK:
+  jou (the jousting opener, 209
+  items), wzd (the Wizard With
+  A Dog opener, 170), f17 (29),
+  psy (the insanity chart
+  opener, 114), mkn (the Sullin
+  new spells opener, 178), f18
+  (29) - 6 records, 729 model
+  items, 192398 bytes Lua (the
+  heaviest batch so far),
+  every record parsed back
+  equal. 4 consts + 3 bools:
+  dp9BatchRecords=6,
+  dp9ModelItems=729,
+  dp9CumulativeRecords=50,
+  dp9SetRoundsRemaining=29,
+  dp9RecordsPromoted,
+  dp9DiffBackGreen,
+  dp9IssuesSeventeenEighteen
+  Complete. Census 899->900; no
+  flips; gap report 026 stays
+  3/0. Double-run applied 11/
+  already 11, verify at
+  4b50188 already 11 with all
+  50 records on disk (1155486
+  bytes Lua); rverify GREEN 7
+  mutants 0 missed at base
+  4360209; spec 210026 bytes
+  md5 06ec632591402e90ee577994
+  b405381c, canvas r977-spec.
+  The R976 record seated in the
+  repo seed. The lib rebuilt and
+  byte-matched 44/44 on the
+  landed records before the
+  batch. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
