@@ -1,0 +1,233 @@
+{
+ "round": 968,
+ "prefix": "rpf",
+ "inline_count": 12,
+ "census_before": 890,
+ "title": "The rules record format round (census 891)",
+ "banner": {
+  "title": "The rules record format - the Lua record shape for content/rules/",
+  "provenance": "The content-structure arc round three, no book ink: the rules record format adjudicated with Curtiss 2026-10-31 - one Lua record per pin round, the mechanical translation of the round's spec JSON (the spec stays the adjudicated record, the lua is promoted, never hand-edited); buckets by source book (phb, dmg, ddg, dragon, ...), one file per round; the battery derives from records (rverify semantics) and regtest shrinks to engine plus smoke once it is GREEN record-side; the Dragon set (issues 2-26, 128 specs) promotes first. The format document rides doc/rules_record_format.md."
+ },
+ "header_file": "rules/rpf.h",
+ "audit_file": "rules/audits/r968_batch.h",
+ "audit_label": "R968 rules record format audit",
+ "audit_comment": "the format audit - ten record fields, five model pools, the 25 Dragon issues and 128 specs of the first batch, and the six format doctrines, every fact fail-on-wrong",
+ "audit_anchor": "#include \"rules/audits/r967_batch.h\"  // R967: R967 content tree creation audit",
+ "include_after": "#include \"rules/cnt.h\"  // R967: the content tree creation round",
+ "include_comment": "the rules record format round",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R967 LANDED (b259495, cnt, 10",
+ "prev_record": [
+  "  - R967 LANDED (b259495, cnt, 10",
+  "  inline, the tree creation): THE",
+  "  CONTENT TREE CREATION - the arc",
+  "  round two, no book ink: the",
+  "  content/ skeleton lands via 13",
+  "  .keep data files (rules, npcs,",
+  "  items, items/artifacts, spells,",
+  "  tables, tiles, objects, world +",
+  "  the three world buckets + the",
+  "  karatur expansion bucket) and the",
+  "  monster registry MOVES - git mv",
+  "  monsters/monsters to content/",
+  "  monsters, 1338 records unchanged,",
+  "  the loader path rewritten in SIX",
+  "  places (adnd1.cpp x2, regtest x2,",
+  "  normalize_registry x1, the R314",
+  "  engine audit fragment x1). 5",
+  "  consts + 5 bools; census 889->890;",
+  "  rverify GREEN 10 mutants 0 missed",
+  "  at base dfb11f1; round-trip applied",
+  "  0 already 24, byte-exact at",
+  "  b259495; spec 8725 bytes md5",
+  "  7bad36f5c8bb129c352abc020fcbed04.",
+  "  The v1 RED LESSON (two aborts):",
+  "  the user-side git mv never ran",
+  "  (loaded 0), then the R314",
+  "  crossbow and aquatic ENGINE audit",
+  "  read bad 3 - its fragment holds a",
+  "  RUNTIME letter-dir loadDirectory,",
+  "  the one live ref the five-line",
+  "  touch list missed; its early",
+  "  return 1 truncated the whole",
+  "  census chain. STANDING LESSON: a",
+  "  path-move touch list scans CALL",
+  "  SITES (grep loadDirectory",
+  "  repo-wide), never just the path",
+  "  string - rules/audits/ fragments",
+  "  hold live loader paths too.",
+  "  SECOND LESSON (the R420",
+  "  refinement): the mixed applied/",
+  "  already gate aborts on ANY mix -",
+  "  a fixed-spec re-land restores ALL",
+  "  v1-touched files to base first",
+  "  (git restore --source), never a",
+  "  partial unwind. The R966 record",
+  "  seated in the repo seed. KNOWN",
+  "  HYGIENE: content/monsters/.keep",
+  "  rode the landed tree (created",
+  "  during the repair sequence) -",
+  "  violates charter rule 11, plain-",
+  "  commit removal pending. WAIT FOR",
+  "  GO."
+ ],
+ "gap_report": "tools/dragon_gap_report_026.md",
+ "gap_census": {
+  "closed": 3,
+  "open": 0
+ },
+ "gap_flips": [],
+ "data_files": [
+  {
+   "path": "doc/rules_record_format.md",
+   "content": "# Adnd1 rules record format\n\nThe Lua record shape for content/rules/, adjudicated with\nCurtiss 2026-10-31 and pinned R968. This document defines\nwhat a rules record is, where it lives, and how it is\nverified.\n\n## The record\n\nOne Lua record per pin round - the mechanical translation\nof the round's spec JSON (the model section). The spec\nstays the adjudicated record; the Lua record is promoted\nfrom it, never hand-edited.\n\n```lua\n-- {prefix}: promoted from tools/spec_r{NNN}.json (the\n-- round title); DO NOT hand-edit; the spec JSON stays the\n-- adjudicated record.\nreturn {\n  round = NNN,\n  prefix = \"...\",\n  banner = { title = \"...\", provenance = \"...\" },\n  consts = { { name = \"...\", value = 14,\n               comment = \"...\" }, ... },\n  bools = { { name = \"...\", value = true,\n              comment = \"...\" }, ... },\n  switches = { { name = \"...\", values = { ... },\n                 default = -1 }, ... },\n  tables = { { name = \"...\", sentinel = -1,\n               cols = { ... }, data = { ... },\n               col_comments = { ... } }, ... },\n  chains = { { name = \"...\", limits = { ... },\n              tail = 6 }, ... },\n  examples = { { expr = \"...\", note = \"...\" }, ... },\n  audit = { label = \"...\", comment = \"...\" },\n}\n```\n\nThe sections: round, prefix, banner, consts, bools,\nswitches, tables, chains, examples, audit - ten fields,\nfive model pools (consts, bools, switches, tables,\nchains). Optional pools are absent when the source spec\ndeclares none.\n\n## The buckets\n\ncontent/rules/{phb,dmg,ddg,mm,mm2,ff,ua,oa,ds,wsg,mop,\ndragon,...}/{prefix}.lua - bucketed by source book, one\nfile per round. A bucket holds many records: the bucket is\nthe printed taxonomy, the file is the adjudication.\n\n## The promotion doctrine\n\nRecords are generated from the spec JSONs by the batch\nbuilder; the translation back is the proof - a record must\nrebuild its spec's model byte-identically. DO NOT\nhand-edit a record; fix the spec and re-promote.\n\n## The testing move\n\nThe battery derives from records: build the model\n(speclib semantics), run the examples, mutate every\nconst, bool, cell and band - rverify's semantics pointed\nat records instead of specs. The pin headers stay until\nthe battery is GREEN record-side; regtest then shrinks to\nengine plus smoke test.\n\n## The first batch\n\nThe Dragon set (issues 2-26, 25 issues, 128 round specs)\npromotes first - recent specs, easy verify - landing in\nbatches under content/rules/dragon/.\n"
+  }
+ ],
+ "consts": [
+  {
+   "name": "rpfRecordSections",
+   "value": 10,
+   "comment": "the record fields - round, prefix, banner, consts, bools, switches, tables, chains, examples, audit"
+  },
+  {
+   "name": "rpfModelPools",
+   "value": 5,
+   "comment": "the model pools - consts, bools, switches, tables, chains (the speclib shape)"
+  },
+  {
+   "name": "rpfDragonIssues",
+   "value": 25,
+   "comment": "the first batch - Dragon issues 2-26, twenty-five issues all closed"
+  },
+  {
+   "name": "rpfDragonSpecs",
+   "value": 128,
+   "comment": "the Dragon round specs, the promotion source set measured at R968"
+  },
+  {
+   "name": "rpfBatchSize",
+   "value": 128,
+   "comment": "the batch rides the 128-spec measure (the count the promotion builder walks)"
+  },
+  {
+   "name": "rpfFormatVersion",
+   "value": 1,
+   "comment": "the record format version - the R968 shape, versioned for the promotion tooling"
+  }
+ ],
+ "bools": [
+  {
+   "name": "rpfRecordPerRound",
+   "value": true,
+   "comment": "one Lua record per pin round - a bucket holds many records, the file is the adjudication (Curtiss, 2026-10-31)"
+  },
+  {
+   "name": "rpfBucketByBook",
+   "value": true,
+   "comment": "buckets by source book - content/rules/{phb,dmg,ddg,dragon,...}/, the printed taxonomy"
+  },
+  {
+   "name": "rpfPromotedFromSpecs",
+   "value": true,
+   "comment": "records are mechanical translations of the spec JSONs - the translation back is the proof"
+  },
+  {
+   "name": "rpfNoHandEdit",
+   "value": true,
+   "comment": "DO NOT hand-edit a record - fix the spec and re-promote (the monster def doctrine)"
+  },
+  {
+   "name": "rpfBatteryFromRecords",
+   "value": true,
+   "comment": "the battery derives from records - speclib semantics, rverify's mutants, pointed at records"
+  },
+  {
+   "name": "rpfDragonFirst",
+   "value": true,
+   "comment": "the Dragon set promotes first - recent specs, easy verify - then the walk books"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "file_patches": [],
+ "examples": [
+  {
+   "expr": "m['rpfRecordSections']() != 10 or m['rpfModelPools']() != 5",
+   "note": "the shape - ten record fields over the five model pools"
+  },
+  {
+   "expr": "m['rpfDragonIssues']() != 25 or m['rpfDragonSpecs']() != 128 or m['rpfBatchSize']() != 128",
+   "note": "the first batch - 25 Dragon issues, 128 round specs walked by the promotion builder"
+  },
+  {
+   "expr": "m['rpfRecordPerRound']() != 1 or m['rpfBucketByBook']() != 1",
+   "note": "the cut - one record per round, buckets by source book"
+  },
+  {
+   "expr": "m['rpfPromotedFromSpecs']() != 1 or m['rpfNoHandEdit']() != 1",
+   "note": "the doctrine - promoted from specs, the translation back the proof, never hand-edited"
+  },
+  {
+   "expr": "m['rpfBatteryFromRecords']() != 1 or m['rpfDragonFirst']() != 1 or m['rpfFormatVersion']() != 1",
+   "note": "the move - the battery from records, the Dragon set first, format version one"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the format frame": [
+   {
+    "kind": "const",
+    "name": "rpfRecordSections"
+   },
+   {
+    "kind": "const",
+    "name": "rpfModelPools"
+   },
+   {
+    "kind": "const",
+    "name": "rpfDragonIssues"
+   },
+   {
+    "kind": "const",
+    "name": "rpfDragonSpecs"
+   },
+   {
+    "kind": "const",
+    "name": "rpfBatchSize"
+   },
+   {
+    "kind": "const",
+    "name": "rpfFormatVersion"
+   }
+  ],
+  "the format doctrines": [
+   {
+    "kind": "bool",
+    "name": "rpfRecordPerRound"
+   },
+   {
+    "kind": "bool",
+    "name": "rpfBucketByBook"
+   },
+   {
+    "kind": "bool",
+    "name": "rpfPromotedFromSpecs"
+   },
+   {
+    "kind": "bool",
+    "name": "rpfNoHandEdit"
+   },
+   {
+    "kind": "bool",
+    "name": "rpfBatteryFromRecords"
+   },
+   {
+    "kind": "bool",
+    "name": "rpfDragonFirst"
+   }
+  ]
+ }
+}

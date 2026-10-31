@@ -29662,6 +29662,58 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   the skeleton (data_files .keeps)
   plus the monsters git-mv with its
   five touch lines. WAIT FOR GO.
+  - R967 LANDED (b259495, cnt, 10
+  inline, the tree creation): THE
+  CONTENT TREE CREATION - the arc
+  round two, no book ink: the
+  content/ skeleton lands via 13
+  .keep data files (rules, npcs,
+  items, items/artifacts, spells,
+  tables, tiles, objects, world +
+  the three world buckets + the
+  karatur expansion bucket) and the
+  monster registry MOVES - git mv
+  monsters/monsters to content/
+  monsters, 1338 records unchanged,
+  the loader path rewritten in SIX
+  places (adnd1.cpp x2, regtest x2,
+  normalize_registry x1, the R314
+  engine audit fragment x1). 5
+  consts + 5 bools; census 889->890;
+  rverify GREEN 10 mutants 0 missed
+  at base dfb11f1; round-trip applied
+  0 already 24, byte-exact at
+  b259495; spec 8725 bytes md5
+  7bad36f5c8bb129c352abc020fcbed04.
+  The v1 RED LESSON (two aborts):
+  the user-side git mv never ran
+  (loaded 0), then the R314
+  crossbow and aquatic ENGINE audit
+  read bad 3 - its fragment holds a
+  RUNTIME letter-dir loadDirectory,
+  the one live ref the five-line
+  touch list missed; its early
+  return 1 truncated the whole
+  census chain. STANDING LESSON: a
+  path-move touch list scans CALL
+  SITES (grep loadDirectory
+  repo-wide), never just the path
+  string - rules/audits/ fragments
+  hold live loader paths too.
+  SECOND LESSON (the R420
+  refinement): the mixed applied/
+  already gate aborts on ANY mix -
+  a fixed-spec re-land restores ALL
+  v1-touched files to base first
+  (git restore --source), never a
+  partial unwind. The R966 record
+  seated in the repo seed. KNOWN
+  HYGIENE: content/monsters/.keep
+  rode the landed tree (created
+  during the repair sequence) -
+  violates charter rule 11, plain-
+  commit removal pending. WAIT FOR
+  GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
