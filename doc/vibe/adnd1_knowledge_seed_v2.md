@@ -29366,6 +29366,34 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   chain call, the drop list, then the round plan); the Sullin
   levels 7-9 and the brawling long-term-effects watches come due
   there. WAIT FOR GO.
+  - R958 LANDED (7518210, t25, 48 inline, the opener set): The
+  Dragon issue-25 opener part one - the opener set, three of the
+  eight Curtiss-called chains at print 12-19: the Gygax social
+  class essay (print 12-13, the birth tables rejected, thieves in
+  the lowest two, MACOCRACY and the tripled churchmen catches),
+  the Armies of the Renaissance Part III commentary (print 17,
+  the White Company at its height of 2,000 longbowmen and 2,000
+  men-at-arms, the French invasion year 1490, the Sir John
+  Haukwood catch) and the Harrop orc taxonomy guide (print
+  18-19, five evil family races and the Orkus three species,
+  the gholl/orcom/a-man-orcs/Variages-of-Khan catches). 48
+  inline = 27 consts + 21 bools, 7 examples; the adjudication
+  is the eight-chain shape of the 2026-10-31 calls - the
+  Traveller navy and the Gamma World pieces dropped as
+  non-D&D, the Armada Disasters history (print 9-11) dropped
+  in the usable-only redo (pure narrative, no game ink).
+  Census 880->881; rverify GREEN 48 mutants 0 missed at base
+  13e6bcf; round-trip 299032 bytes md5
+  c69e5954e2c7654ff4d2779644b3250d, byte-exact at 7518210
+  (fresh tarball re-run applied 0 already 54, data files
+  49/49 - report-025 plus all 48 transcripts). The part-one
+  report-025 boxes are checked; part two (R959 s25, the
+  Xochiyaoyotl 37-40 table round plus the Varieties of
+  Vampires 42) and part three (R960 k25) still open; the
+  watches ride to TD 26 (the Sullin levels 7-9, the brawling
+  sequel, a fourth issue running), and the Flower Wars and
+  Conquistadores chains stay period-piece-thin for the R960
+  adjudication. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

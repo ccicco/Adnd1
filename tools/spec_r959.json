@@ -1,0 +1,1299 @@
+{
+ "round": 959,
+ "prefix": "s25",
+ "census_before": 881,
+ "title": "The Dragon issue-25 opener part two: the war game and the vampire roster (census 882)",
+ "banner": {
+  "title": "The Dragon issue-25 opener part two - the war game and the vampire roster",
+  "provenance": "The part-two round of the issue-25 four-round shape - two of the eight Curtiss-called chains as the table round: the Neal M. Dorst Xochiyaoyotl rules for pre-Hispanic Mexican warfare (print 37-40) with the prowess ratio grid, the weather table, the projectile ranges, the morale bands, the War of Flowers points and the Spanish optional rules, and the R.P. Smith Varieties of Vampires roster (print 42) - fifteen types from the common vampire through the asanbosam, the burcolakas, the catacano, the lobishumen, the ekimmu, the blautsauger, the mulo, the alp, the anananngel, the krvopijac, the Chinese hopping vampire, the vlkodlak, the bruxsa and the nosferat, the movement pairs and the charm adjustments on the grid. All pinned from The Dragon Vol. III No. 11 (May 1979) print 37-40 and 42 at extract/dragon/025, PRINT FOLIO = PDF PAGE this issue, the single-voice transcript of the Curtiss-provided scan. The part-one opener set landed at R958; the three-chain commentary set rides R960 and the flip to follow; the two inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in issue 25 and ride to TD 26."
+ },
+ "header_file": "rules/s25.h",
+ "audit_file": "rules/audits/r959_batch.h",
+ "audit_label": "R959 issue-25 table round audit",
+ "audit_anchor": "#include \"rules/audits/r958_batch.h\"  // R958: R958 issue-25 opener set audit",
+ "audit_comment": "the two-chain table round audit - the Xochiyaoyotl war game with the scale, the prowess grid, the morale and victory brackets and the Spanish option, and the vampire varieties with the fifteen type roster, the charm adjustments and the call bands",
+ "gap_report": "tools/dragon_gap_report_024.md",
+ "gap_census": {
+  "closed": 3,
+  "open": 0
+ },
+ "gap_flips": [],
+ "include_after": "#include \"rules/t25.h\"  // R958: the Dragon issue-25 opener part one, the three-chain opener set",
+ "include_comment": "the Dragon issue-25 opener part two, the war game and the vampire roster table round",
+ "header_sections": {
+  "the Xochiyaoyotl war game rules (print 37-40)": [
+   {
+    "kind": "const",
+    "name": "s25MenPerUnit"
+   },
+   {
+    "kind": "const",
+    "name": "s25TurnMinutes"
+   },
+   {
+    "kind": "const",
+    "name": "s25YardsPerInch"
+   },
+   {
+    "kind": "const",
+    "name": "s25FeetPerVerticalInch"
+   },
+   {
+    "kind": "const",
+    "name": "s25ProwessRangeLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25ProwessRangeHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25ProwessDieCount"
+   },
+   {
+    "kind": "const",
+    "name": "s25ProwessRatioPct1"
+   },
+   {
+    "kind": "const",
+    "name": "s25ProwessRatioPct2"
+   },
+   {
+    "kind": "const",
+    "name": "s25ProwessRatioPct3"
+   },
+   {
+    "kind": "const",
+    "name": "s25ProwessRatioPct4"
+   },
+   {
+    "kind": "const",
+    "name": "s25ProwessRatioPct5"
+   },
+   {
+    "kind": "const",
+    "name": "s25LeaderEliteStrength"
+   },
+   {
+    "kind": "const",
+    "name": "s25PriestEliteStrength"
+   },
+   {
+    "kind": "const",
+    "name": "s25CottonArmorPct"
+   },
+   {
+    "kind": "const",
+    "name": "s25DivisionUnits"
+   },
+   {
+    "kind": "const",
+    "name": "s25DivisionChainInches"
+   },
+   {
+    "kind": "const",
+    "name": "s25LeaderContactInches"
+   },
+   {
+    "kind": "const",
+    "name": "s25HiddenRevealInches"
+   },
+   {
+    "kind": "const",
+    "name": "s25WeatherPeriodTurns"
+   },
+   {
+    "kind": "const",
+    "name": "s25SacrificeWeatherMen"
+   },
+   {
+    "kind": "const",
+    "name": "s25SacrificeMoraleMen"
+   },
+   {
+    "kind": "const",
+    "name": "s25CaptureMoraleBoost"
+   },
+   {
+    "kind": "const",
+    "name": "s25CaptureMoraleTurns"
+   },
+   {
+    "kind": "const",
+    "name": "s25MaxAttackersPerTurn"
+   },
+   {
+    "kind": "const",
+    "name": "s25PrisonerPriestWaitTurns"
+   },
+   {
+    "kind": "const",
+    "name": "s25PrisonerOffFieldWaitTurns"
+   },
+   {
+    "kind": "const",
+    "name": "s25VictoryDrawHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25VictoryMinimalHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25VictoryMarginHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25FlowerLeaderCapturePts"
+   },
+   {
+    "kind": "const",
+    "name": "s25FlowerEliteCapturePts"
+   },
+   {
+    "kind": "const",
+    "name": "s25FlowerManCapturePts"
+   },
+   {
+    "kind": "const",
+    "name": "s25FlowerManKilledPenalty"
+   },
+   {
+    "kind": "const",
+    "name": "s25SpanishEliteStrength"
+   },
+   {
+    "kind": "const",
+    "name": "s25SpanishRatioPct"
+   },
+   {
+    "kind": "const",
+    "name": "s25CannonsPerUnit"
+   },
+   {
+    "kind": "const",
+    "name": "s25CannonCrewMen"
+   },
+   {
+    "kind": "const",
+    "name": "s25SpanishHorseCannonPctMax"
+   },
+   {
+    "kind": "const",
+    "name": "s25SpanishLeaderCapturedPts"
+   },
+   {
+    "kind": "const",
+    "name": "s25SpanishLeaderKilledPts"
+   },
+   {
+    "kind": "const",
+    "name": "s25SpanishManCapturedPts"
+   },
+   {
+    "kind": "const",
+    "name": "s25SpanishManKilledPts"
+   },
+   {
+    "kind": "const",
+    "name": "s25SpanishSacrificePenaltyPts"
+   },
+   {
+    "kind": "bool",
+    "name": "s25RefereeRecommended"
+   },
+   {
+    "kind": "bool",
+    "name": "s25SimultaneousMoves"
+   },
+   {
+    "kind": "bool",
+    "name": "s25LeaderLastCaught"
+   },
+   {
+    "kind": "bool",
+    "name": "s25PriestsSwordMelee"
+   },
+   {
+    "kind": "bool",
+    "name": "s25FiredNoMove"
+   },
+   {
+    "kind": "bool",
+    "name": "s25HalfFireHalfMove"
+   },
+   {
+    "kind": "bool",
+    "name": "s25SlingStuns"
+   },
+   {
+    "kind": "bool",
+    "name": "s25HiddenInRough"
+   },
+   {
+    "kind": "bool",
+    "name": "s25DefendDoubles"
+   },
+   {
+    "kind": "bool",
+    "name": "s25HindQuarterMultiplier"
+   },
+   {
+    "kind": "bool",
+    "name": "s25FlowerLeadersSafe"
+   },
+   {
+    "kind": "bool",
+    "name": "s25FlowerDisarmDefendOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "s25FlowerSacrificeCountsCaptured"
+   },
+   {
+    "kind": "bool",
+    "name": "s25SpanishArmorNotVsGunpowder"
+   },
+   {
+    "kind": "bool",
+    "name": "s25NoGunfireInThunderstorm"
+   },
+   {
+    "kind": "bool",
+    "name": "s25CannonBannedInSwamp"
+   },
+   {
+    "kind": "bool",
+    "name": "s25SpanishColumnMove"
+   },
+   {
+    "kind": "bool",
+    "name": "s25MexicanAttackerDisarmOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "s25SpanishNoSacrifice"
+   },
+   {
+    "kind": "bool",
+    "name": "s25SpanishNotInFlowerWars"
+   },
+   {
+    "kind": "bool",
+    "name": "s25SpanishPrisonersFirst"
+   },
+   {
+    "kind": "table",
+    "name": "s25ProwessGrid"
+   }
+  ],
+  "the R.P. Smith vampire varieties (print 42)": [
+   {
+    "kind": "const",
+    "name": "s25VampireRosterCount"
+   },
+   {
+    "kind": "const",
+    "name": "s25VampireRiseDays"
+   },
+   {
+    "kind": "const",
+    "name": "s25AsanbosamManHd"
+   },
+   {
+    "kind": "const",
+    "name": "s25AsanbosamWomanHd"
+   },
+   {
+    "kind": "const",
+    "name": "s25AsanbosamChildHd"
+   },
+   {
+    "kind": "const",
+    "name": "s25AsanbosamCharmAdj"
+   },
+   {
+    "kind": "const",
+    "name": "s25AsanbosamLeopardsLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25AsanbosamLeopardsHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25AsanbosamTigersLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25AsanbosamTigersHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25BurcolakasRatsLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25BurcolakasRatsHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25LobishumenCharmAdj"
+   },
+   {
+    "kind": "const",
+    "name": "s25LobishumenNymphoPct"
+   },
+   {
+    "kind": "const",
+    "name": "s25EkimmuCharmAdj"
+   },
+   {
+    "kind": "const",
+    "name": "s25EkimmuDispelBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "s25EkimmuDispelLevelPct"
+   },
+   {
+    "kind": "const",
+    "name": "s25AnananngelCharmAdj"
+   },
+   {
+    "kind": "const",
+    "name": "s25AnananngelFearAdj"
+   },
+   {
+    "kind": "const",
+    "name": "s25AnananngelLivingWitchPct"
+   },
+   {
+    "kind": "const",
+    "name": "s25AnananngelCureDaysLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25AnananngelCureDaysHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25AlpButterfliesLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25AlpButterfliesHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25ChingShihFoxesLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25ChingShihFoxesHi"
+   },
+   {
+    "kind": "bool",
+    "name": "s25VampiresAvoidWards"
+   },
+   {
+    "kind": "bool",
+    "name": "s25NormalWeaponsNoHarm"
+   },
+   {
+    "kind": "bool",
+    "name": "s25GaseousFormAllButOne"
+   },
+   {
+    "kind": "bool",
+    "name": "s25AsanbosamClericOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "s25BurcolakasMimicVoice"
+   },
+   {
+    "kind": "bool",
+    "name": "s25BurcolakasNoWolves"
+   },
+   {
+    "kind": "bool",
+    "name": "s25LobishumenSuccubi"
+   },
+   {
+    "kind": "bool",
+    "name": "s25EkimmuInvisibleAlways"
+   },
+   {
+    "kind": "bool",
+    "name": "s25BlautsaugerGraveEarth"
+   },
+   {
+    "kind": "bool",
+    "name": "s25MuloPolymorphs"
+   },
+   {
+    "kind": "bool",
+    "name": "s25AlpLemonDefeat"
+   },
+   {
+    "kind": "bool",
+    "name": "s25AnananngelNotTurnedWhenLiving"
+   },
+   {
+    "kind": "bool",
+    "name": "s25KrvopijacFoalSearch"
+   },
+   {
+    "kind": "bool",
+    "name": "s25ChingShihRiceDefeat"
+   },
+   {
+    "kind": "bool",
+    "name": "s25VlkodlakEclipses"
+   },
+   {
+    "kind": "bool",
+    "name": "s25VlkodlakNavelStake"
+   },
+   {
+    "kind": "bool",
+    "name": "s25BruxaSunActive"
+   },
+   {
+    "kind": "bool",
+    "name": "s25NosferatPolymorphs"
+   },
+   {
+    "kind": "table",
+    "name": "s25VampireRoster"
+   }
+  ]
+ },
+ "consts": [
+  {
+   "name": "s25MenPerUnit",
+   "value": 20,
+   "comment": "the figure scale - each unit or figure represents twenty menthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25TurnMinutes",
+   "value": 2,
+   "comment": "the turn scale - one turn equals two minutes of battle timethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25YardsPerInch",
+   "value": 25,
+   "comment": "the ground scale - one inch of horizontal distance equals twenty five yardsthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25FeetPerVerticalInch",
+   "value": 5,
+   "comment": "the height scale - one inch of vertical distance equals five feetthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ProwessRangeLo",
+   "value": 1,
+   "comment": "the low end of the Military Prowess rating - the range runs one to fivethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ProwessRangeHi",
+   "value": 5,
+   "comment": "the high end of the Military Prowess rating - the ratio row and the die grid key on itthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ProwessDieCount",
+   "value": 6,
+   "comment": "the die grid depth - six die rolls set the unit strength at each prowess ratingthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ProwessRatioPct1",
+   "value": 100,
+   "comment": "the ratio number at prowess one - the full count, five hundred men against five hundredthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ProwessRatioPct2",
+   "value": 90,
+   "comment": "the ratio number at prowess two - nine tenths of the menthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ProwessRatioPct3",
+   "value": 75,
+   "comment": "the ratio number at prowess three - three quarters of the menthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ProwessRatioPct4",
+   "value": 60,
+   "comment": "the ratio number at prowess four - three fifths of the menthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ProwessRatioPct5",
+   "value": 50,
+   "comment": "the ratio number at prowess five - half the men against the finestthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25LeaderEliteStrength",
+   "value": 6,
+   "comment": "the leader unit - always six elite, the maximum for the prowess rating, war clubs in handthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25PriestEliteStrength",
+   "value": 1,
+   "comment": "the priest unit - one elite, sword armed when the melee comesthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25CottonArmorPct",
+   "value": 25,
+   "comment": "the quilted cotton armor - a quarter of the force may wear it, the odds halved for itthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25DivisionUnits",
+   "value": 10,
+   "comment": "the division size - ten units of two hundred men to an army slicethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25DivisionChainInches",
+   "value": 2,
+   "comment": "the division cohesion - each unit within two inches of another, chained member to memberthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25LeaderContactInches",
+   "value": 24,
+   "comment": "the leader reach - one member of each division within twenty four inches of the leader unitthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25HiddenRevealInches",
+   "value": 2,
+   "comment": "the ambush reveal - hidden elite units stay hid until they move or a foe passes within two inchesthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25WeatherPeriodTurns",
+   "value": 15,
+   "comment": "the weather window - fifteen turns to a roll, the effects hold the full periodthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SacrificeWeatherMen",
+   "value": 60,
+   "comment": "the weather sacrifice - sixty enemy men over three turns buys clear skiesthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SacrificeMoraleMen",
+   "value": 20,
+   "comment": "the morale sacrifice - a priest unit sacrifices twenty prisoners in a turn, the maximum ratethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25CaptureMoraleBoost",
+   "value": 3,
+   "comment": "the captor boost - three morale levels on the return to combatthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25CaptureMoraleTurns",
+   "value": 15,
+   "comment": "the captor boost span - fifteen turns of elevated moralethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25MaxAttackersPerTurn",
+   "value": 6,
+   "comment": "the assault limit - no more than six units attack one enemy unit in a turnthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25PrisonerPriestWaitTurns",
+   "value": 1,
+   "comment": "the prisoner handoff wait - one turn at the priest unitthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25PrisonerOffFieldWaitTurns",
+   "value": 2,
+   "comment": "the prisoner handoff wait off the field - two turns before the returnthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25VictoryDrawHi",
+   "value": 50,
+   "comment": "the draw band - up to fifty points apartthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25VictoryMinimalHi",
+   "value": 100,
+   "comment": "the minimal victory band - fifty one through one hundredthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25VictoryMarginHi",
+   "value": 150,
+   "comment": "the victory band - one hundred one through one hundred fifty, superlative beyondthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25FlowerLeaderCapturePts",
+   "value": 10,
+   "comment": "the War of Flowers points - ten an enemy leader capturedthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25FlowerEliteCapturePts",
+   "value": 5,
+   "comment": "the War of Flowers points - five an enemy elite capturedthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25FlowerManCapturePts",
+   "value": 3,
+   "comment": "the War of Flowers points - three an enemy man capturedthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25FlowerManKilledPenalty",
+   "value": 1,
+   "comment": "the War of Flowers points - minus one an enemy man killedthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishEliteStrength",
+   "value": 6,
+   "comment": "the Spanish rating - every Spanish unit six elitethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishRatioPct",
+   "value": 25,
+   "comment": "the Spanish ratio - one Spanish figure to four native, the allied units apartthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25CannonsPerUnit",
+   "value": 5,
+   "comment": "the cannon unit - five guns to the unitthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25CannonCrewMen",
+   "value": 20,
+   "comment": "the cannon crew - twenty men to the five gunsthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishHorseCannonPctMax",
+   "value": 10,
+   "comment": "the Spanish cap - under a tenth of the force Horse or Cannonthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishLeaderCapturedPts",
+   "value": 10,
+   "comment": "the Spanish victory points - ten a Spanish leader capturedthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishLeaderKilledPts",
+   "value": 5,
+   "comment": "the Spanish victory points - five a Spanish leader killedthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishManCapturedPts",
+   "value": 5,
+   "comment": "the Spanish victory points - five a Spanish man capturedthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishManKilledPts",
+   "value": 3,
+   "comment": "the Spanish victory points - three a Spanish man killedthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishSacrificePenaltyPts",
+   "value": 2,
+   "comment": "the Spanish sacrifice count - a capture minus twothe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25VampireRosterCount",
+   "value": 15,
+   "comment": "the roster depth - fifteen vampire types from the common to the nosferatthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25VampireRiseDays",
+   "value": 7,
+   "comment": "the unguarded corpse - without a Bless from a cleric a body rises within seven daysthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AsanbosamManHd",
+   "value": 9,
+   "comment": "the asanbosam men - nine hit dicethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AsanbosamWomanHd",
+   "value": 8,
+   "comment": "the asanbosam women - eight hit dicethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AsanbosamChildHd",
+   "value": 7,
+   "comment": "the asanbosam children - seven hit dicethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AsanbosamCharmAdj",
+   "value": 3,
+   "comment": "the asanbosam charm - at minus three, the clerics avoidedthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AsanbosamLeopardsLo",
+   "value": 3,
+   "comment": "the asanbosam call - three to eighteen leopards, the low diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AsanbosamLeopardsHi",
+   "value": 18,
+   "comment": "the asanbosam call - three to eighteen leopards, the high diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AsanbosamTigersLo",
+   "value": 2,
+   "comment": "the asanbosam call - two to twelve tigers, the low diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AsanbosamTigersHi",
+   "value": 12,
+   "comment": "the asanbosam call - two to twelve tigers, the high diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25BurcolakasRatsLo",
+   "value": 10,
+   "comment": "the burcolakas swarm - ten to one hundred rats, the low diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25BurcolakasRatsHi",
+   "value": 100,
+   "comment": "the burcolakas swarm - ten to one hundred rats, the high diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25LobishumenCharmAdj",
+   "value": 4,
+   "comment": "the lobishumen charm - at minus fourthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25LobishumenNymphoPct",
+   "value": 60,
+   "comment": "the lobishumen legacy - sixty percent of the women who survive the charmthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25EkimmuCharmAdj",
+   "value": 1,
+   "comment": "the ekimmu charm - at minus onethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25EkimmuDispelBasePct",
+   "value": 50,
+   "comment": "the ekimmu exorcism - a dispel evil at fifty percent when the cleric matches the levelthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25EkimmuDispelLevelPct",
+   "value": 5,
+   "comment": "the ekimmu exorcism swing - plus or minus five percent a level of differencethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AnananngelCharmAdj",
+   "value": 2,
+   "comment": "the anananngel charm - at minus twothe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AnananngelFearAdj",
+   "value": 3,
+   "comment": "the anananngel fear - thrown at minus threethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AnananngelLivingWitchPct",
+   "value": 50,
+   "comment": "the anananngel coin - fifty percent a living witchthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AnananngelCureDaysLo",
+   "value": 2,
+   "comment": "the blood-splatter cure - a cure disease daily for two to seven days, the low endthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AnananngelCureDaysHi",
+   "value": 7,
+   "comment": "the blood-splatter cure - a cure disease daily for two to seven days, the high endthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AlpButterfliesLo",
+   "value": 10,
+   "comment": "the alp call - ten to one hundred ordinary butterflies, the low diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AlpButterfliesHi",
+   "value": 100,
+   "comment": "the alp call - ten to one hundred ordinary butterflies, the high diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ChingShihFoxesLo",
+   "value": 3,
+   "comment": "the Chinese vampire call - three to eighteen foxes, the low diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ChingShihFoxesHi",
+   "value": 18,
+   "comment": "the Chinese vampire call - three to eighteen foxes, the high diethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "s25RefereeRecommended",
+   "value": true,
+   "comment": "the referee call - a referee recommended on hand to run the game and settle the disputesthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SimultaneousMoves",
+   "value": true,
+   "comment": "the turn shape - the opposing sides move at oncethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25LeaderLastCaught",
+   "value": true,
+   "comment": "the leader scale - the last man caught or killed when attacked or shot atthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25PriestsSwordMelee",
+   "value": true,
+   "comment": "the priest arms - swords in hand-to-hand, the strength onethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25FiredNoMove",
+   "value": true,
+   "comment": "the fire discipline - a unit that fired may not move that turnthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25HalfFireHalfMove",
+   "value": true,
+   "comment": "the half measure - fire half the rate and move half the ratethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SlingStuns",
+   "value": true,
+   "comment": "the sling effect - the count in parenthesis left unconscious, lost to a unit that movesthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25HiddenInRough",
+   "value": true,
+   "comment": "the ambush post - five elite units hid in rough or uneven terrain by the side with prior accessthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25DefendDoubles",
+   "value": true,
+   "comment": "the defend option - the defender strength doubled, the turn passes to the aggressorthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25HindQuarterMultiplier",
+   "value": true,
+   "comment": "the rear assault - a three halves multiplier at the hind one hundred eighty degreesthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25FlowerLeadersSafe",
+   "value": true,
+   "comment": "the War of Flowers law - leader units not attacked unless they attack firstthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25FlowerDisarmDefendOnly",
+   "value": true,
+   "comment": "the War of Flowers arms - Disarm or Defend the only optionsthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25FlowerSacrificeCountsCaptured",
+   "value": true,
+   "comment": "the War of Flowers count - every sacrifice a capturethe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishArmorNotVsGunpowder",
+   "value": true,
+   "comment": "the steel armor flaw - the quilted protection fails against arquebus and cannonthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25NoGunfireInThunderstorm",
+   "value": true,
+   "comment": "the thunderstorm ban - cannon and arquebus silentthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25CannonBannedInSwamp",
+   "value": true,
+   "comment": "the cannon track - no travel through swampy groundthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishColumnMove",
+   "value": true,
+   "comment": "the Spanish order - column travel, one or two units abreastthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25MexicanAttackerDisarmOnly",
+   "value": true,
+   "comment": "the Mexican assault - Disarm or Defend the only options against a Spanish unitthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishNoSacrifice",
+   "value": true,
+   "comment": "the Spanish captors - prisoners held and passed on, never sacrificedthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishNotInFlowerWars",
+   "value": true,
+   "comment": "the Spanish absence - no part in the War of Flowersthe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25SpanishPrisonersFirst",
+   "value": true,
+   "comment": "the sacrifice order - Spanish prisoners before any Indian allythe Xochiyaoyotl war game rules (print 37-40) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25VampiresAvoidWards",
+   "value": true,
+   "comment": "the common wards - mirrors, garlic and crosses avoided by every typethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25NormalWeaponsNoHarm",
+   "value": true,
+   "comment": "the common armor - normal weapons harm no vampirethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25GaseousFormAllButOne",
+   "value": true,
+   "comment": "the common escape - gaseous form on the lost hit points, one type exceptedthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AsanbosamClericOnly",
+   "value": true,
+   "comment": "the asanbosam end - only a cleric kills itthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25BurcolakasMimicVoice",
+   "value": true,
+   "comment": "the burcolakas voice - any voice it hears, at the assassin detection oddsthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25BurcolakasNoWolves",
+   "value": true,
+   "comment": "the burcolakas leash - the rats obey, the wolves neverthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25LobishumenSuccubi",
+   "value": true,
+   "comment": "the lobishumen doom - a woman killed under the charm becomes a succubusthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25EkimmuInvisibleAlways",
+   "value": true,
+   "comment": "the ekimmu veil - invisible even in the attackthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25BlautsaugerGraveEarth",
+   "value": true,
+   "comment": "the blautsauger gate - victims turned only by the grave earth eatenthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25MuloPolymorphs",
+   "value": true,
+   "comment": "the mulo shape - horse or sheep, active day and nightthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AlpLemonDefeat",
+   "value": true,
+   "comment": "the alp end - a lemon in the mouth of the corpse recipientthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25AnananngelNotTurnedWhenLiving",
+   "value": true,
+   "comment": "the anananngel witch - living, beyond the cleric turnthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25KrvopijacFoalSearch",
+   "value": true,
+   "comment": "the krvopijac grave - a virgin on a black foal finds the spotthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25ChingShihRiceDefeat",
+   "value": true,
+   "comment": "the Chinese vampire defeat - an encirclement of ricethe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25VlkodlakEclipses",
+   "value": true,
+   "comment": "the vlkodlak sky - it causes eclipsesthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25VlkodlakNavelStake",
+   "value": true,
+   "comment": "the vlkodlak stake - the navel pierced, never the heartthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25BruxaSunActive",
+   "value": true,
+   "comment": "the bruxa day - a bird in sunlight, active even sothe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "name": "s25NosferatPolymorphs",
+   "value": true,
+   "comment": "the nosferat shape - cat, dog, beetle, butterfly or strawthe R.P. Smith vampire varieties (print 42) the Xochiyaoyotl war game rules (print 37-40)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "s25ProwessGrid",
+   "tag": "Prowess",
+   "count": "s25ProwessDieCount",
+   "sentinel": -99,
+   "audit_comment": "the Military Prowess grid - six die rolls against the five ratings, the die six roll carrying the elite mark at every rating",
+   "cols": [
+    "s25StrengthMp1",
+    "s25StrengthMp2",
+    "s25StrengthMp3",
+    "s25StrengthMp4",
+    "s25StrengthMp5",
+    "s25EliteOnDie"
+   ],
+   "col_comments": [
+    "the unit strength at prowess one - one through four on the die, the top roll elite",
+    "the unit strength at prowess two - two through four on the die, the top roll elite",
+    "the unit strength at prowess three - two through five on the die, the top roll elite",
+    "the unit strength at prowess four - three through five on the die, the top roll elite",
+    "the unit strength at prowess five - three through six on the die, the top roll elite",
+    "the elite mark - one on the die six roll at every rating, the sentinel on the other five rolls"
+   ],
+   "sentinel_census": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    5
+   ],
+   "data": [
+    [
+     1,
+     2,
+     2,
+     3,
+     3,
+     -99
+    ],
+    [
+     2,
+     2,
+     3,
+     3,
+     4,
+     -99
+    ],
+    [
+     2,
+     3,
+     3,
+     4,
+     4,
+     -99
+    ],
+    [
+     3,
+     3,
+     4,
+     4,
+     5,
+     -99
+    ],
+    [
+     3,
+     4,
+     4,
+     5,
+     5,
+     -99
+    ],
+    [
+     4,
+     4,
+     5,
+     5,
+     6,
+     1
+    ]
+   ]
+  },
+  {
+   "name": "s25VampireRoster",
+   "tag": "Vamp",
+   "count": "s25VampireRosterCount",
+   "sentinel": -99,
+   "audit_comment": "the vampire roster grid - the fifteen types in printed order from the common to the nosferat, the printed movement pair and the charm adjustment per row",
+   "cols": [
+    "s25VampMove",
+    "s25VampMoveAlt",
+    "s25VampCharmAdj"
+   ],
+   "col_comments": [
+    "the printed move - the alp and the anananngel footless at zero, the lobishumen at fifteen, the rest at twelve",
+    "the second printed move - eighteen the rule, zero the asanbosam and the lobishumen, twenty four the fliers, the sentinel the single-move Chinese vampire",
+    "the charm adjustment - three the asanbosam and the blautsauger, four the lobishumen, two the catacano, the mulo, the anananngel and the nosferat, one the ekimmu, the sentinel the seven types the article leaves unnumbered"
+   ],
+   "sentinel_census": [
+    0,
+    1,
+    7
+   ],
+   "data": [
+    [
+     12,
+     18,
+     -99
+    ],
+    [
+     12,
+     0,
+     3
+    ],
+    [
+     12,
+     18,
+     -99
+    ],
+    [
+     12,
+     18,
+     2
+    ],
+    [
+     15,
+     0,
+     4
+    ],
+    [
+     12,
+     18,
+     1
+    ],
+    [
+     12,
+     18,
+     3
+    ],
+    [
+     12,
+     18,
+     2
+    ],
+    [
+     0,
+     24,
+     -99
+    ],
+    [
+     0,
+     24,
+     2
+    ],
+    [
+     12,
+     18,
+     -99
+    ],
+    [
+     12,
+     -99,
+     -99
+    ],
+    [
+     12,
+     18,
+     -99
+    ],
+    [
+     12,
+     18,
+     -99
+    ],
+    [
+     12,
+     18,
+     2
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['s25MenPerUnit']() != 20 or m['s25TurnMinutes']() != 2 or m['s25YardsPerInch']() != 25 or m['s25FeetPerVerticalInch']() != 5 or m['s25ProwessRangeLo']() != 1 or m['s25ProwessRangeHi']() != 5",
+   "note": "the scales - twenty men a unit, two minutes a turn, twenty five yards the horizontal inch, five feet the vertical, prowess one to fivethe Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "expr": "m['s25ProwessRatioPct1']() != 100 or m['s25ProwessRatioPct2']() != 90 or m['s25ProwessRatioPct3']() != 75 or m['s25ProwessRatioPct4']() != 60 or m['s25ProwessRatioPct5']() != 50",
+   "note": "the prowess ratios - the full count, nine tenths, three quarters, three fifths and half the menthe Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "expr": "m['s25LeaderEliteStrength']() != 6 or m['s25PriestEliteStrength']() != 1 or m['s25SpanishEliteStrength']() != 6 or m['s25SpanishRatioPct']() != 25",
+   "note": "the elites - the Mexican leader and the whole Spanish host at six, the priest at one, the Spanish ratio a quarterthe Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "expr": "m['s25VictoryDrawHi']() != 50 or m['s25VictoryMinimalHi']() != 100 or m['s25VictoryMarginHi']() != 150 or m['s25FlowerLeaderCapturePts']() != 10 or m['s25FlowerEliteCapturePts']() != 5 or m['s25FlowerManCapturePts']() != 3 or m['s25FlowerManKilledPenalty']() != 1",
+   "note": "the victory scale - the draw, minimal and victory bands with the War of Flowers pointsthe Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "expr": "m['s25FiredNoMove']() != 1 or m['s25HalfFireHalfMove']() != 1 or m['s25DefendDoubles']() != 1 or m['s25HindQuarterMultiplier']() != 1 or m['s25FlowerLeadersSafe']() != 1 or m['s25FlowerDisarmDefendOnly']() != 1 or m['s25FlowerSacrificeCountsCaptured']() != 1",
+   "note": "the discipline set - fire or move, the half measure, the doubled defense, the rear multiplier and the War of Flowers lawsthe Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "expr": "m['s25SpanishArmorNotVsGunpowder']() != 1 or m['s25NoGunfireInThunderstorm']() != 1 or m['s25CannonBannedInSwamp']() != 1 or m['s25SpanishColumnMove']() != 1 or m['s25MexicanAttackerDisarmOnly']() != 1 or m['s25SpanishNoSacrifice']() != 1 or m['s25SpanishNotInFlowerWars']() != 1 or m['s25SpanishPrisonersFirst']() != 1",
+   "note": "the Spanish option - the armor flaw, the thunderstorm ban, the swamp ban, the column, the Mexican limits and the prisoner lawsthe Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "expr": "m['s25VampireRosterCount']() != 15 or m['s25VampireRiseDays']() != 7",
+   "note": "the frame - fifteen types on the roster, the unguarded corpse rising within seven daysthe R.P. Smith vampire varieties (print 42)"
+  },
+  {
+   "expr": "m['s25AsanbosamManHd']() != 9 or m['s25AsanbosamWomanHd']() != 8 or m['s25AsanbosamChildHd']() != 7 or m['s25AsanbosamCharmAdj']() != 3 or m['s25AsanbosamLeopardsLo']() != 3 or m['s25AsanbosamLeopardsHi']() != 18 or m['s25AsanbosamTigersLo']() != 2 or m['s25AsanbosamTigersHi']() != 12",
+   "note": "the asanbosam - nine, eight and seven hit dice, the charm at minus three, the leopards and the tigers calledthe R.P. Smith vampire varieties (print 42)"
+  },
+  {
+   "expr": "m['s25BurcolakasRatsLo']() != 10 or m['s25BurcolakasRatsHi']() != 100 or m['s25LobishumenCharmAdj']() != 4 or m['s25LobishumenNymphoPct']() != 60 or m['s25EkimmuCharmAdj']() != 1 or m['s25EkimmuDispelBasePct']() != 50 or m['s25EkimmuDispelLevelPct']() != 5",
+   "note": "the mid roster - the rat swarm, the lobishumen charm and legacy, the ekimmu charm and the exorcism oddsthe R.P. Smith vampire varieties (print 42)"
+  },
+  {
+   "expr": "m['s25AnananngelCharmAdj']() != 2 or m['s25AnananngelFearAdj']() != 3 or m['s25AnananngelLivingWitchPct']() != 50 or m['s25AnananngelCureDaysLo']() != 2 or m['s25AnananngelCureDaysHi']() != 7 or m['s25AlpButterfliesLo']() != 10 or m['s25AlpButterfliesHi']() != 100 or m['s25ChingShihFoxesLo']() != 3 or m['s25ChingShihFoxesHi']() != 18",
+   "note": "the far roster - the anananngel charm, fear, coin and cure, the alp butterflies and the Chinese vampire foxesthe R.P. Smith vampire varieties (print 42)"
+  },
+  {
+   "expr": "m['s25VampiresAvoidWards']() != 1 or m['s25NormalWeaponsNoHarm']() != 1 or m['s25GaseousFormAllButOne']() != 1 or m['s25AsanbosamClericOnly']() != 1 or m['s25LobishumenSuccubi']() != 1 or m['s25EkimmuInvisibleAlways']() != 1",
+   "note": "the common laws with the asanbosam end and the lobishumen doomthe R.P. Smith vampire varieties (print 42)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['s25StrengthMp1'](0) != 1 or m['s25StrengthMp1'](5) != 4 or m['s25StrengthMp5'](0) != 3 or m['s25StrengthMp5'](5) != 6 or m['s25EliteOnDie'](4) != -99 or m['s25EliteOnDie'](5) != 1",
+   "note": "the prowess grid corners - die one through die six at both ratio ends with the elite mark on the last rollthe Xochiyaoyotl war game rules (print 37-40)"
+  },
+  {
+   "expr": "m['s25VampMove'](0) != 12 or m['s25VampMoveAlt'](0) != 18 or m['s25VampMove'](8) != 0 or m['s25VampMoveAlt'](8) != 24 or m['s25VampMoveAlt'](11) != -99 or m['s25VampCharmAdj'](4) != 4 or m['s25VampCharmAdj'](14) != 2",
+   "note": "the roster corners - the common pair, the alp flight, the single-move Chinese vampire, the lobishumen charm and the nosferat charmthe R.P. Smith vampire varieties (print 42)"
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "file_patches": [],
+ "data_files": [],
+ "seed_anchor": "## Knowledge maintenance",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "prev_seed_key": "  - R958 LANDED (7518210, t25, 48 inline, the opener set): The",
+ "prev_record": [
+  "  - R958 LANDED (7518210, t25, 48 inline, the opener set): The",
+  "  Dragon issue-25 opener part one - the opener set, three of the",
+  "  eight Curtiss-called chains at print 12-19: the Gygax social",
+  "  class essay (print 12-13, the birth tables rejected, thieves in",
+  "  the lowest two, MACOCRACY and the tripled churchmen catches),",
+  "  the Armies of the Renaissance Part III commentary (print 17,",
+  "  the White Company at its height of 2,000 longbowmen and 2,000",
+  "  men-at-arms, the French invasion year 1490, the Sir John",
+  "  Haukwood catch) and the Harrop orc taxonomy guide (print",
+  "  18-19, five evil family races and the Orkus three species,",
+  "  the gholl/orcom/a-man-orcs/Variages-of-Khan catches). 48",
+  "  inline = 27 consts + 21 bools, 7 examples; the adjudication",
+  "  is the eight-chain shape of the 2026-10-31 calls - the",
+  "  Traveller navy and the Gamma World pieces dropped as",
+  "  non-D&D, the Armada Disasters history (print 9-11) dropped",
+  "  in the usable-only redo (pure narrative, no game ink).",
+  "  Census 880->881; rverify GREEN 48 mutants 0 missed at base",
+  "  13e6bcf; round-trip 299032 bytes md5",
+  "  c69e5954e2c7654ff4d2779644b3250d, byte-exact at 7518210",
+  "  (fresh tarball re-run applied 0 already 54, data files",
+  "  49/49 - report-025 plus all 48 transcripts). The part-one",
+  "  report-025 boxes are checked; part two (R959 s25, the",
+  "  Xochiyaoyotl 37-40 table round plus the Varieties of",
+  "  Vampires 42) and part three (R960 k25) still open; the",
+  "  watches ride to TD 26 (the Sullin levels 7-9, the brawling",
+  "  sequel, a fourth issue running), and the Flower Wars and",
+  "  Conquistadores chains stay period-piece-thin for the R960",
+  "  adjudication. WAIT FOR GO."
+ ],
+ "regtest": "regtest.cpp",
+ "inline_count": 118
+}
