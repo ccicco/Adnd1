@@ -671,6 +671,7 @@
 #include "rules/cnt.h"  // R967: the content tree creation round
 #include "rules/rpf.h"  // R968: the rules record format round
 #include "rules/dp1.h"  // R969: the Dragon promotion batch one
+#include "rules/dp2.h"  // R970: the Dragon promotion batch two
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4780,6 +4781,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r970_batch.h"  // R970: R970 dragon promotion batch two audit
 #include "rules/audits/r969_batch.h"  // R969: R969 dragon promotion batch one audit
 #include "rules/audits/r968_batch.h"  // R968: R968 rules record format audit
 #include "rules/audits/r967_batch.h"  // R967: R967 content tree creation audit

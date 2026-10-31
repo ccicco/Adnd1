@@ -29753,6 +29753,46 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   79 rounds; the correction rides
   R969 (the R632 measure-twice
   class). WAIT FOR GO.
+  - R969 LANDED (7c55ce7, dp1, 7
+  inline, the first promotion
+  batch): THE DRAGON PROMOTION
+  BATCH ONE - the arc round
+  four, the first Lua records on
+  disk under the R968 format:
+  the pre-walk trio and issue 2
+  complete - ivs, drg, arn, rmz,
+  alc, fch, sys, art; 8 records
+  riding content/rules/dragon/
+  {prefix}.lua (116362 bytes
+  Lua), 281 model items, every
+  record parsed back and compared
+  equal (the lossless proof - no
+  hand edits). 4 consts + 3
+  bools: dp1BatchRecords=8,
+  dp1ModelItems=281,
+  dp1DragonSetRounds=79 (the
+  corrected measure - the R968
+  128 was a grep over-match),
+  dp1CumulativeRecords=8,
+  dp1RecordsPromoted,
+  dp1DiffBackGreen,
+  dp1MeasureCorrected. Census
+  891->892; no flips; gap report
+  026 stays 3/0. Double-run
+  applied 13/already 13, verify
+  at 7c55ce7 already 13 with the
+  8 records on disk; rverify
+  GREEN 7 mutants 0 missed at
+  base 58a63d7; spec 129321
+  bytes md5 1d0fc10e759a5d092c79
+  ce7f241ed874, canvas r969-spec
+  (the big-canvas precedent -
+  records ride inside the spec).
+  The batch sizing rides byte
+  weight (Curtiss: as many per
+  round as efficient). The R968
+  record seated in the repo seed.
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
