@@ -1,0 +1,93 @@
+March, 1979
+
+The Dragon
+
+# Damage Permanency
+
+or
+
+## How Hrothgar One-Ear Got His Name.
+
+James M. Ward
+
+The concept of "hit points" is almost universal in all types of role playing games. They are often used as a measure of how much damage any given being can take in any given situation. In the case of a sword duel with two high level (and thus, high hit point) players, it is easily possible to see that thirty hits at 1-8 hit points per strike could happen on each side. Logically, thirty such actual cuts would easily kill any real life being in the same situation. It must therefore be assumed that many of these lost hit points represent fatigue, damaged armor, the battle situation itself, or the weapons used. With this being the case there should be some method of determining the physical damage that finally occurs in any given battle.*
+
+When a person takes a great deal of physical damage in whatever manner, it is highly possible that the effects will become permanent. It is conceivable that a sword could sever a toe or finger causing a drop in dexterity or a ray gun could puncture a lung, causing a drop in constitution. The following charts will help judges curb the more active tendencies of their players. They are used when any given player is reduced to one or two hit points.
+
+PERCENTILE
+
+1-50 no permanent damage after healing
+51-70 being requires magical aid in healing correctly
+71-100% being is maimed unless wish or 5th level or better clerical healing spell is used or device is employed.
+
+AREA OF THE BODY DAMAGED PERMANENTLY
+
+|  1-14 | Head  |
+| --- | --- |
+|  15-49 | Trunk  |
+|  50-74 | Arms  |
+|  75-79 | Legs  |
+|  80-94 | Hands  |
+|  95-100 | Feet  |
+
+HEAD DAMAGE
+
+|  1-12 | Hearing Loss  |
+| --- | --- |
+|  13-24 | Sight Loss  |
+|  25-36 | Speech Impaired  |
+|  37-48 | Charisma Impaired  |
+|  49-60 | Intelligence Impaired  |
+|  61-72 | Wisdom Impaired  |
+|  73-88 | Fighting Ability Impaired  |
+|  89-100 | Spell Ability Impaired  |
+
+LEG DAMAGE
+
+|  1-25 | Speed Decreased  |
+| --- | --- |
+|  26-50 | Strength Impaired  |
+|  51-75 | Dexterity Impaired  |
+|  76-100 | Fighting Ability Impaired  |
+
+HAND DAMAGE
+
+|  1-20 | Dexterity Impaired  |
+| --- | --- |
+|  21-40 | Fighting Ability Impaired  |
+|  41-60 | Magical Ability Impaired  |
+|  61-80 | Strength Impaired  |
+|  81-100 | Weapons Ability Impaired  |
+
+TRUNK DAMAGE
+
+|  1-25 | Constitution Impaired  |
+| --- | --- |
+|  26-50 | Fighting Ability Impaired  |
+|  51-75 | Resistance to Poison Changed  |
+|  76-100 | Speed Decreased  |
+
+ARM DAMAGE
+
+|  1-25 | Fighting Ability Impaired  |
+| --- | --- |
+|  26-50 | Magical Ability Impaired  |
+|  51-75 | Dexterity Impaired  |
+|  76-100 | Strength Impaired  |
+
+FEET DAMAGE
+
+|  1-33 | Speed Impaired  |
+| --- | --- |
+|  34-66 | Fighting Ability Impaired  |
+|  67-100 | Dexterity Impaired  |
+
+*ED. Note: While this statement is true for the majority of role-playing games, it is not true for D&D® and AD&D® and poses some contradictions.
+
+The system holds true for games such as MA® and GW®, because their systems use a set number of hit points which are determined by the number of hit dice the character is endowed with at his (the character's) paper birth. Normally, this maximum potential is seldom reached.
+
+Game systems that set no upper limit on the number of hit dice cannot accept this rationale. It is patently absurd to think that a fighter, when advancing a level, is somehow enhanced: more muscles, more mass, more blood. Were that rationale used, we must assume that first level types all look like Herve Villechaize (Tattoo on Fantasy Island), gradually acquiring the stature — assuming survival and advancement, of course! — of Arnold Schwarzenegger (former Mr. Universe purported to be playing Conan in the proposed movie).
+
+In AD&D, the rationale behind the concept of hit points is decidedly different. Basically, hit points represent the ability/facility to evade a fatal blow/injury. It is an abstraction that includes such considerations as fatigue, armor durability, fighting technique, fighting "tricks" learned, and so forth.
+
+19

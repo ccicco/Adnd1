@@ -1,0 +1,101 @@
+March, 1979
+
+The Dragon
+
+# Legs and Feet
+
+(as applicable)
+
+1. clawed
+2. hooved
+3. human-like
+4. insect-like
+5. snake-like
+6. suctioned
+7. taloned
+8. webbed (all swimmers)
+
+*1. duck-like
+
+2. hawk-like
+
+3. owl-like
+
+4. pelican-like
+
+5. stork-like
+
+6. turkey-like
+
+**Optionally poisoned (or 4 in 6)
+
+1. +1 on save
+
+2. normal
+
+3. -1 on save
+
+4. -2 on save
+
+5. insanity for 1-4 rounds
+
+6. weakness, 1 point per hit permanently lost
+
+A bit of imaginative creation is helpful in using the tables above. For example, if the creature's body is amoeba-like, you might well decide to give it scores of tiny, bubbling sucker mouths over its entire body, and omit any mouth on the head; of course, body covering would have to be adjusted accordingly, and appendages selected to suit the monster. Likewise, you should feel at ease adding to or amending the tables as you desire in order to arrive at still more diverse and unexpected lower planes' creatures. (Df. THE DRAGON. Vol. III, No. 6, whole number 20: "Demonology Made Easy." Gregory Rihn. This excellent article gives some interesting thoughts on variant creatures of the lawful evil planes!) When you have the form and appearance of the creature, determine strength, if necessary, and then attack capabilities.
+
+|  Strength | "To Hit" | Damage  |
+| --- | --- | --- |
+|  01-25 = 17 | +1 | +1  |
+|  26-45 = 18 | +1 | +2  |
+|  45 - 60 = 18 (01-50) | +1 | +3  |
+|  61-70 = 18 (51-75) | +2 | +3  |
+|  71- 80 = 18 (76-90) | +2 | +4  |
+|  81- 90 = 18 (91-99) | +2 | +5  |
+|  91- 95 = 18 (00) | +3 | +6  |
+|  96-98 = 19 | +3 | +7  |
+|  99-00 = 20 | +3 | +8  |
+
+# ATTACK TABLE
+
+antlers or horns = 1 attack each, damage 1-2 to 2-8
+
+mouth = 1 attack each, damage from 1 to 3-12
+
+tail = special attacks only, damage from 1 to 1-6
+
+hands = 1 attack each possible if no weapon use, strength bonus applicable if used as clubbing weapon, damage from base 1-2 to 2-12 feet = 1 attack each if applicable (flyer, leaper, etc.), damage from 1-2 to 3-12
+
+Damage amount is determined by overall size of creature, with strength bonuses where applicable, and the size and type of body weaponry, i.e., a huge creature with clawed hands would get damage ratings of at least 2-8 per hit. Constriction or hugging damage would be commensurate with a kept creature of the same approximate size. Incidental spine-type damage is best kept relatively low — 1-3, 1-4, or 1-6 range.
+
+Special effects from these attack forms — poison, energy drain, heat, cold, electrical discharge, paralysis, or whatever—should be kept to a minimum.
+
+Special attacks and special defenses can't be dealt with in as much detail as would be desirable in a work of unlimited length. The tables below will suggest various magical attack/defense forms, and the DM is urged to add others of his own creation as appropriate to the plane and the creature.
+
+# SPECIAL ATTACKS (1-3)
+
+1. ability drain
+2. energy drain (cold)
+3. gaseous discharge or missile discharge
+4. heat generation
+5. life level drain
+6. spell-like abilities
+7. spell use
+8. summon/gate
+
+Spell-like and spell use abilities should be based upon intelligence level and relative strength in hit dice. Compare daemons, demons, devils, and night hags. From 1-2 spells and a like number of spell-like abilities is sufficient for lesser creatures, while the more powerful and intelligent will get a total of 2-5 of each, some being of higher level (telekinesis, teleportation, etc.).
+
+# SPECIAL DEFENSES (1-4)
+
+1. acid immunity
+2. cold immunity
+3. electrical immunity
+4. fire immunity
+5. gas immunity
+
+6. metal immunity
+7. poison immunity
+8. regeneration
+9. spell immunity
+10. weapon immunity
+
+17

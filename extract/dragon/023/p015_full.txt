@@ -1,0 +1,110 @@
+March, 1979
+
+The Dragon
+
+# RANDOM GENERATION OF CREATURES FROM THE LOWER PLANES
+
+by Gary Gygax
+
+When I read Gregory Rihn's "Demonology Made Easy" in TD 20 it got me to thinking, and I immediately re-read Jon Pickens' article on random demons (TD 13). Population of the many planes of AD&D will be a problem in the future; most of the monsters now available are designed for the Prime Material world, and when play moves to the various planes, DMs are going to be very busy trying to come up with the creatures who inhabit these strange places. As some start has been made on the lower planes, I thought it would be most helpful to offer a system to aid in the development of more such monsters, for that would help round out those areas rather than sketch in small parts of others. What follows is the current "official" approach, and what you read here will be included in the forth coming DUNGEON MASTERS GUIDE. My thanks to both Greg and Jon!
+
+At times it might be useful to have an unrecognizable creature of evil from the planes of the Abyss, Tarterus, Hades, Gehenna, or Hell. It is no great matter to sit down and design a fairly interesting one given an hour or so, but time or desire lacking, the following will enable you to create one or several such monsters in but a few minutes. The format is straight from the AD&D MONSTER MANUAL for ease of recording and handling the creature(s) developed.
+
+FREQUENCY: Common, uncommon, or rare (d6= 1,2-3, 4-6)
+NO. APPEARING: 1 to 2-8 (circumstances must dictate)
+ARMOR CLASS: 0 to -3 (d4)
+MOVE: 6", 9", 12", 15", or 18" (d8,6-8 = roll d4 for move and creature also has swimming or flying ability; roll d6, 1-2 = swimming, 3-6 = flying, and as a rule these speeds will be greater than land move speed — add 1-4 3" increments as you see fit or by random determination using d4)
+HIT DICE: 7 to 10 (d4 + 6, roll a second d4, and on a 4 the creature has 1-4 additional hit points per hit die, as determined by another roll of the d4)
+% IN LAIR: (circumstances must dictate)
+TREASURE TYPE: low value if any (circumstances must dictate)
+NO. OF ATTACKS See APPEARANCE TABLE below
+DAMAGE/ATTACK: See ATTACK TABLE below
+SPECIAL ATTACKS: See SPECIAL ATTACKS TABLE below
+SPECIAL DEFENSES: See SPECIAL DEFENSES TABLE below
+MAGIC RESISTANCE: 5% per hit die (to vary use d6,1= -5%, 2 = -10%, 3 = +5%, 4 = +10%, 5 = +15%, and 6 = STANDARD magic resistance)
+INTELLIGENCE: Low, average, very, or high (d4)
+ALIGNMENT: According to plane of origin
+SIZE: S, M, or L (d8, 1 = S, 2-4 = M, 5-8 = L)
+PSIONIC ABILITY: Nil (90%) or 96 - 115 (d20 + 95)
+Attack/Defense Modes: A-D (d4)/F-H (d6,1-2 = F, 3-4 = F and G, etc.)
+
+# APPEARANCE TABLE:
+
+|  Head | Head Adornment | Overall Visage  |
+| --- | --- | --- |
+|  1. bat-like | 1. antlers | 1. gibbering-drooling  |
+|  2. bird-like* | 2. crest or peak | 2. glaring-menacing  |
+|  3. crocodilian | 3. horns (1-4) | 3. rotting  |
+|  4. horse-like | 4. knobs | 4. skeletal  |
+|  5. human-like | 5. ridge(s) | 5. twitching-moving  |
+|  6. monkey-like | 6. ruff | 6. wrinkled-seamed  |
+|  7. snake-like | 7. spines |   |
+|  8. weasel-like | 8. none |   |
+|  Ears |  |   |
+|  1. dog-like |  |   |
+|  2. elephant-like |  |   |
+|  3. human, tiny |  |   |
+|  4. human, huge |  |   |
+|  5. trumpet-like |  |   |
+|  6. none |  |   |
+
+# Eyes
+
+(d6, 1 + 1, 2-4 = 2, 5-6 = 3-4)
+
+# Eye Color
+
+|  1. small, multi-faceted | 1. amber  |
+| --- | --- |
+|  2. small, slitted | 2. black  |
+|  3. swivel-socketed | 3. blue  |
+|  4. stalked | 4. green  |
+|  5. huge, flat | 5. metallic  |
+|  6. huge, protruding | 6. orange-red  |
+
+# Nose
+
+(if necessary)
+
+1. flat, misshapen
+2. huge, bulbous
+3. slits only
+4. snouted
+5. tiny
+6. trunk-like
+
+# Mouth
+
+(d6,1 = tiny, 2-3 = average, 5-6 = huge)
+
+1. fanged
+2. mandibled**
+3. sucker-like**
+4. toothed, small or ridged
+5. toothed, large
+6. tusked
+
+# BODY ATTRIBUTES
+
+(d6, 1-4 = bipedal, 5-6 = quadrapedal etal)
+
+# Bipedal Torso
+
+1. ape-like
+2. bear-like
+3. bird-like
+4. human-like
+5. pig-like
+6. rat-like
+
+# Quadrapedal or Other Torso
+
+1. amoeba-like
+2. bison-like
+3. crab-like
+4. horse-like
+5. insect-like
+6. serpent-like or reptilian
+7. spider-like
+
+15

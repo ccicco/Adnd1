@@ -1,0 +1,1218 @@
+{
+ "round": 950,
+ "prefix": "t23",
+ "census_before": 872,
+ "title": "The Dragon issue-23 opener part one: the variant triptych (census 873)",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R949 LANDED (76a37e2, l22, 29 inline, the pure flip): The Dragon",
+ "prev_record": [
+  "  - R949 LANDED (76a37e2, l22, 29 inline, the pure flip): The Dragon",
+  "  issue-22 box closing round - no new ink, all three report-022 boxes",
+  "  flipped at the single round: the part-one military-history triptych,",
+  "  the part-two AD&D DMG sneak preview and the part-three commentary set",
+  "  all checked, gap_census 3 closed 0 open. 29 inline = 18 consts + 11",
+  "  bools, 6 examples, no tables; the bookkeeping pins the shape itself -",
+  "  3 boxes, 9 chains, 4 rounds (the walk's first four-round shape), the",
+  "  opener inline totals 93 + 320 + 151 = 564, the walk census issues 2-22",
+  "  all closed (twenty-one issues), the unchanged registry ground truth",
+  "  1313/1338/25, the combined TD22-plus-LW-13 experiment frame, and the",
+  "  two watches riding to TD 23 (the Sullin levels 7-9, the brawling",
+  "  sequel). Census 871->872; rverify GREEN 29 mutants 0 missed at base",
+  "  446f677; round-trip 17405 bytes md5",
+  "  d4186dd32bd5d4a97e1be64d5d39f47b, byte-exact at 76a37e2 (fresh",
+  "  tarball re-run applied 0 already 8; the flip round's eight patches",
+  "  carry the gap report in the git add). THE ISSUE-22 FOUR-ROUND SHAPE",
+  "  IS COMPLETE: R946 t22 7cfc392, R947 s22 8c3b563, R948 k22 446f677,",
+  "  R949 l22 76a37e2. Next: TD 23 - the fresh intake (transcripts,",
+  "  folio-vs-page check, chain call, drop list, then the round plan);",
+  "  the Sullin levels 7-9 and the brawling long-term-effects watches",
+  "  come due there. WAIT FOR GO."
+ ],
+ "header_file": "rules/t23.h",
+ "include_after": "#include \"rules/l22.h\"  // R949: the Dragon issue-22 box closing round, the four-round walk complete",
+ "include_comment": "the Dragon issue-23 opener part one, the three-chain variant round",
+ "audit_file": "rules/audits/r950_batch.h",
+ "audit_anchor": "#include \"rules/audits/r949_batch.h\"  // R949: R949 Dragon issue-22 closure audit",
+ "audit_label": "R950 issue-23 variant triptych audit",
+ "audit_comment": "the three-chain variant triptych audit - the En Garde solitaire dueling method, the psionic wrestling track and the Starship Warden water monsters",
+ "gap_report": "tools/dragon_gap_report_022.md",
+ "gap_census": {
+  "closed": 3,
+  "open": 0
+ },
+ "gap_flips": [],
+ "banner": {
+  "title": "The Dragon issue-23 opener part one - the variant triptych",
+  "provenance": "The opener of the issue-23 four-round shape - three of the ten Curtiss-called chains pinned as the variant triptych, the lower-planes DMG preview riding its own part-two table round, the commentary set at part three and the flip to follow. All pinned from The Dragon Vol. III No. 9 (March 1979) print 5-13 at extract/dragon/023, PRINT FOLIO = PDF PAGE this issue, the transcript of the Curtiss-provided scan. The intake seats the gap report and all thirty-two transcripts; the two inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in issue 23 and ride to TD 24."
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "t23DuelBasePct",
+   "value": 50,
+   "comment": "the underlying assumption - between equals each stands an equal chance, the basic fifty-percent hit probability the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23DuelCeDivisor",
+   "value": 4,
+   "comment": "the CE difference is divided by four to find the hit probability modifier the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23DuelDmMax",
+   "value": 15,
+   "comment": "the defense modifier - a whole number ranging from one to fifteen the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23JacquesExpertise",
+   "value": 18,
+   "comment": "the worked example - Jaques dUberville with an expertise factor of eighteen the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23KarlExpertise",
+   "value": 15,
+   "comment": "against Karl von Badenhaus with an expertise of fifteen the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23ExampleDm",
+   "value": 3,
+   "comment": "the defense modifier for both duelists - eighteen minus fifteen the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23JacquesCe",
+   "value": 100,
+   "comment": "the weaker opponent by combat effectiveness - Jacques at one hundred the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23KarlCe",
+   "value": 140,
+   "comment": "against the stronger Karl at one hundred forty the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23CeGap",
+   "value": 40,
+   "comment": "the difference between them in CE points the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23ExampleModPct",
+   "value": 10,
+   "comment": "the forty-point gap divided by four gives a ten-percent modifier the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23JacquesHitPct",
+   "value": 40,
+   "comment": "the superior-skill weaker man hits on one to forty percent the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23KarlHitPct",
+   "value": 60,
+   "comment": "the stronger man hits on one to sixty percent the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23JacquesRoll",
+   "value": 42,
+   "comment": "the superior duelist rolls forty-two, subtracts the defense modifier for thirty-nine and scores a light head wound the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23KarlRoll",
+   "value": 58,
+   "comment": "the inferior duelist rolls fifty-eight, adds the modifier for sixty-one and misses the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23KarlInjury",
+   "value": 26,
+   "comment": "the light head wound - base twenty plus a die roll of six the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23KarlNewCe",
+   "value": 114,
+   "comment": "the wounded Karl recomputed to one hundred fourteen the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23PhaseTwoJacquesPct",
+   "value": 47,
+   "comment": "the second-phase recompute - Jacques now hits on one to forty-seven the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23PhaseTwoKarlPct",
+   "value": 53,
+   "comment": "while Karl scores on one to fifty-three the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23CritNoteCount",
+   "value": 5,
+   "comment": "the five printed table notes - defend-only-next-phase, expertise halved, expertise quartered, strength halved and the non-player surrender the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23CritBandCount",
+   "value": 11,
+   "comment": "the eleven critical hit bands from the light leg wound through the double-nought death the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23CritHitsCount",
+   "value": 11,
+   "comment": "the eleven critical hit bands by print order - light leg, light left arm, light right arm, light head, light body, serious leg, serious left arm, serious right arm, serious head, serious body, dead the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23TrackSpaces",
+   "value": 17,
+   "comment": "the double track - seventeen spaces long, the center and the flank the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23TrackEndSpace",
+   "value": 8,
+   "comment": "to win a player must force a marker into the opponent's space number eight the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23AttackBonus",
+   "value": 40,
+   "comment": "the attacker's total psionic strength is increased by forty points or doubled, whichever is less the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23PushTwoSpacesRatio",
+   "value": 3,
+   "comment": "a ratio of three to one moves the proper marker two spaces the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23PushMaxSpaces",
+   "value": 2,
+   "comment": "higher ratios do not have higher effects - two spaces is the maximum possible retreat the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23AttackerLoss",
+   "value": 3,
+   "comment": "after each exchange the attacker loses three points the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23DefenderLossPerSpace",
+   "value": 2,
+   "comment": "the defender loses two times the number of spaces fallen back the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23CollapseThreshold",
+   "value": 15,
+   "comment": "a psionic strength falling below fifteen means the loss of the battle and a roll on the battle-loser table the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23UnconsciousHours",
+   "value": 12,
+   "comment": "the center-marker loss - instant death, or unconsciousness for one to twelve hours if the saving throw succeeds the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23WardenCount",
+   "value": 20,
+   "comment": "the twenty water creatures of the monster roster, from the Sea Griffon through the Merman the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23OrcasStunTurns",
+   "value": 6,
+   "comment": "the orcas directional spout stuns for one to six turns the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23CentipedeLiftLbs",
+   "value": 1000,
+   "comment": "the sea centipede lifts one thousand pounds with its telekinesis the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SeaDragonBodyFeet",
+   "value": 40,
+   "comment": "the one-time sea turtle is about forty feet long the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SeaDragonNeckFeet",
+   "value": 20,
+   "comment": "with an additional twenty feet of neck the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23BedTentacles",
+   "value": 50,
+   "comment": "the bed of spikes has approximately fifty tentacles the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23MineDamageDice",
+   "value": 10,
+   "comment": "the mine - free-floating leather coral exploding for ten dice of damage the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23DaggerPoisonPct",
+   "value": 20,
+   "comment": "the water dagger carries a twenty percent chance of poison the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23KrakenFeet",
+   "value": 100,
+   "comment": "the kraken octopus runs up to one hundred feet with a total carapace the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23BrainFishStrength",
+   "value": 13,
+   "comment": "the brain fish mental attack strength of thirteen, printed truncated as stre the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SharkoidStrength",
+   "value": 15,
+   "comment": "the sharkoid mental blast strength of fifteen the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23GupoidPackLow",
+   "value": 300,
+   "comment": "the gupoid packs run from three hundred the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23GupoidPackHigh",
+   "value": 1000,
+   "comment": "to one thousand fish the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SirenTranceRounds",
+   "value": 12,
+   "comment": "the siren trance holds for one to twelve melee rounds, treated as a poison save the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SeaFlyerControlPct",
+   "value": 20,
+   "comment": "the sea flyer holds a twenty percent chance of already controlling a creature when encountered the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SeaFlyerWingspanInches",
+   "value": 2,
+   "comment": "the mutated manta rays average two inches in wingspan the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23MermanLimbs",
+   "value": 6,
+   "comment": "the merman has six crab-like limbs, two of them manipulative claws the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23MermanLungTakePct",
+   "value": 50,
+   "comment": "captured player characters have their lungs taken for gills half the time the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23PeeperTableDice",
+   "value": 4,
+   "comment": "the peeper radiated eyes in the table - four to twenty-four, four dice the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23PeeperTextDice",
+   "value": 3,
+   "comment": "the same attack in the text - three dice worth of damage, both pinned the Starship Warden water monsters (print 11, 13)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "t23FlowchartSolitaire",
+   "value": true,
+   "comment": "the game system laid out in flow-chart fashion - yes-no monthly actions from courting to the bawdyhouse the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23DuelingBreakdown",
+   "value": true,
+   "comment": "the only breakdown point - dueling always requires another player and secretly written sequenced actions the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23MidColumbiaSociety",
+   "value": true,
+   "comment": "the Mid-Columbia Wargaming Society of Richland Washington substitutes the shorthand dueling method the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23CeRecomputeWounded",
+   "value": true,
+   "comment": "the combat effectiveness is recomputed every time a duelist is wounded the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23HigherExpertiseInitiative",
+   "value": true,
+   "comment": "the higher expertise factor always has the initiative - and a player character always holds it against a non-player the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23SuperiorSubtractsDm",
+   "value": true,
+   "comment": "the superior duelist subtracts the defense modifier from his die roll, the inferior adds it the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23GrandMeleeUnderdogBlows",
+   "value": true,
+   "comment": "the grand melee underdog gains blows per phase equal to his strength divided by three the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23DuelHalfPractice",
+   "value": true,
+   "comment": "each duel counts as one-half of a free practice session, whether or not the character wins the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "name": "t23FogImage",
+   "value": true,
+   "comment": "the visual - a glowing sheet of stretchable fog pushed back and forth between the combatants the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23CenterDeathOrSave",
+   "value": true,
+   "comment": "the center marker forced home means instant death or the save-throw unconsciousness the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23OutsideCharmNoSave",
+   "value": true,
+   "comment": "the outside marker forced home means the victim is charmed with no saving throw the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23BonusTemporary",
+   "value": true,
+   "comment": "the forty-point increase is temporary - the strength drops back to normal after the comparison the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23HigherStrengthFirst",
+   "value": true,
+   "comment": "the player with the higher psionic strength attacks first, then strict alternation the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23EldritchBase",
+   "value": true,
+   "comment": "the variant rides on the psionic combat of the third supplement - the losing roll comes from that battle-loser table the psionic wrestling track (print 10)"
+  },
+  {
+   "name": "t23FloodingDoctrine",
+   "value": true,
+   "comment": "the flooding doctrine - an entire level can flood, drowning the unwary at the elevator door the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SaltFreshAdapt",
+   "value": true,
+   "comment": "the salt-or-fresh rationale - the radiation could have turned the water either way and the fish adapted the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SeaGriffonNoManipClaws",
+   "value": true,
+   "comment": "the sea griffon cannot use most technology - it has no manipulative claws the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23GreenDeathOxygen",
+   "value": true,
+   "comment": "the green death dies only to the protein disrupter or exposure to oxygen the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SharkoidFlashingLight",
+   "value": true,
+   "comment": "the sharkoid is epileptic - a flashing light renders it fairly harmless the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23TroutoidDensity",
+   "value": true,
+   "comment": "the troutoid density control - it drops like a rock or floats to avoid predators the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23WaterDaggerAluminum",
+   "value": true,
+   "comment": "the water dagger is staghorn coral covered with aluminum the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "name": "t23SirenCharismaNotSonic",
+   "value": true,
+   "comment": "the siren uses a charismatic effect rather than sonics - gills negate sonics the Starship Warden water monsters (print 11, 13)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "t23CritHits",
+   "tag": "Ch",
+   "count": "t23CritHitsCount",
+   "sentinel": -99,
+   "audit_comment": "the critical hits grid - the eleven bands from the light leg wound through the double-nought death, the light bands at base twenty or twenty-five plus the small die, the serious bands at base fifty or one hundred plus the large die, the die sizes converted from the sixteen-sided and one-hundred-twenty-sided prints",
+   "cols": [
+    "t23CritLo",
+    "t23CritHi",
+    "t23CritBase",
+    "t23CritDie"
+   ],
+   "col_comments": [
+    "the band floor of the modified die roll - one, eleven, twenty-one through the double-nought read as one hundred",
+    "the band ceiling - ten, twenty, thirty through ninety-nine and one hundred at the death row",
+    "the damage base - twenty for the five light bands, twenty-five for the light body, fifty for the four serious bands and one hundred for the serious body, zero at the death row",
+    "the damage die - the print says sixteen-sided for the light bands and one-hundred-twenty-sided for the serious, the worked example proves six and twenty (Karl takes twenty plus six for twenty-six), conversion noted"
+   ],
+   "data": [
+    [
+     1,
+     10,
+     20,
+     6
+    ],
+    [
+     11,
+     20,
+     20,
+     6
+    ],
+    [
+     21,
+     30,
+     20,
+     6
+    ],
+    [
+     31,
+     40,
+     20,
+     6
+    ],
+    [
+     41,
+     50,
+     25,
+     6
+    ],
+    [
+     51,
+     60,
+     50,
+     20
+    ],
+    [
+     61,
+     70,
+     50,
+     20
+    ],
+    [
+     71,
+     80,
+     50,
+     20
+    ],
+    [
+     81,
+     90,
+     50,
+     20
+    ],
+    [
+     91,
+     99,
+     100,
+     20
+    ],
+    [
+     100,
+     100,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "name": "t23Warden",
+   "tag": "Wd",
+   "count": "t23WardenCount",
+   "sentinel": -99,
+   "audit_comment": "the Starship Warden water monster grid - the twenty creatures by print order from the Sea Griffon through the Merman, attacks, armor class, hit dice, the appearing band and the movement, the dashes read as the sentinel",
+   "cols": [
+    "t23WardenAttacks",
+    "t23WardenAc",
+    "t23WardenHd",
+    "t23WardenAppearLo",
+    "t23WardenAppearHi",
+    "t23WardenMove"
+   ],
+   "col_comments": [
+    "the number of attacks - three for the sea griffon and dragon, nine tentacles and beak for the kraken, the water dagger has none",
+    "the armor class - six for the sea griffon through one for the water dagger, oysteroid and peeper, the green death and gupoids carry the sentinel",
+    "the hit dice - eighteen for the orcas, fifteen for the sea dragon, twelve for the sharkoid, ten for the kraken, the cluster and patch creatures carry the sentinel",
+    "the appearing band floor - one for most, two for the craboid and sea flyer, three hundred for the gupoids",
+    "the appearing band ceiling - one hundred for the merman pack, one thousand for the gupoids, the single creatures at one",
+    "the movement - twenty-three for the sea griffon, thirty-six fly for the craboid noted against walk three and swim ten, twenty-five mounted for the merman noted against five swimming, the immobile creatures carry the sentinel"
+   ],
+   "data": [
+    [
+     3,
+     6,
+     5,
+     1,
+     2,
+     23
+    ],
+    [
+     2,
+     6,
+     18,
+     1,
+     1,
+     20
+    ],
+    [
+     1,
+     3,
+     2,
+     1,
+     4,
+     20
+    ],
+    [
+     3,
+     2,
+     15,
+     1,
+     1,
+     20
+    ],
+    [
+     1,
+     4,
+     2,
+     1,
+     4,
+     20
+    ],
+    [
+     1,
+     -99,
+     -99,
+     1,
+     1,
+     -99
+    ],
+    [
+     1,
+     7,
+     -99,
+     1,
+     1,
+     -99
+    ],
+    [
+     -99,
+     1,
+     5,
+     1,
+     1,
+     -99
+    ],
+    [
+     1,
+     6,
+     3,
+     1,
+     6,
+     -99
+    ],
+    [
+     2,
+     2,
+     1,
+     2,
+     20,
+     36
+    ],
+    [
+     9,
+     3,
+     10,
+     1,
+     1,
+     20
+    ],
+    [
+     1,
+     1,
+     1,
+     1,
+     10,
+     18
+    ],
+    [
+     1,
+     1,
+     2,
+     1,
+     5,
+     18
+    ],
+    [
+     2,
+     4,
+     3,
+     3,
+     30,
+     20
+    ],
+    [
+     1,
+     -99,
+     -99,
+     300,
+     1000,
+     15
+    ],
+    [
+     1,
+     6,
+     3,
+     1,
+     2,
+     20
+    ],
+    [
+     1,
+     3,
+     1,
+     2,
+     20,
+     20
+    ],
+    [
+     2,
+     5,
+     12,
+     1,
+     1,
+     17
+    ],
+    [
+     1,
+     4,
+     3,
+     4,
+     24,
+     23
+    ],
+    [
+     1,
+     5,
+     5,
+     1,
+     100,
+     25
+    ]
+   ]
+  }
+ ],
+ "header_sections": {
+  "the En Garde solitaire dueling variant (print 5-6)": [
+   {
+    "kind": "const",
+    "name": "t23DuelBasePct"
+   },
+   {
+    "kind": "const",
+    "name": "t23DuelCeDivisor"
+   },
+   {
+    "kind": "const",
+    "name": "t23DuelDmMax"
+   },
+   {
+    "kind": "const",
+    "name": "t23JacquesExpertise"
+   },
+   {
+    "kind": "const",
+    "name": "t23KarlExpertise"
+   },
+   {
+    "kind": "const",
+    "name": "t23ExampleDm"
+   },
+   {
+    "kind": "const",
+    "name": "t23JacquesCe"
+   },
+   {
+    "kind": "const",
+    "name": "t23KarlCe"
+   },
+   {
+    "kind": "const",
+    "name": "t23CeGap"
+   },
+   {
+    "kind": "const",
+    "name": "t23ExampleModPct"
+   },
+   {
+    "kind": "const",
+    "name": "t23JacquesHitPct"
+   },
+   {
+    "kind": "const",
+    "name": "t23KarlHitPct"
+   },
+   {
+    "kind": "const",
+    "name": "t23JacquesRoll"
+   },
+   {
+    "kind": "const",
+    "name": "t23KarlRoll"
+   },
+   {
+    "kind": "const",
+    "name": "t23KarlInjury"
+   },
+   {
+    "kind": "const",
+    "name": "t23KarlNewCe"
+   },
+   {
+    "kind": "const",
+    "name": "t23PhaseTwoJacquesPct"
+   },
+   {
+    "kind": "const",
+    "name": "t23PhaseTwoKarlPct"
+   },
+   {
+    "kind": "const",
+    "name": "t23CritNoteCount"
+   },
+   {
+    "kind": "table",
+    "name": "t23CritHits"
+   },
+   {
+    "kind": "const",
+    "name": "t23CritBandCount"
+   },
+   {
+    "kind": "const",
+    "name": "t23CritHitsCount"
+   },
+   {
+    "kind": "bool",
+    "name": "t23FlowchartSolitaire"
+   },
+   {
+    "kind": "bool",
+    "name": "t23DuelingBreakdown"
+   },
+   {
+    "kind": "bool",
+    "name": "t23MidColumbiaSociety"
+   },
+   {
+    "kind": "bool",
+    "name": "t23CeRecomputeWounded"
+   },
+   {
+    "kind": "bool",
+    "name": "t23HigherExpertiseInitiative"
+   },
+   {
+    "kind": "bool",
+    "name": "t23SuperiorSubtractsDm"
+   },
+   {
+    "kind": "bool",
+    "name": "t23GrandMeleeUnderdogBlows"
+   },
+   {
+    "kind": "bool",
+    "name": "t23DuelHalfPractice"
+   }
+  ],
+  "the psionic wrestling track (print 10)": [
+   {
+    "kind": "const",
+    "name": "t23TrackSpaces"
+   },
+   {
+    "kind": "const",
+    "name": "t23TrackEndSpace"
+   },
+   {
+    "kind": "const",
+    "name": "t23AttackBonus"
+   },
+   {
+    "kind": "const",
+    "name": "t23PushTwoSpacesRatio"
+   },
+   {
+    "kind": "const",
+    "name": "t23PushMaxSpaces"
+   },
+   {
+    "kind": "const",
+    "name": "t23AttackerLoss"
+   },
+   {
+    "kind": "const",
+    "name": "t23DefenderLossPerSpace"
+   },
+   {
+    "kind": "const",
+    "name": "t23CollapseThreshold"
+   },
+   {
+    "kind": "const",
+    "name": "t23UnconsciousHours"
+   },
+   {
+    "kind": "bool",
+    "name": "t23FogImage"
+   },
+   {
+    "kind": "bool",
+    "name": "t23CenterDeathOrSave"
+   },
+   {
+    "kind": "bool",
+    "name": "t23OutsideCharmNoSave"
+   },
+   {
+    "kind": "bool",
+    "name": "t23BonusTemporary"
+   },
+   {
+    "kind": "bool",
+    "name": "t23HigherStrengthFirst"
+   },
+   {
+    "kind": "bool",
+    "name": "t23EldritchBase"
+   }
+  ],
+  "the Starship Warden water monsters (print 11, 13)": [
+   {
+    "kind": "table",
+    "name": "t23Warden"
+   },
+   {
+    "kind": "const",
+    "name": "t23WardenCount"
+   },
+   {
+    "kind": "const",
+    "name": "t23OrcasStunTurns"
+   },
+   {
+    "kind": "const",
+    "name": "t23CentipedeLiftLbs"
+   },
+   {
+    "kind": "const",
+    "name": "t23SeaDragonBodyFeet"
+   },
+   {
+    "kind": "const",
+    "name": "t23SeaDragonNeckFeet"
+   },
+   {
+    "kind": "const",
+    "name": "t23BedTentacles"
+   },
+   {
+    "kind": "const",
+    "name": "t23MineDamageDice"
+   },
+   {
+    "kind": "const",
+    "name": "t23DaggerPoisonPct"
+   },
+   {
+    "kind": "const",
+    "name": "t23KrakenFeet"
+   },
+   {
+    "kind": "const",
+    "name": "t23BrainFishStrength"
+   },
+   {
+    "kind": "const",
+    "name": "t23SharkoidStrength"
+   },
+   {
+    "kind": "const",
+    "name": "t23GupoidPackLow"
+   },
+   {
+    "kind": "const",
+    "name": "t23GupoidPackHigh"
+   },
+   {
+    "kind": "const",
+    "name": "t23SirenTranceRounds"
+   },
+   {
+    "kind": "const",
+    "name": "t23SeaFlyerControlPct"
+   },
+   {
+    "kind": "const",
+    "name": "t23SeaFlyerWingspanInches"
+   },
+   {
+    "kind": "const",
+    "name": "t23MermanLimbs"
+   },
+   {
+    "kind": "const",
+    "name": "t23MermanLungTakePct"
+   },
+   {
+    "kind": "const",
+    "name": "t23PeeperTableDice"
+   },
+   {
+    "kind": "const",
+    "name": "t23PeeperTextDice"
+   },
+   {
+    "kind": "bool",
+    "name": "t23FloodingDoctrine"
+   },
+   {
+    "kind": "bool",
+    "name": "t23SaltFreshAdapt"
+   },
+   {
+    "kind": "bool",
+    "name": "t23SeaGriffonNoManipClaws"
+   },
+   {
+    "kind": "bool",
+    "name": "t23GreenDeathOxygen"
+   },
+   {
+    "kind": "bool",
+    "name": "t23SharkoidFlashingLight"
+   },
+   {
+    "kind": "bool",
+    "name": "t23TroutoidDensity"
+   },
+   {
+    "kind": "bool",
+    "name": "t23WaterDaggerAluminum"
+   },
+   {
+    "kind": "bool",
+    "name": "t23SirenCharismaNotSonic"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['t23DuelBasePct']() != 50 or m['t23DuelCeDivisor']() != 4 or m['t23DuelDmMax']() != 15 or m['t23FlowchartSolitaire']() != 1",
+   "note": "the duel frame - the fifty-percent base, the four-divisor and the one-to-fifteen defense modifier the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "expr": "m['t23JacquesExpertise']() != 18 or m['t23KarlExpertise']() != 15 or m['t23ExampleDm']() != 3 or m['t23JacquesCe']() != 100 or m['t23KarlCe']() != 140",
+   "note": "the worked example pair - the eighteen against fifteen expertise giving the three, the one hundred against one hundred forty effectiveness the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "expr": "m['t23CeGap']() != 40 or m['t23ExampleModPct']() != 10 or m['t23JacquesHitPct']() != 40 or m['t23KarlHitPct']() != 60",
+   "note": "the probability split - the forty-point gap, the ten-percent modifier and the forty against sixty hit probabilities the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "expr": "m['t23JacquesRoll']() != 42 or m['t23KarlRoll']() != 58 or m['t23KarlInjury']() != 26 or m['t23KarlNewCe']() != 114",
+   "note": "the first phase played - the forty-two less three that hits, the fifty-eight plus three that misses, the twenty-six wound and the one hundred fourteen recompute the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "expr": "m['t23PhaseTwoJacquesPct']() != 47 or m['t23PhaseTwoKarlPct']() != 53 or m['t23CeRecomputeWounded']() != 1 or m['t23SuperiorSubtractsDm']() != 1",
+   "note": "the second phase - the swing to forty-seven against fifty-three, the advantage moving as it happened in reality the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "expr": "m['t23CritBandCount']() != 11 or m['t23CritNoteCount']() != 5 or m['t23DuelHalfPractice']() != 1 or m['t23GrandMeleeUnderdogBlows']() != 1",
+   "note": "the melee bookends - the eleven bands, the five notes, the half practice session and the strength-divided-by-three underdog blows the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "expr": "m['t23TrackSpaces']() != 17 or m['t23TrackEndSpace']() != 8 or m['t23AttackBonus']() != 40 or m['t23CollapseThreshold']() != 15",
+   "note": "the track frame - seventeen spaces, the eighth-space kill, the forty-point bonus and the fifteen-point collapse the psionic wrestling track (print 10)"
+  },
+  {
+   "expr": "m['t23PushTwoSpacesRatio']() != 3 or m['t23PushMaxSpaces']() != 2 or m['t23AttackerLoss']() != 3 or m['t23DefenderLossPerSpace']() != 2 or m['t23UnconsciousHours']() != 12",
+   "note": "the push economics - the three-to-one double push capped at two spaces, the attacker losing three, the defender two per space and the twelve-hour save the psionic wrestling track (print 10)"
+  },
+  {
+   "expr": "m['t23CenterDeathOrSave']() != 1 or m['t23OutsideCharmNoSave']() != 1 or m['t23BonusTemporary']() != 1 or m['t23FogImage']() != 1",
+   "note": "the track stakes - the center marker death or save, the outside marker charm with no save, the temporary bonus and the stretchable fog the psionic wrestling track (print 10)"
+  },
+  {
+   "expr": "m['t23WardenCount']() != 20 or m['t23FloodingDoctrine']() != 1 or m['t23SaltFreshAdapt']() != 1",
+   "note": "the roster frame - twenty creatures riding the flooding doctrine and the salt-or-fresh adaptation rationale the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "expr": "m['t23OrcasStunTurns']() != 6 or m['t23CentipedeLiftLbs']() != 1000 or m['t23SeaDragonBodyFeet']() != 40 or m['t23SeaDragonNeckFeet']() != 20 or m['t23BedTentacles']() != 50",
+   "note": "the monster dimensions - the six-turn orcas stun, the thousand-pound telekinesis, the forty-plus-twenty sea dragon and the fifty tentacles the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "expr": "m['t23KrakenFeet']() != 100 or m['t23MineDamageDice']() != 10 or m['t23DaggerPoisonPct']() != 20 or m['t23SirenTranceRounds']() != 12",
+   "note": "the danger quartet - the hundred-foot kraken, the ten-dice mine, the twenty-percent poison dagger and the twelve-round siren trance the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "expr": "m['t23BrainFishStrength']() != 13 or m['t23SharkoidStrength']() != 15 or m['t23GupoidPackLow']() != 300 or m['t23GupoidPackHigh']() != 1000",
+   "note": "the mental and the mass - the thirteen and fifteen mental strengths and the three-hundred-to-thousand gupoid packs the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "expr": "m['t23SeaFlyerControlPct']() != 20 or m['t23SeaFlyerWingspanInches']() != 2 or m['t23MermanLimbs']() != 6 or m['t23MermanLungTakePct']() != 50 or m['t23PeeperTableDice']() != 4 or m['t23PeeperTextDice']() != 3",
+   "note": "the small wonders - the two-inch controlled sea flyer, the six-limbed lung-taking merman and the peeper four-dice table against its three-dice text the Starship Warden water monsters (print 11, 13)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['t23CritLo'](0) != 1 or m['t23CritHi'](0) != 10 or m['t23CritBase'](0) != 20 or m['t23CritDie'](0) != 6 or m['t23CritBase'](4) != 25 or m['t23CritDie'](4) != 6",
+   "note": "the critical hits spot check - the light leg band and the twenty-five-base light body the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "expr": "m['t23CritLo'](5) != 51 or m['t23CritBase'](5) != 50 or m['t23CritDie'](5) != 20 or m['t23CritBase'](9) != 100 or m['t23CritDie'](9) != 20",
+   "note": "the serious bands - the fifty-base leg at the twenty die and the one-hundred-base body the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "expr": "m['t23CritLo'](10) != 100 or m['t23CritHi'](10) != 100 or m['t23CritBase'](10) != 0 or m['t23CritDie'](10) != 0",
+   "note": "the death row - the double-nought read as the one-hundred band with no base and no die the En Garde solitaire dueling variant (print 5-6)"
+  },
+  {
+   "expr": "m['t23WardenAttacks'](0) != 3 or m['t23WardenAc'](0) != 6 or m['t23WardenHd'](0) != 5 or m['t23WardenAppearLo'](0) != 1 or m['t23WardenAppearHi'](0) != 2 or m['t23WardenMove'](0) != 23",
+   "note": "the sea griffon row - three attacks, armor class six, five dice, the one-to-two band and the twenty-three move the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "expr": "m['t23WardenAttacks'](10) != 9 or m['t23WardenHd'](10) != 10 or m['t23WardenAttacks'](17) != 2 or m['t23WardenHd'](17) != 12",
+   "note": "the kraken and sharkoid rows - nine attacks at ten dice, the pair at twelve dice the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "expr": "m['t23WardenAc'](5) != -99 or m['t23WardenHd'](5) != -99 or m['t23WardenAc'](14) != -99 or m['t23WardenAppearLo'](14) != 300 or m['t23WardenAppearHi'](14) != 1000",
+   "note": "the sentinel rows - the green death and the gupoid pack carry the sentinel armor and dice the Starship Warden water monsters (print 11, 13)"
+  },
+  {
+   "expr": "m['t23WardenMove'](9) != 36 or m['t23WardenMove'](19) != 25 or m['t23WardenMove'](17) != 17",
+   "note": "the odd movers - the craboid thirty-six fly, the merman twenty-five mounted and the sharkoid seventeen the Starship Warden water monsters (print 11, 13)"
+  }
+ ],
+ "file_patches": [],
+ "data_files": [
+  {
+   "path": "tools/dragon_gap_report_023.md",
+   "content": "# Dragon gap report - THE DRAGON, Vol. III No. 9 (March 1979)\n\nThe Dragon Magazine walk, issue #23. Primary ink:\nextract/dragon/023/pNNN_full.txt, NNN = page index;\nPRINT FOLIO = PDF PAGE in this issue (verified at the\npage feet - folios 4 through 30 print at the PDF pages\nof the same numbers; pages 1-3, 7, 12 and 31-32 are\ncovers and ads carrying no foot folio). The voice is\nthe chat-side mistral transcript of the Curtiss-\nprovided scan (single voice: no archive.org djvu\ncross-check exists for issue 23); the article CHAIN is\nthe ink unit, not the folio. The numbering agrees\neverywhere - Vol. III No. 9, March 1979, #23. The two\ninherited watches stay open - the Sullin levels 7-9\nand the brawling long-term-effects sequel print nowhere\nin issue 23 either; both ride to TD 24. The promised\nGardner Fox Niall tale arrived - The Thing From the\nTomb.\n\nDoctrine (Curtiss, 2026-10-29): the pin IS the\nconversion - OD&D-era ink adjudicated to 1e terms, the\nconversion noted, never silent; Dragon pins ride a\nVARIANT layer with provenance, never core canon.\n\nAdjudication (Curtiss, 2026-10-31, ten chains in, the\nsecond four-round issue walk - the four-round shape\nproven at issue 22): the engine-relevant chains of the\nissue split across THREE opener rounds plus the closing\nflip. Part one (three chains, the variant triptych):\nchain one - En Garde in Solitaire (print 5-6), the\nLaking shorthand dueling method - the combat\neffectiveness formula, the defense modifier, the\nfifty-percent base hit probability and the critical\nhits table with its die-size print errors; chain two -\nMind Wrestling (print 10), the Swycaffer psionic\ncombat track - the seventeen-space double track, the\nforty-point attack bonus and the marker push ratios;\nchain three - Water Adventures on the Starship Warden\n(print 11 + 13), the Hursh Metamorphosis Alpha variant -\nthe twenty-creature water monster roster riding the\nflooding doctrine. Part two (one chain, the table\nround): Random Generation of Creatures from the Lower\nPlanes (print 15-18), the Sorceror's Scroll DMG preview\n- the stat frame, the appearance tables, the strength\ntable, the special attack and defense lists, the magic\nresistance variance and the psionic ability band. Part\nthree (six chains, the commentary set): Good News for\nthe Gaming Hobby (print 6, the Gygax trade-show growth\nreport), It Weighs WHAT (print 14, the Mornard armor-\nweight corrective), Damage Permanency (print 19-20,\nthe Ward permanent-injury system with the Kask\nhit-point ED note), Dungeons and Prisons (print 21,\nthe Day no-tears formula), Convention Season 79 - What\nHappened to July (print 4 + 21, the Kask Origins\ncritique) and The Thing From the Tomb (print 8-9 +\n22-30, the Gardner Fox Niall fiction chain). The flip\n(R953) closes all three boxes.\n\n- [ ] **The issue-23 opener chains part one** (print 5-13, the variant triptych: En Garde in Solitaire, Mind Wrestling, Water Adventures on the Starship Warden)\n- [ ] **The issue-23 opener chains part two** (print 15-18, the Random Generation of Creatures from the Lower Planes: the stat frame, the appearance tables, the strength and special tables)\n- [ ] **The issue-23 opener chains part three** (print 4-30, the commentary set: Good News for the Gaming Hobby, It Weighs WHAT, Damage Permanency, Dungeons and Prisons, Convention Season 79, The Thing From the Tomb)\n\nDrop (Curtiss, 2026-10-31, none contested): the cover\n(print 1), the Ral Partha miniatures ad (print 2), the\n4th Dimension ad (print 3), the Eisenwerk starship ad\n(print 6), the GenCon XII convention ad (print 7), the\nGrenadier Gamma World figures ad (print 12), the\nJudges Guild ads (print 13), the miniature figurines\nad and the vacation comic (print 16), the Source of\nthe Nile ad (print 14), the International Dungeon\nDesign Competition (print 24), the GenCon figure\npainting competition repeat (print 25), the Empyrean\nChallenge play-by-mail ad (print 21), the Tribes of\nCrane repeat ad (print 27), the back-issue and DM\nSearch repeats (print 28-29), the B1 In Search of the\nUnknown ad (print 31), the subscription back cover\n(print 32), the convention schedule (print 18), the\nGENCON XII status report (print 30), and the comics.\n\nWatch (Curtiss, 2026-10-31, both still empty): the\nSullin New Spells levels 7-9 and the brawling\nlong-term-effects sequel print nowhere in issue 23\neither - both watches ride to TD 24.\n\nPrint catches pinned as scanned, the conversion noted\n(2026-10-31, part one): the contents prints\nSorceror's Scroll for Sorcerer's Scroll; the contents\nlists Good News at page 18 where it prints at 6, and\nthe Convention Schedule at 21 where it prints at 18;\nthe contents byline prints Geoffrey Laking where the\narticle byline prints George Laking; the En Garde\npiece prints Jaques d'Uberville for Jacques (twice,\nthen Jacques), a defense modifier of the letter O for\nzero, and the critical hits table prints 16-sided and\n120-sided die rolls where the worked example proves\n6-sided and 20-sided (Karl takes base 20 plus 6 for\n26, pinned as printed with the conversion noted);\nMind Wrestling prints ration for ratio; the Warden\nmonster table prints a duplicated Description column,\nSybiotic for Symbiotic in the Sea Flyer row,\nunfootnoted asterisks on the radiated-eyes and\nsharkoid bite cells, Green Death dissolving in 3\nmelee turns where the text prints 4, a mental attack\nstre of 13 (strength truncated), and the its-for-it's\nsubstitutions through the descriptions.\n"
+  },
+  {
+   "path": "extract/dragon/023/p001_full.txt",
+   "content": "# the Dragon\n\nVol. III No. 9\n\nMarch, 1979\n\n$2.00\n"
+  },
+  {
+   "path": "extract/dragon/023/p002_full.txt",
+   "content": "The Army of\nMU'UGALAVYA\nfrom\n\n# RAL PARTHA\n\nM-5\n\nM-7\nGENERAL\n\nM-1\n\n# MU'UGALAVYA\n\nM-4\n\nM-1 HEAVY INFANTRY SPEARMAN\nM-2 MEDIUM INFANTRY, WARHAMMER\nM-3 MEDIUM INFANTRY, SPEARMAN\nM-4 HEAVY INFANTRY, AXE\nM-5 ARCHER\nM-6 SLINGER\nM-7 COMMAND GROUP\n\nM-2\n\nM-6\n\nM-3\n\nFor a complete catalog, send 25 cents in stamp or coin to\n\n# RAL PARTHA ENTERPRISES\n\n3726 LONSDALE \u2022 CINCINNATI, OHIO 45227 \u2022 513-271-4230\n"
+  },
+  {
+   "path": "extract/dragon/023/p003_full.txt",
+   "content": "# 4TH DIMENSION\n\n# THE GAME OF TIME & SPACE\n\nYou are a mighty Time-Lord, and your powerful army of Guardians, Rangers, and Warriors stands ready to do battle. Your opponent is equally strong, and knows that only one of you will survive this conflict of time and space; for you both are Time-Lords, able to alter the fabric of reality, and there is room in the universe for only one with such power . . .\n\n4TH DIMENSION is a classic game of pure strategy \u2014 no luck or dice are involved. A unique feature of the game is the ability to \"Time-Warp\" a piece \u2014 removing it from the board \u2014 and bringing it back into play in a different location! Players must take care not to allow their Time-Lords to be trapped by opposing Warriors beaming down from Time-Warp . . .\n\nSimple to learn, 4D is easily grasped by any gamer from age 10 to adult. The rules are brief and fully illustrated with examples of play; it takes only about 15 minutes to read them and start playing. Games typically are over in only 30-45 minutes.\n\nThis deluxe boxed version of the game comes complete and includes a 8\u00bc\" x 10\u00bd\" mounted gameboard, a set of 26 custom molded plastic playing pieces, and a four-page rules folder.\n\nWhen 4TH DIMENSION was first released in Britain a few years ago, it became an instant success. Local clubs were formed to play the game as well as the 4D Society which publishes its own newsletter and sponsors regular meetings and tournaments. TSR is proud to present the American edition of this excellent game \u2014 another fine product from TSR, The Game Wizards!\n\n$9.95\n\n[LOGO]\n\nTHE DUNGEON HOBBY SHOP\n\n772 Main St.\n\nLake Geneva, WI 53147\n\nPlease add $1.00 to all orders regardless of size for postage and handling.\n\nU.K. Pat. #74/40198\n\nU.S. Pat. #4019740\n"
+  },
+  {
+   "path": "extract/dragon/023/p004_full.txt",
+   "content": "\n\u2014 The Magazine of Fantasy, Swords & Sorcery, and Science Fiction Game Playing \u2014\n\nConvention Season '79 \u2014 What Happened To July?\n\nVol. III No. 9\nMarch 1979 #23\n\nTable of Contents\n\nDesign/Designer's Forum\n\nSorceror's Scroll \u2014 Gary Gygax . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15\nDungeons and Prisons \u2014 Mark S. Day . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21\n\nFeatures\n\nThe Thing From The Tomb \u2014 Gardner F. Fox . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8\nIt Weighs WHAT!!!!? \u2014 Michael Mornard . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14\n\nNews\n\nGood News For The Gaming Hobby \u2014 Gary Gygax . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18\nConvention Schedule . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21\nGENCON Status Report \u2014 Joseph G. Orlowski . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30\n\nVariants\n\nEn Garde! in Solitaire. \u2014 Geoffrey Laking . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5\nMind Wrestling \u2014 Jeff P. Swycaffer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10\nWater Adventures On The Starship Warden \u2014 Carl Hursh . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11\nDamage Permanency \u2014 James Ward . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19\n\nPublisher E. Gary Gygax\nManaging Ed. T.J. Kask\nTD Editor T.J. Kask\nLW Editor Joe Orlowski\n\nArt Dept. Dave Sutherland\nTom Wham\nCirculation Mgt. Joe Orlowski\n\nConvention season is fast approaching, and most people are finding themselves requesting vacation periods, making plans, arrangements, etc., about now. A careful scrutiny of this year's offerings produces some disturbing results.\n\nIn the past few years, gamers have had their choice of good, reputable cons spread throughout the summer, one in each month actually. PennCon and MichiCon alternated between themselves as first in June, then came Origins, somewhere, in July, followed by GenCon in mid- to late August. In effect, something somewhere for everyone, regardless of when your vacation fell, could be worked out.\n\nThis year, there are serious problems. MichiCon is scheduled to go on the first weekend in June. A scant three weeks later, the combined PennCon/Origins takes place. A full eight weeks later, GenCon begins again, for the twelfth year. What happened to July, the most favored vacation month? Previously, Origins was held in July.\n\nThis year, for a variety of reasons, AH and SPI took over administering Origins. The group from PennCon (who didn't even want to bid for the '79 con, but were there to check procedure to bid on the '80 con) allowed themselves to be persuaded to take Origins '79 when no other group showed the slightest interest. This group has a fine reputation earned doing excellent PennCons (formerly known as PhilCon), and felt that it was in the best interest of the hobby to not let Origins die. They should have remained adamant and held out for '80.\n\nTheir troubles began when the powers that would like to be decided that the site they wanted was inadequate, and further insisted that Origins has to be held on a campus. Previously, Origins had been a July con, but this insistence precluded that this year. The only college that would even consider it in their area was Widener, in Chester PA. The only time they could get was in June, as the NFL Eagles train there from July on, and no one else is allowed to use campus facilities. In short, it was the parochialism of AH and SPI that led to this scheduling debacle.\n\nThe problems inherent with Origins go much deeper, though, and bear examining. The entire concept behind Origins is faulty and self-serving. From the onset, AH and SPI have treated Origins as theirs, rather than the hobby's. Under its present format, Origins serves the manufacturers first, and the gamers second. AH and SPI expect to be able to find a group of volunteer gamers willing to hustle their collective butt off, so that the lustre of the show accrues to them (AH and SPI), while the work, sweat and hassles all fall to the misused volunteers. In this instance, they conned the PennCon group into running the show, then refused to let them do it the way they wanted. Further, while they seem to have been long on criticism and demands, they were woefully short of actual assistance or guidance. They caused the scheduling changes that have created problems for the PennCon group, and created doubt in the minds of would-be attendees if there was even going to be a show. Unfortunately, the PennCon group has received some undue criticism as a result.\nContinued on page 21\n\nIf your mailing label says \"TD 23\" this is your last issue . . . resubscribe.\n\nPublisher's Statement\n\nTHE DRAGON is published monthly by TSR Periodicals, a division of TSR Hobbies, Inc., P.O. Box 110, Lake Geneva, WI 53147.\nIt is available at better hobby shops and bookstores, or by subscription. Subscription rate is $24 per 13 issues. Single copy and back issue price is $2.00, but availability of back issues is not guaranteed. Subscriptions outside the U.S. and Canada are $28 per 6 issues, and are air-mailed overseas. (Payment must be made in U.S. currency or by international money order.) All material published herein becomes the exclusive property of the publisher unless special arrangements to the contrary are made. Subscription expiration is coded onto the mailing list. The number to the right of the name, prefixed by 'LW' or 'LD' is the last issue of the subscription. Notices will not be sent.\nChange of address must be filed 30 days prior to mailing date.\nUnsolicited material cannot be returned unless accompanied by a stamped return envelope, and no responsibility for such material can be assumed by the publisher in any event. All rights on the entire contents of this publication are reserved, and nothing may be reprinted in whole or in part without written permission of the publisher. Copyright 1978 by TSR HOBBIES, INC.\n\nSecond-Class Postage paid at Lake Geneva, WI 53147\n\n4\n"
+  },
+  {
+   "path": "extract/dragon/023/p005_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\n# En Garde in Solitaire\n\nGeorge Laking\n\nUnique among role-playing games currently marketed is the game, *EN GARDE!*\n\nIt's unique flavor stems from the fact that it was designed mainly for solitaire play. The game system is laid out in flow-chart fashion, making it easy for the solitary gamer to guide his character through a month's actions in a \"Yes-No\" manner:\n\n*Will Armand court Mistress Y, Yes or No?\n\n(If no, go to bawdyhouse this week; if yes, pay courting fee and roll the dice).\n\n*Did Mistress Y accept him, Yes or No?\n\n(If no, go to bawdyhouse or try again next week; if yes, record status points and enjoy Mistress Y's \"female companionship!\").\n\nThe only point where the *EN GARDE!* game system breaks down is in the cumbersome rules for fighting a duel.\n\nUnder the present rules, another player is always required for dueling, whether the action takes place against a non-player or player's character. Furthermore, each duelist is required to secretly write one or more sequenced actions for use with a simultaneous movement/combat system! For the solitaire gamer playing *EN GARDE!*, this dueling system is totally unworkable.\n\nTo make the game truly solitaire, the members of the Mid-Columbia Wargaming Society (Richland, WA) have substituted the following:\n\n## SHORTHAND DUELING METHOD\n\nThe rules applying to dueling are modified thusly:\n\n### (1) Combat Effectiveness\n\nBefore the duel begins, the Combat Effectiveness (*CE*) of each duelist must be computed first. The combat effectiveness of a character is found by adding his STRENGTH, CONSTITUTION and ENDURANCE factors together. This will change during the course of the duel and must be re-computed every time a character is wounded.\n\n### (2) The Defense Modifier\n\nThe Defense Modifier (DM) represents the difference in EXPERTISE between the two duelists. The defense modifier must be found for both duelists and is determined by subtracting the Expertise factors of both duelists from each other.\n\nIf both are equally skillful, both will have a defense modifier of \"O.\" Otherwise, it will be a whole number ranging from 1-15. This may change during the duel should a character sustain certain types of wounds which hamper his movement and ability to effectively handle a weapon.\n\nFor example, Jaques d'Uberville (with an expertise factor of 18) squares off against Karl von Badenhaus (with an expertise of 15). The defense modifier for both is \"3\" (18-15=3) but each will apply the modifier differently depending on their status as the superior or inferior duelist.\n\nThe defense modifier thus represents how easy (or difficult) it will be to get past your opponent's guard to score a hit.\n\n## THE DUEL\n\n### (1) Scoring\n\nOnce the combat effectiveness and the defense modifier for each duelist has been found, the duel can begin.\n\nNow the underlying assumption of this dueling system is that, between two equal opponents of equal skill and expertise, each stands an equal chance of scoring a hit on their opponent. This equal chance factor is represented by a basic 50% hit probability using percentile dice.\n\nTo determine the exact hit probability, subtract the CE factor of each duelist from the other and divide by four. The number thus found is added to the basic hit probability of the stronger duelist, subtracted from the hit probability of the weaker. Let's look at our two duelists \u2014 Jacques and Karl \u2014 and see how this works.\n\nAlthough Jacques is the superior duelist from an expertise viewpoint, he is the weaker opponent, having a CE of 100 compared to Karl's 140 CE. The difference between them is 40 points, representing a 10% hit probability modifier (140 - 100 = 40 \u00f7 4 = 10). Jacques' hit probability is then 1-40% (50% - 10% = 40%), while Karl has a hit probability of 1-60% (50% + 10% = 60%).\n\nThe duelist with the higher Expertise factor always has the initiative. If both are equal, a six-sided die is rolled and high die determines who has the initiative. If tied, both roll again. (Note that, if a player character is dueling a non-player character, the player character *always* has the initiative, no matter what the expertise factor of his non-player opponent).\n\nThe superior duelist rolls percentile dice, applies the defense modifier (if any) to the die roll and compares it to his hit probability to see if he scored a hit on his opponent. If both duelists are equal, there will be no die roll modification. However, . . . !\n\nIf a duelist has the higher expertise factor, he subtracts the defense modifier from his die roll to see if he hits (being more skillful than his opponent, he stands a better chance of slipping past his opponent's guard). If he is the inferior duelist expertise-wise, he adds the defense modifier to his die roll (his more skillful opponent finding it easier to parry his thrusts).\n\nFor example, Jacques and Karl (having determined their CE/DM factors and their hit probabilities) now cross swords and have at each other. Jacques rolls '42' on the percentile dice (normally a miss for Jacques) but after subtracting the defense modifier for his superior expertise from his die roll, we see that Jacques has scored (42 - 3 = 39) a light head wound against Karl (refer to Critical Hits Table, below).\n\nKarl now strikes, rolling a '58' (normally a hit) against Jacques. Being the inferior duelist, however, he must add the defense modifier to his die roll for a modified result of '61' (58 + 3 = 61). This is outside his hit probability (1-60%) so his blow misses.\n\nIf the number found after rolling the percentile dice and applying the defense modifier indicates that a hit has been scored, refer immediately to the following Critical Hits Table and apply the results shown.\n\n### (2) The Critical Hits Table\n\nUsing the modified die roll number to score a hit, refer to the column marked \"Die Roll\" to determine hit results and damage points:\n\n|  DE ROLL | RESULT | DAMAGE POINTS  |\n| --- | --- | --- |\n|  1-10 | Light Leg Wound | Base 20 + 16-sided die roll  |\n|  11-20 | Light Left Arm Wound | Base 20 + 16-sided die roll  |\n|  **21-30 | Light Right Arm Wound | Base 20 + 16-sided die roll  |\n|  *31-40 | Light Head Wound | Base 20 + 16-sided die roll  |\n|  ##41-50 | Light Body Wound | Base 25 + 16-sided die roll  |\n|  51-60 | Serious Leg Wound | Base 50 + 120-sided die roll  |\n|  61-70 | Serious Left Arm Wound | Base 50 + 120-sided die roll  |\n|  #71-80 | Serious Right Arm Wound | Base 50 + 120-sided die roll  |\n|  *81-90 | Serious Head Wound | Base 50 + 120-sided die roll  |\n|  91-99 | Serious Body Wound | Base 100 + 120-sided die roll  |\n|  00 | DEAD |   |\n\nNotes to Critical Hits Table:\n\n* Opponent may defend only in following phase\n\n** Opponent's expertise factor halved; recompute defense modifier\n\n# Opponent's expertise factor quartered; recompute defense modifier\n\n## Opponent's strength halved; recompute combat effectiveness\n\n! Opponent surrenders (non-player character only)\n\nAt the end of each phase of dueling, the CE DM factors of both duelists are re-computed (unless noted above) to reflect hit damage taken. If a duelist has sustained no injuries in a phase, his CE factor will not change.\n\n5\n"
+  },
+  {
+   "path": "extract/dragon/023/p006_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\nJacques, for example, dodged Karl's thrust and sustained no hits. His CE remains 100. Karl, however, was wounded lightly in the head, taking (base 20 + 16-sided die roll) damage. The die roll was '6' so his total injuries were 26 (20 + 6 = 26) hit points. His new CE is now 114. Recomputing hit probabilities for the second phase, we find that Jacques now has a hit probability of 1-47% while Karl scores on a 1-53% (figure this one out yourself).\n\nFrom the example above, it can be seen that the advantage may swing from one opponent to another and back again in the course of a duel \u2014 as it happened in reality!\n\n# **(3) The Grand Melee**\n\nA player character may take on more than one opponent at a time (why he would want to do so remains, of course, up to the player!). As with the duel, the character with the highest expertise factor goes first and the rest follow in descending order, equally-ranked characters rolling for high die.\n\nStandard procedure with the Mid-Columbia Wargamers is to give the underdog a number of blows per phase equal to that character's strength factor divided by three. In this way, he stands some kind of chance when faced with two or more opponents \u2014 especially if they are *all* superior in skill and expertise!\n\nTwo or more player characters may, of course, join forces to even the odds. How they then divide up their opponents is a player function, although each action is handled as a separate melee.\n\n# **(4) Benefits for Dueling**\n\nEach duel counts as one-half of a (free!) practice session, whether or not the player character wins the duel. The rationale behind this modification is that you learn *something* even if you lose \u2014 if only to avoid your opponent's blade more effectively!\n\nUsing the above modifications completes the conversion of *EN GARDE!* into a solitaire game without Gamesmaster. Of course the game is more fun with two or more other gamers, but with the above dueling method, it is now possible for the solitary gamer to sit down for an evening's pleasure alone with *EN GARDE!*\n\n*EN GARDE!* is available from: Game Designer's Workshop, 203 North Street, Normal, IL 61761.\n\n# STARSHIPS\n\nQuality lead miniatures for deep-space adventures!\n\nOur Starfleet Scale\u2122 ships will enhance any space war game . . . and now, by arrangement with Gamescience, we have miniatures of the famous Alien Space\u2122 ships!\n\nAnd coming soon from Eisenwerk: Alien Space\u2122 rule supplements . . .\n\nEisenwerk makes over 40 different starship miniatures \u2014 as well as 1/2400 ships, 1/288 tanks, and much more.\n\nFor complete information, write:\n\n1207 Marleen  \nHouston, TX 77034  \n(713) 941-8508\n\nprecision design & casting\n\n# GOOD NEWS FOR GAMING\n\nGary Gygax\n\nTen years ago, this writer remembers attending a trade show at which The Avalon Hill Company was the only exhibitor showing games. This year, for the third time running, TSR attended the same show, and at the 42nd Annual Hobby Industry Convention and Trade Show things were a bit different. The convention center in St. Louis housed nearly 500 exhibits, and thousands of buyers crowded the huge facility during the four days of the show. Here's how our own portion of the hobby industry was represented:\n\n(THE) ARMORY\n\nDIMENSION SIX\n\nEON PRODUCTS\n\nEPIC GALLERY IN MILITARIA, LTD\n\nEURO IMPORTS\n\nGAME DESIGNERS WORKSHOP\n\nGAMESCIENCE\n\nGHQ\n\nGRENADIER\n\nHERITAGE MODELS\n\nHIGHLANDER TOY & MINIATURE MILITARY HOBBIES, INC\n\nMETAGAMING CONCEPTS\n\nRAL PARTHA\n\nSPI\n\nTHE AVALON HILL COMPANY\n\nTSR HOBBIES\n\nThat is a considerable increase from a decade ago, and it is indicative of how the gaming hobby has grown and is growing. This growth will certainly benefit game hobbyists by bringing more and better products in the future. There can be no doubt that gaming is now recognized as a full-fledged member of the hobby industry. More outlets will be carrying games and miniature figures, thus making it easier to obtain gaming needs locally, as well as attracting more hobbyists to gaming.\n\nExhibiting at the show was certainly exciting and exhilarating, and all of us at TSR are looking forward with enthusiasm to next year's convention. St. Louis proved to be an excellent spot for a show, despite snow and cold, but the California site for 1980 is likely to be better still! For any of you who happen to be in St. Louis we heartily recommend the Shanghai Inn for superb Chinese food at reasonable prices\u2014and if you love elegance and don't mind blowing the family fortune, try Anthony's, it is superb! Next year about this time we trust that we will report still more hobby gaming growth, and a recommendation or two for good restaurants in the Anaheim area . . .\n\n6\n"
+  },
+  {
+   "path": "extract/dragon/023/p007_full.txt",
+   "content": "# GENCON\n\nUniversity of Wisconsin-Parkside\nAugust 16-19, 1979\n\nDealers . . . Seminars . . . Boardgames!\n\nGiant Dungeon and D&D\u00ae Tournaments!\n\nMiniatures . . . Role Playing . . . New Game Releases!\n\nEverything You Ever Wanted\nIn A Game Convention And MORE!\n\n$10.00 Pre-Registration Fee Before July 25-$15.00 At Door\nFor More Information Contact: GENCON XII, POB 756, Lake Geneva WI 53147\n"
+  },
+  {
+   "path": "extract/dragon/023/p008_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\n# THE THING FROM THE TOMB\n\nGARDNER F. FOX\n\nNiall of the Far Travels reined in his big grey stallion, lifting his right hand to halt the long column of riders who followed him across this corner of the Bakakanian Desert. In front of him, and far away, he could make out a dark blotch on the golden sands toward which he was moving.\n\nThe blotch did not move.\n\nYet it had moved, for a brief second, just then. Niall, who had been watching it as soon as he had caught sight of it, was certain of that. His hand went to his side, loosed his sword Blood-drinker in its scabbard.\n\nNiall was commander of the armies of King Lurlyr Manakor of Urgrik. His robe was of saffron silk and it blew in the lazy winds that swept across these stretches of bleak and empty sand. His mail was silvered and bore the basilisk insignia of Urgrik. He was riding to make an inspection of the desert forts which served his king, to replace the troops stationed there with the men who rode behind him.\n\nBut now \u2014\n\nCaution was alive in him. Again and again he scanned these sands, seeking some explanation for that dark blotch. The hairs on the back of his neck stood up, and he sensed, with an animal awareness, that there was danger here. Or\u2014had been.\n\nTo the lieutenant who rode at his right elbow he said, \u201cKeep the men here.\u201d\n\nHe toed the stallion and rode forward, and as he went, he drew his blade. Niall did not know what that dark blotch might be, but he would be ready for trouble.\n\nHe rode slowly, the hooves of his mount kicking up little puffs of sand. As he came closer to the blotch, it resolved itself into the shape of a man, a man who had been cruelly attacked, wrenched about and torn as if by gigantic bands. Sympathy touched Niall, made him snarl under\n\nhis breath and urge the big grey horse faster.\n\nHe swung down from the saddle to kneel above the dying man and turn him over onto his back. The man was a grizzled veteran of Urgrik. His face was scarred with old wounds, and his body was clotted with blood from more recent ones.\n\nThe man opened his eyes.\n\n\u201cDeath,\u201d he whispered. \u201cDeath came in the night and \u2014\u201d He choked and his eyes closed. Niall leaned closer, his arm about the man, half lifting him as if to ease him of his pain.\n\nThe soldier smiled, nodded. His eyes opened once again. \u201cBeware the fort. They\u2019re all dead, inside it. Only I got away. Crawled. Crawled until I\u2014could crawl no more.\u201d\n\nHis hand closed on Niall\u2019s wrist. \u201cBeware the thing in the fort. It cannot \u2014 be killed . . .\u201d\n\nThe man shuddered and writhed as pain ate inside him. He gasped at the hot desert air and stared upward into the face of the man who bent above him.\n\n\u201cIt began when they were di-digging . . . digging to find more water. They \u2014 uncovered an old-tomb. And then . . .\u201d\n\nThe man shuddered once more, violently, and then his body sagged. Niall looked down at him with pity in his eyes. Pity and \u2014 admiration. If this man had not struggled and fought to crawl out this far away from the frontier fort, he and his men would have ridden into untold danger.\n\nHe straightened and let the man down gently on the hot sand. He stood up and waved his column forward.\n\nWhen the lieutenant stood before him, Niall said, \u201cThis one came from the fort. Apparently he is the only one left alive. His comrades dug for water and seemingly uncovered a tomb \u2014 or so he says. Death\n\n8\n"
+  },
+  {
+   "path": "extract/dragon/023/p009_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\ncame out of that tomb and killed the entire company, excepting only him.\"\n\nNiall scowled. His eyes ran along the column, studying the faces of these men he led. He could not take them into the fort, not without discovering what danger lay before them.\n\n\"Go back to Urgrik,\" Niall said slowly. \"Tell Lurlyr Manakor that I have gone on alone to discover what this danger is. If I don't return,\" here he shrugged, \"then I would advise that he consult magicians to try and learn what it is that has come up from the ground to slay his warriors.\"\n\nThe lieutenant would have protested, he would have urged that the entire column go on with their commander, but Niall would have none of it.\n\n\"I am one man. I may discover what the thing is that has killed. One man may hide where many cannot. Besides, now that I command the armies of the king, mine is the duty to protect them.\"\n\nHe would hear no argument. He waited until the dead man was wrapped in a blanket and slung across one of the pack mules. He stood and watched the column as it swung about and headed back toward Urgrik.\n\nOnly then did he mount up and urge the grey stallion onward. As he rode, his eyes were forever busy, staring out across the sands toward the low line of mountains in the distance, toward which he went.\n\nWhat was this danger that could wipe out an entire detachment of hard-bitten soldiers? Each man of them was used to weapons, used to fighting the hill tribes, accustomed to swift forays or long battles. Yet something had destroyed them.\n\nUnease lay along his muscles. Niall had met many foes, he had always defeated them, whether they were of the robber kingdoms that lay along the shores of the Azlilic Sea or the trained legions that swore allegiance to the Great Kham. He knew of nothing that could destroy an entire garrison and leave wounds on its victims such as those he had seen on the man who had crawled across the desert.\n\n\"By Emalkartha's pretty toes,\" he muttered. \"I may be riding to my death.\"\n\nWell, he had known that when he had sent back his troops. There was no need for more than one man to die, if he must. No sense in condemning an entire troop to that method of dying.\n\nHe growled low in his throat and rode on.\n\nIn time he came to where he could sit his saddle and stare at the high walls of the frontier fort. Nothing stirred there except for the flags that bore the basilisk standards of Urgrik, limp in the still air. No man walked the walls. The big wooden gates were wide open, affording him a partial view of the parade grounds, but these were empty.\n\nSighing, Niall rode on.\n\nHe came up to those open gates and moved between them. In utter silence, he swung down from the saddle and moved here and there, studying the ground. Then he walked into the barracks.\n\nThere were bodies here, torn and mutilated as the dead man on the sands had been. Niall let his eyes run over them, trying to imagine what demonic power could have done this to living men, to men accustomed to fighting. A cold chill ran down his spine.\n\nHe heard a whisper in the air and his head snapped up even as he drew his blade. Something was here in the fort. Something deadly, something hateful.\n\nNiall was about to take a step forward, to go in search of whatever it was that quested through the halls and barracks of this frontier fort. Something touched his wrist and held it.\n\n*Do not go, Niall! It waits for you!*\n\nAh! That was Emalkartha the Evil, goddess of the eleven hells. Niall grinned and felt himself relax. It has been some time since he had faced death on the high altar in the temple to Korvassor, with pretty Amyrilla beside him.*\n\nNow Amyrilla was queen in Urgrik, being wedded to Lurlyr Manakor. And he himself was commander of the king's armies.\n\n\"Well? What am I to do?\" he asked softly. \"Wait here for that thing to come and kill me?\"\n\nAnger was in the voice that whispered in his mind.\n\n*see THE DRAGON Vol. II No. 7: The Stolen Sacrifice\n\n*Do you think I would let you be killed? I felt your trouble and I came as swiftly as I could, to help you. I do not know what it is you are to face and so I must be \u2014 careful.*\n\n\"I'd like it better if you became Lylthia, if I could see you,\" he growled.\n\n*You would only want to kiss me.*\n\n\"What's wrong with that? I love you.\"\n\nThe anger was gone from that inner voice, it held only tenderness now. *Perhaps. In a little while. After I learn what it is that quests for you.*\n\nThe whispering in the barracks grew louder. Niall swung about, almost forgetting Lylthia. The danger that had killed an entire garrison was after him, now. Would he be wrenched about and twisted, cut up as those others had been? Would even Emalkartha herself be able to save him?\n\nIt came slowly, whispering more loudly. Through the passages of the barracks and the fort it made its way, hunting him. Niall's band was fastened tightly to his swordblade, but of what use was a sword against something like this? Those dead soldiers had had swords and had undoubtedly used them.\n\nNiall gasped.\n\nA ball of blue fire hung above the floor, motionless. It had moved out of the hallway and into this larger room, and now that it sighted its prey, it paused, seemingly to gloat over him.\n\nEven Emalkartha was silent, as though stunned by what she was seeing through his eyes. Then he heard her whisper very faint.\n\n*It cannot be! I dream! This thing was destroyed five thousand centuries ago!*\n\nThe bluish ball moved forward, whispering more shrilly, as though already it were tasting the blood of this man who stood before it.\n\n*Niall! Let me!*\n\nHe felt something run along his veins, felt it slip out of his hand. Instantly the steel blade of Blood-drinker blazed with crimson light. It was as though a million tiny fires blazed within its hardness.\n\n*Fight now, Niall! Fight and \u2014 destroy this thing!*\n\nHe hurled himself forward, and harsh laughter-eager laughter \u2014 rose up from the blue ball to gloat at him. The blueness rushed, even as Niall swung his sword.\n\nInto that blue ball he drove his crimson steel, felt it bite. He wrenched it out and drove in forward again, barely aware that the blueness was screaming as though in mortal anguish.\n\nInto the ball he stabbed his blade and heard again that keening cry of wild despair. Before his eyes it seemed to shrink, sought to turn and flee.\n\n*Do not let it go, Niall! After it!*\n\nHe ran as swiftly as any Thort deer and as he ran he swung Blood-drinker again. Through the blue ball he drove his crimson steel, again and yet again.\n\nThe blue ball wailed. No longer did it whisper so hungrily, for now it was shrinking, as though it were losing shape. Its roundness disappeared, jagged edges came into view. Niall stabbed again.\n\nSuddenly the blue ball was gone.\n\nFrom somewhere far away, something screamed.\n\n2.\n\nThe crimson faded from his blade as Niall lowered his sword and stared around him dazedly. Where was the thing? Had he really destroyed it? He grew aware that sweat ran down his back.\n\nHe heard a patter of feet and swung about.\n\nEmalkartha ran toward him, wearing those same ragged garments she had worn in Angalore. * Into his arms she threw herself, to be clasped and kissed more hungrily than Niall had ever before kissed a woman.\n\nFor a long time he held her, caressing her, whispering words of love into her ears, half hidden by her long black hair, as dark as Corassian ebony. Then her bands were on his muscular shoulders, pushing him back and away.\n\n*please see: THE DRAGON #2, vol. 1: The Shadow of a Demon\n\nCont. on pg. 22\n\n9\n"
+  },
+  {
+   "path": "extract/dragon/023/p010_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\nD&D Variant\n\n# MIND WRESTLING\n\nA variation of Psionic Combat\nby Jeff P. Swycaffer\n\nWhile Psionic Combat in D&D is well handled in *Eldritch Wizardry*, (D&D\u00ae supplement III). I feel that a graphic representation of the ebb and flow of the struggle can be more satisfying than a merely numerical battle.\n\nIn this system I visualize the two combatants attempting to push, by willpower alone, a tentacle or cloud of their power into the opponent's mind. To them, and to anyone with psionic power watching, it appears as if a glowing sheet of stretchable fog is being pushed back and forth between the two combatants.\n\nThe only equipment needed is a double track (pictured below) seventeen spaces long, and two markers (pennies are fine).\n\nThe top track represents the center of the mental field of combat; the bottom track represents the outside or flank.\n\nThe two markers are placed in the spaces numbered O. To win, a player must force one of the markers into the opponent's space number 8. If the center marker is pushed into a player's last space the result is\n\neither an instant death, or, if a saving throw succeeds, unconsciousness for 1-12 hours. If the outside marker is pushed into a player's last space the victim is controlled by the victor as if charmed (no saving throw).\n\nThe method of pushing the markers is as follows. The player with the higher Psionic Strength attacks first, then the weaker, in strict alternation thereafter.\n\nEach attack follows these 6 steps:\n\n1) The attacker secretly specifies either an outside or center attack.\n2) The defender secretly divides his total Psionic Strength between center defense and outside defense, in any proportion he wishes.\n3) Both decisions are revealed.\n4) The attacker's total Psionic Strength is increased by 40 points, or doubled, whichever is less. (This increase is temporary; the attacker's Psionic Strength is decreased back to normal in step 5). This increased strength is compared to the portion of the defender's Psionic Strength in the indicated area. A ratio of 2: 1 means that the proper marker is moved one space toward the defender, the other marker remaining fixed. A ration of 3: 1 moves the proper marker two spaces.\n\nHigher ratios do not have higher effects, and two spaces is the maximum possible retreat.\n\n5) The attacker's Psionic Strength is reduced from its enhanced state to its normal value, and then the attacker and defender both have their Psionic Strength decreased further. The attacker loses 3 points; the defender loses two times the number of spaces fallen back. (If he suffered a 3: 1 retreat of two spaces he would lose 4 points). This decrease lasts until the points are regained as are normally expended psionic points.\n\n6) The attacker and defender switch roles and begin again at step 1.\n\nIf one player's Psionic Strength falls to less than 15 during this procedure but has not been pushed into his space number 8, he loses the battle and rolls on the table in *Eldritch Wizardry* as a normal Psionic battle-loser.\n\nI hope that the D&D players who use this method find it useful and enjoyable. *Salvete Psionike!* And good luck.\n\n10\n"
+  },
+  {
+   "path": "extract/dragon/023/p011_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\nMA Variant\n\n# WATER ADVENTURES ON THE STARSHIP WARDEN\n\nCarl Hursh\n\nIn my experiences as a *Metamorphosis Alpha* referee I have always run into the same problems when trying to get some wandering monsters when characters are out on their raft or trying out their new gills, and so after much frustration I have come up with these monsters. I would also like to point out the possibilities of flooding an entire level. When this happens the door to the elevator will be under water, so that characters may drown or get wet when they try to step into the elevator when it has been to that level. I would also like to say that these creatures may be used in salt or fresh water because when the Ship went through the radiation the water could have turned from salt to fresh or from fresh to salt causing the fish to adapt. Or the creature could have mutated once, gotten lungs and then moved to a different type of water and then lost it's lungs and been forced to adapt. In any case remember the effects water may have on the characters items.\n\n|  Creature | # of Attacks | Description and Damage | Description | Armor Class | # Appearing | Hit Dice | Movement (YPM)  |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n|  Sea Griffon | 3 | 2 Claws (1-4) Bite (1-6) | Sea Griffon | 6 | 1-2 | 5 | 23  |\n|  Orcas | 2 | Tail (12-24) Bite (2-12) | Orcas | 6 | 1 | 18 | 20  |\n|  Sea Centipede | 1 | Bite (1-6) | Sea Centipede | 3 | 1-4 | 2 | 20  |\n|  Sea dragon | 3 | Radiated eyes (3-18*) Gas Generation (DEATH) Bite (2-12) | Sea Dragon | 2 | 1 | 15 | 20  |\n|  Bed of Spikes | 1 | Tentacles (1-10) | Bed of Spikes | 4 | 1-4 | 2 | 20  |\n|  Green Death | 1 | Dissolves Flesh in 3 Melee Turns | Green Death | \u2014 | 1 Cluster | \u2014 | \u2014  |\n|  Mine | 1 | Explodes When hit (10-60) | Mine | 7 | 1 Patch | \u2014 | \u2014  |\n|  Water Dagger | \u2014 | Sharp Edges do 1-4 When Touched | Water Dagger | 1 | 1 Patch | 5 | \u2014  |\n|  Water Grabber | 1 | Dissolves Flesh in 3 Melee Turns | Water Grabber | 6 | 1-6 Fronds | 3 | \u2014  |\n|  Craboid | 2 | 2 Claws (1-4) | Craboid | 2 | 2-20 | 1 | Fly-36 Walk-3 Swim-10  |\n|  Kraken | 9 | 8 Tentacles (1-6) Beak (4-40) | Kraken | 3 | 1 | 10 | 20  |\n|  Oysteroid | 1 | Throws Explosive Projectiles (1-12) | Oysteroid | 1 | 1-10 | 1 | 18  |\n|  Peeper | 1 | Radiated Eyes (4-24*) | Peeper | 1 | 1-5 | 2 | 18  |\n|  Brain Fish | 2 | Mental Blast Strength 13 (3-18) Molecular Disruption | Brain Fish | 4 | 3-30 | 3 | 20  |\n|  Gupoids | 1 | En Masse Attacking (1-6) | Gupoid | \u2014 | 300-1000 | \u2014 | 15  |\n|  Siren | 1 | Bite (1-8) | Siren | 6 | 1-2 | 3 | 20  |\n|  Sea Flyer | 1 | Sybiotic Attachment | Sea Flyer | 3 | 2-20 | 1 | 20  |\n|  Sharkoid | 2 | Mental Blast Strength 15 (3-18) Bite (1-12**) | Sharkoid | 5 | 1 | 12 | 17  |\n|  Troutoid | 1 | Electricity Generation (3-18) | Troutoid | 4 | 4-24 | 3 | 23  |\n|  Merman | 1 | By Weapon Type | Merman | 5 | 1-100 | 5 | 25-mounted 5-swimming  |\n\nSea Griffon \u2014 This former lion has traded his lungs for gills, and is now limited to water in much the same manner that his cousin is limited to land. He also has wings, from which he gets his speed in water. His wings are leathery and similar to a bats'. He cannot use most technological materials because he does not have manipulative claws.\n\nOrcas \u2014 This former blue whale is very rare; it was very impractical to put many on the ship in the beginning and many died from radiation. In addition to having teeth and being carnivorous, it also has a directional spout which can stun for 1-6 turns.\n\nSea Centipede \u2014 This former eel now sports ten new legs, and can lift 1000 pounds with its telekinesis. It also can make sorties onto land because it also has lungs.\n\nSea Dragon \u2014 This one time sea turtle now is quite formidable. It is about 40 feet long, has an additional 20 feet of neck, and radiated eyes. It breathes poison gas, but has no resistance to poison (other than its own).\n\nBed of Spikes \u2014 Formerly an anemone mushroom coral, this mutation is now mobile (jet propulsion much like a squid's) and has spikes on the tips of its \"tentacles.\" It has approximately 50 tentacles.\n\nGreen Death \u2014 This mutation still grows in large patches like its nonmutated cousin, algae. It has a sort of empathy with it's fellows which enables them to attack. When attacking they first go for the feet, then legs, then body and finally arms and head. They dissolve and eat flesh in 4 melee turns. They can only be killed by a protein disrupter or by exposing them to oxygen.\n\nMine \u2014 Formerly leather coral, it is now free floating coral that explodes when touched causing 10 dice damage.\n\nWater Dagger \u2014 This was originally staghorn coral but now is covered with aluminum which causes it to do damage like a dagger when it is touched. There is also a chance (20%) that it will be poisonous.\n\nWater Grabber \u2014 Originally seaweed, this is now a dangerous plant; its fronds act independently so as to capture more food. Its fronds can eat flesh in 3 melee turns.\n\n11\n"
+  },
+  {
+   "path": "extract/dragon/023/p012_full.txt",
+   "content": "# GAMMA WORLD*\n\n* T.M. REG. APP. FOR\n\n## FIGURES\n\nThe official TSA Figure line to explore and reconquer postholocaust earth from Robots, Mutant insects, animals, plants, reptiles, and the remnants of mankind.\n\nAVAILABLE NOW\n\nover 150 figures plus accessories\n\nWRITE TODAY FOR GAMMA LISTING 25\u00a2\nOR SEND $2.00 FOR THE NEW 1979 CATALOG\n\nGRENADIER\nMODELS Inc.\nP.O. BOX 305\nSPRINGFIELD PA.\n19064\n"
+  },
+  {
+   "path": "extract/dragon/023/p013_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\nCraboid \u2014 This tiny relation to the crab is now incredibly intelligent. With illusion generation and telepathy they can form enough illusions to scare off most other creatures. They also have lungs and wings and will, occasionally, be found away from water.\n\nKraken \u2014 Like its namesake this octopus is very large (up to 100 feet). In addition to it's size it also has a total carapace which enables it to better withstand attacks.\n\nOysteroid \u2014 These mutants differ very little from their nonmutated cousins, the oyster. The only difference is that these are able to throw explosive projectiles.\n\nPeeper\u2014These mutated clams are not only intelligent but also are highly mobile. They also have radiated eyes which deliver 3 dice worth of damage.\n\nBrain Fish \u2014 This former parrot fish now has a mental attack worth noticing. First, it has a mental attack stre of 13; it has a repulsion field and a mental defense shield; it has a mental disruption which kills but it reduces the mutant to 1 pip so it is only used when the mutant is reduced to 5 or less pips. It also has teeth suitable for biting, but rarely does.\n\nGupoids \u2014 These fish are, like their non-mutated cousins, fast breeders so they usually travel in large packs. When they attack they all batter their victim simultaneously doing 1-6 points damage and staying for 1-6 turns. Because they are so small and there are so many of them they are impossible to hit except with a protein disrupter.\n\nSiren \u2014 This mutant has very little in common with it's namesake except it does have the ability to put creatures into a sort of trance, even though it does use more of a charismatic effect than a sonic power (gills negate sonics). This hypnotic effect causes creatures not making their saving throw (treat as a poison) to be unable to do anything for 1-12 melee rounds, and being very open to attacks during that time.\n\nSea Flyer \u2014 These mutated manta rays are much smaller than their nonmutated cousins (usually averaging around 2 inches in wingspan) but in spite of their size they are still formidable fighters because they are able to control other creatures for short periods of time so as to make them fight their battles. There is a 20% chance that they be in control of a creature when they are encountered.\n\nSharkoid \u2014 This mutated shark is much larger than it was originally; it also is stronger in its mental state. It has a mental repulsion field and a mental blast. It also has poison teeth, but in spite of all this it is epileptic and can be rendered fairly harmless by showing it a flashing light.\n\nTroutoid \u2014 These mutated trout are now a lot harder to catch for food and always on the look out for predators. In addition to having electricity generation they also have a sort of wings to enable them to move even faster through the water. Another thing that makes it harder to catch is that they have density control and can, therefore, make themselves drop like a rock or float on the surface to avoid creatures which cannot leave the bottom.\n\nMerman \u2014 Hardly resembling a human anymore these creatures have only a head for a body and for legs and hands they have 6 crab-like limbs; 2 are manipulative claws enabling it to use technological items. They also have a greater mind than normal humans and are more advanced than normal humans. Their main travel mode is a little stick with two propellers and two gyroscopes that are mentally controlled by the merman riding it. When they capture player characters they usually (50%) take their lungs and replace them with gills. They also have a partial carapace and gills but no lungs.\n\n## Judges/Events Wanted\nFor GenCon XII\n\nGenCon is growing; it needs even more tournaments and games than last time. If you are interested in organizing a tournament, contact us at:\n\nGen Con XII Tourneys\n\nP.O.B. 110\n\nLake Geneva. WI 53147\n\nJudges are admitted free\n\nGen Con XI for recognized events.\n\n## EXPLORED A HAUNTED HOUSE LATELY?\n\n\u2022 27 TEGEL MANOR a complete haunted house for an exciting D&D scenario. 24-page booklet describes monsters, ghostly encounters and rules guidelines. A huge map of the manor, 17\" x 22\" is included for the referee . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $4.50\n\n\u2022 62 CITY-STATE of the INVINCIBLE OVERLORD Revised edition of one of our most popular JG products at a reduced price. Includes large 28\u00bd\" x 22\u00bd\" Judge's and Players' map of the City-State, an 11\" x 17\" castle map of the Dwarven King and 8\u00bd\" x 11\" players' maps, plus 10 dungeon levels. Huge 80-page book describes hundreds of shops, NPCs and the social system . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $8.00\n66 SEA STEEDS AND WAVE RIDERS Two sheets (28\u00bd\" x 22\u00bd\") of 20 different ships, small craft, etc. 25mm scale for use in Medieval and Fantasy Wargaming. 32-page book with technical/historical information. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $6.50\n68 WAR CRY AND BATTLE LUST 32-page booklet containing miniature rules from ancient to Medieval times. Reference charts. Emphasizes playability over historical accuracy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $4.00\n\u2022 71 FRONTIER FORTS OF KELNORE 32-page booklet takes you on a different fantastic adventure each time you play. Optional tables. Level of opposition to match any party . . . $3.00\n75 TRAVELLER REFEREE SCREEN gaming aid for science-fiction role playing. Reproduces all the combat tables with modifiers figured in. The weapons system includes those for GDW's \"Mercenary\" supplement. Approved for use with TRAVELER. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . $2.50\n\n## Watch For\n\nJudges Guild\n\n1165 N. University Ave. (N1)\nDecatur, IL 62526\n\nCreators of Game Aids\n\n\u2022 Approved For Use With\n\nDUNGEONS & DRAGONS TM\nReg. Appl. For\n\nComing\n\nSoon!\n\n13\n"
+  },
+  {
+   "path": "extract/dragon/023/p014_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\n## It Weighs WHAT?!!!\nSome Notes on Armor for Fantasy Gamers\n\nMichael Mornard\n\nThere exists in fantasy gaming today a great deal of misunderstanding about the weight of armor. In *Dungeons & Dragons*, approximately 15 to 20 extra pounds are added to plate armor. FGU's *Chivalry and Sorcery* is even worse; the statement that full plate armor weighs 2/3 of the wearer's body weight is blatant nonsense.\n\nTo quote Helmut Nickel, Curator of Arms and Armor for the Metropolitan Museum of Art in New York\n\n\"It has been said over and over that a knight's armor was so heavy he could not get up without help when thrown to the ground and he had to be hoisted into the saddle by a derrick. This is nonsense, of course, because it would have been simply suicidal to load oneself with hardware until movement was impossible. On the contrary, a full suit of armor weighed only about fifty to sixty pounds, no more than the battle pack of a modern soldier; with all parts carefully fitted on and distributed over the entire body, it could be worn with great ease. It was expected of the perfect knight that he be able to vault into the saddle of his horse in full armor without using the stirrups \u2014 ability that must have come in handy when he had to mount his horse in the press of battle, after his first steed went down.\"\n\n\u2014 Helmut Nickel, *Warriors and Worthies*, p. 57 Hartford, Connecticut: Connecticut Printers, Inc., 1969.\n\nBesides weight, the encumbrance of armor is usually greatly exaggerated. I was once told in a D&D game that my plate-armored character was unable to step over or even leap across a three-foot chasm! I would like at this time to Quote Claude Blair, Deputy Keeper in the Department of Metalwork at the Victoria and Albert Museum, and Honorary Editor of *The Journal of the Arms & Armor Society*:\n\n\"Modern experiments made with genuine 15th and 16th century armours have shown also that even an untrained man wearing a properly-fitted harness can get on and off a horse, lie on the ground and rise again, bend, stoop, and move his arms and legs quite freely.\"\n\n\u2014 Claude Blair, *European Armor*, p. 191 London, England: William Clowes & Sons, Ltd., 1958.\n\nOr, more to the point; actual weights of surviving armors: Cuirassier armor of 1620-1630, Augsberg (Castle Churburg, #130) 69 lb. 5 oz.\n\nPlate field (battle) armor, c. 1525 (Wallace Collection, London, #763) 41 lb. 13\u00bd oz.\n\nPlate field armor, Milanese, c. 1450 (Churburg #20) 60.4 lbs.\nMail Shirt, German, mid-thigh, elbow-length (Churburg #2) 20 lb. 11 oz.\n\nItalian helmet, Barbut style, c. 1440 (W.C.L. #39) 5 lb. 14 oz.\n\nAnother frequently maligned piece of knightly equipment is the sword. An excellent analysis may be found in the following book:\n\nR. Ewart Oakeshott, *The Sword in the Age of Chivalry* New York N.Y.: Fredrick A. Praeger, Inc., 1964.\n\nOn page 12 of that book, he makes a rather delightful statement:\n\n\"Of course, there are always those to whom simple austerity of form is indistinguishable from crudity; and an iron object a yard long may well appear to be very heavy. In fact the average weight of these swords is between 2 lbs and 3 lbs, and they were balanced (according to their purpose) with the same care and skill in the making as a tennis racket or fishing-rod. The old belief that they are unwieldable is an absurd and out-dated, and dies as hard, as the myth that armoured knights had to be hoisted into their saddles with a crane.\"\n\nIn writing this book, Mr. Oakeshott had access to many of the finest sword collections in England, where many of the swords are still in pristine condition \u2014 even down to the velvet wrapping on the grips. Those weights were taken from real swords. That 2 to 3 pounds, however; is for a one-handed sword. Later on in the book, he gives the weight of a standard 'hand-and-a-half' or bastard sword as 3\u00bd lbs to 5\u00bd lbs. This is a far cry from *Chivalry and Sorcery*'s 7-pound sword, and also from SPI's statement that these weapons \"... are between five and ten pounds...\" (S&T #68, p. 32) Statements like that could damage a company's reputation for authenticity in design ...\n\nHopefully, this article will be of some use to fantasy players and referees. If just one fighter finds that his sword has suddenly become manageable, or that he can climb a ladder in armor, or even that he can simply walk down a corridor without waddling like a rhinoceros with a hernia, it will have served its purpose.\n\nSearch for the Nile ...\nat the\nDUNGEON HOBBY SHOP\n772 Main st. Lake Geneva Wi. 53147\n\nWe mail order games\nright to your front door.\n\nSOURCE OF THE NILE\n"
+  },
+  {
+   "path": "extract/dragon/023/p015_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\n# RANDOM GENERATION OF CREATURES FROM THE LOWER PLANES\n\nby Gary Gygax\n\nWhen I read Gregory Rihn's \"Demonology Made Easy\" in TD 20 it got me to thinking, and I immediately re-read Jon Pickens' article on random demons (TD 13). Population of the many planes of AD&D will be a problem in the future; most of the monsters now available are designed for the Prime Material world, and when play moves to the various planes, DMs are going to be very busy trying to come up with the creatures who inhabit these strange places. As some start has been made on the lower planes, I thought it would be most helpful to offer a system to aid in the development of more such monsters, for that would help round out those areas rather than sketch in small parts of others. What follows is the current \"official\" approach, and what you read here will be included in the forth coming DUNGEON MASTERS GUIDE. My thanks to both Greg and Jon!\n\nAt times it might be useful to have an unrecognizable creature of evil from the planes of the Abyss, Tarterus, Hades, Gehenna, or Hell. It is no great matter to sit down and design a fairly interesting one given an hour or so, but time or desire lacking, the following will enable you to create one or several such monsters in but a few minutes. The format is straight from the AD&D MONSTER MANUAL for ease of recording and handling the creature(s) developed.\n\nFREQUENCY: Common, uncommon, or rare (d6= 1,2-3, 4-6)\nNO. APPEARING: 1 to 2-8 (circumstances must dictate)\nARMOR CLASS: 0 to -3 (d4)\nMOVE: 6\", 9\", 12\", 15\", or 18\" (d8,6-8 = roll d4 for move and creature also has swimming or flying ability; roll d6, 1-2 = swimming, 3-6 = flying, and as a rule these speeds will be greater than land move speed \u2014 add 1-4 3\" increments as you see fit or by random determination using d4)\nHIT DICE: 7 to 10 (d4 + 6, roll a second d4, and on a 4 the creature has 1-4 additional hit points per hit die, as determined by another roll of the d4)\n% IN LAIR: (circumstances must dictate)\nTREASURE TYPE: low value if any (circumstances must dictate)\nNO. OF ATTACKS See APPEARANCE TABLE below\nDAMAGE/ATTACK: See ATTACK TABLE below\nSPECIAL ATTACKS: See SPECIAL ATTACKS TABLE below\nSPECIAL DEFENSES: See SPECIAL DEFENSES TABLE below\nMAGIC RESISTANCE: 5% per hit die (to vary use d6,1= -5%, 2 = -10%, 3 = +5%, 4 = +10%, 5 = +15%, and 6 = STANDARD magic resistance)\nINTELLIGENCE: Low, average, very, or high (d4)\nALIGNMENT: According to plane of origin\nSIZE: S, M, or L (d8, 1 = S, 2-4 = M, 5-8 = L)\nPSIONIC ABILITY: Nil (90%) or 96 - 115 (d20 + 95)\nAttack/Defense Modes: A-D (d4)/F-H (d6,1-2 = F, 3-4 = F and G, etc.)\n\n# APPEARANCE TABLE:\n\n|  Head | Head Adornment | Overall Visage  |\n| --- | --- | --- |\n|  1. bat-like | 1. antlers | 1. gibbering-drooling  |\n|  2. bird-like* | 2. crest or peak | 2. glaring-menacing  |\n|  3. crocodilian | 3. horns (1-4) | 3. rotting  |\n|  4. horse-like | 4. knobs | 4. skeletal  |\n|  5. human-like | 5. ridge(s) | 5. twitching-moving  |\n|  6. monkey-like | 6. ruff | 6. wrinkled-seamed  |\n|  7. snake-like | 7. spines |   |\n|  8. weasel-like | 8. none |   |\n|  Ears |  |   |\n|  1. dog-like |  |   |\n|  2. elephant-like |  |   |\n|  3. human, tiny |  |   |\n|  4. human, huge |  |   |\n|  5. trumpet-like |  |   |\n|  6. none |  |   |\n\n# Eyes\n\n(d6, 1 + 1, 2-4 = 2, 5-6 = 3-4)\n\n# Eye Color\n\n|  1. small, multi-faceted | 1. amber  |\n| --- | --- |\n|  2. small, slitted | 2. black  |\n|  3. swivel-socketed | 3. blue  |\n|  4. stalked | 4. green  |\n|  5. huge, flat | 5. metallic  |\n|  6. huge, protruding | 6. orange-red  |\n\n# Nose\n\n(if necessary)\n\n1. flat, misshapen\n2. huge, bulbous\n3. slits only\n4. snouted\n5. tiny\n6. trunk-like\n\n# Mouth\n\n(d6,1 = tiny, 2-3 = average, 5-6 = huge)\n\n1. fanged\n2. mandibled**\n3. sucker-like**\n4. toothed, small or ridged\n5. toothed, large\n6. tusked\n\n# BODY ATTRIBUTES\n\n(d6, 1-4 = bipedal, 5-6 = quadrapedal etal)\n\n# Bipedal Torso\n\n1. ape-like\n2. bear-like\n3. bird-like\n4. human-like\n5. pig-like\n6. rat-like\n\n# Quadrapedal or Other Torso\n\n1. amoeba-like\n2. bison-like\n3. crab-like\n4. horse-like\n5. insect-like\n6. serpent-like or reptilian\n7. spider-like\n\n15\n"
+  },
+  {
+   "path": "extract/dragon/023/p016_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\nGeneral characteristics\n\n1. fat\n2. long\n3. short\n4. thin\n5. broad\n6. muscled\n7. narrow\n8. rubbery\n\nBack\n\n1. humped-hunched\n2. maned\n3. normal\n4. spiked-spined-ridged\n\nSkin\n\n1. bald-smooth\n2. furred\n3. hairy-bristled\n4. leathery-leprous\n5. scaled\n6. slimed\n7. warted-bumpy\n8. wrinkled-folded\n9. feathered\n10. translucent\n\nWings, (if Any)\n\n1. bat-like\n2. bird-like\n3. insect-like\n4. membranous or fan-like\n\nPredominate Color\n\n1. blackish\n2. bluish\n3. brownish\n4. grayish-whitish\n5. greenish\n6. orangy\n7. pinkish\n8. purplish\n9. reddish\n10. yellowish-tannish\n\nTail (d6, 1-4 = tail)\n\n1. barbed**\n2. dog-like\n3. goat-like\n4. horse-like\n5. lion-like\n6. pig-like\n7. prehensile\n8. stingered**\n\nBody Odor\n\n1. bloody\n2. fishy\n3. fecal\n4. gangrenous\n5. moldy\n6. sweaty\n7. urine\n8. vomit\n\nArms\n\n(2 or 4 if bipedal; 2,4, or 6 if otherwise)\n\n1. animal-like\n2. human-like\n3. insect-like\n4. tentacles\n\nHands\n\n(d6, 1-3 = all alike, 4-6 = different)\n\n1. clawed\n2. human nailed\n3. pincered\n4. taloned\n5. tentacle fingered\n6. withered and boney\n\nEXXEDUUNUSSE\nBUT I NEED A VACATION!!\nSEE YA NEXT MONTH.\n\n# miniature figurines ltd\n\nBOX P\n\nPINE PLAINS, N. Y. 12567\n\nTel.: (914) 398-5166\n\nPlant & Offices: E. Church St.\n\nLARGEST MANUFACTURER\nof\nWARGAME FIGURES\nin the\nWORLD\n\nWHOLESALE & RETAIL\n\nFully Illustrated Catalog $ 2.00\n"
+  },
+  {
+   "path": "extract/dragon/023/p017_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\n# Legs and Feet\n\n(as applicable)\n\n1. clawed\n2. hooved\n3. human-like\n4. insect-like\n5. snake-like\n6. suctioned\n7. taloned\n8. webbed (all swimmers)\n\n*1. duck-like\n\n2. hawk-like\n\n3. owl-like\n\n4. pelican-like\n\n5. stork-like\n\n6. turkey-like\n\n**Optionally poisoned (or 4 in 6)\n\n1. +1 on save\n\n2. normal\n\n3. -1 on save\n\n4. -2 on save\n\n5. insanity for 1-4 rounds\n\n6. weakness, 1 point per hit permanently lost\n\nA bit of imaginative creation is helpful in using the tables above. For example, if the creature's body is amoeba-like, you might well decide to give it scores of tiny, bubbling sucker mouths over its entire body, and omit any mouth on the head; of course, body covering would have to be adjusted accordingly, and appendages selected to suit the monster. Likewise, you should feel at ease adding to or amending the tables as you desire in order to arrive at still more diverse and unexpected lower planes' creatures. (Df. THE DRAGON. Vol. III, No. 6, whole number 20: \"Demonology Made Easy.\" Gregory Rihn. This excellent article gives some interesting thoughts on variant creatures of the lawful evil planes!) When you have the form and appearance of the creature, determine strength, if necessary, and then attack capabilities.\n\n|  Strength | \"To Hit\" | Damage  |\n| --- | --- | --- |\n|  01-25 = 17 | +1 | +1  |\n|  26-45 = 18 | +1 | +2  |\n|  45 - 60 = 18 (01-50) | +1 | +3  |\n|  61-70 = 18 (51-75) | +2 | +3  |\n|  71- 80 = 18 (76-90) | +2 | +4  |\n|  81- 90 = 18 (91-99) | +2 | +5  |\n|  91- 95 = 18 (00) | +3 | +6  |\n|  96-98 = 19 | +3 | +7  |\n|  99-00 = 20 | +3 | +8  |\n\n# ATTACK TABLE\n\nantlers or horns = 1 attack each, damage 1-2 to 2-8\n\nmouth = 1 attack each, damage from 1 to 3-12\n\ntail = special attacks only, damage from 1 to 1-6\n\nhands = 1 attack each possible if no weapon use, strength bonus applicable if used as clubbing weapon, damage from base 1-2 to 2-12 feet = 1 attack each if applicable (flyer, leaper, etc.), damage from 1-2 to 3-12\n\nDamage amount is determined by overall size of creature, with strength bonuses where applicable, and the size and type of body weaponry, i.e., a huge creature with clawed hands would get damage ratings of at least 2-8 per hit. Constriction or hugging damage would be commensurate with a kept creature of the same approximate size. Incidental spine-type damage is best kept relatively low \u2014 1-3, 1-4, or 1-6 range.\n\nSpecial effects from these attack forms \u2014 poison, energy drain, heat, cold, electrical discharge, paralysis, or whatever\u2014should be kept to a minimum.\n\nSpecial attacks and special defenses can't be dealt with in as much detail as would be desirable in a work of unlimited length. The tables below will suggest various magical attack/defense forms, and the DM is urged to add others of his own creation as appropriate to the plane and the creature.\n\n# SPECIAL ATTACKS (1-3)\n\n1. ability drain\n2. energy drain (cold)\n3. gaseous discharge or missile discharge\n4. heat generation\n5. life level drain\n6. spell-like abilities\n7. spell use\n8. summon/gate\n\nSpell-like and spell use abilities should be based upon intelligence level and relative strength in hit dice. Compare daemons, demons, devils, and night hags. From 1-2 spells and a like number of spell-like abilities is sufficient for lesser creatures, while the more powerful and intelligent will get a total of 2-5 of each, some being of higher level (telekinesis, teleportation, etc.).\n\n# SPECIAL DEFENSES (1-4)\n\n1. acid immunity\n2. cold immunity\n3. electrical immunity\n4. fire immunity\n5. gas immunity\n\n6. metal immunity\n7. poison immunity\n8. regeneration\n9. spell immunity\n10. weapon immunity\n\n17\n"
+  },
+  {
+   "path": "extract/dragon/023/p018_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\nImmunities above four are possible only if the general class (demons, devils, etc.) has more. Metal immunity can pertain to iron, silver, steel, or any other, including combinations, but excluding magical weaponry. Regeneration base is 1 hit point per turn, with exceptional creatures having a maximum of 1 per round. Spell immunity must be limited to 1-4 pre-determined spells. Weapon immunity refers to creatures hit only by magical weapons of a certain value, i.e. + 1, +2, etc.\n\n# OTHER ABILITIES (Optional)\n\n1. audial superiority\n2. surprise capability\n3. visual superiority\n\nAudial or visual superiority will tend to negate surprise and enable detection of creatures through sound or vision. Surprise capability relates to special movement ability and possibly other factors. Visual superiority refers to infravisual and ultravisual capabilities.\n\nTo avoid having nothing more than different mixtures of the same old ingredients, be certain that you put a bit of personal creativity into each monster. A list of new and different factors should be started, perhaps in the margin, and then fresh ideas added as they come. When a monster is devised, cross off the unique features from the marginal list.\n\n# Convention Schedule 1979\n\nMon Con III (March 30 - April 1) at Morgantown WV. Science Fiction. Fantasy. Comix. Movies. Games. Star Trek. Contact: Mon Con III, Conference Center, West Virginia University, Morgantown, WV 26506.\n\nSpring Revel (March 31- April 1) at American Legion Hall, 735 Henry Street, Lake Geneva, WI 53147. Dungeons and Dragons. Miniatures. Bourdgames. FITS. Rail Baron. The whole TSR crowd will be there. Registration Fee $2.00. No game fees. Contact Joe Orlowski, Spring Revel, P.O.B. 110, Lake Geneva, WI 53147.\n\nTri-State Con (April 20-22) Cincinnati OH, Contact the Queen City Gamers for further information. Eric Franz, Secretary.\n\nTippacanoe (and Fantasy Too) Game Convention. (May 4-6) Guest Speakers include Gene McCoy (Wargamers Digest), Duke Siegfried (Heritage), Tom Shaw & Don Greenwood (Avalon Hill), Bob Blake (Winner of the 1st D&D Masters Tournament), Lou. Zocchi (Designer of Luftwaffe, and Battle of Britain). Contact: John Hill, P.O.B. 2071, W. Layfayette, IN 47906.\n\nThe Great Canadian Games Adventure (May 18-21) at Ottawa University, King Edward Street, Ottawa Ontario, CANADA. Tournaments. Seminars. Games from Europe, England, and Canada (as well as the U.S.). Dealers. Films. Auctions. 100 rooms on campus, costing from $6.00 to $12.00 a night. Room reservations must be made before May 1. Registration fees are $8.00 before April 1 and $10.00 thereafter. Phone (613) 745-2073 for details or write: CANGAMES 79,201-360 Dundas St., Vanier Ontario, CANADA, K1L 7W7.\n\nMichiCon VIII (June 1-3) sponsored by the Metro Detroit Gamers at Oakland University, Rochester, MI (Just North of Detroit). Over 25 board game tournaments, 10 role-playing game tournaments, over 60 miniatures tournaments and demonstrations, seminars/panels/workshops, auctions, flea markets and over 50 exhibit booths. For more information and pre-registration flier send a SASE to Metro Detroit Gamers, MichiCon VIII, P.O.B. 787, Troy, MI 48099. Pre-registration deadline is May 10, 1979.\n\nGLASCON IV (June 15-17) sponsored by CSUN Simulation Gamers' Association. $3.00 Pre-registration Fee. $5.00 at the door. For more information write CSUN-S A, 7133 Reseda Blvd., Reseda, CA 91335.\n\nOrigins '79 (June 22-24) at Widener College, Chester, PA. For more information write: Origins '79, P.O.B. 282, Radnor, PA 19087.\n\nGENCON XII (August 16-19) at University of Wisconsin-Parkside, Wood Rd., Kenosha, WI 53140. This could be THE convention of 1979. Over 20 dealers. Over a hundred tournaments. Not to mention seminars, open gaming, and workshops. Pre-registration before July 25 \u2014 $10.00. At door \u2014 $15.00. Special GENCON XII Information Packet available in April. Contact Joe Orlowski, GENCON XII Coordinator, POB 756, Lake Geneva, WI 53147.\n\nWRITE FOR THE DRAGON . . .\n\nbecome rich & famous\n\n# Starting Next Issue \u2014 TD #24\n\n18\n"
+  },
+  {
+   "path": "extract/dragon/023/p019_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\n# Damage Permanency\n\nor\n\n## How Hrothgar One-Ear Got His Name.\n\nJames M. Ward\n\nThe concept of \"hit points\" is almost universal in all types of role playing games. They are often used as a measure of how much damage any given being can take in any given situation. In the case of a sword duel with two high level (and thus, high hit point) players, it is easily possible to see that thirty hits at 1-8 hit points per strike could happen on each side. Logically, thirty such actual cuts would easily kill any real life being in the same situation. It must therefore be assumed that many of these lost hit points represent fatigue, damaged armor, the battle situation itself, or the weapons used. With this being the case there should be some method of determining the physical damage that finally occurs in any given battle.*\n\nWhen a person takes a great deal of physical damage in whatever manner, it is highly possible that the effects will become permanent. It is conceivable that a sword could sever a toe or finger causing a drop in dexterity or a ray gun could puncture a lung, causing a drop in constitution. The following charts will help judges curb the more active tendencies of their players. They are used when any given player is reduced to one or two hit points.\n\nPERCENTILE\n\n1-50 no permanent damage after healing\n51-70 being requires magical aid in healing correctly\n71-100% being is maimed unless wish or 5th level or better clerical healing spell is used or device is employed.\n\nAREA OF THE BODY DAMAGED PERMANENTLY\n\n|  1-14 | Head  |\n| --- | --- |\n|  15-49 | Trunk  |\n|  50-74 | Arms  |\n|  75-79 | Legs  |\n|  80-94 | Hands  |\n|  95-100 | Feet  |\n\nHEAD DAMAGE\n\n|  1-12 | Hearing Loss  |\n| --- | --- |\n|  13-24 | Sight Loss  |\n|  25-36 | Speech Impaired  |\n|  37-48 | Charisma Impaired  |\n|  49-60 | Intelligence Impaired  |\n|  61-72 | Wisdom Impaired  |\n|  73-88 | Fighting Ability Impaired  |\n|  89-100 | Spell Ability Impaired  |\n\nLEG DAMAGE\n\n|  1-25 | Speed Decreased  |\n| --- | --- |\n|  26-50 | Strength Impaired  |\n|  51-75 | Dexterity Impaired  |\n|  76-100 | Fighting Ability Impaired  |\n\nHAND DAMAGE\n\n|  1-20 | Dexterity Impaired  |\n| --- | --- |\n|  21-40 | Fighting Ability Impaired  |\n|  41-60 | Magical Ability Impaired  |\n|  61-80 | Strength Impaired  |\n|  81-100 | Weapons Ability Impaired  |\n\nTRUNK DAMAGE\n\n|  1-25 | Constitution Impaired  |\n| --- | --- |\n|  26-50 | Fighting Ability Impaired  |\n|  51-75 | Resistance to Poison Changed  |\n|  76-100 | Speed Decreased  |\n\nARM DAMAGE\n\n|  1-25 | Fighting Ability Impaired  |\n| --- | --- |\n|  26-50 | Magical Ability Impaired  |\n|  51-75 | Dexterity Impaired  |\n|  76-100 | Strength Impaired  |\n\nFEET DAMAGE\n\n|  1-33 | Speed Impaired  |\n| --- | --- |\n|  34-66 | Fighting Ability Impaired  |\n|  67-100 | Dexterity Impaired  |\n\n*ED. Note: While this statement is true for the majority of role-playing games, it is not true for D&D\u00ae and AD&D\u00ae and poses some contradictions.\n\nThe system holds true for games such as MA\u00ae and GW\u00ae, because their systems use a set number of hit points which are determined by the number of hit dice the character is endowed with at his (the character's) paper birth. Normally, this maximum potential is seldom reached.\n\nGame systems that set no upper limit on the number of hit dice cannot accept this rationale. It is patently absurd to think that a fighter, when advancing a level, is somehow enhanced: more muscles, more mass, more blood. Were that rationale used, we must assume that first level types all look like Herve Villechaize (Tattoo on Fantasy Island), gradually acquiring the stature \u2014 assuming survival and advancement, of course! \u2014 of Arnold Schwarzenegger (former Mr. Universe purported to be playing Conan in the proposed movie).\n\nIn AD&D, the rationale behind the concept of hit points is decidedly different. Basically, hit points represent the ability/facility to evade a fatal blow/injury. It is an abstraction that includes such considerations as fatigue, armor durability, fighting technique, fighting \"tricks\" learned, and so forth.\n\n19\n"
+  },
+  {
+   "path": "extract/dragon/023/p020_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\nWhen the head area is affected, a roll of percentile dice will tell the judge what has happened to the being.\n\n1-12* Hearing Loss; indicates that the being will now be surprised on a roll of 1-3, with a point being added on the surprise die for every new occasion. Thieves will lose their ability to hear behind doors.\n13-24% Sight Loss; indicates the level of combat efficiency drops by one with every occurrence and bright light, in the form of spells of full daylight, blinds this being for 1-4 melee turns.\n25-36% Speech Impaired; indicates that a drop in charisma of one point occurs at every occurrence.\n37-48% Charisma Impaired; indicates a drop in charisma of one point at every occurrence.\n49-60% Intelligence Impaired; indicates a drop in general intelligence at every occurrence and a -1 on the Saving Throw on all spells involving control and illusion used on that being that is also increased by -1 at every occurrence.\n61-72% Wisdom Impaired; indicates a drop of one at every occurrence.\n73-88% Fighting Ability Impaired; indicates that the being loses one level of fighting experience at every occurrence.\n89-100% Spell Ability Impaired; indicates that if the being used spells, that being loses one level of spell usage per occurrence. Not the spells of a level, but the additional spells given the being at their level of experience. Hence a 3rd level Magic User would have the spells of only a 2nd Level Magic User.\n\n# Trunk\n\nWhen the trunk area is indicated, a percentile roll will tell the judge what happens to the player.\n\n1-25% Constitution Impaired; indicates that one point is lost with any possible hit point loss included per occasion.\n26-50% Fighting Ability Impaired; indicates that the being loses one level of fighting experience at every occurrence.\n51-75% Resistance to Poison Changed; indicates that all saves are made at a -2 (to the detriment of the being); this situation multiplies itself at every occurrence.\n76-100% Speed Decreased; indicates that the being is slowed down by 10 yards per melee turn, per occasion.\n\n# Arms\n\nWhen the arm area is indicated, a percentile roll will tell the judge what happens to the player.\n\n1-25% Fighting Ability Impaired; indicates that the being loses one level of fighting experience at every occurrence.\n25-50% Magical Ability Impaired; indicates a loss of one level of experience per occasion if that being has or attains any magical ability.\n51-75% Dexterity Impaired; indicates a loss of one dexterity point per occurrence and thieves lose the ability to climb walls.\n76-100% Strength Impaired; indicates that one point of strength is lost per occasion.\n\n# Legs\n\nWhen legs are indicated a percentile roll shows the judge what happens to the player.\n\n1-25%* Speed Decreased; indicates a loss of 10 yards per melee turn, per occasion and a 10% reduction in thief hiding abilities per occasion.\n26-50% Strength Impaired; indicates the being loses the ability to carry weight by a factor of 300 gold pieces per occasion.\n51-75% Dexterity Impaired; indicates a loss of one dexterity point per occurrence and thieves lose the ability to climb walls.\n76-100% Fighting Ability Impaired; indicates a -2 chance to hit per occasion, that accumulates, with each occurrence.\n\n# Hands\n\nWhen hands are indicated, a percentile roll shows the judge what happens to the player.\n1-20% Dexterity Impaired; indicates a loss of one dexterity point per occurrence and thieves lose their extra abilities by 10% wherever their hands are needed.\n21-40% Fighting Ability Impaired; indicates a loss of one level of fighting ability per occurrence.\n41-60% Magical Ability Impaired; indicates a loss of one level of magical ability if the being has or attains a magical ability, per occurrence.\n61-80% Strength Impaired indicates a loss of one strength point per occurrence.\n81-100% Weapons Ability Impaired; indicates the decreased use of certain types of weapons (-1 in hitting per occasion) The areas are as follows.\n\n1-10% All Bows\n11-20% All Crossbows\n21-40% Lances/Spears/Pole Arms\n41-60% Bludgeon Type Weapons\n61-95% Sword Type Weapons\n96-100% Fist Action\n\nWhen reduced to from ten to two hit points left, depending on how many they started with, a person is suffering greatly from fatigue and pain and is also reduced in abilities according to the area. This is changed by clerical healing spell, magical devices, etc. for an instant cure.\n\n1-14% Head, indicates a drop of one spell per level if the being is a magic user or priest, a drop of one level of fighting ability if the being is only a fighter, and a drop of 10% in all abilities in any of the other character classes.\n15-49% Trunk, indicates a drop in speed by 20 yards a melee turn and a drop of strength by a point.\n50-74% Arms, indicates a drop of 2 strength points, a drop by a weight of 300 g.p. the carrying ability of a player, and a drop by 20% in all thieving abilities.\n75-79% Legs, indicates a drop of speed by 20 yards per melee turn, a drop of carrying ability by 600 gold pieces, and extra ability characters lose by a factor of 20% in all abilities, using legs.\n80-94% Hands, indicates the inability to fight if a roll of 1-2-3 is rolled with a 6 sided die (with the normal weapon hand). I will leave it to the referee to figure out what drops in fighting power as a result of using the wrong hand in battle.\n95-100% Feet, indicates a 50% drop in the ability to move and carry things.\n\nIn using this material, a little good sense should prevail. It is in the realm of possibility that a tenth fighter could have 10 hit points so I wouldn't want the pain loss to apply after only one hit. I do think it is logical to use this with beings over 20 hit points to start with.\n\nIn making up this material, I have tried to throw in several different concepts so that readers would realize that it fits in many different types of role playing games. I want you to throw in a lot of other things in the charts so that your players are kept guessing. You could make your Bards lose the ability to sing on a head shot. You could make your robots function illogically or lose lifting capacity.\n\n20\n"
+  },
+  {
+   "path": "extract/dragon/023/p021_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\nDesign Forum\n\n# DUNGEONS AND PRISONS\n\nor\nA 'No-tears' formula for\ngetting rid of high-level characters.\n\nMark S. Day\n\nNow why would anyone in his/her right mind dig a dungeon in the first place? The answer is that they probably wouldn't, but this is a game, so we'll ignore that. They would use it mostly as a secure prison for political enemies and other flotsam and jetsam of the criminal world. While the dungeon and its castle may have decayed somewhat over years of disuse, there are often places even under castles in the 20th century where someone could be sealed and forgotten.\n\nBearing this in mind, dungeons in D&D should have at least a few areas that resemble cells, both to catch unwary adventurers (steel doors that latch solidly when they close, and the key is that pile of rust on the table 20' away) and to hold high-level characters, removing them from the campaign at least for a reasonably long time. This system has two advantages: First, you don't have the sort of emotional trauma that occurs when a high-level character bites the dust for the last time, since it is always possible for some intrepid band to go and attempt to free the now-helpless superman; and second, the cries of 'Unfair' do not ring so often as when you attempt to polish off adventurers with Acts of Gods, exploding dungeons, and a couple of other things I have seen frantic DMs use. Of course, it's best if you simply don't let characters become super-characters in the first place, but it seems that every campaign, no matter how tough, winds up with at least one of these 'Dungeon-busters.' Play then tends to become a rather boring cycle of bigger, nastier monsters, which are killed off by the character and his party, gaining him more experience, making him more powerful, which necessitates even bigger and nastier monsters, and on and on. So, to get rid of these thugs with a minimum of violence, arrange for the character to somehow meet up with a very powerful person on your lower levels (it helps here if your dungeon has an active caretaker.) In some manner, the super-character has offended this person and is put in a permanent holding cell. Often, just to be chivalrous, the ruler of my dungeon offers the character a chance to escape by defeating his champion in single combat\u2014though of course there's no guarantee that he will honor his end of the deal if the super-character does win\u2014evil snicker.\n\nDo make certain that the cell is escape-proof for the character concerned. Don't overlook such escape possibilities as teleportation, ethereal movement, astral projection, etc. For example, my brother's wizard Elrohir required a cubical 200 feet below the lowest dungeon level, sealed with five layers of true lead to prevent teleportation and mental communication, and reachable only by a shaft two inches wide and with liberal quantities of true lead around and above, through which canisters of food drop and air is blown. The shaft through which he was brought into the cell has since been blocked with around twenty tons of granite interspersed with thick sheets of lead. Such a prison is a far better way of imprisoning a character than even killing him, since such a character typically surrounds himself with patriarchs to bring him back to life.\n\nGood luck to all the fiendish DMs out there \u2014 may the masonry in your dungeon never crumble.\n\nContinued from pg. 4\n\nIf AH and SPI are going to pick the group, they should then follow up with constructive advice, assistance and expertise; they should not become 'nay-sayers' only, and then swoop in for the benefits of exposure, acclaim, etc. They clearly have not earned it.\n\nThe serious scheduling gap in activities for the hobby this summer is a disservice to the entire hobby, and to all gamers. Any damage to the formerly excellent reputation of the PennCon group should be assessed to AH and SPI instead.\n\nThe supposed rewards to a group sponsoring an Origins are nebulous and inadequate. Supposedly, the group is in line for a share of the profits. On the surface, this sounds rather nice. If there are no profits,\n\nhowever, they go empty-handed. Even if they should make what sounds to be a princely sum of two or three thousand dollars, it is woefully inadequate. A convention the size of Origins requires at least three or four thousand man-hours to pull it off. One dollar per hour is ridiculously low return. Supposedly, the group stands to gain recognition and stature from a well-run show. What did it ever do for Interest Group Baltimore, the group that put on the first two shows? Has anything been heard of them since? (I mean no slur on IGB, but use them as an example to ridicule the contention.) In the event of a good con, with it all going well and smoothly, it may be that any other events that the group sponsors will serve to benefit. That seems to have been the case with the Metro Detroit Gamers: they ran an excellent Origins, and attendance at their subsequent WinterCon was up, and expected attendance at this year's MichiCon is up. But what happens to the hapless group if for reasons beyond their control the show is less than a smash? In that event, any thing they do from then on is likely to be tainted. If that happens this year, the taint should not be indiscriminately applied to the PennCon people, but rather, where it belongs: with AH and SPI for inadequate assistance and excessive interference.\n\nMajor conventions should be run and sponsored by the industry.\n\nA Note of Thanks . . .\n\n. . . to all of you that sent cards or inquired as to my health, and sent kind wishes. It was a very pleasant treat to be the object of such concern. I am unable to thank each of you personally, but you now who you are. Thanks again for your concern. That is all past, and I know find myself in good health and much better spirits, in no small part due to your good wishes. Every editor should have readers as kind . . .\n\nEmpyrean Challenge\n\nEMPYREAN . . . is defined as 'the highest heavens'. Control of a star cluster comprising 100 solar systems and 500 planets is the goal of this 250 player hidden movement strategic science fiction game. Players are faced with over population and dwindling resources on their home planets. Each player negotiates with the other rulers of the planet in order to cope with tricky economic situations, rebellion, exploration problems, war, and new technology, and finally, to establish interstellar travel. The player finds new worlds, sets up orbiting factories, protects his colonies, and can discover whole new systems where other 'races' can be encountered. EMPYREAN CHALLENGE is the most comprehensive computer-moderated futuristic play-by-mail game in existence.\n\nThere are two turns per month - they are processed every 2 to 3 weeks and print-outs with the results are mailed back to you. The cost of entering a game is $11.50 ($5.50 is for the set-up fee and rules - the balance is for the next three turns.) Game Fee is $2.00 per turn. Rules only $2.50.\n\nOrder from: Superior Simulations, 524 Franklin Park Circle, Boise, Idaho 83705\n\n21\n"
+  },
+  {
+   "path": "extract/dragon/023/p022_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\nGreen eyes gazed up at him fondly.\n\n\"So. You have not forgotten Lylthia?\"\n\n\"How could I forget you? Don't you know I dream of you, night after night?\"\n\n\"You are a very foolish man, you know,\" she chided him. \"You rush into dangers the way a bull rushes at a red flag.\"\n\nHe grinned down at her. \"I always have you to protect me.\"\n\n\"That is only because I like you very much. But you must not expect me to be around you all the time.\"\n\n\"Only when there is nobody to see you. Like now.\"\n\n\"And because you are in trouble.\" She pouted. \"Much trouble, if I am not mistaken.\" Her eyes went up to stare into his. \"Do you know where you are, right now?\"\n\n\"Of course. In a frontier fort that belongs to the kingdom of Urgrik.\"\n\nShe nodded. \"Yes, of course. But it is something more. I did not realize it myself until just a little while ago. You are standing where once bloomed the ancient land of Pthest.\"\n\nNiall turned the word over in his mind. \"Never heard of it.\"\n\n\"You would not. It has long since been forgotten by mankind. But five thousand centuries ago, it was famous all across the world. Sosaria Thota lived here, where it was a garden world.\"\n\n\"Oh? And who was Sosaria Thota?\"\n\n\"A most famous witch. Some said she was the daughter of a demon. She ruled this part of the world with cruel fingers. Kings and emperors paid her fortunes to have her cast spells for them.\"\n\n\"Well, she's dead now.\"\n\n\"Is she, Niall? I begin to think she still lives \u2014 or hopes to.\"\n\nHe stared down at her. It was on the tip of his tongue to tell her that this was nonsense, but he was remembering other times when he had encountered magic and the effects of magic. But why would this Sosaria Thota come alive again? How could she?\n\nIt was as if Lylthia read his mind when she murmured, \"Because she has made a bargain with the wicked ones who dwell in megaspace, who wait outside the world you know, seeking a way to enter it.\"\n\nNiall shrugged his brawney shoulders. He did not care overmuch for demons, he had a wholesome regard for them and their powers and if it were up to him alone, he would avoid them. As commander of the armies of Luryr Manakor, it was his duty to put this frontier fort into operation, however. He could not do that if this demonic witch were to send her powers outward to destroy the men who inhabited it.\n\nHis eyes touched Lylthia. She was staring at the door through which the glowing blue ball had come. Was she expecting another manifestation of the powers of this Sosaria Thota?\n\n\"Well?\" he asked softly. \"What now?\"\n\nShe turned her head and smiled at him, yet deep within her green eyes there was worry. \"By rights, I ought to go back to my eleven hells. But I dare not leave you unguarded.\" She sighed, \"You are a worry to\n\nme sometimes, Niall.\"\n\nHe gave a bull bellow of laughter and dragged her in against him, almost smothering her in his embrace. Lylthia tinkled laughter, but there was an undertone of concern in her throat.\n\n\"You must not take things so lightly, Niall,\" she scolded. \"No matter if I am here to guard you. There are those in the megaworlds with powers as great \u2014 if not greater \u2014 than my own.\"\n\n\"The thing to do then is find out how strong this witchwoman is. We'll go exploring.\"\n\nHis hand caught hers and like that, with Lylthia tripping lightly along beside him, he moved from the big barracks room out into the corridor and walked past the doors of other rooms, rooms in which weapons and other gear were stored.\n\nSilence lay like a pall on this fort which usually resounded to the curses or laughter of the men who were stationed here. It seemed to lap about them, surrounding them with menace. Niall grumbled and shifted his shoulders restlessly, and his hand was never far from his swordhill.\n\nThey came out upon a wallwalk and stood with the hot wind off the desert brushing them. To the south lay the vast expanse of the Baklakanian Desert, and beyond that the cultivated lands of Urgrik. Westward were the vast steppes between Urgrik and the lands of Noradden. Niall had never been to Noradden, but he had heard tales of its bazaars and the ships that fled across the waters of the Pulthanian Sea. He turned and stared eastward, and could make out, dimly enough, the Mountains of the Sun, that marked the boundary of Urgrik.\n\nLylthia touched him with a shoulder, and he put an arm about her. The winds were cool up here, and he felt her shiver.\n\nHe swung about and looked northward toward the high hills. Whatever evil had come upon this fortress had come from those hills, where the men of this fort had been digging for water.\n\n\"I have to go there,\" he muttered.\n\nLylthia stirred. \"No. It is certain death. I know that much, Niall.\"\n\n\"It is my duty.\"\n\nShe drew back and stared up at him. \"You men, with your ideals of duty and what you must do!\" She sighed and laughed. \"Perhaps that is why I like you so much, though. But you shall not go alone, my love. I will walk with you.\"\n\n\"First we will eat and sleep.\"\n\nThey turned \u2014 and suddenly froze.\n\nIn the long shadows of this late afternoon, they heard a strange and eerie keening. It was like the wail of a lost soul, rising and falling. The sound came from the north, in among those hills.\n\nNiall swore and half drew Blood-drinker. Lylthia listened, eyes wide and head up, as though something in that sound touched a chord of memory deep inside her. After a moment, she shuddered.\n\n\"She has strange powers, that one,\" she whispered. \"Ancient powers, long forgotten by this world.\" Her lovely face twisted in a grimace. \"Indeed, I myself had forgotten all about them \u2014 until now.\"\n\n22\n"
+  },
+  {
+   "path": "extract/dragon/023/p023_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\nNiall glanced down into her face. \"Are you telling me that you're afraid?\"\n\nHer green eyes glowed. \"You would be well advised to know fear. Such a woman as Sosaria Thota has never been known since she died.\"\n\nWith a hand at his fingers, she drew him down off the wallwalk. They found a commissary room equipped with freezer units and with stoves. In moments, Niall had two big steaks roasting over the flames while he poured red Kallarian wine into two big goblets.\n\nThey ate without a thought for anything but the food. When they were done and sipping at the wine, Niall grinned. Lylthia eyed him suspiciously.\n\n\"Last time I took you to bed with me \u2014 in Angalore, you'll recall \u2014 you mesmerized me.\"\n\nLaughter twinkled in Lylthia's eyes. \"I did not know you so well, back in those days. To me, you were only someone who was interfering with my vengeance on Maylok the magician.\"\n\n\"And now?\"\n\nThe girl shrugged. \"We'll see,\" she muttered, and laughed. \"I have a fancy to know something of this emotion you humans call love. It might not be amiss . . .\"\n\nNiall lifted to his feet, reached for his winecup and drained it. Then he reached out for Lylthia. He put an arm about her slender waist and hugged her to him. Like that, they walked out of the commissary room and up a short flight of stairs to the bedrooms of the post officers.\n\nThe room was dark, but Niall found tapers of yellow wax and lighted them. In their light, he saw a big, wide bed, together with a bureau and a desk and chair Lylthia was staring around her with wide eyes, almost as though she had never before seen a bedroom.\n\n\"Now you shall dance for me, as once you danced in a dream,\" he said softly.\n\nShe shook her head. \"I do not feel like dancing, Niall. There is danger here \u2014 great danger. I can feel it, inside me.\"\n\n\"What sort of danger?\"\n\n\"I know not. But it is here. Somewhere. Just \u2014 waiting.\"\n\nShe turned and walked toward an open window, without glass, with only a leather curtain on a rod drawn back, freeing that opening to the winds. It was a still night, no breeze stirred, and there was a heaviness in the air.\n\nNiall stared at this woman he loved. It was not like Lylthia to be given to worry. If she were concerned, there was reason for him to be, too.\n\nHe moved toward her, stood beside her looking out into the night. High above, the ring of shattered matter that encircled their world reflected back the brilliance of the sunlight that touched its edges.\n\nIt was a beautiful sight, and on more than one occasion Niall had looked up at it, wondering what it was, where it had come from.\n\n\"If you\u2014\"\n\n\"Wait!\"\n\nThere was urgency in her, and he could feel the tenseness of her body where he touched it. Her eyes were wide, her arms were by her side, yet rigid. It was as if she searched with senses unknown to him somewhere out there in the night.\n\nAnd then \u2014\n\nA beam of light shot skyward. It was pure white, almost blinding in its brilliance. For a moment it paused, as though seeking, and then it flashed downward, straight at them.\n\nLylthia gave a little cry.\n\nShe whirled and thrust at him with both arms, driving him backward and into the darkest shadows. Then the pale light was all about her, enveloping her.\n\nNiall shouted, with agony in his soul.\n\nThe blazing whiteness was all around Lylthia, eating at her, dissolving her. From where he stood as though paralysed, Niall could see her shimmer, glow with unearthly brilliance, then fade out.\n\nOnly the whiteness was left.\n\nThat whiteness sang joyously. It whispered and laughed, or so it seemed to Niall, and then \u2014 slowly, slowly \u2014 it withdrew, back into the night from which it had come.\n\nLylthia was gone.\n\nEaten.\n\nNiall lifted his head and bellowed out his grief, his rage.\n\n3.\n\nDawn found the Far-traveler moving upward along the slopes of the hills that lay north of the fort. He felt frozen inside him, dead. Lylthia was gone. So too, was her other self, Emalkartha of the Eleven Hells.\n\nHe would never see her again, never know her laughter nor the touch of her body. A rage burned inside him, cold and deadly. As he walked, his big hand fondled the hilt of his sword.\n\nHe would find this witch-woman, this Sosaria Thota, and he would run cold steel into her flesh. Lylthia would be avenged! He cared nothing for what might happen to him, nor did he pause to reckon at any odds.\n\nHe was a barbarian sellsword. All his life had been given to using a sword in battle. He was walking toward his last battle, now. If he could avenge Lylthia, if he could kill this witchwoman, he would be satisfied. Even if he himself found death.\n\nLife meant nothing to him any longer. Not without Lylthia. Or Emalkartha. He loved that woman who was also a goddess in her demonic worlds. He would revenge her death. Then he would die, himself.\n\nHe plodded on and upward, his great muscles rolling under his sunbronzed hide. He felt no tiredness, no weariness, though he had been walking since early dawn. Up there in the hills, the men of the frontier fort had been digging for water, to make a stone pipe which would bring water into the fort.\n\nAnd they had unearthed \u2014 Sosaria Thota.\n\nHe would search and find that tomb where she had been buried. He would run his steel into her body and destroy her. Nothing else mattered.\n\nSometime after high noon, he rested on a flat rock and ate the food and drank the wine he had brought with him. His eyes searched the tree-covered heights toward which he climbed as he ate, striving to discover where it was the men had been digging.\n\nHe sighed and rose and began walking again.\n\nToward evening, he sighted an open gap in the ground where it had been dug up, and several tools lying there, neglected. Niall moved forward.\n\nHe came to the opening, and stared down into it.\n\nHe saw rockwork and bricks, part of a subterranean chamber. Yet much dirt and rocks lay there, hiding any way in or out of it. The first thing he must do was to dig out that rubble, find a way into that structure.\n\nBut not now, not tonight. Tonight he must eat and sleep, to be ready for the morrow.\n\nHe stood before that opening, grieving. Never to see Lylthia again! Never to hear her soft laughter or be aware of the brightness of her green eyes, staring up into his with so much love! It was not a burden he could carry for the rest of his life.\n\nNo! As soon as he had killed the witchwoman he would leave this place and walk westward. He would walk until he dropped of exhaustion, and there he would die. Niall of the Far Travels no longer wanted to live.\n\nHe sat down and ate the remainder of the food he had carried with him, and finished the wine in the skin. He lay down and drew his cloak more tightly about him. In a moment, he was asleep.\n\nWhen he woke in the early morning, it was to a brilliant sun that covered him with warmth. Niall lifted off his mail shirt, his other garments, until he stood almost naked, with just a bit of cloth about his loins. Then he reached for a shovel.\n\nHe began to dig.\n\nApparently there had been a landslide here, for the dirt was loose. Shovelfull after shovelfull rose upward, and as he worked, Niall saw that he was uncovering the door of the tomb.\n\nIt was a bronze door, covered over with strange signs and sigils. Niall stared at it a moment, scowling. There was an aura of evil about that door that was almost tangible. He scowled blackly, shrugged and put out a hand to it.\n\nThe door opened slowly, its hinges creaking. He had to apply all his strength to opening that door, for it had been closed for uncounted centuries.\n\n23\n"
+  },
+  {
+   "path": "extract/dragon/023/p024_full.txt",
+   "content": "# The International Dungeon* Design Competition\n\nSponsored by TSR Periodicals\n\n# $400\u2070\u2070 + in Prizes\n\n# Winning Entry Will Be Published in TD #30 at Normal Rates\n\n*Dungeon, in this contest, is considered a generic term for modular adventures, whether above- or below-ground. Generic examples are the \"D\" & \"G\" Series Modules, as well as the \"S\", now published by TSR Hobbies.\n\nA Contest for Advanced D&D\u00ae Dungeon Designers and Masters of Writing, Designing and Imaginative Skills\n\n# RULES\n\nThis entry must conform to the rules of Adv. D&D, as published by TSR. No more than five new, non-Adv. D&D, monsters and/or artifacts, total, may be included. Each must be fully explained and described. Each entry must be accompanied by a brief introduction to, or history of itself, of 200 words or less. The entry must consist of a minimum of one 8\u00bd x 11 map, with a maximum of three, and detailed explanatory text. Text must be typed, double-spaced, with one inch minimum margins all around. Each page must be numbered and contain your name. Maps must be drawn in drawing ink \u2014 no felt tips or pencil. Entries will be judged on originality, playability and imagery. Professionalism of presentation is a positive factor. Artwork is not mandatory, but salient or unique features should be sketched. Size or bulk will not be considered, nor the lack thereof. Maximum length of copy is as follows, using a three level dungeon as basis: Elite type - 100 pages; Pica - 120 pages. Suggested lengths are 60 and 70, respectively, but could easily be as short as 30 and 40, respectively. All entries become the property of TSR Periodicals. TSR Periodicals assumes no liabilities for said entries. Copyright/waiver form, or facsimile, must accompany entry.\n\nMcLean\n\n# PRIZES\n\n1st - $100 Gift Certificate,\n13 Issue TD Sub,\nPayment for Publication\n\n2nd - $50 Gift Certificate,\n13 Issue TD Sub,\n\n3rd - $25 Gift Certificate,\n6 Issue TD Sub\n\nFinalists \u2014 up to 10 \u2014 will receive autographed copies of both Adv. D&D PH & DMG\n\nMAIL ENTRIES TO:\n\nIDDC\n\nc/o TD\n\nPOB 110\n\nLake Geneva, WI 53115\n\nEnclose self-addressed postcard, and we will notify you of safe delivery.\n\n# COMPETITION DEADLINE\nIS APRIL 15, 1979\n\n# WAIVER\n\nI, _________________________, do hereby acknowledge the rules of this competition, and assign all rights, for all media of reproduction, to TSR Periodicals. _________________________ Date _________________________.\n\nSIGNATURE\n\nDO NOT TEAR THIS OFF \u2014 YOU WILL DESTROY THE NEXT PAGE \u2014 DO NOT CUT THIS OFF\n\n24\n"
+  },
+  {
+   "path": "extract/dragon/023/p025_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\nWhen it was open, he waited for air to go into that dark chamber which lay beyond it. As he stood there, he bent to lift up his sword and draw it from the scabbard.\n\nThen Niall stepped into the tomb.\n\nHis attention was caught by what seemed to be a glass case, under which lay a body. The case was on a table of ebony with carven legs, about which were entwined the bodies of demons. Niall stared at it a moment, before turning to look around him.\n\nHis eyes wandered here and there, seeing strange and unusual objects of metal, objects the purpose of which he could not understand. There was something that resembled a great glass globe mounted on golden balls, and to one side of it there was another object which consisted of slender rods and golden stars. Not far away was a great metal square with antennae rising upward from its top.\n\nNiall turned back to the glass case.\n\nHe moved forward and caught his breath. He stared downward at the body of a woman with long golden hair, a woman so beautiful that something inside him choked up at the sight of her. Her eyelids were blued, yet were closed, and her golden lashes lay like tiny fans against her cheek.\n\nShe wore a single garment, something of diaphanous silk through which he could see the gleam of pale flesh. Her breasts pushed upward into this cloth, and for a moment, Niall thought to see those breasts move.\n\nBut no, that was merely an illusion.\n\nThis girl \u2014 or woman \u2014 was dead. There was no doubt of that. But \u2014 could this be the *Sosaria Thota* whom Lylthia had mentioned? How long ago was it she said the witchwoman had lived? Five thousand centuries?\n\nHa! If that were so, then this could not be she. This woman looked as though she had just fallen asleep.\n\nHe put a hand on the case. It felt warm, and seemed almost to quiver under his touch. Niall drew back, scowling.\n\nThere was wizardry here. He could almost smell it.\n\nNiall waited. He could not believe that a woman as lovely as this could be as dangerous as Lylthia had suggested. Yet if she were *Sosaria Thota*, she had killed the woman he loved. With some sort of magic in this tomb.\n\nHe eyed those strange objects warily.\n\nMaybe he ought to lift out Blood-drinker and use the flat of his blade to smash those queerly glittering things. There was evil in them, and a strange power which he could sense.\n\nHis hand lifted out the blade and he took a step forward.\n\n\u201cNo!\u201d\n\nThe word exploded inside him. There was strength in that word, spoken by a tremendously powerful will,\n\nNiall whirled around.\n\nThe woman lay as she always had, motionless. The chamber was quiet, with his breathing making the only sound. The hair rose up on the nape of his neck. More sorcery!\n\nNiall growled low in his throat, swung back toward the strange objects. His huge hand tightened on his sword. By Emalkartha of the Eleven Hells! He was going to smash those things, destroy them forever.\n\nHe took another step, and froze.\n\nBehind him he heard a whisper of sound. He did not know what that sound might be, he had never heard it before. With it came a sharp scent to his nostrils.\n\nNiall wanted to swing around, to look behind him at that ancient catafalque, but he could not move a muscle. Yet his every sense strained to hear, to listen to those sounds which were like nothing else he had ever heard. And with the sounds, came that sharp acrid smell.\n\n\u201cYou fool!\u201d\n\nThe words were sharp, bitter. They had been spoken by a woman. Niall gave a rumbling growl. Was that corpse behind him \u2014 alive? Was that woman he had seen breathing? Could she have spoken to him?\n\nSlowly, slowly, the rigidity went out of his muscles. Now he could move, and he swung about, staring.\n\nThe transparent covering was gone. Melted away? Evaporated into nothingness? The woman was sitting up and looking at him with calm grey eyes, very wise eyes and very old, or so he thought. She was\n\n## Over $500 To Be Awarded At GenCon Wargame Figure Painting Competition\n\nA new competition will be inaugurated at this year\u2019s GenCon, scheduled for Aug. 16-19. Sponsored by TSR Periodicals and The Dungeon Hobby Shop, the competition is for painted wargame figures.\n\nOver $500 in prizes will be awarded in a total of seven categories. The competition will be divided into two size classifications, with each of these further divided by period. The two size classes are *Micro Scale* and *Regular*. Micro Scale is to consist of all micro-sized armor and other types, such as spaceships (Grenadier and Valiant, for example), naval vessels (CinC 1/2400, GHQ Micromants, Valiant *Fighting Sail*, *Superior*, Waterline, etc. *i.e.*, any scale smaller than 1/200, inclusive) and airplanes. The Micro Scale class is further divided into two categories: *Unit* and *Diorama*. *Unit* is defined as a militarily definable and recognizable organization. (This definition applies only to this class; *unit* is defined differently in other categories.) The minimum number of figures in this class is five, and the maximum is forty.\n\nDioramas are limited only in base size- 15' X 15'.\n\nThe Regular class consists of 15mm, 20mm, 25mm, and 30mm figures. This class is further divided into two categories: Historical and Fantasy & Science Fiction. The *Historical* category is further divided into two sub-classes- *Unit* and *Diorama*. The minimum number of figures represented must be a viable unit on the wargame table. *Unit* size is limited to one battalion of foot or horse, or one battery of cannon or siege equipment. The maximum number of actual figures must be justified by an existing, commercially available set of rules governing the period. Diorama limitations apply as above, 15' X 15', maximum.\n\nThe Fantasy & Science Fiction Category is also divided, this time into three sub-classes: *Unit*, *Diorama* and *Monster*. *Unit* is defined as at least five, but no more than 40, figures in a plausible organization. The *Diorama* restrictions are the same as previous categories. The *Monster* sub-class is limited to five figures or less. (Some may qualify as both *Unit* and *Monster*, but may only be entered in one.)\n\nIf you wish to enter, you need only show up at the appointed times. There will be a $1 entry fee per entry. We will provide secure storage prior to the actual judging. You must package your entries for safety from incidental damage \u2014 we will provide security and a place to store them in your packing. The actual judging period is the only time that all entries will be on full display, and we will do everything we are capable of doing in an effort to protect your property. The results are scheduled (remember that we are talking about an event some six months away) to be announced shortly after lunch on Sat., the 19th. The actual judging will be occurring during lunch. We would like to place the winners on display for the rest of Saturday.\n\nThere are a total of seven classes and sub-classes: Micro-Scale *Unit*; Micro-Scale *Diorama*, Historical *Unit*, Historical *Diorama*, Fantasy&SF *Unit*, Fantasy & SF *Diorama* and Fantasy *Monster*. Each of the seven class winners will receive an engraved plaque and a year\u2019s sub to the TSR Periodical of their choice. In addition, there will be two BIG prizes: *Best of Show* and *Sweepstakes Award*. *Best of Show* will go to the best *Diorama* in the entire competition, the *Sweepstakes Award* will go to the best *Unit* entered in the competition. These two awards also merit plaques, along with $250 in gift certificates. Best of Show will receive a $150 G.C. from the Dungeon Hobby Shop, while the *Sweepstakes Award* merits a $100 G.C. from The Dungeon. The Dungeon is the most complete wargame hobby shop in the midwest, and also carries an extensive line of trains and equipment, and capable of fulfilling any gamers\u2019 dreams. Their mailorder service is extensive and efficient.\n\n25\n"
+  },
+  {
+   "path": "extract/dragon/023/p026_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\nbeautiful. More beautiful than any woman Niall had ever seen.\n\nThose grey eyes went over him from his worn war-boots to his kilt and fur kaunake that covered his mail beneath the saffron silk cloak, upward to his face. The grey eyes widened at sight of his rugged good looks, his mop of thick yellow hair.\n\n\"Who are you, who come blundering in to disturb my sleep? From whence do you come?\"\n\n\"I am the commander of the armies of Lurlyr Manakor, king of Urgrik,\" he growled. Then he asked, with a snarl in his voice, \"Are you the one who killed Lylthia?\"\n\nMocking laughter rose upward into the air as the woman on the spotted furs of the catafalque threw back her head. Amusement was written plainly enough on her face. \"And if I were? What is that to you, man? Do you not know who I am?\"\n\nShe paused and stared at him. In a softer voice she went on, \"No, perhaps you don't. Something tells me I have been asleep for a long time. A long, long time. Even your speech is different from the way people talked when I lived before. What is the year?\"\n\n\"The fifth year of the Bear in the Cycle of the Twelve Sigils.\"\n\n\"All of which means absolutely nothing to me.\"\n\nNiall remembered what Lylthia had whispered in his mind.\n\n\"You have been dead for five thousand centuries. If you're who I think you are.\"\n\nThe woman gasped and sat up straighter. \"You lie! So much time could not have elapsed.\"\n\n\"What would I gain by lying?\"\n\nShe considered him, her head tilted sideways. Those eyes seemed almost to weigh him, to look deep inside him. They made Niall uncomfortable. He still held his sword in his big right hand, and he told himself that if he could get close enough to this woman, he would bury its steel in her throat.\n\n\"Do you know who I am?\" she asked softly.\n\n\"Sosaria Thota.\"\n\nAlarm and amazement came into her features. She swung her legs forward off the catafalque and stood upon the stone floor. Her breasts rose and fell as though to deep emotion.\n\n\"How could you know my name?\" she whispered. \"If what you tell me is true \u2014 that five hundred thousand years have passed since I was last here \u2014 no man could possibly have remembered me.\"\n\nNiall shrugged. He was not about to admit that it had been Lylthia who had whispered that information into his mind.\n\nShe moved forward, as graceful as the hunting leopard, and \u2014 or so Niall thought \u2014 as deadly. She was beautiful as Lylthia, but there was something about this woman that chilled Niall, deep inside him.\n\nHe stood waiting, his hand still holding his sword. As though she sensed his thought, Sosaria Thota laughed softly.\n\n\"Would you kill me, man?\" she asked.\n\n\"Aye. I would.\"\n\nShe laughed gleefully and clapped her pink palms together in an almost childish glee. She was close now, and despite the hate he felt for her, he was aware of her as a desirable woman. The garment she wore was revealing, being woven of some silken strands that seemed almost transparent.\n\n\"You are an honest man. Good! I like that. And you are a brave one. I like that, too. It will make your subjection that much sweeter.\"\n\nShe paused, the green eyes laughing up at him.\n\n\"Do you think you can buy your sword in my flesh, man? Do you? Try it.\"\n\nHe could not look away from those eyes which seemed to hold him in thrall. His knees grew weak, suddenly, and he groaned, unable to move his swordarm. She was a witchwoman, all right, this Sosaria Thota. In her hands he was like a helpless babe.\n\n\"There now,\" she smiled, speaking in a soft voice. \"You appeal to me, whoever you are. I need a companion, a living companion. I have been too long \u2014 asleep.\"\n\nShe sighed. \"I would look upon the world again, see it as it was, so long ago. Come you with me, man.\"\n\nSosaria Thota turned and without looking back at him, made her way out of the tomb, climbing over the loose rubble and the rocks, the wind blowing her drapery about her flesh so that at times it seemed she was almost naked.\n\nNiall went after her, sheathing his sword. No sense in carrying Blood-drinker in his hand, if he could not use it. And he knew he could not, against this woman.\n\nThey came out upon the lip of the diggings, and the woman stood as if frozen, staring out across the desert sands. Her eyes went this way and that, as though seeking something that had been here, and was here no more.\n\nNiall stood beside her, so close that her bare arm touched his. From her flesh rose up a sweet, stirring fragrance.\n\n\"Gone. All gone,\" she whispered. \"No longer is there a land of Thilmagia. Instead \u2014 only dead sand.\"\n\nShe whirled and stared up at him with those disturbing grey eyes. \"Is it like this all over the world?\"\n\n\"Of course not,\" he growled. \"This is the desert. Out yonder,\" and here he flung up a hand, \"are the wild hordes of Pugarsk. To keep them at a distance, Urgrik has built these forts.\"\n\nHe turned and now his arm swept northward, toward Urgrik. \"There are cities that way, and to the east and the west. There live men and women. No one but soldiers stay in such places as this.\"\n\nHis mention of soldiers made him think of the men this woman had killed with her devilish lights. She must have caught the anger in his throat, for she smiled faintly and nodded.\n\n\"Yes, I slew all life around me, once I was\u2014disturbed. I lay asleep and dreaming for many centuries, it seems. Yet when men came and began to dig, I became aware of it, and sent out my messenger to kill them.\"\n\n\"As your messenger was slain.\"\n\nHer hand stabbed out and caught his arm, her long red fingernails biting into his flesh. \"Aye! Something destroyed Messarib. Was it you? No, no. You have not the power. Then \u2014who was it?\"\n\nNiall shrugged. He was not about to tell this woman anything, though it could make little difference, since Lylthia was dead. At that thought, a fierce anger began to burn inside him, until it became a rage that made him tremble.\n\nHer eyes were wise, they saw the fury in him, and she laughed softly. \"I sent the vilaspa light to search the barracks when Messarib was destroyed. That light touched a living person \u2014 ate him. Who was that person, Niall?\"\n\nHe shook his head, knowing that those eyes were on him as though they might read his mind. Let her look, let her try to discover what he knew. He would not tell.\n\nSosaria Thota sighed and turned away, her stare going over the desert lands once again. She stood as though she did not feel the desert winds that touched her lone garment and blew it about her. Niall wondered what she might be thinking.\n\nAt last she said, \"These lands where men do live in these days \u2014 be they far?\"\n\n\"A few marches away.\"\n\n\"Then lead me there, man.\"\n\n\"Not I, lady.\"\n\nShe turned and looked at him, haughtily. Her lips opened as if she would speak, but then they only curved at their corners into a grim smile.\n\n\"Go and fetch horses, then. One for you, one for me, and two more to carry those things I shall need. Go now.\"\n\nNiall turned and walked toward the fort. In the stables there would be horses. Yet he told himself he would not take the witchwomen into Urgrik City. He would lead her out upon the desert, but in a direction away from the populated places.\n\nThere in that desert, without water, she would surely die. Of course, he would die with her, but what was his death compared to the lives of the people he would save? Sosaria Thota would kill and slay all who stood in her way. She would not rest content until it was she and not Lurlyr Manakor who ruled in Urgrik.\n\nAye, and in other cities as well, until with her wizardous arts she controlled all men and their lives. His big hand clenched into a fist. He would not permit it. In some way, he would find a way to kill her.\n\nHe saddled two horses, one of them the big grey stallion he had ridden here. He also selected two pack animals. He fed them and the other horses which would be left behind, and made certain they had plenty of water.\n\n26\n"
+  },
+  {
+   "path": "extract/dragon/023/p027_full.txt",
+   "content": "# THE TRIBES OF CRANE\n\nYou, task chief of the Leopard people wandering tribe of Crane, sit in your great wagon awaiting news from your swift searching outriders. Suddenly hoof beats approach. The outriders leap from their mounts to your wagon flushed with excitement for they know full well the meaning of their news. But one sector to the North the great merchant caravan of the Impala people has been spotted. The order is given \"To arms . . . to arms!\" You snap your orders, \"Gather my captains of hundreds. Let all know the tactic will be enfilade right. Now my arms, my mount.\" You heard that Kate, chief of the Impala people, has chosen a stand and defend tactic twice before; will he again? You know also that the Impala people are fine warriors as are all the people of the many tribes. This will be no raid of the strong on the weak, but rather a mighty clash of the TRIBES OF CRANE...\n\nThe Tribes of Crane is a unique correspondence game, allowing for interaction between players and the fantasy world of Crane and each other through a continuous game that may be entered at any time.\n\nAs a new player you will start as the chief of one of the many wandering tribes of Crane. Perhaps your tribe will be of the Sea people or Caravan merchants.\n\nAs chief you will know many secrets of your people and their lands, but there will be much you have still to learn of the lost secrets of Crane. It will be you who decide if your people will remain in their familiar homeland or begin a journey to new lands as you strive to increase your herds, train warriors, and learn of the ancient lost secrets that can move your people toward prosperity and dominance.\n\nThe land of Crane is a complete fantasy world with a full range of geography from the permanent ice of the polar regions, to the deserts, and tropical forests of the equator.\n\nCities dot the continents of Crane providing centers of trade and homes for the powerful Shamans and King Lords.\n\nThe creatures of Crane are as varied as its geography. Cattle goats and the caribou are the mainstay of the tribes, depending on the geography. But horses and the great mancarrying war hawks are important to the fierce warriors. Many undomesticated creatures also inhabit Crane such as the Euparkeria, a huge bipedal lizard that feeds on cattle in the grasslands of Crane.\n\nInteraction between players is very common. Alliance, trade, and combat are always possible. Combat is determined in part by a comparison of tactics used by the antagonists, the relative number of warriors, and the geography.\n\nThe games objective is to increase the relative strength and prosperity of your tribe which is measured by different criteria, depending upon the type of tribe, and thus obtain points. Players try to obtain high average points per turn thus placing new players on a par with those who have been playing longer.\n\nThe Tribes of Crane may be entered for $10.00 which includes the first six turns, a rule booklet, and all necessary material (except return postage). Thereafter, turns are $1.50 each. If dissatisfied after the first turn, you may return the materials for a full refund. A rule booklet may be purchased separately for $3.50.\n\nSend to: Schubel & Son\n\nP.O. Box 214848, Dept. X\nSacramento, CA 95821\n\nName\n\nAddress\n\nCity State Zip\n\n27\n"
+  },
+  {
+   "path": "extract/dragon/023/p028_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\nThen he brought the mounts toward where Sosaria Thota waited. He might not be able to draw and use steel against her, but she would not suspect that the desert sands might kill her.\n\nIt was his only chance.\n\n4.\n\nThey began their march at a walk, with Niall out in front on his grey horse. He set the pace, it was an easy walk, for he was in no hurry. Apparently Sosaria Thota was content with that, for she made no comment.\n\nAll day they moved across the hot sands, until the sun sank in the west and a breeze sprang up. Only then did Niall turn and glance back at the witchwoman who sat her saddle with the ease of olden days.\n\nHer eyes were very bright as they studied him.\n\n\"Always you move westward, man,\" she said softly, and her eyes were narrow and angry. \"I ask myself if you are trying to trick me.\"\n\nNiall shrugged his broad shoulders. \"Now why should I do that?\"\n\n\"Because you are loyal to this king you serve, because you don't want to lead me into this city of Urgrik.\" Her lips curved into a cruel smile. \"I will play your little game with you, for a time.\"\n\nShe leaned forward in the saddle, her hands clutching its pommel, and her eyes blazed at him. \"Think not to fool me, man. I am Sosaria Thota!\" She moved back then, and let her laughter ripple on the air. \"You take me westward, and I want to go north. Am I such a fool that I cannot see the sun?\"\n\nNiall swung down from the kak. \"We'll make camp here.\"\n\nThe woman stared around her, brows wrinkling. \"One spot is as good as another, I suppose. One can eat and sleep here.\"\n\nShe came onto the sands and walked back and forth, kicking little sand-puffs at every stride. From time to time she threw back her head and stared upward at the darkening sky. Then, as though making up her mind about something, she moved toward one of the pack horses and began to fumble with the straps.\n\nHer hands lifted down an apparatus consisting of many slender rods, each of which was surmounted by a golden star. This she set down very carefully on the sand and stood a moment, brooding at it.\n\nShe turned and stared at Niall.\n\n\"I have had men flayed alive for lying to me, man. Others I have had my torturers spend a week over, making certain that the manner of their dying was extremely slow and painful.\" She sighed. \"I should not care to order you to die in any such manner.\"\n\n\"In those days, you had many serants. Today you have only me.\"\n\nShe laughed at him. \"Fool! Do you think I cannot summon up help? I can call on the denizens of the outer darknesses, which are all familiar to me, who obey my slightest whims.\"\n\nNiall shrugged and turned back to the little fire he had made and over which he was cooking meat he had brought from the fort. Inside him was a coldness that seemed to stretch inward to his very bones. How did a mere man deal with such a witch? From what Lythia had hinted, this beautiful woman who stared at him so coldly had strange and mighty powers.\n\nHer hands did something to the rods and stars, and instantly Niall saw a dark cloud spring up about them. It was dark at first, as black as the fabled pits of Aberon, yet slowly that ebon tint faded, was streaked with brilliant scarlet\u2014then faded.\n\nNow he stared at a dead world. Dark were the cinders on which he croached, lifeless and sere, while above him was a sky shot with crimson fires. It seemed that he heard a whisper, very faint, yet one which grew louder she listened.\n\nIt was the beat of wings.\n\nThe thing came on widespread wings, fluttering a moment, before it settled down near Sosaria Thota. Its three eyes were brilliant with evil, and Niall shuddered when he saw that this demoniac being eyed him hungrily.\n\n\"Can it be Sosaria Thota?\" the thing croaked.\n\n\"None other, Alphanor. I am awake again, you see. I have slept a long time. Now I appeal to you for help.\"\n\n\"Leave the man-thing for me, and I shall be at your service.\"\n\n\"Na, na, Alphanor. This one I need \u2014 for a time, at least. Yet you shall be paid. This I vow.\"\n\nThe bird-being took its beady eyes from Niall to glance at the witchwoman. For a moment it seemed to hesitate, then its armored head nodded.\n\n\"What is it you seek?\"\n\n\"Long ago \u2014 in my other lifetime \u2014 the gods of the outer darknesses promised me their aid. Yet at that time they were unable to help me \u2014 and so I waited. Now my time of waiting is at an end.\"\n\nShe stood proudly before that black bird-beast, her head flung back, and Niall had to admire her at that moment. She was a human being, or had been, and she trafficked with demons in their own lands. Great must be her powers, great her courage.\n\nAlphanor hesitated. \"There are other powers,\" he grumbled. \"They too, are powerful, mayhap even more powerful than we dark beings. Over the years when you have been sleeping, those others have extended their abilities.\"\n\n\"Are you saying you cannot help me? Or will not?\"\n\n\"It is not easy. If those other powers were to guess \u2014\"\n\nIt seemed to Niall that the bird-thing shivered.\n\n\"Enough,\" Sosaria Thota snapped. \"If you fear to aid me, there are others upon whom I can call.\"\n\nThe bird-god shook himself. \"Look around you,\" he croaked. \"Once this land was fair, with trees and grass and animals abounding, all over it. That was before you called on me and I \u2014 aided you.\"\n\n\"Those others came then and destroyed my world, even as they forced you into an eons-long sleep. Do you care to risk their wrath a second time, Sosaria Thota?\"\n\n\"I do. I shall\"\n\nHer hand touched the rods and stars and instantly the dark, dead world was gone and there was a moment when Niall swayed while all about him madness cracked and thundered. Then the ground under his feet settled, and he saw that he stood in a massive hall, so large it seemed to stretch away almost to infinity.\n\nThere were tiles underfoot, and a warmth everywhere. Niall swung about, stared at a great throne upon which \u2014 something \u2014 stirred and seemed to rise upward from slumber. He could not make out its form, there was something alien and non-human about it.\n\n\"Who comes?\" a voice whispered. \"Who dares disturb the dreams of Xinthius?\"\n\n\"I dare, great one. Long ages ago, I worshipped thee in the lands I ruled. I am Sosaria Thota!\"\n\nThere was silence, then something rustled like dry leather. \"I remember you. Aye. But that was long, long ago.\"\n\n\"And now? Are your powers so faded you cannot aid me again?\"\n\n\"What is it you wish of me?\"\n\n\"Help me attain to my old powers! Help me rule the world of my birth as once I ruled it?\"\n\n\"Na, now. Things have changed while you slept, girl. We dark worlders are not so powerful as once we were. There are those who would contain us.\"\n\nSosaria Thota sneered. \"And you fear them?\"\n\n\"I do, and rightly so. I am content here in my halls, where my word is supreme. Here I sit and dream, and I enjoy my life. If I were to aid you in your plans, all this might be taken from me.\"\n\n## BACK ISSUE AVAILABILITY\n\nSome back issues of TD are still available. Only those listed below are in stock. Back issue price is $2.10, postage and handling are included.\n\n|  Vol. II | Vol. III  |\n| --- | --- |\n|  TD 7 | TD 15  |\n|  TD 8 | TD 18  |\n|  TD 9 | TD 19  |\n|  TD 11 | TD 20  |\n|  TD 12 | TD 21  |\n|  TD 13 | TD 22  |\n|  TD 14 |   |\n\nAll issues are of limited quantity. No guarantees of availability are implied.\n\n28\n"
+  },
+  {
+   "path": "extract/dragon/023/p029_full.txt",
+   "content": "March, 1979\n\nThe Dragon\n\n\"Must I seek out Abaddon himself?\"\n\n\"Go seek him, woman. I will not help. I am content with my dreamings.\"\n\nAngrily, Sosaria Thota stabbed out a hand, touched the rods and stars. They glittered and gleamed and gave off a faint music. Niall swayed to the dizziness that touched him, and then he stood on rocky ground riven by great fissures. Upward from those fissures came white steam.\n\nYet in the near distance, Niall could make out grassy slopes and trees heavy-hung with fruit. His head turned as he stared about him. This land was like a paradise. The air was sweet, it was filled with birdsongs.\n\n\"Carry that,\" snapped Sosaria Thota, gesturing at the rods and stars.\n\nShe turned and walked away from the rocky ground, moving steadily toward the nearest grass. Niall bent and lifted the rods and stars and carried it easily in his muscular arms. Only when Sosaria Thota halted did he set it down.\n\n\"Who intrudes on Abaddon in his domains?\"\n\nIt was a whisper from the very air. There was no shape around, nothing which could have spoken. Yet the words rang in his ears, and he knew that the witchwoman heard them too, for she stiffened and glanced around her.\n\nWas it his imagination, or did her beautiful face mirror an inner fear? No matter. She flung back her head and cried, \"I come for help, Abaddon. I am Sosaria Thota, who worshipped you long and long ago as the father of all demons!\"\n\n\"I remember.\"\n\n\"Then aid me now, great one! Restore to me those lands which once I ruled.\"\n\nThere was laughter all about him, Niall realized, as though the very air itself were amused. Slowly that mirth died away and there was a silence.\n\nThen: \"If I do this which you ask, what is to be my reward?\"\n\n\"Anything you ask.\"\n\n\"Then this is my demand: that all men shall adore me, on your world. There is to be no temple to any other god or goddess. I alone \u2014 Abaddon! \u2014 am to be sole god.\"\n\n\"It shall be done.\"\n\nNiall stirred restlessly. Was this to be the end of his world as he knew it? He had heard of the powers of Abaddon, they were whispered of by priests and initiates of other gods and goddesses. He was The Black One, the Dark Destroyer. All power was his, he was supreme among the evil ones.\n\nHis hand touched the hilt of his Orravian dagger and he half drew it. Yet he knew that he could never use steel against Sosaria Thota. It was an order that was impressed upon his very brain by her wizardous arts.\n\nAround Sosaria Thota the air seemed to glow, to brighten intensely. Swiftly that brightness shrank until it encompassed her body and then seemed to merge with it. She turned her head and stared at him, and now it seemed to Niall that another was inside that body, looking out at him.\n\n\"Come, man,\" said the witchwoman, and gestured at the rods and stars.\n\n## THE INTERNATIONAL DM SEARCH IS ON! AGAIN!\n\nTHE DRAGON is compiling a list of DM's to be published sometime in the late fall.\n\nIf you wish our list to include your name, simply send it to us on a postcard or 3X5 note card. If you wish to be listed for a game other than D&D please specify. If no game is listed, it will be assumed that it is the one and only \u2014 D&D.\n\nTHE DRAGON hopes this list will be the biggest ever compiled by anyone anywhere. What easier way to get fresh BLOOD in your campaign? It pays to advertise.\n\nSimply send your cards to:\n\nMapping the Dungeons\nc/o THE DRAGON\nPOB 110\nLake Geneva, WI 53147\nUSA\n\nObediently, Niall lifted the contraption. There was an instant of intense cold and darkness, and then they were standing again on the vast stretch of sand that formed the Baklakanian Desert.\n\nSosaria Thota was looking around her, as though considering. Niall watched her closely, then reached for his dagger. Could he throw it at her? An old warrior with whom he had served in the forces of Sensenall to the south, had taught him the way of it. Still, he was long out of practice.\n\nHe hefted the dagger in his big hand. Should he risk it?\n\nNa, na, Niall. That is not the way.\n\nNiall of the Far Travels froze. His heart leaped and thudded inside his great chest. Was that Lylthia? Or \u2014 to give her true name \u2014 Emalkartha of the Eleven Hells? But \u2014 Lylthia was dead!\n\nSosaria Thota turned and stared at him and at his dagger. Her lips curved into a grim smile. \"Are you thinking of using that against me, man? You cannot, remember. I have forbidden it.\"\n\nNiall said, \"Our meal is done. I was about to slice off steaks.\"\n\nHe knelt about the flames and lifted off the piece of meat he had brought from the fort. He sliced off pieces and handed one to the witchwoman. She accepted it, her grey eyes grave on his face, as though she weighed whether or not to let him live.\n\nYou shall live, Niall. Neither Sosaria Thota nor Abaddon himself know this world. It has been eons since they were here. You do know it. You are invaluable to them.\n\nNiall hunkered down, chewing his steak. He was at peace, within himself. Now that Emalkartha was back with him, nothing else mattered.\n\nWhen he was done eating, he wandered away from the little camp to attend to the horses. He fed them, he gave them to drink from the waterskins he had brought from the fort. Then he turned and looked back at his campfire, where the witchwoman sat before it, staring into its flames.\n\n\"What shall I do?\" he whispered.\n\nNothing. Only \u2014 wait.\n\nNiall came back to the fire, stretched himself out and wrapped his cloak about him. Sosaria Thota glanced at him, but her eyes were lidded so that he could not see their great depths.\n\nNiall slept.\n\nHe woke in the early dawn, when the sun was tinting the desert sands a reddish hue. Sosaria Thota was standing beside the dead embers of the fire, her body rigid, arms by her side, her head flung back. Beside her was the machine with the tall, thin rods.\n\nHer hand touched it.\n\nAll about them there was a shifting of light, of vision. No longer was there any sand but instead green grass grew, and at some distance, Niall could see a great white wall and behind it the tops of buildings.\n\nYet this vision lasted only a few moments. It shifted then and faded away, and only the desert remained. Sosaria Thota sobbed.\n\n\"What is it? What's wrong?\" she wailed.\n\n\"I do not understand. Always the amanatlon has performed as you requested. It has great powers, has the rod-thing.\"\n\nThat had been the voice of Abaddon.\n\n\"I saw my little city, I did. And the lands that were wont to surround it when I lived \u2014 before.\"\n\n\"Yet now they will not stay. Some other power is making them disappear, setting at naught the power of the amanatlon.\"\n\nAnger touched the witchwoman, distorted her features. \"You are the father of evil, the grandfather of all devils! Help me!\"\n\n\"I \u2014 cannot. There is great power here allied against us. I am seeking for it, but it is hidden.\"\n\nSoft laughter rippled through Niall's mind.\n\nThey search for me, yet they do not suspect you hold me within you, as Sosaria Thota holds Abaddon. Nor shall they.\n\nSosaria Thota began to pace up and down, kicking sand with her feet at every stride. Confusion and fear touched her face. She halted at last and stared down at Niall where he sat on the sand.\n\n\"What power rules this desert, man? Answer me!\"\n\n\"No power I know of. It is only a desert.\"\n\nThe witchwoman shock her head. \"No. There is something here. Some great and tremendous strength, against which I am helpless.\"\n\nHer hands clenched into fists. Her green eyes blazed. \"It shall not\n\n29\n"
+  },
+  {
+   "path": "extract/dragon/023/p030_full.txt",
+   "content": "The Dragon\n\nVol. III No. 9\n\ndefeat me. Nothing shall do that. I will not permit it.\"\n\nShe turned and walked away, toward the pack horses and their burdens which Niall had put upon the ground last night. She walked up to the metallic thing that held the huge glass globe mounted on golden balls. Her hand touched it, set the balls in motion.\n\nFaster those golden balls rotated. Faster, until they seemed almost to disappear. And as they whirled, the interior of the glass globe darkened, then brightened. Tiny lightnings shot outward from it.\n\n*Break it, Niall!*\n\nSosaria Thota stood with her back to him. Niall lifted out his Orra-vian dagger, balanced it a moment, then hurled it with all his strength. Straight for that glass globe hurtled the steel blade.\n\n*claaannng*\n\nThe sound of breaking glass was loud in the desert stillness. Niall saw pieces of that globe fly to and fro through the air.\n\nSosaria Thota whirled and screamed.\n\nRaw was her fury, black her rage. Her arm lifted and she leveled her fingers at him. From the tips of those fingers flaring blue light sped at him.\n\nSped at him and \u2014\n\nParted as that light was about to touch him! On either side of him it went, and faded out.\n\nThe witchwoman stared, mouth open and eyes wide.\n\n\"Who are you?\" she whispered. \"What are you? No human could so turn my power.\"\n\nNiall found himself saying \u2014knowing that Emalkartha was making his lips and tongue fashion those words, \"It is useless, Sosaria Thota. Even your evil gods cannot help you. Can you, Abaddon?\"\n\nHer last three words were bugled, ringing clearly and loudly. Sosaria Thota shrank back as if hit, and fear lay written on her beautiful features, distorted now by terror.\n\n\"You are a demon, a god,\" she breathed.\n\nNiall said, this time in his own voice, \"I am only what you have named me. A man.\"\n\nShe shook her head so that her long golden hair flew about her head. \"No! You are more than that. You have driven Abaddon from me. He has fled away, back into his own lands. He has left me to face you alone.\"\n\nIn a broken voice she asked, \"What seek you of me?\"\n\n\"Your death, Sosaria Thota.\"\n\nShe leaped at him, fingers curled to claw at him. With one sweep of his arm, he hit her, drove her reeling backward until she fell and lay upon the sands.\n\n\"You struck me,\" she breathed. \"You lifted your arm and struck me. You could not. I had forbidden it.\"\n\nNiall lifted out his sword. Her eyes went to it, to his face. There was insane terror in her eyes now.\n\nThe witchwoman whimpered, \"No. You cannot. Look at me, man!\"\n\n*Look you, Niall, as she commands.*\n\nThose grey eyes fastened on his, as though they would devour him. Had not Emalkartha been inside him, he would have done what those eyes were bidding him to do: lift out his sword, put its point to his chest, and fall on it.\n\nYet he did nothing more than stand there, staring back at her, his sword in his right hand.\n\nAnd then Sosaria Thota whimpered. Her eyes grew bigger, as though something within his own eyes were speaking to her. Slowly she rose upward, to stand before him.\n\nAs she did, Niall lifted his sword and pointed it at her, as an inner voice commanded. His blade began to glow whitely, so brilliantly that its glare blinded him.\n\nThat brightness gathered in the steel, focussed at its point, became a ball if incandescent luminescence. Sosaria Thota shrieked, the agony of death alive in her throat.\n\nFrom his sword that blazing radiance leaped forward, straight at the witchwoman. It hit her, seemed to burst so that it enveloped Sosaria Thota. For an instant, her body was outlined within that shimmering refulgence.\n\nA voice inside that brightness wailed.\n\nThen the whiteness was gone, and the witchwoman with it.\n\nNiall stood alone upon the sands, with only the horses to keep him company. He lowered the sword, and was aware that there was wetness on his forehead. He shook himself, like a great bear newly wakened from his winter sleep. Then he sheathed Blood-drinker and looked around him.\n\nEmalkartha was gone from inside him \u2014\n\nYet even as he turned, he saw Lylthia standing a dozen feet away, laughing softly.\n\n\"I thought you \u2014 dead,\" he whispered.\n\n\"And so did Sosaria Thota. I wanted her to think that, Niall, for she had sent one of her messengers to slay someone whom she suspected of being in the fort.\"\n\nShe strode toward him and he opened his arms and caught her to him, kissing her soft red lips hungrily.\n\nWhen she could, she said, \"We shall spend a few days together in the fort, Niall. Before you return to Lurlyr Manakor and tell him that the danger here is done with. Eh? Would you like that?\"\n\nNiall gave a great roar of laughter, lifted her high on his chest and began to kiss her even more hungrily.\n\n#### GENCON XII Status Report\n\nYes, there is going to be a GENCON XII, and it's going to be at the University of Wisconsin-Parkside (August 16-19). You remember the place-big, brown buildings on top of a hill, surrounded by an 1800 acre campus, smack dab between Racine and Kenosha, Wisconsin \u2014 a great place to hold a game convention: save for the fact that all bridges in the area were under repair and that some malicious wizard had thrown a Permanent Invisibility on it. Well the bridges have been repaired, and since we are sending out maps to all the people we know of who might possibly want one, there should be no problem in finding GENCON this year. (I hope!) If by chance you lose your map or never could find \"X marks the spot,\" just remember \"Take I-94 to Highway E. Turn east and stay on E until you come to Parkside. Turn back if you come to a BIG lake.\"\n\nAs far as sleeping accommodations are concerned, we still NOT have any sleeping facilities (Dorm Space or Flop Space). We will be making block registrations with four large motor inns in the area but you will be responsible for making the specific room reservations. In addition we will have a complete listing of all motels within 5 miles of Parkside, including their rates in the Convention Catalog. The Convention Catalog will be massed\n\nmailed to everyone we know or have heard about. (Yes all The Dragon subscribers get one). If you want to make sure you are on the mailing list, please drop us a post card, at GENCON XII, attn. Joseph G. Orlowski POB 756 Lake Geneva WI 53147.\n\nPre-registration fees will be $10.00 for the entire convention. The \"at door\" price will be $15.00 for the entire convention and $5.00 per day. All pre-registration requests must be postmarked by July 25. This is to allow us to mail ID badges, convention schedules and other material to you before the convention. When you get to the convention all you need do is show your badge to the people at the registration desk, who will note that you made it and make sure you know how to get to the game registration area.\n\nRight now I'm looking at GENCON XI tying to determine problem spots that need to be corrected for this year's GENCON. Problem spots determined so far are Game Registration, Complaint Procedures, and lighting in the Dealer Area. If you have any more problems that you spotted, please drop me a line.\n\nGENCON XII Coordinator\n\n30\n"
+  },
+  {
+   "path": "extract/dragon/023/p031_full.txt",
+   "content": "# AN ADVENTURE . . .\n\n# IN SEARCH OF THE UNKNOWN\n\nA deserted stronghold deep in the wilderness, rumored to contain great treasures of wealth and magic. . . What a promise of adventure and discovery--as well as danger!! This is the setting for TSR's Dungeon Module B1, \"In Search of the Unknown\".\n\nCreated to be an integral part of the DUNGEONS & DRAGONS\u00ae Basic Set (but now available separately as well), this module is the first one in this popular series of releases designed specifically for novice players and Dungeon Masters. The module, fully 32 pages in length, contains a complete adventure scenario for DUNGEONS & DRAGONS\u00ae which includes descriptive information as well as legend and background material, optional character lists, monster and treasure listings, and two level maps. In addition to the scenario itself, there are additional wide-ranging sections written especially for beginning Dungeon Masters, who can employ the package as a special instructional module to provide insights and ideas for the construction of their own dungeons, as well as benefit from a discussion of how D & D\u00ae is best played and enjoyed. Starting players, too, can profit from their own section offering tips on play.\n\nExperienced players and Dungeon Masters will also find the module worthwhile and useful, and a special section gives advice on easy conversion of the game situation for use with ADVANCED DUNGEONS & DRAGONS\u00ae\n\nLike the rest of the releases in this series, this module features a cover folder with interior game maps, as well as a booklet giving all necessary game information and descriptions. The folder comes shrink-wrapped, and the price is $5.49.\n\nTHE DUNGEON HOBBY SHOP\n\n772 Main St.\n\nLake Geneva, WI 53147\n\nPlease add $1.00 to all orders regardless of size for postage and handling.\n"
+  },
+  {
+   "path": "extract/dragon/023/p032_full.txt",
+   "content": "# Take a trip with\n\n# the Dragon\n\nThe Premier Magazine of Fantasy, Swords & Sorcery and Science Fiction\n\n# through the limitless Worlds of your\n\n# Imagination.\n\nThe world is in your mind, awaiting only a key to unlock it. Come along with us on a tour through realms of imagination where magic works or man cruises the cosmos ... Do battle with evil wizards or fearsome beasts ... Explore the universe from the bridge of your F-T-L space cruiser ... Let your mind soar and your spirit exult.\n\nGardner F. Fox - \"Niall of the Far Travels\" created especially for The Dragon\n\nAndre Norton - An excerpt from the D&D novel, \"Quag Keep\".\n\nFritz Leiber - Fafhrd and the Mouser in \"Sea Magic.\"\n\nHarry O. Fischer - \"The Finzer Family\".\n\nL. Sprague de Camp and Fletcher Pratt - \"The Green Magician.\" The last saga of Harold Shea. \"The Incomplete Enchanter\", and more ...\n\nD&D articles\n- Fantasy game articles\n- Satire\n- Humor\nGame reviews\nGame Variants\nComix\nNew Figure reviews\n\nTHE DRAGON - POB 110 - LAKE GENEVA, WI 53147\nName Address City, State Zip Code\n518 00 Year (No. Amer. only)\n59 00'8' (Miles)\n$1.50/Tax\n\nP.O.B. 110 - LAKE GENEVA, WI 53147\n"
+  }
+ ],
+ "inline_count": 82
+}

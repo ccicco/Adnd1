@@ -29017,6 +29017,27 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   report-022 boxes - the gap_flips on the three part lines to checked, the
   gap_census 3 closed 0 open, prefix scan fresh at the then-HEAD (l22
   free at 446f677, k22 now taken). WAIT FOR GO.
+  - R949 LANDED (76a37e2, l22, 29 inline, the pure flip): The Dragon
+  issue-22 box closing round - no new ink, all three report-022 boxes
+  flipped at the single round: the part-one military-history triptych,
+  the part-two AD&D DMG sneak preview and the part-three commentary set
+  all checked, gap_census 3 closed 0 open. 29 inline = 18 consts + 11
+  bools, 6 examples, no tables; the bookkeeping pins the shape itself -
+  3 boxes, 9 chains, 4 rounds (the walk's first four-round shape), the
+  opener inline totals 93 + 320 + 151 = 564, the walk census issues 2-22
+  all closed (twenty-one issues), the unchanged registry ground truth
+  1313/1338/25, the combined TD22-plus-LW-13 experiment frame, and the
+  two watches riding to TD 23 (the Sullin levels 7-9, the brawling
+  sequel). Census 871->872; rverify GREEN 29 mutants 0 missed at base
+  446f677; round-trip 17405 bytes md5
+  d4186dd32bd5d4a97e1be64d5d39f47b, byte-exact at 76a37e2 (fresh
+  tarball re-run applied 0 already 8; the flip round's eight patches
+  carry the gap report in the git add). THE ISSUE-22 FOUR-ROUND SHAPE
+  IS COMPLETE: R946 t22 7cfc392, R947 s22 8c3b563, R948 k22 446f677,
+  R949 l22 76a37e2. Next: TD 23 - the fresh intake (transcripts,
+  folio-vs-page check, chain call, drop list, then the round plan);
+  the Sullin levels 7-9 and the brawling long-term-effects watches
+  come due there. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

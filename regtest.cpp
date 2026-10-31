@@ -651,6 +651,7 @@
 #include "rules/s22.h"  // R947: the Dragon issue-22 opener part two, the DMG sneak preview table round
 #include "rules/k22.h"  // R948: the Dragon issue-22 opener part three, the five-chain commentary round
 #include "rules/l22.h"  // R949: the Dragon issue-22 box closing round, the four-round walk complete
+#include "rules/t23.h"  // R950: the Dragon issue-23 opener part one, the three-chain variant round
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4760,6 +4761,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r950_batch.h"  // R950: R950 issue-23 variant triptych audit
 #include "rules/audits/r949_batch.h"  // R949: R949 Dragon issue-22 closure audit
 #include "rules/audits/r948_batch.h"  // R948: R948 issue-22 commentary set audit
 #include "rules/audits/r947_batch.h"  // R947: R947 issue-22 sneak preview audit

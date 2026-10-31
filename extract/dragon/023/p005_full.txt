@@ -1,0 +1,101 @@
+March, 1979
+
+The Dragon
+
+# En Garde in Solitaire
+
+George Laking
+
+Unique among role-playing games currently marketed is the game, *EN GARDE!*
+
+It's unique flavor stems from the fact that it was designed mainly for solitaire play. The game system is laid out in flow-chart fashion, making it easy for the solitary gamer to guide his character through a month's actions in a "Yes-No" manner:
+
+*Will Armand court Mistress Y, Yes or No?
+
+(If no, go to bawdyhouse this week; if yes, pay courting fee and roll the dice).
+
+*Did Mistress Y accept him, Yes or No?
+
+(If no, go to bawdyhouse or try again next week; if yes, record status points and enjoy Mistress Y's "female companionship!").
+
+The only point where the *EN GARDE!* game system breaks down is in the cumbersome rules for fighting a duel.
+
+Under the present rules, another player is always required for dueling, whether the action takes place against a non-player or player's character. Furthermore, each duelist is required to secretly write one or more sequenced actions for use with a simultaneous movement/combat system! For the solitaire gamer playing *EN GARDE!*, this dueling system is totally unworkable.
+
+To make the game truly solitaire, the members of the Mid-Columbia Wargaming Society (Richland, WA) have substituted the following:
+
+## SHORTHAND DUELING METHOD
+
+The rules applying to dueling are modified thusly:
+
+### (1) Combat Effectiveness
+
+Before the duel begins, the Combat Effectiveness (*CE*) of each duelist must be computed first. The combat effectiveness of a character is found by adding his STRENGTH, CONSTITUTION and ENDURANCE factors together. This will change during the course of the duel and must be re-computed every time a character is wounded.
+
+### (2) The Defense Modifier
+
+The Defense Modifier (DM) represents the difference in EXPERTISE between the two duelists. The defense modifier must be found for both duelists and is determined by subtracting the Expertise factors of both duelists from each other.
+
+If both are equally skillful, both will have a defense modifier of "O." Otherwise, it will be a whole number ranging from 1-15. This may change during the duel should a character sustain certain types of wounds which hamper his movement and ability to effectively handle a weapon.
+
+For example, Jaques d'Uberville (with an expertise factor of 18) squares off against Karl von Badenhaus (with an expertise of 15). The defense modifier for both is "3" (18-15=3) but each will apply the modifier differently depending on their status as the superior or inferior duelist.
+
+The defense modifier thus represents how easy (or difficult) it will be to get past your opponent's guard to score a hit.
+
+## THE DUEL
+
+### (1) Scoring
+
+Once the combat effectiveness and the defense modifier for each duelist has been found, the duel can begin.
+
+Now the underlying assumption of this dueling system is that, between two equal opponents of equal skill and expertise, each stands an equal chance of scoring a hit on their opponent. This equal chance factor is represented by a basic 50% hit probability using percentile dice.
+
+To determine the exact hit probability, subtract the CE factor of each duelist from the other and divide by four. The number thus found is added to the basic hit probability of the stronger duelist, subtracted from the hit probability of the weaker. Let's look at our two duelists — Jacques and Karl — and see how this works.
+
+Although Jacques is the superior duelist from an expertise viewpoint, he is the weaker opponent, having a CE of 100 compared to Karl's 140 CE. The difference between them is 40 points, representing a 10% hit probability modifier (140 - 100 = 40 ÷ 4 = 10). Jacques' hit probability is then 1-40% (50% - 10% = 40%), while Karl has a hit probability of 1-60% (50% + 10% = 60%).
+
+The duelist with the higher Expertise factor always has the initiative. If both are equal, a six-sided die is rolled and high die determines who has the initiative. If tied, both roll again. (Note that, if a player character is dueling a non-player character, the player character *always* has the initiative, no matter what the expertise factor of his non-player opponent).
+
+The superior duelist rolls percentile dice, applies the defense modifier (if any) to the die roll and compares it to his hit probability to see if he scored a hit on his opponent. If both duelists are equal, there will be no die roll modification. However, . . . !
+
+If a duelist has the higher expertise factor, he subtracts the defense modifier from his die roll to see if he hits (being more skillful than his opponent, he stands a better chance of slipping past his opponent's guard). If he is the inferior duelist expertise-wise, he adds the defense modifier to his die roll (his more skillful opponent finding it easier to parry his thrusts).
+
+For example, Jacques and Karl (having determined their CE/DM factors and their hit probabilities) now cross swords and have at each other. Jacques rolls '42' on the percentile dice (normally a miss for Jacques) but after subtracting the defense modifier for his superior expertise from his die roll, we see that Jacques has scored (42 - 3 = 39) a light head wound against Karl (refer to Critical Hits Table, below).
+
+Karl now strikes, rolling a '58' (normally a hit) against Jacques. Being the inferior duelist, however, he must add the defense modifier to his die roll for a modified result of '61' (58 + 3 = 61). This is outside his hit probability (1-60%) so his blow misses.
+
+If the number found after rolling the percentile dice and applying the defense modifier indicates that a hit has been scored, refer immediately to the following Critical Hits Table and apply the results shown.
+
+### (2) The Critical Hits Table
+
+Using the modified die roll number to score a hit, refer to the column marked "Die Roll" to determine hit results and damage points:
+
+|  DE ROLL | RESULT | DAMAGE POINTS  |
+| --- | --- | --- |
+|  1-10 | Light Leg Wound | Base 20 + 16-sided die roll  |
+|  11-20 | Light Left Arm Wound | Base 20 + 16-sided die roll  |
+|  **21-30 | Light Right Arm Wound | Base 20 + 16-sided die roll  |
+|  *31-40 | Light Head Wound | Base 20 + 16-sided die roll  |
+|  ##41-50 | Light Body Wound | Base 25 + 16-sided die roll  |
+|  51-60 | Serious Leg Wound | Base 50 + 120-sided die roll  |
+|  61-70 | Serious Left Arm Wound | Base 50 + 120-sided die roll  |
+|  #71-80 | Serious Right Arm Wound | Base 50 + 120-sided die roll  |
+|  *81-90 | Serious Head Wound | Base 50 + 120-sided die roll  |
+|  91-99 | Serious Body Wound | Base 100 + 120-sided die roll  |
+|  00 | DEAD |   |
+
+Notes to Critical Hits Table:
+
+* Opponent may defend only in following phase
+
+** Opponent's expertise factor halved; recompute defense modifier
+
+# Opponent's expertise factor quartered; recompute defense modifier
+
+## Opponent's strength halved; recompute combat effectiveness
+
+! Opponent surrenders (non-player character only)
+
+At the end of each phase of dueling, the CE DM factors of both duelists are re-computed (unless noted above) to reflect hit damage taken. If a duelist has sustained no injuries in a phase, his CE factor will not change.
+
+5

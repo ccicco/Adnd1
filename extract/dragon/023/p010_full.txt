@@ -1,0 +1,43 @@
+The Dragon
+
+Vol. III No. 9
+
+D&D Variant
+
+# MIND WRESTLING
+
+A variation of Psionic Combat
+by Jeff P. Swycaffer
+
+While Psionic Combat in D&D is well handled in *Eldritch Wizardry*, (D&D® supplement III). I feel that a graphic representation of the ebb and flow of the struggle can be more satisfying than a merely numerical battle.
+
+In this system I visualize the two combatants attempting to push, by willpower alone, a tentacle or cloud of their power into the opponent's mind. To them, and to anyone with psionic power watching, it appears as if a glowing sheet of stretchable fog is being pushed back and forth between the two combatants.
+
+The only equipment needed is a double track (pictured below) seventeen spaces long, and two markers (pennies are fine).
+
+The top track represents the center of the mental field of combat; the bottom track represents the outside or flank.
+
+The two markers are placed in the spaces numbered O. To win, a player must force one of the markers into the opponent's space number 8. If the center marker is pushed into a player's last space the result is
+
+either an instant death, or, if a saving throw succeeds, unconsciousness for 1-12 hours. If the outside marker is pushed into a player's last space the victim is controlled by the victor as if charmed (no saving throw).
+
+The method of pushing the markers is as follows. The player with the higher Psionic Strength attacks first, then the weaker, in strict alternation thereafter.
+
+Each attack follows these 6 steps:
+
+1) The attacker secretly specifies either an outside or center attack.
+2) The defender secretly divides his total Psionic Strength between center defense and outside defense, in any proportion he wishes.
+3) Both decisions are revealed.
+4) The attacker's total Psionic Strength is increased by 40 points, or doubled, whichever is less. (This increase is temporary; the attacker's Psionic Strength is decreased back to normal in step 5). This increased strength is compared to the portion of the defender's Psionic Strength in the indicated area. A ratio of 2: 1 means that the proper marker is moved one space toward the defender, the other marker remaining fixed. A ration of 3: 1 moves the proper marker two spaces.
+
+Higher ratios do not have higher effects, and two spaces is the maximum possible retreat.
+
+5) The attacker's Psionic Strength is reduced from its enhanced state to its normal value, and then the attacker and defender both have their Psionic Strength decreased further. The attacker loses 3 points; the defender loses two times the number of spaces fallen back. (If he suffered a 3: 1 retreat of two spaces he would lose 4 points). This decrease lasts until the points are regained as are normally expended psionic points.
+
+6) The attacker and defender switch roles and begin again at step 1.
+
+If one player's Psionic Strength falls to less than 15 during this procedure but has not been pushed into his space number 8, he loses the battle and rolls on the table in *Eldritch Wizardry* as a normal Psionic battle-loser.
+
+I hope that the D&D players who use this method find it useful and enjoyable. *Salvete Psionike!* And good luck.
+
+10

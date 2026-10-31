@@ -1,0 +1,54 @@
+March, 1979
+
+The Dragon
+
+MA Variant
+
+# WATER ADVENTURES ON THE STARSHIP WARDEN
+
+Carl Hursh
+
+In my experiences as a *Metamorphosis Alpha* referee I have always run into the same problems when trying to get some wandering monsters when characters are out on their raft or trying out their new gills, and so after much frustration I have come up with these monsters. I would also like to point out the possibilities of flooding an entire level. When this happens the door to the elevator will be under water, so that characters may drown or get wet when they try to step into the elevator when it has been to that level. I would also like to say that these creatures may be used in salt or fresh water because when the Ship went through the radiation the water could have turned from salt to fresh or from fresh to salt causing the fish to adapt. Or the creature could have mutated once, gotten lungs and then moved to a different type of water and then lost it's lungs and been forced to adapt. In any case remember the effects water may have on the characters items.
+
+|  Creature | # of Attacks | Description and Damage | Description | Armor Class | # Appearing | Hit Dice | Movement (YPM)  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  Sea Griffon | 3 | 2 Claws (1-4) Bite (1-6) | Sea Griffon | 6 | 1-2 | 5 | 23  |
+|  Orcas | 2 | Tail (12-24) Bite (2-12) | Orcas | 6 | 1 | 18 | 20  |
+|  Sea Centipede | 1 | Bite (1-6) | Sea Centipede | 3 | 1-4 | 2 | 20  |
+|  Sea dragon | 3 | Radiated eyes (3-18*) Gas Generation (DEATH) Bite (2-12) | Sea Dragon | 2 | 1 | 15 | 20  |
+|  Bed of Spikes | 1 | Tentacles (1-10) | Bed of Spikes | 4 | 1-4 | 2 | 20  |
+|  Green Death | 1 | Dissolves Flesh in 3 Melee Turns | Green Death | — | 1 Cluster | — | —  |
+|  Mine | 1 | Explodes When hit (10-60) | Mine | 7 | 1 Patch | — | —  |
+|  Water Dagger | — | Sharp Edges do 1-4 When Touched | Water Dagger | 1 | 1 Patch | 5 | —  |
+|  Water Grabber | 1 | Dissolves Flesh in 3 Melee Turns | Water Grabber | 6 | 1-6 Fronds | 3 | —  |
+|  Craboid | 2 | 2 Claws (1-4) | Craboid | 2 | 2-20 | 1 | Fly-36 Walk-3 Swim-10  |
+|  Kraken | 9 | 8 Tentacles (1-6) Beak (4-40) | Kraken | 3 | 1 | 10 | 20  |
+|  Oysteroid | 1 | Throws Explosive Projectiles (1-12) | Oysteroid | 1 | 1-10 | 1 | 18  |
+|  Peeper | 1 | Radiated Eyes (4-24*) | Peeper | 1 | 1-5 | 2 | 18  |
+|  Brain Fish | 2 | Mental Blast Strength 13 (3-18) Molecular Disruption | Brain Fish | 4 | 3-30 | 3 | 20  |
+|  Gupoids | 1 | En Masse Attacking (1-6) | Gupoid | — | 300-1000 | — | 15  |
+|  Siren | 1 | Bite (1-8) | Siren | 6 | 1-2 | 3 | 20  |
+|  Sea Flyer | 1 | Sybiotic Attachment | Sea Flyer | 3 | 2-20 | 1 | 20  |
+|  Sharkoid | 2 | Mental Blast Strength 15 (3-18) Bite (1-12**) | Sharkoid | 5 | 1 | 12 | 17  |
+|  Troutoid | 1 | Electricity Generation (3-18) | Troutoid | 4 | 4-24 | 3 | 23  |
+|  Merman | 1 | By Weapon Type | Merman | 5 | 1-100 | 5 | 25-mounted 5-swimming  |
+
+Sea Griffon — This former lion has traded his lungs for gills, and is now limited to water in much the same manner that his cousin is limited to land. He also has wings, from which he gets his speed in water. His wings are leathery and similar to a bats'. He cannot use most technological materials because he does not have manipulative claws.
+
+Orcas — This former blue whale is very rare; it was very impractical to put many on the ship in the beginning and many died from radiation. In addition to having teeth and being carnivorous, it also has a directional spout which can stun for 1-6 turns.
+
+Sea Centipede — This former eel now sports ten new legs, and can lift 1000 pounds with its telekinesis. It also can make sorties onto land because it also has lungs.
+
+Sea Dragon — This one time sea turtle now is quite formidable. It is about 40 feet long, has an additional 20 feet of neck, and radiated eyes. It breathes poison gas, but has no resistance to poison (other than its own).
+
+Bed of Spikes — Formerly an anemone mushroom coral, this mutation is now mobile (jet propulsion much like a squid's) and has spikes on the tips of its "tentacles." It has approximately 50 tentacles.
+
+Green Death — This mutation still grows in large patches like its nonmutated cousin, algae. It has a sort of empathy with it's fellows which enables them to attack. When attacking they first go for the feet, then legs, then body and finally arms and head. They dissolve and eat flesh in 4 melee turns. They can only be killed by a protein disrupter or by exposing them to oxygen.
+
+Mine — Formerly leather coral, it is now free floating coral that explodes when touched causing 10 dice damage.
+
+Water Dagger — This was originally staghorn coral but now is covered with aluminum which causes it to do damage like a dagger when it is touched. There is also a chance (20%) that it will be poisonous.
+
+Water Grabber — Originally seaweed, this is now a dangerous plant; its fronds act independently so as to capture more food. Its fronds can eat flesh in 3 melee turns.
+
+11

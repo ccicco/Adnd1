@@ -1,0 +1,72 @@
+The Dragon
+
+Vol. III No. 9
+
+When the head area is affected, a roll of percentile dice will tell the judge what has happened to the being.
+
+1-12* Hearing Loss; indicates that the being will now be surprised on a roll of 1-3, with a point being added on the surprise die for every new occasion. Thieves will lose their ability to hear behind doors.
+13-24% Sight Loss; indicates the level of combat efficiency drops by one with every occurrence and bright light, in the form of spells of full daylight, blinds this being for 1-4 melee turns.
+25-36% Speech Impaired; indicates that a drop in charisma of one point occurs at every occurrence.
+37-48% Charisma Impaired; indicates a drop in charisma of one point at every occurrence.
+49-60% Intelligence Impaired; indicates a drop in general intelligence at every occurrence and a -1 on the Saving Throw on all spells involving control and illusion used on that being that is also increased by -1 at every occurrence.
+61-72% Wisdom Impaired; indicates a drop of one at every occurrence.
+73-88% Fighting Ability Impaired; indicates that the being loses one level of fighting experience at every occurrence.
+89-100% Spell Ability Impaired; indicates that if the being used spells, that being loses one level of spell usage per occurrence. Not the spells of a level, but the additional spells given the being at their level of experience. Hence a 3rd level Magic User would have the spells of only a 2nd Level Magic User.
+
+# Trunk
+
+When the trunk area is indicated, a percentile roll will tell the judge what happens to the player.
+
+1-25% Constitution Impaired; indicates that one point is lost with any possible hit point loss included per occasion.
+26-50% Fighting Ability Impaired; indicates that the being loses one level of fighting experience at every occurrence.
+51-75% Resistance to Poison Changed; indicates that all saves are made at a -2 (to the detriment of the being); this situation multiplies itself at every occurrence.
+76-100% Speed Decreased; indicates that the being is slowed down by 10 yards per melee turn, per occasion.
+
+# Arms
+
+When the arm area is indicated, a percentile roll will tell the judge what happens to the player.
+
+1-25% Fighting Ability Impaired; indicates that the being loses one level of fighting experience at every occurrence.
+25-50% Magical Ability Impaired; indicates a loss of one level of experience per occasion if that being has or attains any magical ability.
+51-75% Dexterity Impaired; indicates a loss of one dexterity point per occurrence and thieves lose the ability to climb walls.
+76-100% Strength Impaired; indicates that one point of strength is lost per occasion.
+
+# Legs
+
+When legs are indicated a percentile roll shows the judge what happens to the player.
+
+1-25%* Speed Decreased; indicates a loss of 10 yards per melee turn, per occasion and a 10% reduction in thief hiding abilities per occasion.
+26-50% Strength Impaired; indicates the being loses the ability to carry weight by a factor of 300 gold pieces per occasion.
+51-75% Dexterity Impaired; indicates a loss of one dexterity point per occurrence and thieves lose the ability to climb walls.
+76-100% Fighting Ability Impaired; indicates a -2 chance to hit per occasion, that accumulates, with each occurrence.
+
+# Hands
+
+When hands are indicated, a percentile roll shows the judge what happens to the player.
+1-20% Dexterity Impaired; indicates a loss of one dexterity point per occurrence and thieves lose their extra abilities by 10% wherever their hands are needed.
+21-40% Fighting Ability Impaired; indicates a loss of one level of fighting ability per occurrence.
+41-60% Magical Ability Impaired; indicates a loss of one level of magical ability if the being has or attains a magical ability, per occurrence.
+61-80% Strength Impaired indicates a loss of one strength point per occurrence.
+81-100% Weapons Ability Impaired; indicates the decreased use of certain types of weapons (-1 in hitting per occasion) The areas are as follows.
+
+1-10% All Bows
+11-20% All Crossbows
+21-40% Lances/Spears/Pole Arms
+41-60% Bludgeon Type Weapons
+61-95% Sword Type Weapons
+96-100% Fist Action
+
+When reduced to from ten to two hit points left, depending on how many they started with, a person is suffering greatly from fatigue and pain and is also reduced in abilities according to the area. This is changed by clerical healing spell, magical devices, etc. for an instant cure.
+
+1-14% Head, indicates a drop of one spell per level if the being is a magic user or priest, a drop of one level of fighting ability if the being is only a fighter, and a drop of 10% in all abilities in any of the other character classes.
+15-49% Trunk, indicates a drop in speed by 20 yards a melee turn and a drop of strength by a point.
+50-74% Arms, indicates a drop of 2 strength points, a drop by a weight of 300 g.p. the carrying ability of a player, and a drop by 20% in all thieving abilities.
+75-79% Legs, indicates a drop of speed by 20 yards per melee turn, a drop of carrying ability by 600 gold pieces, and extra ability characters lose by a factor of 20% in all abilities, using legs.
+80-94% Hands, indicates the inability to fight if a roll of 1-2-3 is rolled with a 6 sided die (with the normal weapon hand). I will leave it to the referee to figure out what drops in fighting power as a result of using the wrong hand in battle.
+95-100% Feet, indicates a 50% drop in the ability to move and carry things.
+
+In using this material, a little good sense should prevail. It is in the realm of possibility that a tenth fighter could have 10 hit points so I wouldn't want the pain loss to apply after only one hit. I do think it is logical to use this with beings over 20 hit points to start with.
+
+In making up this material, I have tried to throw in several different concepts so that readers would realize that it fits in many different types of role playing games. I want you to throw in a lot of other things in the charts so that your players are kept guessing. You could make your Bards lose the ability to sing on a head shot. You could make your robots function illogically or lose lifting capacity.
+
+20
