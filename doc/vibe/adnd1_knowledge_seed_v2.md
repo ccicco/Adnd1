@@ -29879,6 +29879,50 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   set is 1.75MB Lua, one issue
   group per round, ~15-20
   batches left. WAIT FOR GO.
+  - R972 LANDED (30ee5de, dp4, 7
+  inline, the promotion batch
+  four): THE DRAGON PROMOTION
+  BATCH FOUR - the arc round
+  seven, issues 5 through 7
+  complete: wch (the Witchcraft
+  Supplement opener, 141
+  items), cwx (9), wwt (12),
+  wrm (79), dso (the Sea Trade
+  opener, 90), csx (11), pwl
+  (the Prowler opener, 25), cpx
+  (11) - 8 records, 378 model
+  items, 151832 bytes Lua,
+  every record parsed back
+  equal. ISSUE BOUNDARIES
+  REFINED: R902-905 = issue 5,
+  R906-907 = issue 6, R908-909
+  = issue 7's opener and
+  closer - three issues rode
+  one batch under the raised
+  ceiling. 4 consts + 3
+  bools: dp4BatchRecords=8,
+  dp4ModelItems=378,
+  dp4CumulativeRecords=23,
+  dp4SetRoundsRemaining=56,
+  dp4RecordsPromoted,
+  dp4DiffBackGreen,
+  dp4IssuesFiveSevenComplete.
+  Census 894->895; no flips;
+  gap report 026 stays 3/0.
+  Double-run applied 13/
+  already 13, verify at
+  30ee5de already 13 with all
+  23 records on disk (587995
+  bytes Lua); rverify GREEN 7
+  mutants 0 missed at base
+  f62acfc; spec 165568 bytes
+  md5 97d71c0b3d4db8feb729ccb
+  898bcd7cb, canvas r972-spec.
+  The R971 record seated in the
+  repo seed. The lib rebuilt
+  and byte-matched 15/15 on the
+  landed records before the
+  batch. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
