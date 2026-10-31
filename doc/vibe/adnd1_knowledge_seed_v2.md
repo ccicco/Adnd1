@@ -30259,6 +30259,56 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   R671-R694 24 rec, R985 R695-R712 18 rec, R986
   R713-R726 14 rec, R987 R727-R759 33 rec, R988
   R760-R773 14 rec - the set closer). WAIT FOR GO.
+  - R982 LANDED 2026-10-31 at
+  9c4b925: THE OA PROMOTION BATCH TWO -
+  rounds R625 through R644 complete - 20
+  records, 618 model items, 322857 bytes
+  Lua, every record parsed back equal.
+  Prefix oa2 (freedom verified: no rules/
+  oa2.h, no oa2[A-Z] symbols). 4 consts +
+  3 bools: oa2BatchRecords=20,
+  oa2ModelItems=618, oa2CumulativeRecords=
+  31, oa2SetRoundsRemaining=129,
+  oa2RecordsPromoted, oa2DiffBackGreen,
+  oa2R625ThroughR644Complete. Census
+  904->905; no flips; gap report 026
+  stays 3/0. Double-run applied 25/
+  already 25; rverify GREEN 7 mutants
+  0 missed at base 0242777; spec 349066
+  bytes md5 0ada0d2e55604c40f7d8fedf26
+  6ffbff, canvas r982-spec (body
+  byte-exact). The R981 record is the
+  prev_record (seated into the repo seed).
+  LANDED: pushed 0242777..9c4b925, census
+  904->905; the fresh tarball at 9c4b925
+  verified - 20/20 records on disk
+  byte-matching the spec, the header/
+  audit/include/seed all in place, 31
+  records on disk (628,528 bytes Lua
+  cumulative).
+  TOOLING NOTE (the env reset between
+  turns): oa_lib.py was rebuilt from the
+  landed batch-one records - the model
+  extracts ENTIRELY from the pin header
+  (title, provenance, fn values, comments)
+  with the spec JSON as a name-level
+  cross-check; the examples convert the
+  audit file conditions clause by clause
+  ('||' clauses rejoin on '  or ', the
+  name regexes eat one leading space,
+  '!fn()' gains one) and reject any
+  condition with leftover identifiers;
+  uncovered switch cases generate the
+  'switch census' coverage chunks (8 per
+  example, default included). The rebuilt
+  lib byte-matches ALL ELEVEN landed
+  batch-one records before batch two was
+  built. NEXT CANDIDATE: R983 batch
+  three - R645-R670, 26 records, then
+  R984 R671-R694 24 rec, R985 R695-R712
+  18 rec, R986 R713-R726 14 rec, R987
+  R727-R759 33 rec, R988 R760-R773 14
+  rec - the set closer. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

@@ -1,0 +1,73 @@
+-- oa645: promoted from rules/oaencumb.h (the TABLE 54 (TYPES OF ARMOR & ENCUMBRANCE), printed capture p. 95 - the OA);
+-- DO NOT hand-edit; the pin header stays the adjudicated record.
+return {
+  "round" = 645,
+  "prefix" = "oa645",
+  "banner" = {
+      "title" = "TABLE 54 (TYPES OF ARMOR & ENCUMBRANCE), printed capture p. 95 - the OA",
+      "provenance" = "armor encumbrance round census 567 -> 568.  pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the page - the 23-row grid cross-checked cell-by-cell between the two passes; the base weights and the base movement rates agree in both passes - zero numeric contested cells. The contests are textual: the bulk classes read non/fairly/bulky in the print against the compressed non-/fairly/bulky (the trailing hyphen a cell-edge artifact, the print read stands); the kote weight cell reads blank in the print against the compressed dash - both read no base weight given, the -99 sentinel carries it; the movement glyph reads prime (feet) in the print against the compressed double-prime (the feet read stands, the numeric column strips the unit). The banded and chain plus-after-pound marks print as 35# + and 30# + (the R640 plus-after-prime class, riding the comments). The armor type names and the bulk classes are textual and ride the column comments per the T48 doctrine; the movement dash cells (the buckler, haidate, kote, the two shields, the sode pair and the sune-ate) pin as -99. The armor descriptions prose box stays open; Table 55 (capture p. 98) is deliberately left for the next round  the gap census after this round: 96 closed, 139 open - the Table 54 box flips (census 567 -> 568); NEXT - R646: Table 55 (Barded Warhorse Base Movement Rates), capture p. 98, the barding movement grid, prefix dhg (verify free), audit \"R646 OA barding audit\", include after rules/oaencumb.h - the misc equipment and barding prose boxes stay open",
+    },
+  "consts" = { {
+      "name" = "dhfT54RowCount",
+      "value" = 23,
+      "comment" = "Table 54 (capture p. 95): twenty-three armor type rows",
+    } },
+  "bools" = {},
+  "switches" = { {
+      "name" = "dhfT54Weight",
+      "values" = { 35, 3, 30, 20, 10, 10, 10, 15, 20, 25, -99, 15, 40, 10, 25, 20, 40, 10, 5, 3, 40, 20, 5 },
+      "default" = -99,
+      "comment" = "the base weight in pounds, by armor type row (capture p. 95). The armor type names with the bulk classes ride this comment: 0 Banded (bulky; 35# +), 1 Buckler (non; 3#), 2 Chain (fairly; 30# +), 3 Do-maru (fairly; 20#), 4 Haidate (fairly; 10#), 5 Hara-ate (non; 10#), 6 Hara-ate-gawa (non; 10#), 7 Haramaki (non; 15#), 8 Haramaki-do (fairly; 20#), 9 Hide (fairly; 25#), 10 Kote (non; no weight printed), 11 Leather (non; 15#), 12 O-yori (great armor) (bulky; 40#), 13 Padded (fairly; 10#), 14 Ring (fairly; 25#), 15 Scale, leather (fairly; 20#), 16 Scale, metal (fairly; 40#), 17 Shield, large (bulky; 10#), 18 Shield, medium (fairly; 5#), 19 Sode, pair (non; 3#), 20 Splinted (bulky; 40#), 21 Studded (fairly; 20#), 22 Sune-ate (non; 5#) - the bulk classes print non/fairly/bulky (the compressed pass trailing-hyphen artifact settled per the print); the banded and chain plus-after-pound marks as the R640 plus class; the kote weight cell prints blank against the compressed dash - both read no base weight, the -99 sentinel carries it (capture p. 95).",
+    }, {
+      "name" = "dhfT54Move",
+      "values" = { 9, -99, 9, 9, -99, 9, 12, 12, 9, 9, -99, 12, 6, 9, 9, 9, 6, -99, -99, -99, 6, 9, -99 },
+      "default" = -99,
+      "comment" = "the base movement in feet, by armor type row (capture p. 95); the dash cells (the buckler, haidate, kote, the large and medium shields, the sode pair and the sune-ate) pin as -99 - the pieces and shields give no base movement; the movement prints with the prime glyph in the print capture against the compressed double-prime - the feet read stands (capture p. 95).",
+    } },
+  "tables" = {},
+  "chains" = {},
+  "examples" = { {
+      "expr" = "m['dhfT54RowCount']() != 23",
+      "note" = "",
+    }, {
+      "expr" = "m['dhfT54RowCount']() != 23",
+      "note" = "the T54 row count pin",
+    }, {
+      "expr" = "m['dhfT54Weight'](0) != 35",
+      "note" = "the banded row weight pin - the plus-after-pound class",
+    }, {
+      "expr" = "m['dhfT54Weight'](10) != -99",
+      "note" = "the kote no-weight sentinel pin",
+    }, {
+      "expr" = "m['dhfT54Weight'](0) != 35  or m['dhfT54Move'](0) != 9",
+      "note" = "the banded row - the 35# plus weight, the 9-foot movement (capture p. 95)",
+    }, {
+      "expr" = "m['dhfT54Weight'](1) != 3  or m['dhfT54Move'](1) != -99",
+      "note" = "the buckler row - the 3# weight, no base movement (capture p. 95)",
+    }, {
+      "expr" = "m['dhfT54Weight'](2) != 30  or m['dhfT54Move'](2) != 9",
+      "note" = "the chain row - the 30# plus weight, the 9-foot movement (capture p. 95)",
+    }, {
+      "expr" = "m['dhfT54Weight'](10) != -99  or m['dhfT54Move'](10) != -99",
+      "note" = "the kote row - the blank weight cell and the dashed movement both pin as -99 (capture p. 95)",
+    }, {
+      "expr" = "m['dhfT54Weight'](7) != 15  or m['dhfT54Move'](7) != 12",
+      "note" = "the haramaki row - the 15# weight, the 12-foot movement (capture p. 95)",
+    }, {
+      "expr" = "m['dhfT54Weight'](12) != 40  or m['dhfT54Move'](12) != 6",
+      "note" = "the o-yori row - the bulky 40# weight, the 6-foot movement (capture p. 95)",
+    }, {
+      "expr" = "m['dhfT54Weight'](17) != 10  or m['dhfT54Weight'](18) != 5  or m['dhfT54Move'](17) != -99",
+      "note" = "the shields - the large 10# and medium 5#, both no base movement (capture p. 95)",
+    }, {
+      "expr" = "m['dhfT54Move'](16) != 6  or m['dhfT54Move'](20) != 6",
+      "note" = "the 6-foot movement class - the o-yori, metal scale and splinted rows (capture p. 95)",
+    }, {
+      "expr" = "m['dhfT54Weight'](22) != 5  or m['dhfT54Move'](22) != -99",
+      "note" = "the sune-ate tail row - the 5# weight, no base movement (capture p. 95)",
+    } },
+  "audit" = {
+      "label" = "R645 OA encumbrance audit",
+      "comment" = "OA round thirty-two (capture p. 95): the Table 54 types of armor and encumbrance - the base weights and movement rates",
+    },
+}

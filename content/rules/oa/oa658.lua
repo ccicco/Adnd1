@@ -1,0 +1,154 @@
+-- oa658: promoted from rules/oashkspells.h (the TABLE 62 SHUKENJA SPELLS, printed capture p. 112 - the OA shukenja spells);
+-- DO NOT hand-edit; the pin header stays the adjudicated record.
+return {
+  "round" = 658,
+  "prefix" = "oa658",
+  "banner" = {
+      "title" = "TABLE 62 SHUKENJA SPELLS, printed capture p. 112 - the OA shukenja spells",
+      "provenance" = "round census 580 -> 581.  pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read of the table - the Table 62 spell list cross-checked spell by spell between the two passes (the full seven-level grid printing on capture p. 112 of the print pass; the compressed splitting the list across its pp. 57-58); all 116 spell names and all seven level sizes agree. The sohei-usable markers agree cell by cell between the passes - all twenty-six marked spells (5, 4, 4, 3, 4, 4, 2 by level) read identically in both, zero contested reads. The reversible markers are print-only: the compressed renders no italics anywhere in its table, so the thirty-three reversible spells (5, 3, 7, 7, 6, 4, 1 by level) pin per the print italics - the footnote reading Italics indicates the spell may be reversed. The compressed name garbles (Purity Food and Drink for purify food & drink, Enthral for enthrall, Smile for smite, the 2d and 3d Level headers) settle per the print, recorded as its OCR artifact class. The grid pins as a table: the rows the spell ordinals 1 through 20, fourteen columns - one sohei-marker and one reversible-marker column per level, the sentinel standing in where the fifth through seventh levels stop at twelve spells. The per-level spell counts pin as consts (four levels of twenty, three of twelve, 116 total), the spell names ride the column comments, and the spell descriptions close in their own rounds. The table tag T62Data identifier-safe per the R639 lesson  the gap census after this round: 111 closed, 124 open - the Chapter 7 parent box opens and the Table 62 box flips (census 580 -> 581); NEXT - R659: the First Level Spells (capture pp. 112-119), prefix dht (verify free), audit \"R659 OA first level spells audit\", include after rules/oashkspells.h",
+    },
+  "consts" = { {
+      "name" = "dhsT62LevelCount",
+      "value" = 7,
+      "comment" = "the seven spell levels of the shukenja list (capture p. 112 of the print pass; compressed pp. 57-58)",
+    }, {
+      "name" = "dhsT62SpellTotal",
+      "value" = 116,
+      "comment" = "the 116 shukenja spells - four levels of twenty and three of twelve (capture p. 112 of the print pass; compressed pp. 57-58)",
+    }, {
+      "name" = "dhsT62OrdinalMax",
+      "value" = 20,
+      "comment" = "the longest level lists twenty spells - the grid row count (capture p. 112 of the print pass; compressed p. 57)",
+    }, {
+      "name" = "dhsT62L1Spells",
+      "value" = 20,
+      "comment" = "the first level lists 20 spells (capture p. 112 of the print pass; compressed p. 57)",
+    }, {
+      "name" = "dhsT62L2Spells",
+      "value" = 20,
+      "comment" = "the second level lists 20 spells (capture p. 112 of the print pass; compressed p. 57)",
+    }, {
+      "name" = "dhsT62L3Spells",
+      "value" = 20,
+      "comment" = "the third level lists 20 spells (capture p. 112 of the print pass; compressed p. 57)",
+    }, {
+      "name" = "dhsT62L4Spells",
+      "value" = 20,
+      "comment" = "the fourth level lists 20 spells (capture p. 112 of the print pass; compressed p. 57)",
+    }, {
+      "name" = "dhsT62L5Spells",
+      "value" = 12,
+      "comment" = "the fifth level lists 12 spells (capture p. 112 of the print pass; compressed p. 58)",
+    }, {
+      "name" = "dhsT62L6Spells",
+      "value" = 12,
+      "comment" = "the sixth level lists 12 spells (capture p. 112 of the print pass; compressed p. 58)",
+    }, {
+      "name" = "dhsT62L7Spells",
+      "value" = 12,
+      "comment" = "the seventh level lists 12 spells (capture p. 112 of the print pass; compressed p. 58)",
+    } },
+  "bools" = {},
+  "switches" = { {
+      "name" = "dhsT62L1Sohei",
+      "values" = { 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+      "default" = -99,
+      "comment" = "the 1st sohei-usable markers by spell ordinal (capture p. 112 of the print pass; compressed p. 57). The 1st spell list rides this comment: 1 animal companion, 2 augury, 3 beneficence, 4 bless, 5 calm, 6 cure light wounds, 7 deflection, 8 detect disease, 9 detect evil, 10 detect harmony, 11 detect magic, 12 detect poison, 13 divining rod, 14 know history, 15 omen, 16 purify food & drink, 17 resist, 18 snake charm, 19 trance, 20 weapon bless - the cell is 1 where the printed asterisk marks the spell usable by sohei, 0 otherwise, the sentinel where the level stops; the marked five: animal companion, bless, deflection, resist, weapon bless",
+    }, {
+      "name" = "dhsT62L2Sohei",
+      "values" = { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0 },
+      "default" = -99,
+      "comment" = "the 2nd sohei-usable markers by spell ordinal (capture p. 112 of the print pass; compressed p. 57). The 2nd spell list rides this comment: 1 aid, 2 chant, 3 commune w/ lesser spirit, 4 create spring, 5 detect charm, 6 detect life, 7 dream sight, 8 enthrall, 9 hold person, 10 holy symbol, 11 know motivation, 12 messenger, 13 obscurement, 14 protection from spirits, 15 request, 16 slow poison, 17 snake summoning, 18 speak w/ animals, 19 warning, 20 withdraw - the cell is 1 where the printed asterisk marks the spell usable by sohei, 0 otherwise, the sentinel where the level stops; the marked four: chant, messenger, slow poison, warning",
+    }, {
+      "name" = "dhsT62L3Sohei",
+      "values" = { 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
+      "default" = -99,
+      "comment" = "the 3rd sohei-usable markers by spell ordinal (capture p. 112 of the print pass; compressed p. 57). The 3rd spell list rides this comment: 1 castigate, 2 cure blindness, 3 cure disease, 4 death's door, 5 detect curse, 6 dispel magic, 7 divination, 8 dream vision, 9 flame walk, 10 invisibility to spirits, 11 know alignment, 12 levitate, 13 magical vestment, 14 oath, 15 possess animal, 16 prayer, 17 remove curse, 18 remove paralysis, 19 speak w/ dead, 20 substitution - the cell is 1 where the printed asterisk marks the spell usable by sohei, 0 otherwise, the sentinel where the level stops; the marked four: castigate, dispel magic, flame walk, prayer",
+    }, {
+      "name" = "dhsT62L4Sohei",
+      "values" = { 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
+      "default" = -99,
+      "comment" = "the 4th sohei-usable markers by spell ordinal (capture p. 112 of the print pass; compressed p. 57). The 4th spell list rides this comment: 1 abjure, 2 cure serious wounds, 3 detect lie, 4 detect shapechanger, 5 endurance, 6 exorcise, 7 fate, 8 neutralize poison, 9 pacify, 10 penetrate disguise, 11 polymorph self, 12 protection from evil 10', 13 reanimation, 14 remorse, 15 reward, 16 snake barrier, 17 speak w/ plants, 18 spell immunity, 19 sustain, 20 tongues - the cell is 1 where the printed asterisk marks the spell usable by sohei, 0 otherwise, the sentinel where the level stops; the marked three: endurance, penetrate disguise, spell immunity",
+    }, {
+      "name" = "dhsT62L5Sohei",
+      "values" = { 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, -99, -99, -99, -99, -99, -99, -99, -99 },
+      "default" = -99,
+      "comment" = "the 5th sohei-usable markers by spell ordinal (capture p. 112 of the print pass; compressed p. 58). The 5th spell list rides this comment: 1 advice, 2 air walk, 3 atonement, 4 commune w/ greater spirit, 5 cure critical wounds, 6 dispel evil, 7 mental strength, 8 possess, 9 raise dead, 10 remember, 11 strength, 12 true seeing - the cell is 1 where the printed asterisk marks the spell usable by sohei, 0 otherwise, the sentinel where the level stops; the marked four: dispel evil, mental strength, strength, true seeing",
+    }, {
+      "name" = "dhsT62L6Sohei",
+      "values" = { 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, -99, -99, -99, -99, -99, -99, -99, -99 },
+      "default" = -99,
+      "comment" = "the 6th sohei-usable markers by spell ordinal (capture p. 112 of the print pass; compressed p. 58). The 6th spell list rides this comment: 1 find the path, 2 force shapechange, 3 heal, 4 immunity to weapons, 5 inanimate servant, 6 instruct, 7 invisibility to enemies, 8 longevity, 9 plane shift, 10 quickgrowth, 11 smite, 12 speak w/ monsters - the cell is 1 where the printed asterisk marks the spell usable by sohei, 0 otherwise, the sentinel where the level stops; the marked four: find the path, immunity to weapons, smite, speak w/ monsters",
+    }, {
+      "name" = "dhsT62L7Sohei",
+      "values" = { 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -99, -99, -99, -99, -99, -99, -99, -99 },
+      "default" = -99,
+      "comment" = "the 7th sohei-usable markers by spell ordinal (capture p. 112 of the print pass; compressed p. 58). The 7th spell list rides this comment: 1 ancient curse, 2 astral spell, 3 compel, 4 divine wind, 5 exaction, 6 gate, 7 holy (unholy) word, 8 quest, 9 reincarnate, 10 restore spirit, 11 resurrection, 12 wind walk - the cell is 1 where the printed asterisk marks the spell usable by sohei, 0 otherwise, the sentinel where the level stops; the marked two: ancient curse, holy (unholy) word",
+    }, {
+      "name" = "dhsT62L1Rev",
+      "values" = { 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
+      "default" = -99,
+      "comment" = "the 1st reversible markers - the print italics reading may be reversed (capture p. 112 of the print pass; the compressed renders no italics anywhere in its table, so the reversible set is print-only); the marked five: bless, cure light wounds, deflection, detect evil, purify food & drink",
+    }, {
+      "name" = "dhsT62L2Rev",
+      "values" = { 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+      "default" = -99,
+      "comment" = "the 2nd reversible markers - the print italics reading may be reversed (capture p. 112 of the print pass; the compressed renders no italics anywhere in its table, so the reversible set is print-only); the marked three: create spring, detect charm, know motivation",
+    }, {
+      "name" = "dhsT62L3Rev",
+      "values" = { 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0 },
+      "default" = -99,
+      "comment" = "the 3rd reversible markers - the print italics reading may be reversed (capture p. 112 of the print pass; the compressed renders no italics anywhere in its table, so the reversible set is print-only); the marked seven: cure blindness, cure disease, dream vision, know alignment, oath, remove curse, remove paralysis",
+    }, {
+      "name" = "dhsT62L4Rev",
+      "values" = { 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1 },
+      "default" = -99,
+      "comment" = "the 4th reversible markers - the print italics reading may be reversed (capture p. 112 of the print pass; the compressed renders no italics anywhere in its table, so the reversible set is print-only); the marked seven: abjure, cure serious wounds, detect lie, endurance, neutralize poison, protection from evil 10', tongues",
+    }, {
+      "name" = "dhsT62L5Rev",
+      "values" = { 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, -99, -99, -99, -99, -99, -99, -99, -99 },
+      "default" = -99,
+      "comment" = "the 5th reversible markers - the print italics reading may be reversed (capture p. 112 of the print pass; the compressed renders no italics anywhere in its table, so the reversible set is print-only); the marked six: cure critical wounds, dispel evil, mental strength, raise dead, remember, true seeing",
+    }, {
+      "name" = "dhsT62L6Rev",
+      "values" = { 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, -99, -99, -99, -99, -99, -99, -99, -99 },
+      "default" = -99,
+      "comment" = "the 6th reversible markers - the print italics reading may be reversed (capture p. 112 of the print pass; the compressed renders no italics anywhere in its table, so the reversible set is print-only); the marked four: find the path, heal, immunity to weapons, quickgrowth",
+    }, {
+      "name" = "dhsT62L7Rev",
+      "values" = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, -99, -99, -99, -99, -99, -99, -99, -99 },
+      "default" = -99,
+      "comment" = "the 7th reversible markers - the print italics reading may be reversed (capture p. 112 of the print pass; the compressed renders no italics anywhere in its table, so the reversible set is print-only); the marked one: resurrection",
+    } },
+  "tables" = {},
+  "chains" = {},
+  "examples" = { {
+      "expr" = "m['dhsT62LevelCount']() != 7  or m['dhsT62SpellTotal']() != 116  or m['dhsT62OrdinalMax']() != 20  or m['dhsT62L1Spells']() != 20  or m['dhsT62L2Spells']() != 20  or m['dhsT62L3Spells']() != 20  or m['dhsT62L4Spells']() != 20  or m['dhsT62L5Spells']() != 12  or m['dhsT62L6Spells']() != 12  or m['dhsT62L7Spells']() != 12",
+      "note" = "",
+    }, {
+      "expr" = "m['dhsT62L1Sohei'](0) != 1  or m['dhsT62L1Sohei'](1) != 0  or m['dhsT62L1Sohei'](3) != 1  or m['dhsT62L1Sohei'](5) != 0  or m['dhsT62L1Sohei'](6) != 1  or m['dhsT62L1Sohei'](16) != 1  or m['dhsT62L1Sohei'](19) != 1",
+      "note" = "the 1st level sohei pins - animal companion, bless, deflection, resist and weapon bless marked, augury and cure light wounds unmarked",
+    }, {
+      "expr" = "m['dhsT62L2Sohei'](1) != 1  or m['dhsT62L2Sohei'](11) != 1  or m['dhsT62L2Sohei'](15) != 1  or m['dhsT62L2Sohei'](18) != 1  or m['dhsT62L3Sohei'](0) != 1  or m['dhsT62L3Sohei'](5) != 1  or m['dhsT62L3Sohei'](8) != 1  or m['dhsT62L3Sohei'](15) != 1  or m['dhsT62L4Sohei'](4) != 1  or m['dhsT62L4Sohei'](9) != 1  or m['dhsT62L4Sohei'](17) != 1",
+      "note" = "the 2nd through 4th level sohei pins - chant, messenger, slow poison, warning; castigate, dispel magic, flame walk, prayer; endurance, penetrate disguise, spell immunity",
+    }, {
+      "expr" = "m['dhsT62L5Sohei'](5) != 1  or m['dhsT62L5Sohei'](6) != 1  or m['dhsT62L5Sohei'](10) != 1  or m['dhsT62L5Sohei'](11) != 1  or m['dhsT62L5Sohei'](12) != -99  or m['dhsT62L6Sohei'](0) != 1  or m['dhsT62L6Sohei'](3) != 1  or m['dhsT62L6Sohei'](10) != 1  or m['dhsT62L6Sohei'](11) != 1  or m['dhsT62L7Sohei'](0) != 1  or m['dhsT62L7Sohei'](6) != 1  or m['dhsT62L7Sohei'](12) != -99",
+      "note" = "the 5th through 7th level sohei pins with the level extents - dispel evil, mental strength, strength, true seeing; find the path, immunity to weapons, smite, speak w/ monsters; ancient curse, holy word; the sentinel past the twelve-spell levels",
+    }, {
+      "expr" = "m['dhsT62L1Rev'](3) != 1  or m['dhsT62L1Rev'](5) != 1  or m['dhsT62L1Rev'](6) != 1  or m['dhsT62L1Rev'](8) != 1  or m['dhsT62L1Rev'](15) != 1  or m['dhsT62L1Rev'](0) != 0  or m['dhsT62L1Rev'](19) != 0",
+      "note" = "the 1st level reversible pins - bless, cure light wounds, deflection, detect evil and purify food & drink marked, animal companion and weapon bless not",
+    }, {
+      "expr" = "m['dhsT62L2Rev'](3) != 1  or m['dhsT62L2Rev'](4) != 1  or m['dhsT62L2Rev'](10) != 1  or m['dhsT62L3Rev'](1) != 1  or m['dhsT62L3Rev'](2) != 1  or m['dhsT62L3Rev'](7) != 1  or m['dhsT62L3Rev'](10) != 1  or m['dhsT62L3Rev'](13) != 1  or m['dhsT62L3Rev'](16) != 1  or m['dhsT62L3Rev'](17) != 1  or m['dhsT62L4Rev'](0) != 1  or m['dhsT62L4Rev'](1) != 1  or m['dhsT62L4Rev'](2) != 1  or m['dhsT62L4Rev'](4) != 1  or m['dhsT62L4Rev'](7) != 1  or m['dhsT62L4Rev'](11) != 1  or m['dhsT62L4Rev'](19) != 1",
+      "note" = "the 2nd through 4th level reversible pins - create spring, detect charm, know motivation; the seven 3rd level and seven 4th level marks",
+    }, {
+      "expr" = "m['dhsT62L5Rev'](4) != 1  or m['dhsT62L5Rev'](5) != 1  or m['dhsT62L5Rev'](6) != 1  or m['dhsT62L5Rev'](8) != 1  or m['dhsT62L5Rev'](9) != 1  or m['dhsT62L5Rev'](11) != 1  or m['dhsT62L5Rev'](12) != -99  or m['dhsT62L6Rev'](0) != 1  or m['dhsT62L6Rev'](2) != 1  or m['dhsT62L6Rev'](3) != 1  or m['dhsT62L6Rev'](9) != 1  or m['dhsT62L7Rev'](10) != 1  or m['dhsT62L7Rev'](11) != 0  or m['dhsT62L7Rev'](12) != -99",
+      "note" = "the 5th through 7th level reversible pins with the extents - the six 5th, four 6th and one 7th level marks",
+    }, {
+      "expr" = "m['dhsT62LevelCount']() != 7  or m['dhsT62SpellTotal']() != 116  or m['dhsT62OrdinalMax']() != 20  or m['dhsT62L1Spells']() != 20  or m['dhsT62L4Spells']() != 20  or m['dhsT62L5Spells']() != 12  or m['dhsT62L7Spells']() != 12",
+      "note" = "the count pins - seven levels, 116 spells, the longest level twenty, four levels of twenty and three of twelve",
+    } },
+  "audit" = {
+      "label" = "R658 OA shukenja spells audit",
+      "comment" = "OA round forty-five (capture p. 112): Table 62 - the shukenja spell list by level, the per-level spell counts with the sohei-usable and reversible markers",
+    },
+}

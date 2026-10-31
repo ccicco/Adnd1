@@ -1,0 +1,137 @@
+-- oa660: promoted from rules/oal2spells.h (the SECOND LEVEL SPELLS, printed capture pp. 119-126 - the OA second level);
+-- DO NOT hand-edit; the pin header stays the adjudicated record.
+return {
+  "round" = 660,
+  "prefix" = "oa660",
+  "banner" = {
+      "title" = "SECOND LEVEL SPELLS, printed capture pp. 119-126 - the OA second level",
+      "provenance" = "spells round census 582 -> 583.  pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read - the 20 second level spell stat blocks cross-checked spell by spell between the passes (print pp. 119-125; compressed pp. 60-63); all 20 schools, component sets, casting times and saving throws agree, zero contested stat reads. Two reads worth the note: detect charm's components read V, S in both passes (the print line breaking at its page boundary, the compressed confirming), and dream sight takes the somatic and material components only - the level's unique no-verbal spell. The abjuration school debuts this level (protection from spirits, request), and aid's dual school necromantic/conjuration pins as the primary necromantic. Request takes the longest cast in the level at three turns. The reversible flags agree between the passes; the sohei-usable marks ride the R658 T62 grid, settled two rounds before. The stat grid pins as a table: 20 rows the spell ordinals, six columns - school, components (a V=1 S=2 M=4 bitmask), casting time in segments (1 round = 10, 1 turn = 60, 3 turns = 180), saving throw code (0 none, 1 neg., 2 special), reversible and sohei markers. The spell names ride the column comments, the prose descriptions close in their own rounds. The table tag L2Data identifier-safe per the R639 lesson  the gap census after this round: 113 closed, 122 open - the Second Level Spells box flips (census 582 -> 583); NEXT - R661: the Third Level Spells (capture pp. 126-132), prefix dhv (verify free), audit \"R661 OA third level spells audit\", include after rules/oal2spells.h",
+    },
+  "consts" = { {
+      "name" = "dhuL2SpellCount",
+      "value" = 20,
+      "comment" = "the 20 second level shukenja spells (print pp. 119-125; compressed pp. 60-63)",
+    }, {
+      "name" = "dhuL2SoheiCount",
+      "value" = 4,
+      "comment" = "the four second level spells usable by sohei - chant, messenger, slow poison, warning",
+    }, {
+      "name" = "dhuL2ReversibleCount",
+      "value" = 3,
+      "comment" = "the three reversible second level spells - create spring, detect charm, know motivation",
+    }, {
+      "name" = "dhuL2DivinationCount",
+      "value" = 5,
+      "comment" = "the five divination second level spells - commune with lesser spirit, detect charm, detect life, know motivation, warning",
+    }, {
+      "name" = "dhuL2EnchCharmCount",
+      "value" = 4,
+      "comment" = "the four enchantment/charm second level spells - enthrall, hold person, messenger, snake summoning",
+    }, {
+      "name" = "dhuL2AlterationCount",
+      "value" = 5,
+      "comment" = "the five alteration second level spells - create spring, dream sight, obscurement, speak w/ animals, withdraw",
+    }, {
+      "name" = "dhuL2AbjurationCount",
+      "value" = 2,
+      "comment" = "the two abjuration second level spells - protection from spirits and request; the school debuting this level",
+    }, {
+      "name" = "dhuL2VSMCount",
+      "value" = 13,
+      "comment" = "the thirteen second level spells taking all three components - the bitmask reads 7",
+    }, {
+      "name" = "dhuL2VSCount",
+      "value" = 6,
+      "comment" = "the six second level spells taking verbal and somatic - the bitmask reads 3",
+    }, {
+      "name" = "dhuL2SMCount",
+      "value" = 1,
+      "comment" = "the one second level spell taking somatic and material only - dream sight, the unique no-verbal spell",
+    }, {
+      "name" = "dhuL2TurnCasts",
+      "value" = 3,
+      "comment" = "the three second level spells with a one-turn casting time - chant, commune with lesser spirit, holy symbol",
+    }, {
+      "name" = "dhuL2ThreeTurnCasts",
+      "value" = 1,
+      "comment" = "the one second level spell with a three-turn casting time - request, the longest cast in the level",
+    }, {
+      "name" = "dhuL2RoundCasts",
+      "value" = 9,
+      "comment" = "the nine second level spells with a one-round casting time",
+    }, {
+      "name" = "dhuL2NegSaves",
+      "value" = 4,
+      "comment" = "the four second level spells with a negation saving throw - enthrall, hold person, messenger, request",
+    }, {
+      "name" = "dhuL2SpecialSaves",
+      "value" = 2,
+      "comment" = "the two second level spells with a special saving throw - protection from spirits, snake summoning",
+    } },
+  "bools" = {},
+  "switches" = { {
+      "name" = "dhuL2School",
+      "values" = { 5, 4, 2, 6, 2, 2, 6, 1, 1, 4, 2, 1, 6, 7, 7, 5, 1, 6, 2, 6 },
+      "default" = 0,
+      "comment" = "the shukenja 2nd level spell schools by ordinal (print pp. 119-125; compressed pp. 60-63). The spell list rides this comment: 1 aid, 2 chant, 3 commune w/ lesser spirit, 4 create spring, 5 detect charm, 6 detect life, 7 dream sight, 8 enthrall, 9 hold person, 10 holy symbol, 11 know motivation, 12 messenger, 13 obscurement, 14 protection from spirits, 15 request, 16 slow poison, 17 snake summoning, 18 speak w/ animals, 19 warning, 20 withdraw - the school codes: 1 enchantment/charm, 2 divination, 3 evocation, 4 conjuration/summoning, 5 necromantic, 6 alteration, 7 abjuration - the abjuration code debuting this level (protection from spirits, request); five divination, five alteration and four enchantment/charm spells; aid pins its dual school necromantic/conjuration as the primary 5",
+    }, {
+      "name" = "dhuL2Components",
+      "values" = { 7, 3, 7, 7, 3, 7, 6, 3, 7, 7, 7, 7, 3, 7, 7, 7, 7, 3, 3, 7 },
+      "default" = 0,
+      "comment" = "the shukenja 2nd level spell components by ordinal (print pp. 119-125; compressed pp. 60-63). The spell list rides this comment: 1 aid, 2 chant, 3 commune w/ lesser spirit, 4 create spring, 5 detect charm, 6 detect life, 7 dream sight, 8 enthrall, 9 hold person, 10 holy symbol, 11 know motivation, 12 messenger, 13 obscurement, 14 protection from spirits, 15 request, 16 slow poison, 17 snake summoning, 18 speak w/ animals, 19 warning, 20 withdraw - the component codes a bitmask: verbal 1, somatic 2, material 4 - thirteen spells take all three (7), six take verbal and somatic (3), and dream sight takes the somatic and material only (6), the unique no-verbal spell; detect charm reads V, S in both passes (the print line breaking at its page boundary)",
+    }, {
+      "name" = "dhuL2CastTime",
+      "values" = { 4, 60, 60, 10, 10, 10, 10, 10, 5, 60, 10, 10, 4, 10, 180, 1, 10, 5, 2, 3 },
+      "default" = 0,
+      "comment" = "the shukenja 2nd level spell casting times by ordinal (print pp. 119-125; compressed pp. 60-63). The spell list rides this comment: 1 aid, 2 chant, 3 commune w/ lesser spirit, 4 create spring, 5 detect charm, 6 detect life, 7 dream sight, 8 enthrall, 9 hold person, 10 holy symbol, 11 know motivation, 12 messenger, 13 obscurement, 14 protection from spirits, 15 request, 16 slow poison, 17 snake summoning, 18 speak w/ animals, 19 warning, 20 withdraw - the casting time in segments - 1 round = 10 segments, 1 turn = 60, 3 turns = 180: request takes the three turns (the longest cast in the level), chant, commune with lesser spirit and holy symbol take a turn, nine take a round, and the level runs down to slow poison's single segment (warning two, withdraw three, aid and obscurement four, hold person and speak w/ animals five)",
+    }, {
+      "name" = "dhuL2Save",
+      "values" = { 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 2, 1, 0, 2, 0, 0, 0 },
+      "default" = 0,
+      "comment" = "the shukenja 2nd level spell saving throws by ordinal (print pp. 119-125; compressed pp. 60-63). The spell list rides this comment: 1 aid, 2 chant, 3 commune w/ lesser spirit, 4 create spring, 5 detect charm, 6 detect life, 7 dream sight, 8 enthrall, 9 hold person, 10 holy symbol, 11 know motivation, 12 messenger, 13 obscurement, 14 protection from spirits, 15 request, 16 slow poison, 17 snake summoning, 18 speak w/ animals, 19 warning, 20 withdraw - the saving throw codes: 0 none, 1 neg., 2 special - enthrall, hold person, messenger and request are neg., protection from spirits and snake summoning are special, the other fourteen none",
+    }, {
+      "name" = "dhuL2Reversible",
+      "values" = { 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+      "default" = 0,
+      "comment" = "the shukenja 2nd level spell reversible markers by ordinal (print pp. 119-125; compressed pp. 60-63). The spell list rides this comment: 1 aid, 2 chant, 3 commune w/ lesser spirit, 4 create spring, 5 detect charm, 6 detect life, 7 dream sight, 8 enthrall, 9 hold person, 10 holy symbol, 11 know motivation, 12 messenger, 13 obscurement, 14 protection from spirits, 15 request, 16 slow poison, 17 snake summoning, 18 speak w/ animals, 19 warning, 20 withdraw - the cell is 1 where the printed header reads Reversible - create spring, detect charm, know motivation; the three matching the R658 T62 reversible column",
+    }, {
+      "name" = "dhuL2Sohei",
+      "values" = { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0 },
+      "default" = 0,
+      "comment" = "the shukenja 2nd level spell sohei-usable markers by ordinal (print pp. 119-125; compressed pp. 60-63). The spell list rides this comment: 1 aid, 2 chant, 3 commune w/ lesser spirit, 4 create spring, 5 detect charm, 6 detect life, 7 dream sight, 8 enthrall, 9 hold person, 10 holy symbol, 11 know motivation, 12 messenger, 13 obscurement, 14 protection from spirits, 15 request, 16 slow poison, 17 snake summoning, 18 speak w/ animals, 19 warning, 20 withdraw - the cell is 1 where the printed asterisk marks the spell usable by sohei - chant, messenger, slow poison, warning; the four matching the R658 T62 sohei column",
+    } },
+  "tables" = {},
+  "chains" = {},
+  "examples" = { {
+      "expr" = "m['dhuL2SpellCount']() != 20  or m['dhuL2SoheiCount']() != 4  or m['dhuL2ReversibleCount']() != 3  or m['dhuL2DivinationCount']() != 5  or m['dhuL2EnchCharmCount']() != 4  or m['dhuL2AlterationCount']() != 5  or m['dhuL2AbjurationCount']() != 2  or m['dhuL2VSMCount']() != 13  or m['dhuL2VSCount']() != 6  or m['dhuL2SMCount']() != 1  or m['dhuL2TurnCasts']() != 3  or m['dhuL2ThreeTurnCasts']() != 1  or m['dhuL2RoundCasts']() != 9  or m['dhuL2NegSaves']() != 4  or m['dhuL2SpecialSaves']() != 2",
+      "note" = "",
+    }, {
+      "expr" = "m['dhuL2SpellCount']() != 20  or m['dhuL2SoheiCount']() != 4  or m['dhuL2ReversibleCount']() != 3  or m['dhuL2DivinationCount']() != 5  or m['dhuL2EnchCharmCount']() != 4  or m['dhuL2AlterationCount']() != 5  or m['dhuL2AbjurationCount']() != 2",
+      "note" = "the count pins - twenty second level spells, four sohei-usable, three reversible, five divination",
+    }, {
+      "expr" = "m['dhuL2School'](0) != 5  or m['dhuL2School'](1) != 4  or m['dhuL2School'](2) != 2  or m['dhuL2School'](5) != 2  or m['dhuL2School'](9) != 4  or m['dhuL2School'](13) != 7  or m['dhuL2School'](14) != 7  or m['dhuL2School'](18) != 2  or m['dhuL2School'](19) != 6",
+      "note" = "the school pins - aid the dual school necromantic/conjuration primary 5; chant and holy symbol conjuration/summoning; commune with lesser spirit, detect charm, detect life, know motivation and warning divination; create spring, dream sight, obscurement, speak w/ animals and withdraw alteration; protection from spirits and request the debuting abjuration 7",
+    }, {
+      "expr" = "m['dhuL2Components'](0) != 7  or m['dhuL2Components'](8) != 7  or m['dhuL2Components'](14) != 7  or m['dhuL2Components'](1) != 3  or m['dhuL2Components'](4) != 3  or m['dhuL2Components'](7) != 3  or m['dhuL2Components'](18) != 3  or m['dhuL2Components'](6) != 6  or m['dhuL2Components'](2) != 7",
+      "note" = "the component pins - the thirteen all-component spells with aid, hold person and request pinned; the six verbal and somatic with chant, detect charm, enthrall and warning pinned; dream sight the somatic and material only - the unique no-verbal spell",
+    }, {
+      "expr" = "m['dhuL2CastTime'](14) != 180  or m['dhuL2CastTime'](1) != 60  or m['dhuL2CastTime'](2) != 60  or m['dhuL2CastTime'](9) != 60  or m['dhuL2CastTime'](15) != 1  or m['dhuL2CastTime'](18) != 2  or m['dhuL2CastTime'](19) != 3  or m['dhuL2CastTime'](0) != 4  or m['dhuL2CastTime'](12) != 4  or m['dhuL2CastTime'](8) != 5  or m['dhuL2CastTime'](17) != 5",
+      "note" = "the casting time pins - request the three-turn cast (the longest in the level); chant, commune with lesser spirit and holy symbol the one-turn casts; slow poison the single segment; warning two, withdraw three, aid and obscurement four, hold person and speak w/ animals five",
+    }, {
+      "expr" = "m['dhuL2Save'](7) != 1  or m['dhuL2Save'](8) != 1  or m['dhuL2Save'](11) != 1  or m['dhuL2Save'](14) != 1  or m['dhuL2Save'](13) != 2  or m['dhuL2Save'](16) != 2  or m['dhuL2Save'](0) != 0  or m['dhuL2Save'](19) != 0",
+      "note" = "the saving throw pins - enthrall, hold person, messenger and request neg.; protection from spirits and snake summoning special; the fourteen others none",
+    }, {
+      "expr" = "m['dhuL2Reversible'](3) != 1  or m['dhuL2Reversible'](4) != 1  or m['dhuL2Reversible'](10) != 1  or m['dhuL2Reversible'](0) != 0  or m['dhuL2Reversible'](6) != 0  or m['dhuL2Reversible'](19) != 0",
+      "note" = "the reversible pins - create spring, detect charm and know motivation marked; aid, dream sight and withdraw not - the three matching the R658 T62 reversible column",
+    }, {
+      "expr" = "m['dhuL2Sohei'](1) != 1  or m['dhuL2Sohei'](11) != 1  or m['dhuL2Sohei'](15) != 1  or m['dhuL2Sohei'](18) != 1  or m['dhuL2Sohei'](0) != 0  or m['dhuL2Sohei'](7) != 0  or m['dhuL2Sohei'](8) != 0",
+      "note" = "the sohei pins - chant, messenger, slow poison and warning marked; aid, enthrall and hold person not - the four matching the R658 T62 sohei column",
+    }, {
+      "expr" = "m['dhuL2VSMCount']() != 13  or m['dhuL2VSCount']() != 6  or m['dhuL2SMCount']() != 1  or m['dhuL2TurnCasts']() != 3  or m['dhuL2ThreeTurnCasts']() != 1  or m['dhuL2RoundCasts']() != 9  or m['dhuL2NegSaves']() != 4  or m['dhuL2SpecialSaves']() != 2",
+      "note" = "the grid-sum pins - thirteen VSM, six VS, one SM components; three one-turn and one three-turn casts; four neg. and two special saves",
+    } },
+  "audit" = {
+      "label" = "R660 OA second level spells audit",
+      "comment" = "OA round forty-seven (capture pp. 119-126): the second level spell stat blocks - the school, component, casting time and saving throw codes with the reversible and sohei-usable markers, cross-checked spell by spell between the passes",
+    },
+}

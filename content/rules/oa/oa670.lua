@@ -1,0 +1,155 @@
+-- oa670: promoted from rules/oawjl1spells.h (the WU JEN FIRST LEVEL SPELLS, printed capture pp. 155-165 - the OA wu jen);
+-- DO NOT hand-edit; the pin header stays the adjudicated record.
+return {
+  "round" = 670,
+  "prefix" = "oa670",
+  "banner" = {
+      "title" = "WU JEN FIRST LEVEL SPELLS, printed capture pp. 155-165 - the OA wu jen",
+      "provenance" = "first level spells round census 592 -> 593.  pinned from the 2018 print capture (the settling authority), with the compressed-print capture giving a second independent read (print pp. 155-165; compressed pp. 75-79); all 30 stat blocks cross-checked spell by spell between the passes, zero contested stat reads - the variances are typographic (the print's fumble-lingers against the compressed fumble-fingers for the prestidigitation reverse, the print's pared for para-elemental in the melt prose). The level is alteration-heavy: 15 of the 30 spells, conjuration six, divination three, enchantment/charm, evocation and illusion two each - no necromantic or abjuration. The component census carries two oddities pinned as cells: ventriloquism the lone V,M without the somatic (bitmask 5), and secret signs the Components: Special line (bitmask 0, none of the three - the component is whatever method sends the message, the spell castable even bound and gagged). Elemental burst alone takes the half save (the sliver and spark damage halved); drowsy insects and hypnotism the negation saves; four the special. The casting times run 13 one-segment up through 12 one-round, with warp wood the lone four-segment and fiery eyes and ghost light the five-segment pair. Six spells read Reversible (accuracy, comprehend languages, prestidigitation, read magic, still water, swim). The sixth column cross-checks the R669 element grid: the 12 tagged cells matching the landed dieWJT66L1Element pins exactly. The stat grid pins as a table: 30 rows the spell ordinals, six columns - school, components (a V=1 S=2 M=4 bitmask), casting time in segments (1 round = 10), saving throw code (0 none, 1 neg., 2 special, 3 half), reversible and element markers. The spell names ride the column comments, the prose descriptions close in their own rounds. The table tag WJL1Data identifier-safe per the R639 lesson  the gap census after this round: 123 closed, 112 open - the wu jen First Level Spells box flips (census 592 -> 593); NEXT - R671: the wu jen Second Level Spells (capture pp. 165-170, the 30 stat blocks), prefix dig (verify free), audit \"R671 OA wu jen second level spells audit\"",
+    },
+  "consts" = { {
+      "name" = "difWJL1SpellCount",
+      "value" = 30,
+      "comment" = "the 30 first level wu jen spells (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1ReversibleCount",
+      "value" = 6,
+      "comment" = "the six reversible first level wu jen spells - accuracy, comprehend languages, prestidigitation, read magic, still water, swim (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1AlterationCount",
+      "value" = 15,
+      "comment" = "the 15 alteration first level wu jen spells - half the level, the most common school (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1DivinationCount",
+      "value" = 3,
+      "comment" = "the three divination first level wu jen spells - detect magic, know history, read magic (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1ConjurationCount",
+      "value" = 6,
+      "comment" = "the six conjuration first level wu jen spells - drowsy insects, elemental burst, ghost light, hail of stone, prestidigitation, unseen servant (printed Conjuration or Conjuration/Summoning, both pinned code 4) (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1VSMCount",
+      "value" = 20,
+      "comment" = "the 20 first level wu jen spells taking all three components - the bitmask reads 7 (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1VSCount",
+      "value" = 7,
+      "comment" = "the seven first level wu jen spells taking verbal and somatic - detect magic, elemental burst, fiery eyes, hypnotism, know history, magic missile, shield; the bitmask reads 3 (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1VerbalOnlyCount",
+      "value" = 1,
+      "comment" = "the one first level wu jen spell taking the verbal component only - hold portal (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1VMCount",
+      "value" = 1,
+      "comment" = "the one first level wu jen spell taking verbal and material without the somatic - ventriloquism; the bitmask reads 5 (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1SpecialCompCount",
+      "value" = 1,
+      "comment" = "the one first level wu jen spell with the Components: Special line - secret signs, the component being whatever method sends the message; pinned bitmask 0, none of the three (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1RoundCasts",
+      "value" = 12,
+      "comment" = "the 12 first level wu jen spells with a one-round casting time (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1OneSegmentCasts",
+      "value" = 13,
+      "comment" = "the 13 first level wu jen spells with a one-segment casting time - the most common cast of the level (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1ThreeSegmentCasts",
+      "value" = 2,
+      "comment" = "the two first level wu jen spells with a three-segment casting time - elemental burst, prestidigitation (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1FourSegmentCasts",
+      "value" = 1,
+      "comment" = "the one first level wu jen spell with a four-segment casting time - warp wood (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1FiveSegmentCasts",
+      "value" = 2,
+      "comment" = "the two first level wu jen spells with a five-segment casting time - fiery eyes, ghost light (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1NegSaves",
+      "value" = 2,
+      "comment" = "the two first level wu jen spells with a negation saving throw - drowsy insects, hypnotism (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1SpecialSaves",
+      "value" = 4,
+      "comment" = "the four first level wu jen spells with a special saving throw - know history, melt, prestidigitation, still water (print pp. 155-165; compressed pp. 75-79)",
+    }, {
+      "name" = "difWJL1HalfSaves",
+      "value" = 1,
+      "comment" = "the one first level wu jen spell with the half saving throw code - elemental burst, the sliver and spark damage halved on a successful save (print pp. 155-165; compressed pp. 75-79)",
+    } },
+  "bools" = {},
+  "switches" = { {
+      "name" = "difWJL1School",
+      "values" = { 1, 6, 9, 6, 6, 2, 4, 4, 6, 4, 4, 6, 1, 2, 3, 6, 6, 4, 2, 6, 3, 6, 6, 6, 4, 9, 6, 6, 6, 6 },
+      "default" = 0,
+      "comment" = "the wu jen 1st level spell schools by ordinal (print pp. 155-165; compressed pp. 75-79). The spell list rides this comment: 1 accuracy, 2 animate wood, 3 chameleon, 4 cloud ladder, 5 comprehend languages, 6 detect magic, 7 drowsy insects, 8 elemental burst, 9 fiery eyes, 10 ghost light, 11 hail of stone, 12 hold portal, 13 hypnotism, 14 know history, 15 magic missile, 16 melt, 17 message, 18 prestidigitation, 19 read magic, 20 secret signs, 21 shield, 22 spider climb, 23 still water, 24 swim, 25 unseen servant, 26 ventriloquism, 27 wall of fog, 28 warp wood, 29 water protection, 30 wizard mark - the school codes: 1 enchantment/charm, 2 divination, 3 evocation, 4 conjuration (the printed Conjuration and Conjuration/Summoning both pinned 4), 6 alteration, 9 illusion/phantasm - alteration the most common school at 15 spells (animate wood, cloud ladder, comprehend languages, fiery eyes, hold portal, melt, message, secret signs, spider climb, still water, swim, wall of fog, warp wood, water protection, wizard mark); conjuration six, divination three; enchantment/charm, evocation and illusion two each; no necromantic or abjuration spell this level",
+    }, {
+      "name" = "difWJL1Components",
+      "values" = { 7, 7, 7, 7, 7, 3, 7, 3, 3, 7, 7, 1, 3, 3, 3, 7, 7, 7, 7, 0, 3, 7, 7, 7, 7, 5, 7, 7, 7, 7 },
+      "default" = 0,
+      "comment" = "the wu jen 1st level spell components by ordinal (print pp. 155-165; compressed pp. 75-79). The spell list rides this comment: 1 accuracy, 2 animate wood, 3 chameleon, 4 cloud ladder, 5 comprehend languages, 6 detect magic, 7 drowsy insects, 8 elemental burst, 9 fiery eyes, 10 ghost light, 11 hail of stone, 12 hold portal, 13 hypnotism, 14 know history, 15 magic missile, 16 melt, 17 message, 18 prestidigitation, 19 read magic, 20 secret signs, 21 shield, 22 spider climb, 23 still water, 24 swim, 25 unseen servant, 26 ventriloquism, 27 wall of fog, 28 warp wood, 29 water protection, 30 wizard mark - the component codes a bitmask: verbal 1, somatic 2, material 4 - 20 spells take all three (7), seven verbal and somatic (3): detect magic, elemental burst, fiery eyes, hypnotism, know history, magic missile, shield; hold portal the verbal only (1); ventriloquism the verbal and material without the somatic (5); secret signs the Components: Special oddity (0, none of the three - the component is whatever method sends the message, the spell castable even bound and gagged)",
+    }, {
+      "name" = "difWJL1CastTime",
+      "values" = { 10, 10, 10, 10, 10, 1, 10, 3, 5, 5, 10, 1, 1, 10, 1, 1, 1, 3, 10, 1, 1, 1, 10, 10, 1, 1, 1, 4, 10, 1 },
+      "default" = 0,
+      "comment" = "the wu jen 1st level spell casting times by ordinal (print pp. 155-165; compressed pp. 75-79). The spell list rides this comment: 1 accuracy, 2 animate wood, 3 chameleon, 4 cloud ladder, 5 comprehend languages, 6 detect magic, 7 drowsy insects, 8 elemental burst, 9 fiery eyes, 10 ghost light, 11 hail of stone, 12 hold portal, 13 hypnotism, 14 know history, 15 magic missile, 16 melt, 17 message, 18 prestidigitation, 19 read magic, 20 secret signs, 21 shield, 22 spider climb, 23 still water, 24 swim, 25 unseen servant, 26 ventriloquism, 27 wall of fog, 28 warp wood, 29 water protection, 30 wizard mark - the casting time in segments - 1 round = 10 segments: 12 spells a round, 13 a single segment (the most common cast of the level), elemental burst and prestidigitation three segments, fiery eyes and ghost light five, warp wood four",
+    }, {
+      "name" = "difWJL1Save",
+      "values" = { 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 1, 2, 0, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 },
+      "default" = 0,
+      "comment" = "the wu jen 1st level spell saving throws by ordinal (print pp. 155-165; compressed pp. 75-79). The spell list rides this comment: 1 accuracy, 2 animate wood, 3 chameleon, 4 cloud ladder, 5 comprehend languages, 6 detect magic, 7 drowsy insects, 8 elemental burst, 9 fiery eyes, 10 ghost light, 11 hail of stone, 12 hold portal, 13 hypnotism, 14 know history, 15 magic missile, 16 melt, 17 message, 18 prestidigitation, 19 read magic, 20 secret signs, 21 shield, 22 spider climb, 23 still water, 24 swim, 25 unseen servant, 26 ventriloquism, 27 wall of fog, 28 warp wood, 29 water protection, 30 wizard mark - the saving throw codes: 0 none, 1 neg., 2 special, 3 half - drowsy insects and hypnotism neg.; know history, melt, prestidigitation and still water special; elemental burst the lone half code (the sliver and spark damage halved on a successful save); the other 23 none",
+    }, {
+      "name" = "difWJL1Reversible",
+      "values" = { 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0 },
+      "default" = 0,
+      "comment" = "the wu jen 1st level spell reversible markers by ordinal (print pp. 155-165; compressed pp. 75-79). The spell list rides this comment: 1 accuracy, 2 animate wood, 3 chameleon, 4 cloud ladder, 5 comprehend languages, 6 detect magic, 7 drowsy insects, 8 elemental burst, 9 fiery eyes, 10 ghost light, 11 hail of stone, 12 hold portal, 13 hypnotism, 14 know history, 15 magic missile, 16 melt, 17 message, 18 prestidigitation, 19 read magic, 20 secret signs, 21 shield, 22 spider climb, 23 still water, 24 swim, 25 unseen servant, 26 ventriloquism, 27 wall of fog, 28 warp wood, 29 water protection, 30 wizard mark - the cell is 1 where the printed header reads Reversible - accuracy (inaccuracy), comprehend languages (confuse languages), prestidigitation (fumble-fingers), read magic (unreadable magic), still water (turbulence), swim (sinking); the six",
+    }, {
+      "name" = "difWJL1Element",
+      "values" = { 0, 5, 0, 1, 0, 0, 5, 7, 3, 0, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 1, 6, 4, 0 },
+      "default" = 0,
+      "comment" = "the wu jen 1st level spell element marks by ordinal (print pp. 155-165; compressed pp. 75-79). The spell list rides this comment: 1 accuracy, 2 animate wood, 3 chameleon, 4 cloud ladder, 5 comprehend languages, 6 detect magic, 7 drowsy insects, 8 elemental burst, 9 fiery eyes, 10 ghost light, 11 hail of stone, 12 hold portal, 13 hypnotism, 14 know history, 15 magic missile, 16 melt, 17 message, 18 prestidigitation, 19 read magic, 20 secret signs, 21 shield, 22 spider climb, 23 still water, 24 swim, 25 unseen servant, 26 ventriloquism, 27 wall of fog, 28 warp wood, 29 water protection, 30 wizard mark - the element codes of the R669 T66 grid: 0 none, 1 Air, 2 Earth, 3 Fire, 4 Water, 5 Nature, 6 Wood, 7 All - the 12 tagged spells (animate wood and drowsy insects Nature, cloud ladder and wall of fog Air, elemental burst All, fiery eyes and melt Fire, hail of stone Earth, still water, swim and water protection Water, warp wood the lone Wood mark) matching the R669 dieWJT66L1Element pins exactly - the cross-check column",
+    } },
+  "tables" = {},
+  "chains" = {},
+  "examples" = { {
+      "expr" = "m['difWJL1SpellCount']() != 30  or m['difWJL1ReversibleCount']() != 6  or m['difWJL1AlterationCount']() != 15  or m['difWJL1DivinationCount']() != 3  or m['difWJL1ConjurationCount']() != 6  or m['difWJL1VSMCount']() != 20  or m['difWJL1VSCount']() != 7  or m['difWJL1VerbalOnlyCount']() != 1  or m['difWJL1VMCount']() != 1  or m['difWJL1SpecialCompCount']() != 1  or m['difWJL1RoundCasts']() != 12  or m['difWJL1OneSegmentCasts']() != 13  or m['difWJL1ThreeSegmentCasts']() != 2  or m['difWJL1FourSegmentCasts']() != 1  or m['difWJL1FiveSegmentCasts']() != 2  or m['difWJL1NegSaves']() != 2  or m['difWJL1SpecialSaves']() != 4  or m['difWJL1HalfSaves']() != 1",
+      "note" = "",
+    }, {
+      "expr" = "m['difWJL1SpellCount']() != 30  or m['difWJL1ReversibleCount']() != 6  or m['difWJL1AlterationCount']() != 15  or m['difWJL1DivinationCount']() != 3  or m['difWJL1ConjurationCount']() != 6",
+      "note" = "the count pins - 30 spells, six reversible, 15 alteration, three divination, six conjuration",
+    }, {
+      "expr" = "m['difWJL1VSMCount']() != 20  or m['difWJL1VSCount']() != 7  or m['difWJL1VerbalOnlyCount']() != 1  or m['difWJL1VMCount']() != 1  or m['difWJL1SpecialCompCount']() != 1",
+      "note" = "the component pins - 20 VSM, seven VS, hold portal the verbal only, ventriloquism the V,M pair, secret signs the special-components cell",
+    }, {
+      "expr" = "m['difWJL1RoundCasts']() != 12  or m['difWJL1OneSegmentCasts']() != 13  or m['difWJL1ThreeSegmentCasts']() != 2  or m['difWJL1FourSegmentCasts']() != 1  or m['difWJL1FiveSegmentCasts']() != 2",
+      "note" = "the casting time pins - 12 round casts, 13 one-segment, two three-segment, warp wood the four, fiery eyes and ghost light the five",
+    }, {
+      "expr" = "m['difWJL1NegSaves']() != 2  or m['difWJL1SpecialSaves']() != 4  or m['difWJL1HalfSaves']() != 1",
+      "note" = "the saving throw pins - two neg., four special, elemental burst the lone half",
+    }, {
+      "expr" = "m['difWJL1School'](0) != 1  or m['difWJL1School'](12) != 1  or m['difWJL1School'](5) != 2  or m['difWJL1School'](13) != 2  or m['difWJL1School'](18) != 2  or m['difWJL1School'](14) != 3  or m['difWJL1School'](20) != 3  or m['difWJL1School'](2) != 9  or m['difWJL1School'](25) != 9  or m['difWJL1School'](6) != 4  or m['difWJL1School'](7) != 4  or m['difWJL1School'](9) != 4  or m['difWJL1School'](10) != 4  or m['difWJL1School'](17) != 4  or m['difWJL1School'](24) != 4  or m['difWJL1School'](8) != 6  or m['difWJL1School'](11) != 6",
+      "note" = "the school pins - accuracy and hypnotism enchantment/charm; detect magic, know history and read magic divination; magic missile and shield evocation; chameleon and ventriloquism illusion; the six conjuration; fiery eyes and hold portal among the 15 alteration",
+    }, {
+      "expr" = "m['difWJL1Components'](11) != 1  or m['difWJL1Components'](25) != 5  or m['difWJL1Components'](19) != 0  or m['difWJL1Components'](5) != 3  or m['difWJL1Components'](7) != 3  or m['difWJL1Components'](8) != 3  or m['difWJL1Components'](12) != 3  or m['difWJL1Components'](13) != 3  or m['difWJL1Components'](14) != 3  or m['difWJL1Components'](20) != 3",
+      "note" = "the component cell pins - the verbal-only hold portal, the V,M ventriloquism, the special secret signs, and the VS set",
+    }, {
+      "expr" = "m['difWJL1CastTime'](7) != 3  or m['difWJL1CastTime'](17) != 3  or m['difWJL1CastTime'](8) != 5  or m['difWJL1CastTime'](9) != 5  or m['difWJL1CastTime'](27) != 4  or m['difWJL1CastTime'](11) != 1  or m['difWJL1CastTime'](19) != 1  or m['difWJL1CastTime'](25) != 1",
+      "note" = "the casting time cell pins - the three-segment pair, the five-segment pair, warp wood the four, and the one-segment spots",
+    }, {
+      "expr" = "m['difWJL1Save'](6) != 1  or m['difWJL1Save'](12) != 1  or m['difWJL1Save'](13) != 2  or m['difWJL1Save'](15) != 2  or m['difWJL1Save'](17) != 2  or m['difWJL1Save'](22) != 2  or m['difWJL1Save'](7) != 3  or m['difWJL1Save'](0) != 0",
+      "note" = "the saving throw cell pins - drowsy insects and hypnotism neg.; know history, melt, prestidigitation and still water special; elemental burst the half; accuracy none",
+    }, {
+      "expr" = "m['difWJL1Reversible'](0) != 1  or m['difWJL1Reversible'](4) != 1  or m['difWJL1Reversible'](17) != 1  or m['difWJL1Reversible'](18) != 1  or m['difWJL1Reversible'](22) != 1  or m['difWJL1Reversible'](23) != 1  or m['difWJL1Reversible'](5) != 0  or m['difWJL1Reversible'](9) != 0  or m['difWJL1Reversible'](27) != 0",
+      "note" = "the reversible pins - accuracy, comprehend languages, prestidigitation, read magic, still water and swim marked; detect magic, ghost light and warp wood not",
+    }, {
+      "expr" = "m['difWJL1Element'](1) != 5  or m['difWJL1Element'](6) != 5  or m['difWJL1Element'](3) != 1  or m['difWJL1Element'](26) != 1  or m['difWJL1Element'](7) != 7  or m['difWJL1Element'](8) != 3  or m['difWJL1Element'](15) != 3  or m['difWJL1Element'](10) != 2  or m['difWJL1Element'](22) != 4  or m['difWJL1Element'](23) != 4  or m['difWJL1Element'](28) != 4  or m['difWJL1Element'](27) != 6  or m['difWJL1Element'](0) != 0",
+      "note" = "the element cross-check pins - the 12 tagged cells matching the R669 dieWJT66L1Element grid: animate wood and drowsy insects Nature, cloud ladder and wall of fog Air, elemental burst All, fiery eyes and melt Fire, hail of stone Earth, the three Water marks and warp wood the lone Wood; accuracy untagged",
+    } },
+  "audit" = {
+      "label" = "R670 OA wu jen first level spells audit",
+      "comment" = "OA round fifty-seven (capture pp. 155-165): the wu jen first level spell stat blocks - the school, component, casting time and saving throw codes with the reversible and element markers, cross-checked spell by spell between the passes",
+    },
+}

@@ -684,6 +684,7 @@
 #include "rules/dp12.h"  // R980: the Dragon promotion batch twelve
 #include "rules/oa1.h"  // R981: the OA promotion batch one
 #include "rules/oa2.h"  // R982: the OA promotion batch two
+#include "rules/oa3.h"  // R983: the OA promotion batch three
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4793,6 +4794,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r983_batch.h"  // R983: R983 OA promotion batch three audit
 #include "rules/audits/r982_batch.h"  // R982: R982 OA promotion batch two audit
 #include "rules/audits/r981_batch.h"  // R981: R981 OA promotion batch one audit
 #include "rules/audits/r980_batch.h"  // R980: R980 dragon promotion batch twelve audit
