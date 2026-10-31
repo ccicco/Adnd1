@@ -56,9 +56,9 @@ critique) and The Thing From the Tomb (print 8-9 +
 22-30, the Gardner Fox Niall fiction chain). The flip
 (R953) closes all three boxes.
 
-- [ ] **The issue-23 opener chains part one** (print 5-13, the variant triptych: En Garde in Solitaire, Mind Wrestling, Water Adventures on the Starship Warden)
-- [ ] **The issue-23 opener chains part two** (print 15-18, the Random Generation of Creatures from the Lower Planes: the stat frame, the appearance tables, the strength and special tables)
-- [ ] **The issue-23 opener chains part three** (print 4-30, the commentary set: Good News for the Gaming Hobby, It Weighs WHAT, Damage Permanency, Dungeons and Prisons, Convention Season 79, The Thing From the Tomb)
+- [x] **The issue-23 opener chains part one** (print 5-13, the variant triptych: En Garde in Solitaire, Mind Wrestling, Water Adventures on the Starship Warden)
+- [x] **The issue-23 opener chains part two** (print 15-18, the Random Generation of Creatures from the Lower Planes: the stat frame, the appearance tables, the strength and special tables)
+- [x] **The issue-23 opener chains part three** (print 4-30, the commentary set: Good News for the Gaming Hobby, It Weighs WHAT, Damage Permanency, Dungeons and Prisons, Convention Season 79, The Thing From the Tomb)
 
 Drop (Curtiss, 2026-10-31, none contested): the cover
 (print 1), the Ral Partha miniatures ad (print 2), the

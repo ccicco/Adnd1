@@ -29113,6 +29113,43 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   print 21, the Kask Origins critique print 4+21, the Gardner Fox
   Niall fiction print 8-9+22-30); prefix scan fresh at the
   then-HEAD (k23 next). WAIT FOR GO.
+  - R952 LANDED (004afd2, k23, 145 inline, opener part three): The
+  Dragon issue-23 opener part three, the six-chain commentary set:
+  the gaming-hobby trade-show report (print 6 - the forty-second
+  show, the sixteen-house exhibitor roster), the armor-weights
+  polemic (print 14 - the Nickel and Blair quotes, the five
+  surviving armors, the Oakeshott sword weights), the permanent-
+  damage charts (print 19-20 - the Ward percentile bands, the six
+  damaged body areas, the impairments through the weapons
+  subtable), the dungeon-as-prison formula (print 21 - the Elrohir
+  cell, two hundred feet behind five true-lead layers and twenty
+  tons of granite), the Origins scheduling critique (print 4+21 -
+  the Kask July-gap verdict on AH and SPI) and the Niall
+  sword-and-sorcery tale (print 8-9+22-30 - Gardner Fox, Niall
+  against the witchwoman Sosaria Thota, Messarib, Alphanor,
+  Xinthius, Abaddon and the amanatlon device). 145 inline =
+  78 consts + 64 bools + 3 table cols, 19 examples, 1 table
+  check, 1 table (the damaged-body-area grid), six sections; no
+  data files. Census 874->875; rverify GREEN 160 mutants 0
+  missed at base af5a151; round-trip 47506 bytes md5
+  0f49c205e5ce5939c45d27dd68edc926, byte-exact at 004afd2 (fresh
+  tarball re-run applied 0 already 5). Print catches pinned as
+  scanned: the contents Good News at 18 vs print 6 with the
+  byline GOOD NEWS FOR GAMING; Augsberg for Augsburg, the
+  contents WHAT exclamation-question vs the byline WHAT?!!,
+  Fredrick for Frederick and the mid-sentence capital Quote Claude
+  Blair; the arm bands overlapping at 25, reduced to from ten to
+  two, the legs band 75-79 only five wide, the unfooted asterisks;
+  the Kask you now who you are and I know find myself; the fiction
+  Bakakanian vs Baklakanian desert, Lurlyr vs Luryr Manakor, the
+  grey vs green eyes of Sosaria Thota, swordhill, brawney,
+  croached twice, serants for servants, Lythia for Lylthia, shock
+  for shook, the amanatlon device, and the Orravian vs Orra-vian
+  dagger hyphen. Watches: the Sullin levels 7-9 and the brawling
+  sequel still empty in TD 23 - both ride to TD 24. Next: R953 the
+  l23 pure flip - all three report-023 boxes check at the single
+  round, gap_flips on the three part lines, gap_census 3 closed 0
+  open, prefix scan fresh at the then-HEAD. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
