@@ -29923,6 +29923,45 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   and byte-matched 15/15 on the
   landed records before the
   batch. WAIT FOR GO.
+  - R973 LANDED (e2d6a6f, dp5, 7
+  inline, the promotion batch
+  five): THE DRAGON PROMOTION
+  BATCH FIVE - the arc round
+  eight, issues 8 through 10
+  complete: dgo (the Gygax
+  Planes opener, 61 items), cgx
+  (11), dgn (the Gygax
+  alignment opener, 43), dnp
+  (13), dtn (the Orgies Inc.
+  opener, 74), dte (the Gilbert
+  dungeon opener, 71), dfp
+  (15) - 7 records, 288 model
+  items, 104937 bytes Lua,
+  every record parsed back
+  equal. 4 consts + 3 bools:
+  dp5BatchRecords=7,
+  dp5ModelItems=288,
+  dp5CumulativeRecords=30,
+  dp5SetRoundsRemaining=49,
+  dp5RecordsPromoted,
+  dp5DiffBackGreen,
+  dp5IssuesEightTenComplete.
+  Census 895->896; no flips;
+  gap report 026 stays 3/0.
+  Double-run applied 12/
+  already 12, verify at e2d6a6f
+  already 12 with all 30
+  records on disk (692932
+  bytes Lua); rverify GREEN 7
+  mutants 0 missed at base
+  30ee5de; spec 116668 bytes
+  md5 b4079bbafbc92b285bd55748
+  12efe681, canvas r973-spec.
+  The R972 record seated in the
+  repo seed. The lib rebuilt and
+  byte-matched 23/23 on the
+  landed records before the
+  batch. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
