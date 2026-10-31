@@ -29999,6 +29999,43 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   byte-matched 30/30 on the
   landed records before the
   batch. WAIT FOR GO.
+  - R975 LANDED (4e045bc, dp7, 7
+  inline, the promotion batch
+  seven): THE DRAGON PROMOTION
+  BATCH SEVEN - the arc round
+  ten, issues 13 through 14
+  complete: dgm (the Shlump da
+  Orc opener, 52 items), kmy
+  (the Japanese Mythos opener,
+  42), icl (21), lyc (the Name
+  That Monster Contest opener,
+  81), f14 (23) - 5 records,
+  219 model items, 93924 bytes
+  Lua, every record parsed
+  back equal. 4 consts + 3
+  bools: dp7BatchRecords=5,
+  dp7ModelItems=219,
+  dp7CumulativeRecords=40,
+  dp7SetRoundsRemaining=39,
+  dp7RecordsPromoted,
+  dp7DiffBackGreen,
+  dp7IssuesThirteenFourteen
+  Complete. Census 897->898; no
+  flips; gap report 026 stays
+  3/0. Double-run applied 10/
+  already 10, verify at
+  4e045bc already 10 with all
+  40 records on disk (863546
+  bytes Lua); rverify GREEN 7
+  mutants 0 missed at base
+  41fb76c; spec 104091 bytes
+  md5 ece9874570e12f93d59ee0944
+  0162c57, canvas r975-spec.
+  The R974 record seated in the
+  repo seed. The lib rebuilt and
+  byte-matched 35/35 on the
+  landed records before the
+  batch. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
