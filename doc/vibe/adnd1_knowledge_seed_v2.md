@@ -29834,6 +29834,51 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   117KB Lua alone - batch
   three opens at chr. WAIT FOR
   GO.
+  - R971 LANDED (f62acfc, dp3, 7
+  inline, the promotion batch
+  three): THE DRAGON PROMOTION
+  BATCH THREE - the arc round
+  six, issue 4 complete, THE
+  BATCH CEILING RAISED
+  (Curtiss, 2026-10-31): whole
+  issue groups ride per round
+  (the specs run small) - this
+  batch nearly doubled the
+  spec precedent. chr (the
+  combat matrix variants, 194
+  items, 117001 bytes Lua - the
+  set's biggest record), cmv
+  (173), cfe (70), cfc (10) -
+  4 records, 447 model items,
+  214984 bytes Lua, every
+  record parsed back equal.
+  4 consts + 3 bools:
+  dp3BatchRecords=4,
+  dp3ModelItems=447,
+  dp3CumulativeRecords=15,
+  dp3SetRoundsRemaining=64,
+  dp3RecordsPromoted,
+  dp3DiffBackGreen,
+  dp3IssueFourComplete.
+  Census 893->894; no flips;
+  gap report 026 stays 3/0.
+  Double-run applied 9/
+  already 9, verify at f62acfc
+  already 9 with all 15
+  records on disk (436163
+  bytes Lua); rverify GREEN 7
+  mutants 0 missed at base
+  9ebd433; spec 232857 bytes
+  md5 d77dc5e26c2cb4c31b87dd
+  bce42bc0f9, canvas r971-spec
+  (the raised-ceiling
+  precedent). The R970 record
+  seated in the repo seed. All
+  68 remaining rounds measured
+  round-trip GREEN - the whole
+  set is 1.75MB Lua, one issue
+  group per round, ~15-20
+  batches left. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
