@@ -66,9 +66,9 @@ sixty-four segments) and Monty Haul and the Best of
 Freddie (print 42-43, the Ward humor fiction). The
 flip closes all three boxes.
 
-- [ ] **The issue-24 opener chains part one** (print 5-11, the variant triptych: Lost Civilizations, Chinese Dragons, Another Look at Lycanthropy)
-- [ ] **The issue-24 opener chains part two** (print 34-39, the Ramifications of Alignment: the prime deities, the elemental lords, the sons of Thakta Tylden)
-- [ ] **The issue-24 opener chains part three** (print 7-29 + 39 + 42-43, the commentary set: Keeping the Magic-User in His Place, Roman Military Organization, the Viking Campaign, the Melee in D&D, the DUNGEON variants, Armies of the Renaissance Part II, Psionics Revisited, Disease, the Petal Throne Name Generator, Monty Haul and the Best of Freddie)
+- [x] **The issue-24 opener chains part one** (print 5-11, the variant triptych: Lost Civilizations, Chinese Dragons, Another Look at Lycanthropy)
+- [x] **The issue-24 opener chains part two** (print 34-39, the Ramifications of Alignment: the prime deities, the elemental lords, the sons of Thakta Tylden)
+- [x] **The issue-24 opener chains part three** (print 7-29 + 39 + 42-43, the commentary set: Keeping the Magic-User in His Place, Roman Military Organization, the Viking Campaign, the Melee in D&D, the DUNGEON variants, Armies of the Renaissance Part II, Psionics Revisited, Disease, the Petal Throne Name Generator, Monty Haul and the Best of Freddie)
 
 Drop (Curtiss, 2026-10-31, none contested): the cover
 (print 1), the Ral Partha miniature ad (print 2), the

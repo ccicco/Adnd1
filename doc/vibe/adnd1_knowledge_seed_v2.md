@@ -29266,6 +29266,76 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   Next: R956 part three, the ten-chain commentary set; the gap
   report stays report-023 (3 closed 0 open); prefix scan fresh at
   the then-HEAD (k24 next). WAIT FOR GO.
+  - R956 LANDED (2fdfd2f, k24, 291 inline, opener part three): The
+  Dragon issue-24 opener part three, the ten-chain commentary set -
+  all ten adjudicated chains of the part-three shape: the Pehr
+  magic-user limits (the Rules of Concentration and Duration, the
+  weekly wilderness renewal, defenses never added), the Gygax Roman
+  military update (the Livian manipular legion - 900 hastati in 16
+  maniples of 60, 900 principes, 15 ordines of 3 vexilla of 62,
+  morale 9/7/3 with the rear attack 5, the 2x2-for-2x1 mounting
+  error, the Julian lights 2x1), the Brunner Viking Caspian saga
+  (year 954, 24 ships 1200 warriors, the 20-dirhem ransom, Marzuban
+  30000, morale 10 plus 3 commander plus 1 shield wall, archery
+  minus 5 and minus 10 against the shield wall, the 3/2 kill
+  ratio, the 500-troop occupation), the Gygax melee rationale (ten
+  six-second segments, the 5-foot door jam - 1-2 segments, plus 4
+  attackers, minus 4 saves - the Design Department note), the
+  Laking DUNGEON variations (transference 8+ with the spell-combat
+  quad Elf 4 Hero 5 Superhero 6 Wizard 7, chamber capacity 3, kill
+  on 12, the occurrence bands, party gold 35000), the Nascati Swiss
+  (the 21-foot pike with 3 feet of steel, 80-100 percent handguns
+  by 1500, skirmishers 10-30 percent, three phalanxes, the echelon
+  text-vs-caption contradiction), the Pehr psionics variant (the
+  three power types, intuition 15 percent per level to 90,
+  ectoplasm AC 9 at 12 inches out to 48 inches, greater on 91-100,
+  anti-psi no oftener than every 5 levels), the Buettner disease
+  charts (the 29 fatality bands whose 97-then-99 jump pins the 98
+  skip, 92 = 48 days, 97/99/00 = 7/9/10 months, the four symptom
+  bands, twenty symptoms), the Rahman Petal Throne name generator
+  (the 8x8 grid of 64 segments verified a 1-64 permutation, a pair
+  of d8, 2-3 segments euphonic) and the Ward Monty Haul satire (the
+  80-hand Bronze Dragon breathing poison gas per Freddie - the
+  mistake itself pinned, five 16th-level Wizards, the 29-die
+  fireball, the ring of Gax and Jacinth finale, Ernie portable
+  hole). 291 inline = 135 consts + 145 bools + 11 table cols, 15
+  examples, 6 table_checks, 6 tables (k24Scenarios 3x3,
+  k24Occurrences 5x2, k24Subsentient 8x1, k24AntiPsi 6x1,
+  k24FatalityRolls 29x2, k24SymptomBands 4x2). The mid-round shape
+  rides no new data files; the gap report stays report-023 (3
+  closed 0 open), the report-024 boxes unchecked until the R957
+  flip. Census 878->879; rverify GREEN 379 mutants 0 missed at base
+  d9edf2b; round-trip 90605 bytes md5
+  a12ca2a08e880882a734031509aaf565, byte-exact at 2fdfd2f (fresh
+  tarball re-run applied 0 already 5). Print catches pinned as
+  scanned: literate does not mean a of letters (the missing word),
+  De Art Bellica, TRACTACS for TRACTICS, the Barda-a versus
+  Baroda-a drift, Sharistan versus Shahristan, Krudish, unguessed
+  at strength, beseigars, The know not defeat, pomiard, maintain
+  five hundred troop, subcommander affect, death of suitable
+  materials (dearth), his of her environment (or), combats of
+  protected nature (protracted), the duplicated even-excitement
+  phrase, higher levelfighters, eight of nine eight-sided dice
+  (or), opponents of two of more levels (or), who can say them may
+  (nay), the javelin-of-lightning-bolts garble, continually to a
+  particular combat situations, the so-called improvements rivals
+  print (rivals), The sturdy mountaineers, a bravery Swiss
+  mountaineer, the William Tell comma splice, Gary Gygas, La
+  Biocca, Bonewit (Bonewits), Clairenses, plants twice at six and
+  eight, Telepathic Projection twice, 15 psychics strength, SPEAR
+  LANGUAGES, sig language, a super-intuitive, the half-ile roll,
+  Buettuer (Buettner), the TOC Naming Things in EPT against the
+  byline Naming People Places and Things, an archdured beded in
+  lincoln green, plalin, deomon energy, we were wizards of power
+  used a wall of force (missing subject), 29 die fire ball, druddy
+  three times, dispell, cut out losses (cut our), liberated women
+  game and one of the few gamers (games). Watches: the Sullin
+  levels 7-9 and the brawling sequel still empty in TD 24 - both
+  ride to TD 25. Next: R957 l24, the pure flip - close all three
+  report-024 boxes with gap_flips on the three exact unchecked box
+  lines, point the walk at report-024 (3 closed 0 open post-flip),
+  the bookkeeping consts and bools; prefix scan fresh at the
+  then-HEAD (l24 next). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
