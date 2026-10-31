@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """normalize_registry.py - the R879 maintenance-arc normalizer.
 
-One idempotent pass over every .lua def in monsters/monsters:
+One idempotent pass over every .lua def in content/monsters:
 each def is rewritten in the FINAL post-DDG schema (the 57-key
 mm2lua FIELD_ORDER) with FULL-FIELD emission - every key
 present, sentinels where the book prints nothing ("n/a" for

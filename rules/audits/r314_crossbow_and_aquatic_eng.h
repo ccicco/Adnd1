@@ -33,7 +33,7 @@
             st.party.x = 5; st.party.y = 5;
             st.map.set(5, 5, world::TILE_WATER);
             st.registry.loadDirectory(
-                "monsters/monsters/l");
+                "content/monsters/l");
             st.rng.seed(11);
             st.spawnWanderingEncounter();
             if (st.mode != MODE_COMBAT) ++bad;

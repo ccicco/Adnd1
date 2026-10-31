@@ -668,6 +668,7 @@
 #include "rules/k26.h"  // R964: the Dragon issue-26 opener part three, the four-chain commentary set
 #include "rules/l26.h"  // R965: the Dragon issue-26 box closing round, the fifth four-round walk complete
 #include "rules/csh.h"  // R966: the content-structure charter round
+#include "rules/cnt.h"  // R967: the content tree creation round
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -793,13 +794,13 @@ int main() {
     monsters::MonsterRegistry reg;
 
     // R71fix: the 408 monster lua files live in letter subdirectories
-    // (monsters/monsters/a/aarakocra.lua, ...), but loadDirectory() reads
+    // (content/monsters/a/aarakocra.lua, ...), but loadDirectory() reads
     // only one flat directory level. Load every letter dir and total the
     // counts; a missing/empty dir contributes 0 (loadDirectory returns
     // -1 only if the directory itself cannot be opened, so ignore -1).
     int n = 0;
     for (char c = 'a'; c <= 'z'; ++c) {
-        std::string dir = "monsters/monsters/";
+        std::string dir = "content/monsters/";
         dir.push_back(c);
         int m = reg.loadDirectory(dir);
         if (m > 0) n += m;
@@ -4777,6 +4778,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r967_batch.h"  // R967: R967 content tree creation audit
 #include "rules/audits/r966_batch.h"  // R966: R966 content structure charter audit
 #include "rules/audits/r965_batch.h"  // R965: R965 Dragon issue-26 closure audit
 #include "rules/audits/r964_batch.h"  // R964: R964 issue-26 commentary set audit

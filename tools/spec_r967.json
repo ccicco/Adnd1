@@ -1,0 +1,285 @@
+{
+ "round": 967,
+ "prefix": "cnt",
+ "inline_count": 10,
+ "census_before": 889,
+ "title": "The content tree creation round (census 890)",
+ "banner": {
+  "title": "The content tree creation - the skeleton lands, the monsters move",
+  "provenance": "The content-structure arc round two: the content/ skeleton lands via thirteen .keep data files (rules, npcs, items, items/artifacts, spells, tables, tiles, objects, world and its three world buckets plus the karatur expansion bucket), and the monster Lua registry moves from monsters/monsters to content/monsters by the user-side git mv - the loader path rewritten in six places (adnd1.cpp the loadDirectory call and its error string, regtest.cpp the loader walk and its R71fix comment, tools/normalize_registry.py its docstring, and the R314 engine audit fragment's letter-dir load). The registry and xp code stays in monsters/ - C++ never enters the content tree (the R966 charter)."
+ },
+ "header_file": "rules/cnt.h",
+ "audit_file": "rules/audits/r967_batch.h",
+ "audit_label": "R967 content tree creation audit",
+ "audit_comment": "the tree audit - thirteen keeps, the 1338 lua records unchanged by the move, the six rewritten path lines, the four world-tree buckets, the 1313 loaded floor expected at preflight from the new path, every fact fail-on-wrong",
+ "audit_anchor": "#include \"rules/audits/r966_batch.h\"  // R966: R966 content structure charter audit",
+ "include_after": "#include \"rules/csh.h\"  // R966: the content-structure charter round",
+ "include_comment": "the content tree creation round",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R966 LANDED (dfb11f1, csh, 19",
+ "prev_record": [
+  "  - R966 LANDED (dfb11f1, csh, 19",
+  "  inline, the charter round): THE",
+  "  CONTENT-STRUCTURE CHARTER - the",
+  "  content-structure arc opener, no",
+  "  book ink: the folder-hierarchy",
+  "  adjudication pinned as 8 consts +",
+  "  11 bools - the frame (domain count",
+  "  9, world count 3, the two nesting",
+  "  precedents, dungeon 64 / overland",
+  "  32 tile px, the six-value dungeon",
+  "  vocabulary, the retiring 25x19",
+  "  viewport pair) and the eleven",
+  "  doctrines (content/ the data root,",
+  "  no C++ in the tree, rules migrate",
+  "  to Lua records with the testing",
+  "  move, npcs separate, mundane+magic",
+  "  items together, artifacts",
+  "  sub-domain, modules nest under",
+  "  world, expansions nest under",
+  "  parent, tile size a manifest field,",
+  "  shared tile vocabulary, asset =",
+  "  payload + manifest). The charter",
+  "  document landed as the data file",
+  "  doc/content_structure.md (106",
+  "  lines). No flips, report-026",
+  "  gap_census 3/0. Census 888->889;",
+  "  rverify GREEN 19 mutants 0 missed",
+  "  at base f7e8560; round-trip applied",
+  "  0 already 6, byte-exact at",
+  "  dfb11f1; spec 13859 bytes md5",
+  "  f8d3ae1305d3cdeab045d8154c19e749.",
+  "  The R965 record seated in the repo",
+  "  seed. The content tree does NOT",
+  "  exist yet - the R967 candidate is",
+  "  the skeleton (data_files .keeps)",
+  "  plus the monsters git-mv with its",
+  "  five touch lines. WAIT FOR GO."
+ ],
+ "gap_report": "tools/dragon_gap_report_026.md",
+ "gap_census": {
+  "closed": 3,
+  "open": 0
+ },
+ "gap_flips": [],
+ "data_files": [
+  {
+   "path": "content/rules/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/npcs/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/items/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/items/artifacts/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/spells/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/tables/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/tiles/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/objects/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/world/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/world/greyhawk/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/world/dragonlance/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/world/forgottenrealms/.keep",
+   "content": "\n"
+  },
+  {
+   "path": "content/world/forgottenrealms/karatur/.keep",
+   "content": "\n"
+  }
+ ],
+ "consts": [
+  {
+   "name": "cntTreeKeeps",
+   "value": 13,
+   "comment": "the empty-domain .keep files landing with the skeleton (content/rules through the karatur bucket)"
+  },
+  {
+   "name": "cntMonsterLua",
+   "value": 1338,
+   "comment": "the monster lua record count, unchanged by the move from monsters/monsters to content/monsters"
+  },
+  {
+   "name": "cntLoaderTouchLines",
+   "value": 6,
+   "comment": "the rewritten path lines - adnd1.cpp twice, regtest.cpp twice, tools/normalize_registry.py once, the R314 engine audit fragment once"
+  },
+  {
+   "name": "cntWorldTreeDirs",
+   "value": 4,
+   "comment": "the world-tree buckets - greyhawk, dragonlance, forgottenrealms plus the karatur expansion bucket"
+  },
+  {
+   "name": "cntLoadedFloor",
+   "value": 1313,
+   "comment": "the loaded floor expected at preflight, the census loading from content/monsters (the R924 measure)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "cntSkeletonCreated",
+   "value": true,
+   "comment": "the content/ skeleton lands via the .keep data files - no hand mkdir on the landing side"
+  },
+  {
+   "name": "cntMonstersMoved",
+   "value": true,
+   "comment": "the monster registry moves to content/monsters by the user-side git mv, staged ahead of the ritual"
+  },
+  {
+   "name": "cntLoaderPathUpdated",
+   "value": true,
+   "comment": "the six loader path lines read content/monsters after this round"
+  },
+  {
+   "name": "cntKeepEmptyDirsOnly",
+   "value": true,
+   "comment": "the .keep rule honored - content/monsters carries no .keep, it is full"
+  },
+  {
+   "name": "cntLoaderStaysEngine",
+   "value": true,
+   "comment": "MonsterRegistry and MonsterXp stay in monsters/ - the loader is engine code, outside the content tree"
+  }
+ ],
+ "chains": [],
+ "switches": [],
+ "tables": [],
+ "file_patches": [
+  {
+   "file": "adnd1.cpp",
+   "from": "loadDirectory(\"monsters/monsters\")",
+   "to": "loadDirectory(\"content/monsters\")",
+   "note": "the registry loadDirectory call"
+  },
+  {
+   "file": "adnd1.cpp",
+   "from": "Could not load monsters/monsters/*.lua.",
+   "to": "Could not load content/monsters/*.lua.",
+   "note": "the registry error string"
+  },
+  {
+   "file": "regtest.cpp",
+   "from": "monsters/monsters/a/aarakocra.lua",
+   "to": "content/monsters/a/aarakocra.lua",
+   "note": "the R71fix comment"
+  },
+  {
+   "file": "regtest.cpp",
+   "from": "std::string dir = \"monsters/monsters/\";",
+   "to": "std::string dir = \"content/monsters/\";",
+   "note": "the regtest loader walk"
+  },
+  {
+   "file": "tools/normalize_registry.py",
+   "from": "every .lua def in monsters/monsters",
+   "to": "every .lua def in content/monsters",
+   "note": "the normalizer docstring path"
+  },
+  {
+   "file": "rules/audits/r314_crossbow_and_aquatic_eng.h",
+   "from": "\"monsters/monsters/l\"",
+   "to": "\"content/monsters/l\"",
+   "note": "the R314 engine audit letter-dir load"
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['cntTreeKeeps']() != 13 or m['cntMonsterLua']() != 1338 or m['cntWorldTreeDirs']() != 4",
+   "note": "the frame - thirteen keeps, 1338 records unchanged, four world-tree buckets"
+  },
+  {
+   "expr": "m['cntLoaderTouchLines']() != 6 or m['cntLoadedFloor']() != 1313",
+   "note": "the loader - six rewritten lines, the 1313 loaded floor from the new path"
+  },
+  {
+   "expr": "m['cntSkeletonCreated']() != 1 or m['cntKeepEmptyDirsOnly']() != 1",
+   "note": "the skeleton - data files create it, no keep in a full directory"
+  },
+  {
+   "expr": "m['cntMonstersMoved']() != 1 or m['cntLoaderPathUpdated']() != 1",
+   "note": "the move - the registry under content/monsters, every path line rewritten"
+  },
+  {
+   "expr": "m['cntLoaderStaysEngine']() != 1",
+   "note": "the charter held - the loader code stays in monsters/, no C++ in the content tree"
+  }
+ ],
+ "table_checks": [],
+ "header_sections": {
+  "the tree frame": [
+   {
+    "kind": "const",
+    "name": "cntTreeKeeps"
+   },
+   {
+    "kind": "const",
+    "name": "cntMonsterLua"
+   },
+   {
+    "kind": "const",
+    "name": "cntLoaderTouchLines"
+   },
+   {
+    "kind": "const",
+    "name": "cntWorldTreeDirs"
+   },
+   {
+    "kind": "const",
+    "name": "cntLoadedFloor"
+   }
+  ],
+  "the tree facts": [
+   {
+    "kind": "bool",
+    "name": "cntSkeletonCreated"
+   },
+   {
+    "kind": "bool",
+    "name": "cntMonstersMoved"
+   },
+   {
+    "kind": "bool",
+    "name": "cntLoaderPathUpdated"
+   },
+   {
+    "kind": "bool",
+    "name": "cntKeepEmptyDirsOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "cntLoaderStaysEngine"
+   }
+  ]
+ }
+}

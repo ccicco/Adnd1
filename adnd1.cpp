@@ -2022,10 +2022,10 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
 // ----------------------------------------------------------------------------
 
 int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, int nCmdShow) {
-    int monstersLoaded = g_app.registry.loadDirectory("monsters/monsters");
+    int monstersLoaded = g_app.registry.loadDirectory("content/monsters");
     if (monstersLoaded <= 0) {
         MessageBoxA(nullptr,
-            "Could not load monsters/monsters/*.lua.\n"
+            "Could not load content/monsters/*.lua.\n"
             "Run the game from the project root.",
             "Adnd1", MB_OK | MB_ICONWARNING);
     }

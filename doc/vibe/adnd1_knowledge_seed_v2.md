@@ -29625,6 +29625,43 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   TD 27 (the Sullin levels 7-9, the brawling
   sequel) with the TD 27 intake unadjudicated,
   awaiting the Curtiss-provided scan. WAIT FOR GO.
+  - R966 LANDED (dfb11f1, csh, 19
+  inline, the charter round): THE
+  CONTENT-STRUCTURE CHARTER - the
+  content-structure arc opener, no
+  book ink: the folder-hierarchy
+  adjudication pinned as 8 consts +
+  11 bools - the frame (domain count
+  9, world count 3, the two nesting
+  precedents, dungeon 64 / overland
+  32 tile px, the six-value dungeon
+  vocabulary, the retiring 25x19
+  viewport pair) and the eleven
+  doctrines (content/ the data root,
+  no C++ in the tree, rules migrate
+  to Lua records with the testing
+  move, npcs separate, mundane+magic
+  items together, artifacts
+  sub-domain, modules nest under
+  world, expansions nest under
+  parent, tile size a manifest field,
+  shared tile vocabulary, asset =
+  payload + manifest). The charter
+  document landed as the data file
+  doc/content_structure.md (106
+  lines). No flips, report-026
+  gap_census 3/0. Census 888->889;
+  rverify GREEN 19 mutants 0 missed
+  at base f7e8560; round-trip applied
+  0 already 6, byte-exact at
+  dfb11f1; spec 13859 bytes md5
+  f8d3ae1305d3cdeab045d8154c19e749.
+  The R965 record seated in the repo
+  seed. The content tree does NOT
+  exist yet - the R967 candidate is
+  the skeleton (data_files .keeps)
+  plus the monsters git-mv with its
+  five touch lines. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
