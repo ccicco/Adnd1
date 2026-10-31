@@ -30112,6 +30112,45 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   byte-matched 44/44 on the
   landed records before the
   batch. WAIT FOR GO.
+  - R978 LANDED (15c273a, dp10, 7
+    inline, the promotion batch
+    ten): THE DRAGON PROMOTION
+    BATCH TEN - the arc round
+    thirteen, issues 19 through 20
+    complete: dws (the wish-spell
+    doctrine opener, 117 items),
+    sdm (the Origins 78 tournament
+    opener, 119), d19 (31), t20
+    (the Polynesian pantheon
+    opener, 90), dst (the
+    600-death campaign opener,
+    67), d2c (33) - 6 records,
+    457 model items, 149970 bytes
+    Lua, every record parsed back
+    equal. 4 consts + 3 bools:
+    dp10BatchRecords=6,
+    dp10ModelItems=457,
+    dp10CumulativeRecords=56,
+    dp10SetRoundsRemaining=23,
+    dp10RecordsPromoted,
+    dp10DiffBackGreen,
+    dp10IssuesNineteenTwenty
+    Complete. Census 900->901; no
+    flips; gap report 026 stays
+    3/0. Double-run applied 11/
+    already 11, verify at
+    15c273a already 11 with all
+    56 records on disk (1305456
+    bytes Lua); rverify GREEN 7
+    mutants 0 missed at base
+    4b50188; spec 164099 bytes
+    md5 ecf6d0c1bf574f17b0acf17b
+    5109d7d8, canvas r978-spec.
+    The R977 record seated in the
+    repo seed. The lib rebuilt and
+    byte-matched 50/50 on the
+    landed records before the
+    batch. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
