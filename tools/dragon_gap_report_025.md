@@ -69,9 +69,9 @@ Conquest equipment history - the Cortez and Pizarro
 expeditions, the quilted doublets, the Burgonet and
 the morion). The flip closes all three boxes.
 
-- [ ] **The issue-25 opener chains part one** (print 12-19, the opener set: the Gygax social class essay, Armies of the Renaissance Part III, Will the Real Orc Please Step Forward)
-- [ ] **The issue-25 opener chains part two** (print 37-40 + 42, the table round: the Xochiyaayotl war game rules, the Varieties of Vampires roster)
-- [ ] **The issue-25 opener chains part three** (print 35-37 + 43-45, the commentary set: Flower Wars, To Select a Mythos, Arms and Armor of the Conquistadores)
+- [x] **The issue-25 opener chains part one** (print 12-19, the opener set: the Gygax social class essay, Armies of the Renaissance Part III, Will the Real Orc Please Step Forward)
+- [x] **The issue-25 opener chains part two** (print 37-40 + 42, the table round: the Xochiyaayotl war game rules, the Varieties of Vampires roster)
+- [x] **The issue-25 opener chains part three** (print 35-37 + 43-45, the commentary set: Flower Wars, To Select a Mythos, Arms and Armor of the Conquistadores)
 
 Drop (Curtiss, 2026-10-31, none contested): the cover
 (print 1, prints Vol. III No. II - the roman II for 11,

@@ -662,6 +662,7 @@
 #include "rules/t25.h"  // R958: the Dragon issue-25 opener part one, the three-chain opener set
 #include "rules/s25.h"  // R959: the Dragon issue-25 opener part two, the war game and the vampire roster table round
 #include "rules/k25.h"  // R960: the Dragon issue-25 opener part three, the three-chain commentary set
+#include "rules/l25.h"  // R961: the Dragon issue-25 box closing round, the fourth four-round walk complete
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4771,6 +4772,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r961_batch.h"  // R961: R961 Dragon issue-25 closure audit
 #include "rules/audits/r960_batch.h"  // R960: R960 issue-25 commentary set audit
 #include "rules/audits/r959_batch.h"  // R959: R959 issue-25 table round audit
 #include "rules/audits/r958_batch.h"  // R958: R958 issue-25 opener set audit

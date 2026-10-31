@@ -29432,6 +29432,49 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   and the Flower Wars and Conquistadores chains stay
   period-piece-thin for the R960 adjudication. WAIT
   FOR GO.
+  - R960 LANDED (53932ed, k25, 70 inline, the commentary set):
+  The Dragon issue-25 opener part three - the three-chain
+  commentary set, three of the eight Curtiss-called chains:
+  the William B. Fawcett War of Flowers commentary (print
+  35-37) - the tribute empire at its ritual numbers (the
+  twenty day delegation waits, the three State visits, the
+  four phratries, the 200-400 man company, the twenty man
+  platoon with its flag glyph, the four main weapons, the
+  five-clan house of darts, the three knights orders) with
+  the ethos bools (tribute not absorption, the no-hostage
+  guarantee gap, no drills, the season ban, no siege
+  weapons, captives over kills, the veteran apprenticeship,
+  the warrior-heaven guarantee, the cotton adoption), the
+  Bob Bledsaw To Select a Mythos guide (print 43) - the
+  mythos craft calls (the three drawn mythologies, the
+  well-developed trait, the limited nexus gates, the clean
+  slate, no reality restraints, the D&D non-gunpowder fit,
+  the living-faith exclusions, defeatable gods, the tables
+  not dogma), and the Michael H. Kluwer Conquistadores
+  commentary (print 44-45) - the expedition ledger (Cortez
+  1518 at 600-17-10 and the Cozumel review 508-32-13-100,
+  the later 40 cavalry and 80 gunners, Pizarro 1531 at
+  180-27-2 with the 62-102 march, the thousand man ceiling,
+  the 300 year span) with the weapon notes (the pike
+  12-18 feet, the halberd one in ten or twenty, the three
+  pound matchlock with the three foot barrel and the
+  100-200 yard range, the 120 yard crossbow, the 50-75
+  percent pike share, the four inch morion comb, the two
+  foot buckler). 70 inline = 42 consts + 28 bools, 11
+  examples, no tables, no data files. Census 882->883;
+  rverify GREEN 70 mutants 0 missed at base 6a1245c;
+  round-trip 27268 bytes md5
+  7b07d622e6edd2bb97da7f9a0326c35b, byte-exact at 53932ed
+  (fresh tarball re-run applied 0 already 5). The Flower
+  Wars and Conquistadores chains stayed in at the R960
+  adjudication per the standing eight-chain call - the
+  banner records the call; the fix note: the R959 record
+  first line was restored to the house The-tail format
+  before this seat. Part three of the eight-chain shape
+  complete; the R961 l25 flip next - all three report-025
+  boxes flip at the single round and the issue closes.
+  The two watches ride to TD 26 (the Sullin levels 7-9,
+  the brawling sequel). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
