@@ -29038,6 +29038,46 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   folio-vs-page check, chain call, drop list, then the round plan);
   the Sullin levels 7-9 and the brawling long-term-effects watches
   come due there. WAIT FOR GO.
+  - R950 LANDED (df703c4, t23, 82 inline, opener part one): The
+  Dragon issue-23 opener part one, the variant triptych - three of
+  the ten chains: the En Garde solitaire dueling method (print 5-6,
+  the Laking shorthand - the CE formula, the defense modifier, the
+  fifty-percent base, the eleven-band critical hits grid with its
+  die-size print errors), the Mind Wrestling psionic track (print
+  10, the Swycaffer seventeen-space double track), and the
+  Starship Warden water monsters (print 11+13, the Hursh variant,
+  twenty creatures, ten columns). 82 inline = 50 consts + 22 bools
+  + 10 table cols, 14 examples, 7 table_checks, 2 tables
+  (t23CritHits 11 rows x 4, t23Warden 20 rows x 6); the intake
+  seats the report-023 gap report plus all thirty-two transcripts
+  (33 data files). Census 872->873; rverify GREEN 236 mutants 0
+  missed at base 76a37e2; round-trip 188567 bytes md5
+  789cd28fcf6d563fc538e1de5ed17c5a, byte-exact at df703c4 (fresh
+  tarball re-run applied 0 already 38). NEW INTAKE-SHAPE LESSON:
+  an intake round's gap_report must point at the PREVIOUS issue's
+  landed report (022, 3 closed 0 open) while the new report and
+  transcripts ride as data_files - the engine reads the report
+  before applying patches, so pointing at the new report on a
+  fresh tree aborts as the mixed applied/already state (the R420
+  lesson in a new coat; R946 already held this shape). Print
+  catches pinned as scanned: Sorceror's for Sorcerer's Scroll in
+  the contents, Good News listed at 18 but printing at 6, the
+  Convention Schedule listed at 21 but printing at 18, Geoffrey
+  vs George Laking bylines, Jaques for Jacques twice then
+  Jacques, the letter O for a zero defense modifier, 16-sided and
+  120-sided die rolls proven 6/20 by the worked example (Karl
+  base 20 plus 6 for 26), ration for ratio, the Warden table's
+  duplicated Description column, Sybiotic for Symbiotic,
+  unfootnoted asterisks, Green Death 3-vs-4 melee turns, stre of
+  13 truncated, its-for-it's. Part-two scan already pinned
+  (print 15-18, the Lower Planes table round): forth coming as two
+  words, quadrapedal etal, the eyes formula 1 + 1, the mouth line
+  skipping 4, the strength table overlap at 45, Df. for cf.
+  Watches: the Sullin levels 7-9 and the brawling sequel still
+  empty in TD 23 - both ride to TD 24. Next: R951 part two, the
+  Random Generation of Creatures from the Lower Planes table
+  round; prefix scan fresh at the then-HEAD (s23 next). WAIT FOR
+  GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

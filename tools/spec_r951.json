@@ -1,0 +1,2553 @@
+{
+ "round": 951,
+ "prefix": "s23",
+ "census_before": 873,
+ "title": "The Dragon issue-23 opener part two: Random Generation of Creatures from the Lower Planes (census 874)",
+ "banner": {
+  "title": "The Dragon issue-23 opener part two - the Lower Planes creature generator",
+  "provenance": "The part-two round of the issue-23 four-round shape - the single chain of the Sorceror Scroll DMG preview, the table round of the walk: the Random Generation of Creatures from the Lower Planes system, Gary Gygax on the Abyss, Tarterus, Hades, Gehenna and Hell. Pinned from The Dragon Vol. III No. 9 (March 1979) print 15 through 18 at extract/dragon/023, PRINT FOLIO = PDF PAGE this issue, the transcript of the Curtiss-provided scan. The Rihn and Pickens antecedents ride the frame; the EXXEDUUNUSSE sign-off rides the general characteristics; the two inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in issue 23 and ride to TD 24."
+ },
+ "header_file": "rules/s23.h",
+ "audit_file": "rules/audits/r951_batch.h",
+ "audit_label": "R951 issue-23 Lower Planes generation audit",
+ "audit_anchor": "#include \"rules/audits/r950_batch.h\"  // R950: R950 issue-23 variant triptych audit",
+ "audit_comment": "THE SORCEROR SCROLL LOWER-PLANES GENERATOR AUDIT - the issue-23 part-two table round, the Random Generation of Creatures from the Lower Planes system headed into the forth coming DUNGEON MASTERS GUIDE. The base stat block, the twenty-three appearance and generation grids, the strength-to-hit-damage bands, the attack forms, the special attacks and defenses and the optional-poison footnote all ride this single chain, print 15 through 18.",
+ "gap_report": "tools/dragon_gap_report_023.md",
+ "gap_census": {
+  "closed": 0,
+  "open": 3
+ },
+ "gap_flips": [],
+ "include_after": "#include \"rules/t23.h\"  // R950: the Dragon issue-23 opener part one, the three-chain variant round",
+ "include_comment": "the Dragon issue-23 opener part two, the Lower Planes creature-generation table round",
+ "header_sections": {
+  "the Sorceror Scroll lower-planes generator (print 15-18)": [
+   {
+    "kind": "const",
+    "name": "s23LowerPlanes"
+   },
+   {
+    "kind": "const",
+    "name": "s23RihnIssue"
+   },
+   {
+    "kind": "const",
+    "name": "s23PickensIssue"
+   },
+   {
+    "kind": "const",
+    "name": "s23FreqBands"
+   },
+   {
+    "kind": "const",
+    "name": "s23AppearMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23AppearMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23AcDice"
+   },
+   {
+    "kind": "const",
+    "name": "s23AcWorst"
+   },
+   {
+    "kind": "const",
+    "name": "s23AcBest"
+   },
+   {
+    "kind": "const",
+    "name": "s23MoveDie"
+   },
+   {
+    "kind": "const",
+    "name": "s23MoveRerollFrom"
+   },
+   {
+    "kind": "const",
+    "name": "s23MoveRerollDie"
+   },
+   {
+    "kind": "const",
+    "name": "s23MoveIncrement"
+   },
+   {
+    "kind": "const",
+    "name": "s23MoveBonusMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23SwimLo"
+   },
+   {
+    "kind": "const",
+    "name": "s23SwimHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23FlyLo"
+   },
+   {
+    "kind": "const",
+    "name": "s23FlyHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23HdBase"
+   },
+   {
+    "kind": "const",
+    "name": "s23HdDice"
+   },
+   {
+    "kind": "const",
+    "name": "s23HdMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23HdMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23HdBonusOn"
+   },
+   {
+    "kind": "const",
+    "name": "s23HdBonusMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23HdBonusMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23MrPerDie"
+   },
+   {
+    "kind": "const",
+    "name": "s23IntBands"
+   },
+   {
+    "kind": "const",
+    "name": "s23SizeDice"
+   },
+   {
+    "kind": "const",
+    "name": "s23SizeSmallHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23SizeMedHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23PsiNil"
+   },
+   {
+    "kind": "const",
+    "name": "s23PsiBase"
+   },
+   {
+    "kind": "const",
+    "name": "s23PsiDie"
+   },
+   {
+    "kind": "const",
+    "name": "s23PsiMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23PsiMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23AtkModeCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23AtkModeDie"
+   },
+   {
+    "kind": "const",
+    "name": "s23DefModeCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23DefModeDie"
+   },
+   {
+    "kind": "const",
+    "name": "s23DefBandWidth"
+   },
+   {
+    "kind": "const",
+    "name": "s23HornsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23EyesMid"
+   },
+   {
+    "kind": "const",
+    "name": "s23EyesHighMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23EyesHighMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23MouthAvgLo"
+   },
+   {
+    "kind": "const",
+    "name": "s23MouthAvgHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23MouthHugeLo"
+   },
+   {
+    "kind": "const",
+    "name": "s23MouthHugeHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23BipedLo"
+   },
+   {
+    "kind": "const",
+    "name": "s23BipedHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23QuadLo"
+   },
+   {
+    "kind": "const",
+    "name": "s23QuadHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23ArmsMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23BipedArmsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23OtherArmsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23HandsAlikeHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23HandsDiffLo"
+   },
+   {
+    "kind": "const",
+    "name": "s23TailLo"
+   },
+   {
+    "kind": "const",
+    "name": "s23TailHi"
+   },
+   {
+    "kind": "const",
+    "name": "s23AntlerDiceMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23AntlerSidesMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23AntlerDiceMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23AntlerSidesMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23MouthDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23MouthDmgMaxDice"
+   },
+   {
+    "kind": "const",
+    "name": "s23MouthDmgMaxSides"
+   },
+   {
+    "kind": "const",
+    "name": "s23TailDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23TailDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23HandDiceMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23HandSidesMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23HandDiceMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23HandSidesMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23FootDiceMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23FootSidesMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23FootDiceMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23FootSidesMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23HugeClawDice"
+   },
+   {
+    "kind": "const",
+    "name": "s23HugeClawSides"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpineDmgMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpineDmgMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23StrSubFifty"
+   },
+   {
+    "kind": "const",
+    "name": "s23StrSubSeventyFive"
+   },
+   {
+    "kind": "const",
+    "name": "s23StrSubNinety"
+   },
+   {
+    "kind": "const",
+    "name": "s23StrSubNinetyNine"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpecAtkMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpecAtkMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpecAtkOptions"
+   },
+   {
+    "kind": "const",
+    "name": "s23LesserSpellMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23LesserSpellMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23PowerSpellMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23PowerSpellMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpecDefMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpecDefMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpecDefOptions"
+   },
+   {
+    "kind": "const",
+    "name": "s23RegenBase"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpellImmuMin"
+   },
+   {
+    "kind": "const",
+    "name": "s23SpellImmuMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23MetalKinds"
+   },
+   {
+    "kind": "const",
+    "name": "s23WeaponImmuMinPlus"
+   },
+   {
+    "kind": "const",
+    "name": "s23PoisonChance"
+   },
+   {
+    "kind": "const",
+    "name": "s23InsanityRoundsMax"
+   },
+   {
+    "kind": "const",
+    "name": "s23WeaknessPoints"
+   },
+   {
+    "kind": "const",
+    "name": "s23OtherAbilities"
+   },
+   {
+    "kind": "const",
+    "name": "s23HeadCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23AdornCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23VisageCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23EarsCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23EyeFormCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23NoseCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23MouthCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23BipedCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23QuadCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23CharCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23BackCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23SkinCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23WingsCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23ColorCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23TailTypeCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23OdorCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23HandTypeCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23FeetCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23BirdFootCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23MoveCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23MrVarCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23PoisonCount"
+   },
+   {
+    "kind": "const",
+    "name": "s23StrCount"
+   },
+   {
+    "kind": "bool",
+    "name": "s23OfficialApproach"
+   },
+   {
+    "kind": "bool",
+    "name": "s23DmgPreview"
+   },
+   {
+    "kind": "bool",
+    "name": "s23RihnPickensThanks"
+   },
+   {
+    "kind": "bool",
+    "name": "s23FormatMonsterManual"
+   },
+   {
+    "kind": "bool",
+    "name": "s23CircumstancesDictate"
+   },
+   {
+    "kind": "bool",
+    "name": "s23EyesPlusCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s23MouthFourCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s23SpecialEffectsMinimum"
+   },
+   {
+    "kind": "bool",
+    "name": "s23StrOverlapCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s23ImmunityOverFourConditional"
+   },
+   {
+    "kind": "bool",
+    "name": "s23MetalExcludesMagic"
+   },
+   {
+    "kind": "bool",
+    "name": "s23WeaponImmunityMagicalOnly"
+   },
+   {
+    "kind": "bool",
+    "name": "s23SpellImmunityPredetermined"
+   },
+   {
+    "kind": "bool",
+    "name": "s23AudialNegatesSurprise"
+   },
+   {
+    "kind": "bool",
+    "name": "s23VisualInfravisual"
+   },
+   {
+    "kind": "bool",
+    "name": "s23ExxeduunusseSignoff"
+   },
+   {
+    "kind": "bool",
+    "name": "s23ForthComingCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s23QuadrapedalEtalCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s23DfForCfCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s23PredominateCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s23BirdAsteriskCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s23DefEtcCatch"
+   },
+   {
+    "kind": "bool",
+    "name": "s23TarterusCanon"
+   },
+   {
+    "kind": "table",
+    "name": "s23Head"
+   },
+   {
+    "kind": "table",
+    "name": "s23HeadAdorn"
+   },
+   {
+    "kind": "table",
+    "name": "s23Visage"
+   },
+   {
+    "kind": "table",
+    "name": "s23Ears"
+   },
+   {
+    "kind": "table",
+    "name": "s23EyeForm"
+   },
+   {
+    "kind": "table",
+    "name": "s23Nose"
+   },
+   {
+    "kind": "table",
+    "name": "s23Mouth"
+   },
+   {
+    "kind": "table",
+    "name": "s23BipedTorso"
+   },
+   {
+    "kind": "table",
+    "name": "s23QuadTorso"
+   },
+   {
+    "kind": "table",
+    "name": "s23Character"
+   },
+   {
+    "kind": "table",
+    "name": "s23Back"
+   },
+   {
+    "kind": "table",
+    "name": "s23Skin"
+   },
+   {
+    "kind": "table",
+    "name": "s23Wings"
+   },
+   {
+    "kind": "table",
+    "name": "s23Color"
+   },
+   {
+    "kind": "table",
+    "name": "s23Tail"
+   },
+   {
+    "kind": "table",
+    "name": "s23Odor"
+   },
+   {
+    "kind": "table",
+    "name": "s23Hand"
+   },
+   {
+    "kind": "table",
+    "name": "s23Feet"
+   },
+   {
+    "kind": "table",
+    "name": "s23BirdFeet"
+   },
+   {
+    "kind": "table",
+    "name": "s23Move"
+   },
+   {
+    "kind": "table",
+    "name": "s23MrVar"
+   },
+   {
+    "kind": "table",
+    "name": "s23Poison"
+   },
+   {
+    "kind": "table",
+    "name": "s23Strength"
+   }
+  ]
+ },
+ "consts": [
+  {
+   "name": "s23LowerPlanes",
+   "value": 5,
+   "comment": "the five named lower planes - the Abyss, Tarterus, Hades, Gehenna and Hell the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23RihnIssue",
+   "value": 20,
+   "comment": "the Gregory Rihn Demonology Made Easy article that prompted the system, TD 20 the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PickensIssue",
+   "value": 13,
+   "comment": "the Jon Pickens random demons article re-read for the system, TD 13 the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23FreqBands",
+   "value": 3,
+   "comment": "the frequency bands - common, uncommon or rare on the d6 the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AppearMin",
+   "value": 1,
+   "comment": "the number appearing floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AppearMax",
+   "value": 8,
+   "comment": "the number appearing ceiling of two to eight the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AcDice",
+   "value": 4,
+   "comment": "the armor class d4 - zero through minus three the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AcWorst",
+   "value": 0,
+   "comment": "the worst armor class of the range, zero the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AcBest",
+   "value": -3,
+   "comment": "the best armor class of the range, minus three the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MoveDie",
+   "value": 8,
+   "comment": "the base move d8 with six through eight rolling the d4 reroll the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MoveRerollFrom",
+   "value": 6,
+   "comment": "the d8 face where the move rerolls on the d4 the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MoveRerollDie",
+   "value": 4,
+   "comment": "the reroll die for the base move the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MoveIncrement",
+   "value": 3,
+   "comment": "the three-inch increments added to swimming or flying speed the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MoveBonusMax",
+   "value": 4,
+   "comment": "the one-to-four increments of the speed bonus the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SwimLo",
+   "value": 1,
+   "comment": "the swimming d6 floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SwimHi",
+   "value": 2,
+   "comment": "the swimming d6 ceiling of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23FlyLo",
+   "value": 3,
+   "comment": "the flying d6 floor of three the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23FlyHi",
+   "value": 6,
+   "comment": "the flying d6 ceiling of six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HdBase",
+   "value": 6,
+   "comment": "the hit die formula base, d4 plus six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HdDice",
+   "value": 4,
+   "comment": "the hit die formula die of four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HdMin",
+   "value": 7,
+   "comment": "the hit dice floor of seven the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HdMax",
+   "value": 10,
+   "comment": "the hit dice ceiling of ten the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HdBonusOn",
+   "value": 4,
+   "comment": "the second d4 face of four that grants bonus hit points per die the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HdBonusMin",
+   "value": 1,
+   "comment": "the bonus hit points per hit die floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HdBonusMax",
+   "value": 4,
+   "comment": "the bonus hit points per hit die ceiling of four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MrPerDie",
+   "value": 5,
+   "comment": "the standard magic resistance of five percent per hit die the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23IntBands",
+   "value": 4,
+   "comment": "the intelligence bands - low, average, very or high on the d4 the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SizeDice",
+   "value": 8,
+   "comment": "the size d8 the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SizeSmallHi",
+   "value": 1,
+   "comment": "the size d8 ceiling of the small band, one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SizeMedHi",
+   "value": 4,
+   "comment": "the size d8 ceiling of the medium band, two through four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PsiNil",
+   "value": 90,
+   "comment": "the ninety percent psionic nil chance the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PsiBase",
+   "value": 95,
+   "comment": "the psionic ability roll base, d20 plus ninety-five the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PsiDie",
+   "value": 20,
+   "comment": "the psionic ability roll die of twenty the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PsiMin",
+   "value": 96,
+   "comment": "the psionic ability floor of ninety-six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PsiMax",
+   "value": 115,
+   "comment": "the psionic ability ceiling of one hundred fifteen the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AtkModeCount",
+   "value": 4,
+   "comment": "the four attack modes A through D on the d4 the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AtkModeDie",
+   "value": 4,
+   "comment": "the attack mode die of four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23DefModeCount",
+   "value": 3,
+   "comment": "the three defense modes F through H on the d6 the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23DefModeDie",
+   "value": 6,
+   "comment": "the defense mode die of six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23DefBandWidth",
+   "value": 2,
+   "comment": "the two-face defense bands - F on one to two, F and G on three to four, and so on the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HornsMax",
+   "value": 4,
+   "comment": "the horns adornment rolled one to four in the appearance table the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23EyesMid",
+   "value": 2,
+   "comment": "the eyes result of two on the d6 two-to-four band the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23EyesHighMin",
+   "value": 3,
+   "comment": "the eyes result floor of three on the d6 five-to-six band the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23EyesHighMax",
+   "value": 4,
+   "comment": "the eyes result ceiling of four on the d6 five-to-six band the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MouthAvgLo",
+   "value": 2,
+   "comment": "the average-mouth d6 floor of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MouthAvgHi",
+   "value": 3,
+   "comment": "the average-mouth d6 ceiling of three the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MouthHugeLo",
+   "value": 5,
+   "comment": "the huge-mouth d6 floor of five the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MouthHugeHi",
+   "value": 6,
+   "comment": "the huge-mouth d6 ceiling of six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23BipedLo",
+   "value": 1,
+   "comment": "the bipedal d6 floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23BipedHi",
+   "value": 4,
+   "comment": "the bipedal d6 ceiling of four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23QuadLo",
+   "value": 5,
+   "comment": "the quadrapedal d6 floor of five the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23QuadHi",
+   "value": 6,
+   "comment": "the quadrapedal d6 ceiling of six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23ArmsMin",
+   "value": 2,
+   "comment": "the arms floor of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23BipedArmsMax",
+   "value": 4,
+   "comment": "the bipedal arms choices, two or four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23OtherArmsMax",
+   "value": 6,
+   "comment": "the otherwise arms choices, two, four or six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HandsAlikeHi",
+   "value": 3,
+   "comment": "the all-alike hands d6 ceiling of three the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HandsDiffLo",
+   "value": 4,
+   "comment": "the different hands d6 floor of four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23TailLo",
+   "value": 1,
+   "comment": "the tail d6 floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23TailHi",
+   "value": 4,
+   "comment": "the tail d6 ceiling of four - one to four the creature has a tail the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AntlerDiceMin",
+   "value": 1,
+   "comment": "the antlers-or-horns damage floor, one die of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AntlerSidesMin",
+   "value": 2,
+   "comment": "the antlers-or-horns damage floor sides of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AntlerDiceMax",
+   "value": 2,
+   "comment": "the antlers-or-horns damage ceiling of two dice the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AntlerSidesMax",
+   "value": 8,
+   "comment": "the antlers-or-horns damage ceiling sides of eight the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MouthDmgMin",
+   "value": 1,
+   "comment": "the mouth damage floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MouthDmgMaxDice",
+   "value": 3,
+   "comment": "the mouth damage ceiling of three dice the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MouthDmgMaxSides",
+   "value": 12,
+   "comment": "the mouth damage ceiling sides of twelve the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23TailDmgMin",
+   "value": 1,
+   "comment": "the tail damage floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23TailDmgMax",
+   "value": 6,
+   "comment": "the tail damage ceiling of six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HandDiceMin",
+   "value": 1,
+   "comment": "the hands damage floor, one die of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HandSidesMin",
+   "value": 2,
+   "comment": "the hands damage floor sides of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HandDiceMax",
+   "value": 2,
+   "comment": "the hands damage ceiling of two dice the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HandSidesMax",
+   "value": 12,
+   "comment": "the hands damage ceiling sides of twelve the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23FootDiceMin",
+   "value": 1,
+   "comment": "the feet damage floor, one die of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23FootSidesMin",
+   "value": 2,
+   "comment": "the feet damage floor sides of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23FootDiceMax",
+   "value": 3,
+   "comment": "the feet damage ceiling of three dice the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23FootSidesMax",
+   "value": 12,
+   "comment": "the feet damage ceiling sides of twelve the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HugeClawDice",
+   "value": 2,
+   "comment": "the huge-clawed-hands damage rating of two dice per hit the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HugeClawSides",
+   "value": 8,
+   "comment": "the huge-clawed-hands damage sides of eight the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpineDmgMin",
+   "value": 1,
+   "comment": "the incidental spine-type damage floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpineDmgMax",
+   "value": 6,
+   "comment": "the incidental spine-type damage ceiling of six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23StrSubFifty",
+   "value": 50,
+   "comment": "the exceptional-strength subroll ceiling of the forty-five-to-sixty band, one to fifty the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23StrSubSeventyFive",
+   "value": 75,
+   "comment": "the exceptional-strength subroll ceiling of the sixty-one-to-seventy band, fifty-one to seventy-five the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23StrSubNinety",
+   "value": 90,
+   "comment": "the exceptional-strength subroll ceiling of the seventy-one-to-eighty band, seventy-six to ninety the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23StrSubNinetyNine",
+   "value": 99,
+   "comment": "the exceptional-strength subroll ceiling of the eighty-one-to-ninety band, ninety-one to ninety-nine the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpecAtkMin",
+   "value": 1,
+   "comment": "the special attacks floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpecAtkMax",
+   "value": 3,
+   "comment": "the special attacks ceiling of three the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpecAtkOptions",
+   "value": 8,
+   "comment": "the eight special attack options from ability drain to summon or gate the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23LesserSpellMin",
+   "value": 1,
+   "comment": "the lesser-creature spell and spell-like floor of one each the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23LesserSpellMax",
+   "value": 2,
+   "comment": "the lesser-creature spell and spell-like ceiling of two each the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PowerSpellMin",
+   "value": 2,
+   "comment": "the powerful-creature spells floor of two the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PowerSpellMax",
+   "value": 5,
+   "comment": "the powerful-creature spells ceiling of five the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpecDefMin",
+   "value": 1,
+   "comment": "the special defenses floor of one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpecDefMax",
+   "value": 4,
+   "comment": "the special defenses ceiling of four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpecDefOptions",
+   "value": 10,
+   "comment": "the ten special defense options from acid immunity to weapon immunity the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23RegenBase",
+   "value": 1,
+   "comment": "the regeneration base of one hit point per turn, one per round the maximum the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpellImmuMin",
+   "value": 1,
+   "comment": "the spell immunity floor of one pre-determined spell the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpellImmuMax",
+   "value": 4,
+   "comment": "the spell immunity ceiling of four pre-determined spells the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MetalKinds",
+   "value": 3,
+   "comment": "the metal immunity kinds - iron, silver or steel the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23WeaponImmuMinPlus",
+   "value": 1,
+   "comment": "the weapon immunity magic bonus floor of plus one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PoisonChance",
+   "value": 4,
+   "comment": "the optionally-poisoned chance of four in six on the double-starred parts the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23InsanityRoundsMax",
+   "value": 4,
+   "comment": "the poison insanity result of one to four rounds the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23WeaknessPoints",
+   "value": 1,
+   "comment": "the poison weakness result of one point per hit permanently lost the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23OtherAbilities",
+   "value": 3,
+   "comment": "the three optional other abilities - audial superiority, surprise capability and visual superiority the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HeadCount",
+   "value": 8,
+   "comment": "the head option count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AdornCount",
+   "value": 8,
+   "comment": "the head adornment count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23VisageCount",
+   "value": 6,
+   "comment": "the overall visage count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23EarsCount",
+   "value": 6,
+   "comment": "the ears count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23EyeFormCount",
+   "value": 6,
+   "comment": "the eye form and color count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23NoseCount",
+   "value": 6,
+   "comment": "the nose count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MouthCount",
+   "value": 6,
+   "comment": "the mouth type count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23BipedCount",
+   "value": 6,
+   "comment": "the bipedal torso count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23QuadCount",
+   "value": 7,
+   "comment": "the quadrapedal torso count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23CharCount",
+   "value": 8,
+   "comment": "the general characteristics count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23BackCount",
+   "value": 4,
+   "comment": "the back count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SkinCount",
+   "value": 10,
+   "comment": "the skin count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23WingsCount",
+   "value": 4,
+   "comment": "the wings count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23ColorCount",
+   "value": 10,
+   "comment": "the predominate color count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23TailTypeCount",
+   "value": 8,
+   "comment": "the tail type count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23OdorCount",
+   "value": 8,
+   "comment": "the body odor count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23HandTypeCount",
+   "value": 6,
+   "comment": "the hands count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23FeetCount",
+   "value": 8,
+   "comment": "the legs and feet count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23BirdFootCount",
+   "value": 6,
+   "comment": "the bird-like feet count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MoveCount",
+   "value": 5,
+   "comment": "the base move count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MrVarCount",
+   "value": 6,
+   "comment": "the magic resistance variance count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PoisonCount",
+   "value": 6,
+   "comment": "the optional-poison count the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23StrCount",
+   "value": 9,
+   "comment": "the strength band count the Sorceror Scroll lower-planes generator (print 15-18)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "s23OfficialApproach",
+   "value": true,
+   "comment": "what follows is the current official approach to lower-planes creatures the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23DmgPreview",
+   "value": true,
+   "comment": "what you read here will be included in the forth coming DUNGEON MASTERS GUIDE the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23RihnPickensThanks",
+   "value": true,
+   "comment": "the Gygax thanks to both Greg and Jon in the opening paragraph the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23FormatMonsterManual",
+   "value": true,
+   "comment": "the format is straight from the AD&D MONSTER MANUAL for ease of recording the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23CircumstancesDictate",
+   "value": true,
+   "comment": "the circumstances-must-dictate note printed three times - number appearing, percent in lair and treasure type the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23EyesPlusCatch",
+   "value": true,
+   "comment": "the print catch - the eyes count line prints the roll-one result as the formula one plus one the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MouthFourCatch",
+   "value": true,
+   "comment": "the print catch - the mouth size line skips the d4 result, one tiny, two to three average, five to six huge the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpecialEffectsMinimum",
+   "value": true,
+   "comment": "the special effects from the attack forms - poison, energy drain, heat, cold, electrical discharge, paralysis - kept to a minimum the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23StrOverlapCatch",
+   "value": true,
+   "comment": "the print catch - the strength bands overlap at forty-five, twenty-six-to-forty-five and forty-five-to-sixty the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23ImmunityOverFourConditional",
+   "value": true,
+   "comment": "the immunities above four possible only if the general class - demons, devils and the rest - has more the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23MetalExcludesMagic",
+   "value": true,
+   "comment": "the metal immunity excludes magical weaponry, iron, silver, steel or combinations the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23WeaponImmunityMagicalOnly",
+   "value": true,
+   "comment": "the weapon immunity refers to creatures hit only by magical weapons of a certain value the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23SpellImmunityPredetermined",
+   "value": true,
+   "comment": "the spell immunity must be limited to the pre-determined spells the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23AudialNegatesSurprise",
+   "value": true,
+   "comment": "the audial or visual superiority tending to negate surprise and enable detection through sound or vision the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23VisualInfravisual",
+   "value": true,
+   "comment": "the visual superiority referring to infravisual and ultravisual capabilities the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23ExxeduunusseSignoff",
+   "value": true,
+   "comment": "the mid-article sign-off gag - EXXEDUUNUSSE, BUT I NEED A VACATION, SEE YA NEXT MONTH, printed at the feet of the general characteristics the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23ForthComingCatch",
+   "value": true,
+   "comment": "the print catch - the opening paragraph prints forth coming as two words in the DMG preview sentence the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23QuadrapedalEtalCatch",
+   "value": true,
+   "comment": "the print catch - the body attributes line prints quadrapedal etal, the quadrupedal and so on the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23DfForCfCatch",
+   "value": true,
+   "comment": "the print catch - the Demonology Made Easy citation prints Df. for cf. the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23PredominateCatch",
+   "value": true,
+   "comment": "the print catch - the color list heading prints Predominate Color for predominant the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23BirdAsteriskCatch",
+   "value": true,
+   "comment": "the print catch - the bird-like head carries an asterisk footnoted two pages later with the six bird-like feet the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23DefEtcCatch",
+   "value": true,
+   "comment": "the print catch - the defense mode line ends with the bare etc., F on one to two, F and G on three to four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "name": "s23TarterusCanon",
+   "value": false,
+   "comment": "the negative pin - Tarterus is the AD&D canon spelling, not a print catch the Sorceror Scroll lower-planes generator (print 15-18)"
+  }
+ ],
+ "tables": [
+  {
+   "name": "s23Head",
+   "tag": "Hd",
+   "count": "s23HeadCount",
+   "sentinel": -99,
+   "audit_comment": "the head table - bat-like, bird-like, crocodilian, horse-like, human-like, monkey-like, snake-like, weasel-like the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23HeadOpt"
+   ],
+   "col_comments": [
+    "the head option ordinal - bat-like through weasel-like the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     7
+    ],
+    [
+     8
+    ]
+   ]
+  },
+  {
+   "name": "s23HeadAdorn",
+   "tag": "Ha",
+   "count": "s23AdornCount",
+   "sentinel": -99,
+   "audit_comment": "the head adornment table - antlers, crest or peak, horns, knobs, ridges, ruff, spines, none the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23AdornOpt"
+   ],
+   "col_comments": [
+    "the head adornment ordinal - antlers through none the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     7
+    ],
+    [
+     8
+    ]
+   ]
+  },
+  {
+   "name": "s23Visage",
+   "tag": "Vi",
+   "count": "s23VisageCount",
+   "sentinel": -99,
+   "audit_comment": "the overall visage table - gibbering-drooling, glaring-menacing, rotting, skeletal, twitching-moving, wrinkled-seamed the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23VisageOpt"
+   ],
+   "col_comments": [
+    "the overall visage ordinal - gibbering-drooling through wrinkled-seamed the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ]
+   ]
+  },
+  {
+   "name": "s23Ears",
+   "tag": "Ea",
+   "count": "s23EarsCount",
+   "sentinel": -99,
+   "audit_comment": "the ears table - dog-like, elephant-like, human tiny, human huge, trumpet-like, none the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23EarsOpt"
+   ],
+   "col_comments": [
+    "the ears ordinal - dog-like through none the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ]
+   ]
+  },
+  {
+   "name": "s23EyeForm",
+   "tag": "Ef",
+   "count": "s23EyeFormCount",
+   "sentinel": -99,
+   "audit_comment": "the eye form and color grid - small multi-faceted amber through huge protruding orange-red the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23EyeFormOpt",
+    "s23EyeColorOpt"
+   ],
+   "col_comments": [
+    "the eye form ordinal - small multi-faceted through huge protruding the Sorceror Scroll lower-planes generator (print 15-18)",
+    "the eye color ordinal - amber through orange-red the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     6
+    ]
+   ]
+  },
+  {
+   "name": "s23Nose",
+   "tag": "No",
+   "count": "s23NoseCount",
+   "sentinel": -99,
+   "audit_comment": "the nose table - flat misshapen, huge bulbous, slits only, snouted, tiny, trunk-like, if necessary the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23NoseOpt"
+   ],
+   "col_comments": [
+    "the nose ordinal - flat misshapen through trunk-like the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ]
+   ]
+  },
+  {
+   "name": "s23Mouth",
+   "tag": "Mo",
+   "count": "s23MouthCount",
+   "sentinel": -99,
+   "audit_comment": "the mouth table - fanged, mandibled, sucker-like, toothed small or ridged, toothed large, tusked the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23MouthOpt"
+   ],
+   "col_comments": [
+    "the mouth type ordinal - fanged through tusked the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ]
+   ]
+  },
+  {
+   "name": "s23BipedTorso",
+   "tag": "Bt",
+   "count": "s23BipedCount",
+   "sentinel": -99,
+   "audit_comment": "the bipedal torso table - ape-like, bear-like, bird-like, human-like, pig-like, rat-like the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23BipedOpt"
+   ],
+   "col_comments": [
+    "the bipedal torso ordinal - ape-like through rat-like the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ]
+   ]
+  },
+  {
+   "name": "s23QuadTorso",
+   "tag": "Qt",
+   "count": "s23QuadCount",
+   "sentinel": -99,
+   "audit_comment": "the quadrapedal or other torso table - amoeba-like, bison-like, crab-like, horse-like, insect-like, serpent-like or reptilian, spider-like the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23QuadOpt"
+   ],
+   "col_comments": [
+    "the quadrapedal or other torso ordinal - amoeba-like through spider-like the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     7
+    ]
+   ]
+  },
+  {
+   "name": "s23Character",
+   "tag": "Gc",
+   "count": "s23CharCount",
+   "sentinel": -99,
+   "audit_comment": "the general characteristics table - fat, long, short, thin, broad, muscled, narrow, rubbery the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23CharOpt"
+   ],
+   "col_comments": [
+    "the general characteristics ordinal - fat through rubbery the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     7
+    ],
+    [
+     8
+    ]
+   ]
+  },
+  {
+   "name": "s23Back",
+   "tag": "Bk",
+   "count": "s23BackCount",
+   "sentinel": -99,
+   "audit_comment": "the back table - humped-hunched, maned, normal, spiked-spined-ridged the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23BackOpt"
+   ],
+   "col_comments": [
+    "the back ordinal - humped-hunched through spiked-spined-ridged the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ]
+   ]
+  },
+  {
+   "name": "s23Skin",
+   "tag": "Sk",
+   "count": "s23SkinCount",
+   "sentinel": -99,
+   "audit_comment": "the skin table - bald-smooth, furred, hairy-bristled, leathery-leprous, scaled, slimed, warted-bumpy, wrinkled-folded, feathered, translucent the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23SkinOpt"
+   ],
+   "col_comments": [
+    "the skin ordinal - bald-smooth through translucent the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     7
+    ],
+    [
+     8
+    ],
+    [
+     9
+    ],
+    [
+     10
+    ]
+   ]
+  },
+  {
+   "name": "s23Wings",
+   "tag": "Wg",
+   "count": "s23WingsCount",
+   "sentinel": -99,
+   "audit_comment": "the wings-if-any table - bat-like, bird-like, insect-like, membranous or fan-like the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23WingOpt"
+   ],
+   "col_comments": [
+    "the wings ordinal - bat-like through membranous or fan-like the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ]
+   ]
+  },
+  {
+   "name": "s23Color",
+   "tag": "Cl",
+   "count": "s23ColorCount",
+   "sentinel": -99,
+   "audit_comment": "the predominate color table - blackish, bluish, brownish, grayish-whitish, greenish, orangy, pinkish, purplish, reddish, yellowish-tannish the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23ColorOpt"
+   ],
+   "col_comments": [
+    "the predominate color ordinal - blackish through yellowish-tannish the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     7
+    ],
+    [
+     8
+    ],
+    [
+     9
+    ],
+    [
+     10
+    ]
+   ]
+  },
+  {
+   "name": "s23Tail",
+   "tag": "Tl",
+   "count": "s23TailTypeCount",
+   "sentinel": -99,
+   "audit_comment": "the tail type table - barbed, dog-like, goat-like, horse-like, lion-like, pig-like, prehensile, stingered the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23TailTypeOpt"
+   ],
+   "col_comments": [
+    "the tail type ordinal - barbed through stingered the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     7
+    ],
+    [
+     8
+    ]
+   ]
+  },
+  {
+   "name": "s23Odor",
+   "tag": "Od",
+   "count": "s23OdorCount",
+   "sentinel": -99,
+   "audit_comment": "the body odor table - bloody, fishy, fecal, gangrenous, moldy, sweaty, urine, vomit the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23OdorOpt"
+   ],
+   "col_comments": [
+    "the body odor ordinal - bloody through vomit the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     7
+    ],
+    [
+     8
+    ]
+   ]
+  },
+  {
+   "name": "s23Hand",
+   "tag": "Hn",
+   "count": "s23HandTypeCount",
+   "sentinel": -99,
+   "audit_comment": "the hands table - clawed, human nailed, pincered, taloned, tentacle fingered, withered and boney the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23HandTypeOpt"
+   ],
+   "col_comments": [
+    "the hands ordinal - clawed through withered and boney the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ]
+   ]
+  },
+  {
+   "name": "s23Feet",
+   "tag": "Ft",
+   "count": "s23FeetCount",
+   "sentinel": -99,
+   "audit_comment": "the legs and feet table - clawed, hooved, human-like, insect-like, snake-like, suctioned, taloned, webbed the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23FeetOpt"
+   ],
+   "col_comments": [
+    "the legs and feet ordinal - clawed through webbed, all swimmers the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ],
+    [
+     7
+    ],
+    [
+     8
+    ]
+   ]
+  },
+  {
+   "name": "s23BirdFeet",
+   "tag": "Bf",
+   "count": "s23BirdFootCount",
+   "sentinel": -99,
+   "audit_comment": "the bird-like feet table - duck-like, hawk-like, owl-like, pelican-like, stork-like, turkey-like the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23BirdFootOpt"
+   ],
+   "col_comments": [
+    "the bird-like feet ordinal - duck-like through turkey-like the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ]
+   ]
+  },
+  {
+   "name": "s23Move",
+   "tag": "Mv",
+   "count": "s23MoveCount",
+   "sentinel": -99,
+   "audit_comment": "the base move table - six, nine, twelve, fifteen or eighteen inches the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23MoveInch"
+   ],
+   "col_comments": [
+    "the base move speeds in inches - six through eighteen the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     6
+    ],
+    [
+     9
+    ],
+    [
+     12
+    ],
+    [
+     15
+    ],
+    [
+     18
+    ]
+   ]
+  },
+  {
+   "name": "s23MrVar",
+   "tag": "Mr",
+   "count": "s23MrVarCount",
+   "sentinel": -99,
+   "audit_comment": "the magic resistance variance table - minus five, minus ten, plus five, plus ten, plus fifteen, standard the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23MrMod"
+   ],
+   "col_comments": [
+    "the magic resistance d6 variance modifier, zero the standard on six the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     -5
+    ],
+    [
+     -10
+    ],
+    [
+     5
+    ],
+    [
+     10
+    ],
+    [
+     15
+    ],
+    [
+     0
+    ]
+   ]
+  },
+  {
+   "name": "s23Poison",
+   "tag": "Ps",
+   "count": "s23PoisonCount",
+   "sentinel": -99,
+   "audit_comment": "the optional-poison save table - plus one, normal, minus one, minus two, insanity for one to four rounds, weakness one point per hit permanently lost the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23PoisonOpt",
+    "s23PoisonMod"
+   ],
+   "col_comments": [
+    "the optional-poison d6 result ordinal, one through six the Sorceror Scroll lower-planes generator (print 15-18)",
+    "the save modifier - plus one through minus two, the sentinel marking the insanity and weakness rows the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     -1
+    ],
+    [
+     4,
+     -2
+    ],
+    [
+     5,
+     -99
+    ],
+    [
+     6,
+     -99
+    ]
+   ]
+  },
+  {
+   "name": "s23Strength",
+   "tag": "St",
+   "count": "s23StrCount",
+   "sentinel": -99,
+   "audit_comment": "the strength-to-hit-damage table - the nine percentile bands from one through twenty-five to ninety-nine and double zero, the overlap at forty-five printed as scanned the Sorceror Scroll lower-planes generator (print 15-18)",
+   "cols": [
+    "s23StrLo",
+    "s23StrHi",
+    "s23StrVal",
+    "s23StrHit",
+    "s23StrDmg"
+   ],
+   "col_comments": [
+    "the strength percentile band floor the Sorceror Scroll lower-planes generator (print 15-18)",
+    "the strength percentile band ceiling, the hundred standing for double zero the Sorceror Scroll lower-planes generator (print 15-18)",
+    "the strength score of the band - seventeen through twenty the Sorceror Scroll lower-planes generator (print 15-18)",
+    "the to-hit bonus of the band - plus one through plus three the Sorceror Scroll lower-planes generator (print 15-18)",
+    "the damage bonus of the band - plus one through plus eight the Sorceror Scroll lower-planes generator (print 15-18)"
+   ],
+   "data": [
+    [
+     1,
+     25,
+     17,
+     1,
+     1
+    ],
+    [
+     26,
+     45,
+     18,
+     1,
+     2
+    ],
+    [
+     45,
+     60,
+     18,
+     1,
+     3
+    ],
+    [
+     61,
+     70,
+     18,
+     2,
+     3
+    ],
+    [
+     71,
+     80,
+     18,
+     2,
+     4
+    ],
+    [
+     81,
+     90,
+     18,
+     2,
+     5
+    ],
+    [
+     91,
+     95,
+     18,
+     3,
+     6
+    ],
+    [
+     96,
+     98,
+     19,
+     3,
+     7
+    ],
+    [
+     99,
+     100,
+     20,
+     3,
+     8
+    ]
+   ]
+  }
+ ],
+ "examples": [
+  {
+   "expr": "m['s23LowerPlanes']() != 5 or m['s23RihnIssue']() != 20 or m['s23PickensIssue']() != 13 or m['s23OfficialApproach']() != 1 or m['s23DmgPreview']() != 1",
+   "note": "the frame - the five lower planes, the Rihn and Pickens antecedents, the official approach riding into the forth coming DMG the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23FreqBands']() != 3 or m['s23AppearMax']() != 8 or m['s23AcDice']() != 4 or m['s23AcBest']() != -3 or m['s23AcWorst']() != 0",
+   "note": "the base block - the frequency bands, the number appearing ceiling, the armor class d4 from zero to minus three the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23HdBase']() != 6 or m['s23HdMax']() != 10 or m['s23HdBonusOn']() != 4 or m['s23HdBonusMax']() != 4 or m['s23MrPerDie']() != 5",
+   "note": "the hit dice and magic resistance - d4 plus six for seven to ten dice, the four-face bonus hit points, five percent per die the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23PsiNil']() != 90 or m['s23PsiBase']() != 95 or m['s23PsiDie']() != 20 or m['s23PsiMin']() != 96 or m['s23PsiMax']() != 115",
+   "note": "the psionic block - ninety percent nil, else d20 plus ninety-five for ninety-six to one hundred fifteen the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23AtkModeCount']() != 4 or m['s23DefModeCount']() != 3 or m['s23DefModeDie']() != 6 or m['s23DefBandWidth']() != 2 or m['s23DefEtcCatch']() != 1",
+   "note": "the psionic modes - A through D on the d4, F through H on the d6 in two-face bands ending at the bare etc. the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23EyesMid']() != 2 or m['s23EyesHighMin']() != 3 or m['s23EyesHighMax']() != 4 or m['s23EyesPlusCatch']() != 1 or m['s23EyeFormCount']() != 6",
+   "note": "the eyes - the two-to-four and five-to-six bands, the one-plus-one formula catch, the six-row form and color grid the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23MouthAvgHi']() != 3 or m['s23MouthHugeLo']() != 5 or m['s23MouthFourCatch']() != 1 or m['s23MouthCount']() != 6",
+   "note": "the mouth - the average and huge bands with the skipped four, the six mouth types the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23BipedHi']() != 4 or m['s23QuadLo']() != 5 or m['s23QuadCount']() != 7 or m['s23QuadrapedalEtalCatch']() != 1",
+   "note": "the body attributes - the bipedal and quadrapedal etal bands, the seven quadrapedal torso options the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23SkinCount']() != 10 or m['s23ColorCount']() != 10 or m['s23PredominateCatch']() != 1 or m['s23CharCount']() != 8",
+   "note": "the coverings - the ten skin options, the ten predominate colors, the eight general characteristics the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23TailHi']() != 4 or m['s23PoisonChance']() != 4 or m['s23InsanityRoundsMax']() != 4 or m['s23WeaknessPoints']() != 1 or m['s23TailTypeCount']() != 8",
+   "note": "the tail and poison - the one-to-four tail band, the four-in-six optional poison, the insanity and weakness rows the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23StrSubFifty']() != 50 or m['s23StrSubNinety']() != 90 or m['s23StrSubNinetyNine']() != 99 or m['s23StrOverlapCatch']() != 1",
+   "note": "the exceptional strength subrolls - the fifty, seventy-five, ninety and ninety-nine ceilings, the forty-five overlap the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23AntlerSidesMax']() != 8 or m['s23MouthDmgMaxSides']() != 12 or m['s23HandSidesMax']() != 12 or m['s23FootSidesMax']() != 12 or m['s23HugeClawDice']() != 2",
+   "note": "the attack forms - antlers to two-eight, mouth to three-twelve, hands to two-twelve, feet to three-twelve, the huge claw floor the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23SpecAtkMax']() != 3 or m['s23SpecAtkOptions']() != 8 or m['s23PowerSpellMax']() != 5 or m['s23SpecDefMax']() != 4 or m['s23SpecDefOptions']() != 10",
+   "note": "the special attacks and defenses - one to three of eight attacks, one to four of ten defenses, the two-to-five spell ceiling the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23RegenBase']() != 1 or m['s23SpellImmuMax']() != 4 or m['s23MetalKinds']() != 3 or m['s23WeaponImmuMinPlus']() != 1 or m['s23ImmunityOverFourConditional']() != 1",
+   "note": "the defense limits - the regeneration base, the one-to-four pre-determined spells, the three metals, the plus-one weapon floor the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23ForthComingCatch']() != 1 or m['s23DfForCfCatch']() != 1 or m['s23BirdAsteriskCatch']() != 1 or m['s23ExxeduunusseSignoff']() != 1",
+   "note": "the print-catch roll - the two-word forth coming, the Df. citation, the bird asterisk, the EXXEDUUNUSSE vacation sign-off the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23OtherAbilities']() != 3 or m['s23TarterusCanon']() != 0 or m['s23CircumstancesDictate']() != 1",
+   "note": "the closing notes - the three optional abilities, the Tarterus canon pin, the thrice circumstances-must-dictate the Sorceror Scroll lower-planes generator (print 15-18)"
+  }
+ ],
+ "table_checks": [
+  {
+   "expr": "m['s23HeadOpt'](0) != 1 or m['s23HeadOpt'](7) != 8",
+   "note": "the head spot check - bat-like one, weasel-like eight the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23AdornOpt'](0) != 1 or m['s23AdornOpt'](7) != 8",
+   "note": "the adornment spot check - antlers one, none eight the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23VisageOpt'](0) != 1 or m['s23VisageOpt'](5) != 6",
+   "note": "the visage spot check - gibbering-drooling one, wrinkled-seamed six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23EarsOpt'](0) != 1 or m['s23EarsOpt'](5) != 6",
+   "note": "the ears spot check - dog-like one, none six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23EyeFormOpt'](0) != 1 or m['s23EyeColorOpt'](0) != 1 or m['s23EyeFormOpt'](5) != 6 or m['s23EyeColorOpt'](5) != 6",
+   "note": "the eye grid spot check - small multi-faceted amber, huge protruding orange-red the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23NoseOpt'](0) != 1 or m['s23NoseOpt'](5) != 6",
+   "note": "the nose spot check - flat misshapen one, trunk-like six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23MouthOpt'](0) != 1 or m['s23MouthOpt'](5) != 6",
+   "note": "the mouth type spot check - fanged one, tusked six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23BipedOpt'](0) != 1 or m['s23BipedOpt'](5) != 6",
+   "note": "the bipedal torso spot check - ape-like one, rat-like six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23QuadOpt'](0) != 1 or m['s23QuadOpt'](6) != 7",
+   "note": "the quadrapedal torso spot check - amoeba-like one, spider-like seven the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23CharOpt'](0) != 1 or m['s23CharOpt'](7) != 8",
+   "note": "the characteristics spot check - fat one, rubbery eight the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23BackOpt'](0) != 1 or m['s23BackOpt'](3) != 4",
+   "note": "the back spot check - humped-hunched one, spiked-spined-ridged four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23SkinOpt'](0) != 1 or m['s23SkinOpt'](9) != 10",
+   "note": "the skin spot check - bald-smooth one, translucent ten the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23WingOpt'](0) != 1 or m['s23WingOpt'](3) != 4",
+   "note": "the wings spot check - bat-like one, membranous or fan-like four the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23ColorOpt'](0) != 1 or m['s23ColorOpt'](9) != 10",
+   "note": "the color spot check - blackish one, yellowish-tannish ten the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23TailTypeOpt'](0) != 1 or m['s23TailTypeOpt'](7) != 8",
+   "note": "the tail type spot check - barbed one, stingered eight the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23OdorOpt'](0) != 1 or m['s23OdorOpt'](7) != 8",
+   "note": "the odor spot check - bloody one, vomit eight the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23HandTypeOpt'](0) != 1 or m['s23HandTypeOpt'](5) != 6",
+   "note": "the hands spot check - clawed one, withered and boney six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23FeetOpt'](0) != 1 or m['s23FeetOpt'](7) != 8",
+   "note": "the feet spot check - clawed one, webbed eight the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23BirdFootOpt'](0) != 1 or m['s23BirdFootOpt'](5) != 6",
+   "note": "the bird feet spot check - duck-like one, turkey-like six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23MoveInch'](0) != 6 or m['s23MoveInch'](4) != 18",
+   "note": "the move spot check - six inches one, eighteen inches five the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23MrMod'](0) != -5 or m['s23MrMod'](1) != -10 or m['s23MrMod'](5) != 0",
+   "note": "the magic resistance variance spot check - minus five, minus ten, the standard zero on six the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23PoisonOpt'](0) != 1 or m['s23PoisonMod'](0) != 1 or m['s23PoisonMod'](3) != -2 or m['s23PoisonMod'](4) != -99",
+   "note": "the poison save spot check - plus one, minus two, the insanity sentinel the Sorceror Scroll lower-planes generator (print 15-18)"
+  },
+  {
+   "expr": "m['s23StrLo'](0) != 1 or m['s23StrHi'](0) != 25 or m['s23StrVal'](0) != 17 or m['s23StrDmg'](8) != 8 or m['s23StrVal'](8) != 20 or m['s23StrLo'](2) != 45 or m['s23StrHi'](2) != 60",
+   "note": "the strength spot check - the one-to-twenty-five seventeen, the ninety-nine-and-double-zero twenty with plus eight damage, the forty-five overlap band the Sorceror Scroll lower-planes generator (print 15-18)"
+  }
+ ],
+ "switches": [],
+ "chains": [],
+ "file_patches": [],
+ "data_files": [],
+ "seed_anchor": "## Knowledge maintenance",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "prev_seed_key": "  - R950 LANDED (df703c4, t23, 82 inline, opener part one): The",
+ "prev_record": [
+  "  - R950 LANDED (df703c4, t23, 82 inline, opener part one): The",
+  "  Dragon issue-23 opener part one, the variant triptych - three of",
+  "  the ten chains: the En Garde solitaire dueling method (print 5-6,",
+  "  the Laking shorthand - the CE formula, the defense modifier, the",
+  "  fifty-percent base, the eleven-band critical hits grid with its",
+  "  die-size print errors), the Mind Wrestling psionic track (print",
+  "  10, the Swycaffer seventeen-space double track), and the",
+  "  Starship Warden water monsters (print 11+13, the Hursh variant,",
+  "  twenty creatures, ten columns). 82 inline = 50 consts + 22 bools",
+  "  + 10 table cols, 14 examples, 7 table_checks, 2 tables",
+  "  (t23CritHits 11 rows x 4, t23Warden 20 rows x 6); the intake",
+  "  seats the report-023 gap report plus all thirty-two transcripts",
+  "  (33 data files). Census 872->873; rverify GREEN 236 mutants 0",
+  "  missed at base 76a37e2; round-trip 188567 bytes md5",
+  "  789cd28fcf6d563fc538e1de5ed17c5a, byte-exact at df703c4 (fresh",
+  "  tarball re-run applied 0 already 38). NEW INTAKE-SHAPE LESSON:",
+  "  an intake round's gap_report must point at the PREVIOUS issue's",
+  "  landed report (022, 3 closed 0 open) while the new report and",
+  "  transcripts ride as data_files - the engine reads the report",
+  "  before applying patches, so pointing at the new report on a",
+  "  fresh tree aborts as the mixed applied/already state (the R420",
+  "  lesson in a new coat; R946 already held this shape). Print",
+  "  catches pinned as scanned: Sorceror's for Sorcerer's Scroll in",
+  "  the contents, Good News listed at 18 but printing at 6, the",
+  "  Convention Schedule listed at 21 but printing at 18, Geoffrey",
+  "  vs George Laking bylines, Jaques for Jacques twice then",
+  "  Jacques, the letter O for a zero defense modifier, 16-sided and",
+  "  120-sided die rolls proven 6/20 by the worked example (Karl",
+  "  base 20 plus 6 for 26), ration for ratio, the Warden table's",
+  "  duplicated Description column, Sybiotic for Symbiotic,",
+  "  unfootnoted asterisks, Green Death 3-vs-4 melee turns, stre of",
+  "  13 truncated, its-for-it's. Part-two scan already pinned",
+  "  (print 15-18, the Lower Planes table round): forth coming as two",
+  "  words, quadrapedal etal, the eyes formula 1 + 1, the mouth line",
+  "  skipping 4, the strength table overlap at 45, Df. for cf.",
+  "  Watches: the Sullin levels 7-9 and the brawling sequel still",
+  "  empty in TD 23 - both ride to TD 24. Next: R951 part two, the",
+  "  Random Generation of Creatures from the Lower Planes table",
+  "  round; prefix scan fresh at the then-HEAD (s23 next). WAIT FOR",
+  "  GO."
+ ],
+ "regtest": "regtest.cpp",
+ "inline_count": 178
+}
