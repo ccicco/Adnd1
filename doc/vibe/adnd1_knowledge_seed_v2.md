@@ -30228,6 +30228,37 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     byte-matched 67/67 on the
     landed records before the
     batch. WAIT FOR GO.
+  - R981 LANDED 2026-10-31 at
+  0242777: THE OA PROMOTION
+  BATCH ONE - rounds R614 through
+  R624 complete, the OA set opener
+  - 11 records, 778 model items,
+  305671 bytes Lua, every record
+  parsed back equal. Prefix oa1 (freedom verified: no rules/
+  oa1.h, no oa1[A-Z] symbols). 4 consts + 3 bools:
+  oa1BatchRecords=11, oa1ModelItems=778,
+  oa1CumulativeRecords=11, oa1SetRoundsRemaining=
+  149, oa1RecordsPromoted, oa1DiffBackGreen,
+  oa1R614ThroughR624Complete. The file_patch seats
+  the promotion-from-headers paragraph in doc/
+  rules_record_format.md. Census 903->904; no
+  flips; gap report 026 stays 3/0. Double-run
+  applied 17/already 17; rverify GREEN 7 mutants
+  0 missed at base b10fd95; spec 333809 bytes md5
+  3307d43be481c4aaf375d68b318f675b, canvas
+  r981-spec (body byte-exact). The R980 record is
+  the prev_record (seated into the repo seed).
+  LANDED: pushed b10fd95..0242777, census 903->
+  904; the fresh tarball at 0242777 verified - 11/
+  11 records on disk byte-matching the spec, the
+  header/audit/include/seed/doc-patch all in
+  place. NEXT
+  CANDIDATE: R982 batch two - R625-R644, 20
+  records, 618 items, 322776 bytes Lua; six more
+  batches after it (R983 R645-R670 26 rec, R984
+  R671-R694 24 rec, R985 R695-R712 18 rec, R986
+  R713-R726 14 rec, R987 R727-R759 33 rec, R988
+  R760-R773 14 rec - the set closer). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
