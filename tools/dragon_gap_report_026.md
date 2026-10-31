@@ -109,9 +109,9 @@ rooftop travel, the victim selection, the scapegoat
 planting and the stash-and-alibi method. The flip
 closes all three boxes.
 
-- [ ] **The issue-26 opener chains part one** (print 13-14 + 26-30 + 39, the opener set: Giants in the Earth, Hirelings Have Feelings Too, D&D Meets the Electronic Age, Notes from a Very Successful D&D Moderator, the Sorcerer's Scroll)
-- [ ] **The issue-26 opener chains part two** (print 20-25 + 38, the table round: Chinese Undead, the Nine-Point Alignment chart, the Deck of Fate, the Strength Comparison Table)
-- [ ] **The issue-26 opener chains part three** (print 36-37 + 39 + 44 + 46, the commentary set: the lich recipe, the impromptu party system, the Dragon's Bestiary barghest, the city thief doctrine)
+- [x] **The issue-26 opener chains part one** (print 13-14 + 26-30 + 39, the opener set: Giants in the Earth, Hirelings Have Feelings Too, D&D Meets the Electronic Age, Notes from a Very Successful D&D Moderator, the Sorcerer's Scroll)
+- [x] **The issue-26 opener chains part two** (print 20-25 + 38, the table round: Chinese Undead, the Nine-Point Alignment chart, the Deck of Fate, the Strength Comparison Table)
+- [x] **The issue-26 opener chains part three** (print 36-37 + 39 + 44 + 46, the commentary set: the lich recipe, the impromptu party system, the Dragon's Bestiary barghest, the city thief doctrine)
 
 Drop (Curtiss, 2026-10-31, none contested): the cover
 (print 1, prints the issue tag 36, pinned as scanned),

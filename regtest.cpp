@@ -666,6 +666,7 @@
 #include "rules/t26.h"  // R962: the Dragon issue-26 opener part one, the five-chain opener set
 #include "rules/s26.h"  // R963: the Dragon issue-26 opener part two, the four-chain table round
 #include "rules/k26.h"  // R964: the Dragon issue-26 opener part three, the four-chain commentary set
+#include "rules/l26.h"  // R965: the Dragon issue-26 box closing round, the fifth four-round walk complete
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4775,6 +4776,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r965_batch.h"  // R965: R965 Dragon issue-26 closure audit
 #include "rules/audits/r964_batch.h"  // R964: R964 issue-26 commentary set audit
 #include "rules/audits/r963_batch.h"  // R963: R963 issue-26 table round audit
 #include "rules/audits/r962_batch.h"  // R962: R962 issue-26 opener set audit

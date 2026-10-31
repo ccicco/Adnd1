@@ -29576,6 +29576,32 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   Groups 37 + 39, Barghest 44, The Thief 46). The two
   watches ride to TD 27 (the Sullin levels 7-9, the
   brawling sequel). WAIT FOR GO.
+  - R964 LANDED (3673f7e, k26, 89 inline, the commentary set): The
+  Dragon issue-26 opener part three - the commentary
+  set, four of the thirteen Curtiss-called chains at
+  print 36 + 37 + 39 + 44 + 46: the Blueprint for a
+  Lich recipe (the 2000 gold piece jar, the trap the
+  soul odds, the corpse possession ladder, the
+  nine-ingredient potion with its 1-00 results), the
+  impromptu party system (the 4d4 abilities, the
+  level bands, the per-class tables, the Gonzo 135
+  percent example, the robe patches), the Dragon
+  Bestiary barghest (the Gehenna deodand, the 6+6
+  whelp feeding law, the canine form and the fire
+  banishment) and the city thief doctrine (the
+  disguise, the rooftops, the scapegoat and the
+  stash-and-alibi method). 89 inline = 49 consts +
+  40 bools, no tables; 12 examples. Census 886->887;
+  rverify GREEN 89 mutants 0 missed at base 7d482ef;
+  round-trip 33736 bytes md5 a5fcbe6fa0aa94584a637460b10cac4,
+  byte-exact at 3673f7e (fresh tarball re-run applied 0
+  already 5). The R963 record seated in the repo seed
+  with its house The-tail first line intact. Part three
+  of the TD 26 four-round shape complete; R965 l26
+  next, the flip closing all three report-026 boxes
+  and the issue walk. The two watches ride to TD 27
+  (the Sullin levels 7-9, the brawling sequel).
+  WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
