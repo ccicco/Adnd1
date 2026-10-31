@@ -30151,6 +30151,47 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     byte-matched 50/50 on the
     landed records before the
     batch. WAIT FOR GO.
+  - R979 LANDED (746a2d2, dp11, 7
+    inline, the promotion batch
+    eleven): THE DRAGON PROMOTION
+    BATCH ELEVEN, PART ONE - the
+    set close halved at the
+    clipboard limit (Curtiss,
+    2026-10-31): issues 21
+    through 23 complete - t21 the
+    issue-21 opener, g21 the
+    issue-21 part two, d21 the
+    issue-21 closing flip, then
+    the quartets t22 s22 k22 l22
+    and t23 s23 k23 l23 - 11
+    records, 1108 model items,
+    335833 bytes Lua, every
+    record parsed back equal. 4
+    consts + 3 bools:
+    dp11BatchRecords=11,
+    dp11ModelItems=1108,
+    dp11CumulativeRecords=67,
+    dp11SetRoundsRemaining=12,
+    dp11RecordsPromoted,
+    dp11DiffBackGreen,
+    dp11IssuesTwentyOneTwenty
+    ThreeComplete. Census
+    901->902; no flips; gap
+    report 026 stays 3/0.
+    Double-run applied 16/
+    already 16, verify at
+    746a2d2 already 16 with all
+    67 records on disk (1641289
+    bytes Lua); rverify GREEN 7
+    mutants 0 missed at base
+    15c273a; spec 361476 bytes
+    md5 bee5a50f005b35ad615a389f
+    5e7da147, canvas r979-spec.
+    The R978 record seated in the
+    repo seed. The lib rebuilt and
+    byte-matched 56/56 on the
+    landed records before the
+    batch. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
