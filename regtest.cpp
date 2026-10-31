@@ -653,6 +653,7 @@
 #include "rules/l22.h"  // R949: the Dragon issue-22 box closing round, the four-round walk complete
 #include "rules/t23.h"  // R950: the Dragon issue-23 opener part one, the three-chain variant round
 #include "rules/s23.h"  // R951: the Dragon issue-23 opener part two, the Lower Planes creature-generation table round
+#include "rules/k23.h"  // R952: the Dragon issue-23 opener part three, the six-chain commentary round
 #include "rules/uascharts.h"  // R407: the UA Appendix S clerical charts
 #include "rules/followers.h"  // R170: pp.16-18 followers by class
 #include "rules/klm.h"  // R171: pp.221-224 appendices K L and M
@@ -4762,6 +4763,7 @@ int main() {
 #include "rules/audits/r830_batch.h"  // R830: R830 WSG DSG batch audit
 #include "rules/audits/r831_batch.h"  // R831: R831 planes OA batch audit
 #include "rules/audits/r832_batch.h"  // R832: R832 OA tail batch audit
+#include "rules/audits/r952_batch.h"  // R952: R952 issue-23 commentary set audit
 #include "rules/audits/r951_batch.h"  // R951: R951 issue-23 Lower Planes generation audit
 #include "rules/audits/r950_batch.h"  // R950: R950 issue-23 variant triptych audit
 #include "rules/audits/r949_batch.h"  // R949: R949 Dragon issue-22 closure audit

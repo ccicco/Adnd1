@@ -29078,6 +29078,41 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   Random Generation of Creatures from the Lower Planes table
   round; prefix scan fresh at the then-HEAD (s23 next). WAIT FOR
   GO.
+  - R951 LANDED (af5a151, s23, 178 inline, opener part two): The
+  Dragon issue-23 opener part two - the Lower Planes table round,
+  the single chain of the Sorceror Scroll DMG preview (print
+  15-18): the Random Generation of Creatures from the Lower Planes
+  system, Gary Gygax on the Abyss, Tarterus, Hades, Gehenna and
+  Hell. The base stat block (frequency through psionic modes), all
+  twenty-three appearance and generation grids (head through bird
+  feet, the move speeds, the magic-resistance variance, the
+  optional-poison saves), the nine-band strength-to-hit-damage
+  table with its exceptional-strength subrolls, the attack forms,
+  the special attacks and defenses with their limits, the
+  other-abilities trio. 178 inline = 126 consts + 23 bools +
+  29 table cols, 16 examples, 23 table_checks (one spot check per
+  grid); no data files - the intake rode R950. Census 873->874;
+  rverify GREEN 354 mutants 0 missed at base df703c4; round-trip
+  68256 bytes md5 f829fd656c9cceaff1be6a88897f874a, byte-exact at
+  af5a151 (fresh tarball re-run applied 0 already 5). Print
+  catches pinned as scanned: forth coming as two words in the DMG
+  preview sentence, quadrapedal etal on the body attributes line,
+  the eyes count formula printed 1 + 1, the mouth size line
+  skipping the 4 (1 tiny, 2-3 average, 5-6 huge), the strength
+  bands overlapping at 45, Df. for cf. in the Demonology citation,
+  the bird-like head asterisk footnoted two pages later with the
+  six bird-like feet, Predominate Color for predominant, the bare
+  etc. on the defense mode line (1-2 F, 3-4 F and G); the negative
+  pin - Tarterus is the AD&D canon spelling, not a catch. Also
+  pinned: the EXXEDUUNUSSE vacation sign-off gag at the feet of
+  the general characteristics, the thrice circumstances-must-
+  dictate. Watches: the Sullin levels 7-9 and the brawling sequel
+  still empty in TD 23 - both ride to TD 24. Next: R952 part
+  three, the six-chain commentary set (Good News print 6, It Weighs
+  print 14, Damage Permanency print 19-20, Dungeons and Prisons
+  print 21, the Kask Origins critique print 4+21, the Gardner Fox
+  Niall fiction print 8-9+22-30); prefix scan fresh at the
+  then-HEAD (k23 next). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
