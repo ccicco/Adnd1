@@ -29602,6 +29602,29 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   and the issue walk. The two watches ride to TD 27
   (the Sullin levels 7-9, the brawling sequel).
   WAIT FOR GO.
+  - R965 LANDED (f7e8560, l26, 29 inline, the pure flip): The
+  Dragon issue-26 box closing round - the pure flip,
+  no new ink: all three report-026 boxes check at
+  this single round - the part-one opener set
+  (R962, t26, 80 inline), the part-two table round
+  (R963, s26, 111 inline) and the part-three
+  commentary set (R964, k26, 89 inline), 280 opener
+  inline across the thirteen chains. The fifth
+  four-round walk complete, the Dragon walk now
+  holds issues 2-26 all closed - twenty-five
+  issues. 29 inline = 17 consts + 12 bools, no
+  tables; 6 examples; 3 gap flips, report-026
+  joining mm2, ddg, report-024 and report-025 in
+  the closed state. Census 887->888; rverify GREEN
+  29 mutants 0 missed at base 3673f7e; round-trip
+  15061 bytes md5 322573b28152b741a9fa57f69b14f6d0,
+  byte-exact at f7e8560 (fresh tarball re-run
+  applied 0 already 8). The R964 record seated in
+  the repo seed with its house The-tail first line
+  intact. TD 26 complete; the two watches ride to
+  TD 27 (the Sullin levels 7-9, the brawling
+  sequel) with the TD 27 intake unadjudicated,
+  awaiting the Curtiss-provided scan. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
