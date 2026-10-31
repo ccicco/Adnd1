@@ -29475,6 +29475,45 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   boxes flip at the single round and the issue closes.
   The two watches ride to TD 26 (the Sullin levels 7-9,
   the brawling sequel). WAIT FOR GO.
+  - R961 LANDED (49d1f41, l25, 29 inline, the pure flip): The
+  Dragon issue-25 box closing round - no new ink, all three
+  report-025 boxes flipped at the single round: the part-one
+  opener set (R958, t25), the part-two war game and vampire
+  roster table round (R959, s25) and the part-three commentary
+  set (R960, k25) all checked, gap_census 3 closed 0 open,
+  report-025 joining mm2, ddg and report-024 in the closed
+  state. 29 inline = 17 consts + 12 bools, 6 examples, no
+  tables - the exact R949, R953 and R957 symmetry; the
+  bookkeeping pins the shape itself - 3 boxes, 8 chains, 4
+  rounds (the fourth four-round shape, proven now at issues
+  22, 23, 24 and 25), the opener totals 48 + 118 + 70 = 236,
+  the walk census issues 2-25 all closed (twenty-four
+  issues), the numbering agreement (Vol. III No. 11, May
+  1979, number 25, the cover roman quirk the only miss), the
+  folio-equals-PDF-page check, the single-voice transcript
+  pin (no archive.org djvu cross-check exists for issue 25),
+  the print catches of all four rounds pinned as scanned,
+  the unchanged registry ground truth 1313/1338/25, the
+  census pinned true at 883/884 matching the engine gate, and
+  the two watches riding to TD 27 (the Sullin levels 7-9 and
+  the brawling sequel, both absent a fifth issue through the
+  TD 26 intake). Census 883->884; rverify GREEN 29 mutants 0
+  missed at base 53932ed; round-trip 15769 bytes md5
+  87d1186dd75f7f1dd4f53cb43dd43c3e, byte-exact at 49d1f41
+  (fresh tarball re-run applied 0 already 8; the flip round
+  eight patches carry the gap report in the git add). THE
+  ISSUE-25 FOUR-ROUND SHAPE IS COMPLETE: R958 t25 7518210,
+  R959 s25 6a1245c, R960 k25 53932ed, R961 l25 49d1f41 -
+  THE DRAGON WALK HOLDS ISSUES 2-25 ALL CLOSED. The fix
+  note: the R960 record first line was restored to the
+  house The-tail format before this seat (the landed repo
+  seed keeps the no-tail line). Next: TD 26 opens at
+  R962 t26 - the intake adjudicated 2026-10-31 at thirteen
+  usable D&D chains (part one five chains print 13-28, the
+  s26 table round four chains, the k26 part three four
+  chains, then the R965 l26 flip); the R962 spec
+  data_files carry report-026 plus all fifty-two
+  transcripts. WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

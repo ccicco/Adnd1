@@ -1,0 +1,273 @@
+
+
+The Dragon
+
+Vol. III, No. 12
+
+7. One warrior skill, one military skill.
+
+8. One warrior skill.
+
+9. One military skill.
+
+10+. Nothing
+
+#17 Military Skills
+
+Assassin/spy/tracker
+
+Astronomer/navigator
+
+Blacksmith
+
+Cryptographer
+
+Engineer/architect
+
+Fletcher
+
+Hunter
+
+Interpreter
+
+Mason
+
+Mountaineer
+
+Orator
+
+Physician
+
+#18 Slave's Legacy
+
+1. Nothing
+
+2. Nothing
+
+3. Chlen driver
+
+4. Cook
+
+5. House servant
+
+6. Overseer
+
+#20 Tradesman's Legacy
+
+1-3 Plebeian skills
+
+#22 Professional's Legacy
+
+1-3 Noble skills
+
+#23 Criminal's Legacy
+
+1. Sneak thief (Dexterity 41+)
+
+2. Pick pocket (Dexterity 61+)
+
+3. Mugger (Strength 41+)
+
+4. Pimp
+
+5. Pusher
+
+6. Grifter (IQ 41+)
+
+7. Burglar (Dexterity 41+)
+
+8. Gambling cheat
+
+(Dexterity 41+)
+
+9. Strong arm man/assassin
+
+10. Kidnapper/slaver
+
+HOW TO USE THE BIRTH TABLES
+
+1) Construct the characters Basic Talents via EPT section 410.
+
+2) Roll a six-sided die and consult the "Father's Social Caste"
+
+table (#1) to find the character's social status.
+
+3) Roll a six-sided die and consult the "Character's Sibling
+
+Rank" table (#2) to determine the character's rank in his own family.
+
+4) Having found the social caste of the character's father in step
+
+1, now roll a six-sided die and consult title table (numbers 4 through 9)
+
+appropriate to the case to find what title the father held in his caste.
+
+5) Finally, to discover what interest the character's father showed
+
+in improving his son's training, roll a die and discover if he was neglect-
+
+ful, average, or favoring in respect to the child. If he was neglectful, roll a
+
+four-sided die and consider the result a positive number. If favoring, roll
+
+a four-sided die and consider the result a negative number.
+
+6) Add the number reflecting the character's sibling rank (step 3)
+
+the number representing the father's title (step 4) and the positive or
+
+negative number corresponding to the father's neglect or favoritism.
+
+This sum derives the legacy the son receives before beginning play, as
+
+per tables 10 through 23.
+
+For example, a character who is the second son (+2) of a noble
+
+count (+3), fondly looked on by his parent (-2), would acquire Legacy
+
+#3 on the list of the "Noble's Legacy," Table #10. In other words he
+
+falls heir to two professional skills, two Group I spells, three aristocratic
+
+skills and 10,000 Kaitars.
+
+After the character has been granted all the terms of his inheritance
+
+and early education, the player proceeds to section 420 and 430 in the
+
+standard rules. This action represents what the character has learned on
+
+his own. He should, however, subtract 15% from his percentile die roll
+
+for both original and professional skills. A character who, by this calcula-
+
+tion, gets a percentile score of less than 01 should treat the result as 01.
+
+When the players acquire original or professional skills by percent-
+
+Bootmaker
+
+Chlen driver
+
+Cook
+
+Rope/net maker
+
+Sail-maker
+
+Sailor
+
+Ship captain
+
+Slaver
+
+Smith-armourer
+
+Swimmer/diver
+
+Tailor
+
+Wheelwright
+
+#19 Laborer's Legacy
+
+1. Nothing
+
+2. Chlen driver
+
+3. Sailor
+
+4. Hunter
+
+5. Farmer
+
+6. One plebeian skill
+
+#21 Craftsman's Legacy
+
+1-3 Skilled skills
+
+11. Smuggler
+
+12. Extortionist
+
+13. Forger (Dexterity 81+)
+
+14. Usurer
+
+15. Counterfeiter (Dexterity 81+)
+
+16. Protection racketeer
+
+17. Gambling racketeer
+
+18. Political racketeer
+
+19. Racket organizer (IQ 61+)
+
+20. Kingpin of Crime (IQ 81+)
+
+tile die roll, they acquire talents other and in addition to those learned "at home." For example, a character who has learned one Professional skill at home rolls a percentile result of 51-80: "Choose 4 from the first 5." He may instead choose 4 skills from the second through the sixth on the list; he has learned the first before leaving home. Remember, always take professional skills learned at home in order, from the top of the lists in sec. 430.
+
+# TERMINOLOGY
+
+Group I, II and III spells refer to the spell lists in PT sec. 510.
+
+Professional skills refer to the talents of a Warrior, Priest and Magic User (PT sec. 430). A noble's offspring may choose his skills from any one of the three lists, reflecting special tutoring according to the child's ambitions. Warriors, Priests and Magic Users may only teach their children their own professional skills.
+
+Aristocratic, military and merchant skills represent opportunities for education or vocational training in the different castes. Lists of these skills follow the appropriate legacy tables (see #11,15,17).
+
+Plebeian, skilled or noble skills are selected from the three lists in the original skills section of the rule book (EPT sec. 420).
+
+# THE HOME TRAINING OF COMMONERS
+
+The legacies of commoner-born characters are determined by simple die rolls. A slave's or Laborer's heir may acquire only one skill (or none) — determined by rolling once on tables #18 or 19 respectively. The sibling rank of the character is ignored.
+
+The heirs of Tradesmen, Craftsmen or Professionals are selected from the respective Plebeian, Skilled and Noble skill list in section 420. One to three skills are selected, the number determined by a die roll.
+
+The heirs of Criminals determine their skills by rolling a twenty-sided die. The number rolled is the most advanced criminal trade they can learn. But the number divided by two (round up) represents the number of skills that can be learned at home. For example, a criminal's son rolls a 15 on the die. He may choose any skill from sneak thief (#1) to counterfeiter (#15). But he may only choose 8 of them (15/2). He may not choose any skill for which he does not have the aptitude. That is, a character with a dexterity of only 55 could not be a pick pocket, gambling cheat, forger or counterfeiter.
+
+# CHOOSING ONE'S OCCUPATION
+
+One can benefit most from a father's training by following his occupation. For example, an heir to Priest's legacy #3 could enjoy it fully if he was a priest himself. If a magic user, he could not benefit from the priestly skills. If a warrior, he could benefit from neither the priestly skills nor the Group I spell. Naturally, a character with a psychic ability of, say, 03 could not learn a spell even if he was a priest or magic user.
+
+# BORROWING MONEY ACCORDING TO SOCIAL RANK
+
+Characters of high social rank find it easier to borrow money. Money may be borrowed from either legal moneylenders or illegal usurers. Characters borrow money up to one hundred times their social point total. That is, 100 Kaitars for each social point.
+
+Moneylenders' loans run at 20% interest per month, compounded. If not paid back in time, the law permits the arrest of the debtor and the seizure of twice the amount of the debt for damages. If the debtor's property is insufficient, the debtor may be taken as a slave or thrown into prison, as the creditor prefers. Moneylenders keep in touch with one another and prevent characters from borrowing from them more than their due.
+
+If a character goes to an illegal usurer, he may borrow up to his permitted loan level once again, even if fully indebted to legal moneylenders. Usurers' rates are 10% per week, compounded. If the loan is not repaid in time, usurers command many strong arm men and have long memories. A captured debtor is robbed of all he possesses — and if that is not at least twice the owed amount, he will be slain in vengeance.
+
+# SOCIAL POINT AWARDS
+
+Noble antecedents: 10 social points
+
+Priestly antecedents: 8
+
+Magic User antecedents: 6
+
+Merchant antecedents: 4
+
+Warrior antecedents: 2
+
+Commoner antecedents: 0
+
+First born rank: 5
+
+Second born rank: 4
+
+Third born rank: 3
+
+Fourth born rank: 2
+
+Fifth born rank: 1
+
+Bastard: 0
+
+For each level of experience: 2
+
+Continued on page 47
+
+34

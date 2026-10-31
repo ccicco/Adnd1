@@ -1,0 +1,56 @@
+
+
+June, 1979
+
+The Dragon
+
+Design Forum
+
+# The Solo Berserker for William the Conqueror-1066
+
+James McMillan
+
+A berserker attack was one of the major military tactics used by the ancient Vikings. The term berserker comes from the Norse "berserksgang", which translates into bearskinwearer. The Yngjinga Saga describes berserkers as men who "went into battle without armor, like mad dogs or wolves, biting their shields, strong like bears or bulls, mowing down everything in their path, immune to fire or iron." This style of fighting was partly for psychological warfare and partly temperament. It was particularly effective against untrained militia, who usually didn't want to be there in the first place. In the initial moments of a battle, berserker attack could demoralize an enemy and give the Vikings the impetus to carry them thru to victory. The disadvantage of a berserker attack was that it could not be sustained indefinitely, and always left the berserkers exhausted.
+
+William the Conqueror — 1066 recreates both the battles of Stamford Bridge and Hastings. At Stamford Bridge, the Viking power in Northern Europe was forever broken. King Harald Hardrada of Norway, the greatest warrior of his day, was surprised by the English army at Stamford Bridge, and he was forced to fight a delaying battle until the rest of his troops, under Eystein Orre, could be brought up from Riccall. Hardrada personally led a berserker attack against the English. As the Heimskringla describes it, "he rushed far ahead of his men, hewing down everything in his way with both hands with such force that no helmet or armor withstood his weapons and all nearby fled before him." This attack left Hardrada exposed and he was dispatched by the archers of the English fyrd. Later, when Eystein (called the Gorcock) arrived, he and his men shed their shirts of mail and charged the English, not bothering to shield themselves so long as they could stand up. The fury of their attack was so great, that ever since the phrase "Gorcock's storm" has been used to mean great peril of men. The berserker attacks of Hardrada and Eystein can be incorporated into William the Conqueror — 1066 by using the following:
+
+Berserker Optional Rule: Hardrada and Eystein are the only commanders that can lead a berserker attack, and they are allowed only one berserker attack apiece during the course of the battle. To lead a berserker attack, it must be the Viking Player Turn, and the commander must be adjacent to an enemy unit. Any unrouted VIKING unit stacked with or adjacent to the commander leading the berserker attack, which are also adjacent to an enemy unit, may participate. ARCHER units may not participate in berserker attacks. During COMBAT MOVEMENT, all participating VIKING units (and commander) are moved into the hex opposite their hexside #1, and are faced toward their hexside #1.
+
+Blank chits are placed face-up upon each participating unit to indicate that they are berserkers. (FIRED ONCE or FIRED TWICE chits may also be used to indicate berserkers.) COMBAT MOVEMENT is then resolved normally. During COMBAT RESOLUTION, each berserker is considered to have a 6 Combat Factor for attacks made, and a 3 Combat Factor for attacks received. The commander bonus is still included, i.e. a berserker stacked with Hardrada would have an attack factor of 9 and a defense factor of 6. A 2 to 1 attack against a berserker destroys the unit (and commander, if stacked with it). At the end of COMBAT RESOLUTION, each blank chit is replaced by a face-up Rout condition #1 chit. Play is then continued normally.
+
+The Movement Resolution system used in William the Conqueror - 1066 allows for many interesting and unexpected results. However, the system does not allow for solitaire play, as it is not hard to anticipate where a unit is moving, when you place the Combat Movement chits yourself. By using the following procedures and Combat Results Table, William the Conqueror- 1066 can be played solitaire. (Less industrious players may want to use the solitaire CRT even when playing face to face.)
+
+# Solitaire Play Procedure
+
+1. Resolve all desired fire attacks for the Attacking side using the CRT on the gameboard.
+2. Move the Attacking side's units as desired.
+3. Resolve all desired fire attacks for the defending side using the CRT of the gameboard.
+4. Resolve all desired melee attacks for the Attacking side only, using the Solitaire CRT. Attacks are not mandatory. Ignore all facing adjustments. Use a 6 sided die, or draw Combat Movement chits from the box. Place all Combat Resolution chits face-down upon the appropriate units.
+5. Replace all face-up Rout 2 chits with Rout 1 chits; remove all face-up Rout 1 chits; and flip over all face-down chits.
+6. Repeat the above for the other side. Incorporate optional rules as desired.
+
+# SOLITAIRE COMBAT RESULTS TABLE
+FOR
+WILLIAM THE CONQUEROR — 1066
+
+|  Die Roll | 1 to 4 | 1 to 3 | 1 to 2 | 1 to 1 | 2 to 1 | 3 to 1 | 4 to 1 | 5 to 1 | 6 to 1 | 7 to 1  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  1 | DR1 | DR1 | DR1 | DR2 | DR2 | DD | DD | DD | DD | DD  |
+|  2 | — | — | DR1 | DR1 | DR2 | DR2 | DD | DD | DD | DD  |
+|  3 | AR1 | — | — | DR1 | DR1 | DR2 | DR2 | DD | DD | DD  |
+|  4 | AR2 | AR1 | AR1 | — | DR1 | DR1 | DR2 | DR2 | DD | DD  |
+|  5 | AD | AR2 | AR2 | AR1 | — | DR1 | DR1 | DR2 | DR2 | DD  |
+|  6 | AD | AD | AR2 | AR2 | AR1 | — | DR1 | DR1 | DR2 | DR2  |
+
+Attacks less than 1 to 4 are not allowed.
+Attacks greater than 7 to 1 are automatic DD.
+
+DR1 - Defender Rout Condition 1
+DR2 - Defender Rout Condition 2
+DD - Defender Destroyed
+
+AR1 - Attacker Rout Condition 1
+AR2 - Attacker Rout Condition 2
+AD - Attacker Destroyed
+
+19

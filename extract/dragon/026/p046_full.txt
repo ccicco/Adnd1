@@ -1,0 +1,68 @@
+
+
+The Dragon
+
+Vol. III, No. 12
+
+ANNOUNCING THE RETURN OF AN OLD AND MUCH-REQUESTED COLUMN. . .
+
+# Dragon's Bestiary
+
+(formerly Featured Creature)
+
+## BARGHEST
+
+FREQUENCY: Very rare
+NO. APPEARING: 1-2 (1)
+ARMOR CLASS: 2 to -4
+MOVE: 15'
+HIT DICE: 6 +6 to 12 +12
+% IN LAIR: Nil
+TREASURE TYPE: See below
+NO. OF ATTACKS: 2
+DAMAGE/ATTACK: 2-8 + no. of HD as h.p.
+SPECIAL ATTACKS: See below
+SPECIAL DEFENSES: See below
+MAGIC RESISTANCE: 5%/HD (ignore plusses)
+INTELLIGENCE: High to genius
+ALIGNMENT: Evil (lawful)
+SIZE: M to L
+PSONIC ABILITY: Nil
+Attack/Defense Modes: Nil
+LEVEL/X.P. VALUE: See below
+
+Of the various members of the *deodands* inhabiting the rifts of the Planes of Gehenna, the barghest is certainly the most common and one of the worst. These beings tend to live in isolation from one another, each having its own stronghold and force of servitors, ruling a smoking rift despotically. At times, however, a barghest will spawn, and its litter of six will be sent to the Prime Material Plane to feed and grow. Those which survive will eventually return to Gehenna, but while they are yet young they must needs feed upon the lives of men. Barghest whelps will be found singly or in pairs on the Prime Material Plane, generally living near isolated communities of humans or with bands of goblins.
+
+Barghests are able to assume the form of a large (war or wild) dog at will (thus they are at times known as devil-dogs, a misnomer). Their natural shape is very much the same as that of a large goblin, and when barghests dwell amongst goblins, they will retain their normal form. While goblins recognize and worship barghests, other races find them to be virtually indistinguishable from these humanoids. Their hosts fear and serve these monsters when they dwell in a goblin community, going to great lengths to bring human sacrifices to the barghests. The barghests, in turn, slay the powerful enemies of the goblins and generally enrich the treasure possessed by their hosts.
+
+When barghest whelps first come to the Prime Material Plane they are relatively weak, having but 6 (d8) + 6 hit dice. For each energy level of human life they slay and devour, they gain 1 hit point; 8 such levels effectively giving them another hit die and additional hit point per die. (0 level humans gain them only one-half an energy level, so they are less desirable prey than are exceptional persons.) Likewise, as hit dice are gained, the barghest also becomes more powerful, armor class increasing by one place with each additional hit die, and strength growing from an initial 18/00 to eventually become equal to that of a storm giant — and damage increasing accordingly also. In like manner, so too does the magic resistance and intelligence of these monsters increase by the unholy vampirism attendant upon the slaughter of humanity. When a barghest eventually attains full growth and power, it is able to *shift* itself
+
+to the Planes of Gehenna, where it will search out its own reeking valley rift.
+
+What treasure barghests gather into their own strongholds upon the Planes of Gehenna is not known, although it is rumored to be great. Whilst dwelling here, however, they possess none personally.
+
+Barghests are able to perform the following spell-like magic, one operation per round, at will: *shapechange* to canine/goblin-like form, *change self*, *levitation*, *mis-direction*, *projected image*. Once per day the following spell like powers can be employed: *charm*, (*person* or *monster*), *dimension door*, *emotion*.
+
+When in its canine form, a barghest is able to move at double its normal movement rate (30' maximum), *pass without trace*, and can become 75% likely to be unnoticed when motionless, so that it can surprise opponents 50% of the time (3 in 6).
+
+These creatures are hit only by +1 or better magic weapons. Barghests are not particularly vulnerable to any attack form, but if in their canine shape they do take the risk of failing to save versus a magical fire attack such as a *fireball*, *flame strike*, or *meteor swarm*. Fire does absolutely no damage to barghests, but if they fail to save against such an attack while in canine form they are hurled back to their own plane. Weaker barghests returning thus are most likely to be slain or enslaved by their more powerful fellows. Even if they are not so treated, they cannot return to the Prime Material Plane without some form of outside assistance.
+
+*Description:* As already noted, the barghest in its whelp stages appears much the same as a goblin of large size, although as they grow larger and stronger, there is a darkening of skin from yellow towards a bluish red, eventually terminating in a deep blue skin color in adult form. The eyes of the barghest are glowing orange when excited, otherwise indistinguishable from those of a goblin. The canine form can be of any typical large dog, and in this form it is almost (95%) impossible to tell from a normal dog, except that other dogs will fear and hate it, attacking at every opportunity.
+
+*Level and Experience Points:* Each stage of a barghest is shown below:
+
+|  Hit Dice | Level | Experience Point Value  |
+| --- | --- | --- |
+|  6 + 6 | VII | 1,275 + 10/h.p.  |
+|  7 + 7 | VII | 2,000 + 12/h.p.  |
+|  8 + 8 | VIII | 3,450 + 14/h.p.  |
+|  9 + 9 | VIII | 3,600 + 14/h.p.  |
+|  10 + 10 | IX | 6,100 + 16/h.p.  |
+|  11 + 11 | IX | 6,250 + 16/h.p.  |
+|  12 + 12 | IX | 7,300 + 18/h.p.  |
+
+By gracious arrangement with the author of *AD&D*, Gary Gygas, monsters appearing in this column are to be considered OFFICIAL AD&D MONSTERS. As such, they are as official and authentic as any included in the AD&D MONSTER MANUAL, or any other book bearing the imprimatur AD&D. All submissions to this column must be in the format presented. They should be well thought out, and fill a viable niche in the AD&D ecological scheme.
+
+To that end, we should warn you that we do not intend the column to become a Who's Who of super-powerful or unreasonable creatures. Every creature can be defeated, in one way or another, just as every creature has a peculiar vulnerability. Keep this in mind when submitting to this column. Submissions MUST be accompanied by SASE if you want them returned in the event that they are not accepted. Submissions that ARE accepted become the property of TSR Periodicals, just as regular articles do. Payment for monsters accepted will be $20. better than the usual payment rate. Monsters must be well developed and fully explained — illustrated monsters are most desirable, but illustration is not a prerequisite.
+
+44

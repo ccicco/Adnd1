@@ -1,0 +1,114 @@
+
+
+June, 1979
+
+The Dragon
+
+Design Forum
+
+# PUTTING TOGETHER A PARTY ON THE SPUR OF THE MOMENT
+
+©by Gary Gygax
+
+There are times — often if you attend many conventions — when you will have a group of players desiring to adventure in your campaign who have no suitable characters with which to do so. You might want only low, medium, or high level characters for the particular scenario you have in mind, and regardless of level it is certain that you will not wish to have ultra-powerful (considering character level) or strange magic items in the group. It therefore becomes necessary to have the party generate special characters on the spot, and this takes up valuable playing time. In order to reduce this to a minimum, the following system, one which I have developed perforce from DMing conventions, is suggested:
+
+Abilities: Players roll 4d4, discarding the low die, for abilities, arranging scores as they like.
+
+Race & Class: After generating ability stats, each player selects the race and class of his or her character as desired, making adjustments accordingly.
+
+Alignment: Make certain that the alignments allowed to participants are not so diverse so as to cause a breakdown in the game due to player quarrels. You may require players to select from two or three compatible alignment types if you think best — such as neutral, neutral good, and lawful neutral, for example.
+
+Level: For low level, you might use random dice to find if players are levels 1-2, 1-3, 2-4; medium range might be 5-7, 5-8, or 7-9; upper range is typically 8-10, 8-11, or 9-12. Multi-class races are best handled by adding 1 level per profession to the level generated, and then dividing the total by the number of classes involved, counting all fractions as whole numbers.
+
+Standard Equipment: Assuming that these are not 1st level characters, you will probably find it best to allow them to take whatever is desired, reminding them that they can only carry so much, and then quickly checking the character sheets before the start of the adventure. Whatever restrictions you decide to place upon standard items is, of course, your own business. Technologically impossible items, and items that you deem unlikely to be used can always be refused to the party.
+
+Magic Items: If the party is assumed to have been adventuring for some time, however brief, then it is probable that one or more of their number would have acquired certain magic items. In order to reflect this likelihood, use the following tables for the various classes of adventurers, as applicable to your group:
+
+PROTECTIVE ITEMS TABLE
+
+|  Character Class | Per Level Chance For Shield, Armor, Etc. (Typically + 1)  |   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|   |  Shield | Plate Banded | Chain | Leather | R. of | Pr. Bracers* |   |
+|  CLERIC | 10% | 5%** | 6%** | 8%** | — | 2% | —  |
+|  Druid | — | — | — | — | 8% | 5% | —  |
+|  FIGHTER | 10% | 6%** | 8%** | 10%** | — | — | —  |
+|  Paladin | 10% | 6%** | 8%** | 10%** | — | — | —  |
+|  Ranger | 8% | 5%** | 7%** | 15%** | — | — | —  |
+|  MAGIC-USER | — | — | — | — | — | 15% | 4%  |
+|  Illusionist | — | — | — | — | — | 15% | 4%  |
+|  THIEF | — | — | — | 10% | 10% | 4% | —  |
+|  Assassin | 1% | — | — | — | 10% | 3% | —  |
+
+*Bracers of AC 6 value.
+
+**Only one sort of armor may be gained, so the character must have a decision as to what type before the odds are computed and the percentile dice are rolled.
+
+Multiply level by percentage chance to determine odds; then roll percentile dice, and if the score is equal to or less than the percentage chance, the character has the item. There is a 1% chance per level of experience of the character that any item will be above average — +2 or bracers of AC 5. If the chance for having the item was greater than 90%, add the percentage above 90% to the chance for the item to be above average. If the resulting roll indicates an above average item, then see if it goes up to +3, or bracers of AC 4, on a straight 1% per level of experience chance. Example: Gonzo the 9th level ranger discovers that he has magic chain mail, having opted to take a sure thing with a 135% chance. Gonzo's level (9) plus the percentage chance above 90% (45%) are added together to find the chance for +2 chain — 9% +
+
+45% = 54%. Percentile dice are rolled, and the result is 51, so Gonzo now has at least +2 chain. A third check is made, and it is discovered that he has just +2 as the dice roll was 99.
+
+WEAPONS TABLE
+
+Per Level Chance For Weapon (Typically + 1)
+
+|  Character Class | Dagger | Sword* | Mace | Battle Axe | Spear | Bow | 15 Bolts +2  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  CLERIC | — | — | 12% | — | — | — | —  |
+|  Druid | 10% | — | 7% | — | 10% | — | —  |
+|  FIGHTER | 10% | 7%** | — | 10%** | 8%** | 1% | 10%**  |
+|  Paladin | 10% | 10%** | — | 10%** | 10%** | — | —  |
+|  Ranger | 10% | 9%** | 8 | 9%** | 8%** | 5% | 10%**  |
+|  MAGIC-USER | 15% | — | — | — | — | — | —  |
+|  Illusionist | 15% | — | — | — | — | — | —  |
+|  THIEF | 12% | 11% | — | — | — | — | —  |
+|  Assassin | 10% | 5%** | 5%** | 5%** | 5%** | — | 1%  |
+|  Monk | 1% | — | — | — | 2% | — | —  |
+
+* Scimitar in the case of druids, short swords for characters less than 5' tall, long swords in all other cases, except the character may opt for a short sword if desired.
+** As with protective items, only one category of weapon of this type may be had, so before finding odds the player must state which his or her character wishes to go for.
+
+Chances for +2 or +3 weapons are the same as for protective items. You may alternately give special features instead, to swords, i.e. +1 sword Flame Tongue, or +2 sword, Giant Slayer. Add a crossbow of speed to +2 bolts if a +3 is indicated, otherwise double their number only.
+
+POTIONS TABLE
+
+|  Character Class | Per Level Chance For Having Potion | Maximum No. Of Potions | Possible Potion Types  |
+| --- | --- | --- | --- |
+|  CLERIC | 6% | 1 | 1. Climbing  |
+|  Druid | 11% | 2 | 2. Diminution  |
+|  FIGHTER | 8% | 1 | 3. Extra-healing  |
+|  Paladin | 6% | 1 | 4. Fire Resistance  |
+|  Ranger | 7% | 1 | 5. Flying  |
+|  MAGIC-USER | 10% | 1 | 6. Gaseous Form  |
+|  Illusionist | 10% | 2 | 7. Growth  |
+|  THIEF | 9% | 2 | 8. Healing  |
+|  Assassin | 5% | 1 | 9. Invisibility  |
+|  Monk | 4% | 1 | 10. Polymorph Serf  |
+
+You may allow characters to have whatever potion(s) suit them, or you can dice to find them at random. Any score of 100% or more for having a potion MUST be allowed to select their own, as this reflects the fact that such characters would have supplies of them available to choose from.
+
+SCROLLS TABLE
+
+|  Character Class | Per Level Chance For Having Scroll | Type of Scroll (And Level)  |   |   |
+| --- | --- | --- | --- | --- |
+|   |   |  Protection | 1 Spell* | 3 spells**  |
+|  CLERIC | 8% | no | 1-3 | 1-4  |
+|  Druid | 7% | yes | 1-3 | 1-4  |
+|  FIGHTER | 9% | yes | — | —  |
+|  Paladin | 4% | yes | — | —  |
+|  Ranger | 5% | yes | — | —  |
+|  MAGIC-USER | 15% | no | 1-4 | 1-6  |
+|  Illusionist | 12% | no | 1-3 | 1-4  |
+|  THIEF*** | 6% | yes | 1-3 | 1-4  |
+|  Assassin*** | 3% | yes | 1-3 | —  |
+
+* Determine randomly, but only normally useful spells for the sort of adventure undertaken.
+** Normally given only if no other types of scrolls are in the possession of the character, otherwise as above.
+*** Only one scroll type available. If spell scroll, they will be magic-user spells, otherwise as above.
+
+## MISCELLANEOUS ITEMS
+
+If the party is generally above 5th level and going into a hazardous area, or if the party is generally above 8th level, then you might determine it advantageous to award from one to four miscellaneous items according to the following list. Large groups are less likely to need such items. Higher level characters are more likely to have them despite numbers. Selection can be by you or by the party, as you deem best. You may
+
+Continued on page 39
+
+37

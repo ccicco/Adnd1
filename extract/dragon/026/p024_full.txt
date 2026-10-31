@@ -1,0 +1,119 @@
+
+
+The Dragon
+
+Vol. III, No. 12
+
+Variant
+
+# Boot Hill Additions, Revisions, and Trivia
+
+by Michael Crane
+
+Boot Hill is an excellent game, but as all games, it has its faults. Some of these faults are due to lack of space while others are due to the state of the art at the time (as it was the first game of its kind). One of Boot Hill's main faults are its Hit Location Charts: the Fast Hit Location Chart is highly inaccurate and is devoid of much of the interest of the Exact Hit Location Chart, while the Exact Hit Location Chart takes much too looooong in large combat situations. The answer is of course, to make up a Fast Exact Hit Location Chart —very fast to resolve but very accurate:
+
+Fast Exact Hit Location Chart
+
+|  Dice Roll | Result  |
+| --- | --- |
+|  01-04 | LW, Left Leg  |
+|  05-10 | SW, Left Leg  |
+|  11-14 | LW, Right Leg  |
+|  15-20 | SW, Right Leg  |
+|  21-24 | LW, Left Arm/Hand  |
+|  25 | SW, Left Arm/Hand  |
+|  26 | LW, Right Arm/Hand  |
+|  27-30 | SW, Right Arm/Hand  |
+|  31-34 | LW, Right Shoulder  |
+|  35-39 | SW, Right Shoulder  |
+|  40 | MW, Right Shoulder  |
+|  41-44 | LW, Left Shoulder  |
+|  45-49 | SW, Left Shoulder  |
+|  50 | MW, Left Shoulder  |
+|  51-58 | LW, A/G  |
+|  59-66 | SW, A/G  |
+|  67-70 | MW, A/G  |
+|  71-72 | LW, Chest  |
+|  73-79 | SW, Chest  |
+|  80-85 | MW, Chest  |
+|  86-87 | LW, Head  |
+|  89-92 | SW, Head  |
+|  93-100 | MW, Head  |
+|  LW = Light Wound | MW = Mortal Wound  |
+|  SW = Serious Wound | A/G = Abdomen/Groin  |
+
+All rules can still be used with chart, including sharpshooting, and combats may now be carried out with much more speed. Note however, that this is not meant to replace the Exact Hit Location Chart! It is only meant to replace the Exact Hit Location Chart for large gunbattles where large numbers of die rolls would bog down the game. For small gun battles the Exact Hit Location Chart is the best chart to use.
+
+A rule that has been missing for a long time is a rule governing if a character is left or right handed. I suggest using the following chart (swiped right out of Dragon #10):
+
+|  Roll | Handedness  |
+| --- | --- |
+|  3 | Ambidextrous  |
+|  3-5 | Left  |
+|  6-12 | Right  |
+
+An ambidextrous may now fire two pistols with the following modifiers: one shot fired from each gun 0, two shots fired from each gun -10, three shots may never be fired from either gun while both are being shot.
+
+If a character is left handed switch the positions of Left Arm/Hand and Right Arm/Hand with each other on the Fast Exact Hit Location Chart and the Exact Hit Location Chart. There is no change if a character is right handed.
+
+Another large modifier left out of Boot Hill is the individual size of each character. Use the following chart to determine each characters size:
+
+|  Roll | Size  |
+| --- | --- |
+|  1 | Tiny  |
+|  2 | Small  |
+|  3-4 | Average  |
+|  5 | Tall  |
+|  6 | Very Tall  |
+
+Tiny characters receive a -20 when rolling for their strength but all characters shooting at them receive a -10 on the To Hit Chart, due to their small size.
+
+Small characters are similar, receiving a -10 when rolling for strength, and characters shooting at them receiving a -5 on the To Hit Chart.
+
+Average characters receive no benefits or liabilities.
+
+Tall characters receive a + 10 on their strength roll, Very Tall characters receiving a +20 on their strength rolls. Characters shooting at Tall characters receive a +5 on the To Hit Chart, and a + 10 on the To Hit Chart when shooting at Very Tall characters.
+
+Another rule I would like to suggest is the "Running the Horse to Death" rule. This allows the player to ride his horse as if it had run one less turn than it really had; for every turn of this, roll a six-sided die; on a roll of 5 or 6 the horse dies, right then and there. This may only be used for three turns before the horse must rest at least one turn (Example: John the Bandit is trying to escape from a posse but unfortunately for him he is mounted on a fair horse which has been running for one hour, so he decides to run the horse to death. This turn his horse again runs 6 but sinks to third turn exhaustion, meaning that even if he runs his horse to death next turn if it survives, he will only move 4).
+
+My last point concerns morale, which is mangled badly in Boot Hill. Morale should be adjusted as follows: never allow a character's morale to go up more than two levels due to modifiers, and -5 for every 50% that the character is outnumbered (if he is against three men and is alone his morale is -15). And never let a character's morale go down more than three levels.
+
+I hope these ideas help your Boot Hill campaign as much as they helped mine and may your bullets always fly true.
+
+## Source of the Nile
+
+African Exploration in the 19th Century
+
+17 x 23 inch, three-color mapboard
+
+26-page rule-book
+
+Over 400 die-cut counters in seven colors
+
+48 Disaster Cards
+
+6 Expedition Organization Charts
+
+3 Crayons 4 Dice Game box.
+
+Follow the great 19th-century explorers in their search for the source of the Nile. Discover mountains, jungles, deserts and great lakes in the uncharted heart of the Dark Continent. Meet and deal with native tribes —survive animal attacks, disease, and starvation—overcome superstition, desertion and disaster to add your discoveries to the map of Africa.
+
+—On orders for 1-11 copies, the first two copies are $12.00 each and subsequent copies on the same order are $8.00 each, thus 11 copies cost $96.00 DEALER RATES AVAILABLE ON REQUEST
+
+—Minnesota Residents please add 4% sales tax or list State Sales Tax Number on order form below. —Discovery Games will pay shipping costs.
+
+Please send me ______ copies of Source of the Nile.
+
+Enclosed find $______ Sales Tax Number ______
+
+Name ______
+
+Street ______
+
+City ______
+
+State ______ ZIP ______
+
+Discovery Games PO Box 3395 St. Paul, MN 55165
+
+22

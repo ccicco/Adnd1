@@ -1,0 +1,49 @@
+
+
+The Dragon
+
+Vol. III, No. 12
+
+## D&D Meets the Electronic Age
+
+Rick Krebs
+
+While the subtitle to the original Dungeon & Dragons rules set states that it is a fantasy role playing game playable with paper and pencil and miniature figures, to many fanatics of the game and its genre, the equipment used has gone far beyond that point. Not that the D&D claim is false, far from it. It's in the nature of fanatics to take their interest seriously and to constantly seek new ways to expand their interest.
+
+Over the years access to photocopiers and mimeograph machines have aided many Dungeon Masters in copying maps, charts and even publishing their own zines, all to the expansion of their campaign. But, the recent electronics explosion has now brought another tool to those DMs fortunate to have access to them: the micro-computer.
+
+We were one of those fortunate groups to gain the use of a 4K (4,000 bit) memory, BASIC speaking microcomputer. We mentioned to several fellow DMs and gamers of our plans to program it to handle role playing games (D&D, Boot Hill), and to my surprise there was a lot of concern about letting a machine become a part of role playing games. Well, either I did a lousy job of explaining the planned programming (possible as I am by no stretch of the imagination a computer scientist, merely a gamer looking for new ways to use technology in gaming) or the concern was unwarranted. As any of our group of gamers can testify, the SAFE has improved our handling of the mechanics of our campaign, at no expense to creativity.
+
+An analysis of D&D reveals that movement around a dungeon (which way to go, which door to open, should we fight or run, how do we disarm the trap, etc.) is basic logic (sometimes good logic, sometimes bad) problem solving that can be broken into a mathematical or a computer flow chart. But, the contents of the rooms, how monsters react, what a chamber looks like is an art that a DM develops from experience and use of his/her imagination. So why not let the computer handle the mechanics and the DM handle the material. With the computer doing part of the job it leaves the DM more time to be creative and interact with the players.
+
+What does the computer do in the Realm of the Celestial Wizard (our campaign)? At present with our limited memory, the SAGE is programmed for the hit charts and damage allocation, name generation (for the thousands of minor NPCs), creating requisites and levels of non-player characters, handling the bookkeeping details on player characters, and a basic Dungeon that runs itself.
+
+The hit charts are easily programmed, though repetitiously dull to work on, but the knowledge that once done it never has to be done again is compensation. The program is based on simple if . . . then, as well as 'logical AND' and 'logical OR' statements. First you tell the computer to generate a random number (X) from 1 to 20. Now you INPUT the monster's hit dice (Y) and then foe's armor class (Z). A sample program entry shows what is done with the preceding information: If Y equals 1 and Z equals 9 and X is greater than or equal to 10, then go to 600.
+
+The computer's dice rolls a 12, it goes to line #600 in the program, where it is told to print 'hits.' The computer tells you the monster has hit, but it now waits for further input. It needs to know what type of die to roll and how many in order to give damage. Since the monster in the example was an arc, we enter 6 for type of dice and 1 for how many. Had the computer rolled a 20, it would have informed us of double damage and the 6 would be rolled twice. Now the computer returns to the start of the program ready for more action.
+
+Had the computer rolled less than 10 in the example, the SAGE would have gone back to the beginning of the program, indicating a miss. No need to have it print 'Miss' as it takes up valuable space in the memory. Another important thing to remember is to include a 'timer loop', when the damage is rolled, as it will disappear from the screen as rapidly as it appeared. Even the computer is eager to get back to battle.
+
+Programming to generate names is accomplished by giving letter values to numbers and generating randomly a string of numbers (letters) according to certain pre-determined patterns. Professor Barker's article in the Strategic Review on names in the Empire of the Petal Throne provides a reference for these patterns which can be adapted to suit your own taste.
+
+Our computer dungeon is based on a labyrinth, and the only limit to it is the size of SAGE's memory bank. But by using reoccurring rooms and passages, the size of the memory can be compensated for. As to try and explain the program for the dungeon would take too much space, a few generalized patterns will be demonstrated, and if you have access to a micro computer try and expand on it yourself.
+
+The computer dungeon is based on if . . . then statements such as, 'You are standing in an east-west corridor. Which way?' If east, go to Room #1, which is empty but has 3 doors. If west, then go to Chamber #2, which contains a dagger trap and 2 doors. From here the computer can take you back to the initial corridor, or to a series of other rooms, which also leads to the initial corridor. By wording corridors and rooms similarly, it makes the trick of repeating rooms impossible to detect and this misdirection poses as much of a threat as the Minotaur and other creatures trapped within the labyrinth. To demonstrate how confusing a program can be, try navigating your way through it right after completing the program.
+
+The computer in gaming has been around awhile, but now as technology takes steps forward, the next several years contain the possibility of general access to the more complete systems for the average consumer. However, the fear that the use of a micro computer will destroy the creativity of role playing games if used in them is groundless. Our experience in recent months has been very positive in SAGE's use in both D&D and Boot Hill (our program for Gamma World is not finished yet), and if anything, has helped this DM in handling his chores. We now are adding new ideas that previously couldn't be adopted, as we were busy enough rolling dice and trying to locate all the different charts.
+
+The micro computer has its place in role playing gaming as long as its limitations are understood, and the human program remembers that his duty is in creativity, while the computer can and should only speed up the mechanics. The computer provides the skeleton for gaming, and the DM still creates the flesh of the campaign.
+
+### Design Forum
+
+## Hirelings Have Feelings Too
+
+By Charles Sagui
+
+One of the strange relationships of D&D is that between the Player Character and those he pays to accompany him into danger and possible death. A hireling is an extension of the will of the player but he has a will of his own expressed in morale and reaction rolls to determine how an NPC hireling will act in a given situation. What follows are some of my ideas on treatment of hired NPCs.
+
+The hireling is not a slave, he is a free man who has made the choice to risk his life. This type of duty should not be confused with the hirelings who sit around the castle surrounded by an army of comrades ready to ride forth if the smallest band of Orcs happen to trespass on the holdings of their lord. The hireling who accompanies the player into the underworld is facing proven danger and acting as porter for heavy loads of gold and other treasures. They are a different sort of person and require a different pay structure.
+
+A hireling should be offered at least two years normal salary in advance (72 GP for human heavy foot etc.) plus a share of the spoils. There are several ways to divide spoils. The first and easiest is to give a share of the treasure equally to all who participate; while many DMs like this idea, many players do not. Another way is to give a percentage of the treasure much as they are given a percentage of experience points, a 25-50% usually works fairly well. Finally I will list the way which I prefer; the principal employers and player characters receive a share and they in turn give a share to their NPC employees, usually 5-10% as a base. Very few people can be convinced to enter the dungeon on a strict salary basis. Those who will go are not trustworthy and will ask at least the equivalent of five years salary in advance. In relatively safe encounters, such as a few Goblins or a Kobold or two, these purely mercenary hirelings will not act with outstanding courage; but when they face the dragon, or the Balor demon steps into the corridor, snaps his whip and ignites, these warriors-for-money are going to question the wisdom of their decision to go along and in most cases they will take off, along with any treasure you were foolish enough to let him carry! Non-humans will
+
+26

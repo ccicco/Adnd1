@@ -1,0 +1,55 @@
+
+
+The Dragon
+
+Vol. III, No. 12
+
+Q. & A. Continued from page 8
+
+**Can one regiment of horse break regimental integrity to engage multiple squares in sequence?**
+
+This is another question that a referee might be best used to resolve. Generally, my answer would be yes, cavalry can break regimental integrity in cases such as the one in your diagram.
+
+**Can you overlap the tips of two units to gain a greater edge in melee? How far on the flanks can you count points? How much overlap counts?**
+
+Who can hit in flank is governed by rule 20F. Measuring overlap may require the use of the frontage gauge if a casual glance is insufficient.
+
+**Shouldn't the Prussian musket (1705 model) range be shortened?**
+
+If we were dealing with an earlier period, I would look more closely at this one. It is very important for players to realize that these rules deal only with the period 1808-1815. As the Prussians had been extensively reequipped with British muskets, I see no reason for an adverse firing capability. It is easy indeed for us to tend to look at the Napoleonic wars as a whole. But with the amount of detail that we take into account in miniatures/ System 7 gaming, a great number of minor changes affect capabilities during the course of the period. After we're well along with 1808-1815, we'll certainly provide materials for earlier campaigns. In some instances, there will be virtually no changes, but in others the changes will be radical.
+
+**Can infantry charge cavalry, after breakthrough, if the cavalry is disordered after its earlier success? In the rules, nothing says it shouldn't.**
+
+There is absolutely nothing to prevent infantry from charging horse. If the cavalry commander has put himself in the position of making it practical for them to do so, then some interesting results may happen as did, for example, occur at Borodino. Generally, however, a charge-if-charged by the cavalry will put paid to such an assault. Of course, if the infantry is getting that close, they would probably be better used by blowing away the horse with small-arms fire. In my mind, a cavalry commander who gets himself in that kind of pickle deserves what he gets.
+
+**Can Carabiniers dismount and fire?**
+
+Carabiniers cannot dismount and fire. French carabiniers, by the time 1808 rolls around, are heavy cavalry, pure and simple. If anything, they are best described as elite Cuirassiers.
+
+**Do troops in open order have flanks? How about units in disorder?**
+
+Rule 14, paragraph A.9. states that units in disorder do not have flanks or rear. The same should apply to units in open order, but is not so indicated in the rule.
+
+**Do two stacked units count as one or two ranks depth in melee, i.e., in a column stacked two deep and three wide, are there two or four back ranks?**
+
+The handling of stacking is one of the most radical changes that a miniatures player will encounter when using System 7 for the first time, so new players are advised to read it carefully. The single most important advantage to the ability to stack is that formations bear closer resemblance to reality. The first paragraph of rule indicates that, in the example, the top counter of the leading stack is considered the front rank, with five ranks behind it.
+
+**Is there a minimum size of retreating unit that can cause a fear of disaster check or effect a unit by retreating through it (say, one gun section retreats through afresh battalion)?**
+
+There is no minimum unit size necessary to trigger a morale check. This is for simplicity of play only. The notion of players or the referee setting a minimum seems quite reasonable to me. Setting a precise minimum that would be applicable to all situations, however, seems to me a tricky thing to handle without the possibility of abnormal results occurring, so some flexibility should be allowed the referee under these circumstances.
+
+**Can a cavalry unit interpenetrate another cavalry unit which has stopped to melee a square, as often occurred during Ney's attacks at Quatre Bras?**
+
+It may not on the same turn that the meleeing cavalry has entered melee. It may on subsequent melee rounds. This is not wholesale license to charge through other friendly troops, but under the specific circumstances I think it reasonable.
+
+**How far around a square does cavalry wrap after impact? Does it have to?**
+
+Cavalry does not wrap around the face of a square on the charging turn. It may, however, adjust to enable it to strike one face of the square fully, or, if charging obliquely, on two faces. Of course, if it hits two faces, both faces may return fire. Additional wrapping comes under the subsequent melee provisions of the rules.
+
+**Can a unit raise its morale while in reserve, if artillery is capable of firing on it, but does not, or if such fire causes no casualties?**
+
+No, a unit may not raise its morale if enemy artillery is capable of firing at it. Perception of safety is as important as real safety under these circumstances. As long as the enemy artillery remains a force-in-being, morale is not raised. Out of sight, out of mind.
+
+**As buildings are simulated to represent groups, can artillery fire on units down a roadway between groups. If so, are there any defensive cover adjustments?**
+
+10

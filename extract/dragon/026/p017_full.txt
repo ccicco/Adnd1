@@ -1,0 +1,100 @@
+
+
+June, 1979
+
+The Dragon
+
+Variant
+
+# AND WHAT OF THE SKINNIES?
+
+## A Starship Troopers Variant
+
+by John W.S. Marvin
+
+Ed Note: The author play-tested the game in question for AH and so is eminently qualified to write this.
+
+Starship Troopers (AH) is one of the most popular Science Fiction games on the market now, and with good reason. Good rules, great graphics, and a large uncertainty factor keep every game interesting and fun. The Arachnids and Humanoids (known as Skinnies to you Earth folks) present alien psychologies as well as alien names and shapes. In the game, as in the Robert Heinlein book of the same name, the major battles are between the Terrans and Arachnids, with the Humanoids being a pushover for an experienced Terran player. While this was the case in the overall strategic conflict, there must have been some cases where the Terrans got more than they bargained for on a Skinny planet. I dedicate this variant to all you eight foot tall yellow nudists living in the interstellar commune . . .
+
+First, some additional Humanoid units, then rules to cover them in existing scenarios as well as a scenario designed just for them.
+
+1. Heavy Weapon — Nuclear Missile Launcher (NML)
+   Attack: six missiles with a range of 10 and an effect of a Terran NUC rocket launcher
+   Defense: 6 Movement: 4
+2. Ground Effects Troop Transport (GEV) — may carry three Humanoid Warriors or Workers. Loads and unloads as a Terran Air Car. (See New Rule # 1)
+   Attack: 0 Defense: 7 (May be attacked by DAPs and DARs)
+   Movement: 15
+3. Scout Ship (SCT) — must start game on spaceport hex, and may not attack until after leaving spaceport.
+   Attacks: Beam (as in Humanoid Heavy Weapon) or ONE Nuclear Missile (range: 15, effect: as Arachnid Scale 3 NUC demo)
+   Defense: 17 Movement: 25
+   but not less than 10 PLUS a second movement of 12 and not less than 5 at the end of the turn as in Terran Extended Jump Phase. May carry one Warrior or Worker as GEV. Not subject to DAPs or DARs unless loading or unloading.
+4. Warship (WRSP) — in spaceport hex only. Increases odds ratio by one for space defenses (New Rule #2).
+   Attack: 0 Defense: 41 Movement: 0
+   Each Warship contains 2 Scout Ships, 1 GEV, and 12 Warriors. Any or all of these units may be released at any time.
+5. Transport Ship (TRSP) — in spaceport hex only.
+   Attack: 0 Defense: 34 Movement: 0
+   Each Transport Ship holds 1 Scout Ship, 8 Warriors, 16 Workers, 1 GEV, 1 NML, 1 Heavy Weapon — Beam, and 1 Heavy Weapon — Missile. They release as in the Warship.
+
+Note: Spaceships take damage as Terran Retrieval Boats and are worth twice the victory points as heavy weapon units. GEVs are considered Heavy Weapons for victory points.
+
+Transports and Warships may unload GEVs and/or Scout Ships loaded with Warriors or Workers. There is a 1 in 6 chance that they are holding only half the normal amount of Humanoids and equipment (if only one type of unit is called for, there is a 50% chance it is there). Roll separate die rolls for each ship.
+
+NEW RULE #1: Humanoid Workers and Warriors may capture an immobilized MI and load the captured unit into a GEV. Only two Humanoids may be carried with the captive. The MI may be kept in the GEV or unloaded in any hex. If the GEV is eliminated in close combat, the MI is rescued on a roll of a 1 or a 2, otherwise it is destroyed with the GEV. Subtract 1 for each odds ratio over 6 to 1 (ex. 8 - 1: subtract 2).
+
+NEW RULE #2: Spaceports have a ground to air defense and a ground to space defense. Any MI unit that drifts within 10 hexes of a spaceport hex is attacked at 3 to 1 odds at the start of the Humanoid turn by the space defense. Terran Retrieval Boats suffer a 2 to 1 attack. Any Air Car that flys within 3 hexes of a spaceport hex is attacked at 4 to 1 odds by the air defense.
+
+Note: NUced spaceport hexes do not count as spaceport hexes.
+NEW RULE #3: In Scenario 1 and in all other scenarios where the Terran player gets -1 victory points for eliminating a worker, the Terran is awarded -3 points for each spaceport hex they NUC, and -10 points for each city hex they NUC.
+
+How many of these new units should be used? There are two answers: number one and number two. The first adds Humanoid units to each scenario thusly:
+
+SCENARIO ONE: 1 NML
+SCENARIO THREE: 1 NML, 1 GEV, and 1 WRSP (full to capacity)
+SCENARIO FOUR: 1 TRSP (halved capacity) and delay Terran entry one turn.
+
+The Second Way: For each scenario with the Humanoids roll for extra units at the start of the 1st Humanoid turn after Initial Drop. Any space defense attacks are then rolled.
+
+|  Die Roll | UNITS | Die Roll | SHIPS  |
+| --- | --- | --- | --- |
+|  1. | 1 GEV & 3 Warriors | 1. | Scout Ship  |
+|  2. | 1 NML | 2. | scout  |
+|  3. | 1 NML & a GEV & 3 Warriors | 3. | scout  |
+|  4. | 1 Ship | 4. | Warship  |
+|  5. | 1 Ship | 5. | Warship  |
+|  6. | 2 Ships (separate rolls) | 6. | Transport  |
+
+AND NOW "EAT DIRT EARTHMAN," THE NEW SCENARIO!
+Terrans tried to forget the day when 1st Platoon, C Company, 1st Battalion, 2nd Regiment hit Skinny — 8 in the Terran offensive vs. the inner Humanoid systems. They were forever known as The Lost Platoon.
+
+TERRAN FORCES: 1 Platoon of Mobile Infantry with 12 DAPs, 6 DARs, 12 HE launchers, and 4 NUC launchers
+
+HUMANOID FORCES: Force A: 24 Warriors, 6 HW-beams, 6 HW-missiles, 2 NRLs, 9 Workers, 12 Strong Points, 8 Decoys, all six Critical Installations, and 3 GEVs
+
+Force B: 1 Warship and 1 Transport (both full to capacity)
+SET UP: Humanoid — first, Force A: anywhere on board Force B: spaceport, move second.
+
+Terran — second via Initial Drop. Move First, must be retrieved by end of game.
+
+GAME LENGTH: 14 Turns
+VICTORY CONDITIONS: Terran: destroy all Critical Installations
+Humanoid: Prevent more than 10 Terran units from being retrieved
+NOTE: If neither or both of these conditions are met victory is awarded to the player with the most points. Tie goes to the Terran.
+
+|   | Humanoid Victory Points: | HVY Damage | WIA/KIA  |
+| --- | --- | --- | --- |
+|  Scout |  | 1 | 2  |
+|  Marauder |  | 2 | 4  |
+|  Commander |  | 3 | 7  |
+
+for each unit so damaged at the game's end.
+
+|   | Terran Victory Points: | Eliminated | Not Eliminated  |
+| --- | --- | --- | --- |
+|  Warriors |  | 1 | —  |
+|  Heavy Weapon |  | 3 | —  |
+|  Ship |  | 6 | —  |
+|  Power Source |  | 5 | -5  |
+|  Communications Center |  | 7 | -7  |
+|  Water Supply |  | 15 | -15  |
+
+15

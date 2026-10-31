@@ -1,0 +1,111 @@
+
+
+June, 1979
+
+The Dragon
+
+Variant Game
+
+# MUGGER!
+
+By Kevin Hendryx
+
+The last decade has spawned a plethora of role-playing simulation games. *Dungeons and Dragons*, of course, is the eldest and foremost, the "classic" fantasy game. As such, it has opened the doors to at least a dozen imitations, hybrids, and bastardizations, some good, some fair, and some unmentionable.
+
+But lately there has been a distressing swing toward role-playing games of a more, uh, *bizarre* nature. There is one in which the players assume the role of *monsters* and gain points by killing *dungeon travellers* (is turnabout really fair play?). There is *Boot Hill*, which offers the pleasures of being gunned down by your favorite TV or movie western hero, or tied in knots by a saloon girl who's tougher than you are. And at the extreme end of the spectrum must be *Bunnies and Burrows*. Readers of the *Dragon* will no doubt remember this as the game of intelligent rabbits. This is one game that is entirely lost on me. The thrill of being a killer bunny cannot hope to match the satisfaction of a well-hurled Meteor Swarm.
+
+But putting all this merry banter behind, I at last approach the point of this inspired polemic, and that is, that most role-playing games today focus on a fantasy universe, such as *D&D*, or are set in a past historical period a la *En Garde*, *Gladiator*, etc. But there is not a single role-playing game that I know of set in the modern world, or that reflects real-life conditions. This is indeed a shame, for the 20th Century holds many simulation possibilities every bit as intriguing as a locked chest on the ninth level, and just as much fun as pulping kobolds with a morning-star. Not only that, but through a true-to-life simulation we can learn crucial survival skills necessary for self-preservation in today's world. Therefore, in all humbleness, I offer the following groundwork of a new role-playing game, firmly based on reality and at the same time giving free rein to the players' suppressed pathological desires. The time is 3 A.M., the Bronx, 1978. . .
+
+## Mugger!
+
+### The Game of Tactical Inter-City Combat, 1979
+
+Each player will assume the role of one "mugger" (hereafter referred to as mugger), the basic unit of play. The mugger gains experience points through completing successful muggings and grabbing loot, which is also translatable into experience points. The game objective is to amass as large a horde of experience points as possible while carrying out one's crimes and eventually gain a seat in the U.S. Congress, while at the same time avoiding the dangers of being jailed, severely beaten up, or killed.
+
+The game is run by an M.M., or Mugger-Master, who lays out the game-map and rolls the dice to determine events and outcomes. A good *Mugger!* map will incorporate such typical urban features as alleys, shadowy doorways, parks, large hedges, trashcans, honky-tanks, blue movie houses, and streetlights (both working and non-working models).
+
+The game is played on a one-to-one system, i.e., one M.M. and one mugger. The mugger is assumed to start as Armor Class 7 (leather) and should be equipped with any or all of the following weapons:
+
+### NEXT ISSUE. . .
+
+SPI's *Agincourt*
+
+Make-it-yourself Philosophers' Stone
+
+Fighting the Cavalry Plain at Austerlitz
+
+*Imperium* Variant
+
+Guest Writer in Sorcerer's Scroll —
+
+Bob Bledshaw of TJG
+
+Giants in the Earth — part II
+
+Sixguns & Sorcery — *Boot Hill* meets *AD&D*
+
+### Mugger's Weapons & Damage Table
+
+*denotes special clause (see below)
+
+|  *switchblade | 1-4  |
+| --- | --- |
+|  *kitchen knife | 1-4  |
+|  *nylon cord, 3' | 1-6  |
+|  length of chain | 1-8  |
+|  blackjack | 1-8  |
+|  brass knuckles | +4 to Bare Hands, below  |
+|  lead pipe | 1-8  |
+|  tire iron | 1-10  |
+|  *broken bottle | 1-6  |
+|  hurled bottle | 1-2  |
+|  hurled brick/rock | 1-3  |
+|  *two-by-four | 1-8  |
+|  *Saturday Night Special | 12-48  |
+|  *bare hands | 1-2  |
+
+*switchblade — 1/6 chance of being rusted and not opening
+
+*knife — 1/3 chance of being rusted and giving tetanus to whoever is struck with it.
+
+*nylon cord — must first be wrapped around victim's neck before doing the indicated damage.
+
+*broken bottle — 1/6 chance of shattering in hand when used.
+
+*two-by-four — 1/3 chance of breaking over victim's head when used.
+
+*Saturday night special — if mugger has less than 500 experience points he is considered a novice, or amateur mugger, and as such, there is a 1/3 chance that he will forget to load his gun whenever he goes out mugging. There is also a 1/3 chance of the Saturday Night Special blowing up in the mugger's face when fired, doing full damage to the mugger.
+
+*bare hands — recommended only for muggers of exceptional strength, or for those of gorilla ancestry no farther back than two generations.
+
+### Variable Encounters of the Undesirable Kind
+
+These are the "wandering beasties" of this game, appearing only on a roll of six (six-sided die) with a roll being made every other game-turn. Roll the exact situation below. The mugger should obviously try at all costs to avoid these dangers.
+
+|  Encounters | No. appearing  |
+| --- | --- |
+|  1 Cop on his beat | 1-2  |
+|  2 Roving squad cars | 1-3  |
+|  3 Tougher mugger | 1-6  |
+|  4 Street gangs | 1-8 gangs  |
+|  5 Hare Krishna cult | 1-20 fanatics  |
+|  6 Stray dogs | 4-24  |
+
+*Mugger!* operates on a man-to-mugger combat system with the player-mugger encountering one of two classes of non-player characters, (henceforth called victims), the Pushovers and the Invincibles. The qualities and restrictions of these two classes are given below. The mugger must first subdue — or kill — his victim, and then loot him. A roll of 6 on a 6-sided die indicates the victim is penniless. The mugger curses and gets zero experience points. If loot is found, the following table is consulted to determine the type and the number of experience points it is worth:
+
+|  Loot | Ex. Points  |
+| --- | --- |
+|  1 Full hip flask | 5  |
+|  2 Expensive clothes | 10  |
+|  3 Paycheck/checkbook | 20  |
+|  4 Credit cards | 30  |
+|  5 Jewelry, watch | 40  |
+|  6 Ready cash | 50  |
+|  7 Season tickets for the Dallas Cowboys games | 100  |
+|  8 Classified Dept. of Defense material | 200  |
+|  9 An authentic Van Gough original | 500  |
+|  10 Ten kilograms of Plutonium | 1,000  |
+
+The mugger normally receives 40 experience points for pulling off
+
+31

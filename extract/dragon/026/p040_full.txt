@@ -1,0 +1,129 @@
+
+
+The Dragon
+
+Vol. III, No. 12
+
+Variant
+
+# STRENGTH COMPARISON TABLE
+
+Thomas Holsinger
+
+The strength requisite of *D&D* characters is often increased, and sometimes decreased, due to magic items, potions, the touch of monsters such as Shadows, etc. There is a need for a table to show players and referees what happens when strength goes above 18/100 and below 3. Some of us refs also hand out girdles of kobold strength and gauntlets of pixie power, and we need monster equivalent strengths for those. In addition, some monsters often use weapons and there is a need to add strength bonuses to their basic weapons damage in a systematic way.
+
+The table presented here is an attempt to meet those needs. Natural strength can never exceed the racial maximums given in the *Player's Handbook*, though magic can temporarily and sometimes permanently (wishes) increase strength beyond that. All hit probability and damage bonuses are cumulative.
+
+This table is to be used in two ways. First, when monsters use weapons, one should simply add the monster's average racial strength bonuses from this table to the damage done according to the *Player's Handbook Weapon Table*, PROVIDED the monster is man-sized or larger. If the monster is smaller than man-sized, use the accompanying *Smaller than Man-sized Weapons Table* and do not add the average racial strength bonuses given here.
+
+The other method is to roll 3d6 as usual and add the strength bonuses from that to the average racial strength of the monster (including percentile rolls for 18/7 strength). Thus you can have an exceptionally strong or weak ogre. This can be especially important when player-characters are polymorphed into monsters; their personal strength bonuses carry over to their monster forms. This second method should chiefly be used to add a little individuality to your monsters.
+
+When monsters are being run as player characters, they do not start using the *Monsters Attacking Table*, rather they use the *Men Attacking Table*, with bonuses for racial strength and personal strength, and increase hit probability as they go up in experience as fighters.
+
+Some changes have been made from the *Players' Handbook Strength Table*. Magic items in the *Dungeon Masters' Guide* should be modified to fit this table; i.e., Gauntlets of Ogre Power would be plus 3 to hit and plus d6 in damage rather than plus 2 to hit and plus d8 in damage. Demons and devils should have strengths of 20-25 depending upon type, at the referee's discretion.
+
+The inspiration for this came from the strength table in Dave Hargrave's *Arduin Grimoire II*.
+
+## Arduin Grimoire II.
+
+|  STRENGTH DIE ROLL | EQUIVALENT MONSTER STRENGTH | HIT PROBABILITY | DAMAGE  |
+| --- | --- | --- | --- |
+|  0 | 0 none | collapse on ground, can't move |   |
+|  1 | 1 Brownies | -4 | -d6  |
+|  2 | 2 Leprechauns | -1 | -d4  |
+|  3 | 3 Pixies | -2 | -1-3  |
+|  4 | 4 Gnomes, Halflings, Kobolds | -2 | -1-2  |
+|  5 | 5 none | -1 | -1-2  |
+|  6-7 | 6-7 Goblins, Nixies | -1 | -1  |
+|  8 | 8 none | -1 | normal  |
+|  9-12 | 9-12 Elves, Humans, Orcs | normal | normal  |
+|  13-14 | 13-14 Dwarves | +1 | normal  |
+|  15-16 | 15-16 Hobgoblins | +1 | +1  |
+|  17-18/01-75 | 17-18 Lizard Men | +2 | +1-2  |
+|  18/76-90 | 19 Gnolls | +2 | +1-3  |
+|  18/90-99 | 20 Bugbears | +2 | +d4  |
+|  18/100 | 21 Ogres, Trolls | +3 | +d6  |
+|   | 22 Hill Giants, Ogre Magi | +4 | +2-9  |
+|   | 23 Stone Giants | +4 | +2d6  |
+|   | 24 Frost Giants | +5 | +3d6  |
+|   | 25 Fire Giants | +5 | +4d6  |
+|   | 26 Cloud Giants | +6 | +5d6  |
+|   | 27 Storm Giants, Titans | +6 | +6d6  |
+
+There are a lot of aspects of strength which should be left to the discretion of the referee. Flesh and bone are not increased in their load-bearing properties by magic, so there is a fairly good chance that tendons would be ripped, cartilage torn and bones fractured when using magically increased strength for purposes besides melee. A character might have the strength to pick up and throw a boulder like a
+
+giant, but his joints would probably fail messily if he tried. Not to mention such details as whether or not his arms and hands are broad enough to get a grip, if he has the leverage and balance to get under it and not fall on his nose, etc.
+
+This table is meant to be used in conjunction with *Smaller than Man-Sized Weapons Table* for smaller than man-sized characters and monsters. Example: a hobbit with 16 strength attacks with a hobbit-sized Battle Axe. His 16 strength from this table is one lower than the maximum possible allowed for hobbits from the *Players' Handbook* strength table and is permissible (though not if he suffers a sex change from magic, in which case it would be reduced to 14) so he is plus 1 to hit and plus 1 in damage. The hobbit equivalent of Battle Axe does one d4 of damage, so this hobbit's damage is 2-5.
+
+A human cursed with a Girdle of Hobbit Strength would be minus 2 to hit and minus 1-2 points in damage with a man-sized battle axe, modified by a strength of say 16, to minus 1 to hit and minus 1 to damage, for potential damage of 1-7 points. The difference is that the human is using a man-sized axe, which with his reduced strength is rather unwieldy, but it is heavier and has the potential to do greater damage than the hobbit axe wielded by a strong hobbit.
+
+Damage can never be reduced below one point no matter how many reductions there are.
+
+## WINNERS
+
+winning entry:
+
+So I said, "Stop or I'll shoot . . . Stop or I'll shoot. . . Stop or I'll shoot. . . ."
+
+Martin Connell, Mendham, NJ
+
+2nd place:
+
+"I would like to speak with the DM privately for a moment."
+
+Michael J. SeStefano, Springfield, MO
+
+3rd place:
+
+"Stoicism at its best."
+
+Larry Yang, Rancho Palos Verdes, CA
+
+honorable mention:
+
+"He keeps muttering something about 'pain' and 'all in the mind'. . ."
+
+W. Morris, Canada
+
+"You may think I'm worried, but the fact that he didn't dodge the arrows proves he can't be very good."
+
+E. McNary, CA
+
+"You sure are a pain in the neck . . . and the back, and the stomach, and the arms, and the legs. . . ."
+
+T. McQuinn, MI
+
+"Could you move this one arrow, it hurts."
+
+J. Ward, MI
+
+"Fred, Flower says there's an ambush ahead."
+
+G. Green, MA
+
+"We better advertise for a new arrow catcher."
+
+L. Sweda, MA
+
+"So much for the Quivering Palm!"
+
+K. Thompson, NY
+
+"I hate people who yell when I've got a headache."
+
+W. Morris, Canada
+
+"Don't tell me. He made his seeing throw."
+
+R. Darby, NY
+
+"Faster than a speeding arrow, he's not."
+
+W. Morris, Canada
+
+"Wait till I find the guy who sold me these magic arrows."
+
+C. Cuffe, CT
+
+38

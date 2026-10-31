@@ -1,0 +1,51 @@
+
+
+June, 1979
+
+The Dragon
+
+Recall that 'building' cards in *System 7* each reflect groups of structures. In the diagram shown, we have four distinct clumps of buildings with a wide thoroughfare separating them. The artillery, in this instance could indeed fire at the advancing infantry. If the entire area were a single building complex, however, the artillery doesn't have a clear shot.
+
+**Can freed prisoners re-enter the battle? At what morale? Do they have any muskets? If they cannot re-enter the battle, why even escort them?**
+
+No, freed prisoners may not rejoin the battle. They must be escorted, however, because although in a game sense the escorting troops are better used other places, in an historical context it was impractical to allow prisoners loose to rejoin their parent army (muskets or no) and it was in inordinate bad taste to shoot them, which seems to be the only viable alternative. Referees should keep prisoners in mind when generating victory conditions for the game.
+
+**How do new units enter ongoing melee?**
+
+In a multiple unit melee, new troops entering the melee do so just as if there was no melee in progress.
+
+*Review Continued from page 6*
+
+Perhaps the most difficult activity for any system to simulate is the encounter of cavalry and infantry in a square. If there is any weakness in the modified rules it is here. There are no real errors, but due to their simplicity some needed information is lacking. Among these are how far a cavalry unit must wrap around a square it encounters; can a regiment break unit integrity to attack several squares simultaneously; and a few warps created by the application of the general rules to this special situation. It currently appears that any unit in square in melee with cavalry, and so, surrounded, that fails morale to any degree will automatically surrender. Another problem is that since there is no set time or portion of a turn that a melee takes, it seems possible for one regiment of cavalry to consecutively engage several infantry units and defeat them in detail if all started within half of the horses charge range, with none able to form square!
+
+Another confusing area in the rules is the references to two and three rank units. This seems to have been a carry-over from the original *Fire and Steel* rules and makes little sense as it is listed. It seems that the distinction is irrelevant to the sets issued to date, anyhow. This surprised me since there are several Austrian, Prussian, and French units that did use two deep rather than three deep formations, (the British aren't out yet). Another area of initial concern to several of us was the provisions for stacking companies in some formations. This makes sense in that it simulates massing for an assault, but will not ring true to those of us conditioned to using miniatures. (I must admit my first impression was of trying to balance one stand of my 25mm figures on the muskets of another). After a few games the novelty passes and we all began using the tactic.
+
+The morale rules are some of the best I have used. They include a provision for the deterioration of morale in units being constantly pressed back or taking casualties and even one for improving the morale of units by placing them in a safe reserve. The Russian morale does seem to be awfully good for the period. It seems that they automatically rally after one turn, even after a rout. Perhaps at Borodino, but questionable for the entire period on all soils. Terrain, buildings, and weather are all simply, but realistically covered.
+
+Having the advantage of beginning with a widely played system in
+
+**Scenario: infantry advancing behind cavalry vs. a square. Can the infantry impact on the same turn if the cavalry bounces off?**
+
+Infantry advancing behind cavalry attacking a square can not impact on the same turn if the cavalry bounces off.
+
+**To what degree is unit integrity maintained? Can the excess/overlap continue to advance to engage a second unit?**
+
+(Basically covered in previous answers)
+
+**Scenario: three battalions in march order—all three within 1/2 chance move of cavalry. Can none form square? Are all three ridden down in detail? In other words, how much of the turn sequence does melee occupy? It seems unreasonable to prohibit a square from firing on a cavalry unit that breaks through—particularly if the unit formed square in case of a breakthrough; this is a logical move for infantry if they expect units in front to be charged.**
+
+The basic difficulty that we are encountering in this example is that of how extensive we wish the turn sequence to be. Some sacrifice must be made for the sake of playability or a game could become severely bogged down resolving the sequence extension conflicts that will certainly occur.
+
+**Shouldn't the Russian 18lb. Licorne do a greater damage? Say, one more casualty?**
+
+In our opinion, the Russian artillery is probably overrated as it is. For this reason, I don't believe that the Russian 18 lb. Licorne should have additional effect.
+
+*Fire and Steel*, GDW has come up with what is basically an elegantly playable system. It is not miniatures or a boardgame, but an innovation that borrows many of the advantages of each. In over a dozen battles to date, nothing has come up that wasn't easily settled and often covered at least indirectly. Gamers have had no problems adding their own personal touches to the rules. In the introduction GDW suggests that a player can handle up to 12 units effectively. Most of us have found that we can handle more than this. It is a good idea to prepare some sheets for the written orders for your units as none are included.
+
+Play is fast and the action moves quickly. Most battles have been fought to a resolution in four hours or less; order writing and the computations required being the most time consuming. In smaller games it was possible to get in as many as three turns an hour—a heady pace for a Napoleonic battle. The scale of *System 7* just begs a campaign game. Happily there is the possibility of a supplement on the subject being issued.
+
+Along with being an effective game system in its own right, the simplicity of use and compactness of the playing pieces allows the gamer to have several other uses for them. Being divided by company, as are most miniatures in all scales, it is a matter of simple division to adapt your favorite rules to use with the pieces provided. Along with having a 'wargame' within a wargame in preparation for miniature battles, the pieces are easily used to play test new rules or tactics without going through the bother of unpacking figures. This ease of use also makes solo gaming and planning to scale on a tabletop feasible.
+
+To summarize, *System 7 Napoleonic* is a functional, and accurate Napoleonic gaming system not far removed in spirit from miniatures. It plays like miniatures with less bother (and aesthetic appeal) and on a smaller scale than is normally used. This allows for large battles to be resolved in a reasonable length of time. Like all 'fast' rules some historical accuracy has been sacrificed, though not too much, for playability. As a Napoleonic system it plays well with good feel for the period. If you already are 'married' to a set of rules the pieces alone can be a valuable tool. *System 7 Napoleonic* is versatile, inexpensive, and enjoyable. Definitely a good investment for a Napoleonic gamer or for those interested in becoming one.
+
+11

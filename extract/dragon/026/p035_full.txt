@@ -1,0 +1,153 @@
+
+
+June, 1979
+
+The Dragon
+
+Variant
+
+# BIRTH TABLES AND SOCIAL STATUS
+Empire of the Petal Throne
+
+by G. Arthur Rahman
+
+TSR's Empire of the Petal Throne is undoubtedly one of the finest and most detailed role-playing games in print. But its very richness challenges players to add extra dimensions to those points of special interest to them. In our area of the country, EPT players like to have fully fleshed-out backgrounds for player and non-player characters alike. The standard rules of EPT start each character off at the same social level. But is life really like that? Doesn't the favorite son of a great nobleman have opportunities for training and education far surpassing those of a laborer's offspring? With this in mind, I present the following Birth Tables for the Empire of the Petal Throne.
+
+#1 Father's Social Caste
+
+1. Noble
+2. Priest
+3. Magic User
+4. Merchant
+5. Warrior
+6. Commoner
+
+#3 Father's Interest
+
+1. Neglectful +1-4
+2. Neglectful + 1-4
+3. Average +0
+4. Average +0
+5. Favoring -1-4
+6. Favoring -1-4
+
+#5 Priestly Title
+
+1. Holy Adept
+2. Bishop
+3. High Priest
+4. Temple Priest
+5. Parish Priest
+6. Acolyte
+
+#7 Merchant Title
+
+1. Merchant Prince
+2. Tycoon
+3. Rich Merchant
+4. Prosperous Merchant
+5. Common trader
+6. Shopkeeper
+
+#9 Commoner Title
+
+1. Slave
+2. Criminal
+3. Laborer
+4. Tradesman
+5. Craftsman
+6. Professional
+
+LEGACY TABLES
+
+#10 Noble's Legacy
+
+1. Two professional skills, two Group I spells, two Group II spells, three aristocratic skills, 25,000 Kaitars.
+2. Two professional skills, two Group I spells, one Group II spells, three aristocratic skills, 20,000 Kaitars.
+3. Two professional skills, two Group I spells, three aristocratic skills, 15,000 Kaitars.
+4. Two professional skills, one Group I spell, three aristocratic skills, 10,000 Kaitars.
+5. One professional skill, three aristocratic skills, two modern languages, 5,000 Kaitars.
+6. Three aristocratic skills, two modern languages, 3,000 Kaitars.
+7. Two aristocratic skills, one modern language, 2,000 Kaitars.
+8. One aristocratic skill, one modern language, 1,000 Kaitars.
+9. One aristocratic skill, 500 Kaitars.
+10+. Nothing.
+
+#11 Aristocratic Skills
+
+|  Alchemist | Assassin/spy/tracker  |
+| --- | --- |
+|  Artist/sculptor | Astronomer/navigator  |
+|  Author | Orator  |
+|  Hunter | Poet  |
+|  Interpreter | Scholar  |
+|  Mathematician | Ship captain  |
+|  Mountaineer | Slaver  |
+|  Musician | Swimmer/diver  |
+
+#12 Priest's Legacy
+
+1. Two priestly skills, two Group I spells, one Group II spells, two noble skills, 10,000 Kaitars.
+2. Two priestly skills, two Group I spells, two noble skills, 8,000 Kaitars.
+3. Two priestly skills, one Group I spell, two noble skills, 6,000 Kaitars.
+4. Two priestly skills, two noble skills, 4,000 Kaitars
+5. Two noble skills, one modern language, one ancient language, 2,000 Kaitars.
+6. One noble skill, one modern language, one ancient language, 1,000 Kaitars.
+7. One noble skill, one modern language, 500 Kaitars
+8. One noble skill, 100 Kaitars
+9. One noble skill.
+10+. Nothing
+
+#13 Magic User Legacy
+
+1. Two magic user skills, two Group I spells, two Group II spells, two Group III spells, two noble skills.
+2. Two magic user skills, two Group I spells, two Group II spells, one Group III spell, two noble skills.
+3. Two magic user skills, two Group I spells, two Group II spells, two noble skills.
+4. Two magic user skills, two Group I spells, one Group II spell, two noble skills.
+5. Two magic user skills, two Group I spells, two noble skills.
+6. Two magic user skills, one Group I spell, two noble skills.
+7. Two magic user skills, two noble skills.
+8. One magic user skill, two noble skills.
+9. Two noble skills
+10+. Nothing.
+
+#14 Merchant's Legacy
+
+1. Five merchant skills, four modern languages, 25,000 Kaitars.
+2. Four merchant skills, four modern languages, 20,000 Kaitars.
+3. Four merchant skills, three modern languages, 15,000 Kaitars.
+4. Three merchant skills, three modern languages, 10,000 Kaitars.
+5. Three merchant skills, two modern languages, 5,000 Kaitars.
+6. Two merchant skills, two modern languages, 3,000 Kaitars.
+7. Two merchant skills, one modern language, 2,000 Kaitars
+8. One merchant skill, one modern language, 1,000 Kaitars
+9. One merchant skill, 500 Kaitars.
+
+10+. Nothing.
+
+#15 Merchant skills
+
+|  Animal breeder | Astronomer/navigator  |
+| --- | --- |
+|  Apothecary | Auctioneer  |
+|  Baker | Jeweler-goldsmith  |
+|  Bawdyhouse operator | Locksmith  |
+|  Blacksmith | Perfumer  |
+|  Bootmaker | Ship captain  |
+|  Botanist | Slaver  |
+|  Fisherman | Smith-armourer  |
+|  Geologist | Tailor  |
+|  Grocer | Tanner  |
+|  Innkeeper | Wheelwright  |
+|  Interpreter | Wine-maker  |
+
+#16 Warrior's Legacy
+
+1. Four warrior skills, four military skills.
+2. Three warrior skills, four military skills.
+3. Three warrior skills, three military skills.
+4. Two warrior skills, three military skills.
+5. Two warrior skills, two military skills.
+6. One warrior skill, two military skills.
+
+33

@@ -1,0 +1,49 @@
+
+
+The Dragon
+
+Vol. III, No. 12
+
+Q. & A
+
+## The Designer Responds to First Volley
+
+*These questions are the result of a couple of phone conversations between myself and Bill Fawcett. Some of the original questions that we submitted have since been scrapped, either because they were stupid to begin with, or the answers were to be found right in the rules and we had missed them. While I don't necessarily agree with all of the answers and interpretations, I do feel that the data given here goes a long way towards perfecting the system. As with any game, if players agree beforehand to exceptions and/or modifications, they can alter anything they see fit if they too disagree with any of the interpretations. T. J. Kask*
+
+**Concerning the time scale: the melees seem unbalanced in regard to time, for the turn/hour scale. It really breaks down on cavalry vs. cavalry engagements. Why?**
+
+This first question seems to me to be one of the most important, so I'll spend a little more time on it in explanation. In terms of the behavior of individual elements on the field, each turn is actually closer to ten minutes. The "hour" turn indicated in *System 7* is designed to allow a decision to be reached in a reasonable number of turns. This is due to a number of factors. First, the players, perched high above the battlefield, have the ability to see what our opponents are up to and immediately take steps to counteract his moves. Napoleonic commanders would have been ecstatic to have information anywhere this accurate. One solution, but only a partial one, would be to build in extensive delays that, to a gamer, would have little effect except to prolong a game by drawing out about the same amount of action and decision making to a much longer playing time. By limiting the number of turns in the game we are able to put some of the problems of command back onto the shoulders of the players without making the game a real drag. As well, we should keep in mind that movement, fire, casualties, and turn length are integrated into a closely interrelated system. If we tamper with the last element making, say, one hour actually equal one hour, we are really out of the realm of individual battalions exchanging fire. One approach could be to cut the time scale to a real-time length of, say, six minutes. A good six-hour historical-time battle would then take 60 turns, not the kind of game for people to play in a multi-player environment where we are not always able to leave a large battle set up for long periods of time needed to get any team of players together to finish it. In addition, casualties would be decreased radically, the frequency of other effects would be drastically reduced, etc., to the point that, in my mind enough simulation aspects would be brought into literal force as to make the game bog down into a highly complex, highly boring exercise. Keep in mind that an infantry column marching to a cadence of 100/minute will move somewhere in the neighborhood of 500 yards in one six-minute turn—well-through all small arms ranges, and about halfway through artillery ranges. I would prefer not to think of the bulk of rules that would take to control all battlefield contingencies in that kind of game. The figures for cavalry are ridiculous. The object, then, of the *System 7* rules, is to present to the gamer a means by which he may fight Napoleonic battles with many of the problems and circumstances that faced commanders in the field as well as retain a great deal of tactical feel for the period. It is not pure simulation, for even if we really wanted it the scale simply doesn't allow it if we are ever going to fight more than a skirmish.
+
+**The two and three rank distinctions are unclear. For example, Austrian Schutzen were always (historically) two ranks deep, but not in System 7.**
+
+One of the unfortunate errors that I made when laying out the pamphlet was omitting the indication that all troops in the first four sets are three-rank troops. Steps have been taken to correct this in reprints and all future sets. Of course veteran miniatures players know who forms into two ranks and who forms into three ranks, but we're finding
+
+out that a relatively large number of non-miniatures players are playing *System 7*. To these people especially, my apologies. I repeat: all infantry in sets 1 through 4 are three-rank troops.
+
+As to the Austrian Schuetzen: I assume that you are referring to the rifle companies attached to the Grenz battalions. Frankly, I have no evidence that these units formed into two ranks except during the Archduke Charles Reform phase of Austrian attempts to tactically update the army. It should be noted that by and large these reforms were never totally adopted by the Austrians, and were abandoned by the time we get to the period covered by *System 7* (1808-1815). I could be wrong and would appreciate knowing about any primary evidence to the contrary.
+
+**Why is there no limit to the ranks of penetration a ball will have when striking a column at an oblique angle? There is no provision for such an occurrence in the rules.**
+
+**What sort of gap is needed for artillery to fire through?**
+
+These questions both reflect back to the response to the first question: One firing round does not reflect one real round. Because units move in what appears to be great bursts of energy, then are frozen in place while they suffer the effects of incoming fire, we feel that to introduce this aspect of fire would greatly overemphasize these effects in context of the game. Not specifying a definite gap necessary for artillery to fire through is an extension of the same reasoning. These considerations clearly must be treated in a skirmish game, but I don't believe they belong in *System 7*.
+
+**Concerning the "charge if charged" order: no provision is made for cavalry to do so in protection of a nearby unit or battery.**
+
+One reason for the way these rules were designed was to prevent bizarre chains of subsequent triggering of charges through interlocking contingency orders. For my part, I think that judicious modification of this is in order. A referee is the best determiner of to what extent contingent orders may be written.
+
+**Does infantry forming square suffer the moue modification on the firing die roll?**
+
+Yes, infantry does suffer the moue modification on firing when forming square.
+
+**Who screens units on higher elevations? Can ball be fired over the heads of units?**
+
+Again, this question is covered in the rules. Rule 10 A and B detail the effects.
+
+**The facing shown for massed columns of divisions, as illustrated in the rules, disagrees with most sources, including Chandler. Could they possibly be advancing to the flank?**
+
+This is a case of the chart not being clear. The formation on page 12 would march off the left (not the top) of the page. In appearance, this formation is a succession of battalions, each in line, tightly packed together.
+
+*Continued on page 10*
+
+8

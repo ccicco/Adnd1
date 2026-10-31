@@ -1,0 +1,79 @@
+
+
+June, 1979
+
+The Dragon
+
+"Positive identification made, sir." The scanner operator turned a slightly ashen face to his commander.
+
+"Well?"
+
+"Two cruisers and a dreadnought, sir. There's no doubt but that they are Rebels and their present course will intercept our orbit in about eight time units."
+
+The Kilgor's commander remained calm. The Empire was composed of a number of races and his, tall, thin and imperturbable, was often selected for command positions. His worst fears had been confirmed. The Rebels had somehow located his stricken ship and were now closing to attack. He felt no anger; if the situation were reversed he would have no second thoughts about following such a course.
+
+With the Kilgor inoperative, the Rebels had the advantage in firepower, an advantage magnified by the fact that the relief force had to be careful to protect the cruiser with the replacement Alpha crystal. Loss of that ship would spell almost certain doom for the Kilgor.
+
+But the commander's race was noted for its resourcefulness as well, and he still saw some options he could employ. All he needed to do was keep the Rebel fleet away long enough for the crystal transfer to take place. He turned to his chief ordnance officer. "Put a display of the positions of mines on the main screen." He allowed himself a small smile; the Kilgor had some teeth yet.
+
+In addition to his ships, the Imperial player has twenty-one spacemines placed in various nebula hexes throughout the map. Because the rescue fleet, without the fully operative battlesphere, is inferior to the Rebel force, the spacemines form a valuable part of the Imperial defense, especially in the first half dozen turns or so.
+
+At the beginning of his turn, the Imperial player may move one mine one hex and then detonate any mines he wishes. Any ship adjacent to detonated mine is pushed away from the mine two hexes. If this new position places it adjacent to another, just detonated mine, it is pushed away again in the new direction, pinball fashion. If such a pattern results in the ship being bounced from blast to blast ad infinitum, or a ship is simultaneously adjacent to two mines when they detonate, it is destroyed.
+
+Used wisely, the mines can serve to keep the Rebel ships pushed back for a few turns or to close off approaches to the battlesphere. If the Rebel player is not cautious, he may find one of his ships stumbling into a trap in which the detonation of several mines results in the destruction of one of his ships.
+
+Mines are vulnerable to rebel fire and destroyed with a single hit, though their initial placement in nebula hexes gives some protection.
+
+Mines are democratic in their efforts, in that Imperial vessels suffer as do Rebel ships and may not be moved during their turn if caught in a blast.
+
+with heads denoting hits. If the required number of hits are obtained, the target is destroyed. Nebula affect combat in that ships firing at targets in nebula hexes have their offensive power reduced by one shot. A ship may choose to fire before moving, and thus get in its licks and run, or fire after movement, but not both.
+
+The bridge of the Kilgor was quiet, deathly quiet, as the crew watched the engagement between the two cruiser forces. The Rebels got off the first shot, but the shields of the Imperials held. Rather than close, the Imperial cruisers continued ahead, their propulsion units on maximum. One cruiser, obviously the crystal bearing ship, was held back while the others met the enemy. The Rebels continued their pursuit, following closely. Suddenly in a burst that caused the Kilgor's commander to turn away from the brightly lit screen, the shields of one of the Imperial cruisers collapsed and the energy beams of the Rebel ship tore her into a thousand fragments.
+
+The two remaining cruisers hurried on, the Rebels maintaining a close distance. Another exchange of fire followed quickly, twice as bright on the display as the first, as the guns of both the covering Imperial and a trailing Rebel, found their marks and both became vapor and debris.
+
+The course of a BATTLESPHERE game usually enters two or three phases. The initial positioning of the two fleets determines the nature of the first phase. If the ships enter the map far apart, the Rebel player usually heads straight for the battlesphere and the Imperial player must rely on the cagey use of his mines to keep the enemy away. If the ships enter close together, the Rebel player may choose a strategy of defeating the battlesphere indirectly, by destroying the cruiser carrying the Alpha crystal. This is not too difficult, especially if the dreadnought can be brought to bear.
+
+The second phase occurs when both fleets are near the battlesphere's orbit and jockeying for position; one to transfer the crystal and the other to fire at the battlesphere while it can't fire back. By this time, mines play a minor role, since most will be too distant or already detonated.
+
+If the Imperial player has lost his cruiser with the crystal, he is indeed in dire straits. His only hope is concentrating what cruiser fire he has on the enemy dreadnought.
+
+The third phase of the game comes about if and when the crystal is transferred. If the Kilgor is not destroyed before becoming fully operational, the Rebel is in serious trouble, as the preponderance of the battlesphere's fire power usually sweeps the field.
+
+It is the second phase of the game, then, that often proves the most interesting.
+
+In the dim lights of the Kilgor's bridge, the illuminated battle display dominated the tableau. The Rebel ships showed as three rapidly approaching red target symbols, one larger than the other. The relief force showed black and somehow vulnerable. Two of the Rebel ships were changing course, making to intercept the Imperial cruisers. The interceptors were cruisers themselves; the ominous shape of the dreadnought continued to strive for the Kilgor.
+
+But the Rebels were in for some surprises. As one of the cruisers passed near a nebula cloud, the Kilgor's commander raised a finger and nodded silently to his ordnance officer. The nebula cloud lit brightly for a minute as the mine exploded. The symbolic representation of the cruiser was sent reeling. As it entered the blast zone of a second mine, the commander ordered that detonated as well. The Rebel cruiser, beset now with all sorts of minor damage, finally came to rest four standard distance units from its original position.
+
+"Put a track on the enemy dreadnought," the commander ordered as the opposing ship passed near a mine-bearing cloud. The mine slipped out of its cloud cover, heading for the dreadnought. As it closed, he ordered its detonation. The target veered sharply, rolling with the blast, but as the glow of the explosion faded away the dreadnought was still headed full speed for the stricken battlesphere. A second mine sent to track the Rebel ship was destroyed by its massive energy guns before it reached effective range.
+
+The mines had won the Kilgor some valuable time, but now, with gaps in the minefield from the detonations, the remainder were of little use.
+
+Not that it mattered much anymore. The Rebel cruisers were in range of the relief fleet.
+
+* * *
+
+Combat in Battlesphere is handled in a very simplified manner. Ships may fire a given number of times, depending on type. Only adjacent ships may be fired on. Hits are determined by coinflip (euphemistically called the "Blast coin"),
+
+Aboard the Hadjidakis there was elation. Two of the enemy's cruisers had been destroyed, at the loss of only one of their own. And soon, very soon, the dreadnought's energy projectors would be brought to bear on the Kilgor.
+
+The image of the remaining Imperial cruiser, dancing from nebula to nebula tugged at the back of the captain's mind. This cruiser had stayed clear of the battle. In fact, the other two cruisers had been destroyed defending it. Why? If the Imperials were rushing a replacement crystal to the Kilgor, he could have let himself in for more of a scrap than he intended.
+
+"Kilgor in range, captain."
+
+Well, he'd have to worry about the cruiser's cargo a bit later.
+
+"All turrets: commence firing."
+
+The big projectors of the dreadnought unleashed their powerful bursts of energy. The shields of the Kilgor flared but held. A second barrage strained the enemy's defenses even more, but the shields still managed to maintain their shimmering defense.
+
+On the opposite side of Zoban Eshamali the two remaining cruisers continued their battle, both too evenly matched to gain any advantage on the other. Then, slipping out of a nearby cloud of nebula, one of the Kilgor's mines headed for the Rebel cruiser. Hastily the Rebel fired at the mine, but to no avail, and the resulting blast sent the cruiser hurtling back in the direction it had come.
+
+"The remaining Imperial cruiser is making an intercept course for the battlesphere, captain. Estimated time to rendezvous is one time unit."
+
+The captain of the Hadjidakis didn't even need his helmsman's consultation to see that there was no way the dreadnought could reach the rendezvous point, on the far side of the star, before the cruiser. The thought of the awesome power of the operative battlesphere (if needed the cruiser was carrying a replacement crystal) had him worried. For the first time, he began to doubt the wisdom of choosing to attack the stricken Kilgor . . .
+
+Continued on page 46
+
+43

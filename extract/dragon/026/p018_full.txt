@@ -1,0 +1,51 @@
+
+
+The Dragon
+
+Vol. III, No. 12
+
+# LORDS AND WIZARDS
+
+## THE PLACEMENT OF CASTLES
+
+by Edward C. Cooper
+
+A common misconception felt among *Lord and Wizard* players is the false sense of security, or advantage, to be gained by building a castle in a city hex. On first observation, this practice would seem sound and admirable strategy. Yet an in-depth look into the other inter-related aspects of the rules concerning castles indicates otherwise. In fact, a city is the worst of possible places to construct a castle!
+
+Castles represent heavy investments in time, Gold Talents, and mobility. (Once erected, they can hardly be moved!) Selection of a proper building site — the first time — is mandatory if the castle is to achieve its designed purpose. There can be no mistakes in building a castle if a player wishes to survive.
+
+A knowledge of castle placement, and the advantages/disadvantages of one building site over another, gives a player the one *essential* tool needed in the attempt to carve out a successful venture in the realm of the Lords and Wizards.
+
+A question frequently asked is, '60 GTs go a long way in fielding troops. Is an equal expenditure for the construction of a Castle really worth it?" The answer remains a simple, yes. A castle's true worth reflects itself in terms greater than money alone. Many, many troops can be hired for the amount spent in constructing a castle, but remember, a vast army can be assembled up for naught if it has no secure base to operate from or retreat around should the need arise.
+
+Time in Lords and Wizards will see the rise and fall of many men's lives. Disease and attrition take heavy tolls. The bigger a regular army, the more units will be lost from any given percentage roll. Against this, weather, and more, a castle will stand undaunted.
+
+No single empire can hope to defeat five others. In Lords and Wizards, creating and maintaining alliances is a necessary military calculation. The game is structured heavily toward diplomacy through the addition of the Neutrals, who constantly shift sides in order to preserve their own victory; neutrality. Yet diplomacy cannot do its work unless there is power to back it up, power to threaten or to help. Castles represent this undying source of power. Around their heights looms a forbidding aura of influence that can reach out and touch even the farthest corners of the world.
+
+To better understand where a castle should be placed, and where this "power" spoken of comes from, the objective of castle placement must be defined. A castle exerts a sphere of influence over a particular area in terms of *effective* control. The Castle is not a complete defense in itself, but its presence forces an opponent to attack it first, before attempting to occupy the territory within range of the castle's garrison. Should a foe bypass the castle, raids conducted out of the castle on the enemy positions' weak points will ruin any plans of conquest.
+
+If the castle does come under assault first, there exists the distinct possibility of not having enough units remaining (assuming the castle is successfully conquered) to occupy the surrounding territory or defend it from counterattack. The occupied territory must also be guarded in force if the castle is not attacked — a move ill afforded.
+
+The loss of manpower either way systematically reduces the net gain of profit from the newly occupied lands. The conqueror is forced to replace and maintain a heavy defense. The area cannot self support itself, and as losses must be subtracted from new units before a gain in units can be determined, the area goes well into the red.
+
+The paradox the castle represents toward an aggressor becomes evident. Takeover is economic suicide unless combat odds are overwhelming — and that feat isn't easily accomplished with a castle present. A territory can be conquered and still not *effectively* controlled.
+
+Players should note that placing a castle in a city hex does not give that city a heavier defensive strength. According to rule 9h, the attacker has the option of hitting just the city, or the city and castle together. The logical thing to do is take the city under control, gaining its tax value, and the following turn, hire units and place them all in the city to storm the castle!
+
+There are other disadvantages in placing a Castle within the bounds of a city. Taxation of cities can often cause rebellion. And while ordinarily a player would not double or triple tax a city, especially one containing a castle, there may come a time when it is unavoidable in order to survive. With the castle constructed out of the city, this option rests a little more secure.
+
+In addition, every city on the gameboard stands on a clear hex, giving no advantage to the defender through terrain, and providing quick strike capability to an enemy who uses the road to approach the town before splitting the attacking force to surround the city. (The astute defender will undoubtedly block the road at a strategic position by placing a small infantry unit on it.)
+
+Compare a castle in a city hex under attack with a castle in a mountain hex under the same attack. Which location provides the better defensive strength? The Castle in the city gains + 1 DSP (Defensive Strength Points) for each unit within its walls (up to and including the maximum of five) plus two columns to the left on the CRT. A castle in a mountain hex does not get the + 1 DSP per unit, but it does receive the added bonus of terrain effects. The CRT (Combat Results Table) is shifted two columns to the left indicating the presence of the castle, plus *another column* to the left for terrain effect. Total, three columns to the left!
+
+If a player wishes to gamble on the weather, another +3 DSP can further be gained in addition to a three column adjustment by building the castle in a swamp hex surrounded by rivers. This further advantage might be best employed when the optional weather rule is left out, since if it snows, a swamp hex is frozen over and becomes a clear hex for combat purposes.
+
+Remember too, there are five units in the castle whose DSPs are compared to ASPs *before* the columns are shifted. Five heavy units represent a good number of DSPs. Invincible? Almost.
+
+Terrain effects are cumulative. Rough terrain around a castle slows down an opponent in getting units into position for attack. This gives the defender the opportunity to head off the attack with units from other areas, if so desired. In storming a castle in a rough hex, more units must be committed for a longer period of time — meaning a player cannot use them elsewhere. A small bit of calculation to figure the number of units a player would need to overcome the five units' DSPs plus a three column adjustment to the left raises a very interesting question. Can such a huge force be effectively fielded? And if it can, how long can a national treasury afford a standing army of this size?
+
+Another advantageous aspect of building a castle in a terrain hex deals with special units. Special units can *only* be hired in terrain hexes, where they are found among their natural habitats. A fortress in a terrain hex gives a leader a secure base from which attempts may be made to hire special units turn after turn.
+
+Some players may argue that a castle and a city, for attack purposes, are two different hexes, and a leader must be outside the castle in the terrain hex to hire. This is not the case. Only a castle in a city is considered to be an area of two different hexes. For suppose a castle was always considered separate from any hex it is placed in — even
+
+16
