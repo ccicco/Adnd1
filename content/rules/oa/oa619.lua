@@ -1,0 +1,661 @@
+-- oa619: promoted from rules/oabarbbushi.h (the THE BARBARIAN AND BUSHI, printed capture pp. 23-28 - the OA class run opens);
+-- DO NOT hand-edit; the pin header stays the adjudicated record.
+return {
+  "round" = 619,
+  "prefix" = "oa619",
+  "banner" = {
+      "title" = "THE BARBARIAN AND BUSHI, printed capture pp. 23-28 - the OA class run opens",
+      "provenance" = "census 541 -> 542.  verified against capture pp. 23-28 of the oa.pdf OCR session (single Mistral-OCR capture; cites are capture pages), with the 2018-print settling capture consulted for the contested horde cell: the first capture prints 1112 times the leader level - the 2018 print reads 1 1/2 times CLEAN; pinned as the 3-over-2 pair. Other settled garbles: hone/tells read as horse/tents, hulling as hunting, five as live - prose only, the numbers read clean. The Table 15 bonus rows pin as a coded grid (each lifted restriction its own code const) with the save bonuses as their own column. This round also carries the R618 v3 adjudication amendment folded in (comment-only, no data changes).  the gap census after this round: 33 closed, 202 open - the barbarian and bushi boxes with Tables 14-17 flip (census 541 -> 542); NEXT - R620: the Kensai - the favored-weapon doctrine, the honor code, the ki powers, Tables 18 and 19, prefix dgg (verify free), audit \"R620 OA kensai audit\", include after rules/oabarbbushi.h",
+    },
+  "consts" = { {
+      "name" = "dgfBarbHitDie",
+      "value" = 12,
+      "comment" = "Barbarian prose (capture p. 23): the 12-sided hit die, one per level",
+    }, {
+      "name" = "dgfBarbConHpBonus",
+      "value" = 2,
+      "comment" = "Barbarian prose (capture p. 23): +2 hit points per level for every point of Constitution over 14 - instead of the Table 4 bonuses",
+    }, {
+      "name" = "dgfBarbConThreshold",
+      "value" = 14,
+      "comment" = "Barbarian prose (capture p. 23): the Constitution threshold for the +2-per-point bonus",
+    }, {
+      "name" = "dgfBarbSurpriseDie",
+      "value" = 6,
+      "comment" = "Barbarian capabilities (capture p. 24): 3 in 6 to surprise, surprised only on a 1",
+    }, {
+      "name" = "dgfBarbSurpriseChance",
+      "value" = 3,
+      "comment" = "Barbarian capabilities (capture p. 24): the 3-in-6 surprise chance",
+    }, {
+      "name" = "dgfBarbBackProtPerLevel",
+      "value" = 5,
+      "comment" = "Barbarian capabilities (capture p. 24): back protection - 5 percent per level to detect the attacker",
+    }, {
+      "name" = "dgfBarbLeapFwd",
+      "value" = 10,
+      "comment" = "Barbarian capabilities (capture p. 24): the standing leap - 10 feet forward",
+    }, {
+      "name" = "dgfBarbLeapBack",
+      "value" = 3,
+      "comment" = "Barbarian capabilities (capture p. 24): the standing leap - 3 feet backward",
+    }, {
+      "name" = "dgfBarbLeapUp",
+      "value" = 3,
+      "comment" = "Barbarian capabilities (capture p. 24): the standing leap - 3 feet upward",
+    }, {
+      "name" = "dgfBarbRunLeapBase",
+      "value" = 15,
+      "comment" = "Barbarian capabilities (capture p. 24): the running leap - 15 + 1d6 feet forward",
+    }, {
+      "name" = "dgfBarbRunLeapDie",
+      "value" = 6,
+      "comment" = "Barbarian capabilities (capture p. 24): the running forward-leap die",
+    }, {
+      "name" = "dgfBarbRunLeapUpBase",
+      "value" = 4,
+      "comment" = "Barbarian capabilities (capture p. 24): the running leap upward - 4 + 1d4 feet, each pip six inches",
+    }, {
+      "name" = "dgfBarbRunLeapUpDie",
+      "value" = 4,
+      "comment" = "Barbarian capabilities (capture p. 24): the running upward-leap die",
+    }, {
+      "name" = "dgfBarbDetIllusionPerLevel",
+      "value" = 5,
+      "comment" = "Barbarian capabilities (capture p. 24): detect illusion - 5 percent per level, one round of concentration",
+    }, {
+      "name" = "dgfBarbDetIllusionCap",
+      "value" = 75,
+      "comment" = "Barbarian capabilities (capture p. 24): the detect-illusion cap - never greater than 75 percent",
+    }, {
+      "name" = "dgfBarbDetMagicBase",
+      "value" = 25,
+      "comment" = "Barbarian capabilities (capture p. 24): detect magic - a base 25 percent plus 5 percent per level, one round of concentration, spells and items but not spellcasters",
+    }, {
+      "name" = "dgfT14RowCount",
+      "value" = 11,
+      "comment" = "Table 14 (capture p. 24): eleven rows, levels 1-11",
+    }, {
+      "name" = "dgfT14XpBeyond",
+      "value" = 500000,
+      "comment" = "Table 14 note (capture p. 24): 500,000 experience points per level beyond 11th",
+    }, {
+      "name" = "dgfT14HpBeyond",
+      "value" = 4,
+      "comment" = "Table 14 note (capture p. 24): 4 hit points per level beyond 8th",
+    }, {
+      "name" = "dgfT16RowCount",
+      "value" = 11,
+      "comment" = "Table 16 (capture p. 25): eleven rows, levels 1-11",
+    }, {
+      "name" = "dgfT15RowCount",
+      "value" = 10,
+      "comment" = "Table 15 (capture p. 25): ten bonus rows, levels 3-12",
+    }, {
+      "name" = "dgfB15Potions",
+      "value" = 1,
+      "comment" = "Table 15 code (capture p. 25): level 3 - can use magical potions",
+    }, {
+      "name" = "dgfB15WeaponsSave",
+      "value" = 2,
+      "comment" = "Table 15 code (capture p. 25): level 4 - can use magical weapons, +1 on saves vs. spell",
+    }, {
+      "name" = "dgfB15Armor",
+      "value" = 3,
+      "comment" = "Table 15 code (capture p. 25): level 5 - can use magical armor",
+    }, {
+      "name" = "dgfB15HalfXp",
+      "value" = 4,
+      "comment" = "Table 15 code (capture p. 25): level 6 - half experience with wu jen and spirit folk companions",
+    }, {
+      "name" = "dgfB15MiscItems",
+      "value" = 5,
+      "comment" = "Table 15 code (capture p. 25): level 7 - can use weapon-like miscellaneous magical items",
+    }, {
+      "name" = "dgfB15FullXp",
+      "value" = 6,
+      "comment" = "Table 15 code (capture p. 25): level 8 - full experience with wu jen and spirit folk companions",
+    }, {
+      "name" = "dgfB15Scrolls",
+      "value" = 7,
+      "comment" = "Table 15 code (capture p. 25): level 9 - can use protection scrolls (if he can read)",
+    }, {
+      "name" = "dgfB15SaveTwo",
+      "value" = 8,
+      "comment" = "Table 15 code (capture p. 25): level 10 - +2 on saves vs. spell",
+    }, {
+      "name" = "dgfB15Horde",
+      "value" = 9,
+      "comment" = "Table 15 code (capture p. 25): level 11 - can summon a barbarian horde",
+    }, {
+      "name" = "dgfB15SaveThree",
+      "value" = 10,
+      "comment" = "Table 15 code (capture p. 25): level 12 - +3 on saves vs. spell",
+    }, {
+      "name" = "dgfSteppeProfCount",
+      "value" = 16,
+      "comment" = "Steppeland prose (capture p. 26): sixteen proficiencies - horsemanship, long-distance signaling, outdoor craft, tracking, animal handling, weapon smith, armorer, bowyer, running, dancing, singing, weaving, tanning, sound imitation, survival, chanting",
+    }, {
+      "name" = "dgfSteppeWeaponCount",
+      "value" = 4,
+      "comment" = "Steppeland prose (capture p. 26): four preferred weapons - light lance, horsebow, sword, hand axe",
+    }, {
+      "name" = "dgfForestProfCount",
+      "value" = 18,
+      "comment" = "Forest prose (capture p. 26): eighteen proficiencies - small water craft, fishing, tracking, survival, animal handling, weapon smithing, pottery, bowyer, sound imitation, snare building, weaving, tanning, carpentry, agriculture, singing, chanting, dancing, rhetoric",
+    }, {
+      "name" = "dgfForestWeaponCount",
+      "value" = 5,
+      "comment" = "Forest prose (capture p. 26): five preferred weapons - spear, shortbow, hand axe, harpoon, sword",
+    }, {
+      "name" = "dgfJungleProfCount",
+      "value" = 16,
+      "comment" = "Jungle prose (capture p. 26): sixteen proficiencies - small water craft, fishing, swimming, survival, animal handling, carpentry, weapon smith, armorer, sound imitation, snare building, pottery, tracking, chanting, dancing, music, sailing craft",
+    }, {
+      "name" = "dgfJungleWeaponCount",
+      "value" = 5,
+      "comment" = "Jungle prose (capture p. 26): five preferred weapons - blowgun, spear, sword, hand axe, dagger",
+    }, {
+      "name" = "dgfHordeLevel",
+      "value" = 11,
+      "comment" = "The Barbarian Horde (capture p. 26): summonable from 11th level - only in the native territory, from those of the background",
+    }, {
+      "name" = "dgfHordeXpDiv",
+      "value" = 2000,
+      "comment" = "The Barbarian Horde (capture p. 26): the horde size - the leader experience points divided by 2,000, capped by the eligible population",
+    }, {
+      "name" = "dgfHordeAidePerMen",
+      "value" = 500,
+      "comment" = "The Barbarian Horde (capture p. 26): one aide per 500 men (or fraction) at one-half the leader levels; each aide with two assistants at one-half the aide level",
+    }, {
+      "name" = "dgfHordeAssemblePerWeek",
+      "value" = 500,
+      "comment" = "The Barbarian Horde (capture p. 26): assembles at 500 men per week at a predesignated home point",
+    }, {
+      "name" = "dgfHordeMaxWeeksNum",
+      "value" = 3,
+      "comment" = "The Barbarian Horde (capture p. 26): no horde remains together beyond 1 1/2 times the leader level - the numerator 3 over the divisor 2 (the capture prints 1112; the 2018-print settling capture reads 1 1/2 clean)",
+    }, {
+      "name" = "dgfHordeMaxWeeksDen",
+      "value" = 2,
+      "comment" = "The Barbarian Horde (capture p. 26): the 1 1/2 times divisor",
+    }, {
+      "name" = "dgfBushiHitDie",
+      "value" = 10,
+      "comment" = "Bushi prose (capture p. 27): the 10-sided hit die, one per level",
+    }, {
+      "name" = "dgfBushiSlots",
+      "value" = 4,
+      "comment" = "Bushi prose (capture p. 27): four initial proficiency slots; single-weapon specialization chosen at creation",
+    }, {
+      "name" = "dgfBushiPoorProfCount",
+      "value" = 3,
+      "comment" = "Bushi prose (capture p. 27): the poverty proficiencies - weaponsmith, armorer and bowyer free at start",
+    }, {
+      "name" = "dgfBushiAcStepLevels",
+      "value" = 5,
+      "comment" = "Bushi prose (capture p. 27): armor class improves one step per five experience levels, stacked on the Dexterity adjustment, worn armor or not",
+    }, {
+      "name" = "dgfT17RowCount",
+      "value" = 12,
+      "comment" = "Table 17 (capture p. 27): twelve rows, levels 1-12",
+    }, {
+      "name" = "dgfT17XpBeyond",
+      "value" = 250000,
+      "comment" = "Table 17 note (capture p. 27): 250,000 experience points per level beyond 12th",
+    }, {
+      "name" = "dgfT17HpBeyond",
+      "value" = 2,
+      "comment" = "Table 17 note (capture p. 27): 2 hit points per level beyond 9th",
+    } },
+  "bools" = { {
+      "name" = "dgfBarbNoPrime",
+      "value" = true,
+      "comment" = "Barbarian prose (capture p. 23): no prime requisite - barbarians never gain an experience bonus",
+    }, {
+      "name" = "dgfBarbNotLawful",
+      "value" = true,
+      "comment" = "Barbarian prose (capture p. 23): barbarians cannot be lawful; humans and korobokuru only",
+    }, {
+      "name" = "dgfBarbFighterTables",
+      "value" = true,
+      "comment" = "Barbarian prose (capture p. 23): the fighter combat and saving throw tables; any weapons and armor",
+    }, {
+      "name" = "dgfBarbMagicHatred",
+      "value" = true,
+      "comment" = "Barbarian prose (capture p. 24): at low levels no magical items, only a few at higher levels - the Table 15 ladder lifts the restrictions",
+    }, {
+      "name" = "dgfBarbNoXpForItems",
+      "value" = true,
+      "comment" = "Barbarian prose (capture p. 24): no experience for discovering or possessing magical items",
+    }, {
+      "name" = "dgfBarbXpForDestroying",
+      "value" = true,
+      "comment" = "Barbarian prose (capture p. 24): destroying a magical item earns its full experience value",
+    }, {
+      "name" = "dgfBarbWuJenFoes",
+      "value" = true,
+      "comment" = "Barbarian prose (capture p. 24): at low levels wu jen and spirit folk are deadly foes; even at high levels viewed with suspicion",
+    }, {
+      "name" = "dgfBarbClimbSmoothHalf",
+      "value" = true,
+      "comment" = "Barbarian capabilities (capture p. 24): climb trees and natural cliffs per Table 16; smooth surfaces at one-half the listed chance",
+    }, {
+      "name" = "dgfBarbHideUnfamiliarHalf",
+      "value" = true,
+      "comment" = "Barbarian capabilities (capture p. 24): hide in familiar natural surroundings per Table 16; unfamiliar terrain at one-half",
+    }, {
+      "name" = "dgfBarbBackProtFreeAttack",
+      "value" = true,
+      "comment" = "Barbarian capabilities (capture p. 24): a detected rear attack loses its bonuses and the barbarian gets a free attack at the end of the round, not counting against his normal attacks",
+    }, {
+      "name" = "dgfSteppeNomads",
+      "value" = true,
+      "comment" = "Steppeland prose (capture p. 26): roving nomads, masters of the horse - leather tents, migratory herds, no agriculture (the capture prints hone and tells; the 2018 print reads horse and tents clean)",
+    }, {
+      "name" = "dgfForestVillages",
+      "value" = true,
+      "comment" = "Forest prose (capture p. 26): small permanent villages - the women raise crops, the men hunt and fish",
+    }, {
+      "name" = "dgfJungleVillages",
+      "value" = true,
+      "comment" = "Jungle prose (capture p. 26): permanent villages - gathering jungle plants, hunting wild animals and fishing (the capture prints hulling; read as hunting)",
+    }, {
+      "name" = "dgfBarbOutsiders",
+      "value" = true,
+      "comment" = "Barbarian prose (capture p. 26): automatic outsiders - the lowest caste, never roll on Table 38; clan membership required",
+    }, {
+      "name" = "dgfHordeShamans",
+      "value" = true,
+      "comment" = "The Barbarian Horde (capture p. 26): witch doctors or shamans as appropriate - helpful spells but prone to meddling and fomenting unrest",
+    }, {
+      "name" = "dgfHordePurposeFixed",
+      "value" = true,
+      "comment" = "The Barbarian Horde (capture p. 26): one clearly stated purpose, unchangeable - changing it or weeks of inactivity disbands the horde",
+    }, {
+      "name" = "dgfHordeWeeksEqualLevel",
+      "value" = true,
+      "comment" = "The Barbarian Horde (capture p. 26): holds together for weeks equal to the leader level; each week beyond needs a successful appeal reaction check",
+    }, {
+      "name" = "dgfHordeSuccessLegacy",
+      "value" = true,
+      "comment" = "The Barbarian Horde (capture pp. 26-27): a successful campaign disbands to a hero welcome - a new horde raises easily; disaster means no second horde and a poor welcome home",
+    }, {
+      "name" = "dgfBushiMasterless",
+      "value" = true,
+      "comment" = "Bushi prose (capture p. 27): masterless warriors - mercenaries, bandits, highwaymen, wanderers; mostly low birth choosing the way of the warrior",
+    }, {
+      "name" = "dgfBushiStrPrime",
+      "value" = true,
+      "comment" = "Bushi prose (capture p. 27): Strength is the prime requisite - Str 14 or greater earns the 10 percent bonus (the printed 550-to-605 example); any alignment or race",
+    }, {
+      "name" = "dgfBushiFighterTables",
+      "value" = true,
+      "comment" = "Bushi prose (capture p. 27): the fighter combat and saving throw tables; any armor and weapon",
+    }, {
+      "name" = "dgfBushiNinjaHonor",
+      "value" = true,
+      "comment" = "Bushi prose (capture p. 27): ninja preferred weapons lose honor - but not as much as a samurai",
+    }, {
+      "name" = "dgfBushiFighterBonuses",
+      "value" = true,
+      "comment" = "Bushi prose (capture p. 27): high Strength and Constitution earn the normal fighter bonuses",
+    } },
+  "switches" = { {
+      "name" = "dgfT14XpMax",
+      "values" = { 4000, 8000, 16000, 32000, 75000, 130000, 240000, 460000, 900000, 1400000, 1900000 },
+      "default" = -99,
+      "comment" = "the experience column: the upper xp bound of each level, 4,000 at 1st doubling to 1,900,000 at 11th (capture p. 24).",
+    }, {
+      "name" = "dgfT14Dice",
+      "values" = { 1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 8 },
+      "default" = -99,
+      "comment" = "the accumulated d12 dice column: one die per level through 8th, then held at 8 (capture p. 24).",
+    }, {
+      "name" = "dgfT14HpBonus",
+      "values" = { 0, 0, 0, 0, 0, 0, 0, 0, 4, 8, 12 },
+      "default" = -99,
+      "comment" = "the hit-point bonus column: the printed 8-plus-N cells - 4 per level beyond 8th: 0 through 8th, then 4, 8, 12 (capture p. 24).",
+    }, {
+      "name" = "dgfT16Climb",
+      "values" = { 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95 },
+      "default" = -99,
+      "comment" = "the climb column: 85 percent at 1st rising one per level to 95 at 11th (capture p. 25).",
+    }, {
+      "name" = "dgfT16Hide",
+      "values" = { 25, 31, 37, 43, 49, 56, 63, 70, 77, 85, 93 },
+      "default" = -99,
+      "comment" = "the hide column: 25 at 1st rising in 6-7 percent steps to 93 at 11th (capture p. 25).",
+    }, {
+      "name" = "dgfT16BackProt",
+      "values" = { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55 },
+      "default" = -99,
+      "comment" = "the back protection column: 5 per level, 5 to 55 (capture p. 25).",
+    }, {
+      "name" = "dgfT16DetIllusion",
+      "values" = { 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55 },
+      "default" = -99,
+      "comment" = "the detect illusion column: 5 per level, 5 to 55 - capped at 75 by the prose (capture p. 25).",
+    }, {
+      "name" = "dgfT16DetMagic",
+      "values" = { 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80 },
+      "default" = -99,
+      "comment" = "the detect magic column: 30 at 1st rising 5 per level to 80 at 11th (capture p. 25).",
+    }, {
+      "name" = "dgfT15Level",
+      "values" = { 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
+      "default" = -99,
+      "comment" = "the level column: 3 through 12 (capture p. 25).",
+    }, {
+      "name" = "dgfT15Bonus",
+      "values" = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+      "default" = -99,
+      "comment" = "the bonus code column: potions 1, weapons 2, armor 3, half xp 4, misc items 5, full xp 6, scrolls 7, save two 8, horde 9, save three 10 (capture p. 25).",
+    }, {
+      "name" = "dgfT15SaveBonus",
+      "values" = { 1, 1, 0, 0, 0, 0, 0, 2, 0, 3 },
+      "default" = -99,
+      "comment" = "the save bonus column: +1 at level 4, +2 at 10, +3 at 12, zero elsewhere (capture p. 25).",
+    }, {
+      "name" = "dgfT17XpMax",
+      "values" = { 1500, 3000, 6000, 14000, 30000, 60000, 120000, 240000, 480000, 710000, 1000000, 1250000 },
+      "default" = -99,
+      "comment" = "the experience column: the upper xp bound of each level, 1,500 at 1st to 1,250,000 at 12th (capture p. 27).",
+    }, {
+      "name" = "dgfT17Dice",
+      "values" = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 9 },
+      "default" = -99,
+      "comment" = "the accumulated d10 dice column: one per level through 9th, then held at 9 (capture p. 27).",
+    }, {
+      "name" = "dgfT17HpBonus",
+      "values" = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 6 },
+      "default" = -99,
+      "comment" = "the hit-point bonus column: the printed 9-plus-N cells - 2 per level beyond 9th: 0 through 9th, then 2, 4, 6 (capture p. 27).",
+    } },
+  "tables" = {},
+  "chains" = {},
+  "examples" = { {
+      "expr" = "m['dgfBarbHitDie']() != 12  or m['dgfBarbConHpBonus']() != 2  or m['dgfBarbConThreshold']() != 14  or m['dgfBarbSurpriseDie']() != 6  or m['dgfBarbSurpriseChance']() != 3  or m['dgfBarbBackProtPerLevel']() != 5  or m['dgfBarbLeapFwd']() != 10  or m['dgfBarbLeapBack']() != 3  or m['dgfBarbLeapUp']() != 3  or m['dgfBarbRunLeapBase']() != 15  or m['dgfBarbRunLeapDie']() != 6  or m['dgfBarbRunLeapUpBase']() != 4  or m['dgfBarbRunLeapUpDie']() != 4  or m['dgfBarbDetIllusionPerLevel']() != 5  or m['dgfBarbDetIllusionCap']() != 75  or m['dgfBarbDetMagicBase']() != 25  or m['dgfT14RowCount']() != 11  or m['dgfT14XpBeyond']() != 500000  or m['dgfT14HpBeyond']() != 4  or m['dgfT15RowCount']() != 10  or m['dgfB15Potions']() != 1  or m['dgfB15WeaponsSave']() != 2  or m['dgfB15Armor']() != 3  or m['dgfB15HalfXp']() != 4  or m['dgfB15MiscItems']() != 5  or m['dgfB15FullXp']() != 6  or m['dgfB15Scrolls']() != 7  or m['dgfB15SaveTwo']() != 8  or m['dgfB15Horde']() != 9  or m['dgfB15SaveThree']() != 10  or m['dgfT16RowCount']() != 11  or m['dgfSteppeProfCount']() != 16  or m['dgfSteppeWeaponCount']() != 4  or m['dgfForestProfCount']() != 18  or m['dgfForestWeaponCount']() != 5  or m['dgfJungleProfCount']() != 16  or m['dgfJungleWeaponCount']() != 5  or m['dgfHordeLevel']() != 11  or m['dgfHordeXpDiv']() != 2000  or m['dgfHordeAidePerMen']() != 500  or m['dgfHordeAssemblePerWeek']() != 500  or m['dgfHordeMaxWeeksNum']() != 3  or m['dgfHordeMaxWeeksDen']() != 2  or m['dgfBushiHitDie']() != 10  or m['dgfBushiSlots']() != 4  or m['dgfBushiPoorProfCount']() != 3  or m['dgfBushiAcStepLevels']() != 5  or m['dgfT17RowCount']() != 12  or m['dgfT17XpBeyond']() != 250000  or m['dgfT17HpBeyond']() != 2  or  m['dgfBarbNoPrime']() != 1  or  m['dgfBarbNotLawful']() != 1  or  m['dgfBarbFighterTables']() != 1  or  m['dgfBarbMagicHatred']() != 1  or  m['dgfBarbNoXpForItems']() != 1  or  m['dgfBarbXpForDestroying']() != 1  or  m['dgfBarbWuJenFoes']() != 1  or  m['dgfBarbClimbSmoothHalf']() != 1  or  m['dgfBarbHideUnfamiliarHalf']() != 1  or  m['dgfBarbBackProtFreeAttack']() != 1  or  m['dgfSteppeNomads']() != 1  or  m['dgfForestVillages']() != 1  or  m['dgfJungleVillages']() != 1  or  m['dgfBarbOutsiders']() != 1  or  m['dgfHordeShamans']() != 1  or  m['dgfHordePurposeFixed']() != 1  or  m['dgfHordeWeeksEqualLevel']() != 1  or  m['dgfHordeSuccessLegacy']() != 1  or  m['dgfBushiMasterless']() != 1  or  m['dgfBushiStrPrime']() != 1  or  m['dgfBushiFighterTables']() != 1  or  m['dgfBushiNinjaHonor']() != 1  or  m['dgfBushiFighterBonuses']() != 1",
+      "note" = "",
+    }, {
+      "expr" = "m['dgfBarbNoPrime']() != 1",
+      "note" = "the dgfBarbNoPrime pin",
+    }, {
+      "expr" = "m['dgfBarbNotLawful']() != 1",
+      "note" = "the dgfBarbNotLawful pin",
+    }, {
+      "expr" = "m['dgfBarbHitDie']() != 12",
+      "note" = "the dgfBarbHitDie pin",
+    }, {
+      "expr" = "m['dgfBarbFighterTables']() != 1",
+      "note" = "the dgfBarbFighterTables pin",
+    }, {
+      "expr" = "m['dgfBarbConHpBonus']() != 2",
+      "note" = "the dgfBarbConHpBonus pin",
+    }, {
+      "expr" = "m['dgfBarbConThreshold']() != 14",
+      "note" = "the dgfBarbConThreshold pin",
+    }, {
+      "expr" = "m['dgfBarbMagicHatred']() != 1",
+      "note" = "the dgfBarbMagicHatred pin",
+    }, {
+      "expr" = "m['dgfBarbNoXpForItems']() != 1",
+      "note" = "the dgfBarbNoXpForItems pin",
+    }, {
+      "expr" = "m['dgfBarbXpForDestroying']() != 1",
+      "note" = "the dgfBarbXpForDestroying pin",
+    }, {
+      "expr" = "m['dgfBarbWuJenFoes']() != 1",
+      "note" = "the dgfBarbWuJenFoes pin",
+    }, {
+      "expr" = "m['dgfBarbClimbSmoothHalf']() != 1",
+      "note" = "the dgfBarbClimbSmoothHalf pin",
+    }, {
+      "expr" = "m['dgfBarbHideUnfamiliarHalf']() != 1",
+      "note" = "the dgfBarbHideUnfamiliarHalf pin",
+    }, {
+      "expr" = "m['dgfBarbSurpriseDie']() != 6",
+      "note" = "the dgfBarbSurpriseDie pin",
+    }, {
+      "expr" = "m['dgfBarbSurpriseChance']() != 3",
+      "note" = "the dgfBarbSurpriseChance pin",
+    }, {
+      "expr" = "m['dgfBarbBackProtPerLevel']() != 5",
+      "note" = "the dgfBarbBackProtPerLevel pin",
+    }, {
+      "expr" = "m['dgfBarbBackProtFreeAttack']() != 1",
+      "note" = "the dgfBarbBackProtFreeAttack pin",
+    }, {
+      "expr" = "m['dgfBarbLeapFwd']() != 10",
+      "note" = "the dgfBarbLeapFwd pin",
+    }, {
+      "expr" = "m['dgfBarbLeapBack']() != 3",
+      "note" = "the dgfBarbLeapBack pin",
+    }, {
+      "expr" = "m['dgfBarbLeapUp']() != 3",
+      "note" = "the dgfBarbLeapUp pin",
+    }, {
+      "expr" = "m['dgfBarbRunLeapBase']() != 15",
+      "note" = "the dgfBarbRunLeapBase pin",
+    }, {
+      "expr" = "m['dgfBarbRunLeapDie']() != 6",
+      "note" = "the dgfBarbRunLeapDie pin",
+    }, {
+      "expr" = "m['dgfBarbRunLeapUpBase']() != 4",
+      "note" = "the dgfBarbRunLeapUpBase pin",
+    }, {
+      "expr" = "m['dgfBarbRunLeapUpDie']() != 4",
+      "note" = "the dgfBarbRunLeapUpDie pin",
+    }, {
+      "expr" = "m['dgfBarbDetIllusionPerLevel']() != 5",
+      "note" = "the dgfBarbDetIllusionPerLevel pin",
+    }, {
+      "expr" = "m['dgfBarbDetIllusionCap']() != 75",
+      "note" = "the dgfBarbDetIllusionCap pin",
+    }, {
+      "expr" = "m['dgfBarbDetMagicBase']() != 25",
+      "note" = "the dgfBarbDetMagicBase pin",
+    }, {
+      "expr" = "m['dgfT14RowCount']() != 11",
+      "note" = "the dgfT14RowCount pin",
+    }, {
+      "expr" = "m['dgfT14XpBeyond']() != 500000",
+      "note" = "the dgfT14XpBeyond pin",
+    }, {
+      "expr" = "m['dgfT14HpBeyond']() != 4",
+      "note" = "the dgfT14HpBeyond pin",
+    }, {
+      "expr" = "m['dgfT15RowCount']() != 10",
+      "note" = "the dgfT15RowCount pin",
+    }, {
+      "expr" = "m['dgfB15Potions']() != 1",
+      "note" = "the dgfB15Potions pin",
+    }, {
+      "expr" = "m['dgfB15WeaponsSave']() != 2",
+      "note" = "the dgfB15WeaponsSave pin",
+    }, {
+      "expr" = "m['dgfB15Armor']() != 3",
+      "note" = "the dgfB15Armor pin",
+    }, {
+      "expr" = "m['dgfB15HalfXp']() != 4",
+      "note" = "the dgfB15HalfXp pin",
+    }, {
+      "expr" = "m['dgfB15MiscItems']() != 5",
+      "note" = "the dgfB15MiscItems pin",
+    }, {
+      "expr" = "m['dgfB15FullXp']() != 6",
+      "note" = "the dgfB15FullXp pin",
+    }, {
+      "expr" = "m['dgfB15Scrolls']() != 7",
+      "note" = "the dgfB15Scrolls pin",
+    }, {
+      "expr" = "m['dgfB15SaveTwo']() != 8",
+      "note" = "the dgfB15SaveTwo pin",
+    }, {
+      "expr" = "m['dgfB15Horde']() != 9",
+      "note" = "the dgfB15Horde pin",
+    }, {
+      "expr" = "m['dgfB15SaveThree']() != 10",
+      "note" = "the dgfB15SaveThree pin",
+    }, {
+      "expr" = "m['dgfT16RowCount']() != 11",
+      "note" = "the dgfT16RowCount pin",
+    }, {
+      "expr" = "m['dgfSteppeProfCount']() != 16",
+      "note" = "the dgfSteppeProfCount pin",
+    }, {
+      "expr" = "m['dgfSteppeWeaponCount']() != 4",
+      "note" = "the dgfSteppeWeaponCount pin",
+    }, {
+      "expr" = "m['dgfSteppeNomads']() != 1",
+      "note" = "the dgfSteppeNomads pin",
+    }, {
+      "expr" = "m['dgfForestProfCount']() != 18",
+      "note" = "the dgfForestProfCount pin",
+    }, {
+      "expr" = "m['dgfForestWeaponCount']() != 5",
+      "note" = "the dgfForestWeaponCount pin",
+    }, {
+      "expr" = "m['dgfForestVillages']() != 1",
+      "note" = "the dgfForestVillages pin",
+    }, {
+      "expr" = "m['dgfJungleProfCount']() != 16",
+      "note" = "the dgfJungleProfCount pin",
+    }, {
+      "expr" = "m['dgfJungleWeaponCount']() != 5",
+      "note" = "the dgfJungleWeaponCount pin",
+    }, {
+      "expr" = "m['dgfJungleVillages']() != 1",
+      "note" = "the dgfJungleVillages pin",
+    }, {
+      "expr" = "m['dgfBarbOutsiders']() != 1",
+      "note" = "the dgfBarbOutsiders pin",
+    }, {
+      "expr" = "m['dgfHordeLevel']() != 11",
+      "note" = "the dgfHordeLevel pin",
+    }, {
+      "expr" = "m['dgfHordeXpDiv']() != 2000",
+      "note" = "the dgfHordeXpDiv pin",
+    }, {
+      "expr" = "m['dgfHordeAidePerMen']() != 500",
+      "note" = "the dgfHordeAidePerMen pin",
+    }, {
+      "expr" = "m['dgfHordeShamans']() != 1",
+      "note" = "the dgfHordeShamans pin",
+    }, {
+      "expr" = "m['dgfHordeAssemblePerWeek']() != 500",
+      "note" = "the dgfHordeAssemblePerWeek pin",
+    }, {
+      "expr" = "m['dgfHordePurposeFixed']() != 1",
+      "note" = "the dgfHordePurposeFixed pin",
+    }, {
+      "expr" = "m['dgfHordeWeeksEqualLevel']() != 1",
+      "note" = "the dgfHordeWeeksEqualLevel pin",
+    }, {
+      "expr" = "m['dgfHordeMaxWeeksNum']() != 3",
+      "note" = "the dgfHordeMaxWeeksNum pin",
+    }, {
+      "expr" = "m['dgfHordeMaxWeeksDen']() != 2",
+      "note" = "the dgfHordeMaxWeeksDen pin",
+    }, {
+      "expr" = "m['dgfHordeSuccessLegacy']() != 1",
+      "note" = "the dgfHordeSuccessLegacy pin",
+    }, {
+      "expr" = "m['dgfBushiMasterless']() != 1",
+      "note" = "the dgfBushiMasterless pin",
+    }, {
+      "expr" = "m['dgfBushiStrPrime']() != 1",
+      "note" = "the dgfBushiStrPrime pin",
+    }, {
+      "expr" = "m['dgfBushiHitDie']() != 10",
+      "note" = "the dgfBushiHitDie pin",
+    }, {
+      "expr" = "m['dgfBushiFighterTables']() != 1",
+      "note" = "the dgfBushiFighterTables pin",
+    }, {
+      "expr" = "m['dgfBushiNinjaHonor']() != 1",
+      "note" = "the dgfBushiNinjaHonor pin",
+    }, {
+      "expr" = "m['dgfBushiFighterBonuses']() != 1",
+      "note" = "the dgfBushiFighterBonuses pin",
+    }, {
+      "expr" = "m['dgfBushiSlots']() != 4",
+      "note" = "the dgfBushiSlots pin",
+    }, {
+      "expr" = "m['dgfBushiPoorProfCount']() != 3",
+      "note" = "the dgfBushiPoorProfCount pin",
+    }, {
+      "expr" = "m['dgfBushiAcStepLevels']() != 5",
+      "note" = "the dgfBushiAcStepLevels pin",
+    }, {
+      "expr" = "m['dgfT17RowCount']() != 12",
+      "note" = "the dgfT17RowCount pin",
+    }, {
+      "expr" = "m['dgfT17XpBeyond']() != 250000",
+      "note" = "the dgfT17XpBeyond pin",
+    }, {
+      "expr" = "m['dgfT17HpBeyond']() != 2",
+      "note" = "the dgfT17HpBeyond pin",
+    }, {
+      "expr" = "m['dgfT14Dice'](8) != 8  or m['dgfT14HpBonus'](8) != 4",
+      "note" = "the T14 level-9 row - eight dice plus the 4 bonus (capture p. 24)",
+    }, {
+      "expr" = "m['dgfT16DetMagic'](0) != 30",
+      "note" = "the T16 detect magic - 25 base plus 5 per level lands 30 at 1st (capture p. 25)",
+    }, {
+      "expr" = "m['dgfT15Bonus'](8) != 9  or m['dgfT15SaveBonus'](8) != 0",
+      "note" = "the T15 horde bonus at level 11 with no save bump (capture p. 25)",
+    }, {
+      "expr" = "m['dgfT17Dice'](9) != 9  or m['dgfT17HpBonus'](9) != 2",
+      "note" = "the T17 level-10 row - nine dice plus the 2 bonus (capture p. 27)",
+    }, {
+      "expr" = "m['dgfHordeMaxWeeksNum']() != 3  or m['dgfHordeMaxWeeksDen']() != 2",
+      "note" = "the horde max weeks - 1 1/2 times the level, the 3-over-2 pair (capture p. 26)",
+    }, {
+      "expr" = "m['dgfBarbConHpBonus']() !=m['dgfT17HpBeyond']()",
+      "note" = "the barbarian Con bonus doubles the bushi hp-beyond step at their thresholds (capture pp. 23, 27)",
+    }, {
+      "expr" = "m['dgfBushiAcStepLevels']() != 5",
+      "note" = "the bushi AC step - one per five levels (capture p. 27)",
+    }, {
+      "expr" = "m['dgfSteppeProfCount']() != 16  or m['dgfForestProfCount']() != 18  or m['dgfJungleProfCount']() != 16",
+      "note" = "the territory proficiency counts - 16, 18 and 16 (capture p. 26)",
+    }, {
+      "expr" = "m['dgfT14XpMax'](0) != 4000 or m['dgfT14XpMax'](1) != 8000 or m['dgfT14XpMax'](2) != 16000 or m['dgfT14XpMax'](3) != 32000 or m['dgfT14XpMax'](4) != 75000 or m['dgfT14XpMax'](5) != 130000 or m['dgfT14XpMax'](6) != 240000 or m['dgfT14XpMax'](7) != 460000",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT14XpMax'](8) != 900000 or m['dgfT14XpMax'](9) != 1400000 or m['dgfT14XpMax'](10) != 1900000 or m['dgfT14XpMax'](11) != -99 or m['dgfT16Climb'](0) != 85 or m['dgfT16Climb'](1) != 86 or m['dgfT16Climb'](2) != 87 or m['dgfT16Climb'](3) != 88",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT16Climb'](4) != 89 or m['dgfT16Climb'](5) != 90 or m['dgfT16Climb'](6) != 91 or m['dgfT16Climb'](7) != 92 or m['dgfT16Climb'](8) != 93 or m['dgfT16Climb'](9) != 94 or m['dgfT16Climb'](10) != 95 or m['dgfT16Climb'](11) != -99",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT16Hide'](0) != 25 or m['dgfT16Hide'](1) != 31 or m['dgfT16Hide'](2) != 37 or m['dgfT16Hide'](3) != 43 or m['dgfT16Hide'](4) != 49 or m['dgfT16Hide'](5) != 56 or m['dgfT16Hide'](6) != 63 or m['dgfT16Hide'](7) != 70",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT16Hide'](8) != 77 or m['dgfT16Hide'](9) != 85 or m['dgfT16Hide'](10) != 93 or m['dgfT16Hide'](11) != -99 or m['dgfT16BackProt'](0) != 5 or m['dgfT16BackProt'](1) != 10 or m['dgfT16BackProt'](2) != 15 or m['dgfT16BackProt'](3) != 20",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT16BackProt'](4) != 25 or m['dgfT16BackProt'](5) != 30 or m['dgfT16BackProt'](6) != 35 or m['dgfT16BackProt'](7) != 40 or m['dgfT16BackProt'](8) != 45 or m['dgfT16BackProt'](9) != 50 or m['dgfT16BackProt'](10) != 55 or m['dgfT16BackProt'](11) != -99",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT16DetIllusion'](0) != 5 or m['dgfT16DetIllusion'](1) != 10 or m['dgfT16DetIllusion'](2) != 15 or m['dgfT16DetIllusion'](3) != 20 or m['dgfT16DetIllusion'](4) != 25 or m['dgfT16DetIllusion'](5) != 30 or m['dgfT16DetIllusion'](6) != 35 or m['dgfT16DetIllusion'](7) != 40",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT16DetIllusion'](8) != 45 or m['dgfT16DetIllusion'](9) != 50 or m['dgfT16DetIllusion'](10) != 55 or m['dgfT16DetIllusion'](11) != -99 or m['dgfT15Level'](0) != 3 or m['dgfT15Level'](1) != 4 or m['dgfT15Level'](2) != 5 or m['dgfT15Level'](3) != 6",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT15Level'](4) != 7 or m['dgfT15Level'](5) != 8 or m['dgfT15Level'](6) != 9 or m['dgfT15Level'](7) != 10 or m['dgfT15Level'](8) != 11 or m['dgfT15Level'](9) != 12 or m['dgfT15Level'](10) != -99 or m['dgfT17XpMax'](0) != 1500",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT17XpMax'](1) != 3000 or m['dgfT17XpMax'](2) != 6000 or m['dgfT17XpMax'](3) != 14000 or m['dgfT17XpMax'](4) != 30000 or m['dgfT17XpMax'](5) != 60000 or m['dgfT17XpMax'](6) != 120000 or m['dgfT17XpMax'](7) != 240000 or m['dgfT17XpMax'](8) != 480000",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    }, {
+      "expr" = "m['dgfT17XpMax'](9) != 710000 or m['dgfT17XpMax'](10) != 1000000 or m['dgfT17XpMax'](11) != 1250000 or m['dgfT17XpMax'](12) != -99",
+      "note" = "the switch census - the fail-on-wrong pin of every unpinned-in-audit fact",
+    } },
+  "audit" = {
+      "label" = "R619 OA barbarian bushi audit",
+      "comment" = "OA round six (capture pp. 23-28): the first two of the ten classes - the barbarian with its hit-die and Con bonuses, the capability ladders, the three territories, the horde doctrine, and the bushi with its advancement and poverty doctrine.",
+    },
+}

@@ -70,3 +70,15 @@ engine plus smoke test.
 The Dragon set (issues 2-26, 25 issues, 128 round specs)
 promotes first - recent specs, easy verify - landing in
 batches under content/rules/dragon/.
+
+## Promotion from headers
+
+The OA set extends the doctrine: a record may be
+promoted from a PIN HEADER instead of a spec JSON - the
+header is the adjudicated record, the builder extracts
+the model mechanically, and the parse-back proof is
+unchanged. The 160 OA pin headers (rounds R614-R773)
+promote this way into content/rules/oa/, one record per
+round; the audit conditions convert to bad-detector
+examples, and local-array audits stay behind the C++
+pins - the header remains the firewall.
