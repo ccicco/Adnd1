@@ -29793,6 +29793,47 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   round as efficient). The R968
   record seated in the repo seed.
   WAIT FOR GO.
+  - R970 LANDED (9ebd433, dp2, 7
+  inline, the promotion batch
+  two): THE DRAGON PROMOTION
+  BATCH TWO - the arc round
+  five, issue 3 complete: wmn
+  (the Lakofka women), spr (the
+  Healer and the Scribe), fsc
+  (the Samurai and the
+  Berserker) - 3 records, 255
+  model items, 104817 bytes
+  Lua, every record parsed
+  back and compared equal (the
+  lossless proof - the promote
+  lib rebuilt this turn and
+  byte-proven: all 8 batch-one
+  records regenerate identical
+  to the landed Lua). 4 consts
+  + 3 bools: dp2BatchRecords=3,
+  dp2ModelItems=255,
+  dp2CumulativeRecords=11,
+  dp2SetRoundsRemaining=68,
+  dp2RecordsPromoted,
+  dp2DiffBackGreen,
+  dp2IssueThreeComplete.
+  Census 892->893; no flips;
+  gap report 026 stays 3/0.
+  Double-run applied 8/
+  already 8, verify at
+  9ebd433 already 8 with all
+  11 records on disk (221179
+  bytes Lua); rverify GREEN 7
+  mutants 0 missed at base
+  7c55ce7; spec 116532 bytes
+  md5 87f5d134f1bc9ce7873
+  68b6e76d35df, canvas
+  r970-spec. The R969 record
+  seated in the repo seed.
+  BYTE WEIGHT: R898 (chr) is
+  117KB Lua alone - batch
+  three opens at chr. WAIT FOR
+  GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
