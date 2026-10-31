@@ -28960,6 +28960,63 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   Going print 29-30, Nomenclature of Pole Arms print 50-54, SPI on AD&D
   print 44, Stalemate at Kassala print 45-47, Mapping the Dungeons
   catalog print 18-28. WAIT FOR GO.
+  - R948 LANDED (446f677, k22, 151 inline, opener part three): The Dragon
+  issue-22 opener part three, the commentary set - the five-chain round of
+  the four-round shape. Chain one What It Is and Where It Is Going print
+  29-30 (12 consts + 13 bools: the 150000-player estimate, the eleven-month
+  first thousand, the five-or-six-month second thousand, the 2000-set third
+  printing in five months, the 4000 sets through December 1975, the 20-50
+  percent piracy estimates, the 4000 Basic Sets a month, the Poetics
+  analogy, the everybody-wins doctrine, the two-systems split, the
+  home-computer direction). Chain two the Nomenclature of Pole Arms print
+  50-54 (28 consts + 24 bools + TABLE k22PoleArmFam tag Pf 7x2 the seven
+  families by member count - dagger 6, axe 3, cleaver 2, scythe 1, heavy
+  knife 1, pruning hook 2, hay fork 1, sentinel -99: the five-foot haft
+  floor, the 18-21-foot pike, the 15-foot pike line, the 12-foot Norman
+  lance at the 14-foot average with 10 feet of reach, the 8-foot halberd,
+  the 2-to-over-3-foot bardiche head, the Sempach 1386 and Arbedo 1422
+  references, the Saxtorph and Stone misnamings, the recanted lochaber,
+  the 40-40-20 Swiss mix, the not-grounded Swiss pike). Chain three SPI on
+  AD&D print 44 (9 bools: the Berg does-not-play handicap, the mere-rewrite
+  charge, the pigs-lips quote, the uniformly favorable reaction, the ivory
+  chessmen analogy, the rehash masters, the besooted pot and silver
+  salver, the Tolkien coattails, the ball back in your court). Chain four
+  Stalemate at Kassala print 45-47 (25 consts + 15 bools: the 1541
+  expedition, the 400 Portuguese with 1000 stand of firearms, the 2600
+  enemies to the front, the Christian order - 400 Galla plus two 400-strong
+  cohorts plus the 160 cavalry reserve, the Moslem order - 1000 Nubians,
+  600 Mamalukes, 200 Turkish heavy, 400 Arabs, the 200-strong center
+  units, the Iago wing 100 garrison + 120 armed slaves + 300 about-face,
+  the 1400-to-520 flank fight, the 200 twelve-eighth-ounce musket balls
+  against the printed fifteen pounds, the three volleys, the Khartoum
+  rainy-season withdrawal, the editor town-was-the-target verdict). Chain
+  five the Mapping the Dungeons catalog print 18-28 (11 consts + 12
+  bools: the 500-plus roster, the 18 December 1978 cut-off, the 3-4-month
+  update cycle, the 2.10-dollar back issues - 7 Volume Two and 5 Volume
+  Three in stock, the 21-game catalog, the nine Hobbitronics, the five
+  named dungeons, the Space Quest unknown publisher, the Listerine
+  Brothers, Arrh the Insane). 151 inline = 77 consts + 72 bools + 2 table
+  cols, 21 examples + 2 table_checks; gap report 022 no-op 0 closed 3
+  open; no data files (part-three round). Print catches pinned as scanned:
+  the missing Partisan section heading at print 51; Scotts for Scots;
+  ransour for ranseur; BRITAINNACA in the text against BRITIANNICA in the
+  bibliography against Britannica; Ffoukles in the bibliography against
+  Ffoulks in the text; predominate for predominant; the ef-fect folio-seam
+  hyphen; route of retreat for rout; be surprise for by surprise; tatoo
+  faced; Bhagdad; geni for genie; handfull and handfulls twice; Sundanese
+  for Sudanese; the fifteen-pounds print against the 18.75-pound
+  arithmetic of 200 one-and-a-half-ounce balls, both pinned; the 5000 or
+  6000 sets was and the myth of all peoples contain agreements; the
+  stray apostrophe in the print-30 cartoon; the roster blanket
+  misspelling apology, directory spellings riding unpinned. WATCHES STILL
+  EMPTY: the Sullin levels 7-9 and the brawling sequel print nowhere in
+  TD22 - both ride to TD 23. Census 870->871; rverify GREEN 163 mutants 0
+  missed at base 8c3b563; round-trip 53328 bytes md5
+  4d2e8f5f9fe90d0167e9a6e73ad783a3, byte-exact at 446f677 (fresh tarball
+  re-run applied 0 already 5). Next: R949 the pure flip closing all three
+  report-022 boxes - the gap_flips on the three part lines to checked, the
+  gap_census 3 closed 0 open, prefix scan fresh at the then-HEAD (l22
+  free at 446f677, k22 now taken). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

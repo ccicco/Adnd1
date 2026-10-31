@@ -56,9 +56,9 @@ battle report) and the Mapping the Dungeons games catalog
 International DM Search roster). The flip (R949) closes
 all three boxes.
 
-- [ ] **The issue-22 opener chains part one** (print 5-12, the military-history triptych: the First Assassins, the Irresistible Force, the Armies of the Renaissance overview)
-- [ ] **The issue-22 opener chains part two** (print 33-43, the AD&D DMG sneak preview: the magic items, the attack matrices, the psionic tables, the saving throw matrices)
-- [ ] **The issue-22 opener chains part three** (print 18-28 + 29-30 + 44 + 45-47 + 50-54, the commentary set: What It Is and Where It Is Going, the Nomenclature of Pole Arms, SPI on AD&D, Stalemate at Kassala, the Mapping the Dungeons games catalog)
+- [x] **The issue-22 opener chains part one** (print 5-12, the military-history triptych: the First Assassins, the Irresistible Force, the Armies of the Renaissance overview)
+- [x] **The issue-22 opener chains part two** (print 33-43, the AD&D DMG sneak preview: the magic items, the attack matrices, the psionic tables, the saving throw matrices)
+- [x] **The issue-22 opener chains part three** (print 18-28 + 29-30 + 44 + 45-47 + 50-54, the commentary set: What It Is and Where It Is Going, the Nomenclature of Pole Arms, SPI on AD&D, Stalemate at Kassala, the Mapping the Dungeons games catalog)
 
 Drop (Curtiss, 2026-10-30, none contested): the cover,
 the Ral Partha miniature ad (print 2), the convention

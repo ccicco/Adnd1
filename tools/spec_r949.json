@@ -1,0 +1,404 @@
+{
+ "round": 949,
+ "prefix": "l22",
+ "census_before": 871,
+ "title": "The Dragon issue-22 box closing round: the four-round walk complete, issues 2-22 all closed (census 872)",
+ "regtest": "regtest.cpp",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "seed_anchor": "## Knowledge maintenance",
+ "prev_seed_key": "  - R948 LANDED (446f677, k22, 151 inline, opener part three): The Dragon",
+ "prev_record": [
+  "  - R948 LANDED (446f677, k22, 151 inline, opener part three): The Dragon",
+  "  issue-22 opener part three, the commentary set - the five-chain round of",
+  "  the four-round shape. Chain one What It Is and Where It Is Going print",
+  "  29-30 (12 consts + 13 bools: the 150000-player estimate, the eleven-month",
+  "  first thousand, the five-or-six-month second thousand, the 2000-set third",
+  "  printing in five months, the 4000 sets through December 1975, the 20-50",
+  "  percent piracy estimates, the 4000 Basic Sets a month, the Poetics",
+  "  analogy, the everybody-wins doctrine, the two-systems split, the",
+  "  home-computer direction). Chain two the Nomenclature of Pole Arms print",
+  "  50-54 (28 consts + 24 bools + TABLE k22PoleArmFam tag Pf 7x2 the seven",
+  "  families by member count - dagger 6, axe 3, cleaver 2, scythe 1, heavy",
+  "  knife 1, pruning hook 2, hay fork 1, sentinel -99: the five-foot haft",
+  "  floor, the 18-21-foot pike, the 15-foot pike line, the 12-foot Norman",
+  "  lance at the 14-foot average with 10 feet of reach, the 8-foot halberd,",
+  "  the 2-to-over-3-foot bardiche head, the Sempach 1386 and Arbedo 1422",
+  "  references, the Saxtorph and Stone misnamings, the recanted lochaber,",
+  "  the 40-40-20 Swiss mix, the not-grounded Swiss pike). Chain three SPI on",
+  "  AD&D print 44 (9 bools: the Berg does-not-play handicap, the mere-rewrite",
+  "  charge, the pigs-lips quote, the uniformly favorable reaction, the ivory",
+  "  chessmen analogy, the rehash masters, the besooted pot and silver",
+  "  salver, the Tolkien coattails, the ball back in your court). Chain four",
+  "  Stalemate at Kassala print 45-47 (25 consts + 15 bools: the 1541",
+  "  expedition, the 400 Portuguese with 1000 stand of firearms, the 2600",
+  "  enemies to the front, the Christian order - 400 Galla plus two 400-strong",
+  "  cohorts plus the 160 cavalry reserve, the Moslem order - 1000 Nubians,",
+  "  600 Mamalukes, 200 Turkish heavy, 400 Arabs, the 200-strong center",
+  "  units, the Iago wing 100 garrison + 120 armed slaves + 300 about-face,",
+  "  the 1400-to-520 flank fight, the 200 twelve-eighth-ounce musket balls",
+  "  against the printed fifteen pounds, the three volleys, the Khartoum",
+  "  rainy-season withdrawal, the editor town-was-the-target verdict). Chain",
+  "  five the Mapping the Dungeons catalog print 18-28 (11 consts + 12",
+  "  bools: the 500-plus roster, the 18 December 1978 cut-off, the 3-4-month",
+  "  update cycle, the 2.10-dollar back issues - 7 Volume Two and 5 Volume",
+  "  Three in stock, the 21-game catalog, the nine Hobbitronics, the five",
+  "  named dungeons, the Space Quest unknown publisher, the Listerine",
+  "  Brothers, Arrh the Insane). 151 inline = 77 consts + 72 bools + 2 table",
+  "  cols, 21 examples + 2 table_checks; gap report 022 no-op 0 closed 3",
+  "  open; no data files (part-three round). Print catches pinned as scanned:",
+  "  the missing Partisan section heading at print 51; Scotts for Scots;",
+  "  ransour for ranseur; BRITAINNACA in the text against BRITIANNICA in the",
+  "  bibliography against Britannica; Ffoukles in the bibliography against",
+  "  Ffoulks in the text; predominate for predominant; the ef-fect folio-seam",
+  "  hyphen; route of retreat for rout; be surprise for by surprise; tatoo",
+  "  faced; Bhagdad; geni for genie; handfull and handfulls twice; Sundanese",
+  "  for Sudanese; the fifteen-pounds print against the 18.75-pound",
+  "  arithmetic of 200 one-and-a-half-ounce balls, both pinned; the 5000 or",
+  "  6000 sets was and the myth of all peoples contain agreements; the",
+  "  stray apostrophe in the print-30 cartoon; the roster blanket",
+  "  misspelling apology, directory spellings riding unpinned. WATCHES STILL",
+  "  EMPTY: the Sullin levels 7-9 and the brawling sequel print nowhere in",
+  "  TD22 - both ride to TD 23. Census 870->871; rverify GREEN 163 mutants 0",
+  "  missed at base 8c3b563; round-trip 53328 bytes md5",
+  "  4d2e8f5f9fe90d0167e9a6e73ad783a3, byte-exact at 446f677 (fresh tarball",
+  "  re-run applied 0 already 5). Next: R949 the pure flip closing all three",
+  "  report-022 boxes - the gap_flips on the three part lines to checked, the",
+  "  gap_census 3 closed 0 open, prefix scan fresh at the then-HEAD (l22",
+  "  free at 446f677, k22 now taken). WAIT FOR GO."
+ ],
+ "header_file": "rules/l22.h",
+ "include_after": "#include \"rules/k22.h\"  // R948: the Dragon issue-22 opener part three, the five-chain commentary round",
+ "include_comment": "the Dragon issue-22 box closing round, the four-round walk complete",
+ "audit_file": "rules/audits/r949_batch.h",
+ "audit_anchor": "#include \"rules/audits/r948_batch.h\"  // R948: R948 issue-22 commentary set audit",
+ "audit_label": "R949 Dragon issue-22 closure audit",
+ "audit_comment": "THE DRAGON ISSUE-22 BOX CLOSING ROUND - the pure flip, no new ink. All three report-022 boxes flip at this single round: the part-one triptych (R946, t22), the part-two AD&D DMG sneak preview (R947, s22) and the part-three commentary set (R948, k22). The walk holds issues 2-22 all closed; the Sullin and brawling watches ride to TD 23.",
+ "gap_report": "tools/dragon_gap_report_022.md",
+ "gap_census": {
+  "closed": 3,
+  "open": 0
+ },
+ "gap_flips": [
+  {
+   "from": "- [ ] **The issue-22 opener chains part one** (print 5-12, the military-history triptych: the First Assassins, the Irresistible Force, the Armies of the Renaissance overview)",
+   "to": "- [x] **The issue-22 opener chains part one** (print 5-12, the military-history triptych: the First Assassins, the Irresistible Force, the Armies of the Renaissance overview)",
+   "note": "the issue-22 part-one box"
+  },
+  {
+   "from": "- [ ] **The issue-22 opener chains part two** (print 33-43, the AD&D DMG sneak preview: the magic items, the attack matrices, the psionic tables, the saving throw matrices)",
+   "to": "- [x] **The issue-22 opener chains part two** (print 33-43, the AD&D DMG sneak preview: the magic items, the attack matrices, the psionic tables, the saving throw matrices)",
+   "note": "the issue-22 part-two box"
+  },
+  {
+   "from": "- [ ] **The issue-22 opener chains part three** (print 18-28 + 29-30 + 44 + 45-47 + 50-54, the commentary set: What It Is and Where It Is Going, the Nomenclature of Pole Arms, SPI on AD&D, Stalemate at Kassala, the Mapping the Dungeons games catalog)",
+   "to": "- [x] **The issue-22 opener chains part three** (print 18-28 + 29-30 + 44 + 45-47 + 50-54, the commentary set: What It Is and Where It Is Going, the Nomenclature of Pole Arms, SPI on AD&D, Stalemate at Kassala, the Mapping the Dungeons games catalog)",
+   "note": "the issue-22 part-three box"
+  }
+ ],
+ "banner": {
+  "title": "The Dragon issue-22 box closing round - the four-round walk complete, issues 2 through 22 all closed",
+  "provenance": "The pure flip of the issue-22 four-round shape - no new ink pinned, all three report-022 boxes closed. The issue-22 openers stand at R946 (t22: the military-history triptych - the First Assassins, the Irresistible Force, the Armies of the Renaissance), R947 (s22: the AD&D DMG sneak preview table round) and R948 (k22: the commentary set - What It Is and Where It Is Going, the pole arms taxonomy, the Berg rebuttal, Stalemate at Kassala, the Mapping the Dungeons catalog). The combined TD22-plus-LW13 experiment issue of February 1979, print folio equal to PDF page, is the first issue to ride the four-round shape. The Sullin levels 7-9 and the brawling sequel watches ride to TD 23."
+ },
+ "switches": [],
+ "chains": [],
+ "consts": [
+  {
+   "name": "l22IssueTwentyTwoBoxes",
+   "value": 3,
+   "comment": "all three report-022 boxes close at this single flip - the part-one, part-two and part-three opener boxes the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22IssueTwentyTwoChains",
+   "value": 9,
+   "comment": "the nine chains of the TD-22 call - the triptych three, the sneak preview one, the commentary set five the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22IssueTwentyTwoRounds",
+   "value": 4,
+   "comment": "the first four-round issue shape of the walk - three openers plus the closing flip the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22PartOneInline",
+   "value": 93,
+   "comment": "the part-one round stood at ninety-three, the military-history triptych the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22PartTwoInline",
+   "value": 320,
+   "comment": "the part-two round stood at three hundred twenty, the sneak preview table round the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22PartThreeInline",
+   "value": 151,
+   "comment": "the part-three round stood at one hundred fifty-one, the commentary set the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22OpenerInlineTotal",
+   "value": 564,
+   "comment": "the three opener rounds together pinned five hundred sixty-four, the three openers together the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22WalkFirstIssue",
+   "value": 2,
+   "comment": "the Dragon walk opened at issue two the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22WalkLastClosed",
+   "value": 22,
+   "comment": "the walk now closes at issue twenty-two the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22WalkIssuesClosed",
+   "value": 21,
+   "comment": "issues two through twenty-two - twenty-one issues of the walk all closed the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22CensusBefore",
+   "value": 871,
+   "comment": "the battery census stood at eight hundred seventy-one before the flip the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22CensusAfter",
+   "value": 872,
+   "comment": "the flip raises the battery census to eight hundred seventy-two the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22RegistryLoaded",
+   "value": 1313,
+   "comment": "the registry ground truth unchanged - one thousand three hundred thirteen loaded the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22RegistryBaseLua",
+   "value": 1338,
+   "comment": "one thousand three hundred thirty-eight base lua the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22RegistryNeverLoad",
+   "value": 25,
+   "comment": "twenty-five never-load (R924 re-measure) the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22TDNumber",
+   "value": 22,
+   "comment": "the combined experiment numbering - TD 22 the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22LWNumber",
+   "value": 13,
+   "comment": "the combined experiment numbering picks up where it left off - LW 13 the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22IssueYear",
+   "value": 1979,
+   "comment": "Vol. III No. 8, February 1979 the issue-22 closure bookkeeping"
+  }
+ ],
+ "bools": [
+  {
+   "name": "l22WalkTwoThroughTwentyTwo",
+   "value": true,
+   "comment": "the Dragon walk holds issues two through twenty-two complete the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22PartOneComplete",
+   "value": true,
+   "comment": "the military-history triptych stands pinned - the First Assassins, the Irresistible Force, the Armies of the Renaissance the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22PartTwoComplete",
+   "value": true,
+   "comment": "the AD&D DMG sneak preview stands pinned - the twelve tables from the amulet through the save matrices the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22PartThreeComplete",
+   "value": true,
+   "comment": "the commentary set stands pinned - the design philosophy essay, the pole arms taxonomy, the Berg rebuttal, the Kassala battle report, the games catalog roster the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22FirstFourRoundShape",
+   "value": true,
+   "comment": "the first four-round issue shape of the walk - the precedent for future table-heavy issues the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22NoJanuaryIssue",
+   "value": true,
+   "comment": "the combined TD-22-plus-LW-13 experiment issue - no January 1979 issue exists the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22PrintFolioEqualsPdfPage",
+   "value": true,
+   "comment": "print folio equals PDF page this issue, verified at the page feet the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22PrintCatchesPinned",
+   "value": true,
+   "comment": "the print catches of all four rounds pinned as scanned, the conversion noted never silent the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22SullinWatchRides",
+   "value": true,
+   "comment": "the Sullin levels seven through nine still print nowhere - the watch rides to TD 23 the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22BrawlingWatchRides",
+   "value": true,
+   "comment": "the brawling long-term-effects sequel still prints nowhere - the watch rides to TD 23 the issue-22 closure bookkeeping"
+  },
+  {
+   "name": "l22GapReportClosed",
+   "value": true,
+   "comment": "report 022 closes with all three boxes checked, joining mm2 and ddg in the closed state the issue-22 closure bookkeeping"
+  }
+ ],
+ "tables": [],
+ "header_sections": {
+  "the issue-22 closure bookkeeping": [
+   {
+    "kind": "const",
+    "name": "l22IssueTwentyTwoBoxes"
+   },
+   {
+    "kind": "const",
+    "name": "l22IssueTwentyTwoChains"
+   },
+   {
+    "kind": "const",
+    "name": "l22IssueTwentyTwoRounds"
+   },
+   {
+    "kind": "const",
+    "name": "l22PartOneInline"
+   },
+   {
+    "kind": "const",
+    "name": "l22PartTwoInline"
+   },
+   {
+    "kind": "const",
+    "name": "l22PartThreeInline"
+   },
+   {
+    "kind": "const",
+    "name": "l22OpenerInlineTotal"
+   },
+   {
+    "kind": "const",
+    "name": "l22WalkFirstIssue"
+   },
+   {
+    "kind": "const",
+    "name": "l22WalkLastClosed"
+   },
+   {
+    "kind": "const",
+    "name": "l22WalkIssuesClosed"
+   },
+   {
+    "kind": "const",
+    "name": "l22CensusBefore"
+   },
+   {
+    "kind": "const",
+    "name": "l22CensusAfter"
+   },
+   {
+    "kind": "const",
+    "name": "l22RegistryLoaded"
+   },
+   {
+    "kind": "const",
+    "name": "l22RegistryBaseLua"
+   },
+   {
+    "kind": "const",
+    "name": "l22RegistryNeverLoad"
+   },
+   {
+    "kind": "const",
+    "name": "l22TDNumber"
+   },
+   {
+    "kind": "const",
+    "name": "l22LWNumber"
+   },
+   {
+    "kind": "const",
+    "name": "l22IssueYear"
+   },
+   {
+    "kind": "bool",
+    "name": "l22WalkTwoThroughTwentyTwo"
+   },
+   {
+    "kind": "bool",
+    "name": "l22PartOneComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "l22PartTwoComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "l22PartThreeComplete"
+   },
+   {
+    "kind": "bool",
+    "name": "l22FirstFourRoundShape"
+   },
+   {
+    "kind": "bool",
+    "name": "l22NoJanuaryIssue"
+   },
+   {
+    "kind": "bool",
+    "name": "l22PrintFolioEqualsPdfPage"
+   },
+   {
+    "kind": "bool",
+    "name": "l22PrintCatchesPinned"
+   },
+   {
+    "kind": "bool",
+    "name": "l22SullinWatchRides"
+   },
+   {
+    "kind": "bool",
+    "name": "l22BrawlingWatchRides"
+   },
+   {
+    "kind": "bool",
+    "name": "l22GapReportClosed"
+   }
+  ]
+ },
+ "examples": [
+  {
+   "expr": "m['l22IssueTwentyTwoBoxes']() != 3 or m['l22IssueTwentyTwoChains']() != 9 or m['l22IssueTwentyTwoRounds']() != 4 or m['l22FirstFourRoundShape']() != 1",
+   "note": "the issue-22 census - three boxes, nine chains, four rounds, the first four-round shape of the walk the issue-22 closure bookkeeping"
+  },
+  {
+   "expr": "m['l22PartOneInline']() != 93 or m['l22PartTwoInline']() != 320 or m['l22PartThreeInline']() != 151 or m['l22OpenerInlineTotal']() != 564",
+   "note": "the opener totals - the triptych ninety-three, the preview three hundred twenty, the commentary one hundred fifty-one, five hundred sixty-four together the issue-22 closure bookkeeping"
+  },
+  {
+   "expr": "m['l22WalkFirstIssue']() != 2 or m['l22WalkLastClosed']() != 22 or m['l22WalkIssuesClosed']() != 21 or m['l22WalkTwoThroughTwentyTwo']() != 1",
+   "note": "the walk census - from issue two through issue twenty-two, twenty-one issues all closed the issue-22 closure bookkeeping"
+  },
+  {
+   "expr": "m['l22CensusBefore']() != 871 or m['l22CensusAfter']() != 872 or m['l22RegistryLoaded']() != 1313 or m['l22RegistryBaseLua']() != 1338 or m['l22RegistryNeverLoad']() != 25",
+   "note": "the battery and registry ground truth - the census step and the unchanged registry measures the issue-22 closure bookkeeping"
+  },
+  {
+   "expr": "m['l22TDNumber']() != 22 or m['l22LWNumber']() != 13 or m['l22IssueYear']() != 1979 or m['l22NoJanuaryIssue']() != 1 or m['l22PrintFolioEqualsPdfPage']() != 1",
+   "note": "the issue frame - TD 22 and LW 13, February 1979, the combined experiment with print folio equal to PDF page the issue-22 closure bookkeeping"
+  },
+  {
+   "expr": "m['l22SullinWatchRides']() != 1 or m['l22BrawlingWatchRides']() != 1 or m['l22GapReportClosed']() != 1",
+   "note": "the closing watches - the Sullin spells and the brawling sequel ride to TD 23 and the report closes with all boxes checked the issue-22 closure bookkeeping"
+  }
+ ],
+ "table_checks": [],
+ "file_patches": [],
+ "data_files": [],
+ "inline_count": 29
+}
