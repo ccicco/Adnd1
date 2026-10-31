@@ -1,0 +1,762 @@
+{
+ "round": 960,
+ "prefix": "k25",
+ "census_before": 882,
+ "title": "The Dragon issue-25 opener part three: the commentary set (census 883)",
+ "banner": {
+  "title": "The Dragon issue-25 opener part three - the commentary set",
+  "provenance": "The part-three round of the issue-25 four-round shape - three of the eight Curtiss-called chains as the commentary set: the William B. Fawcett War of Flowers commentary (print 35-37) - the tribute empire, the three-delegation declaration ritual with the twenty day waits, the command ladder from the Tlacatechth to the twenty man platoon, the house of darts and the knights orders - the Bob Bledsaw To Select a Mythos guide (print 43) on the campaign mythos - the nexus gates, the clean slate and the system fits - and the Michael H. Kluwer Arms and Armor of the Conquistadores commentary (print 44-45) - the Cortez and Pizarro expedition numbers, the half armor and the morion, the pike, arquebus and crossbow notes. All pinned from The Dragon Vol. III No. 11 (May 1979) print 35-37 and 43-45 at extract/dragon/025, PRINT FOLIO = PDF PAGE this issue, the single-voice transcript of the Curtiss-provided scan - the contents printing Mike H. Kleuvor for Michael H. Kluwer, the part-three heading joined from the scan. The Flower Wars and Conquistadores chains stayed in at the R960 adjudication per the standing eight-chain call; the flip rides R961. The two inherited watches - the Sullin levels 7-9 and the brawling sequel - print nowhere in issue 25 and ride to TD 26."
+ },
+ "header_file": "rules/k25.h",
+ "audit_file": "rules/audits/r960_batch.h",
+ "audit_label": "R960 issue-25 commentary set audit",
+ "audit_anchor": "#include \"rules/audits/r959_batch.h\"  // R959: R959 issue-25 table round audit",
+ "audit_comment": "the three-chain commentary set audit - the War of Flowers with the declaration ritual and the command ladder, the To Select a Mythos guide with the mythos calls, and the Conquistadores with the expedition numbers and the weapon notes",
+ "gap_report": "tools/dragon_gap_report_024.md",
+ "gap_census": {
+  "closed": 3,
+  "open": 0
+ },
+ "gap_flips": [],
+ "include_after": "#include \"rules/s25.h\"  // R959: the Dragon issue-25 opener part two, the war game and the vampire roster table round",
+ "include_comment": "the Dragon issue-25 opener part three, the three-chain commentary set",
+ "header_sections": {
+  "the War of Flowers commentary (print 35-37)": [
+   {
+    "kind": "const",
+    "name": "s25AztecMonthDays"
+   },
+   {
+    "kind": "const",
+    "name": "s25WarDelegations"
+   },
+   {
+    "kind": "const",
+    "name": "s25PhratriesCount"
+   },
+   {
+    "kind": "const",
+    "name": "s25CompanyMenLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25CompanyMenHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25PlatoonMen"
+   },
+   {
+    "kind": "const",
+    "name": "s25MainWeapons"
+   },
+   {
+    "kind": "const",
+    "name": "s25ArsenalClans"
+   },
+   {
+    "kind": "const",
+    "name": "s25KnightOrders"
+   },
+   {
+    "kind": "bool",
+    "name": "s25TributeNotAbsorption"
+   },
+   {
+    "kind": "bool",
+    "name": "s25NoTributeGuarantee"
+   },
+   {
+    "kind": "bool",
+    "name": "s25AllMalesSoldiers"
+   },
+   {
+    "kind": "bool",
+    "name": "s25NoUnitDrills"
+   },
+   {
+    "kind": "bool",
+    "name": "s25CampaignSeasonBan"
+   },
+   {
+    "kind": "bool",
+    "name": "s25NoSiegeWeapons"
+   },
+   {
+    "kind": "bool",
+    "name": "s25CaptivesOverKills"
+   },
+   {
+    "kind": "bool",
+    "name": "s25NewWarriorApprenticed"
+   },
+   {
+    "kind": "bool",
+    "name": "s25WarriorsHeavenGuarantee"
+   },
+   {
+    "kind": "bool",
+    "name": "s25CottonArmorAdopted"
+   }
+  ],
+  "the To Select a Mythos guide (print 43)": [
+   {
+    "kind": "const",
+    "name": "s25MythosDraws"
+   },
+   {
+    "kind": "bool",
+    "name": "s25WellDevelopedMythos"
+   },
+   {
+    "kind": "bool",
+    "name": "s25NexusGatesLimited"
+   },
+   {
+    "kind": "bool",
+    "name": "s25CleanSlatePreference"
+   },
+   {
+    "kind": "bool",
+    "name": "s25NoRealityRestraints"
+   },
+   {
+    "kind": "bool",
+    "name": "s25DndNonGunpowderFit"
+   },
+   {
+    "kind": "bool",
+    "name": "s25RealFaithsExcluded"
+   },
+   {
+    "kind": "bool",
+    "name": "s25GodsInCampaignOk"
+   },
+   {
+    "kind": "bool",
+    "name": "s25TablesNotDogma"
+   }
+  ],
+  "the Conquistadores commentary (print 44-45)": [
+   {
+    "kind": "const",
+    "name": "s25CortezSailYear"
+   },
+   {
+    "kind": "const",
+    "name": "s25CortezSailMen"
+   },
+   {
+    "kind": "const",
+    "name": "s25CortezSailHorses"
+   },
+   {
+    "kind": "const",
+    "name": "s25CortezSailCannon"
+   },
+   {
+    "kind": "const",
+    "name": "s25CozumelSoldiers"
+   },
+   {
+    "kind": "const",
+    "name": "s25CozumelCrossbowmen"
+   },
+   {
+    "kind": "const",
+    "name": "s25CozumelArquebusiers"
+   },
+   {
+    "kind": "const",
+    "name": "s25CozumelSailors"
+   },
+   {
+    "kind": "const",
+    "name": "s25CortezLaterCavalry"
+   },
+   {
+    "kind": "const",
+    "name": "s25CortezLaterGunners"
+   },
+   {
+    "kind": "const",
+    "name": "s25PizarroLandYear"
+   },
+   {
+    "kind": "const",
+    "name": "s25PizarroLandingMen"
+   },
+   {
+    "kind": "const",
+    "name": "s25PizarroLandingHorses"
+   },
+   {
+    "kind": "const",
+    "name": "s25PizarroLandingCannon"
+   },
+   {
+    "kind": "const",
+    "name": "s25PizarroMarchCavalry"
+   },
+   {
+    "kind": "const",
+    "name": "s25PizarroMarchInfantry"
+   },
+   {
+    "kind": "const",
+    "name": "s25ExpeditionMenMax"
+   },
+   {
+    "kind": "const",
+    "name": "s25EmpireYears"
+   },
+   {
+    "kind": "const",
+    "name": "s25PikeLengthLoFt"
+   },
+   {
+    "kind": "const",
+    "name": "s25PikeLengthHiFt"
+   },
+   {
+    "kind": "const",
+    "name": "s25HalberdRatioLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25HalberdRatioHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25ArquebusWeightLbs"
+   },
+   {
+    "kind": "const",
+    "name": "s25ArquebusBarrelFt"
+   },
+   {
+    "kind": "const",
+    "name": "s25ArquebusShotsPerMin"
+   },
+   {
+    "kind": "const",
+    "name": "s25ArquebusRangeLoYds"
+   },
+   {
+    "kind": "const",
+    "name": "s25ArquebusRangeHiYds"
+   },
+   {
+    "kind": "const",
+    "name": "s25CrossbowRangeYds"
+   },
+   {
+    "kind": "const",
+    "name": "s25PikemenPctLo"
+   },
+   {
+    "kind": "const",
+    "name": "s25PikemenPctHi"
+   },
+   {
+    "kind": "const",
+    "name": "s25MorionCombInches"
+   },
+   {
+    "kind": "const",
+    "name": "s25BucklerDiaFt"
+   },
+   {
+    "kind": "bool",
+    "name": "s25HalfArmorAge"
+   },
+   {
+    "kind": "bool",
+    "name": "s25BreastplateProofed"
+   },
+   {
+    "kind": "bool",
+    "name": "s25ArquebusMatchRest"
+   },
+   {
+    "kind": "bool",
+    "name": "s25ArquebusWeatherFolly"
+   },
+   {
+    "kind": "bool",
+    "name": "s25CrossbowSteelLath"
+   },
+   {
+    "kind": "bool",
+    "name": "s25QuarrelPiercesArmor"
+   },
+   {
+    "kind": "bool",
+    "name": "s25ToledoSwordmakers"
+   },
+   {
+    "kind": "bool",
+    "name": "s25BattleCorners"
+   },
+   {
+    "kind": "bool",
+    "name": "s25PikemenHoldGround"
+   },
+   {
+    "kind": "bool",
+    "name": "s25CavalryChargeOpens"
+   }
+  ]
+ },
+ "consts": [
+  {
+   "name": "s25AztecMonthDays",
+   "value": 20,
+   "comment": "the ritual wait - a declaration delegation camps one Aztec month of twenty days for the reply the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25WarDelegations",
+   "value": 3,
+   "comment": "the declaration ritual - three State visits before the armies meet the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25PhratriesCount",
+   "value": 4,
+   "comment": "the clan seats - four phratries to the city, a Tlacola atop each the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25CompanyMenLo",
+   "value": 200,
+   "comment": "the company - two hundred to four hundred men, the largest unit under tactical control once the battle began the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25CompanyMenHi",
+   "value": 400,
+   "comment": "the company high end - the four hundred man ceiling the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25PlatoonMen",
+   "value": 20,
+   "comment": "the platoon - twenty men, the flag glyph the symbol for twenty the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25MainWeapons",
+   "value": 4,
+   "comment": "the main weapons - the obsidian club, the javelin with the atl-atl, the bow, the heavy lance the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25ArsenalClans",
+   "value": 5,
+   "comment": "the house of darts - an arsenal to each city quarter, the weapons for five clans, one phratry the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25KnightOrders",
+   "value": 3,
+   "comment": "the knights orders - the Eagle, the Ocelot and the less common Arrow the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25MythosDraws",
+   "value": 3,
+   "comment": "the drawn mythologies - Greek, Celtic and Eastern, molded to the living legends the To Select a Mythos guide (print 43)"
+  },
+  {
+   "name": "s25CortezSailYear",
+   "value": 1518,
+   "comment": "the Cortez sail - fifteen eighteen out of Hispaniola the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CortezSailMen",
+   "value": 600,
+   "comment": "the Cortez sail - six hundred men for the Aztec Empire the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CortezSailHorses",
+   "value": 17,
+   "comment": "the Cortez sail - seventeen horses the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CortezSailCannon",
+   "value": 10,
+   "comment": "the Cortez sail - ten cannon the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CozumelSoldiers",
+   "value": 508,
+   "comment": "the Cozumel review - five hundred eight soldiers on the rolls the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CozumelCrossbowmen",
+   "value": 32,
+   "comment": "the Cozumel review - thirty two crossbowmen the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CozumelArquebusiers",
+   "value": 13,
+   "comment": "the Cozumel review - thirteen arquebusiers the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CozumelSailors",
+   "value": 100,
+   "comment": "the Cozumel review - one hundred sailors beside the soldiers the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CortezLaterCavalry",
+   "value": 40,
+   "comment": "the later count - forty cavalry under six hundred total the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CortezLaterGunners",
+   "value": 80,
+   "comment": "the later count - eighty crossbowmen and arquebusiers the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PizarroLandYear",
+   "value": 1531,
+   "comment": "the Pizarro landing - fifteen thirty one at Atahualpa the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PizarroLandingMen",
+   "value": 180,
+   "comment": "the Pizarro landing - one hundred eighty men the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PizarroLandingHorses",
+   "value": 27,
+   "comment": "the Pizarro landing - twenty seven horses the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PizarroLandingCannon",
+   "value": 2,
+   "comment": "the Pizarro landing - two cannon the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PizarroMarchCavalry",
+   "value": 62,
+   "comment": "the march against the Inca - sixty two cavalry the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PizarroMarchInfantry",
+   "value": 102,
+   "comment": "the march against the Inca - one hundred two infantry the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25ExpeditionMenMax",
+   "value": 1000,
+   "comment": "the ceiling - never more than one thousand men afield the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25EmpireYears",
+   "value": 300,
+   "comment": "the victory span - three hundred years before the taste of freedom again the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PikeLengthLoFt",
+   "value": 12,
+   "comment": "the pike - twelve to eighteen feet, the spearhead short with long side straps the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PikeLengthHiFt",
+   "value": 18,
+   "comment": "the pike high end - the eighteen foot reach the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25HalberdRatioLo",
+   "value": 10,
+   "comment": "the halberd custom - one of every ten or twenty pikemen so armed the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25HalberdRatioHi",
+   "value": 20,
+   "comment": "the halberd custom high end - one of every twenty the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25ArquebusWeightLbs",
+   "value": 3,
+   "comment": "the matchlock - three pounds of older weapon the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25ArquebusBarrelFt",
+   "value": 3,
+   "comment": "the matchlock barrel - three feet or more the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25ArquebusShotsPerMin",
+   "value": 1,
+   "comment": "the matchlock rate - one shot a minute when everything favors the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25ArquebusRangeLoYds",
+   "value": 100,
+   "comment": "the accurate range - one hundred to two hundred yards the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25ArquebusRangeHiYds",
+   "value": 200,
+   "comment": "the accurate range high end - two hundred yards the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CrossbowRangeYds",
+   "value": 120,
+   "comment": "the crossbow - accurate to one hundred twenty yards, the higher rate and the lesser misfire the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PikemenPctLo",
+   "value": 50,
+   "comment": "the pike share - half to three quarters of the battle the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PikemenPctHi",
+   "value": 75,
+   "comment": "the pike share high end - three quarters of the battle the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25MorionCombInches",
+   "value": 4,
+   "comment": "the morion comb - up to four inches, the cut spread and the skull spared the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25BucklerDiaFt",
+   "value": 2,
+   "comment": "the buckler - a small round iron shield, about two feet across the Conquistadores commentary (print 44-45)"
+  }
+ ],
+ "bools": [
+  {
+   "name": "s25TributeNotAbsorption",
+   "value": true,
+   "comment": "the conquest result - tribute and economic sanctions, never absorption the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25NoTributeGuarantee",
+   "value": true,
+   "comment": "the tribute gap - no hostage system ever devised to guarantee the payment the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25AllMalesSoldiers",
+   "value": true,
+   "comment": "the levy - all males soldiers, the weapons part of the schooling the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25NoUnitDrills",
+   "value": true,
+   "comment": "the drill absence - no drills, the swarm tactics of biblical times the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25CampaignSeasonBan",
+   "value": true,
+   "comment": "the season ban - no campaign in the planting and harvest seasons, the army the work force the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25NoSiegeWeapons",
+   "value": true,
+   "comment": "the siege gap - no evidence of siege weapons developed or used to any extent the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25CaptivesOverKills",
+   "value": true,
+   "comment": "the victory measure - the captured count, not the killed the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25NewWarriorApprenticed",
+   "value": true,
+   "comment": "the apprenticeship - a new warrior attached to a veteran, the squire parallel the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25WarriorsHeavenGuarantee",
+   "value": true,
+   "comment": "the warrior heaven - slain in battle or sacrificed, the greatest honor a defeated warrior could receive the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25CottonArmorAdopted",
+   "value": true,
+   "comment": "the cotton adoption - the conquistadores took the quilted armor, effective and cooler than steel the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "name": "s25WellDevelopedMythos",
+   "value": true,
+   "comment": "the common trait - every good campaign a well developed mythos the To Select a Mythos guide (print 43)"
+  },
+  {
+   "name": "s25NexusGatesLimited",
+   "value": true,
+   "comment": "the nexus points - only the persistent search finds a gate, the access limited and well defended the To Select a Mythos guide (print 43)"
+  },
+  {
+   "name": "s25CleanSlatePreference",
+   "value": true,
+   "comment": "the design preference - a clean slate to begin extrapolating upon the To Select a Mythos guide (print 43)"
+  },
+  {
+   "name": "s25NoRealityRestraints",
+   "value": true,
+   "comment": "the restraints cast off - a mythos designed without reality limits the To Select a Mythos guide (print 43)"
+  },
+  {
+   "name": "s25DndNonGunpowderFit",
+   "value": true,
+   "comment": "the system fit - a Mayan mythos or any non-gunpowder mythos under the D&D rules the To Select a Mythos guide (print 43)"
+  },
+  {
+   "name": "s25RealFaithsExcluded",
+   "value": true,
+   "comment": "the exclusions - the living world faiths never used in the campaign the To Select a Mythos guide (print 43)"
+  },
+  {
+   "name": "s25GodsInCampaignOk",
+   "value": true,
+   "comment": "the gods call - nothing sacrilegious about introducing gods, even ones the players defeat the To Select a Mythos guide (print 43)"
+  },
+  {
+   "name": "s25TablesNotDogma",
+   "value": true,
+   "comment": "the guideline tables - inspiration for the judge, never religion the To Select a Mythos guide (print 43)"
+  },
+  {
+   "name": "s25HalfArmorAge",
+   "value": true,
+   "comment": "the armor shift - full suits to half suits in twenty five years, the cavalry and pikemen the wearers the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25BreastplateProofed",
+   "value": true,
+   "comment": "the proof mark - the armorer bullet dent fired to test the breastplate the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25ArquebusMatchRest",
+   "value": true,
+   "comment": "the matchlock rest - the forked mount, the smouldering fiber clipped to the cock the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25ArquebusWeatherFolly",
+   "value": true,
+   "comment": "the arquebus flaw - wet weather and windy days the havoc the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CrossbowSteelLath",
+   "value": true,
+   "comment": "the crossbow bow - steel, drawn by cord and pulley or rack and pinion the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25QuarrelPiercesArmor",
+   "value": true,
+   "comment": "the quarrel at close range - the armor penetrated the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25ToledoSwordmakers",
+   "value": true,
+   "comment": "the sword centers - Toledo and Valencia, the curved guards catching the blade the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25BattleCorners",
+   "value": true,
+   "comment": "the battle order - the arquebusiers at the corners, the fired rank cycling to the rear to reload the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25PikemenHoldGround",
+   "value": true,
+   "comment": "the pikemen stand - they hold the ground, shoulder to shoulder when the enemy ranks break the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "name": "s25CavalryChargeOpens",
+   "value": true,
+   "comment": "the Cortez open - the cavalry charge first when the numbers allow the Conquistadores commentary (print 44-45)"
+  }
+ ],
+ "tables": [],
+ "examples": [
+  {
+   "expr": "m['s25AztecMonthDays']() != 20 or m['s25WarDelegations']() != 3 or m['s25PhratriesCount']() != 4 or m['s25PlatoonMen']() != 20 or m['s25MainWeapons']() != 4 or m['s25ArsenalClans']() != 5 or m['s25KnightOrders']() != 3",
+   "note": "the frame - the twenty day waits, the three delegations, the four phratries, the twenty man platoon, the four weapons, the five clan arsenal and the three knights orders the the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "expr": "m['s25CompanyMenLo']() != 200 or m['s25CompanyMenHi']() != 400 or m['s25TributeNotAbsorption']() != 1 or m['s25NoTributeGuarantee']() != 1 or m['s25NoUnitDrills']() != 1 or m['s25CampaignSeasonBan']() != 1 or m['s25NoSiegeWeapons']() != 1",
+   "note": "the company band with the tribute, drill, season and siege gaps the the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "expr": "m['s25CaptivesOverKills']() != 1 or m['s25NewWarriorApprenticed']() != 1 or m['s25WarriorsHeavenGuarantee']() != 1 or m['s25CottonArmorAdopted']() != 1",
+   "note": "the warrior ethos - captives over kills, the veteran attachment, the heaven guarantee and the cotton adoption the the War of Flowers commentary (print 35-37)"
+  },
+  {
+   "expr": "m['s25MythosDraws']() != 3 or m['s25WellDevelopedMythos']() != 1 or m['s25NexusGatesLimited']() != 1 or m['s25CleanSlatePreference']() != 1 or m['s25DndNonGunpowderFit']() != 1",
+   "note": "the mythos craft - the three drawn mythologies, the common trait, the gates, the clean slate and the system fit the the To Select a Mythos guide (print 43)"
+  },
+  {
+   "expr": "m['s25NoRealityRestraints']() != 1 or m['s25RealFaithsExcluded']() != 1 or m['s25GodsInCampaignOk']() != 1 or m['s25TablesNotDogma']() != 1",
+   "note": "the mythos calls - the restraints cast off, the exclusions, the gods and the tables the the To Select a Mythos guide (print 43)"
+  },
+  {
+   "expr": "m['s25CortezSailYear']() != 1518 or m['s25CortezSailMen']() != 600 or m['s25CortezSailHorses']() != 17 or m['s25CortezSailCannon']() != 10 or m['s25CozumelSoldiers']() != 508 or m['s25CozumelCrossbowmen']() != 32 or m['s25CozumelArquebusiers']() != 13 or m['s25CozumelSailors']() != 100",
+   "note": "the Cortez expedition - the sail year, the six hundred, the horses, the cannon and the Cozumel review the the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "expr": "m['s25CortezLaterCavalry']() != 40 or m['s25CortezLaterGunners']() != 80 or m['s25PizarroLandYear']() != 1531 or m['s25PizarroLandingMen']() != 180 or m['s25PizarroLandingHorses']() != 27 or m['s25PizarroLandingCannon']() != 2 or m['s25PizarroMarchCavalry']() != 62 or m['s25PizarroMarchInfantry']() != 102",
+   "note": "the later Cortez count and the Pizarro landing and march the the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "expr": "m['s25ExpeditionMenMax']() != 1000 or m['s25EmpireYears']() != 300 or m['s25PikeLengthLoFt']() != 12 or m['s25PikeLengthHiFt']() != 18 or m['s25HalberdRatioLo']() != 10 or m['s25HalberdRatioHi']() != 20",
+   "note": "the ceilings - the thousand man max, the three hundred year span, the pike and halberd bands the the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "expr": "m['s25ArquebusWeightLbs']() != 3 or m['s25ArquebusBarrelFt']() != 3 or m['s25ArquebusShotsPerMin']() != 1 or m['s25ArquebusRangeLoYds']() != 100 or m['s25ArquebusRangeHiYds']() != 200 or m['s25CrossbowRangeYds']() != 120",
+   "note": "the gun notes - the matchlock weight, barrel, rate and range with the crossbow to one hundred twenty the the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "expr": "m['s25PikemenPctLo']() != 50 or m['s25PikemenPctHi']() != 75 or m['s25MorionCombInches']() != 4 or m['s25BucklerDiaFt']() != 2 or m['s25HalfArmorAge']() != 1 or m['s25BreastplateProofed']() != 1 or m['s25ArquebusMatchRest']() != 1 or m['s25ArquebusWeatherFolly']() != 1 or m['s25CrossbowSteelLath']() != 1 or m['s25QuarrelPiercesArmor']() != 1",
+   "note": "the armor and gun craft - the pike share, the morion comb, the buckler, the proofed breastplate, the rest, the weather flaw, the steel lath and the quarrel the the Conquistadores commentary (print 44-45)"
+  },
+  {
+   "expr": "m['s25ToledoSwordmakers']() != 1 or m['s25BattleCorners']() != 1 or m['s25PikemenHoldGround']() != 1 or m['s25CavalryChargeOpens']() != 1",
+   "note": "the sword centers and the battle order - the corners, the standing pikemen and the opening charge the the Conquistadores commentary (print 44-45)"
+  }
+ ],
+ "table_checks": [],
+ "switches": [],
+ "chains": [],
+ "file_patches": [],
+ "data_files": [],
+ "seed_anchor": "## Knowledge maintenance",
+ "seed_file": "doc/vibe/adnd1_knowledge_seed_v2.md",
+ "prev_seed_key": "  - R959 LANDED (6a1245c, s25, 118 inline, the table round): The",
+ "prev_record": [
+  "  - R959 LANDED (6a1245c, s25, 118 inline, the table round): The",
+  "  Dragon issue-25 opener part two - the war game and",
+  "  the vampire roster, two of the eight Curtiss-called",
+  "  chains: the Neal M. Dorst Xochiyaoyotl rules for",
+  "  pre-Hispanic Mexican warfare (print 37-40) - the scales",
+  "  (twenty men a unit, two minutes a turn, twenty five",
+  "  yards the inch), the Military Prowess grid as the first",
+  "  table (die one through six against prowess one to five,",
+  "  the elite mark on the die six roll, the sentinel census",
+  "  five), the ratio row at one hundred, ninety, seventy",
+  "  five, sixty and fifty percent, the morale and sacrifice",
+  "  brackets, the Table 10 victory bands, the War of Flowers",
+  "  points and the Spanish optional rules (six elite, the",
+  "  quarter ratio, the gunpowder armor flaw, the column, the",
+  "  no-sacrifice law) - and the R.P. Smith Varieties of",
+  "  Vampires roster (print 42) - the fifteen-type movement",
+  "  and charm grid as the second table (the single-move",
+  "  Chinese vampire the only move-alt sentinel, seven types",
+  "  with no printed charm number), the seven-day rise of",
+  "  the unguarded corpse, the asanbosam nine-eight-seven",
+  "  hit dice, the ekimmu exorcism at fifty plus or minus",
+  "  five percent, the lobishumen sixty percent legacy, the",
+  "  call bands for the leopards, tigers, rats, butterflies",
+  "  and foxes. 118 inline = 70 consts + 39 bools + 9 table",
+  "  cols, 11 examples, 2 table checks, no data files (the",
+  "  report and the transcripts all landed at R958).",
+  "  Census 881->882; rverify GREEN 190 mutants 0 missed at",
+  "  base 7518210; round-trip 45677 bytes md5",
+  "  702888d641c4e22940fe407afab2ec88, byte-exact at",
+  "  6a1245c (fresh tarball re-run applied 0 already 5).",
+  "  Part two of the eight-chain shape complete; part three",
+  "  (R960 k25, the commentary set: Flower Wars print",
+  "  35-37, To Select a Mythos 43, Conquistadores 44-45)",
+  "  next, then the R961 l25 flip; the two watches ride to",
+  "  TD 26 (the Sullin levels 7-9, the brawling sequel),",
+  "  and the Flower Wars and Conquistadores chains stay",
+  "  period-piece-thin for the R960 adjudication. WAIT",
+  "  FOR GO."
+ ],
+ "regtest": "regtest.cpp",
+ "inline_count": 70
+}

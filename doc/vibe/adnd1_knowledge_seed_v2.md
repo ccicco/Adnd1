@@ -29394,6 +29394,44 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   sequel, a fourth issue running), and the Flower Wars and
   Conquistadores chains stay period-piece-thin for the R960
   adjudication. WAIT FOR GO.
+  - R959 LANDED (6a1245c, s25, 118 inline, the table round): The
+  Dragon issue-25 opener part two - the war game and
+  the vampire roster, two of the eight Curtiss-called
+  chains: the Neal M. Dorst Xochiyaoyotl rules for
+  pre-Hispanic Mexican warfare (print 37-40) - the scales
+  (twenty men a unit, two minutes a turn, twenty five
+  yards the inch), the Military Prowess grid as the first
+  table (die one through six against prowess one to five,
+  the elite mark on the die six roll, the sentinel census
+  five), the ratio row at one hundred, ninety, seventy
+  five, sixty and fifty percent, the morale and sacrifice
+  brackets, the Table 10 victory bands, the War of Flowers
+  points and the Spanish optional rules (six elite, the
+  quarter ratio, the gunpowder armor flaw, the column, the
+  no-sacrifice law) - and the R.P. Smith Varieties of
+  Vampires roster (print 42) - the fifteen-type movement
+  and charm grid as the second table (the single-move
+  Chinese vampire the only move-alt sentinel, seven types
+  with no printed charm number), the seven-day rise of
+  the unguarded corpse, the asanbosam nine-eight-seven
+  hit dice, the ekimmu exorcism at fifty plus or minus
+  five percent, the lobishumen sixty percent legacy, the
+  call bands for the leopards, tigers, rats, butterflies
+  and foxes. 118 inline = 70 consts + 39 bools + 9 table
+  cols, 11 examples, 2 table checks, no data files (the
+  report and the transcripts all landed at R958).
+  Census 881->882; rverify GREEN 190 mutants 0 missed at
+  base 7518210; round-trip 45677 bytes md5
+  702888d641c4e22940fe407afab2ec88, byte-exact at
+  6a1245c (fresh tarball re-run applied 0 already 5).
+  Part two of the eight-chain shape complete; part three
+  (R960 k25, the commentary set: Flower Wars print
+  35-37, To Select a Mythos 43, Conquistadores 44-45)
+  next, then the R961 l25 flip; the two watches ride to
+  TD 26 (the Sullin levels 7-9, the brawling sequel),
+  and the Flower Wars and Conquistadores chains stay
+  period-piece-thin for the R960 adjudication. WAIT
+  FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
