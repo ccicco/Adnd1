@@ -29227,6 +29227,45 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
   the gap_report stays report-023 (3 closed 0 open), the data
   files unchanged in kind; prefix scan fresh at the then-HEAD
   (s24 next). WAIT FOR GO.
+  - R955 LANDED (d9edf2b, s24, 146 inline, opener part two): The
+  Dragon issue-24 opener part two, the alignment pantheon table round -
+  the single chain of the Schick Design Forum alignment variant
+  (print 34+36-39, print 35 the B1 module advertisement): the
+  eighteen prime alignments at six per axis, the twenty-one prime
+  deities (seventeen singles plus the four elemental lords at two
+  hundred hit points), the five sons of Thakta Tylden and the
+  Headsman of Marly. 146 inline = 73 consts + 59 bools + 14 table
+  cols, 14 examples, 6 table_checks, 3 tables (s24Pantheon 21 rows
+  x 6 with the sentinel census - the Morilirom irrelevant armor
+  class, the two instantaneous moves, twenty second-move sentinels
+  and ten damage-pair sentinels; s24Sons 5 x 5 - only the Pakunth
+  and Dakunth resistances and the Rakunth three attacks print;
+  s24Aligns 18 x 3 - the axis, the slot and the deity
+  cross-reference, Battle Glory to the Hisk row, the Four Elements
+  to the Gungger row). The mid-round shape rides no new data files;
+  the gap report stays report-023 (3 closed 0 open), the
+  report-024 boxes unchecked until the R957 flip. Census 877->878;
+  rverify GREEN 337 mutants 0 missed at base 3a5152d; round-trip
+  54759 bytes md5 2aa4b41c678f538f5a2f29ceaf6ff5b8, byte-exact at
+  d9edf2b (fresh tarball re-run applied 0 already 5). Print
+  catches pinned as scanned: MORILIROM spelled Moriliroom twice in
+  running text, the Whickerwind pegasus, the feet-vs-inch move
+  drift (Hisk, Bleskuta, Temanamat, Golod, Sog-Morthoth and
+  Thakta Tylden in feet), richly-apparelated, werebbar twice,
+  psuedopods, civilization-topping, the THOLTANOOMA header against
+  Tholtanooma text, the Manturin fifteen-dice lightning and
+  eight-pointed ten-dice stars, the Sedjima one-and-a-half-percent
+  Augury pinned as three half-percent units with the two-percent
+  Contact Other Plane, the fourteen-spell standard god list, the
+  gods hit unless a one on d20, the Marly ten-five-one reward
+  ladder, the Headsman minus-two one-fifty total-resistance
+  plus-five vorpal, the Cyrullia five-percent seventh-level
+  miracle, and the full son roster with the Dakunth printing on
+  page thirty-nine. Watches: the Sullin levels 7-9 and the
+  brawling sequel still empty in TD 24 - both ride to TD 25.
+  Next: R956 part three, the ten-chain commentary set; the gap
+  report stays report-023 (3 closed 0 open); prefix scan fresh at
+  the then-HEAD (k24 next). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
