@@ -30370,6 +30370,27 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     R713-R726 14 rec, R987 R727-R759 33
     rec, R988 R760-R773 14 rec - the set
     closer. WAIT FOR GO.
+  - R986 LANDED 2026-11-01 at f2c349c: The
+    OA promotion batch six (census 909)
+    - R713-R726, 14 records, 1,141 model
+    items, 319,990 bytes Lua, prefix oa6.
+    LANDED: pushed bbda51e..f2c349c,
+    census 908->909; the fresh tarball at
+    f2c349c verified - 14/14 records on
+    disk byte-matching the spec, the
+    header (4 consts + 3 bools), the
+    regtest includes (the oa6.h include
+    at line 690; the oa5 include comment
+    REPAIRED in-regtest - "batch five"
+    now correct, the R985 defect closed
+    via the file_patch), the r986_batch.h
+    audit in the descending audit order,
+    the gap 3/0 no-flips and the seed all
+    in place, 113 records on disk
+    (1,880,530 bytes Lua cumulative).
+    NEXT: R987 R727-R759 33 rec, R988
+    R760-R773 14 rec - the set closer.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
