@@ -31707,6 +31707,78 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     WSG+MOP 23, DRG 5, the deity
     seam.
     WAIT FOR GO.
+  - R1019 LANDED 2026-11-01 at
+    f318d032: THE MM2
+    NORMALIZATION BATCH THREE
+    (census 942) - the arc's
+    third quarter, 83 of 332
+    (mihstu through
+    shadow_mastiff) rewritten to
+    the full-field 57-key
+    emission, byte-exact per
+    file; 249/332 canonical,
+    83 remaining. 590 file
+    patches: 583 anchored
+    inserts (2247 lines), zero
+    whole-line rewrites, seven
+    pin-repair patches - THE
+    ROUND OF THE ROW-ALIGNMENT
+    LESSON. The mongrelman and
+    myconid by_level pair
+    needed their mm2lmn xp
+    cells 0 to -1, but the pin
+    repairs must target the
+    kLM WALK ARRAY ORDER: the
+    mongrelman is case 31, not
+    30 - the russet mold holds
+    case 30 and CARRIES its
+    own 0/0/0 xp cells, so its
+    grid functions stay 0. One
+    preflight RED (the R808
+    fragment walk bad 4, rows
+    30 and 31 split against
+    each other); the fix rides
+    and the sweep now
+    simulates BOTH the fragment
+    CLmStats grid (38 rows, 10
+    columns, functions vs the
+    hardcoded copy) and the
+    live walk xp columns
+    (loader vs functions, all
+    38 defs) BEFORE the
+    handoff - both bad 0, a
+    permanent gate for every
+    future pin repair. LANDED
+    VERIFICATION at f318d032:
+    spec md5
+    aed880582b4b77534ea47c35e0
+    78f037 unchanged (the canvas
+    body identical), engine
+    all-already 595 twice,
+    rverify GREEN at the base
+    sha 5daadd64 (15 mutants 0
+    missed), MM2 census 249/332
+    canonical byte-exact, the
+    mongrelman and myconid
+    cells and fragment rows
+    -1, the russet mold cells
+    0, mq3.h after mq2.h,
+    r1019_batch.h above
+    r1018_batch.h, the R1018
+    LANDED record seated
+    verbatim in the seed before
+    the last Knowledge
+    maintenance, normalizer
+    census 942 live. THE QUEUE:
+    the MM2 batch four closes
+    the book (83 defs, consts
+    mq4*; the zombie_monster
+    13-key def needs the wxyz
+    walk pins checked when
+    reached), then FF 185,
+    WSG+MOP 23, DRG 5, the
+    deity seam.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

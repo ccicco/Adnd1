@@ -286,7 +286,7 @@
             {-10,6,0,21,1,1275,10,0,12,50},
             {4,6,0,21,2,0,0,70,12,20},
             {6,3,12,22,1,110,4,0,9,0},
-            {6,0,0,0,1,0,0,0,0,0},
+            {6,0,-1,-1,1,0,0,-1,0,0},
             {10,4,2,16,2,280,5,30,15,20},
             {8,3,0,10,1,85,4,50,1,0},
             };
@@ -537,12 +537,12 @@
         // the monster zombie grid row (p. 131 print order)
     if (mm2wxyzWXYZStatAc(14) != 6
             || mm2wxyzWXYZStatHd(14) != 0
-            || mm2wxyzWXYZStatHdBonus(14) != 0
-            || mm2wxyzWXYZStatAvgHp(14) != 0
+            || mm2wxyzWXYZStatHdBonus(14) != -1
+            || mm2wxyzWXYZStatAvgHp(14) != -1
             || mm2wxyzWXYZStatAttacks(14) != 1
             || mm2wxyzWXYZStatXp(14) != 0
             || mm2wxyzWXYZStatXpHp(14) != 0
-            || mm2wxyzWXYZStatLairPct(14) != 0
+            || mm2wxyzWXYZStatLairPct(14) != -1
             || mm2wxyzWXYZStatMove(14) != 0
             || mm2wxyzWXYZStatMr(14) != 0
             || mm2wxyzZombieMonsterXpValue() != 0

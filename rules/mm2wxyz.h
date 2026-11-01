@@ -1133,7 +1133,7 @@ inline int mm2wxyzWXYZStatHdBonus(int b)
         case 13:
             return 12;
         case 14:
-            return 0;
+            return -1;
         case 15:
             return 2;
         case 16:
@@ -1144,8 +1144,8 @@ inline int mm2wxyzWXYZStatHdBonus(int b)
     }
 
 // The avgHp cells (the floor(3.5 x hd + bonus) formula; the weasel and
-// webbird 2 - the atomie half-dice precedent; the monster zombie the nil
-// block 0)
+// webbird 2 - the atomie half-dice precedent; the monster zombie the
+// nil block -1 (the R1020 pin repair)
 inline int mm2wxyzWXYZStatAvgHp(int b)
     {
         switch (b) {
@@ -1178,7 +1178,7 @@ inline int mm2wxyzWXYZStatAvgHp(int b)
         case 13:
             return 22;
         case 14:
-            return 0;
+            return -1;
         case 15:
             return 16;
         case 16:
@@ -1362,7 +1362,7 @@ inline int mm2wxyzWXYZStatLairPct(int b)
         case 13:
             return 0;
         case 14:
-            return 0;
+            return -1;
         case 15:
             return 30;
         case 16:
