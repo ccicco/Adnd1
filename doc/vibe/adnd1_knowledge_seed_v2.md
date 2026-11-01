@@ -30828,6 +30828,47 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     (the struct-table rounds R409-R411
     ride here - inspect the headers
     before building). WAIT FOR GO.
+  - R1002 LANDED 2026-11-01 at
+    2bacb3a0: The UA promotion batch
+    four (census 925) - R365-R380, 16
+    records, 1355 model items,
+    277,802 bytes Lua, prefix ua4
+    (bool ua4R365ThroughR380Complete).
+    LANDED: pushed 44b0b479..2bacb3a0,
+    census 924->925; the fresh tarball
+    at 2bacb3a0 verified - 16/16
+    records on disk byte-matching the
+    spec (the ua set now 45; the dragon
+    79, the WSG 77, the DSG 60 and the
+    OA 160 on disk unchanged), the
+    batch header (4 consts + 3 bools,
+    remaining 31, cumulative 45), the
+    regtest includes (the ua4.h include
+    at line 706 right after ua3.h; the
+    r1002_batch.h audit at line 4816
+    above r1001_batch.h, descending),
+    the gap report byte-identical
+    base-to-HEAD (102/1, the one open
+    line the legend, no flips), the
+    seed seated (the R1001 record, 41
+    lines, before the Knowledge
+    maintenance anchor), rverify GREEN
+    at base 44b0b479 (double-run,
+    battery 7 mutants 0 missed), spec
+    md5 unchanged
+    (3da4accd8a92a89c9c1f3d080f5d3c97).
+    THE TREASURE-PROSE BLOCK LANDED:
+    the potions, scrolls, rings, rods,
+    staves and wands prose (R376-R380)
+    plus the treasure dial (R374) and
+    eleven more, three multi-header
+    rounds (R365 four headers, R366
+    four, R367 two - the pools merge).
+    Cumulative 45 of the 76-round UA
+    set, 31 remaining, 1,134,817 bytes
+    of UA Lua on disk. NEXT: ua5
+    R381-R390, 10 records (inspect the
+    headers before building). WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
