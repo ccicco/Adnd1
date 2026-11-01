@@ -34,4 +34,5 @@ return {
   psionic = "none",
   attackDefenseModes = "none",
   familyText = "Lampreys are leech-like eels which inhabit both fresh and salt water: They do not inhabit shallow bodies of water. They feed by biting their victims, fastening themselves to the hapless creatures with sphincter-like mouths ringed with cruel teeth. Once attached the lamprey will begin to drain blood on the next and each successive melee round. The rate of blood drain is equivalent to 2 hit points of damage per hit die the lamprey has. Thus, a giant specimen will drain blood causing 10 hit points of damage per melee round.",
+  text = "Lampreys are leech-like eels which inhabit both fresh and salt water: They do not inhabit shallow bodies of water. They feed by biting their victims, fastening themselves to the hapless creatures with sphincter-like mouths ringed with cruel teeth. Once attached the lamprey will begin to drain blood on the next and each successive melee round. The rate of blood drain is equivalent to 2 hit points of damage per hit die the lamprey has. Thus, a giant specimen will drain blood causing 10 hit points of damage per melee round.",
 }

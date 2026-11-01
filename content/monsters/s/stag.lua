@@ -34,4 +34,5 @@ return {
   psionic = "none",
   attackDefenseModes = "none",
   familyText = "Stags are herbivores found in temperate forests and meadowlands. They are the aggressive males of a herd which numbers 4-8 times the number of stags encountered. These creatures will defend the herd against all but the most fearsome opponents. A stag can attack with its branching antlers or by lashing out with its sharp forehooves.\n\nGiant Stag: These creatures are simply very large stags. They otherwise conform to the general characteristics of stags. A typical giant stag is 7' tall at the shoulder and weighs over 1,500 pounds.",
+  text = "Stags are herbivores found in temperate forests and meadowlands. They are the aggressive males of a herd which numbers 4-8 times the number of stags encountered. These creatures will defend the herd against all but the most fearsome opponents. A stag can attack with its branching antlers or by lashing out with its sharp forehooves.\n\nGiant Stag: These creatures are simply very large stags. They otherwise conform to the general characteristics of stags. A typical giant stag is 7' tall at the shoulder and weighs over 1,500 pounds.",
 }

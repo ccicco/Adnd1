@@ -35,4 +35,5 @@ return {
   psionic = "none",
   attackDefenseModes = "none",
   statNote = "Very rare variety, twice normal size; otherwise identical to badger.",
+  text = "These burrowing animals are typically solitary. Their speed accounts for their high armor class rating. They are fierce fighters and will staunchly defend their territory. If more than 1 is encountered it will be a mated pair (and young). The pelt of the badger is typically sold for from 10-30 gold pieces.\n\nGiant Badger: There is a very rare variety of badger which grows to twice the size of the normal sort: Hit dice: 3; 1-3/1-3/1-6; Size: M. They are otherwise identical.",
 }

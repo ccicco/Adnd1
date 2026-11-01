@@ -34,4 +34,5 @@ return {
   psionic = "none",
   attackDefenseModes = "none",
   familyText = "Hyenas are pack animals dwelling on warm plains. They are hunter/scavengers with very strong jaws and aggressive if hungry.\n\nHyaenodons are simply huge (prehistoric) hyenas.",
+  text = "Hyenas are pack animals dwelling on warm plains. They are hunter/scavengers with very strong jaws and aggressive if hungry.\n\nHyaenodons are simply huge (prehistoric) hyenas.",
 }

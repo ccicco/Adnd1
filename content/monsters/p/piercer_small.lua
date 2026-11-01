@@ -33,4 +33,5 @@ return {
   magicResistance = "standard",
   psionic = "none",
   attackDefenseModes = "none",
+  text = "Piercers inhabit caves, caverns, and similar subterranean places. With their stoney outer casing these monsters are indistinguishable from stalactites found on cave roofs. They are attracted by noise and heat, and when a living creature passes beneath their position above they will drop upon it in order to kill and devour it. Larger varieties will be found with smaller ones.\n\nThe size of a piercer is equal to its hit dice, and there is an equal probability of a piercer being 1, 2, 3, or 4 dice in size. The largest piercer is about 6' long, 1' base diameter, and weighs 500 pounds.",
 }

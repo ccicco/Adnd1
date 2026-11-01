@@ -31026,6 +31026,76 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     and pinned; the next arc awaits
     the standing next-arc decision.
     WAIT FOR GO.
+  - R1006 LANDED 2026-11-01 at
+    76fd890d: The promotions mop
+    round one - the registry
+    never-load repair (census 929) -
+    THE MOP OPENER, Curtiss's arc
+    call after the UA set closed
+    (all the promotion loose ends,
+    one arc). 25 file_patches (NOT
+    data_files - the R791 data_files
+    class is idempotent by
+    EXISTENCE, new files only; an
+    overwrite repair rides the
+    file_patches class, from = the
+    raw-newline text body, to = the
+    escaped body): the twenty-five
+    Fiend Folio promotions of the
+    R836-R842 arc repaired - each
+    carried RAW NEWLINES inside its
+    text field where the backslash-n
+    escapes belong, the Lua loader
+    dying unfinished-string, the
+    R924 re-measure state
+    1313/1338/25. 174 paragraph
+    breaks escaped, ZERO ink
+    touched (every unescape equals
+    the landed bytes), 59,870 bytes
+    of repaired Lua, prefix pm1
+    (free; mop is taken by
+    mop_print), header rules/pm1.h
+    (7 consts + 3 bools), audit
+    "R1006 promotions mop round one
+    audit" above r1005_batch.h, the
+    include after ua7.h. LANDED:
+    pushed e4b7a8b5..76fd890d,
+    census 928->929; the fresh
+    tarball at 76fd890d verified -
+    25/25 patches applied (from
+    absent, to present), the
+    whole-tree lexer scan 1338 of
+    1338 clean, the seed seated (the
+    R1005 record, 59 lines, before
+    the LAST Knowledge maintenance
+    anchor), the gap report
+    byte-identical base-to-HEAD (mm2
+    37/0, no flips), the UA set
+    untouched (76 files, 1,785,532
+    bytes), rverify GREEN at base
+    e4b7a8b5 (restore, double-run,
+    battery 10 mutants 0 missed),
+    spec md5 unchanged
+    (8d9a0d2a8b60d86fff7c6e071832d3b5).
+    THE BATTERY LINE MOVES: loaded
+    1338, errors 0 expected - the
+    registry floor meets the file
+    count for the first time since
+    the R900 lesson; the historical
+    snapshot pins (cfc 1311/1333/25,
+    d21/l22/l23 1313/1338/25) stand
+    as landed, the never-load
+    doctrine retired. THE MOP
+    REMAINING: the MM1 data-quality
+    pass (the naive-era text fields,
+    source tools/monsters.md -
+    collation against the print
+    voices, its own rounds); the
+    rverify data_files candidate
+    CLOSED (verified live at R1005),
+    the lreg 65/473 pins standing as
+    doctrine.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance

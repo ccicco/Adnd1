@@ -34,4 +34,5 @@ return {
   psionic = "none",
   attackDefenseModes = "none",
   familyText = "Dog, War: These are simply large dogs which are trained to fight. They are loyal to their masters and ferocious in attack. They are typically protected by light studded leather armor and a spiked collar. The number appearing depends on their masters.\n\nDog, Wild: Packs of wild dogs inhabit most regions, and their ranges will sometimes overlap those of wolves. If well-fed they will simply avoid contact. They can be tamed only if separated from their pack.",
+  text = "Dog, War: These are simply large dogs which are trained to fight. They are loyal to their masters and ferocious in attack. They are typically protected by light studded leather armor and a spiked collar. The number appearing depends on their masters.\n\nDog, Wild: Packs of wild dogs inhabit most regions, and their ranges will sometimes overlap those of wolves. If well-fed they will simply avoid contact. They can be tamed only if separated from their pack.",
 }
