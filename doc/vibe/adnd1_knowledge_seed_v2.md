@@ -31237,6 +31237,61 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     census 931; the next rounds are
     Curtiss's call.
     WAIT FOR GO.
+  - R1009 LANDED 2026-11-01 at
+    74bf297c: The MM1
+    normalization batch one
+    (census 932), MM1 part one
+    of six, the letters a-f, 99
+    defs rewritten to the
+    full-field 57-key emission -
+    string sentinel n/a,
+    integer sentinel -1,
+    saveAsBonus riding the
+    loader's zero default (the
+    R155 contract). 540 file
+    patches: 538 monster
+    windows (515 insert sites /
+    2214 lines, 19 reorder sites
+    across 23 defs, 4 move
+    encodings) plus the TWO
+    normalizer repairs - the
+    REG glob (census zero since
+    R879) and the saveAsBonus
+    no-data default (the first
+    attempt died at the user's
+    preflight, R155 bad 1, its
+    early return zeroing every
+    later audit line; a second
+    dirty-tree abort between
+    attempts needed a git
+    restore - attempt 1's
+    patches were still
+    uncommitted in the tree).
+    LANDED VERIFICATION at
+    74bf297c: spec md5
+    1db6e8c43baebb23e9abf96336
+    78c556 unchanged, every to
+    present, engine all-already
+    545, mn1.h included after
+    pm3.h, r1009_batch.h above
+    r1008_batch.h, the R1008
+    LANDED record seated
+    verbatim before the last
+    Knowledge maintenance, gap
+    report untouched, the
+    repaired normalizer reads
+    1338 defs live and the 99
+    are byte-exact against it,
+    brownie 0 / displacer 2
+    confirmed, MM1 408. THE
+    QUEUE: MM1 batches two
+    through six (g-k 90, l-p
+    86, q-s 82, t-v 40, w-z
+    30), then MM2 332, FF 185,
+    OA 47, WSG+MOP 23. The
+    next rounds are Curtiss's
+    call.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
