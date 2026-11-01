@@ -30719,6 +30719,38 @@ d20 table) or the issue-6 opener. WAIT FOR GO.
     five batches R994-R998. THE DSG
     ARC IS CLOSED - next per the
     Curtiss call. WAIT FOR GO.
+  - R999 LANDED 2026-11-01 at
+    6df2f3a8: The UA promotion batch
+    one (census 922) - R333-R348, 13
+    records, 970 model items, 304,979
+    bytes Lua, prefix ua1 (bool
+    ua1R333ThroughR348Complete).
+    LANDED: pushed fab699d4..6df2f3a8,
+    census 921->922; the fresh tarball
+    at 6df2f3a8 verified - 13/13
+    records on disk byte-matching the
+    spec (the dragon 79, the WSG 77,
+    the DSG 60 and the OA 160 on disk
+    unchanged), the batch header (4
+    consts + 3 bools, remaining 63,
+    cumulative 13), the regtest
+    includes (the ua1.h include at
+    line 703 right after dsg5.h; the
+    r999_batch.h audit at line 4813
+    above r998_batch.h, descending),
+    the gap report byte-identical
+    base-to-HEAD (102/1, the one open
+    line the legend, no flips), the
+    seed seated (the R998 record, 36
+    lines, before the Knowledge
+    maintenance anchor), rverify GREEN
+    at base fab699d4 (double-run,
+    battery 7 mutants 0 missed), spec
+    md5 unchanged. Cumulative 13 of
+    the 76-round UA set, 63 remaining,
+    304,979 bytes of UA Lua on disk.
+    NEXT: ua2 R349-R359, 11 records.
+    WAIT FOR GO.
 ## Knowledge maintenance
 ## Knowledge maintenance
 ## Knowledge maintenance
